@@ -2,77 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E95B412BD91
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 13:40:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C29B912BD94
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 13:48:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/jpe5ZuEOlmstWG9CO2nsEmEpxEta40HSyYLH7QPKfE=; b=k2M
-	KEMvxVz7gaLrXrc3xFySq63P7Jh9/6MgDfU1VxZe7fJ/RTiyvyh2g0HP+4Mp2tvca0vBbLO0OWOaD
-	ihv5MpLzGJhwX7AKkmYeOFbFsN9AOW4bVIy8oEBwR5tzMlSSyQE056wMZ6m72I8HtO87j93Yr381p
-	Ts7HzPxvH9E7HN6sTK7rK2Pj6QDvCXdwDFqIOP/ydfYREF5XR7pQW6zUXjv3kxwqjDk4HoENQfqrd
-	Gx36KoXbCXR6cJaNrLytbxV1ydwYe+gv35Ua2VIIXqYWJeM8C5D5DdoxEwfpW9k5CPWrwTMmlJ5Po
-	gqDw6fXmMHOHJbvF0xOeI0+tvHCPm4A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RaIXjdD1fvuCpyWtGU8/5pqLnI78e+1paEq/4TcFhts=; b=WBb5FiE6bl+YLl
+	cCrj2DmlbRc4ZY7/f7MntCMDqTY6WDFTuVEG9I3NBEJxM3y1d7JnNTBmZC7Z678QWymhgi1w5P5OP
+	17Zkst3fTQLKoKh0a/vYerjMEVzAHczpQn/LEXtY0BGd5+WkITT18aomgEyDkW8EbA8jq4nwyYTJg
+	v7HsZe5/ZqsAqvnSRDu/MnFFBspQB8xr1KAzApn3MPdCrtWhZ22HWJ+Wxh4OQR5HYQVB3zo7M1KMc
+	J2Xfio3d+fuWPYrX3l87CMIraEA8QmZ+L9KlN3XU05ZfbNcjllhZscn5O9ANnGFSrHOA/x7/Vanuy
+	Rz9Kyj9Mw7M4OlPk5qSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilBO1-0001Fi-6B; Sat, 28 Dec 2019 12:40:05 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ilBVf-0004Ny-A9; Sat, 28 Dec 2019 12:47:59 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilBNp-0001Et-4z
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 12:39:54 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z16so16057266pfk.0
+ id 1ilBVU-0004NI-95
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 12:47:50 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q8so16049364pfh.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Dec 2019 04:39:51 -0800 (PST)
+ Sat, 28 Dec 2019 04:47:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=4pJrCuN0L5h2pRp7MOQkfd0sd+WwqLihlGnkEFbuKkg=;
- b=CkSmL4KadJeaRXr+W7ibOUAh1ewv/4KZJkZyH2I4ignNeb7Vw8fyMAOeiUUhF0Wm4K
- mdHvQD/pxSFMsGjBNPt6OlzBcp/1KjwEn8o7N2MuBW89ldUaW47pGC4vSm0MrfTt41Am
- vt7F0xD95QhQiphpbdkax6/s4FNlGvs8dFgDMU0gGJmEGu4kghMuTsYMbUF+lEjXfkvG
- MWRSffRmtitR8cvJp34/JhFqLcd+bhoFCrVG0iEqcBX4TVk6Or+bt9Y2VPMcW9DUf6+o
- DIAKGatwoh/AvftKaGdLHH3tLeVfpBnQqkQnC63uCoSGQnPlJYO9vTvNNIOnDSzkaSBJ
- 4FWA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=pI3bHdhVC4jD/lCQfsvWohXAM7HBD6rFo3cPOHaRtUA=;
+ b=QVkGkqqEH87ZRVIkAEShKMvsKKVZNX3dS2U0uju+4fPWtxkNOzqcSBsgWgH/qH0xx7
+ 6ABx1O2t8a111JC8iprulan++JxYGdfgd8eAAEOe8SlCcgI4xzG+4HxLJTLkZzbYpgEu
+ Q12NgaT8kiSSsge8TFG315XsnQEsCkX/ij05bS1KgMkPTXyOso8IUTyb8p6OyOOhc4DV
+ EvvLkucc9tFKXhCfY53doHLlw/iFswMpc4pVCf3yJ8UHEOcghpjz6P093iO0G9H1Le+d
+ RGbDr+BgnufQ9veq9n0dia+mxDpqqML2sQYx/N89OXntI2NhisxWaY304KxnrXqDUm0r
+ DfsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4pJrCuN0L5h2pRp7MOQkfd0sd+WwqLihlGnkEFbuKkg=;
- b=UD7nwRLsTnvUIE0bMGqGPpSjkYuPtaf3aTztm4QD8q6DUPi+aIY2DCcIik7+0SnXZT
- GjN+UIZqsL/p04sgCp3Ua308cayEiYlBVwgXVaYLh4FMPQZE3jDKHixx2fEDGwQ5I+HB
- GTB0XzRtrYgIJH8A2a1Tlp+imcnhx6clzjHV+qsdQeFIqtdk+ovkENndYT3A5gsM7WJn
- dgajdqoj2at8EbO3deNlGs6rybHN408DsgcpPQcUeM4Fhyje42Uqk3Pn0NUQZNKQnvzP
- H3dyJ46LDWJDv5h3ZvhZV9rDpLUC/5oYFR5pSb1TTBZORaPO98PNxUFJ2ttF3Dz2n9ig
- nZ0g==
-X-Gm-Message-State: APjAAAX/n27enGTfk6LgXNYUEQUrnOcC8+tMi3h9fpVHcrxbx6yMFuvT
- L42KHg9NwtujHnrT+AnQ5vk=
-X-Google-Smtp-Source: APXvYqyFDhOvCHysU4l3DIouO5mcmq97FftOVvq1y/WhnCUf0Ut9o+2exJHn7ZeYo0cbcuUi2MGCDg==
-X-Received: by 2002:a62:75d0:: with SMTP id
- q199mr43137436pfc.158.1577536791526; 
- Sat, 28 Dec 2019 04:39:51 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=pI3bHdhVC4jD/lCQfsvWohXAM7HBD6rFo3cPOHaRtUA=;
+ b=SBm+kPNOG5aVeQWxNz6tnMHw1hrNeOPzJpBuGCWb6QQMPMOW6iWheqkwad8GvOWKgt
+ xLSOq7lOwnKZXN1SuemPxFfDlUfQkWOrSLpIqMsnsv8wcAWVHJGJ/SiMbZ+ebUhHXRdn
+ uTxKrpihXP1sFt3e7Jj9risASw3h93/hE7Kxr3jYdCNZi69l6Wra03uF/xv5SazYp750
+ l+XHFSkJXFxBvycqc53ob/v+2C5mIr5bnDQV2YvU2jFGsKGtqcvaWc0LIQaUV3U+qETs
+ K1Kza+Gf6dm6oLLGGy/0XnI1KNtN5sw4JObVipDEF7Mt+DRWoMG6TZ5oJaYsnRKlEZsE
+ ZnRA==
+X-Gm-Message-State: APjAAAV5p/DMWbGdOc/cMuNFtZhuRrLe7fBihGPHqHOQPoIMHVHrcSsi
+ 6feop1xF4b7llXgoAPT7cmQ=
+X-Google-Smtp-Source: APXvYqy0MYnN0gshVmCs8u0rVFEs4Ra4zcPjqBFATbA/kqGev/XZffwqJFL5m+vwVEEOZ44bOiSHfg==
+X-Received: by 2002:a63:1e47:: with SMTP id p7mr59163570pgm.339.1577537266826; 
+ Sat, 28 Dec 2019 04:47:46 -0800 (PST)
 Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id w6sm46281368pfq.99.2019.12.28.04.39.50
+ by smtp.gmail.com with ESMTPSA id e19sm17900399pjr.10.2019.12.28.04.47.45
  (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Sat, 28 Dec 2019 04:39:50 -0800 (PST)
-From: qiwuchen55@gmail.com
+ Sat, 28 Dec 2019 04:47:46 -0800 (PST)
+Date: Sat, 28 Dec 2019 20:47:44 +0800
+From: chenqiwu <qiwuchen55@gmail.com>
 To: mmayer@broadcom.com, rjw@rjwysocki.net, viresh.kumar@linaro.org,
  f.fainelli@gmail.com
-Subject: [PATCH] cpufreq: brcmstb-avs-cpufreq: avoid a stuck risk and UAF
+Subject: Re: [PATCH] cpufreq: brcmstb-avs-cpufreq: avoid a stuck risk and UAF
  issue in brcm_avs_cpufreq_get()
-Date: Sat, 28 Dec 2019 20:39:37 +0800
-Message-Id: <1577536777-24966-1-git-send-email-qiwuchen55@gmail.com>
-X-Mailer: git-send-email 1.9.1
+Message-ID: <20191228124744.GA3491@cqw-OptiPlex-7050>
+References: <1577513730-14254-1-git-send-email-qiwuchen55@gmail.com>
+ <201912281807.gbP6xHJ1%lkp@intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <201912281807.gbP6xHJ1%lkp@intel.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_043953_217599_F813B582 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20191228_044748_346944_196104F9 
+X-CRM114-Status: GOOD (  20.66  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -98,73 +104,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chenqiwu <chenqiwu@xiaomi.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: chenqiwu <chenqiwu@xiaomi.com>
+On Sat, Dec 28, 2019 at 06:20:25PM +0800, kbuild test robot wrote:
+> Hi,
+> 
+> Thank you for the patch! Yet something to improve:
+> 
+> [auto build test ERROR on pm/linux-next]
+> [also build test ERROR on v5.5-rc3 next-20191220]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+> 
+> url:    https://github.com/0day-ci/linux/commits/qiwuchen55-gmail-com/cpufreq-brcmstb-avs-cpufreq-avoid-a-stuck-risk-and-UAF-issue-in-brcm_avs_cpufreq_get/20191228-141943
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git linux-next
+> config: arm-allmodconfig (attached as .config)
+> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.5.0 make.cross ARCH=arm 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All error/warnings (new ones prefixed by >>):
+> 
+>    In file included from include/linux/pm_qos.h:10:0,
+>                     from include/linux/cpufreq.h:16,
+>                     from drivers/cpufreq/brcmstb-avs-cpufreq.c:44:
+>    drivers/cpufreq/brcmstb-avs-cpufreq.c: In function 'brcm_avs_cpufreq_get':
+> >> drivers/cpufreq/brcmstb-avs-cpufreq.c:459:12: error: 'dev' undeclared (first use in this function); did you mean 'sev'?
+>       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
+>                ^
+>    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
+>      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
+>                ^~~
+>    drivers/cpufreq/brcmstb-avs-cpufreq.c:459:12: note: each undeclared identifier is reported only once for each function it appears in
+>       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
+>                ^
+>    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
+>      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
+>                ^~~
+>    In file included from include/uapi/linux/posix_types.h:5:0,
+>                     from include/uapi/linux/types.h:14,
+>                     from include/linux/compiler.h:180,
+>                     from include/linux/err.h:5,
+>                     from include/linux/clk.h:12,
+>                     from include/linux/cpufreq.h:11,
+>                     from drivers/cpufreq/brcmstb-avs-cpufreq.c:44:
+> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
+>     #define NULL ((void *)0)
+>                  ^
+> >> drivers/cpufreq/brcmstb-avs-cpufreq.c:460:10: note: in expansion of macro 'NULL'
+>       return NULL;
+>              ^~~~
+> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
+>     #define NULL ((void *)0)
+>                  ^
+>    drivers/cpufreq/brcmstb-avs-cpufreq.c:465:10: note: in expansion of macro 'NULL'
+>       return NULL;
+>              ^~~~
+> --
+>    In file included from include/linux/pm_qos.h:10:0,
+>                     from include/linux/cpufreq.h:16,
+>                     from drivers//cpufreq/brcmstb-avs-cpufreq.c:44:
+>    drivers//cpufreq/brcmstb-avs-cpufreq.c: In function 'brcm_avs_cpufreq_get':
+>    drivers//cpufreq/brcmstb-avs-cpufreq.c:459:12: error: 'dev' undeclared (first use in this function); did you mean 'sev'?
+>       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
+>                ^
+>    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
+>      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
+>                ^~~
+>    drivers//cpufreq/brcmstb-avs-cpufreq.c:459:12: note: each undeclared identifier is reported only once for each function it appears in
+>       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
+>                ^
+>    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
+>      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
+>                ^~~
+>    In file included from include/uapi/linux/posix_types.h:5:0,
+>                     from include/uapi/linux/types.h:14,
+>                     from include/linux/compiler.h:180,
+>                     from include/linux/err.h:5,
+>                     from include/linux/clk.h:12,
+>                     from include/linux/cpufreq.h:11,
+>                     from drivers//cpufreq/brcmstb-avs-cpufreq.c:44:
+> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
+>     #define NULL ((void *)0)
+>                  ^
+>    drivers//cpufreq/brcmstb-avs-cpufreq.c:460:10: note: in expansion of macro 'NULL'
+>       return NULL;
+>              ^~~~
+> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
+>     #define NULL ((void *)0)
+>                  ^
+>    drivers//cpufreq/brcmstb-avs-cpufreq.c:465:10: note: in expansion of macro 'NULL'
+>       return NULL;
+>              ^~~~
+> 
+> vim +459 drivers/cpufreq/brcmstb-avs-cpufreq.c
+> 
+>    452	
+>    453	static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
+>    454	{
+>    455		struct cpufreq_policy *policy = cpufreq_cpu_get_raw(cpu);
+>    456		struct private_data *priv;
+>    457	
+>    458		if (!policy) {
+>  > 459			dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
+>  > 460			return NULL;
+>    461		}
+>    462	
+>    463		priv = policy->driver_data;
+>    464		if (!priv || !priv->base)
+>    465			return NULL;
+>    466	
+>    467		return brcm_avs_get_frequency(priv->base);
+>    468	}
+>    469	
+> 
+> ---
+> 0-DAY kernel test infrastructure                 Open Source Technology Center
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
-brcm_avs_cpufreq_get() calls cpufreq_cpu_get() to get cpufreq policy,
-meanwhile, it also increments the kobject reference count of policy to
-mark it busy. However, a corresponding call to cpufreq_cpu_put() is
-ignored to decrement the kobject reference count back, which may lead
-to a potential stuck risk that cpuhp thread deadly wait for dropping
-of refcount when cpufreq policy free.
-
-The call trace of stuck risk could be:
-cpufreq_online()  //If cpufreq initialization failed, goto out_free_policy.
-    ->cpufreq_policy_free()	//Do cpufreq_policy free.
-        ->cpufreq_policy_put_kobj()
-            ->kobject_put()       //Skip if policy kfref count is not 1.
-                ->cpufreq_sysfs_release()
-                    ->complete()  //Complete policy->kobj_unregister.
-                ->wait_for_completion() //Wait for policy->kobj_unregister.
-
-A simple way to avoid this stuck risk is use cpufreq_cpu_get_raw()
-instead of cpufreq_cpu_get(), since brcmstb-avs driver just wants
-to get cpufreq policy.
-
-What's more, there is a potential UAF issue in cpufreq_notify_transition()
-that the cpufreq policy of current cpu has been released before using it.
-So we should make a judgement to avoid it.
+So sorry, I sent the wrong patch file, and resend correct patch which compile ok.
 
 Thanks!
 Qiwu
-
-Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
----
- drivers/cpufreq/brcmstb-avs-cpufreq.c | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-index 77b0e5d..7c4d60a 100644
---- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
-+++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-@@ -452,8 +452,15 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
- 
- static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
- {
--	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
--	struct private_data *priv = policy->driver_data;
-+	struct cpufreq_policy *policy = cpufreq_cpu_get_raw(cpu);
-+	struct private_data *priv;
-+
-+	if (!policy)
-+		return NULL;
-+
-+	priv = policy->driver_data;
-+	if (!priv || !priv->base)
-+		return NULL;
- 
- 	return brcm_avs_get_frequency(priv->base);
- }
--- 
-1.9.1
-
 
 _______________________________________________
 linux-arm-kernel mailing list
