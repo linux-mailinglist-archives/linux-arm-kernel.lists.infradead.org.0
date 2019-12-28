@@ -2,90 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C29B912BD94
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 13:48:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0136D12BD9F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 14:19:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RaIXjdD1fvuCpyWtGU8/5pqLnI78e+1paEq/4TcFhts=; b=WBb5FiE6bl+YLl
-	cCrj2DmlbRc4ZY7/f7MntCMDqTY6WDFTuVEG9I3NBEJxM3y1d7JnNTBmZC7Z678QWymhgi1w5P5OP
-	17Zkst3fTQLKoKh0a/vYerjMEVzAHczpQn/LEXtY0BGd5+WkITT18aomgEyDkW8EbA8jq4nwyYTJg
-	v7HsZe5/ZqsAqvnSRDu/MnFFBspQB8xr1KAzApn3MPdCrtWhZ22HWJ+Wxh4OQR5HYQVB3zo7M1KMc
-	J2Xfio3d+fuWPYrX3l87CMIraEA8QmZ+L9KlN3XU05ZfbNcjllhZscn5O9ANnGFSrHOA/x7/Vanuy
-	Rz9Kyj9Mw7M4OlPk5qSA==;
+	List-Owner; bh=5sCAmuikBxloAHverIRkQZdSK49cDgUHnuOxBSKUf4o=; b=OFKstzYEQoncjv
+	tHGC9QKE+IGLytkfSuwEUPNgC+ZQ65n7RDnZB/7zYWWWQzwIC7gan28ZcJPjjQQac7lqOh5bq/48r
+	ep7P+MEqXWUk/+2o8dXoSd5LWa1qrdHuaMEV/meg4SuooBgVZDE3D82ToBGG3+X2zV5urk52ENUyW
+	gOjJUUo8g+KZLtX4o5qxbvipDhsBYnoP6saa4QdZeuY/iRg8JOLdJE77HTpvHxq3aYunzD75xEicQ
+	JMACgiAkuhw4swSE84sizAgDUf4twzbjTlmhkSz3u4x++f9IcVk9VVXMwzQfCmiboOqnNYtIUYoHm
+	ftOTfXKwaIN7MKWZd9fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilBVf-0004Ny-A9; Sat, 28 Dec 2019 12:47:59 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ilC0L-0005jU-HR; Sat, 28 Dec 2019 13:19:41 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilBVU-0004NI-95
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 12:47:50 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q8so16049364pfh.7
+ id 1ilC0B-0005j9-RU
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 13:19:33 +0000
+Received: by mail-wr1-x442.google.com with SMTP id z7so28487558wrl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Dec 2019 04:47:47 -0800 (PST)
+ Sat, 28 Dec 2019 05:19:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=pI3bHdhVC4jD/lCQfsvWohXAM7HBD6rFo3cPOHaRtUA=;
- b=QVkGkqqEH87ZRVIkAEShKMvsKKVZNX3dS2U0uju+4fPWtxkNOzqcSBsgWgH/qH0xx7
- 6ABx1O2t8a111JC8iprulan++JxYGdfgd8eAAEOe8SlCcgI4xzG+4HxLJTLkZzbYpgEu
- Q12NgaT8kiSSsge8TFG315XsnQEsCkX/ij05bS1KgMkPTXyOso8IUTyb8p6OyOOhc4DV
- EvvLkucc9tFKXhCfY53doHLlw/iFswMpc4pVCf3yJ8UHEOcghpjz6P093iO0G9H1Le+d
- RGbDr+BgnufQ9veq9n0dia+mxDpqqML2sQYx/N89OXntI2NhisxWaY304KxnrXqDUm0r
- DfsA==
+ bh=mROGrVXLEQzNF7njXXU2HOGRKW7Iu6ci6QJQxa/5Pug=;
+ b=LljBa/7Vc+Pv+w8r0wajVxDjHPY9o1ACGA5bUuCUTKnVPF9MFXlFz7rQCXWQ9Zw2Md
+ DVBJPvdjgL9fnpycXMsu6+6FOit0rpWwV3e8RBteLCmvavOmr4DI6bhs6O2Qpmlxqops
+ yvu3Vbm2VxRrYmzeDsDRwqRq19f161xRoBC7QMUKUdjInj/cKgkuylPkOngboekCkcD3
+ rlbxI/0un3M9QwN1xkX0HyZb1Tm7Dp2WAzJ7cad8KGd0IO4AehX9OUx52k0gHD3IijdL
+ wSLcbi4jddnbmW1jg9fmcxLXo3ogZNMBlvMJagJCyexbCcBA7CjW0/aTjHgg9xBEyCj5
+ UvTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=pI3bHdhVC4jD/lCQfsvWohXAM7HBD6rFo3cPOHaRtUA=;
- b=SBm+kPNOG5aVeQWxNz6tnMHw1hrNeOPzJpBuGCWb6QQMPMOW6iWheqkwad8GvOWKgt
- xLSOq7lOwnKZXN1SuemPxFfDlUfQkWOrSLpIqMsnsv8wcAWVHJGJ/SiMbZ+ebUhHXRdn
- uTxKrpihXP1sFt3e7Jj9risASw3h93/hE7Kxr3jYdCNZi69l6Wra03uF/xv5SazYp750
- l+XHFSkJXFxBvycqc53ob/v+2C5mIr5bnDQV2YvU2jFGsKGtqcvaWc0LIQaUV3U+qETs
- K1Kza+Gf6dm6oLLGGy/0XnI1KNtN5sw4JObVipDEF7Mt+DRWoMG6TZ5oJaYsnRKlEZsE
- ZnRA==
-X-Gm-Message-State: APjAAAV5p/DMWbGdOc/cMuNFtZhuRrLe7fBihGPHqHOQPoIMHVHrcSsi
- 6feop1xF4b7llXgoAPT7cmQ=
-X-Google-Smtp-Source: APXvYqy0MYnN0gshVmCs8u0rVFEs4Ra4zcPjqBFATbA/kqGev/XZffwqJFL5m+vwVEEOZ44bOiSHfg==
-X-Received: by 2002:a63:1e47:: with SMTP id p7mr59163570pgm.339.1577537266826; 
- Sat, 28 Dec 2019 04:47:46 -0800 (PST)
-Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id e19sm17900399pjr.10.2019.12.28.04.47.45
- (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Sat, 28 Dec 2019 04:47:46 -0800 (PST)
-Date: Sat, 28 Dec 2019 20:47:44 +0800
-From: chenqiwu <qiwuchen55@gmail.com>
-To: mmayer@broadcom.com, rjw@rjwysocki.net, viresh.kumar@linaro.org,
- f.fainelli@gmail.com
-Subject: Re: [PATCH] cpufreq: brcmstb-avs-cpufreq: avoid a stuck risk and UAF
- issue in brcm_avs_cpufreq_get()
-Message-ID: <20191228124744.GA3491@cqw-OptiPlex-7050>
-References: <1577513730-14254-1-git-send-email-qiwuchen55@gmail.com>
- <201912281807.gbP6xHJ1%lkp@intel.com>
+ bh=mROGrVXLEQzNF7njXXU2HOGRKW7Iu6ci6QJQxa/5Pug=;
+ b=bi3gdKR0W29zExxbaARwtQSlsAX1Sv07Ji90WRe/kCak6ZkrJtD6SkjHKFob3G6oAZ
+ gK1E55oyEW16gAWAXRZf8ff/P7lsjCxmUYDgFrlSZvtRQlmXwrzZnXlR8lVqJmsrn0TJ
+ akPTY9FtMHli3ndBGNwxilghhDB65Y2hrMrb7CdZA3w0Xm8Dj/a41kWETZK1wv2JaSIo
+ rJTzfXyWkK2Ykf/I3p+How9XSLhcD2B/w282BDSiiX14apnWSrhpCV+NtqS0o0K7IZxI
+ nT5FUasGygWWYg7WWOYwRW4qBxXzRM9Ht3jvPTIdmekX/wCxseGMtBNqCMmCHW4BTFe/
+ UIsw==
+X-Gm-Message-State: APjAAAVNxR/Nq3xHqzZ0HCsQKKOgeQdSabiAa8ei+HW3IvUMXnVUEz7B
+ ROk2xobdnAtAE01C4kNKE36BexKB4R4=
+X-Google-Smtp-Source: APXvYqyeZtp0u4nqd2az6FFSTsGN6tOBc76dqmqvtmVQhd7ZRlATk1x+LzDOLY39GnKg6d0zp+W0IA==
+X-Received: by 2002:adf:e6c5:: with SMTP id y5mr54659377wrm.210.1577539168956; 
+ Sat, 28 Dec 2019 05:19:28 -0800 (PST)
+Received: from zhanggen-UX430UQ.lan ([95.179.219.143])
+ by smtp.gmail.com with ESMTPSA id o16sm15264205wmc.18.2019.12.28.05.19.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 28 Dec 2019 05:19:28 -0800 (PST)
+Date: Sat, 28 Dec 2019 21:19:30 +0800
+From: Gen Zhang <blackgod016574@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] board-dm644x-evm: fix 2 missing-check bugs in
+ evm_led_setup()
+Message-ID: <20191228131930.GA7214@zhanggen-UX430UQ.lan>
+References: <20191227023921.GA21233@zhanggen-UX430UQ>
+ <20191227160142.GW25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <201912281807.gbP6xHJ1%lkp@intel.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20191227160142.GW25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_044748_346944_196104F9 
-X-CRM114-Status: GOOD (  20.66  )
+X-CRM114-CacheID: sfid-20191228_051931_914882_E6BBB51A 
+X-CRM114-Status: GOOD (  15.91  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (qiwuchen55[at]gmail.com)
+ provider (blackgod016574[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (qiwuchen55[at]gmail.com)
+ in digit (blackgod016574[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,140 +103,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
+Cc: bgolaszewski@baylibre.com, nsekhar@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Dec 28, 2019 at 06:20:25PM +0800, kbuild test robot wrote:
-> Hi,
+On Fri, Dec 27, 2019 at 04:01:42PM +0000, Russell King - ARM Linux admin wrote:
+> On Fri, Dec 27, 2019 at 10:39:21AM +0800, Gen Zhang wrote:
+> > In evm_led_setup(), the allocation result of platform_device_alloc() and 
+> > platform_device_add_data() should be checked.
+> > 
+> > Signed-off-by: Gen Zhang <blackgod016574@gmail.com>
+> > ---
+> > diff --git a/arch/arm/mach-davinci/board-dm644x-evm.c b/arch/arm/mach-davinci/board-dm644x-evm.c
+> > index 9d87d4e..9cd2785 100644
+> > --- a/arch/arm/mach-davinci/board-dm644x-evm.c
+> > +++ b/arch/arm/mach-davinci/board-dm644x-evm.c
+> > @@ -352,15 +352,20 @@ evm_led_setup(struct i2c_client *client, int gpio, unsigned ngpio, void *c)
+> >  	 * device unregistration ...
+> >  	 */
+> >  	evm_led_dev = platform_device_alloc("leds-gpio", 0);
+> > -	platform_device_add_data(evm_led_dev,
+> > +	if (!evm_led_dev)
+> > +		return -ENOMEM;
+> > +	status = platform_device_add_data(evm_led_dev,
+> >  			&evm_led_data, sizeof evm_led_data);
+> > +	if (status)
+> > +		goto err;
+> >  
+> >  	evm_led_dev->dev.parent = &client->dev;
+> >  	status = platform_device_add(evm_led_dev);
+> > -	if (status < 0) {
+> > -		platform_device_put(evm_led_dev);
+> > -		evm_led_dev = NULL;
+> > -	}
+> > +	if (status)
+> > +		goto err;
+> > +err:
+> > +	platform_device_put(evm_led_dev);
+> > +	evm_led_dev = NULL;
 > 
-> Thank you for the patch! Yet something to improve:
+> Please look again at the above change very closely. You will want to
+> send an updated patch.
 > 
-> [auto build test ERROR on pm/linux-next]
-> [also build test ERROR on v5.5-rc3 next-20191220]
-> [if your patch is applied to the wrong git tree, please drop us a note to help
-> improve the system. BTW, we also suggest to use '--base' option to specify the
-> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-> 
-> url:    https://github.com/0day-ci/linux/commits/qiwuchen55-gmail-com/cpufreq-brcmstb-avs-cpufreq-avoid-a-stuck-risk-and-UAF-issue-in-brcm_avs_cpufreq_get/20191228-141943
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git linux-next
-> config: arm-allmodconfig (attached as .config)
-> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
-> reproduce:
->         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         # save the attached .config to linux build tree
->         GCC_VERSION=7.5.0 make.cross ARCH=arm 
-> 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
-> 
-> All error/warnings (new ones prefixed by >>):
-> 
->    In file included from include/linux/pm_qos.h:10:0,
->                     from include/linux/cpufreq.h:16,
->                     from drivers/cpufreq/brcmstb-avs-cpufreq.c:44:
->    drivers/cpufreq/brcmstb-avs-cpufreq.c: In function 'brcm_avs_cpufreq_get':
-> >> drivers/cpufreq/brcmstb-avs-cpufreq.c:459:12: error: 'dev' undeclared (first use in this function); did you mean 'sev'?
->       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
->                ^
->    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
->      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
->                ^~~
->    drivers/cpufreq/brcmstb-avs-cpufreq.c:459:12: note: each undeclared identifier is reported only once for each function it appears in
->       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
->                ^
->    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
->      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
->                ^~~
->    In file included from include/uapi/linux/posix_types.h:5:0,
->                     from include/uapi/linux/types.h:14,
->                     from include/linux/compiler.h:180,
->                     from include/linux/err.h:5,
->                     from include/linux/clk.h:12,
->                     from include/linux/cpufreq.h:11,
->                     from drivers/cpufreq/brcmstb-avs-cpufreq.c:44:
-> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
->     #define NULL ((void *)0)
->                  ^
-> >> drivers/cpufreq/brcmstb-avs-cpufreq.c:460:10: note: in expansion of macro 'NULL'
->       return NULL;
->              ^~~~
-> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
->     #define NULL ((void *)0)
->                  ^
->    drivers/cpufreq/brcmstb-avs-cpufreq.c:465:10: note: in expansion of macro 'NULL'
->       return NULL;
->              ^~~~
-> --
->    In file included from include/linux/pm_qos.h:10:0,
->                     from include/linux/cpufreq.h:16,
->                     from drivers//cpufreq/brcmstb-avs-cpufreq.c:44:
->    drivers//cpufreq/brcmstb-avs-cpufreq.c: In function 'brcm_avs_cpufreq_get':
->    drivers//cpufreq/brcmstb-avs-cpufreq.c:459:12: error: 'dev' undeclared (first use in this function); did you mean 'sev'?
->       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
->                ^
->    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
->      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
->                ^~~
->    drivers//cpufreq/brcmstb-avs-cpufreq.c:459:12: note: each undeclared identifier is reported only once for each function it appears in
->       dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
->                ^
->    include/linux/device.h:1776:12: note: in definition of macro 'dev_warn'
->      _dev_warn(dev, dev_fmt(fmt), ##__VA_ARGS__)
->                ^~~
->    In file included from include/uapi/linux/posix_types.h:5:0,
->                     from include/uapi/linux/types.h:14,
->                     from include/linux/compiler.h:180,
->                     from include/linux/err.h:5,
->                     from include/linux/clk.h:12,
->                     from include/linux/cpufreq.h:11,
->                     from drivers//cpufreq/brcmstb-avs-cpufreq.c:44:
-> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
->     #define NULL ((void *)0)
->                  ^
->    drivers//cpufreq/brcmstb-avs-cpufreq.c:460:10: note: in expansion of macro 'NULL'
->       return NULL;
->              ^~~~
-> >> include/linux/stddef.h:8:14: warning: return makes integer from pointer without a cast [-Wint-conversion]
->     #define NULL ((void *)0)
->                  ^
->    drivers//cpufreq/brcmstb-avs-cpufreq.c:465:10: note: in expansion of macro 'NULL'
->       return NULL;
->              ^~~~
-> 
-> vim +459 drivers/cpufreq/brcmstb-avs-cpufreq.c
-> 
->    452	
->    453	static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
->    454	{
->    455		struct cpufreq_policy *policy = cpufreq_cpu_get_raw(cpu);
->    456		struct private_data *priv;
->    457	
->    458		if (!policy) {
->  > 459			dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
->  > 460			return NULL;
->    461		}
->    462	
->    463		priv = policy->driver_data;
->    464		if (!priv || !priv->base)
->    465			return NULL;
->    466	
->    467		return brcm_avs_get_frequency(priv->base);
->    468	}
->    469	
-> 
-> ---
-> 0-DAY kernel test infrastructure                 Open Source Technology Center
-> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+> -- 
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
 
-So sorry, I sent the wrong patch file, and resend correct patch which compile ok.
+Thanks for your reply. You mean the if (state < 0 ) to if (state) or
+anything else? Please point out directly.
 
-Thanks!
-Qiwu
+Best,
+Gen
 
 _______________________________________________
 linux-arm-kernel mailing list
