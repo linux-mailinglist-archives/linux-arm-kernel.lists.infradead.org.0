@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6B1512BE7D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:37:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08F0312BE7F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:38:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=s5HuD7SlW/V3MQyJsfBbnB4SL7s4Aw5GWOOoNtNVhqo=; b=aNlVBMz3tLIUzsYFXF2tQ6Rw4I
-	xlgNWWj93HtK8tiogASa/U1KMgJBrp80BFuT+PhkhjUFuPFkPvsPM4wX2dy/YVgH4Zr3UrzN2sASW
-	myJe8G01ZHCKZnAQkUqs7feU3PhOp6RvfP4ShbNiKo8XS65pqQaYXk1++/xwQ6IncvOXg/v4UGYJ7
-	sAAcCi1+gKcF+WVKSQD8hOvZR6ZPvLZupc9/I4SOYLpf9V/gPEUisGl0dFdgxaHGHrBYfMiNcHvnC
-	oOdP8Swsn7Z/9FcY4fFkEWA+zPtf99E4M/SFJVHtM6fBBDibPQLiFu7ZgeTylizqKRBnN07Z0KT9W
-	/s/jMk1Q==;
+	bh=1Pu19BmpwShbEru/yBcLNhBs9gZ5QImRgy3lBNhAQwc=; b=qjPwabEi5rfuDj5FnT13ayGx/j
+	4nX8UV40Cz9yGrm88W6Ug/4myGRiRhOo44hiTiIb+4uJax085l+JWuSeURy63Q8ljmsm0mkiQE2Mp
+	Vk3k+OsuEPNM1B2rp7e1ij4XK2P90yAz1kZ+I4aJyJpFUfSxnTDo/lbhyKPgwMzCeoPYrCS7k3SFZ
+	TXtjWOS3jhtXBiuA20TWc/6/icWN9w8ytxFKHqJal/2kTj9DLq0DJUxeugnX5gxaXNEa/SCGWKEij
+	BsqLELQM9j7wQRFJWdEK782yIW+zuLAtaWrkpBv1PjrzdMdh2g0UKSL+O+z9SQYCogkvc2JqZXiAx
+	0XH4/0eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilGyF-0006MB-Ok; Sat, 28 Dec 2019 18:37:51 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ilGyX-0006c7-En; Sat, 28 Dec 2019 18:38:09 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilGwH-0004wJ-Hm; Sat, 28 Dec 2019 18:35:50 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i6so9475214pfc.1;
- Sat, 28 Dec 2019 10:35:49 -0800 (PST)
+ id 1ilGwJ-0004yJ-JK; Sat, 28 Dec 2019 18:35:52 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id d5so6116097pjz.5;
+ Sat, 28 Dec 2019 10:35:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=y/sE4xh1t2Cj8E77giYRBaNWrpcKyHc3i8dVPSovTK4=;
- b=HggcovvR0ogFzw+dm8PvFlPesZYlhG5KhXgOaKns7flxoEPrBu2JbFjj1rJ6TylBUY
- grdEZJwUdf8Xt8x/KKOFpBrBeOIxlvRIAkzmjrokl6/A1Kum3J51+xwWoZGyZtEnN0M/
- pBWNiO2rVL2Xx7w8NBxv93DExpYLnn02bNA8fy3tGYc6dqqbaD2IQBCzu7pIqqj2z9yP
- ZRgyB7YwrSGb4TzirAWob2TYmGDLSc7FisDS+xCLyDfmK+EyfAvKzSFXJegZnhpYpt0x
- Ghqc2ZFAS9Snl1W4wohZrcH7c7vQ9Mcpq2GI2OByddPXR3b/pAqdlIWJ7vHUFsfgavdk
- P+Cw==
+ bh=wHDWNkKUY/7HcK7MqADsWD8av4WLf/lhpq+f70oOVx4=;
+ b=Nyg2CImHIlC00wE5qnxxCd4xvhYPSTqURjgeLIlpMMiH+Hv5taQKrd8r720IzIBAGR
+ nZRD2oKDccKM/yuGWeJRcmnj2+SYaO0cStDR4fRrmidSo76bcIhoTbCfYR0PlGyb2fFd
+ emyVPlFXLJi9tObOLVe+/5iePjUhXIrC39i3wjkLInXeLkqTHHH4cYIueyRGCiqVVpT7
+ oqEep1j22vmUS8N8PkBcEdMibggLi1RMRklHW4jnAP49yx6KEcvqsAFIoG939aoRxKDH
+ EFq2ycJTA5aeOUf2Y1/Bge3TG8s9hNorF0D2GyfxQRa3Od50CwHYL7+JIMw4qmOOS3xM
+ G/MA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=y/sE4xh1t2Cj8E77giYRBaNWrpcKyHc3i8dVPSovTK4=;
- b=VKa87MnicRrbc86QEGrjKLAjhGpVUdFh/jwtKnQxbQikKwqu4K2sRw4pF49KSNDsCF
- pWrCSz1qKxaePCwKNy1Jn2CbiPghVp475bSijn81CNkWuWFph/4OYklPjc0P/dfBTzPU
- mzipHATPW096A+PezhNG75uXjx7iOs+pjZC4NZJcD64MthqfEapwxzOTtK+tbgJEuBDU
- usNDihzG9aXHl5xlT5SssInG1zmf2AcbMIU3iHE95iyYtDfefeskEsNXWFWWwMGE47Kl
- UBNqRu3RVXJbyyCvIRdNRoFJUFB7lBWyvAqb9EbFk5qdzY3h+Ka2/vhplP6i9FV/t/9S
- ojRw==
-X-Gm-Message-State: APjAAAWBwzCUZp8qkbZvBVMGCzfnAIDlfxzMHhrh9a/v7Bbn5rTll6tB
- 5YmYKyJvdqfyUe0583LSqyQ=
-X-Google-Smtp-Source: APXvYqy67ub/4Rasa9TpN7ktqWdCOG7h8UEvzxw+QTUrNSPvo1fREyMoMw31xtaDb43AL7S++RClqQ==
-X-Received: by 2002:a63:1b49:: with SMTP id b9mr61252160pgm.258.1577558148388; 
- Sat, 28 Dec 2019 10:35:48 -0800 (PST)
+ bh=wHDWNkKUY/7HcK7MqADsWD8av4WLf/lhpq+f70oOVx4=;
+ b=EXh8O0ocvX5Wla98rfhBE3BCjESI3QQKyRXrvPyp6/5OeDDtT5s8MzqBtJk4VVOS1d
+ N1RSyTzojMkedR6e4JzjaMvB7C5+XsXLIYtIyE0tJyzLBArQCA+ATlUA3KeiXONOFPy8
+ a2XHfb9BYN191rNxYRHvVYOl8ZFWjhpMV9o3g3t1zt98qM04QxzVR7Uq5+NosUlJxDQ4
+ O3J+9o4tDPu6uATBbhFAHpO8x/h3j9AuaBm2OIC5GuWEt3iYoKwIWJMNey7OkhBXCU1n
+ x4vpGsbPT3Xll6RzStWbkUB6lqdUm1IKC68KHG0QnCaX239icDEv6W/MAjz0KcCwt78a
+ BoBQ==
+X-Gm-Message-State: APjAAAU+5kxF+bO0vwoOU5AT5UPhVT+Tm+I7znRetldu15d4EGQllq/M
+ M7vyq1qHJGksDfIsJREHRXg=
+X-Google-Smtp-Source: APXvYqzg4HSZcS//Fgz3qJ6tuCit2iLqCHRWiMt5cWev8Yt8+UHZ0o3AuJy9vdLOuNpfASdbLD8YRA==
+X-Received: by 2002:a17:902:b187:: with SMTP id
+ s7mr59226454plr.104.1577558150166; 
+ Sat, 28 Dec 2019 10:35:50 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id t1sm42242427pgq.23.2019.12.28.10.35.47
+ by smtp.gmail.com with ESMTPSA id n7sm18754871pjq.8.2019.12.28.10.35.49
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 28 Dec 2019 10:35:47 -0800 (PST)
+ Sat, 28 Dec 2019 10:35:49 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  rjui@broadcom.com, sbranden@broadcom.com,
@@ -65,25 +66,22 @@ To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  linux-arm-kernel@lists.infradead.org, nios2-dev@lists.rocketboards.org,
  linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
-Subject: [PATCH 06/13] mailbox: hi3660: convert to
+Subject: [PATCH 07/13] mailbox: platform-mhu: convert to
  devm_platform_ioremap_resource
-Date: Sat, 28 Dec 2019 18:35:31 +0000
-Message-Id: <20191228183538.26189-6-tiny.windzz@gmail.com>
+Date: Sat, 28 Dec 2019 18:35:32 +0000
+Message-Id: <20191228183538.26189-7-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191228183538.26189-1-tiny.windzz@gmail.com>
 References: <20191228183538.26189-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_103549_635807_F0947643 
-X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-CacheID: sfid-20191228_103551_661488_DA3A3046 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
@@ -117,31 +115,31 @@ Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/mailbox/hi3660-mailbox.c | 4 +---
+ drivers/mailbox/platform_mhu.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/mailbox/hi3660-mailbox.c b/drivers/mailbox/hi3660-mailbox.c
-index 53f4bc2488c5..97e2c4ed807d 100644
---- a/drivers/mailbox/hi3660-mailbox.c
-+++ b/drivers/mailbox/hi3660-mailbox.c
-@@ -240,7 +240,6 @@ static int hi3660_mbox_probe(struct platform_device *pdev)
+diff --git a/drivers/mailbox/platform_mhu.c b/drivers/mailbox/platform_mhu.c
+index b6e34952246b..a5922ac0b0bf 100644
+--- a/drivers/mailbox/platform_mhu.c
++++ b/drivers/mailbox/platform_mhu.c
+@@ -117,7 +117,6 @@ static int platform_mhu_probe(struct platform_device *pdev)
+ 	int i, err;
+ 	struct platform_mhu *mhu;
  	struct device *dev = &pdev->dev;
- 	struct hi3660_mbox *mbox;
- 	struct mbox_chan *chan;
 -	struct resource *res;
- 	unsigned long ch;
- 	int err;
- 
-@@ -248,8 +247,7 @@ static int hi3660_mbox_probe(struct platform_device *pdev)
- 	if (!mbox)
+ 	int platform_mhu_reg[MHU_CHANS] = {
+ 		MHU_SEC_OFFSET, MHU_LP_OFFSET, MHU_HP_OFFSET
+ 	};
+@@ -127,8 +126,7 @@ static int platform_mhu_probe(struct platform_device *pdev)
+ 	if (!mhu)
  		return -ENOMEM;
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	mbox->base = devm_ioremap_resource(dev, res);
-+	mbox->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(mbox->base))
- 		return PTR_ERR(mbox->base);
- 
+-	mhu->base = devm_ioremap_resource(dev, res);
++	mhu->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(mhu->base)) {
+ 		dev_err(dev, "ioremap failed\n");
+ 		return PTR_ERR(mhu->base);
 -- 
 2.17.1
 
