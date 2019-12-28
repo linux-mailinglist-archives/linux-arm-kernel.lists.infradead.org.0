@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3871D12BE89
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:39:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5166712BE88
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:39:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cW5x48Win5FJK4X5bU+egyRDtU3NSEDFN1Tp0elZWOs=; b=sdhBei+FunubaTgy4FfH9yuSzn
-	zFaxGM+W1L40bx2Qs8/QzbGcxWlavzynBc/PYNz86mQYahHew7lM35tQmoKHdMXesDhUhh/Gu/c+W
-	wL4/RrIl5m/KBj1pzN+vKc4r6gICKkafbWLlaLlK+Nos8oE4v89TNANwn/hvbOtQXshw4f9EOy+pk
-	/Ef0xDFckRAD7+RwKnrUHUWtqE/657qyG5x356puiw92peJwTMe7/J9071+tWcDgYh52u458jmL30
-	xmHbGNhYFEpQB6ZVHXPj8eQg2FASzJhV6rA9adSC5wAsJk2FW4JkxiLsed9xbp7YsNMJXwg64SqOk
-	leR+5U3Q==;
+	bh=4wah0Sa+OmLLeXdc6yRV6qo12DWnhuLqXn4cUoxCkPQ=; b=oER8xgjW1oe6+zRcIzQCVenYsp
+	i1W1nXTvdkRYVnCHFTHRG2yWkiQ4wHA0FLgWBiogVwmvP8xm9/2sSUidI1d5Uuy2kcAJACx/Yo0K1
+	jhEa1tTuaPmRuTealvLlzI+WGvk9MDEf+climIj9kA7bIkZ73DGDNeUq3P23JWqfi9Kj9U+AuBNve
+	2+nnEcC2AThgFi6RwRq3Mxw/FOHP7eLHtnHekLJnKrL6FSgxQcfd7xkeqglNiUhIZkBNATTenCKyV
+	3UXqARCzERyVv2vCyi5sWMLOZuADsMVSrJe8v0Ei3UUK5lh+j3U9DyKtD1fqA4ibHrOHwIuTcNK0W
+	B95Q2z9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilGzo-0007xM-FJ; Sat, 28 Dec 2019 18:39:28 +0000
+	id 1ilGza-0007jO-DM; Sat, 28 Dec 2019 18:39:14 +0000
 Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilGwP-00053k-Cv; Sat, 28 Dec 2019 18:35:58 +0000
-Received: by mail-pg1-x544.google.com with SMTP id z124so16029565pgb.13;
- Sat, 28 Dec 2019 10:35:57 -0800 (PST)
+ id 1ilGwR-00055Q-Lw; Sat, 28 Dec 2019 18:36:01 +0000
+Received: by mail-pg1-x544.google.com with SMTP id k25so16039532pgt.7;
+ Sat, 28 Dec 2019 10:35:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=D52kDZpItpEgyWtODzvm9zhNNB9VSkcFYK/HjZsI8Go=;
- b=buKvAITmrchkgml3RJ6rno8p2jfN0GrgBL0OBWLGNScbzpz89Wi31X8nu5grIh2TgZ
- +HeBPzjiNWMSmpky1ys0RIWzNzfxJLuwU2j1XKXIureYlpNYyTZJarlNQPpIRI8CeuaV
- W/0IZLMK43cqLRqwF3LLOSsNZZmiNVCn+uAqIAmbhe1FMs27Qc2orshWchJEj+FMmRG/
- WXNwA+UN+8BKCgsvXgClCPwvuKrNhpd6KzTi7/b2ysycQ/Fh+sYggOJicyXnAVkoQrO6
- rSn4FFH2EFrTKI2MY3LxbeaxoxC927l9BGsCFCHMh0+roRj1Wmjggspkn1KcA80ND6Jp
- TNKw==
+ bh=ujHJl1LlnUC8f51mXZ4Fb27CXnf51H+Hx/+mqG2aecM=;
+ b=rNui478T/QEp9Tbc1cDUJs2i7U62DXb62rj94vzLSxPg9zViOhL1kw7a/GoZhfAAtW
+ dEuAXR5m/IwJqTU8Ho4SxCK9DyMNaCW01BJEE4rLcg1UCjPg+iDfTE6SqPYxpu6rBI0u
+ 1gwxpMJFjMnhzEqsV0MIamVbpMQhGEK4jTv2xqY8UOESHGsH3kgKAQE+v3N0U9zi8zaK
+ 2mu7sqU8Usn4iGQNUrelWq4J+Pmwem+39Aok8/1WXkG6FtgGZT1WBARoaDrk1tVFr16x
+ iKe4VKOyDBy2gS2GIId4qItvRtUgYZalhpev6bHNybwlqoCjOm2JJp7ygbyQ+hyUNa8l
+ cmfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=D52kDZpItpEgyWtODzvm9zhNNB9VSkcFYK/HjZsI8Go=;
- b=aAcFcDCGyPYjSIPvGjIj1eid+glaobbUq8PdsOgRnM4fjKq7JD9t/VXI2p9ZoR72Vm
- cNOYuTkaR12yKxkFH9LZ3J2j0McHtgupfQunCxc6AvjTFTWplMXPaEU0VZu3tg9yER8G
- M+nPDELM9AlQtAudlCOiHXu39qrYVKe8Qs48tLKobv/6zPTJvGGvVPhdJKugJ7LNX9bG
- 4bro+qm6uWwNJzjK00c7orBz1Qs/l888UdmAzUCgaqltb/mD1wfzIJNJ67ByyBCDvW8c
- crtua1WFkXEjwRuf+MZItEmUWUTwW1Dn3yXko5eStN4LMF1skf237TWSsjOJHRVZVo0Q
- +vOw==
-X-Gm-Message-State: APjAAAU6Jnkxv2cOYQYv3sgXJBDDhi7qH9dKqb3mrBaKesMuKwam+xuG
- paGIx9iOMkVORPXKNHPurl0=
-X-Google-Smtp-Source: APXvYqxRDjC1yrZLagxhy9lKRDbplLhgf+LIWifgAoLN74eEtUbWySnjvGyIR5MxLdy/F0goyOL2Xw==
-X-Received: by 2002:aa7:968d:: with SMTP id f13mr59926148pfk.67.1577558156956; 
- Sat, 28 Dec 2019 10:35:56 -0800 (PST)
+ bh=ujHJl1LlnUC8f51mXZ4Fb27CXnf51H+Hx/+mqG2aecM=;
+ b=P6gPXn6Cl2Rw35hvZdxCsT1ejSqVAahqxqIT/l1WGKTjOQIfeU0H5msk/lJptpKPYH
+ laKnnkYQVR2h1ZCvdVTfBheDCbV6aBT8HErT0Yq7NkvUuoHUF4/da2nRdN7izarpaKM5
+ cCYWo2t+yz0AGLaEK8+SYGrecxqFh55IvvOS2VXcB/tMOrF1FqebSQxQ+Hg+7H0L0cz5
+ J5w4ZBkNZAH/rHG/vAihhwd+6ecsQrO3N3BpNJ1R9tWCo3e6n3f4uUXZTszUEBOiRXr+
+ 4j+ZuJizWtqLmYR4bksf+R2CuK9wImx65EaZcV/rhTZbA+E5ebBfPtnThVcvmUW2BTSS
+ ARYw==
+X-Gm-Message-State: APjAAAXecPWYKXPer8zOdwMZgplMnpUwXO1aj+UxKDiO8IN0YNZZ1zvH
+ CppQPKm8h/IYgJXlXLp9znQ=
+X-Google-Smtp-Source: APXvYqxIq2P3GfalCrglm2NNlOSSOLuNN16ePEwVBKXxH+eUtkSCN2+TsAdPG2+LZgKy1zvL62S6+w==
+X-Received: by 2002:a62:197:: with SMTP id 145mr60624660pfb.188.1577558158509; 
+ Sat, 28 Dec 2019 10:35:58 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id f43sm19419481pje.23.2019.12.28.10.35.56
+ by smtp.gmail.com with ESMTPSA id w11sm44601709pfn.4.2019.12.28.10.35.58
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 28 Dec 2019 10:35:56 -0800 (PST)
+ Sat, 28 Dec 2019 10:35:58 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  rjui@broadcom.com, sbranden@broadcom.com,
@@ -65,16 +65,15 @@ To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  linux-arm-kernel@lists.infradead.org, nios2-dev@lists.rocketboards.org,
  linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
-Subject: [PATCH 11/13] mailbox: hi6220: convert to
- devm_platform_ioremap_resource
-Date: Sat, 28 Dec 2019 18:35:36 +0000
-Message-Id: <20191228183538.26189-11-tiny.windzz@gmail.com>
+Subject: [PATCH 12/13] mailbox: omap: do some cleanup
+Date: Sat, 28 Dec 2019 18:35:37 +0000
+Message-Id: <20191228183538.26189-12-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191228183538.26189-1-tiny.windzz@gmail.com>
 References: <20191228183538.26189-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_103557_503965_1BD58D27 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20191228_103559_937142_C936B992 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -114,42 +113,46 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Use devm_platform_ioremap_resource() to simplify code.
+'i' and 'ret' are variables of the same type and there is no
+need to use two lines.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/mailbox/hi6220-mailbox.c | 7 ++-----
+ drivers/mailbox/omap-mailbox.c | 7 ++-----
  1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/mailbox/hi6220-mailbox.c b/drivers/mailbox/hi6220-mailbox.c
-index cc236ac7a0b5..d9140a016170 100644
---- a/drivers/mailbox/hi6220-mailbox.c
-+++ b/drivers/mailbox/hi6220-mailbox.c
-@@ -264,7 +264,6 @@ static int hi6220_mbox_probe(struct platform_device *pdev)
- 	struct device_node *node = pdev->dev.of_node;
- 	struct device *dev = &pdev->dev;
- 	struct hi6220_mbox *mbox;
--	struct resource *res;
- 	int i, err;
+diff --git a/drivers/mailbox/omap-mailbox.c b/drivers/mailbox/omap-mailbox.c
+index 5978a35aac6d..9b9994be5602 100644
+--- a/drivers/mailbox/omap-mailbox.c
++++ b/drivers/mailbox/omap-mailbox.c
+@@ -695,8 +695,7 @@ static struct mbox_chan *omap_mbox_of_xlate(struct mbox_controller *controller,
  
- 	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-@@ -287,15 +286,13 @@ static int hi6220_mbox_probe(struct platform_device *pdev)
- 	if (mbox->irq < 0)
- 		return mbox->irq;
+ static int omap_mbox_probe(struct platform_device *pdev)
+ {
+-	struct resource *mem;
+-	int ret;
++	int ret, i;
+ 	struct mbox_chan *chnls;
+ 	struct omap_mbox **list, *mbox, *mboxblk;
+ 	struct omap_mbox_fifo_info *finfo, *finfoblk;
+@@ -709,7 +708,6 @@ static int omap_mbox_probe(struct platform_device *pdev)
+ 	u32 num_users, num_fifos;
+ 	u32 tmp[3];
+ 	u32 l;
+-	int i;
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	mbox->ipc = devm_ioremap_resource(dev, res);
-+	mbox->ipc = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(mbox->ipc)) {
- 		dev_err(dev, "ioremap ipc failed\n");
- 		return PTR_ERR(mbox->ipc);
- 	}
+ 	if (!node) {
+ 		pr_err("%s: only DT-based devices are supported\n", __func__);
+@@ -772,8 +770,7 @@ static int omap_mbox_probe(struct platform_device *pdev)
+ 	if (!mdev)
+ 		return -ENOMEM;
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
--	mbox->base = devm_ioremap_resource(dev, res);
-+	mbox->base = devm_platform_ioremap_resource(pdev, 1);
- 	if (IS_ERR(mbox->base)) {
- 		dev_err(dev, "ioremap buffer failed\n");
- 		return PTR_ERR(mbox->base);
+-	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	mdev->mbox_base = devm_ioremap_resource(&pdev->dev, mem);
++	mdev->mbox_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(mdev->mbox_base))
+ 		return PTR_ERR(mdev->mbox_base);
+ 
 -- 
 2.17.1
 
