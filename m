@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7BE112BE87
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:39:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3871D12BE89
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:39:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LxXQ8u7DhzrHSF7JRFi2MyC5H6iKvz8+6h3duNN/3SY=; b=pIftzE0qk5JHlkSyu2vNapuSNX
-	fbHK55RSr26Z0XUtvTUVObZC5jQh0kSgZQXjWNyFUCrvfU7UReYX5T7oxDy27ioPBFqU5xmUR0YXc
-	OIqlYOImACh7CiLIsdFEsmSGkSMIh+3UukjJ5xAWqdAsumNY5TF5FXW9nxNH6gxqKcgVj56rEdPjR
-	hui6nxXmQ9b9wpKlDifeVIcjCr/oa5j/LY0rlIpHAvmtNfsDXjOQdAROgvMWJ/qdCKDVMgQKNoZqX
-	b8x46nm/y0vCnREE2ytcnv6eLbPB/eNwfzwPGNp6U4hywYhZuTLg/6Ed1i19F1klcdqujzLsEmKMC
-	Dfo2OW6g==;
+	bh=cW5x48Win5FJK4X5bU+egyRDtU3NSEDFN1Tp0elZWOs=; b=sdhBei+FunubaTgy4FfH9yuSzn
+	zFaxGM+W1L40bx2Qs8/QzbGcxWlavzynBc/PYNz86mQYahHew7lM35tQmoKHdMXesDhUhh/Gu/c+W
+	wL4/RrIl5m/KBj1pzN+vKc4r6gICKkafbWLlaLlK+Nos8oE4v89TNANwn/hvbOtQXshw4f9EOy+pk
+	/Ef0xDFckRAD7+RwKnrUHUWtqE/657qyG5x356puiw92peJwTMe7/J9071+tWcDgYh52u458jmL30
+	xmHbGNhYFEpQB6ZVHXPj8eQg2FASzJhV6rA9adSC5wAsJk2FW4JkxiLsed9xbp7YsNMJXwg64SqOk
+	leR+5U3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilGzP-0007TY-5j; Sat, 28 Dec 2019 18:39:03 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1ilGzo-0007xM-FJ; Sat, 28 Dec 2019 18:39:28 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilGwN-00052P-Uh; Sat, 28 Dec 2019 18:35:57 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 4so16318963pfz.9;
- Sat, 28 Dec 2019 10:35:55 -0800 (PST)
+ id 1ilGwP-00053k-Cv; Sat, 28 Dec 2019 18:35:58 +0000
+Received: by mail-pg1-x544.google.com with SMTP id z124so16029565pgb.13;
+ Sat, 28 Dec 2019 10:35:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ui3H4sw6TXQZWyHZyumXfMS536ZRAUjdYlFCGuvHxAE=;
- b=QR/5gU3bd29uWtBlob2vq9WqKJ3hQUz+QbCW77CdxMCDaWVnA0C/c5Lx8ui8kEF7E4
- EJow2hD7opQrUZ22y3QHevj4gAvdDrI+hipJ2NNfxEZsOyHb444K1XGg/QZQJkKNH9n6
- hDfRLiS1l0jR5Krj2XWoSBuz5HpaMLXUGGuvcRI/vccwwizylRM35WopdZZg925EqhPy
- n0e08sqtH3zgT/f3gSypGJpdp4GCNnBueiPK26DJIb3wHYNUPrqr+S/8LRhfKekIp3Ev
- qRbJwKA7g1M6NqZUbhNvwoZPWSdTsI5x1Hy7jNncmQnUGUXYbl1tupuGX/2eLm0XD5Ny
- hmZw==
+ bh=D52kDZpItpEgyWtODzvm9zhNNB9VSkcFYK/HjZsI8Go=;
+ b=buKvAITmrchkgml3RJ6rno8p2jfN0GrgBL0OBWLGNScbzpz89Wi31X8nu5grIh2TgZ
+ +HeBPzjiNWMSmpky1ys0RIWzNzfxJLuwU2j1XKXIureYlpNYyTZJarlNQPpIRI8CeuaV
+ W/0IZLMK43cqLRqwF3LLOSsNZZmiNVCn+uAqIAmbhe1FMs27Qc2orshWchJEj+FMmRG/
+ WXNwA+UN+8BKCgsvXgClCPwvuKrNhpd6KzTi7/b2ysycQ/Fh+sYggOJicyXnAVkoQrO6
+ rSn4FFH2EFrTKI2MY3LxbeaxoxC927l9BGsCFCHMh0+roRj1Wmjggspkn1KcA80ND6Jp
+ TNKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ui3H4sw6TXQZWyHZyumXfMS536ZRAUjdYlFCGuvHxAE=;
- b=exyvfa3VlWmzD80c9SY0X+em7KBGJPXFmFj9ajIIDL/f9jZ/ZEeg/2/AMBeIkYU3Fy
- /E0cS2YdIXwBw3HThaZdFM6mHbcVDpap18zB7roaUdIq1YpWzKNfh9SJGDUEE5AIMZF2
- fkA9rCjfo77xSTsPnthrjqjpYqEsTp+aUwzuVMDOERoK3D0InjeD30YNxkyauKGdJ1Zl
- nN0sdbMZ9UUFDCTsjnAFlFRD2m+PHsfoo5d5MMCDjpVR9vpIBpU7Pwz8LvK2uCVxzQE2
- irhOHf3sm63SO5Ac9kbCcIWNVd/sk56MVar1C0N2xjO18KBBy3AbR7bxExN7z39S50A6
- 0xOg==
-X-Gm-Message-State: APjAAAVFFpAijJ3+Hi9THFNuvcsdBT5IJT4OI4b7JPSx+nwD8Auk+2J5
- KDcVI89QCfM8eIheI3F4rmM=
-X-Google-Smtp-Source: APXvYqzHr4KeI0b8gMJWBokRn8PKrEYYqhG+ocElUlfVhzxi6A9/q0OMkXH/noLIQBQBJ/jS6urxWg==
-X-Received: by 2002:a62:ed0b:: with SMTP id u11mr60416235pfh.46.1577558155293; 
- Sat, 28 Dec 2019 10:35:55 -0800 (PST)
+ bh=D52kDZpItpEgyWtODzvm9zhNNB9VSkcFYK/HjZsI8Go=;
+ b=aAcFcDCGyPYjSIPvGjIj1eid+glaobbUq8PdsOgRnM4fjKq7JD9t/VXI2p9ZoR72Vm
+ cNOYuTkaR12yKxkFH9LZ3J2j0McHtgupfQunCxc6AvjTFTWplMXPaEU0VZu3tg9yER8G
+ M+nPDELM9AlQtAudlCOiHXu39qrYVKe8Qs48tLKobv/6zPTJvGGvVPhdJKugJ7LNX9bG
+ 4bro+qm6uWwNJzjK00c7orBz1Qs/l888UdmAzUCgaqltb/mD1wfzIJNJ67ByyBCDvW8c
+ crtua1WFkXEjwRuf+MZItEmUWUTwW1Dn3yXko5eStN4LMF1skf237TWSsjOJHRVZVo0Q
+ +vOw==
+X-Gm-Message-State: APjAAAU6Jnkxv2cOYQYv3sgXJBDDhi7qH9dKqb3mrBaKesMuKwam+xuG
+ paGIx9iOMkVORPXKNHPurl0=
+X-Google-Smtp-Source: APXvYqxRDjC1yrZLagxhy9lKRDbplLhgf+LIWifgAoLN74eEtUbWySnjvGyIR5MxLdy/F0goyOL2Xw==
+X-Received: by 2002:aa7:968d:: with SMTP id f13mr59926148pfk.67.1577558156956; 
+ Sat, 28 Dec 2019 10:35:56 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id w187sm27832830pfw.62.2019.12.28.10.35.54
+ by smtp.gmail.com with ESMTPSA id f43sm19419481pje.23.2019.12.28.10.35.56
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 28 Dec 2019 10:35:54 -0800 (PST)
+ Sat, 28 Dec 2019 10:35:56 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  rjui@broadcom.com, sbranden@broadcom.com,
@@ -65,16 +65,16 @@ To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
  linux-arm-kernel@lists.infradead.org, nios2-dev@lists.rocketboards.org,
  linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
-Subject: [PATCH 10/13] mailbox: tegra: convert to
+Subject: [PATCH 11/13] mailbox: hi6220: convert to
  devm_platform_ioremap_resource
-Date: Sat, 28 Dec 2019 18:35:35 +0000
-Message-Id: <20191228183538.26189-10-tiny.windzz@gmail.com>
+Date: Sat, 28 Dec 2019 18:35:36 +0000
+Message-Id: <20191228183538.26189-11-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191228183538.26189-1-tiny.windzz@gmail.com>
 References: <20191228183538.26189-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_103555_999678_8286862D 
-X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-CacheID: sfid-20191228_103557_503965_1BD58D27 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -117,31 +117,39 @@ Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/mailbox/tegra-hsp.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/mailbox/hi6220-mailbox.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/mailbox/tegra-hsp.c b/drivers/mailbox/tegra-hsp.c
-index 834b35dc3b13..6d16e56942ff 100644
---- a/drivers/mailbox/tegra-hsp.c
-+++ b/drivers/mailbox/tegra-hsp.c
-@@ -631,7 +631,6 @@ static int tegra_hsp_request_shared_irq(struct tegra_hsp *hsp)
- static int tegra_hsp_probe(struct platform_device *pdev)
- {
- 	struct tegra_hsp *hsp;
+diff --git a/drivers/mailbox/hi6220-mailbox.c b/drivers/mailbox/hi6220-mailbox.c
+index cc236ac7a0b5..d9140a016170 100644
+--- a/drivers/mailbox/hi6220-mailbox.c
++++ b/drivers/mailbox/hi6220-mailbox.c
+@@ -264,7 +264,6 @@ static int hi6220_mbox_probe(struct platform_device *pdev)
+ 	struct device_node *node = pdev->dev.of_node;
+ 	struct device *dev = &pdev->dev;
+ 	struct hi6220_mbox *mbox;
 -	struct resource *res;
- 	unsigned int i;
- 	u32 value;
- 	int err;
-@@ -645,8 +644,7 @@ static int tegra_hsp_probe(struct platform_device *pdev)
- 	INIT_LIST_HEAD(&hsp->doorbells);
- 	spin_lock_init(&hsp->lock);
+ 	int i, err;
+ 
+ 	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
+@@ -287,15 +286,13 @@ static int hi6220_mbox_probe(struct platform_device *pdev)
+ 	if (mbox->irq < 0)
+ 		return mbox->irq;
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	hsp->regs = devm_ioremap_resource(&pdev->dev, res);
-+	hsp->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(hsp->regs))
- 		return PTR_ERR(hsp->regs);
+-	mbox->ipc = devm_ioremap_resource(dev, res);
++	mbox->ipc = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(mbox->ipc)) {
+ 		dev_err(dev, "ioremap ipc failed\n");
+ 		return PTR_ERR(mbox->ipc);
+ 	}
  
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+-	mbox->base = devm_ioremap_resource(dev, res);
++	mbox->base = devm_platform_ioremap_resource(pdev, 1);
+ 	if (IS_ERR(mbox->base)) {
+ 		dev_err(dev, "ioremap buffer failed\n");
+ 		return PTR_ERR(mbox->base);
 -- 
 2.17.1
 
