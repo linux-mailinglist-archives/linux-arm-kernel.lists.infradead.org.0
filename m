@@ -2,100 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF01812BE8E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:39:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99C6A12BE95
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 19:57:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/vE8dI27lMUIYPNQ9bfaHBwJCg1NK9K8vScI0/dXkR4=; b=rGG2karyyfZgIZJhfoLC4BQkaB
-	0In88E6yc7ei8cGiTdOVB/Ptu4wtVyuDtR29d8ncdy5cO1bsyPYJ2mNhlNQeazhxEaaKkWw10LBw9
-	jXlhN22Jv9skJ37z+CtDOUZx7Amb40xtAohbyAbhsPc7Z2r74McmN2EaqrxWWAVlN4WeDkwK19o62
-	sTRPkY+ZWeSV5LPRNWYkt2uNK2vXaQY/3lT2OadtBEZDhmLWFswVe2AZzSpknFPaKooFcsLJLjBD+
-	qhbY5pJAetjMpUw4KfxYmQCRHqdc5P8QdxrlGAf4eMIdstnB2nBJW7bjJtaFn3fKeueHO0vNGB/WK
-	sV0BJbtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YXYkqb9byROlPQS2YiUVSB090QE3yuLBZumDODyR+WA=; b=peFKfyd8SBuGsjgsDUUJES08q
+	OMoFvzYEVeNhrKssQSktVJ7tyoWPv9HOyO1Dn10QhzhBALqNqNLNiIDi56EwASEC77/nb2qWPv9D5
+	GPCkfI5Z/c6K8klXAldGkbfBVzGi+sWvoYnfpAubqF1ztnm7fePUj+eDNdkehAupQZwI55yQZE1Qx
+	T5Vn60TdNft5k01drmBf8UqOsZHmlE2po0LfVXxsL3Xd4Ql2C/gWpPOGvoMUofec7tk8eg2oMgnfW
+	heeq3tZfsDx/hXCiNjyK2GuarjQ2t1h5fWVfibvh2COJ4js7vSnKMYpGnOnn9rW/t5iQNpfjja1xh
+	xdpFo9Vrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilH0E-0008Mg-GY; Sat, 28 Dec 2019 18:39:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ilHHO-0006Ym-WE; Sat, 28 Dec 2019 18:57:39 +0000
+Received: from disco-boy.misterjones.org ([51.254.78.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilGwU-00057I-1L; Sat, 28 Dec 2019 18:36:03 +0000
-Received: by mail-pl1-x643.google.com with SMTP id x17so13039199pln.1;
- Sat, 28 Dec 2019 10:36:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ADqPq+9Qjf/3isyeDy4/Z1hzrmcF+XODskWY/MSDCzg=;
- b=pUXBq1ZSttMQqrQedS6P3sf1POS/rPvRylB5k3jq1APu8c7p2pyt0Bi04CAVKALzjF
- mPkoRNynqJkKKKbubehHQ3+9IO5OqtImXGsEmJpiIFuAWI+EiXbIvwd9UQW4ZMC6M68s
- ed/W0lBfQ6ox96LOSikKs5fzgb/eLXOyhFgvFViHP8w7Aa50/yH69Z6WSlEjPBQ5YagM
- w/LDGD63x99SDV9D6NspjiK/aq60dQIlAfRolapH8LpMppixENiGo10ax6WBq8YV7SNS
- i7kgAhJgTiEjKLctxdjFNGrsF/q0hObxNFxPMyNymGY1GUapBkfBfb8Hl4CV2cGuUYwX
- 45JA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=ADqPq+9Qjf/3isyeDy4/Z1hzrmcF+XODskWY/MSDCzg=;
- b=TMV1vjvPkNy+kcpM8wz3S93/WOamOdk2ES9RbKLv3if2q8bBRBjtzKc+7P1UODuUxQ
- hiaGZh/93tfTqTj0KheMt4JKouB/cEhGsSDyDp4/fFedUGvCIhUIUCQW3oKei2P72H0D
- tFzcFlfDEhYwl28ZX9eSBtxbwKlfZvUhxgvoHUVnOxziSIOKsAy9zxZ8yptTp8VtRx9S
- YnDQqMhW1B/jAFRrKAyxLD8LoHWTvxU1Cktbq8YFfgEyyzDoozLxepnrQwolaFfBJ/Ep
- 8AaFkfwz9/+BfqfG5ruAxoVSw8REvwWLm6dZK5aBB1PONIJme19q1xndlt+L1vOvcNE6
- MpYQ==
-X-Gm-Message-State: APjAAAW8SUuhyCF7TRAhW15K4Ab0nvQHQLoy7wOSfN9Z6woDdiS7doyQ
- b0dfTZxh+P75kyzdaArRG5Y=
-X-Google-Smtp-Source: APXvYqwLD6B860LYYvLn0ujeh8QzH5CpAMQoA7FqjdVBqgwpvrGi+q9HmCi2Rey62ZR7dzLVq7TOLA==
-X-Received: by 2002:a17:90a:db0f:: with SMTP id
- g15mr33432010pjv.40.1577558160406; 
- Sat, 28 Dec 2019 10:36:00 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id c26sm40294665pfj.101.2019.12.28.10.35.59
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 28 Dec 2019 10:36:00 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: jassisinghbrar@gmail.com, nsaenzjulienne@suse.de, f.fainelli@gmail.com,
- rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com, lftan@altera.com,
- matthias.bgg@gmail.com, agross@kernel.org, bjorn.andersson@linaro.org,
- mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
- thierry.reding@gmail.com, jonathanh@nvidia.com,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, nios2-dev@lists.rocketboards.org,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
-Subject: [PATCH 13/13] mailbox: armada-37xx-rwtm: convert to
- devm_platform_ioremap_resource
-Date: Sat, 28 Dec 2019 18:35:38 +0000
-Message-Id: <20191228183538.26189-13-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191228183538.26189-1-tiny.windzz@gmail.com>
-References: <20191228183538.26189-1-tiny.windzz@gmail.com>
+ id 1ilHHE-0006Y2-9G; Sat, 28 Dec 2019 18:57:30 +0000
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1ilHH5-0007NJ-2T; Sat, 28 Dec 2019 18:57:19 +0000
+MIME-Version: 1.0
+Date: Sat, 28 Dec 2019 18:57:18 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: James Tai <james.tai@realtek.com>
+Subject: Re: [PATCH v2 2/2] arm64: dts: realtek: Add RTD1319 SoC and Realtek
+ PymParticle EVB
+In-Reply-To: <20191228150553.6210-3-james.tai@realtek.com>
+References: <20191228150553.6210-1-james.tai@realtek.com>
+ <20191228150553.6210-3-james.tai@realtek.com>
+Message-ID: <6750faa33ee059ec22cf1981e7483186@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: james.tai@realtek.com, linux-realtek-soc@lists.infradead.org,
+ mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_103602_127144_2E1A72E2 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191228_105728_325533_9E5AB169 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ 2.1 DOS_RCVD_IP_TWICE_B    Received from the same IP twice in a row
+ (only one external relay)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,46 +70,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify code.
+On 2019-12-28 15:05, James Tai wrote:
+> Add Device Trees for Realtek RTD1319 SoC family, RTD1319 SoC and
+> Realtek PymParticle EVB.
+> 
+> Signed-off-by: James Tai <james.tai@realtek.com>
+> ---
+>  arch/arm64/boot/dts/realtek/Makefile          |   2 +
+>  .../boot/dts/realtek/rtd1319-pymparticle.dts  |  43 ++++
+>  arch/arm64/boot/dts/realtek/rtd1319.dtsi      |  12 +
+>  arch/arm64/boot/dts/realtek/rtd13xx.dtsi      | 212 ++++++++++++++++++
+>  4 files changed, 269 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/realtek/rtd1319-pymparticle.dts
+>  create mode 100644 arch/arm64/boot/dts/realtek/rtd1319.dtsi
+>  create mode 100644 arch/arm64/boot/dts/realtek/rtd13xx.dtsi
+> 
+> diff --git a/arch/arm64/boot/dts/realtek/Makefile
+> b/arch/arm64/boot/dts/realtek/Makefile
+> index ef8d8fcbaa05..c0ae96f324eb 100644
+> --- a/arch/arm64/boot/dts/realtek/Makefile
+> +++ b/arch/arm64/boot/dts/realtek/Makefile
+> @@ -9,6 +9,8 @@ dtb-$(CONFIG_ARCH_REALTEK) += rtd1295-zidoo-x9s.dtb
+> 
+>  dtb-$(CONFIG_ARCH_REALTEK) += rtd1296-ds418.dtb
+> 
+> +dtb-$(CONFIG_ARCH_REALTEK) += rtd1319-pymparticle.dtb
+> +
+>  dtb-$(CONFIG_ARCH_REALTEK) += rtd1395-bpi-m4.dtb
+>  dtb-$(CONFIG_ARCH_REALTEK) += rtd1395-lionskin.dtb
+> 
+> diff --git a/arch/arm64/boot/dts/realtek/rtd1319-pymparticle.dts
+> b/arch/arm64/boot/dts/realtek/rtd1319-pymparticle.dts
+> new file mode 100644
+> index 000000000000..2a36d220fef6
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/realtek/rtd1319-pymparticle.dts
+> @@ -0,0 +1,43 @@
+> +// SPDX-License-Identifier: (GPL-2.0-or-later OR BSD-2-Clause)
+> +/*
+> + * Copyright (c) 2019 Realtek Semiconductor Corp.
+> + */
+> +
+> +/dts-v1/;
+> +
+> +#include "rtd1319.dtsi"
+> +
+> +/ {
+> +	compatible = "realtek,pymparticle", "realtek,rtd1319";
+> +	model = "Realtek PymParticle EVB";
+> +
+> +	memory@2e000 {
+> +		device_type = "memory";
+> +		reg = <0x2e000 0x3ffd2000>; /* boot ROM to 1 GiB or 2 GiB */
+> +	};
+> +
+> +	chosen {
+> +		stdout-path = "serial0:460800n8";
+> +	};
+> +
+> +	aliases {
+> +		serial0 = &uart0;
+> +		serial1 = &uart1;
+> +		serial2 = &uart2;
+> +	};
+> +};
+> +
+> +/* debug console (J1) */
+> +&uart0 {
+> +	status = "okay";
+> +};
+> +
+> +/* M.2 slot (CON8) */
+> +&uart1 {
+> +	status = "disabled";
+> +};
+> +
+> +/* GPIO connector (T1) */
+> +&uart2 {
+> +	status = "disabled";
+> +};
+> diff --git a/arch/arm64/boot/dts/realtek/rtd1319.dtsi
+> b/arch/arm64/boot/dts/realtek/rtd1319.dtsi
+> new file mode 100644
+> index 000000000000..1dcee00009cd
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/realtek/rtd1319.dtsi
+> @@ -0,0 +1,12 @@
+> +// SPDX-License-Identifier: (GPL-2.0-or-later OR BSD-2-Clause)
+> +/*
+> + * Realtek RTD1319 SoC
+> + *
+> + * Copyright (c) 2019 Realtek Semiconductor Corp.
+> + */
+> +
+> +#include "rtd13xx.dtsi"
+> +
+> +/ {
+> +	compatible = "realtek,rtd1319";
+> +};
+> diff --git a/arch/arm64/boot/dts/realtek/rtd13xx.dtsi
+> b/arch/arm64/boot/dts/realtek/rtd13xx.dtsi
+> new file mode 100644
+> index 000000000000..18d063feaa7e
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/realtek/rtd13xx.dtsi
+> @@ -0,0 +1,212 @@
+> +// SPDX-License-Identifier: (GPL-2.0-or-later OR BSD-2-Clause)
+> +/*
+> + * Realtek RTD13xx SoC family
+> + *
+> + * Copyright (c) 2019 Realtek Semiconductor Corp.
+> + */
+> +
+> +/memreserve/	0x0000000000000000 0x000000000002e000; /* Boot ROM */
+> +/memreserve/	0x000000000002e000 0x0000000000100000; /* Boot loader */
+> +/memreserve/	0x000000000f400000 0x0000000000500000; /* Video FW */
+> +/memreserve/	0x000000000f900000 0x0000000000500000; /* Audio FW */
+> +/memreserve/	0x0000000010000000 0x0000000000014000; /* Audio FW RAM */
+> +
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +
+> +/ {
+> +	interrupt-parent = <&gic>;
+> +	#address-cells = <1>;
+> +	#size-cells = <1>;
+> +
+> +	reserved-memory {
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		ranges;
+> +
+> +		rpc_comm: rpc@3f000 {
+> +			reg = <0x3f000 0x1000>;
+> +		};
+> +
+> +		rpc_ringbuf: rpc@1ffe000 {
+> +			reg = <0x1ffe000 0x4000>;
+> +		};
+> +
+> +		tee: tee@10100000 {
+> +			reg = <0x10100000 0xf00000>;
+> +			no-map;
+> +		};
+> +	};
+> +
+> +	cpus {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		cpu0: cpu@0 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a55";
+> +			reg = <0x0>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		cpu1: cpu@100 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a55";
+> +			reg = <0x100>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		cpu2: cpu@200 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a55";
+> +			reg = <0x200>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		cpu3: cpu@300 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a55";
+> +			reg = <0x300>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		l2: l2-cache {
+> +			compatible = "cache";
+> +		};
+> +	};
+> +
+> +	timer {
+> +		compatible = "arm,armv8-timer";
+> +		interrupts = <GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>,
+> +			     <GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>,
+> +			     <GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>,
+> +			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>;
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- drivers/mailbox/armada-37xx-rwtm-mailbox.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+Nit: At some point, it'd be good to be able to describe the EL2
+virtual timer interrupt too. Not specially important, but since
+these ARMv8.2 CPUs have it...
 
-diff --git a/drivers/mailbox/armada-37xx-rwtm-mailbox.c b/drivers/mailbox/armada-37xx-rwtm-mailbox.c
-index 19f086716dc5..02b7b28e6969 100644
---- a/drivers/mailbox/armada-37xx-rwtm-mailbox.c
-+++ b/drivers/mailbox/armada-37xx-rwtm-mailbox.c
-@@ -143,7 +143,6 @@ static const struct mbox_chan_ops a37xx_mbox_ops = {
- static int armada_37xx_mbox_probe(struct platform_device *pdev)
- {
- 	struct a37xx_mbox *mbox;
--	struct resource *regs;
- 	struct mbox_chan *chans;
- 	int ret;
- 
-@@ -156,9 +155,7 @@ static int armada_37xx_mbox_probe(struct platform_device *pdev)
- 	if (!chans)
- 		return -ENOMEM;
- 
--	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--
--	mbox->base = devm_ioremap_resource(&pdev->dev, regs);
-+	mbox->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(mbox->base)) {
- 		dev_err(&pdev->dev, "ioremap failed\n");
- 		return PTR_ERR(mbox->base);
+[...]
+
+> +		gic: interrupt-controller@ff100000 {
+> +			compatible = "arm,gic-v3";
+> +			reg = <0xff100000 0x10000>,
+> +			      <0xff140000 0xc0000>;
+
+Are you sure about the size of the GICR region? For 4 CPUs,
+it should be 0x80000. Here, you have a range for 6 CPUs.
+
+Has the GIC been sized for 6 CPUs? Are you missing 2 CPUs in
+the DT?
+
+         M.
 -- 
-2.17.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
