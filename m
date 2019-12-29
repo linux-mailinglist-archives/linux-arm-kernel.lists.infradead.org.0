@@ -2,58 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F6DB12C003
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 03:48:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9418F12C031
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 03:59:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZO65QxJsdVpEerP/e71+obXp057+kwNi+DPGDLjNUtc=; b=Zq5YFc588Lstj4AMz4sktGQ1i
-	q+nNUHF8/MnG2Eisz9+DtdP1frV5kbAvMWwonHFZB+k7ty4tt76FLELyl/y45ZYA+c2rSCLqaHk63
-	LxgJrLoaijTGfmx/ASvHRJEByNfoCgGuhrVLcPvTmQmmeFMCHzgT6KGGQsAnNslJ/6tyfWGA1V35o
-	BkeimFVM9AMCYuAm6GLemGJTtKkBri3xtchpNwSlZBUXKo7EP+3wBojYLL1gSyTYrFb3lPRCMyvLH
-	cFKdV01mgEEPomRXtPsmqpWy5a0x8jvUGQ74Qh9ADFJFFsK8aYnrwPe8NLm+4SptBEvRFbWkLMhRK
-	JzcW7CqJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S/W+r2WWOexdYqYYbgBoQ68Wh6GS8TNKHqWLo9OKU1I=; b=qVENs1j2twUMKZ
+	Jg5KZPNPY8eCf/iqVwU4GwVDdU8gfep4NkC0fZtXDdA3w96GCcE21Y/nrc+oiPcm/RVFRjR1dcgQt
+	7m429W7c4fwngfEOxk7jnwHSdUke+e258AlUA+dhzW6Bo6HBGrQTZt4S77gy6cGsOchegY7DxHAvs
+	l1VQPfcfCLVjpAe6Vyzm5F1F4HUSXgFKzsyNHUre/qs0L0EyT99iuqftwQbaQKZx5pFF7mgQB65fx
+	EW+mJJCt+QzkmL4kJtgJunKgUR3vHrPqsMcOiHDeYyKVSjcW/TedyCyhUfMS5kYIXbVK4JAwGZOt9
+	Mahn4p8xbmA7OCBvDjzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilOdJ-0008RW-As; Sun, 29 Dec 2019 02:48:45 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1ilOny-0003XK-0z; Sun, 29 Dec 2019 02:59:46 +0000
+Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilOdA-0008Qo-BC; Sun, 29 Dec 2019 02:48:37 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 96E9FAC2C;
- Sun, 29 Dec 2019 02:48:32 +0000 (UTC)
-Subject: Re: [PATCH v2 0/2] Initial RTD1319 SoC and Realtek PymParticle EVB
- support
-To: James Tai <james.tai@realtek.com>
-References: <20191228150553.6210-1-james.tai@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <9fbe4392-5028-3718-8c97-547a46efad2a@suse.de>
-Date: Sun, 29 Dec 2019 03:48:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ilOnl-0003VM-26
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 02:59:34 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailout.west.internal (Postfix) with ESMTP id 8A301539;
+ Sat, 28 Dec 2019 21:59:25 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Sat, 28 Dec 2019 21:59:26 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=ZDD1dMfJwP1vA
+ w3RuR4Ni3oZSNxXqSku28CF47THuAw=; b=LgkOV0MbOV8eNPqF2wiRqAs4SQ49B
+ ltrc83h6Yql5M7Wu0BWbmSPMu/vCAcDk99IFGoWqzRw0EZVFUP04gfFusaTipro+
+ Wp2S2iKduGZkvoShMNiXHyEw8mgD3XzstpyefuoaqHDKmJMH/6YfvPj6q2nL4Ltl
+ hZ80Jwguo8Z+rn2jq4vk47mq/zqbJJr3IDvykrnUmdSNxQf+fqb57dyGApqqSZ6M
+ 7sE+h+4AGcgX8O0+AUCAgyNqIxwsB973yx4Y2PD1o3jZOIk7WeeveZjL0NHsbgN+
+ +N7NNVMDFO3uTGFkwwvXl7qAoKwIantHVRY9s2DnAwI95mt6PS4ES7qfg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm1; bh=ZDD1dMfJwP1vAw3RuR4Ni3oZSNxXqSku28CF47THuAw=; b=Odyaqsd+
+ h71U9919/FEsIAhGUBci826x69IhiSnMWvdCDG9Rs5VTLdBFGjANDjJS7DxnPEaf
+ IBJDNSTaHY7Td1IDeUyjeTUlpPgZ3Tu4Y+v6+OU9N+Z3fE0aA2B3IB8412vocqsD
+ YxMPpAv3LuEcv/56pew1E1LS8hont/voGgaEUjYMy695KSKY0DvHkZtffpCxbADN
+ kH6IELgM884rVAGh7uU1vHBjt9xq5D4nrJazpgix5cEhkLnoXFA8Ucg9M5v2bc8R
+ 0XuWTtcE3NZa8YcWXt3lzDb05u95pALhpekDkETIFbFcwj6MSkBqIZ/sLh1hyuW+
+ MKVNX/4CQ3HJEw==
+X-ME-Sender: <xms:jBYIXuy3ZFbiUYxiQwAamqftm8ZnhfYtOHqQBDkQZfik4Ar3zqyp8w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdefuddgheduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
+ epjedtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghm
+ uhgvlhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:jBYIXpVSGQoP4L7AYDOCsj0DiMb7S057eNwdWmvrmfUykdacdNw_Tg>
+ <xmx:jBYIXmjF4ve3tsevV3rryfBDKuaAKI4Mz8xspAIMzlQSjwKVsA_-NA>
+ <xmx:jBYIXhCbsummRnaL7UFqq_wfxcYeF8VceJH3ImP9I2YtpEpOGeWxkg>
+ <xmx:jRYIXohliOiVCCGXzeXCMr7is5URLuL11sbRc0LUxp-f16Xu54bZBw>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 4B96A3060A15;
+ Sat, 28 Dec 2019 21:59:24 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH 2/3] clk: sunxi-ng: h6-r: Simplify R_APB1 clock definition
+Date: Sat, 28 Dec 2019 20:59:21 -0600
+Message-Id: <20191229025922.46899-3-samuel@sholland.org>
+X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191229025922.46899-1-samuel@sholland.org>
+References: <20191229025922.46899-1-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20191228150553.6210-1-james.tai@realtek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_184836_532694_B9DD4E00 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191228_185933_144169_4853A9F5 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.24 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,37 +106,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-sunxi@googlegroups.com, Samuel Holland <samuel@sholland.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSmFtZXMsCgpBbSAyOC4xMi4xOSB1bSAxNjowNSBzY2hyaWViIEphbWVzIFRhaToKPiBDYzog
-QW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgoKVGhpcyB0aW1lIHlvdSBDQydlZCBt
-ZSBvbmx5IG9uIHRoZSBjb3ZlciBsZXR0ZXIsIHNvIHRoYXQgSSBkaWRuJ3QgZ2V0IApub3RpZmll
-ZCBvZiwgZS5nLiwgTWFyYydzIHJldmlldyBjb21tZW50cy4gSSB3b25kZXIgd2h5OiByZWFsdGVr
-LnlhbWwgaXMgCmluIE1BSU5UQUlORVJTLCBhbmQgc28gaXMgZHRzL3JlYWx0ZWsvLCBzbyBnZXRf
-bWFpbnRhaW5lcnMucGwgc2hvdWxkJ3ZlIApwaWNrZWQgbWUgdXAsIGV2ZW4gaWYgeW91IGZvcmdv
-dCB0byBleHBsaWNpdGx5IENDIG1lPyBQbGVhc2UgY2hlY2sgd2hhdCAKd2VudCB3cm9uZyB0aGVy
-ZSBhbmQgbWFrZSBzdXJlIGl0IGRvZXNuJ3QgaGFwcGVuIGFnYWluIGZvciB0aGUgbmV4dCAKc3Vi
-bWlzc2lvbi4KClRoYW5rcywKQW5kcmVhcwoKPiAgIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yZWFsdGVrLnlhbWwgICAgICB8ICAgNiArCj4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0
-ZWsvTWFrZWZpbGUgICAgICAgICAgfCAgIDIgKwo+ICAgLi4uL2Jvb3QvZHRzL3JlYWx0ZWsvcnRk
-MTMxOS1weW1wYXJ0aWNsZS5kdHMgIHwgIDQzICsrKysKPiAgIGFyY2gvYXJtNjQvYm9vdC9kdHMv
-cmVhbHRlay9ydGQxMzE5LmR0c2kgICAgICB8ICAxMiArCj4gICBhcmNoL2FybTY0L2Jvb3QvZHRz
-L3JlYWx0ZWsvcnRkMTN4eC5kdHNpICAgICAgfCAyMTIgKysrKysrKysrKysrKysrKysrCj4gICA1
-IGZpbGVzIGNoYW5nZWQsIDI3NSBpbnNlcnRpb25zKCspCj4gICBjcmVhdGUgbW9kZSAxMDA2NDQg
-YXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEzMTktcHltcGFydGljbGUuZHRzCj4gICBj
-cmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEzMTkuZHRz
-aQo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQx
-M3h4LmR0c2kKCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdtYkgKTWF4ZmVs
-ZHN0ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVuZMO2cmZmZXIK
-SFJCIDM2ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Like the APB0 clock on previous chips, this is a simple single-parent
+clock with an M divider. Use the equivalent helper macro instead of
+writing out the whole clock description manually.
+
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
+
+diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
+index 45a1ed3fe674..df9c01831699 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
++++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
+@@ -51,17 +51,7 @@ static struct ccu_div ar100_clk = {
+ 
+ static CLK_FIXED_FACTOR_HW(r_ahb_clk, "r-ahb", &ar100_clk.common.hw, 1, 1, 0);
+ 
+-static struct ccu_div r_apb1_clk = {
+-	.div		= _SUNXI_CCU_DIV(0, 2),
+-
+-	.common		= {
+-		.reg		= 0x00c,
+-		.hw.init	= CLK_HW_INIT("r-apb1",
+-					      "r-ahb",
+-					      &ccu_div_ops,
+-					      0),
+-	},
+-};
++static SUNXI_CCU_M(r_apb1_clk, "r-apb1", "r-ahb", 0x00c, 0, 2, 0);
+ 
+ static struct ccu_div r_apb2_clk = {
+ 	.div		= _SUNXI_CCU_DIV_FLAGS(8, 2, CLK_DIVIDER_POWER_OF_TWO),
+-- 
+2.23.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
