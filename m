@@ -2,86 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 014A312C058
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 04:41:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EAF712C059
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 04:49:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9npXJhXtTmWRjH/fjdYHLXI1+lCSOVMmy3ly1SVj0Mg=; b=K3/h6DpVwUWkMK
-	WX+jnyow8DkDkktTWLyW0U+/ehjV6RqZOsSud8JBQpAOi+GUu8esgggYdDdH+TRbPkMrC6q9cMwVr
-	2aORqO334KcaASNREK4VvWwd1SII8uj8swPEW7bL/I9bknixx+XjvWsSOpjeWF6jegc/iScwrHw66
-	RTwDieoqI8RTyl5N4vM33JOWFzYf4f61cTOJI0dTn0TyEaIAfUx7WonKNOoP9oIpirAFsluVmnggk
-	qraIV9pffUlcdmi7Tkn/g8FhjZ0muEeI56WVHI/pEN8zjV2qY+RFc/quMSQuvdmJJwlkhuBohKrl/
-	BRtY0usWT3FLQF7o1WoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3SsYYENZDmRVSAq6xGKW7/KY0wSJQNagOv3ybPbS8I8=; b=sb8f/4528DC0A6
+	y/nukqoXh3vuv+Gf+FvzzQkVRmQNioPkpcyezBpYei9x4AXcDL/GXpEGiwBPwnRSrBkctOPfjF6Ua
+	L9PUqQrp+0VHoDUztJq5Otx7R49NMgjYzrbsFMCwsLuDyZg2/4SwbRtKLEWD6fkuso5MS9D/JEaFE
+	dXmmkG0GyDsaqvsh2fA/OTODVJ3IgjiNdsJxJieBYiGGzf0m5wwEqT0A2jrYwaCBb65MJO1ZqWeob
+	/rongm2WaacdeBcOZHk8N54ExJ7MTAhl2sULE98rqaNc8MLkIqy9WstxDl+pFD8RuYdfYB7OafVi/
+	buPyjKZ0lXbBFWrxeKpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilPSb-0001yu-25; Sun, 29 Dec 2019 03:41:45 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ilPZr-0003nF-9i; Sun, 29 Dec 2019 03:49:15 +0000
+Received: from mail-eopbgr00043.outbound.protection.outlook.com ([40.107.0.43]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilPSN-0001ya-Cn
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 03:41:33 +0000
-Received: by mail-pl1-x643.google.com with SMTP id b22so13351944pls.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Dec 2019 19:41:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3nYzbiySbBMWr0PTl27fhW8zMhEg+ip2bE0c5QuOqsI=;
- b=S1mkTqQVQ4HAOpRtLQ3Z5Ot5b91O27ZQMN1tfWr/raiqea/k8s8N8PSIaJbI0eVc+o
- wD+9B5R9McHSd/EBOEFNTwMwNZyMuEOmazjgDRZrCxYZkvptsX+YD8lU+ylSMOYJuhmT
- uhfTLW8UQwhkfZwVgyUt8hK+WXYDwKOl04yZZXQHrg9BDI1LGlE7lnhTovBU6JXXW755
- vVHv8fXhfmO1BF5s+YfNchQ8A2UWPm06AjsXzN2ZBfpNZlmXLK5y0yd179I0qNPiBypn
- laZ5sIZHqIfpuW33OA/0j/F1GAFFktKbhWvKszbcSgCZ270SwxYVASQkEY//HhAop+Pr
- 3SaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3nYzbiySbBMWr0PTl27fhW8zMhEg+ip2bE0c5QuOqsI=;
- b=bf/32/HA7qgpe+jdC/0RtzsivjBaHf/xXQsySuwZHlasL7SOsZz3Q33pwIKK5GBTa7
- Cy7rJJZhxc/b0Jgy/3UXkmrCIG4+bynwxEm0oI8a4RDxBtF8mHVjDqZqDW9M+lC9HeEP
- te2xPIjrNw66BM/Fyt6XATJxQnGAU9RxtKZhkRFcX7qhwSH3U3P0U7d61oFCa59t3Y9T
- MCwqAcw0OpOWIxD9uin2PkC74PUUX3Gl/gPuQmc4beOTqbR4yrdJ+3osYe+BJ+hgFfvB
- EboU4fgR/gJTj1mJCty3yRQ5PjKWlbhWHC6ACASBhrRslpsaa5MjbFqocu1vQfIYPwFg
- 5zZw==
-X-Gm-Message-State: APjAAAURIdwJNeB/x050O+EIhytT/UZSCykSad9Q8jCghwyaITHz2/Jo
- CQGAE6L7eM3MSKbTooCQDNQLHA==
-X-Google-Smtp-Source: APXvYqx2y3B/ZHSUs+Yq+AjalZ9qvoYa/EeRtB3Ey/8PQ54ZGkoeZ7JZ0pjNRy1k0Qim7ZgoA659iA==
-X-Received: by 2002:a17:902:82c3:: with SMTP id
- u3mr57953226plz.73.1577590889282; 
- Sat, 28 Dec 2019 19:41:29 -0800 (PST)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id u23sm45938315pfm.29.2019.12.28.19.41.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 28 Dec 2019 19:41:28 -0800 (PST)
-Date: Sat, 28 Dec 2019 19:41:26 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sricharan R <sricharan@codeaurora.org>
-Subject: Re: [PATCH V2 1/7] dt-bindings: pinctrl: qcom: Add ipq6018 pinctrl
- bindings
-Message-ID: <20191229034126.GO3755841@builder>
-References: <1576752109-24497-1-git-send-email-sricharan@codeaurora.org>
- <1576752109-24497-2-git-send-email-sricharan@codeaurora.org>
+ id 1ilPZe-0003ma-Oh
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 03:49:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WiX0PK5fACBWf2Ylu31ZVIOEkG0Ce+NNJmclH3++buTrMxZdCOJRbK/o4L/0ZZBZN0sDAQRE8qjEgWEg4Vgdug6hfNrSQgNRlNl6KbY2cffl2aGPwYok+T/M5ti7VClRd+3l5uSZIbofG+Sb9QbPN4BD5GlNNp0QuWbsU4ouz+p6vG6fYDckkHB8du9G7YUxlPNErI8jX9EJehZsY2BMX+F8HNU0aBtKkCCVuXJ8YWhI99vevgDu/EhFO4FKWsvh+nob39DgNXfHPIKTx6nN+VGiOzj5WdIcbxhH+eT54boESqWy6RGCq6RcxI1w+5YzhKcrJVMihwrO+k80H9RO3w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ll04A3+fpwlkErULbmjBXlTbjwtfhLrr7ZrmRp77Ffk=;
+ b=kytnsaHQZtDuRwX/ZymunbguKT4ek/XJE2LFOHmKZ8/dhQE+SPK2YKsKPnlDvhUHVTkIDeZHwUCEVcJptYs/zTjNk3oqP34lrF0fIgDvLrhTdyF8ZhW0uL652osDMVdc6j/FQAC8XINow5PI5PBqCqSK3VnHrBiFU0KpubkeG+5NLiwzF6eIiB3F+TIC/bnHevUIIsexHCBiwG1moMTfsaGcZ1JHp1iILrfAZ6Lstt+B0LB+KB8Pt06M13/YEE2G0lkYSQ2chVvjPD7o3JyZEZg7PjyUx2vr2negtoCT3NFJROWXYIt/6sKFyRJegcS6h+XfzJd0bOqcdcdpzGIt6w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ll04A3+fpwlkErULbmjBXlTbjwtfhLrr7ZrmRp77Ffk=;
+ b=WrIpIgBryAGjledy6FsziAOFzaDRMxok8Amzc+9CuwMaLk6lt8E82f/iBpAXFvO1upVWFjhPoE/iO2/7CIVFOBO7SU6I7f8I+KE0xvLatCQKNrqHry9tdoVi7IM84n1XF2YGYz0KE/++PeOwCy92WqNWefC5n4KAep58Lt0U/EE=
+Received: from VI1PR04MB4976.eurprd04.prod.outlook.com (20.177.49.217) by
+ VI1PR04MB5119.eurprd04.prod.outlook.com (20.177.49.92) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.12; Sun, 29 Dec 2019 03:48:56 +0000
+Received: from VI1PR04MB4976.eurprd04.prod.outlook.com
+ ([fe80::b555:adcb:d7b3:1595]) by VI1PR04MB4976.eurprd04.prod.outlook.com
+ ([fe80::b555:adcb:d7b3:1595%6]) with mapi id 15.20.2581.007; Sun, 29 Dec 2019
+ 03:48:56 +0000
+Received: from prabhu-kush.ap.freescale.net (92.120.1.69) by
+ PN1PR0101CA0060.INDPRD01.PROD.OUTLOOK.COM (2603:1096:c00:d::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2581.11 via Frontend
+ Transport; Sun, 29 Dec 2019 03:48:55 +0000
+From: Poonam Aggrwal <poonam.aggrwal@nxp.com>
+To: "takahiro.akashi@linaro.org" <takahiro.akashi@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] move reservation for elfcorehdr early
+Thread-Topic: [PATCH] move reservation for elfcorehdr early
+Thread-Index: AQHVvfrlL1QGQyVpb02DWGQcHEIPXA==
+Date: Sun, 29 Dec 2019 03:48:56 +0000
+Message-ID: <1577613635-31509-1-git-send-email-poonam.aggrwal@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [92.120.1.69]
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: PN1PR0101CA0060.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:c00:d::22) To VI1PR04MB4976.eurprd04.prod.outlook.com
+ (2603:10a6:803:57::25)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=poonam.aggrwal@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 189ad193-d1ed-473b-4d46-08d78c120797
+x-ms-traffictypediagnostic: VI1PR04MB5119:|VI1PR04MB5119:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB51197DD22565065EF4402DA586240@VI1PR04MB5119.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-forefront-prvs: 0266491E90
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(366004)(136003)(39860400002)(376002)(346002)(189003)(199004)(54906003)(110136005)(66446008)(44832011)(26005)(66476007)(66556008)(4326008)(64756008)(52116002)(478600001)(6506007)(66946007)(45080400002)(316002)(71200400001)(6512007)(86362001)(5660300002)(8676002)(81156014)(186003)(8936002)(81166006)(36756003)(956004)(2906002)(16526019)(2616005)(6486002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5119;
+ H:VI1PR04MB4976.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 3yzqb3A1MruHeMRrdTof2XCbnhG0duhlvjpIWOzjJfGvbkYGXboZsM935GDk8Ra34PV2AcEDjcTH4mBmnJJfayqOMrRG6ga7MaHMYFuihTuvgc30QRkRnpIHQn/ZK3aL69mRc9G5TNu7XKP5mBM24Zizyo09C45nX/Jsyn8JCvHgWcjFJVZ3/0y/+z18JmX4c2PIHy9kWEqGTJcvjAxECeoro0E32GMTE8oZv36J223EtVyojDpF/1B92LcTTAoHhSQkEFaU91Py2uHpxSCSMgnlHtbAGwg3WIXvpu6RwFiDpdkwutcfPiAP8hPXGpYdTZYaWrbRrWmzti1S9or8mzEXMfRb9E3TRHL9S+A6voRYFI+tszaPS+wxdhX3w612B563RuJEgSeoq3t9otgb1uepM05Gpfn46/zkXi5h5GbHiSll5qrIFzpzKRncK3W0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1576752109-24497-2-git-send-email-sricharan@codeaurora.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 189ad193-d1ed-473b-4d46-08d78c120797
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Dec 2019 03:48:56.2619 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: oMcab4zkeb4aWIOSLiuQPXL+qbq9x99/k+LpQ1vWrNQ1Zx1aLt1MGJjenSJndRgO0WlO1pkaXm7UsZr3QdBkcQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_194131_498408_E5776938 
-X-CRM114-Status: GOOD (  17.98  )
+X-CRM114-CacheID: sfid-20191228_194902_979933_9F06DB37 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.0.43 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -101,235 +128,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, sboyd@kernel.org, linux-arm-msm@vger.kernel.org,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-gpio@vger.kernel.org, agross@kernel.org, sivaprak@codeaurora.org,
- linux-soc@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Poonam Aggrwal <poonam.aggrwal@nxp.com>,
+ Nikhil Gupta <nikhil.gupta@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 19 Dec 02:41 PST 2019, Sricharan R wrote:
+on some SOCs, elfcorehdr address may overlap with the address of reserved
+memory allocated using early_init_fdt_scan_reserved_mem 
 
-> Add device tree binding Documentation details for ipq6018
-> pinctrl driver.
-> 
-> Co-developed-by: Rajkumar Ayyasamy <arajkuma@codeaurora.org>
-> Signed-off-by: Rajkumar Ayyasamy <arajkuma@codeaurora.org>
-> Co-developed-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
-> Signed-off-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
-> Co-developed-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
-> Signed-off-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
-> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
-> ---
-> 
-> [V2] Splitted dt bindings and driver into different patches. Added missing bindings,
->      and some style changes.
-> 
->  .../bindings/pinctrl/qcom,ipq6018-pinctrl.yaml     | 172 +++++++++++++++++++++
->  1 file changed, 172 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.yaml
-> new file mode 100644
-> index 0000000..745a11e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.yaml
-> @@ -0,0 +1,172 @@
-> +# SPDX-License-Identifier: GPL-2.0-or-later
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pinctrl/qcom,ipq6018-pinctrl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm Technologies, Inc. IPQ6018 TLMM block
-> +
-> +maintainers:
-> +  - Sricharan R <sricharan@codeaurora.org>
-> +
-> +description: |
-> +  This binding describes the Top Level Mode Multiplexer block found in the
-> +  IPQ6018 platform.
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,ipq6018-pinctrl
-> +  reg:
-> +    maxItems: 1
-> +  interrupts:
-> +    Description: Specifies the TLMM summary IRQ
-> +    maxItems: 1
-> +  interrupt-controller: true
-> +  '#interrupt-cells':
-> +    Description:
-> +      Specifies the PIN numbers and Flags, as defined in defined in
-> +      include/dt-bindings/interrupt-controller/irq.h
-> +    const: 2
-> +  gpio-controller: true
-> +  '#gpio-cells':
-> +    Description: Specifying the pin number and flags, as defined in
-> +      include/dt-bindings/gpio/gpio.h
-> +    const: 2
-> +  gpio-ranges:
-> +    Description: Documentation/devicetree/bindings/gpio/gpio.txt
-> +    maxItems: 1
-> +
-> +#PIN CONFIGURATION NODES
-> +patternProperties:
-> +  '-pins$':
-> +    type: object
-> +    Description:
-> +      Pinctrl node's client devices use subnodes for desired pin configuration.
-> +      Client device subnodes use below standard properties.
-> +
-> +    Properties:
-> +      pins:
-> +        allOf:
-> +          $ref: /schemas/types.yaml#/definitions/string
-> +          enum:
-> +            gpio0-gpio80
-> +            sdc1_clk
-> +            sdc1_cmd
-> +            sdc1_data
-> +            sdc2_clk
-> +            sdc2_cmd
-> +            sdc2_data
-> +            qdsd_cmd
-> +            qdsd_data0
-> +            qdsd_data1
-> +            qdsd_data2
-> +            qdsd_data3
-> +        Description:
-> +          List of gpio pins affected by the properties specified in this
-> +          subnode.
-> +
-> +      function:
-> +        allOf:
-> +          $ref: /schemas/types.yaml#/definitions/string
-> +          enum:
-> +            adsp_ext, alsp_int, atest_bbrx0, atest_bbrx1, atest_char,
-> +            atest_char0, atest_char1, atest_char2, atest_char3, atest_combodac,
-> +            atest_gpsadc0, atest_gpsadc1, atest_tsens, atest_wlan0,
-> +            atest_wlan1, backlight_en, bimc_dte0, bimc_dte1, blsp_i2c1,
-> +            blsp_i2c2, blsp_i2c3, blsp_i2c4, blsp_i2c5, blsp_i2c6,  blsp_spi1,
-> +            blsp_spi1_cs1, blsp_spi1_cs2, blsp_spi1_cs3, blsp_spi2,
-> +            blsp_spi2_cs1, blsp_spi2_cs2, blsp_spi2_cs3, blsp_spi3,
-> +            blsp_spi3_cs1, blsp_spi3_cs2, blsp_spi3_cs3, blsp_spi4, blsp_spi5,
-> +            blsp_spi6, blsp_uart1, blsp_uart2, blsp_uim1, blsp_uim2, cam1_rst,
-> +            cam1_standby, cam_mclk0, cam_mclk1, cci_async, cci_i2c, cci_timer0,
-> +            cci_timer1, cci_timer2, cdc_pdm0, codec_mad, dbg_out, display_5v,
-> +            dmic0_clk, dmic0_data, dsi_rst, ebi0_wrcdc, euro_us, ext_lpass,
-> +            flash_strobe, gcc_gp1_clk_a, gcc_gp1_clk_b, gcc_gp2_clk_a,
-> +            gcc_gp2_clk_b, gcc_gp3_clk_a, gcc_gp3_clk_b, gpio, gsm0_tx0,
-> +            gsm0_tx1, gsm1_tx0, gsm1_tx1, gyro_accl, kpsns0, kpsns1, kpsns2,
-> +            ldo_en, ldo_update, mag_int, mdp_vsync, modem_tsync, m_voc,
-> +            nav_pps, nav_tsync, pa_indicator, pbs0, pbs1, pbs2, pri_mi2s,
-> +            pri_mi2s_ws, prng_rosc, pwr_crypto_enabled_a, pwr_crypto_enabled_b,
-> +            pwr_modem_enabled_a,  pwr_modem_enabled_b, pwr_nav_enabled_a,
-> +            pwr_nav_enabled_b, qdss_ctitrig_in_a0, qdss_ctitrig_in_a1,
-> +            qdss_ctitrig_in_b0, qdss_ctitrig_in_b1, qdss_ctitrig_out_a0,
-> +            qdss_ctitrig_out_a1, qdss_ctitrig_out_b0, qdss_ctitrig_out_b1,
-> +            qdss_traceclk_a, qdss_traceclk_b, qdss_tracectl_a, qdss_tracectl_b,
-> +            qdss_tracedata_a, qdss_tracedata_b, reset_n, sd_card, sd_write,
-> +            sec_mi2s, smb_int, ssbi_wtr0, ssbi_wtr1, uim1, uim2, uim3,
-> +            uim_batt, wcss_bt, wcss_fm, wcss_wlan, webcam1_rst
-> +        Description:
-> +          Specify the alternative function to be configured for the specified
-> +          pins.
-> +      bias-disable:
+Signed-off-by: Poonam Aggrwal <poonam.aggrwal@nxp.com>
+---
+Overlaps seen on LS1043A SoC:
+[    0.000000] Reserved memory: created DMA memory pool at 0x00000000f7c00000, size 4 MiB
+[    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created DMA memory pool at 0x00000000f4000000, size 32 MiB
+[    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created DMA memory pool at 0x00000000f6000000, size 16 MiB
+[    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id shared-dma-pool
+[    0.000000] Reserving 1KB of memory at 0xf7fff000 for elfcorehdr
 
-Is there any way to inherit these from some common definition?
+panic in elfcorehdr_read:
+[    0.443984] Unable to handle kernel paging request at virtual address ffff000037fff000
+[    0.451942] Mem abort info:
+[    0.454740]   ESR = 0x96000006
+[    0.457806]   EC = 0x25: DABT (current EL), IL = 32 bits
+[    0.463142]   SET = 0, FnV = 0
+[    0.466202]   EA = 0, S1PTW = 0
+[    0.469353] Data abort info:
+[    0.472243]   ISV = 0, ISS = 0x00000006
+[    0.476094]   CM = 0, WnR = 0
+[    0.479072] swapper pgtable: 4k pages, 48-bit VAs, pgdp=00000000d9373000
+[    0.485806] [ffff000037fff000] pgd=00000000f7bf7003, pud=00000000f7bf6003, pmd=0000000000000000
+[    0.494553] Internal error: Oops: 96000006 [#1] PREEMPT SMP
+[    0.500146] Modules linked in:
+[    0.503211] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.5.0-rc3-00062-gbf8d1cd #5
+[    0.510725] Hardware name: LS1043A RDB Board (DT)
+[    0.515446] pstate: 80000005 (Nzcv daif -PAN -UAO)
+[    0.520260] pc : __memcpy+0x78/0x180
+[    0.523847] lr : elfcorehdr_read+0x28/0x38
+<snip>
+[    0.611262] Call trace:
+[    0.613713]  __memcpy+0x78/0x180
+[    0.616950]  vmcore_init+0x70/0x534
+ arch/arm64/mm/init.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-> +        type: boolean
-> +        Description:
-> +          The specified pins should be configured as no pull.
-> +      bias-pull-down:
-> +        type: boolean
-> +        Description:
-> +          The specified pins should be configured as pull down.
-> +      bias-pull-up:
-> +        type: boolean
-> +        Description:
-> +          The specified pins should be configured as pull up.
-> +      output-high:
-> +        type: boolean
-> +        Description:
-> +          The specified pins are configured in output mode, driven high.
-> +          This option is not available for sdc pins.
-> +      output-low:
-> +        type: boolean
-> +        Description:
-> +          The specified pins are configured in output mode, driven low.
-> +          This option is not available for sdc pins.
-> +      drive-strength:
-> +        allOf:
-> +          $ref: /schemas/types.yaml#/definitions/uint32
-> +          enum: [2, 4, 6, 8, 10, 12, 14, 16]
-> +        Description:
-> +          elects the drive strength for the specified pins, in mA.
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index b65dffd..e610180 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -438,6 +438,8 @@ void __init arm64_memblock_init(void)
+ 		initrd_end = initrd_start + phys_initrd_size;
+ 	}
+ 
++	reserve_elfcorehdr();
++
+ 	early_init_fdt_scan_reserved_mem();
+ 
+ 	if (IS_ENABLED(CONFIG_ZONE_DMA)) {
+@@ -452,8 +454,6 @@ void __init arm64_memblock_init(void)
+ 
+ 	reserve_crashkernel();
+ 
+-	reserve_elfcorehdr();
+-
+ 	high_memory = __va(memblock_end_of_DRAM() - 1) + 1;
+ 
+ 	dma_contiguous_reserve(arm64_dma32_phys_limit);
+-- 
+2.7.4
 
-Selects?
-
-> +
-> +    required:
-> +      - pins
-> +      - function
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - interrupt-controller
-> +  - '#interrupt-cells'
-> +  - gpio-controller
-> +  - '#gpio-cells'
-> +  - gpio-ranges
-> +
-> +example:
-> +        tlmm: pinctrl@1000000 {
-> +                compatible = "qcom,ipq6018-pinctrl";
-> +                reg = <0x1000000 0x300000>;
-> +                interrupts = <0 208 0>;
-
-<GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH>
-
-> +                gpio-controller;
-> +                #gpio-cells = <2>;
-> +                interrupt-controller;
-> +                #interrupt-cells = <2>;
-> +
-> +                uart_pins: uart_pins {
-
-s/_/- in the node name.
-
-> +                        mux {
-> +                                pins = "gpio4", "gpio5";
-> +                                function = "blsp_uart2";
-
-Duplicate the function definition in tx and rx and drop the "mux" node.
-
-Regards,
-Bjorn
-
-> +                        };
-> +
-> +                        tx {
-> +                                pins = "gpio4";
-> +                                drive-strength = <4>;
-> +                                bias-disable;
-> +                        };
-> +
-> +                        rx {
-> +                                pins = "gpio5";
-> +                                drive-strength = <2>;
-> +                                bias-pull-up;
-> +                        };
-> +                };
-> +        };
-> -- 
-> 1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
