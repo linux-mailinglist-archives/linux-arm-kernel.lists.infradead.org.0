@@ -2,99 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4D9C12C248
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 12:17:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E224612C24D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 12:29:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fl1bIUTpjz+i7romqIe9Nw6c+Ke3FMReK951bamTy0M=; b=cdvugVzZFQ8zKFrm20e8lc0aaO
-	frw2Hk3OK9txgi/yUfdfH8Gbu8n6c7mrYodxH+017oazr2FLXSK3MI582xge+l+7CmNk2ObrHQHFZ
-	lKkEOv7ZG7oPCLXcdi3ENQ0J4FXWC2FrwQhLOrIAIBI8mXi96S69a+xflgY175zF7wc6gWWVlHzEJ
-	fAH4aSNbncAnE7WH0P7pC3KyMF1m0v2johVfMRsNTx2DKfrmpDpAMv3T7TJtB5+muWAA8MKpbvS7s
-	9mXXgp/kbTBw560pqlOYUXHmrZgiH7yzTKz+eDl0dVKql+3ZFnfLQJ++6+YY6A0PqmCMIZUx36ku0
-	+/02sUew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7nAI1HprotxOkDuvxE8CJsJ9ePcyKnGeyKbmF6TThLs=; b=unMaBLMdpa6DR3g/g9fvkE2BF
+	WwmIvso0ZbcljZw7oO5UiN+g+6sBquHMpzPaJ2O2j3/yrvL/+fWz6ByioYShg/IUf4x/VDs221YVc
+	lbuAPk44e/YwTyYicB1aclm6BohsXba1WAqdPyqPd+H7qukbNaIs1rVpNgrJrAys0n5v+LIcBafcT
+	stNmuR0MRB7otSdlmTOyu5FM1PI8qPEprj4S/Yy11LXspXfs3GtazRtvmI39k9lmu4BNfHPKRoQVX
+	pIKs1M8Ft58nB8yfDJEIrLll/VxIBxN4oqf+RzObxydVeRmqLHFcKM0zAtOivZVZDZD/Rnx0Ea3u+
+	HiCRjDWNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilWZZ-0003j7-RO; Sun, 29 Dec 2019 11:17:25 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ilWlP-00088c-Ny; Sun, 29 Dec 2019 11:29:39 +0000
+Received: from disco-boy.misterjones.org ([51.254.78.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilWZP-0003hn-Mf
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 11:17:17 +0000
-Received: by mail-pf1-x442.google.com with SMTP id i23so11579059pfo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Dec 2019 03:17:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=CWcFnXWGF5wNXnWL6+mku0hEs4gyByTrr98UCBl3J8k=;
- b=s6B6hYhmAqvRF/SCprnVyHpS6bysZxdnjpdCh+f14JrSZESME8pGx9OuMy4vz4uJJv
- wV8sGUlYu13+vM6rSlG5+B1f4PAXf1+L+fJsXv/pRbNqV2uxaYa+8PKZlGl9SAgiD0rt
- vfdttf4ORy+nrDCZxC6NA/wHrfEcArU9TL9hw4lyEmjPjV7Rui3akpKWED3KVNvXrIX/
- ioIc6CNj3YL8L/Q2QxFOIL379LRRDWJ4zxZf123HlK9GPTEa1CKdAC8VXmrZJdWNwHDM
- b9MJNvUvS+WUtm7lHALJa/9K9WFYv5RfX9uNFElGGWzRq0iAYokddATijdmAc0DmPl9S
- zCkw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=CWcFnXWGF5wNXnWL6+mku0hEs4gyByTrr98UCBl3J8k=;
- b=T4CkHl+xwcrWLL/rSzx976Rvwvx60MW+zPwNg7N1+GU7mPUwslK8q9Ubfz/5rsZrEB
- adF+9tGAPnZY2chn7FIWmoSphpkqOu57OI0/XJ7xkdX3I/x43q2C9IxUKyRWhrfQPdxX
- 6cHKn/QYrbqGT+kypffaOUrBMdhbtwlTWrqmKyWCuCTW+JEZN0kUO5iHdPSzgD2ZpLqb
- bQctw0a8bwT+MT4qQ9LiHYk0VNDgWvJ6m75L3lgN8fsiLiPm9rf1MyXDvQc/+Qqw8UMp
- bUvesrqw7xoO1Kong6qAEQpDCapWHctpTaCOOxVrFS/rwR+35w7E+Awd18rKZfRhWw55
- rlQA==
-X-Gm-Message-State: APjAAAXg7wmPjVas5WLB42QWNBzLA1L8/+GOEpDokLnjHBEhnmLNVdKf
- iGpetD7r0YOl+enrV+/ctdY=
-X-Google-Smtp-Source: APXvYqwT9xK+ZGyFuhdZ2wLiXj9H1+mGiq49z7Hp29rcIkeDYbasZfv4ZBZcp7vOfBHA3DIC/zyigA==
-X-Received: by 2002:a62:cece:: with SMTP id y197mr67311817pfg.9.1577618234053; 
- Sun, 29 Dec 2019 03:17:14 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id q7sm20794572pjd.3.2019.12.29.03.17.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Dec 2019 03:17:13 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: linux@armlinux.org.uk, mripard@kernel.org, wens@csie.org,
- catalin.marinas@arm.com, will@kernel.org, clabbe.montjoie@gmail.com,
- tiny.windzz@gmail.com, plaes@plaes.org, shawnguo@kernel.org,
- olof@lixom.net, Anson.Huang@nxp.com, dinguyen@kernel.org,
- leonard.crestez@nxp.com, marcin.juszkiewicz@linaro.org,
- aisheng.dong@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, anarsoul@gmail.com, rui.zhang@intel.com,
- daniel.lezcano@linaro.org, amit.kucheria@verdurent.com,
- p.zabel@pengutronix.de
-Subject: [PATCH 2/2] ARM: sunxi: Enable CONFIG_SUN8I_THERMAL
-Date: Sun, 29 Dec 2019 11:17:07 +0000
-Message-Id: <20191229111707.16574-2-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191229111707.16574-1-tiny.windzz@gmail.com>
-References: <20191229111707.16574-1-tiny.windzz@gmail.com>
+ id 1ilWlD-00086x-Vw; Sun, 29 Dec 2019 11:29:29 +0000
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1ilWl2-00061M-EV; Sun, 29 Dec 2019 11:29:16 +0000
+MIME-Version: 1.0
+Date: Sun, 29 Dec 2019 11:29:16 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: James Tai <james.tai@realtek.com>
+Subject: Re: [PATCH v2 2/2] arm64: dts: realtek: Add RTD1319 SoC and Realtek
+ PymParticle EVB
+In-Reply-To: <68b6541e1f4b447cb6845d16fdab28d9@realtek.com>
+References: <20191228150553.6210-1-james.tai@realtek.com>
+ <20191228150553.6210-3-james.tai@realtek.com>
+ <6750faa33ee059ec22cf1981e7483186@kernel.org>
+ <68b6541e1f4b447cb6845d16fdab28d9@realtek.com>
+Message-ID: <718082aebcc3ab4d9169a4abbe968ec1@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: james.tai@realtek.com, linux-realtek-soc@lists.infradead.org,
+ mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_031715_737588_35591499 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191229_032928_030904_71A57DF8 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ 1.8 DOS_RCVD_IP_TWICE_B    Received from the same IP twice in a row
+ (only one external relay)
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,35 +72,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Many sunxi based board needs CONFIG_SUN8I_THERMAL for thermal support.
+On 2019-12-29 07:46, James Tai wrote:
+> Hi Marc,
+> 
+> Thanks for review.
+> 
+>> > +	timer {
+>> > +		compatible = "arm,armv8-timer";
+>> > +		interrupts = <GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>,
+>> > +			     <GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>,
+>> > +			     <GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>,
+>> > +			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>;
+>> 
+>> Nit: At some point, it'd be good to be able to describe the EL2 
+>> virtual timer
+>> interrupt too. Not specially important, but since these ARMv8.2 CPUs 
+>> have it...
+> 
+> I will add the EL2 virtual timer interrupt to timer node.
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- arch/arm/configs/sunxi_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+If you do this, please update the binding first, as this interrupt
+is not described there yet.
 
-diff --git a/arch/arm/configs/sunxi_defconfig b/arch/arm/configs/sunxi_defconfig
-index 3f5d727efc41..e9fb57374b9f 100644
---- a/arch/arm/configs/sunxi_defconfig
-+++ b/arch/arm/configs/sunxi_defconfig
-@@ -85,6 +85,7 @@ CONFIG_BATTERY_AXP20X=y
- CONFIG_AXP20X_POWER=y
- CONFIG_THERMAL=y
- CONFIG_CPU_THERMAL=y
-+CONFIG_SUN8I_THERMAL=y
- CONFIG_WATCHDOG=y
- CONFIG_SUNXI_WATCHDOG=y
- CONFIG_MFD_AC100=y
+> 
+>> > +		gic: interrupt-controller@ff100000 {
+>> > +			compatible = "arm,gic-v3";
+>> > +			reg = <0xff100000 0x10000>,
+>> > +			      <0xff140000 0xc0000>;
+>> 
+>> Are you sure about the size of the GICR region? For 4 CPUs, it should 
+>> be
+>> 0x80000. Here, you have a range for 6 CPUs.
+> 
+> The GICR region should be 0x80000 because the RTD1319 SoC have only 4 
+> CPUs.
+
+OK. Please verify that this is actually the case, and that the last
+redistributor (at offset 0x60000) has GICR_TYPER.Last set. I have
+recently seen GICs configured for a larger number of CPUs where
+some of them were disabled in HW, and the DT was wrongly describing
+some of the redistributors only, leading to SW crashes.
+
+Thanks,
+
+         M.
 -- 
-2.17.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
