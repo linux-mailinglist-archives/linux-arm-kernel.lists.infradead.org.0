@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6336612C36D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 17:30:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9C6612C36A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 17:29:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=w/5lDGqWqhJFAOGQhSV4VWBBX9YN6P5mOsDwWTRi4Gg=; b=Wra7eL7SR+FHIuATIMhtL/XjGy
-	VzVewtrS6SedWU3NTpwnSdBWLb3n21xDfgbwQ1b9huRt356sKFCrUk11CSum5Fkd7PAgDSe5Bc65c
-	6CCW5eq6lfkMQj42R7EfyXUiHLdFoaA6LBJHgQhS9/OY3PS6xAUrBUHqX4Z47CNoUjnGhlRF236uK
-	ByJD8lxAlibBDjO7Klv5JtbOXzDv9UwX58aTXW2+iesxF6I6x4iuECPXGI5LfMlaTGJkq21Er9PoG
-	RcsabSO+81AQZF2SpRm1Gr1oTgoJejp5pJ2G+V84S4+GeQ1/SXWX7oUFy1acYVIvt4/zbflKhAr97
-	3pSiJBQQ==;
+	bh=SuMNaeKRg/isYz2LpRWB2KFfpLweN9xkxKHcGfUesEw=; b=t+RmdlCVCWmGQYrdnkbXT+NVul
+	BjdbxvaDkG7OdTjdaShQamCgk5l+sngCotJYzrnBqIlR/OFnjTrOF/Ccle85crXy9J6srl0gTTPQw
+	LfoW9ys1PDGEt1aTBlHJKsEhyam12SfJW/Hnw4lFkzO+glpSmwSX7lxTqeMFMf930XcAIhw3zk0PG
+	uy0p2lGaDQFDPvLjbmkSYTf3Gj4U7+ZVejBvvLzc1tRNVeEjJ1mO48jH4XsjK5sHONdIkcb/eFR23
+	F0AaKksKjVVDfyac8WHBM4po6S5AG4k7sMB565pipvywpWviuUu0pEBHHbHGixS+kveLHzSQq7LwG
+	7txDCGHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilbS2-0006rF-OQ; Sun, 29 Dec 2019 16:29:58 +0000
+	id 1ilbQw-000610-KQ; Sun, 29 Dec 2019 16:28:50 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilbQq-00060h-Bz
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 16:28:45 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j1so23846044lja.2
+ id 1ilbQn-0005zv-RV
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 16:28:43 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y6so23210310lji.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Dec 2019 08:28:44 -0800 (PST)
+ Sun, 29 Dec 2019 08:28:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=globallogic.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=n90E4FPbMEYNKi4XaN29BLl296r+dCfTfT/Y1plIRok=;
- b=WW0qXOjPWCCJFurZE+x1rZ4Omj+HQ93co+Hqeg7TS5QvnDaDmimiWR7WWaHTd475hq
- cj3uAGa8nL/uWp+f1KjSTbieIZSLGWYvYX0/WmVeCRoGoZWQyo4scDBAaV8w5c5IuV1c
- qQbZqQBE6pDQtPM74btaJmaWhJGo/N2jBY1Gw+qYuPL+xMSe9a2vJLszaVcbn9Tb+Vfl
- 6nwG5Y6JbfZPQJFYcrdkZq9Pn3CwMq2E8LDeBMH0i+0IYZmn/OycZcxkuhyp+ioFWiIL
- cj0Tt0O1JAGbrnHYH+vqG5fEkDl+TpKoBjOKVipHxuRwBmO7mQZM3RCDFHfPAW4QNU1p
- fYNg==
+ bh=4GjLcnLAOH5ADEEQuRyqeGZSux8fXFgp4Xzc2adgfqk=;
+ b=dDkneKR9lD+kK9916qjmFQsqFAkZxxEvuLdXWG97PK+WZAm62WGyeOEBaygYAVGhib
+ G17nJGDBamUEtVd5ZS3Ll+K29JBdgCHvD7aXJEqo8yfkYI0FP6zTpxXfkmCk+qg3BbWG
+ Np+BB104nvD89NAIXYC6UduUV24oDcATfpE5ew2IMeXokd5lnf44y51X0TxQEDit4bSr
+ MBKP10P62BX7BGUhOr1XxzI/h44j87Lh6/W9PecmVfMKPdp03glsE4VTM4+j0J3+d+Ns
+ p47qHMz4MkYe7KcNfdLqBj8t9T92Hw4h7tg1MQJgG2KD11EpzsHYIWDCFvzGkTStKEx+
+ +T4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=n90E4FPbMEYNKi4XaN29BLl296r+dCfTfT/Y1plIRok=;
- b=stpWoTqwpHS8xPUZVPLqR22DkKXYeD1cgDfiGztkWO3+vfaBtAYkGQXbTkpiLGfN6s
- UIIW3jsBlaoAG10qZOUVgolbtDYaqcFbTyRerrDu/e1GSFlnH7jP3ojLkmCea7asQv5a
- jdVtXb3D1+zEG4tr2vJ6e8nXARNKz34hAV+UFJ+XgUGvZdifndnMybtp4dmTO4xhxwyS
- j4xUAJmWd8dzHYJDwNh7REZ1C+voDNN2bp2qwAp+SkTq4bTX8hoHXQ2T6pfizdDn2WFF
- EOhhKW0rtCHvTfBDopEsZVqTmlJCtvPHtlrIUEBarEiz65HHJ2mDylNIRaNMo9oHgAgc
- z9nw==
-X-Gm-Message-State: APjAAAXrumCubtlaNno00efwblss2ZEhpy4J7/NRaI2cpIVTJy+s3ISf
- VUiZvs9yXphwP7Yk1hP99kSopw==
-X-Google-Smtp-Source: APXvYqxbn4rVVr9RPZY6bZ86mkyDYpAjqj5/2yMqaK0Sq0geQzws1uE/LI+k0Yoh1YydtyDzAJDWew==
-X-Received: by 2002:a2e:94d5:: with SMTP id r21mr36217156ljh.33.1577636919083; 
- Sun, 29 Dec 2019 08:28:39 -0800 (PST)
+ bh=4GjLcnLAOH5ADEEQuRyqeGZSux8fXFgp4Xzc2adgfqk=;
+ b=Fys7pVovRKbQD2IXlQhrHbsIcAXShyUPstf4DHnkLBkGiRZyHN4gOXbw3pPzTMGItO
+ rGdBju9QqqJOQSEMDLOFHjCn+EPViZ28WYzmhOeUYUS8Loq1zfIZ2qiPRM6cbN8oLTch
+ AWluZsO2l8CkZYGGCpa6fdtatFM4ebqyeaOdPAwnf7DrYFu89uZNXigm7HtMXTD8JoQ0
+ 5sMODWt7jIG/np1FxzCatWHRRZz3V8K8w2wB4/lNVtfPYS5Xido7kqtL9grVjpl+3az9
+ TFLmOczAlPHEq5sBaHNftxAyb8Hlm20zZz4S/Q52oprg3iy6vo7AUA+sgqkSMpcC9kmB
+ MoHQ==
+X-Gm-Message-State: APjAAAXhdUaNEVtgG++L81sJD6Sfdip0UKa/fzJeCqle3S41Ua2OnsKD
+ YwbbC537qV5wlx2/vd5i7DWtDg==
+X-Google-Smtp-Source: APXvYqy3z1gRmQcjg3s055j6HK2dZEP8CF7dp5jiKbBb4zEmLwkxo3QWKDr/PFQU4NVxKH3sIMDGzg==
+X-Received: by 2002:a05:651c:214:: with SMTP id
+ y20mr33720931ljn.139.1577636920137; 
+ Sun, 29 Dec 2019 08:28:40 -0800 (PST)
 Received: from virtualhost-PowerEdge-R810.synapse.com ([195.238.92.107])
- by smtp.gmail.com with ESMTPSA id u13sm17284858lfq.19.2019.12.29.08.28.37
+ by smtp.gmail.com with ESMTPSA id u13sm17284858lfq.19.2019.12.29.08.28.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Dec 2019 08:28:38 -0800 (PST)
+ Sun, 29 Dec 2019 08:28:39 -0800 (PST)
 From: roman.stratiienko@globallogic.com
 To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  jernej.skrabec@siol.net
-Subject: [PATCH v2 2/4] drm/sun4i: Add mode_set callback to the engine
-Date: Sun, 29 Dec 2019 18:28:26 +0200
-Message-Id: <20191229162828.3326-2-roman.stratiienko@globallogic.com>
+Subject: [PATCH v2 3/4] drm/sun4i: Use CRTC size instead of PRIMARY plane size
+ as mixer frame.
+Date: Sun, 29 Dec 2019 18:28:27 +0200
+Message-Id: <20191229162828.3326-3-roman.stratiienko@globallogic.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
 References: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_082844_407916_C35EB4DA 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20191229_082841_888583_6DE043CF 
+X-CRM114-Status: GOOD (  13.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -107,64 +109,117 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Roman Stratiienko <roman.stratiienko@globallogic.com>
 
-Create callback to update engine's registers on mode change.
+According to DRM documentation the only difference between PRIMARY
+and OVERLAY plane is that each CRTC must have PRIMARY plane and
+OVERLAY are optional.
 
+Allow PRIMARY plane to have dimension different from full-screen.
+
+Fixes: 90212fffa4fc ("drm/sun4i: Use values calculated by atomic check")
 Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
 ---
 v2:
-- Split commit in 2 parts.
-- Add description to mode_set callback
-- Dropped 1 line from sun4i_crtc_mode_set_nofb()
-- Add struct drm_display_mode declaration (fix build warning)
+- Split commit in 2 parts
+- Add Fixes line to the commit message
 ---
- drivers/gpu/drm/sun4i/sun4i_crtc.c   |  3 +++
- drivers/gpu/drm/sun4i/sunxi_engine.h | 12 ++++++++++++
- 2 files changed, 15 insertions(+)
+ drivers/gpu/drm/sun4i/sun8i_mixer.c    | 35 ++++++++++++++++++++++++++
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 30 ----------------------
+ 2 files changed, 35 insertions(+), 30 deletions(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_crtc.c b/drivers/gpu/drm/sun4i/sun4i_crtc.c
-index 3a153648b369..f9c627d601c3 100644
---- a/drivers/gpu/drm/sun4i/sun4i_crtc.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_crtc.c
-@@ -141,6 +141,9 @@ static void sun4i_crtc_mode_set_nofb(struct drm_crtc *crtc)
- 	struct sun4i_crtc *scrtc = drm_crtc_to_sun4i_crtc(crtc);
- 
- 	sun4i_tcon_mode_set(scrtc->tcon, encoder, mode);
-+
-+	if (scrtc->engine->ops->mode_set)
-+		scrtc->engine->ops->mode_set(scrtc->engine, mode);
+diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+index d306ad5dc093..5d90a95ff855 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+@@ -257,6 +257,40 @@ const struct de2_fmt_info *sun8i_mixer_format_info(u32 format)
+ 	return NULL;
  }
  
- static const struct drm_crtc_helper_funcs sun4i_crtc_helper_funcs = {
-diff --git a/drivers/gpu/drm/sun4i/sunxi_engine.h b/drivers/gpu/drm/sun4i/sunxi_engine.h
-index 548710a936d5..44102783ee3c 100644
---- a/drivers/gpu/drm/sun4i/sunxi_engine.h
-+++ b/drivers/gpu/drm/sun4i/sunxi_engine.h
-@@ -9,6 +9,7 @@
- struct drm_plane;
- struct drm_device;
- struct drm_crtc_state;
-+struct drm_display_mode;
- 
- struct sunxi_engine;
- 
-@@ -108,6 +109,17 @@ struct sunxi_engine_ops {
- 	 * This function is optional.
- 	 */
- 	void (*vblank_quirk)(struct sunxi_engine *engine);
++static void sun8i_mode_set(struct sunxi_engine *engine,
++			   struct drm_display_mode *mode)
++{
++	u32 dst_w = mode->crtc_hdisplay;
++	u32 dst_h = mode->crtc_vdisplay;
++	u32 outsize = SUN8I_MIXER_SIZE(dst_w, dst_h);
++	bool interlaced = false;
++	u32 val;
++	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
++	u32 bld_base = sun8i_blender_base(mixer);
 +
-+	/**
-+	 * @mode_set:
-+	 *
-+	 * This callback is used to update engine registers that
-+	 * responsible for display frame size other mode attributes.
-+	 *
-+	 * This function is optional.
-+	 */
-+	void (*mode_set)(struct sunxi_engine *engine,
-+			 struct drm_display_mode *mode);
++	DRM_DEBUG_DRIVER("Mode change, updating global size W: %u H: %u\n",
++			 dst_w, dst_h);
++	regmap_write(mixer->engine.regs,
++		     SUN8I_MIXER_GLOBAL_SIZE,
++		     outsize);
++	regmap_write(mixer->engine.regs,
++		     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), outsize);
++
++	interlaced = mode->flags & DRM_MODE_FLAG_INTERLACE;
++
++	if (interlaced)
++		val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
++	else
++		val = 0;
++
++	regmap_update_bits(mixer->engine.regs,
++			   SUN8I_MIXER_BLEND_OUTCTL(bld_base),
++			   SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
++			   val);
++	DRM_DEBUG_DRIVER("Switching display mixer interlaced mode %s\n",
++			 interlaced ? "on" : "off");
++}
++
+ static void sun8i_mixer_commit(struct sunxi_engine *engine)
+ {
+ 	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
+@@ -356,6 +390,7 @@ static struct drm_plane **sun8i_layers_init(struct drm_device *drm,
+ static const struct sunxi_engine_ops sun8i_engine_ops = {
+ 	.commit		= sun8i_mixer_commit,
+ 	.layers_init	= sun8i_layers_init,
++	.mode_set	= sun8i_mode_set,
  };
  
- /**
+ static struct regmap_config sun8i_mixer_regmap_config = {
+diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+index ee7c13d8710f..23c2f4b68c89 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+@@ -72,36 +72,6 @@ static int sun8i_ui_layer_update_coord(struct sun8i_mixer *mixer, int channel,
+ 	insize = SUN8I_MIXER_SIZE(src_w, src_h);
+ 	outsize = SUN8I_MIXER_SIZE(dst_w, dst_h);
+ 
+-	if (plane->type == DRM_PLANE_TYPE_PRIMARY) {
+-		bool interlaced = false;
+-		u32 val;
+-
+-		DRM_DEBUG_DRIVER("Primary layer, updating global size W: %u H: %u\n",
+-				 dst_w, dst_h);
+-		regmap_write(mixer->engine.regs,
+-			     SUN8I_MIXER_GLOBAL_SIZE,
+-			     outsize);
+-		regmap_write(mixer->engine.regs,
+-			     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), outsize);
+-
+-		if (state->crtc)
+-			interlaced = state->crtc->state->adjusted_mode.flags
+-				& DRM_MODE_FLAG_INTERLACE;
+-
+-		if (interlaced)
+-			val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
+-		else
+-			val = 0;
+-
+-		regmap_update_bits(mixer->engine.regs,
+-				   SUN8I_MIXER_BLEND_OUTCTL(bld_base),
+-				   SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
+-				   val);
+-
+-		DRM_DEBUG_DRIVER("Switching display mixer interlaced mode %s\n",
+-				 interlaced ? "on" : "off");
+-	}
+-
+ 	/* Set height and width */
+ 	DRM_DEBUG_DRIVER("Layer source offset X: %d Y: %d\n",
+ 			 state->src.x1 >> 16, state->src.y1 >> 16);
 -- 
 2.17.1
 
