@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3965112CABB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 21:15:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BE9E12CABC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 21:16:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tyR1NDc4BbX4lAjScHh83JC3dzIh0XxI4X134IN97L0=; b=Ob3
-	678rzsNPkN2+jGKDbwyl3pV1+R+P6vBhNPRqnrSPtbtrKo0mxPzeJTW2QStEdojCfAruUfe7MefWz
-	0Q0lo2r1WH87IV0oBAsky9DhIQ8rPzE5kgwhGs31zL9M2PMGhUxkijtFKfPnnKLe5YObmX7VaduAN
-	lA29fhtx0a7IV5QfH3CAPqbgVGJ1eRyGIkdyEk+6MOwvuXWMnRIAtZ/6BomlcRSzKbMHM/M0vZIru
-	jcTxQcIHkNP47l6mkAWzHnKqzmSHBMuSsUFQ4Rjmk+BGL1a7zwzt3Ftcu2iMnyijYjvIby5nRhFOH
-	H3zvoYnn1dWXS4Uduy0Wtsbq2yisaAw==;
+	References:List-Owner; bh=BERMi2UsjT4yF3W3v8L8wUGhLA9Cu6JWDgyHNE9Pv0I=; b=Qs+
+	TVlHVlgd84oukMAhE/LP3KarhtoJbWyPo2LGGSZacfumqkoFL2riplfEZj/Exrhv7h7hWQYd6XJq1
+	M2cSaZtm1E3s33GkYLtkvTU0ayau0LVsKvsGDq530paVLf0PNrubzEmJb93SiVKk3EA5AK9SypubK
+	ipvGWQagEdY8f3yzdZWA+1F0vQgDYJy6d13JnDDXoZOh4LArLGCKSLCRlZIJVIspPT5xyD0FOCqO2
+	QSH1Oh/P0KM4jx80wCJo9mKIZCyXEooBYYwX4lXQ/a6jUZsgyNMScoWYX6n5Xfs6FpORrHqSB52UJ
+	1osK42HYB7F60SMOYp7XeRNyaN4j6hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilexn-0005ml-Fx; Sun, 29 Dec 2019 20:14:59 +0000
+	id 1ilezM-0007Ml-DL; Sun, 29 Dec 2019 20:16:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilexe-0005lf-P3; Sun, 29 Dec 2019 20:14:52 +0000
+ id 1ilezB-0007M5-Lz; Sun, 29 Dec 2019 20:16:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10E0A1FB;
- Sun, 29 Dec 2019 12:14:44 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D66A81FB;
+ Sun, 29 Dec 2019 12:16:23 -0800 (PST)
 Received: from DESKTOP-VLO843J.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 365F83F237;
- Sun, 29 Dec 2019 12:14:43 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EB0173F237;
+ Sun, 29 Dec 2019 12:16:22 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
-Date: Sun, 29 Dec 2019 20:14:38 +0000
-Message-Id: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+Subject: [PATCH] arm64: dts: rockchip: Add RK3328 idle state
+Date: Sun, 29 Dec 2019 20:16:17 +0000
+Message-Id: <a8c83e705d387446ea8121516d410e38b2d9c57b.1577640736.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_121450_858478_238C4DF1 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20191229_121625_764137_10D7600A 
+X-CRM114-Status: GOOD (  15.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,46 +64,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add OPPs for the GPU, derived from the downstream Beelink A1 DTB.
+Downstream RK3328 DTBs describe a CPU idle state matching that present
+on other SoCs like RK3399. This works with upstream Trusted Firmware-A
+too, so let's add it here.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 91306ebed4da..e1b1b4551a8b 100644
+index 7df7daa188df..d71187cdd430 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -605,6 +605,28 @@
- 		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
- 		clock-names = "bus", "core";
- 		resets = <&cru SRST_GPU_A>;
-+		operating-points-v2 = <&gpu_opp_table>;
-+	};
-+
-+	gpu_opp_table: opp_table1 {
-+		compatible = "operating-points-v2";
-+
-+		opp-200000000 {
-+			opp-hz = /bits/ 64 <200000000>;
-+			opp-microvolt = <900000>;
-+		};
-+		opp-300000000 {
-+			opp-hz = /bits/ 64 <300000000>;
-+			opp-microvolt = <950000>;
-+		};
-+		opp-400000000 {
-+			opp-hz = /bits/ 64 <400000000>;
-+			opp-microvolt = <1025000>;
-+		};
-+		opp-500000000 {
-+			opp-hz = /bits/ 64 <500000000>;
-+			opp-microvolt = <1125000>;
-+		};
- 	};
+@@ -41,6 +41,7 @@
+ 			reg = <0x0 0x0>;
+ 			clocks = <&cru ARMCLK>;
+ 			#cooling-cells = <2>;
++			cpu-idle-states = <&CPU_SLEEP>;
+ 			dynamic-power-coefficient = <120>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
+@@ -53,6 +54,7 @@
+ 			reg = <0x0 0x1>;
+ 			clocks = <&cru ARMCLK>;
+ 			#cooling-cells = <2>;
++			cpu-idle-states = <&CPU_SLEEP>;
+ 			dynamic-power-coefficient = <120>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
+@@ -65,6 +67,7 @@
+ 			reg = <0x0 0x2>;
+ 			clocks = <&cru ARMCLK>;
+ 			#cooling-cells = <2>;
++			cpu-idle-states = <&CPU_SLEEP>;
+ 			dynamic-power-coefficient = <120>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
+@@ -77,12 +80,26 @@
+ 			reg = <0x0 0x3>;
+ 			clocks = <&cru ARMCLK>;
+ 			#cooling-cells = <2>;
++			cpu-idle-states = <&CPU_SLEEP>;
+ 			dynamic-power-coefficient = <120>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
+ 			operating-points-v2 = <&cpu0_opp_table>;
+ 		};
  
- 	h265e_mmu: iommu@ff330200 {
++		idle-states {
++			entry-method = "psci";
++
++			CPU_SLEEP: cpu-sleep {
++				compatible = "arm,idle-state";
++				local-timer-stop;
++				arm,psci-suspend-param = <0x0010000>;
++				entry-latency-us = <120>;
++				exit-latency-us = <250>;
++				min-residency-us = <900>;
++			};
++		};
++
+ 		l2: l2-cache0 {
+ 			compatible = "cache";
+ 		};
 -- 
 2.17.1
 
