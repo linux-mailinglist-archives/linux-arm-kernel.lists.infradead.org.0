@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 332F012C1B0
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 09:18:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A75A12C1AC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 09:17:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7jpsKqNyDVlsIw8TIBqdKBvMvH3VcmsAtZFG46wupxM=; b=RDLVJKEfhbNWJodDB5AYQVdniC
-	1P72ptLgm2PyAk9S2LyrWwn0FrqCYlqUTuXJz1mldfEVUSLLPW8ZWupA4xSfgPxduV41z6tS5gNjw
-	kfxRWrvqLB5PEn9CdS5d00RihAok9SfBu34AUW8GujLc4ZjXWjd1LNObPpgOC/ubHmPlMuRk+9Ouk
-	o0LzrbhT4IzHI1fwMaXGvfV2Mkn9N0Hz7tTVHOwy4bcuGqGsAE0mfed5BrJ/vbiTdLlE1qIn239Xb
-	WvSAhvrB/Fs1nNXDkuY3AMV9et2F00hfmUPC4D7jUMjWiCGa4eTEVxphiVpQ5L6X5/C6psVx1kbG4
-	Y4fBXVHw==;
+	bh=QtjqtpWT2NoSxLfcQrHh8fARGa284J6syh7Yx8w9sRg=; b=i7/7eseImveIz7qi0O4BnTxtJX
+	w+F8xHHBGpm1V3Vm9/fRpwU25nk2wljFCcTY8SDKkDj9hZcnqdKUEiPuewFIEWMIQFijAQn291D9b
+	rrU3Lj5YzrOq8M8+sLgS165OVdZNKI0+4XyYtqdX8+A2SPtN/bzmkl9obaJ/fFb+bJQUQqxsS1tn+
+	gz/f2BISXzeU7uB5JNLrEcn/Wq8jd6z9w4fRhROA1C2ecxAQqRvjLHL5mQ/+DU+L1hgTjEh6KOK4o
+	piLsoahc6CrXsKnRw3ummxcN/44O2YK5Zj7SX+R40IhpHivyOLUFh4oIDYogpEeHDp0cy1rrOYezE
+	xjtUheqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilTlq-0004VV-Qa; Sun, 29 Dec 2019 08:17:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ilTlI-0003ww-4C; Sun, 29 Dec 2019 08:17:20 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilTbA-0001Hn-5L; Sun, 29 Dec 2019 08:06:54 +0000
-Received: by mail-pl1-x643.google.com with SMTP id x17so13507422pln.1;
- Sun, 29 Dec 2019 00:06:51 -0800 (PST)
+ id 1ilTbB-0001Ij-OH; Sun, 29 Dec 2019 08:06:55 +0000
+Received: by mail-pl1-x642.google.com with SMTP id g6so10550008plp.6;
+ Sun, 29 Dec 2019 00:06:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ybrin7Bm43ghD4JohutI1MKUWkgtrAiHaUYHCnbL3nc=;
- b=gn2BXtUaFi/tdX1Dv0Kl80fKucwAwOVC6rPzfhtY434YtZp11KCEm0WtOZfPRQDLKv
- 4d/zGvTV1a3bsBkgx0+eByWAf393IXyEXrYsBuuC6EIod+6nICrvtppd1Txm2BD9sjeT
- 02se04wl2qG9EdES/0qypQAZidiOyQl6iBgaF2ADkxvZKJuLbV4HupX0ULRQtMyoYzEZ
- Ul+63P/ZIyl3/TFMpqF9GrigjSTGBvHvMos20n9olUn0HLuRB2OK93c/YdCL3TCZuBlq
- v3cXN/dMPkC9gQfiWFyhUSpQMpgynoRRTuham8wPXHm8unCGGrdewhY+LWLWcTPpIwR6
- HviQ==
+ bh=47el5Owup02YUbMebGEaPI3XvpkPXD+FFtHlPrEyxFA=;
+ b=MIXP/grZx6mWbEPfFXoqRs3JDVjT04SNhSSWru67t/m2eIdF2cqFP0yxHw3B0ADWzA
+ Mj3R/G2Hv0hE88wKCIVgrmJUyZU1RwbGy8FRZe4fVCKonv6vI4DRiJPdpxqydIsjM3Ll
+ MCKmGePOPt3QMQPqZx5luh3T2jxYbH9ahKrCYeSs4sO6/eCjeQcZxqD6zWnTnfkm1VFm
+ 4VeDCHj74to92KPKBIPeT1p5Tr6sWXUDo8dBqmrioiHBkpdcY169L96miePLUYBE4YgA
+ TCVBtRbuC058Y/EY2qJFGEXH571X/xpG8vWrH0jA9cQoeT147Yy9P95L7fSgzdeip8Gu
+ i2pA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ybrin7Bm43ghD4JohutI1MKUWkgtrAiHaUYHCnbL3nc=;
- b=NxH4Whytq7BSinonZZ6Sumk5gf0OQZ1Nb1x317994w0XMXH4E4XEcNsxfZ+PXrV36P
- cpU1oAy6HmDoFbmlKkXn+UinXBglmRReO3EO19Ckp6HSljhTUiD68BFuO7/ZGJanxh+0
- ma/R5oqDoP9mU/wKuc3ESPpXYs5ta8Yy72sc5wOuamCz1Vd+IVytw28MgbunM8bI9ZSb
- FcPnht0MgmoaDXi116JufUfv6NnKwko0KkMjUuj6vZWyBvpXU65IiLGUKHHpRy4nPG5R
- 9w2/EZYXywOv92Zl3bXWWYgsFAAZpBTMYFggBuPK8dV4kqez87PDgF8SV2Sg6TCvSqRs
- tzWA==
-X-Gm-Message-State: APjAAAXhFM4fr8xB2yDknw3XNuYo+wFTeRflU4kyQfSWNkhNX8jjM4L6
- voLNJDlDI1cH40nLTqMwZqs=
-X-Google-Smtp-Source: APXvYqzgIbRZSeM6NnV/+qUyWrlWhkxW/F56U+gtXAWCgPTjTFIZU7kTdkeI0S+qki+zI2ZQYb7QnA==
-X-Received: by 2002:a17:902:7484:: with SMTP id
- h4mr59426080pll.206.1577606810385; 
- Sun, 29 Dec 2019 00:06:50 -0800 (PST)
+ bh=47el5Owup02YUbMebGEaPI3XvpkPXD+FFtHlPrEyxFA=;
+ b=qI00ozP1u6vG0yMhOl8KHV1gZj4yKUX0Jfkjwr2sQ6gpSIhxYpUDga0E+zTaO1r4Mi
+ M54ckxN0uQ+vXGTO+vkHuL0nLyMUeEwTdnoeOvsQjV1hlHWFXWHLSGWjpuOmERqp4lzj
+ svxJdk3G0Ky8RN6bU1vpxSagPzddkG3RdyKyKKG20BHOfIAk/gJiOJcKrBxkZrBNodrF
+ EGTyKH2MJbouLrd7l+B4Lo05qfX2P6HNrRStNjop3GspIM/7RkQJSSYvFmRO7TAYSY5L
+ EeQ7rySzON6uCNZyckPu835AqplauWj2604p3S5GkkS6DKSWX1tcQTAjAyuwqI0ambw8
+ y5HA==
+X-Gm-Message-State: APjAAAWZx06IMoMsROZ0dHuKdKDtTqQlZId50M4hi+OZFnLstbSDiDGa
+ 5h7tRB6Ufiqnrv+hjNoECF8=
+X-Google-Smtp-Source: APXvYqx0/m9vcRiiE8VyrTjc7rP0/kHdHXJwPeS5Tef1XK44wL7jcNW0xwmNSTXH2Pe6rwcBvhW0LA==
+X-Received: by 2002:a17:90a:3763:: with SMTP id
+ u90mr38493406pjb.107.1577606811634; 
+ Sun, 29 Dec 2019 00:06:51 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id d129sm24524981pfd.115.2019.12.29.00.06.49
+ by smtp.gmail.com with ESMTPSA id a26sm37945389pfo.27.2019.12.29.00.06.50
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Dec 2019 00:06:49 -0800 (PST)
+ Sun, 29 Dec 2019 00:06:51 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: claudiu.beznea@microchip.com, thierry.reding@gmail.com,
  u.kleine-koenig@pengutronix.de, nicolas.ferre@microchip.com,
@@ -72,15 +72,15 @@ To: claudiu.beznea@microchip.com, thierry.reding@gmail.com,
  linux-amlogic@lists.infradead.org, linux-mediatek@lists.infradead.org,
  linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
  linux-tegra@vger.kernel.org
-Subject: [PATCH 31/32] pwm: sifive: convert to devm_platform_ioremap_resource
-Date: Sun, 29 Dec 2019 08:06:09 +0000
-Message-Id: <20191229080610.7597-31-tiny.windzz@gmail.com>
+Subject: [PATCH 32/32] pwm: atmel: convert to devm_platform_ioremap_resource
+Date: Sun, 29 Dec 2019 08:06:10 +0000
+Message-Id: <20191229080610.7597-32-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191229080610.7597-1-tiny.windzz@gmail.com>
 References: <20191229080610.7597-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_000652_337027_D2CAFE80 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20191229_000653_882537_02EB2D0E 
+X-CRM114-Status: UNSURE (   9.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,7 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -123,30 +123,30 @@ Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/pwm/pwm-sifive.c | 4 +---
+ drivers/pwm/pwm-atmel.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/pwm/pwm-sifive.c b/drivers/pwm/pwm-sifive.c
-index cc63f9baa481..cb9134d7197b 100644
---- a/drivers/pwm/pwm-sifive.c
-+++ b/drivers/pwm/pwm-sifive.c
-@@ -232,7 +232,6 @@ static int pwm_sifive_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct pwm_sifive_ddata *ddata;
- 	struct pwm_chip *chip;
+diff --git a/drivers/pwm/pwm-atmel.c b/drivers/pwm/pwm-atmel.c
+index 9ba733467e26..86cc5ccaa46c 100644
+--- a/drivers/pwm/pwm-atmel.c
++++ b/drivers/pwm/pwm-atmel.c
+@@ -340,7 +340,6 @@ MODULE_DEVICE_TABLE(of, atmel_pwm_dt_ids);
+ static int atmel_pwm_probe(struct platform_device *pdev)
+ {
+ 	struct atmel_pwm_chip *atmel_pwm;
 -	struct resource *res;
  	int ret;
  
- 	ddata = devm_kzalloc(dev, sizeof(*ddata), GFP_KERNEL);
-@@ -248,8 +247,7 @@ static int pwm_sifive_probe(struct platform_device *pdev)
- 	chip->base = -1;
- 	chip->npwm = 4;
+ 	atmel_pwm = devm_kzalloc(&pdev->dev, sizeof(*atmel_pwm), GFP_KERNEL);
+@@ -351,8 +350,7 @@ static int atmel_pwm_probe(struct platform_device *pdev)
+ 	atmel_pwm->data = of_device_get_match_data(&pdev->dev);
+ 	atmel_pwm->updated_pwms = 0;
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	ddata->regs = devm_ioremap_resource(dev, res);
-+	ddata->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(ddata->regs))
- 		return PTR_ERR(ddata->regs);
+-	atmel_pwm->base = devm_ioremap_resource(&pdev->dev, res);
++	atmel_pwm->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(atmel_pwm->base))
+ 		return PTR_ERR(atmel_pwm->base);
  
 -- 
 2.17.1
