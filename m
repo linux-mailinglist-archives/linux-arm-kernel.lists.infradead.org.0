@@ -2,50 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92B4712C608
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 18:48:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9B1E12C751
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 19:09:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0F0MgTVxAYT5L6KgPvY8TyqpdjDvMKmubuOywMHefHo=; b=uaX
-	PbRkROXyxBOacHStVmqfWMESkpq2M7kpHT2eY4blC2nfS5Q3zpneYSAmzkb1t3uphQictEhrk8cmL
-	18EzTrP6C6mbEFwaCLEtrYvD+/wj9/gytGR7tegTkyybvhKkTnbXLFIKAUYEmO7GF6oujCKwGeR/S
-	GjFDpONlRTuwWXqGzj+0cVWVwO7GU9tWrGTDKU3jCeFFKn5CZvF3w6FYjTjfRBWneq7m368BJ9N29
-	ZBX3q65m5CR+3PyzSAvDKNCl3fxkSIj/uVPiNZ+/loP5O2Cbfi//Vi9IkeU6qcC5V+97q+x9CqJ+n
-	3b5B1pgKOvjVtKFcge/Qmuf46vHJK+A==;
+	References:List-Owner; bh=wDf0jmOlFHB6Zg97qH0NLJYildQyR3olz0oxZ99yYrk=; b=rfb
+	sZJXnSZnGQ+T3wdPNhCVUR3FTyTv4ldh4qWEj2JvxBkUsxJ7MX9JekIB7YmjihiX8+rOG2TxWG9tw
+	ocr9MbGC6Xz7ERE7sJI9IV7V+cf96+7annRA4lH+erZ/X5ZIVhGxJtBdD/XAQ56ppbfvUclIaLMO4
+	o7WLuGa3crXdftWrlfRWAi4DFbMLh2hvNRrb7vZChMGJFTUWk2Mk9KLEIOUy8AU1ccKMQnA3rRmDH
+	eXZLJet8xhfkzhfLKN0Q122HRPykHeb7N3OoxE4wuGbmMgazLOKlL8c2EMCNsVivkMzxK9Jic6odY
+	GgZgq76iaudZm05ofto8ro97ruw+XGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilcfv-00085T-Tz; Sun, 29 Dec 2019 17:48:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilcfo-00084o-S8; Sun, 29 Dec 2019 17:48:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6AD5931B;
- Sun, 29 Dec 2019 09:48:11 -0800 (PST)
-Received: from DESKTOP-VLO843J.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BB4813F703;
- Sun, 29 Dec 2019 09:48:10 -0800 (PST)
-From: Robin Murphy <robin.murphy@arm.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: Fix IR on Beelink A1
-Date: Sun, 29 Dec 2019 17:48:05 +0000
-Message-Id: <44269c08e2a5d75b03ded87d2eb11621762d8249.1577636223.git.robin.murphy@arm.com>
+	id 1ild0T-0007uZ-4B; Sun, 29 Dec 2019 18:09:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ild0G-0007ti-OP
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 18:09:26 +0000
+Received: from localhost.localdomain (unknown [194.230.155.138])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 754DE206A4;
+ Sun, 29 Dec 2019 18:09:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577642964;
+ bh=+YBS7n7jqJ53S6HvX93BfgZRfoAttIJ+SIElGBLSgqM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=XytEjOEurhjJTShnLSoF6V0pKh8UWSrV3+ocJp0GzOkqtZdJ5E6PGSdOj+2fHjz+V
+ nQr/4bGruIfAdtca2M5HnUq2vsjPxWwLYpsrN3qkznS+R2YbvGVSM+AUz3xBgoMgmZ
+ 4wpLCAucYhlvpbMJipEOStNlPUnQkGeA01iDvrwA=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
+Subject: [PATCH] cpuidle: arm: Enable compile testing for some of drivers
+Date: Sun, 29 Dec 2019 19:09:11 +0100
+Message-Id: <20191229180912.17100-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_094816_952635_55FFA354 
-X-CRM114-Status: GOOD (  13.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191229_100924_814889_A8B6FF04 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,37 +78,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Apparently I wasn't paying enough attention... And nor is the lazy
-test of `cat /dev/lirc0` sufficiently blunder-proof. Oh well, with
-the correct polarity, let's also hook up a keymap now that one for
-the standard Beelink remote has handily appeared.
+Some of cpuidle drivers for ARMv7 can be compile tested on this
+architecture because they do not depend on mach-specific bits.  Enable
+compile testing for big.LITTLE, Kirkwood, Zynq, AT91, Exynos and mvebu
+cpuidle drivers.
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3328-a1.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/cpuidle/Kconfig.arm | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-index 76b49f573101..16f1656d5203 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-@@ -49,7 +49,8 @@
+diff --git a/drivers/cpuidle/Kconfig.arm b/drivers/cpuidle/Kconfig.arm
+index a224d33dda7f..62272ecfa771 100644
+--- a/drivers/cpuidle/Kconfig.arm
++++ b/drivers/cpuidle/Kconfig.arm
+@@ -25,7 +25,7 @@ config ARM_PSCI_CPUIDLE
  
- 	ir-receiver {
- 		compatible = "gpio-ir-receiver";
--		gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
-+		gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_LOW>;
-+		linux,rc-map-name = "rc-beelink-gs1";
- 	};
- };
+ config ARM_BIG_LITTLE_CPUIDLE
+ 	bool "Support for ARM big.LITTLE processors"
+-	depends on ARCH_VEXPRESS_TC2_PM || ARCH_EXYNOS
++	depends on ARCH_VEXPRESS_TC2_PM || ARCH_EXYNOS || COMPILE_TEST
+ 	depends on MCPM && !ARM64
+ 	select ARM_CPU_SUSPEND
+ 	select CPU_IDLE_MULTIPLE_DRIVERS
+@@ -51,13 +51,13 @@ config ARM_HIGHBANK_CPUIDLE
  
+ config ARM_KIRKWOOD_CPUIDLE
+ 	bool "CPU Idle Driver for Marvell Kirkwood SoCs"
+-	depends on MACH_KIRKWOOD && !ARM64
++	depends on (MACH_KIRKWOOD || COMPILE_TEST) && !ARM64
+ 	help
+ 	  This adds the CPU Idle driver for Marvell Kirkwood SoCs.
+ 
+ config ARM_ZYNQ_CPUIDLE
+ 	bool "CPU Idle Driver for Xilinx Zynq processors"
+-	depends on ARCH_ZYNQ && !ARM64
++	depends on (ARCH_ZYNQ || COMPILE_TEST) && !ARM64
+ 	help
+ 	  Select this to enable cpuidle on Xilinx Zynq processors.
+ 
+@@ -70,19 +70,19 @@ config ARM_U8500_CPUIDLE
+ config ARM_AT91_CPUIDLE
+ 	bool "Cpu Idle Driver for the AT91 processors"
+ 	default y
+-	depends on ARCH_AT91 && !ARM64
++	depends on (ARCH_AT91 || COMPILE_TEST) && !ARM64
+ 	help
+ 	  Select this to enable cpuidle for AT91 processors.
+ 
+ config ARM_EXYNOS_CPUIDLE
+ 	bool "Cpu Idle Driver for the Exynos processors"
+-	depends on ARCH_EXYNOS && !ARM64
++	depends on (ARCH_EXYNOS || COMPILE_TEST) && !ARM64
+ 	select ARCH_NEEDS_CPU_IDLE_COUPLED if SMP
+ 	help
+ 	  Select this to enable cpuidle for Exynos processors.
+ 
+ config ARM_MVEBU_V7_CPUIDLE
+ 	bool "CPU Idle Driver for mvebu v7 family processors"
+-	depends on ARCH_MVEBU && !ARM64
++	depends on (ARCH_MVEBU || COMPILE_TEST) && !ARM64
+ 	help
+ 	  Select this to enable cpuidle on Armada 370, 38x and XP processors.
 -- 
 2.17.1
 
