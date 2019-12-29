@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0314212C60A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 18:51:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9070312C60C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 18:51:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GQwz/uy0LZ/f/CwDPt/PktWb2p5WdRFrY/vfOJP6Vn8=; b=Z2pdXaZvwWcD9U
-	uYcyVWqx1has1r3+aBZKqrpxwkkWKKfQvBA6jxiHQE+nqcBrDfT8+GOJ5faiBy2RQZHBJ7jpi8NkL
-	D55k2qTl+ZBW8Ip4LYtK1VqxQ8iHoVzgktDxYpvOogQk7tOq8iDB2gIxiUBECf3+c9whNkCAtjR/z
-	6N0eJWt0dp4atyuMO57WD3FUERnVUFANr6oe5HD5te2FmbVCHiwb5DURHVP9bnk49JTX9zQHCMPB9
-	JXty60UYpMPraY17+1kjRfhSTP0g3lYTPNap5T7bOjyQPqx1RcX5Lk95i33/OQL4f1e4E5xirapLF
-	mp37SrH93GX1SF52MqZg==;
+	List-Owner; bh=gf4zznCwpvXQGdvDMMu1pY/JbdV1ZbPfDDUjfpNbFwY=; b=moCjozW10O8K1w
+	o99jjM2Ica8WsvwmSdCowh3Xvr8oADzmZ0JPjFH7npMCcCFRfVYgqjutBjvLosamr+/5xd7Xq80U7
+	aWdfD50G0yviC0NSf6WVJZREbldFGqhkBYUZD3327vU367oaCryG4TsWR41ATalSuFjcvPVqEW4Na
+	OvYPGY4vvdBEIAKODA+dx1nkYacwlwM40lgodXUHcWaB8rh42i27WXNeQgn7BLagqc7jK1dkrveJT
+	zkX4zk0tLWDQneErJ53KmE0Ky+O48h4EJ61nn55vbOz7R6qGAPsUUpsE0NTBYDIWugnr9TxLejoF7
+	ATSDrc2bNsjsvL/kDDOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilcig-0001W8-VH; Sun, 29 Dec 2019 17:51:14 +0000
+	id 1ilcj6-0001mc-SM; Sun, 29 Dec 2019 17:51:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilciW-0001VF-MR
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 17:51:06 +0000
+ id 1ilciu-0001m1-6j
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 17:51:29 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CF07B207FD;
- Sun, 29 Dec 2019 17:51:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6C21820718;
+ Sun, 29 Dec 2019 17:51:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577641864;
- bh=kXUYMUazpeA9aa6t8663MGnk4sLrJM9Oq5+Y8rhQ32w=;
+ s=default; t=1577641887;
+ bh=xlc7THDxqHOy7omFyY3ozdfR6uXdFyOw7hRsO3wCTyQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cEmJ1rAJuX4iyLW3pl/uO1BSa8SDl8jQtcr1h4GP4hUKj69vx3JDlyWBtLStCj3Io
- AdlnhCvmX2HD7rnMZtBxsBsb8bjR/wZGCJ03+4eGYRHgennz/qEvoRgsOReirMMAFI
- dmkfybNcYbqK53ZZXNYofj78QQ7uszs+ENa1x9Gs=
+ b=1tAF5pXJqwcjxBkfp6g0F4nneIQcSRUirygO0C+BqikVjkQytsOy61Mi8LRf1bxp7
+ Bd9KNRztvlOnHcabRnPzEVn0DctZmn6D5XPyp4rMRFgzn53bPferUhcRP3aWHn0ztu
+ rjdTpq+z/+9hBjh5UzZXETsDEosJzNRLK0HgYU00=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.4 244/434] perf cs-etm: Fix definition of macro
- TO_CS_QUEUE_NR
-Date: Sun, 29 Dec 2019 18:24:57 +0100
-Message-Id: <20191229172718.090768227@linuxfoundation.org>
+Subject: [PATCH 5.4 253/434] perf tools: Fix cross compile for ARM64
+Date: Sun, 29 Dec 2019 18:25:06 +0100
+Message-Id: <20191229172718.726560429@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191229172702.393141737@linuxfoundation.org>
 References: <20191229172702.393141737@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_095104_775816_740A3ED3 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20191229_095128_265177_97A14178 
+X-CRM114-Status: GOOD (  12.19  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,78 +74,77 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Will Deacon <will@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- coresight ml <coresight@lists.linaro.org>, stable@vger.kernel.org,
+ John Garry <john.garry@huawei.com>, stable@vger.kernel.org,
  Arnaldo Carvalho de Melo <acme@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+ Peter Zijlstra <peterz@infradead.org>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Leo Yan <leo.yan@linaro.org>
+From: John Garry <john.garry@huawei.com>
 
-[ Upstream commit 9d604aad4bb022e848dec80d6fe5f73fe87061a2 ]
+[ Upstream commit 71f699078b154fcb1c9162fd0208ada9ce532ffc ]
 
-Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
-as its parameter, this doesn't match with its definition body which uses
-'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
+Currently when cross compiling perf tool for ARM64 on my x86 machine I
+get this error:
 
-It's luck to have a local variable 'trace_chan_id' in the function
-cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
-the local variable 'trace_chan_id' is used rather than the macro's
-parameter 'trace_id_chan'; so the compiler doesn't complain for this
-before.
+  arch/arm64/util/sym-handling.c:9:10: fatal error: gelf.h: No such file or directory
+   #include <gelf.h>
 
-After renaming the parameter, it leads to a compiling error due
-cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
-the variable 'trace_chan_id' for the macro so that fixes the compiling
-error.
+For the build, libelf is reported off:
 
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+  Auto-detecting system features:
+  ...
+  ...                        libelf: [ OFF ]
+
+Indeed, test-libelf is not built successfully:
+
+  more ./build/feature/test-libelf.make.output
+  test-libelf.c:2:10: fatal error: libelf.h: No such file or directory
+   #include <libelf.h>
+          ^~~~~~~~~~
+  compilation terminated.
+
+I have no such problems natively compiling on ARM64, and I did not
+previously have this issue for cross compiling. Fix by relocating the
+gelf.h include.
+
+Signed-off-by: John Garry <john.garry@huawei.com>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
 Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: coresight ml <coresight@lists.linaro.org>
+Cc: Will Deacon <will@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lore.kernel.org/lkml/20191021074808.25795-1-leo.yan@linaro.org
+Link: http://lore.kernel.org/lkml/1573045254-39833-1-git-send-email-john.garry@huawei.com
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/cs-etm.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ tools/perf/arch/arm64/util/sym-handling.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 4ba0f871f086..f5f855fff412 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
-  * encode the etm queue number as the upper 16 bit and the channel as
-  * the lower 16 bit.
-  */
--#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)	\
-+#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)	\
- 		      (queue_nr << 16 | trace_chan_id)
- #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
- #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
-@@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
- 	 * Note that packets decoded above are still in the traceID's packet
- 	 * queue and will be processed in cs_etm__process_queues().
- 	 */
--	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
-+	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
- 	ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
- out:
- 	return ret;
+diff --git a/tools/perf/arch/arm64/util/sym-handling.c b/tools/perf/arch/arm64/util/sym-handling.c
+index 5df788985130..8dfa3e5229f1 100644
+--- a/tools/perf/arch/arm64/util/sym-handling.c
++++ b/tools/perf/arch/arm64/util/sym-handling.c
+@@ -6,9 +6,10 @@
+ 
+ #include "symbol.h" // for the elf__needs_adjust_symbols() prototype
+ #include <stdbool.h>
+-#include <gelf.h>
+ 
+ #ifdef HAVE_LIBELF_SUPPORT
++#include <gelf.h>
++
+ bool elf__needs_adjust_symbols(GElf_Ehdr ehdr)
+ {
+ 	return ehdr.e_type == ET_EXEC ||
 -- 
 2.20.1
 
