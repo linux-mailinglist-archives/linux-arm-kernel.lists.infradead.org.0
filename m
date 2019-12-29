@@ -2,74 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C5DF12C103
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 08:57:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 408DC12C112
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 09:06:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QnmJP6qXTwLlsVhfCv1kuSViwxBfsSb2ECzec0fg/pA=; b=mhAlSrFADd5a9E
-	wnALtWmZQ3b//Y0hAnmuvpB/I+9LQA4uOqBW2PWp32vSEHd9NTRWcIuXo/bZTwZv7dxLze505sm5p
-	mpiTJphWCOVv/DxddcjfMyHGh2la6Pwj7Q1MGk0M3QPjOuDsqYs8a1WDFGOJNOVccjKeJkZJx2v8Z
-	0EwykYtFGzh5ppBCJC9ueckmbN+7r3peECXRflw3ekMSXDaXoAspuY3UqRe1zlxiV+nxezlQoFGrs
-	JYzIadv/IxR/bco9/HMw3m9cWWDvdugnggDoQaxR6W2F3S2F3s80YPnqDhaOdI7ieXMLhxwIa4H0k
-	F/DnpZGnwTaanLx60rHQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=r91PoknjP1BQMp8RbgEWB3gpqGObPNuULBGRHYdi+Sk=; b=ECe
+	+Kqple+dhHoPWXP7x+0at3el+Pt8eUhCf0X4iUjxNfBzp62sgTziu8+kMkBwG+VgMs4aLkEI70TXn
+	anPH5QGHDq46bkM4BQT1t3wksKq30TIcskMGTYqqwVktWHuf1fVGpaNyY+fYcqLaHhjHsgKgbjLZX
+	pTrP49I6QiUDvI8s7bIEb9X7HOJ3wLz9AWByV4R5HqAefkfkR9w8p/Mj7wWas1xN4KWAEINhCDJHD
+	MeXxeUF3cPborrF724GglIKBwRIu8lf8jH71yyvRskVwPfWQrbCC7pUF+AL993mbvdMwzKq163ioU
+	b8uUSPm79DRkJjz+qMCwopgOmnlyl0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilTSG-00069h-Ba; Sun, 29 Dec 2019 07:57:40 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1ilTS6-00068z-Ny; Sun, 29 Dec 2019 07:57:32 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xBT7vM7H015574,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCASV01.realtek.com.tw[172.21.6.18])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xBT7vM7H015574
- (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
- Sun, 29 Dec 2019 15:57:22 +0800
-Received: from RTEXMB06.realtek.com.tw (172.21.6.99) by
- RTITCASV01.realtek.com.tw (172.21.6.18) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Sun, 29 Dec 2019 15:57:22 +0800
-Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB06.realtek.com.tw (172.21.6.99) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Sun, 29 Dec 2019 15:57:21 +0800
-Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
- RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
- 15.01.1779.005; Sun, 29 Dec 2019 15:57:21 +0800
-From: James Tai <james.tai@realtek.com>
-To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>
-Subject: RE: [PATCH v2 0/2] Initial RTD1319 SoC and Realtek PymParticle EVB
- support
-Thread-Topic: [PATCH v2 0/2] Initial RTD1319 SoC and Realtek PymParticle EVB
- support
-Thread-Index: AQHVvZBnw+MU9IFQeki5qI/vGuhs8afP46uAgADZpxA=
-Date: Sun, 29 Dec 2019 07:57:21 +0000
-Message-ID: <4a8a2899c2e140b39db251b456a77959@realtek.com>
-References: <20191228150553.6210-1-james.tai@realtek.com>
- <9fbe4392-5028-3718-8c97-547a46efad2a@suse.de>
-In-Reply-To: <9fbe4392-5028-3718-8c97-547a46efad2a@suse.de>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [114.37.128.25]
-MIME-Version: 1.0
+	id 1ilTaq-0000nU-Cp; Sun, 29 Dec 2019 08:06:32 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ilTaZ-0000m7-Oy; Sun, 29 Dec 2019 08:06:17 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id t101so6880795pjb.4;
+ Sun, 29 Dec 2019 00:06:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=+3pBLd50yZ31QGDnQXQDHmLfpHXmqi0l43iIkO1V9Fk=;
+ b=JG6H1yvXtza6zd1BLy2dsQbEIHwG3IcGFnYTmJb+HGx740diEoe5JAn+t24q8VoSuV
+ 5fbcviVM5CcY0TyjCuQXa6qCbooh7tfB+LrHt3/Ug6YFtCT5k5V2gwou5opqsGC6PwHc
+ eurPwx50PDqmxEW1q+ynKJ0KnCQeyzQX7xW2SvY2itaOb+xiBEMYtX6IObjqWLKo9teF
+ Q8zj04fwbhQU/UpdXgs6LRdOgn+M5RnZG84uXVM3HPgc9uiEjx0BMuG3GLmG4PD1Qm+A
+ hyzMraA1AY+YuWSnreOvwjqLS2dumP9P/mjJBIQS5Ru3J260j9Ci2chSfkQQqO0ydswt
+ R3SQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=+3pBLd50yZ31QGDnQXQDHmLfpHXmqi0l43iIkO1V9Fk=;
+ b=inmZwBahr4mNTuG+Zlk52De+YFn4n7zSVAqf4BkR5O1PKeXnMdiJahSGFClBmkmB+H
+ 9o/vVo+wU66tUto+FK2pupmiQTGkfztlqJ+ohzXWd+0tIs6Ye1yz2Rcq4UYvDpBFRQ/6
+ dwoDZc3nhKXE+q+k6LO7rsJBCVcVmfEyCNgt+ENkC4tsV1p7OoEDnceWHAmIQW3e8euU
+ rDD2VIQSTQHFxiEzCT4jCySoG8c4NglGREKutnRF/XXxlwYV29jcRQdpvb0CzsRG8vm0
+ sMnNvbSNknyW5VgD90wx2F/aGH20oaMRyfxnJgDe/Kx25wLJK7BJzyc3ae26lGOYzMzM
+ stxA==
+X-Gm-Message-State: APjAAAU3A+AJhvTj4BD3QHpQ0w8vHnOEyjvHiN/S0lmxrMCar8lQF0P1
+ Vbk55cp1e+UVIW/0R1Iblgk=
+X-Google-Smtp-Source: APXvYqxnI5XBWy+NXM/GB41OB70ppiFg3j0a/LZfYu0PTXzqYRRbkm4zUSrtO9fzojgrIm7DOwlwvw==
+X-Received: by 2002:a17:902:7296:: with SMTP id
+ d22mr64069643pll.55.1577606774630; 
+ Sun, 29 Dec 2019 00:06:14 -0800 (PST)
+Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
+ by smtp.gmail.com with ESMTPSA id f127sm48271863pfa.112.2019.12.29.00.06.13
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 29 Dec 2019 00:06:13 -0800 (PST)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: claudiu.beznea@microchip.com, thierry.reding@gmail.com,
+ u.kleine-koenig@pengutronix.de, nicolas.ferre@microchip.com,
+ alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
+ rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com, f.fainelli@gmail.com,
+ nsaenzjulienne@suse.de, shc_work@mail.ru, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, vz@mleia.com, slemieux.tyco@gmail.com,
+ khilman@baylibre.com, matthias.bgg@gmail.com, heiko@sntech.de,
+ palmer@dabbelt.com, paul.walmsley@sifive.com, mripard@kernel.org,
+ wens@csie.org, jonathanh@nvidia.com, linux@prisktech.co.nz,
+ linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
+ linux-tegra@vger.kernel.org
+Subject: [PATCH 01/32] pwm: sun4i: convert to devm_platform_ioremap_resource
+Date: Sun, 29 Dec 2019 08:05:39 +0000
+Message-Id: <20191229080610.7597-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_235730_909503_14E26780 
-X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-CacheID: sfid-20191229_000615_836436_63091427 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.75.126.72 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,33 +105,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Yangtao Li <tiny.windzz@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andreas,
+Use devm_platform_ioremap_resource() to simplify code.
 
-> This time you CC'ed me only on the cover letter, so that I didn't get notified of,
-> e.g., Marc's review comments. I wonder why: realtek.yaml is in MAINTAINERS,
-> and so is dts/realtek/, so get_maintainers.pl should've picked me up, even if
-> you forgot to explicitly CC me? Please check what went wrong there and make
-> sure it doesn't happen again for the next submission.
-> 
-I will check it and make sure it doesn't happen again for the next submission.
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+---
+ drivers/pwm/pwm-sun4i.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-Thanks.
-
-Regards,
-James
+diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+index 581d23287333..f2afd312f77c 100644
+--- a/drivers/pwm/pwm-sun4i.c
++++ b/drivers/pwm/pwm-sun4i.c
+@@ -344,7 +344,6 @@ MODULE_DEVICE_TABLE(of, sun4i_pwm_dt_ids);
+ static int sun4i_pwm_probe(struct platform_device *pdev)
+ {
+ 	struct sun4i_pwm_chip *pwm;
+-	struct resource *res;
+ 	int ret;
+ 
+ 	pwm = devm_kzalloc(&pdev->dev, sizeof(*pwm), GFP_KERNEL);
+@@ -355,8 +354,7 @@ static int sun4i_pwm_probe(struct platform_device *pdev)
+ 	if (!pwm->data)
+ 		return -ENODEV;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	pwm->base = devm_ioremap_resource(&pdev->dev, res);
++	pwm->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(pwm->base))
+ 		return PTR_ERR(pwm->base);
+ 
+-- 
+2.17.1
 
 
 _______________________________________________
