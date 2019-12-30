@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 655AA12CDD7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 09:58:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D94E12CDDE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 10:04:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CHhbcjU28wFfurGIOAh5TNc9f3cVZEDHqF2+gr/mGeA=; b=m6PlmdExqbvV0Y
-	YdsmIjUEmvpNKPZ0gWrCfH0isgYCrpgsVA9utAwzaxXi+MAeXChezHsmBFmhKYp7ZRVLeYYWEcJNH
-	X/nZV0gnjluwroyZrlZpg3wG3KR+Szb2jFyE0eOYOLht8cm4jRw+lrabxTjRCRXzJYfC32lTaIg84
-	FBAgqFLZHVXyc4XrmflUZUIs6/3O+mW0VtkeEHdHQZhn4J/Feg1C1F+NbeEZBy9eH7ByDq9NOzR3f
-	9fwewb+w+ayug1EMI2Gt+HcAUF0/sO24OPOXfHIJgoAo5idnee8HgAUe/5lJqAVLwZyVEJ5UYywKW
-	Q6lYi9N4lAtjAH26bIHA==;
+	List-Owner; bh=3Yd3ga6Aj1WR3rVb+B+b4pgUStQOwJ+IWQE158sGGIc=; b=k2X2kWBRjiSoIy
+	ANZDFOj2PRqeq6E4TbM+Jdz6gjzONXsIExCv1R9MEZXh1wlD8wEnXLUWHC7a6UhN6Tyh2mB6FLLNq
+	yB8/X9Zs9rbAZV87ldGWppI9ncTjyHTIzUN82uQX43brviQ0lwrOyei1ydYSch5bMVbblAwA4z4yX
+	5WvEtz+C4m1EtF3VOpswPwgjrrthu7CaOz6zkjM7CTx6wvR/6mRvuiG53Z50l7FBdWCjszMH/XqMB
+	LRx6lKi3FYi1T4cg715BDpdf1sg9UOHbalhZP5JmqgyNm/0HV4/0cwcciBBPriuprALp1ui5ZXsV6
+	QGvKEk8u6hiKEUKSrrRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilqsm-0007dO-HY; Mon, 30 Dec 2019 08:58:36 +0000
-Received: from mail-eopbgr10073.outbound.protection.outlook.com ([40.107.1.73]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1ilqy6-0001Dq-1O; Mon, 30 Dec 2019 09:04:06 +0000
+Received: from mail-eopbgr130050.outbound.protection.outlook.com
+ ([40.107.13.50] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilqsQ-0007T7-0W
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 08:58:16 +0000
+ id 1ilqxw-0001DQ-DK
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 09:03:57 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=L9KX9d85NqnV2/N5OoxMepXnOS4jJe0eVhOPGFjIj3BhWdwyjoIcud1zZjwDfdggufdS7WaKxoFOblHAiW5mQPI3FsSSwCSNSyl68BRiv4aVf3vf3BdQkCRsmhAQSOIAjkZcfYsH4Aw2KrssxkZtWPElAzPhBfjRJ6EsZVc6/KmLv1BzeFZFWaN60Udef35ZSvGxzNlIH78Y4CCbuYEkIrhCwrVxgyvI+8+gfVW4hN4zJrV2IJ369PrnmeSVWU8uLd8FU7K8EpUYGF/QbBCxmDj4+0jLBAxVzMCuREqBEANBIERHZiVzVSTjCOBTeu7c+lYKJLgy0jCPozhK1Pr5QQ==
+ b=HC5qAI7hejVIrgUeFHpsfczyQwspjaf+60+owUmFhbQl3eRVIlG908JVeXQUDKXcIzMF8RxkR56eFy4ktZuIVbvcKtefMDX6WCOL8du/SqshnB0LFehAeIx9E1JafB6f5Lp8CdA7dwFzWRdRShjXDc0SxC4JFeTekfcHs/X9oHK6AAcoFqrlXUJlTjiWq0bWeQt2wkRWnK3lrqED2bBzMQZJWbI171svt93xZdTcBspOew4uX4FMrlfmMs5QpAF2H6DuUVacl0R5ufNENCh9aedBEcPnt7+zlZNzA5yPjDbppA1woRzpGCSUn+zFG+mRu3IRqYqAmj9i2lVBuLQlmA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mmTu3+i7Yqq72kIOuk2jLjaiNASzhYBQ1y1Z4zZteow=;
- b=Po2KBHEwlP02YAr7/EiIM1uTdp1yB57hIcc0nPAjn9R2YT7xsamhZZx3Thtc97zv2ykaMmSCLxeg0auFX7SE2sp7zN3dPRxOEOC6RTYKF+Sl13Cuulu2npXpPWJkvvAUCIqCekZQiw6sm8w+VWiBXqiejv1hquazgy8hiiwHFNGpaieys7lCjD2qWOnRiNzQE0KVIqM3a33a14NwS0N56+CiZhm5uyyfIzwQ3z0Wmt8fA5o4nfrVtBKG7K/xXDg5dsj0+m3g1F7gfMwv9oKErJMHwUYsVLArGvteCv9ntRe/4RA6uprhCCylxvRKLZQNXp/IdsHfm5anEyOjmeoIrQ==
+ bh=f4L3MzR2o6uZGqxIakM7tPEhQ4hhMPBTbcxMQLFauVA=;
+ b=LQWGJeRBa7gwFf6FYeZ/2ioHvcalq4aswmR07c2I3W91W/OzM4lQnUES/ju+MGUTrnI/+HOFNYuhSXpI0mjQhH5/Ewfnbvz74RtF1mLA256m6q8OnmyKSKFRv2nqNLfK8MTzCmhzhEWWke2kuTuRQkPI0ATRuWR6G3uGEuD0i4mCHlIGFAi+ghlLpMmDq9mobE1nOn25yblhG8xfOWw4sPuhoZaRpHzhN6rh0tUr7UWiF6VzYjheeZLD4WOQMu6aDXdJOfG2iQGXEkaMPO3mb6X67d9ojADLdVbTLO249y6kTnnoHSLvH6fpDDXisn6t3ewRlxH1o01+Brr8iHLXrg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mmTu3+i7Yqq72kIOuk2jLjaiNASzhYBQ1y1Z4zZteow=;
- b=njbzwYsEIDDB3MgSXNncW6xpLvU01yj13aspbnwFPI/DPvcqpN4U8LUTrC6zOF1CMkJoaow4xwi1aZY+ZOtlwEmn5tZW1D1euPY4abANbcAx0bvWpXEa5h96uxELwPibsxFBMmqqVNjQgikC4q/wCiY1KHAOKDhnZhwKbnRZPtc=
+ bh=f4L3MzR2o6uZGqxIakM7tPEhQ4hhMPBTbcxMQLFauVA=;
+ b=KulnQ5KPWLSsOLgCzEpgbyOX1hRW1j8IGxXMNeJoS/oDac5TTRNtNZ5MtGLO/C2RQM2f9A2XsxcAm26qmsOlytdPD6LnMvxDhWbEz4nswychFxo1032+SF2mUuoe8VFdyRULS0KdMWBnfJ6h+Y8noZY2HEetQsRoGlpO2c3eY3I=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4961.eurprd04.prod.outlook.com (20.177.42.12) with Microsoft SMTP
+ AM0PR04MB5347.eurprd04.prod.outlook.com (20.178.115.13) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2581.12; Mon, 30 Dec 2019 08:58:06 +0000
+ 15.20.2581.12; Mon, 30 Dec 2019 09:03:51 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::c58c:e631:a110:ba58]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::c58c:e631:a110:ba58%6]) with mapi id 15.20.2581.007; Mon, 30 Dec 2019
- 08:58:06 +0000
+ 09:03:51 +0000
 Received: from localhost.localdomain (119.31.174.67) by
- HK2PR03CA0051.apcprd03.prod.outlook.com (2603:1096:202:17::21) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2602.6 via Frontend Transport; Mon, 30 Dec 2019 08:58:02 +0000
+ HK2PR0401CA0002.apcprd04.prod.outlook.com (2603:1096:202:2::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2581.11 via Frontend
+ Transport; Mon, 30 Dec 2019 09:03:47 +0000
 From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>
-Subject: [PATCH] ARM: dts: imx: drop "fsl,aips-bus"
-Thread-Topic: [PATCH] ARM: dts: imx: drop "fsl,aips-bus"
-Thread-Index: AQHVvu9AXeMfpR61Rke6CNGr+daIZA==
-Date: Mon, 30 Dec 2019 08:58:05 +0000
-Message-ID: <1577696078-21720-1-git-send-email-peng.fan@nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>
+Subject: [PATCH] ARM: imx: use of_root to simplify code
+Thread-Topic: [PATCH] ARM: imx: use of_root to simplify code
+Thread-Index: AQHVvvAOkP5pfM/SI0ufVklMt6+Kwg==
+Date: Mon, 30 Dec 2019 09:03:51 +0000
+Message-ID: <1577696316-27635-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR03CA0051.apcprd03.prod.outlook.com
- (2603:1096:202:17::21) To AM0PR04MB4481.eurprd04.prod.outlook.com
+x-clientproxiedby: HK2PR0401CA0002.apcprd04.prod.outlook.com
+ (2603:1096:202:2::12) To AM0PR04MB4481.eurprd04.prod.outlook.com
  (2603:10a6:208:70::15)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
@@ -74,41 +74,41 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.67]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 5b87a5b8-f2bc-4ae2-fba6-08d78d066279
-x-ms-traffictypediagnostic: AM0PR04MB4961:|AM0PR04MB4961:
+x-ms-office365-filtering-correlation-id: ad0930dc-d534-4405-e1c2-08d78d07306a
+x-ms-traffictypediagnostic: AM0PR04MB5347:|AM0PR04MB5347:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4961199CCCACB9F5548CABAE88270@AM0PR04MB4961.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:157;
+x-microsoft-antispam-prvs: <AM0PR04MB5347FE777C67F861F3AA7E2F88270@AM0PR04MB5347.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:849;
 x-forefront-prvs: 0267E514F9
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(366004)(376002)(39860400002)(136003)(189003)(199004)(66476007)(66556008)(956004)(86362001)(44832011)(16526019)(64756008)(66446008)(66946007)(26005)(6486002)(316002)(71200400001)(186003)(6506007)(81166006)(81156014)(8936002)(69590400006)(8676002)(2616005)(52116002)(36756003)(4326008)(54906003)(6512007)(110136005)(5660300002)(2906002)(478600001)(142933001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4961;
+ SFS:(10009020)(4636009)(396003)(346002)(366004)(376002)(39860400002)(136003)(189003)(199004)(86362001)(956004)(52116002)(6506007)(71200400001)(16526019)(66556008)(66476007)(26005)(6666004)(316002)(44832011)(81166006)(8676002)(186003)(64756008)(6486002)(2616005)(66446008)(8936002)(69590400006)(81156014)(66946007)(4326008)(36756003)(6512007)(2906002)(54906003)(110136005)(5660300002)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5347;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: u1EyF1+DDnnprMteIpsxurLK3dqgClpdJfWoMieyZnxgHxc3BcXIeaNK0Jk1xxgkwLlDpRKkClsfuKiW3ocV1e/Kd2Ery4D9H8P1vLu6mcl9sN2v4kLOc3Z8V9nda/YPXJhIq3OCno/DCEaVpBkjlxA1eQaA++WkuW5l5lmQPMoBTNiaZpLH7A6nRNT/ze9+ka7cJhnWtspI3QUbgiTPKe/qY2FO3MvmV0RRWrn5eqH0K/jj/ZDspxxep7J/2X8daB+kOoYPlXtJbNCZgq6vLfgOJsuECoMVoO8Dy5nIX+rMq08BN0b5dnUR1gkIf0tikAdFLgH9/ZYTQLcwqOEZOqid5KoM/+nw4erURlOKXuQGr/IGjF4hGRNa+zD5fxUYKfLHPyqTHxdqkXCCBDm4OMcLyMd41rW94U6s/1j0P6wtcEgy1SSr41pw7mj6xcPN8gj0W1geiUchxiMLmkLTMmyU4j3vkIKCvWZifVa6q2i/P60dzz2teZDv2ME8PpzfRzSh/UmIM7tqQXgEMJwbdw==
+x-microsoft-antispam-message-info: WQSlAbDFSehprei1uR8t5gyOWBVCbCXPWJF31OC03XGW+B+lagjTorfO6jh8u9gVurdxoVHnyG0uy8n8SOHeyuV29TwbAio9pT41HkPUBGcSburIELJlzdwLtlsC8+dr3gNfy3iNn+qxiEj3AtwB/GVc6p6AQrbw81xWdhwKH4S+8ywzilQ6Ju7u9nt9ImrR83ixmm0VWaSURYbG+uHFwPNNZ3Ibvcmh5ksL+K2eNpxccu50IMHBdEa27F9FwBDiLVPhvd4C4UdsFKsrHA/rfhAwe6L234JdKC+2SoMcEknRSCjQBRjo7/4MFYjKtezJCNectKEzLc9Il17PdmhhRPlb+HpBhM2E+/Ncg/n6+fsHePh5ZAbMC4D+eVApaKhpV8dtWqUI5N7P9SNdQ2IkhGIjEGFTkwnxsxSG2s7mTJBaurTl/bze+131YFeF1CfV6sdyH7nHY2PcScJ5DneBEfqk5Ui31iDjY4TnyYKjLKi/x7GnfPL3etuUWCVAh3Dd
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5b87a5b8-f2bc-4ae2-fba6-08d78d066279
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 08:58:05.9954 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ad0930dc-d534-4405-e1c2-08d78d07306a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 09:03:51.6420 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rHw664M+X1d9MggLhLtpKvwOFTkDbGB0YQBocBVLLIYldfgZfYJWCv3t7ZCs2kEfly9NZQ4zpfazoqHkNaDP6Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4961
+X-MS-Exchange-CrossTenant-userprincipalname: Lp/83E+mcCxrFlXylClC2byJgFPXDf6WAmWYy8McLt15PZqdgh0pWCWTW0yq4lq1Q5xurugpa6Y6rNVFrcl27A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5347
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_005814_252474_40046999 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20191230_010356_453525_CD928667 
+X-CRM114-Status: GOOD (  10.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.73 listed in list.dnswl.org]
+ no trust [40.107.13.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -129,11 +129,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Alice Guo <alice.guo@nxp.com>,
+Cc: "cniedermaier@dh-electronics.com" <cniedermaier@dh-electronics.com>,
+ Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Alice Guo <alice.guo@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -142,302 +142,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-There is no binding doc for "fsl,aips-bus", "simple-bus" is enough
-for aips usage, so drop it.
+start_kernel
+     |->setup_arch
+     |       |->unflatten_device_tree->of_root ready
+     |
+     |->do_initcalls
+           |->customize_machine
+                       |->init_machine
+                              |->imx_soc_device_init
 
-Scirpt:
-sed -i 's/compatible = "fsl,aips-bus", "simple-bus";/compatible = "simple-bus";/'
-arch/arm/boot/dts/imx*
+When imx_soc_device_init, of_root is ready, so we could directly use it.
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- arch/arm/boot/dts/imx25.dtsi   | 4 ++--
- arch/arm/boot/dts/imx31.dtsi   | 4 ++--
- arch/arm/boot/dts/imx50.dtsi   | 4 ++--
- arch/arm/boot/dts/imx51.dtsi   | 4 ++--
- arch/arm/boot/dts/imx53.dtsi   | 4 ++--
- arch/arm/boot/dts/imx6qdl.dtsi | 4 ++--
- arch/arm/boot/dts/imx6sl.dtsi  | 4 ++--
- arch/arm/boot/dts/imx6sll.dtsi | 4 ++--
- arch/arm/boot/dts/imx6sx.dtsi  | 6 +++---
- arch/arm/boot/dts/imx6ul.dtsi  | 4 ++--
- arch/arm/boot/dts/imx6ull.dtsi | 2 +-
- arch/arm/boot/dts/imx7s.dtsi   | 6 +++---
- 12 files changed, 25 insertions(+), 25 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
-index 40b95a290bd6..3b7a0b249d80 100644
---- a/arch/arm/boot/dts/imx25.dtsi
-+++ b/arch/arm/boot/dts/imx25.dtsi
-@@ -76,7 +76,7 @@
- 		ranges;
+V1:
+ Tested on i.MX7D-SDB
+
+ arch/arm/mach-imx/cpu.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c
+index 06f8d64b65af..77319b359070 100644
+--- a/arch/arm/mach-imx/cpu.c
++++ b/arch/arm/mach-imx/cpu.c
+@@ -88,7 +88,6 @@ struct device * __init imx_soc_device_init(void)
+ 	struct soc_device_attribute *soc_dev_attr;
+ 	const char *ocotp_compat = NULL;
+ 	struct soc_device *soc_dev;
+-	struct device_node *root;
+ 	struct regmap *ocotp = NULL;
+ 	const char *soc_id;
+ 	u64 soc_uid = 0;
+@@ -101,9 +100,7 @@ struct device * __init imx_soc_device_init(void)
  
- 		aips@43f00000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x43f00000 0x100000>;
-@@ -333,7 +333,7 @@
- 		};
+ 	soc_dev_attr->family = "Freescale i.MX";
  
- 		aips@53f00000 { /* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x53f00000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx31.dtsi b/arch/arm/boot/dts/imx31.dtsi
-index 6b62f0745b82..b0e7e3bf8a1a 100644
---- a/arch/arm/boot/dts/imx31.dtsi
-+++ b/arch/arm/boot/dts/imx31.dtsi
-@@ -64,7 +64,7 @@
- 		};
+-	root = of_find_node_by_path("/");
+-	ret = of_property_read_string(root, "model", &soc_dev_attr->machine);
+-	of_node_put(root);
++	ret = of_property_read_string(of_root, "model", &soc_dev_attr->machine);
+ 	if (ret)
+ 		goto free_soc;
  
- 		aips@43f00000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x43f00000 0x100000>;
-@@ -226,7 +226,7 @@
- 		};
- 
- 		aips@53f00000 { /* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x53f00000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx50.dtsi b/arch/arm/boot/dts/imx50.dtsi
-index 0bfe7c91d0eb..961de09b571d 100644
---- a/arch/arm/boot/dts/imx50.dtsi
-+++ b/arch/arm/boot/dts/imx50.dtsi
-@@ -102,7 +102,7 @@
- 		ranges;
- 
- 		aips@50000000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x50000000 0x10000000>;
-@@ -390,7 +390,7 @@
- 		};
- 
- 		aips@60000000 {	/* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x60000000 0x10000000>;
-diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
-index dea86b98e9c3..86708688371b 100644
---- a/arch/arm/boot/dts/imx51.dtsi
-+++ b/arch/arm/boot/dts/imx51.dtsi
-@@ -159,7 +159,7 @@
- 		};
- 
- 		aips@70000000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x70000000 0x10000000>;
-@@ -441,7 +441,7 @@
- 		};
- 
- 		aips@80000000 {	/* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x80000000 0x10000000>;
-diff --git a/arch/arm/boot/dts/imx53.dtsi b/arch/arm/boot/dts/imx53.dtsi
-index ed341cfd9d09..f46a83c7d2c4 100644
---- a/arch/arm/boot/dts/imx53.dtsi
-+++ b/arch/arm/boot/dts/imx53.dtsi
-@@ -223,7 +223,7 @@
- 		};
- 
- 		aips@50000000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x50000000 0x10000000>;
-@@ -655,7 +655,7 @@
- 		};
- 
- 		aips@60000000 {	/* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x60000000 0x10000000>;
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index e6b4b8525f98..9b7635e9cf3c 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -295,7 +295,7 @@
- 		};
- 
- 		aips-bus@2000000 { /* AIPS1 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02000000 0x100000>;
-@@ -936,7 +936,7 @@
- 		};
- 
- 		aips-bus@2100000 { /* AIPS2 */
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02100000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index 59c54e6ad09a..4b4f22217dfe 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -144,7 +144,7 @@
- 		};
- 
- 		aips1: aips-bus@2000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02000000 0x100000>;
-@@ -787,7 +787,7 @@
- 		};
- 
- 		aips2: aips-bus@2100000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02100000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-index a1bc5bb31756..fac8f22255aa 100644
---- a/arch/arm/boot/dts/imx6sll.dtsi
-+++ b/arch/arm/boot/dts/imx6sll.dtsi
-@@ -145,7 +145,7 @@
- 		};
- 
- 		aips1: aips-bus@2000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02000000 0x100000>;
-@@ -664,7 +664,7 @@
- 		};
- 
- 		aips2: aips-bus@2100000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02100000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-index 59bad60a47dc..4499be62c8bb 100644
---- a/arch/arm/boot/dts/imx6sx.dtsi
-+++ b/arch/arm/boot/dts/imx6sx.dtsi
-@@ -236,7 +236,7 @@
- 		};
- 
- 		aips1: aips-bus@2000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02000000 0x100000>;
-@@ -831,7 +831,7 @@
- 		};
- 
- 		aips2: aips-bus@2100000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02100000 0x100000>;
-@@ -1189,7 +1189,7 @@
- 		};
- 
- 		aips3: aips-bus@2200000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02200000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index d9fdca12819b..63d276fc2477 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -205,7 +205,7 @@
- 		};
- 
- 		aips1: aips-bus@2000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02000000 0x100000>;
-@@ -772,7 +772,7 @@
- 		};
- 
- 		aips2: aips-bus@2100000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02100000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx6ull.dtsi b/arch/arm/boot/dts/imx6ull.dtsi
-index b7e67d121322..633fa08bc972 100644
---- a/arch/arm/boot/dts/imx6ull.dtsi
-+++ b/arch/arm/boot/dts/imx6ull.dtsi
-@@ -52,7 +52,7 @@
- / {
- 	soc {
- 		aips3: aips-bus@2200000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x02200000 0x100000>;
-diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
-index 139ab9b98472..552b14be14a1 100644
---- a/arch/arm/boot/dts/imx7s.dtsi
-+++ b/arch/arm/boot/dts/imx7s.dtsi
-@@ -317,7 +317,7 @@
- 		};
- 
- 		aips1: aips-bus@30000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x30000000 0x400000>;
-@@ -669,7 +669,7 @@
- 		};
- 
- 		aips2: aips-bus@30400000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x30400000 0x400000>;
-@@ -809,7 +809,7 @@
- 		};
- 
- 		aips3: aips-bus@30800000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			reg = <0x30800000 0x400000>;
 -- 
 2.16.4
 
