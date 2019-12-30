@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D566A12D141
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:53:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09C4E12D142
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:53:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=a5Nysz8gd1+wGZ8H4+AoTgZvFRq37+x+lD+zQJOP6eA=; b=kqsLa4nap9YsoQDY2SkXMe9w4O
-	QAorywPAEFOoGRb3En2IAIsEE0ZYA8Ykg9tcPS9KgT++TEGBk0FiJKxzfQBaEO91Ntt5/PdN3kEAj
-	1rR7xq7hozVnN7nDgpFcSjKqe1KZ3V46OxSGokAzmEFzDx25FisgEfXHvjDk9rezzTmHGuun6O+Ea
-	ilp3nMHDEPM2BsfcPZcxn/9E4+wNmbR4KPPcJ2oAopOU71mZvJ82OaY36oiEgwozmzkJCipl4Y17P
-	g/2Gu/Wsi5D+TN3xPu3JaXo9EZqoAjx+L7j1/Ajbdr+1AfLnFt+tNQowvjWu6D/D97JeeccgnUgRE
-	QgUeAPwg==;
+	bh=NOABWUYcg3sBZsclQHpij0gdOoN0Nhtsqu0BKyh3JOQ=; b=qntRhAy32QrDQNXju2SKOUVKBX
+	VEoaFROnc/x98+mY01qzd9vMxHofSXiIoxg3oTo1hVxGhZaamtVMVnS4CLc2kf46uLk7H8Ywd2Ybp
+	h26l2Qw7teydz3C+7b5QwbrGBMjw2QXosEw0zwyLBZqiyQMIqMnS+UGrXthnR0WXn0J6knPxkkSBu
+	wkfjWjAYFCp2VtHwTRAi3Uw2ybYby/8FkIj+wnxWCb5f4ONZQ1ARhMm3u8tDoOQB2eDdVGHwYAs/2
+	8dBHjYMeSZdejS+irTMdRy+SVso+T/s4/3b3G/J5DOHeM8autVNvYxSt+/CluLpa0Ml3Wr3cc1itv
+	TuMhfn+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwPh-0006W3-Tn; Mon, 30 Dec 2019 14:52:57 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1ilwQ0-0006h4-Ss; Mon, 30 Dec 2019 14:53:16 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwHT-0005MP-R7
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 14:44:38 +0000
-Received: by mail-lj1-x242.google.com with SMTP id r19so33512137ljg.3
+ id 1ilwHV-0005Nb-81
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 14:44:40 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y4so19160868ljj.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 06:44:27 -0800 (PST)
+ Mon, 30 Dec 2019 06:44:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=KzTTqj8p23Akt27Kd2Hs4c3lg6YLbPXs3ATs0EVFR2M=;
- b=JCpPFKZuzoDLpUkDOuKcE6t8dYafbfR22Clus44/n9Hef4fPXDwh1TRjb+z065rvDg
- o/viC2PDowY6Nd/qjdwLbcafGiUjQEFMxLU6yqRKI8wPY10/9rarX+BejUdqBkbDm9vd
- 9Z9n5/eM+fkJVT5R5Vs/Dr7pRB35rJUaDClIXV9Z+UrVQ94QdsySErw4oBeFMtYlFd5L
- tOxKqgfFBSF+ojOLNFP8YRMHr8AIQ2jAmYy+8sa7jcSo3mkI1ZZ596uUE56pv1SOGxM5
- lWD6v8tteSg8CojtKOusDP2q7wvntfRbAU4K2tC50TgVk4h7PGpP/FbUnVvDzNIXkm7h
- Qpow==
+ bh=iP0q67cVa7joTIBbxM/rB2PXgLYhwll7Ud0Qeuw7uE4=;
+ b=cZDkTeTBaAAlRRZrP1XLtXSbuzbscAVY8zmWFyVTHUO5xJzFNqhSGbfNaVWsCH1AuX
+ 4rT40nwkm1sYOV87tQsTVNYOpKm/XQgnTfubKy97NWJGHyYGyJ+cykHyuBuzwg1e4vI+
+ dP2uBSyDD85o+XaR8nCem4voDrHfRNDwol6CbGAaupD5x1CDQNr/ejTTClgbNp+xnOmR
+ 2Bybqk0ajXhcvXbxyM51KKuqO7Pq9KUok4Z20H1s3n3ChONQsVe8t0SEdohf+xd9LlR9
+ TwQyqLl/Nqa3iyclS4fQCNrW5jt9RzhUB79qF7nkaemxrQzWOlFc+6vmMc74MtPky/iM
+ eUnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=KzTTqj8p23Akt27Kd2Hs4c3lg6YLbPXs3ATs0EVFR2M=;
- b=r5tcU3ZsW/M3wDwTtDimjrtvkOJChWARPOjmrTcWhMffU4dvPiKH4k/sB4hb4ffYBY
- iQvshd8QHbUt4n4ENQCplCGdG3KiO05P3pUoUPrVUtQYkG7g98CNP12w+2IQntJtcDsT
- CbFNL4p86cgeiITfzHX5kwRnYrjmNXbwmYuYci6R5MSE67ia1BsL0MjrIegV3Bmwh3Wm
- jScDPlSr381W8yKp0dWLx2HwBoJCmQ0MDXTcvTmJKSZkml/mwp5v287V2Lm4JtfpPzuB
- qo+gZdujUhw6M73Yamj64oABLOV5/IrtMYnQNg6F2Uf9bHrGQ2opiRxcCK317SUiC6E/
- bl9A==
-X-Gm-Message-State: APjAAAUeICP7mbd79sXM6drNhcHiB/2nhIcu0EcVudJORq1s+DFsEHGI
- QppoloiGydWaptB1/EMIlKhKZA==
-X-Google-Smtp-Source: APXvYqzGA3gtYNDs67k65CEee1AiLGVULQ9UOPYgswEyii5PPQ7+p9U9ijvBI9aT4vNl0v8Jdj0WmQ==
-X-Received: by 2002:a2e:a402:: with SMTP id p2mr39436965ljn.143.1577717066026; 
- Mon, 30 Dec 2019 06:44:26 -0800 (PST)
+ bh=iP0q67cVa7joTIBbxM/rB2PXgLYhwll7Ud0Qeuw7uE4=;
+ b=lb2vsREySsgFcWZ2NzdV41wgW45RcQZ3f4Toj/Qy68pbxXS8CZO6bMWHSPHeygluMp
+ mYYyFkLBNFuoUOeZRW/UfRKCFL9O+mv56F6VQwxFFLwxbiecbEvt8MqM1x+hVmufiSpr
+ bY1N+0piytCSyD3RfYPBpajK1MFkNmsGvfudsS8CO99gIj7siw0N7tRGidCFGqL9TX0d
+ 06bC4aj2DBPExLFtBK0tK4uoSIOgPZSAH3wxklfnw6uKsjpKgdRm4p99sXsnNPNJP0cZ
+ lkfgTGhI9yvYypnCEraFemW4Nwoe7gi+ow97jXAZoupFzdfxUSuT8knZGtLrvONNZvey
+ e6mA==
+X-Gm-Message-State: APjAAAWuikgoW0aj2lyla3PJ1/MILM40XuPs70yf6A5RnkTnroguXKAe
+ P9jmqHAVbOETi94QvQ80Waz19w==
+X-Google-Smtp-Source: APXvYqzBs/tiWnncxKxVYy6elFVnD48Lxju0cyn1aR3gEPXIkZtrCY33Ut1F1NTu0L4H0jjmnQTcwg==
+X-Received: by 2002:a2e:8090:: with SMTP id i16mr39630757ljg.88.1577717067493; 
+ Mon, 30 Dec 2019 06:44:27 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id a21sm18744931lfg.44.2019.12.30.06.44.24
+ by smtp.gmail.com with ESMTPSA id a21sm18744931lfg.44.2019.12.30.06.44.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Dec 2019 06:44:25 -0800 (PST)
+ Mon, 30 Dec 2019 06:44:26 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v5 11/15] cpuidle: psci: Manage runtime PM in the idle path
-Date: Mon, 30 Dec 2019 15:43:58 +0100
-Message-Id: <20191230144402.30195-12-ulf.hansson@linaro.org>
+Subject: [PATCH v5 12/15] cpuidle: psci: Support CPU hotplug for the
+ hierarchical model
+Date: Mon, 30 Dec 2019 15:43:59 +0100
+Message-Id: <20191230144402.30195-13-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191230144402.30195-1-ulf.hansson@linaro.org>
 References: <20191230144402.30195-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064427_967987_EE90CA39 
-X-CRM114-Status: GOOD (  15.72  )
+X-CRM114-CacheID: sfid-20191230_064429_349518_E2158124 
+X-CRM114-Status: GOOD (  18.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,62 +111,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case we have succeeded to attach a CPU to its PM domain, let's deploy
-runtime PM support for the corresponding attached device, to allow the CPU
-to be powered-managed accordingly.
+When the hierarchical CPU topology is used and when a CPU is put offline,
+that CPU prevents its PM domain from being powered off, which is because
+genpd observes the corresponding attached device as being active from a
+runtime PM point of view. Furthermore, any potential master PM domains are
+also prevented from being powered off.
 
-The triggering point for when runtime PM reference counting should be done,
-has been selected to the deepest idle state for the CPU. However, from the
-hierarchical point view, there may be good reasons to do runtime PM
-reference counting even on shallower idle states, but at this point this
-isn't supported, mainly due to limitations set by the generic PM domain.
+To address this limitation, let's add add a new CPU hotplug state
+(CPUHP_AP_CPU_PM_STARTING) and register up/down callbacks for it, which
+allows us to deal with runtime PM accordingly.
 
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
 
 Changes in v5:
-	- None.
+	- Make CPUHP function/variable initdata.
 
 ---
- drivers/cpuidle/cpuidle-psci.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/cpuidle/cpuidle-psci.c | 45 +++++++++++++++++++++++++++++++++-
+ include/linux/cpuhotplug.h     |  1 +
+ 2 files changed, 45 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-index 9600fe674a89..6e7804e697ed 100644
+index 6e7804e697ed..9d779be27071 100644
 --- a/drivers/cpuidle/cpuidle-psci.c
 +++ b/drivers/cpuidle/cpuidle-psci.c
-@@ -16,6 +16,7 @@
- #include <linux/of.h>
- #include <linux/of_device.h>
- #include <linux/psci.h>
-+#include <linux/pm_runtime.h>
- #include <linux/slab.h>
+@@ -8,6 +8,7 @@
  
- #include <asm/cpuidle.h>
-@@ -51,14 +52,21 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+ #define pr_fmt(fmt) "CPUidle PSCI: " fmt
+ 
++#include <linux/cpuhotplug.h>
+ #include <linux/cpuidle.h>
+ #include <linux/cpumask.h>
+ #include <linux/cpu_pm.h>
+@@ -31,6 +32,7 @@ struct psci_cpuidle_data {
+ 
+ static DEFINE_PER_CPU_READ_MOSTLY(struct psci_cpuidle_data, psci_cpuidle_data);
+ static DEFINE_PER_CPU(u32, domain_state);
++static bool psci_cpuidle_use_cpuhp __initdata;
+ 
+ static inline void psci_set_domain_state(u32 state)
  {
- 	struct psci_cpuidle_data *data = this_cpu_ptr(&psci_cpuidle_data);
- 	u32 *states = data->psci_states;
--	u32 state = psci_get_domain_state();
-+	struct device *pd_dev = data->dev;
-+	u32 state;
- 	int ret;
- 
-+	/* Do runtime PM to manage a hierarchical CPU toplogy. */
-+	pm_runtime_put_sync_suspend(pd_dev);
-+
-+	state = psci_get_domain_state();
- 	if (!state)
- 		state = states[idx];
- 
- 	ret = psci_enter_state(idx, state);
- 
-+	pm_runtime_get_sync(pd_dev);
-+
- 	/* Clear the domain state to start fresh when back from idle. */
- 	psci_set_domain_state(0);
+@@ -72,6 +74,44 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
  	return ret;
+ }
+ 
++static int psci_idle_cpuhp_up(unsigned int cpu)
++{
++	struct device *pd_dev = __this_cpu_read(psci_cpuidle_data.dev);
++
++	if (pd_dev)
++		pm_runtime_get_sync(pd_dev);
++
++	return 0;
++}
++
++static int psci_idle_cpuhp_down(unsigned int cpu)
++{
++	struct device *pd_dev = __this_cpu_read(psci_cpuidle_data.dev);
++
++	if (pd_dev) {
++		pm_runtime_put_sync(pd_dev);
++		/* Clear domain state to start fresh at next online. */
++		psci_set_domain_state(0);
++	}
++
++	return 0;
++}
++
++static void __init psci_idle_init_cpuhp(void)
++{
++	int err;
++
++	if (!psci_cpuidle_use_cpuhp)
++		return;
++
++	err = cpuhp_setup_state_nocalls(CPUHP_AP_CPU_PM_STARTING,
++					"cpuidle/psci:online",
++					psci_idle_cpuhp_up,
++					psci_idle_cpuhp_down);
++	if (err)
++		pr_warn("Failed %d while setup cpuhp state\n", err);
++}
++
+ static int psci_enter_idle_state(struct cpuidle_device *dev,
+ 				struct cpuidle_driver *drv, int idx)
+ {
+@@ -166,9 +206,11 @@ static int __init psci_dt_cpu_init_idle(struct cpuidle_driver *drv,
+ 		 * selection of a shared state for the domain, assumes the
+ 		 * domain states are all deeper states.
+ 		 */
+-		if (data->dev)
++		if (data->dev) {
+ 			drv->states[state_count - 1].enter =
+ 				psci_enter_domain_idle_state;
++			psci_cpuidle_use_cpuhp = true;
++		}
+ 	}
+ 
+ 	/* Idle states parsed correctly, store them in the per-cpu struct. */
+@@ -289,6 +331,7 @@ static int __init psci_idle_init(void)
+ 			goto out_fail;
+ 	}
+ 
++	psci_idle_init_cpuhp();
+ 	return 0;
+ 
+ out_fail:
+diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
+index e51ee772b9f5..01f04ed6ad92 100644
+--- a/include/linux/cpuhotplug.h
++++ b/include/linux/cpuhotplug.h
+@@ -95,6 +95,7 @@ enum cpuhp_state {
+ 	CPUHP_AP_OFFLINE,
+ 	CPUHP_AP_SCHED_STARTING,
+ 	CPUHP_AP_RCUTREE_DYING,
++	CPUHP_AP_CPU_PM_STARTING,
+ 	CPUHP_AP_IRQ_GIC_STARTING,
+ 	CPUHP_AP_IRQ_HIP04_STARTING,
+ 	CPUHP_AP_IRQ_ARMADA_XP_STARTING,
 -- 
 2.17.1
 
