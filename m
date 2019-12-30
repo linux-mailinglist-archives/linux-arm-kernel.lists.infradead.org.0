@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49FD512D110
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:45:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2970312D127
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:48:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2hU1KJ+svhiZzWf/UKAjbAsVSG8IAnqK6JRdHndCJso=; b=afjLf/H9pwo+5M
-	q2spUe07UcAOZVNQduMYlRnTovokM79h1NdpQhDabHr+pezqjR55WzrNjklp0zl2KTya6tkpbQr5r
-	FONhDYhiMh24KPkUFsilmea7ZA3krYwVIW5gBAE870WJb/eNwFrB1J7iVJbXMgTeh9FYreCFWbMdZ
-	WCpBVsz4cnRWtqvtGqLFMd6ZqIW9nsE+jAuQawv8pNkY/Q3maAQVolthnHK+G5lsBjAbJoN0g+cTP
-	sFKrZuOCVs0CQ+CBaEYcUCpI2eFXx3Dqvznza8yZ6LqTwgH/Lx2FzAe1+WifKFrUdaZq/+bnEU3CG
-	dxPFRlZGx3q5SPBxW/bA==;
+	List-Owner; bh=td/3j9rv8nhUgia8Abxa55qtQOLDrUqvjsdcrF9I+uQ=; b=DjD2QYoGHMbaDX
+	nMK5xVHy4I5cJH4je+SY4IzWSptsow3WHs/x644T9HXJDGmBOO8JfwoyXg/uc8wg2/cV9KrMY3EHQ
+	l+xxkQNkcM9N+Q8M3l81bvcIwJk25GGCA/oWUmBN82/Fs/dWOZ/ty1iN8CSEywEABTAKYdq8+zbIj
+	QvBiqsYM4unR/P3rO5UkJ6bdw0cBOkFZYMsY1uL/ea8c1TIIoVtGo5AQ3WaaCKw3dQlNPMQj74jdl
+	aDPDR+EJ7YOdu/PUEloLTr9Pj/nFz8lXjP0Zc0LBJClxoqfeHKmN2nfxKrWVMOIgmWbfuDrR0QhDY
+	oF51vt0Btw78xzulUNXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwHw-0005W6-G0; Mon, 30 Dec 2019 14:44:56 +0000
+	id 1ilwLN-0000v0-AD; Mon, 30 Dec 2019 14:48:29 +0000
 Received: from mail.dlink.ru ([178.170.168.18] helo=fd.dlink.ru)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwFb-0003xW-0n; Mon, 30 Dec 2019 14:42:34 +0000
+ id 1ilwFd-0003xY-4w; Mon, 30 Dec 2019 14:42:37 +0000
 Received: by fd.dlink.ru (Postfix, from userid 5000)
- id E10151B218BD; Mon, 30 Dec 2019 17:33:17 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru E10151B218BD
+ id B08931B2196B; Mon, 30 Dec 2019 17:33:36 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru B08931B2196B
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
- t=1577716397; bh=q7IufE7HIiHvycVJgjMYvuW6fyhlbqwjI/W5rJkX8G8=;
+ t=1577716416; bh=YK6u2SeWu80P0OI5Ey+MvrHZ5A/LDUTcrFuPYPEXrWc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=mf6GRk88E1XfIfsnXAFdJgb76JNyC8VZruLzcc8i9vhYiuIBuiP8k1vMmOAz4Frcr
- QFGoBSK8vV42BzYmmt43dnEUuagjawjBucnhJ225rqsR72hcCGzJ3cFPuzXGQ925xT
- s3I94OATlkcN8/YEbe7QwLRlApxsfqR6dY2xUy6U=
+ b=O/FVi7pIJ19rPaWCeIhTGpgbnXWL0lK2fz6ou6mmBXE83LNYfFlRUR0bTHJKoDHLq
+ gR90XmpWWhvD08FNbpaRXTtKoavvbnXGNo8BfZq+9EnZlel3XBHMys+j5pzEsM2C8J
+ QAqWQvI9U3pRSE7a3XATiBSuqAf6tQJOfjkcAIsM=
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
 X-Spam-Level: 
 X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,URIBL_BLOCKED,
  USER_IN_WHITELIST autolearn=disabled version=3.4.2
 Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
- by fd.dlink.ru (Postfix) with ESMTP id 5AEF91B20B7B;
- Mon, 30 Dec 2019 17:31:23 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 5AEF91B20B7B
+ by fd.dlink.ru (Postfix) with ESMTP id 5C4301B2181E;
+ Mon, 30 Dec 2019 17:31:25 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 5C4301B2181E
 Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
- by mail.rzn.dlink.ru (Postfix) with ESMTP id 3BD431B229CB;
- Mon, 30 Dec 2019 17:31:21 +0300 (MSK)
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id 5FCF01B229D0;
+ Mon, 30 Dec 2019 17:31:23 +0300 (MSK)
 Received: from localhost.localdomain (unknown [196.196.203.126])
  by mail.rzn.dlink.ru (Postfix) with ESMTPA;
- Mon, 30 Dec 2019 17:31:21 +0300 (MSK)
+ Mon, 30 Dec 2019 17:31:23 +0300 (MSK)
 From: Alexander Lobakin <alobakin@dlink.ru>
 To: "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH RFC net-next 10/19] net: dsa: tag_gswip: add GRO callbacks
-Date: Mon, 30 Dec 2019 17:30:18 +0300
-Message-Id: <20191230143028.27313-11-alobakin@dlink.ru>
+Subject: [PATCH RFC net-next 11/19] net: dsa: tag_lan9303: add .flow_dissect()
+ callback
+Date: Mon, 30 Dec 2019 17:30:19 +0300
+Message-Id: <20191230143028.27313-12-alobakin@dlink.ru>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191230143028.27313-1-alobakin@dlink.ru>
 References: <20191230143028.27313-1-alobakin@dlink.ru>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064231_442965_2A6DF371 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20191230_064233_442396_C51EC539 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.4 points)
@@ -106,104 +108,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-...so that GRO layer can now correctly process GSWIP-tagged frames.
+This fixes Rx packet hashing on RPS-enabled systems.
+Misc: fix lan9303_netdev_ops identation.
 
 Signed-off-by: Alexander Lobakin <alobakin@dlink.ru>
 ---
- net/dsa/tag_gswip.c | 74 +++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 74 insertions(+)
+ net/dsa/tag_lan9303.c | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
 
-diff --git a/net/dsa/tag_gswip.c b/net/dsa/tag_gswip.c
-index e7b36de27fd8..56e754bd434a 100644
---- a/net/dsa/tag_gswip.c
-+++ b/net/dsa/tag_gswip.c
-@@ -114,12 +114,86 @@ static void gswip_tag_flow_dissect(const struct sk_buff *skb, __be16 *proto,
- 	*proto = gswip_tag_encap_proto(skb->data);
+diff --git a/net/dsa/tag_lan9303.c b/net/dsa/tag_lan9303.c
+index eb0e7a32e53d..d328a44381a9 100644
+--- a/net/dsa/tag_lan9303.c
++++ b/net/dsa/tag_lan9303.c
+@@ -128,12 +128,20 @@ static struct sk_buff *lan9303_rcv(struct sk_buff *skb, struct net_device *dev,
+ 	return skb;
  }
  
-+static struct sk_buff *gswip_tag_gro_receive(struct list_head *head,
-+					     struct sk_buff *skb)
++static void lan9303_flow_dissect(const struct sk_buff *skb, __be16 *proto,
++				 int *offset)
 +{
-+	const struct packet_offload *ptype;
-+	struct sk_buff *p, *pp = NULL;
-+	u32 data_off, data_end;
-+	const u8 *data;
-+	int flush = 1;
-+
-+	data_off = skb_gro_offset(skb);
-+	data_end = data_off + GSWIP_RX_HEADER_LEN;
-+
-+	data = skb_gro_header_fast(skb, data_off);
-+	if (skb_gro_header_hard(skb, data_end)) {
-+		data = skb_gro_header_slow(skb, data_end, data_off);
-+		if (unlikely(!data))
-+			goto out;
-+	}
-+
-+	rcu_read_lock();
-+
-+	ptype = gro_find_receive_by_type(gswip_tag_encap_proto(data));
-+	if (!ptype)
-+		goto out_unlock;
-+
-+	flush = 0;
-+
-+	list_for_each_entry(p, head, list) {
-+		if (!NAPI_GRO_CB(p)->same_flow)
-+			continue;
-+
-+		/* Data that is to the left to the current position is already
-+		 * pulled to the head
-+		 */
-+		if (gswip_tag_source_port(skb->data + data_off) ^
-+		    gswip_tag_source_port(p->data + data_off))
-+			NAPI_GRO_CB(p)->same_flow = 0;
-+	}
-+
-+	skb_gro_pull(skb, GSWIP_RX_HEADER_LEN);
-+	skb_gro_postpull_rcsum(skb, data, GSWIP_RX_HEADER_LEN);
-+
-+	pp = call_gro_receive(ptype->callbacks.gro_receive, head, skb);
-+
-+out_unlock:
-+	rcu_read_unlock();
-+out:
-+	skb_gro_flush_final(skb, pp, flush);
-+
-+	return pp;
++	*offset = LAN9303_TAG_LEN;
++	*proto = *(__be16 *)(skb->data + 2);
 +}
 +
-+static int gswip_tag_gro_complete(struct sk_buff *skb, int nhoff)
-+{
-+	const struct packet_offload *ptype;
-+	int err = -ENOENT;
-+	__be16 proto;
-+
-+	proto = gswip_tag_encap_proto(skb->data + nhoff);
-+	nhoff += GSWIP_RX_HEADER_LEN;
-+
-+	rcu_read_lock();
-+
-+	ptype = gro_find_complete_by_type(proto);
-+	if (ptype)
-+		err = ptype->callbacks.gro_complete(skb, nhoff);
-+
-+	rcu_read_unlock();
-+
-+	return err;
-+}
-+
- static const struct dsa_device_ops gswip_netdev_ops = {
- 	.name		= "gswip",
- 	.proto		= DSA_TAG_PROTO_GSWIP,
- 	.xmit		= gswip_tag_xmit,
- 	.rcv		= gswip_tag_rcv,
- 	.flow_dissect	= gswip_tag_flow_dissect,
-+	.gro_receive	= gswip_tag_gro_receive,
-+	.gro_complete	= gswip_tag_gro_complete,
- 	.overhead	= GSWIP_RX_HEADER_LEN,
+ static const struct dsa_device_ops lan9303_netdev_ops = {
+-	.name = "lan9303",
+-	.proto	= DSA_TAG_PROTO_LAN9303,
+-	.xmit = lan9303_xmit,
+-	.rcv = lan9303_rcv,
+-	.overhead = LAN9303_TAG_LEN,
++	.name		= "lan9303",
++	.proto		= DSA_TAG_PROTO_LAN9303,
++	.xmit		= lan9303_xmit,
++	.rcv		= lan9303_rcv,
++	.flow_dissect	= lan9303_flow_dissect,
++	.overhead	= LAN9303_TAG_LEN,
  };
  
+ MODULE_LICENSE("GPL");
 -- 
 2.24.1
 
