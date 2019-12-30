@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2970312D127
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:48:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E17812D114
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:45:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=td/3j9rv8nhUgia8Abxa55qtQOLDrUqvjsdcrF9I+uQ=; b=DjD2QYoGHMbaDX
-	nMK5xVHy4I5cJH4je+SY4IzWSptsow3WHs/x644T9HXJDGmBOO8JfwoyXg/uc8wg2/cV9KrMY3EHQ
-	l+xxkQNkcM9N+Q8M3l81bvcIwJk25GGCA/oWUmBN82/Fs/dWOZ/ty1iN8CSEywEABTAKYdq8+zbIj
-	QvBiqsYM4unR/P3rO5UkJ6bdw0cBOkFZYMsY1uL/ea8c1TIIoVtGo5AQ3WaaCKw3dQlNPMQj74jdl
-	aDPDR+EJ7YOdu/PUEloLTr9Pj/nFz8lXjP0Zc0LBJClxoqfeHKmN2nfxKrWVMOIgmWbfuDrR0QhDY
-	oF51vt0Btw78xzulUNXA==;
+	List-Owner; bh=g/xZZdCykS9ajIBBClO8/9tUxYVFqeq6BEC+tUN76hU=; b=FJYeOKjWstoi7r
+	+WAqZsblrkCh1RZqcFbQubh6QKmEfr0UmOpRxDuASg45OLjEgymkwmSqtGsaTq6CirchIR1jY8PsZ
+	zDwBQDsvs8IqxGlOHuegdeIILhPxD35xxOyjKESH7oysCSed9U0eBNBG/dxxbNFL2L0f13LeYPlp9
+	2/dZQnwUMyL7ydK2c9XxAKcDbyLX2MnkzSA4a4jLiTp9C+gVabHCyJJy4VzJB+3XE4YI5PZH3zFM0
+	4uXTKD76WWFLV7ruH1BHpe0DQD16QqaIOEweqamZE+pWHKXyFH3VrehRb4/b46c45s15xvvBdbIr6
+	POmHiANS0rAQU55SqqQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwLN-0000v0-AD; Mon, 30 Dec 2019 14:48:29 +0000
+	id 1ilwIh-0007Aq-Jz; Mon, 30 Dec 2019 14:45:43 +0000
 Received: from mail.dlink.ru ([178.170.168.18] helo=fd.dlink.ru)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwFd-0003xY-4w; Mon, 30 Dec 2019 14:42:37 +0000
+ id 1ilwFb-0003xV-0X; Mon, 30 Dec 2019 14:42:33 +0000
 Received: by fd.dlink.ru (Postfix, from userid 5000)
- id B08931B2196B; Mon, 30 Dec 2019 17:33:36 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru B08931B2196B
+ id C7A1F1B218EC; Mon, 30 Dec 2019 17:32:02 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru C7A1F1B218EC
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
- t=1577716416; bh=YK6u2SeWu80P0OI5Ey+MvrHZ5A/LDUTcrFuPYPEXrWc=;
+ t=1577716322; bh=K9IglDMfo6fAz8oDQ8Cy06HvYvmttudvu1VgNCQnFXk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=O/FVi7pIJ19rPaWCeIhTGpgbnXWL0lK2fz6ou6mmBXE83LNYfFlRUR0bTHJKoDHLq
- gR90XmpWWhvD08FNbpaRXTtKoavvbnXGNo8BfZq+9EnZlel3XBHMys+j5pzEsM2C8J
- QAqWQvI9U3pRSE7a3XATiBSuqAf6tQJOfjkcAIsM=
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
-X-Spam-Level: 
-X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,URIBL_BLOCKED,
- USER_IN_WHITELIST autolearn=disabled version=3.4.2
+ b=AEmV+PzosTQy+ffRHWc7q8N5rnnRC5TmOT5+nRzFPZZCQzN1B4i0WyBid1CGiUZqp
+ eY1GlsWriOtgr+G7r8uRuYqqKSqbqP0QQZTjdHP2ed/kYjiurHwwmfUIrulHo900+6
+ k3ovWwWBOoNzTwWZwsfNRyP9/4AAVIfiiO6uCwpc=
 Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
- by fd.dlink.ru (Postfix) with ESMTP id 5C4301B2181E;
- Mon, 30 Dec 2019 17:31:25 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 5C4301B2181E
+ by fd.dlink.ru (Postfix) with ESMTP id 615FD1B21809;
+ Mon, 30 Dec 2019 17:31:27 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 615FD1B21809
 Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
- by mail.rzn.dlink.ru (Postfix) with ESMTP id 5FCF01B229D0;
- Mon, 30 Dec 2019 17:31:23 +0300 (MSK)
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id 5C76B1B229CB;
+ Mon, 30 Dec 2019 17:31:25 +0300 (MSK)
 Received: from localhost.localdomain (unknown [196.196.203.126])
  by mail.rzn.dlink.ru (Postfix) with ESMTPA;
- Mon, 30 Dec 2019 17:31:23 +0300 (MSK)
+ Mon, 30 Dec 2019 17:31:25 +0300 (MSK)
 From: Alexander Lobakin <alobakin@dlink.ru>
 To: "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH RFC net-next 11/19] net: dsa: tag_lan9303: add .flow_dissect()
- callback
-Date: Mon, 30 Dec 2019 17:30:19 +0300
-Message-Id: <20191230143028.27313-12-alobakin@dlink.ru>
+Subject: [PATCH RFC net-next 12/19] net: dsa: tag_lan9303: split out common
+ tag accessors
+Date: Mon, 30 Dec 2019 17:30:20 +0300
+Message-Id: <20191230143028.27313-13-alobakin@dlink.ru>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191230143028.27313-1-alobakin@dlink.ru>
 References: <20191230143028.27313-1-alobakin@dlink.ru>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064233_442396_C51EC539 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191230_064231_439621_322992FC 
+X-CRM114-Status: GOOD (  13.43  )
 X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.4 points)
@@ -108,44 +103,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This fixes Rx packet hashing on RPS-enabled systems.
-Misc: fix lan9303_netdev_ops identation.
+...as they will be needed in the upcoming GRO callbacks.
 
 Signed-off-by: Alexander Lobakin <alobakin@dlink.ru>
 ---
- net/dsa/tag_lan9303.c | 18 +++++++++++++-----
- 1 file changed, 13 insertions(+), 5 deletions(-)
+ net/dsa/tag_lan9303.c | 46 +++++++++++++++++++++++++++++--------------
+ 1 file changed, 31 insertions(+), 15 deletions(-)
 
 diff --git a/net/dsa/tag_lan9303.c b/net/dsa/tag_lan9303.c
-index eb0e7a32e53d..d328a44381a9 100644
+index d328a44381a9..ba03502986a4 100644
 --- a/net/dsa/tag_lan9303.c
 +++ b/net/dsa/tag_lan9303.c
-@@ -128,12 +128,20 @@ static struct sk_buff *lan9303_rcv(struct sk_buff *skb, struct net_device *dev,
- 	return skb;
- }
+@@ -38,6 +38,32 @@
+ # define LAN9303_TAG_RX_TRAPPED_TO_CPU (LAN9303_TAG_RX_IGMP | \
+ 					LAN9303_TAG_RX_STP)
  
-+static void lan9303_flow_dissect(const struct sk_buff *skb, __be16 *proto,
-+				 int *offset)
++static inline bool lan9303_sanity_check(const u8 *data)
 +{
-+	*offset = LAN9303_TAG_LEN;
-+	*proto = *(__be16 *)(skb->data + 2);
++	/* '->data' points into the middle of our special VLAN tag information:
++	 *
++	 * ~ MAC src   | 0x81 | 0x00 | 0xyy | 0xzz | ether type
++	 *                           ^
++	 *                        ->data
++	 */
++	return *(__be16 *)(data - 2) == htons(ETH_P_8021Q);
 +}
 +
- static const struct dsa_device_ops lan9303_netdev_ops = {
--	.name = "lan9303",
--	.proto	= DSA_TAG_PROTO_LAN9303,
--	.xmit = lan9303_xmit,
--	.rcv = lan9303_rcv,
--	.overhead = LAN9303_TAG_LEN,
-+	.name		= "lan9303",
-+	.proto		= DSA_TAG_PROTO_LAN9303,
-+	.xmit		= lan9303_xmit,
-+	.rcv		= lan9303_rcv,
-+	.flow_dissect	= lan9303_flow_dissect,
-+	.overhead	= LAN9303_TAG_LEN,
- };
++static inline bool lan9303_trapped_to_cpu(const u8 *data)
++{
++	return *(data + 1) & LAN9303_TAG_RX_TRAPPED_TO_CPU;
++}
++
++static inline int lan9303_source_port(const u8 *data)
++{
++	return *(data + 1) & GENMASK(1, 0);
++}
++
++static inline __be16 lan9303_encap_proto(const u8 *data)
++{
++	return *(__be16 *)(data + 2);
++}
++
+ /* Decide whether to transmit using ALR lookup, or transmit directly to
+  * port using tag. ALR learning is performed only when using ALR lookup.
+  * If the two external ports are bridged and the frame is unicast,
+@@ -85,8 +111,6 @@ static struct sk_buff *lan9303_xmit(struct sk_buff *skb, struct net_device *dev)
+ static struct sk_buff *lan9303_rcv(struct sk_buff *skb, struct net_device *dev,
+ 				   struct packet_type *pt)
+ {
+-	u16 *lan9303_tag;
+-	u16 lan9303_tag1;
+ 	unsigned int source_port;
  
- MODULE_LICENSE("GPL");
+ 	if (unlikely(!pskb_may_pull(skb, LAN9303_TAG_LEN))) {
+@@ -95,21 +119,12 @@ static struct sk_buff *lan9303_rcv(struct sk_buff *skb, struct net_device *dev,
+ 		return NULL;
+ 	}
+ 
+-	/* '->data' points into the middle of our special VLAN tag information:
+-	 *
+-	 * ~ MAC src   | 0x81 | 0x00 | 0xyy | 0xzz | ether type
+-	 *                           ^
+-	 *                        ->data
+-	 */
+-	lan9303_tag = (u16 *)(skb->data - 2);
+-
+-	if (lan9303_tag[0] != htons(ETH_P_8021Q)) {
++	if (!lan9303_sanity_check(skb->data)) {
+ 		dev_warn_ratelimited(&dev->dev, "Dropping packet due to invalid VLAN marker\n");
+ 		return NULL;
+ 	}
+ 
+-	lan9303_tag1 = ntohs(lan9303_tag[1]);
+-	source_port = lan9303_tag1 & 0x3;
++	source_port = lan9303_source_port(skb->data);
+ 
+ 	skb->dev = dsa_master_find_slave(dev, 0, source_port);
+ 	if (!skb->dev) {
+@@ -117,13 +132,14 @@ static struct sk_buff *lan9303_rcv(struct sk_buff *skb, struct net_device *dev,
+ 		return NULL;
+ 	}
+ 
++	skb->offload_fwd_mark = !lan9303_trapped_to_cpu(skb->data);
++
+ 	/* remove the special VLAN tag between the MAC addresses
+ 	 * and the current ethertype field.
+ 	 */
+ 	skb_pull_rcsum(skb, 2 + 2);
+ 	memmove(skb->data - ETH_HLEN, skb->data - (ETH_HLEN + LAN9303_TAG_LEN),
+ 		2 * ETH_ALEN);
+-	skb->offload_fwd_mark = !(lan9303_tag1 & LAN9303_TAG_RX_TRAPPED_TO_CPU);
+ 
+ 	return skb;
+ }
+@@ -132,7 +148,7 @@ static void lan9303_flow_dissect(const struct sk_buff *skb, __be16 *proto,
+ 				 int *offset)
+ {
+ 	*offset = LAN9303_TAG_LEN;
+-	*proto = *(__be16 *)(skb->data + 2);
++	*proto = lan9303_encap_proto(skb->data);
+ }
+ 
+ static const struct dsa_device_ops lan9303_netdev_ops = {
 -- 
 2.24.1
 
