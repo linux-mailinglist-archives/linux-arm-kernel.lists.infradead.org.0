@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73E5212D2F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 18:53:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49A7212D303
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 18:56:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pgqOP4yWlY7bkbeZDWD5XLa9jLw+ZzTTtHbqIq1fThg=; b=ExQD9nHmCBN838
-	mVzuJdhW4AzN5H4xhilIbvtsTn7P42FmjmB9Dg8HR18mQviGmg/YSkjjNGXqoQg9I79LhHajxD6S+
-	xQtP9nICSfWq0FOs6FnB9JQ2hgfCgCss4n/IeiqrPx8HUWiyXlsTxpznI+7ALxsPoqWCLw1rbvT5O
-	UHNKuyV/w/5dshocIDW71lucytuNE4XS3pAmoUF6OBsvuLk959TqiIVvr9tpb4UwVy6vxODlS9bdv
-	xcRduepwizoZrc6Yzhj2Z++KjFg6DW48B11Ev6z/WGKQSjfe9p7AFkcDd7sElBbl2UvoPtBr3zbwi
-	bWy/F91VSGHkqRCqqV/w==;
+	List-Owner; bh=U799cvIexhS/PBQi2wpOyuFJfIah3pu0NE46Txb4aGQ=; b=Wb3DNSCqLS4khu
+	Vjz+wbvWlmPQDDEHffaZq5V7CUEK3WpweywskZk93xwoCbKwpE+hDyRJ1+ONwnfSm8xkHYPWG7qVU
+	5mgo6C25gOdxIfyDaX6Wl46lGhei2/WP2pAbfAVC5z0RLc+0czGVxv/GFBQ5sXd43eZ1eYNXHykL8
+	TO+f1Li/BVdw7nPr2IOg/+wvfpFqPad7Fy5BYzB4Tb60hngX9UdVH5uqbiHfWUZn6LPd82MpaQo/u
+	Zm6QRD2QCsU02G1KgAWqCYAOr7D0YZ7DIrlseh6MZfyuVCGTJokN8PplfmiW4tuMtMzyB5rurDIzm
+	f+vjzc/Tnk3eWVnHXD4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilzED-0005AJ-1Q; Mon, 30 Dec 2019 17:53:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ilzHi-0006kL-GI; Mon, 30 Dec 2019 17:56:54 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilzE1-00059c-L6
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 17:53:07 +0000
-Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
- [209.85.160.171])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9CBA220748
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 17:53:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577728384;
- bh=qiX/ki1VZ10dHl+G3bmaxWsgUgJaJdPyetC5TOSqHeo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=fYlbAl/999Il/xXeYC00+VWL3M154DKx/6rNFXomPd20BDV31BDm0LjotziGAJsGw
- X2TK1VOOtFUnn7NY/8sgs5AqG4MKsV8kdTc5raNXboKso5z0AcnpUGgBNYJ6wXnUW7
- xQAmwkL4nWfGUohfqQwBwXkzdchfKpy6l4EBiYUc=
-Received: by mail-qt1-f171.google.com with SMTP id n15so30113262qtp.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 09:53:04 -0800 (PST)
-X-Gm-Message-State: APjAAAWabjdJEyZwLpDZIBOFnHgK9kKcJ/dvHq546CcKbYMeScY8u+CI
- j8UcbErQXFBBsvUdwBee9KC6WXMk4I412YURfQ==
-X-Google-Smtp-Source: APXvYqyaZydxwFW02BlCZCg9ra5E5cTvKaoWIYuHbN3644YIXtRs5mhdInVI5/ETrktTRqg3jjzf+amLHcIDIwstXic=
-X-Received: by 2002:ac8:59:: with SMTP id i25mr49935662qtg.110.1577728383766; 
- Mon, 30 Dec 2019 09:53:03 -0800 (PST)
+ id 1ilzHZ-0006k1-N9; Mon, 30 Dec 2019 17:56:46 +0000
+Received: by mail-ed1-f65.google.com with SMTP id r21so33330122edq.0;
+ Mon, 30 Dec 2019 09:56:44 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cygsGGkDeAamm3MSoLJvChT4FcSCrOxKMla51D5XTzY=;
+ b=oG9maRcjYfH7XbaX6qtUyFPMZ2NO06ZojJd+HymgtY9htcNT+wciKUL64HyVSgYFro
+ gTGJiNs9jie8xVRQguEWyH1Z3YuretEJ5v789rF5oHRf4+BFe1hYctjcoGtQY/vcsdNU
+ L0eW0HcqvZ6+SoAg6JSJCy7GUulnbmfeBRENd0tYK2A7rqPiAZ2E3yZUKJh85nC+yi1B
+ slNKxFBonV0WsH8zrhyJMeQHXnUcOwgBuasKT4W04+LqCspBz6/kkRXSYukureiIywci
+ GgaD55X68Sj3fiWzwKIb/yWxBR9WDqxAbBkKcYNJCziBC6g5sHYzKmvgp8Nq53ZJrmKa
+ SBNA==
+X-Gm-Message-State: APjAAAWYgpZ3fxt481/bRP15JTH4y9z2ab0bNy1WZSdO5E5RnE8Pi/tE
+ QxnNJxgVFmAAeZZiEiEg+IQ=
+X-Google-Smtp-Source: APXvYqzr5OU0/SLj/QhAWD0LTF1mLjy+UZqJa/pEeT9a7+Demos5yAW/kVgxn9NAx+dQPM1xMT5+uQ==
+X-Received: by 2002:a17:906:a84a:: with SMTP id
+ dx10mr70871987ejb.61.1577728603531; 
+ Mon, 30 Dec 2019 09:56:43 -0800 (PST)
+Received: from kozik-lap ([194.230.155.138])
+ by smtp.googlemail.com with ESMTPSA id m5sm5423715ede.10.2019.12.30.09.56.41
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 30 Dec 2019 09:56:42 -0800 (PST)
+Date: Mon, 30 Dec 2019 18:56:40 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 7/9] memory: samsung: exynos5422-dmc: convert to
+ devm_platform_ioremap_resource
+Message-ID: <20191230175640.GA29380@kozik-lap>
+References: <20191222185034.4665-1-tiny.windzz@gmail.com>
+ <20191222185034.4665-7-tiny.windzz@gmail.com>
 MIME-Version: 1.0
-References: <20191224010020.15969-1-rjones@gateworks.com>
- <20191224010020.15969-2-rjones@gateworks.com>
- <20191226232625.GA2186@bogus>
- <CAOMZO5Aj+PfzXrYoV8LxKStdQ-B0BLdMV16L3ya0NokozG479g@mail.gmail.com>
-In-Reply-To: <CAOMZO5Aj+PfzXrYoV8LxKStdQ-B0BLdMV16L3ya0NokozG479g@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 30 Dec 2019 10:52:52 -0700
-X-Gmail-Original-Message-ID: <CAL_Jsq+8tpxUqzPt2wP668_GTmtaSuaBRSO_k7db4Jt06MWk9g@mail.gmail.com>
-Message-ID: <CAL_Jsq+8tpxUqzPt2wP668_GTmtaSuaBRSO_k7db4Jt06MWk9g@mail.gmail.com>
-Subject: Re: [PATCH v4 1/5] dt-bindings: arm: fsl: Add Gateworks Ventana
- i.MX6DL/Q compatibles
-To: Fabio Estevam <festevam@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20191222185034.4665-7-tiny.windzz@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_095305_734153_A3F7DE7E 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191230_095645_756450_A2C70F90 
+X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,73 +89,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Robert Jones <rjones@gateworks.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: kstewart@linuxfoundation.org, tony@atomide.com, ssantosh@kernel.org,
+ paul@crapouillou.net, rfontana@redhat.com, thierry.reding@gmail.com,
+ digetx@gmail.com, linux-samsung-soc@vger.kernel.org, evgreen@chromium.org,
+ jonathanh@nvidia.com, kgene@kernel.org, allison@lohutok.net, jroedel@suse.de,
+ linux-tegra@vger.kernel.org, linux-pm@vger.kernel.org,
+ alexios.zavras@intel.com, linux-mediatek@lists.infradead.org, john@phrozen.org,
+ matthias.bgg@gmail.com, tglx@linutronix.de, linux-omap@vger.kernel.org,
+ yong.wu@mediatek.com, rogerq@ti.com, linux-arm-kernel@lists.infradead.org,
+ sboyd@kernel.org, pdeschrijver@nvidia.com, linux-kernel@vger.kernel.org,
+ info@metux.net, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 26, 2019 at 5:34 PM Fabio Estevam <festevam@gmail.com> wrote:
->
-> Hi Rob,
->
-> On Thu, Dec 26, 2019 at 8:26 PM Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Mon, Dec 23, 2019 at 05:00:16PM -0800, Robert Jones wrote:
-> > > Add the compatible enum entries for Gateworks Ventana boards.
-> > >
-> > > Signed-off-by: Robert Jones <rjones@gateworks.com>
-> > > ---
-> > >  Documentation/devicetree/bindings/arm/fsl.yaml | 2 ++
-> > >  1 file changed, 2 insertions(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> > > index f79683a..a02e980 100644
-> > > --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> > > +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> > > @@ -126,6 +126,7 @@ properties:
-> > >                - toradex,apalis_imx6q-ixora      # Apalis iMX6 Module on Ixora
-> > >                - toradex,apalis_imx6q-ixora-v1.1 # Apalis iMX6 Module on Ixora V1.1
-> > >                - variscite,dt6customboard
-> > > +              - gw,ventana                # Gateworks i.MX6DL or i.MX6Q Ventana
-> >
-> > Keep entries sorted.
->
-> Just for clarification: shouldn't the entries inside fsl.yaml match
-> the dtb file names?
+On Sun, Dec 22, 2019 at 06:50:32PM +0000, Yangtao Li wrote:
+> Use devm_platform_ioremap_resource() to simplify code.
+> 
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  drivers/memory/samsung/exynos5422-dmc.c | 7 ++-----
 
-No. They should match top-level compatibles. However, I'd expect a 1:1
-relationship of dtbs to top-level compatible entries.
+Thanks, applied.
 
-> In case of the i.MX6Q based gateworks board, this should be:
->
-> gw,imx6q-gw51xx
-> gw,imx6q-gw52xx
-> gw,imx6q-gw53xx
-> gw,imx6q-gw5400-a
-> gw,imx6q-gw54xx
-> gw,imx6q-gw551x
-> gw,imx6q-gw552x
-> gw,imx6q-gw553x
-> gw,imx6q-gw560x
-> gw,imx6q-gw5903
-> gw,imx6q-gw5904
->
-> Please advise.
+Best regards,
+Krzysztof
 
-Yes, if this is 11 different boards, then yes, I'd expect 11
-permutations for the schema.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
