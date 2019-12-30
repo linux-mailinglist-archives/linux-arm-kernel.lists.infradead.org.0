@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEFDE12CB89
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 02:05:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E0F612CB8C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 02:14:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PXKqjk4nvM0KN/mpMbRJ2VYO8JhBJYGeI8hLMM9Izho=; b=dWy3gbJe/jpQda
-	cfcQCPymyW/lgDEjNGr9NLBMQ/+36NSqa4TtPJZD3QVAtsi7D7OAeIWAUg1F0I3ri2XhSt8EKCP/b
-	CaXnjKawbVnwerflLm9zwRGJvBK5agw4o46o0+Ksx+0hQAE8XAbyRGbmqt2A7ut7smucHvvcxmO3K
-	YCaA35EukDt4Xf36wJpCchuUkkgs0tdMmYC/pGFMIN3Wx6MQHJibi1puBGPFBpLdRSGsOmiE91SGz
-	zflzDjmG3YkFl5YDQpkhHUlnTGF3PVOVp/5JB7YH8bInIi0w2O9Z+HoLioXtqw8VbjCyo0+h/F15N
-	eIt/9KRLog39T/MkAmSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZSPVvSEaBALWRKZtY47UKPgXxP+fLXDC3dZwh25CRyA=; b=UunEFZY20dBtX9XZYfhPV+Dw1
+	KlMG6Ec8e3dr/E2gaPoThrGpivJMkpASRRJ/xn6KNy6/7jk5oNcnOgLaRVrrWG5Q45KtEhD15gagV
+	CjKG0B6w7R6qINNsWuH9JQ4Z8OJQOdQ4GRz9Qjv+A3cptZ0OEMbD2667BwdTsa8IlkJy4wkcqWGDY
+	LAjAojckpd5H3PWpen6TpeLpsGCNg/DNPUfye7/3C9gh9c6ICa2zOAIK7CaXrPS2npZeuyOMIfaxz
+	12XQdasMSJZ5WCrvnmkXx2ZM7aHuA/Zl0SSv1vCKBSCNy+DyUunZDueObV4gh0aLZtjpP2cCRH3cU
+	DiHbFwP7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iljUj-0001wq-Ts; Mon, 30 Dec 2019 01:05:17 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iljUZ-0001us-Sc
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 01:05:11 +0000
-Received: by mail-ot1-x343.google.com with SMTP id a15so44283904otf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Dec 2019 17:05:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1uou/b60cIOsMB3DzOtWATQEv5uMUtNiIAyfu0e/7RU=;
- b=aiKcmfv+dEWo2le/tjhTAw8tcKlQ0CqkPBBHpVEJh7FgnksKRQ3+hLp0toLsq9RsYK
- CztWSrHHddNxP+qLAFQQEwsU2JX7my6RqveTx38RdovRZGe7CM1LBq5T/j4W8IdUmfSJ
- SdF2Bq+gg7r/0zAA0tHGRrmtabNkGkuCDOwU1H/rQ0LSZFVE+7qcNXHq1qyj1FjOJsES
- 8HJTTK0LDo7QfVpfOSk5MnnY3Kcezzg6Q0a4tTfkQUQ/8geqnKdwgL4382LucumngyXB
- wfRe/fTehXCvD8htrQa36Fh5ZsMFYQ3P6ul9f9caoovpRKGiukaiVC3R67RiYPuTkr+f
- 7Iag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1uou/b60cIOsMB3DzOtWATQEv5uMUtNiIAyfu0e/7RU=;
- b=Mtj0y01sgUlTfFJ0jCP9AimRN3NHUoLL8F3XBmjVSBa+N2eIYMqsixDok2mS0CTebk
- uBN4PyL5MiAvyttj0AyKJaYfc8nCUXc+fnpzYUzYc036ZFUPyKQnL+KU0cKL+0vIp8ES
- bii67lLpuKI9h2WBkTCRVlU1BJrfw/YSh1Bufbn5wCFFl7/5M7g3NAO8Rz8qDiwx4Kpm
- nM3T8L1i0sAqrsetO593bjt1qt3Vi/Vg7nczJH33igwKcMABT4Kx4CJP1EIetSWLa95f
- lKHU/DqkWwqpMzgdcR5jeRteqj+dEGd1QyVLVABCNWp24+2MKXTrS2Qa6ssvHbcfK931
- +ZYQ==
-X-Gm-Message-State: APjAAAV9eGINgEsS1x4dWxlWRNqirpcYfdrerryHJk936nJVCepms84+
- +b+7+TTx8PHZ1knRgdhyR6jwFg==
-X-Google-Smtp-Source: APXvYqxjgsyQVJ4CLBiKYs6InxnmHCMDH1KJmdUI1mQYT+Cx0caVrZ1wXctdMcb1AJLR38bGRw+0+A==
-X-Received: by 2002:a05:6830:304c:: with SMTP id
- p12mr41031309otr.214.1577667905418; 
- Sun, 29 Dec 2019 17:05:05 -0800 (PST)
-Received: from leoy-ThinkPad-X240s (li1058-79.members.linode.com.
- [45.33.121.79])
- by smtp.gmail.com with ESMTPSA id j10sm10043384otr.64.2019.12.29.17.04.58
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Dec 2019 17:05:04 -0800 (PST)
-Date: Mon, 30 Dec 2019 09:04:55 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 06/13] mailbox: hi3660: convert to
- devm_platform_ioremap_resource
-Message-ID: <20191230010455.GC4552@leoy-ThinkPad-X240s>
-References: <20191228183538.26189-1-tiny.windzz@gmail.com>
- <20191228183538.26189-6-tiny.windzz@gmail.com>
+	id 1iljdt-00059i-Mw; Mon, 30 Dec 2019 01:14:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iljdk-00059I-Qg; Mon, 30 Dec 2019 01:14:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8F4331B;
+ Sun, 29 Dec 2019 17:14:33 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EDFEE3F534;
+ Sun, 29 Dec 2019 17:14:32 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
+To: Jonas Karlman <jonas@kwiboo.se>, "heiko@sntech.de" <heiko@sntech.de>
+References: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+ <HE1PR06MB4011483BC5EF6C87066983CCAC270@HE1PR06MB4011.eurprd06.prod.outlook.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <3c95c29b-6c07-5945-ac22-d683997e1ca0@arm.com>
+Date: Mon, 30 Dec 2019 01:14:30 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191228183538.26189-6-tiny.windzz@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <HE1PR06MB4011483BC5EF6C87066983CCAC270@HE1PR06MB4011.eurprd06.prod.outlook.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_170508_250578_71E95D5D 
-X-CRM114-Status: GOOD (  13.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191229_171436_907205_324629A8 
+X-CRM114-Status: GOOD (  18.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,56 +63,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bjorn.andersson@linaro.org, matthias.bgg@gmail.com,
- thierry.reding@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
- f.fainelli@gmail.com, jassisinghbrar@gmail.com, jonathanh@nvidia.com,
- agross@kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm@vger.kernel.org, alexandre.torgue@st.com, rjui@broadcom.com,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- lftan@altera.com, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- nios2-dev@lists.rocketboards.org, nsaenzjulienne@suse.de
-Content-Type: text/plain; charset="us-ascii"
+Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Dec 28, 2019 at 06:35:31PM +0000, Yangtao Li wrote:
-> Use devm_platform_ioremap_resource() to simplify code.
+On 2019-12-30 12:09 am, Jonas Karlman wrote:
+> On 2019-12-29 21:14, Robin Murphy wrote:
+>> Add OPPs for the GPU, derived from the downstream Beelink A1 DTB.
 > 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-
-Reviewed-by: Leo Yan <leo.yan@linaro.org>
-
-> ---
->  drivers/mailbox/hi3660-mailbox.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
+> My RK3328 devices (rock64, roc-cc and other android tv boxes) used to become
+> unstable when I used similar OPPs as these and vdd_logic got changed to anything
+> below 1.05v some time ago, network speeds slowed down and devices usually
+> become unresponsive.
 > 
-> diff --git a/drivers/mailbox/hi3660-mailbox.c b/drivers/mailbox/hi3660-mailbox.c
-> index 53f4bc2488c5..97e2c4ed807d 100644
-> --- a/drivers/mailbox/hi3660-mailbox.c
-> +++ b/drivers/mailbox/hi3660-mailbox.c
-> @@ -240,7 +240,6 @@ static int hi3660_mbox_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct hi3660_mbox *mbox;
->  	struct mbox_chan *chan;
-> -	struct resource *res;
->  	unsigned long ch;
->  	int err;
->  
-> @@ -248,8 +247,7 @@ static int hi3660_mbox_probe(struct platform_device *pdev)
->  	if (!mbox)
->  		return -ENOMEM;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	mbox->base = devm_ioremap_resource(dev, res);
-> +	mbox->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(mbox->base))
->  		return PTR_ERR(mbox->base);
->  
-> -- 
-> 2.17.1
+> I do use vendor ddr init blobs to run ddr at 786 or 933 MHz, gpu runs at 500 Mhz
+> and rock64/roc-cc LDO3 is set to use 1.0v instead of 1.1v used in A1 dts,
+> in case that could be affecting the stability at lower vdd_logic voltages.
+> 
+> These observations was a few months back so I will redo some tests and see if I
+> still get unstable systems using anything below default 1.1v for vdd_logic.
+
+Indeed, as noted on the lima devfreq thread it turns out voltage scaling 
+wasn't actually happening, so things weren't as thoroughly exercised as 
+I might have thought. I do note that downstream appears to have DRAM 
+DVFS also operating on the VDD_LOGIC domain (not to mention the video 
+decoder), so it's quite possible that in lieu of that we might need to 
+forcibly limit the minimum voltage as a compromise.
+
+Thanks,
+Robin.
+
+> 
+> Best regards,
+> Jonas
+> 
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   arch/arm64/boot/dts/rockchip/rk3328.dtsi | 22 ++++++++++++++++++++++
+>>   1 file changed, 22 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+>> index 91306ebed4da..e1b1b4551a8b 100644
+>> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+>> @@ -605,6 +605,28 @@
+>>   		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+>>   		clock-names = "bus", "core";
+>>   		resets = <&cru SRST_GPU_A>;
+>> +		operating-points-v2 = <&gpu_opp_table>;
+>> +	};
+>> +
+>> +	gpu_opp_table: opp_table1 {
+>> +		compatible = "operating-points-v2";
+>> +
+>> +		opp-200000000 {
+>> +			opp-hz = /bits/ 64 <200000000>;
+>> +			opp-microvolt = <900000>;
+>> +		};
+>> +		opp-300000000 {
+>> +			opp-hz = /bits/ 64 <300000000>;
+>> +			opp-microvolt = <950000>;
+>> +		};
+>> +		opp-400000000 {
+>> +			opp-hz = /bits/ 64 <400000000>;
+>> +			opp-microvolt = <1025000>;
+>> +		};
+>> +		opp-500000000 {
+>> +			opp-hz = /bits/ 64 <500000000>;
+>> +			opp-microvolt = <1125000>;
+>> +		};
+>>   	};
+>>   
+>>   	h265e_mmu: iommu@ff330200 {
 > 
 
 _______________________________________________
