@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B78312CCF5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:33:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A251C12CCF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:33:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ExsR2b0XaDeNM56XlXyE/agy5339bVmpFq3R732wN4=; b=FGmC4OC0pWF3J+
-	s/uHJ9iBEkflpPVueoThLLK77V98dxfp+j9r04WCWa0CqyxuM4PulsHppiA+L+pH6eamV8tsbV77B
-	Xnu943Nbu4FIxAE5Qh1z/RRzf59rQ6ucL4Pjy3ndkIHCmrnJu+qOMZg+8FrDevtC934mrfK3njIlD
-	ZoUA0+fIfftJg8cAICqr/Iy3QdMnheie5PCSdxp1p0jhjnexW08gE2pYafeg92P6CdGUc3bWDBvXa
-	M2c9CGHXBBxAvpsln+4eTtwX4rk5JEZn4eG6cc9kylx2QkXLR6RtnddAAKcQ7fdxBuiGx6HYu5yQe
-	8kD2laXJey8c1oydI6tw==;
+	List-Owner; bh=dkWVJk6y3+2VP7aUXS/avZlw78DAyE1oeUQ5+GEnvGs=; b=EpcZn9LT3AoPo5
+	8F9oSJeBcSwyGfVFhb95mTZzBUaaAJgImwYSWL0zh0lwSKoSDSp+r5XL2YgYM+yOa9YgbvjA9pxVz
+	45BGigDE0nd9S7LhjmoFpY3oEiPKyF1w4uwlkitJG3WFVaEMnokxDFWSYEf1a3Lbs9v6cxzkoo9X6
+	axVyVe0zgVju9FF3t95BLWTdsBU5YbdWBSac9jQZbOYz4I+oX08YedslfKZ+CbR9MU5HC523czHwt
+	9+5dspcfzSQJSc8sw/YbFHprgB+/XJjdlP9DnyhdR8YlbzHEdzXqfzZeDLIcfVtNjAniu+Kg1gJ0z
+	+PiYqd3haJBOtjfvJ1BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilngK-0007OB-H9; Mon, 30 Dec 2019 05:33:32 +0000
+	id 1ilngc-0007eZ-B3; Mon, 30 Dec 2019 05:33:50 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilnfl-00075E-GR; Mon, 30 Dec 2019 05:32:58 +0000
-X-UUID: 7bf22d85387046e4a09d4d8b665aba6b-20191229
+ id 1ilnfr-0007AA-UH; Mon, 30 Dec 2019 05:33:05 +0000
+X-UUID: a824c05d782d453f830b60fd0a0875f7-20191229
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=yGl3I6EQWhbqyWZgGCMVIQJKwtaCk4587bmdbeAAhak=; 
- b=UkeGjux86RvFTMOcRARh+Z4au3EPZvLZye0c3cUSs7gmpf+dVx/YoutRD5XflLZrJR9t9a85HnDq/hhC+ejcK3MtUqMA2XMapPzNmN8bhA995SscxJe/aM9c57/noVzFJ6AKZFJrm5UxlQj1yUXgDQGUX5rgc+aiqUKB8q7/kUs=;
-X-UUID: 7bf22d85387046e4a09d4d8b665aba6b-20191229
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=t1x7DVC5KFTbvU5W0kCoABviHjsDt86RYQluEsX3mLY=; 
+ b=q3KhXjkQo49+avXjwl8BxgY9YYi/E124YMerkAg19pvKLCyAkapZQGCU6TFq29OMa/C+rwMPP8sUlZxO98fy+fQ5ZykC0wUZiRjIhCYoKQw4xjU+4DSW9bpcYxsUs+0FynbsP+iX5sIqj+9zra8j081kyRm1KiIUi78c95gISO8=;
+X-UUID: a824c05d782d453f830b60fd0a0875f7-20191229
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1478423663; Sun, 29 Dec 2019 21:32:54 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 705254130; Sun, 29 Dec 2019 21:33:01 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 29 Dec 2019 21:33:09 -0800
+ 15.0.1395.4; Sun, 29 Dec 2019 21:33:15 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 30 Dec 2019 13:32:08 +0800
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Dec 2019 13:32:05 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 30 Dec 2019 13:31:37 +0800
@@ -47,19 +47,19 @@ To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
  <pedrom.sousa@synopsys.com>, <jejb@linux.ibm.com>, <matthias.bgg@gmail.com>,
  <bvanassche@acm.org>, <f.fainelli@gmail.com>
-Subject: [PATCH v2 4/6] scsi: ufs: export ufshcd_auto_hibern8_update for
- vendor usage
-Date: Mon, 30 Dec 2019 13:32:28 +0800
-Message-ID: <1577683950-1702-5-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v2 5/6] scsi: ufs-mediatek: configure customized auto-hibern8
+ timer
+Date: Mon, 30 Dec 2019 13:32:29 +0800
+Message-ID: <1577683950-1702-6-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1577683950-1702-1-git-send-email-stanley.chu@mediatek.com>
 References: <1577683950-1702-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 97CF5BE00D11748E05E5C3E33B6C4B8E66E050C1BF8D0689055532E9B369AA932000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_213257_555993_C24DE6FC 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20191229_213304_011360_87470D36 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,8 +99,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Export ufshcd_auto_hibern8_update to allow vendors to use common
-interface to customize auto-hibernate timer.
+Configure customized auto-hibern8 timer in MediaTek Chipsets.
 
 Cc: Alim Akhtar <alim.akhtar@samsung.com>
 Cc: Avri Altman <avri.altman@wdc.com>
@@ -110,86 +109,37 @@ Cc: Can Guo <cang@codeaurora.org>
 Cc: Florian Fainelli <f.fainelli@gmail.com>
 Cc: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
 Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 ---
- drivers/scsi/ufs/ufs-sysfs.c | 20 --------------------
- drivers/scsi/ufs/ufshcd.c    | 18 ++++++++++++++++++
- drivers/scsi/ufs/ufshcd.h    |  1 +
- 3 files changed, 19 insertions(+), 20 deletions(-)
+ drivers/scsi/ufs/ufs-mediatek.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
-index ad2abc96c0f1..720be3f64be7 100644
---- a/drivers/scsi/ufs/ufs-sysfs.c
-+++ b/drivers/scsi/ufs/ufs-sysfs.c
-@@ -118,26 +118,6 @@ static ssize_t spm_target_link_state_show(struct device *dev,
- 				ufs_pm_lvl_states[hba->spm_lvl].link_state));
+diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+index fc5ba21ec02a..1f025723b61b 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.c
++++ b/drivers/scsi/ufs/ufs-mediatek.c
+@@ -7,6 +7,7 @@
+  */
+ 
+ #include <linux/arm-smccc.h>
++#include <linux/bitfield.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/phy/phy.h>
+@@ -305,6 +306,13 @@ static int ufs_mtk_post_link(struct ufs_hba *hba)
+ 	/* enable unipro clock gating feature */
+ 	ufs_mtk_cfg_unipro_cg(hba, true);
+ 
++	/* configure auto-hibern8 timer to 10ms */
++	if (ufshcd_is_auto_hibern8_supported(hba)) {
++		ufshcd_auto_hibern8_update(hba,
++			FIELD_PREP(UFSHCI_AHIBERN8_TIMER_MASK, 10) |
++			FIELD_PREP(UFSHCI_AHIBERN8_SCALE_MASK, 3));
++	}
++
+ 	return 0;
  }
  
--static void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit)
--{
--	unsigned long flags;
--
--	if (!ufshcd_is_auto_hibern8_supported(hba))
--		return;
--
--	spin_lock_irqsave(hba->host->host_lock, flags);
--	if (hba->ahit != ahit)
--		hba->ahit = ahit;
--	spin_unlock_irqrestore(hba->host->host_lock, flags);
--	if (!pm_runtime_suspended(hba->dev)) {
--		pm_runtime_get_sync(hba->dev);
--		ufshcd_hold(hba, false);
--		ufshcd_auto_hibern8_enable(hba);
--		ufshcd_release(hba);
--		pm_runtime_put(hba->dev);
--	}
--}
--
- /* Convert Auto-Hibernate Idle Timer register value to microseconds */
- static int ufshcd_ahit_to_us(u32 ahit)
- {
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index a6936bebb513..ed02a704c1c2 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -3893,6 +3893,24 @@ static int ufshcd_uic_hibern8_exit(struct ufs_hba *hba)
- 	return ret;
- }
- 
-+void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit)
-+{
-+	unsigned long flags;
-+
-+	if (!(hba->capabilities & MASK_AUTO_HIBERN8_SUPPORT))
-+		return;
-+
-+	spin_lock_irqsave(hba->host->host_lock, flags);
-+	if (hba->ahit == ahit)
-+		goto out_unlock;
-+	hba->ahit = ahit;
-+	if (!pm_runtime_suspended(hba->dev))
-+		ufshcd_writel(hba, hba->ahit, REG_AUTO_HIBERNATE_IDLE_TIMER);
-+out_unlock:
-+	spin_unlock_irqrestore(hba->host->host_lock, flags);
-+}
-+EXPORT_SYMBOL_GPL(ufshcd_auto_hibern8_update);
-+
- void ufshcd_auto_hibern8_enable(struct ufs_hba *hba)
- {
- 	unsigned long flags;
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index b536a26d665e..e05cafddc87b 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -923,6 +923,7 @@ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
- 	enum flag_idn idn, bool *flag_res);
- 
- void ufshcd_auto_hibern8_enable(struct ufs_hba *hba);
-+void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit);
- 
- #define SD_ASCII_STD true
- #define SD_RAW false
 -- 
 2.18.0
 _______________________________________________
