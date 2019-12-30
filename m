@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 802FC12D072
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 14:51:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 439A112D0DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:38:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b7nksXNvUO2zlaYvUhSnxam9nOFNqoUksDTLtjlo+uY=; b=l3nfkp4uV1JBR4
-	Gz4oF6wQgCgNIQfolD97ivY3HTWm6z1/PVlVZCFTxdUiHHCFRyBWru3yO6PnK0GObAj1xQLub0jXi
-	yF/lqVvPW3c0eYHhaZdb7JiasK62JCRDRvrhRyIAdQJ9yB2tGwylE/t4W6t8iEb0JlXU8y/MoXVvE
-	8J6RKz9hA+t1vI1GkSWFM3WDHlL0Ue1+N/SVLMgXd2HdKO6JB8DFihjbZw/guolXFrdMiCSMkcShT
-	mn7vw8y0R6sLIbf6zVjQaiYUefO4KHLX2k/JwIOQFiu0AFVz30XN35vlXKo7tsLyYSU68IUk+wp2y
-	1kOtdpxdOLRaUZsc6JxA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mrDlLjIZwvFatTtWMwEIR23LX0BG/rNm47iytzN3k/Q=; b=EY2t0Ao1MfCIXq
+	5P49tptQizGBh/C2H9fG2MgqOfHQwV5fTXONIJ2XGB4FuV+HNIZdZny0VkBqp8gThP35I6gWUJ6As
+	SIRJ2ews6R23MiU3xatxSyvYNZL/rQDyVXhWRRhrSMAj54OP+fDlraA75NoBECiqEKbknd6bTuK1Y
+	+2ma/agN1sk1Ja0lLBbgyUjoIehpaSYBchRoPkkzd4FED3FHEJyKQqqvQvM/5BD316krt61b9Bvf5
+	WDwZsChGNmIPe/NJR/H6fsx3KxqjQ1hxxCEAu2xRFCr9n4Gz31Ui003MspKh96dPO9/9hbfteSphp
+	27ogpWOrf8tsFM3FZaSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilvRe-0002Jk-Mw; Mon, 30 Dec 2019 13:50:54 +0000
-Received: from mail-vk1-xa31.google.com ([2607:f8b0:4864:20::a31])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilvRY-0002J0-4I
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 13:50:49 +0000
-Received: by mail-vk1-xa31.google.com with SMTP id w67so8275190vkf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 05:50:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XkMGH5DQxq4vpQ2V6RpbSRMhiMiNZc/V1Nq34hSwIJk=;
- b=CdmuDXJVWhggBHQW+pJHb6TNOzPvoOAZ7687gifPylrQZxVlozKmptWbBXg6ZvIkZu
- cSqCpWBasg60LSZFxQc68XKGx9tGCTYU/1glw3qAd+j+PnScVx8y7/q7mH8JpjHAT5W9
- Z/9McLaAraQ3JOb8JHt6V0DPC6dpkL0tKD7GiqySLNj0KbpcRoSq8VLLF/YFzGp4277e
- yuOUGCFS3HHDim9Piq8i4Ve//zYDej7JIhFASN0gjkPfAca7mPla61VF7h1NhswQaTSP
- Bh/xohmtzFWp2TZ40Oq/berVwITGSAmsaECxo+5Kdz28ttDCRmv2KCr0fO77F+miqcHk
- Vwfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XkMGH5DQxq4vpQ2V6RpbSRMhiMiNZc/V1Nq34hSwIJk=;
- b=g31Z8j+Ee39NeZ23SNUNoC5ZmycSONYBFrxUFvBVnp8hqSgpDXum8OZEaxMuy9sZIJ
- 0RltTI2PZeABz2ju+B4i5pfhq2/z10yS4FPh5KlWiJ8fwNDrDTbq+ZWHDE3zL5bwQpts
- sdL2InMSJ3rhCnxvQDxdFw3ejH/A4Kdb4vgT4n5+3AfgP0IG1Ce7QkBLZ9MHXHXb8IfZ
- OdBZfkKANAocChLtRopcsnNK9SQZzfhzomYo/iPDfH3D5G3s7fylR76wcOiadyjVwRll
- NyGxDLmYEqhdEPcH8awx2vlcbzcqXqqMz2dhdiPX95Jv5ZMy5/AmaWu8UIS2egch5DRR
- /iCA==
-X-Gm-Message-State: APjAAAWzawelBIS1JTrSg6dp4o11EVqYlXHerloQ+48g9nEplBQ+3ACM
- e8cTBPzTIiz9XKdmhwJMj0tijEd71oL5Cltm/k4=
-X-Google-Smtp-Source: APXvYqxLXFi9J20jdLU7H/ZiNuY8RrLKbXtPjBGXHbT9hV1C1voWZ2Ea3/nczoyLc4wggA/hUuYx3UiwGsQLQlVnEL0=
-X-Received: by 2002:a1f:7c0c:: with SMTP id x12mr38200964vkc.41.1577713845386; 
- Mon, 30 Dec 2019 05:50:45 -0800 (PST)
+	id 1ilwBQ-0001SM-FP; Mon, 30 Dec 2019 14:38:12 +0000
+Received: from fd.dlink.ru ([178.170.168.18])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ilwAk-0000xS-4X; Mon, 30 Dec 2019 14:37:33 +0000
+Received: by fd.dlink.ru (Postfix, from userid 5000)
+ id B981F1B201FA; Mon, 30 Dec 2019 17:31:16 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru B981F1B201FA
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
+ t=1577716277; bh=RwOI8oAxd+fijp+Xuc6Oa+5EbKzjW8W4KCZUcnbzQOs=;
+ h=From:To:Cc:Subject:Date;
+ b=o1PvHtIvToJL7zKhu8jpjdoeiOaz87nSFOdQtyEXLajOapuuo7RLoHiwKzn46tHm0
+ Nl0paQ7EifqSHDnuCh9Ai+IK6J1msf833KXg/KQOLaz49bNs9JRD7za5TZD9K/6mL4
+ zYFhTQbBXEbWXLw9vLUyzoA0PuKuAM3OAIns7n3g=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
+X-Spam-Level: 
+X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,USER_IN_WHITELIST
+ autolearn=disabled version=3.4.2
+Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
+ by fd.dlink.ru (Postfix) with ESMTP id C75FB1B205E4;
+ Mon, 30 Dec 2019 17:31:03 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru C75FB1B205E4
+Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id CA84D1B229CB;
+ Mon, 30 Dec 2019 17:31:01 +0300 (MSK)
+Received: from localhost.localdomain (unknown [196.196.203.126])
+ by mail.rzn.dlink.ru (Postfix) with ESMTPA;
+ Mon, 30 Dec 2019 17:31:01 +0300 (MSK)
+From: Alexander Lobakin <alobakin@dlink.ru>
+To: "David S. Miller" <davem@davemloft.net>
+Subject: [PATCH RFC net-next 00/20] net: dsa: add GRO support
+Date: Mon, 30 Dec 2019 17:30:08 +0300
+Message-Id: <20191230143028.27313-1-alobakin@dlink.ru>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-References: <CAOuPNLh8dsSCq850afbj4OiHhZ2swBWZP=BTUrXrXhdpTjZs+A@mail.gmail.com>
- <CAK7N6vpawfLSVcHCg_3aQ0M8L=j77ZeGfmUZ-J4hpUkWu0fkWA@mail.gmail.com>
- <CAOuPNLii26WcDnwD7ZkMX6ux7VRspw7nMEKJK0QF+j95YCHPOw@mail.gmail.com>
- <CAK7N6vrSKM8pU0+gquCu1x52GjBTaqFbwqtj_v8dzd+3-g4D1A@mail.gmail.com>
-In-Reply-To: <CAK7N6vrSKM8pU0+gquCu1x52GjBTaqFbwqtj_v8dzd+3-g4D1A@mail.gmail.com>
-From: Pintu Agarwal <pintu.ping@gmail.com>
-Date: Mon, 30 Dec 2019 19:20:34 +0530
-Message-ID: <CAOuPNLicwavzWQZAqzyLdc12Rb=yo49QxrRM3Zr0KOGrhCtJpg@mail.gmail.com>
-Subject: Re: interrupt handler not getting called after resume
-To: anish singh <anish198519851985@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_055048_196419_01F954B5 
-X-CRM114-Status: GOOD (  13.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191230_063730_546633_EE1872C3 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a31 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pintu.ping[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [178.170.168.18 listed in list.dnswl.org]
+ 2.6 RCVD_IN_SBL            RBL: Received via a relay in Spamhaus SBL
+ [196.196.203.126 listed in zen.spamhaus.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,62 +85,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Kernelnewbies <kernelnewbies@kernelnewbies.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ Alexander Lobakin <alobakin@dlink.ru>,
+ Yoshiki Komachi <komachi.yoshiki@gmail.com>, linux-kernel@vger.kernel.org,
+ Eric Dumazet <edumazet@google.com>, Stanislav Fomichev <sdf@google.com>,
+ Matteo Croce <mcroce@redhat.com>, Edward Cree <ecree@solarflare.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Jakub Sitnicki <jakub@cloudflare.com>,
+ Daniel Borkmann <daniel@iogearbox.net>, Paolo Abeni <pabeni@redhat.com>,
+ Vivien Didelot <vivien.didelot@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>,
+ Sean Wang <sean.wang@mediatek.com>, Jiri Pirko <jiri@mellanox.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ Paul Blakey <paulb@mellanox.com>,
+ Stephen Hemminger <stephen@networkplumber.org>,
+ Taehee Yoo <ap420073@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear Anish,
+As of now, napi_gro_receive() in cases where the corresponding
+device is installed as CPU port of DSA-driven switch is in fact
+an overheaded version of netif_receive_skb{,_list}() with no
+advantages over:
 
-On Thu, 5 Dec 2019 at 00:55, anish singh <anish198519851985@gmail.com> wrote:
->
-> On Wed, Dec 4, 2019 at 1:49 AM Pintu Agarwal <pintu.ping@gmail.com> wrote:
-> >
-> > On Wed, 4 Dec 2019 at 00:28, anish singh <anish198519851985@gmail.com> wrote:
-> > >
-> > > On Tue, Dec 3, 2019 at 6:12 AM Pintu Agarwal <pintu.ping@gmail.com> wrote:
-> > > >
-> > > > Hi All,
-> > > >
-> > > > I have one general query.
-> > > >
-> > > > If an interrupt handler is NOT getting called (for one device) after
-> > > > the system resume (from snapshot image), then what could be the issue?
-> > >
-> > > Most likely during resume the interrupt was not enabled. So check
-> > > irq status registers to see in the working and non working case.
-> > >
-> > Oh sorry, I forgot to mention one thing.
-> > After resume, I can see that the interrupts are visible under /proc/interrupts.
-> > # cat /proc/interrupts
-> >            CPU0       CPU1
-> > [...]
-> > 416:          1          0       IPU  (null)
-> > 417:          0          0       IPU  (null)
-> > 418:          0          0       IPU  imx_drm  ===> HDMI
-> > 419:       2242       2       IPU  imx_drm   ===> LCD
-> > [...]
-> >
-> > The interrupts are coming only for LCD display and thus its irq
-> > handler is getting called.
-> > But the interrupts are not coming for HDMI case, thus HDMI gives
-> > "vblank timeout issue".
+- dev_gro_receive() can't find packet_offload for ETH_P_XDSA type;
+- so it immediately returns GRO_NORMAL;
+- napi_skb_finish() passes skb to gro_normal_one() -> netstack.
 
-Just wanted to update you that I have resolved the "vblank timeout
-issue" for HDMI (by restoring clock data during resume path).
-Now the ipu-v3 interrupts are coming even for HDMI crtc.
+This series adds a basic infrastructure to allow DSA taggers to
+implement GRO callbacks and adds GRO support for 5 tagger drivers:
+* tag_ar9331
+* tag_gswip
+* tag_lan9303
+* tag_mtk
+* tag_qca
 
-But HDMI display is still not working. May be this is another issue.
+I didn't make it for the rest because they are in fact way more
+complicated (e.g. combined DSA + 802.1q tag etc.) and require
+more familiarity with them and tests on the real hardware, which
+is inaccesible for me at the moment.
 
-Anyways, thank you so much for your support :)
+This series also includes a bunch of random fixes in several tagger
+drivers and some cleanup. I left them all in one place as they depend
+on each other, but there's no problem for me to split this into
+different series.
 
+I mark this as RFC, and there are the key questions for maintainers,
+developers, users etc.:
+- Do we need GRO support for DSA at all?
+- Which tagger protocols really need it and which don't?
+- Are the actual changes correct in every single tagger code?
+- Does this series bring any performance improvements on the
+  affected systems?
+- Would anybody mind if we'd add DSA support to napi_gro_frags()?
+- Any code/other comments/notes.
 
-Regards,
-Pintu
+I also would like to see more taggers with GRO callbacks, such as
+DSA and EDSA, and the results of their addition.
+
+Alexander Lobakin (20):
+  net: dsa: make .flow_dissect() callback returning void
+  net: dsa: add GRO support infrastructure
+  net: dsa: tag_ar9331: add .flow_dissect() callback
+  net: dsa: tag_ar9331: split out common tag accessors
+  net: dsa: tag_ar9331: add GRO callbacks
+  net: dsa: tag_gswip: fix typo in tag name
+  net: dsa: tag_gswip: switch to bitfield helpers
+  net: dsa: tag_gswip: add .flow_dissect() callback
+  net: dsa: tag_gswip: split out common tag accessors
+  net: dsa: tag_gswip: add GRO callbacks
+  net: dsa: tag_lan9303: add .flow_dissect() callback
+  net: dsa: tag_lan9303: split out common tag accessors
+  net: dsa: tag_lan9303: add GRO callbacks
+  net: dsa: tag_mtk: split out common tag accessors
+  net: dsa: tag_mtk: add GRO callbacks
+  net: dsa: tag_qca: fix doubled Tx statistics
+  net: dsa: tag_qca: switch to bitfield helpers
+  net: dsa: tag_qca: split out common tag accessors
+  net: dsa: tag_qca: add GRO callbacks
+  net: core: add (unlikely) DSA support in napi_gro_frags()
+
+ include/net/dsa.h         |  10 ++-
+ net/core/dev.c            |  11 ++-
+ net/core/flow_dissector.c |   8 +-
+ net/dsa/dsa.c             |  43 +++++++++-
+ net/dsa/dsa2.c            |   1 +
+ net/dsa/tag_ar9331.c      | 139 ++++++++++++++++++++++++++-----
+ net/dsa/tag_dsa.c         |   5 +-
+ net/dsa/tag_edsa.c        |   5 +-
+ net/dsa/tag_gswip.c       | 126 +++++++++++++++++++++++-----
+ net/dsa/tag_lan9303.c     | 139 ++++++++++++++++++++++++++-----
+ net/dsa/tag_mtk.c         | 115 +++++++++++++++++++++-----
+ net/dsa/tag_qca.c         | 167 ++++++++++++++++++++++++++++----------
+ 12 files changed, 629 insertions(+), 140 deletions(-)
+
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
