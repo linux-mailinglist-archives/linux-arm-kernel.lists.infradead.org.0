@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05BF612CFE3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 13:08:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF3B512CFF6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 13:28:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3DdNqZp10uQ4wIawAsOIeakRETQyyML3mqF4GVBY4i4=; b=SU8RVJOdbms354
-	i4WtySlK0S+XiJvdGHxxYE4FccmNv2FmMof2fQstxFGYqwovlaDzKx1tS3MV3TIxxFlbLiIu7cKqG
-	oNE6skL95sU/FQ4jUIgCEtEtUgpL6zPE9q2DedN/kNWl5y6J2rT8xIqOjHM7kT7NNG5zCnAEwaZfm
-	tRMvLdoMMi/TVC4bshp9fNjXF70Dp1zxn97RpuIG/DsddyVAiyPHxtu1EQkZ948tHiMPMQwSIL7Re
-	TN0D4GsSsvKvqXdhEPHwRHwoJfiehP1q3JE3hVJ3AM01JOLI7tGt6dOCMnqiNk9bKWukBDiv/+W+d
-	3Pew82wurHhIahdvZbtw==;
+	List-Owner; bh=NlrK5VyQotEVgC0G5sMeaBONaR8Tcd1fR98SUi9WCuU=; b=dSU0qbE9CVS+rm
+	32Rra3UoS5q4QAt+IqhvfIqqs1CIGlZP96qRNIdmf7apGdgB6Y6iPYAGNTTRbadZ1CqjquEJM49Y8
+	izivcXEHxGTcq1Bo+Os9LMZfByTUVOeKyREpti8V5JYDfKXdDp2cjBBlbekRw0GTg0tDgr03vGnPB
+	304wYFSjT6zf3ERtMGFFbJWujCqsWanHQ19hojCgpr8idg5uDYuOdX/y7V+RlMdYDMT1QSJS9KqMp
+	fDoIeBDjnmZAL2G1s1saqFs6ZilEk2K7SUZKdPac+NaYT5U75rfJosXv6PDdzjMBGAr0zVDMCmWvx
+	BJOOA5uM4MOG6gSXWopg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iltqL-00007N-L0; Mon, 30 Dec 2019 12:08:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1ilu9c-0006CP-H0; Mon, 30 Dec 2019 12:28:12 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iltqA-00006l-Fy
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 12:08:08 +0000
-Received: from mail-qv1-f49.google.com ([209.85.219.49]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1M6lxe-1iplSo3r9q-008MKf for <linux-arm-kernel@lists.infradead.org>; Mon,
- 30 Dec 2019 13:08:01 +0100
-Received: by mail-qv1-f49.google.com with SMTP id l14so12266966qvu.12
+ id 1ilu9R-0006BB-1k
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 12:28:02 +0000
+Received: from mail-qt1-f182.google.com ([209.85.160.182]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1Mhl4Q-1jPNls0umG-00djee for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 30 Dec 2019 13:27:56 +0100
+Received: by mail-qt1-f182.google.com with SMTP id d18so26820508qtj.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 04:08:00 -0800 (PST)
-X-Gm-Message-State: APjAAAXZn1e2glmu/elBpnGjhMDmwl0LMqLdM36+zUOAVYSOYLzihh2k
- Ate2m6rnC1MT2jrr9fesa8quH8K6MoHLUOCtvrI=
-X-Google-Smtp-Source: APXvYqwgYmUQwo+iL/k4m54VB6r1wV0E9Nq8yE/j4nb6YZD4J7kjH+UJKaDQYBMfOQwb9P/Z8xhYwMz7551bLxAPNPc=
-X-Received: by 2002:a0c:bd20:: with SMTP id m32mr50936334qvg.197.1577707679673; 
- Mon, 30 Dec 2019 04:07:59 -0800 (PST)
+ Mon, 30 Dec 2019 04:27:56 -0800 (PST)
+X-Gm-Message-State: APjAAAUIDwzY3LZdk8xkTYCvYqO3rTechYl7IjkRv3Z6Eg/HvtNQsNSk
+ Mcszxz2OYngYMPXberjIMzP+DIhob0X5Dx2U25w=
+X-Google-Smtp-Source: APXvYqxPg18QcBCheXEg57bO676E88LDtMzW6UpknzYUThTzCz6Q+c1Pcfg/qqj52aosJr397+kYQUCE06+nF/bwaDM=
+X-Received: by 2002:ac8:47d3:: with SMTP id d19mr47462525qtr.142.1577708875107; 
+ Mon, 30 Dec 2019 04:27:55 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1577111363.git.christophe.leroy@c-s.fr>
- <d0f8dfb26c025d3e3eee1b5f610161ca19b942df.1577111367.git.christophe.leroy@c-s.fr>
-In-Reply-To: <d0f8dfb26c025d3e3eee1b5f610161ca19b942df.1577111367.git.christophe.leroy@c-s.fr>
+ <47701b5fb73cf536db074031db8e6e3fa3695168.1577111365.git.christophe.leroy@c-s.fr>
+In-Reply-To: <47701b5fb73cf536db074031db8e6e3fa3695168.1577111365.git.christophe.leroy@c-s.fr>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 30 Dec 2019 13:07:43 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a36OgFuY72b_i6+0xBNGnaxS1SsRid+HrgQHPZtUJp3LQ@mail.gmail.com>
-Message-ID: <CAK8P3a36OgFuY72b_i6+0xBNGnaxS1SsRid+HrgQHPZtUJp3LQ@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 05/10] lib: vdso: inline do_hres()
+Date: Mon, 30 Dec 2019 13:27:39 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a0QGtjygLJUWX_1-s1vfCzE6UoOzrb+OZWwjaBdh=RpVQ@mail.gmail.com>
+Message-ID: <CAK8P3a0QGtjygLJUWX_1-s1vfCzE6UoOzrb+OZWwjaBdh=RpVQ@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 01/10] lib: vdso: ensure all arches have 32bit
+ fallback
 To: Christophe Leroy <christophe.leroy@c-s.fr>
-X-Provags-ID: V03:K1:75DX7oU5qNe4y0Nv8eWttl5fLSHRVouoqWgeRp5fG2q0zVXdB4S
- GvEMibwzqpbJw9Ssbj2yIR5/MdSMa0lJseqIO96T59JDaoKmK4OImTljE/Xll4THVA45z4h
- 5eXcomZyUcaMBUwNnjUO/gogx7EtqTgHKIuNApfKJLs8DkflkeM+iTsGVlu8y9MnAiJEyY+
- EgS7Zrv302RrZVgLSVX7Q==
+X-Provags-ID: V03:K1:xdzi0CXlN0HIr7N/t79O70wzsPwDDrOnLAAAwmfcxckeQMiZmB1
+ JY8tXberiBv2Rx8u2F9gn7KAyuX44EZamjNXoQmyDTUPxZM/yRSci8T4sHoakAY/AclwDps
+ 75THcUikNplTodUP9Wc4PhlsbE3ZtMX0nLqgAD8g4pqenHLCBOGG9zx5iTKLtI7tS+Q886j
+ OI7KizDjG15vn6hBu2BXg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ee8fIVOXKo4=:BLotKt9iKpG9XEIWg3wB1u
- AUn+BSj7sQpvgE3Fu4/1marHHvAvzRrDPiub2DzdrdPP4BSpzFpr9U3lAyl/7MCc8Fa3EING+
- KnnhpA3r2YXQ4TZFy63mZhBiOaIwGxUfUAtabO5IoeDPg9m4/7tUNeFhc1QmVEVhIz6Dj6qyt
- huNhbUDODZniEwEbuIkQdonnc36ElD91g9vMY1AQgxcPDmzyLb2rWUAcHOVFTS2P8yMIGoiqN
- jnGb9Sm/FuCLVjRdyMIS+o7oyLYQhwycNUcPSzlj05vkR21WLjsapcqMHUxIcKhDkdrMdqdN/
- iOKeATcfRIX/M4dhp4B7ZabVkygq2owRmvjb5WKQm/PYTyB4dqiKuu2Eq0lQpdaDjEPGZ6lCl
- FAmhKkDEsBY5a/MtW1hbOHkIl6ZDUNzThNqvw8SnLM/bsMMXIhLF9ZyVxU9pybrN5k8rm5FWD
- UzCXXJ7r88CRysZ0lN+2RvkfqXbTVTWKG+ShUFE1WMEgSc2UbBj0M6dh+GqttSRz0e1N3NHRM
- oKb0YS6YcBL4KlmEpmwejukYvhMOzEHI64K3EmmNv994G5gmRcv3deG6OAhInS5bNg6oB4f+d
- fLaAh+a761O/M1joDzNKmkkdHYIYXYG2tx9czkmcN0le0mMtlGIcxFLo8EXN7sqowzz5okcDg
- IU5yC+TuSLY+qWYIwSAvPhLIpmYKPkOQqAi51B6b3npo77BZPwjvqzO9qbzyXUYPTAk71Lpks
- iTs0wyivQdD5x3g0sdBr2UYceQZavwnVkfaCF5iEc5Luj3DcOAIyr1NkqGM6ZGBW8r0Far6pt
- 3zDddqyA7+5IdpeYO7IG60pdrKX+fUzSp9Lj7GlXQu92rebAUaBFHY3zpmUGqbbUUp8ac5c9U
- Pn56Tj8SC71b1iEQdWUw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:oM9cd5EmYWM=:y4Ux5BQVOqDamWdkvckA5M
+ kWoVpvTP4nFxOmrc6ZkoXY5NLL8ldvQP6dRs2TqjenasN/aFXf6QpNfInP2ArH9n77Z6djVx0
+ DGUpo2EKjfSS0jjtLa7448VGpE4Fcq0kGh9wYsYuX7YR7oW5KZfvXPfSaDRJCgqtKcnStCEpJ
+ 6L6WhAqNwSF2yaTunCTiMilvABkRwYPBIBo0JseD0H+Uls3JKvjuejludoyRBVObURdiepJSJ
+ aeA9jVENHV9zB7HFXWyjDzKOyMgRp+wXpSqLBcH8+f4QQf3tRtlZz952cPS4zPF4ukovcFM5G
+ 5F0kwbI6eoV8wTi8DawEe1QPbZJ98pcO2WoreAn9yFNBkBwcS7BXj/pkWZrXOyHzvoTT7mCvy
+ bkKOdHMyP3uTB7rLNVYci9qLZE8d2e91IDDSOt246am2I4FhFlAcymvJ+V83NiNvMfQLO/1vQ
+ UqmHpkRRaTSIgIqPufGFnEVbKj3y720wsZlG7/X7IsDWwVDgaFdEA2Zg6DkYck5m6IUDFUsKs
+ t9NxerWfCJkpccRS1pe+sZHd3Po2a0X6R5FNJsLlYlOsU407jC8xcXqKY//JiQr90IL9J3UD4
+ v7ZgFElVg+iEjHLYE68sQ7tenDr1T698I/HLYbjS581aM3w61TaEK6eiJPZgjApApijw8WJWE
+ MzXFI+lfW2O8/yQGWJJ9Luld2SAOrtuMTMWg/EAlcaZmW2OlMWHS7OJSQDcjhWixGUfjLdZkX
+ mu6pJ3qRs1q8G0lYhaAP/yMqafwMQl7Aqq4T75FpIKkpNi12pkSuZQC3TDbpGC9SDSXcQynNT
+ ftVqdhiXvEfKSbfVBkwyVNXV1kAS35i85Zzd0PhEMLwltZpRN9cevQiXbjRqZlPgzR4Jdlr66
+ oMBeeX4ONO9P7dV1HocQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_040806_830040_743DDF4E 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20191230_042801_393645_2B1F92D0 
+X-CRM114-Status: GOOD (  21.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,28 +105,156 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, Dec 23, 2019 at 3:31 PM Christophe Leroy
 <christophe.leroy@c-s.fr> wrote:
 >
-> do_hres() is called from several places, so GCC doesn't inline
-> it at first.
->
-> do_hres() takes a struct __kernel_timespec * parameter for
-> passing the result. In the 32 bits case, this parameter corresponds
-> to a local var in the caller. In order to provide a pointer
-> to this structure, the caller has to put it in its stack and
-> do_hres() has to write the result in the stack. This is suboptimal,
-> especially on RISC processor like powerpc.
->
-> By making GCC inline the function, the struct __kernel_timespec
-> remains a local var using registers, avoiding the need to write and
-> read stack.
->
-> The improvement is significant on powerpc.
+> In order to simplify next step which moves fallback call at arch
+> level, ensure all arches have a 32bit fallback instead of handling
+> the lack of 32bit fallback in the common code based
+> on VDSO_HAS_32BIT_FALLBACK
 >
 > Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
 
-Good idea, I can see how this ends up being an improvement
-for most of the callers.
+I like the idea of removing VDSO_HAS_32BIT_FALLBACK and ensuring
+that all 32-bit architectures implement them, but we really should *not*
+have any implementation calling the 64-bit syscalls.
 
-Acked-by: Arnd Bergmann <arnd@arndb.de>
+> +static __always_inline
+> +long clock_gettime32_fallback(clockid_t _clkid, struct old_timespec32 *_ts)
+> +{
+> +       struct __kernel_timespec ts;
+> +       int ret = clock_gettime_fallback(clock, &ts);
+> +
+> +       if (likely(!ret)) {
+> +               _ts->tv_sec = ts.tv_sec;
+> +               _ts->tv_nsec = ts.tv_nsec;
+> +       }
+> +       return ret;
+> +}
+> +
+> +static __always_inline
+> +long clock_getres32_fallback(clockid_t _clkid, struct old_timespec32 *_ts)
+> +{
+> +       struct __kernel_timespec ts;
+> +       int ret = clock_getres_fallback(clock, &ts);
+> +
+> +       if (likely(!ret && _ts)) {
+> +               _ts->tv_sec = ts.tv_sec;
+> +               _ts->tv_nsec = ts.tv_nsec;
+> +       }
+> +       return ret;
+> +}
+
+Please change these to call __NR_clock_gettime and __NR_clock_getres_time
+instead of __NR_clock_gettime64/__NR_clock_getres_time64 for multiple reasons.
+
+- When doing migration between containers, the vdso may get copied into
+  an application running on a kernel that does not support the time64
+  variants, and then the fallback fails.
+
+- When CONFIG_COMPAT_32BIT_TIME is disabled, the time32 syscalls
+  return -ENOSYS, and the vdso version should have the exact same behavior
+  to avoid surprises. In particular an application that checks clock_gettime()
+  to see if the time32 are in part of the kernel would get an incorrect result
+  here.
+
+arch/arm64/include/asm/vdso/compat_gettimeofday.h already does this,
+I think you can just copy the implementation or find a way to share it.
+
+> diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
+> index b08f476b72b4..c41c86a07423 100644
+> --- a/arch/arm64/include/asm/vdso/gettimeofday.h
+> +++ b/arch/arm64/include/asm/vdso/gettimeofday.h
+> @@ -66,6 +66,32 @@ int clock_getres_fallback(clockid_t _clkid, struct __kernel_timespec *_ts)
+>         return ret;
+>  }
+>
+> +static __always_inline
+> +long clock_gettime32_fallback(clockid_t _clkid, struct old_timespec32 *_ts)
+> +{
+> +       struct __kernel_timespec ts;
+> +       int ret = clock_gettime_fallback(clock, &ts);
+> +
+> +       if (likely(!ret)) {
+> +               _ts->tv_sec = ts.tv_sec;
+> +               _ts->tv_nsec = ts.tv_nsec;
+> +       }
+> +       return ret;
+> +}
+
+As Andy said, this makes no sense at all, nothing should ever call this on a
+64-bit architecture.
+
+> diff --git a/arch/mips/include/asm/vdso/gettimeofday.h b/arch/mips/include/asm/vdso/gettimeofday.h
+> index b08825531e9f..60608e930a5c 100644
+> --- a/arch/mips/include/asm/vdso/gettimeofday.h
+> +++ b/arch/mips/include/asm/vdso/gettimeofday.h
+> @@ -109,8 +109,6 @@ static __always_inline int clock_getres_fallback(
+>
+>  #if _MIPS_SIM != _MIPS_SIM_ABI64
+>
+> -#define VDSO_HAS_32BIT_FALLBACK        1
+> -
+>  static __always_inline long clock_gettime32_fallback(
+>                                         clockid_t _clkid,
+>                                         struct old_timespec32 *_ts)
+> @@ -150,6 +148,32 @@ static __always_inline int clock_getres32_fallback(
+>
+>         return error ? -ret : ret;
+>  }
+> +#else
+> +static __always_inline
+> +long clock_gettime32_fallback(clockid_t _clkid, struct old_timespec32 *_ts)
+> +{
+> +       struct __kernel_timespec ts;
+> +       int ret = clock_gettime_fallback(clock, &ts);
+> +
+> +       if (likely(!ret)) {
+> +               _ts->tv_sec = ts.tv_sec;
+> +               _ts->tv_nsec = ts.tv_nsec;
+> +       }
+> +       return ret;
+> +}
+> +
+
+Same here.
+
+> --- a/lib/vdso/gettimeofday.c
+> +++ b/lib/vdso/gettimeofday.c
+> @@ -125,13 +125,8 @@ __cvdso_clock_gettime32(clockid_t clock, struct old_timespec32 *res)
+>
+>         ret = __cvdso_clock_gettime_common(clock, &ts);
+>
+> -#ifdef VDSO_HAS_32BIT_FALLBACK
+>         if (unlikely(ret))
+>                 return clock_gettime32_fallback(clock, res);
+> -#else
+> -       if (unlikely(ret))
+> -               ret = clock_gettime_fallback(clock, &ts);
+> -#endif
+>
+>         if (likely(!ret)) {
+>                 res->tv_sec = ts.tv_sec;
+
+Removing the #ifdef and the fallback seems fine. I think this is actually
+required for correctness on arm32 as well. Maybe enclose the entire function in
+
+#ifdef VDSO_HAS_CLOCK_GETTIME32
+
+to only define it when it is called?
+
+> @@ -238,13 +233,8 @@ __cvdso_clock_getres_time32(clockid_t clock, struct old_timespec32 *res)
+>
+>         ret = __cvdso_clock_getres_common(clock, &ts);
+>
+> -#ifdef VDSO_HAS_32BIT_FALLBACK
+>         if (unlikely(ret))
+>                 return clock_getres32_fallback(clock, res);
+> -#else
+> -       if (unlikely(ret))
+> -               ret = clock_getres_fallback(clock, &ts);
+> -#endif
+
+The same applies to all the getres stuff of course.
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
