@@ -2,99 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A00A12CAF8
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Dec 2019 22:18:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C6112CB65
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 01:09:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kWP3NJXIV62Dw7L7aULScQyWTeTZEq0X99T6neiLK8=; b=Wtzr0a6/2wQhKA
-	ukSuNPI002BFOMdy1822p13DcgBufeo1oOWx9S00lbR6cB7inFgU9lyP7Pb9HxP0W+Nxc99ORzy+S
-	i0LReH2X029WFVZhw/tXABEIDokw6kU40axT0SEqbxkKcLL1u5xzWecE2e7rzGA+vV4um4PUNPKFk
-	sdNfjb41WamMtm9qY5gt140hDgxfem8V6iC9rDbumGuHRqTWMMWP2ke4JJubcHtcF2W63GUkVkmmd
-	kWnIGyQSjdyp76zT6vaU+QuPMYThuZGUDTSjW1HxxTLTb2jowWMH2AcxZxm8tQ4AeZxIw1OeV+aqW
-	MOIrCGkPKIv23OrlkakQ==;
+	List-Owner; bh=FnrAftneS8k4pJLW5mtAs/s/T1swiL3cqd+hmQKL8pA=; b=SL26Rn3vvpDn2z
+	D4NxMXHEPom18hgyPsEab+Zb5TVUZnVEdPiaDnzkaHPg070LepDg8HOAgny+f/df1MzBwYZ1okE9E
+	e6NRChylDDy9Q4+mu2ISg24nAY6AZadVfOi41rO73GYhwzlXVD1R6uNODVWd2Kf8IgkOotYwT2aDI
+	qaQhEKUF/vWKxWY5pQGw4aSfvZXbGK63voPaEeJIw3VQ3kR4GOSW6TyI3cTQ0ORBa5GDQXHiD4I3M
+	ncJZwk3mufe77NF3mTXGA2zt+JyFvk6sMx80pENfNKu6fRuG/O3GTpeoG16v80O5LKQJPAgsLAckH
+	LSWCLwJaSL3avL0Xu83Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilfx9-0003tf-F8; Sun, 29 Dec 2019 21:18:23 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ilicu-0002KD-5t; Mon, 30 Dec 2019 00:09:40 +0000
+Received: from mail-oln040092067051.outbound.protection.outlook.com
+ ([40.92.67.51] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilfwx-0003tB-OQ
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Dec 2019 21:18:13 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u2so12779616wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Dec 2019 13:18:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=AzclGfOCXNAFhVFAqVBZxuEHKEXk4tM/YU8j/8O1+hs=;
- b=lLXBgiKMMyD7FokQ2U/JUSDBMZFzOQoIKCgHNI+60AGG2ilT5T2fPG8yYN3suuMKin
- Ot4fwogQYRhL1id4XrGEOtBHY9Gn5q9jIFuhDFeEqnOr1DHcfut+J/0XHaXrCDsc3ASO
- UMWEBAfm4VSlIr+LCTkZUb0qhrj76kPYpboGv5on7vqBrECTTvO8i1E+Xx1Pp/on0yf9
- QGFRQ1s9tbhkRQNcZOptghoOob6+dWxH4uVGf9WtwU/LeDqkZ8ZOwePRRP87wk7QybhX
- PAnMrPunncO6eeN33A/zL3WIKuUV2zu5LBpnasEFZi73W4YBMaFQDjlzcAfo0YcMMpXL
- q6Tg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=AzclGfOCXNAFhVFAqVBZxuEHKEXk4tM/YU8j/8O1+hs=;
- b=Ukwx9gfhvx+459EqlZpMuLuNZtqlaNugwp5xO5TgXJMgSuwAxDRYLNynayy919zx+2
- FQQMrCeoMVRXoeggbt619y5fSXdDYk556txayUFQmGP4EhlWDxw0ZO1tpuosrD2/w9gj
- 6X7NEDiIIrdOu8wAbNRkvQIQpwhercviehKnhKIIVDq3KcTUvzh9vUXjtaUG+0YzqWim
- 4eCfinqUb6yFr5mmHgg4fGRAPOFSxG8orxV9XTlu2ObSdXf27Jy+5ldZvdcZS2arF1u4
- IzRJfOQVna+6dHg76VJLzFXay4UMoYUBS6DXtqDQPChJqEj1EJiCmcqsFIWrATvPMWGL
- LbpA==
-X-Gm-Message-State: APjAAAWWcfyqWdSkwJkEDtE4SJEY8bFHfJw8EVfuqVy1q/CRt2k7x/B2
- O7cBWWPJFeX7EvNfZYEAPn4=
-X-Google-Smtp-Source: APXvYqwe4j7BCJKoNmzgx6G5UOUHUdaOfUj1LA5ALQmFsCT3xRlnki75ehUVZZ75w3+5DilW8p5V+Q==
-X-Received: by 2002:a1c:48c1:: with SMTP id v184mr31728708wma.5.1577654289600; 
- Sun, 29 Dec 2019 13:18:09 -0800 (PST)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id d8sm43791504wre.13.2019.12.29.13.18.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Dec 2019 13:18:08 -0800 (PST)
-Date: Sun, 29 Dec 2019 22:18:05 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5,
- H6, R40
-Message-ID: <20191229211805.GA26718@Red>
-References: <20191219172823.1652600-1-anarsoul@gmail.com>
- <20191219173321.bni4tbrhfkkphv7k@gilmour.lan>
- <4015380d-33ef-312c-a886-6e8bf65c976a@linaro.org>
- <20191226092751.dc3boaxsaeivuhw4@hendrix.home>
- <20191226104419.GA26677@Red>
- <CAEExFWtNZM3QSSMEksK=-opKZqxvCqyG2=3=iCo3VU6tfie64w@mail.gmail.com>
+ id 1ilicn-0002JS-Sq; Mon, 30 Dec 2019 00:09:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=f0C1o8lqQlYDmPO0ecEigfulWlahkrN2WMg3Q8WevTc2ozTH30NgahJKbf+K7bSBNwi2MBW2J7pdibkoV9gj6Qf6j0Zl11pJ1ChK+1EiW8XVOWPGJG13ldgtPYpt4fBkeP8PCmXKwn5EZA3yP6QqfIc8WrkSGv+IfwGKd9Mx9lQwAUlNXxW+ruVmPVWCWArVp8e6d1fUw934Tq3wFqQ4DG+odBvxTUQsn9ock9quegN2fFLDsenXADY5qoUMpSw1F4AJWeX+0spdgjxJ+4Daz8O63FjCrJvtn4TQspVUOp8Pyee03U2cW/PKShAW6FVBp3xT0N0LguxjRhK2sSS3SQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lZnJ0DhEmV3EMmGvDd2qfpN9Zi9PBq3W7yE+Rqgek7k=;
+ b=mv7qukd8jQPW3xqULgqw1XhbS6YuFi6lVjl6uXDIC0OfTCqQ7ArbKokXFFxtyWTR9g0Hf214LHPd/j2Q2KVGHdZORTs6jbp2yJSszJc+Z8jQfkZsfrN4csAbStyARNSWSNLGtsgHDvIB6UbTOMhvmOArKXHIbiTXbTEj9b/a4d8/o9tr2SEUuuwtgEsyHxmpzsY3oG84wIrSA8a2XCowQIMCoQOYGIiaV/DNNJBMZnGhthdnFRWQiqAeXGFwsd0LRINd/qX73Zlke61O+/jm0AD/yDaypygmmlqXrFZS0ZiAVEuhQHMrbteRpel8JDlD4Rv9CQgsImA7SK9P7pZD3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from AM5EUR02FT016.eop-EUR02.prod.protection.outlook.com
+ (10.152.8.53) by AM5EUR02HT159.eop-EUR02.prod.protection.outlook.com
+ (10.152.9.174) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.11; Mon, 30 Dec
+ 2019 00:09:22 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.8.52) by
+ AM5EUR02FT016.mail.protection.outlook.com (10.152.8.90) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.11 via Frontend Transport; Mon, 30 Dec 2019 00:09:22 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::b957:6908:9f62:c28b]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::b957:6908:9f62:c28b%5]) with mapi id 15.20.2581.007; Mon, 30 Dec 2019
+ 00:09:22 +0000
+Received: from [192.168.42.2] (89.253.98.102) by
+ AM6PR05CA0033.eurprd05.prod.outlook.com (2603:10a6:20b:2e::46) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.11 via Frontend Transport; Mon, 30 Dec 2019 00:09:21 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Robin Murphy <robin.murphy@arm.com>, "heiko@sntech.de" <heiko@sntech.de>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
+Thread-Topic: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
+Thread-Index: AQHVvoSobY0UI0qS/k2kVw/C6W/QbafRzb0A
+Date: Mon, 30 Dec 2019 00:09:22 +0000
+Message-ID: <HE1PR06MB4011483BC5EF6C87066983CCAC270@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+In-Reply-To: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM6PR05CA0033.eurprd05.prod.outlook.com
+ (2603:10a6:20b:2e::46) To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:2A7E96757D38D52A7DB3F630FF3FAC07A2D10E3DFA3A5785D7A1E0E9DCAE133A;
+ UpperCasedChecksum:5E5E66D22D9360CA19E9630DA2AD54EC0F1C9F8382FBBF4C3BF672DA520783A4;
+ SizeAsReceived:7726; Count:50
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [bvi6BSDSvVzU5XQF+hXOE1Q6jfZ2LUjI]
+x-microsoft-original-message-id: <3a3ea32d-dbfb-7934-9871-928c5a8b13aa@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 50
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: 1a924471-848c-4549-66b9-08d78cbc8581
+x-ms-traffictypediagnostic: AM5EUR02HT159:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wrmqibVYHFVhwJoBD1frrclIc+JagEmxmU3BQhb50GoQcoXGaZDJdvaaGCRzEo0EOxk2J5SE6v30cLBPvKm0qtw4Cj6zey2rX0KcSD+AJOrPa5nG38djn3Vvujwd1Yn4ZOmWsm2kJM/dY/Ga5zlhiXmmj9nXDWrPPTnMrYkTF8e648j6wG+/74985TNCYqdv
+x-ms-exchange-transport-forked: True
+Content-ID: <ABCA922A364A964D80FE323B5337C08A@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEExFWtNZM3QSSMEksK=-opKZqxvCqyG2=3=iCo3VU6tfie64w@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a924471-848c-4549-66b9-08d78cbc8581
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 00:09:22.3561 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR02HT159
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_131811_824305_B699E1A4 
-X-CRM114-Status: GOOD (  20.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191229_160933_933258_5068146D 
+X-CRM114-Status: GOOD (  14.89  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [40.92.67.51 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.67.51 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,59 +114,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Linux PM <linux-pm@vger.kernel.org>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBEZWMgMjYsIDIwMTkgYXQgMDg6NDc6NDdQTSArMDgwMCwgRnJhbmsgTGVlIHdyb3Rl
-Ogo+IE9uIFRodSwgRGVjIDI2LCAyMDE5IGF0IDY6NDQgUE0gQ29yZW50aW4gTGFiYmUKPiA8Y2xh
-YmJlLm1vbnRqb2llQGdtYWlsLmNvbT4gd3JvdGU6Cj4gPgo+ID4gT24gVGh1LCBEZWMgMjYsIDIw
-MTkgYXQgMTA6Mjc6NTFBTSArMDEwMCwgTWF4aW1lIFJpcGFyZCB3cm90ZToKPiA+ID4gT24gVHVl
-LCBEZWMgMjQsIDIwMTkgYXQgMDc6MzA6NTVQTSArMDEwMCwgRGFuaWVsIExlemNhbm8gd3JvdGU6
-Cj4gPiA+ID4gT24gMTkvMTIvMjAxOSAxODozMywgTWF4aW1lIFJpcGFyZCB3cm90ZToKPiA+ID4g
-PiA+IEhpLAo+ID4gPiA+ID4KPiA+ID4gPiA+IE9uIFRodSwgRGVjIDE5LCAyMDE5IGF0IDA5OjI4
-OjE2QU0gLTA4MDAsIFZhc2lseSBLaG9ydXpoaWNrIHdyb3RlOgo+ID4gPiA+ID4+IFRoaXMgcGF0
-Y2hzZXQgYWRkcyBkcml2ZXIgZm9yIHRoZXJtYWwgc2Vuc29yIGluIEE2NCwgQTgzVCwgSDMsIEg1
-LAo+ID4gPiA+ID4+IEg2IGFuZCBSNDAgU29Dcy4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBUaGFua3Mg
-YWdhaW4gZm9yIHdvcmtpbmcgb24gdGhpcy4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBJJ2xsIG1lcmdl
-IHRoZSBEVCBwYXRjaGVzIHdoZW4gdGhlIGRyaXZlciB3aWxsIGhhdmUgYmVlbiBtZXJnZWQuCj4g
-PiA+ID4KPiA+ID4gPiBJJ3ZlIGFwcGxpZWQgcGF0Y2hlcyAxICYgMi4KPiA+ID4gPgo+ID4gPiA+
-IFRoZXkgYXJlIGluIHRoZSB0ZXN0aW5nIGJyYW5jaCBhbmQgd2lsbCBnbyB0byB0aGUgbGludXgt
-bmV4dCBicmFuY2ggYXMKPiA+ID4gPiBzb29uIGFzIHRoZSBrZXJuZWxjaSBwYXNzZXMuCj4gPiA+
-Cj4gPiA+IEkganVzdCBtZXJnZWQgYWxsIHRoZSBvdGhlciBwYXRjaGVzIChleGNlcHQgdGhlIHBh
-dGNoIDYsIGZvciB0aGUgSDYsCj4gPiA+IGFzIHJlcXVlc3RlZCBieSBWYXNpbHkgb24gSVJDKS4K
-PiA+ID4KPiA+Cj4gPiBIZWxsbwo+ID4KPiA+IFZhc2lseSBhc2tlZCB0byBub3QgYXBwbHkgSDYg
-ZHVlIHRvIG15IHRlc3QgZmFpbGxpbmcgb24gaDYgYW5kIHNpbmNlIGhlIGRpZG50IG93biBhbnkg
-SDYgaHcuCj4gPiBCdXQgaXQgd2FzIGZhaWxsaW5nIGR1ZSBteSBmYXVsdCAoYSBmYWlsbGluZyBi
-dWlsZCkuCj4gPgo+ID4gU28gdGhlIHBhdGNoc2V0IHdvcmsgcGVyZmVjdCBvbiBINiAob3BpMSss
-IG9waTMsIHBpbmVINjQgYm90aCBtb2RlbCBBIGFuZCBCKSBhcyByZXBvcnRlZCBieSBteSBhbnN3
-ZXIgdG8gdGhpcyB0aHJlYWQuCj4gCj4gSEkgQ29yZW50aW4sCj4gCj4gQWx0aG91Z2ggaXQgaXMg
-bm90IGNhbGlicmF0ZWQsIGl0IHNob3VsZCB3b3JrIG9uIHRoZSBSNDAuIENhbiB5b3UgZ2l2ZQo+
-IG15IHBhdGNoIGEgdHJ5Pwo+IAo+IFRoeO+8jAo+IFlhbmd0YW8KPiAKCkhlbGxvCgpJdCB3b3Jr
-czoKdW5hbWUgLWEKTGludXggemxhZCA1LjUuMC1yYzItbmV4dC0yMDE5MTIyMCsgIzE5NiBTTVAg
-UFJFRU1QVCBTdW4gRGVjIDI5IDIyOjA4OjA1IENFVCAyMDE5IGFybXY3bCBBUk12NyBQcm9jZXNz
-b3IgcmV2IDUgKHY3bCkgQWxsd2lubmVyIHN1bjhpIEZhbWlseSBHTlUvTGludXgKY2F0IC9zeXMv
-ZGV2aWNlcy92aXJ0dWFsL3RoZXJtYWwvdGhlcm1hbF96b25lMC90ZW1wCjMwNzM2CmNhdCAvc3lz
-L2RldmljZXMvdmlydHVhbC90aGVybWFsL3RoZXJtYWxfem9uZTAvdHlwZSAKY3B1MC10aGVybWFs
-CmNhdCAvc3lzL2RldmljZXMvdmlydHVhbC90aGVybWFsL3RoZXJtYWxfem9uZTEvdGVtcAoyOTM4
-MApjYXQgL3N5cy9kZXZpY2VzL3ZpcnR1YWwvdGhlcm1hbC90aGVybWFsX3pvbmUxL3R5cGUgCmdw
-dS10aGVybWFsCgpTbyB5b3UgY291bGQgYWRkIHRvIHlvdXIgcGF0Y2g6ClRlc3RlZC1ieTogQ29y
-ZW50aW4gTGFiYmUgPGNsYWJiZS5tb250am9pZUBnbWFpbC5jb20+ClRlc3RlZC1vbjogc3VuOGkt
-cjQwLWJhbmFuYXBpLW0yLXVsdHJhCgp0aGFua3MKUmVnYXJkcwoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 2019-12-29 21:14, Robin Murphy wrote:
+> Add OPPs for the GPU, derived from the downstream Beelink A1 DTB.
+
+My RK3328 devices (rock64, roc-cc and other android tv boxes) used to become
+unstable when I used similar OPPs as these and vdd_logic got changed to anything
+below 1.05v some time ago, network speeds slowed down and devices usually
+become unresponsive.
+
+I do use vendor ddr init blobs to run ddr at 786 or 933 MHz, gpu runs at 500 Mhz
+and rock64/roc-cc LDO3 is set to use 1.0v instead of 1.1v used in A1 dts,
+in case that could be affecting the stability at lower vdd_logic voltages.
+
+These observations was a few months back so I will redo some tests and see if I
+still get unstable systems using anything below default 1.1v for vdd_logic.
+
+Best regards,
+Jonas
+
+>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi | 22 ++++++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> index 91306ebed4da..e1b1b4551a8b 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> @@ -605,6 +605,28 @@
+>  		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+>  		clock-names = "bus", "core";
+>  		resets = <&cru SRST_GPU_A>;
+> +		operating-points-v2 = <&gpu_opp_table>;
+> +	};
+> +
+> +	gpu_opp_table: opp_table1 {
+> +		compatible = "operating-points-v2";
+> +
+> +		opp-200000000 {
+> +			opp-hz = /bits/ 64 <200000000>;
+> +			opp-microvolt = <900000>;
+> +		};
+> +		opp-300000000 {
+> +			opp-hz = /bits/ 64 <300000000>;
+> +			opp-microvolt = <950000>;
+> +		};
+> +		opp-400000000 {
+> +			opp-hz = /bits/ 64 <400000000>;
+> +			opp-microvolt = <1025000>;
+> +		};
+> +		opp-500000000 {
+> +			opp-hz = /bits/ 64 <500000000>;
+> +			opp-microvolt = <1125000>;
+> +		};
+>  	};
+>  
+>  	h265e_mmu: iommu@ff330200 {
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
