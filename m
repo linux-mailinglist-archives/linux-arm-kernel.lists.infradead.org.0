@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 271B112D121
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:47:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF3012D0D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:37:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w4GQF0GsfM65wnOjVx1z32DHUlwP4RQPl4o9xmzT60w=; b=oqf2Z8z/aqMCuj
-	b+lDvv16AmH11CkJFlXeOKrUw0EUzKgdv/5NNAuuQEXT9ZNpzu2EzbKtxUQUSOi5mTigqd3LRMFXK
-	QfpYeAWvJmsFwmhmExkdZr3PU/aBQqaGaR+SfMav8O9A3jtsq/HxlBJP2NlLd/CTYmShRc8HZT1V0
-	OOf6GVRpYgjcJYyqdEKsmKqIFIDhkkwOXdIARDU0HMouibOMG7SigwthRI3DZ0EigDZCe5/+vDkQY
-	21d2QWIbYQWIu6gJtE+UxJHWIQBjLd++yGr/ljMdDcA2hKizI4uh6voTIR1EatGGTYDGJ/JpgDfMU
-	a4xrLMZJsSkuCFvNKGrQ==;
+	List-Owner; bh=4hP6Y5linBwcRreDrT+fkFVhp7VhbvEZh4TjYn3VYrM=; b=X5GlkLTXF8l96G
+	iRa8MnWfFb3q3OYtJy4gnWSBbXFxJlarA6xqBhJVRTyY5onji5cahBQ79mZP/PcAvMPyvgn2+OycL
+	a3rf4kNmGveH8S+tPq95qVYXbIGphMmFMWeempE0hpiN0w7rOcmdiR451ZpCiQxvb5PQ5fMY57tB+
+	SqXHNROa0xgFXntahpzD3L8WkYSBzdX3iAMlIoOe9+S5eMoPCScOSC0x2KN11Yesim2gTYNkEA4Dc
+	zETsljJ7ez2/QH35ZV7+GDAdzJc7XENLT3M533kIDS2IjGNyi7vIUjtTa2mY0sgirquH5G2yCYwXh
+	EqqQxRVNHDgAkdm64yyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwJz-0008Dk-Nd; Mon, 30 Dec 2019 14:47:03 +0000
-Received: from mail.dlink.ru ([178.170.168.18] helo=fd.dlink.ru)
+	id 1ilwAt-0000zh-T3; Mon, 30 Dec 2019 14:37:39 +0000
+Received: from fd.dlink.ru ([178.170.168.18])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwFb-0003xY-2A; Mon, 30 Dec 2019 14:42:32 +0000
+ id 1ilwAk-0000xR-1X; Mon, 30 Dec 2019 14:37:31 +0000
 Received: by fd.dlink.ru (Postfix, from userid 5000)
- id 12FCC1B205E4; Mon, 30 Dec 2019 17:31:47 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 12FCC1B205E4
+ id 1D35C1B20759; Mon, 30 Dec 2019 17:31:57 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 1D35C1B20759
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
- t=1577716308; bh=18voDyGBMtcwId3z4bi4wS1wyOebnKJGhqqk04an6a0=;
+ t=1577716317; bh=MElnUAXdbAsEzuA8MGuhZyEpxZHkJL0ydPnsBAYspiA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=TgfnbWI9TBc3yVVN1K2QdM7eEbyAyE00CNl4wigySu3iFcTjAtP01FSXGw5+R0Cn7
- fwRFXsTjaNiqN6JS+c/zW1l6fC5qvX+S2LJHDvKfn5eKcwTuRczYazS+ki0EwQYXIv
- L5UPgTwDGkc1/OsNzAt1hGc6Zn063tb+VbM8Ubo8=
+ b=PFAfL5sWrlbjw5bOBVaCSHG9T9Lz+DIXQnZ4J2oydzJ8/nGsMPjkU3wcslu2m0Mi5
+ 8NbvC/5iXl35VH4MvCP84/Zj9rgur1fdwyEakbJ95RGtdax+msw0N6Zl6VgEz5wyXb
+ mXrmGNG7/aXIYQ19IgnLoyvkS1qQzubGY2OxKSCM=
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
 X-Spam-Level: 
 X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,URIBL_BLOCKED,
  USER_IN_WHITELIST autolearn=disabled version=3.4.2
 Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
- by fd.dlink.ru (Postfix) with ESMTP id D7C7E1B205DF;
- Mon, 30 Dec 2019 17:31:08 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru D7C7E1B205DF
+ by fd.dlink.ru (Postfix) with ESMTP id 0C2421B207EB;
+ Mon, 30 Dec 2019 17:31:11 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 0C2421B207EB
 Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
- by mail.rzn.dlink.ru (Postfix) with ESMTP id 1E48A1B229D1;
- Mon, 30 Dec 2019 17:31:07 +0300 (MSK)
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id C6D2A1B229CB;
+ Mon, 30 Dec 2019 17:31:08 +0300 (MSK)
 Received: from localhost.localdomain (unknown [196.196.203.126])
  by mail.rzn.dlink.ru (Postfix) with ESMTPA;
- Mon, 30 Dec 2019 17:31:07 +0300 (MSK)
+ Mon, 30 Dec 2019 17:31:08 +0300 (MSK)
 From: Alexander Lobakin <alobakin@dlink.ru>
 To: "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH RFC net-next 03/19] net: dsa: tag_ar9331: add .flow_dissect()
- callback
-Date: Mon, 30 Dec 2019 17:30:11 +0300
-Message-Id: <20191230143028.27313-4-alobakin@dlink.ru>
+Subject: [PATCH RFC net-next 04/19] net: dsa: tag_ar9331: split out common tag
+ accessors
+Date: Mon, 30 Dec 2019 17:30:12 +0300
+Message-Id: <20191230143028.27313-5-alobakin@dlink.ru>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191230143028.27313-1-alobakin@dlink.ru>
 References: <20191230143028.27313-1-alobakin@dlink.ru>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064231_280780_E37306E3 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191230_063730_442130_A7F6DA68 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.4 points)
@@ -108,44 +107,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-...to make RPS work correctly if user would like to configure it.
-Misc: fix identation of ar9331_netdev_ops structure.
+They will be reused in upcoming GRO callbacks.
+(Almost) no functional changes except less informative error string.
 
 Signed-off-by: Alexander Lobakin <alobakin@dlink.ru>
 ---
- net/dsa/tag_ar9331.c | 18 +++++++++++++-----
- 1 file changed, 13 insertions(+), 5 deletions(-)
+ net/dsa/tag_ar9331.c | 46 +++++++++++++++++++++++++++-----------------
+ 1 file changed, 28 insertions(+), 18 deletions(-)
 
 diff --git a/net/dsa/tag_ar9331.c b/net/dsa/tag_ar9331.c
-index 466ffa92a474..399ca21ec03b 100644
+index 399ca21ec03b..c22c1b515e02 100644
 --- a/net/dsa/tag_ar9331.c
 +++ b/net/dsa/tag_ar9331.c
-@@ -83,12 +83,20 @@ static struct sk_buff *ar9331_tag_rcv(struct sk_buff *skb,
+@@ -24,6 +24,25 @@
+ #define AR9331_HDR_RESERVED_MASK	GENMASK(5, 4)
+ #define AR9331_HDR_PORT_NUM_MASK	GENMASK(3, 0)
+ 
++static inline bool ar9331_tag_sanity_check(const u8 *data)
++{
++	u16 hdr = le16_to_cpup((__le16 *)(data - ETH_HLEN));
++
++	return FIELD_GET(AR9331_HDR_VERSION_MASK, hdr) == AR9331_HDR_VERSION &&
++	       !(hdr & AR9331_HDR_FROM_CPU);
++}
++
++static inline int ar9331_tag_source_port(const u8 *data)
++{
++	/* hdr comes in LE byte order, so srcport field is in the first byte */
++	return FIELD_GET(AR9331_HDR_PORT_NUM_MASK, *(data - ETH_HLEN));
++}
++
++static inline __be16 ar9331_tag_encap_proto(const u8 *data)
++{
++	return *(__be16 *)data;
++}
++
+ static struct sk_buff *ar9331_tag_xmit(struct sk_buff *skb,
+ 				       struct net_device *dev)
+ {
+@@ -50,36 +69,27 @@ static struct sk_buff *ar9331_tag_rcv(struct sk_buff *skb,
+ 				      struct net_device *ndev,
+ 				      struct packet_type *pt)
+ {
+-	u8 ver, port;
+-	u16 hdr;
++	int port;
+ 
+ 	if (unlikely(!pskb_may_pull(skb, AR9331_HDR_LEN)))
+ 		return NULL;
+ 
+-	hdr = le16_to_cpu(*(__le16 *)skb_mac_header(skb));
+-
+-	ver = FIELD_GET(AR9331_HDR_VERSION_MASK, hdr);
+-	if (unlikely(ver != AR9331_HDR_VERSION)) {
+-		netdev_warn_once(ndev, "%s:%i wrong header version 0x%2x\n",
+-				 __func__, __LINE__, hdr);
+-		return NULL;
+-	}
+-
+-	if (unlikely(hdr & AR9331_HDR_FROM_CPU)) {
+-		netdev_warn_once(ndev, "%s:%i packet should not be from cpu 0x%2x\n",
+-				 __func__, __LINE__, hdr);
++	if (unlikely(!ar9331_tag_sanity_check(skb->data))) {
++		netdev_warn_once(ndev,
++				 "%s:%i wrong header version or source port\n",
++				 __func__, __LINE__);
+ 		return NULL;
+ 	}
+ 
+-	skb_pull_rcsum(skb, AR9331_HDR_LEN);
+-
+ 	/* Get source port information */
+-	port = FIELD_GET(AR9331_HDR_PORT_NUM_MASK, hdr);
++	port = ar9331_tag_source_port(skb->data);
+ 
+ 	skb->dev = dsa_master_find_slave(ndev, 0, port);
+ 	if (!skb->dev)
+ 		return NULL;
+ 
++	skb_pull_rcsum(skb, AR9331_HDR_LEN);
++
  	return skb;
  }
  
-+static void ar9331_tag_flow_dissect(const struct sk_buff *skb, __be16 *proto,
-+				    int *offset)
-+{
-+	*offset = AR9331_HDR_LEN;
-+	*proto = *(__be16 *)skb->data;
-+}
-+
- static const struct dsa_device_ops ar9331_netdev_ops = {
--	.name	= "ar9331",
--	.proto	= DSA_TAG_PROTO_AR9331,
--	.xmit	= ar9331_tag_xmit,
--	.rcv	= ar9331_tag_rcv,
--	.overhead = AR9331_HDR_LEN,
-+	.name		= "ar9331",
-+	.proto		= DSA_TAG_PROTO_AR9331,
-+	.xmit		= ar9331_tag_xmit,
-+	.rcv		= ar9331_tag_rcv,
-+	.flow_dissect	= ar9331_tag_flow_dissect,
-+	.overhead	= AR9331_HDR_LEN,
- };
+@@ -87,7 +97,7 @@ static void ar9331_tag_flow_dissect(const struct sk_buff *skb, __be16 *proto,
+ 				    int *offset)
+ {
+ 	*offset = AR9331_HDR_LEN;
+-	*proto = *(__be16 *)skb->data;
++	*proto = ar9331_tag_encap_proto(skb->data);
+ }
  
- MODULE_LICENSE("GPL v2");
+ static const struct dsa_device_ops ar9331_netdev_ops = {
 -- 
 2.24.1
 
