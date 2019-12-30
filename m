@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ADA612CCF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:34:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B78312CCF5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:33:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+w1WP4w4SD+aZ9XapwhJF90dchyPPDtkSTLBSKHQIEI=; b=Y9g90VDHcV3Y21
-	7RJd+A9/yo7f2v7hh3UJFvNvYYk4PyhzDSQIut0ZD7gXmlv5lL/CJ0TM4IVL8N6kg/u3WjI79BRjK
-	0GD7aa7YpMAsFzAu8RWlasT9ekGHpD3D4LJjtPZagS4CBwnBqTo+y9/47Boa6Jaanf1DTxTLttb2F
-	NnaxDJbqyl3XuiaE2QPuuKy1YRS9VNr67NjTvYxFbydiYsGktOHBQaQUnvr66DT+Nkanl4Xg1ZYIQ
-	c1EOdrLPWGFLzriPpB4trPVBOPYrQBzPcGXgiT5Mva+0o0wuUy8fEwG8FPqbb/pZ/s8aXCJ6pRvZa
-	Vit6z5Rawh8PmgZ+nS2g==;
+	List-Owner; bh=7ExsR2b0XaDeNM56XlXyE/agy5339bVmpFq3R732wN4=; b=FGmC4OC0pWF3J+
+	s/uHJ9iBEkflpPVueoThLLK77V98dxfp+j9r04WCWa0CqyxuM4PulsHppiA+L+pH6eamV8tsbV77B
+	Xnu943Nbu4FIxAE5Qh1z/RRzf59rQ6ucL4Pjy3ndkIHCmrnJu+qOMZg+8FrDevtC934mrfK3njIlD
+	ZoUA0+fIfftJg8cAICqr/Iy3QdMnheie5PCSdxp1p0jhjnexW08gE2pYafeg92P6CdGUc3bWDBvXa
+	M2c9CGHXBBxAvpsln+4eTtwX4rk5JEZn4eG6cc9kylx2QkXLR6RtnddAAKcQ7fdxBuiGx6HYu5yQe
+	8kD2laXJey8c1oydI6tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilngz-00088P-7L; Mon, 30 Dec 2019 05:34:13 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ilngK-0007OB-H9; Mon, 30 Dec 2019 05:33:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilnft-0007AB-4V; Mon, 30 Dec 2019 05:33:07 +0000
-X-UUID: 611f8ea592ec43c38366e0660ab19176-20191229
+ id 1ilnfl-00075E-GR; Mon, 30 Dec 2019 05:32:58 +0000
+X-UUID: 7bf22d85387046e4a09d4d8b665aba6b-20191229
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=CT6J6Mos8F012MHJEi2dQQCWX4KKKCdgeXYgBRHOS3k=; 
- b=oNPS4xmpH1QbfA/e8MS3EK28wTDCCkRqJxxug7ZWJq/zPG8nSgCOASSfCEFz7Ofdaywx56/0quWdpRJtG3wuG0QiRX7fmXgnNDfPlR1PtGSYhIkjcNV+1Y0DdY2iOm1B1eXMkdIEJktoip0KkHB+1mjaF+TOPVe9B+ERV3K7MlI=;
-X-UUID: 611f8ea592ec43c38366e0660ab19176-20191229
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ bh=yGl3I6EQWhbqyWZgGCMVIQJKwtaCk4587bmdbeAAhak=; 
+ b=UkeGjux86RvFTMOcRARh+Z4au3EPZvLZye0c3cUSs7gmpf+dVx/YoutRD5XflLZrJR9t9a85HnDq/hhC+ejcK3MtUqMA2XMapPzNmN8bhA995SscxJe/aM9c57/noVzFJ6AKZFJrm5UxlQj1yUXgDQGUX5rgc+aiqUKB8q7/kUs=;
+X-UUID: 7bf22d85387046e4a09d4d8b665aba6b-20191229
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1039479302; Sun, 29 Dec 2019 21:32:59 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ with ESMTP id 1478423663; Sun, 29 Dec 2019 21:32:54 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 29 Dec 2019 21:33:14 -0800
+ 15.0.1395.4; Sun, 29 Dec 2019 21:33:09 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 30 Dec 2019 13:32:05 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Dec 2019 13:32:08 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 30 Dec 2019 13:31:37 +0800
@@ -47,24 +47,24 @@ To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
  <pedrom.sousa@synopsys.com>, <jejb@linux.ibm.com>, <matthias.bgg@gmail.com>,
  <bvanassche@acm.org>, <f.fainelli@gmail.com>
-Subject: [PATCH v2 3/6] scsi: ufs-mediatek: introduce reference clock control
-Date: Mon, 30 Dec 2019 13:32:27 +0800
-Message-ID: <1577683950-1702-4-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v2 4/6] scsi: ufs: export ufshcd_auto_hibern8_update for
+ vendor usage
+Date: Mon, 30 Dec 2019 13:32:28 +0800
+Message-ID: <1577683950-1702-5-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1577683950-1702-1-git-send-email-stanley.chu@mediatek.com>
 References: <1577683950-1702-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 97CF5BE00D11748E05E5C3E33B6C4B8E66E050C1BF8D0689055532E9B369AA932000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_213305_230867_49AB0681 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20191229_213257_555993_C24DE6FC 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -99,11 +99,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce reference clock control in MediaTek Chipset in order
-to disable it if it is not necessary by UFS device to save system power.
-
-Currently reference clock can be disabled during system suspend, runtime
-suspend and clock-gating after link enters hibernate state.
+Export ufshcd_auto_hibern8_update to allow vendors to use common
+interface to customize auto-hibernate timer.
 
 Cc: Alim Akhtar <alim.akhtar@samsung.com>
 Cc: Avri Altman <avri.altman@wdc.com>
@@ -113,166 +110,86 @@ Cc: Can Guo <cang@codeaurora.org>
 Cc: Florian Fainelli <f.fainelli@gmail.com>
 Cc: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
 Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 ---
- drivers/scsi/ufs/ufs-mediatek.c | 62 ++++++++++++++++++++++++++++++---
- drivers/scsi/ufs/ufs-mediatek.h | 22 ++++++++++--
- 2 files changed, 78 insertions(+), 6 deletions(-)
+ drivers/scsi/ufs/ufs-sysfs.c | 20 --------------------
+ drivers/scsi/ufs/ufshcd.c    | 18 ++++++++++++++++++
+ drivers/scsi/ufs/ufshcd.h    |  1 +
+ 3 files changed, 19 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 37e2c91fc452..fc5ba21ec02a 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -22,6 +22,9 @@
- 	arm_smccc_smc(MTK_SIP_UFS_CONTROL, \
- 		      cmd, val, 0, 0, 0, 0, 0, &(res))
- 
-+#define ufs_mtk_ref_clk_notify(on, res) \
-+	ufs_mtk_smc(UFS_MTK_SIP_REF_CLK_NOTIFICATION, on, res)
-+
- #define ufs_mtk_device_reset_ctrl(high, res) \
- 	ufs_mtk_smc(UFS_MTK_SIP_DEVICE_RESET, high, res)
- 
-@@ -90,6 +93,49 @@ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
- 	return err;
+diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
+index ad2abc96c0f1..720be3f64be7 100644
+--- a/drivers/scsi/ufs/ufs-sysfs.c
++++ b/drivers/scsi/ufs/ufs-sysfs.c
+@@ -118,26 +118,6 @@ static ssize_t spm_target_link_state_show(struct device *dev,
+ 				ufs_pm_lvl_states[hba->spm_lvl].link_state));
  }
  
-+static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+-static void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit)
+-{
+-	unsigned long flags;
+-
+-	if (!ufshcd_is_auto_hibern8_supported(hba))
+-		return;
+-
+-	spin_lock_irqsave(hba->host->host_lock, flags);
+-	if (hba->ahit != ahit)
+-		hba->ahit = ahit;
+-	spin_unlock_irqrestore(hba->host->host_lock, flags);
+-	if (!pm_runtime_suspended(hba->dev)) {
+-		pm_runtime_get_sync(hba->dev);
+-		ufshcd_hold(hba, false);
+-		ufshcd_auto_hibern8_enable(hba);
+-		ufshcd_release(hba);
+-		pm_runtime_put(hba->dev);
+-	}
+-}
+-
+ /* Convert Auto-Hibernate Idle Timer register value to microseconds */
+ static int ufshcd_ahit_to_us(u32 ahit)
+ {
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index a6936bebb513..ed02a704c1c2 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -3893,6 +3893,24 @@ static int ufshcd_uic_hibern8_exit(struct ufs_hba *hba)
+ 	return ret;
+ }
+ 
++void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit)
 +{
-+	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-+	struct arm_smccc_res res;
-+	unsigned long timeout;
-+	u32 value;
++	unsigned long flags;
 +
-+	if (host->ref_clk_enabled == on)
-+		return 0;
++	if (!(hba->capabilities & MASK_AUTO_HIBERN8_SUPPORT))
++		return;
 +
-+	if (on) {
-+		ufs_mtk_ref_clk_notify(on, res);
-+		ufshcd_writel(hba, REFCLK_REQUEST, REG_UFS_REFCLK_CTRL);
-+	} else {
-+		ufshcd_writel(hba, REFCLK_RELEASE, REG_UFS_REFCLK_CTRL);
-+	}
-+
-+	/* Wait for ack */
-+	timeout = jiffies + msecs_to_jiffies(REFCLK_REQ_TIMEOUT_MS);
-+	do {
-+		value = ufshcd_readl(hba, REG_UFS_REFCLK_CTRL);
-+
-+		/* Wait until ack bit equals to req bit */
-+		if (((value & REFCLK_ACK) >> 1) == (value & REFCLK_REQUEST))
-+			goto out;
-+
-+		usleep_range(100, 200);
-+	} while (time_before(jiffies, timeout));
-+
-+	dev_err(hba->dev, "missing ack of refclk req, reg: 0x%x\n", value);
-+
-+	ufs_mtk_ref_clk_notify(host->ref_clk_enabled, res);
-+
-+	return -ETIMEDOUT;
-+
-+out:
-+	host->ref_clk_enabled = on;
-+	if (!on)
-+		ufs_mtk_ref_clk_notify(on, res);
-+
-+	return 0;
++	spin_lock_irqsave(hba->host->host_lock, flags);
++	if (hba->ahit == ahit)
++		goto out_unlock;
++	hba->ahit = ahit;
++	if (!pm_runtime_suspended(hba->dev))
++		ufshcd_writel(hba, hba->ahit, REG_AUTO_HIBERNATE_IDLE_TIMER);
++out_unlock:
++	spin_unlock_irqrestore(hba->host->host_lock, flags);
 +}
++EXPORT_SYMBOL_GPL(ufshcd_auto_hibern8_update);
 +
- /**
-  * ufs_mtk_setup_clocks - enables/disable clocks
-  * @hba: host controller instance
-@@ -114,12 +160,16 @@ static int ufs_mtk_setup_clocks(struct ufs_hba *hba, bool on,
- 
- 	switch (status) {
- 	case PRE_CHANGE:
--		if (!on)
-+		if (!on) {
-+			ufs_mtk_setup_ref_clk(hba, on);
- 			ret = phy_power_off(host->mphy);
-+		}
- 		break;
- 	case POST_CHANGE:
--		if (on)
-+		if (on) {
- 			ret = phy_power_on(host->mphy);
-+			ufs_mtk_setup_ref_clk(hba, on);
-+		}
- 		break;
- 	}
- 
-@@ -305,8 +355,10 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ void ufshcd_auto_hibern8_enable(struct ufs_hba *hba)
  {
- 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+ 	unsigned long flags;
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index b536a26d665e..e05cafddc87b 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -923,6 +923,7 @@ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+ 	enum flag_idn idn, bool *flag_res);
  
--	if (ufshcd_is_link_hibern8(hba))
-+	if (ufshcd_is_link_hibern8(hba)) {
- 		phy_power_off(host->mphy);
-+		ufs_mtk_setup_ref_clk(hba, false);
-+	}
+ void ufshcd_auto_hibern8_enable(struct ufs_hba *hba);
++void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit);
  
- 	return 0;
- }
-@@ -315,8 +367,10 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- {
- 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
- 
--	if (ufshcd_is_link_hibern8(hba))
-+	if (ufshcd_is_link_hibern8(hba)) {
-+		ufs_mtk_setup_ref_clk(hba, true);
- 		phy_power_on(host->mphy);
-+	}
- 
- 	return 0;
- }
-diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
-index ce68ce25fdd7..31b7fead19eb 100644
---- a/drivers/scsi/ufs/ufs-mediatek.h
-+++ b/drivers/scsi/ufs/ufs-mediatek.h
-@@ -9,6 +9,22 @@
- #include <linux/bitops.h>
- #include <linux/soc/mediatek/mtk_sip_svc.h>
- 
-+/*
-+ * Vendor specific UFSHCI Registers
-+ */
-+#define REG_UFS_REFCLK_CTRL         0x144
-+
-+/*
-+ * Ref-clk control
-+ *
-+ * Values for register REG_UFS_REFCLK_CTRL
-+ */
-+#define REFCLK_RELEASE              0x0
-+#define REFCLK_REQUEST              BIT(0)
-+#define REFCLK_ACK                  BIT(1)
-+
-+#define REFCLK_REQ_TIMEOUT_MS       3
-+
- /*
-  * Vendor specific pre-defined parameters
-  */
-@@ -35,8 +51,9 @@
- /*
-  * SiP commands
-  */
--#define MTK_SIP_UFS_CONTROL         MTK_SIP_SMC_CMD(0x276)
--#define UFS_MTK_SIP_DEVICE_RESET    BIT(1)
-+#define MTK_SIP_UFS_CONTROL               MTK_SIP_SMC_CMD(0x276)
-+#define UFS_MTK_SIP_DEVICE_RESET          BIT(1)
-+#define UFS_MTK_SIP_REF_CLK_NOTIFICATION  BIT(3)
- 
- /*
-  * VS_DEBUGCLOCKENABLE
-@@ -57,6 +74,7 @@ enum {
- struct ufs_mtk_host {
- 	struct ufs_hba *hba;
- 	struct phy *mphy;
-+	bool ref_clk_enabled;
- };
- 
- #endif /* !_UFS_MEDIATEK_H */
+ #define SD_ASCII_STD true
+ #define SD_RAW false
 -- 
 2.18.0
 _______________________________________________
