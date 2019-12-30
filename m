@@ -2,92 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AD9912D144
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:54:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CA8312D146
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:54:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=KZYm3DF5Fb6ty/CAudZeoKk4wLaRbByAUJTWkHVaYKM=; b=PCRAUn8nflaLo8sD37VzE2qU3f
-	Wqo5TiU+iEnmWsjhbAHodlBi1x39tlyux0GLMabO8oGAFoI5WwYffhvrjjAEesAAsS66KGYSEGP9N
-	mSN/4KjGe47ZBSVibsXIeA7mpPhbebV3spD0iXh8AWx58fxT/qTfqBDbVDPt2qwMhJgL1ngMmBuOv
-	5H5jjrOlci2xl+qql6eRdPbDbulxidhleFZUMyvk8jljmrQ2sGXnqVG/3f3UZ1kU449MyGmlvWA8V
-	DS0KtfEMNQQgh+Nd4taiLFvOkKIVHx5u8B5QUzy66uVieigiOl0ZBXKicB93RIMJTUl420Sy9qLfd
-	eDPqUIXg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YhdRJlCc6aHfWMvdI0mEwpYTe1w77riXRqsljCByLpQ=; b=FT0A8RAvV9xoMJ
+	E44d6ioLpy6//N0Yi7iITTPH+e0wILeANzl3aM8RKq8W6f4dJQDpmqwgBkcipeyQbNZ1D/UGxxJp8
+	vF9s7n36mzvl65h1Iz8IBKZPsbQgAYGPjY/2dx2lF4goj00E6pj3pNaFKrCG9tr6O4jM09OyDuDwm
+	/Sy92COL5pIjV+x63VscH62GRgMnaJPxvcIvBfXCmQVjZz3uGhzCYOnt6bYsXKZ4Ld5oLuIwnzabz
+	EwrTsxqc8avJzCYn37Kdy9ltjW9n5+1/6KiBilKmf19MTW2pODD6qNq+3AXwdfafD2eJQ65UfdYS3
+	FhEyWaAaEBb5jDO9qv3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwQi-0007Ik-Uu; Mon, 30 Dec 2019 14:54:00 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwHa-0005RN-8R
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 14:44:45 +0000
-Received: by mail-lj1-x244.google.com with SMTP id y6so25495534lji.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 06:44:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pFHyotJ6IeS0NnPGUwSrCQs8d27XE2yrJ5nxr3VtYic=;
- b=s5zzc4Lzvw9BL4eBPMqCkzI1609Ctjtx+HMMegsZzrLbvJR3PQGlrle85pbQIAjvQv
- spD0gMVv3McQxNFa9n7sHSB0CtaQvF20UZS6K5kWhrw/1n0QclJEHvtiB5eSVvJ3yfWG
- lTg1kc+5OHIy3eladTvA82JxUYopI+/UzQCz8HJiivLaVAl3CPevey+/gcyxcbXuu4lo
- Ae882oP6a3qVoJHFFKttCYL4xHchd0e9DRbh+BmiqVAJGnXrXoajVof6Mep88AChD8nP
- bMhjSjVl8YnbU5WlaYGRh8onvQMHN7Gi3m37K1wv4IZidNEBKaAgQzZaK9dNoDXCyQtA
- EXtw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pFHyotJ6IeS0NnPGUwSrCQs8d27XE2yrJ5nxr3VtYic=;
- b=E3ezIlJV261yuFrA/BSNQwo20SgGuKmpihHsc/EuM/JUg7gsNqMT8BFGLdnB3e7YVU
- iMlSRVMO0r6KKlQm5AVqsGchjRbntTfl3YCpoGGj8++F0RCDADbb8YGPLT/8/TSifHxo
- fE1DGDPGIGLCfXd0XB49WBwZ2gQOv7H0EAYm3l8hW+D3a1TnPTiSRNzzwB0Tg6PiQFNL
- s4PAr4oHWa6S0CMfoF+zRctVjlZlmlfuWP8Jx2EURGbr+TsHrCB5yOK5r2y6UeCrlgk5
- eAUcIp+4o+CzkPXkC6IvVse3tjYIO33KFtkI5XQhcQSMLHshI41OVBYgVccBJyncIPJG
- tjaQ==
-X-Gm-Message-State: APjAAAXwtjm22aZegdcVHGC/gfkWOaFSyCfdQjpzar1U7+k09YAOwHKs
- w43+XlONX0992poNTaa6iA9vqQ==
-X-Google-Smtp-Source: APXvYqxdwGv5e3gJirom9yUfoCDD87334k/2EA5omu7hFVl0AB/wYbg/vlbug4VqdBA+bheY1tQrbA==
-X-Received: by 2002:a2e:9a01:: with SMTP id o1mr37050340lji.247.1577717072600; 
- Mon, 30 Dec 2019 06:44:32 -0800 (PST)
-Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
- [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id a21sm18744931lfg.44.2019.12.30.06.44.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Dec 2019 06:44:32 -0800 (PST)
-From: Ulf Hansson <ulf.hansson@linaro.org>
-To: Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v5 15/15] arm64: dts: Convert to the hierarchical CPU topology
- layout for MSM8916
-Date: Mon, 30 Dec 2019 15:44:02 +0100
-Message-Id: <20191230144402.30195-16-ulf.hansson@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191230144402.30195-1-ulf.hansson@linaro.org>
-References: <20191230144402.30195-1-ulf.hansson@linaro.org>
+	id 1ilwRH-00080M-Vz; Mon, 30 Dec 2019 14:54:36 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1ilwIV-0007DA-Qa; Mon, 30 Dec 2019 14:45:34 +0000
+Authenticated-By: 
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xBUEjMx7017383,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xBUEjMx7017383
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 30 Dec 2019 22:45:22 +0800
+Received: from RTEXMB01.realtek.com.tw (172.21.6.94) by
+ RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
+ 14.3.468.0; Mon, 30 Dec 2019 22:45:22 +0800
+Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
+ RTEXMB01.realtek.com.tw (172.21.6.94) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Mon, 30 Dec 2019 22:45:22 +0800
+Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
+ RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
+ 15.01.1779.005; Mon, 30 Dec 2019 22:45:22 +0800
+From: James Tai <james.tai@realtek.com>
+To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
+Subject: RE: [PATCH 13/14] arm64: dts: realtek: rtd16xx: Add SB2 and SCPU
+ Wrapper syscon nodes
+Thread-Topic: [PATCH 13/14] arm64: dts: realtek: rtd16xx: Add SB2 and SCPU
+ Wrapper syscon nodes
+Thread-Index: AQHVqT1xZxfGDYhqBUG4SVUl9UytQ6fS7OYA
+Date: Mon, 30 Dec 2019 14:45:21 +0000
+Message-ID: <ea1e0d3edab44092a9ecd9d3557bb977@realtek.com>
+References: <20191202182205.14629-1-afaerber@suse.de>
+ <20191202182205.14629-14-afaerber@suse.de>
+In-Reply-To: <20191202182205.14629-14-afaerber@suse.de>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [114.37.128.25]
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064434_414433_263AC6C2 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191230_064532_042263_AD5507F8 
+X-CRM114-Status: GOOD (  11.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [211.75.126.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,160 +82,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- Lina Iyer <lina.iyer@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To enable the OS to better support PSCI OS initiated CPU suspend mode,
-let's convert from the flattened layout to the hierarchical layout.
-
-In the hierarchical layout, let's create a power domain provider per CPU
-and describe the idle states for each CPU inside the power domain provider
-node. To group the CPUs into a cluster, let's add another power domain
-provider and make it act as the master domain. Note that, the CPU's idle
-states remains compatible with "arm,idle-state", while the cluster's idle
-state becomes compatible with "domain-idle-state".
-
-Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
-Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
----
-
-Changes in v5:
-	- None.
-
----
- arch/arm64/boot/dts/qcom/msm8916.dtsi | 57 +++++++++++++++++++++++++--
- 1 file changed, 53 insertions(+), 4 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-index 8686e101905c..282c36c8fa3b 100644
---- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-@@ -102,10 +102,11 @@
- 			reg = <0x0>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD0>;
-+			power-domain-names = "psci";
- 		};
- 
- 		CPU1: cpu@1 {
-@@ -114,10 +115,11 @@
- 			reg = <0x1>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD1>;
-+			power-domain-names = "psci";
- 		};
- 
- 		CPU2: cpu@2 {
-@@ -126,10 +128,11 @@
- 			reg = <0x2>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD2>;
-+			power-domain-names = "psci";
- 		};
- 
- 		CPU3: cpu@3 {
-@@ -138,10 +141,11 @@
- 			reg = <0x3>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD3>;
-+			power-domain-names = "psci";
- 		};
- 
- 		L2_0: l2-cache {
-@@ -161,12 +165,57 @@
- 				min-residency-us = <2000>;
- 				local-timer-stop;
- 			};
-+
-+			CLUSTER_RET: cluster-retention {
-+				compatible = "domain-idle-state";
-+				arm,psci-suspend-param = <0x41000012>;
-+				entry-latency-us = <500>;
-+				exit-latency-us = <500>;
-+				min-residency-us = <2000>;
-+			};
-+
-+			CLUSTER_PWRDN: cluster-gdhs {
-+				compatible = "domain-idle-state";
-+				arm,psci-suspend-param = <0x41000032>;
-+				entry-latency-us = <2000>;
-+				exit-latency-us = <2000>;
-+				min-residency-us = <6000>;
-+			};
- 		};
- 	};
- 
- 	psci {
- 		compatible = "arm,psci-1.0";
- 		method = "smc";
-+
-+		CPU_PD0: cpu-pd0 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD1: cpu-pd1 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD2: cpu-pd2 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD3: cpu-pd3 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CLUSTER_PD: cluster-pd {
-+			#power-domain-cells = <0>;
-+			domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
-+		};
- 	};
- 
- 	pmu {
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBBZGQgc3lzY29uIG1mZCBub2RlcyBmb3IgU0IyIGFuZCBTQ1BVIFdyYXBwZXIgdG8gUlREMTZ4
+eCBEVC4NCj4gDQo+IENjOiBKYW1lcyBUYWkgPGphbWVzLnRhaUByZWFsdGVrLmNvbT4NCj4gU2ln
+bmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPg0KPiAtLS0NCj4g
+IGFyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNnh4LmR0c2kgfCAxOCArKysrKysrKysr
+KysrKysrKysNCj4gIDEgZmlsZSBjaGFuZ2VkLCAxOCBpbnNlcnRpb25zKCspDQo+IA0KPiBkaWZm
+IC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDE2eHguZHRzaQ0KPiBiL2Fy
+Y2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNnh4LmR0c2kNCj4gaW5kZXggNzc2ZWZjMTBi
+YWIyLi5iYzg4Y2Y3NDlmMzMgMTAwNjQ0DQo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVh
+bHRlay9ydGQxNnh4LmR0c2kNCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0
+ZDE2eHguZHRzaQ0KPiBAQCAtMTM2LDYgKzEzNiwxNSBAQA0KPiAgCQkJCXJhbmdlcyA9IDwweDAg
+MHg3MDAwIDB4MTAwMD47DQo+ICAJCQl9Ow0KPiANCj4gKwkJCXNiMjogc3lzY29uQDFhMDAwIHsN
+Cj4gKwkJCQljb21wYXRpYmxlID0gInN5c2NvbiIsICJzaW1wbGUtbWZkIjsNCj4gKwkJCQlyZWcg
+PSA8MHgxYTAwMCAweDEwMDA+Ow0KPiArCQkJCXJlZy1pby13aWR0aCA9IDw0PjsNCj4gKwkJCQkj
+YWRkcmVzcy1jZWxscyA9IDwxPjsNCj4gKwkJCQkjc2l6ZS1jZWxscyA9IDwxPjsNCj4gKwkJCQly
+YW5nZXMgPSA8MHgwIDB4MWEwMDAgMHgxMDAwPjsNCj4gKwkJCX07DQo+ICsNCj4gIAkJCW1pc2M6
+IHN5c2NvbkAxYjAwMCB7DQo+ICAJCQkJY29tcGF0aWJsZSA9ICJzeXNjb24iLCAic2ltcGxlLW1m
+ZCI7DQo+ICAJCQkJcmVnID0gPDB4MWIwMDAgMHgxMDAwPjsNCj4gQEAgLTE0NCw2ICsxNTMsMTUg
+QEANCj4gIAkJCQkjc2l6ZS1jZWxscyA9IDwxPjsNCj4gIAkJCQlyYW5nZXMgPSA8MHgwIDB4MWIw
+MDAgMHgxMDAwPjsNCj4gIAkJCX07DQo+ICsNCj4gKwkJCXNjcHVfd3JhcHBlcjogc3lzY29uQDFk
+MDAwIHsNCj4gKwkJCQljb21wYXRpYmxlID0gInN5c2NvbiIsICJzaW1wbGUtbWZkIjsNCj4gKwkJ
+CQlyZWcgPSA8MHgxZDAwMCAweDEwMDA+Ow0KPiArCQkJCXJlZy1pby13aWR0aCA9IDw0PjsNCj4g
+KwkJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsNCj4gKwkJCQkjc2l6ZS1jZWxscyA9IDwxPjsNCj4g
+KwkJCQlyYW5nZXMgPSA8MHgwIDB4MWQwMDAgMHgxMDAwPjsNCj4gKwkJCX07DQo+ICAJCX07DQo+
+IA0KPiAgCQlnaWM6IGludGVycnVwdC1jb250cm9sbGVyQGZmMTAwMDAwIHsNCj4gLS0NCj4gMi4x
+Ni40DQo+IA0KPiANCg0KQWNrZWQtYnk6IEphbWVzIFRhaSA8amFtZXMudGFpQHJlYWx0ZWsuY29t
+Pg0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
