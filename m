@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D4E12CBD2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 03:08:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D89812CBD5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 03:09:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mRlVXdjip5cRbB3yeLjGPD4+cBp97sa8Ln/0oZk1BMo=; b=Y0JXD377g+NRe6
-	/EqwdS94ApIbRExGjdeISvxjax5nYHsmy0L9XuSzC9Ssc/Vvj4vq/zsrELCIYd4f9ZDZ72JA21vDt
-	edgVWCxBnlLYprbU6LF0IQpwv2IRbNax/AJt0cyK+XvTecMTFyA5P+jtqKBg8809AExWk4JPICnUb
-	zZCli5KavzDMEKOARmva5ccthVJcfdH+EDx3PTPKwaYGoZFtBg+SYS3wt0FE/uT3rKNORsW1AN3MU
-	OdNJcm2Hc6XuCjJFDVqyUF3qT3vKvotQDOu5pAsqySIfgx7Za2DcDlcR1G260M/VXiP4WSYgiKTWN
-	Rs2Pyj+MbdhFUlJrHTAg==;
+	List-Owner; bh=5MW6y4uO/yh/K5MfdfV4hlPYxNEM3v0SQIw85y9spfM=; b=mWvtWLODk2S7m8
+	7oc/4W3PD7+voH7qE54dRu04ByHLaHKikA9fpChrsEIaZz9DFQzFWpNLpVjC6a41WXPNbDzOHzZil
+	ycTVYVV/DHH7SpJI+N2v6WrDuUTM/xABaowD1jNp7DSMAVn+z0aoAj0qYYynOlzus5xzSVNZLPPEI
+	cc1+C8UaLEWNVB/7DL1xO/D7388HSbky7hXhRj+1yFDqhmKg2La3VaSlnMioIQo3GPxAVJS1iXwhu
+	u4b91lkRyjDCe/81GLhPo1qU5cYVDkt+puLjg7AjdcQobVdxBTUh/O6ZO4ViL2/gTO8b8MhYypOn7
+	+w5fihIzUDhAWPMbhjkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilkU4-0006wP-0d; Mon, 30 Dec 2019 02:08:40 +0000
+	id 1ilkUN-00078W-5O; Mon, 30 Dec 2019 02:08:59 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilkTs-0006vE-K2; Mon, 30 Dec 2019 02:08:29 +0000
-X-UUID: 37616466035142df9ef656893048e389-20191229
+ id 1ilkTt-0006vI-6F; Mon, 30 Dec 2019 02:08:30 +0000
+X-UUID: 7c1930e7e0ff4c12994a6919feafa86f-20191229
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=/lpQkAv3iCwWOkWgJJE5MaCHaqTpfO0sf9t+VBFhKO0=; 
- b=GTjlAmp0bUzhzZ0gAq4CejELM4MMdAWNVRWicb93uz0IRUHzH073haBzaUpl//g5fxEa2dj1cjoWyuI5HBsDgCqp26l/bZNJ75FBrDDOTBbo3qPy3NnkMs1Y7JAWjeW0pCKN1FiiFXdPhWq1oxG9zVWIXCoTiFK7kpeAHjtlTQc=;
-X-UUID: 37616466035142df9ef656893048e389-20191229
+ bh=zs3wqU0/rTaxSd+jOFQHg8yAjxKsG5qsZDhljNgTpew=; 
+ b=Q2umEATIEYiHqozWXZcwK0YOuRDfKw2mUSzZs4rA/HI7fGWtJhA/xeiNU7BDRolk8Cp8JwVIVE5Tmpo1MZ3P3OLVSxAO8qT7ossqzs8D0W0iLTreYRsorvTl8iCNEu7GHRzr4JUD5FLMx47En8ecJ7TssN9/wjdG89XbgB2ws9g=;
+X-UUID: 7c1930e7e0ff4c12994a6919feafa86f-20191229
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 642653931; Sun, 29 Dec 2019 18:08:23 -0800
+ with ESMTP id 1442169816; Sun, 29 Dec 2019 18:08:23 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 29 Dec 2019 17:58:37 -0800
+ 15.0.1395.4; Sun, 29 Dec 2019 18:02:58 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 30 Dec 2019 09:57:57 +0800
+ 15.0.1395.4; Mon, 30 Dec 2019 10:02:18 +0800
 Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 30 Dec 2019 09:58:42 +0800
-Message-ID: <1577671100.8160.0.camel@mtksdaap41>
-Subject: Re: [PATCH 04/13] mailbox: mediatek: cmdq: convert to
- devm_platform_ioremap_resource
+ Transport; Mon, 30 Dec 2019 10:03:03 +0800
+Message-ID: <1577671361.8160.2.camel@mtksdaap41>
+Subject: Re: [PATCH] soc: mediatek: cmdq: avoid racing condition with mutex
 From: CK Hu <ck.hu@mediatek.com>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Date: Mon, 30 Dec 2019 09:58:20 +0800
-In-Reply-To: <20191228183538.26189-4-tiny.windzz@gmail.com>
-References: <20191228183538.26189-1-tiny.windzz@gmail.com>
- <20191228183538.26189-4-tiny.windzz@gmail.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Mon, 30 Dec 2019 10:02:41 +0800
+In-Reply-To: <1575426135.31411.2.camel@mtksdaap41>
+References: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
+ <1575426135.31411.2.camel@mtksdaap41>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_180828_669391_4152EA2C 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20191229_180829_232717_79FAD9AA 
+X-CRM114-Status: GOOD (  13.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -84,56 +83,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bjorn.andersson@linaro.org, matthias.bgg@gmail.com,
- thierry.reding@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
- f.fainelli@gmail.com, jassisinghbrar@gmail.com, jonathanh@nvidia.com,
- agross@kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm@vger.kernel.org, alexandre.torgue@st.com, rjui@broadcom.com,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- lftan@altera.com, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- nios2-dev@lists.rocketboards.org, nsaenzjulienne@suse.de
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream@mediatek.com, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yangtao:
+Hi, Jassi:
 
-On Sat, 2019-12-28 at 18:35 +0000, Yangtao Li wrote:
-> Use devm_platform_ioremap_resource() to simplify code.
+Ping again.
+
+Are mbox_send_message() and mbox_client_txdone() thread-safe? If these
+two are thread-safe, this bug should be fixed in mailbox core not
+client.
+
+Regards,
+CK
+
+On Wed, 2019-12-04 at 10:22 +0800, CK Hu wrote:
+> Hi, Jassi:
 > 
-
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
-
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> ---
->  drivers/mailbox/mtk-cmdq-mailbox.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
+> Are mbox_send_message() and mbox_client_txdone() thread-safe? If these
+> two are thread-safe, this bug should be fixed in mailbox core not
+> client.
 > 
-> diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
-> index 9a6ce9f5a7db..7f9e34b021c8 100644
-> --- a/drivers/mailbox/mtk-cmdq-mailbox.c
-> +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
-> @@ -458,7 +458,6 @@ static struct mbox_chan *cmdq_xlate(struct mbox_controller *mbox,
->  static int cmdq_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> -	struct resource *res;
->  	struct cmdq *cmdq;
->  	int err, i;
->  
-> @@ -466,8 +465,7 @@ static int cmdq_probe(struct platform_device *pdev)
->  	if (!cmdq)
->  		return -ENOMEM;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	cmdq->base = devm_ioremap_resource(dev, res);
-> +	cmdq->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(cmdq->base)) {
->  		dev_err(dev, "failed to ioremap gce\n");
->  		return PTR_ERR(cmdq->base);
+> Regards,
+> CK
+> 
+> On Thu, 2019-11-21 at 15:29 +0800, Bibby Hsieh wrote:
+> > If cmdq client is multi thread user, racing will occur without mutex
+> > protection. It will make the C message queued in mailbox's queue
+> > always need D message's triggering.
+> > 
+> > Thread A		Thread B		  Thread C		Thread D...
+> > -----------------------------------------------------------------------------------
+> > mbox_send_message()
+> > 	send_data()
+> > 			mbox_send_message()
+> > 				*exit
+> > 						mbox_send_message()
+> > 							*exit
+> > mbox_client_txdone()
+> > 	tx_tick()
+> > 			mbox_client_txdone()
+> > 				tx_tick()
+> > 						mbox_client_txdone()
+> > 							tx_tick()
+> > msg_submit()
+> > 	send_data()
+> > 			msg_submit()
+> > 				*exit
+> > 						msg_submit()
+> > 							*exit
+> > -----------------------------------------------------------------------------------
+> > 
+> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-cmdq-helper.c | 3 +++
+> >  include/linux/soc/mediatek/mtk-cmdq.h  | 1 +
+> >  2 files changed, 4 insertions(+)
+> > 
+> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > index 9add0fd5fa6c..9e35e0beffaa 100644
+> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > @@ -81,6 +81,7 @@ struct cmdq_client *cmdq_mbox_create(struct device *dev, int index, u32 timeout)
+> >  	client->client.dev = dev;
+> >  	client->client.tx_block = false;
+> >  	client->chan = mbox_request_channel(&client->client, index);
+> > +	mutex_init(&client->mutex);
+> >  
+> >  	if (IS_ERR(client->chan)) {
+> >  		long err;
+> > @@ -352,9 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+> >  		spin_unlock_irqrestore(&client->lock, flags);
+> >  	}
+> >  
+> > +	mutex_lock(&client->mutex);
+> >  	mbox_send_message(client->chan, pkt);
+> >  	/* We can send next packet immediately, so just call txdone. */
+> >  	mbox_client_txdone(client->chan, 0);
+> > +	mutex_unlock(&client->mutex);
+> >  
+> >  	return 0;
+> >  }
+> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> > index a74c1d5acdf3..0f9071cd1bc7 100644
+> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> > @@ -28,6 +28,7 @@ struct cmdq_client {
+> >  	struct mbox_chan *chan;
+> >  	struct timer_list timer;
+> >  	u32 timeout_ms; /* in unit of microsecond */
+> > +	struct mutex mutex;
+> >  };
+> >  
+> >  /**
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
