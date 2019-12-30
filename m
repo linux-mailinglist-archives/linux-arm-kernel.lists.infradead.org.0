@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E59F12CE1F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 10:14:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6587012CE20
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 10:14:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UeyxAb0EVcarg5saT5seB2sEKuIZ6HhxZ3vDpqnrCs0=; b=YA4eSvEPiD8+mr
-	1qTXDddztgOBk0wt+3CauFczPHJNWBPkvm/ogQYBlDQjUy/xQ7i5VJqQ0sbzJc4sQRx22Dzy0mV1j
-	fI3lA2SfhzvyNep6wMApl4EO+PpqJA/PuqxodpBNMnOiEtkjVd7l/98Ht0tvB20w645vNJIy4IzGQ
-	fFU8SzpjaSe+VBeuudxIz3AoeBpT75+x256LLyswxnZnmwyYc698fgMSoQYYH3Dju4SnT2zid7E2d
-	8o1z3trVoBb2dFjCWcr6hV6LZfl6zX/Ay9hlVrXZsckl6OlGsnir642NG0s62ok6F4zlro9zjhHOz
-	fGB45T1viTebZdAfeCDw==;
+	List-Owner; bh=MQqRnam3uBn/l4z75W/t746aFJFTki69UACwAooljKU=; b=AiIMcGpWR06wts
+	8J2+9AHArWg6NuGGyo4aVfgmCQ2yR2ko5ATffm1rLqEfycTitz2sUBAACeLZW62eoEZE25Gyczfjg
+	H73BghJxyRjaRtJSs5FxQbjlYfLOKVlRDgBUY3V8WQZhS2uSZJ3F1ujrkLCu+72nNZF8Thh+y8mxK
+	XBz0sxsUw2pOao9ZRdW1d4LWlK3bOsm1R9zgB8ZSiytrsOhz1S9j9BnsArGOzLDJ/bNLqjCjwyl9T
+	cJDncp33K5yO8VMas0x+ep30zy+ojnVBv3cCZINvgg9LUlyWTClBbL5QyzeGsUcx7wOBLFZwBMVLM
+	R13E+u+w/WUbNG32kIlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilr7m-0006zE-Ar; Mon, 30 Dec 2019 09:14:06 +0000
+	id 1ilr82-0007CL-Sv; Mon, 30 Dec 2019 09:14:22 +0000
 Received: from mail-eopbgr150083.outbound.protection.outlook.com
  ([40.107.15.83] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilr6t-0006QN-K6
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 09:13:14 +0000
+ id 1ilr6y-0006QN-6s
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 09:13:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UC9bbGqxIq3XQdK7+NQzxboOzExW3nPk0VA6AWuhSpILHi0TVmEubKidQmIdGkA40fDy0NO25siT0ZuUNh1G6iH/Y/tKuWUZW4gywIPiDATR7xoRPzG2ePiXa1VDsSydllqoA2pllorVMmj6T+SCrg4151sQG3goyJwQCog3z7GqVZNrZvyXNPsZwOMkzrB2B6i1ZtSsmiJfP4uQIfaw45RYQxJ8OSL+yQrhZoBgdSZC/wQ3si50BTZVZMCoga5YyEqDFLQZ4S41vs8hz5B0BGUb4QCWD/L7IauuUKVyiAbMnqPy7+t9i1uk2s8jCdQIVlD90wlvKd19wn6SrZd7Bg==
+ b=TGK9XFDY5UmY8HtbqmD2v1kUGlXJFFP1SB4UXbRP6Wo/8l7z/+NOmZTZNncsZmRLruoqayfImMa+K0zIAShGDCLVYgStSfeYw8m2fIky+qirTphadYPvSidB1N/lRdVSYdNAofZImyxE2okZULvMEs9zkzL3ebrDthsAkZSNT9wNSWQaeVeJzGyi9cZqLwlVG5RdnkoGaB/k8a8iBWZ3jhgZdcSGbPDfx6iz6g4oMsua19U0z0ixgX+xOAtgXHFKCzO7cP7PHfrvnQzP/ipsflToddHpVK2Itkih/WcUWxc1elMhfBoeoJIog44hSEMFrbnP5COR1uPIjdRPkqpNRg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rVFkHVenmvTVlgAE9f+T+H3oa9SfKBL8JwiBDIAetK0=;
- b=FXvBmUEZ23L6EQ0qEYJAK1CH3wP9IW4qRLB9K+X/ZfpF8dqPTBbdFAuyHJm4UAirfcqhYVdFyITh7DWAn5RK47v7cHVf+vh9C8ksDAqhaWQdwYXZ6C/H1Vfuq1KtJSUqPuGkqJlPm4MB9QfJ9hRswt3mTg1ZNJVC4ocvI4OcYaw8bdzyo5sfa3Gz97mBE6fEB5ddv85DPprZeY8Bnog7VxMCqCBGdIXecVJHpMzbzO9pldh8fvFi9q4fCqIashpNfJIIJlTZSTGtDmnEzSD7cQ1X9F86f01XHmDJ3q0kUv3X9b1dTKMEv+nGn8ZYvP95fW+lwNwCqdochB3oTgqCiA==
+ bh=ozk4iXgh/7e/KqpdllhBQgFjyUvd8vUZ0U4pzwDjvxU=;
+ b=PP1cIlR3by9GPG+VsNe0cB31k78e9BOvDjrdUDnDifrTBVfz1HhUDjetaoXw5AdQg4AknNPZrB7Bx+t22CywYBYcre4NltJCIN7RjAUSSfgdWFtIQMkHjT9R87t31edzDsqRCw2rfudwWR9s+pz+fqWtns18WCZ435b8BIks8I7DZN/q+vJjVWhDmP2lgS17uWkhNIJZfaZdIIqhlXQ+QIX3SAf8ygqT6oALSi12BuoHaPjh+F5HOcfNXUHqe7lK7fV/IG16tH3Kqqc6DVGD8C4anX/AKDuhogbEDY3J+4B9BveIQIXIeFT5EqgD6rfqJUL05tIMs3HdpjRNZB+LsQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rVFkHVenmvTVlgAE9f+T+H3oa9SfKBL8JwiBDIAetK0=;
- b=LSyCUQFox1QBH0AOAQsnpuWWnHfUiIvwpuu3YYSnLmrRW9Y8WrVu2DmQpxdT834UIfJp4l/3pf6909JRNKW9DrBeOny3uvvbq0IToS6BafT//w+Wi8/Dh4Tp8f1Rman1upoBVgLNlrjUX/xyYnniOHu85qovMPeLsG67bAnK8bg=
+ bh=ozk4iXgh/7e/KqpdllhBQgFjyUvd8vUZ0U4pzwDjvxU=;
+ b=fQObsyyvpWfB3qLMsdz0c2RbAMrGPRfwoHH+kTB82Vjk1yguY7CmOF47IxgdWRCCTmKV8sooxuvir99cwTZMfWeEhGTTK4sNr2oLTGFikl8UqYKu7PStCwkRhFOpeQhLwcTIrAjCgOpqaxxaNmOxoVcBDAXqLKw9viDtDNjxHgU=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB6401.eurprd04.prod.outlook.com (20.179.254.97) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2581.12; Mon, 30 Dec 2019 09:13:06 +0000
+ 15.20.2581.12; Mon, 30 Dec 2019 09:13:10 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::c58c:e631:a110:ba58]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::c58c:e631:a110:ba58%6]) with mapi id 15.20.2581.007; Mon, 30 Dec 2019
- 09:13:05 +0000
+ 09:13:10 +0000
 Received: from localhost.localdomain (119.31.174.67) by
  HK2PR03CA0057.apcprd03.prod.outlook.com (2603:1096:202:17::27) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2602.8 via Frontend Transport; Mon, 30 Dec 2019 09:13:01 +0000
+ 15.20.2602.8 via Frontend Transport; Mon, 30 Dec 2019 09:13:06 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>
-Subject: [PATCH 2/3] clk: imx: pll14xx: introduce imx_clk_hw_pll14xx_flags
-Thread-Topic: [PATCH 2/3] clk: imx: pll14xx: introduce imx_clk_hw_pll14xx_flags
-Thread-Index: AQHVvvFYj/i+CACM7UiPThKGK48S/Q==
-Date: Mon, 30 Dec 2019 09:13:05 +0000
-Message-ID: <1577696903-27870-3-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH 3/3] clk: imx: imx8m: use imx_clk_hw_pll14xx_flags for dram pll
+Thread-Topic: [PATCH 3/3] clk: imx: imx8m: use imx_clk_hw_pll14xx_flags for
+ dram pll
+Thread-Index: AQHVvvFbxKyPeAf2oEWw9V8pqxLyug==
+Date: Mon, 30 Dec 2019 09:13:10 +0000
+Message-ID: <1577696903-27870-4-git-send-email-peng.fan@nxp.com>
 References: <1577696903-27870-1-git-send-email-peng.fan@nxp.com>
 In-Reply-To: <1577696903-27870-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
@@ -76,14 +77,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.67]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: cb58d679-f90a-43ae-6100-08d78d087a99
+x-ms-office365-filtering-correlation-id: 42829551-2c58-46b1-3b16-08d78d087d85
 x-ms-traffictypediagnostic: AM0PR04MB6401:|AM0PR04MB6401:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB64010D86614CBFF8E734406E88270@AM0PR04MB6401.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1850;
+x-microsoft-antispam-prvs: <AM0PR04MB64015307A4C988EB80AC453588270@AM0PR04MB6401.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2733;
 x-forefront-prvs: 0267E514F9
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(346002)(39860400002)(366004)(136003)(189003)(199004)(81166006)(81156014)(6506007)(66946007)(69590400006)(71200400001)(66476007)(66556008)(8676002)(52116002)(4326008)(66446008)(64756008)(26005)(8936002)(2616005)(110136005)(6486002)(54906003)(956004)(86362001)(6636002)(316002)(16526019)(186003)(478600001)(36756003)(5660300002)(2906002)(6512007)(44832011);
+ SFS:(10009020)(4636009)(376002)(396003)(346002)(39860400002)(366004)(136003)(189003)(199004)(81166006)(81156014)(6506007)(66946007)(69590400006)(71200400001)(66476007)(66556008)(8676002)(52116002)(4326008)(66446008)(64756008)(26005)(8936002)(2616005)(110136005)(6486002)(54906003)(6666004)(956004)(86362001)(6636002)(316002)(16526019)(186003)(478600001)(36756003)(5660300002)(2906002)(6512007)(44832011)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6401;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -91,19 +92,19 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IBDc10K5UAezNyDurHAcyWIEEatVxQMvfsq+JDyEsuth1jE+1oQF5m5MkTDGmGCF9tUOxuinAoI3ack2J3eTObi7LZlLs1lEGxvUJjbz1Z151OiGdHJQ9ErWzsoGeWwA5J9gsy0ImhyjzqEGzm81XvCPXmIzVHRItwNGUkztcSj/V4BJhyge7Y6TL76b4YtH2YztDEET/4hQKt3kkXhPusMhg24GQWWVdRyRGWjL/396tZaRomsCig0oIqTIDchrWGL9LfeCY94qlMGv40jFFZtm94QGJ4GGAZP2GvOd72UXqF6U5lOptCQc0s/UkANlaqm1KEGMm9X32fV555+kRZCKC7VMjnhQ5IzTryqEOMQr1k0P3Ot34ItZXbWc/ocGpbwlA6Ef3Q2EZET+m1yxlY+10lAzeT9USdGHxZK5uxuCvPKTWPL2Wtzx3iC71EIukXg+e7lWVle86U42TsY2HlYeVKRHQK/iKPFICOa8roFFqs4osLefUnDlybJGpmOK
+x-microsoft-antispam-message-info: B/Aj+4H26luSTUJBNYrwQfvdkPAIE7fquu+FLEi9++KkPnwB/ki1q3nbOloRy00mNxdgujlYC79WWRUp+PKEWibflD+STroTw1dorur4hHMrRAc2fKK42/Ewk4fobfXKgbX/YRTaOw7C+Cz6ZMWP/beygU6O1EY/yhEWEGl2od1a56oYFYWuM8tN9UbLs9ZxUV9Vlhk0GsKrnMNn/YHuW1bSquCJbWIwMsCWbuWkOsVXXFgzp3Ll8zcMBGuTad7lWMNHmXcg2/MYQyg0INigZpQYy/3IkcOTC3+BOc1nKD0yE9PzsTYW4G6MjOp2I1F70F5dBhj3/nqK8RSt1V+RL5ca0tjex7TA5dDdoTFaguqCscvMjwvLcnq6dg4FWP24c1a1juZWkWtcjanmP6Bf2WJWTH3Nmla5hpHi4W0PQnXsXTCPR8k5i9FKQAL+rbBo9o5s1uM9xCohaxmAdj6u8KasRuCqmeJnw3NtgE+kLlRMimLg0ZwHHEAO5rhl/j6uLXucTeRypps5EENDTPiMQg==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cb58d679-f90a-43ae-6100-08d78d087a99
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 09:13:05.8887 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 42829551-2c58-46b1-3b16-08d78d087d85
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 09:13:10.4560 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: S5vaG+g4bNOmyShHWPS94tWnW/y+HNoTbqOeYi3hjM9f3LdulSKvCVg9Cn6YBG+1fLAKVL+SryQNvRAfKehBFQ==
+X-MS-Exchange-CrossTenant-userprincipalname: SzNACm0XTZut76tukBFkfWnywltQrevlk8vez33vt7IeHWRAg90C5ALTuoRGic6S6hc8p+AW393xn2XKFcYQOQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6401
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_011311_859403_08616E62 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20191230_011316_294156_027D7526 
+X-CRM114-Status: GOOD (  12.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -145,70 +146,72 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-imx_clk_hw_pll14xx_flags is intended to provide flexiblity when
-add flags for clks, no need to add more imx_pll14xx_clk entries
-in clk-pll14xx.c.
+Use imx_clk_hw_pll14xx_flags for dram pll.
+Modify imx_1443x_dram_pll to imx_1443x_dram_readonly, because dram pll
+is not expected to be modified from Linux.
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk-pll14xx.c | 10 ++++++----
- drivers/clk/imx/clk.h         | 15 ++++++++++++---
- 2 files changed, 18 insertions(+), 7 deletions(-)
+ drivers/clk/imx/clk-imx8mm.c  | 2 +-
+ drivers/clk/imx/clk-imx8mn.c  | 2 +-
+ drivers/clk/imx/clk-pll14xx.c | 3 +--
+ drivers/clk/imx/clk.h         | 2 +-
+ 4 files changed, 4 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 2ed93fc25087..55862652b19f 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -337,7 +337,7 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MM_AUDIO_PLL1] = imx_clk_hw_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
+ 	hws[IMX8MM_AUDIO_PLL2] = imx_clk_hw_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
+ 	hws[IMX8MM_VIDEO_PLL1] = imx_clk_hw_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
+-	hws[IMX8MM_DRAM_PLL] = imx_clk_hw_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
++	hws[IMX8MM_DRAM_PLL] = imx_clk_hw_pll14xx_flags("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll_readonly, CLK_GET_RATE_NOCACHE);
+ 	hws[IMX8MM_GPU_PLL] = imx_clk_hw_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
+ 	hws[IMX8MM_VPU_PLL] = imx_clk_hw_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
+ 	hws[IMX8MM_ARM_PLL] = imx_clk_hw_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
+diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
+index c5e7316b4c66..e4710d3cf3e0 100644
+--- a/drivers/clk/imx/clk-imx8mn.c
++++ b/drivers/clk/imx/clk-imx8mn.c
+@@ -334,7 +334,7 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MN_AUDIO_PLL1] = imx_clk_hw_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
+ 	hws[IMX8MN_AUDIO_PLL2] = imx_clk_hw_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
+ 	hws[IMX8MN_VIDEO_PLL1] = imx_clk_hw_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
+-	hws[IMX8MN_DRAM_PLL] = imx_clk_hw_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
++	hws[IMX8MN_DRAM_PLL] = imx_clk_hw_pll14xx_flags("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll_readonly, CLK_GET_RATE_NOCACHE);
+ 	hws[IMX8MN_GPU_PLL] = imx_clk_hw_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
+ 	hws[IMX8MN_VPU_PLL] = imx_clk_hw_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
+ 	hws[IMX8MN_ARM_PLL] = imx_clk_hw_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
 diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
-index 9288b21d4d59..030159dc4884 100644
+index 030159dc4884..33236d8580a6 100644
 --- a/drivers/clk/imx/clk-pll14xx.c
 +++ b/drivers/clk/imx/clk-pll14xx.c
-@@ -378,9 +378,11 @@ static const struct clk_ops clk_pll1443x_min_ops = {
- 	.recalc_rate	= clk_pll1443x_recalc_rate,
+@@ -67,9 +67,8 @@ struct imx_pll14xx_clk imx_1443x_pll = {
+ 	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
  };
  
--struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
--				  void __iomem *base,
--				  const struct imx_pll14xx_clk *pll_clk)
-+struct clk_hw *imx_clk_hw_pll14xx_flags(const char *name,
-+					const char *parent_name,
-+					void __iomem *base,
-+					const struct imx_pll14xx_clk *pll_clk,
-+					unsigned long flags)
- {
- 	struct clk_pll14xx *pll;
- 	struct clk_hw *hw;
-@@ -393,7 +395,7 @@ struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
- 		return ERR_PTR(-ENOMEM);
+-struct imx_pll14xx_clk imx_1443x_dram_pll = {
++struct imx_pll14xx_clk imx_1443x_pll_readonly = {
+ 	.type = PLL_1443X,
+-	.flags = CLK_GET_RATE_NOCACHE,
+ };
  
- 	init.name = name;
--	init.flags = pll_clk->flags;
-+	init.flags = pll_clk->flags | flags;
- 	init.parent_names = &parent_name;
- 	init.num_parents = 1;
- 
+ struct imx_pll14xx_clk imx_1416x_pll = {
 diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index 65d80c675aa9..35a9d294b6df 100644
+index 35a9d294b6df..ea84d2993b57 100644
 --- a/drivers/clk/imx/clk.h
 +++ b/drivers/clk/imx/clk.h
-@@ -131,9 +131,18 @@ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
- #define imx_clk_pll14xx(name, parent_name, base, pll_clk) \
- 	to_clk(imx_clk_hw_pll14xx(name, parent_name, base, pll_clk))
+@@ -53,7 +53,7 @@ struct imx_pll14xx_clk {
  
--struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
--				  void __iomem *base,
--				  const struct imx_pll14xx_clk *pll_clk);
-+struct clk_hw *imx_clk_hw_pll14xx_flags(const char *name,
-+					const char *parent_name,
-+					void __iomem *base,
-+					const struct imx_pll14xx_clk *pll_clk,
-+					unsigned long flags);
-+
-+static inline struct clk_hw *imx_clk_hw_pll14xx(const char *name,
-+		const char *parent_name, void __iomem *base,
-+		const struct imx_pll14xx_clk *pll_clk)
-+{
-+	return imx_clk_hw_pll14xx_flags(name, parent_name, base, pll_clk, 0);
-+}
+ extern struct imx_pll14xx_clk imx_1416x_pll;
+ extern struct imx_pll14xx_clk imx_1443x_pll;
+-extern struct imx_pll14xx_clk imx_1443x_dram_pll;
++extern struct imx_pll14xx_clk imx_1443x_pll_readonly;
  
- struct clk_hw *imx_clk_hw_pllv1(enum imx_pllv1_type type, const char *name,
- 		const char *parent, void __iomem *base);
+ #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
+ 	to_clk(imx_clk_hw_cpu(name, parent_name, div, mux, pll, step))
 -- 
 2.16.4
 
