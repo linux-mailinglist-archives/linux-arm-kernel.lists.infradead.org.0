@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E56612D35B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 19:25:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1850412D369
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 19:30:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ud3Q8+wNXNazVG3wX8fgpJNAr++1iDhM2i19eUmt/zg=; b=GghqvXWLnQWzkp
-	/goLpMZFHpnHVCu5u/4LODHbBlncGOsTVENK4LgUwGM/XXMvKxuYyDAecCTBpN4l3MHsCoYTkWdMU
-	riYY+L7hOQNgk8LK6nkJ9BwS5ytbDdoMayOV/5OAzeWeCSF2toUyvnxsSkabbXPeFuizHbyUcogcB
-	YTp+oOzNRVOgqSrS77QD5Kur7vKMOpV0bliNubPaD7W2/kMDdgrVAZtvRRHCOu4HOxUD5aD8sePcI
-	iamGuXpK3votJnXhM0yOPXdnrr6RXKg7VkGjnuriAPOKcBDIk46sPofCNUDPvVrT0IEFAcJEinm4W
-	xImzq3IUwMg34DVUkw/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qr57eIqoHuQnu360wKpJf1uD8C0N/51d2/35DklnaHM=; b=lrgMK92Plji1t9
+	U9ypxS57KUhvNYZcmTyEgHSLL9VpWGcEsuNxT6fvQhRYIpcDwsvVlRG8Gpf2+EMN9uHLqp6HuqTvT
+	CXs3kAU73O/ClufA6yivxnYrVT8fsMnamuzALJbiXlj2nkaFrJUvgfhIxdqWdckti8VKgMVYH3CRe
+	0Hwun6T9gsIgAKExMiPM5cw4nraVdnt+OEShQJEPPLnuWkij5N5/ihQCA7fPTw2cJ4ui8zykHL4Lv
+	1F0s63ReFIwuV1G2YEbej3Wl2p1mh5DxJRcsiuPcJyuwIFz1I49ubluGMm0KgfWFEQxm+GrhK4FrO
+	JAy+GWiQhRqC62o0XTqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilzjS-0001d7-0m; Mon, 30 Dec 2019 18:25:34 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilzjH-0001cd-5b; Mon, 30 Dec 2019 18:25:24 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 045A128DFAB
-Message-ID: <c6514f8e8bf49913e3cb907ba91c0a47de39e68c.camel@collabora.com>
-Subject: Re: [PATCH v12 01/11] media: staging: phy-rockchip-dphy: add
- Rockchip MIPI Synopsys DPHY driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Helen Koike <helen.koike@collabora.com>, 
- linux-rockchip@lists.infradead.org
-Date: Mon, 30 Dec 2019 15:25:10 -0300
-In-Reply-To: <20191227200116.2612137-2-helen.koike@collabora.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-2-helen.koike@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+	id 1ilzo3-0003Q6-I6; Mon, 30 Dec 2019 18:30:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ilznt-0003HI-Ud
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 18:30:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4A953328;
+ Mon, 30 Dec 2019 10:30:03 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4AE453F237;
+ Mon, 30 Dec 2019 10:30:02 -0800 (PST)
+Date: Mon, 30 Dec 2019 18:29:56 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: ARM SoC Team <arm@kernel.org>, SoC Team <soc@kernel.org>,
+ ALKML <linux-arm-kernel@lists.infradead.org>
+Subject: [GIT PULL] firmware: arm_scmi: updates for v5.6
+Message-ID: <20191230182956.GA29349@bogus>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_102523_472594_9874C552 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191230_103010_037084_06CED268 
+X-CRM114-Status: GOOD (  11.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,138 +61,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- robh+dt@kernel.org, hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
+Cc: Olof Johansson <olof@lixom.net>, Sudeep Holla <sudeep.holla@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Helen,
+Hi ARM SoC Team,
 
-Thanks for taking care of this.
+Please pull !
 
-On Fri, 2019-12-27 at 17:01 -0300, Helen Koike wrote:
-> From: Ezequiel Garcia <ezequiel@collabora.com>
-> 
-> Add driver for Rockchip MIPI Synopsys DPHY driver
-> 
-> Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> 
-> ---
-> 
-> Changes in v12:
-> - several cleanups
-> - remove "rx" from function names, as this driver only supports rx
-> 
-> Changes in v11:
-> - fix checkpatch errors
-> 
-> Changes in v10: None
-> Changes in v9:
-> - Move to staging
-> - replace memcpy by a directly assignment
-> - remove unecessary ret variable in rockchip_dphy_init
-> - s/0x1/1
-> - s/0x0/0
-> - coding style changes
-> - dphy_reg variable sizes
-> - variables from int to unsigned int
-> - rename functions to start with rk_
-> - rename dphy0 to rx
-> - fix hardcoded lane0 usage
-> - disable rx on power off
-> - general cleanups of unused variables
-> 
-> Changes in v8:
-> - Remove boiler plate license text
-> 
-> Changes in v7:
-> - Migrate dphy specific code from
-> drivers/media/platform/rockchip/isp1/mipi_dphy_sy.c
-> to drivers/phy/rockchip/phy-rockchip-dphy.c
-> - Drop support for rk3288
-> - Drop support for dphy txrx
-> - code styling and checkpatch fixes
-> 
->  drivers/staging/media/Kconfig                 |   2 +
->  drivers/staging/media/Makefile                |   1 +
->  .../staging/media/phy-rockchip-dphy/Kconfig   |  11 +
->  .../staging/media/phy-rockchip-dphy/Makefile  |   2 +
->  drivers/staging/media/phy-rockchip-dphy/TODO  |   6 +
->  .../phy-rockchip-dphy/phy-rockchip-dphy.c     | 396 ++++++++++++++++++
->  6 files changed, 418 insertions(+)
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Kconfig
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Makefile
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/TODO
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/phy-rockchip-dphy.c
-> 
-> diff --git a/drivers/staging/media/Kconfig b/drivers/staging/media/Kconfig
-> index 642adc4c24d2..a47484473883 100644
-> --- a/drivers/staging/media/Kconfig
-> +++ b/drivers/staging/media/Kconfig
-> @@ -38,4 +38,6 @@ source "drivers/staging/media/ipu3/Kconfig"
->  
->  source "drivers/staging/media/soc_camera/Kconfig"
->  
-> +source "drivers/staging/media/phy-rockchip-dphy/Kconfig"
-> +
->  endif
-> diff --git a/drivers/staging/media/Makefile b/drivers/staging/media/Makefile
-> index 2f1711a8aeed..b0eae3906208 100644
-> --- a/drivers/staging/media/Makefile
-> +++ b/drivers/staging/media/Makefile
-> @@ -8,3 +8,4 @@ obj-$(CONFIG_TEGRA_VDE)		+= tegra-vde/
->  obj-$(CONFIG_VIDEO_HANTRO)	+= hantro/
->  obj-$(CONFIG_VIDEO_IPU3_IMGU)	+= ipu3/
->  obj-$(CONFIG_SOC_CAMERA)	+= soc_camera/
-> +obj-$(CONFIG_PHY_ROCKCHIP_DPHY)		+= phy-rockchip-dphy/
-> diff --git a/drivers/staging/media/phy-rockchip-dphy/Kconfig b/drivers/staging/media/phy-rockchip-dphy/Kconfig
-> new file mode 100644
-> index 000000000000..7378bd75fa7c
-> --- /dev/null
+Regards,
+Sudeep
 
-Seems I overlooked the Kconfig file for this driver,
-sorry about that!
+-->8
 
-> +++ b/drivers/staging/media/phy-rockchip-dphy/Kconfig
-> @@ -0,0 +1,11 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for Rockchip platforms
-> +#
-> +config PHY_ROCKCHIP_DPHY
-> +	tristate "Rockchip MIPI Synopsys DPHY driver"
-> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> +	select GENERIC_PHY_MIPI_DPHY
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the Rockchip MIPI Synopsys DPHY.
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
-Following a more user-friendly convention, this should read
-more like:
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-"""
-Enable this to support the Rockchip MIPI Synopsys DPHY
-associated to the Rockchip ISP module present in RK3399 SoCs.
+are available in the Git repository at:
 
-To compile this driver as a module, choose M here: the module
-will be called phy-rockchip-dphy. 
-"""
+  git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/scmi-updates-5.6
 
-And I believe the same improvement should be applied to the
-ISP driver Kconfig help.
+for you to fetch changes up to 729d3530a50417a88f3f485ba2dc88ff8adfeacb:
 
-Thanks,
-Ezequiel
+  drivers: firmware: scmi: Extend SCMI transport layer by trace events (2019-12-30 12:34:37 +0000)
 
+----------------------------------------------------------------
+ARM SCMI updates for v5.6
+
+1. Addition of multiple device support per protocol to enable use of
+   some procotols by multiple kernel subsystems simultaneously and
+   corresponding updates to the existing scmi drivers
+2. Addition of trace events around the scmi transfer code to measure
+   any delays and capture anomalies that can also be used during
+   investigation of some platform firmware related issues
+
+----------------------------------------------------------------
+Lukasz Luba (2):
+      include: trace: Add SCMI header with trace events
+      drivers: firmware: scmi: Extend SCMI transport layer by trace events
+
+Sudeep Holla (11):
+      firmware: arm_scmi: Add support for multiple device per protocol
+      firmware: arm_scmi: Skip scmi mbox channel setup for addtional devices
+      firmware: arm_scmi: Add names to scmi devices created
+      firmware: arm_scmi: Add versions and identifier attributes using dev_groups
+      firmware: arm_scmi: Match scmi device by both name and protocol id
+      firmware: arm_scmi: Stash version in protocol init functions
+      firmware: arm_scmi: Skip protocol initialisation for additional devices
+      clk: scmi: Match scmi device by both name and protocol id
+      cpufreq: scmi: Match scmi device by both name and protocol id
+      hwmon: (scmi-hwmon) Match scmi device by both name and protocol id
+      reset: reset-scmi: Match scmi device by both name and protocol id
+
+ MAINTAINERS                                |   1 +
+ drivers/clk/clk-scmi.c                     |   2 +-
+ drivers/cpufreq/scmi-cpufreq.c             |   2 +-
+ drivers/firmware/arm_scmi/bus.c            |  29 +++++++-
+ drivers/firmware/arm_scmi/clock.c          |   2 +
+ drivers/firmware/arm_scmi/common.h         |   2 +
+ drivers/firmware/arm_scmi/driver.c         | 110 ++++++++++++++++++++++++++++-
+ drivers/firmware/arm_scmi/perf.c           |   2 +
+ drivers/firmware/arm_scmi/power.c          |   2 +
+ drivers/firmware/arm_scmi/reset.c          |   2 +
+ drivers/firmware/arm_scmi/scmi_pm_domain.c |   2 +-
+ drivers/firmware/arm_scmi/sensors.c        |   2 +
+ drivers/hwmon/scmi-hwmon.c                 |   2 +-
+ drivers/reset/reset-scmi.c                 |   2 +-
+ include/linux/scmi_protocol.h              |   5 +-
+ include/trace/events/scmi.h                |  90 +++++++++++++++++++++++
+ 16 files changed, 245 insertions(+), 12 deletions(-)
+ create mode 100644 include/trace/events/scmi.h
 
 _______________________________________________
 linux-arm-kernel mailing list
