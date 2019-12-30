@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D89A012D128
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:48:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CEC512D118
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 15:46:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dj3yW4gTlfNZYOj4T/JNwkTEqoRWOaRG/sr8VMNoEAc=; b=ZsWg+cE5/YFRzq
-	AJjEMOd+vo/InNSLyxbioZqOSE223cG8Y6GCVHo8+HO0buYN7uiX+gdwkIa8KN+tpyy6ul6oCAtNq
-	nAeUCw9BxoOjQWa03+RIREFioSlgrR+7cZE1t8Ahc4KP2e2azynbQdsyXGFoUtFkhVzszV6Wk9Nhi
-	Tmx/aRzMORYzBt8hB23MYvx1DCh7z4yh7j87eBWhLJJ1+zxUY+JMo5/5ljple9TIi2dB9sEymlukp
-	FaqC2zwVJ7IelDGfntg1SDLvHsiZIFGrTSnodPD05ubmAWDNIAwvTlfIMo13bt7+k24VeJvl32Rc1
-	ZQ7AcDKLfaxl8Xd/Exaw==;
+	List-Owner; bh=2YARC4HD+rifTh4PZwwKQY/xeF9zO5z8IVV+RCpQ0cI=; b=SUnLwEnOVofVfx
+	NuuvbsB+znEfpbaa7P79bGxaCyuT9UujMrJ8yjAQIJFqgK+HnYenZFTgPJyTWw8w+4VnEc14GdhRN
+	4v5XNY4gEZ/u2htzqGTl78oXA4vRte8dXkmwuqw9JWNiJFqsSF43iEwlT8MJyjWHTxyTMueCHqpeS
+	onzJ5DxaWgnZ6R4s4GzjbEhzyywRc0AmhONWK1FfivqRz1+r4lXgxojz4S4/avpqK5SynlZGK0Dkv
+	B+4/hoDRzznyAkq67Qbix82i8KgyCvWvhUtoxb6HFtd4f1xM/aAZarjhijcWdVLQpWkZpiYDzSRGo
+	2Dw9nC2t1ep35q5mZiZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilwLe-0001KC-11; Mon, 30 Dec 2019 14:48:46 +0000
+	id 1ilwJN-0007fQ-OI; Mon, 30 Dec 2019 14:46:25 +0000
 Received: from fd.dlink.ru ([178.170.168.18])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilwFd-0003zb-Kb; Mon, 30 Dec 2019 14:42:37 +0000
+ id 1ilwFc-0003ym-Mf; Mon, 30 Dec 2019 14:42:34 +0000
 Received: by fd.dlink.ru (Postfix, from userid 5000)
- id 694331B21829; Mon, 30 Dec 2019 17:33:51 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 694331B21829
+ id A3CB61B218D4; Mon, 30 Dec 2019 17:32:26 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru A3CB61B218D4
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
- t=1577716431; bh=5GU07UvxnF6CEe2vyJnNhi1kO3JmRqioFhLZDpggQ5k=;
+ t=1577716346; bh=MfsRtMSNQGcDzXA0voG56kxHlja09vUFQDB8lQPVTx0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=oU3O3MJ2vbvpM7PeGVFatSWJSsQVT8AuWoWEyQUjkD1UgHkBZdIOng1qBpCt1cs9m
- rkg8YzOLlTKJ4eaWBCq2ND9lH2B5t4fGTkAU/gkjhNdjZ11TCYPCMeUUlpBL5ncAre
- VCH4YTb8bPhBsoGpVrq/6IypLadPePkNDJOCuvmY=
+ b=GqolDMyhWdfp2oPVt3KZkKSzRI8kQNhp+IKHEkgsLfNxet6OldUTt5teo7ftvp0wg
+ +PBZC6mOz2QJnq67XFPb7omttc1Tfz6mcLrc4URSHwDXHhfERuuAkf9Du9uK9mxusV
+ Gn8nAAajfQcA5NJY6XhNKp9SgmrOZL5O7Jtf01NQ=
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
 X-Spam-Level: 
 X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,URIBL_BLOCKED,
  USER_IN_WHITELIST autolearn=disabled version=3.4.2
 Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
- by fd.dlink.ru (Postfix) with ESMTP id 11B8D1B2184B;
- Mon, 30 Dec 2019 17:31:33 +0300 (MSK)
-DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 11B8D1B2184B
+ by fd.dlink.ru (Postfix) with ESMTP id DFEF81B2182A;
+ Mon, 30 Dec 2019 17:31:34 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru DFEF81B2182A
 Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
- by mail.rzn.dlink.ru (Postfix) with ESMTP id 24C671B229D0;
- Mon, 30 Dec 2019 17:31:31 +0300 (MSK)
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id 174551B229CB;
+ Mon, 30 Dec 2019 17:31:33 +0300 (MSK)
 Received: from localhost.localdomain (unknown [196.196.203.126])
  by mail.rzn.dlink.ru (Postfix) with ESMTPA;
- Mon, 30 Dec 2019 17:31:31 +0300 (MSK)
+ Mon, 30 Dec 2019 17:31:33 +0300 (MSK)
 From: Alexander Lobakin <alobakin@dlink.ru>
 To: "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH RFC net-next 15/19] net: dsa: tag_mtk: add GRO callbacks
-Date: Mon, 30 Dec 2019 17:30:23 +0300
-Message-Id: <20191230143028.27313-16-alobakin@dlink.ru>
+Subject: [PATCH RFC net-next 16/19] net: dsa: tag_qca: fix doubled Tx
+ statistics
+Date: Mon, 30 Dec 2019 17:30:24 +0300
+Message-Id: <20191230143028.27313-17-alobakin@dlink.ru>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191230143028.27313-1-alobakin@dlink.ru>
 References: <20191230143028.27313-1-alobakin@dlink.ru>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_064234_069745_44EFF50B 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20191230_064232_949938_FC663C05 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.4 points)
@@ -106,103 +108,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make GRO available for frames with MTK tag by adding the corresponding
-callbacks to MTK tagger.
+DSA core updates Tx stats for slaves in dsa_slave_xmit(), no need to do
+it manually in .xmit() tagger callback.
 
 Signed-off-by: Alexander Lobakin <alobakin@dlink.ru>
 ---
- net/dsa/tag_mtk.c | 73 +++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 73 insertions(+)
+ net/dsa/tag_qca.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/net/dsa/tag_mtk.c b/net/dsa/tag_mtk.c
-index b926ffdf5fb5..13d929160283 100644
---- a/net/dsa/tag_mtk.c
-+++ b/net/dsa/tag_mtk.c
-@@ -102,12 +102,85 @@ static void mtk_tag_flow_dissect(const struct sk_buff *skb, __be16 *proto,
- 	*proto = mtk_tag_encap_proto(skb->data);
- }
+diff --git a/net/dsa/tag_qca.c b/net/dsa/tag_qca.c
+index 8e2dbaaffe59..e1c4dd04734a 100644
+--- a/net/dsa/tag_qca.c
++++ b/net/dsa/tag_qca.c
+@@ -33,9 +33,6 @@ static struct sk_buff *qca_tag_xmit(struct sk_buff *skb, struct net_device *dev)
+ 	struct dsa_port *dp = dsa_slave_to_port(dev);
+ 	u16 *phdr, hdr;
  
-+static struct sk_buff *mtk_tag_gro_receive(struct list_head *head,
-+					   struct sk_buff *skb)
-+{
-+	const struct packet_offload *ptype;
-+	struct sk_buff *p, *pp = NULL;
-+	u32 data_off, data_end;
-+	const u8 *data;
-+	int flush = 1;
-+
-+	data_off = skb_gro_offset(skb);
-+	data_end = data_off + MTK_HDR_LEN;
-+
-+	data = skb_gro_header_fast(skb, data_off);
-+	if (skb_gro_header_hard(skb, data_end)) {
-+		data = skb_gro_header_slow(skb, data_end, data_off);
-+		if (unlikely(!data))
-+			goto out;
-+	}
-+
-+	rcu_read_lock();
-+
-+	ptype = gro_find_receive_by_type(mtk_tag_encap_proto(data));
-+	if (!ptype)
-+		goto out_unlock;
-+
-+	flush = 0;
-+
-+	list_for_each_entry(p, head, list) {
-+		if (!NAPI_GRO_CB(p)->same_flow)
-+			continue;
-+
-+		/* Data that is to the left to the current position is already
-+		 * pulled to the head
-+		 */
-+		if (mtk_tag_source_port(skb->data + data_off) ^
-+		    mtk_tag_source_port(p->data + data_off))
-+			NAPI_GRO_CB(p)->same_flow = 0;
-+	}
-+
-+	skb_gro_pull(skb, MTK_HDR_LEN);
-+	skb_gro_postpull_rcsum(skb, data, MTK_HDR_LEN);
-+
-+	pp = call_gro_receive(ptype->callbacks.gro_receive, head, skb);
-+
-+out_unlock:
-+	rcu_read_unlock();
-+out:
-+	skb_gro_flush_final(skb, pp, flush);
-+
-+	return pp;
-+}
-+
-+static int mtk_tag_gro_complete(struct sk_buff *skb, int nhoff)
-+{
-+	const struct packet_offload *ptype;
-+	int err = -ENOENT;
-+	__be16 proto;
-+
-+	proto = mtk_tag_encap_proto(skb->data + nhoff);
-+
-+	rcu_read_lock();
-+
-+	ptype = gro_find_complete_by_type(proto);
-+	if (ptype)
-+		err = ptype->callbacks.gro_complete(skb, nhoff + MTK_HDR_LEN);
-+
-+	rcu_read_unlock();
-+
-+	return err;
-+}
-+
- static const struct dsa_device_ops mtk_netdev_ops = {
- 	.name		= "mtk",
- 	.proto		= DSA_TAG_PROTO_MTK,
- 	.xmit		= mtk_tag_xmit,
- 	.rcv		= mtk_tag_rcv,
- 	.flow_dissect	= mtk_tag_flow_dissect,
-+	.gro_receive	= mtk_tag_gro_receive,
-+	.gro_complete	= mtk_tag_gro_complete,
- 	.overhead	= MTK_HDR_LEN,
- };
+-	dev->stats.tx_packets++;
+-	dev->stats.tx_bytes += skb->len;
+-
+ 	if (skb_cow_head(skb, 0) < 0)
+ 		return NULL;
  
 -- 
 2.24.1
