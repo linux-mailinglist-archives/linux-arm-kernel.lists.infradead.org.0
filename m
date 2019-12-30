@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B09CD12CFC3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 12:54:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9B3B12CFC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 12:55:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DKilk0B6mh5qdFAjY+7jwYvMMTR4x97fg0Fbob03YeI=; b=jdfCO5x0jRpY0+
-	sqpJvD4jv2WE54oT9svIa6asmUEDPEJt/fjXlFcQW0/80241rfMY3Swvdg6T3t54U5CbXYZazvJ8J
-	kU9HtUaenE1Zu8K7fiFq6h7rFnex45/lqZfBp0sq7UQHWYhevdbn7p8dhELoiK0GW9O1aJ7Abca9d
-	uxgV+HAtG0l3mCijRnv8QpMYGKVCcrvrOTRru6lal0vivuaTfm3CEvAGyIPjNU4nWSlrlTOryJbNb
-	COiIWu9JbWgqa/XdSQFxvrmJYYahw6Sf+Bd2Md5gOV/0U9mwEmuw3uJMeMusTRaOF+xBAUUPEFPEl
-	iGyv8sFNewUkRgLBpncg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1FD/CG+mN9lEqi2TpKzFOOfCKyPu7JHSWTPH6uXpFcg=; b=D8gAYg0J7uO0b4
+	+SSwCd2eIKs+mDnsASkoL77Y9qL28MGXKHRdvlePsj/SFPulRTeP6DKpstZgv3Yagch/BAZKZJ8Dj
+	6f4+7ccmVeQe3X+8TzV5A8IJKQJPGaGPVQZkD6AWVt+w4WuU9iRrJ7AqrLW99YwCC1ql/ttrC/h49
+	6jk+S2wnGXPuR8df33l34db3o+cWK98LvfhGxObVZCwx7GzZMW8hy3TKglTX1AQqVPtVoVnjqBFb2
+	TYx6gI+RXr2Cv+9b+H80uwMwPcuP5LhceoH7UYYaJIphIb3m4azlWpjG6kVl0kkhBnIK9Yx+8YD6t
+	epZBXrLKDKtDIIns23ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iltcl-0002qx-Bw; Mon, 30 Dec 2019 11:54:15 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iltde-00036J-G2; Mon, 30 Dec 2019 11:55:10 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iltcb-0002qE-Qy
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 11:54:07 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x17so14545919pln.1
+ id 1iltdL-00035s-DC
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 11:54:52 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bd4so14539945plb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 03:54:05 -0800 (PST)
+ Mon, 30 Dec 2019 03:54:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=mwGLfXIphyD7phRk7lEEjBgr1Dix57gKwz3I4i+jkF4=;
- b=P7B7HhtFgmHeFrNyqTqrTnThBQZxfb2GNCMQ/4ecLOVc7DPk2eoU1YfvZswojacSrV
- fWPs9OfIIBvQQS7U0U4kmbgZTZgP6d77qKfTp49ZdPBfrR5YO+2BG74SAAs0WcXtr4UL
- Sk8rLSqK990JPTr3Z6lIjJMaUvIz9E9pIj7yglsUQkqJesp7Qs4pbgR0hMwWzoZXb+Px
- 0ffDqa3uzayU8RSvVxzpbgqZ9t6Lo6xs3BX2kpzLvBk4VmIVJoVoMWjeK6Wm8eNnN0uY
- AB6lUvk30xg+QfKpD4KcHmF59E2ZCDwkGXt5GWlLC3PzgFNNvuRFrtXZ2pLhm0DfkoTK
- v3mA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=V+g+xlQXMz8TlHVe3WFWad+hv/3Pdq14q2xVD02b8Io=;
+ b=nwWbi0+/ep9t/WPbfTkbW5p4gr85rcVB6Ycsae5fiHZaLySs8fGoBbjG2KEc2/wsRP
+ CxfhX/JYz5R2x+892WD5tPRtnieAzgTOWGxxat9vcZHqdXlDNrvXUZVmeO/hjvnAW4Lz
+ vj6k+5ADkGCK/DiEiZcHhgS87wRDbbtGEncgBMTKMmMY5KQZXYSUcuONMOpIlgE056St
+ OhyMhgTy6D8RtG8YSKymYcvrn6mYGgFaaGCRvDFb5a51+vR+fGB+/zZcq5vw3vS94jg+
+ xcoBj1TWU4ckgeTndjE3ohPYcFgM8Ixf7+TTyZU0TW0FKA0r+HBT7N7j7T6ZfnVuJFg3
+ i6HQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=mwGLfXIphyD7phRk7lEEjBgr1Dix57gKwz3I4i+jkF4=;
- b=Ru2IHPtGzmxg5mf5aN0CYZgaz11Gcy2G2feRyqilRZ9FqeZnUnNX8iqz5mfF8mDYr8
- kW3dgHhfwBacGKaBle0z7O29ytAIOkzR+DFuR8IKLizHWdkwzkuWGIKfdzDgvU1Tbh+J
- hL6Pw/NOXw56GaARF0P//lm6IBSt0b7Fv/33EfTA/yhPV3NjtTeyXh42s3SlLERl6sBc
- GTTmDNhVnD8a/8NVNbHTm7SuwAg/HGrq4ZqJHeBqpk3PEtGsbdye6a6X6IAHpl3ogxYK
- AxALX4Mbg3y/Xdnb7QXXU+JpF+gtqb3r6QAGspC9zKrR0LLRJsL1J2JETa9kwSUy/0mE
- nQdA==
-X-Gm-Message-State: APjAAAUcNpT6gp/GJRWKd3rTnjufuTKHZBCbjXdlRWdjrIjwgT6LAqiY
- VfR6lKMfCGExVTv2DfnUxF0cuxO6
-X-Google-Smtp-Source: APXvYqxdH1nCcHK5bh5D+i4nvE9uZw4uLavnwDMLXtIoPWroXM53f2kWPGymJ5AnGjNQ55B6UlsC2g==
-X-Received: by 2002:a17:902:74c5:: with SMTP id
- f5mr65114786plt.229.1577706844772; 
- Mon, 30 Dec 2019 03:54:04 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=V+g+xlQXMz8TlHVe3WFWad+hv/3Pdq14q2xVD02b8Io=;
+ b=edgW54slOYcRlegTKj1e75enZHhIzolPcNiEBfcF2a8m8hQ4eFrEdc2pW1uD9ih6BF
+ QIEMLlhrOE/eIhBmNPzu/E4V5yQ2Lby6rhRpOi1Hh3M28tsS2Qyi5Vwr0VLQSE+2JHEt
+ 4huSkgT2cpWRGxVQY/0nLbhUpXPWOxAL4bXrbs5nMOE4EJivlDwo1W0a94P+hvmdbEST
+ dUm2GvIywdtmS7rIYI/YKEQj8YZjNc7XXdQbA/GQm8Gv0HTvxyUjbGDLGMaJJeHwL2Ss
+ /0bWMq7j3jv5QfXzeSgXsZ4U3lu7VorGG4tv/KxVCeTLKTUOLGw0FPLp9hoAackom5tg
+ wZMA==
+X-Gm-Message-State: APjAAAU7o4+ucEeEku9uj4R6bsNn266o9wFizE+L3823MnY2GYZLH+rD
+ VS4TQVGnj6MiM2zE0V8bdQ8=
+X-Google-Smtp-Source: APXvYqwa4+u3wBznl7zWe8cbMyh2wxVNyBvlYQwv1pIW2WqcFpzBxENV12PsrBSHa7EnamJlz2nrRA==
+X-Received: by 2002:a17:902:8685:: with SMTP id
+ g5mr69540164plo.5.1577706890709; 
+ Mon, 30 Dec 2019 03:54:50 -0800 (PST)
 Received: from localhost ([49.207.54.121])
- by smtp.gmail.com with ESMTPSA id t23sm53866525pfq.106.2019.12.30.03.54.04
+ by smtp.gmail.com with ESMTPSA id e1sm52685912pfl.98.2019.12.30.03.54.50
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Dec 2019 03:54:04 -0800 (PST)
-Date: Mon, 30 Dec 2019 17:24:02 +0530
+ Mon, 30 Dec 2019 03:54:50 -0800 (PST)
+Date: Mon, 30 Dec 2019 17:24:48 +0530
 From: afzal mohammed <afzal.mohd.ma@gmail.com>
 To: Russell King <linux@armlinux.org.uk>
-Subject: [RFC PATCH 0/2] ARM: !MMU v7 Cortex-M preemption support
-Message-ID: <cover.1577705829.git.afzal.mohd.ma@gmail.com>
+Subject: [RFC PATCH 1/2] ARM: !MMU: v7-M: prepare preemption support
+Message-ID: <7a69ad9c2db39f6f17225eb0e79057bc221cc4a4.1577705829.git.afzal.mohd.ma@gmail.com>
+References: <cover.1577705829.git.afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <cover.1577705829.git.afzal.mohd.ma@gmail.com>
 User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_035406_065095_003F4084 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20191230_035451_445253_7A1B111F 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (afzal.mohd.ma[at]gmail.com)
@@ -106,36 +109,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Rearrange getting thread_info pointer & popping lr so as to have an
+easy to review diff for preempt support that is going to be added.
 
-[ cc'ing those who added long back !MMU support & Cortex-M support as
-   well, though some not working anymore on these ]
+Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+---
+ arch/arm/kernel/entry-v7m.S | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-An attempt to add preemption support to the !MMU, ARM Cortex-M platform.
-With these changes, there is some effect, but not enough to make it
-usable.
-
-Though as of now i don't have much clue on what the issue could be, it
-is being debugged. Meanwhile sending the series as RFC, to get feedback
-on what could be missing or whether there is anything inherent in !MMU
-and/or Cortex-M platforms that could prevent supporting preemption, etc.
-
-Details on the problems, the way it was tested etc. are mentioned in
-2/2. 1/2 is just a change made so as to have a clear diff for easy
-review of the preemption support changes.
-
-Regards
-afzal
-
-afzal mohammed (2):
-  ARM: !MMU: v7-M: prepare preemption support
-  ARM: !MMU: v7-M: preemption support
-
- arch/arm/kernel/entry-v7m.S | 22 +++++++++++++++++++---
- 1 file changed, 19 insertions(+), 3 deletions(-)
-
-
-base-commit: fd6988496e79a6a4bdb514a4655d2920209eb85d
+diff --git a/arch/arm/kernel/entry-v7m.S b/arch/arm/kernel/entry-v7m.S
+index de1f20624be1..581562dbecf3 100644
+--- a/arch/arm/kernel/entry-v7m.S
++++ b/arch/arm/kernel/entry-v7m.S
+@@ -48,7 +48,7 @@ strerr:	.asciz	"\nUnhandled exception: IPSR = %08lx LR = %08lx\n"
+ 	@ routine called with r0 = irq number, r1 = struct pt_regs *
+ 	bl	nvic_handle_irq
+ 
+-	pop	{lr}
++	get_thread_info tsk
+ 	@
+ 	@ Check for any pending work if returning to user
+ 	@
+@@ -57,7 +57,6 @@ strerr:	.asciz	"\nUnhandled exception: IPSR = %08lx LR = %08lx\n"
+ 	tst	r0, V7M_SCB_ICSR_RETTOBASE
+ 	beq	2f
+ 
+-	get_thread_info tsk
+ 	ldr	r2, [tsk, #TI_FLAGS]
+ 	tst	r2, #_TIF_WORK_MASK
+ 	beq	2f			@ no work pending
+@@ -65,6 +64,8 @@ strerr:	.asciz	"\nUnhandled exception: IPSR = %08lx LR = %08lx\n"
+ 	str	r0, [r1, V7M_SCB_ICSR]	@ raise PendSV
+ 
+ 2:
++	pop	{lr}
++
+ 	@ registers r0-r3 and r12 are automatically restored on exception
+ 	@ return. r4-r7 were not clobbered in v7m_exception_entry so for
+ 	@ correctness they don't need to be restored. So only r8-r11 must be
 -- 
 2.24.1
 
