@@ -2,42 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 661C712D4F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 00:20:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 939B112D503
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 00:20:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=K+sC714P5fT+/90TZo8TOAg6C7X7mwYAisPi27TkxI0=; b=uGV
-	phQhfAQmI/mwateh9RF12C8It3PU9MGUewEQM2IlUHZl0MhwwpLkx3tc+HAAIqQy2KIH54bqbl5q+
-	g9d3nig0N6vy1gszzD0kepdxln+vBYyBH9nrnJABkOs/3lKPPNwMS0o0J34UlCPKHVgwgGmhRnaK+
-	fwEyWrb2Afc0CKgohcI26cvIfmE3qqxksXAKYAKSPqFO9GuouBtDc+bJ8FRVj8elsSga6v6zJh6Ln
-	1BUkiCQ5AqYXg1IKYFKDdepzWKPlYx8hTfJ/NGuWf5rk/Kcg0RANepw5v7bMjRrDmX8+HnLl2Xzd9
-	W0zoQdLVeLOifIlm36HjraYZwC9S4qQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nd81Yc14N6vrf/8lobm2sUxVhA3CFd/vi5xp/VC9auA=; b=rudZjCHcEB4hnsXQ9DJSMl8a5d
+	QjCmMjA8cxVAexFL/QR3YiIef8zDKFxsSkhqdv2MZ15s1zvA3LFu6tjFP3P2Ps9MqhyWmuUZx+f+L
+	EVfb7/GwYrUTwuf6ikfBRr1QxBW6rDZ5MF4/Gcki3GuU0sBgxfpFH4/tSWlW2r8s+tlPKqw0uazDS
+	aasTxspuV03XXbUWRnTvpbYFatWuE6MYWEVd/W0qQozJik+q9ImEDoSCgRbeOVJl+vUHF/iq6EmFh
+	GUFtw3wAzxEhrwQ+SNZx7izTJQpU3riabnqu2H1KWeV7bzuRwD6I6T74no5Wt7Swv51U//UppUJC0
+	D2fNHSMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im4Km-0005WQ-Gt; Mon, 30 Dec 2019 23:20:24 +0000
+	id 1im4L5-0005gj-AB; Mon, 30 Dec 2019 23:20:43 +0000
 Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1im4KZ-0005VK-64
+ id 1im4KZ-0005VO-9p
  for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 23:20:12 +0000
 Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
  helo=rjones.pdc.gateworks.com)
  by lists.gateworks.com with esmtp (Exim 4.82)
  (envelope-from <rjones@gateworks.com>)
- id 1im4ZQ-0001tP-CU; Mon, 30 Dec 2019 23:35:32 +0000
+ id 1im4ZR-0001tP-7H; Mon, 30 Dec 2019 23:35:33 +0000
 From: Robert Jones <rjones@gateworks.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH v5 0/5] ARM: dts: imx: Add GW59xx Gateworks specials
-Date: Mon, 30 Dec 2019 15:19:48 -0800
-Message-Id: <20191230231953.29646-1-rjones@gateworks.com>
+Subject: [PATCH v5 1/5] dt-bindings: arm: fsl: Add Gateworks Ventana i.MX6DL/Q
+ compatibles
+Date: Mon, 30 Dec 2019 15:19:49 -0800
+Message-Id: <20191230231953.29646-2-rjones@gateworks.com>
 X-Mailer: git-send-email 2.9.2
+In-Reply-To: <20191230231953.29646-1-rjones@gateworks.com>
+References: <20191230231953.29646-1-rjones@gateworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_152011_269966_11F4F16B 
-X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-CacheID: sfid-20191230_152011_384462_56EA3358 
+X-CRM114-Status: UNSURE (   6.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,66 +71,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds board support for the GW59xx Gateworks Ventana family
-specials.
+Add the compatible enum entries for Gateworks Ventana boards.
 
-Changes in v2:
- - Generalized node names
- - Removed unnecessary labels
- - Expanded patch subject
- - Removed undocumented compatible string in dts**
+Signed-off-by: Robert Jones <rjones@gateworks.com>
+---
+ Documentation/devicetree/bindings/arm/fsl.yaml | 31 ++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
-** I realize that the "gw,ventana" still exists here, but that cant be removed
-without breaking a conditional check in arch/arm/mach-imx/mach-imx6q.c
-
-Changes in v3:
- - Fixed a conflict in arch/arm/boot/dts/Makefile
-
-Changes in v4:
- - Clarified authorship
- - Added dt-bindings compatible entries
-
-Changes in v5:
- - Added documentation schema permutations for all gateworks ventana boards
- - Added back compatible strings from dts removed in v2
-
-Robert Jones (4):
-  dt-bindings: arm: fsl: Add Gateworks Ventana i.MX6DL/Q compatibles
-  ARM: dts: imx: Add GW5907 board support
-  ARM: dts: imx: Add GW5913 board support
-  ARM: dts: imx: Add GW5912 board support
-
-Tim Harvey (1):
-  ARM: dts: imx: Add GW5910 board support
-
- Documentation/devicetree/bindings/arm/fsl.yaml |  31 ++
- arch/arm/boot/dts/Makefile                     |   8 +
- arch/arm/boot/dts/imx6dl-gw5907.dts            |  14 +
- arch/arm/boot/dts/imx6dl-gw5910.dts            |  14 +
- arch/arm/boot/dts/imx6dl-gw5912.dts            |  13 +
- arch/arm/boot/dts/imx6dl-gw5913.dts            |  14 +
- arch/arm/boot/dts/imx6q-gw5907.dts             |  14 +
- arch/arm/boot/dts/imx6q-gw5910.dts             |  14 +
- arch/arm/boot/dts/imx6q-gw5912.dts             |  13 +
- arch/arm/boot/dts/imx6q-gw5913.dts             |  14 +
- arch/arm/boot/dts/imx6qdl-gw5907.dtsi          | 399 ++++++++++++++++++++
- arch/arm/boot/dts/imx6qdl-gw5910.dtsi          | 491 +++++++++++++++++++++++++
- arch/arm/boot/dts/imx6qdl-gw5912.dtsi          | 461 +++++++++++++++++++++++
- arch/arm/boot/dts/imx6qdl-gw5913.dtsi          | 348 ++++++++++++++++++
- 14 files changed, 1848 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6dl-gw5907.dts
- create mode 100644 arch/arm/boot/dts/imx6dl-gw5910.dts
- create mode 100644 arch/arm/boot/dts/imx6dl-gw5912.dts
- create mode 100644 arch/arm/boot/dts/imx6dl-gw5913.dts
- create mode 100644 arch/arm/boot/dts/imx6q-gw5907.dts
- create mode 100644 arch/arm/boot/dts/imx6q-gw5910.dts
- create mode 100644 arch/arm/boot/dts/imx6q-gw5912.dts
- create mode 100644 arch/arm/boot/dts/imx6q-gw5913.dts
- create mode 100644 arch/arm/boot/dts/imx6qdl-gw5907.dtsi
- create mode 100644 arch/arm/boot/dts/imx6qdl-gw5910.dtsi
- create mode 100644 arch/arm/boot/dts/imx6qdl-gw5912.dtsi
- create mode 100644 arch/arm/boot/dts/imx6qdl-gw5913.dtsi
-
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index f79683a..8ed4c85 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -126,6 +126,22 @@ properties:
+               - toradex,apalis_imx6q-ixora      # Apalis iMX6 Module on Ixora
+               - toradex,apalis_imx6q-ixora-v1.1 # Apalis iMX6 Module on Ixora V1.1
+               - variscite,dt6customboard
++              - gw,ventana                # Gateworks i.MX6DL or i.MX6Q Ventana
++              - gw,imx6q-gw51xx
++              - gw,imx6q-gw52xx
++              - gw,imx6q-gw53xx
++              - gw,imx6q-gw5400-a
++              - gw,imx6q-gw54xx
++              - gw,imx6q-gw551x
++              - gw,imx6q-gw552x
++              - gw,imx6q-gw553x
++              - gw,imx6q-gw560x
++              - gw,imx6q-gw5903
++              - gw,imx6q-gw5904
++              - gw,imx6q-gw5907
++              - gw,imx6q-gw5910
++              - gw,imx6q-gw5912
++              - gw,imx6q-gw5913
+           - const: fsl,imx6q
+ 
+       - description: i.MX6QP based Boards
+@@ -152,6 +168,21 @@ properties:
+               - ysoft,imx6dl-yapp4-draco  # i.MX6 DualLite Y Soft IOTA Draco board
+               - ysoft,imx6dl-yapp4-hydra  # i.MX6 DualLite Y Soft IOTA Hydra board
+               - ysoft,imx6dl-yapp4-ursa   # i.MX6 Solo Y Soft IOTA Ursa board
++              - gw,ventana                # Gateworks i.MX6DL or i.MX6Q Ventana
++              - gw,imx6dl-gw51xx
++              - gw,imx6dl-gw52xx
++              - gw,imx6dl-gw53xx
++              - gw,imx6dl-gw54xx
++              - gw,imx6dl-gw551x
++              - gw,imx6dl-gw552x
++              - gw,imx6dl-gw553x
++              - gw,imx6dl-gw560x
++              - gw,imx6dl-gw5903
++              - gw,imx6dl-gw5904
++              - gw,imx6dl-gw5907
++              - gw,imx6dl-gw5910
++              - gw,imx6dl-gw5912
++              - gw,imx6dl-gw5913
+           - const: fsl,imx6dl
+ 
+       - description: i.MX6SL based Boards
 -- 
 2.9.2
 
