@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E5BD12D2B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 18:29:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0398212D2B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 18:30:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1sH7XQWazLDtug/DbbmuXMWVeEXiIeAeLhsp4iUALWI=; b=MdQqtysXc9wj6eRq4WJ//dEjuG
-	wmH6cTcoJDhrEuEdlItcMjyAHWzep4i2Q8JVGYHFTJt2JDDxVup9dl/rS0+t8M3hzO3blfam71y+D
-	XvD5I+suQjZ9FAw6YxMs0gtfaCi5Esp35IeWqvHvrlKSITNw4kUm1m+A6mb10mRMYmPOXfAbkG7E2
-	1gq/MoPJFmTHU/xgcS5UFx5w99TXg+QSutlLRjDX4ygRTVaCDXGI+j9LHIOGtVuMzY7I52jD3lwDD
-	yjZ8ypMZmfVfMAqocg+bzZRAhtK0A9wem2JTu9qGHrvXCRFcBfCwnAX2jP0lVba97/6Bss6Mqbmgt
-	1YXqUSXw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZSa4FjlQL54RVB5SDRc9HSiKKad4LEO9BQj4k2iGij4=; b=rj1kDaNgb/akUJ
+	K3AGC0muk2HzOeZnVf5uJsIgOwbuB91f8ru+UvL9nsjqdNSIWqTfqoylrUvfou2lAO3srIJ7HPsum
+	UxLqipsx7T08x3LvjEhYXYfh3JKDKpHPjD0VbaX0FkQr3u3JssHImpkgY9QhqgEaSlj3Vmzy4w+8t
+	lFuLakdx+bUNsH07RUQgiQOf3GiVmkQMM3LtNPMwBBeqSU3y8a7cngDeb1VAhd3kCOQ2FaYEctuyU
+	jGtkDL13n3xtwah+DWT+TfYCalRfUrEUH5YOr8NPjQT28IQZDWw2IJ7W1cHZl71wbPJ3gfx8ZKCO2
+	qlR+ZdL9DN+H19IRpGdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilyqq-00036f-Hj; Mon, 30 Dec 2019 17:29:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilypy-0002T9-5p
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 17:28:16 +0000
-Received: from localhost.localdomain (unknown [194.230.155.138])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 02749206DB;
- Mon, 30 Dec 2019 17:28:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577726892;
- bh=ssa5lkjfqwWMpy9ahaIfArPwN4jQiuNA4raXee2bjBQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ewcQwCWSEia2vK7DbPLPNACEUhgNTjRZXnPE05t7u9LOYv+qMQ9hxKPGEXai4Ln0O
- Y+JTMYXnNUM6g2y5pqMtAapaU7lS1E6t1Wd3ApEFpxcFNwVF/TH9Y7i6EvPJUroJST
- tYBkMGPbYFEHwnKndDniujx2ap3RfrFeTRRCnqyc=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Vladimir Zapolskiy <vz@mleia.com>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>, Wolfram Sang <wsa@the-dreams.de>,
- Jean Delvare <jdelvare@suse.de>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>, Max Staudt <max@enpas.org>,
- Juergen Fitschen <jfi@ssv-embedded.de>, Elie Morisse <syniurge@gmail.com>,
- linux-i2c@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] i2c: Enable compile testing for some of drivers
-Date: Mon, 30 Dec 2019 18:27:51 +0100
-Message-Id: <20191230172751.17985-5-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191230172751.17985-1-krzk@kernel.org>
-References: <20191230172751.17985-1-krzk@kernel.org>
+	id 1ilyrw-0003hF-6p; Mon, 30 Dec 2019 17:30:16 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ilyre-0003fq-Pd
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 17:30:00 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 87C948027;
+ Mon, 30 Dec 2019 17:30:31 +0000 (UTC)
+Date: Mon, 30 Dec 2019 09:29:48 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: =?utf-8?B?QW5kcsOp?= Hentschel <nerv@dawncrow.de>
+Subject: Re: [PATCH] ARM: dts: Add omap3-echo
+Message-ID: <20191230172948.GL35479@atomide.com>
+References: <20191224161005.28083-1-nerv@dawncrow.de>
+ <20191224184503.GK35479@atomide.com>
+ <60412339-53BF-4DC1-8AF6-4FB0E75D429C@goldelico.com>
+ <53e6cbbd-1094-cba2-4942-981502a738d4@dawncrow.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <53e6cbbd-1094-cba2-4942-981502a738d4@dawncrow.de>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_092814_394991_1AD5921D 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191230_092958_874348_B699EE98 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,285 +62,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux@arm.linux.org.uk,
+ "H. Nikolaus Schaller" <hns@goldelico.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, bcousson@baylibre.com, linux-omap@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some of the I2C bus drivers can be compile tested to increase build
-coverage.  This requires also:
-1. Adding dependencies on COMMON_CLK for BCM2835 and Meson I2C
-   controllers,
-2. Adding 'if' conditional to 'default y' so they will not get enabled
-   by default on all other architectures,
-3. Limiting few compile test options to supported architectures (which
-   provide the readsX()/writesX() primitives).
-
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- drivers/i2c/busses/Kconfig | 62 ++++++++++++++++++++------------------
- 1 file changed, 32 insertions(+), 30 deletions(-)
-
-diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-index 6a0aa76859f3..acb1ba635397 100644
---- a/drivers/i2c/busses/Kconfig
-+++ b/drivers/i2c/busses/Kconfig
-@@ -367,7 +367,7 @@ comment "I2C system bus drivers (mostly embedded / system-on-chip)"
- 
- config I2C_ALTERA
- 	tristate "Altera Soft IP I2C"
--	depends on (ARCH_SOCFPGA || NIOS2) && OF
-+	depends on (ARCH_SOCFPGA || NIOS2 || COMPILE_TEST) && OF
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  Altera Soft IP I2C interfaces on SoCFPGA and Nios2 architectures.
-@@ -387,7 +387,7 @@ config I2C_ASPEED
- 
- config I2C_AT91
- 	tristate "Atmel AT91 I2C Two-Wire interface (TWI)"
--	depends on ARCH_AT91
-+	depends on ARCH_AT91 || COMPILE_TEST
- 	help
- 	  This supports the use of the I2C interface on Atmel AT91
- 	  processors.
-@@ -440,7 +440,8 @@ config I2C_AXXIA
- 
- config I2C_BCM2835
- 	tristate "Broadcom BCM2835 I2C controller"
--	depends on ARCH_BCM2835 || ARCH_BRCMSTB
-+	depends on ARCH_BCM2835 || ARCH_BRCMSTB || COMPILE_TEST
-+	depends on COMMON_CLK
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  BCM2835 I2C controller.
-@@ -463,8 +464,8 @@ config I2C_BCM_IPROC
- 
- config I2C_BCM_KONA
- 	tristate "BCM Kona I2C adapter"
--	depends on ARCH_BCM_MOBILE
--	default y
-+	depends on ARCH_BCM_MOBILE || COMPILE_TEST
-+	default y if ARCH_BCM_MOBILE
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  I2C interface on the Broadcom Kona family of processors.
-@@ -511,7 +512,7 @@ config I2C_CPM
- 
- config I2C_DAVINCI
- 	tristate "DaVinci I2C driver"
--	depends on ARCH_DAVINCI || ARCH_KEYSTONE
-+	depends on ARCH_DAVINCI || ARCH_KEYSTONE || COMPILE_TEST
- 	help
- 	  Support for TI DaVinci I2C controller driver.
- 
-@@ -572,7 +573,7 @@ config I2C_DESIGNWARE_BAYTRAIL
- 
- config I2C_DIGICOLOR
- 	tristate "Conexant Digicolor I2C driver"
--	depends on ARCH_DIGICOLOR
-+	depends on ARCH_DIGICOLOR || COMPILE_TEST
- 	help
- 	  Support for Conexant Digicolor SoCs (CX92755) I2C controller driver.
- 
-@@ -611,8 +612,8 @@ config I2C_EMEV2
- 
- config I2C_EXYNOS5
- 	tristate "Exynos5 high-speed I2C driver"
--	depends on ARCH_EXYNOS && OF
--	default y
-+	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
-+	default y if ARCH_EXYNOS
- 	help
- 	  High-speed I2C controller on Exynos5 based Samsung SoCs.
- 
-@@ -634,7 +635,7 @@ config I2C_GPIO_FAULT_INJECTOR
- 
- config I2C_HIGHLANDER
- 	tristate "Highlander FPGA SMBus interface"
--	depends on SH_HIGHLANDER
-+	depends on SH_HIGHLANDER || COMPILE_TEST
- 	help
- 	  If you say yes to this option, support will be included for
- 	  the SMBus interface located in the FPGA on various Highlander
-@@ -686,7 +687,7 @@ config I2C_IMX_LPI2C
- 
- config I2C_IOP3XX
- 	tristate "Intel IOPx3xx and IXP4xx on-chip I2C interface"
--	depends on ARCH_IOP32X || ARCH_IXP4XX
-+	depends on ARCH_IOP32X || ARCH_IXP4XX || COMPILE_TEST
- 	help
- 	  Say Y here if you want to use the IIC bus controller on
- 	  the Intel IOPx3xx I/O Processors or IXP4xx Network Processors.
-@@ -726,6 +727,7 @@ config I2C_LPC2K
- config I2C_MESON
- 	tristate "Amlogic Meson I2C controller"
- 	depends on ARCH_MESON || COMPILE_TEST
-+	depends on COMMON_CLK
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  I2C interface on the Amlogic Meson family of SoCs.
-@@ -759,7 +761,7 @@ config I2C_MT7621
- 
- config I2C_MV64XXX
- 	tristate "Marvell mv64xxx I2C Controller"
--	depends on MV64X60 || PLAT_ORION || ARCH_SUNXI || ARCH_MVEBU
-+	depends on MV64X60 || PLAT_ORION || ARCH_SUNXI || ARCH_MVEBU || COMPILE_TEST
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  built-in I2C interface on the Marvell 64xxx line of host bridges.
-@@ -770,7 +772,7 @@ config I2C_MV64XXX
- 
- config I2C_MXS
- 	tristate "Freescale i.MX28 I2C interface"
--	depends on SOC_IMX28
-+	depends on SOC_IMX28 || COMPILE_TEST
- 	select STMP_DEVICE
- 	help
- 	  Say Y here if you want to use the I2C bus controller on
-@@ -799,7 +801,7 @@ config I2C_OCORES
- 
- config I2C_OMAP
- 	tristate "OMAP I2C adapter"
--	depends on ARCH_OMAP || ARCH_K3
-+	depends on ARCH_OMAP || ARCH_K3 || COMPILE_TEST
- 	default y if MACH_OMAP_H3 || MACH_OMAP_OSK
- 	help
- 	  If you say yes to this option, support will be included for the
-@@ -833,7 +835,7 @@ config I2C_PCA_PLATFORM
- 
- config I2C_PMCMSP
- 	tristate "PMC MSP I2C TWI Controller"
--	depends on PMC_MSP
-+	depends on PMC_MSP || COMPILE_TEST
- 	help
- 	  This driver supports the PMC TWI controller on MSP devices.
- 
-@@ -842,7 +844,7 @@ config I2C_PMCMSP
- 
- config I2C_PNX
- 	tristate "I2C bus support for Philips PNX and NXP LPC targets"
--	depends on ARCH_LPC32XX
-+	depends on ARCH_LPC32XX || COMPILE_TEST
- 	help
- 	  This driver supports the Philips IP3204 I2C IP block master and/or
- 	  slave controller
-@@ -863,7 +865,7 @@ config I2C_PUV3
- 
- config I2C_PXA
- 	tristate "Intel PXA2XX I2C adapter"
--	depends on ARCH_PXA || ARCH_MMP || ARCH_MVEBU || (X86_32 && PCI && OF)
-+	depends on ARCH_PXA || ARCH_MMP || ARCH_MVEBU || (X86_32 && PCI && OF) || COMPILE_TEST
- 	help
- 	  If you have devices in the PXA I2C bus, say yes to this option.
- 	  This driver can also be built as a module.  If so, the module
-@@ -933,7 +935,7 @@ config HAVE_S3C2410_I2C
- 
- config I2C_S3C2410
- 	tristate "S3C2410 I2C Driver"
--	depends on HAVE_S3C2410_I2C
-+	depends on HAVE_S3C2410_I2C || COMPILE_TEST
- 	help
- 	  Say Y here to include support for I2C controller in the
- 	  Samsung SoCs.
-@@ -971,7 +973,7 @@ config I2C_SIMTEC
- 
- config I2C_SIRF
- 	tristate "CSR SiRFprimaII I2C interface"
--	depends on ARCH_SIRF
-+	depends on ARCH_SIRF || COMPILE_TEST
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  CSR SiRFprimaII I2C interface.
-@@ -981,14 +983,14 @@ config I2C_SIRF
- 
- config I2C_SPRD
- 	tristate "Spreadtrum I2C interface"
--	depends on I2C=y && ARCH_SPRD
-+	depends on I2C=y && (ARCH_SPRD || COMPILE_TEST)
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  Spreadtrum I2C interface.
- 
- config I2C_ST
- 	tristate "STMicroelectronics SSC I2C support"
--	depends on ARCH_STI
-+	depends on ARCH_STI || COMPILE_TEST
- 	help
- 	  Enable this option to add support for STMicroelectronics SoCs
- 	  hardware SSC (Synchronous Serial Controller) as an I2C controller.
-@@ -1019,7 +1021,7 @@ config I2C_STM32F7
- 
- config I2C_STU300
- 	tristate "ST Microelectronics DDC I2C interface"
--	depends on MACH_U300
-+	depends on MACH_U300 || COMPILE_TEST
- 	default y if MACH_U300
- 	help
- 	  If you say yes to this option, support will be included for the
-@@ -1055,15 +1057,15 @@ config I2C_SYNQUACER
- 
- config I2C_TEGRA
- 	tristate "NVIDIA Tegra internal I2C controller"
--	depends on ARCH_TEGRA
-+	depends on ARCH_TEGRA || (COMPILE_TEST && (ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC))
- 	help
- 	  If you say yes to this option, support will be included for the
- 	  I2C controller embedded in NVIDIA Tegra SOCs
- 
- config I2C_TEGRA_BPMP
- 	tristate "NVIDIA Tegra BPMP I2C controller"
--	depends on TEGRA_BPMP
--	default y
-+	depends on TEGRA_BPMP || COMPILE_TEST
-+	default y if TEGRA_BPMP
- 	help
- 	  If you say yes to this option, support will be included for the I2C
- 	  controller embedded in NVIDIA Tegra SoCs accessed via the BPMP.
-@@ -1101,7 +1103,7 @@ config I2C_VERSATILE
- 
- config I2C_WMT
- 	tristate "Wondermedia WM8xxx SoC I2C bus support"
--	depends on ARCH_VT8500
-+	depends on ARCH_VT8500 || COMPILE_TEST
- 	help
- 	  Say yes if you want to support the I2C bus on Wondermedia 8xxx-series
- 	  SoCs.
-@@ -1142,7 +1144,7 @@ config I2C_XILINX
- 
- config I2C_XLR
- 	tristate "Netlogic XLR and Sigma Designs I2C support"
--	depends on CPU_XLR || ARCH_TANGO
-+	depends on CPU_XLR || ARCH_TANGO || COMPILE_TEST
- 	help
- 	  This driver enables support for the on-chip I2C interface of
- 	  the Netlogic XLR/XLS MIPS processors and Sigma Designs SOCs.
-@@ -1328,7 +1330,7 @@ config I2C_ICY
- 
- config I2C_MLXCPLD
- 	tristate "Mellanox I2C driver"
--	depends on X86_64
-+	depends on X86_64 || COMPILE_TEST
- 	help
- 	  This exposes the Mellanox platform I2C busses to the linux I2C layer
- 	  for X86 based systems.
-@@ -1403,8 +1405,8 @@ config I2C_OPAL
- 
- config I2C_ZX2967
- 	tristate "ZTE ZX2967 I2C support"
--	depends on ARCH_ZX
--	default y
-+	depends on ARCH_ZX || (COMPILE_TEST && (ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC))
-+	default y if ARCH_ZX
- 	help
- 	  Selecting this option will add ZX2967 I2C driver.
- 	  This driver can also be built as a module. If so, the module will be
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+KiBBbmRyw6kgSGVudHNjaGVsIDxuZXJ2QGRhd25jcm93LmRlPiBbMTkxMjI3IDE0OjI5XToKPiBB
+bSAyNS4xMi4xOSB1bSAxODowMSBzY2hyaWViIEguIE5pa29sYXVzIFNjaGFsbGVyOgo+ID4gSSB0
+aGluayB0aGUgYW0zNzAzIGlzIGEgZG0zNzMwIChvbWFwMzYzMCkgd2hlcmUgdGhlIFNHWCBhbmQg
+dGhlCj4gPiBEU1AgaGF2ZSBub3QgcGFzc2VkIHByb2R1Y3Rpb24gdGVzdCBhbmQgYXJlICJkaXNh
+YmxlZCIgYnkgZUZ1c2VzLgo+ID4gVGhpcyBpcyBhIGNvbW1vbiBwcm9jZWR1cmUgaW4gc2lsaWNv
+biBwcm9kdWN0aW9uIHRvIGluY3JlYXNlIHlpZWxkLgo+ID4gCj4gPiBUaGVyZWZvcmUsIHRoZXJl
+IGlzIGEgcmVnaXN0ZXIgd2hpY2ggYWxsb3dzIHRvIGR5bmFtaWNhbGx5IGRldGVybWluZQo+ID4g
+d2hhdCBjb21wb25lbnRzIChTR1ggYW5kIERTUCkgYXJlIGF2YWlsYWJsZSBvbiBhIHNwZWNpZmlj
+IFNvQyBjaGlwLgo+ID4gU2VlICJUYWJsZSAxLTYuIENoaXAgSWRlbnRpZmljYXRpb24iIGluIHRo
+ZSBjb21tb24KPiA+ICJBTS9ETTM3eCBNdWx0aW1lZGlhIERldmljZSBUUk0iLgo+ID4gCj4gPiBT
+dWNoIGJpdHMgZXhpc3RzIGZvciBvbWFwMzR4eCBhbmQgZm9yIG9tYXAzNnh4IChha2EgYW0zN3h4
+L2RtMzd4eCkuCj4gPiAKPiA+IFRoYXQgd2F5IHRoZXJlIGlzIG5vIG5lZWQgdG8gZGlzYWJsZS9l
+bmFibGUgc2d4IHRocm91Z2ggZGV2aWNlIHRyZWUKPiA+IHZhcmlhdGlvbnMgYW5kIGludHJvZHVj
+aW5nIG1vcmUgY29tcGxleGl0eSBieSBpbnRyb2R1Y2luZyBtb3JlIGFuZCBtb3JlCj4gPiBEVFMg
+Zm9yIHZhcmlhbnRzIChhbTM3MDMuZHRzaSwgYW0zNzE1LmR0c2ksIGRtMzcyMC5kdHNpLCBkbTM3
+MzAuZHRzaT8pLgo+ID4gCj4gPiBCVFc6IHdoYXQgYWJvdXQgYSBib2FyZCB0aGF0IGlzL3dhcyBw
+cm9kdWNlZCBpbiBlaXRoZXIgYW0zNzAzIG9yIGRtMzczMAo+ID4gdmFyaWFudHM/IENhbiB0aGV5
+IHN0aWxsIHNoYXJlIGFuIG9tYXAzNnh4LmR0c2kgYmFzZWQgRFRCPwo+ID4gCj4gPiBTbyBJTUhP
+IGlmIHRoZXJlIGlzIGFuIGlzc3VlIHdpdGggc2d4IGVuYWJsZWQgb24gYW0zNzAzIGJ1dCBubyBT
+R1gKPiA+IGhhcmR3YXJlIGF2YWlsYWJsZSBvbiBhIHNwZWNpZmljIFNvQywgdGhlIHN5c2Mgc2V0
+dXAgc2hvdWxkIHNvbWVob3cgcmVhZAo+ID4gdGhlIGJpdHMgYW5kIGVmZmVjdGl2ZWx5IGRpc2Fi
+bGUgYWxsIFNHWCByZWxhdGVkIHNldHVwIGlmIGl0IGlzIG5vdAo+ID4gYXZhaWxhYmxlIG9uIHRo
+ZSBTb0MuIElmIEkgcmVtZW1iZXIgY29ycmVjdGx5LCBzb21lIG9sZGVyIGh3bW9kcyBkaWQKPiA+
+IHN1Y2ggdGhpbmdzIGJ5IGNoZWNraW5nIFNvQyB2YXJpYW50IGJpdHMuCj4gCj4gSSBsaWtlIHRo
+ZSBpZGVhLCBidXQgSSdtIG5vdCBpbiB0aGUgcG9zaXRpb24gdG8gdm90ZSBmb3IgaXQgYW5kIEkg
+ZG9uJ3QKPiB1bmRlcnN0YW5kIHRoZSBzeXNjIGNvZGUgZW5vdWdoIHRvIGltcGxlbWVudCB0aGF0
+LgoKV2UgY2FuIGVhc2lseSBkbyBib3RoLiBTbyBubyB3b3JyaWVzLCBJIGNhbiBlYXNpbHkgYWRk
+IFNvQyBjYXBhYmlsaXRlcwpzdXBwb3J0IGF0IHNvbWUgcG9pbnQuCgo+IEFtIDI1LjEyLjE5IHVt
+IDEzOjUzIHNjaHJpZWIgQWRhbSBGb3JkOgo+ID4gT24gV2VkLCBEZWMgMjUsIDIwMTkgYXQgNjow
+NSBBTSBBbmRyw6kgSGVudHNjaGVsIDxuZXJ2QGRhd25jcm93LmRlPiB3cm90ZToKPiA+PiBBbmQg
+dGhlbiBpbmNsdWRlIGFtMzcwMy5kdHNpIGluIG9tYXAzNnh4LmR0c2kgYmVmb3JlIHNneCBzdXBw
+b3J0Pwo+ID4gSSBjYW4gc2VlIHZhbHVlIGluIGhhdmluZyBhIDM3MDMgYmFzZSBhbmQgaW5jbHVk
+aW5nIHRoYXQgaW4gdGhlIDM2eHgKPiA+IHdpdGggU0dYIGFuZCBEU1Agbm9kZXMsIGJ1dCB3aHkg
+bm90IGp1cyBtYWtlIFNHWCBkaXNhYmxlZCBieSBkZWZhdWx0Lgo+ID4gVGhvc2Ugd2hvIHdhbnQv
+bmVlZCBpdCBjYW4gZW5hYmxlIGl0IG9uIGEgcGVyLWJvYXJkIGJhc2lzLgo+ID4+IE9yIHdvdWxk
+IGl0IGJlIGJldHRlciB0byBoYXZlIHNneCBzdXBwb3J0IGluIGEgc2VwYXJhdGUgZHRzaT8KPiA+
+IAo+ID4gSSBhbSBub3Qgc3VyZSBob3cgbXVjaCBEU1Agc3R1ZmYgaXMgaW4gdGhlcmUsIGJ1dCB0
+aGUgRE0zNzMwIGlzIHRoZQo+ID4gQU0zNzAzICsgRFNQIGFuZCAzRC4KPiAKPiBGb3IgY2xhcmlm
+aWNhdGlvbiB0aGlzIHJlZHVjZWQgdGFibGUgc2hvdWxkIGhlbHA6Cj4gICAgICBETTM3MzAgfCBE
+TTM3MjUgfCBBTTM3MTUgfCBBTTM3MDMKPiBEU1AgICAgWCAgICB8ICAgWCAgICB8ICAgICAgICB8
+ICAgIAo+IFNHWCAgICBYICAgIHwgICAgICAgIHwgICBYICAgIHwgICAgCj4gCj4gV2hlcmUgWCBp
+cyAic3VwcG9ydGVkIgoKQW5kIGxldCdzIGFsc28gYWRkIG1pbmltYWwgZG0zNzI1LmR0c2ksIGFt
+MzcxNS5kdHNpIGFuZCBhbTM3MDMuZHRzaQp0byBtYWtlIHRoaW5ncyBzaW1wbGUuIFRoZSBkZXZp
+Y2UgdHJlZSBpcyBzdXBwb3NlZCB0byBkZXNjcmliZSB0aGUKaGFyZHdhcmUsIGFuZCBpbiBtb3N0
+IGNhc2VzIHRoZSBTb0MgdmVyc2lvbiBpcyBmaXhlZCBhbmQgbmVlZCBubwpkeW5hbWljIGRldGVj
+dGlvbi4KCkFuZHLDqSwgY2FuIHlvdSBwbGVhc2UgYWRkIHRob3NlIHRocmVlIGR0c2kgZmlsZXMg
+c2luY2UgeW91IGhhdmUgYXQKbGVhc3Qgb25lIHRlc3QgY2FzZT8gOikKClJlZ2FyZHMsCgpUb255
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
