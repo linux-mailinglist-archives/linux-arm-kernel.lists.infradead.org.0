@@ -2,84 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 543A512CC1D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 04:28:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D22C012CC74
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:00:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BP3GxcLxCKYxtrv/tE2M2XoPExMSSEzIa1BQIceoRz0=; b=NIuE6Tun2NuiGQ
-	KAK33PuQ2GcNf3bkgmk7FqFydFPJfLuPFXFNu8NDNrnFBVnzJ2H6w5Th0mYY7r6lm3gu+gx5ki0hG
-	rb5jQV3plgKpx18zLR3khcsvqJjBikeauOacvI03+WEt0S2MOi3MK9HTFD1ZdqDf/2uF4mpFQCd4/
-	lUsBudiA08S4qlRqltKINdqScmuD95+9glEMPjmFGNUDULKYeAKIUTmhmm9KEPJ6C6cd9i1v5DW8Z
-	1bcJSvYZ9OpkcqsbiVUJua8QZpnldp+QWvYqScqFpuoiM3/LynQjNO+j1NYb41QP4LL8LWtPl/hg8
-	xcNk+TeA6nsPKIiAwGlA==;
+	List-Owner; bh=D0VvpgVpX/zKmVSKDPil8tnXiOccuWXDWuLDMxmr2ws=; b=AvusOstjg4KRmK
+	33ZSjLcYBrH/NJ53sXgoInVYLTG/NqnfM3z2wpSrdVDLpqOhwiqrjzVHAnzJoY5bmYXlbTEGqfkWB
+	IzMczvr2Dogl6n0rlMJDCOnmY8RwpIS/DZ/dNQzVbwFb9pN2WdV9Szk+HOnmHK+oZv1f/v1XhRD5x
+	Rj6W4pJICQaT8wK8UHjrx1mAYXIq+sc5fIbhTqewUiIebic3mLOBHSnozx2TWuj9pqQbofqZXwlEd
+	LpmkumLouStMuskMKWP2nVrpWYoWUIkmy7jgoC/rpvjtrSx0Mmcqnuxdy3F7/FEP7OMSNOpQx4j4N
+	otx7JHvxFTmsr1Slw6sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1illjF-0006Y1-Sw; Mon, 30 Dec 2019 03:28:25 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1ilnAc-0004XH-RP; Mon, 30 Dec 2019 05:00:46 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1illj8-0006X9-4N; Mon, 30 Dec 2019 03:28:19 +0000
-Received: by mail-il1-x141.google.com with SMTP id c4so26897670ilo.7;
- Sun, 29 Dec 2019 19:28:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/gSpV16gqUugWiREKjeRqrw8NqwpDXSNtuIvz7v7i9E=;
- b=ljUmIFIw0TpKNbfOsZzPy0594sjYu/WDS2ogd7eV+SZZ16rOMs8kMTDMp6r6z/HcDC
- gqeF9js1oULvAa9uPuKoajyItsjEtWIyVR5bWaYyUdJ6TJCtRwzq4+RZVsJAoLwTgmCe
- ULropm0NWnpv5zpmOeO+HeH1QR+jfN9rvbHK1upIzD+IeCFoYPpaQIq080RnM95H2VwG
- TqqF12ZBn8tHuciOJ2AXNUyop1HJqJacA0AgEg+pthBgH0U4qE8OnMLggownEhd75RHg
- 8ltU/kKIbQzSd85SF6xHDqt6XgBdTXu0malc/i+gHCoLM+Bkv2aHzp4g+/NbaLl2cqwE
- 2fyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/gSpV16gqUugWiREKjeRqrw8NqwpDXSNtuIvz7v7i9E=;
- b=kH6nUXE3oJHIYAR8JXryPXckkx5amGaceL2ZEOuqCmwkVSz8KrTfNvzKh7EvG15/nT
- w+/TLogvCQ0wsPTTn8tSrL2gfEaidMHvXSCtNvMBCMdVRUIeDZZ6OSVSIM1KEaMWPYO4
- wQ8Zj95ifhApbK2er2bbQvH71YzDO3XPeqjUraKnXYFFjLTBsmpw4dFCdUyB0blFMGoc
- sQxT0Gev8nAWbVnVvrLkC8i/P1H9rNapy5SmPJwS0Jr1MjsnwETKZKTlbQMLTQXFAbZC
- AaChZWb5dmjO8xGg2fqShJi5jMZ/vymGguNsbn0htHLdkPXkoULZlt/OQ9H6+C7fiTEp
- 6ZnA==
-X-Gm-Message-State: APjAAAUCa3Hy7XTwjBxH3ihtdr+xbzO5QydmvsGpYOXZjKncm7wJU6BQ
- BcXTPYHWYOb+saFgRdEKclc1ZtJfboRJrb3aTpE=
-X-Google-Smtp-Source: APXvYqyQZm4ZquKEMpBoMyD+GpdMoP23S7ymcucZjFHMEh+UdO/8w5BBcW4WhKQqF8cH3yxedUvYcOX8n0XBNCAgQNA=
-X-Received: by 2002:a92:84d1:: with SMTP id y78mr55495168ilk.69.1577676496461; 
- Sun, 29 Dec 2019 19:28:16 -0800 (PST)
+ id 1ilnAT-0004We-SS
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 05:00:39 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1577682037; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
+ To: From: Sender; bh=bq9GBo1exy5H5niGUOPp3ceZeVp8DhBy57oRJt6GY54=;
+ b=Xz9lkBybgs+0cFTCr8Vtd+lzgl9kCQO62ZMxn7Fr0nefK+lJSqHA9GwvPYZRWJJdlnMvOhUI
+ wn1EBTca+Oh3B5kxg6OElDmnc0umHe0MVocun9bmUQoLdDPVORogfXwjiw2jK+Gk09vqGK0Q
+ WwMcqC2nri7Qiq0AVdtQBwUd3Wc=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e09845d.7faefb24c8f0-smtp-out-n02;
+ Mon, 30 Dec 2019 05:00:13 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id C9D67C43383; Mon, 30 Dec 2019 05:00:13 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+Received: from Pillair (unknown [183.83.68.224])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: pillair)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 53172C433CB;
+ Mon, 30 Dec 2019 05:00:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 53172C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pillair@codeaurora.org
+From: <pillair@codeaurora.org>
+To: "'Bjorn Andersson'" <bjorn.andersson@linaro.org>
+References: <1577181575-25788-1-git-send-email-pillair@codeaurora.org>
+ <20191229031416.GK3755841@builder>
+In-Reply-To: <20191229031416.GK3755841@builder>
+Subject: RE: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Date: Mon, 30 Dec 2019 10:29:56 +0530
+Message-ID: <061701d5bece$044b6cd0$0ce24670$@codeaurora.org>
 MIME-Version: 1.0
-References: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
- <1575426135.31411.2.camel@mtksdaap41>
-In-Reply-To: <1575426135.31411.2.camel@mtksdaap41>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Sun, 29 Dec 2019 21:28:05 -0600
-Message-ID: <CABb+yY2w_h-weh15hFkGuC-b7XLYrvkT7QVkkj1u6uS99qOnrg@mail.gmail.com>
-Subject: Re: [PATCH] soc: mediatek: cmdq: avoid racing condition with mutex
-To: CK Hu <ck.hu@mediatek.com>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQIRwFJlApFoTZl1gTtUmtjwT7YanQH7LU55p0pBkhA=
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_192818_176525_68558007 
-X-CRM114-Status: GOOD (  18.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191229_210037_986773_22FFEED5 
+X-CRM114-Status: GOOD (  22.38  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,113 +95,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Devicetree List <devicetree@vger.kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Houlong Wei <houlong.wei@mediatek.com>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 3, 2019 at 8:22 PM CK Hu <ck.hu@mediatek.com> wrote:
->
-> Hi, Jassi:
->
-> Are mbox_send_message() and mbox_client_txdone() thread-safe? If these
-> two are thread-safe, this bug should be fixed in mailbox core not
-> client.
->
-mbox_client_txdone should be called only when the client _knows_ the
-message has been sent.
-There is difference between knowing when tx is done, and assuming
-tx-done because there is no way of knowing it.
-Your issue arises because you immediately call mbox_client_txdone
-after mbox_send_message, which may be the only way to do it but that
-doesn't mean you shouldn't have to take any other precautions (like a
-mutex). So I think your patch is reasonable.
+Hi Bjorn,
 
-Cheers!
+Thanks for the comments.
+I will post an updated patchset v4 after the patch bringing-in
+"qcom,msa-fixed-perm" is merged/approved.
+I will address all the comments together.
 
+Thanks,
+Rakesh Pillai.
 
-> Regards,
-> CK
->
-> On Thu, 2019-11-21 at 15:29 +0800, Bibby Hsieh wrote:
-> > If cmdq client is multi thread user, racing will occur without mutex
-> > protection. It will make the C message queued in mailbox's queue
-> > always need D message's triggering.
+> -----Original Message-----
+> From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Sent: Sunday, December 29, 2019 8:44 AM
+> To: Rakesh Pillai <pillair@codeaurora.org>
+> Cc: devicetree@vger.kernel.org; linux-arm-msm@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> Subject: Re: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> module device node
+> 
+> On Tue 24 Dec 01:59 PST 2019, Rakesh Pillai wrote:
+> 
+> > Add device node for the ath10k SNOC platform driver probe
+> > and add resources required for WCN3990 on sc7180 soc.
 > >
-> > Thread A              Thread B                  Thread C              Thread D...
-> > -----------------------------------------------------------------------------------
-> > mbox_send_message()
-> >       send_data()
-> >                       mbox_send_message()
-> >                               *exit
-> >                                               mbox_send_message()
-> >                                                       *exit
-> > mbox_client_txdone()
-> >       tx_tick()
-> >                       mbox_client_txdone()
-> >                               tx_tick()
-> >                                               mbox_client_txdone()
-> >                                                       tx_tick()
-> > msg_submit()
-> >       send_data()
-> >                       msg_submit()
-> >                               *exit
-> >                                               msg_submit()
-> >                                                       *exit
-> > -----------------------------------------------------------------------------------
-> >
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
 > > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c | 3 +++
-> >  include/linux/soc/mediatek/mtk-cmdq.h  | 1 +
-> >  2 files changed, 4 insertions(+)
+> > This change is dependent on the below set of changes
+> > arm64: dts: sc7180: Add qupv3_0 and qupv3_1
+> (https://lore.kernel.org/patchwork/patch/1150367/)
+> 
+> It would be clearer if you linked to the series instead, but it doesn't
+> matter at this point, this is merged already.
+> 
+> What doesn't seem to be merged is the addition of the
+> qcom,msa_fixed_perm property, so I presume I need to hold off on merging
+> this?
+> 
+> > ---
+> >  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
+> >  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28
+> ++++++++++++++++++++++++++++
+> >  2 files changed, 33 insertions(+)
 > >
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index 9add0fd5fa6c..9e35e0beffaa 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -81,6 +81,7 @@ struct cmdq_client *cmdq_mbox_create(struct device *dev, int index, u32 timeout)
-> >       client->client.dev = dev;
-> >       client->client.tx_block = false;
-> >       client->chan = mbox_request_channel(&client->client, index);
-> > +     mutex_init(&client->mutex);
-> >
-> >       if (IS_ERR(client->chan)) {
-> >               long err;
-> > @@ -352,9 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
-> >               spin_unlock_irqrestore(&client->lock, flags);
-> >       }
-> >
-> > +     mutex_lock(&client->mutex);
-> >       mbox_send_message(client->chan, pkt);
-> >       /* We can send next packet immediately, so just call txdone. */
-> >       mbox_client_txdone(client->chan, 0);
-> > +     mutex_unlock(&client->mutex);
-> >
-> >       return 0;
-> >  }
-> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> > index a74c1d5acdf3..0f9071cd1bc7 100644
-> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> > @@ -28,6 +28,7 @@ struct cmdq_client {
-> >       struct mbox_chan *chan;
-> >       struct timer_list timer;
-> >       u32 timeout_ms; /* in unit of microsecond */
-> > +     struct mutex mutex;
+> > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > index 189254f..b2ca143f 100644
+> > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > @@ -248,6 +248,11 @@
+> >  	status = "okay";
 > >  };
 > >
-> >  /**
->
+> > +&wifi {
+> > +	status = "okay";
+> > +	qcom,msa_fixed_perm;
+> 
+> As remarked by Rob, properties should be using - instead of _.
+> 
+> > +};
+> > +
+> >  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+> >
+> >  &qup_i2c2_default {
+> > diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > index 666e9b9..7efb97f 100644
+> > --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > @@ -42,6 +42,12 @@
+> >  			compatible = "qcom,cmd-db";
+> >  			no-map;
+> >  		};
+> > +
+> > +		wlan_fw_mem: memory@93900000 {
+> > +			compatible = "removed-dma-pool";
+> > +			no-map;
+> > +			reg = <0 0x93900000 0 0x200000>;
+> > +		};
+> >  	};
+> >
+> >  	cpus {
+> > @@ -1119,6 +1125,28 @@
+> >  				#clock-cells = <1>;
+> >  			};
+> >  		};
+> > +
+> > +		wifi: wifi@18800000 {
+> > +			compatible = "qcom,wcn3990-wifi";
+> > +			reg = <0 0x18800000 0 0x800000>;
+> > +			reg-names = "membase";
+> > +			iommus = <&apps_smmu 0xC0 0x1>;
+> 
+> Lowercase 'c' please.
+> 
+> Regards,
+> Bjorn
+> 
+> > +			interrupts =
+> > +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0
+> */ >,
+> > +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1
+> */ >,
+> > +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2
+> */ >,
+> > +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3
+> */ >,
+> > +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4
+> */ >,
+> > +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5
+> */ >,
+> > +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6
+> */ >,
+> > +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7
+> */ >,
+> > +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8
+> */ >,
+> > +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9
+> */ >,
+> > +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10
+> */>,
+> > +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11
+> */>;
+> > +			memory-region = <&wlan_fw_mem>;
+> > +			status = "disabled";
+> > +		};
+> >  	};
+> >
+> >  	timer {
+> > --
+> > 2.7.4
+> >
+> >
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
