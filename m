@@ -2,128 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A04412CE51
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 10:35:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C68D812CF8C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 12:25:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:Mime-Version:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6raIbfhSntqh8+aw0f/CcrdtLDaZgRDX7bWOWDWuqI=; b=GRhWUODcnpXhcc
-	lGrgDa49r9hQF0OoPCaXu/rUhpUG9t0kkqW+ocsPoYd1CRiTEYIPnKiA3cFCG2QYcLQfpTdcB4lZk
-	OoVA8YAS061H0h7BYb3hQgYe9cxCzDB7c51IDZ9MYGgGTsKnULlUdwaZQv5DELaL3mHRLipYRIPkv
-	cAg0AquVcp3X0Df6nZIxEtut9Ulw+WiXIzBKZYBKa4rFMvjWqmX1cTxOxEfPTjKt2fjcuqWV/35do
-	3+EGLdbOhk0+N1xDvDqOH/VtHgtERlxBYXTxyPMWVUQ+KgYAagolBIlgQN9BIyVbHQ62Dd0c3Zanb
-	VkpSZnfz1WaQ9iDWuzXA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5mkgL/Dk/0iqWL4WAKWKkWK8itnH2eeKVZQtngkVRWY=; b=IhId8Lv5hGvOCs/RUoaGhjTjhv
+	rfwHPfM0Td7UEOR2VjZvhQhxZmmwZMYXgKfYP2zWgkEfflWGfSwBVQKVdGHrsiwl2T7N/6cT/BP4D
+	r3LeeRJLxyZQffXuqOjIoe/vcNaawZ2+Y6HWRos2E6fafB3fc8nkrvb2cxVRVfZo14IFFragbyPGw
+	aTSptBJCon5EUyFLB86pYjw9fMtA/SsV2hyklB1XIOG03DiJO4jrezdOSR1bOcaAPPHW6slauX3wK
+	Yn12vKPSUGEKSLKwik+G1XqIfS280HlJOui5rdk7kTEE6Hr/t+mB1Bv8j2hSF63wQ6ZZoFLooZFax
+	LKzcF5iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilrSd-0006jm-ON; Mon, 30 Dec 2019 09:35:39 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1iltAz-0002f5-2D; Mon, 30 Dec 2019 11:25:33 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilrSS-0006iq-0H
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 09:35:29 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191230093525euoutp02d0cfd548c8e79a3416844fbe599159a5~lHHMn3hp41156011560euoutp02y
+ id 1iltAn-0002eS-Hk
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 11:25:23 +0000
+Received: by mail-ed1-x543.google.com with SMTP id r21so32300905edq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Dec 2019 09:35:25 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20191230093525euoutp02d0cfd548c8e79a3416844fbe599159a5~lHHMn3hp41156011560euoutp02y
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1577698525;
- bh=Xypm1AJvMupF3z7nKOYeVDuwvHXqOAOdFl7YrwTD918=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=cCcn6fejyXueb5UOEl5uzqv5Z2p0XgGZ0U8RwY4hNGAHFDvnetTQEoza6GiI9tgS3
- p85hSIIszSwoOfodTyVToyGy+XRTnT5BoHNRpfKU9FOEgasBBvNsc6AZJpBEbgfYqE
- +d6Aq2FeufUHHdeeNG2Z7pgMjImv5q0vVl2PVwnY=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20191230093525eucas1p27718806b19626b7b45579c53cd1f6948~lHHMWm6Uh2788427884eucas1p2H;
- Mon, 30 Dec 2019 09:35:25 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 59.09.60679.CD4C90E5; Mon, 30
- Dec 2019 09:35:25 +0000 (GMT)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191230093524eucas1p171d0a5c805100c5cddc807a27c2f7657~lHHL8EVQj1988119881eucas1p1L;
- Mon, 30 Dec 2019 09:35:24 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191230093524eusmtrp2235b15ad248353efa1cbe6e829e56c25~lHHL2J17s0819408194eusmtrp2u;
- Mon, 30 Dec 2019 09:35:24 +0000 (GMT)
-X-AuditID: cbfec7f4-0e5ff7000001ed07-6f-5e09c4dc89c9
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id ED.0F.08375.CD4C90E5; Mon, 30
- Dec 2019 09:35:24 +0000 (GMT)
-Received: from AMDC3555 (unknown [106.120.51.67]) by eusmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20191230093523eusmtip1975ed3256410df9f51c198561a7c2d7d~lHHLE1W_J1785117851eusmtip1g;
- Mon, 30 Dec 2019 09:35:23 +0000 (GMT)
-Message-ID: <43b0e5d3fc28c48e139c5fbc2120903d678904a0.camel@samsung.com>
-Subject: Re: [RFC PATCH v3 7/7] drm: exynos: mixer: Add interconnect support
-From: Artur =?UTF-8?Q?=C5=9Awigo=C5=84?= <a.swigon@samsung.com>
-To: Inki Dae <inki.dae@samsung.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org, 
- dri-devel@lists.freedesktop.org
-Date: Mon, 30 Dec 2019 10:35:21 +0100
-In-Reply-To: <6e8aa13a-c831-a7ee-70d3-f6b08fe6fbc3@samsung.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTURzHObu7d3ejzesU/KG9HKgUpVaSBworCLqURAYRhForLyb5WLvq
- 1IJsgfQgG67StlCzUPHtWqXDXjKzLF2hqGlm0Qul15gJZWm73oX99z3f3+/z/Z4DhybUvWQw
- nZaZzekztekaSiG9/ehn3+oxpzw52gy4tayZxENTn0hc4ewj8cCPbxQuvWujcMm4SYpdrhYZ
- rh1zk9j2bpDE/Y6rFPacdyJc5ronwY3OMRkePVlL4TLzBLXZj7XVnaHYV4MdFDt+rlvC3rxx
- gm392iZhi+11iPXYlu6S7VNsTOHS03I5fVTcAcXhopoBQucJzZu5/xYVIlPIWSSngYmBeuNr
- maDVTC2C6X6/s0jh1VMIjD0vKPHgQWA22ch/hKvyGSkOahC8N13ybX1E0NjehIQtJcNCYZeD
- EHQAEw9FxhapoClmE/SOTksEIJCZQPBh1jpPE8wIgo4LT+c7pEwYXHSfmaflXuLl8zmJ2L0K
- vvQUe5Nob4M//GkLEGyCWQanblkJIQcYtwxmH/YT4v5W6DB3+XQATHbbZaJeDHPtFb5MHj60
- j5MiXIjAVu30ARvgVd8vSigjmBXQ7IgS7S3w2dVKCjYwKhj+4i/eQQUlt0sJ0VbC6SK1KDXg
- uKISQQBj/aAvm4WqxmKZCYVaFt5i+e8tloXWSkTUoSAuh89I5fi1mZwhktdm8DmZqZGHsjJs
- yPvJns52T7Uhx++DnYihkWaRsqyUTlaT2lw+P6MTAU1oApUxifJktTJFm1/A6bP263PSOb4T
- hdBSTZByXdVEkppJ1WZzRzhOx+n/TSW0PLgQRZYq8jzteLnlprFa9WQPvRPlTz+eGfme+ybc
- PlESoTw+mRfWtTcpJetr9P5wyfo777NvLTJeDrLp3FV4ya+7caNV5epru10Gp/xHg2Eofq6O
- m9I1jFDXF4dYuURrcGxRyIXtdNiW8m0bwppidxyd8S+I8xgiXqYdsz9IyEl4NqyR8oe1a1YS
- el77F9SeV3VgAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrGIsWRmVeSWpSXmKPExsVy+t/xu7p3jnDGGeyfJGOxccZ6VovrX56z
- Wsw/co7V4srX92wW0/duYrOYdH8Ci8X58xvYLVbc/chqsenxNVaLy7vmsFl87j3CaDHj/D4m
- i7VH7rJb3G5cwWYxY/JLNgd+j02rOtk87lzbw+Zxv/s4k8fmJfUeG9/tYPLo27KK0ePzJrkA
- 9ig9m6L80pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1DY/NYKyNTJX07m5TUnMyy1CJ9uwS9jLbl
- V5gLPitW/N7/kLGBcYJ0FyMnh4SAicT5BWdYuxi5OIQEljJKnHu+ghUiISHxcf0NKFtY4s+1
- LjYQW0jgCaPErSYwm1fAQ6Lh6C5mEFtYwEeirWkDC4jNJmAvcfb2NyaQoSICrxglWid8YgZx
- mAXuMEo0fnwE1sEioCox5WMnmM0J1HHzwn8miDM+M0ocuLyeCSTBLKAp0br9NzvEGToSb0/1
- Aa3gAFotKPF3hzBEibxE89bZzBMYBWch6ZiFUDULSdUCRuZVjCKppcW56bnFhnrFibnFpXnp
- esn5uZsYgXG67djPzTsYL20MPsQowMGoxMM7YzpHnBBrYllxZe4hRgkOZiURXpMYzjgh3pTE
- yqrUovz4otKc1OJDjKZA/0xklhJNzgemkLySeENTQ3MLS0NzY3NjMwslcd4OgYMxQgLpiSWp
- 2ampBalFMH1MHJxSDYz5u11qb65Lln1++ym7vvzWlli1i10f3MvMNr1oXVRQ1j/ZfYXDozta
- t9ZHF/1bpHpP2DXSZ2dHKfPVk6ufbT+Q3bPJpd41favihY2xl+N3b7vRoXjn5rWHO7c8jq34
- t3Hdpj/3l7THGb37Vso6M/394/bYttjUtPS71+6eV1xWtPbK25oE9hXTlViKMxINtZiLihMB
- yMmhb+kCAAA=
-X-CMS-MailID: 20191230093524eucas1p171d0a5c805100c5cddc807a27c2f7657
-X-Msg-Generator: CA
-X-RootMTR: 20191220120146eucas1p22a7b0457be4f378b113f67dc25f2eba7
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20191220120146eucas1p22a7b0457be4f378b113f67dc25f2eba7
-References: <20191220115653.6487-1-a.swigon@samsung.com>
- <CGME20191220120146eucas1p22a7b0457be4f378b113f67dc25f2eba7@eucas1p2.samsung.com>
- <20191220115653.6487-8-a.swigon@samsung.com>
- <6e8aa13a-c831-a7ee-70d3-f6b08fe6fbc3@samsung.com>
+ Mon, 30 Dec 2019 03:25:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=globallogic.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=RvIHNYfkkGx7ukryXDkDHghAXWOtuazR4cve6Bfz2Iw=;
+ b=Ss2WUlY9gXJYRCfT7IkZ7FWv5CHaXl9Y9SsICuB7ZOLfjUsM9gShRo0Hgkv573SRRa
+ AqiyVTvsUbc3/wpxZoqJ4IRzAum7w4NHxJfeT14uiuHswJEeo5nPGctGa6KWVMpje/69
+ 5EzQF03h0o0MZ41CRx98jNRupvnnxyl+zeGHtOQZTGR49xd8+FX7Pf5rF8sqtBSe7MFr
+ jnz/hn57mmYDH8jUWtK+JrBPrdyi+cbHy6gKfNGEM924cNxlf3VaNXBxKPHC3ZIj/iD4
+ ExIKqFM1AF6GA8WzHMLd4a2z/iSb7ZnRtufmfYtlmfOqQjhalJVxyFFcWdeo+IKlEyJA
+ sNBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=RvIHNYfkkGx7ukryXDkDHghAXWOtuazR4cve6Bfz2Iw=;
+ b=pznguCkrnBEu+pHdGpD/CsNCCzmZtdI1iXtTLLFwCxxex5VIEa3U9TVyxNz77OVb80
+ XIwnr10p3DS+aLJQHiZT90s7RR+nmLvnEdE+wGaFl6JSgBBBW4N7XzLnVZbz0rEnwpxq
+ 5XjPltRV0XHZk51MO4/sGmihLWo9UfTudC2V8O5Wz/ATobi/oBqcXAsCr/QZOZHgm8Fc
+ fpf75v0xn7K1M2EKDX/Ka75zrI6l3IDwwp22fI7Yu87NJckH/NChaRs7tmmQOu1R/9rJ
+ ZUIIzRyrWKp+hPl+eWPNPGIwKwEST1/wvpCfvOZZ923oXMCP/5qp+xvGyEFRILHuEj2r
+ mkSw==
+X-Gm-Message-State: APjAAAW1RoPgtWx3igai52OHGOfrSRfQfFI1kmP4uT4QrDKffegzzLsm
+ LeqFiCGisakhfrtVXX0t56CPBl5d0FoLs+AWBfwVUQ==
+X-Google-Smtp-Source: APXvYqwJHsxKsoV8p5JZ8iA96ntKGFcsBDkv9KBJ/orvK5toPP3blVTyqqm1L/rkk4+fm6zLtZiVgLQve5QvXXu6tb0=
+X-Received: by 2002:aa7:dc48:: with SMTP id g8mr69212686edu.208.1577705119136; 
+ Mon, 30 Dec 2019 03:25:19 -0800 (PST)
+MIME-Version: 1.0
+References: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
+In-Reply-To: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
+From: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Date: Mon, 30 Dec 2019 13:25:08 +0200
+Message-ID: <CAODwZ7uLd57LdCuC_onFPD53mSAryJVfeHUEWmaTxsyf80Wzww@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] drm/sun4i: Reimplement plane z position setting
+ logic
+To: Maxime Ripard <mripard@kernel.org>, dri-devel@lists.freedesktop.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_013528_350299_A9BACD5D 
-X-CRM114-Status: GOOD (  22.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191230_032521_596180_C735DA1B 
+X-CRM114-Status: GOOD (  21.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -131,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,89 +95,324 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: b.zolnierkie@samsung.com, sw0312.kim@samsung.com, krzk@kernel.org,
- cw00.choi@samsung.com, myungjoo.ham@samsung.com, leonard.crestez@nxp.com,
- georgi.djakov@linaro.org, Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiBUdWUsIDIwMTktMTItMjQgYXQgMTM6NTYgKzA5MDAsIElua2kgRGFlIHdyb3RlOgo+
-IEhpLAo+IAo+IDE5LiAxMi4gMjAuIOyYpO2bhCA4OjU27JeQIEFydHVyIMWad2lnb8WEIOydtCjq
-sIApIOyTtCDquIA6Cj4gPiBGcm9tOiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ft
-c3VuZy5jb20+Cj4gPiAKPiA+IFRoaXMgcGF0Y2ggYWRkcyBpbnRlcmNvbm5lY3Qgc3VwcG9ydCB0
-byBleHlub3MtbWl4ZXIuIFRoZSBtaXhlciB3b3Jrcwo+ID4gdGhlIHNhbWUgYXMgYmVmb3JlIHdo
-ZW4gQ09ORklHX0lOVEVSQ09OTkVDVCBpcyAnbicuCj4gPiAKPiA+IENvLWRldmVsb3BlZC1ieTog
-QXJ0dXIgxZp3aWdvxYQgPGEuc3dpZ29uQHNhbXN1bmcuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTog
-QXJ0dXIgxZp3aWdvxYQgPGEuc3dpZ29uQHNhbXN1bmcuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTog
-TWFyZWsgU3p5cHJvd3NraSA8bS5zenlwcm93c2tpQHNhbXN1bmcuY29tPgo+ID4gLS0tCj4gPiAg
-ZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfbWl4ZXIuYyB8IDcxICsrKysrKysrKysrKysr
-KysrKysrKysrKystLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCA2NiBpbnNlcnRpb25zKCspLCA1IGRl
-bGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9l
-eHlub3NfbWl4ZXIuYyBiL2RyaXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX21peGVyLmMKPiA+
-IGluZGV4IDZjZmRiOTVmZWYyZi4uYTdlNzI0MGEwNTVmIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVy
-cy9ncHUvZHJtL2V4eW5vcy9leHlub3NfbWl4ZXIuYwo+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJt
-L2V4eW5vcy9leHlub3NfbWl4ZXIuYwo+ID4gQEAgLTEzLDYgKzEzLDcgQEAKPiA+ICAjaW5jbHVk
-ZSA8bGludXgvY29tcG9uZW50Lmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L2RlbGF5Lmg+Cj4gPiAg
-I2luY2x1ZGUgPGxpbnV4L2kyYy5oPgo+ID4gKyNpbmNsdWRlIDxsaW51eC9pbnRlcmNvbm5lY3Qu
-aD4KPiA+ICAjaW5jbHVkZSA8bGludXgvaW50ZXJydXB0Lmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4
-L2lycS5oPgo+ID4gICNpbmNsdWRlIDxsaW51eC9rZXJuZWwuaD4KPiA+IEBAIC05Nyw2ICs5OCw3
-IEBAIHN0cnVjdCBtaXhlcl9jb250ZXh0IHsKPiA+ICAJc3RydWN0IGV4eW5vc19kcm1fY3J0Ywkq
-Y3J0YzsKPiA+ICAJc3RydWN0IGV4eW5vc19kcm1fcGxhbmUJcGxhbmVzW01JWEVSX1dJTl9OUl07
-Cj4gPiAgCXVuc2lnbmVkIGxvbmcJCWZsYWdzOwo+ID4gKwlzdHJ1Y3QgaWNjX3BhdGgJCSpzb2Nf
-cGF0aDsKPiA+ICAKPiA+ICAJaW50CQkJaXJxOwo+ID4gIAl2b2lkIF9faW9tZW0JCSptaXhlcl9y
-ZWdzOwo+ID4gQEAgLTkzMSw2ICs5MzMsNDAgQEAgc3RhdGljIHZvaWQgbWl4ZXJfZGlzYWJsZV92
-Ymxhbmsoc3RydWN0IGV4eW5vc19kcm1fY3J0YyAqY3J0YykKPiA+ICAJbWl4ZXJfcmVnX3dyaXRl
-bWFzayhtaXhlcl9jdHgsIE1YUl9JTlRfRU4sIDAsIE1YUl9JTlRfRU5fVlNZTkMpOwo+ID4gIH0K
-PiA+ICAKPiA+ICtzdGF0aWMgdm9pZCBtaXhlcl9zZXRfbWVtb3J5X2JhbmR3aWR0aChzdHJ1Y3Qg
-ZXh5bm9zX2RybV9jcnRjICpjcnRjKQo+ID4gK3sKPiA+ICsJc3RydWN0IGRybV9kaXNwbGF5X21v
-ZGUgKm1vZGUgPSAmY3J0Yy0+YmFzZS5zdGF0ZS0+YWRqdXN0ZWRfbW9kZTsKPiA+ICsJc3RydWN0
-IG1peGVyX2NvbnRleHQgKmN0eCA9IGNydGMtPmN0eDsKPiA+ICsJdW5zaWduZWQgbG9uZyBidywg
-YmFuZHdpZHRoID0gMDsKPiA+ICsJaW50IGksIGosIHN1YjsKPiA+ICsKPiA+ICsJaWYgKCFjdHgt
-PnNvY19wYXRoKQo+ID4gKwkJcmV0dXJuOwo+ID4gKwo+ID4gKwlmb3IgKGkgPSAwOyBpIDwgTUlY
-RVJfV0lOX05SOyBpKyspIHsKPiA+ICsJCXN0cnVjdCBkcm1fcGxhbmUgKnBsYW5lID0gJmN0eC0+
-cGxhbmVzW2ldLmJhc2U7Cj4gPiArCQljb25zdCBzdHJ1Y3QgZHJtX2Zvcm1hdF9pbmZvICpmb3Jt
-YXQ7Cj4gPiArCj4gPiArCQlpZiAocGxhbmUtPnN0YXRlICYmIHBsYW5lLT5zdGF0ZS0+Y3J0YyAm
-JiBwbGFuZS0+c3RhdGUtPmZiKSB7Cj4gPiArCQkJZm9ybWF0ID0gcGxhbmUtPnN0YXRlLT5mYi0+
-Zm9ybWF0Owo+ID4gKwkJCWJ3ID0gbW9kZS0+aGRpc3BsYXkgKiBtb2RlLT52ZGlzcGxheSAqCj4g
-PiArCQkJCQkJCWRybV9tb2RlX3ZyZWZyZXNoKG1vZGUpOwo+ID4gKwkJCWlmIChtb2RlLT5mbGFn
-cyAmIERSTV9NT0RFX0ZMQUdfSU5URVJMQUNFKQo+ID4gKwkJCQlidyAvPSAyOwo+ID4gKwkJCWZv
-ciAoaiA9IDA7IGogPCBmb3JtYXQtPm51bV9wbGFuZXM7IGorKykgewo+ID4gKwkJCQlzdWIgPSBq
-ID8gKGZvcm1hdC0+dnN1YiAqIGZvcm1hdC0+aHN1YikgOiAxOwo+ID4gKwkJCQliYW5kd2lkdGgg
-Kz0gZm9ybWF0LT5jcHBbal0gKiBidyAvIHN1YjsKPiA+ICsJCQl9Cj4gPiArCQl9Cj4gPiArCX0K
-PiA+ICsKPiA+ICsJLyogYWRkIDIwJSBzYWZldHkgbWFyZ2luICovCj4gPiArCWJhbmR3aWR0aCA9
-IGJhbmR3aWR0aCAvIDQgKiA1Owo+ID4gKwo+ID4gKwlkZXZfZGJnKGN0eC0+ZGV2LCAiZXh5bm9z
-LW1peGVyOiBzYWZlIGJhbmR3aWR0aCAlbGQgQnBzXG4iLCBiYW5kd2lkdGgpOwo+ID4gKwlpY2Nf
-c2V0X2J3KGN0eC0+c29jX3BhdGgsIEJwc190b19pY2MoYmFuZHdpZHRoKSwgMCk7Cj4gPiArfQo+
-ID4gKwo+ID4gIHN0YXRpYyB2b2lkIG1peGVyX2F0b21pY19iZWdpbihzdHJ1Y3QgZXh5bm9zX2Ry
-bV9jcnRjICpjcnRjKQo+ID4gIHsKPiA+ICAJc3RydWN0IG1peGVyX2NvbnRleHQgKmN0eCA9IGNy
-dGMtPmN0eDsKPiA+IEBAIC05ODIsNiArMTAxOCw3IEBAIHN0YXRpYyB2b2lkIG1peGVyX2F0b21p
-Y19mbHVzaChzdHJ1Y3QgZXh5bm9zX2RybV9jcnRjICpjcnRjKQo+ID4gIAlpZiAoIXRlc3RfYml0
-KE1YUl9CSVRfUE9XRVJFRCwgJm1peGVyX2N0eC0+ZmxhZ3MpKQo+ID4gIAkJcmV0dXJuOwo+ID4g
-IAo+ID4gKwltaXhlcl9zZXRfbWVtb3J5X2JhbmR3aWR0aChjcnRjKTsKPiA+ICAJbWl4ZXJfZW5h
-YmxlX3N5bmMobWl4ZXJfY3R4KTsKPiA+ICAJZXh5bm9zX2NydGNfaGFuZGxlX2V2ZW50KGNydGMp
-Owo+ID4gIH0KPiA+IEBAIC0xMDI5LDYgKzEwNjYsNyBAQCBzdGF0aWMgdm9pZCBtaXhlcl9kaXNh
-YmxlKHN0cnVjdCBleHlub3NfZHJtX2NydGMgKmNydGMpCj4gPiAgCWZvciAoaSA9IDA7IGkgPCBN
-SVhFUl9XSU5fTlI7IGkrKykKPiA+ICAJCW1peGVyX2Rpc2FibGVfcGxhbmUoY3J0YywgJmN0eC0+
-cGxhbmVzW2ldKTsKPiA+ICA+ICsJbWl4ZXJfc2V0X21lbW9yeV9iYW5kd2lkdGgoY3J0Yyk7Cj4g
-Cj4gWW91ciBpbnRlbnRpb24gaXMgdG8gc2V0IHBlYWsgYW5kIGF2ZXJhZ2UgYmFuZHdpZHRoIHRv
-IDAgYXQgZGlzYWJsaW5nIG1peGVyIGRldmljZT8KClllcy4gSW4gZ2VuZXJhbCwgc2V0dGluZyB0
-aGUgcmVxdWVzdGVkIGJhbmR3aWR0aCB0byB6ZXJvIG1lYW5zICJkbyBub3Qgb3ZlcnJpZGUKdGhl
-IGRldmZyZXEgc2V0dGluZyIgYmVjYXVzZSBvbmx5IGNvbnN0cmFpbnRzIG9mIHR5cGUgREVWX1BN
-X1FPU19NSU5fRlJFUVVFTkNZCmFyZSB1c2VkIChjZi4gcGF0Y2ggMDUgb2YgdGhpcyBzZXJpZXMp
-LiBJIHdpbGwgbWFrZSBzdXJlIHRvIHJlZmxlY3QgdGhhdCBpbiB0aGUKY29tbWl0IG1lc3NhZ2Uu
-CgpNb3Jlb3ZlciwgdGhpcyBSRkMgZG9lcyBub3QgcmVhbGx5IG1ha2UgdXNlIG9mIHRoZSBwZWFr
-IGJhbmR3aWR0aCAoeWV0KS4gSXQgaXMKc2V0IHRvIHplcm8gaW4gdGhpcyBwYXRjaCBhbmQgaWdu
-b3JlZCBpbiBwYXRjaCAwNSAoY2YuIGV4eW5vc19idXNfaWNjX3NldCgpKS4KT25seSB0aGUgYXZl
-cmFnZSBiYW5kd2lkdGggaXMgdHJhbnNsYXRlZCB0byBhIG1pbmltdW0gZnJlcXVlbmN5IGNvbnN0
-cmFpbnQsCm92ZXJyaWRpbmcgZGV2ZnJlcSBpZiBuZWNlc3NhcnkuCgpBIHBvc3NpYmxlIG1vZGlm
-aWNhdGlvbiB0byBtaXhlcl9zZXRfbWVtb3J5X2JhbmR3aWR0aCgpIGNvdWxkIGJlOgotIGJhbmR3
-aWR0aCA9IGJhbmR3aWR0aCAvIDQgKiA1OworIHBlYWtfYmFuZHdpZHRoID0gYmFuZHdpZHRoIC8g
-NCAqIDU7CmluIG1peGVyX3NldF9tZW1vcnlfYmFuZHdpZHRoKCkgcGx1cyBzb21lIGFkZGl0aW9u
-YWwgbG9naWMgaW4gZXh5bm9zX2J1c19pY2Nfc2V0KCkuCgpCZXN0IHJlZ2FyZHMsCi0tIApBcnR1
-ciDFmndpZ2/FhApTYW1zdW5nIFImRCBJbnN0aXR1dGUgUG9sYW5kClNhbXN1bmcgRWxlY3Ryb25p
-Y3MKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+Please HOLD this until v3.
+I forgot about blender channel frame coords that updated according to
+zpos and can have gap between channels.
+I will also try to simplify this patch.
+
+On Sun, Dec 29, 2019 at 6:28 PM <roman.stratiienko@globallogic.com> wrote:
+>
+> From: Roman Stratiienko <roman.stratiienko@globallogic.com>
+>
+> To set blending channel order register software needs to know state and
+> position of each channel, which impossible at plane commit stage.
+>
+> Move this procedure to atomic_flush stage, where all necessary information
+> is available.
+>
+> Fixes: f88c5ee77496 ("drm/sun4i: Implement zpos for DE2")
+> Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
+> ---
+> v2:
+> - Use SUN8I_MIXER_MAX_LAYERS macro
+> - Use plane_cnt instead of hard-coded number
+> - Put initialization of channel_zpos into for loop
+> - Add 'Fixes' line to the commit message
+> - Minor clean-ups
+> - Comments added
+> ---
+>  drivers/gpu/drm/sun4i/sun8i_mixer.c    | 52 +++++++++++++++++++++++++-
+>  drivers/gpu/drm/sun4i/sun8i_mixer.h    |  5 +++
+>  drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 42 +++------------------
+>  drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 39 +++----------------
+>  4 files changed, 66 insertions(+), 72 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> index 8b803eb903b8..d306ad5dc093 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> @@ -259,8 +259,54 @@ const struct de2_fmt_info *sun8i_mixer_format_info(u32 format)
+>
+>  static void sun8i_mixer_commit(struct sunxi_engine *engine)
+>  {
+> -       DRM_DEBUG_DRIVER("Committing changes\n");
+> +       struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
+> +       u32 base = sun8i_blender_base(mixer);
+> +       int i, j = 0;
+> +       int channel_by_zpos[SUN8I_MIXER_MAX_LAYERS];
+> +       u32 route = 0, pipe_ctl = 0;
+> +       int plane_cnt = mixer->cfg->vi_num + mixer->cfg->ui_num;
+> +
+> +       DRM_DEBUG_DRIVER("Update blender routing\n");
+> +       /* Assume that values in mixer->channel_zpos[] are unique except -1 */
+> +
+> +       for (i = 0; i < plane_cnt; i++)
+> +               channel_by_zpos[i] = -1;
+>
+> +       /* Sort by zpos */
+> +       for (i = 0; i < plane_cnt; i++) {
+> +               int zpos = mixer->channel_zpos[i];
+> +
+> +               if (zpos >= 0 && zpos < plane_cnt)
+> +                       channel_by_zpos[zpos] = i;
+> +       }
+> +
+> +       /* Route enabled blending channels first */
+> +       for (i = 0; i < plane_cnt; i++) {
+> +               int ch = channel_by_zpos[i];
+> +
+> +               if (ch >= 0) {
+> +                       pipe_ctl |= SUN8I_MIXER_BLEND_PIPE_CTL_EN(j);
+> +                       route |= ch << SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(j);
+> +                       j++;
+> +               }
+> +       }
+> +
+> +       /* Set remaining routing fields to match disabled channel indices */
+> +       for (i = 0; i < SUN8I_MIXER_MAX_LAYERS && j < SUN8I_MIXER_MAX_LAYERS;
+> +            i++) {
+> +               if (mixer->channel_zpos[i] < 0) {
+> +                       route |= i << SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(j);
+> +                       j++;
+> +               }
+> +       }
+> +
+> +       regmap_update_bits(mixer->engine.regs, SUN8I_MIXER_BLEND_PIPE_CTL(base),
+> +                          SUN8I_MIXER_BLEND_PIPE_CTL_EN_MSK, pipe_ctl);
+> +
+> +       regmap_write(mixer->engine.regs,
+> +                    SUN8I_MIXER_BLEND_ROUTE(base), route);
+> +
+> +       DRM_DEBUG_DRIVER("Committing changes\n");
+>         regmap_write(engine->regs, SUN8I_MIXER_GLOBAL_DBUFF,
+>                      SUN8I_MIXER_GLOBAL_DBUFF_ENABLE);
+>  }
+> @@ -485,10 +531,12 @@ static int sun8i_mixer_bind(struct device *dev, struct device *master,
+>                      SUN8I_MIXER_BLEND_COLOR_BLACK);
+>
+>         plane_cnt = mixer->cfg->vi_num + mixer->cfg->ui_num;
+> -       for (i = 0; i < plane_cnt; i++)
+> +       for (i = 0; i < plane_cnt; i++) {
+> +               mixer->channel_zpos[i] = -1;
+>                 regmap_write(mixer->engine.regs,
+>                              SUN8I_MIXER_BLEND_MODE(base, i),
+>                              SUN8I_MIXER_BLEND_MODE_DEF);
+> +       }
+>
+>         regmap_update_bits(mixer->engine.regs, SUN8I_MIXER_BLEND_PIPE_CTL(base),
+>                            SUN8I_MIXER_BLEND_PIPE_CTL_EN_MSK, 0);
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.h b/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> index c6cc94057faf..b193d9d1db66 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> @@ -13,6 +13,8 @@
+>  #include "sun8i_csc.h"
+>  #include "sunxi_engine.h"
+>
+> +#define SUN8I_MIXER_MAX_LAYERS                 5
+> +
+>  #define SUN8I_MIXER_SIZE(w, h)                 (((h) - 1) << 16 | ((w) - 1))
+>  #define SUN8I_MIXER_COORD(x, y)                        ((y) << 16 | (x))
+>
+> @@ -176,6 +178,9 @@ struct sun8i_mixer {
+>
+>         struct clk                      *bus_clk;
+>         struct clk                      *mod_clk;
+> +
+> +       /* -1 means that layer is disabled */
+> +       int channel_zpos[SUN8I_MIXER_MAX_LAYERS];
+>  };
+>
+>  static inline struct sun8i_mixer *
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> index c87fd842918e..ee7c13d8710f 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> @@ -24,12 +24,10 @@
+>  #include "sun8i_ui_scaler.h"
+>
+>  static void sun8i_ui_layer_enable(struct sun8i_mixer *mixer, int channel,
+> -                                 int overlay, bool enable, unsigned int zpos,
+> -                                 unsigned int old_zpos)
+> +                                 int overlay, bool enable, unsigned int zpos)
+>  {
+> -       u32 val, bld_base, ch_base;
+> +       u32 val, ch_base;
+>
+> -       bld_base = sun8i_blender_base(mixer);
+>         ch_base = sun8i_channel_base(mixer, channel);
+>
+>         DRM_DEBUG_DRIVER("%sabling channel %d overlay %d\n",
+> @@ -44,32 +42,7 @@ static void sun8i_ui_layer_enable(struct sun8i_mixer *mixer, int channel,
+>                            SUN8I_MIXER_CHAN_UI_LAYER_ATTR(ch_base, overlay),
+>                            SUN8I_MIXER_CHAN_UI_LAYER_ATTR_EN, val);
+>
+> -       if (!enable || zpos != old_zpos) {
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL_EN(old_zpos),
+> -                                  0);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -                                  SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(old_zpos),
+> -                                  0);
+> -       }
+> -
+> -       if (enable) {
+> -               val = SUN8I_MIXER_BLEND_PIPE_CTL_EN(zpos);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -                                  val, val);
+> -
+> -               val = channel << SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(zpos);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -                                  SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(zpos),
+> -                                  val);
+> -       }
+> +       mixer->channel_zpos[channel] = enable ? zpos : -1;
+>  }
+>
+>  static int sun8i_ui_layer_update_coord(struct sun8i_mixer *mixer, int channel,
+> @@ -265,11 +238,9 @@ static void sun8i_ui_layer_atomic_disable(struct drm_plane *plane,
+>                                           struct drm_plane_state *old_state)
+>  {
+>         struct sun8i_ui_layer *layer = plane_to_sun8i_ui_layer(plane);
+> -       unsigned int old_zpos = old_state->normalized_zpos;
+>         struct sun8i_mixer *mixer = layer->mixer;
+>
+> -       sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay, false, 0,
+> -                             old_zpos);
+> +       sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay, false, 0);
+>  }
+>
+>  static void sun8i_ui_layer_atomic_update(struct drm_plane *plane,
+> @@ -277,12 +248,11 @@ static void sun8i_ui_layer_atomic_update(struct drm_plane *plane,
+>  {
+>         struct sun8i_ui_layer *layer = plane_to_sun8i_ui_layer(plane);
+>         unsigned int zpos = plane->state->normalized_zpos;
+> -       unsigned int old_zpos = old_state->normalized_zpos;
+>         struct sun8i_mixer *mixer = layer->mixer;
+>
+>         if (!plane->state->visible) {
+>                 sun8i_ui_layer_enable(mixer, layer->channel,
+> -                                     layer->overlay, false, 0, old_zpos);
+> +                                     layer->overlay, false, 0);
+>                 return;
+>         }
+>
+> @@ -293,7 +263,7 @@ static void sun8i_ui_layer_atomic_update(struct drm_plane *plane,
+>         sun8i_ui_layer_update_buffer(mixer, layer->channel,
+>                                      layer->overlay, plane);
+>         sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay,
+> -                             true, zpos, old_zpos);
+> +                             true, zpos);
+>  }
+>
+>  static struct drm_plane_helper_funcs sun8i_ui_layer_helper_funcs = {
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> index 42d445d23773..97cbc98bf781 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> @@ -17,8 +17,7 @@
+>  #include "sun8i_vi_scaler.h"
+>
+>  static void sun8i_vi_layer_enable(struct sun8i_mixer *mixer, int channel,
+> -                                 int overlay, bool enable, unsigned int zpos,
+> -                                 unsigned int old_zpos)
+> +                                 int overlay, bool enable, unsigned int zpos)
+>  {
+>         u32 val, bld_base, ch_base;
+>
+> @@ -37,32 +36,7 @@ static void sun8i_vi_layer_enable(struct sun8i_mixer *mixer, int channel,
+>                            SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base, overlay),
+>                            SUN8I_MIXER_CHAN_VI_LAYER_ATTR_EN, val);
+>
+> -       if (!enable || zpos != old_zpos) {
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL_EN(old_zpos),
+> -                                  0);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -                                  SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(old_zpos),
+> -                                  0);
+> -       }
+> -
+> -       if (enable) {
+> -               val = SUN8I_MIXER_BLEND_PIPE_CTL_EN(zpos);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -                                  val, val);
+> -
+> -               val = channel << SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(zpos);
+> -
+> -               regmap_update_bits(mixer->engine.regs,
+> -                                  SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -                                  SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(zpos),
+> -                                  val);
+> -       }
+> +       mixer->channel_zpos[channel] = enable ? zpos : -1;
+>  }
+>
+>  static int sun8i_vi_layer_update_coord(struct sun8i_mixer *mixer, int channel,
+> @@ -350,11 +324,9 @@ static void sun8i_vi_layer_atomic_disable(struct drm_plane *plane,
+>                                           struct drm_plane_state *old_state)
+>  {
+>         struct sun8i_vi_layer *layer = plane_to_sun8i_vi_layer(plane);
+> -       unsigned int old_zpos = old_state->normalized_zpos;
+>         struct sun8i_mixer *mixer = layer->mixer;
+>
+> -       sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay, false, 0,
+> -                             old_zpos);
+> +       sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay, false, 0);
+>  }
+>
+>  static void sun8i_vi_layer_atomic_update(struct drm_plane *plane,
+> @@ -362,12 +334,11 @@ static void sun8i_vi_layer_atomic_update(struct drm_plane *plane,
+>  {
+>         struct sun8i_vi_layer *layer = plane_to_sun8i_vi_layer(plane);
+>         unsigned int zpos = plane->state->normalized_zpos;
+> -       unsigned int old_zpos = old_state->normalized_zpos;
+>         struct sun8i_mixer *mixer = layer->mixer;
+>
+>         if (!plane->state->visible) {
+>                 sun8i_vi_layer_enable(mixer, layer->channel,
+> -                                     layer->overlay, false, 0, old_zpos);
+> +                                     layer->overlay, false, 0);
+>                 return;
+>         }
+>
+> @@ -378,7 +349,7 @@ static void sun8i_vi_layer_atomic_update(struct drm_plane *plane,
+>         sun8i_vi_layer_update_buffer(mixer, layer->channel,
+>                                      layer->overlay, plane);
+>         sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay,
+> -                             true, zpos, old_zpos);
+> +                             true, zpos);
+>  }
+>
+>  static struct drm_plane_helper_funcs sun8i_vi_layer_helper_funcs = {
+> --
+> 2.17.1
+>
+
+
+-- 
+Best regards,
+Roman Stratiienko
+Global Logic Inc.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
