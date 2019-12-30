@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D22C012CC74
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:00:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF0A312CC91
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Dec 2019 06:08:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D0VvpgVpX/zKmVSKDPil8tnXiOccuWXDWuLDMxmr2ws=; b=AvusOstjg4KRmK
-	33ZSjLcYBrH/NJ53sXgoInVYLTG/NqnfM3z2wpSrdVDLpqOhwiqrjzVHAnzJoY5bmYXlbTEGqfkWB
-	IzMczvr2Dogl6n0rlMJDCOnmY8RwpIS/DZ/dNQzVbwFb9pN2WdV9Szk+HOnmHK+oZv1f/v1XhRD5x
-	Rj6W4pJICQaT8wK8UHjrx1mAYXIq+sc5fIbhTqewUiIebic3mLOBHSnozx2TWuj9pqQbofqZXwlEd
-	LpmkumLouStMuskMKWP2nVrpWYoWUIkmy7jgoC/rpvjtrSx0Mmcqnuxdy3F7/FEP7OMSNOpQx4j4N
-	otx7JHvxFTmsr1Slw6sQ==;
+	List-Owner; bh=dzlhqURRCZbMNVohmwwOgnTx8fuYaMEc7Ks5VZ5U9QI=; b=nPrz5EhrQTsjJ9
+	g5btnpBsIY99RamoNPcxuvLRdj1l28Hmxd28h+pOOZlVEKGsgBg+IkkkEjk+gwpzu7JBS1CwKMHas
+	J6x8WNqxezvkkKp/zfJhXa7NZWWOLwS+QL3GjuA802oAvaVntcH7n50vuiM9NoUme0DAmirOAdHS9
+	tgZ1jTrtgwOgKh8MSEfHgLrGwuju1UZilN0VFQ+TDzzSXCyH0rtylp205a9MK5v0cCsNeP1/ATKP7
+	Py7ck0dE8KhoqIX8Hno1mFkQYxMS3iZdzHtQ6zQ7PSsbpwUqssBgYcccz9KXZ0M6cY2XcfD6p/6Lc
+	irpNOaCl6acShVsU0/Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilnAc-0004XH-RP; Mon, 30 Dec 2019 05:00:46 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1ilnHx-0006oZ-9f; Mon, 30 Dec 2019 05:08:21 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilnAT-0004We-SS
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 05:00:39 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1577682037; h=Content-Transfer-Encoding: Content-Type:
- MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
- To: From: Sender; bh=bq9GBo1exy5H5niGUOPp3ceZeVp8DhBy57oRJt6GY54=;
- b=Xz9lkBybgs+0cFTCr8Vtd+lzgl9kCQO62ZMxn7Fr0nefK+lJSqHA9GwvPYZRWJJdlnMvOhUI
- wn1EBTca+Oh3B5kxg6OElDmnc0umHe0MVocun9bmUQoLdDPVORogfXwjiw2jK+Gk09vqGK0Q
- WwMcqC2nri7Qiq0AVdtQBwUd3Wc=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e09845d.7faefb24c8f0-smtp-out-n02;
- Mon, 30 Dec 2019 05:00:13 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id C9D67C43383; Mon, 30 Dec 2019 05:00:13 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
-Received: from Pillair (unknown [183.83.68.224])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: pillair)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 53172C433CB;
- Mon, 30 Dec 2019 05:00:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 53172C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=pillair@codeaurora.org
-From: <pillair@codeaurora.org>
-To: "'Bjorn Andersson'" <bjorn.andersson@linaro.org>
-References: <1577181575-25788-1-git-send-email-pillair@codeaurora.org>
- <20191229031416.GK3755841@builder>
-In-Reply-To: <20191229031416.GK3755841@builder>
-Subject: RE: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
- device node
-Date: Mon, 30 Dec 2019 10:29:56 +0530
-Message-ID: <061701d5bece$044b6cd0$0ce24670$@codeaurora.org>
+ id 1ilnHe-0006cL-9V
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Dec 2019 05:08:03 +0000
+Received: by mail-io1-xd44.google.com with SMTP id z8so30494860ioh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 29 Dec 2019 21:08:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8Yx8kyKhmKzH4JISxpidB8QTM2lZzIRz5I7Z21nK62s=;
+ b=Wy2iFT+ynpk0ud9htYuiRDlt+bQZLZqBfS5KSWyer8qnQPdIOPz+Z3CcPl6JF+b5N1
+ isyjj1qSLpWtoqfdn6jl1Y15EfMzU0U6NugtYIfddrcm2aXzVSAlgpsURYThmUFlHLR6
+ GQoGn/Vtl0dQiajPagZKVLviGRG/Z1gkAaDTaOdpEmA0Hu3FwBopRSZtWHbiFhR6hHm8
+ ExapJEd1YnjaPY/Lwdiq8rWYfTcMLYz0D6Tf+iZckRb+pibIARyyF7pWhClSgGkLanhV
+ HPxKHeSTMfZv/tmqcawHoS/Yz+zt3d43IC/Hp9b/WzFWbjg9u2cY5vkr89gM6YyQBr8u
+ 7ksw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8Yx8kyKhmKzH4JISxpidB8QTM2lZzIRz5I7Z21nK62s=;
+ b=XAya1RBG1ibEjx44Ignsce7qV5nIDIwp9oZZw7R00uV1Mkj6TwsDZ/CJdnfkFe5dCf
+ RrG2yKwEps0N1bIrGov47G7D3o43l//BxdM1Ixa00v7BmOW72LQTbucEpNyNqtvZGud8
+ jNhKuWkno1zOetEUaLSk+GgdL2hdCZ3PDckQlUIJZfybkh/BjlZr/xis/bHpv6ZE7mpO
+ gYoObWM/MW5iJ0YxE6+F2IRZrtQShzs6kRSIRNrBiHXk04A45bZj/NOt+DAtwAbLO3ao
+ DoqszYOjmhtLV5x9wQzkgZUbUxwO+eTb6luLmXsJ1tLjlBg1K9lV24t3MMq/R/6WE0hD
+ 3RuA==
+X-Gm-Message-State: APjAAAWv8fym3T0cbP2Hww58j56YAqQ4mLMmLXpRTUnh9eVq1tUdcU3G
+ CVqmC0uQ/SGD/GY9cmRvvJqh9sye+UyDv0WGVzGMZb/gN70=
+X-Google-Smtp-Source: APXvYqxQR13eojKKMLAPvH2Bb4y26eVIXK1OK5duuhVgHMiwFdB8BxT0FANsVMGJtscrH734vjG1I9oTQqedgvWdB0Q=
+X-Received: by 2002:a02:c90a:: with SMTP id t10mr50282354jao.25.1577682481068; 
+ Sun, 29 Dec 2019 21:08:01 -0800 (PST)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIRwFJlApFoTZl1gTtUmtjwT7YanQH7LU55p0pBkhA=
-Content-Language: en-us
+References: <1577613635-31509-1-git-send-email-poonam.aggrwal@nxp.com>
+In-Reply-To: <1577613635-31509-1-git-send-email-poonam.aggrwal@nxp.com>
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Date: Mon, 30 Dec 2019 10:37:50 +0530
+Message-ID: <CAJ2QiJLGqRHHqrqPUArgHnsK8RNHy9tzDf4GhiUd69mztdBjXA@mail.gmail.com>
+Subject: Re: [PATCH] move reservation for elfcorehdr early
+To: Poonam Aggrwal <poonam.aggrwal@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_210037_986773_22FFEED5 
-X-CRM114-Status: GOOD (  22.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191229_210802_326874_8AEA4A24 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.26 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.pkin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,149 +92,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Cc: "takahiro.akashi@linaro.org" <takahiro.akashi@linaro.org>,
+ Nikhil Gupta <nikhil.gupta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Hi Poonam,
 
-Thanks for the comments.
-I will post an updated patchset v4 after the patch bringing-in
-"qcom,msa-fixed-perm" is merged/approved.
-I will address all the comments together.
+On Sun, Dec 29, 2019 at 9:19 AM Poonam Aggrwal <poonam.aggrwal@nxp.com> wrote:
+>
+> on some SOCs, elfcorehdr address may overlap with the address of reserved
+> memory allocated using early_init_fdt_scan_reserved_mem
+>
+> Signed-off-by: Poonam Aggrwal <poonam.aggrwal@nxp.com>
+> ---
+> Overlaps seen on LS1043A SoC:
+> [    0.000000] Reserved memory: created DMA memory pool at 0x00000000f7c00000, size 4 MiB
+> [    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id shared-dma-pool
+> [    0.000000] Reserved memory: created DMA memory pool at 0x00000000f4000000, size 32 MiB
+> [    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id shared-dma-pool
+> [    0.000000] Reserved memory: created DMA memory pool at 0x00000000f6000000, size 16 MiB
+> [    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id shared-dma-pool
+> [    0.000000] Reserving 1KB of memory at 0xf7fff000 for elfcorehdr
+>
+> panic in elfcorehdr_read:
+> [    0.443984] Unable to handle kernel paging request at virtual address ffff000037fff000
+> [    0.451942] Mem abort info:
+> [    0.454740]   ESR = 0x96000006
+> [    0.457806]   EC = 0x25: DABT (current EL), IL = 32 bits
+> [    0.463142]   SET = 0, FnV = 0
+> [    0.466202]   EA = 0, S1PTW = 0
+> [    0.469353] Data abort info:
+> [    0.472243]   ISV = 0, ISS = 0x00000006
+> [    0.476094]   CM = 0, WnR = 0
+> [    0.479072] swapper pgtable: 4k pages, 48-bit VAs, pgdp=00000000d9373000
+> [    0.485806] [ffff000037fff000] pgd=00000000f7bf7003, pud=00000000f7bf6003, pmd=0000000000000000
+> [    0.494553] Internal error: Oops: 96000006 [#1] PREEMPT SMP
+> [    0.500146] Modules linked in:
+> [    0.503211] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.5.0-rc3-00062-gbf8d1cd #5
+> [    0.510725] Hardware name: LS1043A RDB Board (DT)
+> [    0.515446] pstate: 80000005 (Nzcv daif -PAN -UAO)
+> [    0.520260] pc : __memcpy+0x78/0x180
+> [    0.523847] lr : elfcorehdr_read+0x28/0x38
+> <snip>
+> [    0.611262] Call trace:
+> [    0.613713]  __memcpy+0x78/0x180
+> [    0.616950]  vmcore_init+0x70/0x534
+>  arch/arm64/mm/init.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
 
-Thanks,
-Rakesh Pillai.
+Please work on subject like arm64: move elfcorehdr reservation early
+for crash dump kernel
 
-> -----Original Message-----
-> From: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Sent: Sunday, December 29, 2019 8:44 AM
-> To: Rakesh Pillai <pillair@codeaurora.org>
-> Cc: devicetree@vger.kernel.org; linux-arm-msm@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
-> Subject: Re: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
-> module device node
-> 
-> On Tue 24 Dec 01:59 PST 2019, Rakesh Pillai wrote:
-> 
-> > Add device node for the ath10k SNOC platform driver probe
-> > and add resources required for WCN3990 on sc7180 soc.
-> >
-> > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
-> > ---
-> > This change is dependent on the below set of changes
-> > arm64: dts: sc7180: Add qupv3_0 and qupv3_1
-> (https://lore.kernel.org/patchwork/patch/1150367/)
-> 
-> It would be clearer if you linked to the series instead, but it doesn't
-> matter at this point, this is merged already.
-> 
-> What doesn't seem to be merged is the addition of the
-> qcom,msa_fixed_perm property, so I presume I need to hold off on merging
-> this?
-> 
-> > ---
-> >  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
-> >  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28
-> ++++++++++++++++++++++++++++
-> >  2 files changed, 33 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> > index 189254f..b2ca143f 100644
-> > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> > @@ -248,6 +248,11 @@
-> >  	status = "okay";
-> >  };
-> >
-> > +&wifi {
-> > +	status = "okay";
-> > +	qcom,msa_fixed_perm;
-> 
-> As remarked by Rob, properties should be using - instead of _.
-> 
-> > +};
-> > +
-> >  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
-> >
-> >  &qup_i2c2_default {
-> > diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> > index 666e9b9..7efb97f 100644
-> > --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> > +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> > @@ -42,6 +42,12 @@
-> >  			compatible = "qcom,cmd-db";
-> >  			no-map;
-> >  		};
-> > +
-> > +		wlan_fw_mem: memory@93900000 {
-> > +			compatible = "removed-dma-pool";
-> > +			no-map;
-> > +			reg = <0 0x93900000 0 0x200000>;
-> > +		};
-> >  	};
-> >
-> >  	cpus {
-> > @@ -1119,6 +1125,28 @@
-> >  				#clock-cells = <1>;
-> >  			};
-> >  		};
-> > +
-> > +		wifi: wifi@18800000 {
-> > +			compatible = "qcom,wcn3990-wifi";
-> > +			reg = <0 0x18800000 0 0x800000>;
-> > +			reg-names = "membase";
-> > +			iommus = <&apps_smmu 0xC0 0x1>;
-> 
-> Lowercase 'c' please.
-> 
-> Regards,
-> Bjorn
-> 
-> > +			interrupts =
-> > +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0
-> */ >,
-> > +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1
-> */ >,
-> > +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2
-> */ >,
-> > +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3
-> */ >,
-> > +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4
-> */ >,
-> > +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5
-> */ >,
-> > +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6
-> */ >,
-> > +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7
-> */ >,
-> > +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8
-> */ >,
-> > +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9
-> */ >,
-> > +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10
-> */>,
-> > +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11
-> */>;
-> > +			memory-region = <&wlan_fw_mem>;
-> > +			status = "disabled";
-> > +		};
-> >  	};
-> >
-> >  	timer {
-> > --
-> > 2.7.4
-> >
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Rest looks OK. I also tested on Thunder X2 platform with no regression
+seen with this patch.
+
+Reviewed-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+
+--pk
 
 _______________________________________________
 linux-arm-kernel mailing list
