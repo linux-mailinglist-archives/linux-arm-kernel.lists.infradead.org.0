@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7703C12DB1D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 20:12:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C81A12DBC9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 21:09:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tNCS/c6HCdvOhHU2IusyHwqM6bzxLhZpxX3QwgAKysY=; b=UGh
-	uc8oXkUlMJs3jGPi5av8CQ6WhOR3qS6v9W9vqCbzMFUQhiL7lNmO76kP0X9eqmbohKyOA4+uxb4ky
-	FE0oHC+jNAHDxY/LxoZQJylJDghrWi4VW9N6di4kIpBM8AQ1PX6u81paUauU2xRkbl2hX2CSF5QKn
-	IDnD51GvbtABCJrGytk4Tc+QGLPJpAZlndMI7ssnMEGkm3h/mCN+MmLe8ILuJnZClwrXVTYFfdi7d
-	DyyEm7F3OS/lpVddtyC0q9SJegwBPsmmeQJkK8W+lgD6ewSCzOY/Ju/EmN47tfIcBfyyXclIWSO4p
-	Xvuf7pLchBt/P+ETof82cCcYoCA1Jmw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xe/tcdKS+/+U/EfJ5zEvBXPR/r+vR4nG01MfSTC49Ko=; b=oGEVj8PxJTD/eR
+	MuO01i/jcZBOUZN0Jv6TIQS+Ap1Cgn/F2cNJVsxk/xHGVCPY88vmS+88e/BZXzPTLdcFnaGnHKaB8
+	5W2zhVe7FbIWzeQq0GVTtYlRWEJTXY3OyBlvL9W1GK7dajKGOp3h7a8Jyv1ccbSHTtX+ECZcajUHq
+	Ud2TMeFfhhLl/wzdkhG87r1sGyw7rDMxUIYvQkc58zZcECIoGU5ydi6Rq+4E38a2+ecRqdXK8oB6F
+	ntZjX4zuLjDLiDZ2QmF8hu8vVHlYs9HYkt6vgy4o5NNdEt4VK6Xb+JsQZNSxJSe7+Bi2nwCHm/Nlc
+	Td0DsnwG4FY2jGf+GcfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imMw6-0008VC-5U; Tue, 31 Dec 2019 19:12:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1imNpq-0002TJ-N0; Tue, 31 Dec 2019 20:09:46 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imMvz-0008UU-TX; Tue, 31 Dec 2019 19:12:05 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so35831766wrr.1;
- Tue, 31 Dec 2019 11:12:01 -0800 (PST)
+ id 1imNpk-0002T0-0B
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 20:09:41 +0000
+Received: by mail-il1-x141.google.com with SMTP id z12so30843574iln.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Dec 2019 12:09:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Ugkmn+9FfNrqX0nLEPxcXHS7THYr0ykg5MLCv/1z8zQ=;
- b=hPoYQr6hMewVT8HtmuJwWQC8WdcrMBGE/UrhU2h5c5RnmqBdO49jlqYz8Y9MkJTNs9
- k1WVy2CyUSgJyQmeko3i8bczYU7u1ATfoFn+nRmG0luUfq6PfNHNgE1dsaxNOMCWDqNz
- xatqT2VOpXN/e0Oy8UVoJ3fo4Gk+LthmCCENPLQOQridmr7QnkY49h9mqPo9i4wEYPJn
- kH7YsFPZwsQlu1tHi0hk/U5I9FazLr7NeAWxvuiCDPVCvmQXrmaAckzKEqM5NFRsP6Z7
- IJOIiwNvOAK3vfOfgXyaTZCPLWSZ5H1a1v8nB8H/UveDGaN+72Gc9utfRL4E3RfFMK7Z
- KuGg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iMq021Q6rh63I8HW48j7kZEsvOhOgIZ1P3FZVqzZ6gs=;
+ b=NL9WDD4etkkaMu8o4/dZyhklcox08jitUCc6ApGajt0g1CT75OqTdEm20laAlLM+2W
+ DYN98su9dPkX9FoAB6DyR69f2A3wDWuevmMDq0kSkkXKrRze6i3nxiLTMUOobg8Jwjb0
+ n0mezUNSThxFYUzfxRb+LpPFsPOrZ/62BZC8R1lfursTX7eoU8PkF7w5uR6wtLQ8cyS5
+ H+rlblyYk3NBI89zMrTgJ9IpZmHszxW2mdLsSorWcaIDo/HzCfWSNaAt3C8HQroIYxVe
+ /QDzOQZgHgXqSUzUJafbn/P1tPn1E2uB6dXxjSn8Svn+aqUb4LDQHmTw6Y5ToynJ3BHY
+ q23w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Ugkmn+9FfNrqX0nLEPxcXHS7THYr0ykg5MLCv/1z8zQ=;
- b=ggVsWo3UdR+Acl8ErejDP9RJQSqkl4uO5lUrmH7nqsZQWJmviid9ZnUJoCPbMmvpnE
- KRA3iwuSuwYNkodVTn/NioMSLeUKrHlv9dCajboGNSL0vSV/w3Oo5OA7vs6/GdtoLRdW
- r7jlICwQUC6+Sz6A98hJ5/h1Vt3+mqL3qb0CsZ6DOeruD7Il2tJY4wqU+CDpJe7Bx3wX
- Gia2XU+m3ZHCxVM3DMtfg4TyueypkrNmhPxPVzHive2wjm3WlXbyCI9/Y417uJxOHyi7
- 2ghtL8YHjuKGP8dl6IZ8RyRHeBPO+mdi6w4gYRCUVARxYE8+nu3DFfoNGE4ziwsEVjzZ
- KLhQ==
-X-Gm-Message-State: APjAAAVV3cP29dpMnCyL8Uw2LokTGWYn8rbpume10lpI9coauy1PeQvd
- TgwaXqK3SrvjoAx0bJOd9Dg=
-X-Google-Smtp-Source: APXvYqyF0D0ikIVwTiFMzj6mqfRpTZsJr/v++9vO8XHr7OjNm2eCLMU36XEndCzwnyitR0Cm69XkjA==
-X-Received: by 2002:adf:d183:: with SMTP id v3mr43483613wrc.180.1577819520818; 
- Tue, 31 Dec 2019 11:12:00 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q6sm53695403wrx.72.2019.12.31.11.11.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 31 Dec 2019 11:12:00 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: robh+dt@kernel.org
-Subject: [PATCH] arm64: dts: rockchip: rk3399-firefly: remove num-slots from
- &sdio0 node
-Date: Tue, 31 Dec 2019 20:11:54 +0100
-Message-Id: <20191231191154.5587-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iMq021Q6rh63I8HW48j7kZEsvOhOgIZ1P3FZVqzZ6gs=;
+ b=hlzh5dyNeQSstQVsTo+01SEPXCqISvMY2NNSySkMo4/QhI36kt+BeCXS3xdIkwFMSM
+ edl73FbGg4GWA/w30f9cxT7/4zWgsMKqYCJKr+35s6obkbCd6CKXOIP9Rk7F4jg56Z4e
+ BAZ9/fh7UkXyjksgqdQpVMZdKnx5qw2kW9EHptTAfb4+K6qGSkTeIT1ewrXaAsWYGyP4
+ iZ6+0T4Xwgo5itDeE2bAj5hV+J9lbrf7R/yC1KzrGLku9NRZnAzWYT9zbQcf7iIpCtxs
+ qT4NsRr2Gk/uoYAZ/lBY8nohTUpqlzsyH2jm12uCj7fMTOm6pxH5MhMhRqc558EqN+RO
+ XIhA==
+X-Gm-Message-State: APjAAAUjfFYnWpfJr2YnBDrhB1n4NpjPoOKRZ1weLD1S3Rb3G4rqaubF
+ 8sniJFeJnQ41gQeQoZYleZuaS1GJnnPDxBrPhtA=
+X-Google-Smtp-Source: APXvYqzWKYncZtJiNoouaDYXXOYbH4WHkENN/PJ9VURiiLNO1UznOkEcd0n2TVRxmtVo9Y4DmvTPhVEoc44I90W3rOM=
+X-Received: by 2002:a92:4891:: with SMTP id j17mr59752468ilg.33.1577822978611; 
+ Tue, 31 Dec 2019 12:09:38 -0800 (PST)
+MIME-Version: 1.0
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+In-Reply-To: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Tue, 31 Dec 2019 14:09:27 -0600
+Message-ID: <CABb+yY0qh-qWJWxEaB9_XxmiFb=xP0hOxpm1j54seeT3dMKt2w@mail.gmail.com>
+Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+To: Viresh Kumar <viresh.kumar@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_111203_951893_019FC5C6 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191231_120940_045782_16F1CF72 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
+ provider (jassisinghbrar[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,37 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The option "num-slots" was deprecated long time ago, so remove it.
+On Fri, Nov 29, 2019 at 3:32 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
+>
+> The SCMI specification is fairly independent of the transport protocol,
+> which can be a simple mailbox (already implemented) or anything else.
+> The current Linux implementation however is very much dependent of the
+> mailbox transport layer.
+>
+> This patch makes the SCMI core code (driver.c) independent of the
+> mailbox transport layer and moves all mailbox related code to a new
+> file: mailbox.c.
+>
+> We can now implement more transport protocols to transport SCMI
+> messages.
+>
+> The transport protocols just need to provide struct scmi_transport_ops,
+> with its version of the callbacks to enable exchange of SCMI messages.
+>
+We can either add new transport layer between SCMI and Mailbox layers,
+or we can write new transport as a mailbox driver (which I always
+thought could be a usecase). Right now I am of no strong opinion
+either way.  Depends, what other transport do you have in mind?
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399-firefly.dts | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-index 92de83dd4..7584351a1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-@@ -660,7 +660,6 @@
- 	keep-power-in-suspend;
- 	mmc-pwrseq = <&sdio_pwrseq>;
- 	non-removable;
--	num-slots = <1>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
- 	sd-uhs-sdr104;
--- 
-2.11.0
-
+Cheers!
 
 _______________________________________________
 linux-arm-kernel mailing list
