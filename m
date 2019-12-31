@@ -2,75 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DA3112D775
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 10:31:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8243E12D77B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 10:33:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gSzRUGwcIMyLVQmyCRz7st5pDB5G5IMlNTAp0f5hglA=; b=SQwkV+DCTqoJl+
-	dY6arx7kRMNOdcOUS5CLYCL9+zb4xLyc+zi2AY6TJXltqpEuAZp9eVYoMty+lsYQ0PlVme1DRT8/0
-	nI+u4jtXVdX2t9gIfCm86yeCkeqeR68KzOGVAw4tP4JBQDP6Ji8Akq7B6RFLtXhsaRSKnuHwWnIdm
-	CCiMo4GNkkD1kfuXrysyfnJjsQNDQQNE+4QN/bNrPpg+TTtJG4svc/6SjA7VwZZaLH/2iMgF5XUFX
-	3qLdzNIoGkzRcSM8UXKsb1M9UPEiQ+FXDCfpb9g7NvavkdB64ZhyROFdRvZ5wmvvb0nfZ1lvb2de7
-	WIOv8uhdPYKfTACzeRdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4RVrmtIkQLfVl3MYEg2r75nLKAWDAq/KMbHxrMo5Hzs=; b=SHxEuL7BBJ4Kgy
+	/w8susz2xgBKMRqZm0aSugNntxHtyb1txZOQeMRlRWqedS01xNJXmbfGBSoFvhl6VyWfJ5SH1aVJv
+	Si+VgfThBIZGzQLDDwM1ZnePVhzlKwrqQyLC1/qd/krQNKanTG6x1TJTPbLx/SzYZZm+w+wDkbSv3
+	Hsf7V/J5J4XnXgztjg6t4l8PRv3IdyXiYtYd3i5M2Tfj0r5wdPFVu3Jr7BdanmTnjhEf21MmZ+S4N
+	CU/y6wQTyWkByqEvT6LYPWLJqkqGTNojgQURODhq4TiwrIYcTc51+SXrO/ZrlJLbf6YLHy3lOwXft
+	l1VOdI0x7szgsPAtROuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imDre-000050-1y; Tue, 31 Dec 2019 09:30:58 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1imDrU-0008W3-6z; Tue, 31 Dec 2019 09:30:49 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xBV9UUbh030702,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCAS12.realtek.com.tw[172.21.6.16])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xBV9UUbh030702
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 31 Dec 2019 17:30:31 +0800
-Received: from RTEXMB04.realtek.com.tw (172.21.6.97) by
- RTITCAS12.realtek.com.tw (172.21.6.16) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Tue, 31 Dec 2019 17:30:30 +0800
-Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB04.realtek.com.tw (172.21.6.97) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Tue, 31 Dec 2019 17:30:30 +0800
-Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
- RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
- 15.01.1779.005; Tue, 31 Dec 2019 17:30:30 +0800
-From: James Tai <james.tai@realtek.com>
-To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>
-Subject: RE: [PATCH 10/14] ARM: dts: rtd1195: Add SB2 and SCPU Wrapper syscon
- nodes
-Thread-Topic: [PATCH 10/14] ARM: dts: rtd1195: Add SB2 and SCPU Wrapper syscon
- nodes
-Thread-Index: AQHVqT1w3e0DCQM4MUy3rWx8/bISHqfUJzhw
-Date: Tue, 31 Dec 2019 09:30:30 +0000
-Message-ID: <0f3c6ae55b524367913a68fe3f7faa47@realtek.com>
-References: <20191202182205.14629-1-afaerber@suse.de>
- <20191202182205.14629-11-afaerber@suse.de>
-In-Reply-To: <20191202182205.14629-11-afaerber@suse.de>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.187]
+	id 1imDu3-0000Tx-Rr; Tue, 31 Dec 2019 09:33:27 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imDts-0000TA-0K
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 09:33:17 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id m13so1029470pjb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Dec 2019 01:33:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WLmpXZu1vud7niRdK/VtHaBa6VMJDe67/Y7KA6ocmug=;
+ b=fmXZX4SfoxETf2w1B/4tGkarGFv7V3B1rBT4L7cKOM0uOfYwVoT8NemY1iv5USjWhS
+ 2N5AQOUusc+2plTic4C2yxN6eicH/4EKqjjqHv7dTKQaph+TAZvJivTy6OTaMvjpwNJd
+ T86EDvLDw4NYsfOWNxMc6c2nY+DJO/kzoaTdIQJPMB5mHxfYJR6n2xjoTGMyA90sx/8d
+ IHCcooO2LtVaEiP1cv6Cu0IPjkW21NH05Nd9Xxumh54Bmo/18y+Vp+pID4Tv/NO2+6Fi
+ Cgc+YIMb9gGc6uPRwo2Nqzsfm2pAFTg5gRhb4tRX4U08nljz7REvEg3dl5BPQP66nLqt
+ K4pA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WLmpXZu1vud7niRdK/VtHaBa6VMJDe67/Y7KA6ocmug=;
+ b=Qk0Bzk4sYBb+baWhbqWZNz2GnsGB84mB1OS8veVfDrxYwZoWVkhMOw7TwV/GsL55eT
+ QZAs9lBxyHqsKHLl2nw50vAPCLAEfgwpmhTHhSi2mTSAZOapMIVDyWm0ZLTrn2Jk8RR1
+ EJ0zwUdZVRyd1M3JCmyVv+95N90q22DAjeoVV78eJ6A5unpIKcKCAMBPJiDKAIsaO+qN
+ xSrPfo7Y7mdVVTUkUGmkFXBHSwHJYLIT6UnmS/558w0AKU80A2skkb+4z9JcZTW1J72z
+ 6HjnwdWvOSwL6qO2GDnaceBg3WycnBFKU0ctJPuiYNbWAap3RaB5GJ8mLA+s9PmD8WJp
+ KGxA==
+X-Gm-Message-State: APjAAAWPgNeRU6ua8u4xG8DOm1DKnmotcW7FdwPSP7IfMwKgsB60FYT5
+ V32rsBXgtnkh47hAOO7CiPM=
+X-Google-Smtp-Source: APXvYqypGvF/jJ1bRnmW1uoYV7HZivjXfwr5oWriguEXgE6O+r9cRO5TMc5/K6ie5WKI7dxBkWODqA==
+X-Received: by 2002:a17:90a:d807:: with SMTP id
+ a7mr5294156pjv.15.1577784795223; 
+ Tue, 31 Dec 2019 01:33:15 -0800 (PST)
+Received: from ruantu.dev.localdomain ([103.103.128.212])
+ by smtp.gmail.com with ESMTPSA id h12sm39870970pfo.12.2019.12.31.01.33.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 31 Dec 2019 01:33:14 -0800 (PST)
+From: YuDong Zhang <mtwget@gmail.com>
+To: robh+dt@kernel.org
+Subject: [PATCH] dt-bindings: iio: adc: vf610-adc: Remove redundant property
+ from vf610_adc
+Date: Tue, 31 Dec 2019 17:33:05 +0800
+Message-Id: <20191231093305.1629390-1-mtwget@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_013048_383114_C23A53A8 
-X-CRM114-Status: GOOD (  12.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191231_013316_079086_BD0ACDB3 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.75.126.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mtwget[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,41 +96,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, YuDong Zhang <mtwget@gmail.com>, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiBBZGQgc3lzY29uIG1mZCBub2RlcyBmb3IgU0IyIGFuZCBTQ1BVIFdyYXBwZXIgdG8gUlREMTE5
-NSBEVC4NCj4gDQo+IENjOiBKYW1lcyBUYWkgPGphbWVzLnRhaUByZWFsdGVrLmNvbT4NCj4gU2ln
-bmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPg0KPiAtLS0NCj4g
-IGFyY2gvYXJtL2Jvb3QvZHRzL3J0ZDExOTUuZHRzaSB8IDE4ICsrKysrKysrKysrKysrKysrKw0K
-PiAgMSBmaWxlIGNoYW5nZWQsIDE4IGluc2VydGlvbnMoKykNCj4gDQo+IGRpZmYgLS1naXQgYS9h
-cmNoL2FybS9ib290L2R0cy9ydGQxMTk1LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9ydGQxMTk1
-LmR0c2kNCj4gaW5kZXggMDlhY2I5OTA4M2MxLi4yMTg5NzIxMGQ5ZDAgMTAwNjQ0DQo+IC0tLSBh
-L2FyY2gvYXJtL2Jvb3QvZHRzL3J0ZDExOTUuZHRzaQ0KPiArKysgYi9hcmNoL2FybS9ib290L2R0
-cy9ydGQxMTk1LmR0c2kNCj4gQEAgLTExOSw2ICsxMTksMTUgQEANCj4gIAkJCQlyYW5nZXMgPSA8
-MHgwIDB4NzAwMCAweDEwMDA+Ow0KPiAgCQkJfTsNCj4gDQo+ICsJCQlzYjI6IHN5c2NvbkAxYTAw
-MCB7DQo+ICsJCQkJY29tcGF0aWJsZSA9ICJzeXNjb24iLCAic2ltcGxlLW1mZCI7DQo+ICsJCQkJ
-cmVnID0gPDB4MWEwMDAgMHgxMDAwPjsNCj4gKwkJCQlyZWctaW8td2lkdGggPSA8ND47DQo+ICsJ
-CQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47DQo+ICsJCQkJI3NpemUtY2VsbHMgPSA8MT47DQo+ICsJ
-CQkJcmFuZ2VzID0gPDB4MCAweDFhMDAwIDB4MTAwMD47DQo+ICsJCQl9Ow0KPiArDQo+ICAJCQlt
-aXNjOiBzeXNjb25AMWIwMDAgew0KPiAgCQkJCWNvbXBhdGlibGUgPSAic3lzY29uIiwgInNpbXBs
-ZS1tZmQiOw0KPiAgCQkJCXJlZyA9IDwweDFiMDAwIDB4MTAwMD47DQo+IEBAIC0xMjcsNiArMTM2
-LDE1IEBADQo+ICAJCQkJI3NpemUtY2VsbHMgPSA8MT47DQo+ICAJCQkJcmFuZ2VzID0gPDB4MCAw
-eDFiMDAwIDB4MTAwMD47DQo+ICAJCQl9Ow0KPiArDQo+ICsJCQlzY3B1X3dyYXBwZXI6IHN5c2Nv
-bkAxZDAwMCB7DQo+ICsJCQkJY29tcGF0aWJsZSA9ICJzeXNjb24iLCAic2ltcGxlLW1mZCI7DQo+
-ICsJCQkJcmVnID0gPDB4MWQwMDAgMHgxMDAwPjsNCj4gKwkJCQlyZWctaW8td2lkdGggPSA8ND47
-DQo+ICsJCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47DQo+ICsJCQkJI3NpemUtY2VsbHMgPSA8MT47
-DQo+ICsJCQkJcmFuZ2VzID0gPDB4MCAweDFkMDAwIDB4MTAwMD47DQo+ICsJCQl9Ow0KPiAgCQl9
-Ow0KPiANCj4gIAkJZ2ljOiBpbnRlcnJ1cHQtY29udHJvbGxlckBmZjAxMTAwMCB7DQo+IC0tDQo+
-IDIuMTYuNA0KPiANCj4gDQpBY2tlZC1ieTogSmFtZXMgVGFpIDxqYW1lcy50YWlAcmVhbHRlay5j
-b20+DQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+Remove the num-channels property that vf610_adc driver will not use.
+
+Signed-off-by: YuDong Zhang <mtwget@gmail.com>
+---
+ arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 1 -
+ arch/arm/boot/dts/imx6ul-phytec-segin.dtsi    | 5 -----
+ arch/arm/boot/dts/imx6ul.dtsi                 | 1 -
+ arch/arm/boot/dts/imx6ull-colibri.dtsi        | 1 -
+ 4 files changed, 8 deletions(-)
+
+diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
+index f05e91841202..4394e1370d34 100644
+--- a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
++++ b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
+@@ -72,7 +72,6 @@ reg_vref_adc: regulator-vref-adc {
+ &adc1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_adc1>;
+-	num-channels = <3>;
+ 	vref-supply = <&reg_vref_adc>;
+ 	status = "okay";
+ };
+diff --git a/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi b/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
+index 8d5f8dc6ad58..e7198c2922c6 100644
+--- a/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
++++ b/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
+@@ -83,11 +83,6 @@ &adc1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_adc1>;
+ 	vref-supply = <&reg_adc1_vref_3v3>;
+-	/*
+-	 * driver can not separate a specific channel so we request 4 channels
+-	 * here - we need only the fourth channel
+-	 */
+-	num-channels = <4>;
+ 	status = "disabled";
+ };
+ 
+diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
+index d9fdca12819b..458a301be215 100644
+--- a/arch/arm/boot/dts/imx6ul.dtsi
++++ b/arch/arm/boot/dts/imx6ul.dtsi
+@@ -892,7 +892,6 @@ adc1: adc@2198000 {
+ 				reg = <0x02198000 0x4000>;
+ 				interrupts = <GIC_SPI 100 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clks IMX6UL_CLK_ADC1>;
+-				num-channels = <2>;
+ 				clock-names = "adc";
+ 				fsl,adck-max-frequency = <30000000>, <40000000>,
+ 							 <20000000>;
+diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi b/arch/arm/boot/dts/imx6ull-colibri.dtsi
+index 9145c536d71a..1e70c9da9e36 100644
+--- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
++++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
+@@ -50,7 +50,6 @@ reg_sd1_vmmc: regulator-sd1-vmmc {
+ };
+ 
+ &adc1 {
+-	num-channels = <10>;
+ 	vref-supply = <&reg_module_3v3_avdd>;
+ };
+ 
+-- 
+2.24.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
