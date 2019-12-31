@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 992ED12D590
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 02:40:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7384D12D5A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 03:01:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8gl2P8zN+CwDKVgJnuAc4pGTO2Ly6zQ5pCzNmCrI84=; b=h1XUL4qeU2a5Ex
-	jKKuiu5I7jVQXKYcd1jdFusy6cTw0bqyToRs57+dYIG4LvJI8Ri13iK6pnyis4BoKgzhzybQvvjaQ
-	8KcLGnIQZm/zDYnV4ZYNfXyCCAnOPI+RF9WhaPM4V2+NDMWcho9V6+9b+shnHXPbQy7SXbZhL/t7Q
-	XVTTJwEPu0m03DlGOhTW5VMj4DRrgKvp4ZIPtQciZD7468LVwsdlNhOriSTZF0ByUQlSQg0rKL5GS
-	2q9ukczZK3JC6ggjcHB55MzKPTjQPeHNiy4sLVJAPsvshSZei4Mbv3kuk+LBu/EpftlZgjHeUNq7I
-	NVDAHXoeqpapist75rQA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eEvRXpMFMEej8Fa9BrL2VmwpwaeUY7Y+Rk8VMo2UP3s=; b=GjhUPkrf1wOzq1
+	bqD1wXtyvzJChArF3yEUuGUdGZtmfvhMTxx4ef0dfzlb/LPqrMA2JJLcx21F7tP/aMGWX+1iLkIYL
+	7XQ9vK0tnomo3IpzFU81/TvHI191FM3x6cPs9wh1o/uDEjkxhikvMD1xdCXmIRyEs9qp7I08aKXGM
+	8GnuLHlJtS4Q3xjru8jNB2Wsg+7S8ngheg2ih0mcI+vAL1FrqoBwdawGemKc+kOPwNSKwub0RfquH
+	oEL6dwSrxCwQUmKFm2QWYQ6LHfXBtfZg3NXcnpoYiLaRnp78cHMbyEQ48k+YYMVdFeqnZWEiEZSf9
+	dt5c1CwPPzAzGAaiJqXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im6WJ-0000OM-5q; Tue, 31 Dec 2019 01:40:27 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1im6r0-0006Lf-JI; Tue, 31 Dec 2019 02:01:50 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1im6W3-0008Pm-RK; Tue, 31 Dec 2019 01:40:14 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 64F32C6CC611BE425C36;
- Tue, 31 Dec 2019 09:40:06 +0800 (CST)
-Received: from [127.0.0.1] (10.177.131.64) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Tue, 31 Dec 2019
- 09:39:59 +0800
-Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
- crash_core.c
-To: Dave Young <dyoung@redhat.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-2-chenzhou10@huawei.com>
- <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
- <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
- <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
-From: Chen Zhou <chenzhou10@huawei.com>
-Message-ID: <75429528-ba74-cfd3-b5bc-df5425ac0496@huawei.com>
-Date: Tue, 31 Dec 2019 09:39:58 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1im6qa-0006Bh-L2; Tue, 31 Dec 2019 02:01:26 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 30 Dec 2019 18:01:20 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,377,1571727600"; d="scan'208";a="244016589"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga004.fm.intel.com with ESMTP; 30 Dec 2019 18:01:18 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1im6qU-000HId-8e; Tue, 31 Dec 2019 10:01:18 +0800
+Date: Tue, 31 Dec 2019 10:00:48 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 3/3] mtd: onenand: Enable compile testing of OMAP and
+ Samsung drivers
+Message-ID: <201912310904.9iM6MaFr%lkp@intel.com>
+References: <20191229183612.22133-3-krzk@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
-X-Originating-IP: [10.177.131.64]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20191229183612.22133-3-krzk@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_174012_211426_354E1662 
-X-CRM114-Status: GOOD (  31.02  )
+X-CRM114-CacheID: sfid-20191230_180124_746511_5F167509 
+X-CRM114-Status: GOOD (  16.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,400 +68,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, horms@verge.net.au,
- linux-doc@vger.kernel.org, catalin.marinas@arm.com, bhsharma@redhat.com,
- xiexiuqi@huawei.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- mingo@redhat.com, james.morse@arm.com, tglx@linutronix.de, will@kernel.org,
+Cc: linux-samsung-soc@vger.kernel.org, kbuild-all@lists.01.org,
+ Vignesh Raghavendra <vigneshr@ti.com>, Richard Weinberger <richard@nod.at>,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
+Hi Krzysztof,
 
-On 2019/12/28 17:32, Dave Young wrote:
-> On 12/27/19 at 07:04pm, Chen Zhou wrote:
->> Hi Dave
->>
->> On 2019/12/27 13:54, Dave Young wrote:
->>> Hi,
->>> On 12/23/19 at 11:23pm, Chen Zhou wrote:
->>>> In preparation for supporting reserve_crashkernel_low in arm64 as
->>>> x86_64 does, move reserve_crashkernel_low() into kernel/crash_core.c.
->>>>
->>>> Note, in arm64, we reserve low memory if and only if crashkernel=X,low
->>>> is specified. Different with x86_64, don't set low memory automatically.
->>>
->>> Do you have any reason for the difference?  I'd expect we have same
->>> logic if possible and remove some of the ifdefs.
->>
->> In x86_64, if we reserve crashkernel above 4G, then we call reserve_crashkernel_low()
->> to reserve low memory.
->>
->> In arm64, to simplify, we call reserve_crashkernel_low() at the beginning of reserve_crashkernel()
->> and then relax the arm64_dma32_phys_limit if reserve_crashkernel_low() allocated something.
->> In this case, if reserve crashkernel below 4G there will be 256M low memory set automatically
->> and this needs extra considerations.
-> 
-> Sorry that I did not read the old thread details and thought that is
-> arch dependent.  But rethink about that, it would be better that we can
-> have same semantic about crashkernel parameters across arches.  If we
-> make them different then it causes confusion, especially for
-> distributions.
-> 
-> OTOH, I thought if we reserve high memory then the low memory should be
-> needed.  There might be some exceptions, but I do not know the exact
-> one, can we make the behavior same, and special case those systems which
-> do not need low memory reservation.
-> 
-I thought like this and did implement with crashkernel parameters arch independent.
-This is my v4: https://lkml.org/lkml/2019/5/6/1361, i implemented according to x86_64's
-behavior.
+I love your patch! Perhaps something to improve:
 
->>
->> previous discusses:
->> 	https://lkml.org/lkml/2019/6/5/670
->> 	https://lkml.org/lkml/2019/6/13/229
-> 
-> Another concern from James:
-> "
-> With both crashk_low_res and crashk_res, we end up with two entries in /proc/iomem called
-> "Crash kernel". Because its sorted by address, and kexec-tools stops searching when it
-> find "Crash kernel", you are always going to get the kernel placed in the lower portion.
-> "
-> 
-> The kexec-tools code is iterating all "Crash kernel" ranges and add them
-> in an array.  In X86 code, it uses the higher range to locate memory.
+[auto build test WARNING on linus/master]
+[also build test WARNING on v5.5-rc4 next-20191220]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 
-We also discussed about this: https://lkml.org/lkml/2019/6/13/227.
-I guess James's opinion is that kexec-tools should take forward compatibility into account.
-"But we can't rely on people updating user-space when they update the kernel!" -- James
+url:    https://github.com/0day-ci/linux/commits/Krzysztof-Kozlowski/mtd-onenand-samsung-Fix-pointer-cast-Wpointer-to-int-cast-warnings-on-64-bit/20191230-030838
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git bf8d1cd4386535004c4afe7f03d37f9864c9940e
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-129-g341daf20-dirty
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
 
-> 
->>
->>>
->>>>
->>>> Reported-by: kbuild test robot <lkp@intel.com>
->>>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
->>>> ---
->>>>  arch/x86/kernel/setup.c    | 62 ++++-----------------------------
->>>>  include/linux/crash_core.h |  3 ++
->>>>  include/linux/kexec.h      |  2 --
->>>>  kernel/crash_core.c        | 87 ++++++++++++++++++++++++++++++++++++++++++++++
->>>>  kernel/kexec_core.c        | 17 ---------
->>>>  5 files changed, 96 insertions(+), 75 deletions(-)
->>>>
->>>> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
->>>> index cedfe20..5f38942 100644
->>>> --- a/arch/x86/kernel/setup.c
->>>> +++ b/arch/x86/kernel/setup.c
->>>> @@ -486,59 +486,6 @@ static void __init memblock_x86_reserve_range_setup_data(void)
->>>>  # define CRASH_ADDR_HIGH_MAX	SZ_64T
->>>>  #endif
->>>>  
->>>> -static int __init reserve_crashkernel_low(void)
->>>> -{
->>>> -#ifdef CONFIG_X86_64
->>>> -	unsigned long long base, low_base = 0, low_size = 0;
->>>> -	unsigned long total_low_mem;
->>>> -	int ret;
->>>> -
->>>> -	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
->>>> -
->>>> -	/* crashkernel=Y,low */
->>>> -	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size, &base);
->>>> -	if (ret) {
->>>> -		/*
->>>> -		 * two parts from kernel/dma/swiotlb.c:
->>>> -		 * -swiotlb size: user-specified with swiotlb= or default.
->>>> -		 *
->>>> -		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
->>>> -		 * to 8M for other buffers that may need to stay low too. Also
->>>> -		 * make sure we allocate enough extra low memory so that we
->>>> -		 * don't run out of DMA buffers for 32-bit devices.
->>>> -		 */
->>>> -		low_size = max(swiotlb_size_or_default() + (8UL << 20), 256UL << 20);
->>>> -	} else {
->>>> -		/* passed with crashkernel=0,low ? */
->>>> -		if (!low_size)
->>>> -			return 0;
->>>> -	}
->>>> -
->>>> -	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
->>>> -	if (!low_base) {
->>>> -		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
->>>> -		       (unsigned long)(low_size >> 20));
->>>> -		return -ENOMEM;
->>>> -	}
->>>> -
->>>> -	ret = memblock_reserve(low_base, low_size);
->>>> -	if (ret) {
->>>> -		pr_err("%s: Error reserving crashkernel low memblock.\n", __func__);
->>>> -		return ret;
->>>> -	}
->>>> -
->>>> -	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
->>>> -		(unsigned long)(low_size >> 20),
->>>> -		(unsigned long)(low_base >> 20),
->>>> -		(unsigned long)(total_low_mem >> 20));
->>>> -
->>>> -	crashk_low_res.start = low_base;
->>>> -	crashk_low_res.end   = low_base + low_size - 1;
->>>> -	insert_resource(&iomem_resource, &crashk_low_res);
->>>> -#endif
->>>> -	return 0;
->>>> -}
->>>> -
->>>>  static void __init reserve_crashkernel(void)
->>>>  {
->>>>  	unsigned long long crash_size, crash_base, total_mem;
->>>> @@ -602,9 +549,12 @@ static void __init reserve_crashkernel(void)
->>>>  		return;
->>>>  	}
->>>>  
->>>> -	if (crash_base >= (1ULL << 32) && reserve_crashkernel_low()) {
->>>> -		memblock_free(crash_base, crash_size);
->>>> -		return;
->>>> +	if (crash_base >= (1ULL << 32)) {
->>>> +		if (reserve_crashkernel_low()) {
->>>> +			memblock_free(crash_base, crash_size);
->>>> +			return;
->>>> +		}
->>>> +		insert_resource(&iomem_resource, &crashk_low_res);
->>>
->>> Some specific reason to move insert_resouce out of the
->>> reserve_crashkernel_low function?
->>
->> No specific reason.
->> I just exposed arm64 "Crash kernel low" in request_standard_resources() as other resources,
->> so did this change.
-> 
-> Ok.
-> 
->>
->>>
->>>>  	}
->>>>  
->>>>  	pr_info("Reserving %ldMB of memory at %ldMB for crashkernel (System RAM: %ldMB)\n",
->>>> diff --git a/include/linux/crash_core.h b/include/linux/crash_core.h
->>>> index 525510a..4df8c0b 100644
->>>> --- a/include/linux/crash_core.h
->>>> +++ b/include/linux/crash_core.h
->>>> @@ -63,6 +63,8 @@ phys_addr_t paddr_vmcoreinfo_note(void);
->>>>  extern unsigned char *vmcoreinfo_data;
->>>>  extern size_t vmcoreinfo_size;
->>>>  extern u32 *vmcoreinfo_note;
->>>> +extern struct resource crashk_res;
->>>> +extern struct resource crashk_low_res;
->>>>  
->>>>  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
->>>>  			  void *data, size_t data_len);
->>>> @@ -74,5 +76,6 @@ int parse_crashkernel_high(char *cmdline, unsigned long long system_ram,
->>>>  		unsigned long long *crash_size, unsigned long long *crash_base);
->>>>  int parse_crashkernel_low(char *cmdline, unsigned long long system_ram,
->>>>  		unsigned long long *crash_size, unsigned long long *crash_base);
->>>> +int __init reserve_crashkernel_low(void);
->>>>  
->>>>  #endif /* LINUX_CRASH_CORE_H */
->>>> diff --git a/include/linux/kexec.h b/include/linux/kexec.h
->>>> index 1776eb2..5d5d963 100644
->>>> --- a/include/linux/kexec.h
->>>> +++ b/include/linux/kexec.h
->>>> @@ -330,8 +330,6 @@ extern int kexec_load_disabled;
->>>>  
->>>>  /* Location of a reserved region to hold the crash kernel.
->>>>   */
->>>> -extern struct resource crashk_res;
->>>> -extern struct resource crashk_low_res;
->>>>  extern note_buf_t __percpu *crash_notes;
->>>>  
->>>>  /* flag to track if kexec reboot is in progress */
->>>> diff --git a/kernel/crash_core.c b/kernel/crash_core.c
->>>> index 9f1557b..eb72fd6 100644
->>>> --- a/kernel/crash_core.c
->>>> +++ b/kernel/crash_core.c
->>>> @@ -7,6 +7,8 @@
->>>>  #include <linux/crash_core.h>
->>>>  #include <linux/utsname.h>
->>>>  #include <linux/vmalloc.h>
->>>> +#include <linux/memblock.h>
->>>> +#include <linux/swiotlb.h>
->>>>  
->>>>  #include <asm/page.h>
->>>>  #include <asm/sections.h>
->>>> @@ -19,6 +21,22 @@ u32 *vmcoreinfo_note;
->>>>  /* trusted vmcoreinfo, e.g. we can make a copy in the crash memory */
->>>>  static unsigned char *vmcoreinfo_data_safecopy;
->>>>  
->>>> +/* Location of the reserved area for the crash kernel */
->>>> +struct resource crashk_res = {
->>>> +	.name  = "Crash kernel",
->>>> +	.start = 0,
->>>> +	.end   = 0,
->>>> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
->>>> +	.desc  = IORES_DESC_CRASH_KERNEL
->>>> +};
->>>> +struct resource crashk_low_res = {
->>>> +	.name  = "Crash kernel",
->>>> +	.start = 0,
->>>> +	.end   = 0,
->>>> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
->>>> +	.desc  = IORES_DESC_CRASH_KERNEL
->>>> +};
->>>> +
->>>>  /*
->>>>   * parsing the "crashkernel" commandline
->>>>   *
->>>> @@ -292,6 +310,75 @@ int __init parse_crashkernel_low(char *cmdline,
->>>>  				"crashkernel=", suffix_tbl[SUFFIX_LOW]);
->>>>  }
->>>>  
->>>> +#if defined(CONFIG_X86_64)
->>>> +#define CRASH_ALIGN		SZ_16M
->>>> +#elif defined(CONFIG_ARM64)
->>>> +#define CRASH_ALIGN		SZ_2M
->>>> +#endif
->>>
->>> I think no need to have the #ifdef, although I can not think out of
->>> reason we have 16M for X86, maybe move it to 2M as well if no other
->>> objections.  Then it will be easier to reserve crashkernel successfully
->>> considering nowadays we have KASLR and other stuff it becomes harder.
->>
->> I also don't figure out why it is 16M in x86.
-> 
-> IMHO, if we do not know why and in theory it should work with 2M, can
-> you do some basic testing and move it to 2M?
-> 
-> We can easily move back to 16M if someone really report something, but
-> if we do not change it will always stay there but we do not know why.
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-Ok. I will do some test later.
 
-> 
->>
->>>
->>>> +
->>>> +int __init reserve_crashkernel_low(void)
->>>> +{
->>>> +#if defined(CONFIG_X86_64) || defined(CONFIG_ARM64)
->>>> +	unsigned long long base, low_base = 0, low_size = 0;
->>>> +	unsigned long total_low_mem;
->>>> +	int ret;
->>>> +
->>>> +	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
->>>> +
->>>> +	/* crashkernel=Y,low */
->>>> +	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size,
->>>> +			&base);
->>>> +	if (ret) {
->>>> +#ifdef CONFIG_X86_64
->>>> +		/*
->>>> +		 * two parts from lib/swiotlb.c:
->>>> +		 * -swiotlb size: user-specified with swiotlb= or default.
->>>> +		 *
->>>> +		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
->>>> +		 * to 8M for other buffers that may need to stay low too. Also
->>>> +		 * make sure we allocate enough extra low memory so that we
->>>> +		 * don't run out of DMA buffers for 32-bit devices.
->>>> +		 */
->>>> +		low_size = max(swiotlb_size_or_default() + (8UL << 20),
->>>> +				256UL << 20);
->>>> +#else
->>>> +		/*
->>>> +		 * in arm64, reserve low memory if and only if crashkernel=X,low
->>>> +		 * specified.
->>>> +		 */
->>>> +		return -EINVAL;
->>>> +#endif
->>>
->>> As said before, can you explore about why it needs different logic, it
->>> would be good to keep two arches same.
->>>
->>>> +	} else {
->>>> +		/* passed with crashkernel=0,low ? */
->>>> +		if (!low_size)
->>>> +			return 0;
->>>> +	}
->>>> +
->>>> +	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
->>>> +	if (!low_base) {
->>>> +		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
->>>> +		       (unsigned long)(low_size >> 20));
->>>> +		return -ENOMEM;
->>>> +	}
->>>> +
->>>> +	ret = memblock_reserve(low_base, low_size);
->>>> +	if (ret) {
->>>> +		pr_err("%s: Error reserving crashkernel low memblock.\n",
->>>> +				__func__);
->>>> +		return ret;
->>>> +	}
->>>> +
->>>> +	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
->>>> +		(unsigned long)(low_size >> 20),
->>>> +		(unsigned long)(low_base >> 20),
->>>> +		(unsigned long)(total_low_mem >> 20));
->>>> +
->>>> +	crashk_low_res.start = low_base;
->>>> +	crashk_low_res.end   = low_base + low_size - 1;
->>>> +#endif
->>>> +	return 0;
->>>> +}
->>>> +
->>>>  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
->>>>  			  void *data, size_t data_len)
->>>>  {
->>>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
->>>> index 15d70a9..458d093 100644
->>>> --- a/kernel/kexec_core.c
->>>> +++ b/kernel/kexec_core.c
->>>> @@ -53,23 +53,6 @@ note_buf_t __percpu *crash_notes;
->>>>  /* Flag to indicate we are going to kexec a new kernel */
->>>>  bool kexec_in_progress = false;
->>>>  
->>>> -
->>>> -/* Location of the reserved area for the crash kernel */
->>>> -struct resource crashk_res = {
->>>> -	.name  = "Crash kernel",
->>>> -	.start = 0,
->>>> -	.end   = 0,
->>>> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
->>>> -	.desc  = IORES_DESC_CRASH_KERNEL
->>>> -};
->>>> -struct resource crashk_low_res = {
->>>> -	.name  = "Crash kernel",
->>>> -	.start = 0,
->>>> -	.end   = 0,
->>>> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
->>>> -	.desc  = IORES_DESC_CRASH_KERNEL
->>>> -};
->>>> -
->>>>  int kexec_should_crash(struct task_struct *p)
->>>>  {
->>>>  	/*
->>>> -- 
->>>> 2.7.4
->>>>
->>>
->>> Thanks
->>> Dave
->>>
->>>
->>> .
->>>
->> Thanks,
->> Chen Zhou
->>
-> 
-> Thanks
-> Dave
-> 
-> 
+sparse warnings: (new ones prefixed by >>)
 
-Thanks,
-Chen Zhou
+>> drivers/mtd/nand/onenand/samsung_mtd.c:678:17: sparse: sparse: incorrect type in argument 2 (different address spaces)
+>> drivers/mtd/nand/onenand/samsung_mtd.c:678:17: sparse:    expected void const *from
+>> drivers/mtd/nand/onenand/samsung_mtd.c:678:17: sparse:    got void [noderef] <asn:2> *[assigned] p
+>> drivers/mtd/nand/onenand/samsung_mtd.c:679:19: sparse: sparse: incorrect type in assignment (different address spaces)
+>> drivers/mtd/nand/onenand/samsung_mtd.c:679:19: sparse:    expected void [noderef] <asn:2> *[assigned] p
+>> drivers/mtd/nand/onenand/samsung_mtd.c:679:19: sparse:    got unsigned char *
+   drivers/mtd/nand/onenand/samsung_mtd.c:682:9: sparse: sparse: incorrect type in argument 2 (different address spaces)
+   drivers/mtd/nand/onenand/samsung_mtd.c:682:9: sparse:    expected void const *from
+   drivers/mtd/nand/onenand/samsung_mtd.c:682:9: sparse:    got void [noderef] <asn:2> *[assigned] p
 
+vim +678 drivers/mtd/nand/onenand/samsung_mtd.c
+
+e23abf4b774322 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  614  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  615  static int s5pc110_read_bufferram(struct mtd_info *mtd, int area,
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  616  		unsigned char *buffer, int offset, size_t count)
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  617  {
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  618  	struct onenand_chip *this = mtd->priv;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  619  	void __iomem *p;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  620  	void *buf = (void *) buffer;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  621  	dma_addr_t dma_src, dma_dst;
+08b3af3092bb2c drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-11-02  622  	int err, ofs, page_dma = 0;
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  623  	struct device *dev = &onenand->pdev->dev;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  624  
+9aba97ad004ed0 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-08-27  625  	p = this->base + area;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  626  	if (ONENAND_CURRENT_BUFFERRAM(this)) {
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  627  		if (area == ONENAND_DATARAM)
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  628  			p += this->writesize;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  629  		else
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  630  			p += mtd->oobsize;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  631  	}
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  632  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  633  	if (offset & 3 || (size_t) buf & 3 ||
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  634  		!onenand->dma_addr || count != mtd->writesize)
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  635  		goto normal;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  636  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  637  	/* Handle vmalloc address */
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  638  	if (buf >= high_memory) {
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  639  		struct page *page;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  640  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  641  		if (((size_t) buf & PAGE_MASK) !=
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  642  		    ((size_t) (buf + count - 1) & PAGE_MASK))
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  643  			goto normal;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  644  		page = vmalloc_to_page(buf);
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  645  		if (!page)
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  646  			goto normal;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  647  
+08b3af3092bb2c drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-11-02  648  		/* Page offset */
+08b3af3092bb2c drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-11-02  649  		ofs = ((size_t) buf & ~PAGE_MASK);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  650  		page_dma = 1;
+08b3af3092bb2c drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-11-02  651  
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  652  		/* DMA routine */
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  653  		dma_src = onenand->phys_base + (p - this->base);
+08b3af3092bb2c drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-11-02  654  		dma_dst = dma_map_page(dev, page, ofs, count, DMA_FROM_DEVICE);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  655  	} else {
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  656  		/* DMA routine */
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  657  		dma_src = onenand->phys_base + (p - this->base);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  658  		dma_dst = dma_map_single(dev, buf, count, DMA_FROM_DEVICE);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  659  	}
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  660  	if (dma_mapping_error(dev, dma_dst)) {
+102f66a740cfbe drivers/mtd/nand/onenand/samsung_mtd.c Krzysztof Kozlowski 2019-12-29  661  		dev_err(dev, "Couldn't map a %zu byte buffer for DMA\n", count);
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  662  		goto normal;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  663  	}
+81d46c59550997 drivers/mtd/onenand/samsung.c          Arnd Bergmann       2014-05-08  664  	err = s5pc110_dma_ops(dma_dst, dma_src,
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  665  			count, S5PC110_DMA_DIR_READ);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  666  
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  667  	if (page_dma)
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  668  		dma_unmap_page(dev, dma_dst, count, DMA_FROM_DEVICE);
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  669  	else
+dcf08227e964a5 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-09-28  670  		dma_unmap_single(dev, dma_dst, count, DMA_FROM_DEVICE);
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  671  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  672  	if (!err)
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  673  		return 0;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  674  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  675  normal:
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  676  	if (count != mtd->writesize) {
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  677  		/* Copy the bufferram to memory to prevent unaligned access */
+9aba97ad004ed0 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-08-27 @678  		memcpy(this->page_buf, p, mtd->writesize);
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28 @679  		p = this->page_buf + offset;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  680  	}
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  681  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  682  	memcpy(buffer, p, count);
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  683  
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  684  	return 0;
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  685  }
+46f3e88bd9da01 drivers/mtd/onenand/samsung.c          Kyungmin Park       2010-04-28  686  
+
+:::::: The code at line 678 was first introduced by commit
+:::::: 9aba97ad004ed0cde9747a9daf5b1484edb746cd mtd: OneNAND: Fix 2KiB pagesize handling at Samsung SoCs
+
+:::::: TO: Kyungmin Park <kyungmin.park@samsung.com>
+:::::: CC: David Woodhouse <David.Woodhouse@intel.com>
+
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
