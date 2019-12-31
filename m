@@ -2,89 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CF4912D8D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 14:08:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C77B012D945
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 14:52:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lgTiovIFu0sXKnW1ys/O9Y1+LLs2eXHGOcFLPh1xoTs=; b=W7Xi1K72gbr+rk
-	LiZnSFh2zu3mc8+JFkqW86HeZpIIEoL5IApK/VIrWNVRQzKRCN9tgzzVQK/hrKTgSyNHzHp38xX9B
-	wjN64bQzujV1WcEKKIBGgw5tibwzEqFqV4DsVm/5uxQSuxqPKG2OF1/dZfwXMlsILVq0IrzFIQDQ5
-	IpLU+TxYNrd0NC/TwrEHE97WfTz7UFXa3tW5BOee3JvkBYL3NBNjiQ0c4I9er7lCzbUwE56EPRf3v
-	+S8lsaEx3o4olvh9gr65uI5ZBXLRoq1QQlc8GBLvhUtJgqJjGxptfxznoVPFM7yQKxUqBKVDgXVP0
-	DBP1U+8ujL/pTW7ON1rQ==;
+	List-Owner; bh=BNFazZY4qDfDgHHXBgSIU9lAoDqhTexiUKQ8qCKaQes=; b=rJ1XgX2ao1n47n
+	i1TsZJFqL3iHzk4y8zpyrMWuBYxEuYAEDaoELkXWU4hmsPBjYxxHD3bVsK0drX2G2GdrBOgIQcDd5
+	0IRzvX03G7kW22IdHW2FVbgByI8m0rVRYfX3p877XbdARlHqw1p3qOrj3RkME+DgoUNII9G3R+8AO
+	8jgszBlzJSE6mUQKdqHU7PQda2cY7sDt2+EwkDkrYXHwi8CXJLTpP86X1XUhqqJLNlWKr0F7X5HSW
+	u0xrrZOL9O3IgwC2jfM3F8bi11YUMWOCAbQcaQ+UXAhAqafsj6fGs72Wd8dmRPHTsayMXLq99mXJD
+	HM0Hz78igrAy+6XkOOOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imHGO-0007li-PT; Tue, 31 Dec 2019 13:08:44 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1imHx3-0006me-EQ; Tue, 31 Dec 2019 13:52:49 +0000
+Received: from mailoutvs25.siol.net ([185.57.226.216] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imHEB-00061i-P3
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 13:06:29 +0000
-Received: by mail-pf1-x444.google.com with SMTP id i6so12882398pfc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Dec 2019 05:06:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=fxRlGBthrDx9tpHcl7NzfKEhaXjVuy3iPazdjbs07eE=;
- b=rWDBjcTP7vdTmVKjqBqJDjfL/KLqpJi6y1PVUoahrxz+jJ5QENHuCIdL5ySphVYxl6
- 529D2vpGPkc9u8jeoUmmdiKzi6unJwe9iqHOy+vBniKnoBJ+vDmORXZWNBzyufo6kWmx
- 6tulMUwFmnl8PorHxLP0K+IrBi62D2W9ng2LQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=fxRlGBthrDx9tpHcl7NzfKEhaXjVuy3iPazdjbs07eE=;
- b=OTHMSHpq8BY08PHHUFlMyfz3mBo/5QUFmF1czxmxqATkzwifUgVYIVAf9jjQbJIJea
- ku/8bAJ0rryWrgQIjCT4Sp/bRExSYu5EkHeOm1ovxPY5Vb2ppVJhIIU17TQcIZ1J+/jy
- jft+V8+Tf1ibmfmF5mTyTmZqtDtx5Cb4XLZqnLA6/82+GyCYQy9AwshT0sJXFSiFRAge
- pd+aRDFhaKoxEOihm4+OxZlKWo/JJKo6W8dqDSPzOhKp7B5DtHJjldwq5a4jD0fY4GVC
- 4j2YgZgFnJXmsDk19SD63KwZTXroz1GhNwpvm4OtB01tD/ipJ9UE1uHgORJE/MlQDl/S
- 23hw==
-X-Gm-Message-State: APjAAAUbEm1ubnduHheNvMfyNdr9K7YpccLbXHgIczyz5TB42gJSUUhu
- bdmosMQIBn7PDWY9Z6hkDrFrIg==
-X-Google-Smtp-Source: APXvYqzDVAb6YX9p2RJMeAlQW3kT2tWCf16EKKLyWJx6VENrFJl3/7ECaNvRha01ZbHs+/sF1cTm0A==
-X-Received: by 2002:a63:1110:: with SMTP id g16mr56093805pgl.84.1577797587194; 
- Tue, 31 Dec 2019 05:06:27 -0800 (PST)
-Received: from localhost.localdomain ([49.206.202.115])
- by smtp.gmail.com with ESMTPSA id i3sm55204089pfg.94.2019.12.31.05.06.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Dec 2019 05:06:26 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Rob Herring <robh+dt@kernel.org>
-Subject: [DO NOT MERGE] [PATCH v3 9/9] ARM: dts: sun8i-r40: bananapi-m2-ultra:
- Enable Bananapi S070WV20-CT16
-Date: Tue, 31 Dec 2019 18:35:28 +0530
-Message-Id: <20191231130528.20669-10-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191231130528.20669-1-jagan@amarulasolutions.com>
-References: <20191231130528.20669-1-jagan@amarulasolutions.com>
+ id 1imHws-0006m1-9G
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 13:52:40 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTP id BA3C4523258;
+ Tue, 31 Dec 2019 14:52:32 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id 8mFCXVPAZteK; Tue, 31 Dec 2019 14:52:32 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTPS id EA11B52377E;
+ Tue, 31 Dec 2019 14:52:31 +0100 (CET)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
+ [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Zimbra) with ESMTPA id 900F6523258;
+ Tue, 31 Dec 2019 14:52:31 +0100 (CET)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ roman.stratiienko@globallogic.com
+Subject: Re: [PATCH v2 1/4] drm/sun4i: Reimplement plane z position setting
+ logic
+Date: Tue, 31 Dec 2019 14:52:31 +0100
+Message-ID: <4174797.8F6SAcFxjW@jernej-laptop>
+In-Reply-To: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
+References: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_050627_829831_E4744FE3 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191231_055238_636442_7B76FE4F 
+X-CRM114-Status: GOOD (  20.33  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.216 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,111 +72,374 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-sunxi <linux-sunxi@googlegroups.com>,
- Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
+Cc: Roman Stratiienko <roman.stratiienko@globallogic.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add support for Bananapi S070WV20-CT16 DSI panel to
-BPI-M2U board.
+Hi!
 
-DSI panel connected via board DSI port with,
-- DCDC1 as VCC-DSI supply
-- PH18 gpio for lcd enable pin
-- PD17 gpio for lcd reset pin
-- PD16 gpio for backlight enable pin
+Dne nedelja, 29. december 2019 ob 17:28:25 CET je 
+roman.stratiienko@globallogic.com napisal(a):
+> From: Roman Stratiienko <roman.stratiienko@globallogic.com>
+> 
+> To set blending channel order register software needs to know state and
+> position of each channel, which impossible at plane commit stage.
+> 
+> Move this procedure to atomic_flush stage, where all necessary information
+> is available.
+> 
+> Fixes: f88c5ee77496 ("drm/sun4i: Implement zpos for DE2")
+> Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
+> ---
+> v2:
+> - Use SUN8I_MIXER_MAX_LAYERS macro
+> - Use plane_cnt instead of hard-coded number
+> - Put initialization of channel_zpos into for loop
+> - Add 'Fixes' line to the commit message
+> - Minor clean-ups
+> - Comments added
+> ---
+>  drivers/gpu/drm/sun4i/sun8i_mixer.c    | 52 +++++++++++++++++++++++++-
+>  drivers/gpu/drm/sun4i/sun8i_mixer.h    |  5 +++
+>  drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 42 +++------------------
+>  drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 39 +++----------------
+>  4 files changed, 66 insertions(+), 72 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> b/drivers/gpu/drm/sun4i/sun8i_mixer.c index 8b803eb903b8..d306ad5dc093
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+> @@ -259,8 +259,54 @@ const struct de2_fmt_info *sun8i_mixer_format_info(u32
+> format)
+> 
+>  static void sun8i_mixer_commit(struct sunxi_engine *engine)
+>  {
+> -	DRM_DEBUG_DRIVER("Committing changes\n");
+> +	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
+> +	u32 base = sun8i_blender_base(mixer);
+> +	int i, j = 0;
+> +	int channel_by_zpos[SUN8I_MIXER_MAX_LAYERS];
+> +	u32 route = 0, pipe_ctl = 0;
+> +	int plane_cnt = mixer->cfg->vi_num + mixer->cfg->ui_num;
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
-Changes for v3:
-- none
+Can you please sort above lines by size (longest to shortest) as much as 
+possible?
 
- .../boot/dts/sun8i-r40-bananapi-m2-ultra.dts  | 37 +++++++++++++++++++
- 1 file changed, 37 insertions(+)
+> +
+> +	DRM_DEBUG_DRIVER("Update blender routing\n");
+> +	/* Assume that values in mixer->channel_zpos[] are unique except -1 
+*/
 
-diff --git a/arch/arm/boot/dts/sun8i-r40-bananapi-m2-ultra.dts b/arch/arm/boot/dts/sun8i-r40-bananapi-m2-ultra.dts
-index 42d62d1ba1dc..99f84e6f15ce 100644
---- a/arch/arm/boot/dts/sun8i-r40-bananapi-m2-ultra.dts
-+++ b/arch/arm/boot/dts/sun8i-r40-bananapi-m2-ultra.dts
-@@ -45,6 +45,7 @@
- #include "sun8i-r40.dtsi"
- 
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/pwm/pwm.h>
- 
- / {
- 	model = "Banana Pi BPI-M2-Ultra";
-@@ -55,6 +56,14 @@
- 		serial0 = &uart0;
- 	};
- 
-+	backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm 0 50000 PWM_POLARITY_INVERTED>;
-+		brightness-levels = <1 2 4 8 16 32 64 128 255>;
-+		default-brightness-level = <2>;
-+		enable-gpios = <&pio 7 16 GPIO_ACTIVE_HIGH>; /* LCD-BL-EN: PH16 */
-+	};
-+
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-@@ -117,6 +126,24 @@
- 	status = "okay";
- };
- 
-+&dphy {
-+	status = "okay";
-+};
-+
-+&dsi {
-+	vcc-dsi-supply = <&reg_dcdc1>;		/* VCC-DSI */
-+	status = "okay";
-+
-+	panel@0 {
-+		compatible = "bananapi,s070wv20-ct16-icn6211";
-+		reg = <0>;
-+		enable-gpio = <&pio 7 18 GPIO_ACTIVE_HIGH>; /* LCD-PWR-EN: PH18 */
-+		reset-gpios = <&pio 7 17 GPIO_ACTIVE_HIGH>; /* LCD-RST: PH17 */
-+		vdd-supply = <&reg_dcdc1>;
-+		backlight = <&backlight>;
-+	};
-+};
-+
- &ehci1 {
- 	status = "okay";
- };
-@@ -209,6 +236,12 @@
- 	vcc-pg-supply = <&reg_dldo1>;
- };
- 
-+&pwm {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pwm0_pin>;
-+	status = "okay";
-+};
-+
- &reg_aldo2 {
- 	regulator-min-microvolt = <2500000>;
- 	regulator-max-microvolt = <2500000>;
-@@ -295,6 +328,10 @@
- 	regulator-name = "vdd1v2-sata";
- };
- 
-+&tcon_lcd0 {
-+	status = "okay";
-+};
-+
- &tcon_tv0 {
- 	status = "okay";
- };
--- 
-2.18.0.321.gffc6fa0e3
+I would remove "Assume that" because it's guaranteed by zpos normalization in 
+DRM core.
+
+> +
+> +	for (i = 0; i < plane_cnt; i++)
+> +		channel_by_zpos[i] = -1;
+> 
+> +	/* Sort by zpos */
+> +	for (i = 0; i < plane_cnt; i++)	{
+> +		int zpos = mixer->channel_zpos[i];
+> +
+> +		if (zpos >= 0 && zpos < plane_cnt)
+> +			channel_by_zpos[zpos] = i;
+> +	}
+> +
+> +	/* Route enabled blending channels first */
+> +	for (i = 0; i < plane_cnt; i++)	{
+> +		int ch = channel_by_zpos[i];
+> +
+> +		if (ch >= 0) {
+> +			pipe_ctl |= SUN8I_MIXER_BLEND_PIPE_CTL_EN(j);
+> +			route |= ch << 
+SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(j);
+> +			j++;
+> +		}
+> +	}
+> +
+> +	/* Set remaining routing fields to match disabled channel indices */
+> +	for (i = 0; i < SUN8I_MIXER_MAX_LAYERS && j < 
+SUN8I_MIXER_MAX_LAYERS;
+> +	     i++) {
+> +		if (mixer->channel_zpos[i] < 0) {
+> +			route |= i << 
+SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(j);
+> +			j++;
+> +		}
+> +	}
+
+Is above for loop really necessary? If pipe is not enabled I don't think you 
+need to set a route.
+
+> +
+> +	regmap_update_bits(mixer->engine.regs, 
+SUN8I_MIXER_BLEND_PIPE_CTL(base),
+> +			   SUN8I_MIXER_BLEND_PIPE_CTL_EN_MSK, 
+pipe_ctl);
+> +
+> +	regmap_write(mixer->engine.regs,
+> +		     SUN8I_MIXER_BLEND_ROUTE(base), route);
+> +
+> +	DRM_DEBUG_DRIVER("Committing changes\n");
+>  	regmap_write(engine->regs, SUN8I_MIXER_GLOBAL_DBUFF,
+>  		     SUN8I_MIXER_GLOBAL_DBUFF_ENABLE);
+>  }
+> @@ -485,10 +531,12 @@ static int sun8i_mixer_bind(struct device *dev, struct
+> device *master, SUN8I_MIXER_BLEND_COLOR_BLACK);
+> 
+>  	plane_cnt = mixer->cfg->vi_num + mixer->cfg->ui_num;
+> -	for (i = 0; i < plane_cnt; i++)
+> +	for (i = 0; i < plane_cnt; i++) {
+> +		mixer->channel_zpos[i] = -1;
+>  		regmap_write(mixer->engine.regs,
+>  			     SUN8I_MIXER_BLEND_MODE(base, i),
+>  			     SUN8I_MIXER_BLEND_MODE_DEF);
+> +	}
+> 
+>  	regmap_update_bits(mixer->engine.regs, 
+SUN8I_MIXER_BLEND_PIPE_CTL(base),
+>  			   SUN8I_MIXER_BLEND_PIPE_CTL_EN_MSK, 0);
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> b/drivers/gpu/drm/sun4i/sun8i_mixer.h index c6cc94057faf..b193d9d1db66
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.h
+> @@ -13,6 +13,8 @@
+>  #include "sun8i_csc.h"
+>  #include "sunxi_engine.h"
+> 
+> +#define SUN8I_MIXER_MAX_LAYERS			5
+> +
+>  #define SUN8I_MIXER_SIZE(w, h)			(((h) - 1) << 16 | 
+((w) - 1))
+>  #define SUN8I_MIXER_COORD(x, y)			((y) << 16 | (x))
+> 
+> @@ -176,6 +178,9 @@ struct sun8i_mixer {
+> 
+>  	struct clk			*bus_clk;
+>  	struct clk			*mod_clk;
+> +
+> +	/* -1 means that layer is disabled */
+> +	int channel_zpos[SUN8I_MIXER_MAX_LAYERS];
+>  };
+> 
+>  static inline struct sun8i_mixer *
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c index c87fd842918e..ee7c13d8710f
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> @@ -24,12 +24,10 @@
+>  #include "sun8i_ui_scaler.h"
+> 
+>  static void sun8i_ui_layer_enable(struct sun8i_mixer *mixer, int channel,
+> -				  int overlay, bool enable, 
+unsigned int zpos,
+> -				  unsigned int old_zpos)
+> +				  int overlay, bool enable, 
+unsigned int zpos)
+>  {
+> -	u32 val, bld_base, ch_base;
+> +	u32 val, ch_base;
+> 
+> -	bld_base = sun8i_blender_base(mixer);
+>  	ch_base = sun8i_channel_base(mixer, channel);
+> 
+>  	DRM_DEBUG_DRIVER("%sabling channel %d overlay %d\n",
+> @@ -44,32 +42,7 @@ static void sun8i_ui_layer_enable(struct sun8i_mixer
+> *mixer, int channel, SUN8I_MIXER_CHAN_UI_LAYER_ATTR(ch_base, overlay),
+>  			   SUN8I_MIXER_CHAN_UI_LAYER_ATTR_EN, val);
+> 
+> -	if (!enable || zpos != old_zpos) {
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL_EN(old_zpos),
+> -				   0);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(old_zpos),
+> -				   0);
+> -	}
+> -
+> -	if (enable) {
+> -		val = SUN8I_MIXER_BLEND_PIPE_CTL_EN(zpos);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -				   val, val);
+> -
+> -		val = channel << 
+SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(zpos);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(zpos),
+> -				   val);
+> -	}
+> +	mixer->channel_zpos[channel] = enable ? zpos : -1;
+>  }
+> 
+>  static int sun8i_ui_layer_update_coord(struct sun8i_mixer *mixer, int
+> channel, @@ -265,11 +238,9 @@ static void
+> sun8i_ui_layer_atomic_disable(struct drm_plane *plane, struct
+> drm_plane_state *old_state)
+>  {
+>  	struct sun8i_ui_layer *layer = plane_to_sun8i_ui_layer(plane);
+> -	unsigned int old_zpos = old_state->normalized_zpos;
+>  	struct sun8i_mixer *mixer = layer->mixer;
+> 
+> -	sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay, 
+false, 0,
+> -			      old_zpos);
+> +	sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay, false, 
+0);
+>  }
+> 
+>  static void sun8i_ui_layer_atomic_update(struct drm_plane *plane,
+> @@ -277,12 +248,11 @@ static void sun8i_ui_layer_atomic_update(struct
+> drm_plane *plane, {
+>  	struct sun8i_ui_layer *layer = plane_to_sun8i_ui_layer(plane);
+>  	unsigned int zpos = plane->state->normalized_zpos;
+> -	unsigned int old_zpos = old_state->normalized_zpos;
+>  	struct sun8i_mixer *mixer = layer->mixer;
+> 
+>  	if (!plane->state->visible) {
+>  		sun8i_ui_layer_enable(mixer, layer->channel,
+> -				      layer->overlay, false, 0, 
+old_zpos);
+> +				      layer->overlay, false, 0);
+>  		return;
+>  	}
+> 
+> @@ -293,7 +263,7 @@ static void sun8i_ui_layer_atomic_update(struct
+> drm_plane *plane, sun8i_ui_layer_update_buffer(mixer, layer->channel,
+>  				     layer->overlay, plane);
+>  	sun8i_ui_layer_enable(mixer, layer->channel, layer->overlay,
+> -			      true, zpos, old_zpos);
+> +			      true, zpos);
+>  }
+> 
+>  static struct drm_plane_helper_funcs sun8i_ui_layer_helper_funcs = {
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c index 42d445d23773..97cbc98bf781
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+> @@ -17,8 +17,7 @@
+>  #include "sun8i_vi_scaler.h"
+> 
+>  static void sun8i_vi_layer_enable(struct sun8i_mixer *mixer, int channel,
+> -				  int overlay, bool enable, 
+unsigned int zpos,
+> -				  unsigned int old_zpos)
+> +				  int overlay, bool enable, 
+unsigned int zpos)
+>  {
+>  	u32 val, bld_base, ch_base;
+> 
+> @@ -37,32 +36,7 @@ static void sun8i_vi_layer_enable(struct sun8i_mixer
+
+You should remove bld_base in this function too, now that it's not used 
+anymore.
+
+Best regards,
+Jernej
+
+> *mixer, int channel, SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base, overlay),
+>  			   SUN8I_MIXER_CHAN_VI_LAYER_ATTR_EN, val);
+> 
+> -	if (!enable || zpos != old_zpos) {
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL_EN(old_zpos),
+> -				   0);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(old_zpos),
+> -				   0);
+> -	}
+> -
+> -	if (enable) {
+> -		val = SUN8I_MIXER_BLEND_PIPE_CTL_EN(zpos);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_PIPE_CTL(bld_base),
+> -				   val, val);
+> -
+> -		val = channel << 
+SUN8I_MIXER_BLEND_ROUTE_PIPE_SHIFT(zpos);
+> -
+> -		regmap_update_bits(mixer->engine.regs,
+> -				   
+SUN8I_MIXER_BLEND_ROUTE(bld_base),
+> -				   
+SUN8I_MIXER_BLEND_ROUTE_PIPE_MSK(zpos),
+> -				   val);
+> -	}
+> +	mixer->channel_zpos[channel] = enable ? zpos : -1;
+>  }
+> 
+>  static int sun8i_vi_layer_update_coord(struct sun8i_mixer *mixer, int
+> channel, @@ -350,11 +324,9 @@ static void
+> sun8i_vi_layer_atomic_disable(struct drm_plane *plane, struct
+> drm_plane_state *old_state)
+>  {
+>  	struct sun8i_vi_layer *layer = plane_to_sun8i_vi_layer(plane);
+> -	unsigned int old_zpos = old_state->normalized_zpos;
+>  	struct sun8i_mixer *mixer = layer->mixer;
+> 
+> -	sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay, 
+false, 0,
+> -			      old_zpos);
+> +	sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay, false, 
+0);
+>  }
+> 
+>  static void sun8i_vi_layer_atomic_update(struct drm_plane *plane,
+> @@ -362,12 +334,11 @@ static void sun8i_vi_layer_atomic_update(struct
+> drm_plane *plane, {
+>  	struct sun8i_vi_layer *layer = plane_to_sun8i_vi_layer(plane);
+>  	unsigned int zpos = plane->state->normalized_zpos;
+> -	unsigned int old_zpos = old_state->normalized_zpos;
+>  	struct sun8i_mixer *mixer = layer->mixer;
+> 
+>  	if (!plane->state->visible) {
+>  		sun8i_vi_layer_enable(mixer, layer->channel,
+> -				      layer->overlay, false, 0, 
+old_zpos);
+> +				      layer->overlay, false, 0);
+>  		return;
+>  	}
+> 
+> @@ -378,7 +349,7 @@ static void sun8i_vi_layer_atomic_update(struct
+> drm_plane *plane, sun8i_vi_layer_update_buffer(mixer, layer->channel,
+>  				     layer->overlay, plane);
+>  	sun8i_vi_layer_enable(mixer, layer->channel, layer->overlay,
+> -			      true, zpos, old_zpos);
+> +			      true, zpos);
+>  }
+> 
+>  static struct drm_plane_helper_funcs sun8i_vi_layer_helper_funcs = {
+
+
+
 
 
 _______________________________________________
