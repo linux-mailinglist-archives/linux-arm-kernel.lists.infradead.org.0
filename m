@@ -2,87 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83AA612D71D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 09:35:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6859912D725
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 09:46:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b7aKjLIM87PpRd7DOy+zG0/cai/ZUC/J7O8CyuJqb/M=; b=LCzBP2v5rUTJuf0hiG3cfmaNA
-	oKhK7WCxrsZp5zvFsCphnjlAlnK/iMmdKziwSc9bgriaQ8HfLvj8lp7AF06Z8CwDpquyAc1BL8imS
-	quHXOQ6S+UEDQaLo0+5stxuustdbdAELz4rd6EM6XKezRtveFCLHMTaRpeEELSYMokMa5JZ8lg1kU
-	WKNExf4EMp6KBQQkA9/863jdsmBTp9wmu6jXAgozWnat7uzgJSvGL1JwYW2DSHHSh+hUUUcrJpla5
-	GXGIiP/MsN8PHahhOoPUjWhGMKvtD++qwX2q+vGVcMUn6JzbtJ0O2j9x5LBDRoGfqFLS5++PxyMmA
-	dhg+7mDaw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CZKI7T+13l8x/keYo5lNxGQMUwyYkogXUpfvl2Wt81Y=; b=PSk
+	2M5K/sLfxSPKxFCQ17MJfPzDENNECY0m4eiamzQDsCUGqCLhHyeH0kcp2SCt/nwdW2UKhYI/5cFGp
+	UqModJ/oBXnucsntsDThy+cMzEL1WDlk9ILKmtZcXCKoefDGXAplZHeSKdvkKRmLB96JNkqQVhWIN
+	Ba+djcyg+RSSyuSd1oYfM7E4TLNGxU2Ib9q/2QJusnV/3j7sXsZlFxLA/AAsUxpPHxC5agqVrqV/q
+	S4/GnxevAaj/q/8VLPQWec/Kj1tPITa4FzDkZYE0BDc62cf0zg5oTAyyDH/IfAK/AUO/KynjjIydR
+	qspiF+elrR9W+aMwzAcp06D/LqUHeMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imCzn-0006Ek-Uu; Tue, 31 Dec 2019 08:35:19 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1imDAr-0001MT-1c; Tue, 31 Dec 2019 08:46:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imCzf-0006Dm-4V
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 08:35:12 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1577781310; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=/MyzgTAoW84poPoGQNDvx4+/Q3RCJgT0vSrB6UE39Ec=;
- b=exkC74FLhoPIh7u9ezBzFEgdW+Mlr9Y+BDcIQPWBxVsRXY6a28KR0ea8DK+z/G5MAx7hV7bA
- ek75JopirP6UbJtOjy4tX9WaoSkbYesuLkwweTg/BkLSBS1AgOaTTw7bJjDNBGQD25N+f0bO
- 1bmI4Q8SGA227Gu0RK3KCc06kHw=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e0b083c.7fe01001b1b8-smtp-out-n03;
- Tue, 31 Dec 2019 08:35:08 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 8437AC4479C; Tue, 31 Dec 2019 08:35:07 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id A3C10C433CB;
- Tue, 31 Dec 2019 08:35:06 +0000 (UTC)
-MIME-Version: 1.0
-Date: Tue, 31 Dec 2019 16:35:06 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v1 1/2] scsi: ufs: set device as default active power mode
- during initialization only
-In-Reply-To: <1577778290.13164.45.camel@mtkswgap22>
-References: <1577693546-7598-1-git-send-email-stanley.chu@mediatek.com>
- <1577693546-7598-2-git-send-email-stanley.chu@mediatek.com>
- <fd129b859c013852bd80f60a36425757@codeaurora.org>
- <1577754469.13164.5.camel@mtkswgap22>
- <836772092daffd8283a97d633e59fc34@codeaurora.org>
- <1577766179.13164.24.camel@mtkswgap22>
- <1577778290.13164.45.camel@mtkswgap22>
-Message-ID: <44393ed9ff3ba9878bae838307e7eec0@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+ id 1imDAi-0001MA-Hd
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 08:46:37 +0000
+Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 73FBF206D9;
+ Tue, 31 Dec 2019 08:46:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577781995;
+ bh=N+mb5kzkC+/jQqgTQg/iLdcfYCH1MlyJvn+yg/LGA0A=;
+ h=From:To:Cc:Subject:Date:From;
+ b=U1CJmPK099QMqNkzK0JvajMZ4genSOrHHVhxwa9xPTKIpiWhy/0qRSRyUeVL/zert
+ ZQ53UJizYsyWHAIyZH/Cp1oORVxGvwHaXgFjdYgMgNxx+g9X+GKwZFkqe3sFXOVeyI
+ tHfhnib17vuZB8vRX+jH+RW7MypPOO75ad4acibU=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org
+Subject: [RFT] iommu: omap: Fix -Woverflow warnings when compiling on 64-bit
+ architectures
+Date: Tue, 31 Dec 2019 09:46:27 +0100
+Message-Id: <1577781987-32035-1-git-send-email-krzk@kernel.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_003511_243996_021FBCC3 
-X-CRM114-Status: GOOD (  17.30  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191231_004636_604388_755F11AA 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.25 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,100 +75,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: martin.petersen@oracle.com, linux-scsi@vger.kernel.org,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, asutoshd@codeaurora.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- linux-scsi-owner@vger.kernel.org, subhashj@codeaurora.org,
- alim.akhtar@samsung.com, beanhuo@micron.com, pedrom.sousa@synopsys.com,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com
+Cc: Tero Kristo <t-kristo@ti.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Suman Anna <s-anna@ti.com>, Douglas Anderson <dianders@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-31 15:44, Stanley Chu wrote:
-> Hi Can,
-> 
-> On Tue, 2019-12-31 at 12:22 +0800, Stanley Chu wrote:
->> Hi Can,
->> 
->> 
->> > Hi Stanley,
->> >
->> > I see skipping ufshcd_set_ufs_dev_active() in ufshcd_probe_hba()
->> > if it is called from ufshcd_resume() path is the purpose here.
->> >
->> > If so, then ufshcd_set_dev_pwr_mode() would be called, meaning
->> > SSU command will be sent. Why is this SSU command needed to be
->> > sent after a full host reset and restore? Is ufshcd_probe_hba()
->> > not enough to make UFS device fully functional?
->> 
->> After resume (for both runtime resume and system resume), device power
->> mode shall be back to "Active" to service incoming requests.
->> 
->> I see two cases need device power mode transition during resume flow
->> 1. Device Power Mode = Sleep
->> 2. Device Power Mode = PowerDown
->> 
->> For 1, ufshcd_probe_hba() is not invoked during resume flow,
->> hba->curr_dev_pwr_mode = SLEEP, thus ufshcd_resume() can invoke
->> ufshcd_set_dev_pwr_mode() to change device power mode.
->> 
->> For 2, ufshcd_probe_hba() is invoked during resume flow, before this
->> fix, hba->curr_dev_pwr_mode will be set to ACTIVE (note that only this
->> flag is set as ACTIVE, but device may be still in PowerDown state if
->> device power is not fully shutdown or device HW reset is not executed
->> before resume), in the end, ufshcd_resume() will not invoke
->> ufshcd_set_dev_pwr_mode() to send SSU command to make device change 
->> back
->> to Active power mode.
->> 
->> But if device is fully reset before resume (not by current mainstream
->> driver), device can be already in "Active" power mode after power on
->> again during resume flow. In this case, it is OK to set
->> hba->curr_dev_pwr_mode as ACTIVE in ufshcd_probe_hba() and SSU command
->> is not necessary.
->> 
->> Thanks,
->> Stanley
-> 
-> I think currently the assumption in ufshcd_probe_hba() that "device
-> shall be already in Active power mode" makes sense because many device
-> commands will be sent to device in ufshcd_probe_hba() but device is not
-> promised to handle those commands in PowerDown power mode according to
-> UFS spec.
-> 
-> So, maybe always ensuring device being Active power mode before leaving
-> ufshcd_probe_hba() is more reasonable. If so, I will drop this patch
-> first.
-> 
-> Thanks so much for your reviews.
-> 
-> Happy new year!
-> 
-> Thanks,
-> Stanley
+Although the OMAP IOMMU driver supports only ARMv7 (32-bit) platforms,
+it can be compile tested for other architectures, including 64-bit ones.
+In such case the warning appears:
 
-Hi Stanley,
+       In file included from drivers/iommu/omap-iommu.c:33:0:
+       drivers/iommu/omap-iommu.c: In function 'omap_iommu_iova_to_phys':
+    >> drivers/iommu/omap-iopgtable.h:44:21: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+        #define IOPTE_MASK  (~(IOPTE_SIZE - 1))
+                            ^
+    >> drivers/iommu/omap-iommu.c:1641:41: note: in expansion of macro 'IOPTE_MASK'
+           ret = omap_iommu_translate(*pte, da, IOPTE_MASK);
+                                                ^~~~~~~~~~
 
-I missed this mail before I hit send. In current code, as per my 
-understanding,
-UFS device's power state should be Active after ufshcd_link_startup() 
-returns.
-If I am wrong, please feel free to correct me.
+Fix this by using architecture-depending types in omap_iommu_translate():
+1. Pointer should be cast to unsigned long,
+2. Virtual addresses should be cast to dma_addr_t.
 
-Due to you are almost trying to revert commit 7caf489b99a42a, I am just 
-wondering
-if you encounter failure/error caused by it.
+On 32-bit this will be the same as original code (using u32).  On 64-bit
+it should produce meaningful result, although it does not really matter.
 
-Happy new year to you too!
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-Thanks,
+---
 
-Can Guo
+Not tested on hardware.
+---
+ drivers/iommu/omap-iopgtable.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iommu/omap-iopgtable.h b/drivers/iommu/omap-iopgtable.h
+index 1a4adb59a859..51d74002cc30 100644
+--- a/drivers/iommu/omap-iopgtable.h
++++ b/drivers/iommu/omap-iopgtable.h
+@@ -63,7 +63,8 @@
+  *
+  * va to pa translation
+  */
+-static inline phys_addr_t omap_iommu_translate(u32 d, u32 va, u32 mask)
++static inline phys_addr_t omap_iommu_translate(unsigned long d, dma_addr_t va,
++					       dma_addr_t mask)
+ {
+ 	return (d & mask) | (va & (~mask));
+ }
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
