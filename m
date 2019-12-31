@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48DB312D842
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 12:34:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98C8D12D856
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 12:34:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Qv9Z+mCfLoFrRBKBXmk8IHCqpCufeGmfoohO9ej4FjM=; b=HsGot1eOXWCU8Y
-	BxaZ4HQYnBNTrnIxWpkIcJecM+ZozXXP8nAGJatjEqhlqZlU2dBK8LtoI9QaTe0JHwiHM57qPiGjb
-	hK5NF8Ft5wI8W7Dj5g0O9vGB/8IhgO398x5WBNY3xzfk2C/kO/I5uQoBjKcpjge5irfuuaQGJzP7n
-	Lj/L7ZfI2GDa5otpvy72aZyh5k+xPvr4c5Ixj3eW9xhkOs5lxErusUULAQSFpo74F73rDtRuu+qzC
-	YYp06gdZe4ZXknj3WQOnQPo1TJvruk1xlI63FZI3icTs9a/LwyRdHux1ruWoNuolupjrJHtHbsdRH
-	E3q6LAXJ1bhXOb/hYcxQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W/xIH9SHt9Fn7uYbfrRGMPNPYUDFnt9+yezVEP+ez9s=; b=UD1Um92MiPCuS/
+	PaNDXFlxh2zh1oXH1+CfSM6jWv9mnfJsMYlM7SiH8k78GxSd3mBhaYkrXm45XMMNjcfC8NDC4zFYl
+	PEzqpXMK5pm3JaJN62QSaDL45pc3MDhnrp380vbS4PC49VDXpoElGfn1ZZeHInHmg0H+msk73D/Nn
+	b3NWhRQsML0EHBTi0jzqzsu+r94p3jZ/1Ef/eAcVydMeZlRKB2W+85P74OJXP51P2dTBGFWRXDf0f
+	Xurg+oxZeDt45OpFtXzgyHfbAqpDasZgGXoMta/lIr0dHhEfUXiSwDw2/S+Q8lMWkMHXoY1s2pl4Z
+	ZFbvP3PsoEU+s1fwgogA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imFmo-0007pp-Pc; Tue, 31 Dec 2019 11:34:06 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1imFnI-00081A-8i; Tue, 31 Dec 2019 11:34:36 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imFmd-0007oz-6g; Tue, 31 Dec 2019 11:33:56 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXdPS121093;
- Tue, 31 Dec 2019 05:33:39 -0600
+ id 1imFmf-0007pL-5a; Tue, 31 Dec 2019 11:33:58 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXiiF117359;
+ Tue, 31 Dec 2019 05:33:44 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577792019;
- bh=Pajx8yxPYy9hpNMBr5wGSpnGBlMhhMxaOBX8Gt0CXWc=;
- h=From:To:CC:Subject:Date;
- b=xpYlx9RH8ZH2mpS8/0vaGZcJSzosrfpZvtfmjD+XskBPHD7wRj7lmrQdKnAWcps01
- XgIP7Jx1gW8KBXspH1MtP0jXF0Q77WwGlKCgrA48SkReVbeZJcBVVk2QFkuuCJCIPA
- Xe+tPtDK3uDAHChnP0yA5QxGTW6jrGSnfDLfS2NA=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBVBXd3M090029
+ s=ti-com-17Q1; t=1577792025;
+ bh=Zgv5kKXEm0tGssEL2rZei0b8iDsdKd/7gxbFA0EbGJ0=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=LxTajdmEA1opLpYGrfYdkrp37fx68617N57vcZUIEsR548YXf5WMuZrPQJ7p43m/J
+ gtD54EtPpLAMt5z0XGryj4uHmQLKRRdjy+dj+RRf5Ls3JPePXupRBouVwrIQK+W5xz
+ rrVNeeH/kc6cPbZCZadn3QHeAPj9U1ccicCgZ4dk=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBVBXi5n040074
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 31 Dec 2019 05:33:39 -0600
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 31 Dec 2019 05:33:44 -0600
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 31
- Dec 2019 05:33:39 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 05:33:44 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 31 Dec 2019 05:33:39 -0600
+ Frontend Transport; Tue, 31 Dec 2019 05:33:44 -0600
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXX31024759;
- Tue, 31 Dec 2019 05:33:34 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXX32024759;
+ Tue, 31 Dec 2019 05:33:39 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo Pieralisi
  <lorenzo.pieralisi@arm.com>, Bjorn Helgaas <bhelgaas@google.com>, Andrew
@@ -56,22 +56,25 @@ To: Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo Pieralisi
  Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH 0/7] Add SR-IOV support in PCIe Endpoint Core
-Date: Tue, 31 Dec 2019 17:05:27 +0530
-Message-ID: <20191231113534.30405-1-kishon@ti.com>
+Subject: [PATCH 1/7] Documentation: PCI: endpoint/pci-endpoint-cfs: Guide to
+ use SR-IOV
+Date: Tue, 31 Dec 2019 17:05:28 +0530
+Message-ID: <20191231113534.30405-2-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191231113534.30405-1-kishon@ti.com>
+References: <20191231113534.30405-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_033355_327932_E0FF2F95 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20191231_033357_292373_8256769E 
+X-CRM114-Status: GOOD (  17.08  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,51 +106,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Patch series
-*) Adds support to add virtual functions to enable endpoint controller
-   which supports SR-IOV capability
-*) Add support in Cadence endpoint driver to configure virtual functions
-*) Enable pci_endpoint_test driver to create pci_device for virtual
-   functions
+Add Documentation to help users use PCI endpoint to create virtual
+functions using configfs. An endpoint function is designated as a
+virtual endpoint function device when it is linked to a physical
+endpoint function device (instead of a endpoint controller).
 
-Here both physical functions and virtual functions use the same
-pci_endpoint_test driver and existing pcitest utility can be used
-to test virtual functions also.
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+---
+ Documentation/PCI/endpoint/pci-endpoint-cfs.rst | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-This series is created on top of [1], [2], [3] & [4]
-[1] -> http://lore.kernel.org/r/20191209092147.22901-1-kishon@ti.com
-[2] -> http://lore.kernel.org/r/20191211124608.887-1-kishon@ti.com
-[3] -> http://lore.kernel.org/r/20191230123315.31037-1-kishon@ti.com
-[4] -> http://lore.kernel.org/r/20191231100331.6316-1-kishon@ti.com
-
-Kishon Vijay Abraham I (7):
-  Documentation: PCI: endpoint/pci-endpoint-cfs: Guide to use SR-IOV
-  dt-bindings: PCI: cadence: Add binding to specify max virtual
-    functions
-  PCI: endpoint: Add support to add virtual function in endpoint core
-  PCI: endpoint: Add support to link a physical function to a virtual
-    function
-  PCI: endpoint: Add virtual function number in pci_epc ops
-  PCI: cadence: Add support to configure virtual functions
-  misc: pci_endpoint_test: Populate sriov_configure ops to configure
-    SR-IOV device
-
- .../PCI/endpoint/pci-endpoint-cfs.rst         |  12 +-
- .../bindings/pci/cdns,cdns-pcie-ep.txt        |   2 +
- .../bindings/pci/ti,j721e-pci-ep.yaml         |   8 +
- drivers/misc/pci_endpoint_test.c              |   1 +
- .../pci/controller/cadence/pcie-cadence-ep.c  | 232 +++++++++++++++---
- drivers/pci/controller/cadence/pcie-cadence.h |   7 +
- .../pci/controller/dwc/pcie-designware-ep.c   |  36 +--
- drivers/pci/controller/pcie-rockchip-ep.c     |  18 +-
- drivers/pci/endpoint/functions/pci-epf-test.c |  64 ++---
- drivers/pci/endpoint/pci-ep-cfs.c             |  24 ++
- drivers/pci/endpoint/pci-epc-core.c           | 126 +++++++---
- drivers/pci/endpoint/pci-epf-core.c           |  92 ++++++-
- include/linux/pci-epc.h                       |  53 ++--
- include/linux/pci-epf.h                       |  16 +-
- 14 files changed, 541 insertions(+), 150 deletions(-)
-
+diff --git a/Documentation/PCI/endpoint/pci-endpoint-cfs.rst b/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
+index b6d39cdec56e..0f55c5511c6c 100644
+--- a/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
++++ b/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
+@@ -43,6 +43,7 @@ entries corresponding to EPF driver will be created by the EPF core.
+ 		.. <EPF Driver1>/
+ 			... <EPF Device 11>/
+ 			... <EPF Device 21>/
++			... <EPF Device 31>/
+ 		.. <EPF Driver2>/
+ 			... <EPF Device 12>/
+ 			... <EPF Device 22>/
+@@ -68,6 +69,14 @@ created)
+ 				... subsys_vendor_id
+ 				... subsys_id
+ 				... interrupt_pin
++			        ... <Symlink EPF Device 31>/
++
++The <EPF Device> directory can have a list of symbolic links to
++other <EPF Device>. These symbolic links should be created by the user
++to represent the virtual functions that are bound to the physical
++function. In the above directory structure <EPF Device 11> is a physical
++function and <EPF Device 31> is a virtual function. A EPF device once it's
++linked to another EPF device, cannot be linked to a EPC device.
+ 
+ EPC Device
+ ==========
+@@ -88,7 +97,8 @@ entries corresponding to EPC device will be created by the EPC core.
+ 
+ The <EPC Device> directory will have a list of symbolic links to
+ <EPF Device>. These symbolic links should be created by the user to
+-represent the functions present in the endpoint device.
++represent the functions present in the endpoint device. Only <EPF Device>
++that represents a physical function can be linked to a EPC device.
+ 
+ The <EPC Device> directory will also have a *start* field. Once
+ "1" is written to this field, the endpoint device will be ready to
 -- 
 2.17.1
 
