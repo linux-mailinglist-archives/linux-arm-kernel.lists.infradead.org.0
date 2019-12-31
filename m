@@ -2,64 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DB4512D886
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 13:06:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05C1412D894
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 13:23:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XuxmQu/Y1gdGSR/Z1moPt2F7CkzmpwZrwdyxRCZL50w=; b=cN/bq4LpbILHfs
-	wvzaFa+ProGqbk+r9nQiDp5hnOSkW0svI7uaulNdmciO7C3IkS6QAQ6CI6fmsMvKhPSwoDp3nbFrc
-	1k5kvtOTDbEcwzuYL/4NANTNRCl5cOppTlahnk7mtYXqQeycY4O2DO3TEzgQpk4h/iTJu5wC13AGD
-	72HUj7WWZJG1Z7it1gIsDa1iD8mS38Xki9BjQPSsPw4CsTRw/k7yo3FHmNMon86ranQaOaO0gA+UT
-	krqTL7S9qbKmiRHV2MaY3KDzYiEXn6xOZ7JZ3qsndZDocm9r3H+4Me2TqcqOapJ8KCtPg+KleSSuH
-	afpYMyv9qs8y6VeNZtkw==;
+	List-Owner; bh=I2TVK2dIrwyhjSkf6aDl/yGi3uY7Bxfeda4MsP36XZU=; b=fhSr+491jzDwsm
+	vJiv+Ts0Ah2eNj0YG74jnbSmBMI5zWyFTj1pFKy1Hu5J0ehGqhmln3Bz7cWFbpGQF7EceA6j3Ad5r
+	WA130h702zso2711W+5YvkMBYQ48B6aPIBWHFdb7cGxFy0XtYWhYV2FR8TtlorqhLF9IVcd+PnUNQ
+	grT9vzVKvCXGdSRSTz4FMN/idUdn9GVttBMr4Ja7Uuy8sjMNOmboVCAv6rDmSdcpRknOQQRsF8kg9
+	iQDyb9mZcIxA6iRVNR2GdHw3mY08ObEYvfee9RGLSwyO6VT9Gy6K5FMF4+haDBAGu3XXAhQ7Htj6x
+	PCRxahQvER86gVax/iMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imGHz-0005Qm-7B; Tue, 31 Dec 2019 12:06:19 +0000
-Received: from mailoutvs30.siol.net ([185.57.226.221] helo=mail.siol.net)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imGHo-0005Q2-Ay
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 12:06:10 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 5A4B05234D4;
- Tue, 31 Dec 2019 13:06:04 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id 2dJjqKlJ9pgR; Tue, 31 Dec 2019 13:06:03 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id DD6FD52345B;
- Tue, 31 Dec 2019 13:06:03 +0100 (CET)
-Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
- [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id A6E955234B2;
- Tue, 31 Dec 2019 13:06:03 +0100 (CET)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- roman.stratiienko@globallogic.com
-Subject: Re: [PATCH v2 3/4] drm/sun4i: Use CRTC size instead of PRIMARY plane
- size as mixer frame.
-Date: Tue, 31 Dec 2019 13:06:03 +0100
-Message-ID: <6139998.4vTCxPXJkl@jernej-laptop>
-In-Reply-To: <20191229162828.3326-3-roman.stratiienko@globallogic.com>
-References: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
- <20191229162828.3326-3-roman.stratiienko@globallogic.com>
+	id 1imGYD-0001ib-4d; Tue, 31 Dec 2019 12:23:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imGY4-0001iA-5m
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 12:22:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81DB0328;
+ Tue, 31 Dec 2019 04:22:51 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7ED693F703;
+ Tue, 31 Dec 2019 04:22:50 -0800 (PST)
+Date: Tue, 31 Dec 2019 12:22:45 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+Message-ID: <20191231122245.GA35523@bogus>
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+ <AM0PR04MB44817F7C0FB0E6D417823B4A88260@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB44817F7C0FB0E6D417823B4A88260@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_040608_695386_56867793 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191231_042256_260785_8D48395C 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.221 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,173 +64,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+On Tue, Dec 31, 2019 at 02:50:40AM +0000, Peng Fan wrote:
+>
+> > Subject: [PATCH] firmware: arm_scmi: Make scmi core independent of
+> > transport type
+> >
+> > The SCMI specification is fairly independent of the transport protocol, which
+> > can be a simple mailbox (already implemented) or anything else.
+> > The current Linux implementation however is very much dependent of the
+> > mailbox transport layer.
+> >
+> > This patch makes the SCMI core code (driver.c) independent of the mailbox
+> > transport layer and moves all mailbox related code to a new
+> > file: mailbox.c.
+> >
+> > We can now implement more transport protocols to transport SCMI
+> > messages.
+> >
+> > The transport protocols just need to provide struct scmi_transport_ops, with
+> > its version of the callbacks to enable exchange of SCMI messages.
+>
+> Will there be v2? will this be used to replace smc mailbox?
+>
 
-Sorry that I missed few details in first review. Please take a look below.
+There's a requirement for virtio based transport too. I need to do
+a thorough review once I am able to gather the details. Feel free to
+add SMC based transport based on this patch if you can, you need not
+wait for me. I am fine with the approach as such.
 
-Dne nedelja, 29. december 2019 ob 17:28:27 CET je 
-roman.stratiienko@globallogic.com napisal(a):
-> From: Roman Stratiienko <roman.stratiienko@globallogic.com>
-> 
-> According to DRM documentation the only difference between PRIMARY
-> and OVERLAY plane is that each CRTC must have PRIMARY plane and
-> OVERLAY are optional.
-> 
-> Allow PRIMARY plane to have dimension different from full-screen.
-> 
-> Fixes: 90212fffa4fc ("drm/sun4i: Use values calculated by atomic check")
+Also I was waiting to get some feedback from Arnd or Jassi.
 
-This fixes tag doesn't seem to be a good choice. First time where code in 
-question was introduced was:
-
-9d75b8c0b999 drm/sun4i: add support for Allwinner DE2 mixers
-
-and it was later moved to sun8i_ui_layer.c in:
-
-5bb5f5dafa1a drm/sun4i: Reorganize UI layer code in DE2
-
-Not sure which one is better. You can also include both.
-
-> Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
-> ---
-> v2:
-> - Split commit in 2 parts
-> - Add Fixes line to the commit message
-> ---
->  drivers/gpu/drm/sun4i/sun8i_mixer.c    | 35 ++++++++++++++++++++++++++
->  drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 30 ----------------------
->  2 files changed, 35 insertions(+), 30 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> b/drivers/gpu/drm/sun4i/sun8i_mixer.c index d306ad5dc093..5d90a95ff855
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> @@ -257,6 +257,40 @@ const struct de2_fmt_info *sun8i_mixer_format_info(u32
-> format) return NULL;
->  }
-> 
-> +static void sun8i_mode_set(struct sunxi_engine *engine,
-> +			   struct drm_display_mode *mode)
-> +{
-> +	u32 dst_w = mode->crtc_hdisplay;
-> +	u32 dst_h = mode->crtc_vdisplay;
-
-Now that you moved code in separate function, "dst_" prefix doesn't make sense 
-anymore. Plain "width" and "height" work just fine.
-
-> +	u32 outsize = SUN8I_MIXER_SIZE(dst_w, dst_h);
-> +	bool interlaced = false;
-
-No need to initialize above variable. This value is never used.
-
-> +	u32 val;
-> +	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
-> +	u32 bld_base = sun8i_blender_base(mixer);
-
-Not extremely important, but can you move above two lines to the top? At least 
-I prefer to have those lines sorted from longest to shortest as much as 
-possible.
-
-Once above comments are addressed, code is:
-Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
-
-Best regards,
-Jernej
-
-> +
-> +	DRM_DEBUG_DRIVER("Mode change, updating global size W: %u H: %u\n",
-> +			 dst_w, dst_h);
-> +	regmap_write(mixer->engine.regs,
-> +		     SUN8I_MIXER_GLOBAL_SIZE,
-> +		     outsize);
-> +	regmap_write(mixer->engine.regs,
-> +		     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), outsize);
-> +
-> +	interlaced = mode->flags & DRM_MODE_FLAG_INTERLACE;
-> +
-> +	if (interlaced)
-> +		val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
-> +	else
-> +		val = 0;
-> +
-> +	regmap_update_bits(mixer->engine.regs,
-> +			   SUN8I_MIXER_BLEND_OUTCTL(bld_base),
-> +			   SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
-> +			   val);
-> +	DRM_DEBUG_DRIVER("Switching display mixer interlaced mode %s\n",
-> +			 interlaced ? "on" : "off");
-> +}
-> +
->  static void sun8i_mixer_commit(struct sunxi_engine *engine)
->  {
->  	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
-> @@ -356,6 +390,7 @@ static struct drm_plane **sun8i_layers_init(struct
-> drm_device *drm, static const struct sunxi_engine_ops sun8i_engine_ops = {
->  	.commit		= sun8i_mixer_commit,
->  	.layers_init	= sun8i_layers_init,
-> +	.mode_set	= sun8i_mode_set,
->  };
-> 
->  static struct regmap_config sun8i_mixer_regmap_config = {
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-> b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c index ee7c13d8710f..23c2f4b68c89
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-> +++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-> @@ -72,36 +72,6 @@ static int sun8i_ui_layer_update_coord(struct sun8i_mixer
-> *mixer, int channel, insize = SUN8I_MIXER_SIZE(src_w, src_h);
->  	outsize = SUN8I_MIXER_SIZE(dst_w, dst_h);
-> 
-> -	if (plane->type == DRM_PLANE_TYPE_PRIMARY) {
-> -		bool interlaced = false;
-> -		u32 val;
-> -
-> -		DRM_DEBUG_DRIVER("Primary layer, updating global size 
-W: %u H: %u\n",
-> -				 dst_w, dst_h);
-> -		regmap_write(mixer->engine.regs,
-> -			     SUN8I_MIXER_GLOBAL_SIZE,
-> -			     outsize);
-> -		regmap_write(mixer->engine.regs,
-> -			     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), 
-outsize);
-> -
-> -		if (state->crtc)
-> -			interlaced = state->crtc->state-
->adjusted_mode.flags
-> -				& DRM_MODE_FLAG_INTERLACE;
-> -
-> -		if (interlaced)
-> -			val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
-> -		else
-> -			val = 0;
-> -
-> -		regmap_update_bits(mixer->engine.regs,
-> -				   
-SUN8I_MIXER_BLEND_OUTCTL(bld_base),
-> -				   
-SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
-> -				   val);
-> -
-> -		DRM_DEBUG_DRIVER("Switching display mixer interlaced 
-mode %s\n",
-> -				 interlaced ? "on" : "off");
-> -	}
-> -
->  	/* Set height and width */
->  	DRM_DEBUG_DRIVER("Layer source offset X: %d Y: %d\n",
->  			 state->src.x1 >> 16, state->src.y1 >> 16);
-
-
-
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
