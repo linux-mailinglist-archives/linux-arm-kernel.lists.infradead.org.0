@@ -2,81 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61B0812D741
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 10:02:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2367612D748
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 10:16:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ts5C3O08kBIccML0J65wZXiKTGQrdD/+QYOWe1vBEy0=; b=hwRB9q+CVQwucG
-	aQgRENkU915qSVriCgdpZGv1wtIsHAd06N9fE1yj6kuyCuIJiRe3AzNG7PrPlsk4RBho7+oDsoWjm
-	AIXQ2BNkAw0+UaYTm5ktBR9VvcYB0P4q69Ac3eykneg/Rgdi2wdl6X0i/9zn5iR0qrCFz+b1FihNg
-	zTVmKRmu4Crvcb4xj2/czOtE7QOodM9J6jOCyIMp00qHN1wIwaEFAp2saX1/RFOmN2KFOdP1uUx/s
-	2fpN3ZCuPQyvQNdcdzql089huwtBZ0yzo5DNK9gA9UZsp/fn9OywytwVj9gh4cNi4uguEVW3Fvo4E
-	95jlCaiihuwaiMM0/zCg==;
+	List-Owner; bh=Q2GFyH2iNWHATfrcc8j9ThcYSxOVhcMJNwXDf/Asci8=; b=UCnX6/1q5Dl+SB
+	3OtGvF7uxPFEsC/uH5D6AzFQ7BJ+FeZLgUYX31wHIjNyvB+7zCdv6wlAopDo+GnuBXfaoPV6Gmz0d
+	rW+V44Li5OkayG0iprQBdD7/hqpCj8YQ/Ozq1Q0XNXYIW0YC2/8AK71QNZblIZHgIgu3qHdHeS4l2
+	5xR1iFKqKo1MUtqTDJ0PS2vsS7Ihi+2gF7AUEf+R5+H3V8zw0QKH+MoUIDfaErJ+n4ZVdNqxrjZMN
+	vAX2nSZYWXHnLxP3a+U8t3Q6zBSsuQ/hsDIZo1+v+dc9CZerkdGypATLy8TciatT/mQVcvIL/1Kwv
+	bBReu1N7cha7w34bwDHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imDPc-0005oD-1w; Tue, 31 Dec 2019 09:02:00 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imDPT-0005nu-91
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 09:01:52 +0000
-Received: by mail-ed1-f68.google.com with SMTP id t17so34800947eds.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Dec 2019 01:01:50 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=fsG2Rvysfchuljlzy9Ww24f+1cIyMb/bwqWGWqBPxTA=;
- b=Wv7WiETv1Yhi10VJRyw6WB/7x4yAIMAZ+q3lrZNGUzammeQ3v/dDM9dsDjIX1pC8Si
- pySJIzYHdv5pO2EnfdSEJJhuKhKwOyqCuN3VVT7lFiytG8e8kjv/pm7z2hMcSS8WDKoB
- rbqmRX4KGbCfUuRC+tKheqCM+hOiRvehU2KHPFM1HgmUWbwg/fXGnfV8U/wAP4qGFm9G
- 8QMbcuedor0f8s3aq+Yw+0AGPr64T7PONRhQBhFpN9gIh5tYzSMVa1Aok5EjWfsRKMgu
- E1bTgE1SwIb1v2x1TEq7jYZbDzHsW/YrdIWa4Kq3gFNZBa/FEVhatYEmebzbdMhJzJ/l
- 5yIA==
-X-Gm-Message-State: APjAAAXfZSO8tQ6/HGmkAdY87K3a44NDOpNuH+ddP2khFwjlhGmMv17X
- 4bXPnvdq1jGyKhMvtc24ec8=
-X-Google-Smtp-Source: APXvYqz82hNmJu4of9b2ODZh3tiQxLGmLoxEe04E5J/Dd76pnUZV2tjhsjz623nry1WIbNOSJIhtLQ==
-X-Received: by 2002:aa7:d956:: with SMTP id l22mr63653779eds.66.1577782909712; 
- Tue, 31 Dec 2019 01:01:49 -0800 (PST)
-Received: from pi3 ([194.230.155.138])
- by smtp.googlemail.com with ESMTPSA id f10sm5758675eds.31.2019.12.31.01.01.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Dec 2019 01:01:49 -0800 (PST)
-Date: Tue, 31 Dec 2019 10:01:46 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 5/5] i2c: Enable compile testing for some of drivers
-Message-ID: <20191231090146.GA6872@pi3>
-References: <20191230172751.17985-1-krzk@kernel.org>
- <20191230172751.17985-5-krzk@kernel.org>
- <CAMuHMdUXJo3=x32xbfSUXs3O3JHaFpfxt0mHupEb+vzi=5+S4g@mail.gmail.com>
+	id 1imDdi-0001xc-MY; Tue, 31 Dec 2019 09:16:34 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1imDdZ-0001wo-B1; Tue, 31 Dec 2019 09:16:27 +0000
+Authenticated-By: 
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xBV9G1Kv026279,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (RTITCASV01.realtek.com.tw[172.21.6.18])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xBV9G1Kv026279
+ (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 31 Dec 2019 17:16:01 +0800
+Received: from RTEXDAG02.realtek.com.tw (172.21.6.101) by
+ RTITCASV01.realtek.com.tw (172.21.6.18) with Microsoft SMTP Server (TLS) id
+ 14.3.468.0; Tue, 31 Dec 2019 17:16:01 +0800
+Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
+ RTEXDAG02.realtek.com.tw (172.21.6.101) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Tue, 31 Dec 2019 17:16:00 +0800
+Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
+ RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
+ 15.01.1779.005; Tue, 31 Dec 2019 17:16:00 +0800
+From: James Tai <james.tai@realtek.com>
+To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
+Subject: RE: [PATCH 05/14] ARM: dts: rtd1195: Add CRT syscon node
+Thread-Topic: [PATCH 05/14] ARM: dts: rtd1195: Add CRT syscon node
+Thread-Index: AQHVqT1wU1zGfnse50605xj8lgt7lKfUIyxw
+Date: Tue, 31 Dec 2019 09:16:00 +0000
+Message-ID: <0c101eb62fe44bd3b45acc5302271ff3@realtek.com>
+References: <20191202182205.14629-1-afaerber@suse.de>
+ <20191202182205.14629-6-afaerber@suse.de>
+In-Reply-To: <20191202182205.14629-6-afaerber@suse.de>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.21.190.187]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdUXJo3=x32xbfSUXs3O3JHaFpfxt0mHupEb+vzi=5+S4g@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_010151_317078_245A6214 
-X-CRM114-Status: GOOD (  21.50  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191231_011625_509884_48E62104 
+X-CRM114-Status: GOOD (  11.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [211.75.126.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,131 +80,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Wolfram Sang <wsa@the-dreams.de>, Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vladimir Zapolskiy <vz@mleia.com>, Max Staudt <max@enpas.org>,
- Elie Morisse <syniurge@gmail.com>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>,
- Linux I2C <linux-i2c@vger.kernel.org>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Juergen Fitschen <jfi@ssv-embedded.de>, Jean Delvare <jdelvare@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 30, 2019 at 08:11:03PM +0100, Geert Uytterhoeven wrote:
-> Hi Krzysztof,
-> 
-> On Mon, Dec 30, 2019 at 6:28 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > Some of the I2C bus drivers can be compile tested to increase build
-> > coverage.  This requires also:
-> > 1. Adding dependencies on COMMON_CLK for BCM2835 and Meson I2C
-> >    controllers,
-> > 2. Adding 'if' conditional to 'default y' so they will not get enabled
-> >    by default on all other architectures,
-> > 3. Limiting few compile test options to supported architectures (which
-> >    provide the readsX()/writesX() primitives).
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> 
-> Thanks for your patch!
-> 
-> > --- a/drivers/i2c/busses/Kconfig
-> > +++ b/drivers/i2c/busses/Kconfig
-> > @@ -367,7 +367,7 @@ comment "I2C system bus drivers (mostly embedded / system-on-chip)"
-> >
-> >  config I2C_ALTERA
-> >         tristate "Altera Soft IP I2C"
-> > -       depends on (ARCH_SOCFPGA || NIOS2) && OF
-> > +       depends on (ARCH_SOCFPGA || NIOS2 || COMPILE_TEST) && OF
-> 
-> Might be easier to read and maintain by splitting in "hard" and "useful"
-> dependencies:
-> 
->     depends on OF
->     depends on ARCH_SOCFPGA || NIOS2 || COMPILE_TEST
-
-Sure
-
-> 
-> > @@ -611,8 +612,8 @@ config I2C_EMEV2
-> >
-> >  config I2C_EXYNOS5
-> >         tristate "Exynos5 high-speed I2C driver"
-> > -       depends on ARCH_EXYNOS && OF
-> > -       default y
-> > +       depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
-> 
-> This means it is only useful on DT-based Exynos platforms, but compiles
-> everywhere?
-
-Yes. The driver will proble only from DT.
-
-> 
-> Do you still have support for non-DT Exynos platforms?
-> ARCH_EXYNOS depends on ARCH_MULTI_V7?
-
-No, only DT. I think dependency here is a left over from board times and
-optional OF. Actually many drivers depend on OF and some OF-like ARCH so
-it could be removed.
-
-Since driver uses OF, it's rather the choice whether to explicitly
-mention OF.
-
-> (and its help text mentions Exynos 4/5 only, no 3?)
-
-That's correct although it supports also Exynos7 (ARMv8) which is not
-mentioned. I'll correct it.
-
-> 
-> > @@ -1055,15 +1057,15 @@ config I2C_SYNQUACER
-> >
-> >  config I2C_TEGRA
-> >         tristate "NVIDIA Tegra internal I2C controller"
-> > -       depends on ARCH_TEGRA
-> > +       depends on ARCH_TEGRA || (COMPILE_TEST && (ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC))
-> 
-> Perhaps
-> 
->     depends on ARCH_TEGRA || COMPILE_TEST
->     depends on ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC
-> # needs <foo>
-> 
-> to remember which <foo> feature is needed?
-
-I can comment on <foo> but such split of archs would be confusing. One
-would think that driver can work on these platforms, while it is purely
-for compile testing.  Keeping it together is self-documenting: these
-weird platform selection was added only for compile testing.
-
-Best regards,
-Krzysztof
-
-> 
-> > @@ -1403,8 +1405,8 @@ config I2C_OPAL
-> >
-> >  config I2C_ZX2967
-> >         tristate "ZTE ZX2967 I2C support"
-> > -       depends on ARCH_ZX
-> > -       default y
-> > +       depends on ARCH_ZX || (COMPILE_TEST && (ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC))
-> 
-> Same here/
-> 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-> 
-> -- 
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-> 
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBQcmVwYXJlIGEgQ1JUIHN5c2NvbiBtZmQgbm9kZS4NCj4gDQo+IENjOiBKYW1lcyBUYWkgPGph
+bWVzLnRhaUByZWFsdGVrLmNvbT4NCj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVyIDxh
+ZmFlcmJlckBzdXNlLmRlPg0KPiAtLS0NCj4gIGFyY2gvYXJtL2Jvb3QvZHRzL3J0ZDExOTUuZHRz
+aSB8IDkgKysrKysrKysrDQo+ICAxIGZpbGUgY2hhbmdlZCwgOSBpbnNlcnRpb25zKCspDQo+IA0K
+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcnRkMTE5NS5kdHNpIGIvYXJjaC9hcm0v
+Ym9vdC9kdHMvcnRkMTE5NS5kdHNpDQo+IGluZGV4IGE3NGY1MzBkYzQzOS4uYWMzNzM2NmZmN2M0
+IDEwMDY0NA0KPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9ydGQxMTk1LmR0c2kNCj4gKysrIGIv
+YXJjaC9hcm0vYm9vdC9kdHMvcnRkMTE5NS5kdHNpDQo+IEBAIC0xMDAsNiArMTAwLDE1IEBADQo+
+ICAJCQkjc2l6ZS1jZWxscyA9IDwxPjsNCj4gIAkJCXJhbmdlcyA9IDwweDAgMHgxODAwMDAwMCAw
+eDcwMDAwPjsNCj4gDQo+ICsJCQljcnQ6IHN5c2NvbkAwIHsNCj4gKwkJCQljb21wYXRpYmxlID0g
+InN5c2NvbiIsICJzaW1wbGUtbWZkIjsNCj4gKwkJCQlyZWcgPSA8MHgwIDB4MTAwMD47DQo+ICsJ
+CQkJcmVnLWlvLXdpZHRoID0gPDQ+Ow0KPiArCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Ow0KPiAr
+CQkJCSNzaXplLWNlbGxzID0gPDE+Ow0KPiArCQkJCXJhbmdlcyA9IDwweDAgMHgwIDB4MTAwMD47
+DQo+ICsJCQl9Ow0KPiArDQo+ICAJCQlpc286IHN5c2NvbkA3MDAwIHsNCj4gIAkJCQljb21wYXRp
+YmxlID0gInN5c2NvbiIsICJzaW1wbGUtbWZkIjsNCj4gIAkJCQlyZWcgPSA8MHg3MDAwIDB4MTAw
+MD47DQo+IC0tDQo+IDIuMTYuNA0KPiANCj4gDQpBY2tlZC1ieTogSmFtZXMgVGFpIDxqYW1lcy50
+YWlAcmVhbHRlay5jb20+DQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
