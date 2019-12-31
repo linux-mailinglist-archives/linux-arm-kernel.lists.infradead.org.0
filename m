@@ -2,65 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E50D12D833
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 12:24:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48DB312D842
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Dec 2019 12:34:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xomo2X027+GRVZLi7m54ifJArF4b85Y0TVFSAtNlS4s=; b=P/l72vCH6kNRl1
-	j++umU6ZNF2SDAZYOt54ldxIzEY+EZsU/pVbgrl5P2ArCdZg3/ONMAIH8v4bzJDGUv5LHYtYJ2Hi7
-	qJmEoYD2pBrJ6jJZ7ykzvAjotZOQ6WmbHElCYvsr8R+9YWTVoB/qX/QTmZ69fIhus3D3uuX7eKiGL
-	kFIMAbEeuw+3WvfRfrxLF8O93Xozs/+KWFH5z6rUXdYdzXPRAfZCE1nLMP7na1adYxB0R0bPW3zP4
-	m7FPXvuuv4MPyGd9RzWkc4rBsAAKyOSA+NuNRqHLDP+79v10ze27uVPTlEfzSJyCKJTmb6Pkvtt0F
-	dCejMFc1FnUU3fZ9TheA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qv9Z+mCfLoFrRBKBXmk8IHCqpCufeGmfoohO9ej4FjM=; b=HsGot1eOXWCU8Y
+	BxaZ4HQYnBNTrnIxWpkIcJecM+ZozXXP8nAGJatjEqhlqZlU2dBK8LtoI9QaTe0JHwiHM57qPiGjb
+	hK5NF8Ft5wI8W7Dj5g0O9vGB/8IhgO398x5WBNY3xzfk2C/kO/I5uQoBjKcpjge5irfuuaQGJzP7n
+	Lj/L7ZfI2GDa5otpvy72aZyh5k+xPvr4c5Ixj3eW9xhkOs5lxErusUULAQSFpo74F73rDtRuu+qzC
+	YYp06gdZe4ZXknj3WQOnQPo1TJvruk1xlI63FZI3icTs9a/LwyRdHux1ruWoNuolupjrJHtHbsdRH
+	E3q6LAXJ1bhXOb/hYcxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imFdN-0004bQ-7Q; Tue, 31 Dec 2019 11:24:21 +0000
-Received: from mailoutvs4.siol.net ([185.57.226.195] helo=mail.siol.net)
+	id 1imFmo-0007pp-Pc; Tue, 31 Dec 2019 11:34:06 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imFdD-0004aw-37
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Dec 2019 11:24:13 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id A35B1523032;
- Tue, 31 Dec 2019 12:24:04 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id mVev96vKAiOH; Tue, 31 Dec 2019 12:24:04 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 4A6DB523035;
- Tue, 31 Dec 2019 12:24:04 +0100 (CET)
-Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
- [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id 01118523020;
- Tue, 31 Dec 2019 12:24:03 +0100 (CET)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- roman.stratiienko@globallogic.com
-Subject: Re: [PATCH v2 2/4] drm/sun4i: Add mode_set callback to the engine
-Date: Tue, 31 Dec 2019 12:24:03 +0100
-Message-ID: <2843589.CbtlEUcBR6@jernej-laptop>
-In-Reply-To: <20191229162828.3326-2-roman.stratiienko@globallogic.com>
-References: <20191229162828.3326-1-roman.stratiienko@globallogic.com>
- <20191229162828.3326-2-roman.stratiienko@globallogic.com>
+ id 1imFmd-0007oz-6g; Tue, 31 Dec 2019 11:33:56 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXdPS121093;
+ Tue, 31 Dec 2019 05:33:39 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1577792019;
+ bh=Pajx8yxPYy9hpNMBr5wGSpnGBlMhhMxaOBX8Gt0CXWc=;
+ h=From:To:CC:Subject:Date;
+ b=xpYlx9RH8ZH2mpS8/0vaGZcJSzosrfpZvtfmjD+XskBPHD7wRj7lmrQdKnAWcps01
+ XgIP7Jx1gW8KBXspH1MtP0jXF0Q77WwGlKCgrA48SkReVbeZJcBVVk2QFkuuCJCIPA
+ Xe+tPtDK3uDAHChnP0yA5QxGTW6jrGSnfDLfS2NA=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBVBXd3M090029
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 31 Dec 2019 05:33:39 -0600
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 31
+ Dec 2019 05:33:39 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Tue, 31 Dec 2019 05:33:39 -0600
+Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXX31024759;
+ Tue, 31 Dec 2019 05:33:34 -0600
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo Pieralisi
+ <lorenzo.pieralisi@arm.com>, Bjorn Helgaas <bhelgaas@google.com>, Andrew
+ Murray <andrew.murray@arm.com>,
+ Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH 0/7] Add SR-IOV support in PCIe Endpoint Core
+Date: Tue, 31 Dec 2019 17:05:27 +0530
+Message-ID: <20191231113534.30405-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_032411_290603_76211A38 
-X-CRM114-Status: GOOD (  14.20  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191231_033355_327932_E0FF2F95 
+X-CRM114-Status: GOOD (  13.83  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.195 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,87 +93,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Cc: devicetree@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-pci@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+Patch series
+*) Adds support to add virtual functions to enable endpoint controller
+   which supports SR-IOV capability
+*) Add support in Cadence endpoint driver to configure virtual functions
+*) Enable pci_endpoint_test driver to create pci_device for virtual
+   functions
 
-Dne nedelja, 29. december 2019 ob 17:28:26 CET je 
-roman.stratiienko@globallogic.com napisal(a):
-> From: Roman Stratiienko <roman.stratiienko@globallogic.com>
-> 
-> Create callback to update engine's registers on mode change.
-> 
-> Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Here both physical functions and virtual functions use the same
+pci_endpoint_test driver and existing pcitest utility can be used
+to test virtual functions also.
 
-Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
+This series is created on top of [1], [2], [3] & [4]
+[1] -> http://lore.kernel.org/r/20191209092147.22901-1-kishon@ti.com
+[2] -> http://lore.kernel.org/r/20191211124608.887-1-kishon@ti.com
+[3] -> http://lore.kernel.org/r/20191230123315.31037-1-kishon@ti.com
+[4] -> http://lore.kernel.org/r/20191231100331.6316-1-kishon@ti.com
 
-Best regards,
-Jernej
+Kishon Vijay Abraham I (7):
+  Documentation: PCI: endpoint/pci-endpoint-cfs: Guide to use SR-IOV
+  dt-bindings: PCI: cadence: Add binding to specify max virtual
+    functions
+  PCI: endpoint: Add support to add virtual function in endpoint core
+  PCI: endpoint: Add support to link a physical function to a virtual
+    function
+  PCI: endpoint: Add virtual function number in pci_epc ops
+  PCI: cadence: Add support to configure virtual functions
+  misc: pci_endpoint_test: Populate sriov_configure ops to configure
+    SR-IOV device
 
-> ---
-> v2:
-> - Split commit in 2 parts.
-> - Add description to mode_set callback
-> - Dropped 1 line from sun4i_crtc_mode_set_nofb()
-> - Add struct drm_display_mode declaration (fix build warning)
-> ---
->  drivers/gpu/drm/sun4i/sun4i_crtc.c   |  3 +++
->  drivers/gpu/drm/sun4i/sunxi_engine.h | 12 ++++++++++++
->  2 files changed, 15 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_crtc.c
-> b/drivers/gpu/drm/sun4i/sun4i_crtc.c index 3a153648b369..f9c627d601c3
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_crtc.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_crtc.c
-> @@ -141,6 +141,9 @@ static void sun4i_crtc_mode_set_nofb(struct drm_crtc
-> *crtc) struct sun4i_crtc *scrtc = drm_crtc_to_sun4i_crtc(crtc);
-> 
->  	sun4i_tcon_mode_set(scrtc->tcon, encoder, mode);
-> +
-> +	if (scrtc->engine->ops->mode_set)
-> +		scrtc->engine->ops->mode_set(scrtc->engine, mode);
->  }
-> 
->  static const struct drm_crtc_helper_funcs sun4i_crtc_helper_funcs = {
-> diff --git a/drivers/gpu/drm/sun4i/sunxi_engine.h
-> b/drivers/gpu/drm/sun4i/sunxi_engine.h index 548710a936d5..44102783ee3c
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sunxi_engine.h
-> +++ b/drivers/gpu/drm/sun4i/sunxi_engine.h
-> @@ -9,6 +9,7 @@
->  struct drm_plane;
->  struct drm_device;
->  struct drm_crtc_state;
-> +struct drm_display_mode;
-> 
->  struct sunxi_engine;
-> 
-> @@ -108,6 +109,17 @@ struct sunxi_engine_ops {
->  	 * This function is optional.
->  	 */
->  	void (*vblank_quirk)(struct sunxi_engine *engine);
-> +
-> +	/**
-> +	 * @mode_set:
-> +	 *
-> +	 * This callback is used to update engine registers that
-> +	 * responsible for display frame size other mode attributes.
-> +	 *
-> +	 * This function is optional.
-> +	 */
-> +	void (*mode_set)(struct sunxi_engine *engine,
-> +			 struct drm_display_mode *mode);
->  };
-> 
->  /**
+ .../PCI/endpoint/pci-endpoint-cfs.rst         |  12 +-
+ .../bindings/pci/cdns,cdns-pcie-ep.txt        |   2 +
+ .../bindings/pci/ti,j721e-pci-ep.yaml         |   8 +
+ drivers/misc/pci_endpoint_test.c              |   1 +
+ .../pci/controller/cadence/pcie-cadence-ep.c  | 232 +++++++++++++++---
+ drivers/pci/controller/cadence/pcie-cadence.h |   7 +
+ .../pci/controller/dwc/pcie-designware-ep.c   |  36 +--
+ drivers/pci/controller/pcie-rockchip-ep.c     |  18 +-
+ drivers/pci/endpoint/functions/pci-epf-test.c |  64 ++---
+ drivers/pci/endpoint/pci-ep-cfs.c             |  24 ++
+ drivers/pci/endpoint/pci-epc-core.c           | 126 +++++++---
+ drivers/pci/endpoint/pci-epf-core.c           |  92 ++++++-
+ include/linux/pci-epc.h                       |  53 ++--
+ include/linux/pci-epf.h                       |  16 +-
+ 14 files changed, 541 insertions(+), 150 deletions(-)
 
-
-
+-- 
+2.17.1
 
 
 _______________________________________________
