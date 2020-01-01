@@ -2,89 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BBE312E06F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Jan 2020 21:48:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5120112E097
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Jan 2020 22:42:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rQ4c/emGwR7AkpKdup0mdWZvwcLwe0ltqd5qQVDKOzE=; b=UeJ0F33dpV2fZpsXMhH2P6rEis
-	OzFuR3/LwyLBJZtt74KdXsGXhR89AkvoUA7uyMTRvxkRmRWqspPjcbeLH5i87wkMM08tBvZriGOfn
-	o0ICTuOAyQjxlWqqYq0iFamHDK5F98HU3QmOziO4Tpxa4xESXCQ0Sqvz+VQtaiKv98RzyIx2tHD08
-	THvPodyqSwNf8FDzKNyPf+OM5jope9Q4R3tmNBTTDDLBVfHK1UZgVEH3k3i+j3opfNRpril0zl029
-	bhsQfJBe2VdFcJrUsGqmpXR0ov1dfMVT9wHOKAT3hv+hwGBIJl6fJNQJVNpYX3EWbPoBdxwgPtd+2
-	zSWg0mcw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=2ZlykUiEFHixh7LdOyrokN8yoXOqMco5b/84CCvjQ8E=; b=kro
+	545QNtP8cJWNhGIoyuYCWECU76j0tmpOYuzK+FCBORu19mxbRiDtSDlpqv52rP5tVoaUXyR0B+2zG
+	U/eOXYE4jyVfJZtqY4LM9LHOtW/5pa6fFT3heF4CDbc5NpiJHnqw6pWq2G2XV9N0o/bervwxeLoct
+	9FxJBx/Shuo/xwCkLDmEunfWsKhhfWUM4M7/V+l3FKmH/D/JfSAqSyAtdeg1kXNMCG0AF7mp582b0
+	8+5jcmY8Dfb1ttdy3PyEl/1JVqraC9TuFluTA09vTRtsmtwYXDuAfPTSpawL7d5tt0lQTezRzi3yG
+	yiQqxO+YIFHNbAqm3PahqUc03xjY8zA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imkv6-0006nH-UQ; Wed, 01 Jan 2020 20:48:44 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1imlkt-0006Od-Hy; Wed, 01 Jan 2020 21:42:15 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imkub-0006cg-Pn
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Jan 2020 20:48:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id x8so20959727pgk.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 Jan 2020 12:48:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=globallogic.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2SofJSOHMh3xU8jt0Vq5SjDaM8NbyGjoDZ2alxMEzaI=;
- b=TkDoA/GOpLilfkhY45zdpROfXwaqSswl3PEiMomaAj61KJ2mPl7mZP4eoYd0D8cMbV
- koWhIsX4GgD9sXow8D3YnpagmMS9S3Zggr2taw+a4O2OxeMviQfz92w1IbqTFFy9EE07
- Xd6LHQKPaDyGI8HHEIlc40SYq797WDKBfXQvtomfv8Zof7+6cTpfDNVexoPuhCYJkTU5
- N6yOxF99DsuKns+Xry28KLYRYsFK/Nu5vcbb5xzuwo/UWaij5skCatk8MqZ8dDP/Zhox
- C0EmJSNdXTEcicCBbKTUWajjMGx9QTZpHpGaJFAmh6JCz2z9mAZJVXD3GcuZf+auztZD
- Xa8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=2SofJSOHMh3xU8jt0Vq5SjDaM8NbyGjoDZ2alxMEzaI=;
- b=W/cdpwQTxSeeCt1Dst4iXT8KebX/eImYYae+X4ievzhsab5lEo/1C0vl1tAytmCLRc
- DPZsiviEzVHzvbvc7wLr/RX4FuI1iXOk/MFvLeEaRah3S0HJ/Pnfc/LVHeqhBxfyEsOh
- aBmbCcihCJNOAkH7OvdaAaqPF38+sNFETMaJwzWOdylNxmlpgonb7pOOLuUEZwOMeLxV
- yphAtDx/v6U0F4GV2+HrBZr5Ubzsyo8h0ySDm3yuwIFWSTBCVp8KaXM4f1ztIgcI8Kbo
- 63ZmZ85G/tueBvhaJdpAVVLYypKhMsI0YWqCZuke2+L3mYZvkg5UobJKjMSziM2TE9+d
- 1noA==
-X-Gm-Message-State: APjAAAXltoUmR39SRpQJleP08y1oF0hMhpoffG5pz/OEOPICUCdZaJQ9
- WRiz2a34XEOJWvqLMYx87szSbA==
-X-Google-Smtp-Source: APXvYqwJxFrNQkwzAgXpkMn+jkAYit5FqFL/OM2wFthBwFkvOSC8RerPz0lZCpFgIYnOSkfBWmsWGQ==
-X-Received: by 2002:a63:2355:: with SMTP id u21mr84065943pgm.179.1577911692958; 
- Wed, 01 Jan 2020 12:48:12 -0800 (PST)
-Received: from virtualhost-PowerEdge-R810.synapse.com ([195.238.92.107])
- by smtp.gmail.com with ESMTPSA id z22sm53774752pfr.83.2020.01.01.12.48.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 01 Jan 2020 12:48:12 -0800 (PST)
-From: roman.stratiienko@globallogic.com
-To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- jernej.skrabec@siol.net
-Subject: [PATCH v3 2/2] drm/sun4i: Use CRTC size instead of PRIMARY plane size
- as mixer frame.
-Date: Wed,  1 Jan 2020 22:47:50 +0200
-Message-Id: <20200101204750.50541-2-roman.stratiienko@globallogic.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200101204750.50541-1-roman.stratiienko@globallogic.com>
-References: <20200101204750.50541-1-roman.stratiienko@globallogic.com>
+ id 1imlkn-0006O0-3s
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Jan 2020 21:42:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=79XWKkj31wGwumBYjA54s8OnuOHN68P66X/FOnDTTeE=; b=SbM53CQGUUHc
+ UcUyqxGU/+zizlzxTKG5tvwBu8JOObPRQ445sBf7exavks/y+ZT8NVBRtPDWuCiaJAw7elEC3dxMz
+ Czs41xLyR7ozgeZ7uLoBDKxXQqRZegGECxEzjnQT0QEV+lvS7tuTA/PZZqyzeoWWFcnR6aC5dZnDF
+ hXbjE=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=fitzroy.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1imlkc-0002aM-4S; Wed, 01 Jan 2020 21:41:58 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 8030DD057C6; Wed,  1 Jan 2020 21:41:57 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Julia Lawall <Julia.Lawall@inria.fr>
+Subject: Applied "ASoC: SOF: imx8: use resource_size" to the asoc tree
+In-Reply-To: <1577900990-8588-7-git-send-email-Julia.Lawall@inria.fr>
+Message-Id: <applied-1577900990-8588-7-git-send-email-Julia.Lawall@inria.fr>
+X-Patchwork-Hint: ignore
+Date: Wed,  1 Jan 2020 21:41:57 +0000 (GMT)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_124813_834881_F44F5A33 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200101_134209_205381_BCCAF630 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,127 +79,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Takashi Iwai <tiwai@suse.com>,
+ kernel-janitors@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Roman Stratiienko <roman.stratiienko@globallogic.com>
+The patch
 
-According to DRM documentation the only difference between PRIMARY
-and OVERLAY plane is that each CRTC must have PRIMARY plane and
-OVERLAY are optional.
+   ASoC: SOF: imx8: use resource_size
 
-Allow PRIMARY plane to have dimension different from full-screen.
+has been applied to the asoc tree at
 
-Fixes: 5bb5f5dafa1a ("drm/sun4i: Reorganize UI layer code in DE2")
-Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.6
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 49f261e273078a5dc0272296a833dc72571efd92 Mon Sep 17 00:00:00 2001
+From: Julia Lawall <Julia.Lawall@inria.fr>
+Date: Wed, 1 Jan 2020 18:49:46 +0100
+Subject: [PATCH] ASoC: SOF: imx8: use resource_size
+
+Use resource_size rather than a verbose computation on
+the end and start fields.
+
+The semantic patch that makes this change is as follows:
+(http://coccinelle.lip6.fr/)
+
+<smpl>
+@@ struct resource ptr; @@
+- (ptr.end - ptr.start + 1)
++ resource_size(&ptr)
+</smpl>
+
+Signed-off-by: Julia Lawall <Julia.Lawall@inria.fr>
+Link: https://lore.kernel.org/r/1577900990-8588-7-git-send-email-Julia.Lawall@inria.fr
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
-v2:
-- Split commit in 2 parts
-- Add Fixes line to the commit message
+ sound/soc/sof/imx/imx8.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-v3:
-- Address review comments of v2 + removed 3 local varibles
-- Change 'Fixes' line
-
-Since I've put more changes from my side, please review/sign again.
----
- drivers/gpu/drm/sun4i/sun8i_mixer.c    | 28 ++++++++++++++++++++++++
- drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 30 --------------------------
- 2 files changed, 28 insertions(+), 30 deletions(-)
-
-diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-index 8b803eb903b8..658cf442c121 100644
---- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-@@ -257,6 +257,33 @@ const struct de2_fmt_info *sun8i_mixer_format_info(u32 format)
- 	return NULL;
- }
+diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
+index aef6ca167b9c..b2556f5e2871 100644
+--- a/sound/soc/sof/imx/imx8.c
++++ b/sound/soc/sof/imx/imx8.c
+@@ -294,8 +294,7 @@ static int imx8_probe(struct snd_sof_dev *sdev)
+ 	}
  
-+static void sun8i_mode_set(struct sunxi_engine *engine,
-+			   struct drm_display_mode *mode)
-+{
-+	u32 size = SUN8I_MIXER_SIZE(mode->crtc_hdisplay, mode->crtc_vdisplay);
-+	struct sun8i_mixer *mixer = engine_to_sun8i_mixer(engine);
-+	u32 bld_base = sun8i_blender_base(mixer);
-+	u32 val;
-+
-+	DRM_DEBUG_DRIVER("Mode change, updating global size W: %u H: %u\n",
-+			 mode->crtc_hdisplay, mode->crtc_vdisplay);
-+	regmap_write(mixer->engine.regs, SUN8I_MIXER_GLOBAL_SIZE, size);
-+	regmap_write(mixer->engine.regs,
-+		     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), size);
-+
-+	if (mode->flags & DRM_MODE_FLAG_INTERLACE)
-+		val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
-+	else
-+		val = 0;
-+
-+	regmap_update_bits(mixer->engine.regs,
-+			   SUN8I_MIXER_BLEND_OUTCTL(bld_base),
-+			   SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
-+			   val);
-+	DRM_DEBUG_DRIVER("Switching display mixer interlaced mode %s\n",
-+			 val ? "on" : "off");
-+}
-+
- static void sun8i_mixer_commit(struct sunxi_engine *engine)
- {
- 	DRM_DEBUG_DRIVER("Committing changes\n");
-@@ -310,6 +337,7 @@ static struct drm_plane **sun8i_layers_init(struct drm_device *drm,
- static const struct sunxi_engine_ops sun8i_engine_ops = {
- 	.commit		= sun8i_mixer_commit,
- 	.layers_init	= sun8i_layers_init,
-+	.mode_set	= sun8i_mode_set,
- };
- 
- static struct regmap_config sun8i_mixer_regmap_config = {
-diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-index 4343ea9f8cf8..f01ac55191f1 100644
---- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
-@@ -120,36 +120,6 @@ static int sun8i_ui_layer_update_coord(struct sun8i_mixer *mixer, int channel,
- 	insize = SUN8I_MIXER_SIZE(src_w, src_h);
- 	outsize = SUN8I_MIXER_SIZE(dst_w, dst_h);
- 
--	if (plane->type == DRM_PLANE_TYPE_PRIMARY) {
--		bool interlaced = false;
--		u32 val;
--
--		DRM_DEBUG_DRIVER("Primary layer, updating global size W: %u H: %u\n",
--				 dst_w, dst_h);
--		regmap_write(mixer->engine.regs,
--			     SUN8I_MIXER_GLOBAL_SIZE,
--			     outsize);
--		regmap_write(mixer->engine.regs,
--			     SUN8I_MIXER_BLEND_OUTSIZE(bld_base), outsize);
--
--		if (state->crtc)
--			interlaced = state->crtc->state->adjusted_mode.flags
--				& DRM_MODE_FLAG_INTERLACE;
--
--		if (interlaced)
--			val = SUN8I_MIXER_BLEND_OUTCTL_INTERLACED;
--		else
--			val = 0;
--
--		regmap_update_bits(mixer->engine.regs,
--				   SUN8I_MIXER_BLEND_OUTCTL(bld_base),
--				   SUN8I_MIXER_BLEND_OUTCTL_INTERLACED,
--				   val);
--
--		DRM_DEBUG_DRIVER("Switching display mixer interlaced mode %s\n",
--				 interlaced ? "on" : "off");
--	}
--
- 	/* Set height and width */
- 	DRM_DEBUG_DRIVER("Layer source offset X: %d Y: %d\n",
- 			 state->src.x1 >> 16, state->src.y1 >> 16);
+ 	sdev->bar[SOF_FW_BLK_TYPE_SRAM] = devm_ioremap_wc(sdev->dev, res.start,
+-							  res.end - res.start +
+-							  1);
++							  resource_size(&res));
+ 	if (!sdev->bar[SOF_FW_BLK_TYPE_SRAM]) {
+ 		dev_err(sdev->dev, "failed to ioremap mem 0x%x size 0x%x\n",
+ 			base, size);
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
