@@ -2,80 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44F9E12E0D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Jan 2020 23:44:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C95512E118
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 00:48:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l8z78kbWfUVa3JKZbjnVXlJED58n2xqmiEQSzCLV2Cs=; b=o2M7CEwgrdEra5
-	WfyI+qeo9OSYLhrwA0wPbvWewnTtY71LjqKduFl4ihBSnrkBH/0kXd5s0Yje0Vo8FUJMVECFuAERm
-	rxQtoNcNuunzSnk7cvEFaQB3c66gAy2mkdBweuiJu6vGrt0LKVX/LEb5UeN8npGCCLEbmCxsCBmZt
-	qXC/IkwyBxuLVNVWUJi0reTqEQkk5MH4s9czq46WpsTxfGLPTTW1RmBUEAqeFfVovjPl4k2qAZYkj
-	wa5J9mSpbRyJBtApGZX6ZAkKFVF2/h6a/H/fwqG0Qe0b1VhDgmOv3ZIAO/v+XDC+gCy8ADrx2JKAm
-	dDDFYvlzqcF6w0mAZtMw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JJPZj2mcN8dJSjY7xfkTgmQOE13JMwFdN/+QfhLTBCY=; b=p9y5d9gSM6NSswrjJONbk8izQ
+	3d7SL29KCYUiMzjp31n4Cnapaocgczq9Tgxw4eNIRP8520CyOxcuoMbEHV9U2fhLcJpT7ux6Gzefd
+	WBNoNL2+ABIn/u21h1aP2VLyb3KuWXeeJhA01Pi0L5mrDVK7k7lbtfwnK1fPzS837DBbytjlwhHSu
+	+RyvFo09ZcEz8kClkdzsLP/lLx5DtVsmd6YPU20DHhMWR1QVATFeRRJhdtwcellI7eYaMJW3+lvgv
+	roOL28tHHsu8Hrb4fZp09Q+XAnjFOLgZgGWHXnKvSs+1xD1dtLyHC3CEalGQ7Mf+wFaV5ulgJp2QU
+	I8n36er/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1immjB-00009R-FZ; Wed, 01 Jan 2020 22:44:33 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1imnim-0004GG-Or; Wed, 01 Jan 2020 23:48:12 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1immiy-0008TJ-Bb
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Jan 2020 22:44:22 +0000
-Received: by mail-il1-x143.google.com with SMTP id f5so32857186ilq.5
+ id 1imnif-0004FZ-Hc
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Jan 2020 23:48:07 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p9so4332569wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 Jan 2020 14:44:19 -0800 (PST)
+ Wed, 01 Jan 2020 15:48:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7lEd0rPJB8lH/fvUpe+aWNRpPFyD8m2DNjmHYzjrwSA=;
- b=TCPhbtiXfEdQ0XN7QzFy8DjLjUYRwZDCX1cDNmOgCK4vIXZoF/wU3AE5PrjHXgGa60
- btNgI1xUH1ioWIrkSDxgkwhEs9vKLkZyRnnWTIvECBHxD9q+V5szsDOJxFlwtwcuaZJT
- uZeWKcUZ1InjRrqSHZUsCv/WlrMIinXUdSzUPnk9pSQKyya7h/1GJtN+tp80k9z3eRbs
- yeToarCarve/weWedIuLrHU8ukhX8KiFaol64QWHoLuxqwXCgr2xFO6PIwZGl3FC3MkB
- Ej1oZRZG+DX0VzBbq9TT/LE4nXsUtnfjFn7tvIbR8hLV74d4kg/ufTiqszm72Sg4CzHy
- 8TiQ==
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=gUYrBkQ+daKM7r2bwts74eJuugw8V4ZwGOg11zcLs/U=;
+ b=qeEcRA5OPa/zJkwVQpmOklcXkuNLL+AgdR+rJbbT//fqKNUWzFQeG2QlnnKDY8SULl
+ gsNsynAKJZy15hMCtx4KdsNh58Jy0ALS0NMoIUp1nT1gz523qXeQzVBMwbCIEuwIPFqM
+ ySlo31a26x+uyUIiGL9tmk/Y0fYd72JeVNwrvCFPl/xPb65RCEzFAwADUNYP8qLVk5iN
+ vR1wO30R7suVEocjbvJcOdw5Iwq0eGBOZueaxtBkaqNEaXUJhN2/XVpbbjynorD02MYY
+ LsCBoWL0SqQYlO5OSnXorE4mYxOmCo5B2PUu6Mbh7IBjJEI7EqglKZPM/k5lOXyeXwlU
+ XacQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7lEd0rPJB8lH/fvUpe+aWNRpPFyD8m2DNjmHYzjrwSA=;
- b=Nd48tAX4k8QNBbMsCg+FnjVd/rE1dtzSWt8dT9GqU7L7+1OLIn4uU+3njKOgSwSm/V
- 5d7t+0OX2bAFzsWj/CubWEAMmF4DFKEppUhkmiOZi+uuHEx7kVivsu43Wd3RpLi4gVve
- CDPOJVyAGf4Xfjr5qwTV39Oc04Hmf4GScPv11R/gRT1VBc72yBO22TdHy62hSmOdkBY4
- 7m+aO8ZNaAgKcaPivSup3F/E4CApMlXIhzmNAnM8CBBm45+7CFwWJXzn3R3aLoC5zLfl
- oQFaqJrdmHEyaQsknCxuEUjdQgUcMpK6YkH8o2mBx4MlifF2ueWb9uLNyqmjCoc0z9j2
- BLAw==
-X-Gm-Message-State: APjAAAWd4Gf6IvvPPJQcgII+N9IG/uJwIfbiNiEv+EgbAz6ImqZ4M1MW
- L7TVOW1qBCO7PlJj5+YoShq/XfFKJN7BglkwAQ8=
-X-Google-Smtp-Source: APXvYqwr94cx10Dd8r57IFNdkLZ9sOv5c9SLgSLL3qznDVW/lV3rkJ/prPAvO97tAJrHhjgNorHxMktUwh9ROnw6+cw=
-X-Received: by 2002:a92:4e:: with SMTP id 75mr66694542ila.276.1577918659103;
- Wed, 01 Jan 2020 14:44:19 -0800 (PST)
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=gUYrBkQ+daKM7r2bwts74eJuugw8V4ZwGOg11zcLs/U=;
+ b=nxftvbezIdQFjw2kF9XaDrx97fBDCZteJjDP/O+b9oM8c2MAEkrVpm+8O7mAFz7wIm
+ V4APCaF+Z9Zq3MJlg+lr9dtmtkRgRgipP4C/8bN4tnGjzJ1vm010BMzxZlukTvuOpVT0
+ vSbhm+Prsk/9UukkRnx6b93c63CZz9WCm6joQMDO+nQx7PMYRybXFj80lLPEdf1O57mq
+ whVIxuStWw4ghWTHS56xbEfqgHNJ+jvOtBhIwSVD8hzmV2B7Azke0XJ3eP4t9Lm2eyml
+ XaY2JkYhCn8K25exSwkCcAKT+1nG4P9vt76wA2mAzRHjaC6A+UxtWhGyRZ08UlRsdKDf
+ RzwQ==
+X-Gm-Message-State: APjAAAVlpzujjoQNiFhyvF3A5u3KB/dsfnrcsLoCZW6h6l5FOb+hKDbc
+ kXhGaKEJqKY4ZiRevUZ4ZRI=
+X-Google-Smtp-Source: APXvYqxaUT/FES2O2EvpE609nWlQnVrgiRgJyKSrfcvt8bZ3qEWm4B1r9DWbvafKOXbBmY7svMnKgQ==
+X-Received: by 2002:a05:600c:218b:: with SMTP id
+ e11mr10461702wme.121.1577922480213; 
+ Wed, 01 Jan 2020 15:48:00 -0800 (PST)
+Received: from ?IPv6:2a01:cb19:16b:9900:21b2:eaec:d723:ee6e?
+ ([2a01:cb19:16b:9900:21b2:eaec:d723:ee6e])
+ by smtp.gmail.com with ESMTPSA id u18sm53632781wrt.26.2020.01.01.15.47.58
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 01 Jan 2020 15:47:59 -0800 (PST)
+From: Joris Offouga <offougajoris@gmail.com>
+Subject: Re: [PATCH V3] ARM: dts: imx7d-pico: Add LCD support
+To: Marco Felsch <m.felsch@pengutronix.de>
+References: <20191029101742.9100-1-offougajoris@gmail.com>
+ <20191030082718.oj4nq5li6mohf4tg@pengutronix.de>
+Message-ID: <44787478-271d-4083-501d-2e5a52effd9e@gmail.com>
+Date: Thu, 2 Jan 2020 00:47:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20200101163136.1586-1-michael@amarulasolutions.com>
- <20200101163136.1586-2-michael@amarulasolutions.com>
-In-Reply-To: <20200101163136.1586-2-michael@amarulasolutions.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 1 Jan 2020 16:44:08 -0600
-Message-ID: <CAHCN7xLpGFKH-a0_2C7MOrwmurygJDao=YmGzn9B0RdAM+nYZQ@mail.gmail.com>
-Subject: Re: [PATCH 1/3] soc: imx: gpcv2: add support for i.MX8MM SoC
-To: Michael Trimarchi <michael@amarulasolutions.com>
+In-Reply-To: <20191030082718.oj4nq5li6mohf4tg@pengutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_144420_413597_6167D6BC 
-X-CRM114-Status: GOOD (  24.81  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200101_154805_609024_0CBCCC0C 
+X-CRM114-Status: GOOD (  19.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
+ provider (offougajoris[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -95,229 +104,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Otavio Salvador <otavio@ossystems.com.br>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-amarula@amarulasolutions.com,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 1, 2020 at 10:32 AM Michael Trimarchi
-<michael@amarulasolutions.com> wrote:
->
-> The GPCv2 on the Freescale i.MX8MM SoC works in the same way as the
-> GPCv2 on the i.MX8MQ, with a slight different mapping.
->
-> Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
-
-I tried to push something like this as well, because the mainline
-U-Boot and Linux don't have functional USB, but I was shot down.
-
-See the series here along with some of the dialog:
-https://patchwork.kernel.org/patch/11291889/
-
-I'd love to see something like this pushed upstream to get the USB
-working without using a customer U-Boot or kernel repo.
-
-adam
-> ---
->  .../bindings/power/fsl,imx-gpcv2.txt          |   4 +-
->  drivers/soc/imx/gpcv2.c                       | 110 ++++++++++++++++++
->  2 files changed, 113 insertions(+), 1 deletion(-)
->
-> diff --git a/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt b/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-> index 61649202f6f5..fde651cd06d0 100644
-> --- a/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-> +++ b/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-> @@ -9,6 +9,7 @@ Required properties:
->  - compatible: Should be one of:
->         - "fsl,imx7d-gpc"
->         - "fsl,imx8mq-gpc"
-> +       - "fsl,imx8mm-gpc"
->
->  - reg: should be register base and length as documented in the
->    datasheet
-> @@ -25,7 +26,8 @@ Required properties:
->
->  - reg: Power domain index. Valid values are defined in
->    include/dt-bindings/power/imx7-power.h for fsl,imx7d-gpc and
-> -  include/dt-bindings/power/imx8m-power.h for fsl,imx8mq-gpc
-> +  include/dt-bindings/power/imx8m-power.h for fsl,imx8mq-gpc and
-> +  include/dt-bindings/power/imx8mm-power.h for fsl,imx8mm-gpc
->
->  - #power-domain-cells: Should be 0
->
-> diff --git a/drivers/soc/imx/gpcv2.c b/drivers/soc/imx/gpcv2.c
-> index b0dffb06c05d..d3c012a61c11 100644
-> --- a/drivers/soc/imx/gpcv2.c
-> +++ b/drivers/soc/imx/gpcv2.c
-> @@ -16,6 +16,7 @@
->  #include <linux/regulator/consumer.h>
->  #include <dt-bindings/power/imx7-power.h>
->  #include <dt-bindings/power/imx8mq-power.h>
-> +#include <dt-bindings/power/imx8mm-power.h>
->
->  #define GPC_LPCR_A_CORE_BSC                    0x000
->
-> @@ -41,6 +42,20 @@
->  #define IMX8M_PCIE1_A53_DOMAIN                 BIT(3)
->  #define IMX8M_MIPI_A53_DOMAIN                  BIT(2)
->
-> +#define IMX8MM_VPU_H1_A53_DOMAIN               BIT(15)
-> +#define IMX8MM_VPU_G2_A53_DOMAIN               BIT(14)
-> +#define IMX8MM_VPU_G1_A53_DOMAIN               BIT(13)
-> +#define IMX8MM_DISPMIX_A53_DOMAIN              BIT(12)
-> +#define IMX8MM_GPU_3D_A53_DOMAIN               BIT(11)
-> +#define IMX8MM_VPUMIX_A53_DOMAIN               BIT(10)
-> +#define IMX8MM_GPUMIX_A53_DOMAIN               BIT(9)
-> +#define IMX8MM_GPU_2D_A53_DOMAIN               BIT(8)
-> +#define IMX8MM_DDR1_A53_DOMAIN                 BIT(7)
-> +#define IMX8MM_OTG2_A53_DOMAIN                 BIT(5)
-> +#define IMX8MM_OTG1_A53_DOMAIN                 BIT(4)
-> +#define IMX8MM_PCIE1_A53_DOMAIN                        BIT(3)
-> +#define IMX8MM_MIPI_A53_DOMAIN                 BIT(2)
-> +
->  #define GPC_PU_PGC_SW_PUP_REQ          0x0f8
->  #define GPC_PU_PGC_SW_PDN_REQ          0x104
->
-> @@ -64,6 +79,20 @@
->  #define IMX8M_PCIE1_SW_Pxx_REQ                 BIT(1)
->  #define IMX8M_MIPI_SW_Pxx_REQ                  BIT(0)
->
-> +#define IMX8MM_VPU_H1_SW_Pxx_REQ               BIT(13)
-> +#define IMX8MN_VPU_G2_SW_Pxx_REQ               BIT(12)
-> +#define IMX8MN_VPU_G1_SW_Pxx_REQ               BIT(11)
-> +#define IMX8MM_DISPMIX_SW_Pxx_REQ              BIT(10)
-> +#define IMX8MM_GPU_3D_SW_Pxx_REQ               BIT(9)
-> +#define IMX8MM_VPUMIX_SW_Pxx_REQ               BIT(8)
-> +#define IMX8MM_GPUMIX_SW_Pxx_REQ               BIT(7)
-> +#define IMX8MM_GPU_2D_SW_Pxx_REQ               BIT(6)
-> +#define IMX8MM_DDR1_SW_Pxx_REQ                 BIT(5)
-> +#define IMX8MM_OTG2_SW_Pxx_REQ                 BIT(3)
-> +#define IMX8MM_OTG1_SW_Pxx_REQ                 BIT(2)
-> +#define IMX8MM_PCIE1_SW_Pxx_REQ                        BIT(1)
-> +#define IMX8MM_MIPI_SW_Pxx_REQ                 BIT(0)
-> +
->  #define GPC_M4_PU_PDN_FLG              0x1bc
->
->  #define GPC_PU_PWRHSK                  0x1fc
-> @@ -94,6 +123,20 @@
->  #define IMX8M_PGC_MIPI_CSI2            28
->  #define IMX8M_PGC_PCIE2                        29
->
-> +#define IMX8MM_PGC_MIPI                        16
-> +#define IMX8MM_PGC_PCIE1               17
-> +#define IMX8MM_PGC_OTG1                        18
-> +#define IMX8MM_PGC_OTG2                        19
-> +#define IMX8MM_PGC_DDR1                        21
-> +#define IMX8MM_PGC_GPU_2D              22
-> +#define IMX8MM_PGC_GPUMIX              17
-> +#define IMX8MM_PGC_VPUMIX              18
-> +#define IMX8MM_PGC_GPU_3D              19
-> +#define IMX8MM_PGC_DSPMIX              20
-> +#define IMX8MM_PGC_VPU_G1              21
-> +#define IMX8MM_PGC_VPU_G2              22
-> +#define IMX8MM_PGC_VPU_H1              22
-> +
->  #define GPC_PGC_CTRL(n)                        (0x800 + (n) * 0x40)
->  #define GPC_PGC_SR(n)                  (GPC_PGC_CTRL(n) + 0xc)
->
-> @@ -442,6 +485,72 @@ static const struct imx_pgc_domain_data imx8m_pgc_domain_data = {
->         .reg_access_table = &imx8m_access_table,
->  };
->
-> +static const struct imx_pgc_domain imx8mm_pgc_domains[] = {
-> +       [IMX8MM_POWER_DOMAIN_USB_OTG1] = {
-> +               .genpd = {
-> +                       .name = "usb-otg1",
-> +               },
-> +               .bits  = {
-> +                       .pxx = IMX8MM_OTG1_SW_Pxx_REQ,
-> +                       .map = IMX8MM_OTG1_A53_DOMAIN,
-> +               },
-> +               .pgc   = IMX8MM_PGC_OTG1,
-> +       },
-> +
-> +       [IMX8MM_POWER_DOMAIN_USB_OTG2] = {
-> +               .genpd = {
-> +                       .name = "usb-otg2",
-> +               },
-> +               .bits  = {
-> +                       .pxx = IMX8MM_OTG2_SW_Pxx_REQ,
-> +                       .map = IMX8MM_OTG2_A53_DOMAIN,
-> +               },
-> +               .pgc   = IMX8MM_PGC_OTG2,
-> +       },
-> +};
-> +
-> +static const struct regmap_range imx8mm_yes_ranges[] = {
-> +               regmap_reg_range(GPC_LPCR_A_CORE_BSC,
-> +                                GPC_PU_PWRHSK),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_MIPI),
-> +                                GPC_PGC_SR(IMX8MM_PGC_MIPI)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_PCIE1),
-> +                                GPC_PGC_SR(IMX8MM_PGC_PCIE1)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_OTG1),
-> +                                GPC_PGC_SR(IMX8MM_PGC_OTG1)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_OTG2),
-> +                                GPC_PGC_SR(IMX8MM_PGC_OTG2)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_DDR1),
-> +                                GPC_PGC_SR(IMX8MM_PGC_DDR1)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_GPU_2D),
-> +                                GPC_PGC_SR(IMX8MM_PGC_GPU_2D)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_GPUMIX),
-> +                                GPC_PGC_SR(IMX8MM_PGC_GPUMIX)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPUMIX),
-> +                                GPC_PGC_SR(IMX8MM_PGC_VPUMIX)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_GPU_3D),
-> +                                GPC_PGC_SR(IMX8MM_PGC_GPU_3D)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_DSPMIX),
-> +                                GPC_PGC_SR(IMX8MM_PGC_DSPMIX)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_G1),
-> +                                GPC_PGC_SR(IMX8MM_PGC_VPU_G1)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_G2),
-> +                                GPC_PGC_SR(IMX8MM_PGC_VPU_G2)),
-> +               regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_H1),
-> +                                GPC_PGC_SR(IMX8MM_PGC_VPU_H1)),
-> +};
-> +
-> +static const struct regmap_access_table imx8mm_access_table = {
-> +       .yes_ranges     = imx8mm_yes_ranges,
-> +       .n_yes_ranges   = ARRAY_SIZE(imx8mm_yes_ranges),
-> +};
-> +
-> +static const struct imx_pgc_domain_data imx8mm_pgc_domain_data = {
-> +       .domains = imx8mm_pgc_domains,
-> +       .domains_num = ARRAY_SIZE(imx8mm_pgc_domains),
-> +       .reg_access_table = &imx8mm_access_table,
-> +};
-> +
->  static int imx_pgc_get_clocks(struct imx_pgc_domain *domain)
->  {
->         int i, ret;
-> @@ -641,6 +750,7 @@ static int imx_gpcv2_probe(struct platform_device *pdev)
->  static const struct of_device_id imx_gpcv2_dt_ids[] = {
->         { .compatible = "fsl,imx7d-gpc", .data = &imx7_pgc_domain_data, },
->         { .compatible = "fsl,imx8mq-gpc", .data = &imx8m_pgc_domain_data, },
-> +       { .compatible = "fsl,imx8mm-gpc", .data = &imx8mm_pgc_domain_data, },
->         { }
->  };
->
-> --
-> 2.17.1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyY28sCgpTb3JyeSBmb3IgdGhlIGRlbGF5LAoKTGUgMzAvMTAvMjAxOSDDoCAwOToyNywg
+TWFyY28gRmVsc2NoIGEgw6ljcml0wqA6Cj4gSGkgSm9yaXMsCj4KPiBPbiAxOS0xMC0yOSAxMTox
+NywgSm9yaXMgT2Zmb3VnYSB3cm90ZToKPj4gRnJvbTogRmFiaW8gRXN0ZXZhbTxmZXN0ZXZhbUBn
+bWFpbC5jb20+Cj4+Cj4+IEFkZCBzdXBwb3J0IGZvciB0aGUgVlhUIFZMMDUwLTgwNDhOVC1DMDEg
+cGFuZWwgY29ubmVjdGVkIHRocm91Z2gKPj4gdGhlIDI0IGJpdCBwYXJhbGxlbCBMQ0RJRiBpbnRl
+cmZhY2UuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEZhYmlvIEVzdGV2YW08ZmVzdGV2YW1AZ21haWwu
+Y29tPgo+PiBTaWduZWQtb2ZmLWJ5OiBPdGF2aW8gU2FsdmFkb3I8b3RhdmlvQG9zc3lzdGVtcy5j
+b20uYnI+Cj4+IFNpZ25lZC1vZmYtYnk6IEpvcmlzIE9mZm91Z2E8b2Zmb3VnYWpvcmlzQGdtYWls
+LmNvbT4KPj4gLS0tCj4+ICAgQ2hhbmdlcyB2MiAtPiB2Mwo+PiAJcmVuYW1lIHBpbnRjcmxfYmFj
+a2xpZ2h0IHRvIHBpbmN0cmxfcHdtNAo+PiAJc29ydCB0aGUgbm9kZXMgYWxwaGFiZXRpY2FsCj4+
+Cj4+ICAgQ2hhbmdlcyB2MSAtPiB2Mgo+PiAgIAljaGFuZ2UgIkZyb206IiBKb3JpcyBPZmZvdWdh
+IHRvIEZhYmlvIEVzdGV2YW0KPj4gCXNldCBKb3JpcyBPZmZvdWdhIHNpZ25lZC1vZmYgdG8gdGhl
+IGxhc3Qgb25lCj4+Cj4+ICAgYXJjaC9hcm0vYm9vdC9kdHMvaW14N2QtcGljby5kdHNpIHwgODIg
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwo+PiAgIDEgZmlsZSBjaGFuZ2VkLCA4MiBp
+bnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9pbXg3ZC1w
+aWNvLmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9pbXg3ZC1waWNvLmR0c2kKPj4gaW5kZXggNmY1
+MGViZjMxYTBhLi45YzdjMmM0NWU2YWEgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRz
+L2lteDdkLXBpY28uZHRzaQo+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9pbXg3ZC1waWNvLmR0
+c2kKPj4gQEAgLTcsMTIgKzcsNDAgQEAKPj4gICAjaW5jbHVkZSAiaW14N2QuZHRzaSIKPj4gICAK
+Pj4gICAvIHsKPj4gKyAgICAgICAgYmFja2xpZ2h0OiBiYWNrbGlnaHQgewo+PiArICAgICAgICAg
+ICAgICAgIGNvbXBhdGlibGUgPSAicHdtLWJhY2tsaWdodCI7Cj4+ICsgICAgICAgICAgICAgICAg
+cHdtcyA9IDwmcHdtNCAwIDUwMDAwIDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIF4KPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdGls
+bCBub3QgbmVlZGVkCgpUaGlzIGlzIG5lY2Vzc2FyeSwgYmVjYXVzZSBpdCdzIG5vdCBwcm92aWRl
+LCB3ZSBoYXZlIHRoaXMgd2FybmluZyA6CgogwqAgRFRDwqDCoMKgwqAgYXJjaC9hcm0vYm9vdC9k
+dHMvaW14N2QtcGljby1waS5kdGIKYXJjaC9hcm0vYm9vdC9kdHMvaW14N2QtcGljby5kdHNpOjEy
+LjE3LTQwOiBXYXJuaW5nIChwd21zX3Byb3BlcnR5KTogCi9iYWNrbGlnaHQ6cHdtczogcHJvcGVy
+dHkgc2l6ZSAoMTIpIHRvbyBzbWFsbCBmb3IgY2VsbCBzaXplIDMKCj4+ICsgICAgICAgICAgICAg
+ICAgYnJpZ2h0bmVzcy1sZXZlbHMgPSA8MCAzNiA3MiAxMDggMTQ0IDE4MCAyMTYgMjU1PjsKPj4g
+KyAgICAgICAgICAgICAgICBkZWZhdWx0LWJyaWdodG5lc3MtbGV2ZWwgPSA8Nj47Cj4+ICsgICAg
+ICAgIH07Cj4+ICsKPj4gICAJLyogV2lsbCBiZSBmaWxsZWQgYnkgdGhlIGJvb3Rsb2FkZXIgKi8K
+Pj4gICAJbWVtb3J5QDgwMDAwMDAwIHsKPj4gICAJCWRldmljZV90eXBlID0gIm1lbW9yeSI7Cj4+
+ICAgCQlyZWcgPSA8MHg4MDAwMDAwMCAwPjsKPj4gICAJfTsKPj4gICAKPj4gKyAgICAgICAgcGFu
+ZWwgewo+PiArICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAidnh0LHZsMDUwLTgwNDhudC1j
+MDEiOwo+PiArICAgICAgICAgICAgICAgIGJhY2tsaWdodCA9IDwmYmFja2xpZ2h0PjsKPj4gKyAg
+ICAgICAgICAgICAgICBwb3dlci1zdXBwbHkgPSA8JnJlZ19sY2RfM3YzPjsKPj4gKwo+PiArICAg
+ICAgICAgICAgICAgIHBvcnQgewo+PiArICAgICAgICAgICAgICAgICAgICAgICAgcGFuZWxfaW46
+IGVuZHBvaW50IHsKPj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmVtb3RlLWVu
+ZHBvaW50ID0gPCZkaXNwbGF5X291dD47Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgICB9Owo+
+PiArICAgICAgICAgICAgICAgIH07Cj4+ICsgICAgICAgIH07Cj4+ICsKPj4gKwlyZWdfbGNkXzN2
+MzogcmVndWxhdG9yLWxjZC0zdjMgewo+PiArICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAi
+cmVndWxhdG9yLWZpeGVkIjsKPj4gKyAgICAgICAgICAgICAgICByZWd1bGF0b3ItbmFtZSA9ICJs
+Y2QtM3YzIjsKPj4gKyAgICAgICAgICAgICAgICByZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwz
+MzAwMDAwPjsKPj4gKyAgICAgICAgICAgICAgICByZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwz
+MzAwMDAwPjsKPj4gKyAgICAgICAgICAgICAgICBncGlvID0gPCZncGlvMSA2IEdQSU9fQUNUSVZF
+X0hJR0g+Owo+IFdoZXJlIGhhcHBlbnMgdGhlIG11eGluZyBmb3IgdGhpcyBncGlvPwoKSSBhZGQg
+aXQgZm9yIFY0CgpUaGFua3MKCj4KPj4gKyAgICAgICAgICAgICAgICBlbmFibGUtYWN0aXZlLWhp
+Z2g7Cj4+ICsgICAgICAgIH07Cj4+ICsKPj4gICAJcmVnX3dscmVnX29uOiByZWd1bGF0b3Itd2xy
+ZWdfb24gewo+PiAgIAkJY29tcGF0aWJsZSA9ICJyZWd1bGF0b3ItZml4ZWQiOwo+PiAgIAkJcGlu
+Y3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4gQEAgLTIzMCw2ICsyNTgsMTggQEAKPj4gICAJfTsK
+Pj4gICB9Owo+PiAgIAo+PiArJmxjZGlmIHsKPj4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQi
+Owo+PiArCXBpbmN0cmwtMCA9IDwmcGluY3RybF9sY2RpZj47Cj4+ICsJc3RhdHVzID0gIm9rYXki
+Owo+PiArCj4+ICsJcG9ydCB7Cj4+ICsJCWRpc3BsYXlfb3V0OiBlbmRwb2ludCB7Cj4+ICsJCQly
+ZW1vdGUtZW5kcG9pbnQgPSA8JnBhbmVsX2luPjsKPj4gKwkJfTsKPj4gKwl9Owo+PiArfTsKPj4g
+Kwo+PiAgICZzYWkxIHsKPj4gICAJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4gICAJcGlu
+Y3RybC0wID0gPCZwaW5jdHJsX3NhaTE+Owo+PiBAQCAtMjYwLDYgKzMwMCw4IEBACj4+ICAgfTsK
+Pj4gICAKPj4gICAmcHdtNCB7IC8qIEJhY2tsaWdodCAqLwo+PiArCXBpbmN0cmwtbmFtZXMgPSAi
+ZGVmYXVsdCI7Cj4+ICsJcGluY3RybC0wID0gPCZwaW5jdHJsX3B3bTQ+Owo+PiAgIAlzdGF0dXMg
+PSAib2theSI7Cj4+ICAgfTsKPj4gICAKPj4gQEAgLTQxMyw2ICs0NTUsNDAgQEAKPj4gICAJCT47
+Cj4+ICAgCX07Cj4+ICAgCj4+ICsJcGluY3RybF9sY2RpZjogbGNkaWZncnAgewo+PiArCQlmc2ws
+cGlucyA9IDwKPj4gKwkJCU1YN0RfUEFEX0xDRF9EQVRBMDBfX0xDRF9EQVRBMAkJMHg3OQo+PiAr
+CQkJTVg3RF9QQURfTENEX0RBVEEwMV9fTENEX0RBVEExCQkweDc5Cj4+ICsJCQlNWDdEX1BBRF9M
+Q0RfREFUQTAyX19MQ0RfREFUQTIJCTB4NzkKPj4gKwkJCU1YN0RfUEFEX0xDRF9EQVRBMDNfX0xD
+RF9EQVRBMwkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEEwNF9fTENEX0RBVEE0CQkweDc5
+Cj4+ICsJCQlNWDdEX1BBRF9MQ0RfREFUQTA1X19MQ0RfREFUQTUJCTB4NzkKPj4gKwkJCU1YN0Rf
+UEFEX0xDRF9EQVRBMDZfX0xDRF9EQVRBNgkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEEw
+N19fTENEX0RBVEE3CQkweDc5Cj4+ICsJCQlNWDdEX1BBRF9MQ0RfREFUQTA4X19MQ0RfREFUQTgJ
+CTB4NzkKPj4gKwkJCU1YN0RfUEFEX0xDRF9EQVRBMDlfX0xDRF9EQVRBOQkJMHg3OQo+PiArCQkJ
+TVg3RF9QQURfTENEX0RBVEExMF9fTENEX0RBVEExMAkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENE
+X0RBVEExMV9fTENEX0RBVEExMQkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEExMl9fTENE
+X0RBVEExMgkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEExM19fTENEX0RBVEExMwkJMHg3
+OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEExNF9fTENEX0RBVEExNAkJMHg3OQo+PiArCQkJTVg3
+RF9QQURfTENEX0RBVEExNV9fTENEX0RBVEExNQkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RB
+VEExNl9fTENEX0RBVEExNgkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEExN19fTENEX0RB
+VEExNwkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEExOF9fTENEX0RBVEExOAkJMHg3OQo+
+PiArCQkJTVg3RF9QQURfTENEX0RBVEExOV9fTENEX0RBVEExOQkJMHg3OQo+PiArCQkJTVg3RF9Q
+QURfTENEX0RBVEEyMF9fTENEX0RBVEEyMAkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEEy
+MV9fTENEX0RBVEEyMQkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEEyMl9fTENEX0RBVEEy
+MgkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0RBVEEyM19fTENEX0RBVEEyMwkJMHg3OQo+PiAr
+CQkJTVg3RF9QQURfTENEX0NMS19fTENEX0NMSwkJMHg3OQo+PiArCQkJTVg3RF9QQURfTENEX0VO
+QUJMRV9fTENEX0VOQUJMRQkJMHg3OAo+PiArCQkJTVg3RF9QQURfTENEX1ZTWU5DX19MQ0RfVlNZ
+TkMJCTB4NzgKPj4gKwkJCU1YN0RfUEFEX0xDRF9IU1lOQ19fTENEX0hTWU5DCQkweDc4Cj4+ICsJ
+CQlNWDdEX1BBRF9MQ0RfUkVTRVRfX0dQSU8zX0lPNAkJMHgxNAo+PiArCQk+Owo+PiArCX07Cj4+
+ICsKPj4gICAJcGluY3RybF9wd20xOiBwd20xIHsKPj4gICAJCWZzbCxwaW5zID0gPAo+PiAgIAkJ
+CU1YN0RfUEFEX0dQSU8xX0lPMDhfX1BXTTFfT1VUICAgMHg3Zgo+PiBAQCAtNDMxLDYgKzUwNywx
+MiBAQAo+PiAgIAkJPjsKPj4gICAJfTsKPj4gICAKPj4gKwlwaW5jdHJsX3B3bTQ6IHB3bTRncnB7
+Cj4+ICsJCWZzbCxwaW5zID0gPAo+PiArCQkJTVg3RF9QQURfR1BJTzFfSU8xMV9fUFdNNF9PVVQJ
+MHgwCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIF4KPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJcyB0
+aGlzIG11eGluZyB2YWx1ZSB2YWxpZD8KCkkgZml4IGZvciBWNAoKUmVnYXJkcywKCkpvcmlzCgo+
+Cj4gUmVnYXJkcywKPiAgICBNYXJjbwo+Cj4+ICsJCT47Cj4+ICsJfTsKPj4gKwo+PiAgIAlwaW5j
+dHJsX3JlZ193bHJlZ19vbjogcmVncmVnb25ncnAgewo+PiAgIAkJZnNsLHBpbnMgPSA8Cj4+ICAg
+CQkJTVg3RF9QQURfRUNTUEkxX1NDTEtfX0dQSU80X0lPMTYJMHg1OQo+PiAtLSAKPj4gMi4xNy4x
+Cj4+Cj4+Cj4+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
