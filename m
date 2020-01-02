@@ -2,63 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D4BD12E30D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 07:33:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65C0412E323
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 07:39:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:
-	In-Reply-To:Date:To:From:Subject:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KzQGOYKuCeCroyb53wwC2v9agNEhvjA6CglYDNCw1D4=; b=BhwT9TcY3FVQBE
-	PyRJDgLKczVVEMeUzLQq1pKuD8Ug6E2wb0TxlwqLI2rufPLcFNPTWgiYf0mgNuUV90m0kjrUNrypH
-	cye0X3sNbMw+i1H9PASxtpAYdPQG5fLTIHXbIZL2k0bl25XKlQjKVhnREv+QH+AmXgb1+Ft+VxyL8
-	j6AM35tdwK/Hm0ZNxLodabXUT+Uu1l67IxpRSb9qeNVyoyvrpKKsdMasw5ExmviBxuM45v4/lieZB
-	/Ye504Ee/sXfTwrlloVVhW5ryl5ivVfq/dlTN+B8WMpJRnswVsGxwrGUu27xUSjEyOWLdtqfthDkC
-	NdaY6aCo1UMnUd1dqj7A==;
+	List-Owner; bh=br4g/HzJebjEgl26Qq35+NmTAXtQStQ6Hu7hUZE6r00=; b=sOkr8jI5v1Zjpy
+	gm95BNiiKlgux0WFc6ixihUdWdaZ3xbJwoq6X6gGidyzqJenxKmv/ZlumHQyI4M3yYhg7K9N4/n7O
+	KzNBe30DGnRJzTbgabRNA4vvM4xghQdek1lLQ97+ZfpUxvQIxbRREKsoDzk1CveQsn+s589R1VX0V
+	N3JBdxmkCtItHHpdoiSuxfFAJGRDKiuROupMPgoQjPPeSKCHL9ZbK8l5B+8HBo3VTGZuDAOlxZjd/
+	G4GcFUNtCCRvOVxJKYCsb8HrEFxaBos2hl1P71hQIolDh6b8DZlOI9WYPBVPd+KorCN4dBviDLFcQ
+	yhEHcDj0CqtIwKSPGfIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imu2a-0006gb-7m; Thu, 02 Jan 2020 06:33:04 +0000
+	id 1imu8Q-0000Tq-16; Thu, 02 Jan 2020 06:39:06 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imu2U-0006fF-3X; Thu, 02 Jan 2020 06:33:00 +0000
-X-UUID: dd96970a39904bbfb1ba3ea902421bf1-20200101
+ id 1imu8C-0000SL-2x; Thu, 02 Jan 2020 06:38:53 +0000
+X-UUID: c8792bb17f1d44fb90064a49e5cb4cef-20200101
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:Reply-To:From:Subject:Message-ID;
- bh=9vypeXyGCV1z946FM6RAns12k9X/Zs6/MFy6RvOrBHY=; 
- b=gKiq4EoLmDrnVhVePAzPEyZ6mdgbnf8W48tf+kPL5nHXw4tMimwhuqDganbA8HDsVVxCO6yGxD9rPdqlRdn+Oxku+VHHVTSE40hxMiMlMGHwQneOBmlhwANTAwt8M9Kh34sQTcX3MgFxyhtmEmasrSCh06VIFlqgozLZbuk844s=;
-X-UUID: dd96970a39904bbfb1ba3ea902421bf1-20200101
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=EY8CHJ1MOwpTVq0/F8e5ITYSow6Z2y2qYGrDALgu+g0=; 
+ b=pJXkWvF37dqw5HMuhYArqf40LDfY6vEeWuJv+6ij/MSLg4rCvjnOYACql3gZWmbFBPpxGhzMQ05Xs8LfANxbX8hIGahW42esE5XHwspiatuUM/0vyxW/2ox/jcKFz2WOPy4798wqBx/YPXUyq/gfzeljK/wB41Qx8+X+dD0ZYSM=;
+X-UUID: c8792bb17f1d44fb90064a49e5cb4cef-20200101
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1900066326; Wed, 01 Jan 2020 22:32:48 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 1 Jan 2020 22:23:07 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by mtkmbs05n2.mediatek.inc
- (172.21.101.140) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 2 Jan 2020 14:22:15 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 2 Jan 2020 14:23:09 +0800
-Message-ID: <1577946073.15116.8.camel@mhfsdcap03>
-Subject: Re: [PATCH v6, 02/14] drm/mediatek: move dsi/dpi select input into
- mtk_ddp_sel_in
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Thu, 2 Jan 2020 14:21:13 +0800
-In-Reply-To: <1577944949.32066.1.camel@mtksdaap41>
-References: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
- <1577937624-14313-3-git-send-email-yongqiang.niu@mediatek.com>
- <1577941388.24650.2.camel@mtksdaap41> <1577943579.15116.1.camel@mhfsdcap03>
- <1577944949.32066.1.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ with ESMTP id 1538395788; Wed, 01 Jan 2020 22:38:48 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 1 Jan 2020 22:39:09 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 14:37:59 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 2 Jan 2020 14:38:03 +0800
+Message-ID: <1577947124.13164.75.camel@mtkswgap22>
+Subject: Re: [PATCH v1 1/2] scsi: ufs: set device as default active power
+ mode during initialization only
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Can Guo <cang@codeaurora.org>
+Date: Thu, 2 Jan 2020 14:38:44 +0800
+In-Reply-To: <44393ed9ff3ba9878bae838307e7eec0@codeaurora.org>
+References: <1577693546-7598-1-git-send-email-stanley.chu@mediatek.com>
+ <1577693546-7598-2-git-send-email-stanley.chu@mediatek.com>
+ <fd129b859c013852bd80f60a36425757@codeaurora.org>
+ <1577754469.13164.5.camel@mtkswgap22>
+ <836772092daffd8283a97d633e59fc34@codeaurora.org>
+ <1577766179.13164.24.camel@mtkswgap22>
+ <1577778290.13164.45.camel@mtkswgap22>
+ <44393ed9ff3ba9878bae838307e7eec0@codeaurora.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 6DF2DA8F51F0E1171061F223F8110C3970D122A74F33AAB3D5F7588FEE5DB6412000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_223258_156137_57D24BFB 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20200101_223852_138561_5F280E36 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,94 +91,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Yongqiang Niu <yongqiang.niu@mediatek.com>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: alim.akhtar@samsung.com, beanhuo@micron.com, bvanassche@acm.org,
+ linux-scsi@vger.kernel.org, peter.wang@mediatek.com, cc.chou@mediatek.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ ron.hsu@mediatek.com, avri.altman@wdc.com, linux-mediatek@lists.infradead.org,
+ linux-scsi-owner@vger.kernel.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org, martin.petersen@oracle.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, subhashj@codeaurora.org, pedrom.sousa@synopsys.com,
+ asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-01-02 at 14:02 +0800, CK Hu wrote:
-> Hi, Yongqiang:
-> 
-> On Thu, 2020-01-02 at 13:39 +0800, Yongqiang Niu wrote:
-> > On Thu, 2020-01-02 at 13:03 +0800, CK Hu wrote:
-> > > Hi, Yongqiang:
-> > > 
-> > > On Thu, 2020-01-02 at 12:00 +0800, Yongqiang Niu wrote:
-> > > > move dsi/dpi select input into mtk_ddp_sel_in
-> > > > 
-> > > > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > > > ---
-> > > >  drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 10 ++++++----
-> > > >  1 file changed, 6 insertions(+), 4 deletions(-)
-> > > > 
-> > > > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> > > > index 39700b9..91c9b19 100644
-> > > > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> > > > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> > > > @@ -376,6 +376,12 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
-> > > >  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
-> > > >  		*addr = DISP_REG_CONFIG_DSI_SEL;
-> > > >  		value = DSI_SEL_IN_BLS;
-> > > > +	} else if (cur == DDP_COMPONENT_RDMA1 && next == DDP_COMPONENT_DSI0) {
-> > > > +		*addr = DISP_REG_CONFIG_DSI_SEL;
-> > > > +		value = DSI_SEL_IN_RDMA;
-> > > 
-> > > In original code, this is set when cur == DDP_COMPONENT_BLS and next ==
-> > > DDP_COMPONENT_DPI0. Why do you change the condition?
-> > > 
-> > > Regards,
-> > > CK
-> > 
-> > if bls connect with dpi0, rdma1 should connect with dsi0, the condition
-> > is same with before.
-> 
-> You suggest that two crtcs are both enabled. If only one crtc is
-> enabled, just one of these two would be set.
-> 
-> Regards,
-> CK
+Hi Can,
 
-OK, i will modify like this
-else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
-		*addr = DISP_REG_CONFIG_DSI_SEL;
-		value = DPI_SEL_IN_RDMA;
-	}
-in mtk_ddp_sel_in.
+On Tue, 2019-12-31 at 16:35 +0800, Can Guo wrote:
 
-don't set DISP_REG_CONFIG_DPI_SEL to DPI_SEL_IN_BLS anymore, because
-DPI_SEL_IN_BLS is zero, it is same with hardware default setting.
+> Hi Stanley,
 > 
-> > > 
-> > > > +	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
-> > > > +		*addr = DISP_REG_CONFIG_DPI_SEL;
-> > > > +		value = DPI_SEL_IN_BLS;
-> > > >  	} else {
-> > > >  		value = 0;
-> > > >  	}
-> > > > @@ -393,10 +399,6 @@ static void mtk_ddp_sout_sel(struct regmap *config_regs,
-> > > >  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
-> > > >  		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
-> > > >  				BLS_TO_DPI_RDMA1_TO_DSI);
-> > > > -		regmap_write(config_regs, DISP_REG_CONFIG_DSI_SEL,
-> > > > -				DSI_SEL_IN_RDMA);
-> > > > -		regmap_write(config_regs, DISP_REG_CONFIG_DPI_SEL,
-> > > > -				DPI_SEL_IN_BLS);
-> > > >  	}
-> > > >  }
-> > > >  
-> > > 
-> > > 
-> > 
-> > 
+> I missed this mail before I hit send. In current code, as per my 
+> understanding,
+> UFS device's power state should be Active after ufshcd_link_startup() 
+> returns.
+> If I am wrong, please feel free to correct me.
 > 
+
+Yes, this assumption of ufshcd_probe_hba() is true so I will drop this
+patch.
+Thanks for remind.
+
+> Due to you are almost trying to revert commit 7caf489b99a42a, I am just 
+> wondering
+> if you encounter failure/error caused by it.
+
+Yes, we actually have some doubts from the commit message of "scsi: ufs:
+issue link startup 2 times if device isn't active"
+
+If we configured system suspend as device=PowerDown/Link=LinkDown mode,
+during resume, the 1st link startup will be successful, and after that
+device could be accessed normally so it shall be already in Active power
+mode. We did not find devices which need twice linkup for normal work.
+
+And because the 1st linkup is OK, the forced 2nd linkup by commit "scsi:
+ufs: issue link startup 2 times if device isn't active" leads to link
+lost and finally the 3rd linkup is made again by retry mechanism in
+ufshcd_link_startup() and be successful. So a linkup performance issue
+is introduced here: We actually need one-time linkup only but finally
+got 3 linkup operations.
+
+According to the UFS spec, all reset types (including POR and Host
+UniPro Warm Reset which both may happen in above configurations) other
+than LU reset, UFS device power mode shall return to Sleep mode or
+Active mode depending on bInitPowerMode, by default, it's Active mode.
+
+So we are curious that why enforcing twice linkup is necessary here?
+Could you kindly help us clarify this?
+
+If anything wrong in above description, please feel free to correct me.
+
 > 
+> Happy new year to you too!
+> 
+> Thanks,
+> 
+> Can Guo
+
+Thanks,
+
+Stanley
+
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
