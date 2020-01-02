@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7EDF12E949
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 18:24:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A7912E951
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 18:24:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eiIVDy0RsOpOGl3LKr4zPrfa9rweQUbjoBK807bD42k=; b=OI1+z/Qihze4Li
-	rlXBO+cDILl4Q36q2n0u5GBHk2ZbVYjvix3mmaXNDm3VX/18oBJsGFXhvtAvlLBOEiZnzGESWbB9V
-	J8q4hYeGwyTSi5lkUXM78NyZmejpIBu6STzUx0mxUrJHln3bvidA1PTLXUtAdWvP5mFI0mpQcMQdl
-	5QOpTp4KV0uynASf/xxOALRm/Jw8atALtVOSBsgxcdvwPkXNU6LTm+W4Ok0j7/xPSAZsMiJh8XBCV
-	WZcamrdBUk7AzYBSCKzxO6uTQl3bV3B6cDISbcfZbcnx601noacHr/sDe7JcLhw+D9MWqNaJG5ky+
-	HQ/eoHHWa7n4No2haX8w==;
+	List-Owner; bh=VEtV5s2BApx/bwExZc69UK0IkSgfdHlrwcASamR2oZU=; b=lQC/63OrNswjMb
+	M76lp/ycR04ZHK4Af6mkF3yX2RwSvF8sfbwhbemn/RWE+laRjjLDSrXWIxW9BIUbLkN6vfLlhML9T
+	QgblQDqr70F0A/7ttzetLeWNCqp6t6WginaIZJMOcD3nEo/2JmaPFRKT0y3iKWNzy6b2Lem1hSWz9
+	6c+jolG2tuRUn7zusWRtlbEwuoZF4d+KwoO7qrYHB2/n/oxKFE+NiwJOc6NnsUkZtFkBrrdQvHbyn
+	DnoqTn8GlzN7/YfvWXJZM74j4DLMjDwCPVnqNuPEzsQJQvbPR0flGwiDOR8mX1eNyEjsddzvds/Mq
+	4NH1Zhcp6+seFmQ0jXlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in4Cy-0007f1-VK; Thu, 02 Jan 2020 17:24:28 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1in4DC-0007xM-1k; Thu, 02 Jan 2020 17:24:42 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in4Cp-0007Zz-Cp
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 17:24:20 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c127so5356832wme.1
+ id 1in4Cp-0007a1-TW
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 17:24:21 +0000
+Received: by mail-wr1-x441.google.com with SMTP id z3so39988233wru.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 09:24:18 -0800 (PST)
+ Thu, 02 Jan 2020 09:24:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=U9wjKYaQcIlsbYXPy/YsIaQFJ4xpalfLis5wZruxKtw=;
- b=P3gsS/ZAFO4rR24+Almp/rb4kOrZetEaJ7F3U+iU/txuqOLkvrKTmX3vXQOyetQ2sN
- ytCC6zluK1xDIIaQ4NaCeZLVVjXngHX47ubcjDBzEyAU0VHX48lBXTHyVpBXfrcCQPhT
- wYcuc34lFvhjidePvkcjZ1eErTyb+hZI9Wv6/r0OefF0+LQ8JNEZsk6ZG1WY7l98WMfD
- aULsc0wZ375rCRHWpvTS0w724g597YIeyaO1i02bo+n7KBUj4FG8GpIeV10hXByouG6G
- OWPrOdrk+PAzkXQwaFIBpCZMMkbkW0IS1S/ArHY+lcK5T4nUaUFrWJF28YzmhzqWjnr5
- VUmw==
+ bh=iynuWkDBVTaiEzHNP7sxuTkwJnSTns6zopxJWRhFfwM=;
+ b=t7xqOm6OFo39bFTfx2QgOe5P+nWEAEOUff1YJ0pwLEf6Fv1AZqBvjPowdPWbEO6KoE
+ Z/9uqLpZ0LzZIHVqJdI3giZkl0gpTCdkocT04PmvIu3PBgyLagUCnjv8kczWyoppCDIb
+ c+NcxYZMBC+gUNbOk83IsiTHaC/tQCl5z1POP8n+zKVYYQhHZMeRKB9wA0qZH/BOmGuO
+ 6f/ycMdHuWvmwKljtf3dL3ThfirhWgPclMEjQIVSrR/x+EB+tMFBtxl8HMCyBqFzMh3m
+ qIMRPCxHGm/bcYwCdocfZnXu1WaNpkCBc0ZTiDueiQ4IL3xgm0F28WsImiKxy6Bappvr
+ O7gg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=U9wjKYaQcIlsbYXPy/YsIaQFJ4xpalfLis5wZruxKtw=;
- b=TvAUGGYGR6vmNZMcJSXiDZ+Nv2t8LkHOqasXhebG6SG6TxcBLrGiruN86WWPJRlEKN
- KIQVf3MG1Xsy8RrmoQC5AJqqINcXF+ACH2uQAzfjjtdTA+udAixUjZn6/qBEkhRgpgM9
- gg7JmlIG1H9BAJDBfqmwAeJX9Ay3Of1vQ5c6TpCvdIIUyuVbtWb67ouz0hT9Hjmn07WW
- EeItmMdDdwFZKvHhtgWakPpgL/v778d2hf9GMLHNbsUmvEFr6SX94Lh4mD3flYTKWfKA
- VEHRtlvx3quPaPM7I4ZogsC/s7nHK8LvtJI900TDS3zI57pZAxIB2XVfGtnOLjc9j9XQ
- orcA==
-X-Gm-Message-State: APjAAAWl/oUkuky2Y9+y86Nq3imfeztCLYQHFchKVBHQ4DxaptmcAZuW
- pl4vtyBIk6Imp/npUW3ZU/VntBrNqYu6/a3O
-X-Google-Smtp-Source: APXvYqxMmMOtyKlgTiqfTvjBJc9+1aotTufCtLN2iSJ+lkIsQeXmdCm7NZR/v45FI2J6XlEBoj6ZDQ==
-X-Received: by 2002:a1c:4907:: with SMTP id w7mr14872299wma.106.1577985857314; 
- Thu, 02 Jan 2020 09:24:17 -0800 (PST)
+ bh=iynuWkDBVTaiEzHNP7sxuTkwJnSTns6zopxJWRhFfwM=;
+ b=HfyQbaks6AmXQ1upzwUhRsrv1f+YGhdHQD6nNGokiwYB/qqgCsN2mLeW544Z5EWQW5
+ +N6UGgOGURtCrMrPeqr80g1+KzYw/d3yzkvFtb0mnIK193+lW1P1ephcBBWPugzNrbAf
+ Peganzvqj5m+6PQmPMUnqrttaTNiru1F/J2WBcyFoX8JRicscDl9x8iiSzHlGgsH2dQR
+ UTmbq8y/y2Bf34WJb4YtsX04wP7sAyjDxXCCBha6VraJOOyAKD/Ppftuix2Ycc/2VIl1
+ vstQzZZWt+EOVKSBgAfWr4d0kX74HzbNNpKmBV25NW72Zj1mwK6QEwajYvRmva2WbRKx
+ MPGQ==
+X-Gm-Message-State: APjAAAXGJoEqbtddKWxKyjuDqjZWIv8g6Bw3oJ3VxifOBK/x/LeWizJ7
+ olxaC6ZI3IZ3O9+J0nIfJ3c=
+X-Google-Smtp-Source: APXvYqyGvFmZbRqFUgjsGsKZXKYs8CPJrTsut+rS8ZrZ5qhYlWYH9pC/PaHj2Q9P1tF2BhjHeQQ/qg==
+X-Received: by 2002:adf:f484:: with SMTP id l4mr83117692wro.207.1577985858109; 
+ Thu, 02 Jan 2020 09:24:18 -0800 (PST)
 Received: from amanieu-laptop.home ([2a01:cb19:8051:6200:3fe7:84:7f3:e713])
- by smtp.gmail.com with ESMTPSA id z21sm9480328wml.5.2020.01.02.09.24.16
+ by smtp.gmail.com with ESMTPSA id z21sm9480328wml.5.2020.01.02.09.24.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 02 Jan 2020 09:24:16 -0800 (PST)
+ Thu, 02 Jan 2020 09:24:17 -0800 (PST)
 From: Amanieu d'Antras <amanieu@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 1/7] arm64: Move __ARCH_WANT_SYS_CLONE3 definition to uapi
- headers
-Date: Thu,  2 Jan 2020 18:24:07 +0100
-Message-Id: <20200102172413.654385-2-amanieu@gmail.com>
+Subject: [PATCH 2/7] arm64: Implement copy_thread_tls
+Date: Thu,  2 Jan 2020 18:24:08 +0100
+Message-Id: <20200102172413.654385-3-amanieu@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200102172413.654385-1-amanieu@gmail.com>
 References: <20200102172413.654385-1-amanieu@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_092419_462793_682318A8 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20200102_092419_964228_6DB85C3E 
+X-CRM114-Status: GOOD (  13.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,40 +105,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Previously this was only defined in the internal headers which
-resulted in __NR_clone3 not being defined in the user headers.
+This is required for clone3 which passes the TLS value through a
+struct rather than a register.
 
 Signed-off-by: Amanieu d'Antras <amanieu@gmail.com>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: <stable@vger.kernel.org> # 5.3.x
 ---
- arch/arm64/include/asm/unistd.h      | 1 -
- arch/arm64/include/uapi/asm/unistd.h | 1 +
- 2 files changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/Kconfig          |  1 +
+ arch/arm64/kernel/process.c | 10 +++++-----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm64/include/asm/unistd.h b/arch/arm64/include/asm/unistd.h
-index 2629a68b8724..5af82587909e 100644
---- a/arch/arm64/include/asm/unistd.h
-+++ b/arch/arm64/include/asm/unistd.h
-@@ -42,7 +42,6 @@
- #endif
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index b1b4476ddb83..e688dfad0b72 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -138,6 +138,7 @@ config ARM64
+ 	select HAVE_CMPXCHG_DOUBLE
+ 	select HAVE_CMPXCHG_LOCAL
+ 	select HAVE_CONTEXT_TRACKING
++	select HAVE_COPY_THREAD_TLS
+ 	select HAVE_DEBUG_BUGVERBOSE
+ 	select HAVE_DEBUG_KMEMLEAK
+ 	select HAVE_DMA_CONTIGUOUS
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 71f788cd2b18..d54586d5b031 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -360,8 +360,8 @@ int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)
  
- #define __ARCH_WANT_SYS_CLONE
--#define __ARCH_WANT_SYS_CLONE3
+ asmlinkage void ret_from_fork(void) asm("ret_from_fork");
  
- #ifndef __COMPAT_SYSCALL_NR
- #include <uapi/asm/unistd.h>
-diff --git a/arch/arm64/include/uapi/asm/unistd.h b/arch/arm64/include/uapi/asm/unistd.h
-index 4703d218663a..f83a70e07df8 100644
---- a/arch/arm64/include/uapi/asm/unistd.h
-+++ b/arch/arm64/include/uapi/asm/unistd.h
-@@ -19,5 +19,6 @@
- #define __ARCH_WANT_NEW_STAT
- #define __ARCH_WANT_SET_GET_RLIMIT
- #define __ARCH_WANT_TIME32_SYSCALLS
-+#define __ARCH_WANT_SYS_CLONE3
+-int copy_thread(unsigned long clone_flags, unsigned long stack_start,
+-		unsigned long stk_sz, struct task_struct *p)
++int copy_thread_tls(unsigned long clone_flags, unsigned long stack_start,
++		unsigned long stk_sz, struct task_struct *p, unsigned long tls)
+ {
+ 	struct pt_regs *childregs = task_pt_regs(p);
  
- #include <asm-generic/unistd.h>
+@@ -394,11 +394,11 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
+ 		}
+ 
+ 		/*
+-		 * If a TLS pointer was passed to clone (4th argument), use it
+-		 * for the new thread.
++		 * If a TLS pointer was passed to clone, use it for the new
++		 * thread.
+ 		 */
+ 		if (clone_flags & CLONE_SETTLS)
+-			p->thread.uw.tp_value = childregs->regs[3];
++			p->thread.uw.tp_value = tls;
+ 	} else {
+ 		memset(childregs, 0, sizeof(struct pt_regs));
+ 		childregs->pstate = PSR_MODE_EL1h;
 -- 
 2.24.1
 
