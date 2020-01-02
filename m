@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 094A712E232
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 05:12:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A76F312E240
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 05:14:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3r1h79sPgfhcEw5A6fzLTrsWvyInl3foFLfOHLBAi8=; b=gftj94TXSlJCuM
-	kuGdMt2OJu0MCLYtYpFGCWy919CialLnP07vwbbaldJV4DloUt1+uhpwA1sdzBxwAET+gaY9AoDVr
-	6rgMpEXvE5UAVWiAVzSYrB8s7HfGk2VcFv9HHNlXtOkwAxeWD4UGEKmsQE55reJ1EaqZIYNPf+aYM
-	DR9U8HGvED1QdCMwR/9ZIvqEAxSFU2QsI/uQaVYlQaCixa0py0vWuY5cRILKhM1yoEBLInJe5KqoP
-	uHG8XIMfo6uH4Te10cEvXFgS+Nlv/TflRqTa3aSnKDWbDXPDkLw/Mrc7BWdPGA+GF3r1n8t686sP+
-	kdOS74Ju6MTgj75jbsBg==;
+	List-Owner; bh=/nKp1/R5rX2+PsCUrmeF0uSEdmr2ULAFE8oxMfHiqKw=; b=Bq2dqQsHtq/eu7
+	I+D0lrRalJITS/Sb3YvmyXeE1wCKqaP8fx47k1iazuKEFCT7Aw8/QJbzF0i08I7dzfAQFmhH2ltIQ
+	KQUdY16/ltfX8mugNSFuinSf+njAb3Zc3yHM9yDagPJr3UpPMa7UXUoOnlfZNXM9XMAgCLMFOvg6Z
+	WmkDjNf9gHxh+Bs7x55dqxlGylP0hkjaHxzUlLMhxDttgVqAxVHPbLmHvXK9KbYjoPW8rhKgVjlvr
+	Oe2za9c4qVSg+wG8Q8Bg7R3geadq2D7JDLXKeB9slJ1MFNQkf/A1mJNlTQskExnKX/0tJOTpaNniE
+	CShXQPuUIsHuZM/e7ITQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imrqf-0008Ko-Oe; Thu, 02 Jan 2020 04:12:37 +0000
+	id 1imrsL-0001yr-RU; Thu, 02 Jan 2020 04:14:21 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imrqP-0008HW-G9; Thu, 02 Jan 2020 04:12:22 +0000
-X-UUID: b13a2d12443242a6903bf9cc445b3b4f-20200101
+ id 1imrqV-0008HW-AU; Thu, 02 Jan 2020 04:12:29 +0000
+X-UUID: c6359f8d8a634db4a2516e704ef6b0c7-20200101
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=PYaTFFw2ybgvUAuwySHyxEemm+FHFyn2YYrb6zt2Of0=; 
- b=NmZO6rQGqrA8YIG6/wCOaVGqiBvIsYWJ5TriOwKpgxOzwIgWK0+Pc4IYp6IzNiFi+dTuO5VEINizbb8AFtqDVmaSj5jBP5FyPtf7/GfNkc0a2Q0u7VsZclajCCg3zluklU6mzZgrjh3r/k64ALJNJOJbOwksgyzdLloyx366gSI=;
-X-UUID: b13a2d12443242a6903bf9cc445b3b4f-20200101
+ bh=CHGceQaZldNmJOPJuuVE4l31jpGrqbuoYHiYnxUymyE=; 
+ b=C8M4kc9cVQIh9/ybFL3gEdt1Kg7S1wxpi2lIMS2Rle1FQRZW3fSegB2gsqKgm0BRunQUCLGLTyc5va+NKnYQwDSkj5YfECP/Onfu1DzkKaOiRT1eqRrh9EdhOLc/+/iYla5W/7IVbAGV+fHtBbekrH/H+NjBwqnGurXAzSzbLSY=;
+X-UUID: c6359f8d8a634db4a2516e704ef6b0c7-20200101
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 775602740; Wed, 01 Jan 2020 20:12:17 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 668694866; Wed, 01 Jan 2020 20:12:21 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Wed, 1 Jan 2020 20:02:45 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 12:01:52 +0800
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 12:01:57 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 2 Jan 2020 12:01:41 +0800
+ Transport; Thu, 2 Jan 2020 12:01:42 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v6, 10/14] drm/mediatek: add connection from OVL_2L1 to RDMA1
-Date: Thu, 2 Jan 2020 12:00:20 +0800
-Message-ID: <1577937624-14313-11-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v6, 11/14] drm/mediatek: add connection from DITHER0 to DSI0
+Date: Thu, 2 Jan 2020 12:00:21 +0800
+Message-ID: <1577937624-14313-12-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_201221_547375_1BBD4CF6 
-X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-CacheID: sfid-20200101_201227_382412_94A11867 
+X-CRM114-Status: UNSURE (   9.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -98,38 +98,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add connection from OVL_2L1 to RDMA1
+This patch add connection from DITHER0 to DSI0
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-index a6fed7b..2b10d2d 100644
+index 2b10d2d..4cc432d 100644
 --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
 +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-@@ -34,9 +34,11 @@
- #define DISP_REG_CONFIG_DPI_SEL			0x064
+@@ -35,10 +35,12 @@
  
  #define MT8183_DISP_OVL0_2L_MOUT_EN		0xf04
-+#define MT8183_DISP_OVL1_2L_MOUT_EN		0xf08
+ #define MT8183_DISP_OVL1_2L_MOUT_EN		0xf08
++#define MT8183_DISP_DITHER0_MOUT_EN		0xf0c
  #define MT8183_DISP_PATH0_SEL_IN		0xf24
  
  #define OVL0_2L_MOUT_EN_DISP_PATH0			BIT(0)
-+#define OVL1_2L_MOUT_EN_RDMA1				BIT(4)
+ #define OVL1_2L_MOUT_EN_RDMA1				BIT(4)
++#define DITHER0_MOUT_IN_DSI0				BIT(0)
  #define DISP_PATH0_SEL_IN_OVL0_2L			0x1
  
  #define MT2701_DISP_MUTEX0_MOD0			0x2c
-@@ -318,6 +320,10 @@ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
- 		   next == DDP_COMPONENT_RDMA0) {
- 		*addr = MT8183_DISP_OVL0_2L_MOUT_EN;
- 		value = OVL0_2L_MOUT_EN_DISP_PATH0;
-+	} else if (cur == DDP_COMPONENT_OVL_2L1 &&
-+		   next == DDP_COMPONENT_RDMA1) {
-+		*addr = MT8183_DISP_OVL1_2L_MOUT_EN;
-+		value = OVL1_2L_MOUT_EN_RDMA1;
+@@ -324,6 +326,9 @@ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
+ 		   next == DDP_COMPONENT_RDMA1) {
+ 		*addr = MT8183_DISP_OVL1_2L_MOUT_EN;
+ 		value = OVL1_2L_MOUT_EN_RDMA1;
++	} else if (cur == DDP_COMPONENT_DITHER && next == DDP_COMPONENT_DSI0) {
++		*addr = MT8183_DISP_DITHER0_MOUT_EN;
++		value = DITHER0_MOUT_IN_DSI0;
  	} else {
  		value = 0;
  	}
