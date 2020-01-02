@@ -2,56 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84F612E180
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 02:28:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C46412E21E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 05:03:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bnzICSBTpZRntlQBPkCg0TKzWcVC9aIGUV8olRttxFM=; b=kgSfTnh+XHG/Ev4TdrjmVE6NvA
-	0XfP8J/gfm4gETio9zr9BuiTSgjByQe8KKzOFvU2V7KI2qsVS2EriL7n0cmk8tPB4J5qaKjYPQ7VG
-	oJw6OT0BY590BcqsdLVzR39zhGLCFzNHE1CIKy5uxWnoTPMYOWB7pf9G9at7OS/4DUdk5fIyzCPvr
-	z78YZ/qZfw4zL7ixbKksPSLOJfE0P/0c3rF7GBLV9JPDERUCR31PZr7pGAXHM8MXsL/MV+WLlr7jP
-	926O0HM2tEjS6pHschbU+0RbP11UO/4P3OlMmWmnpQJy43E0+WpvzOqvWBh0nP/5D0KLOZyu4rM+S
-	V6nzM+OA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jX+bygavScwQy+UeWA1dp2rucorTi07TaQNQbAdafl8=; b=oyq5d8I5iRSkU+
+	n5A1BQWRhMf4Uohtzt7mQ6m3O0QkEy9UjrNrjSdnuhcxf5oPMjDUXdw6OCErIjRxM6ft3lFZr1ult
+	GEf0az1ebjTSgpF6q4/rlsBbSn+s2wwwco88RDiQiotXw26p48Hj8nU3VArUqMsEZsRJwOYbmoykS
+	ONAjEq4fpcRjs6w7gLPiThYNOVWEW6kjl95rX1ZunSEkElmIKh29st+2XRvttMjbu9wgMBYP92eoc
+	FEXbosg/MC8s9VkqEXOPmuCG0ARLfPPZHjGOHx2y29fGdmKpl0rOorir7TEzorcEzcJ9QmheQHaMf
+	PMe1mamt/8ZoetaVykcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1impHW-00051V-PC; Thu, 02 Jan 2020 01:28:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1impGm-0004Q6-6I
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 01:27:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 258551063;
- Wed,  1 Jan 2020 17:27:23 -0800 (PST)
-Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B0E8A3F703;
- Wed,  1 Jan 2020 17:27:21 -0800 (PST)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Maxime Ripard <mripard@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 3/3] ARM: dts: sun8i: R40: Add SPI controllers nodes and
- pinmuxes
-Date: Thu,  2 Jan 2020 01:26:57 +0000
-Message-Id: <20200102012657.9278-4-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.14.1
-In-Reply-To: <20200102012657.9278-1-andre.przywara@arm.com>
-References: <20200102012657.9278-1-andre.przywara@arm.com>
+	id 1imrhf-00042D-5v; Thu, 02 Jan 2020 04:03:19 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imrgn-0003DX-NP; Thu, 02 Jan 2020 04:02:28 +0000
+X-UUID: fd5efbd7aa4048e08bd81720696d0078-20200101
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=7wLu6VmQu6UVnJpXdVr9q3D+QkDfPwKQ1g0hCwiH1Ys=; 
+ b=fX9O1l0wxhZS0z9Q2hiQnuXJMa0RutY8KiYdxZ6UFqGHrmMutfaGOG39HPROnj3qzpV1M6NovYvJKxZgygUTqks7dvIw3WXgwWaWSO7utLY9NmnSIQpR2C6a0OuMNBQh/JXJXgUwTYYKK7SNkmTeL9mTDq7XsBLXVcuUq0A7aSc=;
+X-UUID: fd5efbd7aa4048e08bd81720696d0078-20200101
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <yongqiang.niu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 395783025; Wed, 01 Jan 2020 20:02:16 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 1 Jan 2020 20:02:35 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 12:01:43 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 2 Jan 2020 12:01:32 +0800
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
+ Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v6, 00/14] add drm support for MT8183
+Date: Thu, 2 Jan 2020 12:00:10 +0800
+Message-ID: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_172724_315081_2EDF6931 
-X-CRM114-Status: GOOD (  12.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200101_200225_772297_79CE3D86 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,141 +84,70 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-MIME-Version: 1.0
+ Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Allwinner R40 SoC contains four SPI controllers, using the newer
-sun6i design (but at the legacy addresses).
-The controller seems to be fully compatible to the A64 one, so no driver
-changes are necessary.
-The first three controller can be used on two sets of pins, but SPI3 is
-only routed to one set on Port A.
+This series are based on 5.5-rc1 and provid 14 patch
+to support mediatek SOC MT8183
 
-Tested by connecting a SPI flash to a Bananapi M2 Berry on the SPI0
-PortC header pins.
+Change since v5
+- fix reviewed issue in v5
 
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- arch/arm/boot/dts/sun8i-r40.dtsi | 89 ++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 89 insertions(+)
+Change since v4
+- fix reviewed issue in v4
 
-diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index 8dcbc4465fbb..af437391dcf4 100644
---- a/arch/arm/boot/dts/sun8i-r40.dtsi
-+++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -418,6 +418,41 @@
- 				bias-pull-up;
- 			};
- 
-+			spi0_pc_pins: spi0-pc-pins {
-+				pins = "PC0", "PC1", "PC2", "PC23";
-+				function = "spi0";
-+			};
-+
-+			spi0_pi_pins: spi0-pi-pins {
-+				pins = "PI10", "PI11", "PI12", "PI13", "PI14";
-+				function = "spi0";
-+			};
-+
-+			spi1_pa_pins: spi1-pa-pins {
-+				pins = "PA0", "PA1", "PA2", "PA3", "PA4";
-+				function = "spi1";
-+			};
-+
-+			spi1_pi_pins: spi1-pi-pins {
-+				pins = "PI15", "PI16", "PI17", "PI18", "PI19";
-+				function = "spi1";
-+			};
-+
-+			spi2_pb_pins: spi2-pb-pins {
-+				pins = "PB13", "PB14", "PB15", "PB16", "PB17";
-+				function = "spi2";
-+			};
-+
-+			spi2_pc_pins: spi2-pc-pins {
-+				pins = "PC19", "PC20", "PC21", "PC22";
-+				function = "spi2";
-+			};
-+
-+			spi3_pins: spi3-pins {
-+				pins = "PA5", "PA6", "PA7", "PA8", "PA9";
-+				function = "spi3";
-+			};
-+
- 			uart0_pb_pins: uart0-pb-pins {
- 				pins = "PB22", "PB23";
- 				function = "uart0";
-@@ -594,6 +629,60 @@
- 			#size-cells = <0>;
- 		};
- 
-+		spi0: spi@1c05000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c05000 0x1000>;
-+			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI0>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		spi1: spi@1c06000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c06000 0x1000>;
-+			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI1>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		spi2: spi@1c07000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c07000 0x1000>;
-+			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI2>, <&ccu CLK_SPI2>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI2>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		spi3: spi@1c0f000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c0f000 0x1000>;
-+			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI3>, <&ccu CLK_SPI3>;
-+			clock-names = "ahb", "mod";
-+			pinctrl-0 = <&spi3_pins>;
-+			pinctrl-names = "default";
-+			resets = <&ccu RST_BUS_SPI3>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
- 		ahci: sata@1c18000 {
- 			compatible = "allwinner,sun8i-r40-ahci";
- 			reg = <0x01c18000 0x1000>;
+Change since v3
+- fix reviewed issue in v3
+- fix type error in v3
+- fix conflict with iommu patch
+
+Change since v2
+- fix reviewed issue in v2
+- add mutex node into dts file
+
+Changes since v1:
+- fix reviewed issue in v1
+- add dts for mt8183 display nodes
+- adjust display clock control flow in patch 22
+- add vmap support for mediatek drm in patch 23
+- fix page offset issue for mmap function in patch 24
+- enable allow_fb_modifiers for mediatek drm in patch 25
+
+Yongqiang Niu (14):
+  arm64: dts: add display nodes for mt8183
+  drm/mediatek: move dsi/dpi select input into mtk_ddp_sel_in
+  drm/mediatek: make sout select function  format same with select input
+  drm/mediatek: add mmsys private data for ddp path config
+  drm/mediatek: move rdma sout from mtk_ddp_mout_en into
+    mtk_ddp_sout_sel
+  drm/mediatek: add connection from OVL0 to OVL_2L0
+  drm/mediatek: add connection from RDMA0 to COLOR0
+  drm/mediatek: add connection from RDMA1 to DSI0
+  drm/mediatek: add connection from OVL_2L0 to RDMA0
+  drm/mediatek: add connection from OVL_2L1 to RDMA1
+  drm/mediatek: add connection from DITHER0 to DSI0
+  drm/mediatek: add connection from RDMA0 to DSI0
+  drm/mediatek: add fifo_size into rdma private data
+  drm/mediatek: add support for mediatek SOC MT8183
+
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 103 +++++++++++
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c  |  18 ++
+ drivers/gpu/drm/mediatek/mtk_disp_rdma.c |  27 ++-
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c  |   4 +
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c   | 291 +++++++++++++++++++++++--------
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.h   |   7 +
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c   |  51 ++++++
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h   |   3 +
+ 8 files changed, 434 insertions(+), 70 deletions(-)
+
 -- 
-2.14.5
-
-
+1.8.1.1.dirty
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
