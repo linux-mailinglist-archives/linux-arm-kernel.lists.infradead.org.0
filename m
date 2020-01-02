@@ -2,117 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63D4812E4EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 11:23:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3AD212E507
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 11:42:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJyYht9HS0G8s3L6fOPvoPEbagKRr8ZvRotf+IuR/6k=; b=hurAoNWRcxqcRq
-	qGJ/5h40J6YdSaZkju6uLnDLfPfIwOOBc8Wvn53K5xggF5FBxKoB345td9AWMANalFSbIWrbbk1MI
-	nakPc3KnVkfrZrxyYrCFNJbSqACn0kma8diw2RKtqIjGeDZcShDXHDh/RfhxFZgwTB9t7FQxVD179
-	hWqp31e8B3lM4lgIYFavjQrnXECpeaL+7+5YR45HULehJb/q7Rb+i7qmQZ9IJBM/UdrupglourUzC
-	6sVOFAQQNf9eyOIRjvcvm5mnBhgnlqEUELVBGiSczdNU6lAqObRRIEr70JdvZgNGAuTlSzYPYS0jI
-	PqMGnTqz4E/UoH0xi+gw==;
+	List-Owner; bh=iUMDdkmCiSTniExZloH15+lGyfQYOeYN5xcEZiQ+eTQ=; b=ITq855agpcVHwd
+	ghaIaNS/tU4uUi+tSg/oTja+frvDg0FYc5r8mtqz3D8mX1fVn00aaPRKOXUkztHI8KYMhz0Nox/N/
+	jIOlNbp4mSMizSB4y3I1vd76zvutCABznEUKcwrxs5LMPD1+gsPP2ZsJQA1FfAfoKrKS7poyP7tp1
+	nKl/uOhIVmHu+R7FUbzm3AqYXkObxw/6Dcrj1H4/BjLcuaeQc/Kz1ZATfpeZsofDAm4zGzkaqymVx
+	KE/5q2Q/56gPx5cDMZ8u4e0kE/CHukupg5pgxEJVUV20QXLlynUqpzTzGnStoDBgMp+okDJvCS2lV
+	yshi7Ewhgs4ik8TMAq7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imxdw-000710-Qb; Thu, 02 Jan 2020 10:23:52 +0000
-Received: from mail-eopbgr20089.outbound.protection.outlook.com ([40.107.2.89]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imxdm-00070T-Mw
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 10:23:44 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=V107taH25QObswGx/2Ow5Pn9HcnUVtIxPqykG0mqC0y/gIsXGvlaJgqtt0TArSCIWl4zYI7EhYiD2H2te+ABbbcj/k5N0Hrn9v8JPPTb2Smuye5Qjl70rpGLdTSdQacp0VqDYw0m1Ve0exG44bhbZ8kfABwkvj3nwo0C+tBAaMO9VFa6igzkUT/6yiBmTTQXwOuITgocDd632Y+grIfnpUd1nfO9rqze8JV1M9XHfkWGFplhvjuXByMLQzF0xVz39Gx/xePFGPqc8RG3UYUPuWVXmM2QGAa01GInO7B6fUApFoZcY4x0Bj2s+HqGDGN9p7h53mXkbl/OyP+S2f/sBg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7LU3U1xETo+OP5xT654bKHXZNEAr0GKVUOFWt7dvc/E=;
- b=eE7IZb1B8na1vo17lIPB945zu8z71bgjCVVDIVCZnOPNhgNDs7qAMTk2zV+dHf5Q52qBxLfPvPXiw//P7iedor68NXBvoJLHHSu9cW1R23W9Vcb7IJxVR2x/YKlEbNCfRkXehv96QRjNbHw2prctrzGgG7JNJVhknB36hG8AoEMWhwpH4r1kxAdJ8GgLaGc1+389NB+OuFipYgM2akDGNG3J4DURhMPnQPd9e7Zq3vlAabwa/uUOWV3xNoW0GVc6FLc6MG0V/TcVJc3HuW3hnfO4I659FX/I6BIU0nevgkkSez/R/uoj56WqH1hixlFnFj4clJJimQhhctMBrdylHw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7LU3U1xETo+OP5xT654bKHXZNEAr0GKVUOFWt7dvc/E=;
- b=dgypYoL3G8AmOJSaqucioJQ4SNzgzX0wbLl0s1Xvf8SnO+06Yinm9fHcu63LEjnx0UHZcebVjSsced/mlncUPfIT58VHKv3V9orRvjU5vCxgYg5l4fCuww+5tDjE0DlfwlZMVe5zrnjABlIqvrDkQ3XuoA/sWXGzhQ/gEzgKZik=
-Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com (52.134.3.146) by
- VI1PR0402MB3391.eurprd04.prod.outlook.com (52.134.1.151) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2602.11; Thu, 2 Jan 2020 10:23:37 +0000
-Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com
- ([fe80::18c:4d15:c3ab:afa6]) by VI1PR0402MB3600.eurprd04.prod.outlook.com
- ([fe80::18c:4d15:c3ab:afa6%7]) with mapi id 15.20.2602.012; Thu, 2 Jan 2020
- 10:23:37 +0000
-From: Andy Duan <fugang.duan@nxp.com>
-To: Dong Aisheng <dongas86@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Ranjani Vaidyanathan <ranjani.vaidyanathan@nxp.com>
-Subject: RE: [EXT] Re: [PATCH 1/1] firmware: imx: scu-pd: do not power off
- console domain
-Thread-Topic: [EXT] Re: [PATCH 1/1] firmware: imx: scu-pd: do not power off
- console domain
-Thread-Index: AQHVwVVvimHeKrn5bUqdRj0rwVqzOKfXKM+g
-Date: Thu, 2 Jan 2020 10:23:37 +0000
-Message-ID: <VI1PR0402MB3600F2E6D24F8D0D522415D9FF200@VI1PR0402MB3600.eurprd04.prod.outlook.com>
-References: <1573995924-14752-1-git-send-email-aisheng.dong@nxp.com>
- <CAPDyKFrkRPuJ5+1sdLevY9tqO6CoKQu6eGDKGpbYoqOUaghnPA@mail.gmail.com>
- <CAA+hA=Rsje8mW6sqfiiYKQzwz_3F88+AdJZoN5ZHShqnOqkUQw@mail.gmail.com>
-In-Reply-To: <CAA+hA=Rsje8mW6sqfiiYKQzwz_3F88+AdJZoN5ZHShqnOqkUQw@mail.gmail.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=fugang.duan@nxp.com; 
-x-originating-ip: [119.31.174.67]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a3270c9c-1d15-4aa4-cc4c-08d78f6dd49a
-x-ms-traffictypediagnostic: VI1PR0402MB3391:|VI1PR0402MB3391:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB339178A145768C3917E8981DFF200@VI1PR0402MB3391.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1122;
-x-forefront-prvs: 0270ED2845
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(366004)(376002)(39850400004)(346002)(189003)(199004)(71200400001)(110136005)(54906003)(33656002)(4326008)(52536014)(26005)(5660300002)(186003)(2906002)(478600001)(8676002)(86362001)(64756008)(66556008)(66476007)(6636002)(7696005)(8936002)(55016002)(81156014)(66946007)(81166006)(53546011)(316002)(76116006)(66446008)(9686003)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3391;
- H:VI1PR0402MB3600.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: LIoqoThC/A9YMorWtEutfOdwL6KzjwwS0SslUG18fzLDGE1dnIrsCH4+ZxCgsWfjwKcwf4WA98yTtpvQRkzS673TSUk1szX8khW3RcfyBtMiV2GHVCuiohhacTPd15ixL4UBs9SvidF/p4y6oN8xQVEjkEigLdwG7ARO6S+Ik0MLFD3RZWSVm/0oBCVNKrNZ88NkYA9bPZsatO/vL2OKGOuWEpA7fmBIxhyZXySaPj9nFnl/AznS8JBPJ/a6qD2t239rpvlJ1DoP7+GampSNxLwpFEyuETjT4IPtdb+SNdirCUD+XPjNMMZ2I9qJfpqvx/2NoDj/qROm0zPVmiLNY8uy38ONwQYIz/FcEjsZhN7X7jKsrnegVe/ihHj23EIHnAMrH+ypqfuwhicKyo3oCs3rl15PLjK+4AgxQl0tvTlzFyNFIzv5nLMdb2W9/on8
+	id 1imxvw-0005UG-Ed; Thu, 02 Jan 2020 10:42:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imxvo-0005TQ-4Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 10:42:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5FFA328;
+ Thu,  2 Jan 2020 02:42:17 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7830A3F703;
+ Thu,  2 Jan 2020 02:42:16 -0800 (PST)
+Date: Thu, 2 Jan 2020 10:41:58 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 3/3] ARM: dts: sun8i: R40: Add SPI controllers nodes and
+ pinmuxes
+Message-ID: <20200102104158.06d9baa0@donnerap.cambridge.arm.com>
+In-Reply-To: <20200102095711.dkd2cnbyitz6mvyx@gilmour.lan>
+References: <20200102012657.9278-1-andre.przywara@arm.com>
+ <20200102012657.9278-4-andre.przywara@arm.com>
+ <20200102095711.dkd2cnbyitz6mvyx@gilmour.lan>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a3270c9c-1d15-4aa4-cc4c-08d78f6dd49a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jan 2020 10:23:37.5607 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: RMroYmjrgzBYiuOtZ18dKP4U8gYKWVbxSg797mVaV3pDyz+zJNug534Gu1k6mvTvnSHdvPF9BSOzWoPEqR73Jw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3391
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_022342_836891_B2BB4DA1 
-X-CRM114-Status: GOOD (  21.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200102_024220_261117_E0A14FDD 
+X-CRM114-Status: GOOD (  25.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.89 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,136 +66,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Linux PM <linux-pm@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dong Aisheng <dongas86@gmail.com> Sent: Thursday, January 2, 2020 6:03 PM
-> On Tue, Nov 19, 2019 at 12:13 AM Ulf Hansson <ulf.hansson@linaro.org>
-> wrote:
-> >
-> > On Sun, 17 Nov 2019 at 14:07, Dong Aisheng <aisheng.dong@nxp.com>
-> wrote:
-> > >
-> > > Do not power off console domain in runtime pm.
-> >
-> > Would it be possible to configure a remote wakeup for the console
-> > while the device becomes runtime suspended, rather than preventing the
-> > power off altogether?
+On Thu, 2 Jan 2020 10:57:11 +0100
+Maxime Ripard <mripard@kernel.org> wrote:
 
-From HW view, the wakeup features requires power on, but clocks can be off.
+Hi Maxime,
 
-In fact, the standard flow is power domain driver should not power off the devices
-that enable the wakeup feature.
+thanks for having a look!
 
-NXP internal tree already supported runtime pm. I will upstream the patch.
-
-Andy
+> On Thu, Jan 02, 2020 at 01:26:57AM +0000, Andre Przywara wrote:
+> > The Allwinner R40 SoC contains four SPI controllers, using the newer
+> > sun6i design (but at the legacy addresses).
+> > The controller seems to be fully compatible to the A64 one, so no driver
+> > changes are necessary.
+> > The first three controller can be used on two sets of pins, but SPI3 is
+> > only routed to one set on Port A.
 > >
-> 
-> Remote wakeup usually requires clock and power.
-> Not sure if this device can support it. Copy module owner (Fugang
-> Duan) to confirm.
-> 
-> The current lpuart driver seems not support.
-> 
-> Regards
-> Aisheng
-> 
-> > Kind regards
-> > Uffe
+> > Tested by connecting a SPI flash to a Bananapi M2 Berry on the SPI0
+> > PortC header pins.
 > >
-> > >
-> > > Cc: Shawn Guo <shawnguo@kernel.org>
-> > > Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> > > Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> > > Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > > ---
-> > >  drivers/firmware/imx/scu-pd.c | 28 +++++++++++++++++++++++++++-
-> > >  1 file changed, 27 insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/firmware/imx/scu-pd.c
-> > > b/drivers/firmware/imx/scu-pd.c index b556612207e5..770e3681bbbf
-> > > 100644
-> > > --- a/drivers/firmware/imx/scu-pd.c
-> > > +++ b/drivers/firmware/imx/scu-pd.c
-> > > @@ -85,6 +85,8 @@ struct imx_sc_pd_soc {
-> > >         u8 num_ranges;
-> > >  };
-> > >
-> > > +int imx_con_rsrc;
-> > > +
-> > >  static const struct imx_sc_pd_range imx8qxp_scu_pd_ranges[] = {
-> > >         /* LSIO SS */
-> > >         { "pwm", IMX_SC_R_PWM_0, 8, true, 0 }, @@ -173,6 +175,23
-> @@
-> > > to_imx_sc_pd(struct generic_pm_domain *genpd)
-> > >         return container_of(genpd, struct imx_sc_pm_domain, pd);  }
-> > >
-> > > +static void imx_sc_pd_get_console_rsrc(void) {
-> > > +       struct of_phandle_args specs;
-> > > +       int ret;
-> > > +
-> > > +       if (!of_stdout)
-> > > +               return;
-> > > +
-> > > +       ret = of_parse_phandle_with_args(of_stdout, "power-domains",
-> > > +
-> "#power-domain-cells",
-> > > +                                        0, &specs);
-> > > +       if (ret)
-> > > +               return;
-> > > +
-> > > +       imx_con_rsrc = specs.args[0]; }
-> > > +
-> > >  static int imx_sc_pd_power(struct generic_pm_domain *domain, bool
-> > > power_on)  {
-> > >         struct imx_sc_msg_req_set_resource_power_mode msg; @@
-> -233,6
-> > > +252,7 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
-> > >                       const struct imx_sc_pd_range *pd_ranges)  {
-> > >         struct imx_sc_pm_domain *sc_pd;
-> > > +       bool is_off = true;
-> > >         int ret;
-> > >
-> > >         sc_pd = devm_kzalloc(dev, sizeof(*sc_pd), GFP_KERNEL); @@
-> > > -251,6 +271,10 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
-> > >                          "%s", pd_ranges->name);
-> > >
-> > >         sc_pd->pd.name = sc_pd->name;
-> > > +       if (imx_con_rsrc == sc_pd->rsrc) {
-> > > +               sc_pd->pd.flags = GENPD_FLAG_RPM_ALWAYS_ON;
-> > > +               is_off = false;
-> > > +       }
-> > >
-> > >         if (sc_pd->rsrc >= IMX_SC_R_LAST) {
-> > >                 dev_warn(dev, "invalid pd %s rsrc id %d found", @@
-> > > -260,7 +284,7 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
-> > >                 return NULL;
-> > >         }
-> > >
-> > > -       ret = pm_genpd_init(&sc_pd->pd, NULL, true);
-> > > +       ret = pm_genpd_init(&sc_pd->pd, NULL, is_off);
-> > >         if (ret) {
-> > >                 dev_warn(dev, "failed to init pd %s rsrc id %d",
-> > >                          sc_pd->name, sc_pd->rsrc); @@ -326,6
-> +350,8
-> > > @@ static int imx_sc_pd_probe(struct platform_device *pdev)
-> > >         if (!pd_soc)
-> > >                 return -ENODEV;
-> > >
-> > > +       imx_sc_pd_get_console_rsrc();
-> > > +
-> > >         return imx_scu_init_pm_domains(&pdev->dev, pd_soc);  }
-> > >
-> > > --
-> > > 2.23.0
-> > >
+> > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> > ---
+> >  arch/arm/boot/dts/sun8i-r40.dtsi | 89 ++++++++++++++++++++++++++++++++++++++++
+> >  1 file changed, 89 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > index 8dcbc4465fbb..af437391dcf4 100644
+> > --- a/arch/arm/boot/dts/sun8i-r40.dtsi
+> > +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > @@ -418,6 +418,41 @@
+> >  				bias-pull-up;
+> >  			};
+> >
+> > +			spi0_pc_pins: spi0-pc-pins {
+> > +				pins = "PC0", "PC1", "PC2", "PC23";
+> > +				function = "spi0";
+> > +			};
+> > +
+> > +			spi0_pi_pins: spi0-pi-pins {
+> > +				pins = "PI10", "PI11", "PI12", "PI13", "PI14";
+> > +				function = "spi0";
+> > +			};  
+> 
+> This split doesn't really work though :/
+> 
+> The PC pins group has MOSI, MISO, CLK and CS0, while the PI pins group
+> has CS0, CLK, MOSI, MISO and CS1.
+> 
+> Meaning that if a board uses a GPIO CS pin, we can't really express
+> that
+
+Does that actually work? I dimly remember checking our sunxi driver a while ago and I wasn't sure that would be functional there.
+
+> and any board using the PI pins for its SPI bus will try to
+> claim CS0 and CS1, no matter how many devices are connected on the bus
+> (and if there's one, there might be something else connected to PI14).
+
+True.
+
+> And you can't have a board using CS1 with the PC signals either.
+> 
+> You should split away the CS pins into separate groups, like we're
+> doing with the A20 for example.
+
+Ah, yeah, makes sense, thanks for the pointer.
+ 
+> And please add /omit-if-no-ref/ to those groups.
+
+I was a bit reluctant to do this:
+First there does not seem to be any good documentation about it, neither in the official DT spec nor in dtc, even though I think I understand what it does ;-)
+Second it seems to break in U-Boot atm. Looks like applying your dtc patch fixes that, though. Do you know if U-Boot allows cherry-picking dtc patches? If yes, I could post your patch.
+
+But more importantly: what are the guidelines for using this tag? I understand the desire to provide every possible pin description on one hand, but wanting to avoid having *all of them* in *each* .dtb on the other.
+But how does this play along with overlays? Shouldn't at least those interface pins that are exposed on headers stay in each .dtb? Can we actually make this decision in the SoC .dtsi file?
+And should there be a dtc command line option to ignore those tags, or even to apply this tag (virtually) to every node?
+
+Cheers,
+Andre.
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
