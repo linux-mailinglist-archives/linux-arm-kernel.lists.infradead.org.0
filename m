@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2766E12F0E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 23:56:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64E0612F1BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 00:15:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wqOsFQGVaJzXiB+j5qFVPdWzGbYcpOkmBSGIJqo96Ws=; b=PU8Z+PFxyb2tny
-	HE8TYEdv56U/QkVZquLJjSIJDgml7dQEe8UHJf0qephxUuFDhRzI0eZfGx9wTnK3QY85XuMze/4kP
-	qicGbuR0myM4T5csCA5xOTJzqVV/zk/pHPWPFJt28DtlsnXznMHw1J2UcRSAPHK4BVvzeOyiMW/It
-	33rTQ8Kh8kUvcmX+ttbeTdkGg2kIZJmSwJfvZ86EhabQRhyqVPM/klH5X0V0cPyi4gBZunMqOsRCj
-	0g0j5RYN+FMWKKqJGKUawulAbheCfmaptJ54nFAQfpE8gV4sXDGu0h44XE2jP0edNm0sFZ6Y1tGPm
-	aYKhzVffr0Mc+7AgH7RQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5WYOjBz0fffpShg4F2IqDPN3lym8j4L69u+sUKYrFUU=; b=Au0
+	OC7gszDaWL7jd6mN8CU1MqwKbtSSPnL00JVdcJO03i1NeeeRYZRRQEUAY85l8TzlLrAWGThxOTa3S
+	lnkYH4VYAFH+TlH2XTnFx+wT9w+E9K8p/Haq+Cz2l4mjMW29xUhgwv7MWA/cENwgZZGl6LnuYiR2d
+	gLmyQ6wZW/sZVU1FGh1ZPtkK5gKnwYGtnq64agGUcoVNn1Qc51JOoI/VIQusIPSTwNTZmLYNkc9YV
+	mGP9rKUmi0lh2Ac0AvSVH1Ls1uZWtkZ916JRGo8Mt/vbaYlFI9t/5KZBRahxbZiO4TiMW1yidfJCE
+	X5P31gM+Lc5pRHTh53GMxcYazv+IKRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in9O3-0001Ly-DK; Thu, 02 Jan 2020 22:56:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1in9g8-0007c0-98; Thu, 02 Jan 2020 23:14:56 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in9Nv-0001LC-To; Thu, 02 Jan 2020 22:56:10 +0000
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
- [209.85.160.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B556724679;
- Thu,  2 Jan 2020 22:56:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578005766;
- bh=6Koeg/QpSh6SN7IsDtUD1Yw/jN4FQfOCYYp5OlkQg8k=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BJyGrgJRAyAcMthsOmMVJk2/d9roLzBD5KeGqfyxfbX3KtZmnnxHXX0pyJ8akcsha
- K/iFSGYit7euv46SOim83yGJFkSBYf8D90gScmaaJtUv+dQKRJYtoCVXIxkXtGp8sR
- GDbQ6bO22fdQJ5Wf9rmFtnvZeSvKb4mLF6EU8dZs=
-Received: by mail-qt1-f176.google.com with SMTP id d5so35742016qto.0;
- Thu, 02 Jan 2020 14:56:06 -0800 (PST)
-X-Gm-Message-State: APjAAAWIbq0dYG9a6aSmX1wHCFsI6jEVgCCQ7AHwEa5KYLfXqmMlm+O+
- 5i1itmBHkv0xg7nEwvsZRfP5p6tO+BdXRw1dQg==
-X-Google-Smtp-Source: APXvYqwAbFfNGIM/JC1KIxuEbN03VDUjC5JsTAOv7Mn+H2Fs2ofR3ekjqd4fT38uPCQz6qNQ3qPQ9Hc0j9LyLmDrH44=
-X-Received: by 2002:aed:2344:: with SMTP id i4mr63466799qtc.136.1578005765768; 
- Thu, 02 Jan 2020 14:56:05 -0800 (PST)
-MIME-Version: 1.0
-References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
- <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
- <20191219233129.GA5484@bogus>
- <CA+V-a8vjwqkH5rYsy_rsHF93d91izsaEwmFXNpYqk3_=_Asd2g@mail.gmail.com>
-In-Reply-To: <CA+V-a8vjwqkH5rYsy_rsHF93d91izsaEwmFXNpYqk3_=_Asd2g@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 2 Jan 2020 15:55:53 -0700
-X-Gmail-Original-Message-ID: <CAL_JsqJPPuWaOZytWfFy+kwju0tMb2qRN5Ji-Leq2wZdbne_ig@mail.gmail.com>
-Message-ID: <CAL_JsqJPPuWaOZytWfFy+kwju0tMb2qRN5Ji-Leq2wZdbne_ig@mail.gmail.com>
-Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+ id 1in9g0-0007bA-Lt
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 23:14:50 +0000
+Received: by mail-wm1-x341.google.com with SMTP id b19so6956068wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Jan 2020 15:14:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=KIhQOqEe7EmmQGE/mkr/xtA4d+4/jOmGUgTZDhxFJXw=;
+ b=Nxptlg01yX+CNwhEMLeFiWfYuPDjJhRqRaljQa0cqonHGZkufwmL/N5FBev4z6Pb28
+ WjL145tIb1igsQzmsU7NYTZY/jtKeL4GOwIJ148ucviQyCsyGtk0N+7jeoHcelNCM6dC
+ R3z65FdeskvymbGWrdQOnGdy9aUytSk6SmatHO9UdoNhBReKb8jJAQPsPFc2i2FI+mhg
+ /1ojXlRAidKvWaOJRQ7orSZbDJYXyZZR77udPSv+Vm9f9FSOwMfVdF0yMbRrLUSwiRdv
+ oA0kF4YYVUEuHMgiFxJaSiVKwY2UgKayu0ABg/A0/YXajWa04qqucIdg2ESO2ejx0gMk
+ LITw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=KIhQOqEe7EmmQGE/mkr/xtA4d+4/jOmGUgTZDhxFJXw=;
+ b=s7EF/3XUuy4y7Wxcono8tMeqFRxFDPwDx17TKVEo275p5oP4+WUMehI/s0+MHIDm+L
+ 1bMA7NCqeYTv4eokUWQGiiO74sPJH+9SooEPTwJ0ROmz2VRpESxGiV1wUSGGyZAH2cp9
+ /egm4SOhhDpCR1Uzny2vsz1Oo5OEVC8mNs9exJwRgunhzdqGVf8+zpjjJIR5JwceJ5wu
+ FAktorO6NxsIW7mIymSXpZXu7BIs6T1HgnURMRIeMLY5RCg2N+nGU84LX6VfvOs78kzB
+ Bw+wZA+HFrRFKM8erjS5LJDwbYZ1kA3nwe1EMqto1jpgPc7rfxDngXSyxcMX1q+gPsj4
+ pFbA==
+X-Gm-Message-State: APjAAAUd+Wt8KbzVX0g6V+C0OfQqca1rgDrrtzS2plU3FL+sdW2EXdYp
+ +ojCC8GoZjMebFOIV57Wvss=
+X-Google-Smtp-Source: APXvYqy7lGzUcji2+wbHLwiEZiPkKTrJ9CoCPhvioi+YnSYV1R2H9gBNAJc92ACnCCfWLxPFR52/Bg==
+X-Received: by 2002:a7b:c386:: with SMTP id s6mr15700620wmj.105.1578006885873; 
+ Thu, 02 Jan 2020 15:14:45 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id i10sm58214711wru.16.2020.01.02.15.14.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 02 Jan 2020 15:14:45 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] reset: Add Broadcom STB RESCAL reset controller
+Date: Thu,  2 Jan 2020 15:14:33 -0800
+Message-Id: <20200102231435.21703-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_145608_003223_7B7D50CD 
-X-CRM114-Status: GOOD (  24.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200102_151448_719621_9F464F93 
+X-CRM114-Status: GOOD (  12.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -75,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,102 +93,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+ <devicetree@vger.kernel.org>, Jim Quinlan <jim2101024@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 2, 2020 at 1:44 AM Lad, Prabhakar
-<prabhakar.csengg@gmail.com> wrote:
->
-> Hi Rob,
->
-> On Thu, Dec 19, 2019 at 11:31 PM Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Mon, Dec 16, 2019 at 08:49:23AM +0000, Lad, Prabhakar wrote:
-> > > Hi Rob,
-> > >
-> > > Thank you for the review.
-> > >
-> > > On Fri, Dec 13, 2019 at 8:37 PM Rob Herring <robh+dt@kernel.org> wrote:
-> > > >
-> > > > On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
-> > > > <prabhakar.csengg@gmail.com> wrote:
-> > > > >
-> > > > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > > >
-> > > > > this patch adds support to parse PCI outbound-ranges, the
-> > > > > outbound-regions are similar to pci ranges except it doesn't
-> > > > > have pci address, below is the format for bar-ranges:
-> > > > >
-> > > > > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
-> > > > >                    upper32_size lower32_size>;
-> > > >
-> > > > You can't just make up a new ranges property. Especially one that
-> > > > doesn't follow how 'ranges' works. We already have 'dma-ranges' to
-> > > > translate device to memory addresses.
-> > > >
-> > > > Explain the problem or feature you need, not the solution you came up
-> > > > with. Why do you need this and other endpoint bindings haven't?
-> > > >
-> > > rcar SoC's supports multiple outbound region for mapping the PCI address
-> > > locally to the system. This lead to discussion where there exist controllers
-> > > which support regions for high/low priority transfer and similarly regions
-> > > for large/small memory allocations, as a result a new ranges property was
-> > > added, where we can specify the flags which would indicate how the outbound
-> > > region can be used during requests.
-> >
-> > What are the flags?
->
-> below are the flags which were discussed in first version of the
-> series, but since the driver is
-> currently using just PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC flag I'll be
-> dropping them in
-> next version (suggested by Kishon) and rest will be added as and when
-> required by the driver.
->
->  * @PCI_EPC_WINDOW_FLAG_MULTI_ALLOC: Indicates multiple chunks of memory can be
->  *                                  allocated from same window
->  * @PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC: Indicates only single memory allocation
->  *                                      is possible on the window
->  * @PCI_EPC_WINDOW_FLAG_LARGE_ALLOC: Window is used for large memory allocation
->  * @PCI_EPC_WINDOW_FLAG_SMALL_ALLOC: Window is used for small memory allocation
->  * @PCI_EPC_WINDOW_FLAG_HIGH_PRI_ALLOC: Window is used for high priority data
->  *                                     transfers
->  * @PCI_EPC_WINDOW_FLAG_LOW_PRI_ALLOC: Window is used for low priority data
->  *                                    transfers
+Hi Philipp,
 
-Looks like configuration or policy, not something that belongs in DT.
-Coupling driver features and DT changes is not good for ABI compatible
-changes either.
+This patch series adds support for the BCM7216 RESCAL reset controller
+which is necessary to initialize SATA and PCIe0/1 on that chip.
 
-I'm hesitant to accept any PCI endpoint binding additions because they
-don't seem to be completely thought out in terms of supporting
-different usecases.
+Please let us know if you have any comments. Thanks!
 
-Rob
+Changes in v2:
+
+- binding document is in YAML format per Rob's suggestion
+- indented bit definitions the same way for all definitions
+- moved reset logic to the .reset() callback
+- removed the XOR operation which is not necessary after clarifying with
+  Jim that this was not necessary
+- use readl_poll_timeout()
+
+Jim Quinlan (2):
+  dt-bindings: reset: Document BCM7216 RESCAL reset controller
+  reset: Add Broadcom STB RESCAL reset controller
+
+ .../reset/brcm,bcm7216-pcie-sata-rescal.yaml  |  37 ++++++
+ drivers/reset/Kconfig                         |   7 ++
+ drivers/reset/Makefile                        |   1 +
+ drivers/reset/reset-brcmstb-rescal.c          | 110 ++++++++++++++++++
+ 4 files changed, 155 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/reset/brcm,bcm7216-pcie-sata-rescal.yaml
+ create mode 100644 drivers/reset/reset-brcmstb-rescal.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
