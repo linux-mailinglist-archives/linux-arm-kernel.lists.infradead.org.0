@@ -2,79 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 603BD12E404
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 09:48:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ED5412E40D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 09:50:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TD32TnUZb9chv/IWLQx4CaQjYxzX7SeTqJqL7VwZwro=; b=WlHpWYJhIsNwTK
-	lNOjIl5kuRVS7BxUgUApNXLCH94Ouf5QsSY2EB1j5Mo/IKpkDB6Wx7GsRmQYsfES2ZZnhHhPtRsD3
-	FxfRCu9z9muRlUyfR+wdmKRpHm9QDZRHykjgaZcW4WDcOLfsFVWfmgNJRvKT1uKdBq0o9e/WEszOk
-	r+w6RXU7LUBkIwVwPulhVZ0AIWnpI9zGIE0YltlZY6T+ABnmJEH+qkHzL9W2poP8ouViEjRRWUyk/
-	xZ9bmSiJ7Fq85e6OLIY4Ne9k94aGuTbHEuHsIjAYioBzZQqsicrpzWX1w9mxdpXStoqEeEJoa4hU/
-	x+sisnF1uTddqLldvH2A==;
+	List-Owner; bh=mqUMfo0SGEQ6J2BgeMb5EYLl7ezxVveQVQZZ759ZXSo=; b=YhY6Bx0I4DG2x1
+	3NpXS+MYXJZbz37nl3a9+FTgGpHainn8XyW1++oLH1HGQZHyIPKhh29acffat+mcsY3IFStFK7+Tq
+	H525rlIyPt6OtPhq6WliWdwOgJZLPcTktqn6CNkEV9eqI48ShVsxs2c+Q7FZqCcFsVs1neilMZEia
+	6/ogyeaqaykDtIhNASTSY2wkHbLeFebJX+9Ykgbr6Hl/VCIIKnLTv0p3kZK298Bp5FcPiIKmMBkAi
+	FOEgugBsSMx4zQEycxtAWdHVedI43z34g/Nmx8g02e9o5rEUe6VoG3/NQWI4TVYzFARoQujJni3+S
+	+NVH5k2k4KBHO+OWf7cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imw9W-0006Et-29; Thu, 02 Jan 2020 08:48:22 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1imwBx-00085r-LM; Thu, 02 Jan 2020 08:50:53 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imw9O-0006ED-Pd; Thu, 02 Jan 2020 08:48:16 +0000
-Received: by mail-ot1-x344.google.com with SMTP id 59so56151763otp.12;
- Thu, 02 Jan 2020 00:48:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lYK3JQAmW07FRU5GuNZTgBOd+vjFiils6tG0VLmuyGE=;
- b=XvrNbulzxprjJqi8RpScnA140KqOgH0A3KIwDYeZHKhtNqXpKqoIH3DkDmMCVQ4mUL
- UwesBRnFDTc16aXYRWU9fFLStptClVcntJFNz6OyMjwF05UXavP3leAtsROoVh410vm+
- jUwytle5bVp/DrZEhUKPxt7VGX15m/li3nhKMCPQHhUUfTMLo4HrwFfUuHyhLRmPJosc
- ZVN+FIUAGNI58UFohnNWgK+pW61uPy/3SkM8oE8zY+MwPijr+Ibg7angTkInKzlKJqfa
- UB5p84iBYkGvBSTVKgL5bpv2MgeEExqeZUGno4Xaoq9OwJaoN+NtTQiaOofpO6zyJYpl
- 4DsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lYK3JQAmW07FRU5GuNZTgBOd+vjFiils6tG0VLmuyGE=;
- b=mMHGPmcjRaYWbg8sfqzbLUx9W8X1xl2XTrJOeS0GhLmimZM6vsemEGhARav1RkogcQ
- PNFlpB2Q2HmK+eeyA+loIt/3gHtfAhZWPXg/y3irU75NL+iu3q7gyK8W5jOwoYgRFyz4
- rfo0nTgd9VP4nIShNAV4YWXE2bWNiCGw5xw2DgKr+Zbds5W+2CYArn3LBFYrOrMPTA97
- 3iuC5eQvz4x1exbFA7kLcioyTBT7zUDpjWwBvBIRQXbI3i9haCwl/o4aXiSvnAUqjaZg
- T8kwBz7uCkERLxrqJ1JNZZEEo9rfUalLhX6rxHfOB1vxiiZbe39fxvNrtzVAxDk/GGDf
- Mzfg==
-X-Gm-Message-State: APjAAAXunXshiFgYooE+FZLFRSXPBw11Xq36uLZFKFZOfSJQcuYYHJYR
- AphJv2k47AnxjexjIJPfW+D3ODtV4GKmWNmaI3w=
-X-Google-Smtp-Source: APXvYqxeuKbXHxGtyzku07WE9C0N/ua7Tl5Z8JOlkhllIuUswqzYTzv/m5bf/QtdXNVE3v+FavUIVxFQjdB8xF8hNl8=
-X-Received: by 2002:a05:6830:1188:: with SMTP id
- u8mr91290992otq.274.1577954893533; 
- Thu, 02 Jan 2020 00:48:13 -0800 (PST)
+ id 1imwBq-00085O-Gr
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 08:50:48 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0028mjoQ007721; Thu, 2 Jan 2020 09:50:41 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=LRdbeTk9U+whaEXucHpmJKJIXLSTzy8TN4eCF8nKnlk=;
+ b=rdW5FCjvJZp4jjB8Zq169+SO5I2yDOHHeVn9ffeFn0qfFuJbIkdLiqX37tZHl1losuIT
+ K8xlccRILYvzn4OG7G7rjKj9+f8hSg0OvrEcF/fTaT4mLeehR26aGdvHRfq2WZEALEka
+ d/WbwqX9C1YmDYto0kEaZ4KI7p68kBKNvvoZIvPXOTGaR3ggaYNWtAiYZVsjuZngvvv/
+ uDH/MdR8jQjnoIRHltOPNuJH+7E76GyPeoZUIHGL/4PCFQ93dw7Dag2CC92UTRR4OQdu
+ iYX04ChjY3jCq4AXgjpEU3puzFoNxPJvBMGcTjJHvhaez7pErnf08R9ypcmjMgTQr563 Ig== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2x5wd6a4bv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 02 Jan 2020 09:50:41 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 897E8100034;
+ Thu,  2 Jan 2020 09:50:40 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 666FF21ED5A;
+ Thu,  2 Jan 2020 09:50:40 +0100 (CET)
+Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 2 Jan
+ 2020 09:50:39 +0100
+Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
+ SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
+ 15.00.1347.000; Thu, 2 Jan 2020 09:50:39 +0100
+From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 2/2] ARM: dts: exynos: Remove unneeded "snps, dwc2" from
+ hsotg node
+Thread-Topic: [PATCH v2 2/2] ARM: dts: exynos: Remove unneeded "snps,dwc2"
+ from hsotg node
+Thread-Index: AQHVtlgQQnPVTv47G0+aNYZYg4bX66fS0MUAgARFMYA=
+Date: Thu, 2 Jan 2020 08:50:39 +0000
+Message-ID: <bbc7e34c-75c2-dfe0-70f3-0685e8e54fed@st.com>
+References: <20191219103536.25485-1-benjamin.gaignard@st.com>
+ <20191219103536.25485-3-benjamin.gaignard@st.com> <20191230153758.GB4918@pi3>
+In-Reply-To: <20191230153758.GB4918@pi3>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+Content-ID: <189E2F8963AD1C41B89EA1A9DC82B15E@st.com>
 MIME-Version: 1.0
-References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213084748.11210-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191219233525.GA9478@bogus>
-In-Reply-To: <20191219233525.GA9478@bogus>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Thu, 2 Jan 2020 08:47:47 +0000
-Message-ID: <CA+V-a8vO_3P3vDFVuKLJAK7v99E7qKVAei0Kmba8tKist7mAaw@mail.gmail.com>
-Subject: Re: [v2 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-To: Rob Herring <robh@kernel.org>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2020-01-02_02:2019-12-30,2020-01-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_004814_832918_8CB2FFD0 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200102_005046_860490_CCB7DB70 
+X-CRM114-Status: GOOD (  20.75  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,118 +107,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Amelie DELAUNAY <amelie.delaunay@st.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "kgene@kernel.org" <kgene@kernel.org>,
+ "hminas@synopsys.com" <hminas@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
 
-Thank you for the review.
+On 12/30/19 4:37 PM, Krzysztof Kozlowski wrote:
+> On Thu, Dec 19, 2019 at 11:35:36AM +0100, Benjamin Gaignard wrote:
+>> Remove "snps,dwc2" from hsotg@12480000 node compatible list because
+>> "samsung,s3c6400-hsotg" should be enough.
+> The more detailed compatible is almost always "enough". Some other nodes
+> also have detailed+generic compatible. In this case there is a driver
+> matching "snps,dwc2" so why removing it?
 
-On Thu, Dec 19, 2019 at 11:35 PM Rob Herring <robh@kernel.org> wrote:
->
-> On Fri, Dec 13, 2019 at 08:47:46AM +0000, Lad Prabhakar wrote:
-> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >
-> > This patch adds the bindings for the R-Car PCIe endpoint driver.
-> >
-> > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> >  .../devicetree/bindings/pci/rcar-pci-ep.txt        | 37 ++++++++++++++++++++++
-> >  1 file changed, 37 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
->
-> Please make this a DT schema.
->
-sure will do.
+First because, unlike the others dwc2 devices, this compatible wasn't 
+describe in the bindings file
 
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > new file mode 100644
-> > index 0000000..7f0a97e
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > @@ -0,0 +1,37 @@
-> > +* Renesas R-Car PCIe Endpoint Controller DT description
-> > +
-> > +Required properties:
-> > +         "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
->
-> Normal ordering is: renesas,r8a774c0-pcie-ep
->
-> > +         "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
-> > +                                  RZ/G2 compatible device.
-> > +
-> > +         When compatible with the generic version, nodes must list the
-> > +         SoC-specific version corresponding to the platform first
-> > +         followed by the generic version.
-> > +
-> > +- reg: base address and length of the PCIe controller registers.
-> > +- outbound-ranges: outbound windows base address and length including the flags.
-> > +- resets: Must contain phandles to PCIe-related reset lines exposed by IP block
->
-> How many?
->
-should be one.
+so I had to investigated how it should work and, on samsung DT files, 
+only "samsung,s3c6400-hsotg".
 
-> > +- clocks: from common clock binding: clock specifiers for the PCIe controller
-> > +      clock.
-> > +- clock-names: from common clock binding: should be "pcie".
-> > +
-> > +Optional Property:
-> > +- max-functions: Maximum number of functions that can be configured (default 1).
-> > +
-> > +Example:
-> > +
-> > +SoC-specific DT Entry:
-> > +
-> > +     pcie_ep: pcie_ep@fe000000 {
+ From driver code point of view that seems coherent (we do the same for 
+stm32).
+
+With that in mind I have decided to remove "snps,dwc2" from exynos DT 
+file rather than add it everywhere else.
+
+Benjamin
+
 >
-> pcie-ep@
+> Best regards,
+> Krzysztof
 >
-will fix that.
-
-Cheers,
---Prabhakar
-
-> > +             compatible = "renesas,pcie-ep-r8a774c0", "renesas,pcie-rcar-gen2";
-> > +             reg = <0 0xfe000000 0 0x80000>;
-> > +             outbound-ranges = <0xa 0x0 0xfe100000 0 0x000100000
-> > +                                0xa 0x0 0xfe200000 0 0x000200000
-> > +                                0x6 0x0 0x30000000 0 0x008000000
-> > +                                0x6 0x0 0x38000000 0 0x008000000>;
-> > +             clocks = <&cpg CPG_MOD 319>;
-> > +             clock-names = "pcie";
-> > +             power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
-> > +             resets = <&cpg 319>;
-> > +     };
-> > --
-> > 2.7.4
-> >
-
+>> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+>> ---
+>>   arch/arm/boot/dts/exynos3250.dtsi | 2 +-
+>>   1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm/boot/dts/exynos3250.dtsi b/arch/arm/boot/dts/exynos3250.dtsi
+>> index b016b0b68306..d4866269f4ee 100644
+>> --- a/arch/arm/boot/dts/exynos3250.dtsi
+>> +++ b/arch/arm/boot/dts/exynos3250.dtsi
+>> @@ -362,7 +362,7 @@
+>>   		};
+>>   
+>>   		hsotg: hsotg@12480000 {
+>> -			compatible = "samsung,s3c6400-hsotg", "snps,dwc2";
+>> +			compatible = "samsung,s3c6400-hsotg";
+>>   			reg = <0x12480000 0x20000>;
+>>   			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
+>>   			clocks = <&cmu CLK_USBOTG>;
+>> -- 
+>> 2.15.0
+>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
