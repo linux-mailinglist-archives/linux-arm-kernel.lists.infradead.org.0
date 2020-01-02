@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06EB512E8C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 17:35:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05EAC12E8C8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 17:36:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sXAPQwbylvYA4Y2VZCuJLJfsR8T63jqO15vk3XU7F84=; b=HlZ0q6SQ1cw2ih
-	AwXOAlqWk9MTtWvxHkzIVF3+9/0C7xkw2QbIhS5BllwWrQl3lypuzHMSDqWZgYQL+Q/ChEA43WvXY
-	yyiw6Ca/N/TeDra4bkT/GILMdDv9iI7iZ1T1EXS4xZLf37C1Dccl8VCCWFjDbCubffL0OGM3op5XX
-	8YWzChvGAPF7YtSuifbNpvY2bqoh9FtqG5srirRuNVbepqeVIwCFL1DBBN9Pn8gfMIw8vNF9OslhX
-	V8kZJjw5bgSHasElYld+Tigwa8Lq708/7WV45/Go7lX4EXedS8oRavjcirtXf6rOaftKQJMFp4fO3
-	Qoe23rRxKrVP5v4wwswg==;
+	List-Owner; bh=ryyXnAuHY3x4PDCslkP8VrTbnuwhxdR1rrx0p29ML0g=; b=p5teawcQhmaX+W
+	dN+Is6/6SZ+1IkOWN3kcun0U2yvzR127KrcaewTfO55t++ltpSBipZm54UY/GkVVF+WtM/kAjcfAM
+	KrNkz1chYbkJQBzGEZv29ifqeoOuTi4R6+PeZOMn875tSn9KqoX14KCNGIos6+QXLwFqBjlM5WHHn
+	yo/M+9ZZi9eryYAdbOZUC5tsOXAQeUEOdF6jYLJc/6bijIP73c5JA0WLO5bRuc9HfOMhpimTaeeRU
+	wPsTCwtH2I9xvf/oPhOtYnDiiH8edk0KGG9rfyBs/Cd7ovbEYoUzbZRHl6R+DvvCSYeIsC4tqF8ry
+	+kaGZViXh89H7GoOfuFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in3R7-0005ee-LS; Thu, 02 Jan 2020 16:35:01 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1in3Su-0007AF-II; Thu, 02 Jan 2020 16:36:52 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in3Qy-0005dC-76
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 16:34:54 +0000
-Received: by mail-io1-xd43.google.com with SMTP id i11so38766174ioi.12
+ id 1in3Sk-00079n-SY
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 16:36:44 +0000
+Received: by mail-ed1-x544.google.com with SMTP id l8so39581084edw.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 08:34:52 -0800 (PST)
+ Thu, 02 Jan 2020 08:36:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
+ d=globallogic.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=n02NZb1q13MC+D+YIZeKacRc8gevOmHNy1haOLJb4io=;
- b=gelJmfqDyUmjwBH/XMMX/bBXaKDVC6YTmAj8rPELVV13MZipjbHUb7JPhFkSuDop1U
- ByiLKjmlDBsd8mhMeRa6Is5L7PN0Wzk2rxFBkZqRfzxyPP1Bgn9Y5J2iih8/libglJ22
- dOtjW3gXu4mZCdjaMzxLU4AnQWrng2RGMawBo=
+ :cc:content-transfer-encoding;
+ bh=eHGrpF5r5X0Jxgz+QRMxzVI+2gznTMrz/RrPo1FYHwY=;
+ b=j/vKUvhdn5XJ70A8irM+VowUtg3lci4TfgSpdnbPdGeqIG+VbVhown3ELyQUEVfqvl
+ nGz277Az/xc6Dd5udcl25DKNAtCoSU28DW04Och07dVa7uTp8symwuh+WKRHoyYccmDB
+ on6Z0FfMij7uYp1vWe9mmYDIDAC11PtQA8ruuXs8lGn3ts1mmQdwISZ/F0pf55XsItxV
+ 3XHM3kAxSOhDMJ1M6OIooaBIWpw9o+7rtWHXVPPa8zwwbXdbFiPArrxZdadfWgkzIhx5
+ pB2hXHiy8ZBh+LQ0/PPoSyzi/zxnlD52Rc/YiuOprgtcSVUs41cCpzng2PmtmzNNY2Pn
+ aigw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=n02NZb1q13MC+D+YIZeKacRc8gevOmHNy1haOLJb4io=;
- b=GRgLdzrv9g4hW5nFirwM8jMVZPx5FdAMXaqdPpUe5URsuPF4JDaTty5H40xC8tdPvQ
- njqF9fd9XXH0z/uE9pS5eSwJco68bKc3kBaLjIzyyCs+/fZAfnHMVZ7afWdXVhBbpCNR
- e4tahxwPi2lQyNJl+NYsS4w0n74FE/qGgB9dUd4cvzOhEahwNB5TNjerw1kzgotWyYHc
- CY+SvLwX6t512MrlOTJUavEPpZBww+QZUFwZtDHwB0ktfy2KdEw5e8wat8CPEiqK3Lo0
- VFtkkOTl961WRJm0vI/pI3wN+92Dv6X+ZGNCMEyhKMy6iak9MbPaVVthSuBQInVsivqR
- NRzw==
-X-Gm-Message-State: APjAAAWqQ3RP65Gg6mMzH16PhxKFMFXHyeAz3THEThM/NUHLKYbS/zem
- 4YE6RhnD0kAxlVh2xNLdYkbgGF39MZOA3/eDcxTjLg==
-X-Google-Smtp-Source: APXvYqz8y/GovnsF0D2tm3lNOpYaS0G7+35htjGwpcyBgB9MdOWIe9CYMW8Ole+deE4SlX9aakNc01/kDuMb4EgOvMg=
-X-Received: by 2002:a02:b897:: with SMTP id p23mr67001302jam.58.1577982891338; 
- Thu, 02 Jan 2020 08:34:51 -0800 (PST)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=eHGrpF5r5X0Jxgz+QRMxzVI+2gznTMrz/RrPo1FYHwY=;
+ b=eGZAEV6jHn+aiSM8cFjME5tOAOvG4kXI21RbW5Jifq687sXuzkLjbq0FhG1aS7T+CV
+ p6srWVnXkPP0EQ09zRDHGLFhWFB0vPfgtGvVbFxgwSs2LvXEUKUSMTA7H8qONJhPqeIR
+ 7DxfTGM8Xo1O3vIKstv5qYRaXvlSj+rEpNDkrJb+Qtdc00smn+ZU8fN+o/h7QMhl7HZv
+ tsuUwUxyZaya4l2I7tmOvELXsu2so4uopmjjv1mUTdr9cmjLugAlcJ6vVRncUN1Dka/z
+ LpYRiA1uHmugZ/bUWAEGPx18zWcGwFS1GuBOebURwA/i/9D9BD1+4gN1DCLdypXv6n+w
+ Okog==
+X-Gm-Message-State: APjAAAVioE9FS0xRopLVxX0tMjaGf5vlYS1rRPcgf2xYsOcVm5TtzPOd
+ 4Gz/v2NtNwqUxbYpln7DeEWHVGzgJn9cuRPGy93slA==
+X-Google-Smtp-Source: APXvYqyq/HLt8Y/l1d0gQ3r9ZA4FlgrukTV32rofiXVRw0xjeZdmo/udny3w7kdTXl4ToNDdW9vKVj0jm/EBkvx3G5g=
+X-Received: by 2002:a17:906:ff01:: with SMTP id
+ zn1mr88611764ejb.323.1577983000391; 
+ Thu, 02 Jan 2020 08:36:40 -0800 (PST)
 MIME-Version: 1.0
-References: <20191231130528.20669-1-jagan@amarulasolutions.com>
- <20191231130528.20669-3-jagan@amarulasolutions.com>
- <20200102105424.kmte7aooh2gkrcnu@gilmour.lan>
- <CAMty3ZA0e8eJZWvAh0x=KGAZVL3apdao3COvR6j3-ckv0cdvcg@mail.gmail.com>
- <20200102154703.3prgwcjyo36g5g5u@gilmour.lan>
-In-Reply-To: <20200102154703.3prgwcjyo36g5g5u@gilmour.lan>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 2 Jan 2020 22:04:40 +0530
-Message-ID: <CAMty3ZB_6GyK=hhJU-8yAQiom1Uq25ojFbKaGrK1fmW8SnDV_A@mail.gmail.com>
-Subject: Re: [PATCH v3 2/9] drm/sun4i: tcon: Add TCON LCD support for R40
-To: Maxime Ripard <mripard@kernel.org>
+References: <20200101204750.50541-1-roman.stratiienko@globallogic.com>
+ <20200101204750.50541-2-roman.stratiienko@globallogic.com>
+ <2989265.aV6nBDHxoP@jernej-laptop>
+In-Reply-To: <2989265.aV6nBDHxoP@jernej-laptop>
+From: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Date: Thu, 2 Jan 2020 18:36:29 +0200
+Message-ID: <CAODwZ7t3JB+KMqxpFdVE11zHvLh+OrT8MrhAZ7-kFOZDjae92w@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] drm/sun4i: Use CRTC size instead of PRIMARY plane
+ size as mixer frame.
+To: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_083452_700256_4C200E20 
-X-CRM114-Status: GOOD (  23.66  )
+X-CRM114-CacheID: sfid-20200102_083642_926486_15EA0E46 
+X-CRM114-Status: GOOD (  21.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,83 +96,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 2, 2020 at 9:17 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> On Thu, Jan 02, 2020 at 09:10:31PM +0530, Jagan Teki wrote:
-> > On Thu, Jan 2, 2020 at 4:24 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > >
-> > > On Tue, Dec 31, 2019 at 06:35:21PM +0530, Jagan Teki wrote:
-> > > > TCON LCD0, LCD1 in allwinner R40, are used for managing
-> > > > LCD interfaces like RGB, LVDS and DSI.
-> > > >
-> > > > Like TCON TV0, TV1 these LCD0, LCD1 are also managed via
-> > > > tcon top.
-> > > >
-> > > > Add support for it, in tcon driver.
-> > > >
-> > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > > ---
-> > > > Changes for v3:
-> > > > - none
-> > > >
-> > > >  drivers/gpu/drm/sun4i/sun4i_tcon.c | 8 ++++++++
-> > > >  1 file changed, 8 insertions(+)
-> > > >
-> > > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > index fad72799b8df..69611d38c844 100644
-> > > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > @@ -1470,6 +1470,13 @@ static const struct sun4i_tcon_quirks sun8i_a83t_tv_quirks = {
-> > > >       .has_channel_1          = true,
-> > > >  };
-> > > >
-> > > > +static const struct sun4i_tcon_quirks sun8i_r40_lcd_quirks = {
-> > > > +     .supports_lvds          = true,
-> > > > +     .has_channel_0          = true,
-> > > > +     /* TODO Need to support TCON output muxing via GPIO pins */
-> > > > +     .set_mux                = sun8i_r40_tcon_tv_set_mux,
-> > >
-> > > What is this muking about? And why is it a TODO?
-> >
-> > Muxing similar like how TCON TOP handle TV0, TV1 I have reused the
-> > same so-that it would configure de port selection via
-> > sun8i_tcon_top_de_config
-> >
-> > TCON output muxing have gpio with GPIOD and GPIOH bits, which select
-> > which of LCD or TV TCON outputs to the LCD function pins. I have
-> > marked these has TODO for further support as mentioned by Chen-Yu in
-> > v1[1].
->
-> It should be in the commit log.
-
-Make sense.
-
->
-> What's the plan to support that when needed? And that means that the
-> LCD and TV outputs are mutually exclusive? We should at the very least
-> check that both aren't enabled at the same time.
-
-Yes, LCD or TV within the outselect seems to be mutually exclusive.
-Like LCD0 or TV0 can output to GPIOD incase of TV0_OUTSEL and LCD1 or
-TV1 can output to GPIOH incase of TV1_OUTSEL. I think checking them
-before configuring TCON_TOP_PORT_SEL_REG would make sense, let me know
-if you have any suggestions?
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+0YfRgiwgMiDRj9C90LIuIDIwMjAg0LMuLCAwOTo0MiBKZXJuZWogxaBrcmFiZWMgPGplcm5lai5z
+a3JhYmVjQHNpb2wubmV0PjoKPgo+IEhpIQo+Cj4gRG5lIHNyZWRhLCAwMS4gamFudWFyIDIwMjAg
+b2IgMjE6NDc6NTAgQ0VUIGplCj4gcm9tYW4uc3RyYXRpaWVua29AZ2xvYmFsbG9naWMuY29tIG5h
+cGlzYWwoYSk6Cj4gPiBGcm9tOiBSb21hbiBTdHJhdGlpZW5rbyA8cm9tYW4uc3RyYXRpaWVua29A
+Z2xvYmFsbG9naWMuY29tPgo+ID4KPiA+IEFjY29yZGluZyB0byBEUk0gZG9jdW1lbnRhdGlvbiB0
+aGUgb25seSBkaWZmZXJlbmNlIGJldHdlZW4gUFJJTUFSWQo+ID4gYW5kIE9WRVJMQVkgcGxhbmUg
+aXMgdGhhdCBlYWNoIENSVEMgbXVzdCBoYXZlIFBSSU1BUlkgcGxhbmUgYW5kCj4gPiBPVkVSTEFZ
+IGFyZSBvcHRpb25hbC4KPiA+Cj4gPiBBbGxvdyBQUklNQVJZIHBsYW5lIHRvIGhhdmUgZGltZW5z
+aW9uIGRpZmZlcmVudCBmcm9tIGZ1bGwtc2NyZWVuLgo+ID4KPiA+IEZpeGVzOiA1YmI1ZjVkYWZh
+MWEgKCJkcm0vc3VuNGk6IFJlb3JnYW5pemUgVUkgbGF5ZXIgY29kZSBpbiBERTIiKQo+ID4gU2ln
+bmVkLW9mZi1ieTogUm9tYW4gU3RyYXRpaWVua28gPHJvbWFuLnN0cmF0aWllbmtvQGdsb2JhbGxv
+Z2ljLmNvbT4KPgo+IFRoaXMgbG9va3MgZ3JlYXQgbm93Lgo+Cj4gUmV2aWV3ZWQtYnk6IEplcm5l
+aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPgo+IFdoYXQgaGFwcGVuZWQgdG8g
+b3RoZXIgcGF0Y2hlcyBpbiB0aGUgc2VyaWVzPyBJdCB3b3VsZCBiZSBuaWNlIHRvIGhhdmUgYSBj
+b3Zlcgo+IGxldHRlciBmb3Igc3VjaCBjYXNlcywgd2hlcmUgeW91IGNhbiBleHBsYWluIHJlYXNv
+bnMgZm9yIGRyb3BwZWQgcGF0Y2hlcy4KPgo+Cj4KPgoKVGhhbmtzIGFuZCBzb3JyeSBmb3IgYW55
+IG1pc3Rha2VzIGluIHByb2NlZHVyZSwgSSdsbCB0cnkgdG8gZm9sbG93IHRoZQpydWxlcyBpbiB0
+aGUgZnV0dXJlLi4KU29tZSBvZiBjb21taXRzIHJlcXVpcmVzIG1vcmUgdGltZSB0byB0ZXN0L2Rl
+bGl2ZXIgdGhhbiBvdGhlcnMuICBTbwpzcGxpdHRpbmcgaXQgaW50byBzbWFsbGVyIGNodW5rcyBo
+ZWxwcyB0byBkZWxpdmVyIHRoZW0gZWFybGllci4KCj4KPiBCZXN0IHJlZ2FyZHMsCj4gSmVybmVq
+Cj4KPiA+IC0tLQo+ID4gdjI6Cj4gPiAtIFNwbGl0IGNvbW1pdCBpbiAyIHBhcnRzCj4gPiAtIEFk
+ZCBGaXhlcyBsaW5lIHRvIHRoZSBjb21taXQgbWVzc2FnZQo+ID4KPiA+IHYzOgo+ID4gLSBBZGRy
+ZXNzIHJldmlldyBjb21tZW50cyBvZiB2MiArIHJlbW92ZWQgMyBsb2NhbCB2YXJpYmxlcwo+ID4g
+LSBDaGFuZ2UgJ0ZpeGVzJyBsaW5lCj4gPgo+ID4gU2luY2UgSSd2ZSBwdXQgbW9yZSBjaGFuZ2Vz
+IGZyb20gbXkgc2lkZSwgcGxlYXNlIHJldmlldy9zaWduIGFnYWluLgo+ID4gLS0tCj4gPiAgZHJp
+dmVycy9ncHUvZHJtL3N1bjRpL3N1bjhpX21peGVyLmMgICAgfCAyOCArKysrKysrKysrKysrKysr
+KysrKysrKysKPiA+ICBkcml2ZXJzL2dwdS9kcm0vc3VuNGkvc3VuOGlfdWlfbGF5ZXIuYyB8IDMw
+IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gPiAgMiBmaWxlcyBjaGFuZ2VkLCAyOCBpbnNl
+cnRpb25zKCspLCAzMCBkZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9n
+cHUvZHJtL3N1bjRpL3N1bjhpX21peGVyLmMKPiA+IGIvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1
+bjhpX21peGVyLmMgaW5kZXggOGI4MDNlYjkwM2I4Li42NThjZjQ0MmMxMjEKPiA+IDEwMDY0NAo+
+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1bjhpX21peGVyLmMKPiA+ICsrKyBiL2Ry
+aXZlcnMvZ3B1L2RybS9zdW40aS9zdW44aV9taXhlci5jCj4gPiBAQCAtMjU3LDYgKzI1NywzMyBA
+QCBjb25zdCBzdHJ1Y3QgZGUyX2ZtdF9pbmZvICpzdW44aV9taXhlcl9mb3JtYXRfaW5mbyh1MzIK
+PiA+IGZvcm1hdCkgcmV0dXJuIE5VTEw7Cj4gPiAgfQo+ID4KPiA+ICtzdGF0aWMgdm9pZCBzdW44
+aV9tb2RlX3NldChzdHJ1Y3Qgc3VueGlfZW5naW5lICplbmdpbmUsCj4gPiArICAgICAgICAgICAg
+ICAgICAgICAgICAgc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1vZGUpCj4gPiArewo+ID4gKyAg
+ICAgdTMyIHNpemUgPSBTVU44SV9NSVhFUl9TSVpFKG1vZGUtPmNydGNfaGRpc3BsYXksIG1vZGUt
+Cj4gPmNydGNfdmRpc3BsYXkpOwo+ID4gKyAgICAgc3RydWN0IHN1bjhpX21peGVyICptaXhlciA9
+IGVuZ2luZV90b19zdW44aV9taXhlcihlbmdpbmUpOwo+ID4gKyAgICAgdTMyIGJsZF9iYXNlID0g
+c3VuOGlfYmxlbmRlcl9iYXNlKG1peGVyKTsKPiA+ICsgICAgIHUzMiB2YWw7Cj4gPiArCj4gPiAr
+ICAgICBEUk1fREVCVUdfRFJJVkVSKCJNb2RlIGNoYW5nZSwgdXBkYXRpbmcgZ2xvYmFsIHNpemUg
+VzogJXUgSDogJXVcbiIsCj4gPiArICAgICAgICAgICAgICAgICAgICAgIG1vZGUtPmNydGNfaGRp
+c3BsYXksIG1vZGUtPmNydGNfdmRpc3BsYXkpOwo+ID4gKyAgICAgcmVnbWFwX3dyaXRlKG1peGVy
+LT5lbmdpbmUucmVncywgU1VOOElfTUlYRVJfR0xPQkFMX1NJWkUsIHNpemUpOwo+ID4gKyAgICAg
+cmVnbWFwX3dyaXRlKG1peGVyLT5lbmdpbmUucmVncywKPiA+ICsgICAgICAgICAgICAgICAgICBT
+VU44SV9NSVhFUl9CTEVORF9PVVRTSVpFKGJsZF9iYXNlKSwgc2l6ZSk7Cj4gPiArCj4gPiArICAg
+ICBpZiAobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX0lOVEVSTEFDRSkKPiA+ICsgICAgICAg
+ICAgICAgdmFsID0gU1VOOElfTUlYRVJfQkxFTkRfT1VUQ1RMX0lOVEVSTEFDRUQ7Cj4gPiArICAg
+ICBlbHNlCj4gPiArICAgICAgICAgICAgIHZhbCA9IDA7Cj4gPiArCj4gPiArICAgICByZWdtYXBf
+dXBkYXRlX2JpdHMobWl4ZXItPmVuZ2luZS5yZWdzLAo+ID4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgIFNVTjhJX01JWEVSX0JMRU5EX09VVENUTChibGRfYmFzZSksCj4gPiArICAgICAgICAgICAg
+ICAgICAgICAgICAgU1VOOElfTUlYRVJfQkxFTkRfT1VUQ1RMX0lOVEVSTEFDRUQsCj4gPiArICAg
+ICAgICAgICAgICAgICAgICAgICAgdmFsKTsKPiA+ICsgICAgIERSTV9ERUJVR19EUklWRVIoIlN3
+aXRjaGluZyBkaXNwbGF5IG1peGVyIGludGVybGFjZWQgbW9kZSAlc1xuIiwKPiA+ICsgICAgICAg
+ICAgICAgICAgICAgICAgdmFsID8gIm9uIiA6ICJvZmYiKTsKPiA+ICt9Cj4gPiArCj4gPiAgc3Rh
+dGljIHZvaWQgc3VuOGlfbWl4ZXJfY29tbWl0KHN0cnVjdCBzdW54aV9lbmdpbmUgKmVuZ2luZSkK
+PiA+ICB7Cj4gPiAgICAgICBEUk1fREVCVUdfRFJJVkVSKCJDb21taXR0aW5nIGNoYW5nZXNcbiIp
+Owo+ID4gQEAgLTMxMCw2ICszMzcsNyBAQCBzdGF0aWMgc3RydWN0IGRybV9wbGFuZSAqKnN1bjhp
+X2xheWVyc19pbml0KHN0cnVjdAo+ID4gZHJtX2RldmljZSAqZHJtLCBzdGF0aWMgY29uc3Qgc3Ry
+dWN0IHN1bnhpX2VuZ2luZV9vcHMgc3VuOGlfZW5naW5lX29wcyA9IHsKPiA+ICAgICAgIC5jb21t
+aXQgICAgICAgICA9IHN1bjhpX21peGVyX2NvbW1pdCwKPiA+ICAgICAgIC5sYXllcnNfaW5pdCAg
+ICA9IHN1bjhpX2xheWVyc19pbml0LAo+ID4gKyAgICAgLm1vZGVfc2V0ICAgICAgID0gc3VuOGlf
+bW9kZV9zZXQsCj4gPiAgfTsKPiA+Cj4gPiAgc3RhdGljIHN0cnVjdCByZWdtYXBfY29uZmlnIHN1
+bjhpX21peGVyX3JlZ21hcF9jb25maWcgPSB7Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUv
+ZHJtL3N1bjRpL3N1bjhpX3VpX2xheWVyLmMKPiA+IGIvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1
+bjhpX3VpX2xheWVyLmMgaW5kZXggNDM0M2VhOWY4Y2Y4Li5mMDFhYzU1MTkxZjEKPiA+IDEwMDY0
+NAo+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1bjhpX3VpX2xheWVyLmMKPiA+ICsr
+KyBiL2RyaXZlcnMvZ3B1L2RybS9zdW40aS9zdW44aV91aV9sYXllci5jCj4gPiBAQCAtMTIwLDM2
+ICsxMjAsNiBAQCBzdGF0aWMgaW50IHN1bjhpX3VpX2xheWVyX3VwZGF0ZV9jb29yZChzdHJ1Y3QK
+PiA+IHN1bjhpX21peGVyICptaXhlciwgaW50IGNoYW5uZWwsIGluc2l6ZSA9IFNVTjhJX01JWEVS
+X1NJWkUoc3JjX3csIHNyY19oKTsKPiA+ICAgICAgIG91dHNpemUgPSBTVU44SV9NSVhFUl9TSVpF
+KGRzdF93LCBkc3RfaCk7Cj4gPgo+ID4gLSAgICAgaWYgKHBsYW5lLT50eXBlID09IERSTV9QTEFO
+RV9UWVBFX1BSSU1BUlkpIHsKPiA+IC0gICAgICAgICAgICAgYm9vbCBpbnRlcmxhY2VkID0gZmFs
+c2U7Cj4gPiAtICAgICAgICAgICAgIHUzMiB2YWw7Cj4gPiAtCj4gPiAtICAgICAgICAgICAgIERS
+TV9ERUJVR19EUklWRVIoIlByaW1hcnkgbGF5ZXIsIHVwZGF0aW5nIGdsb2JhbCBzaXplCj4gVzog
+JXUgSDogJXVcbiIsCj4gPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZHN0X3csIGRz
+dF9oKTsKPiA+IC0gICAgICAgICAgICAgcmVnbWFwX3dyaXRlKG1peGVyLT5lbmdpbmUucmVncywK
+PiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgIFNVTjhJX01JWEVSX0dMT0JBTF9TSVpFLAo+
+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0c2l6ZSk7Cj4gPiAtICAgICAgICAgICAg
+IHJlZ21hcF93cml0ZShtaXhlci0+ZW5naW5lLnJlZ3MsCj4gPiAtICAgICAgICAgICAgICAgICAg
+ICAgICAgICBTVU44SV9NSVhFUl9CTEVORF9PVVRTSVpFKGJsZF9iYXNlKSwKPiBvdXRzaXplKTsK
+PiA+IC0KPiA+IC0gICAgICAgICAgICAgaWYgKHN0YXRlLT5jcnRjKQo+ID4gLSAgICAgICAgICAg
+ICAgICAgICAgIGludGVybGFjZWQgPSBzdGF0ZS0+Y3J0Yy0+c3RhdGUtCj4gPmFkanVzdGVkX21v
+ZGUuZmxhZ3MKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICYgRFJNX01PREVfRkxB
+R19JTlRFUkxBQ0U7Cj4gPiAtCj4gPiAtICAgICAgICAgICAgIGlmIChpbnRlcmxhY2VkKQo+ID4g
+LSAgICAgICAgICAgICAgICAgICAgIHZhbCA9IFNVTjhJX01JWEVSX0JMRU5EX09VVENUTF9JTlRF
+UkxBQ0VEOwo+ID4gLSAgICAgICAgICAgICBlbHNlCj4gPiAtICAgICAgICAgICAgICAgICAgICAg
+dmFsID0gMDsKPiA+IC0KPiA+IC0gICAgICAgICAgICAgcmVnbWFwX3VwZGF0ZV9iaXRzKG1peGVy
+LT5lbmdpbmUucmVncywKPiA+IC0KPiBTVU44SV9NSVhFUl9CTEVORF9PVVRDVEwoYmxkX2Jhc2Up
+LAo+ID4gLQo+IFNVTjhJX01JWEVSX0JMRU5EX09VVENUTF9JTlRFUkxBQ0VELAo+ID4gLSAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsKTsKPiA+IC0KPiA+IC0gICAgICAgICAgICAg
+RFJNX0RFQlVHX0RSSVZFUigiU3dpdGNoaW5nIGRpc3BsYXkgbWl4ZXIgaW50ZXJsYWNlZAo+IG1v
+ZGUgJXNcbiIsCj4gPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaW50ZXJsYWNlZCA/
+ICJvbiIgOiAib2ZmIik7Cj4gPiAtICAgICB9Cj4gPiAtCj4gPiAgICAgICAvKiBTZXQgaGVpZ2h0
+IGFuZCB3aWR0aCAqLwo+ID4gICAgICAgRFJNX0RFQlVHX0RSSVZFUigiTGF5ZXIgc291cmNlIG9m
+ZnNldCBYOiAlZCBZOiAlZFxuIiwKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgc3RhdGUtPnNy
+Yy54MSA+PiAxNiwgc3RhdGUtPnNyYy55MSA+PiAxNik7Cj4KPgo+Cj4KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
