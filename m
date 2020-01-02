@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8EC312E747
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 15:34:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81F4512E748
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 15:36:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6DZ+Ka/oSwv8C3kBaO6UJg5ncdatxMUXFv9RL5ReEds=; b=DSe4WFdEsXSV5n
-	rs8NQJHL83A++dH9SkcK16QYZ9vVvmOX0Itl5M4jkO2+0j/FtdTDw4yD19zkcysytYPrIFYRADBfm
-	gdO2OoqNtbNFjQx9WL+1W4uATOY+Upx+6RqrWBeIOcFhmx2GcRq2veKZaFZWbQqlbgsRvn+P8xL6v
-	xvTrho9+WsM4mN9pcmilJjHopM/6ynR79fgA+fiefrt00WuC3LEHzj0petztSToNpiM/tHo5bqT5y
-	PxpSuyGdioZzaJBxuJw47ykiaM/Ap9SWqfc8iphGZONpnBAxOncFrtbwasoPm0sQgalMEHc4UKE//
-	wmDHiQ3RNOv6+fBm/NPQ==;
+	List-Owner; bh=zV4fmb05jwSJZM9F6S8AaXFSXIqzQkJ+9DOg9HfeqHU=; b=oe9SeQvrtXirZd
+	ire7eWdc8Feuk/ylyam3vDG39rR9DBaZe140CDtBgomye5IF9Er8BWZHf6yVet4y7Aamcn0Gt+bAW
+	j4DNaqmMKdKjUrtat3wcIkC+EUmu9/ZqXIn5JLaJYrpj2dbuhCR5Axi3M/381RG6XLBl/zbU1kjMZ
+	jNSOJcJFhOmVSJeof/uYVGxpCukmw9grHsLG3bZGAujVwyxpJ+nN41E+vZsIm+DUV5SMJB4Lsdfe3
+	4VuPiLfrSBHuudBA1LlsA0SPbU842JFTejcR9FW1OIKeiGUsukor0wPOTqzYWoKBjwgdpHl09EYG4
+	WMCcMcj8iaDAUCE5K4CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in1Yl-0003Nh-IR; Thu, 02 Jan 2020 14:34:47 +0000
+	id 1in1Zx-0004vk-DU; Thu, 02 Jan 2020 14:36:01 +0000
 Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1in1Ye-0003H3-Ba; Thu, 02 Jan 2020 14:34:42 +0000
+ Linux)) id 1in1Zq-0004vD-Pa; Thu, 02 Jan 2020 14:35:56 +0000
 Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 002EYVv4015378,
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 002EZqPs015545,
  This message is accepted by code: ctloc85258
 Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 002EYVv4015378
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 002EZqPs015545
  (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 2 Jan 2020 22:34:31 +0800
-Received: from RTEXMB01.realtek.com.tw (172.21.6.94) by
+ Thu, 2 Jan 2020 22:35:53 +0800
+Received: from RTEXMB06.realtek.com.tw (172.21.6.99) by
  RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Thu, 2 Jan 2020 22:34:31 +0800
+ 14.3.468.0; Thu, 2 Jan 2020 22:35:52 +0800
 Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB01.realtek.com.tw (172.21.6.94) with Microsoft SMTP Server
+ RTEXMB06.realtek.com.tw (172.21.6.99) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Thu, 2 Jan 2020 22:34:31 +0800
+ 15.1.1779.2; Thu, 2 Jan 2020 22:35:52 +0800
 Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
  RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
- 15.01.1779.005; Thu, 2 Jan 2020 22:34:31 +0800
+ 15.01.1779.005; Thu, 2 Jan 2020 22:35:52 +0800
 From: James Tai <james.tai@realtek.com>
 To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
  "linux-realtek-soc@lists.infradead.org"
  <linux-realtek-soc@lists.infradead.org>
-Subject: RE: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
-Thread-Topic: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
-Thread-Index: AQHVkedK7O6Ji1Cvt0Gs/gwTj0NGGKfXzt6A
-Date: Thu, 2 Jan 2020 14:34:31 +0000
-Message-ID: <0d6dc451122d48bc9bf52d6147b0211d@realtek.com>
+Subject: RE: [RFC 06/11] soc: realtek: chip: Detect RTD1296
+Thread-Topic: [RFC 06/11] soc: realtek: chip: Detect RTD1296
+Thread-Index: AQHVked+8ysSEPXOXEWoR+Z6QJyNe6fXz/Og
+Date: Thu, 2 Jan 2020 14:35:52 +0000
+Message-ID: <e23f24e7c018440bbf72317fbcc1b22f@realtek.com>
 References: <20191103013645.9856-1-afaerber@suse.de>
- <20191103013645.9856-4-afaerber@suse.de>
-In-Reply-To: <20191103013645.9856-4-afaerber@suse.de>
+ <20191103013645.9856-7-afaerber@suse.de>
+In-Reply-To: <20191103013645.9856-7-afaerber@suse.de>
 Accept-Language: zh-TW, en-US
 Content-Language: zh-TW
 X-MS-Has-Attach: 
@@ -58,8 +58,8 @@ X-MS-TNEF-Correlator:
 x-originating-ip: [114.37.143.250]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_063440_524729_E8452EDB 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20200102_063554_960747_EC4CFF1A 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,31 +80,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiBBZGQgYSBEVCBub2RlIGZvciBjaGlwIGlkZW50aWZpY2F0aW9uLg0KPiANCj4gU2lnbmVkLW9m
-Zi1ieTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPg0KPiAtLS0NCj4gIGFyY2gv
-YXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjl4LmR0c2kgfCA1ICsrKysrDQo+ICAxIGZpbGUg
-Y2hhbmdlZCwgNSBpbnNlcnRpb25zKCspDQo+IA0KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9i
-b290L2R0cy9yZWFsdGVrL3J0ZDEyOXguZHRzaQ0KPiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVh
-bHRlay9ydGQxMjl4LmR0c2kNCj4gaW5kZXggNDQzMzExNDQ3NmY1Li4xNWE3YzI0OTE1NWQgMTAw
-NjQ0DQo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjl4LmR0c2kNCj4g
-KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOXguZHRzaQ0KPiBAQCAtODQs
-NiArODQsMTEgQEANCj4gIAkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7DQo+ICAJCX07DQo+IA0KPiAr
-CQljaGlwLWluZm9AOTgwMWEyMDAgew0KPiArCQkJY29tcGF0aWJsZSA9ICJyZWFsdGVrLHJ0ZDEx
-OTUtY2hpcCI7DQo+ICsJCQlyZWcgPSA8MHg5ODAxYTIwMCAweDg+Ow0KPiArCQl9Ow0KPiArDQo+
-ICAJCXVhcnQxOiBzZXJpYWxAOTgwMWIyMDAgew0KPiAgCQkJY29tcGF0aWJsZSA9ICJzbnBzLGR3
-LWFwYi11YXJ0IjsNCj4gIAkJCXJlZyA9IDwweDk4MDFiMjAwIDB4MTAwPjsNCj4gLS0NCj4gMi4x
-Ni40DQo+DQpBY2tlZC1ieTogSmFtZXMgVGFpIDxqYW1lcy50YWlAcmVhbHRlay5jb20+DQoNCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+PiBEZXRlY3Rpb24gbG9naWMgZnJvbSBkb3duc3RyZWFtIGRyaXZlcnMvc29jL3JlYWx0ZWsvcnRk
+MTI5eC9ydGtfY2hpcC5jLg0KPiANCj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVyIDxh
+ZmFlcmJlckBzdXNlLmRlPg0KPiAtLS0NCj4gIGRyaXZlcnMvc29jL3JlYWx0ZWsvY2hpcC5jIHwg
+MTggKysrKysrKysrKysrKysrKystDQo+ICAxIGZpbGUgY2hhbmdlZCwgMTcgaW5zZXJ0aW9ucygr
+KSwgMSBkZWxldGlvbigtKQ0KPiANCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc29jL3JlYWx0ZWsv
+Y2hpcC5jIGIvZHJpdmVycy9zb2MvcmVhbHRlay9jaGlwLmMgaW5kZXgNCj4gOWQxMzQyMmU5OTM2
+Li5iYTY1M2MwOTc2NDQgMTAwNjQ0DQo+IC0tLSBhL2RyaXZlcnMvc29jL3JlYWx0ZWsvY2hpcC5j
+DQo+ICsrKyBiL2RyaXZlcnMvc29jL3JlYWx0ZWsvY2hpcC5jDQo+IEBAIC01MCw5ICs1MCwyNSBA
+QCBzdGF0aWMgY29uc3QgY2hhciAqZGVmYXVsdF9uYW1lKHN0cnVjdCBkZXZpY2UgKmRldiwNCj4g
+Y29uc3Qgc3RydWN0IHJ0ZF9zb2MgKnMpDQo+ICAJcmV0dXJuIHMtPmZhbWlseTsNCj4gIH0NCj4g
+DQo+ICtzdGF0aWMgY29uc3QgY2hhciAqcnRkMTI5NV9uYW1lKHN0cnVjdCBkZXZpY2UgKmRldiwg
+Y29uc3Qgc3RydWN0DQo+ICtydGRfc29jICpzKSB7DQo+ICsJdm9pZCBfX2lvbWVtICpiYXNlOw0K
+PiArDQo+ICsJYmFzZSA9IG9mX2lvbWFwKGRldi0+b2Zfbm9kZSwgMSk7DQo+ICsJaWYgKGJhc2Up
+IHsNCj4gKwkJdTMyIGNoaXBpbmZvMSA9IHJlYWRsX3JlbGF4ZWQoYmFzZSk7DQo+ICsJCWlvdW5t
+YXAoYmFzZSk7DQo+ICsJCWlmIChjaGlwaW5mbzEgJiBCSVQoMTEpKSB7DQo+ICsJCQlyZXR1cm4g
+IlJURDEyOTYiOw0KPiArCQl9DQo+ICsJfQ0KPiArDQo+ICsJcmV0dXJuICJSVEQxMjk1IjsNCj4g
+K30NCj4gKw0KPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBydGRfc29jIHJ0ZF9zb2NfZmFtaWxpZXNb
+XSA9IHsNCj4gIAl7IDB4MDAwMDYzMjksICJSVEQxMTk1IiwgZGVmYXVsdF9uYW1lLCBydGQxMTk1
+X3JldmlzaW9ucywgIlBob2VuaXgiIH0sDQo+IC0JeyAweDAwMDA2NDIxLCAiUlREMTI5NSIsIGRl
+ZmF1bHRfbmFtZSwgcnRkMTI5NV9yZXZpc2lvbnMsICJLeWxpbiIgfSwNCj4gKwl7IDB4MDAwMDY0
+MjEsICJSVEQxMjk1IiwgcnRkMTI5NV9uYW1lLCBydGQxMjk1X3JldmlzaW9ucywgIkt5bGluIiB9
+LA0KPiAgfTsNCj4gDQo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IHJ0ZF9zb2MgKnJ0ZF9zb2NfYnlf
+Y2hpcF9pZCh1MzIgY2hpcF9pZCkNCj4gLS0NCj4gMi4xNi40DQo+IA0KQWNrZWQtYnk6IEphbWVz
+IFRhaSA8amFtZXMudGFpQHJlYWx0ZWsuY29tPg0KDQpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
