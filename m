@@ -2,80 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C38412EB8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 22:53:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2766E12F0E1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 23:56:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqOGcAvFZioto8OMiWAEtfnSvjLqDca0n3SzD+oNYM4=; b=A3cjS4UxNfB5TB
-	eo+ybEJiUG1pJjyX2h+wuBjOPvolik8yUfssGBvg+jVudu/LubNOIUjBUVIBvEBJenyR09voyw788
-	cJajaePJAn7I5128cnF01SyuCCM1k99TlEbimVeoOvySPboaqGBIGSaWdYHxNkLWAmj/2K7Rlh3aV
-	Eny2z5OlmrXEdgCk//cMZZemN80AGVMBdRnXwPRc7RzVKH2UyYMpt/P2lFPFdPUJdpFupCIEuORJq
-	h71V3BCl0/Z19YE108HltecZOiHHvtc5AjaH/xURYNUm36+m8nfsZwrKbaNpmjMhkTzFSMDI4Q7KB
-	4B6Vx1pjni0xHhYjEAYQ==;
+	List-Owner; bh=wqOsFQGVaJzXiB+j5qFVPdWzGbYcpOkmBSGIJqo96Ws=; b=PU8Z+PFxyb2tny
+	HE8TYEdv56U/QkVZquLJjSIJDgml7dQEe8UHJf0qephxUuFDhRzI0eZfGx9wTnK3QY85XuMze/4kP
+	qicGbuR0myM4T5csCA5xOTJzqVV/zk/pHPWPFJt28DtlsnXznMHw1J2UcRSAPHK4BVvzeOyiMW/It
+	33rTQ8Kh8kUvcmX+ttbeTdkGg2kIZJmSwJfvZ86EhabQRhyqVPM/klH5X0V0cPyi4gBZunMqOsRCj
+	0g0j5RYN+FMWKKqJGKUawulAbheCfmaptJ54nFAQfpE8gV4sXDGu0h44XE2jP0edNm0sFZ6Y1tGPm
+	aYKhzVffr0Mc+7AgH7RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in8Ow-0003Rv-U1; Thu, 02 Jan 2020 21:53:06 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1in9O3-0001Ly-DK; Thu, 02 Jan 2020 22:56:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in8On-0003Qv-Br; Thu, 02 Jan 2020 21:52:58 +0000
-Received: by mail-ed1-x543.google.com with SMTP id dc19so40221278edb.10;
- Thu, 02 Jan 2020 13:52:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Hvu2XgZLIAybTxeXvSxciwNCDI/QTjrV4RLf06zuwtk=;
- b=pt+8L1kfxsX0Xxqv1s32vYhKZ0Ehx0enq8/6v/tV9pcIelS/duSghfq9QbBGzbWmtr
- K7ef23N6Wc1GG6zhr+FtBE1UzCgHZq33Wc4wop1pvAc0TwGWv6IyTQHw32qhdqEP0NTI
- RnZKGzNyx4U9n+jtQVCpKI7TxoG5iNG8RtI7ULvxf1ivAPLvjrDrXBBi1/FZpnmJgHsI
- 5RWeO7GsrQe5v/h+OB2aOQVQYgU49ciDf8wFuizGVYTXnMFnbftDO+wSVmKi1/AUdeii
- V1F8yfXoAWRUvHuq6Q8MfmZLQ5ENJYt5dIwrFo/vJ99osCuIDlsOPQJL7iKy/RNKzMS1
- CAcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Hvu2XgZLIAybTxeXvSxciwNCDI/QTjrV4RLf06zuwtk=;
- b=n1OkQcIPioma4AprybTzIZIDLXYiv2ZpWazuGP99oOw95eXw9dX1pVu9W7hxhHOMw8
- 4/fFgLW0w3Fzxxg1DXQePlkJggbDQr73cT7z5irZzs/y7rjQOy3xG/LRnhF4FDR9MrLg
- G4Arb/XwElwNbqslG91q5H/H+N1axBA9iTPVn4kRe36HCJ0Zh3lyN5b7q7lYVAXlAzmO
- 0Ki+SnsJK5sI8KxeO38629IJEP28+Ssf3wkqL6mZ4ZvAnETxx6/fk74IqSeAmPYG68q4
- q3AcWo57b5aqNaqEt5EqS99PS6v4zM/FMfL6lNhRNx1KsKkfuxcsPKsJ1vUeUcJieoVF
- wwmg==
-X-Gm-Message-State: APjAAAVUZq2gX3tm5mAvc+JiHaE5Ag7mKtDyQK6f/mwzprAzIkMmJRMK
- 9w5K9aDCZZ+nd+jIqvQNKHH9RuVakKcsPcxe1os=
-X-Google-Smtp-Source: APXvYqyLuGqANpkEmw72e7jynDm+fNMM49TQnwz/BBk2Zt26OUL6Fve8YN1sQTqqR68Jp8kkufLSn3wjnTCMkt89RHE=
-X-Received: by 2002:aa7:d6d1:: with SMTP id x17mr53418384edr.57.1578001975370; 
- Thu, 02 Jan 2020 13:52:55 -0800 (PST)
+ id 1in9Nv-0001LC-To; Thu, 02 Jan 2020 22:56:10 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B556724679;
+ Thu,  2 Jan 2020 22:56:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578005766;
+ bh=6Koeg/QpSh6SN7IsDtUD1Yw/jN4FQfOCYYp5OlkQg8k=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=BJyGrgJRAyAcMthsOmMVJk2/d9roLzBD5KeGqfyxfbX3KtZmnnxHXX0pyJ8akcsha
+ K/iFSGYit7euv46SOim83yGJFkSBYf8D90gScmaaJtUv+dQKRJYtoCVXIxkXtGp8sR
+ GDbQ6bO22fdQJ5Wf9rmFtnvZeSvKb4mLF6EU8dZs=
+Received: by mail-qt1-f176.google.com with SMTP id d5so35742016qto.0;
+ Thu, 02 Jan 2020 14:56:06 -0800 (PST)
+X-Gm-Message-State: APjAAAWIbq0dYG9a6aSmX1wHCFsI6jEVgCCQ7AHwEa5KYLfXqmMlm+O+
+ 5i1itmBHkv0xg7nEwvsZRfP5p6tO+BdXRw1dQg==
+X-Google-Smtp-Source: APXvYqwAbFfNGIM/JC1KIxuEbN03VDUjC5JsTAOv7Mn+H2Fs2ofR3ekjqd4fT38uPCQz6qNQ3qPQ9Hc0j9LyLmDrH44=
+X-Received: by 2002:aed:2344:: with SMTP id i4mr63466799qtc.136.1578005765768; 
+ Thu, 02 Jan 2020 14:56:05 -0800 (PST)
 MIME-Version: 1.0
-References: <1577428606-69855-1-git-send-email-hanjie.lin@amlogic.com>
- <1577428606-69855-5-git-send-email-hanjie.lin@amlogic.com>
- <CAFBinCD8V-Swihz+VJ780sXJtM9cXprDcGCHVuHjjCx0DEOodQ@mail.gmail.com>
- <d66abc21-1440-503b-3515-6c495bf0db80@amlogic.com>
-In-Reply-To: <d66abc21-1440-503b-3515-6c495bf0db80@amlogic.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 2 Jan 2020 22:52:44 +0100
-Message-ID: <CAFBinCAEO=c+5oZrUmW=YhqD5tQkm0NUSbgwxHYqL2UgcK4c5Q@mail.gmail.com>
-Subject: Re: [PATCH v3 4/6] usb: dwc3: Add Amlogic A1 DWC3 glue
-To: Hanjie Lin <hanjie.lin@amlogic.com>
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+ <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
+ <20191219233129.GA5484@bogus>
+ <CA+V-a8vjwqkH5rYsy_rsHF93d91izsaEwmFXNpYqk3_=_Asd2g@mail.gmail.com>
+In-Reply-To: <CA+V-a8vjwqkH5rYsy_rsHF93d91izsaEwmFXNpYqk3_=_Asd2g@mail.gmail.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 2 Jan 2020 15:55:53 -0700
+X-Gmail-Original-Message-ID: <CAL_JsqJPPuWaOZytWfFy+kwju0tMb2qRN5Ji-Leq2wZdbne_ig@mail.gmail.com>
+Message-ID: <CAL_JsqJPPuWaOZytWfFy+kwju0tMb2qRN5Ji-Leq2wZdbne_ig@mail.gmail.com>
+Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_135257_430898_F005BBFA 
-X-CRM114-Status: GOOD (  16.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200102_145608_003223_7B7D50CD 
+X-CRM114-Status: GOOD (  24.24  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,68 +87,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
- Yue Wang <yue.wang@amlogic.com>, devicetree@vger.kernel.org,
- Qiufang Dai <qiufang.dai@amlogic.com>, Jian Hu <jian.hu@amlogic.com>,
- linux-arm-kernel@lists.infradead.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
- Liang Yang <liang.yang@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Jerome Brunet <jbrunet@baylibre.com>
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Hanjie,
-
-On Thu, Jan 2, 2020 at 1:30 AM Hanjie Lin <hanjie.lin@amlogic.com> wrote:
-[...]
-> >> -               if (i == USB2_OTG_PHY) {
-> >> +               if (priv->soc_id == MESON_SOC_G12A && i == USB2_OTG_PHY) {
-> > on GXL we have two PHYs (0 and 1), the second one is OTG capable
-> > on GXM we have three PHYs (0..2), the second one is OTG capable
-> > on G12A/G12B we have two PHYs (0 and 1), the second one is OTG capable
+On Thu, Jan 2, 2020 at 1:44 AM Lad, Prabhakar
+<prabhakar.csengg@gmail.com> wrote:
+>
+> Hi Rob,
+>
+> On Thu, Dec 19, 2019 at 11:31 PM Rob Herring <robh@kernel.org> wrote:
 > >
-> > you already wrote that there is only one USB2 PHY on the A1 SoC
-> > is really only the second PHY port ("usb2-phy1" instead of
-> > "usb2-phy0") used on A1?
-> > if "usb2-phy0" is correct then you don't need these checks (there are
-> > more checks like this below)
->
-> Actually, A1 have same phys("usb2-phy0", "usb2-phy1", "usb3-phy0") and register base with G12A.
-> But A1 driver is designed to support host mode with usb2-phy1 only.
-OK, thank you for clarifying this interesting decision made by the HW team
-
-...]
-> >> -       usb_role_switch_unregister(priv->role_switch);
-> >> +       if (priv->soc_id == MESON_SOC_G12A)
-> >> +               usb_role_switch_unregister(priv->role_switch);
-> > I didn't expect this because in _probe usb_role_switch_register is still called
-> > on A1 we now call usb_role_switch_register() but we never call
-> > usb_role_switch_unregister()
+> > On Mon, Dec 16, 2019 at 08:49:23AM +0000, Lad, Prabhakar wrote:
+> > > Hi Rob,
+> > >
+> > > Thank you for the review.
+> > >
+> > > On Fri, Dec 13, 2019 at 8:37 PM Rob Herring <robh+dt@kernel.org> wrote:
+> > > >
+> > > > On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
+> > > > <prabhakar.csengg@gmail.com> wrote:
+> > > > >
+> > > > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > > >
+> > > > > this patch adds support to parse PCI outbound-ranges, the
+> > > > > outbound-regions are similar to pci ranges except it doesn't
+> > > > > have pci address, below is the format for bar-ranges:
+> > > > >
+> > > > > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
+> > > > >                    upper32_size lower32_size>;
+> > > >
+> > > > You can't just make up a new ranges property. Especially one that
+> > > > doesn't follow how 'ranges' works. We already have 'dma-ranges' to
+> > > > translate device to memory addresses.
+> > > >
+> > > > Explain the problem or feature you need, not the solution you came up
+> > > > with. Why do you need this and other endpoint bindings haven't?
+> > > >
+> > > rcar SoC's supports multiple outbound region for mapping the PCI address
+> > > locally to the system. This lead to discussion where there exist controllers
+> > > which support regions for high/low priority transfer and similarly regions
+> > > for large/small memory allocations, as a result a new ranges property was
+> > > added, where we can specify the flags which would indicate how the outbound
+> > > region can be used during requests.
 > >
+> > What are the flags?
 >
-> Actually, usb_role_switch_register() can be called only in G12A.
+> below are the flags which were discussed in first version of the
+> series, but since the driver is
+> currently using just PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC flag I'll be
+> dropping them in
+> next version (suggested by Kishon) and rest will be added as and when
+> required by the driver.
 >
-> dwc3_meson_g12a_probe()
->          ...
->          if (priv->soc_id != MESON_SOC_G12A)
->                  goto setup_pm_runtime;
-I completely missed that, thank you for clarifying it
+>  * @PCI_EPC_WINDOW_FLAG_MULTI_ALLOC: Indicates multiple chunks of memory can be
+>  *                                  allocated from same window
+>  * @PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC: Indicates only single memory allocation
+>  *                                      is possible on the window
+>  * @PCI_EPC_WINDOW_FLAG_LARGE_ALLOC: Window is used for large memory allocation
+>  * @PCI_EPC_WINDOW_FLAG_SMALL_ALLOC: Window is used for small memory allocation
+>  * @PCI_EPC_WINDOW_FLAG_HIGH_PRI_ALLOC: Window is used for high priority data
+>  *                                     transfers
+>  * @PCI_EPC_WINDOW_FLAG_LOW_PRI_ALLOC: Window is used for low priority data
+>  *                                    transfers
 
->
-> Same with second suggestion, this different SoC extra logic could avoided by add constraints
-> to .yaml.
-> I will do this in next version.
-that would be awesome if it works out!
+Looks like configuration or policy, not something that belongs in DT.
+Coupling driver features and DT changes is not good for ABI compatible
+changes either.
 
+I'm hesitant to accept any PCI endpoint binding additions because they
+don't seem to be completely thought out in terms of supporting
+different usecases.
 
-Martin
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
