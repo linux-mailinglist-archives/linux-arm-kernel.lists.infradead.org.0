@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0997212E46A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:29:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32CC012E46F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:30:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Dsy5h10qxxttVEnVZWVf9RxTZsMMurfi+VbWxz4NT84=; b=rGgHpGHYOuc5XZVfltYFzAlaa
-	JmW0TnDf7KbtgcNRURjKCZTiylX/2bJiF2sCWv+y6uBLaooey7uKqEayYvQ0iguaHlfc1qQ9HYLUm
-	FtNN3Nq3pHGrDEd9FAjuBz2ZdkXgzYry49m1XF/1tF6YIvTIQwPNm9nAgGjP8waOggAG9Jv4S3pAv
-	R/z6bOe542zD64CawvPRkN0si3teHzS+lVZxZ/WgxsYnHdFoYAVpFh7JPZmd8S+D0e5NOIP199xAF
-	WlO58YLDZbWW5vIy7t8m+EKkJZnb/fjv2ZpWMngtm/okzQTPq9D6qkTrHkxvx+cddoX0EPXjOmH/p
-	aQ81rT/dw==;
+	 bh=eXQPzqgsDc+HcyKl4EfdGJBwZ65TNGkJFOIZ+6eQYtk=; b=Wt9qHRJs8VSh7HD0/bc9feHyx
+	SMRMMO0T/YGg4yeQRkUIlwX9t7NBNmwePciPJ9Z17lNdMSDWJAb0GoFOJoUguh+AI/ZGMDMHZwHzh
+	UHlT4+eDzKNk72wAd8fKePA4kYgpL2vRWc6F3Tu4O1Bh0KiMnI9ScCtyXUAxmGn1XQb62jZPWB+Q3
+	fHu+EEHVqEyW+5h3VwC905UT1TNokHiq7WEo3fFavXtho1AsvgZevICMbIr5g+NZmijTRxdVtXugd
+	sX8OFFC+VPRKkZuWMAeM9BaJKP0GDWzSp7+75MBEKVdNCeDyRrr0BSp8ebnbLm2wyqi0Akws2O3Jx
+	Cib2SOGKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imwn0-0004RQ-OD; Thu, 02 Jan 2020 09:29:10 +0000
+	id 1imwoP-00061f-M8; Thu, 02 Jan 2020 09:30:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imwmt-0004QM-BB
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:29:06 +0000
+ id 1imwoI-00060g-9i
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:30:31 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5F43C20866;
- Thu,  2 Jan 2020 09:29:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 85A8520866;
+ Thu,  2 Jan 2020 09:30:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577957341;
- bh=pRLLWLshpdZaj7aSje6TIFcK62XHUMhFH6uF34UjPWE=;
+ s=default; t=1577957430;
+ bh=ph0Q4sVVHmPTWO2WvokDdOrhzisfVS7J7uED9CccCzc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qioH68TnAGoz6R8XezA9BL4hVOWCriMkL0fN0Za0boFI4yM/swDLfcwRPWMzCKTuf
- HKyYkBgMbDNYXcGEt9krDRjxThh6owzoXQTFPIqw6l9EWGkVB88gT9Iq8HryEjmuSf
- 4p9Sg6GPF0yHKPT05z79Rtav8FmyWoZYSwJwxCqo=
-Date: Thu, 2 Jan 2020 10:28:58 +0100
+ b=onBLeU3oBuFFk4MiR7WjNJBfnnVybOzgnmvvy8pL05HxVM/WZYxBG8kURNqU5HGNl
+ 9miZ9isKVzDm3b1D9Boy31+TFfplbz8Fpszr0dCEjmwY9yUtUmWYorzQDaGYoPuwGg
+ ea/wVmGa/RFKpbXZjwO4PTDLKF1IZlIhU2NQ4Rj8=
+Date: Thu, 2 Jan 2020 10:30:27 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH 0/3] A64/H3/H6 R_CCU clock fixes
-Message-ID: <20200102092858.6n5uqymglia4t7lk@gilmour.lan>
-References: <20191229025922.46899-1-samuel@sholland.org>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 2/2] ARM: sunxi: Enable CONFIG_SUN8I_THERMAL
+Message-ID: <20200102093027.tfs7qde2bnen7wnj@gilmour.lan>
+References: <20191229111707.16574-1-tiny.windzz@gmail.com>
+ <20191229111707.16574-2-tiny.windzz@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191229025922.46899-1-samuel@sholland.org>
+In-Reply-To: <20191229111707.16574-2-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_012903_411822_8DFD4BDF 
-X-CRM114-Status: GOOD (  12.59  )
+X-CRM114-CacheID: sfid-20200102_013030_355064_CC8438C1 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,57 +77,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0487804386762519358=="
+Cc: aisheng.dong@nxp.com, amit.kucheria@verdurent.com, plaes@plaes.org,
+ Anson.Huang@nxp.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
+ daniel.lezcano@linaro.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, wens@csie.org,
+ clabbe.montjoie@gmail.com, p.zabel@pengutronix.de, olof@lixom.net,
+ shawnguo@kernel.org, rui.zhang@intel.com, leonard.crestez@nxp.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7674193994287967015=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0487804386762519358==
+--===============7674193994287967015==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="gk2aam5hdxft2et4"
+	protocol="application/pgp-signature"; boundary="xq3543oi35jh4lug"
 Content-Disposition: inline
 
 
---gk2aam5hdxft2et4
+--xq3543oi35jh4lug
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sat, Dec 28, 2019 at 08:59:19PM -0600, Samuel Holland wrote:
-> Hi all,
+On Sun, Dec 29, 2019 at 11:17:07AM +0000, Yangtao Li wrote:
+> Many sunxi based board needs CONFIG_SUN8I_THERMAL for thermal support.
 >
-> I was examining the H6 BSP clock driver[1] for guidance when porting an
-> AR100 firmware[2] to the H6 SoC. I found some inconsistencies between
-> that code and the sunxi-ng driver.
->
-> I don't have a good way to verify the first patch. Someone with an
-> oscilloscope could set the divider and check the I2C/RSB frequency.
->
-> Patch 2 should have no functional change.
->
-> Patch 3 was verified by benchmarking. Details are in the commit message.
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 
-Applied all three, thanks
+Applied both, thanks!
 Maxime
 
---gk2aam5hdxft2et4
+--xq3543oi35jh4lug
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg232gAKCRDj7w1vZxhR
-xR/OAP9JY57TmyxiCqTZ5rQ+jSsbbgBIlK0MUpFXFJ60USVATgD+LwMfTzcDLCvz
-GjShAjhcGPUCGqkJC8XOg5DyklsoFAo=
-=gy/O
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg24MwAKCRDj7w1vZxhR
+xddIAP4kjfpx7F958ZqZ38Qsbux5R89DGxYs7EJiKjlaK3GHDQD/cYwNoqMtuwGe
+Mn0/B8dq8QAx9w6gXPQn9yaaWgdQdAQ=
+=tpOZ
 -----END PGP SIGNATURE-----
 
---gk2aam5hdxft2et4--
+--xq3543oi35jh4lug--
 
 
---===============0487804386762519358==
+--===============7674193994287967015==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -136,5 +132,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0487804386762519358==--
+--===============7674193994287967015==--
 
