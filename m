@@ -2,61 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 357BD12E844
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 16:47:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9685912E868
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 17:05:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=j+2UQVkYo1VBAteQd7yF32PhxuGYVhmFg+M9+0dd/mY=; b=IRuxBFeSa4uTp5M/UJejoLiO/
-	gpZN3TxN2QqFIEy0rQroDD+xDqxrmrS1PmyFoGSC4/1Qx0XSVXPLuZ5KDAecWn8BlA5evKaR8kxwH
-	5kI558IDX0sxoaQSw3dxV5VhTxI7nkeD2my/d7efF3FrljEcFKcjBf13eOn1n9Ytjn2oQGffnxoIX
-	U39gF5uADvr4eGzByfELNJsr96/JwWWHbHcoScmPlhzEWa9j8pNO9XYl0Z5Buy2Nsn2fI8qmrZqrc
-	EQCS7CK1q5p0GtnLbHeEDWNdpOl2mBixUZcf2sM0tnYyZSJuagQzpiT1L5SAU1aeY0zlqQJXyIK3T
-	xTp3MNchw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gR/GTD05IeXwVWKZt/pYePx/xwUHVKqtRKZx3VEQoWY=; b=rA8qL0SR0LSuOu
+	m6b4Q0aR9eQJ5sJh7iPpL8XaUlbRFfZ0g3n82fQPqTvyJUEA8nlCJzgWJWvoYEfjvfpZKwuvfxg3L
+	oZtLxYjy+QZMUSwmhSj5gMBvTGkOBxWMK++UxoqgNnNBqW3Cy3cbE4sk9ioUNTwNoxKVn4SqqmPZN
+	oaN+0EC3D6QGAwi4Fi2W6TxKO0kprPnDQ87BOqtPEac/oOTpnPe2VUOTVExQgE+7fxsPepTWcgNW3
+	vFoHv5iFeJnDRnEY95jHmqLvwfPGndhc+aQyXQHX+a/Pi61vSEQWpKlszp3MoSpYjNWKRHOC8IqSq
+	lDbmJTfOmPcoj9NHBRog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in2gs-0005Jl-82; Thu, 02 Jan 2020 15:47:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1in2yd-0003X3-T4; Thu, 02 Jan 2020 16:05:35 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in2gl-0005CJ-74
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 15:47:08 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 35EAD2084D;
- Thu,  2 Jan 2020 15:47:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577980026;
- bh=T8OrAG+EbDBgprNjNPQUw5artBgkO7vYeVQWzwTXJoY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mHJuZfunqyFIUSm59iEc056NpuILkoQ6oFP5/CcZbxEABe9Tdw4bbJCYvITmXyHsw
- bJX8BeH0sfhUJJwGDpFLnr+tY+l5ystDQV6TB3pT2zp9BLkgh8POz+fsfDNMEfa4QM
- uSBNPxcMQXEIcuBWHU0bY5f7VafWFZrL+q5RUiaA=
-Date: Thu, 2 Jan 2020 16:47:03 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v3 2/9] drm/sun4i: tcon: Add TCON LCD support for R40
-Message-ID: <20200102154703.3prgwcjyo36g5g5u@gilmour.lan>
-References: <20191231130528.20669-1-jagan@amarulasolutions.com>
- <20191231130528.20669-3-jagan@amarulasolutions.com>
- <20200102105424.kmte7aooh2gkrcnu@gilmour.lan>
- <CAMty3ZA0e8eJZWvAh0x=KGAZVL3apdao3COvR6j3-ckv0cdvcg@mail.gmail.com>
+ id 1in2yW-0003WA-Lc
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 16:05:30 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p9so5996452wmc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Jan 2020 08:05:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=INDmQoNk/tJLRjiqxNPsW2gTLEyOqRnXAOa6Y+CM3Pw=;
+ b=JhmzFIJCwdx9ggVuJa79e18cPxwtou1gcE2KkF73nX52YP4KJfuBKD6A9MvYxQTB58
+ ZnhIgjy+uRa72LkOh/wX8AHmX1zPfwDvM2hpfzsCbUIZi/ccsvGD6ONponzCPHA2/406
+ 9BHfB01Fm+tcSETuQixDIKAzq+WpXxLcKg2vOMEkC+DZLT53n1NWMUGolQQu0tQSxIdd
+ zr6eTSmrAxXpOS/Q/51yb93kLZsvvbmjVOyiQYQj4lClGK8OPiMQyfY2m6+7z8H9KeDK
+ XBpF6baVTfB61xHzqc3d/ze4fNF2Upt6T/lijlv5QSLL6V1VZumqs/lvEFGwT5OKOT+w
+ 6K6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=INDmQoNk/tJLRjiqxNPsW2gTLEyOqRnXAOa6Y+CM3Pw=;
+ b=LdQ6KAu3217uHd6J85YGC94hEQiWZFCgBlzWzl68VJ09FoSkgahBXO/Kz5tR8ZTFQc
+ Iq55yczkMD/R5jP3xS12jucHfHRvlJjZgA5UeOEYWlU2QTfKEz3waP6nSGPqEEilXZMe
+ pEc+qgAEeFOEH/V/tEs2Qcpy8cNBvX8T9X2oXviLNhXTJdopdLs6oIaCjZEmNMHJtP9r
+ aXOESQnnF3irIfjJKIlFtJNe0/eRT7r5jWzmusI6kUHYg0Cly/4lFjwV2Y/quwqPX20I
+ SiIbn+/X2O5q9f0uATv8+ZUCvHnatDRxovOHKfRCODEvedkgFeq3MVZ2puQZIOoTrl29
+ 3uQQ==
+X-Gm-Message-State: APjAAAWKZP3Cf58N+r8p26R6zp/b/hVt47N7t+nDCYfhRqaoztlTFzMe
+ 4/MU4+M3Z+7t9a0kGd+OyAUjkw==
+X-Google-Smtp-Source: APXvYqyEivYwaP2ns3ILcszz/Grz4Of7NPSptL4+RXbkbFEpLOYTTlIS/61sIXEmkPh/gB/NCcDmKQ==
+X-Received: by 2002:a05:600c:d7:: with SMTP id
+ u23mr14220226wmm.145.1577981123996; 
+ Thu, 02 Jan 2020 08:05:23 -0800 (PST)
+Received: from dell ([2.27.35.135])
+ by smtp.gmail.com with ESMTPSA id t125sm9077685wmf.17.2020.01.02.08.05.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 02 Jan 2020 08:05:22 -0800 (PST)
+Date: Thu, 2 Jan 2020 16:05:34 +0000
+From: Lee Jones <lee.jones@linaro.org>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v3 0/6] fixes for atmel-hlcdc
+Message-ID: <20200102160534.GJ22390@dell>
+References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
+ <20200102090554.GB29446@ravnborg.org>
 MIME-Version: 1.0
-In-Reply-To: <CAMty3ZA0e8eJZWvAh0x=KGAZVL3apdao3COvR6j3-ckv0cdvcg@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200102090554.GB29446@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_074707_299464_4E610429 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200102_080528_841788_A6D9181F 
+X-CRM114-Status: GOOD (  13.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,107 +100,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7122499440357493044=="
+Cc: alexandre.belloni@bootlin.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, peda@axentia.se,
+ boris.brezillon@bootlin.com, Claudiu Beznea <claudiu.beznea@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7122499440357493044==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="p6isxbjx5q73zube"
-Content-Disposition: inline
-
-
---p6isxbjx5q73zube
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Jan 02, 2020 at 09:10:31PM +0530, Jagan Teki wrote:
-> On Thu, Jan 2, 2020 at 4:24 PM Maxime Ripard <mripard@kernel.org> wrote:
-> >
-> > On Tue, Dec 31, 2019 at 06:35:21PM +0530, Jagan Teki wrote:
-> > > TCON LCD0, LCD1 in allwinner R40, are used for managing
-> > > LCD interfaces like RGB, LVDS and DSI.
-> > >
-> > > Like TCON TV0, TV1 these LCD0, LCD1 are also managed via
-> > > tcon top.
-> > >
-> > > Add support for it, in tcon driver.
-> > >
-> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > ---
-> > > Changes for v3:
-> > > - none
-> > >
-> > >  drivers/gpu/drm/sun4i/sun4i_tcon.c | 8 ++++++++
-> > >  1 file changed, 8 insertions(+)
-> > >
-> > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > index fad72799b8df..69611d38c844 100644
-> > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > @@ -1470,6 +1470,13 @@ static const struct sun4i_tcon_quirks sun8i_a83t_tv_quirks = {
-> > >       .has_channel_1          = true,
-> > >  };
-> > >
-> > > +static const struct sun4i_tcon_quirks sun8i_r40_lcd_quirks = {
-> > > +     .supports_lvds          = true,
-> > > +     .has_channel_0          = true,
-> > > +     /* TODO Need to support TCON output muxing via GPIO pins */
-> > > +     .set_mux                = sun8i_r40_tcon_tv_set_mux,
-> >
-> > What is this muking about? And why is it a TODO?
->
-> Muxing similar like how TCON TOP handle TV0, TV1 I have reused the
-> same so-that it would configure de port selection via
-> sun8i_tcon_top_de_config
->
-> TCON output muxing have gpio with GPIOD and GPIOH bits, which select
-> which of LCD or TV TCON outputs to the LCD function pins. I have
-> marked these has TODO for further support as mentioned by Chen-Yu in
-> v1[1].
-
-It should be in the commit log.
-
-What's the plan to support that when needed? And that means that the
-LCD and TV outputs are mutually exclusive? We should at the very least
-check that both aren't enabled at the same time.
-
-Maxime
-
---p6isxbjx5q73zube
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg4QdwAKCRDj7w1vZxhR
-xV8pAQDW62BjjYRqQWaS/MCrLYV0sOBGYFlSj2Kk1hrJLyStbAEAugmjPCknAQNc
-AuBKfBeWbLwThyU6B5QE39I7erhWOwQ=
-=omNK
------END PGP SIGNATURE-----
-
---p6isxbjx5q73zube--
-
-
---===============7122499440357493044==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7122499440357493044==--
-
+T24gVGh1LCAwMiBKYW4gMjAyMCwgU2FtIFJhdm5ib3JnIHdyb3RlOgoKPiBIaSBMZWUuCj4gCj4g
+SG93IGRvIGRlIGhhbmRsZSB0aGUgdHdvIG1mZCByZWxhdGVkIHBhdGNoZXM/Cj4gCj4gPiBJIGhh
+dmUgZmV3IGZpeGVzIGZvciBhdG1lbC1obGNkYyBkcml2ZXIgaW4gdGhpcyBzZXJpZXMgYXMgd2Vs
+bAo+ID4gYXMgdHdvIHJldmVydHMuCj4gPiBSZXZlcnQgImRybTogYXRtZWwtaGxjZGM6IGVuYWJs
+ZSBzeXNfY2xrIGR1cmluZyBpbml0YWxpemF0aW9uLiIgaXMKPiA+IGR1ZSB0byB0aGUgZml4IGlu
+IGluIHBhdGNoIDIvNS4KPiA+IAo+ID4gVGhhbmsgeW91LAo+ID4gQ2xhdWRpdSBCZXpuZWEKPiA+
+IAo+ID4gQ2hhbmdlcyBpbiB2MzoKPiA+IC0gY2hhbmdlcyBkZXZfZXJyKCkgbWVzc2FnZSBpbiBw
+YXRjaCA0LzYKPiA+IC0gY29sbGVjdCBBY2tlZC1ieSB0YWdzCj4gPiAKPiA+IENoYW5nZXMgaW4g
+djI6Cj4gPiAtIGludHJvZHVjZSBwYXRjaCAzLzYKPiA+IC0gdXNlIGRldl9lcnIoKSBpbnBhdGNo
+IDQvNgo+ID4gLSBpbnRyb2R1Y2UgcGF0Y2ggNS82IGluc3RlYWQgb2YgcmV2ZXJ0aW5nIGNvbW1p
+dCBmNmY3YWQzMjM0NjEKPiA+ICAgKCJkcm0vYXRtZWwtaGxjZGM6IGFsbG93IHNlbGVjdGluZyBh
+IGhpZ2hlciBwaXhlbC1jbG9jayB0aGFuIHJlcXVlc3RlZCIpCj4gPiAKPiA+IENsYXVkaXUgQmV6
+bmVhICg1KToKPiA+ICAgZHJtOiBhdG1lbC1obGNkYzogdXNlIGRvdWJsZSByYXRlIGZvciBwaXhl
+bCBjbG9jayBvbmx5IGlmIHN1cHBvcnRlZAo+ID4gICBkcm06IGF0bWVsLWhsY2RjOiBlbmFibGUg
+Y2xvY2sgYmVmb3JlIGNvbmZpZ3VyaW5nIHRpbWluZyBlbmdpbmUKPiAKPiA+ICAgbWZkOiBhdG1l
+bC1obGNkYzogYWRkIHN0cnVjdCBkZXZpY2UgbWVtYmVyIHRvIHN0cnVjdAo+ID4gICAgIGF0bWVs
+X2hsY2RjX3JlZ21hcAo+ID4gICBtZmQ6IGF0bWVsLWhsY2RjOiByZXR1cm4gaW4gY2FzZSBvZiBl
+cnJvcgo+IAo+IFdvdWxkIGl0IGJlIE9LIHRvIGFwcGx5IHRoZSB0byBkcm0tbWlzYy1uZXh0LCBv
+ciBzaGFsIHRoZXkgZ28gaW4gdmlhCj4geW91ciBtZmQgdHJlZT8KCkhvdyBhcmUgdGhleSByZWxh
+dGVkIHRvIHRoZSBvdGhlciBwYXRjaGVzPyAgRG8gdGhleSBoYXZlIGJ1aWxkLXRpbWUKZGVwZW5k
+ZW5jaWVzIG9uIGFueSBvZiB0aGUgb3RoZXIgcGF0Y2hlcywgb3IgdmljZSB2ZXJzYT8gCgotLSAK
+TGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5h
+cm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFy
+bzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
