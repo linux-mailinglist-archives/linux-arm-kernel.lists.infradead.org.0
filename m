@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3CA412EA52
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 20:26:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D380C12EA51
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 20:25:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nc14NEApYiq3UteIAS8SjF7J0hDbzSlcO5lwgjtRZyQ=; b=ugpxhE8vnwNGLo
-	LiMjGx9a2D/SObs8eiTBoQmYqY1dw2m1ti6hsiVi9J8/31wugy/1yUnPagPhnih3Y+p7GP5KsfECb
-	vDTQIly3F8ufnWMeXrR6QZt3cAB0//puyjY5njiWhUUay24b8At+9uRBTyN+4uq1abnSm697foiBM
-	TjHPkeDNpzPO/P2IDPAsAQDrXLrn++WIUFKhFB5RxivVsawrqj7MlRQahbDGwdckTLbv5f4LxiNvX
-	xs5hrl1Yc48zXyoyl0hEEXSgpcUP2XccFRIk1o2E2nxNFuPn4VizGqwb4tQRKlQJlP8JZc/hyYDQ4
-	1XR5cdpP8uIgTixLrrGA==;
+	List-Owner; bh=kiMzP9nCBjDJaG2tLGg6mX5EVDSSTBpFIi/kpncuZwk=; b=odE2Mq/MJoJ+HJ
+	hBdNTw/yr+1STdIXVsHdXdln9nXCzWGj5aa7ISe17UAiHg+382zgj7QXjk8HR2pMrlUzvRB+Qv2bd
+	6dHOzYFA20ySbkr4Dpu2k5rhnvndwn7J8EWBiigZnPiJeeE9HBmSbqTEZU4sgHtyAxWoGS/qOWPl9
+	Hlk/KkKQpBigfYcJ63ZKwxAx2QoOAc9fAjlJFwLibVLeVFVvzR4nvBauvZJvyQ+qHZqso6D0+1VyD
+	yoPklngBKiSERahhNVocQ8iMJMPsgLCRr7XejsgDf/NTNFdXOPD9MjqzsYs36nAGsrNtBNp1pMqx8
+	cXTT1Vk1Q2a5YQtRFSfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in66f-0002xB-Fx; Thu, 02 Jan 2020 19:26:05 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in66T-0002qe-S9
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 19:25:56 +0000
-Received: from mail-qt1-f179.google.com ([209.85.160.179]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MfHUx-1jONaX0avz-00gq0Z for <linux-arm-kernel@lists.infradead.org>; Thu,
- 02 Jan 2020 20:25:50 +0100
-Received: by mail-qt1-f179.google.com with SMTP id g1so28450052qtr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 11:25:49 -0800 (PST)
-X-Gm-Message-State: APjAAAXrjVONdvLWjqq2SowBVqvoe3fGCqm5FP9UjqBLOI3RuJWqeQiM
- cwsAIkxVIWbe58Iy88zxG4GHGqeIhs93AyqQywE=
-X-Google-Smtp-Source: APXvYqzNOUcAjBgOm/nzWYpzz4pDGlCxDb5jInGBEYDjpXkYEXeZpOmcxv95mHE+PF1z0cHjwhWvI+pXUUl/cP5++xQ=
-X-Received: by 2002:ac8:3a27:: with SMTP id w36mr60002412qte.204.1577993148979; 
- Thu, 02 Jan 2020 11:25:48 -0800 (PST)
+	id 1in66R-0002ja-Ec; Thu, 02 Jan 2020 19:25:51 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1in66M-0002il-DC
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 19:25:47 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id E003F8087;
+ Thu,  2 Jan 2020 19:26:23 +0000 (UTC)
+Date: Thu, 2 Jan 2020 11:25:40 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Pavel Machek <pavel@ucw.cz>
+Subject: Re: Droid 4 regression in 5.5-rc1, armsoc-soc tree
+Message-ID: <20200102192540.GD16702@atomide.com>
+References: <20191228162929.GA29269@duo.ucw.cz>
+ <20191228193622.GA13047@duo.ucw.cz>
+ <20191230173507.GM35479@atomide.com> <20200102110025.GA29035@amd>
+ <CAK8P3a2Ya+GZRRA_THZBVDq7SWO8UYoUPwW5fEyorCVjPnd1qA@mail.gmail.com>
+ <20200102140609.7vsfwcjyvbbrmcjx@ucw.cz>
+ <CAK8P3a1NU62zf8zJAMZq5KFNuvDdrf3dUcLU4HY83Q=oDC611w@mail.gmail.com>
+ <20200102171140.GB16702@atomide.com>
+ <20200102191804.nhnpd7q2eh4ul5a5@ucw.cz>
 MIME-Version: 1.0
-References: <20200102172413.654385-1-amanieu@gmail.com>
- <20200102172413.654385-2-amanieu@gmail.com>
- <20200102175011.q7afo45nc2togtfh@wittgenstein>
-In-Reply-To: <20200102175011.q7afo45nc2togtfh@wittgenstein>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 2 Jan 2020 20:25:32 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a3a88e=hkzYG5mj=NuVQWMtyougkKzBznnn2y9ZoZfEGg@mail.gmail.com>
-Message-ID: <CAK8P3a3a88e=hkzYG5mj=NuVQWMtyougkKzBznnn2y9ZoZfEGg@mail.gmail.com>
-Subject: Re: [PATCH 1/7] arm64: Move __ARCH_WANT_SYS_CLONE3 definition to uapi
- headers
-To: Christian Brauner <christian.brauner@ubuntu.com>
-X-Provags-ID: V03:K1:c+tiz0hNiOyZW3MkP950bRKVWjqHg3rsZu/HyZ9fX6anhD/cxjx
- yA63N9I0JYBhQsjV7vrnC3dajC+xriBxQLmvuXUxcf8Gu1QVrZ/JCNN7ZJtFtleY7otZF/K
- jT7gMdT7fzPrqJTQPpK7ttxgYyJm2byrgmrUkbmQiRVpS9u8Is1pvNGUnejyYR6h69eVvO9
- 9Np4WRxGXhRoTVc9E7qlw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:TK+VQ8zjs3M=:J+q4iV943awJz5UdAgloHx
- f9F3Vl0u0Ju49cIrLDlTu2wnJbYT0aEVu5ogL3ZmqbC1ygz7S4ZEU7dlsFgK/HsHA1MbVGd9n
- HyVPUz9gO9XoWN9QCzIgj33Pa/Ler4iZuZ3BzD+Akwqge1VQhcIERBDz7KO4evBSb0dYHmlBZ
- kX2W8rgyOeKbHJstFfxtF0vGBVx9tegSGluUFqKfWM55CWFYyCwAj/Zsun9IHxAwBopHUpazh
- HJEj3szDaHfjaHGWg6yPAG/06OIVEeMJhwluAjl+xJ64RPoRQCEwdplqwm2B32DQWDzEZCEPP
- ck3xH3qyG3j9/5FpEjoeydljgamaDOIOvClJEp3dVos4Lt7170X4pvDCXeRj6tLPJWVAEcPPM
- +uqt4k7u4n2ShdbFCiFZTG8I9IITVroZIq0yN2/CofCpLd91ctMQXdjvM9xdnKauJVgBz368F
- yu4JH+L3In7DMjem1SFN/VNPjNbjSXkECu+YSf63f+V+T9/okx/pHvavd9nT9XihDKNwVCwOe
- SFOUw3WGUVhRrpCMwL9PXpLm0UKtHFageu4pmHhysoHdfUyYR+OVmMlsATIgKZ3X0mqJdcnpB
- hPeOW5b0tlCTskT088x1BDlkWoCZrNMsEOUwJdvQD4uZNBY4YUVfHV8R+p3iFNy3u5McdTSdG
- 2wmMiZv71WR1n6uyMt8CVjMNqWUXXlV0eljnZzVdrrOPhXeXIJ7OQvjzX2TBFgtf38GlKOrIq
- VjqJg8mBFxieXh63DrFnpyquTgL88ps/2zCLjmsSuaZWs/YfO44d0E924jAO4wiXGZcPfgp+p
- pMZE4geADCiWMkINYbGttRVZkmvo02OakJxn0H7Ko+DAEyVDGvWT0hxOJvNPsE3h2HziMr3Gw
- x3QxX1Lo6z6PuJAD2+oQ==
+Content-Disposition: inline
+In-Reply-To: <20200102191804.nhnpd7q2eh4ul5a5@ucw.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_112554_202531_BF8835A7 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20200102_112546_486076_68BB134F 
+X-CRM114-Status: GOOD (  19.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,33 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "# 3.4.x" <stable@vger.kernel.org>, Amanieu d'Antras <amanieu@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Christian Brauner <christian@brauner.io>
+Cc: Marcel Partap <mpartap@gmx.net>, Arnd Bergmann <arnd@arndb.de>,
+ merlijn@wizzup.org, martin_rysavy@centrum.cz,
+ Sebastian Reichel <sre@kernel.org>, kernel list <linux-kernel@vger.kernel.org>,
+ nekit1000@gmail.com, Olof Johansson <olof@lixom.net>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 2, 2020 at 6:50 PM Christian Brauner
-<christian.brauner@ubuntu.com> wrote:
-> On Thu, Jan 02, 2020 at 06:24:07PM +0100, Amanieu d'Antras wrote:
-> > Previously this was only defined in the internal headers which
-> > resulted in __NR_clone3 not being defined in the user headers.
-> >
-> > Signed-off-by: Amanieu d'Antras <amanieu@gmail.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: <stable@vger.kernel.org> # 5.3.x
-> > ---
-> >  arch/arm64/include/asm/unistd.h      | 1 -
-> >  arch/arm64/include/uapi/asm/unistd.h | 1 +
-> >  2 files changed, 1 insertion(+), 1 deletion(-)
+* Pavel Machek <pavel@ucw.cz> [200102 19:18]:
+> > * Arnd Bergmann <arnd@arndb.de> [200102 14:48]:
+> > > On Thu, Jan 2, 2020 at 3:06 PM Pavel Machek <pavel@ucw.cz> wrote:
+> > > 
+> > > > # good: [ab818f0999dc73af3f966194d087e9f6650f939f] Merge tag
+> > > > # 'omap-for-v5.5/maintainers-signed' of
+> > > > # git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into
+> > > > # arm/soc
+> > > > git bisect good ab818f0999dc73af3f966194d087e9f6650f939f
+> > > > # first bad commit: [38206c24ab09b4f4c2a57de5c1af0bb2e69cf5b6] Merge tag
+> > > > # 'armsoc-soc' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+> > > >
+> > > > ...and am not sure how to interpret the result, or what to do next :(.
+> > > 
+> > > This means that either the bisection is unreliable (it might be 100%
+> > > reproducible or you mixed up good/bad once), or that the arm-soc
+> > > branch was indeed good by itself but had a conflict with some other
+> > > change that torvalds merged earlier.
+> > > 
+> > > I would suggest to go back to the list I had extracted in my previous
+> > > email and revert all the commits that I identify there, on top of
+> > > linux-5.5-rc4. If some commit is not easily reverted, skip that one
+> > > at first.
+> > > 
+> > > Ideally this gets you a working kernel based on -rc4, and then
+> > > you can bisect that to find which revert fixed it.
+> > 
+> > Also please check your dtb is up to date. We still have a lot of
+> > stuff missing from the device tree meaning an old dtb will likely
+> > be incomplete for many devices.
+> 
+> Aha, so it works ok when using matching kernel + dtb.
 
-Good catch, this is clearly needed, but please make the patch change
-every copy of asm/unistd.h that defines this, not just the arm64 one.
+OK good to hear.
 
-       Arnd
+> Is 5.5 kernel with 5.3 dtb situation worth debugging?
+
+Well producing a warning based on something would be good. Not sure
+what the logic would be though, checking for some minimum dtb version
+required would have to be bumped until we have complete dts data.
+
+Regards,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
