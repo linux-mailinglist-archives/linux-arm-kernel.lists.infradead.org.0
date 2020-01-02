@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C377F12E9AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 19:03:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1364C12EA00
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 19:40:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5abQjFyxd4dbd9Z/HyEWwMOunciQz4vBFLkreSUphQM=; b=lopTwPRzN56My7
-	Np2vQssI3+VGCczD89RSc4BENpNKPZDCDa6/jZTZp+YxDtmX9JarvXeVQxl13wCl4d1G7KduXvC9O
-	ENV+urlHgFKuvTedmJwfmULNPJamnSYGkZ0k4HsD8e7enrssyx64oOKkuCRajR/i1p72SNxv9GKPx
-	Yn61FZMvxGBDGUjiNYhJxjpUViLjQzMou1EOzI54EAe25b9EgYWorrpTrBXGOpm7z1eXqkkv7O09z
-	z+WgEDM+cfLjw1IHJYYJShvuenyTKrYW+wRL37DUcWf9ejoC8UwHezvKfUQLCG80uFaF6M/2/NMFl
-	buzblV5NesSBA71YTJQw==;
+	List-Owner; bh=KUnLJsJzK1xGPKfifZVvr4sPia2gzZfGuVGXhxYUeCY=; b=JVIWUYb9zz0WnY
+	m5w7qyEt7Ta5PtAK5hB47ZovAbI+LodEVLRxViGQKlGkDlpYpHQuKE+kED55egw10GevcAUslwTBP
+	olqVLwuKIuMbDHanZrHyF30WTmgexvu5ZTop5GBSUdGjNFS9dmbmuaFkNQTQexVouyJgDFFN9VsiZ
+	B3WUAbhg25mZkReqgSOm8IHOCc8HFz42FUV31z3e4vglUkZ77Y5YtOXtnSlpeE9aYFLly2Xm1FAmQ
+	AeqKHubVZ1ivN6UQ/N1nm5otT10JNmXhPOaHwDPyqzO9BOImuMl2XjZhWq1UvRGftGThu+BqKPFMC
+	tZg0C4mMadsqYBRsjM4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in4oG-0008Fr-4H; Thu, 02 Jan 2020 18:03:00 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1in5Nu-0003Um-UY; Thu, 02 Jan 2020 18:39:50 +0000
+Received: from jabberwock.ucw.cz ([46.255.230.98])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in4oA-0008F1-1q
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 18:02:55 +0000
-Received: from [172.58.107.60] (helo=wittgenstein)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <christian.brauner@ubuntu.com>)
- id 1in4o4-0007SY-A3; Thu, 02 Jan 2020 18:02:49 +0000
-Date: Thu, 2 Jan 2020 19:02:43 +0100
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: Amanieu d'Antras <amanieu@gmail.com>, will.deacon@arm.com
-Subject: Re: [PATCH 3/7] arm: Implement copy_thread_tls
-Message-ID: <20200102180241.ialbcdhaikqltkfm@wittgenstein>
-References: <20200102172413.654385-1-amanieu@gmail.com>
- <20200102172413.654385-4-amanieu@gmail.com>
+ id 1in5No-0003TA-7i
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 18:39:45 +0000
+Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
+ id B0E981C25EC; Thu,  2 Jan 2020 19:39:38 +0100 (CET)
+Date: Thu, 2 Jan 2020 19:39:38 +0100
+From: Pavel Machek <pavel@ucw.cz>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: Droid 4 regression in 5.5-rc1, armsoc-soc tree
+Message-ID: <20200102183938.4kazwvk3ecgfwvy7@ucw.cz>
+References: <20191228162929.GA29269@duo.ucw.cz>
+ <20191228193622.GA13047@duo.ucw.cz>
+ <20191230173507.GM35479@atomide.com> <20200102110025.GA29035@amd>
+ <CAK8P3a2Ya+GZRRA_THZBVDq7SWO8UYoUPwW5fEyorCVjPnd1qA@mail.gmail.com>
+ <20200102140609.7vsfwcjyvbbrmcjx@ucw.cz>
+ <CAK8P3a1NU62zf8zJAMZq5KFNuvDdrf3dUcLU4HY83Q=oDC611w@mail.gmail.com>
+ <20200102171140.GB16702@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200102172413.654385-4-amanieu@gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20200102171140.GB16702@atomide.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_100254_225467_9B2C7DC5 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200102_103944_427644_932F2E8D 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.255.230.98 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,69 +64,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Brauner <christian@brauner.io>
+Cc: Marcel Partap <mpartap@gmx.net>, Arnd Bergmann <arnd@arndb.de>,
+ merlijn@wizzup.org, martin_rysavy@centrum.cz,
+ Sebastian Reichel <sre@kernel.org>, kernel list <linux-kernel@vger.kernel.org>,
+ nekit1000@gmail.com, Olof Johansson <olof@lixom.net>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 02, 2020 at 06:24:09PM +0100, Amanieu d'Antras wrote:
-> This is required for clone3 which passes the TLS value through a
-> struct rather than a register.
-> 
-> Signed-off-by: Amanieu d'Antras <amanieu@gmail.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: <stable@vger.kernel.org> # 5.3.x
+Hi!
 
-Again, looks good to me but I'd like an ack from someone closer to the
-architecture itself.
-Acked-by: Christian Brauner <christian.brauner@ubuntu.com>
+> * Arnd Bergmann <arnd@arndb.de> [200102 14:48]:
+> > On Thu, Jan 2, 2020 at 3:06 PM Pavel Machek <pavel@ucw.cz> wrote:
+> > 
+> > > # good: [ab818f0999dc73af3f966194d087e9f6650f939f] Merge tag
+> > > # 'omap-for-v5.5/maintainers-signed' of
+> > > # git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into
+> > > # arm/soc
+> > > git bisect good ab818f0999dc73af3f966194d087e9f6650f939f
+> > > # first bad commit: [38206c24ab09b4f4c2a57de5c1af0bb2e69cf5b6] Merge tag
+> > > # 'armsoc-soc' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+> > >
+> > > ...and am not sure how to interpret the result, or what to do next :(.
+> > 
+> > This means that either the bisection is unreliable (it might be 100%
+> > reproducible or you mixed up good/bad once), or that the arm-soc
+> > branch was indeed good by itself but had a conflict with some other
+> > change that torvalds merged earlier.
+> > 
+> > I would suggest to go back to the list I had extracted in my previous
+> > email and revert all the commits that I identify there, on top of
+> > linux-5.5-rc4. If some commit is not easily reverted, skip that one
+> > at first.
+> > 
+> > Ideally this gets you a working kernel based on -rc4, and then
+> > you can bisect that to find which revert fixed it.
+> 
+> Also please check your dtb is up to date. We still have a lot of
+> stuff missing from the device tree meaning an old dtb will likely
+> be incomplete for many devices.
 
-> ---
->  arch/arm/Kconfig          | 1 +
->  arch/arm/kernel/process.c | 6 +++---
->  2 files changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> index ba75e3661a41..96dab76da3b3 100644
-> --- a/arch/arm/Kconfig
-> +++ b/arch/arm/Kconfig
-> @@ -72,6 +72,7 @@ config ARM
->  	select HAVE_ARM_SMCCC if CPU_V7
->  	select HAVE_EBPF_JIT if !CPU_ENDIAN_BE32
->  	select HAVE_CONTEXT_TRACKING
-> +	select HAVE_COPY_THREAD_TLS
->  	select HAVE_C_RECORDMCOUNT
->  	select HAVE_DEBUG_KMEMLEAK
->  	select HAVE_DMA_CONTIGUOUS if MMU
-> diff --git a/arch/arm/kernel/process.c b/arch/arm/kernel/process.c
-> index cea1c27c29cb..46e478fb5ea2 100644
-> --- a/arch/arm/kernel/process.c
-> +++ b/arch/arm/kernel/process.c
-> @@ -226,8 +226,8 @@ void release_thread(struct task_struct *dead_task)
->  asmlinkage void ret_from_fork(void) __asm__("ret_from_fork");
->  
->  int
-> -copy_thread(unsigned long clone_flags, unsigned long stack_start,
-> -	    unsigned long stk_sz, struct task_struct *p)
-> +copy_thread_tls(unsigned long clone_flags, unsigned long stack_start,
-> +	    unsigned long stk_sz, struct task_struct *p, unsigned long tls)
->  {
->  	struct thread_info *thread = task_thread_info(p);
->  	struct pt_regs *childregs = task_pt_regs(p);
-> @@ -261,7 +261,7 @@ copy_thread(unsigned long clone_flags, unsigned long stack_start,
->  	clear_ptrace_hw_breakpoint(p);
->  
->  	if (clone_flags & CLONE_SETTLS)
-> -		thread->tp_value[0] = childregs->ARM_r3;
-> +		thread->tp_value[0] = tls;
->  	thread->tp_value[1] = get_tpuser();
->  
->  	thread_notify(THREAD_NOTIFY_COPY, thread);
-> -- 
-> 2.24.1
-> 
+Aha, thanks for a hint!
+
+Yes, due to the kexec setup, I was using old dtb (5.3-rc?) with new
+kernel...
+
+Let me try with matching kernel+dtb combination.
+
+Best regards,
+								Pavel
 
 _______________________________________________
 linux-arm-kernel mailing list
