@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BA3512E998
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 18:56:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7F4B12E9A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 19:01:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yF8V4iufsvqjYLJGJiuB2/Fxp0oVJ5Xuu4nJxdzu2B4=; b=lWW3qcQ7+GVwqd
-	/r3HIMWrF9t/uCtlBhzLK6RvGwJHaxX72+ojuPeraQPxWzCXA3QXCKGs8f+Jha8F9wheV24q2U3p+
-	mOjToLUKqA2lo9CUyPAzxNQc9+ZMieMuONmfofuOrmtA67WSvp7pe2Mss6D7BQMKSp7U/R2a3tQqp
-	UKu9uKSoC9Td2+PRjCBY2+MILQXv7LipjVZxbHH7jcUNdEnrfc8EmYOcKCUMnaHgRctVNUztm4gEi
-	xD0RnyehnDpzbvVv3hcqAENZMX39Lhu7RKhKZJ9o20/OXfR+g3IFWtiaO0seNF8OVnnDatX93f+a+
-	nV728I0Rwj4tAopRG+HA==;
+	List-Owner; bh=262OYwHS9sF7aDP7U0bdKBpIPDZCCdvYqEhhGhgT8Zo=; b=ubJ9SIdmZNFVsp
+	ZvVECRFHuwjjhFWpy2xCNkRo1xX2ngCmr8HBueEUhwDLzfVlwpXIVWajd8mqAk1YqvOX0Ps7s4hcs
+	pLMOQIt3rW2dLb80r/K83pDh9q5R9B2sQ5GVpmy0OMC3HfO6UOjn8IvjMocTKoXVeNHeh9VR0hbQt
+	XGbeOlKZzHw/gkWF3VghIV6PDKvW4pK9bv2k5Jpo50DgmIDkUDUiDFn7sTE69ju50qhjF6GtrHZhu
+	kb8VUfouLjB74WHn/SRa6dK0XsF0TlRM0oPuAstNykVze9Oki7p5abcYwDFNm+jQmE4VF3zummnM5
+	51whlPhizUNzHw2E5TuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in4hU-0005ia-0B; Thu, 02 Jan 2020 17:56:00 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1in4n6-0007V5-EA; Thu, 02 Jan 2020 18:01:48 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in4hN-0005ht-Qz
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 17:55:55 +0000
-Received: by mail-qk1-x741.google.com with SMTP id a203so32303622qkc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 09:55:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=VvBGSQnAvkp/z9KIA70+zCZk+7dfOwKatcr0yFpfC/A=;
- b=XlJSSg0PEd9Gwmxem87SMKsdC8/nyuwJgJetjj+6wVGVCnKrWFyeFioR7mYgpQavrM
- e0QUGQOff54lsBTdbtLjAY0Zmbt5jVxbxXT1vFtQuK5lNshrEwoMZs03ZLhXY1uDYCS3
- pdTIs+x8Y//CNgCZvlQgQYKsUP2clxzBxg17R4GBbXXWM9etsIyhUePTVXUtcIVGnyL0
- dciGDiEHy+22i0FIpVLIyx2U0ga23gxv+VDL0hPYu5Laf2hseSFlRhnV6jwnFVWLgvgN
- 3+JU/Cplv3wj4GGb1yOf+AwzY2bj+sBw3BmodXdGCcX/kP7XlX6jAE0apst0m0N6Sn2n
- kRpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=VvBGSQnAvkp/z9KIA70+zCZk+7dfOwKatcr0yFpfC/A=;
- b=FOs59SroIwU1klF/iLYC+JJaQz5WET+3OuC+yesZfUAOD2O09OBgXtZA2WCBp0KhrQ
- qp4LpIQCyhmpuroMS2fBhvoEi0qWz6j2v1n3Sfvi90nsM8lv8NhLgCZvMTrucIuJFUpR
- Y+BTfFsThgpHpPf1LolF8oA+ulOWBiMRl76qLLjqA7C6HCdmoJB23+oCYmcP9fiLh3fx
- CYfKhKBEcbCDUywBdfPk/3B4EFPLhjpb/14lKa6X8flSF6P4mlqTGxmHK8y3urkIcSO1
- QklODPeUs+LKpYpCnPmOywCbQpZxbl51HgM7HYUhtcAfPhSGZiUDPZ3pI2xSZlmHMDRz
- te3Q==
-X-Gm-Message-State: APjAAAVtWKZRf5RsT6dUeVQB2fLk0jZHqeiVm2B0ROh6bukk7FO5Xg0p
- r5qGqbV1xy11Pat2XBVGR9X+wwIO+xrsY7P2uWsqhw==
-X-Google-Smtp-Source: APXvYqwIJ8jhqb3Pxo1nnqStMC/FyAlTk/mLSjRyqYHHLaEk1gII8LrtnY8U8YO2gxgz8yVgYmIVIJ8eoCcUZqkXdhg=
-X-Received: by 2002:a37:6255:: with SMTP id w82mr68484592qkb.330.1577987752601; 
- Thu, 02 Jan 2020 09:55:52 -0800 (PST)
+ id 1in4mz-0007Tw-9Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 18:01:42 +0000
+Received: from callcc.thunk.org (guestnat-104-133-0-111.corp.google.com
+ [104.133.0.111] (may be forged)) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 002I0Y6w020811
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 2 Jan 2020 13:00:35 -0500
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id 3EE664200AF; Thu,  2 Jan 2020 13:00:34 -0500 (EST)
+Date: Thu, 2 Jan 2020 13:00:34 -0500
+From: "Theodore Y. Ts'o" <tytso@mit.edu>
+To: Qian Cai <cai@lca.pw>
+Subject: Re: [PATCH] char/random: silence a lockdep splat with printk()
+Message-ID: <20200102180034.GA197330@mit.edu>
+References: <20191205010055.GO93017@google.com>
+ <4F9E9335-334B-4600-8BC3-4AF91510D113@lca.pw>
+ <1CA39814-DE67-4112-8F97-D62B9F47FF9D@lca.pw>
 MIME-Version: 1.0
-References: <1577362338-28744-1-git-send-email-srinivas.neeli@xilinx.com>
- <1577362338-28744-8-git-send-email-srinivas.neeli@xilinx.com>
-In-Reply-To: <1577362338-28744-8-git-send-email-srinivas.neeli@xilinx.com>
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Date: Thu, 2 Jan 2020 18:55:41 +0100
-Message-ID: <CAMpxmJUgALt6K2m2iAtR9xhkFaDDyESpjqu11EivK-ottVuZLQ@mail.gmail.com>
-Subject: Re: [PATCH 7/8] gpio: zynq: Add pmc gpio support
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>
+Content-Disposition: inline
+In-Reply-To: <1CA39814-DE67-4112-8F97-D62B9F47FF9D@lca.pw>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_095553_873900_0B19294E 
-X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-CacheID: sfid-20200102_100141_499797_02F78080 
+X-CRM114-Status: UNSURE (   9.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [18.9.28.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,25 +66,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, shubhrajyoti.datta@xilinx.com,
- Michal Simek <michal.simek@xilinx.com>, LKML <linux-kernel@vger.kernel.org>,
- linux-gpio <linux-gpio@vger.kernel.org>, git@xilinx.com,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: pmladek@suse.com, Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ gregkh@linuxfoundation.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, longman@redhat.com,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Y3p3LiwgMjYgZ3J1IDIwMTkgbyAxMzoxMiBTcmluaXZhcyBOZWVsaSA8c3Jpbml2YXMubmVlbGlA
-eGlsaW54LmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiBGcm9tOiBTaHViaHJhanlvdGkgRGF0dGEgPHNo
-dWJocmFqeW90aS5kYXR0YUB4aWxpbnguY29tPgo+Cj4gQWRkIFBNQyBncGlvIHN1cHBvcnQuCgpB
-Z2FpbjogcGxlYXNlIHByb3ZpZGUgc29tZSBiYWNrZ3JvdW5kIG9uIHdoYXQgUE1DIGlzLgoKQmFy
-dAoKPiBPbmx5IGJhbmsgMCwxLCAzIGFuZCA0IGFyZSBjb25uZWN0ZWQgdG8gdGhlIG11bHRpcGxl
-eGVkIElucHV0IG91dHB1dAo+IHBpbnMuIEJhbmsgMCBhbmQgMSB0byBtaW8gYW5kIGJhbmsgMyBh
-bmQgNCB0byBleHRlbmRlZCBtdWx0aXBsZXhlZCBpbnB1dAo+IG91dHB1dCBwaW5zLgo+Cj4gU2ln
-bmVkLW9mZi1ieTogU2h1YmhyYWp5b3RpIERhdHRhIDxzaHViaHJhanlvdGkuZGF0dGFAeGlsaW54
-LmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBNaWNoYWwgU2ltZWsgPG1pY2hhbC5zaW1la0B4aWxpbngu
-Y29tPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+On Thu, Jan 02, 2020 at 10:42:51AM -0500, Qian Cai wrote:
+> 
+> Not sure if Ted is still interested in maintaining this file as he had no feedback for more
+> than a month. The problem is that this will render the lockdep useless for a general
+> debugging tool as it will disable the lockdep early in the process.
+> 
+> Could Andrew (since the free page shuffle will call get_random) or Linus pick this up
+> directly with the approval from one of the printk() maintainers above?
+
+Sorry, things have been busy with the Chistmas holidays and getting
+the ext4 tree ready for the merge window.  I'll take a look at this in the next day or two.
+
+    	      	    	    	  - Ted
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
