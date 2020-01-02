@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66F7412E743
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 15:33:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8EC312E747
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 15:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jc3Gu+6ytLsvamGBxJXicbDoCbPOMEhP6fC+9eFRvCQ=; b=hKGIHw7jvSH4rv
-	1iHGkaestxZGKEnQPM5nLcCRwJmxYGgyo3S1ao/CfPBy1JsB9BxE4qTuixGVW3wCFIryxNhzGTbdU
-	P4O2NGnqY5yFU0/kvVTtqpO3i9EL2LFDe7ZWolQTDSScGoFYCJub8RgZsi/FbsmbWQk/kMOhuB1Ph
-	pwiCZsEVYyat3+ncHsaUjI47+sUJE+6EoBcSJMwuWxozs8RRJJnjf+zrjAaoLKAeAOYyhMxOi+J5y
-	eLt44oPKzwmWPlDGEhKymACWgg7wpF8CSrvl0f9AjAk/8nNfaX9glguQ5stiJN3ZwITlFDWCyxq5f
-	xJ602DAqm4lMEyCO6tJw==;
+	List-Owner; bh=6DZ+Ka/oSwv8C3kBaO6UJg5ncdatxMUXFv9RL5ReEds=; b=DSe4WFdEsXSV5n
+	rs8NQJHL83A++dH9SkcK16QYZ9vVvmOX0Itl5M4jkO2+0j/FtdTDw4yD19zkcysytYPrIFYRADBfm
+	gdO2OoqNtbNFjQx9WL+1W4uATOY+Upx+6RqrWBeIOcFhmx2GcRq2veKZaFZWbQqlbgsRvn+P8xL6v
+	xvTrho9+WsM4mN9pcmilJjHopM/6ynR79fgA+fiefrt00WuC3LEHzj0petztSToNpiM/tHo5bqT5y
+	PxpSuyGdioZzaJBxuJw47ykiaM/Ap9SWqfc8iphGZONpnBAxOncFrtbwasoPm0sQgalMEHc4UKE//
+	wmDHiQ3RNOv6+fBm/NPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in1Xh-0002S1-ET; Thu, 02 Jan 2020 14:33:41 +0000
+	id 1in1Yl-0003Nh-IR; Thu, 02 Jan 2020 14:34:47 +0000
 Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1in1XX-0002RD-IA; Thu, 02 Jan 2020 14:33:33 +0000
+ Linux)) id 1in1Ye-0003H3-Ba; Thu, 02 Jan 2020 14:34:42 +0000
 Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 002EXME2015241,
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 002EYVv4015378,
  This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCASV01.realtek.com.tw[172.21.6.18])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 002EXME2015241
- (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 2 Jan 2020 22:33:23 +0800
-Received: from RTEXMB05.realtek.com.tw (172.21.6.98) by
- RTITCASV01.realtek.com.tw (172.21.6.18) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Thu, 2 Jan 2020 22:33:22 +0800
+Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 002EYVv4015378
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 2 Jan 2020 22:34:31 +0800
+Received: from RTEXMB01.realtek.com.tw (172.21.6.94) by
+ RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
+ 14.3.468.0; Thu, 2 Jan 2020 22:34:31 +0800
 Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB05.realtek.com.tw (172.21.6.98) with Microsoft SMTP Server
+ RTEXMB01.realtek.com.tw (172.21.6.94) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Thu, 2 Jan 2020 22:33:22 +0800
+ 15.1.1779.2; Thu, 2 Jan 2020 22:34:31 +0800
 Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
  RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
- 15.01.1779.005; Thu, 2 Jan 2020 22:33:22 +0800
+ 15.01.1779.005; Thu, 2 Jan 2020 22:34:31 +0800
 From: James Tai <james.tai@realtek.com>
 To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
  "linux-realtek-soc@lists.infradead.org"
  <linux-realtek-soc@lists.infradead.org>
 Subject: RE: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
 Thread-Topic: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
-Thread-Index: AQHVkedK7O6Ji1Cvt0Gs/gwTj0NGGKfXzy5Q
-Date: Thu, 2 Jan 2020 14:33:22 +0000
-Message-ID: <001f31c93f3249d6a8f173fa5bfa914b@realtek.com>
+Thread-Index: AQHVkedK7O6Ji1Cvt0Gs/gwTj0NGGKfXzt6A
+Date: Thu, 2 Jan 2020 14:34:31 +0000
+Message-ID: <0d6dc451122d48bc9bf52d6147b0211d@realtek.com>
 References: <20191103013645.9856-1-afaerber@suse.de>
  <20191103013645.9856-4-afaerber@suse.de>
 In-Reply-To: <20191103013645.9856-4-afaerber@suse.de>
@@ -58,8 +58,8 @@ X-MS-TNEF-Correlator:
 x-originating-ip: [114.37.143.250]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_063331_742303_A7A7530A 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20200102_063440_524729_E8452EDB 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -103,8 +103,8 @@ CQljaGlwLWluZm9AOTgwMWEyMDAgew0KPiArCQkJY29tcGF0aWJsZSA9ICJyZWFsdGVrLHJ0ZDEx
 OTUtY2hpcCI7DQo+ICsJCQlyZWcgPSA8MHg5ODAxYTIwMCAweDg+Ow0KPiArCQl9Ow0KPiArDQo+
 ICAJCXVhcnQxOiBzZXJpYWxAOTgwMWIyMDAgew0KPiAgCQkJY29tcGF0aWJsZSA9ICJzbnBzLGR3
 LWFwYi11YXJ0IjsNCj4gIAkJCXJlZyA9IDwweDk4MDFiMjAwIDB4MTAwPjsNCj4gLS0NCj4gMi4x
-Ni40DQo+IA0KQWNrZWQtYnk6IEphbWVzIFRhaSA8amFtZXMudGFpQHJlYWx0ZWsuY29tPg0KDQoN
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+Ni40DQo+DQpBY2tlZC1ieTogSmFtZXMgVGFpIDxqYW1lcy50YWlAcmVhbHRlay5jb20+DQoNCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
