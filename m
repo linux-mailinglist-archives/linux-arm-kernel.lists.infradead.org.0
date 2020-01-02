@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01C7B12E237
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 05:13:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A48D12E24A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 05:15:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CUlzpc8YSiqOKhb81ZeSmvVwu2J2nP5O3cm90RyF8E0=; b=leqQPs+ndtX9lE
-	ydk8/1qbsWTYEn4F7Wx+K/6zw0sPDGpGuqeG/qPPmHeRpwYeARwNbdq89IvLw3//kPqjz6j43tRPZ
-	F73BNnZpV2hrj+gj1XHKV0Csq/NyQdS6czPmY6kX/UltcmwumEmXLkEe0iGXP33VqmKXNFXiSzDyr
-	8Q1ZUv82tBSu/UmwRk/KWf9yWi70YJWcnsCz4K/9jFI6OfU4FkjX668TBb2gpdOjM5YF8xw2k+3j1
-	1saci5UbnHSw9CgFURkbT0nDW3MVyddj3QLoFzvhIyLXH/MxsmC2IuLEreSKM9hcWZw3VekgVMciy
-	Pztw+SumQn6lV/aKopPQ==;
+	List-Owner; bh=mZh7lYExYBqvRMphhz+ugLp1A//85Zp/QuEe2rHiCkk=; b=u1w/gZ8ZwtJ4Nl
+	v+LZ6tr1yJAxFg390IFwwwHezG3WwLwN9zWZ53zk6ER6x42FlspEp7W7PKDezc5TXYsjcuTq+j6Gi
+	YmiRVvUjRvJZQQZTSbSK3G3xWsiz3Qn/D/pJH6uvUYgkvZu/al4BbrRKPBl+H35RMDk8xTEZN4cbZ
+	9IGgr332QCFL4E103/5I7/gWsCk2y4YTcWEyjTcE9gUDjDP2ZR7b4SWOI9hrMr3NDBhwlrADPAe/C
+	kPHrmqARCV2RXMnmiq87RU5Q712kQF36wH4juIGJOJ2X4PHxuA34/txZ4ufJ+4cWihtAUOf3NStbV
+	8A2zELu/UiXI1eBaO85A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imrrN-0000iR-ML; Thu, 02 Jan 2020 04:13:21 +0000
+	id 1imrt2-0002XK-Ob; Thu, 02 Jan 2020 04:15:04 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imrqQ-0008HW-Q9; Thu, 02 Jan 2020 04:12:24 +0000
-X-UUID: 1a064115a0854599855626771e0b2186-20200101
+ id 1imrqZ-0008HW-8L; Thu, 02 Jan 2020 04:12:34 +0000
+X-UUID: 232c990e8cb1448d88d1670d1b05cbac-20200101
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=deIbXXx9icA1VtH9lvCqkXIJRv+7M70V70iJ9WqyKmk=; 
- b=VALzI2dxnyQq2TQxc99QJYrN7qwYtms0M1ubhZt7dW/a0i24jqVSal/dQ8DldAp/yRyG7FByWHpbdbENsj8oiNLNQ2IW8/PwARPBvsEQmXS8wyzTDB2ixcB/dK90lWTZtMb955D8ku+DTirasJjFquJ1bqD7Tw/Uz6YPjvDKR4s=;
-X-UUID: 1a064115a0854599855626771e0b2186-20200101
+ bh=9HF/U5bj8bmReiAlU9wIGksGcuTBOkT+KUY5cM+ypII=; 
+ b=uXg9TtcqYaDhrkpuKQcNTC5VumM4wonXT835jOc/GDOw/4y89akVs97xTNlg0WhFJh2G/+GZJ113qnaPiSRqR7RIjqcC6bQyxJeERzfJA+sWkm5BL1Ggecqjtc8cb4xrBUDUeEcQGmTbEVl5f+VLvQIl8n4yUcgTs5v15I1h1WU=;
+X-UUID: 232c990e8cb1448d88d1670d1b05cbac-20200101
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1718253681; Wed, 01 Jan 2020 20:12:17 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 454978832; Wed, 01 Jan 2020 20:12:21 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Wed, 1 Jan 2020 20:02:48 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 12:01:59 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 12:01:55 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 2 Jan 2020 12:01:44 +0800
+ Transport; Thu, 2 Jan 2020 12:01:45 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v6, 13/14] drm/mediatek: add fifo_size into rdma private data
-Date: Thu, 2 Jan 2020 12:00:23 +0800
-Message-ID: <1577937624-14313-14-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v6, 14/14] drm/mediatek: add support for mediatek SOC MT8183
+Date: Thu, 2 Jan 2020 12:00:24 +0800
+Message-ID: <1577937624-14313-15-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1577937624-14313-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_201222_876547_044B301B 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20200101_201231_429454_56C02E98 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,72 +97,340 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-the fifo size of rdma in mt8183 is different.
-rdma0 fifo size is 5k
-rdma1 fifo size is 2k
+This patch add support for mediatek SOC MT8183
+1.ovl_2l share driver with ovl
+2.rdma1 share drive with rdma0, but fifo size is different
+3.add mt8183 mutex private data, and mmsys private data
+4.add mt8183 main and external path module for crtc create
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c | 21 ++++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c  | 18 +++++++++
+ drivers/gpu/drm/mediatek/mtk_disp_rdma.c |  6 +++
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c   | 69 ++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.h   |  1 +
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c   | 48 ++++++++++++++++++++++
+ 5 files changed, 142 insertions(+)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-index 405afef..691480b 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-@@ -62,6 +62,7 @@ struct mtk_disp_rdma {
- 	struct mtk_ddp_comp		ddp_comp;
- 	struct drm_crtc			*crtc;
- 	const struct mtk_disp_rdma_data	*data;
-+	u32				fifo_size;
+diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+index 4a55bb6..5ee175e 100644
+--- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
++++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+@@ -423,11 +423,29 @@ static int mtk_disp_ovl_remove(struct platform_device *pdev)
+ 	.fmt_rgb565_is_0 = true,
  };
  
- static inline struct mtk_disp_rdma *comp_to_rdma(struct mtk_ddp_comp *comp)
-@@ -130,10 +131,16 @@ static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
- 	unsigned int threshold;
- 	unsigned int reg;
- 	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
-+	u32 rdma_fifo_size;
- 
- 	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0, 0xfff, width);
- 	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_1, 0xfffff, height);
- 
-+	if (rdma->fifo_size)
-+		rdma_fifo_size = rdma->fifo_size;
-+	else
-+		rdma_fifo_size = RDMA_FIFO_SIZE(rdma);
++static const struct mtk_disp_ovl_data mt8183_ovl_driver_data = {
++	.addr = DISP_REG_OVL_ADDR_MT8173,
++	.gmc_bits = 10,
++	.layer_nr = 4,
++	.fmt_rgb565_is_0 = true,
++};
 +
- 	/*
- 	 * Enable FIFO underflow since DSI and DPI can't be blocked.
- 	 * Keep the FIFO pseudo size reset default of 8 KiB. Set the
-@@ -142,7 +149,7 @@ static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
- 	 */
- 	threshold = width * height * vrefresh * 4 * 7 / 1000000;
- 	reg = RDMA_FIFO_UNDERFLOW_EN |
--	      RDMA_FIFO_PSEUDO_SIZE(RDMA_FIFO_SIZE(rdma)) |
-+	      RDMA_FIFO_PSEUDO_SIZE(rdma_fifo_size) |
- 	      RDMA_OUTPUT_VALID_FIFO_THRESHOLD(threshold);
- 	writel(reg, comp->regs + DISP_REG_RDMA_FIFO_CON);
- }
-@@ -284,6 +291,18 @@ static int mtk_disp_rdma_probe(struct platform_device *pdev)
- 		return comp_id;
- 	}
++static const struct mtk_disp_ovl_data mt8183_ovl_2l_driver_data = {
++	.addr = DISP_REG_OVL_ADDR_MT8173,
++	.gmc_bits = 10,
++	.layer_nr = 2,
++	.fmt_rgb565_is_0 = true,
++};
++
+ static const struct of_device_id mtk_disp_ovl_driver_dt_match[] = {
+ 	{ .compatible = "mediatek,mt2701-disp-ovl",
+ 	  .data = &mt2701_ovl_driver_data},
+ 	{ .compatible = "mediatek,mt8173-disp-ovl",
+ 	  .data = &mt8173_ovl_driver_data},
++	{ .compatible = "mediatek,mt8183-disp-ovl",
++	  .data = &mt8183_ovl_driver_data},
++	{ .compatible = "mediatek,mt8183-disp-ovl-2l",
++	  .data = &mt8183_ovl_2l_driver_data},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, mtk_disp_ovl_driver_dt_match);
+diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+index 691480b..a0223a5 100644
+--- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
++++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+@@ -347,11 +347,17 @@ static int mtk_disp_rdma_remove(struct platform_device *pdev)
+ 	.fifo_size = SZ_8K,
+ };
  
-+	if (of_find_property(dev->of_node, "mediatek,rdma_fifo_size", &ret)) {
-+		ret = of_property_read_u32(dev->of_node,
-+					   "mediatek,rdma_fifo_size",
-+					   &priv->fifo_size);
-+		if (ret) {
-+			dev_err(dev, "Failed to get rdma fifo size\n");
-+			return ret;
-+		}
++static const struct mtk_disp_rdma_data mt8183_rdma_driver_data = {
++	.fifo_size = 5 * SZ_1K,
++};
 +
-+		priv->fifo_size *= SZ_1K;
-+	}
+ static const struct of_device_id mtk_disp_rdma_driver_dt_match[] = {
+ 	{ .compatible = "mediatek,mt2701-disp-rdma",
+ 	  .data = &mt2701_rdma_driver_data},
+ 	{ .compatible = "mediatek,mt8173-disp-rdma",
+ 	  .data = &mt8173_rdma_driver_data},
++	{ .compatible = "mediatek,mt8183-disp-rdma",
++	  .data = &mt8183_rdma_driver_data},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, mtk_disp_rdma_driver_dt_match);
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+index 68dc060..e484ef79 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+@@ -33,19 +33,31 @@
+ #define DISP_REG_CONFIG_DSI_SEL			0x050
+ #define DISP_REG_CONFIG_DPI_SEL			0x064
+ 
++#define MT8183_DISP_OVL0_MOUT_EN		0xf00
+ #define MT8183_DISP_OVL0_2L_MOUT_EN		0xf04
+ #define MT8183_DISP_OVL1_2L_MOUT_EN		0xf08
+ #define MT8183_DISP_DITHER0_MOUT_EN		0xf0c
+ #define MT8183_DISP_PATH0_SEL_IN		0xf24
++#define MT8183_DISP_DSI0_SEL_IN			0xf2c
++#define MT8183_DISP_DPI0_SEL_IN			0xf30
++#define MT8183_DISP_RDMA0_SOUT_SEL_IN		0xf50
++#define MT8183_DISP_RDMA1_SOUT_SEL_IN		0xf54
+ 
+ #define OVL0_2L_MOUT_EN_DISP_PATH0			BIT(0)
+ #define OVL1_2L_MOUT_EN_RDMA1				BIT(4)
+ #define DITHER0_MOUT_IN_DSI0				BIT(0)
+ #define DISP_PATH0_SEL_IN_OVL0_2L			0x1
+ #define DSI0_SEL_IN_RDMA0				0x1
++#define MT8183_DSI0_SEL_IN_RDMA1			0x3
++#define MT8183_DPI0_SEL_IN_RDMA0			0x1
++#define MT8183_DPI0_SEL_IN_RDMA1			0x2
++#define MT8183_RDMA0_SOUT_COLOR0			0x1
++#define MT8183_RDMA1_SOUT_DSI0				0x1
+ 
+ #define MT2701_DISP_MUTEX0_MOD0			0x2c
+ #define MT2701_DISP_MUTEX0_SOF0			0x30
++#define MT8183_DISP_MUTEX0_MOD0			0x30
++#define MT8183_DISP_MUTEX0_SOF0			0x2c
+ 
+ #define DISP_REG_MUTEX_EN(n)			(0x20 + 0x20 * (n))
+ #define DISP_REG_MUTEX(n)			(0x24 + 0x20 * (n))
+@@ -56,6 +68,18 @@
+ 
+ #define INT_MUTEX				BIT(1)
+ 
++#define MT8183_MUTEX_MOD_DISP_RDMA0		0
++#define MT8183_MUTEX_MOD_DISP_RDMA1		1
++#define MT8183_MUTEX_MOD_DISP_OVL0		9
++#define MT8183_MUTEX_MOD_DISP_OVL0_2L		10
++#define MT8183_MUTEX_MOD_DISP_OVL1_2L		11
++#define MT8183_MUTEX_MOD_DISP_WDMA0		12
++#define MT8183_MUTEX_MOD_DISP_COLOR0		13
++#define MT8183_MUTEX_MOD_DISP_CCORR0		14
++#define MT8183_MUTEX_MOD_DISP_AAL0		15
++#define MT8183_MUTEX_MOD_DISP_GAMMA0		16
++#define MT8183_MUTEX_MOD_DISP_DITHER0		17
 +
- 	ret = mtk_ddp_comp_init(dev, dev->of_node, &priv->ddp_comp, comp_id,
- 				&mtk_disp_rdma_funcs);
- 	if (ret) {
+ #define MT8173_MUTEX_MOD_DISP_OVL0		11
+ #define MT8173_MUTEX_MOD_DISP_OVL1		12
+ #define MT8173_MUTEX_MOD_DISP_RDMA0		13
+@@ -105,6 +129,10 @@
+ #define MUTEX_SOF_DSI2			5
+ #define MUTEX_SOF_DSI3			6
+ 
++#define MT8183_MUTEX_SOF_DPI0			2
++#define MT8183_MUTEX_EOF_DSI0			(MUTEX_SOF_DSI0 << 6)
++#define MT8183_MUTEX_EOF_DPI0			(MT8183_MUTEX_SOF_DPI0 << 6)
++
+ #define OVL0_MOUT_EN_COLOR0		0x1
+ #define OD_MOUT_EN_RDMA0		0x1
+ #define OD1_MOUT_EN_RDMA1		BIT(16)
+@@ -241,6 +269,20 @@ struct mtk_mmsys_reg_data {
+ 	[DDP_COMPONENT_WDMA1] = MT8173_MUTEX_MOD_DISP_WDMA1,
+ };
+ 
++static const unsigned int mt8183_mutex_mod[DDP_COMPONENT_ID_MAX] = {
++	[DDP_COMPONENT_AAL0] = MT8183_MUTEX_MOD_DISP_AAL0,
++	[DDP_COMPONENT_CCORR] = MT8183_MUTEX_MOD_DISP_CCORR0,
++	[DDP_COMPONENT_COLOR0] = MT8183_MUTEX_MOD_DISP_COLOR0,
++	[DDP_COMPONENT_DITHER] = MT8183_MUTEX_MOD_DISP_DITHER0,
++	[DDP_COMPONENT_GAMMA] = MT8183_MUTEX_MOD_DISP_GAMMA0,
++	[DDP_COMPONENT_OVL0] = MT8183_MUTEX_MOD_DISP_OVL0,
++	[DDP_COMPONENT_OVL_2L0] = MT8183_MUTEX_MOD_DISP_OVL0_2L,
++	[DDP_COMPONENT_OVL_2L1] = MT8183_MUTEX_MOD_DISP_OVL1_2L,
++	[DDP_COMPONENT_RDMA0] = MT8183_MUTEX_MOD_DISP_RDMA0,
++	[DDP_COMPONENT_RDMA1] = MT8183_MUTEX_MOD_DISP_RDMA1,
++	[DDP_COMPONENT_WDMA0] = MT8183_MUTEX_MOD_DISP_WDMA0,
++};
++
+ static const unsigned int mt2712_mutex_sof[DDP_MUTEX_SOF_DSI3 + 1] = {
+ 	[DDP_MUTEX_SOF_SINGLE_MODE] = MUTEX_SOF_SINGLE_MODE,
+ 	[DDP_MUTEX_SOF_DSI0] = MUTEX_SOF_DSI0,
+@@ -251,6 +293,12 @@ struct mtk_mmsys_reg_data {
+ 	[DDP_MUTEX_SOF_DSI3] = MUTEX_SOF_DSI3,
+ };
+ 
++static const unsigned int mt8183_mutex_sof[DDP_MUTEX_SOF_DSI3 + 1] = {
++	[DDP_MUTEX_SOF_SINGLE_MODE] = MUTEX_SOF_SINGLE_MODE,
++	[DDP_MUTEX_SOF_DSI0] = MUTEX_SOF_DSI0 | MT8183_MUTEX_EOF_DSI0,
++	[DDP_MUTEX_SOF_DPI0] = MT8183_MUTEX_SOF_DPI0 | MT8183_MUTEX_EOF_DPI0,
++};
++
+ static const struct mtk_ddp_data mt2701_ddp_driver_data = {
+ 	.mutex_mod = mt2701_mutex_mod,
+ 	.mutex_sof = mt2712_mutex_sof,
+@@ -272,6 +320,13 @@ struct mtk_mmsys_reg_data {
+ 	.mutex_sof_reg = MT2701_DISP_MUTEX0_SOF0,
+ };
+ 
++static const struct mtk_ddp_data mt8183_ddp_driver_data = {
++	.mutex_mod = mt8183_mutex_mod,
++	.mutex_sof = mt8183_mutex_sof,
++	.mutex_mod_reg = MT8183_DISP_MUTEX0_MOD0,
++	.mutex_sof_reg = MT8183_DISP_MUTEX0_SOF0,
++};
++
+ const struct mtk_mmsys_reg_data mt2701_mmsys_reg_data = {
+ 	.ovl0_mout_en = DISP_REG_CONFIG_DISP_OVL_MOUT_EN,
+ 	.dsi0_sel_in = DISP_REG_CONFIG_DSI_SEL,
+@@ -288,6 +343,18 @@ struct mtk_mmsys_reg_data {
+ 	.dsi0_sel_in_rdma1 = DSI0_SEL_IN_RDMA1,
+ };
+ 
++const struct mtk_mmsys_reg_data mt8183_mmsys_reg_data = {
++	.ovl0_mout_en = MT8183_DISP_OVL0_MOUT_EN,
++	.rdma0_sout_sel_in = MT8183_DISP_RDMA0_SOUT_SEL_IN,
++	.rdma0_sout_color0 = MT8183_RDMA0_SOUT_COLOR0,
++	.rdma1_sout_sel_in = MT8183_DISP_RDMA1_SOUT_SEL_IN,
++	.rdma1_sout_dsi0 = MT8183_RDMA1_SOUT_DSI0,
++	.dpi0_sel_in = MT8183_DISP_DPI0_SEL_IN,
++	.dpi0_sel_in_rdma1 = MT8183_DPI0_SEL_IN_RDMA1,
++	.dsi0_sel_in = MT8183_DISP_DSI0_SEL_IN,
++	.dsi0_sel_in_rdma1 = MT8183_DSI0_SEL_IN_RDMA1,
++};
++
+ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
+ 				    enum mtk_ddp_comp_id cur,
+ 				    enum mtk_ddp_comp_id next,
+@@ -734,6 +801,8 @@ static int mtk_ddp_remove(struct platform_device *pdev)
+ 	  .data = &mt2712_ddp_driver_data},
+ 	{ .compatible = "mediatek,mt8173-disp-mutex",
+ 	  .data = &mt8173_ddp_driver_data},
++	{ .compatible = "mediatek,mt8183-disp-mutex",
++	  .data = &mt8183_ddp_driver_data},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, ddp_driver_dt_match);
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+index 75fa56e..d26f30e 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+@@ -15,6 +15,7 @@
+ 
+ extern const struct mtk_mmsys_reg_data mt2701_mmsys_reg_data;
+ extern const struct mtk_mmsys_reg_data mt8173_mmsys_reg_data;
++extern const struct mtk_mmsys_reg_data mt8183_mmsys_reg_data;
+ 
+ void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
+ 			      const struct mtk_mmsys_reg_data *reg_data,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index e3293cf8..d57e0ad 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -180,6 +180,24 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	DDP_COMPONENT_DPI0,
+ };
+ 
++static const enum mtk_ddp_comp_id mt8183_mtk_ddp_main[] = {
++	DDP_COMPONENT_OVL0,
++	DDP_COMPONENT_OVL_2L0,
++	DDP_COMPONENT_RDMA0,
++	DDP_COMPONENT_COLOR0,
++	DDP_COMPONENT_CCORR,
++	DDP_COMPONENT_AAL0,
++	DDP_COMPONENT_GAMMA,
++	DDP_COMPONENT_DITHER,
++	DDP_COMPONENT_DSI0,
++};
++
++static const enum mtk_ddp_comp_id mt8183_mtk_ddp_ext[] = {
++	DDP_COMPONENT_OVL_2L1,
++	DDP_COMPONENT_RDMA1,
++	DDP_COMPONENT_DPI0,
++};
++
+ static const struct mtk_mmsys_driver_data mt2701_mmsys_driver_data = {
+ 	.main_path = mt2701_mtk_ddp_main,
+ 	.main_len = ARRAY_SIZE(mt2701_mtk_ddp_main),
+@@ -210,6 +228,16 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	.clk_drv_name = "clk-mt8173-mm",
+ };
+ 
++static const struct mtk_mmsys_driver_data mt8183_mmsys_driver_data = {
++	.main_path = mt8183_mtk_ddp_main,
++	.main_len = ARRAY_SIZE(mt8183_mtk_ddp_main),
++	.ext_path = mt8183_mtk_ddp_ext,
++	.ext_len = ARRAY_SIZE(mt8183_mtk_ddp_ext),
++	.reg_data = &mt8183_mmsys_reg_data,
++	.clk_drv_name = "clk-mt8183-mm",
++};
++
++
+ static int mtk_drm_kms_init(struct drm_device *drm)
+ {
+ 	struct mtk_drm_private *private = drm->dev_private;
+@@ -449,12 +477,22 @@ static void mtk_drm_unbind(struct device *dev)
+ 	  .data = (void *)MTK_DISP_OVL },
+ 	{ .compatible = "mediatek,mt8173-disp-ovl",
+ 	  .data = (void *)MTK_DISP_OVL },
++	{ .compatible = "mediatek,mt8183-disp-ovl",
++	  .data = (void *)MTK_DISP_OVL },
++	{ .compatible = "mediatek,mt8183-disp-ovl-2l",
++	  .data = (void *)MTK_DISP_OVL_2L },
+ 	{ .compatible = "mediatek,mt2701-disp-rdma",
+ 	  .data = (void *)MTK_DISP_RDMA },
+ 	{ .compatible = "mediatek,mt8173-disp-rdma",
+ 	  .data = (void *)MTK_DISP_RDMA },
++	{ .compatible = "mediatek,mt8183-disp-rdma",
++	  .data = (void *)MTK_DISP_RDMA },
++	{ .compatible = "mediatek,mt8183-disp-rdma1",
++	  .data = (void *)MTK_DISP_RDMA },
+ 	{ .compatible = "mediatek,mt8173-disp-wdma",
+ 	  .data = (void *)MTK_DISP_WDMA },
++	{ .compatible = "mediatek,mt8183-disp-ccorr",
++	  .data = (void *)MTK_DISP_CCORR },
+ 	{ .compatible = "mediatek,mt2701-disp-color",
+ 	  .data = (void *)MTK_DISP_COLOR },
+ 	{ .compatible = "mediatek,mt8173-disp-color",
+@@ -463,22 +501,30 @@ static void mtk_drm_unbind(struct device *dev)
+ 	  .data = (void *)MTK_DISP_AAL},
+ 	{ .compatible = "mediatek,mt8173-disp-gamma",
+ 	  .data = (void *)MTK_DISP_GAMMA, },
++	{ .compatible = "mediatek,mt8183-disp-dither",
++	  .data = (void *)MTK_DISP_DITHER },
+ 	{ .compatible = "mediatek,mt8173-disp-ufoe",
+ 	  .data = (void *)MTK_DISP_UFOE },
+ 	{ .compatible = "mediatek,mt2701-dsi",
+ 	  .data = (void *)MTK_DSI },
+ 	{ .compatible = "mediatek,mt8173-dsi",
+ 	  .data = (void *)MTK_DSI },
++	{ .compatible = "mediatek,mt8183-dsi",
++	  .data = (void *)MTK_DSI },
+ 	{ .compatible = "mediatek,mt2701-dpi",
+ 	  .data = (void *)MTK_DPI },
+ 	{ .compatible = "mediatek,mt8173-dpi",
+ 	  .data = (void *)MTK_DPI },
++	{ .compatible = "mediatek,mt8183-dpi",
++	  .data = (void *)MTK_DPI },
+ 	{ .compatible = "mediatek,mt2701-disp-mutex",
+ 	  .data = (void *)MTK_DISP_MUTEX },
+ 	{ .compatible = "mediatek,mt2712-disp-mutex",
+ 	  .data = (void *)MTK_DISP_MUTEX },
+ 	{ .compatible = "mediatek,mt8173-disp-mutex",
+ 	  .data = (void *)MTK_DISP_MUTEX },
++	{ .compatible = "mediatek,mt8183-disp-mutex",
++	  .data = (void *)MTK_DISP_MUTEX },
+ 	{ .compatible = "mediatek,mt2701-disp-pwm",
+ 	  .data = (void *)MTK_DISP_BLS },
+ 	{ .compatible = "mediatek,mt8173-disp-pwm",
+@@ -672,6 +718,8 @@ static SIMPLE_DEV_PM_OPS(mtk_drm_pm_ops, mtk_drm_sys_suspend,
+ 	  .data = &mt2712_mmsys_driver_data},
+ 	{ .compatible = "mediatek,mt8173-mmsys",
+ 	  .data = &mt8173_mmsys_driver_data},
++	{ .compatible = "mediatek,mt8183-mmsys",
++	  .data = &mt8183_mmsys_driver_data},
+ 	{ }
+ };
+ 
 -- 
 1.8.1.1.dirty
 _______________________________________________
