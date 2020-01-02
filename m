@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E09F412E3FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 09:46:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 603BD12E404
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 09:48:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QPSjCv0UhT1+ZmDA6pxQ8zOcOFIYJ1/G5dwm2jIpkBw=; b=NOxT+oalXjOZkb
-	36JOd7FLG/pC7JnpkomRBjNK4wYRhlcbTRJRLLJR2JoRbJenRGSgjjaClfILRiAayThDFlnhHDfB/
-	uXI0q/v0AoDaugeUPIATiyKj4lq7HNS9y1kIfk4A7oJaTQ9nkyTajz4xZvZN2m0S0SMe67U8omlE/
-	S8tTz/fwMFQ/iCrTBrDqHsvZVIFkKn3jMLwmdtOTihhpdecpX6H2UKMxPn7qUkxP8YI0Zaw16/zxZ
-	PBYZmY46NdCznJNEUCH58sNx9jiOkXyyPuiSZKevs/Bfgdv0pvZvVHXlAhaymp8latFnBCaO2sfKy
-	1qPSB1bq5XigvGfS76+Q==;
+	List-Owner; bh=TD32TnUZb9chv/IWLQx4CaQjYxzX7SeTqJqL7VwZwro=; b=WlHpWYJhIsNwTK
+	lNOjIl5kuRVS7BxUgUApNXLCH94Ouf5QsSY2EB1j5Mo/IKpkDB6Wx7GsRmQYsfES2ZZnhHhPtRsD3
+	FxfRCu9z9muRlUyfR+wdmKRpHm9QDZRHykjgaZcW4WDcOLfsFVWfmgNJRvKT1uKdBq0o9e/WEszOk
+	r+w6RXU7LUBkIwVwPulhVZ0AIWnpI9zGIE0YltlZY6T+ABnmJEH+qkHzL9W2poP8ouViEjRRWUyk/
+	xZ9bmSiJ7Fq85e6OLIY4Ne9k94aGuTbHEuHsIjAYioBzZQqsicrpzWX1w9mxdpXStoqEeEJoa4hU/
+	x+sisnF1uTddqLldvH2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imw81-0005so-8k; Thu, 02 Jan 2020 08:46:49 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1imw9W-0006Et-29; Thu, 02 Jan 2020 08:48:22 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imw7s-0005rX-Up
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 08:46:43 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j42so38461771wrj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 00:46:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=J4BV4xVxmbRJ/r05rBs0QYCjejbH9ewz1c2yLbanQBw=;
- b=BCROBod9j1yy6ajGa+uGcRO+X7a2oqm4ydiMzZwtcBr9thqmJoeDeB8vBmZ8hG0bas
- pRPAAfyxHm4lV8LwRhEx8jE7sUssEq5x7jyXSEWyaeVjbx6ftoR15mx1tVsz9zBJPr7c
- XKAtOPTAmr9rL8LaoS6MAbOmkxPCkurDhm33TvQuGx+C4zXTRjiHvzEgka/uTyIuQRQZ
- 4okHxCZsuUbIzRcY+45HcNOTYwAZ9GKO2r45tzSpjwejmSI5KqXeACQ7w61v6Pvkr5HN
- sAcbzQvhK41LfV8r0fmaOsCu/wE88cGOus0huQH7AwGLIQ5s63Vl1ClDEY5SRBvILAPv
- CzOg==
+ id 1imw9O-0006ED-Pd; Thu, 02 Jan 2020 08:48:16 +0000
+Received: by mail-ot1-x344.google.com with SMTP id 59so56151763otp.12;
+ Thu, 02 Jan 2020 00:48:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lYK3JQAmW07FRU5GuNZTgBOd+vjFiils6tG0VLmuyGE=;
+ b=XvrNbulzxprjJqi8RpScnA140KqOgH0A3KIwDYeZHKhtNqXpKqoIH3DkDmMCVQ4mUL
+ UwesBRnFDTc16aXYRWU9fFLStptClVcntJFNz6OyMjwF05UXavP3leAtsROoVh410vm+
+ jUwytle5bVp/DrZEhUKPxt7VGX15m/li3nhKMCPQHhUUfTMLo4HrwFfUuHyhLRmPJosc
+ ZVN+FIUAGNI58UFohnNWgK+pW61uPy/3SkM8oE8zY+MwPijr+Ibg7angTkInKzlKJqfa
+ UB5p84iBYkGvBSTVKgL5bpv2MgeEExqeZUGno4Xaoq9OwJaoN+NtTQiaOofpO6zyJYpl
+ 4DsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=J4BV4xVxmbRJ/r05rBs0QYCjejbH9ewz1c2yLbanQBw=;
- b=hPP5pCwLMMJFtyArrO8AjUWjqkGhQtladLF4/d7uWqKAfDxFdcGQyQnOmbptcrUGOD
- hC49thUswjnOb3Cdy+qxeZDEuCS5+UPztVemel8bsl5LTNxeKPx7IVCuMHCRjpm8D43K
- kkxP0tKVPnqnB15dLOhLLVsDNX1+zBMcfQW8cKMkf1POmGgweZsduzMJGhAIcwnMYkiA
- o9FUSJb/RRphdHQf/hPXCToYSmDfW0YAsrQ4kf7mBuUHC5QE5CALy8LgISf15uNy2N+a
- SdgFTh9DsxI+HvlUZJTozkhc2QhyjB5p65de86mPvh4gQDwv5uNJl7rNi5b7F478x7nY
- xrBw==
-X-Gm-Message-State: APjAAAVO6SVkIs55S1Fn2F51ijwcOLv6gtWRmSQShn3DrDfMs3V/IKGg
- gMkIdqO9E0P2m0MZdsmiB+eAKuBmtG4=
-X-Google-Smtp-Source: APXvYqwSDKoiB5ra6drQsoyYVfGcpU9ytlL7NbMzlMJbbOVavFr5G0msLQo7wTmzibB98v+znbhMpQ==
-X-Received: by 2002:a5d:68c5:: with SMTP id p5mr83053200wrw.193.1577954798497; 
- Thu, 02 Jan 2020 00:46:38 -0800 (PST)
-Received: from dell ([2.27.35.135])
- by smtp.gmail.com with ESMTPSA id g2sm54686011wrw.76.2020.01.02.00.46.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 02 Jan 2020 00:46:37 -0800 (PST)
-Date: Thu, 2 Jan 2020 08:46:50 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: Gene Chen <gene.chen.richtek@gmail.com>
-Subject: Re: [PATCH v6] mfd: mt6360: add pmic mt6360 driver
-Message-ID: <20200102084650.GA22390@dell>
-References: <20191225014148.19082-1-gene.chen.richtek@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lYK3JQAmW07FRU5GuNZTgBOd+vjFiils6tG0VLmuyGE=;
+ b=mMHGPmcjRaYWbg8sfqzbLUx9W8X1xl2XTrJOeS0GhLmimZM6vsemEGhARav1RkogcQ
+ PNFlpB2Q2HmK+eeyA+loIt/3gHtfAhZWPXg/y3irU75NL+iu3q7gyK8W5jOwoYgRFyz4
+ rfo0nTgd9VP4nIShNAV4YWXE2bWNiCGw5xw2DgKr+Zbds5W+2CYArn3LBFYrOrMPTA97
+ 3iuC5eQvz4x1exbFA7kLcioyTBT7zUDpjWwBvBIRQXbI3i9haCwl/o4aXiSvnAUqjaZg
+ T8kwBz7uCkERLxrqJ1JNZZEEo9rfUalLhX6rxHfOB1vxiiZbe39fxvNrtzVAxDk/GGDf
+ Mzfg==
+X-Gm-Message-State: APjAAAXunXshiFgYooE+FZLFRSXPBw11Xq36uLZFKFZOfSJQcuYYHJYR
+ AphJv2k47AnxjexjIJPfW+D3ODtV4GKmWNmaI3w=
+X-Google-Smtp-Source: APXvYqxeuKbXHxGtyzku07WE9C0N/ua7Tl5Z8JOlkhllIuUswqzYTzv/m5bf/QtdXNVE3v+FavUIVxFQjdB8xF8hNl8=
+X-Received: by 2002:a05:6830:1188:: with SMTP id
+ u8mr91290992otq.274.1577954893533; 
+ Thu, 02 Jan 2020 00:48:13 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191225014148.19082-1-gene.chen.richtek@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191219233525.GA9478@bogus>
+In-Reply-To: <20191219233525.GA9478@bogus>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 2 Jan 2020 08:47:47 +0000
+Message-ID: <CA+V-a8vO_3P3vDFVuKLJAK7v99E7qKVAei0Kmba8tKist7mAaw@mail.gmail.com>
+Subject: Re: [v2 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
+ endpoint controller
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_004641_184391_9C1BA056 
-X-CRM114-Status: GOOD (  19.93  )
+X-CRM114-CacheID: sfid-20200102_004814_832918_8CB2FFD0 
+X-CRM114-Status: GOOD (  21.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,103 +94,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
- shufan_lee@richtek.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAyNSBEZWMgMjAxOSwgR2VuZSBDaGVuIHdyb3RlOgoKPiBGcm9tOiBHZW5lIENoZW4g
-PGdlbmVfY2hlbkByaWNodGVrLmNvbT4KPiAKPiBBZGQgbWZkIGRyaXZlciBmb3IgbXQ2MzYwIHBt
-aWMgY2hpcCBpbmNsdWRlCj4gQmF0dGVyeSBDaGFyZ2VyL1VTQl9QRC9GbGFzaCBMRUQvUkdCIExF
-RC9MRE8vQnVjawo+IAo+IFNpZ25lZC1vZmYtYnk6IEdlbmUgQ2hlbiA8Z2VuZV9jaGVuQHJpY2h0
-ZWsuY29tCj4gLS0tCj4gIGRyaXZlcnMvbWZkL0tjb25maWcgICAgICAgICAgICAgICAgfCAgMTIg
-Kwo+ICBkcml2ZXJzL21mZC9NYWtlZmlsZSAgICAgICAgICAgICAgIHwgICAxICsKPiAgZHJpdmVy
-cy9tZmQvbXQ2MzYwLWNvcmUuYyAgICAgICAgICB8IDQyNiArKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKwo+ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oIHwgMjE3ICsrKysr
-KysrKysrKysrKwo+ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAuaCAgICAgICAgIHwgIDMyICsr
-Kwo+ICA1IGZpbGVzIGNoYW5nZWQsIDY4OCBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEw
-MDY0NCBkcml2ZXJzL21mZC9tdDYzNjAtY29yZS5jCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNs
-dWRlL2xpbnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNs
-dWRlL2xpbnV4L21mZC9tdDYzNjAuaAo+IAo+IGNoYW5nZWxvZ3MgYmV0d2VlbiB2MSAmIHYyCj4g
-LSBpbmNsdWRlIG1pc3NpbmcgaGVhZGVyIGZpbGUKPiAKPiBjaGFuZ2Vsb2dzIGJldHdlZW4gdjIg
-JiB2Mwo+IC0gYWRkIGNoYW5nZWxvZ3MKPiAKPiBjaGFuZ2Vsb2dzIGJldHdlZW4gdjMgJiB2NAo+
-IC0gZml4IEtjb25maWcgZGVzY3JpcHRpb24KPiAtIHJlcGxhY2UgbXQ2MzYwX3BtdV9pbmZvIHdp
-dGggbXQ2MzYwX3BtdV9kYXRhCj4gLSByZXBsYWNlIHByb2JlIHdpdGggcHJvYmVfbmV3Cj4gLSBy
-ZW1vdmUgdW5uZWNlc3NhcnkgaXJxX2NoaXAgdmFyaWFibGUKPiAtIHJlbW92ZSBhbm5vdGF0aW9u
-Cj4gLSByZXBsYWNlIE1UNjM2MF9NRkRfQ0VMTCB3aXRoIE9GX01GRF9DRUxMCj4gCj4gY2hhbmdl
-bG9ncyBiZXR3ZWVuIHY0ICYgdjUKPiAtIHJlbW92ZSB1bm5lY2Vzc2FyeSBwYXJzZSBkdCBmdW5j
-dGlvbgo+IC0gdXNlIGRldm1faTJjX25ld19kdW1teV9kZXZpY2UKPiAtIGFkZCBiYXNlLWNvbW1p
-dCBtZXNzYWdlCj4gCj4gY2hhbmdlbG9ncyBiZXR3ZWVuIHY1ICYgdjYKPiAtIHJldmlldyByZXR1
-cm4gdmFsdWUKPiAtIHJlbW92ZSBpMmMgaWRfdGFibGUKPiAtIHVzZSBHUEwgbGljZW5zZSB2Mgo+
-IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9LY29uZmlnIGIvZHJpdmVycy9tZmQvS2NvbmZp
-Zwo+IGluZGV4IDQyMDkwMDg1MjE2Ni4uZTZkZjkxZDU1NDA1IDEwMDY0NAo+IC0tLSBhL2RyaXZl
-cnMvbWZkL0tjb25maWcKPiArKysgYi9kcml2ZXJzL21mZC9LY29uZmlnCj4gQEAgLTg1Niw2ICs4
-NTYsMTggQEAgY29uZmlnIE1GRF9NQVg4OTk4Cj4gIAkgIGFkZGl0aW9uYWwgZHJpdmVycyBtdXN0
-IGJlIGVuYWJsZWQgaW4gb3JkZXIgdG8gdXNlIHRoZSBmdW5jdGlvbmFsaXR5Cj4gIAkgIG9mIHRo
-ZSBkZXZpY2UuCj4gIAo+ICtjb25maWcgTUZEX01UNjM2MAo+ICsJdHJpc3RhdGUgIk1lZGlhdGVr
-IE1UNjM2MCBTdWJQTUlDIgo+ICsJc2VsZWN0IE1GRF9DT1JFCj4gKwlzZWxlY3QgUkVHTUFQX0ky
-Qwo+ICsJc2VsZWN0IFJFR01BUF9JUlEKPiArCWRlcGVuZHMgb24gSTJDCj4gKwloZWxwCj4gKwkg
-IFNheSBZIGhlcmUgdG8gZW5hYmxlIE1UNjM2MCBQTVUvUE1JQy9MRE8gZnVuY3Rpb25hbCBzdXBw
-b3J0Lgo+ICsJICBQTVUgcGFydCBpbmNsdWRlcyBDaGFyZ2VyLCBGbGFzaGxpZ2h0LCBSR0IgTEVE
-Cj4gKwkgIFBNSUMgcGFydCBpbmNsdWRlcyAyLWNoYW5uZWwgQlVDS3MgYW5kIDItY2hhbm5lbCBM
-RE9zCj4gKwkgIExETyBwYXJ0IGluY2x1ZGVzIDQtY2hhbm5lbCBMRE9zCj4gKwo+ICBjb25maWcg
-TUZEX01UNjM5Nwo+ICAJdHJpc3RhdGUgIk1lZGlhVGVrIE1UNjM5NyBQTUlDIFN1cHBvcnQiCj4g
-IAlzZWxlY3QgTUZEX0NPUkUKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZmQvTWFrZWZpbGUgYi9k
-cml2ZXJzL21mZC9NYWtlZmlsZQo+IGluZGV4IGFlZDk5ZjA4NzM5Zi4uZjVmODBkNzVlZTUzIDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvbWZkL01ha2VmaWxlCj4gKysrIGIvZHJpdmVycy9tZmQvTWFr
-ZWZpbGUKPiBAQCAtMjM3LDYgKzIzNyw3IEBAIG9iai0kKENPTkZJR19JTlRFTF9TT0NfUE1JQykJ
-Kz0gaW50ZWwtc29jLXBtaWMubwo+ICBvYmotJChDT05GSUdfSU5URUxfU09DX1BNSUNfQlhUV0Mp
-CSs9IGludGVsX3NvY19wbWljX2J4dHdjLm8KPiAgb2JqLSQoQ09ORklHX0lOVEVMX1NPQ19QTUlD
-X0NIVFdDKQkrPSBpbnRlbF9zb2NfcG1pY19jaHR3Yy5vCj4gIG9iai0kKENPTkZJR19JTlRFTF9T
-T0NfUE1JQ19DSFREQ19USSkJKz0gaW50ZWxfc29jX3BtaWNfY2h0ZGNfdGkubwo+ICtvYmotJChD
-T05GSUdfTUZEX01UNjM2MCkJKz0gbXQ2MzYwLWNvcmUubwo+ICBtdDYzOTctb2Jqcwk6PSBtdDYz
-OTctY29yZS5vIG10NjM5Ny1pcnEubwo+ICBvYmotJChDT05GSUdfTUZEX01UNjM5NykJKz0gbXQ2
-Mzk3Lm8KPiAgb2JqLSQoQ09ORklHX0lOVEVMX1NPQ19QTUlDX01SRkxEKQkrPSBpbnRlbF9zb2Nf
-cG1pY19tcmZsZC5vCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWZkL210NjM2MC1jb3JlLmMgYi9k
-cml2ZXJzL21mZC9tdDYzNjAtY29yZS5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAw
-MDAwMDAwMDAwMDAuLmY2ZDQzYjZkYWQ0ZQo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJz
-L21mZC9tdDYzNjAtY29yZS5jCj4gQEAgLTAsMCArMSw0MjYgQEAKPiArLy8gU1BEWC1MaWNlbnNl
-LUlkZW50aWZpZXI6IEdQTC0yLjAKPiArLyoKPiArICogQ29weXJpZ2h0IChjKSAyMDE5IE1lZGlh
-VGVrIEluYy4KCk5vIGF1dGhvcj8KCj4gKyAqLwo+ICsKPiArI2luY2x1ZGUgPGxpbnV4L2kyYy5o
-Pgo+ICsjaW5jbHVkZSA8bGludXgvaW5pdC5oPgo+ICsjaW5jbHVkZSA8bGludXgva2VybmVsLmg+
-Cj4gKyNpbmNsdWRlIDxsaW51eC9tZmQvY29yZS5oPgo+ICsjaW5jbHVkZSA8bGludXgvbW9kdWxl
-Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9vZl9pcnEuaD4KPiArI2luY2x1ZGUgPGxpbnV4L29mX3Bs
-YXRmb3JtLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC92ZXJzaW9uLmg+Cj4gKwo+ICsjaW5jbHVkZSA8
-bGludXgvbWZkL210NjM2MC5oPgo+ICsjaW5jbHVkZSA8bGludXgvbWZkL210NjM2MC1wcml2YXRl
-Lmg+CgpbLi4uXQoKPiArI2RlZmluZSBNVDYzNjBfUkVHTUFQX0lSUV9SRUcoX2lycV9ldnQpCQlc
-Cj4gKwlSRUdNQVBfSVJRX1JFRyhfaXJxX2V2dCwgKF9pcnFfZXZ0KSAvIDgsIEJJVCgoX2lycV9l
-dnQpICUgOCkpCgpObyBuZWVkIHRvIHJvbGwgeW91ciBvd24gbWFjcm9zIGZvciB0aGlzLiAgSSB0
-aGluawpSRUdNQVBfSVJRX1JFR19MSU5FKCkgaXMgd2hhdCB5b3UncmUgbG9va2luZyBmb3IuCgo+
-ICtzdGF0aWMgY29uc3Qgc3RydWN0IHJlZ21hcF9pcnEgbXQ2MzYwX3BtdV9pcnFzW10gPSAgewoK
-CVJFR01BUF9JUlFfUkVHX0xJTkUoTVQ2MzYwX0NIR19UUkVHX0VWVCwgOCksCgouLi4gZXRjLgoK
-PiArCU1UNjM2MF9SRUdNQVBfSVJRX1JFRyhNVDYzNjBfQ0hHX1RSRUdfRVZUKSwKPiArCU1UNjM2
-MF9SRUdNQVBfSVJRX1JFRyhNVDYzNjBfQ0hHX0FJQ1JfRVZUKSwKClsuLi5dCgo+ICsJTVQ2MzYw
-X1JFR01BUF9JUlFfUkVHKE1UNjM2MF9MRE83X1BHQl9FVlQpLAo+ICt9OwoKWy4uLl0KCj4gZGlm
-ZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvbWZkL210NjM2MC1wcml2YXRlLmggYi9pbmNsdWRlL2xp
-bnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAw
-MDAwMDAwMDAwMDAuLmQ1NDI2NTJmNGRlMAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9pbmNsdWRl
-L2xpbnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oCgpBcyB0aGVyZSBhcmUgb25seSBhcHByb3ByaWF0
-ZWx5IG5hbWVzcGFjZWQgbWFjcm9zIGluIGhlcmUsIEkgd291bGQKbW92ZSB0aGVtIHRvIHRoZSBu
-b3JtYWwgaGVhZGVyIGZpbGUgYW5kIGRpc3Bvc2Ugb2YgdGhpcyBvbmUuCgo+IEBAIC0wLDAgKzEs
-MjE3IEBACj4gKy8qIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wICovCj4gKy8qCj4g
-KyAqIENvcHlyaWdodCAoYykgMjAxOSBNZWRpYVRlayBJbmMuCj4gKyAqLwo+ICsKPiArI2lmbmRl
-ZiBfX01UNjM2MF9QUklWQVRFX0hfXwo+ICsjZGVmaW5lIF9fTVQ2MzYwX1BSSVZBVEVfSF9fCj4g
-Kwo+ICsvKiBQTVUgcmVnaXN0ZXIgZGVmaW5pbml0aW9uICovCj4gKyNkZWZpbmUgTVQ2MzYwX1BN
-VV9ERVZfSU5GTwkJCSgweDAwKQo+ICsjZGVmaW5lIE1UNjM2MF9QTVVfQ09SRV9DVFJMMQkJCSgw
-eDAxKQoKWy4uLl0KCj4gKyNkZWZpbmUgTVQ2MzYwX1BNVV9MRE9fTUFTSzIJCQkoMHhGRikKPiAr
-I2RlZmluZSBNVDYzNjBfUE1VX01BWFJFRwkJCShNVDYzNjBfUE1VX0xET19NQVNLMikKPiArCj4g
-Ky8qIE1UNjM2MF9QTVVfSVJRX1NFVCAqLwo+ICsjZGVmaW5lIE1UNjM2MF9QTVVfSVJRX1JFR05V
-TQkoTVQ2MzYwX1BNVV9MRE9fSVJRMiAtIE1UNjM2MF9QTVVfQ0hHX0lSUTEgKyAxKQo+ICsjZGVm
-aW5lIE1UNjM2MF9JUlFfUkVUUklHCUJJVCgyKQo+ICsKPiArI2RlZmluZSBDSElQX1ZFTl9NQVNL
-CQkJCSgweEYwKQo+ICsjZGVmaW5lIENISVBfVkVOX01UNjM2MAkJCQkoMHg1MCkKPiArI2RlZmlu
-ZSBDSElQX1JFVl9NQVNLCQkJCSgweDBGKQo+ICsKPiArI2VuZGlmIC8qIF9fTVQ2MzYwX1BSSVZB
-VEVfSF9fICovCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNo
-bmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNv
-Q3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Rob,
+
+Thank you for the review.
+
+On Thu, Dec 19, 2019 at 11:35 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Fri, Dec 13, 2019 at 08:47:46AM +0000, Lad Prabhakar wrote:
+> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >
+> > This patch adds the bindings for the R-Car PCIe endpoint driver.
+> >
+> > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > ---
+> >  .../devicetree/bindings/pci/rcar-pci-ep.txt        | 37 ++++++++++++++++++++++
+> >  1 file changed, 37 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+>
+> Please make this a DT schema.
+>
+sure will do.
+
+> >
+> > diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+> > new file mode 100644
+> > index 0000000..7f0a97e
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+> > @@ -0,0 +1,37 @@
+> > +* Renesas R-Car PCIe Endpoint Controller DT description
+> > +
+> > +Required properties:
+> > +         "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
+>
+> Normal ordering is: renesas,r8a774c0-pcie-ep
+>
+> > +         "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
+> > +                                  RZ/G2 compatible device.
+> > +
+> > +         When compatible with the generic version, nodes must list the
+> > +         SoC-specific version corresponding to the platform first
+> > +         followed by the generic version.
+> > +
+> > +- reg: base address and length of the PCIe controller registers.
+> > +- outbound-ranges: outbound windows base address and length including the flags.
+> > +- resets: Must contain phandles to PCIe-related reset lines exposed by IP block
+>
+> How many?
+>
+should be one.
+
+> > +- clocks: from common clock binding: clock specifiers for the PCIe controller
+> > +      clock.
+> > +- clock-names: from common clock binding: should be "pcie".
+> > +
+> > +Optional Property:
+> > +- max-functions: Maximum number of functions that can be configured (default 1).
+> > +
+> > +Example:
+> > +
+> > +SoC-specific DT Entry:
+> > +
+> > +     pcie_ep: pcie_ep@fe000000 {
+>
+> pcie-ep@
+>
+will fix that.
+
+Cheers,
+--Prabhakar
+
+> > +             compatible = "renesas,pcie-ep-r8a774c0", "renesas,pcie-rcar-gen2";
+> > +             reg = <0 0xfe000000 0 0x80000>;
+> > +             outbound-ranges = <0xa 0x0 0xfe100000 0 0x000100000
+> > +                                0xa 0x0 0xfe200000 0 0x000200000
+> > +                                0x6 0x0 0x30000000 0 0x008000000
+> > +                                0x6 0x0 0x38000000 0 0x008000000>;
+> > +             clocks = <&cpg CPG_MOD 319>;
+> > +             clock-names = "pcie";
+> > +             power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+> > +             resets = <&cpg 319>;
+> > +     };
+> > --
+> > 2.7.4
+> >
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
