@@ -2,59 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E6AD12E439
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:09:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0997212E46A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:29:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXwmlV066CD1ENnI1GtezDB+Yoxkl+4WqSoGL3s57pM=; b=ugWAbEvMYbv85V
-	DjXRP0XlSf+N1GLL6sOVELvPk83i6LyMH28Oci1CnH5PN994FKqlDnEAn12ZpCd6KJgmb9UkMQX49
-	Hq0vb7YKp6r5VODcq3RCKU0p6HFXqS8mAfi123cLfC5am9rFtuM7Ied2Ia2kgea3Um8HafJWEoZ/I
-	EcmKvf2Lo605QUR18ZTVlhRNfOW9gtK2ofBCQmZbYQ3V7AudPyQgIgj+9diWim2IKfCSm1LLLrBTi
-	R9Zr0UEqDVcP84QeopmHXmmQ3HyRzaq1IAvTlp1BSHUV9/ms0N+SoGPrkIsJ2JPvtLySFF7zaEO8Z
-	3JEN05VB1K1VR27ToyDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Dsy5h10qxxttVEnVZWVf9RxTZsMMurfi+VbWxz4NT84=; b=rGgHpGHYOuc5XZVfltYFzAlaa
+	JmW0TnDf7KbtgcNRURjKCZTiylX/2bJiF2sCWv+y6uBLaooey7uKqEayYvQ0iguaHlfc1qQ9HYLUm
+	FtNN3Nq3pHGrDEd9FAjuBz2ZdkXgzYry49m1XF/1tF6YIvTIQwPNm9nAgGjP8waOggAG9Jv4S3pAv
+	R/z6bOe542zD64CawvPRkN0si3teHzS+lVZxZ/WgxsYnHdFoYAVpFh7JPZmd8S+D0e5NOIP199xAF
+	WlO58YLDZbWW5vIy7t8m+EKkJZnb/fjv2ZpWMngtm/okzQTPq9D6qkTrHkxvx+cddoX0EPXjOmH/p
+	aQ81rT/dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imwTT-0005K3-9W; Thu, 02 Jan 2020 09:08:59 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1imwn0-0004RQ-OD; Thu, 02 Jan 2020 09:29:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imwTL-0005Jh-RX
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:08:53 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
+ id 1imwmt-0004QM-BB
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:29:06 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id D5E712002E;
- Thu,  2 Jan 2020 10:08:49 +0100 (CET)
-Date: Thu, 2 Jan 2020 10:08:48 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v3 5/6] drm: atmel-hlcdc: prefer a lower pixel-clock than
- requested
-Message-ID: <20200102090848.GC29446@ravnborg.org>
-References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
- <1576672109-22707-6-git-send-email-claudiu.beznea@microchip.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F43C20866;
+ Thu,  2 Jan 2020 09:29:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577957341;
+ bh=pRLLWLshpdZaj7aSje6TIFcK62XHUMhFH6uF34UjPWE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qioH68TnAGoz6R8XezA9BL4hVOWCriMkL0fN0Za0boFI4yM/swDLfcwRPWMzCKTuf
+ HKyYkBgMbDNYXcGEt9krDRjxThh6owzoXQTFPIqw6l9EWGkVB88gT9Iq8HryEjmuSf
+ 4p9Sg6GPF0yHKPT05z79Rtav8FmyWoZYSwJwxCqo=
+Date: Thu, 2 Jan 2020 10:28:58 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [PATCH 0/3] A64/H3/H6 R_CCU clock fixes
+Message-ID: <20200102092858.6n5uqymglia4t7lk@gilmour.lan>
+References: <20191229025922.46899-1-samuel@sholland.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1576672109-22707-6-git-send-email-claudiu.beznea@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=XYAwZIGsAAAA:8
- a=KFvkMixbUbwtBXHg22MA:9 a=CjuIK1q_8ugA:10 a=E8ToXWR_bxluHZ7gmE-Z:22
+In-Reply-To: <20191229025922.46899-1-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_010852_068921_E76ADCCA 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200102_012903_411822_8DFD4BDF 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,61 +75,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- boris.brezillon@bootlin.com, lee.jones@linaro.org, peda@axentia.se,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0487804386762519358=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 18, 2019 at 02:28:28PM +0200, Claudiu Beznea wrote:
-> From: Peter Rosin <peda@axentia.se>
-> 
-> The intention was to only select a higher pixel-clock rate than the
-> requested, if a slight overclocking would result in a rate significantly
-> closer to the requested rate than if the conservative lower pixel-clock
-> rate is selected. The fixed patch has the logic the other way around and
-> actually prefers the higher frequency. Fix that.
-> 
-> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
-The id is wrong here - the right one is: 9946a3a9dbedaaacef8b7e94f6ac144f1daaf1de
-The wrong id above was used before - so I think it is a copy'n'paste
-thing.
 
-Hint: try "dim fixes 9946a3a9dbedaaacef8b7e94f6ac144f1daaf1de"
+--===============0487804386762519358==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="gk2aam5hdxft2et4"
+Content-Disposition: inline
 
-If I get a quick response from Lee I can fix it up while applying.
 
-	Sam
+--gk2aam5hdxft2et4
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> Tested-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> Signed-off-by: Peter Rosin <peda@axentia.se>
-> ---
->  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> index 721fa88bf71d..10985134ce0b 100644
-> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> @@ -121,8 +121,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->  		int div_low = prate / mode_rate;
->  
->  		if (div_low >= 2 &&
-> -		    ((prate / div_low - mode_rate) <
-> -		     10 * (mode_rate - prate / div)))
-> +		    (10 * (prate / div_low - mode_rate) <
-> +		     (mode_rate - prate / div)))
->  			/*
->  			 * At least 10 times better when using a higher
->  			 * frequency than requested, instead of a lower.
-> -- 
-> 2.7.4
+On Sat, Dec 28, 2019 at 08:59:19PM -0600, Samuel Holland wrote:
+> Hi all,
+>
+> I was examining the H6 BSP clock driver[1] for guidance when porting an
+> AR100 firmware[2] to the H6 SoC. I found some inconsistencies between
+> that code and the sunxi-ng driver.
+>
+> I don't have a good way to verify the first patch. Someone with an
+> oscilloscope could set the divider and check the I2C/RSB frequency.
+>
+> Patch 2 should have no functional change.
+>
+> Patch 3 was verified by benchmarking. Details are in the commit message.
+
+Applied all three, thanks
+Maxime
+
+--gk2aam5hdxft2et4
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg232gAKCRDj7w1vZxhR
+xR/OAP9JY57TmyxiCqTZ5rQ+jSsbbgBIlK0MUpFXFJ60USVATgD+LwMfTzcDLCvz
+GjShAjhcGPUCGqkJC8XOg5DyklsoFAo=
+=gy/O
+-----END PGP SIGNATURE-----
+
+--gk2aam5hdxft2et4--
+
+
+--===============0487804386762519358==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0487804386762519358==--
+
