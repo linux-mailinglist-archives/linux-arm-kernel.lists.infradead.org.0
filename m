@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEBCE12E471
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:31:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7975712E474
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Jan 2020 10:32:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mahqu5srB/WEaQu0MAcXJ2DI1swl3Zfb9X8mO1SQrWw=; b=lsS4sZQL8l3TLZD070Ppi62OX
-	pWRNuz8+RM0wcDUD4KvycsbZjqnMFHYwkuChOQlBcV9N25Qq0YmK+H59SKWqN2DQj5oeMzeb4Bfnm
-	MBaPGritTdSMLmu9m+W4DmQSN7zNcOj2lJJdRqrMpGYj0XykIxhDcWKcJmpLzwxHDBKHUR9JqSmG2
-	5Bd/oXm1y6gPDW4HpotoQPWNN0WhikkU1d5cLYCRSrhjbKeGPgTcNOXQHPdzt80JBFxRtJQUJ7t/v
-	djethFFyLLzDgH8Q3nBpehdBwAMtdj3tfKKVKuljGXPuA80X1GCRX9r01iN9Wm3qwnZp8F8YoA2Z5
-	WUkQd6LQw==;
+	 bh=iQUnmpSzamOlA1gEh8cI30lQ3/J9qyDRCyxR2aRzkyQ=; b=fME84Mj3yhIH9UhTqKt2UkYpH
+	vdS9pxlt5LBoXwnwg2R1B2QsjHM7Ifz8AnlE2V51brBC6owieICLyGj6Q6lr8lWn9wR4Xnlhqmv1U
+	3hH/5W7fFwA0DCtMp0fnn38HCoFDjkM7CmFB6TpwK2Y2B20odURhp9RG4A3dhvo0XERypuJVBiSXv
+	aZQPZS6dlYKu35Frf6f0w7aWbm+PCynJt1pAkshyLPAaafd+l4bINCjB0bJFOWRUxuZHTZbMLODqG
+	vmyT1kAiheqL5lWkv2C5LCGnJFTMyidBZ6CmKw7uON3jyQzy9ezCkLz1o6hnigN+hxdaaJhJ3KQVe
+	YEK1PBuvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imwog-0006Fx-2u; Thu, 02 Jan 2020 09:30:54 +0000
+	id 1imwpq-0006Xz-V4; Thu, 02 Jan 2020 09:32:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imwoY-0006FK-0Y
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:30:47 +0000
+ id 1imwpj-0006XL-Ey
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Jan 2020 09:32:00 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 433F7217F4;
- Thu,  2 Jan 2020 09:30:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id ADE36217F4;
+ Thu,  2 Jan 2020 09:31:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577957445;
- bh=elsGuMFot+33Av4FGSNOajGfxnc8N4DN5vUSx+tOYSU=;
+ s=default; t=1577957519;
+ bh=z7XbupEIA871TaOOa9+yiI0sdqgjfYz8rikslwugDPc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jwVoClvRVKseM3M0tfQSJuj82PWp7sxKT4AvgdaYkdQven5XJQHeeArupeJvjrs+e
- v1yzZEqg13F4KrmLs10PK4PEgy/VlNavLoQPR71yIy9nho4xnZzIxuOPyTYWU9Zyh1
- PonelYCTAQe+imirBrqBo0fSRyWc9Ehlg/l+JTR0=
-Date: Thu, 2 Jan 2020 10:30:43 +0100
+ b=ubsJsZ17xJUrhg1PKhxQTkfB5sALfgzZl8fOri0JDQjveIQDoWt3nI2j5l7jMjldx
+ v47TqhJihiPYqmgocaKNrG/HqR4EFN5/N6Fwbh6oGjztirkdCNJAOT/dIfsvo+zCSi
+ Bi1bjxYxiwUsa2sSd3AMa6fzz57A8Ct77ack0AcI=
+Date: Thu, 2 Jan 2020 10:31:56 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH] arm64: defconfig: Enable DRM_SUN6I_DSI
-Message-ID: <20200102093043.v3apgtbex3xo76cu@gilmour.lan>
-References: <20191231065508.12649-1-jagan@amarulasolutions.com>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 1/3] ARM: dts: sun8i: R40: Upgrade GICC reg size to 8K
+Message-ID: <20200102093156.wrcuqxwbfs2vmwof@gilmour.lan>
+References: <20200102012657.9278-1-andre.przywara@arm.com>
+ <20200102012657.9278-2-andre.przywara@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191231065508.12649-1-jagan@amarulasolutions.com>
+In-Reply-To: <20200102012657.9278-2-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_013046_085509_D9D7C44A 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200102_013159_519328_E7CC818B 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,48 +76,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: multipart/mixed; boundary="===============6521696934790436422=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============6240859699109046222=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6521696934790436422==
+--===============6240859699109046222==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="apso4hjgcko6pumn"
+	protocol="application/pgp-signature"; boundary="2mnyeiclhklvtj5r"
 Content-Disposition: inline
 
 
---apso4hjgcko6pumn
+--2mnyeiclhklvtj5r
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Dec 31, 2019 at 12:25:08PM +0530, Jagan Teki wrote:
-> Now, Allwiner MIPI-DSI support is available for ARM64
-> Allwinner SoC like A64. So, let's build it as a module.
+On Thu, Jan 02, 2020 at 01:26:55AM +0000, Andre Przywara wrote:
+> The GIC used in the R40 SoC is an ARM GIC-400 with virtualization support,
+> so let's advertise the full 8K region of the GICC MMIO frame to enable
+> KVM's usage of the GIC (as we do already for all other SoCs).
 >
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> Tested by running KVM on a Bananapi M2 Berry.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 
 Applied, thanks!
 Maxime
 
---apso4hjgcko6pumn
+--2mnyeiclhklvtj5r
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg24QwAKCRDj7w1vZxhR
-xQ78AQD5XsHB4uXdgbX0OqVKJf80XBy5yljIptaMn2mt0qeewAD/Vi5Nc2D2zYaZ
-xY+pPlx1L9e1Hr8cg7l2kkav57Ku3gs=
-=v0GZ
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg24jAAKCRDj7w1vZxhR
+xUQbAQClk/beo71p82R7czCIU5RsEyXUGoVfxFTJLmi4mlFOtgD9EYpUhFz6weme
+ZRkbXJRgAgmcJQqGp60CsXc/CLTcrg8=
+=whv3
 -----END PGP SIGNATURE-----
 
---apso4hjgcko6pumn--
+--2mnyeiclhklvtj5r--
 
 
---===============6521696934790436422==
+--===============6240859699109046222==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +132,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6521696934790436422==--
+--===============6240859699109046222==--
 
