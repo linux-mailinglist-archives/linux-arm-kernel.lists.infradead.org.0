@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D64A12FC66
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:24:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67DC512FC67
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:24:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=97z5hRgFm3rTsvhrWEFIL9DVzbDjGL9dn4v1MqWvpaI=; b=Ge5F2IIrpKOq6t
-	ElshIhUbYa1T9coXvTaaWpWVmar1CZRq0eSSmcQNGCdkEH82i0/8fgbYCZS8BjPJn+dARJCPkXTJC
-	yNcywbEuWR5H+YHWZ36Bw+FMGwgPG2m2AZGg+R5/3vbnFPYLhtxe9uKkdlicVqJp9iata3wWP18p3
-	1cvHSzSupLWk4Roo1oYgKEqGvr+Lo8JoSngdH1HUoDb6jMCqzw094xT7P3ccqZImIok2cJGgkH4to
-	I6WYNa2E0gWqJSyAUoNmQ7CVeby5XTPa3WKMtCleSp9F/WVNur33eeFOTRcOwqRt/71CoLrTEKpJ3
-	xGNaqbQgaywggjHCeinw==;
+	List-Owner; bh=KYCg0qGazjFlOtyeVdURWxgaGCghrTCCIIzfF9zpemU=; b=UYdNFGNxJ4izIa
+	eK0BxThMDne/hBHlo/2BBpO//mZHRM4QbUVCrLq2MWpBG8u7D8RUVPZitXX/hAB1F60+1VP3AeJtr
+	GfYnCpci0K3bS/FkekczfM3NG87nYGZNRvJiY//M9vMlJr4t+FajkUNYCHdiChc64Q6GHvnHXZsKe
+	NwrZnKSNG57l1/6sm93RhkP1x6UvnoEAbQSJLVTnbio6ECCXp3ocIsieE0KKGbiAqnWBCVobkkNPJ
+	nixy70Npc1dmNSRGwPaexPIQD5TtKsoVJLIisDOWbTGHwgECgRdNW55zfDrPRqx0ljk5+ou+FL1Mo
+	3vHYeeBYsthEXhuPwY3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inRc6-0001aI-I2; Fri, 03 Jan 2020 18:23:58 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1inRcK-0001q4-Bb; Fri, 03 Jan 2020 18:24:12 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inRb8-0000pZ-AU
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:23:00 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l24so23777013pgk.2
+ id 1inRbd-0001LJ-03
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:23:31 +0000
+Received: by mail-pg1-x544.google.com with SMTP id r11so23784694pgf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 10:22:58 -0800 (PST)
+ Fri, 03 Jan 2020 10:23:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=AX9MOoSBKU1FZCOU/Wkg5XOGCRgyYV/7nvE+KX7tI+g=;
- b=pTps/yq58rE38D9X18/0BMuFCx6WQGrrwU28+0AslsqAPwDTSRH+Xm9wXRoqNQbSUY
- l46959qkQK3xYsfrmbqzfgSO2LLWylBaEcZ1+4hX60DAhNqxaktGQ2Ke1pOuX9L0mgtq
- eRAdY1zNg9xrCHj5wOACVgmSfOP6ZYI5pdxiDMXS+zCclPkUIt2XRg5nVb0UZT0ik0jh
- 0DaYtlVckwJDvw7xKMhv6jlCnJ+H8tKa98FO5Yvi4CIVI3IBSfajDXBCycNepC9k2HDd
- Ooq+MvNvelrl9hU7eRP7D1kBILFHnVhKDe1xMJ6osy2GT5n7/r6+hasNqF2eKG8H0IF4
- pvtQ==
+ bh=cP4O5HQxWBWdNHWUBu7fjBgX89WEj3h8sDc3dazrh6U=;
+ b=nVFHRSw8rqYv6sX4aY/506NYHDPHwqwXZvGZQym2cI6u02JgpgFiwWjnz+1OT9WFdL
+ ESUtc/XxldpQq9XOA9WX/NQuJfnZg7rKvEpG4B3UAzOCiaeUEl9EFi4tWR+QtMfKftxs
+ fhHJrDwqtQuXc6XFPRnd2muXFLeaCiFkj2Qgl/UObZ6mpqhB+bJO2u+xw6i7OTBfE2Ht
+ T0Kroi9TKS+E0r4u2yReKhDvpcBmUzrfitcDtHYepCvxrREaVcEvsbV+0EqhJvc+3hvI
+ FhRENoWK0cauYirBlP5zRXbTdlnXLYE4ibhGg3Ye4fev25HY635uYs9Whoa/ebpV1Pg1
+ 5D6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=AX9MOoSBKU1FZCOU/Wkg5XOGCRgyYV/7nvE+KX7tI+g=;
- b=Xj4oErB7snu7U7z+j/f2AVIrTWdm8QAl+3yTPOP95YLMC0T1ZkdrEYhiAOChRYEyyh
- J/UDk0agu5Hh0J1aUvlyrOl8JuoMlcHIJ5ANI3yupRQoFxEBzlx6RgWPNouENNzp8426
- AMNpzORwEUvxsxta7Coaqyix7QS5gJwtz3CKDELKDS2oIDuGNOOgygxN0oaWL++6OcWf
- 2qM3gqh5PxB7GiFZbB552rg0cTwWl4YMHTNPosHDokGWeq9EjShQsUJa5mCZEroSGaQ1
- ckxt7rOv/ETF5oH4ca4UTdGPzCblE9X1BqAGJG/sf7cVo5P3vg1UBhx9onUWF4Izm2nU
- AEtA==
-X-Gm-Message-State: APjAAAW2/sl4/ElZQHod5vcAXmrTvIlBFTiCmaN7I4efib9LKXSmFUpQ
- TAUVftbUv9XNQh25mHrf+CH5yiCW
-X-Google-Smtp-Source: APXvYqyeWmJG78UlP9AXvquy8RJszg0pm0RdMw/lX07cfMd7ZPCoE1CDJdWTkFPbwv1S+mLdqtTJSA==
-X-Received: by 2002:a63:d017:: with SMTP id z23mr97782942pgf.110.1578075776979; 
- Fri, 03 Jan 2020 10:22:56 -0800 (PST)
+ bh=cP4O5HQxWBWdNHWUBu7fjBgX89WEj3h8sDc3dazrh6U=;
+ b=U3zAHA4TV8iXhtAHNhDQ02n6E+dbOoAiHkbBuS5ZWRcmXwTFmDNXl6d7YxeoXH6dGG
+ ZgGohVM+SJsV8yao1Dwt2/OP5BwIC/pKxkbLlaz3mzlIe6PisySZKmCXkIIEJzwdYtl5
+ A2aL/MKr1qqtqhsRl4i1nik4lJBahkJAlTZoTnuBJfn+aXh3YRVeEQ4H33wn8nY9a9dT
+ yGm0Rj9HA8Jf1y/x2lkkdvbeWvZJkj/jLKlxiGRH0DEPmkETg2K0V5Fhg9T3aow7H9eF
+ N6WEJougqC9TKoh5BQC5VZFurMsJEGLiN56JD+OnKcv6lv9aY9FIwdLTYUG+cVIQEqun
+ SGXQ==
+X-Gm-Message-State: APjAAAUdSGei0to+noP5R6DjKr/P3phaZouKVKkhpQVv9zcSVzDaA6vK
+ cj5Ztw+GOgNnDlR3epH/+akRnkIL
+X-Google-Smtp-Source: APXvYqxN4UbSLP8zK9l/mCrwMMQKbN6VMrU895v9J1l+ZKogL4G5P6f8GiwgrhZEzwN7j5dzjLHDFQ==
+X-Received: by 2002:a63:554c:: with SMTP id f12mr99728330pgm.23.1578075808313; 
+ Fri, 03 Jan 2020 10:23:28 -0800 (PST)
 Received: from [10.67.50.49] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id v8sm66838489pff.151.2020.01.03.10.22.55
+ by smtp.googlemail.com with ESMTPSA id o19sm16199737pjr.2.2020.01.03.10.23.26
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 03 Jan 2020 10:22:56 -0800 (PST)
-Subject: Re: [PATCH v4 01/13] phy: usb: EHCI DMA may lose a burst of DMA data
- for 7255xA0 family
+ Fri, 03 Jan 2020 10:23:27 -0800 (PST)
+Subject: Re: [PATCH v4 02/13] phy: usb: Get all drivers that use USB clks
+ using correct enable/disable
 To: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org
 References: <20200103181811.22939-1-alcooperx@gmail.com>
- <20200103181811.22939-2-alcooperx@gmail.com>
+ <20200103181811.22939-3-alcooperx@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <7f52c9eb-7cd6-db19-f67e-1d8e95621c4c@gmail.com>
-Date: Fri, 3 Jan 2020 10:22:54 -0800
+Message-ID: <4b6475e7-e6c5-4c22-935c-a8ee6e04a732@gmail.com>
+Date: Fri, 3 Jan 2020 10:23:26 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200103181811.22939-2-alcooperx@gmail.com>
+In-Reply-To: <20200103181811.22939-3-alcooperx@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_102258_463133_F5E4F853 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20200103_102329_048350_4B7730AB 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -171,18 +171,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/3/20 10:17 AM, Al Cooper wrote:
-> When the EHCI controller received a 512 byte USB packet that
-> had to be broken into 2 256 byte bursts across the SCB bus AND
-> there was a following 512 byte USB packet, the second burst of
-> data from the first packet was sometimes being lost. If the
-> burst size was changed to 128 bytes via the EBR_SCB_SIZE field
-> in the USB_CTRL_EBRIDGE register we'd see the 4th 128 byte burst
-> of the first packet being lost. This problem became much worse
-> if other threads were running that accessed memory, like a memcpy
-> test. Setting the EBR_SCB_SIZE to 512, which prevents breaking
-> the EHCI USB packet (max size of 512 bytes) into bursts, fixed
-> the problem.
+On 1/3/20 10:18 AM, Al Cooper wrote:
+> The BRCM USB Phy, ohci, ehci and xhci drivers all use the USB clocks
+> but not all drivers use the clk_prepare_enable/clk_disable_unprepare
+> versions to enable/disable the clocks. This change gets all drivers
+> using the prepare version.
 > 
 > Signed-off-by: Al Cooper <alcooperx@gmail.com>
 
