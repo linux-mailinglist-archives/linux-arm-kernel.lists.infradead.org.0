@@ -2,86 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FEB612F92B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 15:25:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 300B312F955
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 15:47:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NXCsndwPiAC3mAg+wl30sboP/P6XT377qjrgji+G+J8=; b=ImTnEFCGG6aZic
-	lVgv1rzw6WLmanSJbWBFfFJb/9gwVN7JrSXtGhFbkp84N3oEAeSOy4swymdIx6d6cP9jduLkbhM5I
-	R8dQOKwJiQU8SBfIDFtKqFBaI77Mg2uVkgcOEoBR4hF1LpkXrLcmqjhEXJeSwykKmafRtyiH6UzGz
-	GUkQMYkNKMT7tZKxeUYicbcv0u7XkTicdGq/hDZe97omv37EV8/+XVZV10CtIDx1yGzc9j5zyhW7S
-	c3ZM01ErjEdC7kk9jDMKQuhuSPA+vwkaB2PdkNgejgakAbl9pVAYPRm/ENAyQgIYPSPz1OrFdLK51
-	K7hJkF/ZW+gisppdTVZg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1DwmTocB4iqOQ+cs7Wppo50FadyLjHtFtfgTjgruhXU=; b=cpYCVaiVRXocTl
+	I2Zb20mNdkUffdvdJtRoMBV+AwfPgB1qA+heJjshlV4YXtEXFAxyTGyB8LGfyVYafiP4JO33Nqagv
+	N6E4/zlIuT9pypb2WYQ+RiNZtNPF474nmufth7OUAFW+QU+m8QJVVixuK+No9N+r5OGC7a9n/EwGL
+	W/twm4RdvDx1yt2j54iUtn1csiRanPCprbe0GqCmFa55hnv+oJVSuA9OCeLD+R8RHhBi7H5AR3FyY
+	UFpcaFVc555iwmwxaoVCydKTCoeWFRb108yZdrl0dDr+wRAAADaUNhHi3xqjuZfk95Ok5oTWupq1l
+	qSWI0ZZiiMwm3/3MIi4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inNso-0005ga-Ch; Fri, 03 Jan 2020 14:24:58 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1inOEr-0005s1-4Z; Fri, 03 Jan 2020 14:47:45 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inNsj-0005fc-9w
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 14:24:54 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so42600854wrr.1
+ id 1inOEk-0005qY-3I
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 14:47:39 +0000
+Received: by mail-wm1-x332.google.com with SMTP id p17so8832545wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 06:24:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bYev97gpHrXWD4cTObTlC4p8ry7Fm20e+8qBStccKgE=;
- b=GDM9D4o4PbDunO0UiTZRzvlOWD8xXQPVcNj72ji4rteRTGok3nKJKbt3APJknXNL2m
- kItNJhDkEISEfBHdY++LrlV+Q35N48uncWIJojH3E0jHflyPkNZwZBa8UUvoeyb8had3
- CVvJ9VVo0rDFV51OEgw17ggM6MKd82yo3/yppUIc3aV8VHVUujl+KjjKV15sSrLxfI4X
- sWB9RZreKdK5kHVPM85DzyMnZY/8nfykKq5IMwt3S938Me1qYgq5GGqCcKB5cPxPI4ch
- KNmKBpQkFBysoJAs4Gwf/Q/wUFpXJEvOSmnMpJH56DpZoKXfEFipPrVWvrIxscH2/e20
- LPNg==
+ Fri, 03 Jan 2020 06:47:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZogtiFmtlUdFfJANhkVuqF0v4foNHoiV3Uj/5OwetNM=;
+ b=VZ+t5iUu94E4FEfr9/Hf+RGeIdwyUfEVsfmjH4G3bj9DpwL3mA3pU6R6oUulZr1UmA
+ D+1/W6kNsE8KZIKJJUXx+Pa8qs2LcQtk7P5b0a1ReM8imUQ4HLu4k80+H7R1PlNKWS5N
+ BVwr75Ilu+rpTZxWcxiWxAyAnIr9RzERXQy0583TTa75hwcT2SvkU9CY85QiieIBucmm
+ xbutLOm/Lm04mujAv+lClzYV1qTxZABcyY14HuIl53A2qlWy+nPsCycUqfDySl+w20/d
+ 5mUJdOTzRmpBPd8fYm2Kxd2yus+oNQkW16ktzVFrG7VExZMjdabAYQIqdnbexQRLEXLf
+ V4zg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bYev97gpHrXWD4cTObTlC4p8ry7Fm20e+8qBStccKgE=;
- b=Hk+H3bJGPcMGDp28qCyWmReYlAARa3+8oMA3V2ZQxnyP7Ccg130REmq3TXPtht9kKi
- nDwivVSPg49Uh0h7nRovVTbMeDKMQvlRj7g2kt9T/rm9HU8ulZQ9zOavjNtUlBkGu6T0
- EX0li+JfRFCnjM+kZFiDGa4tqssgz4fx+G5yJSgOE3x69s+5zgP4Oe7UyBcWEUzbmqj3
- QLCUWYYJeLvrgQFCqM79PYENUT7nxidhWKHt+cfviem9SPNXS8YyAO0PIIk1JWfJeD0X
- iiHoTkL7h/ysZ6mUTAoyFkshr90jl1pcN30LiBTxm3pHa3GU4KHVQzlpawiG4ZK3A0gN
- Zpdg==
-X-Gm-Message-State: APjAAAUkSAISLHHmJOg/hTiVUypEkd7smzpBVVnQ51PAh0aSY7m4eMRk
- f+Z3vM7gZOPP4AA5hTBGm+TNJQ==
-X-Google-Smtp-Source: APXvYqxL3jhMkdKPNrLu2LvJpgrGgBdIz4w8yC2ATLMVXINdK6pccS5GSmwMvcuQFyuqoCukv5pzAw==
-X-Received: by 2002:adf:fe43:: with SMTP id m3mr91343474wrs.213.1578061488663; 
- Fri, 03 Jan 2020 06:24:48 -0800 (PST)
-Received: from radium.baylibre.local
- (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id x132sm10311612wmg.0.2020.01.03.06.24.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Jan 2020 06:24:47 -0800 (PST)
-From: Fabien Parent <fparent@baylibre.com>
-To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
-Subject: [PATCH] drm/mediatek: fix indentation
-Date: Fri,  3 Jan 2020 15:24:45 +0100
-Message-Id: <20200103142445.55036-1-fparent@baylibre.com>
-X-Mailer: git-send-email 2.25.0.rc0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZogtiFmtlUdFfJANhkVuqF0v4foNHoiV3Uj/5OwetNM=;
+ b=e7sTvE2MksmwHXZrxUUqBRcdpG1jJmtovJahNd6Lpi1CK8qogqXGvCb7u1EYYNLbg2
+ whfL+gtM6nli2hdZs9kajdpftd7uH3IbcUfyq60D3DD2z1F3aNm+lJdI31zCLuuHAVJ1
+ BHbSBeswjClX5dfH4nYRoF51SO/nr68RqxS89RxM/9Nr8D8Z3wEkufYYqHS+n/TLTocP
+ aj6mL+qHowvvKsY1ZCYUTjba9+au6PXekeGe+3ZnEnMmG2MY/rPd/eXu7U52aBbE6Cke
+ vFlGEJDw/36/fqgqjcFf59oN24Py4wlE1HqJsEnMU/8orWWI9ZVEDRAZOM22dlK8Yqox
+ JtMA==
+X-Gm-Message-State: APjAAAVgYCvfczwZ3lOcBHkjVhypX5nk5WKvt79LTmTC+5c/qLcUJ2cV
+ /5wKSIVvjo42s66ZwdFuCD2w4DwD5pvvAhdnJNQkxA==
+X-Google-Smtp-Source: APXvYqyMZIS9Fw6TXUzO4ysVGG0Ja6YI02WAJYB9Eu25nvu4Pzdy7/PF+YjVodHTc9ds2vSmBTLQqm+XKzgmrCBgcFY=
+X-Received: by 2002:a1c:a795:: with SMTP id q143mr19253024wme.52.1578062851976; 
+ Fri, 03 Jan 2020 06:47:31 -0800 (PST)
 MIME-Version: 1.0
+References: <CANXhq0ok2Qo1zzyX2J4TFGbst_Zn0d6tLBqt30yMEq5JOLxFeA@mail.gmail.com>
+In-Reply-To: <CANXhq0ok2Qo1zzyX2J4TFGbst_Zn0d6tLBqt30yMEq5JOLxFeA@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 3 Jan 2020 15:47:21 +0100
+Message-ID: <CAKv+Gu8dNReF-rrXnQgq6XJDfpCJ+g=A1fXzbtPpZP=b5GM1GQ@mail.gmail.com>
+Subject: Re: KASLR: about the vmalloc area for randomization kernel image
+To: Zong Li <zong.li@sifive.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_062453_349200_094FDE98 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200103_064738_333824_08A223FE 
+X-CRM114-Status: GOOD (  13.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:332 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,36 +90,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: p.zabel@pengutronix.de, Fabien Parent <fparent@baylibre.com>,
- airlied@linux.ie, matthias.bgg@gmail.com, daniel@ffwll.ch, ck.hu@mediatek.com
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix indentation in the Makefile by replacing spaces with tabs.
+On Fri, 3 Jan 2020 at 07:52, Zong Li <zong.li@sifive.com> wrote:
+>
+> Hi Ard,
+>
+> I'm working on KASLR for RISC-V, and I'm interested in what is the
+> consideration of choosing the vmalloc area on arm64. I was wondering
+> if you could give me some advice.
+>
+> There are other architectures had implemented KASLR, such as x86,
+> mips, s390 and ppc, they use the lowmem to randomize the address of
+> kernel image, it seems that only arm64 move the kernel image to
+> vmalloc area.
+>
+> I tried to understand the history and reason for using vmalloc area
+> through some discussions at the end of mail, but I still couldn't know
+> what is the reason for using vmalloc area in the beginning.
+>
+> For the randomization purpose, it seems to me that there is no
+> significant difference between using lowmem and vmalloc area. Would
+> you be willing to help to give some ideas about that? :)
+>
+> Sorry if I missed anything. Thank you very much.
+>
 
-Signed-off-by: Fabien Parent <fparent@baylibre.com>
----
- drivers/gpu/drm/mediatek/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
-index 8067a4be8311..b2b523913164 100644
---- a/drivers/gpu/drm/mediatek/Makefile
-+++ b/drivers/gpu/drm/mediatek/Makefile
-@@ -21,7 +21,7 @@ obj-$(CONFIG_DRM_MEDIATEK) += mediatek-drm.o
- mediatek-drm-hdmi-objs := mtk_cec.o \
- 			  mtk_hdmi.o \
- 			  mtk_hdmi_ddc.o \
--                          mtk_mt2701_hdmi_phy.o \
-+			  mtk_mt2701_hdmi_phy.o \
- 			  mtk_mt8173_hdmi_phy.o \
- 			  mtk_hdmi_phy.o
- 
--- 
-2.25.0.rc0
-
+Are we talking about 32-bit here? If not, what do you mean by lowmem?
 
 _______________________________________________
 linux-arm-kernel mailing list
