@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5F6812FAB1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 17:42:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7FE012FAC2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 17:47:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Hl9JTyzTWaV9vtaXiixCZQEUa8aYH5RQRwYIzBtKxXY=; b=tW9
-	F9/85bX8ABO9NBfKuCBtxyG5WnexOSO3wdOXCmfk7QJVX5A/Ij4Q07hld0NEP3VxxAvY4fV6afnid
-	0+kxLGzbFB6owdCLK0QWXwpmbIRd0bzn7ZRMOSJXYB4cWV7LEeXq5RRNH6jKoswBmXiDz8VnhrQO3
-	bxytA2OyOKZyORThaFpbM643ApVYPYmamtTdROZ9shoz69+Q28wiQR7Avt11BUx+nG4hIVNHyUj9/
-	slKfr1RRHjknUtGKZoOkttYoWOxJLH+uvZHls6f9K7eiRMM9Omna9JhvOgVze1t9lERRQS0ou3n5g
-	PEq8aNMNg76knOVudDYEuzkE36Sw0Zg==;
+	References:List-Owner; bh=3KsOVEKRNeAzBK0lQQfw1MSl8vYNVM2RbFf4rvX7wZ0=; b=DF2
+	2U3EDqZRNAHGWCSQRKUmB3xVNCmsxojxzmz0UvnABCQp6LjiHnjsJee/m0I42BtMJKWuWg7NlWBVI
+	cTuCSP4T00/yTc4DiGqRJot3XwQVs8l1syLhL5P5+BAAsUtfYdcCDVhlaYow37DdStsfEW8djVfwp
+	pvFcd7tuSNzEOo7TJeby0GUEzqB9r4hddtOmCForqlDQsNFD3aZLD5PCTtwCPmV9CvupNbb5OUNX8
+	R94HtXSmZWqnNFqnAk+J9am01W068eY0Wp1ifkxGIoLlzi0L8oUzww56bc+sx4gUgS5fU7vjfG92S
+	JAMaVnOciwrtxNMfPQ5SAl97EdYfvUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQ1g-000478-Qc; Fri, 03 Jan 2020 16:42:16 +0000
+	id 1inQ6k-0006Jo-Pa; Fri, 03 Jan 2020 16:47:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQ1Z-00046S-Ay; Fri, 03 Jan 2020 16:42:10 +0000
+ id 1inQ6b-0006Hv-Vu; Fri, 03 Jan 2020 16:47:23 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EB45B206E6;
- Fri,  3 Jan 2020 16:42:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 89CB92072C;
+ Fri,  3 Jan 2020 16:47:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578069728;
- bh=I2X9wjbrKwZTwaNS0KDtFqqXOyBgCetpHii98gM1AAM=;
+ s=default; t=1578070041;
+ bh=6X5A46t01A3B94izlLbWPVwVfTKnq8mB/NEvKSeTiYU=;
  h=From:To:Cc:Subject:Date:From;
- b=aqrGsRlS2a621b+qKkT9kA3CrJ0vUkHCKsZZgkB1nM1geNG3RJGDoLiCZT8zqrbrQ
- llKtHd1JgitrcTWJgiWv7twH24pj/UAICZ8jsT8KwBakzdZYtD0siuKnZ8bK6tjBya
- FYIFRkLblGT/5giZ3DnbMlXsVXDIE9JpgjLwhbpA=
+ b=hnURXQXIcZParjC2p7Erx4qCw7NyJeBsZWa3s9Sn5Q7mrqM0IdZE81fOQX+KDl6Em
+ IhokR6mxJL1yVTqUNuexJ9uvdTw6N2KQcS+J9Oz6K+ZwEGGmqlqlipPOx1K/tyx07r
+ F8PbFfYmNF0//KGEzifXF8wxbEdYATJsLycPp8FA=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Kyungmin Park <kyungmin.park@samsung.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
- linux-mtd@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [RFT] mtd: onenand: samsung: Fix iomem access with regular memcpy
-Date: Fri,  3 Jan 2020 17:41:58 +0100
-Message-Id: <20200103164158.4265-1-krzk@kernel.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
+Subject: [PATCH v2 1/2] phy: mediatek: Fix Kconfig indentation
+Date: Fri,  3 Jan 2020 17:47:09 +0100
+Message-Id: <20200103164710.4829-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_084209_402752_B489DE7F 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20200103_084722_051235_C267C7DD 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,54 +75,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The __iomem memory should be copied with memcpy_fromio.  This fixes
-Sparse warnings like:
+Adjust indentation from spaces to tab (+optional two spaces) as in
+coding style.
 
-    drivers/mtd/nand/onenand/samsung_mtd.c:678:40: warning: incorrect type in argument 2 (different address spaces)
-    drivers/mtd/nand/onenand/samsung_mtd.c:678:40:    expected void const *from
-    drivers/mtd/nand/onenand/samsung_mtd.c:678:40:    got void [noderef] <asn:2> *[assigned] p
-    drivers/mtd/nand/onenand/samsung_mtd.c:679:19: warning: incorrect type in assignment (different address spaces)
-    drivers/mtd/nand/onenand/samsung_mtd.c:679:19:    expected void [noderef] <asn:2> *[assigned] p
-    drivers/mtd/nand/onenand/samsung_mtd.c:679:19:    got unsigned char *
-
-Reported-by: kbuild test robot <lkp@intel.com>
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
-
-Not tested
 
 ---
- drivers/mtd/nand/onenand/samsung_mtd.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/mtd/nand/onenand/samsung_mtd.c b/drivers/mtd/nand/onenand/samsung_mtd.c
-index 4a78c0aed6dd..01899f8bdfa7 100644
---- a/drivers/mtd/nand/onenand/samsung_mtd.c
-+++ b/drivers/mtd/nand/onenand/samsung_mtd.c
-@@ -675,12 +675,12 @@ static int s5pc110_read_bufferram(struct mtd_info *mtd, int area,
- normal:
- 	if (count != mtd->writesize) {
- 		/* Copy the bufferram to memory to prevent unaligned access */
--		memcpy(this->page_buf, p, mtd->writesize);
--		p = this->page_buf + offset;
-+		memcpy_fromio(this->page_buf, p, mtd->writesize);
-+		memcpy(buffer, this->page_buf + offset, count);
-+	} else {
-+		memcpy_fromio(buffer, p, count);
- 	}
+Changes since v1:
+1. None
+---
+ drivers/phy/mediatek/Kconfig | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+index 376f5d189da0..7d19134c6b7c 100644
+--- a/drivers/phy/mediatek/Kconfig
++++ b/drivers/phy/mediatek/Kconfig
+@@ -3,12 +3,12 @@
+ # Phy drivers for Mediatek devices
+ #
+ config PHY_MTK_TPHY
+-    tristate "MediaTek T-PHY Driver"
+-    depends on ARCH_MEDIATEK && OF
+-    select GENERIC_PHY
+-    help
+-      Say 'Y' here to add support for MediaTek T-PHY driver,
+-      it supports multiple usb2.0, usb3.0 ports, PCIe and
++	tristate "MediaTek T-PHY Driver"
++	depends on ARCH_MEDIATEK && OF
++	select GENERIC_PHY
++	help
++	  Say 'Y' here to add support for MediaTek T-PHY driver,
++	  it supports multiple usb2.0, usb3.0 ports, PCIe and
+ 	  SATA, and meanwhile supports two version T-PHY which have
+ 	  different banks layout, the T-PHY with shared banks between
+ 	  multi-ports is first version, otherwise is second veriosn,
+@@ -25,10 +25,10 @@ config PHY_MTK_UFS
+ 	  specified M-PHYs.
  
--	memcpy(buffer, p, count);
--
- 	return 0;
- }
- 
+ config PHY_MTK_XSPHY
+-    tristate "MediaTek XS-PHY Driver"
+-    depends on ARCH_MEDIATEK && OF
+-    select GENERIC_PHY
+-    help
++	tristate "MediaTek XS-PHY Driver"
++	depends on ARCH_MEDIATEK && OF
++	select GENERIC_PHY
++	help
+ 	  Enable this to support the SuperSpeedPlus XS-PHY transceiver for
+ 	  USB3.1 GEN2 controllers on MediaTek chips. The driver supports
+ 	  multiple USB2.0, USB3.1 GEN2 ports.
 -- 
 2.17.1
 
