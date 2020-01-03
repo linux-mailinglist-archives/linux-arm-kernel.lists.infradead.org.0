@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAA3212F350
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:14:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3381012F34C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:13:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kHJ7Vu1KmwF8+NL8J869D7nspFp+F9ORRPktYkdSsVM=; b=H+0Wh92ENKLxdO
-	oxyzAGDVqamx7yrWsc1nsezy/WGxZARlwP4rPU6rx6gtgNmdYQ8Q+jN3KVQnUTT1QfE198vB2T1Vs
-	aBm0rmxTTW4CX7vJxEQhb+K8KZo18Ol0OBBU0PopeZPFclGjxLpav1pPyF00QOHqMeFvZ/4EbFoz+
-	Ghc6T72LkEYcdmkakFLHVz0vISel1vl6W8gKtnZJ97ZqSIaLri3ZXuIvTZXUkE6Q/26HuhBiPgPRE
-	XybAqkXVjQZtZESxjo3QytBFLeowuuhJemiVq4npnmK5yIAWIAu/IrT+TJOdVTkzmB1/WXMDnhB3B
-	jZ3usrL5VqC5dV7oHu6w==;
+	List-Owner; bh=gJBoAbhw6YIMkcLOSmeHehDWMxb0A/cnvoSI+sVhcM0=; b=TdW5QaFl0emBx1
+	i2dmbXw3ZFrZkicZDlAG3MoZ1YjYddpuacH3hsQn1wf+kihfTN6H+nfsAkRfMG423j+iU5TOyLUj8
+	3kpVH9o20HsIsw5+DfkuINGA6opeWlY11R0yxfZDdmQcv51umRTXxM4mcNvIe9rSKsqKOFwJ3pU9Z
+	nIl5cwcEzGfrLul/IKqqcopksPcKpygOP5LXrnvWio7AgXZANMI28vrlKIuuShhDOBmoRmQHjOWY3
+	LaHrFa2dYyOhMWypbNDnZflN421uLEo6HQ5BarOnm1qSz8VD27rnHFyCPlqn3bMU1UDDbKrA5w7a2
+	F7CZyTFuiJ/4ewM9jbAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inDPj-0004d3-KJ; Fri, 03 Jan 2020 03:14:15 +0000
+	id 1inDPA-0003zt-NU; Fri, 03 Jan 2020 03:13:40 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inDON-0003FF-6Q; Fri, 03 Jan 2020 03:12:52 +0000
-X-UUID: b513b87e2db142de95dbf88384154f6a-20200102
+ id 1inDOL-0003FF-FX; Fri, 03 Jan 2020 03:12:51 +0000
+X-UUID: 6e15b231707c46139703d80c4693a214-20200102
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=orKJ3lD5eoygsfmvTkj/+8hB2VHcMMOk4prxsozRjkE=; 
- b=SWhyUPug8WqlQo6ghK78ySFp+aEA/jcKuMTQCgpzfThARDUIT6ynQ/0sENIjXRCAh7PvJf9N8SUbhGTDNFR10TOD1uOE0XmguSlusr2DwsmHyVSDdEsoHQFuaIebrhODOPiPKMT8/iughEivys9AsdNbg+dnZ7bgKrBUAfKSNVs=;
-X-UUID: b513b87e2db142de95dbf88384154f6a-20200102
+ bh=zLLZC00K/D+nIAyTwOOL8PcRQJSTuzpvNAs2qK6gIqU=; 
+ b=e5Axb1Lu1fkzZnSDWGJ3BJqI20qA7G0ZTfAr7BtGg0bxb7mtxUAZQ421HzEZd+tPKw9/maSkEt81xku2CG4WRBcp7P/ua619DGtI4WA6EeND5v8lp3/Nh/ogsODVECQZOwix/LE5xH0KrsMV04ppqZEXaQ/T/gcoxYzeYIewcd8=;
+X-UUID: 6e15b231707c46139703d80c4693a214-20200102
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2083996404; Thu, 02 Jan 2020 19:12:40 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 1814206075; Thu, 02 Jan 2020 19:12:40 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 19:12:42 -0800
+ 15.0.1395.4; Thu, 2 Jan 2020 19:12:43 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Jan 2020 11:12:11 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 11:12:08 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 3 Jan 2020 11:13:05 +0800
+ Transport; Fri, 3 Jan 2020 11:13:06 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RESEND PATCH v6 02/17] arm64: dts: add display nodes for mt8183
-Date: Fri, 3 Jan 2020 11:12:13 +0800
-Message-ID: <1578021148-32413-3-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [RESEND PATCH v6 03/17] drm/mediatek: move dsi/dpi select input into
+ mtk_ddp_sel_in
+Date: Fri, 3 Jan 2020 11:12:14 +0800
+Message-ID: <1578021148-32413-4-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_191251_259273_6606197E 
-X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-CacheID: sfid-20200102_191249_523721_68410097 
+X-CRM114-Status: UNSURE (   9.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -96,132 +97,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add display nodes for mt8183
+move dsi/dpi select input into mtk_ddp_sel_in
+DPI_SEL_IN_BLS is zero, it is same with hardware default setting,
+DISP_REG_CONFIG_DPI_SEL no need set when bls connect with
+dpi0
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 98 ++++++++++++++++++++++++++++++++
- 1 file changed, 98 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 91217e4f..28beb1d 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -30,6 +30,11 @@
- 		i2c9 = &i2c9;
- 		i2c10 = &i2c10;
- 		i2c11 = &i2c11;
-+		ovl0 = &ovl0;
-+		ovl_2l0 = &ovl_2l0;
-+		ovl_2l1 = &ovl_2l1;
-+		rdma0 = &rdma0;
-+		rdma1 = &rdma1;
- 	};
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+index 39700b9..d66ce31 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+@@ -376,6 +376,9 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
+ 	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
+ 		*addr = DISP_REG_CONFIG_DSI_SEL;
+ 		value = DSI_SEL_IN_BLS;
++	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
++		*addr = DISP_REG_CONFIG_DSI_SEL;
++		value = DSI_SEL_IN_RDMA;
+ 	} else {
+ 		value = 0;
+ 	}
+@@ -393,10 +396,6 @@ static void mtk_ddp_sout_sel(struct regmap *config_regs,
+ 	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
+ 		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
+ 				BLS_TO_DPI_RDMA1_TO_DSI);
+-		regmap_write(config_regs, DISP_REG_CONFIG_DSI_SEL,
+-				DSI_SEL_IN_RDMA);
+-		regmap_write(config_regs, DISP_REG_CONFIG_DPI_SEL,
+-				DPI_SEL_IN_BLS);
+ 	}
+ }
  
- 	cpus {
-@@ -648,9 +653,102 @@
- 		mmsys: syscon@14000000 {
- 			compatible = "mediatek,mt8183-mmsys", "syscon";
- 			reg = <0 0x14000000 0 0x1000>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
- 			#clock-cells = <1>;
- 		};
- 
-+		ovl0: ovl@14008000 {
-+			compatible = "mediatek,mt8183-disp-ovl";
-+			reg = <0 0x14008000 0 0x1000>;
-+			interrupts = <GIC_SPI 225 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_OVL0>;
-+		};
-+
-+		ovl_2l0: ovl@14009000 {
-+			compatible = "mediatek,mt8183-disp-ovl-2l";
-+			reg = <0 0x14009000 0 0x1000>;
-+			interrupts = <GIC_SPI 226 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_OVL0_2L>;
-+		};
-+
-+		ovl_2l1: ovl@1400a000 {
-+			compatible = "mediatek,mt8183-disp-ovl-2l";
-+			reg = <0 0x1400a000 0 0x1000>;
-+			interrupts = <GIC_SPI 227 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_OVL1_2L>;
-+		};
-+
-+		rdma0: rdma@1400b000 {
-+			compatible = "mediatek,mt8183-disp-rdma";
-+			reg = <0 0x1400b000 0 0x1000>;
-+			interrupts = <GIC_SPI 228 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
-+			mediatek,rdma_fifo_size = <5120>;
-+		};
-+
-+		rdma1: rdma@1400c000 {
-+			compatible = "mediatek,mt8183-disp-rdma";
-+			reg = <0 0x1400c000 0 0x1000>;
-+			interrupts = <GIC_SPI 229 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
-+			mediatek,rdma_fifo_size = <2048>;
-+		};
-+
-+		color0: color@1400e000 {
-+			compatible = "mediatek,mt8183-disp-color",
-+				     "mediatek,mt8173-disp-color";
-+			reg = <0 0x1400e000 0 0x1000>;
-+			interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
-+		};
-+
-+		ccorr0: ccorr@1400f000 {
-+			compatible = "mediatek,mt8183-disp-ccorr";
-+			reg = <0 0x1400f000 0 0x1000>;
-+			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_CCORR0>;
-+		};
-+
-+		aal0: aal@14010000 {
-+			compatible = "mediatek,mt8183-disp-aal",
-+				     "mediatek,mt8173-disp-aal";
-+			reg = <0 0x14010000 0 0x1000>;
-+			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_AAL0>;
-+		};
-+
-+		gamma0: gamma@14011000 {
-+			compatible = "mediatek,mt8183-disp-gamma",
-+				     "mediatek,mt8173-disp-gamma";
-+			reg = <0 0x14011000 0 0x1000>;
-+			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_GAMMA0>;
-+		};
-+
-+		dither0: dither@14012000 {
-+			compatible = "mediatek,mt8183-disp-dither";
-+			reg = <0 0x14012000 0 0x1000>;
-+			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			clocks = <&mmsys CLK_MM_DISP_DITHER0>;
-+		};
-+
-+		mutex: mutex@14016000 {
-+			compatible = "mediatek,mt8183-disp-mutex";
-+			reg = <0 0x14016000 0 0x1000>;
-+			interrupts = <GIC_SPI 217 IRQ_TYPE_LEVEL_LOW>;
-+			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+		};
-+
- 		smi_common: smi@14019000 {
- 			compatible = "mediatek,mt8183-smi-common", "syscon";
- 			reg = <0 0x14019000 0 0x1000>;
 -- 
 1.8.1.1.dirty
 _______________________________________________
