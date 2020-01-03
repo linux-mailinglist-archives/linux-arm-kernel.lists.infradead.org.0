@@ -2,79 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E980112F6C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 11:37:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F65C12F6E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 11:52:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lqUkKQqpJpgqs+bgoGAZXFdpRK9xDTv8j9ScOTXFHdA=; b=iD6eU1ztBu3drZ
-	wPymj492FTFpZiyQWfMBn7xQTd8biypw+3iFPRBtRq96joXp6Rd60da0y84tDk2vyU9vGqp/PJF8S
-	/NP4d+JTPyWV03Z+SDlrfxXcOuDHfmn1sWimEiiX4Epu6AOYfjuYj3jl9yRQYkiQt+Gm6zhePJOGb
-	1NIUUrHIIHeuURRO1EoX6mlcV84QBqXAhNplGfJZeuGPlBk/OHe84JWuM6YLtFNhGdl/KCuWoS73x
-	g3RZ49oGZ/6CX5e/2eInqgIaJcJP290x+juIjic9yEgsYIBrWnjPPfDiRUpMxkYs3LZHJqHpA/dq8
-	6JzFq7p1XQhH8j7cNBRQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vrOwr95BewIs4/mStxr3MVWj2v7LxAyUxrWCjIC6hFY=; b=IFZ07fgdj/DUG6
+	iwfzkAfIk2TKX9x79kiNbH1RA+kUpy7M90HlvYcvMOJaN+5IixgBLuyhdifbHouUcL3W0ujEkE4p/
+	yJz96bZsiCcHWwW8GbHkXw68WiSjldNN7VCK9x8x8Uya9nN2ke2vb/q5oayCofloO+hHcpjHv+sJv
+	4aqqPSwP2jnPUi7RaNaaEUAF29+6YqRDiCM8chbBUP/5l9lElobSRQQxcVl/Hn3PxkfXnuWgysThH
+	sx6a30yI1Ato9x1V7wawXu5UTrMqXEu3e5EBnODPKEAdALuLyd8i2BvXJPWZsO6QFzRc3MBbGfsHC
+	UFdZfOrSsp/00WqP7z5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inKKb-00010S-7Y; Fri, 03 Jan 2020 10:37:25 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1inKYi-0005yz-O9; Fri, 03 Jan 2020 10:52:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inKKV-0000zq-0u
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 10:37:20 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b15so31637373lfc.4
+ id 1inKYb-0005yU-MS
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 10:51:55 +0000
+Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com
+ [209.85.221.49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2BFB224649
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 02:37:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=e1VONZKN47Aw6juCyL/A73XM5IVvw0+2i1dyfWe9MK0=;
- b=Fhl9YzW8WppJUvDeZdTMGR1XJqmcB6TalG0n7A8zpD55tcqk3ML1vD6zvcmuxMEiQS
- aT5bysK5rQU40UUINDSUm9VXpexB7r1N/CBSFppsXxncAFIyO0y2rkiWeb95HnpwU3IN
- 0OyoAH/9qybXFmig7BIO5hERgIp6aWsfDUveXBk1xf5e3kmMhvOtRrwJwpl/IEoEHiJa
- d2HaGR9FrrRj3OKs6DFpK0iYP8fizuP7vdWE0hveGhMePxt+yPI2xRhylVrBmYq5qkRk
- GTHPLMbmpnmvSWkgTOXesoO4IbicDCKbkhCuBYXkOXwcVaspOhnAevfABvK7W6xCICJc
- xsng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=e1VONZKN47Aw6juCyL/A73XM5IVvw0+2i1dyfWe9MK0=;
- b=ngLy1kP4lFjV0NlPLAMdX755o82ENnm8uqW7UiT8zMqRfq0rz2hEkPTZuPBwyGuYm+
- QKdxbsDoMzBUg1wnyy/uBxBA12IZ1BPcWx+0TRo/SFE202lGeUp+EScgoQ2vCkbgngwn
- vNfDuWcadKkYkX7x+bbxTNGjvV7k/0cSgR6U1xZ28NN+FU2GDnMqzkt58LfUP8aueEdW
- 6M8/rLSTPko5G4ltsH8iCRMg8CQC+quguHa3HzqLP610sTT4idBH8VDtYJVDVahAPNH4
- Gu92wsOTvHl1eTMTERGcVv3bWlYitR9REw+tETw4qOfa5EgEyWC0DqpHN68Cx1dLBSRN
- WHoA==
-X-Gm-Message-State: APjAAAWqGozPOXv9NpBmD083TNdmH49hK9BOqmEIjaml2wj8Wqy1miOx
- khHX4LavJMyiplDjrhr2igKjZv8x2AfRTQ==
-X-Google-Smtp-Source: APXvYqzeu11NzT4u0LYNO6/ynfbsLDH+8fwoOKEZ4tO/YtRCEUnX2yjqO7toLdDd2ZT8V37uMiM2aQ==
-X-Received: by 2002:ac2:508e:: with SMTP id f14mr46097583lfm.72.1578047832449; 
- Fri, 03 Jan 2020 02:37:12 -0800 (PST)
-Received: from jax (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
- by smtp.gmail.com with ESMTPSA id b22sm15891942lji.99.2020.01.03.02.37.11
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 Jan 2020 02:37:11 -0800 (PST)
-Date: Fri, 3 Jan 2020 11:37:10 +0100
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] optee driver fix for v5.5
-Message-ID: <20200103103710.GA3469@jax>
+ Fri,  3 Jan 2020 10:51:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578048712;
+ bh=xgCqWC9gMvYtoY+vNfhgrpAK9WwuqpgEvs1GflowvdE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=zrDCCB+ukMN6zESqhRipK1VWve6wiprPFMaZMROg7bxZgibByIKzw/fROISff30WB
+ Es9WRWSB5LHfectabqcjtDJ46vsIzVEEt/cmRYrplXtZHb+sJRZQuCJ9qzWfms8Fcu
+ jlKtrGeUDFouS0JMkCUVzMmCkRqWyyrlnKx4GizI=
+Received: by mail-wr1-f49.google.com with SMTP id c9so42021617wrw.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Jan 2020 02:51:52 -0800 (PST)
+X-Gm-Message-State: APjAAAXeCIh5ZBp2cfhcHN/8TdM41pwMjtnhDXqdvgkrRuiaBy0h0T9w
+ sMcPkx4VcowgcUI9um7iuDaA2BjatkPDZZUn5Sg=
+X-Google-Smtp-Source: APXvYqxr9XPHqQfkTDnCjdV5SYfOp0JHGElgFTkLIVUUHmsexTwkpsAxHVcuWUJ2D7X9tCsBgct67+zsdoterXKR1nY=
+X-Received: by 2002:adf:cf12:: with SMTP id o18mr88985838wrj.361.1578048710506; 
+ Fri, 03 Jan 2020 02:51:50 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191219084332.944123-1-maxime@cerno.tech>
+ <CAGb2v643z-GwEgOV_OS96ESihDgGNOwp2s7eyJr68QFyPNqd_Q@mail.gmail.com>
+ <20191220080310.w2xtgzxend5bmv2q@gilmour.lan>
+ <CAGb2v65+zpc1_0K2Co4uOUrfshzmVCf1Rc6Ob2YtmdmdsNTAvQ@mail.gmail.com>
+ <20200102120222.yl7vlposk4b7hbu7@gilmour.lan>
+ <CAGb2v66pixivryxffXWceLknFLErRJH3BQgtQUQSeyQq-FO=ng@mail.gmail.com>
+ <20200102152641.kgckxlcq7u7xjjrl@gilmour.lan>
+In-Reply-To: <20200102152641.kgckxlcq7u7xjjrl@gilmour.lan>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Fri, 3 Jan 2020 18:51:38 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65NBnua8V1r8OD6V67NtyHmnq0TUTTutJ+7MthrWDYjLQ@mail.gmail.com>
+Message-ID: <CAGb2v65NBnua8V1r8OD6V67NtyHmnq0TUTTutJ+7MthrWDYjLQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: usb: Convert Allwinner A80 USB PHY
+ controller to a schema
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_023719_069245_1BF016EE 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200103_025153_775574_99D05D2F 
+X-CRM114-Status: GOOD (  31.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,43 +92,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+On Thu, Jan 2, 2020 at 11:26 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> On Thu, Jan 02, 2020 at 08:31:40PM +0800, Chen-Yu Tsai wrote:
+> > On Thu, Jan 2, 2020 at 8:02 PM Maxime Ripard <maxime@cerno.tech> wrote:
+> > >
+> > > Hi,
+> > >
+> > > On Fri, Dec 20, 2019 at 04:10:03PM +0800, Chen-Yu Tsai wrote:
+> > > > On Fri, Dec 20, 2019 at 4:03 PM Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > >
+> > > > > Hi,
+> > > > >
+> > > > > On Thu, Dec 19, 2019 at 11:24:52PM +0800, Chen-Yu Tsai wrote:
+> > > > > > On Thu, Dec 19, 2019 at 4:43 PM Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > > > >
+> > > > > > > The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
+> > > > > > > with a matching Device Tree binding.
+> > > > > > >
+> > > > > > > Now that we have the DT validation in place, let's convert the device tree
+> > > > > > > bindings for that controller over to a YAML schemas.
+> > > > > > >
+> > > > > > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > > > > > > ---
+> > > > > > >  .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
+> > > > > > >  .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
+> > > > > > >  2 files changed, 135 insertions(+), 37 deletions(-)
+> > > > > > >  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> > > > > > >  delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+> > > > > > >
+> > > > > > > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> > > > > > > new file mode 100644
+> > > > > > > index 000000000000..ded7d6f0a119
+> > > > > > > --- /dev/null
+> > > > > > > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> > > > > > > @@ -0,0 +1,135 @@
+> > > > > > > +# SPDX-License-Identifier: GPL-2.0
+> > > > > > > +%YAML 1.2
+> > > > > > > +---
+> > > > > > > +$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
+> > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > > > > +
+> > > > > > > +title: Allwinner A80 USB PHY Device Tree Bindings
+> > > > > > > +
+> > > > > > > +maintainers:
+> > > > > > > +  - Chen-Yu Tsai <wens@csie.org>
+> > > > > > > +  - Maxime Ripard <mripard@kernel.org>
+> > > > > > > +
+> > > > > > > +properties:
+> > > > > > > +  "#phy-cells":
+> > > > > > > +    const: 0
+> > > > > > > +
+> > > > > > > +  compatible:
+> > > > > > > +    const: allwinner,sun9i-a80-usb-phy
+> > > > > > > +
+> > > > > > > +  reg:
+> > > > > > > +    maxItems: 1
+> > > > > > > +
+> > > > > > > +  clocks:
+> > > > > > > +    anyOf:
+> > > > > > > +      - description: Main PHY Clock
+> > > > > > > +
+> > > > > > > +      - items:
+> > > > > > > +          - description: Main PHY clock
+> > > > > > > +          - description: HSIC 12MHz clock
+> > > > > > > +          - description: HSIC 480MHz clock
+> > > > > > > +
+> > > > > > > +  clock-names:
+> > > > > > > +    oneOf:
+> > > > > > > +      - const: phy
+> > > > > > > +
+> > > > > > > +      - items:
+> > > > > > > +          - const: phy
+> > > > > > > +          - const: hsic_12M
+> > > > > > > +          - const: hsic_480M
+> > > > > > > +
+> > > > > > > +  resets:
+> > > > > > > +    anyOf:
+> > > > > > > +      - description: Normal USB PHY reset
+> > > > > > > +
+> > > > > > > +      - items:
+> > > > > > > +          - description: Normal USB PHY reset
+> > > > > > > +          - description: HSIC Reset
+> > > > > > > +
+> > > > > > > +  reset-names:
+> > > > > > > +    oneOf:
+> > > > > > > +      - const: phy
+> > > > > > > +
+> > > > > > > +      - items:
+> > > > > > > +          - const: phy
+> > > > > > > +          - const: hsic
+> > > > > > > +
+> > > > > > > +  phy_type:
+> > > > > > > +    const: hsic
+> > > > > > > +    description:
+> > > > > > > +      When absent, the PHY type will be assumed to be normal USB.
+> > > > > > > +
+> > > > > > > +  phy-supply:
+> > > > > > > +    description:
+> > > > > > > +      Regulator that powers VBUS
+> > > > > > > +
+> > > > > > > +required:
+> > > > > > > +  - "#phy-cells"
+> > > > > > > +  - compatible
+> > > > > > > +  - reg
+> > > > > > > +  - clocks
+> > > > > > > +  - clock-names
+> > > > > > > +  - resets
+> > > > > > > +  - reset-names
+> > > > > > > +
+> > > > > > > +additionalProperties: false
+> > > > > > > +
+> > > > > > > +if:
+> > > > > > > +  properties:
+> > > > > > > +    phy_type:
+> > > > > > > +      const: hsic
+> > > > > > > +
+> > > > > > > +  required:
+> > > > > > > +    - phy_type
+> > > > > > > +
+> > > > > > > +then:
+> > > > > > > +  properties:
+> > > > > > > +    clocks:
+> > > > > > > +      maxItems: 3
+> > > > > > > +
+> > > > > > > +    clock-names:
+> > > > > > > +      maxItems: 3
+> > > > > > > +
+> > > > > > > +    resets:
+> > > > > > > +      maxItems: 2
+> > > > > > > +
+> > > > > > > +    reset-names:
+> > > > > > > +      maxItems: 2
+> > > > > >
+> > > > > > So this is slightly incorrect. If phy_type == "hsic", then the
+> > > > > > "phy" clock and reset should not be needed. I say should because
+> > > > > > no boards actually came with HSIC implemented. The A80 Optimus
+> > > > > > board had the HSIC lines on one of the GPIO headers, but I never
+> > > > > > had any HSIC chips lol.
+> > > > >
+> > > > > This isn't what the previous binding was saying though :/
+> > > >
+> > > > From the original binding:
+> > > >
+> > > > - clock-names : depending on the "phy_type" property,
+> > > >   * "phy" for normal USB
+> > > >   * "hsic_480M", "hsic_12M" for HSIC
+> > > > - resets : a list of phandle + reset specifier pairs
+> > > > - reset-names : depending on the "phy_type" property,
+> > > >   * "phy" for normal USB
+> > > >   * "hsic" for HSIC
+> > > >
+> > > > It is recommended to list all clocks and resets available.
+> > > > The driver will only use those matching the phy_type.
+> > >
+> > > I'm not quite sure how we want to fix this then, or even what there's
+> > > to fix.
+> > >
+> > > The previous binding is saying that we need either phy or hsic, and
+> > > that we should ideally set both. The DT are following that
+> > > recommendation, and we have either one item for the clocks (phy), or
+> > > three (phy + 2 HSIC clocks). resets is in a similar situation.
+> > >
+> > > The binding allows to have either one or three, and enforce that in
+> > > HSIC we have three (but leaves the option open to have either 1 or 3
+> > > in the normal phy type).
+> > >
+> > > As far as I can see, we cover what the binding was saying. Am I
+> > > missing something?
+> >
+> > I guess you're right. Lets just keep why you've done already.
+> > Sorry for the noise.
+>
+> Is that a Reviewed-by ? :)
 
-Please pull this OP-TEE driver fix for kernel allocated dynamic shared
-memory.
+Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 
-Thanks,
-Jens
-
-The following changes since commit d1eef1c619749b2a57e514a3fa67d9a516ffa919:
-
-  Linux 5.5-rc2 (2019-12-15 15:16:08 -0800)
-
-are available in the Git repository at:
-
-  git://git.linaro.org:/people/jens.wiklander/linux-tee.git tags/tee-optee-fix-for-5.5
-
-for you to fetch changes up to 5a769f6ff439cedc547395a6dc78faa26108f741:
-
-  optee: Fix multi page dynamic shm pool alloc (2020-01-03 11:21:12 +0100)
-
-----------------------------------------------------------------
-Fix OP-TEE multi page dynamic shm pool alloc
-
-----------------------------------------------------------------
-Sumit Garg (1):
-      optee: Fix multi page dynamic shm pool alloc
-
- drivers/tee/optee/shm_pool.c | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+:)
 
 _______________________________________________
 linux-arm-kernel mailing list
