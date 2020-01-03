@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01BC712F373
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:19:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED6F112F37B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:20:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=16YYrNbk9/s5ev+4I69KI7Q548IMIGv6edSrNhXvhlQ=; b=RdbFDd5u6i5Cxn
-	DZrktRyaE+MgSG/J4PYTSZc7X1HQSKb5ZgEGBb3snnVkKjy0GHXZpcZLWlUfMz0R4F/SjYnhzDdeH
-	ARxUdtw626Evvs4qAOMfd1+7ZgHySondvkOMqI9pkCoS9T/mCBmbqgrHCcb4ckEh5X0vD985yQ+uJ
-	+eV5s1eitDXtvlF7svxRMwoZ9gMCO2Ogef0be/CVbkDY0yGZgIfXnnWllyP0XthHNWGcqDugeVoy5
-	u8+QEXuMsmMDn2Z2o6FaFg+NJrSFVLADHwXfW8gCk8U5oTLWJr63hAJ/On9tB1YNOfzhUMwZ6tAM+
-	3LFCDKfMYhsZiZbF/XqQ==;
+	List-Owner; bh=ZUEUO8jKl5g4irrECZqutcD1dFill/LSdj6r8epXkvg=; b=YIAFJ0uSPjrcaR
+	AdcEuYw7Lff5odU/XWz+nhhVik2PyaKjfQ5HFGJqbitxu/ilYgIlt3ORiIibvClCZqbGmH3hKkTyy
+	4xFSb+U2NiATTCFqxeYoegKrRGY5KwGKX5hs/VE1mbb1/Fo/rL3vmv9m+pk8NNzzB62sBSIVR8ZVD
+	6zrva2qniPJbj8T1ARi86J4f1Qzuzh+gX80ARq972/pJFW0TgNTPh3vjNBcOQj8WXgr72m/CSzajN
+	DtthJOCPAJ+pCo/r1zbPJZoYqVS12gVYj7DhhoEgbXGdxOJq/JL9qqCRraGBcxTZDXoXgImZ/vIgk
+	TLWqgtwTLKhMmhVXaHsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inDUv-0007hp-SJ; Fri, 03 Jan 2020 03:19:37 +0000
+	id 1inDVp-0001GC-S1; Fri, 03 Jan 2020 03:20:33 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inDUP-0007LZ-MA; Fri, 03 Jan 2020 03:19:06 +0000
-X-UUID: 88a67dd797164d8f88920641a6025658-20200102
+ id 1inDUR-0007LI-Dd; Fri, 03 Jan 2020 03:19:09 +0000
+X-UUID: 0923d962ae9e425ab641fab02efd4afb-20200102
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=AZ8/447VJNbbd8DAVi6I6/qkJI1QbjXzazXWfml24wA=; 
- b=kw1QRWG+b7BUyRMkrnFI617iNybnp05vhkvsHNqCxnhCLlK2Hhd0tHS1NQagyEea6y41iqVEhT2VpdmKkACNWAcdqZ/wIqrcPCIzExx/Z38r5mec7n+8QLSWH6Xq9IMjOGrXQMc3Hy7yN0oS5WRiuXCW2WAc/HIqZVtY5e4AkhA=;
-X-UUID: 88a67dd797164d8f88920641a6025658-20200102
+ bh=67ujoi8pVZStwDq+QonCDgFrIUKmjVIzemDDNIFfOI8=; 
+ b=NnKCtN9/e+SGTcXSCJ5IY82AcBZAL5NRKLm/CPSm24ADAw2MEnK3FzqeRgUFcKb3FZbsS5pmcSmLABwMWi8oFkE31rvtSBgMSORRoR+fFlMVuzdz3zw6SwPkTbKpZVFhUFHVgR8H+PmvvCFoUXPymHm+33sAdFKdYey6yH1M5f0=;
+X-UUID: 0923d962ae9e425ab641fab02efd4afb-20200102
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 106196390; Thu, 02 Jan 2020 19:19:01 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 1260528049; Thu, 02 Jan 2020 19:19:01 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 19:13:04 -0800
+ 15.0.1395.4; Thu, 2 Jan 2020 19:13:05 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Jan 2020 11:12:13 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 11:12:10 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 3 Jan 2020 11:13:07 +0800
+ Transport; Fri, 3 Jan 2020 11:13:08 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RESEND PATCH v6 04/17] drm/mediatek: make sout select function
- format same with select input
-Date: Fri, 3 Jan 2020 11:12:15 +0800
-Message-ID: <1578021148-32413-5-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [RESEND PATCH v6 05/17] drm/mediatek: add mmsys private data for ddp
+ path config
+Date: Fri, 3 Jan 2020 11:12:16 +0800
+Message-ID: <1578021148-32413-6-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_191905_724114_58173B59 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20200102_191907_467837_857BBBF4 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,60 +96,235 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-there will be more sout case in the future,
-make the sout function format same mtk_ddp_sel_in
+This patch add mmsys private data for ddp path config
+all these register offset and value will be different in future SOC
+add these define into mmsys private data
+	u32 ovl0_mout_en;
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 24 ++++++++++++++++--------
- 1 file changed, 16 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  4 ++++
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c  | 37 ++++++++++++++++++++++++---------
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.h  |  6 ++++++
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c  |  3 +++
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  3 +++
+ 5 files changed, 43 insertions(+), 10 deletions(-)
 
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index e47cf84..9aacbcf 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -44,6 +44,7 @@ struct mtk_drm_crtc {
+ 	bool				pending_planes;
+ 
+ 	struct regmap			*config_regs;
++	const struct mtk_mmsys_reg_data *mmsys_reg_data;
+ 	struct mtk_disp_mutex		*mutex;
+ 	unsigned int			ddp_comp_nr;
+ 	struct mtk_ddp_comp		**ddp_comp;
+@@ -283,6 +284,7 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 	DRM_DEBUG_DRIVER("mediatek_ddp_ddp_path_setup\n");
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
+ 		mtk_ddp_add_comp_to_path(mtk_crtc->config_regs,
++					 mtk_crtc->mmsys_reg_data,
+ 					 mtk_crtc->ddp_comp[i]->id,
+ 					 mtk_crtc->ddp_comp[i + 1]->id);
+ 		mtk_disp_mutex_add_comp(mtk_crtc->mutex,
+@@ -340,6 +342,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ 	mtk_disp_mutex_disable(mtk_crtc->mutex);
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
+ 		mtk_ddp_remove_comp_from_path(mtk_crtc->config_regs,
++					      mtk_crtc->mmsys_reg_data,
+ 					      mtk_crtc->ddp_comp[i]->id,
+ 					      mtk_crtc->ddp_comp[i + 1]->id);
+ 		mtk_disp_mutex_remove_comp(mtk_crtc->mutex,
+@@ -649,6 +652,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 		return -ENOMEM;
+ 
+ 	mtk_crtc->config_regs = priv->config_regs;
++	mtk_crtc->mmsys_reg_data = priv->data->reg_data;
+ 	mtk_crtc->ddp_comp_nr = path_len;
+ 	mtk_crtc->ddp_comp = devm_kmalloc_array(dev, mtk_crtc->ddp_comp_nr,
+ 						sizeof(*mtk_crtc->ddp_comp),
 diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-index d66ce31..ae08fc4 100644
+index ae08fc4..b279204 100644
 --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
 +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-@@ -386,17 +386,23 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
+@@ -168,6 +168,10 @@ struct mtk_ddp {
+ 	const struct mtk_ddp_data	*data;
+ };
+ 
++struct mtk_mmsys_reg_data {
++	u32 ovl0_mout_en;
++};
++
+ static const unsigned int mt2701_mutex_mod[DDP_COMPONENT_ID_MAX] = {
+ 	[DDP_COMPONENT_BLS] = MT2701_MUTEX_MOD_DISP_BLS,
+ 	[DDP_COMPONENT_COLOR0] = MT2701_MUTEX_MOD_DISP_COLOR,
+@@ -246,17 +250,26 @@ struct mtk_ddp {
+ 	.mutex_sof_reg = MT2701_DISP_MUTEX0_SOF0,
+ };
+ 
+-static unsigned int mtk_ddp_mout_en(enum mtk_ddp_comp_id cur,
++const struct mtk_mmsys_reg_data mt2701_mmsys_reg_data = {
++	.ovl0_mout_en = DISP_REG_CONFIG_DISP_OVL_MOUT_EN,
++};
++
++const struct mtk_mmsys_reg_data mt8173_mmsys_reg_data = {
++	.ovl0_mout_en = DISP_REG_CONFIG_DISP_OVL0_MOUT_EN,
++};
++
++static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
++				    enum mtk_ddp_comp_id cur,
+ 				    enum mtk_ddp_comp_id next,
+ 				    unsigned int *addr)
+ {
+ 	unsigned int value;
+ 
+ 	if (cur == DDP_COMPONENT_OVL0 && next == DDP_COMPONENT_COLOR0) {
+-		*addr = DISP_REG_CONFIG_DISP_OVL0_MOUT_EN;
++		*addr = data->ovl0_mout_en;
+ 		value = OVL0_MOUT_EN_COLOR0;
+ 	} else if (cur == DDP_COMPONENT_OVL0 && next == DDP_COMPONENT_RDMA0) {
+-		*addr = DISP_REG_CONFIG_DISP_OVL_MOUT_EN;
++		*addr = data->ovl0_mout_en;
+ 		value = OVL_MOUT_EN_RDMA;
+ 	} else if (cur == DDP_COMPONENT_OD0 && next == DDP_COMPONENT_RDMA0) {
+ 		*addr = DISP_REG_CONFIG_DISP_OD_MOUT_EN;
+@@ -325,7 +338,8 @@ static unsigned int mtk_ddp_mout_en(enum mtk_ddp_comp_id cur,
  	return value;
  }
  
--static void mtk_ddp_sout_sel(struct regmap *config_regs,
--			     enum mtk_ddp_comp_id cur,
--			     enum mtk_ddp_comp_id next)
-+static unsigned int mtk_ddp_sout_sel(enum mtk_ddp_comp_id cur,
-+				     enum mtk_ddp_comp_id next,
-+				     unsigned int *addr)
+-static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
++static unsigned int mtk_ddp_sel_in(const struct mtk_mmsys_reg_data *data,
++				   enum mtk_ddp_comp_id cur,
+ 				   enum mtk_ddp_comp_id next,
+ 				   unsigned int *addr)
  {
-+	unsigned int value;
-+
- 	if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
--		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
--				BLS_TO_DSI_RDMA1_TO_DPI1);
-+		*addr = DISP_REG_CONFIG_OUT_SEL;
-+		value = BLS_TO_DSI_RDMA1_TO_DPI1;
- 	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
--		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
--				BLS_TO_DPI_RDMA1_TO_DSI);
-+		*addr = DISP_REG_CONFIG_OUT_SEL;
-+		value = BLS_TO_DPI_RDMA1_TO_DSI;
-+	} else {
-+		value = 0;
- 	}
-+
-+	return value;
+@@ -386,7 +400,8 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
+ 	return value;
+ }
+ 
+-static unsigned int mtk_ddp_sout_sel(enum mtk_ddp_comp_id cur,
++static unsigned int mtk_ddp_sout_sel(const struct mtk_mmsys_reg_data *data,
++				     enum mtk_ddp_comp_id cur,
+ 				     enum mtk_ddp_comp_id next,
+ 				     unsigned int *addr)
+ {
+@@ -406,35 +421,37 @@ static unsigned int mtk_ddp_sout_sel(enum mtk_ddp_comp_id cur,
  }
  
  void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
-@@ -409,7 +415,9 @@ void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
++			      const struct mtk_mmsys_reg_data *reg_data,
+ 			      enum mtk_ddp_comp_id cur,
+ 			      enum mtk_ddp_comp_id next)
+ {
+ 	unsigned int addr, value;
+ 
+-	value = mtk_ddp_mout_en(cur, next, &addr);
++	value = mtk_ddp_mout_en(reg_data, cur, next, &addr);
  	if (value)
  		regmap_update_bits(config_regs, addr, value, value);
  
--	mtk_ddp_sout_sel(config_regs, cur, next);
-+	value = mtk_ddp_sout_sel(cur, next, &addr);
-+	if (value)
-+		regmap_update_bits(config_regs, addr, value, value);
- 
- 	value = mtk_ddp_sel_in(cur, next, &addr);
+-	value = mtk_ddp_sout_sel(cur, next, &addr);
++	value = mtk_ddp_sout_sel(reg_data, cur, next, &addr);
  	if (value)
+ 		regmap_update_bits(config_regs, addr, value, value);
+ 
+-	value = mtk_ddp_sel_in(cur, next, &addr);
++	value = mtk_ddp_sel_in(reg_data, cur, next, &addr);
+ 	if (value)
+ 		regmap_update_bits(config_regs, addr, value, value);
+ }
+ 
+ void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
++				   const struct mtk_mmsys_reg_data *reg_data,
+ 				   enum mtk_ddp_comp_id cur,
+ 				   enum mtk_ddp_comp_id next)
+ {
+ 	unsigned int addr, value;
+ 
+-	value = mtk_ddp_mout_en(cur, next, &addr);
++	value = mtk_ddp_mout_en(reg_data, cur, next, &addr);
+ 	if (value)
+ 		regmap_update_bits(config_regs, addr, value, 0);
+ 
+-	value = mtk_ddp_sel_in(cur, next, &addr);
++	value = mtk_ddp_sel_in(reg_data, cur, next, &addr);
+ 	if (value)
+ 		regmap_update_bits(config_regs, addr, value, 0);
+ }
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+index 01ff8b6..75fa56e 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+@@ -11,11 +11,17 @@
+ struct regmap;
+ struct device;
+ struct mtk_disp_mutex;
++struct mtk_mmsys_reg_data;
++
++extern const struct mtk_mmsys_reg_data mt2701_mmsys_reg_data;
++extern const struct mtk_mmsys_reg_data mt8173_mmsys_reg_data;
+ 
+ void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
++			      const struct mtk_mmsys_reg_data *reg_data,
+ 			      enum mtk_ddp_comp_id cur,
+ 			      enum mtk_ddp_comp_id next);
+ void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
++				   const struct mtk_mmsys_reg_data *reg_data,
+ 				   enum mtk_ddp_comp_id cur,
+ 				   enum mtk_ddp_comp_id next);
+ 
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index f69af42..e3293cf8 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -185,6 +185,7 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	.main_len = ARRAY_SIZE(mt2701_mtk_ddp_main),
+ 	.ext_path = mt2701_mtk_ddp_ext,
+ 	.ext_len = ARRAY_SIZE(mt2701_mtk_ddp_ext),
++	.reg_data = &mt2701_mmsys_reg_data,
+ 	.shadow_register = true,
+ 	.clk_drv_name = "clk-mt2701-mm",
+ };
+@@ -196,6 +197,7 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	.ext_len = ARRAY_SIZE(mt2712_mtk_ddp_ext),
+ 	.third_path = mt2712_mtk_ddp_third,
+ 	.third_len = ARRAY_SIZE(mt2712_mtk_ddp_third),
++	.reg_data = &mt8173_mmsys_reg_data,
+ 	.clk_drv_name = "clk-mt2712-mm",
+ };
+ 
+@@ -204,6 +206,7 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	.main_len = ARRAY_SIZE(mt8173_mtk_ddp_main),
+ 	.ext_path = mt8173_mtk_ddp_ext,
+ 	.ext_len = ARRAY_SIZE(mt8173_mtk_ddp_ext),
++	.reg_data = &mt8173_mmsys_reg_data,
+ 	.clk_drv_name = "clk-mt8173-mm",
+ };
+ 
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+index 8fe9136..9d87441 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+@@ -7,6 +7,7 @@
+ #define MTK_DRM_DRV_H
+ 
+ #include <linux/io.h>
++#include "mtk_drm_ddp.h"
+ #include "mtk_drm_ddp_comp.h"
+ 
+ #define MAX_CRTC	3
+@@ -28,6 +29,8 @@ struct mtk_mmsys_driver_data {
+ 	const enum mtk_ddp_comp_id *third_path;
+ 	unsigned int third_len;
+ 
++	const struct mtk_mmsys_reg_data *reg_data;
++
+ 	bool shadow_register;
+ 	const char *clk_drv_name;
+ };
 -- 
 1.8.1.1.dirty
 _______________________________________________
