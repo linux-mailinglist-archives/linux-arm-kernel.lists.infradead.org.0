@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A379812F9BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 16:28:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F23CE12F9BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 16:28:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8nIsAsnxWRusMUUwheB9ICAjdaGjb4lcHuiNRqqDUk=; b=WQiFD9yE7I1L4x
-	ZQrWj4fPoLnZ5V0DetWElKXwtwMfrU8AO7B4iEIO0X8SOzxiFdM3Xo8+fYCbABfP1Thu9fKULufVA
-	RLBBzY7E4kzGsgKMt4Iv+8ICdvvjhO9DpsC1wGbzfpgZFPUDbeK6dw2tVQMpb3bheJEpQcDTVtqQX
-	Xxcfzg+C1suhi9qtErB+UYl7nhh8v+cMbyVDHqXcC3mM/XEDp1Kc83+flnKUIAlPhxvo+TSTfxyMY
-	1w1Nbj8M225RO3+hG+/8x5a8Rl6tWdJPKRHLMjBP+BGyIdUBFYYL8l7MNWgOC039oJxID3JSlkUOL
-	mICVITvweTr/ZZkFfYYQ==;
+	List-Owner; bh=yncyXg6SUGN5lBcJL+lfIsYBkZdJxZ8s+MdNRhUrm3g=; b=UBbnhhulfr057C
+	Lf3kR8l2p297H3FiD8tAfbcHJmSPJYWrkoAE37sz9J08OpM8v8qI9hRacyCc9lg8Al3/9/9vXshi6
+	/sOyZa2kmf1jHPd59OTg0zu4aczS1o8twEKSpXqdwfHxdUrqvhfHy1loCPEdqA8r4+gRlc7yEUHUC
+	IBDbqOl6ah/0R5mv+KJ1zyVVwceg3RGaBEyDXrVmo/mtmj8qMcxcIted0rxY1s/ZpocLl6yu+08x/
+	But6GRvu9Od91ObuXUJFFCvu2do8VhssWtGUjhdpyLbRSB0BwWYBt0TjzDKyvb3+f/QQzNmsaqJV2
+	oKgVlOt4AJzNjKYZFtTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inOs5-0004Gx-9U; Fri, 03 Jan 2020 15:28:17 +0000
+	id 1inOsI-0004Nz-7V; Fri, 03 Jan 2020 15:28:30 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inOrw-0004FL-Gi
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 15:28:10 +0000
+ id 1inOry-0004Fu-J4
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 15:28:12 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 493F99DF9;
- Fri,  3 Jan 2020 10:28:07 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Fri, 03 Jan 2020 10:28:07 -0500
+ by mailnew.nyi.internal (Postfix) with ESMTP id E6B639DF0;
+ Fri,  3 Jan 2020 10:28:08 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 03 Jan 2020 10:28:08 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=OGv2PjtJHB8QM
- vPH8CaJPwpmPo7SxAhtUjW/yzWRHQc=; b=Nm5sFV8I15oYFqtoratwPfV22nBjN
- ds0SzzLoApRjDm6++KZyXwNa8Q78uL0S4phwRqh/mpKY2u/MW2Gw8VDbJIDs4vsj
- pZf3PFOYtM3lH+9/MP6xxyW2nP3w+nmBNk3/RWwybKCkMIOXDLSY6o+RwtueSJXO
- ru2QCQ8xqKpqaM01qxBZ13pnc3B+FjwV4ndAgJiK+qeDD0DecgVgJE7v96Q1uLAq
- BDUZKrXKCAULTYcuc3qZ7XkI5L07jfdNlsebaHV6z6djNVNMpBGVyQuA2Haxl1Ec
- foo7ciMO6Rl3X1uomzGGqj7yADszRpHiPinejV7oVowwlsxOtSw+m1pzw==
+ :mime-version:content-transfer-encoding; s=fm1; bh=2eZ1TIis3mooB
+ V9Ss/MCpOTcREQeBYoHRaeqEzOlIRM=; b=RPwcJsmf2okewSa9Mg7Pr09AhPhad
+ txed7tEEYkfHCqMcVoPPqWMaAEMaT48OkFx3lazIQ7ACtfhsk32u0rSWotPT5Y/O
+ TM+0+Q1LQ/q+l8z+o2UbWfcU1jrwl93OlSvRd7FTHJBKAyI9N1TQiYi4oswm8wip
+ bSmEnCaTpqYxA8h64it32GF7bJe9qhPprhTzmPn/jKc+3oOTiDbr2Vuu7XN9BI1k
+ ZluDWLJioVybmWTXJfIsD/nhaadwe6GzqL1J7RCeCnkOWfqx2FYFK9IuRghGPMus
+ N72hJBF58/nh9MB+JJXAbzPVe+NLbv3ryWlzH+KDv0Zn0tIVfDaYiqDXA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=OGv2PjtJHB8QMvPH8CaJPwpmPo7SxAhtUjW/yzWRHQc=; b=Lj46+M47
- I4Q5ngc4j+jwGLthQH6ebM6XbVRGYfbj1V9UYdSfg7nTyvZrdrn/U/hybDrbxajC
- rncLvdodK9y3v4fpcnW+l0Nznzt1m3PjQ2ZhRueenioIyZIqAIhcMpOjHNS6IIt1
- YCGnk7g8Vn1obmwQcOADxXI3t76xCIxTjYgLb7Ft3Ph2SoGY+bN/X0vf11xwjj7Y
- ukZtv+XyYjIKBNqG2lveMsaVZfXnWAOPDaLGjxP1cjLW5Zpg8/KEANBHlX0/IZf3
- b7EI/FqWT18YVr8ftKPKYkO1/AgXtHvkWP881VfhnFoqw5L3OxetZZSYl/zAUyvt
- mrtL/N4fTTlJ8Q==
-X-ME-Sender: <xms:h10PXrJZIry1lcBbeP279LAXepFGOKBr0zxVjmQohBAnQwpLlc5jmQ>
+ fm1; bh=2eZ1TIis3mooBV9Ss/MCpOTcREQeBYoHRaeqEzOlIRM=; b=f0LikRLS
+ kF3yMyyl9/lblrE/gJ81hwfaK6EpEpgIOOwjsvAVfgyQKAdPyQB+dRuOWVKaHKBo
+ hLme6YmUrJ4z1FUTlsN5Tmjo8WuJXDT6q9sm7hUFvvIC6R0UQ0x/4PsgK7eJayhm
+ 5gCZcoxkoJLNorCCOGF8mUoMiQEkzmobVqF75AEebx0+8ZDPeT7QZberQ0LFbpXt
+ EiXTvTSvI0ciGlKoBLCacewetNoAhcjcfPrngxhqs/zlFx+DQx/yc+9/Iaftkw7p
+ czVt8e3aVdA8MHJwi+fPGB5cRZDZFRQX5UrHqvtC9ARKcsfY7IEQRumSUlW0Q1D+
+ /+Rv1Hd0yWLyAQ==
+X-ME-Sender: <xms:iF0PXjVSDIN6LpZwg6dZtz4FpeoqnnaJ6vAssaeJujhNv2fMKqY5FQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdegfedgjeejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,29 +56,29 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdegfedgjeejucetufdoteggod
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
  drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
  rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:h10PXhB1Ei6oNYH3M-PXZoV9oG3KwxCpt3HscsFF_ZP2_ysel2R-Pw>
- <xmx:h10PXo1pJu8pE-EIhCRC2NEtgCyLlD1EyePD0Z3HNeLpXLwtTysjdg>
- <xmx:h10PXkkI_TNFMCZbRf44DUDlgS4ls5ipKLSmfDQNqDShyV0g95yYpQ>
- <xmx:h10PXpGsVIB3M_4SrHkhaOEv1AaPzNVlA8uD4W1jBCpX9Ns_hXNajQ>
+X-ME-Proxy: <xmx:iF0PXlu8-7NPO3fr7LdjzzMkUs58XBOQLZp749DwJABXQ0zDwz45iA>
+ <xmx:iF0PXhF-Ji9M3T458tKHMY6jsTJknoInO4CA-YmK_7FTR0iTjUhGQw>
+ <xmx:iF0PXtDEjiDFOTZxSmVUgLxcwJrBaRY4n3wykPf4wr1CAMycZZO38w>
+ <xmx:iF0PXt7_dmA9UVf4NWgPaWCJQracVwxj-YoadEGw86XSjgJORNGAzA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id DC25930607B4;
- Fri,  3 Jan 2020 10:28:06 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6481380059;
+ Fri,  3 Jan 2020 10:28:08 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Sean Paul <seanpaul@chromium.org>, Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH v3 2/4] clk: sunxi: a31: Export the MIPI PLL
-Date: Fri,  3 Jan 2020 16:27:59 +0100
-Message-Id: <20200103152801.47254-2-maxime@cerno.tech>
+Subject: [PATCH v3 3/4] clk: sunxi: a23/a33: Export the MIPI PLL
+Date: Fri,  3 Jan 2020 16:28:00 +0100
+Message-Id: <20200103152801.47254-3-maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200103152801.47254-1-maxime@cerno.tech>
 References: <20200103152801.47254-1-maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_072808_949117_30C384A2 
-X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-CacheID: sfid-20200103_072810_784299_ABF5568A 
+X-CRM114-Status: UNSURE (   8.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -120,38 +120,38 @@ headers.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/sunxi-ng/ccu-sun6i-a31.h      | 4 +++-
- include/dt-bindings/clock/sun6i-a31-ccu.h | 2 ++
+ drivers/clk/sunxi-ng/ccu-sun8i-a23-a33.h      | 4 +++-
+ include/dt-bindings/clock/sun8i-a23-a33-ccu.h | 2 ++
  2 files changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun6i-a31.h b/drivers/clk/sunxi-ng/ccu-sun6i-a31.h
-index a361388b4670..3ed2a59b0dc6 100644
---- a/drivers/clk/sunxi-ng/ccu-sun6i-a31.h
-+++ b/drivers/clk/sunxi-ng/ccu-sun6i-a31.h
-@@ -32,7 +32,9 @@
- /* The PLL_VIDEO1_2X clock is exported */
- 
- #define CLK_PLL_GPU		14
--#define CLK_PLL_MIPI		15
+diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a23-a33.h b/drivers/clk/sunxi-ng/ccu-sun8i-a23-a33.h
+index 72df69291cc6..5bf5c4d13b4c 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun8i-a23-a33.h
++++ b/drivers/clk/sunxi-ng/ccu-sun8i-a23-a33.h
+@@ -24,7 +24,9 @@
+ #define CLK_PLL_PERIPH		10
+ #define CLK_PLL_PERIPH_2X	11
+ #define CLK_PLL_GPU		12
+-#define CLK_PLL_MIPI		13
 +
-+/* The PLL_VIDEO1_2X clock is exported */
++/* The PLL MIPI clock is exported */
 +
- #define CLK_PLL9		16
- #define CLK_PLL10		17
+ #define CLK_PLL_HSIC		14
+ #define CLK_PLL_DE		15
+ #define CLK_PLL_DDR1		16
+diff --git a/include/dt-bindings/clock/sun8i-a23-a33-ccu.h b/include/dt-bindings/clock/sun8i-a23-a33-ccu.h
+index f8222b6b2cc3..eb524d0bbd01 100644
+--- a/include/dt-bindings/clock/sun8i-a23-a33-ccu.h
++++ b/include/dt-bindings/clock/sun8i-a23-a33-ccu.h
+@@ -43,6 +43,8 @@
+ #ifndef _DT_BINDINGS_CLK_SUN8I_A23_A33_H_
+ #define _DT_BINDINGS_CLK_SUN8I_A23_A33_H_
  
-diff --git a/include/dt-bindings/clock/sun6i-a31-ccu.h b/include/dt-bindings/clock/sun6i-a31-ccu.h
-index c5d13340184a..39878d9dce9f 100644
---- a/include/dt-bindings/clock/sun6i-a31-ccu.h
-+++ b/include/dt-bindings/clock/sun6i-a31-ccu.h
-@@ -49,6 +49,8 @@
- 
- #define CLK_PLL_VIDEO1_2X	13
- 
-+#define CLK_PLL_MIPI		15
++#define CLK_PLL_MIPI		13
 +
- #define CLK_CPU			18
+ #define CLK_CPUX		18
  
- #define CLK_AHB1_MIPIDSI	23
+ #define CLK_BUS_MIPI_DSI	23
 -- 
 2.24.1
 
