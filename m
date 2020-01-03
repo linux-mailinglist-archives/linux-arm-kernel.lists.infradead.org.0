@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B650E12FC82
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:27:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4693E12FC85
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:27:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tvEcgaMr6oH9qbXzObfNeBf/UgGf7piwjHdPGA2Fbpo=; b=T2iTWdHnZB1qoM
-	8JmhLiecXFzvwDqrj4Z0TaezvYsPhVI1JV2Gq3j/8JzYC7PLk2NL328o0F9xx9dRA4zD+1sTd1yRi
-	mbXZmUX4QFuP5iPjUgXiwSm69J2PU/KeBS+pAldpTyFL2aeTtNihZtmQ8pI3ROx/oudHH6alivM5e
-	VIgEFkV+WtjCg4Vgkv15UQLkg1b+FFWyNU+opN7Vh2m+I2C06fpoVTGL6EnnAKKYNaeKiChGXobFJ
-	ewX19A8dy2mzbCnOgGaHKG40XIYFN4K2KuoqeYiTk549jNIq1GLlkkP9VcmwZHNwUtVpnGRh/5XBa
-	9N9SmIi4ALoLelkiVamg==;
+	List-Owner; bh=AXLAFykHJP+iyRe06BT2zV/6qb41EWnR8fNQH0MwiCg=; b=qwtr1V4ZPAd2AH
+	2eONfCvEcZ24Blql3VugpeDswLvIvBuxIDsJRM7OVmdNGqL21h8LNZqHDU6JjOCoAEWIzHuloxlzb
+	EzeQaE+z7nq69mgZX6UGB9sTv6N+SnY/zQJboaOzA/LF3wr/s4JnTcXr2VDjzXWwakswxp2uxJf86
+	MYI/b7QdHT/8ZK5f88SgMsRCCgCRnnpN1BGuQgXR9x/XjLBKUkw4zJhK01GD9sKh+XSw1viCy9Cd3
+	p4vifRghvZeOik0K4sAAezxTN2oW/eWQATrSoLsDWKGoAAvkO7Izm0zjVXPXS2lBcDMOVqWveHIMF
+	QDrkmL4FoNPFK+Nz2mFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inRfA-00066l-0l; Fri, 03 Jan 2020 18:27:08 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1inRfa-0006NF-Fd; Fri, 03 Jan 2020 18:27:34 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inRf0-00065s-Pk
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:27:01 +0000
-Received: by mail-pg1-x543.google.com with SMTP id q127so23779258pga.4
+ id 1inRfT-0006MZ-Qa
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:27:28 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 6so23772550pgk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 10:26:58 -0800 (PST)
+ Fri, 03 Jan 2020 10:27:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=AJdOH5Xmhjd/7J9nchGkQ3nxEYSZUujv6uRZjCaSUpY=;
- b=Wt+VmMWlpGsKd2RBybgjegDdruWAYpKt2KKi3gAEoxP5BYzDP36k1N5Ek6XV6nZYhe
- qPR753k/k4Cr7UvxAL/aPW5LcQ7Fudler5hV1XjwEvCAVKPDI4GjUrGg+fqYNFOwnP2K
- SClQZw0mHNYcBnp4PtMOVzUjdGcZQDcZNlMsJvzEI9Sl2D6KD8z4WojKnwTvM9g4PCqw
- GHcZXiwjPmdPQ1+aF5T/vDzfr8sTBd7cv7DSw9imjJVWvY/oispbsHTKLwRt5yZ7ib+Q
- lFsgkSQmwQbGhjiNCUpb+p7sfhRSCjflAvxt3kEyvc+oo+ES66Arz2GtgnD7qgvOmzJd
- vOlw==
+ bh=T7lVqkl6XyOM8h8DRS13DS5nL9zseaivDKbsCC9whkQ=;
+ b=lRlMlUJOsZbjKCUy2Z2HLm5qpcCZIex/pL/RmX685kRBVgYKwhzzBLz6F/9Vh2tFwx
+ bveXlA6UuXyYcUZSx+bhLytW4QfYaquk8de/tzD4PGJMkVXpbUEOmA4mq3MDvkg3lNwo
+ Z9y7TlIEK9Sqyrt41rrI3nwAQO4gSjr6JrYJ0evkJo/ZMvuX5BjO8I4RuLUnYTelA5Uh
+ 8Fc6P9ent2rkKtu7cT47HTakkar304LV1P6fHs/osAH1rwrikp0+dTRpieg/9yqy1UlO
+ Qr+yT+t9rHwKP5bJ45+8CP/+z2n7OU2cpaOPqOmDoec+sdK5GRidfP7VCs4OL30LK7Js
+ TvEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=AJdOH5Xmhjd/7J9nchGkQ3nxEYSZUujv6uRZjCaSUpY=;
- b=IOH92n74zVc5Gsl7EBVv4/vvuy0FWG9oCCFl4pVpGqaV9kYoukxrONu20Yh14uCEM3
- m2uSWBuuU5NjxgiLwp9f25wdtGx4uOS+Lt1XzPYKV6i5BxjGl2YSnzHXKl+J+8HRLVRo
- v47wjx0ZjyIpmW6Sd2L0qiwMb0G/tTHe9GSOyN7Z8nHYKI0I0acaMAoMDZlO8GMZcm8A
- NuRe12Doggo/a9EJOfa3YH7GrEFpnqoee0E1MgdAvz37/NeME7rnnmw6WN9OymZMnIGc
- q/EXmWbVWWeBnFoS80GG2R4Jae7/RnKuU2OuYidTly75wMRABb6rKP+tvMItwnmw6M51
- N6Dw==
-X-Gm-Message-State: APjAAAVkE00EpdEU3Lr/lsAJsJ4kY7KBpVcgS8uIArmoawvosmTofATb
- 4gFwfSKp9dzApJrjjqmdQo4Uz1d0
-X-Google-Smtp-Source: APXvYqwsU6Q2D4H/ZWC6P6cJddhFeTYoPKe8jqFOMmPrHNxRzXfToQoEE9Q0YSUGWjJpluxGWaQg9Q==
-X-Received: by 2002:aa7:864a:: with SMTP id a10mr50239932pfo.233.1578076018240; 
- Fri, 03 Jan 2020 10:26:58 -0800 (PST)
+ bh=T7lVqkl6XyOM8h8DRS13DS5nL9zseaivDKbsCC9whkQ=;
+ b=ODDlkWfAVweKM9Y3T7wg3eTgm4eOlifTu5S7vbFfCZ6WibNMcg/vgTOcCZF1/VaG7c
+ yXIKnYs1WB2rt5WVFfBM/pGODe3h5v3jPjP6lRorny3mYEEWTNJmuiOMnVozdbbnQUht
+ YvXjRM4O6Q+fHcl4LMHlkbsW8ndKy8EvV6+ewZzcOnuiTwosLJIAE+jhU95HfwoigE1c
+ 5HNDXCp1SlgpXXJy0B0x1VDki0Cy8J+m0S/AMP9sfeilmiWMS/DpvozItsz6W04N45q3
+ wjLsoZsc7BrdCE/8krLAT0o13RzujZ5Ryf3wRxPZkG6MUOfVpgbW0tSqxF2L6sxepWC6
+ PRRQ==
+X-Gm-Message-State: APjAAAW6pz3zv0fYGklU3nIOA4zqQplDPBSb4yIPTsTxiOG0c0rt9doE
+ zJhSFjVlk7HrDPGvtAVVwvVyPEyb
+X-Google-Smtp-Source: APXvYqwCGCNrI/S63pdX0hT1E0M0AG+eR1GoNptMSntdd43+7WIsOTKf+pgs8XxhD9IEdRmo9azUYg==
+X-Received: by 2002:a63:465b:: with SMTP id v27mr99600493pgk.257.1578076047071; 
+ Fri, 03 Jan 2020 10:27:27 -0800 (PST)
 Received: from [10.67.50.49] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id
- x21sm66850832pfn.164.2020.01.03.10.26.57
+ by smtp.googlemail.com with ESMTPSA id f43sm15967634pje.23.2020.01.03.10.27.25
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 03 Jan 2020 10:26:57 -0800 (PST)
-Subject: Re: [PATCH v4 09/13] phy: usb: fix driver to defer on clk_get defer
+ Fri, 03 Jan 2020 10:27:26 -0800 (PST)
+Subject: Re: [PATCH v4 10/13] phy: usb: PHY's MDIO registers not accessible
+ without device installed
 To: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org
 References: <20200103181811.22939-1-alcooperx@gmail.com>
- <20200103181811.22939-10-alcooperx@gmail.com>
+ <20200103181811.22939-11-alcooperx@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <508a4fba-29be-a727-7ac4-9344385a90f5@gmail.com>
-Date: Fri, 3 Jan 2020 10:26:56 -0800
+Message-ID: <6108ef5e-932b-fae6-01fe-4079da8fd84a@gmail.com>
+Date: Fri, 3 Jan 2020 10:27:25 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200103181811.22939-10-alcooperx@gmail.com>
+In-Reply-To: <20200103181811.22939-11-alcooperx@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_102658_830933_6C61F5B0 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20200103_102727_859827_12345310 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -172,8 +172,11 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 1/3/20 10:18 AM, Al Cooper wrote:
-> Handle defer on clk_get because the new SCMI clock driver comes
-> up after this driver.
+> When there is no device connected and FSM is enabled, the XHCI puts
+> the PHY into suspend mode.  When the PHY is put into suspend mode
+> the USB LDO powers down the PHY. This causes the MDIO to be
+> inaccessible and its registers reset to default. The fix is to
+> disable FSM.
 > 
 > Signed-off-by: Al Cooper <alcooperx@gmail.com>
 
