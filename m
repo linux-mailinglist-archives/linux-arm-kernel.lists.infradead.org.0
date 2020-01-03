@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7167612FB65
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:13:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9855412FB69
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:13:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=F2Ka34/E5gf1PQY3RJ6Myld5ECXR5KSvx0gK4bsjLSo=; b=qqWDc0fWdaZLkCqTpkc1hdbrhs
-	Fqu1CJQEtP27sXn1TjDDvdi9xOYiq+wIA+emlxkxvCJ3cQyR7X0ZjZKHZvfHyRX5MLJMUesAX5LQJ
-	W+R8u+sZhGBR89Ajh71cwYy+oLpnfxM0Lu697/HgE+y08TZIatI3qaJc+XdHqDVIF4pDFXyLpbxSL
-	FoXTAb8C6ZB97MjIvV7ERPhnnQPlXgWffy4FhBz+pjKcU6zcx2sTePTU5/Dw8Rc8boKrcpPWo6zAV
-	Y8YV5Aa8ayB5mLruS40rlO81TCGKIUXMBQdlTplJkqIJIUuzpjTMpEqbJAgoqGrSuoJL3SYu9/aqZ
-	8sRzTcXA==;
+	bh=cFjfi9LI4/FE/tmVMbCgLTCmxWNmvUs62FUJDvEfMKE=; b=fYfSUOZfHV63CDk4aV84jFQApP
+	dZrDE3l2wpTt3FSXm8331eklMyU5Crhe+qP+oUSBIZAq1FBRtvQeJHoJq3yWsoLqkSP2wdnpw1YLW
+	uQ476J0CDvxKKM0q0MejvNt6Acv3i3RpO5HAPnn7sWXzQ+v5hOBlv7tSFr6Bxle/sUcZRyhaNL41v
+	R3HB/9Y9bGEpa0w8fuIVFy04WK1UEl5hNZV5Yp7JI65mXd8yw04yhsUE5/iPjZQeO8CwcHldZOnB8
+	dyQ5vnJ8X828UTB+Gb9ILzrn4ij1b8HsxcDFl3oVSskrn6gSWMtVvtt1/CZdClqkl6p6pRJI3Oz0z
+	+7S75s3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQVs-00021k-S3; Fri, 03 Jan 2020 17:13:28 +0000
+	id 1inQW8-0002Ge-64; Fri, 03 Jan 2020 17:13:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQUj-00013w-NM
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:20 +0000
+ id 1inQUp-00019e-9O
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:26 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CCD77215A4;
- Fri,  3 Jan 2020 17:12:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C02A4222C3;
+ Fri,  3 Jan 2020 17:12:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578071537;
- bh=CzIa2N9KGP+EU0AOPbMu7y5bL3h/GE34GGQxLaUQRxs=;
+ s=default; t=1578071542;
+ bh=tikjmOkXzl67kgxwPdvLRaRJqpldgktGgrS2H4m1wPk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XzfXWud9ou17ogSUbC65mr/HJKbT5kLK8tCal03+UL6i3M+4DpZL63h/M7cGaFNE8
- GMTzc2LARA27yR6uu8A1cpLrs2ct4R0zt7e2+bRo+08fySLCjwOnVlExkQWY6tWKdU
- TtGKvU0O5Y9evv3B9//vsqdJC31jiNwGS9FkfBP0=
+ b=v8E9zX4UIDLzAd5zOxAsedGIcpvNFV5QzvrJO9liwyDUdG5pRAfWIR/WCSA7Dazjh
+ YqU2FZ0UlUVfA9KpckU7TXkL0418Ra24J7/qwELuAIJG5kF7NmcO4E6zBi+TC9BXUR
+ q/jTgkFKzInc7v4lKvkcNEXn4bJMnx+aH14vSPgY=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 06/19] media: samsung: Rename Samsung and Exynos to lowercase
-Date: Fri,  3 Jan 2020 18:11:18 +0100
-Message-Id: <20200103171131.9900-7-krzk@kernel.org>
+Subject: [PATCH 07/19] usb: exynos: Rename Samsung and Exynos to lowercase
+Date: Fri,  3 Jan 2020 18:11:19 +0100
+Message-Id: <20200103171131.9900-8-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200103171131.9900-1-krzk@kernel.org>
 References: <20200103171131.9900-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_091217_827661_1529590A 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20200103_091223_674615_622384D6 
+X-CRM114-Status: GOOD (  13.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,12 +75,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Felipe Balbi <balbi@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Johan Hovold <johan@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ Ran Wang <ran.wang_1@nxp.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -104,128 +105,86 @@ https://www.samsung.com/semiconductor/privacy-global/).
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- .../devicetree/bindings/media/exynos-jpeg-codec.txt         | 2 +-
- Documentation/devicetree/bindings/media/exynos5-gsc.txt     | 2 +-
- Documentation/devicetree/bindings/media/samsung-fimc.txt    | 2 +-
- .../devicetree/bindings/media/samsung-mipi-csis.txt         | 2 +-
- Documentation/media/v4l-drivers/fimc.rst                    | 6 +++---
- Documentation/media/v4l-drivers/tuners.rst                  | 2 +-
- drivers/media/platform/exynos4-is/media-dev.c               | 2 +-
- drivers/media/platform/s3c-camif/camif-core.c               | 2 +-
- 8 files changed, 10 insertions(+), 10 deletions(-)
+ drivers/usb/dwc3/dwc3-exynos.c | 4 ++--
+ drivers/usb/host/Kconfig       | 4 ++--
+ drivers/usb/host/ehci-exynos.c | 4 ++--
+ drivers/usb/host/ohci-exynos.c | 2 +-
+ 4 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/media/exynos-jpeg-codec.txt b/Documentation/devicetree/bindings/media/exynos-jpeg-codec.txt
-index 38941db23dd2..ce9a22689e53 100644
---- a/Documentation/devicetree/bindings/media/exynos-jpeg-codec.txt
-+++ b/Documentation/devicetree/bindings/media/exynos-jpeg-codec.txt
-@@ -1,4 +1,4 @@
--Samsung S5P/EXYNOS SoC series JPEG codec
-+Samsung S5P/Exynos SoC series JPEG codec
- 
- Required properties:
- 
-diff --git a/Documentation/devicetree/bindings/media/exynos5-gsc.txt b/Documentation/devicetree/bindings/media/exynos5-gsc.txt
-index bc963a6d305a..1872688fa408 100644
---- a/Documentation/devicetree/bindings/media/exynos5-gsc.txt
-+++ b/Documentation/devicetree/bindings/media/exynos5-gsc.txt
+diff --git a/drivers/usb/dwc3/dwc3-exynos.c b/drivers/usb/dwc3/dwc3-exynos.c
+index c1e9ea621f41..90bb022737da 100644
+--- a/drivers/usb/dwc3/dwc3-exynos.c
++++ b/drivers/usb/dwc3/dwc3-exynos.c
 @@ -1,6 +1,6 @@
- * Samsung Exynos5 G-Scaler device
+ // SPDX-License-Identifier: GPL-2.0
+ /**
+- * dwc3-exynos.c - Samsung EXYNOS DWC3 Specific Glue layer
++ * dwc3-exynos.c - Samsung Exynos DWC3 Specific Glue layer
+  *
+  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
+@@ -255,4 +255,4 @@ module_platform_driver(dwc3_exynos_driver);
  
--G-Scaler is used for scaling and color space conversion on EXYNOS5 SoCs.
-+G-Scaler is used for scaling and color space conversion on Exynos5 SoCs.
+ MODULE_AUTHOR("Anton Tikhomirov <av.tikhomirov@samsung.com>");
+ MODULE_LICENSE("GPL v2");
+-MODULE_DESCRIPTION("DesignWare USB3 EXYNOS Glue Layer");
++MODULE_DESCRIPTION("DesignWare USB3 Exynos Glue Layer");
+diff --git a/drivers/usb/host/Kconfig b/drivers/usb/host/Kconfig
+index 8d730180db06..ed49d08f2f9e 100644
+--- a/drivers/usb/host/Kconfig
++++ b/drivers/usb/host/Kconfig
+@@ -269,7 +269,7 @@ config USB_EHCI_SH
+ 	  If you use the PCI EHCI controller, this option is not necessary.
  
- Required properties:
- - compatible: should be one of
-diff --git a/Documentation/devicetree/bindings/media/samsung-fimc.txt b/Documentation/devicetree/bindings/media/samsung-fimc.txt
-index 48c599dacbdf..f91b9dc80eb3 100644
---- a/Documentation/devicetree/bindings/media/samsung-fimc.txt
-+++ b/Documentation/devicetree/bindings/media/samsung-fimc.txt
-@@ -1,4 +1,4 @@
--Samsung S5P/EXYNOS SoC Camera Subsystem (FIMC)
-+Samsung S5P/Exynos SoC Camera Subsystem (FIMC)
- ----------------------------------------------
+ config USB_EHCI_EXYNOS
+-	tristate "EHCI support for Samsung S5P/EXYNOS SoC Series"
++	tristate "EHCI support for Samsung S5P/Exynos SoC Series"
+ 	depends on ARCH_S5PV210 || ARCH_EXYNOS
+ 	help
+ 	  Enable support for the Samsung Exynos SOC's on-chip EHCI controller.
+@@ -542,7 +542,7 @@ config USB_OHCI_SH
+ 	  If you use the PCI OHCI controller, this option is not necessary.
  
- The S5P/Exynos SoC Camera subsystem comprises of multiple sub-devices
-diff --git a/Documentation/devicetree/bindings/media/samsung-mipi-csis.txt b/Documentation/devicetree/bindings/media/samsung-mipi-csis.txt
-index be45f0b1a449..a4149c9434ea 100644
---- a/Documentation/devicetree/bindings/media/samsung-mipi-csis.txt
-+++ b/Documentation/devicetree/bindings/media/samsung-mipi-csis.txt
-@@ -1,4 +1,4 @@
--Samsung S5P/EXYNOS SoC series MIPI CSI-2 receiver (MIPI CSIS)
-+Samsung S5P/Exynos SoC series MIPI CSI-2 receiver (MIPI CSIS)
- -------------------------------------------------------------
+ config USB_OHCI_EXYNOS
+-	tristate "OHCI support for Samsung S5P/EXYNOS SoC Series"
++	tristate "OHCI support for Samsung S5P/Exynos SoC Series"
+ 	depends on ARCH_S5PV210 || ARCH_EXYNOS
+ 	help
+ 	  Enable support for the Samsung Exynos SOC's on-chip OHCI controller.
+diff --git a/drivers/usb/host/ehci-exynos.c b/drivers/usb/host/ehci-exynos.c
+index 01debfd03d4a..a4e9abcbdc4f 100644
+--- a/drivers/usb/host/ehci-exynos.c
++++ b/drivers/usb/host/ehci-exynos.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0+
+ /*
+- * SAMSUNG EXYNOS USB HOST EHCI Controller
++ * Samsung Exynos USB HOST EHCI Controller
+  *
+  * Copyright (C) 2011 Samsung Electronics Co.Ltd
+  * Author: Jingoo Han <jg1.han@samsung.com>
+@@ -21,7 +21,7 @@
  
- Required properties:
-diff --git a/Documentation/media/v4l-drivers/fimc.rst b/Documentation/media/v4l-drivers/fimc.rst
-index 74585ba48b7f..2783aef65c01 100644
---- a/Documentation/media/v4l-drivers/fimc.rst
-+++ b/Documentation/media/v4l-drivers/fimc.rst
-@@ -2,7 +2,7 @@
+ #include "ehci.h"
  
- .. include:: <isonum.txt>
+-#define DRIVER_DESC "EHCI EXYNOS driver"
++#define DRIVER_DESC "EHCI Exynos driver"
  
--The Samsung S5P/EXYNOS4 FIMC driver
-+The Samsung S5P/Exynos4 FIMC driver
- ===================================
+ #define EHCI_INSNREG00(base)			(base + 0x90)
+ #define EHCI_INSNREG00_ENA_INCR16		(0x1 << 25)
+diff --git a/drivers/usb/host/ohci-exynos.c b/drivers/usb/host/ohci-exynos.c
+index d5ce98e205c7..bd40e597f256 100644
+--- a/drivers/usb/host/ohci-exynos.c
++++ b/drivers/usb/host/ohci-exynos.c
+@@ -19,7 +19,7 @@
  
- Copyright |copy| 2012 - 2013 Samsung Electronics Co., Ltd.
-@@ -19,7 +19,7 @@ drivers/media/platform/exynos4-is directory.
- Supported SoCs
- --------------
+ #include "ohci.h"
  
--S5PC100 (mem-to-mem only), S5PV210, EXYNOS4210
-+S5PC100 (mem-to-mem only), S5PV210, Exynos4210
+-#define DRIVER_DESC "OHCI EXYNOS driver"
++#define DRIVER_DESC "OHCI Exynos driver"
  
- Supported features
- ------------------
-@@ -65,7 +65,7 @@ Media device interface
- ~~~~~~~~~~~~~~~~~~~~~~
- 
- The driver supports Media Controller API as defined at :ref:`media_controller`.
--The media device driver name is "SAMSUNG S5P FIMC".
-+The media device driver name is "Samsung S5P FIMC".
- 
- The purpose of this interface is to allow changing assignment of FIMC instances
- to the SoC peripheral camera input at runtime and optionally to control internal
-diff --git a/Documentation/media/v4l-drivers/tuners.rst b/Documentation/media/v4l-drivers/tuners.rst
-index 7509be888909..d7924141c544 100644
---- a/Documentation/media/v4l-drivers/tuners.rst
-+++ b/Documentation/media/v4l-drivers/tuners.rst
-@@ -18,7 +18,7 @@ These differ mainly by the bandswitch byte.
- Tuner Manufacturers
- -------------------
- 
--- SAMSUNG Tuner identification: (e.g. TCPM9091PD27)
-+- Samsung Tuner identification: (e.g. TCPM9091PD27)
- 
- .. code-block:: none
- 
-diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
-index 9aaf3b8060d5..96e336b19cc3 100644
---- a/drivers/media/platform/exynos4-is/media-dev.c
-+++ b/drivers/media/platform/exynos4-is/media-dev.c
-@@ -1439,7 +1439,7 @@ static int fimc_md_probe(struct platform_device *pdev)
- 	INIT_LIST_HEAD(&fmd->pipelines);
- 	fmd->pdev = pdev;
- 
--	strscpy(fmd->media_dev.model, "SAMSUNG S5P FIMC",
-+	strscpy(fmd->media_dev.model, "Samsung S5P FIMC",
- 		sizeof(fmd->media_dev.model));
- 	fmd->media_dev.ops = &fimc_md_ops;
- 	fmd->media_dev.dev = dev;
-diff --git a/drivers/media/platform/s3c-camif/camif-core.c b/drivers/media/platform/s3c-camif/camif-core.c
-index c6fbcd7036d6..92f43c0cbc0c 100644
---- a/drivers/media/platform/s3c-camif/camif-core.c
-+++ b/drivers/media/platform/s3c-camif/camif-core.c
-@@ -304,7 +304,7 @@ static int camif_media_dev_init(struct camif_dev *camif)
- 	int ret;
- 
- 	memset(md, 0, sizeof(*md));
--	snprintf(md->model, sizeof(md->model), "SAMSUNG S3C%s CAMIF",
-+	snprintf(md->model, sizeof(md->model), "Samsung S3C%s CAMIF",
- 		 ip_rev == S3C6410_CAMIF_IP_REV ? "6410" : "244X");
- 	strscpy(md->bus_info, "platform", sizeof(md->bus_info));
- 	md->hw_revision = ip_rev;
+ static const char hcd_name[] = "ohci-exynos";
+ static struct hc_driver __read_mostly exynos_ohci_hc_driver;
 -- 
 2.17.1
 
