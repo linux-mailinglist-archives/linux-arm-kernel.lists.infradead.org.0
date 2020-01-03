@@ -2,61 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0B6812F629
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 10:37:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFF8F12F62C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 10:38:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kejuCsR1kuWgpT8qQnM5nKKeBFOpQXpUAllJwhNEuhA=; b=Gn3Bgb+DZwQMJcXYtPTGN888l
-	KF7D58e5eUc/4EaVKAYgUaOuWH7LltpnrHq/0nEtMa8MBf5oIRNUgSHTiwrpG7roSOEbZybYufE6t
-	JZTA7eoIF2L4v635RctVh//a9ujl2V/l/pMIs0Tp2g2q6PgAxLv2IcR+xm+exwyDN5O6SXi1bY2kn
-	ARAnNKXNTCF/Qzi9rgbmhbaOT09zlv9ZYCMoKZusy0bya8J3F4zdd5ZawdbhIjr7NrhqJndKdlkHf
-	NdLSvgiBj1ywzr3wiWAa8kCQqlFJCA2bD76zNX3Hhilh1RBkNYdU+l+7bZWzbwotGLOXU9xwiSf5i
-	WqwuPd1Qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X//77FUqOZgZyA7yeatTsX4CJcO28pxGdanIf6eFUec=; b=oLi3TQqS+Ao0yU
+	IeRh5lI/QoXx10QB8iktwDGUf0XuxSxf3enBiBrujuicA+v8QnvSry3f6f6Pfh85Qa4pt3JVe1j6H
+	u5/L7FFEK9VoFSoj9kzGRite2MpKIbB3uy19i37NvdzPcWkblMpcmmfkvK9bgvMBbKR/aScQrgJHm
+	gMfS0wrQLEJB8PHGSWY0uwIkFY50A+Mblr7Z45moE2EwMm0+GAw0bvrBQJkMvDiv0uB0WmeZ7UgW4
+	IlsEmLJc2NvSSgmRBpZUvNsXXnurF/Rlm0h620Sf0pqmHsiuSRKe7CSiQkVnA9MOq9sqNGBOg63SB
+	idcOlCL7CoMLw8bkmXhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inJOj-0004F2-KQ; Fri, 03 Jan 2020 09:37:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1inJP9-0004Z8-1s; Fri, 03 Jan 2020 09:38:03 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inJOb-0004Dl-D6
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 09:37:30 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 121A821734;
- Fri,  3 Jan 2020 09:37:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578044247;
- bh=t1n4osX8UFyfzagbobo+KoZCptgIJ8gvbeKetytczeM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H6+N5bPGQlNhV1gyvOOg2A1ukTS7rQlhfNWi+c/GaXeqQYGYgRzbiDrVw9GctGa3P
- BDAjdvQDi8XqZV/vhzmGC8cCssXQwvcTd1Lv0QDXWUzKaoTfKCCeGhCebE7SY6VmSy
- mM3QibPSZ/Z5n5vQSCNzCYvjKYD01jayq8lpO9co=
-Date: Fri, 3 Jan 2020 10:37:24 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH] clk: sunxi-ng: r40: Export MBUS clock
-Message-ID: <20200103093724.qo2enqqpr5dzcvfc@gilmour.lan>
-References: <20200103071848.3977-1-wens@kernel.org>
+ id 1inJOn-0004Np-96; Fri, 03 Jan 2020 09:37:43 +0000
+X-UUID: 5e3f4b3c77df4ed0a2b380c9ecab821c-20200103
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=2ygKXqFwUs1V77AEhlvVn6P6Uj9IxO5PEyPkf2HolIU=; 
+ b=BwW4gDARckvnOD6CH3EkCfA94h+sVOsY2tfqZ7pZvtmBIzeZueLeLrthz4EiGUPPG7+5MuDKKDWqDuH9ssrE7XxCQo7C6m/JKCsPNJX+TMZBCAuok2zKUDOUewGJqcOWWEJAB14rWYMqKbNiN03URFi9/IF33VczsNbBugpl+iw=;
+X-UUID: 5e3f4b3c77df4ed0a2b380c9ecab821c-20200103
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jiaxin.yu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 91402609; Fri, 03 Jan 2020 01:37:34 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 01:37:57 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 17:37:02 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 3 Jan 2020 17:37:30 +0800
+From: Jiaxin Yu <jiaxin.yu@mediatek.com>
+To: <yong.liang@mediatek.com>, <wim@linux-watchdog.org>, <linux@roeck-us.net>, 
+ <p.zabel@pengutronix.de>, <matthias.bgg@gmail.com>,
+ <linux-watchdog@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <devicetree@vger.kernel.org>, <chang-an.chen@mediatek.com>,
+ <freddy.hsin@mediatek.com>
+Subject: [PATCH 1/2] [PATCH v8 1/2] dt-bindings: mediatek: mt8183: Add
+ #reset-cells
+Date: Fri, 3 Jan 2020 17:37:24 +0800
+Message-ID: <1578044245-26939-2-git-send-email-jiaxin.yu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1578044245-26939-1-git-send-email-jiaxin.yu@mediatek.com>
+References: <1578044245-26939-1-git-send-email-jiaxin.yu@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20200103071848.3977-1-wens@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_013729_469585_B80E9A35 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20200103_013741_349981_69B0C063 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -64,7 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,60 +93,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0935602161346649338=="
+Cc: sboyd@kernel.org, yingjoe.chen@mediatek.com,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add #reset-cells property and update example
 
---===============0935602161346649338==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6ydtg2u437jgrsyi"
-Content-Disposition: inline
+Change-Id: If3f4f0170d417819facff1fd0a0e5e3c6cc9944d
+Signed-off-by: yong.liang <yong.liang@mediatek.com>
+Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
+Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+---
+ .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
+ .../reset-controller/mt8183-resets.h          | 17 ++++++++++++++
+ 2 files changed, 39 insertions(+)
+ create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
 
-
---6ydtg2u437jgrsyi
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, Jan 03, 2020 at 03:18:48PM +0800, Chen-Yu Tsai wrote:
-> From: Chen-Yu Tsai <wens@csie.org>
->
-> The MBUS clock needs to be referenced in the MBUS device node.
-> Export it.
->
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-
-Applied, thanks
-Maxime
-
---6ydtg2u437jgrsyi
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXg8LVAAKCRDj7w1vZxhR
-xTXyAPwOmHJ3brL7yUfKmR5he70BqWy5MhxZQ3ik2vpHkUxeEwD9F58DhQY/DVl+
-PPeLEWk09d1ZxePABfHlBOoPLFXWXAQ=
-=vkyJ
------END PGP SIGNATURE-----
-
---6ydtg2u437jgrsyi--
-
-
---===============0935602161346649338==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
+new file mode 100644
+index 000000000000..9e7ee762f076
+--- /dev/null
++++ b/include/dt-bindings/reset-controller/mt2712-resets.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2019 MediaTek Inc.
++ * Author: Yong Liang <yong.liang@mediatek.com>
++ */
++
++#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
++#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
++
++#define MT2712_TOPRGU_INFRA_SW_RST				0
++#define MT2712_TOPRGU_MM_SW_RST					1
++#define MT2712_TOPRGU_MFG_SW_RST				2
++#define MT2712_TOPRGU_VENC_SW_RST				3
++#define MT2712_TOPRGU_VDEC_SW_RST				4
++#define MT2712_TOPRGU_IMG_SW_RST				5
++#define MT2712_TOPRGU_INFRA_AO_SW_RST				8
++#define MT2712_TOPRGU_USB_SW_RST				9
++#define MT2712_TOPRGU_APMIXED_SW_RST				10
++
++#define MT2712_TOPRGU_SW_RST_NUM				11
++
++#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
+diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
+index 8804e34ebdd4..a1bbd41e0d12 100644
+--- a/include/dt-bindings/reset-controller/mt8183-resets.h
++++ b/include/dt-bindings/reset-controller/mt8183-resets.h
+@@ -78,4 +78,21 @@
+ #define MT8183_INFRACFG_AO_I2C7_SW_RST				126
+ #define MT8183_INFRACFG_AO_I2C8_SW_RST				127
+ 
++#define MT8183_INFRACFG_SW_RST_NUM				128
++
++#define MT8183_TOPRGU_MM_SW_RST					1
++#define MT8183_TOPRGU_MFG_SW_RST				2
++#define MT8183_TOPRGU_VENC_SW_RST				3
++#define MT8183_TOPRGU_VDEC_SW_RST				4
++#define MT8183_TOPRGU_IMG_SW_RST				5
++#define MT8183_TOPRGU_MD_SW_RST					7
++#define MT8183_TOPRGU_CONN_SW_RST				9
++#define MT8183_TOPRGU_CONN_MCU_SW_RST				12
++#define MT8183_TOPRGU_IPU0_SW_RST				14
++#define MT8183_TOPRGU_IPU1_SW_RST				15
++#define MT8183_TOPRGU_AUDIO_SW_RST				17
++#define MT8183_TOPRGU_CAMSYS_SW_RST				18
++
++#define MT8183_TOPRGU_SW_RST_NUM				19
++
+ #endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT8183 */
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0935602161346649338==--
-
