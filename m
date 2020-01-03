@@ -2,90 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53E012F2FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 03:35:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F3B812F319
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 03:59:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AS7nJ7MAKLggUa69Vg0YzlexYJ3ZJVkg/e1a8F7g84Q=; b=vELNk7IKOcyWJo
-	bFujTI0Q0fzdRTDv/N5h/ykWRIP5sFIKMwNMj+4niQLDdOREJtAvU9i+I6A7mG6Tt+fnqO22zZ80O
-	4/sssLjTeFUMsNdEND0WNHe5MVnV9c8zOv6laIl77heBxMIBhFFGPh3tL1zej5byBCFLf5LoBOwDS
-	r0T7A0QbRLPnzGw+AilcRJd1ubFL6DGbyfxnFiQaVqMztSxAH08+0EyviptbZECmaqh732IjqTVzD
-	/W9la7+VppSYTS9jbdS3A66JWwDGWJZkoi9UPu1jzArivaDp3OzqR0/KkIEMPkb/HsQ4vxSPZEv3+
-	TC2BxxQNtBSPT5N5MbpQ==;
+	List-Owner; bh=MQOigUq2sJkc4LDFAbHggGnVatDh+GpPpv8L0RQ4Jw4=; b=peAWDv4UzX8KgZ
+	45REPlRKYfaut0omIlzu8aq0qCRQuCU/M/vO3h/vc6gcH7m8GJMZWEIprzwuRnBqsJBHoAGl+FSin
+	V6oVz7jEslP1SmtI1dwLhA6hNhHNoh2h/qLA65gdTFlI+kGIASyv2IqLnuAwu6Hb848NaY7Q7t2dl
+	+NlT7OmJS2OpEqyF4dFhNp0VYzi+31L0ut1/IEMluTuAlstWFj/a55gMgfu77fr+axSagrOMbxjEJ
+	NO2ndRSo68jXmLVwPOPocAZWhVuIjgCFRIAryeKZ64ayCxi1WDWE96o58CaJaTDc9EInowjhfj3Vc
+	zLNTp4qmSv0PJd+j3h3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inCoC-0006QE-Ed; Fri, 03 Jan 2020 02:35:28 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1inDBb-0006R0-4o; Fri, 03 Jan 2020 02:59:39 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inCo3-0006Ot-88
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 02:35:23 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g6so18537178plt.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Jan 2020 18:35:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=tGEEwbHeUHLQP4Ptti/qDHixIuYd/unHWt5t4Ky3zjg=;
- b=LiuIunQyP8zym26WwockXUORPmoNJDXevkc/8TMfHbIAo8fkNVJ4LDlMkrE/Y43Uv1
- vSWw09goD6zpzLXL911InQKv73Ln7e2c3FT7DSPGtGyF0NdGg3+LPTOvJoDdfSdEIZTS
- +VnAHbHUJrBbXMdzO0xhJvDM88aidW+oPMvBiyM/Tx0SBAVGSUzfjmsutxs20j2NWnbY
- uS+W7DA+3tksOKfcM+T1gIF2IIm5VZYrKXo2YupNLPUjvCemqxxhQoes1pKC3UPz5kN+
- 8pUeBnhBji7dEI+QoBbNDQhTRdMAohK2zu1suXtYbDc9LU2ao+ujyipgN8NOYUHgIZ8g
- /X9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tGEEwbHeUHLQP4Ptti/qDHixIuYd/unHWt5t4Ky3zjg=;
- b=uJI71NmKlrXhzu670cktKPzE01iF/FMl5aMED1gjIcI9o3+943wVxqKViXZXYoxwly
- TLtJCX+/RPmF6oone+0ForA2oHu9/bvtE7QewomV6oNbRFnIMgFWg/e6Vc404fQiQ6PB
- lpgMIGLVjibJfbjQDa/IADqUowuBKhA7JdkXU41rHH0qWM1zeqA+Ifs/JC6LpvoLxM+9
- v5csYKNbJ9XT7VoXcQY4yjEwAFP3tzd8W3VEt1XkesCscrQTtBHY7WquvLTgC0hjqw/C
- fOJgT4tYDQaC6KSUblBzO0/VrZIkpYc8VR9HSKsgL6lV7KQfMq8bpVL3r2piZjHvaR/t
- 5IQg==
-X-Gm-Message-State: APjAAAWEwWpkrQ59Qapu/yG14wJ5JcYnWR76SpWRvWkbWbSw7atShqLW
- 8Fzu3GoV3XzDQWtQn/u+TSjzlFHG6Wc=
-X-Google-Smtp-Source: APXvYqymLlV7m58zphcHYTAerP/fyjZ3gzvpczJHHzHMOoZE9w0bLKsKWEmyMN4uiUkm/RiW59QPbw==
-X-Received: by 2002:a17:902:868e:: with SMTP id
- g14mr60508979plo.214.1578018916194; 
- Thu, 02 Jan 2020 18:35:16 -0800 (PST)
-Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id g7sm67200526pfq.33.2020.01.02.18.35.15
- (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Thu, 02 Jan 2020 18:35:15 -0800 (PST)
-Date: Fri, 3 Jan 2020 10:35:13 +0800
-From: chenqiwu <qiwuchen55@gmail.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH] cpufreq: brcmstb-avs-cpufreq: avoid a stuck risk and UAF
- issue in brcm_avs_cpufreq_get()
-Message-ID: <20200103023513.GA5021@cqw-OptiPlex-7050>
-References: <1577536777-24966-1-git-send-email-qiwuchen55@gmail.com>
- <5ba60a5b-15dc-3420-29ea-f21990ed1c07@gmail.com>
+ id 1inDBT-0006Px-EM; Fri, 03 Jan 2020 02:59:32 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 0032xBiP104379;
+ Fri, 3 Jan 2020 02:59:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2019-08-05;
+ bh=rWwWD69eO91r+gpNDRmSb19mEmJxC/+3duQYtKk/M1I=;
+ b=jXs9UuBTM4K/MvDumMVEpGmFsnMD97d4YRLz60E2CO7e22lE4sclY2d0LIK+wLpFdqXk
+ nOiYiBXafKOhbJICZzakhaWgQjngKsy9LQ6rVBREnA+H0yvLeCsehs9ZeoShNENCyjQp
+ MhUB7Dv57/MEqndw+L8yWkrPtp9PFyaReMHzZnoQM9647KrzilJSNWUCYak3OFP+vj5n
+ 5bs6uXlZp46hE/PExofMOBUQLP8OqsOiucsUpl+rvlzrefxNlyNohawCUHw9sticMAdA
+ IWYpljgIahDm6cb7n1z3VW7DveLinzKb82RMg3mYtPWhWTMmaK23Tm9KCs5LKcIHzXIq vQ== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 2x5xfttekd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 03 Jan 2020 02:59:20 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 0032xGKv182604;
+ Fri, 3 Jan 2020 02:59:20 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2x8gjbbb45-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 03 Jan 2020 02:59:20 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 0032wFEs030082;
+ Fri, 3 Jan 2020 02:58:16 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 02 Jan 2020 18:58:15 -0800
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 0/2] scsi: ufs: use existed well-defined functions
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
+Date: Thu, 02 Jan 2020 21:58:11 -0500
+In-Reply-To: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
+ (Stanley Chu's message of "Tue, 24 Dec 2019 21:01:04 +0800")
+Message-ID: <yq1eewh5jr0.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5ba60a5b-15dc-3420-29ea-f21990ed1c07@gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9488
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=792
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001030026
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9488
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=855 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001030027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_183521_793785_592E09B2 
-X-CRM114-Status: GOOD (  24.54  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200102_185931_614144_C2E1AAD4 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (qiwuchen55[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (qiwuchen55[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +98,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,99 +112,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, viresh.kumar@linaro.org,
- bcm-kernel-feedback-list@broadcom.com, mmayer@broadcom.com,
- chenqiwu@xiaomi.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ cang@codeaurora.org, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
+ pedrom.sousa@synopsys.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 02, 2020 at 04:08:53PM -0800, Florian Fainelli wrote:
-> On 12/28/19 4:39 AM, qiwuchen55@gmail.com wrote:
-> > From: chenqiwu <chenqiwu@xiaomi.com>
-> > 
-> > brcm_avs_cpufreq_get() calls cpufreq_cpu_get() to get cpufreq policy,
-> > meanwhile, it also increments the kobject reference count of policy to
-> > mark it busy. However, a corresponding call to cpufreq_cpu_put() is
-> > ignored to decrement the kobject reference count back, which may lead
-> > to a potential stuck risk that cpuhp thread deadly wait for dropping
-> > of refcount when cpufreq policy free.
-> > 
-> > The call trace of stuck risk could be:
-> > cpufreq_online()  //If cpufreq initialization failed, goto out_free_policy.
-> >     ->cpufreq_policy_free()	//Do cpufreq_policy free.
-> >         ->cpufreq_policy_put_kobj()
-> >             ->kobject_put()       //Skip if policy kfref count is not 1.
-> >                 ->cpufreq_sysfs_release()
-> >                     ->complete()  //Complete policy->kobj_unregister.
-> >                 ->wait_for_completion() //Wait for policy->kobj_unregister.
-> > 
-> > A simple way to avoid this stuck risk is use cpufreq_cpu_get_raw()
-> > instead of cpufreq_cpu_get(), since brcmstb-avs driver just wants
-> > to get cpufreq policy.
-> > 
-> > What's more, there is a potential UAF issue in cpufreq_notify_transition()
-> > that the cpufreq policy of current cpu has been released before using it.
-> > So we should make a judgement to avoid it.
-> > 
-> > Thanks!
-> > Qiwu
-> > 
-> > Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
-> 
-> This can be easily exercised by attempting to force an unbind of the
-> CPUfreq driver without your patch, we will indeed be stuck in the code
-> sequence you indicated, whereas with your patch, we can successfully unbind.
-> 
-> You might want to make some changes though, since you return NULL from a
-> function whose signature for the return type is unsigned int. If nothing
-> else returning 0 would make sure you hit that code path:
-> 
->         if (cpufreq_driver->get && !cpufreq_driver->setpolicy) {
->                 policy->cur = cpufreq_driver->get(policy->cpu);
->                 if (!policy->cur) {
->                         pr_err("%s: ->get() failed\n", __func__);
->                         goto out_exit_policy;
->                 }
-> 
-> something like this on top of your patch:
-> 
-> diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c
-> b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-> index f4f0d6b4e77c..be559fc4e7c6 100644
-> --- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
-> +++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-> @@ -488,11 +488,11 @@ static unsigned int brcm_avs_cpufreq_get(unsigned
-> int cpu)
->         struct private_data *priv;
-> 
->         if (!policy)
-> -               return NULL;
-> +               return 0;
-> 
->         priv = policy->driver_data;
->         if (!priv || !priv->base)
-> -               return NULL;
-> +               return 0;
-> 
->         return brcm_avs_get_frequency(priv->base);
->  }
-> 
-> With that, you can add:
-> 
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-> Tested-by: Florian Fainelli <f.fainelli@gmail.com>
-> 
-> Thank you!
-> -- 
-> Florian
-Hi Florian,
-I agree your idea, since NULL equals to ((void *)0), return 0 matches
-with unsigned int.
 
-Thanks!
-Qiwu
+Stanley,
+
+> This patchset fixes two small place to use existed well-defined
+> functions to replace legacy statements.
+
+Applied to 5.6/scsi-queue, thanks!
+
+-- 
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
