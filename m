@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3223D12F356
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:14:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1935C12F34E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:14:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=maAV/75/PiKr//3kWPjce6i8FPYX7aRv6MdhoRwVmo8=; b=dUbJWRLvvKff3P
-	hf9WFYGdNGllQcfJT0GjXYFZIO6Df4NxgiizS+kzV1n/4tBA1tWbZYYJygdaJ/kjYqnlzp4jRCTol
-	Y0TciXhZWhf3KDBr4Rttz/Fq8obf5+l6zEg8gfAW0KZJziRFZt5tHnGJG2VDoX+TeL3VTwCRTG3Ns
-	RfRsyw1BkqY99VZtdp6a7yhZmPRERHLHM2DqOr9/u8oQSnqBEl5aM850in9BgZOQuv4o6JB4MA2nj
-	8H5OykVhZtmX04p9d6LfxpmAJG3xIJDJVIqr5t4GKTVOe9SRbyNaqh1aqyl6SXqBh4LRWSZY+yJ4w
-	fXfwc98lKQD7Qg0B5eUw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3n+icBnEHJKPBH8pDSdcKffOv3v7RSm4hdR9CKhncM8=; b=II135Uy5QQvTLZ
+	UAl4ScJrOQY2phhF4+yjwmukM19+/zEkzOwAbguF1BV0mAaTg/EO4W/IlLrJCoU4yaOis9FuJ+TY2
+	uQmlaOon2mRHBd455FHisXTID3pM9UPzffnjr33RnMjM8pH9eMhJeQt8sUAWQz6yyxnnyBA8xxfq7
+	x4OpKv0P2R+P3A0mlwU/zjTiT7h99gzikJDrqyVfLo4bVVErEcoyX5qxJR5TFfjxhx2vCuVUphIF/
+	IoF/nt61p7vj4/SKly2+IowCh3fJxYv3+0Im+dY8vJvFZ33eW831YkTrudT+4/LmwMVdE1pdPbxaL
+	CEd0sGO1UuuZEGwc4wsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inDQ0-0004qo-SA; Fri, 03 Jan 2020 03:14:32 +0000
+	id 1inDPO-0004JX-4W; Fri, 03 Jan 2020 03:13:54 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inDON-0003Ei-1t; Fri, 03 Jan 2020 03:12:52 +0000
-X-UUID: d000a9ff25be42bab383ee3dae315d71-20200102
+ id 1inDOL-0003Ei-FY; Fri, 03 Jan 2020 03:12:51 +0000
+X-UUID: 422a4979eb3844149b9f3323d958b3d7-20200102
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=Y87Ghi2q7lqLcNdble/73yvTJNLbvfLPEvasR6g7eVc=; 
- b=n3S+s0MnR2PzbD/oV1gWA13W9jg4kjBv2fWHmwe2Q9MWn+YGvAqb+666qLHSGcSbnJcdvUa3Ia3jWTaP4hH7gRpKXRcZeJ7jB+AANQQeNu+57cpWmx7qFm+udWUo4hsXUGtLLoYww5zIrKmrBDv7M0DKtZpKHIsMkX+7MoDDVHs=;
-X-UUID: d000a9ff25be42bab383ee3dae315d71-20200102
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=Il1d/CuA3QdNQqOpUCl8h23dQ/u6yF7EK0/ELQERR1M=; 
+ b=oJPf5XEdhkCaAgnVNo2DoziuMn/ScN2HMmGpvLaGm+Hg/6J72syP4IHUAFirbfhAurtUiP8+YRh6pAsJLRT1ZsND7ahPfy9HFI8LZLKr9URT/KjqO/XXL9klvzF/CzC86XDxM52f+GLhIPWmz2VRqDM7wx0YFT4whI3yzwsewpk=;
+X-UUID: 422a4979eb3844149b9f3323d958b3d7-20200102
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 156878775; Thu, 02 Jan 2020 19:12:38 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 360713236; Thu, 02 Jan 2020 19:12:38 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 19:13:01 -0800
+ 15.0.1395.4; Thu, 2 Jan 2020 19:13:02 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Jan 2020 11:12:10 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 11:12:06 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 3 Jan 2020 11:13:03 +0800
+ Transport; Fri, 3 Jan 2020 11:13:04 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RESEND PATCH v6 00/17] add drm support for MT8183
-Date: Fri, 3 Jan 2020 11:12:11 +0800
-Message-ID: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [RESEND PATCH v6 01/17] dt-bindings: mediatek: add rdma_fifo_size
+ description for mt8183 display
+Date: Fri, 3 Jan 2020 11:12:12 +0800
+Message-ID: <1578021148-32413-2-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_191251_144201_65B7881E 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20200102_191249_522545_3D6DCDB3 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,65 +97,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series are based on 5.5-rc1 and provid 17 patch
-to support mediatek SOC MT8183
+Update device tree binding documention for rdma_fifo_size
 
-Change since v5
-- fix reviewed issue in v5
-base https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+---
+ .../devicetree/bindings/display/mediatek/mediatek,disp.txt  | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-Change since v4
-- fix reviewed issue in v4
-
-Change since v3
-- fix reviewed issue in v3
-- fix type error in v3
-- fix conflict with iommu patch
-
-Change since v2
-- fix reviewed issue in v2
-- add mutex node into dts file
-
-Changes since v1:
-- fix reviewed issue in v1
-- add dts for mt8183 display nodes
-- adjust display clock control flow in patch 22
-- add vmap support for mediatek drm in patch 23
-- fix page offset issue for mmap function in patch 24
-- enable allow_fb_modifiers for mediatek drm in patch 25
-
-Yongqiang Niu (17):
-  dt-bindings: mediatek: add rdma_fifo_size description for mt8183
-    display
-  arm64: dts: add display nodes for mt8183
-  drm/mediatek: move dsi/dpi select input into mtk_ddp_sel_in
-  drm/mediatek: make sout select function format same with select input
-  drm/mediatek: add mmsys private data for ddp path config
-  drm/mediatek: add private data for rdma1 to dpi0 connection
-  drm/mediatek: add private data for rdma1 to dsi0 connection
-  drm/mediatek: move rdma sout from mtk_ddp_mout_en into
-    mtk_ddp_sout_sel
-  drm/mediatek: add connection from OVL0 to OVL_2L0
-  drm/mediatek: add connection from RDMA0 to COLOR0
-  drm/mediatek: add connection from RDMA1 to DSI0
-  drm/mediatek: add connection from OVL_2L0 to RDMA0
-  drm/mediatek: add connection from OVL_2L1 to RDMA1
-  drm/mediatek: add connection from DITHER0 to DSI0
-  drm/mediatek: add connection from RDMA0 to DSI0
-  drm/mediatek: add fifo_size into rdma private data
-  drm/mediatek: add support for mediatek SOC MT8183
-
- .../bindings/display/mediatek/mediatek,disp.txt    |  13 +
- arch/arm64/boot/dts/mediatek/mt8183.dtsi           |  98 +++++++
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c            |  18 ++
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c           |  25 +-
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c            |   4 +
- drivers/gpu/drm/mediatek/mtk_drm_ddp.c             | 288 ++++++++++++++++-----
- drivers/gpu/drm/mediatek/mtk_drm_ddp.h             |   7 +
- drivers/gpu/drm/mediatek/mtk_drm_drv.c             |  49 ++++
- drivers/gpu/drm/mediatek/mtk_drm_drv.h             |   3 +
- 9 files changed, 435 insertions(+), 70 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+index 681502e..34bef44 100644
+--- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
++++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+@@ -70,6 +70,10 @@ Required properties (DMA function blocks):
+   argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
+   for details.
+ 
++Required properties (DMA function blocks):
++- mediatek,rdma_fifo_size: rdma fifo size may be different even in same SOC, add this
++  property to the corresponding rdma
++
+ Examples:
+ 
+ mmsys: clock-controller@14000000 {
+@@ -211,3 +215,12 @@ od@14023000 {
+ 	power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 	clocks = <&mmsys CLK_MM_DISP_OD>;
+ };
++
++rdma1: rdma@1400c000 {
++	compatible = "mediatek,mt8183-disp-rdma";
++	reg = <0 0x1400c000 0 0x1000>;
++	interrupts = <GIC_SPI 229 IRQ_TYPE_LEVEL_LOW>;
++	power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
++	clocks = <&mmsys CLK_MM_DISP_RDMA1>;
++	mediatek,rdma_fifo_size = <2048>;
++};
+\ No newline at end of file
 -- 
 1.8.1.1.dirty
 _______________________________________________
