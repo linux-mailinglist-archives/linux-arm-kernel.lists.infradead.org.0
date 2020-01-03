@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DF9112FB75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:15:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C71D312FB76
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:15:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=iLnzYEQXSXFZkDosk+pzjysIAeIXCK9fkz8EoPfJOJk=; b=MEqcO1gNh2KqUSg0kA/mc46WGS
-	5WXf1Ge5np3E2bMXnyUuKpFmay9q1zpLuSac6fbBSMkxAEMqktqM2GGhutc5R6Qz4ysRAJ8aYnhqY
-	JmATBDJFxkOE6Y/q0bg4b2NGUX3pAjx3dHiuAtwPSOdwXWSy3A12mYlU0HEINoL3QFp0CRF29kLxc
-	t2ljJJbWK2iSmaopnj0O4IRLyqMc6OJdepsqt/bk0eegQiFMyAxn1NTaGUA8eiH0bV+gFxvumLUTj
-	MpY2J2zkvVOn4IDlE7KcOoD8kfDSisyyIjMNY/y6WHlJ2rEuvENEuO+zGENJfAUgG/0XcrSoX31wR
-	YBNy2+og==;
+	bh=RVKy4U92tBCUMucoMDaN03XMB61AyC8l1XR1UJDCPBc=; b=Fw04Mp0JCxFYrTjO+jCEn6QqBS
+	PmsW4Vx7mi5IXMnQGZYXIOa3/1ExrHrXnp+FOsgjZdNwNRwr5kpdmtfGQufuCyziYdZlhTq/39a43
+	9hPOsMKtJfQHYhZd4MHz1m7+WN/d/k2ORJKSqo5PJ0eM1METhvdccnZl9VJhSIo06T7V00Fj5T1I1
+	NahwNB19tB6hQxJNCnPFd2fYOlgjVk8kQtM0vvymDVvuPQw3N80fIXxPZj3B4v/xcoRsY4Gh48ko0
+	NEbKuFyzoli+1nShIniiZOtr+KQrhfwaspkuTgza7NAhFh4uo7J3M1SJ58MAyCpMhF+CbHwPEF18d
+	ACrJ6tgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQXo-0005Ab-Gf; Fri, 03 Jan 2020 17:15:28 +0000
+	id 1inQXz-0005NJ-Ip; Fri, 03 Jan 2020 17:15:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQVK-0001dk-QQ
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:57 +0000
+ id 1inQVN-0001gH-AS
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:59 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1EFF320866;
- Fri,  3 Jan 2020 17:12:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CECFA22522;
+ Fri,  3 Jan 2020 17:12:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578071574;
- bh=GFeQ4Ri8+GF3+VI6hu+nKsN9aRFo/bhLlTlTOvAwCUM=;
+ s=default; t=1578071576;
+ bh=dFWlPdvaj+HyEUx1AlXxNrrcbYfk6tTvTj6iCncs5hE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vSTh4L0R82Cu1vyMMGt+dnxoyvsufDU/7T1VKVPbNIR5Rg3G025nqsYJdtrfLp0n3
- c4YHDqgKimRx/8grqhqNt5u1s1OeJDPA3sn9SqcXWWNv7t44XXqly8vT7EI4QFkJdN
- a/zO7L7xYrTvWAi9QB6ZLCOy/RVPHvgOl1rTgV64=
+ b=vYEVh82ouqc43hnKtYs0K9dsD65KilrWNTEVR5RgV2F/cBRMSzT1O/LogQv4Dasgc
+ 9NoK7/DOmU/VsIp2I1k+xmTheuxOu5mnW3cbCjl3NGXp4TbVfygkM8BKxuqqk8C2bx
+ t2KG3WHx9w2bqgG/83b6XOhcH04eaTUxRAm/FYeg=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 15/19] pci: exynos: Rename Exynos to lowercase
-Date: Fri,  3 Jan 2020 18:11:27 +0100
-Message-Id: <20200103171131.9900-16-krzk@kernel.org>
+Subject: [PATCH 16/19] serial: samsung: Rename Exynos to lowercase
+Date: Fri,  3 Jan 2020 18:11:28 +0100
+Message-Id: <20200103171131.9900-17-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200103171131.9900-1-krzk@kernel.org>
 References: <20200103171131.9900-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_091254_908848_8A83E67E 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20200103_091257_696886_4A4F1058 
+X-CRM114-Status: GOOD (  13.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,11 +75,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jingoo Han <jingoohan1@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -98,21 +98,22 @@ Electronics Co., Ltd., in advertisement materials and on website.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/pci/controller/dwc/pci-exynos.c | 2 +-
+ drivers/tty/serial/samsung_tty.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
-index 14a6ba4067fb..c5043d951e80 100644
---- a/drivers/pci/controller/dwc/pci-exynos.c
-+++ b/drivers/pci/controller/dwc/pci-exynos.c
-@@ -1,6 +1,6 @@
- // SPDX-License-Identifier: GPL-2.0
- /*
-- * PCIe host controller driver for Samsung EXYNOS SoCs
-+ * PCIe host controller driver for Samsung Exynos SoCs
-  *
-  * Copyright (C) 2013 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
+diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
+index 4762c74dbc35..73f951d65b93 100644
+--- a/drivers/tty/serial/samsung_tty.c
++++ b/drivers/tty/serial/samsung_tty.c
+@@ -2665,7 +2665,7 @@ OF_EARLYCON_DECLARE(s3c2440, "samsung,s3c2440-uart",
+ OF_EARLYCON_DECLARE(s3c6400, "samsung,s3c6400-uart",
+ 			s3c2440_early_console_setup);
+ 
+-/* S5PV210, EXYNOS */
++/* S5PV210, Exynos */
+ static struct samsung_early_console_data s5pv210_early_console_data = {
+ 	.txfull_mask = S5PV210_UFSTAT_TXFULL,
+ };
 -- 
 2.17.1
 
