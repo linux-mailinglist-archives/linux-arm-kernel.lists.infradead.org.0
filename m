@@ -2,89 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76C0112FB9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:26:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4EAE12FBAF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:42:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=XTif/3TCaAVURNUKj9KOQ7F+a9+XpSmqoG0PlWBKwyY=; b=c1kyMHCW2velH2OxoCypMWDyxa
-	DFq3CkTX20a6hE9UcOZc2976lDpAUntiu6x8omwzxtdS82mdGzO2Q/m5D40P+J7GtaNtzx7EAHgE5
-	5GGXOkBsCx45g6iLTKSMu4iiZW+psMGuN4Uk4G0XXtSyDyv5FoTQVegsYSkM5fMXITLWPPQP4cOld
-	wppeCm1QXhrbqEpcXnq8T4mqIBTzXsyjTlWTSsKieK4WrZK3yQmbZrVU5/zKucknj50somxQ2+waI
-	2svVQSkvxaWOsBPY563volhVOf8CWHvArWDNNfizw/BF3pRwf05Ugq5lQ22hB5rMULC9sWHfr7Nk8
-	f3eS2r+g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GHr9hiqC39Uwwh7pB6NCA2B6F9fheXbm4gCofL4DKQM=; b=FB0w02PcnOlrfJ
+	DS7+OfCI7XppiBr8XxJbWFbGalMsxGgKbD35EqM7Y+Wjt8Y66r4itb7edew4sGqF1legLeh1FxqOS
+	ndT6S7UvsX2GYw4L4+caMP0PX6GdlteXLRCyZrMWDHzHDBVbQsLdskzAq+a7VFusH9f68tnXKVEFm
+	qBjJbYi5+Dg8F32T5qvfcr3BSfsNXiC6SayyoKnOEwBL8yJ38wmFH6OrY/Y9ATJuYDXnRy3P9w/Wv
+	PEzmi6a8WV3IBaTjpkziCDiSDAphf+06u8hZf/FUW5uZgD5dEERJZlhZcfkPw/tyUDmrk0GjjaarL
+	jJZyLuP/h7L26OP8boaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQi2-0001jn-Go; Fri, 03 Jan 2020 17:26:02 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1inQxc-0007f1-Uv; Fri, 03 Jan 2020 17:42:08 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQgn-0007w2-HU
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:24:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1578072275;
- bh=Ki5Xx495F4YsB6ncXu7kfMIyiYqWsyfQhKXh4uBlEQU=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=GEZctov4iOwNBeFTSqRZTAQF4JKqhkJagQ1e89tgBXjEgFFN+oWtXJqbYkgsBpZz2
- gtGBaotnXK58d0wE01SGgMjCOcJuYyd2W7zSFFRGtacGg1f6NENPJ3sh+8/hZBFgjD
- Y3lG64Dt4s686/BlvSelQgpd3nGvPvb/p5iZlonU=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.154]) by mail.gmx.com
- (mrgmx104 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1MRmfi-1jAy5p0hiM-00TGog; Fri, 03 Jan 2020 18:24:35 +0100
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH V2 4/4] ARM: configs: Build BCM2711 thermal as module
-Date: Fri,  3 Jan 2020 18:23:56 +0100
-Message-Id: <1578072236-31820-5-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578072236-31820-1-git-send-email-wahrenst@gmx.net>
-References: <1578072236-31820-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:6YiHejA8tz/7oRcej/Y+aw4g3ItMrl44kB/QtEKWQ9VUcM8sLzF
- GraS2XuJy48/Tbe+V+qJojRYmnmXrxp4x1p05vtH/Nlo3cC+rot5nYH+v7iugevRXef/s6d
- k74SGUKH6no2bTAJrWqZJN780NAS95qNtFymhMZX/nnBFJkEqYP5IWJYrsOfWF8rSEit4NB
- efCy1K2tzGNwfxrM/CDVQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:jdbFcKc7zF4=:XLFLIi7nawvnlcyUr6+46L
- 0SDMsXKCo0dpBTbfncvc/bocSkvxF+lzgryxE9dRixoytn29pcF48aaXp6OeSkGDfzjnVxKJF
- RPeeJPLPrLtlTWZKRinPwPiEd7NU00xgIjQwXHisHMHcGpO/gjqVZk4H5KE8/bSXf5JBpl5Kp
- 3UwTS08qBnm1Wef2p3HDgjVvFwfGkwWGGyAqj+Gmxxtq5dsHULTXjDFLgqqvU/3qnIe/KwMSG
- LW5/tbOR+OViQGKktaypu/6Ik4O/fOHTy86wi+uwNq8LLQhc9htGKP6TIg+u1dC/8hVwl11hH
- LWMiBNE88Yn0yvMqpu79DvTSfXmGw1w6LJ9oGeOAarHrIPJeHXCX/WodvXDHiRFTLTRJzWqIj
- grGwhggFT9HSJ3OngwXgrtOt6Fd3KJy3QQdNls/KJHOVcRoUnW4+7voHAXWWLGMkQS773NWQ5
- fx/QJWfT7d/Al3cxxOqDoBepvXuLXJqa8ZIZDkhZcvh8juhx0JMDx2rp5hI4QVj2DFZzrIozK
- WbZYhvp5PqyUJ9ra6KmfaaavlNAGvgU/AQTP8pott4zlBdN3DYHRbs5ywZWf+RtQPPoaUNqAL
- 3oBkOFepo+vLzxa/MKNRFD7xxpA1w81aMyVyfC4EuKUxkhqY8uVtPd9zGo6/OY4bD64eua1wr
- /A1EffQcoN+HcNnT6kTdFVvvEctTpq1YCQeMh636jJJd+ooHzWIeOI92fKQdk/LNPXuXdbxbv
- nJFBjh0wAZPalxnpnf9jrae2MIaius6vls7nuHoZM9d2aUC96lDd2/F6tDh9rJ8jTcV/88/AQ
- 4RZeNd2VRAzFrWakhLnaexgPb8bpm5H/PdLhSa5xoMH3/olZfHWbPHWrDslAijUklEb7UF8Vs
- 0CMa39WkFW4a5YkjBnni/FCWq7xsrvZV2CLYi1NhoCtuM9/loBBMT3Hwdh+WWqCv0joOrmvVK
- Tz8s6qnNenSNTkPkUjeZcx4jFXtKpuheXzhxCPhJpu8j95yLl+ykgyyZIoD58Wi2JD0PDUNkj
- nZFpbfVrbH3WxNOBCozexVF+bO//YEqBfEwWwwuJrmseCr4VRbpDpyIBBGZP2iYBPnCO/K1gP
- 3isX6gUnwS9xCgLTWVkUFDhWVPVhM2TEfDk5ohUqLUJYndOOaH4UVo6aMB8BZzGMflgYWq27f
- 5j0bu/WqQQ0N55l4pAhO5L54BsaTLr5uxvQ8MLLN0y0QpbGJ/hwMYq5f6ylhCwiA2e9sEtKEF
- NGe3ULhh4Kr0WoPUv7dHadTIjrohwWBCmo38lXg==
+ id 1inQxW-0007eE-LA
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:42:04 +0000
+Received: by mail-oi1-x241.google.com with SMTP id l136so14713815oig.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Jan 2020 09:42:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VfjAOQzeMuPlGZxrv4+1+aWL8FZDYuyye/Bey06XXYk=;
+ b=gx7n5m1ki+v7fZAU0zvyz+HOCxkoqOxIs6SpKaUEZmmhuUladlppLexUVdTWc+DW0V
+ KLWsE6XobHjAAACjShsLnE4RE3+IwD2XhcDmPi5AxVIB90Y2ve6JsCBGN8LhScRVG+1d
+ rvAVDz6ytuFhiOWTzZbkcHi5apwDtYgr7AxYS1Ho4uPwJcO1XMyQQkwjFmxz6wemUqKj
+ oMOCgbb9oaFTeD6xX+b07+HbXCgD0PKK7tml4+mZ1au2ToEpUhM9Q05BlQX0QZ9fh4mr
+ iQAlPZk2CillV3QKuutazpDWXu60XzJfYZ9lyMllOyhoXertllfHccvuewbuHz4XML7b
+ DrFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VfjAOQzeMuPlGZxrv4+1+aWL8FZDYuyye/Bey06XXYk=;
+ b=AD+j5QhEEDp0TKAQNGL28X3B68lpG0qF31LVLfAotqNfR6V7sTOF4sjKlSBlQ1ZCJj
+ UccEOtWxhCTDXOuwpRmWE0XATagu8ViBUcMQi9rKEFTBWxfnZ1xC76yqWDImZJdhJPBO
+ ojp63BEwtS58J1yyuq+OT8qB+k8CIK4VdUffBT6MLVjQeFqZ3pEO0YqplzzKOAgbDcPi
+ HKM4ifvzmh/trFuI2THmjZbg2ZWEJ3Z1++JHxD7Xtfg+JrlGD0mhHU6wS21MDx11W5iz
+ FCWj+JLB8sAaX9ZWc+we5Siy8g9olO2/hlN0rms0i1KVCNRF9T0Pj0Zu0Z/pkp6i5zBI
+ 6/4A==
+X-Gm-Message-State: APjAAAVCbdz/ZJojf4tdcdSjHmqbUqQ1ze4XotYfrZ00T/7QLZao6TIR
+ Y+aQCmqY5hp6Got4SLjuRtcHhzs1ASDU7MgaEzvgBg==
+X-Google-Smtp-Source: APXvYqxgrFQmYmirDgGMiXQ0d6YoWI55AN6nNClFv614teHGpkSHVBcHgacvOVl+y/rKjZ4iAwDm5eCU8qkbj/HiReo=
+X-Received: by 2002:aca:43c1:: with SMTP id q184mr4120038oia.116.1578073321216; 
+ Fri, 03 Jan 2020 09:42:01 -0800 (PST)
+MIME-Version: 1.0
+References: <CANXhq0ok2Qo1zzyX2J4TFGbst_Zn0d6tLBqt30yMEq5JOLxFeA@mail.gmail.com>
+ <CAKv+Gu8dNReF-rrXnQgq6XJDfpCJ+g=A1fXzbtPpZP=b5GM1GQ@mail.gmail.com>
+In-Reply-To: <CAKv+Gu8dNReF-rrXnQgq6XJDfpCJ+g=A1fXzbtPpZP=b5GM1GQ@mail.gmail.com>
+From: Zong Li <zong.li@sifive.com>
+Date: Sat, 4 Jan 2020 01:41:51 +0800
+Message-ID: <CANXhq0oQyQ67ZJbgsss5PxvUqQxk9xHxsoNwZY_DQ_08Q7wbuA@mail.gmail.com>
+Subject: Re: KASLR: about the vmalloc area for randomization kernel image
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_092445_898593_A3F109ED 
-X-CRM114-Status: GOOD (  10.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200103_094202_824235_051BE4F3 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,51 +91,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This builds the BCM2711 thermal driver as module for the Raspberry Pi 4.
+On Fri, Jan 3, 2020 at 10:47 PM Ard Biesheuvel
+<ard.biesheuvel@linaro.org> wrote:
+>
+> On Fri, 3 Jan 2020 at 07:52, Zong Li <zong.li@sifive.com> wrote:
+> >
+> > Hi Ard,
+> >
+> > I'm working on KASLR for RISC-V, and I'm interested in what is the
+> > consideration of choosing the vmalloc area on arm64. I was wondering
+> > if you could give me some advice.
+> >
+> > There are other architectures had implemented KASLR, such as x86,
+> > mips, s390 and ppc, they use the lowmem to randomize the address of
+> > kernel image, it seems that only arm64 move the kernel image to
+> > vmalloc area.
+> >
+> > I tried to understand the history and reason for using vmalloc area
+> > through some discussions at the end of mail, but I still couldn't know
+> > what is the reason for using vmalloc area in the beginning.
+> >
+> > For the randomization purpose, it seems to me that there is no
+> > significant difference between using lowmem and vmalloc area. Would
+> > you be willing to help to give some ideas about that? :)
+> >
+> > Sorry if I missed anything. Thank you very much.
+> >
+>
+> Are we talking about 32-bit here? If not, what do you mean by lowmem?
 
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm/configs/multi_v7_defconfig | 1 +
- arch/arm64/configs/defconfig        | 1 +
- 2 files changed, 2 insertions(+)
-
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 3f1b96d..f5d19cc 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -496,6 +496,7 @@ CONFIG_IMX_THERMAL=y
- CONFIG_ROCKCHIP_THERMAL=y
- CONFIG_RCAR_THERMAL=y
- CONFIG_ARMADA_THERMAL=y
-+CONFIG_BCM2711_THERMAL=m
- CONFIG_BCM2835_THERMAL=m
- CONFIG_BRCMSTB_THERMAL=m
- CONFIG_ST_THERMAL_MEMMAP=y
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 6a83ba2..b2f6673 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -442,6 +442,7 @@ CONFIG_ROCKCHIP_THERMAL=m
- CONFIG_RCAR_THERMAL=y
- CONFIG_RCAR_GEN3_THERMAL=y
- CONFIG_ARMADA_THERMAL=y
-+CONFIG_BCM2711_THERMAL=m
- CONFIG_BCM2835_THERMAL=m
- CONFIG_BRCMSTB_THERMAL=m
- CONFIG_EXYNOS_THERMAL=y
---
-2.7.4
-
+Oops, sorry about that, I consider 32-bit and 64-bit for KASLR at the
+same time, it should be linear mapping area here, not lowmem.
 
 _______________________________________________
 linux-arm-kernel mailing list
