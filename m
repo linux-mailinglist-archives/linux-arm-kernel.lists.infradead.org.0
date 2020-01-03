@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5622A12F4BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 07:52:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92FDE12F4B0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 07:45:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5AoVU3vGx4vAHTLoEYCUdcYaG6KSYIUDMwWkgMZ4rNc=; b=BpfKlpy7NafbTf
-	wByTOO5ZKXGvpFNtHS6Dq5ZMrnPsBq3MWhmTNEvmOh7jyrlZg7/MwSU5cE+RTRdDjNWVEbXERGOPL
-	Q12pZv9w0HGzXSIN1s1IuLIBAv7+QzpEriaf/O8lvrbeN/o+RuGAS9xZXf19+FAPgne//eXWrktIw
-	Rty7M2kuDVNCgfBSbIbgox4OWmYakmTmFp08/h0V6Ss99FX5ea+dWAKCE4FnlQLE7UeNI5Kq+HKls
-	75LGrUK9MGvneGLSKrzFTuKn8sRYUBTcZskYLmil3kqVAuKFML0l30FA6dEbLo+riZPyoqIVckDHC
-	6rC5QCVj48VC9LJYAHJw==;
+	List-Owner; bh=slgYZ7vw21eVSPLRi55EXvRu11uQHBI85o7C7L8ovJ4=; b=TbGNnJWqclH9NP
+	gLeqSmgPaN5MjlnwvTBXehlH0ViXIpnScSwFyhfBHI6OAZCE9TifngK+k2HCPhS9PzmGCKhmPSX7+
+	9tGFgeu0r3K6KUnlPSWgA4U3K3MC5vLJY3PFY6N8CPuRA7iXKZdVZ5sRdzQtcUiGNdSaLS2eqUHxq
+	Crx1okzqPsI85SQuleKgQ+029SAhOcUR77DYXSqzDJqGJXgZ1E2AGqLh9XRpbKQYPg+K8vA8xAdXh
+	yU/vvKikf2h6+BencElTl4TDr4qiasAVvxnHlnH7bR9Vm9tyawkBovM81Av28rD77BeIam926bpZX
+	8mSoVuQA0AvbW30yxFRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inGpD-0000W3-Cp; Fri, 03 Jan 2020 06:52:47 +0000
+	id 1inGhz-0005HA-4K; Fri, 03 Jan 2020 06:45:19 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inGp1-0000TV-2k; Fri, 03 Jan 2020 06:52:36 +0000
-X-UUID: f1c6dd6d2c1e47d4a1b4c42e48081282-20200102
+ id 1inGhC-0004lH-Vz; Fri, 03 Jan 2020 06:44:32 +0000
+X-UUID: bae6109ed80c413eb540849f30557f3e-20200102
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=4Dvki540yQLjWmLQxGuCZSHAC3ljyLeg0vX96OrmzTk=; 
- b=o/RuM7UCK65DrG1o7s2kwUB1deo/b3ccrOsEKcrarMe9AadexQZLjJK9hiGvwZTKNczejgA53ht5mTcMkbhX2xUYXUKbGD4qtqFDLuMgQ23SYmS6sfgXhjJxSMvN6/2a1QLn9vz8a+TCgqZZ2jfl51qXF0QreLmONFcJN+Dr7i8=;
-X-UUID: f1c6dd6d2c1e47d4a1b4c42e48081282-20200102
+ bh=lhAQWmtqOvSw5F4B8xRXrhy4RlTwrvkV3MPf0tW4PbQ=; 
+ b=gCzu0gcMRxHDg9CjPmPedCDcrKFIu7m0Y76Ytid+hyyvkmAKXqPSbpOww0CV4jLAd5fVhVWoRZU5Y3EHDWbapxj8fPsIs96if7DXQPJnofYSCEgr9BS0Lk6iRwRp7pqHIOKmK1V5cV5b/niBTkQg+xWfhHYaBK9PqeFJ+s+6jqs=;
+X-UUID: bae6109ed80c413eb540849f30557f3e-20200102
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <michael.kao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1228098905; Thu, 02 Jan 2020 22:52:32 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 22:44:14 -0800
+ with ESMTP id 1648386034; Thu, 02 Jan 2020 22:44:23 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 22:44:35 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Jan 2020 14:43:39 +0800
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 14:43:43 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 3 Jan 2020 14:44:08 +0800
@@ -48,17 +48,19 @@ To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, <hsinyi@chromium.org>, <linux-pm@vger.kernel.org>,
  <srv_heupstream@mediatek.com>
-Subject: [PATCH v3,1/8] arm64: dts: mt8183: add thermal zone node
-Date: Fri, 3 Jan 2020 14:44:00 +0800
-Message-ID: <20200103064407.19861-2-michael.kao@mediatek.com>
+Subject: [PATCH v3,
+ 2/8] arm64: dts: mt8183: add/update dynamic power coefficients
+Date: Fri, 3 Jan 2020 14:44:01 +0800
+Message-ID: <20200103064407.19861-3-michael.kao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200103064407.19861-1-michael.kao@mediatek.com>
 References: <20200103064407.19861-1-michael.kao@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_225235_133654_5641B890 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20200102_224431_032765_A421EF1D 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,116 +100,82 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "michael.kao" <michael.kao@mediatek.com>
 
-Add thermal zone node to Mediatek MT8183 dts file.
+Add dynamic power coefficients for all cores and update those of
+CPU0 and CPU4.
 
 Signed-off-by: Michael Kao <michael.kao@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 85 ++++++++++++++++++++++++
- 1 file changed, 85 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 10b32471bc7b..a2793cf3d994 100644
+index a2793cf3d994..cfb74af260e0 100644
 --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -570,6 +570,88 @@
- 			status = "disabled";
+@@ -73,6 +73,7 @@
+ 			reg = <0x000>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <741>;
++			dynamic-power-coefficient = <84>;
  		};
  
-+		thermal: thermal@1100b000 {
-+			#thermal-sensor-cells = <1>;
-+			compatible = "mediatek,mt8183-thermal";
-+			reg = <0 0x1100b000 0 0x1000>;
-+			interrupts = <0 76 IRQ_TYPE_LEVEL_LOW>;
-+			clocks = <&infracfg CLK_INFRA_THERM>,
-+				 <&infracfg CLK_INFRA_AUXADC>;
-+			clock-names = "therm", "auxadc";
-+			resets = <&infracfg  MT8183_INFRACFG_AO_THERM_SW_RST>;
-+			mediatek,auxadc = <&auxadc>;
-+			mediatek,apmixedsys = <&apmixedsys>;
-+			mediatek,hw-reset-temp = <117000>;
-+			nvmem-cells = <&thermal_calibration>;
-+			nvmem-cell-names = "calibration-data";
-+		};
-+
-+		thermal-zones {
-+			cpu_thermal: cpu_thermal {
-+				polling-delay-passive = <1000>;
-+				polling-delay = <1000>;
-+				thermal-sensors = <&thermal 0>;
-+				sustainable-power = <5000>;
-+			};
-+
-+			/* The tzts1 ~ tzts6 don't need to polling */
-+			/* The tzts1 ~ tzts6 don't need to thermal throttle */
-+
-+			tzts1: tzts1 {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 1>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+
-+			tzts2: tzts2 {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 2>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+
-+			tzts3: tzts3 {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 3>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+
-+			tzts4: tzts4 {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 4>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+
-+			tzts5: tzts5 {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 5>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+
-+			tztsABB: tztsABB {
-+				polling-delay-passive = <0>;
-+				polling-delay = <0>;
-+				thermal-sensors = <&thermal 6>;
-+				sustainable-power = <5000>;
-+				trips {};
-+				cooling-maps {};
-+			};
-+		};
-+
- 		audiosys: syscon@11220000 {
- 			compatible = "mediatek,mt8183-audiosys", "syscon";
- 			reg = <0 0x11220000 0 0x1000>;
-@@ -580,6 +662,9 @@
- 			compatible = "mediatek,mt8183-efuse",
- 				     "mediatek,efuse";
- 			reg = <0 0x11f10000 0 0x1000>;
-+			thermal_calibration: calib@180 {
-+				reg = <0x180 0xc>;
-+			};
+ 		cpu1: cpu@1 {
+@@ -81,6 +82,7 @@
+ 			reg = <0x001>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <741>;
++			dynamic-power-coefficient = <84>;
  		};
  
- 		mfgcfg: syscon@13000000 {
+ 		cpu2: cpu@2 {
+@@ -89,6 +91,7 @@
+ 			reg = <0x002>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <741>;
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu3: cpu@3 {
+@@ -97,6 +100,7 @@
+ 			reg = <0x003>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <741>;
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu4: cpu@100 {
+@@ -105,6 +109,7 @@
+ 			reg = <0x100>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu5: cpu@101 {
+@@ -113,6 +118,7 @@
+ 			reg = <0x101>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu6: cpu@102 {
+@@ -121,6 +127,7 @@
+ 			reg = <0x102>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu7: cpu@103 {
+@@ -129,6 +136,7 @@
+ 			reg = <0x103>;
+ 			enable-method = "psci";
+ 			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <211>;
+ 		};
+ 	};
+ 
 -- 
 2.18.0
 _______________________________________________
