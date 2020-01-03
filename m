@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E51712FB42
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:12:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9F4612FB54
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:13:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6csXS3xRnX+XWfK0awrNwuKDsDZdaYypad7dJEjnWpk=; b=Q5ecQBU0b2cnR9ev9yxaiO0eDf
-	TFwR2KYuvBZttClK2PSCxoEj74ksCmnYkQbh+taC0T4wlANv3kRfyPrQLvY2DUk9TLTmig3xZS0Wl
-	3mNWdostMnkYBYbR7l+Rm7EJG4sqRzJBuiHnTW6dU7bP07L7yduzMvoAqv80R2lG8bfqA9Xg6HyQq
-	vcE397uefP3q9qxtFNZVMD6K2pUFnWJVVy/SrOCoD8oA4Bze/ruuflN/OftKGLE1kbg5Un5QZV3A5
-	nMbKl/2FAYieKpSxTFfTGnqRv/SKI8OG2jJFJd/fFaQWe2UAt55OUcItkG19qh1YOcIeDxQmEJmV/
-	UVUcCktA==;
+	bh=Cqgy04++m3TUj9rIYyYd5MNM5LIiM00QXGNF5wd54UA=; b=ogcpDxQ+P41U3wQK7lm/9yL4zk
+	M41vAoiD2RSw63zXyhVS/5F26chEtPayQCviN1w4/230+7v68p1u9PPrjrxh4xfFiJIf++lsw7ASe
+	TsGxrX6YMyK9LumqW/xd/GpKyV1kemxJArrP8CrVnhsRXPpHpAP7EmT+l//lKq2gPhXoUD+t0AHjM
+	OWhFrfB6mnmAczw0mN2DWN04QpIwUmwqk745tTjn5W4O/yz/nWUFfqoSZBKuEwXoj9+MIsCTxIY0+
+	wwx4pRr7ofrWg2b8kHqsXH9C3IILmS+tvAMpjfMZG5eYix7rW52FuVwF8Sxn0in/aJr9/sTqos45x
+	C9kz/oUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQV1-000152-LF; Fri, 03 Jan 2020 17:12:35 +0000
+	id 1inQVR-0001TS-B5; Fri, 03 Jan 2020 17:13:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQUT-0000lv-Dl
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:03 +0000
+ id 1inQUW-0000ox-DD
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:06 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2709721734;
- Fri,  3 Jan 2020 17:11:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 13A87217F4;
+ Fri,  3 Jan 2020 17:12:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578071521;
- bh=T/vy9MvjG1dq+hJ9DC0hgDXW/72BInj4eDdKiNpHXfY=;
+ s=default; t=1578071523;
+ bh=EQcqcjjuv0ouoB59KSHZHDUV1ulzaGFtTg7hG/A0CYg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YEC1E/Psd5WYYiIETsb1hRGzzNvIKzuQNlQjGkVoHHqjuAh7RLSX7vngv/VPzDdrb
- BnXe/j4rxZmarIeeZ2Qfq2UU55SkNSr9evpAgSld3j92TxsubkdTTylyZFJYq+cSKj
- zgMtboHg2MrE+xAnm5y67Lo/qO1t5u5MHgjyO2sg=
+ b=HPmaVU7pncQfjbv/dS6uHkSk7+91xulVHwrldUk8C1I9vRUGs5rlsvABQGJSwUZya
+ E5VrvwL6XbKoj6Sp1P8GqIs8my2a+lGUHnNk4nE6xcjg6GFb8xgeKZGIVkmEnkFL87
+ DToXxl2Ye0zI3o71Tz2Xqx5gtYkaoGc7uWnE4aSU=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 03/19] ARM: samsung: Rename Samsung and Exynos to lowercase
-Date: Fri,  3 Jan 2020 18:11:15 +0100
-Message-Id: <20200103171131.9900-4-krzk@kernel.org>
+Subject: [PATCH 04/19] soc: samsung: Rename Samsung and Exynos to lowercase
+Date: Fri,  3 Jan 2020 18:11:16 +0100
+Message-Id: <20200103171131.9900-5-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200103171131.9900-1-krzk@kernel.org>
 References: <20200103171131.9900-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_091201_520072_45D99747 
-X-CRM114-Status: GOOD (  15.94  )
+X-CRM114-CacheID: sfid-20200103_091204_493625_06714BE9 
+X-CRM114-Status: GOOD (  13.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,11 +75,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>, linux-pm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -103,343 +100,210 @@ https://www.samsung.com/semiconductor/privacy-global/).
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- arch/arm/mach-exynos/Kconfig                  | 36 +++++++++----------
- arch/arm/mach-exynos/common.h                 |  2 +-
- arch/arm/mach-exynos/exynos.c                 |  4 +--
- arch/arm/mach-exynos/include/mach/map.h       |  2 +-
- arch/arm/mach-exynos/pm.c                     |  2 +-
- arch/arm/mach-exynos/smc.h                    |  2 +-
- arch/arm/mach-exynos/suspend.c                |  2 +-
- arch/arm/mach-s3c24xx/Kconfig                 | 16 ++++-----
- arch/arm/plat-samsung/adc.c                   |  2 +-
- arch/arm/plat-samsung/devs.c                  |  2 +-
- arch/arm/plat-samsung/gpio-samsung.c          |  2 +-
- .../plat-samsung/include/plat/samsung-time.h  |  2 +-
- 12 files changed, 37 insertions(+), 37 deletions(-)
+ drivers/soc/samsung/Kconfig                 |  2 +-
+ drivers/soc/samsung/exynos-chipid.c         |  2 +-
+ drivers/soc/samsung/exynos-pmu.c            |  2 +-
+ drivers/soc/samsung/exynos-pmu.h            |  2 +-
+ drivers/soc/samsung/exynos3250-pmu.c        |  2 +-
+ drivers/soc/samsung/exynos4-pmu.c           |  2 +-
+ drivers/soc/samsung/exynos5250-pmu.c        |  2 +-
+ drivers/soc/samsung/exynos5420-pmu.c        |  2 +-
+ include/linux/soc/samsung/exynos-pmu.h      |  2 +-
+ include/linux/soc/samsung/exynos-regs-pmu.h | 16 ++++++++--------
+ 10 files changed, 17 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
-index 9fb045ab80e4..73ce92a0cdb2 100644
---- a/arch/arm/mach-exynos/Kconfig
-+++ b/arch/arm/mach-exynos/Kconfig
-@@ -3,10 +3,10 @@
- # Copyright (c) 2010-2011 Samsung Electronics Co., Ltd.
- #		http://www.samsung.com/
- 
--# Configuration options for the EXYNOS
-+# Configuration options for the Samsung Exynos
- 
- menuconfig ARCH_EXYNOS
--	bool "Samsung EXYNOS"
-+	bool "Samsung Exynos"
- 	depends on ARCH_MULTI_V7
- 	select ARCH_HAS_HOLES_MEMORYMODEL
- 	select ARCH_SUPPORTS_BIG_ENDIAN
-@@ -41,7 +41,7 @@ menuconfig ARCH_EXYNOS
- 	select POWER_RESET_SYSCON
- 	select POWER_RESET_SYSCON_POWEROFF
- 	help
--	  Support for SAMSUNG EXYNOS SoCs
-+	  Support for Samsung Exynos SoCs
- 
- if ARCH_EXYNOS
- 
-@@ -51,14 +51,14 @@ config S5P_DEV_MFC
- 	  Compile in setup memory (init) code for MFC
- 
- config ARCH_EXYNOS3
--	bool "SAMSUNG EXYNOS3"
-+	bool "Samsung Exynos3"
- 	default y
- 	select ARM_CPU_SUSPEND if PM
- 	help
--	  Samsung EXYNOS3 (Cortex-A7) SoC based systems
-+	  Samsung Exynos3 (Cortex-A7) SoC based systems
- 
- config ARCH_EXYNOS4
--	bool "SAMSUNG EXYNOS4"
-+	bool "Samsung Exynos4"
- 	default y
- 	select ARM_CPU_SUSPEND if PM_SLEEP
- 	select CLKSRC_SAMSUNG_PWM if CPU_EXYNOS4210
-@@ -66,48 +66,48 @@ config ARCH_EXYNOS4
- 	select GIC_NON_BANKED
- 	select MIGHT_HAVE_CACHE_L2X0
- 	help
--	  Samsung EXYNOS4 (Cortex-A9) SoC based systems
-+	  Samsung Exynos4 (Cortex-A9) SoC based systems
- 
- config ARCH_EXYNOS5
--	bool "SAMSUNG EXYNOS5"
-+	bool "Samsung Exynos5"
- 	default y
- 	help
--	  Samsung EXYNOS5 (Cortex-A15/A7) SoC based systems
-+	  Samsung Exynos5 (Cortex-A15/A7) SoC based systems
- 
--comment "EXYNOS SoCs"
-+comment "Exynos SoCs"
- 
- config SOC_EXYNOS3250
--	bool "SAMSUNG EXYNOS3250"
-+	bool "Samsung Exynos3250"
- 	default y
- 	depends on ARCH_EXYNOS3
- 
- config CPU_EXYNOS4210
--	bool "SAMSUNG EXYNOS4210"
-+	bool "Samsung Exynos4210"
- 	default y
- 	depends on ARCH_EXYNOS4
- 
- config SOC_EXYNOS4412
--	bool "SAMSUNG EXYNOS4412"
-+	bool "Samsung Exynos4412"
- 	default y
- 	depends on ARCH_EXYNOS4
- 
- config SOC_EXYNOS5250
--	bool "SAMSUNG EXYNOS5250"
-+	bool "Samsung Exynos5250"
- 	default y
- 	depends on ARCH_EXYNOS5
- 
- config SOC_EXYNOS5260
--	bool "SAMSUNG EXYNOS5260"
-+	bool "Samsung Exynos5260"
- 	default y
- 	depends on ARCH_EXYNOS5
- 
- config SOC_EXYNOS5410
--	bool "SAMSUNG EXYNOS5410"
-+	bool "Samsung Exynos5410"
- 	default y
- 	depends on ARCH_EXYNOS5
- 
- config SOC_EXYNOS5420
--	bool "SAMSUNG EXYNOS5420"
-+	bool "Samsung Exynos5420"
- 	default y
- 	depends on ARCH_EXYNOS5
- 	select EXYNOS_MCPM if SMP
-@@ -115,7 +115,7 @@ config SOC_EXYNOS5420
- 	select ARM_CPU_SUSPEND
- 
- config SOC_EXYNOS5800
--	bool "SAMSUNG EXYNOS5800"
-+	bool "Samsung EXYNOS5800"
- 	default y
- 	depends on SOC_EXYNOS5420
- 
-diff --git a/arch/arm/mach-exynos/common.h b/arch/arm/mach-exynos/common.h
-index 56411bb63d45..afd988a92836 100644
---- a/arch/arm/mach-exynos/common.h
-+++ b/arch/arm/mach-exynos/common.h
+diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
+index 27fc59bbb520..c7a2003687c7 100644
+--- a/drivers/soc/samsung/Kconfig
++++ b/drivers/soc/samsung/Kconfig
+@@ -1,6 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ #
+-# SAMSUNG SoC drivers
++# Samsung SoC drivers
+ #
+ menuconfig SOC_SAMSUNG
+ 	bool "Samsung SoC driver support" if COMPILE_TEST
+diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
+index b89c26a71c6e..2dad4961a80b 100644
+--- a/drivers/soc/samsung/exynos-chipid.c
++++ b/drivers/soc/samsung/exynos-chipid.c
 @@ -3,7 +3,7 @@
-  * Copyright (c) 2011 Samsung Electronics Co., Ltd.
+  * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+  *	      http://www.samsung.com/
+  *
+- * EXYNOS - CHIP ID support
++ * Exynos - CHIP ID support
+  * Author: Pankaj Dubey <pankaj.dubey@samsung.com>
+  * Author: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+  */
+diff --git a/drivers/soc/samsung/exynos-pmu.c b/drivers/soc/samsung/exynos-pmu.c
+index 7da2701c871a..17304fa18429 100644
+--- a/drivers/soc/samsung/exynos-pmu.c
++++ b/drivers/soc/samsung/exynos-pmu.c
+@@ -3,7 +3,7 @@
+ // Copyright (c) 2011-2014 Samsung Electronics Co., Ltd.
+ //		http://www.samsung.com/
+ //
+-// EXYNOS - CPU PMU(Power Management Unit) support
++// Exynos - CPU PMU(Power Management Unit) support
+ 
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+diff --git a/drivers/soc/samsung/exynos-pmu.h b/drivers/soc/samsung/exynos-pmu.h
+index 977e4daf5a0f..5e851f32307e 100644
+--- a/drivers/soc/samsung/exynos-pmu.h
++++ b/drivers/soc/samsung/exynos-pmu.h
+@@ -3,7 +3,7 @@
+  * Copyright (c) 2015 Samsung Electronics Co., Ltd.
   *		http://www.samsung.com
   *
-- * Common Header for EXYNOS machines
-+ * Common Header for Exynos machines
+- * Header for EXYNOS PMU Driver support
++ * Header for Exynos PMU Driver support
   */
  
- #ifndef __ARCH_ARM_MACH_EXYNOS_COMMON_H
-diff --git a/arch/arm/mach-exynos/exynos.c b/arch/arm/mach-exynos/exynos.c
-index 9aa483366ebc..7a8d1555db40 100644
---- a/arch/arm/mach-exynos/exynos.c
-+++ b/arch/arm/mach-exynos/exynos.c
-@@ -1,6 +1,6 @@
- // SPDX-License-Identifier: GPL-2.0
- //
--// SAMSUNG EXYNOS Flattened Device Tree enabled machine
-+// Samsung Exynos Flattened Device Tree enabled machine
- //
- // Copyright (c) 2010-2014 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com
-@@ -192,7 +192,7 @@ static void __init exynos_dt_fixup(void)
- 	of_fdt_limit_memory(8);
- }
- 
--DT_MACHINE_START(EXYNOS_DT, "SAMSUNG EXYNOS (Flattened Device Tree)")
-+DT_MACHINE_START(EXYNOS_DT, "Samsung Exynos (Flattened Device Tree)")
- 	.l2c_aux_val	= 0x3c400001,
- 	.l2c_aux_mask	= 0xc20fffff,
- 	.smp		= smp_ops(exynos_smp_ops),
-diff --git a/arch/arm/mach-exynos/include/mach/map.h b/arch/arm/mach-exynos/include/mach/map.h
-index 22ebe3654633..8d58faa54ff7 100644
---- a/arch/arm/mach-exynos/include/mach/map.h
-+++ b/arch/arm/mach-exynos/include/mach/map.h
+ #ifndef __EXYNOS_PMU_H
+diff --git a/drivers/soc/samsung/exynos3250-pmu.c b/drivers/soc/samsung/exynos3250-pmu.c
+index 275d348ed9c9..30f230ed1769 100644
+--- a/drivers/soc/samsung/exynos3250-pmu.c
++++ b/drivers/soc/samsung/exynos3250-pmu.c
 @@ -3,7 +3,7 @@
-  * Copyright (c) 2010-2011 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com/
+ // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
+ //		http://www.samsung.com/
+ //
+-// EXYNOS3250 - CPU PMU (Power Management Unit) support
++// Exynos3250 - CPU PMU (Power Management Unit) support
+ 
+ #include <linux/soc/samsung/exynos-regs-pmu.h>
+ #include <linux/soc/samsung/exynos-pmu.h>
+diff --git a/drivers/soc/samsung/exynos4-pmu.c b/drivers/soc/samsung/exynos4-pmu.c
+index a7cdbf1aac0c..cb35103565a6 100644
+--- a/drivers/soc/samsung/exynos4-pmu.c
++++ b/drivers/soc/samsung/exynos4-pmu.c
+@@ -3,7 +3,7 @@
+ // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
+ //		http://www.samsung.com/
+ //
+-// EXYNOS4 - CPU PMU(Power Management Unit) support
++// Exynos4 - CPU PMU(Power Management Unit) support
+ 
+ #include <linux/soc/samsung/exynos-regs-pmu.h>
+ #include <linux/soc/samsung/exynos-pmu.h>
+diff --git a/drivers/soc/samsung/exynos5250-pmu.c b/drivers/soc/samsung/exynos5250-pmu.c
+index 19b38e008145..7a2d50be6b4a 100644
+--- a/drivers/soc/samsung/exynos5250-pmu.c
++++ b/drivers/soc/samsung/exynos5250-pmu.c
+@@ -3,7 +3,7 @@
+ // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
+ //		http://www.samsung.com/
+ //
+-// EXYNOS5250 - CPU PMU (Power Management Unit) support
++// Exynos5250 - CPU PMU (Power Management Unit) support
+ 
+ #include <linux/soc/samsung/exynos-regs-pmu.h>
+ #include <linux/soc/samsung/exynos-pmu.h>
+diff --git a/drivers/soc/samsung/exynos5420-pmu.c b/drivers/soc/samsung/exynos5420-pmu.c
+index b236d3b47b49..6fedcd78cb45 100644
+--- a/drivers/soc/samsung/exynos5420-pmu.c
++++ b/drivers/soc/samsung/exynos5420-pmu.c
+@@ -3,7 +3,7 @@
+ // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
+ //		http://www.samsung.com/
+ //
+-// EXYNOS5420 - CPU PMU (Power Management Unit) support
++// Exynos5420 - CPU PMU (Power Management Unit) support
+ 
+ #include <linux/pm.h>
+ #include <linux/soc/samsung/exynos-regs-pmu.h>
+diff --git a/include/linux/soc/samsung/exynos-pmu.h b/include/linux/soc/samsung/exynos-pmu.h
+index fc0b445bb36b..a4f5516cc956 100644
+--- a/include/linux/soc/samsung/exynos-pmu.h
++++ b/include/linux/soc/samsung/exynos-pmu.h
+@@ -3,7 +3,7 @@
+  * Copyright (c) 2014 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
   *
-- * EXYNOS - Memory map definitions
-+ * Exynos - Memory map definitions
+- * Header for EXYNOS PMU Driver support
++ * Header for Exynos PMU Driver support
   */
  
- #ifndef __ASM_ARCH_MAP_H
-diff --git a/arch/arm/mach-exynos/pm.c b/arch/arm/mach-exynos/pm.c
-index 48e7fb38613e..78af34cc89cc 100644
---- a/arch/arm/mach-exynos/pm.c
-+++ b/arch/arm/mach-exynos/pm.c
+ #ifndef __LINUX_SOC_EXYNOS_PMU_H
+diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
+index 5addaf5ccbce..fc9250fb3133 100644
+--- a/include/linux/soc/samsung/exynos-regs-pmu.h
++++ b/include/linux/soc/samsung/exynos-regs-pmu.h
 @@ -3,7 +3,7 @@
- // Copyright (c) 2011-2014 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com
- //
--// EXYNOS - Power Management support
-+// Exynos - Power Management support
- //
- // Based on arch/arm/mach-s3c2410/pm.c
- // Copyright (c) 2006 Simtec Electronics
-diff --git a/arch/arm/mach-exynos/smc.h b/arch/arm/mach-exynos/smc.h
-index 98832e50852d..5c30feb8f07d 100644
---- a/arch/arm/mach-exynos/smc.h
-+++ b/arch/arm/mach-exynos/smc.h
-@@ -2,7 +2,7 @@
- /*
-  *  Copyright (c) 2012 Samsung Electronics.
+  * Copyright (c) 2010-2015 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
   *
-- * EXYNOS - SMC Call
-+ * Exynos - SMC Call
-  */
+- * EXYNOS - Power management unit definition
++ * Exynos - Power management unit definition
+  *
+  * Notice:
+  * This is not a list of all Exynos Power Management Unit SFRs.
+@@ -185,7 +185,7 @@
+ /* Only for S5Pv210 */
+ #define S5PV210_EINT_WAKEUP_MASK	0xC004
  
- #ifndef __ASM_ARCH_EXYNOS_SMC_H
-diff --git a/arch/arm/mach-exynos/suspend.c b/arch/arm/mach-exynos/suspend.c
-index 6a0d3448ea00..3bf14ca78b62 100644
---- a/arch/arm/mach-exynos/suspend.c
-+++ b/arch/arm/mach-exynos/suspend.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2014 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com
- //
--// EXYNOS - Suspend support
-+// Exynos - Suspend support
- //
- // Based on arch/arm/mach-s3c2410/pm.c
- // Copyright (c) 2006 Simtec Electronics
-diff --git a/arch/arm/mach-s3c24xx/Kconfig b/arch/arm/mach-s3c24xx/Kconfig
-index 686f0bbde998..c5c06d98b147 100644
---- a/arch/arm/mach-s3c24xx/Kconfig
-+++ b/arch/arm/mach-s3c24xx/Kconfig
-@@ -19,12 +19,12 @@ config PLAT_S3C24XX
+-/* Only for EXYNOS4210 */
++/* Only for Exynos4210 */
+ #define S5P_CMU_CLKSTOP_LCD1_LOWPWR	0x1154
+ #define S5P_CMU_RESET_LCD1_LOWPWR	0x1174
+ #define S5P_MODIMIF_MEM_LOWPWR		0x11C4
+@@ -193,7 +193,7 @@
+ #define S5P_SATA_MEM_LOWPWR		0x11E4
+ #define S5P_LCD1_LOWPWR			0x1394
  
+-/* Only for EXYNOS4x12 */
++/* Only for Exynos4x12 */
+ #define S5P_ISP_ARM_LOWPWR			0x1050
+ #define S5P_DIS_IRQ_ISP_ARM_LOCAL_LOWPWR	0x1054
+ #define S5P_DIS_IRQ_ISP_ARM_CENTRAL_LOWPWR	0x1058
+@@ -234,7 +234,7 @@
+ #define S5P_SECSS_MEM_OPTION			0x2EC8
+ #define S5P_ROTATOR_MEM_OPTION			0x2F48
  
+-/* Only for EXYNOS4412 */
++/* Only for Exynos4412 */
+ #define S5P_ARM_CORE2_LOWPWR			0x1020
+ #define S5P_DIS_IRQ_CORE2			0x1024
+ #define S5P_DIS_IRQ_CENTRAL2			0x1028
+@@ -242,7 +242,7 @@
+ #define S5P_DIS_IRQ_CORE3			0x1034
+ #define S5P_DIS_IRQ_CENTRAL3			0x1038
  
--menu "SAMSUNG S3C24XX SoCs Support"
-+menu "Samsung S3C24XX SoCs Support"
+-/* Only for EXYNOS3XXX */
++/* Only for Exynos3XXX */
+ #define EXYNOS3_ARM_CORE0_SYS_PWR_REG			0x1000
+ #define EXYNOS3_DIS_IRQ_ARM_CORE0_LOCAL_SYS_PWR_REG	0x1004
+ #define EXYNOS3_DIS_IRQ_ARM_CORE0_CENTRAL_SYS_PWR_REG	0x1008
+@@ -347,7 +347,7 @@
+ #define EXYNOS3_OPTION_USE_SC_FEEDBACK			(1 << 1)
+ #define EXYNOS3_OPTION_SKIP_DEACTIVATE_ACEACP_IN_PWDN	(1 << 7)
  
- comment "S3C24XX SoCs"
+-/* For EXYNOS5 */
++/* For Exynos5 */
  
- config CPU_S3C2410
--	bool "SAMSUNG S3C2410"
-+	bool "Samsung S3C2410"
- 	default y
- 	select CPU_ARM920T
- 	select S3C2410_COMMON_CLK
-@@ -35,7 +35,7 @@ config CPU_S3C2410
- 	  of Samsung Mobile CPUs.
+ #define EXYNOS5_AUTO_WDTRESET_DISABLE				0x0408
+ #define EXYNOS5_MASK_WDTRESET_REQUEST				0x040C
+@@ -484,7 +484,7 @@
  
- config CPU_S3C2412
--	bool "SAMSUNG S3C2412"
-+	bool "Samsung S3C2412"
- 	select CPU_ARM926T
- 	select S3C2412_COMMON_CLK
- 	select S3C2412_PM if PM_SLEEP
-@@ -43,7 +43,7 @@ config CPU_S3C2412
- 	  Support for the S3C2412 and S3C2413 SoCs from the S3C24XX line
+ #define EXYNOS5420_SWRESET_KFC_SEL				0x3
  
- config CPU_S3C2416
--	bool "SAMSUNG S3C2416/S3C2450"
-+	bool "Samsung S3C2416/S3C2450"
- 	select CPU_ARM926T
- 	select S3C2416_PM if PM_SLEEP
- 	select S3C2443_COMMON_CLK
-@@ -51,7 +51,7 @@ config CPU_S3C2416
- 	  Support for the S3C2416 SoC from the S3C24XX line
+-/* Only for EXYNOS5420 */
++/* Only for Exynos5420 */
+ #define EXYNOS5420_L2RSTDISABLE_VALUE				BIT(3)
  
- config CPU_S3C2440
--	bool "SAMSUNG S3C2440"
-+	bool "Samsung S3C2440"
- 	select CPU_ARM920T
- 	select S3C2410_COMMON_CLK
- 	select S3C2410_PM if PM_SLEEP
-@@ -59,7 +59,7 @@ config CPU_S3C2440
- 	  Support for S3C2440 Samsung Mobile CPU based systems.
+ #define EXYNOS5420_LPI_MASK					0x0004
+@@ -645,7 +645,7 @@
+ 					 | EXYNOS5420_KFC_USE_STANDBY_WFI2  \
+ 					 | EXYNOS5420_KFC_USE_STANDBY_WFI3)
  
- config CPU_S3C2442
--	bool "SAMSUNG S3C2442"
-+	bool "Samsung S3C2442"
- 	select CPU_ARM920T
- 	select S3C2410_COMMON_CLK
- 	select S3C2410_PM if PM_SLEEP
-@@ -71,7 +71,7 @@ config CPU_S3C244X
- 	depends on CPU_S3C2440 || CPU_S3C2442
- 
- config CPU_S3C2443
--	bool "SAMSUNG S3C2443"
-+	bool "Samsung S3C2443"
- 	select CPU_ARM920T
- 	select S3C2443_COMMON_CLK
- 	help
-@@ -591,6 +591,6 @@ config PM_H1940
- 	help
- 	  Internal node for H1940 and related PM
- 
--endmenu	# SAMSUNG S3C24XX SoCs Support
-+endmenu	# Samsung S3C24XX SoCs Support
- 
- endif	# ARCH_S3C24XX
-diff --git a/arch/arm/plat-samsung/adc.c b/arch/arm/plat-samsung/adc.c
-index ee3d5c989a76..4f7b27239bd4 100644
---- a/arch/arm/plat-samsung/adc.c
-+++ b/arch/arm/plat-samsung/adc.c
-@@ -40,7 +40,7 @@ enum s3c_cpu_type {
- 	TYPE_ADCV11, /* S3C2443 */
- 	TYPE_ADCV12, /* S3C2416, S3C2450 */
- 	TYPE_ADCV2, /* S3C64XX */
--	TYPE_ADCV3, /* S5PV210, S5PC110, EXYNOS4210 */
-+	TYPE_ADCV3, /* S5PV210, S5PC110, Exynos4210 */
- };
- 
- struct s3c_adc_client {
-diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
-index 1602f6dc900b..089a17687104 100644
---- a/arch/arm/plat-samsung/devs.c
-+++ b/arch/arm/plat-samsung/devs.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com
- //
--// Base SAMSUNG platform device definitions
-+// Base Samsung platform device definitions
- 
- #include <linux/kernel.h>
- #include <linux/types.h>
-diff --git a/arch/arm/plat-samsung/gpio-samsung.c b/arch/arm/plat-samsung/gpio-samsung.c
-index f66c820cd82b..8955fd675265 100644
---- a/arch/arm/plat-samsung/gpio-samsung.c
-+++ b/arch/arm/plat-samsung/gpio-samsung.c
-@@ -8,7 +8,7 @@
- //      Ben Dooks <ben@simtec.co.uk>
- //      http://armlinux.simtec.co.uk/
- //
--// SAMSUNG - GPIOlib support
-+// Samsung - GPIOlib support
- 
- #include <linux/kernel.h>
- #include <linux/irq.h>
-diff --git a/arch/arm/plat-samsung/include/plat/samsung-time.h b/arch/arm/plat-samsung/include/plat/samsung-time.h
-index d16eefe9ae78..32ab0860f631 100644
---- a/arch/arm/plat-samsung/include/plat/samsung-time.h
-+++ b/arch/arm/plat-samsung/include/plat/samsung-time.h
-@@ -9,7 +9,7 @@
- #ifndef __ASM_PLAT_SAMSUNG_TIME_H
- #define __ASM_PLAT_SAMSUNG_TIME_H __FILE__
- 
--/* SAMSUNG HR-Timer Clock mode */
-+/* Samsung HR-Timer Clock mode */
- enum samsung_timer_mode {
- 	SAMSUNG_PWM0,
- 	SAMSUNG_PWM1,
+-/* For EXYNOS5433 */
++/* For Exynos5433 */
+ #define EXYNOS5433_EINT_WAKEUP_MASK				(0x060C)
+ #define EXYNOS5433_USBHOST30_PHY_CONTROL			(0x0728)
+ #define EXYNOS5433_PAD_RETENTION_AUD_OPTION			(0x3028)
 -- 
 2.17.1
 
