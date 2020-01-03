@@ -2,91 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACF4312F9C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 16:28:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C10212F9C4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 16:29:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Esx1iveo0y6jTziNnKKHym71NNXHdXGoJ0HiM9lzy+I=; b=hBAAfLQSY0sLTO
-	Ja9sLBwYhW3ZqaLmQhVvSE5Q5JAh3796aPOlu3ozWUMVvCzysLEtvOxbKn1XLSC1Emmo5AoZZTjpC
-	lVlJs6XIA37BPRrw8jrCJmnnYXj75yIJxfK4Jr0qcxtXym8S2uMSr/lMHGtEYl70AfCBbYlzsPEYA
-	q2VhDc0cIG3xNMCdL8rW15Y3LbZg1jHexYNg5J+n8Oma0VwWdqvTmmiu7Z22CWUtvYeGtPvkmG+yk
-	BHCr0anibI0taRNRUOTRVJNrR5cf0GTtbWt5unUF0i1J5qkMF6yMKqQX45kJZ4hDfQiB9WyYPTVNF
-	AeDr6wzn5WAwW5QKkeXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KxONUPEhhqvI2WKsCw/4J51ltXzJsfEI+F78c+WvCSg=; b=HnQG5SkbcCge9N
+	hu7sg8lfGGoND2tvEK7ZMfFT2ukPv2SjZtjiIxYoW/qWE0SXj/5qe+L7jBB4BB2q5UT3o7n+sAzlq
+	C3mP31MbrLx05qrPqCmfeSgoJcabS6N5F21kbm+BDbIa5cC0kGB3mlD84c0bJ+ZxNkFS3mZaeoXPU
+	/vIUAonudxUUST00N64tt5QdjCpaNEthAezGJuVLyHgysqAzQxLE1RHgRhB7+0J5uG57xyl3WlxJw
+	9K7ZJD8NcrD7Ewx2NcQFiGgFmdcDbTbjnKZRDgZjhdXrrhYv/Nc+t2JIQ1XzF2IuagNNbtNdaET02
+	D2VobeQO0tXf9+UQZ3NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inOsb-0004kL-6o; Fri, 03 Jan 2020 15:28:49 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1inOtM-0005IH-3c; Fri, 03 Jan 2020 15:29:36 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inOrz-0004H3-Of
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 15:28:13 +0000
+ id 1inOsI-0004cz-Nv
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 15:28:33 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 5B6409DFA;
- Fri,  3 Jan 2020 10:28:10 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Fri, 03 Jan 2020 10:28:10 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id 1E75C21FB5;
+ Fri,  3 Jan 2020 10:28:29 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 03 Jan 2020 10:28:29 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=TULb9dflR8f+i
- ar3Jra82jnUYUmBfpvUi/00CZDkdqw=; b=Xe35b4raQXdDk6erfRm9RcsNCi1iB
- dPvQG1r7ACZLQ4MTa7yv14VcPpYe5z5NJBs2Pj/qiTZUb0qFCT5ZDvB/9GHwt2KF
- TsOQ3N4TUXk35EkszFozOAJqksCZY4TU7elbViRWRj3Tv4EPnSBLWLX6ynz7quXJ
- Kw/4CTXfA8/xnv4ZcxdpN+g3XWZos5b1iZpXRIrD6nuinvRztZ6qDqtyhzgCzUrA
- sz6Lp5f2G9gtmwXpVCN1qiZJZC9JqA3q5BIMO3ST+1Vh58vVre0nQ2o12VCuZ86i
- xIeDmpvwIm/1oS1DH6PMrhfi3DSXgwVZQXZVzOGt/VhCjtEg1XkDOQySA==
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=ZdOpRO+LFLr1ED9ncCMA1pmEsg
+ QU8wyRpjlK/goBWxE=; b=XnOL6JjuEQ+mGpoHm09DF+aOkIrEiy2U0QIRQeIjEv
+ fiRNMtouFKsU8p2ifiJ+5dGyUfTmB+fsKnLcxLznIoSTfj4HlQFr0TEI/8NLWor+
+ 9XPO64DUwec4JW1OnmYx93n75Y/pi6GF1hDSL2crEWyxR9eFWjFS/7qW6IlcWwn2
+ JUFOIgQjgg0/QgYtIcJri6JSmfZLFSfE7jalYI5ZVq1dZ6eD6ZUowPbkcFjpMFlF
+ zlx8eSuysuV67RTzBpczyCP+TT8iRhyvGBkHNDONpS0x213BCId1DkEv3NaqhFy7
+ Puz517ngkpB9TJCLYaIS8+8H0uOQWnbtLpEuRRbh4GaA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=TULb9dflR8f+iar3Jra82jnUYUmBfpvUi/00CZDkdqw=; b=CYG5raXD
- wzN9Wk4AkfnlUXjh7rPjEBGPIUq3KFltXI/iDglrf1zYR81jPjQdZJVMZRu2kKIh
- napyl7tZ6SYuqgu+rnYVVa2OLhzpVkcSRvh8TvSzgtO38hUSqdZEWqobtpcdO0dK
- ZhGwXhr3tcSrR6WGG0rso2dsPGz9WUQHMFu8rBqH1BWZkBfGfI/rBTlsCSPGFA3s
- d8BqIuRXyv00TyBXar4f4muD8omWrig7EKjgxhId5Tz/gT8j94py+4/ODct2nxkv
- 7+BCIElbN2um5uXO0WMoYtnFXiDRHc3UD1CQVx4Gt/jijYBOjvBmeOi1jW2epsVT
- G2p5d9RkGA9XwA==
-X-ME-Sender: <xms:il0PXg7pNP86bbok-xln6obbRGTTSYhetK_w9Qq4hIExWfYo-9UAFg>
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=ZdOpRO+LFLr1ED9nc
+ CMA1pmEsgQU8wyRpjlK/goBWxE=; b=U7nyHMGe64YXrkpdfvrcW6q/uRkRnfWwL
+ tmsGVGQ6JveUFHutG+mZ3zS215x1Srm9Y0s9iXzikGINZ8rm3zklfNkPwhIHd3Uc
+ xK00g+Gw9Kru5kf7LfqM5GJ1x0p0pfdiA390VUi1SPR453FrmmX2UpKPCYr9sguR
+ Nb9JgabggPKR7h4ETosbaHDncyNecFzo5hbiW32GBD9Gv6WwgV0HvFLxpPW5HJAO
+ SaK9NQkVF2zpB3lTE4L9HEkLKX+rNT0AjHW4erB2jxoZk0kymROSwziLRMLJoF31
+ FMIUHpjXztGDrPyUgwVY607+Jzz33otpGsmEl5fB1OsVuwYXptYbw==
+X-ME-Sender: <xms:nF0PXv23MRf3r84yJBQX33yVUg1mdpgNv0VYbIYGcFTgFTsu5yNrqA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdegfedgjeejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
- rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgepvd
-X-ME-Proxy: <xmx:il0PXmm2YJ5BqfiCd0Ii3YWSpD_NDeTM_vCu4gv0uxSm850Fd7e0EA>
- <xmx:il0PXnXjTMULhxjosG8XTT2iLX1ngjyMBUUQJ5BF4eV3rC-BNqFPXw>
- <xmx:il0PXo4jp24etIEr1-gZwpZLPLnieZVnUfymBWOf3z09tpz4Q53Azg>
- <xmx:il0PXt_thndju0xsSyOFl3jK_erV92rgi1zAW7xtrrc2oLrMIrCWlg>
+ govehorghsthgrlhdqhfeguddvqddtvdculdduhedtmdenucfjughrpefhvffufffkofgg
+ gfestdekredtredttdenucfhrhhomhepofgrgihimhgvucftihhprghrugcuoehmrgigih
+ hmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinhepuggvvhhitggvthhrvggvrdho
+ rhhgnecukfhppeeltddrkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+ hmrgigihhmvgestggvrhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgepud
+X-ME-Proxy: <xmx:nF0PXlzUebxEgfYhrS1zPSfqaeZfRDfilZs6FjXUZHjkZUAKT-sNXg>
+ <xmx:nF0PXlupGIcGEK_C3Cricq-cjv77oFfMxD8_dhxkC0Sx3syXNzCMyA>
+ <xmx:nF0PXmMgXpLzxDaPJ2nwOoZ9KtL_pN0g1n01AUj7E19vHNLrx8mnUQ>
+ <xmx:nV0PXn0P2up3vbsayKBWnfIx6ZvW6Lh6ipBJZVGMcqOxijL0z5KzmQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id F368530607CE;
- Fri,  3 Jan 2020 10:28:09 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 85D158005A;
+ Fri,  3 Jan 2020 10:28:28 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sean Paul <seanpaul@chromium.org>, Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH v3 4/4] ARM: dts: sunxi: Add missing LVDS resets and clocks
-Date: Fri,  3 Jan 2020 16:28:01 +0100
-Message-Id: <20200103152801.47254-4-maxime@cerno.tech>
+To: kishon@ti.com
+Subject: [PATCH v2] dt-bindings: usb: Convert Allwinner A80 USB PHY controller
+ to a schema
+Date: Fri,  3 Jan 2020 16:28:24 +0100
+Message-Id: <20200103152824.47383-1-maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200103152801.47254-1-maxime@cerno.tech>
-References: <20200103152801.47254-1-maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_072811_949970_0BC34FAB 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200103_072831_009418_7E992814 
+X-CRM114-Status: GOOD (  13.70  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,6 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,118 +105,219 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org, Maxime Ripard <maxime@cerno.tech>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some old SoCs, while supporting LVDS, don't list the LVDS clocks and reset
-lines. Let's add them when relevant.
+The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
+with a matching Device Tree binding.
 
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
+
+Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- arch/arm/boot/dts/sun6i-a31.dtsi     | 23 +++++++++++++++--------
- arch/arm/boot/dts/sun8i-a23-a33.dtsi | 12 ++++++++----
- arch/arm/boot/dts/sun9i-a80.dtsi     |  8 ++++++--
- 3 files changed, 29 insertions(+), 14 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
-index 4d622ec48b24..7762fbd9a133 100644
---- a/arch/arm/boot/dts/sun6i-a31.dtsi
-+++ b/arch/arm/boot/dts/sun6i-a31.dtsi
-@@ -286,14 +286,18 @@ tcon0: lcd-controller@1c0c000 {
- 			reg = <0x01c0c000 0x1000>;
- 			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
- 			dmas = <&dma 11>;
--			resets = <&ccu RST_AHB1_LCD0>;
--			reset-names = "lcd";
-+			resets = <&ccu RST_AHB1_LCD0>,
-+				 <&ccu RST_AHB1_LVDS>;
-+			reset-names = "lcd",
-+				      "lvds";
- 			clocks = <&ccu CLK_AHB1_LCD0>,
- 				 <&ccu CLK_LCD0_CH0>,
--				 <&ccu CLK_LCD0_CH1>;
-+				 <&ccu CLK_LCD0_CH1>,
-+				 <&ccu 15>;
- 			clock-names = "ahb",
- 				      "tcon-ch0",
--				      "tcon-ch1";
-+				      "tcon-ch1",
-+				      "lvds-alt";
- 			clock-output-names = "tcon0-pixel-clock";
- 			#clock-cells = <0>;
- 
-@@ -336,14 +340,17 @@ tcon1: lcd-controller@1c0d000 {
- 			reg = <0x01c0d000 0x1000>;
- 			interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
- 			dmas = <&dma 12>;
--			resets = <&ccu RST_AHB1_LCD1>;
--			reset-names = "lcd";
-+			resets = <&ccu RST_AHB1_LCD1>,
-+				 <&ccu RST_AHB1_LVDS>;
-+			reset-names = "lcd", "lvds";
- 			clocks = <&ccu CLK_AHB1_LCD1>,
- 				 <&ccu CLK_LCD1_CH0>,
--				 <&ccu CLK_LCD1_CH1>;
-+				 <&ccu CLK_LCD1_CH1>,
-+				 <&ccu 15>;
- 			clock-names = "ahb",
- 				      "tcon-ch0",
--				      "tcon-ch1";
-+				      "tcon-ch1",
-+				      "lvds-alt";
- 			clock-output-names = "tcon1-pixel-clock";
- 			#clock-cells = <0>;
- 
-diff --git a/arch/arm/boot/dts/sun8i-a23-a33.dtsi b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-index 70ec3493061b..48487f6d4ab9 100644
---- a/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-@@ -184,13 +184,17 @@ tcon0: lcd-controller@1c0c000 {
- 			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
- 			dmas = <&dma 12>;
- 			clocks = <&ccu CLK_BUS_LCD>,
--				 <&ccu CLK_LCD_CH0>;
-+				 <&ccu CLK_LCD_CH0>,
-+				 <&ccu 13>;
- 			clock-names = "ahb",
--				      "tcon-ch0";
-+				      "tcon-ch0",
-+				      "lvds-alt";
- 			clock-output-names = "tcon-pixel-clock";
- 			#clock-cells = <0>;
--			resets = <&ccu RST_BUS_LCD>;
--			reset-names = "lcd";
-+			resets = <&ccu RST_BUS_LCD>,
-+				 <&ccu RST_BUS_LVDS>;
-+			reset-names = "lcd",
-+				      "lvds";
- 			status = "disabled";
- 
- 			ports {
-diff --git a/arch/arm/boot/dts/sun9i-a80.dtsi b/arch/arm/boot/dts/sun9i-a80.dtsi
-index 3b533e85da43..ce4fa6706d06 100644
---- a/arch/arm/boot/dts/sun9i-a80.dtsi
-+++ b/arch/arm/boot/dts/sun9i-a80.dtsi
-@@ -878,8 +878,12 @@ tcon0: lcd-controller@3c00000 {
- 			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&ccu CLK_BUS_LCD0>, <&ccu CLK_LCD0>;
- 			clock-names = "ahb", "tcon-ch0";
--			resets = <&ccu RST_BUS_LCD0>, <&ccu RST_BUS_EDP>;
--			reset-names = "lcd", "edp";
-+			resets = <&ccu RST_BUS_LCD0>,
-+				 <&ccu RST_BUS_EDP>,
-+				 <&ccu RST_BUS_LVDS>;
-+			reset-names = "lcd",
-+				      "edp",
-+				      "lvds";
- 			clock-output-names = "tcon0-pixel-clock";
- 			#clock-cells = <0>;
- 
+---
+
+Changes from v1:
+  - Added r-b tag from chen-yu
+---
+ .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
+ .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
+ 2 files changed, 135 insertions(+), 37 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+new file mode 100644
+index 000000000000..ded7d6f0a119
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+@@ -0,0 +1,135 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A80 USB PHY Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <mripard@kernel.org>
++
++properties:
++  "#phy-cells":
++    const: 0
++
++  compatible:
++    const: allwinner,sun9i-a80-usb-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    anyOf:
++      - description: Main PHY Clock
++
++      - items:
++          - description: Main PHY clock
++          - description: HSIC 12MHz clock
++          - description: HSIC 480MHz clock
++
++  clock-names:
++    oneOf:
++      - const: phy
++
++      - items:
++          - const: phy
++          - const: hsic_12M
++          - const: hsic_480M
++
++  resets:
++    anyOf:
++      - description: Normal USB PHY reset
++
++      - items:
++          - description: Normal USB PHY reset
++          - description: HSIC Reset
++
++  reset-names:
++    oneOf:
++      - const: phy
++
++      - items:
++          - const: phy
++          - const: hsic
++
++  phy_type:
++    const: hsic
++    description:
++      When absent, the PHY type will be assumed to be normal USB.
++
++  phy-supply:
++    description:
++      Regulator that powers VBUS
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++
++additionalProperties: false
++
++if:
++  properties:
++    phy_type:
++      const: hsic
++
++  required:
++    - phy_type
++
++then:
++  properties:
++    clocks:
++      maxItems: 3
++
++    clock-names:
++      maxItems: 3
++
++    resets:
++      maxItems: 2
++
++    reset-names:
++      maxItems: 2
++
++examples:
++  - |
++    #include <dt-bindings/clock/sun9i-a80-usb.h>
++    #include <dt-bindings/reset/sun9i-a80-usb.h>
++
++    usbphy1: phy@a00800 {
++        compatible = "allwinner,sun9i-a80-usb-phy";
++        reg = <0x00a00800 0x4>;
++        clocks = <&usb_clocks CLK_USB0_PHY>;
++        clock-names = "phy";
++        resets = <&usb_clocks RST_USB0_PHY>;
++        reset-names = "phy";
++        phy-supply = <&reg_usb1_vbus>;
++        #phy-cells = <0>;
++    };
++
++  - |
++    #include <dt-bindings/clock/sun9i-a80-usb.h>
++    #include <dt-bindings/reset/sun9i-a80-usb.h>
++
++    usbphy3: phy@a02800 {
++        compatible = "allwinner,sun9i-a80-usb-phy";
++        reg = <0x00a02800 0x4>;
++        clocks = <&usb_clocks CLK_USB2_PHY>,
++                 <&usb_clocks CLK_USB_HSIC>,
++                 <&usb_clocks CLK_USB2_HSIC>;
++        clock-names = "phy",
++                      "hsic_12M",
++                      "hsic_480M";
++        resets = <&usb_clocks RST_USB2_PHY>,
++                 <&usb_clocks RST_USB2_HSIC>;
++        reset-names = "phy",
++                      "hsic";
++        phy_type = "hsic";
++        phy-supply = <&reg_usb3_vbus>;
++        #phy-cells = <0>;
++    };
+diff --git a/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt b/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+deleted file mode 100644
+index 64f7109aea1f..000000000000
+--- a/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
++++ /dev/null
+@@ -1,37 +0,0 @@
+-Allwinner sun9i USB PHY
+------------------------
+-
+-Required properties:
+-- compatible : should be one of
+-  * allwinner,sun9i-a80-usb-phy
+-- reg : a list of offset + length pairs
+-- #phy-cells : from the generic phy bindings, must be 0
+-- phy_type : "hsic" for HSIC usage;
+-	     other values or absence of this property indicates normal USB
+-- clocks : phandle + clock specifier for the phy clocks
+-- clock-names : depending on the "phy_type" property,
+-  * "phy" for normal USB
+-  * "hsic_480M", "hsic_12M" for HSIC
+-- resets : a list of phandle + reset specifier pairs
+-- reset-names : depending on the "phy_type" property,
+-  * "phy" for normal USB
+-  * "hsic" for HSIC
+-
+-Optional Properties:
+-- phy-supply : from the generic phy bindings, a phandle to a regulator that
+-	       provides power to VBUS.
+-
+-It is recommended to list all clocks and resets available.
+-The driver will only use those matching the phy_type.
+-
+-Example:
+-	usbphy1: phy@a01800 {
+-		compatible = "allwinner,sun9i-a80-usb-phy";
+-		reg = <0x00a01800 0x4>;
+-		clocks = <&usb_phy_clk 2>, <&usb_phy_clk 10>,
+-		       <&usb_phy_clk 3>;
+-		clock-names = "hsic_480M", "hsic_12M", "phy";
+-		resets = <&usb_phy_clk 18>, <&usb_phy_clk 19>;
+-		reset-names = "hsic", "phy";
+-		#phy-cells = <0>;
+-	};
 -- 
 2.24.1
 
