@@ -2,74 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1458012F3FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 06:07:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9676A12F403
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 06:11:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iiKxr1E0QgMhevb76uLsq0sG5DvIF7wKZuQy2eyKrNs=; b=lxOPEModvNgRIg
-	XGZE5dwENevRL4wJYz0OA+sO8u+T8XUHuYgTuy+uXztbL5JgnNSEvuqjf6iLs1ix4ucFSiwmg2Cjc
-	ViZV5yWakiAfLE22ZoMbmLurJZbhc6aIw9+kIIkHjDrxH/C3r0ZQcvMiG/vfYoZbPJbZur4dZbEtK
-	ePSQu6UzRxYMW1LEjCEGwj31rSQWGXdz54Fj7m3r7l5Gh6JfPUFqLVSS9TlWdn5H/4Zp2uGFu3IaM
-	LSgeieZLys1PLpgkKlr7db1w8oFGmfuUZn5z6f+OSumI9V+Kxw52iZDYheJCefcnp5n75HxIXpujY
-	uCOlWmecgyhbGto8QYrw==;
+	List-Owner; bh=+Hm1PoTJXXt7TbtcW9wRX0Oilb/9h7lB/AtARR1OFbc=; b=iKvZG/+f6WmMTF
+	wLFc3UKvY89kXFsTlzh6h9dm+lXfi8+Vs8LubR872bduZO59PxSOmuqTk1QYTRXnyUQtJ8Y8Yd+is
+	sXdRXKtTEIGR5qqcgjRAYG+gOSeyOW8aiwULY1+lVKtpOEB8ixxcEBeAb+Ji0qvb/9Io7QoZSYzIt
+	9SvDu15M16645OpEtNWhCQtrlaIyUH7nspCagub2tQpVz/M0M/htwzVreRGrAUm17LdpVd0uf6K70
+	LB8EHoHDkdwGb/hhJ+3G1EJCS5UT7BSW6X/OXMoEOpx8GpHiiZCKiwaRu49cb3aQ2Wu0saNS+DWbn
+	/Pj6+y2NnH/KUiyLENLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inFBf-0007Ur-JS; Fri, 03 Jan 2020 05:07:51 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1inFBO-0007Qm-45; Fri, 03 Jan 2020 05:07:35 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 00357O1g010673,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 00357O1g010673
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 3 Jan 2020 13:07:24 +0800
-Received: from RTEXDAG01.realtek.com.tw (172.21.6.100) by
- RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Fri, 3 Jan 2020 13:07:24 +0800
-Received: from RTEXMB04.realtek.com.tw (172.21.6.97) by
- RTEXDAG01.realtek.com.tw (172.21.6.100) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Fri, 3 Jan 2020 13:07:24 +0800
-Received: from RTEXMB04.realtek.com.tw ([fe80::d9c5:a079:495e:b999]) by
- RTEXMB04.realtek.com.tw ([fe80::d9c5:a079:495e:b999%6]) with mapi id
- 15.01.1779.005; Fri, 3 Jan 2020 13:07:24 +0800
-From: =?utf-8?B?U3RhbmxleSBDaGFuZ1vmmIzogrLlvrdd?= <stanley_chang@realtek.com>
-To: James Tai <james.tai@realtek.com>, =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?=
- <afaerber@suse.de>, "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>
-Subject: RE: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
-Thread-Topic: [RFC 03/11] arm64: dts: realtek: rtd129x: Add chip info node
-Thread-Index: AQHVkedK7O6Ji1Cvt0Gs/gwTj0NGGKfXzwowgADzu9A=
-Date: Fri, 3 Jan 2020 05:07:23 +0000
-Message-ID: <bcaaec45356449e9bb98a103a6ec3c55@realtek.com>
-References: <20191103013645.9856-1-afaerber@suse.de>
- <20191103013645.9856-4-afaerber@suse.de>
- <55c8692a0650426db7b78d5ce77ed08f@realtek.com>
-In-Reply-To: <55c8692a0650426db7b78d5ce77ed08f@realtek.com>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.55]
+	id 1inFEd-0000wq-7i; Fri, 03 Jan 2020 05:10:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1inFEU-0000wG-Ke; Fri, 03 Jan 2020 05:10:48 +0000
+X-UUID: db2464a7b7cc41a7ac60c5d2f4a4c066-20200102
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=IHfE2/cUwA9PEC02rixYfsxdmjk+Xm9SLy2M7/wL2z0=; 
+ b=gLoH/uxpS5v/wPVDWh1RDv2Z1+spfEKGpl4N58+bzVp7JoTGjqDD45E80mZ1QQQaUV3byb5rS5EtFSXJRxBvT5XHi6FRh3dNvO5NyBIl9qDDJ6y/Cj5ukchHCdNVivkDJSco+yUq2zYnlqrJ4gjDW+T4xqTUuVjwOJ0UEVfVgpA=;
+X-UUID: db2464a7b7cc41a7ac60c5d2f4a4c066-20200102
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1101560080; Thu, 02 Jan 2020 21:10:42 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 21:11:04 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 13:10:07 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 3 Jan 2020 13:11:06 +0800
+Message-ID: <1578028238.31107.2.camel@mtksdaap41>
+Subject: Re: [RESEND PATCH v6 01/17] dt-bindings: mediatek: add
+ rdma_fifo_size description for mt8183 display
+From: CK Hu <ck.hu@mediatek.com>
+To: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Date: Fri, 3 Jan 2020 13:10:38 +0800
+In-Reply-To: <1578021148-32413-2-git-send-email-yongqiang.niu@mediatek.com>
+References: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
+ <1578021148-32413-2-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: CA0325267D1E118D9AC11A3B80C3B2A10A2F0AF8FD38E2509178C262CC5F8E2C2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_210734_303058_8E9AFCA0 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200102_211046_683970_4AF9C7E6 
+X-CRM114-Status: GOOD (  12.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.75.126.72 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,35 +87,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQW5kcmVhcywNCg0KVGhpcyBwYXRjaCBpcyB3b3JrIGluIG15IHBsYXRmb3JtLg0KDQo+IEFk
-ZCBTdGFubGV5IENoYW5nIGZvciByZXZpZXcuDQo+IA0KPiA+IEFkZCBhIERUIG5vZGUgZm9yIGNo
-aXAgaWRlbnRpZmljYXRpb24uDQo+ID4NCj4gPiBTaWduZWQtb2ZmLWJ5OiBBbmRyZWFzIEbDpHJi
-ZXIgPGFmYWVyYmVyQHN1c2UuZGU+DQo+ID4gLS0tDQo+ID4gIGFyY2gvYXJtNjQvYm9vdC9kdHMv
-cmVhbHRlay9ydGQxMjl4LmR0c2kgfCA1ICsrKysrDQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCA1IGlu
-c2VydGlvbnMoKykNCj4gPg0KPiA+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Jl
-YWx0ZWsvcnRkMTI5eC5kdHNpDQo+ID4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRk
-MTI5eC5kdHNpDQo+ID4gaW5kZXggNDQzMzExNDQ3NmY1Li4xNWE3YzI0OTE1NWQgMTAwNjQ0DQo+
-ID4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOXguZHRzaQ0KPiA+ICsr
-KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjl4LmR0c2kNCj4gPiBAQCAtODQs
-NiArODQsMTEgQEANCj4gPiAgCQkJc3RhdHVzID0gImRpc2FibGVkIjsNCj4gPiAgCQl9Ow0KPiA+
-DQo+ID4gKwkJY2hpcC1pbmZvQDk4MDFhMjAwIHsNCj4gPiArCQkJY29tcGF0aWJsZSA9ICJyZWFs
-dGVrLHJ0ZDExOTUtY2hpcCI7DQo+ID4gKwkJCXJlZyA9IDwweDk4MDFhMjAwIDB4OD47DQo+ID4g
-KwkJfTsNCj4gPiArDQo+ID4gIAkJdWFydDE6IHNlcmlhbEA5ODAxYjIwMCB7DQo+ID4gIAkJCWNv
-bXBhdGlibGUgPSAic25wcyxkdy1hcGItdWFydCI7DQo+ID4gIAkJCXJlZyA9IDwweDk4MDFiMjAw
-IDB4MTAwPjsNCj4gPiAtLQ0KPiA+IDIuMTYuNA0KPiA+DQoNClRlc3RlZC1ieTogU3RhbmxleSBD
-aGFuZyA8c3RhbmxleV9jaGFuZ0ByZWFsdGVrLmNvbT4NClJldmlld2VkLWJ5OiBTdGFubGV5IENo
-YW5nIDxzdGFubGV5X2NoYW5nQHJlYWx0ZWsuY29tPg0KDQpUaGFua3MsDQpTdGFubGV5DQpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+Hi, Yongqiang:
+
+On Fri, 2020-01-03 at 11:12 +0800, Yongqiang Niu wrote:
+> Update device tree binding documention for rdma_fifo_size
+> 
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> ---
+>  .../devicetree/bindings/display/mediatek/mediatek,disp.txt  | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+> index 681502e..34bef44 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+> @@ -70,6 +70,10 @@ Required properties (DMA function blocks):
+>    argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
+>    for details.
+>  
+> +Required properties (DMA function blocks):
+> +- mediatek,rdma_fifo_size: rdma fifo size may be different even in same SOC, add this
+> +  property to the corresponding rdma
+
+I think "mediatek,rdma_fifo_size" is not a 'required' property. In
+mt8173.dtsi [1], there is no mediatek,rdma_fifo_size in rdma0, rdma1,
+and rdma2. So I think you should move this to 'optional' property.
+
+[1]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/boot/dts/mediatek/mt8173.dtsi?h=v5.5-rc4
+
+Regards,
+CK
+
+> +
+>  Examples:
+>  
+>  mmsys: clock-controller@14000000 {
+> @@ -211,3 +215,12 @@ od@14023000 {
+>  	power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+>  	clocks = <&mmsys CLK_MM_DISP_OD>;
+>  };
+> +
+> +rdma1: rdma@1400c000 {
+> +	compatible = "mediatek,mt8183-disp-rdma";
+> +	reg = <0 0x1400c000 0 0x1000>;
+> +	interrupts = <GIC_SPI 229 IRQ_TYPE_LEVEL_LOW>;
+> +	power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
+> +	clocks = <&mmsys CLK_MM_DISP_RDMA1>;
+> +	mediatek,rdma_fifo_size = <2048>;
+> +};
+> \ No newline at end of file
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
