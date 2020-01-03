@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF61712FB70
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:14:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 577B412FB72
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 18:14:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=o/Rovip4XG4+FjCBcMt3DtpUYjldCubesvI8s7jfhCA=; b=C620aumPgNWD7FFEtjKNwPxb9v
-	Mks1cG4O/YM5JgrbfzTUi9RBiuH7JA3Fa1H+hqByfrpbVCeXcuvKpPZSsGGwmM9Lv9lD+Zerowz3+
-	UbpgAiXeELnVmCvgRjKq7HL49sKUrnFXKXyey2b3Yo6U5fdpsCAZyAciAODQujH4PVu+7NqVCjlTu
-	h0QlDN1by6oUeOeon4el/b+Jx5pig+3jFXSyfmNZhwsv/X6nsyB/igkwh7nSb9hfakrWiLhxGgf7D
-	CcYeZuPXEXbDcKctt8+0hfvF1R6CVwIGo1i4rRr4+oo+Blt4iCWkc30Et1dCY2SM/io1T3cMAzc6i
-	XVPqS5Ug==;
+	bh=DNs7lAT26GUk/E9r6I3Kvtg6KQ6yR3ZbRth9+Fah2vc=; b=pJIF32cYedwotmbKNTQKoY+L4N
+	dWijHgcS/ueAOcjstdlmM5325HJaBO+K3pdLdKA1C05WnmFf98ft1OLoCroiYM+DiKDtrDGaetX08
+	cYtRFXRktnhvNIiidcMToyf0R/y2IOp2A4msUfBRg61yhBc4M3QFc6qm7P32oRYn5CLd2wrKvbYyr
+	fc16cgn2G3tPoEY8iOS4tUVx89KLViOGz11rFbPJ3Kx6v+IEPtCWb1VwPJybFQKS2xqLhrOk4zTe8
+	1ReWPk8aXbmnNXD37BXvf3mi2eTm04c8RDxMAT5vrEdfwMDa2yE8Q9MyZt1t6BKhl3zHY7N7koe5a
+	IwrN60ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inQX0-00035m-9l; Fri, 03 Jan 2020 17:14:38 +0000
+	id 1inQXD-0003Kp-Ks; Fri, 03 Jan 2020 17:14:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inQV8-0001S1-HQ
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:44 +0000
+ id 1inQVC-0001W2-Rg
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 17:12:48 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0694224649;
- Fri,  3 Jan 2020 17:12:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 59D3B22522;
+ Fri,  3 Jan 2020 17:12:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578071561;
- bh=KISZBPbueXgh6MYL4P8fo2t7dbtR9islwQqQs7IMFKM=;
+ s=default; t=1578071566;
+ bh=/tnEtZ/TQAfcjo0cVjVkZvyHZiO0bR42EkUMFvapC2Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EvWOa50IZlMCt8Yf5qRq1ohKw7kU6EiQZ2SO4yLcUnE3ACwzo/5D0MJh4bdqWWPVA
- 9Aj+j+ImP8+z78YQQrL1IjjVYuBW5XodRl1fs6SjKXQL+I8Y/9iX90f3f0RrmJ5yaL
- 3soy42mzomZTV29/cubTk8SLMjPLfq1onJUv4snI=
+ b=th77NZk1JmSUU4wgbn/QlglppOJamM8QXam/SHCjt871c0DsOwBJisl3Qf8ZuqYiQ
+ FM1oGJ90M66QTi2wrZJN7VsuAwGf5htwMQlVem+qCdh7zsVlyBbZfQpyLBpVbYyqMg
+ QlkJwbXG9RkAppksJIElwhpk9kg494it4zFWNGms=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 10/19] clocksource/drivers/exynos_mct: Rename Exynos to
- lowercase
-Date: Fri,  3 Jan 2020 18:11:22 +0100
-Message-Id: <20200103171131.9900-11-krzk@kernel.org>
+Subject: [PATCH 12/19] devfreq: exynos: Rename Exynos to lowercase
+Date: Fri,  3 Jan 2020 18:11:24 +0100
+Message-Id: <20200103171131.9900-13-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200103171131.9900-1-krzk@kernel.org>
 References: <20200103171131.9900-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_091242_786574_FD291121 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200103_091246_967499_115EEE23 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,10 +75,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -98,22 +98,97 @@ Electronics Co., Ltd., in advertisement materials and on website.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/clocksource/exynos_mct.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/devfreq/Kconfig             | 2 +-
+ drivers/devfreq/event/Kconfig       | 4 ++--
+ drivers/devfreq/event/exynos-nocp.c | 2 +-
+ drivers/devfreq/event/exynos-nocp.h | 2 +-
+ drivers/devfreq/event/exynos-ppmu.c | 2 +-
+ drivers/devfreq/event/exynos-ppmu.h | 2 +-
+ 6 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/clocksource/exynos_mct.c b/drivers/clocksource/exynos_mct.c
-index 74cb299f5089..a267fe31ef13 100644
---- a/drivers/clocksource/exynos_mct.c
-+++ b/drivers/clocksource/exynos_mct.c
-@@ -4,7 +4,7 @@
-  * Copyright (c) 2011 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * EXYNOS4 MCT(Multi-Core Timer) support
-+ * Exynos4 MCT(Multi-Core Timer) support
- */
+diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
+index 1526f758daeb..0b1df12e0f21 100644
+--- a/drivers/devfreq/Kconfig
++++ b/drivers/devfreq/Kconfig
+@@ -77,7 +77,7 @@ config DEVFREQ_GOV_PASSIVE
+ comment "DEVFREQ Drivers"
  
- #include <linux/interrupt.h>
+ config ARM_EXYNOS_BUS_DEVFREQ
+-	tristate "ARM EXYNOS Generic Memory Bus DEVFREQ Driver"
++	tristate "ARM Exynos Generic Memory Bus DEVFREQ Driver"
+ 	depends on ARCH_EXYNOS || COMPILE_TEST
+ 	select DEVFREQ_GOV_SIMPLE_ONDEMAND
+ 	select DEVFREQ_GOV_PASSIVE
+diff --git a/drivers/devfreq/event/Kconfig b/drivers/devfreq/event/Kconfig
+index a53e0a6ffdfe..878825372f6f 100644
+--- a/drivers/devfreq/event/Kconfig
++++ b/drivers/devfreq/event/Kconfig
+@@ -15,7 +15,7 @@ menuconfig PM_DEVFREQ_EVENT
+ if PM_DEVFREQ_EVENT
+ 
+ config DEVFREQ_EVENT_EXYNOS_NOCP
+-	tristate "EXYNOS NoC (Network On Chip) Probe DEVFREQ event Driver"
++	tristate "Exynos NoC (Network On Chip) Probe DEVFREQ event Driver"
+ 	depends on ARCH_EXYNOS || COMPILE_TEST
+ 	select PM_OPP
+ 	select REGMAP_MMIO
+@@ -24,7 +24,7 @@ config DEVFREQ_EVENT_EXYNOS_NOCP
+ 	  (Network on Chip) Probe counters to measure the bandwidth of AXI bus.
+ 
+ config DEVFREQ_EVENT_EXYNOS_PPMU
+-	tristate "EXYNOS PPMU (Platform Performance Monitoring Unit) DEVFREQ event Driver"
++	tristate "Exynos PPMU (Platform Performance Monitoring Unit) DEVFREQ event Driver"
+ 	depends on ARCH_EXYNOS || COMPILE_TEST
+ 	select PM_OPP
+ 	help
+diff --git a/drivers/devfreq/event/exynos-nocp.c b/drivers/devfreq/event/exynos-nocp.c
+index 1c565926db9f..ccc531ee6938 100644
+--- a/drivers/devfreq/event/exynos-nocp.c
++++ b/drivers/devfreq/event/exynos-nocp.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * exynos-nocp.c - EXYNOS NoC (Network On Chip) Probe support
++ * exynos-nocp.c - Exynos NoC (Network On Chip) Probe support
+  *
+  * Copyright (c) 2016 Samsung Electronics Co., Ltd.
+  * Author : Chanwoo Choi <cw00.choi@samsung.com>
+diff --git a/drivers/devfreq/event/exynos-nocp.h b/drivers/devfreq/event/exynos-nocp.h
+index 55cc96284a36..2d6f08cfd0c5 100644
+--- a/drivers/devfreq/event/exynos-nocp.h
++++ b/drivers/devfreq/event/exynos-nocp.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * exynos-nocp.h - EXYNOS NoC (Network on Chip) Probe header file
++ * exynos-nocp.h - Exynos NoC (Network on Chip) Probe header file
+  *
+  * Copyright (c) 2016 Samsung Electronics Co., Ltd.
+  * Author : Chanwoo Choi <cw00.choi@samsung.com>
+diff --git a/drivers/devfreq/event/exynos-ppmu.c b/drivers/devfreq/event/exynos-ppmu.c
+index 055deea42c37..17ed980d9099 100644
+--- a/drivers/devfreq/event/exynos-ppmu.c
++++ b/drivers/devfreq/event/exynos-ppmu.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * exynos_ppmu.c - EXYNOS PPMU (Platform Performance Monitoring Unit) support
++ * exynos_ppmu.c - Exynos PPMU (Platform Performance Monitoring Unit) support
+  *
+  * Copyright (c) 2014-2015 Samsung Electronics Co., Ltd.
+  * Author : Chanwoo Choi <cw00.choi@samsung.com>
+diff --git a/drivers/devfreq/event/exynos-ppmu.h b/drivers/devfreq/event/exynos-ppmu.h
+index 284420047455..97f667d0cbdd 100644
+--- a/drivers/devfreq/event/exynos-ppmu.h
++++ b/drivers/devfreq/event/exynos-ppmu.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * exynos_ppmu.h - EXYNOS PPMU header file
++ * exynos_ppmu.h - Exynos PPMU header file
+  *
+  * Copyright (c) 2015 Samsung Electronics Co., Ltd.
+  * Author : Chanwoo Choi <cw00.choi@samsung.com>
 -- 
 2.17.1
 
