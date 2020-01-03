@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3C0412F380
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:23:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BA9912F377
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 04:20:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cUKyQHjn8TL/wYWQlSfXDgeTJR4VcY8VDwei/+spN4c=; b=FpUlopfAmCp+NQ
-	xC/zcJqOKNOnVH4au7oVNFJunvuB9NO4l47rm/fOTQyO4AInY9sYfGaQ9mAidS6FZyqsbesT18Jed
-	b68QqU1VU7MBsGS9JAAXgwskoQSxArEOY0AdgHPi26VM0jqRgnMzsdB2fHmxNIrx6TaKkOWPcAJZy
-	CLpBF69D0FcqXhGY5O9SmdV+gtoxC1/IZjT3cAyNVLDW3yg6bGCRR9mty84KnZTJHO9LmKMfXXEmt
-	KyDQqzyMls2jCD+6Jk7dPGGM8lIizURKX7evkcrx8Z8WeOUhNMgcRJVFhpm/N9/YKzGjc0tRvvLaV
-	fdqX8MBvABqVBHFAVJZA==;
+	List-Owner; bh=cqP3isFmUqr1WWn/7mBN+bcdkhgL7FHyVPcr+00W7RQ=; b=a8eMWYw0CGyeOk
+	tcyvwkjxGcJ1KC9shvx6Ke6AOejVJIUgN7O6M5PoZs3jBc5IN5p2lNzR97G6MsIUNr2ShfDAPFgiV
+	37ei9yitf2Pc6Qus9/1+hxsIm8n+nPiArVaSejVPURwA3V1njmmDz4f2jXCQqj/SGvUayx+F1IEyc
+	2PGQPYmhY2w7Ce7ZJ5R9EvFb3UuBpL1bLNpgvl4RRYdw/xOa1UtrFu9tKb/c/yuEI9EDDiJO2QdPe
+	7ral9vTth3QZNZTBvZHNs8eixWpnXic4e/uRFFB2FrtREEl8zP1l662jdF6fMgo899Ad2P+YG3Szr
+	njtxigcu9mmdMg4V1yBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inDYJ-000296-TZ; Fri, 03 Jan 2020 03:23:07 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1inDVD-0007x9-IH; Fri, 03 Jan 2020 03:19:55 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inDY2-00024z-Tg; Fri, 03 Jan 2020 03:22:52 +0000
-X-UUID: 21d70cb5ff384345a3a647eeb4af31a3-20200102
+ id 1inDUQ-0007LI-6U; Fri, 03 Jan 2020 03:19:07 +0000
+X-UUID: fdb3959824fc4179ba4d86c438eba7c1-20200102
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=XusF8Ts9LN5UhbHZ+74X0JmLoWRa5qIY53E/4dHFrN4=; 
- b=Ogl5ske5IkLv9b9PcNx6BYXCTBDpgzvs6W05InVvvDToOxUaYl/e/LANxj7dX9BVtbxIs49PsIQrY2yjy1Q8TDeYYvdc/5wEAZOI2GU1Cyc7I++DwuyuS12Xban2SczT19nt61JrJnDGhPrTnmOcJsxDWUk4SdOGyuBqBLHJvGg=;
-X-UUID: 21d70cb5ff384345a3a647eeb4af31a3-20200102
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=w/UNojmvQeoqj5ssGa9RuxeKs7Wh0EGoWwzhQTkdINo=; 
+ b=EdkSMjXpmxbDN5zEn9moHTciTd4/qvfEdqHeLV/NOZe6qz34jtIGI9fUnGLHUPUp3wclDxzgAxkfcI/QpxNUC4fs0PRGWhKY+lMCBWV172J5UIqJGPaC/Vf3PkoX6ydMyR0sYmObdNLeazOY+nAwqxOqiPETf/AzysL6RVLOhaw=;
+X-UUID: fdb3959824fc4179ba4d86c438eba7c1-20200102
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 731194375; Thu, 02 Jan 2020 19:22:47 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 2 Jan 2020 19:12:48 -0800
+ with ESMTP id 932828056; Thu, 02 Jan 2020 19:19:01 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Jan 2020 19:13:09 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Jan 2020 11:12:13 +0800
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 3 Jan 2020 11:12:19 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 3 Jan 2020 11:13:11 +0800
+ Transport; Fri, 3 Jan 2020 11:13:12 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RESEND PATCH v6 09/17] drm/mediatek: add connection from OVL0 to
- OVL_2L0
-Date: Fri, 3 Jan 2020 11:12:20 +0800
-Message-ID: <1578021148-32413-10-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [RESEND PATCH v6 10/17] drm/mediatek: add connection from RDMA0 to
+ COLOR0
+Date: Fri, 3 Jan 2020 11:12:21 +0800
+Message-ID: <1578021148-32413-11-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1578021148-32413-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_192250_964725_80D8CF08 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20200102_191906_240163_75D4AC85 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -99,7 +97,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add connection from OVL0 to OVL_2L0
+This patch add connection from RDMA0 to COLOR0
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
@@ -108,25 +106,25 @@ Reviewed-by: CK Hu <ck.hu@mediatek.com>
  1 file changed, 5 insertions(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-index 205c62a..3a1aa9a 100644
+index 3a1aa9a..b6b86600 100644
 --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
 +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-@@ -137,6 +137,8 @@
- #define DPI_SEL_IN_BLS			0x0
- #define DSI_SEL_IN_RDMA			0x1
+@@ -172,6 +172,8 @@ struct mtk_ddp {
  
-+#define OVL0_MOUT_EN_OVL0_2L		BIT(4)
-+
- struct mtk_disp_mutex {
- 	int id;
- 	bool claimed;
-@@ -300,6 +302,9 @@ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
- 	} else if (cur == DDP_COMPONENT_OD1 && next == DDP_COMPONENT_RDMA1) {
- 		*addr = DISP_REG_CONFIG_DISP_OD_MOUT_EN;
- 		value = OD1_MOUT_EN_RDMA1;
-+	} else if (cur == DDP_COMPONENT_OVL0 && next == DDP_COMPONENT_OVL_2L0) {
-+		*addr = data->ovl0_mout_en;
-+		value = OVL0_MOUT_EN_OVL0_2L;
+ struct mtk_mmsys_reg_data {
+ 	u32 ovl0_mout_en;
++	u32 rdma0_sout_sel_in;
++	u32 rdma0_sout_color0;
+ 	u32 rdma1_sout_sel_in;
+ 	u32 rdma1_sout_dpi0;
+ 	u32 dpi0_sel_in;
+@@ -432,6 +434,9 @@ static unsigned int mtk_ddp_sout_sel(const struct mtk_mmsys_reg_data *data,
+ 	} else if (cur == DDP_COMPONENT_RDMA2 && next == DDP_COMPONENT_DSI3) {
+ 		*addr = DISP_REG_CONFIG_DISP_RDMA2_SOUT;
+ 		value = RDMA2_SOUT_DSI3;
++	} else if (cur == DDP_COMPONENT_RDMA0 && next == DDP_COMPONENT_COLOR0) {
++		*addr = data->rdma0_sout_sel_in;
++		value = data->rdma0_sout_color0;
  	} else {
  		value = 0;
  	}
