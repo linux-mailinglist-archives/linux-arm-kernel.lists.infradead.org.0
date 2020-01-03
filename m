@@ -2,61 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CEE712F4B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 07:45:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD2612F4C5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 07:54:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FFST70/dlvfLHwT5NSVwiHCODsJMOZEkpre30MdHTU8=; b=u2KpPlxSTW63Jc
-	rRH/EMr58WQT5tmCUlBXKoGhPEC/xUfA1HEYQdF8+NNvyIJKhLSlvVAekVREhcadmQjPaukQZNYUY
-	HtxhNrn8hYM1r+EGzUbhUXC87XNMNx/3qE/zsi5LO0c8w9kvwB1q9DeEI0z1qtqw7C6tsWsqJIJz4
-	rxhsD220QyfYM5g5oWo/JiLcacNozMDMb5fc9cotn3neoJyQL1oZXBrhTA6SKgLUlxBeZfxdey61g
-	tsrwBMCZtpnEEGA4Y6jZcP3/ywnONrf2gHstrheAuQQIScv04+38HZOaiGd8d+14k14tIQuOh7Ln8
-	rqHl79fkyFl5GSMbMsHw==;
+	List-Owner; bh=Z3orW2TewlCNefz0FbqRdLRIRs9L/6Da/e/BwX57sAg=; b=qJaEiu/05LiR9C
+	7EPRGPXSGmd5jHiy4x/xCVEFlzmLlt27gFNzE9cjBc3hfOQ1Ug+0qJiN3iTYhGlgxCg57XIu9eJge
+	TV4676OuUHpmv4ECKJgM8N/cPV43GAy1UVcba+00cCO6mJvjJ5FRnwlWjVOcYKo2r0lC1oXd7/lJl
+	NCGf/D6Ex8yG7WDxPTOVm/j15apIdO0Md/tMaxZPTXyjZ1GAPbuITaxOQg6x6YCimA4MjjVTy2IVW
+	lmrk67/sfLUBeLZ1zVLgEKqi2AtUGpxBcjXufxcZo36PyY9cQi/7fcEJOKkeEVf6CGGbJh/e1bpaw
+	wu6PAg5lNVkKv1d+16eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inGiS-0006mS-IT; Fri, 03 Jan 2020 06:45:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1inGqa-0001sp-13; Fri, 03 Jan 2020 06:54:12 +0000
+Received: from mail-ot1-x32f.google.com ([2607:f8b0:4864:20::32f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inGiL-0006lt-Ha
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 06:45:42 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BC72B2084D;
- Fri,  3 Jan 2020 06:45:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578033940;
- bh=uTSF6E4wwyqWFXkFFslDg6+jXPOT+pfOXx94ZxAaOqo=;
- h=From:To:Cc:Subject:Date:From;
- b=Yb3/TzPTWyYXoQM41bfm2ZRmCBK65n3C29E8EUgXMauc7zHjjQn3jeQoXPaAPktG2
- bnOU0GR+9Ic/PS1Ki/5+TrwlczvGcH+RjGIHVytZvcykRn1CTu7GdLrvlh7XYl4Z2+
- dIoU00t/wPvEqH0qHuS0T4MDaHxPJeiAHxlPOj88=
-Received: by wens.tw (Postfix, from userid 1000)
- id 6447B5FC7C; Fri,  3 Jan 2020 14:45:38 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: [PATCH v2] media: sun4i-csi: Add support for A10 CSI1 camera sensor
- interface
-Date: Fri,  3 Jan 2020 14:45:33 +0800
-Message-Id: <20200103064533.14864-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.1
+ id 1inGpG-0000gl-JL
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 06:52:52 +0000
+Received: by mail-ot1-x32f.google.com with SMTP id 66so59940376otd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Jan 2020 22:52:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=pWURdDS5dmO0zR82XCbKmTh5+AfzlT/xyKG+cUug4Ig=;
+ b=FzGOXgpQ/WayYbtAlOf1EY5CxluURJ4R8PJ5sLReadCBLt2eicIszwQwvZI5QsHJm0
+ MJQyk36n1EoV/ve7uCPY7+x1WC00HBxAO9efxO5FWXrvZbuaA4JOsj/YGRnHt1uylv3q
+ NFahlK9uWoJljr0IRHxcHONIEe5XjofXrt+xwulP9xq48oCl7R6JTZLqWTRWKPC5CcUm
+ 7brE1qC5WfjdDq+QuMEpEZ6N67ppIJDtMn2mbvPRHRuC8QVSgyyYblsMH0smXzN7sEpU
+ fpvDx9zloAjx3zOY3pLlygthtNzOI+s9TpaixX1xVp9EE+Zn4dt8ViTzysNtUsscLOsD
+ j6ew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=pWURdDS5dmO0zR82XCbKmTh5+AfzlT/xyKG+cUug4Ig=;
+ b=VQlxCiaWzyYJpH4h4vsgSeg4V0K8xQ90pcU7bzI5MqvxvTDiOY/Tzttjkmub21dXVz
+ OPVwzYjuJ3hKKOPw675sghS8gfLBE2VowxK4SlINeiw3XCO0FXfCrunTx6lpvmLqDjRN
+ 2Z8oDxmwRtr/w1iXisFoOZTm+rjdCu5N0F8mIgaYGY480HmlART71LOlFDtgRcv7g90x
+ pm14dJGfE3z8wcn4Twv+Ylr3+npuKw3wzimKVAG1I+gE7ZPXfRncDIbvpSYHnohJ33L8
+ ok6KgnD3DRDl0dobBxYqq1szzqRiuyocnR64WMoxEQUR99HWJt3/kAnTGAeICbCGakI9
+ VFJQ==
+X-Gm-Message-State: APjAAAXXr/4ISzH/307QI5Y9JxwirWZzSA9n0LFFAEo9jDLWqUfCTYwE
+ /84X3W2E1rUQiLb2MIl5j38Jt4+bfUx7MFVsDIb67R4Jb5U=
+X-Google-Smtp-Source: APXvYqy8DbLTtWHp16AMd8iCgmiwLjLF4tND7EBRlz+WdY3mDGvwow/bTN7BYIVOaUIaOivmzUsJf7H2VMaX6/zzGEs=
+X-Received: by 2002:a9d:2028:: with SMTP id
+ n37mr100982175ota.127.1578034368527; 
+ Thu, 02 Jan 2020 22:52:48 -0800 (PST)
 MIME-Version: 1.0
+From: Zong Li <zong.li@sifive.com>
+Date: Fri, 3 Jan 2020 14:52:37 +0800
+Message-ID: <CANXhq0ok2Qo1zzyX2J4TFGbst_Zn0d6tLBqt30yMEq5JOLxFeA@mail.gmail.com>
+Subject: KASLR: about the vmalloc area for randomization kernel image
+To: ard.biesheuvel@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_224541_620552_675214D8 
-X-CRM114-Status: GOOD (  16.62  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200102_225250_836164_0A336D7B 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:32f listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,137 +89,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Paul Walmsley <paul.walmsley@sifive.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+Hi Ard,
 
-The A10/A20 Allwinner SoCs have two camera sensor interface blocks,
-named CSI0 and CSI1. The two have the same register layouts with
-slightly different features:
+I'm working on KASLR for RISC-V, and I'm interested in what is the
+consideration of choosing the vmalloc area on arm64. I was wondering
+if you could give me some advice.
 
-  - CSI0 has an image signal processor (ISP); CSI1 doesn't
+There are other architectures had implemented KASLR, such as x86,
+mips, s390 and ppc, they use the lowmem to randomize the address of
+kernel image, it seems that only arm64 move the kernel image to
+vmalloc area.
 
-  - CSI0 can support up to four separate channels under CCIR656;
-    CSI1 can only support one
+I tried to understand the history and reason for using vmalloc area
+through some discussions at the end of mail, but I still couldn't know
+what is the reason for using vmalloc area in the beginning.
 
-  - CSI0 can support up to 16-bit wide bus with YUV422;
-    CSI1 can support up to 24-bit wide bus with YUV444
+For the randomization purpose, it seems to me that there is no
+significant difference between using lowmem and vmalloc area. Would
+you be willing to help to give some ideas about that? :)
 
-For now the driver doesn't support wide busses, nor CCIR656. So the
-only relevant difference is whether a clock needs to be taken and
-enabled for the ISP.
+Sorry if I missed anything. Thank you very much.
 
-Add structs to record the differences, tie them to the compatible
-strings, and deal with the ISP clock. Support for the new CSI1
-hardware block is added as well.
+Regards,
+Zong
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
-Hi Sakari,
-
-As requested, v2 of patch 6 from the "media: sun4i-csi: A10/A20 CSI1
-and R40 CSI0 support" patch series.
-
-Changes since v1:
-
-   - make traits structures static const
-
-Thanks
----
- .../platform/sunxi/sun4i-csi/sun4i_csi.c      | 35 ++++++++++++++++---
- .../platform/sunxi/sun4i-csi/sun4i_csi.h      |  2 ++
- 2 files changed, 32 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-index b8b07c1de2a8..eff34ded6305 100644
---- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-+++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-@@ -29,6 +29,12 @@
- 
- #include "sun4i_csi.h"
- 
-+struct sun4i_csi_traits {
-+	unsigned int channels;
-+	unsigned int max_width;
-+	bool has_isp;
-+};
-+
- static const struct media_entity_operations sun4i_csi_video_entity_ops = {
- 	.link_validate = v4l2_subdev_link_validate,
- };
-@@ -156,6 +162,10 @@ static int sun4i_csi_probe(struct platform_device *pdev)
- 	subdev = &csi->subdev;
- 	vdev = &csi->vdev;
- 
-+	csi->traits = of_device_get_match_data(&pdev->dev);
-+	if (!csi->traits)
-+		return -EINVAL;
-+
- 	/*
- 	 * On Allwinner SoCs, some high memory bandwidth devices do DMA
- 	 * directly over the memory bus (called MBUS), instead of the
-@@ -199,10 +209,12 @@ static int sun4i_csi_probe(struct platform_device *pdev)
- 		return PTR_ERR(csi->bus_clk);
- 	}
- 
--	csi->isp_clk = devm_clk_get(&pdev->dev, "isp");
--	if (IS_ERR(csi->isp_clk)) {
--		dev_err(&pdev->dev, "Couldn't get our ISP clock\n");
--		return PTR_ERR(csi->isp_clk);
-+	if (csi->traits->has_isp) {
-+		csi->isp_clk = devm_clk_get(&pdev->dev, "isp");
-+		if (IS_ERR(csi->isp_clk)) {
-+			dev_err(&pdev->dev, "Couldn't get our ISP clock\n");
-+			return PTR_ERR(csi->isp_clk);
-+		}
- 	}
- 
- 	csi->ram_clk = devm_clk_get(&pdev->dev, "ram");
-@@ -280,8 +292,21 @@ static int sun4i_csi_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct sun4i_csi_traits sun4i_a10_csi1_traits = {
-+	.channels = 1,
-+	.max_width = 24,
-+	.has_isp = false,
-+};
-+
-+static const struct sun4i_csi_traits sun7i_a20_csi0_traits = {
-+	.channels = 4,
-+	.max_width = 16,
-+	.has_isp = true,
-+};
-+
- static const struct of_device_id sun4i_csi_of_match[] = {
--	{ .compatible = "allwinner,sun7i-a20-csi0" },
-+	{ .compatible = "allwinner,sun4i-a10-csi1", .data = &sun4i_a10_csi1_traits },
-+	{ .compatible = "allwinner,sun7i-a20-csi0", .data = &sun7i_a20_csi0_traits },
- 	{ /* Sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, sun4i_csi_of_match);
-diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.h b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.h
-index 88d39b3554c4..0f67ff652c2e 100644
---- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.h
-+++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.h
-@@ -108,6 +108,8 @@ struct sun4i_csi {
- 	/* Device resources */
- 	struct device			*dev;
- 
-+	const struct sun4i_csi_traits	*traits;
-+
- 	void __iomem			*regs;
- 	struct clk			*bus_clk;
- 	struct clk			*isp_clk;
--- 
-2.24.1
-
+RFC patch:
+http://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/396427.html
+sub-series patch:
+https://www.spinics.net/lists/arm-kernel/msg483446.html
+other discussion:
+https://lore.kernel.org/linux-arm-kernel/CAKv+Gu_i4M=RJmofMRoq63rR6GBf42W36FtomhTC9-o9g-sAiw@mail.gmail.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
