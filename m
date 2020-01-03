@@ -2,62 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E052E12F6B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 11:23:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E980112F6C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 11:37:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CTgEABGZF2HSDyHLiJ/2A5MP27jF27cCzl9ECez0LB8=; b=Q2TuRHsrHsC1AK
-	NI9yHxuLdmHaMNT1NxyL+5LMs4QKzHrx5gfD1XrK0YF/8MmbR6Xkq/lSX2kWRLxKkdK4b2lR+vyji
-	B5XRL4BfGdU8XTHu9fEoGYhgJ61fPwFtU2OuiUotC1gaNbSsvpaHBP4L+HTocqpaLFx7QYSyvRw+R
-	7JV9O5bkJDKmK/lrT5Wjjhzp3Fy4y5lCIJCyyBjUcOoRjk1JzeZElPW6w7Afmhtg6zhzljqe9QUXw
-	QfLxjFgDqp0VOINto6eBha2QUXJ3gWTylxJ7SIGzTWdPg6StAXJjJeB9tST8krcR5pnwWkyoc06n9
-	FI5HYN5Xt5kJr1qKGw4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lqUkKQqpJpgqs+bgoGAZXFdpRK9xDTv8j9ScOTXFHdA=; b=iD6eU1ztBu3drZ
+	wPymj492FTFpZiyQWfMBn7xQTd8biypw+3iFPRBtRq96joXp6Rd60da0y84tDk2vyU9vGqp/PJF8S
+	/NP4d+JTPyWV03Z+SDlrfxXcOuDHfmn1sWimEiiX4Epu6AOYfjuYj3jl9yRQYkiQt+Gm6zhePJOGb
+	1NIUUrHIIHeuURRO1EoX6mlcV84QBqXAhNplGfJZeuGPlBk/OHe84JWuM6YLtFNhGdl/KCuWoS73x
+	g3RZ49oGZ/6CX5e/2eInqgIaJcJP290x+juIjic9yEgsYIBrWnjPPfDiRUpMxkYs3LZHJqHpA/dq8
+	6JzFq7p1XQhH8j7cNBRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inK77-0004mg-Jn; Fri, 03 Jan 2020 10:23:29 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1inKKb-00010S-7Y; Fri, 03 Jan 2020 10:37:25 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inK70-0004m9-S3
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 10:23:24 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id DE4739F734ABD3D7E3F7;
- Fri,  3 Jan 2020 18:23:15 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Fri, 3 Jan 2020
- 18:23:06 +0800
-Subject: Re: [PATCH v1] ACPI/IORT: Workaround for IORT ID count "minus one"
- issue
-To: John Garry <john.garry@huawei.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, "Rafael J.
- Wysocki" <rafael@kernel.org>, Pankaj Bansal <pankaj.bansal@nxp.com>
-References: <1577708824-4873-1-git-send-email-guohanjun@huawei.com>
- <639f61ab-e692-caaf-9b4e-b848b05caee2@huawei.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <963352e6-8ee1-6a8b-d098-9625ad2c980c@huawei.com>
-Date: Fri, 3 Jan 2020 18:20:44 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1inKKV-0000zq-0u
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 10:37:20 +0000
+Received: by mail-lf1-x144.google.com with SMTP id b15so31637373lfc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Jan 2020 02:37:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=e1VONZKN47Aw6juCyL/A73XM5IVvw0+2i1dyfWe9MK0=;
+ b=Fhl9YzW8WppJUvDeZdTMGR1XJqmcB6TalG0n7A8zpD55tcqk3ML1vD6zvcmuxMEiQS
+ aT5bysK5rQU40UUINDSUm9VXpexB7r1N/CBSFppsXxncAFIyO0y2rkiWeb95HnpwU3IN
+ 0OyoAH/9qybXFmig7BIO5hERgIp6aWsfDUveXBk1xf5e3kmMhvOtRrwJwpl/IEoEHiJa
+ d2HaGR9FrrRj3OKs6DFpK0iYP8fizuP7vdWE0hveGhMePxt+yPI2xRhylVrBmYq5qkRk
+ GTHPLMbmpnmvSWkgTOXesoO4IbicDCKbkhCuBYXkOXwcVaspOhnAevfABvK7W6xCICJc
+ xsng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=e1VONZKN47Aw6juCyL/A73XM5IVvw0+2i1dyfWe9MK0=;
+ b=ngLy1kP4lFjV0NlPLAMdX755o82ENnm8uqW7UiT8zMqRfq0rz2hEkPTZuPBwyGuYm+
+ QKdxbsDoMzBUg1wnyy/uBxBA12IZ1BPcWx+0TRo/SFE202lGeUp+EScgoQ2vCkbgngwn
+ vNfDuWcadKkYkX7x+bbxTNGjvV7k/0cSgR6U1xZ28NN+FU2GDnMqzkt58LfUP8aueEdW
+ 6M8/rLSTPko5G4ltsH8iCRMg8CQC+quguHa3HzqLP610sTT4idBH8VDtYJVDVahAPNH4
+ Gu92wsOTvHl1eTMTERGcVv3bWlYitR9REw+tETw4qOfa5EgEyWC0DqpHN68Cx1dLBSRN
+ WHoA==
+X-Gm-Message-State: APjAAAWqGozPOXv9NpBmD083TNdmH49hK9BOqmEIjaml2wj8Wqy1miOx
+ khHX4LavJMyiplDjrhr2igKjZv8x2AfRTQ==
+X-Google-Smtp-Source: APXvYqzeu11NzT4u0LYNO6/ynfbsLDH+8fwoOKEZ4tO/YtRCEUnX2yjqO7toLdDd2ZT8V37uMiM2aQ==
+X-Received: by 2002:ac2:508e:: with SMTP id f14mr46097583lfm.72.1578047832449; 
+ Fri, 03 Jan 2020 02:37:12 -0800 (PST)
+Received: from jax (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
+ by smtp.gmail.com with ESMTPSA id b22sm15891942lji.99.2020.01.03.02.37.11
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 03 Jan 2020 02:37:11 -0800 (PST)
+Date: Fri, 3 Jan 2020 11:37:10 +0100
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] optee driver fix for v5.5
+Message-ID: <20200103103710.GA3469@jax>
 MIME-Version: 1.0
-In-Reply-To: <639f61ab-e692-caaf-9b4e-b848b05caee2@huawei.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_022323_071351_19099906 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200103_023719_069245_1BF016EE 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,58 +95,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>, Linuxarm <linuxarm@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: tee-dev@lists.linaro.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC8xLzIgMTk6MTgsIEpvaG4gR2Fycnkgd3JvdGU6Cj4gKwo+IAo+IE9uIDMwLzEyLzIw
-MTkgMTI6MjcsIEd1b2hhbmp1biAoSGFuanVuIEd1bykgd3JvdGU6Cj4+IFRoZSBJT1JUIHNwZWMg
-WzBdIHNheXMgTnVtYmVyIG9mIElEcyA9IFRoZSBudW1iZXIgb2YgSURzIGluIHRoZSByYW5nZSBt
-aW51cwo+PiBvbmUsIGl0IGlzIGNvbmZ1c2luZyBidXQgaXQgd2FzIHdyaXR0ZW4gZG93biBpbiB0
-aGUgZmlyc3QgdmVyc2lvbiBvZiB0aGUKPj4gSU9SVCBzcGVjLiBCdXQgdGhlIElPUlQgSUQgbWFw
-cGluZyBmdW5jdGlvbiBpb3J0X2lkX21hcCgpIGRpZCBzb21ldGhpbmcKPj4gd3JvbmcgZnJvbSB0
-aGUgc3RhcnQsIHdoaWNoIGJhaWxzIG91dCBpZjoKPj4KPj4gdGhlIHJlcXVlc3QgSUQgPj0gdGhl
-IGlucHV0IGJhc2UgKyBudW1iZXIgb2YgSURzCj4+Cj4+IFRoaXMgaXMgd3JvbmcgYmVjYXVzZSBp
-dCBpZ25vcmVkIHRoZSAibWludXMgb25lIiwgYW5kIGJyZWFrcyBzb21lIHZhbGlkCj4+IHVzZWNh
-c2VzIHN1Y2ggYXMgSUQgbWFwcGluZyB0byBjb250YWluIHNpbmdsZSBkZXZpY2UgbWFwcGluZyB3
-aXRob3V0Cj4+IHNpbmdsZSBtYXBwaW5nIGZsYWcgc2V0Lgo+Pgo+PiBQYW5rYWogQmFuc2FsIHBy
-b3Bvc2VkIGEgc29sdXRpb24gdG8gZml4IHRoZSBpc3N1ZSBbMV0sIHdoaWNoIGJhaWxzCj4+IG91
-dCBpZjoKPj4KPj4gdGhlIHJlcXVlc3QgSUQgPiB0aGUgaW5wdXQgYmFzZSArIG51bWJlciBvZiBJ
-RHMKPj4KPj4gVGhpcyB3b3JrcyBhcyB0aGUgc3BlYyBkZWZpbmVkLCB1bmZvcnR1bmF0ZWx5IHNv
-bWUgZmlybXdhcmUgZGlkbid0Cj4+IG1pbnVzIG9uZSBmb3IgdGhlIG51bWJlciBvZiBJRHMgaW4g
-dGhlIHJhbmdlLCBhbmQgdGhlIHByb3BvYXNlZAo+PiBzb2x1dGlvbiB3aWxsIGJyZWFrIHRob3Nl
-IHN5c3RlbXMgaW4gdGhpcyB3YXk6Cj4+Cj4+IFBDSSBob3N0YnJpZGdlIG1hcHBpbmcgZW50cnkg
-MToKPj4gSW5wdXQgYmFzZTrCoCAweDEwMDAKPj4gSUQgQ291bnQ6wqDCoMKgIDB4MTAwCj4+IE91
-dHB1dCBiYXNlOiAweDEwMDAKPj4gT3V0cHV0IHJlZmVyZW5jZTogMHhDNMKgIC8vSVRTIHJlZmVy
-ZW5jZQo+Pgo+PiBQQ0kgaG9zdGJyaWRnZSBtYXBwaW5nIGVudHJ5IDI6Cj4+IElucHV0IGJhc2U6
-wqAgMHgxMTAwCj4+IElEIENvdW50OsKgwqDCoCAweDEwMAo+PiBPdXRwdXQgYmFzZTogMHgyMDAw
-Cj4+IE91dHB1dCByZWZlcmVuY2U6IDB4RDTCoCAvL0lUUyByZWZlcmVuY2UKPj4KPj4gVHdvIG1h
-cHBpbmcgZW50cmllcyB3aGljaCB0aGUgc2Vjb25kIGVudHJ5J3MgSW5wdXQgYmFzZSA9IHRoZSBm
-aXJzdAo+PiBlbnRyeSdzIElucHV0IGJhc2UgKyBJRCBjb3VudCwgc28gZm9yIHJlcXVlc3RlciBJ
-RCAweDExMDAgd2lsbCBtYXAKPj4gdG8gSVRTIDB4QzQgbm90IDB4RDQgaWYgd2UgdXBkYXRlICc+
-PScgdG8gJz4nLgo+Pgo+PiBTbyBpbnRyb2R1Y2UgYSB3b3JrYXJvdW5kIHRvIG1hdGNoIHRoZSBJ
-T1JUJ3MgT0VNIGluZm9ybWF0aW9uIGZvcgo+PiB0aGUgYnJva2VuIGZpcm13YXJlLCBhbHNvIHVw
-ZGF0ZSB0aGUgbG9naWMgb2YgdGhlIElEIG1hcHBpbmcgZm9yCj4+IGZpcm13YXJlcyByZXBvcnQg
-dGhlIG51bWJlciBvZiBJRHMgYXMgdGhlIElPUlQgc3BlYyBkZWZpbmVkLCB0bwo+PiBtYWtlIHRo
-ZSBjb2RlIGNvbXBhdGlibGUgZm9yIGJvdGgga2luZHMgb2Ygc3lzdGVtLgo+Pgo+PiBJIGNoZWNr
-ZWQgdGhlIEFDUEkgdGFibGVzIGluIHRoZSB0aWFub2NvcmUvZWRrMi1wbGF0Zm9ybXMgWzJdLCAK
-PiAKPiBIaSBIYW5qdW4sCj4gCj4gb25seQo+PiBIaVNpbGljb24gSElQMDcvMDggZGlkIHdyb25n
-LCBzbyBqdXN0IGFkZCBISVAwNy8wOCB0byB0aGUgd29ya2Fyb3VuZAo+PiBpbmZvIHRhYmxlLCAK
-PiAKPiBBcmUgeW91IGFzc2VydGluZyB0aGF0IG90aGVyIHBsYXRmb3JtcyBhcmUgb2sgb24gdGhl
-IGJhc2lzIHRoYXQgTnVtSWRzID0gbGFyZ2UgcG93ZXIgb2YgMiAtIDEsIGUuZy4gMHhmZmZmPyBJ
-cyB0aGlzIHN0cmljdGx5IHByb3Blcj8KCk5vLCBzb21lIHBsYXRmb3JtcyB3aXRoIG5vIG9wZW5z
-b3VyY2UgQUNQSSB0YWJsZXMsIGFyZQpub3QgY292ZXJlZC4KCj4gCj4gaWYgd2UgYnJlYWsgb3Ro
-ZXIgcGxhdGZvcm1zLCB3ZSBjYW4gYWRkIHRoYXQgbGF0ZXIuCj4+Cj4gCj4gSSB0aGluayB0aGF0
-IGl0IHdvdWxkIGJlIGJldHRlciB0byBhdWRpdCBvdGhlcnMgbm93IGFzIHdlbGwgYXMgYmVzdCBh
-cyByZWFzb25hYmx5IHBvc3NpYmxlLiBUaGVyZSBpcyBzb21ld2hhdCBsaW1pdGVkIGNvdmVyYWdl
-IGluIFsyXS4KCkkgd2lsbCBDYyBwZW9wbGUgZm9ybSBNYXZlbGwsIEFtcGVyZSwgYW5kIEFyZCB3
-aG8gaXMga25vdyBTb2Npb25leHQgdmVyeSB3ZWxsLAp0aGF0J3MgdGhlIGJlc3QgSSBjYW4gZG8u
-CgpUaGFua3MKSGFuanVuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hello arm-soc maintainers,
+
+Please pull this OP-TEE driver fix for kernel allocated dynamic shared
+memory.
+
+Thanks,
+Jens
+
+The following changes since commit d1eef1c619749b2a57e514a3fa67d9a516ffa919:
+
+  Linux 5.5-rc2 (2019-12-15 15:16:08 -0800)
+
+are available in the Git repository at:
+
+  git://git.linaro.org:/people/jens.wiklander/linux-tee.git tags/tee-optee-fix-for-5.5
+
+for you to fetch changes up to 5a769f6ff439cedc547395a6dc78faa26108f741:
+
+  optee: Fix multi page dynamic shm pool alloc (2020-01-03 11:21:12 +0100)
+
+----------------------------------------------------------------
+Fix OP-TEE multi page dynamic shm pool alloc
+
+----------------------------------------------------------------
+Sumit Garg (1):
+      optee: Fix multi page dynamic shm pool alloc
+
+ drivers/tee/optee/shm_pool.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
