@@ -2,68 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBFAF12FC6C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:24:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0665612FC6D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 19:24:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fSRqZAKXZ1rbW04Y5ueYq8DxmGo/MQXTARXKhRj2DBM=; b=lv8SDqn+xA8/+4
-	7tJH2e+Wfg1s47ddeQRX2/lpKTG5MReQQz9KAjdXAW0FzWETVzgs1KNFHBIuVM+J6s0sdk3v0opmB
-	GgG9oVWM7+8xfS70eZy3ahy6MeAcSL8317p/BDqdAV8jpxxpmbezd76NJDFmnoFRHu5m0HpwqD1p1
-	WMRk7VrvCBrF/zHCcmA356NIEXZ+m4U1sg0iLjM4gF1LaNjd1sJJMa98ZVkQGG6/o/sG0a2L0vqlv
-	obUCH0tRd9rQzvx/QOm9iqOyCv9h2Pya56+6Mnl/82zprGGettRYr8J+jM2D6W2G3VaXl3i9npewk
-	xUnpW7MCc2A5NGou5FuA==;
+	List-Owner; bh=V3QfNsJYhmLK2hsJqOKjkLKOVhUnvHzsOO4eQbOcd/U=; b=RoaBxTkOgzJ3/w
+	XE2lXLZ7arnP2m3f2apGisALMP1St0sBRbdht9XVXrE0EdqrY9QBno8zjNjHjoGH1sU5OTi5iBcHZ
+	fO10e5qR4b3E6uSP1rnG8gUJQGjze7E769V++zmdX5GkBNNpbGsarJsPyhlw4y1v4CsgKF/PvTpYc
+	R7WtrQBigtUn6aeOyG5qyZQ6mTjDKYt2pgR9/2E3MlqsNbUfoYudkODI+9peMsT0AaSkMciwvY/p8
+	YY/gi7LJ9uQGVKGP0c/SzZr/mQo7mDhBwvZP2aQITv4OaXGbcT/SHIy0kbA3dY+w3O/uV3Hyepm+Q
+	rPia01aa13K8nR51m1hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inRcm-0002MM-Em; Fri, 03 Jan 2020 18:24:40 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1inRd3-0002fc-LR; Fri, 03 Jan 2020 18:24:57 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inRc5-0001nX-VL
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:23:59 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g6so19332775plt.2
+ id 1inRcl-0002Y5-1O
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 18:24:41 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k3so23771461pgc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 10:23:57 -0800 (PST)
+ Fri, 03 Jan 2020 10:24:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=j7kOKPDQDw1zeyU8TnZElYrUJvJ6w804h05dax3iIbg=;
- b=NjeSC5yC8msDOvA2BMSUTEisw7/C8jzej0myGinxaIKnx+t50s4UjEH+Ia3bJi4XQ6
- PZtv5e6m+zqvWVkaPiHqZJZRcTRofTotNr2NOdvQpEP+V/7r/FQ9oAvzT30GQaxssunn
- 3N5pxD08R8CQVLX9jXrKpyuHcU9ZFZAIP+8enxpXCBpThcJnpQOGj4PBmoTw/49JJTXb
- 9MaB0up71Re/wNF+wO9GukF52nuCI6QCcKBE9mySYBS3K+pL4+k3oEFmLoZvVJATXLTb
- 7r6uHUmT+Uwd6xEqs5t2sCSt7nYCHI3WX91m8BMNWxFWvrZOF2zJNLHD9dRsCJzuJp2l
- hXtw==
+ bh=CmzCH2uWG7hZYGtP4pzK56E04nndebbSOdF2xVyGJzs=;
+ b=mkZOYG+oxf2wIN1sqdKDGqV6ICaaaRcBNSGk5jcIdwYuOMeE8eIM/LjUpCkib1Dc8T
+ pAAeUuPDZux3pqk0yUGr6fVApJyfzIdAs8SlUGlx5tCKtE0aUiXuE1vPqjfiD47WH09z
+ WziLiKRhdWk5OgvhO/NQLAMvmWEKi8kCzGy9lvdG4zElNGgZlICYEfasUCAnB1+nBYr9
+ 2kx4ABFCSyMgphlRyLnWkSAgD9uF8iimR+ZOtYXClWWjjThUOI364HGXuhyhkw8gKdyz
+ U4nw5yx4y4eQZ/awNfVTT1kO5pD36jTsYH2Rdq8snzWOCStkOmu5qvnv0xITMCIbOpeE
+ gK4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=j7kOKPDQDw1zeyU8TnZElYrUJvJ6w804h05dax3iIbg=;
- b=KrIPb0LRwGpXTGwkWNdzslY1A+yHiIfReMfTk4Dgm9NNfXvylNUoqStlTflwbpK6e0
- nMFiVz/+d1DslGZargBtztGy4eee8So4n66Br2mQt2I5+sKyZYLB/f28hlfRWYEGaALg
- +tUOgl+FqJ9qDMau+PsAEYlwBpH5mAcCTdmb4eucg6des/moP9w+cMa2dZT4cJ7bCNft
- 1ojpp24/ZZboJcng1fAB+OYeD34cP23boC8/VBR+pXKPg+6e0sCQeW1nBPSp/D9EcrKL
- qO6FXpJ9pwPcYUSmMDo9Sn67/xjiRfx/2/ViFECAAnQZypa7K3W/hy4JzyKiO2cpyvv5
- JYmw==
-X-Gm-Message-State: APjAAAVHc5MPofivHgQ0u48QDmtBC3Xc0/LxDt44jME5lzgAMu8LTEg3
- kphFL1Dd/E+9OjPgJ2fBX8afadUy
-X-Google-Smtp-Source: APXvYqyo/AL9CqQe5VsL7pLhw6Dn5lZfjPml0O2X2NmZsJmoG0IZtwg5WEFUWKE84Gs2NvetepUpVg==
-X-Received: by 2002:a17:902:8d8c:: with SMTP id
- v12mr70521559plo.336.1578075837265; 
- Fri, 03 Jan 2020 10:23:57 -0800 (PST)
+ bh=CmzCH2uWG7hZYGtP4pzK56E04nndebbSOdF2xVyGJzs=;
+ b=YMABujAYhq/fruyZXXcS7LKHV0zG3P9tCX3gtl0bm4qD7/nCiYAsXOlAGe+8kpzxMd
+ PcpQP1SV9YOd8QnCHycIpuiFUXjmsTViX5iNMnBtM1cFnqKmff2PBrYZrzuS8ZcUS/Yf
+ PcNKqkOKMItRfUppiEVZDMj4p0+lCR6I085Ug7A5SDn2ARRqSAYA6sZup0KQgSc9/eJf
+ XSwmDN8wnKokAZQkjf+fxZpmEQLNTy/js2zfjSArjnK18FeMjGEd4V0o5UAJLQ+jcs11
+ Suix/WGizTLjon4HtZUNTgEQfL0kphBb9eZfQK+yVF0zlweR0ZKUmNv1wEpCe13mC88D
+ H+gQ==
+X-Gm-Message-State: APjAAAXISV32kJAI9jNMkXLUbduoJ6stllHsSpRAvSInw9d2oT5aoxSc
+ mLScuMUPjF59oHsUnWeRGMu6N+dQ
+X-Google-Smtp-Source: APXvYqxhMHbD9WF1/Fdmn/LT2i8QlHDDRgYChoi9Zq+Ig23CJMeUTby9wBzMq1Lv9+uUTxLSIWblLg==
+X-Received: by 2002:aa7:9522:: with SMTP id c2mr95293845pfp.43.1578075878287; 
+ Fri, 03 Jan 2020 10:24:38 -0800 (PST)
 Received: from [10.67.50.49] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id
- b17sm57504093pfb.146.2020.01.03.10.23.56
+ by smtp.googlemail.com with ESMTPSA id k23sm62015555pgg.7.2020.01.03.10.24.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 03 Jan 2020 10:23:56 -0800 (PST)
-Subject: Re: [PATCH v4 03/13] phy: usb: Put USB phys into IDDQ on suspend to
- save power in S2 mode
+ Fri, 03 Jan 2020 10:24:37 -0800 (PST)
+Subject: Re: [PATCH v4 04/13] phy: usb: Add "wake on" functionality
 To: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org
 References: <20200103181811.22939-1-alcooperx@gmail.com>
- <20200103181811.22939-4-alcooperx@gmail.com>
+ <20200103181811.22939-5-alcooperx@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -119,23 +116,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <c8c825b8-0407-f63b-527f-91c442bbc3d9@gmail.com>
-Date: Fri, 3 Jan 2020 10:23:55 -0800
+Message-ID: <81ddf86b-de17-81a2-0829-bea7258fd21e@gmail.com>
+Date: Fri, 3 Jan 2020 10:24:36 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200103181811.22939-4-alcooperx@gmail.com>
+In-Reply-To: <20200103181811.22939-5-alcooperx@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_102358_051689_37357F96 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20200103_102439_282203_5E314FA7 
+X-CRM114-Status: GOOD (  15.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -174,11 +171,22 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 1/3/20 10:18 AM, Al Cooper wrote:
-> Currently the Phy driver will put the USB phys into the max
-> power saving mode (IDDQ) when there is no corresponding XHCI, EHCI
-> or OHCI client (through rmmod, unbind or if the driver is not
-> builtin). This change will also put the Phys into IDDQ mode
-> on suspend so that S2 will get the additional power savings.
+> Add the ability to handle USB wake events from USB devices when
+> in S2 mode. Typically there is some additional configuration
+> needed to tell the USB device to generate the wake event when
+> suspended but this varies with the different USB device classes.
+> For example, on USB Ethernet dongles, ethtool should be used to
+> enable the magic packet wake functionality in the dongle.
+> NOTE:  This requires that the "power/wakeup" sysfs entry for
+> the USB device generating the wakeup be set to "enabled".
+> 
+> This functionality requires a special hardware sideband path that
+> will trigger the AON_PM_L2 interrupt needed to wake the system from
+> S2 even though the USB host controllers are in IDDQ (low power state)
+> and most USB related clocks are shut off. For the sideband signaling
+> to work we need to leave the usbx_freerun clock running, but this
+> clock consumes very little power by design. There's a bug in the
+> XHCI wake hardware so only EHCI/OHCI wake is currently supported.
 > 
 > Signed-off-by: Al Cooper <alcooperx@gmail.com>
 
