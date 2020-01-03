@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07CAF12F70D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 12:17:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91BBC12F726
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Jan 2020 12:26:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nr6kLfbCpYOrgiy2LDpqa5iAKoz7AegnmRuADznxEgk=; b=RgoF9tudFkw3pc
-	+cA7tqW4QLaktnGhR/cFgD0z+941Hs51b6qN21X10i5vQf6E3oBRT+/Dd9Os+BPSbbiLDpCLJDuDO
-	hQ8aLZ86UhaT7VG312XJz6NWJlNV1/r/OnQLDnbzoFwZque8C8wpryPTPIz+SQKQtauzPm5f/pZQO
-	fMs9XU+3cZvqAfWrMIiwRiIkBS9Ovjg+EKJ3nGHjL7yOdjt0d41JV9GmYOQjGqn/lWtBkcdRd86df
-	Mijd8gyFnboXFR/kxAk50ogR4sW8fetT1cmmbsMhtUkD77mwxvUdcrP+osyC5Uh6T2+QuN8UBRl9a
-	x7p+g2CDlysEtVtT5q6w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q20nJp5vWt22uScvZXEbKTRgTDIwsPlUUOdc0Q6d+NI=; b=OsYtAk532NDcWG
+	iaGXk2iJh//dyI7yUyaDICYAbBTwHUNKeGqUpEqaVl8A0Sk38iRuL4SO+rowOS0Zbj9kGB8XqqAdT
+	OWguDkzXhQ6JRvjJxRXpPm6XT12g/E+QTFKsRlPNC2volGLI+oZZGiUpWzA0Z4OrvJSDgH7A1Pje+
+	7xzUoowNZF7fTv2a/q9uJPP01mNP+aXtXKkQL56oYKJwPd01db6nUhl74nfAPPCGWaJP/EvsW4UGY
+	FCN4CfzwcUkwOozRtfwSg36BpToa07eycJe6xIRc0bPEoV5FCs401cENYmIflZCm1Asn8E6Pu0rML
+	MbkTADG/Pfvugms3TKGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inKx3-0005Kv-Dq; Fri, 03 Jan 2020 11:17:09 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1inL5g-00008U-Ep; Fri, 03 Jan 2020 11:26:04 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inKwx-0005Jw-Qp
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 11:17:05 +0000
-Received: by mail-ed1-f68.google.com with SMTP id v28so41314586edw.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 03:17:00 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=4Cz1bHF5KTHAkw4Fc68MgiqMwjrbDHHdLD3F5Ae3Ezo=;
- b=GRG/5RlhboPN2svVIURU0dLG89urKbDf/0bI0cD4PlHcxtRgWGKSHjEyBeQCUitV4X
- /T0ifdV54BX583y3XHCAmhQxwe915BIP3OxogYsldU+YFp8eaoJkXwcDKBMARVH4uYJj
- +frvAgNfnEIM7qcZ7oepcmRBcWottjHdSZa4CpA+Ug/FZ6NE8PhUbOCqw0mOvKLgX5PQ
- KPJe0aaIBFd6aXXOpejOjsS4J4OWNmzNDJngCfOnceXrAaMAGPLVfp6jPrn1Gz/dFGN7
- I79J0IPT6I2rG3xCFaXX55w3yEPe3cYXA0kRTMmCmbLOJlHIlC1mVKE/taJx2JnabYlb
- ldmA==
-X-Gm-Message-State: APjAAAUXhIcPeq+fwYB3tRqi+Wth7jXOEMAoHzQY8BzknEq1G698gPQQ
- gpUO8pcmEfB3nv+yEJ6L6sc=
-X-Google-Smtp-Source: APXvYqwm0Aou1t/E4yDsF/8shNlUmMED7vothBxjbyR0PYteuXhZsEv8NzzR+qZMCInWvdpwvwuN7A==
-X-Received: by 2002:a17:906:a88e:: with SMTP id
- ha14mr91081234ejb.169.1578050218870; 
- Fri, 03 Jan 2020 03:16:58 -0800 (PST)
-Received: from pi3 ([194.230.155.149])
- by smtp.googlemail.com with ESMTPSA id y4sm7699793ejr.41.2020.01.03.03.16.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Jan 2020 03:16:58 -0800 (PST)
-Date: Fri, 3 Jan 2020 12:16:55 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 2/2] ARM: dts: exynos: Remove unneeded "snps,dwc2"
- from hsotg node
-Message-ID: <20200103111655.GA1605@pi3>
-References: <20191219103536.25485-1-benjamin.gaignard@st.com>
- <20191219103536.25485-3-benjamin.gaignard@st.com>
- <20191230153758.GB4918@pi3>
- <bbc7e34c-75c2-dfe0-70f3-0685e8e54fed@st.com>
+ id 1inL5Z-000085-N0
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Jan 2020 11:25:59 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1578050757; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-Id: Date: Subject: To: From: Sender;
+ bh=WE57pxSUJyR+L5tsiqVz5w7Z/BAF2j86LaPJYplaCc0=;
+ b=VrEOfYxAzVUo6v70tLqZX2jsEC8/KT5F+GaZVSQnVIBrfoDCono2uMvWNk2vjfKag8MC8idQ
+ pFpV9NImfT71SmrgeTEFhVl932uu+KuInRsHy4ErWTF0H1/TgWNeI+/OouGIUwOobjOxRyYk
+ bk1cOoLEfOn2ajsg28kPYQ5rmxk=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e0f24c3.7f77e9164e68-smtp-out-n02;
+ Fri, 03 Jan 2020 11:25:55 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 01A1CC447B4; Fri,  3 Jan 2020 11:25:54 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from srichara-linux.qualcomm.com
+ (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: sricharan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 980C9C447B2;
+ Fri,  3 Jan 2020 11:25:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 980C9C447B2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=sricharan@codeaurora.org
+From: Sricharan R <sricharan@codeaurora.org>
+To: sricharan@codeaurora.org, agross@kernel.org, devicetree@vger.kernel.org,
+ linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-soc@vger.kernel.org, robh+dt@kernel.org, sboyd@kernel.org,
+ sivaprak@codeaurora.org
+Subject: [PATCH 0/2] Add Global clock controller support for IPQ6018
+Date: Fri,  3 Jan 2020 16:55:42 +0530
+Message-Id: <1578050744-3761-1-git-send-email-sricharan@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <bbc7e34c-75c2-dfe0-70f3-0685e8e54fed@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_031703_869255_63571B61 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200103_032557_815090_E0D02D77 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,54 +93,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Amelie DELAUNAY <amelie.delaunay@st.com>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kgene@kernel.org" <kgene@kernel.org>,
- "hminas@synopsys.com" <hminas@synopsys.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 02, 2020 at 08:50:39AM +0000, Benjamin GAIGNARD wrote:
-> 
-> On 12/30/19 4:37 PM, Krzysztof Kozlowski wrote:
-> > On Thu, Dec 19, 2019 at 11:35:36AM +0100, Benjamin Gaignard wrote:
-> >> Remove "snps,dwc2" from hsotg@12480000 node compatible list because
-> >> "samsung,s3c6400-hsotg" should be enough.
-> > The more detailed compatible is almost always "enough". Some other nodes
-> > also have detailed+generic compatible. In this case there is a driver
-> > matching "snps,dwc2" so why removing it?
-> 
-> First because, unlike the others dwc2 devices, this compatible wasn't 
-> describe in the bindings file
-> 
-> so I had to investigated how it should work and, on samsung DT files, 
-> only "samsung,s3c6400-hsotg".
-> 
->  From driver code point of view that seems coherent (we do the same for 
-> stm32).
-> 
-> With that in mind I have decided to remove "snps,dwc2" from exynos DT 
-> file rather than add it everywhere else.
->
-
-Actually fine with me, although I would be happy if Rob or Mark could
-confirm that it is a preferred approach.
-
-Rob, Mark, could you share your thoughts?
-
-Best regards,
-Krzysztof
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIElQUTYwMTggaXMgUXVhbGNvbW3igJlzIDgwMi4xMWF4IFNvQyBmb3IgUm91dGVycywKR2F0
+ZXdheXMgYW5kIEFjY2VzcyBQb2ludHMuCgpUaGlzIHNlcmllcyBhZGRzIEdsb2JhbCBjbG9jayBj
+b250cm9sbGVyIHN1cHBvcnQgZm9yIGlwcTYwMTguCgpUaGUgcGF0Y2hlcyB3ZXJlIGEgcGFydCBv
+ZiBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL2NvdmVyLzExMzAzMDc1LywKbm93IG1vdmVk
+IGl0IG91dHNpZGUgYmFzZWQgb24gU3RlcGhlbidzIHN1Z2dlc3Rpb24uCgpTcmljaGFyYW4gUiAo
+Mik6CiAgY2xrOiBxY29tOiBBZGQgRFQgYmluZGluZ3MgZm9yIGlwcTYwMTggZ2NjIGNsb2NrIGNv
+bnRyb2xsZXIKICBjbGs6IHFjb206IEFkZCBpcHE2MDE4IEdsb2JhbCBDbG9jayBDb250cm9sbGVy
+IHN1cHBvcnQKCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9jbG9jay9xY29tLGdjYy55YW1sICAg
+ICAgICB8ICAgIDMgKy0KIGRyaXZlcnMvY2xrL3Fjb20vS2NvbmZpZyAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIHwgICAgOCArCiBkcml2ZXJzL2Nsay9xY29tL01ha2VmaWxlICAgICAgICAgICAg
+ICAgICAgICAgICAgICB8ICAgIDEgKwogZHJpdmVycy9jbGsvcWNvbS9nY2MtaXBxNjAxOC5jICAg
+ICAgICAgICAgICAgICAgICAgfCA0NjQzICsrKysrKysrKysrKysrKysrKysrCiBpbmNsdWRlL2R0
+LWJpbmRpbmdzL2Nsb2NrL3Fjb20sZ2NjLWlwcTYwMTguaCAgICAgICB8ICAyNjIgKysKIGluY2x1
+ZGUvZHQtYmluZGluZ3MvcmVzZXQvcWNvbSxnY2MtaXBxNjAxOC5oICAgICAgIHwgIDE1NyArCiA2
+IGZpbGVzIGNoYW5nZWQsIDUwNzMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQogY3JlYXRl
+IG1vZGUgMTAwNjQ0IGRyaXZlcnMvY2xrL3Fjb20vZ2NjLWlwcTYwMTguYwogY3JlYXRlIG1vZGUg
+MTAwNjQ0IGluY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svcWNvbSxnY2MtaXBxNjAxOC5oCiBjcmVh
+dGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9kdC1iaW5kaW5ncy9yZXNldC9xY29tLGdjYy1pcHE2MDE4
+LmgKCi0tIAoxLjkuMQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
