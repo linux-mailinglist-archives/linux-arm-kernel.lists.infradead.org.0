@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95DBE13015E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 09:18:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70782130161
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 09:18:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SihH1z2fgDepjc10ebxR2YTvylZB9VdOKKLv/pKWSwk=; b=kjZGDtJhZQ+kc2UZ2yqp6jLGl
-	Hu4XtCBQS34SFjjpvR7W93LyZ+MbEMZrhH9i1dWNXV8Ed/pL89lokHnsxIb3PvOwp0qOVmraBQxOG
-	yBBo7lIrtTfJ0pNvqRRCw7bRj6ihRMYMnvNbSbuyBrdEK6XDyyTOGRnhqaweoMyWwVRrBXhdLHZYO
-	Pt+GOL1tpR7mfR9yEtRzhO8MaXbfJTTpfwoSY0nd+Ldbgx1U5rIKP7h9h30WZm/Ax9oJjNYq8EJWo
-	HbUe6np7+8X78zvXOoOaoGjSvQkCFKsGPelX30UnvrgcnwT4JgiRP/1Dk1te1hNQnn/4Q7d53mPNS
-	5AtJ2RilA==;
+	 bh=dC0pGXSJplFxA5KB1MW0uhOSsXyxgaCVeSYZfBVR6Yk=; b=Z9GgEyntsQW+k7A3NdYpw1eaF
+	NO3NB4PazGx3iiUjakxQcMvx5/XTKeH3ok83VICh+aMKUG6KJsVIx0hbfb+kvrg7qIU2a78elOKCi
+	5Ux7CCPTa45fO8X0NGWBp7WYoaogiUs0MShpu5wqMBHn0nfzs2sL0KkMyjFU29MgmBOz52iIFtGQI
+	LcZpu6fnuGdwWQLM7C+Z5xFhqkeiWSSiMOrkUyBVFPYePEfpQ3b6drP1gwBipRbiHQ5OgIof66lmL
+	uXPXADAgnFcjDxjDbjvNRcRE9pkkz3bKxNve+WHkF2FlQevcEa7UzxUIhqAdM0gT9Rx213htqnt3v
+	rM4LCgy3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inedN-0003lm-LV; Sat, 04 Jan 2020 08:18:09 +0000
+	id 1inedl-0003yM-A2; Sat, 04 Jan 2020 08:18:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inedI-0003kk-Aj
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 08:18:05 +0000
+ id 1inedY-0003x9-NX
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 08:18:21 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C03C6215A4;
- Sat,  4 Jan 2020 08:18:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F1581215A4;
+ Sat,  4 Jan 2020 08:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578125883;
- bh=3v1uQmK5HG72Gf2Ti7z8J9WdSlBnHXdgemY9IhzLgbk=;
+ s=default; t=1578125900;
+ bh=0A4dYUm+wB5rRAeqsjOu0EBX637B2iRBxWYFB+f+3qE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pdXAJ86sEhD8Z61nftIVnbw9hKy+4afQxtvj/ToyFNhpKg4/Dus/HqUirv9lYVi9v
- pewNARcB+f18V2ScXvqO5NAlTb21TWASQH6aZ5QLCFWUDgyiEx7Y7mI3TzFxLIUqWf
- 0whRyjh70IeddRUGJc0a63btGKrzye+xcdRM1Gg4=
-Date: Sat, 4 Jan 2020 09:18:00 +0100
+ b=yhM7AMQfCNSdN0NkExGDFjn+1YoowXcHmHJEDJy0/pTFVoUeIxBSstsQtx4mjvTVf
+ Ck74dcyJ9w3auhxnUXdXkTnOd3ELL9SOewnCRdKj5+03DLbvUIroE3td2doT7Q8HNb
+ aNPe9xTyu6zq/99FiUhda3NzO7c+M+VxqgZ7gXbo=
+Date: Sat, 4 Jan 2020 09:18:18 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH 1/3] clk: sunxi-ng: add mux and pll notifiers for A64 CPU
- clock
-Message-ID: <20200104081800.fxgtfsabue4kpmla@gilmour.lan>
+Subject: Re: [PATCH 2/3] clk: sunxi-ng: a64: export CLK_CPUX clock for DVFS
+Message-ID: <20200104081818.ufby6w24vtawyfz3@gilmour.lan>
 References: <20200104063505.219030-1-anarsoul@gmail.com>
- <20200104063505.219030-2-anarsoul@gmail.com>
- <CA+E=qVcS+bWNx6Sneg-JG4-NHQZ8e-ztszsPu8N2d8HawyDYqg@mail.gmail.com>
+ <20200104063505.219030-3-anarsoul@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+E=qVcS+bWNx6Sneg-JG4-NHQZ8e-ztszsPu8N2d8HawyDYqg@mail.gmail.com>
+In-Reply-To: <20200104063505.219030-3-anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_001804_392846_21141FC0 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20200104_001820_791101_B97AF0B2 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,66 +78,47 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Vasily Khoruzhick <vasilykh@arista.com>,
- devicetree <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============2574488003669408375=="
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1645704566337561591=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2574488003669408375==
+--===============1645704566337561591==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5jczm743ulhu5rm2"
+	protocol="application/pgp-signature"; boundary="z27dgjuuap73pkx2"
 Content-Disposition: inline
 
 
---5jczm743ulhu5rm2
+--z27dgjuuap73pkx2
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Fri, Jan 03, 2020 at 10:42:35PM -0800, Vasily Khoruzhick wrote:
-> On Fri, Jan 3, 2020 at 10:35 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
-> >
-> > From: Icenowy Zheng <icenowy@aosc.io>
-> >
-> > The A64 PLL_CPU clock has the same instability if some factor changed
-> > without the PLL gated like other SoCs with sun6i-style CCU, e.g. A33,
-> > H3.
-> >
-> > Add the mux and pll notifiers for A64 CPU clock to workaround the
-> > problem.
-> >
-> > Fixes: c6a0637460c2 ("clk: sunxi-ng: Add A64 clocks")
-> > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> > Signed-off-by: Vasily Khoruzhick <vasilykh@arista.com>
+On Fri, Jan 03, 2020 at 10:35:04PM -0800, Vasily Khoruzhick wrote:
+> Export CLK_CPUX so we can reference it in CPU node.
 >
-> Ugh, didn't notice that email is wrong here, this patch is not related
-> to my daytime job. Maxime, if patchset is OK please fix it up to be
-> "Vasily Khoruzhick <anarsoul@gmail.com>", otherwise I'll resend v2
-> with correct sign off.
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 
-Applied with your mail fixed, thanks!
+Applied, thanks!
 Maxime
 
---5jczm743ulhu5rm2
+--z27dgjuuap73pkx2
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhBKOAAKCRDj7w1vZxhR
-xS1RAP9GhsTqDno3/XcGN9WvkXqmWkis4l6lPHyEMVp48+B2HwD/ax89DckQzx3i
-GMiJDEgE+teEa5Iv11Jo/k52rR3kKQg=
-=FJWf
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhBKSgAKCRDj7w1vZxhR
+xat1AP9yaZlJNjEXQz2ZyUGPPDc9qiGYflrWBkOvankU4ag/KQD/QNoVXsnaSSeA
+v4fjU5R73baPNupd9QJ4lYCHhyzZ8wg=
+=4xGB
 -----END PGP SIGNATURE-----
 
---5jczm743ulhu5rm2--
+--z27dgjuuap73pkx2--
 
 
---===============2574488003669408375==
+--===============1645704566337561591==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -149,5 +129,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2574488003669408375==--
+--===============1645704566337561591==--
 
