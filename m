@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6EFF12FFA9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 01:36:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D61B512FFBC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 01:39:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hUo9xVJHg017cGRU2g24TnrLzhPcyzcUH8OoSGIOxUQ=; b=IU7iNaiC5/vadd
-	3ziWsqKy5xbuPhjsQGOT21XefCob9er7VlwK14UuEaNJyUL3eb5Vao8R23PgZPKceTR+jBDK++/rA
-	VplyzwnMH+wGFsPPoaWawiXROYmcrU3TTmonX1wgGFbQy6FF9sNtn1Us2rxWoP3lXD9N1nMkyuefc
-	indGmj/FjSkCTtBuLjya7G/R29GFQA1O8ttqcORGYbJ0qU538DF7ox3Vw1mUZNCjbJ6w8YypeTqle
-	oFlfjIc+Uxclpm7x2bNgM5j1HEp5SaT5HdCEv3RFQcTBdRu2j9orXAaFbg9l4+9iP92x0lePVXDI9
-	V7mZ6Pqpw90JgeeXyjGA==;
+	List-Owner; bh=P8xmh3Vva4YJDbxdK1s9yh4w/ke/aezW/9RR41pDBpI=; b=JoVnI5Lw1wSWiG
+	cQ1yrN9LpCFMUAYErl4BU/ptGQpMdB7gHqciDSL/XmKGu4B0xRBqdXXZ8D8S0toWfMaeID1Eqvdpu
+	+obH9bW/C40sj3OQTBxLgCGzxnSLB4UV4ih/eY+PixMTNVvIQDsthJCCmn3qI146TZf6as5L0oDVt
+	049yBZHFXTaxp22phy8E6FRBOhpHmQkgS7GCTwygHU/X03/lmQuqmVTht9D9Bu1zbWe1lumBH8esf
+	9dzblotiDDZ3XMhW8vMixszocRVN+dJlmzmEhS+RyNRWVCEP9ps/4oiHtM8EcqnngbUmU61rL9cIN
+	5GoS+41XUO5EN0QbkTqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inXQw-0004Gd-DP; Sat, 04 Jan 2020 00:36:50 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1inXTp-0004xQ-G0; Sat, 04 Jan 2020 00:39:49 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inXQk-0004G0-SN
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 00:36:40 +0000
-Received: by mail-io1-f66.google.com with SMTP id z8so43112639ioh.0
+ id 1inXTi-0004qN-M2
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 00:39:43 +0000
+Received: by mail-il1-f195.google.com with SMTP id g12so38048905ild.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 16:36:38 -0800 (PST)
+ Fri, 03 Jan 2020 16:39:42 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=onR7Gnh/HEyizscz7/aRTtEnV/BPOWeM3TZPN0CJufc=;
- b=ArG41MXlkQ4hNvb9bMUFKTtvXAV5WfJB04JuUsluOijkM54XL1x1ibFSrBtoBF5VHr
- eIQetNG3lrc9P+i+Y2GZnLgOmvVEqr/Ghd9q+9dW1MP1wjmvmg2GOe4rCRYoAVt42445
- 2g8AfKjxSQrj/HquYCw0ljunryBcDNxjjEh+bZGL0TaIC+3kusijQfFcp/mAyW6wqYp2
- wNrlwMFfmF3dBRJwFSl68a+0yph6KjxdPlT+pZrZHDG7D4JAQjTCY1n87f/bWhQjMWO7
- INMFKgTV468eXeGxDKnHGYAEfg7Xk+20r9RLJWe0MvzqEk4YvCHJHZNeURYhYYaOn+ia
- gpnQ==
-X-Gm-Message-State: APjAAAUJEpOjUFKSOYQKs3abq8gR/HWP7ztWMAQMAVuaJ6OKcrRMbToP
- ejWzuBYHsdkDqc74Z469i3c+97k=
-X-Google-Smtp-Source: APXvYqzMPwVj52mv3HuSTEHxhdp8VGLKlAFZpwnyO0e+UODDwCc0SKM2bCo9bxzLKdRPHMaCyBfp8A==
-X-Received: by 2002:a6b:6117:: with SMTP id v23mr21860058iob.79.1578098197689; 
- Fri, 03 Jan 2020 16:36:37 -0800 (PST)
+ bh=dKtl1NpRX8aOyUbBGch9yTP0h5jL9ht++jj3F8wRx1Y=;
+ b=MSQ84oUNDOCpOUDr3UH60UV9XYYKRVpMOZh3ac3wsdAHgOEE7X6XVboLkfvShrFeZX
+ 4X7tBYXZ9f5VdadZRwpACNey1HuH68gJ0XpFRW8QdmpqN1lD4EBaLW8A5cQm1AtdKaaL
+ E8bVtPC2zTv+Lk9CDXLIb66zGM75RmmV2BZk+NcI+pPTup2DDYhlYPPuNhsaryhI9r32
+ JYJL9ZFFUSWtXCxdpHpX2l0MxHFka1opnPrGOSiksogpL2E5ZultXKxguH/bYbqGtG4c
+ 4qkjpRomUlOYidawTfJSvzGLFLYfv7f4HJN2ncWc0jyFxXn8nu172F/Qcz0/1yM73R0P
+ x4hg==
+X-Gm-Message-State: APjAAAUAq2HJ+dT6klOFljt7HYwSXKVT3og6UkxEEXJD/ej6Ix9hmDG6
+ 4uNfoWw8HE6oaIZ0v7AYnVyk+oU=
+X-Google-Smtp-Source: APXvYqxaGcCCrrx93L1EdCZyN30whYufykWCQNn4gu7j8pabMeu3B/Ctc76xBBDiuvuqKTmVLw+/Yg==
+X-Received: by 2002:a92:5a16:: with SMTP id o22mr55964625ilb.152.1578098381470; 
+ Fri, 03 Jan 2020 16:39:41 -0800 (PST)
 Received: from rob-hp-laptop ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id e7sm15201963iot.71.2020.01.03.16.36.35
+ by smtp.gmail.com with ESMTPSA id z22sm15165045ioe.47.2020.01.03.16.39.40
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Jan 2020 16:36:36 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2219a5
+ Fri, 03 Jan 2020 16:39:40 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2219b7
  by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Fri, 03 Jan 2020 17:36:34 -0700
-Date: Fri, 3 Jan 2020 17:36:34 -0700
+ Fri, 03 Jan 2020 17:39:39 -0700
+Date: Fri, 3 Jan 2020 17:39:39 -0700
 From: Rob Herring <robh@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH] ARM: dts: imx: drop "fsl,aips-bus"
-Message-ID: <20200104003634.GA6058@bogus>
-References: <1577696078-21720-1-git-send-email-peng.fan@nxp.com>
+To: Akash Gajjar <akash@openedev.com>
+Subject: Re: [PATCH V3, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
+Message-ID: <20200104003939.GA15565@bogus>
+References: <20191230145008.5899-1-akash@openedev.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1577696078-21720-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <20191230145008.5899-1-akash@openedev.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_163638_952640_98E94EDB 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20200103_163942_724449_68720AC7 
+X-CRM114-Status: GOOD (  14.14  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [209.85.166.195 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -79,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
+ [209.85.166.195 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -95,327 +95,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Alice Guo <alice.guo@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, heiko@sntech.de,
+ linux-arm-kernel@lists.infradead.org, tom@radxa.com,
+ Robin Murphy <robin.murphy@arm.com>, Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
+ Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ Vivek Unune <npcomplete13@gmail.com>, Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 30, 2019 at 08:58:05AM +0000, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On Mon, 30 Dec 2019 20:19:32 +0530, Akash Gajjar wrote:
+> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+> - 256MB/512MB DDR3 RAM
+> - SD, NAND flash (optional on board 1/2/4/8Gb)
+> - 100MB ethernet, PoE (optional)
+> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+> - USB2.0 Type-A HOST x1
+> - USB3.0 Type-C OTG x1
+> - 26-pin expansion header
+> - USB Type-C DC 5V Power Supply
 > 
-> There is no binding doc for "fsl,aips-bus", "simple-bus" is enough
-> for aips usage, so drop it.
-
-NAK. The AIPS bus has registers, so 'simple-bus' alone is not enough.
-
-What you should do is change 'aips' node names to 'bus'.
-
+> This patch enables
+> - Console
+> - NAND Flash
+> - SD Card
 > 
-> Scirpt:
-> sed -i 's/compatible = "fsl,aips-bus", "simple-bus";/compatible = "simple-bus";/'
-> arch/arm/boot/dts/imx*
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Signed-off-by: Akash Gajjar <akash@openedev.com>
 > ---
->  arch/arm/boot/dts/imx25.dtsi   | 4 ++--
->  arch/arm/boot/dts/imx31.dtsi   | 4 ++--
->  arch/arm/boot/dts/imx50.dtsi   | 4 ++--
->  arch/arm/boot/dts/imx51.dtsi   | 4 ++--
->  arch/arm/boot/dts/imx53.dtsi   | 4 ++--
->  arch/arm/boot/dts/imx6qdl.dtsi | 4 ++--
->  arch/arm/boot/dts/imx6sl.dtsi  | 4 ++--
->  arch/arm/boot/dts/imx6sll.dtsi | 4 ++--
->  arch/arm/boot/dts/imx6sx.dtsi  | 6 +++---
->  arch/arm/boot/dts/imx6ul.dtsi  | 4 ++--
->  arch/arm/boot/dts/imx6ull.dtsi | 2 +-
->  arch/arm/boot/dts/imx7s.dtsi   | 6 +++---
->  12 files changed, 25 insertions(+), 25 deletions(-)
+> Changes for v2
+> - Use pwm-supply for vdd_core node instead of vi-supply
+> - Add USB2.0 node support
+>  
+> Changes for v3
+> - Use small S on dts file name
+> - Add missing semicolon
+> - Remove USB2.0 node support
 > 
-> diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
-> index 40b95a290bd6..3b7a0b249d80 100644
-> --- a/arch/arm/boot/dts/imx25.dtsi
-> +++ b/arch/arm/boot/dts/imx25.dtsi
-> @@ -76,7 +76,7 @@
->  		ranges;
->  
->  		aips@43f00000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x43f00000 0x100000>;
-> @@ -333,7 +333,7 @@
->  		};
->  
->  		aips@53f00000 { /* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x53f00000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx31.dtsi b/arch/arm/boot/dts/imx31.dtsi
-> index 6b62f0745b82..b0e7e3bf8a1a 100644
-> --- a/arch/arm/boot/dts/imx31.dtsi
-> +++ b/arch/arm/boot/dts/imx31.dtsi
-> @@ -64,7 +64,7 @@
->  		};
->  
->  		aips@43f00000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x43f00000 0x100000>;
-> @@ -226,7 +226,7 @@
->  		};
->  
->  		aips@53f00000 { /* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x53f00000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx50.dtsi b/arch/arm/boot/dts/imx50.dtsi
-> index 0bfe7c91d0eb..961de09b571d 100644
-> --- a/arch/arm/boot/dts/imx50.dtsi
-> +++ b/arch/arm/boot/dts/imx50.dtsi
-> @@ -102,7 +102,7 @@
->  		ranges;
->  
->  		aips@50000000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x50000000 0x10000000>;
-> @@ -390,7 +390,7 @@
->  		};
->  
->  		aips@60000000 {	/* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x60000000 0x10000000>;
-> diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
-> index dea86b98e9c3..86708688371b 100644
-> --- a/arch/arm/boot/dts/imx51.dtsi
-> +++ b/arch/arm/boot/dts/imx51.dtsi
-> @@ -159,7 +159,7 @@
->  		};
->  
->  		aips@70000000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x70000000 0x10000000>;
-> @@ -441,7 +441,7 @@
->  		};
->  
->  		aips@80000000 {	/* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x80000000 0x10000000>;
-> diff --git a/arch/arm/boot/dts/imx53.dtsi b/arch/arm/boot/dts/imx53.dtsi
-> index ed341cfd9d09..f46a83c7d2c4 100644
-> --- a/arch/arm/boot/dts/imx53.dtsi
-> +++ b/arch/arm/boot/dts/imx53.dtsi
-> @@ -223,7 +223,7 @@
->  		};
->  
->  		aips@50000000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x50000000 0x10000000>;
-> @@ -655,7 +655,7 @@
->  		};
->  
->  		aips@60000000 {	/* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x60000000 0x10000000>;
-> diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-> index e6b4b8525f98..9b7635e9cf3c 100644
-> --- a/arch/arm/boot/dts/imx6qdl.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl.dtsi
-> @@ -295,7 +295,7 @@
->  		};
->  
->  		aips-bus@2000000 { /* AIPS1 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02000000 0x100000>;
-> @@ -936,7 +936,7 @@
->  		};
->  
->  		aips-bus@2100000 { /* AIPS2 */
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02100000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-> index 59c54e6ad09a..4b4f22217dfe 100644
-> --- a/arch/arm/boot/dts/imx6sl.dtsi
-> +++ b/arch/arm/boot/dts/imx6sl.dtsi
-> @@ -144,7 +144,7 @@
->  		};
->  
->  		aips1: aips-bus@2000000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02000000 0x100000>;
-> @@ -787,7 +787,7 @@
->  		};
->  
->  		aips2: aips-bus@2100000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02100000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-> index a1bc5bb31756..fac8f22255aa 100644
-> --- a/arch/arm/boot/dts/imx6sll.dtsi
-> +++ b/arch/arm/boot/dts/imx6sll.dtsi
-> @@ -145,7 +145,7 @@
->  		};
->  
->  		aips1: aips-bus@2000000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02000000 0x100000>;
-> @@ -664,7 +664,7 @@
->  		};
->  
->  		aips2: aips-bus@2100000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02100000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-> index 59bad60a47dc..4499be62c8bb 100644
-> --- a/arch/arm/boot/dts/imx6sx.dtsi
-> +++ b/arch/arm/boot/dts/imx6sx.dtsi
-> @@ -236,7 +236,7 @@
->  		};
->  
->  		aips1: aips-bus@2000000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02000000 0x100000>;
-> @@ -831,7 +831,7 @@
->  		};
->  
->  		aips2: aips-bus@2100000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02100000 0x100000>;
-> @@ -1189,7 +1189,7 @@
->  		};
->  
->  		aips3: aips-bus@2200000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02200000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-> index d9fdca12819b..63d276fc2477 100644
-> --- a/arch/arm/boot/dts/imx6ul.dtsi
-> +++ b/arch/arm/boot/dts/imx6ul.dtsi
-> @@ -205,7 +205,7 @@
->  		};
->  
->  		aips1: aips-bus@2000000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02000000 0x100000>;
-> @@ -772,7 +772,7 @@
->  		};
->  
->  		aips2: aips-bus@2100000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02100000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx6ull.dtsi b/arch/arm/boot/dts/imx6ull.dtsi
-> index b7e67d121322..633fa08bc972 100644
-> --- a/arch/arm/boot/dts/imx6ull.dtsi
-> +++ b/arch/arm/boot/dts/imx6ull.dtsi
-> @@ -52,7 +52,7 @@
->  / {
->  	soc {
->  		aips3: aips-bus@2200000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x02200000 0x100000>;
-> diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
-> index 139ab9b98472..552b14be14a1 100644
-> --- a/arch/arm/boot/dts/imx7s.dtsi
-> +++ b/arch/arm/boot/dts/imx7s.dtsi
-> @@ -317,7 +317,7 @@
->  		};
->  
->  		aips1: aips-bus@30000000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x30000000 0x400000>;
-> @@ -669,7 +669,7 @@
->  		};
->  
->  		aips2: aips-bus@30400000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x30400000 0x400000>;
-> @@ -809,7 +809,7 @@
->  		};
->  
->  		aips3: aips-bus@30800000 {
-> -			compatible = "fsl,aips-bus", "simple-bus";
-> +			compatible = "simple-bus";
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			reg = <0x30800000 0x400000>;
-> -- 
-> 2.16.4
+>  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 221 ++++++++++++++++++
+>  3 files changed, 227 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
 > 
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
