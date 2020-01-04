@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 566F613024E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 13:03:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1E6A13024F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 13:03:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EEWpmGaee+7GA9GycjAYNPzJ8WWmNpFAGgB4oTEIpp4=; b=gvjF9LGipfRs/K
-	p5+A7vZ8JKTDlzIN7YP0a26fg2qLyM0sz+uJzdOFdGaADaQFM0SdsE3AQtaJT3IIkL2lytUdyo9wq
-	TRe1vrppYn7uxYHlQabBWPVeFEWXZkTOaJM+cHqPZ+DAhlVbl5hesO4E4rRQL49nnDD5EItI4auD8
-	R8sf7IUKNmH3cNivmuXeJpNfr6SXNBOednPQe9W5r0QDd2w/XHMGB1rwJeq4eIJ5Qfsc13pGJRQwD
-	iucv8kpECRuwCA6AAsdt5s+Sn0EhbzeIeEacFWiqKzl8OtNfjGBMbZakB/1ZFmu5PoDUpChwkfsJm
-	YYHJ6zTHKKwh9R8OvfTg==;
+	List-Owner; bh=eGBBLihni/97RbqbhD8TzWYQRPr2z4YR24dTAECOFgM=; b=IUfb3Rsvj6VFR2
+	obzfzqs47rP8JlPUu8qlSFlehR6su3QPkUoaUntOMI64Yauh/SRMNK+8JER2GyePpmmso3xESRFiy
+	6zQKXKfGrpuFfdMu2OwNUx4y1PA+AYTXplbbn+M5H5Re37ZmOKDkXLADnqj0vDGHHgsZqJUmW3xJ+
+	Gnw5gXtqJwViDX7T8izK3Ji7kqhKGuNeqo2+cHt3LASUv//nxWy+uRU9IiAOxNj5tIHU9vAFq7nqz
+	n5hnjBmzBWF8IYoertdPEtxSS8QXhXP4YWASuGEz3FhkxtfKcQNGNjm6Nlpvq/fe8wfarZ47tC+3M
+	QgAe/gviV8Ite7GZrDjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ini9K-0003Fi-AW; Sat, 04 Jan 2020 12:03:22 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1ini9Z-0003MF-14; Sat, 04 Jan 2020 12:03:37 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ini9B-0003Ek-90
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 12:03:14 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
+ id 1ini9C-0003Em-0t
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 12:03:15 +0000
+X-Amp-Result: UNSCANNABLE
 X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  04 Jan 2020 04:03:08 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,394,1571727600"; d="scan'208";a="214717996"
+X-IronPort-AV: E=Sophos;i="5.69,394,1571727600"; d="scan'208";a="245137670"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga008.jf.intel.com with ESMTP; 04 Jan 2020 04:03:05 -0800
+ by fmsmga004.fm.intel.com with ESMTP; 04 Jan 2020 04:03:06 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1ini93-0009qt-B6; Sat, 04 Jan 2020 20:03:05 +0800
-Date: Sat, 4 Jan 2020 20:02:16 +0800
+ id 1ini93-0009yX-NR; Sat, 04 Jan 2020 20:03:05 +0800
+Date: Sat, 4 Jan 2020 20:02:28 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Sricharan R <sricharan@codeaurora.org>
-Subject: Re: [PATCH 2/2] clk: qcom: Add ipq6018 Global Clock Controller support
-Message-ID: <202001041937.BBQYk2aO%lkp@intel.com>
+Subject: [RFC PATCH] clk: qcom: lpass_core_axim_clk_src can be static
+Message-ID: <20200104120228.brohuapo4d632jcq@f53c9c00458a>
 References: <1578050744-3761-3-git-send-email-sricharan@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <1578050744-3761-3-git-send-email-sricharan@codeaurora.org>
+X-Patchwork-Hint: ignore
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_040313_361436_A7CEC80B 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20200104_040314_074108_73DB3038 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,41 +80,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sricharan,
 
-Thank you for the patch! Perhaps something to improve:
-
-[auto build test WARNING on clk/clk-next]
-[also build test WARNING on v5.5-rc4 next-20191220]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Sricharan-R/Add-Global-clock-controller-support-for-IPQ6018/20200104-133041
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-next
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-129-g341daf20-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
->> drivers/clk/qcom/gcc-ipq6018.c:2623:17: sparse: sparse: symbol 'lpass_core_axim_clk_src' was not declared. Should it be static?
->> drivers/clk/qcom/gcc-ipq6018.c:2642:17: sparse: sparse: symbol 'lpass_snoc_cfg_clk_src' was not declared. Should it be static?
->> drivers/clk/qcom/gcc-ipq6018.c:2661:17: sparse: sparse: symbol 'lpass_q6_axim_clk_src' was not declared. Should it be static?
->> drivers/clk/qcom/gcc-ipq6018.c:2674:17: sparse: sparse: symbol 'ftbl_rbcpr_wcss_clk_src' was not declared. Should it be static?
->> drivers/clk/qcom/gcc-ipq6018.c:2680:17: sparse: sparse: symbol 'rbcpr_wcss_clk_src' was not declared. Should it be static?
-
-Please review and possibly fold the followup patch.
-
+Fixes: ac86608aeb82 ("clk: qcom: Add ipq6018 Global Clock Controller support")
+Signed-off-by: kbuild test robot <lkp@intel.com>
 ---
-0-DAY kernel test infrastructure                 Open Source Technology Center
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+ gcc-ipq6018.c |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/clk/qcom/gcc-ipq6018.c b/drivers/clk/qcom/gcc-ipq6018.c
+index a3597f46ad017..3f9c2f61a5d93 100644
+--- a/drivers/clk/qcom/gcc-ipq6018.c
++++ b/drivers/clk/qcom/gcc-ipq6018.c
+@@ -2620,7 +2620,7 @@ static const struct freq_tbl ftbl_lpass_core_axim_clk_src[] = {
+ 	{ }
+ };
+ 
+-struct clk_rcg2 lpass_core_axim_clk_src = {
++static struct clk_rcg2 lpass_core_axim_clk_src = {
+ 	.cmd_rcgr = 0x1F020,
+ 	.freq_tbl = ftbl_lpass_core_axim_clk_src,
+ 	.hid_width = 5,
+@@ -2639,7 +2639,7 @@ static const struct freq_tbl ftbl_lpass_snoc_cfg_clk_src[] = {
+ 	{ }
+ };
+ 
+-struct clk_rcg2 lpass_snoc_cfg_clk_src = {
++static struct clk_rcg2 lpass_snoc_cfg_clk_src = {
+ 	.cmd_rcgr = 0x1F040,
+ 	.freq_tbl = ftbl_lpass_snoc_cfg_clk_src,
+ 	.hid_width = 5,
+@@ -2658,7 +2658,7 @@ static const struct freq_tbl ftbl_lpass_q6_axim_clk_src[] = {
+ 	{ }
+ };
+ 
+-struct clk_rcg2 lpass_q6_axim_clk_src = {
++static struct clk_rcg2 lpass_q6_axim_clk_src = {
+ 	.cmd_rcgr = 0x1F008,
+ 	.freq_tbl = ftbl_lpass_q6_axim_clk_src,
+ 	.hid_width = 5,
+@@ -2671,13 +2671,13 @@ struct clk_rcg2 lpass_q6_axim_clk_src = {
+ 	},
+ };
+ 
+-struct freq_tbl ftbl_rbcpr_wcss_clk_src[] = {
++static struct freq_tbl ftbl_rbcpr_wcss_clk_src[] = {
+ 	F(24000000, P_XO, 1, 0, 0),
+ 	F(50000000, P_GPLL0, 16, 0, 0),
+ 	{ }
+ };
+ 
+-struct clk_rcg2 rbcpr_wcss_clk_src = {
++static struct clk_rcg2 rbcpr_wcss_clk_src = {
+ 	.cmd_rcgr = 0x3a00c,
+ 	.freq_tbl = ftbl_rbcpr_wcss_clk_src,
+ 	.hid_width = 5,
 
 _______________________________________________
 linux-arm-kernel mailing list
