@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA41113032F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:23:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACFE1130334
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:23:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wWJsMq97XliqO1eDCCTtfFZvlXL70xV2Mx4t6cMSSak=; b=rhHhDZrEM7imWdum1tNhsH0SVW
-	8BDqiGIv8CALdxKJYio2rzS0kkajEK1qONDF+W1+30OjjFt5VZSH+RwOVRuU3emq8tBeZYyfqsRme
-	5n8yfO9thwpUPZ5a/6wxQtPddfmR1GQaRZ9xXw7qo30ynldsJjVcASieW6vfoq4kcVWWH1cdS/YhF
-	eMI26Q8uhPq6WyZvzVhG4BRyg/8ie+5bEG3LX7AU5g2P83wqINuL/50aR95Cjyc23vFdubLMzPc4D
-	gicofG07HNh8w3xNohYfUSdLfGSfJtsQK164jI1EC1gzxR0IViCn2ykLwc6b4NpkpOD7vPJL/Hmw8
-	5g0ub0ew==;
+	bh=qOwTZOWhvzV/j4huHx3IjUYoUsVdaHgsfbtWt5x4LR4=; b=nEetBAoqzBCEv6LEr+NcQSCtbC
+	JxBeDNc7IxR8a6dzdAKTMaM/ILUejnvw636FrYPbUDdJxH7d+q9zo7YNEQiSCUqBiqAzXAiG+GN3O
+	S/OB6B0gGQSOHEdbHiUfQVVA7leIDalXgoMa6+dA92PC8XaVRiEjUYfmV9fvlRRfGgF3dhlG5UNSr
+	KcbN5k9r09IFl3XB4TTHhGOTIhUMS8rEvLb+nzFRZCa04zB68h0ai8UW0r6dQ0nOmvvNhA9nnfRwj
+	Bh+tdZYzFQs3r56w5cpcIV5FtksYP6brVGOqCHT7wLVvkMnebm8xkujiVNvKMH/Nl5WUfwwC00ON7
+	vEv12aZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inlGo-0002At-75; Sat, 04 Jan 2020 15:23:18 +0000
+	id 1inlHE-0002Tc-3w; Sat, 04 Jan 2020 15:23:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inlFf-0001DA-Cg
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:22:09 +0000
+ id 1inlFk-0001ID-Jj
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:22:14 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA90A2464E;
- Sat,  4 Jan 2020 15:22:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F0F1024653;
+ Sat,  4 Jan 2020 15:22:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578151326;
- bh=Bq3wSGweNgUnUR2ScgkLGNaGTFe493jXCOPTmwaWkAQ=;
+ s=default; t=1578151332;
+ bh=jcT4GSBIn8e+Ebzgnoq/9qfcn1TpLAtbC6dlWOL1uUU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KKhmPrZfrU1Y+AD2SvVoDbIiTf6U9ofMcOVSslLGy1lXv0B9aCVzy1xAjiKqlULG+
- YsGpS+ZEyATCAaJ0gu3tQf/8JOFwg9qobOf+MlCfVzpdVQYqnt/qpN/PlhCcWKjYgY
- Ea8jENCBIb79do/+/2IwniWPS4VUHhZ2GK8brqdI=
+ b=ZD5yZ8fNVPFpBjWdpdTnb38YwvSNT84/QcNJtBIJAGj+kxv8KX7wfS+N/N6F7gIzf
+ dLnRjSyxkoJzjCE/QWfF1Azr+H/CR7K8DnF3lA6geiq4YSOz50EfAkr2xq7TOJ5TRU
+ UK4XG8Vk/bw/b/F6KH+PfVvU971I81XooI9PvZ/0=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 06/20] thermal: exynos: Rename Samsung and Exynos to
+Subject: [PATCH v2 07/20] media: samsung: Rename Samsung and Exynos to
  lowercase
-Date: Sat,  4 Jan 2020 16:20:53 +0100
-Message-Id: <20200104152107.11407-7-krzk@kernel.org>
+Date: Sat,  4 Jan 2020 16:20:54 +0100
+Message-Id: <20200104152107.11407-8-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200104152107.11407-1-krzk@kernel.org>
 References: <20200104152107.11407-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_072207_505095_43B60938 
-X-CRM114-Status: GOOD (  15.36  )
+X-CRM114-CacheID: sfid-20200104_072212_727377_F3EBF7F4 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,15 +76,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-doc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- devicetree@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -107,90 +103,88 @@ privacy/legal statements on
 https://www.samsung.com/semiconductor/privacy-global/).
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- Documentation/driver-api/thermal/exynos_thermal.rst | 6 +++---
- drivers/thermal/samsung/Kconfig                     | 2 +-
- drivers/thermal/samsung/exynos_tmu.c                | 4 ++--
- include/dt-bindings/thermal/thermal_exynos.h        | 2 +-
- 4 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/Documentation/driver-api/thermal/exynos_thermal.rst b/Documentation/driver-api/thermal/exynos_thermal.rst
-index d4e4a5b75805..764df4ab584d 100644
---- a/Documentation/driver-api/thermal/exynos_thermal.rst
-+++ b/Documentation/driver-api/thermal/exynos_thermal.rst
-@@ -4,7 +4,7 @@ Kernel driver exynos_tmu
+---
+
+Changes since v1:
+1. Move bindings change to separate patch.
+---
+ Documentation/media/v4l-drivers/fimc.rst      | 6 +++---
+ Documentation/media/v4l-drivers/tuners.rst    | 2 +-
+ drivers/media/platform/exynos4-is/media-dev.c | 2 +-
+ drivers/media/platform/s3c-camif/camif-core.c | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/Documentation/media/v4l-drivers/fimc.rst b/Documentation/media/v4l-drivers/fimc.rst
+index 74585ba48b7f..2783aef65c01 100644
+--- a/Documentation/media/v4l-drivers/fimc.rst
++++ b/Documentation/media/v4l-drivers/fimc.rst
+@@ -2,7 +2,7 @@
  
- Supported chips:
+ .. include:: <isonum.txt>
  
--* ARM SAMSUNG EXYNOS4, EXYNOS5 series of SoC
-+* ARM Samsung Exynos4, Exynos5 series of SoC
+-The Samsung S5P/EXYNOS4 FIMC driver
++The Samsung S5P/Exynos4 FIMC driver
+ ===================================
  
-   Datasheet: Not publicly available
+ Copyright |copy| 2012 - 2013 Samsung Electronics Co., Ltd.
+@@ -19,7 +19,7 @@ drivers/media/platform/exynos4-is directory.
+ Supported SoCs
+ --------------
  
-@@ -14,7 +14,7 @@ Authors: Amit Daniel <amit.daniel@samsung.com>
- TMU controller Description:
- ---------------------------
+-S5PC100 (mem-to-mem only), S5PV210, EXYNOS4210
++S5PC100 (mem-to-mem only), S5PV210, Exynos4210
  
--This driver allows to read temperature inside SAMSUNG EXYNOS4/5 series of SoC.
-+This driver allows to read temperature inside Samsung Exynos4/5 series of SoC.
+ Supported features
+ ------------------
+@@ -65,7 +65,7 @@ Media device interface
+ ~~~~~~~~~~~~~~~~~~~~~~
  
- The chip only exposes the measured 8-bit temperature code value
- through a register.
-@@ -43,7 +43,7 @@ The three equations are:
-        Trimming info for 85 degree Celsius (stored at TRIMINFO register)
-        Temperature code measured at 85 degree Celsius which is unchanged
+ The driver supports Media Controller API as defined at :ref:`media_controller`.
+-The media device driver name is "SAMSUNG S5P FIMC".
++The media device driver name is "Samsung S5P FIMC".
  
--TMU(Thermal Management Unit) in EXYNOS4/5 generates interrupt
-+TMU(Thermal Management Unit) in Exynos4/5 generates interrupt
- when temperature exceeds pre-defined levels.
- The maximum number of configurable threshold is five.
- The threshold levels are defined as follows::
-diff --git a/drivers/thermal/samsung/Kconfig b/drivers/thermal/samsung/Kconfig
-index fe0d2ba51392..f4eff5a41a84 100644
---- a/drivers/thermal/samsung/Kconfig
-+++ b/drivers/thermal/samsung/Kconfig
-@@ -5,7 +5,7 @@ config EXYNOS_THERMAL
- 	depends on HAS_IOMEM
- 	help
- 	  If you say yes here you get support for the TMU (Thermal Management
--	  Unit) driver for SAMSUNG EXYNOS series of SoCs. This driver initialises
-+	  Unit) driver for Samsung Exynos series of SoCs. This driver initialises
- 	  the TMU, reports temperature and handles cooling action if defined.
- 	  This driver uses the Exynos core thermal APIs and TMU configuration
- 	  data from the supported SoCs.
-diff --git a/drivers/thermal/samsung/exynos_tmu.c b/drivers/thermal/samsung/exynos_tmu.c
-index 8193b66a3f83..fd4a17812f33 100644
---- a/drivers/thermal/samsung/exynos_tmu.c
-+++ b/drivers/thermal/samsung/exynos_tmu.c
-@@ -1,6 +1,6 @@
- // SPDX-License-Identifier: GPL-2.0-or-later
- /*
-- * exynos_tmu.c - Samsung EXYNOS TMU (Thermal Management Unit)
-+ * exynos_tmu.c - Samsung Exynos TMU (Thermal Management Unit)
-  *
-  *  Copyright (C) 2014 Samsung Electronics
-  *  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-@@ -1186,7 +1186,7 @@ static struct platform_driver exynos_tmu_driver = {
+ The purpose of this interface is to allow changing assignment of FIMC instances
+ to the SoC peripheral camera input at runtime and optionally to control internal
+diff --git a/Documentation/media/v4l-drivers/tuners.rst b/Documentation/media/v4l-drivers/tuners.rst
+index 7509be888909..d7924141c544 100644
+--- a/Documentation/media/v4l-drivers/tuners.rst
++++ b/Documentation/media/v4l-drivers/tuners.rst
+@@ -18,7 +18,7 @@ These differ mainly by the bandswitch byte.
+ Tuner Manufacturers
+ -------------------
  
- module_platform_driver(exynos_tmu_driver);
+-- SAMSUNG Tuner identification: (e.g. TCPM9091PD27)
++- Samsung Tuner identification: (e.g. TCPM9091PD27)
  
--MODULE_DESCRIPTION("EXYNOS TMU Driver");
-+MODULE_DESCRIPTION("Exynos TMU Driver");
- MODULE_AUTHOR("Donggeun Kim <dg77.kim@samsung.com>");
- MODULE_LICENSE("GPL");
- MODULE_ALIAS("platform:exynos-tmu");
-diff --git a/include/dt-bindings/thermal/thermal_exynos.h b/include/dt-bindings/thermal/thermal_exynos.h
-index 642e4e7f4084..52fcb51dda3c 100644
---- a/include/dt-bindings/thermal/thermal_exynos.h
-+++ b/include/dt-bindings/thermal/thermal_exynos.h
-@@ -1,6 +1,6 @@
- /* SPDX-License-Identifier: GPL-2.0+ */
- /*
-- * thermal_exynos.h - Samsung EXYNOS TMU device tree definitions
-+ * thermal_exynos.h - Samsung Exynos TMU device tree definitions
-  *
-  *  Copyright (C) 2014 Samsung Electronics
-  *  Lukasz Majewski <l.majewski@samsung.com>
+ .. code-block:: none
+ 
+diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
+index 9aaf3b8060d5..96e336b19cc3 100644
+--- a/drivers/media/platform/exynos4-is/media-dev.c
++++ b/drivers/media/platform/exynos4-is/media-dev.c
+@@ -1439,7 +1439,7 @@ static int fimc_md_probe(struct platform_device *pdev)
+ 	INIT_LIST_HEAD(&fmd->pipelines);
+ 	fmd->pdev = pdev;
+ 
+-	strscpy(fmd->media_dev.model, "SAMSUNG S5P FIMC",
++	strscpy(fmd->media_dev.model, "Samsung S5P FIMC",
+ 		sizeof(fmd->media_dev.model));
+ 	fmd->media_dev.ops = &fimc_md_ops;
+ 	fmd->media_dev.dev = dev;
+diff --git a/drivers/media/platform/s3c-camif/camif-core.c b/drivers/media/platform/s3c-camif/camif-core.c
+index c6fbcd7036d6..92f43c0cbc0c 100644
+--- a/drivers/media/platform/s3c-camif/camif-core.c
++++ b/drivers/media/platform/s3c-camif/camif-core.c
+@@ -304,7 +304,7 @@ static int camif_media_dev_init(struct camif_dev *camif)
+ 	int ret;
+ 
+ 	memset(md, 0, sizeof(*md));
+-	snprintf(md->model, sizeof(md->model), "SAMSUNG S3C%s CAMIF",
++	snprintf(md->model, sizeof(md->model), "Samsung S3C%s CAMIF",
+ 		 ip_rev == S3C6410_CAMIF_IP_REV ? "6410" : "244X");
+ 	strscpy(md->bus_info, "platform", sizeof(md->bus_info));
+ 	md->hw_revision = ip_rev;
 -- 
 2.17.1
 
