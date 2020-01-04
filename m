@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 178241303DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 19:25:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA5BE13045D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 21:23:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WG20UsgDQfe2tzQ7JGjlmB5isthFhYbRrTCdZS+y+lc=; b=u3tmCPCkO5jC0n
-	Ocby5e4XurWz0V98WmxOTMGo0JDz7Pl5k017rKMIpA9VYobBmKL5+gWtyM6xnXtBbFC71FZ3MB+6i
-	1iozq9BhMNZUoE/OT5qkK/x+lBozNQuPH3sXWoP5kvWcR7K1caD2PNk8+C8XQpzZSEuQLPFiWeCLn
-	q1Rudq0UrY7MqZ/3UAmLxKnVVQHxwZeecbf/UCShucQ6LvXymd/cTz5l3+IoGW8PqfmGiSKP9rsqZ
-	yQ3Z7UNcIdJHv+5bHXesGNr7XroqhkhS/K7ZborUJNVJ5nVBwW+CFD4NcSeIBCHarW572di0s3BO4
-	DdovTov+HcxdjiOSD3LQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ydKUInxplfLVIEkqzxRFd9zUPMtWz13QCP4uE4cH9Sg=; b=nWAYjjFgddDFNb
+	+mtZ5MFKhZBHS/qgq5BKiQU+UqeTBRujlZzTbP2hI+9ZsGX4CeJauR9je9tpWgM/7er96DkA9qj8j
+	8/cpajFnc046MrU6QjMLHQJ3daehLj2o3nwQn+htSxZ9odt6+mWvLSYA5e/KWXXHWBCj7SfuW8PlT
+	42dGEl67s9jSHTCGif63v+Kp8mszD1n+UelALsVT3UNBvdU5dQXWv664Inw8qyEQXSQ8tAJVdj1Ca
+	OboU9UTCYuLo+tnn7sjfLV/3PAEAw9YUtOLOrwwrJ8Am0umCUavxOuDsFXiH+wm3v2itmWN2Bhbf6
+	LnT1W5/OJvz0t/y/7TGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ino7D-0007qx-EH; Sat, 04 Jan 2020 18:25:35 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1inpxF-0006BO-NS; Sat, 04 Jan 2020 20:23:25 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ino75-0007ot-PL
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 18:25:30 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 006C220032;
- Sat,  4 Jan 2020 19:25:22 +0100 (CET)
-Date: Sat, 4 Jan 2020 19:25:21 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 2/2] drm/panel: Add driver for Novatek NT35510-based panels
-Message-ID: <20200104182521.GC8724@ravnborg.org>
-References: <20191225115610.14518-1-linus.walleij@linaro.org>
- <20191225115610.14518-2-linus.walleij@linaro.org>
+ id 1inpx9-0006Am-Me
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 20:23:21 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x7so24957158pgl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 04 Jan 2020 12:23:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=Ak1ZP2tAeQ2Y7PwIriFfKv0Dvf8KKmq9+RENIFVGY1w=;
+ b=hzvNX5+d5/anUwiewELIOCTAcVqVIVLnxoSL1b8FFQviE+oxyRLxqHSR0FD0Y3ZewQ
+ MzY44YYmxLRErJ/0Is12RzfnjMSysRWnbGMVdk2Ea8rk/pFKwFNbHrtHd8+Iq/kDJkbc
+ BA/spVGI3YNI25ZTgKkCvLx6QBeTpjBJTTIDih2jzavSm+plyihMDSq1gVUXh6OqAH7Y
+ CB5hz1Gb42zXLrMKTy3ddpyI+/jc3Rd68pEvrHwpEEtj+mhzZXggHSOrYSNHu5szr4pj
+ Fug7rQtkhUXrlOqVambUZhr9N/MYr1X2Q8rLvTjnaASxIclHm7jvo4EB+9td724mAgw7
+ sXcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=Ak1ZP2tAeQ2Y7PwIriFfKv0Dvf8KKmq9+RENIFVGY1w=;
+ b=Eryrjh0lBCwaYoyfsqrtW7iflXcVQSeZF3BFwceZAbk6br7GDrh6kwPNzJlYzOLRTu
+ EUqX78TZ9Pgndf1J1Pa3rzzYf0PsJ0cLKqxKzozZQRKADiG1VF1vX00yLdvCk9cikRrS
+ moaePa00CUASFC7cA0RqIp2wacaRrtKUQTKR47ymVlw88J0kaQDsFxMDGTE0hka5L8x7
+ Z3xjalsiTkLI6thZqvonmuAVvOEeNShfrC0u9qngPlCgKnTXrtXPkel1vUpOvPvMkleG
+ hVQ+fh6c4+DvukMQBwGkj6UCoYImOWtX5WSYEOSrrFemDJkpd8dhbgYN5LQp0kl2n/8A
+ moog==
+X-Gm-Message-State: APjAAAUUIMc5aNZ96M1I3zcIaESdsBynHTTJfFpcTlFuM7xoRBiHUntX
+ vGUdv8zECcmfLQPqMH077Ps=
+X-Google-Smtp-Source: APXvYqzVkQYHU5NLlzN2zHDwMxx94FyQUPEadRQUR/l/4WEeZDDkirJIVM31SREzm8dxsp+Hc3SniQ==
+X-Received: by 2002:a63:dc0d:: with SMTP id s13mr99709717pgg.129.1578169397182; 
+ Sat, 04 Jan 2020 12:23:17 -0800 (PST)
+Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id h126sm48756038pfe.19.2020.01.04.12.23.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 04 Jan 2020 12:23:16 -0800 (PST)
+Date: Sat, 4 Jan 2020 12:23:14 -0800
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Patrice Chotard <patrice.chotard@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH] tty: st-asc: switch to using devm_gpiod_get()
+Message-ID: <20200104202314.GA13591@dtor-ws>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191225115610.14518-2-linus.walleij@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=KKAkSRfTAAAA:8
- a=e5mUnYsNAAAA:8 a=20KFwNOVAAAA:8 a=J2hWI5m9r4qbfL5FBt0A:9
- a=CjuIK1q_8ugA:10 a=cvBusfyB2V15izCimMoJ:22 a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_102528_380384_947D27DE 
-X-CRM114-Status: GOOD (  30.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200104_122319_767642_48AE4897 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dmitry.torokhov[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,380 +97,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephan Gerhold <stephan@gerhold.net>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, dri-devel@lists.freedesktop.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jiri Slaby <jslaby@suse.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus.
+The node pointer in question is not a child node, but the node assigned
+to the port device itself, so we should not be using
+devm_fwnode_get_gpiod_from_child() [that is going away], but standard
+devm_gpiod_get().
 
-Driver looks good.
-Rahter complicated - but that what the controller/panel requires.
-Lot's of good code comments - very nice.
+To maintain the previous labeling we use gpiod_set_consumer_name() after
+we acquire the GPIO.
 
-A few comments in the following.
+Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+---
+ drivers/tty/serial/st-asc.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-	Sam
-
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index e6db3889cb19..1372b4139ebd 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -5244,6 +5244,13 @@ F:	drivers/gpu/drm/msm/
->  F:	include/uapi/drm/msm_drm.h
->  F:	Documentation/devicetree/bindings/display/msm/
->  
-> +DRM DRIVER FOR NOVATEK NT35510 PANELS
-> +M:	Linus Walleij <linus.walleij@linaro.org>
-> +T:	git git://anongit.freedesktop.org/drm/drm-misc
-> +S:	Maintained
-> +F:	drivers/gpu/drm/panel/panel-novatek-nt35510*
-Unless you expect more files named panel-novatek-nt35510*  then use as
-specific filename (no wildcard).
-
-> +F:	Documentation/devicetree/bindings/display/panel/novatek-nt35510.yaml
-> +
->  DRM DRIVER FOR NVIDIA GEFORCE/QUADRO GPUS
->  M:	Ben Skeggs <bskeggs@redhat.com>
->  L:	dri-devel@lists.freedesktop.org
-> diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
-> index 46e3c931e5d9..620a0fd1e816 100644
-> --- a/drivers/gpu/drm/panel/Kconfig
-> +++ b/drivers/gpu/drm/panel/Kconfig
-> @@ -127,6 +127,17 @@ config DRM_PANEL_NEC_NL8048HL11
->  	  panel (found on the Zoom2/3/3630 SDP boards). To compile this driver
->  	  as a module, choose M here.
->  
-> +config DRM_PANEL_NOVATEK_NT35510
-> +	tristate "Novatek NT35510 RGB panel driver"
-> +	depends on OF
-> +	depends on DRM_MIPI_DSI
-> +	depends on BACKLIGHT_CLASS_DEVICE
-
-> +	select VIDEOMODE_HELPERS
-Is this really needed? From a quick look you can drop it.
-
-> +	help
-> +	  Say Y here if you want to enable support for the panels built
-> +	  around the Novatek NT35510 display controller, such as some
-> +	  Hydis panels.
-> +
->  config DRM_PANEL_NOVATEK_NT39016
->  	tristate "Novatek NT39016 RGB/SPI panel"
->  	depends on OF && SPI
-> diff --git a/drivers/gpu/drm/panel/panel-novatek-nt35510.c b/drivers/gpu/drm/panel/panel-novatek-nt35510.c
-> new file mode 100644
-> index 000000000000..b312a8848c25
-> --- /dev/null
-> +++ b/drivers/gpu/drm/panel/panel-novatek-nt35510.c
-> @@ -0,0 +1,1126 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Novatek NT35510 panel driver
-> + * Copyright (C) 2019 Linus Walleij <linus.walleij@linaro.org>
-> + * Based on code by Robert Teather (C) 2012 Samsung
-> + *
-> + * This display driver (and I refer to the physical component NT35510,
-> + * not this Linux kernel software driver) can handle:
-> + * 480x864, 480x854, 480x800, 480x720 and 480x640 pixel displays.
-> + * It has 480x840x24bit SRAM embedded for storing a frame.
-> + * When powered on the display is by default in 480x800 mode.
-> + *
-> + * The actual panels using this component have different names, but
-> + * the code needed to set up and configure the panel will be similar,
-> + * so they should all use the NT35510 driver with appropriate configuration
-> + * per-panel, e.g. for physical size.
-> + *
-> + * This driver is for the DSI interface to panels using the NT35510.
-> + *
-> + * The NT35510 can also use an RGB (DPI) interface combined with an
-
-> + * I2C or SPI interface for setting up the NT35510. If this is needed I
-> + * this panel driver should be refactored to also support that use
-An extra "I" sneaked in here.
-
-> + * case.
-> + */
-You are using nice kernel-doc style comments.
-Consider to wire this into Documentation/gpu/ somewhere.
-
-> +#include <drm/drm_modes.h>
-> +#include <drm/drm_mipi_dsi.h>
-> +#include <drm/drm_panel.h>
-> +#include <drm/drm_print.h>
-> +
-> +#include <linux/bitops.h>
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/module.h>
-> +#include <linux/of_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <linux/backlight.h>
-> +
-> +#include <video/mipi_display.h>
-> +#include <video/of_videomode.h>
-> +#include <video/videomode.h>
-> +
-
-Please structure includes like this:
-
-#include <linux/*>
-
-#include <video/*>
-
-#include <drm/*>
-
-#include ""
-
-Within each block sort the include fiels alphabetically.
-
-I think you can drop of_videomode.h and videomode.h.
+diff --git a/drivers/tty/serial/st-asc.c b/drivers/tty/serial/st-asc.c
+index fb6bbb5e22344..e7048515a79ca 100644
+--- a/drivers/tty/serial/st-asc.c
++++ b/drivers/tty/serial/st-asc.c
+@@ -504,7 +504,6 @@ static void asc_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			    struct ktermios *old)
+ {
+ 	struct asc_port *ascport = to_asc_port(port);
+-	struct device_node *np = port->dev->of_node;
+ 	struct gpio_desc *gpiod;
+ 	unsigned int baud;
+ 	u32 ctrl_val;
+@@ -566,13 +565,12 @@ static void asc_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			pinctrl_select_state(ascport->pinctrl,
+ 					     ascport->states[NO_HW_FLOWCTRL]);
+ 
+-			gpiod = devm_fwnode_get_gpiod_from_child(port->dev,
+-								 "rts",
+-								 &np->fwnode,
+-								 GPIOD_OUT_LOW,
+-								 np->name);
+-			if (!IS_ERR(gpiod))
++			gpiod = devm_gpiod_get(port->dev, "rts", GPIOD_OUT_LOW);
++			if (!IS_ERR(gpiod)) {
++				gpiod_set_consumer_name(gpiod,
++						port->dev->of_node->name);
+ 				ascport->rts = gpiod;
++			}
+ 		}
+ 	}
+ 
+-- 
+2.24.1.735.g03f4e72817-goog
 
 
-> +#define MCS_CMD_MAUCCTR		0xF0 /* Manufacturer command enable */
-> +#define MCS_CMD_READ_ID1	0xDA
-> +#define MCS_CMD_READ_ID2	0xDB
-> +#define MCS_CMD_READ_ID3	0xDC
-> +#define MCS_CMD_MTP_READ_SETTING 0xF8 /* Uncertain about name */
-> +#define MCS_CMD_MTP_READ_PARAM 0xFF /* Uncertain about name */
-
-> + *
-> + * Gamma correction arrays are 10bit numbers, two consecutive bytes
-> + * makes out one point on the gamma correction curve. The points are
-> + * not linearly placed along the X axis, we get points 0, 1, 3, 5
-> + * 7, 11, 15, 23, 31, 47, 63, 95, 127, 128, 160, 192, 208, 224, 232,
-> + * 240, 244, 248, 250, 252, 254, 255. The voltages tuples form
-> + * V0, V1, V3 ... V255, with 0x0000 being the lowest voltage and
-> + * 0x03FF being the highest voltage.
-> + *
-> + * Each value must be strictly lower than the next value forming a
-                                  ^ higher?
-> + * rising curve like this:
-> + *
-> + * ^
-> + * |                                        V255
-> + * |                                 V254
-> + * |                         ....
-> + * |                    V5
-> + * |           V3
-> + * |     V1
-> + * | V0
-> + * +------------------------------------------->
-> + *
-> + * The details about all settings can be found in the NT35510 Application
-> + * Note.
-> + */
-> +struct nt35510_config {
-> +	/**
-> +	 * @width_mm: physical panel width [mm]
-> +	 */
-> +	u32 width_mm;
-> +	/**
-> +	 * @height_mm: physical panel height [mm]
-> +	 */
-> +	u32 height_mm;
-> +	/**
-> +	 * @mode: the display mode. This is only relevant outside the panel
-> +	 * in video mode: in command mode this is configuring the internal
-> +	 * timing in the display controller.
-> +	 */
-> +	const struct drm_display_mode mode;
-> +	/**
-> +	 * @avdd: setting for AVDD ranging from 0x00 = 6.5V to 0x14 = 4.5V
-> +	 * in 0.1V steps the default is 0x05 which means 6.0V
-> +	 */
-> +	u8 avdd[NT35510_P1_AVDD_LEN];
-> +	/**
-> +	 * @bt1ctr: setting for boost power control for the AVDD step-up
-> +	 * circuit (1)
-> +	 * bits 0..2 in the lower nybble controls PCK, the booster clock
-s/nybble/nibble/ ?
-Both spellings works so this is bike-shedding.
-
-> +	 * frequency for the step-up circuit:
-> +	 * 0 = Hsync/32
-> +	 * 1 = Hsync/16
-> +	 * 2 = Hsync/8
-> +	 * 3 = Hsync/4
-> +	 * 4 = Hsync/2
-> +	 * 5 = Hsync
-> +	 * 6 = Hsync x 2
-> +	 * 7 = Hsync x 4
-> +	 * bits 4..6 in the upper nybble controls BTP, the boosting
-> +	 * amplification for the the step-up circuit:
-> +	 * 0 = Disable
-> +	 * 1 = 1.5 x VDDB
-> +	 * 2 = 1.66 x VDDB
-> +	 * 3 = 2 x VDDB
-> +	 * 4 = 2.5 x VDDB
-> +	 * 5 = 3 x VDDB
-> +	 * The defaults are 4 and 4 yielding 0x44
-> +	 */
-
-> +
-> +/**
-> + * struct nt35510 - state container for the NT35510 panel
-> + */
-> +struct nt35510 {
-> +	/**
-> +	 * @dev: the container device
-> +	 */
-> +	struct device *dev;
-> +	/**
-> +	 * @conf: the specific panel configuration, as the NT35510
-> +	 * can be combined with many physical panels, they can have
-> +	 * different physical dimensions and gamma correction etc,
-> +	 * so this is stored in the config.
-> +	 */
-> +	const struct nt35510_config *conf;
-> +	/**
-> +	 * @panel: the DRM panel object for the instance
-> +	 */
-> +	struct drm_panel panel;
-> +	/**
-> +	 * @bl: backlight device
-> +	 */
-> +	struct backlight_device *bl;
-We have a backlight device as part of drm_panel now.
-It is documented that drivers should not assign it.
-
-We should consider to allow this - then this driver could
-just assign it and then the enable() and disable() functions
-would not be required.
-
-
-> +	/**
-> +	 * @supplies: regulators supplying the panel
-> +	 */
-> +	struct regulator_bulk_data supplies[2];
-> +	/**
-> +	 * @reset_gpio: the reset line
-> +	 */
-> +	struct gpio_desc *reset_gpio;
-> +};
-> +
-
-> +
-> +	/* Toggle RESET in accordance with datasheet page 370 */
-> +	if (nt->reset_gpio) {
-> +		gpiod_set_value(nt->reset_gpio, 1);
-> +		/* Active min 10 us according to datasheet, let's say 20 */
-> +		usleep_range(20, 1000);
-> +		gpiod_set_value(nt->reset_gpio, 0);
-> +		/*
-> +		 * 5 ms during sleep mode, 120 ms during sleep out mode
-> +		 * according to datasheet, let's use 120-140 ms.
-> +		 */
-> +		usleep_range(120000, 140000);
-> +	}
-Add an URL to the data sheet maybe?
-
-
-> +
-> +	ret = nt35510_read_id(nt);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Set up stuff in  manufacturer control, page 1 */
-> +	ret = nt35510_send_long(nt, dsi, MCS_CMD_MAUCCTR,
-> +				ARRAY_SIZE(nt35510_mauc_select_page_1),
-> +				nt35510_mauc_select_page_1);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = nt35510_setup_power(nt);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_RED_POS,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_pos_r);
-> +	if (ret)
-> +		return ret;
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_GREEN_POS,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_pos_g);
-> +	if (ret)
-> +		return ret;
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_BLUE_POS,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_pos_b);
-> +	if (ret)
-> +		return ret;
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_RED_NEG,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_neg_r);
-> +	if (ret)
-> +		return ret;
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_GREEN_NEG,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_neg_g);
-> +	if (ret)
-> +		return ret;
-> +	ret = nt35510_send_long(nt, dsi, NT35510_P1_SET_GAMMA_BLUE_NEG,
-> +				NT35510_P1_GAMMA_LEN,
-> +				nt->conf->gamma_corr_neg_b);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Set up stuff in  manufacturer control, page 0 */
-> +	ret = nt35510_send_long(nt, dsi, MCS_CMD_MAUCCTR,
-> +				ARRAY_SIZE(nt35510_mauc_select_page_0),
-> +				nt35510_mauc_select_page_0);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = nt35510_setup_display(nt);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return 0;
-> +}
-
-
-> +
-> +static int nt35510_get_modes(struct drm_panel *panel)
-Add connector as argument to match drm-misc-next.
-
-> +{
-> +	struct drm_connector *connector = panel->connector;
-> +	struct nt35510 *nt = panel_to_nt35510(panel);
-> +	struct drm_display_mode *mode;
-> +	struct drm_display_info *info;
-> +
-> +	info = &connector->display_info;
-> +	info->width_mm = nt->conf->width_mm;
-> +	info->height_mm = nt->conf->height_mm;
-> +	mode = drm_mode_duplicate(panel->drm, &nt->conf->mode);
-Use connector->dev - as panel no logner has a drm_device pointer.
-
-> +	if (!mode) {
-> +		DRM_ERROR("bad mode or failed to add mode\n");
-> +		return -EINVAL;
-> +	}
-> +	drm_mode_set_name(mode);
-> +	mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
-> +
-> +	mode->width_mm = nt->conf->width_mm;
-> +	mode->height_mm = nt->conf->height_mm;
-> +	drm_mode_probed_add(connector, mode);
-> +
-> +	return 1; /* Number of modes */
-> +}
-
-> +
-> +static const struct of_device_id nt35510_of_match[] = {
-> +	{
-> +		.compatible = "hydis,hva40wv1",
-> +		.data = &nt35510_hydis_hva40wv1,
-> +	},
-> +	{ }
-Use { /* sentinel */ },
-
+-- 
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
