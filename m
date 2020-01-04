@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3DB713032D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:23:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA41113032F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:23:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Cqgy04++m3TUj9rIYyYd5MNM5LIiM00QXGNF5wd54UA=; b=Pt4n/QJjMvrE19n+ouNGzdZeHk
-	vidni3JRswIAG0ivqutwKjr3vAm7aHzDVOZxl9WQLPKLz41F7b3hrF2+YUT8xTCQqRkW3ywFMURvY
-	WqU4+tgDMRHgPPZydIcKHgTnOryhji1gdKsUa3uhYt2nAjgUpbgfDsdW1KpqSH24rAu0ZMg1+qc+n
-	K+otCuqjrhSBSdzhJFGwevGIkKEOSw2p14U9uSoxmn1mSy03VktIYoVXM6i/2Ywuh4kO/z98L0t3j
-	TU/LOeN7WViF1DGCLfb5RCb6BXLcGVibG7glsnpmkFvZtHhZ8UZ8hp7ksCFFL8P4SfRW4MYsNikLH
-	/mz0AyNg==;
+	bh=wWJsMq97XliqO1eDCCTtfFZvlXL70xV2Mx4t6cMSSak=; b=rhHhDZrEM7imWdum1tNhsH0SVW
+	8BDqiGIv8CALdxKJYio2rzS0kkajEK1qONDF+W1+30OjjFt5VZSH+RwOVRuU3emq8tBeZYyfqsRme
+	5n8yfO9thwpUPZ5a/6wxQtPddfmR1GQaRZ9xXw7qo30ynldsJjVcASieW6vfoq4kcVWWH1cdS/YhF
+	eMI26Q8uhPq6WyZvzVhG4BRyg/8ie+5bEG3LX7AU5g2P83wqINuL/50aR95Cjyc23vFdubLMzPc4D
+	gicofG07HNh8w3xNohYfUSdLfGSfJtsQK164jI1EC1gzxR0IViCn2ykLwc6b4NpkpOD7vPJL/Hmw8
+	5g0ub0ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inlGc-0001sv-Mc; Sat, 04 Jan 2020 15:23:06 +0000
+	id 1inlGo-0002At-75; Sat, 04 Jan 2020 15:23:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inlFV-00012q-Ik
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:21:59 +0000
+ id 1inlFf-0001DA-Cg
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:22:09 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 396B82464E;
- Sat,  4 Jan 2020 15:21:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DA90A2464E;
+ Sat,  4 Jan 2020 15:22:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578151316;
- bh=EQcqcjjuv0ouoB59KSHZHDUV1ulzaGFtTg7hG/A0CYg=;
+ s=default; t=1578151326;
+ bh=Bq3wSGweNgUnUR2ScgkLGNaGTFe493jXCOPTmwaWkAQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eLMuVvEaWGCbCegYXJlpdmRAOu7dKrufwcvtboIHnFMehI8rKl139rmnhFMrt4E1W
- EiouZtSUM7pczl53PuVxc0sC0huu6kRWHAwYDfuwksA+f/QbqFKPOvPr78FvgssbN6
- QWQVTk+Ihy8S16+g89A+bBROHaDNPs2i0qDMRbVo=
+ b=KKhmPrZfrU1Y+AD2SvVoDbIiTf6U9ofMcOVSslLGy1lXv0B9aCVzy1xAjiKqlULG+
+ YsGpS+ZEyATCAaJ0gu3tQf/8JOFwg9qobOf+MlCfVzpdVQYqnt/qpN/PlhCcWKjYgY
+ Ea8jENCBIb79do/+/2IwniWPS4VUHhZ2GK8brqdI=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 05/20] soc: samsung: Rename Samsung and Exynos to lowercase
-Date: Sat,  4 Jan 2020 16:20:52 +0100
-Message-Id: <20200104152107.11407-6-krzk@kernel.org>
+Subject: [PATCH v2 06/20] thermal: exynos: Rename Samsung and Exynos to
+ lowercase
+Date: Sat,  4 Jan 2020 16:20:53 +0100
+Message-Id: <20200104152107.11407-7-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200104152107.11407-1-krzk@kernel.org>
 References: <20200104152107.11407-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_072157_708219_155E1B79 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20200104_072207_505095_43B60938 
+X-CRM114-Status: GOOD (  15.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,8 +76,15 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-doc@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -100,210 +108,89 @@ https://www.samsung.com/semiconductor/privacy-global/).
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/soc/samsung/Kconfig                 |  2 +-
- drivers/soc/samsung/exynos-chipid.c         |  2 +-
- drivers/soc/samsung/exynos-pmu.c            |  2 +-
- drivers/soc/samsung/exynos-pmu.h            |  2 +-
- drivers/soc/samsung/exynos3250-pmu.c        |  2 +-
- drivers/soc/samsung/exynos4-pmu.c           |  2 +-
- drivers/soc/samsung/exynos5250-pmu.c        |  2 +-
- drivers/soc/samsung/exynos5420-pmu.c        |  2 +-
- include/linux/soc/samsung/exynos-pmu.h      |  2 +-
- include/linux/soc/samsung/exynos-regs-pmu.h | 16 ++++++++--------
- 10 files changed, 17 insertions(+), 17 deletions(-)
+ Documentation/driver-api/thermal/exynos_thermal.rst | 6 +++---
+ drivers/thermal/samsung/Kconfig                     | 2 +-
+ drivers/thermal/samsung/exynos_tmu.c                | 4 ++--
+ include/dt-bindings/thermal/thermal_exynos.h        | 2 +-
+ 4 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
-index 27fc59bbb520..c7a2003687c7 100644
---- a/drivers/soc/samsung/Kconfig
-+++ b/drivers/soc/samsung/Kconfig
+diff --git a/Documentation/driver-api/thermal/exynos_thermal.rst b/Documentation/driver-api/thermal/exynos_thermal.rst
+index d4e4a5b75805..764df4ab584d 100644
+--- a/Documentation/driver-api/thermal/exynos_thermal.rst
++++ b/Documentation/driver-api/thermal/exynos_thermal.rst
+@@ -4,7 +4,7 @@ Kernel driver exynos_tmu
+ 
+ Supported chips:
+ 
+-* ARM SAMSUNG EXYNOS4, EXYNOS5 series of SoC
++* ARM Samsung Exynos4, Exynos5 series of SoC
+ 
+   Datasheet: Not publicly available
+ 
+@@ -14,7 +14,7 @@ Authors: Amit Daniel <amit.daniel@samsung.com>
+ TMU controller Description:
+ ---------------------------
+ 
+-This driver allows to read temperature inside SAMSUNG EXYNOS4/5 series of SoC.
++This driver allows to read temperature inside Samsung Exynos4/5 series of SoC.
+ 
+ The chip only exposes the measured 8-bit temperature code value
+ through a register.
+@@ -43,7 +43,7 @@ The three equations are:
+        Trimming info for 85 degree Celsius (stored at TRIMINFO register)
+        Temperature code measured at 85 degree Celsius which is unchanged
+ 
+-TMU(Thermal Management Unit) in EXYNOS4/5 generates interrupt
++TMU(Thermal Management Unit) in Exynos4/5 generates interrupt
+ when temperature exceeds pre-defined levels.
+ The maximum number of configurable threshold is five.
+ The threshold levels are defined as follows::
+diff --git a/drivers/thermal/samsung/Kconfig b/drivers/thermal/samsung/Kconfig
+index fe0d2ba51392..f4eff5a41a84 100644
+--- a/drivers/thermal/samsung/Kconfig
++++ b/drivers/thermal/samsung/Kconfig
+@@ -5,7 +5,7 @@ config EXYNOS_THERMAL
+ 	depends on HAS_IOMEM
+ 	help
+ 	  If you say yes here you get support for the TMU (Thermal Management
+-	  Unit) driver for SAMSUNG EXYNOS series of SoCs. This driver initialises
++	  Unit) driver for Samsung Exynos series of SoCs. This driver initialises
+ 	  the TMU, reports temperature and handles cooling action if defined.
+ 	  This driver uses the Exynos core thermal APIs and TMU configuration
+ 	  data from the supported SoCs.
+diff --git a/drivers/thermal/samsung/exynos_tmu.c b/drivers/thermal/samsung/exynos_tmu.c
+index 8193b66a3f83..fd4a17812f33 100644
+--- a/drivers/thermal/samsung/exynos_tmu.c
++++ b/drivers/thermal/samsung/exynos_tmu.c
 @@ -1,6 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0
- #
--# SAMSUNG SoC drivers
-+# Samsung SoC drivers
- #
- menuconfig SOC_SAMSUNG
- 	bool "Samsung SoC driver support" if COMPILE_TEST
-diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
-index b89c26a71c6e..2dad4961a80b 100644
---- a/drivers/soc/samsung/exynos-chipid.c
-+++ b/drivers/soc/samsung/exynos-chipid.c
-@@ -3,7 +3,7 @@
-  * Copyright (c) 2019 Samsung Electronics Co., Ltd.
-  *	      http://www.samsung.com/
+ // SPDX-License-Identifier: GPL-2.0-or-later
+ /*
+- * exynos_tmu.c - Samsung EXYNOS TMU (Thermal Management Unit)
++ * exynos_tmu.c - Samsung Exynos TMU (Thermal Management Unit)
   *
-- * EXYNOS - CHIP ID support
-+ * Exynos - CHIP ID support
-  * Author: Pankaj Dubey <pankaj.dubey@samsung.com>
-  * Author: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-  */
-diff --git a/drivers/soc/samsung/exynos-pmu.c b/drivers/soc/samsung/exynos-pmu.c
-index 7da2701c871a..17304fa18429 100644
---- a/drivers/soc/samsung/exynos-pmu.c
-+++ b/drivers/soc/samsung/exynos-pmu.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2014 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com/
- //
--// EXYNOS - CPU PMU(Power Management Unit) support
-+// Exynos - CPU PMU(Power Management Unit) support
+  *  Copyright (C) 2014 Samsung Electronics
+  *  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+@@ -1186,7 +1186,7 @@ static struct platform_driver exynos_tmu_driver = {
  
- #include <linux/of.h>
- #include <linux/of_address.h>
-diff --git a/drivers/soc/samsung/exynos-pmu.h b/drivers/soc/samsung/exynos-pmu.h
-index 977e4daf5a0f..5e851f32307e 100644
---- a/drivers/soc/samsung/exynos-pmu.h
-+++ b/drivers/soc/samsung/exynos-pmu.h
-@@ -3,7 +3,7 @@
-  * Copyright (c) 2015 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
+ module_platform_driver(exynos_tmu_driver);
+ 
+-MODULE_DESCRIPTION("EXYNOS TMU Driver");
++MODULE_DESCRIPTION("Exynos TMU Driver");
+ MODULE_AUTHOR("Donggeun Kim <dg77.kim@samsung.com>");
+ MODULE_LICENSE("GPL");
+ MODULE_ALIAS("platform:exynos-tmu");
+diff --git a/include/dt-bindings/thermal/thermal_exynos.h b/include/dt-bindings/thermal/thermal_exynos.h
+index 642e4e7f4084..52fcb51dda3c 100644
+--- a/include/dt-bindings/thermal/thermal_exynos.h
++++ b/include/dt-bindings/thermal/thermal_exynos.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0+ */
+ /*
+- * thermal_exynos.h - Samsung EXYNOS TMU device tree definitions
++ * thermal_exynos.h - Samsung Exynos TMU device tree definitions
   *
-- * Header for EXYNOS PMU Driver support
-+ * Header for Exynos PMU Driver support
-  */
- 
- #ifndef __EXYNOS_PMU_H
-diff --git a/drivers/soc/samsung/exynos3250-pmu.c b/drivers/soc/samsung/exynos3250-pmu.c
-index 275d348ed9c9..30f230ed1769 100644
---- a/drivers/soc/samsung/exynos3250-pmu.c
-+++ b/drivers/soc/samsung/exynos3250-pmu.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com/
- //
--// EXYNOS3250 - CPU PMU (Power Management Unit) support
-+// Exynos3250 - CPU PMU (Power Management Unit) support
- 
- #include <linux/soc/samsung/exynos-regs-pmu.h>
- #include <linux/soc/samsung/exynos-pmu.h>
-diff --git a/drivers/soc/samsung/exynos4-pmu.c b/drivers/soc/samsung/exynos4-pmu.c
-index a7cdbf1aac0c..cb35103565a6 100644
---- a/drivers/soc/samsung/exynos4-pmu.c
-+++ b/drivers/soc/samsung/exynos4-pmu.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com/
- //
--// EXYNOS4 - CPU PMU(Power Management Unit) support
-+// Exynos4 - CPU PMU(Power Management Unit) support
- 
- #include <linux/soc/samsung/exynos-regs-pmu.h>
- #include <linux/soc/samsung/exynos-pmu.h>
-diff --git a/drivers/soc/samsung/exynos5250-pmu.c b/drivers/soc/samsung/exynos5250-pmu.c
-index 19b38e008145..7a2d50be6b4a 100644
---- a/drivers/soc/samsung/exynos5250-pmu.c
-+++ b/drivers/soc/samsung/exynos5250-pmu.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com/
- //
--// EXYNOS5250 - CPU PMU (Power Management Unit) support
-+// Exynos5250 - CPU PMU (Power Management Unit) support
- 
- #include <linux/soc/samsung/exynos-regs-pmu.h>
- #include <linux/soc/samsung/exynos-pmu.h>
-diff --git a/drivers/soc/samsung/exynos5420-pmu.c b/drivers/soc/samsung/exynos5420-pmu.c
-index b236d3b47b49..6fedcd78cb45 100644
---- a/drivers/soc/samsung/exynos5420-pmu.c
-+++ b/drivers/soc/samsung/exynos5420-pmu.c
-@@ -3,7 +3,7 @@
- // Copyright (c) 2011-2015 Samsung Electronics Co., Ltd.
- //		http://www.samsung.com/
- //
--// EXYNOS5420 - CPU PMU (Power Management Unit) support
-+// Exynos5420 - CPU PMU (Power Management Unit) support
- 
- #include <linux/pm.h>
- #include <linux/soc/samsung/exynos-regs-pmu.h>
-diff --git a/include/linux/soc/samsung/exynos-pmu.h b/include/linux/soc/samsung/exynos-pmu.h
-index fc0b445bb36b..a4f5516cc956 100644
---- a/include/linux/soc/samsung/exynos-pmu.h
-+++ b/include/linux/soc/samsung/exynos-pmu.h
-@@ -3,7 +3,7 @@
-  * Copyright (c) 2014 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * Header for EXYNOS PMU Driver support
-+ * Header for Exynos PMU Driver support
-  */
- 
- #ifndef __LINUX_SOC_EXYNOS_PMU_H
-diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
-index 5addaf5ccbce..fc9250fb3133 100644
---- a/include/linux/soc/samsung/exynos-regs-pmu.h
-+++ b/include/linux/soc/samsung/exynos-regs-pmu.h
-@@ -3,7 +3,7 @@
-  * Copyright (c) 2010-2015 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * EXYNOS - Power management unit definition
-+ * Exynos - Power management unit definition
-  *
-  * Notice:
-  * This is not a list of all Exynos Power Management Unit SFRs.
-@@ -185,7 +185,7 @@
- /* Only for S5Pv210 */
- #define S5PV210_EINT_WAKEUP_MASK	0xC004
- 
--/* Only for EXYNOS4210 */
-+/* Only for Exynos4210 */
- #define S5P_CMU_CLKSTOP_LCD1_LOWPWR	0x1154
- #define S5P_CMU_RESET_LCD1_LOWPWR	0x1174
- #define S5P_MODIMIF_MEM_LOWPWR		0x11C4
-@@ -193,7 +193,7 @@
- #define S5P_SATA_MEM_LOWPWR		0x11E4
- #define S5P_LCD1_LOWPWR			0x1394
- 
--/* Only for EXYNOS4x12 */
-+/* Only for Exynos4x12 */
- #define S5P_ISP_ARM_LOWPWR			0x1050
- #define S5P_DIS_IRQ_ISP_ARM_LOCAL_LOWPWR	0x1054
- #define S5P_DIS_IRQ_ISP_ARM_CENTRAL_LOWPWR	0x1058
-@@ -234,7 +234,7 @@
- #define S5P_SECSS_MEM_OPTION			0x2EC8
- #define S5P_ROTATOR_MEM_OPTION			0x2F48
- 
--/* Only for EXYNOS4412 */
-+/* Only for Exynos4412 */
- #define S5P_ARM_CORE2_LOWPWR			0x1020
- #define S5P_DIS_IRQ_CORE2			0x1024
- #define S5P_DIS_IRQ_CENTRAL2			0x1028
-@@ -242,7 +242,7 @@
- #define S5P_DIS_IRQ_CORE3			0x1034
- #define S5P_DIS_IRQ_CENTRAL3			0x1038
- 
--/* Only for EXYNOS3XXX */
-+/* Only for Exynos3XXX */
- #define EXYNOS3_ARM_CORE0_SYS_PWR_REG			0x1000
- #define EXYNOS3_DIS_IRQ_ARM_CORE0_LOCAL_SYS_PWR_REG	0x1004
- #define EXYNOS3_DIS_IRQ_ARM_CORE0_CENTRAL_SYS_PWR_REG	0x1008
-@@ -347,7 +347,7 @@
- #define EXYNOS3_OPTION_USE_SC_FEEDBACK			(1 << 1)
- #define EXYNOS3_OPTION_SKIP_DEACTIVATE_ACEACP_IN_PWDN	(1 << 7)
- 
--/* For EXYNOS5 */
-+/* For Exynos5 */
- 
- #define EXYNOS5_AUTO_WDTRESET_DISABLE				0x0408
- #define EXYNOS5_MASK_WDTRESET_REQUEST				0x040C
-@@ -484,7 +484,7 @@
- 
- #define EXYNOS5420_SWRESET_KFC_SEL				0x3
- 
--/* Only for EXYNOS5420 */
-+/* Only for Exynos5420 */
- #define EXYNOS5420_L2RSTDISABLE_VALUE				BIT(3)
- 
- #define EXYNOS5420_LPI_MASK					0x0004
-@@ -645,7 +645,7 @@
- 					 | EXYNOS5420_KFC_USE_STANDBY_WFI2  \
- 					 | EXYNOS5420_KFC_USE_STANDBY_WFI3)
- 
--/* For EXYNOS5433 */
-+/* For Exynos5433 */
- #define EXYNOS5433_EINT_WAKEUP_MASK				(0x060C)
- #define EXYNOS5433_USBHOST30_PHY_CONTROL			(0x0728)
- #define EXYNOS5433_PAD_RETENTION_AUD_OPTION			(0x3028)
+  *  Copyright (C) 2014 Samsung Electronics
+  *  Lukasz Majewski <l.majewski@samsung.com>
 -- 
 2.17.1
 
