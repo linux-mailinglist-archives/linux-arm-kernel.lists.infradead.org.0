@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1EBC1302A8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 15:26:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E101B1302AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 15:27:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eAtviD3vAyXfOMjXoYQVaosW83e5Yv2hRW8lO9uwSXc=; b=niw/7aeeUn9w6k
-	tFlZJl9gFr8lGKkdtdlbnwhNC7/GgY+uTFO6uOagjnHWBr5IKqTYl1kKgqMN/uCIJCMKYLcjIlord
-	sHKtAbFs3TNkewGFdsZ6o6mye9URtDlZbHHZ1KofpBPK3iqfMca92OLJe+4roVCXdL2+HmA4ub6Mu
-	i3PwIhV3m4Pir0eH5RjIrGv/MrV28D3d8VSkOWwXXTOCq8cSvQT0bxq8fCOWDTID9KVXtA0DKp9Sw
-	TkTfXVo2//RgO9dIgXfueZwCQfZsQVoRQ3geEb0yUq903f7Jjavh86zr+9V4efMq9Dr6qaggtgkp5
-	ek1pcPSacidI+h7cpmBg==;
+	List-Owner; bh=AWA27TEa8RtAEChrRhg84j0OCwRMCuuP5TcJj5oEY/M=; b=Hxz7+qeUP5xN+q
+	3/7d6kb11Abr1YJVfu6PDBT4XLW/mHCTr/Wz9txIrKzXL/8yqDNCZXS+3+sYyMsgxTc1kisSVcmCV
+	NdfjH69wQMDQEpBCtWPTdEFEFscWm1x20wy4P34buQ0jtwnJ7Z6YrozyPKf9sF8MO6QiRaCSIEOA0
+	ShFqWg5lXJTUY1oQ/ZRkeIdmgn8pFJfaFGDf+g5+3P9ONmzyXElVphTk+onL1ig6Xe/7571A6EVqG
+	Hiz8y3k47WosSKdGc7HGIo8MYUIYUSRh0j/NoameFa53U+oUguMDalf7j0SKXEX9wPDBopMCSIyGx
+	mrp+lqzv0/xd661uV91Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inkNn-0008PL-CH; Sat, 04 Jan 2020 14:26:27 +0000
+	id 1inkON-0000QY-0C; Sat, 04 Jan 2020 14:27:03 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inkNf-0008Nx-J2; Sat, 04 Jan 2020 14:26:21 +0000
-X-UUID: 3ec3ede03b9b49abaa10ede337b29247-20200104
+ id 1inkNm-0008Up-CO; Sat, 04 Jan 2020 14:26:27 +0000
+X-UUID: 72b67ee65db04b368f69e9de0266c741-20200104
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=Lcy3+KlfMb7jLpiBkhLUoc+fZ0Xd/X066UNWWwKFUng=; 
- b=Z1lhBqcgEO/h+MWEeifc2Pkj+Ix4L8mD/gm333vaE/5EVABiB9qqN3HJQEE7vbZS8y+jpApuEOTdudiLUPpKwJDnD9Tlm8j8i37VNGNpyjzYH56A3TUY2xsrurpJa5DYr1GFmb/6I0kbWRpKbaG4xU+6J6zss7LgnJI4mfvqntY=;
-X-UUID: 3ec3ede03b9b49abaa10ede337b29247-20200104
+ bh=TsvdKljEI6vD5i07UDFZns0vwy5dihbpsSkQB+yr7JI=; 
+ b=goI72hwUhO7pkobr6JnahfA1RS5Ea5TIaAcLU6Jq79d66dhKhLpW7fut47sZT1H6xxw8htpDCGWXhX+hVAcc8a5D8H5JoghrxD99bOojbd4iTN7dZgSMqahbXx31LxN2VpZnsgCGaBsvS33vNOKtDCC+wtl17Phmao5D/sHOyYE=;
+X-UUID: 72b67ee65db04b368f69e9de0266c741-20200104
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 670809894; Sat, 04 Jan 2020 06:26:12 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 4 Jan 2020 06:26:37 -0800
+ with ESMTP id 1440783035; Sat, 04 Jan 2020 06:26:24 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 4 Jan 2020 06:26:50 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 4 Jan 2020 22:25:38 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 4 Jan 2020 22:26:26 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Sat, 4 Jan 2020 22:26:40 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v1 2/3] scsi: ufs: add device reset history for vendor
- implementations
-Date: Sat, 4 Jan 2020 22:26:07 +0800
-Message-ID: <1578147968-30938-3-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v1 3/3] scsi: ufs: remove "errors" word in
+ ufshcd_print_err_hist()
+Date: Sat, 4 Jan 2020 22:26:08 +0800
+Message-ID: <1578147968-30938-4-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
 References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_062619_636968_ADE26FFA 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20200104_062626_455137_DF5F6C12 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -100,8 +100,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Device reset history shall be also added for vendor's device
-reset variant operation implementation.
+Remove "errors" word in output string by ufshcd_print_err_hist()
+since not all printed targets are "errors". Sometimes they are
+just "events".
+
+In addition, all events which can be treated as "errors" already
+have "err" or "fail" words in their names.
 
 Cc: Alim Akhtar <alim.akhtar@samsung.com>
 Cc: Asutosh Das <asutoshd@codeaurora.org>
@@ -112,56 +116,22 @@ Cc: Can Guo <cang@codeaurora.org>
 Cc: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 5 +++--
- drivers/scsi/ufs/ufshcd.h | 6 +++++-
- 2 files changed, 8 insertions(+), 3 deletions(-)
+ drivers/scsi/ufs/ufshcd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index bae43da00bb6..29e3d50aabfb 100644
+index 29e3d50aabfb..d847426507e7 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -4346,13 +4346,14 @@ static inline int ufshcd_disable_device_tx_lcc(struct ufs_hba *hba)
- 	return ufshcd_disable_tx_lcc(hba, true);
+@@ -393,7 +393,7 @@ static void ufshcd_print_err_hist(struct ufs_hba *hba,
+ 	}
+ 
+ 	if (!found)
+-		dev_err(hba->dev, "No record of %s errors\n", err_name);
++		dev_err(hba->dev, "No record of %s\n", err_name);
  }
  
--static void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
--				   u32 reg)
-+void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
-+			    u32 reg)
- {
- 	reg_hist->reg[reg_hist->pos] = reg;
- 	reg_hist->tstamp[reg_hist->pos] = ktime_get();
- 	reg_hist->pos = (reg_hist->pos + 1) % UFS_ERR_REG_HIST_LENGTH;
- }
-+EXPORT_SYMBOL_GPL(ufshcd_update_reg_hist);
- 
- /**
-  * ufshcd_link_startup - Initialize unipro link startup
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index e05cafddc87b..de1be6a862b0 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -805,6 +805,8 @@ int ufshcd_wait_for_register(struct ufs_hba *hba, u32 reg, u32 mask,
- 				u32 val, unsigned long interval_us,
- 				unsigned long timeout_ms, bool can_sleep);
- void ufshcd_parse_dev_ref_clk_freq(struct ufs_hba *hba, struct clk *refclk);
-+void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
-+			    u32 reg);
- 
- static inline void check_upiu_size(void)
- {
-@@ -1083,8 +1085,10 @@ static inline void ufshcd_vops_dbg_register_dump(struct ufs_hba *hba)
- 
- static inline void ufshcd_vops_device_reset(struct ufs_hba *hba)
- {
--	if (hba->vops && hba->vops->device_reset)
-+	if (hba->vops && hba->vops->device_reset) {
- 		hba->vops->device_reset(hba);
-+		ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, 0);
-+	}
- }
- 
- extern struct ufs_pm_lvl_states ufs_pm_lvl_states[];
+ static void ufshcd_print_host_regs(struct ufs_hba *hba)
 -- 
 2.18.0
 _______________________________________________
