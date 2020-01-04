@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87275130139
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 07:36:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C114C13013F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 07:43:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D28B31b9A6w4gvmYCvppot7lJbHDyXTAw5zt9PGybMs=; b=Ej9bE1qGk5yB+C
-	Bq5XhviXj6HY2DXj3LFhbDMVUN4ybc7C20uoV9BGX0qj0uBOTL18pTzTrLx2oMCq/VeNAdTuchcQd
-	0wtKiJ90Z3+/0DlmI0XYkVHHSPIYBLZW/OzzxbvLk14icAAoQ7gfsOgIcL0YshFJqZTGDPoOw1VG9
-	lzn/sLegXrAm/6mHmzJz+1YyVdcltCba5z7VKK6s5EGK/oavJ9goKQjgrqSZwRmg5V6h9PyADWwh2
-	oZztktoiwI+tRvXM4fHDTMEqXfqneFma0EWQoWQK+mpkeurSiU1mehUKQlD5YJUBMYVEX6bbfgnR6
-	c7d9Rwpdr47l0HS5tFEw==;
+	List-Owner; bh=KwhhOuQ51IFmgDYbXcEPbjCR1enaSifpCeDH8kgaf4Y=; b=WwktUwovkNKqnS
+	BF92TZghpzogA+AkyLvz50F8EyKPdPx2lIP5sSWQYGbX36u0ZDCEtdSAo+KCx4Fx+n4tjc63+nhpv
+	k5sU+Do1vubKsBF2y2FNAjGCpSSDa9n9m1fl2APb6s+cRQC9ljV4T1TkWcCzjvOcG/NWCwJhCZCNS
+	PuP1kVJG6jqq809RYxqfJZrR+jQQaAWuziBgbxeNFqv3qpSrgrK4yYpis+e7570m5RaTsOYv69uDS
+	w3UPX2HniGmWpeAliSi4vdfzIOF1fhAqebMcBOYqEhbdWvysuo6vtZTyVP9YEbaKRYsKeos7jOFsq
+	WiLBSU8QxWyk+RufcKcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ind2d-00029a-8D; Sat, 04 Jan 2020 06:36:07 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ind9U-0004Ac-OP; Sat, 04 Jan 2020 06:43:12 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ind1q-0001W4-Bh
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 06:35:20 +0000
-Received: by mail-pg1-x541.google.com with SMTP id s64so24358900pgb.9
+ id 1ind9O-0004A9-2R
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 06:43:07 +0000
+Received: by mail-qk1-x744.google.com with SMTP id d71so27657736qkc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Jan 2020 22:35:18 -0800 (PST)
+ Fri, 03 Jan 2020 22:43:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=yPtjDACR3H8K2uS1u9GQH0pid4N/OfHQXapx3wWocvc=;
- b=M4DKWAZE5QNZFoTHdeYXS06rY4JLo3uDrBNEw5WCHH+wu79VXgr/uRhsyCf60a2hTg
- bONQe20s3Sykap/CYALiA2SHNLVZRoJMEwez+lLdXdaU27GukTUeplxvqVxBM7KeaqF+
- j3KKVdmgeBpMEtx3N3/zIArUM7ouuyYB3Wr6XSaCwMU92b6zZxoSO79Dw1KM7+TiHqS8
- pebmaQ+9SXJNBrTeQ2sNRwc2wCGn9OSlTsZh3TRWCU5D9WPFLnYNIJj/rDx0BE/7drKh
- 6Tb7TRslU2/NzUvykRFommL8z+oQVhD09LS1czUHzTdT3BNuaoJSnqGOjjnRBZKOrckc
- lFmg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OKCx0KH4tkG9yRQceXGspszu095frq8n0bovCZ7QnE0=;
+ b=QJCkdJGoeZr96+O1sG4Np/5ofJx9aIivdIeabs/KfkbZdSShLJh3lvQ5cr7I3enNBQ
+ Ti8ZboAq8parJlayYLuZO9xuo6iSrqQFDQw5hDj6vVPW3pmBytv8DP0cSYjIRvGjJ0jH
+ 6AOa91OxSVLE/+MWsUtt7HFwQm5r9hk7I+kNhGvIaO/5zJGcvd/c6RSVgQqbsCLmijYp
+ 0JFSZE9Fx+9Pm99c7UDR/2hkMqy1MkVRzut9bB71lTjIYVTGACed1SHV5oUXwJqc3XOy
+ ECD41HBNim5eReL+xKExV4vYLsOD58on2rOW7fT3LaVz2vGcQNEW7qc5F0eqQ74M+YWY
+ Oulw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=yPtjDACR3H8K2uS1u9GQH0pid4N/OfHQXapx3wWocvc=;
- b=amhx7KphcwmgSAtrVc4rwZPiDIoqPIOT6QoC6yJHa1u1x5ZM5Q+8VKNIsdnVUEvHj4
- PdWspUUBy8M8s+Mud2IoSi4QySaODPvUe9pf3emxonuV+vKnE+9FS4jfOvXk+TSbrSk1
- +kMYI2Iezpq2UGjFk8XkU03dr6jzyoMp2PcK1q6BLVLTh3UsjUmpIZYmY+VauWrRIdIo
- Fm4M0p+QbhGrcU3eQR1BNPxrdgQVqgugTZMgS7c8CJUgQ+fv/Y/t9MAIsu8tEb/7GqPb
- NfX9wi4umhktLicJikp7r/ZXaOAE1+5K5Uv7i1UJr+grxC7LAyOvtAeIWqtfQm2gXsTS
- 4Fsw==
-X-Gm-Message-State: APjAAAVJUMR5ShTV3+Ccxdyfgjq4U622fYksGwAy7RtP93thUCgOTkwh
- eN4ZM0uBRQadzL0v6do3p+k=
-X-Google-Smtp-Source: APXvYqz5KiFQHxhZgupk5DoDrXsn58WhGeos+ZPkVYJG3AhthXc8O7ZT3cG/Nsr0Pl3lyJ9AXgGosg==
-X-Received: by 2002:a63:9d85:: with SMTP id
- i127mr95917777pgd.186.1578119717534; 
- Fri, 03 Jan 2020 22:35:17 -0800 (PST)
-Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
- [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id u2sm64761580pgc.19.2020.01.03.22.35.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Jan 2020 22:35:16 -0800 (PST)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OKCx0KH4tkG9yRQceXGspszu095frq8n0bovCZ7QnE0=;
+ b=Xr6CCJrOByr0L+2ky1tQTPOHED3ArnnzAadK9JWBzSseId9lHWZlabt/GKMwXIOjOO
+ mMXdFg+ifD9FG6gZiKdnAKl8tKtmaJKw6FVKHkfyB7hpNkDwwHLItmAOEr5MTlpFp8tb
+ am2541wIzT4wSaZqUQtbd9uWqe9/mSJqfeKOlkiAVANtRBGExaEZgOze1y5A91iMRABH
+ 5+7z3S6fwjlwcNPo+hgvebljAos8/WQ/rEFRMx/Nn4R2cT6bJnE7c5uMlKESiWgmq6uA
+ f+EqTAE9esnxhvXC9QklHGSu0HhSZvkZZugpxgI4ELuvu+vaay7xgdXAV9/cG+wMvqW8
+ Yzeg==
+X-Gm-Message-State: APjAAAVQY/WENEgQMn9P8UlNYkVZdttZ4U473J2oOEbNUVSgk1jafrrd
+ cUVo2eJ8M3ds8b46va36LwL2NMiPbucXC6EJ+Lg=
+X-Google-Smtp-Source: APXvYqzwJefkYr9GuFlkgk26uyY/jBUug2RhUE0HRAgdSsQhTaflvyrdnyLbh7KJRtUGub5s1F2SnaegFHI54btl3BQ=
+X-Received: by 2002:a37:5d0:: with SMTP id 199mr72447394qkf.131.1578120181759; 
+ Fri, 03 Jan 2020 22:43:01 -0800 (PST)
+MIME-Version: 1.0
+References: <20200104063505.219030-1-anarsoul@gmail.com>
+ <20200104063505.219030-2-anarsoul@gmail.com>
+In-Reply-To: <20200104063505.219030-2-anarsoul@gmail.com>
 From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Fri, 3 Jan 2020 22:42:35 -0800
+Message-ID: <CA+E=qVcS+bWNx6Sneg-JG4-NHQZ8e-ztszsPu8N2d8HawyDYqg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] clk: sunxi-ng: add mux and pll notifiers for A64 CPU
+ clock
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: [PATCH 3/3] arm64: dts: allwinner: a64: enable DVFS
-Date: Fri,  3 Jan 2020 22:35:05 -0800
-Message-Id: <20200104063505.219030-4-anarsoul@gmail.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200104063505.219030-1-anarsoul@gmail.com>
-References: <20200104063505.219030-1-anarsoul@gmail.com>
-MIME-Version: 1.0
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>, 
+ devicetree <devicetree@vger.kernel.org>, linux-clk <linux-clk@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_223518_408828_FC1D5A7D 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20200103_224306_136644_0E0E6B30 
+X-CRM114-Status: GOOD (  19.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (anarsoul[at]gmail.com)
@@ -104,330 +99,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Vasily Khoruzhick <vasilykh@arista.com>, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CPU regulator, CPU clock, operation points and thermal trip points
-to enable DVFS on A64
+On Fri, Jan 3, 2020 at 10:35 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+>
+> From: Icenowy Zheng <icenowy@aosc.io>
+>
+> The A64 PLL_CPU clock has the same instability if some factor changed
+> without the PLL gated like other SoCs with sun6i-style CCU, e.g. A33,
+> H3.
+>
+> Add the mux and pll notifiers for A64 CPU clock to workaround the
+> problem.
+>
+> Fixes: c6a0637460c2 ("clk: sunxi-ng: Add A64 clocks")
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Vasily Khoruzhick <vasilykh@arista.com>
 
-Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
----
- .../allwinner/sun50i-a64-amarula-relic.dts    |   4 +
- .../dts/allwinner/sun50i-a64-bananapi-m64.dts |   4 +
- .../dts/allwinner/sun50i-a64-nanopi-a64.dts   |   4 +
- .../dts/allwinner/sun50i-a64-olinuxino.dts    |   4 +
- .../dts/allwinner/sun50i-a64-orangepi-win.dts |   4 +
- .../boot/dts/allwinner/sun50i-a64-pine64.dts  |   4 +
- .../dts/allwinner/sun50i-a64-pinebook.dts     |   4 +
- .../allwinner/sun50i-a64-sopine-baseboard.dts |   4 +
- .../boot/dts/allwinner/sun50i-a64-sopine.dtsi |   4 +
- .../boot/dts/allwinner/sun50i-a64-teres-i.dts |   4 +
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 102 ++++++++++++++++++
- 11 files changed, 142 insertions(+)
+Ugh, didn't notice that email is wrong here, this patch is not related
+to my daytime job. Maxime, if patchset is OK please fix it up to be
+"Vasily Khoruzhick <anarsoul@gmail.com>", otherwise I'll resend v2
+with correct sign off.
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-amarula-relic.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-amarula-relic.dts
-index 5634245d11db..43f6ac0beed6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-amarula-relic.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-amarula-relic.dts
-@@ -65,6 +65,10 @@ wifi_pwrseq: wifi-pwrseq {
- 	};
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &csi {
- 	status = "okay";
- 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-index 208373efee49..cbcab80de8c5 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-@@ -108,6 +108,10 @@ &codec_analog {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &dai {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dts
-index 9b9d9157128c..6708acf94d01 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dts
-@@ -87,6 +87,10 @@ wifi_pwrseq: wifi_pwrseq {
- 	};
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &de {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-index 01a9a52edae4..f94e60eb4ec2 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-@@ -87,6 +87,10 @@ wifi_pwrseq: wifi_pwrseq {
- 	};
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &de {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
-index f54a415f2e3b..2793afba4884 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
-@@ -123,6 +123,10 @@ &codec_analog {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &dai {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-index 409523cb0950..04aa452d4400 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-@@ -84,6 +84,10 @@ &codec_analog {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &dai {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-index 78c82a665c84..365d85c16deb 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-@@ -98,6 +98,10 @@ &codec_analog {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &dai {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-index 920103ec0046..e760e8efdf3e 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-@@ -100,6 +100,10 @@ &codec_analog {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &dai {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine.dtsi
-index 9d20e13f0c02..3d8e2d452ce1 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine.dtsi
-@@ -51,6 +51,10 @@ &codec_analog {
- 	cpvdd-supply = <&reg_eldo1>;
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &mmc0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&mmc0_pins>;
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-index 970415106dcf..28edcef8bed1 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-@@ -104,6 +104,10 @@ &de {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &ehci1 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 5e3f16c3b706..7f37c8cd1b6e 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -80,6 +80,52 @@ simplefb_hdmi: framebuffer-hdmi {
- 		};
- 	};
- 
-+	cpu0_opp_table: opp_table0 {
-+		compatible = "operating-points-v2";
-+		opp-shared;
-+
-+		opp-648000000 {
-+			opp-hz = /bits/ 64 <648000000>;
-+			opp-microvolt = <1040000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-816000000 {
-+			opp-hz = /bits/ 64 <816000000>;
-+			opp-microvolt = <1100000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-912000000 {
-+			opp-hz = /bits/ 64 <912000000>;
-+			opp-microvolt = <1120000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-960000000 {
-+			opp-hz = /bits/ 64 <960000000>;
-+			opp-microvolt = <1160000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-1008000000 {
-+			opp-hz = /bits/ 64 <1008000000>;
-+			opp-microvolt = <1200000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-1056000000 {
-+			opp-hz = /bits/ 64 <1056000000>;
-+			opp-microvolt = <1240000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-1104000000 {
-+			opp-hz = /bits/ 64 <1104000000>;
-+			opp-microvolt = <1260000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+		opp-1152000000 {
-+			opp-hz = /bits/ 64 <1152000000>;
-+			opp-microvolt = <1300000>;
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+		};
-+	};
-+
- 	cpus {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
-@@ -90,6 +136,10 @@ cpu0: cpu@0 {
- 			reg = <0>;
- 			enable-method = "psci";
- 			next-level-cache = <&L2>;
-+			clocks = <&ccu CLK_CPUX>;
-+			clock-names = "cpu";
-+			operating-points-v2 = <&cpu0_opp_table>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu1: cpu@1 {
-@@ -98,6 +148,10 @@ cpu1: cpu@1 {
- 			reg = <1>;
- 			enable-method = "psci";
- 			next-level-cache = <&L2>;
-+			clocks = <&ccu CLK_CPUX>;
-+			clock-names = "cpu";
-+			operating-points-v2 = <&cpu0_opp_table>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu2: cpu@2 {
-@@ -106,6 +160,10 @@ cpu2: cpu@2 {
- 			reg = <2>;
- 			enable-method = "psci";
- 			next-level-cache = <&L2>;
-+			clocks = <&ccu CLK_CPUX>;
-+			clock-names = "cpu";
-+			operating-points-v2 = <&cpu0_opp_table>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu3: cpu@3 {
-@@ -114,6 +172,10 @@ cpu3: cpu@3 {
- 			reg = <3>;
- 			enable-method = "psci";
- 			next-level-cache = <&L2>;
-+			clocks = <&ccu CLK_CPUX>;
-+			clock-names = "cpu";
-+			operating-points-v2 = <&cpu0_opp_table>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		L2: l2-cache {
-@@ -218,6 +280,46 @@ cpu_thermal: cpu0-thermal {
- 			polling-delay-passive = <0>;
- 			polling-delay = <0>;
- 			thermal-sensors = <&ths 0>;
-+
-+			cooling-maps {
-+				map0 {
-+					trip = <&cpu_alert0>;
-+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+				map1 {
-+					trip = <&cpu_alert1>;
-+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
-+
-+			trips {
-+				cpu_alert0: cpu_alert0 {
-+					/* milliCelsius */
-+					temperature = <75000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				cpu_alert1: cpu_alert1 {
-+					/* milliCelsius */
-+					temperature = <90000>;
-+					hysteresis = <2000>;
-+					type = "hot";
-+				};
-+
-+				cpu_crit: cpu_crit {
-+					/* milliCelsius */
-+					temperature = <110000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
- 		};
- 
- 		gpu0_thermal: gpu0-thermal {
--- 
-2.24.1
 
+> ---
+>  drivers/clk/sunxi-ng/ccu-sun50i-a64.c | 28 ++++++++++++++++++++++++++-
+>  1 file changed, 27 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
+> index 49bd7a4c015c..5f66bf879772 100644
+> --- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
+> +++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
+> @@ -921,11 +921,26 @@ static const struct sunxi_ccu_desc sun50i_a64_ccu_desc = {
+>         .num_resets     = ARRAY_SIZE(sun50i_a64_ccu_resets),
+>  };
+>
+> +static struct ccu_pll_nb sun50i_a64_pll_cpu_nb = {
+> +       .common = &pll_cpux_clk.common,
+> +       /* copy from pll_cpux_clk */
+> +       .enable = BIT(31),
+> +       .lock   = BIT(28),
+> +};
+> +
+> +static struct ccu_mux_nb sun50i_a64_cpu_nb = {
+> +       .common         = &cpux_clk.common,
+> +       .cm             = &cpux_clk.mux,
+> +       .delay_us       = 1, /* > 8 clock cycles at 24 MHz */
+> +       .bypass_index   = 1, /* index of 24 MHz oscillator */
+> +};
+> +
+>  static int sun50i_a64_ccu_probe(struct platform_device *pdev)
+>  {
+>         struct resource *res;
+>         void __iomem *reg;
+>         u32 val;
+> +       int ret;
+>
+>         res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>         reg = devm_ioremap_resource(&pdev->dev, res);
+> @@ -939,7 +954,18 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
+>
+>         writel(0x515, reg + SUN50I_A64_PLL_MIPI_REG);
+>
+> -       return sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
+> +       ret = sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
+> +       if (ret)
+> +               return ret;
+> +
+> +       /* Gate then ungate PLL CPU after any rate changes */
+> +       ccu_pll_notifier_register(&sun50i_a64_pll_cpu_nb);
+> +
+> +       /* Reparent CPU during PLL CPU rate changes */
+> +       ccu_mux_notifier_register(pll_cpux_clk.common.hw.clk,
+> +                                 &sun50i_a64_cpu_nb);
+> +
+> +       return 0;
+>  }
+>
+>  static const struct of_device_id sun50i_a64_ccu_ids[] = {
+> --
+> 2.24.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
