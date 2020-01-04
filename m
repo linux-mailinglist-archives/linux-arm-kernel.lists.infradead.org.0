@@ -2,90 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E1D1301A8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 10:51:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E481E1301BA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 11:04:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3ZyaBRfutRYpwN0h4AN9tD99npY95oui+M8/luoC3vg=; b=jhcx4pLs2EtxXWgKMomLn/OmK
-	wB5hqtKZ3If45N69o53XE06yB+6865+hak/USuy4rRU1K1/XzCA5fj5aTEZbdmV9uB3/2ypEveaoq
-	r17nvxa+xL+drO4L2PfIbZlkAI2YoaKAdejsrSs+a2nwyoFK4LpoR19Ne1/DyJVZNGLhj/cN0qcjr
-	o1eyVmlZPHbrDQRakOszK4m2nHErkclyV4LR7RMPBMMmFVL/QI4L8dWU8OcTRz+ayalCuyEznQWJn
-	L3KdSOZ8ErsLOXRFQbY5jszfRsclHHoLRYsEBmbavR1VWPInJ8PhsH6fZXeazgmHCH9VJeTbD52oC
-	syvgg2tvg==;
+	 bh=AwtJHmY959Wv4loTH5sFIJw1VZVo0zJgPhN9nMye/yc=; b=TKrawoZQS2f1OtXhQIunSOZPI
+	59wpI4a3t6o59/GKE1EZdZSZjEQ9NAHdaCuN7lEjL6znKSSlK89YjqIjtI2jgFcgzHlFUfdq/bbXE
+	ofczV7MxHiPoeGC1LD72KK1CNT8XIhGymwxNtkAyaAHjSkZggxJi7OcFlOoUuICOIvVevA7W2EiR9
+	wf5vQP1/9tJiVy1bVprS9zI5uJ+eEdXlD9wdS+3IXY3rwOgDZroBkNNTcXlKzr3lK0ulvR5o2qxvt
+	0ZMCDSJBMPSZ32v05UByJ3z+9yd2185phUayqU2ovd1KnVOf5F5T52Xdc5V2PnvhJwqIJ4/nL2IHr
+	uZzMeekUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ing67-0002QE-7C; Sat, 04 Jan 2020 09:51:55 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1ingIO-00069n-Uq; Sat, 04 Jan 2020 10:04:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ing60-0002P0-G7
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 09:51:50 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 36B1421F30;
- Sat,  4 Jan 2020 04:51:40 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Sat, 04 Jan 2020 04:51:40 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=xC5Tz6kxh/HPATOcuMFe1CFgfrY
- z3FGFb6WfQx7tpiU=; b=QYPwpIXkFKiryPz0uVyL+qBqyJul4eapdXgrSk1C6LY
- pnjz+aagVn42z6xnw376R05QYmKSx/kXR8KDsGqeOKYlaqKSYZBUBo7Aj4bL7jEM
- D03FkNM2vAUW3X8VOqXYfAPq2uRBfnK3WfW88grvgZ5gPmGd+by366Ns4Sr/NZuE
- CTe1Mnz2/8UtFXpFDWrjA8L/WkxZATnCJ5ab4BG92PglfEnjOGtZYigQJgBcxN+5
- vqnMB8fqkn7vjiD4JBPmX/39bnAoItN2vtKILN3X05jv6zIZcl2kRJtYLX7LwYLI
- Tn8xT0HIr5QkBBzRhcx/oKTbGryp8PX4vXyZPVEyjyg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=xC5Tz6
- kxh/HPATOcuMFe1CFgfrYz3FGFb6WfQx7tpiU=; b=eP2LDquLIsBoBCjVO/uzUG
- qB+cEQvJEXOS6H6AfVwoMpvfkhOfdD+kDl7wXiPGTRQAVsgorS0gT0Z6AAKqNGxB
- 3pH98Il6vfN9yrXq5jEmNsEvZMd6j4saaChs5NBh/z0nQxrDJ+6dUV4w9q8/gG62
- CwJWGepPSGgMlocidhlQKnvVsrEBj9BwNlzKdV+TJ2khBM57DUq+6A2qYSN5A1z8
- rCXVt4km7J78YGRJ9ahAkwzMbHZ+grIpHIsnhF1HST2Ot1wczFnXwQ+1fvBRKtgO
- 0s7fdnh2iFmT4ppoMLkBU6t4f/mLQ75cJlH5RbBzBNSbpqvUSnxJ8Lib6z7+1E5Q
- ==
-X-ME-Sender: <xms:KmAQXkW_muQUBoXd7LPAjZkZSJyy3g4PY-TO4jmHXFEKJ3QFh1JKkw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdeghedgtdelucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
- rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:KmAQXs1jfChJntnx27I2W6Ago0un6WRF_3uWsfPC78tw3OKmdnFu_w>
- <xmx:KmAQXjaZR4ecL-EuVGQliH8pxzHDtGMKqDHylqjdl0bfAbYMhiYvFg>
- <xmx:KmAQXnrJ6Q23KCU5v-MlYCqW-yvVCmn5rvpDInUZbs24iK9TVgyz-w>
- <xmx:LGAQXnvfA7utU7AZ3Ea8lQQRUb3zu3UBGCjtlsQlHXB508k5Wc_RQQ>
+ id 1ingIE-00069I-5I
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 10:04:27 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4A0D08005B;
- Sat,  4 Jan 2020 04:51:38 -0500 (EST)
-Date: Sat, 4 Jan 2020 10:51:36 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH v3 4/4] ARM: dts: sunxi: Add missing LVDS resets and clocks
-Message-ID: <20200104095136.qaoai7lrmvp6komm@gilmour.lan>
-References: <20200103152801.47254-1-maxime@cerno.tech>
- <20200103152801.47254-4-maxime@cerno.tech>
- <CAGb2v65S32hbbKHRu1W+p7eP3-_uC1qKKGSP+ftkzxEO1egnjA@mail.gmail.com>
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA819217F4;
+ Sat,  4 Jan 2020 10:04:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578132265;
+ bh=8ORiMUsf8HPUPHXHjmv0CeVHaE2c1S3iTzR4ERsLPJw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=WKxTnbXLBiTiMylifCY51BpPtkg0N21NxA0RMjtm+SrmWmtuoXEedHVmB4dMoTmeW
+ qqAFFo/QEqrfFRrQn/BJVAj9zMWsq0JDDU3HDX6UNi4V24ZwgvRGkFzQYzNaxqJNrE
+ LTIQybaIgnPB1jNcSb9idB+1o22OYr47hSRVPW4o=
+Date: Sat, 4 Jan 2020 11:04:22 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 3/3] ARM: dts: sun8i: R40: Add SPI controllers nodes and
+ pinmuxes
+Message-ID: <20200104100422.z7iz4jiyj7kdvbtw@gilmour.lan>
+References: <20200102012657.9278-1-andre.przywara@arm.com>
+ <20200102012657.9278-4-andre.przywara@arm.com>
+ <20200102095711.dkd2cnbyitz6mvyx@gilmour.lan>
+ <20200102104158.06d9baa0@donnerap.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v65S32hbbKHRu1W+p7eP3-_uC1qKKGSP+ftkzxEO1egnjA@mail.gmail.com>
+In-Reply-To: <20200102104158.06d9baa0@donnerap.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_015148_937909_22362C95 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200104_020426_248549_767A7353 
+X-CRM114-Status: GOOD (  35.97  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,56 +79,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7993375984340806415=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============2949515481312591971=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7993375984340806415==
+--===============2949515481312591971==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5vfkmj2tp2msjoyp"
+	protocol="application/pgp-signature"; boundary="z45qt7a72x26lxtu"
 Content-Disposition: inline
 
 
---5vfkmj2tp2msjoyp
+--z45qt7a72x26lxtu
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Fri, Jan 03, 2020 at 11:31:05PM +0800, Chen-Yu Tsai wrote:
-> On Fri, Jan 3, 2020 at 11:28 PM Maxime Ripard <maxime@cerno.tech> wrote:
+On Thu, Jan 02, 2020 at 10:41:58AM +0000, Andre Przywara wrote:
+> On Thu, 2 Jan 2020 10:57:11 +0100
+> Maxime Ripard <mripard@kernel.org> wrote:
+> > On Thu, Jan 02, 2020 at 01:26:57AM +0000, Andre Przywara wrote:
+> > > The Allwinner R40 SoC contains four SPI controllers, using the newer
+> > > sun6i design (but at the legacy addresses).
+> > > The controller seems to be fully compatible to the A64 one, so no driver
+> > > changes are necessary.
+> > > The first three controller can be used on two sets of pins, but SPI3 is
+> > > only routed to one set on Port A.
+> > >
+> > > Tested by connecting a SPI flash to a Bananapi M2 Berry on the SPI0
+> > > PortC header pins.
+> > >
+> > > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> > > ---
+> > >  arch/arm/boot/dts/sun8i-r40.dtsi | 89 ++++++++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 89 insertions(+)
+> > >
+> > > diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > > index 8dcbc4465fbb..af437391dcf4 100644
+> > > --- a/arch/arm/boot/dts/sun8i-r40.dtsi
+> > > +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > > @@ -418,6 +418,41 @@
+> > >  				bias-pull-up;
+> > >  			};
+> > >
+> > > +			spi0_pc_pins: spi0-pc-pins {
+> > > +				pins = "PC0", "PC1", "PC2", "PC23";
+> > > +				function = "spi0";
+> > > +			};
+> > > +
+> > > +			spi0_pi_pins: spi0-pi-pins {
+> > > +				pins = "PI10", "PI11", "PI12", "PI13", "PI14";
+> > > +				function = "spi0";
+> > > +			};
 > >
-> > Some old SoCs, while supporting LVDS, don't list the LVDS clocks and reset
-> > lines. Let's add them when relevant.
+> > This split doesn't really work though :/
 > >
-> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > The PC pins group has MOSI, MISO, CLK and CS0, while the PI pins group
+> > has CS0, CLK, MOSI, MISO and CS1.
+> >
+> > Meaning that if a board uses a GPIO CS pin, we can't really express
+> > that
 >
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
+> Does that actually work? I dimly remember checking our sunxi driver
+> a while ago and I wasn't sure that would be functional there.
 
-Applied, thanks!
+It's something generic that should be handled by the core iirc. We
+might be missing the few things to enable it though, but that's
+irrelevant to the DT itself.
+
+> > and any board using the PI pins for its SPI bus will try to
+> > claim CS0 and CS1, no matter how many devices are connected on the bus
+> > (and if there's one, there might be something else connected to PI14).
+>
+> True.
+>
+> > And you can't have a board using CS1 with the PC signals either.
+> >
+> > You should split away the CS pins into separate groups, like we're
+> > doing with the A20 for example.
+>
+> Ah, yeah, makes sense, thanks for the pointer.
+>
+> > And please add /omit-if-no-ref/ to those groups.
+>
+> I was a bit reluctant to do this:
+>
+> First there does not seem to be any good documentation about it,
+> neither in the official DT spec nor in dtc, even though I think I
+> understand what it does ;-)
+
+If a node doesn't have a phandle pointing to it, it will be ignored at
+compilation time.
+
+> Second it seems to break in U-Boot atm. Looks like applying your dtc
+> patch fixes that, though. Do you know if U-Boot allows
+> cherry-picking dtc patches? If yes, I could post your patch.
+
+I know I did it for libfdt at some point, so I guess dtc would work
+too, but I'm not really sure. Rockchip is also using it iirc, so
+there's interest in supporting it in U-Boot anyway.
+
+> But more importantly: what are the guidelines for using this tag? I
+> understand the desire to provide every possible pin description on
+> one hand, but wanting to avoid having *all of them* in *each* .dtb
+> on the other.
+
+Pin groups will take a lot of space in the dtb, and the DT parsing
+will take some measurable time, so if we can get rid of the unused pin
+groups, that's great :)
+
+> But how does this play along with overlays? Shouldn't at least those
+> interface pins that are exposed on headers stay in each .dtb? Can we
+> actually make this decision in the SoC .dtsi file?
+
+If the DT is compiled with overlays, that property is ignored iirc and
+the node will be output in the compiled DT, because while if you don't
+have overlays support you can tell if something points to that node,
+you can't with overlays since those references might be stored
+elsewhere.
+
+> And should there be a dtc command line option to ignore those tags,
+> or even to apply this tag (virtually) to every node?
+
+Most of the nodes are (reference) leaves in a DT though. Pretty much
+all the device nodes have no references pointing to them, just like
+most of the buses, the CPU nodes, etc. And I'm pretty sure you want to
+keep them :)
+
 Maxime
 
---5vfkmj2tp2msjoyp
+--z45qt7a72x26lxtu
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhBgKAAKCRDj7w1vZxhR
-xSWTAP9aLj6GqedfeHASxNxXQ3luUUvfRIbz5JznIwm133TvOwEA8qXDQvjtDMqX
-rNEnwGr9Z5n8Qf9/snsuaWPlrXFNSAY=
-=7GLd
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhBjJgAKCRDj7w1vZxhR
+xU72AP4xtkPQVt9OS3WVfWffyz44w6FE8OJCvqGcr003sRMimgEA8HlBp4HPgl+N
+Q5GJcJWtJxT0rqcXFOOm+3WY0bDe7AE=
+=AltN
 -----END PGP SIGNATURE-----
 
---5vfkmj2tp2msjoyp--
+--z45qt7a72x26lxtu--
 
 
---===============7993375984340806415==
+--===============2949515481312591971==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -165,5 +236,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7993375984340806415==--
+--===============2949515481312591971==--
 
