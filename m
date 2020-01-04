@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACFE1130334
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:23:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BF69130335
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Jan 2020 16:24:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qOwTZOWhvzV/j4huHx3IjUYoUsVdaHgsfbtWt5x4LR4=; b=nEetBAoqzBCEv6LEr+NcQSCtbC
-	JxBeDNc7IxR8a6dzdAKTMaM/ILUejnvw636FrYPbUDdJxH7d+q9zo7YNEQiSCUqBiqAzXAiG+GN3O
-	S/OB6B0gGQSOHEdbHiUfQVVA7leIDalXgoMa6+dA92PC8XaVRiEjUYfmV9fvlRRfGgF3dhlG5UNSr
-	KcbN5k9r09IFl3XB4TTHhGOTIhUMS8rEvLb+nzFRZCa04zB68h0ai8UW0r6dQ0nOmvvNhA9nnfRwj
-	Bh+tdZYzFQs3r56w5cpcIV5FtksYP6brVGOqCHT7wLVvkMnebm8xkujiVNvKMH/Nl5WUfwwC00ON7
-	vEv12aZw==;
+	bh=cFjfi9LI4/FE/tmVMbCgLTCmxWNmvUs62FUJDvEfMKE=; b=HKCwNmRVSgu/gsNiJGHrzFCN+E
+	n3AY9/ALPjS50GKtEImC6wIaKGjwTU5RAwSKDQXdf7+jpiePAoUuTMw3BqbR6XsQauBnaMH4+iw0G
+	HTJc2rvchKTFbFI1Asfyhkkz5yZki3ZM/dA1zCY+M/fknddot8ibEVaRcgYVRBTX2Hc+XyBnOm8PF
+	nPH0l2n0LH+7coZntMxLW/QP7oOxEkUmFpymAEAlOznQxzirsddhSCd2JjZtcjK71QJzw3t7oW/98
+	oBt4NiAnge+Tf9HXjOZD3RwDNw1ICcB6h9ZvbmQf/cYnpV7aLXGK8YyyGAdYHwXC6qIM+1DiezyV6
+	tn4Pf8Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inlHE-0002Tc-3w; Sat, 04 Jan 2020 15:23:44 +0000
+	id 1inlHR-0002jO-Ic; Sat, 04 Jan 2020 15:23:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inlFk-0001ID-Jj
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:22:14 +0000
+ id 1inlFq-0001Nz-Jz
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Jan 2020 15:22:23 +0000
 Received: from localhost.localdomain (unknown [194.230.155.149])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F0F1024653;
- Sat,  4 Jan 2020 15:22:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD4112464E;
+ Sat,  4 Jan 2020 15:22:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578151332;
- bh=jcT4GSBIn8e+Ebzgnoq/9qfcn1TpLAtbC6dlWOL1uUU=;
+ s=default; t=1578151338;
+ bh=tikjmOkXzl67kgxwPdvLRaRJqpldgktGgrS2H4m1wPk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZD5yZ8fNVPFpBjWdpdTnb38YwvSNT84/QcNJtBIJAGj+kxv8KX7wfS+N/N6F7gIzf
- dLnRjSyxkoJzjCE/QWfF1Azr+H/CR7K8DnF3lA6geiq4YSOz50EfAkr2xq7TOJ5TRU
- UK4XG8Vk/bw/b/F6KH+PfVvU971I81XooI9PvZ/0=
+ b=pHilspwWEnO281JnujkfdogQ91Q+zQ10wWQ4FabbvKQDCdR2Iw86srrth6OFo+cei
+ OE0Ts5Vwo5rW34zLK/svMvzO8fS6N5j9oYdaCJHGIliAIDHEB7krBUaiZDNMy7Mw7J
+ K989ng+VUfN10+sMjTvDbEPD2CJsQWV2CENn6Pes=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 07/20] media: samsung: Rename Samsung and Exynos to
- lowercase
-Date: Sat,  4 Jan 2020 16:20:54 +0100
-Message-Id: <20200104152107.11407-8-krzk@kernel.org>
+Subject: [PATCH v2 08/20] usb: exynos: Rename Samsung and Exynos to lowercase
+Date: Sat,  4 Jan 2020 16:20:55 +0100
+Message-Id: <20200104152107.11407-9-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200104152107.11407-1-krzk@kernel.org>
 References: <20200104152107.11407-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_072212_727377_F3EBF7F4 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20200104_072218_730002_81493BDD 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,11 +75,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Felipe Balbi <balbi@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-usb@vger.kernel.org, Johan Hovold <johan@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Ran Wang <ran.wang_1@nxp.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -103,88 +104,87 @@ privacy/legal statements on
 https://www.samsung.com/semiconductor/privacy-global/).
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-
 ---
+ drivers/usb/dwc3/dwc3-exynos.c | 4 ++--
+ drivers/usb/host/Kconfig       | 4 ++--
+ drivers/usb/host/ehci-exynos.c | 4 ++--
+ drivers/usb/host/ohci-exynos.c | 2 +-
+ 4 files changed, 7 insertions(+), 7 deletions(-)
 
-Changes since v1:
-1. Move bindings change to separate patch.
----
- Documentation/media/v4l-drivers/fimc.rst      | 6 +++---
- Documentation/media/v4l-drivers/tuners.rst    | 2 +-
- drivers/media/platform/exynos4-is/media-dev.c | 2 +-
- drivers/media/platform/s3c-camif/camif-core.c | 2 +-
- 4 files changed, 6 insertions(+), 6 deletions(-)
-
-diff --git a/Documentation/media/v4l-drivers/fimc.rst b/Documentation/media/v4l-drivers/fimc.rst
-index 74585ba48b7f..2783aef65c01 100644
---- a/Documentation/media/v4l-drivers/fimc.rst
-+++ b/Documentation/media/v4l-drivers/fimc.rst
-@@ -2,7 +2,7 @@
+diff --git a/drivers/usb/dwc3/dwc3-exynos.c b/drivers/usb/dwc3/dwc3-exynos.c
+index c1e9ea621f41..90bb022737da 100644
+--- a/drivers/usb/dwc3/dwc3-exynos.c
++++ b/drivers/usb/dwc3/dwc3-exynos.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /**
+- * dwc3-exynos.c - Samsung EXYNOS DWC3 Specific Glue layer
++ * dwc3-exynos.c - Samsung Exynos DWC3 Specific Glue layer
+  *
+  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
+@@ -255,4 +255,4 @@ module_platform_driver(dwc3_exynos_driver);
  
- .. include:: <isonum.txt>
+ MODULE_AUTHOR("Anton Tikhomirov <av.tikhomirov@samsung.com>");
+ MODULE_LICENSE("GPL v2");
+-MODULE_DESCRIPTION("DesignWare USB3 EXYNOS Glue Layer");
++MODULE_DESCRIPTION("DesignWare USB3 Exynos Glue Layer");
+diff --git a/drivers/usb/host/Kconfig b/drivers/usb/host/Kconfig
+index 8d730180db06..ed49d08f2f9e 100644
+--- a/drivers/usb/host/Kconfig
++++ b/drivers/usb/host/Kconfig
+@@ -269,7 +269,7 @@ config USB_EHCI_SH
+ 	  If you use the PCI EHCI controller, this option is not necessary.
  
--The Samsung S5P/EXYNOS4 FIMC driver
-+The Samsung S5P/Exynos4 FIMC driver
- ===================================
+ config USB_EHCI_EXYNOS
+-	tristate "EHCI support for Samsung S5P/EXYNOS SoC Series"
++	tristate "EHCI support for Samsung S5P/Exynos SoC Series"
+ 	depends on ARCH_S5PV210 || ARCH_EXYNOS
+ 	help
+ 	  Enable support for the Samsung Exynos SOC's on-chip EHCI controller.
+@@ -542,7 +542,7 @@ config USB_OHCI_SH
+ 	  If you use the PCI OHCI controller, this option is not necessary.
  
- Copyright |copy| 2012 - 2013 Samsung Electronics Co., Ltd.
-@@ -19,7 +19,7 @@ drivers/media/platform/exynos4-is directory.
- Supported SoCs
- --------------
+ config USB_OHCI_EXYNOS
+-	tristate "OHCI support for Samsung S5P/EXYNOS SoC Series"
++	tristate "OHCI support for Samsung S5P/Exynos SoC Series"
+ 	depends on ARCH_S5PV210 || ARCH_EXYNOS
+ 	help
+ 	  Enable support for the Samsung Exynos SOC's on-chip OHCI controller.
+diff --git a/drivers/usb/host/ehci-exynos.c b/drivers/usb/host/ehci-exynos.c
+index 01debfd03d4a..a4e9abcbdc4f 100644
+--- a/drivers/usb/host/ehci-exynos.c
++++ b/drivers/usb/host/ehci-exynos.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0+
+ /*
+- * SAMSUNG EXYNOS USB HOST EHCI Controller
++ * Samsung Exynos USB HOST EHCI Controller
+  *
+  * Copyright (C) 2011 Samsung Electronics Co.Ltd
+  * Author: Jingoo Han <jg1.han@samsung.com>
+@@ -21,7 +21,7 @@
  
--S5PC100 (mem-to-mem only), S5PV210, EXYNOS4210
-+S5PC100 (mem-to-mem only), S5PV210, Exynos4210
+ #include "ehci.h"
  
- Supported features
- ------------------
-@@ -65,7 +65,7 @@ Media device interface
- ~~~~~~~~~~~~~~~~~~~~~~
+-#define DRIVER_DESC "EHCI EXYNOS driver"
++#define DRIVER_DESC "EHCI Exynos driver"
  
- The driver supports Media Controller API as defined at :ref:`media_controller`.
--The media device driver name is "SAMSUNG S5P FIMC".
-+The media device driver name is "Samsung S5P FIMC".
+ #define EHCI_INSNREG00(base)			(base + 0x90)
+ #define EHCI_INSNREG00_ENA_INCR16		(0x1 << 25)
+diff --git a/drivers/usb/host/ohci-exynos.c b/drivers/usb/host/ohci-exynos.c
+index d5ce98e205c7..bd40e597f256 100644
+--- a/drivers/usb/host/ohci-exynos.c
++++ b/drivers/usb/host/ohci-exynos.c
+@@ -19,7 +19,7 @@
  
- The purpose of this interface is to allow changing assignment of FIMC instances
- to the SoC peripheral camera input at runtime and optionally to control internal
-diff --git a/Documentation/media/v4l-drivers/tuners.rst b/Documentation/media/v4l-drivers/tuners.rst
-index 7509be888909..d7924141c544 100644
---- a/Documentation/media/v4l-drivers/tuners.rst
-+++ b/Documentation/media/v4l-drivers/tuners.rst
-@@ -18,7 +18,7 @@ These differ mainly by the bandswitch byte.
- Tuner Manufacturers
- -------------------
+ #include "ohci.h"
  
--- SAMSUNG Tuner identification: (e.g. TCPM9091PD27)
-+- Samsung Tuner identification: (e.g. TCPM9091PD27)
+-#define DRIVER_DESC "OHCI EXYNOS driver"
++#define DRIVER_DESC "OHCI Exynos driver"
  
- .. code-block:: none
- 
-diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
-index 9aaf3b8060d5..96e336b19cc3 100644
---- a/drivers/media/platform/exynos4-is/media-dev.c
-+++ b/drivers/media/platform/exynos4-is/media-dev.c
-@@ -1439,7 +1439,7 @@ static int fimc_md_probe(struct platform_device *pdev)
- 	INIT_LIST_HEAD(&fmd->pipelines);
- 	fmd->pdev = pdev;
- 
--	strscpy(fmd->media_dev.model, "SAMSUNG S5P FIMC",
-+	strscpy(fmd->media_dev.model, "Samsung S5P FIMC",
- 		sizeof(fmd->media_dev.model));
- 	fmd->media_dev.ops = &fimc_md_ops;
- 	fmd->media_dev.dev = dev;
-diff --git a/drivers/media/platform/s3c-camif/camif-core.c b/drivers/media/platform/s3c-camif/camif-core.c
-index c6fbcd7036d6..92f43c0cbc0c 100644
---- a/drivers/media/platform/s3c-camif/camif-core.c
-+++ b/drivers/media/platform/s3c-camif/camif-core.c
-@@ -304,7 +304,7 @@ static int camif_media_dev_init(struct camif_dev *camif)
- 	int ret;
- 
- 	memset(md, 0, sizeof(*md));
--	snprintf(md->model, sizeof(md->model), "SAMSUNG S3C%s CAMIF",
-+	snprintf(md->model, sizeof(md->model), "Samsung S3C%s CAMIF",
- 		 ip_rev == S3C6410_CAMIF_IP_REV ? "6410" : "244X");
- 	strscpy(md->bus_info, "platform", sizeof(md->bus_info));
- 	md->hw_revision = ip_rev;
+ static const char hcd_name[] = "ohci-exynos";
+ static struct hc_driver __read_mostly exynos_ohci_hc_driver;
 -- 
 2.17.1
 
