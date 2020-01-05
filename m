@@ -2,87 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7BC13057D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 03:11:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47AC113057F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 03:19:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XEIz4uFnWUTHYOzgSOGWa6ueXZwCMtZje9bYZ/wgyT0=; b=EsAB5Xtuz0VRf6
-	ERNXAzs0bQPE/7o91I48CulfQkZ+ZLBsUdeDsYNJaZk6xZR6+JHvzr3eawGfuE2K2sq0HEAt3Mqv0
-	kDIFUGHTi1SJkdu9x6lFtTL/yAdJy2eZkkj+ZlAiZCKHTN21EBcwh0h0bwsiWnerWFzt+35XV4j3i
-	i0jNjKPPbMVW0M54Z7cvDl7BrspDL/zORYiVVZzlPwLJv/Ixl/H8qQMzODOLnjG1eKZi24fVdRFLp
-	TM62JAwujWefU9d4etIR6Wj9PO98qd1/OVYzPVtFqgvbeoxiVWZCHA/QHvGGKyAzB1xmlFsT7Ac5k
-	hVjqfVjgI8iKupHkByaA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1f0E9oopeHUz5wp0K74dY99AF15NdnFqoZe8HmTLGnY=; b=cwG
+	+H5CeblxzqR2G/9tvGkSWtqFfpUJ9DsOiT8o+4Sns6M5zumsKnY+BUxKNkyJ3nqWUr4y0k3aHhm5f
+	SfoIILUAlAwPSEmcxzVUO0/cx3O0M56UiB5QDo+MRAiwp6nztn2bO3UaQW07kmP5sjjOX2XhudWIW
+	5nLuYd3usAnEKUw+/9dr31smhXmN/McUY5oMa0n+Zbun9RAqUIry5HhTj+SUMnRpEdkBF+oKU4tRz
+	gQmF7GZgzPqc/6/2DhzYBcetaHi4EMGvDd690xPgfcSQfsZNoEPx2sN/RUkop0TEAV8ECOTSisYbE
+	s0/oLC13cxk7Aaauf3/zkPMqRWbf8+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1invOM-0008Jw-Pc; Sun, 05 Jan 2020 02:11:46 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1invVS-0001ha-7U; Sun, 05 Jan 2020 02:19:06 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1invOH-0008JK-Eg
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 02:11:43 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.nyi.internal (Postfix) with ESMTP id 4C30221A4B;
- Sat,  4 Jan 2020 21:11:37 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Sat, 04 Jan 2020 21:11:37 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=m/3Nc6uySMl3gk1KAG4ocFWmEJ
- bnhbMHB3CYmRsk9nU=; b=nXyuboOWAxcY4KlDmOPI3Ixgtg34SZtdmGkhmvr3HW
- 31iru6La3vS5LmonuyK7txKGBNu5PQGuNK5vCrzncbXu6IcAZ6+mFAiN1Vdo8MUl
- BiRfG/CPuV8ujXiaJLSluPDDXiVHgMdxcR08k12WWU5rxL2Lo3wbr60tqIJhOEVZ
- X/3HR6rQ1YpVoFC7yZYhicxp8Oqwd6+ysyESuXChLvAkbEVLWsxDgZKyrjrdRUZ/
- ox8yfzNa5B2Bg20Y7ANX6jROxtxz8C+7SsLkwWCNewjHGJ52Gwx3LZIizd5txfdk
- PkmsBmrdlz7LsMmW5r+wMf7kiaS8Vmmf0SAAKuUIgMcg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=m/3Nc6uySMl3gk1KA
- G4ocFWmEJbnhbMHB3CYmRsk9nU=; b=wejcvVZDPlBmWh3R+EV0L2epQ13uXnjHP
- YpRm13jm5oEpGfv15gA86CtG/46FLPsVtIm3Nx+3aDXGAKl+vF/YNdBihpy0Ned/
- hNvl34/sTdoa/nAEJMb2f4wRDrinOfNWO06hzykD5CdV+ro4Xht1HobyNKprd7W6
- RUVLI3pJWF0M+SyYyd899FuNBAqJmlV4W204BhhUiCQyKWPW9eM+dRBU3aKGCWC8
- WgIsL8EbqK+pCV1lkXPV8Mz9jHrxTM5blbOaUMKC50ch2OB1VmrJNda5o3QLu6X4
- BF/xgetopi7H3M8IE9PfYUTPHRaAv2rilfv3b9V/lWmDJ1p+UFyrw==
-X-ME-Sender: <xms:10URXna5LDAoTAeec4CsV_eHcGE01NdDw9Qee6QFXikBtJa-dbmXTA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdegiedggeefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
- jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkphepje
- dtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgv
- lhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:10URXq0JUFJ657-lx_hWEMLzMIJwUpJUAzQZzSXHYSOw5m6e9wLvcA>
- <xmx:10URXlShesIXM7E7iUs3UQfnC5wKnZzF3ZdXbJX6IZdjH-KnwjNW9A>
- <xmx:10URXq_UPG_XWwnrlEYnFSjddiGJLS2VAswOQstdEEI6aiHbTGshNw>
- <xmx:2UURXss3jRw2ZC4jjl8-BP-wyUMsw3zFi9X3bIfpX6A9x8EQrt7xRA>
-Received: from titanium.stl.sholland.net
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id C027C3060741;
- Sat,  4 Jan 2020 21:11:34 -0500 (EST)
-From: Samuel Holland <samuel@sholland.org>
-To: Chen-Yu Tsai <wens@csie.org>,
-	Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH] arm64: dts: allwinner: a64: pinebook: Fix lid wakeup
-Date: Sat,  4 Jan 2020 20:11:37 -0600
-Message-Id: <20200105021137.46542-1-samuel@sholland.org>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
+ id 1invVJ-0001hE-OM
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 02:18:59 +0000
+Received: by mail-pl1-x642.google.com with SMTP id f20so20472574plj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 04 Jan 2020 18:18:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=tfPAdmpOoYwPlifIt03XQZdn+ipMaCO2Up5Sx4/swIc=;
+ b=PQU0HlPR9mLLtcJqlPn+j1gyxLZTrNUWNiC2f1sblOGyc8xoeE9u+arZMZdWEeEhdL
+ fH8v3eJb/kAF3H26VjeTRfXFYxdFSqyNsqBbuTHlWeLATun0DvDnzJN47pCCCsmkZJIu
+ tIcJ6RMudqL+Rx3qUkhdjVf1o1xIHdQZrZf4B8JlUpL2TXZxvcNoQc/VpmtNdv1nO83M
+ BYWraMpaR2gQkPQ1SyycfqwVE87hC6VrKbKjCW5NLd5zRjgil+9oNf1iopQo1UNFt8GL
+ 28PjMlRtAPQpYDMNvyg2DS3n6rPQyIb8IJh0JWPnkjPCKrVkLKGkrOOKdlAG1tCsfBAq
+ x1EA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tfPAdmpOoYwPlifIt03XQZdn+ipMaCO2Up5Sx4/swIc=;
+ b=DgqKbHOL14dGwF3deomMDj9nYQOAlRmtVhreoxTu/YotP+CRwZC0YVXktuQbuIoJyB
+ DZG2AQdhANBXsZ3NvRFbKe/ip0WD8dUdp+t1gf6S71FCvrEuTsAmAw5COiBvCxmMKzl6
+ AleAZZ4Q3hY4EZbvMaS9ldu7oj0zAgnCaQsnhl6TB0exYnOKLn+5GZ4+ULKMq1+hselE
+ gQQVY7PFqXr+RgXnZbz745oObAA/rrBN5VGdNyCdySrD2IG6sGY4SNj9z2hg8Fkmdi6k
+ rEh8gM9FudQdz0TtUmRkC8yjgju4WVMfY6SWp+6u04oq9T2bfgN1pc73IRSo5tf4bWW4
+ naYg==
+X-Gm-Message-State: APjAAAVnnhJ8Kj5JwWE6pALmSw/waVNWgvOC/hQAWw0QTIqZ3oDh+dGc
+ BSx2yB5buKY3c/WXfqAPWsrV/2MlLKU=
+X-Google-Smtp-Source: APXvYqxuxb+cVilnV/vVXAw6p2qs58qQJCUwMonxvanQEcy66q0igE/tKDGkh6FZPsn/EhfVSzU4zQ==
+X-Received: by 2002:a17:90a:db48:: with SMTP id
+ u8mr35194404pjx.54.1578190735847; 
+ Sat, 04 Jan 2020 18:18:55 -0800 (PST)
+Received: from localhost ([117.80.183.12])
+ by smtp.gmail.com with ESMTPSA id c1sm39501149pfo.44.2020.01.04.18.18.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 04 Jan 2020 18:18:55 -0800 (PST)
+From: hanterliu@gmail.com
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM:alignment:correct variable type of nr_regs
+Date: Sun,  5 Jan 2020 10:17:36 +0800
+Message-Id: <1578190656-19270-1-git-send-email-hanterliu@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_181141_633761_B90AC9BA 
-X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-CacheID: sfid-20200104_181857_819720_F6E371A0 
+X-CRM114-Status: UNSURE (   9.94  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hanterliu[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,44 +95,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Samuel Holland <samuel@sholland.org>
+Cc: hanter Liu <hanterliu@gamil.com>, linux@armlinux.org.uk
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-By default, gpio-keys configures the pin to trigger wakeup IRQs on
-either edge. The lid switch should only trigger wakeup when opening the
-lid, not when closing it.
+From: hanter Liu <hanterliu@gamil.com>
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
+if ldmstm instruction U bit is unset, nr_regs
+should be negative value, so change variable
+type of nr_regs from unsigned int to int.
+
+Signed-off-by: hanter Liu <hanterliu@gamil.com>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/mm/alignment.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-index 78c82a665c84..836ae51e5c2a 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-@@ -10,6 +10,7 @@
- #include "sun50i-a64.dtsi"
+diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
+index 788c5cf..d8e3bd9 100644
+--- a/arch/arm/mm/alignment.c
++++ b/arch/arm/mm/alignment.c
+@@ -499,7 +499,8 @@ do_alignment_ldrstr(unsigned long addr, u32 instr, struct pt_regs *regs)
+ static int
+ do_alignment_ldmstm(unsigned long addr, u32 instr, struct pt_regs *regs)
+ {
+-	unsigned int rd, rn, correction, nr_regs, regbits;
++	int nr_regs;
++	unsigned int rd, rn, correction, regbits;
+ 	unsigned long eaddr, newaddr;
  
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/gpio-keys.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/pwm/pwm.h>
- 
-@@ -60,6 +61,7 @@
- 			linux,code = <SW_LID>;
- 			linux,can-disable;
- 			wakeup-source;
-+			wakeup-event-action = <EV_ACT_DEASSERTED>;
- 		};
- 	};
- 
+ 	if (LDM_S_BIT(instr))
 -- 
-2.23.0
+2.7.4
 
 
 _______________________________________________
