@@ -2,79 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63234130859
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 15:00:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8150413085E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 15:05:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5q2+k0Rd2FEs5p/MIOEQ++d7kBVPfHC3G64R8XVqLd4=; b=OZkHYrC76Td9re
-	6kgZKMqTXHoJ+9pu80uzX4agZ9iKWfOA8Agjs3E+w3wdfaZ0vr1ydkpJ30EgJpMMVvlXtnu2GlZNw
-	rGX7ZPaYvt1qRAZBHGGmL0t2ZLS7sx7Vh4mZaRNeh/DiyQmFSNXQXGyZy7eFXNuAeH3RNeJQ2ZUtm
-	bjC2CMVfFHsroKJyruZAAVFy7wyaSSmC/WwLIWjmKyHJQ81eHbqUEHRIPcyH/SuEFmaEn17w0QuwR
-	72VQGIw8hbyXBR/wecpMby9Q0cdy10wOmbznkXmFj/ZcyQvoTZLA2Hd7bCbg5gznzqsdky4u++FSq
-	VCiFNEguJ2qupiSH7Sag==;
+	List-Owner; bh=2bKFUZpQL+JGDHQPS06kyRXqd/ma07hFL3bZRaoCMLE=; b=MzDDGfG9aOT5nb
+	Eyt5fMV7gGTiwntz4Hwi8I9Yc0k8uFQwL4SFB2OsxKXs/spjuZkrAD/vrS3RwlZmJyiLj7H9sqHxA
+	P61H0wNfe+nQ3AaoE72iT0g5Y/Np+oZK+PyVfH5B9sihI7giNIlFLzVn9W9npeUpVXROyVyvUHjCl
+	/2awW+WdtqvexGwlb2w0/aI1B0Ae9wVMsLZ0ICYOkpmm0ud+Vf8LNuHpre69pkbC5u34Mfp4ETAnh
+	JE/n3lx2F4ndYrpVWkYpNlWshf/JkTBAFsU+8wsxO9PgrjpmY3wJUNntcRy9dorgGI8HUtKMVmbMo
+	uBgg84UQqR0oDugaIyvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io6SU-0008Sj-Hr; Sun, 05 Jan 2020 14:00:46 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1io6XL-0001hd-Fo; Sun, 05 Jan 2020 14:05:47 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io6SO-0008Rv-K1
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 14:00:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9/Ss68klY4YyT5Edf8xRawChy/z8+Io+mzqZfbggB1g=; b=Jz8gXJFXGS0RRZWop5wytUHcw
- 7F6A18F+QElbmdVrpPFeigxyFdEV43ijJy7hJnZuuVekyWiqwIlSJueWrL4lCHVbGtflxKLJSGWU/
- YtrTNhh0lN5kFcYUFUz5+kcA65GxIGqtHR5RC2WYF6wwzfrMdwj25mk7cIOUx80YE6BlFwuk9RYQu
- MrK/rZsIJv5mywui6rvvWA2nGBE0LT5SSklmVGH5Uwveu1HnXR82bGtXQKB4TywwUCaGeXBc2K5nJ
- e/ZYMLcn09ejAqAdNPh1apAtRuzVd20kKwNoZLz/AgdwGAXL0zOzrsCuYSV8s2MuTIrn0vW2yyCWq
- MOAaJRRpQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:58440)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1io6S7-00069d-EX; Sun, 05 Jan 2020 14:00:23 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1io6Ry-00057m-AP; Sun, 05 Jan 2020 14:00:14 +0000
-Date: Sun, 5 Jan 2020 14:00:14 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: hanterliu@gmail.com
-Subject: Re: [PATCH] ARM:alignment:correct variable type of nr_regs
-Message-ID: <20200105140014.GJ25745@shell.armlinux.org.uk>
-References: <1578190656-19270-1-git-send-email-hanterliu@gmail.com>
+ id 1io6XE-0001ge-Fz; Sun, 05 Jan 2020 14:05:41 +0000
+Received: from p508fce23.dip0.t-ipconnect.de ([80.143.206.35]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1io6X0-0007kM-Qo; Sun, 05 Jan 2020 15:05:26 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2 00/11] Add PX30 LVDS support
+Date: Sun, 05 Jan 2020 15:05:26 +0100
+Message-ID: <1885398.klecWcqSHf@phil>
+In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
+References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578190656-19270-1-git-send-email-hanterliu@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_060040_806624_D85812D1 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200105_060540_682755_30FACE4F 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,55 +56,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hanter Liu <hanterliu@gamil.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jan 05, 2020 at 10:17:36AM +0800, hanterliu@gmail.com wrote:
-> From: hanter Liu <hanterliu@gamil.com>
-> 
-> if ldmstm instruction U bit is unset, nr_regs
-> should be negative value, so change variable
-> type of nr_regs from unsigned int to int.
-> 
-> Signed-off-by: hanter Liu <hanterliu@gamil.com>
+Am Dienstag, 24. Dezember 2019, 15:38:49 CET schrieb Miquel Raynal:
+> Hello,
+> =
 
-Hi,
+> This series aims at supporting LVDS on PX30.
+> =
 
-What observable bug is this fixing, or is this just a clean up? Please
-clarify.
+> A first couple of patches update the documentation with the new
+> compatible and the presence of a PHY. Then, the existing Rockchip
+> driver is cleaned and extended to support PX30 specificities. Finally,
+> the PX30 DTSI is updated with CRTC routes, the DSI DPHY and the LVDS
+> IP itself.
+> =
 
-Thanks.
+> Cheers,
+> Miqu=E8l
+> =
 
-> ---
->  arch/arm/mm/alignment.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
-> index 788c5cf..d8e3bd9 100644
-> --- a/arch/arm/mm/alignment.c
-> +++ b/arch/arm/mm/alignment.c
-> @@ -499,7 +499,8 @@ do_alignment_ldrstr(unsigned long addr, u32 instr, struct pt_regs *regs)
->  static int
->  do_alignment_ldmstm(unsigned long addr, u32 instr, struct pt_regs *regs)
->  {
-> -	unsigned int rd, rn, correction, nr_regs, regbits;
-> +	int nr_regs;
-> +	unsigned int rd, rn, correction, regbits;
->  	unsigned long eaddr, newaddr;
->  
->  	if (LDM_S_BIT(instr))
-> -- 
-> 2.7.4
-> 
-> 
+> Changes since v1:
+> * Added Rob's Ack.
+> * Used "must" instead of "should" in the bindings.
+> * Precised that phy-names is an optional property in the case of
+>   PX30.
+> * Renamed the WRITE_EN macro into HIWORD_UPDATE to be aligned with
+>   other files.
+> * Removed extra configuration, not needed for generic panels (see
+>   Sandy Huang answer).
+> * Dropped the display-subsystem routes (useless).
+> * Merged two patches to avoid phandle interdependencies in graphs and
+>   intermediate build errors.
+> =
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> Miquel Raynal (11):
+>   dt-bindings: display: rockchip-lvds: Declare PX30 compatible
+>   dt-bindings: display: rockchip-lvds: Document PX30 PHY
+>   drm/rockchip: lvds: Fix indentation of a #define
+>   drm/rockchip: lvds: Harmonize function names
+>   drm/rockchip: lvds: Change platform data
+>   drm/rockchip: lvds: Create an RK3288 specific probe function
+>   drm/rockchip: lvds: Helpers should return decent values
+>   drm/rockchip: lvds: Pack functions together
+
+applied patches 1-8 to drm-misc-next
+
+>   drm/rockchip: lvds: Add PX30 support
+
+drm-misc-next is currently still at 5.4-rc4, so I'll need to find out how
+to get newer kernel changes in there, as right now we're missing
+the PHY_MODE_LVDS constant.
+
+
+Heiko
+
+>   arm64: dts: rockchip: Add PX30 DSI DPHY
+>   arm64: dts: rockchip: Add PX30 LVDS
+> =
+
+>  .../display/rockchip/rockchip-lvds.txt        |   4 +
+>  arch/arm64/boot/dts/rockchip/px30.dtsi        |  48 ++
+>  drivers/gpu/drm/rockchip/rockchip_lvds.c      | 486 ++++++++++++------
+>  drivers/gpu/drm/rockchip/rockchip_lvds.h      |  19 +-
+>  4 files changed, 401 insertions(+), 156 deletions(-)
+> =
+
+> =
+
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
