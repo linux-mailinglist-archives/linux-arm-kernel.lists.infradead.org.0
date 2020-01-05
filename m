@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56EF413072D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 11:47:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29A1713076C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 11:56:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nq+x6bzEEYWuNzoL75pVfuxOi9wAZePiYaNgMbvtkng=; b=UZXRThrshKXUqM
-	/SQBpfho6Vye/xzu8k2+J7qKZIbAD2sXbDzhUHZdA/H9s9V3OTG5SsHc9ZZWBwe3ihhBQEf7tlgYk
-	oaLYep1UcckssXZ+9XppmMISTIAIrCNw/UT9fxEwPawPQTCI3mTvpZnaKhN/y0h/BjgORhuFXF7cP
-	EWI2JabsMeaUhV2P3J3omrp0RyG4G9XToBlxquun80+Fh0eQFfxtrzxacwX05YH4vc8W9uFtaxzGv
-	9hNzMdFzBZKLpX6x+O7m+HT3dhHuyWm9TZJKBsjwqh81cODoKUuGoeelyk9nTMNRNWd25aK64Do+J
-	wbznfE8e3EUwlGfuTGZg==;
+	List-Owner; bh=CdpUOSMSp8dO6v7RWHYJ4GzcF+Hfi9hyJv54nxKZqCE=; b=TjMAW8XDmDbTXG
+	WD62tddhGZ/jKRqyXfRCoFMVaNEoKuNGVaamcQenRXml6I684VgW+/cffJuOqhMlyx5iJEA3pjQ2L
+	Z9VSAy0KXomraPYOp5G/vxoNGe86zre7MNXwhdODNPJHXaa8maj5c+1/DvgvquqrFhAuKnjVqH4zG
+	GTWJftsp37KZGtUy2uoUMcb0VvP8B+Tf2k1xjkCzVo7LnShQ9HtYKIS3xZZ3wHOoU8jj7EvjpMFXP
+	z7ZTjYZtLTjM/vokQX4m07oASVdyQxwlnFLyg6NLSxZ2m95hsjMrCrGn41baKY1P/Y9VZcJOzaJhg
+	fO0s4TpdmuqBNf9vMv4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io3Qi-0008Tf-Jz; Sun, 05 Jan 2020 10:46:44 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1io3aV-0003yW-QT; Sun, 05 Jan 2020 10:56:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io3Qc-0008SQ-5y; Sun, 05 Jan 2020 10:46:39 +0000
-X-UUID: 43af6662a3194410a4fe388015fedba2-20200105
+ id 1io3aD-0003wY-Bw; Sun, 05 Jan 2020 10:56:34 +0000
+X-UUID: 06a434deb92843c7a790902890432310-20200105
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=5wwx9zI1tNRihK2T3I1D2qJUFCK1MtGL2mDXTtoZpp8=; 
- b=rP5Pg479WVa6HfdO2xguGrf1jHnZd3fguxfZTI/c7QL2qjNF6NGJkMuFuKi6OxYalseILGQgdfkcTPB69ZIl3JdtWrZgRDf7f04h6wVhtMprpuQFlj5ShDB9/ILu/FoxGwHpm+vyy4rbT+dlmw5HbHCeCNXJm6qhasyJ2q+k4g8=;
-X-UUID: 43af6662a3194410a4fe388015fedba2-20200105
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=lsBsohNu2b5AhB0kz+Ra/NLbhuyQup0UfX5XN+MeloA=; 
+ b=RO52bEslr8xOTIHvC9Oe6tgTUEQQwhR1LfcYz/mMbC75FZUD2jG7xVcSQPyoWTQjkcMbr/RUUdyftW1X6H6S2yOVrqA34ptD4/S3dS9R90O1wr6L+mNMwvWM3t9pvvb0SoHepjzGwDxq1EIcdbwpdzSulbA+kN8uSWnUll/0Mbo=;
+X-UUID: 06a434deb92843c7a790902890432310-20200105
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chao.hao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1440134628; Sun, 05 Jan 2020 02:46:35 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 02:46:34 -0800
+ with ESMTP id 1961746722; Sun, 05 Jan 2020 02:56:31 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 02:47:04 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 18:46:06 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 18:46:10 +0800
 Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 5 Jan 2020 18:45:03 +0800
+ Transport; Sun, 5 Jan 2020 18:45:05 +0800
 From: Chao Hao <chao.hao@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
  "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH v2 03/19] iommu/mediatek: Extend larb_remap to larb_remap[2]
-Date: Sun, 5 Jan 2020 18:45:07 +0800
-Message-ID: <20200105104523.31006-4-chao.hao@mediatek.com>
+Subject: [PATCH v2 04/19] iommu/mediatek: Rename offset=0x48 register
+Date: Sun, 5 Jan 2020 18:45:08 +0800
+Message-ID: <20200105104523.31006-5-chao.hao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200105104523.31006-1-chao.hao@mediatek.com>
 References: <20200105104523.31006-1-chao.hao@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_024638_223729_81B98685 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200105_025633_418774_9CBC76ED 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -96,67 +99,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For more than one IOMMUs, they are corresponding to different
-smi_larb id, so we need to extend larb_remap to larb_remap[2]
-to distinguish it by index.
+For different platforms(ex:later mt6779), offset=0x48 register will
+extend more feature by different bits, so we can rename REG_MMU_MISC_CTRL.
 
 Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 ---
  drivers/iommu/mtk_iommu.c | 8 ++++----
- drivers/iommu/mtk_iommu.h | 2 +-
- 2 files changed, 5 insertions(+), 5 deletions(-)
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 09192edef1f7..f2d953fc09df 100644
+index f2d953fc09df..bffd417f4442 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -245,7 +245,7 @@ static irqreturn_t mtk_iommu_isr(int irq, void *dev_id)
- 	fault_larb = F_MMU_INT_ID_LARB_ID(regval);
- 	fault_port = F_MMU_INT_ID_PORT_ID(regval);
+@@ -41,7 +41,7 @@
+ #define F_INVLD_EN0				BIT(0)
+ #define F_INVLD_EN1				BIT(1)
  
--	fault_larb = data->plat_data->larbid_remap[fault_larb];
-+	fault_larb = data->plat_data->larbid_remap[data->m4u_id][fault_larb];
+-#define REG_MMU_STANDARD_AXI_MODE		0x048
++#define REG_MMU_MISC_CTRL			0x048
+ #define REG_MMU_DCM_DIS				0x050
  
- 	if (report_iommu_fault(&dom->domain, data->dev, fault_iova,
- 			       write ? IOMMU_FAULT_WRITE : IOMMU_FAULT_READ)) {
-@@ -782,7 +782,7 @@ static const struct mtk_iommu_plat_data mt2712_data = {
- 	.has_4gb_mode = true,
- 	.has_bclk     = true,
- 	.has_vld_pa_rng   = true,
--	.larbid_remap = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
-+	.larbid_remap[0] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
- };
+ #define REG_MMU_CTRL_REG			0x110
+@@ -587,7 +587,7 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+ 	writel_relaxed(0, data->base + REG_MMU_DCM_DIS);
  
- static const struct mtk_iommu_plat_data mt8173_data = {
-@@ -790,13 +790,13 @@ static const struct mtk_iommu_plat_data mt8173_data = {
- 	.has_4gb_mode = true,
- 	.has_bclk     = true,
- 	.reset_axi    = true,
--	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
-+	.larbid_remap[0] = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
- };
+ 	if (data->plat_data->reset_axi)
+-		writel_relaxed(0, data->base + REG_MMU_STANDARD_AXI_MODE);
++		writel_relaxed(0, data->base + REG_MMU_MISC_CTRL);
  
- static const struct mtk_iommu_plat_data mt8183_data = {
- 	.m4u_plat     = M4U_MT8183,
- 	.reset_axi    = true,
--	.larbid_remap = {0, 4, 5, 6, 7, 2, 3, 1},
-+	.larbid_remap[0] = {0, 4, 5, 6, 7, 2, 3, 1},
- };
+ 	if (devm_request_irq(data->dev, data->irq, mtk_iommu_isr, 0,
+ 			     dev_name(data->dev), (void *)data)) {
+@@ -735,7 +735,7 @@ static int __maybe_unused mtk_iommu_suspend(struct device *dev)
+ 	void __iomem *base = data->base;
  
- static const struct of_device_id mtk_iommu_of_ids[] = {
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index b4bd76548615..c585811a957c 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -43,7 +43,7 @@ struct mtk_iommu_plat_data {
- 	bool                has_vld_pa_rng;
- 	bool                reset_axi;
- 	u32                 m4u1_mask;
--	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
-+	unsigned char       larbid_remap[2][MTK_LARB_NR_MAX];
- };
- 
- struct mtk_iommu_domain;
+ 	reg->standard_axi_mode = readl_relaxed(base +
+-					       REG_MMU_STANDARD_AXI_MODE);
++					       REG_MMU_MISC_CTRL);
+ 	reg->dcm_dis = readl_relaxed(base + REG_MMU_DCM_DIS);
+ 	reg->ctrl_reg = readl_relaxed(base + REG_MMU_CTRL_REG);
+ 	reg->int_control0 = readl_relaxed(base + REG_MMU_INT_CONTROL0);
+@@ -760,7 +760,7 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 		return ret;
+ 	}
+ 	writel_relaxed(reg->standard_axi_mode,
+-		       base + REG_MMU_STANDARD_AXI_MODE);
++		       base + REG_MMU_MISC_CTRL);
+ 	writel_relaxed(reg->dcm_dis, base + REG_MMU_DCM_DIS);
+ 	writel_relaxed(reg->ctrl_reg, base + REG_MMU_CTRL_REG);
+ 	writel_relaxed(reg->int_control0, base + REG_MMU_INT_CONTROL0);
 -- 
 2.18.0
 _______________________________________________
