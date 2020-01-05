@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C16A130799
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 12:02:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D66013078B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 12:00:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCt+ImdUTPNWgHMOx3cLyhFZ/L3REWI/p2CinxzWicg=; b=L9FdmqkoyhOleg
-	d6/WSI23K9gtaJxUooDuZyw8vIWFthubZjGkVJka9Wfcuqim16miAyzHWYNHJ3tp+gteqcfGW7QEu
-	hpSQGUYSyH/RM/p2qAf+GEjQVEmi5+gueK3f5FmyjYD+b4qzg8rACZcJBfGe1Gg/dehUGOsfYjMjq
-	q9UV6vwsox0hwdSsbJVLKv1xBHXkEyfhZK2exRYzbP82S+Agcr9/OZYLnKFgEQGjtAHymwPLBW7SM
-	quOFP1FnDqm1wMZuAFE+svp402vGK7ONfEu6SiUYinzuDbCmzjDwxd7hfxyc0QJHOfZbPDgpSgBYh
-	tZ0cWWm8TwybYol3MSDA==;
+	List-Owner; bh=OoEUioUlixBsEQ53jKQRF300K4S6kjBX627/9sZdJ/Q=; b=mVPi1CFcBU3ah/
+	ccbUI+xEGXL1Q+qK9OWxvKBJ49V/OwSkr6b6dLG9h61oEOpL8Ygd3awDz+gVRj91eAw50jd4jPnUT
+	31vBfCpfLTViMLlfV0U8jipYuV/kIZzNu/iTc2XdkuFgpuZ1Iu6TdGdwFR5+1JVBZuSmVJVb7vNiO
+	B1Hbvnjg4YfyBAKW32xuRB4ikAKlJWyevPf7vm4ZbLiKK1DE8x6MTDijsYUeXc51SrQF/sS9vAyLK
+	M7IXYdwo1fKQuxB1ec0jtOtFJtMQQ1IgBC8PZFEqGTgvmNS4/G+QS3S8rPBC9O3q4TngCrm2jq9OV
+	E9OCiuJxIw08HJyBZJYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io3fT-0001Md-W8; Sun, 05 Jan 2020 11:02:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1io3dw-00079u-Uz; Sun, 05 Jan 2020 11:00:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io3aj-0004Jc-Na; Sun, 05 Jan 2020 10:57:08 +0000
-X-UUID: b7fb78bf8a7844dcad39f17189593713-20200105
+ id 1io3aN-0003wZ-Cs; Sun, 05 Jan 2020 10:56:45 +0000
+X-UUID: 6de55ab6b4d04643985ea1eae013c4ad-20200105
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=WYOd08EzerHDPlgL6xUYgzCvGPNKGXb02WcxQ9aFfTw=; 
- b=MccbIq+BBaS/ja1ljZE6uLZeXypGrUB2M0xHbtzTVRDyZzr0GQlZ4pyIXm0KDZfWm+bdhZeIVXTl+ZjIkFQFy6KJ5J0topV2MLgGwc94BG9xJlclfKw9w7lh1Tt243VCAlOtjGRnUJh/Zo1wid3ObcenwvmT03kQhqV8n9Y2diU=;
-X-UUID: b7fb78bf8a7844dcad39f17189593713-20200105
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=BU3FHHq8lyI4GErrRVuqeiEhzwtLbu5dCFfMXEQDW1k=; 
+ b=dZmqvsFqqAbaVWA9Z3Th8Pkv40jl79K/lv9nKFWDW6jSAxxXjGdEY6Xv5Tbrj0yIK1rQvSPVFtEbTvpcDmteATeF1SR2W3G5HwMcgKMKCrl4o7gGtiVY+f2R4w8uJmUlv+hQMwqotfNQW/iEFNhTRGrrjyPifR8MpQZZvVb46+0=;
+X-UUID: 6de55ab6b4d04643985ea1eae013c4ad-20200105
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chao.hao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 519258790; Sun, 05 Jan 2020 02:56:57 -0800
+ with ESMTP id 1098492096; Sun, 05 Jan 2020 02:56:33 -0800
 Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 02:47:06 -0800
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 02:47:38 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 18:46:39 +0800
+ 15.0.1395.4; Sun, 5 Jan 2020 18:46:44 +0800
 Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 5 Jan 2020 18:45:35 +0800
+ Transport; Sun, 5 Jan 2020 18:45:40 +0800
 From: Chao Hao <chao.hao@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
  "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH v2 12/19] iommu/mediatek: Change get the way of m4u_group
-Date: Sun, 5 Jan 2020 18:45:16 +0800
-Message-ID: <20200105104523.31006-13-chao.hao@mediatek.com>
+Subject: [PATCH v2 14/19] iommu/mediatek: Add mtk_domain_data structure
+Date: Sun, 5 Jan 2020 18:45:18 +0800
+Message-ID: <20200105104523.31006-15-chao.hao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200105104523.31006-1-chao.hao@mediatek.com>
 References: <20200105104523.31006-1-chao.hao@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_025705_826325_00D0A2FF 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20200105_025643_548909_0A7F9899 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -96,123 +98,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. Redefine mtk_iommu_domain structure, it will include iommu_group
-and iommu_domain. Different mtk_iommu_domains can be distinguished by
-ID. When we realize multiple mtk_iommu_domains, every mtk_iommu_domain
-can describe one iova region.
-2. In theory, every device has one iommu_group, so this patch will
-get iommu_group by checking device. All the devices belong to the same
-m4u_group currently, so they also use the same mtk_iommu_domain(id=0).
+Add mtk_domain_data structure to describe how many iova regions
+there are and the relevant the start and end address of each
+iova region. The number of iova region is equal to the number
+of mtk_iommu_domain. So we will use mtk_domain_data to initialize
+the start and end iova of mtk_iommu_domain.
 
 Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 46 +++++++++++++++++++++++++++++++++++++++
- 1 file changed, 46 insertions(+)
+ drivers/iommu/mtk_iommu.c | 17 +++++++++++++++--
+ drivers/iommu/mtk_iommu.h | 17 +++++++++++++++++
+ 2 files changed, 32 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index b34bd3abccf8..bf781f4d7364 100644
+index f2137033ec59..b1ce0a2df583 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -111,12 +111,16 @@
- #define MTK_M4U_TO_PORT(id)		((id) & 0x1f)
- 
- struct mtk_iommu_domain {
-+	u32				id;
- 	struct iommu_domain		domain;
-+	struct iommu_group		*group;
-+	struct list_head		list;
- };
- 
- struct mtk_iommu_pgtable {
- 	struct io_pgtable_cfg	cfg;
+@@ -122,6 +122,12 @@ struct mtk_iommu_pgtable {
  	struct io_pgtable_ops	*iop;
-+	struct list_head	m4u_dom_v2;
+ 	struct device		*init_dev;
+ 	struct list_head	m4u_dom_v2;
++	const struct mtk_domain_data	*dom_region;
++};
++
++const struct mtk_domain_data single_dom = {
++	.min_iova = 0x0,
++	.max_iova = DMA_BIT_MASK(32)
  };
  
  static struct mtk_iommu_pgtable *share_pgtable;
-@@ -167,6 +171,41 @@ static struct mtk_iommu_data *mtk_iommu_get_m4u_data(void)
- 	return NULL;
- }
+@@ -400,6 +406,7 @@ static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
+ 		dev_err(data->dev, "Failed to alloc io pgtable\n");
+ 		return ERR_PTR(-EINVAL);
+ 	}
++	pgtable->dom_region = data->plat_data->dom_data;
  
-+static u32 get_domain_id(void)
-+{
-+	/* only support one mtk_iommu_domain currently */
-+	return 0;
-+}
-+
-+static u32 mtk_iommu_get_domain_id(void)
-+{
-+	return get_domain_id();
-+}
-+
-+static struct mtk_iommu_domain *get_mtk_domain(struct device *dev)
-+{
-+	struct mtk_iommu_data *data = dev->iommu_fwspec->iommu_priv;
-+	struct mtk_iommu_domain *dom;
-+	u32 domain_id = mtk_iommu_get_domain_id();
-+
-+	list_for_each_entry(dom, &data->pgtable->m4u_dom_v2, list) {
-+		if (dom->id == domain_id)
-+			return dom;
-+	}
-+	return NULL;
-+}
-+
-+static struct iommu_group *mtk_iommu_get_group(struct device *dev)
-+{
-+	struct mtk_iommu_domain *dom;
-+
-+	dom = get_mtk_domain(dev);
-+	if (dom)
-+		return dom->group;
-+
-+	return NULL;
-+}
-+
- static struct mtk_iommu_pgtable *mtk_iommu_get_pgtable(void)
- {
- 	return share_pgtable;
-@@ -328,6 +367,8 @@ static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
- 	if (!pgtable)
- 		return ERR_PTR(-ENOMEM);
+ 	dev_info(data->dev, "%s create pgtable done\n", __func__);
  
-+	INIT_LIST_HEAD(&pgtable->m4u_dom_v2);
-+
- 	pgtable->cfg = (struct io_pgtable_cfg) {
- 		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
- 			IO_PGTABLE_QUIRK_NO_PERMS |
-@@ -382,6 +423,7 @@ static int mtk_iommu_attach_pgtable(struct mtk_iommu_data *data,
- static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
- {
- 	struct mtk_iommu_pgtable *pgtable = mtk_iommu_get_pgtable();
-+	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
- 	struct mtk_iommu_domain *dom;
- 
- 	if (type != IOMMU_DOMAIN_DMA)
-@@ -399,12 +441,15 @@ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
- 	if (iommu_get_dma_cookie(&dom->domain))
- 		goto  free_dom;
- 
-+	dom->group = data->m4u_group;
-+	dom->id = mtk_iommu_get_domain_id();
+@@ -470,8 +477,10 @@ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
  	/* Update our support page sizes bitmap */
  	dom->domain.pgsize_bitmap = pgtable->cfg.pgsize_bitmap;
  
- 	dom->domain.geometry.aperture_start = 0;
- 	dom->domain.geometry.aperture_end = DMA_BIT_MASK(32);
+-	dom->domain.geometry.aperture_start = 0;
+-	dom->domain.geometry.aperture_end = DMA_BIT_MASK(32);
++	dom->domain.geometry.aperture_start =
++				pgtable->dom_region->min_iova;
++	dom->domain.geometry.aperture_end =
++				pgtable->dom_region->max_iova;
  	dom->domain.geometry.force_aperture = true;
-+	list_add_tail(&dom->list, &pgtable->m4u_dom_v2);
+ 	list_add_tail(&dom->list, &pgtable->m4u_dom_v2);
  
- 	return &dom->domain;
+@@ -953,6 +962,7 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+ 	.has_bclk     = true,
+ 	.has_vld_pa_rng   = true,
+ 	.dom_cnt = 1,
++	.dom_data = &single_dom,
+ 	.larbid_remap[0] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+ 	.inv_sel_reg = REG_MMU_INV_SEL,
+ };
+@@ -960,6 +970,7 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+ static const struct mtk_iommu_plat_data mt6779_data = {
+ 	.m4u_plat = M4U_MT6779,
+ 	.dom_cnt = 1,
++	.dom_data = &single_dom,
+ 	.larbid_remap[0] = {0, 1, 2, 3, 5, 7, 10, 9},
+ 	/* vp6a, vp6b, mdla/core2, mdla/edmc*/
+ 	.larbid_remap[1] = {2, 0, 3, 1},
+@@ -976,6 +987,7 @@ static const struct mtk_iommu_plat_data mt8173_data = {
+ 	.has_bclk     = true,
+ 	.reset_axi    = true,
+ 	.dom_cnt = 1,
++	.dom_data = &single_dom,
+ 	.larbid_remap[0] = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
+ 	.inv_sel_reg = REG_MMU_INV_SEL,
+ };
+@@ -984,6 +996,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+ 	.m4u_plat     = M4U_MT8183,
+ 	.reset_axi    = true,
+ 	.dom_cnt = 1,
++	.dom_data = &single_dom,
+ 	.larbid_remap[0] = {0, 4, 5, 6, 7, 2, 3, 1},
+ 	.inv_sel_reg = REG_MMU_INV_SEL,
+ };
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 3a1c79222d09..a38b26018abe 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -36,6 +36,22 @@ enum mtk_iommu_plat {
+ 	M4U_MT8183,
+ };
  
-@@ -560,6 +605,7 @@ static struct iommu_group *mtk_iommu_device_group(struct device *dev)
- 	}
++/*
++ * reserved IOVA Domain for IOMMU users of HW limitation.
++ */
++
++/*
++ * struct mtk_domain_data:	domain configuration
++ * @min_iova:	Start address of iova
++ * @max_iova:	End address of iova
++ * Note: one user can only belong to one domain
++ */
++
++struct mtk_domain_data {
++	dma_addr_t	min_iova;
++	dma_addr_t	max_iova;
++};
++
+ struct mtk_iommu_plat_data {
+ 	enum mtk_iommu_plat m4u_plat;
+ 	bool                has_4gb_mode;
+@@ -51,6 +67,7 @@ struct mtk_iommu_plat_data {
+ 	u32                 m4u1_mask;
+ 	u32                 inv_sel_reg;
+ 	unsigned char       larbid_remap[2][MTK_LARB_NR_MAX];
++	const struct mtk_domain_data	*dom_data;
+ };
  
- 	/* All the client devices are in the same m4u iommu-group */
-+	data->m4u_group = mtk_iommu_get_group(dev);
- 	if (!data->m4u_group) {
- 		data->m4u_group = iommu_group_alloc();
- 		if (IS_ERR(data->m4u_group))
+ struct mtk_iommu_domain;
 -- 
 2.18.0
 _______________________________________________
