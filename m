@@ -2,62 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59C7C130747
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 11:47:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5FF513078A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 12:00:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FrsWL2QawWCKW2FHKvfp35s6Is6gray4EEWr50MMPXI=; b=MJ8N2JCnPc/SUN
-	cf4KGM9PC2r2VDsyfx2h+FfwexoZEESJwleneKobwMkXSs2WMTqrbx/ivBbdX8yK8EK+UCtBUak7G
-	xT/4xNZrmtWj6XVLYNowO/aYHRuYc23WTqTbE9LfrYgyZmQlSwr1MwpDzf1kWngFT6bXVNgw06RPg
-	Oh2FY3l/yxkFhRA0cfb1r65aQF7iS/DZz/lag5ltY+TsTSLRw2mCN+BjQpN1VcnDqHtpQ7YeXErPB
-	/3Fv1eqD4oUD0jrEZtB5FyP0q6wyXsR5O+1uZYSl9qOZBJwLJCvtixqITZoRXFt6zWOCNKahI29W9
-	NrKvk7f3IJ6eoPGuBhYQ==;
+	List-Owner; bh=hg3p2tXwIBC12yQ3Og5XIY/yaS6spu5o4mFrX1Z0zzM=; b=NZcjsZN+JYaV3d
+	OsDDheC7hUQsZ9QOa8sEPNzk9WW1YETePhlvBpwH0xXpe2xjPjxdy1oDPAAwtQhjVcZuiiO0xTK0l
+	YjSpAQ7/HJK+MeXdK1KhUr80R3sE4t6cspB3nxdyrvNd2terfVap3g/Jh82Nb+BuTEuXrc7erCnHd
+	2yzMfjQjOOUIX0x4RwOdLSijuDTW6aYSU+kPoDEP0RWa5UKT6sHuyi5p/C+cjLtNMmfTmfo/hXsiK
+	MkYsc0WpaHnTEvMs6Y1rk7decaXoc8YO1o4a0thEQPTYvpn9wm8/NLXadYGxo6f0ILBA865TZI4q/
+	qES3vkSBm0BsKbf6Hsmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io3RI-0000Xl-8z; Sun, 05 Jan 2020 10:47:20 +0000
+	id 1io3da-0006h4-L1; Sun, 05 Jan 2020 11:00:02 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io3Qr-0000Jk-UG; Sun, 05 Jan 2020 10:46:55 +0000
-X-UUID: d73cf10e5d9e460eb1242b0d4d6c1741-20200105
+ id 1io3aK-0003wY-Fm; Sun, 05 Jan 2020 10:56:42 +0000
+X-UUID: 5c2d4de6f08d4275a89db8007045b9fb-20200105
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=DGmQNidlzNQc5LwY8YiBP+cNsBp8IGVfEGVlTvoknPc=; 
- b=QJ50s3Fdnxa7rfQWW5D+yHvxBf9KMxu+dNigg6clNpkd4PsoUUrSc0EzPDjKwMo5TFlPiVxNMlmhsPDY4ePzqgdUTFWG2/mJC9FSQV6YmGUM0BrE7dLoHZzCnHwamzm/rhpoGqyRb4KhT9blWjc0mA0dluwfNMfCwvlezINKwDk=;
-X-UUID: d73cf10e5d9e460eb1242b0d4d6c1741-20200105
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ bh=RY4rn8CmqW4ONHcTdtNSN9a7ZN574snyp8h6PCSTtUE=; 
+ b=YlkRYlyegs1C8Qp4YMq74fB39w8U9/CVVxf2CcESaJGqEWICqFPXfIuu8nB6hvVp/K7LZudwZT7XrY0KKNdV2UVfHY34m+i/DEmORy6yh7SNQBOJv1CCuynzCtDFYFjUGCJmybjmlbiIhnuOR1nPZL4Yo70C3ibQ8lTeqk/twes=;
+X-UUID: 5c2d4de6f08d4275a89db8007045b9fb-20200105
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chao.hao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 501296492; Sun, 05 Jan 2020 02:46:49 -0800
+ with ESMTP id 380921300; Sun, 05 Jan 2020 02:56:33 -0800
 Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 02:46:49 -0800
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 02:47:25 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 18:46:22 +0800
+ 15.0.1395.4; Sun, 5 Jan 2020 18:46:32 +0800
 Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 5 Jan 2020 18:45:17 +0800
+ Transport; Sun, 5 Jan 2020 18:45:27 +0800
 From: Chao Hao <chao.hao@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
  "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH v2 07/19] iommu/mediatek: Add REG_MMU_WR_LEN reg define
- prepare for mt6779
-Date: Sun, 5 Jan 2020 18:45:11 +0800
-Message-ID: <20200105104523.31006-8-chao.hao@mediatek.com>
+Subject: [PATCH v2 09/19] iommu/mediatek: Add mtk_iommu_pgtable structure
+Date: Sun, 5 Jan 2020 18:45:13 +0800
+Message-ID: <20200105104523.31006-10-chao.hao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200105104523.31006-1-chao.hao@mediatek.com>
 References: <20200105104523.31006-1-chao.hao@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_024654_035380_5959659A 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200105_025640_651289_086C2944 
+X-CRM114-Status: GOOD (  16.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,79 +98,188 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When some platforms(ex:later mt6779) define has_wr_len variable,
-we need to set REG_MMU_WR_LEN to improve performance. So we add
-REG_MMU_WR_LEN register define in this patch.
+Start with this patch, we will change the SW architecture
+to support multiple domains. SW architecture will has a big change,
+so we need to modify a little bit by more than one patch.
+The new SW overall architecture is as below:
+
+				iommu0   iommu1
+				  |	    |
+				  -----------
+					|
+				mtk_iommu_pgtable
+					|
+			------------------------------------------
+			|		     |			 |
+		mtk_iommu_domain1   mtk_iommu_domain2  mtk_iommu_domain3
+			|                    |                   |
+		iommu_group1         iommu_group2           iommu_group3
+			|                    |                   |
+		iommu_domain1       iommu_domain2	    iommu_domain3
+			|                    |                   |
+		iova region1(normal)  iova region2(CCU)    iova region3(VPU)
+
+For current structure, no matter how many iommus there are,
+they use the same page table to simplify the usage of module.
+In order to make the software architecture more explicit, this
+patch will create a global mtk_iommu_pgtable structure to describe
+page table and all the iommus use it.
+The diagram is as below:
+
+	mtk_iommu_data1(MM)       mtk_iommu_data2(APU)
+		|			   |
+		|			   |
+		------mtk_iommu_pgtable-----
+
+We need to create global mtk_iommu_pgtable to include all the iova
+regions firstly and special iova regions by divided based on it,
+so the information of pgtable needs to be created in device_group.
 
 Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 11 +++++++++++
- drivers/iommu/mtk_iommu.h |  2 ++
- 2 files changed, 13 insertions(+)
+ drivers/iommu/mtk_iommu.c | 84 +++++++++++++++++++++++++++++++++++++++
+ drivers/iommu/mtk_iommu.h |  1 +
+ 2 files changed, 85 insertions(+)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 5de13ab1094e..ad5690350d6a 100644
+index 7829d1fd08dd..50c6a01eb517 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -44,6 +44,8 @@
- 
- #define REG_MMU_MISC_CTRL			0x048
- #define REG_MMU_DCM_DIS				0x050
-+#define REG_MMU_WR_LEN				0x054
-+#define F_MMU_WR_THROT_DIS			(BIT(5) |  BIT(21))
- 
- #define REG_MMU_CTRL_REG			0x110
- #define F_MMU_TF_PROT_TO_PROGRAM_ADDR		(2 << 4)
-@@ -595,6 +597,13 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
- 	}
- 	writel_relaxed(0, data->base + REG_MMU_DCM_DIS);
- 
-+	if (data->plat_data->has_wr_len) {
-+		/* write command throttling mode */
-+		regval = readl_relaxed(data->base + REG_MMU_WR_LEN);
-+		regval &= ~F_MMU_WR_THROT_DIS;
-+		writel_relaxed(regval, data->base + REG_MMU_WR_LEN);
-+	}
-+
- 	if (data->plat_data->reset_axi)
- 		writel_relaxed(0, data->base + REG_MMU_MISC_CTRL);
- 
-@@ -743,6 +752,7 @@ static int __maybe_unused mtk_iommu_suspend(struct device *dev)
- 	struct mtk_iommu_suspend_reg *reg = &data->reg;
- 	void __iomem *base = data->base;
- 
-+	reg->wr_len = readl_relaxed(base + REG_MMU_WR_LEN);
- 	reg->standard_axi_mode = readl_relaxed(base +
- 					       REG_MMU_MISC_CTRL);
- 	reg->dcm_dis = readl_relaxed(base + REG_MMU_DCM_DIS);
-@@ -768,6 +778,7 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
- 		dev_err(data->dev, "Failed to enable clk(%d) in resume\n", ret);
- 		return ret;
- 	}
-+	writel_relaxed(reg->wr_len, base + REG_MMU_WR_LEN);
- 	writel_relaxed(reg->standard_axi_mode,
- 		       base + REG_MMU_MISC_CTRL);
- 	writel_relaxed(reg->dcm_dis, base + REG_MMU_DCM_DIS);
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index d4495230c6e7..0623f199e96f 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -25,6 +25,7 @@ struct mtk_iommu_suspend_reg {
- 	u32				int_main_control;
- 	u32				ivrp_paddr;
- 	u32				vld_pa_rng;
-+	u32				wr_len;
+@@ -117,6 +117,12 @@ struct mtk_iommu_domain {
+ 	struct iommu_domain		domain;
  };
  
- enum mtk_iommu_plat {
-@@ -43,6 +44,7 @@ struct mtk_iommu_plat_data {
- 	bool                has_sub_comm[2];
- 	bool                has_vld_pa_rng;
- 	bool                reset_axi;
-+	bool                has_wr_len;
- 	u32                 m4u1_mask;
- 	u32                 inv_sel_reg;
- 	unsigned char       larbid_remap[2][MTK_LARB_NR_MAX];
++struct mtk_iommu_pgtable {
++	struct io_pgtable_cfg	cfg;
++	struct io_pgtable_ops	*iop;
++};
++
++static struct mtk_iommu_pgtable *share_pgtable;
+ static const struct iommu_ops mtk_iommu_ops;
+ 
+ /*
+@@ -164,6 +170,11 @@ static struct mtk_iommu_data *mtk_iommu_get_m4u_data(void)
+ 	return NULL;
+ }
+ 
++static struct mtk_iommu_pgtable *mtk_iommu_get_pgtable(void)
++{
++	return share_pgtable;
++}
++
+ static struct mtk_iommu_domain *to_mtk_domain(struct iommu_domain *dom)
+ {
+ 	return container_of(dom, struct mtk_iommu_domain, domain);
+@@ -316,6 +327,13 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+ {
+ 	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+ 
++	if (data->pgtable) {
++		dom->cfg = data->pgtable->cfg;
++		dom->iop = data->pgtable->iop;
++		dom->domain.pgsize_bitmap = data->pgtable->cfg.pgsize_bitmap;
++		return 0;
++	}
++
+ 	dom->cfg = (struct io_pgtable_cfg) {
+ 		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+ 			IO_PGTABLE_QUIRK_NO_PERMS |
+@@ -339,6 +357,61 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+ 	return 0;
+ }
+ 
++static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
++{
++	struct mtk_iommu_pgtable *pgtable;
++
++	pgtable = kzalloc(sizeof(*pgtable), GFP_KERNEL);
++	if (!pgtable)
++		return ERR_PTR(-ENOMEM);
++
++	pgtable->cfg = (struct io_pgtable_cfg) {
++		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
++			IO_PGTABLE_QUIRK_NO_PERMS |
++			IO_PGTABLE_QUIRK_TLBI_ON_MAP |
++			IO_PGTABLE_QUIRK_ARM_MTK_EXT,
++		.pgsize_bitmap = mtk_iommu_ops.pgsize_bitmap,
++		.ias = 32,
++		.oas = 34,
++		.tlb = &mtk_iommu_flush_ops,
++		.iommu_dev = data->dev,
++	};
++
++	pgtable->iop = alloc_io_pgtable_ops(ARM_V7S, &pgtable->cfg, data);
++	if (!pgtable->iop) {
++		dev_err(data->dev, "Failed to alloc io pgtable\n");
++		return ERR_PTR(-EINVAL);
++	}
++
++	dev_info(data->dev, "%s create pgtable done\n", __func__);
++
++	return pgtable;
++}
++
++static int mtk_iommu_attach_pgtable(struct mtk_iommu_data *data,
++				    struct device *dev)
++{
++	struct mtk_iommu_pgtable *pgtable = mtk_iommu_get_pgtable();
++
++	/* create share pgtable */
++	if (!pgtable) {
++		pgtable = create_pgtable(data);
++		if (IS_ERR(pgtable)) {
++			dev_err(data->dev, "Failed to create pgtable\n");
++			return -ENOMEM;
++		}
++
++		share_pgtable = pgtable;
++	}
++
++	/* binding to pgtable */
++	data->pgtable = pgtable;
++
++	dev_info(data->dev, "m4u%d attach_pgtable done!\n", data->m4u_id);
++
++	return 0;
++}
++
+ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
+ {
+ 	struct mtk_iommu_domain *dom;
+@@ -502,10 +575,21 @@ static void mtk_iommu_remove_device(struct device *dev)
+ static struct iommu_group *mtk_iommu_device_group(struct device *dev)
+ {
+ 	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
++	struct mtk_iommu_pgtable *pgtable;
++	int ret = 0;
+ 
+ 	if (!data)
+ 		return ERR_PTR(-ENODEV);
+ 
++	pgtable = data->pgtable;
++	if (!pgtable) {
++		ret = mtk_iommu_attach_pgtable(data, dev);
++		if (ret) {
++			dev_err(data->dev, "Failed to device_group\n");
++			return NULL;
++		}
++	}
++
+ 	/* All the client devices are in the same m4u iommu-group */
+ 	if (!data->m4u_group) {
+ 		data->m4u_group = iommu_group_alloc();
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 2b207dcadd06..a3c598f99ed5 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -61,6 +61,7 @@ struct mtk_iommu_data {
+ 	struct clk			*bclk;
+ 	phys_addr_t			protect_base; /* protect memory base */
+ 	struct mtk_iommu_suspend_reg	reg;
++	struct mtk_iommu_pgtable	*pgtable;
+ 	struct mtk_iommu_domain		*m4u_dom;
+ 	struct iommu_group		*m4u_group;
+ 	bool                            enable_4GB;
 -- 
 2.18.0
 _______________________________________________
