@@ -2,76 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF1C13091D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 17:32:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DBAC13092E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 17:40:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1sNK4PB8R8w4pBl6PYeP32EBOiA2L49/2crvyZD+8gI=; b=m+IGLrOh5Ng83H
-	pQ3/useb2LvaO9MMe2IxBsTfAqRPH68UCXae6Xh0I5Tc0gntzzwNCSmfYdXwj56ZiHJP5enwKez/f
-	SVGiXF57M3GV63B5Lh/Qzn8n9FUfn/8uRZ9QlS+AZqBtaAzuaVAvRnYA3gDMFcrZ69SA7tnnNR+eE
-	o4XAdzDabWhcJY5JGRahea1/VDdfCrFQEXbOmGFVTnGqRz2C5TxDm8ZdeaOuVy4fwzL8q7qRN2OpQ
-	RSyg4CfgG8gkVzAvdo7vb73n5NdVmTXenG2liB0ifky9T4a7lngMiJJilRRxkv6Wc+ko1e0CHndVx
-	pis7caCSQeCQc905G0+g==;
+	List-Owner; bh=92+veARAGL77vK/G2SBr2oWGmLjJ+bBcH5kxHe1ynCA=; b=twBtEozWkWbCzQ
+	aCMNVH/LGoeXnZMlmujae2NHqEAsxNfrfHiO2kNPa3JbNC2B/z1iWlyCv444AiUxjZirSm7bn/JJg
+	V5EOi6rkx6bv3rATGGTALzQtnZAlEjPqUZY+n1FSERYHqnM+07Uidp5GyGqbt86BGsT4qu/2fUPa4
+	HreCUvUkKwW2pI0GgKEjOvvIwzVi05Og5nSeCPZ8Pssr4WrlQgaiOgALl3tt9V0BixWQxmp7VVGPn
+	1KL8/TspoI5qf2o18tW2/9SagUEKANzkvzt3eXTe7Or1nW74L1Nb9X3ZB7QDCYPqSGSG0p00gZmbJ
+	WgBfGFJStLq/icwoIwBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io8pC-00070k-4S; Sun, 05 Jan 2020 16:32:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1io8x4-0002Mf-Tm; Sun, 05 Jan 2020 16:40:30 +0000
+Received: from esa5.hgst.iphmx.com ([216.71.153.144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io8ol-0006mC-CY; Sun, 05 Jan 2020 16:31:57 +0000
-X-UUID: 1b7124aa88b04f87b1f42b4ac250ce0a-20200105
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=Y8MUPyC/ZeIcdNeYJ07CcnnrMIKAUoQo7YdWMkGcUn0=; 
- b=QpvdsglNC7ot07y491L4CjogMf1hmIBpL1ysDU62NupdHM+zORwSnHQLiTmfGgmJ9gR6K6f7TJZNNVqXCX3RcBYWcruM/AcRAI9mxeGiE/Z+I8D0oXWT5TV2E62ZeNXYyxLKgrUGr6eS+4FKEVsnqzvTWRGCZsm6R8F5tqyYtAQ=;
-X-UUID: 1b7124aa88b04f87b1f42b4ac250ce0a-20200105
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jiaxin.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1364728215; Sun, 05 Jan 2020 08:31:53 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 08:22:26 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 6 Jan 2020 00:21:02 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 6 Jan 2020 00:20:52 +0800
-From: Jiaxin Yu <jiaxin.yu@mediatek.com>
-To: <yong.liang@mediatek.com>, <wim@linux-watchdog.org>, <linux@roeck-us.net>, 
- <p.zabel@pengutronix.de>, <matthias.bgg@gmail.com>,
- <linux-watchdog@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <devicetree@vger.kernel.org>, <chang-an.chen@mediatek.com>,
- <freddy.hsin@mediatek.com>
-Subject: [PATCH v9 2/2] watchdog: mtk_wdt: mt8183: Add reset controller
-Date: Mon, 6 Jan 2020 00:21:41 +0800
-Message-ID: <1578241301-14618-3-git-send-email-jiaxin.yu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1578241301-14618-1-git-send-email-jiaxin.yu@mediatek.com>
-References: <1578241301-14618-1-git-send-email-jiaxin.yu@mediatek.com>
+ id 1io8wi-00027e-S8; Sun, 05 Jan 2020 16:40:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1578242409; x=1609778409;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=o6v7kswxB+kQK3MbMK/j3XVKjA+EkM9m3g9GM7Rwpb8=;
+ b=QghVGtgYbRojhjoWH7IB9XP8rOBVEFrZ8NtbtTyoCa+Xr82kp//YwBsA
+ xoVTowxykuPMJXBosdHTHUaw7UEMn9RxcitHuM18dCgSrX5jl1tvb9qNm
+ zYN9olkLvdaIeHGF3ChxCLyPSemyqIMEfTonlXzoMkZVuiXLzagYQjcPu
+ 4OWLw2VXzCS2gRsW8RFrr1RHGFFLCi/SH7tMvoSrUZGp33Xn5bnfY5sSL
+ PameBNiCMJTvhZN8UDm5DamiNVrpNgPvECJM76htOCWiuLG9dGsUau2bh
+ QdLm7P8fpsHMMwf1EMwXW+YPRkCBO11q51Els3VFQQzZPOJ4UECrlVx3r g==;
+IronPort-SDR: t18BIxUjT1leyurv/zBGXvMZCPOb6TrLa1Hjf81GSVZvH8XXSasZf8rTdk1gjINYa/TBCM5lRK
+ +HrVm2107n7S1uPNWIiRTq0ugY0G9YnQFzwJy3gBKFYIc8nOtJ1nAix8pTegmKGSK3vFUNquJM
+ 3yuWpuGgHpP0u5bGfXyMBTS9t1iKbo8sMLMov8T+SFH6sdTNMW6t8jxnWXxJhJG0ARslUSN9a6
+ YX3rjecJBIwdzZqATI5doPtf/ISUO4a4qRaN2UHSR8bWCHWSCHoALak2D5kpACl2audYi0VUcX
+ 4Yk=
+X-IronPort-AV: E=Sophos;i="5.69,399,1571673600"; d="scan'208";a="127475997"
+Received: from mail-bn8nam11lp2173.outbound.protection.outlook.com (HELO
+ NAM11-BN8-obe.outbound.protection.outlook.com) ([104.47.58.173])
+ by ob1.hgst.iphmx.com with ESMTP; 06 Jan 2020 00:40:05 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=OxAVKrEz2pSvHBbfhJGI9aBulwmIAqbOP7/KauaqWrX+EQI8WG7k8XE9cB/LjCcdNOpWLgJBjvoOySu4o5KwWZtXIaoFtTddbthvXTAvp1EieODZPljmIBz9VburGLAD3F1vZMU3WYOliVxTORVDtd3NH1+eXWBQP5DM2VnmU5dlINKwF8arPCZNzN+W4Rhixjmc1VM1tMoTyn/QF4vt/XuLq9hcxJqIAsRDyVG6WzZkqG9b9/WzoMeWEu/uVb7kx8Bd38opJSNzq8wx2TkdPBr7AJ/RtE3C6i8dhzmKqBica9EFJc14Za9zAjU43AthDBDyOZ63dXqi5P8VpClTng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o6v7kswxB+kQK3MbMK/j3XVKjA+EkM9m3g9GM7Rwpb8=;
+ b=LZ2CY4pEOXXufJgJcMUpdx2MSw0TM3vkuI59qKX3BbSwnGyyBiBU2Kydtj/xZunPBd2IKmiP9wASJqrfzGI9+Vp9fFBQLfTgt49NSDFSMkgQ2LRM9o7JwXdLYwSfk5PJfAjpGO4bvFt+5pDQQJUyOOFwv5VLp0XbMCHuGWEzA82n0Nd51+dbVPzKhn51z+O8I2SLysNu46lDtkm0/ECg0KpFgXplGHuIfyqzq+IyXDRvebChF64rsi/5MABeNe8gkeEWlYs3dI/ftFWYT1AANWMIQhaUZ5k5qn3cyra+LNZH/I2V99sJLd9Wzh6RgpjRAzUyIHJ0HjPyGyEeMoZPfA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o6v7kswxB+kQK3MbMK/j3XVKjA+EkM9m3g9GM7Rwpb8=;
+ b=Z8MLGF/bfcKspBHGKPyaBBKm9xqH8Av8gqNGS9J+BGZ/5snkTuzBFSLq/vfcVJKHObsf50Hkx+Wx7bRpglRPuMVBym4dtuZdYHuDazeCCMtso8s8ZAx11Rzc44VodkNbvxvNKx+eFFPNb7BQhhpOyrCgjxL3cWga/YNU9H6Vqig=
+Received: from MN2PR04MB6991.namprd04.prod.outlook.com (10.186.144.209) by
+ MN2PR04MB5631.namprd04.prod.outlook.com (20.179.23.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.12; Sun, 5 Jan 2020 16:40:01 +0000
+Received: from MN2PR04MB6991.namprd04.prod.outlook.com
+ ([fe80::460:1c02:5953:6b45]) by MN2PR04MB6991.namprd04.prod.outlook.com
+ ([fe80::460:1c02:5953:6b45%4]) with mapi id 15.20.2602.015; Sun, 5 Jan 2020
+ 16:40:01 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: RE: [PATCH v1 0/3] scsi: ufs: pass device information to
+ apply_dev_quirks
+Thread-Topic: [PATCH v1 0/3] scsi: ufs: pass device information to
+ apply_dev_quirks
+Thread-Index: AQHVw4RnKOmg85o31Eufk/ca9N3SIafbkG15gAB7awCAADp4MA==
+Date: Sun, 5 Jan 2020 16:40:01 +0000
+Message-ID: <MN2PR04MB699151E6AEC7D15CBE1224A2FC3D0@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <1578200118-29547-1-git-send-email-stanley.chu@mediatek.com>
+ <MN2PR04MB69913F0B671032A388747CF7FC3D0@MN2PR04MB6991.namprd04.prod.outlook.com>
+ <1578229802.17435.3.camel@mtkswgap22>
+In-Reply-To: <1578229802.17435.3.camel@mtkswgap22>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Avri.Altman@wdc.com; 
+x-originating-ip: [77.137.86.228]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: ea8ff0d8-1397-41a6-a1a8-08d791fde908
+x-ms-traffictypediagnostic: MN2PR04MB5631:
+x-microsoft-antispam-prvs: <MN2PR04MB5631C3F8D846BB866A11C46AFC3D0@MN2PR04MB5631.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:2803;
+x-forefront-prvs: 027367F73D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(346002)(136003)(39860400002)(396003)(376002)(366004)(199004)(189003)(55016002)(52536014)(71200400001)(4326008)(8936002)(81156014)(9686003)(81166006)(7416002)(8676002)(478600001)(6916009)(76116006)(66476007)(66556008)(64756008)(66946007)(66446008)(26005)(33656002)(6506007)(54906003)(2906002)(316002)(7696005)(186003)(86362001)(5660300002)(4744005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR04MB5631;
+ H:MN2PR04MB6991.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: s0UKCPbaVIEYfrJoR64SFOIDbL45K3L9TpSx8tY2RYlAOCrOtD+PLtsmIaOZzEp+Mto4HwQ1X53l1QVp7s3Y7DfIqWfAqpAVZ50BbA7Cx/1DPSKvWka0AbqFkFOK5pXuwM2r0lS4XH5sKu5XlWlnZq6v7OdebOLi8hPKZ7tjvosSoheNG1xEQE4RBYynvLJyCKOCFFokxAJa7+sSCpnU9LEHLRYfKX08ktjp3pRDtFcWAnbDGiUwrTgGTXRT+jb+0GBCPo9tKh6q+mRRXfRk0dqEvWCj9ZjUBLOdvN/JnthbfYev8Ay2EDj9q5CWq4dvqBN5XxbjrZs2XD9amXq9QoCZQe88aPfkkuuT5GxbLvsSh5LmX3YXMEJ9fkX1F808RqW3MOFW+tnGZe3yTXo6bJIP04Ep5XPZvB/KJ1GBsuquB//HBCkOkiGQVLhq63fy
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FE2B7B901D301637FFAD5C9BE21A8285409C406BA6EE29AD33BD25369339BAE02000:8
-X-MTK: N
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ea8ff0d8-1397-41a6-a1a8-08d791fde908
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jan 2020 16:40:01.6096 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: OdKrKHwBDq0oyKqbvZooTj+iza5vcjwY7eezVZIRu/93CqMg8lQVb1zRH6Knz4GSHN0iF+WnxHgfp/QeTKtWEQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB5631
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_083155_429313_AC6CDF39 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200105_084009_027928_A3D31408 
+X-CRM114-Status: GOOD (  13.61  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.144 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,8 +131,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,191 +142,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, yingjoe.chen@mediatek.com,
- Jiaxin Yu <jiaxin.yu@mediatek.com>
+Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "beanhuo@micron.com" <beanhuo@micron.com>,
+ "bvanassche@acm.org" <bvanassche@acm.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add reset controller API in watchdog driver.
-Besides watchdog, MTK toprgu module alsa provide sub-system (eg, audio,
-camera, codec and connectivity) software reset functionality.
+ 
+> Hi Avri,
+> 
+> On Sun, 2020-01-05 at 05:51 +0000, Avri Altman wrote:
+> > You have to squash patch 1 & 2, otherwise your patch 1 won't compile.
+> > Other than that: looks good to me.
+> > Thanks,
+> > Avri
+> 
+> Sorry because I sent 2 series in these two days.
+> 
+> Would you mean patch 1 is series: "scsi: ufs: fix error history and complete
+> device reset history" and patch 2 is series "scsi: ufs: pass device information to
+> apply_dev_quirks"?
+> 
+> Or patch 1 & 2 mean the first 2 commits in this series: "scsi: ufs: pass device
+> information to apply_dev_quirks"?
+This one.
 
-Signed-off-by: yong.liang <yong.liang@mediatek.com>
-Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
----
- drivers/watchdog/mtk_wdt.c | 105 ++++++++++++++++++++++++++++++++++++-
- 1 file changed, 104 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
-index 9c3d0033260d..d6a6393f609d 100644
---- a/drivers/watchdog/mtk_wdt.c
-+++ b/drivers/watchdog/mtk_wdt.c
-@@ -9,6 +9,9 @@
-  * Based on sunxi_wdt.c
-  */
- 
-+#include <dt-bindings/reset-controller/mt2712-resets.h>
-+#include <dt-bindings/reset-controller/mt8183-resets.h>
-+#include <linux/delay.h>
- #include <linux/err.h>
- #include <linux/init.h>
- #include <linux/io.h>
-@@ -16,10 +19,11 @@
- #include <linux/module.h>
- #include <linux/moduleparam.h>
- #include <linux/of.h>
-+#include <linux/of_device.h>
- #include <linux/platform_device.h>
-+#include <linux/reset-controller.h>
- #include <linux/types.h>
- #include <linux/watchdog.h>
--#include <linux/delay.h>
- 
- #define WDT_MAX_TIMEOUT		31
- #define WDT_MIN_TIMEOUT		1
-@@ -44,6 +48,9 @@
- #define WDT_SWRST		0x14
- #define WDT_SWRST_KEY		0x1209
- 
-+#define WDT_SWSYSRST		0x18U
-+#define WDT_SWSYS_RST_KEY	0x88000000
-+
- #define DRV_NAME		"mtk-wdt"
- #define DRV_VERSION		"1.0"
- 
-@@ -53,8 +60,94 @@ static unsigned int timeout;
- struct mtk_wdt_dev {
- 	struct watchdog_device wdt_dev;
- 	void __iomem *wdt_base;
-+	spinlock_t lock; /* protects WDT_SWSYSRST reg */
-+	struct reset_controller_dev rcdev;
-+};
-+
-+struct mtk_wdt_data {
-+	int toprgu_sw_rst_num;
- };
- 
-+static const struct mtk_wdt_data mt2712_data = {
-+	.toprgu_sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
-+};
-+
-+static const struct mtk_wdt_data mt8183_data = {
-+	.toprgu_sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
-+};
-+
-+static int toprgu_reset_update(struct reset_controller_dev *rcdev,
-+			       unsigned long id, bool assert)
-+{
-+	unsigned int tmp;
-+	unsigned long flags;
-+	struct mtk_wdt_dev *data =
-+		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
-+
-+	spin_lock_irqsave(&data->lock, flags);
-+
-+	tmp = readl(data->wdt_base + WDT_SWSYSRST);
-+	if (assert)
-+		tmp |= BIT(id);
-+	else
-+		tmp &= ~BIT(id);
-+	tmp |= WDT_SWSYS_RST_KEY;
-+	writel(tmp, data->wdt_base + WDT_SWSYSRST);
-+
-+	spin_unlock_irqrestore(&data->lock, flags);
-+
-+	return 0;
-+}
-+
-+static int toprgu_reset_assert(struct reset_controller_dev *rcdev,
-+			       unsigned long id)
-+{
-+	return toprgu_reset_update(rcdev, id, true);
-+}
-+
-+static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
-+				 unsigned long id)
-+{
-+	return toprgu_reset_update(rcdev, id, false);
-+}
-+
-+static int toprgu_reset(struct reset_controller_dev *rcdev,
-+			unsigned long id)
-+{
-+	int ret;
-+
-+	ret = toprgu_reset_assert(rcdev, id);
-+	if (ret)
-+		return ret;
-+
-+	return toprgu_reset_deassert(rcdev, id);
-+}
-+
-+static const struct reset_control_ops toprgu_reset_ops = {
-+	.assert = toprgu_reset_assert,
-+	.deassert = toprgu_reset_deassert,
-+	.reset = toprgu_reset,
-+};
-+
-+static int toprgu_register_reset_controller(struct platform_device *pdev,
-+					    int rst_num)
-+{
-+	int ret;
-+	struct mtk_wdt_dev *mtk_wdt = platform_get_drvdata(pdev);
-+
-+	spin_lock_init(&mtk_wdt->lock);
-+
-+	mtk_wdt->rcdev.owner = THIS_MODULE;
-+	mtk_wdt->rcdev.nr_resets = rst_num;
-+	mtk_wdt->rcdev.ops = &toprgu_reset_ops;
-+	mtk_wdt->rcdev.of_node = pdev->dev.of_node;
-+	ret = devm_reset_controller_register(&pdev->dev, &mtk_wdt->rcdev);
-+	if (ret != 0)
-+		dev_err(&pdev->dev,
-+			"couldn't register wdt reset controller: %d\n", ret);
-+	return ret;
-+}
-+
- static int mtk_wdt_restart(struct watchdog_device *wdt_dev,
- 			   unsigned long action, void *data)
- {
-@@ -155,6 +248,7 @@ static int mtk_wdt_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct mtk_wdt_dev *mtk_wdt;
-+	const struct mtk_wdt_data *wdt_data;
- 	int err;
- 
- 	mtk_wdt = devm_kzalloc(dev, sizeof(*mtk_wdt), GFP_KERNEL);
-@@ -190,6 +284,13 @@ static int mtk_wdt_probe(struct platform_device *pdev)
- 	dev_info(dev, "Watchdog enabled (timeout=%d sec, nowayout=%d)\n",
- 		 mtk_wdt->wdt_dev.timeout, nowayout);
- 
-+	wdt_data = of_device_get_match_data(dev);
-+	if (wdt_data) {
-+		err = toprgu_register_reset_controller(pdev,
-+						       wdt_data->toprgu_sw_rst_num);
-+		if (err)
-+			return err;
-+	}
- 	return 0;
- }
- 
-@@ -218,7 +319,9 @@ static int mtk_wdt_resume(struct device *dev)
- #endif
- 
- static const struct of_device_id mtk_wdt_dt_ids[] = {
-+	{ .compatible = "mediatek,mt2712-wdt", .data = &mt2712_data },
- 	{ .compatible = "mediatek,mt6589-wdt" },
-+	{ .compatible = "mediatek,mt8183-wdt", .data = &mt8183_data },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, mtk_wdt_dt_ids);
--- 
-2.18.0
+> 
+> Thanks a lot.
+> Stanley
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
