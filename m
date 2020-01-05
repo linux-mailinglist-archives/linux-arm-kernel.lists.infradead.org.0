@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A31B7130825
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 14:10:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63234130859
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 15:00:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QVYcYCsUpIadgV9JRrO2dtvHDNEQRA7pAx2bQYLJ4WU=; b=RbCSBuRTTiOiv+
-	KLrC58H/+z4WeXX7yb9wzw1XmrSmmEIQ5S7d1TzGg3MvTrjF8t2VPmBzmADNPd21bcdkD4X9iUZg5
-	QL1/hdPxG1Op5Ae2cZR3mDSmMzey8UOjs6A3YELZET6ht68FnHLi6+lnO8O5zPbcK8Zp26Kyr3XRz
-	IqbUWa2Mb3KGS3KAKeYvpjnlZqCqTCRrn51qd4e8J8g6qB/Y4+2JAHp7n/LUQ+Y6vxE2s229eo2dz
-	Y7DTh1Qn+OpBbY6pe7MZOPaGRk/Y/5/21a3jST72TnjCRDl6SBVYHstns7gqDyY2oRTulpo32RAs3
-	FLccC8bHeYGxS84TZDbw==;
+	List-Owner; bh=5q2+k0Rd2FEs5p/MIOEQ++d7kBVPfHC3G64R8XVqLd4=; b=OZkHYrC76Td9re
+	6kgZKMqTXHoJ+9pu80uzX4agZ9iKWfOA8Agjs3E+w3wdfaZ0vr1ydkpJ30EgJpMMVvlXtnu2GlZNw
+	rGX7ZPaYvt1qRAZBHGGmL0t2ZLS7sx7Vh4mZaRNeh/DiyQmFSNXQXGyZy7eFXNuAeH3RNeJQ2ZUtm
+	bjC2CMVfFHsroKJyruZAAVFy7wyaSSmC/WwLIWjmKyHJQ81eHbqUEHRIPcyH/SuEFmaEn17w0QuwR
+	72VQGIw8hbyXBR/wecpMby9Q0cdy10wOmbznkXmFj/ZcyQvoTZLA2Hd7bCbg5gznzqsdky4u++FSq
+	VCiFNEguJ2qupiSH7Sag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io5fm-0008Ed-FL; Sun, 05 Jan 2020 13:10:26 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1io6SU-0008Sj-Hr; Sun, 05 Jan 2020 14:00:46 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io5ff-0008Dv-VI; Sun, 05 Jan 2020 13:10:21 +0000
-X-UUID: 2a7ce2bb406e4bcab8638215ffd1b544-20200105
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=FILJcOCG2sGK9VzTixRtMJdMzeT4XRTUIkt6/bNT4+4=; 
- b=JMy7lr1A8KGvf71DVhfIAv9ELTKHAViKU7IGdjHKtUWqSGVWaaZ18T316oPaqaUGcA25TJ5+Fqh8OwQR8iIVW/qzkwUDr26B0ZRFo02S9BVBPXbM7y0JAdBeWbriogN9HRBzxCRx9uNKLB9jrm1kDdYQrYzISCYz5qAVZKvWHVU=;
-X-UUID: 2a7ce2bb406e4bcab8638215ffd1b544-20200105
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 774048252; Sun, 05 Jan 2020 05:10:12 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 05:10:38 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 Jan 2020 21:09:10 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 5 Jan 2020 21:08:35 +0800
-Message-ID: <1578229802.17435.3.camel@mtkswgap22>
-Subject: Re: [PATCH v1 0/3] scsi: ufs: pass device information to
- apply_dev_quirks
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Sun, 5 Jan 2020 21:10:02 +0800
-In-Reply-To: <MN2PR04MB69913F0B671032A388747CF7FC3D0@MN2PR04MB6991.namprd04.prod.outlook.com>
-References: <1578200118-29547-1-git-send-email-stanley.chu@mediatek.com>
- <MN2PR04MB69913F0B671032A388747CF7FC3D0@MN2PR04MB6991.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1io6SO-0008Rv-K1
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 14:00:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=9/Ss68klY4YyT5Edf8xRawChy/z8+Io+mzqZfbggB1g=; b=Jz8gXJFXGS0RRZWop5wytUHcw
+ 7F6A18F+QElbmdVrpPFeigxyFdEV43ijJy7hJnZuuVekyWiqwIlSJueWrL4lCHVbGtflxKLJSGWU/
+ YtrTNhh0lN5kFcYUFUz5+kcA65GxIGqtHR5RC2WYF6wwzfrMdwj25mk7cIOUx80YE6BlFwuk9RYQu
+ MrK/rZsIJv5mywui6rvvWA2nGBE0LT5SSklmVGH5Uwveu1HnXR82bGtXQKB4TywwUCaGeXBc2K5nJ
+ e/ZYMLcn09ejAqAdNPh1apAtRuzVd20kKwNoZLz/AgdwGAXL0zOzrsCuYSV8s2MuTIrn0vW2yyCWq
+ MOAaJRRpQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:58440)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1io6S7-00069d-EX; Sun, 05 Jan 2020 14:00:23 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1io6Ry-00057m-AP; Sun, 05 Jan 2020 14:00:14 +0000
+Date: Sun, 5 Jan 2020 14:00:14 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: hanterliu@gmail.com
+Subject: Re: [PATCH] ARM:alignment:correct variable type of nr_regs
+Message-ID: <20200105140014.GJ25745@shell.armlinux.org.uk>
+References: <1578190656-19270-1-git-send-email-hanterliu@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1578190656-19270-1-git-send-email-hanterliu@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_051020_015036_6F537B2A 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200105_060040_806624_D85812D1 
+X-CRM114-Status: GOOD (  14.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -72,8 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,46 +86,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Cc: hanter Liu <hanterliu@gamil.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
+On Sun, Jan 05, 2020 at 10:17:36AM +0800, hanterliu@gmail.com wrote:
+> From: hanter Liu <hanterliu@gamil.com>
+> 
+> if ldmstm instruction U bit is unset, nr_regs
+> should be negative value, so change variable
+> type of nr_regs from unsigned int to int.
+> 
+> Signed-off-by: hanter Liu <hanterliu@gamil.com>
 
-On Sun, 2020-01-05 at 05:51 +0000, Avri Altman wrote:
-> You have to squash patch 1 & 2, otherwise your patch 1 won't compile.
-> Other than that: looks good to me.
-> Thanks,
-> Avri
+Hi,
 
-Sorry because I sent 2 series in these two days.
+What observable bug is this fixing, or is this just a clean up? Please
+clarify.
 
-Would you mean patch 1 is series: "scsi: ufs: fix error history and
-complete device reset history" and patch 2 is series "scsi: ufs: pass
-device information to apply_dev_quirks"?
+Thanks.
 
-Or patch 1 & 2 mean the first 2 commits in this series: "scsi: ufs: pass
-device information to apply_dev_quirks"?
+> ---
+>  arch/arm/mm/alignment.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
+> index 788c5cf..d8e3bd9 100644
+> --- a/arch/arm/mm/alignment.c
+> +++ b/arch/arm/mm/alignment.c
+> @@ -499,7 +499,8 @@ do_alignment_ldrstr(unsigned long addr, u32 instr, struct pt_regs *regs)
+>  static int
+>  do_alignment_ldmstm(unsigned long addr, u32 instr, struct pt_regs *regs)
+>  {
+> -	unsigned int rd, rn, correction, nr_regs, regbits;
+> +	int nr_regs;
+> +	unsigned int rd, rn, correction, regbits;
+>  	unsigned long eaddr, newaddr;
+>  
+>  	if (LDM_S_BIT(instr))
+> -- 
+> 2.7.4
+> 
+> 
 
-Thanks a lot.
-Stanley
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
