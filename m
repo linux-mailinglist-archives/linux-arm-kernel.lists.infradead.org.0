@@ -2,65 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFE4F1306EA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 10:16:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99D21130733
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 11:47:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YORKT0ppVa6n980LzbUQyxbWvw2C6aaW61quKbixVzo=; b=O6up1snkYKYxnd
-	fNYUCi8WCI4GBzuVzyA5Kf57C7i70GnEeJWFEXuE5mTJ2lmbs3bPHsQRFVC4lN1bLj0SBV66AYtFr
-	GUTu4AO07gJK8aIALWmelFwEBU6vHv0ItGKccJGSVVRj4J7NYLZqAop0WNkNZ/cgv+X39OcxqCNW5
-	8Ek1WImOn/n1chA8qD+VBbjvoRmiNCZyuld0z6pUW4VOTf+V6dV7LN6+N2zqhAj+i2P8PrNhOen+u
-	xwoxNUo68RoFJmvqnLyAqQimnFpwGmAWJ5Dg4YqZeguydETD0hPdq1uDVGJkGUVri3Dw2SOh2Qi3H
-	+lCfc9ZjIIkQfDfVZwEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nBLx6JUOGjGrn7yFnuVs729MTfOdu0MyzfjLQQws5CU=; b=cXEbrMah0aMP65
+	Dz2ulAod81CWq8CU7nNmy2025X6nXBz4fpc9SQznlzs80F1zg4W59WHTWerRTu+oQkiK5EqIG/Zdz
+	QRe5Gh5/+l/akq4hVrXvHkYMP8FfnhOw5PVqNbNQm4dQsKGJYIkMfx+yw7VfrQ0vau7HDfbLd5w/v
+	CEAt78nBEutX4YetlKfiJeTZ6y1UzBgFyb+KfFOL0RawOS4cgFfLG5nDDr9DfguUACVAtSjjA2N2e
+	ynQJL8FFaQSzQqJd4q278SrJHbeOyvW5ok2U7EZ8Xodi/0xNsvwwvQx6tMxwnLVHseQM4eqq7XEB7
+	Eet+Ro+c0s/+guhdLaOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io21e-0007eg-01; Sun, 05 Jan 2020 09:16:46 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1io3R0-00008z-TA; Sun, 05 Jan 2020 10:47:02 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io21Q-0007dA-4G; Sun, 05 Jan 2020 09:16:34 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1io215-0007wK-3N; Sun, 05 Jan 2020 10:16:11 +0100
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from dell2.five-lan.de (p508F34C7.dip0.t-ipconnect.de
- [80.143.52.199]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- 0059G9tA005418
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Sun, 5 Jan 2020 10:16:09 +0100
-Subject: Re: [PATCH 5/5] arm64: dts: rockchip: Enable mp8859 regulator on
- rk3399-roc-pc
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20200104153321.6584-1-m.reichl@fivetechno.de>
- <20200104153321.6584-6-m.reichl@fivetechno.de> <11639547.aalzkRAYeW@phil>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Message-ID: <2dd59b6a-7890-8546-8030-198c6ae8608b@fivetechno.de>
-Date: Sun, 5 Jan 2020 10:16:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1io3Qb-0008Rs-Fe; Sun, 05 Jan 2020 10:46:40 +0000
+X-UUID: 4c2f27ff799c4e09abf7c00a8b2d19af-20200105
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=lA5PzyXuyizUyRDDlXySD7ztXLzdwWD6WEfL0quguyU=; 
+ b=HHLi2PYBBcwxhcMDxTY4DWHgLRp73zYcGBUpCWH5jq0Il7+4y0ad0Gnubn00kHyCGEio7urgihAo4WfvP0bwTmgpZdIBiUuD+fWjKyeX14DRf+saGMXwRQmnmjR+A9s3v/PF3trUJmWsa6hNy3lUor7PpKhcIbRlTFXHx0COXu0=;
+X-UUID: 4c2f27ff799c4e09abf7c00a8b2d19af-20200105
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chao.hao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 164975596; Sun, 05 Jan 2020 02:46:27 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 02:46:27 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 Jan 2020 18:46:00 +0800
+Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Sun, 5 Jan 2020 18:44:56 +0800
+From: Chao Hao <chao.hao@mediatek.com>
+To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
+ "Matthias Brugger" <matthias.bgg@gmail.com>
+Subject: [PATCH v2 00/19] MT6779 IOMMU SUPPORT
+Date: Sun, 5 Jan 2020 18:45:04 +0800
+Message-ID: <20200105104523.31006-1-chao.hao@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <11639547.aalzkRAYeW@phil>
-Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578215792;
- ccc61575; 
-X-HE-SMSGID: 1io215-0007wK-3N
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_011632_308927_4750F86F 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200105_024637_530848_B1143EE5 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,67 +86,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+Cc: Anan Sun <anan.sun@mediatek.com>, devicetree@vger.kernel.org,
+ Jun Yan <jun.yan@mediatek.com>, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Chao Hao <chao.hao@mediatek.com>,
+ iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
+ Yong Wu <yong.wu@mediatek.com>, Cui Zhang <zhang.cui@mediatek.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpBbSAwNC4wMS4yMCB1bSAyMjoyMyBzY2hyaWViIEhlaWtvIFN0dWVibmVyOgo+
-IEhpIE1hcmt1cywKPiAKPiBBbSBTYW1zdGFnLCA0LiBKYW51YXIgMjAyMCwgMTY6MzI6NDkgQ0VU
-IHNjaHJpZWIgTWFya3VzIFJlaWNobDoKPj4gVGhlIHJrMzM5OS1yb2MtcGMgdXNlcyBhIE1QODg1
-OSBEQy9EQyBjb252ZXJ0ZXIgZm9yIDEyViBzdXBwbHkuCj4+IFRoaXMgc3VwcGxpZXMgNVYgb25s
-eSBpbiBkZWZhdWx0IHN0YXRlIGFmdGVyIGJvb3RpbmcuCj4gCj4gSnVzdCBmb3IgbXkgdW5kZXJz
-dGFuZGluZyAuLi4gYm90aCB0aGUgb2xkIHN0YXRpYyByZWd1bGF0b3IgYmVmb3JlIGFzCj4gd2Vs
-bCBhcyB0aGUgbmV3IGkyYyBub2RlIHNhaWQgdG8gc3VwcGx5IDEyViwgYnV0IGFib3ZlIHlvdSBz
-YXkgdGhhdAo+IHRoZSBkZWZhdWx0IGlzIDVWIC4uLiBzbyBJJ20gd29uZGVyaW5nIHdobyBjb25m
-aWd1cmVkIHRoZSAxMlYgYmVmb3JlLgo+IAo+IE9yIHdhcyBpdCB0aGUgY2FzZSB0aGF0IHRoZSBv
-bGQgcmVndWxhdG9yIG5vZGUgd2FzIGp1c3Qgd3JvbmcgYW5kIHdlCj4gaGFkIDVWIHJ1bm5pbmcg
-b24gdGhlIGRjXzEydiBsaW5lPwoKWWVzLCB0aGUgZGNfMTJ2IGxpbmUgd2FzIHJ1bm5pbmcgYXQg
-NVYgKG1lYXN1cmVkIDQsN1YpIGFzIGl0IGlzIHRoZQpkZWZhdWx0IHBvd2VyIHVwIHZhbHVlIGZv
-ciB0aGUgTVA4ODU5LiBUaGlzIGlzIGFzIGRvY3VtZW50ZWQgaW4gdGhlIGRhdGEKc2hlZXQgWzFd
-LgoKWzFdIGh0dHBzOi8vd3d3Lm1vbm9saXRoaWNwb3dlci5jb20vZW4vZG9jdW1lbnR2aWV3L3By
-b2R1Y3Rkb2N1bWVudC9pbmRleC92ZXJzaW9uLzIvZG9jdW1lbnRfdHlwZS9EYXRhc2hlZXQvbGFu
-Zy9lbi9za3UvTVA4ODU5L2RvY3VtZW50X2lkLzQwMzMvCgpHcnXDnwotLQpNYXJrdXMKPiAKPiBU
-aGFua3MKPiBIZWlrbwo+IAo+PiBOb3cgd2UgY2FuIGNvbnRyb2wgdGhlIG91dHB1dCB2b2x0YWdl
-IHZpYSBJMkMgaW50ZXJmYWNlLgo+PiBBZGQgYSBub2RlIGZvciB0aGUgZHJpdmVyIHRvIHJlYWNo
-IDEyVi4KPj4gCj4+IFNpZ25lZC1vZmYtYnk6IE1hcmt1cyBSZWljaGwgPG0ucmVpY2hsQGZpdmV0
-ZWNobm8uZGU+Cj4+IC0tLQo+PiAgLi4uL2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMu
-ZHRzaSAgICAgIHwgMzIgKysrKysrKysrKystLS0tLS0tLQo+PiAgMSBmaWxlIGNoYW5nZWQsIDE4
-IGluc2VydGlvbnMoKyksIDE0IGRlbGV0aW9ucygtKQo+PiAKPj4gZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9i
-b290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggOGUwMWIwNDE0NGI3
-Li45ZjIyNWU5YzNkNTQgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
-aXAvcmszMzk5LXJvYy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
-aXAvcmszMzk5LXJvYy1wYy5kdHNpCj4+IEBAIC0xMTAsMjAgKzExMCw2IEBAIHZjY192YnVzX3R5
-cGVjMDogdmNjLXZidXMtdHlwZWMwIHsKPj4gIAkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8
-NTAwMDAwMD47Cj4+ICAJfTsKPj4gIAo+PiAtCS8qCj4+IC0JICogc2hvdWxkIGJlIHBsYWNlZCBp
-bnNpZGUgbXA4ODU5LCBidXQgbm90IHVudGlsIG1wODg1OSBoYXMKPj4gLQkgKiBpdHMgb3duIGR0
-LWJpbmRpbmcuCj4+IC0JICovCj4+IC0JZGNfMTJ2OiBtcDg4NTktZGNkYzEgewo+PiAtCQljb21w
-YXRpYmxlID0gInJlZ3VsYXRvci1maXhlZCI7Cj4+IC0JCXJlZ3VsYXRvci1uYW1lID0gImRjXzEy
-diI7Cj4+IC0JCXJlZ3VsYXRvci1hbHdheXMtb247Cj4+IC0JCXJlZ3VsYXRvci1ib290LW9uOwo+
-PiAtCQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47Cj4+IC0JCXJlZ3VsYXRv
-ci1tYXgtbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gLQkJdmluLXN1cHBseSA9IDwmdmNjX3Zi
-dXNfdHlwZWMwPjsKPj4gLQl9Owo+PiAtCj4+ICAJLyogc3dpdGNoZWQgYnkgcG1pY19zbGVlcCAq
-Lwo+PiAgCXZjYzF2OF9zMzogdmNjYTF2OF9zMzogdmNjMXY4LXMzIHsKPj4gIAkJY29tcGF0aWJs
-ZSA9ICJyZWd1bGF0b3ItZml4ZWQiOwo+PiBAQCAtNTQ2LDYgKzUzMiwyNCBAQCBmdXNiMDogdXNi
-LXR5cGVjQDIyIHsKPj4gIAkJdmJ1cy1zdXBwbHkgPSA8JnZjY192YnVzX3R5cGVjMD47Cj4+ICAJ
-CXN0YXR1cyA9ICJva2F5IjsKPj4gIAl9Owo+PiArCj4+ICsJbXA4ODU5OiByZWd1bGF0b3JANjYg
-ewo+PiArCQljb21wYXRpYmxlID0gIm1wcyxtcDg4NTkiOwo+PiArCQlyZWcgPSA8MHg2Nj47Cj4+
-ICsJCWRjXzEydjogbXA4ODU5X2RjZGMgewo+PiArCQkJcmVndWxhdG9yLW5hbWUgPSAiZGNfMTJ2
-IjsKPj4gKwkJCXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gKwkJCXJl
-Z3VsYXRvci1tYXgtbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gKwkJCXJlZ3VsYXRvci1hbHdh
-eXMtb247Cj4+ICsJCQlyZWd1bGF0b3ItYm9vdC1vbjsKPj4gKwkJCXZpbi1zdXBwbHkgPSA8JnZj
-Y192YnVzX3R5cGVjMD47Cj4+ICsKPj4gKwkJCXJlZ3VsYXRvci1zdGF0ZS1tZW0gewo+PiArCQkJ
-CXJlZ3VsYXRvci1vbi1pbi1zdXNwZW5kOwo+PiArCQkJCXJlZ3VsYXRvci1zdXNwZW5kLW1pY3Jv
-dm9sdCA9IDwxMjAwMDAwMD47Cj4+ICsJCQl9Owo+PiArCQl9Owo+PiArCX07Cj4+ICB9Owo+PiAg
-Cj4+ICAmaTJzMCB7Cj4+IAo+IAo+IAo+IAo+IAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCj4gTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Cj4g
-TGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPiAKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+This patchset adds mt6779 iommu support and adjusts mtk iommu software architecture mainly.
+1. Add mt6779 basic function, such as smi_larb port define, registers define and so on.
+2. In addition, this patchset will adjust current mtk iommu SW architecture mainly to adapt all the mtk platforms:
+   Firstly, mt6779 iommu can support more HW modules, but some modules have special requirements for iova region,
+   for example, CCU only can access 0x4000_0000~0x47ff_ffff, VPU only can access 0x7da0_0000~0x7fbf_ffff. Current
+   architecture only support one iommu domain(include 0~4GB), all the modules allocate iova from 0~4GB region, so
+   it doesn't ensure to allocate expected iova region for special module(CCU and VPU). In order to resolve the problem,
+   we will create different iommu domains for special module, and every domain can include iova region which module needs.
+   Secondly, all the iommus share one page table for current architecture by "mtk_iommu_get_m4u_data", to make the
+   architecture look clearly, we will create a global page table firstly(mtk_iommu_pgtable), and all the iommus can
+   use it. One page table can include 4GB iova space, so multiple iommu domains are created based on the same page table.
+   New SW architecture diagram is as below:
+
+                         iommu0   iommu1
+                            |        |
+                            ----------
+                                 |
+                        mtk_iommu_pgtable
+                                 |
+            ------------------------------------------
+            |                    |                   |
+      mtk_iommu_domain1   mtk_iommu_domain2   mtk_iommu_domain3
+            |                    |                   |
+       iommu_group1         iommu_group2        iommu_group3
+            |                    |                   |
+       iommu_domain1       iommu_domain2        iommu_domain3
+            |                    |                   |
+     iova region1(normal)  iova region2(CCU)   iova region3(VPU)
+
+change notes:
+ v2:
+  1. Rebase on v5.5-rc1.
+  2. Delete M4U_PORT_UNKNOWN define because of not use it.
+  3. Correct coding format.
+  4. Rename offset=0x48 register.
+  5. Split "iommu/mediatek: Add mt6779 IOMMU basic support(patch v1)" to several patches(patch v2).
+
+ v1:
+  http://lists.infradead.org/pipermail/linux-mediatek/2019-November/024567.html
+
+
+ Chao Hao (19):
+   dt-bindings: mediatek: Add bindings for MT6779
+   iommu/mediatek: Add m4u1_mask to distinguish m4u_id
+   iommu/mediatek: Extend larb_remap to larb_remap[2]
+   iommu/mediatek: Rename offset=0x48 register
+   iommu/mediatek: Put inv_sel_reg in the plat_data for preparing add
+                   0x2c support in mt6779
+   iommu/mediatek: Add new flow to get SUB_COMMON ID in translation fault
+   iommu/mediatek: Add REG_MMU_WR_LEN reg define prepare for mt6779
+   iommu/mediatek: Add mt6779 basic support
+   iommu/mediatek: Add mtk_iommu_pgtable structure
+   iommu/mediatek: Remove mtk_iommu_domain_finalise
+   iommu/mediatek: Remove pgtable info in mtk_iommu_domain
+   iommu/mediatek: Change get the way of m4u_group
+   iommu/mediatek: Add smi_larb info about device
+   iommu/mediatek: Add mtk_domain_data structure
+   iommu/mediatek: Remove the usage of m4u_dom variable
+   iommu/mediatek: Remove mtk_iommu_get_m4u_data api
+   iommu/mediatek: Add iova reserved function
+   iommu/mediatek: Change single domain to multiple domains
+   iommu/mediatek: Add multiple mtk_iommu_domain support for mt6779
+
+  .../bindings/iommu/mediatek,iommu.txt         |   2 +
+  drivers/iommu/mtk_iommu.c                     | 493 +++++++++++++++---
+  drivers/iommu/mtk_iommu.h                     |  50 +-
+  include/dt-bindings/memory/mt6779-larb-port.h | 215 ++++++++
+  4 files changed, 683 insertions(+), 77 deletions(-)
+
+ --
+ 2.18.0
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
