@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDFD130583
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 03:40:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 505531305AC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Jan 2020 05:18:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5jHZBgbOWhKeGyc8zTsiP9znhVmGY58mOLYemE53mqk=; b=MlD
-	fAASg+FhKNZgvNXEIJN0jtqVzl5DRbufHTUiV8AFnpR5u9FG5OujTq54m9E0JOFg4rS14ECzvgH/Q
-	aCSX3//4bH/OJnMPcqem6xp5xpniLzxyE0DjM6hevlXL2jN0jZKsD38aBhknCg09QfJOkdPHIzDcV
-	ZBduYZwj5YbGjla1kEVaxLAzZYPYBGSSG3Hv6YjODNQqE4MEBvNEmkQKz+z2Li+VlPn0jwtL1bpJO
-	CukYY1S9Nxc0PvI/fBpSv/w9BQ+aAUUqsU+CBH2wYyF5BpgN8GJpDEmgHWTvQTo5WhIwnaZJV2z2r
-	ZwtdoTyo0RViwfejtc+Qk1N9KGa5TIQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M590A+PbfG/AD4Y17SsPZ1o7cDQu9v8nkPgGJ9UAh1Q=; b=CZN6VnBVrm1WPg
+	/CoHd+mk+ctORiGpkYETSjwa/NsmB2qRqI+bYlRDCoJciTsvuVosG+oDNS7MCr/Z0Zyh0K1YAyW1Z
+	rXyTt+av9WO5FbK1nwwGkuMAaUXz87DvIByGmPeIeKIlz2VcFSM+TkyHoS/W28tXsYNcpZgiULD3e
+	IFEvJiaiZEhgrx71w9eRzEhT0jAPvtE7WtDoSQpCvRMzBYNF4wj5b42lbB0hLcfL1q3qSYO7VEMWg
+	UHoLxaoug4sGrrIDxh2kbR27SjTkwoEQxWEIhk23nhOAjnaYWwq/B0M97wSJxQvsj0qriju/kkKsZ
+	xhR+pKQqR4RY5VGE41Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1invpt-0007sU-5x; Sun, 05 Jan 2020 02:40:13 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1inxNI-0004SM-Pl; Sun, 05 Jan 2020 04:18:48 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1invpf-0007r2-CD
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 02:40:00 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id bg7so6276784pjb.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 04 Jan 2020 18:39:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=FvN0OALrqqthHRQdlBaHVurVWlA48kDjs+DhgYUoFLs=;
- b=kivdRfdDgBMseccLXwBxcCrqpg7sS7rxF41B2ljiGYYzLXqIEjxQWWTKQGEtTK+YVo
- rPi4nkSz7DubooNk90HzkbtBnD4ymCmsqwmgtgRTM9u5ZwmLIveSg/w52TBsqdBjID8z
- D2ouf7R7ztxe5wQfgcID1+x3fCcTmDymPxqyhoswN3tXV4CHzGaDNzhBpbforMoNi0c+
- f9RMY6TXY60OsslIjR0zJzcKbZkyaapMwjQnk5KodyXacz5W+BZMm1uqDr6axO0GGSwU
- UuzcJHNM3if7C9xiDBY+k/6+K6ZXKA3I6AvkqVQaixP+h7YnI62Y0PLHmC8w2DfPVVip
- 5fVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=FvN0OALrqqthHRQdlBaHVurVWlA48kDjs+DhgYUoFLs=;
- b=kVn2mXXQP+zdmx9d1hpY3RcAXcXe0a3WXdTyvYnrVytBsd2qgXGKqcrMiRIqObg54a
- AEMNtDneOfHWjdJJ8+ADoEKO0BWf9AMy2NGnnnQK31s7yVYgLzwIruKnXFg0fqoeWCu8
- eI2uEQK2Ugzsy6RrwjjL7C1lgOXu0+491a1JTGr6JQFBGXa9epughbt2H9P8o30EH2Pi
- YHR50JD818eM30fT/px7JU0I+dsFwC1xeflJOz7FbDMjAdATB42tjT6c/ZLpXjxvtRSu
- glMlIaCkEvTGaqeepu8mjA953OvJvAn6T5ZuaxfNI1Jj888LiX9jkTdUbSBoR5AGLkca
- Szrg==
-X-Gm-Message-State: APjAAAW7QOhl9I+PLQ7mLP8GpL63VututyGuyE9W7tK/HSwOryiXR4xE
- F8geYB36BhbqBMvlUHEbZEJUTTGHYFk=
-X-Google-Smtp-Source: APXvYqzbJ4DgsfW8i8SYBleQkCtuGg8ImSkmSylUfLzmzH07/0E+XBtMhZVykDxn6ttFCVU6i6ggFQ==
-X-Received: by 2002:a17:90a:8c8c:: with SMTP id
- b12mr35621883pjo.119.1578191995775; 
- Sat, 04 Jan 2020 18:39:55 -0800 (PST)
-Received: from localhost ([117.80.183.12])
- by smtp.gmail.com with ESMTPSA id r37sm19070660pjb.7.2020.01.04.18.39.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 04 Jan 2020 18:39:55 -0800 (PST)
-From: hanterliu@gmail.com
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM:alignment:correct variable type of nr_regs
-Date: Sun,  5 Jan 2020 10:39:22 +0800
-Message-Id: <1578191962-19634-1-git-send-email-hanterliu@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ id 1inxNB-0004R2-Tc
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Jan 2020 04:18:43 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id A2822159F0B0A;
+ Sat,  4 Jan 2020 20:18:33 -0800 (PST)
+Date: Sat, 04 Jan 2020 20:18:33 -0800 (PST)
+Message-Id: <20200104.201833.91020607861340266.davem@davemloft.net>
+To: jiping.ma2@windriver.com
+Subject: Re: [PATCH] stmmac: debugfs entry name is not be changed when udev
+ rename device name.
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200102013544.19271-1-jiping.ma2@windriver.com>
+References: <20200102013544.19271-1-jiping.ma2@windriver.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sat, 04 Jan 2020 20:18:34 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_183959_441028_9F9A0375 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200104_201841_962932_11D14B7D 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hanterliu[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,41 +63,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hanter Liu <hanterliu@gmail.com>, linux@armlinux.org.uk
-MIME-Version: 1.0
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: hanter Liu <hanterliu@gmail.com>
+From: Jiping Ma <jiping.ma2@windriver.com>
+Date: Thu, 2 Jan 2020 09:35:44 +0800
 
-if ldmstm instruction U bit is unset, nr_regs
-should be negative value, so change variable
-type of nr_regs from unsigned int to int.
+> Add one notifier for udev changes net device name.
+> 
+> Signed-off-by: Jiping Ma <jiping.ma2@windriver.com>
+> ---
+>  .../net/ethernet/stmicro/stmmac/stmmac_main.c | 28 +++++++++++++++++++
+>  1 file changed, 28 insertions(+)
+> 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> index b14f46a57154..3b05cb80eed7 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> @@ -4038,6 +4038,31 @@ static int stmmac_dma_cap_show(struct seq_file *seq, void *v)
+>  }
+>  DEFINE_SHOW_ATTRIBUTE(stmmac_dma_cap);
+>  
+> +/* Use network device events to rename debugfs file entries.
+> + */
+> +static int stmmac_device_event(struct notifier_block *unused,
+> +			       unsigned long event, void *ptr)
+> +{
+> +	struct net_device *dev = netdev_notifier_info_to_dev(ptr);
+> +	struct stmmac_priv *priv = netdev_priv(dev);
+> +
+> +	switch (event) {
+> +	case NETDEV_CHANGENAME:
 
-Signed-off-by: hanter Liu <hanterliu@gmail.com>
----
- arch/arm/mm/alignment.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+This notifier gets called for every single netdevice in the entire
+system.
 
-diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
-index 788c5cf..d8e3bd9 100644
---- a/arch/arm/mm/alignment.c
-+++ b/arch/arm/mm/alignment.c
-@@ -499,7 +499,8 @@ do_alignment_ldrstr(unsigned long addr, u32 instr, struct pt_regs *regs)
- static int
- do_alignment_ldmstm(unsigned long addr, u32 instr, struct pt_regs *regs)
- {
--	unsigned int rd, rn, correction, nr_regs, regbits;
-+	int nr_regs;
-+	unsigned int rd, rn, correction, regbits;
- 	unsigned long eaddr, newaddr;
- 
- 	if (LDM_S_BIT(instr))
--- 
-2.7.4
+You cannot just assume that the device that gets passed in here is
+an stmmac device.
 
+Look at how other drivers handle this to see how to do it correctly.
+
+Thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
