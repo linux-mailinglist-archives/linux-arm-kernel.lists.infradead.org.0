@@ -2,90 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4F9913134B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 15:01:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D3D313134D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 15:02:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XTKqgoxiKtuK0ihS4U/UI1zAZZRH8b2dcrtk/N5rsyQ=; b=m5M
-	g0yWInOnBUuJUsRUQfPaPGSsrWXdfGIEz/B+T2eEhho302FKws02nxPPBPdmt8O7TROElBCHleeHp
-	/ZKMPlgBSdsldmgYaL83rzsQ6FsH74cOxZahUHlbO0S94F9B+KiQBb/FCJSTSJ57ATkbxZpo9qqZH
-	ubQduB/sW0fgFERIxJFFMP2r+ptDtCVnZuZWq1tG/G5xKslF6lK6F1J5NFi0EhNxZRtrg5uwp+GMs
-	gmqRbDcD5P/BvVzg4Ad0kmHZH/IOaVFaM9XO5IYsCHcdZkXylrUmVfpAdoE7j6qVhmjbYEvySBZN+
-	iqJeJa0SYYqZmbfAjPyKtkt2T2UVSIQ==;
+	References:List-Owner; bh=SPf/HscRmBMkQ5MBVLCbXtNA6yqiFuvUkqhMrDe/NyY=; b=O7o
+	YqaD+NaNv74/G49URXpu1YphCIHwuiZ2cDafngRlrNQyBqUfsJ3RSLlReJYgQxkKPePE0/CKN6bHz
+	VDaCITBsIYE2lMhu/7sh31vacFjsx+pX9Nb2YAtjxRSnXnPZTzKiVIxGxR2iutdA38l+NNHR0FBGf
+	U+e0Bv2h62HNYTxVx2p0NZ4pNTU/EkARYmXB3RRxNjpmtqHM0kUukpZe/5+aMy3ZCvYlQJ+z5OYeI
+	ZOAcns3sG6TR6i+9z2g9rB8i/W5slt8VZn+6SxKcnErFWNZhkbt+AvFBDVlnR7yppilTpyMgTIGr2
+	OLZkAhI+IGMS2QNeRctgrOJQkXW99hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioSwN-0001p9-FW; Mon, 06 Jan 2020 14:01:07 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioSwG-0001oM-VP
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 14:01:02 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z7so49635885wrl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 06:00:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=RzIMtNvAGQDbPQVx0Hz3IAid0OWJww7Kls0bXG4Uy/E=;
- b=PHWtKbOq/CrEs4SUS0sUv0iWuifZsXc4GJvxG3DUxbB4axii0Sejhfh423vwJbn5ir
- s6IUgTdi/i/a7HmdLf7FFRncae8amgnaQHDmizwDygH2u6JBVkf9kt4dFiqMDXSw1RCe
- MewDaPHANWnLQkO6Sf6xgsSeUIdj/c8hzz0s3rTL3mug6xWH5+TE+6AbV/ehr7xEIkXu
- U+x1jNhka2otSOp2qRo1jK7QXsxJ+t/QjYtJprNIkhRb9vQpNoCC9PVdRcyICnmj745t
- lHiodzueeyX9ZGfz9wNHUgE8fD4EHCAjTtt67RxGO09OfuOLbQ8DKbQbQleVMR/7Fzyy
- OONg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RzIMtNvAGQDbPQVx0Hz3IAid0OWJww7Kls0bXG4Uy/E=;
- b=lQzLmZZtUOYumPFkke33pvZ/GncDFTbwY5eygBtwqezaRg6C63S7HhghBJYFu7eAh7
- Gyhx0CaFM+fHZww56YbvEODTMb+hDMe77gDQL/9YHZfZuZUTkeIirFrXkCkGQgsPq+o6
- v9FvmJJWFgdqEdsJ0qIJy6YHZB/yorGwMxlHzpdlfMikhllRYMkGXe92FcoYX4oc/pkY
- EEoGqyz/APHYHmQzWV8KZjHlx75vNx2FSMlPepS+pvo5MPIbDu71XawZvl6sCaV26ivk
- 5OeztfuPlupEuLKrFkE4C6ufYKtBbbpMwlyRg4ir0cnNJ58NJGHKU/Q+t4/yFc/WF+i9
- SnhA==
-X-Gm-Message-State: APjAAAXGjyEB89YsSTTmZNbY3tS5cP/14DDgUiy37Jtp8qVB7n8lPEcI
- s3BLGAgYt270PVVR+VnGM+w=
-X-Google-Smtp-Source: APXvYqwegU8fPwN/m0F//DfKIlBREr//Y7HVFmc5A7QaEiFngWeOC/9nSkyQ7d0wVBce3/I6w6Zv5w==
-X-Received: by 2002:a05:6000:1187:: with SMTP id
- g7mr49594123wrx.109.1578319257965; 
- Mon, 06 Jan 2020 06:00:57 -0800 (PST)
-Received: from localhost.localdomain ([197.254.95.38])
- by smtp.googlemail.com with ESMTPSA id p26sm22566715wmc.24.2020.01.06.06.00.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 06:00:57 -0800 (PST)
-From: Wambui Karuga <wambui.karugax@gmail.com>
-To: mripard@kernel.org,
-	wens@csie.org,
-	airlied@linux.ie,
-	daniel@ffwll.ch
-Subject: [PATCH] drm/sun4i: use PTR_ERR_OR_ZERO macro.
-Date: Mon,  6 Jan 2020 17:00:52 +0300
-Message-Id: <20200106140052.30747-1-wambui.karugax@gmail.com>
+	id 1ioSxO-00025M-Hv; Mon, 06 Jan 2020 14:02:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioSxG-00024j-OY
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 14:02:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC9E831B;
+ Mon,  6 Jan 2020 06:01:58 -0800 (PST)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1847B3F6C4;
+ Mon,  6 Jan 2020 06:01:57 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH] FIXUP! ARM: dts: sun8i: R40: Add SPI controllers nodes and
+ pinmuxes
+Date: Mon,  6 Jan 2020 14:01:49 +0000
+Message-Id: <20200106140149.231960-1-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_060101_029671_1D9C3D26 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_060202_836304_1AE5A335 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wambui.karugax[at]gmail.com)
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,86 +61,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the use of IS_ERR and PTR_ZERO macros by returning the
-PTR_ERR_OR_ZERO macro.
-Changes suggested by coccinelle. 
+The DMA controller is not in the mainline DT, so remove the broken
+reference from the SPI controller to that node.
 
-Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Reported-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/gpu/drm/sun4i/sun4i_dotclock.c     | 4 +---
- drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c | 4 +---
- drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c     | 4 +---
- drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c | 4 +---
- 4 files changed, 4 insertions(+), 12 deletions(-)
+ arch/arm/boot/dts/sun8i-r40.dtsi | 8 --------
+ 1 file changed, 8 deletions(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_dotclock.c b/drivers/gpu/drm/sun4i/sun4i_dotclock.c
-index 417ade3d2565..84c04d8192b3 100644
---- a/drivers/gpu/drm/sun4i/sun4i_dotclock.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_dotclock.c
-@@ -191,10 +191,8 @@ int sun4i_dclk_create(struct device *dev, struct sun4i_tcon *tcon)
- 	dclk->hw.init = &init;
- 
- 	tcon->dclk = clk_register(dev, &dclk->hw);
--	if (IS_ERR(tcon->dclk))
--		return PTR_ERR(tcon->dclk);
- 
--	return 0;
-+	return PTR_ERR_OR_ZERO(tcon->dclk);
- }
- EXPORT_SYMBOL(sun4i_dclk_create);
- 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
-index 2ff780114106..7a59505d6907 100644
---- a/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
-@@ -135,8 +135,6 @@ int sun4i_ddc_create(struct sun4i_hdmi *hdmi, struct clk *parent)
- 	ddc->m_offset = hdmi->variant->ddc_clk_m_offset;
- 
- 	hdmi->ddc_clk = devm_clk_register(hdmi->dev, &ddc->hw);
--	if (IS_ERR(hdmi->ddc_clk))
--		return PTR_ERR(hdmi->ddc_clk);
- 
--	return 0;
-+	return PTR_ERR_OR_ZERO(hdmi->ddc_clk);
- }
-diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-index b66fa27fe6ea..12a7b7b1c99c 100644
---- a/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-@@ -278,10 +278,8 @@ static int sun4i_hdmi_init_regmap_fields(struct sun4i_hdmi *hdmi)
- 	hdmi->field_ddc_sck_en =
- 		devm_regmap_field_alloc(hdmi->dev, hdmi->regmap,
- 					hdmi->variant->field_ddc_sck_en);
--	if (IS_ERR(hdmi->field_ddc_sck_en))
--		return PTR_ERR(hdmi->field_ddc_sck_en);
- 
--	return 0;
-+	return PTR_ERR_OR_ZERO(hdmi->field_ddc_sck_en);
- }
- 
- int sun4i_hdmi_i2c_create(struct device *dev, struct sun4i_hdmi *hdmi)
-diff --git a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c
-index a4d31fe3abff..fd09eff21b25 100644
---- a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c
-@@ -171,8 +171,6 @@ int sun8i_phy_clk_create(struct sun8i_hdmi_phy *phy, struct device *dev,
- 	priv->hw.init = &init;
- 
- 	phy->clk_phy = devm_clk_register(dev, &priv->hw);
--	if (IS_ERR(phy->clk_phy))
--		return PTR_ERR(phy->clk_phy);
- 
--	return 0;
-+	return PTR_ERR_OR_ZERO(phy->clk_phy)
- }
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index 06d579f6d44b..8f09a24b36ec 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -660,8 +660,6 @@
+ 			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
+ 			clock-names = "ahb", "mod";
+-			dmas = <&dma 24>, <&dma 24>;
+-			dma-names = "rx", "tx";
+ 			resets = <&ccu RST_BUS_SPI0>;
+ 			status = "disabled";
+ 			#address-cells = <1>;
+@@ -675,8 +673,6 @@
+ 			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
+ 			clock-names = "ahb", "mod";
+-			dmas = <&dma 25>, <&dma 25>;
+-			dma-names = "rx", "tx";
+ 			resets = <&ccu RST_BUS_SPI1>;
+ 			status = "disabled";
+ 			#address-cells = <1>;
+@@ -690,8 +686,6 @@
+ 			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI2>, <&ccu CLK_SPI2>;
+ 			clock-names = "ahb", "mod";
+-			dmas = <&dma 26>, <&dma 26>;
+-			dma-names = "rx", "tx";
+ 			resets = <&ccu RST_BUS_SPI2>;
+ 			status = "disabled";
+ 			#address-cells = <1>;
+@@ -705,8 +699,6 @@
+ 			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI3>, <&ccu CLK_SPI3>;
+ 			clock-names = "ahb", "mod";
+-			dmas = <&dma 27>, <&dma 27>;
+-			dma-names = "rx", "tx";
+ 			resets = <&ccu RST_BUS_SPI3>;
+ 			status = "disabled";
+ 			#address-cells = <1>;
 -- 
 2.17.1
 
