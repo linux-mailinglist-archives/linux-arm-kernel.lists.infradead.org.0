@@ -2,80 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63B4A131A17
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:08:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EC25131A27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:17:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sqhDyk6hFbKqSA+XtDrbmfAgJay+qxhc32Pnt7o7huI=; b=TbXRW9D2ZfrRGT
-	YCqdfTPeAiL5q9ZAF0SN0XIasyZ6GupVTbL2sFU1HN+ZmFsIAaweU86I1HDFkhusJVzdFaTtquFF3
-	fn0rwjjJTTBR7A5n4s0jfeQ2C0RpuR4UHnmSIHQuTa7vcvKpmVi98Tulesai1hz7AkoJwozxxiBBv
-	THudU2n2gU/AhQWzLSjViIWrW5pgDH/WhunLhTTI2FQZOkEE6RYQwbSQYJlwy1TmWOb2lixRSQpUg
-	xUDpqOP93zdXqbA7CF4iKJs6XgyS/7Pdfc5tJOe6bcLQysWcKXZVJQz8AyPGNSU5a+NkCkKqbXQn5
-	gaHyZyXpY2yMqScedl+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LY6J6Owvx6SJMtyq0fkc9h21gJhQa2BnRNj2GQjBK0Q=; b=Y00CYocG+A0gIV
+	IGeZ7q++nIWq9bMcFJj9aadRPFi+vCB+Z0oHxNW5MtotZ8Ja0eOp5C+5W7KY0i4ltVSfMqi+GoJfu
+	g51MnXpy0NNYs+pjY9DcdxxWSnR7sqq3y9jPvhBgpQRYg0L0KZHbG4P51Ua6DJmL0tnQNGfd7VZPX
+	j0PZbQ+e/3nMFDagAMp084J3XoGzy2U9Og0d4NYg+MiZTd+rgtT3GrDXLPtgmdwzoDqesJquLrR+L
+	3crYDgdFDeuvZoYyCmfU+MpxIw57iDrA/NYCaxBKF+KK/Z/fak7wlpN2acmr/oIxS1iaiPmDQN/JN
+	ytuRZpiFpmoiAk+2MZ+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioZbM-00040W-Ae; Mon, 06 Jan 2020 21:07:52 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1ioZkL-0007Po-Ux; Mon, 06 Jan 2020 21:17:09 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioZbG-0003zQ-4x
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 21:07:47 +0000
-Received: by mail-io1-xd42.google.com with SMTP id n21so48536953ioo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 13:07:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xRpwQviknb25UoZmbJMLN6EJGSP9FYuSxPxJ31clxVs=;
- b=b3B5l/u9gjT+OpYHkhEegMK+pBwrPRkSjcRruBCbXIAjTmW48tye354OZERmQSamB4
- Pjhy7cDKQeD0thwr0RaYeHK3mokcLMiTaSz73ClS8ThVz1b7Xh1glcIw/XliWXWe89aG
- rlWq2dTdRX3UdRtC8BzSOc3OkazGkrp+7veIltbgQAIWHYw4eQVhAMmA5wygomf1G+dB
- gUdpD85w9ZnSfpJ7rzTdVvEs4vpZOrZw6H2JE2k16gfkiogmGfY2yA29+1vfJw5CW0ep
- iMhCompfFlJYZ8HF38JfyA7iOWkigqMftEDU4Kl7td+2HG3SbsZse6lbr0NRRRzF4APL
- lxIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xRpwQviknb25UoZmbJMLN6EJGSP9FYuSxPxJ31clxVs=;
- b=jInFYSdhzIyZx2ZXXs77hMv1BoXom1gQhQcxYpoA/ROF2bsud4vvOm2VnsLC4waozv
- CuPO0lKJ+8wkofw8p+QxuewXV5JYSxknF6qIBKTrRPohPpsJptwnWkDW+5DNP01PSlKV
- BcCGSK2n7XYpAOJ1FXmBHIcZjaY8EkP7mmIYVJ2FitXrcDdmM7NzA7XfrQmipJ56TWfM
- 5MDm+0GDqOVuHvFhqbI6/7uixYeq7AO+RQUK1TVetomIGL14bnlwiK4CVhKFtJt6wdcE
- DQzbFgyyHJebO7OSweFICvVIjcRe8gk/42NcY8BVT4dgOINiN4R78o3C2lOefXNq4FxU
- BLTg==
-X-Gm-Message-State: APjAAAX+rsWe9NW3bw+hT3R69ct0xRcKgiP7I12m/hwqRIBBgObNXpDf
- MhZmJBGBnrz9oBjsABfG2zZzLRf+eppJcoWcvQf7pw==
-X-Google-Smtp-Source: APXvYqzc+ndsPGVWQqd03R9vgmoEdYCbRH0T8wxQshOrpgT1uPAz0/P2devjATpA6jCfqYmFYGzlDY97JfI5jbp1ng0=
-X-Received: by 2002:a02:ce8a:: with SMTP id y10mr71794309jaq.21.1578344863555; 
- Mon, 06 Jan 2020 13:07:43 -0800 (PST)
+ id 1ioZkC-0007Og-LT; Mon, 06 Jan 2020 21:17:02 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1ioZk6-0001Pq-NQ; Mon, 06 Jan 2020 22:16:54 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from roc-pc (pD9E89450.dip0.t-ipconnect.de [217.232.148.80])
+ (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ 006LGrhM032119
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Mon, 6 Jan 2020 22:16:53 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+To: linux-rockchip@lists.infradead.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH 0/5] regulator: mp8859: add driver for DC/DC converter used on
+ rk3399-roc-pc board
+Date: Mon,  6 Jan 2020 22:16:23 +0100
+Message-Id: <20200106211633.2882-1-m.reichl@fivetechno.de>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-References: <20200106203700.21009-1-tony@atomide.com>
-In-Reply-To: <20200106203700.21009-1-tony@atomide.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 6 Jan 2020 13:07:32 -0800
-Message-ID: <CAOesGMiNbyUXwPFsG-ipTn-xfEs+A2hG8Q8MTcSLz5794GCv0g@mail.gmail.com>
-Subject: Re: [PATCH] clocksource: timer-ti-dm: Fix regression
-To: Tony Lindgren <tony@atomide.com>
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578345420;
+ 0ad3f49f; 
+X-HE-SMSGID: 1ioZk6-0001Pq-NQ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_130746_214311_6ADE36B9 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20200106_131700_845543_57111D2D 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,60 +70,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 6, 2020 at 12:37 PM Tony Lindgren <tony@atomide.com> wrote:
->
-> Clean-up commit 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to
-> platform_get_irq") caused a regression where we now try to access
-> uninitialized data for timer:
->
-> drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
-> drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may be used
-> uninitialized in this function [-Wmaybe-uninitialized]
->
-> On boot we now get:
->
-> Unable to handle kernel NULL pointer dereference at virtual address
-> 00000004
-> ...
-> (omap_dm_timer_probe) from [<c061ac7c>] (platform_drv_probe+0x48/0x98)
-> (platform_drv_probe) from [<c0618c04>] (really_probe+0x1dc/0x348)
-> (really_probe) from [<c0618ef4>] (driver_probe_device+0x5c/0x160)
->
-> Let's fix the issue by moving platform_get_irq to happen after timer has
-> been allocated.
->
-> Fixes: 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to platform_get_irq")
-> Cc: Yangtao Li <tiny.windzz@gmail.com>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
+On rk3399-roc-pc board a voltage regulator MP8859 from Monolithic Power Systems
+is used to supply the 12V power line. This delivers 5V as a default value after
+boot. The voltage is controllable via I2C.
+Add a basic driver to set and get the voltage of the MP8859 and add a matching
+node with fixed 12V in the DT of the board. 
 
-Acked-by: Olof Johansson <olof@lixom.net>
+Markus Reichl (5):
+  regulator: mp8859: add driver
+  regulator: mp8859: add config option and build entry
+  dt-bindings: add vendor Monolithic Power Systems
+  dt-bindings: regulator: add MPS mp8859 voltage regulator
+  arm64: dts: rockchip: Enable mp8859 regulator on rk3399-roc-pc
 
-> ---
->
-> I did not notice simlar issue with other patches in the series, but
-> please do double check Yangtao.
+ .../devicetree/bindings/regulator/mp8859.txt  |  22 +++
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ .../boot/dts/rockchip/rk3399-roc-pc.dtsi      |  32 ++--
+ drivers/regulator/Kconfig                     |  11 ++
+ drivers/regulator/Makefile                    |   1 +
+ drivers/regulator/mp8859.c                    | 156 ++++++++++++++++++
+ 6 files changed, 210 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mp8859.txt
+ create mode 100644 drivers/regulator/mp8859.c
 
-Yeah, this even seems to be caught at build (but our builds have been
-so noisy with warnings lately that they're hard to spot):
+-- 
+2.24.1
 
-/build/drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
-/build/drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may
-be used uninitialized in this function [-Wmaybe-uninitialized]
-  798 |  timer->irq = platform_get_irq(pdev, 0);
-      |  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
