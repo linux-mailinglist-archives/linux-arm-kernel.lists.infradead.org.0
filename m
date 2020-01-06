@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D99FF1312AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:17:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64E691312BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:18:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1wmU4pXJKtZmapBrtccnQWgh24fO4pXXVMn2YEkVy90=; b=dqh/CZHqdj7/HV
-	4r7CTtj7JzmRAIcCXpYtfKATamR36tnlju7LT1EAluI0JyTkKu+wpKsvoYzjEDt2Hd3WTAm/ok7Lo
-	tMd5g5hYXy0TjwsaIVs5/kWsPad6YH3KdsBgVEmkeB7YnWq4+Z5HKxBw5BLIRvMdd17EEinzif2ZK
-	W3QzNkYPKpN7Mm+oKpEKAExlnN7LJ8JGWVUcTvG+DW1yRoWEVk5bAhflf9G7QIlSjbOVBQsu7ddw/
-	acAksolKBswVZQ0C10t9/F4iEzsIc0gdb0Wwe2jDDa3yTCk1MCL3XWGPfiFbwunfqPVtNYQ7POI0V
-	1+ZYsgCntWg+lJzOlIkg==;
+	List-Owner; bh=VgYo+tWMzl2N3ulpHNPOf3YdwfUqUKepvQEfCdxLkdU=; b=VnrTeO6VCSCF+j
+	HvFPWw4gO9uiy+FX0BULenc3/yLHArimuzWkWK2AKWNLj6YDagTxgr5AmqNRfDXBIN1+Nx2vz7rXx
+	kqyTirqtH+jtY+42eojGTx0CQ5Nzqh1F5P5StHMEMlsyJm97/ScA56hYk8kta/wiH1Wamb5dMY4Lh
+	Vpnc0Y0y6Kk5Nqb3rPRRQiqJYCM13Pujq/Uo5eCaj77UxWbE/mPq/qb/XwKDTLmC18dsv+LIqUoKD
+	V/JaM8s81ha6m4Jib8Vzq2mx1cRCSb7O0RVetn+1j4rhk2bi4kAdFrYT35oDCERGAKhJON/WKwmv5
+	kWvl32eKh7Itejzp82+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioSFi-00043o-GH; Mon, 06 Jan 2020 13:17:02 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ioSHR-0004Uc-LN; Mon, 06 Jan 2020 13:18:49 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioSFb-000435-Of
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:16:57 +0000
-Received: by mail-wm1-x341.google.com with SMTP id t14so15202471wmi.5
+ id 1ioSHE-0004TB-Mz
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:18:38 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p17so15232046wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 05:16:54 -0800 (PST)
+ Mon, 06 Jan 2020 05:18:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:autocrypt:organization:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=JajloRuw8U7XOZoX2cXSkCo4A7nWI2wZuwgyNKCOj/M=;
- b=uttjn4em0CyLmEhnha5LqSoFyYG+CnUkNKONwb4WUWRzcitFEFdAobv+D72GBAG/fM
- +w5MQQ44Q/ics11PV3NAQIBk5qPZYop1OMfThoVLO0gZfIJtqq2DV/nVCPkmobPhR2GI
- piyhXlPPJ1p7bZHuy9EzCdSJp9nIVllo1inLH605p3jWpUjWY/RJnFjMnLviRi+RvYTA
- cgk65EgnuzHE7iXYL+2YgDE/BgIGiPuku/kj5/b3NyCPeCIobUD67m2ZtFsUTH1m8pqm
- u135uhE64HZFz0XhtT8S+hSwBPvys5vUVl4U9wzSYsQ+Fw6ZGYPESIrH6khvml43SK1A
- uysA==
+ bh=Oj6DE+UWrfJvuWrYjDwvCpFcDLZuqe7GXZNQiTzaLaw=;
+ b=aun6zMfkngUCm8q1j3L/FCCeFH/G62kxZAJgrAULi+m01IIghOdkITcCwd/bq6j1hT
+ x+fJJmnfsA6+ZQRKKLkEFiZIFVZGc2BLg643q6Rqr1H17kgUpwe4HRy9P6E9GgRS1Bgp
+ 6yvipb/q+LVGTjs957er6lw3MNEs0foB1oRF6G6f1C9rl6+ccKSnOGX5k2OjcPb8nfLj
+ 4bn5cSvlTXhwsxfSp+kljkYhbAerB7D3DNjDNnIgB5zHqjlXipeI02XRf/nb54kTyewA
+ uPMgshsRoFgS4g4EYEXdoG5OPYLnxc3jCt2AqHa0lKUl97RbH4CrrAcEIlgGAyTu4ci3
+ QXYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=JajloRuw8U7XOZoX2cXSkCo4A7nWI2wZuwgyNKCOj/M=;
- b=Mv1US+FHilY8PEgOCkFqyyMD/Khge30PWVeOCeZI53IvbDiqkbXVseF91RFn6aJGju
- nzLyY07Y2hWD+4djrGy/3N1hnLTRy+xqVVSq1Pidwqo0ALIg6/P7xXSyX0XSfa2RAOAs
- M9C6X066PHafffjEwwr8mRIkEBH+J8LS7btaDq5ITznI+D5YG6+OKcCTY3ZDYNvcDK5N
- WzRvSJwC4Xe7LWj0rKGy/yAen/OKJ+vizhY4PyjvoOZz0V3Ts0YRVUdKaelbiHHooE/v
- OyNYOxMx8poX/VQkgmO5CD2u4W3fNSctW67Qcxkn3corXGZ/bdbwrmh/nQ24WLMPwUgw
- RJ6w==
-X-Gm-Message-State: APjAAAV34O7lWDrcDfJaK57oLLjZAHaA1x1M/cFvqyBviUySQr5T/oQ0
- z5p+J/2ZgDNIqGfvJPgOoHvE0niOOo+MSQ==
-X-Google-Smtp-Source: APXvYqxU1EDtOros/uCt+P1y80Mb60GinJZMD7/fD3mv278Ngb4rzSW5+QfFGqXwjokNrDRRzsvJTA==
-X-Received: by 2002:a7b:c750:: with SMTP id w16mr36286001wmk.46.1578316612876; 
- Mon, 06 Jan 2020 05:16:52 -0800 (PST)
+ bh=Oj6DE+UWrfJvuWrYjDwvCpFcDLZuqe7GXZNQiTzaLaw=;
+ b=G+VqfigNB0mSwp2kowm5BqVFxmBb6SQMTV+O9JingvlIjeS33dogSFhk4JIFwiTrn0
+ s/gM2Mj5+uyJMASquwD2++gaY7IwOD2G8D5w6yMVcykhnBvusdQNDNjnYb462QrUIO2X
+ gQamnv1mnaSaLRtWEZE4G7NP/nkTZMSWHjlZCAymcBpv/unKp2I7ICqbF6xvGPAP8I4H
+ DIo5oJqzNjvYSkQnDf4ZccNQNV2MO1+cPPae2clebPe3qmdDVEnEjnBygw1O+ptdGYVW
+ 9rP2gV7JZGvzoblBw1XKlHwB7/Aiq9IwaSydemATyKBTD87dSUyknpmhoHVtdCaVk3qQ
+ m1Ew==
+X-Gm-Message-State: APjAAAXXjvjs6yaqPjkyDXCOsS9BYUawQnHQR03/6C3XV7c4jG/UcTlL
+ WPs3q/YSywPtY/0z30yLXdLXlA==
+X-Google-Smtp-Source: APXvYqzNaEx2amPvkXDkUF/tnMFhXSEKVF40bsi/aHbH29tOanKEEtCuLhmas9ThlALWvzbKvv1cAA==
+X-Received: by 2002:a1c:81ce:: with SMTP id c197mr34799548wmd.96.1578316715035; 
+ Mon, 06 Jan 2020 05:18:35 -0800 (PST)
 Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id b18sm3022974wru.50.2020.01.06.05.16.52
+ by smtp.gmail.com with ESMTPSA id 16sm22611331wmi.0.2020.01.06.05.18.34
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 05:16:52 -0800 (PST)
-Subject: Re: [PATCH] pinctrl: meson: meson8b: add the GPIOH pinmux settings
- for ETH_RXD{2, 3}
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linus.walleij@linaro.org, linux-gpio@vger.kernel.org,
- linux-amlogic@lists.infradead.org
-References: <20191226191425.3797490-1-martin.blumenstingl@googlemail.com>
+ Mon, 06 Jan 2020 05:18:34 -0800 (PST)
+Subject: Re: [PATCH v2 3/3] media: platform: meson-ao-cec-g12a: add wakeup
+ support
+To: Guillaume La Roque <glaroque@baylibre.com>, mchehab@kernel.org,
+ hverkuil-cisco@xs4all.nl, khilman@baylibre.com, devicetree@vger.kernel.org
+References: <20191213132956.11074-1-glaroque@baylibre.com>
+ <20191213132956.11074-4-glaroque@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -117,27 +117,26 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <4f395923-fa48-502e-4afb-a06ea5b8417c@baylibre.com>
-Date: Mon, 6 Jan 2020 14:16:51 +0100
+Message-ID: <d86fe5f8-31c8-d600-8be7-75dfeb0bb45a@baylibre.com>
+Date: Mon, 6 Jan 2020 14:18:33 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191226191425.3797490-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20191213132956.11074-4-glaroque@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_051655_803145_9E02FF93 
-X-CRM114-Status: GOOD (  17.53  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20200106_051836_748916_D8558D9A 
+X-CRM114-Status: GOOD (  16.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -152,63 +151,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/12/2019 20:14, Martin Blumenstingl wrote:
-> GPIOH_5 and GPIOH_6 can have two Ethernet related functions:
-> - GPIOH_5 can be ETH_TXD1 or ETH_RXD3
-> - GPIOH_6 can be ETH_TXD0 or ETH_RXD2
+On 13/12/2019 14:29, Guillaume La Roque wrote:
+> add register configuration to activate wakeup feature in bl301
 > 
-> Add the bits for eth_rxd3_h and eth_rxd2_h so the ETH_RXD function can
-> be disabled when using the ETH_TXD function of GPIOH_{5,6}. No problem
-> was observed so far, but in theory this could lead to two different
-> signals being routed to the same pad (which could break Ethernet).
-> 
-> These settings were found in the public "Amlogic Ethernet controller
-> user guide":
-> http://openlinux.amlogic.com/@api/deki/files/75/=Amlogic_Ethenet_controller_user_Guide.pdf
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Tested-by: Kevin Hilman <khilman@baylibre.com>
+> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 > ---
->  drivers/pinctrl/meson/pinctrl-meson8b.c | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
+>  drivers/media/platform/meson/ao-cec-g12a.c | 33 ++++++++++++++++++++++
+>  1 file changed, 33 insertions(+)
 > 
-> diff --git a/drivers/pinctrl/meson/pinctrl-meson8b.c b/drivers/pinctrl/meson/pinctrl-meson8b.c
-> index 2d5339edd0b7..6cd4b3ec1b40 100644
-> --- a/drivers/pinctrl/meson/pinctrl-meson8b.c
-> +++ b/drivers/pinctrl/meson/pinctrl-meson8b.c
-> @@ -233,6 +233,8 @@ static const unsigned int hdmi_scl_pins[]	= { GPIOH_2 };
->  static const unsigned int hdmi_cec_0_pins[]	= { GPIOH_3 };
->  static const unsigned int eth_txd1_0_pins[]	= { GPIOH_5 };
->  static const unsigned int eth_txd0_0_pins[]	= { GPIOH_6 };
-> +static const unsigned int eth_rxd3_h_pins[]	= { GPIOH_5 };
-> +static const unsigned int eth_rxd2_h_pins[]	= { GPIOH_6 };
->  static const unsigned int clk_24m_out_pins[]	= { GPIOH_9 };
+> diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/platform/meson/ao-cec-g12a.c
+> index 891533060d49..85850b974126 100644
+> --- a/drivers/media/platform/meson/ao-cec-g12a.c
+> +++ b/drivers/media/platform/meson/ao-cec-g12a.c
+> @@ -25,6 +25,7 @@
+>  #include <media/cec.h>
+>  #include <media/cec-notifier.h>
+>  #include <linux/clk-provider.h>
+> +#include <linux/mfd/syscon.h>
 >  
->  static const unsigned int spi_ss1_pins[]	= { GPIOH_0 };
-> @@ -535,6 +537,8 @@ static struct meson_pmx_group meson8b_cbus_groups[] = {
->  	GROUP(spi_miso_1,	9,	12),
->  	GROUP(spi_mosi_1,	9,	11),
->  	GROUP(spi_sclk_1,	9,	10),
-> +	GROUP(eth_rxd3_h,	6,	15),
-> +	GROUP(eth_rxd2_h,	6,	14),
->  	GROUP(eth_txd3,		6,	13),
->  	GROUP(eth_txd2,		6,	12),
->  	GROUP(eth_tx_clk,	6,	11),
-> @@ -746,7 +750,8 @@ static const char * const ethernet_groups[] = {
->  	"eth_tx_clk", "eth_tx_en", "eth_txd1_0", "eth_txd1_1",
->  	"eth_txd0_0", "eth_txd0_1", "eth_rx_clk", "eth_rx_dv",
->  	"eth_rxd1", "eth_rxd0", "eth_mdio_en", "eth_mdc", "eth_ref_clk",
-> -	"eth_txd2", "eth_txd3", "eth_rxd3", "eth_rxd2"
-> +	"eth_txd2", "eth_txd3", "eth_rxd3", "eth_rxd2",
-> +	"eth_rxd3_h", "eth_rxd2_h"
->  };
+>  /* CEC Registers */
 >  
->  static const char * const i2c_a_groups[] = {
+> @@ -168,6 +169,18 @@
+>  
+>  #define CECB_WAKEUPCTRL		0x31
+>  
+> +#define CECB_FUNC_CFG_REG		0xA0
+> +#define CECB_FUNC_CFG_MASK		GENMASK(6, 0)
+> +#define CECB_FUNC_CFG_CEC_ON		0x01
+> +#define CECB_FUNC_CFG_OTP_ON		0x02
+> +#define CECB_FUNC_CFG_AUTO_STANDBY	0x04
+> +#define CECB_FUNC_CFG_AUTO_POWER_ON	0x08
+> +#define CECB_FUNC_CFG_ALL		0x2f
+> +#define CECB_FUNC_CFG_NONE		0x0
+> +
+> +#define CECB_LOG_ADDR_REG	0xA4
+> +#define CECB_LOG_ADDR_MASK	GENMASK(22, 16)
+> +
+>  struct meson_ao_cec_g12a_data {
+>  	/* Setup the internal CECB_CTRL2 register */
+>  	bool				ctrl2_setup;
+> @@ -177,6 +190,7 @@ struct meson_ao_cec_g12a_device {
+>  	struct platform_device		*pdev;
+>  	struct regmap			*regmap;
+>  	struct regmap			*regmap_cec;
+> +	struct regmap			*regmap_ao_sysctrl;
+>  	spinlock_t			cec_reg_lock;
+>  	struct cec_notifier		*notify;
+>  	struct cec_adapter		*adap;
+> @@ -518,6 +532,13 @@ meson_ao_cec_g12a_set_log_addr(struct cec_adapter *adap, u8 logical_addr)
+>  					 BIT(logical_addr - 8));
+>  	}
+>  
+> +	if (ao_cec->regmap_ao_sysctrl)
+> +		ret |= regmap_update_bits(ao_cec->regmap_ao_sysctrl,
+> +					 CECB_LOG_ADDR_REG,
+> +					 CECB_LOG_ADDR_MASK,
+> +					 FIELD_PREP(CECB_LOG_ADDR_MASK,
+> +						    logical_addr));
+> +
+>  	/* Always set Broadcast/Unregistered 15 address */
+>  	ret |= regmap_update_bits(ao_cec->regmap_cec, CECB_LADD_HIGH,
+>  				  BIT(CEC_LOG_ADDR_UNREGISTERED - 8),
+> @@ -618,6 +639,13 @@ static int meson_ao_cec_g12a_adap_enable(struct cec_adapter *adap, bool enable)
+>  		regmap_write(ao_cec->regmap_cec, CECB_CTRL2,
+>  			     FIELD_PREP(CECB_CTRL2_RISE_DEL_MAX, 2));
+>  
+> +	if (ao_cec->regmap_ao_sysctrl) {
+> +		regmap_update_bits(ao_cec->regmap_ao_sysctrl,
+> +				   CECB_FUNC_CFG_REG,
+> +				   CECB_FUNC_CFG_MASK,
+> +				   CECB_FUNC_CFG_ALL);
+> +	}
+> +
+>  	meson_ao_cec_g12a_irq_setup(ao_cec, true);
+>  
+>  	return 0;
+> @@ -685,6 +713,11 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
+>  		goto out_probe_adapter;
+>  	}
+>  
+> +	ao_cec->regmap_ao_sysctrl = syscon_regmap_lookup_by_phandle
+> +		(pdev->dev.of_node, "amlogic,ao-sysctrl");
+> +	if (IS_ERR(ao_cec->regmap_ao_sysctrl))
+> +		dev_warn(&pdev->dev, "ao-sysctrl syscon regmap lookup failed.\n");
+> +
+>  	irq = platform_get_irq(pdev, 0);
+>  	ret = devm_request_threaded_irq(&pdev->dev, irq,
+>  					meson_ao_cec_g12a_irq,
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
