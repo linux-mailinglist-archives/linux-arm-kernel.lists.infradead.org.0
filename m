@@ -2,61 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B01F131ACA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:56:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 513D3131AD2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:57:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IabfbyPIHGOFMCS6j3cSAWk1rj+gRYa85OaByzrTc8I=; b=GmYMGdTSNmDuMTjK7Ko0Vdgb8
-	1FEfw2jaxflV1WvxmytUjsS5rI13xhF7xeQJODc/jlCaguc9KKrwUC8ZzHSFIqzENnTu00+BaATmk
-	/bJ9h7HunktvA6AHP2GcxPEGy5hOtJIiLnRtfF1GTX5pKWRXCWlYVYyQ6lTvdEMtZuk7EKlpUoT++
-	x5GGoF8TA/s77VUBdkaiLPvsKKP3xJK5Q8Ci40GY921FvBErcuYHFkzdTckbDGDsLDsMw6zaWpoEc
-	3C1IvjtDE7ZgRU8yrTRBfz9coRFa6+nR0i1PyKcDMgH002ugQ58qD8Wm8gYEbJSqLcapD+gXgAHeL
-	DV3LTzwjA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mVgEKWvtnHgzp8KjfPmiBXRimr9QgNtAYg8pjiSDkJM=; b=L4wKu903Z1aeZ8
+	dLFtzOi5u34Dlhf2wYAIBXSunbfGKYPndvvIKpFXGeBM0lREhTk7VIpnWLBvf+WFi4jur8Uh8aiCS
+	S5DEIgPMvt3cXnDtox6nnhQXh4V8BzyHUk8LE7Hkx3qAFseepxmPr/1KhloVZVIPbSeH/ArBgz+lA
+	NY+bhCbvHhQ+AidIvkZCsxgi+fk0XtQgOJf5LEf9kY5o2VoRHOt2DFTylByj+4WTIpTOmY2yjtSa3
+	50BVO/6VLxBx8jalU81RQV4t6g5ST15/Kua5vapUaUMyLVQmsdxO8HR9M6HLnpqgmhGHq9Ucc+oty
+	XqX5Y4kOSW9CBH2UhMhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioaM1-00078e-C3; Mon, 06 Jan 2020 21:56:05 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1ioaNQ-0007YD-Rp; Mon, 06 Jan 2020 21:57:32 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioaLs-00074E-M8; Mon, 06 Jan 2020 21:55:59 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Jan 2020 13:55:55 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,403,1571727600"; d="scan'208";a="245719807"
-Received: from chewang-mobl.amr.corp.intel.com (HELO [10.254.185.10])
- ([10.254.185.10])
- by fmsmga004.fm.intel.com with ESMTP; 06 Jan 2020 13:55:53 -0800
-Subject: Re: [PATCH] ASoC: rt5677: add SPI_MASTER dependency
-To: Jon Hunter <jonathanh@nvidia.com>, Arnd Bergmann <arnd@arndb.de>,
- Mark Brown <broonie@kernel.org>
-References: <20191210195333.648018-1-arnd@arndb.de>
- <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
-From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Message-ID: <9c9169cc-0da5-f247-c8f7-f6913ca2bfb5@linux.intel.com>
-Date: Mon, 6 Jan 2020 15:55:53 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ioaNE-0007XX-M3
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 21:57:21 +0000
+Received: by mail-oi1-f196.google.com with SMTP id l9so14243853oii.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 13:57:20 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CGQuR1M/qYi2xyMJHlEfzvhIn09Q2tETaZrs1ID5PBc=;
+ b=o6Eue9QK8r+BYCkKITZgt+xDM9Y6I9xA9v2rCmHy6pAnhPAZdPh0wE1ifOEocAAOoK
+ zn5ly/AcMEJwenAkBRekFCRyLySANFIer83JgtDp3zSNcD55qtzhc/OI3YcSNLGQ4vgQ
+ BwWD5tljeSKqwipQw2xBiyRIcTx4PXLGpWGD1ifQLx+au18IYJ6nWHipp21zLYWwugaJ
+ FbNQQczHrff4KHowx+dKINXmp0700YvvePXk3fpAAlOwsAeP7O9AZ4+xXOMLtLl3vqdY
+ yLb1dH8ZK7l/lRfbE3ge4sq2zcza3IIaN39cNJpWQdCix3itXME3uJhBK/bSQp1V7e9A
+ NRWw==
+X-Gm-Message-State: APjAAAWzbXRSIKWQJ0Cofhn1P8u1o04/asQVDnvFdvGhOgbTH8gvLqYB
+ iwAzXxVK4OXfLRRJvqkNJex9Sqs=
+X-Google-Smtp-Source: APXvYqwTzt/XPrpt00mjeUtMidxs3GJrDf6vttWFilh8WpYenwML9P9t82+uMrVgphE+hrd+ArLLOw==
+X-Received: by 2002:aca:d507:: with SMTP id m7mr6108802oig.48.1578347839603;
+ Mon, 06 Jan 2020 13:57:19 -0800 (PST)
+Received: from rob-hp-laptop (ip-70-5-121-225.ftwttx.spcsdns.net.
+ [70.5.121.225])
+ by smtp.gmail.com with ESMTPSA id k26sm16624024oiw.34.2020.01.06.13.57.18
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Jan 2020 13:57:19 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 220d32
+ by rob-hp-laptop (DragonFly Mail Agent v0.11);
+ Mon, 06 Jan 2020 15:57:16 -0600
+Date: Mon, 6 Jan 2020 15:57:16 -0600
+From: Rob Herring <robh@kernel.org>
+To: Chao Hao <chao.hao@mediatek.com>
+Subject: Re: [PATCH v2 01/19] dt-bindings: mediatek: Add bindings for MT6779
+Message-ID: <20200106215716.GA31059@bogus>
+References: <20200105104523.31006-1-chao.hao@mediatek.com>
+ <20200105104523.31006-2-chao.hao@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200105104523.31006-2-chao.hao@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_135558_032130_B54E0334 
-X-CRM114-Status: GOOD (  17.51  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200106_135720_722841_86106CB7 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,88 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cezary Rojewski <cezary.rojewski@intel.com>, linux-tegra@vger.kernel.org,
- Charles Keepax <ckeepax@opensource.cirrus.com>, alsa-devel@alsa-project.org,
- linux-kernel@vger.kernel.org, Jie Yang <yang.jie@linux.intel.com>,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Ben Zhang <benzh@chromium.org>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Curtis Malainey <cujomalainey@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org,
- KaiChieh Chuang <kaichieh.chuang@mediatek.com>
+Cc: Anan Sun <anan.sun@mediatek.com>, devicetree@vger.kernel.org,
+ Jun Yan <jun.yan@mediatek.com>, wsd_upstream@mediatek.com,
+ Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
+ Chao Hao <chao.hao@mediatek.com>, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cui Zhang <zhang.cui@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/11/19 4:59 AM, Jon Hunter wrote:
+On Sun, 5 Jan 2020 18:45:05 +0800, Chao Hao wrote:
+> This patch adds description for MT6779 IOMMU.
 > 
-> On 10/12/2019 19:52, Arnd Bergmann wrote:
->> When CONFIG_SPI is disabled, the newly added code for the DSP
->> firmware loading fails to link:
->>
->> ERROR: "rt5677_spi_hotword_detected" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
->> ERROR: "rt5677_spi_write" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
+> MT6779 has two iommus, they are MM_IOMMU and APU_IOMMU which
+> use ARM Short-Descriptor translation format.
 > 
-> Would it be better if the above functions or the functions that call
-> these are conditional on CONFIG_SND_SOC_RT5677_SPI?
+> The MT6779 IOMMU hardware diagram is as below, it is only a brief
+> diagram about iommu, it don't focus on the part of smi_larb, so
+> I don't describe the smi_larb detailedly.
+> 
+> 			     EMI
+> 			      |
+> 	   --------------------------------------
+> 	   |					|
+>         MM_IOMMU                            APU_IOMMU
+> 	   |					|
+>        SMI_COMMOM-----------		     APU_BUS
+>           |		   |			|
+>     SMI_LARB(0~11)  SMI_LARB12(FAKE)	    SMI_LARB13(FAKE)
+> 	  |		   |			|
+> 	  |		   |		   --------------
+> 	  |		   |		   |	 |	|
+>    Multimedia engine	  CCU		  VPU   MDLA   EMDA
+> 
+> All the connections are hardware fixed, software can not adjust it.
+> 
+> >From the diagram above, MM_IOMMU provides mapping for multimedia engine,
+> but CCU is connected with smi_common directly, we can take them as larb12.
+> APU_IOMMU provides mapping for APU engine, we can take them larb13.
+> Larb12 and Larb13 are fake larbs.
+> 
+> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> ---
+>  .../bindings/iommu/mediatek,iommu.txt         |   2 +
+>  include/dt-bindings/memory/mt6779-larb-port.h | 215 ++++++++++++++++++
+>  2 files changed, 217 insertions(+)
+>  create mode 100644 include/dt-bindings/memory/mt6779-larb-port.h
+> 
 
-they are already conditional, with a fallback provided:
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
-#if IS_ENABLED(CONFIG_SND_SOC_RT5677_SPI)
-int rt5677_spi_read(u32 addr, void *rxbuf, size_t len);
-int rt5677_spi_write(u32 addr, const void *txbuf, size_t len);
-int rt5677_spi_write_firmware(u32 addr, const struct firmware *fw);
-void rt5677_spi_hotword_detected(void);
-#else
-static inline int rt5677_spi_read(u32 addr, void *rxbuf, size_t len)
-{
-	return -EINVAL;
-}
-static inline int rt5677_spi_write(u32 addr, const void *txbuf, size_t len)
-{
-	return -EINVAL;
-}
-static inline int rt5677_spi_write_firmware(u32 addr, const struct 
-firmware *fw)
-{
-	return -EINVAL;
-}
-static inline void rt5677_spi_hotword_detected(void){}
-#endif
-
-and since we have the following definition
-
-config SND_SOC_RT5677_SPI
-	tristate
-	default SND_SOC_RT5677 && SPI
-
-in theory if SPI is not enabled the fallback static inlines would always 
-be selected?
-
-Arnd, if you can share the .config that exposes this problem it'd be nice
-
-FWIW, there are other missing dependencies, the SPI controller was not 
-explicitly enabled so depending on the Kconfigs used by a distro the 
-machine driver probe could fail with the spi-RT5677AA component never 
-registered. The patch below seems to work for me (more testing needed)
-
-diff --git a/sound/soc/intel/boards/Kconfig b/sound/soc/intel/boards/Kconfig
-index b149e28a2076..cf1a2fde4c47 100644
---- a/sound/soc/intel/boards/Kconfig
-+++ b/sound/soc/intel/boards/Kconfig
-@@ -50,6 +50,9 @@ config SND_SOC_INTEL_BDW_RT5677_MACH
-         depends on I2C_DESIGNWARE_PLATFORM || COMPILE_TEST
-         depends on GPIOLIB || COMPILE_TEST
-         depends on X86_INTEL_LPSS || COMPILE_TEST
-+       depends on SPI_MASTER
-+       select SPI_PXA2XX
-+       select SND_SOC_RT5677_SPI
-         select SND_SOC_RT5677
-         help
-           This adds support for Intel Broadwell platform based boards with
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
