@@ -2,78 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22187131BDF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 23:54:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47840131C4A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 00:24:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hu9VL4Mzc7TV63U11bkkd1G4UFk1Nln/Gfccq2372WI=; b=JxJ
-	OXVZO5WVq7Alv75ywcpPSfYKJwM4mWNH1SMS/vvEpTc+okTo9jVh5R74LBJ0IFr7vYleaZsnpFtlg
-	5R8faQS/ftkByFc5Fdu+d6LqChhBi9HF07qE9R2F2zuopW4QI1L0N49liuGjQmmcbTn84X124tsBu
-	MulzlfVazxB8Tk4N+0hCBhRg+4l4CDzJYlrjuHY3oKDQ4WmsKy4aeNV8AV9UXreaZzuO5PVtybeS4
-	PSBUKXhUyrh2kISRXGYAf+wsuHBewo7MtNl0Vri+CY5bFmO6RzZN04ex7V3h8X4g3GvVBE07oOshV
-	lIunykKoKOiJxwyd5ZzicBunvXUwv+A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eimmy3sOrykTLpyFM0BU5rhIAK8xlcNUmBvWJanjexg=; b=MKI+VOx1m8UHOX
+	Y1HMHG83rPznj9ChmWkHgsQX6eafzKBGmaH9rT06hsHkTCUmS1Y8HWgWtYSZuQFhnwn8oHCOY5IIf
+	pVPYxiZTmQEYeLvt8p0NePCAk0PcKrj5aGXK4+JuddHussvbRpCzcqIWUq+CTQV0XL7Of4012VaFI
+	p8FAdh3GlOSNr+1NaUM6NM7eltZmGZEXIUrYfLsm2nPJW7Q49BaahPbtRnzplpcB8by0+6yboJAvu
+	JUAZeoFZpF+MZtuhFtTyVqwRNJIBi+NGxMBSjfERnuMoNsDQFdNirRSDUg3XbsssSwZ9Nc27IKoHZ
+	PhW91fWzzxgcxwAFkz1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iobGS-0003Kn-TU; Mon, 06 Jan 2020 22:54:24 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iobix-0006L5-3z; Mon, 06 Jan 2020 23:23:51 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iobGN-0003KA-44
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 22:54:20 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x6so26512013pfo.10
+ id 1iobiq-0006Kk-1T
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 23:23:45 +0000
+Received: by mail-lj1-x243.google.com with SMTP id y6so44685066lji.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 14:54:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=BpAxESMCcXCSAxL59rFdWBZ2hjtyWfPRAq5lKk8HL34=;
- b=Uzx/5OMDlWzTeV4JmlKm0DoIuyKCpRuLl4uAvP41bNAti42CoSDPWWPDVAkT0QQQRt
- E1qm96M8yKI2LJNaZbc2nf0Fp0T5M8CmkV7RZ3QhEshiYysb0PlMYBlr1q+A9C2Ajb0/
- Ba+Rmg6VahLlkeBvUE8Rpqc/K+vXpyzBA+uK2L4ohV0ffan/ixbvbs8/M8W8JuQw/qhV
- B+2bwLvYCft+JBGlIsW0IMsHxqtCDaE7z/NrtDqfxPlpINKA+vycDTQpl3UOwuWz/30W
- dqwRizizPfvzeDQDX+334l6VmdMOZfa8ZPRJKXpYVPJtryye9f4xp/jk9HNeYf48K901
- 7u7w==
+ Mon, 06 Jan 2020 15:23:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qhJ+24IBi24nlgGtstXX5NhevFe6vDXs34NwEHIqIz0=;
+ b=Jr3jPl3s0CPd6wYbJBof1LRJqW+jwATz758nMi+35XlVUIgvOwjtr8FmeB8ChHm42/
+ UflKkYcCmX8tdiIuRRPvpj3l8JkdBV51Zfda78WRVBm6UITLT8lHvI+QDl+J1lhD45k4
+ sPs3KIJOymMDy3H/jzL7H/T85GsKXh62iyKsmsDmMHq74lGVgsPpGqTRCiXsEuhP+M0N
+ wmKHrl2A6ehFs+zBfqnmhxW/p3M23xx444GOybj5TisAPrmzaj8w56gmhv9B8i3sQALu
+ Odk8toeruSoxPxTqhE+syy6i4YT47Pbhl0PlJhp2RI2QBFNMVEV3lSxRjL26lhuYFiW5
+ meYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=BpAxESMCcXCSAxL59rFdWBZ2hjtyWfPRAq5lKk8HL34=;
- b=DBqFQWfQJyERTcTjVw/4MsPCHz9h9k6K1IIMraMFcoXmMnJW5e64T3xOjOV8+rcpOt
- riFIxRVlwjHqRatW3rW3z9sUHBEoTlrJ25I6QzT94EnO32LERyNIRwMKRSl80JiDuXga
- jY0YU3gSzhJUn++A6hLQD2YXPR5wF/o/J0VaAl8hNDFUSDN9PNnRLdFoABH+UcvjUoRw
- u/qA7IxYX34pdTx/p7cFlg2Lhfsoy8hkGz/l8dvCPCiLJMsxMibkQnt2LFw6ohnZA0QZ
- 7HhmiW1Ucilah1rhwxK3ehHLRDvW1lGkfFm0RbarQDJL6jYTDiK2wbAACKNDFnzyC3l3
- NYmw==
-X-Gm-Message-State: APjAAAV3a0gvHwi2iXz+hybnBG1pv74xDoX6NiH+EC5Bd8E9LtkWDqBP
- StYaqCyeTVPqEsNDHdL9HKFbK6Jc
-X-Google-Smtp-Source: APXvYqyxHQVIW/Xd0+lGsJuzbT/d67U8V5k93CSY58F6UFBNM0hzN0bPeyP/NBQuoTa5E2B0U4E7jQ==
-X-Received: by 2002:a63:1402:: with SMTP id u2mr112088439pgl.224.1578351258118; 
- Mon, 06 Jan 2020 14:54:18 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id r8sm24892569pjo.22.2020.01.06.14.54.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 14:54:17 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: kpti: Add Broadcom Brahma-B53 core to the KPTI
- whitelist
-Date: Mon,  6 Jan 2020 14:54:12 -0800
-Message-Id: <20200106225414.20795-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qhJ+24IBi24nlgGtstXX5NhevFe6vDXs34NwEHIqIz0=;
+ b=qFy4goDwMYMSg0Qn9H/OXLAxwcz/ZvYxGMGZt/+Ini91l0M3wF8pjclxZ0JN2GsI17
+ OrZGZozIaiiMzavaF7nycWebVUAaq3nQYQQJEesdq7wPFnkS8mrnI3vtfNztvetKoIVg
+ vCXD9E+4bCgCkaow2XmmSBMuKi9k9v5shVDGZBiRzTP8I88QSwhexURm3G35DO6KHSG2
+ fPPzBSOLDDUF8FQ3VJ+SqsekEmve9VwGbyQCqeh7eJh+nje4kTR+mJXBToJorcggrgoE
+ wLMFPI9KkPYE1Bxg4qL1GghdE3XGL0Q4o6vQ1rFVjIWu76YkZFizvFy1O4/gwZrZYcmo
+ eMsw==
+X-Gm-Message-State: APjAAAVJkmMll7ITdb30XSBq/+aLT5ENDrTCwkBrzkvnBmT3zTXVe1XL
+ W7zOVVtFOUrzisiYjLEHShGl5125YvW1ocKDIvwZcgIj4dU=
+X-Google-Smtp-Source: APXvYqycZb8cjnLDwPSz0i1nk9G4iL2BrQtb3oR/DugYo/t1RHrxJM+qPCQpQ0QuJ0yAKIBfPKYsilIvLFzwlFOoGQE=
+X-Received: by 2002:a2e:844e:: with SMTP id u14mr62074208ljh.183.1578353021596; 
+ Mon, 06 Jan 2020 15:23:41 -0800 (PST)
+MIME-Version: 1.0
+References: <20191218102013.2465038-1-ben.dooks@codethink.co.uk>
+In-Reply-To: <20191218102013.2465038-1-ben.dooks@codethink.co.uk>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 7 Jan 2020 00:23:30 +0100
+Message-ID: <CACRpkdbK+Wq0qL4kKvaaiFvDmYxcx=UHsK3EK+cuhC17yH=Shw@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: actions: remove duplicate dsi entry
+To: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_145419_190753_7ABAF2F5 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20200106_152344_133958_4B7C96D4 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,45 +91,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- open list <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, Julien Grall <julien.grall@arm.com>,
- opendmb@gmail.com, bcm-kernel-feedback-list@broadcom.com,
- Andrew Murray <andrew.murray@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-MIME-Version: 1.0
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Broadcom Brahma-B53 CPUs do not implement ID_AA64PFR0_EL1.CSV3 but are
-not susceptible to Meltdown, so add all Brahma-B53 part numbers to
-kpti_safe_list[].
+On Wed, Dec 18, 2019 at 11:20 AM Ben Dooks (Codethink)
+<ben.dooks@codethink.co.uk> wrote:
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm64/kernel/cpufeature.c | 1 +
- 1 file changed, 1 insertion(+)
+> The dsi entry is defined identically twice, so remove
+> the second one to remove the sparse warning:
+>
+> drivers/pinctrl/actions/pinctrl-s700.c:1581:10: warning: Initializer entry defined twice
+> drivers/pinctrl/actions/pinctrl-s700.c:1586:10:   also defined here
+>
+> Signed-off-by: Ben Dooks (Codethink) <ben.dooks@codethink.co.uk>
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 04cf64e9f0c9..0427b72c960b 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -975,6 +975,7 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
- 	static const struct midr_range kpti_safe_list[] = {
- 		MIDR_ALL_VERSIONS(MIDR_CAVIUM_THUNDERX2),
- 		MIDR_ALL_VERSIONS(MIDR_BRCM_VULCAN),
-+		MIDR_ALL_VERSIONS(MIDR_BRAHMA_B53),
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A35),
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
--- 
-2.17.1
+Patch applied.
 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
