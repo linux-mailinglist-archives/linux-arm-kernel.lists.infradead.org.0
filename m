@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 953001313C1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 15:35:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C40971313C3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 15:36:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XXV+wxDbIiClR3e5Ccei9Io3LFI3FyswdQm9wMGgOck=; b=VZUi5EjAZi4bPFsdH0ky7YuCh
-	C21em2vckcU1MPoECwQR1R534wFqTKcoTwyK7fKGHj9qkR5fnNndml5xffCzDjw/Zy80zAekOIlNT
-	gDz0B94rElveXx/3q+SiYFC+58XVXmPe8SSwWQIjCU/NcMwPWsBECt34wONGDebVtk6QkTSLiOhPC
-	TAOzl5sqXGm3WHMKa27XooCSmFM0Smu13FhXd9QBbSmdRu5FkufC4VyGIynPbijIArvFAbQAe3KDO
-	IQPj7McVYu+rbAukgPp05+tfuozk0WEa68xgOzv4LQjsHA0utkqBs7ldaDr4eVAFv2KrQL3X+Lz9I
-	73K96rg/A==;
+	 bh=OBPf66cIIMW5zcwYbaR0iQrnO5tUFKv9tHxAHeid0T0=; b=FVs2qd/6QI5MXdGqpl+RL7e6q
+	ckaO9goazsojxIiUCJk/59onWBMLe4RjN971fVHJyhBvxg2ZZzHiYy1voa8SyTARlaaEw8VfBRzlj
+	BcM1x1GXsEb1lkHMEd3Wh5X3y1Su00dubqYA/zZMOYoffqRcdL0PcqN3VNZIUKjHgCwRuGkWz1mKS
+	N0kihfJMqq9d9PH0UX0ffKNo9QBv2lyIYqxlFb1RrQp7SODAwW7+2DC6XFuJR13HD5HKSbqdE/Uwl
+	jxPqvfxFf5GPAxgmGQJg0FtFNxA5LZDNi1dYv7dhrJUjfjjy3zoX0jve28gOW5F2l6fMoP9EjlNVG
+	9YuQHtOIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioTTq-0005bs-82; Mon, 06 Jan 2020 14:35:42 +0000
+	id 1ioTU6-00062t-Ml; Mon, 06 Jan 2020 14:35:58 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioTTY-0005Y5-82
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 14:35:25 +0000
+ id 1ioTTe-0005fW-Ct
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 14:35:33 +0000
 Received: from localhost (p54B338AC.dip0.t-ipconnect.de [84.179.56.172])
- by pokefinder.org (Postfix) with ESMTPSA id 8748D2C3939;
- Mon,  6 Jan 2020 15:35:23 +0100 (CET)
-Date: Mon, 6 Jan 2020 15:35:23 +0100
+ by pokefinder.org (Postfix) with ESMTPSA id 4B6672C393D;
+ Mon,  6 Jan 2020 15:35:29 +0100 (CET)
+Date: Mon, 6 Jan 2020 15:35:28 +0100
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v3 3/4] i2c: at91: remote default value initialization
-Message-ID: <20200106143522.GE1290@ninjato>
+Subject: Re: [PATCH v3 4/4] dt-bindings: i2c: at91: fix i2c-sda-hold-time-ns
+ documentation for sam9x60
+Message-ID: <20200106143528.GF1290@ninjato>
 References: <1575886763-19089-1-git-send-email-eugen.hristev@microchip.com>
- <1575886763-19089-3-git-send-email-eugen.hristev@microchip.com>
+ <1575886763-19089-4-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <1575886763-19089-3-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1575886763-19089-4-git-send-email-eugen.hristev@microchip.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_063524_441911_51962459 
-X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-CacheID: sfid-20200106_063530_596844_D5C6E373 
+X-CRM114-Status: UNSURE (   6.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,60 +65,58 @@ Cc: robh@kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Ludovic.Desroches@microchip.com, linux-i2c@vger.kernel.org,
  Codrin.Ciubotariu@microchip.com, peda@axentia.se,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1058736018273586198=="
+Content-Type: multipart/mixed; boundary="===============2693910884562988075=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1058736018273586198==
+--===============2693910884562988075==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ExXT7PjY8AI4Hyfa"
+	protocol="application/pgp-signature"; boundary="E69HUUNAyIJqGpVn"
 Content-Disposition: inline
 
 
---ExXT7PjY8AI4Hyfa
+--E69HUUNAyIJqGpVn
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Dec 09, 2019 at 10:20:05AM +0000, Eugen.Hristev@microchip.com wrote:
+On Mon, Dec 09, 2019 at 10:20:07AM +0000, Eugen.Hristev@microchip.com wrote:
 > From: Eugen Hristev <eugen.hristev@microchip.com>
 >=20
-> Platform data structs are initialized by default with zero values.
-> Thus it becomes redundant to initialize them manually to zero (false).
-> Remove extra false initialization for field members in structs.
+> SAM9X60 also supports i2c-sda-hold-time-ns. Fix the documentation accordi=
+ngly.
 >=20
-> Suggested-by: Wolfram Sang <wsa@the-dreams.de>
+> Fixes: 2034e3f4c9a5 ("dt-bindings: i2c: at91: add new compatible")
 > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> Reviewed-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-Applied to for-next, thanks!
+Applied to for-current, thanks!
 
 
---ExXT7PjY8AI4Hyfa
+--E69HUUNAyIJqGpVn
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4TRaoACgkQFA3kzBSg
-Kbagqg/6As3fDG4Iew73Uzbcyv+kp15feuCUauZDWD+l4BIlWjKtEJe1IYMwsdm2
-DNXgWDRrosK+AZWMfxDKxa3DCQ3GfYmo0OeVDM/ATCiZUmH4p56MNNW0JoGTb5MX
-85d8qCAZQVD9n22KZw14MImJYlyE+eDlKeyCWA1L97K7PcQKmRmHgU6+UHepjZH/
-dY9fgr9P8FL1HJEsVAJwCqAla43F0jV0zXxVwA2avGR45ZaiHwrl/vHC26FyNZ0Z
-VPuWQ4Ya8gqfmZhJejxOt2zkhrJWLX5h4dseDuVQopAbhEXnjZV39cEiQCmHxnXF
-cB4EZrmCuIGe/cw7Sn5z2hruIQKyF75kJdyOTmqOqTvKN/USyHxU7DTJntIh0yv9
-D0ujd9s2O10vJXqCYH+mP3RLCkPzfpaCPekNkVsDoW+EXbCuOr0v/NcoKTqRcH5K
-qEOUWTwn63Bobpf2GWtbl1VBwnu2aSyd/w2TViL+SDL4AF09ERPoEFoRwXctA5+7
-kNMTPbdwQeBR4iq2k/Tx6w3I1IFMEkihNXMV7nacJdSk4zhy7/F0rDC/MwEOsMBe
-3QNchHy6xPiCF07ZgMZhQqKD7JNQwj/E7a6HvtpJ9LwUX2iWN4roa1w+jFhLRg6/
-8iVzH/RnK5VOKESh7HdR0VyVTWVHcAwQqAW+y5uzy8EijfC4BaI=
-=AjHb
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4TRbAACgkQFA3kzBSg
+KbZimBAAl9QQJ8QhFYzsII9px4gfhT0yrmh+cV811coXSMa4w9CLYmL5vgm3y0Rj
+eDNkXGJrk6YQ4xr8R8LE1AOQS3WDj84cwKG2H+BvmWxaR6hPtYUe+9rpUBqSbOjj
+ToQ4B9qzxAKQioPtRIIIngQVJULmGYDOoHc4o5lECZGCQkNlmztIGsCdn1stuSUB
+y/wqbaVvhUAbzaVh4z2dh2AI4FXMBZ35fkRmPxvE3ekZVuGax3aFmrFPi1PPexqP
+VE9W5bUl4MJjvXE0QSB8fWrdCtrP6tp7y95X8DVYdTTi4TgLN/UkG9rf+2FHp5eE
+M3Xy+aNjXajR0fs16se1OACue5gSIAcAX09AqgH9UvyLC16G4WgB+RFqLfuIbeLU
+nbLc5QGNrpInPN0swe1FBw13kD5RN42cwkX3OIl7GxJ9QMMbv6YJFg2Ve7HZzTbS
+tymTP6m5AnyAR/S/1uJoLkLV3I85JzwvOmAU8axt/ZFYXv5J/NOl4/pQZtXBjRdJ
+Pb6C9ZKW8fUk3qKT99tRawa2uUeXKqqB1gk9VgVrWR7z0xQN9+7hProm3avOMWE0
+MLFlstRff4E3jgRSB2zW+oWD6OxuKNYbZm8uFnTSrS9Im2nr3mxEWNAc/RF8bQ3x
+1Q2FkbhLVeXweNsgLMfKtoIOoDY1enxpdt+y96DUcFc9/IZ/7NU=
+=c8KO
 -----END PGP SIGNATURE-----
 
---ExXT7PjY8AI4Hyfa--
+--E69HUUNAyIJqGpVn--
 
 
---===============1058736018273586198==
+--===============2693910884562988075==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +127,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1058736018273586198==--
+--===============2693910884562988075==--
 
