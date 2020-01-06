@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E070130EF0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:53:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD3F130EFE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:56:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VXK5054LTLGLYFF3jrkQKiO6wVy2R0LYe3I/NqaW+xs=; b=bj9nV7ML96TXg9ZvuoB8hjFwd
-	TsfH1ju39/J3XlfSSQAMcN+AuRSTLAS8eXeI8yjfwdiVPkqyTecfKH3UTIsz1XZcaDnNq/TfV5HWl
-	Rl6YfGb+n9GIjDK7Qjk/GByMSf/qsPbDv1CBoF0GeopvwW+6y33rNpuEq4c+RkhE1JF7X94A4HHac
-	ms1hBWX5VxErKxEspzgYIDqRxlrIMoLI4wdU6q1HG3KO6PQzLEG8McKBDzbuKW9Vc/S6g5aJxphC/
-	fWZ9LhI4+jYs5xr30Kse9tTTGEQR7Pg/SDpSYDa5fh8CUXH79uWwQDFV/hxz2eIwKObr2CQpyRNh4
-	sLWN1O1Dg==;
+	 bh=PM0NTysI51IsIHE6Kh5x05DAs1oNnMyKth0YO+MiCRk=; b=WylW6QZs91NrleySCQEf+po/c
+	r75x8oki8RCdDhNu+pLIhjp0nGSaeJZXQ19mxBANedd7/lLv6WE2YAelf+NixT42xj2Wt7rmrnSY7
+	he3G3fRWRFBcK9oPyNPKbXrgp4S3zHcSX+z/V/v2BXcCM/dR6Wyoahtg49d9jb59YlP1rShAHh/f4
+	QElwxi/PBSWebuSys4mfy9+uKi4Klh4f15TeEOOX69se7PnFJnlVcuv3qo/M1rfRLKt0HwzQmZSvJ
+	p/sYpFvHZX9/c+j4EoiG2BzLR9OUxaFDA+gRFLxJ3dbT0jhc2N2pvaXScOm7DFKfXuZ2oGZ3UTI6J
+	IGLrzQqzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioO8W-0007yB-IN; Mon, 06 Jan 2020 08:53:20 +0000
+	id 1ioOBT-0001HV-0d; Mon, 06 Jan 2020 08:56:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioO8P-0007xQ-KV
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:53:14 +0000
+ id 1ioOBL-0001H8-W7
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:56:17 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C3CF620848;
- Mon,  6 Jan 2020 08:53:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2D55420848;
+ Mon,  6 Jan 2020 08:56:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578300793;
- bh=gGt53+T2QpuKFFig2c67HzTNBOHPtf+uVFA+hg/Q4lc=;
+ s=default; t=1578300975;
+ bh=kpTNuRYCk4/MMIP5zsVxzA3Jsb92H4wI/aZ9O1ah6CA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mNWq+JMn6qkB8nOciEMFpcK41iSy9C7xD6JjWbxszWRW22tRWFyaaS3msGnclalTk
- KQv3uRZ9+neBQab31ecZXXbR+ZSlO8USA4crcl1YhD2Z17v5c+/WIEC8HPO7Ul1LSw
- VLsUxlJkPz4ra3Nfugs/7c+U+7i3LyJr0dRfuBDs=
-Date: Mon, 6 Jan 2020 09:53:11 +0100
+ b=sC1b4Pa8E10HnPtzFhJ0HR0m4DD2dXzD4mV0T3hAdPMy2isKO4ODDPj3N1qr0c9Pf
+ iMNr5g1sSbA5IToBZJV456FiODXa7ch4p0swlbkiu+mXKT1O2/SXrD4d6Spz1Ol0+Y
+ 4JPUwFq/QYR0ztb7n+OL4hlt8E3VwEbzqAE8VMz0=
+Date: Mon, 6 Jan 2020 09:56:13 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: pinebook: Fix lid wakeup
-Message-ID: <20200106085311.nurmbdwr3bjdwlaz@gilmour.lan>
-References: <20200105021137.46542-1-samuel@sholland.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v2] ARM: dts: sun8i: R40: Add SPI controllers nodes and
+ pinmuxes
+Message-ID: <20200106085613.mxe33t7eklj3aeld@gilmour.lan>
+References: <20200106003849.16666-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200105021137.46542-1-samuel@sholland.org>
+In-Reply-To: <20200106003849.16666-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_005313_690127_A4B66C76 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200106_005616_050718_D21BED5B 
+X-CRM114-Status: GOOD (  14.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,48 +76,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6658895075463332761=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============8978153384894084008=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6658895075463332761==
+--===============8978153384894084008==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ljcm7vm7yuabjva4"
+	protocol="application/pgp-signature"; boundary="ksh7fmfwlzp3ppfl"
 Content-Disposition: inline
 
 
---ljcm7vm7yuabjva4
+--ksh7fmfwlzp3ppfl
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sat, Jan 04, 2020 at 08:11:37PM -0600, Samuel Holland wrote:
-> By default, gpio-keys configures the pin to trigger wakeup IRQs on
-> either edge. The lid switch should only trigger wakeup when opening the
-> lid, not when closing it.
+On Mon, Jan 06, 2020 at 12:38:49AM +0000, Andre Przywara wrote:
+> The Allwinner R40 SoC contains four SPI controllers, using the newer
+> sun6i design (but at the legacy addresses).
+> The controller seems to be fully compatible to the A64 one, so no driver
+> changes are necessary.
+> The first three controllers can be used on two sets of pins, but SPI3 is
+> only routed to one set on Port A.
+> Only the pin groups for SPI0 on PortC and SPI1 on PortI are added here,
+> because those seem to be the only one exposed on the Bananapi boards.
 >
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> Tested by connecting a SPI flash to a Bananapi M2 Berry SPI0 and SPI1
+> header pins.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 
 Applied, thanks!
 Maxime
 
---ljcm7vm7yuabjva4
+--ksh7fmfwlzp3ppfl
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhL1dwAKCRDj7w1vZxhR
-xT0HAQDrkJZI1CqZH3uwLnrFRjLzqsehNHgv8hEsBxg3719iyAEA9xfbbnHMmQk8
-yCmfp3X3hgPbmZoRy11TXA4XmytyswE=
-=nVEf
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhL2LQAKCRDj7w1vZxhR
+xUb2AQC2t/o+wqWssFdYyX0elfDe2VwGXNbIb/BBf2YIjDGiQAEAnTOKxl6zFx6j
+7yOxHtFLtYN6hk+SoNjDYuHQ3s/s+Ak=
+=b/td
 -----END PGP SIGNATURE-----
 
---ljcm7vm7yuabjva4--
+--ksh7fmfwlzp3ppfl--
 
 
---===============6658895075463332761==
+--===============8978153384894084008==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +138,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6658895075463332761==--
+--===============8978153384894084008==--
 
