@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF0141316AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:23:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E7AD1316B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:23:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pDY4dquUabN1PApQJW+ClJsYvt55SvXDv6d9kSlHJKA=; b=oHK/lueIouoDM+
-	Wu7wl6dmfvDenDCrGlhx2jM1AZTkVO3RkGy9uKig/aZRc9iUauFxAy9vVGPnWsm/kE5u1q+69I+NK
-	sCKTLyIfSQAzx6Tn1iZT0vrJnZsvhXpfzfiZJHmEQR/61G7mbd9x33ZkP173+FPy1Le8jwawTcKxn
-	+HZH/TOBkLpM49ju1cDIQVpXmwjkEnQhaZG74rKhE/OY0j32XQte/oFArZXxIDFN04FN9+WAUSlod
-	eAmvOYgoioyRdqOpaqh4StDJ8zGs9ep0F2ONvQRCw8GCTZKPYFgshXHic7Jnij1wXWbfacXFRJGuR
-	AuGji2u+YA7PpCOVFTqA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/GxufwXTeAwCO5LsYbc+zCuXmeVvTdWpSu73xjzrMVk=; b=n2z1CjFSMgnJ+a
+	J0LM/OhO/FN6fm4mlbXCDiaShgOfwU0IYzWWPehT02JcWNGsJpC94xehWbFzu3+b+DX2WAUL91H2/
+	l5GTzL3Sruz4wzw56MRgd2mzSfzVcn+f3kLTUaJ6JLoNQEIsqREZfFCyu6kNxfSDyvkgXncN8nwzF
+	a4v5VgudtumiQyA2J51cdFtK9byRPZqKHr1OIbjx/G9BjBxFP69Z/sLqKH3Hu18BC0kryC2fwXtQA
+	XV6Ve/sZwtoaaHUsjMhQhJXP6bCRWUeyklTRH3AhSr5yny5AiYDEqPlKXs45hw9yJTGTybyT4z9dm
+	pVw4hAkOHgKtl70DJ3XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioW5w-0001i3-Bj; Mon, 06 Jan 2020 17:23:12 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ioW68-0001sd-7D; Mon, 06 Jan 2020 17:23:24 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioW5m-0001hM-Du
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:23:03 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z16so27264192pfk.0
+ id 1ioW5p-0001hz-40
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:23:06 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id a6so7828089pjh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 09:23:02 -0800 (PST)
+ Mon, 06 Jan 2020 09:23:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=1MK9kUc0jX8rAAIchK2uS4ItaDoeL81cSWlyOyK2j0s=;
- b=SNvT7iq8lECZ1X0YdoS1NvCMSUi4BP49DiLhty8aZ8UcBl2KYBO8M+edKmsW6f2yIa
- WFvpFxuHWiiYF6f68ivKNiXlnBxgb3dly5RshXXCLQ/uD5cE85LfGXSg4JQHMnMo+CkS
- p7WuKO0PoUEfNOtX982SNWOjVx8q5xPajHM0HSlL/cyZb/imeiC3bUWj4pApX9ME8ILW
- jdN+qWyRsyYPUjnQu8Ss7MANBR1COIwOvKPDy8xdFzevhcOrjqfbU15BxlNViFcOXbMq
- tB2wX2bieUO5XNSqPwznLejXP/3QXS/rtTI+Ib9os075D5GWFQzJKekZtt9HrCnpLG6H
- YjwA==
+ h=from:to:subject:date:message-id:in-reply-to:references;
+ bh=EiXC/MriP+cdpOhem11vYI94GWNz0CCSOZkGZBL2d9U=;
+ b=Fgih5/mKhpixJHIO6J5wKEuJKm7z0uNcQcfAvNH/An3WxxPmMy+MsVfGvWH8F+G/kE
+ WnSgM2VT95YfTuvide3gtMzFG/e77mch7xQ6DXG5Dd6MU7yQ7Mg9L88UWJjVqL6LXspH
+ 5mccJdFyoViN6VNicTG6d8NEZTWBvn0Qm/hIjWml5LQybFMWwhm14A/QjTDh3n7pduR2
+ 7QPR24Lz9HK6h1nCe6ViwF/6q1GCbvWBsxkQ9HQySVnsjBAhGUzJQGme1O4YhNy6r/Nw
+ DlKd8fVdqt/hSSddPfkyoSPWamfinzb6SOrmEbMSN8wx4Egu0xkOK0E1xEvuNrZUIxef
+ kTew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=1MK9kUc0jX8rAAIchK2uS4ItaDoeL81cSWlyOyK2j0s=;
- b=aK1LN0ikapdbEY75pXdNHwPHxSAquzAN4yN5QxT5vFIwLFqNErwzLu5s4fPPZkIppi
- AyBncEjRSvd0KJ1McjhDD1X7eD181ZabAjqKe3JOOGXzwQgT1Vytwvk3er1KUbIDtTUx
- KIIFBYDebrqB6+pXqHPL8xJVzDKVoowsMhtPbWOKx4TUk8cWtPkUZh7ft4Py6iYBHYJH
- 7LTRXNvGVMznslT3GjQTqynsJ0PUR3jFP/GOtXHwcFDvTfsrbAFke8AmmnuT3Depc8s+
- /ohNoE50V6o6ldv7ccOsht+0+0ytxnjwC03YZOB+lCrZXSKpXh1L+RS5/3Vwf8m1TkFJ
- eH+Q==
-X-Gm-Message-State: APjAAAU4uBHLUKxVcLy8MjizGYwkCq0QsT9ESKXLkRGjff5NF/ODXKp4
- pnaDRwUKaZRPCVVZ7rK1s8E=
-X-Google-Smtp-Source: APXvYqx5UbsJIQe4FQTlo4Bt4g3zdXkXPsVMVY+y9pSKn2SCnT6wGXwes+jaWpECdIIRdftW0A5d2A==
-X-Received: by 2002:a62:4d87:: with SMTP id
- a129mr108865731pfb.116.1578331381826; 
- Mon, 06 Jan 2020 09:23:01 -0800 (PST)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references;
+ bh=EiXC/MriP+cdpOhem11vYI94GWNz0CCSOZkGZBL2d9U=;
+ b=BLJkcUNB+yT5Pi5L1oSDa09xPDa14VSeo4thVahaeV5tB8oKAjmHniCHOH94FeOsVe
+ Mt8t2hb4r6gsPx323MseK3wuirPWnYlC9D6VskzTcLFZkN9nOWKk0Z40UwofjS9qmQPp
+ zkhRD3SuFi4R2viKaNJJPnOVKv/zWBbsunsedmuSOPih/tKyEjFxaz5RV6iGjsonDxmC
+ I2F3SFP6M6d9bOYijrFdqzGR2B+aZ7el0V6KcYOIWWG3m3zTnlAeqm320d5Hmy0+iQjH
+ pp46OKbaAc9Vwsss4QPOBWtGs/UNkSXBy8zkAMmhAWEomP8/0YkV0jQ3zYVrutU6TwMP
+ PHRA==
+X-Gm-Message-State: APjAAAUHQpnOkvcR0IZmejj4YwR9xnNHDD3kIoozHhlBHBHMvlFL3XEz
+ SoyvMOHE0gE2ko7J5mPHQns=
+X-Google-Smtp-Source: APXvYqyB4iG4q1U/Odr0v3tivcHOlY4azofIJDFUH6PdH0VjXjYafHAzGQBMVo8AxD5sE0fqJl7dFA==
+X-Received: by 2002:a17:902:aa85:: with SMTP id
+ d5mr110322875plr.16.1578331383886; 
+ Mon, 06 Jan 2020 09:23:03 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id r3sm79483499pfg.145.2020.01.06.09.23.00
+ by smtp.gmail.com with ESMTPSA id f9sm76869387pfd.141.2020.01.06.09.23.03
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 06 Jan 2020 09:23:01 -0800 (PST)
+ Mon, 06 Jan 2020 09:23:03 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, mripard@kernel.org,
  wens@csie.org, anarsoul@gmail.com, tiny.windzz@gmail.com,
@@ -62,21 +63,20 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, mripard@kernel.org,
  amit.kucheria@verdurent.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH 1/2] thermal: sun8i: fix r40 ths number
-Date: Mon,  6 Jan 2020 17:22:53 +0000
-Message-Id: <20200106172254.20271-1-tiny.windzz@gmail.com>
+Subject: [PATCH 2/2] ARM: dts: sun8i-r40: Add thermal sensor and thermal zones
+Date: Mon,  6 Jan 2020 17:22:54 +0000
+Message-Id: <20200106172254.20271-2-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200106172254.20271-1-tiny.windzz@gmail.com>
+References: <20200106172254.20271-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_092302_497645_5149D2F0 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20200106_092305_164483_F675358B 
+X-CRM114-Status: GOOD (  12.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,29 +105,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the spec, r40 has 2 thermal sensors.
-Sensor0 located in the CPU, another in the GPU.
+There are two sensors, sensor0 for CPU, sensor1 for GPU.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 Tested-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 Tested-on: sun8i-r40-bananapi-m2-ultra
 ---
- drivers/thermal/sun8i_thermal.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/sun8i-r40.dtsi | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-index 23a5f4aa4be4..c5661d7c3e20 100644
---- a/drivers/thermal/sun8i_thermal.c
-+++ b/drivers/thermal/sun8i_thermal.c
-@@ -565,7 +565,7 @@ static const struct ths_thermal_chip sun8i_h3_ths = {
- };
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index 421dfbbfd7ee..8ccda5cb873f 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -46,6 +46,7 @@
+ #include <dt-bindings/clock/sun8i-r40-ccu.h>
+ #include <dt-bindings/reset/sun8i-r40-ccu.h>
+ #include <dt-bindings/reset/sun8i-de2.h>
++#include <dt-bindings/thermal/thermal.h>
  
- static const struct ths_thermal_chip sun8i_r40_ths = {
--	.sensor_num = 3,
-+	.sensor_num = 2,
- 	.offset = 251086,
- 	.scale = 1130,
- 	.has_mod_clk = true,
+ / {
+ 	#address-cells = <1>;
+@@ -109,6 +110,22 @@
+ 		status = "disabled";
+ 	};
+ 
++	thermal-zones {
++		cpu_thermal: cpu0-thermal {
++			/* milliseconds */
++			polling-delay-passive = <0>;
++			polling-delay = <0>;
++			thermal-sensors = <&ths 0>;
++		};
++
++		gpu_thermal: gpu-thermal {
++			/* milliseconds */
++			polling-delay-passive = <0>;
++			polling-delay = <0>;
++			thermal-sensors = <&ths 1>;
++		};
++	};
++
+ 	soc {
+ 		compatible = "simple-bus";
+ 		#address-cells = <1>;
+@@ -421,6 +438,17 @@
+ 			clocks = <&osc24M>;
+ 		};
+ 
++		ths: thermal-sensor@1c24c00 {
++			compatible = "allwinner,sun8i-r40-ths";
++			reg = <0x01c24c00 0x100>;
++			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
++			clock-names = "bus", "mod";
++			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++			resets = <&ccu RST_BUS_THS>;
++			/* TODO: add nvmem-cells for calibration */
++			#thermal-sensor-cells = <1>;
++		};
++
+ 		uart0: serial@1c28000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0x01c28000 0x400>;
 -- 
 2.17.1
 
