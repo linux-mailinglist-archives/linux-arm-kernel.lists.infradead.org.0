@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF58E1312F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:31:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7534713131E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:41:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nFbNaEEbLelpEdJqGn2IkBKOE9T0jXVOZVsXv34+lSY=; b=O4K7TdTu8+sjZW
-	kstJvgO5jvM0IEockfr28lyxwsjRlNMchASOlxSLepV+UuMJ1yJ/2PnI7fxdEi7KfE910ssic8rW2
-	5shf/a0u0RWF6fe7xI9EWSGVezvaMZwowLQctpg9JKpRQ6W7CN4caByVpMAGDr9TB/tuUpRPsI4na
-	XIldFBRdxMzFXFBoVpwL5XZTijnhGDmNv6Sq7qXKFuEtbHZw2AbWRBwyTievDPvRlcNEJf/9rL6iQ
-	EQtBIHtRf+mjLi4HQk8nq/K848XhHkPN/5xx0WdvME2+l+UKQrUcY376I7yRMKtOlwLUISKdIbgA9
-	4mhK5ea9EBsgQgLDLwgw==;
+	List-Owner; bh=a7dDjFF8Jh/6WwyEgu8Fnvia1NQPzwDz5J/ApCQWv1c=; b=naeajso8em5rnZ
+	SnhvnFJ9un7xtPE+R6wLRAloKrSxcFjNjblbW2VFNhnFHEvsyGzbQRwH3/c7gN0ob6S8F4DrbC2HQ
+	/e+0JYY8YU38T0jfStn1varOZfs5aRm2Hs2A6FwheLH6ShpzS0yWBHZxziEybdOLl3FNqxM9MmkXT
+	WoewbM9QkisLQM67i1pc4l/cejVcnBI6YnIUAtokDxe7Z5lGZWtzVdBRNMH1EGC8ExlGW3YGkZU3Z
+	RZ3uHU9fSR6QSyvJw76/qEGHjZ9/PuOsY4jjIBIVaGLbPcCbmHKGB6EN9/u8hnNwnLm9SdxAS1sys
+	3+HjfLLmh1ego7JZR/BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioSTA-0002LE-S7; Mon, 06 Jan 2020 13:30:56 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1ioSdV-0001Ax-Fz; Mon, 06 Jan 2020 13:41:37 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioSS7-0000CX-Lx
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:29:53 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 006DRPGq006070; Mon, 6 Jan 2020 14:29:44 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=wjQdFwE1hTJLf/l3Bfadi5K3scAmh1frqnNxBbfuOeY=;
- b=tdrHsJCTNJm6YvCLcAKl1AQg8qfwhkFOuqsriNFaVw70kmJuOK1/PBmIFVnQElWVhWWN
- M4WkILKO4rwkowxqAW6DzXpvYxl25V0/m+efnEeIeqO3AyjXaQKF6g6YyHQVzyiRN9j3
- P+/+iUhqbuV1kvSleSJIMbLmv1hbspyN7e4SZatecuDXFYTgcr+zMiTl9VBUxkl6+B2l
- 6bnlIFWbs4+RJQ/4O1BG0dXysAJqaYxuxUGegoOLfoE2yRHxfe1KZd2rjbPMXO4RQ50Z
- c/dIdScvNdkySyPd8cZyRq3t66h5ZclGU77xYC2+n89j8fi33PeibfqK0VBCGnI+J/gZ Lw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xakm584up-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 06 Jan 2020 14:29:44 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3D64710002A;
- Mon,  6 Jan 2020 14:29:44 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3037F2D378B;
- Mon,  6 Jan 2020 14:29:44 +0100 (CET)
-Received: from localhost (10.75.127.51) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 6 Jan 2020 14:29:43
- +0100
-From: Alain Volmat <alain.volmat@st.com>
-To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
-Subject: [PATCH 6/6] ARM: dts: stm32: add wakeup-source in all I2C nodes of
- stm32mp157c
-Date: Mon, 6 Jan 2020 14:28:34 +0100
-Message-ID: <1578317314-17197-7-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578317314-17197-1-git-send-email-alain.volmat@st.com>
-References: <1578317314-17197-1-git-send-email-alain.volmat@st.com>
+ id 1ioSZt-0005iY-Qg
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:38:01 +0000
+Received: by mail-ed1-f66.google.com with SMTP id j17so47415337edp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 05:37:52 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nTRmM4JajO9uUHX21IbuaGFMr+hIBoIOQlYQd1Eaoq0=;
+ b=K1BZoEy/yZQ5TeYJCKz/96uEvkiUgveXa4SLKvG14tqXHqVrMuh1Rux8lvOJTevD3R
+ TqJ0atN/0M49G5R0mGh1yVg1cZsbhAb8GJvQoxlVClOB+4AGYyYi8bRdPkw6L1q4bh/y
+ F53ilOyftHGd221yx+5K7qudagEYzeReLB4TZTVHKTr1Er7BRwCt/u2Et8VaftXK4Zcy
+ /Hg+XAPVfbC9I6iV6K2nyw+xs4mR4oKuQqdlSoOKh51loP8fgQIhdPm8NjM931YUKG2V
+ IIgWUwJD45DkK6s4+DNzflnrgrbK8iwXMw7gGSvkAMwY2mCqz5+xcWdys6GpRkCkRUk5
+ 2Dtg==
+X-Gm-Message-State: APjAAAWDb7NWf/s7UPJdic/ZCOKzm8UvNu+bkwOpNQEN/AfFO9KB9UPq
+ WdO49/cX90NxuZ9tAJWoMEk/FYLg6bE=
+X-Google-Smtp-Source: APXvYqzFXaNEGVWV38AkegEBQ+mKOt5McefAIWxg/OKYOgqNEPdzWtM0d4MNMyw/tnrOxCE1PPRxow==
+X-Received: by 2002:a50:b905:: with SMTP id m5mr105371930ede.154.1578317871319; 
+ Mon, 06 Jan 2020 05:37:51 -0800 (PST)
+Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com.
+ [209.85.128.45])
+ by smtp.gmail.com with ESMTPSA id q4sm6068570edb.27.2020.01.06.05.37.50
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 06 Jan 2020 05:37:51 -0800 (PST)
+Received: by mail-wm1-f45.google.com with SMTP id c127so11981099wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 05:37:50 -0800 (PST)
+X-Received: by 2002:a05:600c:2046:: with SMTP id
+ p6mr34993499wmg.110.1578317870539; 
+ Mon, 06 Jan 2020 05:37:50 -0800 (PST)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2020-01-06_04:2020-01-06,2020-01-06 signatures=0
+References: <20200106003849.16666-1-andre.przywara@arm.com>
+ <20200106085613.mxe33t7eklj3aeld@gilmour.lan>
+In-Reply-To: <20200106085613.mxe33t7eklj3aeld@gilmour.lan>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Mon, 6 Jan 2020 21:37:38 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65=iJzPJneUF=e9Xsqj_ufhuZtr5javN5YNKtaApGq2zA@mail.gmail.com>
+Message-ID: <CAGb2v65=iJzPJneUF=e9Xsqj_ufhuZtr5javN5YNKtaApGq2zA@mail.gmail.com>
+Subject: Re: [PATCH v2] ARM: dts: sun8i: R40: Add SPI controllers nodes and
+ pinmuxes
+To: Maxime Ripard <mripard@kernel.org>, Andre Przywara <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_052952_049862_1C7B7D91 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200106_053753_904943_635AC3EA 
+X-CRM114-Status: GOOD (  16.24  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,79 +98,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the wakeup-source property in all i2c nodes of
-the SoC stm32mp157c so that those I2C controllers can become
-wakeup-source.
+On Mon, Jan 6, 2020 at 4:56 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> On Mon, Jan 06, 2020 at 12:38:49AM +0000, Andre Przywara wrote:
+> > The Allwinner R40 SoC contains four SPI controllers, using the newer
+> > sun6i design (but at the legacy addresses).
+> > The controller seems to be fully compatible to the A64 one, so no driver
+> > changes are necessary.
+> > The first three controllers can be used on two sets of pins, but SPI3 is
+> > only routed to one set on Port A.
+> > Only the pin groups for SPI0 on PortC and SPI1 on PortI are added here,
+> > because those seem to be the only one exposed on the Bananapi boards.
+> >
+> > Tested by connecting a SPI flash to a Bananapi M2 Berry SPI0 and SPI1
+> > header pins.
+> >
+> > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+>
+> Applied, thanks!
+> Maxime
 
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
----
- arch/arm/boot/dts/stm32mp151.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+Looks like this patch doesn't build. The SPI device nodes reference
+a non-existent DMA node.
 
-diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
-index 3dd570b10181..5706c4f41b0b 100644
---- a/arch/arm/boot/dts/stm32mp151.dtsi
-+++ b/arch/arm/boot/dts/stm32mp151.dtsi
-@@ -483,6 +483,7 @@
- 			resets = <&rcc I2C1_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
-@@ -496,6 +497,7 @@
- 			resets = <&rcc I2C2_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
-@@ -509,6 +511,7 @@
- 			resets = <&rcc I2C3_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
-@@ -522,6 +525,7 @@
- 			resets = <&rcc I2C5_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
-@@ -1473,6 +1477,7 @@
- 			resets = <&rcc I2C4_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
-@@ -1508,6 +1513,7 @@
- 			resets = <&rcc I2C6_R>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			wakeup-source;
- 			status = "disabled";
- 		};
- 
--- 
-2.7.4
-
+ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
