@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E5C1131AC4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B01F131ACA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:56:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Loyal50Na9gmaWTG4bJuxizB0aJcEt76GrFO3Xib+Ys=; b=mfkcXETdqVOwyN
-	fB3PyWLEX62wQJnGB+9ZVGbfCvg79bnwY0OR3Rzm3PpoBiEtPUYEHg1sfWvyE/oJBmdaSC2z/9psI
-	KcM++NNvc+vd1dTSebI9p00UrY5NUzh9/8Q/xZUW61t0GRHDkCGqIATIKzJxKWx0/Bn68W3NNEX+t
-	lEc2uZL2NcZoy3ezv8I6XykfILQaGRuE4Xd1fLtH2ea7Rv57eFi/37ysLRhT3WWdPzPPrSWJXMAB3
-	EqbcImNvvmKkAYRJ25Flt0UeqmexBAF3YiUKe3anDXkntv6MiY8dzc/ePdrQoERQ2x+MoU8FulAPZ
-	RPXksPb6aaFCzzNOuWnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IabfbyPIHGOFMCS6j3cSAWk1rj+gRYa85OaByzrTc8I=; b=GmYMGdTSNmDuMTjK7Ko0Vdgb8
+	1FEfw2jaxflV1WvxmytUjsS5rI13xhF7xeQJODc/jlCaguc9KKrwUC8ZzHSFIqzENnTu00+BaATmk
+	/bJ9h7HunktvA6AHP2GcxPEGy5hOtJIiLnRtfF1GTX5pKWRXCWlYVYyQ6lTvdEMtZuk7EKlpUoT++
+	x5GGoF8TA/s77VUBdkaiLPvsKKP3xJK5Q8Ci40GY921FvBErcuYHFkzdTckbDGDsLDsMw6zaWpoEc
+	3C1IvjtDE7ZgRU8yrTRBfz9coRFa6+nR0i1PyKcDMgH002ugQ58qD8Wm8gYEbJSqLcapD+gXgAHeL
+	DV3LTzwjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioaK5-0005KW-7f; Mon, 06 Jan 2020 21:54:05 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1ioaM1-00078e-C3; Mon, 06 Jan 2020 21:56:05 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioaJw-0005Ib-7Q
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 21:53:57 +0000
-Received: by mail-ua1-x943.google.com with SMTP id 1so17714466uao.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 13:53:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=faKcBWRoBE2UlX7M22RMok2qsMWbJzCtmjkdjEhBadM=;
- b=KvRZwXcjreqaUPQ8TQS+8WGmX5JXgVz7Aa9cosBD9uIqp73RCLi8IaddTYv+Bb9+h7
- GG8wLl5227sVwjU/+vyr0VolH7MIFadz+ccCHeWYZfBVvNx1dQAAE2/51+k1bF87UHvw
- VrZJS+oLe9imzSxxt+SDyBB4xP9x9UU2clpSE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=faKcBWRoBE2UlX7M22RMok2qsMWbJzCtmjkdjEhBadM=;
- b=CAPvSNIibej96XuxRhVzTJxluBcHr8BGPafD/xZXhmH5aIH+ejFJ7pGWWFg8TWU30d
- ej5iqUdZTVbgeJ8yPhyoJvLxPMfh70DuzpjMXgSHYVme7SzhMA4O39sRkqHVba8IJmnb
- yWmgcQCKP/9wsxs3kz73XukhBslaErccgloOLYmAf+2NGEjE0eEAmV3Kf8IQITgdqRLT
- v2lIAabyXOfQnqO2Nxn5PZUqwn/9IBz6K3S/yK5+JvYqtjMBFDQC5+hOAcq4HQ+6c9ly
- J+Igg6A6Kc7/oHbMlic8D+YS8Fnc/EMu88wup47eur+OYOTls7F8yjIT6iTGvV+656RQ
- lRYg==
-X-Gm-Message-State: APjAAAV5ZApbL7csoMauw03V6l6FYoYVFdMHvTrjR5M9PZoG1iLLG4iw
- wrDkNLVc7abflWaP6LYk4qqXu3LDXH8=
-X-Google-Smtp-Source: APXvYqxzsII1T9zlEpNpjd98zUWKp9XLw7kOgf/+PVMPKuyKoqKzzotw60MNGatB6Gqgx+YdId9n5g==
-X-Received: by 2002:ab0:2e92:: with SMTP id f18mr60999434uaa.143.1578347634344; 
- Mon, 06 Jan 2020 13:53:54 -0800 (PST)
-Received: from mail-vk1-f181.google.com (mail-vk1-f181.google.com.
- [209.85.221.181])
- by smtp.gmail.com with ESMTPSA id z15sm16492169vsz.27.2020.01.06.13.53.53
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 13:53:53 -0800 (PST)
-Received: by mail-vk1-f181.google.com with SMTP id w67so12890671vkf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 13:53:53 -0800 (PST)
-X-Received: by 2002:a1f:2197:: with SMTP id h145mr55322972vkh.75.1578347632921; 
- Mon, 06 Jan 2020 13:53:52 -0800 (PST)
+ id 1ioaLs-00074E-M8; Mon, 06 Jan 2020 21:55:59 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Jan 2020 13:55:55 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,403,1571727600"; d="scan'208";a="245719807"
+Received: from chewang-mobl.amr.corp.intel.com (HELO [10.254.185.10])
+ ([10.254.185.10])
+ by fmsmga004.fm.intel.com with ESMTP; 06 Jan 2020 13:55:53 -0800
+Subject: Re: [PATCH] ASoC: rt5677: add SPI_MASTER dependency
+To: Jon Hunter <jonathanh@nvidia.com>, Arnd Bergmann <arnd@arndb.de>,
+ Mark Brown <broonie@kernel.org>
+References: <20191210195333.648018-1-arnd@arndb.de>
+ <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
+From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+Message-ID: <9c9169cc-0da5-f247-c8f7-f6913ca2bfb5@linux.intel.com>
+Date: Mon, 6 Jan 2020 15:55:53 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20200106135142.1.I3f99ac8399a564c88ff48ae6290cc691b47c16ae@changeid>
-In-Reply-To: <20200106135142.1.I3f99ac8399a564c88ff48ae6290cc691b47c16ae@changeid>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 6 Jan 2020 13:53:41 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=WcpjiVQ6zNN8fO4ZUCTr6GZkcPXjMW1hq8fvif6_QBpw@mail.gmail.com>
-Message-ID: <CAD=FV=WcpjiVQ6zNN8fO4ZUCTr6GZkcPXjMW1hq8fvif6_QBpw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use ABI name for write protect pin on
- veyron fievel/tiger
-To: Matthias Kaehlcke <mka@chromium.org>
+In-Reply-To: <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_135356_267314_195484B0 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_135558_032130_B54E0334 
+X-CRM114-Status: GOOD (  17.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,35 +68,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Cezary Rojewski <cezary.rojewski@intel.com>, linux-tegra@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, alsa-devel@alsa-project.org,
+ linux-kernel@vger.kernel.org, Jie Yang <yang.jie@linux.intel.com>,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Ben Zhang <benzh@chromium.org>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Curtis Malainey <cujomalainey@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org,
+ KaiChieh Chuang <kaichieh.chuang@mediatek.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Mon, Jan 6, 2020 at 1:52 PM Matthias Kaehlcke <mka@chromium.org> wrote:
->
-> The flash write protect pin is currently named 'FW_WP_AP', which is
-> how the signal is called in the schematics. The Chrome OS ABI
-> requires the pin to be named 'AP_FLASH_WP_L', which is also how
-> it is called on all other veyron devices. Rename the pin to match
-> the ABI.
->
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-> ---
->
->  arch/arm/boot/dts/rk3288-veyron-fievel.dts | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
 
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
+On 12/11/19 4:59 AM, Jon Hunter wrote:
+> 
+> On 10/12/2019 19:52, Arnd Bergmann wrote:
+>> When CONFIG_SPI is disabled, the newly added code for the DSP
+>> firmware loading fails to link:
+>>
+>> ERROR: "rt5677_spi_hotword_detected" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
+>> ERROR: "rt5677_spi_write" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
+> 
+> Would it be better if the above functions or the functions that call
+> these are conditional on CONFIG_SND_SOC_RT5677_SPI?
+
+they are already conditional, with a fallback provided:
+
+#if IS_ENABLED(CONFIG_SND_SOC_RT5677_SPI)
+int rt5677_spi_read(u32 addr, void *rxbuf, size_t len);
+int rt5677_spi_write(u32 addr, const void *txbuf, size_t len);
+int rt5677_spi_write_firmware(u32 addr, const struct firmware *fw);
+void rt5677_spi_hotword_detected(void);
+#else
+static inline int rt5677_spi_read(u32 addr, void *rxbuf, size_t len)
+{
+	return -EINVAL;
+}
+static inline int rt5677_spi_write(u32 addr, const void *txbuf, size_t len)
+{
+	return -EINVAL;
+}
+static inline int rt5677_spi_write_firmware(u32 addr, const struct 
+firmware *fw)
+{
+	return -EINVAL;
+}
+static inline void rt5677_spi_hotword_detected(void){}
+#endif
+
+and since we have the following definition
+
+config SND_SOC_RT5677_SPI
+	tristate
+	default SND_SOC_RT5677 && SPI
+
+in theory if SPI is not enabled the fallback static inlines would always 
+be selected?
+
+Arnd, if you can share the .config that exposes this problem it'd be nice
+
+FWIW, there are other missing dependencies, the SPI controller was not 
+explicitly enabled so depending on the Kconfigs used by a distro the 
+machine driver probe could fail with the spi-RT5677AA component never 
+registered. The patch below seems to work for me (more testing needed)
+
+diff --git a/sound/soc/intel/boards/Kconfig b/sound/soc/intel/boards/Kconfig
+index b149e28a2076..cf1a2fde4c47 100644
+--- a/sound/soc/intel/boards/Kconfig
++++ b/sound/soc/intel/boards/Kconfig
+@@ -50,6 +50,9 @@ config SND_SOC_INTEL_BDW_RT5677_MACH
+         depends on I2C_DESIGNWARE_PLATFORM || COMPILE_TEST
+         depends on GPIOLIB || COMPILE_TEST
+         depends on X86_INTEL_LPSS || COMPILE_TEST
++       depends on SPI_MASTER
++       select SPI_PXA2XX
++       select SND_SOC_RT5677_SPI
+         select SND_SOC_RT5677
+         help
+           This adds support for Intel Broadwell platform based boards with
 
 _______________________________________________
 linux-arm-kernel mailing list
