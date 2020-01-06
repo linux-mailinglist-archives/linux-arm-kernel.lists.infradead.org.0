@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ECBE131900
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 21:07:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC995131902
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 21:07:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=muPY49brGgL44d0kvh6sYuu07hiUl+ktb3mwx9XR08Q=; b=ey2FxCiARvqpqX
-	WGKoaQSI6FYbRSFpFMWMTTFkyw4/osZTLE2Dd74cXE6gq28a/XUe3LhvgX9GTRp9k3yh4qKHb4PEt
-	zwH3GCf4XRgqDImKgCMRndtM7DcXTcjfrUR7YDWveAXXVvrZDp0kq3VXuOxi4rpme2uiQ1wRJV3MG
-	fujE1S6DxzQ+YofCSomNQng8BIMCHlKbbCDbLi93h2JZZyw/bluZ51bQpBTAWEmDfSiMnbyheNYjY
-	Mg8DQV42aNXtwVXOfRToI60kH1b/65LR0AINeZ4Qa4LaGQlt8OarSMGyChfZ8T128pfxN5geMoAD5
-	CwDWRTPxaCEYi1W1R8yg==;
+	List-Owner; bh=AoKD1D/XVNGfyjmIHGQDnStjsRINNGV21c3slk5pkNo=; b=sY14yxffS/ojFM
+	UObciJ+W74cq3P9MSTP5qaBkxUX7AFOiFmVSoSk98zPkW8LjMhv5meTcYpx3uy1YYrbeD6HrBfiPq
+	C5ZlMqrcTKsxevNnunq7eROFdkl5Q+YbFb4lsdK74Zw3uxABso1+/xgE8EU0e+ThlyIAUgwtEdsiz
+	p2PxoVI3j4Vmi3Qan6w7wfD3av2QH7GmmRXriap9dY3RVoOfmnZRLypoxFIU9cw74y9zK56TURFEg
+	Iz0ePMh2XZwvw7JZ/9H6Q1cPg9luQ4/8G7MDKVwAZc9RyyB5+vjmEU/0KgpeCDn+Yh1PLK6efeblI
+	NJZu2uxA14yRM6J6c8eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioYeT-0004qS-Tk; Mon, 06 Jan 2020 20:07:01 +0000
+	id 1ioYeg-00055U-AR; Mon, 06 Jan 2020 20:07:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioYdu-0004SY-T4
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 20:06:28 +0000
+ id 1ioYdw-0004Sx-AX
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 20:06:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9BB951007;
- Mon,  6 Jan 2020 12:06:25 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1CA8328;
+ Mon,  6 Jan 2020 12:06:27 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1E6E43F534;
- Mon,  6 Jan 2020 12:06:24 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 45B163F534;
+ Mon,  6 Jan 2020 12:06:27 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH 2/3] arm64: lib: Use modern annotations for assembly functions
-Date: Mon,  6 Jan 2020 19:58:17 +0000
-Message-Id: <20200106195818.56351-3-broonie@kernel.org>
+Subject: [PATCH 3/3] arm64: mm: Use modern annotations for assembly functions
+Date: Mon,  6 Jan 2020 19:58:18 +0000
+Message-Id: <20200106195818.56351-4-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200106195818.56351-1-broonie@kernel.org>
 References: <20200106195818.56351-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_120627_023323_CF38D12F 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200106_120628_450027_76E47035 
+X-CRM114-Status: GOOD (  12.83  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -73,453 +73,314 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 In an effort to clarify and simplify the annotation of assembly functions
 in the kernel new macros have been introduced. These replace ENTRY and
 ENDPROC and also add a new annotation for static functions which previously
-had no ENTRY equivalent. Update the annotations in the library code to the
-new macros.
+had no ENTRY equivalent. Update the annotations in the mm code to the
+new macros. Even the functions called from non-standard environments
+like idmap have no special requirements on their environments so can be
+treated like regular functions.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/lib/clear_page.S     |  4 ++--
- arch/arm64/lib/clear_user.S     |  4 ++--
- arch/arm64/lib/copy_from_user.S |  4 ++--
- arch/arm64/lib/copy_in_user.S   |  4 ++--
- arch/arm64/lib/copy_page.S      |  4 ++--
- arch/arm64/lib/copy_to_user.S   |  4 ++--
- arch/arm64/lib/crc32.S          |  8 ++++----
- arch/arm64/lib/memchr.S         |  4 ++--
- arch/arm64/lib/memcmp.S         |  4 ++--
- arch/arm64/lib/memcpy.S         |  8 ++++----
- arch/arm64/lib/memmove.S        |  8 ++++----
- arch/arm64/lib/memset.S         |  8 ++++----
- arch/arm64/lib/strchr.S         |  4 ++--
- arch/arm64/lib/strcmp.S         |  4 ++--
- arch/arm64/lib/strlen.S         |  4 ++--
- arch/arm64/lib/strncmp.S        |  4 ++--
- arch/arm64/lib/strnlen.S        |  4 ++--
- arch/arm64/lib/strrchr.S        |  4 ++--
- arch/arm64/lib/tishift.S        | 12 ++++++------
- 19 files changed, 50 insertions(+), 50 deletions(-)
+ arch/arm64/mm/cache.S | 52 +++++++++++++++++++++----------------------
+ arch/arm64/mm/proc.S  | 24 ++++++++++----------
+ 2 files changed, 38 insertions(+), 38 deletions(-)
 
-diff --git a/arch/arm64/lib/clear_page.S b/arch/arm64/lib/clear_page.S
-index 78a9ef66288a..073acbf02a7c 100644
---- a/arch/arm64/lib/clear_page.S
-+++ b/arch/arm64/lib/clear_page.S
-@@ -14,7 +14,7 @@
-  * Parameters:
-  *	x0 - dest
+diff --git a/arch/arm64/mm/cache.S b/arch/arm64/mm/cache.S
+index db767b072601..2d881f34dd9d 100644
+--- a/arch/arm64/mm/cache.S
++++ b/arch/arm64/mm/cache.S
+@@ -24,7 +24,7 @@
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
   */
--ENTRY(clear_page)
-+SYM_FUNC_START(clear_page)
- 	mrs	x1, dczid_el0
- 	and	w1, w1, #0xf
- 	mov	x2, #4
-@@ -25,5 +25,5 @@ ENTRY(clear_page)
- 	tst	x0, #(PAGE_SIZE - 1)
- 	b.ne	1b
- 	ret
--ENDPROC(clear_page)
-+SYM_FUNC_END(clear_page)
- EXPORT_SYMBOL(clear_page)
-diff --git a/arch/arm64/lib/clear_user.S b/arch/arm64/lib/clear_user.S
-index aeafc03e961a..48a3a26eff66 100644
---- a/arch/arm64/lib/clear_user.S
-+++ b/arch/arm64/lib/clear_user.S
-@@ -19,7 +19,7 @@
-  *
-  * Alignment fixed up by hardware.
+-ENTRY(__flush_icache_range)
++SYM_FUNC_START(__flush_icache_range)
+ 	/* FALLTHROUGH */
+ 
+ /*
+@@ -37,7 +37,7 @@ ENTRY(__flush_icache_range)
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
   */
--ENTRY(__arch_clear_user)
-+SYM_FUNC_START(__arch_clear_user)
- 	mov	x2, x1			// save the size for fixup return
- 	subs	x1, x1, #8
- 	b.mi	2f
-@@ -40,7 +40,7 @@ uao_user_alternative 9f, strh, sttrh, wzr, x0, 2
- uao_user_alternative 9f, strb, sttrb, wzr, x0, 0
- 5:	mov	x0, #0
- 	ret
--ENDPROC(__arch_clear_user)
-+SYM_FUNC_END(__arch_clear_user)
- EXPORT_SYMBOL(__arch_clear_user)
- 
- 	.section .fixup,"ax"
-diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
-index ebb3c06cbb5d..8e25e89ad01f 100644
---- a/arch/arm64/lib/copy_from_user.S
-+++ b/arch/arm64/lib/copy_from_user.S
-@@ -53,12 +53,12 @@
- 	.endm
- 
- end	.req	x5
--ENTRY(__arch_copy_from_user)
-+SYM_FUNC_START(__arch_copy_from_user)
- 	add	end, x0, x2
- #include "copy_template.S"
- 	mov	x0, #0				// Nothing to copy
- 	ret
--ENDPROC(__arch_copy_from_user)
-+SYM_FUNC_END(__arch_copy_from_user)
- EXPORT_SYMBOL(__arch_copy_from_user)
- 
- 	.section .fixup,"ax"
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 3d8153a1ebce..667139013ed1 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -55,12 +55,12 @@
- 
- end	.req	x5
- 
--ENTRY(__arch_copy_in_user)
-+SYM_FUNC_START(__arch_copy_in_user)
- 	add	end, x0, x2
- #include "copy_template.S"
- 	mov	x0, #0
- 	ret
--ENDPROC(__arch_copy_in_user)
-+SYM_FUNC_END(__arch_copy_in_user)
- EXPORT_SYMBOL(__arch_copy_in_user)
- 
- 	.section .fixup,"ax"
-diff --git a/arch/arm64/lib/copy_page.S b/arch/arm64/lib/copy_page.S
-index bbb8562396af..e125a84eb400 100644
---- a/arch/arm64/lib/copy_page.S
-+++ b/arch/arm64/lib/copy_page.S
-@@ -17,7 +17,7 @@
-  *	x0 - dest
-  *	x1 - src
-  */
--ENTRY(copy_page)
-+SYM_FUNC_START(copy_page)
- alternative_if ARM64_HAS_NO_HW_PREFETCH
- 	// Prefetch three cache lines ahead.
- 	prfm	pldl1strm, [x1, #128]
-@@ -75,5 +75,5 @@ alternative_else_nop_endif
- 	stnp	x16, x17, [x0, #112]
- 
- 	ret
--ENDPROC(copy_page)
-+SYM_FUNC_END(copy_page)
- EXPORT_SYMBOL(copy_page)
-diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
-index 357eae2c18eb..1a104d0089f3 100644
---- a/arch/arm64/lib/copy_to_user.S
-+++ b/arch/arm64/lib/copy_to_user.S
-@@ -52,12 +52,12 @@
- 	.endm
- 
- end	.req	x5
--ENTRY(__arch_copy_to_user)
-+SYM_FUNC_START(__arch_copy_to_user)
- 	add	end, x0, x2
- #include "copy_template.S"
- 	mov	x0, #0
- 	ret
--ENDPROC(__arch_copy_to_user)
-+SYM_FUNC_END(__arch_copy_to_user)
- EXPORT_SYMBOL(__arch_copy_to_user)
- 
- 	.section .fixup,"ax"
-diff --git a/arch/arm64/lib/crc32.S b/arch/arm64/lib/crc32.S
-index e6135f16649b..243e107e9896 100644
---- a/arch/arm64/lib/crc32.S
-+++ b/arch/arm64/lib/crc32.S
-@@ -85,17 +85,17 @@ CPU_BE(	rev16		w3, w3		)
- 	.endm
- 
- 	.align		5
--ENTRY(crc32_le)
-+SYM_FUNC_START(crc32_le)
- alternative_if_not ARM64_HAS_CRC32
- 	b		crc32_le_base
- alternative_else_nop_endif
- 	__crc32
--ENDPROC(crc32_le)
-+SYM_FUNC_END(crc32_le)
- 
- 	.align		5
--ENTRY(__crc32c_le)
-+SYM_FUNC_START(__crc32c_le)
- alternative_if_not ARM64_HAS_CRC32
- 	b		__crc32c_le_base
- alternative_else_nop_endif
- 	__crc32		c
--ENDPROC(__crc32c_le)
-+SYM_FUNC_END(__crc32c_le)
-diff --git a/arch/arm64/lib/memchr.S b/arch/arm64/lib/memchr.S
-index 48a3ab636e4f..99910c5d5db7 100644
---- a/arch/arm64/lib/memchr.S
-+++ b/arch/arm64/lib/memchr.S
-@@ -19,7 +19,7 @@
-  * Returns:
-  *	x0 - address of first occurrence of 'c' or 0
-  */
--WEAK(memchr)
-+SYM_FUNC_START_PI_WEAK(memchr)
- 	and	w1, w1, #0xff
- 1:	subs	x2, x2, #1
- 	b.mi	2f
-@@ -30,5 +30,5 @@ WEAK(memchr)
- 	ret
- 2:	mov	x0, #0
- 	ret
--ENDPIPROC(memchr)
-+SYM_FUNC_END_PI(memchr)
- EXPORT_SYMBOL_NOKASAN(memchr)
-diff --git a/arch/arm64/lib/memcmp.S b/arch/arm64/lib/memcmp.S
-index b297bdaaf549..b889f312bdb3 100644
---- a/arch/arm64/lib/memcmp.S
-+++ b/arch/arm64/lib/memcmp.S
-@@ -46,7 +46,7 @@ pos		.req	x11
- limit_wd	.req	x12
- mask		.req	x13
- 
--WEAK(memcmp)
-+SYM_FUNC_START_PI_WEAK(memcmp)
- 	cbz	limit, .Lret0
- 	eor	tmp1, src1, src2
- 	tst	tmp1, #7
-@@ -243,5 +243,5 @@ CPU_LE( rev	data2, data2 )
- .Lret0:
- 	mov	result, #0
- 	ret
--ENDPIPROC(memcmp)
-+SYM_FUNC_END_PI(memcmp)
- EXPORT_SYMBOL_NOKASAN(memcmp)
-diff --git a/arch/arm64/lib/memcpy.S b/arch/arm64/lib/memcpy.S
-index d79f48994dbb..9f382adfa88a 100644
---- a/arch/arm64/lib/memcpy.S
-+++ b/arch/arm64/lib/memcpy.S
-@@ -57,11 +57,11 @@
- 	.endm
- 
- 	.weak memcpy
--ENTRY(__memcpy)
--ENTRY(memcpy)
-+SYM_FUNC_START_ALIAS(__memcpy)
-+SYM_FUNC_START_PI(memcpy)
- #include "copy_template.S"
- 	ret
--ENDPIPROC(memcpy)
-+SYM_FUNC_END_PI(memcpy)
- EXPORT_SYMBOL(memcpy)
--ENDPROC(__memcpy)
-+SYM_FUNC_END_ALIAS(__memcpy)
- EXPORT_SYMBOL(__memcpy)
-diff --git a/arch/arm64/lib/memmove.S b/arch/arm64/lib/memmove.S
-index 784775136480..02cda2e33bde 100644
---- a/arch/arm64/lib/memmove.S
-+++ b/arch/arm64/lib/memmove.S
-@@ -46,8 +46,8 @@ D_l	.req	x13
- D_h	.req	x14
- 
- 	.weak memmove
--ENTRY(__memmove)
--ENTRY(memmove)
-+SYM_FUNC_START_ALIAS(__memmove)
-+SYM_FUNC_START_PI(memmove)
- 	cmp	dstin, src
- 	b.lo	__memcpy
- 	add	tmp1, src, count
-@@ -184,7 +184,7 @@ ENTRY(memmove)
- 	tst	count, #0x3f
- 	b.ne	.Ltail63
- 	ret
--ENDPIPROC(memmove)
-+SYM_FUNC_END_PI(memmove)
- EXPORT_SYMBOL(memmove)
--ENDPROC(__memmove)
-+SYM_FUNC_END_ALIAS(__memmove)
- EXPORT_SYMBOL(__memmove)
-diff --git a/arch/arm64/lib/memset.S b/arch/arm64/lib/memset.S
-index 9fb97e6bc560..77c3c7ba0084 100644
---- a/arch/arm64/lib/memset.S
-+++ b/arch/arm64/lib/memset.S
-@@ -43,8 +43,8 @@ tmp3w		.req	w9
- tmp3		.req	x9
- 
- 	.weak memset
--ENTRY(__memset)
--ENTRY(memset)
-+SYM_FUNC_START_ALIAS(__memset)
-+SYM_FUNC_START_PI(memset)
- 	mov	dst, dstin	/* Preserve return value.  */
- 	and	A_lw, val, #255
- 	orr	A_lw, A_lw, A_lw, lsl #8
-@@ -203,7 +203,7 @@ ENTRY(memset)
- 	ands	count, count, zva_bits_x
- 	b.ne	.Ltail_maybe_long
- 	ret
--ENDPIPROC(memset)
-+SYM_FUNC_END_PI(memset)
- EXPORT_SYMBOL(memset)
--ENDPROC(__memset)
-+SYM_FUNC_END_ALIAS(__memset)
- EXPORT_SYMBOL(__memset)
-diff --git a/arch/arm64/lib/strchr.S b/arch/arm64/lib/strchr.S
-index ca3ec18171a4..1f47eae3b0d6 100644
---- a/arch/arm64/lib/strchr.S
-+++ b/arch/arm64/lib/strchr.S
-@@ -18,7 +18,7 @@
-  * Returns:
-  *	x0 - address of first occurrence of 'c' or 0
-  */
--WEAK(strchr)
-+SYM_FUNC_START_WEAK(strchr)
- 	and	w1, w1, #0xff
- 1:	ldrb	w2, [x0], #1
- 	cmp	w2, w1
-@@ -28,5 +28,5 @@ WEAK(strchr)
- 	cmp	w2, w1
- 	csel	x0, x0, xzr, eq
- 	ret
--ENDPROC(strchr)
-+SYM_FUNC_END(strchr)
- EXPORT_SYMBOL_NOKASAN(strchr)
-diff --git a/arch/arm64/lib/strcmp.S b/arch/arm64/lib/strcmp.S
-index e9aefbe0b740..5f9bb9094d1f 100644
---- a/arch/arm64/lib/strcmp.S
-+++ b/arch/arm64/lib/strcmp.S
-@@ -48,7 +48,7 @@ tmp3		.req	x9
- zeroones	.req	x10
- pos		.req	x11
- 
--WEAK(strcmp)
-+SYM_FUNC_START_PI_WEAK(strcmp)
- 	eor	tmp1, src1, src2
- 	mov	zeroones, #REP8_01
- 	tst	tmp1, #7
-@@ -219,5 +219,5 @@ CPU_BE(	orr	syndrome, diff, has_nul )
- 	lsr	data1, data1, #56
- 	sub	result, data1, data2, lsr #56
- 	ret
--ENDPIPROC(strcmp)
-+SYM_FUNC_END_PI(strcmp)
- EXPORT_SYMBOL_NOKASAN(strcmp)
-diff --git a/arch/arm64/lib/strlen.S b/arch/arm64/lib/strlen.S
-index 87b0cb066915..f71b4b94d4b2 100644
---- a/arch/arm64/lib/strlen.S
-+++ b/arch/arm64/lib/strlen.S
-@@ -44,7 +44,7 @@ pos		.req	x12
- #define REP8_7f 0x7f7f7f7f7f7f7f7f
- #define REP8_80 0x8080808080808080
- 
--WEAK(strlen)
-+SYM_FUNC_START_PI_WEAK(strlen)
- 	mov	zeroones, #REP8_01
- 	bic	src, srcin, #15
- 	ands	tmp1, srcin, #15
-@@ -111,5 +111,5 @@ CPU_LE( lsr	tmp2, tmp2, tmp1 )	/* Shift (tmp1 & 63).  */
- 	csinv	data1, data1, xzr, le
- 	csel	data2, data2, data2a, le
- 	b	.Lrealigned
--ENDPIPROC(strlen)
-+SYM_FUNC_END_PI(strlen)
- EXPORT_SYMBOL_NOKASAN(strlen)
-diff --git a/arch/arm64/lib/strncmp.S b/arch/arm64/lib/strncmp.S
-index f571581888fa..6df88cd9c6f2 100644
---- a/arch/arm64/lib/strncmp.S
-+++ b/arch/arm64/lib/strncmp.S
-@@ -52,7 +52,7 @@ limit_wd	.req	x13
- mask		.req	x14
- endloop		.req	x15
- 
--WEAK(strncmp)
-+SYM_FUNC_START_PI_WEAK(strncmp)
- 	cbz	limit, .Lret0
- 	eor	tmp1, src1, src2
- 	mov	zeroones, #REP8_01
-@@ -295,5 +295,5 @@ CPU_BE( orr	syndrome, diff, has_nul )
- .Lret0:
- 	mov	result, #0
- 	ret
--ENDPIPROC(strncmp)
-+SYM_FUNC_END_PI(strncmp)
- EXPORT_SYMBOL_NOKASAN(strncmp)
-diff --git a/arch/arm64/lib/strnlen.S b/arch/arm64/lib/strnlen.S
-index c0bac9493c68..2fadeeff6ff4 100644
---- a/arch/arm64/lib/strnlen.S
-+++ b/arch/arm64/lib/strnlen.S
-@@ -47,7 +47,7 @@ limit_wd	.req	x14
- #define REP8_7f 0x7f7f7f7f7f7f7f7f
- #define REP8_80 0x8080808080808080
- 
--WEAK(strnlen)
-+SYM_FUNC_START_PI_WEAK(strnlen)
- 	cbz	limit, .Lhit_limit
- 	mov	zeroones, #REP8_01
- 	bic	src, srcin, #15
-@@ -156,5 +156,5 @@ CPU_LE( lsr	tmp2, tmp2, tmp4 )	/* Shift (tmp1 & 63).  */
- .Lhit_limit:
- 	mov	len, limit
- 	ret
--ENDPIPROC(strnlen)
-+SYM_FUNC_END_PI(strnlen)
- EXPORT_SYMBOL_NOKASAN(strnlen)
-diff --git a/arch/arm64/lib/strrchr.S b/arch/arm64/lib/strrchr.S
-index 794ac49ea433..9a9936e0c6f3 100644
---- a/arch/arm64/lib/strrchr.S
-+++ b/arch/arm64/lib/strrchr.S
-@@ -18,7 +18,7 @@
-  * Returns:
-  *	x0 - address of last occurrence of 'c' or 0
-  */
--WEAK(strrchr)
-+SYM_FUNC_START_PI_WEAK(strrchr)
- 	mov	x3, #0
- 	and	w1, w1, #0xff
- 1:	ldrb	w2, [x0], #1
-@@ -29,5 +29,5 @@ WEAK(strrchr)
+-ENTRY(__flush_cache_user_range)
++SYM_FUNC_START(__flush_cache_user_range)
+ 	uaccess_ttbr0_enable x2, x3, x4
+ alternative_if ARM64_HAS_CACHE_IDC
+ 	dsb	ishst
+@@ -66,8 +66,8 @@ alternative_else_nop_endif
+ 9:
+ 	mov	x0, #-EFAULT
  	b	1b
- 2:	mov	x0, x3
- 	ret
--ENDPIPROC(strrchr)
-+SYM_FUNC_END_PI(strrchr)
- EXPORT_SYMBOL_NOKASAN(strrchr)
-diff --git a/arch/arm64/lib/tishift.S b/arch/arm64/lib/tishift.S
-index 047622536535..a88613834fb0 100644
---- a/arch/arm64/lib/tishift.S
-+++ b/arch/arm64/lib/tishift.S
-@@ -7,7 +7,7 @@
+-ENDPROC(__flush_icache_range)
+-ENDPROC(__flush_cache_user_range)
++SYM_FUNC_END(__flush_icache_range)
++SYM_FUNC_END(__flush_cache_user_range)
  
- #include <asm/assembler.h>
+ /*
+  *	invalidate_icache_range(start,end)
+@@ -77,7 +77,7 @@ ENDPROC(__flush_cache_user_range)
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
+  */
+-ENTRY(invalidate_icache_range)
++SYM_FUNC_START(invalidate_icache_range)
+ alternative_if ARM64_HAS_CACHE_DIC
+ 	mov	x0, xzr
+ 	isb
+@@ -94,7 +94,7 @@ alternative_else_nop_endif
+ 2:
+ 	mov	x0, #-EFAULT
+ 	b	1b
+-ENDPROC(invalidate_icache_range)
++SYM_FUNC_END(invalidate_icache_range)
  
--ENTRY(__ashlti3)
-+SYM_FUNC_START(__ashlti3)
- 	cbz	x2, 1f
- 	mov	x3, #64
- 	sub	x3, x3, x2
-@@ -26,10 +26,10 @@ ENTRY(__ashlti3)
- 	lsl	x1, x0, x1
- 	mov	x0, x2
+ /*
+  *	__flush_dcache_area(kaddr, size)
+@@ -105,10 +105,10 @@ ENDPROC(invalidate_icache_range)
+  *	- kaddr   - kernel address
+  *	- size    - size in question
+  */
+-ENTRY(__flush_dcache_area)
++SYM_FUNC_START_PI(__flush_dcache_area)
+ 	dcache_by_line_op civac, sy, x0, x1, x2, x3
  	ret
--ENDPROC(__ashlti3)
-+SYM_FUNC_END(__ashlti3)
- EXPORT_SYMBOL(__ashlti3)
+-ENDPIPROC(__flush_dcache_area)
++SYM_FUNC_END_PI(__flush_dcache_area)
  
--ENTRY(__ashrti3)
-+SYM_FUNC_START(__ashrti3)
- 	cbz	x2, 1f
- 	mov	x3, #64
- 	sub	x3, x3, x2
-@@ -48,10 +48,10 @@ ENTRY(__ashrti3)
- 	asr	x0, x1, x0
- 	mov	x1, x2
+ /*
+  *	__clean_dcache_area_pou(kaddr, size)
+@@ -119,14 +119,14 @@ ENDPIPROC(__flush_dcache_area)
+  *	- kaddr   - kernel address
+  *	- size    - size in question
+  */
+-ENTRY(__clean_dcache_area_pou)
++SYM_FUNC_START(__clean_dcache_area_pou)
+ alternative_if ARM64_HAS_CACHE_IDC
+ 	dsb	ishst
  	ret
--ENDPROC(__ashrti3)
-+SYM_FUNC_END(__ashrti3)
- EXPORT_SYMBOL(__ashrti3)
+ alternative_else_nop_endif
+ 	dcache_by_line_op cvau, ish, x0, x1, x2, x3
+ 	ret
+-ENDPROC(__clean_dcache_area_pou)
++SYM_FUNC_END(__clean_dcache_area_pou)
  
--ENTRY(__lshrti3)
-+SYM_FUNC_START(__lshrti3)
- 	cbz	x2, 1f
- 	mov	x3, #64
- 	sub	x3, x3, x2
-@@ -70,5 +70,5 @@ ENTRY(__lshrti3)
- 	lsr	x0, x1, x0
- 	mov	x1, x2
+ /*
+  *	__inval_dcache_area(kaddr, size)
+@@ -138,7 +138,8 @@ ENDPROC(__clean_dcache_area_pou)
+  *	- kaddr   - kernel address
+  *	- size    - size in question
+  */
+-ENTRY(__inval_dcache_area)
++SYM_FUNC_START_LOCAL(__dma_inv_area)
++SYM_FUNC_START_PI(__inval_dcache_area)
+ 	/* FALLTHROUGH */
+ 
+ /*
+@@ -146,7 +147,6 @@ ENTRY(__inval_dcache_area)
+  *	- start   - virtual start address of region
+  *	- size    - size in question
+  */
+-__dma_inv_area:
+ 	add	x1, x1, x0
+ 	dcache_line_size x2, x3
+ 	sub	x3, x2, #1
+@@ -165,8 +165,8 @@ __dma_inv_area:
+ 	b.lo	2b
+ 	dsb	sy
  	ret
--ENDPROC(__lshrti3)
-+SYM_FUNC_END(__lshrti3)
- EXPORT_SYMBOL(__lshrti3)
+-ENDPIPROC(__inval_dcache_area)
+-ENDPROC(__dma_inv_area)
++SYM_FUNC_END_PI(__inval_dcache_area)
++SYM_FUNC_END(__dma_inv_area)
+ 
+ /*
+  *	__clean_dcache_area_poc(kaddr, size)
+@@ -177,7 +177,8 @@ ENDPROC(__dma_inv_area)
+  *	- kaddr   - kernel address
+  *	- size    - size in question
+  */
+-ENTRY(__clean_dcache_area_poc)
++SYM_FUNC_START_LOCAL(__dma_clean_area)
++SYM_FUNC_START_PI(__clean_dcache_area_poc)
+ 	/* FALLTHROUGH */
+ 
+ /*
+@@ -185,11 +186,10 @@ ENTRY(__clean_dcache_area_poc)
+  *	- start   - virtual start address of region
+  *	- size    - size in question
+  */
+-__dma_clean_area:
+ 	dcache_by_line_op cvac, sy, x0, x1, x2, x3
+ 	ret
+-ENDPIPROC(__clean_dcache_area_poc)
+-ENDPROC(__dma_clean_area)
++SYM_FUNC_END_PI(__clean_dcache_area_poc)
++SYM_FUNC_END(__dma_clean_area)
+ 
+ /*
+  *	__clean_dcache_area_pop(kaddr, size)
+@@ -200,13 +200,13 @@ ENDPROC(__dma_clean_area)
+  *	- kaddr   - kernel address
+  *	- size    - size in question
+  */
+-ENTRY(__clean_dcache_area_pop)
++SYM_FUNC_START_PI(__clean_dcache_area_pop)
+ 	alternative_if_not ARM64_HAS_DCPOP
+ 	b	__clean_dcache_area_poc
+ 	alternative_else_nop_endif
+ 	dcache_by_line_op cvap, sy, x0, x1, x2, x3
+ 	ret
+-ENDPIPROC(__clean_dcache_area_pop)
++SYM_FUNC_END_PI(__clean_dcache_area_pop)
+ 
+ /*
+  *	__dma_flush_area(start, size)
+@@ -216,10 +216,10 @@ ENDPIPROC(__clean_dcache_area_pop)
+  *	- start   - virtual start address of region
+  *	- size    - size in question
+  */
+-ENTRY(__dma_flush_area)
++SYM_FUNC_START_PI(__dma_flush_area)
+ 	dcache_by_line_op civac, sy, x0, x1, x2, x3
+ 	ret
+-ENDPIPROC(__dma_flush_area)
++SYM_FUNC_END_PI(__dma_flush_area)
+ 
+ /*
+  *	__dma_map_area(start, size, dir)
+@@ -227,11 +227,11 @@ ENDPIPROC(__dma_flush_area)
+  *	- size	- size of region
+  *	- dir	- DMA direction
+  */
+-ENTRY(__dma_map_area)
++SYM_FUNC_START_PI(__dma_map_area)
+ 	cmp	w2, #DMA_FROM_DEVICE
+ 	b.eq	__dma_inv_area
+ 	b	__dma_clean_area
+-ENDPIPROC(__dma_map_area)
++SYM_FUNC_END_PI(__dma_map_area)
+ 
+ /*
+  *	__dma_unmap_area(start, size, dir)
+@@ -239,8 +239,8 @@ ENDPIPROC(__dma_map_area)
+  *	- size	- size of region
+  *	- dir	- DMA direction
+  */
+-ENTRY(__dma_unmap_area)
++SYM_FUNC_START_PI(__dma_unmap_area)
+ 	cmp	w2, #DMA_TO_DEVICE
+ 	b.ne	__dma_inv_area
+ 	ret
+-ENDPIPROC(__dma_unmap_area)
++SYM_FUNC_END_PI(__dma_unmap_area)
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index a1e0592d1fbc..9a8b1b14ce02 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -50,7 +50,7 @@
+  *
+  * x0: virtual address of context pointer
+  */
+-ENTRY(cpu_do_suspend)
++SYM_FUNC_START(cpu_do_suspend)
+ 	mrs	x2, tpidr_el0
+ 	mrs	x3, tpidrro_el0
+ 	mrs	x4, contextidr_el1
+@@ -74,7 +74,7 @@ alternative_endif
+ 	stp	x10, x11, [x0, #64]
+ 	stp	x12, x13, [x0, #80]
+ 	ret
+-ENDPROC(cpu_do_suspend)
++SYM_FUNC_END(cpu_do_suspend)
+ 
+ /**
+  * cpu_do_resume - restore CPU register context
+@@ -82,7 +82,7 @@ ENDPROC(cpu_do_suspend)
+  * x0: Address of context pointer
+  */
+ 	.pushsection ".idmap.text", "awx"
+-ENTRY(cpu_do_resume)
++SYM_FUNC_START(cpu_do_resume)
+ 	ldp	x2, x3, [x0]
+ 	ldp	x4, x5, [x0, #16]
+ 	ldp	x6, x8, [x0, #32]
+@@ -131,7 +131,7 @@ alternative_else_nop_endif
+ 
+ 	isb
+ 	ret
+-ENDPROC(cpu_do_resume)
++SYM_FUNC_END(cpu_do_resume)
+ 	.popsection
+ #endif
+ 
+@@ -142,7 +142,7 @@ ENDPROC(cpu_do_resume)
+  *
+  *	- pgd_phys - physical address of new TTB
+  */
+-ENTRY(cpu_do_switch_mm)
++SYM_FUNC_START(cpu_do_switch_mm)
+ 	mrs	x2, ttbr1_el1
+ 	mmid	x1, x1				// get mm->context.id
+ 	phys_to_ttbr x3, x0
+@@ -161,7 +161,7 @@ alternative_else_nop_endif
+ 	msr	ttbr0_el1, x3			// now update TTBR0
+ 	isb
+ 	b	post_ttbr_update_workaround	// Back to C code...
+-ENDPROC(cpu_do_switch_mm)
++SYM_FUNC_END(cpu_do_switch_mm)
+ 
+ 	.pushsection ".idmap.text", "awx"
+ 
+@@ -182,7 +182,7 @@ ENDPROC(cpu_do_switch_mm)
+  * This is the low-level counterpart to cpu_replace_ttbr1, and should not be
+  * called by anything else. It can only be executed from a TTBR0 mapping.
+  */
+-ENTRY(idmap_cpu_replace_ttbr1)
++SYM_FUNC_START(idmap_cpu_replace_ttbr1)
+ 	save_and_disable_daif flags=x2
+ 
+ 	__idmap_cpu_set_reserved_ttbr1 x1, x3
+@@ -194,7 +194,7 @@ ENTRY(idmap_cpu_replace_ttbr1)
+ 	restore_daif x2
+ 
+ 	ret
+-ENDPROC(idmap_cpu_replace_ttbr1)
++SYM_FUNC_END(idmap_cpu_replace_ttbr1)
+ 	.popsection
+ 
+ #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+@@ -222,7 +222,7 @@ ENDPROC(idmap_cpu_replace_ttbr1)
+  */
+ __idmap_kpti_flag:
+ 	.long	1
+-ENTRY(idmap_kpti_install_ng_mappings)
++SYM_FUNC_START(idmap_kpti_install_ng_mappings)
+ 	cpu		.req	w0
+ 	num_cpus	.req	w1
+ 	swapper_pa	.req	x2
+@@ -393,7 +393,7 @@ __idmap_kpti_secondary:
+ 	.unreq	cur_ptep
+ 	.unreq	end_ptep
+ 	.unreq	pte
+-ENDPROC(idmap_kpti_install_ng_mappings)
++SYM_FUNC_END(idmap_kpti_install_ng_mappings)
+ 	.popsection
+ #endif
+ 
+@@ -404,7 +404,7 @@ ENDPROC(idmap_kpti_install_ng_mappings)
+  *	value of the SCTLR_EL1 register.
+  */
+ 	.pushsection ".idmap.text", "awx"
+-ENTRY(__cpu_setup)
++SYM_FUNC_START(__cpu_setup)
+ 	tlbi	vmalle1				// Invalidate local TLB
+ 	dsb	nsh
+ 
+@@ -475,4 +475,4 @@ ENTRY(__cpu_setup)
+ #endif	/* CONFIG_ARM64_HW_AFDBM */
+ 	msr	tcr_el1, x10
+ 	ret					// return to head.S
+-ENDPROC(__cpu_setup)
++SYM_FUNC_END(__cpu_setup)
 -- 
 2.20.1
 
