@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B9E5131082
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:23:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19A86131089
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:25:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Hr8/AyLKuRNX5Q9mLtK0F5HVeGx7uszLRFXJpFf6GY=; b=FNloQET4sXlUz9
-	Od9yasUV1yz1c8rpg+cgfWj4nb9bS3Zk/6iE0kocsoljSQId20rGxTOpbXI9rUrLaAh3Mrg6K+zDA
-	p4+U7deYRb8iypL+Wpcere5USEUel7trBzp+QUWKfEMbA9sUMmQEC36e+7IbQaliZOibxSb+bPRHR
-	QE4gTYxRsvx+VLSlQxndBpcsfBX4gcG263oGvHQq/tlBbJ/UOhHVyWEGzUg6g0ydxXvpwglwoLjl3
-	x0NndWbpVnksYSLvZCP+bHiYG1CewDZMzrIeiSTb3iopy0HWZvXXY85gxrlcpSqgKn4sqGU4g5u0s
-	GkgY5ydYVNxxC6soXwbA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fHMUbFIVtlbNp78MczA82L8y27DYLZNUhtAPhCW2hLU=; b=O1q1YRGqKdDgOL
+	FUkRZQQqHYInRe2iON4uI0Dipt/DfgBlrHINqjA1atuJT8m+MeVR/R1s+uRIg+ffZF3c1H2Hbvlt2
+	Sbi3Gy3LKw7cduwHr2CwYPLOIbBkN7OXngny2oC7wEUSSzeryiUsagR4eSMCozr4G3US+NhYBfbc5
+	d4UNCESp0xV9LFzMqbOJQEsFaZ+kX5+m5AguZauMFoiBH7mWPnmxbI8FhhouueBbKQvE/LYuLJEz3
+	cvYKmP0WxKzuYqjSSucfzi0nEozvePnxnc43T6qoXHdCCMk6Vq2i3wjYdw3ZE8buv644wHBTv3XoH
+	Ap4KSmXqljtNC4WTYHgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioPY4-0001h4-3K; Mon, 06 Jan 2020 10:23:48 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ioPZk-0003Qc-Pr; Mon, 06 Jan 2020 10:25:32 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioPUS-0005o0-HF
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:20:07 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 006AJuP5107871;
- Mon, 6 Jan 2020 04:19:56 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578305996;
- bh=8W4c5imqrF7QowsJacFr1QjJhJIkYTKy/E8u2hZV+h0=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=yjXzH0OEpfNausnDA1EClVjN+w7ZC2ILvCDSfbuMKXnQhZAfbXM0wncfwbZ4TKAUO
- d8nKJJH2kIEkkpSxW5RS3I/hDvUpnPmc2hb8oAJquKaGN+rqAuBGkGqClHbKqR4AHp
- QJ9IDgdZzl33WqR7xPJ1SrDSs9LMWjmvorRs8ba0=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 006AJuoD103157
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 6 Jan 2020 04:19:56 -0600
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 6 Jan
- 2020 04:19:55 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 6 Jan 2020 04:19:55 -0600
-Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 006AIqY6118652;
- Mon, 6 Jan 2020 04:19:52 -0600
-From: Kishon Vijay Abraham I <kishon@ti.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Bjorn Helgaas
- <bhelgaas@google.com>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob
- Herring <robh+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Andrew Murray
- <andrew.murray@arm.com>
-Subject: [PATCH v2 14/14] MAINTAINERS: Add Kishon Vijay Abraham I for TI J721E
- SoC PCIe
-Date: Mon, 6 Jan 2020 15:50:58 +0530
-Message-ID: <20200106102058.19183-15-kishon@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200106102058.19183-1-kishon@ti.com>
-References: <20200106102058.19183-1-kishon@ti.com>
+ id 1ioPZb-0003PO-D5
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:25:25 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 006AHKbC028995; Mon, 6 Jan 2020 11:25:15 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=csKu8+UMH7YN+nRTevbWnuk0toNCOh+W9ovVroJG4Gs=;
+ b=FC3Br8HlV5BIIQm0VeJ7roajgAUqSoCVTK35cV4/OxzRJ8jBa3EImWslq3jusdv/IP0q
+ 0wQQW5tUfoEu6NU/kjF63OabrvuDcdz3Ej5qRIO+hfNCC6Eg5G3z1M5mxo3qxmCRsElD
+ irbTBS3HtyRpvonV+JnmDisXOWCbdnpQEE2oTk9AUYCvhldCI//iqPh8RfXTgsoWR+oq
+ GwBqTXj9ErFNmrVqEehsAu98A7yto+aGeU71hYdgWEWcvr7MYr53viCmf6gbO3d/3J9D
+ itdevHZiOMndqK++SW/QI1XKm1loG8SGq0iJyxAf6xLTa1LcieR8JLo5/4mkYVwKcxZy Zw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xakuqfaab-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 06 Jan 2020 11:25:15 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 36A9210002A;
+ Mon,  6 Jan 2020 11:25:14 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 27F172B088F;
+ Mon,  6 Jan 2020 11:25:14 +0100 (CET)
+Received: from [10.48.0.71] (10.75.127.44) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 6 Jan
+ 2020 11:25:12 +0100
+Subject: Re: [PATCH] iio: adc: stm32-adc: Use dma_request_chan() instead
+ dma_request_slave_channel()
+To: Jonathan Cameron <jic23@kernel.org>, Peter Ujfalusi <peter.ujfalusi@ti.com>
+References: <20191217075153.23766-1-peter.ujfalusi@ti.com>
+ <20191223154230.7fb2a988@archlinux>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <9f190583-824c-01a6-7da3-43065fde49c7@st.com>
+Date: Mon, 6 Jan 2020 11:25:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20191223154230.7fb2a988@archlinux>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2020-01-06_03:2020-01-06,2020-01-06 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_022004_653851_ACBDB1B9 
-X-CRM114-Status: GOOD (  13.94  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200106_022523_813345_40F3BEAB 
+X-CRM114-Status: GOOD (  23.06  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,44 +97,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Cc: Olivier MOYSAN <olivier.moysan@st.com>, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add Kishon Vijay Abraham I as MAINTAINER for TI J721E SoC PCIe.
+On 12/23/19 4:42 PM, Jonathan Cameron wrote:
+> On Tue, 17 Dec 2019 09:51:53 +0200
+> Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
+> 
+>> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+>> eating up the error code.
+>>
+>> By using dma_request_chan() directly the driver can support deferred
+>> probing against DMA.
+>>
+>> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> Hi Peter,
+> 
+> Change looks sensible to me, but I'd like to leave a little longer
+> for others to look at this.
+> 
+> Give me a poke if I seem to have lost it by the end of the first
+> week in Jan.
+> 
+> Thanks,
+> 
+> Jonathan
+> 
+>> ---
+>>  drivers/iio/adc/stm32-adc.c | 10 ++++++++--
+>>  1 file changed, 8 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+>> index 3b291d72701c..5dab23f1fdee 100644
+>> --- a/drivers/iio/adc/stm32-adc.c
+>> +++ b/drivers/iio/adc/stm32-adc.c
+>> @@ -1746,9 +1746,15 @@ static int stm32_adc_dma_request(struct iio_dev *indio_dev)
+>>  	struct dma_slave_config config;
+>>  	int ret;
+>>  
+>> -	adc->dma_chan = dma_request_slave_channel(&indio_dev->dev, "rx");
+>> -	if (!adc->dma_chan)
+>> +	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
+>> +	if (IS_ERR(adc->dma_chan)) {
+>> +		if (PTR_ERR(adc->dma_chan) == -EPROBE_DEFER)
+>> +			return -EPROBE_DEFER;
 
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
----
- MAINTAINERS | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Hi Peter,
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index bd5847e802de..84bff97851fa 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12691,13 +12691,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/pci/designware-pcie.txt
- F:	drivers/pci/controller/dwc/*designware*
- 
--PCI DRIVER FOR TI DRA7XX
-+PCI DRIVER FOR TI DRA7XX/J721E
- M:	Kishon Vijay Abraham I <kishon@ti.com>
- L:	linux-omap@vger.kernel.org
- L:	linux-pci@vger.kernel.org
-+L:	linux-arm-kernel@lists.infradead.org
- S:	Supported
- F:	Documentation/devicetree/bindings/pci/ti-pci.txt
- F:	drivers/pci/controller/dwc/pci-dra7xx.c
-+F:	drivers/pci/controller/cadence/pci-j721e.c
- 
- PCI DRIVER FOR TI KEYSTONE
- M:	Murali Karicheri <m-karicheri2@ti.com>
--- 
-2.17.1
+Thanks for the patch and sorry for the late reply.
 
+I'd rather prefer to check explicitly for -ENODEV (as the DMA is
+optional) to use the IRQ mode and treat all other codes (including
+EPROBE_DEFER) as errors.
+
+Rationale is: This can hide other errors e.g. like all DMA channels are
+busy/reserved for other usage. So the user may wrongly think it's
+probing the driver, with DMA. This may be a corner case, but still...
+DMA channels are assigned via device tree. I'd rather prefer to avoid
+depending of runtime (probe ordering) in such a case.
+
+Can you update the patch considering this ?
+
+Please find here an alternate proposal:
+
+	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
+	if (IS_ERR(adc->dma_chan)) {
+		if (PTR_ERR(adc->dma_chan) != -ENODEV)
+			return PTR_ERR(adc->dma_chan);
+
+		/* DMA is optional: fall back to IRQ mode */
+		adc->dma_chan = NULL;
+		return 0;
+	}
+
+Best regards,
+Fabrice
+
+>> +
+>> +		/* Ignore errors to fall back to IRQ mode */
+>> +		adc->dma_chan = NULL;
+>>  		return 0;
+>> +	}
+>>  
+>>  	adc->rx_buf = dma_alloc_coherent(adc->dma_chan->device->dev,
+>>  					 STM32_DMA_BUFFER_SIZE,
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
