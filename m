@@ -2,52 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D039131001
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:06:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E1A8131031
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:19:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JvY8o4ye6qce7FTXWsnWHvHMn7KJCqcrFXnHlAbRJFQ=; b=TRkTGv992BfXAVaT0EAKw7tqi
-	FzgIHaRujwAjRTddrgvgWDi/SofeBqdKhZ7VPjfvmCfaQcZ/Ro90a1jubdJqm7aGFTwoT3N0W8EgJ
-	2z4SzEpTwubpVoWzWIG520l5DaQP5tL/p6U2pxG4BNKzw3Ppj7vNWHx6TBCsp1SvOIenSyn9rpd1u
-	NcGCPykcIdM6cmb+V03P8vYKc5KcMhhsp08SImPdvVcrl+y3Z5Epkeh5IVF0ElnOtIzesaMZwjNrR
-	ESZUZgFPkmMyxQc2Rn1lDKmQAvpzNhre0lKB8gyzFma8UtsR+rkyXEboXGZH3hRYzkqbj/D5tFmlh
-	W2NlLzrKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Tug1PDRXOlbEV2TO4mieb88mwgEIrZHZ25oF/yNhiHg=; b=Q6w1pzo8XIlzFb
+	L+vUigzHwsFWTRAjOG3GaKZh5qMdN/u9h9LxRQYK1jIOckn1ErvREShgvSgKdg6QKL+U1zzbOaxQy
+	3pmtlcWC9w/pUXkIxJ/6MRAv3Ydn8APc9jm94mklmz8RnUPOxFeVKK0I6N7Trd3Oxs5GtCgb5Myq+
+	2hHXZMTdVOR5G/gRbEt0C1GZI9y9DjcXU/cKkIzeEaC6PrRZQwdTCxK2YukEJc+cdaTWw2lEYV3nd
+	EwuoxgfvHynAc/02WGSv1Z6+EnoIzPVhnN7tktQ3gvTo9fmkte7DdA/BiiHXpv1wA2DaS73Xjkx3w
+	+hvDZcuw6PSPOHY6JXXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioPH4-00007S-Mr; Mon, 06 Jan 2020 10:06:14 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioPGv-00006I-LA; Mon, 06 Jan 2020 10:06:08 +0000
-Received: from localhost (p54B338AC.dip0.t-ipconnect.de [84.179.56.172])
- by pokefinder.org (Postfix) with ESMTPSA id 8DC052C0686;
- Mon,  6 Jan 2020 11:06:01 +0100 (CET)
-Date: Mon, 6 Jan 2020 11:05:58 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Masahiro Yamada <masahiroy@kernel.org>
-Subject: Re: [PATCH] treewide: remove redundent IS_ERR() before error code
- check
-Message-ID: <20200106100558.GA4831@kunai>
-References: <20200106045833.1725-1-masahiroy@kernel.org>
+	id 1ioPTk-0004wp-CW; Mon, 06 Jan 2020 10:19:20 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioPTY-0004vG-Rj
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:19:10 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 006AIuva017532;
+ Mon, 6 Jan 2020 04:18:56 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578305936;
+ bh=RG7euWT3O/6syk9ik2OS7LO4epm3FNAKw0V+gmUsq30=;
+ h=From:To:CC:Subject:Date;
+ b=T/srrEKxnBDgZkcMzBZm+4gQWEabRd0tyuRCRllQzP3POYF/NqWIiF4Pu+ODUcx4i
+ /OKgdUZPTfyX17ptOXe5J2Oh+yyOwU0TK1Xh64LEOtPiGKngNNvg5pVnSbOvN3igDK
+ hvYLwIr4IojPL3ylpNsxSCjf46cumrzoW3MHh3ak=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 006AIudm031107;
+ Mon, 6 Jan 2020 04:18:56 -0600
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 6 Jan
+ 2020 04:18:56 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 6 Jan 2020 04:18:56 -0600
+Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 006AIqXq118652;
+ Mon, 6 Jan 2020 04:18:53 -0600
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob
+ Herring <robh+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Andrew Murray
+ <andrew.murray@arm.com>
+Subject: [PATCH v2 00/14] Add PCIe support to TI's J721E SoC
+Date: Mon, 6 Jan 2020 15:50:44 +0530
+Message-ID: <20200106102058.19183-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20200106045833.1725-1-masahiroy@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_020605_846668_47C66875 
-X-CRM114-Status: UNSURE (   7.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200106_021909_285184_F7C84F91 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,85 +90,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-acpi@vger.kernel.org, netdev@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Julia Lawall <julia.lawall@lip6.fr>,
- linux-mtd@lists.infradead.org, linux-crypto@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============3923318911496728516=="
+Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+TI's J721E SoC uses Cadence PCIe core to implement both RC mode
+and EP mode.
 
---===============3923318911496728516==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="zhXaljGHf11kAtnf"
-Content-Disposition: inline
+The high level features are:
+  *) Supports Legacy, MSI and MSI-X interrupt
+  *) Supports upto GEN4 speed mode
+  *) Supports SR-IOV
+  *) Supports multiple physical function
+  *) Ability to route all transactions via SMMU
 
+This patch series
+  *) Add support in Cadence PCIe core to be used for TI's J721E SoC
+  *) Add a driver for J721E PCIe wrapper
 
---zhXaljGHf11kAtnf
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+v1 of the series can be found @ [1]
 
-On Mon, Jan 06, 2020 at 01:58:33PM +0900, Masahiro Yamada wrote:
-> 'PTR_ERR(p) =3D=3D -E*' is a stronger condition than IS_ERR(p).
-> Hence, IS_ERR(p) is unneeded.
->=20
-> The semantic patch that generates this commit is as follows:
->=20
-> // <smpl>
-> @@
-> expression ptr;
-> constant error_code;
-> @@
-> -IS_ERR(ptr) && (PTR_ERR(ptr) =3D=3D - error_code)
-> +PTR_ERR(ptr) =3D=3D - error_code
-> // </smpl>
->=20
-> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+Changes from v1:
+1) Added DT schemas cdns-pcie-host.yaml, cdns-pcie-ep.yaml and
+   cdns-pcie.yaml for Cadence PCIe core and included it in
+   TI's PCIe DT schema.
+2) Added cpu_addr_fixup() for Cadence Platform driver.
+3) Fixed subject/description/renamed functions as commented by
+   Andrew Murray.
 
-For drivers/i2c:
+[1] -> http://lore.kernel.org/r/20191209092147.22901-1-kishon@ti.com
 
-Acked-by: Wolfram Sang <wsa@the-dreams.de>
+Kishon Vijay Abraham I (14):
+  dt-bindings: PCI: cadence: Add PCIe RC/EP DT schema for Cadence PCIe
+  PCI: cadence: Fix cdns_pcie_{host|ep}_setup() error path
+  linux/kernel.h: Add PTR_ALIGN_DOWN macro
+  PCI: cadence: Add support to use custom read and write accessors
+  PCI: cadence: Add support to start link and verify link status
+  PCI: cadence: Add read/write accessors to perform only 32-bit accesses
+  PCI: cadence: Allow pci_host_bridge to have custom pci_ops
+  PCI: cadence: Add new *ops* for CPU addr fixup
+  PCI: cadence: Fix updating Vendor ID and Subsystem Vendor ID register
+  dt-bindings: PCI: Add host mode dt-bindings for TI's J721E SoC
+  dt-bindings: PCI: Add EP mode dt-bindings for TI's J721E SoC
+  PCI: j721e: Add TI J721E PCIe driver
+  misc: pci_endpoint_test: Add J721E in pci_device_id table
+  MAINTAINERS: Add Kishon Vijay Abraham I for TI J721E SoC PCIe
 
-Thanks!
+ .../devicetree/bindings/pci/cdns-pcie-ep.yaml |  20 +
+ .../bindings/pci/cdns-pcie-host.yaml          |  30 ++
+ .../devicetree/bindings/pci/cdns-pcie.yaml    |  32 ++
+ .../bindings/pci/ti,j721e-pci-ep.yaml         |  93 ++++
+ .../bindings/pci/ti,j721e-pci-host.yaml       | 119 +++++
+ MAINTAINERS                                   |   4 +-
+ drivers/misc/pci_endpoint_test.c              |   9 +
+ drivers/pci/controller/cadence/Kconfig        |  23 +
+ drivers/pci/controller/cadence/Makefile       |   1 +
+ drivers/pci/controller/cadence/pci-j721e.c    | 438 ++++++++++++++++++
+ .../pci/controller/cadence/pcie-cadence-ep.c  |  17 +-
+ .../controller/cadence/pcie-cadence-host.c    |  59 ++-
+ .../controller/cadence/pcie-cadence-plat.c    |  13 +
+ drivers/pci/controller/cadence/pcie-cadence.c |  48 +-
+ drivers/pci/controller/cadence/pcie-cadence.h | 148 +++++-
+ include/linux/kernel.h                        |   1 +
+ 16 files changed, 1014 insertions(+), 41 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/ti,j721e-pci-host.yaml
+ create mode 100644 drivers/pci/controller/cadence/pci-j721e.c
 
+-- 
+2.17.1
 
---zhXaljGHf11kAtnf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4TBoIACgkQFA3kzBSg
-KbYycQ/9HHMMaJuiDZs2ZZyg9Szbt/uDs6lfGNwX2WQjjgoo0FHwIISx26fwUSS0
-sfKb1VukurwS3gKvijHI2Tgo+f8Vb5W76AfDl7l2Pt+/1Fc3udj81ejuq6hrwDtX
-8lb3i4K7U7mReQW1CuGDL2a15XNeUCNSocbEz9r/fSMSCcO7vtYFQdJ1PRCiO40n
-Z9RU/AGK5/6Dm8H6JaPvBbkL4cSaKu0fWTLYwZfm5lUqpj8ERaGKdlz4W/DEy5nw
-/FLsLSoRRKpkrWFzohHUjEplvrX5Xv7//Pl4GHVxH25rPhKgXL7M4bkJUrAOG8Ap
-zRni09tOZTNrB2zkt3dFgDSUXwPHJOM0KLrVyFeze3ZtA/8rDaDxbr7a0lK0Jgi6
-X3+CMoirCftC9W2ub9a9h/IOhLqzFzVoWNN3QsHr4XxLYmE1EvhoIYbCRs3JpVrV
-cgbYECZxZElbp6K6u7sEsETPvGjvHi4gzXBZUwxYpdZyWaUsV+XIzxqQyeQIqkFF
-Yp6Cjmd/cjgLLUMwxL2QaopFPm+Ul+f5AojzQbMP6ScKbrjYfKn8S60q4fwrShk1
-yDlNFlQgdSrn1Dt1PfGllfjLz1bcQ/tsZsmP/ulyPE0Ph9Mv5ixDhEse7mZmOVjm
-8khnVJiGQcIi1CMl8mR8uDU6319aQvxcYWlG84KlF7nXsigrRqA=
-=e1Dd
------END PGP SIGNATURE-----
-
---zhXaljGHf11kAtnf--
-
-
---===============3923318911496728516==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3923318911496728516==--
-
