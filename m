@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACE84130EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:43:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93E41130EC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:42:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=siVDmfZVyP6umZFo98dVt/RVCZqX5xbJQvESx15TVds=; b=i8x7vx42MsTINq
-	ubbMW8aaiEMF3iVD/WngRcPtO3fap/zY1YA3bBxFgcmHLRnzKg+qnO3CbyuWzsz1s9PIowqnvp+dL
-	XJVBiqw+ApLAKUk5d2p/70VjixEQ7D2cE2yCpOzuLnS89tb7GYeo7cw4jMgPMJqr8+mvfAg5nY9wp
-	0D2iruueup/miVsN31bFsz+llUNKl1GAGx5YQdXxg8v5czJsEAwbc6hyyqCQT+TABcHPKc162IIrz
-	i8OuN4x5dYmiqOTqIurxPiPp6iyb5l1vbAakjUUdwBA26UrVqi38XxA1uEHrhB3UUZKfJr3KqUpye
-	CXG/Zf+/ecZGO2doTs9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Z+onOZdOIdSgTBHOfKihSL3nBryrHIOyynIs6KCBWI=; b=sa4ewF+aRIsVTp
+	hlXRnb9XCSotJydUI270PDCBwJRvhzSzEyzAqZIjTICpNRvizMQ7zK184CmPfCewjslGTPm3TmJDO
+	DxztT5c7Zhy5EiON5aAQjcqiM2RwlOwrrgnRkZrutB2mrWHsvojA42KGsif2TNsJOKYOL8oLND8PH
+	a2iByC37H4M/OhAxRpvPYjySdT9ZRyc8sqY4TZOND3TsglSSrKERt5oyryuvQsqVqAtKdrAWu5GBU
+	+BfIhrFrhBjsxwvSVA6MAyIs+eHvoDAkKe9OGJI84NOdrjSOBeZFDRkcGKmsqPWJdkcGUso6u5l0r
+	tzIVdxmrQTtBgIW7KPCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioNzJ-0002JQ-4C; Mon, 06 Jan 2020 08:43:49 +0000
+	id 1ioNyQ-0001bq-Hd; Mon, 06 Jan 2020 08:42:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioNyH-0001Z5-DB
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:42:48 +0000
+ id 1ioNyH-0001Z8-DC
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:42:46 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C7EB20656;
+ by mail.kernel.org (Postfix) with ESMTPSA id 71EDE21775;
  Mon,  6 Jan 2020 08:42:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1578300163;
- bh=GyMtO6oRWPq3+Hr+8BFljMOSlSlAK0b+OtMogPrfuWQ=;
- h=From:To:Cc:Subject:Date:From;
- b=Zn5UiXsAtWD4qD796sVyJoLSKjO0SAI5FLpo3LlbuonQrebo2np2BDkx7sUmWRcSv
- nY8kO0U5p7NNRuK3qhp6q+L1uwvp8r9rxsK1dpy5vmQk94LahC5fj2azRApbE+iwg8
- AkExBPM/v4TBuDD4d1KilJeAteBWrP4bZ25I7/Qs=
+ bh=eVqvnMTAH9P1OLuUyEiot4QmZkLk+LF/E69QJEZ/PAU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=AyGL9dEOfWJ1ZMV5t/c4+E0O/mQoXPWyshR1ZzH70DS1HxKy2PKcvmoVmSD9dhedZ
+ y/YpPkrj91Sd1UlO9I6XaVUjOxm+DgKNi31oW9xml8bJ5jKRXzfEsuq7S59MxE4qv+
+ h6MiVGAvf+gbqj5D1cgSJZASimQylhxufVLvYmkA=
 Received: by wens.tw (Postfix, from userid 1000)
- id 49CE25FC12; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
+ id 4E7645FA6A; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 0/7] media: sun4i-csi: A10/A20 CSI1 and R40 CSI0 support
-Date: Mon,  6 Jan 2020 16:42:33 +0800
-Message-Id: <20200106084240.1076-1-wens@kernel.org>
+Subject: [PATCH v2 1/7] ARM: dts: sun4i: Add CSI1 controller and pinmux options
+Date: Mon,  6 Jan 2020 16:42:34 +0800
+Message-Id: <20200106084240.1076-2-wens@kernel.org>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200106084240.1076-1-wens@kernel.org>
+References: <20200106084240.1076-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_004245_483452_71691CB0 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20200106_004245_478052_0FD3F9B7 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,70 +87,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-Hi everyone,
+The CSI controller driver now supports the second CSI controller, CSI1.
 
-This is v2 of my A10/A20 CSI1 and R40 CSI0 series. v2 is simply the
-remaining patches rebased on top of linux-next 20200106, with the
-MBUS device tree binding changes converted to YAML format.
+Add a device node for it. Pinmuxing options for the MCLK output, the
+standard 8-bit interface, and a secondary 24-bit interface are included.
 
-This series adds basic support for CSI1 on Allwinner A10/A20 and CSI0 on
-Allwinner R40. The CSI1 block has the same structure and layout as the
-CSI0 block. Differences include:
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ arch/arm/boot/dts/sun4i-a10.dtsi | 35 ++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-  - Only one channel in BT.656 instead of four in CSI0
-  - 10-bit raw data input vs 8-bit in CSI0
-  - 24-bit RGB888/YUV444 input vs 16-bit RGB565/YUV422 in CSI0
-  - No ISP hardware (CSI SCLK not needed)
-
-The CSI0 block in the Allwinner R40 SoC looks to be the same as the one
-in the A20. The register maps line up, and they support the same
-features. The R40 appears to support BT.1120 based on the feature
-overview, but it is not mentioned anywhere else. Also like the A20, the
-ISP is not mentioned, but the CSI special clock needs to be enabled for
-the hardware to function. The manual does state that the CSI special
-clock is the TOP clock for all CSI hardware, but currently no hardware
-exists for us to test if CSI1 also depends on it or not.
-
-Included are a couple of fixes for signal polarity and DRAM offset
-handling.
-
-Patches 1 and 2 add CSI1 to A10 (sun4i) and A20 (sun7i) dtsi files.
-
-Patch 3 adds a compatible string for the R40's MBUS (memory bus).
-This patch needs to go through Rob's tree as it now depends on
-the patch "dt-bindings: interconnect: Convert Allwinner MBUS
-controller to a schema" that was already merged.
-
-Patch 4 adds CSI0 to the R40 dtsi file
-
-Patches 5 through 7 are examples of cameras hooked up to boards.
-
-
-Regards
-ChenYu
-
-
-Chen-Yu Tsai (7):
-  ARM: dts: sun4i: Add CSI1 controller and pinmux options
-  ARM: dts: sun7i: Add CSI1 controller and pinmux options
-  dt-bindings: bus: sunxi: Add R40 MBUS compatible
-  ARM: dts: sun8i: r40: Add device node for CSI0
-  [DO NOT MERGE] ARM: dts: sun4i: cubieboard: Enable OV7670 camera on
-    CSI1
-  [DO NOT MERGE] ARM: dts: sun7i: cubieboard2: Enable OV7670 camera on
-    CSI1
-  [DO NOT MERGE] ARM: dts: sun8i-r40: bananapi-m2-ultra: Enable OV5640
-    camera
-
- .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml   |  1 +
- arch/arm/boot/dts/sun4i-a10-cubieboard.dts    | 42 ++++++++++++
- arch/arm/boot/dts/sun4i-a10.dtsi              | 35 ++++++++++
- arch/arm/boot/dts/sun7i-a20-cubieboard2.dts   | 42 ++++++++++++
- arch/arm/boot/dts/sun7i-a20.dtsi              | 36 ++++++++++
- .../boot/dts/sun8i-r40-bananapi-m2-ultra.dts  | 67 +++++++++++++++++++
- arch/arm/boot/dts/sun8i-r40.dtsi              | 36 ++++++++++
- 7 files changed, 259 insertions(+)
-
+diff --git a/arch/arm/boot/dts/sun4i-a10.dtsi b/arch/arm/boot/dts/sun4i-a10.dtsi
+index 4c268b70b735..bf531efc0610 100644
+--- a/arch/arm/boot/dts/sun4i-a10.dtsi
++++ b/arch/arm/boot/dts/sun4i-a10.dtsi
+@@ -624,6 +624,16 @@ ohci1: usb@1c1c400 {
+ 			status = "disabled";
+ 		};
+ 
++		csi1: csi@1c1d000 {
++			compatible = "allwinner,sun4i-a10-csi1";
++			reg = <0x01c1d000 0x1000>;
++			interrupts = <43>;
++			clocks = <&ccu CLK_AHB_CSI1>, <&ccu CLK_DRAM_CSI1>;
++			clock-names = "bus", "ram";
++			resets = <&ccu RST_CSI1>;
++			status = "disabled";
++		};
++
+ 		spi3: spi@1c1f000 {
+ 			compatible = "allwinner,sun4i-a10-spi";
+ 			reg = <0x01c1f000 0x1000>;
+@@ -670,6 +680,31 @@ can0_ph_pins: can0-ph-pins {
+ 				function = "can";
+ 			};
+ 
++			/omit-if-no-ref/
++			csi1_8bits_pg_pins: csi1-8bits-pg-pins {
++				pins = "PG0", "PG2", "PG3", "PG4", "PG5",
++				       "PG6", "PG7", "PG8", "PG9", "PG10",
++				       "PG11";
++				function = "csi1";
++			};
++
++			/omit-if-no-ref/
++			csi1_24bits_ph_pins: csi1-24bits-ph-pins {
++				pins = "PH0", "PH1", "PH2", "PH3", "PH4",
++				       "PH5", "PH6", "PH7", "PH8", "PH9",
++				       "PH10", "PH11", "PH12", "PH13", "PH14",
++				       "PH15", "PH16", "PH17", "PH18", "PH19",
++				       "PH20", "PH21", "PH22", "PH23", "PH24",
++				       "PH25", "PH26", "PH27";
++				function = "csi1";
++			};
++
++			/omit-if-no-ref/
++			csi1_clk_pg_pin: csi1-clk-pg-pin {
++				pins = "PG1";
++				function = "csi1";
++			};
++
+ 			emac_pins: emac0-pins {
+ 				pins = "PA0", "PA1", "PA2",
+ 				       "PA3", "PA4", "PA5", "PA6",
 -- 
 2.24.1
 
