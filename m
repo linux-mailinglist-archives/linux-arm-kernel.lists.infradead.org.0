@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 470B1131C91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 00:54:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFD43131C9A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 01:00:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/bbPKRlBgZ1ee2qQuAcQzeffkAbw1Mz9BkaoeGQbrgI=; b=dF8
-	Mks/Y1/017oBT3N/8UG8wyWFCZxstz0omS2UtMQsE98dEdkwsiXtWfURZYJJ+lou/rOXzS+Corqx1
-	gd1rSxSLcz9XGO/KHXimpGDLQjD0+MiBUPGKhLVm4ySJJ3sPP+FavmUgVZGoJSMThRmf+7q2Avnmq
-	33bq470R1PSPt1XEvpC41sWAPrp3d1ErcRVsNRL1TKlv4jyVM+Dua3lysg4peQYSC7GBmsfY3pxQo
-	foL2iNzWfiIpgpYTpIUIEy2jr9M1OL7JUxLkJwysRkoNq4BNR6Y/k3pKhadrF7igBKhBwQwDyKNOm
-	fN1TOtuOY+2EZfozyPFCc3Q4EsdfWNg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hePeYfYJVdtqygpSVys9OjEqN2uwg+hGXVUhLbbSs1k=; b=GKEjLvSMbenOZs
+	1zIciksJvJstnSEt4nD32KIDDmgy+xtzJ9rlCxuPcX5qgZ8YihB0dySnN1eQxp2++7gWJCghjJmQ6
+	MeOeChpRCr/o14dclki1reDvW8mKrQBfcaDuCVllnFD49LI1Co74rjvFG4Cnhu+YRxi/a8prKQf/I
+	u6VcBbg73YhsBX8mDF7RUw7WfhZ0JD8VI0UG7iNOr3yJYah3mUGU8n3tvIOF2ynwRAua96uWK1s+Q
+	44oEIjs4+kX5jocXI28tCwxc1V9z+CRmUvTr9jIL2zaD4xxk7Q76xFMCFCgRnV8F5rnF+kBg6sEub
+	SG8pbOrUbZHbbnwH1aOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iocC9-00007h-SH; Mon, 06 Jan 2020 23:54:01 +0000
-Received: from mail.prewas.sk ([212.5.209.170])
+	id 1iocIP-00036G-E2; Tue, 07 Jan 2020 00:00:29 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iocC0-00006x-Nc; Mon, 06 Jan 2020 23:53:55 +0000
-dkim-signature: v=1; a=rsa-sha256; d=3ksolutions.sk; s=mail.prewas.sk;
- c=relaxed/relaxed; q=dns/txt; h=From:Subject:Date:Message-ID:To:CC;
- bh=M/eBOS8Jjs955qjcv8N+fYgQg7V3zf0yVAbpJAfg4pU=;
- b=Jh49mNICcBuOfhwIKxBjMOmAyog220UbQOqz4Hp8yetRnFMitxj3TXYZPWxfb6FBEQwcg/EzTDikwqf2jSGfQ1meyWDXg9iJ6zkAkXMy0hAKPJR75iiRXh8SFuH4A6eKfZn2eup9Ud5NtfpGMexlK6hLWEd5q2qWHOEm7dEAk3sNS7k/IpwTFN7MQU+BxJuI66pj2tLEbgvRWQS8YedWho08w7V24JPGY4GC/HqEwpolk3E0pDFcd8u2pF
- wfN+r25OFNvTczZm057KJTLXQzzviptMY0pLPK7EqZiezEcT/p+QCOJ+0lAx3W1PoqXnSjb9pAZfCKBHxamPzgBmk2Pw==
-Received: from localhost.localdomain (Unknown [10.0.1.41])
- by mail.prewas.sk with ESMTPSA
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128)
- ; Tue, 7 Jan 2020 00:53:20 +0100
-From: Ivan Sistik <sistik@3ksolutions.sk>
-To: Russell King <linux@armlinux.org.uk>
-Subject: [PATCH] tty: serial: amba-pl011: added RS485 support
-Date: Tue,  7 Jan 2020 00:52:03 +0100
-Message-Id: <20200106235203.27256-1-sistik@3ksolutions.sk>
-X-Mailer: git-send-email 2.17.1
+ id 1iocIG-00035D-08; Tue, 07 Jan 2020 00:00:22 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 755B252F;
+ Tue,  7 Jan 2020 01:00:07 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1578355207;
+ bh=9VHkNEnMxkNw7CIek1nfHpk8hjLtgRvsk9eM6Lgfkr4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=gf7XCgxSRpHjF+Bq8d2Sg562EcBm2VSUxvBnhV/l/t+TaQuh15R+e9JQvEEUqNnZM
+ WttXVvA3957CmLL34BnX92BBdg/c8YbwWsj3hCJ2husoAkrR6+mlR5SdDGVCFtzCCt
+ XOFdDsgLzw/oIZgArzZeUseZDcSxiDeaMKQV/VW4=
+Date: Tue, 7 Jan 2020 01:59:57 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
+ yaml bindings
+Message-ID: <20200106235957.GA28230@pendragon.ideasonboard.com>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <20191227200116.2612137-9-helen.koike@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191227200116.2612137-9-helen.koike@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_155353_444627_0AB2FC9B 
-X-CRM114-Status: GOOD (  26.30  )
+X-CRM114-CacheID: sfid-20200106_160020_346729_74669045 
+X-CRM114-Status: GOOD (  20.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.5.209.170 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -67,725 +73,290 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Ivan Sistik <sistik@3ksolutions.sk>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Jiri Slaby <jslaby@suse.com>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, ezequiel@collabora.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
+ joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
+ jacob-chen@iotwrt.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-AMBA PL011 do not have hardware support for RS485. This implementation is
-for drive enable signal (DE), which switch direction of RS485 driver chip.
-This signal si drived by RTS pin. Correct multiplexor settings have to be
-provided to Device Tree. Usually it is 'ctsrts', which is used for enabling
-of HW flow control, too.
+Hi Helen,
 
-DE signal is switched by starting transmition from serial core and data
-transfer is initiated by first hrtimer if there is delay before send
-enabled.
+Thank you for the patch.
 
-There is missing FIFO empty interrupt in PL011. It is replaced by second
-hrtimer which is started if there are no more data in port transmit buffer.
-Notice that port transmit buffer is not the same as HW TX FIFO. Time of
-this timmer is set to char send time and it is running until fifo is empty.
-This kind of implementation cause that there can be unwanted delay of one
-timer tick before DE signal is switched. This is used to prevent data loss
-during transmit. Second timer can start first if there is delay after send
-enabled.
+On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
+> Add yaml DT bindings for Rockchip ISP1.
+> 
+> This was tested and verified with:
+> mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v12:
+> - The commit replaces the following commit in previous series named
+> media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+> This new patch adds yaml binding and was verified with
+> make dtbs_check and make dt_binding_check
+> 
+> Changes in v11:
+> - add clock-names values
+> 
+> Changes in v10:
+> - unsquash
+> 
+> Changes in v9:
+> - squash
+> - move to staging
+> 
+> Changes in v8:
+> - fix title division style
+> 
+> Changes in v7:
+> - update document with new design and tested example
+> 
+>  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+>  1 file changed, 193 insertions(+)
+>  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> new file mode 100644
+> index 000000000000..4d1b2c67a4cd
+> --- /dev/null
+> +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> @@ -0,0 +1,193 @@
+> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip SoC Image Signal Processing unit v1
+> +
+> +maintainers:
+> +  - Helen Koike <helen.koike@collabora.com>
+> +
+> +description: |
+> +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
+> +  which contains image processing, scaling, and compression funcitons.
+> +
+> +properties:
+> +  compatible:
+> +    const: rockchip,rk3399-cif-isp
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description: phandle for the PHY port
 
-Signed-off-by: Ivan Sistik <sistik@3ksolutions.sk>
----
- arch/arm/configs/bcm2835_defconfig |   1 +
- drivers/tty/serial/Kconfig         |  12 +
- drivers/tty/serial/amba-pl011.c    | 470 ++++++++++++++++++++++++++++-
- 3 files changed, 480 insertions(+), 3 deletions(-)
+According to http://opensource.rock-chips.com/wiki_Camera_driver, RK3388
+can route either of DPHY RX0 or DPHY RX1 to the single ISP instance,
+while RK3399 has one PHY per ISP instance, with DPHY RX1 being shared
+with the display. Have you given any thought on how we will support this
+in a backward-compatible way in the DT bindings ?
 
-diff --git a/arch/arm/configs/bcm2835_defconfig b/arch/arm/configs/bcm2835_defconfig
-index e9bc88937b1e..514888681913 100644
---- a/arch/arm/configs/bcm2835_defconfig
-+++ b/arch/arm/configs/bcm2835_defconfig
-@@ -78,6 +78,7 @@ CONFIG_SERIAL_8250_SHARE_IRQ=y
- CONFIG_SERIAL_8250_BCM2835AUX=y
- CONFIG_SERIAL_AMBA_PL011=y
- CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
-+CONFIG_SERIAL_AMBA_PL011_SOFT_RS485=y
- CONFIG_SERIAL_DEV_BUS=y
- CONFIG_TTY_PRINTK=y
- CONFIG_I2C_CHARDEV=y
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index df8bd0c7b97d..3cecd8a75691 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -73,6 +73,18 @@ config SERIAL_AMBA_PL011_CONSOLE
- 	  your boot loader (lilo or loadlin) about how to pass options to the
- 	  kernel at boot time.)
- 
-+config SERIAL_AMBA_PL011_SOFT_RS485
-+	bool "RS485 software direction switching for ARM AMBA PL011 serial"
-+	depends on SERIAL_AMBA_PL011=y
-+	select SERIAL_CORE
-+	help
-+	  Enable RS485 software direction switching of driver enable (RTS pin)
-+	  for ARM AMBA PL011 serial. AMBA PL011 does not have HW support for
-+	  RS485. This driver use 2 hrtimers. One is used for rs485 delays.
-+	  Secon one is used for polling of TX FIFO. There is not TX FIFO
-+	  empty interrupt in PL011. Secondary timer is started by empty
-+	  transmit buffer.
-+
- config SERIAL_EARLYCON_ARM_SEMIHOST
- 	bool "Early console using ARM semihosting"
- 	depends on ARM64 || ARM
-diff --git a/drivers/tty/serial/amba-pl011.c b/drivers/tty/serial/amba-pl011.c
-index af21122dfade..0fe24d169730 100644
---- a/drivers/tty/serial/amba-pl011.c
-+++ b/drivers/tty/serial/amba-pl011.c
-@@ -14,6 +14,9 @@
-  * not have an RI input, nor do they have DTR or RTS outputs.  If
-  * required, these have to be supplied via some other means (eg, GPIO)
-  * and hooked into this driver.
-+ *
-+ * Added software RS485 support, 05/jan/2020, Ivan Sistik
-+ *     sistik@3ksolutions.sk
-  */
- 
- 
-@@ -46,6 +49,7 @@
- #include <linux/sizes.h>
- #include <linux/io.h>
- #include <linux/acpi.h>
-+#include <linux/math64.h>
- 
- #include "amba-pl011.h"
- 
-@@ -60,6 +64,18 @@
- #define UART_DR_ERROR		(UART011_DR_OE|UART011_DR_BE|UART011_DR_PE|UART011_DR_FE)
- #define UART_DUMMY_DR_RX	(1 << 16)
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+/*
-+ * Enum with current status
-+ */
-+enum rs485_status {
-+	rs485_receiving,
-+	rs485_delay_before_send,
-+	rs485_sending,
-+	rs485_delay_after_send
-+};
-+#endif
-+
- static u16 pl011_std_offsets[REG_ARRAY_SIZE] = {
- 	[REG_DR] = UART01x_DR,
- 	[REG_FR] = UART01x_FR,
-@@ -270,6 +286,16 @@ struct uart_amba_port {
- 	unsigned int		old_cr;		/* state during shutdown */
- 	unsigned int		fixed_baud;	/* vendor-set fixed baud rate */
- 	char			type[12];
-+
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	enum rs485_status	rs485_current_status; /* status used for RTS */
-+	enum rs485_status	rs485_next_status; /* this status after tick */
-+	struct hrtimer		rs485_delay_timer;
-+	struct hrtimer		rs485_tx_empty_poll_timer;
-+	unsigned long		send_char_time;	/* send char (nanoseconds) */
-+	bool			rs485_last_char_sending;
-+#endif
-+
- #ifdef CONFIG_DMA_ENGINE
- 	/* DMA stuff */
- 	bool			using_tx_dma;
-@@ -280,6 +306,25 @@ struct uart_amba_port {
- #endif
- };
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+
-+static void pl011_rs485_start_rts_delay(struct uart_amba_port *uap);
-+
-+#define RS485_SET_RTS_SIGNAL(pUAP, value)		\
-+	do {						\
-+		unsigned int rts_temp_cr;		\
-+		rts_temp_cr = pl011_read(pUAP, REG_CR);	\
-+		if (!(value))				\
-+			rts_temp_cr |= UART011_CR_RTS;	\
-+		else					\
-+			rts_temp_cr &= ~UART011_CR_RTS;	\
-+		pl011_write(rts_temp_cr, pUAP, REG_CR);	\
-+	} while (0)
-+
-+#define RS485_TX_FIFO_EMPTY(pUAP)			\
-+	(pl011_read(pUAP, REG_FR) & UART011_FR_TXFE)
-+#endif
-+
- static unsigned int pl011_reg_to_offset(const struct uart_amba_port *uap,
- 	unsigned int reg)
- {
-@@ -1298,6 +1343,11 @@ static void pl011_stop_tx(struct uart_port *port)
- 	uap->im &= ~UART011_TXIM;
- 	pl011_write(uap->im, uap, REG_IMSC);
- 	pl011_dma_tx_stop(uap);
-+
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	if (uap->port.rs485.flags & SER_RS485_ENABLED)
-+		pl011_rs485_start_rts_delay(uap);
-+#endif
- }
- 
- static bool pl011_tx_chars(struct uart_amba_port *uap, bool from_irq);
-@@ -1316,8 +1366,122 @@ static void pl011_start_tx(struct uart_port *port)
- 	struct uart_amba_port *uap =
- 	    container_of(port, struct uart_amba_port, port);
- 
--	if (!pl011_dma_tx_start(uap))
--		pl011_start_tx_pio(uap);
-+#define START_PL011_TX()				\
-+	do {						\
-+		if (!pl011_dma_tx_start(uap))		\
-+			pl011_start_tx_pio(uap);	\
-+	} while (0)
-+
-+#ifndef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	START_PL011_TX();
-+#else
-+
-+#define CANCEL_RS485_TIMERS()						 \
-+	do {								 \
-+		hrtimer_try_to_cancel(&(uap->rs485_delay_timer));	 \
-+		hrtimer_try_to_cancel(&(uap->rs485_tx_empty_poll_timer));\
-+	} while (0)
-+
-+	if (uap->port.rs485.flags & SER_RS485_ENABLED) {
-+		ktime_t ktime;
-+
-+		switch (uap->rs485_current_status) {
-+		case rs485_delay_after_send:
-+			/* stop old delay timer */
-+			CANCEL_RS485_TIMERS();
-+
-+			/* check if timer expired */
-+			if (uap->rs485_current_status
-+					!= rs485_delay_after_send) {
-+				/* Timer expired and RTS is in wrong state.*/
-+				uap->rs485_current_status
-+					= rs485_delay_before_send;
-+				uap->rs485_next_status = rs485_sending;
-+
-+				/* Set RTS */
-+				RS485_SET_RTS_SIGNAL(uap,
-+					uap->port.rs485.flags
-+						& SER_RS485_RTS_ON_SEND);
-+
-+				/* Start timer */
-+				ktime = ktime_set(0,
-+					  uap->port.rs485
-+						.delay_rts_before_send
-+					  * 1000000L);
-+
-+				hrtimer_start(
-+					&(uap->rs485_delay_timer),
-+					ktime,
-+					HRTIMER_MODE_REL);
-+				return;
-+			}
-+
-+			/* timer was stopped and driver can continue sending */
-+			uap->rs485_current_status = rs485_sending;
-+			uap->rs485_next_status = rs485_sending;
-+
-+			/* driver is already in sending state */
-+			START_PL011_TX();
-+			break;
-+
-+		case rs485_sending:
-+			/* stop old timer. There can be running timer	*/
-+			/* which is checking TX FIFO empty flag		*/
-+			CANCEL_RS485_TIMERS();
-+
-+			/* driver is already in sending state */
-+			START_PL011_TX();
-+			break;
-+
-+		case rs485_receiving:
-+		default:
-+			/* stop old timer. There can be running timer	*/
-+			/* which is checking TX FIFO empty flag		*/
-+			CANCEL_RS485_TIMERS();
-+
-+			/* Set RTS */
-+			RS485_SET_RTS_SIGNAL(uap,
-+				     uap->port.rs485.flags
-+					     & SER_RS485_RTS_ON_SEND);
-+
-+			if (uap->port.rs485.delay_rts_before_send == 0) {
-+				/* Change state */
-+				uap->rs485_current_status
-+					= rs485_sending;
-+				uap->rs485_next_status
-+					= rs485_sending;
-+
-+				/* driver is in sending state */
-+				START_PL011_TX();
-+				break;
-+			}
-+
-+			/* Change state */
-+			uap->rs485_current_status
-+				= rs485_delay_before_send;
-+			uap->rs485_next_status = rs485_sending;
-+
-+			/* Start timer */
-+			ktime = ktime_set(0,
-+				  uap->port.rs485.delay_rts_before_send
-+				  * 1000000L);
-+			hrtimer_start(&(uap->rs485_delay_timer),
-+				ktime,
-+				HRTIMER_MODE_REL);
-+			break;
-+
-+		case rs485_delay_before_send:
-+			/* do nothing because delay timer should be running */
-+			break;
-+		}
-+	} else {
-+		START_PL011_TX();
-+	}
-+#undef CANCEL_RS485_TIMERS
-+
-+#endif
-+
-+#undef START_PL011_TX
- }
- 
- static void pl011_stop_rx(struct uart_port *port)
-@@ -1473,6 +1637,167 @@ static void check_apply_cts_event_workaround(struct uart_amba_port *uap)
- 	dummy_read = pl011_read(uap, REG_ICR);
- }
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+
-+/*
-+ * Change state according to pending delay
-+ * Locking: port is locked in this function
-+ */
-+static enum hrtimer_restart
-+pl011_rs485_tx_poll_timer(struct hrtimer *timer)
-+{
-+	unsigned long flags;
-+	ktime_t ktime;
-+
-+	struct uart_amba_port *uap =
-+		container_of(timer, struct uart_amba_port,
-+			     rs485_tx_empty_poll_timer);
-+
-+	spin_lock_irqsave(&uap->port.lock, flags);
-+
-+	if (!(uart_circ_empty(&uap->port.state->xmit))) {
-+		spin_unlock_irqrestore(&uap->port.lock, flags);
-+		return HRTIMER_NORESTART;
-+	}
-+
-+	if (!RS485_TX_FIFO_EMPTY(uap) || !uap->rs485_last_char_sending) {
-+		/*
-+		 * FIFO is empty but there can be last char in transmit shift
-+		 * register so we need one more tick
-+		 */
-+		uap->rs485_last_char_sending = RS485_TX_FIFO_EMPTY(uap);
-+
-+		hrtimer_forward_now(timer, ktime_set(0, uap->send_char_time));
-+
-+		spin_unlock_irqrestore(&uap->port.lock, flags);
-+		return HRTIMER_RESTART;
-+	}
-+
-+	/* Check if delay after send is set*/
-+	if (uap->port.rs485.delay_rts_after_send == 0) {
-+		/* Change state */
-+		uap->rs485_current_status = rs485_receiving;
-+		uap->rs485_next_status = rs485_receiving;
-+
-+		/* if there is no delay after send change RTS value*/
-+		RS485_SET_RTS_SIGNAL(uap,
-+			     uap->port.rs485.flags
-+				     & SER_RS485_RTS_AFTER_SEND);
-+
-+		spin_unlock_irqrestore(&uap->port.lock, flags);
-+		return HRTIMER_NORESTART;
-+	}
-+
-+	/* Change state */
-+	uap->rs485_current_status = rs485_delay_after_send;
-+	uap->rs485_next_status = rs485_receiving;
-+
-+	/* RTS will be set in timer handler */
-+
-+	/* Start delay timer */
-+	ktime = ktime_set(0, (uap->port.rs485.delay_rts_after_send
-+			* 1000000L));
-+	hrtimer_start(&(uap->rs485_delay_timer), ktime, HRTIMER_MODE_REL);
-+
-+	spin_unlock_irqrestore(&uap->port.lock, flags);
-+	return HRTIMER_NORESTART;
-+}
-+
-+/*
-+ * Change state according to pending delay
-+ * Locking: port is locked in this function
-+ */
-+static enum hrtimer_restart
-+pl011_rs485_timer(struct hrtimer *timer)
-+{
-+	unsigned long flags;
-+
-+	struct uart_amba_port *uap =
-+		container_of(timer, struct uart_amba_port, rs485_delay_timer);
-+
-+	spin_lock_irqsave(&uap->port.lock, flags);
-+
-+	if (uap->rs485_current_status == uap->rs485_next_status) {
-+		/* timer was canceled or handled */
-+		spin_unlock_irqrestore(&uap->port.lock, flags);
-+		return HRTIMER_NORESTART;
-+	}
-+
-+	switch (uap->rs485_current_status) {
-+	case rs485_delay_before_send:
-+		uap->rs485_current_status = rs485_sending;
-+		uap->rs485_next_status = rs485_sending;
-+		if (!pl011_dma_tx_start(uap))
-+			pl011_start_tx_pio(uap);
-+		break;
-+
-+	case rs485_delay_after_send:
-+		uap->rs485_current_status = rs485_receiving;
-+		uap->rs485_next_status = rs485_receiving;
-+		RS485_SET_RTS_SIGNAL(uap,
-+			     uap->port.rs485.flags
-+				     & SER_RS485_RTS_AFTER_SEND);
-+		break;
-+
-+	default:
-+		break;
-+	}
-+
-+	spin_unlock_irqrestore(&uap->port.lock, flags);
-+	return HRTIMER_NORESTART;
-+}
-+
-+/*
-+ * Evaluate transmit buffer status and start delay to off
-+ * Locking: called with port lock held and IRQs disabled
-+ */
-+static void pl011_rs485_start_rts_delay(struct uart_amba_port *uap)
-+{
-+	ktime_t ktime;
-+
-+	if (uap->rs485_current_status == rs485_receiving)
-+		return;
-+
-+	/* if there is timeout in progress cancel it and start new */
-+	hrtimer_try_to_cancel(&(uap->rs485_delay_timer));
-+	hrtimer_try_to_cancel(&(uap->rs485_tx_empty_poll_timer));
-+
-+
-+	if (!RS485_TX_FIFO_EMPTY(uap)
-+			|| uap->port.rs485.delay_rts_after_send == 0) {
-+		/*
-+		 * Schedule validation timer if there is data in TX FIFO
-+		 * because there is not TX FIFO empty interrupt
-+		 */
-+
-+		uap->rs485_current_status = rs485_sending;
-+		uap->rs485_next_status = rs485_sending;
-+
-+		uap->rs485_last_char_sending = false;
-+
-+		ktime = ktime_set(0, uap->send_char_time);
-+		hrtimer_start(&(uap->rs485_tx_empty_poll_timer),
-+			ktime,
-+			HRTIMER_MODE_REL);
-+		return;
-+	}
-+
-+	/* Change state */
-+	uap->rs485_current_status = rs485_delay_after_send;
-+	uap->rs485_next_status = rs485_receiving;
-+
-+	/* RTS will be set in timer handler */
-+
-+	/* Start timer */
-+	ktime = ktime_set(0, (uap->port.rs485.delay_rts_after_send
-+			* 1000000L));
-+
-+	hrtimer_start(&(uap->rs485_delay_timer),
-+		ktime,
-+		HRTIMER_MODE_REL);
-+}
-+#endif
-+
- static irqreturn_t pl011_int(int irq, void *dev_id)
- {
- 	struct uart_amba_port *uap = dev_id;
-@@ -1615,6 +1940,11 @@ static void pl011_quiesce_irqs(struct uart_port *port)
- 	 */
- 	pl011_write(pl011_read(uap, REG_IMSC) & ~UART011_TXIM, uap,
- 		    REG_IMSC);
-+
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	if (uap->port.rs485.flags & SER_RS485_ENABLED)
-+		pl011_rs485_start_rts_delay(uap);
-+#endif
- }
- 
- static int pl011_get_poll_char(struct uart_port *port)
-@@ -1687,6 +2017,27 @@ static int pl011_hwinit(struct uart_port *port)
- 		if (plat->init)
- 			plat->init();
- 	}
-+
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	/*
-+	 * Initialize timers used for RS485
-+	 */
-+	hrtimer_init(&(uap->rs485_delay_timer),
-+		CLOCK_MONOTONIC,
-+		HRTIMER_MODE_REL);
-+
-+	uap->rs485_delay_timer.function = &pl011_rs485_timer;
-+
-+	hrtimer_init(&(uap->rs485_tx_empty_poll_timer),
-+		CLOCK_MONOTONIC,
-+		HRTIMER_MODE_REL);
-+
-+	uap->rs485_tx_empty_poll_timer.function = &pl011_rs485_tx_poll_timer;
-+
-+	uap->rs485_current_status = rs485_receiving;
-+	RS485_SET_RTS_SIGNAL(uap, false);
-+#endif
-+
- 	return 0;
- }
- 
-@@ -1870,6 +2221,16 @@ static void pl011_shutdown(struct uart_port *port)
- 	struct uart_amba_port *uap =
- 		container_of(port, struct uart_amba_port, port);
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	if (uap->port.rs485.flags & SER_RS485_ENABLED) {
-+		hrtimer_try_to_cancel(&(uap->rs485_delay_timer));
-+		hrtimer_try_to_cancel(&(uap->rs485_tx_empty_poll_timer));
-+
-+		uap->rs485_current_status = rs485_receiving;
-+		RS485_SET_RTS_SIGNAL(uap, true);
-+	}
-+#endif
-+
- 	pl011_disable_interrupts(uap);
- 
- 	pl011_dma_shutdown(uap);
-@@ -1952,6 +2313,24 @@ pl011_set_termios(struct uart_port *port, struct ktermios *termios,
- 	unsigned long flags;
- 	unsigned int baud, quot, clkdiv;
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	unsigned int transfer_bit_count;
-+	unsigned long char_transfer_time;
-+
-+	/*
-+	 * Calculate bit count which will be send
-+	 * by UART. It is used for calculation of
-+	 * time required to start timer until TX FIFO (HW) is empty
-+	 * There is not interrupt for FIFO empty in PL011.
-+	 * There is only FIFO empty flag in REG_FR.
-+	 */
-+	transfer_bit_count = 0;
-+
-+#define	ADD_DATA_BITS(bits)	(transfer_bit_count += bits)
-+#else
-+#define	ADD_DATA_BITS(bits)
-+#endif
-+
- 	if (uap->vendor->oversampling)
- 		clkdiv = 8;
- 	else
-@@ -1978,29 +2357,53 @@ pl011_set_termios(struct uart_port *port, struct ktermios *termios,
- 	switch (termios->c_cflag & CSIZE) {
- 	case CS5:
- 		lcr_h = UART01x_LCRH_WLEN_5;
-+		ADD_DATA_BITS(7);
- 		break;
- 	case CS6:
- 		lcr_h = UART01x_LCRH_WLEN_6;
-+		ADD_DATA_BITS(8);
- 		break;
- 	case CS7:
- 		lcr_h = UART01x_LCRH_WLEN_7;
-+		ADD_DATA_BITS(9);
- 		break;
- 	default: // CS8
- 		lcr_h = UART01x_LCRH_WLEN_8;
-+		ADD_DATA_BITS(10);
- 		break;
- 	}
--	if (termios->c_cflag & CSTOPB)
-+
-+	if (termios->c_cflag & CSTOPB) {
- 		lcr_h |= UART01x_LCRH_STP2;
-+		ADD_DATA_BITS(1);
-+	}
-+
- 	if (termios->c_cflag & PARENB) {
- 		lcr_h |= UART01x_LCRH_PEN;
-+		ADD_DATA_BITS(1);
-+
- 		if (!(termios->c_cflag & PARODD))
- 			lcr_h |= UART01x_LCRH_EPS;
-+
- 		if (termios->c_cflag & CMSPAR)
- 			lcr_h |= UART011_LCRH_SPS;
- 	}
-+
-+#undef ADD_DATA_BITS
-+
- 	if (uap->fifosize > 1)
- 		lcr_h |= UART01x_LCRH_FEN;
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	/* Calculate time required to send one char (nanoseconds) */
-+	char_transfer_time =
-+		(unsigned long) div_u64(
-+				mul_u32_u32(
-+					(u32)transfer_bit_count,
-+					(u32)NSEC_PER_SEC),
-+				(u32)baud);
-+#endif
-+
- 	spin_lock_irqsave(&port->lock, flags);
- 
- 	/*
-@@ -2008,6 +2411,7 @@ pl011_set_termios(struct uart_port *port, struct ktermios *termios,
- 	 */
- 	uart_update_timeout(port, termios->c_cflag, baud);
- 
-+
- 	pl011_setup_status_masks(port, termios);
- 
- 	if (UART_ENABLE_MS(port, termios->c_cflag))
-@@ -2017,6 +2421,11 @@ pl011_set_termios(struct uart_port *port, struct ktermios *termios,
- 	old_cr = pl011_read(uap, REG_CR);
- 	pl011_write(0, uap, REG_CR);
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	/* Update send_char_time in locked context */
-+	uap->send_char_time = char_transfer_time;
-+#endif
-+
- 	if (termios->c_cflag & CRTSCTS) {
- 		if (old_cr & UART011_CR_RTS)
- 			old_cr |= UART011_CR_RTSEN;
-@@ -2088,6 +2497,7 @@ static const char *pl011_type(struct uart_port *port)
- {
- 	struct uart_amba_port *uap =
- 	    container_of(port, struct uart_amba_port, port);
-+
- 	return uap->port.type == PORT_AMBA ? uap->type : NULL;
- }
- 
-@@ -2119,6 +2529,44 @@ static void pl011_config_port(struct uart_port *port, int flags)
- 	}
- }
- 
-+/*
-+ * Configure RS485
-+ * Locking: called with port lock held and IRQs disabled
-+ */
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+static int pl011_config_rs485(struct uart_port *port,
-+			      struct serial_rs485 *rs485)
-+{
-+	struct uart_amba_port *uap =
-+			container_of(port, struct uart_amba_port, port);
-+
-+	port->rs485.flags = rs485->flags;
-+	port->rs485.delay_rts_after_send = rs485->delay_rts_after_send;
-+	port->rs485.delay_rts_before_send = rs485->delay_rts_before_send;
-+
-+	if (port->rs485.flags & SER_RS485_ENABLED) {
-+		unsigned int cr;
-+
-+		hrtimer_try_to_cancel(&(uap->rs485_delay_timer));
-+		hrtimer_try_to_cancel(&(uap->rs485_tx_empty_poll_timer));
-+
-+		/* If RS485 is enabled, disable auto RTS */
-+		cr = pl011_read(uap, REG_CR);
-+		cr &= ~UART011_CR_RTSEN;
-+		pl011_write(cr, uap, REG_CR);
-+
-+		uap->rs485_current_status = rs485_receiving;
-+		RS485_SET_RTS_SIGNAL(uap,
-+			     port->rs485.flags
-+				     & SER_RS485_RTS_AFTER_SEND);
-+	} else {
-+		RS485_SET_RTS_SIGNAL(uap, true);
-+	}
-+
-+	return 0;
-+}
-+#endif
-+
- /*
-  * verify the new serial_struct (for TIOCSSERIAL).
-  */
-@@ -2641,6 +3089,12 @@ static int pl011_probe(struct amba_device *dev, const struct amba_id *id)
- 	uap->port.irq = dev->irq[0];
- 	uap->port.ops = &amba_pl011_pops;
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+	uap->port.rs485_config = &pl011_config_rs485;
-+	uap->port.rs485.flags = 0;	/* RS485 is not enabled by default */
-+	dev_info(&dev->dev, "Software switching for RS485 enabled\n");
-+#endif
-+
- 	snprintf(uap->type, sizeof(uap->type), "PL011 rev%u", amba_rev(dev));
- 
- 	ret = pl011_setup_port(&dev->dev, uap, &dev->res, portnr);
-@@ -2816,10 +3270,15 @@ static struct amba_driver pl011_driver = {
- 
- static int __init pl011_init(void)
- {
-+#ifndef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
- 	printk(KERN_INFO "Serial: AMBA PL011 UART driver\n");
-+#else
-+	printk(KERN_INFO "Serial: AMBA PL011 UART driver with soft RS485 support\n");
-+#endif
- 
- 	if (platform_driver_register(&arm_sbsa_uart_platform_driver))
- 		pr_warn("could not register SBSA UART platform driver\n");
-+
- 	return amba_driver_register(&pl011_driver);
- }
- 
-@@ -2829,6 +3288,11 @@ static void __exit pl011_exit(void)
- 	amba_driver_unregister(&pl011_driver);
- }
- 
-+#ifdef CONFIG_SERIAL_AMBA_PL011_SOFT_RS485
-+#undef RS485_SET_RTS_SIGNAL
-+#undef RS485_TX_FIFO_EMPTY
-+#endif
-+
- /*
-  * While this can be a module, if builtin it's most likely the console
-  * So let's leave module_exit but move module_init to an earlier place
+> +
+> +  phy-names:
+> +    const: dphy
+> +
+> +  clocks:
+> +    items:
+> +      - description: ISP clock
+> +      - description: ISP aclk clock
+> +      - description: ISP aclk wrapper clock
+> +      - description: ISP hclk clock
+> +      - description: ISP hclk wrapper clock
+
+I wonder what aclk and hclk stand far. In any case those names match the
+CRU documentation, so that seems fine.
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: clk_isp
+> +      - const: aclk_isp
+> +      - const: aclk_isp_wrap
+> +      - const: hclk_isp
+> +      - const: hclk_isp_wrap
+> +
+> +  # See ./video-interfaces.txt for details
+> +  ports:
+> +    type: object
+> +    additionalProperties: false
+> +
+> +    properties:
+> +      "#address-cells":
+> +        const: 1
+> +
+> +      "#size-cells":
+> +        const: 0
+> +
+> +      port@0:
+> +        type: object
+> +        additionalProperties: false
+
+I think this should have a description to tell what this port
+corresponds to.
+
+> +
+> +        properties:
+> +          "#address-cells":
+> +            const: 1
+> +
+> +          "#size-cells":
+> +            const: 0
+> +
+> +          reg:
+> +            const: 0
+> +            description: port identifier.
+
+Here and for the endpoint below the description is probably not needed.
+
+> +
+> +        patternProperties:
+> +          endpoint:
+> +            type: object
+> +            additionalProperties: false
+> +
+> +            properties:
+> +              reg:
+> +                maxItems: 1
+> +                description: endpoint identifier.
+> +
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +
+> +              remote-endpoint: true
+> +
+> +    required:
+> +      - port@0
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +  - iommus
+> +  - phys
+> +  - phy-names
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +
+> +    #include <dt-bindings/clock/rk3399-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/rk3399-power.h>
+> +
+> +    parent0: parent@0 {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        isp0: isp0@ff910000 {
+> +            compatible = "rockchip,rk3399-cif-isp";
+> +            reg = <0x0 0xff910000 0x0 0x4000>;
+> +            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
+> +            clocks = <&cru SCLK_ISP0>,
+> +                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
+> +                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
+> +            clock-names = "clk_isp",
+> +                          "aclk_isp", "aclk_isp_wrap",
+> +                          "hclk_isp", "hclk_isp_wrap";
+> +            power-domains = <&power RK3399_PD_ISP0>;
+> +            iommus = <&isp0_mmu>;
+> +            phys = <&dphy>;
+> +            phy-names = "dphy";
+> +
+> +            ports {
+> +                #address-cells = <1>;
+> +                #size-cells = <0>;
+> +
+> +                port@0 {
+> +                    #address-cells = <1>;
+> +                    #size-cells = <0>;
+> +                    reg = <0>;
+> +
+> +                    mipi_in_wcam: endpoint@0 {
+> +                        reg = <0>;
+> +                        remote-endpoint = <&wcam_out>;
+> +                        data-lanes = <1 2>;
+> +                    };
+> +
+> +                    mipi_in_ucam: endpoint@1 {
+> +                        reg = <1>;
+> +                        remote-endpoint = <&ucam_out>;
+> +                        data-lanes = <1>;
+> +                    };
+
+Are those two cameras connected to the same CSI-2 lines with at most one
+sensor out of reset ?
+
+With the above small issues addressed,
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> +                };
+> +            };
+> +        };
+> +
+> +        i2c7: i2c@ff160000 {
+> +            clock-frequency = <400000>;
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            wcam: camera@36 {
+> +                compatible = "ovti,ov5695";
+> +                reg = <0x36>;
+> +
+> +                port {
+> +                    wcam_out: endpoint {
+> +                        remote-endpoint = <&mipi_in_wcam>;
+> +                        data-lanes = <1 2>;
+> +                    };
+> +                };
+> +            };
+> +
+> +            ucam: camera@3c {
+> +                compatible = "ovti,ov2685";
+> +                reg = <0x3c>;
+> +
+> +                  port {
+> +                      ucam_out: endpoint {
+> +                          remote-endpoint = <&mipi_in_ucam>;
+> +                          data-lanes = <1>;
+> +                      };
+> +                  };
+> +            };
+> +        };
+> +    };
+
 -- 
-2.17.1
+Regards,
 
-
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
