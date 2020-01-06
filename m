@@ -2,62 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAFC2131338
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:51:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94F4B131343
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:56:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sm6d34dhRpjXEFm+LDiMIdeDARlTl4TIc/y9QZN18SU=; b=CApOUK7Omt/He6dZwck9nkt2a
-	+z907xton2gskUhurVB8tqQLl8KJUE7TUbJ0XOkqHIiwVdD3g9/8hg4llkableF5AwauCRs14j6ky
-	Ow+tIGiBzSJyzUOCvW7n3hiwREFNS2yQU/I6DJVvB/VkBg3JwLvSavg79WBs5wCLWOLFZPCwH6X2F
-	7ASgVGagh/6c+R62JaarsfZgvuUEpl8mH6djgDwZKMeiTlUy7h2HBvdODF6++ebjL1/dWDKmp3LSS
-	YGqmCDlfpVKw9dXkJDVgXF1fXfO9d3yWcj0n6owOTiOGQZ+nw2XohCMejzBTqrMl7+4IuK9BpGJ/8
-	h6oIhG4ow==;
+	 bh=oszB+D6eoyj6efIHp5qSgFJyM7daKQ2s4G4bSz2ExAE=; b=Lxe9qMoJN7M9/RDdtud9PrOcb
+	oP1/zdnVgci4g+iVz75roWBR6Rtqg4gNWGrNDIMxC2D9p+Jo3m18e3kEGl+EcyEGU+BJlGbAC39+9
+	X811rrR8BSMbDzP4Ywv87LnufLYgTRBN4x+6UhOrISiwopTTjiQpDJJvwiaDRpmmTuwsYzptpoRvi
+	AO69x4jD9canRXBd9Sp9yKU+gHQlkoG25lk9TTCQDKbByRAIUcNaeUO1N57vYqgpGS9clZbbZrhn6
+	h0Jgqcj1trOeqitu9lU+0+m98C4ovLX776Y627Ktm5Pl0HJQWmsre4i/gGjKr0X7rLGUJSgXAy9pd
+	TFFB+r4OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioSn2-0005SP-7P; Mon, 06 Jan 2020 13:51:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ioSrN-0007Ts-Q9; Mon, 06 Jan 2020 13:55:57 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioSmw-0005Rr-Ca
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:51:23 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1DE1E2072E;
- Mon,  6 Jan 2020 13:51:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578318677;
- bh=WTL6AAJGHSgduF8h7uccI4wLTd+i6OKpU4LDqmdW1d8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=x67zkGR98wfdcYmefSjrzMMDN6YPniRgFxaw2YjG4Y2XIFdO1OWVJpP/AIuRBiLMk
- bJeIm/AZ3//05tW/OI2e7m2ekwIeVQV3ANbESq5YqmPuu62u+pZ09xWcMKOci2uBEH
- C10An/AxR6Ztbmin7JwyDDXAsBZuHVwE/n5JnGU4=
-Date: Mon, 6 Jan 2020 14:51:14 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH v2] ARM: dts: sun8i: R40: Add SPI controllers nodes and
- pinmuxes
-Message-ID: <20200106135114.nwgzlzvx4mty7fhq@gilmour.lan>
-References: <20200106003849.16666-1-andre.przywara@arm.com>
- <20200106085613.mxe33t7eklj3aeld@gilmour.lan>
- <CAGb2v65=iJzPJneUF=e9Xsqj_ufhuZtr5javN5YNKtaApGq2zA@mail.gmail.com>
- <20200106134207.3088a74a@donnerap.cambridge.arm.com>
+ id 1ioSrG-0007TQ-HZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:55:52 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t14so15340010wmi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 05:55:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=GOvgs8hj7dePLPcNePLrt69XdZXpuWMsK+N/ZHyA1es=;
+ b=m07u5nGnCZpJUI8A1ZnfY9d4w82zqcxobiRXp776JbxpKTIQIEsJHPGkBHNS4W6WL3
+ 5Kx/Zzo57gpeETH9v6lmhEqf68ArMe4CCddVfKc344tGJpOamH7emZUBUa4eRKfntile
+ gjsaMgMfCj52sK0/e5dbPTEup6sOFkQNQPHKdIn0S2C1c3hcAtVLFcj8MUvSMNZi5FKR
+ ITJtf9U7J6AWqGG2YK030C4OSyMJk9nX97rtgnbq6bUhOXPSC8pzyCt89JomXp2Nc8ZF
+ UCTjtcKd9CqZ99r8TSZBINo7CQcE506lfzfjmuoU4w5IjrEwkCBd1YTJw+3p2/I20AFu
+ yZXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=GOvgs8hj7dePLPcNePLrt69XdZXpuWMsK+N/ZHyA1es=;
+ b=kK4FJkivbavUQjZcGIfv6kHQC7b7fzAZhrnDNoxoDgqgXVGokfV2oMFaeP5XvD7BAF
+ PVnB0fcIUG3Xmdmnu5C3M0IP6vq34JZvPCwle3bY/lMp/YoWZGXIHQ9hM82Ty9ty8k9M
+ uoBo92I24NOiK7MZU8tKzfARRCPxHUEFpGGsXhMRo7m/lYamdug5hSwnDlVfff9/Jjbt
+ 62KFHs2dxX/3icFZyEQRAgDhuen4SOvfg6Or+5YDkqOIVLz5oXzojo3v+iK4ClgN2kws
+ WcQSZnF9xA67wsXeL+1UHoke5gWFbHbQxeivne6v4zdINTjkK9Q0KlHjBsVkdvRNHmn5
+ YXHA==
+X-Gm-Message-State: APjAAAWt+vAB8qsu9wn/05mqcS46aZlVnR85cdqELlk9KOaevl/mucWE
+ BA66WMLqRh5luxwOLSJGivvYXA==
+X-Google-Smtp-Source: APXvYqw890CrpRTdI5nRuZqhpN0XGRsEVvYreHKiTznR18ImmnALK7ahdFzMlIcQknZUfcelJWjSmw==
+X-Received: by 2002:a05:600c:290f:: with SMTP id
+ i15mr35413242wmd.115.1578318949072; 
+ Mon, 06 Jan 2020 05:55:49 -0800 (PST)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id y7sm22744018wmd.1.2020.01.06.05.55.48
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 06 Jan 2020 05:55:48 -0800 (PST)
+Subject: Re: [PATCH] nvmem: imx: ocotp: introduce ocotp_ctrl_reg
+To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
+References: <1577355442-2140-1-git-send-email-peng.fan@nxp.com>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <34e0a567-04ee-4ff3-38da-cd4e3d8b4b3f@linaro.org>
+Date: Mon, 6 Jan 2020 13:55:47 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200106134207.3088a74a@donnerap.cambridge.arm.com>
+In-Reply-To: <1577355442-2140-1-git-send-email-peng.fan@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_055122_450631_A8CD5DA5 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200106_055550_776889_D93D5BE7 
+X-CRM114-Status: GOOD (  13.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,92 +102,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============7293166549903553097=="
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "festevam@gmail.com" <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7293166549903553097==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="behpb37ojul4ppun"
-Content-Disposition: inline
 
+On 26/12/2019 10:20, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> Introduce ocotp_ctrl_reg to include the low 16bits mask of CTRL
+> register.
+> 
+> i.MX chips will have different layout of the low 16bits of CTRL
+> register, so use ocotp_ctrl_reg will make it clean to add new
+> chip support.
+> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>   drivers/nvmem/imx-ocotp.c | 79 ++++++++++++++++++++++++++++++++++-------------
+>   1 file changed, 57 insertions(+), 22 deletions(-)
 
---behpb37ojul4ppun
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Applied thanks,
 
-On Mon, Jan 06, 2020 at 01:42:07PM +0000, Andre Przywara wrote:
-> On Mon, 6 Jan 2020 21:37:38 +0800
-> Chen-Yu Tsai <wens@csie.org> wrote:
->
-> Hi,
->
-> > On Mon, Jan 6, 2020 at 4:56 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > >
-> > > On Mon, Jan 06, 2020 at 12:38:49AM +0000, Andre Przywara wrote:
-> > > > The Allwinner R40 SoC contains four SPI controllers, using the newer
-> > > > sun6i design (but at the legacy addresses).
-> > > > The controller seems to be fully compatible to the A64 one, so no driver
-> > > > changes are necessary.
-> > > > The first three controllers can be used on two sets of pins, but SPI3 is
-> > > > only routed to one set on Port A.
-> > > > Only the pin groups for SPI0 on PortC and SPI1 on PortI are added here,
-> > > > because those seem to be the only one exposed on the Bananapi boards.
-> > > >
-> > > > Tested by connecting a SPI flash to a Bananapi M2 Berry SPI0 and SPI1
-> > > > header pins.
-> > > >
-> > > > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> > >
-> > > Applied, thanks!
-> > > Maxime
-> >
-> > Looks like this patch doesn't build. The SPI device nodes reference
-> > a non-existent DMA node.
->
-> Argh, shoot, sorry for that. Looks like a rebase artefact (I
-> originally had the DMA controller in, but then saw that this is
-> actually not used by the SPI driver, so removed it).
->
-> Thanks for testing!
->
-> Maxime, shall I send a fixup or redo the patch?
-
-Send a fixup, I'll squash it with the previous patch, thanks!
-Maxime
-
---behpb37ojul4ppun
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhM7UgAKCRDj7w1vZxhR
-xTgVAQCIFwCATD+xEJi/hS9mLxPKqFFgDt2VKHHYiDVTmI8F4gD+N2z9f/fkGbcK
-DrxwEKmBUFXRurhsZM7onrYL04WIVg0=
-=Isq5
------END PGP SIGNATURE-----
-
---behpb37ojul4ppun--
-
-
---===============7293166549903553097==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--srini
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7293166549903553097==--
-
