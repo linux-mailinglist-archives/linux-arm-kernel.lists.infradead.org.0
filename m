@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBC96130EDE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:44:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1242D130EDD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:44:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+BSsJwyVNTg9fsKmWgc9fZZ4w0ThyxFHwchzjMQ2Aag=; b=WIjSTBgZgsTKvj
-	/VmPmE6ankyeZdLTiUA7YeiQFuzuIKYlbZjI054ykv/ExR+bntvnsFMvNRHt7DgfFboaLZ2Jomtjz
-	geaJFMGM4xM/Ha5u0IqSjTgeVECVyHzbUECGz5idvnoQ2IBW4HEVZ2ZziKzG19AFao4g7axGlBYCO
-	6jOH7bgdRz1lme4RVQlvLx4lVrI57ZCXay6UmcFidJK88yFs8bJ1LgKvub0xjO+49eiEXle54LSiU
-	UAztCa6A5nQLL9Il/UlMO4tqhkoRViptSrUjgnYVYiCVvpgeHSoLp/SdMvzZ5pPH5jkdAiSz+jGVW
-	3MPTbFfks+sHNkHxijrQ==;
+	List-Owner; bh=DDB8Ax69NWJYvaqbpm+BQt5h74LpArCYBmbMCSjWlzE=; b=hFhzq+1ZYu7Urg
+	+M5EXUmL7oZdeIKzqHyb1CDH0Z4WvfWA1Ms3C4NOfuRRBEb4vylK9vWElPEbO8xbP806+Dp1iRXnJ
+	kH2/ZOo+V5U/7NSirXiOIEZqY/3buG7QeZCyT66cw6S2W6E2t30Rq8d3HciOoLrNFECbQMPdcBsxX
+	ZSxpS9KfFOz/xBFmrCKMCeRl2OhBZex1Typv9kj079WgnUjy+lhKcjfypTAyKi7Mnryc7cVmMWPY/
+	oMsG4wsV2daf4/Z4bEIgsYEEmNF1jyKVRYPVdRNuxsgQMW/SVBiK7Ak3ui+uf+G1sX3hjbzfmOaeB
+	htc1LbE2kY7yx/jLUkCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioNzw-00032S-Sr; Mon, 06 Jan 2020 08:44:28 +0000
+	id 1ioNzm-0002ne-IU; Mon, 06 Jan 2020 08:44:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioNyJ-0001aV-0K
+ id 1ioNyI-0001aY-Us
  for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:42:50 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4C33B24650;
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D5B42468B;
  Mon,  6 Jan 2020 08:42:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1578300165;
- bh=eabKL18AAzpQs7KMk7cqLiDvGMendqJwGmYVKRn/npc=;
+ bh=taWgwUhGcd/iS2EKymh/retvbso5JBoh7oLw2x9VN+k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pXwgWqOLaJDHrV6gn7hPWU3tYmP03Kj7jWrjjfrxSrXL4FWxVbPRsJb70RgiflMH9
- BobgEdByqkaNjxeyRIx914goQAcOnICbepYLASF/nDWFRITne3EjYZ9MPoQxn3o7MO
- vIsjK25aMT5HAXTY/MArWQn7dRAwPSheLdvNQjGg=
+ b=kkn9GuTFR3efBa3mRAcOm7wiqlxsEGy3SAuaE3IUBLv624JXbGADf6hm/yjtOQDT3
+ t0KauMUuQgELciro4AUY1eh4eNEbPLg1q9C2Yv4XgUr959yZpg6sfRFAU1l8/HXp23
+ xRvswfjmhczIMoiuTLpdk9LZf4SRlvohsI89XFRM=
 Received: by wens.tw (Postfix, from userid 1000)
- id 68F155FD69; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
+ id 6DDE65FD7A; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 5/7] [DO NOT MERGE] ARM: dts: sun4i: cubieboard: Enable
+Subject: [PATCH v2 6/7] [DO NOT MERGE] ARM: dts: sun7i: cubieboard2: Enable
  OV7670 camera on CSI1
-Date: Mon,  6 Jan 2020 16:42:38 +0800
-Message-Id: <20200106084240.1076-6-wens@kernel.org>
+Date: Mon,  6 Jan 2020 16:42:39 +0800
+Message-Id: <20200106084240.1076-7-wens@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200106084240.1076-1-wens@kernel.org>
 References: <20200106084240.1076-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_004247_105663_E0118BEB 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20200106_004247_025067_5D5F32ED 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,7 +88,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-The Cubieboard has CSI1 pins exposed on one of its GPIO headers.
+The Cubieboard2 has CSI1 pins exposed on one of its GPIO headers.
 Combined with I2C1 on the same header, a connected OV7670 based
 camera module can be used. Power is provided via the 5V rail on
 the same header. The module has onboard LDOs for the sensor's
@@ -99,14 +99,14 @@ everything up.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm/boot/dts/sun4i-a10-cubieboard.dts | 42 ++++++++++++++++++++++
+ arch/arm/boot/dts/sun7i-a20-cubieboard2.dts | 42 +++++++++++++++++++++
  1 file changed, 42 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-index 6ca02e824acc..29bfec8fad5b 100644
---- a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-+++ b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-@@ -101,6 +101,25 @@ &cpu0 {
+diff --git a/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts b/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
+index b8203e4ef21c..0ff1593041eb 100644
+--- a/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
++++ b/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
+@@ -100,6 +100,25 @@ &cpu0 {
  	cpu-supply = <&reg_dcdc2>;
  };
  
@@ -132,7 +132,7 @@ index 6ca02e824acc..29bfec8fad5b 100644
  &de {
  	status = "okay";
  };
-@@ -143,6 +162,29 @@ axp209: pmic@34 {
+@@ -142,6 +161,29 @@ axp209: pmic@34 {
  
  &i2c1 {
  	status = "okay";
