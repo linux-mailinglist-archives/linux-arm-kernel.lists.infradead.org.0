@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 963CD130C4C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 04:01:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55531130C52
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 04:03:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:Subject:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9yPHgvy8N7jg4KpqxuWWc/XAfd3xQz7jlMGH4/KdYNc=; b=guuA19RV7UU0fB
-	3uFTflQxKPUnwTKVEH8lo+SYOyPtf5X4LG2f9DVqbc339x6wucaXF+k5S/a0CPZUWPW8WnX0uEWmj
-	eSYvoDn/ztz7JcsYQRv/uUrQs7mJ7T7D1oMcVeDRPJDj3wycTEkw+wU1qVwxphscpe50I/dKuzvcV
-	H0+0PchqdQxiNksRTEitdghuUIp6rxUrRs4kYrIThNlf9wT8SEKic0D7UbuxJwqlQO0eecyXAELgH
-	UiddeBbwzi7QaTd2R8QTyQyaVN4PUqeXisCxSB04Ihte7mu316+ysSZIJp4IKc5dIZRWFU7QPCzkS
-	mr4zJRSzRrFDkc1bEIGg==;
+	List-Owner; bh=IGQ98hSxErbE3Klvd2Tvss3j/rV1Zz8eAyG++9sdgys=; b=KviT9LfQNsbRfX
+	QZcqb2tcxfoLFeNoeLv8LN6A4hgzOJKjZcxLVH9Uz0UFQyPYM/S3YK9MhQGF2oW6cPeeU6wSzOUER
+	+m8ggtzgjGY5YfXluq6wG93awO1U+Pioojpk2NjUxcDdiHsCyzMiXYgEEC8e2TiiA+Pi5gdh9nROj
+	wFc31u//6NFouPxa2UB2k7IjPNfVcF0vnviv5tXx7umgy49OacC0JKraTmTplSTJw52BpOrFN6d8A
+	Le8FsWU862GdsSqK7mVWgRGZJdbslvkN7AFbMAg0gz9WhqX0d8zPrUDL2mCbKXB/CKt3mU+Cv4FSk
+	3HSsqhxzst5reE44L1MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioIdT-0005G3-0a; Mon, 06 Jan 2020 03:00:55 +0000
+	id 1ioIfr-0005hq-Py; Mon, 06 Jan 2020 03:03:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioIdG-0005BV-TD
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 03:00:44 +0000
+ id 1ioIff-0005gk-Q9; Mon, 06 Jan 2020 03:03:13 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 774D8206F0;
- Mon,  6 Jan 2020 03:00:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6538820801;
+ Mon,  6 Jan 2020 03:03:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578279642;
- bh=8YANkl89iwxe3dndcojVuSNVMnw/MSIeyN/ppnKf2jk=;
+ s=default; t=1578279791;
+ bh=CNeeKXcxdQM66JWLklaMOAzOty0uI/w8076uzZzgDRI=;
  h=In-Reply-To:References:Cc:To:Subject:From:Date:From;
- b=oJZCOjtCELktDjSt6kYgGQPI3DEltjOBAg1lnsZdVUGN1I/FOOROK4fxBkX8dQx4j
- VkdfHRuvyP/HcLc+meedc2mcaYGW34OKvRwOpQlf+Efkl1CB6ZQrEgNCiSBXWwVfYJ
- Mr8dQBOTBJZZhTPijB9n4s5PDzg0Xz5VH68ONw9U=
+ b=B8jLcelHLRRSOCy+vJWPw+k53NEYrT9FYA57S9bX/rSFrb1QnF7jiZzenQE97Bki8
+ bmLxQ9wbVrMV+s3MvgbJ7IelLc0T3WRD4sygIpTAo27zyJ0oW184daAwo9vXsqoCR7
+ UJnYZl57w2F4em23l0WDNz1ohcgOJFr4qSBL+IXY=
 MIME-Version: 1.0
-In-Reply-To: <1577412748-28213-1-git-send-email-Anson.Huang@nxp.com>
-References: <1577412748-28213-1-git-send-email-Anson.Huang@nxp.com>
-To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com,
- bjorn.andersson@linaro.org, catalin.marinas@arm.com,
- devicetree@vger.kernel.org, dinguyen@kernel.org, festevam@gmail.com,
- kernel@pengutronix.de, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, marcin.juszkiewicz@linaro.org,
- mark.rutland@arm.com, maxime@cerno.tech, mturquette@baylibre.com,
- olof@lixom.net, ping.bai@nxp.com, robh+dt@kernel.org, s.hauer@pengutronix.de,
- shawnguo@kernel.org, will@kernel.org
-Subject: Re: [PATCH 1/3] dt-bindings: imx: Add clock binding doc for i.MX8MP
+In-Reply-To: <20191226191224.3785282-3-martin.blumenstingl@googlemail.com>
+References: <20191226191224.3785282-1-martin.blumenstingl@googlemail.com>
+ <20191226191224.3785282-3-martin.blumenstingl@googlemail.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ jbrunet@baylibre.com, linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH v2 2/2] clk: clarify that clk_set_rate() does updates from
+ top to bottom
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Sun, 05 Jan 2020 19:00:41 -0800
-Message-Id: <20200106030042.774D8206F0@mail.kernel.org>
+Date: Sun, 05 Jan 2020 19:03:10 -0800
+Message-Id: <20200106030311.6538820801@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_190042_994916_B706C56D 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200105_190311_875312_72880A1E 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,112 +77,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: narmstrong@baylibre.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2019-12-26 18:12:26)
-> diff --git a/Documentation/devicetree/bindings/clock/imx8mp-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mp-clock.yaml
-> new file mode 100644
-> index 0000000..5e01995
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/clock/imx8mp-clock.yaml
-> @@ -0,0 +1,112 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/bindings/clock/imx8mp-clock.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP i.MX8M Plus Clock Control Module Binding
-> +
-> +maintainers:
-> +  - Anson Huang <Anson.Huang@nxp.com>
-> +
-> +description: |
-> +  NXP i.MX8M Plus clock control module is an integrated clock controller, which
-> +  generates and supplies to all modules.
-> +
-> +properties:
-> +  compatible:
-> +    const: fsl,imx8mp-ccm
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: 32k osc
-> +      - description: 24m osc
-> +      - description: ext1 clock input
-> +      - description: ext2 clock input
-> +      - description: ext3 clock input
-> +      - description: ext4 clock input
-> +
-> +  clock-names:
-> +    items:
-> +      - const: osc_32k
-> +      - const: osc_24m
-> +      - const: clk_ext1
-> +      - const: clk_ext2
-> +      - const: clk_ext3
-> +      - const: clk_ext4
-> +
-> +  '#clock-cells':
-> +    const: 1
-> +    description: |
+Quoting Martin Blumenstingl (2019-12-26 11:12:24)
+> clk_set_rate() currently starts updating the rate for a clock at the
+> top-most affected clock and then walks down the tree to update the
+> bottom-most affected clock last.
+> This behavior is important for protected clocks where we can switch
+> between multiple parents to achieve the same output.
+> 
+> An example for this is the mali clock tree on Amlogic SoCs:
+>   mali_0_mux (must not change when enabled)
+>     mali_0_div (must not change when enabled)
+>      mali_0 (gate)
+>   mali_1_mux (must not change when enabled)
+>     mali_1_div (must not change when enabled)
+>       mali_1 (gate)
+> The final output can either use mali_0_gate or mali_1. To change the
+> final output we must switch to the "inactive" tree. Assuming mali_0 is
+> active, then we need to prepare mali_1 with the new desired rate and
+> finally switch the output to the mali_1 tree. This process will then
+> protect the mali_1 tree and at the same time unprotect the mali_0 tree.
+> The next call to clk_set_rate() will then switch from the mali_1 tree
+> back to mali_0.
+> 
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
 
-I think we can drop the bar here. Newlines shouldn't matter.
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
-> +      The clock consumer should specify the desired clock by having the clock
-> +      ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mp-clock.h
-> +      for the full list of i.MX8M Plus clock IDs.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - '#clock-cells'
-> +
-> +examples:
-> +  # Clock Control Module node:
-> +  - |
-> +    clk: clock-controller@30380000 {
-> +        compatible = "fsl,imx8mp-ccm";
-> +        reg = <0x30380000 0x10000>;
-> +        #clock-cells = <1>;
-> +        clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
-> +                 <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
-> +        clock-names = "osc_32k", "osc_24m", "clk_ext1",
-> +                      "clk_ext2", "clk_ext3", "clk_ext4";
-> +    };
-> +
-> +  # Required external clocks for Clock Control Module node:
-> +  - |
-> +    osc_32k: clock-osc-32k {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <32768>;
-> +        clock-output-names = "osc_32k";
-> +    };
-
-Do we need these in the example? They don't seem too useful.
-
-> +
-> +    osc_24m: clock-osc-24m {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <24000000>;
-> +        clock-output-names = "osc_24m";
-> +    };
-> +
-> +    clk_ext1: clock-ext1 {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <133000000>;
 
 _______________________________________________
 linux-arm-kernel mailing list
