@@ -2,57 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC995131902
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 21:07:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3E0A1318FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 21:02:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AoKD1D/XVNGfyjmIHGQDnStjsRINNGV21c3slk5pkNo=; b=sY14yxffS/ojFM
-	UObciJ+W74cq3P9MSTP5qaBkxUX7AFOiFmVSoSk98zPkW8LjMhv5meTcYpx3uy1YYrbeD6HrBfiPq
-	C5ZlMqrcTKsxevNnunq7eROFdkl5Q+YbFb4lsdK74Zw3uxABso1+/xgE8EU0e+ThlyIAUgwtEdsiz
-	p2PxoVI3j4Vmi3Qan6w7wfD3av2QH7GmmRXriap9dY3RVoOfmnZRLypoxFIU9cw74y9zK56TURFEg
-	Iz0ePMh2XZwvw7JZ/9H6Q1cPg9luQ4/8G7MDKVwAZc9RyyB5+vjmEU/0KgpeCDn+Yh1PLK6efeblI
-	NJZu2uxA14yRM6J6c8eA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AtgQvAKc/+EMGBbaXcYtt9DiIsS12wkHuVu7Ux6oRoc=; b=TfmqbpN+dkwGks
+	7kMlX4IUY672TxbmdPt57lYo/JjuQRLxRF6YjHOfY2gZocWquDbF5XdbomDGqZzG0qvZWBF5zE4MY
+	iCy5TNYMnhJSTaVsHv4eDkCiW5HgNOtwHpxW6LUKlRbgepO/aaCXzSgW2F27qM+bD00n1DMfdibZ+
+	7HtafDkBoixgl9hoL22wefXiub47yD7EjjJNVivYz5Hjz/3zlSF4hMEyVzUlYA17sHh0eJd/YzHBO
+	V1PErWYSYytqMeXULk9+HFTWnQMVEDsxxhb7pJfz9+pJdVtX+YXLcG2A4vr0a/+5NlbU0zJ/PKVj1
+	CntP7/YyK0RXajbS0Etg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioYeg-00055U-AR; Mon, 06 Jan 2020 20:07:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioYdw-0004Sx-AX
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 20:06:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1CA8328;
- Mon,  6 Jan 2020 12:06:27 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 45B163F534;
- Mon,  6 Jan 2020 12:06:27 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH 3/3] arm64: mm: Use modern annotations for assembly functions
-Date: Mon,  6 Jan 2020 19:58:18 +0000
-Message-Id: <20200106195818.56351-4-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200106195818.56351-1-broonie@kernel.org>
-References: <20200106195818.56351-1-broonie@kernel.org>
+	id 1ioYZn-0002gf-Ld; Mon, 06 Jan 2020 20:02:11 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioYZg-0002fp-0P
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 20:02:05 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 860DB1A0E48;
+ Mon,  6 Jan 2020 21:02:00 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 794061A0E3F;
+ Mon,  6 Jan 2020 21:02:00 +0100 (CET)
+Received: from fsr-ub1864-014.ea.freescale.net
+ (fsr-ub1864-014.ea.freescale.net [10.171.95.219])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0284C203CC;
+ Mon,  6 Jan 2020 21:01:59 +0100 (CET)
+From: =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Herbert Xu <herbert@gondor.apana.org.au>
+Subject: [PATCH 1/2] crypto: caam - add support for i.MX8M Nano
+Date: Mon,  6 Jan 2020 22:01:53 +0200
+Message-Id: <20200106200154.30643-1-horia.geanta@nxp.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_120628_450027_76E47035 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200106_120204_184720_366941B1 
+X-CRM114-Status: GOOD (  11.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,328 +66,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In an effort to clarify and simplify the annotation of assembly functions
-in the kernel new macros have been introduced. These replace ENTRY and
-ENDPROC and also add a new annotation for static functions which previously
-had no ENTRY equivalent. Update the annotations in the mm code to the
-new macros. Even the functions called from non-standard environments
-like idmap have no special requirements on their environments so can be
-treated like regular functions.
-
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/mm/cache.S | 52 +++++++++++++++++++++----------------------
- arch/arm64/mm/proc.S  | 24 ++++++++++----------
- 2 files changed, 38 insertions(+), 38 deletions(-)
-
-diff --git a/arch/arm64/mm/cache.S b/arch/arm64/mm/cache.S
-index db767b072601..2d881f34dd9d 100644
---- a/arch/arm64/mm/cache.S
-+++ b/arch/arm64/mm/cache.S
-@@ -24,7 +24,7 @@
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(__flush_icache_range)
-+SYM_FUNC_START(__flush_icache_range)
- 	/* FALLTHROUGH */
- 
- /*
-@@ -37,7 +37,7 @@ ENTRY(__flush_icache_range)
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(__flush_cache_user_range)
-+SYM_FUNC_START(__flush_cache_user_range)
- 	uaccess_ttbr0_enable x2, x3, x4
- alternative_if ARM64_HAS_CACHE_IDC
- 	dsb	ishst
-@@ -66,8 +66,8 @@ alternative_else_nop_endif
- 9:
- 	mov	x0, #-EFAULT
- 	b	1b
--ENDPROC(__flush_icache_range)
--ENDPROC(__flush_cache_user_range)
-+SYM_FUNC_END(__flush_icache_range)
-+SYM_FUNC_END(__flush_cache_user_range)
- 
- /*
-  *	invalidate_icache_range(start,end)
-@@ -77,7 +77,7 @@ ENDPROC(__flush_cache_user_range)
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(invalidate_icache_range)
-+SYM_FUNC_START(invalidate_icache_range)
- alternative_if ARM64_HAS_CACHE_DIC
- 	mov	x0, xzr
- 	isb
-@@ -94,7 +94,7 @@ alternative_else_nop_endif
- 2:
- 	mov	x0, #-EFAULT
- 	b	1b
--ENDPROC(invalidate_icache_range)
-+SYM_FUNC_END(invalidate_icache_range)
- 
- /*
-  *	__flush_dcache_area(kaddr, size)
-@@ -105,10 +105,10 @@ ENDPROC(invalidate_icache_range)
-  *	- kaddr   - kernel address
-  *	- size    - size in question
-  */
--ENTRY(__flush_dcache_area)
-+SYM_FUNC_START_PI(__flush_dcache_area)
- 	dcache_by_line_op civac, sy, x0, x1, x2, x3
- 	ret
--ENDPIPROC(__flush_dcache_area)
-+SYM_FUNC_END_PI(__flush_dcache_area)
- 
- /*
-  *	__clean_dcache_area_pou(kaddr, size)
-@@ -119,14 +119,14 @@ ENDPIPROC(__flush_dcache_area)
-  *	- kaddr   - kernel address
-  *	- size    - size in question
-  */
--ENTRY(__clean_dcache_area_pou)
-+SYM_FUNC_START(__clean_dcache_area_pou)
- alternative_if ARM64_HAS_CACHE_IDC
- 	dsb	ishst
- 	ret
- alternative_else_nop_endif
- 	dcache_by_line_op cvau, ish, x0, x1, x2, x3
- 	ret
--ENDPROC(__clean_dcache_area_pou)
-+SYM_FUNC_END(__clean_dcache_area_pou)
- 
- /*
-  *	__inval_dcache_area(kaddr, size)
-@@ -138,7 +138,8 @@ ENDPROC(__clean_dcache_area_pou)
-  *	- kaddr   - kernel address
-  *	- size    - size in question
-  */
--ENTRY(__inval_dcache_area)
-+SYM_FUNC_START_LOCAL(__dma_inv_area)
-+SYM_FUNC_START_PI(__inval_dcache_area)
- 	/* FALLTHROUGH */
- 
- /*
-@@ -146,7 +147,6 @@ ENTRY(__inval_dcache_area)
-  *	- start   - virtual start address of region
-  *	- size    - size in question
-  */
--__dma_inv_area:
- 	add	x1, x1, x0
- 	dcache_line_size x2, x3
- 	sub	x3, x2, #1
-@@ -165,8 +165,8 @@ __dma_inv_area:
- 	b.lo	2b
- 	dsb	sy
- 	ret
--ENDPIPROC(__inval_dcache_area)
--ENDPROC(__dma_inv_area)
-+SYM_FUNC_END_PI(__inval_dcache_area)
-+SYM_FUNC_END(__dma_inv_area)
- 
- /*
-  *	__clean_dcache_area_poc(kaddr, size)
-@@ -177,7 +177,8 @@ ENDPROC(__dma_inv_area)
-  *	- kaddr   - kernel address
-  *	- size    - size in question
-  */
--ENTRY(__clean_dcache_area_poc)
-+SYM_FUNC_START_LOCAL(__dma_clean_area)
-+SYM_FUNC_START_PI(__clean_dcache_area_poc)
- 	/* FALLTHROUGH */
- 
- /*
-@@ -185,11 +186,10 @@ ENTRY(__clean_dcache_area_poc)
-  *	- start   - virtual start address of region
-  *	- size    - size in question
-  */
--__dma_clean_area:
- 	dcache_by_line_op cvac, sy, x0, x1, x2, x3
- 	ret
--ENDPIPROC(__clean_dcache_area_poc)
--ENDPROC(__dma_clean_area)
-+SYM_FUNC_END_PI(__clean_dcache_area_poc)
-+SYM_FUNC_END(__dma_clean_area)
- 
- /*
-  *	__clean_dcache_area_pop(kaddr, size)
-@@ -200,13 +200,13 @@ ENDPROC(__dma_clean_area)
-  *	- kaddr   - kernel address
-  *	- size    - size in question
-  */
--ENTRY(__clean_dcache_area_pop)
-+SYM_FUNC_START_PI(__clean_dcache_area_pop)
- 	alternative_if_not ARM64_HAS_DCPOP
- 	b	__clean_dcache_area_poc
- 	alternative_else_nop_endif
- 	dcache_by_line_op cvap, sy, x0, x1, x2, x3
- 	ret
--ENDPIPROC(__clean_dcache_area_pop)
-+SYM_FUNC_END_PI(__clean_dcache_area_pop)
- 
- /*
-  *	__dma_flush_area(start, size)
-@@ -216,10 +216,10 @@ ENDPIPROC(__clean_dcache_area_pop)
-  *	- start   - virtual start address of region
-  *	- size    - size in question
-  */
--ENTRY(__dma_flush_area)
-+SYM_FUNC_START_PI(__dma_flush_area)
- 	dcache_by_line_op civac, sy, x0, x1, x2, x3
- 	ret
--ENDPIPROC(__dma_flush_area)
-+SYM_FUNC_END_PI(__dma_flush_area)
- 
- /*
-  *	__dma_map_area(start, size, dir)
-@@ -227,11 +227,11 @@ ENDPIPROC(__dma_flush_area)
-  *	- size	- size of region
-  *	- dir	- DMA direction
-  */
--ENTRY(__dma_map_area)
-+SYM_FUNC_START_PI(__dma_map_area)
- 	cmp	w2, #DMA_FROM_DEVICE
- 	b.eq	__dma_inv_area
- 	b	__dma_clean_area
--ENDPIPROC(__dma_map_area)
-+SYM_FUNC_END_PI(__dma_map_area)
- 
- /*
-  *	__dma_unmap_area(start, size, dir)
-@@ -239,8 +239,8 @@ ENDPIPROC(__dma_map_area)
-  *	- size	- size of region
-  *	- dir	- DMA direction
-  */
--ENTRY(__dma_unmap_area)
-+SYM_FUNC_START_PI(__dma_unmap_area)
- 	cmp	w2, #DMA_TO_DEVICE
- 	b.ne	__dma_inv_area
- 	ret
--ENDPIPROC(__dma_unmap_area)
-+SYM_FUNC_END_PI(__dma_unmap_area)
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index a1e0592d1fbc..9a8b1b14ce02 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -50,7 +50,7 @@
-  *
-  * x0: virtual address of context pointer
-  */
--ENTRY(cpu_do_suspend)
-+SYM_FUNC_START(cpu_do_suspend)
- 	mrs	x2, tpidr_el0
- 	mrs	x3, tpidrro_el0
- 	mrs	x4, contextidr_el1
-@@ -74,7 +74,7 @@ alternative_endif
- 	stp	x10, x11, [x0, #64]
- 	stp	x12, x13, [x0, #80]
- 	ret
--ENDPROC(cpu_do_suspend)
-+SYM_FUNC_END(cpu_do_suspend)
- 
- /**
-  * cpu_do_resume - restore CPU register context
-@@ -82,7 +82,7 @@ ENDPROC(cpu_do_suspend)
-  * x0: Address of context pointer
-  */
- 	.pushsection ".idmap.text", "awx"
--ENTRY(cpu_do_resume)
-+SYM_FUNC_START(cpu_do_resume)
- 	ldp	x2, x3, [x0]
- 	ldp	x4, x5, [x0, #16]
- 	ldp	x6, x8, [x0, #32]
-@@ -131,7 +131,7 @@ alternative_else_nop_endif
- 
- 	isb
- 	ret
--ENDPROC(cpu_do_resume)
-+SYM_FUNC_END(cpu_do_resume)
- 	.popsection
- #endif
- 
-@@ -142,7 +142,7 @@ ENDPROC(cpu_do_resume)
-  *
-  *	- pgd_phys - physical address of new TTB
-  */
--ENTRY(cpu_do_switch_mm)
-+SYM_FUNC_START(cpu_do_switch_mm)
- 	mrs	x2, ttbr1_el1
- 	mmid	x1, x1				// get mm->context.id
- 	phys_to_ttbr x3, x0
-@@ -161,7 +161,7 @@ alternative_else_nop_endif
- 	msr	ttbr0_el1, x3			// now update TTBR0
- 	isb
- 	b	post_ttbr_update_workaround	// Back to C code...
--ENDPROC(cpu_do_switch_mm)
-+SYM_FUNC_END(cpu_do_switch_mm)
- 
- 	.pushsection ".idmap.text", "awx"
- 
-@@ -182,7 +182,7 @@ ENDPROC(cpu_do_switch_mm)
-  * This is the low-level counterpart to cpu_replace_ttbr1, and should not be
-  * called by anything else. It can only be executed from a TTBR0 mapping.
-  */
--ENTRY(idmap_cpu_replace_ttbr1)
-+SYM_FUNC_START(idmap_cpu_replace_ttbr1)
- 	save_and_disable_daif flags=x2
- 
- 	__idmap_cpu_set_reserved_ttbr1 x1, x3
-@@ -194,7 +194,7 @@ ENTRY(idmap_cpu_replace_ttbr1)
- 	restore_daif x2
- 
- 	ret
--ENDPROC(idmap_cpu_replace_ttbr1)
-+SYM_FUNC_END(idmap_cpu_replace_ttbr1)
- 	.popsection
- 
- #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
-@@ -222,7 +222,7 @@ ENDPROC(idmap_cpu_replace_ttbr1)
-  */
- __idmap_kpti_flag:
- 	.long	1
--ENTRY(idmap_kpti_install_ng_mappings)
-+SYM_FUNC_START(idmap_kpti_install_ng_mappings)
- 	cpu		.req	w0
- 	num_cpus	.req	w1
- 	swapper_pa	.req	x2
-@@ -393,7 +393,7 @@ __idmap_kpti_secondary:
- 	.unreq	cur_ptep
- 	.unreq	end_ptep
- 	.unreq	pte
--ENDPROC(idmap_kpti_install_ng_mappings)
-+SYM_FUNC_END(idmap_kpti_install_ng_mappings)
- 	.popsection
- #endif
- 
-@@ -404,7 +404,7 @@ ENDPROC(idmap_kpti_install_ng_mappings)
-  *	value of the SCTLR_EL1 register.
-  */
- 	.pushsection ".idmap.text", "awx"
--ENTRY(__cpu_setup)
-+SYM_FUNC_START(__cpu_setup)
- 	tlbi	vmalle1				// Invalidate local TLB
- 	dsb	nsh
- 
-@@ -475,4 +475,4 @@ ENTRY(__cpu_setup)
- #endif	/* CONFIG_ARM64_HW_AFDBM */
- 	msr	tcr_el1, x10
- 	ret					// return to head.S
--ENDPROC(__cpu_setup)
-+SYM_FUNC_END(__cpu_setup)
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIHN1cHBvcnQgZm9yIHRoZSBjcnlwdG8gZW5naW5lIHVzZWQgaW4gaS5teDhtbiAoaS5NWCA4
+TSAiTmFubyIpLAp3aGljaCBpcyB2ZXJ5IHNpbWlsYXIgdG8gdGhlIG9uZSB1c2VkIGluIGkubXg4
+bXEsIGkubXg4bW0uCgpTaW5jZSB0aGUgY2xvY2tzIGFyZSBpZGVudGljYWwgZm9yIGFsbCBtZW1i
+ZXJzIG9mIGkuTVggOE0gZmFtaWx5LApzaW1wbGlmeSB0aGUgU29DIDwtLT4gY2xvY2sgYXJyYXkg
+bWFwcGluZyB0YWJsZS4KClNpZ25lZC1vZmYtYnk6IEhvcmlhIEdlYW50xIMgPGhvcmlhLmdlYW50
+YUBueHAuY29tPgotLS0KIGRyaXZlcnMvY3J5cHRvL2NhYW0vY3RybC5jIHwgOCArKysrLS0tLQog
+MSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKCmRpZmYgLS1n
+aXQgYS9kcml2ZXJzL2NyeXB0by9jYWFtL2N0cmwuYyBiL2RyaXZlcnMvY3J5cHRvL2NhYW0vY3Ry
+bC5jCmluZGV4IDY2NTljOGQ5NjcyZS4uODhhNThhOGZjNTMzIDEwMDY0NAotLS0gYS9kcml2ZXJz
+L2NyeXB0by9jYWFtL2N0cmwuYworKysgYi9kcml2ZXJzL2NyeXB0by9jYWFtL2N0cmwuYwpAQCAt
+OTksMTEgKzk5LDEyIEBAIHN0YXRpYyBpbmxpbmUgaW50IHJ1bl9kZXNjcmlwdG9yX2RlY28wKHN0
+cnVjdCBkZXZpY2UgKmN0cmxkZXYsIHUzMiAqZGVzYywKIAogCWlmIChjdHJscHJpdi0+dmlydF9l
+biA9PSAxIHx8CiAJICAgIC8qCi0JICAgICAqIEFwcGFyZW50bHkgb24gaS5NWDhNUSBpdCBkb2Vz
+bid0IG1hdHRlciBpZiB2aXJ0X2VuID09IDEKKwkgICAgICogQXBwYXJlbnRseSBvbiBpLk1YOE1R
+LCA4TU0sIDhNTiBpdCBkb2Vzbid0IG1hdHRlciBpZiB2aXJ0X2VuID09IDEKIAkgICAgICogYW5k
+IHRoZSBmb2xsb3dpbmcgc3RlcHMgc2hvdWxkIGJlIHBlcmZvcm1lZCByZWdhcmRsZXNzCiAJICAg
+ICAqLwogCSAgICBvZl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bXEiKSB8fAotCSAg
+ICBvZl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bW0iKSkgeworCSAgICBvZl9tYWNo
+aW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bW0iKSB8fAorCSAgICBvZl9tYWNoaW5lX2lzX2Nv
+bXBhdGlibGUoImZzbCxpbXg4bW4iKSkgewogCQljbHJzZXRiaXRzXzMyKCZjdHJsLT5kZWNvX3Jz
+ciwgMCwgREVDT1JTUl9KUjApOwogCiAJCXdoaWxlICghKHJkX3JlZzMyKCZjdHJsLT5kZWNvX3Jz
+cikgJiBERUNPUlNSX1ZBTElEKSAmJgpAQCAtNTA5LDggKzUxMCw3IEBAIHN0YXRpYyBjb25zdCBz
+dHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgY2FhbV9pbXhfc29jX3RhYmxlW10gPSB7CiAJeyAu
+c29jX2lkID0gImkuTVg2VUwiLCAuZGF0YSA9ICZjYWFtX2lteDZ1bF9kYXRhIH0sCiAJeyAuc29j
+X2lkID0gImkuTVg2KiIsICAuZGF0YSA9ICZjYWFtX2lteDZfZGF0YSB9LAogCXsgLnNvY19pZCA9
+ICJpLk1YNyoiLCAgLmRhdGEgPSAmY2FhbV9pbXg3X2RhdGEgfSwKLQl7IC5zb2NfaWQgPSAiaS5N
+WDhNUSIsIC5kYXRhID0gJmNhYW1faW14N19kYXRhIH0sCi0JeyAuc29jX2lkID0gImkuTVg4TU0i
+LCAuZGF0YSA9ICZjYWFtX2lteDdfZGF0YSB9LAorCXsgLnNvY19pZCA9ICJpLk1YOE0qIiwgLmRh
+dGEgPSAmY2FhbV9pbXg3X2RhdGEgfSwKIAl7IC5mYW1pbHkgPSAiRnJlZXNjYWxlIGkuTVgiIH0s
+CiAJeyAvKiBzZW50aW5lbCAqLyB9CiB9OwotLSAKMi4xNy4xCgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
