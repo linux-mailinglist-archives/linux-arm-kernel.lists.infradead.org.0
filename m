@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 787D4130C58
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 04:06:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FF8A130C5B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 04:07:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:Subject:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KD/GxXXe4HPZM5X60gjvKfeDOqzveBknSkJklIsko0c=; b=Oj3ev2N2f/oLpT
-	KuW2vtWDb4OtgLFWHzaXqweY+hlIPaNm9aRL8rhqDDu4ftRP2hGn8MOQ99ni6Zl7JDueVvJfdopHm
-	GVQCymNa2WzUf9hO93aXtT+zoIOuFkyBPIKbJE17+ZiooZy3AGL3z7oG9nJ+es/e7xOGG/0Kc0EOK
-	dP7K+ZDHar2kN3MNRZBxcviOBzy9wzejDwzxfc7xKe1bADGikcchBkCyq3a4wdyF1xbvv0JCIgh19
-	+yiFN+XUjz2u0gVYZxlX/5/edoDqoyrtatF/fBqX/2rYWHxfD2YRCnVQZs1P076UqCpyodXfoQU3E
-	kC1RUIgn7evTfvWG30TQ==;
+	List-Owner; bh=KM7/jJWdATIkOGVYrVkeHSISF1BrXSDPN6WIRO54dlE=; b=FJlpSIHew3Md9S
+	LfB2ZIt/mBNuIfOz04lqPXUteLvh7MRclkkRY89mTKKvCBE/oFRJsX6eT8NBM2KYIWm//ns6Xob/A
+	E9n01ODAwn/opOgkrm4+QjBEOnN0fF9U4oGK1YwbzyCl4mVwhg5nphDo493CW2hBKo2HP+uciIJge
+	dcqq3mtsCGvcIu3emz8XUyx2W3It54fQvN6UDldpSuZj5RfztSQyIGrlS7dVCOmkpy9wy5gX8L92l
+	Dpe3sWoqTqXzSpZX/QD4AAFAHtDy99PkOay1mshLYC7XW1byIgAJZ0UW18GNRu6qe72neJ3K5DfTR
+	PUHx5n1L6OFD6x5scQLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioIjD-0007Od-BY; Mon, 06 Jan 2020 03:06:51 +0000
+	id 1ioIjb-0007gc-3Q; Mon, 06 Jan 2020 03:07:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioIj7-0007OG-40
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 03:06:46 +0000
+ id 1ioIjR-0007fo-8Y
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 03:07:06 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABF7B21582;
- Mon,  6 Jan 2020 03:06:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D68E121582;
+ Mon,  6 Jan 2020 03:07:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578280004;
- bh=oLScgpu+4KS4XjSuuMv26uOjGwXkmB6mp+/tig1AXW0=;
+ s=default; t=1578280025;
+ bh=ZlRvRlZSzyljxNPxVSZPQBWg+toDUmAzRRGF5W83VpM=;
  h=In-Reply-To:References:Cc:To:Subject:From:Date:From;
- b=W0SS4OK/NWzVBFm6NK8kATUULYrycGMSAx1Yxo1sQFE+js+sBnhk+BKoZhQ3zwv0O
- suQRgaS74zZzSJkbb3DG1nJmxoObWZ+YFwH17Kn8h1kIARJv61WcxigcivurUFv0wg
- uAOGojB6rzHMf0BtQfKCJCns6Ei6gM1b/cZUKoD8=
+ b=CFyziydh0/bM1WTts1DaxVKN5pLgKG8nwPt2XsTULjYGRx0nr3Ec1ydvUc2lv3p5P
+ m+FiiZVciTwKgpZ1cadTWuQSXSQhkIcQckaQwzhAxBPPVGvkvQcIcDD3vHGeVWH9cA
+ hWvlcd9Rf0Pi+yAGPya/PBSrl8Jq7jkb7FcgN2JU=
 MIME-Version: 1.0
-In-Reply-To: <1573478913-19737-1-git-send-email-eugen.hristev@microchip.com>
-References: <1573478913-19737-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1575977088-16781-1-git-send-email-eugen.hristev@microchip.com>
+References: <1575977088-16781-1-git-send-email-eugen.hristev@microchip.com>
 To: Eugen.Hristev@microchip.com, alexandre.belloni@bootlin.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mturquette@baylibre.com
-Subject: Re: [PATCH] clk: at91: sam9x60-pll: adapt PMC_PLL_ACR default value
+ mturquette@baylibre.com
+Subject: Re: [PATCH] clk: at91: sam9x60: fix programmable clock prescaler
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Sun, 05 Jan 2020 19:06:43 -0800
-Message-Id: <20200106030644.ABF7B21582@mail.kernel.org>
+Date: Sun, 05 Jan 2020 19:07:04 -0800
+Message-Id: <20200106030704.D68E121582@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_190645_179959_F3F48C9B 
-X-CRM114-Status: UNSURE (   5.58  )
+X-CRM114-CacheID: sfid-20200105_190705_322241_F2B7FBDD 
+X-CRM114-Status: UNSURE (   7.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,19 +77,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eugen.Hristev@microchip.com, Ludovic.Desroches@microchip.com
+Cc: linux-kernel@vger.kernel.org, Eugen.Hristev@microchip.com,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Eugen.Hristev@microchip.com (2019-11-11 05:28:57)
+Quoting Eugen.Hristev@microchip.com (2019-12-10 03:25:19)
 > From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> Product datasheet recommends different values for UPLL and PLLA analog control
-> register.
-> Adapt accordingly.
+> The prescaler works as parent rate divided by (PRES + 1) (is_pres_direct == 1)
+> It does not work in the way of parent rate shifted to the right by (PRES + 1),
+> which means division by 2^(PRES + 1) (is_pres_direct == 0)
+> Thus is_pres_direct must be enabled for this SoC, to make the right computation.
+> This field was added in
+> commit 45b06682113b ("clk: at91: fix programmable clock for sama5d2")
+> SAM9X60 has the same field as SAMA5D2 in the PCK
 > 
+> Fixes: 01e2113de9a5 ("clk: at91: add sam9x60 pmc driver")
 > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 > ---
 
