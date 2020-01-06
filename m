@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FE7B131A36
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:18:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E5B4131A39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 22:18:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pjreRIalk9vRTnzrzWzpUqcIl2i1sRbsxhh/+a2dg2M=; b=lo/3G0TGjPohqH
-	yy5B9Vtq1mTnz4erZMXcGnD5rVwGkP21TDv68QkzU6PoxgahSKHlhNyycaNH9zs1AR+KP0l6R+xy6
-	E6JzgIoVB6FRCaMvHrraDT157jFO4WjSwaG+Xh1T7uRtHBPZ8DjXXDBssnfA00Hg1F3nI2AC5y/wB
-	ebkvAoFyNlzcqQvYiJhFhQPfwFg3lYnDg4oUonp8h47/D0eWDe5c4x/OvOmgxgXgCwQXhc2AmjO7B
-	ZWNCviquxJknphC3ljLBvLBnO722SYKEntPMK/dEAXY+wOzcBJ2GklFqFBB7CPobdbZHVX1UbdF2w
-	ubcXAgQ7HRphWnP5iFEw==;
+	List-Owner; bh=RgsGEk29JlBdrmNbd6yp3aXRhWFldb/fQhsbabDaxno=; b=sdnAeezRKzK6K3
+	k+25JZI7fzOoD2/0J2SGNBnIy3eevGvQd3CwC1pyKlwYt+hHCpstj8wM2/TnrAJhgnUgHy0cLPTmi
+	8rZChyQ4AT7U2C4KwSL4pg1KlLgR1r/Q9+VsJ5PPCZCek2yWDVkBkhYIs15+zNrg2jh+72T1Kh37g
+	0FZYvLh7z8ITW64/hRd/i58Ej2VJQM3iBj7yBoB18U/+z4UayTB8Gvcm4X/y2ho3BORyDV7F2rXib
+	DUzF/WNFvovyKuLvwfV6h6nh+ZCGDhthFteQkiGN0WM4ec7eeL7Cu5bMbMYJ667fxE9nGyqf4usOa
+	UJVPLAkcmhD24gGtlcVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioZl8-0008DO-SW; Mon, 06 Jan 2020 21:17:58 +0000
+	id 1ioZlO-0008TF-Lg; Mon, 06 Jan 2020 21:18:14 +0000
 Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioZkN-0007Xs-5k; Mon, 06 Jan 2020 21:17:12 +0000
+ id 1ioZkS-0007cT-8j; Mon, 06 Jan 2020 21:17:18 +0000
 Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
  (helo=hermes.fivetechno.de); authenticated
  by wp126.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1ioZkL-0001VB-HL; Mon, 06 Jan 2020 22:17:09 +0100
+ id 1ioZkQ-0001XK-Fq; Mon, 06 Jan 2020 22:17:14 +0100
 X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
  linuxbbg.five-lan.de
 Received: from roc-pc (pD9E89450.dip0.t-ipconnect.de [217.232.148.80])
  (authenticated bits=0)
  by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- 006LH84B032145
+ 006LHD6u032152
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Mon, 6 Jan 2020 22:17:08 +0100
+ Mon, 6 Jan 2020 22:17:13 +0100
 From: Markus Reichl <m.reichl@fivetechno.de>
 To: linux-rockchip@lists.infradead.org, Liam Girdwood <lgirdwood@gmail.com>,
  Mark Brown <broonie@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH 3/5] dt-bindings: add vendor Monolithic Power Systems
-Date: Mon,  6 Jan 2020 22:16:26 +0100
-Message-Id: <20200106211633.2882-4-m.reichl@fivetechno.de>
+Subject: [PATCH 4/5] dt-bindings: regulator: add MPS mp8859 voltage regulator
+Date: Mon,  6 Jan 2020 22:16:27 +0100
+Message-Id: <20200106211633.2882-5-m.reichl@fivetechno.de>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200106211633.2882-1-m.reichl@fivetechno.de>
 References: <20200106211633.2882-1-m.reichl@fivetechno.de>
 MIME-Version: 1.0
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578345431;
- c4c85a48; 
-X-HE-SMSGID: 1ioZkL-0001VB-HL
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578345436;
+ 06953175; 
+X-HE-SMSGID: 1ioZkQ-0001XK-Fq
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_131711_452674_1977F824 
-X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-CacheID: sfid-20200106_131716_464406_52721433 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,26 +78,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MPS produce power regulators like the MP8859.
+The MP8859 from Monolithic Power Systems is a single output dc/dc converter
+with voltage control over i2c.
 
 Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ .../devicetree/bindings/regulator/mp8859.txt  | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mp8859.txt
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index fa6aa3c5a500..4fa3bb494745 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -617,6 +617,8 @@ patternProperties:
-     description: Moxa Inc.
-   "^mpl,.*":
-     description: MPL AG
-+  "^mps,.*":
-+    description: Monolithic Power Systems Inc.
-   "^mqmaker,.*":
-     description: mqmaker Inc.
-   "^mscc,.*":
+diff --git a/Documentation/devicetree/bindings/regulator/mp8859.txt b/Documentation/devicetree/bindings/regulator/mp8859.txt
+new file mode 100644
+index 000000000000..74ad69730989
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/mp8859.txt
+@@ -0,0 +1,22 @@
++Monolithic Power Systems MP8859 voltage regulator
++
++Required properties:
++- compatible: "mps,mp8859";
++- reg: I2C slave address.
++
++Optional subnode for regulator: "mp8859_dcdc", using common regulator
++bindings given in <Documentation/devicetree/bindings/regulator/regulator.txt>.
++
++Example:
++
++	mp8859: regulator@66 {
++		compatible = "mps,mp8859";
++		reg = <0x66>;
++		dc_12v: mp8859_dcdc {
++			regulator-name = "dc_12v";
++			regulator-min-microvolt = <12000000>;
++			regulator-max-microvolt = <12000000>;
++			regulator-boot-on;
++			regulator-always-on;
++		};
++	};
 -- 
 2.24.1
 
