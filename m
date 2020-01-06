@@ -2,150 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66F49130F64
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 10:25:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE749130F6A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 10:27:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nKdbYCh1GMeF5OeYQaXmCRnL8F7fucL1Aoyi3fB7n5w=; b=d3+CdHA51v32tR
-	QDYVkNiDfQpQSeu4EbGPBRhJstWThmtxG75O1UGHfbV8sEb+IetSjrz/3efTuRSq+AWSuNOC4tHYK
-	uRbJA0WY03f0Ed0IK0xa95do5dzQbisl4bJ9pov528AnLqJ2JM6C+GwuvQpr4WpOCpgcwktspJMPz
-	a7N/OWXZBBnPm1F/kl+SRZKFsuhCSpbcYbTq6ifFpUeh4wCSonrRstYAnpAn15xlkDLrwRbMOOQnO
-	WA9cAdbc/hAUcIR8JGXrNO9uyRlkvAvBZjOE0R6tfbSAioQOFCXFS7UXalgz4lNtkKWfdAuiEBDWC
-	pGulrXOXcPN+0IPYxX1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=I2WktZXn5dnp8Idza/5L9wOM4q0EjmHE7zfjooA4Pwg=; b=FJjUeflZoFRDd7bj6ex6cUoAg
+	nTzHaG3v0VDO/2u+5BkNg5c0vCG1EiZfP6zkghasNLlhizhm3zCv8EC54BNmS1NyZaavp3px2QMHj
+	MOLz4MLLjXSk7MHRt2t2I1XBNpQ4r4BOp2eQRJlnLkeC5xQrmL6b66HSxH+Eky+VzU9Z/9jqhUp4/
+	SkTSufNlJ1NMlZqmRH1y538fL+0j8GAeZQSEIkWJAf5Jvz1B0ONh9Ic2nEqoRRAJaby/gGq9XhAyq
+	JQHMqJ/LLDdmkGjnQ4VR8jJktZB5PGRDpsFHGowXAA6DinR0xFQqD8x6nhM48/VT85FF8T74sXMdp
+	igFe2c7Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioOdz-0005kg-L7; Mon, 06 Jan 2020 09:25:51 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1ioOfq-0006Zx-V5; Mon, 06 Jan 2020 09:27:46 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioOdr-0005j0-6q
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 09:25:44 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: rzlpXnb4R/Y5PrZmMefld8E2qociqRlrBzMNWznJSDb0pjgKZwK8iSE+GSmj8cMuZwYDvmJEsK
- XDS9QhiI9VVV9HPmncQJh3RSUzg/CcfY08456xPkneejAS7gHYLyoBNEBnhBbH53m1Uf19M7T3
- U99P8CsPFDapK/7fcmxEfzJ8PSgTHBX0taQjdEhDiSyB4XQJpDfMXcPt4pdWDFP6cHg3lwxKKw
- LI/covz2/5p98sWpp8xnNmQB4wDQZQG1I7YBeVO7zhMzVj5uGJ+uwSuvSX4gSoaAFwdV41Zbvg
- XOc=
-X-IronPort-AV: E=Sophos;i="5.69,402,1571727600"; d="scan'208";a="62299730"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 06 Jan 2020 02:25:42 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 6 Jan 2020 02:25:40 -0700
-Received: from NAM12-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Mon, 6 Jan 2020 02:25:42 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cEmIibhvltiP9C/80oHSQcc+Kxy/S2Nv8fZweefhFfBhbvsHfJta+RDd4D24TXzyfiGVLXojjiXzMEhrA2TQ3DE2zZLFpnbTOjAEgu9YuNLWpJPgeiqAgTpBGUcCicvpBFBhe0ik+Ln+ktIQ3FXxxdbEp6hzd1vic0fPXLTuc2NPGzb5N9/9w+xTZwy5VM1nI5jciSPKiOBTjB8n5h+/p4zRflSx6U2VyZ8xjGAHJF7PkvP/m6d6/KNY3LDUZILCPh6i+bXNasKiUQlo+u0TCHTRmTqaKg4afnNM6DIMfTMbYFYfQzbSx4gFeKxdMSDpqo2B1KqOWcy63sNmiN4SpA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=941kcKZhBhh+TxPpX85cVntgP0aJ0WJ8gW+fsaOfafE=;
- b=JEXkhZcWelmfqE3Wuf9z8g3T4WXAKoRctLoAbTeUZeAnYu4J1aAEg5kB0NzAN1qfrQR7/r9+Z/xEgIAPMbw21zv0mkjg/cqFfYPAMlTRkZpR9/SnZs2BRvqbyS6Nk2nw/OxRPIlP+Re6wplGjU3MpKnpJ5O55iSOhOS2HSk92AWhbgdFkBETvyKSe2Ce8dm/x/zkri3Yxqo4PiVWKHUQwFPUxuTgz9hRePXevP+wvOM5vj4czvYji9fe6Yi+6M7Dj2h6+Me3oP4pvGUTvvGE7gfQOMc2DPOydz8xYMSYa4Y9XBpT0yjG1/HaX9F70gBkSwue13t8u61vaArSi0XUKQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=941kcKZhBhh+TxPpX85cVntgP0aJ0WJ8gW+fsaOfafE=;
- b=jGtivY4pW4yhp8LX2PmB5Kqm7Y75PNkGUR+iAAXs/gc5ijz9CUn4ak5OgvdhlybNjj1F/UFjz6Y2Mb7Arqd0Jhs+QjEJz4iWKv+3vbowvGAOrAVEfuwjXPeXA5NgrEJHvPHBoLKvRRMo2NufkYlq2ughScgQ/o1NSW51idReiHc=
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
- DM6PR11MB4267.namprd11.prod.outlook.com (52.132.248.90) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2602.13; Mon, 6 Jan 2020 09:25:40 +0000
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2602.015; Mon, 6 Jan 2020
- 09:25:40 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <sam@ravnborg.org>
-Subject: Re: [PATCH v3 5/6] drm: atmel-hlcdc: prefer a lower pixel-clock than
- requested
-Thread-Topic: [PATCH v3 5/6] drm: atmel-hlcdc: prefer a lower pixel-clock than
- requested
-Thread-Index: AQHVxHNCEp4Pw+8WakiQvTSsv/2xSA==
-Date: Mon, 6 Jan 2020 09:25:40 +0000
-Message-ID: <4f8603b2-9ae6-97bf-73c0-1b204595dce1@microchip.com>
-References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
- <1576672109-22707-6-git-send-email-claudiu.beznea@microchip.com>
- <20200102090848.GC29446@ravnborg.org> <20200104171205.GA8724@ravnborg.org>
-In-Reply-To: <20200104171205.GA8724@ravnborg.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 55449d4f-541d-4aff-3c1e-08d7928a65e0
-x-ms-traffictypediagnostic: DM6PR11MB4267:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB4267CAF002B54096E337E269873C0@DM6PR11MB4267.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:913;
-x-forefront-prvs: 0274272F87
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(376002)(366004)(396003)(39860400002)(136003)(199004)(189003)(966005)(6486002)(478600001)(31686004)(86362001)(6512007)(71200400001)(5660300002)(53546011)(6506007)(26005)(6916009)(2616005)(4326008)(76116006)(91956017)(36756003)(8936002)(316002)(66946007)(31696002)(66556008)(186003)(64756008)(2906002)(66476007)(81166006)(81156014)(8676002)(54906003)(66446008)(341764005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB4267;
- H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: mg9wAwehj9k4lQ3q5Sa2hi30BY4zjMTg+FV8pnYYvkAXPypOeaN0bhZ/CxgF4p4PCgbSzuu3rz91Yjliu9dEviryWohOkZcn90S8Jjg26qs47Igjte37PywNBi02soxNKy00/j/8+yWlv7NDDkpKksaug7UyeBBPkgutrw9a63E+WdDIdX5GTrWPWhrvSNbOxnZxDSV4y9V8kQ04mg3gMnBSiPDjKYE8W5HKlPtiIzeu4DkwaBV1VynzfNv53gIHRQOQSPpw+oWr8dn0f6jnMC/KUSgdp7lBZP5ffObLalWtrqiE/rztaHDr+QznH9x1LH3DayP+SS+oV2NJ9MVlWE2ciQ06ZPI5U5HCY3ZVMsGyOYVcLUo8ElodXr+Q3lSBiMhNjxKApCHg/VnL/dSZoXh+sunLqsnjBhJpVw8w6QEWqTzynkFUiIZkGOasKt8bg2HdarofW59JTkb+1QUuFI8oz5C/YFXQ30MPG4jgb9JZO261K9fNpvxPvDNmkPPncr1Yf4T5fh3fhYqt47qnOfaaDW/NMb02AEpGxNt7/v0=
-Content-ID: <5650812FEB10074894AA48B03B41578D@namprd11.prod.outlook.com>
+ id 1ioOfb-0006We-TD
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 09:27:37 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 004E321F83;
+ Mon,  6 Jan 2020 04:27:26 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 06 Jan 2020 04:27:27 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=AD0WwGxa4vEtYVpmX4Bn98NZdb8
+ UG8gq8ruZldWqfFQ=; b=cLag7isjvYNFz1/HpV5BQv84cdbSzYJfvKPOR+++0pS
+ yoiR853GzL2i75zg6w49qoySqj097YsBnP/pn67nzwKxE+Zob6sd8OTrDOkL7KHD
+ wV7/HpVlWvK/KhQBij+1u4nT1p4RCRzbWJcOZ9NV3Tfcu6wjkYoJePbiEIctLdYo
+ vA22lZn23R5J4MOQY3M/ZtahHZ9RpchmZ0Oodr/MHGmYH59ME7PPCyWs9adhbVT2
+ +joNE99ehfDY8K57qbY31xbpnAbD6Dj6BGJokUMO9M83DMtlYXPHpyLRXrszWw1k
+ Qq01SvhWaA546tClqSNwmGgWhTq+1bU30RAOvBIhPvw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=AD0WwG
+ xa4vEtYVpmX4Bn98NZdb8UG8gq8ruZldWqfFQ=; b=rVKZ7IlwMl9UIsTeJUU2mA
+ eGzw997p780+sa50JCs9n11byVdRh3ewZq0B2IfbUxYoSLwmxmmtx1pj2Q9H8+Jm
+ VLyNoTgwcHmjVwordd9iC5jcpBor5NA3AwiZ6cgcH8NwR66GdU5ghedmVPAItfnc
+ 0tBZBpeQc+CY1o2EsTEcJUDDf61lAdqGcXHOHBgvoUKZVJT/Ne/7WptJVldTAK/U
+ 5ycrIw0UrTJ7OEL2CHUGCWic3mvc1N2wH0AyLhIAUeOleXE9B5sbYvjnLmA8h7bV
+ gcuI9tRkAwRkzOsm36wMNrbH56ZOasypSL/lWxRasdo3hK1/wbzxaBWBoGR1FI3g
+ ==
+X-ME-Sender: <xms:fv0SXgLwl2zHlgDrdGLWXp2abLkUMRWovMDghaBocRhNerV7nHDvRQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdehtddgtdehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuffhomhgrih
+ hnpeguvghvihgtvghtrhgvvgdrohhrghenucfkphepledtrdekledrieekrdejieenucfr
+ rghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthhenucevlh
+ hushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:fv0SXr0PxaZyA38ebNMaaNdSWPpxnjZ_EKoxCPBwdm4c2DO2782rbg>
+ <xmx:fv0SXsVms3qbFoRnJo4yaPIcmQGrYchGM7TTgwU2m278g2_kZncyag>
+ <xmx:fv0SXpgeuO96xSWmPnJPo0mt69vpTmfduxPcmPjmrZX1yJ3W3qd-ig>
+ <xmx:fv0SXrxqlbBkNYd8H_bKzhEYY9MH5k2v6I3SqCU2V28YyYo5R1TXnA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 21ECC80060;
+ Mon,  6 Jan 2020 04:27:26 -0500 (EST)
+Date: Mon, 6 Jan 2020 10:27:24 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2] dt-bindings: usb: Convert Allwinner A80 USB PHY
+ controller to a schema
+Message-ID: <20200106092724.pi2kbui7zayrhhzi@gilmour.lan>
+References: <20200103152824.47383-1-maxime@cerno.tech>
+ <20200104221321.GA11672@bogus>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 55449d4f-541d-4aff-3c1e-08d7928a65e0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2020 09:25:40.8301 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: V3/RLpCCjpLGvIlmxC7sF6/A9f/zx5qircgyWlLzyYPHZrvDT7FS4WJVYRvy9orpWaoM0sf33f3NiZ3MMWekmmD49QB+uqbxhh2axsR6O7c=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4267
+In-Reply-To: <20200104221321.GA11672@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_012543_303310_370CB711 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200106_012732_384498_D1A4437C 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,95 +105,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- boris.brezillon@bootlin.com, lee.jones@linaro.org, peda@axentia.se,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ kishon@ti.com, Chen-Yu Tsai <wens@csie.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8290285757871653590=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+--===============8290285757871653590==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="jfhnjtzfmxu4jsz2"
+Content-Disposition: inline
 
-On 04.01.2020 19:12, Sam Ravnborg wrote:
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
-> 
-> Hi Claudiu
-> 
-> On Thu, Jan 02, 2020 at 10:08:48AM +0100, Sam Ravnborg wrote:
->> On Wed, Dec 18, 2019 at 02:28:28PM +0200, Claudiu Beznea wrote:
->>> From: Peter Rosin <peda@axentia.se>
->>>
->>> The intention was to only select a higher pixel-clock rate than the
->>> requested, if a slight overclocking would result in a rate significantly
->>> closer to the requested rate than if the conservative lower pixel-clock
->>> rate is selected. The fixed patch has the logic the other way around and
->>> actually prefers the higher frequency. Fix that.
->>>
->>> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
->> The id is wrong here - the right one is: 9946a3a9dbedaaacef8b7e94f6ac144f1daaf1de
->> The wrong id above was used before - so I think it is a copy'n'paste
->> thing.
->>
->> Hint: try "dim fixes 9946a3a9dbedaaacef8b7e94f6ac144f1daaf1de"
->>
->> If I get a quick response from Lee I can fix it up while applying.
->>
->>       Sam
->>
->>> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
->>> Tested-by: Claudiu Beznea <claudiu.beznea@microchip.com>
->>> Signed-off-by: Peter Rosin <peda@axentia.se>
-> 
-> One other detail.
-> The patch has passed through your hands, so you have to add your s-o-b
-> to document this.
-> The chain of s-o-b shall document the path the patch has taken towards
-> the kernel.
-> 
-> In this case:
-> Peter => Claudiu => Sam => Applied.
-> 
-> Please resend or reply where you say OK that I add your s-o-b.
 
-Sure! Please add my Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+--jfhnjtzfmxu4jsz2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Thank you, Sam!
+Hi Rob,
 
-> 
-> PS. And happy new year!
-> 
->         Sam
-> 
-> 
->>> ---
->>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
->>>  1 file changed, 2 insertions(+), 2 deletions(-)
->>>
->>> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->>> index 721fa88bf71d..10985134ce0b 100644
->>> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->>> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->>> @@ -121,8 +121,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->>>             int div_low = prate / mode_rate;
->>>
->>>             if (div_low >= 2 &&
->>> -               ((prate / div_low - mode_rate) <
->>> -                10 * (mode_rate - prate / div)))
->>> +               (10 * (prate / div_low - mode_rate) <
->>> +                (mode_rate - prate / div)))
->>>                     /*
->>>                      * At least 10 times better when using a higher
->>>                      * frequency than requested, instead of a lower.
->>> --
->>> 2.7.4
->> _______________________________________________
->> dri-devel mailing list
->> dri-devel@lists.freedesktop.org
->> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> 
+On Sat, Jan 04, 2020 at 03:13:21PM -0700, Rob Herring wrote:
+> On Fri, Jan 03, 2020 at 04:28:24PM +0100, Maxime Ripard wrote:
+> > The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
+> > with a matching Device Tree binding.
+> >
+> > Now that we have the DT validation in place, let's convert the device tree
+> > bindings for that controller over to a YAML schemas.
+> >
+> > Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> >
+> > ---
+> >
+> > Changes from v1:
+> >   - Added r-b tag from chen-yu
+> > ---
+> >  .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
+> >  .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
+> >  2 files changed, 135 insertions(+), 37 deletions(-)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> >  delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+> >
+> > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> > new file mode 100644
+> > index 000000000000..ded7d6f0a119
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> > @@ -0,0 +1,135 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Allwinner A80 USB PHY Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Chen-Yu Tsai <wens@csie.org>
+> > +  - Maxime Ripard <mripard@kernel.org>
+> > +
+> > +properties:
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +  compatible:
+> > +    const: allwinner,sun9i-a80-usb-phy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    anyOf:
+> > +      - description: Main PHY Clock
+> > +
+> > +      - items:
+> > +          - description: Main PHY clock
+> > +          - description: HSIC 12MHz clock
+> > +          - description: HSIC 480MHz clock
+>
+> Rather than anyOf, just 'minItems: 1' would work here. Though I guess
+> this disallows 2 items.
+
+Yeah, 2 items is not allowed so I wanted to prevent that.
+
+> > +
+> > +  clock-names:
+> > +    oneOf:
+> > +      - const: phy
+> > +
+> > +      - items:
+> > +          - const: phy
+> > +          - const: hsic_12M
+> > +          - const: hsic_480M
+> > +
+> > +  resets:
+> > +    anyOf:
+> > +      - description: Normal USB PHY reset
+> > +
+> > +      - items:
+> > +          - description: Normal USB PHY reset
+> > +          - description: HSIC Reset
+> > +
+> > +  reset-names:
+> > +    oneOf:
+> > +      - const: phy
+> > +
+> > +      - items:
+> > +          - const: phy
+> > +          - const: hsic
+> > +
+> > +  phy_type:
+> > +    const: hsic
+> > +    description:
+> > +      When absent, the PHY type will be assumed to be normal USB.
+> > +
+> > +  phy-supply:
+> > +    description:
+> > +      Regulator that powers VBUS
+> > +
+> > +required:
+> > +  - "#phy-cells"
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - resets
+> > +  - reset-names
+> > +
+> > +additionalProperties: false
+> > +
+> > +if:
+> > +  properties:
+> > +    phy_type:
+> > +      const: hsic
+> > +
+> > +  required:
+> > +    - phy_type
+> > +
+> > +then:
+> > +  properties:
+> > +    clocks:
+> > +      maxItems: 3
+> > +
+> > +    clock-names:
+> > +      maxItems: 3
+> > +
+> > +    resets:
+> > +      maxItems: 2
+> > +
+> > +    reset-names:
+> > +      maxItems: 2
+>
+> Do you intend that only a single item is allowed when not HSIC? If so,
+> that's not what is happening.
+
+That's intentional indeed, the former binding was making the hsic
+clocks and resets mandatory when the phy was in HSIC mode, but only
+recommending listing them otherwise. Maybe we can change that in the
+future, but that seems out of scope for a conversion.
+
+Maxime
+
+--jfhnjtzfmxu4jsz2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhL9fAAKCRDj7w1vZxhR
+xYcDAQCNoZxKDfvA/zKYWnLh123pQrSfnCIT3udI4N3sqlNiBQEA3LOztTGe4r9g
+jqPT0pzltu4HVmYLfflM/aNrJBQsgQQ=
+=9byl
+-----END PGP SIGNATURE-----
+
+--jfhnjtzfmxu4jsz2--
+
+
+--===============8290285757871653590==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8290285757871653590==--
+
