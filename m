@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EBD6131852
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 20:10:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 207C4131853
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 20:10:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fbNL0xFGwIEdJTSdOzJvX2WQKoueIpWM1nJyAVPFCPY=; b=oIi
-	okVt5WzP+0xDLUJNCW6JxrAchRaQNY1QFZJE7wl0a1RsyGuvHm399aHXMYRUFnD48BXKr/TY+J4Cf
-	vzO99ZjlEthxqax5ESoSOt91aa+W+YtdylmlX6vKl5GV63xyq8SSlfsjBKd0QFe3vcMdu91kZyp7K
-	nK/GRhR1OkKIPV+jrhP1scTziA1dD3b3osMK/CR84Zg+25sG0aHIe8B/hGyrC0Ha2/gp8uVYzha+t
-	upAVYYuPsKSwCfPJHTfYpnW01D79hH2sO5wvwchZS8Y930DFUUVv8253jYUK15g5zVzfTL2x6pR5G
-	2x9HtE2MkYh23gwGuWOGr9FxmHdmOeQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8i26GlzmJ8ZMTZp4EWkGnmM0h1LQVQ8X6qVYF23dl/E=; b=XkNnH/2+bYS5PMHhJOslKe2Inx
+	jvvn2aEMLmm/sAqDFb/fcfM9Gdb0T1TaarLkWXgl7Nm2cIkDpjlT09pO2g4L+6mAf4UmknOMktMNo
+	z2YvvAl4lQZD/vYmzbPuCuL2Fgx7T3k8YlJSWDAuOMqbTeDoY+TVIvbpAOjKY486y4GEU9DhCm3hM
+	qzfMSZvJ+OnqMHzo+LhWwFRDZTvrvSx3TdyVC7ab9MxJPIZcdd/sNh8e0VghYh/b5MqFnmgP/Bn1V
+	/xO5jFFuGuRqilZ/bclulqp9HYQ6injQSDKzXBoqz4UAjoEaPm8lvV9cP/RNyc3bKWxX1C52kC9rS
+	OBjsNjKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioXlY-0001zG-SB; Mon, 06 Jan 2020 19:10:16 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ioXlv-0002CG-Lq; Mon, 06 Jan 2020 19:10:39 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioXlP-0001SR-84
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 19:10:08 +0000
-Received: by mail-pg1-x541.google.com with SMTP id a33so27285762pgm.5
+ id 1ioXlR-0001lG-3w
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 19:10:10 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 195so26509319pfw.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 11:10:06 -0800 (PST)
+ Mon, 06 Jan 2020 11:10:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=fn2//En0NgtGPijhIqqwb8TihozuX1XJnjpZUHvZ4zc=;
- b=nIU4VhIxZOhYy39o1sjc1QjE5btWTxIyooXi5l878+gLXV8ZCfYhxWa3hYa5D12SXR
- ZNdVZOrxue+qeZJMJ5APJbAcunA1BsGXDxz6pOdbz8TNL4G6s4vJ4Krqd3fqIeEgXT5c
- uzZqy0+wqOCFEzr2f0LuH4nxqbgUxnyBI/0G07C1qRpKmhKbv857d4asnMGTzLzu+iCz
- kuxejP+XvlvHS1CqbU8EqKNLUrrarQcqQIS09gjejl3Aufj62biJFjlgxPt+CQIPl6Qb
- ShK6cOXmuJSw4ozd7adNW7xoA3sPl3upBPqROGXM99WHK8to5PaIqFU3PWhR0zbJfeHH
- u+qQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=5UWJNKwGSnZRp2VqvhJODGUDqM6guG99MwzXRTV7Nb0=;
+ b=ipVTd/8WzUVxxKpTAZ5SKS4Qu+ymKDslRCsM2dW8CGQMRNF6NzHNamg6TOhJBPyGg4
+ ORhCV/Q5T8y2fc6B1zO52fudCe7Ri99+HF+7CYMnu/g6aUg/jkTAxDng5wgqVlYQPW5M
+ Eb1mHgurqw9jEMBxSZrCkCc/YNhvW1uG9OzYyDLsfbfTLtq8DxHe2/KfwxYAVG5uY07m
+ Bu+Es72kW0OdrMRIyWbKxuwGZnqRBRvhXad4hOpPqKc9VD/hJXtap77MbDviSyNM10Wi
+ rq9UBlVrwtu3Xybe/h9VTxYu7wSVEZitLRu2ig4aK71hqy34yItwhdaoDe3AQ1acwACR
+ 8n1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=fn2//En0NgtGPijhIqqwb8TihozuX1XJnjpZUHvZ4zc=;
- b=qfsBtJYxv6hb16CZ7DmYedA0sKt1TzPKf7DKYGYeNKtRKT0cX1k9qeXHqXOR+jlfBe
- +Q37qH/31dLvb/xHSgVh9qMX7j15bSwJkvZH/hCZSGyDLaLbVZcdg3LOxk7skUczoRdR
- huB+j43UVKMHsmciwXAxcc310Z41pbzk1+4YI8ivnjZ4ThwzELXRwIaWab6M/fw+YxF0
- 5iEOZqJadtu0Ew3nK701ZIywknyfiYIs+nJ3z893CdZJbJbKZ1Pb6Eeblsvr7xGjT+jk
- oXmWrtABL8P0p0w0HdruJ38e09pFnOpmdtthGQ6cN4zqvMSmIkZyF6vx0VEaRxG1xgsp
- F/LQ==
-X-Gm-Message-State: APjAAAX7ZKTjuhuItS6xZwYfENHyWUd1Qs2mUOoKm1INxMgjoy6DPA9x
- fnydKPLcIlpJSJtP/K7Viqk=
-X-Google-Smtp-Source: APXvYqzsKEDnC2EKtm0Ia2SyM+OMxaIbFAQ6+lS8DUu8VWdLD/BN8rQ9KdvdCNdNNOfmTymk5wR8Gw==
-X-Received: by 2002:a63:f64a:: with SMTP id u10mr109381095pgj.16.1578337806306; 
- Mon, 06 Jan 2020 11:10:06 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=5UWJNKwGSnZRp2VqvhJODGUDqM6guG99MwzXRTV7Nb0=;
+ b=SPtWpJwtUqy2kzb2mR/FpvHG0tumbB9NTPQdmaRI3f4qNHhIm4o0Js8Vid3X/mpK/Y
+ HPlFZIS9QL+dFY/+g9vwM+7AJeuyBdMKIUp+2ZZ5SVRiP0f1/JDS3I5wh49iD119o+SR
+ BzHX3ZiabJMOi+bPa1xecYAtyhvKV3Ck7tTh1oS7H/lo+/ywH7TAkstMF7biXBFFoR96
+ LjtGJjGNAVQdPC1hRDu1QfHJrZnACiipscqJxTZIs4XSXT+vCiGYi0v2lOod4ip5iSzJ
+ XUCSjkpFjTyx1vV/FyMw0voprJ6L20oIcHM3EWAh3i2RHSLtSJexQT17K2jasic+GWqH
+ j/YQ==
+X-Gm-Message-State: APjAAAWoHZymN101XSpzGSwp1tkRid3Un+yXCwbU9+TQis9PJjtn4Fut
+ EWzYXsPlCkS4ZjZg0PzcBno=
+X-Google-Smtp-Source: APXvYqy3M3OIjOkADUaBh75HkL/X1n2uuXocdJbwJl2rTbC++kuHHBua+mNCifGNrP3hQMUCclRBEg==
+X-Received: by 2002:a63:7705:: with SMTP id s5mr110197804pgc.379.1578337808378; 
+ Mon, 06 Jan 2020 11:10:08 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id g21sm6425496pfo.126.2020.01.06.11.10.05
+ by smtp.gmail.com with ESMTPSA id s24sm24868480pjp.17.2020.01.06.11.10.07
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 06 Jan 2020 11:10:05 -0800 (PST)
+ Mon, 06 Jan 2020 11:10:07 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, kgene@kernel.org,
  krzk@kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: dts: exynos: tiny4412: add fimd node
-Date: Mon,  6 Jan 2020 19:10:02 +0000
-Message-Id: <20200106191003.21584-1-tiny.windzz@gmail.com>
+Subject: [PATCH 2/2] ARM: dts: exynos: tiny4412: add proper panel node
+Date: Mon,  6 Jan 2020 19:10:03 +0000
+Message-Id: <20200106191003.21584-2-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200106191003.21584-1-tiny.windzz@gmail.com>
+References: <20200106191003.21584-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_111007_305577_40D5D4F2 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20200106_111009_162173_99F6DAF7 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
@@ -103,32 +107,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch adds fimd node for tiny4412 device.
+This patch add at070tn92 panel for tiny4412 board.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- arch/arm/boot/dts/exynos4412-tiny4412.dts | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/boot/dts/exynos4412-tiny4412.dts | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
 diff --git a/arch/arm/boot/dts/exynos4412-tiny4412.dts b/arch/arm/boot/dts/exynos4412-tiny4412.dts
-index 01f37b5ac9c4..2b62cb27420c 100644
+index 2b62cb27420c..57f9d09233ad 100644
 --- a/arch/arm/boot/dts/exynos4412-tiny4412.dts
 +++ b/arch/arm/boot/dts/exynos4412-tiny4412.dts
-@@ -68,6 +68,14 @@
+@@ -66,6 +66,16 @@
+ 			clock-frequency = <24000000>;
+ 		};
  	};
++
++	panel {
++		compatible = "innolux,at070tn92";
++
++		port {
++			panel_input: endpoint {
++				remote-endpoint = <&lcdc_output>;
++			};
++		};
++	};
  };
  
-+&fimd {
-+	pinctrl-0 = <&lcd_clk>, <&lcd_data24>;
-+	pinctrl-names = "default";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+};
-+
- &rtc {
+ &fimd {
+@@ -74,6 +84,12 @@
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
  	status = "okay";
++	port@3 {
++		reg = <3>;
++		lcdc_output: endpoint {
++			remote-endpoint = <&panel_input>;
++		};
++	};
  };
+ 
+ &rtc {
 -- 
 2.17.1
 
