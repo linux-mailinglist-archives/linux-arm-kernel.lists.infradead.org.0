@@ -2,91 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D127130FB4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 10:44:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72957130FC7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 10:54:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=A97pb+ZCKoAVnBiKw6EZQRiYccnAUCkX852A94eQxhc=; b=bNS
-	cnSN1mC1aQsgrvSNNMqUgnbe+GLJ2qxULenF0CWqkXiGnaDJ0ittcuSHxu+prGFeKoZqgRKglQFdu
-	i4NUy1wR9tywuim4Y2wKVlhewg1b9qEKW1TWUMA07zyfw9tIVqsAW+cqNFMLEpMjPYUM1Weara6IS
-	7bucmkoHGCMIB/2B3llHRtR6Pcmk/dpt5T0RHwSoI5lucPqrbkxwcSQUg1I+QPZIDYWoApdrbMh1y
-	VABdVaZFF3WaYBdbxN0OBz/3QtZXtkbJbmYumzcHK6PaAW6pPCgFVZbZCZVC3HiyFxluw90Li0kX0
-	NTQ2311el5B927fXW6XbqAHzRoeobpw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ncHZShFEYRai0wqAKS7IeGKnGxWTu82vX4jjoUz8LVI=; b=TgscKx1eHB048d
+	bAcKQ3VIqsQfV9QKyyALjNyexTzzkPx+bY97Ux8ZB9N5f++X+GUWUHp/t9FWEjBqStU95GMSueUgG
+	7f9yO9vDNf00j5nvYC8BrZEbSVJaq/PPmYVwfJWNAHXCjToJrmIAQA2GgG0TCvMVWG5VyRJNQ1y9p
+	KCJRrf4IJ5fwFV0TFjOdAOXoZsBqkyPjyMOKm+OJMmaap0AGfuAKlZPcWgnqYos4uwVe+xxGo/FXP
+	YUIkLZ9GdJDSCZqeajk75mrqcjjDC8d1/9CBdj5g41yXPHZbmc5fS3U/eFoRvzFwnkAGhowt6nz6m
+	kYcxYskNXKEGVNh9VvgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioOw5-0007Pw-5n; Mon, 06 Jan 2020 09:44:33 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1ioP5I-00030J-EK; Mon, 06 Jan 2020 09:54:04 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioOvy-0007Oz-E9
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 09:44:27 +0000
-Received: by mail-pg1-x542.google.com with SMTP id x8so26638420pgk.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 01:44:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=KtGrKb7t1nXkvA9RAp03OXaiGM0Udf6t6g9rmOrwqQA=;
- b=h3uH4bw2GU+o7uTeRb6skr6Lw6iWOzi9RYNZW+55FiG0+SlNjQei6NHPEjTEDs+5nI
- HxYgS7bX6DgDzLlZRkirtbIM6O4tvP+ZtsdYxpaHg34HubMIlgcROK9AjKM+YESs6juR
- 4FA4EJiZq2VK5wshg1aBt5whcBt33ETeDV9DxiBzYCd9vyiMm7dWgfpK++DrsLul5NCz
- +gSjZOjPIr0sgF+BpSEIE/Hei4C82qIjjGUfC+ATL4FqVOV5fbfk8NXlcqehG2W85uUe
- uqBbmBXCt9uqRNSWkCTDWHtpZ2NovetviHdgDzrlhKnoc6MJl4mCF0vnyXMdyV9yS5U/
- Ya8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=KtGrKb7t1nXkvA9RAp03OXaiGM0Udf6t6g9rmOrwqQA=;
- b=HBxpZymvKdH/f7x3BrcrXBg+EE9EiKypQL8fwaDYie2hhzLRGI99LSJZF/lpXTKLxa
- /BGACbwTujKipS3wPqb+fr7141mIKjkHIHygJMsjWbFPdS4M8nveVWXJlK1feUErGOnx
- uMw0Z5WG+DBi2vmdIzkCaO6bH1chxBstk4kOCDtX/oU+Pg7IGwo70BOzZ9soFckT8PCm
- sHbjp1w15xx9hlwtEnw6zYGEhxWL78SLNb7BQVVainRZ4axi1gY3gdUvcUc9MdgxpnBQ
- TiJ/AOSyJwCXjszoIX1JZKnczyiFs049/4z0b+NSuoA94D1iGOmFaI5B7Z+rOwsJ1Yrh
- eQAw==
-X-Gm-Message-State: APjAAAVXQpuwkKYeXxJccyPAvYDkZazJ3P73gnI+srVAYX8TqWoDSwk9
- sabeT4qQy1g1OuWDgmNRBpprgE7xbOc=
-X-Google-Smtp-Source: APXvYqwXV771FUqOJJoDqNegv2vvgsnsYNEq3vey/xKO088jvc38DW99nYZ6CpWk+IyeSVRKLC6AAQ==
-X-Received: by 2002:a63:6c82:: with SMTP id
- h124mr109322399pgc.328.1578303865779; 
- Mon, 06 Jan 2020 01:44:25 -0800 (PST)
-Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id u26sm74215521pfn.46.2020.01.06.01.44.24
- (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Mon, 06 Jan 2020 01:44:25 -0800 (PST)
-From: qiwuchen55@gmail.com
-To: kgene@kernel.org, krzk@kernel.org, rjw@rjwysocki.net,
- viresh.kumar@linaro.org
-Subject: [PATCH v2] cpufreq: s3c: avoid use after free issue in
- xxx_cpufreq_reboot_notifier_evt()
-Date: Mon,  6 Jan 2020 17:44:21 +0800
-Message-Id: <1578303861-7217-1-git-send-email-qiwuchen55@gmail.com>
-X-Mailer: git-send-email 1.9.1
+ id 1ioP5B-0002zK-KM; Mon, 06 Jan 2020 09:53:58 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: zRYaw4MeO4BFWFLdqJXvUY4C8JTd6rsGJCwIJ8YlLTugfq0JmWZaPogmdcwBHuWUZ++ko7DEGD
+ BJJGNFA57Sl79e73vBQSMa6SCMiY4i9i91fTHYXugjtElNw5uB78HquFSr8yexIUHXrkYEksaY
+ YvegeIvKQ+aitDPClbUEfrYNlhUCrbKtKUrmTH155eMDQljBsWiXKOrNC3/Ri4FJfVnyTjtadA
+ KYRORygrteaJ/5RBN6OIwm3rcfgKZiqIdTgpy7okIqMBSSt1X2VAIhDb3/zWQobDcwsmUwkdp+
+ GYk=
+X-IronPort-AV: E=Sophos;i="5.69,402,1571727600"; d="scan'208";a="62304574"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 06 Jan 2020 02:53:56 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 6 Jan 2020 02:53:55 -0700
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 6 Jan 2020 02:53:55 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M6+sOCUNgE+sv79pOH7kUbSG9qURMPA1dAm5fxhtIfOdllB7j8oOQUXuq4UVPDH3K6kyZ84lRz2s5YVfeQPPQR8QIQAY9l+Ux86ST8Ct7iVL2dLyLxKY1quJKVFTo6ttkmzgQqo8Rp6PMu7N3ufe+8TD6KoaKS5ZreGOxG9UjmMgx6DzVWKJyCzr77teNi69BbgzQ4/mno0VE+/lJinyVtU2IdF43ljxiOADQjJhBzRQnhSD3iQW5miSz5gXILRA4kehDRaXYzW72mH6WNSGuFpEk6wB3le/4EYQgiByvjr54XzOdeu/T8wDVRlgVZTKMjyzx/Ru0Pn2YoQfdbhfZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+gm1Br1CHUtUOfgm+A45dSW91JgI1NL3xTYIa8s1JGo=;
+ b=a0U49dyvkiMBMRgGGE00g5gvxs8k7jlVrAdhhlRinlVULsPnQTDXEguRKZkL1KONA7HTvyN9sn/J83CUm84GhGAwQqDWutNz3BkFQ/KixS3MWq7dN5sOZe3OFL4HllS4IkrpAF9PWZ0fDZ43P7KjqsAIF8g1wGNA3DOpWnesICVwV05CRTk9bHmguTgrVdu6T5Wu9l/k3NzEjYfH7GZvQblk1lME19wIAxCxMcnN8ggPNXUB4NBD/WciEaOfVoDvvwCgGZmv7kfVy6TkePwvynMC6j+dFeESgb9rPag5Wzi+Oi1QXVdcPdC5CCOkOPxGCy1biZatXK9+TOydK+Qfrw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+gm1Br1CHUtUOfgm+A45dSW91JgI1NL3xTYIa8s1JGo=;
+ b=ObK9NWuOUA2Ra5xdx/mS3cPhEFFH1X0iYxOt9W+7P5FUopxHqJOk0L7ZjvI1nKqNtyOBL8UGJvMnC+AwMskDCxkQ+RH7pvnpXckbg+aKZomFbpBhTEyJ7weDynWu1hszOHfmSZZ5TjRssoZBKQDThbIM5FWS/nyb61QnU6pZjyU=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
+ DM6PR11MB3868.namprd11.prod.outlook.com (10.255.61.13) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.10; Mon, 6 Jan 2020 09:53:53 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2602.015; Mon, 6 Jan 2020
+ 09:53:53 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <krzk@kernel.org>, <thierry.reding@gmail.com>,
+ <u.kleine-koenig@pengutronix.de>, <linux-pwm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <bcm-kernel-feedback-list@broadcom.com>,
+ <linux-rpi-kernel@lists.infradead.org>, <linux-amlogic@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-rockchip@lists.infradead.org>,
+ <linux-riscv@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, <linux-tegra@vger.kernel.org>
+Subject: Re: [PATCH 2/2] pwm: Enable compile testing for some of drivers
+Thread-Topic: [PATCH 2/2] pwm: Enable compile testing for some of drivers
+Thread-Index: AQHVxHc0gN2UoP7Gc0Ocsx6/BxJUcA==
+Date: Mon, 6 Jan 2020 09:53:53 +0000
+Message-ID: <145f61f5-941b-d0f4-7abd-33ce7f005fca@microchip.com>
+References: <20191230172113.17222-1-krzk@kernel.org>
+ <20191230172113.17222-2-krzk@kernel.org>
+In-Reply-To: <20191230172113.17222-2-krzk@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: cd98d837-f71d-4669-e076-08d7928e56fe
+x-ms-traffictypediagnostic: DM6PR11MB3868:
+x-microsoft-antispam-prvs: <DM6PR11MB386839E19F8AE22C56AED43D873C0@DM6PR11MB3868.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
+x-forefront-prvs: 0274272F87
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(376002)(39860400002)(136003)(366004)(189003)(199004)(66476007)(478600001)(66556008)(64756008)(8676002)(2616005)(66446008)(31686004)(6506007)(66946007)(53546011)(91956017)(76116006)(26005)(186003)(71200400001)(7416002)(110136005)(316002)(6486002)(8936002)(2906002)(558084003)(86362001)(5660300002)(6512007)(31696002)(36756003)(81156014)(81166006)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3868;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wOMKXiNGziR8dv9gol0oOsf6AU3jg0EgTcvPeER6oGWQ/VHSV6mZ4G35IavOvUWvfJowh6rCgEhlk8dQaHqqGFPgluMQ/mqNOqzZVUbtBXvd+M8DHE4Ih/QhaACanEKd2yY2+hKwmKfmIpxc1EDyNlGPemaiqh/eovfKhRtnMxavwU1Rh5GcI/Bfjng/YCxdkty/e8RkHg/iDVeRjL+c/LvR4hzUbhvVz3lKSJuB5ISxB3wNgEJGnvL8HRHkVq0weTLXARW5wg0/ogGuGqlsHjEi26ZJ9uuAZdKfXOph3zN5gzzRsREIrYqQtIndwiq3oYxJ7K+SEPHCJN1cZszNc3RUqF6sq9ENqwWlsZVSQaJswTwMjrUgUQEtDbwvv2LYq+67tv/sGjVbjPS4m9b4PUGsbsVMg053jU9TpUZuCpkkSbnD/5hZPBztOan2HJK8UmTIUVrmLulShBaKbP3pI4lxjuCXzYZMVtW9YYwU/x5yVUIMoaO/gPvVe18u5JSW
+x-ms-exchange-transport-forked: True
+Content-ID: <C6A04D4974AB244693C3B9F0D1537D34@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: cd98d837-f71d-4669-e076-08d7928e56fe
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2020 09:53:53.6461 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3t7GXAiHVzcYWfgg7rs7BGYg4AhBXFOdWKJswiYpNOQZcRLxnjLB8thujRLTCNbSdB/NeinF2BmkaKx5I9MFDTEFmIV3xzqyWRswi5WXJcE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3868
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_014426_494830_226F9A72 
-X-CRM114-Status: GOOD (  12.42  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200106_015357_678495_F691050E 
+X-CRM114-Status: UNSURE (   4.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (qiwuchen55[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (qiwuchen55[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,87 +161,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, chenqiwu <chenqiwu@xiaomi.com>,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: chenqiwu <chenqiwu@xiaomi.com>
-
-There is a potential UAF issue in xxx_cpufreq_reboot_notifier_evt() that
-the cpufreq policy of cpu0 has been released before using it. So we should
-make a judgement to avoid it.
-
-Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
----
-changes in v2:
- - use the combination of cpufreq_cpu_get() and cpufreq_cpu_put()
-   instead of cpufreq_get_policy() in s3c2416-cpufreq.c
----
- drivers/cpufreq/s3c2416-cpufreq.c | 12 +++++++++++-
- drivers/cpufreq/s5pv210-cpufreq.c | 11 ++++++++++-
- 2 files changed, 21 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
-index 1069103..f07c5d1 100644
---- a/drivers/cpufreq/s3c2416-cpufreq.c
-+++ b/drivers/cpufreq/s3c2416-cpufreq.c
-@@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
- {
- 	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
- 	int ret;
-+	struct cpufreq_policy *policy;
- 
- 	mutex_lock(&cpufreq_lock);
- 
-@@ -318,7 +319,16 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
- 	 */
- 	if (s3c_freq->is_dvs) {
- 		pr_debug("cpufreq: leave dvs on reboot\n");
--		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
-+
-+		policy = cpufreq_cpu_get(0);
-+		if (!policy) {
-+			pr_debug("cpufreq: get no policy for cpu0\n");
-+			return NOTIFY_BAD;
-+		}
-+
-+		ret = cpufreq_driver_target(&policy, FREQ_SLEEP, 0);
-+		cpufreq_cpu_put(policy);
-+
- 		if (ret < 0)
- 			return NOTIFY_BAD;
- 	}
-diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
-index 5d10030..e84281e 100644
---- a/drivers/cpufreq/s5pv210-cpufreq.c
-+++ b/drivers/cpufreq/s5pv210-cpufreq.c
-@@ -555,8 +555,17 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
- 						 unsigned long event, void *ptr)
- {
- 	int ret;
-+	struct cpufreq_policy *policy;
-+
-+	policy = cpufreq_cpu_get(0);
-+	if (!policy) {
-+		pr_debug("cpufreq: get no policy for cpu0\n");
-+		return NOTIFY_BAD;
-+	}
-+
-+	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
-+	cpufreq_cpu_put(policy);
- 
--	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
- 	if (ret < 0)
- 		return NOTIFY_BAD;
- 
--- 
-1.9.1
 
 
+On 30.12.2019 19:21, Krzysztof Kozlowski wrote:
+> Some of the PWM drivers can be compile tested to increase build
+> coverage.
+> 
+> The Meson PWM driver requires COMMON_CLK dependency.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+for PWM_ATMEL:
+Acked-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
