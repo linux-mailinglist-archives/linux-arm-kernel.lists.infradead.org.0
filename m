@@ -2,142 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF84A131468
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 16:06:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD3121314DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 16:33:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2wa0/g52ZTTqi7IJQa9ZoYNmFpVMYi01WYrHVQmxFA=; b=iFbt8rnLBi2XJx
-	Oni+IZwGdYEFDEX94o5zYk21HftBePw0QUXfWLA2tc7VfOjIcAKf5aEPvaZlj3N6P8n/ikUrPybsu
-	WwVPOHVsfb7skQoYTWQ6BGAr7GpKajcfhe/AuBEf/cBgHcxGwzNM+ItW6aWbDP1rm3N8/Wp2Jolng
-	iry+Dw5l6ag/KM36FSMuZLQMm5oqzpN3HMAJf959PwTM8ey0I8jL24mmBUcYFb/rqXtUs3z+jtOaC
-	5aVjyGXka6OY2omDl/6tusSJz6tWEihKD/Nv4vixMWYC8bD/DA82vFJ0emCyw7s6KaK20LYgwTMYW
-	68RA1skpp1+nKAon8eJA==;
+	List-Owner; bh=QpVhxnVrlOIIjOGqQcfCCOHvatMaFNRXV1wu7/36FcA=; b=VarSzNo+OGuxme
+	Hxl1N/C/WO3bLpDdVvT4T0M/Cm2yPrnUqs8Cacm4o0/ti4az0q0388X1Fcu2jgXXEY3N5XPMlk5aC
+	gxEZbHB9MOWvDdgJ/PWAoizAsv+bdUrgmONaw8VsR4Um2JSgmN9bhJgq5ZDA4hGLhFjMis0qOm0nn
+	aYWk0n/fbFMD3c2y1q23VxqNWlSJEXlSOEwlMSzy2Fun9Pyu2HB3QmcxvGSjfEIk3CnY/PLw1/4JT
+	eQr13pX1d0edCon6970MsYnFBRBkCHLw0gsC3SfH8JcdT9pUnwqsNcW1HbGxdV8EoFtrxr7hkdep/
+	vOS4Ho3XC79ZpNChS5yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioTxP-00017f-Ld; Mon, 06 Jan 2020 15:06:15 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ioUO2-0002ay-TB; Mon, 06 Jan 2020 15:33:46 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioTxH-000163-Ah
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 15:06:09 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f129so15598306wmf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 07:06:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=4xBi7IZzhoIF7KdHTNyDKmphKN498FgJ/ek10YTA3A8=;
- b=qqQ2bLTHuAXiOdrNVhPPLTlk+pnB+OpF9gok5Mr1dhmJDvESZlMyGicHDLnhwjI2BP
- kMedKprUXSoSVUUejyvoTIwI9mnjhzTisEv0MlB7JWfrqHnJdH2eD1ac5Op6b/mPeNRX
- q2V761mB7wDGKdQ/wi+sX8YrUUSO9AIeCoAfUxeNfYudL9FOATxfRl48tgE2ejJNcBkk
- irr0ehoxXjM7IfsfbSNo1o5bVfeBHUkt/axo5/J6UaIju1AnbT4HWAMBcPTILlov3Y8S
- TT+Skw4C2wvYD4oOfK0kqty1v6g4axoL0urwyrsl8I+NBxCUpDiqrocy81uuuY3D4Clq
- go6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=4xBi7IZzhoIF7KdHTNyDKmphKN498FgJ/ek10YTA3A8=;
- b=CMH+nDqCkyrwXRv2o1bewOAIlw4VG6/vNbQcZvaoGYgo7gN5kFNKFeFhAJ8dQhINhd
- m+D6g/Pb5W93a8J1e8aNApyhp1KwF7XIOb7gKqTx83orPFJ1CgQazgBvDRAFzqkpYTzc
- /Ht3AFl+znizi4eAHPY6aKKdGA4am2pi5ZjZN3hoGYajImBSnhQakBm0KZggGVIIBtBf
- bGL3JvGFRi/KxWbNb4wMStjqzJBjz2vlMzAySW+j8UO60Jl5IM77AkWqgC4HRqR6yP3/
- WFoOzswNZgOEYXVna397UovX92YTJEYnisk/PvMcJQXRNaFpRuriZ2oEs9WwBjUe151+
- F/8w==
-X-Gm-Message-State: APjAAAVdKOACbTpjuY9ZWm26tpyLrimtYF2lRC8RxRYnN7scuWZ5buRs
- e4JjvP5Cj9GwskZ2oSglxUFKNw==
-X-Google-Smtp-Source: APXvYqyCCcO+Jy3/h9qJXcbUHtKn+wTka58tVlU/uazUhcU5IZBCZGWZsosooWkC1fqxwTZFStBQGw==
-X-Received: by 2002:a7b:c389:: with SMTP id s9mr35024175wmj.7.1578323165746;
- Mon, 06 Jan 2020 07:06:05 -0800 (PST)
-Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id i11sm72950192wrs.10.2020.01.06.07.06.04
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 07:06:05 -0800 (PST)
-Subject: Re: [PATCH v24 0/2] drm/bridge: PS8640 MIPI-to-eDP bridge
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-kernel@vger.kernel.org
-References: <20191230090419.137141-1-enric.balletbo@collabora.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <94d3c3dd-1e3a-39f5-6180-04055da1dc70@baylibre.com>
-Date: Mon, 6 Jan 2020 16:06:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ioUNv-0002aY-2m
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 15:33:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1578324816;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=WMyCQTp0fB4Db18PuYA/44oZs6gxi7/BoRwlS9h67Ow=;
+ b=iTudxLPJifjMuy9Qprah7FZYcuulXAKgX+UEyW7w1Wt7HId1lMbT65E4H4DMjiAKy8/8Pg
+ 3WHbXy2tmLXG326EmMYzcO5QugFdW9/Z7vOPHXzt/1fb+lbg+zKGlPYLs4bQsAQhta9Yj3
+ Vd4agzLavFsa0r+4+r+QgHrdqgBk8og=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-259-Zo8vYXixMtWEGYG8rFdCOw-1; Mon, 06 Jan 2020 10:33:33 -0500
+X-MC-Unique: Zo8vYXixMtWEGYG8rFdCOw-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 021331005502;
+ Mon,  6 Jan 2020 15:33:30 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9B852108131B;
+ Mon,  6 Jan 2020 15:33:27 +0000 (UTC)
+Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
+ into CNA
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20191230194042.67789-1-alex.kogan@oracle.com>
+ <20191230194042.67789-5-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <53b08fc3-f29f-65ec-f2e9-0f469cd79744@redhat.com>
+Date: Mon, 6 Jan 2020 10:33:27 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20191230090419.137141-1-enric.balletbo@collabora.com>
+In-Reply-To: <20191230194042.67789-5-alex.kogan@oracle.com>
 Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_070607_377627_464A7AA6 
-X-CRM114-Status: GOOD (  28.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200106_073339_200086_2EBA7202 
+X-CRM114-Status: GOOD (  21.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,164 +97,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, drinkcat@chromium.org,
- Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
- Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Ulrich Hecht <uli@fpond.eu>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, hsinyi@chromium.org,
- matthias.bgg@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: dave.dice@oracle.com, steven.sistare@oracle.com, daniel.m.jordan@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 12/30/19 2:40 PM, Alex Kogan wrote:
+> Keep track of the number of intra-node lock handoffs, and force
+> inter-node handoff once this number reaches a preset threshold.
+> The default value for the threshold can be overridden with
+> the new kernel boot command-line option "numa_spinlock_threshold".
+>
+> Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
+> Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
+> ---
+>  .../admin-guide/kernel-parameters.txt         |  8 ++++
+>  kernel/locking/qspinlock.c                    |  3 ++
+>  kernel/locking/qspinlock_cna.h                | 41 ++++++++++++++++++-
+>  3 files changed, 51 insertions(+), 1 deletion(-)
+>
+> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> index b68cb80e477f..30d79819a3b0 100644
+> --- a/Documentation/admin-guide/kernel-parameters.txt
+> +++ b/Documentation/admin-guide/kernel-parameters.txt
+> @@ -3200,6 +3200,14 @@
+>  			Not specifying this option is equivalent to
+>  			numa_spinlock=auto.
+>  
+> +	numa_spinlock_threshold=	[NUMA, PV_OPS]
+> +			Set the threshold for the number of intra-node
+> +			lock hand-offs before the NUMA-aware spinlock
+> +			is forced to be passed to a thread on another NUMA node.
+> +			Valid values are in the [0..31] range. Smaller values
+> +			result in a more fair, but less performant spinlock, and
+> +			vice versa. The default value is 16.
+> +
+>  	cpu0_hotplug	[X86] Turn on CPU0 hotplug feature when
+>  			CONFIG_BOOTPARAM_HOTPLUG_CPU0 is off.
+>  			Some features depend on CPU0. Known dependencies are:
+> diff --git a/kernel/locking/qspinlock.c b/kernel/locking/qspinlock.c
+> index 609980a53841..e382d8946ccc 100644
+> --- a/kernel/locking/qspinlock.c
+> +++ b/kernel/locking/qspinlock.c
+> @@ -597,6 +597,9 @@ EXPORT_SYMBOL(queued_spin_lock_slowpath);
+>  #if !defined(_GEN_CNA_LOCK_SLOWPATH) && defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+>  #define _GEN_CNA_LOCK_SLOWPATH
+>  
+> +#undef pv_init_node
+> +#define pv_init_node			cna_init_node
+> +
+>  #undef pv_wait_head_or_lock
+>  #define pv_wait_head_or_lock		cna_pre_scan
+>  
+> diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
+> index 3c99a4a6184b..30feff02865d 100644
+> --- a/kernel/locking/qspinlock_cna.h
+> +++ b/kernel/locking/qspinlock_cna.h
+> @@ -51,13 +51,25 @@ struct cna_node {
+>  	int			numa_node;
+>  	u32			encoded_tail;
+>  	u32			pre_scan_result; /* encoded tail or enum val */
+> +	u32			intra_count;
+>  };
+>  
+>  enum {
+>  	LOCAL_WAITER_FOUND = 2,	/* 0 and 1 are reserved for @locked */
+> +	FLUSH_SECONDARY_QUEUE = 3,
+>  	MIN_ENCODED_TAIL
+>  };
+>  
+> +/*
+> + * Controls the threshold for the number of intra-node lock hand-offs before
+> + * the NUMA-aware variant of spinlock is forced to be passed to a thread on
+> + * another NUMA node. By default, the chosen value provides reasonable
+> + * long-term fairness without sacrificing performance compared to a lock
+> + * that does not have any fairness guarantees. The default setting can
+> + * be changed with the "numa_spinlock_threshold" boot option.
+> + */
+> +int intra_node_handoff_threshold __ro_after_init = 1 << 16;
 
-On 30/12/2019 10:04, Enric Balletbo i Serra wrote:
-> Hi all,
-> 
-> This is another version of the driver. Note that the driver changed
-> significally and is a more simply because now is using the panel_bridge
-> helpers. Apart from this, I addressed the comments from Maxime, Laurent
-> and Ezequiel.
-> 
-> This bridge is required to have the embedded display working on an Acer
-> Chromebook R13 ("Elm"). Hopefully we are a bit more close to have this
-> driver merged. If more changes are required, please let me know and I
-> will work on it.
-> 
-> Note: Along these around 20 revisions of this driver I was unable to
-> reconstruct the full changelog history, so I'm skipping this. Sorry
-> about that, I promise I'll maintain the changelog for future revisions.
+Another minor nit. (1 << 31) is negative for an int value. I will
+suggest that you either make intra_node_handoff_threshold an unsigned
+int or limit the upper bound to 30.
 
-I can apply these, but I'll prefer Rob to ack the new YAML bindings or
-a go from Laurent/Maxime to go with the actual YAML state.
+Cheers,
+Longman
 
-For patch 2, I think we can keep devm_i2c_new_dummy_device and not use i2c_new_ancillary_device
-
-Neil
-
-> 
-> Thanks,
->  Enric
-> 
-> Changes in v24:
-> - Fix GPIO polarity as all GPIO descriptors should be handled as active high (Laurent Pinchart)
-> - Make static ps8640_bridge_attach (Ezequiel Garcia)
-> - Use a define for the number of lanes (Ezequiel Garcia)
-> 
-> Changes in v23:
-> - Merge mute/unmute functions into one (Nicolas Boichat)
-> - Use enum for ENABLE/DISABLE instead of bool (Ezequiel Garcia)
-> - Rename mute/unmute to vdo_control and fix error messages (Nicolas Boichat and Enric)
-> - Add space between address and address parameter 'address%02x' (Nicolas Boichat)
-> - Add Tested-by Hsin-Yi
-> - Added me as author after the refactor
-> 
-> Changes in v22:
-> - Migrate to YAML format (Maxime Ripart)
-> - Remove mode-sel property.
-> - Rename sleep-gpios to powerdown-gpios.
-> - Remove sysfs attributes because are not really used (Enric Balletbo)
-> - Use enum for address page offsets (Ezequiel Garcia)
-> - Remove enable tracking (Enric Balletbo)
-> - Use panel_bridge API (Laurent Pinchart)
-> - Do not use kernel-doc format for non kernel-doc formatted commands (Enric Balletbo)
-> - Remove verbose message for PAGE1_VSTART command (Ezequiel Garcia)
-> - Use time_is_after_jiffies idiom (Ezequiel Garcia)
-> - Remove unused macros (Ezequiel Garcia)
-> - Fix weird alignment in dsi->mode_flags (Laurent Pinchart)
-> - Use drm_of_find_panel_or_bridge helper (Laurent Pinchart)
-> - Remove mode-sel-gpios as is not used (Laurent Pinchart)
-> - Remove error messages to get gpios as the core will already report it (Enric Balletbo)
-> - Remove redundant message getting the regulators (Laurent Pinchart)
-> - Rename sleep-gpios to powerdown-gpios (Laurent Pinchart)
-> - Use ARRAY_SIZE(ps_bridge->page) instead of MAX_DEV when possible (Laurent Pinchart)
-> - Fix race with userspace accessing the sysfs attributes (Laurent Pinchart)
-> - Remove id_table as is only used on DR platforms (Laurent Pinchart)
-> - Convert to new i2c device probe() (Laurent Pinchart)
-> - Use i2c_smbus_read/write helpers instead of open coding it (Laurent Pinchart)
-> - Remove unnused global variables (Laurent Pinchart)
-> - Remove unnused fields in ps8640 struct (Laurent Pinchart)
-> - Remove commented-out headers (Laurent Pinchart)
-> 
-> Changes in v21:
->  - Use devm_i2c_new_dummy_device and fix build issue using deprecated i2c_new_dummy
->  - Fix build issue due missing drm_bridge.h
->  - Do not remove in ps8640_remove device managed resources
-> 
-> Changes in v19:
->  - fixed return value of ps8640_probe() when no panel is found
-> 
-> Changes in v18:
->  - followed DRM API changes
->  - use DEVICE_ATTR_RO()
->  - remove firmware update code
->  - add SPDX identifier
-> 
-> Changes in v17:
->  - remove some unused head files.
->  - add macros for ps8640 pages.
->  - remove ddc_i2c client
->  - add mipi_dsi_device_register_full
->  - remove the manufacturer from the name and i2c_device_id
-> 
-> Changes in v16:
->  - Disable ps8640 DSI MCS Function.
->  - Rename gpios name more clearly.
->  - Tune the ps8640 power on sequence.
-> 
-> Changes in v15:
->  - Drop drm_connector_(un)register calls from parade ps8640.
->    The main DRM driver mtk_drm_drv now calls
->    drm_connector_register_all() after drm_dev_register() in the
->    mtk_drm_bind() function. That function should iterate over all
->    connectors and call drm_connector_register() for each of them.
->    So, remove drm_connector_(un)register calls from parade ps8640.
-> 
-> Changes in v14:
->  - update copyright info.
->  - change bridge_to_ps8640 and connector_to_ps8640 to inline function.
->  - fix some coding style.
->  - use sizeof as array counter.
->  - use drm_get_edid when read edid.
->  - add mutex when firmware updating.
-> 
-> Changes in v13:
->  - add const on data, ps8640_write_bytes(struct i2c_client *client, const u8 *data, u16 data_len)
->  - fix PAGE2_SW_REST tyro.
->  - move the buf[3] init to entrance of the function.
-> 
-> Changes in v12:
->  - fix hw_chip_id build warning
-> 
-> Changes in v11:
->  - Remove depends on I2C, add DRM depends
->  - Reuse ps8640_write_bytes() in ps8640_write_byte()
->  - Use timer check for polling like the routines in <linux/iopoll.h>
->  - Fix no drm_connector_unregister/drm_connector_cleanup when ps8640_bridge_attach fail
->  - Check the ps8640 hardware id in ps8640_validate_firmware
->  - Remove fw_version check
->  - Move ps8640_validate_firmware before ps8640_enter_bl
->  - Add ddc_i2c unregister when probe fail and ps8640_remove
-> 
-> Jitao Shi (2):
->   Documentation: bridge: Add documentation for ps8640 DT properties
->   drm/bridge: Add I2C based driver for ps8640 bridge
-> 
->  .../bindings/display/bridge/ps8640.yaml       | 112 ++++++
->  drivers/gpu/drm/bridge/Kconfig                |  11 +
->  drivers/gpu/drm/bridge/Makefile               |   1 +
->  drivers/gpu/drm/bridge/parade-ps8640.c        | 348 ++++++++++++++++++
->  4 files changed, 472 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/ps8640.yaml
->  create mode 100644 drivers/gpu/drm/bridge/parade-ps8640.c
-> 
 
 
 _______________________________________________
