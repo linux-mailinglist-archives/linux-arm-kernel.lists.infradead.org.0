@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87D4D130F03
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:58:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE5AA130F09
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:59:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lj/qObLtM/EnSkF4rpIyH17B2lO1L5omSkAP3eGthOA=; b=Bk4WimOfSqIiNq
-	UDnN1/hGPCtgeECoWc61iVKGTgFAGJlKoCBxc8fuyPFQetKLu2VYXKGE0OkWRM+809IpMJ7vDRht5
-	TsWa3TkEXfeR1bYaJ54o2QBmDPjc3Hu5DmVw1Hnjy8WZP/HrwrLATMQNy2o7AZWgjZzczh2U9dm9l
-	ldOjsE6R/BMpCOl+qwWfZlG1lxd75GjhNYBlVWJM+G/4QfomlqWnRW6PUVXSNRoCAu/15AVSffH+R
-	6M3knjTgKfjWp/sVdhaMwzMmsXRh2AChqSwDTfgKRhLOVMkL+Tx50Zaus0eGSxcZrflViCuLTWxy4
-	K8TRuXvXwCOQg6ZzCLdg==;
+	List-Owner; bh=1qTpDc1Ytsq2Wps6XfHewzy4z5taQ5OnxFPc3WA1iuY=; b=pPv0vVPp6fEuRk
+	3BOLRO2Wp1gHaJozsiUtQtNAyl5b8SX+y0JuULqWmxcAOygwADo5XXomyUdwAVz9SLjZ+afIb71jE
+	vqDCvloIidSlqbZdtYra6Bap4pGsSsItdOJlCEGeOeQ16BtzQ1B6DnS5Q7JzPdiaBWryNV9Zu1Qe2
+	+nZlh7o99xGnLuzILV5azzhgMx0ptJEWv99XzqL5tju/1ZKfyQHcDVJ32iHxN4QTT78SAdhOSDH2H
+	nnOT4oy2oID/hvqKUMDm8wAZTnS5pDiMFqPuEeFMU5F36b9JlUD+WvJKADQccfMBwsBXT6zULpf7k
+	sxR/DjnMPOCY7DvrR9RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioODg-0001dp-18; Mon, 06 Jan 2020 08:58:40 +0000
+	id 1ioOEi-0001uq-DG; Mon, 06 Jan 2020 08:59:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioODY-0001dT-B4
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:58:33 +0000
+ id 1ioOEZ-0001uS-PD
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:59:37 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBAB020848;
- Mon,  6 Jan 2020 08:58:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 57A5020848;
+ Mon,  6 Jan 2020 08:59:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578301112;
- bh=PM6tQDY3S9hYgHrxWz2QJsPaSBxxGwz5ukhamBiZ/qU=;
+ s=default; t=1578301175;
+ bh=+xN2ZWTp443STxyJTpKaiqk0aiJnRo7N2aSPxx6FD+4=;
  h=From:To:Cc:Subject:Date:From;
- b=j1jGC9mWPBlAwTAZNn7b3Wn0Po4MmwWAuEDHA9AF5WkvLC5zXBn6uEq4PO6FUIr3b
- CniQuTpixC861XPSnH2ujOWgpikNCM4PY73a90KCxXGANWqnNfckbsniUt9eeSk8IA
- bI7s670ACfE7GqyW/ghEG/Blj0rkZb8ecI4ajKgY=
+ b=kkFtEM6sFIV+cv5vdVPOxrusKs+9p0cbvYoGSjh1NGIS56vVzUtUynmesIeOMcj+J
+ MYawpmbCdrOK4i86m3grRJ9mpyO1JQSLSw7yus2CN/a80MpmQ3vbVPkxz5HvQInF76
+ cDSIpMc7Nli2Hw1ft22EisUz2gC9lTyyOUHdzP1Y=
 Received: by wens.tw (Postfix, from userid 1000)
- id 3712E5FC12; Mon,  6 Jan 2020 16:58:29 +0800 (CST)
+ id 49A065FC12; Mon,  6 Jan 2020 16:59:34 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] arm64: dts: allwinner: h5: Add Libre Computer ALL-H5-CC H5
- board
-Date: Mon,  6 Jan 2020 16:58:20 +0800
-Message-Id: <20200106085820.7082-1-wens@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: [PATCH] ARM: dts: sunxi: Use macros for references to CCU clocks
+Date: Mon,  6 Jan 2020 16:59:33 +0800
+Message-Id: <20200106085933.9102-1-wens@kernel.org>
 X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_005832_425623_DBF0ED61 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20200106_005935_857016_B3EF420D 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,122 +84,103 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-The Libre Computer ALL-H5-CC board is an upgraded version of the
-ALL-H3-CC. Changes include:
+A few clocks from the CCU were exported later, and references to them in
+the device tree were using raw numbers.
 
-  - Gigabit Ethernet via external RTL8211E Ethernet PHY
-  - 16 MiB SPI NOR flash memory
-  - PoE tap header
-  - Line out jack removed
-
-Only H5 variant test samples were made available, and the vendor is not
-certain whether other SoC variants would be made or not. Furthermore the
-board is a minor upgrade compared to the ALL-H3-CC. Thus the device tree
-simply includes the one for the ALL-H3-CC, and adds the changes on top.
+Now that the DT binding header changes are in as well, switch to the
+macros for more clarity.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- .../devicetree/bindings/arm/sunxi.yaml        |  5 ++
- arch/arm64/boot/dts/allwinner/Makefile        |  1 +
- .../sun50i-h5-libretech-all-h5-cc.dts         | 61 +++++++++++++++++++
- 3 files changed, 67 insertions(+)
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
+ arch/arm/boot/dts/sun5i.dtsi       | 2 +-
+ arch/arm/boot/dts/sun8i-a83t.dtsi  | 6 +++---
+ arch/arm/boot/dts/sun8i-r40.dtsi   | 2 +-
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi | 7 ++++---
+ 4 files changed, 9 insertions(+), 8 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index dc035a06454e..327ce6730823 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -347,6 +347,11 @@ properties:
-           - const: libretech,all-h3-it-h5
-           - const: allwinner,sun50i-h5
+diff --git a/arch/arm/boot/dts/sun5i.dtsi b/arch/arm/boot/dts/sun5i.dtsi
+index 9f0b645fd45e..0b526e6e5a95 100644
+--- a/arch/arm/boot/dts/sun5i.dtsi
++++ b/arch/arm/boot/dts/sun5i.dtsi
+@@ -185,7 +185,7 @@ ve_sram: sram-section@0 {
+ 		mbus: dram-controller@1c01000 {
+ 			compatible = "allwinner,sun5i-a13-mbus";
+ 			reg = <0x01c01000 0x1000>;
+-			clocks = <&ccu 99>;
++			clocks = <&ccu CLK_MBUS>;
+ 			dma-ranges = <0x00000000 0x40000000 0x20000000>;
+ 			#interconnect-cells = <1>;
+ 		};
+diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
+index 93a6df11cb18..74ac7ee9383c 100644
+--- a/arch/arm/boot/dts/sun8i-a83t.dtsi
++++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
+@@ -1006,9 +1006,9 @@ emac: ethernet@1c30000 {
+ 			reg = <0x01c30000 0x104>;
+ 			interrupts = <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "macirq";
+-			resets = <&ccu 13>;
++			resets = <&ccu CLK_BUS_EMAC>;
+ 			reset-names = "stmmaceth";
+-			clocks = <&ccu 27>;
++			clocks = <&ccu RST_BUS_EMAC>;
+ 			clock-names = "stmmaceth";
+ 			status = "disabled";
  
-+      - description: Libre Computer Board ALL-H5-CC H5
-+        items:
-+          - const: libretech,all-h5-cc-h5
-+          - const: allwinner,sun50i-h5
-+
-       - description: Lichee Pi One
-         items:
-           - const: licheepi,licheepi-one
-diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
-index a7fdf04ffca2..cf4f78617c3f 100644
---- a/arch/arm64/boot/dts/allwinner/Makefile
-+++ b/arch/arm64/boot/dts/allwinner/Makefile
-@@ -16,6 +16,7 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-bananapi-m2-plus-v1.2.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-emlid-neutis-n5-devboard.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h3-cc.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h3-it.dtb
-+dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h5-cc.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-nanopi-neo2.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-nanopi-neo-plus2.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-pc2.dtb
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
-new file mode 100644
-index 000000000000..df1b9263ad0e
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
-@@ -0,0 +1,61 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (C) 2020 Chen-Yu Tsai <wens@csie.org>
-+
-+#include "sun50i-h5-libretech-all-h3-cc.dts"
-+
-+/ {
-+	model = "Libre Computer Board ALL-H5-CC H5";
-+	compatible = "libretech,all-h5-cc-h5", "allwinner,sun50i-h5";
-+
-+	aliases {
-+		spi0 = &spi0;
-+	};
-+
-+	reg_gmac_3v3: gmac-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "gmac-3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		startup-delay-us = <5000>;
-+		enable-active-high;
-+		gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>;
-+		vin-supply = <&reg_vcc5v0>;
-+	};
-+};
-+
-+&codec {
-+	/* No line out; only onboard microphone */
-+	allwinner,audio-routing =
-+		"MIC1", "Mic",
-+		"Mic",  "MBIAS";
-+};
-+
-+/* This board has external PHY */
-+&emac {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&emac_rgmii_pins>;
-+	phy-supply = <&reg_gmac_3v3>;
-+	phy-handle = <&ext_rgmii_phy>;
-+	phy-mode = "rgmii";
-+	/delete-property/ allwinner,leds-active-low;
-+	status = "okay";
-+};
-+
-+&external_mdio {
-+	ext_rgmii_phy: ethernet-phy@1 {
-+		compatible = "ethernet-phy-ieee802.3-c22";
-+		reg = <1>;
-+	};
-+};
-+
-+&spi0  {
-+	status = "okay";
-+
-+	flash@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <50000000>;
-+	};
-+};
+@@ -1102,7 +1102,7 @@ r_ccu: clock@1f01400 {
+ 			compatible = "allwinner,sun8i-a83t-r-ccu";
+ 			reg = <0x01f01400 0x400>;
+ 			clocks = <&osc24M>, <&osc16Md512>, <&osc16M>,
+-				 <&ccu 6>;
++				 <&ccu CLK_PLL_PERIPH>;
+ 			clock-names = "hosc", "losc", "iosc", "pll-periph";
+ 			#clock-cells = <1>;
+ 			#reset-cells = <1>;
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index 84d240c39f0f..40e2f9b710cd 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -913,7 +913,7 @@ hdmi_phy: hdmi-phy@1ef0000 {
+ 			compatible = "allwinner,sun8i-r40-hdmi-phy";
+ 			reg = <0x01ef0000 0x10000>;
+ 			clocks = <&ccu CLK_BUS_HDMI1>, <&ccu CLK_HDMI_SLOW>,
+-				 <&ccu 7>, <&ccu 16>;
++				 <&ccu CLK_PLL_VIDEO0>, <&ccu CLK_PLL_VIDEO1>;
+ 			clock-names = "bus", "mod", "pll-0", "pll-1";
+ 			resets = <&ccu RST_BUS_HDMI0>;
+ 			reset-names = "phy";
+diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+index 6e68ed831015..5e9c3060aa08 100644
+--- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
++++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+@@ -559,7 +559,7 @@ external_mdio: mdio@2 {
+ 		mbus: dram-controller@1c62000 {
+ 			compatible = "allwinner,sun8i-h3-mbus";
+ 			reg = <0x01c62000 0x1000>;
+-			clocks = <&ccu 113>;
++			clocks = <&ccu CLK_MBUS>;
+ 			dma-ranges = <0x00000000 0x40000000 0xc0000000>;
+ 			#interconnect-cells = <1>;
+ 		};
+@@ -817,7 +817,7 @@ hdmi_phy: hdmi-phy@1ef0000 {
+ 			compatible = "allwinner,sun8i-h3-hdmi-phy";
+ 			reg = <0x01ef0000 0x10000>;
+ 			clocks = <&ccu CLK_BUS_HDMI>, <&ccu CLK_HDMI_DDC>,
+-				 <&ccu 6>;
++				 <&ccu CLK_PLL_VIDEO>;
+ 			clock-names = "bus", "mod", "pll-0";
+ 			resets = <&ccu RST_BUS_HDMI0>;
+ 			reset-names = "phy";
+@@ -837,7 +837,8 @@ rtc: rtc@1f00000 {
+ 		r_ccu: clock@1f01400 {
+ 			compatible = "allwinner,sun8i-h3-r-ccu";
+ 			reg = <0x01f01400 0x100>;
+-			clocks = <&osc24M>, <&rtc 0>, <&rtc 2>, <&ccu 9>;
++			clocks = <&osc24M>, <&rtc 0>, <&rtc 2>,
++				 <&ccu CLK_PLL_PERIPH0>;
+ 			clock-names = "hosc", "losc", "iosc", "pll-periph";
+ 			#clock-cells = <1>;
+ 			#reset-cells = <1>;
 -- 
 2.24.1
 
