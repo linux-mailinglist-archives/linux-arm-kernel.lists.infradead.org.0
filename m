@@ -2,78 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C42F21310C0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:45:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED1CE1310D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:50:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cPh/tsxTaFYhGjtTAy6zj6hHSEC/44NyUT0aPwvrNYE=; b=DcuOvwyRBcTLlL
-	OHj0LKC+tl61LDwoQOko70m1yi7o+KNGCKlnXE7S/Q/CThFWrlOGR/uGgGEJOKHUOlkAZ61j7FO0d
-	PDLSCMxW0KanMrWNYtbJBkqxTYFbiBb6jaPqMP+I9dl4x21OLItqfIIyqzntSuL7oGLVQnc+VisEg
-	CyCFRivtYVv2oUPx69MTN8trhDE9+PwzKKkBmljrYMl5HEJ7vW+uIb7+3mbgsT9nHoBKGoGTFxyEK
-	TVosBLTftqaLUW9yBBsGHsl3VQaWXYECuNFDu0IqMF+HlU6JVivuI0FtTuyQdrmTt6sPsdBgcnyJo
-	1OaruW3BFf/WAOnNc3/w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=D4LrMGQs/B2Zita4n0ywJKO9SkUBAaGwmLr7UxBM7LM=; b=sA+
+	v461Pa/MNBI5YgtHskfhjgFdtcnCUJoR7QbafJPicXHbo70ctkObBWo98XCDh044ft1vSn/ZqmVRu
+	NxJbVCE/9sntIGWM+OSFKXFmqIFCDHgF0xTxsqqkXYgSJv5mzgULjwljDRPTNnokIs2pW2nsMxvYE
+	ARE1ylO4QamT6EiMMl+crJysOrp6gJ0940qOA1X8urVwt774VneynTvCyfZWeKzNbRvB6a/zfY1GB
+	k9DvNQ8jRKEjqTecDDWHlRn0J9LGhq3qCzGVQSNtS8kmjUdWwEyWq6oIzw8LJU4IXAA3RxL+Xbvwl
+	65cBhm6doCChiRUv8VKjP9C9BXd9CGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioPsr-0001yO-25; Mon, 06 Jan 2020 10:45:17 +0000
-Received: from mail-sender230.upb.ro ([141.85.13.230] helo=mx.upb.ro)
+	id 1ioPy6-0005ve-P9; Mon, 06 Jan 2020 10:50:42 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioPsZ-0001hK-EH
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:45:02 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mx.upb.ro (Postfix) with ESMTP id 90BCCB561B2A;
- Mon,  6 Jan 2020 12:44:40 +0200 (EET)
-Received: from mx.upb.ro ([127.0.0.1])
- by localhost (mx.upb.ro [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 2f_c0YG_X82y; Mon,  6 Jan 2020 12:44:36 +0200 (EET)
-Received: from localhost (localhost [127.0.0.1])
- by mx.upb.ro (Postfix) with ESMTP id C8F0BB561DB0;
- Mon,  6 Jan 2020 12:44:36 +0200 (EET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 mx.upb.ro C8F0BB561DB0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=upb.ro;
- s=96342B8A-77E4-11E5-BA93-D93D0963A2DF; t=1578307476;
- bh=R84edlbhX2IqfQKOjJN7F34lvxdkxtSKyYA86SPmreg=;
- h=From:To:Date:Message-Id:MIME-Version;
- b=v3P1q9OQYJMtSVNAa4WYCSnPsX9kafPL7orPZ5xnKxCOpgdYyfTVUOZEE1m9jlEDO
- pVWsnkH5mh4QSRd5iZ4O1Wry5PIl28W2pH9hG0MwSnOrPZnit3hH81pgyCJl+PPxc4
- q/zrHXokI5zVPtJRnor5oAf3qTlAxVcocvFw9nxU=
-X-Virus-Scanned: amavisd-new at upb.ro
-Received: from mx.upb.ro ([127.0.0.1])
- by localhost (mx.upb.ro [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id z6D6gCJysMCJ; Mon,  6 Jan 2020 12:44:36 +0200 (EET)
-Received: from nemo.arh.pub.ro (arh.pub.ro [141.85.160.17])
- by mx.upb.ro (Postfix) with ESMTPSA id 244D9B561B2A;
- Mon,  6 Jan 2020 12:44:36 +0200 (EET)
-From: Radu Pirea <radu_nicolae.pirea@upb.ro>
-To: linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] i2c: cadence: Added slave support
-Date: Mon,  6 Jan 2020 12:43:36 +0200
-Message-Id: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
-X-Mailer: git-send-email 2.24.1
-MIME-Version: 1.0
+ id 1ioPwg-0003TN-Qg
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:49:18 +0000
+Received: from ramsan ([84.195.182.253]) by michel.telenet-ops.be with bizsmtp
+ id myp52100R5USYZQ06yp5RP; Mon, 06 Jan 2020 11:49:09 +0100
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1ioPwX-0001yg-KJ; Mon, 06 Jan 2020 11:49:05 +0100
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1ioPwX-0002Bp-IP; Mon, 06 Jan 2020 11:49:05 +0100
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: arm-soc <arm@kernel.org>,
+	arm-soc <soc@kernel.org>
+Subject: [GIT PULL 0/5] Renesas SoC updates for v5.6
+Date: Mon,  6 Jan 2020 11:48:52 +0100
+Message-Id: <20200106104857.8361-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_024459_818018_D8B4AB98 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200106_024915_038122_C8CC60DC 
+X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.85.13.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a02:1800:110:4:0:0:f00:18 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,477 +64,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shubhrajyoti.datta@gmail.com, Radu Pirea <radu_nicolae.pirea@upb.ro>,
- Chirag Parekh <chirag.parekh@xilinx.com>, michal.simek@xilinx.com,
- wsa@the-dreams.de
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Added support for I2C slave functionality
+	Hi arm-soc folks,
 
-Signed-off-by: Chirag Parekh <chirag.parekh@xilinx.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Radu Pirea <radu_nicolae.pirea@upb.ro>
----
+This is my first pull request for the inclusion of Renesas SoC updates
+for v5.6.
 
-Hi,
+It consists of 5 parts:
 
-This patch implements the slave interface for the i2c cadence driver. Most of the
-work has been done by the guys from Xilinx. All I have done it was to port the
-patch to the upstream kernel, test it and fix some minor issues.
+  [GIT PULL 1/5] Renesas ARM defconfig updates for v5.6
 
-Any suggestion about how can I improve this patch is welcome.
+    - Enable support for the display panel on the iwg20d board.
 
-Thanks.
+  [GIT PULL 2/5] Renesas ARM DT updates for v5.6
 
-Radu P.
+    - Touch screen support for the iwg20d board,
+    - ARM global timer support on Cortex-A9 MPCore SoCs,
+    - Miscellaneous fixes for issues detected by "make dtbs_check".
 
-Changes in v2:
-- guard id->ctrl_reg_diva_divb with IS_ENABLED(CONFIG_I2C_SLAVE) in 
-cdns_i2c_setclk function
+  [GIT PULL 3/5] Renesas ARM64 DT updates for v5.6
 
- drivers/i2c/busses/i2c-cadence.c | 320 +++++++++++++++++++++++++++++--
- 1 file changed, 309 insertions(+), 11 deletions(-)
+    - Remove now unused ARCH_R8A7796 config symbol,
+    - Rename R-Car H3 and M3-W SoC, and ULCB board DTS files to increase
+      naming consistency,
+    - Miscellaneous fixes for issues detected by "make dtbs_check",
+    - Enhance support for R-Car M3-W+,
+    - Display support for the EK874 board,
+    - Prepare for split of R-Car H3 ES1.x and ES2.0+ config symbols,
+    - Minor fixes and improvements.
 
-diff --git a/drivers/i2c/busses/i2c-cadence.c b/drivers/i2c/busses/i2c-cadence.c
-index 9d71ce15db05..fc5d6bfa6fd5 100644
---- a/drivers/i2c/busses/i2c-cadence.c
-+++ b/drivers/i2c/busses/i2c-cadence.c
-@@ -23,6 +23,7 @@
- #define CDNS_I2C_ISR_OFFSET		0x10 /* IRQ Status Register, RW */
- #define CDNS_I2C_XFER_SIZE_OFFSET	0x14 /* Transfer Size Register, RW */
- #define CDNS_I2C_TIME_OUT_OFFSET	0x1C /* Time Out Register, RW */
-+#define CDNS_I2C_IMR_OFFSET		0x20 /* IRQ Mask Register, RO */
- #define CDNS_I2C_IER_OFFSET		0x24 /* IRQ Enable Register, WO */
- #define CDNS_I2C_IDR_OFFSET		0x28 /* IRQ Disable Register, WO */
- 
-@@ -40,9 +41,17 @@
- #define CDNS_I2C_CR_DIVB_SHIFT		8
- #define CDNS_I2C_CR_DIVB_MASK		(0x3f << CDNS_I2C_CR_DIVB_SHIFT)
- 
-+#define CDNS_I2C_CR_MASTER_EN_MASK	(CDNS_I2C_CR_NEA | \
-+					 CDNS_I2C_CR_ACK_EN | \
-+					 CDNS_I2C_CR_MS)
-+
-+#define CDNS_I2C_CR_SLAVE_EN_MASK	~CDNS_I2C_CR_MASTER_EN_MASK
-+
- /* Status Register Bit mask definitions */
- #define CDNS_I2C_SR_BA		BIT(8)
-+#define CDNS_I2C_SR_TXDV	BIT(6)
- #define CDNS_I2C_SR_RXDV	BIT(5)
-+#define CDNS_I2C_SR_RXRW	BIT(3)
- 
- /*
-  * I2C Address Register Bit mask definitions
-@@ -91,6 +100,14 @@
- 					 CDNS_I2C_IXR_DATA | \
- 					 CDNS_I2C_IXR_COMP)
- 
-+#define CDNS_I2C_IXR_SLAVE_INTR_MASK	(CDNS_I2C_IXR_RX_UNF | \
-+					 CDNS_I2C_IXR_TX_OVF | \
-+					 CDNS_I2C_IXR_RX_OVF | \
-+					 CDNS_I2C_IXR_TO | \
-+					 CDNS_I2C_IXR_NACK | \
-+					 CDNS_I2C_IXR_DATA | \
-+					 CDNS_I2C_IXR_COMP)
-+
- #define CDNS_I2C_TIMEOUT		msecs_to_jiffies(1000)
- /* timeout for pm runtime autosuspend */
- #define CNDS_I2C_PM_TIMEOUT		1000	/* ms */
-@@ -117,6 +134,32 @@
- #define cdns_i2c_readreg(offset)       readl_relaxed(id->membase + offset)
- #define cdns_i2c_writereg(val, offset) writel_relaxed(val, id->membase + offset)
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+/**
-+ * enum cdns_i2c_mode - I2C Controller current operating mode
-+ *
-+ * @CDNS_I2C_MODE_SLAVE:       I2C controller operating in slave mode
-+ * @CDNS_I2C_MODE_MASTER:      I2C Controller operating in master mode
-+ */
-+enum cdns_i2c_mode {
-+	CDNS_I2C_MODE_SLAVE,
-+	CDNS_I2C_MODE_MASTER,
-+};
-+
-+/**
-+ * enum cdns_i2c_slave_mode - Slave state when I2C is operating in slave mode
-+ *
-+ * @CDNS_I2C_SLAVE_STATE_IDLE: I2C slave idle
-+ * @CDNS_I2C_SLAVE_STATE_SEND: I2C slave sending data to master
-+ * @CDNS_I2C_SLAVE_STATE_RECV: I2C slave receiving data from master
-+ */
-+enum cdns_i2c_slave_state {
-+	CDNS_I2C_SLAVE_STATE_IDLE,
-+	CDNS_I2C_SLAVE_STATE_SEND,
-+	CDNS_I2C_SLAVE_STATE_RECV,
-+};
-+#endif
-+
- /**
-  * struct cdns_i2c - I2C device private data structure
-  *
-@@ -138,6 +181,10 @@
-  * @clk:		Pointer to struct clk
-  * @clk_rate_change_nb:	Notifier block for clock rate changes
-  * @quirks:		flag for broken hold bit usage in r1p10
-+ * @ctrl_reg_diva_divb: value of fields DIV_A and DIV_B from CR register
-+ * @slave:		Registered slave instance.
-+ * @dev_mode:		I2C operating role(master/slave).
-+ * @slave_state:	I2C Slave state(idle/read/write).
-  */
- struct cdns_i2c {
- 	struct device		*dev;
-@@ -158,6 +205,12 @@ struct cdns_i2c {
- 	struct clk *clk;
- 	struct notifier_block clk_rate_change_nb;
- 	u32 quirks;
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	u16 ctrl_reg_diva_divb;
-+	struct i2c_client *slave;
-+	enum cdns_i2c_mode dev_mode;
-+	enum cdns_i2c_slave_state slave_state;
-+#endif
- };
- 
- struct cdns_platform_data {
-@@ -186,17 +239,155 @@ static inline bool cdns_is_holdquirk(struct cdns_i2c *id, bool hold_wrkaround)
- 		(id->curr_recv_count == CDNS_I2C_FIFO_DEPTH + 1));
- }
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static void cdns_i2c_set_mode(enum cdns_i2c_mode mode, struct cdns_i2c *id)
-+{
-+	/* Disable all interrupts */
-+	cdns_i2c_writereg(CDNS_I2C_IXR_ALL_INTR_MASK, CDNS_I2C_IDR_OFFSET);
-+
-+	/* Clear FIFO and transfer size */
-+	cdns_i2c_writereg(CDNS_I2C_CR_CLR_FIFO, CDNS_I2C_CR_OFFSET);
-+
-+	/* Update device mode and state */
-+	id->dev_mode = mode;
-+	id->slave_state = CDNS_I2C_SLAVE_STATE_IDLE;
-+
-+	switch (mode) {
-+	case CDNS_I2C_MODE_MASTER:
-+		/* Enable i2c master */
-+		cdns_i2c_writereg(id->ctrl_reg_diva_divb |
-+				  CDNS_I2C_CR_MASTER_EN_MASK,
-+				  CDNS_I2C_CR_OFFSET);
-+		/*
-+		 * This delay is needed to give the IP some time to switch to
-+		 * the master mode. With lower values(like 110 us) i2cdetect
-+		 * will not detect any slave and without this delay, the IP will
-+		 * trigger a timeout interrupt.
-+		 */
-+		usleep_range(115, 125);
-+		break;
-+	case CDNS_I2C_MODE_SLAVE:
-+		/* Enable i2c slave */
-+		cdns_i2c_writereg(id->ctrl_reg_diva_divb &
-+				  CDNS_I2C_CR_SLAVE_EN_MASK,
-+				  CDNS_I2C_CR_OFFSET);
-+
-+		/* Setting slave address */
-+		cdns_i2c_writereg(id->slave->addr & CDNS_I2C_ADDR_MASK,
-+				  CDNS_I2C_ADDR_OFFSET);
-+
-+		/* Enable slave send/receive interrupts */
-+		cdns_i2c_writereg(CDNS_I2C_IXR_SLAVE_INTR_MASK,
-+				  CDNS_I2C_IER_OFFSET);
-+		break;
-+	}
-+}
-+
-+static void cdns_i2c_slave_rcv_data(struct cdns_i2c *id)
-+{
-+	u8 bytes;
-+	unsigned char data;
-+
-+	/* Prepare backend for data reception */
-+	if (id->slave_state == CDNS_I2C_SLAVE_STATE_IDLE) {
-+		id->slave_state = CDNS_I2C_SLAVE_STATE_RECV;
-+		i2c_slave_event(id->slave, I2C_SLAVE_WRITE_REQUESTED, NULL);
-+	}
-+
-+	/* Fetch number of bytes to receive */
-+	bytes = cdns_i2c_readreg(CDNS_I2C_XFER_SIZE_OFFSET);
-+
-+	/* Read data and send to backend */
-+	while (bytes--) {
-+		data = cdns_i2c_readreg(CDNS_I2C_DATA_OFFSET);
-+		i2c_slave_event(id->slave, I2C_SLAVE_WRITE_RECEIVED, &data);
-+	}
-+}
-+
-+static void cdns_i2c_slave_send_data(struct cdns_i2c *id)
-+{
-+	u8 data;
-+
-+	/* Prepare backend for data transmission */
-+	if (id->slave_state == CDNS_I2C_SLAVE_STATE_IDLE) {
-+		id->slave_state = CDNS_I2C_SLAVE_STATE_SEND;
-+		i2c_slave_event(id->slave, I2C_SLAVE_READ_REQUESTED, &data);
-+	} else {
-+		i2c_slave_event(id->slave, I2C_SLAVE_READ_PROCESSED, &data);
-+	}
-+
-+	/* Send data over bus */
-+	cdns_i2c_writereg(data, CDNS_I2C_DATA_OFFSET);
-+}
-+
- /**
-- * cdns_i2c_isr - Interrupt handler for the I2C device
-- * @irq:	irq number for the I2C device
-- * @ptr:	void pointer to cdns_i2c structure
-+ * cdns_i2c_slave_isr - Interrupt handler for the I2C device in slave role
-+ * @ptr:       Pointer to I2C device private data
-+ *
-+ * This function handles the data interrupt and transfer complete interrupt of
-+ * the I2C device in slave role.
-+ *
-+ * Return: IRQ_HANDLED always
-+ */
-+static irqreturn_t cdns_i2c_slave_isr(void *ptr)
-+{
-+	struct cdns_i2c *id = ptr;
-+	unsigned int isr_status, i2c_status;
-+
-+	/* Fetch the interrupt status */
-+	isr_status = cdns_i2c_readreg(CDNS_I2C_ISR_OFFSET);
-+	cdns_i2c_writereg(isr_status, CDNS_I2C_ISR_OFFSET);
-+
-+	/* Ignore masked interrupts */
-+	isr_status &= ~cdns_i2c_readreg(CDNS_I2C_IMR_OFFSET);
-+
-+	/* Fetch transfer mode (send/receive) */
-+	i2c_status = cdns_i2c_readreg(CDNS_I2C_SR_OFFSET);
-+
-+	/* Handle data send/receive */
-+	if (i2c_status & CDNS_I2C_SR_RXRW) {
-+		/* Send data to master */
-+		if (isr_status & CDNS_I2C_IXR_DATA)
-+			cdns_i2c_slave_send_data(id);
-+
-+		if (isr_status & CDNS_I2C_IXR_COMP) {
-+			id->slave_state = CDNS_I2C_SLAVE_STATE_IDLE;
-+			i2c_slave_event(id->slave, I2C_SLAVE_STOP, NULL);
-+		}
-+	} else {
-+		/* Receive data from master */
-+		if (isr_status & CDNS_I2C_IXR_DATA)
-+			cdns_i2c_slave_rcv_data(id);
-+
-+		if (isr_status & CDNS_I2C_IXR_COMP) {
-+			cdns_i2c_slave_rcv_data(id);
-+			id->slave_state = CDNS_I2C_SLAVE_STATE_IDLE;
-+			i2c_slave_event(id->slave, I2C_SLAVE_STOP, NULL);
-+		}
-+	}
-+
-+	/* Master indicated xfer stop or fifo underflow/overflow */
-+	if (isr_status & (CDNS_I2C_IXR_NACK | CDNS_I2C_IXR_RX_OVF |
-+			  CDNS_I2C_IXR_RX_UNF | CDNS_I2C_IXR_TX_OVF)) {
-+		id->slave_state = CDNS_I2C_SLAVE_STATE_IDLE;
-+		i2c_slave_event(id->slave, I2C_SLAVE_STOP, NULL);
-+		cdns_i2c_writereg(CDNS_I2C_CR_CLR_FIFO, CDNS_I2C_CR_OFFSET);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+#endif
-+
-+/**
-+ * cdns_i2c_master_isr - Interrupt handler for the I2C device in master role
-+ * @ptr:       Pointer to I2C device private data
-  *
-  * This function handles the data interrupt, transfer complete interrupt and
-- * the error interrupts of the I2C device.
-+ * the error interrupts of the I2C device in master role.
-  *
-  * Return: IRQ_HANDLED always
-  */
--static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
-+static irqreturn_t cdns_i2c_master_isr(void *ptr)
- {
- 	unsigned int isr_status, avail_bytes, updatetx;
- 	unsigned int bytes_to_send;
-@@ -352,6 +543,27 @@ static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
- 	return status;
- }
- 
-+/**
-+ * cdns_i2c_isr - Interrupt handler for the I2C device
-+ * @irq:	irq number for the I2C device
-+ * @ptr:	void pointer to cdns_i2c structure
-+ *
-+ * This function passes the control to slave/master based on current role of
-+ * i2c controller.
-+ *
-+ * Return: IRQ_HANDLED always
-+ */
-+static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
-+{
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	struct cdns_i2c *id = ptr;
-+
-+	if (id->dev_mode == CDNS_I2C_MODE_SLAVE)
-+		return cdns_i2c_slave_isr(ptr);
-+#endif
-+	return cdns_i2c_master_isr(ptr);
-+}
-+
- /**
-  * cdns_i2c_mrecv - Prepare and start a master receive operation
-  * @id:		pointer to the i2c device structure
-@@ -572,10 +784,28 @@ static int cdns_i2c_master_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
- 	u32 reg;
- 	struct cdns_i2c *id = adap->algo_data;
- 	bool hold_quirk;
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	bool change_role = false;
-+#endif
- 
- 	ret = pm_runtime_get_sync(id->dev);
- 	if (ret < 0)
- 		return ret;
-+
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	/* Check i2c operating mode and switch if possible */
-+	if (id->dev_mode == CDNS_I2C_MODE_SLAVE) {
-+		if (id->slave_state != CDNS_I2C_SLAVE_STATE_IDLE)
-+			return -EAGAIN;
-+
-+		/* Set mode to master */
-+		cdns_i2c_set_mode(CDNS_I2C_MODE_MASTER, id);
-+
-+		/* Mark flag to change role once xfer is completed */
-+		change_role = true;
-+	}
-+#endif
-+
- 	/* Check if the bus is free */
- 	if (cdns_i2c_readreg(CDNS_I2C_SR_OFFSET) & CDNS_I2C_SR_BA) {
- 		ret = -EAGAIN;
-@@ -634,7 +864,15 @@ static int cdns_i2c_master_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
- 	}
- 
- 	ret = num;
-+
- out:
-+
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	/* Switch i2c mode to slave */
-+	if (change_role)
-+		cdns_i2c_set_mode(CDNS_I2C_MODE_SLAVE, id);
-+#endif
-+
- 	pm_runtime_mark_last_busy(id->dev);
- 	pm_runtime_put_autosuspend(id->dev);
- 	return ret;
-@@ -648,14 +886,67 @@ static int cdns_i2c_master_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
-  */
- static u32 cdns_i2c_func(struct i2c_adapter *adap)
- {
--	return I2C_FUNC_I2C | I2C_FUNC_10BIT_ADDR |
--		(I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK) |
--		I2C_FUNC_SMBUS_BLOCK_DATA;
-+	u32 func = I2C_FUNC_I2C | I2C_FUNC_10BIT_ADDR |
-+			(I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK) |
-+			I2C_FUNC_SMBUS_BLOCK_DATA;
-+
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	func |= I2C_FUNC_SLAVE;
-+#endif
-+
-+	return func;
- }
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static int cdns_reg_slave(struct i2c_client *slave)
-+{
-+	int ret;
-+	struct cdns_i2c *id = container_of(slave->adapter, struct cdns_i2c,
-+									adap);
-+
-+	if (id->slave)
-+		return -EBUSY;
-+
-+	if (slave->flags & I2C_CLIENT_TEN)
-+		return -EAFNOSUPPORT;
-+
-+	ret = pm_runtime_get_sync(id->dev);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* Store slave information */
-+	id->slave = slave;
-+
-+	/* Enable I2C slave */
-+	cdns_i2c_set_mode(CDNS_I2C_MODE_SLAVE, id);
-+
-+	return 0;
-+}
-+
-+static int cdns_unreg_slave(struct i2c_client *slave)
-+{
-+	struct cdns_i2c *id = container_of(slave->adapter, struct cdns_i2c,
-+									adap);
-+
-+	pm_runtime_put(id->dev);
-+
-+	/* Remove slave information */
-+	id->slave = NULL;
-+
-+	/* Enable I2C master */
-+	cdns_i2c_set_mode(CDNS_I2C_MODE_MASTER, id);
-+
-+	return 0;
-+}
-+#endif
-+
- static const struct i2c_algorithm cdns_i2c_algo = {
- 	.master_xfer	= cdns_i2c_master_xfer,
- 	.functionality	= cdns_i2c_func,
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	.reg_slave	= cdns_reg_slave,
-+	.unreg_slave	= cdns_unreg_slave,
-+#endif
- };
- 
- /**
-@@ -750,7 +1041,10 @@ static int cdns_i2c_setclk(unsigned long clk_in, struct cdns_i2c *id)
- 	ctrl_reg |= ((div_a << CDNS_I2C_CR_DIVA_SHIFT) |
- 			(div_b << CDNS_I2C_CR_DIVB_SHIFT));
- 	cdns_i2c_writereg(ctrl_reg, CDNS_I2C_CR_OFFSET);
--
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	id->ctrl_reg_diva_divb = ctrl_reg & (CDNS_I2C_CR_DIVA_MASK |
-+				 CDNS_I2C_CR_DIVB_MASK);
-+#endif
- 	return 0;
- }
- 
-@@ -943,8 +1237,12 @@ static int cdns_i2c_probe(struct platform_device *pdev)
- 	if (ret || (id->i2c_clk > CDNS_I2C_SPEED_MAX))
- 		id->i2c_clk = CDNS_I2C_SPEED_DEFAULT;
- 
--	cdns_i2c_writereg(CDNS_I2C_CR_ACK_EN | CDNS_I2C_CR_NEA | CDNS_I2C_CR_MS,
--			  CDNS_I2C_CR_OFFSET);
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	/* Set initial mode to master */
-+	id->dev_mode = CDNS_I2C_MODE_MASTER;
-+	id->slave_state = CDNS_I2C_SLAVE_STATE_IDLE;
-+#endif
-+	cdns_i2c_writereg(CDNS_I2C_CR_MASTER_EN_MASK, CDNS_I2C_CR_OFFSET);
- 
- 	ret = cdns_i2c_setclk(id->input_clk, id);
- 	if (ret) {
--- 
-2.24.1
+  [GIT PULL 4/5] Renesas driver updates for v5.6
 
+    - Remove now unused ARCH_R8A7796 config symbol,
+    - Fix a sparse warning,
+    - Add split R-Car H3 ES1.x and ES2.0+ config symbols.
+
+  [GIT PULL 5/5] Renesas DT binding updates for v5.6
+
+    - Document TMU and CAN(FD) support for R-Car RZ/G2N.
+
+Thanks for pulling!
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
