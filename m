@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2D64130DBE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 07:55:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26A0F130DD7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 08:09:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fnoZjZtLEPE7i34+fdtse5MbUhSS/ZOgidQ9APrpMnM=; b=V0NgBqStJ0uOWF
-	R2dbpdM4Pl6DsqLrgdga2SOpaOaDhaONOR7Cwhlp8iETMpdLsBccl9aiMakkMnwsA5w5bhaLE9NXx
-	3t+S9HqMJ/ZxWuLIQSEqhItbdmpTRd435EWXy26KMlMFyy7qayoUyycySvIAByPmAaGvkJQG8FB7+
-	EaBwJmuKCdRxIhfA9A6u5aiciySesIR5mkWpnHaTGhiP13UGGljd2EkF9if8ESxW4FVz5cmRovw08
-	xn7hgMSqinsiAyz0wsbADkNrG4obJCdznAjI641b858BQu03hGKy1cuanRHrnEMvnD7Q4/G5hZTor
-	EU1ixwXES9wiv7ZJ52mg==;
+	List-Owner; bh=zDYt/GeSuNPGy/5HG12jtaWQbphm/nfmGxiZLPFcmCw=; b=gwc6hEXI5Z8Iip
+	nedgvZhA50LCMFQvw6gdVgCFXw8pJHHD147IxYCja6n7KTrtBLm3MTj4UsNjsXmpVdjA/BC5mqgK3
+	tZQK9h2q/wDUAXs91SxSbEpL7S7lCrS7M+fzHDia/4H1Gv+ziQgZVagI+M+5UK+hK3RtqbF9UWcsd
+	qBDJ7zEdfFZ4GbStLmgEhwEt4ROioNTOVzmEdMHJwxX9lGYBKrpF416WXnB9tvl4Dc9/xi9ocNHQB
+	3Fjq2/sFGCVnP2smxXew7oBPeb9r7ynsWM33pusmCJFZjnrhFY5PABHHd36peXaR9ylWnpF226RrW
+	t4cpb7eVja3LzkEznizw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioMIE-0006LM-Bo; Mon, 06 Jan 2020 06:55:14 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ioMVr-0002WP-Pt; Mon, 06 Jan 2020 07:09:19 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioMI6-0005sQ-4h
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 06:55:07 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q127so26440339pga.4
+ id 1ioMVl-0002W3-6C
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 07:09:14 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id t101so7394364pjb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 05 Jan 2020 22:55:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Sun, 05 Jan 2020 23:09:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=kMjWw4ObQXa5tU7/4BC/Kf0fTl6f93HTAnRhQj6fbYQ=;
- b=rbiZz4bfFgf1jTPa3LFYJTALJqVunQJkyqIBz6qTTRJ6IXYmBRVMVnbtv89C27cCMK
- GbnyT86UTVdO5nGt2TPC3Yd7V5jLEErJRNJKZa9DG/UBSMW3BqhhyY78sxr0Mogby9cO
- EMZ2mEw5bnYmr8GbTYEPl5KDiQOfgOBdoLrsZOrDrM4rIpIRlxcDX1uLdxRCId7WIQle
- UGdj1rzTvzVdEwVSNUy8QcUmnfLjoBUZ0q5fo4bfYF/JhyVJR8Qi37DnKQCifiytQ7gI
- L7L1jnfWUoEIkd1cmkhZM1QLeVS7IWAcn218pivk4ZSk4LyFAefJe1aMUFfiGWRtlXOr
- 1ebw==
+ bh=nWk0OuHhu+M1/eNpjWo6RnDHi691B44p0xwgqH5nuoo=;
+ b=Kdi2oGktRrF/QR3ElQpGSTBJi0vYvFbRyPlfdWJEotdmLi1WP8OTz7iQDDvgFKkJzS
+ bVcDc8a4wzus0v+FoQfXNbkgqnlW3YOyEh3KY0xieHFBcS1SsHIm510zS/GObOoEc4lE
+ ZgjNP652xQaewQUWS9y8t5M/ptJtEt13tiFQL5LI6BKVpr+SjoeMEgyTbvz2vMlaZApq
+ QLOMfoZFWLmMXRyM8mzZiAp23kdUBb3DNCWo9OnNJmZ3/u/5P+dJB+glLwhqwcP3pCz6
+ P/f8A7ymJcJ8rAMQpWaJfCzf8uBgazwOkBHxYSvQeA6iD43rQyb/rq6TJsTe9XBr54QV
+ 4FbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kMjWw4ObQXa5tU7/4BC/Kf0fTl6f93HTAnRhQj6fbYQ=;
- b=cNNBPBSSQGAKoTj3ShRUYvASz7+de0oUFHTtmooyeybjC0ly3FtNfRQMqJ5Laa7CwI
- irMdrFawf7NA9ya/cjENkyR19j5B1wSFXCLjk+1WOdCXZ3EUqIMrrthQySVqeRhj5KCQ
- hPBfA1BUN0JB1pJcKN2kYPvTUptWbOGEYSr6FOZhjBGoXIEPx0cG6CTTZnnWXfi+k+cs
- Gg4HI5EcwkepyVMhzxkPpKSxvfNaD7acpXS53EX6gbWjzpsvxYil0QKEFQfeKVO9eWos
- xGJ61SUgoCIxGqnn41rMxEiw+4qYsoI9R0DxbL4H/xn6ZLVNNUc+y2HjV1IS35YnVjt1
- Y3bA==
-X-Gm-Message-State: APjAAAV5sBe5vlVA1lRO9dN806lbq+QztePcluCqjNXimnzh0GU+nl/1
- nnIqW+i+SabdiGyNwCW8CPcHEw==
-X-Google-Smtp-Source: APXvYqzDrb4T5b5fxDDS/CxIRlUlD59ItmCXmCwsdQJKzsrikz4XhCQmY7mMb4+ZrEIymAreV3RhQA==
-X-Received: by 2002:a65:56c9:: with SMTP id w9mr105330256pgs.296.1578293705329; 
- Sun, 05 Jan 2020 22:55:05 -0800 (PST)
-Received: from localhost ([122.172.26.121])
- by smtp.gmail.com with ESMTPSA id l8sm22852583pjy.24.2020.01.05.22.55.04
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 05 Jan 2020 22:55:04 -0800 (PST)
-Date: Mon, 6 Jan 2020 12:25:02 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: chenqiwu <qiwuchen55@gmail.com>
-Subject: Re: [PATCH] cpufreq: s3c: avoid use after free issue in
- xxx_cpufreq_reboot_notifier_evt()
-Message-ID: <20200106065502.bimpddvrvmfm2f5f@vireshk-i7>
-References: <1577515439-14477-1-git-send-email-qiwuchen55@gmail.com>
- <20200106054811.uduf2qdn5ecvbwrc@vireshk-i7>
- <20200106065249.GA16392@cqw-OptiPlex-7050>
+ bh=nWk0OuHhu+M1/eNpjWo6RnDHi691B44p0xwgqH5nuoo=;
+ b=rhDBXsduaWcO0jn+9ktHpgo1YCDncPMDCj0xlIMUDF3mkRjUIkSSUVwLi2Viwieigj
+ X0x2qR2gvqiTTHLtHSQ1xjnILy5pG/RoLyVh4quZ13eLlmm9Gc0IWBC9PVNSXmDIVzWt
+ z2rMLUFvC6GFE8ZcAWl6bxgweOsLrs68XsKa+Nwlcv0niLwIaLJQIFXxsYkpH9HpxX25
+ 4K7m4oweNks+bRXQcK4/qt9Y9xb+xSpQpm9RoHSroBiSyKEGhs+ovocLuKMQcHI8N662
+ avjAZwNQSWahqDZ5wdQt7Dz6psRAD8pZivSXlV2b3AJ6+9pgR8PqUdqnO5zGcXHpkS2C
+ vruQ==
+X-Gm-Message-State: APjAAAUheNbsiGgKuRn4jhxxtW9ADPh3wj18Bf3UIrOccwQ6vH7hSSZU
+ yJ5XqNm+Hx/Pmr5lD87Orb8=
+X-Google-Smtp-Source: APXvYqznxCjoYvbyYBBoCMO3neBFVA0lu5RvGuWfHnR001FH2Q+kZHQjC/k26NqYA/UGjFxQhVaG1A==
+X-Received: by 2002:a17:90b:438e:: with SMTP id
+ in14mr40333971pjb.83.1578294552600; 
+ Sun, 05 Jan 2020 23:09:12 -0800 (PST)
+Received: from localhost ([43.224.245.179])
+ by smtp.gmail.com with ESMTPSA id 18sm69300092pfj.3.2020.01.05.23.09.11
+ (version=TLS1_2 cipher=AES128-SHA bits=128/128);
+ Sun, 05 Jan 2020 23:09:12 -0800 (PST)
+Date: Mon, 6 Jan 2020 15:09:10 +0800
+From: chenqiwu <qiwuchen55@gmail.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v2] cpufreq: brcmstb-avs-cpufreq: avoid potential stuck
+ and UAF risk
+Message-ID: <20200106070910.GA17897@cqw-OptiPlex-7050>
+References: <1578228650-17157-1-git-send-email-qiwuchen55@gmail.com>
+ <20200106055637.zq4icl5klg4wpvkx@vireshk-i7>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200106065249.GA16392@cqw-OptiPlex-7050>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20200106055637.zq4icl5klg4wpvkx@vireshk-i7>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_225506_236547_1DB826C9 
-X-CRM114-Status: GOOD (  25.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200105_230913_256934_657943AC 
+X-CRM114-Status: GOOD (  24.85  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (qiwuchen55[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (qiwuchen55[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,118 +101,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, krzk@kernel.org, kgene@kernel.org,
+Cc: f.fainelli@gmail.com, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
+ bcm-kernel-feedback-list@broadcom.com, mmayer@broadcom.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06-01-20, 14:52, chenqiwu wrote:
-> On Mon, Jan 06, 2020 at 11:18:11AM +0530, Viresh Kumar wrote:
-> > On 28-12-19, 14:43, qiwuchen55@gmail.com wrote:
-> > > From: chenqiwu <chenqiwu@xiaomi.com>
-> > > 
-> > > There is a potential UAF issue in xxx_cpufreq_reboot_notifier_evt() that
-> > > the cpufreq policy of cpu0 has been released before using it. So we should
-> > > make a judgement to avoid it.
+On Mon, Jan 06, 2020 at 11:26:37AM +0530, Viresh Kumar wrote:
+> On 05-01-20, 20:50, qiwuchen55@gmail.com wrote:
+> > From: chenqiwu <chenqiwu@xiaomi.com>
 > > 
-> > There is no UAF problem here, but that we do cpufreq_cpu_get() with a
-> > corresponding cpufreq_cpu_put().
+> > brcm_avs_cpufreq_get() calls cpufreq_cpu_get() to get cpufreq policy,
+> > meanwhile, it also increments the kobject reference count of policy to
+> > mark it busy. However, a corresponding call of cpufreq_cpu_put() is
+> > ignored to decrement the kobject reference count back, which may lead
+> > to a potential stuck risk that percpu cpuhp thread deadly waits for
+> > dropping of kobject refcount when percpu cpufreq policy free.
 > > 
-> > > Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
-> > > ---
-> > >  drivers/cpufreq/s3c2416-cpufreq.c | 11 ++++++++++-
-> > >  drivers/cpufreq/s5pv210-cpufreq.c | 10 +++++++++-
-> > >  2 files changed, 19 insertions(+), 2 deletions(-)
-> > > 
-> > > diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
-> > > index 1069103..0f576ba 100644
-> > > --- a/drivers/cpufreq/s3c2416-cpufreq.c
-> > > +++ b/drivers/cpufreq/s3c2416-cpufreq.c
-> > > @@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
-> > >  {
-> > >  	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
-> > >  	int ret;
-> > > +	struct cpufreq_policy policy;
-> > >  
-> > >  	mutex_lock(&cpufreq_lock);
-> > >  
-> > > @@ -318,7 +319,15 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
-> > >  	 */
-> > >  	if (s3c_freq->is_dvs) {
-> > >  		pr_debug("cpufreq: leave dvs on reboot\n");
-> > > -		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
-> > > +
-> > > +		memset(&policy, 0, sizeof(policy));
-> > > +		ret = cpufreq_get_policy(&policy, 0);
-> > > +		if (ret < 0) {
-> > > +			pr_debug("cpufreq: get no policy for cpu0\n");
-> > > +			return NOTIFY_BAD;
-> > > +		}
-> > > +
+> > The call trace of stuck risk could be:
+> > cpufreq_online()  //If cpufreq online failed, goto out_free_policy.
+> >     ->cpufreq_policy_free()     //Do cpufreq_policy free.
+> >         ->cpufreq_policy_put_kobj()
+> >             ->kobject_put()       //Skip if policy kfref count is not 1.
+> >                 ->cpufreq_sysfs_release()
+> >                     ->complete()  //Complete policy->kobj_unregister.
+> >                 ->wait_for_completion() //Wait for policy->kobj_unregister.
 > > 
-> > This doesn't make sense to me, why don't you do cpufreq_cpu_get() and
-> > put() instead ?
-> >
-> Hi viresh,
-> I can't explain which approach is better, but I think both approaches are
-> effective for the situation.
-
-The second one is better as it doesn't make copy of the policy, but
-rather just increments the counter.
-
-> By the way, there is a possibility that the cpu0 hotplug thread will call
-> cpufreq_policy_free() to free cpufreq policy if cpu0 hotplug failed.
-> I think there should be a judgement to avoid this UAF risk if necessary,
-> or we just do panic if cpu0's cpufreq policy is free.
-
-I think there are enough locks in place to avoid such issues and they
-shouldn't happen.
-
-> > > +		ret = cpufreq_driver_target(&policy, FREQ_SLEEP, 0);
-> > >  		if (ret < 0)
-> > >  			return NOTIFY_BAD;
-> > >  	}
-> > > diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
-> > > index 5d10030..d99b4b1 100644
-> > > --- a/drivers/cpufreq/s5pv210-cpufreq.c
-> > > +++ b/drivers/cpufreq/s5pv210-cpufreq.c
-> > > @@ -555,8 +555,16 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
-> > >  						 unsigned long event, void *ptr)
-> > >  {
-> > >  	int ret;
-> > > +	struct cpufreq_policy *policy;
-> > >  
-> > > -	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
-> > > +	policy = cpufreq_cpu_get(0);
-> > > +	if (!policy) {
-> > > +		pr_debug("cpufreq: get no policy for cpu0\n");
-> > > +		return NOTIFY_BAD;
-> > > +	}
-> > > +
-> > > +	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
-> > > +	cpufreq_cpu_put(policy);
+> > A simple way to avoid this stuck risk is use cpufreq_cpu_get_raw()
+> > instead of cpufreq_cpu_get(), since this can be easily exercised by
+> > attempting to force an unbind of the CPUfreq driver.
 > > 
-> > Like what is done here.
+> > Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
+> > ---
+> >  drivers/cpufreq/brcmstb-avs-cpufreq.c | 11 +++++++++--
+> >  1 file changed, 9 insertions(+), 2 deletions(-)
 > > 
-> > Also add a blank line here.
-> > 
-> > >  	if (ret < 0)
-> > >  		return NOTIFY_BAD;
-> > >  
-> > > -- 
-> > > 1.9.1
-> > 
-> > -- 
-> > viresh
+> > diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+> > index 77b0e5d..6d2bf5c 100644
+> > --- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
+> > +++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+> > @@ -452,8 +452,15 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
+> >  
+> >  static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
+> >  {
+> > -	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
+> > -	struct private_data *priv = policy->driver_data;
+> > +	struct cpufreq_policy *policy = cpufreq_cpu_get_raw(cpu);
+> > +	struct private_data *priv;
+> > +
+> > +	if (!policy)
+> > +		return 0;
+> > +
 > 
-> Thanks for your review!
-> Qiwu
+> Since we always reach here after the cpufreq driver is registered, we
+> may not need to check the policy pointer at all.
+> 
+> > +	priv = policy->driver_data;
+> > +	if (!priv || !priv->base)
+> > +		return 0;
+> 
+> Can there be a case where priv or priv->base be set to NULL for this
+> driver ? I don't think so and so this may not be required.
+>
 
--- 
-viresh
+Hi viresh,
+There could be a case as the description of this patch besides
+brcm_avs_driver unloads. Since cpufreq_policy_free() will free
+the mm of cpufreq_policy at the last moment.
+
+Thanks!
+Qiwu
+
+> >  
+> >  	return brcm_avs_get_frequency(priv->base);
+> >  }
+> > -- 
+> > 1.9.1
+> 
+> -- 
+> viresh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
