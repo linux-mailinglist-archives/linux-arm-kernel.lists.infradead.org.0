@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD3F130EFE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:56:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87D4D130F03
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:58:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PM0NTysI51IsIHE6Kh5x05DAs1oNnMyKth0YO+MiCRk=; b=WylW6QZs91NrleySCQEf+po/c
-	r75x8oki8RCdDhNu+pLIhjp0nGSaeJZXQ19mxBANedd7/lLv6WE2YAelf+NixT42xj2Wt7rmrnSY7
-	he3G3fRWRFBcK9oPyNPKbXrgp4S3zHcSX+z/V/v2BXcCM/dR6Wyoahtg49d9jb59YlP1rShAHh/f4
-	QElwxi/PBSWebuSys4mfy9+uKi4Klh4f15TeEOOX69se7PnFJnlVcuv3qo/M1rfRLKt0HwzQmZSvJ
-	p/sYpFvHZX9/c+j4EoiG2BzLR9OUxaFDA+gRFLxJ3dbT0jhc2N2pvaXScOm7DFKfXuZ2oGZ3UTI6J
-	IGLrzQqzw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lj/qObLtM/EnSkF4rpIyH17B2lO1L5omSkAP3eGthOA=; b=Bk4WimOfSqIiNq
+	UDnN1/hGPCtgeECoWc61iVKGTgFAGJlKoCBxc8fuyPFQetKLu2VYXKGE0OkWRM+809IpMJ7vDRht5
+	TsWa3TkEXfeR1bYaJ54o2QBmDPjc3Hu5DmVw1Hnjy8WZP/HrwrLATMQNy2o7AZWgjZzczh2U9dm9l
+	ldOjsE6R/BMpCOl+qwWfZlG1lxd75GjhNYBlVWJM+G/4QfomlqWnRW6PUVXSNRoCAu/15AVSffH+R
+	6M3knjTgKfjWp/sVdhaMwzMmsXRh2AChqSwDTfgKRhLOVMkL+Tx50Zaus0eGSxcZrflViCuLTWxy4
+	K8TRuXvXwCOQg6ZzCLdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioOBT-0001HV-0d; Mon, 06 Jan 2020 08:56:23 +0000
+	id 1ioODg-0001dp-18; Mon, 06 Jan 2020 08:58:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioOBL-0001H8-W7
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:56:17 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
+ id 1ioODY-0001dT-B4
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:58:33 +0000
+Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D55420848;
- Mon,  6 Jan 2020 08:56:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DBAB020848;
+ Mon,  6 Jan 2020 08:58:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578300975;
- bh=kpTNuRYCk4/MMIP5zsVxzA3Jsb92H4wI/aZ9O1ah6CA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sC1b4Pa8E10HnPtzFhJ0HR0m4DD2dXzD4mV0T3hAdPMy2isKO4ODDPj3N1qr0c9Pf
- iMNr5g1sSbA5IToBZJV456FiODXa7ch4p0swlbkiu+mXKT1O2/SXrD4d6Spz1Ol0+Y
- 4JPUwFq/QYR0ztb7n+OL4hlt8E3VwEbzqAE8VMz0=
-Date: Mon, 6 Jan 2020 09:56:13 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH v2] ARM: dts: sun8i: R40: Add SPI controllers nodes and
- pinmuxes
-Message-ID: <20200106085613.mxe33t7eklj3aeld@gilmour.lan>
-References: <20200106003849.16666-1-andre.przywara@arm.com>
+ s=default; t=1578301112;
+ bh=PM6tQDY3S9hYgHrxWz2QJsPaSBxxGwz5ukhamBiZ/qU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=j1jGC9mWPBlAwTAZNn7b3Wn0Po4MmwWAuEDHA9AF5WkvLC5zXBn6uEq4PO6FUIr3b
+ CniQuTpixC861XPSnH2ujOWgpikNCM4PY73a90KCxXGANWqnNfckbsniUt9eeSk8IA
+ bI7s670ACfE7GqyW/ghEG/Blj0rkZb8ecI4ajKgY=
+Received: by wens.tw (Postfix, from userid 1000)
+ id 3712E5FC12; Mon,  6 Jan 2020 16:58:29 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] arm64: dts: allwinner: h5: Add Libre Computer ALL-H5-CC H5
+ board
+Date: Mon,  6 Jan 2020 16:58:20 +0800
+Message-Id: <20200106085820.7082-1-wens@kernel.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <20200106003849.16666-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_005616_050718_D21BED5B 
-X-CRM114-Status: GOOD (  14.70  )
+X-CRM114-CacheID: sfid-20200106_005832_425623_DBF0ED61 
+X-CRM114-Status: GOOD (  16.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,67 +77,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============8978153384894084008=="
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Chen-Yu Tsai <wens@csie.org>
 
---===============8978153384894084008==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ksh7fmfwlzp3ppfl"
-Content-Disposition: inline
+The Libre Computer ALL-H5-CC board is an upgraded version of the
+ALL-H3-CC. Changes include:
 
+  - Gigabit Ethernet via external RTL8211E Ethernet PHY
+  - 16 MiB SPI NOR flash memory
+  - PoE tap header
+  - Line out jack removed
 
---ksh7fmfwlzp3ppfl
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Only H5 variant test samples were made available, and the vendor is not
+certain whether other SoC variants would be made or not. Furthermore the
+board is a minor upgrade compared to the ALL-H3-CC. Thus the device tree
+simply includes the one for the ALL-H3-CC, and adds the changes on top.
 
-On Mon, Jan 06, 2020 at 12:38:49AM +0000, Andre Przywara wrote:
-> The Allwinner R40 SoC contains four SPI controllers, using the newer
-> sun6i design (but at the legacy addresses).
-> The controller seems to be fully compatible to the A64 one, so no driver
-> changes are necessary.
-> The first three controllers can be used on two sets of pins, but SPI3 is
-> only routed to one set on Port A.
-> Only the pin groups for SPI0 on PortC and SPI1 on PortI are added here,
-> because those seem to be the only one exposed on the Bananapi boards.
->
-> Tested by connecting a SPI flash to a Bananapi M2 Berry SPI0 and SPI1
-> header pins.
->
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ .../devicetree/bindings/arm/sunxi.yaml        |  5 ++
+ arch/arm64/boot/dts/allwinner/Makefile        |  1 +
+ .../sun50i-h5-libretech-all-h5-cc.dts         | 61 +++++++++++++++++++
+ 3 files changed, 67 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
 
-Applied, thanks!
-Maxime
+diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
+index dc035a06454e..327ce6730823 100644
+--- a/Documentation/devicetree/bindings/arm/sunxi.yaml
++++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
+@@ -347,6 +347,11 @@ properties:
+           - const: libretech,all-h3-it-h5
+           - const: allwinner,sun50i-h5
+ 
++      - description: Libre Computer Board ALL-H5-CC H5
++        items:
++          - const: libretech,all-h5-cc-h5
++          - const: allwinner,sun50i-h5
++
+       - description: Lichee Pi One
+         items:
+           - const: licheepi,licheepi-one
+diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
+index a7fdf04ffca2..cf4f78617c3f 100644
+--- a/arch/arm64/boot/dts/allwinner/Makefile
++++ b/arch/arm64/boot/dts/allwinner/Makefile
+@@ -16,6 +16,7 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-bananapi-m2-plus-v1.2.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-emlid-neutis-n5-devboard.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h3-cc.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h3-it.dtb
++dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-libretech-all-h5-cc.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-nanopi-neo2.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-nanopi-neo-plus2.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-pc2.dtb
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
+new file mode 100644
+index 000000000000..df1b9263ad0e
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-libretech-all-h5-cc.dts
+@@ -0,0 +1,61 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (C) 2020 Chen-Yu Tsai <wens@csie.org>
++
++#include "sun50i-h5-libretech-all-h3-cc.dts"
++
++/ {
++	model = "Libre Computer Board ALL-H5-CC H5";
++	compatible = "libretech,all-h5-cc-h5", "allwinner,sun50i-h5";
++
++	aliases {
++		spi0 = &spi0;
++	};
++
++	reg_gmac_3v3: gmac-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "gmac-3v3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		startup-delay-us = <5000>;
++		enable-active-high;
++		gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>;
++		vin-supply = <&reg_vcc5v0>;
++	};
++};
++
++&codec {
++	/* No line out; only onboard microphone */
++	allwinner,audio-routing =
++		"MIC1", "Mic",
++		"Mic",  "MBIAS";
++};
++
++/* This board has external PHY */
++&emac {
++	pinctrl-names = "default";
++	pinctrl-0 = <&emac_rgmii_pins>;
++	phy-supply = <&reg_gmac_3v3>;
++	phy-handle = <&ext_rgmii_phy>;
++	phy-mode = "rgmii";
++	/delete-property/ allwinner,leds-active-low;
++	status = "okay";
++};
++
++&external_mdio {
++	ext_rgmii_phy: ethernet-phy@1 {
++		compatible = "ethernet-phy-ieee802.3-c22";
++		reg = <1>;
++	};
++};
++
++&spi0  {
++	status = "okay";
++
++	flash@0 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <50000000>;
++	};
++};
+-- 
+2.24.1
 
---ksh7fmfwlzp3ppfl
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhL2LQAKCRDj7w1vZxhR
-xUb2AQC2t/o+wqWssFdYyX0elfDe2VwGXNbIb/BBf2YIjDGiQAEAnTOKxl6zFx6j
-7yOxHtFLtYN6hk+SoNjDYuHQ3s/s+Ak=
-=b/td
------END PGP SIGNATURE-----
-
---ksh7fmfwlzp3ppfl--
-
-
---===============8978153384894084008==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8978153384894084008==--
-
