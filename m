@@ -2,61 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6913D1316F2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:41:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 650D51316FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:45:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RAKhRkp7BVYwqdk7Wmahw48jn4QEWvEd0LhZ1u2ov/0=; b=DHGrRnRc7eupHL
-	G1SgqJpNsS0X9wkcn8PE+lJdYwrQkl62kzchNmLQGFs/4FPaaKhdCQBknU+Bfp2gWBmSl+/4V/GOF
-	TyFTeMGfvZMjEWHr/RIquL6/mJ2K8C+CbwRP1J/MXq5/OEzflZ7C/6B5o0Ic9ZPYa4Ol/e9oCaDCU
-	2qIVpvxTppBskDcNEbs5141mH1Rcyzg/Y9DrF02mGC7e9RIflH6kzK99fXOfXFBy+gUVBC8/MvrKu
-	XmiSuP5KuPa3vdi/uZaX8hk9+3ujdWNilMnggv0QVgB7QRlGm3AD1AVTq637n+nBkyX7yJTbvYCUw
-	MXO/+Tz1w3AOSiwHxWLw==;
+	List-Owner; bh=XDXEg0+mut3JcRqqNRc+XaejgHKTs9neyYcetiWtSDY=; b=CRgo7aU9zngZFP
+	1Sdr7X5UFBlk23htRQLpaaEnnR3+seOLNjJEDE/MBvjy4My6uIZC1/BLfWRg7OjRJfBQG91A8UdtQ
+	wUznhFVAx3iK6VnGdpDW4gQVyql/lBwTrm2IiskJzqm9z4bWvKpRCSWP+oduHrz9NEeQr8rnWiAOV
+	CkFswA0gNtSNih73PsLGanHgUCg1mY65pt28sfsbGPq3Do7MUNxPmmNAp33IsSSd4xWTS3PvTiPdJ
+	mOd2oqbb8D0m7NLz02mrGv9W492tOTWQPwnvnVNJ5EOGF4ip1TuxQy/FMwgR+HInbUHJrnMuozVo4
+	1JxVrd9e/gD9dvcKWyqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioWN8-0002zR-GJ; Mon, 06 Jan 2020 17:40:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ioWRV-0004jl-2Y; Mon, 06 Jan 2020 17:45:29 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioWN1-0002yp-5m
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:40:52 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 57FC0207FF;
- Mon,  6 Jan 2020 17:40:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578332450;
- bh=bIKoVq4hl/ECNJKsDFS86OjWRdm/wDV25FzE9e9dkIE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OzOCByQJUep+YkGdjIFATSvSmNO39GTmt/W4SruqlilzlYqIS9Aox9DpAAXsbXzKK
- ikAhcBRxSRwBzdq+GuVRk0xvRO5WJ2WuDhSAOARW82MI4ERsA6BNBq19HWvE0bJeeM
- u0WNumDWCk/3WMSHz79ronZ0Jwb0kcQtSfTnvCzU=
-Date: Mon, 6 Jan 2020 17:40:46 +0000
-From: Will Deacon <will@kernel.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] ARM: hw_breakpoint: Handle inexact watchpoint addresses
-Message-ID: <20200106174045.GD9676@willie-the-truck>
-References: <20191019111216.1.I82eae759ca6dc28a245b043f485ca490e3015321@changeid>
- <20191120191813.GD4799@willie-the-truck>
- <CAD=FV=Wntf0TCwdtNNvPY-CXX1VL_SZK8Y8yw1r=UfeayHfwgw@mail.gmail.com>
+ id 1ioWRO-0004jG-0c
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:45:23 +0000
+Received: by mail-io1-xd42.google.com with SMTP id z8so49460236ioh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 09:45:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=iXctLlmYdrdKmfjjRbd044M1gc5IPMj+HwF01t2aLxE=;
+ b=lKMWg3HLOmvwWxJ0QtPLD+d5uVW21/HD+VV4LSzKxccmAVHU752JGwACLfCOx4foBp
+ GFOqdq9A+iruNNxsN2JqU2Eb1oTMSzmj0WFCtWM+lEOnByEwBEKHUK9UuzeYh8ppDgB1
+ 2Eqw9dntUU+zlnSMUDRGFDFrc044zk4qIXmoPVQpgfWUs82Ebmrzslu7vl10SIte5Hq0
+ UrDk+034ryO0R86w1j1MoG33EKI7rsNLmJepg+tmeb2EVey2rUkNYU2bnEFtILqAoKmI
+ mN31+OxzTYyvUzE4Y9ZgmRC8dY03A9szlx8By3srCtGGNwXRyGLcYl15FUWZ2RSDd9n9
+ VhCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=iXctLlmYdrdKmfjjRbd044M1gc5IPMj+HwF01t2aLxE=;
+ b=OGH9IKLbNj3x7LejcKt+0mxsBrwfqEceSR9LZbhFJYq62+t0uOfaCluV4/bd40QTwB
+ gMs6WtM0RuSqFHceQ+q2nwJqwFljdtdYLVw/BDbZ3whwGJQjEzSJTRi1QnWApAw+uxqN
+ 3iJRcpFT69OcAtLwTpAyH/g9Rb2QgKaMAQu+U0Kd4qg23uSGbVknlrlSMlIn2Z0o3ULI
+ ZbFwqNu8rMOPvva4MLFQL2RUFD24RetKNt/2fHrqULelshkRLJcQYGSGFE25ttGk9QCJ
+ jIsxX9SNhZbW7vcGm8ldINEKHvrqcRNQTphzXIal3e/KT+M/ltaGs5+fyxbwbcmcVYO3
+ 8I/A==
+X-Gm-Message-State: APjAAAV8avH+P+lNIYQQ4u2YtnhP4HhMuYqnCtiLkDgU7mwcbAPKtWf2
+ qrN9+sSKq1e950LsQhQ2SJ0NhM/yKsKZHcN/B2w=
+X-Google-Smtp-Source: APXvYqxBbtoShLII8AtDZh3j+6a1iS1Iq+kxojCr5tNwKmFK+J2CfVlfliqXAlghSpaB31l+fm+LyLpoIZV/nJ2y0l8=
+X-Received: by 2002:a6b:b941:: with SMTP id j62mr72571643iof.168.1578332721008; 
+ Mon, 06 Jan 2020 09:45:21 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=Wntf0TCwdtNNvPY-CXX1VL_SZK8Y8yw1r=UfeayHfwgw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200106172254.20271-1-tiny.windzz@gmail.com>
+ <CA+E=qVciDPXrHCGsHR7mjFuaGrv_K21ZAdWW28_fnSV3CvEDCg@mail.gmail.com>
+In-Reply-To: <CA+E=qVciDPXrHCGsHR7mjFuaGrv_K21ZAdWW28_fnSV3CvEDCg@mail.gmail.com>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Tue, 7 Jan 2020 01:45:09 +0800
+Message-ID: <CAEExFWtD_wOJ9sSvXd3uGD5ZXAOPX3kenoRdv-fKpqjZXp22Dw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] thermal: sun8i: fix r40 ths number
+To: Vasily Khoruzhick <anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_094051_236978_5F07068E 
-X-CRM114-Status: GOOD (  23.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200106_094522_081155_F6FD5467 
+X-CRM114-Status: GOOD (  17.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -66,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,71 +94,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Pratyush Anand <panand@redhat.com>,
- Pavel Labath <labath@google.com>, Russell King <linux@armlinux.org.uk>,
- LKML <linux-kernel@vger.kernel.org>, Kazuhiro Inaba <kinaba@google.com>,
- Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 02, 2019 at 08:36:19AM -0800, Doug Anderson wrote:
-> On Wed, Nov 20, 2019 at 11:18 AM Will Deacon <will@kernel.org> wrote:
-> >
-> > On Sat, Oct 19, 2019 at 11:12:26AM -0700, Douglas Anderson wrote:
-> > > This is commit fdfeff0f9e3d ("arm64: hw_breakpoint: Handle inexact
-> > > watchpoint addresses") but ported to arm32, which has the same
-> > > problem.
-> > >
-> > > This problem was found by Android CTS tests, notably the
-> > > "watchpoint_imprecise" test [1].  I tested locally against a copycat
-> > > (simplified) version of the test though.
-> > >
-> > > [1] https://android.googlesource.com/platform/bionic/+/master/tests/sys_ptrace_test.cpp
-> > >
-> > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > ---
-> > >
-> > >  arch/arm/kernel/hw_breakpoint.c | 96 ++++++++++++++++++++++++---------
-> > >  1 file changed, 70 insertions(+), 26 deletions(-)
-> >
-> > Sorry for taking so long to look at this. After wrapping my head around the
-> > logic again
-> 
-> Yeah.  It was a little weird and (unfortunately) arbitrarily different
-> in some places compared to the arm64 code.
-> 
-> 
-> > I think it looks fine, so please put it into the patch system
-> > with my Ack:
-> >
-> > Acked-by: Will Deacon <will@kernel.org>
-> 
-> Thanks!  Submitted as:
-> 
-> https://www.arm.linux.org.uk/developer/patches/viewpatch.php?id=8944/1
-> 
-> 
-> > One interesting difference between the implementation here and the arm64
-> > code is that I think if you have multiple watchpoints, all of which fire
-> > with a distance != 0, then arm32 will actually report them all whereas
-> > you'd only get one on arm64.
-> 
-> Are you sure about that?  The "/* No exact match found. */" code is
-> outside the for loop so it should only be able to trigger for exactly
-> one breakpoint, no?
-
-I didn't test it, but I think that we'll convert the first watchpoint into a
-mismatch breakpoint on arm32 and then when we resume execution, we'll hit
-the subsequent watchpoint and so on until we actually manage to "step" the
-instruction. On arm64, we'll use hardware step directly and therefore
-disable all watchpoints prior to performing the step.
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBKYW4gNywgMjAyMCBhdCAxOjI5IEFNIFZhc2lseSBLaG9ydXpoaWNrIDxhbmFyc291
+bEBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gT24gTW9uLCBKYW4gNiwgMjAyMCBhdCA5OjIzIEFNIFlh
+bmd0YW8gTGkgPHRpbnkud2luZHp6QGdtYWlsLmNvbT4gd3JvdGU6Cj4gPgo+ID4gQWNjb3JkaW5n
+IHRvIHRoZSBzcGVjLCByNDAgaGFzIDIgdGhlcm1hbCBzZW5zb3JzLgo+ID4gU2Vuc29yMCBsb2Nh
+dGVkIGluIHRoZSBDUFUsIGFub3RoZXIgaW4gdGhlIEdQVS4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5
+OiBZYW5ndGFvIExpIDx0aW55LndpbmR6ekBnbWFpbC5jb20+Cj4KPiBZb3Ugc2hvdWxkIGFsc28g
+YWRkICJGaXhlcyIgdGFnIGhlcmUuCgpTaW5jZSB0aGUgZHJpdmVyIGhhcyBub3QgeWV0IGVudGVy
+ZWQgdGhlIG1lcmdlIHdpbmRvdy4uLi4uLgpUaGFua3MgZm9yIHJlbWluZGluZ++8jCDvvJpECgpZ
+YW5ndGFvCgo+Cj4gPiBUZXN0ZWQtYnk6IENvcmVudGluIExhYmJlIDxjbGFiYmUubW9udGpvaWVA
+Z21haWwuY29tPgo+ID4gVGVzdGVkLW9uOiBzdW44aS1yNDAtYmFuYW5hcGktbTItdWx0cmEKPiA+
+IC0tLQo+ID4gIGRyaXZlcnMvdGhlcm1hbC9zdW44aV90aGVybWFsLmMgfCAyICstCj4gPiAgMSBm
+aWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gPgo+ID4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9zdW44aV90aGVybWFsLmMgYi9kcml2ZXJzL3RoZXJtYWwv
+c3VuOGlfdGhlcm1hbC5jCj4gPiBpbmRleCAyM2E1ZjRhYTRiZTQuLmM1NjYxZDdjM2UyMCAxMDA2
+NDQKPiA+IC0tLSBhL2RyaXZlcnMvdGhlcm1hbC9zdW44aV90aGVybWFsLmMKPiA+ICsrKyBiL2Ry
+aXZlcnMvdGhlcm1hbC9zdW44aV90aGVybWFsLmMKPiA+IEBAIC01NjUsNyArNTY1LDcgQEAgc3Rh
+dGljIGNvbnN0IHN0cnVjdCB0aHNfdGhlcm1hbF9jaGlwIHN1bjhpX2gzX3RocyA9IHsKPiA+ICB9
+Owo+ID4KPiA+ICBzdGF0aWMgY29uc3Qgc3RydWN0IHRoc190aGVybWFsX2NoaXAgc3VuOGlfcjQw
+X3RocyA9IHsKPiA+IC0gICAgICAgLnNlbnNvcl9udW0gPSAzLAo+ID4gKyAgICAgICAuc2Vuc29y
+X251bSA9IDIsCj4gPiAgICAgICAgIC5vZmZzZXQgPSAyNTEwODYsCj4gPiAgICAgICAgIC5zY2Fs
+ZSA9IDExMzAsCj4gPiAgICAgICAgIC5oYXNfbW9kX2NsayA9IHRydWUsCj4gPiAtLQo+ID4gMi4x
+Ny4xCj4gPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
