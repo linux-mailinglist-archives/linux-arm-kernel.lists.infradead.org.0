@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8DDF131283
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:04:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 385CC1312A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 14:14:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Lh1lrx8X4jOblHbEUJZZbKtxITadK1zAmwewWvtgF7s=; b=RNkTWnNYCSwdjADIv/AQ+pZaN
-	8UQtoZbTI7k5GD2qgsAgxinXX2qSyRUCsHbvNOqEQPfVy3XCGpg62Aw21kus1LnX37NLf5THlC40O
-	nqTqgonIAk7h745LYmgC3tzrNWW38z/KbrBvFapSSLRpAZCpHNA6ewk7x+mkT04hgf00DqD1kuTcX
-	rhIV+C/aium420kKO+SoWlKHSsXrdaBPKTYBmzJGO7tv4h8h/vEIcLjNb8HGWbZK0NQ0qNzeSg3R3
-	MOHHqA1MJ+S4ifrnbdxXlcUyOOIAbRkqwpMOe5ixKjG06Q7kQbzHdpD5OLz2TLSmnJ8IG2Jm1oHTP
-	vQqAVrObw==;
+	 bh=pxrnT4wtuPiY3735cgkZMe3voSfpY0aoBIncxX71t5k=; b=J+xyglnJ3MVkrujJYSDlBT6iq
+	9gh5Dhtxil4+cgURnzSqgw66tXgWOhthGlPgji/ZMOfwA5ckV0WciQwS8TZlroq6rAZvoeCjuDF9F
+	Ka2rJQXinCLeILi518t8D/T82dwiu8HGBp5h1uyvaN8lkuj3nhIyX6BKQWOzTfTtKrbt4r9a5ELrK
+	QnY5JANhZf1NqJ2qmjLptBRgi2b1ydRNZnna9fTEPEDUt+myAN4//8SQ5qEVU66RYrS30RxLP7gRX
+	mnCvowsFkguN/iNnZFBtER8a5+l/E0+PaWyKFxAR3O/BF5hk498zMejuoRvCqDxp1Xu6BdAEktFL6
+	wsxu2BFjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioS3s-0007tK-V0; Mon, 06 Jan 2020 13:04:48 +0000
+	id 1ioSDD-0002XS-7S; Mon, 06 Jan 2020 13:14:27 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioS3m-0007t0-1s
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:04:43 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m24so14866477wmc.3
+ id 1ioSD5-0002Wu-Qy
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 13:14:21 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p17so15218738wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 05:04:41 -0800 (PST)
+ Mon, 06 Jan 2020 05:14:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=f1SlUZDN16+Hw4sSBCtOG/D+BZxQ/TTwFM07SREKnFo=;
- b=DeDorgOpx3C4lcDFyo9GkzRr59Szn/LwWdUmMSwc2930pdk85z0mR7qnBxqur1PWk8
- 5ZNAZGhOKaChzNrOeCGaaBhtTmFDpjscnDb6nX8LSJgCO6t/LjpT2g0r5Jt63Ff6e6gP
- ZZqq6PYnNvIDoWQIFnYHa/b0jcW7O2SvBuwwvnKJvOhlz8WZksto+RCUJdnrZ7j0m4HX
- FfDLR6GfxFRDEZKwdJ+RLVz5MlBKuNfiJYvvFtWihHVdrM8IU2kMxVJmaWmRO2ePTugj
- /7vlA6UfxZ/bc/n6CRkvLohYAwCPB4FLN8No5IqJIUfr9eHjp7MvHabyJHqi9dbD1AS+
- aT3A==
+ bh=LrWoGYPQhmVuVZJ2chuTv8wabYF1cEdpWPnR/3AObmI=;
+ b=Tor+9VLbD7Zc0d9dWTQ0qbqi2gIK9SgGkqe6Px5lL21j9bsRAy4aai5nJAi0j4r9g9
+ wpYhaVOZc6YfHSwHCk/Z0G62gebtmK3ONeAvqNVFuAtZFuL6urTbCd43yMF2jD0y3Hcq
+ F3/0Ysb8OfXt5KCdVi5aTAzN8g6MkrQ1Dq43XhiOHE9vhora4MjjcqS5hutXVTzDnLUm
+ l6dsW8sqYjGIi3B1nM59QyeUY1UPo4TYMkKAbnrGsa8yWYrtWaC/1yYERtl9i5gCk8tX
+ ZjgAdNwQ3cZV4ivBs6lzf8W/O/NiUEsusmmpoWSWiJTtVJop3LNc8q415YJkw9/bD9YF
+ 26SA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=f1SlUZDN16+Hw4sSBCtOG/D+BZxQ/TTwFM07SREKnFo=;
- b=ZtNmQLYR90eH4Djd9/ieZkCNUR7eP/ppRuE3IumfjstxPNAjRRFbGc/Wnm5EEtVSSx
- 6SnCdgEctlFYuB1incRjtHtjF/pZTDp1lmaCiEHh/7SkExZ2qdD9ydYPBXQ43QdvCygD
- QPEv33n4REzCef8vEcq27Y2DoxBqnROkJKILEUP3vlKJCo4N5s9iq6za1ANv95cyHMP7
- t8SwSnXE6U0BrNPBLyol3Q28NIz2L9/iOR2/EgzBaj8oFJhHxjdccs58CGNf4tLnvRZP
- C5TElgh+k3tiy+kqIXLqTmNKGLoboGaY5oqZav3jZYbVXud6aP2f3IIRX2eCfftcpcKB
- 5Vlw==
-X-Gm-Message-State: APjAAAXa5tNDpbMfhSPmei0CB3+PGRW7NVan7MRWQ/zKMrNYadtXJOJ0
- mOckdSlInRmVW1q1cQjCqtM=
-X-Google-Smtp-Source: APXvYqwYQiVAy7ZtUBk8Qv2zP+847DcpaQDmGIoG5FymG0IgkuUKC1KDqV4U3cWISyeAqZBsqRzYuA==
-X-Received: by 2002:a7b:c183:: with SMTP id y3mr34995190wmi.0.1578315880453;
- Mon, 06 Jan 2020 05:04:40 -0800 (PST)
+ bh=LrWoGYPQhmVuVZJ2chuTv8wabYF1cEdpWPnR/3AObmI=;
+ b=oBr+kH/Yqev558kX4Oca2eC2ma8bN/V2VwsBMhywx+UzYK7q8Jr7TD+ij4Dh0z1F3e
+ m7L6qc7B9ObvqiVef6Yg2lyu5rVhUNdUuioBQvb7TakhlxjyxY5ySZsYE4ncgSbw1oyp
+ Eg7nCqqapDKSU6npXSmIy0uX21CQ0cCVK6cOU6qCXqvWyV30ynKXV9eShS9ZJU0kE07c
+ e/dihXYe81jL5br6Tr+HBnvOfIMIwy/NP41uHRe1eSmHJezSVemJaKiuzmVf1YWi4F5J
+ 9XFvfDR3yIzcnXcotKBJeNt0a8EXD3AqN5XT6WbA5uTdglFirEGVyoBlvrppOxsItF9x
+ pc/w==
+X-Gm-Message-State: APjAAAUX3YKtiiw0KkKtMpH2dt/T1ueMjTKNUQap2/pYx3hl/SLsvdeB
+ AMFDyvTAeyuqoZRYGHQS4G0=
+X-Google-Smtp-Source: APXvYqxNvAqB5fDsO76GWUOtJXB7v4lpojthI3YAMdCJtc4OE+SxwUanVxHbhH7I6AagyWwIAy6qGQ==
+X-Received: by 2002:a1c:5f41:: with SMTP id t62mr36486858wmb.42.1578316458683; 
+ Mon, 06 Jan 2020 05:14:18 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id c2sm71998289wrp.46.2020.01.06.05.04.38
+ by smtp.gmail.com with ESMTPSA id v62sm22970179wmg.3.2020.01.06.05.14.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 05:04:39 -0800 (PST)
-Date: Mon, 6 Jan 2020 14:04:38 +0100
+ Mon, 06 Jan 2020 05:14:17 -0800 (PST)
+Date: Mon, 6 Jan 2020 14:14:16 +0100
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V2 1/5] soc/tegra: bpmp: Update ABI header
-Message-ID: <20200106130438.GC1955714@ulmo>
+Subject: Re: [PATCH V2 3/5] PCI: tegra: Add support for PCIe endpoint mode in
+ Tegra194
+Message-ID: <20200106131416.GD1955714@ulmo>
 References: <20200103124404.20662-1-vidyas@nvidia.com>
- <20200103124404.20662-2-vidyas@nvidia.com>
+ <20200103124404.20662-4-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20200103124404.20662-2-vidyas@nvidia.com>
+In-Reply-To: <20200103124404.20662-4-vidyas@nvidia.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_050442_092904_5A45F7B7 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20200106_051419_904129_D0CE88F1 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,67 +106,95 @@ Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, linux-pci@vger.kernel.org, bhelgaas@google.com,
  andrew.murray@arm.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============8370469193849529190=="
+Content-Type: multipart/mixed; boundary="===============1255278639510142692=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8370469193849529190==
+--===============1255278639510142692==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="w7PDEPdKQumQfZlR"
+	protocol="application/pgp-signature"; boundary="veXX9dWIonWZEC6h"
 Content-Disposition: inline
 
 
---w7PDEPdKQumQfZlR
+--veXX9dWIonWZEC6h
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Jan 03, 2020 at 06:14:00PM +0530, Vidya Sagar wrote:
-> Update the firmware header to support uninitialization of UPHY PLL
-> when the PCIe controller is operating in endpoint mode and host cuts
-> the PCIe reference clock.
+On Fri, Jan 03, 2020 at 06:14:02PM +0530, Vidya Sagar wrote:
+> Add support for the endpoint mode of Synopsys DesignWare core based
+> dual mode PCIe controllers present in Tegra194 SoC.
 >=20
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
 > V2:
-> * Changed Copyright year from 2019 to 2020
+> * Addressed Bjorn's review comments
+> * Made changes as part of addressing review comments for other patches
 >=20
->  include/soc/tegra/bpmp-abi.h | 10 +++++++++-
->  1 file changed, 9 insertions(+), 1 deletion(-)
+>  drivers/pci/controller/dwc/Kconfig         |  30 +-
+>  drivers/pci/controller/dwc/pcie-tegra194.c | 782 ++++++++++++++++++++-
+>  2 files changed, 796 insertions(+), 16 deletions(-)
+>=20
+[...]
+> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/con=
+troller/dwc/pcie-tegra194.c
+> index cbe95f0ea0ca..6621ac79efee 100644
+> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
+> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+[...]
+> @@ -1427,8 +1620,553 @@ static int tegra_pcie_config_rp(struct tegra_pcie=
+_dw *pcie)
+[...]
+> +static int tegra_pcie_config_ep(struct tegra_pcie_dw *pcie,
+> +				struct platform_device *pdev)
+> +{
+[...]
+> +	ret =3D devm_request_irq(dev, pcie->pex_rst_irq,
+> +			       tegra_pcie_ep_pex_rst_irq,
+> +			       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+> +			       name, (void *)pcie);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to request IRQ for PERST: %d\n", ret);
+> +		return ret;
+> +	}
+> +	disable_irq(pcie->pex_rst_irq);
 
-Bjorn, Lorenzo,
+I just came across this while reviewing another patch: it looks like a
+better way to handle "disabled by default" interrupts is to do this:
 
-subsequent patches in this series depend on this patch, so I think it'd
-be best if you took this into the PCI tree along with the DT bindings
-and the PCI driver changes, so:
+	irq_set_status_flags(rtc->irq, IRQ_NOAUTOEN);
 
-Acked-by: Thierry Reding <treding@nvidia.com>
+before calling devm_request_irq(). See here for an example:
 
---w7PDEPdKQumQfZlR
+	http://patchwork.ozlabs.org/patch/1217944/
+
+Thierry
+
+--veXX9dWIonWZEC6h
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl4TMGYACgkQ3SOs138+
-s6F+Zg//TLpFZod96JYrSlXeoed6v2Ljl8ogG72EMMhOZIGLCcKwJWIX7ZYo1SeD
-WkkHSPNRbwIIF91AMpanXAmNImq3CSbg63BrTDhYcQXBxGRnAKM19NnI/tXwesm0
-Vbw5Xsq1mkVDpw/TmlJDJTB+koeIdwIXI81voGHrpja0jPn6dDWpuR6GWA+lNjKL
-7RrsKeRyXeAsND0HX/LHNGc0Muyw+uAOU5kPfzhrTx7xcIpIhPymV2qI4mexMw5h
-fbmppZSm/21u53VkeMhhdFBa0Ic+JM7nS7NHWaBgwl8L7RbuT423uaX159qb2KRC
-NQbVh4xJGmaNMEpDq7FxSpMHszHgBthvyV3z80kkohVg5jUM1Fno+YsjlBNeFhp2
-60zwuPnvqIgg0i7vP7rwYVc/mrIJBkrcUgVzxB0M1/R978xJmVZSeFE9yzVY9oty
-XaqjNcwPyL+w+04TbCqOarVCbmKKnGPKmpCjuE4PlhI4LhgDXO/e7afNFR7liMGz
-PRI8whwR/49g0ByoOJrNA3r7KPoL3UMfLiWXBZCUnuvwBVdL4ihXg79zVvPE/eFc
-HqZOSLfj03/ZcIvi8IigUl6LVGdSanZvyJOaQzKPE5bTIJb8VzxjxxJhq4tCZJ5y
-LcsdpM6sTJefSbEf7Gio2ioW6r6yUTxzVoG3Pco1xQm0Szb7UCQ=
-=GkrY
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl4TMqgACgkQ3SOs138+
+s6GNwg//eoYbBqRW7zBR5KGrZcKbRD3VPCZru7iK4ARTdjfc4up0xfWPooDjX0ns
+a/jL8FztSb++YHsLIWsH3B4/IguatB0jQrajT6Dduco7gPifJuJz6S2IyTufgba7
+FzAgJQX4sFkqa7fIpZhJASjSpyMg9907eSXM/FEKqjcmE8w3/xHKrpFV/uGWDOC0
+9r2fAX7432kmmKaiIPWlMLo/CjSvuaOb1GHHkxBZmh+pV7zvCfyw3o8h3+6sdyJB
+MSGuG17DCT9/MgBfSEQCO4ZqKbB8LcnsIgOyDsEp9h6iKPjdLvOV5aiGbn5I7Ett
+SdOsISrYFgcl6jVIhz+osfOmadoBWpJAYvRMVJH1BKQ0RqKRXtMk6lC95k96WdNm
+iw1tUajyBQzSdPN02Uu+IamwacrYv1VP/35HHF5E0qWpE/HcUOAVp0ASPaG9WlI5
+OlIBc6Ysh7G4de/bberj5eZ012GtEVdE+uetC+G4Mx3BDhhIjHNOYFGGbkQb5dRB
+yQTA792ZrYow2jYkz9WbnB5MXtYrZDAwA0J1lSSsNqUfq16X1jq31mmCmS7jlOS2
+HZr3LkEaKLcqqWQXMke1MA4xLB0RcOJd2jFFPUYztBZKRbZ+/sFnquP1qk5rtAnt
+jUgJNeQ15mLQE2GwhmUQbUSLI3PCVr6FBfWY8XsndLkfAZU4jWw=
+=JFHB
 -----END PGP SIGNATURE-----
 
---w7PDEPdKQumQfZlR--
+--veXX9dWIonWZEC6h--
 
 
---===============8370469193849529190==
+--===============1255278639510142692==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -176,5 +205,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8370469193849529190==--
+--===============1255278639510142692==--
 
