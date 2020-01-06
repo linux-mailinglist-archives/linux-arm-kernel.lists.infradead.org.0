@@ -2,90 +2,164 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19A86131089
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:25:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 627E913109D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 11:32:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHMUbFIVtlbNp78MczA82L8y27DYLZNUhtAPhCW2hLU=; b=O1q1YRGqKdDgOL
-	FUkRZQQqHYInRe2iON4uI0Dipt/DfgBlrHINqjA1atuJT8m+MeVR/R1s+uRIg+ffZF3c1H2Hbvlt2
-	Sbi3Gy3LKw7cduwHr2CwYPLOIbBkN7OXngny2oC7wEUSSzeryiUsagR4eSMCozr4G3US+NhYBfbc5
-	d4UNCESp0xV9LFzMqbOJQEsFaZ+kX5+m5AguZauMFoiBH7mWPnmxbI8FhhouueBbKQvE/LYuLJEz3
-	cvYKmP0WxKzuYqjSSucfzi0nEozvePnxnc43T6qoXHdCCMk6Vq2i3wjYdw3ZE8buv644wHBTv3XoH
-	Ap4KSmXqljtNC4WTYHgA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0ti8XB1yGJYBnUYVLW3n3D/o1zEsuD/ngvdn1vKlxMg=; b=TD/2BuTbHtBsKY
+	GDUlQqJr/mo1WPjU6XZfKlZq0g66XiIGw6LX085wjR/R3Jb5o5xnQaQ3HS1GfQff+01d/MfQhvy5Y
+	nnL74X8RO66ij6Beosaw+9m6HzExKoS30VRAygWiotVD8G/wLCl9wllxxE2OsyCvWigewVg1NEfjn
+	zhczk9LA8ZvOQ9MWTzF11Hzcbtmym5yrGIftjLwgjEKU/Y0ahJHmC+Mpk5KC9BQ9sdl8a1xrzkxBV
+	BgHMm0MXoKLD4dBBFNebbi0fnjrCeIIvxQ/oK90XjVizmFg12EPGuI0Y4gfOdnxJM/1fzXVS1knpL
+	XRf4/XkN4x4Ofx5hwFMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioPZk-0003Qc-Pr; Mon, 06 Jan 2020 10:25:32 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1ioPgs-0005vW-Tz; Mon, 06 Jan 2020 10:32:54 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioPZb-0003PO-D5
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 10:25:25 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 006AHKbC028995; Mon, 6 Jan 2020 11:25:15 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=csKu8+UMH7YN+nRTevbWnuk0toNCOh+W9ovVroJG4Gs=;
- b=FC3Br8HlV5BIIQm0VeJ7roajgAUqSoCVTK35cV4/OxzRJ8jBa3EImWslq3jusdv/IP0q
- 0wQQW5tUfoEu6NU/kjF63OabrvuDcdz3Ej5qRIO+hfNCC6Eg5G3z1M5mxo3qxmCRsElD
- irbTBS3HtyRpvonV+JnmDisXOWCbdnpQEE2oTk9AUYCvhldCI//iqPh8RfXTgsoWR+oq
- GwBqTXj9ErFNmrVqEehsAu98A7yto+aGeU71hYdgWEWcvr7MYr53viCmf6gbO3d/3J9D
- itdevHZiOMndqK++SW/QI1XKm1loG8SGq0iJyxAf6xLTa1LcieR8JLo5/4mkYVwKcxZy Zw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xakuqfaab-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 06 Jan 2020 11:25:15 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 36A9210002A;
- Mon,  6 Jan 2020 11:25:14 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 27F172B088F;
- Mon,  6 Jan 2020 11:25:14 +0100 (CET)
-Received: from [10.48.0.71] (10.75.127.44) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 6 Jan
- 2020 11:25:12 +0100
-Subject: Re: [PATCH] iio: adc: stm32-adc: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: Jonathan Cameron <jic23@kernel.org>, Peter Ujfalusi <peter.ujfalusi@ti.com>
-References: <20191217075153.23766-1-peter.ujfalusi@ti.com>
- <20191223154230.7fb2a988@archlinux>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <9f190583-824c-01a6-7da3-43065fde49c7@st.com>
-Date: Mon, 6 Jan 2020 11:25:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191223154230.7fb2a988@archlinux>
+ id 1ioPgh-0005tw-1R; Mon, 06 Jan 2020 10:32:46 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: CAJK7AaDLfln2am8pZlWU5LsN/pPkVAj2SCpldtUKNIsIPjMTrpOgDFIF3oMjeXOCTqURi1Ii/
+ d4v/3L9rPKFkcDdPS1NDPENDkCYkjqXzjRYfmHbvQKDVfhPJcgbN+KCulfqQ1rHBF8Igkb1G/1
+ F968Zg/GdG0JaNiDrjVFJd/SzvVqt5znjwl8zNtMujIMaPHBWakMg982ujsyWPC7nARGnR9qaQ
+ bd8AyxYFyWwSl0WpAjg84GSijoeq8dF5NpnrPhZU0zrTazs3zwSYKu1zA3tmvEVHPMNbftuDST
+ Mhg=
+X-IronPort-AV: E=Sophos;i="5.69,402,1571727600"; d="scan'208";a="59761197"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 06 Jan 2020 03:32:39 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 6 Jan 2020 03:32:39 -0700
+Received: from NAM11-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Mon, 6 Jan 2020 03:32:36 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EUtxK/5QvOowv5pS0802tLzbu+z+DS6a064yGuPAKGcQjlJIfcci21Sph674KhHKclOe2HCbj6Ce9tFagWi0v1xgJ9YmaJ0HSC+ob8JRBX5yUGRvCVxTGdcGPv//Ajb/bbLjL6YW9LOTlg/QW7/+6qUlO3nPvdpFRcHXolY65iIWwHJSh/iB8l2jzaFPABmYWKVL5TQy09vhqePktsEy4cXQz57STej0DTn8zyjx3c+zlPXMaKFJbT/uqKrtFBBNP5TX1u+GXtoA5Se/Dnk+lYl60lZodBOo+O6xOaPsd1G2mr5ZSOqqwYIN4dsQuBjWc/NOzaZYOeJ118wS+qu1SA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FAdhuUagr/hEGfEZFuPAry1k38rWdKCbMiBPO8JkBS4=;
+ b=IyVcGJMUuMyAB7DvrC9XLiLXQoKvEO7pNM7qtmX9H45t67l4/fRxqZm4S3Or75aRXrN37gKO7RVJ+uBRbP0eH6kLssWhljvx1te0imA+ZyJCJs3w0qXBdPGYtYrGbehaUndBNiLatvCBnkv3ClNcjybQZ3bQWX76jgXMvTHG/6Bopqlsk6sL5KFu1lkD5HJFkj6QBvXSIX/tF2ha7qeTSbosLmpoO5IR7i4SBxyA7+rXNFKAs2CZni3T43ZnhRFhDh5DZt2vkfm3KQaT0H+2xkkKnXTXXz1Vo+0CmHL6FHHonCcQdifaqI9sY9KZZEgBkHDuWZW4jF85xzbR47WcSQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FAdhuUagr/hEGfEZFuPAry1k38rWdKCbMiBPO8JkBS4=;
+ b=AHxrrVs5t8NEFvmbWSMrtDOtgq2Tlkztn4K7DZ2dVB3sieZOPgrvrV9uxuSx25jj3agXdNBGrZocBKsoql4J7ewzvJo824+gzNqkAufixIsLnneZ9DcMMFp7eIhmdlxDNh9rWwjh5x/TS1yqe0RzbWzZd89vWQKNBoJQQNC67gw=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
+ DM6PR11MB4393.namprd11.prod.outlook.com (10.255.9.97) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.10; Mon, 6 Jan 2020 10:32:37 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2602.015; Mon, 6 Jan 2020
+ 10:32:37 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <tiny.windzz@gmail.com>, <thierry.reding@gmail.com>,
+ <u.kleine-koenig@pengutronix.de>, <Nicolas.Ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
+ <rjui@broadcom.com>, <sbranden@broadcom.com>,
+ <bcm-kernel-feedback-list@broadcom.com>, <f.fainelli@gmail.com>,
+ <nsaenzjulienne@suse.de>, <shc_work@mail.ru>, <shawnguo@kernel.org>,
+ <s.hauer@pengutronix.de>, <kernel@pengutronix.de>, <festevam@gmail.com>,
+ <linux-imx@nxp.com>, <vz@mleia.com>, <slemieux.tyco@gmail.com>,
+ <khilman@baylibre.com>, <matthias.bgg@gmail.com>, <heiko@sntech.de>,
+ <palmer@dabbelt.com>, <paul.walmsley@sifive.com>, <mripard@kernel.org>,
+ <wens@csie.org>, <jonathanh@nvidia.com>, <linux@prisktech.co.nz>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-pwm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-rpi-kernel@lists.infradead.org>,
+ <linux-amlogic@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-riscv@lists.infradead.org>,
+ <linux-tegra@vger.kernel.org>
+Subject: Re: [PATCH 32/32] pwm: atmel: convert to
+ devm_platform_ioremap_resource
+Thread-Topic: [PATCH 32/32] pwm: atmel: convert to
+ devm_platform_ioremap_resource
+Thread-Index: AQHVxHycAKU/bSXjtUyeJXn+AWSJqA==
+Date: Mon, 6 Jan 2020 10:32:36 +0000
+Message-ID: <5aef0df7-ab3a-fe81-3cd4-a81c08841a00@microchip.com>
+References: <20191229080610.7597-1-tiny.windzz@gmail.com>
+ <20191229080610.7597-32-tiny.windzz@gmail.com>
+In-Reply-To: <20191229080610.7597-32-tiny.windzz@gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2020-01-06_03:2020-01-06,2020-01-06 signatures=0
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: db77f637-7bd3-4105-9e4c-08d79293bfe8
+x-ms-traffictypediagnostic: DM6PR11MB4393:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB4393E533578E4ED4D982B468873C0@DM6PR11MB4393.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:299;
+x-forefront-prvs: 0274272F87
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(346002)(376002)(396003)(136003)(39860400002)(199004)(189003)(64756008)(66446008)(8936002)(6512007)(66476007)(110136005)(316002)(71200400001)(8676002)(81156014)(81166006)(76116006)(66946007)(66556008)(91956017)(7406005)(7416002)(478600001)(36756003)(6506007)(2906002)(53546011)(31696002)(186003)(26005)(2616005)(6486002)(86362001)(5660300002)(31686004)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB4393;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 59SlEg5gCKH9OPWST7ew7YgA9qj+Rmz/b7UU8oUGof6+hCjrkXs7xLq0Yd6+gz2tMciAW4C8S5pU0BxdkDdvKqOF0Mm3cp2L4MVnHv/FVBzONqCHSIxgwVd0cMMw1xw3vv7pdpp4EUj9ro/oAPjGwwm+5h8Iln67uEZI7x2HnpMJqQbN0I9FyXvIEMr3PzF9JbhM8xTWg9ZAindxLTGCa2U0R2p0GpLSQy93NJ4YFGUjGzrYglJvY54lb702t60R1uijDtlhogZ9JU/HTJ2QLSmfL5R3kus2tHl0/BOeP07sBfE8ldQixtbMgX2yikeXyTdi4zsh7gV8pH7IhOc9TTC9iHl1gqAw5+nqbpcm7X6LSAh2N8aCSwwzfYLXP+68OSDXBJsIry/PLjb6SZnKpITiPmJNMHe1iudIjVXtux7KUpeEhz4Ipz9LHJYjamd2KuwV4AghY1lrCq0FrxxEL6qkBbTGm+9CvXMlcGASj5EM5HnuiuA3g8f+OhCEN0JC
+Content-ID: <C0B3595014DD3C41BDEC06FF974DF51B@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: db77f637-7bd3-4105-9e4c-08d79293bfe8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2020 10:32:36.7529 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9nAopbNipMUBkPbXlcTJeYda8YK+Lh0bJ4W/SjTYJ+MqOPJ9AtID7OnC3C/QcbACEj1oDmG43Qm1InYa7LE0ycTJx4x8OfFks48dFF1g/Dg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4393
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_022523_813345_40F3BEAB 
-X-CRM114-Status: GOOD (  23.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200106_023243_184210_5D9E1186 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,98 +171,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olivier MOYSAN <olivier.moysan@st.com>, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
- mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/23/19 4:42 PM, Jonathan Cameron wrote:
-> On Tue, 17 Dec 2019 09:51:53 +0200
-> Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
+
+
+On 29.12.2019 10:06, Yangtao Li wrote:
+> Use devm_platform_ioremap_resource() to simplify code.
 > 
->> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
->> eating up the error code.
->>
->> By using dma_request_chan() directly the driver can support deferred
->> probing against DMA.
->>
->> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> Hi Peter,
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+
+Acked-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+
+> ---
+>  drivers/pwm/pwm-atmel.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
 > 
-> Change looks sensible to me, but I'd like to leave a little longer
-> for others to look at this.
+> diff --git a/drivers/pwm/pwm-atmel.c b/drivers/pwm/pwm-atmel.c
+> index 9ba733467e26..86cc5ccaa46c 100644
+> --- a/drivers/pwm/pwm-atmel.c
+> +++ b/drivers/pwm/pwm-atmel.c
+> @@ -340,7 +340,6 @@ MODULE_DEVICE_TABLE(of, atmel_pwm_dt_ids);
+>  static int atmel_pwm_probe(struct platform_device *pdev)
+>  {
+>         struct atmel_pwm_chip *atmel_pwm;
+> -       struct resource *res;
+>         int ret;
 > 
-> Give me a poke if I seem to have lost it by the end of the first
-> week in Jan.
+>         atmel_pwm = devm_kzalloc(&pdev->dev, sizeof(*atmel_pwm), GFP_KERNEL);
+> @@ -351,8 +350,7 @@ static int atmel_pwm_probe(struct platform_device *pdev)
+>         atmel_pwm->data = of_device_get_match_data(&pdev->dev);
+>         atmel_pwm->updated_pwms = 0;
 > 
-> Thanks,
+> -       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -       atmel_pwm->base = devm_ioremap_resource(&pdev->dev, res);
+> +       atmel_pwm->base = devm_platform_ioremap_resource(pdev, 0);
+>         if (IS_ERR(atmel_pwm->base))
+>                 return PTR_ERR(atmel_pwm->base);
 > 
-> Jonathan
+> --
+> 2.17.1
 > 
->> ---
->>  drivers/iio/adc/stm32-adc.c | 10 ++++++++--
->>  1 file changed, 8 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
->> index 3b291d72701c..5dab23f1fdee 100644
->> --- a/drivers/iio/adc/stm32-adc.c
->> +++ b/drivers/iio/adc/stm32-adc.c
->> @@ -1746,9 +1746,15 @@ static int stm32_adc_dma_request(struct iio_dev *indio_dev)
->>  	struct dma_slave_config config;
->>  	int ret;
->>  
->> -	adc->dma_chan = dma_request_slave_channel(&indio_dev->dev, "rx");
->> -	if (!adc->dma_chan)
->> +	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
->> +	if (IS_ERR(adc->dma_chan)) {
->> +		if (PTR_ERR(adc->dma_chan) == -EPROBE_DEFER)
->> +			return -EPROBE_DEFER;
-
-Hi Peter,
-
-Thanks for the patch and sorry for the late reply.
-
-I'd rather prefer to check explicitly for -ENODEV (as the DMA is
-optional) to use the IRQ mode and treat all other codes (including
-EPROBE_DEFER) as errors.
-
-Rationale is: This can hide other errors e.g. like all DMA channels are
-busy/reserved for other usage. So the user may wrongly think it's
-probing the driver, with DMA. This may be a corner case, but still...
-DMA channels are assigned via device tree. I'd rather prefer to avoid
-depending of runtime (probe ordering) in such a case.
-
-Can you update the patch considering this ?
-
-Please find here an alternate proposal:
-
-	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
-	if (IS_ERR(adc->dma_chan)) {
-		if (PTR_ERR(adc->dma_chan) != -ENODEV)
-			return PTR_ERR(adc->dma_chan);
-
-		/* DMA is optional: fall back to IRQ mode */
-		adc->dma_chan = NULL;
-		return 0;
-	}
-
-Best regards,
-Fabrice
-
->> +
->> +		/* Ignore errors to fall back to IRQ mode */
->> +		adc->dma_chan = NULL;
->>  		return 0;
->> +	}
->>  
->>  	adc->rx_buf = dma_alloc_coherent(adc->dma_chan->device->dev,
->>  					 STM32_DMA_BUFFER_SIZE,
 > 
-
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
