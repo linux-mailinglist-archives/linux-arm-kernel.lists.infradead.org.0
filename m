@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85025130EDA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:43:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01EAF130ECA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 09:43:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=na3gCjmRojM8FUUlUnHxqwdd3oxSq3mcNqjJAyhdaLc=; b=nT93e1igWOt28i
-	pFuiv00GAJ6A+hlRXC6cNn7JE5PzHTq52t/te4x+Gn329bQeeA/ep3xiE/jRTb8hXz6CPVFPBNjoE
-	5I2esOQMIjcucEC5ZfEjRAcZHz+XXJGsT+LZk5/ApJ/4hXaWzlHrcVm78G74eR3XiwgUcR5Zgm80i
-	B8owm8XrAbEZU9rOieGh1okXSAutK2TxCm2azXYhX+Q57IIQ8EI6Jf6azw4Kv1nG7kgM+LG0KVBUD
-	aVtYLYXtHR3Qo4D0DPhAz2JND/Jf4TZfBIC05xxUSPL/Y/qdmozBcML0UylGsnJUDA3EGLE/CJ/e2
-	JllQFnmls69g7oNH4/yg==;
+	List-Owner; bh=oG9Hcx0nWh45ajxp93ePcVH3PGmUI1Locoa7WXeOGeY=; b=oFfrUM3Bn5yZ+Q
+	Z27S7mTQQksFkFoPzyU1ITnhH13DiDS97eNZ6V/DueoPSYQ533roy+I910+CgEXrFRWOHwCoUjSlJ
+	HzM0gwr2toiZNRheV8AzIQn2w4P3lEUt/Db+9iKuuWXisMIZ2aixfDUwtUsFLeraRek1KSq+KDbwG
+	lazIAFtI518kp916VAQbYKsBWoolFGphObo4F4Ee9gzOTt2vN4rtvIbw6vemYrWt4rF7R58MxgQlH
+	GLAio1PquxA3n87Ppw7KRscGfVqTwPKZlSEebgHAFKLFIy+wlBpXOk74ybvGrhgRstOHOqVANRk9L
+	Mk89lnfVEt6LNie33ikw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioNyx-000270-Bi; Mon, 06 Jan 2020 08:43:27 +0000
+	id 1ioNyh-0001ky-3M; Mon, 06 Jan 2020 08:43:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioNyH-0001Z7-DB
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:42:48 +0000
+ id 1ioNyH-0001Z6-DC
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 08:42:46 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7242C218AC;
+ by mail.kernel.org (Postfix) with ESMTPSA id 605E221734;
  Mon,  6 Jan 2020 08:42:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1578300163;
- bh=skvqTBhyyO1FLCKZxItSUc6ySkZigVQbcigpeQ2las4=;
+ bh=VJ4ImZ00cxy3xkCVmZ6KZaFMceyqzh4UVXc9csKCJc0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OHzik1a0IegjwU3lIugBdpBedMfxBLKx0R7iuzCFdziHpwCK7VMMFrqKp/jkyZpS/
- fprm7uOyFh4Cq+RAYj0kOzvGE7I01f60GhKEH124Q5iMzx6fSpZySyYu0lwBhnT8BE
- G+bHgc598+v8wlHs/+3Mosb+Jayt2KF4UFHwKl5s=
+ b=Jy2xk/me0XoytAHWGwDMuBVDqNtR7ItKlG980kKOeHCSXvb2oamlqMb0VFYEZSkSz
+ aIC0LdHDay20/0Goe6o4x3cmR22PzfOLbioj2kyxn6laabk1Mfbqa71O+p2cq19vLv
+ ibfxE/BxKLtWTGhQzVmyv6hEe8hWINX4ZnJAQdws=
 Received: by wens.tw (Postfix, from userid 1000)
- id 5BAB55FCEC; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
+ id 60F0D5FD64; Mon,  6 Jan 2020 16:42:41 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 3/7] dt-bindings: bus: sunxi: Add R40 MBUS compatible
-Date: Mon,  6 Jan 2020 16:42:36 +0800
-Message-Id: <20200106084240.1076-4-wens@kernel.org>
+Subject: [PATCH v2 4/7] ARM: dts: sun8i: r40: Add device node for CSI0
+Date: Mon,  6 Jan 2020 16:42:37 +0800
+Message-Id: <20200106084240.1076-5-wens@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200106084240.1076-1-wens@kernel.org>
 References: <20200106084240.1076-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_004245_488293_E9816578 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20200106_004245_482850_A28FA28A 
+X-CRM114-Status: GOOD (  12.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,35 +87,78 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-Allwinner R40 SoC also contains MBUS controller.
+The CSI0 and CSI1 blocks are the same as found on the A20. However only
+CSI0 is supported upstream right now.
 
-Add compatible for it.
+Add a device node for CSI0 using the A20 compatible as a fallback, and
+the standard pinctrl options. Also add the MBUS interconnect.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
-Changes since v1:
+ arch/arm/boot/dts/sun8i-r40.dtsi | 36 ++++++++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
 
-  - Reworked on top of "dt-bindings: interconnect: Convert Allwinner
-    MBUS controller to a schema"
-
-This particular patch should go through Rob's tree, instead of the
-sunxi tree.
----
- .../devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml  | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-index 9370e64992dd..23cda7437dcb 100644
---- a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-@@ -30,6 +30,7 @@ properties:
-     enum:
-       - allwinner,sun5i-a13-mbus
-       - allwinner,sun8i-h3-mbus
-+      - allwinner,sun8i-r40-mbus
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index 7c940b20b81c..84d240c39f0f 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -181,6 +181,20 @@ nmi_intc: interrupt-controller@1c00030 {
+ 			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+ 		};
  
-   reg:
-     maxItems: 1
++		csi0: csi@1c09000 {
++			compatible = "allwinner,sun8i-r40-csi0",
++				     "allwinner,sun7i-a20-csi0";
++			reg = <0x01c09000 0x1000>;
++			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_CSI0>, <&ccu CLK_CSI_SCLK>,
++				 <&ccu CLK_DRAM_CSI0>;
++			clock-names = "bus", "isp", "ram";
++			resets = <&ccu RST_BUS_CSI0>;
++			interconnects = <&mbus 5>;
++			interconnect-names = "dma-mem";
++			status = "disabled";
++		};
++
+ 		mmc0: mmc@1c0f000 {
+ 			compatible = "allwinner,sun8i-r40-mmc",
+ 				     "allwinner,sun50i-a64-mmc";
+@@ -356,6 +370,20 @@ clk_out_a_pin: clk-out-a-pin {
+ 				function = "clk_out_a";
+ 			};
+ 
++			/omit-if-no-ref/
++			csi0_8bits_pins: csi0-8bits-pins {
++				pins = "PE0", "PE2", "PE3", "PE4", "PE5",
++				       "PE6", "PE7", "PE8", "PE9", "PE10",
++				       "PE11";
++				function = "csi0";
++			};
++
++			/omit-if-no-ref/
++			csi0_mclk_pin: csi0-mclk-pin {
++				pins = "PE1";
++				function = "csi0";
++			};
++
+ 			gmac_rgmii_pins: gmac-rgmii-pins {
+ 				pins = "PA0", "PA1", "PA2", "PA3",
+ 				       "PA4", "PA5", "PA6", "PA7",
+@@ -625,6 +653,14 @@ gmac_mdio: mdio {
+ 			};
+ 		};
+ 
++		mbus: dram-controller@1c62000 {
++			compatible = "allwinner,sun8i-r40-mbus";
++			reg = <0x01c62000 0x1000>;
++			clocks = <&ccu 155>;
++			dma-ranges = <0x00000000 0x40000000 0x80000000>;
++			#interconnect-cells = <1>;
++		};
++
+ 		tcon_top: tcon-top@1c70000 {
+ 			compatible = "allwinner,sun8i-r40-tcon-top";
+ 			reg = <0x01c70000 0x1000>;
 -- 
 2.24.1
 
