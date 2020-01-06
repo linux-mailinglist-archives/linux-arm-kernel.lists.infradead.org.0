@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F911316EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:40:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6913D1316F2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:41:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hn3aVXBK1oGi87AgN1x50i+/2Brqd7I5OM/dgx8Zj90=; b=tOVqpsfVwRyxw0
-	lXwRl91a2blU5xs1uro5+j3OLvDOkgpVWzNjxFiGls/qTjDVSFFMRg+h5VO+pghTgmwF5xVzvBGqR
-	07ZrEfXUg9jewmMkP7O3sNZ33Mj757V6ddy6FopCzv+GhTzVlPNVszydEyAt/AIsofpzCi1OxjegJ
-	OpXfuz2LrZA/dKCBkDTMyYTWDEQaH9zfemj456U4Su3EDZfAWvyCV8XcxTrnl82w68hgiXqMy0FZA
-	7/nX4mwfO4CmHBmFRwX+Bl1t3xAJhXyA/nsZjFAPnsRjEnU6sRGWyBYxHKD7F5LbiYTH/7TtwwtcT
-	Hkt33/XFMlTh+/REaiIQ==;
+	List-Owner; bh=RAKhRkp7BVYwqdk7Wmahw48jn4QEWvEd0LhZ1u2ov/0=; b=DHGrRnRc7eupHL
+	G1SgqJpNsS0X9wkcn8PE+lJdYwrQkl62kzchNmLQGFs/4FPaaKhdCQBknU+Bfp2gWBmSl+/4V/GOF
+	TyFTeMGfvZMjEWHr/RIquL6/mJ2K8C+CbwRP1J/MXq5/OEzflZ7C/6B5o0Ic9ZPYa4Ol/e9oCaDCU
+	2qIVpvxTppBskDcNEbs5141mH1Rcyzg/Y9DrF02mGC7e9RIflH6kzK99fXOfXFBy+gUVBC8/MvrKu
+	XmiSuP5KuPa3vdi/uZaX8hk9+3ujdWNilMnggv0QVgB7QRlGm3AD1AVTq637n+nBkyX7yJTbvYCUw
+	MXO/+Tz1w3AOSiwHxWLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioWMQ-0001Fe-Cv; Mon, 06 Jan 2020 17:40:14 +0000
+	id 1ioWN8-0002zR-GJ; Mon, 06 Jan 2020 17:40:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioWMB-0001CY-0d
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:40:00 +0000
+ id 1ioWN1-0002yp-5m
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:40:52 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 068D02072A;
- Mon,  6 Jan 2020 17:39:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 57FC0207FF;
+ Mon,  6 Jan 2020 17:40:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578332398;
- bh=mp3njqqWaDnYVqjwsBT3p6zCZ56gkals5HKkvF6a1ew=;
+ s=default; t=1578332450;
+ bh=bIKoVq4hl/ECNJKsDFS86OjWRdm/wDV25FzE9e9dkIE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=T5aT7lm7/MMoXmgtSNrDVAYvbnTlbzOYE6saqA0AgNlMeuNCeTzGj5whxAdMe1qdN
- +RatoW1NGYV+jvMO4EFxd2Y9JH6qwTO0F9UHmiEe7DBQXlV9dfJSMtHgi8DjjtJ3RT
- 5Oe5KfeWEkkG9GYhvpBfYnKCb9xE+4loWw800cFA=
-Date: Mon, 6 Jan 2020 17:39:53 +0000
+ b=OzOCByQJUep+YkGdjIFATSvSmNO39GTmt/W4SruqlilzlYqIS9Aox9DpAAXsbXzKK
+ ikAhcBRxSRwBzdq+GuVRk0xvRO5WJ2WuDhSAOARW82MI4ERsA6BNBq19HWvE0bJeeM
+ u0WNumDWCk/3WMSHz79ronZ0Jwb0kcQtSfTnvCzU=
+Date: Mon, 6 Jan 2020 17:40:46 +0000
 From: Will Deacon <will@kernel.org>
-To: Christian Brauner <christian.brauner@ubuntu.com>
-Subject: Re: [PATCH 2/7] arm64: Implement copy_thread_tls
-Message-ID: <20200106173953.GB9676@willie-the-truck>
-References: <20200102172413.654385-1-amanieu@gmail.com>
- <20200102172413.654385-3-amanieu@gmail.com>
- <20200102180130.hmpipoiiu3zsl2d6@wittgenstein>
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] ARM: hw_breakpoint: Handle inexact watchpoint addresses
+Message-ID: <20200106174045.GD9676@willie-the-truck>
+References: <20191019111216.1.I82eae759ca6dc28a245b043f485ca490e3015321@changeid>
+ <20191120191813.GD4799@willie-the-truck>
+ <CAD=FV=Wntf0TCwdtNNvPY-CXX1VL_SZK8Y8yw1r=UfeayHfwgw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200102180130.hmpipoiiu3zsl2d6@wittgenstein>
+In-Reply-To: <CAD=FV=Wntf0TCwdtNNvPY-CXX1VL_SZK8Y8yw1r=UfeayHfwgw@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_093959_079301_1D1BA7C5 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20200106_094051_236978_5F07068E 
+X-CRM114-Status: GOOD (  23.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,33 +78,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amanieu d'Antras <amanieu@gmail.com>, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Christian Brauner <christian@brauner.io>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Pratyush Anand <panand@redhat.com>,
+ Pavel Labath <labath@google.com>, Russell King <linux@armlinux.org.uk>,
+ LKML <linux-kernel@vger.kernel.org>, Kazuhiro Inaba <kinaba@google.com>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 02, 2020 at 07:01:33PM +0100, Christian Brauner wrote:
-> On Thu, Jan 02, 2020 at 06:24:08PM +0100, Amanieu d'Antras wrote:
-> > This is required for clone3 which passes the TLS value through a
-> > struct rather than a register.
-> > 
-> > Signed-off-by: Amanieu d'Antras <amanieu@gmail.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: <stable@vger.kernel.org> # 5.3.x
+On Mon, Dec 02, 2019 at 08:36:19AM -0800, Doug Anderson wrote:
+> On Wed, Nov 20, 2019 at 11:18 AM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Sat, Oct 19, 2019 at 11:12:26AM -0700, Douglas Anderson wrote:
+> > > This is commit fdfeff0f9e3d ("arm64: hw_breakpoint: Handle inexact
+> > > watchpoint addresses") but ported to arm32, which has the same
+> > > problem.
+> > >
+> > > This problem was found by Android CTS tests, notably the
+> > > "watchpoint_imprecise" test [1].  I tested locally against a copycat
+> > > (simplified) version of the test though.
+> > >
+> > > [1] https://android.googlesource.com/platform/bionic/+/master/tests/sys_ptrace_test.cpp
+> > >
+> > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> > > ---
+> > >
+> > >  arch/arm/kernel/hw_breakpoint.c | 96 ++++++++++++++++++++++++---------
+> > >  1 file changed, 70 insertions(+), 26 deletions(-)
+> >
+> > Sorry for taking so long to look at this. After wrapping my head around the
+> > logic again
 > 
-> This looks sane to me but I'd like an ack from someone who knows his arm
-> from his arse before taking this. :)
+> Yeah.  It was a little weird and (unfortunately) arbitrarily different
+> in some places compared to the arm64 code.
+> 
+> 
+> > I think it looks fine, so please put it into the patch system
+> > with my Ack:
+> >
+> > Acked-by: Will Deacon <will@kernel.org>
+> 
+> Thanks!  Submitted as:
+> 
+> https://www.arm.linux.org.uk/developer/patches/viewpatch.php?id=8944/1
+> 
+> 
+> > One interesting difference between the implementation here and the arm64
+> > code is that I think if you have multiple watchpoints, all of which fire
+> > with a distance != 0, then arm32 will actually report them all whereas
+> > you'd only get one on arm64.
+> 
+> Are you sure about that?  The "/* No exact match found. */" code is
+> outside the for loop so it should only be able to trigger for exactly
+> one breakpoint, no?
 
-That's *ME*! Code looks fine:
-
-Acked-by: Will Deacon <will@kernel.org>
-
-I also ran the native and compat selftests but, unfortunately, they all
-pass even without this patch. Do you reckon it would be possible to update
-them to check the tls pointer?
+I didn't test it, but I think that we'll convert the first watchpoint into a
+mismatch breakpoint on arm32 and then when we resume execution, we'll hit
+the subsequent watchpoint and so on until we actually manage to "step" the
+instruction. On arm64, we'll use hardware step directly and therefore
+disable all watchpoints prior to performing the step.
 
 Will
 
