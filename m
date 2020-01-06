@@ -2,83 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E7AD1316B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:23:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 033501316D0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:29:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/GxufwXTeAwCO5LsYbc+zCuXmeVvTdWpSu73xjzrMVk=; b=n2z1CjFSMgnJ+a
-	J0LM/OhO/FN6fm4mlbXCDiaShgOfwU0IYzWWPehT02JcWNGsJpC94xehWbFzu3+b+DX2WAUL91H2/
-	l5GTzL3Sruz4wzw56MRgd2mzSfzVcn+f3kLTUaJ6JLoNQEIsqREZfFCyu6kNxfSDyvkgXncN8nwzF
-	a4v5VgudtumiQyA2J51cdFtK9byRPZqKHr1OIbjx/G9BjBxFP69Z/sLqKH3Hu18BC0kryC2fwXtQA
-	XV6Ve/sZwtoaaHUsjMhQhJXP6bCRWUeyklTRH3AhSr5yny5AiYDEqPlKXs45hw9yJTGTybyT4z9dm
-	pVw4hAkOHgKtl70DJ3XQ==;
+	List-Owner; bh=0TsN/kpsqmpdOztublo315GOr04Co4VbSUmc1909MKM=; b=bMmgvQi2EgqiRo
+	us4rHvTGkukjEUY0LXI4qZuiM4kj13Ds5gWuZmpaH1qJjeG+/vT9dKBx3DTM3+hAwL2/djedWWGlf
+	TrtdH1QsXt3kDLuiUqIediLglJv6bNJT69OlP+a/GamdfCCg/PYv+qvTk9xzMueciSmYLyfvbmsSY
+	OGt03CrTx7Hpa0ShO2uaEY3ZV9Gi3FF+7nxcEPgapWtl3BcaqdIzS3uOcgk4JAcKlvkn4k3jQ/v/C
+	01priyMNErf5WQ4dfvK1q1I3bkzph7TmRMzknMoo2crHU2dd/UoKH0qRC6/cyGmryCI/7cloKIZQk
+	zDHIxaZkPTk4PsQbddew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioW68-0001sd-7D; Mon, 06 Jan 2020 17:23:24 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1ioWBs-0004kl-Vq; Mon, 06 Jan 2020 17:29:20 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioW5p-0001hz-40
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:23:06 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id a6so7828089pjh.2
+ id 1ioWBl-0004jM-K3
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:29:14 +0000
+Received: by mail-qk1-x741.google.com with SMTP id a203so40474269qkc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 09:23:04 -0800 (PST)
+ Mon, 06 Jan 2020 09:29:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references;
- bh=EiXC/MriP+cdpOhem11vYI94GWNz0CCSOZkGZBL2d9U=;
- b=Fgih5/mKhpixJHIO6J5wKEuJKm7z0uNcQcfAvNH/An3WxxPmMy+MsVfGvWH8F+G/kE
- WnSgM2VT95YfTuvide3gtMzFG/e77mch7xQ6DXG5Dd6MU7yQ7Mg9L88UWJjVqL6LXspH
- 5mccJdFyoViN6VNicTG6d8NEZTWBvn0Qm/hIjWml5LQybFMWwhm14A/QjTDh3n7pduR2
- 7QPR24Lz9HK6h1nCe6ViwF/6q1GCbvWBsxkQ9HQySVnsjBAhGUzJQGme1O4YhNy6r/Nw
- DlKd8fVdqt/hSSddPfkyoSPWamfinzb6SOrmEbMSN8wx4Egu0xkOK0E1xEvuNrZUIxef
- kTew==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NxZmBvBguF1JcQOjsls5F30x6tlo9ctviEfiJvkYBfs=;
+ b=J3cwtQO+u6RU4bfiCikVMB7Fvel/CoINo9oGSTbye/Gz0zWBDvkBkc6C6gmykLkmM6
+ JolbSRBFZU94D5vJ3a5toJ/T7sHV+rsuSHvKkqRlFupT4yJ78XKiFP+5d5QfOTEzfH2Q
+ MkJInwxDkUjsPhFCEGjgwGZMjHISfUCmKtiQlu7RtgRHoU7eaCP8JANW92zT2HAu5jam
+ idoOXB+SzZwp9Kp7VAesfSmgtvlo9Aq1lpIStOwv8wTSiJLOLovH6gkMIXKoe21pGL/W
+ 4xDNsapUPCoyQIbUDU4+4Hxr/o06UlgyyjD4B2dHK/1JuupEDhrbGrTM00ppNuc02WII
+ df/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references;
- bh=EiXC/MriP+cdpOhem11vYI94GWNz0CCSOZkGZBL2d9U=;
- b=BLJkcUNB+yT5Pi5L1oSDa09xPDa14VSeo4thVahaeV5tB8oKAjmHniCHOH94FeOsVe
- Mt8t2hb4r6gsPx323MseK3wuirPWnYlC9D6VskzTcLFZkN9nOWKk0Z40UwofjS9qmQPp
- zkhRD3SuFi4R2viKaNJJPnOVKv/zWBbsunsedmuSOPih/tKyEjFxaz5RV6iGjsonDxmC
- I2F3SFP6M6d9bOYijrFdqzGR2B+aZ7el0V6KcYOIWWG3m3zTnlAeqm320d5Hmy0+iQjH
- pp46OKbaAc9Vwsss4QPOBWtGs/UNkSXBy8zkAMmhAWEomP8/0YkV0jQ3zYVrutU6TwMP
- PHRA==
-X-Gm-Message-State: APjAAAUHQpnOkvcR0IZmejj4YwR9xnNHDD3kIoozHhlBHBHMvlFL3XEz
- SoyvMOHE0gE2ko7J5mPHQns=
-X-Google-Smtp-Source: APXvYqyB4iG4q1U/Odr0v3tivcHOlY4azofIJDFUH6PdH0VjXjYafHAzGQBMVo8AxD5sE0fqJl7dFA==
-X-Received: by 2002:a17:902:aa85:: with SMTP id
- d5mr110322875plr.16.1578331383886; 
- Mon, 06 Jan 2020 09:23:03 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id f9sm76869387pfd.141.2020.01.06.09.23.03
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 06 Jan 2020 09:23:03 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, mripard@kernel.org,
- wens@csie.org, anarsoul@gmail.com, tiny.windzz@gmail.com,
- rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org
-Subject: [PATCH 2/2] ARM: dts: sun8i-r40: Add thermal sensor and thermal zones
-Date: Mon,  6 Jan 2020 17:22:54 +0000
-Message-Id: <20200106172254.20271-2-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200106172254.20271-1-tiny.windzz@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NxZmBvBguF1JcQOjsls5F30x6tlo9ctviEfiJvkYBfs=;
+ b=nFvkt3E9GqsMjm2qGCqYoYBOnKLfZKiroOd7Ad39UVdGB+MYsLG0ZQYyPINE/e/GZ5
+ ujPNFOAeTFWQAFs2WvrYanU2H1Z+tninX8/tDzX+NfjoLkErwJTtM+zvUNZMVhjsFfKG
+ ghVlXtiUxpnt5o0gsSGdmwllbGUmVD25uSTa3CXa71248wd2aonw+1JryyzesQhAufgC
+ pMIYF4FyHDxAm8KCkFerFVXoAB+AQqNyi2VX1/pZ4Ye/J5QKxbGccq0PD9KPYFS3zEKJ
+ iwC3/Fg7fm9tnGSKBZZ+nJ9wHgASHFZum48D8Bbd9c5C7i/EDr9Z+S2weaFgJwxNlQqf
+ HJlg==
+X-Gm-Message-State: APjAAAV8eWGRxiAPYViBmzHzMTKWLzniPXd/r9OzTgATHlzqIgGIeanq
+ U1rsDT7aJtHqgkM3bT1GdMyFLIswgYC7zQF72nM=
+X-Google-Smtp-Source: APXvYqzcdm+2thl8HHqrCf9rsaN4i4OXg2U/csojMViUWqozVnMmtx0KDP6ARuGZL/t+re1lAMRRufOeZ8f7BmmPlgs=
+X-Received: by 2002:a05:620a:918:: with SMTP id
+ v24mr84077158qkv.22.1578331752458; 
+ Mon, 06 Jan 2020 09:29:12 -0800 (PST)
+MIME-Version: 1.0
 References: <20200106172254.20271-1-tiny.windzz@gmail.com>
+In-Reply-To: <20200106172254.20271-1-tiny.windzz@gmail.com>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Mon, 6 Jan 2020 09:28:46 -0800
+Message-ID: <CA+E=qVciDPXrHCGsHR7mjFuaGrv_K21ZAdWW28_fnSV3CvEDCg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] thermal: sun8i: fix r40 ths number
+To: Yangtao Li <tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_092305_164483_F675358B 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20200106_092913_685561_457D93E3 
+X-CRM114-Status: GOOD (  15.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ provider (anarsoul[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,77 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are two sensors, sensor0 for CPU, sensor1 for GPU.
+On Mon, Jan 6, 2020 at 9:23 AM Yangtao Li <tiny.windzz@gmail.com> wrote:
+>
+> According to the spec, r40 has 2 thermal sensors.
+> Sensor0 located in the CPU, another in the GPU.
+>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-Tested-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-Tested-on: sun8i-r40-bananapi-m2-ultra
----
- arch/arm/boot/dts/sun8i-r40.dtsi | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+You should also add "Fixes" tag here.
 
-diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index 421dfbbfd7ee..8ccda5cb873f 100644
---- a/arch/arm/boot/dts/sun8i-r40.dtsi
-+++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -46,6 +46,7 @@
- #include <dt-bindings/clock/sun8i-r40-ccu.h>
- #include <dt-bindings/reset/sun8i-r40-ccu.h>
- #include <dt-bindings/reset/sun8i-de2.h>
-+#include <dt-bindings/thermal/thermal.h>
- 
- / {
- 	#address-cells = <1>;
-@@ -109,6 +110,22 @@
- 		status = "disabled";
- 	};
- 
-+	thermal-zones {
-+		cpu_thermal: cpu0-thermal {
-+			/* milliseconds */
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 0>;
-+		};
-+
-+		gpu_thermal: gpu-thermal {
-+			/* milliseconds */
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 1>;
-+		};
-+	};
-+
- 	soc {
- 		compatible = "simple-bus";
- 		#address-cells = <1>;
-@@ -421,6 +438,17 @@
- 			clocks = <&osc24M>;
- 		};
- 
-+		ths: thermal-sensor@1c24c00 {
-+			compatible = "allwinner,sun8i-r40-ths";
-+			reg = <0x01c24c00 0x100>;
-+			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
-+			clock-names = "bus", "mod";
-+			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
-+			resets = <&ccu RST_BUS_THS>;
-+			/* TODO: add nvmem-cells for calibration */
-+			#thermal-sensor-cells = <1>;
-+		};
-+
- 		uart0: serial@1c28000 {
- 			compatible = "snps,dw-apb-uart";
- 			reg = <0x01c28000 0x400>;
--- 
-2.17.1
-
+> Tested-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> Tested-on: sun8i-r40-bananapi-m2-ultra
+> ---
+>  drivers/thermal/sun8i_thermal.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+> index 23a5f4aa4be4..c5661d7c3e20 100644
+> --- a/drivers/thermal/sun8i_thermal.c
+> +++ b/drivers/thermal/sun8i_thermal.c
+> @@ -565,7 +565,7 @@ static const struct ths_thermal_chip sun8i_h3_ths = {
+>  };
+>
+>  static const struct ths_thermal_chip sun8i_r40_ths = {
+> -       .sensor_num = 3,
+> +       .sensor_num = 2,
+>         .offset = 251086,
+>         .scale = 1130,
+>         .has_mod_clk = true,
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
