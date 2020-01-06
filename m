@@ -2,84 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D72841316D8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:32:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0892C1316E0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 18:34:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=892YPt2ZHjfJTzVmog72/WqInAnlBQ0C01tNyE1asmo=; b=YjlpSYoix3Ceug
-	r5IhOV91C7oDJl7Iy40nyGIni4PiBGy0W8k7W1gLaPcq+qVOgJfWXuvi53kH1WHXCp+Gq1wtnYRl8
-	+98Xg73R+QXHD7Rn78I4OsbzHydBjiduQww1dHe2hSdS2cOKI5lXGfyYDWWDO0rsJaqqWGkYmOMc3
-	hUvBky1nru86jY1n2iTXrJWi1P/9Sitg4DNONN+XBK7l9uLOwZI/22KDxoSCunwLNRdiAW+WfL7FU
-	s/SZPK8tgGTyBMbBMQGpfkBicDTBr48T7+qV0Hw4BsBCN+dehii59kE+CcOo7IaO7Ng7U/WQCLdFj
-	EViqOQOVwNVeySL1RMwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BW306HwkdNVn1J2Dd9f48j6F1NY81yl3obJ2tSGFBjs=; b=t6RRLnq9yLgumM8sJdlb244HQ
+	SLgeg3yEmCj6uRyhW6wcK0jwYv1mgEBO1yj5ShJ4U1CX+mXy4qa2QU4Wj2YruPJP9LJZ1R9O7G25I
+	O14WLi7+Y72H15WhVkYkIOud1M2RgBU0uIhDqGTqKHA6ud211cODc6HbCj2Y0wv9kAUdrGQOlGgDu
+	xNJWaTGiVixTuPg4usxruvuSH1CjbEPI2wxlrm7PaFr0/XX0cMx2O1LUO4pc/t2W1c1YhpzPnyffv
+	xTG/Lo1RGho+73Dc+X9l9uXvZvzWwqIK7eVGTArB/A0KHGtv7A7nz45i0WsIiW3N71HPs7zFNLPsm
+	GM1Iz4PQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioWEY-0006Xb-Sc; Mon, 06 Jan 2020 17:32:06 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1ioWGg-0006zr-Ij; Mon, 06 Jan 2020 17:34:18 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioWER-0006X2-MN
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:32:01 +0000
-Received: by mail-lj1-x241.google.com with SMTP id o13so40315289ljg.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 09:31:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=xFu7eCg3yS+RsR9D/Z3sZGznS8kv1kY8aO9qxzERxms=;
- b=Em55WpmAzW3ZOnLXJfcLJha9SqS5Qw3j3/OKYBG0xj5al9+1IAuNNmcweHm4UeqB4g
- 5DdRMU7eajNI33LhOrK08iJbl3aNfx8ukg77VVjxk5Z8dDS2FzqUnynl5p+bsRXi8L4D
- YHgoqi2NhzxYuP9DumZYPhMr6OOJoue43ZaT7kMyHXq5u60RGafl7MkvGizstBg7tuFo
- awx/t6d2FAYUIHmY8OFcAusvXq9tnxHxYc5vsasdpcW1XBAIrFqXi3G/FctOP14SmcOz
- 4dtnis7T7rCG8YC0pCwLSoSSXEStyBiIL5kJmtsBgLDJ+ETxsWYYrPzm77b5NXbzqril
- B7IA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xFu7eCg3yS+RsR9D/Z3sZGznS8kv1kY8aO9qxzERxms=;
- b=VEM3af+5npBSFEmo6KkyyDDipe4ccBmIO9RkbnS2PXneB5/mYbtyifzfcb3dKc9B8d
- k3chATLoiE59EY2x44RzCJusMr0Po2d18ApqnC78xLP3qLqLPNQ78d6Y52FCWTtOKRT3
- rZBUfMyrOEMbPzljkWZBCu3wDV9kn5tQrQDFmvFCy/ICXxGJdqS+IFR7b+PxXwiRnerI
- MENLByo2frchsnGYroHX9p82mG3S2nPW1HbCq/E/6JYVqatIHXB8+zxnCMJPjBUcLUNq
- J8Y5KkmNe5PMU4G8VQB1xhSqSJIcrOzQGrxrCFJZ+lYAS6LHSQDUW1My2/H7lvqWD0Mk
- Ef8w==
-X-Gm-Message-State: APjAAAUES/OPA2Xg830qtGXWjBGHR9L57k5iPuRRYh6xmI9RBEVK0wXy
- OqPmHIQQo/vVNo5CyYJTLnjQow==
-X-Google-Smtp-Source: APXvYqyj67w8AuhfPdbkEgB1bCmOYwqDVq9nc73PWsbef+neE5Y0RW1nE8a6Mkhduwqz6oxuzAIgfg==
-X-Received: by 2002:a2e:809a:: with SMTP id i26mr59271167ljg.108.1578331916456; 
- Mon, 06 Jan 2020 09:31:56 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id s1sm23576228ljc.3.2020.01.06.09.31.55
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 06 Jan 2020 09:31:55 -0800 (PST)
-Date: Mon, 6 Jan 2020 09:26:08 -0800
-From: Olof Johansson <olof@lixom.net>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [GIT PULL] cpuidle/psci updates for v5.6
-Message-ID: <20200106172608.63qhvwr5b7jsmxmg@localhost>
-References: <20200102160820.3572-1-ulf.hansson@linaro.org>
+ id 1ioWGY-0006yl-NG
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Jan 2020 17:34:12 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1578332050; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=LtY77c4ckIl8xeGO5RUZJ/girLgK8v2bv5Hi6fr6xIs=;
+ b=lLPicAf/WzfMQbZ1Ktx8CcZKyfBYLb/cwpF4SlvTbFScaS2QcZsOcRwcOb7uvPbyszARmeJa
+ 7IgpXhlKbE3+iJ8fQXxcbuUGYsKilEsNikncsqBzXHhCdsP3+E+UwC2ipLaSPyPUb1wWzlUb
+ HQWUF5WPQqkvNVr33OErKnsDdJE=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e136f8f.7f9b41984030-smtp-out-n01;
+ Mon, 06 Jan 2020 17:34:07 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id ADF46C433A2; Mon,  6 Jan 2020 17:34:06 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id BC4CAC43383;
+ Mon,  6 Jan 2020 17:34:05 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200102160820.3572-1-ulf.hansson@linaro.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+Date: Mon, 06 Jan 2020 09:34:05 -0800
+From: asutoshd@codeaurora.org
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 1/3] scsi: ufs: fix empty check of error history
+In-Reply-To: <1578147968-30938-2-git-send-email-stanley.chu@mediatek.com>
+References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
+ <1578147968-30938-2-git-send-email-stanley.chu@mediatek.com>
+Message-ID: <926596b3823333bd8d31aed8630509de@codeaurora.org>
+X-Sender: asutoshd@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_093159_871410_0DE1A589 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20200106_093410_827459_54D7A078 
+X-CRM114-Status: GOOD (  17.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,37 +86,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
- linux-arm-msm@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, soc@kernel.org, arm@kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-scsi-owner@vger.kernel.org, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, andy.teng@mediatek.com, jejb@linux.ibm.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, bvanassche@acm.org,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, Jan 02, 2020 at 05:08:20PM +0100, Ulf Hansson wrote:
-> Hi SoC maintainers,
+On 2020-01-04 06:26, Stanley Chu wrote:
+> Currently checking if an error history element is empty or
+> not is by its "value". In most cases, value is error code.
 > 
-> Here's a PR with updates for v5.6 for cpuidle/psci for ARM/ARM64.
+> However this checking is not correct because some errors or
+> events do not specify any values in error history so values
+> remain as 0, and this will lead to incorrect empty checking.
 > 
-> The changes are somewhat sprinkled over a couple of different directories and
-> there is also dts update for MSM8916. The main changes are in drivers/cpuidle/,
-> which have been acked-by Rafael [1] and Sudeep.
+> Fix it by checking "timestamp" instead of "value" because
+> timestamp will be always assigned for all history elements
 > 
-> If you have any further questions, please just tell.
+> Cc: Alim Akhtar <alim.akhtar@samsung.com>
+> Cc: Asutosh Das <asutoshd@codeaurora.org>
+> Cc: Avri Altman <avri.altman@wdc.com>
+> Cc: Bart Van Assche <bvanassche@acm.org>
+> Cc: Bean Huo <beanhuo@micron.com>
+> Cc: Can Guo <cang@codeaurora.org>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>  drivers/scsi/ufs/ufshcd.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index 1b97f2dc0b63..bae43da00bb6 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -385,7 +385,7 @@ static void ufshcd_print_err_hist(struct ufs_hba 
+> *hba,
+>  	for (i = 0; i < UFS_ERR_REG_HIST_LENGTH; i++) {
+>  		int p = (i + err_hist->pos) % UFS_ERR_REG_HIST_LENGTH;
+> 
+> -		if (err_hist->reg[p] == 0)
+> +		if (err_hist->tstamp[p] == 0)
+>  			continue;
+>  		dev_err(hba->dev, "%s[%d] = 0x%x at %lld us\n", err_name, p,
+>  			err_hist->reg[p], ktime_to_us(err_hist->tstamp[p]));
 
-What was the reason to bring in a dts change in this branch? Bindings should be
-stable such that old DT contents still works even if drivers are updated to
-support newer attributes, etc.
+Looks good to me.
 
-
-
--Olof
+Reviewed by:- Asutosh Das <asutoshd@codeaurora.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
