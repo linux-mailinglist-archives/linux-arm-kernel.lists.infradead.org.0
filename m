@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF818131B55
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 23:28:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19289131B74
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Jan 2020 23:30:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bo2U00d5TajIGWj4MCeXhO/5r2z+aQvbMc48QcGHW10=; b=ro5FfUwliIKCBL
-	AnlxcTjbxCbc+exeqN6HCH1xYJHfEsgiscMD/KFOxsmWfQpzW/mpfyRiAVOUk6rQmWg8etbuv5bj/
-	V7+B0Xn69zBgcu0vQHVPYtZKcp5Ea3g5dEXJlHNc/a/aGdw0bb4qPjUvdNjmhjPuoSbGxTyDVRH4P
-	Lu9hXqwn/DGNBVy+25D5vQDrylEe5s/6sk5Xnkn1hdu9V6DGjEiW9CrmkCWHU+tpoBmKyXpoDPmWl
-	fYsquWgggFn+hKPex67oQE9xSSzjYGoCRVmeT4HFIZPbfs62cz6P9XV+MtvzLloTWT+2Y8ELXswro
-	E705b8rP/3Ye4e6WlohA==;
+	List-Owner; bh=s4GDOJEVXvzho1bvZ7zU5wwlsbpSlygES3u1bqu00rs=; b=GG8BgOZ1S/dvH2
+	oF8+kKQsSbIxQzKnHWM+iqMVdWD1czoBfctDcGAVixCl/gA4Eq/OaKzQd9uoCXmp7bP1yMK7gDPnp
+	gXjx+aaxZ1RkjuBx8pJCExHv2gfs65awJ4jwiPFHHZO0V2jM/4Ys5iR7R1HZVll2eF17jz1t8oXhj
+	RAB719HN43gw9ZlB/qI5u/kPrkpMFKzlhYCQ1WYKun6Qv1Ecj9oVPM0aSuQXSlZpBb0kyfEmybBwQ
+	zgjIBYGzIEoievtFW4PvUaN1fQCVKBxH/PV7p0Y897sZGs/F1zqhw2ovpCWgLcYqSMj58jrtpyXIz
+	M4FstZSw1RVdx3tXg7mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioarA-0002he-6e; Mon, 06 Jan 2020 22:28:16 +0000
+	id 1ioasv-0003B8-Oa; Mon, 06 Jan 2020 22:30:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioar3-0002hH-ED; Mon, 06 Jan 2020 22:28:10 +0000
-Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
- [209.85.160.182])
+ id 1ioasi-0003Ad-W9; Mon, 06 Jan 2020 22:29:54 +0000
+Received: from mail-qv1-f53.google.com (mail-qv1-f53.google.com
+ [209.85.219.53])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B27CA222D9;
- Mon,  6 Jan 2020 22:28:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7800F24683;
+ Mon,  6 Jan 2020 22:29:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578349688;
- bh=rTHOxJUOIChFRf7dTkpIQvZPNS5PI3aBhK4tnTxHTso=;
+ s=default; t=1578349792;
+ bh=1De1CokmZJzvWcJL3EL1QdC4D4rWqmpc0SisOSfVtB0=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=rbvUGtRkLEnm2FOVFDxL99P5oJz20WQa5tFLv9pzHTPe+VTTlH/BMydAKDogf3P6v
- 020hIch7atDLHRQMJFPZzdfn0gazAvFvDqJ+VzTAWs+Vr1pPrrFCIEtYs5qI/EhGtN
- UQhh8l34D8hbUx2wwx3tNTfwVBD5oBP2frJy5vq8=
-Received: by mail-qt1-f182.google.com with SMTP id d5so43796468qto.0;
- Mon, 06 Jan 2020 14:28:08 -0800 (PST)
-X-Gm-Message-State: APjAAAUVvoy7uRD/yXO3SQ4SunpcbCHo9bQSwpqjPKer0s3Y27F9bf/X
- V/NW8/ley+Pghn8mC39cygbIjapTpUy2CatdjQ==
-X-Google-Smtp-Source: APXvYqwVixOr4A1a7oe+76qjMKIzU19osJwUbcFGBZCzSX/7V+QBSOFhX0//2c3Px8FWbPRIeaJstLXgvayduvlSds4=
-X-Received: by 2002:aed:2344:: with SMTP id i4mr79020804qtc.136.1578349687943; 
- Mon, 06 Jan 2020 14:28:07 -0800 (PST)
+ b=yqgOwbgI6EhCqdM8g9AQYz5x6tFbiGs87TCojq6MMCGjzBnGj9qM+OvtR3zCtxRhX
+ Dr+7N4EW6o/9ptvy2xqkhWaWimTP7A4SicBarV7iCq/XZXm22PgTTKeW0VkcZjMsPx
+ sYkyeuuOQGWd1cD6I3HOJpqJcbFYcc87GFqNFv5c=
+Received: by mail-qv1-f53.google.com with SMTP id o18so19750017qvf.1;
+ Mon, 06 Jan 2020 14:29:52 -0800 (PST)
+X-Gm-Message-State: APjAAAW3N08Ssxc1UiWeP0afgCNTECn6r70/7qu5X3DEZ5i+V1pEkRoQ
+ zYGqcTkIfxkuggJb7TCyDQOiRUv8A2k2/MfY2A==
+X-Google-Smtp-Source: APXvYqzF+/+VjZiO27tMFOFZDdgfF2Kx9B2Ly1NVCZZoUZYFxwJPkkwCNae3ZKIHAXThR4kSNA6ABNukCDQkEY/s4/4=
+X-Received: by 2002:ad4:4511:: with SMTP id k17mr77533622qvu.135.1578349791507; 
+ Mon, 06 Jan 2020 14:29:51 -0800 (PST)
 MIME-Version: 1.0
 References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-9-helen.koike@collabora.com>
-In-Reply-To: <20191227200116.2612137-9-helen.koike@collabora.com>
+ <20191227200116.2612137-10-helen.koike@collabora.com>
+In-Reply-To: <20191227200116.2612137-10-helen.koike@collabora.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 6 Jan 2020 16:27:56 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqL25gQZxdN+2ciSj7HLbOjN3OvjY-GrA57m9_y-CdYZLA@mail.gmail.com>
-Message-ID: <CAL_JsqL25gQZxdN+2ciSj7HLbOjN3OvjY-GrA57m9_y-CdYZLA@mail.gmail.com>
-Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
- yaml bindings
+Date: Mon, 6 Jan 2020 16:29:39 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+Oarx=Q95H+_mOYUiD0OpdxX6eMNJ0Dyv_zzSiEUzWaw@mail.gmail.com>
+Message-ID: <CAL_Jsq+Oarx=Q95H+_mOYUiD0OpdxX6eMNJ0Dyv_zzSiEUzWaw@mail.gmail.com>
+Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI
+ RX D-PHY yaml bindings
 To: Helen Koike <helen.koike@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_142809_499603_52D2ECC3 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20200106_142953_447033_92F99F63 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -106,12 +106,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Dec 27, 2019 at 2:02 PM Helen Koike <helen.koike@collabora.com> wrote:
 >
-> Add yaml DT bindings for Rockchip ISP1.
+> Add yaml DT bindings for Rockchip MIPI D-PHY RX
 >
 > This was tested and verified with:
-> mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
-> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> mv drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml  Documentation/devicetree/bindings/phy/
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
 >
 > Signed-off-by: Helen Koike <helen.koike@collabora.com>
 >
@@ -119,29 +119,26 @@ On Fri, Dec 27, 2019 at 2:02 PM Helen Koike <helen.koike@collabora.com> wrote:
 >
 > Changes in v12:
 > - The commit replaces the following commit in previous series named
-> media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+> media: staging: dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
 > This new patch adds yaml binding and was verified with
 > make dtbs_check and make dt_binding_check
 >
-> Changes in v11:
-> - add clock-names values
->
+> Changes in v11: None
 > Changes in v10:
 > - unsquash
 >
 > Changes in v9:
+> - fix title division style
 > - squash
 > - move to staging
 >
-> Changes in v8:
-> - fix title division style
->
+> Changes in v8: None
 > Changes in v7:
-> - update document with new design and tested example
+> - updated doc with new design and tested example
 >
->  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
->  1 file changed, 193 insertions(+)
->  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++++++++++++++
+>  1 file changed, 75 insertions(+)
+>  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
