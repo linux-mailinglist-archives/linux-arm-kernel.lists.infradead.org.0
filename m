@@ -2,60 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C801132442
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:56:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 705B7132447
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:57:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/CFNTQFyDzMa7KHiEiVYPIp4ORTHPWc3NkOYlQZbfEM=; b=OXx3Xqq16Dg5QUSiBFG1AKf6D
-	8G0cGCfke3nEp5idce8yD1KiVWOMf2Pomra7WbKGeS2n+2yuKt6LUsJj4wtzJa+8R5nWqKRFBcwba
-	U/33XbbTW1wuxXEsyLaGzzo003GqzXyVpSGc0HopKS29bNkZFp96po4bFPTWeJs401+L+0ViikSDF
-	Yo6LB4LmlGANNJZT27WcfS0kzNrIz4dzm3p2HWsUM4oz+hIg4jjcC4BC5ZYFu//IdtuZWtMWZkZYg
-	eFWYJ/jfVoydTHdeo8tRfnTnxjZ83nzJgUYoJkVI/Vye3vb/5HUv5Yfo6MzCPT6n1mCuwO5KW4YGs
-	C+hYDCEKA==;
+	 bh=SaETfNlIIGEt9tt5EXq82p5gf8/1wI1RVeNQA7Nzn4E=; b=ZOPiVqOYGWn7OKQeuErxrRRq9
+	0UNT+HAUM82Ln+gPmCljYpIpQfKsseyo6MZafOxW5l7IVgIFkJJKWDituuyv1SZOsfKPoCZG9EUwV
+	tdAyBFq6Z1NBphXNlRVWmLzGGgiLiGDYSbehXP7VKBsiRbgA+dTsfBHaVYTzKrEQMhZ5nrWlXe4/r
+	6HpZJot5oFhJy/2bksj37+8BrCK4Igy/jCEuE45bmUlP3IU8YiITwiV26ISvDtcTefLw7VftKOPsV
+	SRyJx+5WhYqfbX7vtEp6HQ5Mzr9mJsGMinglyi2moPHAJL8OQPZinO/54z6V+bzzDZlQisZNFeBkl
+	B7uyZrY2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iomXH-0006mJ-92; Tue, 07 Jan 2020 10:56:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iomXA-0006lS-4P
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:56:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A884328;
- Tue,  7 Jan 2020 02:56:23 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 644873F534;
- Tue,  7 Jan 2020 02:56:20 -0800 (PST)
-Subject: Re: [PATCH net] Revert "net: stmmac: platform: Fix MDIO init for
- platforms without PHY"
-To: Sriram Dash <sriram.dash@samsung.com>,
- 'Florian Fainelli' <f.fainelli@gmail.com>, netdev@vger.kernel.org
-References: <CGME20200107050854epcas1p3c1a66e67f14802322063f6c9747f1986@epcas1p3.samsung.com>
- <20200107050846.16838-1-f.fainelli@gmail.com>
- <011a01d5c51d$d7482290$85d867b0$@samsung.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <59cb4087-6a71-9684-c4cf-d203600b45a9@arm.com>
-Date: Tue, 7 Jan 2020 10:56:18 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iomY1-0007A3-T3; Tue, 07 Jan 2020 10:57:17 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iomXu-00079H-TZ; Tue, 07 Jan 2020 10:57:12 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 72E95AD05;
+ Tue,  7 Jan 2020 10:57:09 +0000 (UTC)
+Message-ID: <bb661c1013f5e05407f93a134f221fb0988ce63f.camel@suse.de>
+Subject: Re: [PATCH 05/13] mailbox: bcm2835: convert to
+ devm_platform_ioremap_resource
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Yangtao Li <tiny.windzz@gmail.com>, jassisinghbrar@gmail.com, 
+ f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com, 
+ bcm-kernel-feedback-list@broadcom.com, lftan@altera.com,
+ matthias.bgg@gmail.com,  agross@kernel.org, bjorn.andersson@linaro.org,
+ mcoquelin.stm32@gmail.com,  alexandre.torgue@st.com,
+ thierry.reding@gmail.com, jonathanh@nvidia.com, 
+ linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, nios2-dev@lists.rocketboards.org, 
+ linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
+Date: Tue, 07 Jan 2020 11:57:07 +0100
+In-Reply-To: <20191228183538.26189-5-tiny.windzz@gmail.com>
+References: <20191228183538.26189-1-tiny.windzz@gmail.com>
+ <20191228183538.26189-5-tiny.windzz@gmail.com>
+User-Agent: Evolution 3.34.2 
 MIME-Version: 1.0
-In-Reply-To: <011a01d5c51d$d7482290$85d867b0$@samsung.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_025624_553354_7F37D697 
-X-CRM114-Status: GOOD (  25.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_025711_097167_C7E885C0 
+X-CRM114-Status: GOOD (  13.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,111 +72,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Jose Abreu' <Jose.Abreu@synopsys.com>,
- 'Jayati Sahu' <jayati.sahu@samsung.com>,
- 'Alexandre Torgue' <alexandre.torgue@st.com>, tomeu.vizoso@collabora.com,
- rcsekar@samsung.com, khilman@baylibre.com, linux-kernel@vger.kernel.org,
- 'Padmanabhan Rajanbabu' <p.rajanbabu@samsung.com>,
- "'David S. Miller'" <davem@davemloft.net>, guillaume.tucker@collabora.com,
- broonie@kernel.org, pankaj.dubey@samsung.com,
- 'Maxime Coquelin' <mcoquelin.stm32@gmail.com>, mgalka@collabora.com,
- enric.balletbo@collabora.com, 'Giuseppe Cavallaro' <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- heiko@sntech.de
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============0205639433959953189=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07/01/2020 5:46 am, Sriram Dash wrote:
->> From: Florian Fainelli <f.fainelli@gmail.com>
->> Subject: [PATCH net] Revert "net: stmmac: platform: Fix MDIO init for
-> platforms
->> without PHY"
->>
->> This reverts commit d3e014ec7d5ebe9644b5486bc530b91e62bbf624 ("net:
->> stmmac: platform: Fix MDIO init for platforms without PHY") because it
-> breaks
->> existing systems with stmmac which do not have a MDIO bus sub-node nor a
->> 'phy-handle' property declared in their Device Tree. On those systems, the
->> stmmac MDIO bus is expected to be created and then scanned by
->> of_mdiobus_register() to create PHY devices.
->>
->> While these systems should arguably make use of a more accurate Device
-> Tree
->> reprensentation with the use of the MDIO bus sub-node an appropriate 'phy-
->> handle', we cannot break them, therefore restore the behavior prior to the
-> said
->> commit.
->>
->> Fixes: d3e014ec7d5e ("net: stmmac: platform: Fix MDIO init for platforms
->> without PHY")
->> Reported-by: Heiko Stuebner <heiko@sntech.de>
->> Reported-by: kernelci.org bot <bot@kernelci.org>
->> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> Nacked-by: Sriram Dash <Sriram.dash@samsung.com>
-> 
->> ---
->> Heiko,
->>
->> I did not add the Tested-by because the patch is a little bit different
-> from what
->> you tested, even if you most likely were not hitting the other part that I
-> was
->> changing. Thanks!
->>
->>   drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c | 2 +-
->>   1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->> b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->> index cc8d7e7bf9ac..bedaff0c13bd 100644
->> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->> @@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct platform_device
->> *pdev,  static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
->>   			 struct device_node *np, struct device *dev)  {
->> -	bool mdio = false;
->> +	bool mdio = true;
-> 
-> 
-> This is breaking for the platforms with fixed-link.
-> stih418-b2199.dts and 169445.dts to name a few.
-> 
-> For the newer platforms, they should provide the mdio/ snps,dwmac-mdio
-> property in the device tree as we are checking the mdio/ snps,dwmac-mdio
-> property in the stmmac_platform driver for the mdio bus memory allocation.
-> For existing platforms, I agree we should not break them, but we should make
-> the code correct. And make the existing platforms adapt to the proper code.
-> There is a proposed solution.
-> https://lkml.org/lkml/2020/1/7/14
-> 
-> What do you think?
 
-The binding says that the phy handle and mdio child node are optional, 
-so "update all of the DTBs!" is not a viable solution. I'm far from an 
-expert here, but AFAICS the fault of the current code is that it assumes 
-the lack of a phy handle implies a fixed link, so the obvious answer is 
-to actually check whether the "fixed-link" property is present.
+--===============0205639433959953189==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-y5AsCnHtvQY7mJ+3+eeo"
 
-Robin.
 
-> 
->>   	static const struct of_device_id need_mdio_ids[] = {
->>   		{ .compatible = "snps,dwc-qos-ethernet-4.10" },
->>   		{},
->> --
->> 2.19.1
-> 
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+--=-y5AsCnHtvQY7mJ+3+eeo
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, 2019-12-28 at 18:35 +0000, Yangtao Li wrote:
+> Use devm_platform_ioremap_resource() to simplify code.
+>=20
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+
+Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+
+Thanks!
+
+>  drivers/mailbox/bcm2835-mailbox.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+>=20
+> diff --git a/drivers/mailbox/bcm2835-mailbox.c b/drivers/mailbox/bcm2835-
+> mailbox.c
+> index 39761d190545..79f93c9c7682 100644
+> --- a/drivers/mailbox/bcm2835-mailbox.c
+> +++ b/drivers/mailbox/bcm2835-mailbox.c
+> @@ -137,7 +137,6 @@ static int bcm2835_mbox_probe(struct platform_device
+> *pdev)
+>  {
+>  	struct device *dev =3D &pdev->dev;
+>  	int ret =3D 0;
+> -	struct resource *iomem;
+>  	struct bcm2835_mbox *mbox;
+> =20
+>  	mbox =3D devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
+> @@ -153,8 +152,7 @@ static int bcm2835_mbox_probe(struct platform_device
+> *pdev)
+>  		return -ENODEV;
+>  	}
+> =20
+> -	iomem =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	mbox->regs =3D devm_ioremap_resource(&pdev->dev, iomem);
+> +	mbox->regs =3D devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(mbox->regs)) {
+>  		ret =3D PTR_ERR(mbox->regs);
+>  		dev_err(&pdev->dev, "Failed to remap mailbox regs: %d\n", ret);
+
+
+--=-y5AsCnHtvQY7mJ+3+eeo
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl4UZAMACgkQlfZmHno8
+x/5XXwgAlWhWoPbAnKlacluRU3wwe6Bf/fyJCILvfBL9w8HbTcoFBOIX1v57lLdQ
+vd8AzkmNgkzmUYyMOpKcyUI6+YQDgtc4qKutzeA7fLNS5oo2b0XB3tRwZa1ng1oJ
+vknawhQvjlzIjfNNzO5UKIVWgSoVqZlHmuQyuRN6pemg9IgT7VaEEL/rEo1uOkix
+eCyerYBXqS8Y5Ty0Y7KOjrDM2wFiggH/r6Y4mt+2Mto5pZDbY4CtBD1JjSb4u8eS
+8TF9+Pf7Jqh/NW0xAz1x40aq+J77rPsKecWm96kWnJBTUyTx4Seh6mHsZQl1Nxej
+fZAJaanhMv0nlXusFg/vtaSBr94lkQ==
+=bWd1
+-----END PGP SIGNATURE-----
+
+--=-y5AsCnHtvQY7mJ+3+eeo--
+
+
+
+--===============0205639433959953189==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0205639433959953189==--
+
+
