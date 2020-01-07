@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6F7C132374
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:22:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CE8A132384
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:25:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7vIeRb5Oo25gJCt2rLKlkcPHb2/fjyGKergdxYTNgRU=; b=GF9wshn5y2vJEG
-	XVb7GnA4lk7OW+H1fuB/9VCt8v6sWT2lob3VporPbPQY+h58SetB202ihGe6hbYlap+i2VxXQIdOO
-	y50+lw4YEmfBHGA43xlk43lKpaEBoCv2R2O0Kwja207WFPiPMks947N8pCUgmuBcyAWBwyYd+TlS2
-	DOZr/DLiJ921W2uLxDireJJbnF53WQlCu1coDCf9aQhZhFVyQgJJT6CGX+MvgGbQoR2eLoX6Fj7Lb
-	W80XajMJMdzOfnD6Ff+XhbeYbP/I7e1cU1Su1schKgpC6CWeNIP9Yn4G/4f9HscrTQB84S2BR83ZZ
-	hGXjEqAAURMTuV19XTkg==;
+	List-Owner; bh=Tre8h9B7PxjWm4rlFHtUdGYDDiC2OYsqWhRfzZibBZ0=; b=Kxth7teOjFDAC/
+	GR04q1R2vvCiZwgNiYcNrXRGMyh1SY7z5H3Eck/TM7PVuUY7YDBzLqgwgH2P3t9jnbSAhE9IjuyHI
+	jfAiaih5x1msbWsTov8br51hH3YtnCxYNIcf629SW6TldpqH0dsY6yd1ZtRw9kgeyiezPZU2XvvU2
+	2wa1CjAOfkmNylFZtzPTPQZGtzjfNoRg4TL0OgjNI9TGemczrxX7cL8elV0H9eS/A8wT6n+TGIDty
+	mo9Qw6G6GNv2oW0rTMLJh3nF0F8wRmjb9Rp+ARmGmZMR1nhi6IA6gyZhTvBL6F4Mr8S6uE/RZ5HRW
+	u9HWNDECax4UPW9kk9sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iom03-0006Y4-6y; Tue, 07 Jan 2020 10:22:11 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iom3X-00005e-08; Tue, 07 Jan 2020 10:25:47 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iolzt-0006XL-Nm
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:22:03 +0000
-Received: by mail-lj1-x243.google.com with SMTP id o13so42705988ljg.4
+ id 1iom3B-0008Pz-Es
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:25:26 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y6so46117494lji.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 02:22:01 -0800 (PST)
+ Tue, 07 Jan 2020 02:25:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=feoOXtnj/48eID5q4+nHQx+NhKQCedVmAZE1CGkwypE=;
- b=VtGCkan5np3byUChW4aFxnm5yaN4zsovrbrrNL2pV3TXPJ8ug9aSzneEr0kuM1Tj0P
- edzvWeTniw0GUWQofo54Pp1v4q8dV8I68CAwW2CuiGggie2uyBCFnBJNFXABB/wFknWN
- aHv6ds9bHX7S8mm+0nC+ZNjKMsuF0rQ+cVM+sSOHXBaIob0AVlMAA6GpBALgkvTJfIbP
- jJ285SLdjWpvbeYjQ4VK8HZgyKPdySbY5rr5DSjF4q8dsImHeDow2p8j7M6s6Hs0VnAe
- tmf4/r7N14nCP0rjiRyD6k3uq9pQJBEracEo9Mz1Q/jiJXL0gQbJtosbb02O2M+Zk3rP
- K2dg==
+ :cc; bh=izkQdpFTUaZ8mivzHGq4ICUrxmuFazGHcwlx1NAdeSc=;
+ b=qnJZFP7xmmTFBd6vI+/32Kl5V8BNirWnSab5gFzZceh0IoY+v2Gns93cnzy4CPzYWg
+ doaAdXZ1LTsoTH4XmVA0+6hZJPu4DiGtCoR5/oR+SxfT8Qwi6AthJEEfWDvI2xj17OAr
+ oVluVMO1xHctozp33EYg1FTeYjsobbPMuLZlDKOHmjVxycPvRiT+/9NkCstUg0k59Ixg
+ u6K8QWf4S6s1VdN7Ns3a3xt/HPVv0f95sKkZTk91U8+4UX7dVVB28FyIvzD3xrrn24Tv
+ PfiMS5lmbQ03otYuDdM4yS7Rw37XtrfsHgynTQxS3zpLEtSbe79k+FX/FBa1K7SRI8sN
+ JhvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=feoOXtnj/48eID5q4+nHQx+NhKQCedVmAZE1CGkwypE=;
- b=tzDtW4kFtDO+yJJ2Tuq5knoDBH3rfm9W+0yBzTgtvboezeymZjNbWuDAhbL938GSA+
- qvkGSIc8D3i63u6ClH9P7D8ZFC2xgVL5TEu3Yep8cxmJaOrd1SPsHfTgjq2bJpFCcmHJ
- rjElgI+mwpBaXQm8tKQfwBs/7CwHOtVyfIGAMci+7le7hThBmqF/qYfEumjoMIPfoeNd
- 8vF9zXL22Q2Le3xboPjiWoJpIdbMdfJBnsXShX+ZDOxtvAdm0lUqScfXl+Ji3+zVp40Q
- 4pxwFkGYL2A88vZkHuqk32xgbVMGBDmacnWR5wIr6HMJGniC7MJcIVPa7X59DZukk5FS
- Whzw==
-X-Gm-Message-State: APjAAAV6sDgp2toBRBn788UFG3mQh20AlYOFTnW9CE2pO0jEZUHI804h
- zZiepR2FfwL9vEEW00dk7eY6NEJRLfT8pJ+Jwjd0mg==
-X-Google-Smtp-Source: APXvYqxXuZipIZnMlieWvK5RQa1ocYuWDkqnEH6fOTVKgMsnd3pBbW5G5g/YQfew1w9JZF43RyZBTUs4rRB/hKpVxec=
-X-Received: by 2002:a05:651c:1049:: with SMTP id
- x9mr61861878ljm.233.1578392519784; 
- Tue, 07 Jan 2020 02:21:59 -0800 (PST)
+ bh=izkQdpFTUaZ8mivzHGq4ICUrxmuFazGHcwlx1NAdeSc=;
+ b=Kgwhsxi0QABPLe5h9j23WtxeVBETSBaOT04Kui2KybNY7GdihXe22fFW9WhsHxZK5i
+ HG/vlLwceP4m5d8oArMSvst9E1WCvZu0szgGBHrMAInScG5G2Ik+EpmvVRiDYnYQIubf
+ A8M4yHGCq19KUOLR7gQCRmWrjcrYMUCmoLvxq836HAZvXkdxAbTkDqjrjvAb7g8eWjYe
+ lRFDR/AcbGY/lfrAZJd/MVphY0QbL0z7xGumpkwfVrCi0Rylu6sS0H+GKe++DyZNcdq8
+ F0YdkS/5Msoj/mWOQD3tXHHL5KTW++UiLolehclbRYocm+uJLExC/Rhk+LpEHIqdhSrK
+ pQww==
+X-Gm-Message-State: APjAAAXZ2nswOoSNXq/6/2BSpXtLQCqE6blfyjJQld2PjA9Wh6bQ4f4U
+ A9vnxXcC0y7B/A2EKy/RzRYFKVMk68HB+ZviTwe8cw==
+X-Google-Smtp-Source: APXvYqxf447vgBZ6Ekf31Ne3QDBNnbDxra2GBTMOfyXxg/zNohD7uD4phbH7VRO5zCLqP2dAWg+gaYiElNCf9+fF5OI=
+X-Received: by 2002:a2e:a0cd:: with SMTP id f13mr25923166ljm.251.1578392723253; 
+ Tue, 07 Jan 2020 02:25:23 -0800 (PST)
 MIME-Version: 1.0
-References: <20191226023734.9631-1-qianggui.song@amlogic.com>
-In-Reply-To: <20191226023734.9631-1-qianggui.song@amlogic.com>
+References: <1577362338-28744-1-git-send-email-srinivas.neeli@xilinx.com>
+ <1577362338-28744-2-git-send-email-srinivas.neeli@xilinx.com>
+In-Reply-To: <1577362338-28744-2-git-send-email-srinivas.neeli@xilinx.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 7 Jan 2020 11:21:48 +0100
-Message-ID: <CACRpkdYCGcUNuDOG2qSjRhZm-3c8eTUE4ib-tVAxsaCzU-RqfQ@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: meson: Fix wrong shift value when get
- drive-strength
-To: Qianggui Song <qianggui.song@amlogic.com>
+Date: Tue, 7 Jan 2020 11:25:12 +0100
+Message-ID: <CACRpkdYTz7hFiU-JfopNBVzfpaYBj86DF1w0=6egdBY2fY8Mzg@mail.gmail.com>
+Subject: Re: [PATCH 1/8] gpio: zynq: Fix for bug in zynq_gpio_restore_context
+ API
+To: Srinivas Neeli <srinivas.neeli@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_022201_816538_0A2A0169 
-X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-CacheID: sfid-20200107_022525_556491_001E89E6 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,34 +93,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Guillaume La Roque <glaroque@baylibre.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Jerome Brunet <jbrunet@baylibre.com>
+ Michal Simek <michal.simek@xilinx.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, git@xilinx.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 26, 2019 at 3:37 AM Qianggui Song <qianggui.song@amlogic.com> wrote:
+On Thu, Dec 26, 2019 at 1:12 PM Srinivas Neeli
+<srinivas.neeli@xilinx.com> wrote:
 
-> In meson_pinconf_get_drive_strength, variable bit is calculated by
-> meson_calc_reg_and_bit, this value is the offset from the first pin of a
-> certain bank to current pin, while Meson SoCs use two bits for each pin
-> to depict drive-strength. So a left shift by 1 should be done or node
-> pinconf-pins shows wrong message.
+> From: Swapna Manupati <swapna.manupati@xilinx.com>
 >
-> Fixes: 6ea3e3bbef37 ("pinctrl: meson: add support of drive-strength-microamp")
+> This patch writes the inverse value of Interrupt Mask Status
+> register into the Interrupt Enable register in
+> zynq_gpio_restore_context API to fix the bug.
 >
-> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+> Fixes: e11de4de28c0 ("gpio: zynq: Add support for suspend resume")
+> Signed-off-by: Swapna Manupati <swapna.manupati@xilinx.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
 
-Patch applied.
+Patch applied for fixes.
 
 Yours,
 Linus Walleij
