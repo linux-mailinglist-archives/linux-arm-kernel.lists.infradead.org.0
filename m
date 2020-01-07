@@ -2,149 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F24F9132E4A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:22:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DE41132E64
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:28:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ErsaP/YgIlP+B+u5vNl+ylSlzxOPuRhyL8B/kVOPJ+4=; b=MrhM9dIDTOoGLu
-	B80OYJZG66oPPd+/U7Y9zudwPk8EhJM4tlCIqYQXr2+ou0JG7j2Mfa2RLVEoY6XezZrIqDOSLKKfS
-	Ep9P8JUHYks7vGNyt54vYxShe8VSGamYMPA4wp5soikjP9clx158DMcX1FZ47eUVX0m0GecIU/CjM
-	tF1GjL5T3w+1WP/KemQgArCh35n1AxYHhLyENWs5rRNdzhklxjyOJGnp7q6Lttbw7u8hnORfquwIE
-	N8K1/rcM11rpKLGZYy81EfBd0wK2UcWgo1+4NcG8sXuKB5RlmSnMoMfcYYooTtfD+D77bQqMTVvw4
-	xFjvVVUUZhYNnfj51Xdg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sCnD4V+Ayafr83+/QUSMXmzaWz0K43uGtYU3ifcXf2o=; b=Yufm5vKKUOmkq/
+	5C+aHtKiDS22F0xZykir8QuugjkqxMQWuTorLurqlFwHHAVAG6ZqTzrv7K17VJZEmPBkhQXyeQoJ0
+	F0qgA5fQzHBSY3gCaA6kK0X5r3VgICeM91PW4bbpUNopnP/4eeajAcujUOWhACMHuxZ5LAzXwD8pT
+	lGx9V4QR4fTaAh3ra0j7I8/Nb/8q4Yu0yRrZ73bTEzEuAeUSFavr9jqDnR79OOn8+Qib5yS69BHzX
+	Lc/43cUdWau+4JuEdQ0L0fEAShoJyyGNkXsw0dYDCqbDWCjp+qm5VHX2CnPx/uDZqfgrCRcgabhMi
+	0TfoF7dz0/k2yp9K9eHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotUP-0006sr-5b; Tue, 07 Jan 2020 18:22:01 +0000
-Received: from alln-iport-1.cisco.com ([173.37.142.88])
+	id 1iotaN-0000Z5-FO; Tue, 07 Jan 2020 18:28:11 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotUG-0006sE-G2
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:21:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=cisco.com; i=@cisco.com; l=2852; q=dns/txt; s=iport;
- t=1578421312; x=1579630912;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=hVzWvSYipyoDz/63QyPdNRteHfXEbX2edhxuvSoU2UM=;
- b=eKnPZD2m1saOLJvBiPQWnDproUwYAVQtTtr9W0ULukQtfL/G4tWRZynN
- QnBAMY7mIv14RaF7EOnWNJYmI8S3rCOx+kqv+S7czZeqI78E5rCf1rfvx
- JWZB0zsWjhTGDBvoyPX9V1UB7lK8Skwt8YX/J2tYRMGSru0VEbolQu83c M=;
-IronPort-PHdr: =?us-ascii?q?9a23=3AqualZBQr18xJfdIieAX+e9JHIdpsv++ubAcI9p?=
- =?us-ascii?q?oqja5Pea2//pPkeVbS/uhpkESXBNfA8/wRje3QvuigQmEG7Zub+FE6OJ1XH1?=
- =?us-ascii?q?5g640NmhA4RsuMCEn1NvnvOjc5Fd5DUVZv13q6KkNSXs35Yg6arw=3D=3D?=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0BVAQBDyxRe/4kNJK1mHAEBAQEBBwE?=
- =?us-ascii?q?BEQEEBAEBgWsEAQELAYFTUAWBRCAECyoKh0UDiwaCX5gNglIDVAkBAQEMAQE?=
- =?us-ascii?q?tAgEBhEACgWkkNwYOAgMNAQEEAQEBAgEFBG2FNwyFXgEBAQEDEigGAQE3AQ8?=
- =?us-ascii?q?CAQgSBh4QMhcOAQEEDg0ahUcDLgECoXwCgTiIYYIngn4BAQWFCRiCDAkUgSI?=
- =?us-ascii?q?BjBgagUE/gRFHgkw+hEuDQIIskAieJnUKgjaWN5pfqTQCBAIEBQIOAQEFgWg?=
- =?us-ascii?q?jgVhwFYMnUBgNjRKDc4pTdIEojCUBgQ8BAQ?=
-X-IronPort-AV: E=Sophos;i="5.69,406,1571702400"; d="scan'208";a="398971895"
-Received: from alln-core-4.cisco.com ([173.36.13.137])
- by alln-iport-1.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
- 07 Jan 2020 18:21:51 +0000
-Received: from XCH-ALN-007.cisco.com (xch-aln-007.cisco.com [173.36.7.17])
- by alln-core-4.cisco.com (8.15.2/8.15.2) with ESMTPS id 007ILpPU020341
- (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
- Tue, 7 Jan 2020 18:21:51 GMT
-Received: from xhs-rcd-002.cisco.com (173.37.227.247) by XCH-ALN-007.cisco.com
- (173.36.7.17) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 7 Jan 2020 12:21:50 -0600
-Received: from xhs-aln-002.cisco.com (173.37.135.119) by xhs-rcd-002.cisco.com
- (173.37.227.247) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 7 Jan 2020 12:21:50 -0600
-Received: from NAM04-SN1-obe.outbound.protection.outlook.com (173.37.151.57)
- by xhs-aln-002.cisco.com (173.37.135.119) with Microsoft SMTP Server (TLS) id
- 15.0.1473.3 via Frontend Transport; Tue, 7 Jan 2020 12:21:50 -0600
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=d5ROhniTBr/d8rA9KTfAIPainxu+fFQmOt2/LNPyW03l2mhVGxDFR2sSpX1wn5pqW7vFFiiAkVsSQj1wjIsWI8nk9cZd0KF/Wfm5EP+9d0LvD4m+7IzG0H16wF2GFXO5ESurqqaI9JI/1MH+ZTDHyGY2Id5ThRpBK4a6Ap1COAsdaj7n+K7tctU6jXSsX1JZvtBdf2DIQ6DRxA4jZ8eX+PC5+w+Bnt/hlce10xtLnynrAu+0d1Rh2XmO7W+koGAwbw57jhdU8/A8Crtf7NGslKq76eT9Rg5qLciwR6SpM8xLHDj9DU1K9ypjlCmXvuecOV4tDdAiHfO4yraeYQTFyQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=efCq9XDJa5zMUccN1Pj1rtSUqtj9I7te1kKxzR6nQhw=;
- b=AEcMSM7Z/aWBbxo8OJiCGk3AN76hjLCljx8osfYvbzBHI3HnnPTv2TEaUctN1zj4d1M4zCt6OcyiUV7ZBAJa1CQgOfKPmSuUSJrWvn9bEZof3sRqHnkp0u56uzS4hTxgz/mbCd/G0OuZH/lztsCZ/tgMRGBp+W2u3GOjMLDOXaD4dYMTkZDJ/LgOdqXpiNk85P0EcxcEn5MXlmMZRbr8qTHIZ4peKH1F5TTGMR5jvqFrFSOn/sN2hwaE53cExYfKvQ9lOatHo1Z2JQHfzrijzzz6mx14sQSS1QhstsA24+dQDhVNCfZJtRSaKBlQIg45Rw23eG6atiGlm7QlrTBSRg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=cisco.com; dmarc=pass action=none header.from=cisco.com;
- dkim=pass header.d=cisco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
- s=selector2-cisco-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=efCq9XDJa5zMUccN1Pj1rtSUqtj9I7te1kKxzR6nQhw=;
- b=qYlLTbTsz8DKQKEP7Wm2AGdcVI6iO35qfMzj1lKQNG/lakIqfOK7K22Zv75jVdFZl4bRbPCF5MaXfmIwMjcwfmdytCdgtQHEPoKqPDzdjPAXEz2jTMeD7k4sch0Q7YV5Vv0u8m9IhNhx3g/dt9fChbq2GByM3WLxV8hwCuEbbPo=
-Received: from BYAPR11MB2582.namprd11.prod.outlook.com (52.135.229.149) by
- BYAPR11MB3639.namprd11.prod.outlook.com (20.178.237.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2602.10; Tue, 7 Jan 2020 18:21:47 +0000
-Received: from BYAPR11MB2582.namprd11.prod.outlook.com
- ([fe80::a963:79bc:32a5:6f48]) by BYAPR11MB2582.namprd11.prod.outlook.com
- ([fe80::a963:79bc:32a5:6f48%5]) with mapi id 15.20.2602.016; Tue, 7 Jan 2020
- 18:21:47 +0000
-From: "Saeed Karimabadi (skarimab)" <skarimab@cisco.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: RE: Arm64 Crashkernel doesn't work with FLATMEM anymore
-Thread-Topic: Arm64 Crashkernel doesn't work with FLATMEM anymore
-Thread-Index: AdW0bU4PM3g/9KC9STy6zefeuZgKiADAawuAAJN7e4AB9cK7AAD8NLCw
-Date: Tue, 7 Jan 2020 18:21:47 +0000
-Message-ID: <BYAPR11MB2582648C365D1B02C7D930BFCC3F0@BYAPR11MB2582.namprd11.prod.outlook.com>
-References: <BYAPR11MB2582CB879F0B7DE06A351685CC500@BYAPR11MB2582.namprd11.prod.outlook.com>
- <c4d7ea82-7736-4cbd-4568-83473a7c2d11@arm.com>
- <BYAPR11MB2582B5FE87A72352E6A8C2F6CC2E0@BYAPR11MB2582.namprd11.prod.outlook.com>
- <20200102174206.GD27940@arrakis.emea.arm.com>
-In-Reply-To: <20200102174206.GD27940@arrakis.emea.arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=skarimab@cisco.com; 
-x-originating-ip: [128.107.241.185]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6e22c925-a3f3-408f-ef67-08d7939e7554
-x-ms-traffictypediagnostic: BYAPR11MB3639:
-x-ld-processed: 5ae1af62-9505-4097-a69a-c1553ef7840e,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR11MB3639A6D2C345BCB48491AC04CC3F0@BYAPR11MB3639.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 027578BB13
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(39860400002)(346002)(136003)(366004)(376002)(189003)(199004)(53546011)(6506007)(81156014)(81166006)(8936002)(8676002)(7696005)(52536014)(5660300002)(26005)(4326008)(478600001)(66446008)(64756008)(66556008)(66476007)(316002)(54906003)(66946007)(76116006)(2906002)(9686003)(86362001)(186003)(33656002)(71200400001)(6916009)(55016002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB3639;
- H:BYAPR11MB2582.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: cisco.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: AQznY3VeSrgYHLbemsMCZqqH5MY56RekRbYYzDBYyVZu2PXUAth91JqhT4rdXMUsQnJKUd3oSKz/VClfMaTuPLzrjbFXut3XA19ATdWrzFPgVVgjmNHDGUwBiOqinBqIBvMczO2r3Zo3uUCvyXM5IKlHP1BV/wkFWy/gGiH+6eZBVnWotkKDvVujaxYKfdFMliEiNKWI/QsBafRUi3qxn1lnI+8gLzLNpM0vsDq40TIjT9U0bELvY4z4ebkX8+p0DT0smtmGVaEhKcKFUafKC63/gOAVxJFzQmuudkOjdtOgKT8SKuUomMeMjUI9I9tO/cdYzBUJ2ZE9jHVFhLaiEgar4y2FLRu9b1tJ8nuRCFpvVyJsjiYHqpYpezeyVjBmQ0WBI7kIMyxPjKsi8GJ62NgUtdNnMSZIw20QD0+YVgyNtv1cAFIkyNz1SAEpozE+
+ id 1iotaG-0000YR-QE; Tue, 07 Jan 2020 18:28:06 +0000
+Received: by mail-pg1-x543.google.com with SMTP id q127so271348pga.4;
+ Tue, 07 Jan 2020 10:28:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Z8mw1Ya98qetELT1Uu746ZtrvnRAo0uZSJeMWBJUgYQ=;
+ b=H+0CQx1wDuuoXdcaXpuDcMXuMPNE3aPCOLhQsKU3JpAS87g3C8nkjnpS3wlBgfKJ8t
+ 7ysdFna7632R4qVgf/XmgNDyiQQ4tTqiaIShoNJ8IhSoprFUTtCw0FOW3Js8BisGqsjL
+ HmvCZKiigcIMmEcuf5OlycD2dpyBg6viWUjb9L85JunsKDdlePY0zN8QrpG8NDf1Mwfa
+ hnByIjxXq4FOyh63G9kPRcypbnmzRyFKcmEMWWWE0WonsnzITQPkfvX0KXzWuOgNX30+
+ tbiMOJJD47u0RXfwOkxEDc+6X72o89tL5JA9giazfLOYQio6hovpdloLCl7Sjgwr6DuA
+ AiLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=Z8mw1Ya98qetELT1Uu746ZtrvnRAo0uZSJeMWBJUgYQ=;
+ b=oQsdoMNx6g/u+1ymqFfKs7iDP3urE0DgyizC+7znI8h+RMD3F1h52n/1gwPIgFqCdZ
+ S+WkLeu140k0LKtjgyfyq3f/nnAYmmOB+WXO2wzW3+fdwn5ctth2SEjEGohFjqucsOqp
+ Ff2SAl4B2vsI5VO9pECQCJ3WV50zgmP0lYMx++/pb0gGcZx2nuA1tG1RimyW1uUz4eJI
+ lRAizqjVH3eAP76nl5CmWyhwv8zw88oTxoK9OOhPKCfZMyuuXbYL4ZrEx942zUuZ/vNq
+ YGsHka6aeihcKvfKO9SSr2epwaevNDrkv6raAe3A8xixKyLapvvRYvlzlZNpnYveL0xv
+ K0yw==
+X-Gm-Message-State: APjAAAXnd5tTGCIyo4TcdYhs3VVMNFfYmwb8aAV14y99nO8a3MM+6caI
+ KIn10ElyPg+3XAlqMN+fTdpCiH83
+X-Google-Smtp-Source: APXvYqyshbKB0/kpCuDx8kvlvtlmVuIy7TJ/9LKjY/4XcqN++ugfLcAMtrGbtjf9uYvAjP/f8nbPiQ==
+X-Received: by 2002:a65:4c06:: with SMTP id u6mr850096pgq.412.1578421683541;
+ Tue, 07 Jan 2020 10:28:03 -0800 (PST)
+Received: from [10.67.50.41] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id o19sm29903075pjr.2.2020.01.07.10.28.02
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 07 Jan 2020 10:28:02 -0800 (PST)
+Subject: Re: [RFC] ARM: add bcm2711_defconfig
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Stefan Wahren <wahrenst@gmx.net>, f.fainelli@gmail.com
+References: <20200107172459.28444-1-nsaenzjulienne@suse.de>
+ <3688a55b-e929-6cef-66c6-affed97d938b@gmx.net>
+ <65e976494676a7081b154961ba51048892c2a779.camel@suse.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <5db5ed47-adab-8d31-c3f7-4d7f63258e22@gmail.com>
+Date: Tue, 7 Jan 2020 10:28:01 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6e22c925-a3f3-408f-ef67-08d7939e7554
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jan 2020 18:21:47.7111 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: lgcJuankHtwibxM3XotrqPU4qWqWXN5tKo3ic5Q3y+ToTWiI6XbirNxEEUJqyyCjYT7epYV2CmgMG22v1lFNIA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3639
-X-OriginatorOrg: cisco.com
-X-Outbound-SMTP-Client: 173.36.7.17, xch-aln-007.cisco.com
-X-Outbound-Node: alln-core-4.cisco.com
+In-Reply-To: <65e976494676a7081b154961ba51048892c2a779.camel@suse.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_102152_675227_1E859727 
-X-CRM114-Status: GOOD (  15.71  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20200107_102804_852923_5444E697 
+X-CRM114-Status: GOOD (  15.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [173.37.142.88 listed in list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -163,88 +156,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- James Morse <james.morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "xe-linux-external\(mailer list\)" <xe-linux-external@cisco.com>
+Cc: mbrugger@suse.com, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, hch@lst.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday, January 2, 2020 9:42 AM Catalin Marinas <catalin.marinas> wrote:
-> On Mon, Dec 23, 2019 at 10:24:57PM +0000, Saeed Karimabadi (skarimab) wrote:
-> > On 20/12/2019 11:52 AM  James Morse <james.morse> wrote:
-> > > On 17/12/2019 00:02, Saeed Karimabadi (skarimab) wrote:
-> > > > Crash dump  Kernel doesn't work with FLATMEM memory model since version 4.11.0-rc3 and it
-> [...]
-> > > Because of these nomap memblocks, I don't think kdump is isolated enough from the systems
-> > > memory map for the flatmem illusion to hold just because its kdump. You still need to
-> > > access firmware table that describe the system, as well as any memory that was reserved
-> > > with mechanisms like this. This exposes you to the platform's not-really-flatmem memory
-> > > layout.
-> > >
-> > > I think the real fix here is to remove FLATMEM.
-> [...]
-> > For example is it possible to reduce the amount of memory SPARMEM is
-> > using for its internal data structures or to keep track of different
-> > memory zones? Or any other suggestion of reducing the total memory
-> > size for crash kernel ?
+On 1/7/20 10:11 AM, Nicolas Saenz Julienne wrote:
+> On Tue, 2020-01-07 at 19:06 +0100, Stefan Wahren wrote:
+>> Hi Nicolas,
+>>
+>> Am 07.01.20 um 18:24 schrieb Nicolas Saenz Julienne:
+>>> The Raspberry Pi 4 depends on LPAE in order to use its PCIe port, which
+>>> is essential, as it ultimately provides USB2/3 connectivity. As this
+>>> setup doesn't fit any generic purpose configuration this adds
+>>> bcm2711_defconfig which is based on the current Raspberry Pi foundation
+>>> config file[1] with as little changes as possible
+>>
+>> i really dislike the Foundation config file, because it contains so many
+>> unnecessary features. Bisecting with such a kernel config is horrible.
+>>
+>> How about finding a compromise between bcm2835_defconfig and
+>> multi_v7_defconfig + LPAE?
 > 
-> Can you change SECTION_SIZE_BITS to 29 or 28 in
-> arch/arm64/include/asm/sparsemem.h and see whether it makes a
-> difference?
+> If there is a consensus this is the right approach (creating a new config
+> file), I'll be happy to try that out.
+> 
+> Now that I think of it, maybe we shouldn't add bcm2711_thermal into
+> multi_v7_defconfig.
 
-I changed SECTION_SIZE_BITS to 29 in main kernel as well as crash kernel and both can boot properly but after 
-triggering a panic "makedumpfile" tool cannot collect the corefile. It complains that it cannot find 
-the address of mem_section. I'll collect the raw VMCORE and will check further if I need to modify 
-the "makedumpfile" code .  Also "makedumpfile" recognizes the VMCORE memory model as SPARSEMEM while
-it should detect it as SPARSEMEM_EX.
+It there a mechanism that can be used such that bcm2711_defconfig would
+be simply a fragment that enables CONFIG_ARM_LPAE=y (and other relevant
+2711 only options) and that you could easily run/test with, something like:
 
-# makedumpfile -F -E -D -d 31 /proc/vmcore | gzip > ./core.4.19.29
-sadump: unsupported architecture
-LOAD (0)
-  phys_start : 80080000
-  phys_end   : 80c35000
-  virt_start : ffffff8008080000
-  virt_end   : ffffff8008c35000
-LOAD (1)
-  phys_start : 80000000
-  phys_end   : c2000000
-  virt_start : ffffffc000000000
-  virt_end   : ffffffc042000000
-LOAD (2)
-  phys_start : c203b000
-  phys_end   : fbe00000
-  virt_start : ffffffc04203b000
-  virt_end   : ffffffc07be00000
-LOAD (3)
-  phys_start : ffe00000
-  phys_end   : 100000000
-  virt_start : ffffffc07fe00000
-  virt_end   : ffffffc080000000
-Linux kdump
-page_size    : 4096
-phys_base    : 80000000 (vmcoreinfo)
+ARCH=arm make bcm2835_defconfig+bcm2711_defconfig
 
-max_mapnr    : 100000
-There is enough free memory to be done in one cycle.
-
-Buffer size for the cyclic mode: 262144
-va_bits      : 39
-page_offset  : ffffffc000000000
-kimage_voffset   : ffffff7f88000000
-max_physmem_bits : 30
-section_size_bits: 1e
-va_bits      : 39
-page_offset  : ffffffc000000000
-num of NODEs : 1
-
-Memory type  : SPARSEMEM
-get_mm_sparsemem: Can't get the address of mem_section.
-
-Thanks,
-Saeed
+or something along those lines?
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
