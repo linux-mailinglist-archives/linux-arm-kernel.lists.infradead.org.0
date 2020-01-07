@@ -2,162 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFECC131F96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:51:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02DB0131FAD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 07:03:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dx0JuwqFAUVRI5Meg5tQmNe8FLjcI2bpAIOvDnxZ2eE=; b=mAViB+OSWbhI42
-	hFuh7bWLjDJTz8h9NNn3lnncJGP3tAlPrpY5DzvH8EkPB0eXM1CcTxUdFOL2+g8y2BlR2yGHgSOIc
-	UPDKKunFMOtkp09LwMpNfWjbbhg2Uiv7qx1ERIO7bIf9xaIm6+AppXdmyOr2kWk6HsQTYp5GQarsR
-	LIAiUIP1OWDR36E2QAudQUOe3t41XUmnPuqLsq9cK6zXhV1L6Mn1dN6oOHzE+kinHGlsGrjrgwFnB
-	m/cM6uvEG21K5ahRnKRFDk6ZLlQzlsMo7XF7PlrQ0dEkh/TyLWKCM9DPtdp6JMg/uBKOkpi0qzwM8
-	tvuXyY6J6zuu0G0l9bdA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=o9sfpKRsAg5l0Gjc6wV8x94eWbo69GY2+VSES1zn5/M=; b=lxg
+	KzWcoe1zZ9DBx1pMvix6HvlL5EZSv5BCU7L5apkBeY7nB3MFponwKT9Gcu+uzA2OMCdR/8E9pPGwm
+	gq8pXHdCJP8yg57IU5gNUxwjYjk8Dl2ehgEJg7oG6n4Eh/+i7iarXJMJg0lD8XWRoT5glzxhZHO55
+	tiuJYjTd1TB5M1U4nZTXtOIzNpKpdJJA9uFBLMRzcjmZpHBpKL+pX/hPDmIYnmW9HNiqKnxOFN8WF
+	hY6uj4gKRdxT9qBoxwKCT4IYdgRYZudSKZ8Hdqt5tmCJ/Gwijxge0B2KoMvB69nbyoYqtkPCMcMZ7
+	qRmVPMhicXE9mC9+BdrjDP5zbWHlczQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iohlu-0000WZ-Rm; Tue, 07 Jan 2020 05:51:18 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iohy0-0005mn-Be; Tue, 07 Jan 2020 06:03:48 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iohlU-0000MH-1s
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:50:54 +0000
-Received: by mail-pl1-x644.google.com with SMTP id g6so22765003plt.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 21:50:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=upFgnCPUP6bUNf0w4clZ6s4PfWYYFquwuIgCR0kvv0I=;
- b=TEavNkJX+k/qA/roydejXmwwkeuJyf1H/Tf0GIc2hrC8eOo8QHKUAjvNbWKsX7Ep5O
- heIrJTpMRK+kTuV+eGHm1lPDmDLydZcaC+GEpRPXDgUA1nge3fOmqc47PLcXecDYMnXL
- kY+hOUohlNLbhy7vbptPpQQGwNGUy3kkStrLCX2/r0VaQzD91Y6QrcfxZgo8K6D8DTiH
- jHhwfcgUK4xZ0l4Vw2ObBAG9sKNw6StMi0yp28OgLQT6W+SnMZIaiGPnvzkw9BSUVmjS
- 6QEu51Dgj65UoLgNjgKuRclZavvUxSr2mWHB9qFeBesf2VD0LjeYaAu94hFS4Ls0q1Ef
- RO9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=upFgnCPUP6bUNf0w4clZ6s4PfWYYFquwuIgCR0kvv0I=;
- b=pxD/b0S+5j+nDhW6XHHKtYeercQGSjgbW/Q0zyG4Cb0tek72K0g0KEyE0CL1/dIFzT
- wF6394qw0SzjeOESPceAPWRTh8XlstTILM9nBFDvSdZKqeg+HVL1Vu9UFFkjft7sd/H2
- 9M1LgbY1EJEgnGBRqo/4z7ZEpVlBB0BYDtTTOJN+mDVg9tWWhE7v0bhze03Na+VHyZ2x
- lK6DRm++TnPr0kEdxgNXCAbP8bM3quHZU3bV4EK3x3mJXA7Hlo9G+pdrMReXT+ANpg7c
- 09Hk2i3B7/tJXTpA+liNZDuoL4TXxVwXwdRrf2ZioSzXRDz+OwQ7b5kJhk9V8gRBQ06C
- 6S4g==
-X-Gm-Message-State: APjAAAVL8GKd7ICLKayPHfkldm7UC3u8Ee5rDcc1y9Dr3T57tysXy7SK
- 2cdlQu5PjENu/WYTekLMeEyIW2Ip
-X-Google-Smtp-Source: APXvYqypnbXjmjzfFiLtZwGRE8uynkBQpr3ZCa2ju53uEjXtfBkVe8I+mcbjmxrxP9s/2wiptwhCHw==
-X-Received: by 2002:a17:902:b908:: with SMTP id
- bf8mr81302846plb.293.1578376250668; 
- Mon, 06 Jan 2020 21:50:50 -0800 (PST)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- 64sm77921171pfd.48.2020.01.06.21.50.47
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 21:50:49 -0800 (PST)
-Subject: Re: broonie-regmap/for-next bisection: boot on
- ox820-cloudengines-pogoplug-series-3
-To: Sriram Dash <sriram.dash@samsung.com>,
- "'David S. Miller'" <davem@davemloft.net>,
- "'kernelci.org bot'" <bot@kernelci.org>, tomeu.vizoso@collabora.com,
- khilman@baylibre.com, mgalka@collabora.com, guillaume.tucker@collabora.com,
- broonie@kernel.org, 'Jayati Sahu' <jayati.sahu@samsung.com>,
- 'Padmanabhan Rajanbabu' <p.rajanbabu@samsung.com>,
- enric.balletbo@collabora.com, narmstrong@baylibre.com,
- Heiko Stuebner <heiko@sntech.de>
-References: <CGME20191225075056epcas4p2ab51fc6ff1642705a61f906189bb29f0@epcas4p2.samsung.com>
- <5e0314da.1c69fb81.a7d63.29c1@mx.google.com>
- <03ca01d5c23a$09921d00$1cb65700$@samsung.com>
- <1c3531f8-7ae2-209d-b6ed-1c89bd9f2bb6@gmail.com>
- <011801d5c51a$bd2e5710$378b0530$@samsung.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
- xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
- X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
- AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
- ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
- SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
- nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
- qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz7QnRmxvcmlhbiBG
- YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+iGYEExECACYCGyMGCwkIBwMCBBUCCAME
- FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
- 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSC5BA0ESM+4EhAQAL/o09boR9D3Vk1Tt7+gpYr3
- WQ6hgYVON905q2ndEoA2J0dQxJNRw3snabHDDzQBAcqOvdi7YidfBVdKi0wxHhSuRBfuOppu
- pdXkb7zxuPQuSveCLqqZWRQ+Cc2QgF7SBqgznbe6Ngout5qXY5Dcagk9LqFNGhJQzUGHAsIs
- hap1f0B1PoUyUNeEInV98D8Xd/edM3mhO9nRpUXRK9Bvt4iEZUXGuVtZLT52nK6Wv2EZ1TiT
- OiqZlf1P+vxYLBx9eKmabPdm3yjalhY8yr1S1vL0gSA/C6W1o/TowdieF1rWN/MYHlkpyj9c
- Rpc281gAO0AP3V1G00YzBEdYyi0gaJbCEQnq8Vz1vDXFxHzyhgGz7umBsVKmYwZgA8DrrB0M
- oaP35wuGR3RJcaG30AnJpEDkBYHznI2apxdcuTPOHZyEilIRrBGzDwGtAhldzlBoBwE3Z3MY
- 31TOpACu1ZpNOMysZ6xiE35pWkwc0KYm4hJA5GFfmWSN6DniimW3pmdDIiw4Ifcx8b3mFrRO
- BbDIW13E51j9RjbO/nAaK9ndZ5LRO1B/8Fwat7bLzmsCiEXOJY7NNpIEpkoNoEUfCcZwmLrU
- +eOTPzaF6drw6ayewEi5yzPg3TAT6FV3oBsNg3xlwU0gPK3v6gYPX5w9+ovPZ1/qqNfOrbsE
- FRuiSVsZQ5s3AAMFD/9XjlnnVDh9GX/r/6hjmr4U9tEsM+VQXaVXqZuHKaSmojOLUCP/YVQo
- 7IiYaNssCS4FCPe4yrL4FJJfJAsbeyDykMN7wAnBcOkbZ9BPJPNCbqU6dowLOiy8AuTYQ48m
- vIyQ4Ijnb6GTrtxIUDQeOBNuQC/gyyx3nbL/lVlHbxr4tb6YkhkO6shjXhQh7nQb33FjGO4P
- WU11Nr9i/qoV8QCo12MQEo244RRA6VMud06y/E449rWZFSTwGqb0FS0seTcYNvxt8PB2izX+
- HZA8SL54j479ubxhfuoTu5nXdtFYFj5Lj5x34LKPx7MpgAmj0H7SDhpFWF2FzcC1bjiW9mjW
- HaKaX23Awt97AqQZXegbfkJwX2Y53ufq8Np3e1542lh3/mpiGSilCsaTahEGrHK+lIusl6mz
- Joil+u3k01ofvJMK0ZdzGUZ/aPMZ16LofjFA+MNxWrZFrkYmiGdv+LG45zSlZyIvzSiG2lKy
- kuVag+IijCIom78P9jRtB1q1Q5lwZp2TLAJlz92DmFwBg1hyFzwDADjZ2nrDxKUiybXIgZp9
- aU2d++ptEGCVJOfEW4qpWCCLPbOT7XBr+g/4H3qWbs3j/cDDq7LuVYIe+wchy/iXEJaQVeTC
- y5arMQorqTFWlEOgRA8OP47L9knl9i4xuR0euV6DChDrguup2aJVU4hPBBgRAgAPAhsMBQJU
- X9LxBQkeXB3fAAoJEGFXmRW1Y3YOj4UAn3nrFLPZekMeqX5aD/aq/dsbXSfyAKC45Go0YyxV
- HGuUuzv+GKZ6nsysJ7kCDQRXG8fwARAA6q/pqBi5PjHcOAUgk2/2LR5LjjesK50bCaD4JuNc
- YDhFR7Vs108diBtsho3w8WRd9viOqDrhLJTroVckkk74OY8r+3t1E0Dd4wHWHQZsAeUvOwDM
- PQMqTUBFuMi6ydzTZpFA2wBR9x6ofl8Ax+zaGBcFrRlQnhsuXLnM1uuvS39+pmzIjasZBP2H
- UPk5ifigXcpelKmj6iskP3c8QN6x6GjUSmYx+xUfs/GNVSU1XOZn61wgPDbgINJd/THGdqiO
- iJxCLuTMqlSsmh1+E1dSdfYkCb93R/0ZHvMKWlAx7MnaFgBfsG8FqNtZu3PCLfizyVYYjXbV
- WO1A23riZKqwrSJAATo5iTS65BuYxrFsFNPrf7TitM8E76BEBZk0OZBvZxMuOs6Z1qI8YKVK
- UrHVGFq3NbuPWCdRul9SX3VfOunr9Gv0GABnJ0ET+K7nspax0xqq7zgnM71QEaiaH17IFYGS
- sG34V7Wo3vyQzsk7qLf9Ajno0DhJ+VX43g8+AjxOMNVrGCt9RNXSBVpyv2AMTlWCdJ5KI6V4
- KEzWM4HJm7QlNKE6RPoBxJVbSQLPd9St3h7mxLcne4l7NK9eNgNnneT7QZL8fL//s9K8Ns1W
- t60uQNYvbhKDG7+/yLcmJgjF74XkGvxCmTA1rW2bsUriM533nG9gAOUFQjURkwI8jvMAEQEA
- AYkCaAQYEQIACQUCVxvH8AIbAgIpCRBhV5kVtWN2DsFdIAQZAQIABgUCVxvH8AAKCRCH0Jac
- RAcHBIkHD/9nmfog7X2ZXMzL9ktT++7x+W/QBrSTCTmq8PK+69+INN1ZDOrY8uz6htfTLV9+
- e2W6G8/7zIvODuHk7r+yQ585XbplgP0V5Xc8iBHdBgXbqnY5zBrcH+Q/oQ2STalEvaGHqNoD
- UGyLQ/fiKoLZTPMur57Fy1c9rTuKiSdMgnT0FPfWVDfpR2Ds0gpqWePlRuRGOoCln5GnREA/
- 2MW2rWf+CO9kbIR+66j8b4RUJqIK3dWn9xbENh/aqxfonGTCZQ2zC4sLd25DQA4w1itPo+f5
- V/SQxuhnlQkTOCdJ7b/mby/pNRz1lsLkjnXueLILj7gNjwTabZXYtL16z24qkDTI1x3g98R/
- xunb3/fQwR8FY5/zRvXJq5us/nLvIvOmVwZFkwXc+AF+LSIajqQz9XbXeIP/BDjlBNXRZNdo
- dVuSU51ENcMcilPr2EUnqEAqeczsCGpnvRCLfVQeSZr2L9N4svNhhfPOEscYhhpHTh0VPyxI
- pPBNKq+byuYPMyk3nj814NKhImK0O4gTyCK9b+gZAVvQcYAXvSouCnTZeJRrNHJFTgTgu6E0
- caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
- 6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <a925da0f-4840-1d30-8acd-b1f069da920a@gmail.com>
-Date: Mon, 6 Jan 2020 21:50:47 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
-MIME-Version: 1.0
-In-Reply-To: <011801d5c51a$bd2e5710$378b0530$@samsung.com>
-Content-Language: en-US
+ id 1iohxC-0005Go-5D
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 06:03:03 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E4993200D6A;
+ Tue,  7 Jan 2020 07:02:55 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1185A200D64;
+ Tue,  7 Jan 2020 07:02:44 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CDAEA402B3;
+ Tue,  7 Jan 2020 14:02:30 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
+ stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, s.hauer@pengutronix.de,
+ catalin.marinas@arm.com, will@kernel.org, abel.vesa@nxp.com,
+ bjorn.andersson@linaro.org, olof@lixom.net, maxime@cerno.tech,
+ leonard.crestez@nxp.com, dinguyen@kernel.org,
+ marcin.juszkiewicz@linaro.org, linux-gpio@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V4 1/3] dt-bindings: imx: Add pinctrl binding doc for i.MX8MP
+Date: Tue,  7 Jan 2020 13:58:28 +0800
+Message-Id: <1578376710-19548-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_215052_099680_8FAF2074 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_220258_767048_8F90D8DB 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -169,299 +73,1039 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Jose Abreu' <Jose.Abreu@synopsys.com>,
- 'Alexandre Torgue' <alexandre.torgue@st.com>, rcsekar@samsung.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- 'Maxime Coquelin' <mcoquelin.stm32@gmail.com>, pankaj.dubey@samsung.com,
- 'Giuseppe Cavallaro' <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add binding doc for i.MX8MP pinctrl driver.
 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+---
+Changes since V3:
+	- Fix type using uint32-array instead of string;
+	- Fix build error by NOT using macro definition.
+---
+ .../bindings/pinctrl/fsl,imx8mp-pinctrl.yaml       |  65 ++
+ arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h     | 931 +++++++++++++++++++++
+ 2 files changed, 996 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mp-pinctrl.yaml
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h
 
-On 1/6/2020 9:24 PM, Sriram Dash wrote:
->> From: Florian Fainelli <f.fainelli@gmail.com>
->> Subject: Re: broonie-regmap/for-next bisection: boot on ox820-cloudengines-
->> pogoplug-series-3
->>
->> On 1/3/20 5:30 AM, Sriram Dash wrote:
->>>> From: kernelci.org bot <bot@kernelci.org>
->>>> Subject: broonie-regmap/for-next bisection: boot on
->>>> ox820-cloudengines-
->>>> pogoplug-series-3
->>>>
->>>> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
->>>> * This automated bisection report was sent to you on the basis  *
->>>> * that you may be involved with the breaking commit it has      *
->>>> * found.  No manual investigation has been done to verify it,   *
->>>> * and the root cause of the problem may be somewhere else.      *
->>>> *                                                               *
->>>> * If you do send a fix, please include this trailer:            *
->>>> *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
->>>> *                                                               *
->>>> * Hope this helps!                                              *
->>>> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
->>>>
->>>> broonie-regmap/for-next bisection: boot on
->>>> ox820-cloudengines-pogoplug-
->>>> series-3
->>>>
->>>> Summary:
->>>>   Start:      46cf053efec6 Linux 5.5-rc3
->>>>   Details:    https://protect2.fireeye.com/url?k=36fb52ed-6b2b5a21-
->> 36fad9a2-
->>>> 000babff3793-
->>>> f64e7c227e0a8b34&u=https://protect2.fireeye.com/url?k=2379492a-7ee2b5
->>>> 49-2378c265-0cc47a31cdbc-
->> 914c67c9400b5bae&u=https://kernelci.org/boot
->>>> /id/5e02ce65451524462f9731
->>>> 4f
->>>>   Plain log:
->>>> https://protect2.fireeye.com/url?k=58f5fc3b-0525f4f7-58f47774-
->>>> 000babff3793-f96a18481add0d7f&u=https://protect2.fireeye.com/url?k=3c
->>>> 793260-61e2ce03-3c78b92f-0cc47a31cdbc-
->> c77f49890593c376&u=https://stor
->>>> age.kernelci.org//broonie-
->>>> regmap/for-next/v5.5-rc3/arm/oxnas_v6_defconfig/gcc-8/lab-
->>>> baylibre/boot-ox820-cloudengines-pogoplug-series-3.txt
->>>>   HTML log:   https://protect2.fireeye.com/url?k=eaed2629-b73d2ee5-
->>>> eaecad66-000babff3793-
->>>> 84ba1e41025b4f73&u=https://protect2.fireeye.com/url?k=8e80051e-d31bf9
->>>> 7d-8e818e51-0cc47a31cdbc-dd2d5f3d7e3c3cd2&u=https://storage.kernelci.
->>>> org//broonie-regmap/for-
->>>> next/v5.5-rc3/arm/oxnas_v6_defconfig/gcc-8/lab-baylibre/boot-ox820-
->>>> cloudengines-pogoplug-series-3.html
->>>>   Result:     d3e014ec7d5e net: stmmac: platform: Fix MDIO init for platforms
->>>> without PHY
->>>>
->>>> Checks:
->>>>   revert:     PASS
->>>>   verify:     PASS
->>>>
->>>> Parameters:
->>>>   Tree:       broonie-regmap
->>>>   URL:
->>>> https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap.git
->>>>   Branch:     for-next
->>>>   Target:     ox820-cloudengines-pogoplug-series-3
->>>>   CPU arch:   arm
->>>>   Lab:        lab-baylibre
->>>>   Compiler:   gcc-8
->>>>   Config:     oxnas_v6_defconfig
->>>>   Test suite: boot
->>>>
->>>> Breaking commit found:
->>>>
->>>> ---------------------------------------------------------------------
->>>> ---------- commit d3e014ec7d5ebe9644b5486bc530b91e62bbf624
->>>> Author: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
->>>> Date:   Thu Dec 19 15:47:01 2019 +0530
->>>>
->>>>     net: stmmac: platform: Fix MDIO init for platforms without PHY
->>>>
->>>>     The current implementation of "stmmac_dt_phy" function initializes
->>>>     the MDIO platform bus data, even in the absence of PHY. This fix
->>>>     will skip MDIO initialization if there is no PHY present.
->>>>
->>>>     Fixes: 7437127 ("net: stmmac: Convert to phylink and remove phylib logic")
->>>>     Acked-by: Jayati Sahu <jayati.sahu@samsung.com>
->>>>     Signed-off-by: Sriram Dash <sriram.dash@samsung.com>
->>>>     Signed-off-by: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
->>>>     Signed-off-by: David S. Miller <davem@davemloft.net>
->>>>
->>>> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->>>> b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->>>> index bedaff0c13bd..cc8d7e7bf9ac 100644
->>>> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->>>> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
->>>> @@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct
->>>> platform_device *pdev,  static int stmmac_dt_phy(struct
->> plat_stmmacenet_data *plat,
->>>>  			 struct device_node *np, struct device *dev)  {
->>>> -	bool mdio = true;
->>>> +	bool mdio = false;
->>>>  	static const struct of_device_id need_mdio_ids[] = {
->>>>  		{ .compatible = "snps,dwc-qos-ethernet-4.10" },
->>>>  		{},
->>>> ---------------------------------------------------------------------
->>>> ----------
->>>>
->>>>
->>>> Git bisection log:
->>>>
->>>> ---------------------------------------------------------------------
->>>> ----------
->>>> git bisect start
->>>> # good: [e42617b825f8073569da76dc4510bfa019b1c35a] Linux 5.5-rc1 git
->>>> bisect good e42617b825f8073569da76dc4510bfa019b1c35a
->>>> # bad: [46cf053efec6a3a5f343fead837777efe8252a46] Linux 5.5-rc3 git
->>>> bisect bad 46cf053efec6a3a5f343fead837777efe8252a46
->>>> # good: [2187f215ebaac73ddbd814696d7c7fa34f0c3de0] Merge tag
->>>> 'for-5.5- rc2-tag' of
->>>> git://git.kernel.org/pub/scm/linux/kernel/git/kdave/linux
->>>> git bisect good 2187f215ebaac73ddbd814696d7c7fa34f0c3de0
->>>> # good: [0dd1e3773ae8afc4bfdce782bdeffc10f9cae6ec] pipe: fix empty
->>>> pipe check in pipe_write() git bisect good
->>>> 0dd1e3773ae8afc4bfdce782bdeffc10f9cae6ec
->>>> # good: [040cda8a15210f19da7e29232c897ca6ca6cc950] Merge tag
->>>> 'wireless- drivers-2019-12-17' of
->>>> git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/wireless-drivers
->>>> git bisect good 040cda8a15210f19da7e29232c897ca6ca6cc950
->>>> # bad: [4bfeadfc0712bbc8a6556eef6d47cbae1099dea3] Merge branch 'sfc-
->>>> fix-bugs-introduced-by-XDP-patches'
->>>> git bisect bad 4bfeadfc0712bbc8a6556eef6d47cbae1099dea3
->>>> # good: [0fd260056ef84ede8f444c66a3820811691fe884] Merge
->>>> git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf
->>>> git bisect good 0fd260056ef84ede8f444c66a3820811691fe884
->>>> # good: [90b3b339364c76baa2436445401ea9ade040c216] net: hisilicon:
->>>> Fix a BUG trigered by wrong bytes_compl git bisect good
->>>> 90b3b339364c76baa2436445401ea9ade040c216
->>>> # bad: [4c8dc00503db24deaf0b89dddfa84b7cba7cd4ce] qede: Disable
->>>> hardware gro when xdp prog is installed git bisect bad
->>>> 4c8dc00503db24deaf0b89dddfa84b7cba7cd4ce
->>>> # bad: [28a3b8408f70b646e78880a7eb0a97c22ace98d1] net/smc: unregister
->>>> ib devices in reboot_event git bisect bad
->>>> 28a3b8408f70b646e78880a7eb0a97c22ace98d1
->>>> # bad: [d3e014ec7d5ebe9644b5486bc530b91e62bbf624] net: stmmac:
->>>> platform: Fix MDIO init for platforms without PHY git bisect bad
->>>> d3e014ec7d5ebe9644b5486bc530b91e62bbf624
->>>> # good: [af1c0e4e00f3cc76cb136ebf2e2c04e8b6446285] llc2: Fix return
->>>> statement of llc_stat_ev_rx_null_dsap_xid_c (and _test_c) git bisect
->>>> good
->>>> af1c0e4e00f3cc76cb136ebf2e2c04e8b6446285
->>>> # first bad commit: [d3e014ec7d5ebe9644b5486bc530b91e62bbf624] net:
->>>> stmmac: platform: Fix MDIO init for platforms without PHY
->>>> ---------------------------------------------------------------------
->>>> ----------
->>>
->>>
->>> The mdio bus will be allocated in case of a phy transceiver is on
->>> board, but if fixed-link is configured, it will be NULL and
->>> of_mdiobus_register will not take effect.
->>
->> There appears to be another possible flaw in the code here:
->>
->>                 for_each_child_of_node(np, plat->mdio_node) {
->>                         if (of_device_is_compatible(plat->mdio_node,
->>                                                     "snps,dwmac-mdio"))
->>                                 break;
->>                 }
->>
->> the loop should use for_each_available_child_of_node() such that if a platform
->> has a Device Tree definition where the MDIO bus node was provided but it was
->> not disabled by default (a mistake, it should be disabled by default), and a "fixed-
->> link" property ended up being used at the board level, we should not end-up with
->> an invalid plat->mdio_node reference. Then the code could possibly eliminate
->> the use of 'mdio' as a boolean and rely exclusively on plat->mdio_node. What do
->> you think?
->>
-> 
-> Hello Florian,
-> 
-> Thanks for the review. We definitely see a problem here. For the platforms which have the snps,dwmac-mdio and they have made it disabled, it will fail.
-> Also, We can completely remove the mdio variable from the function stmmac_dt_phy as what we essentially do is to check the plat->mdio_node.
-> 
-> Something like this will help:
-> 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> index 1f230bd..15c342e 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> @@ -320,7 +320,6 @@ static int stmmac_mtl_setup(struct platform_device *pdev,
->  static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
->                          struct device_node *np, struct device *dev)
->  {
-> -       bool mdio = false;
->         static const struct of_device_id need_mdio_ids[] = {
->                 { .compatible = "snps,dwc-qos-ethernet-4.10" },
->                 {},
-> @@ -334,18 +333,13 @@ static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
->                  * the MDIO
->                  */
->                 for_each_child_of_node(np, plat->mdio_node) {
-> -                       if (of_device_is_compatible(plat->mdio_node,
-> +                       if (for_each_available_child_of_node(plat->mdio_node,
->                                                     "snps,dwmac-mdio"))
->                                 break;
->                 }
->         }
-> 
->         if (plat->mdio_node) {
-> -               dev_dbg(dev, "Found MDIO subnode\n");
-> -               mdio = true;
-> -       }
-> -
-> -       if (mdio) {
->                 plat->mdio_bus_data =
->                         devm_kzalloc(dev, sizeof(struct stmmac_mdio_bus_data),
->                                      GFP_KERNEL);
-> 
-> 
-> Are you preparing a patch to address this, or we shall take it up?
-
-I do not think your patch is going to fix the problem that Heiko
-reported because it would try to scan the MDIO bus node which is
-non-existent. Also not sure what the return value of for_each_* is
-supposed to be given it is a loop construct.
-
-> 
->> And an alternative to your fix would be to scan even further the MDIO bus node
->> for available child nodes, if there are none, do not perform the MDIO
->> initialization at all since we have no MDIO devices beneath.
->>
->>
->>> The commit d3e014ec7d5e fixes the code for fixed-link configuration.
->>> However, some platforms like oxnas820 which have phy transceivers
->>> (rgmii), fail. This is because the platforms expect the allocation of
->>> mdio_bus_data during stmmac_dt_phy.
->>>
->>> Proper solution to this is adding the mdio node in the device tree of
->>> the platform which can be fetched by stmmac_dt_phy.
->>
->> That sounds reasonable, but we should also not break existing platforms with
->> existing Device Trees out there, as much as possible.
-> 
-> I understand your point. Changing DT should be the last thing we should do.
-> But, the code is broken for some platforms. Without the patch, the platforms with fixed-link will not work.
-> For example, stih418-b2199.dts, will fail without the commit d3e014ec7d5e.
-Humm then we should change the code to explicitly look for a fixed-link
-node with the use of of_phy_is_fixed_link() (which would work on the old
-style fixed-link that stih418-b2199.dts uses) instead of relying on some
-implicit or explicit MDIO bus registration behavior.
-
-The good thing is that I use arch/arm/boot/dts/sun7i-a20-lamobo-r1.dts
-on a nearly daily basis so I can test if that works/does not work with a
-fixed-link plus a mdio bus node.
-
-> With the patch, platforms with mdio and not declaring the dt parameters will fail.
-> For that , we have some proposal:
-> For the newer platforms , Make it mandatory to have the mdio or snps,dwmac-mdio property. 
-> There is no point of checking the device tree for mdio or snps,dwmac-mdio property and populating the plat->mdio_node, if the platforms are not having them in the device tree and expect mdio bus memory allocation. 
-
-Yet that is what broke exactly here, the platforms that Heiko reported
-the breakage on, albeit doing something arguably fragile, are not making
-use of a phy-handle property nor a MDIO node to indicate where and how
-to connect to a PHY, ended up broken. They use implicit bus scanning
-going on by of_mdiobus_register().
-
-> 
-> For the existing platforms, which do not have the mdio or snps,dwmac-mdio property and still have the phy, if they can, they must modify the dt and include the mdio or snps,dwmac-mdio property in their dts.
-
-This should be done, but I doubt it is going to be because those Device
-Tree files are ABI and may be baked into firmware/boot loaders.
-
-> For those platforms, which cannot modify the dt due to some reason or other, the platform should have a quirk in the platform glue layers, and use it in the stmmac_platform driver  stmmac_dt_phy  function to enable the mdio.
-> 
-
-Again, I do not think this is practical to do at all, not would it scale
-particularly well, given that the same compatible string for Rockchip
-gmac has been used with both the correct way and the incorrect way of
-specifying the connection to the PHY device node.
+diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mp-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mp-pinctrl.yaml
+new file mode 100644
+index 0000000..547cc1d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mp-pinctrl.yaml
+@@ -0,0 +1,65 @@
++# SPDX-License-Identifier: GPL-2.0-or-later
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/pinctrl/fsl,imx8mp-pinctrl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale IMX8MP IOMUX Controller
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++description:
++  Please refer to fsl,imx-pinctrl.txt and pinctrl-bindings.txt in this directory
++  for common binding part and usage.
++
++properties:
++  compatible:
++    const: fsl,imx8mp-iomuxc
++
++# Client device subnode's properties
++patternProperties:
++  '-grp$':
++    type: object
++    description:
++      Pinctrl node's client devices use subnodes for desired pin configuration.
++      Client device subnodes use below standard properties.
++
++    properties:
++      fsl,pins:
++        $ref: /schemas/types.yaml#/definitions/uint32-array
++        description:
++          each entry consists of 6 integers and represents the mux and config
++          setting for one pin. The first 5 integers <mux_reg conf_reg input_reg
++          mux_val input_val> are specified using a PIN_FUNC_ID macro, which can
++          be found in <arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h>. The last
++          integer CONFIG is the pad setting value like pull-up on this pin. Please
++          refer to i.MX8M Plus Reference Manual for detailed CONFIG settings.
++
++    required:
++      - fsl,pins
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  # Pinmux controller node
++  - |
++    iomuxc: pinctrl@30330000 {
++        compatible = "fsl,imx8mp-iomuxc";
++        reg = <0x30330000 0x10000>;
++
++        pinctrl_uart2: uart2grp {
++            fsl,pins = <
++                0x228 0x488 0x5F0 0x0 0x6	0x49
++                0x228 0x488 0x000 0x0 0x0	0x49
++            >;
++        };
++    };
++
++...
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h b/arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h
+new file mode 100644
+index 0000000..da78f89
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h
+@@ -0,0 +1,931 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
++/*
++ * Copyright 2019 NXP
++ */
++
++#ifndef __DTS_IMX8MP_PINFUNC_H
++#define __DTS_IMX8MP_PINFUNC_H
++
++/*
++ * The pin function ID is a tuple of
++ * <mux_reg conf_reg input_reg mux_mode input_val>
++ */
++#define MX8MP_IOMUXC_GPIO1_IO00__GPIO1_IO00                          0x014 0x274 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO00__CCMSRCGPCMIX_ENET_PHY_REF_CLK_ROOT  0x014 0x274 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO00__MEDIAMIX_ISP_FL_TRIG_0              0x014 0x274 0x5D4 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO00__ANAMIX_REF_CLK_32K                  0x014 0x274 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO00__CCMSRCGPCMIX_EXT_CLK1               0x014 0x274 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO00__SJC_FAIL                            0x014 0x274 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__GPIO1_IO01                          0x018 0x278 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__PWM1_OUT                            0x018 0x278 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__MEDIAMIX_ISP_SHUTTER_TRIG_0         0x018 0x278 0x5DC 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__ANAMIX_REF_CLK_24M                  0x018 0x278 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__CCMSRCGPCMIX_EXT_CLK2               0x018 0x278 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO01__SJC_ACTIVE                          0x018 0x278 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO02__GPIO1_IO02                          0x01C 0x27C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO02__WDOG1_WDOG_B                        0x01C 0x27C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO02__MEDIAMIX_ISP_FLASH_TRIG_0           0x01C 0x27C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO02__WDOG1_WDOG_ANY                      0x01C 0x27C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO02__SJC_DE_B                            0x01C 0x27C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__GPIO1_IO03                          0x020 0x280 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__USDHC1_VSELECT                      0x020 0x280 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__MEDIAMIX_ISP_PRELIGHT_TRIG_0        0x020 0x280 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__SDMA1_EXT_EVENT00                   0x020 0x280 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__ANAMIX_XTAL_OK                      0x020 0x280 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO03__SJC_DONE                            0x020 0x280 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__GPIO1_IO04                          0x024 0x284 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__USDHC2_VSELECT                      0x024 0x284 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__MEDIAMIX_ISP_SHUTTER_OPEN_0         0x024 0x284 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__SDMA1_EXT_EVENT01                   0x024 0x284 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__ANAMIX_XTAL_OK_LV                   0x024 0x284 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO04__USDHC1_TEST_TRIG                    0x024 0x284 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__GPIO1_IO05                          0x028 0x288 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__M7_NMI                              0x028 0x288 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__MEDIAMIX_ISP_FL_TRIG_1              0x028 0x288 0x5D8 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__CCMSRCGPCMIX_PMIC_READY             0x028 0x288 0x554 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__CCMSRCGPCMIX_INT_BOOT               0x028 0x288 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO05__USDHC2_TEST_TRIG                    0x028 0x288 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__GPIO1_IO06                          0x02C 0x28C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__ENET_QOS_MDC                        0x02C 0x28C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__MEDIAMIX_ISP_SHUTTER_TRIG_1         0x02C 0x28C 0x5E0 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__USDHC1_CD_B                         0x02C 0x28C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__CCMSRCGPCMIX_EXT_CLK3               0x02C 0x28C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO06__ECSPI1_TEST_TRIG                    0x02C 0x28C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__GPIO1_IO07                          0x030 0x290 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__ENET_QOS_MDIO                       0x030 0x290 0x590 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__MEDIAMIX_ISP_FLASH_TRIG_1           0x030 0x290 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__USDHC1_WP                           0x030 0x290 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__CCMSRCGPCMIX_EXT_CLK4               0x030 0x290 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO07__ECSPI2_TEST_TRIG                    0x030 0x290 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__GPIO1_IO08                          0x034 0x294 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__ENET_QOS_1588_EVENT0_IN             0x034 0x294 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__PWM1_OUT                            0x034 0x294 0x000 0x2 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__MEDIAMIX_ISP_PRELIGHT_TRIG_1        0x034 0x294 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__ENET_QOS_1588_EVENT0_AUX_IN         0x034 0x294 0x000 0x4 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__USDHC2_RESET_B                      0x034 0x294 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__CCMSRCGPCMIX_WAIT                   0x034 0x294 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO08__FLEXSPI_TEST_TRIG                   0x034 0x294 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__GPIO1_IO09                          0x038 0x298 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__ENET_QOS_1588_EVENT0_OUT            0x038 0x298 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__PWM2_OUT                            0x038 0x298 0x000 0x2 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__MEDIAMIX_ISP_SHUTTER_OPEN_1         0x038 0x298 0x000 0x3 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__USDHC3_RESET_B                      0x038 0x298 0x000 0x4 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__AUDIOMIX_EXT_EVENT00                0x038 0x298 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__CCMSRCGPCMIX_STOP                   0x038 0x298 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO09__RAWNAND_TEST_TRIG                   0x038 0x298 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO10__GPIO1_IO10                          0x03C 0x29C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO10__HSIOMIX_usb1_OTG_ID                 0x03C 0x29C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO10__PWM3_OUT                            0x03C 0x29C 0x000 0x2 0x0
++#define MX8MP_IOMUXC_GPIO1_IO10__OCOTP_FUSE_LATCHED                  0x03C 0x29C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__GPIO1_IO11                          0x040 0x2A0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__HSIOMIX_usb2_OTG_ID                 0x040 0x2A0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__PWM2_OUT                            0x040 0x2A0 0x000 0x2 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__USDHC3_VSELECT                      0x040 0x2A0 0x000 0x4 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__CCMSRCGPCMIX_PMIC_READY             0x040 0x2A0 0x554 0x5 0x1
++#define MX8MP_IOMUXC_GPIO1_IO11__CCMSRCGPCMIX_OUT0                   0x040 0x2A0 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO11__CAAM_RNG_OSC_OBS                    0x040 0x2A0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO12__GPIO1_IO12                          0x044 0x2A4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO12__HSIOMIX_usb1_OTG_PWR                0x044 0x2A4 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO12__AUDIOMIX_EXT_EVENT01                0x044 0x2A4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO12__CCMSRCGPCMIX_OUT1                   0x044 0x2A4 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO12__CSU_CSU_ALARM_AUT00                 0x044 0x2A4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO13__GPIO1_IO13                          0x048 0x2A8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO13__HSIOMIX_usb1_OTG_OC                 0x048 0x2A8 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO13__PWM2_OUT                            0x048 0x2A8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO13__CCMSRCGPCMIX_OUT2                   0x048 0x2A8 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO13__CSU_CSU_ALARM_AUT01                 0x048 0x2A8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__GPIO1_IO14                          0x04C 0x2AC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__HSIOMIX_usb2_OTG_PWR                0x04C 0x2AC 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__USDHC3_CD_B                         0x04C 0x2AC 0x608 0x4 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__PWM3_OUT                            0x04C 0x2AC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__CCMSRCGPCMIX_CLKO1                  0x04C 0x2AC 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO14__CSU_CSU_ALARM_AUT02                 0x04C 0x2AC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__GPIO1_IO15                          0x050 0x2B0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__HSIOMIX_usb2_OTG_OC                 0x050 0x2B0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__USDHC3_WP                           0x050 0x2B0 0x634 0x4 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__PWM4_OUT                            0x050 0x2B0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__CCMSRCGPCMIX_CLKO2                  0x050 0x2B0 0x000 0x6 0x0
++#define MX8MP_IOMUXC_GPIO1_IO15__CSU_CSU_INT_DEB                     0x050 0x2B0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_MDC__ENET_QOS_MDC                          0x054 0x2B4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_MDC__AUDIOMIX_SAI6_TX_DATA00               0x054 0x2B4 0x000 0x2 0x0
++#define MX8MP_IOMUXC_ENET_MDC__GPIO1_IO16                            0x054 0x2B4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_MDC__USDHC3_STROBE                         0x054 0x2B4 0x630 0x6 0x0
++#define MX8MP_IOMUXC_ENET_MDC__SIM_M_HADDR15                         0x054 0x2B4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_MDIO__ENET_QOS_MDIO                        0x058 0x2B8 0x590 0x0 0x1
++#define MX8MP_IOMUXC_ENET_MDIO__AUDIOMIX_SAI6_TX_SYNC                0x058 0x2B8 0x528 0x2 0x0
++#define MX8MP_IOMUXC_ENET_MDIO__GPIO1_IO17                           0x058 0x2B8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_MDIO__USDHC3_DATA5                         0x058 0x2B8 0x624 0x6 0x0
++#define MX8MP_IOMUXC_ENET_MDIO__SIM_M_HADDR16                        0x058 0x2B8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TD3__ENET_QOS_RGMII_TD3                    0x05C 0x2BC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TD3__AUDIOMIX_SAI6_TX_BCLK                 0x05C 0x2BC 0x524 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TD3__GPIO1_IO18                            0x05C 0x2BC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TD3__USDHC3_DATA6                          0x05C 0x2BC 0x628 0x6 0x0
++#define MX8MP_IOMUXC_ENET_TD3__SIM_M_HADDR17                         0x05C 0x2BC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TD2__ENET_QOS_RGMII_TD2                    0x060 0x2C0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TD2__CCM_ENET_QOS_CLOCK_GENERATE_REF_CLK   0x060 0x2C0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ENET_TD2__AUDIOMIX_SAI6_RX_DATA00               0x060 0x2C0 0x51C 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TD2__GPIO1_IO19                            0x060 0x2C0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TD2__USDHC3_DATA7                          0x060 0x2C0 0x62C 0x6 0x0
++#define MX8MP_IOMUXC_ENET_TD2__SIM_M_HADDR18                         0x060 0x2C0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TD1__ENET_QOS_RGMII_TD1                    0x064 0x2C4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TD1__AUDIOMIX_SAI6_RX_SYNC                 0x064 0x2C4 0x520 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TD1__GPIO1_IO20                            0x064 0x2C4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TD1__USDHC3_CD_B                           0x064 0x2C4 0x608 0x6 0x1
++#define MX8MP_IOMUXC_ENET_TD1__SIM_M_HADDR19                         0x064 0x2C4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TD0__ENET_QOS_RGMII_TD0                    0x068 0x2C8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TD0__AUDIOMIX_SAI6_RX_BCLK                 0x068 0x2C8 0x518 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TD0__GPIO1_IO21                            0x068 0x2C8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TD0__USDHC3_WP                             0x068 0x2C8 0x634 0x6 0x1
++#define MX8MP_IOMUXC_ENET_TD0__SIM_M_HADDR20                         0x068 0x2C8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__ENET_QOS_RGMII_TX_CTL              0x06C 0x2CC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__AUDIOMIX_SAI6_MCLK                 0x06C 0x2CC 0x514 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__AUDIOMIX_SPDIF_OUT                 0x06C 0x2CC 0x000 0x3 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__GPIO1_IO22                         0x06C 0x2CC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__USDHC3_DATA0                       0x06C 0x2CC 0x610 0x6 0x0
++#define MX8MP_IOMUXC_ENET_TX_CTL__SIM_M_HADDR21                      0x06C 0x2CC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_TXC__CCM_ENET_QOS_CLOCK_GENERATE_TX_CLK    0x070 0x2D0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_TXC__ENET_QOS_TX_ER                        0x070 0x2D0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ENET_TXC__AUDIOMIX_SAI7_TX_DATA00               0x070 0x2D0 0x000 0x2 0x0
++#define MX8MP_IOMUXC_ENET_TXC__GPIO1_IO23                            0x070 0x2D0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_TXC__USDHC3_DATA1                          0x070 0x2D0 0x614 0x6 0x0
++#define MX8MP_IOMUXC_ENET_TXC__SIM_M_HADDR22                         0x070 0x2D0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__ENET_QOS_RGMII_RX_CTL              0x074 0x2D4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__AUDIOMIX_SAI7_TX_SYNC              0x074 0x2D4 0x540 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__AUDIOMIX_BIT_STREAM03              0x074 0x2D4 0x4CC 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__GPIO1_IO24                         0x074 0x2D4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__USDHC3_DATA2                       0x074 0x2D4 0x618 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RX_CTL__SIM_M_HADDR23                      0x074 0x2D4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RXC__CCM_ENET_QOS_CLOCK_GENERATE_RX_CLK    0x078 0x2D8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RXC__ENET_QOS_RX_ER                        0x078 0x2D8 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ENET_RXC__AUDIOMIX_SAI7_TX_BCLK                 0x078 0x2D8 0x53C 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RXC__AUDIOMIX_BIT_STREAM02                 0x078 0x2D8 0x4C8 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RXC__GPIO1_IO25                            0x078 0x2D8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RXC__USDHC3_DATA3                          0x078 0x2D8 0x61C 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RXC__SIM_M_HADDR24                         0x078 0x2D8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RD0__ENET_QOS_RGMII_RD0                    0x07C 0x2DC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RD0__AUDIOMIX_SAI7_RX_DATA00               0x07C 0x2DC 0x534 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RD0__AUDIOMIX_BIT_STREAM01                 0x07C 0x2DC 0x4C4 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RD0__GPIO1_IO26                            0x07C 0x2DC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RD0__USDHC3_DATA4                          0x07C 0x2DC 0x620 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RD0__SIM_M_HADDR25                         0x07C 0x2DC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RD1__ENET_QOS_RGMII_RD1                    0x080 0x2E0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RD1__AUDIOMIX_SAI7_RX_SYNC                 0x080 0x2E0 0x538 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RD1__AUDIOMIX_BIT_STREAM00                 0x080 0x2E0 0x4C0 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RD1__GPIO1_IO27                            0x080 0x2E0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RD1__USDHC3_RESET_B                        0x080 0x2E0 0x000 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RD1__SIM_M_HADDR26                         0x080 0x2E0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RD2__ENET_QOS_RGMII_RD2                    0x084 0x2E4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RD2__AUDIOMIX_SAI7_RX_BCLK                 0x084 0x2E4 0x530 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RD2__AUDIOMIX_CLK                          0x084 0x2E4 0x000 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RD2__GPIO1_IO28                            0x084 0x2E4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RD2__USDHC3_CLK                            0x084 0x2E4 0x604 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RD2__SIM_M_HADDR27                         0x084 0x2E4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ENET_RD3__ENET_QOS_RGMII_RD3                    0x088 0x2E8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_ENET_RD3__AUDIOMIX_SAI7_MCLK                    0x088 0x2E8 0x52C 0x2 0x0
++#define MX8MP_IOMUXC_ENET_RD3__AUDIOMIX_SPDIF_IN                     0x088 0x2E8 0x544 0x3 0x0
++#define MX8MP_IOMUXC_ENET_RD3__GPIO1_IO29                            0x088 0x2E8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ENET_RD3__USDHC3_CMD                            0x088 0x2E8 0x60C 0x6 0x0
++#define MX8MP_IOMUXC_ENET_RD3__SIM_M_HADDR28                         0x088 0x2E8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_CLK__USDHC1_CLK                             0x08C 0x2EC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_CLK__ENET1_MDC                              0x08C 0x2EC 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SD1_CLK__I2C5_SCL                               0x08C 0x2EC 0x5C4 0x3 0x0
++#define MX8MP_IOMUXC_SD1_CLK__UART1_DCE_TX                           0x08C 0x2EC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_CLK__UART1_DTE_RX                           0x08C 0x2EC 0x5E8 0x4 0x0
++#define MX8MP_IOMUXC_SD1_CLK__GPIO2_IO00                             0x08C 0x2EC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_CLK__SIM_M_HADDR29                          0x08C 0x2EC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_CMD__USDHC1_CMD                             0x090 0x2F0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_CMD__ENET1_MDIO                             0x090 0x2F0 0x57C 0x1 0x0
++#define MX8MP_IOMUXC_SD1_CMD__I2C5_SDA                               0x090 0x2F0 0x5C8 0x3 0x0
++#define MX8MP_IOMUXC_SD1_CMD__UART1_DCE_RX                           0x090 0x2F0 0x5E8 0x4 0x1
++#define MX8MP_IOMUXC_SD1_CMD__UART1_DTE_TX                           0x090 0x2F0 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_CMD__GPIO2_IO01                             0x090 0x2F0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_CMD__SIM_M_HADDR30                          0x090 0x2F0 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__USDHC1_DATA0                         0x094 0x2F4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__ENET1_RGMII_TD1                      0x094 0x2F4 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__I2C6_SCL                             0x094 0x2F4 0x5CC 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__UART1_DCE_RTS                        0x094 0x2F4 0x5E4 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__UART1_DTE_CTS                        0x094 0x2F4 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__GPIO2_IO02                           0x094 0x2F4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA0__SIM_M_HADDR31                        0x094 0x2F4 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__USDHC1_DATA1                         0x098 0x2F8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__ENET1_RGMII_TD0                      0x098 0x2F8 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__I2C6_SDA                             0x098 0x2F8 0x5D0 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__UART1_DCE_CTS                        0x098 0x2F8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__UART1_DTE_RTS                        0x098 0x2F8 0x5E4 0x4 0x1
++#define MX8MP_IOMUXC_SD1_DATA1__GPIO2_IO03                           0x098 0x2F8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA1__SIM_M_HBURST00                       0x098 0x2F8 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__USDHC1_DATA2                         0x09C 0x2FC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__ENET1_RGMII_RD0                      0x09C 0x2FC 0x580 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__I2C4_SCL                             0x09C 0x2FC 0x5BC 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__UART2_DCE_TX                         0x09C 0x2FC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__UART2_DTE_RX                         0x09C 0x2FC 0x5F0 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__GPIO2_IO04                           0x09C 0x2FC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA2__SIM_M_HBURST01                       0x09C 0x2FC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__USDHC1_DATA3                         0x0A0 0x300 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__ENET1_RGMII_RD1                      0x0A0 0x300 0x584 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__I2C4_SDA                             0x0A0 0x300 0x5C0 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__UART2_DCE_RX                         0x0A0 0x300 0x5F0 0x4 0x1
++#define MX8MP_IOMUXC_SD1_DATA3__UART2_DTE_TX                         0x0A0 0x300 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__GPIO2_IO05                           0x0A0 0x300 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA3__SIM_M_HBURST02                       0x0A0 0x300 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__USDHC1_DATA4                         0x0A4 0x304 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__ENET1_RGMII_TX_CTL                   0x0A4 0x304 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__I2C1_SCL                             0x0A4 0x304 0x5A4 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__UART2_DCE_RTS                        0x0A4 0x304 0x5EC 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__UART2_DTE_CTS                        0x0A4 0x304 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__GPIO2_IO06                           0x0A4 0x304 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA4__SIM_M_HRESP                          0x0A4 0x304 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__USDHC1_DATA5                         0x0A8 0x308 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__ENET1_TX_ER                          0x0A8 0x308 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__I2C1_SDA                             0x0A8 0x308 0x5A8 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__UART2_DCE_CTS                        0x0A8 0x308 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__UART2_DTE_RTS                        0x0A8 0x308 0x5EC 0x4 0x1
++#define MX8MP_IOMUXC_SD1_DATA5__GPIO2_IO07                           0x0A8 0x308 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA5__TPSMP_HDATA05                        0x0A8 0x308 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__USDHC1_DATA6                         0x0AC 0x30C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__ENET1_RGMII_RX_CTL                   0x0AC 0x30C 0x588 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__I2C2_SCL                             0x0AC 0x30C 0x5AC 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__UART3_DCE_TX                         0x0AC 0x30C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__UART3_DTE_RX                         0x0AC 0x30C 0x5F8 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__GPIO2_IO08                           0x0AC 0x30C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA6__TPSMP_HDATA06                        0x0AC 0x30C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__USDHC1_DATA7                         0x0B0 0x310 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__ENET1_RX_ER                          0x0B0 0x310 0x58C 0x1 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__I2C2_SDA                             0x0B0 0x310 0x5B0 0x3 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__UART3_DCE_RX                         0x0B0 0x310 0x5F8 0x4 0x1
++#define MX8MP_IOMUXC_SD1_DATA7__UART3_DTE_TX                         0x0B0 0x310 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__GPIO2_IO09                           0x0B0 0x310 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_DATA7__TPSMP_HDATA07                        0x0B0 0x310 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__USDHC1_RESET_B                     0x0B4 0x314 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__ENET1_TX_CLK                       0x0B4 0x314 0x578 0x1 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__I2C3_SCL                           0x0B4 0x314 0x5B4 0x3 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__UART3_DCE_RTS                      0x0B4 0x314 0x5F4 0x4 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__UART3_DTE_CTS                      0x0B4 0x314 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__GPIO2_IO10                         0x0B4 0x314 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_RESET_B__ECSPI3_TEST_TRIG                   0x0B4 0x314 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD1_STROBE__USDHC1_STROBE                       0x0B8 0x318 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD1_STROBE__I2C3_SDA                            0x0B8 0x318 0x5B8 0x3 0x0
++#define MX8MP_IOMUXC_SD1_STROBE__UART3_DCE_CTS                       0x0B8 0x318 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD1_STROBE__UART3_DTE_RTS                       0x0B8 0x318 0x5F4 0x4 0x1
++#define MX8MP_IOMUXC_SD1_STROBE__GPIO2_IO11                          0x0B8 0x318 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD1_STROBE__USDHC3_TEST_TRIG                    0x0B8 0x318 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_CD_B__USDHC2_CD_B                           0x0BC 0x31C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_CD_B__GPIO2_IO12                            0x0BC 0x31C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_CD_B__CCMSRCGPCMIX_TESTER_ACK               0x0BC 0x31C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_CLK__USDHC2_CLK                             0x0C0 0x320 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_CLK__ECSPI2_SCLK                            0x0C0 0x320 0x568 0x2 0x0
++#define MX8MP_IOMUXC_SD2_CLK__UART4_DCE_RX                           0x0C0 0x320 0x600 0x3 0x0
++#define MX8MP_IOMUXC_SD2_CLK__UART4_DTE_TX                           0x0C0 0x320 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SD2_CLK__GPIO2_IO13                             0x0C0 0x320 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_CLK__CCMSRCGPCMIX_OBSERVE0                  0x0C0 0x320 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_CLK__OBSERVE_MUX_OUT00                      0x0C0 0x320 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_CMD__USDHC2_CMD                             0x0C4 0x324 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_CMD__ECSPI2_MOSI                            0x0C4 0x324 0x570 0x2 0x0
++#define MX8MP_IOMUXC_SD2_CMD__UART4_DCE_TX                           0x0C4 0x324 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SD2_CMD__UART4_DTE_RX                           0x0C4 0x324 0x600 0x3 0x1
++#define MX8MP_IOMUXC_SD2_CMD__AUDIOMIX_CLK                           0x0C4 0x324 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SD2_CMD__GPIO2_IO14                             0x0C4 0x324 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_CMD__CCMSRCGPCMIX_OBSERVE1                  0x0C4 0x324 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_CMD__OBSERVE_MUX_OUT01                      0x0C4 0x324 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_DATA0__USDHC2_DATA0                         0x0C8 0x328 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_DATA0__I2C4_SDA                             0x0C8 0x328 0x5C0 0x2 0x1
++#define MX8MP_IOMUXC_SD2_DATA0__UART2_DCE_RX                         0x0C8 0x328 0x5F0 0x3 0x2
++#define MX8MP_IOMUXC_SD2_DATA0__UART2_DTE_TX                         0x0C8 0x328 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SD2_DATA0__AUDIOMIX_BIT_STREAM00                0x0C8 0x328 0x4C0 0x4 0x1
++#define MX8MP_IOMUXC_SD2_DATA0__GPIO2_IO15                           0x0C8 0x328 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_DATA0__CCMSRCGPCMIX_OBSERVE2                0x0C8 0x328 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_DATA0__OBSERVE_MUX_OUT02                    0x0C8 0x328 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_DATA1__USDHC2_DATA1                         0x0CC 0x32C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_DATA1__I2C4_SCL                             0x0CC 0x32C 0x5BC 0x2 0x1
++#define MX8MP_IOMUXC_SD2_DATA1__UART2_DCE_TX                         0x0CC 0x32C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SD2_DATA1__UART2_DTE_RX                         0x0CC 0x32C 0x5F0 0x3 0x3
++#define MX8MP_IOMUXC_SD2_DATA1__AUDIOMIX_BIT_STREAM01                0x0CC 0x32C 0x4C4 0x4 0x1
++#define MX8MP_IOMUXC_SD2_DATA1__GPIO2_IO16                           0x0CC 0x32C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_DATA1__CCMSRCGPCMIX_WAIT                    0x0CC 0x32C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_DATA1__OBSERVE_MUX_OUT03                    0x0CC 0x32C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__USDHC2_DATA2                         0x0D0 0x330 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__ECSPI2_SS0                           0x0D0 0x330 0x574 0x2 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__AUDIOMIX_SPDIF_OUT                   0x0D0 0x330 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__AUDIOMIX_BIT_STREAM02                0x0D0 0x330 0x4C8 0x4 0x1
++#define MX8MP_IOMUXC_SD2_DATA2__GPIO2_IO17                           0x0D0 0x330 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__CCMSRCGPCMIX_STOP                    0x0D0 0x330 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_DATA2__OBSERVE_MUX_OUT04                    0x0D0 0x330 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SD2_DATA3__USDHC2_DATA3                         0x0D4 0x334 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_DATA3__ECSPI2_MISO                          0x0D4 0x334 0x56C 0x2 0x0
++#define MX8MP_IOMUXC_SD2_DATA3__AUDIOMIX_SPDIF_IN                    0x0D4 0x334 0x544 0x3 0x1
++#define MX8MP_IOMUXC_SD2_DATA3__AUDIOMIX_BIT_STREAM03                0x0D4 0x334 0x4CC 0x4 0x1
++#define MX8MP_IOMUXC_SD2_DATA3__GPIO2_IO18                           0x0D4 0x334 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_DATA3__CCMSRCGPCMIX_EARLY_RESET             0x0D4 0x334 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_RESET_B__USDHC2_RESET_B                     0x0D8 0x338 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_RESET_B__GPIO2_IO19                         0x0D8 0x338 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_RESET_B__CCMSRCGPCMIX_SYSTEM_RESET          0x0D8 0x338 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_WP__USDHC2_WP                               0x0DC 0x33C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SD2_WP__GPIO2_IO20                              0x0DC 0x33C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SD2_WP__CORESIGHT_EVENTI                        0x0DC 0x33C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SD2_WP__SIM_M_HMASTLOCK                         0x0DC 0x33C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_ALE__RAWNAND_ALE                           0x0E0 0x340 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_ALE__FLEXSPI_A_SCLK                        0x0E0 0x340 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_ALE__AUDIOMIX_SAI3_TX_BCLK                 0x0E0 0x340 0x4E8 0x2 0x0
++#define MX8MP_IOMUXC_NAND_ALE__MEDIAMIX_ISP_FL_TRIG_0                0x0E0 0x340 0x5D4 0x3 0x1
++#define MX8MP_IOMUXC_NAND_ALE__UART3_DCE_RX                          0x0E0 0x340 0x5F8 0x4 0x2
++#define MX8MP_IOMUXC_NAND_ALE__UART3_DTE_TX                          0x0E0 0x340 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_ALE__GPIO3_IO00                            0x0E0 0x340 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_ALE__CORESIGHT_TRACE_CLK                   0x0E0 0x340 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_ALE__SIM_M_HPROT00                         0x0E0 0x340 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__RAWNAND_CE0_B                       0x0E4 0x344 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__FLEXSPI_A_SS0_B                     0x0E4 0x344 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__AUDIOMIX_SAI3_TX_DATA00             0x0E4 0x344 0x000 0x2 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__MEDIAMIX_ISP_SHUTTER_TRIG_0         0x0E4 0x344 0x5DC 0x3 0x1
++#define MX8MP_IOMUXC_NAND_CE0_B__UART3_DCE_TX                        0x0E4 0x344 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__UART3_DTE_RX                        0x0E4 0x344 0x5F8 0x4 0x3
++#define MX8MP_IOMUXC_NAND_CE0_B__GPIO3_IO01                          0x0E4 0x344 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__CORESIGHT_TRACE_CTL                 0x0E4 0x344 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_CE0_B__SIM_M_HPROT01                       0x0E4 0x344 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_CE1_B__RAWNAND_CE1_B                       0x0E8 0x348 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_CE1_B__FLEXSPI_A_SS1_B                     0x0E8 0x348 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_CE1_B__USDHC3_STROBE                       0x0E8 0x348 0x630 0x2 0x1
++#define MX8MP_IOMUXC_NAND_CE1_B__I2C4_SCL                            0x0E8 0x348 0x5BC 0x4 0x2
++#define MX8MP_IOMUXC_NAND_CE1_B__GPIO3_IO02                          0x0E8 0x348 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_CE1_B__CORESIGHT_TRACE00                   0x0E8 0x348 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_CE1_B__SIM_M_HPROT02                       0x0E8 0x348 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_CE2_B__RAWNAND_CE2_B                       0x0EC 0x34C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_CE2_B__FLEXSPI_B_SS0_B                     0x0EC 0x34C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_CE2_B__USDHC3_DATA5                        0x0EC 0x34C 0x624 0x2 0x1
++#define MX8MP_IOMUXC_NAND_CE2_B__I2C4_SDA                            0x0EC 0x34C 0x5C0 0x4 0x2
++#define MX8MP_IOMUXC_NAND_CE2_B__GPIO3_IO03                          0x0EC 0x34C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_CE2_B__CORESIGHT_TRACE01                   0x0EC 0x34C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_CE2_B__SIM_M_HPROT03                       0x0EC 0x34C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_CE3_B__RAWNAND_CE3_B                       0x0F0 0x350 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_CE3_B__FLEXSPI_B_SS1_B                     0x0F0 0x350 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_CE3_B__USDHC3_DATA6                        0x0F0 0x350 0x628 0x2 0x1
++#define MX8MP_IOMUXC_NAND_CE3_B__I2C3_SDA                            0x0F0 0x350 0x5B8 0x4 0x1
++#define MX8MP_IOMUXC_NAND_CE3_B__GPIO3_IO04                          0x0F0 0x350 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_CE3_B__CORESIGHT_TRACE02                   0x0F0 0x350 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_CE3_B__SIM_M_HADDR00                       0x0F0 0x350 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_CLE__RAWNAND_CLE                           0x0F4 0x354 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_CLE__FLEXSPI_B_SCLK                        0x0F4 0x354 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_CLE__USDHC3_DATA7                          0x0F4 0x354 0x62C 0x2 0x1
++#define MX8MP_IOMUXC_NAND_CLE__UART4_DCE_RX                          0x0F4 0x354 0x600 0x4 0x2
++#define MX8MP_IOMUXC_NAND_CLE__UART4_DTE_TX                          0x0F4 0x354 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_CLE__GPIO3_IO05                            0x0F4 0x354 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_CLE__CORESIGHT_TRACE03                     0x0F4 0x354 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_CLE__SIM_M_HADDR01                         0x0F4 0x354 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__RAWNAND_DATA00                     0x0F8 0x358 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__FLEXSPI_A_DATA00                   0x0F8 0x358 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__AUDIOMIX_SAI3_RX_DATA00            0x0F8 0x358 0x4E4 0x2 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__MEDIAMIX_ISP_FLASH_TRIG_0          0x0F8 0x358 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__UART4_DCE_RX                       0x0F8 0x358 0x600 0x4 0x3
++#define MX8MP_IOMUXC_NAND_DATA00__UART4_DTE_TX                       0x0F8 0x358 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__GPIO3_IO06                         0x0F8 0x358 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__CORESIGHT_TRACE04                  0x0F8 0x358 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA00__SIM_M_HADDR02                      0x0F8 0x358 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__RAWNAND_DATA01                     0x0FC 0x35C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__FLEXSPI_A_DATA01                   0x0FC 0x35C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__AUDIOMIX_SAI3_TX_SYNC              0x0FC 0x35C 0x4EC 0x2 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__MEDIAMIX_ISP_PRELIGHT_TRIG_0       0x0FC 0x35C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__UART4_DCE_TX                       0x0FC 0x35C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__UART4_DTE_RX                       0x0FC 0x35C 0x600 0x4 0x4
++#define MX8MP_IOMUXC_NAND_DATA01__GPIO3_IO07                         0x0FC 0x35C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__CORESIGHT_TRACE05                  0x0FC 0x35C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA01__SIM_M_HADDR03                      0x0FC 0x35C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__RAWNAND_DATA02                     0x100 0x360 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__FLEXSPI_A_DATA02                   0x100 0x360 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__USDHC3_CD_B                        0x100 0x360 0x608 0x2 0x2
++#define MX8MP_IOMUXC_NAND_DATA02__UART4_DCE_CTS                      0x100 0x360 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__UART4_DTE_RTS                      0x100 0x360 0x5FC 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__I2C4_SDA                           0x100 0x360 0x5C0 0x4 0x3
++#define MX8MP_IOMUXC_NAND_DATA02__GPIO3_IO08                         0x100 0x360 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__CORESIGHT_TRACE06                  0x100 0x360 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA02__SIM_M_HADDR04                      0x100 0x360 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__RAWNAND_DATA03                     0x104 0x364 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__FLEXSPI_A_DATA03                   0x104 0x364 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__USDHC3_WP                          0x104 0x364 0x634 0x2 0x2
++#define MX8MP_IOMUXC_NAND_DATA03__UART4_DCE_RTS                      0x104 0x364 0x5FC 0x3 0x1
++#define MX8MP_IOMUXC_NAND_DATA03__UART4_DTE_CTS                      0x104 0x364 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__MEDIAMIX_ISP_FL_TRIG_1             0x104 0x364 0x5D8 0x4 0x1
++#define MX8MP_IOMUXC_NAND_DATA03__GPIO3_IO09                         0x104 0x364 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__CORESIGHT_TRACE07                  0x104 0x364 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA03__SIM_M_HADDR05                      0x104 0x364 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__RAWNAND_DATA04                     0x108 0x368 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__FLEXSPI_B_DATA00                   0x108 0x368 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__USDHC3_DATA0                       0x108 0x368 0x610 0x2 0x1
++#define MX8MP_IOMUXC_NAND_DATA04__FLEXSPI_A_DATA04                   0x108 0x368 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__MEDIAMIX_ISP_SHUTTER_TRIG_1        0x108 0x368 0x5E0 0x4 0x1
++#define MX8MP_IOMUXC_NAND_DATA04__GPIO3_IO10                         0x108 0x368 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__CORESIGHT_TRACE08                  0x108 0x368 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA04__SIM_M_HADDR06                      0x108 0x368 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__RAWNAND_DATA05                     0x10C 0x36C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__FLEXSPI_B_DATA01                   0x10C 0x36C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__USDHC3_DATA1                       0x10C 0x36C 0x614 0x2 0x1
++#define MX8MP_IOMUXC_NAND_DATA05__FLEXSPI_A_DATA05                   0x10C 0x36C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__MEDIAMIX_ISP_FLASH_TRIG_1          0x10C 0x36C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__GPIO3_IO11                         0x10C 0x36C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__CORESIGHT_TRACE09                  0x10C 0x36C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA05__SIM_M_HADDR07                      0x10C 0x36C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__RAWNAND_DATA06                     0x110 0x370 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__FLEXSPI_B_DATA02                   0x110 0x370 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__USDHC3_DATA2                       0x110 0x370 0x618 0x2 0x1
++#define MX8MP_IOMUXC_NAND_DATA06__FLEXSPI_A_DATA06                   0x110 0x370 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__MEDIAMIX_ISP_PRELIGHT_TRIG_1       0x110 0x370 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__GPIO3_IO12                         0x110 0x370 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__CORESIGHT_TRACE10                  0x110 0x370 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA06__SIM_M_HADDR08                      0x110 0x370 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__RAWNAND_DATA07                     0x114 0x374 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__FLEXSPI_B_DATA03                   0x114 0x374 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__USDHC3_DATA3                       0x114 0x374 0x61C 0x2 0x1
++#define MX8MP_IOMUXC_NAND_DATA07__FLEXSPI_A_DATA07                   0x114 0x374 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__MEDIAMIX_ISP_SHUTTER_OPEN_1        0x114 0x374 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__GPIO3_IO13                         0x114 0x374 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__CORESIGHT_TRACE11                  0x114 0x374 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DATA07__SIM_M_HADDR09                      0x114 0x374 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_DQS__RAWNAND_DQS                           0x118 0x378 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_DQS__FLEXSPI_A_DQS                         0x118 0x378 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_DQS__AUDIOMIX_SAI3_MCLK                    0x118 0x378 0x4E0 0x2 0x0
++#define MX8MP_IOMUXC_NAND_DQS__MEDIAMIX_ISP_SHUTTER_OPEN_0           0x118 0x378 0x000 0x3 0x0
++#define MX8MP_IOMUXC_NAND_DQS__I2C3_SCL                              0x118 0x378 0x5B4 0x4 0x1
++#define MX8MP_IOMUXC_NAND_DQS__GPIO3_IO14                            0x118 0x378 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_DQS__CORESIGHT_TRACE12                     0x118 0x378 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_DQS__SIM_M_HADDR10                         0x118 0x378 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__RAWNAND_RE_B                         0x11C 0x37C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__FLEXSPI_B_DQS                        0x11C 0x37C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__USDHC3_DATA4                         0x11C 0x37C 0x620 0x2 0x1
++#define MX8MP_IOMUXC_NAND_RE_B__UART4_DCE_TX                         0x11C 0x37C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__UART4_DTE_RX                         0x11C 0x37C 0x600 0x4 0x5
++#define MX8MP_IOMUXC_NAND_RE_B__GPIO3_IO15                           0x11C 0x37C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__CORESIGHT_TRACE13                    0x11C 0x37C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_RE_B__SIM_M_HADDR11                        0x11C 0x37C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_READY_B__RAWNAND_READY_B                   0x120 0x380 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_READY_B__USDHC3_RESET_B                    0x120 0x380 0x000 0x2 0x0
++#define MX8MP_IOMUXC_NAND_READY_B__I2C3_SCL                          0x120 0x380 0x5B4 0x4 0x2
++#define MX8MP_IOMUXC_NAND_READY_B__GPIO3_IO16                        0x120 0x380 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_READY_B__CORESIGHT_TRACE14                 0x120 0x380 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_READY_B__SIM_M_HADDR12                     0x120 0x380 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_WE_B__RAWNAND_WE_B                         0x124 0x384 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_WE_B__USDHC3_CLK                           0x124 0x384 0x604 0x2 0x1
++#define MX8MP_IOMUXC_NAND_WE_B__I2C3_SDA                             0x124 0x384 0x5B8 0x4 0x2
++#define MX8MP_IOMUXC_NAND_WE_B__GPIO3_IO17                           0x124 0x384 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_WE_B__CORESIGHT_TRACE15                    0x124 0x384 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_WE_B__SIM_M_HADDR13                        0x124 0x384 0x000 0x7 0x0
++#define MX8MP_IOMUXC_NAND_WP_B__RAWNAND_WP_B                         0x128 0x388 0x000 0x0 0x0
++#define MX8MP_IOMUXC_NAND_WP_B__USDHC3_CMD                           0x128 0x388 0x60C 0x2 0x1
++#define MX8MP_IOMUXC_NAND_WP_B__I2C4_SCL                             0x128 0x388 0x5BC 0x4 0x3
++#define MX8MP_IOMUXC_NAND_WP_B__GPIO3_IO18                           0x128 0x388 0x000 0x5 0x0
++#define MX8MP_IOMUXC_NAND_WP_B__CORESIGHT_EVENTO                     0x128 0x388 0x000 0x6 0x0
++#define MX8MP_IOMUXC_NAND_WP_B__SIM_M_HADDR14                        0x128 0x388 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI5_RXFS__AUDIOMIX_SAI5_RX_SYNC                0x12C 0x38C 0x508 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXFS__AUDIOMIX_SAI1_TX_DATA00              0x12C 0x38C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXFS__PWM4_OUT                             0x12C 0x38C 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI5_RXFS__I2C6_SCL                             0x12C 0x38C 0x5CC 0x3 0x1
++#define MX8MP_IOMUXC_SAI5_RXFS__GPIO3_IO19                           0x12C 0x38C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXC__AUDIOMIX_SAI5_RX_BCLK                 0x130 0x390 0x4F4 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXC__AUDIOMIX_SAI1_TX_DATA01               0x130 0x390 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXC__PWM3_OUT                              0x130 0x390 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI5_RXC__I2C6_SDA                              0x130 0x390 0x5D0 0x3 0x1
++#define MX8MP_IOMUXC_SAI5_RXC__AUDIOMIX_CLK                          0x130 0x390 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI5_RXC__GPIO3_IO20                            0x130 0x390 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXD0__AUDIOMIX_SAI5_RX_DATA00              0x134 0x394 0x4F8 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXD0__AUDIOMIX_SAI1_TX_DATA02              0x134 0x394 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXD0__PWM2_OUT                             0x134 0x394 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI5_RXD0__I2C5_SCL                             0x134 0x394 0x5C4 0x3 0x1
++#define MX8MP_IOMUXC_SAI5_RXD0__AUDIOMIX_BIT_STREAM00                0x134 0x394 0x4C0 0x4 0x2
++#define MX8MP_IOMUXC_SAI5_RXD0__GPIO3_IO21                           0x134 0x394 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__AUDIOMIX_SAI5_RX_DATA01              0x138 0x398 0x4FC 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__AUDIOMIX_SAI1_TX_DATA03              0x138 0x398 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__AUDIOMIX_SAI1_TX_SYNC                0x138 0x398 0x4D8 0x2 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__AUDIOMIX_SAI5_TX_SYNC                0x138 0x398 0x510 0x3 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__AUDIOMIX_BIT_STREAM01                0x138 0x398 0x4C4 0x4 0x2
++#define MX8MP_IOMUXC_SAI5_RXD1__GPIO3_IO22                           0x138 0x398 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXD1__CAN1_TX                              0x138 0x398 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SAI5_RXD2__AUDIOMIX_SAI5_RX_DATA02              0x13C 0x39C 0x500 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXD2__AUDIOMIX_SAI1_TX_DATA04              0x13C 0x39C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXD2__AUDIOMIX_SAI1_TX_SYNC                0x13C 0x39C 0x4D8 0x2 0x1
++#define MX8MP_IOMUXC_SAI5_RXD2__AUDIOMIX_SAI5_TX_BCLK                0x13C 0x39C 0x50C 0x3 0x0
++#define MX8MP_IOMUXC_SAI5_RXD2__AUDIOMIX_BIT_STREAM02                0x13C 0x39C 0x4C8 0x4 0x2
++#define MX8MP_IOMUXC_SAI5_RXD2__GPIO3_IO23                           0x13C 0x39C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXD2__CAN1_RX                              0x13C 0x39C 0x54C 0x6 0x0
++#define MX8MP_IOMUXC_SAI5_RXD3__AUDIOMIX_SAI5_RX_DATA03              0x140 0x3A0 0x504 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_RXD3__AUDIOMIX_SAI1_TX_DATA05              0x140 0x3A0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_RXD3__AUDIOMIX_SAI1_TX_SYNC                0x140 0x3A0 0x4D8 0x2 0x2
++#define MX8MP_IOMUXC_SAI5_RXD3__AUDIOMIX_SAI5_TX_DATA00              0x140 0x3A0 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI5_RXD3__AUDIOMIX_BIT_STREAM03                0x140 0x3A0 0x4CC 0x4 0x2
++#define MX8MP_IOMUXC_SAI5_RXD3__GPIO3_IO24                           0x140 0x3A0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_RXD3__CAN2_TX                              0x140 0x3A0 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SAI5_MCLK__AUDIOMIX_SAI5_MCLK                   0x144 0x3A4 0x4F0 0x0 0x0
++#define MX8MP_IOMUXC_SAI5_MCLK__AUDIOMIX_SAI1_TX_BCLK                0x144 0x3A4 0x4D4 0x1 0x0
++#define MX8MP_IOMUXC_SAI5_MCLK__PWM1_OUT                             0x144 0x3A4 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI5_MCLK__I2C5_SDA                             0x144 0x3A4 0x5C8 0x3 0x1
++#define MX8MP_IOMUXC_SAI5_MCLK__GPIO3_IO25                           0x144 0x3A4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI5_MCLK__CAN2_RX                              0x144 0x3A4 0x550 0x6 0x0
++#define MX8MP_IOMUXC_SAI1_RXFS__AUDIOMIX_SAI1_RX_SYNC                0x148 0x3A8 0x4D0 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXFS__AUDIOMIX_SAI5_RX_SYNC                0x148 0x3A8 0x508 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXFS__ENET1_1588_EVENT0_IN                 0x148 0x3A8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXFS__GPIO4_IO00                           0x148 0x3A8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXC__AUDIOMIX_SAI1_RX_BCLK                 0x14C 0x3AC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXC__AUDIOMIX_SAI5_RX_BCLK                 0x14C 0x3AC 0x4F4 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXC__AUDIOMIX_CLK                          0x14C 0x3AC 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI1_RXC__ENET1_1588_EVENT0_OUT                 0x14C 0x3AC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXC__GPIO4_IO01                            0x14C 0x3AC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD0__AUDIOMIX_SAI1_RX_DATA00              0x150 0x3B0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD0__AUDIOMIX_SAI5_RX_DATA00              0x150 0x3B0 0x4F8 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD0__AUDIOMIX_SAI1_TX_DATA01              0x150 0x3B0 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI1_RXD0__AUDIOMIX_BIT_STREAM00                0x150 0x3B0 0x4C0 0x3 0x3
++#define MX8MP_IOMUXC_SAI1_RXD0__ENET1_1588_EVENT1_IN                 0x150 0x3B0 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXD0__GPIO4_IO02                           0x150 0x3B0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD1__AUDIOMIX_SAI1_RX_DATA01              0x154 0x3B4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD1__AUDIOMIX_SAI5_RX_DATA01              0x154 0x3B4 0x4FC 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD1__AUDIOMIX_BIT_STREAM01                0x154 0x3B4 0x4C4 0x3 0x3
++#define MX8MP_IOMUXC_SAI1_RXD1__ENET1_1588_EVENT1_OUT                0x154 0x3B4 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXD1__GPIO4_IO03                           0x154 0x3B4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD2__AUDIOMIX_SAI1_RX_DATA02              0x158 0x3B8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD2__AUDIOMIX_SAI5_RX_DATA02              0x158 0x3B8 0x500 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD2__AUDIOMIX_BIT_STREAM02                0x158 0x3B8 0x4C8 0x3 0x3
++#define MX8MP_IOMUXC_SAI1_RXD2__ENET1_MDC                            0x158 0x3B8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXD2__GPIO4_IO04                           0x158 0x3B8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD3__AUDIOMIX_SAI1_RX_DATA03              0x15C 0x3BC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD3__AUDIOMIX_SAI5_RX_DATA03              0x15C 0x3BC 0x504 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD3__AUDIOMIX_BIT_STREAM03                0x15C 0x3BC 0x4CC 0x3 0x3
++#define MX8MP_IOMUXC_SAI1_RXD3__ENET1_MDIO                           0x15C 0x3BC 0x57C 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_RXD3__GPIO4_IO05                           0x15C 0x3BC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD4__AUDIOMIX_SAI1_RX_DATA04              0x160 0x3C0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD4__AUDIOMIX_SAI6_TX_BCLK                0x160 0x3C0 0x524 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD4__AUDIOMIX_SAI6_RX_BCLK                0x160 0x3C0 0x518 0x2 0x1
++#define MX8MP_IOMUXC_SAI1_RXD4__ENET1_RGMII_RD0                      0x160 0x3C0 0x580 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_RXD4__GPIO4_IO06                           0x160 0x3C0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD5__AUDIOMIX_SAI1_RX_DATA05              0x164 0x3C4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD5__AUDIOMIX_SAI6_TX_DATA00              0x164 0x3C4 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI1_RXD5__AUDIOMIX_SAI6_RX_DATA00              0x164 0x3C4 0x51C 0x2 0x1
++#define MX8MP_IOMUXC_SAI1_RXD5__AUDIOMIX_SAI1_RX_SYNC                0x164 0x3C4 0x4D0 0x3 0x1
++#define MX8MP_IOMUXC_SAI1_RXD5__ENET1_RGMII_RD1                      0x164 0x3C4 0x584 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_RXD5__GPIO4_IO07                           0x164 0x3C4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD6__AUDIOMIX_SAI1_RX_DATA06              0x168 0x3C8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD6__AUDIOMIX_SAI6_TX_SYNC                0x168 0x3C8 0x528 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD6__AUDIOMIX_SAI6_RX_SYNC                0x168 0x3C8 0x520 0x2 0x1
++#define MX8MP_IOMUXC_SAI1_RXD6__ENET1_RGMII_RD2                      0x168 0x3C8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXD6__GPIO4_IO08                           0x168 0x3C8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_RXD7__AUDIOMIX_SAI1_RX_DATA07              0x16C 0x3CC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_RXD7__AUDIOMIX_SAI6_MCLK                   0x16C 0x3CC 0x514 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_RXD7__AUDIOMIX_SAI1_TX_SYNC                0x16C 0x3CC 0x4D8 0x2 0x3
++#define MX8MP_IOMUXC_SAI1_RXD7__AUDIOMIX_SAI1_TX_DATA04              0x16C 0x3CC 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI1_RXD7__ENET1_RGMII_RD3                      0x16C 0x3CC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_RXD7__GPIO4_IO09                           0x16C 0x3CC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXFS__AUDIOMIX_SAI1_TX_SYNC                0x170 0x3D0 0x4D8 0x0 0x4
++#define MX8MP_IOMUXC_SAI1_TXFS__AUDIOMIX_SAI5_TX_SYNC                0x170 0x3D0 0x510 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_TXFS__ENET1_RGMII_RX_CTL                   0x170 0x3D0 0x588 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_TXFS__GPIO4_IO10                           0x170 0x3D0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXC__AUDIOMIX_SAI1_TX_BCLK                 0x174 0x3D4 0x4D4 0x0 0x1
++#define MX8MP_IOMUXC_SAI1_TXC__AUDIOMIX_SAI5_TX_BCLK                 0x174 0x3D4 0x50C 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_TXC__ENET1_RGMII_RXC                       0x174 0x3D4 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXC__GPIO4_IO11                            0x174 0x3D4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD0__AUDIOMIX_SAI1_TX_DATA00              0x178 0x3D8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD0__AUDIOMIX_SAI5_TX_DATA00              0x178 0x3D8 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI1_TXD0__ENET1_RGMII_TD0                      0x178 0x3D8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD0__GPIO4_IO12                           0x178 0x3D8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD1__AUDIOMIX_SAI1_TX_DATA01              0x17C 0x3DC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD1__AUDIOMIX_SAI5_TX_DATA01              0x17C 0x3DC 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI1_TXD1__ENET1_RGMII_TD1                      0x17C 0x3DC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD1__GPIO4_IO13                           0x17C 0x3DC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD2__AUDIOMIX_SAI1_TX_DATA02              0x180 0x3E0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD2__AUDIOMIX_SAI5_TX_DATA02              0x180 0x3E0 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI1_TXD2__ENET1_RGMII_TD2                      0x180 0x3E0 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD2__GPIO4_IO14                           0x180 0x3E0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD3__AUDIOMIX_SAI1_TX_DATA03              0x184 0x3E4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD3__AUDIOMIX_SAI5_TX_DATA03              0x184 0x3E4 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI1_TXD3__ENET1_RGMII_TD3                      0x184 0x3E4 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD3__GPIO4_IO15                           0x184 0x3E4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD4__AUDIOMIX_SAI1_TX_DATA04              0x188 0x3E8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD4__AUDIOMIX_SAI6_RX_BCLK                0x188 0x3E8 0x518 0x1 0x2
++#define MX8MP_IOMUXC_SAI1_TXD4__AUDIOMIX_SAI6_TX_BCLK                0x188 0x3E8 0x524 0x2 0x2
++#define MX8MP_IOMUXC_SAI1_TXD4__ENET1_RGMII_TX_CTL                   0x188 0x3E8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD4__GPIO4_IO16                           0x188 0x3E8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD5__AUDIOMIX_SAI1_TX_DATA05              0x18C 0x3EC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD5__AUDIOMIX_SAI6_RX_DATA00              0x18C 0x3EC 0x51C 0x1 0x2
++#define MX8MP_IOMUXC_SAI1_TXD5__AUDIOMIX_SAI6_TX_DATA00              0x18C 0x3EC 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI1_TXD5__ENET1_RGMII_TXC                      0x18C 0x3EC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD5__GPIO4_IO17                           0x18C 0x3EC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD6__AUDIOMIX_SAI1_TX_DATA06              0x190 0x3F0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD6__AUDIOMIX_SAI6_RX_SYNC                0x190 0x3F0 0x520 0x1 0x2
++#define MX8MP_IOMUXC_SAI1_TXD6__AUDIOMIX_SAI6_TX_SYNC                0x190 0x3F0 0x528 0x2 0x2
++#define MX8MP_IOMUXC_SAI1_TXD6__ENET1_RX_ER                          0x190 0x3F0 0x58C 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_TXD6__GPIO4_IO18                           0x190 0x3F0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_TXD7__AUDIOMIX_SAI1_TX_DATA07              0x194 0x3F4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_TXD7__AUDIOMIX_SAI6_MCLK                   0x194 0x3F4 0x514 0x1 0x2
++#define MX8MP_IOMUXC_SAI1_TXD7__AUDIOMIX_CLK                         0x194 0x3F4 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI1_TXD7__ENET1_TX_ER                          0x194 0x3F4 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI1_TXD7__GPIO4_IO19                           0x194 0x3F4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI1_MCLK__AUDIOMIX_SAI1_MCLK                   0x198 0x3F8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI1_MCLK__AUDIOMIX_SAI5_MCLK                   0x198 0x3F8 0x4F0 0x1 0x1
++#define MX8MP_IOMUXC_SAI1_MCLK__AUDIOMIX_SAI1_TX_BCLK                0x198 0x3F8 0x4D4 0x2 0x2
++#define MX8MP_IOMUXC_SAI1_MCLK__ENET1_TX_CLK                         0x198 0x3F8 0x578 0x4 0x1
++#define MX8MP_IOMUXC_SAI1_MCLK__GPIO4_IO20                           0x198 0x3F8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__AUDIOMIX_SAI2_RX_SYNC                0x19C 0x3FC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__AUDIOMIX_SAI5_TX_SYNC                0x19C 0x3FC 0x510 0x1 0x2
++#define MX8MP_IOMUXC_SAI2_RXFS__AUDIOMIX_SAI5_TX_DATA01              0x19C 0x3FC 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__AUDIOMIX_SAI2_RX_DATA01              0x19C 0x3FC 0x4DC 0x3 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__UART1_DCE_TX                         0x19C 0x3FC 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__UART1_DTE_RX                         0x19C 0x3FC 0x5E8 0x4 0x2
++#define MX8MP_IOMUXC_SAI2_RXFS__GPIO4_IO21                           0x19C 0x3FC 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_RXFS__AUDIOMIX_BIT_STREAM02                0x19C 0x3FC 0x4C8 0x6 0x4
++#define MX8MP_IOMUXC_SAI2_RXFS__SIM_M_HSIZE00                        0x19C 0x3FC 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_RXC__AUDIOMIX_SAI2_RX_BCLK                 0x1A0 0x400 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_RXC__AUDIOMIX_SAI5_TX_BCLK                 0x1A0 0x400 0x50C 0x1 0x2
++#define MX8MP_IOMUXC_SAI2_RXC__CAN1_TX                               0x1A0 0x400 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI2_RXC__UART1_DCE_RX                          0x1A0 0x400 0x5E8 0x4 0x3
++#define MX8MP_IOMUXC_SAI2_RXC__UART1_DTE_TX                          0x1A0 0x400 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_RXC__GPIO4_IO22                            0x1A0 0x400 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_RXC__AUDIOMIX_BIT_STREAM01                 0x1A0 0x400 0x4C4 0x6 0x4
++#define MX8MP_IOMUXC_SAI2_RXC__SIM_M_HSIZE01                         0x1A0 0x400 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__AUDIOMIX_SAI2_RX_DATA00              0x1A4 0x404 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__AUDIOMIX_SAI5_TX_DATA00              0x1A4 0x404 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__ENET_QOS_1588_EVENT2_OUT             0x1A4 0x404 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__AUDIOMIX_SAI2_TX_DATA01              0x1A4 0x404 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__UART1_DCE_RTS                        0x1A4 0x404 0x5E4 0x4 0x2
++#define MX8MP_IOMUXC_SAI2_RXD0__UART1_DTE_CTS                        0x1A4 0x404 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__GPIO4_IO23                           0x1A4 0x404 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_RXD0__AUDIOMIX_BIT_STREAM03                0x1A4 0x404 0x4CC 0x6 0x4
++#define MX8MP_IOMUXC_SAI2_RXD0__SIM_M_HSIZE02                        0x1A4 0x404 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__AUDIOMIX_SAI2_TX_SYNC                0x1A8 0x408 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__AUDIOMIX_SAI5_TX_DATA01              0x1A8 0x408 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__ENET_QOS_1588_EVENT3_OUT             0x1A8 0x408 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__AUDIOMIX_SAI2_TX_DATA01              0x1A8 0x408 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__UART1_DCE_CTS                        0x1A8 0x408 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__UART1_DTE_RTS                        0x1A8 0x408 0x5E4 0x4 0x3
++#define MX8MP_IOMUXC_SAI2_TXFS__GPIO4_IO24                           0x1A8 0x408 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_TXFS__AUDIOMIX_BIT_STREAM02                0x1A8 0x408 0x4C8 0x6 0x5
++#define MX8MP_IOMUXC_SAI2_TXFS__SIM_M_HWRITE                         0x1A8 0x408 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_TXC__AUDIOMIX_SAI2_TX_BCLK                 0x1AC 0x40C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_TXC__AUDIOMIX_SAI5_TX_DATA02               0x1AC 0x40C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI2_TXC__CAN1_RX                               0x1AC 0x40C 0x54C 0x3 0x1
++#define MX8MP_IOMUXC_SAI2_TXC__GPIO4_IO25                            0x1AC 0x40C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_TXC__AUDIOMIX_BIT_STREAM01                 0x1AC 0x40C 0x4C4 0x6 0x5
++#define MX8MP_IOMUXC_SAI2_TXC__SIM_M_HREADYOUT                       0x1AC 0x40C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__AUDIOMIX_SAI2_TX_DATA00              0x1B0 0x410 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__AUDIOMIX_SAI5_TX_DATA03              0x1B0 0x410 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__ENET_QOS_1588_EVENT2_IN              0x1B0 0x410 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__CAN2_TX                              0x1B0 0x410 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__ENET_QOS_1588_EVENT2_AUX_IN          0x1B0 0x410 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__GPIO4_IO26                           0x1B0 0x410 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__CCMSRCGPCMIX_BOOT_MODE04             0x1B0 0x410 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SAI2_TXD0__TPSMP_CLK                            0x1B0 0x410 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI2_MCLK__AUDIOMIX_SAI2_MCLK                   0x1B4 0x414 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI2_MCLK__AUDIOMIX_SAI5_MCLK                   0x1B4 0x414 0x4F0 0x1 0x2
++#define MX8MP_IOMUXC_SAI2_MCLK__ENET_QOS_1588_EVENT3_IN              0x1B4 0x414 0x000 0x2 0x0
++#define MX8MP_IOMUXC_SAI2_MCLK__CAN2_RX                              0x1B4 0x414 0x550 0x3 0x1
++#define MX8MP_IOMUXC_SAI2_MCLK__ENET_QOS_1588_EVENT3_AUX_IN          0x1B4 0x414 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI2_MCLK__GPIO4_IO27                           0x1B4 0x414 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI2_MCLK__AUDIOMIX_SAI3_MCLK                   0x1B4 0x414 0x4E0 0x6 0x1
++#define MX8MP_IOMUXC_SAI2_MCLK__TPSMP_HDATA_DIR                      0x1B4 0x414 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_SAI3_RX_SYNC                0x1B8 0x418 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_SAI2_RX_DATA01              0x1B8 0x418 0x4DC 0x1 0x1
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_SAI5_RX_SYNC                0x1B8 0x418 0x508 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_SAI3_RX_DATA01              0x1B8 0x418 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_SPDIF_IN                    0x1B8 0x418 0x544 0x4 0x2
++#define MX8MP_IOMUXC_SAI3_RXFS__GPIO4_IO28                           0x1B8 0x418 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_RXFS__AUDIOMIX_BIT_STREAM00                0x1B8 0x418 0x4C0 0x6 0x4
++#define MX8MP_IOMUXC_SAI3_RXFS__TPSMP_HTRANS00                       0x1B8 0x418 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__AUDIOMIX_SAI3_RX_BCLK                 0x1BC 0x41C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__AUDIOMIX_SAI2_RX_DATA02               0x1BC 0x41C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__AUDIOMIX_SAI5_RX_BCLK                 0x1BC 0x41C 0x4F4 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_RXC__GPT1_CLK                              0x1BC 0x41C 0x59C 0x3 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__UART2_DCE_CTS                         0x1BC 0x41C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__UART2_DTE_RTS                         0x1BC 0x41C 0x5EC 0x4 0x2
++#define MX8MP_IOMUXC_SAI3_RXC__GPIO4_IO29                            0x1BC 0x41C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__AUDIOMIX_CLK                          0x1BC 0x41C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SAI3_RXC__TPSMP_HTRANS01                        0x1BC 0x41C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_RXD__AUDIOMIX_SAI3_RX_DATA00               0x1C0 0x420 0x4E4 0x0 0x1
++#define MX8MP_IOMUXC_SAI3_RXD__AUDIOMIX_SAI2_RX_DATA03               0x1C0 0x420 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_RXD__AUDIOMIX_SAI5_RX_DATA00               0x1C0 0x420 0x4F8 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_RXD__UART2_DCE_RTS                         0x1C0 0x420 0x5EC 0x4 0x3
++#define MX8MP_IOMUXC_SAI3_RXD__UART2_DTE_CTS                         0x1C0 0x420 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_RXD__GPIO4_IO30                            0x1C0 0x420 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_RXD__AUDIOMIX_BIT_STREAM01                 0x1C0 0x420 0x4C4 0x6 0x6
++#define MX8MP_IOMUXC_SAI3_RXD__TPSMP_HDATA00                         0x1C0 0x420 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_TXFS__AUDIOMIX_SAI3_TX_SYNC                0x1C4 0x424 0x4EC 0x0 0x1
++#define MX8MP_IOMUXC_SAI3_TXFS__AUDIOMIX_SAI2_TX_DATA01              0x1C4 0x424 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_TXFS__AUDIOMIX_SAI5_RX_DATA01              0x1C4 0x424 0x4FC 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_TXFS__AUDIOMIX_SAI3_TX_DATA01              0x1C4 0x424 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SAI3_TXFS__UART2_DCE_RX                         0x1C4 0x424 0x5F0 0x4 0x4
++#define MX8MP_IOMUXC_SAI3_TXFS__UART2_DTE_TX                         0x1C4 0x424 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_TXFS__GPIO4_IO31                           0x1C4 0x424 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_TXFS__AUDIOMIX_BIT_STREAM03                0x1C4 0x424 0x4CC 0x6 0x5
++#define MX8MP_IOMUXC_SAI3_TXFS__TPSMP_HDATA01                        0x1C4 0x424 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_TXC__AUDIOMIX_SAI3_TX_BCLK                 0x1C8 0x428 0x4E8 0x0 0x1
++#define MX8MP_IOMUXC_SAI3_TXC__AUDIOMIX_SAI2_TX_DATA02               0x1C8 0x428 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_TXC__AUDIOMIX_SAI5_RX_DATA02               0x1C8 0x428 0x500 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_TXC__GPT1_CAPTURE1                         0x1C8 0x428 0x594 0x3 0x0
++#define MX8MP_IOMUXC_SAI3_TXC__UART2_DCE_TX                          0x1C8 0x428 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_TXC__UART2_DTE_RX                          0x1C8 0x428 0x5F0 0x4 0x5
++#define MX8MP_IOMUXC_SAI3_TXC__GPIO5_IO00                            0x1C8 0x428 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_TXC__AUDIOMIX_BIT_STREAM02                 0x1C8 0x428 0x4C8 0x6 0x6
++#define MX8MP_IOMUXC_SAI3_TXC__TPSMP_HDATA02                         0x1C8 0x428 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__AUDIOMIX_SAI3_TX_DATA00               0x1CC 0x42C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__AUDIOMIX_SAI2_TX_DATA03               0x1CC 0x42C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__AUDIOMIX_SAI5_RX_DATA03               0x1CC 0x42C 0x504 0x2 0x2
++#define MX8MP_IOMUXC_SAI3_TXD__GPT1_CAPTURE2                         0x1CC 0x42C 0x598 0x3 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__AUDIOMIX_SPDIF_EXT_CLK                0x1CC 0x42C 0x548 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__GPIO5_IO01                            0x1CC 0x42C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__CCMSRCGPCMIX_BOOT_MODE05              0x1CC 0x42C 0x000 0x6 0x0
++#define MX8MP_IOMUXC_SAI3_TXD__TPSMP_HDATA03                         0x1CC 0x42C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SAI3_MCLK__AUDIOMIX_SAI3_MCLK                   0x1D0 0x430 0x4E0 0x0 0x2
++#define MX8MP_IOMUXC_SAI3_MCLK__PWM4_OUT                             0x1D0 0x430 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SAI3_MCLK__AUDIOMIX_SAI5_MCLK                   0x1D0 0x430 0x4F0 0x2 0x3
++#define MX8MP_IOMUXC_SAI3_MCLK__AUDIOMIX_SPDIF_OUT                   0x1D0 0x430 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SAI3_MCLK__GPIO5_IO02                           0x1D0 0x430 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SAI3_MCLK__AUDIOMIX_SPDIF_IN                    0x1D0 0x430 0x544 0x6 0x3
++#define MX8MP_IOMUXC_SAI3_MCLK__TPSMP_HDATA04                        0x1D0 0x430 0x000 0x7 0x0
++#define MX8MP_IOMUXC_SPDIF_TX__AUDIOMIX_SPDIF_OUT                    0x1D4 0x434 0x000 0x0 0x0
++#define MX8MP_IOMUXC_SPDIF_TX__PWM3_OUT                              0x1D4 0x434 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SPDIF_TX__I2C5_SCL                              0x1D4 0x434 0x5C4 0x2 0x2
++#define MX8MP_IOMUXC_SPDIF_TX__GPT1_COMPARE1                         0x1D4 0x434 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SPDIF_TX__CAN1_TX                               0x1D4 0x434 0x000 0x4 0x0
++#define MX8MP_IOMUXC_SPDIF_TX__GPIO5_IO03                            0x1D4 0x434 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SPDIF_RX__AUDIOMIX_SPDIF_IN                     0x1D8 0x438 0x544 0x0 0x4
++#define MX8MP_IOMUXC_SPDIF_RX__PWM2_OUT                              0x1D8 0x438 0x000 0x1 0x0
++#define MX8MP_IOMUXC_SPDIF_RX__I2C5_SDA                              0x1D8 0x438 0x5C8 0x2 0x2
++#define MX8MP_IOMUXC_SPDIF_RX__GPT1_COMPARE2                         0x1D8 0x438 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SPDIF_RX__CAN1_RX                               0x1D8 0x438 0x54C 0x4 0x2
++#define MX8MP_IOMUXC_SPDIF_RX__GPIO5_IO04                            0x1D8 0x438 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SPDIF_EXT_CLK__GPT1_COMPARE3                    0x1DC 0x43C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_SPDIF_EXT_CLK__GPIO5_IO05                       0x1DC 0x43C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_SPDIF_EXT_CLK__AUDIOMIX_SPDIF_EXT_CLK           0x1DC 0x43C 0x548 0x0 0x1
++#define MX8MP_IOMUXC_SPDIF_EXT_CLK__PWM1_OUT                         0x1DC 0x43C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI1_SCLK__ECSPI1_SCLK                        0x1E0 0x440 0x558 0x0 0x0
++#define MX8MP_IOMUXC_ECSPI1_SCLK__UART3_DCE_RX                       0x1E0 0x440 0x5F8 0x1 0x4
++#define MX8MP_IOMUXC_ECSPI1_SCLK__UART3_DTE_TX                       0x1E0 0x440 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI1_SCLK__I2C1_SCL                           0x1E0 0x440 0x5A4 0x2 0x1
++#define MX8MP_IOMUXC_ECSPI1_SCLK__AUDIOMIX_SAI7_RX_SYNC              0x1E0 0x440 0x538 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI1_SCLK__GPIO5_IO06                         0x1E0 0x440 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI1_SCLK__TPSMP_HDATA08                      0x1E0 0x440 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI1_MOSI__ECSPI1_MOSI                        0x1E4 0x444 0x560 0x0 0x0
++#define MX8MP_IOMUXC_ECSPI1_MOSI__UART3_DCE_TX                       0x1E4 0x444 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI1_MOSI__UART3_DTE_RX                       0x1E4 0x444 0x5F8 0x1 0x5
++#define MX8MP_IOMUXC_ECSPI1_MOSI__I2C1_SDA                           0x1E4 0x444 0x5A8 0x2 0x1
++#define MX8MP_IOMUXC_ECSPI1_MOSI__AUDIOMIX_SAI7_RX_BCLK              0x1E4 0x444 0x530 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI1_MOSI__GPIO5_IO07                         0x1E4 0x444 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI1_MOSI__TPSMP_HDATA09                      0x1E4 0x444 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI1_MISO__ECSPI1_MISO                        0x1E8 0x448 0x55C 0x0 0x0
++#define MX8MP_IOMUXC_ECSPI1_MISO__UART3_DCE_CTS                      0x1E8 0x448 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI1_MISO__UART3_DTE_RTS                      0x1E8 0x448 0x5F4 0x1 0x2
++#define MX8MP_IOMUXC_ECSPI1_MISO__I2C2_SCL                           0x1E8 0x448 0x5AC 0x2 0x1
++#define MX8MP_IOMUXC_ECSPI1_MISO__AUDIOMIX_SAI7_RX_DATA00            0x1E8 0x448 0x534 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI1_MISO__GPIO5_IO08                         0x1E8 0x448 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI1_MISO__TPSMP_HDATA10                      0x1E8 0x448 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI1_SS0__ECSPI1_SS0                          0x1EC 0x44C 0x564 0x0 0x0
++#define MX8MP_IOMUXC_ECSPI1_SS0__UART3_DCE_RTS                       0x1EC 0x44C 0x5F4 0x1 0x3
++#define MX8MP_IOMUXC_ECSPI1_SS0__UART3_DTE_CTS                       0x1EC 0x44C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI1_SS0__I2C2_SDA                            0x1EC 0x44C 0x5B0 0x2 0x1
++#define MX8MP_IOMUXC_ECSPI1_SS0__AUDIOMIX_SAI7_TX_SYNC               0x1EC 0x44C 0x540 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI1_SS0__GPIO5_IO09                          0x1EC 0x44C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI1_SS0__TPSMP_HDATA11                       0x1EC 0x44C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI2_SCLK__ECSPI2_SCLK                        0x1F0 0x450 0x568 0x0 0x1
++#define MX8MP_IOMUXC_ECSPI2_SCLK__UART4_DCE_RX                       0x1F0 0x450 0x600 0x1 0x6
++#define MX8MP_IOMUXC_ECSPI2_SCLK__UART4_DTE_TX                       0x1F0 0x450 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI2_SCLK__I2C3_SCL                           0x1F0 0x450 0x5B4 0x2 0x3
++#define MX8MP_IOMUXC_ECSPI2_SCLK__AUDIOMIX_SAI7_TX_BCLK              0x1F0 0x450 0x53C 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI2_SCLK__GPIO5_IO10                         0x1F0 0x450 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI2_SCLK__TPSMP_HDATA12                      0x1F0 0x450 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI2_MOSI__ECSPI2_MOSI                        0x1F4 0x454 0x570 0x0 0x1
++#define MX8MP_IOMUXC_ECSPI2_MOSI__UART4_DCE_TX                       0x1F4 0x454 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI2_MOSI__UART4_DTE_RX                       0x1F4 0x454 0x600 0x1 0x7
++#define MX8MP_IOMUXC_ECSPI2_MOSI__I2C3_SDA                           0x1F4 0x454 0x5B8 0x2 0x3
++#define MX8MP_IOMUXC_ECSPI2_MOSI__AUDIOMIX_SAI7_TX_DATA00            0x1F4 0x454 0x000 0x3 0x0
++#define MX8MP_IOMUXC_ECSPI2_MOSI__GPIO5_IO11                         0x1F4 0x454 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI2_MOSI__TPSMP_HDATA13                      0x1F4 0x454 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI2_MISO__GPIO5_IO12                         0x1F8 0x458 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI2_MISO__TPSMP_HDATA14                      0x1F8 0x458 0x000 0x7 0x0
++#define MX8MP_IOMUXC_ECSPI2_MISO__ECSPI2_MISO                        0x1F8 0x458 0x56C 0x0 0x1
++#define MX8MP_IOMUXC_ECSPI2_MISO__UART4_DCE_CTS                      0x1F8 0x458 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI2_MISO__UART4_DTE_RTS                      0x1F8 0x458 0x5FC 0x1 0x2
++#define MX8MP_IOMUXC_ECSPI2_MISO__I2C4_SCL                           0x1F8 0x458 0x5BC 0x2 0x4
++#define MX8MP_IOMUXC_ECSPI2_MISO__AUDIOMIX_SAI7_MCLK                 0x1F8 0x458 0x52C 0x3 0x1
++#define MX8MP_IOMUXC_ECSPI2_MISO__CCMSRCGPCMIX_CLKO1                 0x1F8 0x458 0x000 0x4 0x0
++#define MX8MP_IOMUXC_ECSPI2_SS0__ECSPI2_SS0                          0x1FC 0x45C 0x574 0x0 0x1
++#define MX8MP_IOMUXC_ECSPI2_SS0__UART4_DCE_RTS                       0x1FC 0x45C 0x5FC 0x1 0x3
++#define MX8MP_IOMUXC_ECSPI2_SS0__UART4_DTE_CTS                       0x1FC 0x45C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_ECSPI2_SS0__I2C4_SDA                            0x1FC 0x45C 0x5C0 0x2 0x4
++#define MX8MP_IOMUXC_ECSPI2_SS0__CCMSRCGPCMIX_CLKO2                  0x1FC 0x45C 0x000 0x4 0x0
++#define MX8MP_IOMUXC_ECSPI2_SS0__GPIO5_IO13                          0x1FC 0x45C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_ECSPI2_SS0__TPSMP_HDATA15                       0x1FC 0x45C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C1_SCL__I2C1_SCL                              0x200 0x460 0x5A4 0x0 0x2
++#define MX8MP_IOMUXC_I2C1_SCL__ENET_QOS_MDC                          0x200 0x460 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C1_SCL__ECSPI1_SCLK                           0x200 0x460 0x558 0x3 0x1
++#define MX8MP_IOMUXC_I2C1_SCL__GPIO5_IO14                            0x200 0x460 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C1_SCL__TPSMP_HDATA16                         0x200 0x460 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C1_SDA__I2C1_SDA                              0x204 0x464 0x5A8 0x0 0x2
++#define MX8MP_IOMUXC_I2C1_SDA__ENET_QOS_MDIO                         0x204 0x464 0x590 0x1 0x2
++#define MX8MP_IOMUXC_I2C1_SDA__ECSPI1_MOSI                           0x204 0x464 0x560 0x3 0x1
++#define MX8MP_IOMUXC_I2C1_SDA__GPIO5_IO15                            0x204 0x464 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C1_SDA__TPSMP_HDATA17                         0x204 0x464 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C2_SCL__I2C2_SCL                              0x208 0x468 0x5AC 0x0 0x2
++#define MX8MP_IOMUXC_I2C2_SCL__ENET_QOS_1588_EVENT1_IN               0x208 0x468 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C2_SCL__USDHC3_CD_B                           0x208 0x468 0x608 0x2 0x3
++#define MX8MP_IOMUXC_I2C2_SCL__ECSPI1_MISO                           0x208 0x468 0x55C 0x3 0x1
++#define MX8MP_IOMUXC_I2C2_SCL__ENET_QOS_1588_EVENT1_AUX_IN           0x208 0x468 0x000 0x4 0x0
++#define MX8MP_IOMUXC_I2C2_SCL__GPIO5_IO16                            0x208 0x468 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C2_SCL__TPSMP_HDATA18                         0x208 0x468 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C2_SDA__I2C2_SDA                              0x20C 0x46C 0x5B0 0x0 0x2
++#define MX8MP_IOMUXC_I2C2_SDA__ENET_QOS_1588_EVENT1_OUT              0x20C 0x46C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C2_SDA__USDHC3_WP                             0x20C 0x46C 0x634 0x2 0x3
++#define MX8MP_IOMUXC_I2C2_SDA__ECSPI1_SS0                            0x20C 0x46C 0x564 0x3 0x1
++#define MX8MP_IOMUXC_I2C2_SDA__GPIO5_IO17                            0x20C 0x46C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C2_SDA__TPSMP_HDATA19                         0x20C 0x46C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C3_SCL__I2C3_SCL                              0x210 0x470 0x5B4 0x0 0x4
++#define MX8MP_IOMUXC_I2C3_SCL__PWM4_OUT                              0x210 0x470 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C3_SCL__GPT2_CLK                              0x210 0x470 0x000 0x2 0x0
++#define MX8MP_IOMUXC_I2C3_SCL__ECSPI2_SCLK                           0x210 0x470 0x568 0x3 0x2
++#define MX8MP_IOMUXC_I2C3_SCL__GPIO5_IO18                            0x210 0x470 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C3_SCL__TPSMP_HDATA20                         0x210 0x470 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C3_SDA__I2C3_SDA                              0x214 0x474 0x5B8 0x0 0x4
++#define MX8MP_IOMUXC_I2C3_SDA__PWM3_OUT                              0x214 0x474 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C3_SDA__GPT3_CLK                              0x214 0x474 0x000 0x2 0x0
++#define MX8MP_IOMUXC_I2C3_SDA__ECSPI2_MOSI                           0x214 0x474 0x570 0x3 0x2
++#define MX8MP_IOMUXC_I2C3_SDA__GPIO5_IO19                            0x214 0x474 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C3_SDA__TPSMP_HDATA21                         0x214 0x474 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C4_SCL__I2C4_SCL                              0x218 0x478 0x5BC 0x0 0x5
++#define MX8MP_IOMUXC_I2C4_SCL__PWM2_OUT                              0x218 0x478 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C4_SCL__HSIOMIX_PCIE_CLKREQ_B                 0x218 0x478 0x5A0 0x2 0x0
++#define MX8MP_IOMUXC_I2C4_SCL__ECSPI2_MISO                           0x218 0x478 0x56C 0x3 0x2
++#define MX8MP_IOMUXC_I2C4_SCL__GPIO5_IO20                            0x218 0x478 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C4_SCL__TPSMP_HDATA22                         0x218 0x478 0x000 0x7 0x0
++#define MX8MP_IOMUXC_I2C4_SDA__I2C4_SDA                              0x21C 0x47C 0x5C0 0x0 0x5
++#define MX8MP_IOMUXC_I2C4_SDA__PWM1_OUT                              0x21C 0x47C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_I2C4_SDA__ECSPI2_SS0                            0x21C 0x47C 0x574 0x3 0x2
++#define MX8MP_IOMUXC_I2C4_SDA__GPIO5_IO21                            0x21C 0x47C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_I2C4_SDA__TPSMP_HDATA23                         0x21C 0x47C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART1_RXD__UART1_DCE_RX                         0x220 0x480 0x5E8 0x0 0x4
++#define MX8MP_IOMUXC_UART1_RXD__UART1_DTE_TX                         0x220 0x480 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART1_RXD__ECSPI3_SCLK                          0x220 0x480 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART1_RXD__GPIO5_IO22                           0x220 0x480 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART1_RXD__TPSMP_HDATA24                        0x220 0x480 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART1_TXD__UART1_DCE_TX                         0x224 0x484 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART1_TXD__UART1_DTE_RX                         0x224 0x484 0x5E8 0x0 0x5
++#define MX8MP_IOMUXC_UART1_TXD__ECSPI3_MOSI                          0x224 0x484 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART1_TXD__GPIO5_IO23                           0x224 0x484 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART1_TXD__TPSMP_HDATA25                        0x224 0x484 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART2_RXD__UART2_DCE_RX                         0x228 0x488 0x5F0 0x0 0x6
++#define MX8MP_IOMUXC_UART2_RXD__UART2_DTE_TX                         0x228 0x488 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART2_RXD__ECSPI3_MISO                          0x228 0x488 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART2_RXD__GPT1_COMPARE3                        0x228 0x488 0x000 0x3 0x0
++#define MX8MP_IOMUXC_UART2_RXD__GPIO5_IO24                           0x228 0x488 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART2_RXD__TPSMP_HDATA26                        0x228 0x488 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART2_TXD__UART2_DCE_TX                         0x22C 0x48C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART2_TXD__UART2_DTE_RX                         0x22C 0x48C 0x5F0 0x0 0x7
++#define MX8MP_IOMUXC_UART2_TXD__ECSPI3_SS0                           0x22C 0x48C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART2_TXD__GPT1_COMPARE2                        0x22C 0x48C 0x000 0x3 0x0
++#define MX8MP_IOMUXC_UART2_TXD__GPIO5_IO25                           0x22C 0x48C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART2_TXD__TPSMP_HDATA27                        0x22C 0x48C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART3_RXD__UART3_DCE_RX                         0x230 0x490 0x5F8 0x0 0x6
++#define MX8MP_IOMUXC_UART3_RXD__UART3_DTE_TX                         0x230 0x490 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART3_RXD__UART1_DCE_CTS                        0x230 0x490 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART3_RXD__UART1_DTE_RTS                        0x230 0x490 0x5E4 0x1 0x4
++#define MX8MP_IOMUXC_UART3_RXD__USDHC3_RESET_B                       0x230 0x490 0x000 0x2 0x0
++#define MX8MP_IOMUXC_UART3_RXD__GPT1_CAPTURE2                        0x230 0x490 0x598 0x3 0x1
++#define MX8MP_IOMUXC_UART3_RXD__CAN2_TX                              0x230 0x490 0x000 0x4 0x0
++#define MX8MP_IOMUXC_UART3_RXD__GPIO5_IO26                           0x230 0x490 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART3_RXD__TPSMP_HDATA28                        0x230 0x490 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART3_TXD__UART3_DCE_TX                         0x234 0x494 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART3_TXD__UART3_DTE_RX                         0x234 0x494 0x5F8 0x0 0x7
++#define MX8MP_IOMUXC_UART3_TXD__UART1_DCE_RTS                        0x234 0x494 0x5E4 0x1 0x5
++#define MX8MP_IOMUXC_UART3_TXD__UART1_DTE_CTS                        0x234 0x494 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART3_TXD__USDHC3_VSELECT                       0x234 0x494 0x000 0x2 0x0
++#define MX8MP_IOMUXC_UART3_TXD__GPT1_CLK                             0x234 0x494 0x59C 0x3 0x1
++#define MX8MP_IOMUXC_UART3_TXD__CAN2_RX                              0x234 0x494 0x550 0x4 0x2
++#define MX8MP_IOMUXC_UART3_TXD__GPIO5_IO27                           0x234 0x494 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART3_TXD__TPSMP_HDATA29                        0x234 0x494 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART4_RXD__UART4_DCE_RX                         0x238 0x498 0x600 0x0 0x8
++#define MX8MP_IOMUXC_UART4_RXD__UART4_DTE_TX                         0x238 0x498 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART4_RXD__UART2_DCE_CTS                        0x238 0x498 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART4_RXD__UART2_DTE_RTS                        0x238 0x498 0x5EC 0x1 0x4
++#define MX8MP_IOMUXC_UART4_RXD__HSIOMIX_PCIE_CLKREQ_B                0x238 0x498 0x5A0 0x2 0x1
++#define MX8MP_IOMUXC_UART4_RXD__GPT1_COMPARE1                        0x238 0x498 0x000 0x3 0x0
++#define MX8MP_IOMUXC_UART4_RXD__I2C6_SCL                             0x238 0x498 0x5CC 0x4 0x2
++#define MX8MP_IOMUXC_UART4_RXD__GPIO5_IO28                           0x238 0x498 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART4_RXD__TPSMP_HDATA30                        0x238 0x498 0x000 0x7 0x0
++#define MX8MP_IOMUXC_UART4_TXD__UART4_DCE_TX                         0x23C 0x49C 0x000 0x0 0x0
++#define MX8MP_IOMUXC_UART4_TXD__UART4_DTE_RX                         0x23C 0x49C 0x600 0x0 0x9
++#define MX8MP_IOMUXC_UART4_TXD__UART2_DCE_RTS                        0x23C 0x49C 0x5EC 0x1 0x5
++#define MX8MP_IOMUXC_UART4_TXD__UART2_DTE_CTS                        0x23C 0x49C 0x000 0x1 0x0
++#define MX8MP_IOMUXC_UART4_TXD__GPT1_CAPTURE1                        0x23C 0x49C 0x594 0x3 0x1
++#define MX8MP_IOMUXC_UART4_TXD__I2C6_SDA                             0x23C 0x49C 0x5D0 0x4 0x2
++#define MX8MP_IOMUXC_UART4_TXD__GPIO5_IO29                           0x23C 0x49C 0x000 0x5 0x0
++#define MX8MP_IOMUXC_UART4_TXD__TPSMP_HDATA31                        0x23C 0x49C 0x000 0x7 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SCL__HDMIMIX_EARC_SCL                  0x240 0x4A0 0x000 0x0 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SCL__I2C5_SCL                          0x240 0x4A0 0x5C4 0x3 0x3
++#define MX8MP_IOMUXC_HDMI_DDC_SCL__CAN1_TX                           0x240 0x4A0 0x000 0x4 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SCL__GPIO3_IO26                        0x240 0x4A0 0x000 0x5 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SCL__AUDIOMIX_test_out00               0x240 0x4A0 0x000 0x6 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SDA__HDMIMIX_EARC_SDA                  0x244 0x4A4 0x000 0x0 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SDA__I2C5_SDA                          0x244 0x4A4 0x5C8 0x3 0x3
++#define MX8MP_IOMUXC_HDMI_DDC_SDA__CAN1_RX                           0x244 0x4A4 0x54C 0x4 0x3
++#define MX8MP_IOMUXC_HDMI_DDC_SDA__GPIO3_IO27                        0x244 0x4A4 0x000 0x5 0x0
++#define MX8MP_IOMUXC_HDMI_DDC_SDA__AUDIOMIX_test_out01               0x244 0x4A4 0x000 0x6 0x0
++#define MX8MP_IOMUXC_HDMI_CEC__HDMIMIX_EARC_CEC                      0x248 0x4A8 0x000 0x0 0x0
++#define MX8MP_IOMUXC_HDMI_CEC__I2C6_SCL                              0x248 0x4A8 0x5CC 0x3 0x3
++#define MX8MP_IOMUXC_HDMI_CEC__CAN2_TX                               0x248 0x4A8 0x000 0x4 0x0
++#define MX8MP_IOMUXC_HDMI_CEC__GPIO3_IO28                            0x248 0x4A8 0x000 0x5 0x0
++#define MX8MP_IOMUXC_HDMI_HPD__HDMIMIX_EARC_DC_HPD                   0x24C 0x4AC 0x000 0x0 0x0
++#define MX8MP_IOMUXC_HDMI_HPD__AUDIOMIX_EARC_HDMI_HPD_O              0x24C 0x4AC 0x000 0x1 0x0
++#define MX8MP_IOMUXC_HDMI_HPD__I2C6_SDA                              0x24C 0x4AC 0x5D0 0x3 0x3
++#define MX8MP_IOMUXC_HDMI_HPD__CAN2_RX                               0x24C 0x4AC 0x550 0x4 0x3
++#define MX8MP_IOMUXC_HDMI_HPD__GPIO3_IO29                            0x24C 0x4AC 0x000 0x5 0x0
++
++#endif /* __DTS_IMX8MP_PINFUNC_H */
 -- 
-Florian
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
