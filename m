@@ -2,51 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ED0B132E21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:15:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5BC7132E2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:16:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ivC9yVE43SUonzr/SeqGlHHauajQW3pv5hVuQTlpFoE=; b=dszpoZ+VOQZuB2
-	cC1jfJ9hTQhFOtL4D5xSr0s2tCM0JFIw+XILctyh+Uvwxx0QeOBaFPmt3gGRJ6+dxAXcHBrqqf+NR
-	GI01r1IsQjHn8ew2fr526SJnCchK9hyH91nOwZ5VYe5POZoVUwM68xZMJFE02Iz3Ki0HAMOXHozFB
-	uIaEmuWEBNmCnXNeI43xJktQONRE9QKFqzvr2lz3mMyMriQAaIg34XdduBaUMPOvSkwT1MycH346E
-	owtUbqx02o0JyK3F4phPdFgug10gSNwq2mLvLodiW2JR1XzyG0F+VFmk+oYCBjilKcv18U++HIzcz
-	vuSd3Couo61zGBtwSloA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8WnUxAnVGkgJvi+zAqRLQ0gisEJ2KpAvGroJ8GkekGY=; b=Y9Y
+	ltp7pxyWynYtGhvhAixIn/aHDny1y6hpLMxjqIyW3cJjguqhpxNiKc8oVafo4IBObAG51yYnYpUkA
+	GZuMp4+8oxXuZ0G4pfXlYUItBF6vsSw17oUrd7Y7CnKCODNIBGQse848LK8MnXOx3h/ti+97h4grK
+	QSNGptKOrpKzAwFnfaNsuMxraBbMFk5dvCjjejPE4+4Ne6ZenZ0t5y7+zv3rHTcVEbc1k2LAjiyxX
+	u7mIegHiogScS8PmmTqDWECgmx/DBANRWpxbK44i9DDj1Rc3aWbCUa24OrJXM8xROn9kdADWuO2W+
+	PlfHW7FYiZBbrfaGXfpiW72mh9ISfGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotNs-000220-8C; Tue, 07 Jan 2020 18:15:16 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotN5-0001QD-Mg
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:14:29 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 67E8B8022;
- Tue,  7 Jan 2020 18:15:08 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: [GIT PULL 4/4] drop more legacy platform data for omaps for v5.6
-Date: Tue,  7 Jan 2020 10:14:19 -0800
-Message-Id: <pull-1578420398-290837@atomide.com-4>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <pull-1578420398-290837@atomide.com>
-References: <pull-1578420398-290837@atomide.com>
-MIME-Version: 1.0
+	id 1iotOw-0003vY-0d; Tue, 07 Jan 2020 18:16:22 +0000
+Received: from mout.gmx.net ([212.227.15.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iotOm-0003u4-Kz
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:16:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1578420964;
+ bh=fStf+8RF6qmT38/5o2VMhgNCxx4YDKOqS+6ymSk2hVA=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=d9HAQrSHcd8IpQHrnD7QnLWvY34o9aZGluK5xDCOfkXl/ctDqARxBO039GMtLY6p8
+ 4b1dgvRfu8liXH5Sd4umlA1YgbS7OujTTja38Esiy9gCnKDzIqRxUH50o6udP4Vpn+
+ fdZXnzQFcmCibON1iNWwO0ggMgR3NxaYqumiaA1M=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.154]) by mail.gmx.com
+ (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1MTAFh-1jHAwl1fqx-00UXyY; Tue, 07 Jan 2020 19:16:04 +0100
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH V3 0/4] ARM: Enable thermal support for Raspberry Pi 4
+Date: Tue,  7 Jan 2020 19:15:53 +0100
+Message-Id: <1578420957-32229-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:xkFz0dLUtTbMvdFsQps4ETe/MuVllBCYSLf/H/6OpwsfMs6tNd3
+ X6PXvReYKhvwDSzLeprp9PesTWWsWfWB5Mkt87VssaeyetCzrSlQ8A4oX4Y6Ttkfz+VUObT
+ rooWqxyoOcHxc2KFR6nigDhPGGfIgXaiM5Bj8aRB64sLA4ybf5r3nS/stlYgzy8O5GY6X1L
+ UsOGhE69KexYdQRATkT9A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:WIesbUME1I0=:JFzG6lFhRvAeiyna9slav0
+ mYylMG+lG39zpj0pqbGUrF0+eF9YfjFSr+H4N01Av1elAtoRK6AUStVwP7oW0C3wz+YIdkh8k
+ TjVti9j3GBJ6+4PDN84kj+FU3F5N2z297iobibGRAtVMlFM/D8tulsoqpYMWO55fgZvxqms6a
+ ahcYsWKqG2SzzMXjMUEmz5GjcnKSw3aikD8IAvS8pcSuRrtTHmg3iwfRd6pYBLzJihedkA0pe
+ H/Q5a86O+3joTklgCO0A8BzALBWv/p6IqxWC/yQjF5gLUgvn49YnSQXgujREA2siVEtIVt6Xq
+ TA6qMH/4KB9+CCRdvGHjZcXQhX94kc6p/pWH6ThPb6r6PqNpUe6ZhS9CpMqSwqu/6hCIXtBad
+ EkAbwBAN5RimQlydCtvo+k7gT7Ob38p+sffQ9s6SxTnlTn4YNd9UbQxYo2yxS0mepGvZNZRjg
+ 3BbqRkj6ZkoqE5uXWZIyHfMUjEWdTdjwiavlW+SXSplrWjwuQG5BDrgPIsigFzGaXsXwdyTmX
+ mldBdohc0x4HtyLZoA3HHW1tWNz4/noA/XB28FSpIh0fwjN98mx/u7iULeEMK9ICfOw2E817K
+ OCBgPNRvAbgolZes3oW5TuzJL54zeCTqDG1KKMg07i9xg6dEoH0oEsfYdrwEz6cIAgEU+h/ak
+ FQ5VgifCAtEMYRvTE1ykThGY/IbqzbthkNJMSx7gpfeOJijZ0vfGe+P5gmDuzCAY2fwzSughh
+ c6klPCMDscqZod6FPanG0VkpnVT0CYDEOOBQ0y1wAgk5c8A7EptnQ8Cranysoz8MeF541FcnS
+ m+wJbn7bAunCBP7/6u4R7DbQij0I2VWkns9EXmE1BkVWYurNvIDxCwYiOVlI1mNBUhox83k7T
+ C63zidmO7y/GNSsQnrgfmgAt2S549/zWHyfUvaQJnRRS8WGs08KkN4mbRSKag9vplfCV0bLHl
+ uXap25Tupjzppe23e9oyBmKXo6j8/pnvXSGKnzws+UC5ev3y/2ooqceJnIMzhB43GbUGkWkNA
+ VyzAs6+Lyd8WeILoNip4Wa+tYHG2xS3ceTGw9yzYsMSGJJgMd0n2lc6v1FRECoD+z615aE624
+ /RzGwNmXe9txKmx7Ynw7NLWM9WFd8+0Zt5XtJ4Tbdlku544Yt3yJRgaZqAMc0A+RfX950YbzS
+ uz1Z2SFir2axcrKnlO9tYeq7vnU5HF//M+ck+JtvwH8yVgyt1vUXulh/vl4gwTGYxyigjvOBK
+ 7/Eyh/gKcnRbDez7QxE13FM/hi8MkSjT6TBddIA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_101427_807802_441565D9 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_101612_986489_E7297916 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,152 +102,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
- arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ Stefan Wahren <wahrenst@gmx.net>, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tony Lindgren" <tony@atomide.com>
+This series enables thermal support for the Raspberry Pi 4. Neither the
+bcm2835_thermal nor the brcmstb_thermal are suitable for the BCM2711.
+So add a new thermal driver to read out the SoC temperature from the
+AVS RO block of the BCM2711.
 
-The following changes since commit a6c8056d2f34e8d8fec398630facb32673f23984:
+Changes in V3:
+- add Rob's, Florian's and Nicolas' reviewed-by/tested-by
+- adjust binding license
+- make error pointer handling consistent
 
-  ARM: dts: omap5: convert IOMMUs to use ti-sysc (2019-12-17 09:27:29 -0800)
+Changes in V2:
+- rebase on thermal/linux-next
+- convert binding to YAML
+- make AVS RO block a subnode of AVS monitor and access it via syscon
+- drop unnecessary TSENS clock and get the rid of remove callback
+- add Florian's reviewed-by to last/unchanged patch
 
-are available in the Git repository at:
+Stefan Wahren (4):
+  dt-bindings: Add Broadcom AVS RO thermal
+  thermal: Add BCM2711 thermal driver
+  ARM: dts: bcm2711: Enable thermal
+  ARM: configs: Build BCM2711 thermal as module
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/ti-sysc-drop-pdata-signed
+ .../bindings/thermal/brcm,avs-ro-thermal.yaml      |  45 +++++++
+ arch/arm/boot/dts/bcm2711.dtsi                     |  12 ++
+ arch/arm/configs/multi_v7_defconfig                |   1 +
+ arch/arm64/configs/defconfig                       |   1 +
+ drivers/thermal/broadcom/Kconfig                   |   7 ++
+ drivers/thermal/broadcom/Makefile                  |   1 +
+ drivers/thermal/broadcom/bcm2711_thermal.c         | 129 +++++++++++++++++++++
+ 7 files changed, 196 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+ create mode 100644 drivers/thermal/broadcom/bcm2711_thermal.c
 
-for you to fetch changes up to 9fc85a7124b5ff9ec24ad391f9994f89ae611313:
+--
+2.7.4
 
-  Merge branch 'omap-for-v5.6/sdma' into omap-for-v5.6/ti-sysc-drop-pdata (2019-12-30 10:17:51 -0800)
-
-----------------------------------------------------------------
-Drop more legacy platform data for omaps for v5.6 merge window
-
-We can now probe devices with ti-sysc interconnect driver and dts
-data, and can continue dropping the related platform data and custom
-ti,hwmods dts property for various devices.
-
-And related to that, we finally can remove the legacy sdma support in
-favor of using the dmaengine driver only. I was planning to send the
-sdma changes separately, but that would have produced a pile of
-pointless merge conflicts, so I decided it's best to resolve it locally.
-After all, the sdma series also ends up removing the related platform
-data.
-
-Note that this series is based on omap-for-v5.6/ti-sysc-dt-signed branch
-as it depends for dts data being in place.
-
-----------------------------------------------------------------
-Tero Kristo (2):
-      ARM: OMAP4: hwmod-data: remove OMAP4 IOMMU hwmod data
-      ARM: OMAP5: hwmod-data: remove OMAP5 IOMMU hwmod data
-
-Tony Lindgren (56):
-      ARM: OMAP2+: Drop unused sdma functions
-      ARM: OMAP2+: Drop sdma interrupt handling for mach-omap2
-      ARM: OMAP2+: Configure sdma capabilities directly
-      ARM: OMAP2+: Configure dma_plat_info directly and drop dma_dev_attr
-      dmaengine: ti: omap-dma: Add device tree match data and use it for cpu_pm
-      ARM: OMAP2+: Drop legacy platform data for am4 qspi
-      ARM: OMAP2+: Drop legacy platform data for omap4 aess
-      ARM: OMAP2+: Drop legacy platform data for omap4 dmic
-      ARM: OMAP2+: Drop legacy platform data for omap4 mcpdm
-      ARM: OMAP2+: Drop legacy platform data for omap5 dmic
-      ARM: OMAP2+: Drop legacy platform data for omap5 mcpdm
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 sham
-      ARM: OMAP2+: Drop legacy platform data for dra7 sham
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 aes
-      ARM: OMAP2+: Drop legacy platform data for dra7 aes
-      ARM: OMAP2+: Drop legacy platform data for am4 des
-      ARM: OMAP2+: Drop legacy platform data for dra7 des
-      ARM: OMAP2+: Drop legacy platform data for omap4 timers except timer1
-      ARM: OMAP2+: Drop legacy platform data for omap5 timers except timer1
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 timers except timer1 and 2
-      ARM: OMAP2+: Drop legacy platform data for dra7 timers except timer1 to 4
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 epwmss
-      ARM: OMAP2+: Drop legacy platform data for dra7 epwmss
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 spinlock
-      ARM: OMAP2+: Drop legacy platform data for omap4 spinlock
-      ARM: OMAP2+: Drop legacy platform data for omap5 spinlock
-      ARM: OMAP2+: Drop legacy platform data for dra7 spinlock
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 spi
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 dcan
-      ARM: OMAP2+: Drop legacy platform data for dra7 dcan
-      ARM: OMAP2+: Drop legacy platform data for am3 adc_tsc
-      ARM: OMAP2+: Drop legacy platform data for am4 adc_tsc
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 elm
-      ARM: OMAP2+: Drop legacy platform data for omap4 elm
-      ARM: OMAP2+: Drop legacy platform data for dra7 elm
-      ARM: OMAP2+: Drop legacy platform data for am3 lcdc
-      ARM: OMAP2+: Drop legacy platform data for am4 ocp2scp
-      ARM: OMAP2+: Drop legacy platform data for omap4 ocp2scp
-      ARM: OMAP2+: Drop legacy platform data for omap5 ocp2scp
-      ARM: OMAP2+: Drop legacy platform data for dra7 ocp2scp
-      ARM: OMAP2+: Drop legacy platform data for am4 vpfe
-      ARM: OMAP2+: Drop legacy platform data for omap4 hsi
-      ARM: OMAP2+: Drop legacy platform data for omap4 smartreflex
-      ARM: OMAP2+: Drop legacy platform data for dra7 smartreflex
-      ARM: OMAP2+: Drop legacy platform data for omap4 kbd
-      ARM: OMAP2+: Drop legacy platform data for omap5 kbd
-      ARM: OMAP2+: Drop legacy platform data for omap4 slimbus
-      ARM: OMAP2+: Drop legacy platform data for omap4 fdif
-      Merge branch 'omap-for-v5.6/ti-sysc-dt' into omap-for-v5.6/ti-sysc-drop-pdata
-      dmaengine: ti: omap-dma: Configure global priority register directly
-      dmaengine: ti: omap-dma: Pass sdma auxdata to driver and use it
-      dmaengine: ti: omap-dma: Allocate channels directly
-      dmaengine: ti: omap-dma: Use cpu notifier to block idle for omap2
-      ARM: OMAP2+: Drop legacy init for sdma
-      ARM: OMAP2+: Drop legacy platform data for sdma
-      Merge branch 'omap-for-v5.6/sdma' into omap-for-v5.6/ti-sysc-drop-pdata
-
- arch/arm/boot/dts/am33xx-l4.dtsi                   |   16 -
- arch/arm/boot/dts/am33xx.dtsi                      |    2 -
- arch/arm/boot/dts/am4372.dtsi                      |    4 -
- arch/arm/boot/dts/am437x-l4.dtsi                   |   29 -
- arch/arm/boot/dts/dra7-l4.dtsi                     |   25 +-
- arch/arm/boot/dts/dra7.dtsi                        |    3 -
- arch/arm/boot/dts/omap2.dtsi                       |   43 +-
- arch/arm/boot/dts/omap2430.dtsi                    |    4 +
- arch/arm/boot/dts/omap3-n900.dts                   |    5 +
- arch/arm/boot/dts/omap3.dtsi                       |   46 +-
- arch/arm/boot/dts/omap36xx.dtsi                    |    4 +
- arch/arm/boot/dts/omap4-l4-abe.dtsi                |    7 -
- arch/arm/boot/dts/omap4-l4.dtsi                    |   19 +-
- arch/arm/boot/dts/omap4.dtsi                       |    1 -
- arch/arm/boot/dts/omap5-l4-abe.dtsi                |    6 -
- arch/arm/boot/dts/omap5-l4.dtsi                    |   13 +-
- arch/arm/mach-omap2/common.h                       |    3 +
- arch/arm/mach-omap2/dma.c                          |  119 +--
- arch/arm/mach-omap2/omap_device.c                  |  170 ---
- arch/arm/mach-omap2/omap_device.h                  |    4 -
- arch/arm/mach-omap2/omap_hwmod.c                   |   18 -
- arch/arm/mach-omap2/omap_hwmod.h                   |    3 -
- arch/arm/mach-omap2/omap_hwmod_2420_data.c         |   34 -
- arch/arm/mach-omap2/omap_hwmod_2430_data.c         |   34 -
- arch/arm/mach-omap2/omap_hwmod_2xxx_ipblock_data.c |   18 -
- .../mach-omap2/omap_hwmod_33xx_43xx_common_data.h  |   33 -
- .../omap_hwmod_33xx_43xx_interconnect_data.c       |  124 ---
- .../mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c |  335 ------
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c         |   91 --
- arch/arm/mach-omap2/omap_hwmod_3xxx_data.c         |   61 --
- arch/arm/mach-omap2/omap_hwmod_43xx_data.c         |  448 --------
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c         | 1099 +-------------------
- arch/arm/mach-omap2/omap_hwmod_54xx_data.c         |  662 ------------
- arch/arm/mach-omap2/omap_hwmod_7xx_data.c          |  873 ----------------
- arch/arm/mach-omap2/omap_hwmod_common_data.h       |    1 -
- arch/arm/mach-omap2/omap_hwmod_reset.c             |   24 -
- arch/arm/mach-omap2/pdata-quirks.c                 |    1 +
- arch/arm/mach-omap2/pm24xx.c                       |   22 +-
- arch/arm/mach-omap2/pm34xx.c                       |    5 -
- arch/arm/plat-omap/dma.c                           |  471 +--------
- drivers/dma/ti/omap-dma.c                          |  286 ++++-
- include/linux/omap-dma.h                           |   18 -
- include/sound/aess.h                               |   53 -
- 43 files changed, 395 insertions(+), 4842 deletions(-)
- delete mode 100644 include/sound/aess.h
 
 _______________________________________________
 linux-arm-kernel mailing list
