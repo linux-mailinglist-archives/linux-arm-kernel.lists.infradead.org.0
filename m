@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9013C131D52
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 02:45:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F053C131D73
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 03:06:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=me3NPNyIxjjvFKPfwSYXRdaQfS91AcRNK9BRVj8O1UE=; b=Q+hp7+jVCX+b7U
-	x2nR6xcqF9t6dRvE/d5LXGv7lJy87k2+KeVsO9AGXfpByGjUmtCqr+szHpl3PEiLtn0P15y8r1Y/C
-	x3PoDR3lczoz+9un6gCIV9z/AWm1RPujxLi3siWYphsMfb7QGstdUG6wTZMfIesR75JpaO0Mk0yTg
-	v+AWtaufNtX9zwrKACFvUWqWHsXUGtcVz+iz9cl55dVCsKu6INvea9qQP9YRHLQOkher5eaL+Ik/5
-	EkBD7nkKRzuX8DMx4yVEUZ0bcr2lpG8TDzNvCNA5/rTU2iUqbDim9RcWRGOuSzJIS3Y+R7uXGEjiF
-	r0hEA7txngidvAgaL8CQ==;
+	List-Owner; bh=meo2rb/+LKNYdIZA+AVtVhmTnr/0JAERsVg/xXjJTUQ=; b=ctmqBltAGp05Ds
+	kdbcK1RtihMKxRK6RHANjVx5Bta7ipgTBW6gTTOjFOpD8Dxnd20ZfINbgpeTUGbeDgw17WomOQ2Ll
+	eKnmd3gLyBswr2J1LnH2XWZ1kHL1SEwVsXqhDpy3HMX17JIluzCKR+lEWnTwSvoCD4ObxS85KoL7J
+	ZRcGkpV5nlvWHI8y7dGKuynx46ZNOiUBeFD5lPLZd8Vjlklqwppup5Lo1MR5yfPWe+PejNBh7EPri
+	FWWN+4oCxBh1nEwvliNBzvQShlJZ6TA6BYH61S/EDwYLjIeSi1mws7ld62+4AMjKpH6zbzDBnEjPr
+	TVwt56dDkdfT+4K0KrdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iodwN-0003ar-Va; Tue, 07 Jan 2020 01:45:51 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1ioeGY-0001nV-2v; Tue, 07 Jan 2020 02:06:42 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iodwD-0003Z7-F8
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 01:45:42 +0000
-Received: by mail-qk1-x744.google.com with SMTP id a203so41685027qkc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 17:45:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ft6xmRm0Xn4A+6zJu2AAPIsi5FGpNr4OiKyWPq8PF3E=;
- b=mdt/L/fHFt2uUCxneOT+wJBx1zeGq9fEF86Cyn+w5YQHYXVdG2UDKU90QAJJDbAT6E
- IZWrNX6Taxnc5BNAW8Yp3jFm3p+efXels7I1FhUsccQ4zciOFeCl6pRPzl9m7pO2PuDr
- KccNYENPlAXa8/HDVUEFXxyjyo87LkIjp98PX/W8bgzxDLiDmuBzWbE0awp041Lw231F
- +39mAOxKlUQKQGTmn1zMvdes8C2LY2Tfwuk7RCMGiBDabQHnqMP7NGNdvxL2BEaX+Sak
- z7fe9ZeK79KghIH6+sVVA3NzodbDqzqiLcC+fviJJ+agPmBXo3F4bTuXNJhJr2KcUTHw
- nV6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Ft6xmRm0Xn4A+6zJu2AAPIsi5FGpNr4OiKyWPq8PF3E=;
- b=FtJzXbD3iar3Q9MxTh50ylMZo6mB3WcDr4BB2beUWJtm09VeBsLhfL6Ndx/BnEbCtp
- HnQObK6BSjpopuj5+xhn+njfm/CLa6vkqU/2l6B0odoO+b21G+PjprVxogd0De7jFYHo
- LO1EypCID9LhKv6nkArJjUIq6ZFIjQHK4BD/WkzAlhR0JMQt1S5Ol85j0vN9fiYV0VW8
- 7ZTYyg6waUx9saXp0I19OuLKUKESMG1+6snE/t1pqT9osoywmBENyFQh9A0QobiAkIn8
- PzuE9lTbRQzYc5S+JtHh4R1xQSh9I/J3yA+MTGePepMgjyEUnfL5nxN7976pMA/Mx8uJ
- bauw==
-X-Gm-Message-State: APjAAAWbuC08rtPQVyyX7U/hFZ/CdVPUp4pcvBN3X9f6uceW4tLQGZO5
- Z4Qez8IaUwfUj0VyxVvQ7blQVpRXw+k4RvOJRksgmQ==
-X-Google-Smtp-Source: APXvYqwhpelqz1BD3Zaxd7qhMERDtnjDXuXuK5sCqGFKA0nX5yXFO0Qqv4/D7HsevTyPJjTlnid1ORnGa9dP/VZvId4=
-X-Received: by 2002:a37:ba03:: with SMTP id k3mr83504125qkf.127.1578361533830; 
- Mon, 06 Jan 2020 17:45:33 -0800 (PST)
+ id 1ioeGQ-0001mS-AC; Tue, 07 Jan 2020 02:06:36 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id ABE66277412
+Message-ID: <cfd5156f09358a428d0c40cfcd17d688e0225f2b.camel@collabora.com>
+Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip
+ MIPI RX D-PHY yaml bindings
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Helen Koike
+ <helen.koike@collabora.com>
+Date: Mon, 06 Jan 2020 23:06:12 -0300
+In-Reply-To: <20200107001055.GE22189@pendragon.ideasonboard.com>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <20191227200116.2612137-10-helen.koike@collabora.com>
+ <20200107001055.GE22189@pendragon.ideasonboard.com>
+Organization: Collabora
+User-Agent: Evolution 3.34.1-2 
 MIME-Version: 1.0
-References: <20191210195333.648018-1-arnd@arndb.de>
- <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
-In-Reply-To: <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
-From: Curtis Malainey <cujomalainey@google.com>
-Date: Mon, 6 Jan 2020 17:45:22 -0800
-Message-ID: <CAOReqxh9wamuKQnjPqUsZS_=4xUbsy-Y3v+=OXGaWV5EuONPmA@mail.gmail.com>
-Subject: Re: [PATCH] ASoC: rt5677: add SPI_MASTER dependency
-To: Jon Hunter <jonathanh@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_174541_513482_7BCBCA20 
-X-CRM114-Status: GOOD (  16.75  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200106_180634_612055_032370E8 
+X-CRM114-Status: GOOD (  21.98  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,60 +63,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Cezary Rojewski <cezary.rojewski@intel.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Charles Keepax <ckeepax@opensource.cirrus.com>, Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Takashi Iwai <tiwai@suse.com>, Jie Yang <yang.jie@linux.intel.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
- Ben Zhang <benzh@chromium.org>, Mark Brown <broonie@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Curtis Malainey <cujomalainey@chromium.org>,
- ALSA development <alsa-devel@alsa-project.org>,
- linux-arm-kernel@lists.infradead.org,
- KaiChieh Chuang <kaichieh.chuang@mediatek.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
+ joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
+ jacob-chen@iotwrt.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 3:00 AM Jon Hunter <jonathanh@nvidia.com> wrote:
->
->
-> On 10/12/2019 19:52, Arnd Bergmann wrote:
-> > When CONFIG_SPI is disabled, the newly added code for the DSP
-> > firmware loading fails to link:
-> >
-> > ERROR: "rt5677_spi_hotword_detected" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
-> > ERROR: "rt5677_spi_write" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
->
-> Would it be better if the above functions or the functions that call
-> these are conditional on CONFIG_SND_SOC_RT5677_SPI?
->
-> > Add a dependency to prevent this configuration.
-> >
-> > Note: the does not work with the DT probing, as there is no binding
->
-> Are you missing 'SPI' or something here?
->
-> > for the SPI half of the driver, but nothing seems to be using that
-> > with the mainline kernel anyway.
->
-> From a Tegra perspective, given that we don't use SPI in conjunction
-> with the rt5677 codec, only I2C so far, I am not sure we should make the
-> tegra_rt5677 driver dependent upon it. We should be able to operate
-> without the SPI bits enabled.
->
-There should be no changes needed for tegra, this should be isolated
-to the bdw machine driver. The only things added to the machine driver
-were some dai links.
-> Cheers
-> Jon
->
-> --
-> nvpublic
+Hi Laurent,
+
+Thanks a lot for reviewing this.
+
+On Tue, 2020-01-07 at 02:10 +0200, Laurent Pinchart wrote:
+> Hi Helen,
+> 
+> Thank you for the patch.
+> 
+> On Fri, Dec 27, 2019 at 05:01:14PM -0300, Helen Koike wrote:
+> > Add yaml DT bindings for Rockchip MIPI D-PHY RX
+> > 
+> > This was tested and verified with:
+> > mv drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml  Documentation/devicetree/bindings/phy/
+> > make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > 
+> > Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> > 
+> > ---
+> > 
+> > Changes in v12:
+> > - The commit replaces the following commit in previous series named
+> > media: staging: dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
+> > This new patch adds yaml binding and was verified with
+> > make dtbs_check and make dt_binding_check
+> > 
+> > Changes in v11: None
+> > Changes in v10:
+> > - unsquash
+> > 
+> > Changes in v9:
+> > - fix title division style
+> > - squash
+> > - move to staging
+> > 
+> > Changes in v8: None
+> > Changes in v7:
+> > - updated doc with new design and tested example
+> > 
+> >  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++++++++++++++
+> >  1 file changed, 75 insertions(+)
+> >  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > 
+> > diff --git a/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml b/drivers/staging/media/phy-
+> > rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > new file mode 100644
+> > index 000000000000..af97f1b3e005
+> > --- /dev/null
+> > +++ b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > @@ -0,0 +1,75 @@
+> > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
+> 
+> Should this be s/RX0/RX/ ? Or do you expect different bindings for RX1 ?
+
+The driver currently only supports RX0, but I think you are right,
+it should say RX here. This binding could be extended for RX1.
+
+> Looking at the PHY driver, it seems to handle all PHYs with a single
+> struct device. Should we thus use #phy-cells = <1> to select the PHY ?
+> 
+
+I am not following this. The driver handles just one PHY. Each PHY
+should have its own node.
+
+> > +
+> > +maintainers:
+> > +  - Helen Koike <helen.koike@collabora.com>
+> > +  - Ezequiel Garcia <ezequiel@collabora.com>
+> > +
+> > +description: |
+> > +  The Rockchip SoC has a MIPI D-PHY bus with an RX0 entry which connects to
+> > +  the ISP1 (Image Signal Processing unit v1.0) for CSI cameras.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: rockchip,rk3399-mipi-dphy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: Mipi d-phy ref clock
+> > +      - description: Mipi d-phy rx0 cfg clock
+> 
+> s/Mipi d-phy/MIPI D-PHY/
+> 
+
+Yep.
+
+> > +      - description: Video in/out general register file clock
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: dphy-ref
+> > +      - const: dphy-cfg
+> > +      - const: grf
+> > +
+> > +  '#phy-cells':
+> > +    const: 0
+> > +
+> > +  power-domains:
+> > +    description: Video in/out power domain.
+> > +    maxItems: 1
+> > +
+> > +required:
+> > +  - compatible
+> > +  - clocks
+> > +  - clock-names
+> > +  - '#phy-cells'
+> > +  - power-domains
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +
+> > +    /*
+> > +     * MIPI RX D-PHY use registers in "general register files", it
+> > +     * should be a child of the GRF.
+> > +     *
+> > +     * grf: syscon@ff770000 {
+> > +     *  compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+> > +     *  ...
+> 
+> missing
+> 
+> 	* };
+> 
+
+OK.
+
+> > +     */
+> > +
+> > +    #include <dt-bindings/clock/rk3399-cru.h>
+> > +    #include <dt-bindings/power/rk3399-power.h>
+> > +
+> > +    dphy: mipi-dphy {
+> > +        compatible = "rockchip,rk3399-mipi-dphy";
+> > +        clocks = <&cru SCLK_MIPIDPHY_REF>,
+> > +                 <&cru SCLK_DPHY_RX0_CFG>,
+> > +                 <&cru PCLK_VIO_GRF>;
+> > +        clock-names = "dphy-ref", "dphy-cfg", "grf";
+> > +        power-domains = <&power RK3399_PD_VIO>;
+> > +        #phy-cells = <0>;
+> > +    };
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
