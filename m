@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91920131FF4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 07:45:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB2EC131FFC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 07:48:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7dZiubfR8fZL84nypFcuTHgfCABcjd0pPZzmL7tE5CM=; b=U0izdFtgq+/Bt4
-	ntmCeUVIFutu8X+ygR/ZMydmXex5lo8PM/elZmvDO3bMR50Vun7aZ3UF87jnoVTcM6lRkcy/iFrcq
-	hOk3PUelWJcl2bmQP1S7xja+B2p6iQYjO/z13vEHr829td2oz+R6HssnJmOo7WB7AWNrDmjRMJuT0
-	MS2XNBtrXUYBAszb7oQATGDKkKcvruuXIn0+povUQlgP86+2k+4lUSIUT8bNb9Jgg/wDCNUVP4k4a
-	eKtumLIW7V5J/R0CJpV8cG0LVcig5ee2ZgF03HjrIQmV8Qs3mxAnqjU11XEaIrikvBp6ytA+5Nlun
-	p8jt8kUCiS8nmCd9qEZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GSy0c65BOBdvQaQJ0RLQIenRCRevbDk7hBvU0KQlj8w=; b=hOUKAFRA3Wjt0t7lzHJEsNmlQ
+	5pGSVX/9k8plIvnrYOcggeG5VBy96ti5zMkvRwgWMLg8BSuFfVP9zAQdWHhytFprCU1flgKWqiSM3
+	Y/zEaALGvs2TyjxHSAHmcHdJ9qUQbPb6MPRUPrBBy87pgXQ7hTa0gcDEWpwKD7s6NkAKhbbjMeA02
+	eCA6zK5pik91PoXptHi6UQur4jXCRat0bYJBnnLCPHaEQMkYRXvZ0SAzO6/Ukgk4nyACDlZiPS1Md
+	tWOv4vI47erohf859AtD4IucPNiUUtm5rHuecJamOki8HQrEIua+2gkf0GJKT8NxMOJl9fLkHFJKL
+	Z8LhccOZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioicA-00050A-3Q; Tue, 07 Jan 2020 06:45:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioiby-00049R-Ds; Tue, 07 Jan 2020 06:45:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F3E7731B;
- Mon,  6 Jan 2020 22:45:02 -0800 (PST)
-Received: from [10.162.43.133] (p8cg001049571a15.blr.arm.com [10.162.43.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A45EE3F703; Mon,  6 Jan 2020 22:48:16 -0800 (PST)
-Subject: Re: [mm/debug] 87c4696d57: kernel_BUG_at_include/linux/mm.h
-To: kernel test robot <rong.a.chen@intel.com>
-References: <20191227142255.GD2760@shao2-debian>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <490e77d6-a3ef-dd70-4c29-b90234f8a13d@arm.com>
-Date: Tue, 7 Jan 2020 12:16:02 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ioieu-0005WG-TX; Tue, 07 Jan 2020 06:48:08 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioien-0005V9-RH
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 06:48:03 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0076ljZb049917;
+ Tue, 7 Jan 2020 00:47:45 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578379665;
+ bh=ODJ0NEYqrokHx/XZRr/mSRy9p7wnelQTyTQlEpgfxH4=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=i21aNB1qs9sdXY54gDqh6MG8zV4rcKAjiHzA9EMtNipbZbsJRgqHWqw/deDRJEDMd
+ xCXx4e41TXY+ClHHc4irVRTxHO8g96+vKgo6RBPPjt8ZB+jXcgk/zlovDEICyQ2B5w
+ ElVly+gQRAci5vAHiRsFEgL6/4dmF2Oat8pH/FVc=
+Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0076ljgs110930
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 7 Jan 2020 00:47:45 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Jan
+ 2020 00:47:43 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Tue, 7 Jan 2020 00:47:43 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0076leCl053362;
+ Tue, 7 Jan 2020 00:47:41 -0600
+Subject: Re: [PATCH] drm: replace IS_ERR and PTR_ERR with PTR_ERR_OR_ZERO
+To: yu kuai <yukuai3@huawei.com>
+References: <20191225132042.5491-1-yukuai3@huawei.com>
+ <20191227115401.agumkfuiwexl2wmx@hendrix.home>
+From: Tomi Valkeinen <tomi.valkeinen@ti.com>
+Message-ID: <ec4d34d6-7c58-ea1e-cc9c-c2df0baaf23b@ti.com>
+Date: Tue, 7 Jan 2020 08:47:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191227142255.GD2760@shao2-debian>
+In-Reply-To: <20191227115401.agumkfuiwexl2wmx@hendrix.home>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_224506_562808_3062E3D0 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200106_224801_985753_DC04C81F 
+X-CRM114-Status: GOOD (  17.10  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,81 +92,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, lkp@lists.01.org,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: jernej.skrabec@siol.net, yi.zhang@huawei.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ jonathanh@nvidia.com, zhengbin13@huawei.com, wens@csie.org,
+ thierry.reding@gmail.com, dri-devel@lists.freedesktop.org, daniel@ffwll.ch,
+ linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/27/2019 07:52 PM, kernel test robot wrote:
-> [    9.781974] kernel BUG at include/linux/mm.h:592!
-> [    9.782810] invalid opcode: 0000 [#1] PTI
-> [    9.783443] CPU: 0 PID: 1 Comm: swapper Not tainted 5.5.0-rc3-00001-g87c4696d57b5e #1
-> [    9.784528] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.10.2-1 04/01/2014
-> [    9.785756] EIP: __free_pages+0x14/0x40
-> [    9.786442] Code: 0c 9c 5e fa 89 d8 e8 5b f3 ff ff 56 9d 5b 5e 5d c3 8d 74 26 00 90 8b 48 1c 55 89 e5 85 c9 75 16 ba b4 b6 84 d6 e8 ac 49 fe ff <0f> 0b 8d b4 26 00 00 00 00 8d 76 00 ff 48 1c 75 10 85 d2 75 07 e8
-> [    9.789697] EAX: d68761f7 EBX: ea52f000 ECX: ea4f8520 EDX: d684b6b4
-> [    9.790850] ESI: 00000000 EDI: ef45e000 EBP: ea501f08 ESP: ea501f08
-> [    9.791879] DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068 EFLAGS: 00010286
-> [    9.792783] CR0: 80050033 CR2: ffffffff CR3: 16d00000 CR4: 000406b0
-> [    9.792783] Call Trace:
-> [    9.792783]  free_pages+0x3c/0x50
-> [    9.792783]  pgd_free+0x5a/0x170
-> [    9.792783]  __mmdrop+0x42/0xe0
-> [    9.792783]  debug_vm_pgtable+0x54f/0x567
-> [    9.792783]  kernel_init_freeable+0x90/0x1e3
-> [    9.792783]  ? rest_init+0xf0/0xf0
-> [    9.792783]  kernel_init+0x8/0xf0
-> [    9.792783]  ret_from_fork+0x19/0x24
-> [    9.792783] Modules linked in:
-> [    9.792803] ---[ end trace 91b7335adcf0b656 ]---
+On 27/12/2019 13:54, Maxime Ripard wrote:
+> On Wed, Dec 25, 2019 at 09:20:42PM +0800, yu kuai wrote:
+>> no functional change, just to make the code simpler
+>>
+>> Signed-off-by: yu kuai <yukuai3@huawei.com>
+>> ---
+>>   drivers/gpu/drm/omapdrm/dss/hdmi4.c         | 5 +----
+>>   drivers/gpu/drm/omapdrm/dss/hdmi4_core.c    | 6 ++----
+>>   drivers/gpu/drm/omapdrm/dss/hdmi5_core.c    | 4 +---
+>>   drivers/gpu/drm/omapdrm/dss/hdmi_phy.c      | 4 +---
+>>   drivers/gpu/drm/sun4i/sun4i_dotclock.c      | 4 +---
+>>   drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c      | 4 +---
+>>   drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c | 4 +---
+>>   drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c  | 5 +----
+>>   drivers/gpu/drm/tegra/drm.c                 | 4 +---
+>>   drivers/gpu/drm/tegra/gem.c                 | 4 +---
+>>   10 files changed, 11 insertions(+), 33 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/omapdrm/dss/hdmi4.c b/drivers/gpu/drm/omapdrm/dss/hdmi4.c
+>> index 0f557fad4513..eb71baedf19e 100644
+>> --- a/drivers/gpu/drm/omapdrm/dss/hdmi4.c
+>> +++ b/drivers/gpu/drm/omapdrm/dss/hdmi4.c
+>> @@ -587,10 +587,7 @@ static int hdmi_audio_register(struct omap_hdmi *hdmi)
+>>   		&hdmi->pdev->dev, "omap-hdmi-audio", PLATFORM_DEVID_AUTO,
+>>   		&pdata, sizeof(pdata));
+>>
+>> -	if (IS_ERR(hdmi->audio_pdev))
+>> -		return PTR_ERR(hdmi->audio_pdev);
+>> -
+>> -	return 0;
+>> +	return PTR_ERR_OR_ZERO(hdmi->audio_pdev);
+>>   }
+>>
+>>   /* -----------------------------------------------------------------------------
+>> diff --git a/drivers/gpu/drm/omapdrm/dss/hdmi4_core.c b/drivers/gpu/drm/omapdrm/dss/hdmi4_core.c
+>> index ea5d5c228534..fdd73fb73653 100644
+>> --- a/drivers/gpu/drm/omapdrm/dss/hdmi4_core.c
+>> +++ b/drivers/gpu/drm/omapdrm/dss/hdmi4_core.c
+>> @@ -924,8 +924,6 @@ int hdmi4_core_init(struct platform_device *pdev, struct hdmi_core_data *core)
+>>
+>>   	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "core");
+>>   	core->base = devm_ioremap_resource(&pdev->dev, res);
+>> -	if (IS_ERR(core->base))
+>> -		return PTR_ERR(core->base);
+>> -
+>> -	return 0;
+>> +
+>> +	return PTR_ERR_OR_ZERO(core->base);
+>>   }
+>> diff --git a/drivers/gpu/drm/omapdrm/dss/hdmi5_core.c b/drivers/gpu/drm/omapdrm/dss/hdmi5_core.c
+>> index ff4d35c8771f..30454bc9de78 100644
+>> --- a/drivers/gpu/drm/omapdrm/dss/hdmi5_core.c
+>> +++ b/drivers/gpu/drm/omapdrm/dss/hdmi5_core.c
+>> @@ -908,8 +908,6 @@ int hdmi5_core_init(struct platform_device *pdev, struct hdmi_core_data *core)
+>>
+>>   	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "core");
+>>   	core->base = devm_ioremap_resource(&pdev->dev, res);
+>> -	if (IS_ERR(core->base))
+>> -		return PTR_ERR(core->base);
+>>
+>> -	return 0;
+>> +	return PTR_ERR_OR_ZERO(core->base);
+>>   }
+>> diff --git a/drivers/gpu/drm/omapdrm/dss/hdmi_phy.c b/drivers/gpu/drm/omapdrm/dss/hdmi_phy.c
+>> index 00bbf24488c1..bbc02d5aa8fb 100644
+>> --- a/drivers/gpu/drm/omapdrm/dss/hdmi_phy.c
+>> +++ b/drivers/gpu/drm/omapdrm/dss/hdmi_phy.c
+>> @@ -191,8 +191,6 @@ int hdmi_phy_init(struct platform_device *pdev, struct hdmi_phy_data *phy,
+>>
+>>   	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "phy");
+>>   	phy->base = devm_ioremap_resource(&pdev->dev, res);
+>> -	if (IS_ERR(phy->base))
+>> -		return PTR_ERR(phy->base);
+>>
+>> -	return 0;
+>> +	return PTR_ERR_OR_ZERO(phy->base);
+>>   }
+>> diff --git a/drivers/gpu/drm/sun4i/sun4i_dotclock.c b/drivers/gpu/drm/sun4i/sun4i_dotclock.c
+>> index 417ade3d2565..84c04d8192b3 100644
+>> --- a/drivers/gpu/drm/sun4i/sun4i_dotclock.c
+>> +++ b/drivers/gpu/drm/sun4i/sun4i_dotclock.c
+>> @@ -191,10 +191,8 @@ int sun4i_dclk_create(struct device *dev, struct sun4i_tcon *tcon)
+>>   	dclk->hw.init = &init;
+>>
+>>   	tcon->dclk = clk_register(dev, &dclk->hw);
+>> -	if (IS_ERR(tcon->dclk))
+>> -		return PTR_ERR(tcon->dclk);
+>>
+>> -	return 0;
+>> +	return PTR_ERR_OR_ZERO(tcon->dclk);
 > 
+> This has been submitted a couple of times already. It's harder to
+> maintain and not easier to read.
 > 
-> To reproduce:
-> 
->         # build kernel
-> 	cd linux
-> 	cp config-5.5.0-rc3-00001-g87c4696d57b5e .config
-> 	make HOSTCC=gcc-7 CC=gcc-7 ARCH=i386 olddefconfig prepare modules_prepare bzImage
-> 
->         git clone https://github.com/intel/lkp-tests.git
->         cd lkp-tests
->         bin/lkp qemu -k <bzImage> job-script # job-script is attached in this email
+> Please remove sun4i from your patch
 
-Hello,
+Nack for the omapdrm parts too, for the same reasons.
 
-As the failure might be happening during boot when the test executes,
-do we really need to run these LKP based QEMU environment in order to
-reproduce the problem ? Could not this be recreated on a standalone
-system.
+  Tomi
 
-- Anshuman
+-- 
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
