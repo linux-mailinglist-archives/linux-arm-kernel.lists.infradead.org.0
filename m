@@ -2,83 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67399131EC7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:09:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0341131ED4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:15:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M50ioTMWlzs8PT7Oghn9kc94y0cZLachvFUP3jaZ/Mk=; b=Jl3VRViXsVNqBt
-	ulsd4IOthhcTaEpzAjd21XEpnGRTepAbGy0Si3eY8IjauThxIY8sX/Pnk3gDc0kme23fUKhzatgpD
-	+XLVBQZ2QevLipRIhTPam7o3M0UJOHXpY3SkAJBKxFwIoRN+fov6fT1aUqzhoEI5V3eRARLTNn4pA
-	mqQHFv8nvYyFnuJxnkHlNdMOttt01mZzJNkCvA9QQ3D7ZN/unGBClYgdCafhy21i1fX9k41DXdJQf
-	aQQSdQNRnfNIbCKgd2t/gcoTeRix2qMWQIrOY/RoRSsw4+paAJpEcmZeXos8UcxSysAPZI2M10+c3
-	WgM2hik5l16lZ4mpKv7A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QQV1HXcKh+Tn2k1suCNkn3rD9uQF8w8qR9WLRu+3V58=; b=jDPS7gjF3GqhPu
+	xX46vd18d6fY4j0xeZ7uytmankhxC0Xt958Ejbz1w0XIS4M/k7qcXQJTgiEvikLCJIZONn5kfkqKc
+	6Mk46VSlFrsCIUxhLElmEMFeq+zC0cpAQpIVL75HC5dXdnQcmYFNjfAKHGm4BMVgeIGgmwbRhvqKW
+	0KUpBog10eB9cfaOgnqFbMK2/GZk3FZIG92KlGTYkAdrLSbyTHnt6uRNDRtU0D1xTTmov4IoXY1an
+	G2WQKc9HSU3PBvVjyL0p7TVKv0JGRkFY4GxY0DqDf/C4MODAG1WU2pfi6kZ3bn281dcCn/TYli7DN
+	ZvSotMaicTPPo9LbrKMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioh6w-0005xH-Us; Tue, 07 Jan 2020 05:08:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iohDJ-00016e-Qw; Tue, 07 Jan 2020 05:15:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioh6r-0005wb-DU
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:08:54 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b22so22702809pls.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 21:08:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cr5sx8yPELFvuYRl+jNMxMdmYnoYhuCmAKJ5oKY9g0E=;
- b=bs8O920SS1yotiq316xmFKSrZBnBRdPAatoEKVXgtngpJcFL++S9RN5RwkXU2oL4Xx
- K0Xovl+wvF80zIxlBK+RWOePBY/ZNYDD8y0nTG/5qxJCsOX9yRL2TSOSxrjFTaSV9vWb
- kkcNaCW0XzGLmtdgZxX+e0l1kxQZSSgRJgEuC11v8NNShmuCvWGSdMTSM6g1SrlevIAF
- k0K/m1O0x9KoKblKFHdKetFua70jZ1+UwCwXtCXl5o0pHJOXI3684yFzCU7yGoVPy6e+
- /F5rsnlyDzeNoL48tvUnWJktqdeqB1xjmff/zZbdJSsR2bJw3dwlqd8QcraP2rM3Q/S5
- rIDQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cr5sx8yPELFvuYRl+jNMxMdmYnoYhuCmAKJ5oKY9g0E=;
- b=KtLh3SH+y8QtGI1zwQYhJ0d1t6ZmkW+0GpHz0i6zSXE1Izh3t4HT+N78csEPLfp+j9
- I6MpW8LBrD7iY13DmUJObrJeIKgjmDX+bGd/HRyHRYThP5sE5uKF8Z2tVDgRI0k09U5q
- W1x/R0DOPl7Y5F/S/vF78lQ4g7s2io2jWt4rRZB40kIfI84/pV00wrqC3ROJGsKkDRJu
- 8xJGv15zXTUw8q+FW75BBENckl4kaqIPvbZ8nmSJ2WTyo1ahssIgHpMbLEyZXYvpmPj8
- vMZWrdX1jxbjy/RekDJAqyKmZXRukWPLn9P2K9pZFdjkw3GHGdgK0KuCbpv0L6cIhp9l
- 9l/A==
-X-Gm-Message-State: APjAAAWZ2lKoKIxwxR8kDYqAfkmDMJMObfjLH7jvp55P6i49bd2SZlmR
- +P3HTB4OTTq98q3JvnaJw8E=
-X-Google-Smtp-Source: APXvYqz6YXrRtzypIMvVy+x3Jnu/MuLIq8K/vpYiXguCE8h2B/hQlRh5PoCsvQtDYr6Xwakge0GZjg==
-X-Received: by 2002:a17:90a:8912:: with SMTP id
- u18mr46705829pjn.21.1578373732299; 
- Mon, 06 Jan 2020 21:08:52 -0800 (PST)
-Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
- [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id l66sm75149647pga.30.2020.01.06.21.08.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 21:08:51 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net] Revert "net: stmmac: platform: Fix MDIO init for
- platforms without PHY"
-Date: Mon,  6 Jan 2020 21:08:46 -0800
-Message-Id: <20200107050846.16838-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1iohDC-00015P-Io; Tue, 07 Jan 2020 05:15:27 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 214E7207FD;
+ Tue,  7 Jan 2020 05:15:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578374124;
+ bh=7IRn73LOcIxtOPF38vt+jdde9KSqRJ/hkO43TQ+PV6U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dnpAH75AkRY/1sigQosliNYb44fjXUGI2Xe+Dafae7NTasmhJWZx+xPPtruGzof9z
+ ekmuxXw3RYrNLLwaqyFrIQ2MDeGdHqUhMO/aBvrxvBjJb4RYfgduqd6DFtDSNZ7i++
+ Gt/q+ebKKUIWAqAO7XQIDe03Tvpx6CNDuA2Yb8dk=
+Date: Mon, 6 Jan 2020 21:15:21 -0800
+From: Eric Biggers <ebiggers@kernel.org>
+To: Masahiro Yamada <masahiroy@kernel.org>
+Subject: Re: [PATCH] treewide: remove redundent IS_ERR() before error code
+ check
+Message-ID: <20200107051521.GF705@sol.localdomain>
+References: <20200106045833.1725-1-masahiroy@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200106045833.1725-1-masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_210853_484909_06B85095 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_211526_646748_956AB784 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,64 +77,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Jayati Sahu <jayati.sahu@samsung.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, tomeu.vizoso@collabora.com,
- guillaume.tucker@collabora.com, mgalka@collabora.com,
- Sriram Dash <sriram.dash@samsung.com>, linux-kernel@vger.kernel.org,
- Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>,
- linux-stm32@st-md-mailman.stormreply.com, broonie@kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, khilman@baylibre.com,
- enric.balletbo@collabora.com, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- heiko@sntech.de
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-acpi@vger.kernel.org, netdev@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Julia Lawall <julia.lawall@lip6.fr>,
+ linux-mtd@lists.infradead.org, linux-crypto@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit d3e014ec7d5ebe9644b5486bc530b91e62bbf624 ("net:
-stmmac: platform: Fix MDIO init for platforms without PHY") because it
-breaks existing systems with stmmac which do not have a MDIO bus
-sub-node nor a 'phy-handle' property declared in their Device Tree. On
-those systems, the stmmac MDIO bus is expected to be created and then
-scanned by of_mdiobus_register() to create PHY devices.
+On Mon, Jan 06, 2020 at 01:58:33PM +0900, Masahiro Yamada wrote:
+> 'PTR_ERR(p) == -E*' is a stronger condition than IS_ERR(p).
+> Hence, IS_ERR(p) is unneeded.
+> 
+> The semantic patch that generates this commit is as follows:
+> 
+> // <smpl>
+> @@
+> expression ptr;
+> constant error_code;
+> @@
+> -IS_ERR(ptr) && (PTR_ERR(ptr) == - error_code)
+> +PTR_ERR(ptr) == - error_code
+> // </smpl>
+> 
+> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
 
-While these systems should arguably make use of a more accurate Device
-Tree reprensentation with the use of the MDIO bus sub-node an
-appropriate 'phy-handle', we cannot break them, therefore restore the
-behavior prior to the said commit.
+Any reason for not doing instead:
 
-Fixes: d3e014ec7d5e ("net: stmmac: platform: Fix MDIO init for platforms without PHY")
-Reported-by: Heiko Stuebner <heiko@sntech.de>
-Reported-by: kernelci.org bot <bot@kernelci.org>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
-Heiko,
+	ptr == ERR_PTR(-error_code)
 
-I did not add the Tested-by because the patch is a little bit different
-from what you tested, even if you most likely were not hitting the other
-part that I was changing. Thanks!
+?  To me it seems weird to use PTR_ERR() on non-error pointers.  I even had to
+double check that it returns a 'long' and not an 'int'.  (If it returned an
+'int', it wouldn't work...)
 
- drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-index cc8d7e7bf9ac..bedaff0c13bd 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-@@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct platform_device *pdev,
- static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
- 			 struct device_node *np, struct device *dev)
- {
--	bool mdio = false;
-+	bool mdio = true;
- 	static const struct of_device_id need_mdio_ids[] = {
- 		{ .compatible = "snps,dwc-qos-ethernet-4.10" },
- 		{},
--- 
-2.19.1
-
+- Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
