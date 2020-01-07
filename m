@@ -2,89 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E39413268B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 13:39:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1EF91326A6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 13:46:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/CCaP5MaUQ1dWDRDHpsK/UIMK41saPPGLuGUwDkxSE=; b=HEgNrrAMr7WrLW
-	30R/jn+42A4lnhyr0QTMxZaqzG/b0b0DLqpb0JrpFOfmZU5fuNYAh3yk/g+GyWeMEhQ3arGWHukcO
-	YWm56X/8OXEYXc1jn3KMwLv+q8j47wNFzJrmHeZgnikqkWII+N/OnZe9P0cpUJ9w0d4Mln6w3oPCi
-	rSfnGKA6AhZwxyfyeE4PlmyxX/d56k6ehBFhe58cu8m+eEhxGSJmKgMXondk6msupNtsZj52BtsGh
-	xZcR5+Ixnq9D0IuRB64o8gIIVzu9xdQX6zjVzGC2F3l+EQDrLyGPpeG4rzOiJg2y++/bgDhgkR0mF
-	AauqJZgLy8uXPeRvnymA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:To:Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sWubIGcfeILnuXT6z2B7ThK1Upq9Oc4Jb1czeiAWm/U=; b=qz1S1y0Gk/gLog7Aid6v7zQXW
+	SSr/rZrVlTHq4DI/TGfeoZomij1civQ7i8uP82idud7Zq1SbqJgjgZGCM9tswyPiqE20VDV1K3D+6
+	4og12AbzWguaLqScoUkwY01uiCTTgXTMSZzKgUUaq2VwBEdQkoth734yoaygyRhXpix0FeWgU/Wt1
+	mh9g/yTs+UZKxwpZ3uRI0Gi14uvlAc3Sz+tobSGUxCrZ1RHLcGQ8KDu/K5bf65XyjHRKSngSE0tJa
+	UdBhmmDBTTTQioApizVb9v040CkxmaOlVfaeikUPj2DaAWPfiXarQisTdKeZ1NMPs5e2HUgsCcWjB
+	rNmibMgRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioo96-0000ik-Dq; Tue, 07 Jan 2020 12:39:40 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iooFS-00045y-RY; Tue, 07 Jan 2020 12:46:14 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioo8J-0000DH-Aq
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 12:38:53 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 007CbXhP018532; Tue, 7 Jan 2020 13:38:35 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=LrRlBaLDFuffLqD4z5yxGzk/G0cLADgnwc3XsTVfoCs=;
- b=ZaBhwiwAYjyhKoeGI1D5iaFSenhCJ//B7at1Dr1vWILK/nKLgw55tevPMqmFFDWyHsIm
- ILyUukFobhhD3lOOu6ziqtJnMtEDSV9dS3V+3CO+DJOomdOyarqc4jqWpO7cFxi1zaNr
- PdhXOPLxfxc69hsziqcdzAyi+Dt7Jn2nH/2l6RjFyIkULo00qUWCWq3LwadiL23Gg2rW
- ZqS9p3Rl3Byv2Q77XyMWaamgZq7koAlg9JJhs6AqZ0UT3rARH2DVG1iGhQTT00lbLA5M
- stIzk0fl9K8ouEx/5CwEC3FkDVEEdP7zTMFpZqc95Hn1ZH0jHgO5TzIiA5NiV2qzL6zs 1w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xakuqp4c3-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 07 Jan 2020 13:38:35 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B91ED10003A;
- Tue,  7 Jan 2020 13:38:32 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id AEA2A2AFAB3;
- Tue,  7 Jan 2020 13:38:32 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE3.st.com (10.75.127.18)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 7 Jan 2020 13:38:32 +0100
-From: <patrice.chotard@st.com>
-To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <linux@armlinux.org.uk>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>
-Subject: [PATCH 2/2] ARM: dts: stih410-b2260: Remove deprecated snps PHY
- properties
-Date: Tue, 7 Jan 2020 13:38:28 +0100
-Message-ID: <20200107123828.6586-3-patrice.chotard@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200107123828.6586-1-patrice.chotard@st.com>
-References: <20200107123828.6586-1-patrice.chotard@st.com>
+ id 1iooFL-000456-7k
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 12:46:08 +0000
+Received: by mail-wr1-x444.google.com with SMTP id q10so14828323wrm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 04:46:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:date:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=pLuEHRJGyuYZ21es9PhlN9IhZbnDG1epHKk/DRLbj4E=;
+ b=YaNRA9k08R1pyZK09tCeQxl8Arnavxri5xC0gsDRXbAiUxyVOQpGXRc3FHRxwn3Zpd
+ LF4sv6GM/30QdDCv4c2Ihhv9wglO6/HC/llT+fc1pm6YIPkPQiwzEza3gmF2MwLk+HGo
+ 5TuTsH/VANEjPnN+bza3IAP4zU61ZQvj0oi2BBIEXCmSWN91PD0yscxKl2ddi/I3G2pw
+ rzBC7E6AhBBDrU7ZVUJAtNt2VCB/PXmwiEWpMmgelzxepQrck9ng+CHO5Xc+3XajxkE5
+ pBEZD+JQCrau8mRQU/zEA38MfzgjTYE+FUm0DwHSnlnxYFkQSCE+WawTGb0uP4co3A0Q
+ Cokw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:date:to:cc:subject:in-reply-to
+ :message-id:references:user-agent:mime-version;
+ bh=pLuEHRJGyuYZ21es9PhlN9IhZbnDG1epHKk/DRLbj4E=;
+ b=PvwF8zSXBN4I0Yk5XX0QK7WOaAc16VIkAfFzzBPdweAIu9VrsO8VnfakB95Wk7D3tf
+ 1TPZ9hq7NAisKxLmJGgR9E1JBGDBeMcyacrsEKDcORzGnHk/oYKtA7OWa1J6UmEzJx9W
+ AfQyxBZKgsW2kEO33XfI9OL4q/PbyJ2sffOG0Jkgg0i99xxmnnue4cC+e4mdJ0cRsvct
+ VWdv+Z3diB7f8cCRbtMLAzf4q+4daaH9A/uT4FMD9A7qg8CwQBoJsMFgLgbzCT6dsvfN
+ go39eZFcPjxgInHO4GeFrO4vnFQmgFjjauWAENVRLinVOyz+9WtBBJVNwjyBAKk9JJix
+ FyVw==
+X-Gm-Message-State: APjAAAWtgBXtApm6iZ77XbcquzsUvVnYQGFelde/W1EnlI2TW6t6f2Df
+ UtmhRSsacFZqCrr3Koc6u/c=
+X-Google-Smtp-Source: APXvYqzXnMjxG69Kfig7l7SnYmCyuET+NmyKxhHkb2al/g3bEBoEPhgKL3QN9Mtg5f9bOgNyUbNtKg==
+X-Received: by 2002:a05:6000:11c5:: with SMTP id
+ i5mr106966437wrx.102.1578401163499; 
+ Tue, 07 Jan 2020 04:46:03 -0800 (PST)
+Received: from wambui.local ([197.237.61.225])
+ by smtp.googlemail.com with ESMTPSA id u8sm26702237wmm.15.2020.01.07.04.46.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 04:46:02 -0800 (PST)
+From: Wambui Karuga <wambui@karuga.xyz>
+X-Google-Original-From: Wambui Karuga <wambui@wambui>
+Date: Tue, 7 Jan 2020 15:45:55 +0300 (EAT)
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH] drm/sun4i: use PTR_ERR_OR_ZERO macro.
+In-Reply-To: <20200107115737.ybaxsjyvfaledfje@gilmour>
+Message-ID: <alpine.LNX.2.21.99999.375.2001071545160.6077@wambui>
+References: <20200106140052.30747-1-wambui.karugax@gmail.com>
+ <20200107115737.ybaxsjyvfaledfje@gilmour>
+User-Agent: Alpine 2.21.99999 (LNX 375 2019-10-29)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG6NODE3.st.com
- (10.75.127.18)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2020-01-07_03:2020-01-06,2020-01-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_043851_669658_85C08A85 
-X-CRM114-Status: GOOD (  11.62  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200107_044607_302311_22DE8B97 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wambui.karugax[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.1 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,39 +106,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: patrice.chotard@st.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, wens@csie.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org, Wambui Karuga <wambui.karugax@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Patrice Chotard <patrice.chotard@st.com>
 
-Remove "snps,phy-bus-name", "snps,phy-bus-id" and "snps,phy-addr"
-properties.
 
-Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
----
- arch/arm/boot/dts/stih410-b2260.dts | 3 ---
- 1 file changed, 3 deletions(-)
+On Tue, 7 Jan 2020, Maxime Ripard wrote:
 
-diff --git a/arch/arm/boot/dts/stih410-b2260.dts b/arch/arm/boot/dts/stih410-b2260.dts
-index 1df2c37eb3a7..3dd7f4b18856 100644
---- a/arch/arm/boot/dts/stih410-b2260.dts
-+++ b/arch/arm/boot/dts/stih410-b2260.dts
-@@ -179,9 +179,6 @@
- 			phy-handle = <&phy0>;
- 			pinctrl-0 = <&pinctrl_rgmii1 &pinctrl_rgmii1_mdio_1>;
- 
--			snps,phy-bus-name = "stmmac";
--			snps,phy-bus-id = <0>;
--			snps,phy-addr = <0>;
- 			snps,reset-gpio = <&pio0 7 0>;
- 			snps,reset-active-low;
- 			snps,reset-delays-us = <0 10000 1000000>;
--- 
-2.17.1
-
+> Hi,
+>
+> On Mon, Jan 06, 2020 at 05:00:52PM +0300, Wambui Karuga wrote:
+>> Replace the use of IS_ERR and PTR_ZERO macros by returning the
+>> PTR_ERR_OR_ZERO macro.
+>> Changes suggested by coccinelle.
+>>
+>> Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
+>
+> Unfortunately, that patch came up a number of time and shouldn't have
+> been a coccinelle script in the first place.
+>
+> I've sent a patch to remove that script:
+> https://lore.kernel.org/lkml/20200107073629.325249-1-maxime@cerno.tech/
+>
+Okay, thanks for the review.
+> Maxime
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
