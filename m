@@ -2,71 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 696A0132032
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 08:04:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B295132052
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 08:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OS/h+JQjWwlfdDX2pD8wN5jh2m33k8Ho5CGb/KUbalc=; b=UXwDhnRhWf83un
-	sSA5bqiszC8kOuWG6BXqbx0ILTVTzOTAT3LtB/+shgW95Fun9BVqhEgWwI2qmI5UG2HcPPqd2EVFl
-	7biHi+yxqZDTT0SLG6+Z/yuVXi8BYmXA9sNsKmcYwmwgUxXhwG1/sL4YZVg2Kjpo8kWSmli5v4ypY
-	UUBRICpC8LjqaDp9v1kENTIMSOWI3tXInC3Ddb/MbmC68oMUJ3Gh3VvBFo12QLGRWeLmFwZ83/ZnB
-	4zBM3fpE+XXxibi3IZaVBTcfLlDYpwj8sTGu9121SJNUgNRtIAS6dYI4cjELDUf9qteSBV6u7f2Zu
-	6M/T8rRgZ+CtJFO8I2zQ==;
+	List-Owner; bh=W4hqTLkcEhP4Ue3Q2s5/3Ydw7a3OuRuvzPABhVbbUnU=; b=EZL84W5tMtJ4lS
+	JH9TgXm/uaCkatkxgSOtHhv1kHPKpMXYFS3QvKy0I69O0S9HbPmfIlJz99yiiJ2dhpE0Nvh63qiXk
+	PxSZv1MwuHAq+YGFi4QN5NAMNdDB8pkJxRthA7oBSXNXFdsdfwZ99kFVSrw6BTQdawTAcmEuTMI/3
+	tJM8yDcBMIN14u5Fk/5DnKJYgUR0zwm4r3UctGRPU6csWwREEfnbCS00WXHQPZTZbJAI81gE80CBI
+	ndKsL2uS6+xTBNz3B2l9WRdGL84kbjafS+h48SqhbLo5vnmUTkvdou0Z6oJhN4Wsl+PtxcUY5q2xA
+	bZJQJYoaGJOxFyyFuY0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioiuB-00030H-If; Tue, 07 Jan 2020 07:03:55 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ioj9i-0000Hp-3r; Tue, 07 Jan 2020 07:19:58 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioitx-0002yZ-8M; Tue, 07 Jan 2020 07:03:45 +0000
-X-UUID: 50c0a69672d54a38acee72d7e71341c2-20200106
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=VjjSHPgZ0wy2flMgNuu3m046BjiufOod+qrlXQt1vkw=; 
- b=Kni1eguztIKmj7GAGBPZKWoE696/yHhyP3CAeUhW4kqvRtiDe68ANEJwnO2i/7u6zmDVTfTZiO7HNzHT8fBY5wGOENT+V/2s5ex2ti+2ilu/QOVkyXVausWhq8y7L2NID6SLX33Idll4oVUkbnQqtywnXrOUyLO2Y7Z/MxAG5fs=;
-X-UUID: 50c0a69672d54a38acee72d7e71341c2-20200106
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <roger.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1359242466; Mon, 06 Jan 2020 23:03:33 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 6 Jan 2020 23:02:49 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 Jan 2020 15:01:45 +0800
-Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 7 Jan 2020 15:01:09 +0800
-From: Roger Lu <roger.lu@mediatek.com>
-To: Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Nicolas Boichat <drinkcat@google.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH v6 3/3] PM / AVS: SVS: Introduce SVS engine
-Date: Tue, 7 Jan 2020 15:01:54 +0800
-Message-ID: <20200107070154.1574-4-roger.lu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200107070154.1574-1-roger.lu@mediatek.com>
-References: <20200107070154.1574-1-roger.lu@mediatek.com>
+ id 1ioj9W-0000Gt-Qg
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 07:19:49 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20200107071942epoutp042b6fe0623d0e2b8495e83bcb9e2d0226~nia-J9TMN0300103001epoutp04E
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  7 Jan 2020 07:19:42 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20200107071942epoutp042b6fe0623d0e2b8495e83bcb9e2d0226~nia-J9TMN0300103001epoutp04E
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1578381582;
+ bh=RtHBBp39OA/t7F5pUSrmvE58Xz4xcndYYyN4RSw8QTI=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=aZVg8M9KIVJF+ezqQojge7zhRXQ0LOIvSLDXh3x/dVaaGLqzYwOD1HYyPCk4W8Nhi
+ J3BwzJ7dcW+56p6pQICkdXhtnpJAPMAMyCxVONPY7TZsHpbQAbERQAmxId+gCBYowF
+ Z2jQ6ZwQTLt1k43Bl46FvHbtYX71Je4jpnS/zYwY=
+Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200107071941epcas5p12510686870381ac565da007cc10091f0~nia_gHgvH2658626586epcas5p1U;
+ Tue,  7 Jan 2020 07:19:41 +0000 (GMT)
+Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
+ epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 26.B1.20197.D01341E5; Tue,  7 Jan 2020 16:19:41 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200107071941epcas5p1018fc89889dbcc1fa2abfcdaed6f4e5b~nia92732L1745517455epcas5p1P;
+ Tue,  7 Jan 2020 07:19:41 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200107071941epsmtrp19e20e87e3082f1aba42ac9725f5a6329~nia91piny0674606746epsmtrp1a;
+ Tue,  7 Jan 2020 07:19:41 +0000 (GMT)
+X-AuditID: b6c32a4a-769ff70000014ee5-e6-5e14310d9b92
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 71.0B.06569.C01341E5; Tue,  7 Jan 2020 16:19:40 +0900 (KST)
+Received: from sriramdash03 (unknown [107.111.85.29]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200107071937epsmtip2e23034f6e8d0d72bfcf34456a3b13809~nia6wOa913273432734epsmtip2Q;
+ Tue,  7 Jan 2020 07:19:37 +0000 (GMT)
+From: "Sriram Dash" <sriram.dash@samsung.com>
+To: "'Florian Fainelli'" <f.fainelli@gmail.com>, "'David S. Miller'"
+ <davem@davemloft.net>, "'kernelci.org bot'" <bot@kernelci.org>,
+ <tomeu.vizoso@collabora.com>, <khilman@baylibre.com>,
+ <mgalka@collabora.com>, <guillaume.tucker@collabora.com>,
+ <broonie@kernel.org>, "'Jayati Sahu'" <jayati.sahu@samsung.com>,
+ "'Padmanabhan Rajanbabu'" <p.rajanbabu@samsung.com>,
+ <enric.balletbo@collabora.com>, <narmstrong@baylibre.com>, "'Heiko
+ Stuebner'" <heiko@sntech.de>
+In-Reply-To: <54a292b8-3cac-0caf-08c7-841c469fb68f@gmail.com>
+Subject: RE: broonie-regmap/for-next bisection: boot on
+ ox820-cloudengines-pogoplug-series-3
+Date: Tue, 7 Jan 2020 12:49:36 +0530
+Message-ID: <012001d5c52a$d3be2590$7b3a70b0$@samsung.com>
 MIME-Version: 1.0
-X-MTK: N
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-in
+Thread-Index: AQHVkLQqlgs7zItKQK6JQygQi6mu7gG5ib8fAmHNbWsB+6DuOQJmiUKZAkmHUKmniOUmUA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRjmO5ftTDr1dVz5ZhdsXbXSjIIvKouKOF1+BEGFiTXyZKJT2UxL
+ oiRKa+ryQheH2TKREkWcMy0zbd2NVUxbjsiyZhe1DLPISoztGPnved7veZ73feDjaKFEEcjF
+ JaZI+kRtgkbhx1y7Ezx/ER+ujl7c6AwlNZ7HiDjdLSw50+VRkOKnxxlS+dKOyK8vd5Wkb+Ay
+ TUbe9rLkbmsZRTr/fGXJUJaNItZ3Lpa03ShWEKPLw5KS4SqWZHaeUxK7aRe5b5lM7tVsI6V1
+ g0oy0luHiPlZA0tMVU7FmgCxv+OEUmx4VYZE21U3JV43v1KK1opTCvHmp3FibdlR0WSrQGK9
+ q4QWb98KF7t/NtGirfkbEr9ZZ2zlI/1WxkgJcamSPixij99+14lfVHJbFjo4WFfGZKCBeCNS
+ cYCXQuuTU4wR+XECbkRw3vORkskAgkefu1mvSsA/EAzeUhkR53P0ORWypglB59UXSCY9CBxd
+ b2mvQYEXgaPjmE+lxh00OC3DtJfQOJuGL2fP0t4oFV4FlYUpXoM/joau/guMFzN4Nrit3jNU
+ HI+XQ+HNC0jGE+FRkcenofECKL/US8sdgmCou5yV5wFwbyjHN1fj7dDvyPBdB/gMBw5bLZIr
+ rIeh5iOy1x96HtiUMg6ET6czR3E8tJk+jOanwPmeS4yMV0NLezHjjaFxMFTfCJPXjofc3x5K
+ TufhZKYgq+dAz8va0cSp0FL1mJKxCM2O71QemmkeU8w8pph5TBnz/2UWxFSgKVKyQRcrGZYl
+ L0mU0kINWp3hQGJs6N4knRX5fm3IpgZU/mSLHWEOacbxedP8owVWm2o4pLMj4GiNmg9ZqI4W
+ +BjtoXRJn7RbfyBBMtjRVI7RBPAF7PMoAcdqU6R4SUqW9P9eKU4VmIGK1l9cymeHFKzY6DY9
+ YA+GMUHty+uzdv54E7OhSb1qSoTFMiFNSI8r2JRra01I22esqu9bF3zY9H362tIofKU6blbU
+ 3EnXk34OVM/LnThhuCigdG9TXcTI/Q3WdBUObdQ9pNsv79juzq9Me+12uXChsKTBHvk1P7Vg
+ Wt/m8e/e5+doGMN+bXgIrTdo/wITKEYTsQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sb0hTYRTGeXd3t+twcdtGvjlIW31aqa00XmlaH4ouESSZQSnaytvU3By7
+ aplgTqxMRIxh4jBRG8O/kEtLy8yW2rLU+QdxyKTWJGOmqYEtUmuOYt9+53nOec75cAhMoMOD
+ iXR1Nq1VKzIlHB776RtJSFigTJR8YFknR+2u9wCN2/twVPnJxUE1o8Vs1DpjAejXYj8XLaw8
+ wtCm042j/iEjC83+/o4jz90OFjJ/nsLRxPMaDiqdcuGodr0NR3dmq7jIUp6IBut2oIH2eNTQ
+ +YOLNt2dABlsXTgqbxvnHAuilqZvc6kuhxFQHU12FtVtcHApc/M9DtXzNZB6YrxFlXc0A+rZ
+ VC1Gve6VUXM/X2JUx6tVQK2ad8XxL/LkqXRmei6tjYi9xEsbXUrQ6IvBDYfLxCoEZcpSQBCQ
+ jIQL45xSwCME5AsAG7vMuE8XQ48jrBQE/EUhbNr4wvX1zAPYsvKY7TU4ZBgcni7aGhaRTgw+
+ 6DaxvAVG3sfgmm0D83YJSCsLfjSd9qYGkDGwVZ/tlYVkEhyatHG9zCb3Qrt5nuVlPhkN9T0P
+ gY+3w3fVrq1lGLkPztnn/rOp3o35rguFnjkT7tOD4ICnbEsXkefh0nAhqABCg1+UwS/K4Bdl
+ 8BuvA+xmsJPWMCqlipFpDqrp6+GMQsXkqJXhV7JUZrD1GFJpF7BaUyyAJIAkkI+ChckCXJHL
+ 5KksABKYRMSX7hclC/ipirybtDYrRZuTSTMWICbYkiB+SNbgBQGpVGTT12haQ2v/uSwiILgQ
+ HBpOI+TRcTrnLDjSuJ51RnxqbEx5NKOv/eqEfiTphNO8UM+TtA3oti2dRCG6opLybPfuiZlz
+ nrczGfFxxwfXJmOKXVGLBeKgyGpDVb4R9loT1bc/JDi/TWfarBHhI6sFuVTDYoBVHpp/eU9F
+ peNw1EjZWdtykdjeoo7VG0skbCZNIZNiWkbxByB6p14UAwAA
+X-CMS-MailID: 20200107071941epcas5p1018fc89889dbcc1fa2abfcdaed6f4e5b
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20191225075056epcas4p2ab51fc6ff1642705a61f906189bb29f0
+References: <CGME20191225075056epcas4p2ab51fc6ff1642705a61f906189bb29f0@epcas4p2.samsung.com>
+ <5e0314da.1c69fb81.a7d63.29c1@mx.google.com>
+ <03ca01d5c23a$09921d00$1cb65700$@samsung.com>
+ <1c3531f8-7ae2-209d-b6ed-1c89bd9f2bb6@gmail.com>
+ <011801d5c51a$bd2e5710$378b0530$@samsung.com>
+ <54a292b8-3cac-0caf-08c7-841c469fb68f@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_230341_324911_0FA9C4AB 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_231947_430246_62E8B1CC 
+X-CRM114-Status: GOOD (  24.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -74,8 +139,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,2178 +152,304 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- Angus Lin <Angus.Lin@mediatek.com>, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Roger Lu <roger.lu@mediatek.com>,
- linux-kernel@vger.kernel.org, Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
- YT Lee <yt.lee@mediatek.com>, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, HenryC Chen <HenryC.Chen@mediatek.com>,
- Charles Yang <Charles.Yang@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: 'Jose Abreu' <Jose.Abreu@synopsys.com>,
+ 'Alexandre Torgue' <alexandre.torgue@st.com>, rcsekar@samsung.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ 'Maxime Coquelin' <mcoquelin.stm32@gmail.com>, pankaj.dubey@samsung.com,
+ 'Giuseppe
+ Cavallaro' <peppe.cavallaro@st.com>, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SVS (Smart Voltage Scaling) engine is a piece
-of hardware which is used to calculate optimized
-voltage values of several power domains,
-e.g. CPU/GPU/CCI, according to chip process corner,
-temperatures, and other factors. Then DVFS driver
-could apply those optimized voltage values to reduce
-power consumption.
-
-Signed-off-by: Roger Lu <roger.lu@mediatek.com>
----
- drivers/power/avs/Kconfig     |   10 +
- drivers/power/avs/Makefile    |    1 +
- drivers/power/avs/mtk_svs.c   | 2075 +++++++++++++++++++++++++++++++++
- include/linux/power/mtk_svs.h |   23 +
- 4 files changed, 2109 insertions(+)
- create mode 100644 drivers/power/avs/mtk_svs.c
- create mode 100644 include/linux/power/mtk_svs.h
-
-diff --git a/drivers/power/avs/Kconfig b/drivers/power/avs/Kconfig
-index 089b6244b716..ba9d296bbdc1 100644
---- a/drivers/power/avs/Kconfig
-+++ b/drivers/power/avs/Kconfig
-@@ -19,3 +19,13 @@ config ROCKCHIP_IODOMAIN
- 	  Say y here to enable support io domains on Rockchip SoCs. It is
- 	  necessary for the io domain setting of the SoC to match the
- 	  voltage supplied by the regulators.
-+
-+config MTK_SVS
-+	bool "MediaTek Smart Voltage Scaling(SVS)"
-+	depends on POWER_AVS && MTK_EFUSE && NVMEM
-+	help
-+	  The SVS engine is a piece of hardware which is used to calculate
-+	  optimized voltage values of several power domains, e.g.
-+	  CPU clusters/GPU/CCI, according to chip process corner, temperatures,
-+	  and other factors. Then DVFS driver could apply those optimized voltage
-+	  values to reduce power consumption.
-diff --git a/drivers/power/avs/Makefile b/drivers/power/avs/Makefile
-index a1b8cd453f19..57246b977a93 100644
---- a/drivers/power/avs/Makefile
-+++ b/drivers/power/avs/Makefile
-@@ -1,3 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_POWER_AVS_OMAP)		+= smartreflex.o
- obj-$(CONFIG_ROCKCHIP_IODOMAIN)		+= rockchip-io-domain.o
-+obj-$(CONFIG_MTK_SVS)			+= mtk_svs.o
-diff --git a/drivers/power/avs/mtk_svs.c b/drivers/power/avs/mtk_svs.c
-new file mode 100644
-index 000000000000..c46211a15fcd
---- /dev/null
-+++ b/drivers/power/avs/mtk_svs.c
-@@ -0,0 +1,2075 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2020 MediaTek Inc.
-+ */
-+
-+#define pr_fmt(fmt)	"[mtk_svs] " fmt
-+
-+#include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/completion.h>
-+#include <linux/init.h>
-+#include <linux/interrupt.h>
-+#include <linux/kthread.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/nvmem-consumer.h>
-+#include <linux/of_address.h>
-+#include <linux/of_irq.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_domain.h>
-+#include <linux/pm_opp.h>
-+#include <linux/pm_qos.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/power/mtk_svs.h>
-+#include <linux/proc_fs.h>
-+#include <linux/regulator/consumer.h>
-+#include <linux/seq_file.h>
-+#include <linux/spinlock.h>
-+#include <linux/thermal.h>
-+#include <linux/uaccess.h>
-+
-+/* svs sw id */
-+#define SVS_CPU_LITTLE			BIT(0)
-+#define SVS_CPU_BIG			BIT(1)
-+#define SVS_CCI				BIT(2)
-+#define SVS_GPU				BIT(3)
-+
-+/* svs bank mode support */
-+#define SVSB_MODE_ALL_DISABLE		(0)
-+#define SVSB_MODE_INIT01		BIT(1)
-+#define SVSB_MODE_INIT02		BIT(2)
-+#define SVSB_MODE_MON			BIT(3)
-+
-+/* svs bank init01 condition */
-+#define SVSB_INIT01_VOLT_IGNORE		BIT(1)
-+#define SVSB_INIT01_VOLT_INC_ONLY	BIT(2)
-+
-+/* svs bank common setting */
-+#define RUNCONFIG_DEFAULT		(0x80000000)
-+#define DC_SIGNED_BIT			(0x8000)
-+#define INTEN_INIT0x			(0x00005f01)
-+#define INTEN_MONVOPEN			(0x00ff0000)
-+#define SVSEN_OFF			(0x0)
-+#define SVSEN_MASK			(0x7)
-+#define SVSEN_INIT01			(0x1)
-+#define SVSEN_INIT02			(0x5)
-+#define SVSEN_MON			(0x2)
-+#define INTSTS_MONVOP			(0x00ff0000)
-+#define INTSTS_COMPLETE			(0x1)
-+#define INTSTS_CLEAN			(0x00ffffff)
-+
-+#define proc_fops_rw(name) \
-+	static int name ## _proc_open(struct inode *inode,	\
-+		struct file *file)				\
-+	{							\
-+		return single_open(file, name ## _proc_show,	\
-+			PDE_DATA(inode));			\
-+	}							\
-+	static const struct file_operations name ## _proc_fops = {	\
-+		.owner          = THIS_MODULE,				\
-+		.open           = name ## _proc_open,			\
-+		.read           = seq_read,				\
-+		.llseek         = seq_lseek,				\
-+		.release        = single_release,			\
-+		.write          = name ## _proc_write,			\
-+	}
-+
-+#define proc_fops_ro(name) \
-+	static int name ## _proc_open(struct inode *inode,	\
-+		struct file *file)				\
-+	{							\
-+		return single_open(file, name ## _proc_show,	\
-+			PDE_DATA(inode));			\
-+	}							\
-+	static const struct file_operations name ## _proc_fops = {	\
-+		.owner          = THIS_MODULE,				\
-+		.open           = name ## _proc_open,			\
-+		.read           = seq_read,				\
-+		.llseek         = seq_lseek,				\
-+		.release        = single_release,			\
-+	}
-+
-+#define proc_entry(name)	{__stringify(name), &name ## _proc_fops}
-+
-+static DEFINE_SPINLOCK(mtk_svs_lock);
-+struct mtk_svs;
-+
-+enum svsb_phase {
-+	SVSB_PHASE_INIT01 = 0,
-+	SVSB_PHASE_INIT02,
-+	SVSB_PHASE_MON,
-+	SVSB_PHASE_ERROR,
-+};
-+
-+enum reg_index {
-+	TEMPMONCTL0 = 0,
-+	TEMPMONCTL1,
-+	TEMPMONCTL2,
-+	TEMPMONINT,
-+	TEMPMONINTSTS,
-+	TEMPMONIDET0,
-+	TEMPMONIDET1,
-+	TEMPMONIDET2,
-+	TEMPH2NTHRE,
-+	TEMPHTHRE,
-+	TEMPCTHRE,
-+	TEMPOFFSETH,
-+	TEMPOFFSETL,
-+	TEMPMSRCTL0,
-+	TEMPMSRCTL1,
-+	TEMPAHBPOLL,
-+	TEMPAHBTO,
-+	TEMPADCPNP0,
-+	TEMPADCPNP1,
-+	TEMPADCPNP2,
-+	TEMPADCMUX,
-+	TEMPADCEXT,
-+	TEMPADCEXT1,
-+	TEMPADCEN,
-+	TEMPPNPMUXADDR,
-+	TEMPADCMUXADDR,
-+	TEMPADCEXTADDR,
-+	TEMPADCEXT1ADDR,
-+	TEMPADCENADDR,
-+	TEMPADCVALIDADDR,
-+	TEMPADCVOLTADDR,
-+	TEMPRDCTRL,
-+	TEMPADCVALIDMASK,
-+	TEMPADCVOLTAGESHIFT,
-+	TEMPADCWRITECTRL,
-+	TEMPMSR0,
-+	TEMPMSR1,
-+	TEMPMSR2,
-+	TEMPADCHADDR,
-+	TEMPIMMD0,
-+	TEMPIMMD1,
-+	TEMPIMMD2,
-+	TEMPMONIDET3,
-+	TEMPADCPNP3,
-+	TEMPMSR3,
-+	TEMPIMMD3,
-+	TEMPPROTCTL,
-+	TEMPPROTTA,
-+	TEMPPROTTB,
-+	TEMPPROTTC,
-+	TEMPSPARE0,
-+	TEMPSPARE1,
-+	TEMPSPARE2,
-+	TEMPSPARE3,
-+	TEMPMSR0_1,
-+	TEMPMSR1_1,
-+	TEMPMSR2_1,
-+	TEMPMSR3_1,
-+	DESCHAR,
-+	TEMPCHAR,
-+	DETCHAR,
-+	AGECHAR,
-+	DCCONFIG,
-+	AGECONFIG,
-+	FREQPCT30,
-+	FREQPCT74,
-+	LIMITVALS,
-+	VBOOT,
-+	DETWINDOW,
-+	CONFIG,
-+	TSCALCS,
-+	RUNCONFIG,
-+	SVSEN,
-+	INIT2VALS,
-+	DCVALUES,
-+	AGEVALUES,
-+	VOP30,
-+	VOP74,
-+	TEMP,
-+	INTSTS,
-+	INTSTSRAW,
-+	INTEN,
-+	CHKINT,
-+	CHKSHIFT,
-+	STATUS,
-+	VDESIGN30,
-+	VDESIGN74,
-+	DVT30,
-+	DVT74,
-+	AGECOUNT,
-+	SMSTATE0,
-+	SMSTATE1,
-+	CTL0,
-+	DESDETSEC,
-+	TEMPAGESEC,
-+	CTRLSPARE0,
-+	CTRLSPARE1,
-+	CTRLSPARE2,
-+	CTRLSPARE3,
-+	CORESEL,
-+	THERMINTST,
-+	INTST,
-+	THSTAGE0ST,
-+	THSTAGE1ST,
-+	THSTAGE2ST,
-+	THAHBST0,
-+	THAHBST1,
-+	SPARE0,
-+	SPARE1,
-+	SPARE2,
-+	SPARE3,
-+	THSLPEVEB,
-+	reg_num,
-+};
-+
-+static const u32 svs_regs_v2[] = {
-+	[TEMPMONCTL0]		= 0x000,
-+	[TEMPMONCTL1]		= 0x004,
-+	[TEMPMONCTL2]		= 0x008,
-+	[TEMPMONINT]		= 0x00c,
-+	[TEMPMONINTSTS]		= 0x010,
-+	[TEMPMONIDET0]		= 0x014,
-+	[TEMPMONIDET1]		= 0x018,
-+	[TEMPMONIDET2]		= 0x01c,
-+	[TEMPH2NTHRE]		= 0x024,
-+	[TEMPHTHRE]		= 0x028,
-+	[TEMPCTHRE]		= 0x02c,
-+	[TEMPOFFSETH]		= 0x030,
-+	[TEMPOFFSETL]		= 0x034,
-+	[TEMPMSRCTL0]		= 0x038,
-+	[TEMPMSRCTL1]		= 0x03c,
-+	[TEMPAHBPOLL]		= 0x040,
-+	[TEMPAHBTO]		= 0x044,
-+	[TEMPADCPNP0]		= 0x048,
-+	[TEMPADCPNP1]		= 0x04c,
-+	[TEMPADCPNP2]		= 0x050,
-+	[TEMPADCMUX]		= 0x054,
-+	[TEMPADCEXT]		= 0x058,
-+	[TEMPADCEXT1]		= 0x05c,
-+	[TEMPADCEN]		= 0x060,
-+	[TEMPPNPMUXADDR]	= 0x064,
-+	[TEMPADCMUXADDR]	= 0x068,
-+	[TEMPADCEXTADDR]	= 0x06c,
-+	[TEMPADCEXT1ADDR]	= 0x070,
-+	[TEMPADCENADDR]		= 0x074,
-+	[TEMPADCVALIDADDR]	= 0x078,
-+	[TEMPADCVOLTADDR]	= 0x07c,
-+	[TEMPRDCTRL]		= 0x080,
-+	[TEMPADCVALIDMASK]	= 0x084,
-+	[TEMPADCVOLTAGESHIFT]	= 0x088,
-+	[TEMPADCWRITECTRL]	= 0x08c,
-+	[TEMPMSR0]		= 0x090,
-+	[TEMPMSR1]		= 0x094,
-+	[TEMPMSR2]		= 0x098,
-+	[TEMPADCHADDR]		= 0x09c,
-+	[TEMPIMMD0]		= 0x0a0,
-+	[TEMPIMMD1]		= 0x0a4,
-+	[TEMPIMMD2]		= 0x0a8,
-+	[TEMPMONIDET3]		= 0x0b0,
-+	[TEMPADCPNP3]		= 0x0b4,
-+	[TEMPMSR3]		= 0x0b8,
-+	[TEMPIMMD3]		= 0x0bc,
-+	[TEMPPROTCTL]		= 0x0c0,
-+	[TEMPPROTTA]		= 0x0c4,
-+	[TEMPPROTTB]		= 0x0c8,
-+	[TEMPPROTTC]		= 0x0cc,
-+	[TEMPSPARE0]		= 0x0f0,
-+	[TEMPSPARE1]		= 0x0f4,
-+	[TEMPSPARE2]		= 0x0f8,
-+	[TEMPSPARE3]		= 0x0fc,
-+	[TEMPMSR0_1]		= 0x190,
-+	[TEMPMSR1_1]		= 0x194,
-+	[TEMPMSR2_1]		= 0x198,
-+	[TEMPMSR3_1]		= 0x1b8,
-+	[DESCHAR]		= 0xc00,
-+	[TEMPCHAR]		= 0xc04,
-+	[DETCHAR]		= 0xc08,
-+	[AGECHAR]		= 0xc0c,
-+	[DCCONFIG]		= 0xc10,
-+	[AGECONFIG]		= 0xc14,
-+	[FREQPCT30]		= 0xc18,
-+	[FREQPCT74]		= 0xc1c,
-+	[LIMITVALS]		= 0xc20,
-+	[VBOOT]			= 0xc24,
-+	[DETWINDOW]		= 0xc28,
-+	[CONFIG]		= 0xc2c,
-+	[TSCALCS]		= 0xc30,
-+	[RUNCONFIG]		= 0xc34,
-+	[SVSEN]			= 0xc38,
-+	[INIT2VALS]		= 0xc3c,
-+	[DCVALUES]		= 0xc40,
-+	[AGEVALUES]		= 0xc44,
-+	[VOP30]			= 0xc48,
-+	[VOP74]			= 0xc4c,
-+	[TEMP]			= 0xc50,
-+	[INTSTS]		= 0xc54,
-+	[INTSTSRAW]		= 0xc58,
-+	[INTEN]			= 0xc5c,
-+	[CHKINT]		= 0xc60,
-+	[CHKSHIFT]		= 0xc64,
-+	[STATUS]		= 0xc68,
-+	[VDESIGN30]		= 0xc6c,
-+	[VDESIGN74]		= 0xc70,
-+	[DVT30]			= 0xc74,
-+	[DVT74]			= 0xc78,
-+	[AGECOUNT]		= 0xc7c,
-+	[SMSTATE0]		= 0xc80,
-+	[SMSTATE1]		= 0xc84,
-+	[CTL0]			= 0xc88,
-+	[DESDETSEC]		= 0xce0,
-+	[TEMPAGESEC]		= 0xce4,
-+	[CTRLSPARE0]		= 0xcf0,
-+	[CTRLSPARE1]		= 0xcf4,
-+	[CTRLSPARE2]		= 0xcf8,
-+	[CTRLSPARE3]		= 0xcfc,
-+	[CORESEL]		= 0xf00,
-+	[THERMINTST]		= 0xf04,
-+	[INTST]			= 0xf08,
-+	[THSTAGE0ST]		= 0xf0c,
-+	[THSTAGE1ST]		= 0xf10,
-+	[THSTAGE2ST]		= 0xf14,
-+	[THAHBST0]		= 0xf18,
-+	[THAHBST1]		= 0xf1c,
-+	[SPARE0]		= 0xf20,
-+	[SPARE1]		= 0xf24,
-+	[SPARE2]		= 0xf28,
-+	[SPARE3]		= 0xf2c,
-+	[THSLPEVEB]		= 0xf30,
-+};
-+
-+struct thermal_parameter {
-+	int adc_ge_t;
-+	int adc_oe_t;
-+	int ge;
-+	int oe;
-+	int gain;
-+	int o_vtsabb;
-+	int o_vtsmcu1;
-+	int o_vtsmcu2;
-+	int o_vtsmcu3;
-+	int o_vtsmcu4;
-+	int o_vtsmcu5;
-+	int degc_cali;
-+	int adc_cali_en_t;
-+	int o_slope;
-+	int o_slope_sign;
-+	int ts_id;
-+};
-+
-+struct svs_bank_ops {
-+	void (*set_freqs_pct)(struct mtk_svs *svs);
-+	void (*get_vops)(struct mtk_svs *svs);
-+};
-+
-+struct svs_bank {
-+	struct svs_bank_ops *ops;
-+	struct completion init_completion;
-+	struct device *dev;
-+	struct regulator *buck;
-+	struct mutex lock;	/* Lock to protect update voltage process */
-+	bool suspended;
-+	bool mtcmos_request;
-+	s32 volt_offset;
-+	u32 mode_support;
-+	u32 opp_freqs[16];
-+	u32 freqs_pct[16];
-+	u32 opp_volts[16];
-+	u32 init02_volts[16];
-+	u32 volts[16];
-+	u32 reg_data[3][reg_num];
-+	u32 freq_base;
-+	u32 vboot;
-+	u32 volt_step;
-+	u32 volt_base;
-+	u32 init01_volt_flag;
-+	u32 phase;
-+	u32 vmax;
-+	u32 vmin;
-+	u32 bts;
-+	u32 mts;
-+	u32 bdes;
-+	u32 mdes;
-+	u32 mtdes;
-+	u32 dcbdet;
-+	u32 dcmdet;
-+	u32 dthi;
-+	u32 dtlo;
-+	u32 det_window;
-+	u32 det_max;
-+	u32 age_config;
-+	u32 age_voffset_in;
-+	u32 agem;
-+	u32 dc_config;
-+	u32 dc_voffset_in;
-+	u32 dvt_fixed;
-+	u32 vco;
-+	u32 chkshift;
-+	u32 svs_temp;
-+	u32 upper_temp_bound;
-+	u32 lower_temp_bound;
-+	u32 low_temp_threashold;
-+	u32 low_temp_offset;
-+	u32 coresel;
-+	u32 opp_count;
-+	u32 intst;
-+	u32 systemclk_en;
-+	u32 sw_id;
-+	u32 bank_id;
-+	u32 ctl0;
-+	u8 *of_compatible;
-+	u8 *name;
-+	u8 *zone_name;
-+	u8 *buck_name;
-+};
-+
-+struct svs_platform {
-+	struct svs_bank *banks;
-+	bool (*efuse_parsing)(struct mtk_svs *svs);
-+	bool fake_efuse;
-+	const u32 *regs;
-+	u32 bank_num;
-+	u32 efuse_num;
-+	u32 efuse_check;
-+	u32 thermal_efuse_num;
-+	u8 *name;
-+};
-+
-+struct mtk_svs {
-+	const struct svs_platform *platform;
-+	struct svs_bank *bank;
-+	struct device *dev;
-+	void __iomem *base;
-+	struct clk *main_clk;
-+	u32 *efuse;
-+	u32 *thermal_efuse;
-+};
-+
-+unsigned long claim_mtk_svs_lock(void)
-+	__acquires(&mtk_svs_lock)
-+{
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&mtk_svs_lock, flags);
-+
-+	return flags;
-+}
-+EXPORT_SYMBOL_GPL(claim_mtk_svs_lock);
-+
-+void release_mtk_svs_lock(unsigned long flags)
-+	__releases(&mtk_svs_lock)
-+{
-+	spin_unlock_irqrestore(&mtk_svs_lock, flags);
-+}
-+EXPORT_SYMBOL_GPL(release_mtk_svs_lock);
-+
-+static u32 percent(u32 numerator, u32 denominator)
-+{
-+	u32 percent;
-+
-+	/* If not divide 1000, "numerator * 100" would be data overflow. */
-+	numerator /= 1000;
-+	denominator /= 1000;
-+	percent = ((numerator * 100) + denominator - 1) / denominator;
-+	percent &= GENMASK(7, 0);
-+
-+	return percent;
-+}
-+
-+static u32 svs_readl(struct mtk_svs *svs, enum reg_index rg_i)
-+{
-+	return readl(svs->base + svs->platform->regs[rg_i]);
-+}
-+
-+static void svs_writel(struct mtk_svs *svs, u32 val, enum reg_index rg_i)
-+{
-+	writel(val, svs->base + svs->platform->regs[rg_i]);
-+}
-+
-+static void svs_switch_bank(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+
-+	svs_writel(svs, svsb->coresel, CORESEL);
-+}
-+
-+static u32 svsb_volt_to_opp_volt(u32 svsb_volt, u32 svsb_volt_step,
-+				 u32 svsb_volt_base)
-+{
-+	u32 u_volt;
-+
-+	u_volt = (svsb_volt * svsb_volt_step) + svsb_volt_base;
-+
-+	return u_volt;
-+}
-+
-+static int svsb_get_zone_temperature(struct svs_bank *svsb, int *zone_temp)
-+{
-+	struct thermal_zone_device *tzd;
-+
-+	tzd = thermal_zone_get_zone_by_name(svsb->zone_name);
-+	if (IS_ERR(tzd))
-+		return PTR_ERR(tzd);
-+
-+	return thermal_zone_get_temp(tzd, zone_temp);
-+}
-+
-+static int svsb_set_volts(struct svs_bank *svsb, bool force_update)
-+{
-+	u32 i, svsb_volt, opp_volt, low_temp_offset = 0;
-+	int zone_temp, ret;
-+
-+	mutex_lock(&svsb->lock);
-+
-+	/*
-+	 * If bank is suspended, it means init02 voltage is applied.
-+	 * Don't need to update opp voltage anymore.
-+	 */
-+	if (svsb->suspended && !force_update) {
-+		pr_notice("%s: bank is suspended\n", svsb->name);
-+		mutex_unlock(&svsb->lock);
-+		return -EPERM;
-+	}
-+
-+	/* Get thermal effect */
-+	if (svsb->phase == SVSB_PHASE_MON) {
-+		if (svsb->svs_temp > svsb->upper_temp_bound &&
-+		    svsb->svs_temp < svsb->lower_temp_bound) {
-+			pr_err("%s: svs_temp is abnormal (0x%x)?\n",
-+			       svsb->name, svsb->svs_temp);
-+			mutex_unlock(&svsb->lock);
-+			return -EINVAL;
-+		}
-+
-+		ret = svsb_get_zone_temperature(svsb, &zone_temp);
-+		if (ret) {
-+			pr_err("%s: cannot get zone \"%s\" temperature(%d)\n",
-+			       svsb->name, svsb->zone_name, ret);
-+			pr_err("%s: add low_temp_offset = %u\n",
-+			       svsb->name, svsb->low_temp_offset);
-+			zone_temp = svsb->low_temp_threashold;
-+		}
-+
-+		if (zone_temp <= svsb->low_temp_threashold)
-+			low_temp_offset = svsb->low_temp_offset;
-+	}
-+
-+	/* vmin <= svsb_volt (opp_volt) <= signed-off voltage */
-+	for (i = 0; i < svsb->opp_count; i++) {
-+		if (svsb->phase == SVSB_PHASE_MON) {
-+			svsb_volt = max((svsb->volts[i] + svsb->volt_offset +
-+					 low_temp_offset), svsb->vmin);
-+			opp_volt = svsb_volt_to_opp_volt(svsb_volt,
-+							 svsb->volt_step,
-+							 svsb->volt_base);
-+		} else if (svsb->phase == SVSB_PHASE_INIT02) {
-+			svsb_volt = max((svsb->init02_volts[i] +
-+					 svsb->volt_offset), svsb->vmin);
-+			opp_volt = svsb_volt_to_opp_volt(svsb_volt,
-+							 svsb->volt_step,
-+							 svsb->volt_base);
-+		} else if (svsb->phase == SVSB_PHASE_ERROR) {
-+			opp_volt = svsb->opp_volts[i];
-+		} else {
-+			pr_err("%s: unknown phase: %u?\n",
-+			       svsb->name, svsb->phase);
-+			mutex_unlock(&svsb->lock);
-+			return -EINVAL;
-+		}
-+
-+		opp_volt = min(opp_volt, svsb->opp_volts[i]);
-+		ret = dev_pm_opp_adjust_voltage(svsb->dev, svsb->opp_freqs[i],
-+						opp_volt, opp_volt,
-+						svsb->opp_volts[i]);
-+		if (ret) {
-+			pr_err("%s: set voltage failed: %d\n", svsb->name, ret);
-+			mutex_unlock(&svsb->lock);
-+			return ret;
-+		}
-+	}
-+
-+	mutex_unlock(&svsb->lock);
-+
-+	return 0;
-+}
-+
-+static u32 interpolate(u32 f0, u32 f1, u32 v0, u32 v1, u32 fx)
-+{
-+	u32 vy;
-+
-+	if (v0 == v1 || f0 == f1)
-+		return v0;
-+
-+	/* *100 to have decimal fraction factor, +99 for rounding up. */
-+	vy = (v0 * 100) - ((((v0 - v1) * 100) / (f0 - f1)) * (f0 - fx));
-+	vy = (vy + 99) / 100;
-+
-+	return vy;
-+}
-+
-+static void svs_get_vops_v2(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+	u32 temp, i;
-+
-+	temp = svs_readl(svs, VOP30);
-+	svsb->volts[6] = (temp >> 24) & GENMASK(7, 0);
-+	svsb->volts[4] = (temp >> 16) & GENMASK(7, 0);
-+	svsb->volts[2] = (temp >> 8)  & GENMASK(7, 0);
-+	svsb->volts[0] = (temp & GENMASK(7, 0));
-+
-+	temp = svs_readl(svs, VOP74);
-+	svsb->volts[14] = (temp >> 24) & GENMASK(7, 0);
-+	svsb->volts[12] = (temp >> 16) & GENMASK(7, 0);
-+	svsb->volts[10] = (temp >> 8)  & GENMASK(7, 0);
-+	svsb->volts[8] = (temp & GENMASK(7, 0));
-+
-+	for (i = 0; i <= 7; i++) {
-+		if (i < 7) {
-+			svsb->volts[(i * 2) + 1] =
-+				interpolate(svsb->freqs_pct[i * 2],
-+					    svsb->freqs_pct[(i + 1) * 2],
-+					    svsb->volts[i * 2],
-+					    svsb->volts[(i + 1) * 2],
-+					    svsb->freqs_pct[(i * 2) + 1]);
-+		} else if (i == 7) {
-+			svsb->volts[(i * 2) + 1] =
-+				interpolate(svsb->freqs_pct[(i - 1) * 2],
-+					    svsb->freqs_pct[i * 2],
-+					    svsb->volts[(i - 1) * 2],
-+					    svsb->volts[i * 2],
-+					    svsb->freqs_pct[(i * 2) + 1]);
-+		}
-+	}
-+}
-+
-+static void svs_set_freqs_pct_v2(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+
-+	svs_writel(svs,
-+		   ((svsb->freqs_pct[6] << 24) & GENMASK(31, 24)) |
-+		   ((svsb->freqs_pct[4] << 16) & GENMASK(23, 16)) |
-+		   ((svsb->freqs_pct[2] << 8) & GENMASK(15, 8)) |
-+		   (svsb->freqs_pct[0] & GENMASK(7, 0)),
-+		   FREQPCT30);
-+	svs_writel(svs,
-+		   ((svsb->freqs_pct[14] << 24) & GENMASK(31, 24)) |
-+		   ((svsb->freqs_pct[12] << 16) & GENMASK(23, 16)) |
-+		   ((svsb->freqs_pct[10] << 8) & GENMASK(15, 8)) |
-+		   ((svsb->freqs_pct[8]) & GENMASK(7, 0)),
-+		   FREQPCT74);
-+}
-+
-+static void svs_set_phase(struct mtk_svs *svs, u32 target_phase)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+	u32 des_char, temp_char, det_char, limit_vals;
-+	u32 init2vals, ts_calcs, val, filter, i;
-+
-+	svs_switch_bank(svs);
-+
-+	des_char = ((svsb->bdes << 8) & GENMASK(15, 8)) |
-+		   (svsb->mdes & GENMASK(7, 0));
-+	svs_writel(svs, des_char, DESCHAR);
-+
-+	temp_char = ((svsb->vco << 16) & GENMASK(23, 16)) |
-+		    ((svsb->mtdes << 8) & GENMASK(15, 8)) |
-+		    (svsb->dvt_fixed & GENMASK(7, 0));
-+	svs_writel(svs, temp_char, TEMPCHAR);
-+
-+	det_char = ((svsb->dcbdet << 8) & GENMASK(15, 8)) |
-+		   (svsb->dcmdet & GENMASK(7, 0));
-+	svs_writel(svs, det_char, DETCHAR);
-+
-+	svs_writel(svs, svsb->dc_config, DCCONFIG);
-+	svs_writel(svs, svsb->age_config, AGECONFIG);
-+
-+	if (svsb->agem == 0x0) {
-+		svs_writel(svs, RUNCONFIG_DEFAULT, RUNCONFIG);
-+	} else {
-+		val = 0x0;
-+
-+		for (i = 0; i < 24; i += 2) {
-+			filter = 0x3 << i;
-+
-+			if ((svsb->age_config & filter) == 0x0)
-+				val |= (0x1 << i);
-+			else
-+				val |= (svsb->age_config & filter);
-+		}
-+		svs_writel(svs, val, RUNCONFIG);
-+	}
-+
-+	svsb->ops->set_freqs_pct(svs);
-+
-+	limit_vals = ((svsb->vmax << 24) & GENMASK(31, 24)) |
-+		     ((svsb->vmin << 16) & GENMASK(23, 16)) |
-+		     ((svsb->dthi << 8) & GENMASK(15, 8)) |
-+		     (svsb->dtlo & GENMASK(7, 0));
-+	svs_writel(svs, limit_vals, LIMITVALS);
-+	svs_writel(svs, (svsb->vboot & GENMASK(7, 0)), VBOOT);
-+	svs_writel(svs, (svsb->det_window & GENMASK(15, 0)), DETWINDOW);
-+	svs_writel(svs, (svsb->det_max & GENMASK(15, 0)), CONFIG);
-+
-+	if (svsb->chkshift != 0)
-+		svs_writel(svs, (svsb->chkshift & GENMASK(7, 0)), CHKSHIFT);
-+
-+	if (svsb->ctl0 != 0)
-+		svs_writel(svs, svsb->ctl0, CTL0);
-+
-+	svs_writel(svs, INTSTS_CLEAN, INTSTS);
-+
-+	switch (target_phase) {
-+	case SVSB_PHASE_INIT01:
-+		svs_writel(svs, INTEN_INIT0x, INTEN);
-+		svs_writel(svs, SVSEN_INIT01, SVSEN);
-+		break;
-+	case SVSB_PHASE_INIT02:
-+		svs_writel(svs, INTEN_INIT0x, INTEN);
-+		init2vals = ((svsb->age_voffset_in << 16) & GENMASK(31, 16)) |
-+			    (svsb->dc_voffset_in & GENMASK(15, 0));
-+		svs_writel(svs, init2vals, INIT2VALS);
-+		svs_writel(svs, SVSEN_INIT02, SVSEN);
-+		break;
-+	case SVSB_PHASE_MON:
-+		ts_calcs = ((svsb->bts << 12) & GENMASK(23, 12)) |
-+			   (svsb->mts & GENMASK(11, 0));
-+		svs_writel(svs, ts_calcs, TSCALCS);
-+		svs_writel(svs, INTEN_MONVOPEN, INTEN);
-+		svs_writel(svs, SVSEN_MON, SVSEN);
-+		break;
-+	default:
-+		WARN_ON(1);
-+		break;
-+	}
-+}
-+
-+static inline void svs_init01_isr_handler(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+	enum reg_index rg_i;
-+
-+	pr_notice("%s: %s: VDN74:0x%08x, VDN30:0x%08x, DCVALUES:0x%08x\n",
-+		  svsb->name, __func__, svs_readl(svs, VDESIGN74),
-+		  svs_readl(svs, VDESIGN30), svs_readl(svs, DCVALUES));
-+
-+	for (rg_i = TEMPMONCTL0; rg_i < reg_num; rg_i++)
-+		svsb->reg_data[SVSB_PHASE_INIT01][rg_i] = svs_readl(svs, rg_i);
-+
-+	svsb->dc_voffset_in = ~(svs_readl(svs, DCVALUES) & GENMASK(15, 0)) + 1;
-+	if (svsb->init01_volt_flag == SVSB_INIT01_VOLT_IGNORE)
-+		svsb->dc_voffset_in = 0;
-+	else if ((svsb->dc_voffset_in & DC_SIGNED_BIT) &&
-+		 (svsb->init01_volt_flag == SVSB_INIT01_VOLT_INC_ONLY))
-+		svsb->dc_voffset_in = 0;
-+
-+	svsb->age_voffset_in = svs_readl(svs, AGEVALUES) & GENMASK(15, 0);
-+
-+	svs_writel(svs, SVSEN_OFF, SVSEN);
-+	svs_writel(svs, INTSTS_COMPLETE, INTSTS);
-+
-+	/* svs init01 clock gating */
-+	svsb->coresel &= ~svsb->systemclk_en;
-+
-+	svsb->phase = SVSB_PHASE_INIT01;
-+	complete(&svsb->init_completion);
-+}
-+
-+static inline void svs_init02_isr_handler(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+	enum reg_index rg_i;
-+
-+	pr_notice("%s: %s: VOP74:0x%08x, VOP30:0x%08x, DCVALUES:0x%08x\n",
-+		  svsb->name, __func__, svs_readl(svs, VOP74),
-+		  svs_readl(svs, VOP30), svs_readl(svs, DCVALUES));
-+
-+	for (rg_i = TEMPMONCTL0; rg_i < reg_num; rg_i++)
-+		svsb->reg_data[SVSB_PHASE_INIT02][rg_i] = svs_readl(svs, rg_i);
-+
-+	svsb->ops->get_vops(svs);
-+	memcpy(svsb->init02_volts, svsb->volts, sizeof(u32) * svsb->opp_count);
-+	svsb->phase = SVSB_PHASE_INIT02;
-+
-+	svs_writel(svs, SVSEN_OFF, SVSEN);
-+	svs_writel(svs, INTSTS_COMPLETE, INTSTS);
-+
-+	complete(&svsb->init_completion);
-+}
-+
-+static inline void svs_mon_mode_isr_handler(struct mtk_svs *svs)
-+{
-+	struct svs_bank *svsb = svs->bank;
-+	enum reg_index rg_i;
-+
-+	for (rg_i = TEMPMONCTL0; rg_i < reg_num; rg_i++)
-+		svsb->reg_data[SVSB_PHASE_MON][rg_i] = svs_readl(svs, rg_i);
-+
-+	svsb->svs_temp = svs_readl(svs, TEMP) & GENMASK(7, 0);
-+
-+	svsb->ops->get_vops(svs);
-+	svsb->phase = SVSB_PHASE_MON;
-+
-+	svs_writel(svs, INTSTS_MONVOP, INTSTS);
-+}
-+
-+static inline void svs_error_isr_handler(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb = svs->bank;
-+	enum reg_index rg_i;
-+
-+	pr_err("%s(): %s(%s)", __func__, svsp->name, svsb->name);
-+	pr_err("CORESEL(0x%x) = 0x%08x\n",
-+	       svsp->regs[CORESEL], svs_readl(svs, CORESEL)),
-+	pr_err("SVSEN(0x%x) = 0x%08x, INTSTS(0x%x) = 0x%08x\n",
-+	       svsp->regs[SVSEN], svs_readl(svs, SVSEN),
-+	       svsp->regs[INTSTS], svs_readl(svs, INTSTS));
-+	pr_err("SMSTATE0(0x%x) = 0x%08x, SMSTATE1(0x%x) = 0x%08x\n",
-+	       svsp->regs[SMSTATE0], svs_readl(svs, SMSTATE0),
-+	       svsp->regs[SMSTATE1], svs_readl(svs, SMSTATE1));
-+
-+	for (rg_i = TEMPMONCTL0; rg_i < reg_num; rg_i++)
-+		svsb->reg_data[SVSB_PHASE_MON][rg_i] = svs_readl(svs, rg_i);
-+
-+	svsb->mode_support = SVSB_MODE_ALL_DISABLE;
-+
-+	if (svsb->phase == SVSB_PHASE_MON)
-+		svsb->phase = SVSB_PHASE_INIT02;
-+
-+	svs_writel(svs, SVSEN_OFF, SVSEN);
-+	svs_writel(svs, INTSTS_CLEAN, INTSTS);
-+}
-+
-+static inline void svs_isr_handler(struct mtk_svs *svs)
-+{
-+	u32 intsts, svsen;
-+
-+	svs_switch_bank(svs);
-+
-+	intsts = svs_readl(svs, INTSTS);
-+	svsen = svs_readl(svs, SVSEN);
-+
-+	if (intsts == INTSTS_COMPLETE &&
-+	    ((svsen & SVSEN_MASK) == SVSEN_INIT01))
-+		svs_init01_isr_handler(svs);
-+	else if ((intsts == INTSTS_COMPLETE) &&
-+		 ((svsen & SVSEN_MASK) == SVSEN_INIT02))
-+		svs_init02_isr_handler(svs);
-+	else if (!!(intsts & INTSTS_MONVOP))
-+		svs_mon_mode_isr_handler(svs);
-+	else
-+		svs_error_isr_handler(svs);
-+}
-+
-+static irqreturn_t svs_isr(int irq, void *data)
-+{
-+	struct mtk_svs *svs = (struct mtk_svs *)data;
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb = NULL;
-+	unsigned long flags;
-+	u32 idx;
-+
-+	flags = claim_mtk_svs_lock();
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svs->bank = svsb;
-+
-+		if (svsb->suspended)
-+			continue;
-+		else if (svsb->intst & svs_readl(svs, INTST))
-+			continue;
-+
-+		svs_isr_handler(svs);
-+		break;
-+	}
-+	release_mtk_svs_lock(flags);
-+
-+	if (svsb->phase != SVSB_PHASE_INIT01)
-+		svsb_set_volts(svsb, false);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static void svs_mon_mode(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	unsigned long flags;
-+	u32 idx;
-+
-+	flags = claim_mtk_svs_lock();
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svs->bank = svsb;
-+
-+		if (!(svsb->mode_support & SVSB_MODE_MON))
-+			continue;
-+
-+		svs_set_phase(svs, SVSB_PHASE_MON);
-+	}
-+	release_mtk_svs_lock(flags);
-+}
-+
-+static int svs_init02(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	unsigned long flags, time_left;
-+	u32 idx;
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svs->bank = svsb;
-+
-+		if (!(svsb->mode_support & SVSB_MODE_INIT02))
-+			continue;
-+
-+		reinit_completion(&svsb->init_completion);
-+		flags = claim_mtk_svs_lock();
-+		svs_set_phase(svs, SVSB_PHASE_INIT02);
-+		release_mtk_svs_lock(flags);
-+		time_left =
-+			wait_for_completion_timeout(&svsb->init_completion,
-+						    msecs_to_jiffies(2000));
-+		if (time_left == 0) {
-+			pr_err("%s: init02 completion timeout\n", svsb->name);
-+			return -EBUSY;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int svs_init01(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	struct pm_qos_request *qos_request;
-+	unsigned long flags, time_left;
-+	bool search_done;
-+	int ret = -EINVAL;
-+	u32 opp_freqs, opp_vboot, buck_volt, idx, i;
-+
-+	qos_request = kzalloc(sizeof(*qos_request), GFP_KERNEL);
-+	if (!qos_request)
-+		return -ENOMEM;
-+
-+	/* Let CPUs leave idle-off state for initializing svs_init01. */
-+	pm_qos_add_request(qos_request, PM_QOS_CPU_DMA_LATENCY, 0);
-+
-+	/*
-+	 * Sometimes two svs banks use the same buck.
-+	 * Therefore, we set each svs bank to vboot voltage first.
-+	 */
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		search_done = false;
-+
-+		if (!(svsb->mode_support & SVSB_MODE_INIT01))
-+			continue;
-+
-+		ret = regulator_set_mode(svsb->buck, REGULATOR_MODE_FAST);
-+		if (ret)
-+			pr_notice("%s: fail to set fast mode: %d\n",
-+				  svsb->name, ret);
-+
-+		if (svsb->mtcmos_request) {
-+			ret = regulator_enable(svsb->buck);
-+			if (ret) {
-+				pr_err("%s: fail to enable %s power: %d\n",
-+				       svsb->name, svsb->buck_name, ret);
-+				goto init01_finish;
-+			}
-+
-+			ret = dev_pm_domain_attach(svsb->dev, false);
-+			if (ret) {
-+				pr_err("%s: attach pm domain fail: %d\n",
-+				       svsb->name, ret);
-+				goto init01_finish;
-+			}
-+
-+			pm_runtime_enable(svsb->dev);
-+			ret = pm_runtime_get_sync(svsb->dev);
-+			if (ret < 0) {
-+				pr_err("%s: turn mtcmos on fail: %d\n",
-+				       svsb->name, ret);
-+				goto init01_finish;
-+			}
-+		}
-+
-+		/*
-+		 * Find the fastest freq that can be run at vboot and
-+		 * fix to that freq until svs_init01 is done.
-+		 */
-+		opp_vboot = svsb_volt_to_opp_volt(svsb->vboot,
-+						  svsb->volt_step,
-+						  svsb->volt_base);
-+
-+		for (i = 0; i < svsb->opp_count; i++) {
-+			opp_freqs = svsb->opp_freqs[i];
-+			if (!search_done && svsb->opp_volts[i] <= opp_vboot) {
-+				ret = dev_pm_opp_adjust_voltage(svsb->dev,
-+								opp_freqs,
-+								opp_vboot,
-+								opp_vboot,
-+								opp_vboot);
-+				if (ret) {
-+					pr_err("%s: set voltage failed: %d\n",
-+					       svsb->name, ret);
-+					goto init01_finish;
-+				}
-+
-+				search_done = true;
-+			} else {
-+				dev_pm_opp_disable(svsb->dev,
-+						   svsb->opp_freqs[i]);
-+			}
-+		}
-+	}
-+
-+	/* svs bank init01 begins */
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svs->bank = svsb;
-+
-+		if (!(svsb->mode_support & SVSB_MODE_INIT01))
-+			continue;
-+
-+		opp_vboot = svsb_volt_to_opp_volt(svsb->vboot,
-+						  svsb->volt_step,
-+						  svsb->volt_base);
-+
-+		buck_volt = regulator_get_voltage(svsb->buck);
-+		if (buck_volt != opp_vboot) {
-+			pr_err("%s: buck voltage: %u, expected vboot: %u\n",
-+			       svsb->name, buck_volt, opp_vboot);
-+			ret = -EPERM;
-+			goto init01_finish;
-+		}
-+
-+		init_completion(&svsb->init_completion);
-+		flags = claim_mtk_svs_lock();
-+		svs_set_phase(svs, SVSB_PHASE_INIT01);
-+		release_mtk_svs_lock(flags);
-+		time_left =
-+			wait_for_completion_timeout(&svsb->init_completion,
-+						    msecs_to_jiffies(2000));
-+		if (time_left == 0) {
-+			pr_err("%s: init01 completion timeout\n", svsb->name);
-+			ret = -EBUSY;
-+			goto init01_finish;
-+		}
-+	}
-+
-+init01_finish:
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+
-+		if (!(svsb->mode_support & SVSB_MODE_INIT01))
-+			continue;
-+
-+		for (i = 0; i < svsb->opp_count; i++)
-+			dev_pm_opp_enable(svsb->dev, svsb->opp_freqs[i]);
-+
-+		if (regulator_set_mode(svsb->buck, REGULATOR_MODE_NORMAL))
-+			pr_notice("%s: fail to set normal mode: %d\n",
-+				  svsb->name, ret);
-+
-+		if (svsb->mtcmos_request) {
-+			if (pm_runtime_put_sync(svsb->dev))
-+				pr_err("%s: turn mtcmos off fail: %d\n",
-+				       svsb->name, ret);
-+			pm_runtime_disable(svsb->dev);
-+			dev_pm_domain_detach(svsb->dev, 0);
-+			if (regulator_disable(svsb->buck))
-+				pr_err("%s: fail to disable %s power: %d\n",
-+				       svsb->name, svsb->buck_name, ret);
-+		}
-+	}
-+
-+	pm_qos_remove_request(qos_request);
-+	kfree(qos_request);
-+
-+	return ret;
-+}
-+
-+static int svs_start(struct mtk_svs *svs)
-+{
-+	int ret;
-+
-+	ret = svs_init01(svs);
-+	if (ret)
-+		return ret;
-+
-+	ret = svs_init02(svs);
-+	if (ret)
-+		return ret;
-+
-+	svs_mon_mode(svs);
-+
-+	return ret;
-+}
-+
-+static bool svs_mt8183_efuse_parsing(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct thermal_parameter tp;
-+	struct svs_bank *svsb;
-+	bool mon_mode_support = true;
-+	int format[6], x_roomt[6], tb_roomt = 0;
-+	u32 idx, i, ft_pgm, mts, temp0, temp1, temp2;
-+
-+	if (svsp->fake_efuse) {
-+		pr_notice("fake efuse\n");
-+		svs->efuse[0] = 0x00310080;
-+		svs->efuse[1] = 0xabfbf757;
-+		svs->efuse[2] = 0x47c747c7;
-+		svs->efuse[3] = 0xabfbf757;
-+		svs->efuse[4] = 0xe7fca0ec;
-+		svs->efuse[5] = 0x47bf4b88;
-+		svs->efuse[6] = 0xabfb8fa5;
-+		svs->efuse[7] = 0xabfb217b;
-+		svs->efuse[8] = 0x4bf34be1;
-+		svs->efuse[9] = 0xabfb670d;
-+		svs->efuse[16] = 0xabfbc653;
-+		svs->efuse[17] = 0x47f347e1;
-+		svs->efuse[18] = 0xabfbd848;
-+
-+		svs->thermal_efuse[0] = 0x02873f69;
-+		svs->thermal_efuse[1] = 0xa11d9142;
-+		svs->thermal_efuse[2] = 0xa2526900;
-+	}
-+
-+	for (i = 0; i < svsp->efuse_num; i++) {
-+		if (svs->efuse[i])
-+			pr_notice("M_HW_RES%d: 0x%08x\n", i, svs->efuse[i]);
-+	}
-+
-+	/* svs efuse parsing */
-+	ft_pgm = (svs->efuse[0] >> 4) & 0xf;
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		if (ft_pgm <= 1)
-+			svsb->init01_volt_flag = SVSB_INIT01_VOLT_IGNORE;
-+
-+		switch (svsb->sw_id) {
-+		case SVS_CPU_LITTLE:
-+			svsb->bdes = svs->efuse[16] & GENMASK(7, 0);
-+			svsb->mdes = (svs->efuse[16] >> 8) & GENMASK(7, 0);
-+			svsb->dcbdet = (svs->efuse[16] >> 16) & GENMASK(7, 0);
-+			svsb->dcmdet = (svs->efuse[16] >> 24) & GENMASK(7, 0);
-+			svsb->mtdes  = (svs->efuse[17] >> 16) & GENMASK(7, 0);
-+
-+			if (ft_pgm <= 3)
-+				svsb->volt_offset += 10;
-+			else
-+				svsb->volt_offset += 2;
-+			break;
-+		case SVS_CPU_BIG:
-+			svsb->bdes = svs->efuse[18] & GENMASK(7, 0);
-+			svsb->mdes = (svs->efuse[18] >> 8) & GENMASK(7, 0);
-+			svsb->dcbdet = (svs->efuse[18] >> 16) & GENMASK(7, 0);
-+			svsb->dcmdet = (svs->efuse[18] >> 24) & GENMASK(7, 0);
-+			svsb->mtdes  = svs->efuse[17] & GENMASK(7, 0);
-+
-+			if (ft_pgm <= 3)
-+				svsb->volt_offset += 15;
-+			else
-+				svsb->volt_offset += 12;
-+			break;
-+		case SVS_CCI:
-+			svsb->bdes = svs->efuse[4] & GENMASK(7, 0);
-+			svsb->mdes = (svs->efuse[4] >> 8) & GENMASK(7, 0);
-+			svsb->dcbdet = (svs->efuse[4] >> 16) & GENMASK(7, 0);
-+			svsb->dcmdet = (svs->efuse[4] >> 24) & GENMASK(7, 0);
-+			svsb->mtdes  = (svs->efuse[5] >> 16) & GENMASK(7, 0);
-+
-+			if (ft_pgm <= 3)
-+				svsb->volt_offset += 10;
-+			else
-+				svsb->volt_offset += 2;
-+			break;
-+		case SVS_GPU:
-+			svsb->bdes = svs->efuse[6] & GENMASK(7, 0);
-+			svsb->mdes = (svs->efuse[6] >> 8) & GENMASK(7, 0);
-+			svsb->dcbdet = (svs->efuse[6] >> 16) & GENMASK(7, 0);
-+			svsb->dcmdet = (svs->efuse[6] >> 24) & GENMASK(7, 0);
-+			svsb->mtdes  = svs->efuse[5] & GENMASK(7, 0);
-+
-+			if (ft_pgm >= 2) {
-+				svsb->freq_base = 800000000; /* 800MHz */
-+				svsb->dvt_fixed = 2;
-+			}
-+			break;
-+		default:
-+			break;
-+		}
-+	}
-+
-+	/* Thermal efuse parsing */
-+	if (!svs->thermal_efuse)
-+		return true;
-+
-+	tp.adc_ge_t = (svs->thermal_efuse[1] >> 22) & GENMASK(9, 0);
-+	tp.adc_oe_t = (svs->thermal_efuse[1] >> 12) & GENMASK(9, 0);
-+
-+	tp.o_vtsmcu1 = (svs->thermal_efuse[0] >> 17) & GENMASK(8, 0);
-+	tp.o_vtsmcu2 = (svs->thermal_efuse[0] >> 8) & GENMASK(8, 0);
-+	tp.o_vtsmcu3 = svs->thermal_efuse[1] & GENMASK(8, 0);
-+	tp.o_vtsmcu4 = (svs->thermal_efuse[2] >> 23) & GENMASK(8, 0);
-+	tp.o_vtsmcu5 = (svs->thermal_efuse[2] >> 5) & GENMASK(8, 0);
-+	tp.o_vtsabb = (svs->thermal_efuse[2] >> 14) & GENMASK(8, 0);
-+
-+	tp.degc_cali = (svs->thermal_efuse[0] >> 1) & GENMASK(5, 0);
-+	tp.adc_cali_en_t = svs->thermal_efuse[0] & BIT(0);
-+	tp.o_slope_sign = (svs->thermal_efuse[0] >> 7) & BIT(0);
-+
-+	tp.ts_id = (svs->thermal_efuse[1] >> 9) & BIT(0);
-+	tp.o_slope = (svs->thermal_efuse[0] >> 26) & GENMASK(5, 0);
-+
-+	if (tp.adc_cali_en_t == 1) {
-+		if (tp.ts_id == 0)
-+			tp.o_slope = 0;
-+
-+		if ((tp.adc_ge_t < 265 || tp.adc_ge_t > 758) ||
-+		    (tp.adc_oe_t < 265 || tp.adc_oe_t > 758) ||
-+		    (tp.o_vtsmcu1 < -8 || tp.o_vtsmcu1 > 484) ||
-+		    (tp.o_vtsmcu2 < -8 || tp.o_vtsmcu2 > 484) ||
-+		    (tp.o_vtsmcu3 < -8 || tp.o_vtsmcu3 > 484) ||
-+		    (tp.o_vtsmcu4 < -8 || tp.o_vtsmcu4 > 484) ||
-+		    (tp.o_vtsmcu5 < -8 || tp.o_vtsmcu5 > 484) ||
-+		    (tp.o_vtsabb < -8 || tp.o_vtsabb > 484) ||
-+		    (tp.degc_cali < 1 || tp.degc_cali > 63)) {
-+			pr_err("bad thermal efuse data. disable mon mode\n");
-+			mon_mode_support = false;
-+		}
-+	} else {
-+		pr_err("no thermal efuse data. disable mon mode\n");
-+		mon_mode_support = false;
-+	}
-+
-+	if (!mon_mode_support) {
-+		for (idx = 0; idx < svsp->bank_num; idx++) {
-+			svsb = &svsp->banks[idx];
-+			svsb->mode_support &= ~SVSB_MODE_MON;
-+		}
-+
-+		return true;
-+	}
-+
-+	tp.ge = ((tp.adc_ge_t - 512) * 10000) / 4096;
-+	tp.oe = (tp.adc_oe_t - 512);
-+	tp.gain = (10000 + tp.ge);
-+
-+	format[0] = (tp.o_vtsmcu1 + 3350 - tp.oe);
-+	format[1] = (tp.o_vtsmcu2 + 3350 - tp.oe);
-+	format[2] = (tp.o_vtsmcu3 + 3350 - tp.oe);
-+	format[3] = (tp.o_vtsmcu4 + 3350 - tp.oe);
-+	format[4] = (tp.o_vtsmcu5 + 3350 - tp.oe);
-+	format[5] = (tp.o_vtsabb + 3350 - tp.oe);
-+
-+	for (i = 0; i < 6; i++)
-+		x_roomt[i] = (((format[i] * 10000) / 4096) * 10000) / tp.gain;
-+
-+	temp0 = (10000 * 100000 / tp.gain) * 15 / 18;
-+
-+	if (tp.o_slope_sign == 0)
-+		mts = (temp0 * 10) / (1534 + tp.o_slope * 10);
-+	else
-+		mts = (temp0 * 10) / (1534 - tp.o_slope * 10);
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svsb->mts = mts;
-+
-+		switch (svsb->sw_id) {
-+		case SVS_CPU_LITTLE:
-+			tb_roomt = x_roomt[3];
-+			break;
-+		case SVS_CPU_BIG:
-+			tb_roomt = x_roomt[4];
-+			break;
-+		case SVS_CCI:
-+			tb_roomt = x_roomt[3];
-+			break;
-+		case SVS_GPU:
-+			tb_roomt = x_roomt[1];
-+			break;
-+		default:
-+			break;
-+		}
-+
-+		temp0 = (tp.degc_cali * 10 / 2);
-+		temp1 = ((10000 * 100000 / 4096 / tp.gain) *
-+			 tp.oe + tb_roomt * 10) * 15 / 18;
-+
-+		if (tp.o_slope_sign == 0)
-+			temp2 = temp1 * 100 / (1534 + tp.o_slope * 10);
-+		else
-+			temp2 = temp1 * 100 / (1534 - tp.o_slope * 10);
-+
-+		svsb->bts = (temp0 + temp2 - 250) * 4 / 10;
-+	}
-+
-+	return true;
-+}
-+
-+static bool svs_is_supported(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	struct nvmem_cell *cell;
-+	size_t len;
-+	bool ret;
-+	u32 idx;
-+
-+	if (svsp->fake_efuse) {
-+		len = svsp->efuse_num * 4;
-+		svs->efuse = devm_kzalloc(svs->dev, len, GFP_KERNEL);
-+		if (!svs->efuse) {
-+			pr_err("no memory for allocating svs_efuse\n");
-+			return false;
-+		}
-+
-+		len = svsp->thermal_efuse_num * 4;
-+		svs->thermal_efuse = devm_kzalloc(svs->dev, len, GFP_KERNEL);
-+		if (!svs->thermal_efuse) {
-+			pr_err("no memory for allocating svs_thermal_efuse\n");
-+			return false;
-+		}
-+
-+		goto svsp_efuse_parsing;
-+	}
-+
-+	/* Get svs efuse by nvmem */
-+	cell = nvmem_cell_get(svs->dev, "svs-calibration-data");
-+	if (IS_ERR(cell)) {
-+		pr_err("no \"svs-calibration-data\" from dts? disable svs\n");
-+		return false;
-+	}
-+
-+	svs->efuse = (u32 *)nvmem_cell_read(cell, &len);
-+	nvmem_cell_put(cell);
-+
-+	if (svs->efuse[svsp->efuse_check] == 0) {
-+		pr_err("svs_efuse[%u] is empty\n", svsp->efuse_check);
-+		return false;
-+	}
-+
-+	/* Get thermal efuse by nvmem */
-+	cell = nvmem_cell_get(svs->dev, "calibration-data");
-+	if (IS_ERR(cell)) {
-+		pr_err("no \"calibration-data\" from dts? disable mon mode\n");
-+		svs->thermal_efuse = NULL;
-+		for (idx = 0; idx < svsp->bank_num; idx++) {
-+			svsb = &svsp->banks[idx];
-+			svsb->mode_support &= ~SVSB_MODE_MON;
-+		}
-+		goto svsp_efuse_parsing;
-+	}
-+
-+	svs->thermal_efuse = (u32 *)nvmem_cell_read(cell, &len);
-+	nvmem_cell_put(cell);
-+
-+svsp_efuse_parsing:
-+	ret = svsp->efuse_parsing(svs);
-+
-+	return ret;
-+}
-+
-+static int svs_resource_setup(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	struct platform_device *pdev;
-+	struct device_node *np = NULL;
-+	struct dev_pm_opp *opp;
-+	unsigned long freq;
-+	int count, ret;
-+	u32 idx, i;
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+
-+		switch (svsb->sw_id) {
-+		case SVS_CPU_LITTLE:
-+			svsb->name = "SVS_CPU_LITTLE";
-+			break;
-+		case SVS_CPU_BIG:
-+			svsb->name = "SVS_CPU_BIG";
-+			break;
-+		case SVS_CCI:
-+			svsb->name = "SVS_CCI";
-+			break;
-+		case SVS_GPU:
-+			svsb->name = "SVS_GPU";
-+			break;
-+		default:
-+			WARN_ON(1);
-+			return -EINVAL;
-+		}
-+
-+		/* Add svs bank device for opp-table/mtcmos/buck control */
-+		pdev = platform_device_alloc(svsb->name, 0);
-+		if (!pdev) {
-+			pr_err("%s: fail to alloc pdev for svs_bank\n",
-+			       svsb->name);
-+			return -ENOMEM;
-+		}
-+
-+		for_each_child_of_node(svs->dev->of_node, np) {
-+			if (of_device_is_compatible(np, svsb->of_compatible)) {
-+				pdev->dev.of_node = np;
-+				break;
-+			}
-+		}
-+
-+		ret = platform_device_add(pdev);
-+		if (ret) {
-+			pr_err("%s: fail to add svs_bank device: %d\n",
-+			       svsb->name, ret);
-+			return ret;
-+		}
-+
-+		svsb->dev = &pdev->dev;
-+		dev_set_drvdata(svsb->dev, svs);
-+		ret = dev_pm_opp_of_add_table(svsb->dev);
-+		if (ret) {
-+			pr_err("%s: fail to add opp table: %d\n",
-+			       svsb->name, ret);
-+			return ret;
-+		}
-+
-+		mutex_init(&svsb->lock);
-+
-+		svsb->buck = devm_regulator_get_optional(svsb->dev,
-+							 svsb->buck_name);
-+		if (IS_ERR(svsb->buck)) {
-+			pr_err("%s: cannot get regulator \"%s-supply\"\n",
-+			       svsb->name, svsb->buck_name);
-+			return PTR_ERR(svsb->buck);
-+		}
-+
-+		count = dev_pm_opp_get_opp_count(svsb->dev);
-+		if (svsb->opp_count != count) {
-+			pr_err("%s: opp_count not \"%u\" but get \"%d\"?\n",
-+			       svsb->name, svsb->opp_count, count);
-+			return count;
-+		}
-+
-+		for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
-+			opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
-+			if (IS_ERR(opp)) {
-+				pr_err("%s: error opp entry!!, err = %ld\n",
-+				       svsb->name, PTR_ERR(opp));
-+				return PTR_ERR(opp);
-+			}
-+
-+			svsb->opp_freqs[i] = freq;
-+			svsb->opp_volts[i] = dev_pm_opp_get_voltage(opp);
-+			svsb->freqs_pct[i] = percent(svsb->opp_freqs[i],
-+						     svsb->freq_base);
-+			dev_pm_opp_put(opp);
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int svs_suspend(struct device *dev)
-+{
-+	struct mtk_svs *svs = dev_get_drvdata(dev);
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	unsigned long flags;
-+	u32 idx;
-+
-+	/* Wait if there is processing svs_isr(). Suspend all banks. */
-+	flags = claim_mtk_svs_lock();
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svs->bank = svsb;
-+		svs_switch_bank(svs);
-+		svs_writel(svs, SVSEN_OFF, SVSEN);
-+		svs_writel(svs, INTSTS_CLEAN, INTSTS);
-+		svsb->suspended = true;
-+	}
-+	release_mtk_svs_lock(flags);
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		if (svsb->phase == SVSB_PHASE_MON) {
-+			svsb->phase = SVSB_PHASE_INIT02;
-+			svsb_set_volts(svsb, true);
-+		}
-+	}
-+
-+	clk_disable_unprepare(svs->main_clk);
-+
-+	return 0;
-+}
-+
-+static int svs_resume(struct device *dev)
-+{
-+	struct mtk_svs *svs = dev_get_drvdata(dev);
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	int ret;
-+	u32 idx;
-+
-+	ret = clk_prepare_enable(svs->main_clk);
-+	if (ret)
-+		pr_err("%s(): cannot enable main_clk\n", __func__);
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+		svsb->suspended = false;
-+	}
-+
-+	ret = svs_init02(svs);
-+	if (ret)
-+		return ret;
-+
-+	svs_mon_mode(svs);
-+
-+	return 0;
-+}
-+
-+static int svs_debug_proc_show(struct seq_file *m, void *v)
-+{
-+	struct svs_bank *svsb = (struct svs_bank *)m->private;
-+
-+	if (svsb->phase == SVSB_PHASE_INIT01)
-+		seq_puts(m, "init1\n");
-+	else if (svsb->phase == SVSB_PHASE_INIT02)
-+		seq_puts(m, "init2\n");
-+	else if (svsb->phase == SVSB_PHASE_MON)
-+		seq_puts(m, "mon mode\n");
-+	else if (svsb->phase == SVSB_PHASE_ERROR)
-+		seq_puts(m, "disabled\n");
-+	else
-+		seq_puts(m, "unknown\n");
-+
-+	return 0;
-+}
-+
-+static ssize_t svs_debug_proc_write(struct file *file,
-+				    const char __user *buffer,
-+				    size_t count, loff_t *pos)
-+{
-+	struct svs_bank *svsb = (struct svs_bank *)PDE_DATA(file_inode(file));
-+	struct mtk_svs *svs = dev_get_drvdata(svsb->dev);
-+	char *buf = (char *)__get_free_page(GFP_USER);
-+	unsigned long flags;
-+	int enabled, ret;
-+
-+	if (svsb->phase == SVSB_PHASE_ERROR)
-+		return count;
-+
-+	if (!buf)
-+		return -ENOMEM;
-+
-+	if (count >= PAGE_SIZE) {
-+		free_page((unsigned long)buf);
-+		return -EINVAL;
-+	}
-+
-+	if (copy_from_user(buf, buffer, count)) {
-+		free_page((unsigned long)buf);
-+		return -EFAULT;
-+	}
-+
-+	buf[count] = '\0';
-+
-+	ret = kstrtoint(buf, 10, &enabled);
-+	if (ret)
-+		return ret;
-+
-+	if (!enabled) {
-+		flags = claim_mtk_svs_lock();
-+		svs->bank = svsb;
-+		svsb->mode_support = SVSB_MODE_ALL_DISABLE;
-+		svs_switch_bank(svs);
-+		svs_writel(svs, SVSEN_OFF, SVSEN);
-+		svs_writel(svs, INTSTS_CLEAN, INTSTS);
-+		release_mtk_svs_lock(flags);
-+	}
-+
-+	svsb->phase = SVSB_PHASE_ERROR;
-+	svsb_set_volts(svsb, true);
-+
-+	return count;
-+}
-+
-+proc_fops_rw(svs_debug);
-+
-+static int svs_dump_proc_show(struct seq_file *m, void *v)
-+{
-+	struct mtk_svs *svs = (struct mtk_svs *)m->private;
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	unsigned long svs_reg_addr;
-+	u32 idx, i, j;
-+
-+	for (i = 0; i < svsp->efuse_num; i++) {
-+		if (svs->efuse[i])
-+			seq_printf(m, "M_HW_RES%d = 0x%08x\n",
-+				   i, svs->efuse[i]);
-+	}
-+
-+	for (i = 0; i < svsp->thermal_efuse_num; i++) {
-+		if (svs->thermal_efuse && svs->thermal_efuse[i])
-+			seq_printf(m, "THERMAL_EFUSE%d = 0x%08x\n",
-+				   i, svs->thermal_efuse[i]);
-+	}
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+
-+		for (i = SVSB_PHASE_INIT01; i <= SVSB_PHASE_MON; i++) {
-+			seq_printf(m, "Bank_number = %u\n", svsb->bank_id);
-+
-+			if (i < SVSB_PHASE_MON)
-+				seq_printf(m, "mode = init%d\n", i + 1);
-+			else
-+				seq_puts(m, "mode = mon\n");
-+
-+			for (j = TEMPMONCTL0; j < reg_num; j++) {
-+				svs_reg_addr = (unsigned long)(svs->base +
-+							       svsp->regs[j]);
-+				seq_printf(m, "0x%08lx = 0x%08x\n",
-+					   svs_reg_addr, svsb->reg_data[i][j]);
-+			}
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+proc_fops_ro(svs_dump);
-+
-+static int svs_status_proc_show(struct seq_file *m, void *v)
-+{
-+	struct svs_bank *svsb = (struct svs_bank *)m->private;
-+	struct dev_pm_opp *opp;
-+	unsigned long freq;
-+	int zone_temp, ret;
-+	u32 i;
-+
-+	ret = svsb_get_zone_temperature(svsb, &zone_temp);
-+	if (ret)
-+		seq_printf(m, "%s: cannot get zone \"%s\" temperature\n",
-+			   svsb->name, svsb->zone_name);
-+	else
-+		seq_printf(m, "%s: temperature = %d\n", svsb->name, zone_temp);
-+
-+	for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
-+		opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
-+		if (IS_ERR(opp)) {
-+			seq_printf(m, "%s: error opp entry!!, err = %ld\n",
-+				   svsb->name, PTR_ERR(opp));
-+			return PTR_ERR(opp);
-+		}
-+
-+		seq_printf(m, "opp_freqs[%02u]: %lu, volts[%02u]: %lu, ",
-+			   i, freq, i, dev_pm_opp_get_voltage(opp));
-+		seq_printf(m, "svsb_volts[%02u]: 0x%x, freqs_pct[%02u]: %u\n",
-+			   i, svsb->volts[i], i, svsb->freqs_pct[i]);
-+		dev_pm_opp_put(opp);
-+	}
-+
-+	return 0;
-+}
-+
-+proc_fops_ro(svs_status);
-+
-+static int svs_volt_offset_proc_show(struct seq_file *m, void *v)
-+{
-+	struct svs_bank *svsb = (struct svs_bank *)m->private;
-+
-+	seq_printf(m, "%d\n", svsb->volt_offset);
-+
-+	return 0;
-+}
-+
-+static ssize_t svs_volt_offset_proc_write(struct file *file,
-+					  const char __user *buffer,
-+					  size_t count, loff_t *pos)
-+{
-+	struct svs_bank *svsb = (struct svs_bank *)PDE_DATA(file_inode(file));
-+	char *buf = (char *)__get_free_page(GFP_USER);
-+	int ret, volt_offset;
-+
-+	if (!buf)
-+		return -ENOMEM;
-+
-+	if (count >= PAGE_SIZE) {
-+		free_page((unsigned long)buf);
-+		return -EINVAL;
-+	}
-+
-+	if (copy_from_user(buf, buffer, count)) {
-+		free_page((unsigned long)buf);
-+		return -EFAULT;
-+	}
-+
-+	buf[count] = '\0';
-+
-+	if (!kstrtoint(buf, 10, &volt_offset)) {
-+		svsb->volt_offset = volt_offset;
-+		ret = svsb_set_volts(svsb, true);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return count;
-+}
-+
-+proc_fops_rw(svs_volt_offset);
-+
-+static int svs_create_svs_procfs(struct mtk_svs *svs)
-+{
-+	const struct svs_platform *svsp = svs->platform;
-+	struct svs_bank *svsb;
-+	struct proc_dir_entry *svs_dir, *bank_dir;
-+	u32 idx, i;
-+
-+	struct pentry {
-+		const char *name;
-+		const struct file_operations *fops;
-+	};
-+
-+	struct pentry svs_entries[] = {
-+		proc_entry(svs_dump),
-+	};
-+
-+	struct pentry bank_entries[] = {
-+		proc_entry(svs_debug),
-+		proc_entry(svs_status),
-+		proc_entry(svs_volt_offset),
-+	};
-+
-+	svs_dir = proc_mkdir("svs", NULL);
-+	if (!svs_dir) {
-+		pr_err("mkdir /proc/svs failed\n");
-+		return -EPERM;
-+	}
-+
-+	for (i = 0; i < ARRAY_SIZE(svs_entries); i++) {
-+		if (!proc_create_data(svs_entries[i].name, 0664,
-+				      svs_dir, svs_entries[i].fops, svs)) {
-+			pr_err("create /proc/svs/%s failed\n",
-+			       svs_entries[i].name);
-+			return -EPERM;
-+		}
-+	}
-+
-+	for (idx = 0; idx < svsp->bank_num; idx++) {
-+		svsb = &svsp->banks[idx];
-+
-+		if (svsb->mode_support == SVSB_MODE_ALL_DISABLE)
-+			continue;
-+
-+		bank_dir = proc_mkdir(svsb->name, svs_dir);
-+		if (!bank_dir) {
-+			pr_err("mkdir /proc/svs/%s failed\n", svsb->name);
-+			return -EPERM;
-+		}
-+
-+		for (i = 0; i < ARRAY_SIZE(bank_entries); i++) {
-+			if (!proc_create_data(bank_entries[i].name, 0664,
-+					      bank_dir, bank_entries[i].fops,
-+					      svsb)) {
-+				pr_err("create /proc/svs/%s/%s failed\n",
-+				       svsb->name, bank_entries[i].name);
-+				return -EPERM;
-+			}
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static struct svs_bank_ops svs_mt8183_banks_ops = {
-+	.set_freqs_pct	= svs_set_freqs_pct_v2,
-+	.get_vops	= svs_get_vops_v2,
-+};
-+
-+static struct svs_bank svs_mt8183_banks[4] = {
-+	{
-+		.of_compatible		= "mediatek,mt8183-svs-cpu-little",
-+		.sw_id			= SVS_CPU_LITTLE,
-+		.bank_id		= 0,
-+		.ops			= &svs_mt8183_banks_ops,
-+		.zone_name		= "tzts4",
-+		.buck_name		= "vcpu-little",
-+		.mtcmos_request		= false,
-+		.init01_volt_flag	= SVSB_INIT01_VOLT_INC_ONLY,
-+		.mode_support		= SVSB_MODE_INIT01 | SVSB_MODE_INIT02,
-+		.opp_count		= 16,
-+		.freq_base		= 1989000000,
-+		.vboot			= 0x30,
-+		.volt_step		= 6250,
-+		.volt_base		= 500000,
-+		.volt_offset		= 0,
-+		.vmax			= 0x64,
-+		.vmin			= 0x18,
-+		.dthi			= 0x1,
-+		.dtlo			= 0xfe,
-+		.det_window		= 0xa28,
-+		.det_max		= 0xffff,
-+		.age_config		= 0x555555,
-+		.agem			= 0x0,
-+		.dc_config		= 0x555555,
-+		.dvt_fixed		= 0x7,
-+		.vco			= 0x10,
-+		.chkshift		= 0x77,
-+		.upper_temp_bound	= 0x64,
-+		.lower_temp_bound	= 0xb2,
-+		.low_temp_threashold	= 25000,
-+		.low_temp_offset	= 0,
-+		.coresel		= 0x8fff0000,
-+		.systemclk_en		= BIT(31),
-+		.intst			= BIT(0),
-+		.ctl0			= 0x00010001,
-+	},
-+	{
-+		.of_compatible		= "mediatek,mt8183-svs-cpu-big",
-+		.sw_id			= SVS_CPU_BIG,
-+		.bank_id		= 1,
-+		.ops			= &svs_mt8183_banks_ops,
-+		.zone_name		= "tzts5",
-+		.buck_name		= "vcpu-big",
-+		.mtcmos_request		= false,
-+		.init01_volt_flag	= SVSB_INIT01_VOLT_INC_ONLY,
-+		.mode_support		= SVSB_MODE_INIT01 | SVSB_MODE_INIT02,
-+		.opp_count		= 16,
-+		.freq_base		= 1989000000,
-+		.vboot			= 0x30,
-+		.volt_step		= 6250,
-+		.volt_base		= 500000,
-+		.volt_offset		= 0,
-+		.vmax			= 0x58,
-+		.vmin			= 0x10,
-+		.dthi			= 0x1,
-+		.dtlo			= 0xfe,
-+		.det_window		= 0xa28,
-+		.det_max		= 0xffff,
-+		.age_config		= 0x555555,
-+		.agem			= 0x0,
-+		.dc_config		= 0x555555,
-+		.dvt_fixed		= 0x7,
-+		.vco			= 0x10,
-+		.chkshift		= 0x77,
-+		.upper_temp_bound	= 0x64,
-+		.lower_temp_bound	= 0xb2,
-+		.low_temp_threashold	= 25000,
-+		.low_temp_offset	= 0,
-+		.coresel		= 0x8fff0001,
-+		.systemclk_en		= BIT(31),
-+		.intst			= BIT(1),
-+		.ctl0			= 0x00000001,
-+	},
-+	{
-+		.of_compatible		= "mediatek,mt8183-svs-cci",
-+		.sw_id			= SVS_CCI,
-+		.bank_id		= 2,
-+		.ops			= &svs_mt8183_banks_ops,
-+		.zone_name		= "tzts4",
-+		.buck_name		= "vcci",
-+		.mtcmos_request		= false,
-+		.init01_volt_flag	= SVSB_INIT01_VOLT_INC_ONLY,
-+		.mode_support		= SVSB_MODE_INIT01 | SVSB_MODE_INIT02,
-+		.opp_count		= 16,
-+		.freq_base		= 1196000000,
-+		.vboot			= 0x30,
-+		.volt_step		= 6250,
-+		.volt_base		= 500000,
-+		.volt_offset		= 0,
-+		.vmax			= 0x64,
-+		.vmin			= 0x18,
-+		.dthi			= 0x1,
-+		.dtlo			= 0xfe,
-+		.det_window		= 0xa28,
-+		.det_max		= 0xffff,
-+		.age_config		= 0x555555,
-+		.agem			= 0x0,
-+		.dc_config		= 0x555555,
-+		.dvt_fixed		= 0x7,
-+		.vco			= 0x10,
-+		.chkshift		= 0x77,
-+		.upper_temp_bound	= 0x64,
-+		.lower_temp_bound	= 0xb2,
-+		.low_temp_threashold	= 25000,
-+		.low_temp_offset	= 0,
-+		.coresel		= 0x8fff0002,
-+		.systemclk_en		= BIT(31),
-+		.intst			= BIT(2),
-+		.ctl0			= 0x00100003,
-+	},
-+	{
-+		.of_compatible		= "mediatek,mt8183-svs-gpu",
-+		.sw_id			= SVS_GPU,
-+		.bank_id		= 3,
-+		.ops			= &svs_mt8183_banks_ops,
-+		.zone_name		= "tzts2",
-+		.buck_name		= "vgpu",
-+		.mtcmos_request		= true,
-+		.init01_volt_flag	= SVSB_INIT01_VOLT_INC_ONLY,
-+		.mode_support		= SVSB_MODE_INIT01 | SVSB_MODE_INIT02 |
-+					  SVSB_MODE_MON,
-+		.opp_count		= 16,
-+		.freq_base		= 900000000,
-+		.vboot			= 0x30,
-+		.volt_step		= 6250,
-+		.volt_base		= 500000,
-+		.volt_offset		= 0,
-+		.vmax			= 0x40,
-+		.vmin			= 0x14,
-+		.dthi			= 0x1,
-+		.dtlo			= 0xfe,
-+		.det_window		= 0xa28,
-+		.det_max		= 0xffff,
-+		.age_config		= 0x555555,
-+		.agem			= 0x0,
-+		.dc_config		= 0x555555,
-+		.dvt_fixed		= 0x3,
-+		.vco			= 0x10,
-+		.chkshift		= 0x77,
-+		.upper_temp_bound	= 0x64,
-+		.lower_temp_bound	= 0xb2,
-+		.low_temp_threashold	= 25000,
-+		.low_temp_offset	= 3,
-+		.coresel		= 0x8fff0003,
-+		.systemclk_en		= BIT(31),
-+		.intst			= BIT(3),
-+		.ctl0			= 0x00050001,
-+	},
-+};
-+
-+static const struct svs_platform svs_mt8183_platform = {
-+	.name		= "mt8183-svs",
-+	.banks		= svs_mt8183_banks,
-+	.efuse_parsing	= svs_mt8183_efuse_parsing,
-+	.regs		= svs_regs_v2,
-+	.fake_efuse	= false,
-+	.bank_num	= 4,
-+	.efuse_num	= 25,
-+	.efuse_check	= 2,
-+	.thermal_efuse_num = 3,
-+};
-+
-+static const struct of_device_id mtk_svs_of_match[] = {
-+	{
-+		.compatible = "mediatek,mt8183-svs",
-+		.data = &svs_mt8183_platform,
-+	}, {
-+		/* Sentinel */
-+	},
-+};
-+
-+static int svs_probe(struct platform_device *pdev)
-+{
-+	const struct of_device_id *of_dev_id;
-+	struct mtk_svs *svs;
-+	int ret;
-+	u32 svs_irq;
-+
-+	svs = devm_kzalloc(&pdev->dev, sizeof(*svs), GFP_KERNEL);
-+	if (!svs)
-+		return -ENOMEM;
-+
-+	svs->dev = &pdev->dev;
-+	if (!svs->dev->of_node) {
-+		pr_err("cannot find device node\n");
-+		return -ENODEV;
-+	}
-+
-+	svs->base = of_iomap(svs->dev->of_node, 0);
-+	if (IS_ERR(svs->base)) {
-+		pr_err("cannot find svs register base\n");
-+		return PTR_ERR(svs->base);
-+	}
-+
-+	svs_irq = irq_of_parse_and_map(svs->dev->of_node, 0);
-+	ret = devm_request_threaded_irq(svs->dev, svs_irq, NULL, svs_isr,
-+					IRQF_TRIGGER_LOW | IRQF_ONESHOT,
-+					"mtk-svs", svs);
-+	if (ret) {
-+		pr_err("register irq(%d) failed: %d\n", svs_irq, ret);
-+		return ret;
-+	}
-+
-+	of_dev_id = of_match_node(mtk_svs_of_match, svs->dev->of_node);
-+	if (!of_dev_id || !of_dev_id->data)
-+		return -EINVAL;
-+
-+	svs->platform = of_dev_id->data;
-+	dev_set_drvdata(svs->dev, svs);
-+
-+	svs->main_clk = devm_clk_get(svs->dev, "main");
-+	if (IS_ERR(svs->main_clk)) {
-+		pr_err("failed to get clock: %ld\n", PTR_ERR(svs->main_clk));
-+		return PTR_ERR(svs->main_clk);
-+	}
-+
-+	ret = clk_prepare_enable(svs->main_clk);
-+	if (ret) {
-+		pr_err("cannot enable main clk: %d\n", ret);
-+		return ret;
-+	}
-+
-+	if (!svs_is_supported(svs)) {
-+		pr_notice("svs is not supported\n");
-+		goto svs_probe_fail;
-+	}
-+
-+	ret = svs_resource_setup(svs);
-+	if (ret)
-+		goto svs_probe_fail;
-+
-+	ret = svs_start(svs);
-+	if (ret)
-+		goto svs_probe_fail;
-+
-+	ret = svs_create_svs_procfs(svs);
-+	if (ret)
-+		goto svs_probe_fail;
-+
-+	return 0;
-+
-+svs_probe_fail:
-+	clk_disable_unprepare(svs->main_clk);
-+
-+	return ret;
-+}
-+
-+static const struct dev_pm_ops svs_pm_ops = {
-+	.suspend	= svs_suspend,
-+	.resume		= svs_resume,
-+};
-+
-+static struct platform_driver svs_driver = {
-+	.probe	= svs_probe,
-+	.driver	= {
-+		.name		= "mtk-svs",
-+		.pm		= &svs_pm_ops,
-+		.of_match_table	= of_match_ptr(mtk_svs_of_match),
-+	},
-+};
-+
-+static int __init svs_init(void)
-+{
-+	int ret;
-+
-+	ret = platform_driver_register(&svs_driver);
-+	if (ret) {
-+		pr_err("svs platform driver register failed: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+late_initcall_sync(svs_init);
-+
-+MODULE_DESCRIPTION("MediaTek SVS Driver v1.0");
-+MODULE_LICENSE("GPL");
-diff --git a/include/linux/power/mtk_svs.h b/include/linux/power/mtk_svs.h
-new file mode 100644
-index 000000000000..5c03982e3576
---- /dev/null
-+++ b/include/linux/power/mtk_svs.h
-@@ -0,0 +1,23 @@
-+/* SPDX-License-Identifier: GPL-2.0
-+ *
-+ * Copyright (C) 2020 MediaTek Inc.
-+ */
-+
-+#ifndef __MTK_SVS_H__
-+#define __MTK_SVS_H__
-+
-+#if IS_ENABLED(CONFIG_MTK_SVS)
-+unsigned long claim_mtk_svs_lock(void);
-+void release_mtk_svs_lock(unsigned long flags);
-+#else
-+static inline unsigned long claim_mtk_svs_lock(void)
-+{
-+	return 0;
-+}
-+
-+static inline void release_mtk_svs_lock(unsigned long flags)
-+{
-+}
-+#endif /* CONFIG_MTK_SVS */
-+
-+#endif /* __MTK_SVS_H__ */
--- 
-2.18.0
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBGcm9tOiBGbG9yaWFuIEZhaW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KPiBTZW50OiAw
+NyBKYW51YXJ5IDIwMjAgMTE6MjEKPiBTdWJqZWN0OiBSZTogYnJvb25pZS1yZWdtYXAvZm9yLW5l
+eHQgYmlzZWN0aW9uOiBib290IG9uIG94ODIwLWNsb3VkZW5naW5lcy0KPiBwb2dvcGx1Zy1zZXJp
+ZXMtMwo+IAo+IAo+IAo+IE9uIDEvNi8yMDIwIDk6MjQgUE0sIFNyaXJhbSBEYXNoIHdyb3RlOgo+
+ID4+IEZyb206IEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVsbGlAZ21haWwuY29tPgo+ID4+IFN1
+YmplY3Q6IFJlOiBicm9vbmllLXJlZ21hcC9mb3ItbmV4dCBiaXNlY3Rpb246IGJvb3Qgb24KPiA+
+PiBveDgyMC1jbG91ZGVuZ2luZXMtCj4gPj4gcG9nb3BsdWctc2VyaWVzLTMKPiA+Pgo+ID4+IE9u
+IDEvMy8yMCA1OjMwIEFNLCBTcmlyYW0gRGFzaCB3cm90ZToKPiA+Pj4+IEZyb206IGtlcm5lbGNp
+Lm9yZyBib3QgPGJvdEBrZXJuZWxjaS5vcmc+Cj4gPj4+PiBTdWJqZWN0OiBicm9vbmllLXJlZ21h
+cC9mb3ItbmV4dCBiaXNlY3Rpb246IGJvb3Qgb24KPiA+Pj4+IG94ODIwLWNsb3VkZW5naW5lcy0K
+PiA+Pj4+IHBvZ29wbHVnLXNlcmllcy0zCj4gPj4+Pgo+ID4+Pj4gKiAqICogKiAqICogKiAqICog
+KiAqICogKiAqICogKiAqICogKiAqICogKiAqICogKiAqICogKiAqICogKiAqICoKPiA+Pj4+ICog
+VGhpcyBhdXRvbWF0ZWQgYmlzZWN0aW9uIHJlcG9ydCB3YXMgc2VudCB0byB5b3Ugb24gdGhlIGJh
+c2lzICAqCj4gPj4+PiAqIHRoYXQgeW91IG1heSBiZSBpbnZvbHZlZCB3aXRoIHRoZSBicmVha2lu
+ZyBjb21taXQgaXQgaGFzICAgICAgKgo+ID4+Pj4gKiBmb3VuZC4gIE5vIG1hbnVhbCBpbnZlc3Rp
+Z2F0aW9uIGhhcyBiZWVuIGRvbmUgdG8gdmVyaWZ5IGl0LCAgICoKPiA+Pj4+ICogYW5kIHRoZSBy
+b290IGNhdXNlIG9mIHRoZSBwcm9ibGVtIG1heSBiZSBzb21ld2hlcmUgZWxzZS4gICAgICAqCj4g
+Pj4+PiAqICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgKgo+ID4+Pj4gKiBJZiB5b3UgZG8gc2VuZCBhIGZpeCwgcGxlYXNlIGluY2x1
+ZGUgdGhpcyB0cmFpbGVyOiAgICAgICAgICAgICoKPiA+Pj4+ICogICBSZXBvcnRlZC1ieTogImtl
+cm5lbGNpLm9yZyBib3QiIDxib3RAa2VybmVsY2kub3JnPiAgICAgICAgICAqCj4gPj4+PiAqICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgKgo+ID4+Pj4gKiBIb3BlIHRoaXMgaGVscHMhICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICoKPiA+Pj4+ICogKiAqICogKiAqICogKiAqICogKiAqICogKiAq
+ICogKiAqICogKiAqICogKiAqICogKiAqICogKiAqICogKiAqCj4gPj4+Pgo+ID4+Pj4gYnJvb25p
+ZS1yZWdtYXAvZm9yLW5leHQgYmlzZWN0aW9uOiBib290IG9uCj4gPj4+PiBveDgyMC1jbG91ZGVu
+Z2luZXMtcG9nb3BsdWctCj4gPj4+PiBzZXJpZXMtMwo+ID4+Pj4KPiA+Pj4+IFN1bW1hcnk6Cj4g
+Pj4+PiAgIFN0YXJ0OiAgICAgIDQ2Y2YwNTNlZmVjNiBMaW51eCA1LjUtcmMzCj4gPj4+PiAgIERl
+dGFpbHM6ICAgIGh0dHBzOi8vcHJvdGVjdDIuZmlyZWV5ZS5jb20vdXJsP2s9MzZmYjUyZWQtNmIy
+YjVhMjEtCj4gPj4gMzZmYWQ5YTItCj4gPj4+PiAwMDBiYWJmZjM3OTMtCj4gPj4+PiBmNjRlN2My
+MjdlMGE4YjM0JnU9aHR0cHM6Ly9wcm90ZWN0Mi5maXJlZXllLmNvbS91cmw/az0yMzc5NDkyYS03
+ZWUyCj4gPj4+PiBiNQo+ID4+Pj4gNDktMjM3OGMyNjUtMGNjNDdhMzFjZGJjLQo+ID4+IDkxNGM2
+N2M5NDAwYjViYWUmdT1odHRwczovL3Byb3RlY3QyLmZpcmVleWUuY29tL3VybD9rPTM0MGIxM2Vk
+LQo+IDY5OTcxMgo+ID4+IDhkLTM0MGE5OGEyLTBjYzQ3YTMxMzA3Yy0KPiA3NDNiNDJhMjIwMmJk
+Y2U5JnU9aHR0cHM6Ly9rZXJuZWxjaS5vcmcvYm9vdAo+ID4+Pj4gL2lkLzVlMDJjZTY1NDUxNTI0
+NDYyZjk3MzEKPiA+Pj4+IDRmCj4gPj4+PiAgIFBsYWluIGxvZzoKPiA+Pj4+IGh0dHBzOi8vcHJv
+dGVjdDIuZmlyZWV5ZS5jb20vdXJsP2s9NThmNWZjM2ItMDUyNWY0ZjctNThmNDc3NzQtCj4gPj4+
+PiAwMDBiYWJmZjM3OTMtZjk2YTE4NDgxYWRkMGQ3ZiZ1PWh0dHBzOi8vcHJvdGVjdDIuZmlyZWV5
+ZS5jb20vdXJsP2s9Cj4gPj4+PiAzYwo+ID4+Pj4gNzkzMjYwLTYxZTJjZTAzLTNjNzhiOTJmLTBj
+YzQ3YTMxY2RiYy0KPiA+PiBjNzdmNDk4OTA1OTNjMzc2JnU9aHR0cHM6Ly9zdG9yCj4gPj4+PiBh
+Z2Uua2VybmVsY2kub3JnLy9icm9vbmllLQo+ID4+Pj4gcmVnbWFwL2Zvci1uZXh0L3Y1LjUtcmMz
+L2FybS9veG5hc192Nl9kZWZjb25maWcvZ2NjLTgvbGFiLQo+ID4+Pj4gYmF5bGlicmUvYm9vdC1v
+eDgyMC1jbG91ZGVuZ2luZXMtcG9nb3BsdWctc2VyaWVzLTMudHh0Cj4gPj4+PiAgIEhUTUwgbG9n
+OiAgIGh0dHBzOi8vcHJvdGVjdDIuZmlyZWV5ZS5jb20vdXJsP2s9ZWFlZDI2MjktYjczZDJlZTUt
+Cj4gPj4+PiBlYWVjYWQ2Ni0wMDBiYWJmZjM3OTMtCj4gPj4+PiA4NGJhMWU0MTAyNWI0ZjczJnU9
+aHR0cHM6Ly9wcm90ZWN0Mi5maXJlZXllLmNvbS91cmw/az04ZTgwMDUxZS1kMzFiCj4gPj4+PiBm
+OQo+ID4+Pj4gN2QtOGU4MThlNTEtMGNjNDdhMzFjZGJjLQo+IGRkMmQ1ZjNkN2UzYzNjZDImdT1o
+dHRwczovL3Byb3RlY3QyLmZpcmVleWUuY29tL3VybD9rPWIyZmM4OWQwLWVmNjA4OGIwLQo+IGIy
+ZmQwMjlmLTBjYzQ3YTMxMzA3Yy0zMGUyMzY0YzRiMWYxYTk4JnU9aHR0cHM6Ly9zdG9yYWdlLmtl
+cm5lbGNpLy4KPiA+Pj4+IG9yZy8vYnJvb25pZS1yZWdtYXAvZm9yLQo+ID4+Pj4gbmV4dC92NS41
+LXJjMy9hcm0vb3huYXNfdjZfZGVmY29uZmlnL2djYy04L2xhYi1iYXlsaWJyZS9ib290LW94ODIw
+LQo+ID4+Pj4gY2xvdWRlbmdpbmVzLXBvZ29wbHVnLXNlcmllcy0zLmh0bWwKPiA+Pj4+ICAgUmVz
+dWx0OiAgICAgZDNlMDE0ZWM3ZDVlIG5ldDogc3RtbWFjOiBwbGF0Zm9ybTogRml4IE1ESU8gaW5p
+dCBmb3IKPiBwbGF0Zm9ybXMKPiA+Pj4+IHdpdGhvdXQgUEhZCj4gPj4+Pgo+ID4+Pj4gQ2hlY2tz
+Ogo+ID4+Pj4gICByZXZlcnQ6ICAgICBQQVNTCj4gPj4+PiAgIHZlcmlmeTogICAgIFBBU1MKPiA+
+Pj4+Cj4gPj4+PiBQYXJhbWV0ZXJzOgo+ID4+Pj4gICBUcmVlOiAgICAgICBicm9vbmllLXJlZ21h
+cAo+ID4+Pj4gICBVUkw6Cj4gPj4+PiBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGlu
+dXgva2VybmVsL2dpdC9icm9vbmllL3JlZ21hcC5naXQKPiA+Pj4+ICAgQnJhbmNoOiAgICAgZm9y
+LW5leHQKPiA+Pj4+ICAgVGFyZ2V0OiAgICAgb3g4MjAtY2xvdWRlbmdpbmVzLXBvZ29wbHVnLXNl
+cmllcy0zCj4gPj4+PiAgIENQVSBhcmNoOiAgIGFybQo+ID4+Pj4gICBMYWI6ICAgICAgICBsYWIt
+YmF5bGlicmUKPiA+Pj4+ICAgQ29tcGlsZXI6ICAgZ2NjLTgKPiA+Pj4+ICAgQ29uZmlnOiAgICAg
+b3huYXNfdjZfZGVmY29uZmlnCj4gPj4+PiAgIFRlc3Qgc3VpdGU6IGJvb3QKPiA+Pj4+Cj4gPj4+
+PiBCcmVha2luZyBjb21taXQgZm91bmQ6Cj4gPj4+Pgo+ID4+Pj4gLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+ID4+Pj4g
+LS0KPiA+Pj4+IC0tLS0tLS0tLS0gY29tbWl0IGQzZTAxNGVjN2Q1ZWJlOTY0NGI1NDg2YmM1MzBi
+OTFlNjJiYmY2MjQKPiA+Pj4+IEF1dGhvcjogUGFkbWFuYWJoYW4gUmFqYW5iYWJ1IDxwLnJhamFu
+YmFidUBzYW1zdW5nLmNvbT4KPiA+Pj4+IERhdGU6ICAgVGh1IERlYyAxOSAxNTo0NzowMSAyMDE5
+ICswNTMwCj4gPj4+Pgo+ID4+Pj4gICAgIG5ldDogc3RtbWFjOiBwbGF0Zm9ybTogRml4IE1ESU8g
+aW5pdCBmb3IgcGxhdGZvcm1zIHdpdGhvdXQgUEhZCj4gPj4+Pgo+ID4+Pj4gICAgIFRoZSBjdXJy
+ZW50IGltcGxlbWVudGF0aW9uIG9mICJzdG1tYWNfZHRfcGh5IiBmdW5jdGlvbiBpbml0aWFsaXpl
+cwo+ID4+Pj4gICAgIHRoZSBNRElPIHBsYXRmb3JtIGJ1cyBkYXRhLCBldmVuIGluIHRoZSBhYnNl
+bmNlIG9mIFBIWS4gVGhpcyBmaXgKPiA+Pj4+ICAgICB3aWxsIHNraXAgTURJTyBpbml0aWFsaXph
+dGlvbiBpZiB0aGVyZSBpcyBubyBQSFkgcHJlc2VudC4KPiA+Pj4+Cj4gPj4+PiAgICAgRml4ZXM6
+IDc0MzcxMjcgKCJuZXQ6IHN0bW1hYzogQ29udmVydCB0byBwaHlsaW5rIGFuZCByZW1vdmUgcGh5
+bGliCj4gbG9naWMiKQo+ID4+Pj4gICAgIEFja2VkLWJ5OiBKYXlhdGkgU2FodSA8amF5YXRpLnNh
+aHVAc2Ftc3VuZy5jb20+Cj4gPj4+PiAgICAgU2lnbmVkLW9mZi1ieTogU3JpcmFtIERhc2ggPHNy
+aXJhbS5kYXNoQHNhbXN1bmcuY29tPgo+ID4+Pj4gICAgIFNpZ25lZC1vZmYtYnk6IFBhZG1hbmFi
+aGFuIFJhamFuYmFidSA8cC5yYWphbmJhYnVAc2Ftc3VuZy5jb20+Cj4gPj4+PiAgICAgU2lnbmVk
+LW9mZi1ieTogRGF2aWQgUy4gTWlsbGVyIDxkYXZlbUBkYXZlbWxvZnQubmV0Pgo+ID4+Pj4KPiA+
+Pj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1t
+YWNfcGxhdGZvcm0uYwo+ID4+Pj4gYi9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1h
+Yy9zdG1tYWNfcGxhdGZvcm0uYwo+ID4+Pj4gaW5kZXggYmVkYWZmMGMxM2JkLi5jYzhkN2U3YmY5
+YWMgMTAwNjQ0Cj4gPj4+PiAtLS0gYS9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1h
+Yy9zdG1tYWNfcGxhdGZvcm0uYwo+ID4+Pj4gKysrIGIvZHJpdmVycy9uZXQvZXRoZXJuZXQvc3Rt
+aWNyby9zdG1tYWMvc3RtbWFjX3BsYXRmb3JtLmMKPiA+Pj4+IEBAIC0zMjAsNyArMzIwLDcgQEAg
+c3RhdGljIGludCBzdG1tYWNfbXRsX3NldHVwKHN0cnVjdAo+ID4+Pj4gcGxhdGZvcm1fZGV2aWNl
+ICpwZGV2LCAgc3RhdGljIGludCBzdG1tYWNfZHRfcGh5KHN0cnVjdAo+ID4+IHBsYXRfc3RtbWFj
+ZW5ldF9kYXRhICpwbGF0LAo+ID4+Pj4gIAkJCSBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLCBzdHJ1
+Y3QgZGV2aWNlICpkZXYpICB7Cj4gPj4+PiAtCWJvb2wgbWRpbyA9IHRydWU7Cj4gPj4+PiArCWJv
+b2wgbWRpbyA9IGZhbHNlOwo+ID4+Pj4gIAlzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9p
+ZCBuZWVkX21kaW9faWRzW10gPSB7Cj4gPj4+PiAgCQl7IC5jb21wYXRpYmxlID0gInNucHMsZHdj
+LXFvcy1ldGhlcm5ldC00LjEwIiB9LAo+ID4+Pj4gIAkJe30sCj4gPj4+PiAtLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4g
+Pj4+PiAtLQo+ID4+Pj4gLS0tLS0tLS0tLQo+ID4+Pj4KPiA+Pj4+Cj4gPj4+PiBHaXQgYmlzZWN0
+aW9uIGxvZzoKPiA+Pj4+Cj4gPj4+PiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gPj4+PiAtLQo+ID4+Pj4gLS0tLS0t
+LS0tLQo+ID4+Pj4gZ2l0IGJpc2VjdCBzdGFydAo+ID4+Pj4gIyBnb29kOiBbZTQyNjE3YjgyNWY4
+MDczNTY5ZGE3NmRjNDUxMGJmYTAxOWIxYzM1YV0gTGludXggNS41LXJjMQo+ID4+Pj4gZ2l0IGJp
+c2VjdCBnb29kIGU0MjYxN2I4MjVmODA3MzU2OWRhNzZkYzQ1MTBiZmEwMTliMWMzNWEKPiA+Pj4+
+ICMgYmFkOiBbNDZjZjA1M2VmZWM2YTNhNWYzNDNmZWFkODM3Nzc3ZWZlODI1MmE0Nl0gTGludXgg
+NS41LXJjMyBnaXQKPiA+Pj4+IGJpc2VjdCBiYWQgNDZjZjA1M2VmZWM2YTNhNWYzNDNmZWFkODM3
+Nzc3ZWZlODI1MmE0Ngo+ID4+Pj4gIyBnb29kOiBbMjE4N2YyMTVlYmFhYzczZGRiZDgxNDY5NmQ3
+YzdmYTM0ZjBjM2RlMF0gTWVyZ2UgdGFnCj4gPj4+PiAnZm9yLTUuNS0gcmMyLXRhZycgb2YKPiA+
+Pj4+IGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9rZGF2ZS9s
+aW51eAo+ID4+Pj4gZ2l0IGJpc2VjdCBnb29kIDIxODdmMjE1ZWJhYWM3M2RkYmQ4MTQ2OTZkN2M3
+ZmEzNGYwYzNkZTAKPiA+Pj4+ICMgZ29vZDogWzBkZDFlMzc3M2FlOGFmYzRiZmRjZTc4MmJkZWZm
+YzEwZjljYWU2ZWNdIHBpcGU6IGZpeCBlbXB0eQo+ID4+Pj4gcGlwZSBjaGVjayBpbiBwaXBlX3dy
+aXRlKCkgZ2l0IGJpc2VjdCBnb29kCj4gPj4+PiAwZGQxZTM3NzNhZThhZmM0YmZkY2U3ODJiZGVm
+ZmMxMGY5Y2FlNmVjCj4gPj4+PiAjIGdvb2Q6IFswNDBjZGE4YTE1MjEwZjE5ZGE3ZTI5MjMyYzg5
+N2NhNmNhNmNjOTUwXSBNZXJnZSB0YWcKPiA+Pj4+ICd3aXJlbGVzcy0gZHJpdmVycy0yMDE5LTEy
+LTE3JyBvZgo+ID4+Pj4gZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwv
+Z2l0L2t2YWxvL3dpcmVsZXNzLWRyaXZlcgo+ID4+Pj4gcyBnaXQgYmlzZWN0IGdvb2QgMDQwY2Rh
+OGExNTIxMGYxOWRhN2UyOTIzMmM4OTdjYTZjYTZjYzk1MAo+ID4+Pj4gIyBiYWQ6IFs0YmZlYWRm
+YzA3MTJiYmM4YTY1NTZlZWY2ZDQ3Y2JhZTEwOTlkZWEzXSBNZXJnZSBicmFuY2gKPiA+Pj4+ICdz
+ZmMtIGZpeC1idWdzLWludHJvZHVjZWQtYnktWERQLXBhdGNoZXMnCj4gPj4+PiBnaXQgYmlzZWN0
+IGJhZCA0YmZlYWRmYzA3MTJiYmM4YTY1NTZlZWY2ZDQ3Y2JhZTEwOTlkZWEzCj4gPj4+PiAjIGdv
+b2Q6IFswZmQyNjAwNTZlZjg0ZWRlOGY0NDRjNjZhMzgyMDgxMTY5MWZlODg0XSBNZXJnZQo+ID4+
+Pj4gZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2JwZi9icGYK
+PiA+Pj4+IGdpdCBiaXNlY3QgZ29vZCAwZmQyNjAwNTZlZjg0ZWRlOGY0NDRjNjZhMzgyMDgxMTY5
+MWZlODg0Cj4gPj4+PiAjIGdvb2Q6IFs5MGIzYjMzOTM2NGM3NmJhYTI0MzY0NDU0MDFlYTlhZGUw
+NDBjMjE2XSBuZXQ6IGhpc2lsaWNvbjoKPiA+Pj4+IEZpeCBhIEJVRyB0cmlnZXJlZCBieSB3cm9u
+ZyBieXRlc19jb21wbCBnaXQgYmlzZWN0IGdvb2QKPiA+Pj4+IDkwYjNiMzM5MzY0Yzc2YmFhMjQz
+NjQ0NTQwMWVhOWFkZTA0MGMyMTYKPiA+Pj4+ICMgYmFkOiBbNGM4ZGMwMDUwM2RiMjRkZWFmMGI4
+OWRkZGZhODRiN2NiYTdjZDRjZV0gcWVkZTogRGlzYWJsZQo+ID4+Pj4gaGFyZHdhcmUgZ3JvIHdo
+ZW4geGRwIHByb2cgaXMgaW5zdGFsbGVkIGdpdCBiaXNlY3QgYmFkCj4gPj4+PiA0YzhkYzAwNTAz
+ZGIyNGRlYWYwYjg5ZGRkZmE4NGI3Y2JhN2NkNGNlCj4gPj4+PiAjIGJhZDogWzI4YTNiODQwOGY3
+MGI2NDZlNzg4ODBhN2ViMGE5N2MyMmFjZTk4ZDFdIG5ldC9zbWM6Cj4gPj4+PiB1bnJlZ2lzdGVy
+IGliIGRldmljZXMgaW4gcmVib290X2V2ZW50IGdpdCBiaXNlY3QgYmFkCj4gPj4+PiAyOGEzYjg0
+MDhmNzBiNjQ2ZTc4ODgwYTdlYjBhOTdjMjJhY2U5OGQxCj4gPj4+PiAjIGJhZDogW2QzZTAxNGVj
+N2Q1ZWJlOTY0NGI1NDg2YmM1MzBiOTFlNjJiYmY2MjRdIG5ldDogc3RtbWFjOgo+ID4+Pj4gcGxh
+dGZvcm06IEZpeCBNRElPIGluaXQgZm9yIHBsYXRmb3JtcyB3aXRob3V0IFBIWSBnaXQgYmlzZWN0
+IGJhZAo+ID4+Pj4gZDNlMDE0ZWM3ZDVlYmU5NjQ0YjU0ODZiYzUzMGI5MWU2MmJiZjYyNAo+ID4+
+Pj4gIyBnb29kOiBbYWYxYzBlNGUwMGYzY2M3NmNiMTM2ZWJmMmUyYzA0ZThiNjQ0NjI4NV0gbGxj
+MjogRml4IHJldHVybgo+ID4+Pj4gc3RhdGVtZW50IG9mIGxsY19zdGF0X2V2X3J4X251bGxfZHNh
+cF94aWRfYyAoYW5kIF90ZXN0X2MpIGdpdAo+ID4+Pj4gYmlzZWN0IGdvb2QKPiA+Pj4+IGFmMWMw
+ZTRlMDBmM2NjNzZjYjEzNmViZjJlMmMwNGU4YjY0NDYyODUKPiA+Pj4+ICMgZmlyc3QgYmFkIGNv
+bW1pdDogW2QzZTAxNGVjN2Q1ZWJlOTY0NGI1NDg2YmM1MzBiOTFlNjJiYmY2MjRdIG5ldDoKPiA+
+Pj4+IHN0bW1hYzogcGxhdGZvcm06IEZpeCBNRElPIGluaXQgZm9yIHBsYXRmb3JtcyB3aXRob3V0
+IFBIWQo+ID4+Pj4gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+ID4+Pj4gLS0KPiA+Pj4+IC0tLS0tLS0tLS0KPiA+Pj4K
+PiA+Pj4KPiA+Pj4gVGhlIG1kaW8gYnVzIHdpbGwgYmUgYWxsb2NhdGVkIGluIGNhc2Ugb2YgYSBw
+aHkgdHJhbnNjZWl2ZXIgaXMgb24KPiA+Pj4gYm9hcmQsIGJ1dCBpZiBmaXhlZC1saW5rIGlzIGNv
+bmZpZ3VyZWQsIGl0IHdpbGwgYmUgTlVMTCBhbmQKPiA+Pj4gb2ZfbWRpb2J1c19yZWdpc3RlciB3
+aWxsIG5vdCB0YWtlIGVmZmVjdC4KPiA+Pgo+ID4+IFRoZXJlIGFwcGVhcnMgdG8gYmUgYW5vdGhl
+ciBwb3NzaWJsZSBmbGF3IGluIHRoZSBjb2RlIGhlcmU6Cj4gPj4KPiA+PiAgICAgICAgICAgICAg
+ICAgZm9yX2VhY2hfY2hpbGRfb2Zfbm9kZShucCwgcGxhdC0+bWRpb19ub2RlKSB7Cj4gPj4gICAg
+ICAgICAgICAgICAgICAgICAgICAgaWYgKG9mX2RldmljZV9pc19jb21wYXRpYmxlKHBsYXQtPm1k
+aW9fbm9kZSwKPiA+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgInNucHMsZHdtYWMtbWRpbyIpKQo+ID4+ICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgYnJlYWs7Cj4gPj4gICAgICAgICAgICAgICAgIH0KPiA+Pgo+ID4+IHRoZSBsb29w
+IHNob3VsZCB1c2UgZm9yX2VhY2hfYXZhaWxhYmxlX2NoaWxkX29mX25vZGUoKSBzdWNoIHRoYXQg
+aWYgYQo+ID4+IHBsYXRmb3JtIGhhcyBhIERldmljZSBUcmVlIGRlZmluaXRpb24gd2hlcmUgdGhl
+IE1ESU8gYnVzIG5vZGUgd2FzCj4gPj4gcHJvdmlkZWQgYnV0IGl0IHdhcyBub3QgZGlzYWJsZWQg
+YnkgZGVmYXVsdCAoYSBtaXN0YWtlLCBpdCBzaG91bGQgYmUKPiA+PiBkaXNhYmxlZCBieSBkZWZh
+dWx0KSwgYW5kIGEgImZpeGVkLSBsaW5rIiBwcm9wZXJ0eSBlbmRlZCB1cCBiZWluZwo+ID4+IHVz
+ZWQgYXQgdGhlIGJvYXJkIGxldmVsLCB3ZSBzaG91bGQgbm90IGVuZC11cCB3aXRoIGFuIGludmFs
+aWQKPiA+PiBwbGF0LT5tZGlvX25vZGUgcmVmZXJlbmNlLiBUaGVuIHRoZSBjb2RlIGNvdWxkIHBv
+c3NpYmx5IGVsaW1pbmF0ZSB0aGUKPiA+PiB1c2Ugb2YgJ21kaW8nIGFzIGEgYm9vbGVhbiBhbmQg
+cmVseSBleGNsdXNpdmVseSBvbiBwbGF0LT5tZGlvX25vZGUuIFdoYXQgZG8KPiB5b3UgdGhpbms/
+Cj4gPj4KPiA+Cj4gPiBIZWxsbyBGbG9yaWFuLAo+ID4KPiA+IFRoYW5rcyBmb3IgdGhlIHJldmll
+dy4gV2UgZGVmaW5pdGVseSBzZWUgYSBwcm9ibGVtIGhlcmUuIEZvciB0aGUgcGxhdGZvcm1zCj4g
+d2hpY2ggaGF2ZSB0aGUgc25wcyxkd21hYy1tZGlvIGFuZCB0aGV5IGhhdmUgbWFkZSBpdCBkaXNh
+YmxlZCwgaXQgd2lsbCBmYWlsLgo+ID4gQWxzbywgV2UgY2FuIGNvbXBsZXRlbHkgcmVtb3ZlIHRo
+ZSBtZGlvIHZhcmlhYmxlIGZyb20gdGhlIGZ1bmN0aW9uCj4gc3RtbWFjX2R0X3BoeSBhcyB3aGF0
+IHdlIGVzc2VudGlhbGx5IGRvIGlzIHRvIGNoZWNrIHRoZSBwbGF0LT5tZGlvX25vZGUuCj4gPgo+
+ID4gU29tZXRoaW5nIGxpa2UgdGhpcyB3aWxsIGhlbHA6Cj4gPgo+ID4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19wbGF0Zm9ybS5jCj4gPiBi
+L2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19wbGF0Zm9ybS5jCj4g
+PiBpbmRleCAxZjIzMGJkLi4xNWMzNDJlIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9uZXQvZXRo
+ZXJuZXQvc3RtaWNyby9zdG1tYWMvc3RtbWFjX3BsYXRmb3JtLmMKPiA+ICsrKyBiL2RyaXZlcnMv
+bmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19wbGF0Zm9ybS5jCj4gPiBAQCAtMzIw
+LDcgKzMyMCw2IEBAIHN0YXRpYyBpbnQgc3RtbWFjX210bF9zZXR1cChzdHJ1Y3QgcGxhdGZvcm1f
+ZGV2aWNlCj4gPiAqcGRldiwgIHN0YXRpYyBpbnQgc3RtbWFjX2R0X3BoeShzdHJ1Y3QgcGxhdF9z
+dG1tYWNlbmV0X2RhdGEgKnBsYXQsCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgc3RydWN0
+IGRldmljZV9ub2RlICpucCwgc3RydWN0IGRldmljZSAqZGV2KQo+ID4gewo+ID4gLSAgICAgICBi
+b29sIG1kaW8gPSBmYWxzZTsKPiA+ICAgICAgICAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZp
+Y2VfaWQgbmVlZF9tZGlvX2lkc1tdID0gewo+ID4gICAgICAgICAgICAgICAgIHsgLmNvbXBhdGli
+bGUgPSAic25wcyxkd2MtcW9zLWV0aGVybmV0LTQuMTAiIH0sCj4gPiAgICAgICAgICAgICAgICAg
+e30sCj4gPiBAQCAtMzM0LDE4ICszMzMsMTMgQEAgc3RhdGljIGludCBzdG1tYWNfZHRfcGh5KHN0
+cnVjdAo+IHBsYXRfc3RtbWFjZW5ldF9kYXRhICpwbGF0LAo+ID4gICAgICAgICAgICAgICAgICAq
+IHRoZSBNRElPCj4gPiAgICAgICAgICAgICAgICAgICovCj4gPiAgICAgICAgICAgICAgICAgZm9y
+X2VhY2hfY2hpbGRfb2Zfbm9kZShucCwgcGxhdC0+bWRpb19ub2RlKSB7Cj4gPiAtICAgICAgICAg
+ICAgICAgICAgICAgICBpZiAob2ZfZGV2aWNlX2lzX2NvbXBhdGlibGUocGxhdC0+bWRpb19ub2Rl
+LAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgaWYKPiA+ICsgKGZvcl9lYWNoX2F2YWlsYWJs
+ZV9jaGlsZF9vZl9ub2RlKHBsYXQtPm1kaW9fbm9kZSwKPiA+ICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAic25wcyxkd21hYy1tZGlvIikpCj4gPiAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ID4gICAgICAgICAgICAgICAg
+IH0KPiA+ICAgICAgICAgfQo+ID4KPiA+ICAgICAgICAgaWYgKHBsYXQtPm1kaW9fbm9kZSkgewo+
+ID4gLSAgICAgICAgICAgICAgIGRldl9kYmcoZGV2LCAiRm91bmQgTURJTyBzdWJub2RlXG4iKTsK
+PiA+IC0gICAgICAgICAgICAgICBtZGlvID0gdHJ1ZTsKPiA+IC0gICAgICAgfQo+ID4gLQo+ID4g
+LSAgICAgICBpZiAobWRpbykgewo+ID4gICAgICAgICAgICAgICAgIHBsYXQtPm1kaW9fYnVzX2Rh
+dGEgPQo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgZGV2bV9remFsbG9jKGRldiwgc2l6ZW9m
+KHN0cnVjdCBzdG1tYWNfbWRpb19idXNfZGF0YSksCj4gPiAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgR0ZQX0tFUk5FTCk7Cj4gPgo+ID4KPiA+IEFyZSB5b3UgcHJlcGFyaW5n
+IGEgcGF0Y2ggdG8gYWRkcmVzcyB0aGlzLCBvciB3ZSBzaGFsbCB0YWtlIGl0IHVwPwo+IAo+IEkg
+ZG8gbm90IHRoaW5rIHlvdXIgcGF0Y2ggaXMgZ29pbmcgdG8gZml4IHRoZSBwcm9ibGVtIHRoYXQg
+SGVpa28gcmVwb3J0ZWQgYmVjYXVzZQo+IGl0IHdvdWxkIHRyeSB0byBzY2FuIHRoZSBNRElPIGJ1
+cyBub2RlIHdoaWNoIGlzIG5vbi1leGlzdGVudC4gQWxzbyBub3Qgc3VyZSB3aGF0Cj4gdGhlIHJl
+dHVybiB2YWx1ZSBvZiBmb3JfZWFjaF8qIGlzIHN1cHBvc2VkIHRvIGJlIGdpdmVuIGl0IGlzIGEg
+bG9vcCBjb25zdHJ1Y3QuCj4KClRoaXMgZGlmZiB3aWxsIG5vdCBzb2x2ZSBIZWlrbydzIHByb2Js
+ZW0uIFRoaXMgZGlmZiBpcyBhZGRyZXNzaW5nIGEgZGlmZmVyZW50IGlzc3VlLgpXaGF0IGl0IGlu
+dGVuZHMgdG8gZG8gaXMgOgoxLiBhcyB3ZSBkZWNpZGUgdGhlIHZhbHVlIG1kaW8gdmFscmlhYmxl
+IG9uIHRoZSBiYXNpcyBvZiBwbGF0LT5tZGlvX25vZGUKQW5kIHRoZW4gdXNlIGl0IHRvIGRlY2lk
+ZSB0aGUgbWRpb19idXNfZGF0YSBhbGxvY2F0aW9uLCB3ZSBjYW4gcmVtb3ZlIHRoZQptZGlvIHZh
+cmlhYmxlIGFsdG9nZXRoZXIgZnJvbSB0aGUgcGljdHVyZS4KMi4gVGhpcyB3YXMgYWRkcmVzc2lu
+ZyBhbm90aGVyIHByb2JsZW0geW91IGZpZ3VyZWQuIElmIHNvbWUgcGxhdGZvcm1zCndoaWNoIGhh
+dmUgdGhlIHByb3BlcnR5IHNucHMsZHdtYWMtbWRpbyBwcmVzZW50IGluIGR0LCBidXQgaXQgaXMg
+ZGlzYWJsZWQsCnRoaXMgZGlmZiB3aWxsIGNvcnJlY3QgdGhlIGJlaGF2aW91ci4KCk1pbm9yIGNv
+cnJlY3Rpb24gaW4gdGhlIGRpZmYgCmZvcl9lYWNoX2NoaWxkX29mX25vZGUgLT4gZm9yX2VhY2hf
+YXZhaWxhYmxlX2NoaWxkX29mX25vZGUKCj4gPgo+ID4+IEFuZCBhbiBhbHRlcm5hdGl2ZSB0byB5
+b3VyIGZpeCB3b3VsZCBiZSB0byBzY2FuIGV2ZW4gZnVydGhlciB0aGUgTURJTwo+ID4+IGJ1cyBu
+b2RlIGZvciBhdmFpbGFibGUgY2hpbGQgbm9kZXMsIGlmIHRoZXJlIGFyZSBub25lLCBkbyBub3Qg
+cGVyZm9ybQo+ID4+IHRoZSBNRElPIGluaXRpYWxpemF0aW9uIGF0IGFsbCBzaW5jZSB3ZSBoYXZl
+IG5vIE1ESU8gZGV2aWNlcyBiZW5lYXRoLgo+ID4+Cj4gPj4KPiA+Pj4gVGhlIGNvbW1pdCBkM2Uw
+MTRlYzdkNWUgZml4ZXMgdGhlIGNvZGUgZm9yIGZpeGVkLWxpbmsgY29uZmlndXJhdGlvbi4KPiA+
+Pj4gSG93ZXZlciwgc29tZSBwbGF0Zm9ybXMgbGlrZSBveG5hczgyMCB3aGljaCBoYXZlIHBoeSB0
+cmFuc2NlaXZlcnMKPiA+Pj4gKHJnbWlpKSwgZmFpbC4gVGhpcyBpcyBiZWNhdXNlIHRoZSBwbGF0
+Zm9ybXMgZXhwZWN0IHRoZSBhbGxvY2F0aW9uCj4gPj4+IG9mIG1kaW9fYnVzX2RhdGEgZHVyaW5n
+IHN0bW1hY19kdF9waHkuCj4gPj4+Cj4gPj4+IFByb3BlciBzb2x1dGlvbiB0byB0aGlzIGlzIGFk
+ZGluZyB0aGUgbWRpbyBub2RlIGluIHRoZSBkZXZpY2UgdHJlZQo+ID4+PiBvZiB0aGUgcGxhdGZv
+cm0gd2hpY2ggY2FuIGJlIGZldGNoZWQgYnkgc3RtbWFjX2R0X3BoeS4KPiA+Pgo+ID4+IFRoYXQg
+c291bmRzIHJlYXNvbmFibGUsIGJ1dCB3ZSBzaG91bGQgYWxzbyBub3QgYnJlYWsgZXhpc3RpbmcK
+PiA+PiBwbGF0Zm9ybXMgd2l0aCBleGlzdGluZyBEZXZpY2UgVHJlZXMgb3V0IHRoZXJlLCBhcyBt
+dWNoIGFzIHBvc3NpYmxlLgo+ID4KPiA+IEkgdW5kZXJzdGFuZCB5b3VyIHBvaW50LiBDaGFuZ2lu
+ZyBEVCBzaG91bGQgYmUgdGhlIGxhc3QgdGhpbmcgd2Ugc2hvdWxkIGRvLgo+ID4gQnV0LCB0aGUg
+Y29kZSBpcyBicm9rZW4gZm9yIHNvbWUgcGxhdGZvcm1zLiBXaXRob3V0IHRoZSBwYXRjaCwgdGhl
+IHBsYXRmb3Jtcwo+IHdpdGggZml4ZWQtbGluayB3aWxsIG5vdCB3b3JrLgo+ID4gRm9yIGV4YW1w
+bGUsIHN0aWg0MTgtYjIxOTkuZHRzLCB3aWxsIGZhaWwgd2l0aG91dCB0aGUgY29tbWl0IGQzZTAx
+NGVjN2Q1ZS4KPiBIdW1tIHRoZW4gd2Ugc2hvdWxkIGNoYW5nZSB0aGUgY29kZSB0byBleHBsaWNp
+dGx5IGxvb2sgZm9yIGEgZml4ZWQtbGluayBub2RlCj4gd2l0aCB0aGUgdXNlIG9mIG9mX3BoeV9p
+c19maXhlZF9saW5rKCkgKHdoaWNoIHdvdWxkIHdvcmsgb24gdGhlIG9sZCBzdHlsZSBmaXhlZC0K
+PiBsaW5rIHRoYXQgc3RpaDQxOC1iMjE5OS5kdHMgdXNlcykgaW5zdGVhZCBvZiByZWx5aW5nIG9u
+IHNvbWUgaW1wbGljaXQgb3IgZXhwbGljaXQKPiBNRElPIGJ1cyByZWdpc3RyYXRpb24gYmVoYXZp
+b3IuCj4gCgpUaGlzIGNhbiBiZSBhIHBvc3NpYmxlIHNvbHV0aW9uLiBCdXQgcmF0aGVyIHRoYXQg
+YSBwcm9wZXIgZml4LCBJTU8sIHRoaXMgbG9va3MgbW9yZQpsaWtlIGEgaG90Zml4IGZvciB0aGUg
+cGxhdGZvcm1zIHRoYXQgZG8gbm90IGluY2x1ZGUgdGhlIHNucHMsZHdtYWMtbWRpbyAvIG1kaW8g
+aW4KdGhlIGRldmljZSB0cmVlLiAKVGhpcyBpcyBub3QgdGFyZ2V0aW5nIHRoZSBhY3R1YWwgaXNz
+dWUgaGVyZS4gQnkgYnlwYXNzaW5nIHRoZSBpc3N1ZSwgd2UgbWF5IGdpdmUgcmlzZSB0bwpiaWdn
+ZXIgcHJvYmxlbXMgaW4gZnV0dXJlLCBhbmQgaXQgd2lsbCBiZSBkaWZmaWN1bHQgdG8gbWFpbnRh
+aW4gdGhlIGNvZGUuCgo+IFRoZSBnb29kIHRoaW5nIGlzIHRoYXQgSSB1c2UgYXJjaC9hcm0vYm9v
+dC9kdHMvc3VuN2ktYTIwLWxhbW9iby1yMS5kdHMKPiBvbiBhIG5lYXJseSBkYWlseSBiYXNpcyBz
+byBJIGNhbiB0ZXN0IGlmIHRoYXQgd29ya3MvZG9lcyBub3Qgd29yayB3aXRoIGEgZml4ZWQtbGlu
+awo+IHBsdXMgYSBtZGlvIGJ1cyBub2RlLgo+CgpUaGlzIGlzIGdvb2QgaW5kZWVkLiA6KQogCj4g
+PiBXaXRoIHRoZSBwYXRjaCwgcGxhdGZvcm1zIHdpdGggbWRpbyBhbmQgbm90IGRlY2xhcmluZyB0
+aGUgZHQgcGFyYW1ldGVycyB3aWxsCj4gZmFpbC4KPiA+IEZvciB0aGF0ICwgd2UgaGF2ZSBzb21l
+IHByb3Bvc2FsOgo+ID4gRm9yIHRoZSBuZXdlciBwbGF0Zm9ybXMgLCBNYWtlIGl0IG1hbmRhdG9y
+eSB0byBoYXZlIHRoZSBtZGlvIG9yCj4gc25wcyxkd21hYy1tZGlvIHByb3BlcnR5Lgo+ID4gVGhl
+cmUgaXMgbm8gcG9pbnQgb2YgY2hlY2tpbmcgdGhlIGRldmljZSB0cmVlIGZvciBtZGlvIG9yIHNu
+cHMsZHdtYWMtbWRpbwo+IHByb3BlcnR5IGFuZCBwb3B1bGF0aW5nIHRoZSBwbGF0LT5tZGlvX25v
+ZGUsIGlmIHRoZSBwbGF0Zm9ybXMgYXJlIG5vdCBoYXZpbmcKPiB0aGVtIGluIHRoZSBkZXZpY2Ug
+dHJlZSBhbmQgZXhwZWN0IG1kaW8gYnVzIG1lbW9yeSBhbGxvY2F0aW9uLgo+IAo+IFlldCB0aGF0
+IGlzIHdoYXQgYnJva2UgZXhhY3RseSBoZXJlLCB0aGUgcGxhdGZvcm1zIHRoYXQgSGVpa28gcmVw
+b3J0ZWQgdGhlCj4gYnJlYWthZ2Ugb24sIGFsYmVpdCBkb2luZyBzb21ldGhpbmcgYXJndWFibHkg
+ZnJhZ2lsZSwgYXJlIG5vdCBtYWtpbmcgdXNlIG9mIGEKPiBwaHktaGFuZGxlIHByb3BlcnR5IG5v
+ciBhIE1ESU8gbm9kZSB0byBpbmRpY2F0ZSB3aGVyZSBhbmQgaG93IHRvIGNvbm5lY3QgdG8KPiBh
+IFBIWSwgZW5kZWQgdXAgYnJva2VuLiBUaGV5IHVzZSBpbXBsaWNpdCBidXMgc2Nhbm5pbmcgZ29p
+bmcgb24gYnkKPiBvZl9tZGlvYnVzX3JlZ2lzdGVyKCkuCj4gCj4gPgo+ID4gRm9yIHRoZSBleGlz
+dGluZyBwbGF0Zm9ybXMsIHdoaWNoIGRvIG5vdCBoYXZlIHRoZSBtZGlvIG9yIHNucHMsZHdtYWMt
+bWRpbwo+IHByb3BlcnR5IGFuZCBzdGlsbCBoYXZlIHRoZSBwaHksIGlmIHRoZXkgY2FuLCB0aGV5
+IG11c3QgbW9kaWZ5IHRoZSBkdCBhbmQgaW5jbHVkZQo+IHRoZSBtZGlvIG9yIHNucHMsZHdtYWMt
+bWRpbyBwcm9wZXJ0eSBpbiB0aGVpciBkdHMuCj4gCj4gVGhpcyBzaG91bGQgYmUgZG9uZSwgYnV0
+IEkgZG91YnQgaXQgaXMgZ29pbmcgdG8gYmUgYmVjYXVzZSB0aG9zZSBEZXZpY2UgVHJlZSBmaWxl
+cwo+IGFyZSBBQkkgYW5kIG1heSBiZSBiYWtlZCBpbnRvIGZpcm13YXJlL2Jvb3QgbG9hZGVycy4K
+PiAKPiA+IEZvciB0aG9zZSBwbGF0Zm9ybXMsIHdoaWNoIGNhbm5vdCBtb2RpZnkgdGhlIGR0IGR1
+ZSB0byBzb21lIHJlYXNvbiBvciBvdGhlciwKPiB0aGUgcGxhdGZvcm0gc2hvdWxkIGhhdmUgYSBx
+dWlyayBpbiB0aGUgcGxhdGZvcm0gZ2x1ZSBsYXllcnMsIGFuZCB1c2UgaXQgaW4gdGhlCj4gc3Rt
+bWFjX3BsYXRmb3JtIGRyaXZlciAgc3RtbWFjX2R0X3BoeSAgZnVuY3Rpb24gdG8gZW5hYmxlIHRo
+ZSBtZGlvLgo+ID4KPiAKPiBBZ2FpbiwgSSBkbyBub3QgdGhpbmsgdGhpcyBpcyBwcmFjdGljYWwg
+dG8gZG8gYXQgYWxsLCBub3Qgd291bGQgaXQgc2NhbGUgcGFydGljdWxhcmx5Cj4gd2VsbCwgZ2l2
+ZW4gdGhhdCB0aGUgc2FtZSBjb21wYXRpYmxlIHN0cmluZyBmb3IgUm9ja2NoaXAgZ21hYyBoYXMg
+YmVlbiB1c2VkCj4gd2l0aCBib3RoIHRoZSBjb3JyZWN0IHdheSBhbmQgdGhlIGluY29ycmVjdCB3
+YXkgb2Ygc3BlY2lmeWluZyB0aGUgY29ubmVjdGlvbiB0bwo+IHRoZSBQSFkgZGV2aWNlIG5vZGUu
+CgpJIGtub3cgaXTigJlzIGEgcGFpbi4gSXQgd2lsbCBiZSBkaWZmaWN1bHQgdG8gbWFpbnRhaW4g
+Zm9yIHRoZSA4IGJyb2tlbiBwbGF0Zm9ybXMgd2hpY2ggd2FzDQpsaXN0ZWQgaW4gaHR0cHM6Ly9s
+a21sLm9yZy9sa21sLzIwMjAvMS83LzIyLg0KQnV0IGV2ZW50dWFsbHksIHdlIHdpbGwgbWFrZSB0
+aGUgY29kZSBiZXR0ZXIuDQoNCkkgd2VudCB0aHJvdWdoIHRoZSBSb2NrY2hpcCBjb2RlIGFuZCBJ
+IGZvdW5kDQpyb2NrY2hpcCxweDMwLWdtYWMgaXMgdXNlZCBmb3IgdGhlIGJyb2tlbiBwbGF0Zm9y
+bS4gSW4gdGhlIGR3bWFjLXJrLmMgIGdsdWUgZmlsZSwgDQppdCBhbHNvIGhhcyB0aGUgcGxhdGZv
+cm0gZGF0YSwgd2hlcmUgcmtfZ21hY19vcHMgY2FuIGhvbGQgdGhlIGZpeCBmb3IgdGhlIG1kaW8s
+IA0KYW5kIGNhbiB1cGRhdGUgYSBuZXcgcHJpdmF0ZSBkYXRhIG1lbWJlciBvZiBzdG1tYWNfcGxh
+dGZvcm0gZHJpdmVyLCB3aGljaCBjYW4NCmhvbGQgdGhlIGRhdGEgcGFzc2VkIGZyb20gZ2x1ZSBs
+YXllciBvZiB0aGUgYnJva2VuIHBsYXRmb3Jtcy4gVGhpcyBpbiB0dXJuIGNhbiBsZXZlcmFnZQ0K
+YW5kIG1ha2UgYW1lbmRzIHRvIHRoZSBtZGlvIGJvb2wgdmFyaWFibGUgZm9yIHRoZSBzdG1tYWNf
+cGxhdGZvcm0NCnN0bW1hY19kdF9waHkgZnVuY3Rpb24uDQoNClNpbWlsYXIgbW9kaWZpY2F0aW9u
+IGNhbiBiZSBkb25lIGZvciBvdGhlciBicm9rZW4gcGxhdGZvcm1zLg0KDQo+IC0tDQo+IEZsb3Jp
+YW4NCg0KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
