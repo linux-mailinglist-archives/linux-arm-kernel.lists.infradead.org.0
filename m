@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5719E13245B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:59:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5E63132466
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:03:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=43gIkex7Ca3YevPyiDsV2aAU2sekiza00oN51kJLJnE=; b=uC4p3PdZkFiWwB
-	R6j3a4pu8pjAENbnHNiVFAVS7woj1eauv4gMPc8mR0wGzQf/pFjv/u7u2ebJ5R8yn744bTKgMReSK
-	PHgwQHg4/c2XJlUonte9PHQo+D7ZLjo6iyNgiSrV9IqVCHkMH2jtRLuQ7M+BEZPlWom8lN/qHRUlp
-	VLbe4SMHHJC4BXw3ZELavkWHKjUIiDBhiZe+2quIgy7CxB/CsX7j5kSgce4o9FiGZV8AJtcwiLClR
-	2L3IGOV8nL3NYrHAgnvyAxTzAOg+24mbnZh7QkXcrbHdq7nyQagR1sJW6fD9ydiGNsjSd1R2omGMG
-	s+zelX6ecBnwtAQvV/xw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=PDXLbUUsAIOenwKVaonweBOAsY/J3a1txukpP032/gc=; b=RfqjjiRrSbIQx5nBtT/fOoLrjE
+	DCW7mnvvl7wInhyAl69Gqmrx77ZOx34s11kD7gs2P6cChcYuwGkFaniA9GPFNcqUVH9BDBC4R3YqJ
+	WsjQSsypqzQROc7ti4iNDuP6QQkNSgzo1KWq4omt8LsSke/Vrac4iTSIadyFz2hz6ztcLkDhBs/WG
+	7pW/g8zUjzFwn2gJq+WYiND00IsNZNeio+Sm+FF0GgwjBjEQSVTGv9aDs+eXm7av1sjleuA1Rb6fd
+	VpSCBc8fuDjxOxpGV7HHrCJpmD8ong8WdmKBeTa81lqPXTf+pnk8EYPFR981brWL+w6Ee/T0ekVIJ
+	pvjin5ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iomaP-0007q5-1S; Tue, 07 Jan 2020 10:59:45 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iomdy-0001OR-Fd; Tue, 07 Jan 2020 11:03:26 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iomaE-0007pT-2i
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:59:35 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 007AxVUx059569;
- Tue, 7 Jan 2020 04:59:31 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578394771;
- bh=D7FXGxYVTAceLEBGDbCBjzOcuiBKOxf2M1bFoAUt/NE=;
- h=From:To:CC:Subject:Date;
- b=O6Et+GzsFIiL8cw6eGlrabPSKqFVATT2H4cd3hUkaMmPEUtKpPfMKJFD5ZtWRZGx0
- rz4k6ts+3nixhIrxoeL/4Vet36n+ON69/0fX5DQ4rR3RGj9wGuSqnmqY69+Ez77LHG
- whNlFgnP4hqfmfae4oxvfaCFS76MUUddmEOsCw8U=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 007AxVbB040093
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 7 Jan 2020 04:59:31 -0600
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Jan
- 2020 04:59:31 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 7 Jan 2020 04:59:31 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007AxSIe111229;
- Tue, 7 Jan 2020 04:59:29 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH v2] mfd: stm32-timers: Use dma_request_chan() instead
- dma_request_slave_channel()
-Date: Tue, 7 Jan 2020 12:59:59 +0200
-Message-ID: <20200107105959.18920-1-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.1
+ id 1iomdq-0001NH-KU
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:03:20 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c14so53416335wrn.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 03:03:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=xyZS91HmTWb7A0olo7U4XRnlJNJkRCAhnyhMR3Zh6ng=;
+ b=XLGV3B0w53+LAAAizJxW1KD6wXybJqgKTbqEDCaylaY0nMPB+bmDM8i7LKh3jThJPY
+ piJdz/2D7EbKmCcVQrRYJwAmUyub+Ty7SyHXAZDRxLlLdVFE9IzL7NHOmwxKTX+BMvhH
+ /tfyxAFTf3vbrWl4PnSzSVVVPtRA1V7NWo0hSIU4nqC2RjJQDAyoojirexKnN2FiADKL
+ 8nJwJKeQUai6h423Z8BeTpA6X2ZjvlBGevlkk1ghfj47tCArhxzyDKnzqN6nlSVHY0Ic
+ 4zbRPZIFcPo+iCNmn80bK6j6/MB4Yfh22ECRG66CeUhKKAvm49EkE3M1NSLW3JdP+GjX
+ n5yw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=xyZS91HmTWb7A0olo7U4XRnlJNJkRCAhnyhMR3Zh6ng=;
+ b=WwdbI3T6muFEmLe1zE5OZzibhgd1AjatDP5s+R4hQsinVoT5GLLkOl05V3fCfwevTh
+ i4A9yx1nqoXInp7TQP9xd4fr0EHWNZsnPHTd0hf/Mvalls2edjYbAFwolhIF7HdZv+JK
+ xRqQutsBO0u5IBjJLVF/ewiR1w4UhC3xfrmUT1a2+J+LE9PpM5kzbMsBD3t1t1loFB62
+ rpJdDa3vNKstcMZc+mIGJOplVUEkduxS9e7rUivoqk9mmIJHTCJjENXj82zwgWwtmyUs
+ d/nPhW3Rw38I5GiBY8SDKw1hvAmUHNLTa7LGtMiwiY6jOxNCsh1cAEbSdRgCoXBH0hCE
+ 9H+A==
+X-Gm-Message-State: APjAAAV1S7MWft0Q1YxtQznT6Unl4nvh9+2Z7tz3wkX5HLkmKkZvQXaJ
+ iM3Qo/yirvUotmo/AwyAWd8Iug==
+X-Google-Smtp-Source: APXvYqxyl/9a9ndyMLQUorspRbu6urqXJ/bewpXlI4wYvwP42WN3gQ4wZ6G2CNwanKvMWN5KgJ7pSg==
+X-Received: by 2002:a5d:53d1:: with SMTP id
+ a17mr104815122wrw.327.1578394997006; 
+ Tue, 07 Jan 2020 03:03:17 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id x6sm26383184wmi.44.2020.01.07.03.03.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 03:03:16 -0800 (PST)
+References: <20191226191224.3785282-1-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, sboyd@kernel.org
+Subject: Re: [PATCH v2 0/2] clk: Meson8/8b/8m2: fix the mali clock flags
+In-reply-to: <20191226191224.3785282-1-martin.blumenstingl@googlemail.com>
+Date: Tue, 07 Jan 2020 12:03:15 +0100
+Message-ID: <1j36crsf4c.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_025934_204703_3D9646E5 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200107_030318_702904_867BD168 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,98 +97,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vkoul@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org, mturquette@baylibre.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ narmstrong@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-eating up the error code.
 
-By using dma_request_chan() directly the driver can support deferred
-probing against DMA.
+On Thu 26 Dec 2019 at 20:12, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
-Hi,
+> While playing with devfreq support for the lima driver I experienced
+> sporadic (random) system lockups. It turned out that this was in
+> certain cases when changing the mali clock.
+>
+> The Amlogic vendor GPU platform driver (which is responsible for
+> changing the clock frequency) uses the following pattern when updating
+> the mali clock rate:
+> - at initialization: initialize the two mali_0 and mali_1 clock trees
+>   with a default setting and enable both clocks
+> - when changing the clock frequency:
+> -- set HHI_MALI_CLK_CNTL[31] to temporarily use the mali_1 clock output
+> -- update the mali_0 clock tree (set the mux, divider, etc.)
+> -- clear HHI_MALI_CLK_CNTL[31] to temporarily use the mali_0 clock
+>    output again
+>
+> With the common clock framework we can even do better:
+> by setting CLK_SET_RATE_PARENT for the mali_0 and mali_1 output gates
+> we can force the common clock framework to update the "inactive" clock
+> and then switch to it's output.
+>
+> I only tested this patch for a limited time only (approx. 2 hours).
+> So far I couldn't reproduce the sporadic system lockups with it.
+> However, broader testing would be great so I would like this to be
+> applied for -next.
+>
+> Changes since v1 at [0]:
+> - extend the existing comment in patch #1 to describe how the glitch-
+>   free mux works with the CCF
+> - slightly updated the patch description of patch #1 to clarify that
+>   the "mali_0" or "mali_1" trees must not be changed while running
+> - add patch #2 to update the clk_set_rate() kerneldoc because we agreed
+>   that clk_set_rate() should do a root-to-leaf update (it does already,
+>   it's just not documented)
+>
+>
+> [0] https://patchwork.kernel.org/cover/11293177/
+>
+>
+> Martin Blumenstingl (2):
+>   clk: meson: meson8b: make the CCF use the glitch-free "mali" mux
+>   clk: clarify that clk_set_rate() does updates from top to bottom
+>
 
-Changes since v1:
-- Fall back to PIO mode only in case of ENODEV and report all other errors
+Applied with Stephen's Ack
 
-Regards,
-Peter
-
- drivers/mfd/stm32-timers.c | 32 +++++++++++++++++++++++---------
- 1 file changed, 23 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/mfd/stm32-timers.c b/drivers/mfd/stm32-timers.c
-index efcd4b980c94..add603359124 100644
---- a/drivers/mfd/stm32-timers.c
-+++ b/drivers/mfd/stm32-timers.c
-@@ -167,10 +167,11 @@ static void stm32_timers_get_arr_size(struct stm32_timers *ddata)
- 	regmap_write(ddata->regmap, TIM_ARR, 0x0);
- }
- 
--static void stm32_timers_dma_probe(struct device *dev,
-+static int stm32_timers_dma_probe(struct device *dev,
- 				   struct stm32_timers *ddata)
- {
- 	int i;
-+	int ret = 0;
- 	char name[4];
- 
- 	init_completion(&ddata->dma.completion);
-@@ -179,14 +180,23 @@ static void stm32_timers_dma_probe(struct device *dev,
- 	/* Optional DMA support: get valid DMA channel(s) or NULL */
- 	for (i = STM32_TIMERS_DMA_CH1; i <= STM32_TIMERS_DMA_CH4; i++) {
- 		snprintf(name, ARRAY_SIZE(name), "ch%1d", i + 1);
--		ddata->dma.chans[i] = dma_request_slave_channel(dev, name);
-+		ddata->dma.chans[i] = dma_request_chan(dev, name);
- 	}
--	ddata->dma.chans[STM32_TIMERS_DMA_UP] =
--		dma_request_slave_channel(dev, "up");
--	ddata->dma.chans[STM32_TIMERS_DMA_TRIG] =
--		dma_request_slave_channel(dev, "trig");
--	ddata->dma.chans[STM32_TIMERS_DMA_COM] =
--		dma_request_slave_channel(dev, "com");
-+	ddata->dma.chans[STM32_TIMERS_DMA_UP] = dma_request_chan(dev, "up");
-+	ddata->dma.chans[STM32_TIMERS_DMA_TRIG] = dma_request_chan(dev, "trig");
-+	ddata->dma.chans[STM32_TIMERS_DMA_COM] = dma_request_chan(dev, "com");
-+
-+	for (i = STM32_TIMERS_DMA_CH1; i < STM32_TIMERS_MAX_DMAS; i++) {
-+		if (IS_ERR(ddata->dma.chans[i])) {
-+			/* Save the first error code to return */
-+			if (PTR_ERR(ddata->dma.chans[i]) != -ENODEV && !ret)
-+				ret = PTR_ERR(ddata->dma.chans[i]);
-+
-+			ddata->dma.chans[i] = NULL;
-+		}
-+	}
-+
-+	return ret;
- }
- 
- static void stm32_timers_dma_remove(struct device *dev,
-@@ -230,7 +240,11 @@ static int stm32_timers_probe(struct platform_device *pdev)
- 
- 	stm32_timers_get_arr_size(ddata);
- 
--	stm32_timers_dma_probe(dev, ddata);
-+	ret = stm32_timers_dma_probe(dev, ddata);
-+	if (ret) {
-+		stm32_timers_dma_remove(dev, ddata);
-+		return ret;
-+	}
- 
- 	platform_set_drvdata(pdev, ddata);
- 
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+>  drivers/clk/meson/meson8b.c | 11 +++++++----
+>  include/linux/clk.h         |  3 +++
+>  2 files changed, 10 insertions(+), 4 deletions(-)
 
 
 _______________________________________________
