@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8B621321D2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:03:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D2C31321E0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:05:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gpIXP5qfRnNgK+2d8BnEolMAL25Kj+ci8MgetNvgFwI=; b=Xd65ktVqzy12mu
-	xStYC02CQ5vKenkRliUXzvnsRftTonHm9j3tN5TnXoja5cNZeKVysxE5CTIen06Xf5bjgG/+2ZAj3
-	YHdssX1j23xNS3NLSS4Ulr5NRwssCRhUK0+AhjAUMNNeDWD3V0gaEsPKPMN8Uvrj67CDpDdsYZcb5
-	Pbn68kYr+42uURL5QXMiiLiW1uCWOnUkMZR58v8B4o22BtE+D8T98e4MZeLnaTWE5745eK53QBAjp
-	MZwFSrautuhZ41Eq4E9eWQgVDYJoRybPb4Qm2ijIH8rFQ5qB4qddEPjIrLeVKEtZrBNqS7pirZC4q
-	rSsNytoJbSEoXZkMJybA==;
+	List-Owner; bh=ZZBt2or3ksXMozJrd8ki80+L1w9rsA5TksYhBdEuRwk=; b=al77GuH+YP+Dq+
+	8eXqv4Y4aob3CS7zwYn9+E056qjm/C24629m8rc6ik3GNzoBpenztECvTrfa2pYw4D098qxCrKR4o
+	Vnr1QgMdCJ2Q6ayUeGp1NCUlaZpmbgLUEabuqOw+WD9Rvo7lsdui2bHyZ3mj7bSkyHuOaZYf/6g7G
+	Y4fIueuDiy0h8JgvnjzZBICl1pwXjEuUGgfyatTpIhY6fbwO53q1H8feZW/5oDfnq/jGWjS46maZg
+	vCCvb2lHnw94XHqzAhfZNjVUabpOQGS93z473YomgR0LwS1DYSo4DRx3PytrLy90iAWeizh8CFrl5
+	qjr720law79lWQgZncFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioklb-00066b-W7; Tue, 07 Jan 2020 09:03:11 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1ioknL-0006SB-Tz; Tue, 07 Jan 2020 09:04:59 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioklS-00065V-Gn
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 09:03:04 +0000
-Received: from ip-109-41-1-227.web.vodafone.de ([109.41.1.227]
- helo=wittgenstein) by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <christian.brauner@ubuntu.com>)
- id 1ioklG-0004Nl-2G; Tue, 07 Jan 2020 09:02:50 +0000
-Date: Tue, 7 Jan 2020 10:02:27 +0100
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: Amanieu d'Antras <amanieu@gmail.com>
-Subject: Re: [PATCH 2/7] arm64: Implement copy_thread_tls
-Message-ID: <20200107090219.jl4py4u2zvofwnbh@wittgenstein>
-References: <20200102172413.654385-1-amanieu@gmail.com>
- <20200102172413.654385-3-amanieu@gmail.com>
- <20200102180130.hmpipoiiu3zsl2d6@wittgenstein>
- <20200106173953.GB9676@willie-the-truck>
- <CA+y5pbSBYLvZ46nJP0pSYZnRohtPxHitOHPEaLXq23-QrPKk2g@mail.gmail.com>
+ id 1ioknF-0006Rj-E3
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 09:04:54 +0000
+Received: by mail-ed1-f68.google.com with SMTP id v28so49688622edw.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 01:04:53 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=SGG4xHX2YATIq9VZs4BAzLmEWAu7JtLxJw2WW5I4CiA=;
+ b=FzKYSlAHgTQp/phSluPI9q89Su4yGfQbSRtqIeo4PQ+ris+MoQfisgoHREt4hmUB8L
+ kU0xl0RkL3luEr1vG2dT+yGL1Vxf9P0nYjV9zE/zkQV1OHyNX6ZpMb+HuclSMT8nsBRo
+ eRx1wXxsaNiJVWAsnlyQ+D6ZtlWTOReKR05uljE+qBa+xnCHhbQO1z61EdiDYLeIDQmN
+ j1mCRemCIgBHlq7WOIEO9ImnzfyPeNkUdZR/JFl+GyS8wGp1gEnyIoXdA4cW7Ngo7it5
+ /PgyxdThxjEDwEXq6wsNb3t+tiwxV58tQug2GOM0UkqzMAzIAiNe7rl53hc/ZCh8RUhL
+ FY5g==
+X-Gm-Message-State: APjAAAVvHU+JCbEzkXuxLHltaNLoeTbJ4rq0FUHeGNQS2GbDNqUzcLT4
+ 4qT/hodpAUNCTOWh3CfYrpQ=
+X-Google-Smtp-Source: APXvYqyYO/ux/7ZOIuaH8J6fcPFS8f5Bcu/C6zg1+oGXA5GRJ16yYiqmjY4rrOHIsud0A3lqXQDsVw==
+X-Received: by 2002:a17:907:212f:: with SMTP id
+ qo15mr86708540ejb.245.1578387891926; 
+ Tue, 07 Jan 2020 01:04:51 -0800 (PST)
+Received: from pi3 ([194.230.155.149])
+ by smtp.googlemail.com with ESMTPSA id s12sm8054935eja.79.2020.01.07.01.04.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 01:04:51 -0800 (PST)
+Date: Tue, 7 Jan 2020 10:04:49 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: exynos: tiny4412: add proper panel node
+Message-ID: <20200107090449.GA32007@pi3>
+References: <20200106191003.21584-1-tiny.windzz@gmail.com>
+ <20200106191003.21584-2-tiny.windzz@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+y5pbSBYLvZ46nJP0pSYZnRohtPxHitOHPEaLXq23-QrPKk2g@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20200106191003.21584-2-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_010302_693518_FC2D33F4 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200107_010453_471817_02995B08 
+X-CRM114-Status: GOOD (  14.91  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,68 +88,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, "# 3.4.x" <stable@vger.kernel.org>,
- Christian Brauner <christian@brauner.io>, linux-kselftest@vger.kernel.org,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, kgene@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[Cc Kees in case he knows something about where arch specific tests live
- or whether we have a framework for this]
+On Mon, Jan 06, 2020 at 07:10:03PM +0000, Yangtao Li wrote:
+> This patch add at070tn92 panel for tiny4412 board.
 
-On Mon, Jan 06, 2020 at 07:03:32PM +0100, Amanieu d'Antras wrote:
-> On Mon, Jan 6, 2020 at 6:39 PM Will Deacon <will@kernel.org> wrote:
-> > I also ran the native and compat selftests but, unfortunately, they all
-> > pass even without this patch. Do you reckon it would be possible to update
-> > them to check the tls pointer?
-> 
-> Here's the program I used for testing on arm64. I considered adding it
-> to the selftests but there is no portable way of reading the TLS
-> register on all architectures.
-
-I'm not saying you need to do this right now.
-It feels like we must've run into the "this is architecture
-specific"-and-we-want-to-test-this issue before... Do we have a place
-where architecture specific selftests live?
+Please fix description as in patch 1.
 
 > 
-> #include <sys/syscall.h>
-> #include <unistd.h>
-> #include <stdio.h>
-> #include <stdint.h>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  arch/arm/boot/dts/exynos4412-tiny4412.dts | 16 ++++++++++++++++
+>  1 file changed, 16 insertions(+)
 > 
-> #define __NR_clone3 435
-> struct clone_args {
->     uint64_t flags;
->     uint64_t pidfd;
->     uint64_t child_tid;
->     uint64_t parent_tid;
->     uint64_t exit_signal;
->     uint64_t stack;
->     uint64_t stack_size;
->     uint64_t tls;
-> };
-> 
-> #define USE_CLONE3
-> 
-> int main() {
->     printf("Before fork: tp = %p\n", __builtin_thread_pointer());
-> #ifdef USE_CLONE3
->     struct clone_args args = {
->         .flags = CLONE_SETTLS,
->         .tls = (uint64_t)__builtin_thread_pointer(),
->     };
->     int ret = syscall(__NR_clone3, &args, sizeof(args));
-> #else
->     int ret = syscall(__NR_clone, CLONE_SETTLS, 0, 0,
-> __builtin_thread_pointer(), 0);
-> #endif
->     printf("Fork returned %d, tp = %p\n", ret, __builtin_thread_pointer());
-> }
+> diff --git a/arch/arm/boot/dts/exynos4412-tiny4412.dts b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> index 2b62cb27420c..57f9d09233ad 100644
+> --- a/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> +++ b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> @@ -66,6 +66,16 @@
+>  			clock-frequency = <24000000>;
+>  		};
+>  	};
+> +
+> +	panel {
+> +		compatible = "innolux,at070tn92";
+> +
+> +		port {
+> +			panel_input: endpoint {
+> +				remote-endpoint = <&lcdc_output>;
+> +			};
+> +		};
+> +	};
+>  };
+>  
+>  &fimd {
+> @@ -74,6 +84,12 @@
+>  	#address-cells = <1>;
+>  	#size-cells = <0>;
+>  	status = "okay";
+
+One empty space here.
+
+> +	port@3 {
+> +		reg = <3>;
+
+Why starting from "3"? Why this is port@3, not just "port"?
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
