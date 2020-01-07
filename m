@@ -2,63 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0351132F81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:31:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296B9132F8F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:32:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bXSOo35kGEjUsRCFlnQ8eHTYwNsBmdBu7rmNNPX+SsY=; b=bWfujL8TpeSJLF
-	H9O2O7JGGgs3Oj6sGvg0lAZ7oLKgFv/JehHtL8rmkDminffm6XC8Z9u/7rvc839bTTyrM0HQUCF44
-	G9evR93lHtJR1jRu54yswm2jI/WwY11fnQpSpGMaQ7vTYxnlD0hcBZJXpSy3R/syAWdCl53VQSrfT
-	otDefZTOSD3UgIn0/DHiTpAlpAqk2VcuuNbYnXg4Kh4j3zt00+pQqzkUwrQ/Birmd2JAw2pP8D4/O
-	pJQ4av5i/z2kYztprPm8wkqFmKKj4Jon6aoQKm/Wy1RGzkeUpIHd29ZSgTtbzWpbXnxx554PkOB3L
-	npurYSc47voABpxGbKqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=C2A8sgXUnLJYsDbUDkpzL8X9KKnvAn0FyQgpuq3TyPo=; b=B8I
+	1Q1bzNUjiWATqCthSIhppg/uf0e/mH5VchdcOuWeUXY1YFZpTGrt/gxqRNVatDGvxST8jNjTTHUgk
+	SaUXqV3cAVSJhK+rXsspzKzK2YKZnUbeTLO4y1o/boAZoYUJpeMzbMjnT6lczaNm9mieaLNg4wzGN
+	7ocWCCp3/V7F/dHcQa+X804RkZ5auXfHlrLsBf4ueuEDSL89+QdFmYKqRlihREc/zqQNRBRj8gOsB
+	s4bQa5w1cA3YZz9nb/aag2zkEIlLXCMyfE8Cr8I4KQrjfaND8lbF5joQApoAsoRSqtfpzWGPQLid8
+	1XtGA128CFYIj60UqKQZuu0Ek5kQa0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iouZI-0002DU-06; Tue, 07 Jan 2020 19:31:08 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1iouaJ-0002si-49; Tue, 07 Jan 2020 19:32:11 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iouZ9-0002Cg-0Q
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:31:00 +0000
-Received: from ip-109-41-1-29.web.vodafone.de ([109.41.1.29] helo=wittgenstein)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <christian.brauner@ubuntu.com>)
- id 1iouZ2-0004Mw-9L; Tue, 07 Jan 2020 19:30:52 +0000
-Date: Tue, 7 Jan 2020 20:30:54 +0100
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH 2/7] arm64: Implement copy_thread_tls
-Message-ID: <20200107193054.t2d4txgz3fnrw3gn@wittgenstein>
-References: <20200102172413.654385-1-amanieu@gmail.com>
- <20200102172413.654385-3-amanieu@gmail.com>
- <20200102180130.hmpipoiiu3zsl2d6@wittgenstein>
- <20200106173953.GB9676@willie-the-truck>
- <CA+y5pbSBYLvZ46nJP0pSYZnRohtPxHitOHPEaLXq23-QrPKk2g@mail.gmail.com>
- <20200107090219.jl4py4u2zvofwnbh@wittgenstein>
- <20200107174508.GC32009@willie-the-truck>
- <202001071011.9517D9C0D@keescook>
+ id 1iouZz-0002oF-Io; Tue, 07 Jan 2020 19:31:53 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 9853BAC4A;
+ Tue,  7 Jan 2020 19:31:49 +0000 (UTC)
+Message-ID: <a2f77f1a8bb3b981d3e2fccd3fcb56733b63946a.camel@suse.de>
+Subject: [GIT PULL] bcm2835-dt-next-2020-01-07
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Date: Tue, 07 Jan 2020 20:31:48 +0100
+User-Agent: Evolution 3.34.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202001071011.9517D9C0D@keescook>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_113059_189401_4323D3CC 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200107_113151_797555_7972D7B0 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,42 +60,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amanieu d'Antras <amanieu@gmail.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, "# 3.4.x" <stable@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-kselftest@vger.kernel.org, Will Deacon <will@kernel.org>,
- Christian Brauner <christian@brauner.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <wahrenst@gmx.net>, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5163319424918665808=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 07, 2020 at 10:12:39AM -0800, Kees Cook wrote:
-> On Tue, Jan 07, 2020 at 05:45:09PM +0000, Will Deacon wrote:
-> > On Tue, Jan 07, 2020 at 10:02:27AM +0100, Christian Brauner wrote:
-> > > [Cc Kees in case he knows something about where arch specific tests live
-> > >  or whether we have a framework for this]
-> > > [...]
-> > > It feels like we must've run into the "this is architecture
-> > > specific"-and-we-want-to-test-this issue before... Do we have a place
-> > > where architecture specific selftests live?
-> > 
-> > For arch-specific selftests there are tools/testing/selftests/$ARCH
-> > directories, although in this case maybe it's better to have an #ifdef
-> > in a header so that architectures with __builtin_thread_pointer can use
-> > that.
-> 
-> Yup, I agree: that's the current best-practice for arch-specific
-> selftests.
 
-Thanks! I think using #ifdef in this case with __builtin_thread_pointer
-sounds good.
-So the tests can be moved into the clone3() test-suite for those
-architectures.
+--===============5163319424918665808==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-dPkd0/o+G6GVBoisjtIy"
 
-Christian
+
+--=-dPkd0/o+G6GVBoisjtIy
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Florian,
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a=
+:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://github.com/vianpl/linux tags/bcm2835-dt-next-2020-01-07
+
+for you to fetch changes up to 530735df62582d5d1f41faf0e0d1ca7d21dca571:
+
+  ARM: dts: bcm2711: Enable HWRNG support (2020-01-07 20:11:51 +0100)
+
+----------------------------------------------------------------
+Stephen Brennan (2):
+      ARM: dts: bcm2835: Move rng definition to common location
+      ARM: dts: bcm2711: Enable HWRNG support
+
+ arch/arm/boot/dts/bcm2711.dtsi        | 6 ++----
+ arch/arm/boot/dts/bcm2835-common.dtsi | 6 ++++++
+ arch/arm/boot/dts/bcm283x.dtsi        | 6 ------
+ 3 files changed, 8 insertions(+), 10 deletions(-)
+
+
+--=-dPkd0/o+G6GVBoisjtIy
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl4U3KQACgkQlfZmHno8
+x/65SAf+NmZ2tYuGVZ1tPFBGugW+TKZ4/sZc8XrBeX8tDg1ozDZp27WsDe9umGb6
+ojqvPr7FUtSL1kG5PIBAqTIJl9upzCsmEECpLIp8ZES243ZcH7dWARjqM0SCBxVs
+OomJMI2NEuRyteq7s/7ibmVDyJGHSianm06hafyiups++fvjz0q8TrcZ6wM31Cu8
+eJ70koJNf+R/2xcMRKdqjAtu47NJ1c5ny7NxN6BGeRyuc99Owl7qyK+V8y0jnteK
+Ua4cW+EFy1DWILtDUT6tZpG+LEqdhcSM0V1f6KFPi3BwSDqtLPuszVMCf4iHkPCF
+LFgv6rKl1SrB/4es1gFccTV8lfV18w==
+=Hz8W
+-----END PGP SIGNATURE-----
+
+--=-dPkd0/o+G6GVBoisjtIy--
+
+
+
+--===============5163319424918665808==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5163319424918665808==--
+
+
