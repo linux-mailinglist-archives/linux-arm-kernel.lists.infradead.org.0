@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 424FD132E1B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:14:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26463132E1C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:14:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FLl2xb4s+92XdafrGADI6M5eDItTDL/AxQkJaoX1a1c=; b=fFFIXLxVS1AQWH
-	D/iXsb5ssyQceOVcy82E0hLbzw7ui9aAEmqmiF5QqvY8Z7lZbll5fbGHHTCRBGaWQstLbW5YIJPBv
-	pNxHRzinYcnU/ZnGMMhgH+42wNszGtVXfesiPKEELd8QxlJFAlo83sBaGlShbdp44QJJhkuftAM4L
-	q6hTE8rVlvWRphitMBjmXFoG4Fa3o71YmMTpjOuU9nnFbBGgjZ0dtHcSClIvnb1s3TeYtdMAtrFTz
-	Ev60GmKaDjWXHDNYvBK6WQdD1U4uEsjwakY18myw/vmN9s/Yn1ZdbXXpu4YV5vWMKJcWhUemKDlTo
-	LZ8Lf5DVet13sOc5jQkA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PHO+mltlOrK1/n5lagW67+g+zRfEkJaSd6rPyUBO5do=; b=K/cUyb8mF8L7ym
+	lUqnD9VBjdKJ/9CmcG5Xl72f3/BOts38WwCJGGQcAziTfM2+ROBOZ/vsrUrEZarLrIa/aNOQgBg/S
+	BDIYFaMcDEVwfeh4pSQIJxYi+y+JBvibOSZgGJyNOhmTeqqlQK9271xJd3PnTos1REjEchIECSs/k
+	De21wjy9WS9INoUFnSMHZyo7b75GtPRMFrTd/5mvF1soSuO6vuN8JnTzqICjdTS0+KWzSUDPX2CXT
+	Om6fKwoCc0FaMTLZxqT2/92xeVCEqBiH1L94dpU4r441kAoA/uLYSvOVuEDzlxoQR9KJ2k/TIx5oQ
+	ricGiA4lvr14jTpYUm2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotNB-0001PD-48; Tue, 07 Jan 2020 18:14:33 +0000
+	id 1iotNL-0001XP-58; Tue, 07 Jan 2020 18:14:43 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotN2-0001Nt-5t
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:14:25 +0000
+ id 1iotN3-0001OF-3e
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:14:26 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 362128022;
- Tue,  7 Jan 2020 18:15:05 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 3538F810E;
+ Tue,  7 Jan 2020 18:15:06 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 1/4] soc changes for omaps for v5.6
-Date: Tue,  7 Jan 2020 10:14:16 -0800
-Message-Id: <pull-1578420398-290837@atomide.com>
+Subject: [GIT PULL 2/4] dts changes for omaps for v5.6
+Date: Tue,  7 Jan 2020 10:14:17 -0800
+Message-Id: <pull-1578420398-290837@atomide.com-2>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <pull-1578420398-290837@atomide.com>
+References: <pull-1578420398-290837@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_101424_256530_54076E4B 
-X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-CacheID: sfid-20200107_101425_186144_574E0A4F 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,48 +74,45 @@ The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/soc-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/dt-signed
 
-for you to fetch changes up to 4601832f40501efc3c2fd264a5a69bd1ac17d520:
+for you to fetch changes up to bfe0237dd6c441f0ba531755ab24579eaee99be7:
 
-  ARM: OMAP2+: use separate IOMMU pdata to fix DRA7 IPU1 boot (2019-12-17 09:57:09 -0800)
-
-----------------------------------------------------------------
-SoC changes for omaps for v5.6 merge window
-
-SoC related changes for omaps that mostly relate to making iommus
-to start probing with ti-sysc interconnect target module driver:
-
-- Add missing lcdc clockdomain for am43xx
-
-- Pass auxdata for reset control driver
-
-- Remove old pdata quirks for iommus
-
-- Add workaround for dra7 dsp mstandby errata
-
-- Convert iommu platform code to probe with ti-sysc
-
-- Use sperate iommu auxdata for ipu1
+  ARM: dts: am335x-icev2: Add support for OSD9616P0899-10 at i2c0 (2019-12-12 09:35:02 -0800)
 
 ----------------------------------------------------------------
-Dave Gerlach (1):
-      ARM: OMAP2+: am43xx: Add lcdc clockdomain
+Devicetree changes for omaps for v5.6 merge window
 
-Suman Anna (2):
-      ARM: OMAP2+: Add workaround for DRA7 DSP MStandby errata i879
-      ARM: OMAP2+: use separate IOMMU pdata to fix DRA7 IPU1 boot
+Devicetree changes for omaps for v5.6 to configure more
+devices and update boards to use generic lcd panels:
 
-Tero Kristo (3):
-      ARM: OMAP2+: pdata-quirks: add PRM data for reset support
-      ARM: OMAP4+: remove pdata quirks for omap4+ iommus
-      ARM: OMAP2+: omap-iommu.c conversion to ti-sysc
+- Configure HDMI for dra76-evm and am57xx-idk
 
- arch/arm/mach-omap2/clockdomains43xx_data.c |  10 +++
- arch/arm/mach-omap2/omap-iommu.c            | 128 ++++++++++++++++++++++++----
- arch/arm/mach-omap2/pdata-quirks.c          |  43 +++++++---
- arch/arm/mach-omap2/prcm43xx.h              |   1 +
- 4 files changed, 153 insertions(+), 29 deletions(-)
+- Correct node name for am3517 mdio
+
+- Convert am335x-evm, am335x-evmsk, and am335x-icev2 to use generic
+  panels
+
+----------------------------------------------------------------
+Grygorii Strashko (1):
+      ARM: dts: omap3: name mdio node properly
+
+Jyri Sarha (3):
+      ARM: dts: am335x-evm: Use drm simple-panel instead of tilcdc-panel
+      ARM: dts: am335x-evmsk: Use drm simple-panel instead of tilcdc-panel
+      ARM: dts: am335x-icev2: Add support for OSD9616P0899-10 at i2c0
+
+Tomi Valkeinen (2):
+      ARM: dts: dra76-evm: add HDMI output
+      ARM: dts: am57xx-idk-common: add HDMI to the common dtsi
+
+ arch/arm/boot/dts/am335x-evm.dts         | 40 +++++++------------
+ arch/arm/boot/dts/am335x-evmsk.dts       | 38 ++++++------------
+ arch/arm/boot/dts/am335x-icev2.dts       | 13 +++++++
+ arch/arm/boot/dts/am3517.dtsi            |  2 +-
+ arch/arm/boot/dts/am57xx-idk-common.dtsi | 59 ++++++++++++++++++++++++++++
+ arch/arm/boot/dts/dra76-evm.dts          | 66 ++++++++++++++++++++++++++++++++
+ 6 files changed, 164 insertions(+), 54 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
