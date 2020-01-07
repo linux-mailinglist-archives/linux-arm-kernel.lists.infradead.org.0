@@ -2,85 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76CC313284F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 15:01:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C663B132870
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 15:05:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fxJmUCnMxndsHhrZrLGJYA0uuVHTElRcauxUd/vmpsQ=; b=NEtXmMPF70/iv+
-	vZOgbib0F/Qsn5ZE6Z/WhXgcyz9VMEYQC2WimRd0HwvyfyUCdB9FJHla+bfjxhkoeWIwu0lnLreoQ
-	jxXIQPul1wCM9GNaC3wKjK6UeprBDXOHAJlx6wjmN8dHgOJJ91HmhzrKcmUjQLMw64xxV6wBpcdDa
-	PEirX4swxuZ8GGve9rmOioap6qMckIqh4NCRVOWbSZ/lK6GJtpHREmPuKBQrgayCyakYmJzpzRSBO
-	9VIBP8YO0iOKzZNduwzBKA3Dh64LAZ2RLfc+kAz/Y9vNxoiF3V1ApS3BdRzTKQOKY3TXlUkvAOpPe
-	NIT03hnxmi1e7/TdSQ9w==;
+	List-Owner; bh=uanjIAgTNT8gATQ8OTp9EbELh83MIK0PXWgOcLeNTJg=; b=TwTE9SknZ03mwZ
+	g6Yf0/tpD4/zDGfZmBDBiiJhVSlwdqj0WzBR5UqiVT1NzV99ZQw9G+nkewKDSYmRCtWVI2bvNruOq
+	ZVoqBft57cG6DM2wMnuJDbMFrEvWSn6tuzP4RiCs6+zHyFDIplya83KeLjtcQs+Ip56lWBVYZPzMD
+	1UgyTtX9m6tFo0BEGfp+LI5uci1cwt00icsjzwN3L4ndueLRU+VjHq4TPyPBVXYKG95qHiJ+UyIFl
+	ArvKXpCpgqMzSqEN8J5WtPiT/ypVfYbEuyj77YQKRLp/xxPl2mAovwJZ+l98oEpl6W8pWaTazjJWk
+	2n/CYdSpZTPDFLmF/JaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iopQP-0006Rs-Rb; Tue, 07 Jan 2020 14:01:37 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iopUC-0008Qq-EA; Tue, 07 Jan 2020 14:05:32 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iopQH-0006Qo-OP; Tue, 07 Jan 2020 14:01:32 +0000
-Received: by mail-ed1-x544.google.com with SMTP id v28so50361549edw.12;
- Tue, 07 Jan 2020 06:01:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1DdkH/5E1tsHkzF5jhXew/z+AFPdpz7/Gvbqbl9G+dg=;
- b=d098/Ap5WZLDYOVx0LUlRnuUilSy+QZyFpM2S+2zMcaSMbQYhJs7Zsv6FI/Ks5jxXv
- dQO2dtGfqCwe9noHFs3y6uhVVyyaaGYPvZwl65t38wPj+hyImcuTHeqj5VyIA4f2lLWb
- UFEa9gC++l0TOhMPwTDLWof0xt/wpRXKZdRfavRYAv8KnTTjshhiZxdDSWfOtyFbT1Bv
- ymkgIQhCEUdCHX9AxIdCz7QsLJrymPx3I4pwcbwTXRCmuq1rwukCSqsog4onHzB8ED3B
- As0e8Ppu27OLG9hHYWl1FLz5+jvWgt0sYgd2BvjO6PTzcD9XD4qEGylhNQzi6oZNCc0p
- +UOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1DdkH/5E1tsHkzF5jhXew/z+AFPdpz7/Gvbqbl9G+dg=;
- b=Ar3mRtvxbxW29VdNWSULqU9Lwto7t2ZXhjT+mpBVSGFew5wtnuCbvgiAfT8IRiZb+r
- ObryAiqBTMat+hfJEDCTbJaEDgY1GUNNTZ2PodilmAN0eh7SwCtBRpAsqPajH2YKsENK
- f/55Rt2wFKkUKSjZU5kqlGzJKwlYXff4C26inm4nvkTggvK8Tjsfo/YjoBZcYjbiQ54w
- 1APeMypwPhLhMCLAcdeSAIEpQ1SI2bZUFgH+j110rYdxoOdloEeStVALrsLQLHrbp5zY
- uw63ShAr2FRF5aatxlXHyspXB+HN9BProYeBZk13NLZIX7k2xYHr8+efABbsPMWSzzdg
- XjYw==
-X-Gm-Message-State: APjAAAUiHkPnuoUVkT77YdmjYbOAzDv68afx/FOQm/NGusS1BiFvWF5u
- o0J1RiB/LykBxTjpMXtFZWGUBmKDewh775gUGEw=
-X-Google-Smtp-Source: APXvYqyj/Sjok9k+8DFvLcnokJSMsKngAK+B55iujYFUBH+0eeHn408PpI8AyVvrp43iXISHPpiSNBLhnBPRapSUjiQ=
-X-Received: by 2002:aa7:c80b:: with SMTP id
- a11mr115581083edt.240.1578405684201; 
- Tue, 07 Jan 2020 06:01:24 -0800 (PST)
+ id 1iopU4-0006QN-Q3; Tue, 07 Jan 2020 14:05:26 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Jan 2020 06:01:22 -0800
+X-IronPort-AV: E=Sophos;i="5.69,406,1571727600"; d="scan'208";a="303202691"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by orsmga001-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Jan 2020 06:01:17 -0800
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id D7C07209AE; Tue,  7 Jan 2020 16:01:15 +0200 (EET)
+Date: Tue, 7 Jan 2020 16:01:15 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
+ yaml bindings
+Message-ID: <20200107140115.GQ19828@paasikivi.fi.intel.com>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <20191227200116.2612137-9-helen.koike@collabora.com>
 MIME-Version: 1.0
-References: <20191226203655.4046170-1-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20191226203655.4046170-1-martin.blumenstingl@googlemail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 7 Jan 2020 15:01:13 +0100
-Message-ID: <CAFBinCBJwHmQaHMEdZziD=qopqzG6sc2PABkt4E5Hrf927ussQ@mail.gmail.com>
-Subject: Re: [RFC v1 0/2] dwmac-meson8b Ethernet RX delay configuration
-To: jianxin.pan@amlogic.com
+Content-Disposition: inline
+In-Reply-To: <20191227200116.2612137-9-helen.koike@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_060129_795433_D13B0D7D 
-X-CRM114-Status: GOOD (  11.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200107_060524_858783_222C73D4 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,48 +68,270 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, f.fainelli@gmail.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ ezequiel@collabora.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, joacim.zetterling@gmail.com,
+ mchehab@kernel.org, andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Jianxin,
+Hi Helen,
 
-On Thu, Dec 26, 2019 at 9:37 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> The Ethernet TX performance has been historically bad on Meson8b and
-> Meson8m2 SoCs because high packet loss was seen. I found out that this
-> was related (yet again) to the RGMII TX delay configuration.
-> In the process of discussing the big picture (and not just a single
-> patch) [0] with Andrew I discovered that the IP block behind the
-> dwmac-meson8b driver actually seems to support the configuration of the
-> RGMII RX delay (at least on the Meson8b SoC generation).
->
-> The goal of this series is to start the discussion around how to
-> implement the RGMII RX delay on this IP block. Additionally it seems
-> that the RX delay can also be applied for RMII PHYs?
->
-> @Jianxin: can you please add the Amlogic internal Ethernet team to this
-> discussion? My questions are documented in the patch description of
-> patch #2.
-do you already have an update for me on this topic?
+On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
+> Add yaml DT bindings for Rockchip ISP1.
+> 
+> This was tested and verified with:
+> mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v12:
+> - The commit replaces the following commit in previous series named
+> media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+> This new patch adds yaml binding and was verified with
+> make dtbs_check and make dt_binding_check
+> 
+> Changes in v11:
+> - add clock-names values
+> 
+> Changes in v10:
+> - unsquash
+> 
+> Changes in v9:
+> - squash
+> - move to staging
+> 
+> Changes in v8:
+> - fix title division style
+> 
+> Changes in v7:
+> - update document with new design and tested example
+> 
+>  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+>  1 file changed, 193 insertions(+)
+>  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> new file mode 100644
+> index 000000000000..4d1b2c67a4cd
+> --- /dev/null
+> +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> @@ -0,0 +1,193 @@
+> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip SoC Image Signal Processing unit v1
+> +
+> +maintainers:
+> +  - Helen Koike <helen.koike@collabora.com>
+> +
+> +description: |
+> +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
+> +  which contains image processing, scaling, and compression funcitons.
 
-while we're discussing unknown bits of the Ethernet controller I also
-remembered that we're currently not describing the relation between
-the "fclk_div2" clock and the Ethernet controller. however, as
-described in commit 72e1f230204039 ("clk: meson: meson8b: mark
-fclk_div2 gate clocks as CLK_IS_CRITICAL") this is needed for RGMII
-mode.
-it would be great to know the relation between fclk_div2 and RGMII
-mode on the Ethernet controller!
+"functions"
 
+> +
+> +properties:
+> +  compatible:
+> +    const: rockchip,rk3399-cif-isp
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description: phandle for the PHY port
+> +
+> +  phy-names:
+> +    const: dphy
+> +
+> +  clocks:
+> +    items:
+> +      - description: ISP clock
+> +      - description: ISP aclk clock
+> +      - description: ISP aclk wrapper clock
+> +      - description: ISP hclk clock
+> +      - description: ISP hclk wrapper clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: clk_isp
+> +      - const: aclk_isp
+> +      - const: aclk_isp_wrap
+> +      - const: hclk_isp
+> +      - const: hclk_isp_wrap
+> +
+> +  # See ./video-interfaces.txt for details
+> +  ports:
+> +    type: object
+> +    additionalProperties: false
+> +
+> +    properties:
+> +      "#address-cells":
+> +        const: 1
+> +
+> +      "#size-cells":
+> +        const: 0
+> +
+> +      port@0:
 
-Thank you!
-Martin
+If you only have a single port node, you could drop reg as well as @0 on
+the port node.
+
+> +        type: object
+> +        additionalProperties: false
+> +
+> +        properties:
+> +          "#address-cells":
+> +            const: 1
+> +
+> +          "#size-cells":
+> +            const: 0
+> +
+> +          reg:
+> +            const: 0
+> +            description: port identifier.
+> +
+> +        patternProperties:
+> +          endpoint:
+> +            type: object
+> +            additionalProperties: false
+> +
+> +            properties:
+> +              reg:
+> +                maxItems: 1
+> +                description: endpoint identifier.
+> +
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +
+> +              remote-endpoint: true
+> +
+> +    required:
+> +      - port@0
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +  - iommus
+> +  - phys
+> +  - phy-names
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +
+> +    #include <dt-bindings/clock/rk3399-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/rk3399-power.h>
+> +
+> +    parent0: parent@0 {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        isp0: isp0@ff910000 {
+> +            compatible = "rockchip,rk3399-cif-isp";
+> +            reg = <0x0 0xff910000 0x0 0x4000>;
+> +            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
+> +            clocks = <&cru SCLK_ISP0>,
+> +                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
+> +                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
+> +            clock-names = "clk_isp",
+> +                          "aclk_isp", "aclk_isp_wrap",
+> +                          "hclk_isp", "hclk_isp_wrap";
+> +            power-domains = <&power RK3399_PD_ISP0>;
+> +            iommus = <&isp0_mmu>;
+> +            phys = <&dphy>;
+> +            phy-names = "dphy";
+> +
+> +            ports {
+> +                #address-cells = <1>;
+> +                #size-cells = <0>;
+> +
+> +                port@0 {
+> +                    #address-cells = <1>;
+> +                    #size-cells = <0>;
+> +                    reg = <0>;
+> +
+> +                    mipi_in_wcam: endpoint@0 {
+> +                        reg = <0>;
+> +                        remote-endpoint = <&wcam_out>;
+> +                        data-lanes = <1 2>;
+> +                    };
+> +
+> +                    mipi_in_ucam: endpoint@1 {
+> +                        reg = <1>;
+> +                        remote-endpoint = <&ucam_out>;
+> +                        data-lanes = <1>;
+> +                    };
+> +                };
+> +            };
+> +        };
+> +
+> +        i2c7: i2c@ff160000 {
+> +            clock-frequency = <400000>;
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            wcam: camera@36 {
+> +                compatible = "ovti,ov5695";
+> +                reg = <0x36>;
+> +
+> +                port {
+> +                    wcam_out: endpoint {
+> +                        remote-endpoint = <&mipi_in_wcam>;
+> +                        data-lanes = <1 2>;
+> +                    };
+> +                };
+> +            };
+> +
+> +            ucam: camera@3c {
+> +                compatible = "ovti,ov2685";
+> +                reg = <0x3c>;
+> +
+> +                  port {
+> +                      ucam_out: endpoint {
+> +                          remote-endpoint = <&mipi_in_ucam>;
+> +                          data-lanes = <1>;
+> +                      };
+> +                  };
+> +            };
+> +        };
+> +    };
+
+-- 
+Kind regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
