@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0616132352
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:15:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23F2E132351
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:14:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zEIFy42gw0qlhhlLlnnXZUmuxZXHI4Pn1MmF4qJhwK8=; b=E74O1ZgTks4YN9
-	yJqFa0dYhNiyAVHNsXwloWV3R0zm1i2Ci6y4k3s+FVtO7CNld8zAkXNmDd7fXMiR9PEgeT3u5nf2Z
-	rzx/DQsddUoXPjHoPC4Rpz3z2lrGxHGMYv4UP2C9NjRJdCzGlP2XC8xxF3Iy32nqkHb2ZGYkVgDGf
-	IsW8LGniqw6u09XbwR+n2ZKHf9inU9PTP8SzT8KH+DKy/SJEZXF7Z12F3rYiObVcsgAonXJYqwj5l
-	YAmoH14s2TF63kJe7q4rj29HFQ4nJ7GkVOlKSekoZ+BLv/wfIZTaEQAok46M+f4rp/CN4TeYFpwZQ
-	RBoBdJP9waQEQBLHXAgg==;
+	List-Owner; bh=kRd6bgc4u2Mvlxuazr0CqRpatPPL4eLidIiqmRaZ9Dw=; b=RbKEnx3O4ihyrC
+	MhgdXGFosV19OG3Cx8sTH6UKtztoBmNcq/YJh4p3tChZwGDkKOLsztxEDrmFegIEsxbJEJ+/T0Bc2
+	Pv5DTqWEqk63KLKBxu6pCyf4FJp1w7WBsmuUs/AIECUB5Rux3YfmX1TNSe40mB9t0SAZkLso5OGGI
+	AQFaWJXi/rM60ugRScf7tmpFRr13dlbxe7j1AegQYO0PMiv6U9RDKjcv8EMYIOSiz1TN0NnQMY/Ay
+	uGLAy+NVbnh+/+pJU65V4UOn5T+a3e1J2s/Dc/FQLPe7Y8mP0d4hdOm6tOajtDnfw2DfWSndSx1sl
+	WYuHSSXuSdFSKvQ8E4Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioltL-00029i-LZ; Tue, 07 Jan 2020 10:15:15 +0000
+	id 1iolsw-0001sD-UZ; Tue, 07 Jan 2020 10:14:51 +0000
 Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
  helo=herzl.nuvoton.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iolsc-0001j9-Ak
+ id 1iolsc-0001jE-Ao
  for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:14:33 +0000
 Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
- by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 007AEAgs032318;
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 007AEAZK032319;
  Tue, 7 Jan 2020 12:14:10 +0200
 Received: by taln60.nuvoton.co.il (Postfix, from userid 10070)
- id 5F8DF6032E; Tue,  7 Jan 2020 12:14:10 +0200 (IST)
+ id C4C466032F; Tue,  7 Jan 2020 12:14:10 +0200 (IST)
 From: Tomer Maimon <tmaimon77@gmail.com>
 To: linux-arm-kernel@lists.infradead.org, joel@jms.id.au, yuenn@google.com,
  venture@google.com, benjaminfair@google.com, avifishman70@gmail.com
-Subject: [PATCH v3 1/3] arm: dts: modify NPCM7xx device tree clock parameter
- to clock constant
-Date: Tue,  7 Jan 2020 12:14:06 +0200
-Message-Id: <20200107101408.66703-2-tmaimon77@gmail.com>
+Subject: [PATCH v3 2/3] arm: dts: modify NPCM7xx device tree timer register
+ size
+Date: Tue,  7 Jan 2020 12:14:07 +0200
+Message-Id: <20200107101408.66703-3-tmaimon77@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200107101408.66703-1-tmaimon77@gmail.com>
 References: <20200107101408.66703-1-tmaimon77@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_021430_783719_6F818F86 
-X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-CacheID: sfid-20200107_021430_776316_EF36F72D 
+X-CRM114-Status: UNSURE (   8.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 3.0 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,137 +82,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Modify NPCM7xx device tree clock parameter to clock constants that
-define at include/dt-bindings/clock/nuvoton,npcm7xx-clock.h file.
+Modify NPCM7xx device tree timer register size
+from 0x50 to 0x1C.
 
 Signed-off-by: Tomer Maimon <tmaimon77@gmail.com>
 ---
- arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi | 19 ++++++++++---------
- arch/arm/boot/dts/nuvoton-npcm750.dtsi        |  6 +++---
- 2 files changed, 13 insertions(+), 12 deletions(-)
+ arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi b/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
-index d2d0761295a4..16a28c5c4131 100644
+index 16a28c5c4131..72e364054e72 100644
 --- a/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
 +++ b/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
-@@ -3,6 +3,7 @@
- // Copyright 2018 Google, Inc.
- 
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/clock/nuvoton,npcm7xx-clock.h>
- 
- / {
- 	#address-cells = <1>;
-@@ -80,7 +81,7 @@
- 			interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
- 			cache-unified;
- 			cache-level = <2>;
--			clocks = <&clk 10>;
-+			clocks = <&clk NPCM7XX_CLK_AXI>;
- 			arm,shared-override;
- 		};
- 
-@@ -120,7 +121,7 @@
+@@ -120,7 +120,7 @@
+ 			timer0: timer@8000 {
  				compatible = "nuvoton,npcm750-timer";
  				interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
- 				reg = <0x8000 0x50>;
--				clocks = <&clk 5>;
-+				clocks = <&clk NPCM7XX_CLK_TIMER>;
+-				reg = <0x8000 0x50>;
++				reg = <0x8000 0x1C>;
+ 				clocks = <&clk NPCM7XX_CLK_TIMER>;
  			};
  
- 			watchdog0: watchdog@801C {
-@@ -128,7 +129,7 @@
- 				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
- 				reg = <0x801C 0x4>;
- 				status = "disabled";
--				clocks = <&clk 5>;
-+				clocks = <&clk NPCM7XX_CLK_TIMER>;
- 			};
- 
- 			watchdog1: watchdog@901C {
-@@ -136,7 +137,7 @@
- 				interrupts = <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
- 				reg = <0x901C 0x4>;
- 				status = "disabled";
--				clocks = <&clk 5>;
-+				clocks = <&clk NPCM7XX_CLK_TIMER>;
- 			};
- 
- 			watchdog2: watchdog@a01C {
-@@ -144,13 +145,13 @@
- 				interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
- 				reg = <0xa01C 0x4>;
- 				status = "disabled";
--				clocks = <&clk 5>;
-+				clocks = <&clk NPCM7XX_CLK_TIMER>;
- 			};
- 
- 			serial0: serial@1000 {
- 				compatible = "nuvoton,npcm750-uart";
- 				reg = <0x1000 0x1000>;
--				clocks = <&clk 6>;
-+				clocks = <&clk NPCM7XX_CLK_UART>;
- 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
- 				reg-shift = <2>;
- 				status = "disabled";
-@@ -159,7 +160,7 @@
- 			serial1: serial@2000 {
- 				compatible = "nuvoton,npcm750-uart";
- 				reg = <0x2000 0x1000>;
--				clocks = <&clk 6>;
-+				clocks = <&clk NPCM7XX_CLK_UART>;
- 				interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
- 				reg-shift = <2>;
- 				status = "disabled";
-@@ -168,7 +169,7 @@
- 			serial2: serial@3000 {
- 				compatible = "nuvoton,npcm750-uart";
- 				reg = <0x3000 0x1000>;
--				clocks = <&clk 6>;
-+				clocks = <&clk NPCM7XX_CLK_UART>;
- 				interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
- 				reg-shift = <2>;
- 				status = "disabled";
-@@ -177,7 +178,7 @@
- 			serial3: serial@4000 {
- 				compatible = "nuvoton,npcm750-uart";
- 				reg = <0x4000 0x1000>;
--				clocks = <&clk 6>;
-+				clocks = <&clk NPCM7XX_CLK_UART>;
- 				interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
- 				reg-shift = <2>;
- 				status = "disabled";
-diff --git a/arch/arm/boot/dts/nuvoton-npcm750.dtsi b/arch/arm/boot/dts/nuvoton-npcm750.dtsi
-index 6ac340533587..a37bb2294b8f 100644
---- a/arch/arm/boot/dts/nuvoton-npcm750.dtsi
-+++ b/arch/arm/boot/dts/nuvoton-npcm750.dtsi
-@@ -17,7 +17,7 @@
- 		cpu@0 {
- 			device_type = "cpu";
- 			compatible = "arm,cortex-a9";
--			clocks = <&clk 0>;
-+			clocks = <&clk NPCM7XX_CLK_CPU>;
- 			clock-names = "clk_cpu";
- 			reg = <0>;
- 			next-level-cache = <&l2>;
-@@ -26,7 +26,7 @@
- 		cpu@1 {
- 			device_type = "cpu";
- 			compatible = "arm,cortex-a9";
--			clocks = <&clk 0>;
-+			clocks = <&clk NPCM7XX_CLK_CPU>;
- 			clock-names = "clk_cpu";
- 			reg = <1>;
- 			next-level-cache = <&l2>;
-@@ -38,7 +38,7 @@
- 			reg = <0x3fe600 0x20>;
- 			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2) |
- 						  IRQ_TYPE_LEVEL_HIGH)>;
--			clocks = <&clk 5>;
-+			clocks = <&clk NPCM7XX_CLK_AHB>;
- 		};
- 	};
- };
 -- 
 2.22.0
 
