@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22B371321A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 09:49:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 313971321BB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 09:57:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qRU/SQPsFh484X+AKgLjkSv1u8G48K/hBCZc2Aquc4Q=; b=SW2PYWaDB6kNpD
-	mfeKORyLyDul1CTGiabzfJSbgci8WxlegPJhGemLMwyk1uAXqaXrIfNunI0Xto3d64MPM0aOW60Hg
-	b0OUO2DC2PfRod+bi5GnnI6RcxwoQD4c6odicOBTK+cd5nBCEEhMyKyxsE8vbr/ZiNvEH7vLsUFJk
-	r8LqWdx8PEZeq/UyzRkYhWKHZZQNJQBRDFbn/lOnpBNnG22pTNkPg0pSTQtU5LsSrWLsjRxkwhJLA
-	hir9HYqyAr7JvXomFJfkf9aA6eGNzMidhe+I9MstnaJa7rb4zniuOH5PqFc/1Xphki1JehEAhw2TL
-	ZaBcq1rGWXsKcLgoefQQ==;
+	List-Owner; bh=JSdYm3RfwyIYeLV6FMj7MUu5ZifuuLZ9rmUoJeyBz+o=; b=stSbTaP7tQu3cb
+	gfuF7WFlnhSqEG0P3CDZMgfr2hIsiwv8I+voyZDiVCI9YoYUaU1jutwwABkQl0igSmkD1IChOC8kq
+	2Kv0br05RQzDFPU9Vx52TyDdX6Ap4lNFXo7P6b4pFlzCYQCsZbeC3yuJgcQxSuJIWDdjqyRiv4gLv
+	d8f3dRvCifhwklYT8lM1kSnFGJNHiUoWqet0qnfyE+/x70P1S90A3zq0c2Fn+FDdBtmIiTFWleIYy
+	CxLkgdQSD5z376Ej23WP+EGcvcK0Wfd5OFwoX9uTr7xYBsFgiaFVgxEyAgpO6X/Y+wKu//T+sByne
+	kzd8HyRkCP7kNVNCb/AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iokYT-0000rC-Ky; Tue, 07 Jan 2020 08:49:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iokfS-0003vI-UU; Tue, 07 Jan 2020 08:56:50 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iokYG-0000qr-Kr
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 08:49:26 +0000
-Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com
- [209.85.208.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D509A2080A
+ id 1iokfM-0003ui-VJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 08:56:46 +0000
+Received: by mail-lj1-x241.google.com with SMTP id j26so53834674ljc.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 Jan 2020 08:49:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578386964;
- bh=RC3gfxK85DszPMx6V9U+gAmYKbWG0Zlt9X6q5+MTylc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=t3MOD6EN8wlLClvHAIs3umVgEkRc2qnwxMlYoB5aTpp5aMd7rcKnzWkCViVlQzaKB
- 6uVma0OEM7XzzT2PGt1g8fzlGYo1ODU9tw6kQ+AXroupv7M9blKNbY5NImzH6ijqbt
- oOwjhURdl0zq6hDad10nTA3+WLcpIB0prD/ntEAc=
-Received: by mail-lj1-f170.google.com with SMTP id u71so53819673lje.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 00:49:23 -0800 (PST)
-X-Gm-Message-State: APjAAAUXhJ8su2JtQpVMIa9yLAI4W+zTaCtPP1CkZKcR/rchSkGhkpxT
- ncMdEAMut4KsiTg5Llqp/8wJyJ43SSXXTQSpq2c=
-X-Google-Smtp-Source: APXvYqwNsdbjriu62OGQO4MM5Vec+3qloJgcts9uClsSrEvqX0pd6ckRSZZs9dkYlaa2t9l6PYsq8a162l5KsVzcRBo=
-X-Received: by 2002:a05:651c:232:: with SMTP id
- z18mr55385115ljn.85.1578386962107; 
- Tue, 07 Jan 2020 00:49:22 -0800 (PST)
+ Tue, 07 Jan 2020 00:56:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ctj6sikyhwaxqLLgtUVE5aDnj2N4KcBorQ42k7PIXFE=;
+ b=dOcuvdscd1a6LSt1ycJxEnJtA06EpOT3zVFcM9CuC+STEKRX6gdjAFLEgdhrjo56oT
+ eqlE+eum4FXjJcxuMt935FoL3hoGfTzbWD1I47w260OqThGmNaK5cFlavt8AoR+OwigK
+ 2befC3q21eprd/82HB4DZ9akLqFZJIfo9PjBcdn/J7hg3Oya9jt1/81VaNtUG1RNsMqU
+ 1qlAuDUcIQCk4gAIdv+WqeqQ3Kjkb8Z/Ch1wExNjDBA+XURQTTUA78G9lhr6dfYlE6ns
+ RMR+5UGTYgGBCYFk/erI4/5F0XDIKZZOlsimzhiYWNb22oLyJ9PcMt/Cc/e1435qo3p7
+ 1EvA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ctj6sikyhwaxqLLgtUVE5aDnj2N4KcBorQ42k7PIXFE=;
+ b=KMFuXwdX5zV/sWpE3j0XpRd3uORnqUuRg3KCn+zr6Jul/mEwtKNOPIUbCO4VIPZZT3
+ 3q2gJOaSEDcw0vN+DeypVzyxEDLXO+6xiW18xVdjiz2xUZS1KmNpk/UriaRVESA1+pq7
+ t70nTz33e4av2gxK0Y8YWzkVTc4YQTMXNqa0HP7npDKsUBcRdC1N1PCzqhn/sDpcupHE
+ r+hDwTrdeF2UZJByMb/hVfaBffhXkwdcX15ynGjfmxoVLH6w5HQ3aomRsVWHh/Jj577U
+ bnn4OVP8X52mZYoOSSdrx/LUIgyRN/ygRRewxkgwPoOqrkNOQFGuWEXNAU6pyWObhraJ
+ u9SQ==
+X-Gm-Message-State: APjAAAVx6+5jL/CHM+TxxhuLUmboHjOl+QoxxmQZ2T/nCT81i2nlg0Ew
+ eDm0IaV/bhTJ29JtNq5CVeeHyZoHbY4KXi8mBH6kdw==
+X-Google-Smtp-Source: APXvYqwU4UwpfhwoGurh/0gW0myH1xF7IqVAA3/tnxBcBXUobTlgEPrEorcKTT9po95usIsDhZrUIHThQ6qDlOdGasw=
+X-Received: by 2002:a2e:9587:: with SMTP id w7mr60111635ljh.42.1578387402873; 
+ Tue, 07 Jan 2020 00:56:42 -0800 (PST)
 MIME-Version: 1.0
-References: <20200106191003.21584-1-tiny.windzz@gmail.com>
- <20200107084551.GB31906@pi3>
-In-Reply-To: <20200107084551.GB31906@pi3>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 7 Jan 2020 09:49:10 +0100
-X-Gmail-Original-Message-ID: <CAJKOXPdx3O5Vfv20UsD3qh5UC7TczrY9pBPObGcqamFt=9Pw5A@mail.gmail.com>
-Message-ID: <CAJKOXPdx3O5Vfv20UsD3qh5UC7TczrY9pBPObGcqamFt=9Pw5A@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: exynos: tiny4412: add fimd node
-To: Yangtao Li <tiny.windzz@gmail.com>
+References: <1576672860-14420-1-git-send-email-peng.fan@nxp.com>
+ <1576672860-14420-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1576672860-14420-2-git-send-email-peng.fan@nxp.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 7 Jan 2020 09:56:32 +0100
+Message-ID: <CACRpkdYqen88nJU9VtpTKmPShCAzTK+S=im4zeWjU45m766o3Q@mail.gmail.com>
+Subject: Re: [PATCH 2/2] pinctrl: sunxi: sun50i-h5 use platform_irq_count
+To: Peng Fan <peng.fan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_004924_709435_E048557B 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200107_005645_052103_B37256C6 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,39 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
+ "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- robh+dt@kernel.org, kgene@kernel.org, linux-arm-kernel@lists.infradead.org
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "wens@csie.org" <wens@csie.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 7 Jan 2020 at 09:45, Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Mon, Jan 06, 2020 at 07:10:02PM +0000, Yangtao Li wrote:
-> > The patch adds fimd node for tiny4412 device.
->
-> Hi,
->
-> Thanks for the patch.
->
-> Do not use "This patch ..." sentences but simple, imperative mode:
-> https://elixir.bootlin.com/linux/latest/source/Documentation/process/submitting-patches.rst#L151
->
-> Here you do not add FIMD node, because the FIMD is already there
-> (defined in exynos4.dtsi).  You however enable it.
->
-> Enabling it without panel does not really make sense - does it work?
-> I guess not, so this should be squashed with second patch.
+On Wed, Dec 18, 2019 at 1:43 PM Peng Fan <peng.fan@nxp.com> wrote:
 
-... unless it really works without panel, then it makes sense to keep
-it separate. However in such case, the #cells properties belong to
-second patch.
+> From: Peng Fan <peng.fan@nxp.com>
+>
+> platform_irq_count() is the more generic way (independent of
+> device trees) to determine the count of available interrupts. So
+> use this instead.
+>
+> As platform_irq_count() might return an error code (which
+> of_irq_count doesn't) some additional handling is necessary.
+>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Best regards,
-Krzysztof
+This is clearly nicer code, patch applied.
+(You only need to reiterate patch 1/2 if you decide to
+keep working on that.)
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
