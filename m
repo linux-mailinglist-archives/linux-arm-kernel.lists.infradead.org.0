@@ -2,83 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34B9E13246F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:04:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AAA613247A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:07:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XBuDC4dnqs5BBcNLJUkS8RDmgilSxYcpoAhfw66bkT4=; b=XCpnxmGvXe76lR
-	SmfLdbXes7cbAaUc2wj2zlfhEDXLa9HjU8yFHOYxsDsJno/gblsTyH/it2UQEJNZyrNBsNYCXPE56
-	Z6gLvvVH47+Lwnc5SsLWzUU/d3sSGLp0RBv27vYp8NqnHXMi4BBe43RbOseCaOdFBfaevLJSkwPzu
-	JoerZAq7Mt68TG7Z+HLxAupEbrgIzwmUXPXufbnPlabCyi4fAlf57JTGa2BSZbX4gUT6utIr8l0wY
-	cHzZduUL0dSPqqfP29hWPHvYwi9XC36JUshGKgXFSkef/V/yp/LIYSbJZIzY8re58vGRf/P7E5ZYD
-	7lJeTnqIj5FV91fNZWbw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LWqT8nDt9NVQ3dEhJAZ4s+YO8ZJnlIWozfEv5sfQAJU=; b=ftRtVu2fz0slIGEYbRH2sRxNF
+	ZPCGDbFZycjXak+sGFDJpeRRk1BSHUTA29botb65kLu/K9P6+6412nGZ082MW001u4xcCZVFOhFhc
+	xlPY9ppr2ms/ZX6Bf0kz0Ioo1Y0+EgqBNSE3uA9HgLedA/dUPSSQzsghes2UAi1hZO5Ri7pu8dNXu
+	X3pJ/tR3WpPe2qQaNyrP+4JFn34/ptZqLAdtFWeqciOFpVwpYd0R9kg61TJC8pCS8SYgqxTkT5ifo
+	QHXUtmpXXd7BA5UgL/2kKg2NXryiSJn2Ed504ruRLB2c8WuuAS877ywjwOhDT6Aj44xo5gdpLIVhK
+	S/lVdKHXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iomfH-0001qx-F1; Tue, 07 Jan 2020 11:04:47 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iomeb-0001k9-0u; Tue, 07 Jan 2020 11:04:27 +0000
-Received: by mail-ed1-f66.google.com with SMTP id f8so6455391edv.2;
- Tue, 07 Jan 2020 03:04:03 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=ptBtaLfSefXKIlF4+ATcVDfD9CqQtKSIYDSRdZx4Dts=;
- b=BwJVVduBH3q5Qid9RMG1kwAuBOHtUdNILi2maNtcgQ/OQjX1rDriFARyJRvLvE5Usq
- OAszbfkYwNctlu2FUMjzcODdNzi4/lFPWIuoM3Wflj0bKf1Jryp0yQY6mf6P2qTXy1uY
- CEVHMZrW8oowdBqjRY6nO8crthkphvfsxdAyLXTjgeuP5nU07pRogFbUPqgJRLs1cCfP
- AX1w1xrv1PW6tECFnzTyR2AiCNuVH66E+KUpCOy8To306eFKKRmOFtPdRlRxxRCWYpvR
- jy3ZoKNhF4mgx8bdzy6CYYZncD+AjaeEcHiXXjhUZe9VaL6tY2qjtj++jstfYZ4XBlxr
- +a6A==
-X-Gm-Message-State: APjAAAXOAvR0iEtdRQgyNfMnIDG+zFYrRG0eqxYCwSZ3mDYGWREHNjRX
- f9e4ETjRi7y2MBuWLJug+88=
-X-Google-Smtp-Source: APXvYqzKoAnAzDFoVmt8WsrTLEo61oVGbLtxhYn9w1G9R8M+n/U0qKkIJnksdqHSF0YmF+wOzkLZyQ==
-X-Received: by 2002:a17:906:c4d:: with SMTP id
- t13mr112159727ejf.198.1578395042449; 
- Tue, 07 Jan 2020 03:04:02 -0800 (PST)
-Received: from pi3 ([194.230.155.149])
- by smtp.googlemail.com with ESMTPSA id x8sm7492342eds.88.2020.01.07.03.04.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Jan 2020 03:04:01 -0800 (PST)
-Date: Tue, 7 Jan 2020 12:03:59 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 2/2] pwm: Enable compile testing for some of drivers
-Message-ID: <20200107110359.GA32423@pi3>
-References: <20191230172113.17222-1-krzk@kernel.org>
- <20191230172113.17222-2-krzk@kernel.org>
- <20200107072645.ko247bwhh3ibdu73@pengutronix.de>
- <20200107082539.GA31827@pi3>
- <20200107104234.wq74fska3szrg4ii@pengutronix.de>
+	id 1iomhu-0003nv-Va; Tue, 07 Jan 2020 11:07:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iomhn-0003nD-Qm
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:07:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA695328;
+ Tue,  7 Jan 2020 03:07:21 -0800 (PST)
+Received: from [10.162.43.37] (a075563-lin.blr.arm.com [10.162.43.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E8C483F534;
+ Tue,  7 Jan 2020 03:07:17 -0800 (PST)
+Subject: Re: [PATCH v3 00/16] arm64: return address signing
+To: Kees Cook <keescook@chromium.org>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <201912301106.4190F94F1@keescook>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <9b13fee9-6197-6a92-acf3-ec7040469cc2@arm.com>
+Date: Tue, 7 Jan 2020 16:37:15 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200107104234.wq74fska3szrg4ii@pengutronix.de>
+In-Reply-To: <201912301106.4190F94F1@keescook>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_030424_657276_6201ADA7 
-X-CRM114-Status: GOOD (  19.14  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200107_030723_956880_D0867B24 
+X-CRM114-Status: GOOD (  21.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,75 +64,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Richard Weinberger <richard@nod.at>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Thierry Reding <thierry.reding@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- kernel@pengutronix.de, linux-tegra@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-riscv@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKYW4gMDcsIDIwMjAgYXQgMTE6NDI6MzRBTSArMDEwMCwgVXdlIEtsZWluZS1Lw7Zu
-aWcgd3JvdGU6Cj4gPiBJIGd1ZXNzIG90aGVyIHNvbHV0aW9uIHdvdWxkIGJlIHRvIGFkZCBzdHVi
-cyBmb3IgZmV3IGNsayBmdW5jdGlvbnMuLi4KPiA+IAo+ID4gPiBBbHNvIEhBU19JT01FTSBpcyBh
-IHR5cGljYWwgcmVxdWlyZW1lbnQsIGJ1dCBJIHRlc3RlZCB3aXRoIGFuIEFSQ0g9dW0KPiA+ID4g
-Y29uZmlnICh3aGljaCBkb2VzJ3QgaGF2ZSBIQVNfSU9NRU0pIGFuZCB0aGV5IGFsbCBjb21waWxl
-IGZpbmUuCj4gPiAKPiA+IEJlY2F1c2Ugb2YgIUhBU19JT01FTSwgc2luY2Ugc29tZSB0aW1lIEFS
-Q0g9dW0gZG9lcyBub3Qgc3VwcG9ydAo+ID4gQ09NUElMRV9URVNULiBUaGVyZWZvcmUgSEFTX0lP
-TUVNIGRlcGVuZGVuY3kgaXMgbm90IG5lZWRlZCBmb3IgY29tcGlsZQo+ID4gdGVzdGluZyAoYW5k
-IGZvciByZWd1bGFyIGJ1aWxkIGl0IGlzIHNlbGVjdGVkIGJ5IEFSQ0gpLgo+IAo+IEhlaGUsIEkg
-ZGlkbid0IG5vdGljZSBiZWNhdXNlIGZvciB0ZXN0aW5nIEkganVzdCBkcm9wcGVkIHRoZSAiZGVw
-ZW5kcyBvbgo+IC4uLiIgbGluZXMgaW4gS2NvbmZpZyBpbnN0ZWFkIG9mIGFkZGluZyAifHwgQ09N
-UElMRV9URVNUIiA6LSkgU3RpbGwgdGhleQo+IGNvbXBpbGUgZmluZSBvbiBVTUwuCj4gCj4gQWgs
-IHNpbmNlIGJjMDgzYTY0YjZjMCAoImluaXQvS2NvbmZpZzogbWFrZSBDT01QSUxFX1RFU1QgZGVw
-ZW5kIG9uCj4gIVVNTCIpID09IHY0LjgtcmMxfjUyXjJ+ODMgQ09NUElMRV9URVNUIGNhbm5vdCBi
-ZSBlbmFibGVkIG9uIFVNTCwgYnV0Cj4gbGF0ZXIgMWJjYmZiZmRlYjAwICgidW06IGFkZCBkdW1t
-eSBpb3JlbWFwIGFuZCBpb3VubWFwIGZ1bmN0aW9ucyIpCj4gPT0gdjQuMTMtcmMxfjheMn42IFVN
-IGdvdCBhIGR1bW15IGltcGxlbWVudGF0aW9uLiBTbyBtYXliZSB3ZSBjb3VsZAo+IHJldmVydCBi
-YzA4M2E2NGI2YzAgdG9kYXk/IChBbmQgaWYgbm90LCBhIGNvbW1lbnQgYWJvdXQgd2h5IG5lYXIg
-dGhlCj4gImRlcGVuZHMgb24gIVVNTCIgaW4gaW5pdC9LY29uZmlnIHdvdWxkIGJlIGdyZWF0LikK
-PiAKPiBPcnRob2dvbmFsIHRvIHRoYXQsIEkgd29uZGVyIGlmIGRlcGVuZGluZyBvbiBIQVNfSU9N
-RU0gaXMgcmlnaHQgZXZlbgo+IHRob3VnaCB0aGUgY29tcGlsZSB0ZXN0ZXJzIHdvbid0IG5vdGlj
-ZSBpdCBtaXNzaW5nLiBPciBzaG91bGQgSEFTX0lPTUVNCj4gYmUgZHJvcHBlZD8KCkkgdGhpbmsg
-eWVzLCBpdCBjYW4gYmUgZHJvcHBlZCwgYnV0IHRoaXMgd291bGQgcmVxdWlyZToKMS4gRml4aW5n
-IGFueSBkZXBlbmRlbmNpZXMgb24gSEFTX0lPTUVNLCBlLmcuOgogICAgV0FSTklORzogdW5tZXQg
-ZGlyZWN0IGRlcGVuZGVuY2llcyBkZXRlY3RlZCBmb3IgTUZEX1NZU0NPTgogICAgICBEZXBlbmRz
-IG9uIFtuXTogSEFTX0lPTUVNIFs9bl0KICAgICAgU2VsZWN0ZWQgYnkgW3ldOgogICAgICAtIFBI
-WV9EQThYWF9VU0IgWz15XSAmJiAoQVJDSF9EQVZJTkNJX0RBOFhYIHx8IENPTVBJTEVfVEVTVCBb
-PXldKQoKMi4gQ2hlY2tpbmcgaWYgYWxsIG9mIHN0dWJzIGFyZSBpbXBsZW1lbnRlZCAobm90IG9u
-bHkgSU9NRU0gYnV0IG1heWJlCiAgIERNQSBhcyB3ZWxsKS4gQWxzbyAxYmNiZmJmZGViMDAgYnJv
-dWdodCBvbmx5IGZldyBzdHVicy4gU3RpbGwgd2UKICAgbmVlZCBkZXZtX2lvcmVtYXBfcmVzb3Vy
-Y2UoKSBhbmQgb3RoZXJzLgoKUXVpY2sgdGVzdCBzaG93cyBtZW50aW9uZWQgInVubWV0IGRpcmVj
-dCBkZXBlbmRlbmNpZXMiIGFuZDoKICAgIHBoeS1weGEtdXNiLmM6KC50ZXh0KzB4MmY1KTogdW5k
-ZWZpbmVkIHJlZmVyZW5jZSB0byBgZGV2bV9pb3JlbWFwX3Jlc291cmNlJwogICAgZG1hLWlvbW11
-LmM6KC50ZXh0KzB4MTc5KTogdW5kZWZpbmVkIHJlZmVyZW5jZSB0byBgZG1hX3BncHJvdCcKCj4g
-Cj4gPiA+ID4gQEAgLTMxOCw3ICszMTksNyBAQCBjb25maWcgUFdNX01FRElBVEVLCj4gPiA+ID4g
-IAo+ID4gPiA+ICBjb25maWcgUFdNX01YUwo+ID4gPiA+ICAJdHJpc3RhdGUgIkZyZWVzY2FsZSBN
-WFMgUFdNIHN1cHBvcnQiCj4gPiA+ID4gLQlkZXBlbmRzIG9uIEFSQ0hfTVhTICYmIE9GCj4gPiA+
-ID4gKwlkZXBlbmRzIG9uIChBUkNIX01YUyAmJiBPRikgfHwgQ09NUElMRV9URVNUCj4gPiA+ID4g
-IAlzZWxlY3QgU1RNUF9ERVZJQ0UKPiA+ID4gPiAgCWhlbHAKPiA+ID4gPiAgCSAgR2VuZXJpYyBQ
-V00gZnJhbWV3b3JrIGRyaXZlciBmb3IgRnJlZXNjYWxlIE1YUy4KPiA+ID4gPiBAQCAtMzI4LDcg
-KzMyOSw4IEBAIGNvbmZpZyBQV01fTVhTCj4gPiA+ID4gIAo+ID4gPiA+ICBjb25maWcgUFdNX09N
-QVBfRE1USU1FUgo+ID4gPiA+ICAJdHJpc3RhdGUgIk9NQVAgRHVhbC1Nb2RlIFRpbWVyIFBXTSBz
-dXBwb3J0Igo+ID4gPiA+IC0JZGVwZW5kcyBvbiBPRiAmJiBBUkNIX09NQVAgJiYgT01BUF9ETV9U
-SU1FUgo+ID4gPiA+ICsJZGVwZW5kcyBvbiAoQVJDSF9PTUFQICYmIE9NQVBfRE1fVElNRVIpIHx8
-IENPTVBJTEVfVEVTVAo+ID4gPiA+ICsJZGVwZW5kcyBvbiBPRgo+ID4gPiAKPiA+ID4gSSdtIHN1
-cnByaXNlZCB0aGF0IE9GIGlzbid0IHJlcXVpcmVkIGZvciBQV01fTVhTIGJ1dCBpcyBpcyBmb3IK
-PiA+ID4gUFdNX09NQVBfRE1USU1FUi4gcHdtLW14cyBjb21waWxlcyB3aXRob3V0IENPTkZJR19P
-RiwgZGlkbid0IHRlc3QKPiA+ID4gcHdtLW9tYXAtZG10aW1lci4KPiA+IAo+ID4gU2luY2Ugc29t
-ZSB0aW1lICFPRiBoYXMgYWxsIG5lY2Vzc2FyeSBzdHVicyBzbyBPRiBpcyBhY3R1YWxseSBuZWVk
-ZWQKPiA+IG9ubHkgZm9yIGJpbmRpbmcsIG5vdCBjb21waWxpbmcuCj4gCj4gVGhhdCBkb2Vzbid0
-IGV4cGxhaW4gd2h5IHlvdSBoYW5kbGUgUFdNX01YUyBhbmQgUFdNX09NQVBfRE1USU1FUgo+IGRp
-ZmZlcmVudGx5IHRob3VnaC4KCllvdSdyZSByaWdodCwgSSBtaXNzZWQgdGhpcy4gTm9uZSBvZiB0
-aGVtIHJlcXVpcmUgT0YgZm9yIGJ1aWxkaW5nIHNvCnNlcGFyYXRlICJkZXBlbmRzIG9uIE9GIiBt
-YWtlcyBzZW5zZSBvbmx5IGZvciByZWFkYWJpbGl0eSBvZiB0aGlzLiAgTGV0Cm1lIHNlbmQgdjIg
-dG8gbWFrZSBpdCBzaW1pbGFyIHRvIFBXTV9NWFMuCgoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+Hi Kees,
+
+On 12/31/19 12:39 AM, Kees Cook wrote:
+> On Mon, Dec 16, 2019 at 02:17:02PM +0530, Amit Daniel Kachhap wrote:
+>> This series improves function return address protection for the arm64 kernel, by
+>> compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
+>> ptrauth hereafter). This should help protect the kernel against attacks using
+>> return-oriented programming.
+> 
+> Exciting! Can this be emulated in qemu yet? I'd like to see more specific
+
+Yes I just checked qemu 4.1 version. ptrauth can be emulated by using 
+option -cpu max. Even the lkdtm test provided in this series works fine.
+
+> LKDTM tests added for this (similar to the forward-edge CFI tests[1]),
+
+Ok sure I will check on this if I can add more tests.
+
+> but I won't be able to do these tests myself since I don't have ARMv8.3
+> hardware. :) IIUC, the existing lkdtm_CORRUPT_STACK*() tests[2] should trip
+> with this protection enabled...
+
+Yes lkdtm_CORRUPT_STACK test works fine along ptrauth instructions.
+
+Thanks,
+Amit
+> 
+> Thanks!
+> 
+> -Kees
+> 
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/misc/lkdtm/cfi.c
+> [2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/misc/lkdtm/bugs.c#n114
+> 
+>>
+>> This series is based on v5.5-rc2.
+>>
+>> High-level changes since v2 [1] (detailed changes are in individual patches):
+>>   - Added support to generate randomness for ptrauth keys for early booting task
+>>     in primary core as suggested by Ard.
+>>   - Modified lkdtm ptrauth test-case to change keys to cause crash instead of
+>>     modifying the lr in the stack.
+>>   - Resolved a clang compilation issue.
+>>   - Re-positioned "arm64: rename ptrauth key structures to be user-specific" to
+>>     reduce code churnings.
+>>
+>> This series do not implement few things or have known limitations:
+>>   - kdump tools may need some rework to work with ptrauth. The kdump
+>>     tools may need the ptrauth information to strip PAC bits.
+>>
+>> Feedback welcome!
+>>
+>> Thanks,
+>> Amit Daniel
+>>
+>> [1]: http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/695089.html
+>>
+>> Amit Daniel Kachhap (8):
+>>    arm64: create macro to park cpu in an infinite loop
+>>    arm64: ptrauth: Add bootup/runtime flags for __cpu_setup
+>>    arm64: initialize ptrauth keys for kernel booting task
+>>    arm64: mask PAC bits of __builtin_return_address
+>>    arm64: __show_regs: strip PAC from lr in printk
+>>    arm64: suspend: restore the kernel ptrauth keys
+>>    arm64: kprobe: disable probe of ptrauth instruction
+>>    lkdtm: arm64: test kernel pointer authentication
+>>
+>> Kristina Martsenko (6):
+>>    arm64: cpufeature: add pointer auth meta-capabilities
+>>    arm64: rename ptrauth key structures to be user-specific
+>>    arm64: install user ptrauth keys at kernel exit time
+>>    arm64: enable ptrauth earlier
+>>    arm64: initialize and switch ptrauth kernel keys
+>>    arm64: compile the kernel with ptrauth return address signing
+>>
+>> Mark Rutland (1):
+>>    arm64: unwind: strip PAC from kernel addresses
+>>
+>> Vincenzo Frascino (1):
+>>    kconfig: Add support for 'as-option'
+>>
+>>   arch/arm64/Kconfig                        | 27 +++++++++++-
+>>   arch/arm64/Makefile                       | 11 +++++
+>>   arch/arm64/include/asm/asm_pointer_auth.h | 59 ++++++++++++++++++++++++++
+>>   arch/arm64/include/asm/compiler.h         | 20 +++++++++
+>>   arch/arm64/include/asm/cpucaps.h          |  4 +-
+>>   arch/arm64/include/asm/cpufeature.h       |  6 +--
+>>   arch/arm64/include/asm/insn.h             | 13 +++---
+>>   arch/arm64/include/asm/pointer_auth.h     | 54 ++++++++++++------------
+>>   arch/arm64/include/asm/processor.h        |  3 +-
+>>   arch/arm64/include/asm/smp.h              | 10 +++++
+>>   arch/arm64/include/asm/stackprotector.h   |  5 +++
+>>   arch/arm64/kernel/asm-offsets.c           | 16 +++++++
+>>   arch/arm64/kernel/cpufeature.c            | 30 ++++++++++----
+>>   arch/arm64/kernel/entry.S                 |  6 +++
+>>   arch/arm64/kernel/head.S                  | 47 +++++++++++++++------
+>>   arch/arm64/kernel/insn.c                  |  1 +
+>>   arch/arm64/kernel/pointer_auth.c          |  7 +---
+>>   arch/arm64/kernel/probes/decode-insn.c    |  2 +-
+>>   arch/arm64/kernel/process.c               |  5 ++-
+>>   arch/arm64/kernel/ptrace.c                | 16 +++----
+>>   arch/arm64/kernel/sleep.S                 |  8 ++++
+>>   arch/arm64/kernel/smp.c                   | 10 +++++
+>>   arch/arm64/kernel/stacktrace.c            |  3 ++
+>>   arch/arm64/mm/proc.S                      | 69 ++++++++++++++++++++++++++-----
+>>   drivers/misc/lkdtm/bugs.c                 | 36 ++++++++++++++++
+>>   drivers/misc/lkdtm/core.c                 |  1 +
+>>   drivers/misc/lkdtm/lkdtm.h                |  1 +
+>>   include/linux/stackprotector.h            |  2 +-
+>>   scripts/Kconfig.include                   |  4 ++
+>>   29 files changed, 388 insertions(+), 88 deletions(-)
+>>   create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
+>>   create mode 100644 arch/arm64/include/asm/compiler.h
+>>
+>> -- 
+>> 2.7.4
+>>
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
