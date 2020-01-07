@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5301F131DB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 03:37:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F08D131DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 03:43:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ipJfYO7zeX9yDHlwe60/jm37/QdF7UwmbvFp+98pIlk=; b=tdIQZARvpHJyaq
-	ZrgOfhPb29jEIyAtNg7t38mYI+SBw6U80mraZZgthK0nvZLEAqiwVl6luaeVdYuUhuy/TMZTOLHMw
-	cejI5CJusQlH4A9XvIqAbBNRFpb5mDt77izvSTNQzrl66lpEVD6ubljvIQigtK+jHdNEQ8oP0W2Z+
-	QWLIn4WURxhje8FQTNBo5wsfiOg7KgtUfMXy28pNKmCl5lZh09/sF4eeLafWVCWHg6z3L86S+NPlY
-	5DjRcrPugI22WBaG1YPzfeMIuQ2rqgJgBlDllPSkDP4oWPZQelkJmdeotpYu8gUT40n/bVk5D2zu5
-	oh4iBQXpGOu8+iVLdNqQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LuuJc2w8FxDEH+N44csNPkU1tTFNGgLC4kxj7sJh7Kw=; b=od4OWsHaEnoqWv
+	jbct+fmOBH0Ogvr6TCDWl0HBcqt81WEAwrH4eyLMKjGKUGS3JxBhvt9wrRhp9XDtig3rn9rAQ0nCK
+	vJ96ABaKuSP3yHNtuNsEQBQKgcNMwrQNRehvOq7vXGUyMxaKcx4g9jqWTQ69gJlVy7uiLSGzrG7jB
+	1rpmmvUh7AR6yotZg7z0z1WAIb8Wxusgvvn/JHf0MsnL3cTsFs7os9uPWmAD5BizURGIYEbE1UfYb
+	VxP1CWbbUdDIglcnczBalWdVQylB9qBf4+AUnV1/7UWwNYefKUpLN6iQomxqH8a/fTjDZj8+KJYEH
+	4zzE44IqTg5/kvqZ5aQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioeki-0004F7-J9; Tue, 07 Jan 2020 02:37:52 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ioeqS-0006Cy-4g; Tue, 07 Jan 2020 02:43:48 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioekU-0004EA-Gj; Tue, 07 Jan 2020 02:37:40 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7BA5252F;
- Tue,  7 Jan 2020 03:37:31 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1578364651;
- bh=MBDwBfB1yvrUNnyLXlcyy033c7X1+3QQ5e/fUKD3MKE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dgkNIwEXqZQBu93oKiUijThMtexXm7eh/FkOhKVRu7MS7FF9Z+Sh7w7iMfaXM4MIe
- AArZP3HEFWe7Ccmi40N5Rkrsbv/FH0LioCZ6g+mJAlUoGcJpuxPYlIpiRR+YFwUtkA
- gBJGUambx7da7F87o1LtzkVfs/TBk+XufHVdpXz4=
-Date: Tue, 7 Jan 2020 04:37:21 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI
- RX D-PHY yaml bindings
-Message-ID: <20200107023721.GG22189@pendragon.ideasonboard.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-10-helen.koike@collabora.com>
- <20200107001055.GE22189@pendragon.ideasonboard.com>
- <cfd5156f09358a428d0c40cfcd17d688e0225f2b.camel@collabora.com>
+ id 1ioeqH-0006BI-0D; Tue, 07 Jan 2020 02:43:38 +0000
+Received: from [10.18.38.198] (10.18.38.198) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 7 Jan
+ 2020 10:43:58 +0800
+Subject: Re: [PATCH v3 2/6] dt-bindings: usb: dwc3: Add the Amlogic A1 Family
+ DWC3 Glue Bindings
+To: Rob Herring <robh@kernel.org>
+References: <1577428606-69855-1-git-send-email-hanjie.lin@amlogic.com>
+ <1577428606-69855-3-git-send-email-hanjie.lin@amlogic.com>
+ <20200104003210.GA29074@bogus>
+From: Hanjie Lin <hanjie.lin@amlogic.com>
+Message-ID: <11875bd0-0248-4c68-964a-004e1d15ab83@amlogic.com>
+Date: Tue, 7 Jan 2020 10:43:58 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cfd5156f09358a428d0c40cfcd17d688e0225f2b.camel@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200104003210.GA29074@bogus>
+Content-Language: en-US
+X-Originating-IP: [10.18.38.198]
+X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
+ (10.18.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_183738_866900_B75BFE5C 
-X-CRM114-Status: GOOD (  24.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_184337_050781_F0837062 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,175 +64,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
- robh+dt@kernel.org, hans.verkuil@cisco.com,
- linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
- joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
- jacob-chen@iotwrt.com, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
+ Yue Wang <yue.wang@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jian Hu <jian.hu@amlogic.com>, Liang Yang <liang.yang@amlogic.com>,
+ Qiufang Dai <qiufang.dai@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Kevin Hilman <khilman@baylibre.com>, Carlo Caione <carlo@caione.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 06, 2020 at 11:06:12PM -0300, Ezequiel Garcia wrote:
-> On Tue, 2020-01-07 at 02:10 +0200, Laurent Pinchart wrote:
-> > Hi Helen,
-> > 
-> > Thank you for the patch.
-> > 
-> > On Fri, Dec 27, 2019 at 05:01:14PM -0300, Helen Koike wrote:
-> > > Add yaml DT bindings for Rockchip MIPI D-PHY RX
-> > > 
-> > > This was tested and verified with:
-> > > mv drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml  Documentation/devicetree/bindings/phy/
-> > > make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > 
-> > > Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> > > 
-> > > ---
-> > > 
-> > > Changes in v12:
-> > > - The commit replaces the following commit in previous series named
-> > > media: staging: dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
-> > > This new patch adds yaml binding and was verified with
-> > > make dtbs_check and make dt_binding_check
-> > > 
-> > > Changes in v11: None
-> > > Changes in v10:
-> > > - unsquash
-> > > 
-> > > Changes in v9:
-> > > - fix title division style
-> > > - squash
-> > > - move to staging
-> > > 
-> > > Changes in v8: None
-> > > Changes in v7:
-> > > - updated doc with new design and tested example
-> > > 
-> > >  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++++++++++++++
-> > >  1 file changed, 75 insertions(+)
-> > >  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > 
-> > > diff --git a/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml b/drivers/staging/media/phy-
-> > > rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > new file mode 100644
-> > > index 000000000000..af97f1b3e005
-> > > --- /dev/null
-> > > +++ b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > @@ -0,0 +1,75 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
-> > 
-> > Should this be s/RX0/RX/ ? Or do you expect different bindings for RX1 ?
-> 
-> The driver currently only supports RX0, but I think you are right,
-> it should say RX here. This binding could be extended for RX1.
-> 
-> > Looking at the PHY driver, it seems to handle all PHYs with a single
-> > struct device. Should we thus use #phy-cells = <1> to select the PHY ?
-> 
-> I am not following this. The driver handles just one PHY. Each PHY
-> should have its own node.
 
-Looking at the registers, it seems that the different PHYs are
-intertwined and we would could have trouble handling the different PHYs
-with different DT nodes and thus struct device instances.
 
-> > > +
-> > > +maintainers:
-> > > +  - Helen Koike <helen.koike@collabora.com>
-> > > +  - Ezequiel Garcia <ezequiel@collabora.com>
-> > > +
-> > > +description: |
-> > > +  The Rockchip SoC has a MIPI D-PHY bus with an RX0 entry which connects to
-> > > +  the ISP1 (Image Signal Processing unit v1.0) for CSI cameras.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: rockchip,rk3399-mipi-dphy
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: Mipi d-phy ref clock
-> > > +      - description: Mipi d-phy rx0 cfg clock
-> > 
-> > s/Mipi d-phy/MIPI D-PHY/
+On 2020/1/4 8:32, Rob Herring wrote:
+> On Fri, Dec 27, 2019 at 02:36:42PM +0800, Hanjie Lin wrote:
+>> The Amlogic A1 SoC Family embeds 1 USB Controllers:
+>>  - a DWC3 IP configured as Host for USB2 and USB3
+>>
+>> A glue connects the controllers to the USB2 PHY of A1 SoC.
+>>
+>> Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
+>> Signed-off-by: Yue Wang <yue.wang@amlogic.com>
+>> ---
+>>  .../bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml  | 57 +++++++++++++++++++---
+>>  1 file changed, 51 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> index 4efb77b..6103cc2 100644
+>> --- a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> +++ b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> @@ -9,6 +9,8 @@ title: Amlogic Meson G12A DWC3 USB SoC Controller Glue
+>>  
+>>  maintainers:
+>>    - Neil Armstrong <narmstrong@baylibre.com>
+>> +  - Hanjie Lin <hanjie.lin@amlogic.com>
+>> +  - Yue Wang <yue.wang@amlogic.com>
+>>  
+>>  description: |
+>>    The Amlogic G12A embeds a DWC3 USB IP Core configured for USB2 and USB3
+>> @@ -22,10 +24,14 @@ description: |
+>>    The DWC3 Glue controls the PHY routing and power, an interrupt line is
+>>    connected to the Glue to serve as OTG ID change detection.
+>>  
+>> +  The Amlogic A1 embeds a DWC3 USB IP Core configured for USB2 in
+>> +  host-only mode.
+>> +
+>>  properties:
+>>    compatible:
+>>      enum:
+>>        - amlogic,meson-g12a-usb-ctrl
+>> +      - amlogic,meson-a1-usb-ctrl
+>>  
+>>    ranges: true
+>>  
+>> @@ -37,6 +43,11 @@ properties:
+>>  
+>>    clocks:
+>>      minItems: 1
+>> +    maxItems: 4
+>> +
+>> +  clock-names:
+>> +    minItems: 1
+>> +    maxItems: 4
+>>  
+>>    resets:
+>>      minItems: 1
+>> @@ -47,17 +58,22 @@ properties:
+>>    interrupts:
+>>      maxItems: 1
+>>  
+>> +  phys:
+>> +    minItems: 1
+>> +    maxItems: 3
+>> +
+>>    phy-names:
+>>      items:
+>>        - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
+>>        - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
+>>        - const: usb3-phy0 # USB3 PHY if USB3_0 is used
+>>  
+>> -  phys:
+>> -    minItems: 1
+>> -    maxItems: 3
+>> -
 > 
-> Yep.
+> Why the unnecessary move?
 > 
-> > > +      - description: Video in/out general register file clock
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: dphy-ref
-> > > +      - const: dphy-cfg
-> > > +      - const: grf
-> > > +
-> > > +  '#phy-cells':
-> > > +    const: 0
-> > > +
-> > > +  power-domains:
-> > > +    description: Video in/out power domain.
-> > > +    maxItems: 1
-> > > +
-> > > +required:
-> > > +  - compatible
-> > > +  - clocks
-> > > +  - clock-names
-> > > +  - '#phy-cells'
-> > > +  - power-domains
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +
-> > > +    /*
-> > > +     * MIPI RX D-PHY use registers in "general register files", it
-> > > +     * should be a child of the GRF.
-> > > +     *
-> > > +     * grf: syscon@ff770000 {
-> > > +     *  compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> > > +     *  ...
-> > 
-> > missing
-> > 
-> > 	* };
-> 
-> OK.
-> 
-> > > +     */
-> > > +
-> > > +    #include <dt-bindings/clock/rk3399-cru.h>
-> > > +    #include <dt-bindings/power/rk3399-power.h>
-> > > +
-> > > +    dphy: mipi-dphy {
-> > > +        compatible = "rockchip,rk3399-mipi-dphy";
-> > > +        clocks = <&cru SCLK_MIPIDPHY_REF>,
-> > > +                 <&cru SCLK_DPHY_RX0_CFG>,
-> > > +                 <&cru PCLK_VIO_GRF>;
-> > > +        clock-names = "dphy-ref", "dphy-cfg", "grf";
-> > > +        power-domains = <&power RK3399_PD_VIO>;
-> > > +        #phy-cells = <0>;
-> > > +    };
 
--- 
-Regards,
+I saw most "phys" attributes are front of "phy-names" in dts, maybe looks pretty no other reasons.
 
-Laurent Pinchart
+>> -  dr_mode: true
+>> +  dr_mode:
+>> +    description: usb mode for G12A
+>> +    enum:
+>> +      - host
+>> +      - peripheral
+>> +      - otg
+> 
+> No, this is a common property that doesn't need to be redefined here. It 
+> was correct as-is.
+> 
+
+Ok, I will modify it.
+
+>>  
+>>    power-domains:
+>>      maxItems: 1
+>> @@ -80,9 +96,9 @@ required:
+>>    - resets
+>>    - reg
+>>    - interrupts
+>> -  - phy-names
+>>    - phys
+>>    - dr_mode
+>> +  - phy-names
+> 
+> Again, unnecessary change.
+> 
+
+Ok
+
+>>  
+>>  examples:
+>>    - |
+>> @@ -124,4 +140,33 @@ examples:
+>>                snps,quirk-frame-length-adjustment;
+>>            };
+>>      };
+>> +  - |
+>> +    a1_usb: usb@ffe09000 {
+> 
+> You are only adding a compatible. No need for a whole new example.
+> 
+
+Ok, I will fix it.
+
+Thanks, 
+
+Hanjie
+
+>> +          status = "okay";
+>> +          compatible = "amlogic,meson-a1-usb-ctrl";
+>> +          reg = <0 0xffe09000 0x0 0xa0>;
+>> +          #address-cells = <1>;
+>> +          #size-cells = <1>;
+>> +          ranges;
+>>  
+>> +          clocks = <&clkc_periphs 36>,
+>> +                   <&clkc_periphs 85>,
+>> +                   <&clkc_periphs 2>,
+>> +                   <&clkc_periphs 3>;
+>> +          clock-names = "usb_ctrl", "usb_bus", "xtal_usb_phy",
+>> +                        "xtal_usb_ctrl";
+>> +
+>> +          resets = <&reset 36>;
+>> +
+>> +          phys = <&usb2_phy1>;
+>> +          phy-names = "usb2-phy1";
+>> +
+>> +          a1_dwc3: usb@ff400000 {
+>> +                  compatible = "snps,dwc3";
+>> +                  reg = <0xff400000 0x100000>;
+>> +                  interrupts = <0 90 4>;
+>> +                  dr_mode = "host";
+>> +                  snps,dis_u2_susphy_quirk;
+>> +                  snps,quirk-frame-length-adjustment = <0x20>;
+>> +          };
+>> +    };
+>> -- 
+>> 2.7.4
+>>
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
