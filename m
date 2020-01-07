@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F5721331A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 22:02:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A5E9133231
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 22:08:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Ib5UbYkbDeFl3UEjyfFm8wrsP0iPEYPkQXBr5nu10c=; b=DnJYtsRmerqwG6
-	267vuW1qOGHpt27p7oi2P09FHErkGjeKd+t6YHbxBwdsUAgmw4GOYzNBjiACNalv+Ln16HWrCGuLg
-	g2PdHln78icWT4qGuFpEOV84XexfGH8H2AfMgx1hxYr7Asfb9FvXmyZMGlbrtpsxlaAcikHwJhTPQ
-	XcFQ4b5/8fRkhM5K0yHm1ziLwR9jl0hTeawxCj4HvU+6xXbRxt+yG6yuXhLzzhKn2mxSfuD1QN7gm
-	xiPmra6l8kqmDiZw+tnpKYk6LTj3qOFQf84CbEb3Mj40bSM3EzR4OfemGRSufrzI2yidDqElw5PQK
-	83tFOsX3bYn4/puv5x7w==;
+	List-Owner; bh=qml0urjrjQhuXCJ+xx5sZMIOi+IbLulbDgYWJsRjRME=; b=eD+UKFCUo572nw
+	JPczZQVdTWfbSOZEHN/jEfuySvn47AsdxsXHxRpHoCPMlcP0yeHY+F1S43C5b5EN4ejkzPP+06iCR
+	uo/m0vgsuuCyfDaaygV8QRih4x/JdN4it5/Feww7S3Vk7oxQZW5zVuxGB1HknLo6rR+kcsxkQ+Ac6
+	BmCW7gvoEYh+cPAntR3P5rMfQXdCzNCCoBFZOuYe2albg+qxO86FD4zDgyR8SVFO8Wa61ApN/U78a
+	b+E1blnooRrtjGetFc6zwrwiOctSBY6mZ0NOlEw8upfT9BNb8pPEJz0+YF4LQ4PhBTuVKVYQiHVvl
+	c3/alVYdi+NFEgNTvYAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iovzy-00040L-PZ; Tue, 07 Jan 2020 21:02:46 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1iow5c-0006aR-QP; Tue, 07 Jan 2020 21:08:36 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iovyu-00034d-36
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 21:01:42 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id B237515A15B85;
- Tue,  7 Jan 2020 13:01:35 -0800 (PST)
-Date: Tue, 07 Jan 2020 13:01:33 -0800 (PST)
-Message-Id: <20200107.130133.1900367587695369052.davem@davemloft.net>
-To: Jiping.Ma2@windriver.com
-Subject: Re: [PATCH] stmmac: debugfs entry name is not be changed when udev
- rename device name.
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <99d183bc-7668-7749-54d6-3649c549dec8@windriver.com>
-References: <15aedd71-e077-4c6c-e30c-9396d16eaeec@windriver.com>
- <20200106.182259.1907306689510314367.davem@davemloft.net>
- <99d183bc-7668-7749-54d6-3649c549dec8@windriver.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Tue, 07 Jan 2020 13:01:36 -0800 (PST)
+ id 1iow5T-0006ZX-MA
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 21:08:29 +0000
+Received: from callcc.thunk.org (guestnat-104-133-0-111.corp.google.com
+ [104.133.0.111] (may be forged)) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 007L7OUj026037
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 7 Jan 2020 16:07:27 -0500
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id BA95E4207DF; Tue,  7 Jan 2020 16:07:24 -0500 (EST)
+Date: Tue, 7 Jan 2020 16:07:24 -0500
+From: "Theodore Y. Ts'o" <tytso@mit.edu>
+To: Qian Cai <cai@lca.pw>
+Subject: Re: [PATCH] char/random: silence a lockdep splat with printk()
+Message-ID: <20200107210724.GN3619@mit.edu>
+References: <1573679785-21068-1-git-send-email-cai@lca.pw>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573679785-21068-1-git-send-email-cai@lca.pw>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_130140_144679_A956CDF1 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20200107_130827_890292_D87797B0 
+X-CRM114-Status: UNSURE (   7.45  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [18.9.28.11 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,41 +64,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: pmladek@suse.com, sergey.senozhatsky.work@gmail.com, arnd@arndb.de,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, linux-mm@kvack.org, gregkh@linuxfoundation.org,
+ longman@redhat.com, dan.j.williams@intel.com, will@kernel.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jiping Ma <Jiping.Ma2@windriver.com>
-Date: Tue, 7 Jan 2020 10:59:22 +0800
-
+On Wed, Nov 13, 2019 at 04:16:25PM -0500, Qian Cai wrote:
+> From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
 > 
+> Sergey didn't like the locking order,
 > 
-> On 01/07/2020 10:22 AM, David Miller wrote:
->> From: Jiping Ma <Jiping.Ma2@windriver.com>
->> Date: Tue, 7 Jan 2020 09:00:53 +0800
->>
->>>
->>> On 01/07/2020 05:45 AM, David Miller wrote:
->>>> From: Jiping Ma <jiping.ma2@windriver.com>
->>>> Date: Mon, 6 Jan 2020 10:33:41 +0800
->>>>
->>>>> Add one notifier for udev changes net device name.
->>>>>
->>>>> Signed-off-by: Jiping Ma <jiping.ma2@windriver.com>
->>>> This doesn't apply to 'net' and since this is a bug fix that is where
->>>> you should target this change.
->>> What's the next step that I can do?
->> Respin your patch against the net GIT tree so that it applies clean.y
-> OK, I will generate the new patch based on the latest linux kernel
-> code.
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+> uart_port->lock  ->  tty_port->lock
+> 
+> uart_write (uart_port->lock)
+>   __uart_start
+>     pl011_start_tx
+>       pl011_tx_chars
+>         uart_write_wakeup
+>           tty_port_tty_wakeup
+>             tty_port_default
+>               tty_port_tty_get (tty_port->lock)
+> 
+> but those code is so old, and I have no clue how to de-couple it after
+> checking other locks in the splat. There is an onging effort to make all
+> printk() as deferred, so until that happens, workaround it for now as a
+> short-term fix.
 
-That's not the networking GIT tree.
+Applied, thanks.
+
+					- Ted
 
 _______________________________________________
 linux-arm-kernel mailing list
