@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26463132E1C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:14:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6F6A132E1E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:15:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PHO+mltlOrK1/n5lagW67+g+zRfEkJaSd6rPyUBO5do=; b=K/cUyb8mF8L7ym
-	lUqnD9VBjdKJ/9CmcG5Xl72f3/BOts38WwCJGGQcAziTfM2+ROBOZ/vsrUrEZarLrIa/aNOQgBg/S
-	BDIYFaMcDEVwfeh4pSQIJxYi+y+JBvibOSZgGJyNOhmTeqqlQK9271xJd3PnTos1REjEchIECSs/k
-	De21wjy9WS9INoUFnSMHZyo7b75GtPRMFrTd/5mvF1soSuO6vuN8JnTzqICjdTS0+KWzSUDPX2CXT
-	Om6fKwoCc0FaMTLZxqT2/92xeVCEqBiH1L94dpU4r441kAoA/uLYSvOVuEDzlxoQR9KJ2k/TIx5oQ
-	ricGiA4lvr14jTpYUm2Q==;
+	List-Owner; bh=wcpoKvNgtD1pgbQcGrAuwDRcmnvDR4S6pM4KjynVmpA=; b=jr3iBUE9gBheTd
+	ONEcY18yEcd4Be+xdDa2Exk1yq77qFl8Brg4A0mPmYMF3bqwW9dbL+Qo3XEaf13Ez0D7sWB7OAoNO
+	8VSv2oWKaDotVQg9W/GCRmWhAidVMY6Evb3K7fLW6fWVgPCa+sgHxoz325hxYp7HI391RivR8hjN/
+	KDMhWPPyW7eZ/4LiyrJqrxojysv1Nva72e3LcXrpy7YTHK0Wm2xqWC3YAW7lcWnfPihm47jpMAJnx
+	NQFlYW/2NN4Wq4yYoOg9vDszMaPGnnUa6a2iK2GCel7Ce/0F+2/gqTsKNxCJHQpNWGfGPyBEjjQZE
+	kmTJy0jE1FKFJaReGh4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotNL-0001XP-58; Tue, 07 Jan 2020 18:14:43 +0000
+	id 1iotNY-0001mL-EE; Tue, 07 Jan 2020 18:14:56 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotN3-0001OF-3e
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:14:26 +0000
+ id 1iotN4-0001Og-84
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:14:27 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 3538F810E;
- Tue,  7 Jan 2020 18:15:06 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 4E31181A8;
+ Tue,  7 Jan 2020 18:15:07 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 2/4] dts changes for omaps for v5.6
-Date: Tue,  7 Jan 2020 10:14:17 -0800
-Message-Id: <pull-1578420398-290837@atomide.com-2>
+Subject: [GIT PULL 3/4] ti-sysc dts changes for omaps for v5.6
+Date: Tue,  7 Jan 2020 10:14:18 -0800
+Message-Id: <pull-1578420398-290837@atomide.com-3>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <pull-1578420398-290837@atomide.com>
 References: <pull-1578420398-290837@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_101425_186144_574E0A4F 
-X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-CacheID: sfid-20200107_101426_338710_A2F6E9D0 
+X-CRM114-Status: UNSURE (   7.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,51 +68,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+The following changes since commit 2c81f0f6d3f52ac222a5dc07a6e5c06e1543e88b:
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+  bus: ti-sysc: Fix iterating over clocks (2019-12-16 14:55:22 -0800)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/dt-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/ti-sysc-dt-signed
 
-for you to fetch changes up to bfe0237dd6c441f0ba531755ab24579eaee99be7:
+for you to fetch changes up to d71b48236c83a8a732ccaf23dbf3b719d5c62e88:
 
-  ARM: dts: am335x-icev2: Add support for OSD9616P0899-10 at i2c0 (2019-12-12 09:35:02 -0800)
-
-----------------------------------------------------------------
-Devicetree changes for omaps for v5.6 merge window
-
-Devicetree changes for omaps for v5.6 to configure more
-devices and update boards to use generic lcd panels:
-
-- Configure HDMI for dra76-evm and am57xx-idk
-
-- Correct node name for am3517 mdio
-
-- Convert am335x-evm, am335x-evmsk, and am335x-icev2 to use generic
-  panels
+  Merge tag 'sdma-dts' into omap-for-v5.6/ti-sysc-dt (2019-12-30 10:01:16 -0800)
 
 ----------------------------------------------------------------
-Grygorii Strashko (1):
-      ARM: dts: omap3: name mdio node properly
+dts changes for omaps for ti-sysc driver for v5.6 merge window
 
-Jyri Sarha (3):
-      ARM: dts: am335x-evm: Use drm simple-panel instead of tilcdc-panel
-      ARM: dts: am335x-evmsk: Use drm simple-panel instead of tilcdc-panel
-      ARM: dts: am335x-icev2: Add support for OSD9616P0899-10 at i2c0
+Devicetree changes for omaps to configure more devices to probe with
+ti-sysc interconnect target module:
 
-Tomi Valkeinen (2):
-      ARM: dts: dra76-evm: add HDMI output
-      ARM: dts: am57xx-idk-common: add HDMI to the common dtsi
+- Configure am4 qspi
 
- arch/arm/boot/dts/am335x-evm.dts         | 40 +++++++------------
- arch/arm/boot/dts/am335x-evmsk.dts       | 38 ++++++------------
- arch/arm/boot/dts/am335x-icev2.dts       | 13 +++++++
- arch/arm/boot/dts/am3517.dtsi            |  2 +-
- arch/arm/boot/dts/am57xx-idk-common.dtsi | 59 ++++++++++++++++++++++++++++
- arch/arm/boot/dts/dra76-evm.dts          | 66 ++++++++++++++++++++++++++++++++
- 6 files changed, 164 insertions(+), 54 deletions(-)
+- Configure aes, des and sham accelerators for am3, 4 and dra7
+
+- Configure iommus for omap4, 5 and dra7
+
+- Add a generic compatible for sdma, and configure omap2 and 3 sdma
+
+----------------------------------------------------------------
+Tero Kristo (4):
+      ARM: dts: dra7: convert IOMMUs to use ti-sysc
+      ARM: dts: dra74x: convert IOMMUs to use ti-sysc
+      ARM: dts: omap4: convert IOMMUs to use ti-sysc
+      ARM: dts: omap5: convert IOMMUs to use ti-sysc
+
+Tony Lindgren (13):
+      ARM: dts: Add generic compatible for omap sdma instances
+      ARM: dts: Configure interconnect target module for omap2 sdma
+      ARM: dts: Configure interconnect target module for omap3 sdma
+      ARM: dts: Configure interconnect target module for am4 qspi
+      ARM: dts: Configure interconnect target module for am3 sham
+      ARM: dts: Configure interconnect target module for am4 sham
+      ARM: dts: Configure interconnect target module for dra7 sham
+      ARM: dts: Configure interconnect target module for am3 aes
+      ARM: dts: Configure interconnect target module for am4 aes
+      ARM: dts: Configure interconnect target module for dra7 aes
+      ARM: dts: Configure interconnect target module for am4 des
+      ARM: dts: Configure interconnect target module for dra7 des
+      Merge tag 'sdma-dts' into omap-for-v5.6/ti-sysc-dt
+
+ arch/arm/boot/dts/am33xx.dtsi    |  67 ++++++++--
+ arch/arm/boot/dts/am4372.dtsi    | 140 ++++++++++++++++-----
+ arch/arm/boot/dts/dra7-l4.dtsi   |  34 +++++-
+ arch/arm/boot/dts/dra7.dtsi      | 255 +++++++++++++++++++++++++++++----------
+ arch/arm/boot/dts/dra74x.dtsi    |  71 ++++++++---
+ arch/arm/boot/dts/omap2.dtsi     |  42 +++++--
+ arch/arm/boot/dts/omap2430.dtsi  |   4 +
+ arch/arm/boot/dts/omap3-n900.dts |   5 +
+ arch/arm/boot/dts/omap3.dtsi     |  45 +++++--
+ arch/arm/boot/dts/omap36xx.dtsi  |   4 +
+ arch/arm/boot/dts/omap4-l4.dtsi  |  13 +-
+ arch/arm/boot/dts/omap4.dtsi     |  43 ++++---
+ arch/arm/boot/dts/omap5-l4.dtsi  |  13 +-
+ arch/arm/boot/dts/omap5.dtsi     |  40 +++---
+ 14 files changed, 595 insertions(+), 181 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
