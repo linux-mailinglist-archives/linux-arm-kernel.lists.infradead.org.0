@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9C06131E1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 04:44:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E4B7131E1D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 04:44:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aoy/qzaT/PiRO23iWighp3/zD34jvPKH2CcRpdn2c9o=; b=SYpO/1nVUtsCrc
-	WIiwqk8id/RKosldFkhfZEkQ2D5vzzoVgkv5GhyJwOtM67//Mo4sv3gTcxLfcYCnnzT9irZ4xW4iH
-	LTBT7OcY8l/FUsz6aCFzAM8qLyff73iOTiHHthxd/B828HuU6PCz7VpIdGbSNiOK3Y8PT+b6TCqEf
-	53hYmVo0ScNnUdpR/2zf+3K02ufSqkowM/CWG3VowGjmbI5cdRzQ3PycGUGcLLIm0o/zJDP7BIFgb
-	iBvJymoOI3FTYL7c0TLgDdfRE91xwqEgfQtIcmnbf9jZSlSzY+xk3m1XE4aL3/eHflJkQtRNiYjTz
-	gS4mRKo1R98zf13Hw6Sg==;
+	List-Owner; bh=USxxo7AEfoZVftfwIWW73yQiELNvUxmb8fNA9He7YOE=; b=TTEUQ12aFED+nz
+	Q7+x3DJ9l26Lb3rqJRxJT3/jS9b3QEMmrOjqQEaSwy30kuIJ6E+MrMAbbvz3nuIVkxh1vrKYYI6gT
+	fGmFxFaLfsMTMPwZhCx+EEBKgcc6NuXC2SGy3pJbS2AD7YfDQMzfRMWUOsxEHRI10cYGIzL6xWPD/
+	bNTq7agX1e5SxvrOcvHVGk5NQgWjcgA/o0oKrGcpppssw/ZbQ+DTKkTzRtlEl66fgWWHchdTbL7uo
+	JXdXkLuXLm+jrexh0rgVBTfG7znTxHTw1m+lEyl8t5u54JiTpfp8wVoJgKYHEGjDU+YottjyYNYRF
+	TjKJ0rPjMzVP4Fi9SJvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iofmt-0001Vn-LT; Tue, 07 Jan 2020 03:44:11 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iofn8-0001qT-U9; Tue, 07 Jan 2020 03:44:26 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iofmT-0001OP-5p
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 03:43:46 +0000
-Received: by mail-pg1-x542.google.com with SMTP id 6so27832097pgk.0
+ id 1iofmX-0001TT-Gv
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 03:43:51 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x7so27819296pgl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 19:43:44 -0800 (PST)
+ Mon, 06 Jan 2020 19:43:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=VltYEuA+2PApmtgRMm5FF8qb9zrgm0zOyAmewmF0puQ=;
- b=l47vIneSa/hFEkETx/SuB1kevgPx1rLNRqSo/Ms503wbbhPZFWpn6Y0VH+ml5EHGwX
- Z8MjxcYNwT4QKu/bgCwxC94ge6v6noxf6kblwdoLuKYJzUnNf6ep3t2LcQ7Czo44V3na
- ND6a6HAxw5KsTlN1SUyixzT0GcTyWZKfJtJDBuSDRhgGJ+/PMyNmgxh6yj2JvgHYnwNU
- oLPyCwpEGojBiLYLM7HzVbfQsrg7Yr/r+Cu1ckFmHqt4XMyCSs2rEBSPc65TTyqGE7hq
- LAHD+t0sNtfO1GjTa3XVo+ZHcsyfByJaSi7PcK321b5zbAh0huZvRVJ2noP54Xdgyz2B
- sjCQ==
+ bh=9HAw19jVeHxxdurgcOiXctlBffkucK0nh349iGgV3R8=;
+ b=XxtAdd0bdWrUOYxuX9W//W7L7wcHPwRI7vqpeyReLB++pcKOYHbipgm8p8eTWR13XG
+ tAd0LVfns+9qbiXhOrJGMpmGKcQutmOa4dHPyV38miXXPqInzTLDFJ+CHIyXtIfnLcwq
+ FzQMlZCgf8+9iYSCsgI7ngoIJbF7o+U6QpiQeYqgoPCQRH90aCuVIvb4UGw1D7A3rf1U
+ hTjdMkrpmDKa6xc5br7mAjmv2rg8CwnIGQpJRfXq7B5zYWCEkPhdyfunoNKB3EhptX9Z
+ cFP1EsFJqVOvao7775LD44VszXG1wOmQEnpe61gLVhjsEx/2n+3siVfbXs33sJdTJQdc
+ cmgA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=VltYEuA+2PApmtgRMm5FF8qb9zrgm0zOyAmewmF0puQ=;
- b=UUVCcQs7X5PyTZyT9pJu80kgs+BZziBfrU689iI7WOnXFVI5SUdBPsH4Z/N8ZFKQ/f
- SxrcBEsaxcjfLwzSuMFkO5QYPAVGtLz5Usxnt9c5gNydc9i0mXU1R5ltvijH/pwYjP7s
- CYmuk8idKSuk/cO3YM2tBzjKXrY0FmttDFtQgaCC4HHj4TY0K3hmCgOPmlWs6Q7ADygy
- l3MxEXZiqJ3Fj40Nod4vjJhJTW3KVucRKqugBC2tZZ2bJv4FzKzqXO3uG+hXPZZ8xlBG
- sS+3mxR7J98poTC4aXCUeXwVnHh5syCGX0TxR2/kgyRMEi77CmOabH6dzAvfybn2xkW3
- rPdg==
-X-Gm-Message-State: APjAAAWtIKYt+ePosz9ztX48wWDQU4LsuJvO8gefTk/IiZInKVRIRraT
- bgw+zP2lLu/eSevAeSVMDFk=
-X-Google-Smtp-Source: APXvYqzZw/5ojo17tCaUt9PV7komeSIywJmrYJhVJN67fb/Rxn2Dvbo59Qfw2xEZ5of4zJw5FPOBDA==
-X-Received: by 2002:a62:1d52:: with SMTP id
- d79mr112174863pfd.144.1578368624291; 
- Mon, 06 Jan 2020 19:43:44 -0800 (PST)
+ bh=9HAw19jVeHxxdurgcOiXctlBffkucK0nh349iGgV3R8=;
+ b=DBIHrR62C1B0Ru1aTs4ZKJvMsbdhShMb+BQ8btjg5uFbD2+wyfmbEhF4KZNm90NW6/
+ +iviDkJCkiTcqph0fytU54o2QyG4jYkc7Dk4YjQbC65RiDAjsQJrRzymFP/yhHTcBx1O
+ xNnQk7gLoXXFK944FXtrnBA1x4su3NWIi9Jl7pyCZe5bpH/KUeOdUBCtZHcmqoKrzaKw
+ gSJ8p4Bt/oU4QlxG80hFZXBSu7RI8VhthiQVhnYuc6hs9YFbIPE1BPdZQ7Ho2GuMoBbW
+ zyt8WyZ2yzLNaa66FRfpeFzJehQM1jM5fe5KfZ555PDnukI/IXkQKv6Xo5Nf8hD1itda
+ 2ECg==
+X-Gm-Message-State: APjAAAXbag6Q35Red8+z6ulKWcPpB2BHbTBU0tRpGWth4Sk3Tg7t6IDv
+ WBbkbKXxU3rt3AXuvmyKtb0=
+X-Google-Smtp-Source: APXvYqz6EHI8pVF3FrydG0u6YG4WEAj9paVMg8hO9zp/2XkhyJQbUxJZBQWNw2PlKPMWFXz8af/1XA==
+X-Received: by 2002:a63:3f4f:: with SMTP id
+ m76mr111711984pga.353.1578368628186; 
+ Mon, 06 Jan 2020 19:43:48 -0800 (PST)
 Received: from voyager.lan ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id g10sm73455929pgh.35.2020.01.06.19.43.40
+ by smtp.gmail.com with ESMTPSA id g10sm73455929pgh.35.2020.01.06.19.43.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 19:43:43 -0800 (PST)
+ Mon, 06 Jan 2020 19:43:47 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>,
  Eddie James <eajames@linux.ibm.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 1/3] media: aspeed: Rework memory mapping in probe
-Date: Tue,  7 Jan 2020 14:13:22 +1030
-Message-Id: <20200107034324.38073-2-joel@jms.id.au>
+Subject: [PATCH 2/3] media: aspeed: Use runtime configuration
+Date: Tue,  7 Jan 2020 14:13:23 +1030
+Message-Id: <20200107034324.38073-3-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200107034324.38073-1-joel@jms.id.au>
 References: <20200107034324.38073-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_194345_229887_F5665901 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20200106_194349_604721_CC535ADC 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (joel.stan[at]gmail.com)
@@ -111,54 +111,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the recently introduced function devm_platform_ioremap_resource to
-save a few lines of code. This makes the driver match common platform
-device probe patterns.
+The aspeed video IP has some differences between SoC families. Currently
+the driver decides which registers to use at compile time, which means
+a single kernel can not be used between platforms.
+
+Switch to using runtime configuration of the registers that vary between
+SoC families. This is in preparation for upcoming ast2600 support.
 
 Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
- drivers/media/platform/aspeed-video.c | 16 ++++++----------
- 1 file changed, 6 insertions(+), 10 deletions(-)
+ drivers/media/platform/aspeed-video.c | 53 ++++++++++++++++++++-------
+ 1 file changed, 39 insertions(+), 14 deletions(-)
 
 diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
-index d8593cb2ae84..8f849d9866af 100644
+index 8f849d9866af..d70b893fd4cf 100644
 --- a/drivers/media/platform/aspeed-video.c
 +++ b/drivers/media/platform/aspeed-video.c
-@@ -1655,14 +1655,17 @@ static int aspeed_video_init(struct aspeed_video *video)
+@@ -72,11 +72,8 @@
+ #define  VE_SEQ_CTRL_CAP_BUSY		BIT(16)
+ #define  VE_SEQ_CTRL_COMP_BUSY		BIT(18)
  
+-#ifdef CONFIG_MACH_ASPEED_G5
+-#define  VE_SEQ_CTRL_JPEG_MODE		BIT(13)	/* AST2500 */
+-#else
+-#define  VE_SEQ_CTRL_JPEG_MODE		BIT(8)	/* AST2400 */
+-#endif /* CONFIG_MACH_ASPEED_G5 */
++#define AST2500_VE_SEQ_CTRL_JPEG_MODE	BIT(13)
++#define AST2400_VE_SEQ_CTRL_JPEG_MODE	BIT(8)
+ 
+ #define VE_CTRL				0x008
+ #define  VE_CTRL_HSYNC_POL		BIT(0)
+@@ -220,6 +217,9 @@ struct aspeed_video {
+ 	struct video_device vdev;
+ 	struct mutex video_lock;	/* v4l2 and videobuf2 lock */
+ 
++	u32 jpeg_mode;
++	u32 comp_size_read;
++
+ 	wait_queue_head_t wait;
+ 	spinlock_t lock;		/* buffer list lock */
+ 	struct delayed_work res_work;
+@@ -243,6 +243,21 @@ struct aspeed_video {
+ 
+ #define to_aspeed_video(x) container_of((x), struct aspeed_video, v4l2_dev)
+ 
++struct aspeed_video_config {
++	u32 jpeg_mode;
++	u32 comp_size_read;
++};
++
++static const struct aspeed_video_config ast2400_config = {
++	.jpeg_mode = AST2400_VE_SEQ_CTRL_JPEG_MODE,
++	.comp_size_read = VE_OFFSET_COMP_STREAM,
++};
++
++static const struct aspeed_video_config ast2500_config = {
++	.jpeg_mode = AST2500_VE_SEQ_CTRL_JPEG_MODE,
++	.comp_size_read = VE_OFFSET_COMP_STREAM,
++};
++
+ static const u32 aspeed_video_jpeg_header[ASPEED_VIDEO_JPEG_HEADER_SIZE] = {
+ 	0xe0ffd8ff, 0x464a1000, 0x01004649, 0x60000101, 0x00006000, 0x0f00feff,
+ 	0x00002d05, 0x00000000, 0x00000000, 0x00dbff00
+@@ -572,7 +587,7 @@ static irqreturn_t aspeed_video_irq(int irq, void *arg)
+ 	if (sts & VE_INTERRUPT_COMP_COMPLETE) {
+ 		struct aspeed_video_buffer *buf;
+ 		u32 frame_size = aspeed_video_read(video,
+-						   VE_OFFSET_COMP_STREAM);
++						   video->comp_size_read);
+ 
+ 		spin_lock(&video->lock);
+ 		clear_bit(VIDEO_FRAME_INPRG, &video->flags);
+@@ -907,7 +922,7 @@ static void aspeed_video_init_regs(struct aspeed_video *video)
+ 		FIELD_PREP(VE_COMP_CTRL_DCT_LUM, video->jpeg_quality) |
+ 		FIELD_PREP(VE_COMP_CTRL_DCT_CHR, video->jpeg_quality | 0x10);
+ 	u32 ctrl = VE_CTRL_AUTO_OR_CURSOR;
+-	u32 seq_ctrl = VE_SEQ_CTRL_JPEG_MODE;
++	u32 seq_ctrl = video->jpeg_mode;;
+ 
+ 	if (video->frame_rate)
+ 		ctrl |= FIELD_PREP(VE_CTRL_FRC, video->frame_rate);
+@@ -1653,8 +1668,17 @@ static int aspeed_video_init(struct aspeed_video *video)
+ 	return rc;
+ }
+ 
++static const struct of_device_id aspeed_video_of_match[] = {
++	{ .compatible = "aspeed,ast2400-video-engine", .data = &ast2400_config },
++	{ .compatible = "aspeed,ast2500-video-engine", .data = &ast2500_config },
++	{}
++};
++MODULE_DEVICE_TABLE(of, aspeed_video_of_match);
++
  static int aspeed_video_probe(struct platform_device *pdev)
  {
-+	struct aspeed_video *video;
++	const struct aspeed_video_config *config;
++	const struct of_device_id *match;
+ 	struct aspeed_video *video;
  	int rc;
--	struct resource *res;
--	struct aspeed_video *video =
--		devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
  
-+	video = devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
- 	if (!video)
- 		return -ENOMEM;
+@@ -1666,6 +1690,14 @@ static int aspeed_video_probe(struct platform_device *pdev)
+ 	if (IS_ERR(video->base))
+ 		return PTR_ERR(video->base);
  
-+	video->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(video->base))
-+		return PTR_ERR(video->base);
++	match = of_match_node(aspeed_video_of_match, pdev->dev.of_node);
++	if (!match)
++		return -EINVAL;
++
++	config = match->data;
++	video->jpeg_mode = config->jpeg_mode;
++	video->comp_size_read = config->comp_size_read;
 +
  	video->frame_rate = 30;
  	video->dev = &pdev->dev;
  	spin_lock_init(&video->lock);
-@@ -1671,13 +1674,6 @@ static int aspeed_video_probe(struct platform_device *pdev)
- 	INIT_DELAYED_WORK(&video->res_work, aspeed_video_resolution_work);
- 	INIT_LIST_HEAD(&video->buffers);
+@@ -1712,13 +1744,6 @@ static int aspeed_video_remove(struct platform_device *pdev)
+ 	return 0;
+ }
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-static const struct of_device_id aspeed_video_of_match[] = {
+-	{ .compatible = "aspeed,ast2400-video-engine" },
+-	{ .compatible = "aspeed,ast2500-video-engine" },
+-	{}
+-};
+-MODULE_DEVICE_TABLE(of, aspeed_video_of_match);
 -
--	video->base = devm_ioremap_resource(video->dev, res);
--
--	if (IS_ERR(video->base))
--		return PTR_ERR(video->base);
--
- 	rc = aspeed_video_init(video);
- 	if (rc)
- 		return rc;
+ static struct platform_driver aspeed_video_driver = {
+ 	.driver = {
+ 		.name = DEVICE_NAME,
 -- 
 2.24.1
 
