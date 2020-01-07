@@ -2,55 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFCC9132E09
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:11:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04877132E11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:13:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9VpM7lUPfxLtQ8YAB7ZeXGdJ5Rlwvy+K4jdPIIcj1OE=; b=Ka8w41lg+0Aits+BAi8tuFZ11
-	CG1NARQzig5JbXhjPss7E+Cv3yXGO53VN2ghpDr0F0f5vdvvQM4YFBIqDsmNd7XGxRz1P24v/T8b1
-	Pu/LKbuxXN+USGBpMp/PRfvm/qT5Ta7rfuQaCEXoHJCO6KAfdVwwaBOu+UGlbPKppWWO/cBby16Xh
-	mcLkYpogje5fiozAIrWral0a2oWlgGaM8oyk3VYs2teUVaMU+9cW3GudTsn5c+42VhBqVn4glu3ls
-	iCjAv0u1PTaZgdpPOrgMBAFu3yue4xdqj6mVRjiSEJmuFmV79EGWLLztBmUXOEKkjuqjs2Ehb+KTw
-	rwDI+VvtQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gvTtH7gdEfL+0ZHI11hkyHcUp4jd8yGm813LeqJ02l8=; b=L1a/A0eWwS+GRS
+	3gqrCAM81wVugg1HinLO6EiA56lRyce/taA3gf+u01q7TCLLosQ+xdUCAnFdF2Fk6DMuYlmIth5ga
+	34UfKFiHBoQKQECTyY9Skh/puioLOSEn9eniJ9Sr5wvM8ggMP/2c2LpfecxUEhMWZlUG5WtQIn8C2
+	0a/Zi1/FHcg19S3yCHS/YtEH2ZfyQ6ZnO1dctjQ38C1lk64i9j+pieqsVn7siWGVluNIsf29o805N
+	ID9ltPuiY95KddUYA7Q5NhG8XWeMB6GTOGhw68T9XxOeFWGaFCNVtPmZ+WZg7+rsSIYaZ0gGo//lt
+	6hCZ3tMfjN2brJUodlEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotKG-0007hU-7P; Tue, 07 Jan 2020 18:11:32 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1iotLX-00016u-Gs; Tue, 07 Jan 2020 18:12:51 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotK8-0007h6-Uq; Tue, 07 Jan 2020 18:11:26 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 644F8AD7F;
- Tue,  7 Jan 2020 18:11:23 +0000 (UTC)
-Message-ID: <65e976494676a7081b154961ba51048892c2a779.camel@suse.de>
-Subject: Re: [RFC] ARM: add bcm2711_defconfig
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, f.fainelli@gmail.com
-Date: Tue, 07 Jan 2020 19:11:21 +0100
-In-Reply-To: <3688a55b-e929-6cef-66c6-affed97d938b@gmx.net>
-References: <20200107172459.28444-1-nsaenzjulienne@suse.de>
- <3688a55b-e929-6cef-66c6-affed97d938b@gmx.net>
-User-Agent: Evolution 3.34.2 
+ id 1iotLO-00016J-In
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:12:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id a33so249719pgm.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 10:12:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=otNEfPZRhfkH889yZruDaz8ZPdXQW2OeMKDCutsW3ng=;
+ b=EGIHk2y8X43q+dSv8uJDGfXbIXgfrsvaXk3EkCjao8JZyS6xL3yyYa/IPsSxKx7I/8
+ OZLFuBfwTr+9/eEGtHS7pPYUOArjVm9BVeCqWXH460W3KfIdq00ZZnwox4+RJdvlEP5X
+ pUm+kxpQ6C9u3/4s26HyNZoDVnj1J0J8D05Wc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=otNEfPZRhfkH889yZruDaz8ZPdXQW2OeMKDCutsW3ng=;
+ b=KH2UAynivCl05ticFSsivhNaqkC8acAskbSF+9QcKmCQ8pPweeXFpj/NTc0aJea1iQ
+ Jsr4/1JOoTAwaiLdgBg4o631i88BMRkVG4fpYUttwT7CPSpKw1cCEjwPJ2M2K9bzP8dw
+ AwdXe5gEHk7k2x5O0AJcVq9Pq/IEzy9lTG7YITxRKQihXZ+hLoLTjC9+2lJ22eDxSoMy
+ CmOA3cV4siQJJChSgv3nefhBEO+p/mNlYP9EJTuJecieR3/WcHoNLQ2lhEJ5d1QmVxba
+ MRQcqiUrEk30BWg+knfOrWuxXBkn5PMLx4Q+6u9T56beePyjeJtATTJtWj17SdtRNArZ
+ yhzw==
+X-Gm-Message-State: APjAAAWIhdrtEgWS8x2NiYrNH5C1iiVKS/ylyNEQGkvlff9O2oodfSUj
+ zF/g7dW7tWH5lQ7Zvof8SkkzkA==
+X-Google-Smtp-Source: APXvYqwOo+HzjTqist30x982uq+NRP2n7KSTQc6r6187ME5VXodlSE2JU9i1b2bbt/FBtxQZvAtBqw==
+X-Received: by 2002:a63:184d:: with SMTP id 13mr790298pgy.132.1578420761599;
+ Tue, 07 Jan 2020 10:12:41 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id u7sm200377pfh.128.2020.01.07.10.12.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 10:12:40 -0800 (PST)
+Date: Tue, 7 Jan 2020 10:12:39 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 2/7] arm64: Implement copy_thread_tls
+Message-ID: <202001071011.9517D9C0D@keescook>
+References: <20200102172413.654385-1-amanieu@gmail.com>
+ <20200102172413.654385-3-amanieu@gmail.com>
+ <20200102180130.hmpipoiiu3zsl2d6@wittgenstein>
+ <20200106173953.GB9676@willie-the-truck>
+ <CA+y5pbSBYLvZ46nJP0pSYZnRohtPxHitOHPEaLXq23-QrPKk2g@mail.gmail.com>
+ <20200107090219.jl4py4u2zvofwnbh@wittgenstein>
+ <20200107174508.GC32009@willie-the-truck>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200107174508.GC32009@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_101125_139021_3B831B94 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200107_101242_642985_A96B9696 
+X-CRM114-Status: GOOD (  11.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,82 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mbrugger@suse.com, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, hch@lst.de,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3302243260565397960=="
+Cc: Amanieu d'Antras <amanieu@gmail.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, "# 3.4.x" <stable@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-kselftest@vger.kernel.org,
+ Christian Brauner <christian.brauner@ubuntu.com>,
+ Christian Brauner <christian@brauner.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jan 07, 2020 at 05:45:09PM +0000, Will Deacon wrote:
+> On Tue, Jan 07, 2020 at 10:02:27AM +0100, Christian Brauner wrote:
+> > [Cc Kees in case he knows something about where arch specific tests live
+> >  or whether we have a framework for this]
+> > [...]
+> > It feels like we must've run into the "this is architecture
+> > specific"-and-we-want-to-test-this issue before... Do we have a place
+> > where architecture specific selftests live?
+> 
+> For arch-specific selftests there are tools/testing/selftests/$ARCH
+> directories, although in this case maybe it's better to have an #ifdef
+> in a header so that architectures with __builtin_thread_pointer can use
+> that.
 
---===============3302243260565397960==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-vwyhc/iY3H5c6/B9T0Uh"
+Yup, I agree: that's the current best-practice for arch-specific
+selftests.
 
-
---=-vwyhc/iY3H5c6/B9T0Uh
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, 2020-01-07 at 19:06 +0100, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 07.01.20 um 18:24 schrieb Nicolas Saenz Julienne:
-> > The Raspberry Pi 4 depends on LPAE in order to use its PCIe port, which
-> > is essential, as it ultimately provides USB2/3 connectivity. As this
-> > setup doesn't fit any generic purpose configuration this adds
-> > bcm2711_defconfig which is based on the current Raspberry Pi foundation
-> > config file[1] with as little changes as possible
->=20
-> i really dislike the Foundation config file, because it contains so many
-> unnecessary features. Bisecting with such a kernel config is horrible.
->=20
-> How about finding a compromise between bcm2835_defconfig and
-> multi_v7_defconfig + LPAE?
-
-If there is a consensus this is the right approach (creating a new config
-file), I'll be happy to try that out.
-
-Now that I think of it, maybe we shouldn't add bcm2711_thermal into
-multi_v7_defconfig.
-
-Regards,
-Nicolas
-
-
---=-vwyhc/iY3H5c6/B9T0Uh
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl4UyckACgkQlfZmHno8
-x/4TWwf+N1kMZUeYu3KkZhj6rIrwQPenFhPmhuIKOmAW4imMGNHYaxKFRgG4FTf3
-9023yNOuqmscpCycWPH1/lxA0SIWIZ4MI/MotvlKnQhFICjtJLRP0MmZHK0Pn0dm
-4o+VZJZRwGjSYOGhCZTi3lrnDmSv5MmlmJPkSOvBwlHvDxDFdZnld0bSMAuOHi5J
-+I1kCILWreHI63WalnD8UlaPWjIYVjlSJ4obi9k7k5hTa+PNJVes8CZvkIOnn1c6
-+VH8H7YmbhwyMity9f2+4MSDZVPkGf83ibYaIquHaXNC9iSzC3fdKj9XBFmlXtTS
-IpbYFYkRpI1bED5DeC7Rlw3h1pZkbw==
-=KEm+
------END PGP SIGNATURE-----
-
---=-vwyhc/iY3H5c6/B9T0Uh--
-
-
-
---===============3302243260565397960==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3302243260565397960==--
-
-
