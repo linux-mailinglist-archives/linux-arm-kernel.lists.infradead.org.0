@@ -2,58 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF803131CA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 01:11:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC0F9131CAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 01:11:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E1eKu1LFmQAOojGoPYDLGxbcO7y4zlNUkrqmGuwZJ+E=; b=CtceKNOg3IL7Cu
-	77T9PGHIZXASGsviJeskAqnTxh3nEWDsosnUzm5Ij9jOQ5X5319KxcVtf6Xdoh+ONRFBoU2QBJLo6
-	+HxOSiDTWVPcUdL+4sBuZKwS/ObKBUVoqFMlqzdSIcEwCXqvEy4I5APTvHiCP4bTknF2jBL9IiM3n
-	zT3p2D97zs6m+EGnPF7gZvUl74CJ+CXhPLR4PGRhCYUUcD++qu1W7JdORjsJDPA53hCxh9nXH6AlN
-	YLI+KAnck5VXzy/Lw+GvEWAXVnZEhLVqC0v2wKPMmcBgfospEzRK8x17bMROIpVoNE1ETRgliN+pL
-	2WiGpR0/UqiTI/sTj58w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=oqrI5BHfdfSpa7BY3LTJX3YF/wjVCqId3H8QuJ596Ls=; b=rAx
+	d6qqdXpFq01rfQjfEGoI4WB7azR0iG4N4B8Lte3TelXeyRR/4GsGPrSwSO7v1g7nZyYjIvs0gDzlX
+	1BEmKhdUlQhsuAJBEBZNRNpoQ9e2275W2mXk60lD65+9+Bp4B/khDfnT3wwCUSXNP5MZP+bg+I+/G
+	zh5WOkWejGxXSrAjjvf1SV8IzUJ0NUUcP41s9yEmIJbXKTUA5sFwZmRWnz0wBxl79XqbSRzSvX3pl
+	2Ce7u0cU3QKKEXKs5lBwFGiNsfe6+GnEB5T6ouLdBXoflWaAUXkNkL3w1oVlg83u/pH+vn4cSpzSq
+	fq8sh+dc3pH0yBpElnExmx3DSzITR8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iocSq-0007Co-39; Tue, 07 Jan 2020 00:11:16 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1iocT9-0007Lu-HP; Tue, 07 Jan 2020 00:11:35 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iocSh-0007Bw-Im; Tue, 07 Jan 2020 00:11:10 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id A574D52F;
- Tue,  7 Jan 2020 01:11:05 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1578355865;
- bh=H4NAzk1HO6HlKI8d4ZzyIaQ9+l8IHFtc9UAyj/LlgkY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XqxTt4pqsUfpEnBoAv+yrrlvWKDbLpQYOxT3rP2iesxUWozMJDaVHDaMQ1CQnnm+j
- aDprkAtvWtByJj0HS77depLhFf5bwD3wciRzQTYpc7+rW9exaHrQa99BnauQf2oVjM
- OfSOtXaq3ZpWcNAqk7RLWW8pWbtpj0naAlvJXqKs=
-Date: Tue, 7 Jan 2020 02:10:55 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI
- RX D-PHY yaml bindings
-Message-ID: <20200107001055.GE22189@pendragon.ideasonboard.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-10-helen.koike@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191227200116.2612137-10-helen.koike@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iocSk-0007CF-IK
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 00:11:11 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 5so43951892qtz.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Jan 2020 16:11:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=cIfGQUZGJ1UQZiG4WYmmh441UIHqnbg7xG8dfeToYGo=;
+ b=QmzeZlQd12isY78U0z2qg8kl/Pr3BprBoEAk8EDdG1Ct18v1KI6ll/4aYE7Isb8nUA
+ LfW+kvH+V5/QBxxGqHZYY58LamtMj5TPCyULaH7s+m3xlSN18oVsXOvj8GMm2ONPqkNF
+ ebEZ9Y3QHJEjUl1QDvCyuplkYVI3evjiI7d2w/P6x8mYJCc2JgGDaZ/+drHIXSNr7un8
+ ZFqUdLODOHqMHQ22Lt2vkQQngFu0EkRQ6zmTe+2fpnXUBUPBvNLD+Iblv+7WG+3Utygv
+ tRqbY+rc7Ytav3w6Vu0AB2FpDYpkGe8tDM+5Jf8v2MWh5Bfs5Ft9Wo99YN1kzyxMRe/R
+ riwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=cIfGQUZGJ1UQZiG4WYmmh441UIHqnbg7xG8dfeToYGo=;
+ b=BPmzPQ0Sd1rdn4TZ2kVNTgVHhFTOWzUXEz+4PagOTeLhETMkqZYKtg6aJoS4cJNG3Y
+ yMUz9t00BjuZP4oLr3z68Te+OmY3Pe+w1+mjTxepSCrccbNkwRG/kT47gvgR0RKdXb/h
+ 06DipXbt9suQOHA4RlbpubO0Ot5vbkn1CWqN9MYMkDfOFcRYRznL4YJQqMBbCJtjak1L
+ dBlByAdk6m7+g3jDqVAaSAtj+Z3hK/IAowilI7WloSoZSQck2brlSEmkk1jOJ4hOTEKB
+ 5+yv3JqkKviqHDpuI7nXekNy1A2A/BwqgVZYm8eOT7VnqQBIRhh4FuzCZf5q/F0umlcN
+ 0mxA==
+X-Gm-Message-State: APjAAAU8U0zq7gf1CMslvqXY8X5HUowtbCrswGq26LbTm86qB4AMEKJT
+ A+LaOjMcSW51azXTDjNOAbM=
+X-Google-Smtp-Source: APXvYqyPhtUgVqFYkncn77Bs1JmcGJr9/M595ftioW/J3/E7vTTJxcgLzW3TZE7RljEtUeXfLbf/Jw==
+X-Received: by 2002:ac8:33a5:: with SMTP id c34mr78914522qtb.359.1578355868718; 
+ Mon, 06 Jan 2020 16:11:08 -0800 (PST)
+Received: from fabio-Latitude-E5450.am.freescale.net ([2804:14c:482:5bb::3])
+ by smtp.gmail.com with ESMTPSA id f23sm21441262qke.104.2020.01.06.16.11.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Jan 2020 16:11:07 -0800 (PST)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] ARM: dts: imx6ul-14x14-evk: Pass the "broken-cd" property
+Date: Mon,  6 Jan 2020 21:11:17 -0300
+Message-Id: <20200107001117.2009-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_161107_928202_BEAA7249 
-X-CRM114-Status: GOOD (  18.12  )
+X-CRM114-CacheID: sfid-20200106_161110_637613_608A9A47 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -73,156 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, ezequiel@collabora.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
- linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
- joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
- jacob-chen@iotwrt.com, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
+ Fabio Estevam <festevam@gmail.com>, linux-imx@nxp.com, kernel@pengutronix.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Helen,
+imx6ul-14x14-evk does not have a GPIO dedicated for reading the card
+detect pin on the eSDHC2 micro-SD port. 
 
-Thank you for the patch.
+Pass the "broken-cd" property to describe the absence of the card detect
+GPIO so that polling must be used.
 
-On Fri, Dec 27, 2019 at 05:01:14PM -0300, Helen Koike wrote:
-> Add yaml DT bindings for Rockchip MIPI D-PHY RX
-> 
-> This was tested and verified with:
-> mv drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml  Documentation/devicetree/bindings/phy/
-> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> 
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> 
-> ---
-> 
-> Changes in v12:
-> - The commit replaces the following commit in previous series named
-> media: staging: dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
-> This new patch adds yaml binding and was verified with
-> make dtbs_check and make dt_binding_check
-> 
-> Changes in v11: None
-> Changes in v10:
-> - unsquash
-> 
-> Changes in v9:
-> - fix title division style
-> - squash
-> - move to staging
-> 
-> Changes in v8: None
-> Changes in v7:
-> - updated doc with new design and tested example
-> 
->  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++++++++++++++
->  1 file changed, 75 insertions(+)
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> 
-> diff --git a/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> new file mode 100644
-> index 000000000000..af97f1b3e005
-> --- /dev/null
-> +++ b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> @@ -0,0 +1,75 @@
-> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
+According to Documentation/devicetree/bindings/mmc/mmc-controller.yaml:
 
-Should this be s/RX0/RX/ ? Or do you expect different bindings for RX1 ?
-Looking at the PHY driver, it seems to handle all PHYs with a single
-struct device. Should we thus use #phy-cells = <1> to select the PHY ?
+  broken-cd:
+    $ref: /schemas/types.yaml#/definitions/flag
+    description:
+      There is no card detection available; polling must be used.
 
-> +
-> +maintainers:
-> +  - Helen Koike <helen.koike@collabora.com>
-> +  - Ezequiel Garcia <ezequiel@collabora.com>
-> +
-> +description: |
-> +  The Rockchip SoC has a MIPI D-PHY bus with an RX0 entry which connects to
-> +  the ISP1 (Image Signal Processing unit v1.0) for CSI cameras.
-> +
-> +properties:
-> +  compatible:
-> +    const: rockchip,rk3399-mipi-dphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Mipi d-phy ref clock
-> +      - description: Mipi d-phy rx0 cfg clock
+Even though no error is oberved in the kernel, the lack of the
+'broken-cd' property caused the micro-SD to not be detected in U-Boot,
+so let's improve the device tree description to make it more accurate.
 
-s/Mipi d-phy/MIPI D-PHY/
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-> +      - description: Video in/out general register file clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: dphy-ref
-> +      - const: dphy-cfg
-> +      - const: grf
-> +
-> +  '#phy-cells':
-> +    const: 0
-> +
-> +  power-domains:
-> +    description: Video in/out power domain.
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - '#phy-cells'
-> +  - power-domains
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +
-> +    /*
-> +     * MIPI RX D-PHY use registers in "general register files", it
-> +     * should be a child of the GRF.
-> +     *
-> +     * grf: syscon@ff770000 {
-> +     *  compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> +     *  ...
-
-missing
-
-	* };
-
-> +     */
-> +
-> +    #include <dt-bindings/clock/rk3399-cru.h>
-> +    #include <dt-bindings/power/rk3399-power.h>
-> +
-> +    dphy: mipi-dphy {
-> +        compatible = "rockchip,rk3399-mipi-dphy";
-> +        clocks = <&cru SCLK_MIPIDPHY_REF>,
-> +                 <&cru SCLK_DPHY_RX0_CFG>,
-> +                 <&cru PCLK_VIO_GRF>;
-> +        clock-names = "dphy-ref", "dphy-cfg", "grf";
-> +        power-domains = <&power RK3399_PD_VIO>;
-> +        #phy-cells = <0>;
-> +    };
-
+diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
+index 212144511b66..265bf4108cb6 100644
+--- a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
++++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
+@@ -327,6 +327,7 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_usdhc2>;
+ 	no-1-8-v;
++	broken-cd;
+ 	keep-power-in-suspend;
+ 	wakeup-source;
+ 	status = "okay";
 -- 
-Regards,
+2.17.1
 
-Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
