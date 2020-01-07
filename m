@@ -2,140 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EB511328CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 15:23:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AD4A132910
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 15:37:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pm0ESVRGThsJIplhVllmT9n0x3LF1Qo+E9LYlX41NMo=; b=be7KtZd0RSqPhV
-	vs8q6S12Bn2xfNO1Fk15JVM+omzYUOscZDjCp4wHfxfBEShQfF6/EWAMaI8Zi7iR1WdQvVnDmFkIH
-	3VIxuuhvto8TO+U6M3rFhMb8Vfpaq1mARWD7tAOT5AgH0n7dIzEu1PKZEqBjBRT8BzCeXdJbvK/BW
-	G6LIGlDWqOwI+lpX2nsXp4Ok+ZOpFLGT/bUccz1d1NszmirerqqwsLOeGRQB+ZRckh6Rn0p96an+W
-	uG3fyxFKtDrtKdZriq3E1xZWtEjcgN9O8NLPKMPqvQn6JvAK42HkQBOAZhzKtv5TTrIRJRg8xR6xR
-	++9H8ZgCjQhnuKkdszJA==;
+	List-Owner; bh=reSCVQx2a1YnCJWpVehO4cuDBvsnrlaScsWPvoJ7+nk=; b=Kwk0ShgT9NyHaM
+	LGDfrW2v/EMtQR9lWOdYeJxQ2LEMIhbzoUjW9u2FSBl8HyCwTA/cHCs/gAZXjIsrmF6AgJLaLAnIC
+	Vuz45u+VN9yxrV7vFyyC+aBTmObFfdRD1Vkaq5+d482jvJSkzU5pbB/w2EU197RKYvZhBdDeAxzZh
+	aj9IU6AQWScwB5eGTu0u6dk38WDitKdwh0l71jRZF+pzKvYDL/DnfLVoxgFjqEnsZT9qZ42/QiTjR
+	jNlaeA4zIJnkLqbeG2N10McTLf8Z8tNG1f7dfyvVEEuDgmKaDq7lnNOx+vQLJW/Lfxjnk820Tuoai
+	T2q5TbqwlQoB3hu+s62g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioplP-0006BR-I8; Tue, 07 Jan 2020 14:23:19 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iopyf-0002c7-4e; Tue, 07 Jan 2020 14:37:01 +0000
+Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioplG-00069y-Kb
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 14:23:12 +0000
-Received: by mail-wr1-x441.google.com with SMTP id b6so54203751wrq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 06:23:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=d5jqYXsZf9wizN5r7ku4wxLHhyx6beHVqHA/bzv6tvI=;
- b=xd9WLIp8YxUMnKNqK1IuEYjVEIddn0zuUYs1nAuq/h9LAvkiuBcdZbXzKsHghEXkCA
- 16Slbt0WCTDJ+YFd1NKy1Qb4IbdhWWPpwJ0LwqOdLz+UCPGkGLmrVeuD79E92uJBIt+4
- PxUYaUWmorq+oMYOQfnz1BKMFeozJYp3JyocaU19ShbK0ELoWTRPzc9N+lSTfoJ5gEW1
- lRfubygykujiRTmMYzWaAZwLMuvfwjZ3lI8DPVDCyZALLyJyXP8Joegb9fVaE6B3W4Vc
- YWfZo0nmMbU+eXltQOaBbBcTaVGAea8H7IMqdPpcWlRyduwdgEijz8r7WUPxR89SHQZZ
- rumA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=d5jqYXsZf9wizN5r7ku4wxLHhyx6beHVqHA/bzv6tvI=;
- b=sTbuhMNUKk7yeW/6YQ25Zo2WVHlRQ/y8d4i4MYjRTHvrnDmRwjB3ukzXOEt9yTS88J
- fwhjn4VpCCoYKzkpXrgGpPfBJVfTKDp/GzxpGa7sg1zU5nKtHHo+igLlLEDjk33JvD0D
- DMhJUh8M+y5nmE23amnzrd2Ir3r9p1BparCUs8HuKWJ8P4n61XXTM86BFT8YXMu7X7/J
- cFmzVSSSQ6h0rhHSSdN4xjEea3Jm7xO25MvACCbUAnmRS5jO7RshGl1ckBss7LGegqel
- wssS2exS5loy/YpBCOp/eRFsUtadlVVIYkM8pHaazVCAI5Osw3+tP638uBkTe7EIbwnN
- gwxQ==
-X-Gm-Message-State: APjAAAV9vF/eD0fhwAVs5su61eKayugeKAFzBsJkkVuzbhmB0hgiliRN
- kSmzLj4Eq+qQ7fG7cwBYaEfo1w==
-X-Google-Smtp-Source: APXvYqwTsUHP7jiYrDH4sG/Hvqdv5VCYSrMe5k2cqctiZ8V8EHOQ7aTd/f328cdBigGztfZe/lBu9w==
-X-Received: by 2002:adf:8541:: with SMTP id 59mr108223330wrh.307.1578406988025; 
- Tue, 07 Jan 2020 06:23:08 -0800 (PST)
-Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id v17sm77442183wrt.91.2020.01.07.06.23.06
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 07 Jan 2020 06:23:07 -0800 (PST)
-Subject: Re: [PATCH net] net: stmmac: Fixed link does not need MDIO Bus
-To: Jose Abreu <Jose.Abreu@synopsys.com>, netdev@vger.kernel.org
-References: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <437a073e-1610-ffa2-891c-692bea3541fd@baylibre.com>
-Date: Tue, 7 Jan 2020 15:23:06 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iopyV-0002am-0k; Tue, 07 Jan 2020 14:36:52 +0000
+Received: from [IPv6:2001:420:44c1:2577:cd88:93ae:ae73:3d6c]
+ ([IPv6:2001:420:44c1:2577:cd88:93ae:ae73:3d6c])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id opyMiLGOLN9dwopyPiVoSQ; Tue, 07 Jan 2020 15:36:46 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1578407806; bh=0/aODu4Nr1vPvdKgRVthpJllEoY3MZ2YaTkdzm/0C6c=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=YL5El9MNH1rzorxvQFpmS+AYc/8zRWuhUK6bRYMRdEQvQbalN21pF0atjbkKCZBq0
+ VR6d6BrocFzAAA5BQlS8mNYg3W76Az+SlMMXzP5Z4z14iSuvBYFoaSZvXYC7jV9nUh
+ 5EcKWc2Pqyd/SW2qcVZOiULjZTKzqdqPZTfOvzZVaEkNhcD7b1EGMhUV/Zm/nHZTnS
+ T1YDbFAxzOur2NoekYlg9ecR/9VnJm8VULbKaCuzhE2eqVkxLjsmHUIsc3Qh7bYENJ
+ bRMH05C/4b7KdbB1qS/TISqsrOGvL3/t1mhca7SXTI/AazMNfGzzvr6R+tmSDqW9Ad
+ 56LGwBqex5zTg==
+Subject: Re: [PATCH v2 3/3] media: platform: meson-ao-cec-g12a: add wakeup
+ support
+To: Guillaume La Roque <glaroque@baylibre.com>, narmstrong@baylibre.com,
+ mchehab@kernel.org, khilman@baylibre.com, devicetree@vger.kernel.org
+References: <20191213132956.11074-1-glaroque@baylibre.com>
+ <20191213132956.11074-4-glaroque@baylibre.com>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <cccc0cda-7403-1378-40c8-291b11bf868a@xs4all.nl>
+Date: Tue, 7 Jan 2020 15:36:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <20191213132956.11074-4-glaroque@baylibre.com>
 Content-Language: en-US
+X-CMAE-Envelope: MS4wfHtRrygWIAqkPjGrrrau5APrpkIVRR2JTGhrjmxiPtVc/8Px0FJuQnDfkKcecKx4a0yJnIsXM/+wjB9qqSAaleGVoC/P/P9JpYnA5wp43Dgwu9ItB4Cq
+ SvN6Urd5PiahJtP+BuCs61llsDwjD0pGD+94lU2i1bcfdS873kXqZzfeT5pAw/8qHNumXdH82q3HkbMHImOQhFgqgtNQ1kMMbYHxO8lVgCP8ZWo95vO7gZnI
+ t7kE8hOEe08vaX0JS25KsRtCiFg7ZmJMa6dngWBXy+Ujwl3kluL+tyrMQ9xusYNW47coaamWLONfm/CfMNhK/oRWhdrBoKU9VIo+LRH3ARbPdfo4KQnFWHsa
+ 8rypUE/urtP7doikUon5izSog1PFmV9P6Tb82jTlLKfrmSsRdwF3PCv/rKBROOfTF7iF2JHdSNmZhZcSjJpw485dVU76/+0s13Yg27rnRpVU+55OrObqo/MB
+ Tmp45ztmF98xuKeoD25BbnkazRNRKRrlVn9XLOFkmV0+if17t+wApyI8sh1Jjfoqh1A27yCuVFrOQeNZyvHpBAjVuhZzMRuyKwfK0LJMEoMVYVxGmI5T3DWV
+ W8VXxah2vdBpTyQ5DiIrtK92
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_062310_707212_8864B15C 
-X-CRM114-Status: GOOD (  17.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_063651_218309_D128A77C 
+X-CRM114-Status: GOOD (  19.97  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.31 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -148,62 +86,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "kernelci . org bot" <bot@kernelci.org>, Sriram Dash <sriram.dash@samsung.com>,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Heiko Stuebner <heiko@sntech.de>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07/01/2020 13:35, Jose Abreu wrote:
-> When using fixed link we don't need the MDIO bus support.
+Hi Guillaume,
+
+On 12/13/19 2:29 PM, Guillaume La Roque wrote:
+> add register configuration to activate wakeup feature in bl301
 > 
-> Reported-by: Heiko Stuebner <heiko@sntech.de>
-> Reported-by: kernelci.org bot <bot@kernelci.org>
-> Fixes: d3e014ec7d5e ("net: stmmac: platform: Fix MDIO init for platforms without PHY")
-> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
-> 
+> Tested-by: Kevin Hilman <khilman@baylibre.com>
+> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 > ---
-> Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-> Cc: Alexandre Torgue <alexandre.torgue@st.com>
-> Cc: Jose Abreu <joabreu@synopsys.com>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-> Cc: netdev@vger.kernel.org
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: kernelci.org bot <bot@kernelci.org>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Sriram Dash <sriram.dash@samsung.com>
-> ---
->  drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/media/platform/meson/ao-cec-g12a.c | 33 ++++++++++++++++++++++
+>  1 file changed, 33 insertions(+)
 > 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> index cc8d7e7bf9ac..4775f49d7f3b 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-> @@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct platform_device *pdev,
->  static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
->  			 struct device_node *np, struct device *dev)
->  {
-> -	bool mdio = false;
-> +	bool mdio = !of_phy_is_fixed_link(np);
->  	static const struct of_device_id need_mdio_ids[] = {
->  		{ .compatible = "snps,dwc-qos-ethernet-4.10" },
->  		{},
+> diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/platform/meson/ao-cec-g12a.c
+> index 891533060d49..85850b974126 100644
+> --- a/drivers/media/platform/meson/ao-cec-g12a.c
+> +++ b/drivers/media/platform/meson/ao-cec-g12a.c
+> @@ -25,6 +25,7 @@
+>  #include <media/cec.h>
+>  #include <media/cec-notifier.h>
+>  #include <linux/clk-provider.h>
+> +#include <linux/mfd/syscon.h>
+>  
+>  /* CEC Registers */
+>  
+> @@ -168,6 +169,18 @@
+>  
+>  #define CECB_WAKEUPCTRL		0x31
+>  
+> +#define CECB_FUNC_CFG_REG		0xA0
+> +#define CECB_FUNC_CFG_MASK		GENMASK(6, 0)
+> +#define CECB_FUNC_CFG_CEC_ON		0x01
+> +#define CECB_FUNC_CFG_OTP_ON		0x02
+> +#define CECB_FUNC_CFG_AUTO_STANDBY	0x04
+> +#define CECB_FUNC_CFG_AUTO_POWER_ON	0x08
+> +#define CECB_FUNC_CFG_ALL		0x2f
+> +#define CECB_FUNC_CFG_NONE		0x0
+> +
+> +#define CECB_LOG_ADDR_REG	0xA4
+> +#define CECB_LOG_ADDR_MASK	GENMASK(22, 16)
+> +
+>  struct meson_ao_cec_g12a_data {
+>  	/* Setup the internal CECB_CTRL2 register */
+>  	bool				ctrl2_setup;
+> @@ -177,6 +190,7 @@ struct meson_ao_cec_g12a_device {
+>  	struct platform_device		*pdev;
+>  	struct regmap			*regmap;
+>  	struct regmap			*regmap_cec;
+> +	struct regmap			*regmap_ao_sysctrl;
+>  	spinlock_t			cec_reg_lock;
+>  	struct cec_notifier		*notify;
+>  	struct cec_adapter		*adap;
+> @@ -518,6 +532,13 @@ meson_ao_cec_g12a_set_log_addr(struct cec_adapter *adap, u8 logical_addr)
+>  					 BIT(logical_addr - 8));
+>  	}
+>  
+> +	if (ao_cec->regmap_ao_sysctrl)
+> +		ret |= regmap_update_bits(ao_cec->regmap_ao_sysctrl,
+> +					 CECB_LOG_ADDR_REG,
+> +					 CECB_LOG_ADDR_MASK,
+> +					 FIELD_PREP(CECB_LOG_ADDR_MASK,
+> +						    logical_addr));
+> +
+>  	/* Always set Broadcast/Unregistered 15 address */
+>  	ret |= regmap_update_bits(ao_cec->regmap_cec, CECB_LADD_HIGH,
+>  				  BIT(CEC_LOG_ADDR_UNREGISTERED - 8),
+> @@ -618,6 +639,13 @@ static int meson_ao_cec_g12a_adap_enable(struct cec_adapter *adap, bool enable)
+>  		regmap_write(ao_cec->regmap_cec, CECB_CTRL2,
+>  			     FIELD_PREP(CECB_CTRL2_RISE_DEL_MAX, 2));
+>  
+> +	if (ao_cec->regmap_ao_sysctrl) {
+> +		regmap_update_bits(ao_cec->regmap_ao_sysctrl,
+> +				   CECB_FUNC_CFG_REG,
+> +				   CECB_FUNC_CFG_MASK,
+> +				   CECB_FUNC_CFG_ALL);
+
+What exactly is enabled here? Looking at CECB_FUNC_CFG_ALL it seems to
+enable automatic standby (I presume when the STANDBY message is received?)
+and power on (I presume when SET_STREAM_PATH is received?).
+
+Do you really want to automatically handle STANDBY that way? What does this
+do on the hardware level anyway? Isn't this something that should be
+controlled in userspace?
+
+Similar questions for power on: you may not always want to enable this feature
+since it depends very much on the precise use-case.
+
+And which messages it reacts to in order to do a power-on needs to be
+documented since this differs depending on whether the CEC adapter is
+used for a TV or for a playback device. This feature may be hardwired for
+a playback device only, in which case it should probably be disabled if
+the CEC adapter is configured as a TV.
+
+In any case I would like to see some more details about how this works,
+especially since this is the first implementation of such a feature.
+
+I suspect that some userspace API might be needed to get the right level
+of control of such a feature.
+
+Regards,
+
+	Hans
+
+> +	}
+> +
+>  	meson_ao_cec_g12a_irq_setup(ao_cec, true);
+>  
+>  	return 0;
+> @@ -685,6 +713,11 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
+>  		goto out_probe_adapter;
+>  	}
+>  
+> +	ao_cec->regmap_ao_sysctrl = syscon_regmap_lookup_by_phandle
+> +		(pdev->dev.of_node, "amlogic,ao-sysctrl");
+> +	if (IS_ERR(ao_cec->regmap_ao_sysctrl))
+> +		dev_warn(&pdev->dev, "ao-sysctrl syscon regmap lookup failed.\n");
+> +
+>  	irq = platform_get_irq(pdev, 0);
+>  	ret = devm_request_threaded_irq(&pdev->dev, irq,
+>  					meson_ao_cec_g12a_irq,
 > 
 
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
