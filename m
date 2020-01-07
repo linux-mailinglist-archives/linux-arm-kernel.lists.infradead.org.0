@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32799131E0C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 04:44:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9C06131E1A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 04:44:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qi0PTZufPTrRvQYD/WYNzEBp8kvQCUAm9r3shqCyPfo=; b=sD2SiXVFfN2IQo
-	Aij+nXHj+Gmb7cRJN2vj+r5ZWPRWBoInuHu3a0LrU98jHoN/4Qw9kU+fCXJc4YnMrbKXSBxebP49S
-	cwU+7d9DyY4LhYiU8RNA3LFK2fO4lJXRPKR2PjISbALdnsSeu/vc4qIxmJ4vz5bMFxT2lf53CwE4K
-	iTc2TUglh/mLnSclTtrUPjgiuetO2rxWbDRUx0UlOc1QwsFpwJbCx8+1RSueBFz1f5DVpvqQhRedj
-	Xeb8lV40yaF6pMHRJIitp3FKq1mkuZ6gxCFbejWxinRjBLxWh3j4Za5npX/AbYS+41fSbjsI9CSzT
-	qdAn3QXrfRK8EG+rtvww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aoy/qzaT/PiRO23iWighp3/zD34jvPKH2CcRpdn2c9o=; b=SYpO/1nVUtsCrc
+	WIiwqk8id/RKosldFkhfZEkQ2D5vzzoVgkv5GhyJwOtM67//Mo4sv3gTcxLfcYCnnzT9irZ4xW4iH
+	LTBT7OcY8l/FUsz6aCFzAM8qLyff73iOTiHHthxd/B828HuU6PCz7VpIdGbSNiOK3Y8PT+b6TCqEf
+	53hYmVo0ScNnUdpR/2zf+3K02ufSqkowM/CWG3VowGjmbI5cdRzQ3PycGUGcLLIm0o/zJDP7BIFgb
+	iBvJymoOI3FTYL7c0TLgDdfRE91xwqEgfQtIcmnbf9jZSlSzY+xk3m1XE4aL3/eHflJkQtRNiYjTz
+	gS4mRKo1R98zf13Hw6Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iofmY-0001OQ-Ea; Tue, 07 Jan 2020 03:43:50 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iofmt-0001Vn-LT; Tue, 07 Jan 2020 03:44:11 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iofmP-0001Np-Cc
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 03:43:43 +0000
-Received: by mail-pf1-x443.google.com with SMTP id p14so27896634pfn.4
+ id 1iofmT-0001OP-5p
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 03:43:46 +0000
+Received: by mail-pg1-x542.google.com with SMTP id 6so27832097pgk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 19:43:40 -0800 (PST)
+ Mon, 06 Jan 2020 19:43:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=gHUbb7q4zKarJa/jENsWhe5joUzhUsIi3+/OkwV0nCg=;
- b=NE5X04jTW9D4AAlZ1NLkRw5E9lCP2JS0FFDHcxeKeNssEwk0Mk+MrFridEDJinkcxq
- syLjplEhUDUrD8ygUiPRE9enG6yVswHHLvmVT2kvZS/klLV4fLBVu+c3K2OXJswU4afd
- 9kIXv1MJ2R5GIvuXapD/4vTtXP60JPelynxOKGpuszywHtf6QU/F1JJ6tx2YkzGVMaop
- UC4Z5ZMiLbiG67W/X8Stcl2y83ASsmSXYLypJP+UVWCQt4rM1FMDNLhTtCPlX6FPvXD9
- I9pu0MoNcHR6B1pSIFLeoMD6/5OFVhTHALCAlBkg4EHpv6yPNsSoL2UeZvr9p6QwpFDP
- CnHw==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=VltYEuA+2PApmtgRMm5FF8qb9zrgm0zOyAmewmF0puQ=;
+ b=l47vIneSa/hFEkETx/SuB1kevgPx1rLNRqSo/Ms503wbbhPZFWpn6Y0VH+ml5EHGwX
+ Z8MjxcYNwT4QKu/bgCwxC94ge6v6noxf6kblwdoLuKYJzUnNf6ep3t2LcQ7Czo44V3na
+ ND6a6HAxw5KsTlN1SUyixzT0GcTyWZKfJtJDBuSDRhgGJ+/PMyNmgxh6yj2JvgHYnwNU
+ oLPyCwpEGojBiLYLM7HzVbfQsrg7Yr/r+Cu1ckFmHqt4XMyCSs2rEBSPc65TTyqGE7hq
+ LAHD+t0sNtfO1GjTa3XVo+ZHcsyfByJaSi7PcK321b5zbAh0huZvRVJ2noP54Xdgyz2B
+ sjCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=gHUbb7q4zKarJa/jENsWhe5joUzhUsIi3+/OkwV0nCg=;
- b=GExBRRyOej4XEvLnuJjWUHrwVWJPAK4XOFx4yy6McHpvfGU5AePRn1Np4gtlSS4LQn
- MbZEgxb1QnLVFGSlPO1TIL7hpEz242akhNpom/lzkF/8Dbr4dAIteV/y138AQDWt8c5J
- ip9moBlYnEmyAZbTFPV2U/jaxYd7YRcbsBr+wcBpra3RFg59AfMb5SmMCvRVtTHtoGmB
- zciEGBosOaf68vVPHARW8ovD1kX6XX+KTLeCNfTGxe2LOIXQobZozHboDyYWdSnF796d
- R/hXgXSIn3KkhrkG0BSPbB2Qas0li7QBIOarylbKUb4L3JVudaSmVNxprbhSbPAb9t/N
- NnrQ==
-X-Gm-Message-State: APjAAAVnyt1z8oHbEjc0aOMf1I+MsvnA647QLmerliendulOwxIo5HHB
- VBZg7CnjbywxM6H0ubCwciZvgbj+
-X-Google-Smtp-Source: APXvYqzKmGQn30OyGYuc8Yfb7XzY/DQP1By/9LJ3V3cFnc8q3uPr3UXvgAaQ6v64km7Wwt3R6On/ZQ==
-X-Received: by 2002:a63:ce55:: with SMTP id r21mr97706108pgi.156.1578368620173; 
- Mon, 06 Jan 2020 19:43:40 -0800 (PST)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=VltYEuA+2PApmtgRMm5FF8qb9zrgm0zOyAmewmF0puQ=;
+ b=UUVCcQs7X5PyTZyT9pJu80kgs+BZziBfrU689iI7WOnXFVI5SUdBPsH4Z/N8ZFKQ/f
+ SxrcBEsaxcjfLwzSuMFkO5QYPAVGtLz5Usxnt9c5gNydc9i0mXU1R5ltvijH/pwYjP7s
+ CYmuk8idKSuk/cO3YM2tBzjKXrY0FmttDFtQgaCC4HHj4TY0K3hmCgOPmlWs6Q7ADygy
+ l3MxEXZiqJ3Fj40Nod4vjJhJTW3KVucRKqugBC2tZZ2bJv4FzKzqXO3uG+hXPZZ8xlBG
+ sS+3mxR7J98poTC4aXCUeXwVnHh5syCGX0TxR2/kgyRMEi77CmOabH6dzAvfybn2xkW3
+ rPdg==
+X-Gm-Message-State: APjAAAWtIKYt+ePosz9ztX48wWDQU4LsuJvO8gefTk/IiZInKVRIRraT
+ bgw+zP2lLu/eSevAeSVMDFk=
+X-Google-Smtp-Source: APXvYqzZw/5ojo17tCaUt9PV7komeSIywJmrYJhVJN67fb/Rxn2Dvbo59Qfw2xEZ5of4zJw5FPOBDA==
+X-Received: by 2002:a62:1d52:: with SMTP id
+ d79mr112174863pfd.144.1578368624291; 
+ Mon, 06 Jan 2020 19:43:44 -0800 (PST)
 Received: from voyager.lan ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id g10sm73455929pgh.35.2020.01.06.19.43.36
+ by smtp.gmail.com with ESMTPSA id g10sm73455929pgh.35.2020.01.06.19.43.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 19:43:39 -0800 (PST)
+ Mon, 06 Jan 2020 19:43:43 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>,
  Eddie James <eajames@linux.ibm.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 0/3] video: aspeed video engine cleanups
-Date: Tue,  7 Jan 2020 14:13:21 +1030
-Message-Id: <20200107034324.38073-1-joel@jms.id.au>
+Subject: [PATCH 1/3] media: aspeed: Rework memory mapping in probe
+Date: Tue,  7 Jan 2020 14:13:22 +1030
+Message-Id: <20200107034324.38073-2-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200107034324.38073-1-joel@jms.id.au>
+References: <20200107034324.38073-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_194341_459442_12A6B87D 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200106_194345_229887_F5665901 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (joel.stan[at]gmail.com)
@@ -109,21 +111,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When reviewing some patches from Jae I noticed the driver used compile
-time tests for some registers. When thinking about how to avoid that, I
-came up with a few cleanups.
+Use the recently introduced function devm_platform_ioremap_resource to
+save a few lines of code. This makes the driver match common platform
+device probe patterns.
 
-Jae, feel free to base your patches on this series if you, Eddie and
-Mauro are ok with the changes.
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+ drivers/media/platform/aspeed-video.c | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
 
-Joel Stanley (3):
-  media: aspeed: Rework memory mapping in probe
-  media: aspeed: Use runtime configuration
-  video: aspeed: Update copyright information
-
- drivers/media/platform/aspeed-video.c | 73 ++++++++++++++++++---------
- 1 file changed, 48 insertions(+), 25 deletions(-)
-
+diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
+index d8593cb2ae84..8f849d9866af 100644
+--- a/drivers/media/platform/aspeed-video.c
++++ b/drivers/media/platform/aspeed-video.c
+@@ -1655,14 +1655,17 @@ static int aspeed_video_init(struct aspeed_video *video)
+ 
+ static int aspeed_video_probe(struct platform_device *pdev)
+ {
++	struct aspeed_video *video;
+ 	int rc;
+-	struct resource *res;
+-	struct aspeed_video *video =
+-		devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
+ 
++	video = devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
+ 	if (!video)
+ 		return -ENOMEM;
+ 
++	video->base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(video->base))
++		return PTR_ERR(video->base);
++
+ 	video->frame_rate = 30;
+ 	video->dev = &pdev->dev;
+ 	spin_lock_init(&video->lock);
+@@ -1671,13 +1674,6 @@ static int aspeed_video_probe(struct platform_device *pdev)
+ 	INIT_DELAYED_WORK(&video->res_work, aspeed_video_resolution_work);
+ 	INIT_LIST_HEAD(&video->buffers);
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-
+-	video->base = devm_ioremap_resource(video->dev, res);
+-
+-	if (IS_ERR(video->base))
+-		return PTR_ERR(video->base);
+-
+ 	rc = aspeed_video_init(video);
+ 	if (rc)
+ 		return rc;
 -- 
 2.24.1
 
