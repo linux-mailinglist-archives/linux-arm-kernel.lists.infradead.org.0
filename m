@@ -2,86 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 679F2132F28
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:15:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D632132F35
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:17:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qZ8e3mq8UaGu1xPi2Spftzx5wuoIHXpARTIkZqgfK38=; b=Vh3IVsC/3K7GE+
-	h25ibWMdwW55yj7eeAOT/VNW503Y4EAAz/XnMPfP8gm2dOfg8YdNSinGg4YiWFg2QrX5HE9Xc7Kgv
-	PBIwRvpBffjUimihA8qChqE4GTWN5LcYsodGvhtn6FKJoQ2Qf6TPdshbQPgOvrMEpzoS5xr8WWr66
-	TuJ7lHVYYOWd5i4zJEJR9nUXMsVWS6I9naQOnry2k1IvmYlNtbldu5rlaedNS8VwZl4Ec/a80YwPT
-	U6eG6fBgEStS6GeZJeimyWWvn0SAAK54coVjwRFAWU6kz1TNFCwJNMVcBVo80TA/1exZqRTSi9uNP
-	p6cAgv8uMIvnnagWiveg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JZT6rE993husiPr+yXfo/7PeULAEao2CUKM1SyFwe70=; b=E6ArSw8mOWpb5SxJwFfK8pfN+
+	cIArLvJOPi4qeWMcj4kEDBgiRiBu2PSGkf/Iu1z1b7HRWT4T9gv3tmPTJ6dEV9Kse8+gQBBB+Yh3w
+	89/Wsibm2joemW/qiRhfqxX5TSnbLE/INFD8CapwRkHM9c4wuC9Q48a1fRdDWbpvqoYJyNlH03Hr1
+	Gz5rfZCTn4NYGYejfff5PZymPQHPMCtmMXhPS+WcLyXG9dvfPA9ThXAGDKQluMA+9XCIBalGkSKKq
+	Z/YXSZGJAkncuX0X0wgc0NXPMXTvJgAVh+dxJxSo7XtO/F0TAva2xjdhE4QdvjQL063R4P81ZfdV3
+	JAaD9VyGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iouK0-00049p-7e; Tue, 07 Jan 2020 19:15:20 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iouLt-0004ZO-L4; Tue, 07 Jan 2020 19:17:17 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iouJr-000493-Tw
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:15:13 +0000
-Received: by mail-io1-xd43.google.com with SMTP id h8so535353iob.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 11:15:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yl2wbUAzHAKbcOb1Vl7UvKqELmoqXyVI0Xh3B+s9l6w=;
- b=rkQzotOI2WHHWwl7HXrjtEqiFBUizAnXJy0V8EQAuovXuZcIet+WvPqNR5SjCRKpX3
- RBOmcSr49Rvp4qGRrH8iXEmGIh1XxFKeoUYJC3G0jk3Ln6y1IfZjD6/eLB3cwp6f9L8B
- V5xp35Kp4/+p+M+E/8RZ7RVnE289Ouaw8GJ/JTCsju3xsMP9NfaE8X4KXapOYPEOFbx9
- 8c1UEuszme5mHl5SDsWoFPTH89wgrj0jW9rjSb06Enjkys1L2KrVbLlRB6qEJiCUkvjm
- jTv08XipmW3TZppSYqz1ljOQawAKLULX/rRIeXP6mAV1b6DoU12kV8x5Uzfj0ZhR0DV6
- WhCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yl2wbUAzHAKbcOb1Vl7UvKqELmoqXyVI0Xh3B+s9l6w=;
- b=ZXP8Ur/2ql7T0Di1GXl7BYnw+xGNhUhjtMFFqyTdVbA3MPSDSQkTMP5HFva9wFBXUb
- In/1iC7hv6YZZwL9ROSfKtfpchfAmR0zhOFNKL3JPZqw0QITjsQzjv6To5QhJSwJsEQR
- TUPSNFIvqzrn1Hblm0izk59R+hzBWVn7XHPHjsmKfRK1jPnVVfmViz6+PB9klTZb6ZuG
- qDK+EkA53f4Xm3LexIWzqbpH911gaNhAlmZAot4fy+qe5TxF6BD0k/HCeRN12KSr9NUz
- O8O0EHz9rjCjKBwa4uEuIa6uz26DS5Gbi1/qj7EFY0o1T50j73bWJ29dVC7nk6epHkfR
- xTFg==
-X-Gm-Message-State: APjAAAXodcjMzhZvQZZ9Buel2XpiZ12+IvZXFapD1sYZACFPqdf/mPpo
- 0t/Yjx3q+se3/2kAlHI5EUDkMLMBJacFdd1WY1A=
-X-Google-Smtp-Source: APXvYqz9PvnXo6JBf/ETXrEq1+jj6hv8iMvI1zUApsw3LhkJjvDhAUAxswe1B7GebdiWNs1qbym12yJE7R7vujQvTMM=
-X-Received: by 2002:a6b:c8c8:: with SMTP id y191mr430846iof.104.1578424511057; 
- Tue, 07 Jan 2020 11:15:11 -0800 (PST)
+ id 1iouLm-0004Yh-Lo
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:17:11 +0000
+Received: from pps.filterd (m0098393.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 007JH39b027071; Tue, 7 Jan 2020 14:17:04 -0500
+Received: from ppma01dal.us.ibm.com (83.d6.3fa9.ip4.static.sl-reverse.com
+ [169.63.214.131])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2xb925u3yr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 07 Jan 2020 14:17:03 -0500
+Received: from pps.filterd (ppma01dal.us.ibm.com [127.0.0.1])
+ by ppma01dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 007JF3HH013079;
+ Tue, 7 Jan 2020 19:16:59 GMT
+Received: from b03cxnp08028.gho.boulder.ibm.com
+ (b03cxnp08028.gho.boulder.ibm.com [9.17.130.20])
+ by ppma01dal.us.ibm.com with ESMTP id 2xajb6n4nq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 07 Jan 2020 19:16:59 +0000
+Received: from b03ledav001.gho.boulder.ibm.com
+ (b03ledav001.gho.boulder.ibm.com [9.17.130.232])
+ by b03cxnp08028.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 007JGwek63046138
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 7 Jan 2020 19:16:58 GMT
+Received: from b03ledav001.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 1090B6E04E;
+ Tue,  7 Jan 2020 19:16:58 +0000 (GMT)
+Received: from b03ledav001.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id A76E96E04C;
+ Tue,  7 Jan 2020 19:16:57 +0000 (GMT)
+Received: from [9.163.26.112] (unknown [9.163.26.112])
+ by b03ledav001.gho.boulder.ibm.com (Postfix) with ESMTP;
+ Tue,  7 Jan 2020 19:16:57 +0000 (GMT)
+Subject: Re: [PATCH 1/3] media: aspeed: Rework memory mapping in probe
+To: Joel Stanley <joel@jms.id.au>, Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+References: <20200107034324.38073-1-joel@jms.id.au>
+ <20200107034324.38073-2-joel@jms.id.au>
+From: Eddie James <eajames@linux.ibm.com>
+Message-ID: <3237d298-066c-60f0-9912-b32f5bdecfd0@linux.ibm.com>
+Date: Tue, 7 Jan 2020 13:16:57 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-References: <20200106203700.21009-1-tony@atomide.com>
- <CAOesGMiNbyUXwPFsG-ipTn-xfEs+A2hG8Q8MTcSLz5794GCv0g@mail.gmail.com>
-In-Reply-To: <CAOesGMiNbyUXwPFsG-ipTn-xfEs+A2hG8Q8MTcSLz5794GCv0g@mail.gmail.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Wed, 8 Jan 2020 03:14:59 +0800
-Message-ID: <CAEExFWuQuTHNsjABpSBAa46NzftHS0+nLLG=qdEcaeatLZFLeQ@mail.gmail.com>
-Subject: Re: [PATCH] clocksource: timer-ti-dm: Fix regression
-To: Olof Johansson <olof@lixom.net>
+In-Reply-To: <20200107034324.38073-2-joel@jms.id.au>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-07_06:2020-01-07,
+ 2020-01-07 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1011 impostorscore=0
+ malwarescore=0 bulkscore=0 adultscore=0 phishscore=0 mlxscore=0
+ mlxlogscore=999 priorityscore=1501 suspectscore=0 lowpriorityscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-2001070152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_111511_992996_84CF8941 
-X-CRM114-Status: GOOD (  16.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200107_111710_719563_978638CE 
+X-CRM114-Status: GOOD (  18.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,67 +100,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 7, 2020 at 5:07 AM Olof Johansson <olof@lixom.net> wrote:
->
-> On Mon, Jan 6, 2020 at 12:37 PM Tony Lindgren <tony@atomide.com> wrote:
-> >
-> > Clean-up commit 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to
-> > platform_get_irq") caused a regression where we now try to access
-> > uninitialized data for timer:
-> >
-> > drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
-> > drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may be used
-> > uninitialized in this function [-Wmaybe-uninitialized]
-> >
-> > On boot we now get:
-> >
-> > Unable to handle kernel NULL pointer dereference at virtual address
-> > 00000004
-> > ...
-> > (omap_dm_timer_probe) from [<c061ac7c>] (platform_drv_probe+0x48/0x98)
-> > (platform_drv_probe) from [<c0618c04>] (really_probe+0x1dc/0x348)
-> > (really_probe) from [<c0618ef4>] (driver_probe_device+0x5c/0x160)
-> >
-> > Let's fix the issue by moving platform_get_irq to happen after timer has
-> > been allocated.
-> >
-> > Fixes: 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to platform_get_irq")
-> > Cc: Yangtao Li <tiny.windzz@gmail.com>
-> > Signed-off-by: Tony Lindgren <tony@atomide.com>
->
-> Acked-by: Olof Johansson <olof@lixom.net>
 
-Acked-by: Yangtao Li <tiny.windzz@gmail.com>
+On 1/6/20 9:43 PM, Joel Stanley wrote:
+> Use the recently introduced function devm_platform_ioremap_resource to
+> save a few lines of code. This makes the driver match common platform
+> device probe patterns.
 
-I am sorry. I will pay attention next time.
+
+Reviewed-by: Eddie James <eajames@linux.ibm.com>
+
+
+Thanks Joel!
+
 
 >
-> > ---
-> >
-> > I did not notice simlar issue with other patches in the series, but
-> > please do double check Yangtao.
+> Signed-off-by: Joel Stanley <joel@jms.id.au>
+> ---
+>   drivers/media/platform/aspeed-video.c | 16 ++++++----------
+>   1 file changed, 6 insertions(+), 10 deletions(-)
 >
-> Yeah, this even seems to be caught at build (but our builds have been
-> so noisy with warnings lately that they're hard to spot):
->
-> /build/drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
-> /build/drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may
-> be used uninitialized in this function [-Wmaybe-uninitialized]
->   798 |  timer->irq = platform_get_irq(pdev, 0);
->       |  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
->
->
-> -Olof
+> diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
+> index d8593cb2ae84..8f849d9866af 100644
+> --- a/drivers/media/platform/aspeed-video.c
+> +++ b/drivers/media/platform/aspeed-video.c
+> @@ -1655,14 +1655,17 @@ static int aspeed_video_init(struct aspeed_video *video)
+>   
+>   static int aspeed_video_probe(struct platform_device *pdev)
+>   {
+> +	struct aspeed_video *video;
+>   	int rc;
+> -	struct resource *res;
+> -	struct aspeed_video *video =
+> -		devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
+>   
+> +	video = devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
+>   	if (!video)
+>   		return -ENOMEM;
+>   
+> +	video->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(video->base))
+> +		return PTR_ERR(video->base);
+> +
+>   	video->frame_rate = 30;
+>   	video->dev = &pdev->dev;
+>   	spin_lock_init(&video->lock);
+> @@ -1671,13 +1674,6 @@ static int aspeed_video_probe(struct platform_device *pdev)
+>   	INIT_DELAYED_WORK(&video->res_work, aspeed_video_resolution_work);
+>   	INIT_LIST_HEAD(&video->buffers);
+>   
+> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -
+> -	video->base = devm_ioremap_resource(video->dev, res);
+> -
+> -	if (IS_ERR(video->base))
+> -		return PTR_ERR(video->base);
+> -
+>   	rc = aspeed_video_init(video);
+>   	if (rc)
+>   		return rc;
 
 _______________________________________________
 linux-arm-kernel mailing list
