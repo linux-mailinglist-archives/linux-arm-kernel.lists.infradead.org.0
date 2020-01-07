@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E8FC131FD0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 07:30:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91920131FF4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 07:45:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WgmZc5mFaji30CiH9h8ygTZ+Iu50z4fKQBENeqA55Lg=; b=TfYfRsZproB2EC
-	uaAkJrSM7A0m7X71ylOSdcjKJsxKq4s9tNpcef4gJVN1HLbZRoRZHK+SOVSArBnIjJj3YiRuBK3Qd
-	lFmKq6TV3CxU6zathW7SYyOrwanYVgOLh0QZLmSwjO0Mda56fxqmr3XkmBg0Cnv6wy+12twJl8iKi
-	+djD5LuTsMG1topPGyjnldBqlG+U2NIL1MjnNo1C+Z9i8+KsieP/X7AR+VwofJU4sWACOG5h7YEhS
-	7/xE+oDaK33aOKUcb6rDlrHsZG+OeMGFkRsGgQodOoPu1ELdLxVGEXhq1fQ5+QGK/YyeFqE/F/7jG
-	t0qBftRtIflPtgQS/INw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7dZiubfR8fZL84nypFcuTHgfCABcjd0pPZzmL7tE5CM=; b=U0izdFtgq+/Bt4
+	ntmCeUVIFutu8X+ygR/ZMydmXex5lo8PM/elZmvDO3bMR50Vun7aZ3UF87jnoVTcM6lRkcy/iFrcq
+	hOk3PUelWJcl2bmQP1S7xja+B2p6iQYjO/z13vEHr829td2oz+R6HssnJmOo7WB7AWNrDmjRMJuT0
+	MS2XNBtrXUYBAszb7oQATGDKkKcvruuXIn0+povUQlgP86+2k+4lUSIUT8bNb9Jgg/wDCNUVP4k4a
+	eKtumLIW7V5J/R0CJpV8cG0LVcig5ee2ZgF03HjrIQmV8Qs3mxAnqjU11XEaIrikvBp6ytA+5Nlun
+	p8jt8kUCiS8nmCd9qEZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioiNG-0006VF-Q9; Tue, 07 Jan 2020 06:29:54 +0000
-Received: from conssluserg-06.nifty.com ([210.131.2.91])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioiN9-0006UH-HW; Tue, 07 Jan 2020 06:29:49 +0000
-Received: from mail-ua1-f45.google.com (mail-ua1-f45.google.com
- [209.85.222.45]) (authenticated)
- by conssluserg-06.nifty.com with ESMTP id 0076TAxn007306;
- Tue, 7 Jan 2020 15:29:10 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com 0076TAxn007306
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1578378551;
- bh=V4OXT4Fpyi9+NOlQeIWNoTFry/VXFE9skkoLr0JmobU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=PUtkQKRh/fLDhr7OyI2jsy3dRzrVKjGRsJD26kFb8Yi5DYb3ZzVIj9aI89P3bCxO2
- kcx+0mSsXbAq4C2G/aOvNTObJyA3sA7ZRSemwGljOlIhcw4yni6N1g0mkghKwLkTff
- PCvpPysq86Ay4TJqu/B05j3eWpmSKVpUV3flWj7fJbDYzYBRe9GDCcNj/9ZPgS6WVy
- mBpxYB8cwCaNXyhhFYC562rrdIJWQJ4ftIQllFGlOQDej1RK7yQoEXLAEkU4cuevXA
- FSB3dvO2xXez30a7IBaDz3GjYj6T2nLHidaWCSDoGt0mX8w317v0yQ6iasfpegGulk
- qbQdyYxrLIKew==
-X-Nifty-SrcIP: [209.85.222.45]
-Received: by mail-ua1-f45.google.com with SMTP id 73so18078389uac.6;
- Mon, 06 Jan 2020 22:29:10 -0800 (PST)
-X-Gm-Message-State: APjAAAUDGlYQ/zFbh9ejSNx23bVxKAihHa5Ytx8SLZZltq5UGceTe50w
- JEDYTPlD98B3pXuZU1CEB8VwdVgMHc5lKZ3zEcA=
-X-Google-Smtp-Source: APXvYqypZNoHbzfj+w5gFDA3N15SQKWwFjdrHnOhN5aGCU+FKq8xDDltKeTcAoYEWk93oUB5yZ92m3AGy2jJt8IgSdk=
-X-Received: by 2002:ab0:2ea6:: with SMTP id y6mr41352359uay.25.1578378549666; 
- Mon, 06 Jan 2020 22:29:09 -0800 (PST)
+	id 1ioicA-00050A-3Q; Tue, 07 Jan 2020 06:45:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioiby-00049R-Ds; Tue, 07 Jan 2020 06:45:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F3E7731B;
+ Mon,  6 Jan 2020 22:45:02 -0800 (PST)
+Received: from [10.162.43.133] (p8cg001049571a15.blr.arm.com [10.162.43.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ A45EE3F703; Mon,  6 Jan 2020 22:48:16 -0800 (PST)
+Subject: Re: [mm/debug] 87c4696d57: kernel_BUG_at_include/linux/mm.h
+To: kernel test robot <rong.a.chen@intel.com>
+References: <20191227142255.GD2760@shao2-debian>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <490e77d6-a3ef-dd70-4c29-b90234f8a13d@arm.com>
+Date: Tue, 7 Jan 2020 12:16:02 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20200106045833.1725-1-masahiroy@kernel.org>
- <20200107051521.GF705@sol.localdomain>
-In-Reply-To: <20200107051521.GF705@sol.localdomain>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Tue, 7 Jan 2020 15:28:33 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATbLESJ6CdPSN8bdpt7+4iOKW2L3c4OZaz2sLzqJH6BTw@mail.gmail.com>
-Message-ID: <CAK7LNATbLESJ6CdPSN8bdpt7+4iOKW2L3c4OZaz2sLzqJH6BTw@mail.gmail.com>
-Subject: Re: [PATCH] treewide: remove redundent IS_ERR() before error code
- check
-To: Eric Biggers <ebiggers@kernel.org>
+In-Reply-To: <20191227142255.GD2760@shao2-debian>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_222947_804104_6B11C7A4 
-X-CRM114-Status: GOOD (  12.85  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200106_224506_562808_3062E3D0 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.91 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,74 +62,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Networking <netdev@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Julia Lawall <julia.lawall@lip6.fr>, linux-mtd <linux-mtd@lists.infradead.org>,
- linux-crypto@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-i2c@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, lkp@lists.01.org,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 7, 2020 at 2:15 PM Eric Biggers <ebiggers@kernel.org> wrote:
->
-> On Mon, Jan 06, 2020 at 01:58:33PM +0900, Masahiro Yamada wrote:
-> > 'PTR_ERR(p) == -E*' is a stronger condition than IS_ERR(p).
-> > Hence, IS_ERR(p) is unneeded.
-> >
-> > The semantic patch that generates this commit is as follows:
-> >
-> > // <smpl>
-> > @@
-> > expression ptr;
-> > constant error_code;
-> > @@
-> > -IS_ERR(ptr) && (PTR_ERR(ptr) == - error_code)
-> > +PTR_ERR(ptr) == - error_code
-> > // </smpl>
-> >
-> > Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
->
-> Any reason for not doing instead:
->
->         ptr == ERR_PTR(-error_code)
->
-> ?
+On 12/27/2019 07:52 PM, kernel test robot wrote:
+> [    9.781974] kernel BUG at include/linux/mm.h:592!
+> [    9.782810] invalid opcode: 0000 [#1] PTI
+> [    9.783443] CPU: 0 PID: 1 Comm: swapper Not tainted 5.5.0-rc3-00001-g87c4696d57b5e #1
+> [    9.784528] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.10.2-1 04/01/2014
+> [    9.785756] EIP: __free_pages+0x14/0x40
+> [    9.786442] Code: 0c 9c 5e fa 89 d8 e8 5b f3 ff ff 56 9d 5b 5e 5d c3 8d 74 26 00 90 8b 48 1c 55 89 e5 85 c9 75 16 ba b4 b6 84 d6 e8 ac 49 fe ff <0f> 0b 8d b4 26 00 00 00 00 8d 76 00 ff 48 1c 75 10 85 d2 75 07 e8
+> [    9.789697] EAX: d68761f7 EBX: ea52f000 ECX: ea4f8520 EDX: d684b6b4
+> [    9.790850] ESI: 00000000 EDI: ef45e000 EBP: ea501f08 ESP: ea501f08
+> [    9.791879] DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068 EFLAGS: 00010286
+> [    9.792783] CR0: 80050033 CR2: ffffffff CR3: 16d00000 CR4: 000406b0
+> [    9.792783] Call Trace:
+> [    9.792783]  free_pages+0x3c/0x50
+> [    9.792783]  pgd_free+0x5a/0x170
+> [    9.792783]  __mmdrop+0x42/0xe0
+> [    9.792783]  debug_vm_pgtable+0x54f/0x567
+> [    9.792783]  kernel_init_freeable+0x90/0x1e3
+> [    9.792783]  ? rest_init+0xf0/0xf0
+> [    9.792783]  kernel_init+0x8/0xf0
+> [    9.792783]  ret_from_fork+0x19/0x24
+> [    9.792783] Modules linked in:
+> [    9.792803] ---[ end trace 91b7335adcf0b656 ]---
+> 
+> 
+> To reproduce:
+> 
+>         # build kernel
+> 	cd linux
+> 	cp config-5.5.0-rc3-00001-g87c4696d57b5e .config
+> 	make HOSTCC=gcc-7 CC=gcc-7 ARCH=i386 olddefconfig prepare modules_prepare bzImage
+> 
+>         git clone https://github.com/intel/lkp-tests.git
+>         cd lkp-tests
+>         bin/lkp qemu -k <bzImage> job-script # job-script is attached in this email
 
-Because there is no reason to change
+Hello,
 
-        PTR_ERR(ptr) == -error_code
-to
-        ptr == ERR_PTR(-error_code)
+As the failure might be happening during boot when the test executes,
+do we really need to run these LKP based QEMU environment in order to
+reproduce the problem ? Could not this be recreated on a standalone
+system.
 
-
-
-     if (PTR_ERR(ptr) == -error_code)
-style seems to be used more often.
-
-But, I think it is just a matter of preference after all.
-Both work equally fine.
-
-
-
->  To me it seems weird to use PTR_ERR() on non-error pointers.  I even had to
-> double check that it returns a 'long' and not an 'int'.  (If it returned an
-> 'int', it wouldn't work...)
->
-> - Eric
-
-
-
--- 
-Best Regards
-Masahiro Yamada
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
