@@ -2,83 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F38D1320B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 08:50:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D03A71320BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 08:53:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DID8Uk4iagfZ3CuCVD+BqFbRQoSkqPs0y/oqvF8yKdY=; b=HIpz21AgT53uKT
-	HNJaldW4WONpwPTc8yXpO5AVGDUUWkiGF8ESCn37By4d5bKDB6TRLsp85ekzGrmhe6m6N1DpLR2rV
-	r23nhoNEKMuyTYwXcwTH2pNIu3ag/a649suMiS5p4WplK4YpXpssNf8TXIQZuWhNwV5XbOEMrhEkV
-	zOLTlXVcuD4BZKlC13h/T2lLq5K08TjETaYTR/pdl53IoTPp0K3xaFcdw802eM553NH01RbhlUux9
-	IrUORulPhgK3yFMOS8xOvO6GEXzxApsmOcXWlgbQV9g1bcttYb9gMnY/xx5Fx97MgwHdVVs4M4VyK
-	DNSqpoJEeMNajQE4T4tQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FVawGF1K0lBB66+/o+3SKSZvaqMTc4xYa2ctFyUzysQ=; b=I8i
+	lItAd0Vo3UhZMiiKpO+T4AkTXypLyyjrEsq8DY3h+Rm7J4KInnUYuh9SlwQMRznujPe8sV4fRrH9V
+	UmAs36cHbFTh6N6PbnT17R5yQ+/dOo0PDflie0sd+rD/SOVJnSg2f9E+jgD0QqmAH9qDUuW6G+rET
+	MnPB726eQV8eUZCA12x1FXxNkxMY6j2AWMHfP8QGLZfM7M+OMXLuJcqygsOaBiwmpUk6oJPGu+Wjc
+	21NO5n9x/ELf4xH6zmW3ko8qwAjQRBQ7kyHGsX2Ro8ghN5kssLHoKL77/JVCGEnR0KFI6dfA5Qucs
+	8C0HyjYa2pqhEJfVYenIjNoqZa+buhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iojdY-0004Ek-5K; Tue, 07 Jan 2020 07:50:48 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iojgC-0004hd-Mc; Tue, 07 Jan 2020 07:53:32 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iojdN-0004E8-AJ
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 07:50:38 +0000
-Received: by mail-pg1-x544.google.com with SMTP id x8so28101956pgk.8
+ id 1iojg5-0004h8-KE
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 07:53:27 +0000
+Received: by mail-pf1-x442.google.com with SMTP id z16so28206914pfk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 23:50:36 -0800 (PST)
+ Mon, 06 Jan 2020 23:53:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qzzTC8ttKEfiApeWn3h6jKqgrPf6T465Tjv1Jd74c78=;
- b=rC6EmZ+GudEOVFN+abU1cBbz1PjUjHEpFvOkOklH1dX2nFXUMenumC72Evz9K65I8X
- zX79Mv2G3Fj3wlaQIcroMGfUyi4XaXZfApz08/vpq7zUbw6ItBEmiZKQITqDVYZxHGy7
- N4IVd+ouWx/Ou5pfNzm56bhDnvybF8/7plx77sMn+NLPRo0s2wRTVh97i+D2fz7jZGbx
- ba/v9c35l0es9M2MVwl8CxBsJ4ydUthfe1JNJaq3za/e86xIxjFyH8Rdw7z4rkhZXry7
- 2X6hX5RGtsOowmniqaG52cnub9CqwNscphLGsJ+ZKQIKV7ZtC3dZ1Oz+onZ4bNLGQjTH
- bPbw==
+ h=from:to:cc:subject:date:message-id;
+ bh=GMdG9C8gJ7OZ2qYcwQfhLhwA7M4DoIR48FAZQb2CpY4=;
+ b=mfvZ+nl2VOwro4m+RGPrIAHd9QL3VAMj3xze93E0KgwrT0CEke/1XWO1ksUbFoD4WT
+ mwb4yEhiHZW4gKn0HFkuzy5VMYspLmyyrQ9kIfG9FFl+AYlwio5Iy7jG1g29eMIDBjnh
+ zJOQ1VXVnxKLhntqNVi2P1TC0V8yoOc+hv+dRj72dMHKjwVuJJQOlRDXlUEY51oahwiC
+ ykJgdkzEWOq3oLpn6VEBq37SYqjVvFE0jyKtYW1BFdmA0X+u2a7Hj0R3Twh8lNKdyF1c
+ jncMj52STZjNx3adg2l2H32sU49Mq8sJtysKoQVRczxWbOu+EBOFjsgy9UjmBD02Z6T5
+ E9dg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qzzTC8ttKEfiApeWn3h6jKqgrPf6T465Tjv1Jd74c78=;
- b=W0AgmEAyPPiYm+MzXSVJsqIK6VO3GW+AV4mBrDKEiQXLgSB538vRPyU0/nqborWc5v
- oebPwwASsRXCwkaJ1qTMucILrmoECjuLRp3Wc+CPch9ZbJILBj1wLwUY64cWk16g5Lay
- O3eaBWBTDuhqtZdtYhqJMEzXU0up8GStSkcT8f8R6oXjLwP2Y52HI+i+Arb8hqQDfesR
- k3jtodcf/IBcNCHkY43tguCYp7z/XzkC/hv4ZzRdQYq12DxIRfQisqLfXEj5RGJ3k6dM
- rP38OHO2y91BdOgPn9Pl3fr1O8WAu0K2bpqsclYV8Q1PVRSrNk63Q+C+CS0SU3USbsIh
- TdoA==
-X-Gm-Message-State: APjAAAULwpHuB7M+bgfS46LaX9AIxwKGPyLzfTqFoqWLJ1JLSBTfaZrd
- KAlJv+EsO+qTHbV9R/gyKyUpDxiE3ic=
-X-Google-Smtp-Source: APXvYqx/Lp0aOaCYq2Hq9Zs8XRmir80kumuPx1zejmVByeswt0T6vNQnU3BSh7MVR5Rf1gYYjXlqrw==
-X-Received: by 2002:a63:3484:: with SMTP id
- b126mr112310953pga.17.1578383436541; 
- Mon, 06 Jan 2020 23:50:36 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=GMdG9C8gJ7OZ2qYcwQfhLhwA7M4DoIR48FAZQb2CpY4=;
+ b=K353GV3eTKmiqUxLtEeEFvMMDjsGI5W1uf6NiiWnoNo1ufpI8J7cg8ami1yA8JKBr3
+ hZ1ja8fY9hthYXkZj/jpgmSzcvpqzs3bQQ/rsKb3DgutnJdVhmES+aKROf0WZntuiUnG
+ ZKZ8qOF+5xLN4679SwSMSxy6W1w0zs9HAdbB4lChw86jB3iUFLPdAyHQ7PyGopIbQaY1
+ GzCco2XT5XVkwPZ0FiJWBFFCSshjw+ygIlgXpCstdBVpcinOd6z/5JsE5+BCc5AFyEH1
+ 7yIAPtxehrGbJkHiKlGrCCRsHXsD0WzSldlIITx2eayuVM1N04Wb1YGJU3JSejHhQDLx
+ qwbw==
+X-Gm-Message-State: APjAAAUEIGXlK9ywdhgoT6P6Jltbp6C8Jhr39xq0Lj4ZFbig6L4Z9elT
+ r1VG78h/fzQwwc6Dzx0ynkk=
+X-Google-Smtp-Source: APXvYqxUraKm+6Ut4JR7yPdItBEf0sH/C13LFJ1ca0YNFjLZ6M9LUSaQ2Eoxggm0c3PCL30r99EpfQ==
+X-Received: by 2002:a63:190c:: with SMTP id z12mr106706246pgl.1.1578383604790; 
+ Mon, 06 Jan 2020 23:53:24 -0800 (PST)
 Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id v143sm73133535pfc.71.2020.01.06.23.50.35
+ by smtp.gmail.com with ESMTPSA id g67sm79798005pfb.66.2020.01.06.23.53.23
  (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Mon, 06 Jan 2020 23:50:36 -0800 (PST)
-Date: Tue, 7 Jan 2020 15:50:33 +0800
-From: chenqiwu <qiwuchen55@gmail.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v2] cpufreq: s3c: avoid use after free issue in
- xxx_cpufreq_reboot_notifier_evt()
-Message-ID: <20200107075033.GA11054@cqw-OptiPlex-7050>
-References: <1578303861-7217-1-git-send-email-qiwuchen55@gmail.com>
- <20200107053147.v5ooeeshknlqyc3l@vireshk-i7>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200107053147.v5ooeeshknlqyc3l@vireshk-i7>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+ Mon, 06 Jan 2020 23:53:24 -0800 (PST)
+From: qiwuchen55@gmail.com
+To: kgene@kernel.org, krzk@kernel.org, rjw@rjwysocki.net,
+ viresh.kumar@linaro.org
+Subject: [PATCH v3] cpufreq: s3c: fix unbalances of cpufreq policy refcount
+Date: Tue,  7 Jan 2020 15:53:19 +0800
+Message-Id: <1578383599-11207-1-git-send-email-qiwuchen55@gmail.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_235037_389944_67380464 
-X-CRM114-Status: GOOD (  21.83  )
+X-CRM114-CacheID: sfid-20200106_235325_665489_0367730C 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (qiwuchen55[at]gmail.com)
@@ -104,104 +96,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, krzk@kernel.org, kgene@kernel.org,
- chenqiwu <chenqiwu@xiaomi.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, chenqiwu <chenqiwu@xiaomi.com>,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 07, 2020 at 11:01:47AM +0530, Viresh Kumar wrote:
-> On 06-01-20, 17:44, qiwuchen55@gmail.com wrote:
-> > From: chenqiwu <chenqiwu@xiaomi.com>
-> > 
-> > There is a potential UAF issue in xxx_cpufreq_reboot_notifier_evt() that
-> > the cpufreq policy of cpu0 has been released before using it. So we should
-> > make a judgement to avoid it.
-> 
-> Again, the subject and description are incorrect here. This isn't a user after
-> free problem as we were already calling cpufreq_cpu_get(). The problem was that
-> the balancing of refcount wasn't done properly.
-> 
->
+From: chenqiwu <chenqiwu@xiaomi.com>
 
-Yeah, I will rewrite the title and commit message, and resend this as
-patch v3.
+The cpufreq_reboot_notifier_evt() call cpufreq_cpu_get() to get the
+cpufreq policy of cpu0, meanwhile, it also increments the kobject
+reference count to mark it busy. However, a corresponding call of
+cpufreq_cpu_put() is ignored to decrement the kobject reference count
+back, which may lead to a potential stuck risk that the cpuhp thread
+deadly waits for dropping of kobject refcount when cpufreq policy free.
 
-Thanks!
+With this patch, the cpuhp thread can be easily exercised by attempting
+to force an unbind of the CPUfreq driver.
 
-> > Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
-> > ---
-> > changes in v2:
-> >  - use the combination of cpufreq_cpu_get() and cpufreq_cpu_put()
-> >    instead of cpufreq_get_policy() in s3c2416-cpufreq.c
-> > ---
-> >  drivers/cpufreq/s3c2416-cpufreq.c | 12 +++++++++++-
-> >  drivers/cpufreq/s5pv210-cpufreq.c | 11 ++++++++++-
-> >  2 files changed, 21 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
-> > index 1069103..f07c5d1 100644
-> > --- a/drivers/cpufreq/s3c2416-cpufreq.c
-> > +++ b/drivers/cpufreq/s3c2416-cpufreq.c
-> > @@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
-> >  {
-> >  	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
-> >  	int ret;
-> > +	struct cpufreq_policy *policy;
-> >  
-> >  	mutex_lock(&cpufreq_lock);
-> >  
-> > @@ -318,7 +319,16 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
-> >  	 */
-> >  	if (s3c_freq->is_dvs) {
-> >  		pr_debug("cpufreq: leave dvs on reboot\n");
-> > -		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
-> > +
-> > +		policy = cpufreq_cpu_get(0);
-> > +		if (!policy) {
-> > +			pr_debug("cpufreq: get no policy for cpu0\n");
-> > +			return NOTIFY_BAD;
-> > +		}
-> > +
-> > +		ret = cpufreq_driver_target(&policy, FREQ_SLEEP, 0);
-> > +		cpufreq_cpu_put(policy);
-> > +
-> >  		if (ret < 0)
-> >  			return NOTIFY_BAD;
-> >  	}
-> > diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
-> > index 5d10030..e84281e 100644
-> > --- a/drivers/cpufreq/s5pv210-cpufreq.c
-> > +++ b/drivers/cpufreq/s5pv210-cpufreq.c
-> > @@ -555,8 +555,17 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
-> >  						 unsigned long event, void *ptr)
-> >  {
-> >  	int ret;
-> > +	struct cpufreq_policy *policy;
-> > +
-> > +	policy = cpufreq_cpu_get(0);
-> > +	if (!policy) {
-> > +		pr_debug("cpufreq: get no policy for cpu0\n");
-> > +		return NOTIFY_BAD;
-> > +	}
-> > +
-> > +	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
-> > +	cpufreq_cpu_put(policy);
-> >  
-> > -	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
-> >  	if (ret < 0)
-> >  		return NOTIFY_BAD;
-> >  
-> > -- 
-> > 1.9.1
-> 
-> -- 
-> viresh
+Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
+---
+changes in v3:
+ - Rewrite title and commit message.
+---
+ drivers/cpufreq/s3c2416-cpufreq.c | 12 +++++++++++-
+ drivers/cpufreq/s5pv210-cpufreq.c | 11 ++++++++++-
+ 2 files changed, 21 insertions(+), 2 deletions(-)
 
---
-Qiwu
+diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
+index 1069103..5c221bc 100644
+--- a/drivers/cpufreq/s3c2416-cpufreq.c
++++ b/drivers/cpufreq/s3c2416-cpufreq.c
+@@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
+ {
+ 	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
+ 	int ret;
++	struct cpufreq_policy *policy;
+ 
+ 	mutex_lock(&cpufreq_lock);
+ 
+@@ -318,7 +319,16 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
+ 	 */
+ 	if (s3c_freq->is_dvs) {
+ 		pr_debug("cpufreq: leave dvs on reboot\n");
+-		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
++
++		policy = cpufreq_cpu_get(0);
++		if (!policy) {
++			pr_debug("cpufreq: get no policy for cpu0\n");
++			return NOTIFY_BAD;
++		}
++
++		ret = cpufreq_driver_target(policy, FREQ_SLEEP, 0);
++		cpufreq_cpu_put(policy);
++
+ 		if (ret < 0)
+ 			return NOTIFY_BAD;
+ 	}
+diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
+index 5d10030..e84281e 100644
+--- a/drivers/cpufreq/s5pv210-cpufreq.c
++++ b/drivers/cpufreq/s5pv210-cpufreq.c
+@@ -555,8 +555,17 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
+ 						 unsigned long event, void *ptr)
+ {
+ 	int ret;
++	struct cpufreq_policy *policy;
++
++	policy = cpufreq_cpu_get(0);
++	if (!policy) {
++		pr_debug("cpufreq: get no policy for cpu0\n");
++		return NOTIFY_BAD;
++	}
++
++	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
++	cpufreq_cpu_put(policy);
+ 
+-	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
+ 	if (ret < 0)
+ 		return NOTIFY_BAD;
+ 
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
