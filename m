@@ -2,73 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A2471329A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:08:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6898C1329B5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:13:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bFfXEo5MhFFoBfMEfXZGvAgomu3NaHkDzmjr1Z70PSo=; b=schaAYepfGYNdr2xk2TpZdm6St
-	pDGAUpdcJi5QZUDR3Ixt1XmrEZThLDhRRGak3AFXbv0lnNh11XE51Po2JwZ6/8PDXaLtMMHGGzbYm
-	CbsVFRAc1RSoapFu3VApClxDj4W5qJa1HXicGO9LjLNHNDFBj0W8ljxLExAMOV4+ZkLoNf7FLeYA/
-	QWb5GvG5lDSp7qKhYH/G7+dZDSOLnzqJW3ym6E12oJXPzAr/R0ms6RHJ4DlzQ7+AxA5ox4LsIqTk7
-	oEQcguxw5rV7OTLdkAgGspX57LxzfxUN/zfyXcPbajn+vNgaz2Qxm1qgLC4NoRzxp6zgqsUDMXHcF
-	Dc73UL9g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9vJ6kjQhIAAedmcphM+b2uTj0ep03sT9TGwaZ1ZD2pY=; b=PXQxgKAOyRB1/x
+	Gdoz8nl2Jrcy13Nw2cPUiBJJHz1lIhabMx4G/sC1ZR7QbOmclUm893wcGjZqpwEzTQIUembz4tw3F
+	bXGnkOtGjvmWokcHIexNAYaZ2SX3IK7u6nonD2N/1EL2E2N/tAZvv0vYJQQojeiDfyMbI9+FeptFH
+	wceq7Gcr7UMZ7sR+qF1hRaKnVIih0mOaJ9u4hl9y0rhaO/EZB1pFagIcHqRD2RjKkM3XQcqszeLl+
+	9ZC0OBMJp18uBshz9dtfyvTvHSG5e7pDKIqL85XsPKIQo7+u3YUZS/sziz0VnypqeXjWGOLUIZ5Lj
+	PBDWWWP1Ei7hzmuGwI0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioqTN-0005N6-Av; Tue, 07 Jan 2020 15:08:45 +0000
-Received: from hostingweb31-40.netsons.net ([89.40.174.40])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioqTD-0005ME-Nw
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:08:37 +0000
-Received: from [109.168.11.45] (port=53390 helo=[192.168.101.73])
- by hostingweb31.netsons.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <luca@lucaceresoli.net>)
- id 1ioqSv-00EzCX-CP; Tue, 07 Jan 2020 16:08:17 +0100
-Subject: Re: [PATCH 3/5] i2c: highlander: Use proper printk format for iomem
- pointer
-To: Krzysztof Kozlowski <krzk@kernel.org>, Vladimir Zapolskiy <vz@mleia.com>, 
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>, Wolfram Sang <wsa@the-dreams.de>,
- Jean Delvare <jdelvare@suse.de>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>, Max Staudt <max@enpas.org>,
- Juergen Fitschen <jfi@ssv-embedded.de>, Elie Morisse <syniurge@gmail.com>,
- linux-i2c@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20191230172751.17985-1-krzk@kernel.org>
- <20191230172751.17985-3-krzk@kernel.org>
-From: Luca Ceresoli <luca@lucaceresoli.net>
-Message-ID: <dcfa47af-9c7f-4c57-b178-62611c8c21bc@lucaceresoli.net>
-Date: Tue, 7 Jan 2020 16:08:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ioqYC-000780-6j; Tue, 07 Jan 2020 15:13:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioqY2-00073m-Nb
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:13:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05127328;
+ Tue,  7 Jan 2020 07:13:32 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C0F93F703;
+ Tue,  7 Jan 2020 07:13:31 -0800 (PST)
+Date: Tue, 7 Jan 2020 15:13:29 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
+ full SPE profiling buffer controls
+Message-ID: <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-10-andrew.murray@arm.com>
+ <20191221141325.5a177343@why>
 MIME-Version: 1.0
-In-Reply-To: <20191230172751.17985-3-krzk@kernel.org>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lucaceresoli.net
-X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
- luca+lucaceresoli.net/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+Content-Disposition: inline
+In-Reply-To: <20191221141325.5a177343@why>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_070835_942538_7C9AC15D 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20200107_071334_859681_B351C07F 
+X-CRM114-Status: GOOD (  30.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,35 +65,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <Mark.Rutland@arm.com>, kvm@vger.kernel.org,
+ Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Sudeep Holla <Sudeep.Holla@arm.com>, will@kernel.org,
+ kvmarm <kvmarm@lists.cs.columbia.edu>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAzMC8xMi8xOSAxODoyNywgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPiBpb21l
-bSBwb2ludGVycyBzaG91bGQgYmUgcHJpbnRlZCB3aXRoIHBvaW50ZXIgZm9ybWF0IHRvIGhpZGUg
-dGhlCgpzL2lvbWVtL3NpemVfdC8gKGluIHRoZSBzdWJqZWN0IHRvbykKClRoZSB3aG9sZSBjb21t
-aXQgbWVzc2FnZSBuZWVkcyByZXdvcmRpbmcgYWNjb3JkaW5nbHkuCgo+IGFjdHVhbCB2YWx1ZSBh
-bmQgZml4IHdhcm5pbmdzIHdoZW4gY29tcGlsaW5nIG9uIDY0LWJpdCBwbGF0Zm9ybSAoZS5nLiB3
-aXRoCj4gQ09NUElMRV9URVNUKToKPiAKPiAgICAgZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1oaWdo
-bGFuZGVyLmM6IEluIGZ1bmN0aW9uIOKAmGhpZ2hsYW5kZXJfaTJjX3NtYnVzX3hmZXLigJk6Cj4g
-ICAgIGRyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtaGlnaGxhbmRlci5jOjMyNToyMjogd2FybmluZzoK
-PiAgICAgICAgIGZvcm1hdCDigJglZOKAmSBleHBlY3RzIGFyZ3VtZW50IG9mIHR5cGUg4oCYaW50
-4oCZLAo+ICAgICAgICAgYnV0IGFyZ3VtZW50IDMgaGFzIHR5cGUg4oCYc2l6ZV90IHtha2EgbG9u
-ZyB1bnNpZ25lZCBpbnR94oCZIFstV2Zvcm1hdD1dCj4gCj4gU2lnbmVkLW9mZi1ieTogS3J6eXN6
-dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2kyYy9idXNz
-ZXMvaTJjLWhpZ2hsYW5kZXIuYyB8IDIgKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
-KCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTJjL2J1c3Nlcy9p
-MmMtaGlnaGxhbmRlci5jIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1oaWdobGFuZGVyLmMKPiBp
-bmRleCBhYmZlMzA5NGMwNDcuLjgwM2RhZDcwZTJhNyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2ky
-Yy9idXNzZXMvaTJjLWhpZ2hsYW5kZXIuYwo+ICsrKyBiL2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMt
-aGlnaGxhbmRlci5jCj4gQEAgLTMyMiw3ICszMjIsNyBAQCBzdGF0aWMgaW50IGhpZ2hsYW5kZXJf
-aTJjX3NtYnVzX3hmZXIoc3RydWN0IGkyY19hZGFwdGVyICphZGFwLCB1MTYgYWRkciwKPiAgCQl0
-bXAgfD0gKFNNTVJfTU9ERTAgfCBTTU1SX01PREUxKTsKPiAgCQlicmVhazsKPiAgCWRlZmF1bHQ6
-Cj4gLQkJZGV2X2VycihkZXYtPmRldiwgInVuc3VwcG9ydGVkIHhmZXIgc2l6ZSAlZFxuIiwgZGV2
-LT5idWZfbGVuKTsKPiArCQlkZXZfZXJyKGRldi0+ZGV2LCAidW5zdXBwb3J0ZWQgeGZlciBzaXpl
-ICV6dVxuIiwgZGV2LT5idWZfbGVuKTsKPiAgCQlyZXR1cm4gLUVJTlZBTDsKPiAgCX0KPiAgCj4g
-CgotLSAKTHVjYQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
+> On Fri, 20 Dec 2019 14:30:16 +0000
+> Andrew Murray <andrew.murray@arm.com> wrote:
+> 
+> [somehow managed not to do a reply all, re-sending]
+> 
+> > From: Sudeep Holla <sudeep.holla@arm.com>
+> > 
+> > Now that we can save/restore the full SPE controls, we can enable it
+> > if SPE is setup and ready to use in KVM. It's supported in KVM only if
+> > all the CPUs in the system supports SPE.
+> > 
+> > However to support heterogenous systems, we need to move the check if
+> > host supports SPE and do a partial save/restore.
+> 
+> No. Let's just not go down that path. For now, KVM on heterogeneous
+> systems do not get SPE.
+
+At present these patches only offer the SPE feature to VCPU's where the
+sanitised AA64DFR0 register indicates that all CPUs have this support
+(kvm_arm_support_spe_v1) at the time of setting the attribute
+(KVM_SET_DEVICE_ATTR).
+
+Therefore if a new CPU comes online without SPE support, and an
+existing VCPU is scheduled onto it, then bad things happen - which I guess
+must have been the intention behind this patch.
+
+
+> If SPE has been enabled on a guest and a CPU
+> comes up without SPE, this CPU should fail to boot (same as exposing a
+> feature to userspace).
+
+I'm unclear as how to prevent this. We can set the FTR_STRICT flag on
+the sanitised register - thus tainting the kernel if such a non-SPE CPU
+comes online - thought that doesn't prevent KVM from blowing up. Though
+I don't believe we can prevent a CPU coming up. At the moment this is
+my preferred approach.
+
+Looking at the vcpu_load and related code, I don't see a way of saying
+'don't schedule this VCPU on this CPU' or bailing in any way.
+
+One solution could be to allow scheduling onto non-SPE VCPUs but wrap the
+SPE save/restore code in a macro (much like kvm_arm_spe_v1_ready) that
+reads the non-sanitised feature register. Therefore we don't go bang, but
+we also increase the size of any black-holes in SPE capturing. Though this
+feels like something that will cause grief down the line.
+
+Is there something else that can be done?
+
+Thanks,
+
+Andrew Murray
+
+> 
+> > 
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > ---
+> >  arch/arm64/kvm/hyp/debug-sr.c | 33 ++++++++++++++++-----------------
+> >  include/kvm/arm_spe.h         |  6 ++++++
+> >  2 files changed, 22 insertions(+), 17 deletions(-)
+> > 
+> > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+> > index 12429b212a3a..d8d857067e6d 100644
+> > --- a/arch/arm64/kvm/hyp/debug-sr.c
+> > +++ b/arch/arm64/kvm/hyp/debug-sr.c
+> > @@ -86,18 +86,13 @@
+> >  	}
+> >  
+> >  static void __hyp_text
+> > -__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > +__debug_save_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> >  {
+> >  	u64 reg;
+> >  
+> >  	/* Clear pmscr in case of early return */
+> >  	ctxt->sys_regs[PMSCR_EL1] = 0;
+> >  
+> > -	/* SPE present on this CPU? */
+> > -	if (!cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
+> > -						  ID_AA64DFR0_PMSVER_SHIFT))
+> > -		return;
+> > -
+> >  	/* Yes; is it owned by higher EL? */
+> >  	reg = read_sysreg_s(SYS_PMBIDR_EL1);
+> >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
+> > @@ -142,7 +137,7 @@ __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> >  }
+> >  
+> >  static void __hyp_text
+> > -__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > +__debug_restore_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> >  {
+> >  	if (!ctxt->sys_regs[PMSCR_EL1])
+> >  		return;
+> > @@ -210,11 +205,14 @@ void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
+> >  	struct kvm_guest_debug_arch *host_dbg;
+> >  	struct kvm_guest_debug_arch *guest_dbg;
+> >  
+> > +	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > +	guest_ctxt = &vcpu->arch.ctxt;
+> > +
+> > +	__debug_restore_spe_context(guest_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> > +
+> >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+> >  		return;
+> >  
+> > -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > -	guest_ctxt = &vcpu->arch.ctxt;
+> >  	host_dbg = &vcpu->arch.host_debug_state.regs;
+> >  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+> >  
+> > @@ -232,8 +230,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+> >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> >  	guest_ctxt = &vcpu->arch.ctxt;
+> >  
+> > -	if (!has_vhe())
+> > -		__debug_restore_spe_nvhe(host_ctxt, false);
+> > +	__debug_restore_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> 
+> So you now do an unconditional save/restore on the exit path for VHE as
+> well? Even if the host isn't using the SPE HW? That's not acceptable
+> as, in most cases, only the host /or/ the guest will use SPE. Here, you
+> put a measurable overhead on each exit.
+> 
+> If the host is not using SPE, then the restore/save should happen in
+> vcpu_load/vcpu_put. Only if the host is using SPE should you do
+> something in the run loop. Of course, this only applies to VHE and
+> non-VHE must switch eagerly.
+> 
+> >  
+> >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+> >  		return;
+> > @@ -249,19 +246,21 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+> >  
+> >  void __hyp_text __debug_save_host_context(struct kvm_vcpu *vcpu)
+> >  {
+> > -	/*
+> > -	 * Non-VHE: Disable and flush SPE data generation
+> > -	 * VHE: The vcpu can run, but it can't hide.
+> > -	 */
+> >  	struct kvm_cpu_context *host_ctxt;
+> >  
+> >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > -	if (!has_vhe())
+> > -		__debug_save_spe_nvhe(host_ctxt, false);
+> > +	if (cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
+> > +						 ID_AA64DFR0_PMSVER_SHIFT))
+> > +		__debug_save_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> >  }
+> >  
+> >  void __hyp_text __debug_save_guest_context(struct kvm_vcpu *vcpu)
+> >  {
+> > +	bool kvm_spe_ready = kvm_arm_spe_v1_ready(vcpu);
+> > +
+> > +	/* SPE present on this vCPU? */
+> > +	if (kvm_spe_ready)
+> > +		__debug_save_spe_context(&vcpu->arch.ctxt, kvm_spe_ready);
+> >  }
+> >  
+> >  u32 __hyp_text __kvm_get_mdcr_el2(void)
+> > diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
+> > index 48d118fdb174..30c40b1bc385 100644
+> > --- a/include/kvm/arm_spe.h
+> > +++ b/include/kvm/arm_spe.h
+> > @@ -16,4 +16,10 @@ struct kvm_spe {
+> >  	bool irq_level;
+> >  };
+> >  
+> > +#ifdef CONFIG_KVM_ARM_SPE
+> > +#define kvm_arm_spe_v1_ready(v)		((v)->arch.spe.ready)
+> > +#else
+> > +#define kvm_arm_spe_v1_ready(v)		(false)
+> > +#endif /* CONFIG_KVM_ARM_SPE */
+> > +
+> >  #endif /* __ASM_ARM_KVM_SPE_H */
+> 
+> Thanks,
+> 
+> 	M.
+> -- 
+> Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
