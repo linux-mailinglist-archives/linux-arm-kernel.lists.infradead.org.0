@@ -2,81 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 729C81323EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:40:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78BD21323F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 11:43:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M//KcaE799o9PGq7EpiXQH5vzmDSWC/Cq9hh9eN5HCM=; b=Jb3/T41436YjTK
-	HHgsHmE30yq2SHYTm5hqpLYNlTy4EUZvqbAx8HZh4pXY6hskFRrLCg4PPtIoyrI/qlOxiG1d4TWdH
-	WgmoZaFUsnvQgvKNcbKLbOZxQtYdAucEdEA/GrZ+evriYymT2Ne+dPioorFq1/8H6mJflOyEbT5mK
-	tUtQcKEGR2NhhnZcgevV6fcV9XWOpHURxW/QcpTk47JTkkK2nTgWja4+u1JjFKESZfNphpugRkQSs
-	Mfh95ZMGWRMSRxF7U74bOBVqpSNXR2zrrxS/f2flXPdVSxs78NKwLfGUj+rGmoySZqQBjaTBLFQt2
-	TEavEDY4mCuY/ewbvmmA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Gb8CiuIWtpeCFEiLkBL9tvFtqviuO794IAu6P7Chfc=; b=EHNLTVBptSDgzs
+	x0n1NqMDsdWnas54l5/IgRzdCNiZgljWDWmv8TUPo8R6cAT5GmBX6EYWY4rBxToy2I6eB+MHRwdOs
+	NSc6ztgz6dQgt7jNjg4lVcyatSYpHPLVB3vRuRTj1Zv5kfp2QkPAn2F7PQ3Dzm5y6dL0lVZDiHd4E
+	bcAIIHZaymU0FD725jvzQWA3MPqqSnwLXBlbXzhehfgt/uZ+WtFbKlqXPu+aU9ThK1cUofKLGFqFh
+	CSLzUsncJcCCiP3gKGDcILxvKVYyrJY3QJIKMMMbCk4t32OfJv4m49CyqbTieXRj79+iN4AY9n5AA
+	dyunEbbvNNrpOS8WkGRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iomHt-0008Di-5N; Tue, 07 Jan 2020 10:40:37 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iomK7-0000HE-0f; Tue, 07 Jan 2020 10:42:55 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iomHZ-00086S-GW; Tue, 07 Jan 2020 10:40:24 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 007AeDDY083271;
- Tue, 7 Jan 2020 04:40:13 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578393613;
- bh=zvIW8/BtCQ5x8IHunoGoJlqB0iUARRig1KyivGH+pl8=;
- h=From:To:CC:Subject:Date;
- b=sgrUNFm+HFtu/0WLloZ6J1rLTAV5L3JDioCr933elKSaMrlRtRKw+7c5XjElhOn45
- DAD2DoaZ8bbnE32ekkkGGnnU3G6O1SC8Y7g07OXg/any2ItmU99pjFqjNHSR8eR+al
- mY8GFQsCbvzQE5NYFxcWrV4VEJxK23NQ3Kw+m55Y=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 007AeDEC012098
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 7 Jan 2020 04:40:13 -0600
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Jan
- 2020 04:40:12 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 7 Jan 2020 04:40:12 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007Ae96n032006;
- Tue, 7 Jan 2020 04:40:09 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <ulf.hansson@linaro.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
- <sbranden@broadcom.com>, <nsaenzjulienne@suse.de>
-Subject: [PATCH v2] mmc: bcm2835: Use dma_request_chan() instead
- dma_request_slave_channel()
-Date: Tue, 7 Jan 2020 12:40:40 +0200
-Message-ID: <20200107104040.14500-1-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.1
+ id 1iomJq-0000GQ-7j
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 10:42:39 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iomJn-0005TW-KM; Tue, 07 Jan 2020 11:42:35 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iomJm-0004iE-4c; Tue, 07 Jan 2020 11:42:34 +0100
+Date: Tue, 7 Jan 2020 11:42:34 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 2/2] pwm: Enable compile testing for some of drivers
+Message-ID: <20200107104234.wq74fska3szrg4ii@pengutronix.de>
+References: <20191230172113.17222-1-krzk@kernel.org>
+ <20191230172113.17222-2-krzk@kernel.org>
+ <20200107072645.ko247bwhh3ibdu73@pengutronix.de>
+ <20200107082539.GA31827@pi3>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200107082539.GA31827@pi3>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_024017_652903_36DBAF45 
-X-CRM114-Status: GOOD (  12.98  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200107_024238_284054_50FE1A33 
+X-CRM114-Status: GOOD (  18.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,62 +70,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+Cc: linux-pwm@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Richard Weinberger <richard@nod.at>, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ kernel@pengutronix.de, linux-tegra@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-riscv@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-eating up the error code.
+Hello Krzysztof,
 
-By using dma_request_chan() directly the driver can support deferred
-probing against DMA.
+On Tue, Jan 07, 2020 at 09:25:39AM +0100, Krzysztof Kozlowski wrote:
+> On Tue, Jan 07, 2020 at 08:26:45AM +0100, Uwe Kleine-K=F6nig wrote:
+> > On Mon, Dec 30, 2019 at 06:21:13PM +0100, Krzysztof Kozlowski wrote:
+> > > Some of the PWM drivers can be compile tested to increase build
+> > > coverage.
+> > > =
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
-Hi,
+> > > The Meson PWM driver requires COMMON_CLK dependency.
+> > =
 
-Changes since v1:
-- jump to err: instead of returning in case of EPROBE_DEFER
+> > I'm surprised that there are not more that need this. Is HAVE_CLK not
+> > enough?
+> =
 
-Regards,
-Peter
+> Nope. E.g. for alpha architecture, HAVE_CLK is not set and without
+> COMMON_CLK:
+> =
 
- drivers/mmc/host/bcm2835.c | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+> drivers/pwm/pwm-meson.o: In function `meson_pwm_init_channels':
+> (.text+0x244): undefined reference to `devm_clk_register'
 
-diff --git a/drivers/mmc/host/bcm2835.c b/drivers/mmc/host/bcm2835.c
-index 99f61fd2a658..c3d949847cbd 100644
---- a/drivers/mmc/host/bcm2835.c
-+++ b/drivers/mmc/host/bcm2835.c
-@@ -1393,7 +1393,17 @@ static int bcm2835_probe(struct platform_device *pdev)
- 	host->dma_chan = NULL;
- 	host->dma_desc = NULL;
- 
--	host->dma_chan_rxtx = dma_request_slave_channel(dev, "rx-tx");
-+	host->dma_chan_rxtx = dma_request_chan(dev, "rx-tx");
-+	if (IS_ERR(host->dma_chan_rxtx)) {
-+		ret = PTR_ERR(host->dma_chan_rxtx);
-+		host->dma_chan_rxtx = NULL;
-+
-+		if (ret == -EPROBE_DEFER)
-+			goto err;
-+
-+		/* Ignore errors to fall back to PIO mode */
-+	}
-+
- 
- 	clk = devm_clk_get(dev, NULL);
- 	if (IS_ERR(clk)) {
--- 
-Peter
+I see. devm_clk_register() only exists in include/linux/clk-provider.h.
 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> I guess other solution would be to add stubs for few clk functions...
+> =
 
+> > Also HAS_IOMEM is a typical requirement, but I tested with an ARCH=3Dum
+> > config (which does't have HAS_IOMEM) and they all compile fine.
+> =
+
+> Because of !HAS_IOMEM, since some time ARCH=3Dum does not support
+> COMPILE_TEST. Therefore HAS_IOMEM dependency is not needed for compile
+> testing (and for regular build it is selected by ARCH).
+
+Hehe, I didn't notice because for testing I just dropped the "depends on
+..." lines in Kconfig instead of adding "|| COMPILE_TEST" :-) Still they
+compile fine on UML.
+
+Ah, since bc083a64b6c0 ("init/Kconfig: make COMPILE_TEST depend on
+!UML") =3D=3D v4.8-rc1~52^2~83 COMPILE_TEST cannot be enabled on UML, but
+later 1bcbfbfdeb00 ("um: add dummy ioremap and iounmap functions")
+=3D=3D v4.13-rc1~8^2~6 UM got a dummy implementation. So maybe we could
+revert bc083a64b6c0 today? (And if not, a comment about why near the
+"depends on !UML" in init/Kconfig would be great.)
+
+Orthogonal to that, I wonder if depending on HAS_IOMEM is right even
+though the compile testers won't notice it missing. Or should HAS_IOMEM
+be dropped?
+
+> > > @@ -318,7 +319,7 @@ config PWM_MEDIATEK
+> > >  =
+
+> > >  config PWM_MXS
+> > >  	tristate "Freescale MXS PWM support"
+> > > -	depends on ARCH_MXS && OF
+> > > +	depends on (ARCH_MXS && OF) || COMPILE_TEST
+> > >  	select STMP_DEVICE
+> > >  	help
+> > >  	  Generic PWM framework driver for Freescale MXS.
+> > > @@ -328,7 +329,8 @@ config PWM_MXS
+> > >  =
+
+> > >  config PWM_OMAP_DMTIMER
+> > >  	tristate "OMAP Dual-Mode Timer PWM support"
+> > > -	depends on OF && ARCH_OMAP && OMAP_DM_TIMER
+> > > +	depends on (ARCH_OMAP && OMAP_DM_TIMER) || COMPILE_TEST
+> > > +	depends on OF
+> > =
+
+> > I'm surprised that OF isn't required for PWM_MXS but is is for
+> > PWM_OMAP_DMTIMER. pwm-mxs compiles without CONFIG_OF, didn't test
+> > pwm-omap-dmtimer.
+> =
+
+> Since some time !OF has all necessary stubs so OF is actually needed
+> only for binding, not compiling.
+
+That doesn't explain why you handle PWM_MXS and PWM_OMAP_DMTIMER
+differently though.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
