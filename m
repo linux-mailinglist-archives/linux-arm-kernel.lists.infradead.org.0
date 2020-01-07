@@ -2,69 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11CCA13299C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:06:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A2471329A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:08:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h2HwkgsWpYlQWUgIW8ihoyDtAFEaAv94zsTg9mJ6YBk=; b=NHD7a2h2Syzxeh5CgSYn3MxU+
-	kb8w4wvzqLv0Y8Ms9N86rXXiyTeYONplx9M7yKRbRwZMfBG/A7mLCgBINJu3o/Pqgz4VAyAFoabWN
-	AloaLAXNCgbIvoKU5Zjc4jymU+MXON94H6kaqPOApCul2yGjVXkcmgptUFAkFTBC/JoBWCnu/wUv4
-	iWydpT5wxBxmm0sMRgcy6dO900CYTPclKRow1V5c573cK7eiZIYg6WSX10EDEhv+gATwyQ3ASzQaU
-	mGj8PjJPBbayrpeyGH8pTf8m0Jnh5B/yvO0XipR5+fiFZu6WtlRwUQJgUsFE0uacSjG/wxVJsVuCQ
-	71P+eagYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bFfXEo5MhFFoBfMEfXZGvAgomu3NaHkDzmjr1Z70PSo=; b=schaAYepfGYNdr2xk2TpZdm6St
+	pDGAUpdcJi5QZUDR3Ixt1XmrEZThLDhRRGak3AFXbv0lnNh11XE51Po2JwZ6/8PDXaLtMMHGGzbYm
+	CbsVFRAc1RSoapFu3VApClxDj4W5qJa1HXicGO9LjLNHNDFBj0W8ljxLExAMOV4+ZkLoNf7FLeYA/
+	QWb5GvG5lDSp7qKhYH/G7+dZDSOLnzqJW3ym6E12oJXPzAr/R0ms6RHJ4DlzQ7+AxA5ox4LsIqTk7
+	oEQcguxw5rV7OTLdkAgGspX57LxzfxUN/zfyXcPbajn+vNgaz2Qxm1qgLC4NoRzxp6zgqsUDMXHcF
+	Dc73UL9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioqRI-000532-5a; Tue, 07 Jan 2020 15:06:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ioqTN-0005N6-Av; Tue, 07 Jan 2020 15:08:45 +0000
+Received: from hostingweb31-40.netsons.net ([89.40.174.40])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioqRA-00052i-FY
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:06:29 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 83D012087F;
- Tue,  7 Jan 2020 15:06:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578409588;
- bh=+y+aWqsEqk2+D9Baxc1ravTEaKC6Hg6OrUKouQASJFI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aGcPyhZnC7+FqmaURKzkdbH8gwRkbCGrcv15/QY0sFaTSSpSdUJzt3yF0mMK/Qg3E
- EwdVYzY5dcdj451Mrzm/4tIYZK4MZvAqdm2+nCKxgG7wJSry8pui+CAxbpdkd4mW2v
- T28gft04vtvzuNXQCXdxGba1rPmhNJy7/DbrV5YY=
-Date: Tue, 7 Jan 2020 16:06:25 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH] drm/sun4i: tcon: Set RGB DCLK min. divider based on
- hardware model
-Message-ID: <20200107150625.sj6x4u67diac3v5p@gilmour>
-References: <20200107070113.28951-1-wens@kernel.org>
+ id 1ioqTD-0005ME-Nw
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:08:37 +0000
+Received: from [109.168.11.45] (port=53390 helo=[192.168.101.73])
+ by hostingweb31.netsons.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
+ (envelope-from <luca@lucaceresoli.net>)
+ id 1ioqSv-00EzCX-CP; Tue, 07 Jan 2020 16:08:17 +0100
+Subject: Re: [PATCH 3/5] i2c: highlander: Use proper printk format for iomem
+ pointer
+To: Krzysztof Kozlowski <krzk@kernel.org>, Vladimir Zapolskiy <vz@mleia.com>, 
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Jean Delvare <jdelvare@suse.de>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, Max Staudt <max@enpas.org>,
+ Juergen Fitschen <jfi@ssv-embedded.de>, Elie Morisse <syniurge@gmail.com>,
+ linux-i2c@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+References: <20191230172751.17985-1-krzk@kernel.org>
+ <20191230172751.17985-3-krzk@kernel.org>
+From: Luca Ceresoli <luca@lucaceresoli.net>
+Message-ID: <dcfa47af-9c7f-4c57-b178-62611c8c21bc@lucaceresoli.net>
+Date: Tue, 7 Jan 2020 16:08:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200107070113.28951-1-wens@kernel.org>
+In-Reply-To: <20191230172751.17985-3-krzk@kernel.org>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lucaceresoli.net
+X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
+ luca+lucaceresoli.net/only user confirmed/virtual account not confirmed
+X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_070628_540332_DEE82CA6 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200107_070835_942538_7C9AC15D 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,76 +82,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- stable@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9096883324890824459=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============9096883324890824459==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="xezwhxxbc3anpsth"
-Content-Disposition: inline
-
-
---xezwhxxbc3anpsth
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Jan 07, 2020 at 03:01:13PM +0800, Chen-Yu Tsai wrote:
-> From: Chen-Yu Tsai <wens@csie.org>
->
-> In commit 0b8e7bbde5e7 ("drm/sun4i: tcon: Set min division of TCON0_DCLK
-> to 1.") it was assumed that all TCON variants support a minimum divider
-> of 1 if only DCLK was used.
->
-> However, the oldest generation of hardware only supports minimum divider
-> of 4 if only DCLK is used. If a divider of 1 was used on this old
-> hardware, some scrolling artifact would appear. A divider of 2 seemed
-> OK, but a divider of 3 had artifacts as well.
->
-> Set the minimum divider when outputing to parallel RGB based on the
-> hardware model, with a minimum of 4 for the oldest (A10/A10s/A13/A20)
-> hardware, and a minimum of 1 for the rest. A value is not set for the
-> TCON variants lacking channel 0.
->
-> This fixes the scrolling artifacts seen on my A13 tablet.
->
-> Fixes: 0b8e7bbde5e7 ("drm/sun4i: tcon: Set min division of TCON0_DCLK to 1.")
-> Cc: <stable@vger.kernel.org> # 5.4.x
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-
-Applied, thanks
-
-Maxime
-
---xezwhxxbc3anpsth
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhSecQAKCRDj7w1vZxhR
-xQFaAP9wLF9udsuevqjGAE3LAn6TCRsCdWejtoRRsX5mYATyzgEA6SE+BSoFd/Ct
-dU/RYO3cR8I6jmK7T2SuD3yh1MdfgAE=
-=Ruky
------END PGP SIGNATURE-----
-
---xezwhxxbc3anpsth--
-
-
---===============9096883324890824459==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9096883324890824459==--
-
+SGksCgpPbiAzMC8xMi8xOSAxODoyNywgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPiBpb21l
+bSBwb2ludGVycyBzaG91bGQgYmUgcHJpbnRlZCB3aXRoIHBvaW50ZXIgZm9ybWF0IHRvIGhpZGUg
+dGhlCgpzL2lvbWVtL3NpemVfdC8gKGluIHRoZSBzdWJqZWN0IHRvbykKClRoZSB3aG9sZSBjb21t
+aXQgbWVzc2FnZSBuZWVkcyByZXdvcmRpbmcgYWNjb3JkaW5nbHkuCgo+IGFjdHVhbCB2YWx1ZSBh
+bmQgZml4IHdhcm5pbmdzIHdoZW4gY29tcGlsaW5nIG9uIDY0LWJpdCBwbGF0Zm9ybSAoZS5nLiB3
+aXRoCj4gQ09NUElMRV9URVNUKToKPiAKPiAgICAgZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1oaWdo
+bGFuZGVyLmM6IEluIGZ1bmN0aW9uIOKAmGhpZ2hsYW5kZXJfaTJjX3NtYnVzX3hmZXLigJk6Cj4g
+ICAgIGRyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtaGlnaGxhbmRlci5jOjMyNToyMjogd2FybmluZzoK
+PiAgICAgICAgIGZvcm1hdCDigJglZOKAmSBleHBlY3RzIGFyZ3VtZW50IG9mIHR5cGUg4oCYaW50
+4oCZLAo+ICAgICAgICAgYnV0IGFyZ3VtZW50IDMgaGFzIHR5cGUg4oCYc2l6ZV90IHtha2EgbG9u
+ZyB1bnNpZ25lZCBpbnR94oCZIFstV2Zvcm1hdD1dCj4gCj4gU2lnbmVkLW9mZi1ieTogS3J6eXN6
+dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2kyYy9idXNz
+ZXMvaTJjLWhpZ2hsYW5kZXIuYyB8IDIgKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
+KCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTJjL2J1c3Nlcy9p
+MmMtaGlnaGxhbmRlci5jIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1oaWdobGFuZGVyLmMKPiBp
+bmRleCBhYmZlMzA5NGMwNDcuLjgwM2RhZDcwZTJhNyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2ky
+Yy9idXNzZXMvaTJjLWhpZ2hsYW5kZXIuYwo+ICsrKyBiL2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMt
+aGlnaGxhbmRlci5jCj4gQEAgLTMyMiw3ICszMjIsNyBAQCBzdGF0aWMgaW50IGhpZ2hsYW5kZXJf
+aTJjX3NtYnVzX3hmZXIoc3RydWN0IGkyY19hZGFwdGVyICphZGFwLCB1MTYgYWRkciwKPiAgCQl0
+bXAgfD0gKFNNTVJfTU9ERTAgfCBTTU1SX01PREUxKTsKPiAgCQlicmVhazsKPiAgCWRlZmF1bHQ6
+Cj4gLQkJZGV2X2VycihkZXYtPmRldiwgInVuc3VwcG9ydGVkIHhmZXIgc2l6ZSAlZFxuIiwgZGV2
+LT5idWZfbGVuKTsKPiArCQlkZXZfZXJyKGRldi0+ZGV2LCAidW5zdXBwb3J0ZWQgeGZlciBzaXpl
+ICV6dVxuIiwgZGV2LT5idWZfbGVuKTsKPiAgCQlyZXR1cm4gLUVJTlZBTDsKPiAgCX0KPiAgCj4g
+CgotLSAKTHVjYQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
