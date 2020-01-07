@@ -2,84 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02D2D131F56
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:32:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B22FA131F62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:34:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3G8UL/LKeF343/kbr7H5B+cg68B4FHl8baeRARMwb8c=; b=OU+Wf7RFpt/oCl
-	khV+NT9pvk6I8MtMZQozjIY0zQNQ2WOyJn81W52FEXdT9xL9QtinNRW4RkAH+q7D/bsFUiEycrqnW
-	HfcAEgHMc/I4wjmRBiidWZVongAr+zYm03sBUUiNIS4/N3AboJSuyOI9fm+pentP5zr47bwcak9A3
-	UqiO077fxxkvHo2GraGkKNGzmDeZDX7F31vBXPOYqBVV+cVdInft869oAMlTM96ArEddYiZslivbn
-	AViX7fNQFV26o/UIuqIOEouQMFNSjLIneCsHzkrfyqaI7S4Vg6tNFMJ/pZk6d4Pn+MeXl5g32sz0Y
-	1YaeGXnIJi847UzZdkCA==;
+	List-Owner; bh=X4kW4Z/mtOQQaYxQGZK6vLmnzB6krqxWGQ91A8yTdPE=; b=rLM5xf7k+UUNUi
+	InLJUsyRlFovBkM3rE3EWdkbEc/Kwrsiu9u7mPamyb4Lrjv7u0SsSLj0Coq7O7zGWIJpo3IZkv43u
+	w15BVKtzhpZ5BOa83qUWhS3SgfFkdjWl7Mc5sxCJSwCtnrSWqwtXBHyv/5k8qNaJD7EnUkOaf/d8H
+	2v6tR5XzuaRPdkzmdixzbsVPQZ500N/MlE9xZbYyu9W+Ye3Ub6OqLgI5l+IAdNT8slrnVUWywzNyW
+	MQ8EL16wPjnYxA8uuch5WD8A5Sn73UPBaiStl3vSWNSqH4NIBtMyCqlDep5d7vxIPaHqnz9QeWFcg
+	RE6iO4ZoFVPvBJwjYprw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iohTD-0000jp-2f; Tue, 07 Jan 2020 05:31:59 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iohVo-0001HK-OX; Tue, 07 Jan 2020 05:34:40 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iohT4-0000iv-NP
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:31:52 +0000
-Received: by mail-pl1-x643.google.com with SMTP id p9so22738708plk.9
+ id 1iohVe-0001GK-O6
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:34:33 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20200107053427epoutp02471d6c43b1f7d82dcfef55514efbbb54~ng-F5Jjlv1813318133epoutp02y
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 21:31:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0YHUU0Ivx/NHSzvA+8JE0/KSXoBNp97yyXmGvrm2014=;
- b=v5ANRPnNl2ct7jBumu6xMfcn0oB6+pE4UzYLjpgkTXJUHYlOeQy22xib2+2QZKXBxy
- Rz1g5Iy4XFd5rfQQsW6FpkD/kizYYNlKxt4s8NdRYucmZVLuQaoR0UrJo0BF9bFyQACC
- zuLOuT2vnN+pLg37BAloXbPVSi80y+BA+dy1/B1CTkA+GxPdon524WSf/mg6s4gP8Sx7
- kfj8fazRkTRHnI65Gpbc+eiICpcvJYvMVv+8DAkBMGQCnjVxHRP1PyXk/MyCGeSoNM38
- XQDGkosqV23yvEYBzOwziVNLZkUV1z7R6Ren3W0fDc+budS9I18wEj3DcqJAuChdymEa
- HqLg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0YHUU0Ivx/NHSzvA+8JE0/KSXoBNp97yyXmGvrm2014=;
- b=Ikjh6NfwTUO4tamyHOvnJeOYixjyf2VQjoUecqN+YPhpOBqm48F+o5m4OqZr/tyATi
- 69WdW5k4LdH2x0ib9EUcHIejOcXOgzQmvrwZxZOa9LkA7uaAGowb3eDBVv5qt3mrUnkQ
- a+cmt1RMzbEIuLdR7kZdiTb8Wkciwx3FQy36bjOpbwr0AQscthj8O2o/9PCtkiTKexrk
- GYByS5Q19VD1VrEkVeGuLNdbH9W+Qp0H70JtZBexJRi9+GGKwB36vztKQP1gunfZMjYq
- LOwcLw0g5ao4mz4kEf/A87+JGKFRurjXtpEgNS87gkfR90XQhnNcHCHgXJ0wc6z+0w3E
- EOZQ==
-X-Gm-Message-State: APjAAAVd84mL/IHuoZ7B837JuIuJ+ClvVwFXU61C2ckBfftimCVkorBn
- KQNSjzxUCdKlGrXHQMuNwXeJAA==
-X-Google-Smtp-Source: APXvYqw44TryZr313hZhrJbhpK95tgknorsfpCrqBBv/Hv0p/mkGQqkZVJlLD6zaK8WcvskkV6QIAw==
-X-Received: by 2002:a17:90a:cb8c:: with SMTP id
- a12mr48084076pju.71.1578375109757; 
- Mon, 06 Jan 2020 21:31:49 -0800 (PST)
-Received: from localhost ([122.172.26.121])
- by smtp.gmail.com with ESMTPSA id x132sm78621373pfc.148.2020.01.06.21.31.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 Jan 2020 21:31:48 -0800 (PST)
-Date: Tue, 7 Jan 2020 11:01:47 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: qiwuchen55@gmail.com
-Subject: Re: [PATCH v2] cpufreq: s3c: avoid use after free issue in
- xxx_cpufreq_reboot_notifier_evt()
-Message-ID: <20200107053147.v5ooeeshknlqyc3l@vireshk-i7>
-References: <1578303861-7217-1-git-send-email-qiwuchen55@gmail.com>
+ Tue,  7 Jan 2020 05:34:27 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20200107053427epoutp02471d6c43b1f7d82dcfef55514efbbb54~ng-F5Jjlv1813318133epoutp02y
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1578375267;
+ bh=HlAqQtGTg+FoGkYrpVJLgYfHw9gE9j12+g+flN1GrYo=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=cteF8z9hf9ez0GBDvR+BP7HTw1YcOPlEOanowHGmaHo6Di6BdfFOoR2vJJjZ6Hn6d
+ MnRg42IEyxZgtvq5TVseuV48nJP+ybzByNEyD8XWQSp2aSPAZ9NPeu9RFrJTWD18ky
+ NDhMIO6op+a8q9pYil086EZxijUsUApe8Ll84a1M=
+Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200107053426epcas5p14d573e40e17222a2249fc85a3688a885~ng-E54mgn0187701877epcas5p1U;
+ Tue,  7 Jan 2020 05:34:26 +0000 (GMT)
+Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
+ epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ D5.72.19629.268141E5; Tue,  7 Jan 2020 14:34:26 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200107053425epcas5p14e2b99b27fd39c3cd49ec81b039ee74a~ng-ET9KmM1995119951epcas5p1U;
+ Tue,  7 Jan 2020 05:34:25 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200107053425epsmtrp10b1d8ec0bef7676cdb698bdac38938bf~ng-ETIGo71588315883epsmtrp18;
+ Tue,  7 Jan 2020 05:34:25 +0000 (GMT)
+X-AuditID: b6c32a4b-32dff70000014cad-ac-5e141862d254
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 89.90.10238.168141E5; Tue,  7 Jan 2020 14:34:25 +0900 (KST)
+Received: from sriramdash03 (unknown [107.111.85.29]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200107053422epsmtip14b599e4d21758783755461ac0fdb89ed~ng-BKzBuw1857318573epsmtip1w;
+ Tue,  7 Jan 2020 05:34:22 +0000 (GMT)
+From: "Sriram Dash" <sriram.dash@samsung.com>
+To: =?iso-8859-1?Q?'Heiko_St=FCbner'?= <heiko@sntech.de>, "'Florian
+ Fainelli'" <f.fainelli@gmail.com>
+In-Reply-To: <1599392.7x4dJXGyiB@diego>
+Subject: RE: [PATCH] net: stmmac: platform: Fix MDIO init for platforms
+ without PHY
+Date: Tue, 7 Jan 2020 11:04:20 +0530
+Message-ID: <011901d5c51c$1f93be30$5ebb3a90$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578303861-7217-1-git-send-email-qiwuchen55@gmail.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-in
+Thread-Index: AQHLzAO/yISlXyWkyxclgJwcl7iTGwGwvbPnApU1MP0CKNLZ9qe/HwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+3bO2Y6j5ecUfdWKWoVkaJZWJ7I0MjlSRCD5R9h06WFJOm2b
+ VkJkphbmJUW7DK9RooKmc6Wtm1qZZRejNG8JukmkVpYW2gXreCb43+99v+f5vueBjybkI5Qb
+ HaPRc1qNKlYhlpK3H6319DoMTkqf1K8uTL21AzFFr9NI5teXxxJmdniMYh4/vy5iBv9MUIzR
+ 0k0xb81FYiaz20oxbWXOzJP6UObaran/0rFbiDF0NlFMWf0wCrRnTVW9IvaO4YOEbbh+ms0x
+ VSO2sbuEYFsebGBHpu8TrOnhJGInjcv32x2U+kdzsTFJnHb9jkjpkdm2GUnCxPYT7TcryRRU
+ 6p+J7GjAfjAwPY0ykZSW47sIBqeMtuE7gtm6cyJeJcc/EeSbtsw72qabRILoPoKzBR0SYRhF
+ 8PnuDcSrxNgLXvakijMRTTthNZx/GcVrCHyZgNmhbDGvscMeYP39Q8KzIz4AFWPlFM8kXg1V
+ qRkU75XhrZAyFM6vZdgBnl21kjwT2Bt6CgvEAq+DivIxQgi3AmZGKihh7wJPZrLm9k44GCwz
+ lrnQgNskYKlOkwiGIJg0p9vYEUafmmzsBp9yM2x8FN7mfLQ9oIcro+WkwAHQ/K7IFmgJZP+2
+ ivjMgGVwPkMuSNbAaH+D7Rp3aK7pEAnMQlZXHXkRrTQsqGZYUM2woJphQZ0yRFYjVy5BF6fm
+ dJsSfDXccW+dKk6XqFF7R8XHGdHc5/Pc04SMr/a2IkwjxWLZxaWOSjmlStKdjGtFQBMKJ9mZ
+ YAelXBatOpnMaeMjtImxnK4VudOkwkWWT3WFy7FapeeOclwCp50/FdF2bilIuTE577hrfu2y
+ kEAyeXhP3rbiwkqP9G9I/MlMlWxSK8dPpb9oD0sKmEp7EHmoM2RX0DkNDr2gX6q/ty+ofGDV
+ 6WPfnCPDe3z6zA1hk296T20e6Bu071/f71K4eecSv4nS9zXjdMoi845S37/m3cU/otoLMmqK
+ bz+0RDTWWlou5UoJBak7otrgSWh1qn+fBwfaeAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrBIsWRmVeSWpSXmKPExsWy7bCSnG6ihEicwcV+XYuNT04zWsw538Ji
+ 8evdEXaL/49es1ocObWEyeLenw+sFpseX2O1uLxrDptF17UnrBbHFohZHN0YbLFo6xeg0tdb
+ GS1mXdjBarFg4yNGB36PLStvMnnsnHWX3WPzknqPvi2rGD22X5vH7HFwn6HH0x97mT227P/M
+ 6PF5k1wAZxSXTUpqTmZZapG+XQJXxutD59kLnmlUPFx6jbmBcbN8FyMnh4SAicSxHzuYuhi5
+ OIQEdjNKvF18gbmLkQMoIS3x864uRI2wxMp/z9khal4wSjx5M5kFJMEmoCtx9kYTG4gtIpAu
+ MefqNbBBzAKLmSU+vznNDNFxhFFi258FjCBVnALqEk9+f2UHsYUFgiVuTz8A1s0ioCKxsqmN
+ FWQzr4ClRMPDGJAwr4CgxMmZT8CWMQsYSNw/1MEKYWtLLFv4mhniOgWJn0+XQcXFJY7+7GGG
+ OMhN4vHPx0wTGIVnIRk1C8moWUhGzULSvoCRZRWjZGpBcW56brFhgWFearlecWJucWleul5y
+ fu4mRnD8amnuYLy8JP4QowAHoxIPr4WUcJwQa2JZcWXuIUYJDmYlEd5GN8E4Id6UxMqq1KL8
+ +KLSnNTiQ4zSHCxK4rxP845FCgmkJ5akZqemFqQWwWSZODilGhhj3e1k0/o/1Ap2Fi+s+mDE
+ xR8as1g3MKCvoWzJmUuX6jzNjor8enhuwdpTkje1pY64/9r/KfYyy/LC803q57atSXv7YdW/
+ LV9LeRncAhWvMM+w2WH15srRLJ3G2w1L7HcY2l73da1ax6979MqVjqspa641hp2Q1nP9e+Ld
+ Dp6G7zUNpww0pR4psRRnJBpqMRcVJwIAhOBWH9sCAAA=
+X-CMS-MailID: 20200107053425epcas5p14e2b99b27fd39c3cd49ec81b039ee74a
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20191219102407epcas5p103b26e6fb191f7135d870a3449115c89
+References: <CGME20191219102407epcas5p103b26e6fb191f7135d870a3449115c89@epcas5p1.samsung.com>
+ <1700835.tBzmY8zkgn@diego> <c25fbdb3-0e60-6e54-d58a-b05e8b805a58@gmail.com>
+ <1599392.7x4dJXGyiB@diego>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_213150_809367_6D513AC5 
-X-CRM114-Status: GOOD (  19.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_213431_198579_AF698E16 
+X-CRM114-Status: UNSURE (   5.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,6 +127,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,94 +139,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, krzk@kernel.org, kgene@kernel.org,
- chenqiwu <chenqiwu@xiaomi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jose.Abreu@synopsys.com, jayati.sahu@samsung.com, alexandre.torgue@st.com,
+ rcsekar@samsung.com, pankaj.dubey@samsung.com, linux-kernel@vger.kernel.org,
+ p.rajanbabu@samsung.com, linux-stm32@st-md-mailman.stormreply.com,
+ stable@vger.kernel.org, netdev@vger.kernel.org, peppe.cavallaro@st.com,
+ 'David Miller' <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06-01-20, 17:44, qiwuchen55@gmail.com wrote:
-> From: chenqiwu <chenqiwu@xiaomi.com>
-> 
-> There is a potential UAF issue in xxx_cpufreq_reboot_notifier_evt() that
-> the cpufreq policy of cpu0 has been released before using it. So we should
-> make a judgement to avoid it.
+> From: Heiko St=FCbner <heiko@sntech.de>
+> Subject: Re: [PATCH] net: stmmac: platform: Fix MDIO init for platforms
+without
+> PHY
+> =
 
-Again, the subject and description are incorrect here. This isn't a user after
-free problem as we were already calling cpufreq_cpu_get(). The problem was that
-the balancing of refcount wasn't done properly.
+> Hi Florian,
+> =
+
+> Am Sonntag, 5. Januar 2020, 23:22:00 CET schrieb Florian Fainelli:
+> > On 1/5/2020 12:43 PM, Heiko St=FCbner wrote:
+> > > Am Samstag, 21. Dezember 2019, 06:29:18 CET schrieb David Miller:
+> > >> From: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
+> > >> Date: Thu, 19 Dec 2019 15:47:01 +0530
+> > >>
+> > >>> The current implementation of "stmmac_dt_phy" function initializes
+> > >>> the MDIO platform bus data, even in the absence of PHY. This fix
+> > >>> will skip MDIO initialization if there is no PHY present.
+> > >>>
+> > >>> Fixes: 7437127 ("net: stmmac: Convert to phylink and remove phylib
+> > >>> logic")
+> > >>> Acked-by: Jayati Sahu <jayati.sahu@samsung.com>
+> > >>> Signed-off-by: Sriram Dash <sriram.dash@samsung.com>
+> > >>> Signed-off-by: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
+> > >>
+> > >> Applied and queued up for -stable, thanks.
+> > >
+> > > with this patch applied I now run into issues on multiple rockchip
+> > > platforms using a gmac interface.
+> >
+> > Do you have a list of DTS files that are affected by any chance? For
+> > the 32-bit platforms that I looked it, it seems like:
+> >
+
+Hi Florian, =
+
+We have listed down the platforms which will break for as they don=92t have
+the mdio / snps,dwmac-mdio node.
+Arm32 spear* , Arm32 ox820*, arm32 rv1108, arc abilis* , arc axs10x*, arc
+vdk_axs10x*, mips pistachio, arm64 rockchip/px30* There might be more
+platforms.
+
+> > arch/arm/boot/dts/rk3228-evb.dts is OK because it has a MDIO bus node
+> > arch/arm/boot/dts/rk3229-xms6.dts is also OK
+> >
+> > arch/arm/boot/dts/rk3229-evb.dts is probably broken, there is no
+> > phy-handle property or MDIO bus node, so it must be relying on
+> > auto-scanning of the bus somehow that this patch broke.
+> >
+> > And likewise for most 64-bit platforms except a1 and nanopi4.
+> =
+
+> I primarily noticed that on the px30-evb.dts and the internal board I'm
+working
+> on right now. Both don't have that mdio bus node right now.
+> =
+
+> =
+
+> > > When probing the driver and trying to establish a connection for a
+> > > nfsroot it always runs into a null pointer in mdiobus_get_phy():
+> > >
+> > > [   26.878839] rk_gmac-dwmac ff360000.ethernet: IRQ eth_wake_irq not
+> found
+> > > [   26.886322] rk_gmac-dwmac ff360000.ethernet: IRQ eth_lpi not found
+> > > [   26.894505] rk_gmac-dwmac ff360000.ethernet: PTP uses main clock
+> > > [   26.908209] rk_gmac-dwmac ff360000.ethernet: clock input or output?
+> (output).
+
+... snip ...
+
+> > >
+> > >
+> > > This is torvalds git head and it was still working at -rc1 and all
+> > > kernels before that. When I just revert this commit, things also
+> > > start working again, so I guess something must be wrong here?
+> >
+> > Yes, this was also identified to be problematic by the kernelci boot
+> > farms on another platform, see [1].
+> >
+> > [1]:
+> > https://lore.kernel.org/linux-arm-kernel/5e0314da.1c69fb81.a7d63.29c1@
+> > mx.google.com/
+> >
+> > Do you mind trying this patch and letting me know if it works for you.
+> > Sriram, please also try it on your platforms and let me know if solves
+> > the problem you were after. Thanks
+> =
+
+> Works on both boards I had that were affected, so
+> Tested-by: Heiko Stuebner <heiko@sntech.de>
+
+Nacked-by : Sriram Dash <Sriram.dash@samsung.com>
+
+> =
+
+> =
+
+> Thanks
+> Heiko
+> =
+
+> >
+> > diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+> > b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+> > index cc8d7e7bf9ac..e192b8e0809e 100644
+> > --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+> > +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+> > @@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct platform_device
+> > *pdev,  static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
+> >                          struct device_node *np, struct device *dev)
+> > {
+> > -       bool mdio =3D false;
+> > +       bool mdio =3D true;
+> >         static const struct of_device_id need_mdio_ids[] =3D {
+> >                 { .compatible =3D "snps,dwc-qos-ethernet-4.10" },
+> >                 {},
+> > @@ -341,8 +341,9 @@ static int stmmac_dt_phy(struct
+> > plat_stmmacenet_data *plat,
+> >         }
+> >
+> >         if (plat->mdio_node) {
+
+For the platforms which neither have mdio nor snps,dwmac-mdio property in
+dt, they will not enter the block.
+plat->mdio_node will always be false for them. Which, essentially, preserves
+the mdio variable Boolean value defined at the start of the function.
+
+> > -               dev_dbg(dev, "Found MDIO subnode\n");
+> > -               mdio =3D true;
+> > +               mdio =3D of_device_is_available(plat->mdio_node);
+> > +               dev_dbg(dev, "Found MDIO subnode, status: %sabled\n",
+> > +                       mdio ? "en" : "dis");
+> >         }
+> >
+> >         if (mdio) {
+> >
+> =
+
+> =
+
+> =
 
 
-> Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
-> ---
-> changes in v2:
->  - use the combination of cpufreq_cpu_get() and cpufreq_cpu_put()
->    instead of cpufreq_get_policy() in s3c2416-cpufreq.c
-> ---
->  drivers/cpufreq/s3c2416-cpufreq.c | 12 +++++++++++-
->  drivers/cpufreq/s5pv210-cpufreq.c | 11 ++++++++++-
->  2 files changed, 21 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
-> index 1069103..f07c5d1 100644
-> --- a/drivers/cpufreq/s3c2416-cpufreq.c
-> +++ b/drivers/cpufreq/s3c2416-cpufreq.c
-> @@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
->  {
->  	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
->  	int ret;
-> +	struct cpufreq_policy *policy;
->  
->  	mutex_lock(&cpufreq_lock);
->  
-> @@ -318,7 +319,16 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
->  	 */
->  	if (s3c_freq->is_dvs) {
->  		pr_debug("cpufreq: leave dvs on reboot\n");
-> -		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
-> +
-> +		policy = cpufreq_cpu_get(0);
-> +		if (!policy) {
-> +			pr_debug("cpufreq: get no policy for cpu0\n");
-> +			return NOTIFY_BAD;
-> +		}
-> +
-> +		ret = cpufreq_driver_target(&policy, FREQ_SLEEP, 0);
-> +		cpufreq_cpu_put(policy);
-> +
->  		if (ret < 0)
->  			return NOTIFY_BAD;
->  	}
-> diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
-> index 5d10030..e84281e 100644
-> --- a/drivers/cpufreq/s5pv210-cpufreq.c
-> +++ b/drivers/cpufreq/s5pv210-cpufreq.c
-> @@ -555,8 +555,17 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
->  						 unsigned long event, void *ptr)
->  {
->  	int ret;
-> +	struct cpufreq_policy *policy;
-> +
-> +	policy = cpufreq_cpu_get(0);
-> +	if (!policy) {
-> +		pr_debug("cpufreq: get no policy for cpu0\n");
-> +		return NOTIFY_BAD;
-> +	}
-> +
-> +	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
-> +	cpufreq_cpu_put(policy);
->  
-> -	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
->  	if (ret < 0)
->  		return NOTIFY_BAD;
->  
-> -- 
-> 1.9.1
+There is a proposal for this problem solution. You can refer it at :
+https://lkml.org/lkml/2020/1/7/14
 
--- 
-viresh
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
