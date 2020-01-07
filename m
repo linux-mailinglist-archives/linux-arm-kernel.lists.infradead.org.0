@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6B79133078
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 21:15:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0D4C133088
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 21:26:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TkOw/pTJBl29+xb6voCrvxJkj1gMMlJx9snff+LZHcI=; b=tLyU93h4MeA4pe
-	uor1s66FNTPThCPeGYPaKWUi2kDXuWw7nM0i5Cg0N0y7i0rXThGJeEGDM7IMCul6/IVYi0laSm2uf
-	448VyjRane46wyiQRE6q8JVaDyiQyCJ/qQE3Sa4hkCUYvmIkgnsPUtRKKZnKXZIfWz69T/H1y6566
-	YqlIm/74h/UqoccqUBSzzOxd+rWQ2Z2ztsJePpHcNqjh9Xc0ONJdIltDzSNvyC8Zvx1GIxQprYzgW
-	yK0otD/q7npeS5AaVQYLBoUmctp0q19RKJAThGRBSrNaZMr/3MIaID5uVxCM+NeiWIsFvCvz1g9Qs
-	KxPaKNGGuyulwK+w7AZA==;
+	List-Owner; bh=hf+WGTJNCrum0Xx18nVJouWr9pS1SoeGsE03noaTRIs=; b=bz9bVdx1Yws/HQ
+	OB7lUP5hiISC6YA5X07k9a7xO1w9zh9LLBIbW39AfezgzG4RKdHh7JrsUY70OC6LDYJyaYmEzgtP5
+	rBKQaMIkblQEB0HIF5ZHpWRokzsIgtvQJPsBB6PVdTOZ6It6je/Yx8TkS5SPXVyYbl4nnjsBR7k5O
+	b2eEDWf0Vz2b5EqWBEC1IqITGKkvZAkRPAV7mi9cf3S1l0vS5YblcVu4OwLWaHgIdARGlAhzUautG
+	4cNJ0WntGTk0KHqr3gR8Po6kRq+1ESmRp1QvXpQ5O6f57eswnLBtAS20OWDQivI+0Rn+6cJK4IcJH
+	oKLl3hMFGgMWjw8aLRiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iovGY-0003Df-BS; Tue, 07 Jan 2020 20:15:50 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1iovRA-0007RB-8y; Tue, 07 Jan 2020 20:26:48 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iovG5-0002zM-0j
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 20:15:22 +0000
-Received: by mail-ed1-f66.google.com with SMTP id b8so664884edx.7
+ id 1iovR2-0007QO-Sb
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 20:26:42 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 3574d30a
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 12:15:20 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wGDNH8G9OjiK3AAd62wDz3jw6gfDHFXfcH+EuJ758p0=;
- b=OBp+1LP98LJHCDfX8zO7vr+Vcu/d65vhZO5QPReQXEg6yoqRl3VpQBbrj+I6SSFsE5
- 6NNRpVPdj1FTRMrlZT+dbxr1au/LlC9QMXTXWtoA87ERuOdcCceYZjiZdWPWQYcYYZs4
- zdPnCeped50wJ6Aezdjauv0+prxfxN8YKbeJoMLEKkhX4ZKOE87zlLSx1/29b2AJzK/5
- ENvquYUhpDzilHK9xhMh/hz0E+LaamF+5CAIikmgLZFdJshDMaDIxZW7eEVoDY0PkcPo
- ff6KnXkBK2TpJ02WdSPTHvMBYhqAYyvDItqT2iRK1dduKeJAssaTWij3h+iaqrEOeph7
- axzw==
-X-Gm-Message-State: APjAAAVewUKRZdURXkY7oZAfgcikyIJJP+JYxWOcMJtmoH6mjyX1xQw7
- wpuCuoeJ3BQkQy7sZ/Ef0AFxUHHd
-X-Google-Smtp-Source: APXvYqzGqpZQgkR0GVpjbilKXfSk0cxuxc92sd9DXO3QEbOkgclXcOqlmAIgeOzvOw+eK95fAnrkuQ==
-X-Received: by 2002:aa7:cd52:: with SMTP id v18mr1732386edw.205.1578428118823; 
- Tue, 07 Jan 2020 12:15:18 -0800 (PST)
-Received: from kozik-book ([194.230.155.149])
- by smtp.googlemail.com with ESMTPSA id b13sm11469ejl.5.2020.01.07.12.15.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 Jan 2020 12:15:18 -0800 (PST)
-Date: Tue, 7 Jan 2020 21:15:15 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 09/20] memory: samsung: Rename Exynos to lowercase
-Message-ID: <20200107201515.GE8636@kozik-book>
-References: <20200104152107.11407-1-krzk@kernel.org>
- <20200104152107.11407-10-krzk@kernel.org>
+ Tue, 7 Jan 2020 19:27:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=mime-version
+ :references:in-reply-to:from:date:message-id:subject:to:cc
+ :content-type; s=mail; bh=SF2YH1/XcFCc2KICEQEdNyxtQ/4=; b=potrUY
+ cYc0INRLt1UQpOT+tflIdYmfRQUpqV0aEyc2mdguvNrEmgbgouPIqP9Ir+GQYOyw
+ 1ynogF16EEP/vLiUaGmrlzw5hjhttdvkV7mZlXSeRcjyeAyeq+A72sZ5Yg3hWd4t
+ EzUHh0mJv7Y3B6JfPOY+KT8MPTYCasgDBfXNIVMAxpnN/85zF8jepuMdW9ukUt9C
+ LaJLvFrJ1eRESdFINIeuKFNKmAVNmZ+2C+S7RVHwaHVllJvuKJKGc1NgJxEbeyTU
+ REScLAiV1zaRZZd9lekRJc2wjtF7ViDoAB3V2MVfPu2+lfdz2kjvLttszMXGUB4L
+ 0pw5+3Psr6W2kXfg==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id 60c6d25e
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 7 Jan 2020 19:27:21 +0000 (UTC)
+Received: by mail-oi1-x236.google.com with SMTP id 18so602110oin.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 12:26:31 -0800 (PST)
+X-Gm-Message-State: APjAAAU2UB2HybNPvuKDnksJyRUlh7/hH4EkAMHzFFC0hTPz2jQ1qGxK
+ /gnBdXTIOJDBPsjt1qQybbvbIJb/xUkDUpMGzFE=
+X-Google-Smtp-Source: APXvYqyug9RB3w6WVZGIbyrZdMVtg+VyewWxlcNicyva/YUGU9Mjf8+VEkEsiVgp4/YgWGPf8IAdQRchEgtb2dz7gQQ=
+X-Received: by 2002:aca:39d6:: with SMTP id g205mr186294oia.122.1578428490343; 
+ Tue, 07 Jan 2020 12:21:30 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200104152107.11407-10-krzk@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200107201327.3863345-1-arnd@arndb.de>
+In-Reply-To: <20200107201327.3863345-1-arnd@arndb.de>
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Date: Tue, 7 Jan 2020 15:21:19 -0500
+X-Gmail-Original-Message-ID: <CAHmME9rnevSYwWvfyv8LRitVo-=KVpPCoGLwYxo62mwnW0vjiQ@mail.gmail.com>
+Message-ID: <CAHmME9rnevSYwWvfyv8LRitVo-=KVpPCoGLwYxo62mwnW0vjiQ@mail.gmail.com>
+Subject: Re: [PATCH] crypto: curve25519 - Work around link failure
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_121521_096999_4B613584 
-X-CRM114-Status: GOOD (  12.53  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200107_122640_996267_8B6AC802 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.95.5.64 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,34 +87,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Vitaly Chikunov <vt@altlinux.org>, Herbert Xu <herbert@gondor.apana.org.au>,
+ Ondrej Mosnacek <omosnace@redhat.com>, LKML <linux-kernel@vger.kernel.org>,
+ X86 ML <x86@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Eric Biggers <ebiggers@google.com>, Ard Biesheuvel <ardb@kernel.org>,
+ Samuel Neves <sneves@dei.uc.pt>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Andy Polyakov <appro@cryptogams.org>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jan 04, 2020 at 04:20:56PM +0100, Krzysztof Kozlowski wrote:
-> Fix up inconsistent usage of upper and lowercase letters in "Exynos"
-> name.
-> 
-> "EXYNOS" is not an abbreviation but a regular trademarked name.
-> Therefore it should be written with lowercase letters starting with
-> capital letter.
-> 
-> The lowercase "Exynos" name is promoted by its manufacturer Samsung
-> Electronics Co., Ltd., in advertisement materials and on website.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> ---
->  drivers/memory/samsung/Kconfig       | 2 +-
->  drivers/memory/samsung/exynos-srom.c | 2 +-
+Hey Arnd,
 
-Applied.
+Another solution to this was already posted:
 
-Best regards,
-Krzysztof
+https://lore.kernel.org/linux-crypto/CAHmME9pg4KWw1zNVybxn1WLGusyGCjqeAHLQXY=Dr4zznUM82g@mail.gmail.com/T/#t
 
+That might be slightly cleaner, though yours is shorter. I'm alright
+with either one.
+
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
