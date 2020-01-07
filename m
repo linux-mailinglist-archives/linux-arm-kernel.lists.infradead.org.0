@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2597B132F0C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:10:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 679F2132F28
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:15:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nzXHdOwpRzatEZ+52b092sy1olSDKRrccttDnUS4+0k=; b=AzR
-	z3svFRu/HSJyrMbMHqO3agScPd5WI/xV1ZLPqSDNXt/wH7UpQ8fLvlLyNoo/Fq08yf1FnVHWbqfaW
-	Xsl5asfVNGoZO+zxrLznQFvY/hBloOzV5YRA4HLUdlAJ0OglLZw8UK8K7mW6G0JyKdfkF1xQSDulN
-	9Uph3tcTLxao/6S8ZuP2vjmvesuN+f59Ov9JsJhM0yWXzphzynlKPpoet6//oF128LznlEQ1vN31Y
-	R+E1DM5L6CqRFUQhYT4Z/Af+Pd4tBrgDV0vrEwfeu1STlLciNR2JCLMiMkL0aHyGA6cH0p8E4G9kl
-	ZI4yxo4vyUkasEvM/M5/29im3YenxRQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qZ8e3mq8UaGu1xPi2Spftzx5wuoIHXpARTIkZqgfK38=; b=Vh3IVsC/3K7GE+
+	h25ibWMdwW55yj7eeAOT/VNW503Y4EAAz/XnMPfP8gm2dOfg8YdNSinGg4YiWFg2QrX5HE9Xc7Kgv
+	PBIwRvpBffjUimihA8qChqE4GTWN5LcYsodGvhtn6FKJoQ2Qf6TPdshbQPgOvrMEpzoS5xr8WWr66
+	TuJ7lHVYYOWd5i4zJEJR9nUXMsVWS6I9naQOnry2k1IvmYlNtbldu5rlaedNS8VwZl4Ec/a80YwPT
+	U6eG6fBgEStS6GeZJeimyWWvn0SAAK54coVjwRFAWU6kz1TNFCwJNMVcBVo80TA/1exZqRTSi9uNP
+	p6cAgv8uMIvnnagWiveg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iouFO-0002Lg-Js; Tue, 07 Jan 2020 19:10:34 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iouK0-00049p-7e; Tue, 07 Jan 2020 19:15:20 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iouFH-0002KS-Om
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:10:29 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id bg7so190057pjb.5
+ id 1iouJr-000493-Tw
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:15:13 +0000
+Received: by mail-io1-xd43.google.com with SMTP id h8so535353iob.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 11:10:22 -0800 (PST)
+ Tue, 07 Jan 2020 11:15:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=udxb2nz6/O0HfR1mRrdKFyNfS9Q09XXu4H95tu0JCZs=;
- b=acgjS9YUAcyPamemAb1Nj3Ec3zSSVYS9z7m2SeFGysjQJcpak11/bjEbqTf6TsZ5/Z
- nmZMY8WoZI3nH5qzbrPt/udBt8ITZwOFx1ogVStEHvnKQ6IgBS62CPOpoku7bpS5OcDw
- AqoDnrqlfHeWBxKiXghnmOEZkWYNGx+rwe2NdGja40iLS1Hac0lyATVyYqEePrC7+jQX
- u8l0N/qIn+fvT25hJGnUjeDuEwxQRiLC+ydXDaz2N1lAqJkR5NGp8N/WeEkO7BbndWzs
- xZlFQw4Y1Zx3kKGJWSkaI01JzGj/MAyxn5wrURDHPv5tnz/xrKBT7SoYsGbsCgJzZGzu
- KgUQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yl2wbUAzHAKbcOb1Vl7UvKqELmoqXyVI0Xh3B+s9l6w=;
+ b=rkQzotOI2WHHWwl7HXrjtEqiFBUizAnXJy0V8EQAuovXuZcIet+WvPqNR5SjCRKpX3
+ RBOmcSr49Rvp4qGRrH8iXEmGIh1XxFKeoUYJC3G0jk3Ln6y1IfZjD6/eLB3cwp6f9L8B
+ V5xp35Kp4/+p+M+E/8RZ7RVnE289Ouaw8GJ/JTCsju3xsMP9NfaE8X4KXapOYPEOFbx9
+ 8c1UEuszme5mHl5SDsWoFPTH89wgrj0jW9rjSb06Enjkys1L2KrVbLlRB6qEJiCUkvjm
+ jTv08XipmW3TZppSYqz1ljOQawAKLULX/rRIeXP6mAV1b6DoU12kV8x5Uzfj0ZhR0DV6
+ WhCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=udxb2nz6/O0HfR1mRrdKFyNfS9Q09XXu4H95tu0JCZs=;
- b=JXxrGOaHG7m4SrlS9Di4+maGd84Zhjjhhxvn7MAmWe8/Xl/gOolDsu8XTMlUCtgRnA
- DdCuuXiyfKetrPB3+w2TsbHt95E0eyZytq0vqtuwcAaoVnLV5BNS6p1h2SOok0uVRj94
- Dtp8WhIOXu3UT6Nc2qeEvXtcKPT+rpG5suPPr9BqOx2xzjbtaCkbEUScZPO2Fs/v3eHb
- hx95L4vfIIa/H4hrrSxzlQ6c6E3dkO4qi/+I2orw6DhLk5K5M8vIL8gqGA+ZkmPAf+Fk
- bjUKoKiYmfj0vrw7PkapncM/jgWlhhzSppdtXP+JvJngAJaGlKct+d3l3MFgBwi3klRe
- takA==
-X-Gm-Message-State: APjAAAV41hpbOOuQuZ2Zjr8gbQipzRaLxExhV5Q2K20jALHi6mg4nwn9
- wqnfSpmCWv1H2aAjNzDpngc=
-X-Google-Smtp-Source: APXvYqwDRiU7nES6NK298Wl7FIXAxcCBKJmxGZr5Hcbhc7ypDJiUD4Wl4SjDYqFbTiKPrv8b7Kk8wA==
-X-Received: by 2002:a17:902:7c85:: with SMTP id
- y5mr1141774pll.227.1578424222460; 
- Tue, 07 Jan 2020 11:10:22 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id s7sm324776pjk.22.2020.01.07.11.10.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 Jan 2020 11:10:21 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, kgene@kernel.org,
- krzk@kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] ARM: dts: exynos: tiny4412: enable fimd node and add
- proper panel node
-Date: Tue,  7 Jan 2020 19:10:20 +0000
-Message-Id: <20200107191020.27475-1-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yl2wbUAzHAKbcOb1Vl7UvKqELmoqXyVI0Xh3B+s9l6w=;
+ b=ZXP8Ur/2ql7T0Di1GXl7BYnw+xGNhUhjtMFFqyTdVbA3MPSDSQkTMP5HFva9wFBXUb
+ In/1iC7hv6YZZwL9ROSfKtfpchfAmR0zhOFNKL3JPZqw0QITjsQzjv6To5QhJSwJsEQR
+ TUPSNFIvqzrn1Hblm0izk59R+hzBWVn7XHPHjsmKfRK1jPnVVfmViz6+PB9klTZb6ZuG
+ qDK+EkA53f4Xm3LexIWzqbpH911gaNhAlmZAot4fy+qe5TxF6BD0k/HCeRN12KSr9NUz
+ O8O0EHz9rjCjKBwa4uEuIa6uz26DS5Gbi1/qj7EFY0o1T50j73bWJ29dVC7nk6epHkfR
+ xTFg==
+X-Gm-Message-State: APjAAAXodcjMzhZvQZZ9Buel2XpiZ12+IvZXFapD1sYZACFPqdf/mPpo
+ 0t/Yjx3q+se3/2kAlHI5EUDkMLMBJacFdd1WY1A=
+X-Google-Smtp-Source: APXvYqz9PvnXo6JBf/ETXrEq1+jj6hv8iMvI1zUApsw3LhkJjvDhAUAxswe1B7GebdiWNs1qbym12yJE7R7vujQvTMM=
+X-Received: by 2002:a6b:c8c8:: with SMTP id y191mr430846iof.104.1578424511057; 
+ Tue, 07 Jan 2020 11:15:11 -0800 (PST)
+MIME-Version: 1.0
+References: <20200106203700.21009-1-tony@atomide.com>
+ <CAOesGMiNbyUXwPFsG-ipTn-xfEs+A2hG8Q8MTcSLz5794GCv0g@mail.gmail.com>
+In-Reply-To: <CAOesGMiNbyUXwPFsG-ipTn-xfEs+A2hG8Q8MTcSLz5794GCv0g@mail.gmail.com>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Wed, 8 Jan 2020 03:14:59 +0800
+Message-ID: <CAEExFWuQuTHNsjABpSBAa46NzftHS0+nLLG=qdEcaeatLZFLeQ@mail.gmail.com>
+Subject: Re: [PATCH] clocksource: timer-ti-dm: Fix regression
+To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_111027_805988_72074402 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20200107_111511_992996_84CF8941 
+X-CRM114-Status: GOOD (  16.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,63 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>
-MIME-Version: 1.0
+Cc: Tony Lindgren <tony@atomide.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-omap <linux-omap@vger.kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable fimd device node which is a display controller, and add panel
-node required by it.
+On Tue, Jan 7, 2020 at 5:07 AM Olof Johansson <olof@lixom.net> wrote:
+>
+> On Mon, Jan 6, 2020 at 12:37 PM Tony Lindgren <tony@atomide.com> wrote:
+> >
+> > Clean-up commit 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to
+> > platform_get_irq") caused a regression where we now try to access
+> > uninitialized data for timer:
+> >
+> > drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
+> > drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may be used
+> > uninitialized in this function [-Wmaybe-uninitialized]
+> >
+> > On boot we now get:
+> >
+> > Unable to handle kernel NULL pointer dereference at virtual address
+> > 00000004
+> > ...
+> > (omap_dm_timer_probe) from [<c061ac7c>] (platform_drv_probe+0x48/0x98)
+> > (platform_drv_probe) from [<c0618c04>] (really_probe+0x1dc/0x348)
+> > (really_probe) from [<c0618ef4>] (driver_probe_device+0x5c/0x160)
+> >
+> > Let's fix the issue by moving platform_get_irq to happen after timer has
+> > been allocated.
+> >
+> > Fixes: 8c82723414d5 ("clocksource/drivers/timer-ti-dm: Switch to platform_get_irq")
+> > Cc: Yangtao Li <tiny.windzz@gmail.com>
+> > Signed-off-by: Tony Lindgren <tony@atomide.com>
+>
+> Acked-by: Olof Johansson <olof@lixom.net>
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
-v2:
--update commit msg and merge to one patch
----
- arch/arm/boot/dts/exynos4412-tiny4412.dts | 25 +++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+Acked-by: Yangtao Li <tiny.windzz@gmail.com>
 
-diff --git a/arch/arm/boot/dts/exynos4412-tiny4412.dts b/arch/arm/boot/dts/exynos4412-tiny4412.dts
-index 01f37b5ac9c4..3a91de8a8082 100644
---- a/arch/arm/boot/dts/exynos4412-tiny4412.dts
-+++ b/arch/arm/boot/dts/exynos4412-tiny4412.dts
-@@ -66,6 +66,31 @@
- 			clock-frequency = <24000000>;
- 		};
- 	};
-+
-+	panel {
-+		compatible = "innolux,at070tn92";
-+
-+		port {
-+			panel_input: endpoint {
-+				remote-endpoint = <&lcdc_output>;
-+			};
-+		};
-+	};
-+};
-+
-+&fimd {
-+	pinctrl-0 = <&lcd_clk>, <&lcd_data24>;
-+	pinctrl-names = "default";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	port@3 {
-+		reg = <3>;
-+		lcdc_output: endpoint {
-+			remote-endpoint = <&panel_input>;
-+		};
-+	};
- };
- 
- &rtc {
--- 
-2.17.1
+I am sorry. I will pay attention next time.
 
+>
+> > ---
+> >
+> > I did not notice simlar issue with other patches in the series, but
+> > please do double check Yangtao.
+>
+> Yeah, this even seems to be caught at build (but our builds have been
+> so noisy with warnings lately that they're hard to spot):
+>
+> /build/drivers/clocksource/timer-ti-dm.c: In function 'omap_dm_timer_probe':
+> /build/drivers/clocksource/timer-ti-dm.c:798:13: warning: 'timer' may
+> be used uninitialized in this function [-Wmaybe-uninitialized]
+>   798 |  timer->irq = platform_get_irq(pdev, 0);
+>       |  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+>
+>
+> -Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
