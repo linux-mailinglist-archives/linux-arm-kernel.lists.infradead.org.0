@@ -2,65 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 931871335A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 23:24:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83A241335AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 23:25:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PNNsvR5/Mq3PEpDEZfBAU8S81CABZCf9KDB6J7weN1w=; b=sd6icORwgnO+8I
-	h3DtW1cj4xPiIsP+dtYxE3HSQh4mOQNdXsmJT9l4X1URUFYsfHgnstvsS/3KYnJl2JX5WI7y7jghW
-	Mo+aecjbePBqgB2Nzh07hptBXsFAPaqOIiyTeZ6m5Ic4x1fIY1pXCIa+6P4uiZmXEiUD6JqyTtOwK
-	uZJvwmYu6shlNQrTV+Eq4DGLCvjUaERg+duuirbzYlKVR3l2cfqeafKSsj4/DDAAjUKVYfu+oc2IY
-	Kf8CLixxZmIjj+BWykG7/iu//MxyksNEnwuLu84lyUhkmi8qD3jv2xmedkQoPU8QPfEPsLICq4YtA
-	fD/8JDoj+rM9j4TLDUpg==;
+	List-Owner; bh=L8KGYeCsbZXxFstCTx2dxn3Z6EKmWS67eu3A1JeGMNc=; b=J38Qlo0iDRPV2p
+	WzX2lrcKJ6C/vZVupKukC8BaqBeiOBVIZaf8GWHzw2AgdsV1BCD6XOm+t4u9rv1CtragJlWZwvdv5
+	mEAN5oUvMKA1IUzt542y+zD6mScCYoHb8a6486xiX2jQJYw6bB5XhZBLPIPvTOQ737qbaMv1J0DOQ
+	HXWuj8VzbxUBemzDWWMI2uPO50sMVx2p+8kCxKp4xEWrC/PBKGOl8uSVJo1j8t43h+0FcS6E085Vr
+	LrPp/vCHHpseJyF3kG5xCY7gujzvIPJOxwbeY0EQVJg+E1RTz/VZ/vR3KV8MkYfc2ZJqHhVLYz92d
+	GbeW96DjSwqDoGtw/+xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioxGu-0004D5-SD; Tue, 07 Jan 2020 22:24:20 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ioxIM-0005ic-DS; Tue, 07 Jan 2020 22:25:50 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioxGl-0004Bw-CB
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 22:24:13 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1ioxGi-00036v-Fj; Tue, 07 Jan 2020 23:24:08 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1ioxGg-00020R-9M; Tue, 07 Jan 2020 23:24:06 +0100
-Date: Tue, 7 Jan 2020 23:24:06 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Andy Duan <fugang.duan@nxp.com>
-Subject: Re: [EXT] Re: iMX6/UART imprecise external abort
-Message-ID: <20200107222406.vw7ewgm7uilu2x6e@pengutronix.de>
-References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
- <FD3C2267-A9B8-45BB-B027-C85DB5E60829@designa-electronics.com>
- <VI1PR0402MB36003DBB288BC2B02A505ADCFF2C0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
- <CAOMZO5BXMdzTBVaM7xbetgDLB9Aycd=yrUe00weGgcQtgZZBXQ@mail.gmail.com>
- <VI1PR0402MB36007146C33D2B4F7F24FB46FF2E0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
- <20191223101627.p4a72y6ai5ns7pit@pengutronix.de>
+ id 1ioxI7-0005hE-3X; Tue, 07 Jan 2020 22:25:37 +0000
+Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ioxHq-00051T-Rh; Tue, 07 Jan 2020 23:25:18 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI
+ RX D-PHY yaml bindings
+Date: Tue, 07 Jan 2020 23:25:17 +0100
+Message-ID: <3869290.WS1K4CcMg6@phil>
+In-Reply-To: <4d5a896ee0f40908365800dcd0554eb39c5d68c1.camel@collabora.com>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <2299954.gvZHxIxoM0@diego>
+ <4d5a896ee0f40908365800dcd0554eb39c5d68c1.camel@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191223101627.p4a72y6ai5ns7pit@pengutronix.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_142411_409538_4A508C41 
-X-CRM114-Status: GOOD (  23.57  )
+X-CRM114-CacheID: sfid-20200107_142535_299040_AEE8899E 
+X-CRM114-Status: GOOD (  35.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,121 +59,264 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Renaud <arenaud@designa-electronics.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, kernel@pengutronix.de,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ robh+dt@kernel.org, hans.verkuil@cisco.com,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
+ andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 23, 2019 at 11:16:27AM +0100, Uwe Kleine-K=F6nig wrote:
-> Hello,
-> =
-
-> On Mon, Dec 23, 2019 at 01:53:44AM +0000, Andy Duan wrote:
-> > From: Fabio Estevam <festevam@gmail.com> Sent: Saturday, December 21, 2=
-019 8:03 PM
-> > > On Sat, Dec 21, 2019 at 4:31 AM Andy Duan <fugang.duan@nxp.com> wrote:
-> > > =
-
-> > > > We should ensure the RX FIFO data are not missed since they are val=
-id data.
-> > > > To compatible DMA and cpu PIO mode, to receive all RX FIFO data when
-> > > > start to send, it will involve complex code logic.
-> > > > So I suggest to enable the flag "SER_RS485_RX_DURING_TX", and force=
- to
-> > > > enable the flag for imx uart RS485 driver.
-> > > =
-
-> > > Inside imx_uart_rs485_config() we have:
-> > > =
-
-> > > if (rs485conf->flags & SER_RS485_ENABLED) {
-> > >        /* Enable receiver if low-active RTS signal is requested */
-> > >        if (sport->have_rtscts &&  !sport->have_rtsgpio &&
-> > >            !(rs485conf->flags & SER_RS485_RTS_ON_SEND))
-> > >                     rs485conf->flags |=3D SER_RS485_RX_DURING_TX;
-> > > =
-
-> > > Maybe the if() logic needs to be changed so that the
-> > > SER_RS485_RX_DURING_TX flag could be set in Andre's case?
+Am Dienstag, 7. Januar 2020, 23:03:54 CET schrieb Ezequiel Garcia:
+> On Tue, 2020-01-07 at 22:30 +0100, Heiko St=FCbner wrote:
+> > Hi Ezequiel,
 > > =
 
-> > I think let the config always is enabled unconditionally: =
+> > Am Dienstag, 7. Januar 2020, 14:20:10 CET schrieb Ezequiel Garcia:
+> > > Hi Heiko, Laurent,
+> > > =
 
-> > 	rs485conf->flags |=3D SER_RS485_RX_DURING_TX;
+> > > On Tue, 2020-01-07 at 10:28 +0100, Heiko St=FCbner wrote:
+> > > > Am Dienstag, 7. Januar 2020, 03:37:21 CET schrieb Laurent Pinchart:
+> > > > > On Mon, Jan 06, 2020 at 11:06:12PM -0300, Ezequiel Garcia wrote:
+> > > > > > On Tue, 2020-01-07 at 02:10 +0200, Laurent Pinchart wrote:
+> > > > > > > Hi Helen,
+> > > > > > > =
+
+> > > > > > > Thank you for the patch.
+> > > > > > > =
+
+> > > > > > > On Fri, Dec 27, 2019 at 05:01:14PM -0300, Helen Koike wrote:
+> > > > > > > > Add yaml DT bindings for Rockchip MIPI D-PHY RX
+> > > > > > > > =
+
+> > > > > > > > This was tested and verified with:
+> > > > > > > > mv drivers/staging/media/phy-rockchip-dphy/Documentation/de=
+vicetree/bindings/phy/rockchip-mipi-
+> > > > > > > > dphy.yaml  Documentation/devicetree/bindings/phy/
+> > > > > > > > make dt_binding_check DT_SCHEMA_FILES=3DDocumentation/devic=
+etree/bindings/phy/rockchip-mipi-dphy.yaml
+> > > > > > > > make dtbs_check DT_SCHEMA_FILES=3DDocumentation/devicetree/=
+bindings/phy/rockchip-mipi-dphy.yaml
+> > > > > > > > =
+
+> > > > > > > > Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> > > > > > > > =
+
+> > > > > > > > ---
+> > > > > > > > =
+
+> > > > > > > > Changes in v12:
+> > > > > > > > - The commit replaces the following commit in previous seri=
+es named
+> > > > > > > > media: staging: dt-bindings: Document the Rockchip MIPI RX =
+D-PHY bindings
+> > > > > > > > This new patch adds yaml binding and was verified with
+> > > > > > > > make dtbs_check and make dt_binding_check
+> > > > > > > > =
+
+> > > > > > > > Changes in v11: None
+> > > > > > > > Changes in v10:
+> > > > > > > > - unsquash
+> > > > > > > > =
+
+> > > > > > > > Changes in v9:
+> > > > > > > > - fix title division style
+> > > > > > > > - squash
+> > > > > > > > - move to staging
+> > > > > > > > =
+
+> > > > > > > > Changes in v8: None
+> > > > > > > > Changes in v7:
+> > > > > > > > - updated doc with new design and tested example
+> > > > > > > > =
+
+> > > > > > > >  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++=
+++++++++++++
+> > > > > > > >  1 file changed, 75 insertions(+)
+> > > > > > > >  create mode 100644 drivers/staging/media/phy-rockchip-dphy=
+/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > > > > > > > =
+
+> > > > > > > > diff --git a/drivers/staging/media/phy-rockchip-dphy/Docume=
+ntation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > > > > > > > b/drivers/staging/media/phy-
+> > > > > > > > rockchip-dphy/Documentation/devicetree/bindings/phy/rockchi=
+p-mipi-dphy.yaml
+> > > > > > > > new file mode 100644
+> > > > > > > > index 000000000000..af97f1b3e005
+> > > > > > > > --- /dev/null
+> > > > > > > > +++ b/drivers/staging/media/phy-rockchip-dphy/Documentation=
+/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+> > > > > > > > @@ -0,0 +1,75 @@
+> > > > > > > > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> > > > > > > > +%YAML 1.2
+> > > > > > > > +---
+> > > > > > > > +$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.=
+yaml#
+> > > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > > > > > +
+> > > > > > > > +title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
+> > > > > > > =
+
+> > > > > > > Should this be s/RX0/RX/ ? Or do you expect different binding=
+s for RX1 ?
+> > > > > > =
+
+> > > > > > The driver currently only supports RX0, but I think you are rig=
+ht,
+> > > > > > it should say RX here. This binding could be extended for RX1.
+> > > > > > =
+
+> > > > > > > Looking at the PHY driver, it seems to handle all PHYs with a=
+ single
+> > > > > > > struct device. Should we thus use #phy-cells =3D <1> to selec=
+t the PHY ?
+> > > > > > =
+
+> > > > > > I am not following this. The driver handles just one PHY. Each =
+PHY
+> > > > > > should have its own node.
+> > > > > =
+
+> > > > > Looking at the registers, it seems that the different PHYs are
+> > > > > intertwined and we would could have trouble handling the differen=
+t PHYs
+> > > > > with different DT nodes and thus struct device instances.
+> > > > =
+
+> > > > I have to confess to not following _ALL_ of the threads, so may say
+> > > > something stupid, but I don't think the PHYs are intertwined so muc=
+h.
+> > > > =
+
+> > > > Where RX0 is controlled from the "General Register Files" alone
+> > > > [register dumping ground for soc designers], the TX1RX1-phy
+> > > > actually gets controlled from inside the dsi1 register area it seem=
+s.
+> > > > =
+
+> > > > So in my previous (still unsucessful) tests, I was rolling with som=
+ething like
+> > > > https://github.com/mmind/linux-rockchip/commit/e0d4b03976d2aab85a8c=
+1630be937ea003b5df88
+> > > > =
+
+> > > > With the actual "logic" picked from the vendor kernel, that just do=
+uble-
+> > > > maps the dsi1-registers in both dsi and dphy driver, which was stra=
+nge.
+> > > > =
+
+> > > > =
+
+> > > =
+
+> > > Describing each PHY in its own device node (as we currently do)
+> > > results in:
+> > > =
+
+> > >         mipi_dphy_tx1rx1: mipi-dphy-tx1rx1@ff968000 {
+> > >                 compatible =3D "rockchip,rk3399-mipi-dphy";
+> > >                 reg =3D <0x0 0xff968000 0x0 0x8000>;
+> > >                 rockchip,grf =3D <&grf>;
+> > >         };
+> > =
+
+> > 0xff968000 actually really is the dsi1 controller, so we'll already
+> > have a node for that area. That is the reason I went that way to make
+> > the rockchip-dsi optionally also behave as phy-provider.
+> > =
+
+> > So when it's used in combination with drm and a panel or so it will
+> > behave as dsi controller, but when requested via the phy-framework
+> > it will expose the dphy functionality.
+> > =
+
 > =
 
-> I think it should be possible to fix without forcing
-> SER_RS485_RX_DURING_TX (which might have surprising effects for
-> userspace). Actually I was convinced this problem was fixed in a
-> different way in the imx driver already since 76821e222c18 ("serial:
-> imx: ensure that RX irqs are off if RX is off").
+> Hm, and will this driver also support RX1?
+
+what is RX1 in your book? :-)
+
+According to the TRM the rk3399 has 3 DPHYs,
+tx0 - connected exclusively to dsi0
+      (this is handled internally by the dw-mipi-dsi driver with controls
+       in the dsi0 register space)
+rx0 - connected exclusively to isp0
+      (this is handled by the individual dphy driver from Helen's series)
+tx1rx1 - shared between dsi1 and isp1
+      (again inside the dsi1 register space)
+
+
 > =
 
-> The key idea is to disable the RX irq and dma request and only then
-> disable RX. This way it is not given that the RX FIFO is empty on
-> disable, but the characters are not read and so the exception doesn't
-> happen.
+> > =
+
+> > >         grf: syscon@ff770000 {
+> > >                 mipi_dphy_rx0: mipi-dphy-rx0 {
+> > >                         compatible =3D "rockchip,rk3399-mipi-dphy";
+> > >                 };
+> > >         };
+> > > =
+
+> > > Which is mildly ugly, as it uses two mechanism to describe
+> > > the GRF resource. In addition, the driver will then _infer_
+> > > which device node is RX0 and which is TX1RX1, from this.
+> > > =
+
+> > > Perhaps Laurent's proposal, describing each PHY explicitly,
+> > > would be cleaner?
+> > =
+
+> > so I really think we shouldn't merge these two things together,
+> > especially to not break the dsi1 controller part.
+> > =
+
 > =
 
-> I'll take a deeper look after my vacations in the new year, probably
-> some rx485 path was missed in the fix.
+> I don't think it would necesarily break the dsi1 controller part.
+> =
 
-I took a look now and found a race condition that might trigger this
-problem. The following can happen (in the non-DMA case):
+> You can declare both device nodes as sharing the address region,
+> and then the driver can request the I/O resource only when it needs to,
+> i.e. in the PHY .init hook.
+
+dsi1 is of course a dw-mipi-dsi one, which in turn shares a common bridge
+driver over multiple variants (non-rockchip), which expects its registers
+mapped during probe.
+
+I think it would not really work well if you need to make the whole world
+follow that idea ;-) .
 
 
-	imx_uart_int()
-	  usr1 =3D imx_uart_readl(sport, USR1);
-	  ...
-	  ucr1 =3D imx_uart_readl(sport, UCR1);
-	  ucr2 =3D imx_uart_readl(sport, UCR2);
-	  ...
-	  if ((ucr1 & UCR1_RRDYEN) =3D=3D 0)
-	    usr1 &=3D ~USR1_RRDY;
-	  if ((ucr2 & UCR2_ATEN) =3D=3D 0)
-	    usr1 &=3D ~USR1_AGTIM;
-	    						imx_uart_start_tx()
-							  imx_uart_stop_rx()
-							    ...
-							    ucr1 &=3D ~UCR1_RRDYEN;
-							    ucr2 &=3D ~(UCR2_ATEN | UCR2_RXEN)
-							    imx_uart_writel(sport, ucr1, UCR1);
-							    imx_uart_writel(sport, ucr2, UCR2);
+Hence my approach with exposing the phy interface from the dsi driver.
+If you look at the dts part, it also just looks like it should be ... as
+a regular phy:
+	https://github.com/mmind/linux-rockchip/blob/wip/tc358749/arch/arm64/boot/=
+dts/rockchip/rk3399.dtsi#L1764
 
-	  if (usr1 & (USR1_RRDY | USR1_AGTIM)) {
-	    imx_uart_rxint(irq, dev_id);
-	    ...
-	  }
+And on the driver side there is even some short circuit protection.
+When used as phy, it won't allow to be used as a component and
+vice versa.
 
-Which results in the left execution thread to read from the RX register
-while RXEN is off and so trigger the fault.
 
-Currently imx_uart_rxint() grabs the port lock (and imx_uart_start_tx()
-also holds it), and so the decision to call imx_uart_rxint() is done
-without holding the lock.
+> It's not super nice, but there's no real reason two devices
+> can't share an I/O memory resource.
 
-The fix is to do the check for UCR1_RRDYEN and UCR2_ATEN (and all the
-other similar checks) under the port lock.
+Counter argument, devicetree is not a means to handle Linux
+peculiarites - instead it should describe the hardware ...
+and the area there _is_ the dsi1 controller ;-)
 
-So assuming the problem is indeed what we are experiencing here, the
-workaround by Andre (i.e. run the UART user and the UART irq on the same
-cpu) is a good one.
+Heiko
 
-I will look into this again tomorrow when I'm well rested and create a
-patch.
 
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
