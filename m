@@ -2,67 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E980F13271B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 14:09:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2167413275E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 14:15:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7/UV1ai+goejijhGDEUOvxJcpOY7GshMDaZWRombKZo=; b=TCD7W1dwIs1AyyEbX+CDyOJdW
-	1+smRiRjpd+b8gx8UXwXhhJpHmofO0RftsOj8BDwUYpxy/iJS5fI7gbJfn+D+V1EwHvty/sn4Qvss
-	goatALEheYnddCWHb2jt+dQAoy0AjDZ8BQEH+JJ7aNERIurBywZFzK0WeKF2i/hPbatkj6FTVf2Xl
-	Ir+L1nlM5D9iEXA3cWjZVOhXnQ3uMUxmW/Pcw+kgyjhG+pE1RKrM4B5G+PpO77+RWR9Ziyf+Un2Nm
-	743XlFQVN5Nz9NMnVvEcnUHdmDBBF6QnmQRPJPA00HuAT3k5CPn/kQGrMm5t9hF5uHg3nXEzHrqFS
-	352CTSA6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+X6mzd2lvEsFglPihKmFUVqC7gwG4qla3EnOZtpO8X4=; b=a7+rYFPsdv5DyK
+	EEuNKRu3Zlcy//vFZtpzUr18fmPm3Sx4hqi+A9K/YD89DEAx31UJ0D3TyZ5VU+dfizd6j+OlpBgKb
+	GEYOIhrvBpUfnOXFgEiLJsFhOPBV33RWPPPu+eEvvQTPy2/8lVoy4Ntjb5xS82v5rTjV8bDha2+/b
+	UpKUVAM8h/2/kV1/T8BQrITTejBtBo1kroweyJobiJLR35KBMdPWQ6A/js5xsv9fyWJjhmaaU3HRf
+	QXqpTuLoop1SUtRvciMCKH2i6t36HVvN2uimepA7rO8Mu5Mxpt55TwTjyFVCBP1/FQa5iX5HQVH9o
+	4vdvojFkP5l6yZIBpU1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioobp-0002uC-Oa; Tue, 07 Jan 2020 13:09:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioobj-0002ta-9l
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 13:09:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F226631B;
- Tue,  7 Jan 2020 05:09:13 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 571BF3F703;
- Tue,  7 Jan 2020 05:09:13 -0800 (PST)
-Date: Tue, 7 Jan 2020 13:09:11 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Message-ID: <20200107130911.GD4877@sirena.org.uk>
-References: <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
- <20191212161019.GF4310@sirena.org.uk>
- <20191212162152.5uu3feacduetysq7@pengutronix.de>
- <20191212165124.GJ4310@sirena.org.uk>
- <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
- <20191216114454.GB4161@sirena.org.uk>
- <20191217073533.GC31182@pengutronix.de>
- <20191217125832.GF4755@sirena.org.uk>
- <20200107083654.atgbjhrnhyax2gqq@pengutronix.de>
+	id 1iooho-00057Y-Si; Tue, 07 Jan 2020 13:15:32 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioohf-00057B-T1
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 13:15:25 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 007DDfmE027011; Tue, 7 Jan 2020 14:15:18 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=li6ezDvrHh0BrI2TE1aJR9vEsp/p3KUXcBDfIP/q9gY=;
+ b=XFUvFkJPgoC8agOMstZgvClqhGtvbMov/+SHsowk73GSMOfvpCnaeJBFHBDG58koE1PF
+ v3i7nPxHlaL4sf73exmzgZPRNE6x/Aj3EGatmOeyIJKuwYEj2XWZYpWDIip/KmQFSp5x
+ EUUVIbImc0CvRd0vA58HXZLuA8I7K3J/redcYYIIpDHlbYTUfTMdTmkHptjEr9poXl4r
+ nXjti9IOx7VgQRHNej02huOVXeiBSEbTwcen7ui0kIyn7ozQVz4+KEa1kV4tQ+U+oSOA
+ 1H9SG4sMttH+ioXFs99ykwN6KIB0+FI2eXkK4DP6QOsvSdOdOiK7Ijy+bgbL1OTV5qSu iw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2xakkapf45-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 07 Jan 2020 14:15:18 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 49005100038;
+ Tue,  7 Jan 2020 14:15:14 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag4node1.st.com [10.75.127.10])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EE60B2B4534;
+ Tue,  7 Jan 2020 14:15:13 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG4NODE1.st.com
+ (10.75.127.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 Jan
+ 2020 14:15:13 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Tue, 7 Jan 2020 14:15:13 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Sriram Dash <sriram.dash@samsung.com>,
+ =?utf-8?B?J0hlaWtvIFN0w7xibmVyJw==?= <heiko@sntech.de>, 'Florian Fainelli'
+ <f.fainelli@gmail.com>, 'David Miller' <davem@davemloft.net>
+Subject: Re: [Linux-stm32] [PATCH] net: stmmac: platform: Fix MDIO init for
+ platforms without PHY
+Thread-Topic: [Linux-stm32] [PATCH] net: stmmac: platform: Fix MDIO init for
+ platforms without PHY
+Thread-Index: AQHVxRwlt8RIEIlxKkCYUiQBp2D2SqffHgAA
+Date: Tue, 7 Jan 2020 13:15:13 +0000
+Message-ID: <6c657b5e-b4fb-551c-080a-18f04ac2dba3@st.com>
+References: <CGME20191219102407epcas5p103b26e6fb191f7135d870a3449115c89@epcas5p1.samsung.com>
+ <1700835.tBzmY8zkgn@diego> <c25fbdb3-0e60-6e54-d58a-b05e8b805a58@gmail.com>
+ <1599392.7x4dJXGyiB@diego> <011901d5c51c$1f93be30$5ebb3a90$@samsung.com>
+In-Reply-To: <011901d5c51c$1f93be30$5ebb3a90$@samsung.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.49]
+Content-ID: <B825CB237B931948921570B6797794EC@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20200107083654.atgbjhrnhyax2gqq@pengutronix.de>
-X-Cookie: Will Rogers never met you.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2020-01-07_03:2020-01-06,2020-01-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_050915_426119_ED3FD644 
-X-CRM114-Status: GOOD (  14.36  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200107_051524_229462_CE0A7278 
+X-CRM114-Status: GOOD (  30.59  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,86 +111,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+Cc: "Jose.Abreu@synopsys.com" <Jose.Abreu@synopsys.com>,
+ "jayati.sahu@samsung.com" <jayati.sahu@samsung.com>,
+ "rcsekar@samsung.com" <rcsekar@samsung.com>,
+ "pankaj.dubey@samsung.com" <pankaj.dubey@samsung.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "p.rajanbabu@samsung.com" <p.rajanbabu@samsung.com>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Peppe CAVALLARO <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============2071169341112347542=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============2071169341112347542==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="mSxgbZZZvrAyzONB"
-Content-Disposition: inline
-
-
---mSxgbZZZvrAyzONB
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Jan 07, 2020 at 09:36:54AM +0100, Marco Felsch wrote:
-> On 19-12-17 12:58, Mark Brown wrote:
-
-> > This doesn't say anything about how the GPIO input is expected to be
-> > controlled, for voltage setting any runtime control would need to be
-> > done by the driver and it sounds like that's all that can be controlled.
-> > The way this reads I'd expect one use of this to be for fast voltage
-> > setting for example (you could even combine that with suspend sequencing
-> > using the internal sequencer if you mux back to the sequencer during
-> > suspend).
-
-> The input signal is routed trough the da9062 gpio block to the
-> regualtors. You can't set any voltage value using a gpio instead you
-> decide which voltage setting is applied. The voltage values for
-> runtime/suspend comes from the dt-data. No it's not just a fast
-> switching option imagine the system suspend case where the cpu and soc
-> voltage can be reduced to a very low value. Older soc's like the imx6
-> signaling this state by a hard wired gpio line because the soc and
-> cpu cores don't work properly on such low voltage values. This is
-> my use case and I can't use the sequencer.
-
-My point is that I can't tell any of this from the description.
-
---mSxgbZZZvrAyzONB
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4UgvYACgkQJNaLcl1U
-h9AmOwf/dQI3hnspOymA8BdYOaCtzXhoiVJeMde8RKleUyfpqEoLvele7bnhJvxP
-66E8RM0aDJk6N+Jc5KzXO1mb1JWFhiGQM92q3NXPczpOyvgl/zl0UwKMnqHnj4nd
-/vDVfa60zDKTbUCS12us1kwgJNtHVRiFb8DX+9W3zSONqE5QIeNjmMMoL4EaPwJb
-clCtLm7jBckZinNOefKS6M2eElpRFFhtRON7EsaDqObH2xTP9aSNb9PEYCBy3nHq
-Cr6gYbC0cwgXL29ayf/aRtx3o9/DTC4LIAfAPZvGjDMN5vgYm3bznZKWmVzgR2Pd
-1fQ0J3Dh032Q/8ZTkaceklgsT1uGJg==
-=uLVS
------END PGP SIGNATURE-----
-
---mSxgbZZZvrAyzONB--
-
-
---===============2071169341112347542==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2071169341112347542==--
-
+SGkgQWxsDQoNCk9uIDEvNy8yMCA2OjM0IEFNLCBTcmlyYW0gRGFzaCB3cm90ZToNCj4+IEZyb206
+IEhlaWtvIFN0w7xibmVyIDxoZWlrb0BzbnRlY2guZGU+DQo+PiBTdWJqZWN0OiBSZTogW1BBVENI
+XSBuZXQ6IHN0bW1hYzogcGxhdGZvcm06IEZpeCBNRElPIGluaXQgZm9yIHBsYXRmb3Jtcw0KPiB3
+aXRob3V0DQo+PiBQSFkNCj4+DQo+PiBIaSBGbG9yaWFuLA0KPj4NCj4+IEFtIFNvbm50YWcsIDUu
+IEphbnVhciAyMDIwLCAyMzoyMjowMCBDRVQgc2NocmllYiBGbG9yaWFuIEZhaW5lbGxpOg0KPj4+
+IE9uIDEvNS8yMDIwIDEyOjQzIFBNLCBIZWlrbyBTdMO8Ym5lciB3cm90ZToNCj4+Pj4gQW0gU2Ft
+c3RhZywgMjEuIERlemVtYmVyIDIwMTksIDA2OjI5OjE4IENFVCBzY2hyaWViIERhdmlkIE1pbGxl
+cjoNCj4+Pj4+IEZyb206IFBhZG1hbmFiaGFuIFJhamFuYmFidSA8cC5yYWphbmJhYnVAc2Ftc3Vu
+Zy5jb20+DQo+Pj4+PiBEYXRlOiBUaHUsIDE5IERlYyAyMDE5IDE1OjQ3OjAxICswNTMwDQo+Pj4+
+Pg0KPj4+Pj4+IFRoZSBjdXJyZW50IGltcGxlbWVudGF0aW9uIG9mICJzdG1tYWNfZHRfcGh5IiBm
+dW5jdGlvbiBpbml0aWFsaXplcw0KPj4+Pj4+IHRoZSBNRElPIHBsYXRmb3JtIGJ1cyBkYXRhLCBl
+dmVuIGluIHRoZSBhYnNlbmNlIG9mIFBIWS4gVGhpcyBmaXgNCj4+Pj4+PiB3aWxsIHNraXAgTURJ
+TyBpbml0aWFsaXphdGlvbiBpZiB0aGVyZSBpcyBubyBQSFkgcHJlc2VudC4NCj4+Pj4+Pg0KPj4+
+Pj4+IEZpeGVzOiA3NDM3MTI3ICgibmV0OiBzdG1tYWM6IENvbnZlcnQgdG8gcGh5bGluayBhbmQg
+cmVtb3ZlIHBoeWxpYg0KPj4+Pj4+IGxvZ2ljIikNCj4+Pj4+PiBBY2tlZC1ieTogSmF5YXRpIFNh
+aHUgPGpheWF0aS5zYWh1QHNhbXN1bmcuY29tPg0KPj4+Pj4+IFNpZ25lZC1vZmYtYnk6IFNyaXJh
+bSBEYXNoIDxzcmlyYW0uZGFzaEBzYW1zdW5nLmNvbT4NCj4+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBQ
+YWRtYW5hYmhhbiBSYWphbmJhYnUgPHAucmFqYW5iYWJ1QHNhbXN1bmcuY29tPg0KPj4+Pj4gQXBw
+bGllZCBhbmQgcXVldWVkIHVwIGZvciAtc3RhYmxlLCB0aGFua3MuDQo+Pj4+IHdpdGggdGhpcyBw
+YXRjaCBhcHBsaWVkIEkgbm93IHJ1biBpbnRvIGlzc3VlcyBvbiBtdWx0aXBsZSByb2NrY2hpcA0K
+Pj4+PiBwbGF0Zm9ybXMgdXNpbmcgYSBnbWFjIGludGVyZmFjZS4NCj4+PiBEbyB5b3UgaGF2ZSBh
+IGxpc3Qgb2YgRFRTIGZpbGVzIHRoYXQgYXJlIGFmZmVjdGVkIGJ5IGFueSBjaGFuY2U/IEZvcg0K
+Pj4+IHRoZSAzMi1iaXQgcGxhdGZvcm1zIHRoYXQgSSBsb29rZWQgaXQsIGl0IHNlZW1zIGxpa2U6
+DQo+Pj4NCj4gSGkgRmxvcmlhbiwgDQo+IFdlIGhhdmUgbGlzdGVkIGRvd24gdGhlIHBsYXRmb3Jt
+cyB3aGljaCB3aWxsIGJyZWFrIGZvciBhcyB0aGV5IGRvbid0IGhhdmUNCj4gdGhlIG1kaW8gLyBz
+bnBzLGR3bWFjLW1kaW8gbm9kZS4NCj4gQXJtMzIgc3BlYXIqICwgQXJtMzIgb3g4MjAqLCBhcm0z
+MiBydjExMDgsIGFyYyBhYmlsaXMqICwgYXJjIGF4czEweCosIGFyYw0KPiB2ZGtfYXhzMTB4Kiwg
+bWlwcyBwaXN0YWNoaW8sIGFybTY0IHJvY2tjaGlwL3B4MzAqIFRoZXJlIG1pZ2h0IGJlIG1vcmUN
+Cj4gcGxhdGZvcm1zLg0KDQpTVGlINDEwLUIyMjYwIGlzIGFmZmVjdGVkIGJ5IHRoaXMgcGF0Y2gs
+IGkgcHJvcG9zZWQgYSBmaXggZm9yIHRoaXMgYm9hcmQgOg0KDQpodHRwczovL3BhdGNod29yay5r
+ZXJuZWwub3JnL3Byb2plY3QvbGludXgtYXJtLWtlcm5lbC9saXN0Lz9zZXJpZXM9MjI0NjM5DQoN
+CkRhdmlkLCB3aWxsIHlvdSBhcHBsaWVkIHRoaXMgRFQgc2VyaWVzIGluIHlvdXIgdHJlZSA/DQoN
+ClRoYW5rcw0KDQpQYXRyaWNlDQoNCg0KPg0KPj4+IGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzIyOC1l
+dmIuZHRzIGlzIE9LIGJlY2F1c2UgaXQgaGFzIGEgTURJTyBidXMgbm9kZQ0KPj4+IGFyY2gvYXJt
+L2Jvb3QvZHRzL3JrMzIyOS14bXM2LmR0cyBpcyBhbHNvIE9LDQo+Pj4NCj4+PiBhcmNoL2FybS9i
+b290L2R0cy9yazMyMjktZXZiLmR0cyBpcyBwcm9iYWJseSBicm9rZW4sIHRoZXJlIGlzIG5vDQo+
+Pj4gcGh5LWhhbmRsZSBwcm9wZXJ0eSBvciBNRElPIGJ1cyBub2RlLCBzbyBpdCBtdXN0IGJlIHJl
+bHlpbmcgb24NCj4+PiBhdXRvLXNjYW5uaW5nIG9mIHRoZSBidXMgc29tZWhvdyB0aGF0IHRoaXMg
+cGF0Y2ggYnJva2UuDQo+Pj4NCj4+PiBBbmQgbGlrZXdpc2UgZm9yIG1vc3QgNjQtYml0IHBsYXRm
+b3JtcyBleGNlcHQgYTEgYW5kIG5hbm9waTQuDQo+PiBJIHByaW1hcmlseSBub3RpY2VkIHRoYXQg
+b24gdGhlIHB4MzAtZXZiLmR0cyBhbmQgdGhlIGludGVybmFsIGJvYXJkIEknbQ0KPiB3b3JraW5n
+DQo+PiBvbiByaWdodCBub3cuIEJvdGggZG9uJ3QgaGF2ZSB0aGF0IG1kaW8gYnVzIG5vZGUgcmln
+aHQgbm93Lg0KPj4NCj4+DQo+Pj4+IFdoZW4gcHJvYmluZyB0aGUgZHJpdmVyIGFuZCB0cnlpbmcg
+dG8gZXN0YWJsaXNoIGEgY29ubmVjdGlvbiBmb3IgYQ0KPj4+PiBuZnNyb290IGl0IGFsd2F5cyBy
+dW5zIGludG8gYSBudWxsIHBvaW50ZXIgaW4gbWRpb2J1c19nZXRfcGh5KCk6DQo+Pj4+DQo+Pj4+
+IFsgICAyNi44Nzg4MzldIHJrX2dtYWMtZHdtYWMgZmYzNjAwMDAuZXRoZXJuZXQ6IElSUSBldGhf
+d2FrZV9pcnEgbm90DQo+PiBmb3VuZA0KPj4+PiBbICAgMjYuODg2MzIyXSBya19nbWFjLWR3bWFj
+IGZmMzYwMDAwLmV0aGVybmV0OiBJUlEgZXRoX2xwaSBub3QgZm91bmQNCj4+Pj4gWyAgIDI2Ljg5
+NDUwNV0gcmtfZ21hYy1kd21hYyBmZjM2MDAwMC5ldGhlcm5ldDogUFRQIHVzZXMgbWFpbiBjbG9j
+aw0KPj4+PiBbICAgMjYuOTA4MjA5XSBya19nbWFjLWR3bWFjIGZmMzYwMDAwLmV0aGVybmV0OiBj
+bG9jayBpbnB1dCBvciBvdXRwdXQ/DQo+PiAob3V0cHV0KS4NCj4gLi4uIHNuaXAgLi4uDQo+DQo+
+Pj4+DQo+Pj4+IFRoaXMgaXMgdG9ydmFsZHMgZ2l0IGhlYWQgYW5kIGl0IHdhcyBzdGlsbCB3b3Jr
+aW5nIGF0IC1yYzEgYW5kIGFsbA0KPj4+PiBrZXJuZWxzIGJlZm9yZSB0aGF0LiBXaGVuIEkganVz
+dCByZXZlcnQgdGhpcyBjb21taXQsIHRoaW5ncyBhbHNvDQo+Pj4+IHN0YXJ0IHdvcmtpbmcgYWdh
+aW4sIHNvIEkgZ3Vlc3Mgc29tZXRoaW5nIG11c3QgYmUgd3JvbmcgaGVyZT8NCj4+PiBZZXMsIHRo
+aXMgd2FzIGFsc28gaWRlbnRpZmllZCB0byBiZSBwcm9ibGVtYXRpYyBieSB0aGUga2VybmVsY2kg
+Ym9vdA0KPj4+IGZhcm1zIG9uIGFub3RoZXIgcGxhdGZvcm0sIHNlZSBbMV0uDQo+Pj4NCj4+PiBb
+MV06DQo+Pj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtYXJtLWtlcm5lbC81ZTAzMTRk
+YS4xYzY5ZmI4MS5hN2Q2My4yOWMxQA0KPj4+IG14Lmdvb2dsZS5jb20vDQo+Pj4NCj4+PiBEbyB5
+b3UgbWluZCB0cnlpbmcgdGhpcyBwYXRjaCBhbmQgbGV0dGluZyBtZSBrbm93IGlmIGl0IHdvcmtz
+IGZvciB5b3UuDQo+Pj4gU3JpcmFtLCBwbGVhc2UgYWxzbyB0cnkgaXQgb24geW91ciBwbGF0Zm9y
+bXMgYW5kIGxldCBtZSBrbm93IGlmIHNvbHZlcw0KPj4+IHRoZSBwcm9ibGVtIHlvdSB3ZXJlIGFm
+dGVyLiBUaGFua3MNCj4+IFdvcmtzIG9uIGJvdGggYm9hcmRzIEkgaGFkIHRoYXQgd2VyZSBhZmZl
+Y3RlZCwgc28NCj4+IFRlc3RlZC1ieTogSGVpa28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4N
+Cj4gTmFja2VkLWJ5IDogU3JpcmFtIERhc2ggPFNyaXJhbS5kYXNoQHNhbXN1bmcuY29tPg0KPg0K
+Pj4NCj4+IFRoYW5rcw0KPj4gSGVpa28NCj4+DQo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0
+L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19wbGF0Zm9ybS5jDQo+Pj4gYi9kcml2ZXJz
+L25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfcGxhdGZvcm0uYw0KPj4+IGluZGV4
+IGNjOGQ3ZTdiZjlhYy4uZTE5MmI4ZTA4MDllIDEwMDY0NA0KPj4+IC0tLSBhL2RyaXZlcnMvbmV0
+L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19wbGF0Zm9ybS5jDQo+Pj4gKysrIGIvZHJp
+dmVycy9uZXQvZXRoZXJuZXQvc3RtaWNyby9zdG1tYWMvc3RtbWFjX3BsYXRmb3JtLmMNCj4+PiBA
+QCAtMzIwLDcgKzMyMCw3IEBAIHN0YXRpYyBpbnQgc3RtbWFjX210bF9zZXR1cChzdHJ1Y3QgcGxh
+dGZvcm1fZGV2aWNlDQo+Pj4gKnBkZXYsICBzdGF0aWMgaW50IHN0bW1hY19kdF9waHkoc3RydWN0
+IHBsYXRfc3RtbWFjZW5ldF9kYXRhICpwbGF0LA0KPj4+ICAgICAgICAgICAgICAgICAgICAgICAg
+ICBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLCBzdHJ1Y3QgZGV2aWNlICpkZXYpDQo+Pj4gew0KPj4+
+IC0gICAgICAgYm9vbCBtZGlvID0gZmFsc2U7DQo+Pj4gKyAgICAgICBib29sIG1kaW8gPSB0cnVl
+Ow0KPj4+ICAgICAgICAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgbmVlZF9tZGlv
+X2lkc1tdID0gew0KPj4+ICAgICAgICAgICAgICAgICB7IC5jb21wYXRpYmxlID0gInNucHMsZHdj
+LXFvcy1ldGhlcm5ldC00LjEwIiB9LA0KPj4+ICAgICAgICAgICAgICAgICB7fSwNCj4+PiBAQCAt
+MzQxLDggKzM0MSw5IEBAIHN0YXRpYyBpbnQgc3RtbWFjX2R0X3BoeShzdHJ1Y3QNCj4+PiBwbGF0
+X3N0bW1hY2VuZXRfZGF0YSAqcGxhdCwNCj4+PiAgICAgICAgIH0NCj4+Pg0KPj4+ICAgICAgICAg
+aWYgKHBsYXQtPm1kaW9fbm9kZSkgew0KPiBGb3IgdGhlIHBsYXRmb3JtcyB3aGljaCBuZWl0aGVy
+IGhhdmUgbWRpbyBub3Igc25wcyxkd21hYy1tZGlvIHByb3BlcnR5IGluDQo+IGR0LCB0aGV5IHdp
+bGwgbm90IGVudGVyIHRoZSBibG9jay4NCj4gcGxhdC0+bWRpb19ub2RlIHdpbGwgYWx3YXlzIGJl
+IGZhbHNlIGZvciB0aGVtLiBXaGljaCwgZXNzZW50aWFsbHksIHByZXNlcnZlcw0KPiB0aGUgbWRp
+byB2YXJpYWJsZSBCb29sZWFuIHZhbHVlIGRlZmluZWQgYXQgdGhlIHN0YXJ0IG9mIHRoZSBmdW5j
+dGlvbi4NCj4NCj4+PiAtICAgICAgICAgICAgICAgZGV2X2RiZyhkZXYsICJGb3VuZCBNRElPIHN1
+Ym5vZGVcbiIpOw0KPj4+IC0gICAgICAgICAgICAgICBtZGlvID0gdHJ1ZTsNCj4+PiArICAgICAg
+ICAgICAgICAgbWRpbyA9IG9mX2RldmljZV9pc19hdmFpbGFibGUocGxhdC0+bWRpb19ub2RlKTsN
+Cj4+PiArICAgICAgICAgICAgICAgZGV2X2RiZyhkZXYsICJGb3VuZCBNRElPIHN1Ym5vZGUsIHN0
+YXR1czogJXNhYmxlZFxuIiwNCj4+PiArICAgICAgICAgICAgICAgICAgICAgICBtZGlvID8gImVu
+IiA6ICJkaXMiKTsNCj4+PiAgICAgICAgIH0NCj4+Pg0KPj4+ICAgICAgICAgaWYgKG1kaW8pIHsN
+Cj4+Pg0KPj4NCj4+DQo+IFRoZXJlIGlzIGEgcHJvcG9zYWwgZm9yIHRoaXMgcHJvYmxlbSBzb2x1
+dGlvbi4gWW91IGNhbiByZWZlciBpdCBhdCA6DQo+IGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDIw
+LzEvNy8xNA0KPg0KPg0KPg0KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXw0KPiBMaW51eC1zdG0zMiBtYWlsaW5nIGxpc3QNCj4gTGludXgtc3RtMzJAc3Qt
+bWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbQ0KPiBodHRwczovL3N0LW1kLW1haWxtYW4uc3Rvcm1y
+ZXBseS5jb20vbWFpbG1hbi9saXN0aW5mby9saW51eC1zdG0zMgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
