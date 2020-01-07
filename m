@@ -2,52 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD83E132EE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:59:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB11132EF7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:05:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ky48q7L+1WKgfzX6DyMgu0HWUDrxK8gUhf+jnwc6iBo=; b=S9yc/XoKez6U+/oNS2AeNtUQis
-	6x+9Av/W+qcqZNP0Zp4CYu1yXObLUemp50ld7wJ7JP3qU2HqJQDyWTmOdIUpB75VEUfHLfXzwGmiA
-	KssJkYAXncKUQHkE77UAHiG/Y0+XeBtxXUOsOHpXtfnYdB9W8gXMkm36mREsLaVnwjdax6UY9XqS/
-	+ZN3Kum9TAIO2vYKLjrjjaCkYXwgQczHQrHJyHNwV8f9z2YseM6+KrnNlYqeOyfmQEadhcbQkegUl
-	YoIa4w15r4nQ9xr6OaGwLfrgG8B9yPvyBYAzQ48usgIUSPo+MFLptQUeqTxRT0folP84eOSS2zRmW
-	lsdx+3gA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ObM/rzHQL5cN15TkC8qJa17+D7F2vPX573XGxTveD9w=; b=s/RS4sfehj3SHS
+	jCw4varNurh9T5c6rOO7cKL5sdGl2KqBZvqtkp3udeik7pnseLWnWB6YDn69RVZ+gd/kmX8pGKGXT
+	vaQ+g5vfa3v1uCclhMC91zpVz5MzXczZL0t9kNsf/z8vc8o5DxBI9ykBMJp1ys2Zyn9grNkXrkHgk
+	JuQVC1o5g4O39o1HrYsydS3IJBeSlFMq2L5OxyQSnHwFZ1TiZp9jHhOqtbl+QIDJ52CRqqbB/khRj
+	b36TwxqkzCqX1oumnfbjWsOr/j96CGHj1qXckPfqwkYLYPj7eOW6oaVz7Am2EH1FseinOKSg2HQ+a
+	pvnLf1tDNKqjCO8TpXyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iou4t-000500-TE; Tue, 07 Jan 2020 18:59:43 +0000
-Received: from lists.gateworks.com ([108.161.130.12])
+	id 1iouAP-00008l-Vs; Tue, 07 Jan 2020 19:05:26 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iou3V-0003vG-K8
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:58:19 +0000
-Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
- helo=rjones.pdc.gateworks.com)
- by lists.gateworks.com with esmtp (Exim 4.82)
- (envelope-from <rjones@gateworks.com>)
- id 1iou3J-0006Mw-UN; Tue, 07 Jan 2020 18:58:06 +0000
-From: Robert Jones <rjones@gateworks.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH v6 5/5] ARM: dts: imx: Add GW5912 board support
-Date: Tue,  7 Jan 2020 10:57:53 -0800
-Message-Id: <20200107185753.28308-6-rjones@gateworks.com>
-X-Mailer: git-send-email 2.9.2
-In-Reply-To: <20200107185753.28308-1-rjones@gateworks.com>
-References: <20200107185753.28308-1-rjones@gateworks.com>
+ id 1iouAF-00007W-Mx
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:05:20 +0000
+Received: by mail-ed1-x542.google.com with SMTP id dc19so469293edb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 11:05:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=vZHbnxQhbkfCNbXjBH5OjU/5z31AX+7RUONEgUj90PQ=;
+ b=rYB3jpo+JZNto1c9vxGzmcflyUlDW1MHAwv8d4Ibo+e4PjUqU4XXbdWKkvu5wj4Yd6
+ 6+CCJd8SHTbA5rsjePZI+nB2lLPcR+LAz48e4EeEg9wlBnEYO+tDfOPPjc3OsOy3mnAU
+ SEnDCLccOZu6Fz4DJlgIqjB6XVJGctlaTo7yQrpdRGLSp285Y41FH1XwSwgcWI/CFXSu
+ IpAodx6rzkOFLwrdcp5sPk/N9ocC0XE6oYV+aupklQhWaANyeP3KGb50XaK5rt+9ZEER
+ MC2L3QZ32WbSD0FvN2cig06oe7mFdWDFeEb/08Dc5uHct88IU24h9pa9RJjSrXKnhSgc
+ Q/MA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=vZHbnxQhbkfCNbXjBH5OjU/5z31AX+7RUONEgUj90PQ=;
+ b=K8oiNqcK+QAFZbyZ435lHhuJjh61F8zbObjGMADcZeFuymn/2RXP4HREKACcjIzkmZ
+ xCSaK2JqY9/6qjVKCN6E4jgAI3NtzZnDAEHEoLBVFB6lXT1boX9xRK0g0xALfwavkPVZ
+ PG8qHlrvf7yoolMLjc2/QSBEAYwKdflm5Pm7mzbbxS21+IFJy5dC8mqFw3VFmR+9rq8o
+ 1aiEKfSBiYx6lQV+sfPcP2tLnIt/sxncoG89ksqKacrKEF83oEt9EWpn2rNbj2pkBxsn
+ EplquwD32FLOMvaMgQ7i5iwoUFjv5Gml9CESBS+4TJY1rZwGYOWJvnk7kp8v/30DpO01
+ PrJg==
+X-Gm-Message-State: APjAAAVqQJdHESQumbQZqmwaL+Ccg2a+ce5SwxxYjf1MGgkCFec3Hhje
+ KQgy+qdDQaOyN9PRlpXDeAA=
+X-Google-Smtp-Source: APXvYqxpdioRq8v4DUGMsag8nw7GAoYV3iaKDW52kELylvTw3skO/OENIN/+iEMG2PeziY5Pn7UaFw==
+X-Received: by 2002:a17:906:5210:: with SMTP id
+ g16mr874594ejm.305.1578423914031; 
+ Tue, 07 Jan 2020 11:05:14 -0800 (PST)
+Received: from [10.67.50.41] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id y21sm19080edu.70.2020.01.07.11.05.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 07 Jan 2020 11:05:13 -0800 (PST)
+Subject: Re: [PATCH net] net: stmmac: Fixed link does not need MDIO Bus
+To: Jose Abreu <Jose.Abreu@synopsys.com>, netdev@vger.kernel.org
+References: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
+ xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
+ X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
+ AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
+ ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
+ SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
+ nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
+ qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz80nRmxvcmlhbiBG
+ YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+wmYEExECACYCGyMGCwkIBwMCBBUCCAME
+ FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
+ 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSDOwU0EVxvH8AEQAOqv6agYuT4x3DgFIJNv9i0e
+ S443rCudGwmg+CbjXGA4RUe1bNdPHYgbbIaN8PFkXfb4jqg64SyU66FXJJJO+DmPK/t7dRNA
+ 3eMB1h0GbAHlLzsAzD0DKk1ARbjIusnc02aRQNsAUfceqH5fAMfs2hgXBa0ZUJ4bLly5zNbr
+ r0t/fqZsyI2rGQT9h1D5OYn4oF3KXpSpo+orJD93PEDeseho1EpmMfsVH7PxjVUlNVzmZ+tc
+ IDw24CDSXf0xxnaojoicQi7kzKpUrJodfhNXUnX2JAm/d0f9GR7zClpQMezJ2hYAX7BvBajb
+ Wbtzwi34s8lWGI121VjtQNt64mSqsK0iQAE6OYk0uuQbmMaxbBTT63+04rTPBO+gRAWZNDmQ
+ b2cTLjrOmdaiPGClSlKx1RhatzW7j1gnUbpfUl91Xzrp6/Rr9BgAZydBE/iu57KWsdMaqu84
+ JzO9UBGomh9eyBWBkrBt+Fe1qN78kM7JO6i3/QI56NA4SflV+N4PPgI8TjDVaxgrfUTV0gVa
+ cr9gDE5VgnSeSiOleChM1jOByZu0JTShOkT6AcSVW0kCz3fUrd4e5sS3J3uJezSvXjYDZ53k
+ +0GS/Hy//7PSvDbNVretLkDWL24Sgxu/v8i3JiYIxe+F5Br8QpkwNa1tm7FK4jOd95xvYADl
+ BUI1EZMCPI7zABEBAAHCwagEGBECAAkFAlcbx/ACGwICKQkQYVeZFbVjdg7BXSAEGQECAAYF
+ Alcbx/AACgkQh9CWnEQHBwSJBw//Z5n6IO19mVzMy/ZLU/vu8flv0Aa0kwk5qvDyvuvfiDTd
+ WQzq2PLs+obX0y1ffntluhvP+8yLzg7h5O6/skOfOV26ZYD9FeV3PIgR3QYF26p2Ocwa3B/k
+ P6ENkk2pRL2hh6jaA1Bsi0P34iqC2UzzLq+exctXPa07ioknTIJ09BT31lQ36Udg7NIKalnj
+ 5UbkRjqApZ+Rp0RAP9jFtq1n/gjvZGyEfuuo/G+EVCaiCt3Vp/cWxDYf2qsX6JxkwmUNswuL
+ C3duQ0AOMNYrT6Pn+Vf0kMboZ5UJEzgnSe2/5m8v6TUc9ZbC5I517niyC4+4DY8E2m2V2LS9
+ es9uKpA0yNcd4PfEf8bp29/30MEfBWOf80b1yaubrP5y7yLzplcGRZMF3PgBfi0iGo6kM/V2
+ 13iD/wQ45QTV0WTXaHVbklOdRDXDHIpT69hFJ6hAKnnM7AhqZ70Qi31UHkma9i/TeLLzYYXz
+ zhLHGIYaR04dFT8sSKTwTSqvm8rmDzMpN54/NeDSoSJitDuIE8givW/oGQFb0HGAF70qLgp0
+ 2XiUazRyRU4E4LuhNHGsUxoHOc80B3l+u3jM6xqJht2ZyMZndbAG4LyVA2g9hq2JbpX8BlsF
+ skzW1kbzIoIVXT5EhelxYEGqLFsZFdDhCy8tjePOWK069lKuuFSssaZ3C4edHtkZ8gCfWWtA
+ 8dMsqeOIg9Trx7ZBCDOZGNAAnjYQmSb2eYOAti3PX3Ex7vI8ZhJCzsNNBEjPuBIQEAC/6NPW
+ 6EfQ91ZNU7e/oKWK91kOoYGFTjfdOatp3RKANidHUMSTUcN7J2mxww80AQHKjr3Yu2InXwVX
+ SotMMR4UrkQX7jqabqXV5G+88bj0Lkr3gi6qmVkUPgnNkIBe0gaoM523ujYKLreal2OQ3GoJ
+ PS6hTRoSUM1BhwLCLIWqdX9AdT6FMlDXhCJ1ffA/F3f3nTN5oTvZ0aVF0SvQb7eIhGVFxrlb
+ WS0+dpyulr9hGdU4kzoqmZX9T/r8WCwcfXipmmz3Zt8o2pYWPMq9Utby9IEgPwultaP06MHY
+ nhda1jfzGB5ZKco/XEaXNvNYADtAD91dRtNGMwRHWMotIGiWwhEJ6vFc9bw1xcR88oYBs+7p
+ gbFSpmMGYAPA66wdDKGj9+cLhkd0SXGht9AJyaRA5AWB85yNmqcXXLkzzh2chIpSEawRsw8B
+ rQIZXc5QaAcBN2dzGN9UzqQArtWaTTjMrGesYhN+aVpMHNCmJuISQORhX5lkjeg54oplt6Zn
+ QyIsOCH3MfG95ha0TgWwyFtdxOdY/UY2zv5wGivZ3WeS0TtQf/BcGre2y85rAohFziWOzTaS
+ BKZKDaBFHwnGcJi61Pnjkz82hena8OmsnsBIucsz4N0wE+hVd6AbDYN8ZcFNIDyt7+oGD1+c
+ PfqLz2df6qjXzq27BBUboklbGUObNwADBQ//V45Z51Q4fRl/6/+oY5q+FPbRLDPlUF2lV6mb
+ hymkpqIzi1Aj/2FUKOyImGjbLAkuBQj3uMqy+BSSXyQLG3sg8pDDe8AJwXDpG2fQTyTzQm6l
+ OnaMCzosvALk2EOPJryMkOCI52+hk67cSFA0HjgTbkAv4Mssd52y/5VZR28a+LW+mJIZDurI
+ Y14UIe50G99xYxjuD1lNdTa/Yv6qFfEAqNdjEBKNuOEUQOlTLndOsvxOOPa1mRUk8Bqm9BUt
+ LHk3GDb8bfDwdos1/h2QPEi+eI+O/bm8YX7qE7uZ13bRWBY+S4+cd+Cyj8ezKYAJo9B+0g4a
+ RVhdhc3AtW44lvZo1h2iml9twMLfewKkGV3oG35CcF9mOd7n6vDad3teeNpYd/5qYhkopQrG
+ k2oRBqxyvpSLrJepsyaIpfrt5NNaH7yTCtGXcxlGf2jzGdei6H4xQPjDcVq2Ra5GJohnb/ix
+ uOc0pWciL80ohtpSspLlWoPiIowiKJu/D/Y0bQdatUOZcGadkywCZc/dg5hcAYNYchc8AwA4
+ 2dp6w8SlIsm1yIGafWlNnfvqbRBglSTnxFuKqVggiz2zk+1wa/oP+B96lm7N4/3Aw6uy7lWC
+ HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
+ TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <5d4a30a5-7af5-7147-11a9-bb5ca3564baa@gmail.com>
+Date: Tue, 7 Jan 2020 11:05:07 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_105817_763199_A65AD786 
-X-CRM114-Status: GOOD (  13.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_110515_752469_3C524119 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,575 +156,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Robert Jones <rjones@gateworks.com>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "kernelci . org bot" <bot@kernelci.org>, Sriram Dash <sriram.dash@samsung.com>,
+ linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Gateworks GW5912 is an IMX6 SoC based single board computer with:
- - IMX6Q or IMX6DL
- - 32bit DDR3 DRAM
- - GbE RJ45 front-panel
- - 4x miniPCIe socket with PCI Gen2, USB2
- - 1x miniPCIe socket with PCI Gen2, USB2, mSATA
- - 1x miniPCIe socket with PCI Gen2, USB2, mezzanine
- - 10V to 60V DC input barrel jack
- - 3axis accelerometer (lis2de12)
- - GPS (ublox ZOE-M8Q)
- - bi-color front-panel LED
- - 256MB NAND boot device
- - nanoSIM/microSD socket (with UHS-I support)
- - user pushbutton
- - Gateworks System Controller (hwmon, pushbutton controller, EEPROM)
- - CAN Bus transceiver (mcp2562)
- - RS232 transceiver (1x UART with flow-control or 2x UART (build option)
- - off-board SPI connector (1x chip-select)
+On 1/7/20 4:35 AM, Jose Abreu wrote:
+> When using fixed link we don't need the MDIO bus support.
+> 
+> Reported-by: Heiko Stuebner <heiko@sntech.de>
+> Reported-by: kernelci.org bot <bot@kernelci.org>
+> Fixes: d3e014ec7d5e ("net: stmmac: platform: Fix MDIO init for platforms without PHY")
+> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
-Signed-off-by: Robert Jones <rjones@gateworks.com>
-Reviewed-by: Tim Harvey <tharvey@gateworks.com>
----
- arch/arm/boot/dts/Makefile            |   2 +
- arch/arm/boot/dts/imx6dl-gw5912.dts   |  13 +
- arch/arm/boot/dts/imx6q-gw5912.dts    |  13 +
- arch/arm/boot/dts/imx6qdl-gw5912.dtsi | 461 ++++++++++++++++++++++++++++++++++
- 4 files changed, 489 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6dl-gw5912.dts
- create mode 100644 arch/arm/boot/dts/imx6q-gw5912.dts
- create mode 100644 arch/arm/boot/dts/imx6qdl-gw5912.dtsi
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 5b059fc..1a32a7d 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -424,6 +424,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
- 	imx6dl-gw5904.dtb \
- 	imx6dl-gw5907.dtb \
- 	imx6dl-gw5910.dtb \
-+	imx6dl-gw5912.dtb \
- 	imx6dl-gw5913.dtb \
- 	imx6dl-hummingboard.dtb \
- 	imx6dl-hummingboard-emmc-som-v15.dtb \
-@@ -498,6 +499,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
- 	imx6q-gw5904.dtb \
- 	imx6q-gw5907.dtb \
- 	imx6q-gw5910.dtb \
-+	imx6q-gw5912.dtb \
- 	imx6q-gw5913.dtb \
- 	imx6q-h100.dtb \
- 	imx6q-hummingboard.dtb \
-diff --git a/arch/arm/boot/dts/imx6dl-gw5912.dts b/arch/arm/boot/dts/imx6dl-gw5912.dts
-new file mode 100644
-index 0000000..5260e01
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6dl-gw5912.dts
-@@ -0,0 +1,13 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2019 Gateworks Corporation
-+ */
-+
-+/dts-v1/;
-+#include "imx6dl.dtsi"
-+#include "imx6qdl-gw5912.dtsi"
-+
-+/ {
-+	model = "Gateworks Ventana i.MX6 DualLite/Solo GW5912";
-+	compatible = "gw,imx6dl-gw5912", "gw,ventana", "fsl,imx6dl";
-+};
-diff --git a/arch/arm/boot/dts/imx6q-gw5912.dts b/arch/arm/boot/dts/imx6q-gw5912.dts
-new file mode 100644
-index 0000000..4dcbd94
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6q-gw5912.dts
-@@ -0,0 +1,13 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2019 Gateworks Corporation
-+ */
-+
-+/dts-v1/;
-+#include "imx6q.dtsi"
-+#include "imx6qdl-gw5912.dtsi"
-+
-+/ {
-+	model = "Gateworks Ventana i.MX6 Dual/Quad GW5912";
-+	compatible = "gw,imx6q-gw5912", "gw,ventana", "fsl,imx6q";
-+};
-diff --git a/arch/arm/boot/dts/imx6qdl-gw5912.dtsi b/arch/arm/boot/dts/imx6qdl-gw5912.dtsi
-new file mode 100644
-index 0000000..8c57fd2
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6qdl-gw5912.dtsi
-@@ -0,0 +1,461 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2019 Gateworks Corporation
-+ */
-+
-+#include <dt-bindings/gpio/gpio.h>
-+
-+/ {
-+	/* these are used by bootloader for disabling nodes */
-+	aliases {
-+		led0 = &led0;
-+		led1 = &led1;
-+		led2 = &led2;
-+		nand = &gpmi;
-+		usb0 = &usbh1;
-+		usb1 = &usbotg;
-+	};
-+
-+	chosen {
-+		stdout-path = &uart2;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_leds>;
-+
-+		led0: user1 {
-+			label = "user1";
-+			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDG */
-+			default-state = "on";
-+			linux,default-trigger = "heartbeat";
-+		};
-+
-+		led1: user2 {
-+			label = "user2";
-+			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDR */
-+			default-state = "off";
-+		};
-+
-+		led2: user3 {
-+			label = "user3";
-+			gpios = <&gpio4 15 GPIO_ACTIVE_LOW>; /* MX6_LOCLED# */
-+			default-state = "off";
-+		};
-+	};
-+
-+	memory@10000000 {
-+		device_type = "memory";
-+		reg = <0x10000000 0x40000000>;
-+	};
-+
-+	pps {
-+		compatible = "pps-gpio";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_pps>;
-+		gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	reg_3p3v: regulator-3p3v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3P3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+	};
-+
-+	reg_usb_vbus: regulator-5p0v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-always-on;
-+	};
-+};
-+
-+&can1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_flexcan1>;
-+	status = "okay";
-+};
-+
-+&ecspi2 {
-+	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi2>;
-+	status = "okay";
-+};
-+
-+&fec {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet>;
-+	phy-mode = "rgmii-id";
-+	status = "okay";
-+};
-+
-+&gpmi {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_gpmi_nand>;
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+
-+	gpio@23 {
-+		compatible = "nxp,pca9555";
-+		reg = <0x23>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+	};
-+
-+	eeprom@50 {
-+		compatible = "atmel,24c02";
-+		reg = <0x50>;
-+		pagesize = <16>;
-+	};
-+
-+	eeprom@51 {
-+		compatible = "atmel,24c02";
-+		reg = <0x51>;
-+		pagesize = <16>;
-+	};
-+
-+	eeprom@52 {
-+		compatible = "atmel,24c02";
-+		reg = <0x52>;
-+		pagesize = <16>;
-+	};
-+
-+	eeprom@53 {
-+		compatible = "atmel,24c02";
-+		reg = <0x53>;
-+		pagesize = <16>;
-+	};
-+
-+	rtc@68 {
-+		compatible = "dallas,ds1672";
-+		reg = <0x68>;
-+	};
-+};
-+
-+&i2c2 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c2>;
-+	status = "okay";
-+};
-+
-+&i2c3 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c3>;
-+	status = "okay";
-+
-+	accel@19 {
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_accel>;
-+		compatible = "st,lis2de12";
-+		reg = <0x19>;
-+		st,drdy-int-pin = <1>;
-+		interrupt-parent = <&gpio7>;
-+		interrupts = <13 0>;
-+		interrupt-names = "INT1";
-+	};
-+};
-+
-+&pcie {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pcie>;
-+	reset-gpio = <&gpio1 29 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+};
-+
-+&pwm1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm1>; /* MX6_DIO0 */
-+	status = "disabled";
-+};
-+
-+&pwm2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm2>; /* MX6_DIO1 */
-+	status = "disabled";
-+};
-+
-+&pwm3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm3>; /* MX6_DIO2 */
-+	status = "disabled";
-+};
-+
-+&pwm4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm4>; /* MX6_DIO3 */
-+	status = "disabled";
-+};
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart1>;
-+	rts-gpios = <&gpio7 12 GPIO_ACTIVE_HIGH>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart2>;
-+	status = "okay";
-+};
-+
-+&uart5 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart5>;
-+	status = "okay";
-+};
-+
-+&usbotg {
-+	vbus-supply = <&reg_usb_vbus>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usbotg>;
-+	disable-over-current;
-+	dr_mode = "host";
-+	status = "okay";
-+};
-+
-+&usbh1 {
-+	vbus-supply = <&reg_usb_vbus>;
-+	status = "okay";
-+};
-+
-+&usdhc3 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc3>;
-+	pinctrl-1 = <&pinctrl_usdhc3_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc3_200mhz>;
-+	cd-gpios = <&gpio7 0 GPIO_ACTIVE_LOW>;
-+	vmmc-supply = <&reg_3p3v>;
-+	no-1-8-v; /* firmware will remove if board revision supports */
-+	status = "okay";
-+};
-+
-+&wdog1 {
-+	status = "disabled";
-+};
-+
-+&wdog2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+	status = "okay";
-+};
-+
-+&iomuxc {
-+	pinctrl_accel: accelmuxgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_18__GPIO7_IO13		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_enet: enetgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_RGMII_RXC__RGMII_RXC		0x1b030
-+			MX6QDL_PAD_RGMII_RD0__RGMII_RD0		0x1b030
-+			MX6QDL_PAD_RGMII_RD1__RGMII_RD1		0x1b030
-+			MX6QDL_PAD_RGMII_RD2__RGMII_RD2		0x1b030
-+			MX6QDL_PAD_RGMII_RD3__RGMII_RD3		0x1b030
-+			MX6QDL_PAD_RGMII_RX_CTL__RGMII_RX_CTL	0x1b030
-+			MX6QDL_PAD_RGMII_TXC__RGMII_TXC		0x1b030
-+			MX6QDL_PAD_RGMII_TD0__RGMII_TD0		0x1b030
-+			MX6QDL_PAD_RGMII_TD1__RGMII_TD1		0x1b030
-+			MX6QDL_PAD_RGMII_TD2__RGMII_TD2		0x1b030
-+			MX6QDL_PAD_RGMII_TD3__RGMII_TD3		0x1b030
-+			MX6QDL_PAD_RGMII_TX_CTL__RGMII_TX_CTL	0x1b030
-+			MX6QDL_PAD_ENET_REF_CLK__ENET_TX_CLK	0x1b0b0
-+			MX6QDL_PAD_ENET_MDIO__ENET_MDIO		0x1b0b0
-+			MX6QDL_PAD_ENET_MDC__ENET_MDC		0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_ecspi2: escpi2grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_EIM_CS0__ECSPI2_SCLK	0x100b1
-+			MX6QDL_PAD_EIM_CS1__ECSPI2_MOSI	0x100b1
-+			MX6QDL_PAD_EIM_OE__ECSPI2_MISO	0x100b1
-+			MX6QDL_PAD_EIM_RW__GPIO2_IO26	0x100b1
-+		>;
-+	};
-+
-+	pinctrl_flexcan1: flexcan1grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_KEY_ROW2__FLEXCAN1_RX	0x1b0b1
-+			MX6QDL_PAD_KEY_COL2__FLEXCAN1_TX	0x1b0b1
-+			MX6QDL_PAD_GPIO_2__GPIO1_IO02		0x4001b0b0
-+		>;
-+	};
-+
-+	pinctrl_gpio_leds: gpioledsgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_KEY_COL0__GPIO4_IO06		0x1b0b0
-+			MX6QDL_PAD_KEY_ROW0__GPIO4_IO07		0x1b0b0
-+			MX6QDL_PAD_KEY_ROW4__GPIO4_IO15		0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_gpmi_nand: gpminandgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_NANDF_CLE__NAND_CLE		0xb0b1
-+			MX6QDL_PAD_NANDF_ALE__NAND_ALE		0xb0b1
-+			MX6QDL_PAD_NANDF_WP_B__NAND_WP_B	0xb0b1
-+			MX6QDL_PAD_NANDF_RB0__NAND_READY_B	0xb000
-+			MX6QDL_PAD_NANDF_CS0__NAND_CE0_B	0xb0b1
-+			MX6QDL_PAD_SD4_CMD__NAND_RE_B		0xb0b1
-+			MX6QDL_PAD_SD4_CLK__NAND_WE_B		0xb0b1
-+			MX6QDL_PAD_NANDF_D0__NAND_DATA00	0xb0b1
-+			MX6QDL_PAD_NANDF_D1__NAND_DATA01	0xb0b1
-+			MX6QDL_PAD_NANDF_D2__NAND_DATA02	0xb0b1
-+			MX6QDL_PAD_NANDF_D3__NAND_DATA03	0xb0b1
-+			MX6QDL_PAD_NANDF_D4__NAND_DATA04	0xb0b1
-+			MX6QDL_PAD_NANDF_D5__NAND_DATA05	0xb0b1
-+			MX6QDL_PAD_NANDF_D6__NAND_DATA06	0xb0b1
-+			MX6QDL_PAD_NANDF_D7__NAND_DATA07	0xb0b1
-+		>;
-+	};
-+
-+	pinctrl_i2c1: i2c1grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_EIM_D21__I2C1_SCL		0x4001b8b1
-+			MX6QDL_PAD_EIM_D28__I2C1_SDA		0x4001b8b1
-+			MX6QDL_PAD_GPIO_4__GPIO1_IO04		0x0001b0b0
-+		>;
-+	};
-+
-+	pinctrl_i2c2: i2c2grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_KEY_COL3__I2C2_SCL		0x4001b8b1
-+			MX6QDL_PAD_KEY_ROW3__I2C2_SDA		0x4001b8b1
-+		>;
-+	};
-+
-+	pinctrl_i2c3: i2c3grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_3__I2C3_SCL		0x4001b8b1
-+			MX6QDL_PAD_GPIO_6__I2C3_SDA		0x4001b8b1
-+		>;
-+	};
-+
-+	pinctrl_pcie: pciegrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_ENET_TX_EN__GPIO1_IO28	0x1b0b0
-+			MX6QDL_PAD_ENET_TXD1__GPIO1_IO29	0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_pps: ppsgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_5__GPIO1_IO05		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_pwm1: pwm1grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_9__PWM1_OUT		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_pwm2: pwm2grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD1_DAT2__PWM2_OUT		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_pwm3: pwm3grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD4_DAT1__PWM3_OUT		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_pwm4: pwm4grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD4_DAT2__PWM4_OUT		0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart1: uart1grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD3_DAT7__UART1_TX_DATA	0x1b0b1
-+			MX6QDL_PAD_SD3_DAT6__UART1_RX_DATA	0x1b0b1
-+			MX6QDL_PAD_GPIO_17__GPIO7_IO12		0x4001b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart2: uart2grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD4_DAT7__UART2_TX_DATA	0x1b0b1
-+			MX6QDL_PAD_SD4_DAT4__UART2_RX_DATA	0x1b0b1
-+			MX6QDL_PAD_SD4_DAT3__GPIO2_IO11		0x4001b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart5: uart5grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_KEY_COL1__UART5_TX_DATA	0x1b0b1
-+			MX6QDL_PAD_KEY_ROW1__UART5_RX_DATA	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_usbotg: usbotggrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_1__USB_OTG_ID		0x13059
-+		>;
-+	};
-+
-+	pinctrl_usdhc3: usdhc3grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD3_CMD__SD3_CMD		0x17059
-+			MX6QDL_PAD_SD3_CLK__SD3_CLK		0x10059
-+			MX6QDL_PAD_SD3_DAT0__SD3_DATA0		0x17059
-+			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17059
-+			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17059
-+			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17059
-+			MX6QDL_PAD_SD3_DAT5__GPIO7_IO00		0x17059 /* CD */
-+			MX6QDL_PAD_NANDF_CS1__SD3_VSELECT	0x17059
-+		>;
-+	};
-+
-+	pinctrl_usdhc3_100mhz: usdhc3grp100mhz {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD3_CMD__SD3_CMD		0x170b9
-+			MX6QDL_PAD_SD3_CLK__SD3_CLK		0x100b9
-+			MX6QDL_PAD_SD3_DAT0__SD3_DATA0		0x170b9
-+			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x170b9
-+			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x170b9
-+			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x170b9
-+			MX6QDL_PAD_SD3_DAT5__GPIO7_IO00		0x170b9 /* CD */
-+			MX6QDL_PAD_NANDF_CS1__SD3_VSELECT	0x170b9
-+		>;
-+	};
-+
-+	pinctrl_usdhc3_200mhz: usdhc3grp200mhz {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD3_CMD__SD3_CMD		0x170f9
-+			MX6QDL_PAD_SD3_CLK__SD3_CLK		0x100f9
-+			MX6QDL_PAD_SD3_DAT0__SD3_DATA0		0x170f9
-+			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x170f9
-+			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x170f9
-+			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x170f9
-+			MX6QDL_PAD_SD3_DAT5__GPIO7_IO00		0x170f9 /* CD */
-+			MX6QDL_PAD_NANDF_CS1__SD3_VSELECT	0x170f9
-+		>;
-+	};
-+
-+	pinctrl_wdog: wdoggrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD1_DAT3__WDOG2_B		0x1b0b0
-+		>;
-+	};
-+};
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Tested-by: Florian Fainelli <f.fainelli@gmail> # Lamobo R1 (fixed-link +
+MDIO sub node for roboswitch).
 -- 
-2.9.2
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
