@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1445413251E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:45:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEFD013253E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:52:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FKp7PO0alnul6TGqQu9SIRhoh9yKeVNklmr3gJuvGc8=; b=G1i+XZcJ6JAAF2
-	kJlwigppEZLg1MJUwwGjA6ere4JcyFt23fVLLGGxlUysVoQ0jKgtQJT3RBFPg79pYxNCn/ZYKx77P
-	TDNMfJsmAzCrFIal+BnNE1fxD+rF9mHcGSnMNb7F6PQUCj6xt5UzymxFS1HB6ke1ClOKZwLQNRYMh
-	gHwl5GHSrToaFNSLp/dBLRji8ge8Cnv557ZWrK1hdJTlPnwOXvnHxI2nRasvNHtwdWS4fe9+BF4Hf
-	Rnobgu26sQTcL0oipRZ0NmZ9arrVTIqQ10kLC5oQpUcH6vflUiLkg9046zMU+lalHjs2ht233c2Zh
-	GV/rFoHHmTCzWMF2nDbg==;
+	List-Owner; bh=6BtUghxS3q6oE3Ws+jLrHpQcTNiZEG/ouiIT4csTwGE=; b=o/iihMD4/jYcq0
+	R1As/6oZCp2yaV/JnQqb7Vx9ZvKsZcYu2AU6fhnByyh52ukohY2nay++x7CBZTKTLOaA/6+yiH+Gl
+	VLNOYXFNuFMLm66+rYY0Y/X7i2+f0MT6u7m72gWR4M2V0l0PJkqmq5lOYe/veMUeIMtfT0x9lJx4Y
+	edwUqKetCKj3vVa1cpFWBA3u69hIQsX5o2AY8Myo/9hWtFJ78s9xwPne/X3lU+ttws+wiAtxyubjQ
+	B0iPQh7uZKlA8sscvH7Xb9TMGZ/qjY85U8BI3Qn6XazVsauT+IOp9quAhBazYYKWs2NYwK3eSNd6Q
+	0AnHR0xpT2enBwqUe3jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ionIS-0004h2-No; Tue, 07 Jan 2020 11:45:16 +0000
+	id 1ionPW-0006lN-O1; Tue, 07 Jan 2020 11:52:34 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ionIJ-0004KT-Gq
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:45:09 +0000
+ id 1ionPQ-0006ku-4J
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:52:29 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 007Bj55h105265;
- Tue, 7 Jan 2020 05:45:05 -0600
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 007BqQfX107802;
+ Tue, 7 Jan 2020 05:52:26 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578397505;
- bh=opRM3BxdJrwcWwYPbvHXI+kHoBYD6A8pkYN5zqXedA8=;
+ s=ti-com-17Q1; t=1578397946;
+ bh=/n4geygpYCmBAVJrP9D1RQbQETJykF2u108T2+FxKjo=;
  h=From:To:CC:Subject:Date;
- b=XWA0M3smZhELM2OjQvdUE1JdjwBZ4QVCtv7vQATPRzSyQ0VbZ6/n40c9wBjLOEram
- 8m+HfoR9f2iI/AFlp6X2jG0SLk/vRrs/HzQ2Ef7h+HV1nbRkE4ULZRPtLoZxg4THLE
- +M4e9JOZ1VOe3oRk1C6nyw0g70uFQpKo+RhDAMAs=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 007Bj51m037384
+ b=k1hPWFn6Big/lJzkUmgjckDkEW991k2QpC99O9QgyWtsoPb+JaMppYnRlpripLn0d
+ bCHEKKXWPcJmzmBFEB2Ou3z1Ww6EWS072RLr3LCLssn0y3WQGW6R6UCtxjkks4o/+G
+ aEa+yFQvlyufbZohD2/5B8bIiqdATpZu1j99Fv9E=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 007BqQsW048276
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 7 Jan 2020 05:45:05 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 7 Jan 2020 05:52:26 -0600
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Jan
- 2020 05:45:04 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ 2020 05:52:25 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 7 Jan 2020 05:45:04 -0600
+ Frontend Transport; Tue, 7 Jan 2020 05:52:25 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007Bj1Zv073150;
- Tue, 7 Jan 2020 05:45:02 -0600
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007BqMQ7067156;
+ Tue, 7 Jan 2020 05:52:23 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <jic23@kernel.org>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
- <fabrice.gasnier@st.com>
-Subject: [PATCH v2] iio: adc: stm32-dfsdm: Use dma_request_chan() instead
+To: <mchehab@kernel.org>, <hugues.fruchet@st.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>
+Subject: [PATCH v2] media: stm32-dcmi: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Tue, 7 Jan 2020 13:45:32 +0200
-Message-ID: <20200107114532.6697-1-peter.ujfalusi@ti.com>
+Date: Tue, 7 Jan 2020 13:52:53 +0200
+Message-ID: <20200107115253.8351-1-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_034507_646183_138778EB 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20200107_035228_251369_B1651714 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -89,8 +89,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, vkoul@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
+Cc: vkoul@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -107,53 +108,36 @@ Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 Hi,
 
 Changes since v1:
-- Fall back to IRQ mode for ADC only in case of ENODEV
+- Do not print error for EPROBE_DEFER
 
 Regards,
 Peter
 
- drivers/iio/adc/stm32-dfsdm-adc.c | 21 +++++++++++++++++----
- 1 file changed, 17 insertions(+), 4 deletions(-)
+ drivers/media/platform/stm32/stm32-dcmi.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-index e493242c266e..74a2211bdff4 100644
---- a/drivers/iio/adc/stm32-dfsdm-adc.c
-+++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-@@ -1383,9 +1383,13 @@ static int stm32_dfsdm_dma_request(struct iio_dev *indio_dev)
- {
- 	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 
--	adc->dma_chan = dma_request_slave_channel(&indio_dev->dev, "rx");
--	if (!adc->dma_chan)
--		return -EINVAL;
-+	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
-+	if (IS_ERR(adc->dma_chan)) {
-+		int ret = PTR_ERR(adc->dma_chan);
-+
-+		adc->dma_chan = NULL;
-+		return ret;
-+	}
- 
- 	adc->rx_buf = dma_alloc_coherent(adc->dma_chan->device->dev,
- 					 DFSDM_DMA_BUFFER_SIZE,
-@@ -1509,7 +1513,16 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
- 	init_completion(&adc->completion);
- 
- 	/* Optionally request DMA */
--	if (stm32_dfsdm_dma_request(indio_dev)) {
-+	ret = stm32_dfsdm_dma_request(indio_dev);
-+	if (ret) {
-+		if (ret != -ENODEV) {
-+			if (ret != -EPROBE_DEFER)
-+				dev_err(&indio_dev->dev,
-+					"DMA channel request failed with %d\n",
-+					ret);
-+			return ret;
-+		}
-+
- 		dev_dbg(&indio_dev->dev, "No DMA support\n");
- 		return 0;
+diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+index 9392e3409fba..b63ff8d636ce 100644
+--- a/drivers/media/platform/stm32/stm32-dcmi.c
++++ b/drivers/media/platform/stm32/stm32-dcmi.c
+@@ -1910,10 +1910,13 @@ static int dcmi_probe(struct platform_device *pdev)
+ 		return PTR_ERR(mclk);
  	}
+ 
+-	chan = dma_request_slave_channel(&pdev->dev, "tx");
+-	if (!chan) {
+-		dev_info(&pdev->dev, "Unable to request DMA channel, defer probing\n");
+-		return -EPROBE_DEFER;
++	chan = dma_request_chan(&pdev->dev, "tx");
++	if (IS_ERR(chan)) {
++		ret = PTR_ERR(chan);
++		if (ret != -EPROBE_DEFER)
++			dev_err(&pdev->dev,
++				"Failed to request DMA channel: %d\n", ret);
++		return ret;
+ 	}
+ 
+ 	spin_lock_init(&dcmi->irqlock);
 -- 
 Peter
 
