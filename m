@@ -2,71 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3535132C97
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 18:09:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C14B8132CAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 18:11:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=j1aYzDRLgxU5Pn4/0l4/5ZaOtoP8T9G0497YBIkoBao=; b=PMK8QOTYmkapWc63AgLG84U6X
-	6LWNevyySqnjb3MuuMwRvb7Zsf2fXS5ubFF4xpdQenRXeIyC83ILen1XNItastXHxdiZ8FxPRH9/g
-	h8BMFfsthjXGq40HekqNwJhVyhwnzvghcisk95pVBPvpqBoxSnIGrgeJH095xxLr5mdMmmVHMUYfX
-	DDGyj/B31Lrf1O3DI76H0tZqJeupwNvy87JiYh7dvg5bpZkK7iJ08crwOi3aNgQWQfZ7VlEj++gqO
-	/gpIMOkjj9C59DSjbhYAbV3yGUfQ5z3eerBaQbMavBRbDXICc/u1K/EgePwDlq8kZT+W4HNoMSISF
-	bIGsmQfgA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2CzATVhATEIH7Ugn+gUDptLRnKG4uKwX5mHbkH13o6g=; b=D+eGCfe3Ij6bhy
+	xMBSo5U3Sr3u8aNjl2XWqD9ICsTXsxUhjQeTVfP11CgqvSw9qXzrN4J4+UwMUq/Z2F37M2/7JjCmU
+	v1Y+TIQkAvt+Wd7zr9/L7NHrLjvM9g7DzC7O32WNnOLVlHHd4+RufkqtEnBlnCYTcS9i6TyFOplOw
+	EBZqKyfFKpRySHNpUL+TZRBGHIxObfdxNzudCBuN5fkOvHXKSWhmvk6ldtx3ZWun0M/U75klVB8ya
+	o3HKg0W7Jf2coNRkSKHf4wlvhNyedYJZYlk6nzX/MgqOYTNjPZ4ZQMgMbPLf11fzPFfAleCoAwMqB
+	QK8ZGKaFQmk6ntHR9EbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iosMA-0007ak-1V; Tue, 07 Jan 2020 17:09:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iosNk-0000gp-Bi; Tue, 07 Jan 2020 17:11:04 +0000
+Received: from mailoutvs40.siol.net ([185.57.226.231] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iosM1-0007aC-Ov
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 17:09:19 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 024522087F;
- Tue,  7 Jan 2020 17:09:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578416957;
- bh=rdMbnFROR3ZGRGF6MMtW3HCXNlbQ1I4/MOT+6Eqn3j4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SlbBB53O6zNjf1ennYLpa4fDSiui/LvfBlf+oZJpsSuR+FsvfYsLxdbV2tnuJwnmR
- Vv80E7cItGr1oQ4vnUd6SUDRsUogjVIvkORu4fjXuHmb/6vhZD48LeARbtJuy/2Yyv
- VSUGNEr51g5h1TFrxtL2e7OzcHvWqsqt9Kv5nw1Q=
-Date: Tue, 7 Jan 2020 18:09:14 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH 3/3] arm64: dts: allwinner: a64: enable DVFS
-Message-ID: <20200107170914.4lloj62szdmvsa2j@gilmour>
-References: <20200104063505.219030-1-anarsoul@gmail.com>
- <20200104063505.219030-4-anarsoul@gmail.com>
- <20200104083734.hmeapykk7gninukf@gilmour.lan>
- <CA+E=qVdZGktgAwEUeUkqYaU=pWe-Ogjnf90=z7YcyrXn74h+9w@mail.gmail.com>
+ id 1iosNb-0000fm-Hf
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 17:10:57 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id BFDFE5230E8;
+ Tue,  7 Jan 2020 18:10:44 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id c4f-rLiq8ZIz; Tue,  7 Jan 2020 18:10:44 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 1CC93522F8A;
+ Tue,  7 Jan 2020 18:10:44 +0100 (CET)
+Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id BE7DE522FC5;
+ Tue,  7 Jan 2020 18:10:42 +0100 (CET)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: mchehab@kernel.org, mripard@kernel.org, paul.kocialkowski@bootlin.com,
+ Hans Verkuil <hverkuil@xs4all.nl>
+Subject: Re: [PATCH v2 2/4] media: cedrus: hevc: Add support for scaling matrix
+Date: Tue, 07 Jan 2020 18:10:42 +0100
+Message-ID: <2627039.Y6S9NjorxK@jernej-laptop>
+In-Reply-To: <4ac91ed5-a220-6a04-b1da-de27a306f8f2@xs4all.nl>
+References: <20191213160428.54303-1-jernej.skrabec@siol.net>
+ <20191213160428.54303-3-jernej.skrabec@siol.net>
+ <4ac91ed5-a220-6a04-b1da-de27a306f8f2@xs4all.nl>
 MIME-Version: 1.0
-In-Reply-To: <CA+E=qVdZGktgAwEUeUkqYaU=pWe-Ogjnf90=z7YcyrXn74h+9w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_090917_851732_BBD55079 
-X-CRM114-Status: GOOD (  25.97  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200107_091055_899499_6B51CF4C 
+X-CRM114-Status: GOOD (  17.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,244 +72,256 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- devicetree <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1848598896108994339=="
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi!
 
---===============1848598896108994339==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="hianm4mhkxhl3mtz"
-Content-Disposition: inline
+Dne torek, 07. januar 2020 ob 16:01:16 CET je Hans Verkuil napisal(a):
+> On 12/13/19 5:04 PM, Jernej Skrabec wrote:
+> > HEVC frames may use scaling list feature. Add support for it.
+> > 
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > 
+> >  drivers/staging/media/sunxi/cedrus/cedrus.c   |  7 ++
+> >  drivers/staging/media/sunxi/cedrus/cedrus.h   |  1 +
+> >  .../staging/media/sunxi/cedrus/cedrus_dec.c   |  2 +
+> >  .../staging/media/sunxi/cedrus/cedrus_h265.c  | 70 ++++++++++++++++++-
+> >  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  2 +
+> >  5 files changed, 81 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus.c index
+> > c6ddd46eff82..bf68bc6b20c8 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > @@ -116,6 +116,13 @@ static const struct cedrus_control cedrus_controls[]
+> > = {> 
+> >  		.codec		= CEDRUS_CODEC_H265,
+> >  		.required	= true,
+> >  	
+> >  	},
+> > 
+> > +	{
+> > +		.cfg = {
+> > +			.id	= 
+V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX,
+> > +		},
+> > +		.codec		= CEDRUS_CODEC_H265,
+> > +		.required	= true,
+> 
+> Should this be true? This means that existing applications are now
+> suddenly required to always pass the scaling matrix for every buffer.
+> 
+> Especially since the commit log says: 'HEVC frames *may* use scaling list
+> feature', indicating that this is an optional feature.
+
+True. Can you fix this when applying if this is the only issue?
+
+Best regards,
+Jernej
+
+> 
+> Regards,
+> 
+> 	Hans
+> 
+> > +	},
+> > 
+> >  	{
+> >  	
+> >  		.cfg = {
+> >  		
+> >  			.id	= 
+V4L2_CID_MPEG_VIDEO_HEVC_DECODE_MODE,
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h
+> > b/drivers/staging/media/sunxi/cedrus/cedrus.h index
+> > 96765555ab8a..d945f4f0ff2d 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+> > @@ -73,6 +73,7 @@ struct cedrus_h265_run {
+> > 
+> >  	const struct v4l2_ctrl_hevc_sps			*sps;
+> >  	const struct v4l2_ctrl_hevc_pps			*pps;
+> >  	const struct v4l2_ctrl_hevc_slice_params	*slice_params;
+> > 
+> > +	const struct v4l2_ctrl_hevc_scaling_matrix	
+*scaling_matrix;
+> > 
+> >  };
+> >  
+> >  struct cedrus_run {
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c index
+> > 4a2fc33a1d79..327ed6c264dc 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> > @@ -66,6 +66,8 @@ void cedrus_device_run(void *priv)
+> > 
+> >  			V4L2_CID_MPEG_VIDEO_HEVC_PPS);
+> >  		
+> >  		run.h265.slice_params = cedrus_find_control_data(ctx,
+> >  		
+> >  			V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS);
+> > 
+> > +		run.h265.scaling_matrix = cedrus_find_control_data(ctx,
+> > +			V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX);
+> > 
+> >  		break;
+> >  	
+> >  	default:
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c index
+> > 6945dc74e1d7..888bfd5ca224 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > @@ -220,6 +220,69 @@ static void cedrus_h265_pred_weight_write(struct
+> > cedrus_dev *dev,> 
+> >  	}
+> >  
+> >  }
+> > 
+> > +static void cedrus_h265_write_scaling_list(struct cedrus_ctx *ctx,
+> > +					   struct cedrus_run 
+*run)
+> > +{
+> > +	const struct v4l2_ctrl_hevc_scaling_matrix *scaling;
+> > +	struct cedrus_dev *dev = ctx->dev;
+> > +	u32 i, j, k, val;
+> > +
+> > +	scaling = run->h265.scaling_matrix;
+> > +
+> > +	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF0,
+> > +		     (scaling->scaling_list_dc_coef_32x32[1] << 24) |
+> > +		     (scaling->scaling_list_dc_coef_32x32[0] << 16) |
+> > +		     (scaling->scaling_list_dc_coef_16x16[1] << 8) |
+> > +		     (scaling->scaling_list_dc_coef_16x16[0] << 0));
+> > +
+> > +	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF1,
+> > +		     (scaling->scaling_list_dc_coef_16x16[5] << 24) |
+> > +		     (scaling->scaling_list_dc_coef_16x16[4] << 16) |
+> > +		     (scaling->scaling_list_dc_coef_16x16[3] << 8) |
+> > +		     (scaling->scaling_list_dc_coef_16x16[2] << 0));
+> > +
+> > +	cedrus_h265_sram_write_offset(dev,
+> > VE_DEC_H265_SRAM_OFFSET_SCALING_LISTS); +
+> > +	for (i = 0; i < 6; i++)
+> > +		for (j = 0; j < 8; j++)
+> > +			for (k = 0; k < 8; k += 4) {
+> > +				val = ((u32)scaling-
+>scaling_list_8x8[i][j + (k + 3) * 8] << 24) |
+> > +				      ((u32)scaling-
+>scaling_list_8x8[i][j + (k + 2) * 8] << 16) |
+> > +				      ((u32)scaling-
+>scaling_list_8x8[i][j + (k + 1) * 8] << 8) |
+> > +				      scaling-
+>scaling_list_8x8[i][j + k * 8];
+> > +				cedrus_write(dev, 
+VE_DEC_H265_SRAM_DATA, val);
+> > +			}
+> > +
+> > +	for (i = 0; i < 2; i++)
+> > +		for (j = 0; j < 8; j++)
+> > +			for (k = 0; k < 8; k += 4) {
+> > +				val = ((u32)scaling-
+>scaling_list_32x32[i][j + (k + 3) * 8] << 24) |
+> > +				      ((u32)scaling-
+>scaling_list_32x32[i][j + (k + 2) * 8] << 16) |
+> > +				      ((u32)scaling-
+>scaling_list_32x32[i][j + (k + 1) * 8] << 8) |
+> > +				      scaling-
+>scaling_list_32x32[i][j + k * 8];
+> > +				cedrus_write(dev, 
+VE_DEC_H265_SRAM_DATA, val);
+> > +			}
+> > +
+> > +	for (i = 0; i < 6; i++)
+> > +		for (j = 0; j < 8; j++)
+> > +			for (k = 0; k < 8; k += 4) {
+> > +				val = ((u32)scaling-
+>scaling_list_16x16[i][j + (k + 3) * 8] << 24) |
+> > +				      ((u32)scaling-
+>scaling_list_16x16[i][j + (k + 2) * 8] << 16) |
+> > +				      ((u32)scaling-
+>scaling_list_16x16[i][j + (k + 1) * 8] << 8) |
+> > +				      scaling-
+>scaling_list_16x16[i][j + k * 8];
+> > +				cedrus_write(dev, 
+VE_DEC_H265_SRAM_DATA, val);
+> > +			}
+> > +
+> > +	for (i = 0; i < 6; i++)
+> > +		for (j = 0; j < 4; j++) {
+> > +			val = ((u32)scaling->scaling_list_4x4[i][j + 
+12] << 24) |
+> > +			      ((u32)scaling->scaling_list_4x4[i][j + 
+8] << 16) |
+> > +			      ((u32)scaling->scaling_list_4x4[i][j + 
+4] << 8) |
+> > +			      scaling->scaling_list_4x4[i][j];
+> > +			cedrus_write(dev, VE_DEC_H265_SRAM_DATA, 
+val);
+> > +		}
+> > +}
+> > +
+> > 
+> >  static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> >  
+> >  			      struct cedrus_run *run)
+> >  
+> >  {
+> > 
+> > @@ -499,7 +562,12 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> > 
+> >  	/* Scaling list. */
+> > 
+> > -	reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
+> > +	if (sps->flags & V4L2_HEVC_SPS_FLAG_SCALING_LIST_ENABLED) {
+> > +		cedrus_h265_write_scaling_list(ctx, run);
+> > +		reg = VE_DEC_H265_SCALING_LIST_CTRL0_FLAG_ENABLED;
+> > +	} else {
+> > +		reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
+> > +	}
+> > 
+> >  	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_CTRL0, reg);
+> >  	
+> >  	/* Neightbor information address. */
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h index
+> > 7beb03d3bb39..0d9449fe2b28 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > @@ -492,6 +492,8 @@
+> > 
+> >  #define VE_DEC_H265_ENTRY_POINT_OFFSET_ADDR	(VE_ENGINE_DEC_H265 + 
+0x64)
+> >  #define VE_DEC_H265_TILE_START_CTB		(VE_ENGINE_DEC_H265 + 
+0x68)
+> >  #define VE_DEC_H265_TILE_END_CTB		(VE_ENGINE_DEC_H265 + 
+0x6c)
+> > 
+> > +#define VE_DEC_H265_SCALING_LIST_DC_COEF0	(VE_ENGINE_DEC_H265 + 
+0x78)
+> > +#define VE_DEC_H265_SCALING_LIST_DC_COEF1	(VE_ENGINE_DEC_H265 + 
+0x7c)
+> > 
+> >  #define VE_DEC_H265_LOW_ADDR			(VE_ENGINE_DEC_H265 + 
+0x80)
 
 
---hianm4mhkxhl3mtz
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Sat, Jan 04, 2020 at 08:24:01AM -0800, Vasily Khoruzhick wrote:
-> > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> > > @@ -104,6 +104,10 @@ &de {
-> > >       status = "okay";
-> > >  };
-> > >
-> > > +&cpu0 {
-> > > +     cpu-supply = <&reg_dcdc2>;
-> > > +};
-> > > +
-> > >  &ehci1 {
-> > >       status = "okay";
-> > >  };
-> >
-> > Did you test it on all those boards (and if so, how were the OPP
-> > tested), or was it done simply by looking at the schematics?
->
-> I tested it only on Pine64-LTS and Pinebook. But all these boards use
-> AXP803 which always uses DCDC2 as CPU regulator.
-
-Ok. How were those OPPs picked and tested?
-
-> > > +             opp-912000000 {
-> > > +                     opp-hz = /bits/ 64 <912000000>;
-> > > +                     opp-microvolt = <1120000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +             opp-960000000 {
-> > > +                     opp-hz = /bits/ 64 <960000000>;
-> > > +                     opp-microvolt = <1160000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +             opp-1008000000 {
-> > > +                     opp-hz = /bits/ 64 <1008000000>;
-> > > +                     opp-microvolt = <1200000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +             opp-1056000000 {
-> > > +                     opp-hz = /bits/ 64 <1056000000>;
-> > > +                     opp-microvolt = <1240000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +             opp-1104000000 {
-> > > +                     opp-hz = /bits/ 64 <1104000000>;
-> > > +                     opp-microvolt = <1260000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +             opp-1152000000 {
-> > > +                     opp-hz = /bits/ 64 <1152000000>;
-> > > +                     opp-microvolt = <1300000>;
-> > > +                     clock-latency-ns = <244144>; /* 8 32k periods */
-> > > +             };
-> > > +     };
-> > > +
-> >
-> > What frequency is setup by U-Boot?
->
-> It's 816 MHz
->
-> > If it's 1008 MHz as usual, then having the OPP above that frequency by
-> > default means that a board that doesn't set cpu-supply (or doesn't set
-> > it up properly) will be unstable, since it will increase the
-> > frequency, but not the voltage, and the voltage isn't enough for that
-> > new frequency.
-> >
-> > The way we've done it so far on the SoCs in a similar situation (A33,
-> > A83t) is only to list the OPP below the frequency set up by U-Boot in
-> > the DTSI, and list the frequencies above that in the boards that add
-> > cpu-supply.
-> >
-> > Given that it seems that we need to have them listed on number of
-> > boards, I guess we could add a separate DTSI that would be included
-> > only by the boards setting cpu-supply?
->
-> Currently all the A64 boards that we support use AXP803, so I'm not
-> sure whether we actually need that. We can just define CPU regulator
-> for them and use default OPP and that's exactly what I did.
-
-Yeah, but none of them have been supporting it since day one. Having
-these OPPs now mean that the very first thing you'll need to do is to
-bringup the PMIC as well, otherwise the system will crash.
-
-And to the person doing the bringup, this will be far from obvious
-that a) we have that requirement b) the crash that they are seeing is
-due to cpufreq.
-
-> > >       cpus {
-> > >               #address-cells = <1>;
-> > >               #size-cells = <0>;
-> > > @@ -90,6 +136,10 @@ cpu0: cpu@0 {
-> > >                       reg = <0>;
-> > >                       enable-method = "psci";
-> > >                       next-level-cache = <&L2>;
-> > > +                     clocks = <&ccu CLK_CPUX>;
-> > > +                     clock-names = "cpu";
-> > > +                     operating-points-v2 = <&cpu0_opp_table>;
-> > > +                     #cooling-cells = <2>;
-> > >               };
-> > >
-> > >               cpu1: cpu@1 {
-> > > @@ -98,6 +148,10 @@ cpu1: cpu@1 {
-> > >                       reg = <1>;
-> > >                       enable-method = "psci";
-> > >                       next-level-cache = <&L2>;
-> > > +                     clocks = <&ccu CLK_CPUX>;
-> > > +                     clock-names = "cpu";
-> > > +                     operating-points-v2 = <&cpu0_opp_table>;
-> > > +                     #cooling-cells = <2>;
-> > >               };
-> > >
-> > >               cpu2: cpu@2 {
-> > > @@ -106,6 +160,10 @@ cpu2: cpu@2 {
-> > >                       reg = <2>;
-> > >                       enable-method = "psci";
-> > >                       next-level-cache = <&L2>;
-> > > +                     clocks = <&ccu CLK_CPUX>;
-> > > +                     clock-names = "cpu";
-> > > +                     operating-points-v2 = <&cpu0_opp_table>;
-> > > +                     #cooling-cells = <2>;
-> > >               };
-> > >
-> > >               cpu3: cpu@3 {
-> > > @@ -114,6 +172,10 @@ cpu3: cpu@3 {
-> > >                       reg = <3>;
-> > >                       enable-method = "psci";
-> > >                       next-level-cache = <&L2>;
-> > > +                     clocks = <&ccu CLK_CPUX>;
-> > > +                     clock-names = "cpu";
-> > > +                     operating-points-v2 = <&cpu0_opp_table>;
-> > > +                     #cooling-cells = <2>;
-> > >               };
-> > >
-> > >               L2: l2-cache {
-> > > @@ -218,6 +280,46 @@ cpu_thermal: cpu0-thermal {
-> > >                       polling-delay-passive = <0>;
-> > >                       polling-delay = <0>;
-> > >                       thermal-sensors = <&ths 0>;
-> > > +
-> > > +                     cooling-maps {
-> > > +                             map0 {
-> > > +                                     trip = <&cpu_alert0>;
-> > > +                                     cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> > > +                             };
-> > > +                             map1 {
-> > > +                                     trip = <&cpu_alert1>;
-> > > +                                     cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> > > +                                                      <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> > > +                             };
-> > > +                     };
-> > > +
-> > > +                     trips {
-> > > +                             cpu_alert0: cpu_alert0 {
-> > > +                                     /* milliCelsius */
-> > > +                                     temperature = <75000>;
-> > > +                                     hysteresis = <2000>;
-> > > +                                     type = "passive";
-> > > +                             };
-> > > +
-> > > +                             cpu_alert1: cpu_alert1 {
-> > > +                                     /* milliCelsius */
-> > > +                                     temperature = <90000>;
-> > > +                                     hysteresis = <2000>;
-> > > +                                     type = "hot";
-> > > +                             };
-> > > +
-> > > +                             cpu_crit: cpu_crit {
-> > > +                                     /* milliCelsius */
-> > > +                                     temperature = <110000>;
-> > > +                                     hysteresis = <2000>;
-> > > +                                     type = "critical";
-> > > +                             };
-> > > +                     };
-> > >               };
-> >
-> > Where are those tripping points coming from?
->
-> These are taken from A33 dtsi. I couldn't find any recommended
-> throttling and critical temp in A64 user manual [1].
->
-> [1] http://linux-sunxi.org/images/b/b4/Allwinner_A64_User_Manual_V1.1.pdf
-
-Ok. Can you mention that in the commit log?
-
-Thanks!
-Maxime
-
---hianm4mhkxhl3mtz
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhS7OgAKCRDj7w1vZxhR
-xQQjAQDDAGuF7KVFijZrX/x9f2hoKg8Se71yoKXELvAAn2sfSQD9FPigAAshBbsY
-ciKKIlTkN+W0/ShZ/Xktti/OYPS0YgU=
-=UXPG
------END PGP SIGNATURE-----
-
---hianm4mhkxhl3mtz--
 
 
---===============1848598896108994339==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1848598896108994339==--
-
