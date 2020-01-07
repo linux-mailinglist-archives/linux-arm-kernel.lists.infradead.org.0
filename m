@@ -2,70 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1486013297A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:01:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D7C113298C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 16:03:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xD3DFotV4iw+SvYxrZlhkfrw0rr4ZdVcx2Ox8dbqRfM=; b=aYmDP0ntCTcN/8
-	JlA9LEf8EXoV5hBbHuqlESk6J5+XzjKcqvQpmS+bUgAyaEA/vq+TrUYF64c7TAmB91MtCiHoe74HQ
-	yDIk417R6RgCQF40UR05TQnDpkMdF6Bqbh61TvUyBv+JwS5Wh8D6QuDuTNUvFKm1s0AQjvr7QzaqH
-	m4x40/BZ3cb5HNBHFdy8mjoJdHy8hH6v/EC64AaOOSL6+ZaE41nXJWIg91NY062b//097P44MZpY8
-	1YgukJWZtGUgyOsrGITCYgaZZUyKVw8q23/vZLz+W+wCuKVnLdD0mLftr1ltvy2wmuCrcp/YgoRvS
-	1E6DrMMoRmhzMSPnJdvw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=z+uLhqjDZEPN1QP66bC8z7mnUJo4XcJ/J7N/e6+HS6M=; b=UFP
+	uUyUIG9nvm+P4VAujYTQQ/TUWH/GvrTdOR1UHObqH6dLpPhsHl/CoGcHkM/SDo0FeqRQ+ewbAWG/m
+	Ew1T8VyW8752NWN/7Bf1d2APu86aOZHAw1fDf0Aj8LS2xnpE6quTh3Hj44jFfUCRgYS0WhcTeJnyy
+	zpqneQWJOa/wRxX7dUUYDbcyQNF3aV7jIukRst8HxvK22Qo4Eca+HDVm0SnEbAsvdFg5AWRbknt23
+	Txb6eJaXdScxteqA1C3M767WR/VWkqiXzhFKiG19cQYeEQ056WDSsyWekRUJiSGPhdn4Q56VDVnlf
+	0Uf4getij82IbRyJtolDV72g8O28UAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioqMR-00030r-05; Tue, 07 Jan 2020 15:01:35 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1ioqOB-0003VR-ER; Tue, 07 Jan 2020 15:03:23 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioqMJ-000306-Uk
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:01:30 +0000
-Received: from [IPv6:2001:420:44c1:2577:cd88:93ae:ae73:3d6c]
- ([IPv6:2001:420:44c1:2577:cd88:93ae:ae73:3d6c])
- by smtp-cloud7.xs4all.net with ESMTPA
- id oqM8iLQnaN9dwoqMCiVvtj; Tue, 07 Jan 2020 16:01:21 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1578409281; bh=dlauqvpQGYg8gIzE7vt8zEOQtKQRNLpz0TQmKxid07E=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=v8NiblhlR4I4zf8BhwkynPxs+nkGAGPktfWgiHivQwkx7TB+rzag5U979DVi4ZXCe
- 1yaoGIh3JzsfAv0i8+c7U9BjMFDmwuSQuudtjjDjyMI3XQyl0xc/0J/79sJ+MmjrXH
- kUUO3XY+/WTVBzXDfEYkZAxj7VmqmlcaFEAiIglPOlNkPhepLHJRU8GZ7Ysxm7orSU
- HaZB0hjCKJyf7t8Bo/X7K7a5Lbj0ZYVSFUSZ3mTN+umHbNG0Sofz8QnKFDR8usZYXk
- 7+J50Zx7Rsgfj+AWbOIQmweCO/pGvJacXvUtYg1L+Wn/6+4Z+J0zOVf//pIeczWBKl
- IPSWSUB5Wtnig==
-Subject: Re: [PATCH v2 2/4] media: cedrus: hevc: Add support for scaling matrix
-To: Jernej Skrabec <jernej.skrabec@siol.net>, mchehab@kernel.org,
- mripard@kernel.org, paul.kocialkowski@bootlin.com
-References: <20191213160428.54303-1-jernej.skrabec@siol.net>
- <20191213160428.54303-3-jernej.skrabec@siol.net>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <4ac91ed5-a220-6a04-b1da-de27a306f8f2@xs4all.nl>
-Date: Tue, 7 Jan 2020 16:01:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191213160428.54303-3-jernej.skrabec@siol.net>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfJY5ZdhhQ3Y8+/P4/PuY0Rn2kVBZ9dF7xWsX+alTuLCOoBo1MAlmbGpH0BJQwiEfcX6mzWQWrw43Fjb6azKuPYOyiu4d7kpHVAdU3P3+owyW7rCWaFj9
- Yo5I5K9KdiH4FpoxJ+LNc/gaGo0Vrm1HKcYty/e1/OWe2fLePr0Yg4he6atVOFXLCuYNa0BQXJLxW7mcgahVHXT2/kH8YuSLKSkukPeJBGY0p3w7saI+EqQL
- RHN6+VAvLPX977K6NMUM0h2VFDoP2P41iZ+3OdacAJwmhtnaf2//gGMpgFqPGODlM4GKippmALkM2OU+3GVbmfHTWHKHgDNZvlITCZSJidsoi/jM/9Uavk9b
- XizEZJO1Z2s4FRuEgwrNEu7oHOZLO7QIyguPGRmyp30KQK9eGABAVwfBgsskrnRAWyjOLP0bZeh8kzgQiJqRsXPpo9+M7xTSVEIb8wy+VC9XiYiDu1xp6UUL
- NrpAlDKzgUlelznxL9ypi53wqkEnFOsTSHtkMvPzz1sb8dRBFe2YYZt3Wr5BwfskLOaZfy2ORwNKevMohp7mdqwLAxRI1QvTA+1vw52yZtiAef3nTOvU380S
- 3SYh+e9/DzAlmFhzm9iyZ090/WzsYi+xPyzq0CksIxpm6g==
+ id 1ioqO3-0003UZ-UR
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 15:03:17 +0000
+Received: by mail-pl1-x644.google.com with SMTP id x17so23312003pln.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 07:03:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=7Vp5Vy5j9yM6zzEKiWqAsDsmN6F0gjsulGDFzYzW5ms=;
+ b=FRdc/pEtLxybKATPi0gWX2OnrpPVH/gGawy/tcqojjMjvopFGGM068hu4YFt3qmt8A
+ 6R5y0yJvntjkO8rsWhyzfx23MOZxhzl/6e8Z+UKVVBc1Gihd/WO9l45YcNrgpYi9rKXD
+ tWIIDANUvg28Kn7rZ9lTElzHP9SNKUJwcKPS6+aZR3KuKyMWVSR3aJ2aGRsUgKXN+aRD
+ hUqAoVldM0Wyh88gr372bKNGydSXKln+wJOHPMUw8udR26H1B/JSx3TpR0H+RTBJJfYV
+ huQgd0dDZJWNtdUEMbumFGCV7R864/LXirQdWi2VM5u/CpZOL4tJmLKL4i+gsWM2v2qk
+ /wlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=7Vp5Vy5j9yM6zzEKiWqAsDsmN6F0gjsulGDFzYzW5ms=;
+ b=hSzO+0IBZG/g4DQYFB3y/DJephxQQpDIfCEPvMGuL08D2ztK3GJkc3oeklg/gVzh47
+ as02jBhfzdnA5jIQ2Iy81n5WItRMspYxCPdPUTHq0F8LiqSv3g94fKQyb4VdcQawITth
+ rD82IgB2W3SlaIfTLqce/Bngfkc+6+rK3prWHVRhT52XEPuz3Ggt4Iqn3O1MVUAFYWYL
+ SDKQSUjQf3Ox2Ffns2OL5leC3ZBuG2EvrCskMyYKu1Jl2tR5moFIs2kZ3xxHCbBMd1Cw
+ LKFiSbsgSX6MKsEp9+Kf2IFIPzIuCtx+cpoFpOBMS96aJ5GNPpm72ATk9d9RqLwmcgxC
+ BHIQ==
+X-Gm-Message-State: APjAAAUI3ar5gaaldhxpwdCKZ11YJoG4c5IwlnoQH8w+2efUq9481c71
+ Qkx6hbiezANQUtVzXi759h4=
+X-Google-Smtp-Source: APXvYqzftM+e7fYt4IHv4fHcbdCZwaijynpYGwn5PKAuo5WlUzUl87fCknMZfMefV1A2363vPvEgwQ==
+X-Received: by 2002:a17:902:654d:: with SMTP id
+ d13mr33352pln.187.1578409392867; 
+ Tue, 07 Jan 2020 07:03:12 -0800 (PST)
+Received: from localhost (199.168.140.36.16clouds.com. [199.168.140.36])
+ by smtp.gmail.com with ESMTPSA id h3sm35881215pfo.132.2020.01.07.07.03.11
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 Jan 2020 07:03:12 -0800 (PST)
+From: Dejin Zheng <zhengdejin5@gmail.com>
+To: davem@davemloft.net, corbet@lwn.net, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com, linus.walleij@linaro.org
+Subject: [PATCH] Documentation: networking: device drivers: sync
+ stmmac_mdio_bus_data info
+Date: Tue,  7 Jan 2020 23:02:54 +0800
+Message-Id: <20200107150254.28604-1-zhengdejin5@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_070128_153415_F9852D9A 
-X-CRM114-Status: GOOD (  18.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200107_070315_980867_C127485D 
+X-CRM114-Status: GOOD (  11.82  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zhengdejin5[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zhengdejin5[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,182 +98,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-doc@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Dejin Zheng <zhengdejin5@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/13/19 5:04 PM, Jernej Skrabec wrote:
-> HEVC frames may use scaling list feature. Add support for it.
-> 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/staging/media/sunxi/cedrus/cedrus.c   |  7 ++
->  drivers/staging/media/sunxi/cedrus/cedrus.h   |  1 +
->  .../staging/media/sunxi/cedrus/cedrus_dec.c   |  2 +
->  .../staging/media/sunxi/cedrus/cedrus_h265.c  | 70 ++++++++++++++++++-
->  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  2 +
->  5 files changed, 81 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-> index c6ddd46eff82..bf68bc6b20c8 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-> @@ -116,6 +116,13 @@ static const struct cedrus_control cedrus_controls[] = {
->  		.codec		= CEDRUS_CODEC_H265,
->  		.required	= true,
->  	},
-> +	{
-> +		.cfg = {
-> +			.id	= V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX,
-> +		},
-> +		.codec		= CEDRUS_CODEC_H265,
-> +		.required	= true,
+Recent changes in the stmmac driver, it removes the phy_reset hook
+from struct stmmac_mdio_bus_data by commit <fead5b1b5838ba2>, and
+add the member of needs_reset to struct stmmac_mdio_bus_data by
+commit <1a981c0586c0387>.
 
-Should this be true? This means that existing applications are now
-suddenly required to always pass the scaling matrix for every buffer.
+Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+---
+ Documentation/networking/device_drivers/stmicro/stmmac.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Especially since the commit log says: 'HEVC frames *may* use scaling list
-feature', indicating that this is an optional feature.
-
-Regards,
-
-	Hans
-
-> +	},
->  	{
->  		.cfg = {
->  			.id	= V4L2_CID_MPEG_VIDEO_HEVC_DECODE_MODE,
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-> index 96765555ab8a..d945f4f0ff2d 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-> @@ -73,6 +73,7 @@ struct cedrus_h265_run {
->  	const struct v4l2_ctrl_hevc_sps			*sps;
->  	const struct v4l2_ctrl_hevc_pps			*pps;
->  	const struct v4l2_ctrl_hevc_slice_params	*slice_params;
-> +	const struct v4l2_ctrl_hevc_scaling_matrix	*scaling_matrix;
->  };
->  
->  struct cedrus_run {
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> index 4a2fc33a1d79..327ed6c264dc 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> @@ -66,6 +66,8 @@ void cedrus_device_run(void *priv)
->  			V4L2_CID_MPEG_VIDEO_HEVC_PPS);
->  		run.h265.slice_params = cedrus_find_control_data(ctx,
->  			V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS);
-> +		run.h265.scaling_matrix = cedrus_find_control_data(ctx,
-> +			V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX);
->  		break;
->  
->  	default:
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> index 6945dc74e1d7..888bfd5ca224 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> @@ -220,6 +220,69 @@ static void cedrus_h265_pred_weight_write(struct cedrus_dev *dev,
->  	}
->  }
->  
-> +static void cedrus_h265_write_scaling_list(struct cedrus_ctx *ctx,
-> +					   struct cedrus_run *run)
-> +{
-> +	const struct v4l2_ctrl_hevc_scaling_matrix *scaling;
-> +	struct cedrus_dev *dev = ctx->dev;
-> +	u32 i, j, k, val;
-> +
-> +	scaling = run->h265.scaling_matrix;
-> +
-> +	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF0,
-> +		     (scaling->scaling_list_dc_coef_32x32[1] << 24) |
-> +		     (scaling->scaling_list_dc_coef_32x32[0] << 16) |
-> +		     (scaling->scaling_list_dc_coef_16x16[1] << 8) |
-> +		     (scaling->scaling_list_dc_coef_16x16[0] << 0));
-> +
-> +	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF1,
-> +		     (scaling->scaling_list_dc_coef_16x16[5] << 24) |
-> +		     (scaling->scaling_list_dc_coef_16x16[4] << 16) |
-> +		     (scaling->scaling_list_dc_coef_16x16[3] << 8) |
-> +		     (scaling->scaling_list_dc_coef_16x16[2] << 0));
-> +
-> +	cedrus_h265_sram_write_offset(dev, VE_DEC_H265_SRAM_OFFSET_SCALING_LISTS);
-> +
-> +	for (i = 0; i < 6; i++)
-> +		for (j = 0; j < 8; j++)
-> +			for (k = 0; k < 8; k += 4) {
-> +				val = ((u32)scaling->scaling_list_8x8[i][j + (k + 3) * 8] << 24) |
-> +				      ((u32)scaling->scaling_list_8x8[i][j + (k + 2) * 8] << 16) |
-> +				      ((u32)scaling->scaling_list_8x8[i][j + (k + 1) * 8] << 8) |
-> +				      scaling->scaling_list_8x8[i][j + k * 8];
-> +				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-> +			}
-> +
-> +	for (i = 0; i < 2; i++)
-> +		for (j = 0; j < 8; j++)
-> +			for (k = 0; k < 8; k += 4) {
-> +				val = ((u32)scaling->scaling_list_32x32[i][j + (k + 3) * 8] << 24) |
-> +				      ((u32)scaling->scaling_list_32x32[i][j + (k + 2) * 8] << 16) |
-> +				      ((u32)scaling->scaling_list_32x32[i][j + (k + 1) * 8] << 8) |
-> +				      scaling->scaling_list_32x32[i][j + k * 8];
-> +				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-> +			}
-> +
-> +	for (i = 0; i < 6; i++)
-> +		for (j = 0; j < 8; j++)
-> +			for (k = 0; k < 8; k += 4) {
-> +				val = ((u32)scaling->scaling_list_16x16[i][j + (k + 3) * 8] << 24) |
-> +				      ((u32)scaling->scaling_list_16x16[i][j + (k + 2) * 8] << 16) |
-> +				      ((u32)scaling->scaling_list_16x16[i][j + (k + 1) * 8] << 8) |
-> +				      scaling->scaling_list_16x16[i][j + k * 8];
-> +				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-> +			}
-> +
-> +	for (i = 0; i < 6; i++)
-> +		for (j = 0; j < 4; j++) {
-> +			val = ((u32)scaling->scaling_list_4x4[i][j + 12] << 24) |
-> +			      ((u32)scaling->scaling_list_4x4[i][j + 8] << 16) |
-> +			      ((u32)scaling->scaling_list_4x4[i][j + 4] << 8) |
-> +			      scaling->scaling_list_4x4[i][j];
-> +			cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-> +		}
-> +}
-> +
->  static void cedrus_h265_setup(struct cedrus_ctx *ctx,
->  			      struct cedrus_run *run)
->  {
-> @@ -499,7 +562,12 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
->  
->  	/* Scaling list. */
->  
-> -	reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
-> +	if (sps->flags & V4L2_HEVC_SPS_FLAG_SCALING_LIST_ENABLED) {
-> +		cedrus_h265_write_scaling_list(ctx, run);
-> +		reg = VE_DEC_H265_SCALING_LIST_CTRL0_FLAG_ENABLED;
-> +	} else {
-> +		reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
-> +	}
->  	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_CTRL0, reg);
->  
->  	/* Neightbor information address. */
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> index 7beb03d3bb39..0d9449fe2b28 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> @@ -492,6 +492,8 @@
->  #define VE_DEC_H265_ENTRY_POINT_OFFSET_ADDR	(VE_ENGINE_DEC_H265 + 0x64)
->  #define VE_DEC_H265_TILE_START_CTB		(VE_ENGINE_DEC_H265 + 0x68)
->  #define VE_DEC_H265_TILE_END_CTB		(VE_ENGINE_DEC_H265 + 0x6c)
-> +#define VE_DEC_H265_SCALING_LIST_DC_COEF0	(VE_ENGINE_DEC_H265 + 0x78)
-> +#define VE_DEC_H265_SCALING_LIST_DC_COEF1	(VE_ENGINE_DEC_H265 + 0x7c)
->  
->  #define VE_DEC_H265_LOW_ADDR			(VE_ENGINE_DEC_H265 + 0x80)
->  
-> 
+diff --git a/Documentation/networking/device_drivers/stmicro/stmmac.txt b/Documentation/networking/device_drivers/stmicro/stmmac.txt
+index 1ae979fd90d2..3d8a83158309 100644
+--- a/Documentation/networking/device_drivers/stmicro/stmmac.txt
++++ b/Documentation/networking/device_drivers/stmicro/stmmac.txt
+@@ -190,17 +190,17 @@ Where:
+ For MDIO bus The we have:
+ 
+  struct stmmac_mdio_bus_data {
+-	int (*phy_reset)(void *priv);
+ 	unsigned int phy_mask;
+ 	int *irqs;
+ 	int probed_phy_irq;
++	bool needs_reset;
+  };
+ 
+ Where:
+- o phy_reset: hook to reset the phy device attached to the bus.
+  o phy_mask: phy mask passed when register the MDIO bus within the driver.
+  o irqs: list of IRQs, one per PHY.
+  o probed_phy_irq: if irqs is NULL, use this for probed PHY.
++ o needs_reset: make MDIO bus reset optional.
+ 
+ For DMA engine we have the following internal fields that should be
+ tuned according to the HW capabilities.
+-- 
+2.17.1
 
 
 _______________________________________________
