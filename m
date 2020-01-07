@@ -2,140 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB11132EF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:05:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7634132EFF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 20:07:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ObM/rzHQL5cN15TkC8qJa17+D7F2vPX573XGxTveD9w=; b=s/RS4sfehj3SHS
-	jCw4varNurh9T5c6rOO7cKL5sdGl2KqBZvqtkp3udeik7pnseLWnWB6YDn69RVZ+gd/kmX8pGKGXT
-	vaQ+g5vfa3v1uCclhMC91zpVz5MzXczZL0t9kNsf/z8vc8o5DxBI9ykBMJp1ys2Zyn9grNkXrkHgk
-	JuQVC1o5g4O39o1HrYsydS3IJBeSlFMq2L5OxyQSnHwFZ1TiZp9jHhOqtbl+QIDJ52CRqqbB/khRj
-	b36TwxqkzCqX1oumnfbjWsOr/j96CGHj1qXckPfqwkYLYPj7eOW6oaVz7Am2EH1FseinOKSg2HQ+a
-	pvnLf1tDNKqjCO8TpXyA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/x/lMIZDkYY8kX6k7uFFLkk4I4imwx2mRy1Z8Kb8JL0=; b=NWgiKoUf0qsmPB
+	+WED3cf8oRtEMgrNGJpiBMDJ7dnMKBXpyrC6S+CPJ8jkNu9Y79GxA8eqWVmbP3XglFGAB9ja3NA1d
+	iaBP1de8VFw+t4odQTseFIqi/Usc8hlGgsEE+FctWGQdQtknEErfxAO4me0juf/dTp72T2zdUFOca
+	56ycyryn7P+Q/DW1lwgxvf+H2u52KzHXy5NHIdZAypzAKnPMxUC2QpMXo0J8hZ4xok5nBKxGXkunU
+	214e7kd+XJVR+pxtL5OANZYqDY1Kcy8AF0rroPaI2A0BM8RPc0o/RJbmypM20hJBCJ5sN3MiRM7uf
+	7Z1TBurcK+uh//lcPnVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iouAP-00008l-Vs; Tue, 07 Jan 2020 19:05:26 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iouCi-0000ew-Sm; Tue, 07 Jan 2020 19:07:48 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iouAF-00007W-Mx
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:05:20 +0000
-Received: by mail-ed1-x542.google.com with SMTP id dc19so469293edb.10
+ id 1iouCZ-0000dT-HI
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 19:07:40 +0000
+Received: by mail-io1-xd43.google.com with SMTP id t26so417521ioi.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 11:05:15 -0800 (PST)
+ Tue, 07 Jan 2020 11:07:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=vZHbnxQhbkfCNbXjBH5OjU/5z31AX+7RUONEgUj90PQ=;
- b=rYB3jpo+JZNto1c9vxGzmcflyUlDW1MHAwv8d4Ibo+e4PjUqU4XXbdWKkvu5wj4Yd6
- 6+CCJd8SHTbA5rsjePZI+nB2lLPcR+LAz48e4EeEg9wlBnEYO+tDfOPPjc3OsOy3mnAU
- SEnDCLccOZu6Fz4DJlgIqjB6XVJGctlaTo7yQrpdRGLSp285Y41FH1XwSwgcWI/CFXSu
- IpAodx6rzkOFLwrdcp5sPk/N9ocC0XE6oYV+aupklQhWaANyeP3KGb50XaK5rt+9ZEER
- MC2L3QZ32WbSD0FvN2cig06oe7mFdWDFeEb/08Dc5uHct88IU24h9pa9RJjSrXKnhSgc
- Q/MA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=eL83IhmbYca+Npr1asR8CaaCAGTGwRjtX816LINHiJ4=;
+ b=RLrZOxXIMmF1MhE4PM1Sa8VQoZKrgU1LR5d0ldT6JogLbeCS661EUDG/pqgyvlDsFL
+ IoajV/fjjZ8J45uNX75f8fm7EM5gby4YnelGEZJCvyffXggqoBTZ4XtZSThHMeWog9gu
+ dfc/WoVFPLDElSvYXcqqusjISy6MAo/iLCHJVvxuAcTZLGY3WQyybVHmG/3n3Dmz6+z1
+ 3NNEanzS2pZ91WFp3WFhZTFasbjePbmD2WkV56voSFwZ+0e1C/fyFn04Ru2wzRNiApuj
+ z3eY3fmCeK6TCAHnEJMZ2y+4WLY6NPuCrhlBV35zJ58i4meOBn4XDM+xv/SCUWcfrMwB
+ uVUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=vZHbnxQhbkfCNbXjBH5OjU/5z31AX+7RUONEgUj90PQ=;
- b=K8oiNqcK+QAFZbyZ435lHhuJjh61F8zbObjGMADcZeFuymn/2RXP4HREKACcjIzkmZ
- xCSaK2JqY9/6qjVKCN6E4jgAI3NtzZnDAEHEoLBVFB6lXT1boX9xRK0g0xALfwavkPVZ
- PG8qHlrvf7yoolMLjc2/QSBEAYwKdflm5Pm7mzbbxS21+IFJy5dC8mqFw3VFmR+9rq8o
- 1aiEKfSBiYx6lQV+sfPcP2tLnIt/sxncoG89ksqKacrKEF83oEt9EWpn2rNbj2pkBxsn
- EplquwD32FLOMvaMgQ7i5iwoUFjv5Gml9CESBS+4TJY1rZwGYOWJvnk7kp8v/30DpO01
- PrJg==
-X-Gm-Message-State: APjAAAVqQJdHESQumbQZqmwaL+Ccg2a+ce5SwxxYjf1MGgkCFec3Hhje
- KQgy+qdDQaOyN9PRlpXDeAA=
-X-Google-Smtp-Source: APXvYqxpdioRq8v4DUGMsag8nw7GAoYV3iaKDW52kELylvTw3skO/OENIN/+iEMG2PeziY5Pn7UaFw==
-X-Received: by 2002:a17:906:5210:: with SMTP id
- g16mr874594ejm.305.1578423914031; 
- Tue, 07 Jan 2020 11:05:14 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id y21sm19080edu.70.2020.01.07.11.05.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 07 Jan 2020 11:05:13 -0800 (PST)
-Subject: Re: [PATCH net] net: stmmac: Fixed link does not need MDIO Bus
-To: Jose Abreu <Jose.Abreu@synopsys.com>, netdev@vger.kernel.org
-References: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <5d4a30a5-7af5-7147-11a9-bb5ca3564baa@gmail.com>
-Date: Tue, 7 Jan 2020 11:05:07 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=eL83IhmbYca+Npr1asR8CaaCAGTGwRjtX816LINHiJ4=;
+ b=DX7BAJ/8yYQewn395g0WydS9k2xpv0LoGjrxcDqYFFcZYRmShbaWNH1UDIOj19SXLf
+ wEHqMmUZB89bwnLEsr7KcMdfZRTly7LgemM8IAIitgyb34wvJjBv3GZTReE3W6BXLwMS
+ HoERUK1N2yua4j1R4mmJKV7f/tBvOK3qz1RANHU0B4zHwhQFl9bIbkheLtd0ewv528lC
+ BI4sYD9LBE6u0UdglGP/bXpDRGCpUd12vCLIMl70Lr97eJd83igHCufvQg7f91mP7YDA
+ IFQMv810cemVDpVHLKyWX04+/HUF330b2z3/vx/LZ6lANUSea07nLjOXmPbMT5TK/PLQ
+ 0pWg==
+X-Gm-Message-State: APjAAAUPt4I3VMvqfQ2GKdQEAzU11iMr42VaWtiNbQ4E9pPUIHh9Jyhp
+ yRRA8ZK96gv/8F3KdjHzGZ7NupD9gVD6SZ2W/1A=
+X-Google-Smtp-Source: APXvYqysZuYS/1n72GZMQD9xKS7PrMAogGWhU3hvRiFtIkWkVbE9ikdKnVSN73EbKlebVJc4I/j1UwQV/tXXzYxNrl4=
+X-Received: by 2002:a05:6638:a2c:: with SMTP id 12mr961911jao.60.1578424058012; 
+ Tue, 07 Jan 2020 11:07:38 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <5764e60da6d3af7e76c30f63b07f1a12b4787918.1578400471.git.Jose.Abreu@synopsys.com>
-Content-Language: en-US
+References: <20200106191003.21584-1-tiny.windzz@gmail.com>
+ <20200106191003.21584-2-tiny.windzz@gmail.com>
+ <20200107090449.GA32007@pi3>
+In-Reply-To: <20200107090449.GA32007@pi3>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Wed, 8 Jan 2020 03:07:25 +0800
+Message-ID: <CAEExFWvJx82h1c1QBrQ+DpT4kgEZ0o3q_O7JLbk-1L-iuMGPEw@mail.gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: exynos: tiny4412: add proper panel node
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_110515_752469_3C524119 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20200107_110739_576026_CE2155B6 
+X-CRM114-Status: GOOD (  17.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -156,32 +94,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "kernelci . org bot" <bot@kernelci.org>, Sriram Dash <sriram.dash@samsung.com>,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Heiko Stuebner <heiko@sntech.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/7/20 4:35 AM, Jose Abreu wrote:
-> When using fixed link we don't need the MDIO bus support.
-> 
-> Reported-by: Heiko Stuebner <heiko@sntech.de>
-> Reported-by: kernelci.org bot <bot@kernelci.org>
-> Fixes: d3e014ec7d5e ("net: stmmac: platform: Fix MDIO init for platforms without PHY")
-> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+On Tue, Jan 7, 2020 at 5:04 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Mon, Jan 06, 2020 at 07:10:03PM +0000, Yangtao Li wrote:
+> > This patch add at070tn92 panel for tiny4412 board.
+>
+> Please fix description as in patch 1.
+>
+> >
+> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> > ---
+> >  arch/arm/boot/dts/exynos4412-tiny4412.dts | 16 ++++++++++++++++
+> >  1 file changed, 16 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/dts/exynos4412-tiny4412.dts b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > index 2b62cb27420c..57f9d09233ad 100644
+> > --- a/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > +++ b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > @@ -66,6 +66,16 @@
+> >                       clock-frequency = <24000000>;
+> >               };
+> >       };
+> > +
+> > +     panel {
+> > +             compatible = "innolux,at070tn92";
+> > +
+> > +             port {
+> > +                     panel_input: endpoint {
+> > +                             remote-endpoint = <&lcdc_output>;
+> > +                     };
+> > +             };
+> > +     };
+> >  };
+> >
+> >  &fimd {
+> > @@ -74,6 +84,12 @@
+> >       #address-cells = <1>;
+> >       #size-cells = <0>;
+> >       status = "okay";
+>
+> One empty space here.
+>
+> > +     port@3 {
+> > +             reg = <3>;
+>
+> Why starting from "3"? Why this is port@3, not just "port"?
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-Tested-by: Florian Fainelli <f.fainelli@gmail> # Lamobo R1 (fixed-link +
-MDIO sub node for roboswitch).
--- 
-Florian
+From samsung-fimd.txt:
+---
+The device node can contain 'port' child nodes according to the bindings defined
+in [2]. The following are properties specific to those nodes:
+- reg: (required) port index, can be:
+                0 - for CAMIF0 input,
+                1 - for CAMIF1 input,
+                2 - for CAMIF2 input,
+                3 - for parallel output,
+                4 - for write-back interface
+---
+
+I guess it is influenced here.
+https://elixir.bootlin.com/linux/v5.5-rc5/source/drivers/gpu/drm/exynos/exynos_drm_dpi.c#L170
+Without it, lcd is completely black.
+
+Your,
+Yangtao
+
+>
+> Best regards,
+> Krzysztof
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
