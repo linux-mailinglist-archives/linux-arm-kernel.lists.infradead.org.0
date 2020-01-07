@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B3D5132E93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:38:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5671132E97
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:38:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OXm52MtTka5Ayojxqwx+0G7RJQkfLrZW32oHSVhwVog=; b=F6YoI5dQSpeHVv
-	o/LsFUENB6Ol6B1huqOBAhQTJ3FctCXeufv+zTIcDt7vWlmnc5br3pqAZ5ueXRZn3XXFZiDR/uXsi
-	ugkc+8+kFhVHEK+prehIOva3psRgDE0XsWVKVgqfkGKgIYBVVCmhgjU3v5uDQ25DLZIIAe7wPhriH
-	A4+ldqNwEtndl+No3dXvTIls2njWfl6dqvSFkBewB6S3hGBdAmx51ym+zgVsQrkXkTnGa5DrM+D00
-	E13lCepoxCMPnIgks0spwbQN61gFCMFNtyf5C3DFqNTVvTCdzrmfv8so+KXg9QXkFPuA6AKIRc7Ro
-	LIWQ1Yrb3D0s3zJYUKsQ==;
+	List-Owner; bh=xkS4EfN/F/7isd14/4nUWqiySU/9IL0WvUGfXpv8JEA=; b=B3G1vs8SL4gNn8
+	rlIBybqCf2rFH2fffo5iH7VQ+Cqk8Sgss9E94caJ4xVgv0ZUFrfaTwol6zDIGdTFU80neS6vyTz4v
+	6YBq5RnZP68+ehMM42uHHJ5mCSqPwrueJmIYUCJUew982uIYf7aJJwrzuDGOGj71DeAWtRtbtCXy9
+	LkPizFfYvEx4w2OYE0nWZl8KKmA66QP776S2oV+FnD8jksQunv3XM3DWc7JFSdYC9Lf1Lb3cQp218
+	Uy1rSr/1Mcs5ZZpKhROVqGuKGBnSZ3MkB9X12HME0tHdTVBejqxzZM/KT5fDrmWwe4P0+sc7yM8Wq
+	6WGIB0tkcdgVMzndwSFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotkL-000546-IU; Tue, 07 Jan 2020 18:38:29 +0000
+	id 1iotkb-0005IR-IZ; Tue, 07 Jan 2020 18:38:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotju-0004k7-7e
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:38:03 +0000
+ id 1iotjw-0004nC-6H
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:38:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 43870DA7;
- Tue,  7 Jan 2020 10:38:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D74031B;
+ Tue,  7 Jan 2020 10:38:03 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C248D3F534;
- Tue,  7 Jan 2020 10:38:00 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DC1B93F534;
+ Tue,  7 Jan 2020 10:38:02 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v8 2/3] arm64: random: Add data to pool from setup_arch()
-Date: Tue,  7 Jan 2020 18:35:39 +0000
-Message-Id: <20200107183540.54794-3-broonie@kernel.org>
+Subject: [PATCH v8 3/3] arm64: Use v8.5-RNG entropy for KASLR seed
+Date: Tue,  7 Jan 2020 18:35:40 +0000
+Message-Id: <20200107183540.54794-4-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200107183540.54794-1-broonie@kernel.org>
 References: <20200107183540.54794-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_103802_333351_9A36E2AA 
-X-CRM114-Status: GOOD (  16.51  )
+X-CRM114-CacheID: sfid-20200107_103804_292904_E1EB37A2 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -72,70 +72,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the arm64 ARCH_RANDOM implementation is not available until
-cpufeature has determined the system capabilities it can't be used by
-the generic random code to initialize the entropy pool for early use.
-Instead explicitly add some data to the pool from setup_arch() if the
-boot CPU supports v8.5-RNG, this is the point recommended by the generic
-code.
+When seeding KALSR on a system where we have architecture level random
+number generation make use of that entropy, mixing it in with the seed
+passed by the bootloader. Since this is run very early in init before
+feature detection is complete we open code rather than use archrandom.h.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/include/asm/archrandom.h | 24 ++++++++++++++++++++++++
- arch/arm64/kernel/setup.c           |  2 ++
- 2 files changed, 26 insertions(+)
+ arch/arm64/kernel/kaslr.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
-index 364177954bef..1d9b94fa9c45 100644
---- a/arch/arm64/include/asm/archrandom.h
-+++ b/arch/arm64/include/asm/archrandom.h
-@@ -59,9 +59,33 @@ static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
- 	return ok;
- }
+diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+index 2a11a962e571..fc38c4c25eb6 100644
+--- a/arch/arm64/kernel/kaslr.c
++++ b/arch/arm64/kernel/kaslr.c
+@@ -81,7 +81,8 @@ static __init const u8 *kaslr_get_cmdline(void *fdt)
+ u64 __init kaslr_early_init(u64 dt_phys)
+ {
+ 	void *fdt;
+-	u64 seed, offset, mask, module_range;
++	u64 seed, offset, mask, module_range, ftr;
++	unsigned long raw;
+ 	const u8 *cmdline, *str;
+ 	int size;
  
-+/*
-+ * Our ARCH_RANDOM implementation does not function until relatively
-+ * late in the boot when cpufeature has detertmined system
-+ * capabilities so the core code can't use arch_get_random*() to
-+ * initialize, instead we call this function to inject data from
-+ * setup_arch() if the boot CPU supports v8.5-RNG.
-+ */
-+static inline void arm64_add_early_rndr_entropy(void)
-+{
-+	unsigned long val;
-+	int i;
-+
-+	/* Open code as we run prior to the first call to cpufeature. */
-+	val = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
-+	if (!((val >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf))
-+		return;
-+
-+	/* Add multiple values to mirror the generic code. */
-+	for (i = 0; i < 16; i++)
-+		if (__arm64_rndr(&val))
-+			add_device_randomness(&val, sizeof(val));
-+}
-+
- #else
+@@ -120,6 +121,18 @@ u64 __init kaslr_early_init(u64 dt_phys)
+ 		return 0;
+ 	}
  
- static inline bool __arm64_rndr(unsigned long *v) { return false; }
-+static inline void arm64_add_early_rndr_entropy(void) { }
- 
- #endif /* CONFIG_ARCH_RANDOM */
- #endif /* _ASM_ARCHRANDOM_H */
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 56f664561754..170842965a32 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -344,6 +344,8 @@ void __init setup_arch(char **cmdline_p)
- 	/* Init percpu seeds for random tags after cpus are set up. */
- 	kasan_init_tags();
- 
-+	arm64_add_early_rndr_entropy();
++	/*
++	 * Mix in any entropy obtainable architecturally, open coded
++	 * since this runs extremely early.
++	 */
++	if (IS_ENABLED(CONFIG_ARCH_RANDOM)) {
++		ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
++		if ((ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf) {
++			if (__arm64_rndr(&raw))
++				seed += raw;
++		}
++	}
 +
- #ifdef CONFIG_ARM64_SW_TTBR0_PAN
- 	/*
- 	 * Make sure init_thread_info.ttbr0 always generates translation
+ 	if (!seed) {
+ 		kaslr_status = KASLR_DISABLED_NO_SEED;
+ 		return 0;
 -- 
 2.20.1
 
