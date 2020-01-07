@@ -2,77 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B36132211
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:17:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62210132229
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:19:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pOghcO7uS6PKWAFs+jViENXAkIeBuTMqdBI50jFdlsM=; b=WFeHG6WMIzrJVd
-	KpY1+o91Bwfe+WxGIxLazby+zRY+MrRbr2A4tREY2oGwbMncNm+BxF/2lQrcOiHqX+k7cpnIkt1Gp
-	yp0A4Lsc/zsu7DBK0+nUP4YwddGG7nF10GZOS4igp6JfG2wJTuwbq3LXwu25IFhCrzcyMJcuifiZZ
-	HIbGoCxlV4OBnrbVSZxSuJXHvs7dqp1RzSZN2fhQFL86QNerweZsKGPcbGMW+gTx+v2zY9bx1nWHL
-	TXYAb8YjknWAXuNc8rITbjx25+LGI4KxdpnfrAX9ayV1oj7i4M8404YMoMgZh1ftMawpP+7PBeCxy
-	th51i1400RxL/ael6VXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lOvf9ziG5sM+of9DUl3inUBHwirBC0nmsEl+zo+7qBg=; b=YOJXUgtyMOsLJo
+	w8kJZ2m5E/9aVtoWvAGBtXtxmqOc7YQXWQghcBDOZ4/SkRd7vofN5bAoR6xdgNJPc5rmho0vbAsLB
+	esIWa6UDJ+4haU6HoH/yC9XQbatd3pudKbIOKp5XoP84saS0ojK/G/b7YYnJHVCsg77w/bVcMGLIT
+	AhbYGV9nmxAsGdW7ChIaUMLscKQhMEJRev8FnJzbe5oMAb4/A9+Qa1BfdS5S1w4iymuYZvOJn2Mmi
+	/6c6CpASAak8078XpgnMbBkGkAGyB/at+t4hnF/Torxbq6DZpOUHTAeiefU7ptso+PseukedTGTDc
+	jHXMdgil2KWoAE8g8T4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iokyy-00044F-2Y; Tue, 07 Jan 2020 09:17:00 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iol1l-0004uG-EE; Tue, 07 Jan 2020 09:19:53 +0000
+Received: from mail-db8eur05on2133.outbound.protection.outlook.com
+ ([40.107.20.133] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iokyl-0003qa-Pu
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 09:16:50 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0079DWUd030347; Tue, 7 Jan 2020 10:16:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=BDTYHjgWspO4059Si4TQFdiBJEuxi4FUDcYUcTXntkU=;
- b=xDcgsVsMTz+zCKgl2f5a4vJUM5iG28TsJTHm07TpHlSH7Njm+YKLf3Gz1PX5Rin+69HX
- z+FwnBADJ1r/MRg0Q1y6mSRD8uKJRMoIFvPOegKhNyrFMaAe2h7bYANSTNubTH6wCgaF
- sGwnEPPRHL92QLJ/bfz7Ek6OWXk2FvbI3MyFyzUYdS5u02+I+F3t86dqSdE8s0EFsagm
- F+10v2EsogWR/k1b1doiKxpW1+a7bdcs2YOZIOAhJvkCvNxhniIldRMS40uWrQmfrxBG
- /DtUHRlOv2UdwpqYt1FyVex6o3uvZYh14YSzJIQHdjT4VW/eY1Ei1UwcggNyOEg0nJay Hg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xakm5d0fa-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 07 Jan 2020 10:16:38 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CABA7100039;
- Tue,  7 Jan 2020 10:16:33 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A3E362A7900;
- Tue,  7 Jan 2020 10:16:33 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 7 Jan 2020 10:16:33
- +0100
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <kgene@kernel.org>, <krzk@kernel.org>, <hminas@synopsys.com>
-Subject: [PATCH v3] dt-bindings: usb: Convert DWC2 bindings to json-schema
-Date: Tue, 7 Jan 2020 10:16:30 +0100
-Message-ID: <20200107091630.12796-1-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
+ id 1iol1d-0004tH-0P
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 09:19:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jlIU4V7z2BNC57qTWBXFe8ef+/s8iAHW53HuAr8HopMpKfkl4lVbVlGxKG4HabnEkD4DvFCOQ+o23CmCVsc0uPrYUYzyAw/5MYzEBQhBOZffC+BETVF/4sat4L/fwGIwC2r5wx9wnV2x2KDe7hlfNL5cQ4Yn9gN6YJQ+dbKHExgnJU6hY4TL0henUxbc8CSOCVBou6zpLfPAgunVmcDgspqLzluy1SBbGnv7DkMOFJN5ZWvtLk+H4viu4HMwy37JYZt2/PLEC86XSIt1aVlfnhPncqQBrmKU0yXGPY+KlPlJHDeW4L7Dgl9f5V1uddNw6n5P0ADsFcn6ypdpDzzjpw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7KamLRbfPAE5S2P6S/JrOXq5DIFM5c2bHxAgFwc5QQE=;
+ b=ab2wfbrNsEUd+Y3QQIYIkqdqOyUsIdJYx3s/FOh1LVEEuu+dNg1hPuL41wi5EynAsoNz3/7iOyNfSObl2k5pe5Fq6tFwmymMECSWXEB6hdG0fOvhYn+/LByENC4gkaUkAl4wG1PiP4B6Cy5YlADTrY5EuM9lQP3iNkolitq8OruiM9Fo6+AO/NXH5io3UPjzUMONUauPKVsamHumT3AcRhqq4cmuAz8ip24YNiql4t5V2W3UFiBTJLTp6/kIFi0YpENDl7YT6ggxD52e1Sw967irR3xDK57VpYFkE+t1wrWFvmOGvqyVC/Oqr6EzsR0DsKMZ5fNolnZLDDSyL4TvMw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7KamLRbfPAE5S2P6S/JrOXq5DIFM5c2bHxAgFwc5QQE=;
+ b=gfvWz13NawfEyZ+RBj6esG75ZQvygglSBokCYaGW88nn4a0RaIoL8BAtBZjNBY2tRyG/Kqc3ZiUQbYix+0xuaK56OBwz9ucH0gioH8/Yp4qZEscJ/fDQRb2A8O7cbF2phhYePH1l00i+j6YqHXYqEdTG+d1Ya2iqbV3foppttFU=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3305.eurprd02.prod.outlook.com (52.134.65.26) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.15; Tue, 7 Jan 2020 09:19:37 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::cd85:a8a5:da14:db13]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::cd85:a8a5:da14:db13%7]) with mapi id 15.20.2602.015; Tue, 7 Jan 2020
+ 09:19:37 +0000
+Received: from [192.168.13.3] (213.112.138.4) by
+ HE1PR0402CA0051.eurprd04.prod.outlook.com (2603:10a6:7:7c::40) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.11 via Frontend Transport; Tue, 7 Jan 2020 09:19:36 +0000
+From: Peter Rosin <peda@axentia.se>
+To: "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
+ "sam@ravnborg.org" <sam@ravnborg.org>
+Subject: Re: [PATCH v3 5/6] drm: atmel-hlcdc: prefer a lower pixel-clock than
+ requested
+Thread-Topic: [PATCH v3 5/6] drm: atmel-hlcdc: prefer a lower pixel-clock than
+ requested
+Thread-Index: AQHVtZ63IXD3UJn810+N2kokGKcMV6fXLT4AgAZN0QCAAZDZAA==
+Date: Tue, 7 Jan 2020 09:19:37 +0000
+Message-ID: <6bd70a21-1dc1-6b78-1e86-8ca4704c944c@axentia.se>
+References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
+ <1576672109-22707-6-git-send-email-claudiu.beznea@microchip.com>
+ <20200102090848.GC29446@ravnborg.org>
+ <64902ae8-ef5a-a94a-8edf-05159699b72c@microchip.com>
+In-Reply-To: <64902ae8-ef5a-a94a-8edf-05159699b72c@microchip.com>
+Accept-Language: en-US, sv-SE
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+x-originating-ip: [213.112.138.4]
+x-clientproxiedby: HE1PR0402CA0051.eurprd04.prod.outlook.com
+ (2603:10a6:7:7c::40) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1417f12c-a26c-4a33-6c76-08d79352b7a5
+x-ms-traffictypediagnostic: DB3PR0202MB3305:
+x-microsoft-antispam-prvs: <DB3PR0202MB3305B517AA4E96C0A5EBE00EBC3F0@DB3PR0202MB3305.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 027578BB13
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(346002)(396003)(366004)(376002)(136003)(39830400003)(189003)(199004)(2616005)(956004)(53546011)(2906002)(71200400001)(16526019)(186003)(26005)(81156014)(81166006)(16576012)(316002)(8676002)(5660300002)(86362001)(54906003)(7416002)(8936002)(110136005)(31696002)(66946007)(64756008)(4744005)(52116002)(66556008)(66446008)(6486002)(508600001)(66476007)(36756003)(31686004)(4326008);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3305;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Abuzpg7ZUua82OVGdkiRQqUySxdB6ZxrwcmlCa2vhTCjv9a2n4G4K0LNVZLVluVQjIjDnbpTYOR72Y/tao/OYF6GAzb7L/DuFFIxbE5B4/1aPca9ADKmAn/zYQi5XFhi6XO9FjWrbuL9sqHp3Jw42McvjYXXNPG61MPpCzIeWdQm8jlmyy+JmQO5sj0cFIqXY/fVYtlByIWqUbBFKYCPAF47sBJHJR2VTmzaYQnj5LkblgJ95iEWmjoPJKGQm5Wtf2QnJvK2Dmjy31eb3wt5H53zYSy6W+qzjUqjNu62Sne2RHnlkiWiFfS18CwGs9zScF/DBD/S68Cn1a1rCSNIZnwc4ZvVGqEHEuV0mwsuuaEKAxDXW3jyjQQRDP5yqy+Qz4Oh+ABJhSuEtNW9Xi2IVk+RAWpcv2I7Hnu75VhMQSVh/vjE5Gd1CyYrFz/9Il3R
+x-ms-exchange-transport-forked: True
+Content-ID: <16F0484F01ABFD459032BAF727F998CA@eurprd02.prod.outlook.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2020-01-07_02:2020-01-06,2020-01-07 signatures=0
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1417f12c-a26c-4a33-6c76-08d79352b7a5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jan 2020 09:19:37.6356 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: dn8Ljw25qL4Vj2/++JpdXAh90fmHK1DNdnkpgCBfHMzAayFKKTGbkDa2iqK2f2M0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3305
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_011648_337845_EC34738C 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200107_011945_053333_91C9F876 
+X-CRM114-Status: GOOD (  11.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.20.133 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,273 +136,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, amelie.delaunay@st.com,
- linux-samsung-soc@vger.kernel.org,
- Benjamin Gaignard <benjamin.gaignard@st.com>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "boris.brezillon@bootlin.com" <boris.brezillon@bootlin.com>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert DWC2 bindings to DT schema format using json-schema.
-DWC2 is widely use but a couple of compatibles and properties
-(vusb_d-supply,vusb_a-supply) were missing in dwc2.txt, the
-patch add them.
+On 2020-01-06 10:24, Claudiu.Beznea@microchip.com wrote:
+> On 02.01.2020 11:08, Sam Ravnborg wrote:
+>> On Wed, Dec 18, 2019 at 02:28:28PM +0200, Claudiu Beznea wrote:
+>>> From: Peter Rosin <peda@axentia.se>
+>>>
+>>> The intention was to only select a higher pixel-clock rate than the
+>>> requested, if a slight overclocking would result in a rate significantly
+>>> closer to the requested rate than if the conservative lower pixel-clock
+>>> rate is selected. The fixed patch has the logic the other way around and
+>>> actually prefers the higher frequency. Fix that.
+>>>
+>>> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
+>> The id is wrong here - the right one is: 9946a3a9dbedaaacef8b7e94f6ac144f1daaf1de
+> 
+> Right! Sorry for this one! Thank you for fixing it up.
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
-CC: Minas Harutyunyan <hminas@synopsys.com>
-CC: Krzysztof Kozlowski <krzk@kernel.org>
+Dito. This one was my fault. I wonder how I came up with the wrong id?
+Probably some backport branch or something, but I'm not finding it. Oh
+well, sorry again.
 
-changes in version 3:
-- put Rob Herring as maintainer
-- change the example to use one of the listed compatible
-
-changes in version 2:
-- put Minas Harutyunyan <hminas@synopsys.com> as maintainer
-- remove type and description from phy property
-- remove description from compatible items
-- simplify samsung,s3c6400-hsotg compatible handling
-
- Documentation/devicetree/bindings/usb/dwc2.txt  |  64 ----------
- Documentation/devicetree/bindings/usb/dwc2.yaml | 151 ++++++++++++++++++++++++
- 2 files changed, 151 insertions(+), 64 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/usb/dwc2.txt
- create mode 100644 Documentation/devicetree/bindings/usb/dwc2.yaml
-
-diff --git a/Documentation/devicetree/bindings/usb/dwc2.txt b/Documentation/devicetree/bindings/usb/dwc2.txt
-deleted file mode 100644
-index aafff3a6904d..000000000000
---- a/Documentation/devicetree/bindings/usb/dwc2.txt
-+++ /dev/null
-@@ -1,64 +0,0 @@
--Platform DesignWare HS OTG USB 2.0 controller
-------------------------------------------------------
--
--Required properties:
--- compatible : One of:
--  - brcm,bcm2835-usb: The DWC2 USB controller instance in the BCM2835 SoC.
--  - hisilicon,hi6220-usb: The DWC2 USB controller instance in the hi6220 SoC.
--  - rockchip,rk3066-usb: The DWC2 USB controller instance in the rk3066 Soc;
--  - "rockchip,px30-usb", "rockchip,rk3066-usb", "snps,dwc2": for px30 Soc;
--  - "rockchip,rk3188-usb", "rockchip,rk3066-usb", "snps,dwc2": for rk3188 Soc;
--  - "rockchip,rk3288-usb", "rockchip,rk3066-usb", "snps,dwc2": for rk3288 Soc;
--  - "lantiq,arx100-usb": The DWC2 USB controller instance in Lantiq ARX SoCs;
--  - "lantiq,xrx200-usb": The DWC2 USB controller instance in Lantiq XRX SoCs;
--  - "amlogic,meson8-usb": The DWC2 USB controller instance in Amlogic Meson8 SoCs;
--  - "amlogic,meson8b-usb": The DWC2 USB controller instance in Amlogic Meson8b SoCs;
--  - "amlogic,meson-gxbb-usb": The DWC2 USB controller instance in Amlogic S905 SoCs;
--  - "amlogic,meson-g12a-usb": The DWC2 USB controller instance in Amlogic G12A SoCs;
--  - "amcc,dwc-otg": The DWC2 USB controller instance in AMCC Canyonlands 460EX SoCs;
--  - snps,dwc2: A generic DWC2 USB controller with default parameters.
--  - "st,stm32f4x9-fsotg": The DWC2 USB FS/HS controller instance in STM32F4x9 SoCs
--  configured in FS mode;
--  - "st,stm32f4x9-hsotg": The DWC2 USB HS controller instance in STM32F4x9 SoCs
--  configured in HS mode;
--  - "st,stm32f7-hsotg": The DWC2 USB HS controller instance in STM32F7 SoCs
--    configured in HS mode;
--- reg : Should contain 1 register range (address and length)
--- interrupts : Should contain 1 interrupt
--- clocks: clock provider specifier
--- clock-names: shall be "otg"
--Refer to clk/clock-bindings.txt for generic clock consumer properties
--
--Optional properties:
--- phys: phy provider specifier
--- phy-names: shall be "usb2-phy"
--- vbus-supply: reference to the VBUS regulator. Depending on the current mode
--  this is enabled (in "host" mode") or disabled (in "peripheral" mode). The
--  regulator is updated if the controller is configured in "otg" mode and the
--  status changes between "host" and "peripheral".
--Refer to phy/phy-bindings.txt for generic phy consumer properties
--- dr_mode: shall be one of "host", "peripheral" and "otg"
--  Refer to usb/generic.txt
--- g-rx-fifo-size: size of rx fifo size in gadget mode.
--- g-np-tx-fifo-size: size of non-periodic tx fifo size in gadget mode.
--- g-tx-fifo-size: size of periodic tx fifo per endpoint (except ep0) in gadget mode.
--- snps,need-phy-for-wake: If present indicates that the phy needs to be left
--                          on for remote wakeup during suspend.
--- snps,reset-phy-on-wake: If present indicates that we need to reset the PHY when
--                          we detect a wakeup.  This is due to a hardware errata.
--
--Deprecated properties:
--- g-use-dma: gadget DMA mode is automatically detected
--
--Example:
--
--        usb@101c0000 {
--                compatible = "ralink,rt3050-usb, snps,dwc2";
--                reg = <0x101c0000 40000>;
--                interrupts = <18>;
--		clocks = <&usb_otg_ahb_clk>;
--		clock-names = "otg";
--		phys = <&usbphy>;
--		phy-names = "usb2-phy";
--		snps,need-phy-for-wake;
--        };
-diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-new file mode 100644
-index 000000000000..71cf7ba32237
---- /dev/null
-+++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-@@ -0,0 +1,151 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/usb/dwc2.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: DesignWare HS OTG USB 2.0 controller Bindings
-+
-+maintainers:
-+  - Rob Herring <robh@kernel.org>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: brcm,bcm2835-usb
-+      - const: hisilicon,hi6220-usb
-+      - items:
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,px30-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,rk3036-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,rv1108-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,rk3188-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,rk3228-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: rockchip,rk3288-usb
-+          - const: rockchip,rk3066-usb
-+          - const: snps,dwc2
-+      - const: lantiq,arx100-usb
-+      - const: lantiq,xrx200-usb
-+      - items:
-+          - const: amlogic,meson8-usb
-+          - const: snps,dwc2
-+      - items:
-+          - const: amlogic,meson8b-usb
-+          - const: snps,dwc2
-+      - const: amlogic,meson-gxbb-usb
-+      - items:
-+          - const: amlogic,meson-g12a-usb
-+          - const: snps,dwc2
-+      - const: amcc,dwc-otg
-+      - const: snps,dwc2
-+      - const: st,stm32f4x9-fsotg
-+      - const: st,stm32f4x9-hsotg
-+      - const: st,stm32f7-hsotg
-+      - const: samsung,s3c6400-hsotg
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    items:
-+      - const: otg
-+
-+  resets:
-+    items:
-+     - description: common reset
-+     - description: ecc reset
-+    minItems: 1
-+
-+  reset-names:
-+    items:
-+     - const: dwc2
-+     - const: dwc2-ecc
-+    minItems: 1
-+
-+  phys:
-+    maxItems: 1
-+
-+  phy-names:
-+    const: usb2-phy
-+
-+  vbus-supply:
-+    description: reference to the VBUS regulator. Depending on the current mode
-+      this is enabled (in "host" mode") or disabled (in "peripheral" mode). The
-+      regulator is updated if the controller is configured in "otg" mode and the
-+      status changes between "host" and "peripheral".
-+
-+  vusb_d-supply:
-+    description: phandle to voltage regulator of digital section,
-+
-+  vusb_a-supply:
-+    description: phandle to voltage regulator of analog section.
-+
-+  dr_mode:
-+    enum: [host, peripheral, otg]
-+
-+  g-rx-fifo-size:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description: size of rx fifo size in gadget mode.
-+
-+  g-np-tx-fifo-size:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description: size of non-periodic tx fifo size in gadget mode.
-+
-+  g-tx-fifo-size:
-+    $ref: /schemas/types.yaml#/definitions/uint32-array
-+    description: size of periodic tx fifo per endpoint (except ep0) in gadget mode.
-+
-+  snps,need-phy-for-wake:
-+    $ref: /schemas/types.yaml#/definitions/flag
-+    description: If present indicates that the phy needs to be left on for remote wakeup during suspend.
-+
-+  snps,reset-phy-on-wake:
-+    $ref: /schemas/types.yaml#/definitions/flag
-+    description: If present indicates that we need to reset the PHY when we detect a wakeup.
-+                 This is due to a hardware errata.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+      usb@101c0000 {
-+        compatible = "rockchip,rk3066-usb", "snps,dwc2";
-+        reg = <0x10180000 0x40000>;
-+        interrupts = <18>;
-+        clocks = <&usb_otg_ahb_clk>;
-+        clock-names = "otg";
-+        phys = <&usbphy>;
-+        phy-names = "usb2-phy";
-+      };
-+
-+...
--- 
-2.15.0
-
-
+Cheers,
+Peter
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
