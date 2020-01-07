@@ -2,56 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5671132E97
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:38:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18970132ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 19:58:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xkS4EfN/F/7isd14/4nUWqiySU/9IL0WvUGfXpv8JEA=; b=B3G1vs8SL4gNn8
-	rlIBybqCf2rFH2fffo5iH7VQ+Cqk8Sgss9E94caJ4xVgv0ZUFrfaTwol6zDIGdTFU80neS6vyTz4v
-	6YBq5RnZP68+ehMM42uHHJ5mCSqPwrueJmIYUCJUew982uIYf7aJJwrzuDGOGj71DeAWtRtbtCXy9
-	LkPizFfYvEx4w2OYE0nWZl8KKmA66QP776S2oV+FnD8jksQunv3XM3DWc7JFSdYC9Lf1Lb3cQp218
-	Uy1rSr/1Mcs5ZZpKhROVqGuKGBnSZ3MkB9X12HME0tHdTVBejqxzZM/KT5fDrmWwe4P0+sc7yM8Wq
-	6WGIB0tkcdgVMzndwSFA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yv3BAqck52n5ye2etAhDDHprZOgPz6z+yeor0jI6yLU=; b=bPt
+	iRbFPH6FgfJ8cz/B6yaRLvfr/wv8EOK0wI86Ss2/WLjbAt5L+RU5j41xbUIWNPHApJJQVb3fOK75O
+	tVacvUgdHgGdsuvgHbxOHWuIBLJCoRN7FKw/DscBCnfe3ZzbU9Lf1tvHZ1Z+RZs3iwprNUIzOAYQm
+	EkZMXig93gLk7Ue2ca+XDf3XzOF6n0lltVtn0Gz3EKLxzwUNtCWexzwV40BRY87aaOitPRU0hhMBb
+	mZm1XpwwkrT/ZzEOmGTUGrfnK3oMM+xtPnwEtTYpqjLUzdu/bTzdbl8UWDKPh7aCcu2ODK/0jNa0U
+	7d4N0nwmvybOtPhj739wXtTAJOmFD0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iotkb-0005IR-IZ; Tue, 07 Jan 2020 18:38:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iotjw-0004nC-6H
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:38:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D74031B;
- Tue,  7 Jan 2020 10:38:03 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DC1B93F534;
- Tue,  7 Jan 2020 10:38:02 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>,
-	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v8 3/3] arm64: Use v8.5-RNG entropy for KASLR seed
-Date: Tue,  7 Jan 2020 18:35:40 +0000
-Message-Id: <20200107183540.54794-4-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200107183540.54794-1-broonie@kernel.org>
-References: <20200107183540.54794-1-broonie@kernel.org>
-MIME-Version: 1.0
+	id 1iou3U-0003kv-6G; Tue, 07 Jan 2020 18:58:16 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iou3J-0003jc-G4
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 18:58:06 +0000
+Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
+ helo=rjones.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <rjones@gateworks.com>)
+ id 1iou3F-0006Mw-Ke; Tue, 07 Jan 2020 18:58:01 +0000
+From: Robert Jones <rjones@gateworks.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH v6 0/5] ARM: dts: imx: Add GW59xx Gateworks specials
+Date: Tue,  7 Jan 2020 10:57:48 -0800
+Message-Id: <20200107185753.28308-1-rjones@gateworks.com>
+X-Mailer: git-send-email 2.9.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_103804_292904_E1EB37A2 
-X-CRM114-Status: GOOD (  11.89  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200107_105805_578802_DEB86DD3 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,59 +57,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Mark Brown <broonie@kernel.org>,
- Richard Henderson <richard.henderson@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Robert Jones <rjones@gateworks.com>,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When seeding KALSR on a system where we have architecture level random
-number generation make use of that entropy, mixing it in with the seed
-passed by the bootloader. Since this is run very early in init before
-feature detection is complete we open code rather than use archrandom.h.
+This series adds board support for the GW59xx Gateworks Ventana family
+specials.
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/kernel/kaslr.c | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+Changes in v2:
+ - Generalized node names
+ - Removed unnecessary labels
+ - Expanded patch subject
+ - Removed undocumented compatible string in dts
 
-diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
-index 2a11a962e571..fc38c4c25eb6 100644
---- a/arch/arm64/kernel/kaslr.c
-+++ b/arch/arm64/kernel/kaslr.c
-@@ -81,7 +81,8 @@ static __init const u8 *kaslr_get_cmdline(void *fdt)
- u64 __init kaslr_early_init(u64 dt_phys)
- {
- 	void *fdt;
--	u64 seed, offset, mask, module_range;
-+	u64 seed, offset, mask, module_range, ftr;
-+	unsigned long raw;
- 	const u8 *cmdline, *str;
- 	int size;
- 
-@@ -120,6 +121,18 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 		return 0;
- 	}
- 
-+	/*
-+	 * Mix in any entropy obtainable architecturally, open coded
-+	 * since this runs extremely early.
-+	 */
-+	if (IS_ENABLED(CONFIG_ARCH_RANDOM)) {
-+		ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
-+		if ((ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf) {
-+			if (__arm64_rndr(&raw))
-+				seed += raw;
-+		}
-+	}
-+
- 	if (!seed) {
- 		kaslr_status = KASLR_DISABLED_NO_SEED;
- 		return 0;
+Changes in v3:
+ - Fixed a conflict in arch/arm/boot/dts/Makefile
+
+Changes in v4:
+ - Clarified authorship
+ - Added dt-bindings compatible entries
+
+Changes in v5:
+ - Added documentation schema permutations for all gateworks ventana boards
+ - Added back compatible strings from dts removed in v2
+
+Changes in v6:
+ - Reorganized dt-bindings schema into new items entry
+
+Robert Jones (4):
+  dt-bindings: arm: fsl: Add Gateworks Ventana i.MX6DL/Q compatibles
+  ARM: dts: imx: Add GW5907 board support
+  ARM: dts: imx: Add GW5913 board support
+  ARM: dts: imx: Add GW5912 board support
+
+Tim Harvey (1):
+  ARM: dts: imx: Add GW5910 board support
+
+ Documentation/devicetree/bindings/arm/fsl.yaml |  37 ++
+ arch/arm/boot/dts/Makefile                     |   8 +
+ arch/arm/boot/dts/imx6dl-gw5907.dts            |  14 +
+ arch/arm/boot/dts/imx6dl-gw5910.dts            |  14 +
+ arch/arm/boot/dts/imx6dl-gw5912.dts            |  13 +
+ arch/arm/boot/dts/imx6dl-gw5913.dts            |  14 +
+ arch/arm/boot/dts/imx6q-gw5907.dts             |  14 +
+ arch/arm/boot/dts/imx6q-gw5910.dts             |  14 +
+ arch/arm/boot/dts/imx6q-gw5912.dts             |  13 +
+ arch/arm/boot/dts/imx6q-gw5913.dts             |  14 +
+ arch/arm/boot/dts/imx6qdl-gw5907.dtsi          | 399 ++++++++++++++++++++
+ arch/arm/boot/dts/imx6qdl-gw5910.dtsi          | 491 +++++++++++++++++++++++++
+ arch/arm/boot/dts/imx6qdl-gw5912.dtsi          | 461 +++++++++++++++++++++++
+ arch/arm/boot/dts/imx6qdl-gw5913.dtsi          | 348 ++++++++++++++++++
+ 14 files changed, 1854 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5907.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5910.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5912.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5913.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5907.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5910.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5912.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5913.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5907.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5910.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5912.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5913.dtsi
+
 -- 
-2.20.1
+2.9.2
 
 
 _______________________________________________
