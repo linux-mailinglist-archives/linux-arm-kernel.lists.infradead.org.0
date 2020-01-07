@@ -2,97 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EE1131E1E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 04:44:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD3C9131EB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 05:45:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rW+D7fPY8uRurkGlvk9FUI7JksHqa0pcDj3sciRuKKs=; b=lV9Ejuno0kfjVW
-	K0fsUV4JRTOInYgGleXxLSba/PCRz6mJny/Cfh9dc5sr/HqTw3K/+cEp1GfgnXYpHT/Wr1nOKUhR8
-	8k5o/5T53Saq45Iqmuut+lD/28ozsTBNjJ+lOJudhlpvlr2HiwjWN/NYrvFPPkXcmrzwidrnmke4W
-	3zirrboCEWS2Y4kmBuRGyFfJE2vtYHCiEaKSb4HEPzO6E11O/4LAm8cjtwK4ZCuchalrq7DIeNGZS
-	UGT1i97RLYlYSzXS4IowbUSfRVGFw4qcWdeqsTTJ5d8LcKh0b/oBXf+7oz57XNQOMC4LssoOtus0i
-	pPCS5Rov1JO475PtFggQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XZOGJwRwfqeB7/PFr46kvV2IMR09Bk1pjXvUeyS143k=; b=JNCNLe32mpd0iz
+	JCB8C+gCyNn4/H+BCfi5ZuhT4No+6DSJcurTQphBTrdmeejNCkBZlt1T7zs6SX+k8zL8Wj/JlpjFP
+	mkaHRAazqq9tm6ZvBUFzy0lSglGH2F29OFAB9/yCqXu50qYv2WsTGMIfxG7fbHN8L2XDVO3FvPDLA
+	PPGpZd+WWQAwzCn4nRsDq8JAAMXxtfR6uvoXi4FdL+5rOblXGfcvcGCS03ZYXaqvVuJ3WKO5y1r85
+	Oip21YyzddUpH0dAa6YfWN3cDHvvXOH4MgSk4GvQArFPO/QSU1HRu7yPLVbAtY6ucX9qOoua4aj3V
+	RvbPEcUYqZ8E2kU0IV5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iofnP-00024e-6N; Tue, 07 Jan 2020 03:44:43 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iogjj-0006IZ-A7; Tue, 07 Jan 2020 04:44:59 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iofmb-0001Xo-2S
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 03:43:54 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c23so22640041plz.4
+ id 1iogjc-0006I6-Rc
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 04:44:54 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q10so27962604pfs.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 19:43:52 -0800 (PST)
+ Mon, 06 Jan 2020 20:44:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=AQ9/DC53GURoy8uPVJwwkeJi6XJeKnxIDYkVR0iQwQs=;
- b=vWBJFj7l6TMl4AOJKf5X9VW3UJTLj5KRhDpkjG/XRys7liNh2J8d1FbteOvt5wznSM
- 4zJxH5dUoFjg3fs1CeOhYTcg4KPdDwWSYhF4WPJkik/Ujl97facgI/O+lkxRL1xWboSC
- UAZq0PlnNYZ8d3h+imgzHDEnNREGDJAZv+3jFLZdK8O27Mh1XECf3largM3JwDxXud/z
- wnRmX9QrDVakjRYa4mhYSMcZFT/wTRu5JYgwwzJLAfCT7XEs5+M6+iHQ25Jg2LjyYM+8
- 3RiZ72+CCx7+vAhZOTp0pxO9fVIjgeK/JOdzXaSB9ESg778kwqpxf4nbPbHQpQ5iCzaK
- uvRQ==
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VgCprQ2zva7lc9m4MxBwteE8ArwxgI7YBSV7ieJsxms=;
+ b=VwWVJ/8YrxTd2D3fofttUUxCoO6+7/MX1YeCoAivguiQP398xuCuoDdLHIN+32Y1cZ
+ uKlx3zDPdkqN2sPIC1FW773h27n5vnJru610By7aPvnRedESRU7CP1u8YJnXCX/l6Aur
+ vq5XHHhBZ6G+pcOCGTLGEQt6nYiwptKP9XCX+bCf0imHVIHRNLZelUx1Quwpa3Ko/9y+
+ M9//N6eCDVndLxObZwoFCX/N4REhRspn68IwUN+uVLY3OQzoocd0K9S7xjIDDNVXmKAZ
+ 2ZiKyNbgL3tC4P797k+VwYuF0Gh0YH0JUAXa18OdSvM9TdW5l8Un7Rl0tqkiDL33ju2G
+ mObA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=AQ9/DC53GURoy8uPVJwwkeJi6XJeKnxIDYkVR0iQwQs=;
- b=g1ZSpeoN4J7YsOLKUXZzbAXClIi1WVkfJ/A+U2UMoBgK7v1tQod8QCIzQ8BSp59jPm
- CexuHKqEKhDQTeitvQrtIyeXMfSUwFBs7WNvax2RRrHbXe8dFdvtGfAE4gfQNZ0J/1X0
- T4qUWCI9JCS/5cbBXvad/wsw8kiy7kHAo547j4vcG1EK+rkA8M0o+/YY26/+S7ZSXWIZ
- hgWQd3g1tyXKdWHi9cdeIAVLcQ13wHIwli5tGcvGuPAc71b7E/LEZOtV3AtTx6uIQorq
- +5h2cdqrp2FvhfaC7Edf50+NF9WYVYw62eC7+OKupTHCWdH06Y3jTU6x6A4Vfe1+VsUt
- CLOA==
-X-Gm-Message-State: APjAAAWeoiKxwrtvTtYnLQrsNJXBbvcSn2gtl1VKTyZqbirwzGx6/Cp3
- dtRp+Ag1RPlYMWRMarVuyrs=
-X-Google-Smtp-Source: APXvYqzyIqucHdp6zdPgZQRg5EOXhTzApjHSoYm7Ljqb+UGqUCgE+VZlsH2fwIQxYxpGipFu2Gy0qQ==
-X-Received: by 2002:a17:902:988f:: with SMTP id
- s15mr101569674plp.98.1578368632288; 
- Mon, 06 Jan 2020 19:43:52 -0800 (PST)
-Received: from voyager.lan ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id g10sm73455929pgh.35.2020.01.06.19.43.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 19:43:51 -0800 (PST)
-From: Joel Stanley <joel@jms.id.au>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>,
- Eddie James <eajames@linux.ibm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 3/3] video: aspeed: Update copyright information
-Date: Tue,  7 Jan 2020 14:13:24 +1030
-Message-Id: <20200107034324.38073-4-joel@jms.id.au>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200107034324.38073-1-joel@jms.id.au>
-References: <20200107034324.38073-1-joel@jms.id.au>
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=VgCprQ2zva7lc9m4MxBwteE8ArwxgI7YBSV7ieJsxms=;
+ b=mCj4/GEZlr1+JCv6+VRLk+udOt4pxQys5HwViyGJKQjibW2OCXSditODr28z+mD5/A
+ RvTz6Y4EGNFRBeZHKwtQOVmNtN5U5B5lxjSKKFs6JrYb1jQwSP6wM9pw8n9xpjTtE3Ef
+ QjZtSPYCyr9f9pa5D/R9A86KBi0GD8GdCFbPQiAXd4fmscB9NwcK7lZhOp5iaCZfePe1
+ JZ1DoY2VcGVQUCwyIIT8kM/Oq8hmQkoENZ8OHXTqhx3vkxR8Oevmf50tmQbynATTQdoo
+ wML3iAqB8GeJiswsT515MrVB+IC3Isx4JDq3brV380z7DixNvjWiuiA40f1wJ21LXTt/
+ EXKA==
+X-Gm-Message-State: APjAAAVxgy97nGMCjtL2IsRswl78SSIBOVybGoIXT/w+Ilk72YmUlCTd
+ Tz2Roe45YuBUmUVAhjbqegw=
+X-Google-Smtp-Source: APXvYqy3QjtQZbx05zCCJ4SR95V8UcajuC9bQMNtHSa02fi+o1Us9pm4YyT/GJmhNcb0rzW68gFtPw==
+X-Received: by 2002:a63:f64a:: with SMTP id u10mr111518644pgj.16.1578372291678; 
+ Mon, 06 Jan 2020 20:44:51 -0800 (PST)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ h11sm72837866pgv.38.2020.01.06.20.44.50
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 06 Jan 2020 20:44:50 -0800 (PST)
+Subject: Re: [PATCH] stmmac: debugfs entry name is not be changed when udev
+ rename device name.
+To: Jiping Ma <Jiping.Ma2@windriver.com>, David Miller <davem@davemloft.net>
+References: <20200106023341.206459-1-jiping.ma2@windriver.com>
+ <20200106.134557.2214546621758238890.davem@redhat.com>
+ <15aedd71-e077-4c6c-e30c-9396d16eaeec@windriver.com>
+ <20200106.182259.1907306689510314367.davem@davemloft.net>
+ <99d183bc-7668-7749-54d6-3649c549dec8@windriver.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
+ xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
+ X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
+ AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
+ ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
+ SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
+ nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
+ qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz7QnRmxvcmlhbiBG
+ YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+iGYEExECACYCGyMGCwkIBwMCBBUCCAME
+ FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
+ 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSC5BA0ESM+4EhAQAL/o09boR9D3Vk1Tt7+gpYr3
+ WQ6hgYVON905q2ndEoA2J0dQxJNRw3snabHDDzQBAcqOvdi7YidfBVdKi0wxHhSuRBfuOppu
+ pdXkb7zxuPQuSveCLqqZWRQ+Cc2QgF7SBqgznbe6Ngout5qXY5Dcagk9LqFNGhJQzUGHAsIs
+ hap1f0B1PoUyUNeEInV98D8Xd/edM3mhO9nRpUXRK9Bvt4iEZUXGuVtZLT52nK6Wv2EZ1TiT
+ OiqZlf1P+vxYLBx9eKmabPdm3yjalhY8yr1S1vL0gSA/C6W1o/TowdieF1rWN/MYHlkpyj9c
+ Rpc281gAO0AP3V1G00YzBEdYyi0gaJbCEQnq8Vz1vDXFxHzyhgGz7umBsVKmYwZgA8DrrB0M
+ oaP35wuGR3RJcaG30AnJpEDkBYHznI2apxdcuTPOHZyEilIRrBGzDwGtAhldzlBoBwE3Z3MY
+ 31TOpACu1ZpNOMysZ6xiE35pWkwc0KYm4hJA5GFfmWSN6DniimW3pmdDIiw4Ifcx8b3mFrRO
+ BbDIW13E51j9RjbO/nAaK9ndZ5LRO1B/8Fwat7bLzmsCiEXOJY7NNpIEpkoNoEUfCcZwmLrU
+ +eOTPzaF6drw6ayewEi5yzPg3TAT6FV3oBsNg3xlwU0gPK3v6gYPX5w9+ovPZ1/qqNfOrbsE
+ FRuiSVsZQ5s3AAMFD/9XjlnnVDh9GX/r/6hjmr4U9tEsM+VQXaVXqZuHKaSmojOLUCP/YVQo
+ 7IiYaNssCS4FCPe4yrL4FJJfJAsbeyDykMN7wAnBcOkbZ9BPJPNCbqU6dowLOiy8AuTYQ48m
+ vIyQ4Ijnb6GTrtxIUDQeOBNuQC/gyyx3nbL/lVlHbxr4tb6YkhkO6shjXhQh7nQb33FjGO4P
+ WU11Nr9i/qoV8QCo12MQEo244RRA6VMud06y/E449rWZFSTwGqb0FS0seTcYNvxt8PB2izX+
+ HZA8SL54j479ubxhfuoTu5nXdtFYFj5Lj5x34LKPx7MpgAmj0H7SDhpFWF2FzcC1bjiW9mjW
+ HaKaX23Awt97AqQZXegbfkJwX2Y53ufq8Np3e1542lh3/mpiGSilCsaTahEGrHK+lIusl6mz
+ Joil+u3k01ofvJMK0ZdzGUZ/aPMZ16LofjFA+MNxWrZFrkYmiGdv+LG45zSlZyIvzSiG2lKy
+ kuVag+IijCIom78P9jRtB1q1Q5lwZp2TLAJlz92DmFwBg1hyFzwDADjZ2nrDxKUiybXIgZp9
+ aU2d++ptEGCVJOfEW4qpWCCLPbOT7XBr+g/4H3qWbs3j/cDDq7LuVYIe+wchy/iXEJaQVeTC
+ y5arMQorqTFWlEOgRA8OP47L9knl9i4xuR0euV6DChDrguup2aJVU4hPBBgRAgAPAhsMBQJU
+ X9LxBQkeXB3fAAoJEGFXmRW1Y3YOj4UAn3nrFLPZekMeqX5aD/aq/dsbXSfyAKC45Go0YyxV
+ HGuUuzv+GKZ6nsysJ7kCDQRXG8fwARAA6q/pqBi5PjHcOAUgk2/2LR5LjjesK50bCaD4JuNc
+ YDhFR7Vs108diBtsho3w8WRd9viOqDrhLJTroVckkk74OY8r+3t1E0Dd4wHWHQZsAeUvOwDM
+ PQMqTUBFuMi6ydzTZpFA2wBR9x6ofl8Ax+zaGBcFrRlQnhsuXLnM1uuvS39+pmzIjasZBP2H
+ UPk5ifigXcpelKmj6iskP3c8QN6x6GjUSmYx+xUfs/GNVSU1XOZn61wgPDbgINJd/THGdqiO
+ iJxCLuTMqlSsmh1+E1dSdfYkCb93R/0ZHvMKWlAx7MnaFgBfsG8FqNtZu3PCLfizyVYYjXbV
+ WO1A23riZKqwrSJAATo5iTS65BuYxrFsFNPrf7TitM8E76BEBZk0OZBvZxMuOs6Z1qI8YKVK
+ UrHVGFq3NbuPWCdRul9SX3VfOunr9Gv0GABnJ0ET+K7nspax0xqq7zgnM71QEaiaH17IFYGS
+ sG34V7Wo3vyQzsk7qLf9Ajno0DhJ+VX43g8+AjxOMNVrGCt9RNXSBVpyv2AMTlWCdJ5KI6V4
+ KEzWM4HJm7QlNKE6RPoBxJVbSQLPd9St3h7mxLcne4l7NK9eNgNnneT7QZL8fL//s9K8Ns1W
+ t60uQNYvbhKDG7+/yLcmJgjF74XkGvxCmTA1rW2bsUriM533nG9gAOUFQjURkwI8jvMAEQEA
+ AYkCaAQYEQIACQUCVxvH8AIbAgIpCRBhV5kVtWN2DsFdIAQZAQIABgUCVxvH8AAKCRCH0Jac
+ RAcHBIkHD/9nmfog7X2ZXMzL9ktT++7x+W/QBrSTCTmq8PK+69+INN1ZDOrY8uz6htfTLV9+
+ e2W6G8/7zIvODuHk7r+yQ585XbplgP0V5Xc8iBHdBgXbqnY5zBrcH+Q/oQ2STalEvaGHqNoD
+ UGyLQ/fiKoLZTPMur57Fy1c9rTuKiSdMgnT0FPfWVDfpR2Ds0gpqWePlRuRGOoCln5GnREA/
+ 2MW2rWf+CO9kbIR+66j8b4RUJqIK3dWn9xbENh/aqxfonGTCZQ2zC4sLd25DQA4w1itPo+f5
+ V/SQxuhnlQkTOCdJ7b/mby/pNRz1lsLkjnXueLILj7gNjwTabZXYtL16z24qkDTI1x3g98R/
+ xunb3/fQwR8FY5/zRvXJq5us/nLvIvOmVwZFkwXc+AF+LSIajqQz9XbXeIP/BDjlBNXRZNdo
+ dVuSU51ENcMcilPr2EUnqEAqeczsCGpnvRCLfVQeSZr2L9N4svNhhfPOEscYhhpHTh0VPyxI
+ pPBNKq+byuYPMyk3nj814NKhImK0O4gTyCK9b+gZAVvQcYAXvSouCnTZeJRrNHJFTgTgu6E0
+ caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
+ 6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <46650899-07e1-a385-93ae-5720fa185cc8@gmail.com>
+Date: Mon, 6 Jan 2020 20:44:49 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
+In-Reply-To: <99d183bc-7668-7749-54d6-3649c549dec8@windriver.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_194353_177093_3EE49397 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200106_204452_926475_B21553D8 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,38 +161,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the preferred form for GPL2+, and add IBM and Intel as the authors.
-The driver was initially upstreamed by Eddie from IBM, and has had major
-contributions from Jae at Intel.
 
-Signed-off-by: Joel Stanley <joel@jms.id.au>
----
- drivers/media/platform/aspeed-video.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
-index d70b893fd4cf..71e0dbdb37dc 100644
---- a/drivers/media/platform/aspeed-video.c
-+++ b/drivers/media/platform/aspeed-video.c
-@@ -1,4 +1,6 @@
--// SPDX-License-Identifier: GPL-2.0+
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+// Copyright 2020 IBM Corp.
-+// Copyright (c) 2019 Intel Corporation
- 
- #include <linux/atomic.h>
- #include <linux/bitfield.h>
+On 1/6/2020 6:59 PM, Jiping Ma wrote:
+> 
+> 
+> On 01/07/2020 10:22 AM, David Miller wrote:
+>> From: Jiping Ma <Jiping.Ma2@windriver.com>
+>> Date: Tue, 7 Jan 2020 09:00:53 +0800
+>>
+>>>
+>>> On 01/07/2020 05:45 AM, David Miller wrote:
+>>>> From: Jiping Ma <jiping.ma2@windriver.com>
+>>>> Date: Mon, 6 Jan 2020 10:33:41 +0800
+>>>>
+>>>>> Add one notifier for udev changes net device name.
+>>>>>
+>>>>> Signed-off-by: Jiping Ma <jiping.ma2@windriver.com>
+>>>> This doesn't apply to 'net' and since this is a bug fix that is where
+>>>> you should target this change.
+>>> What's the next step that I can do?
+>> Respin your patch against the net GIT tree so that it applies clean.y
+> OK, I will generate the new patch based on the latest linux kernel code.
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+
+That is not quite the tree you should be using, you should be using the
+"net" tree, which is here:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/
+
+and here are some useful pieces of information in the netdev FAQ:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/tree/Documentation/networking/netdev-FAQ.rst#n28
+
+Also, since this is not the version version of your patch, please make
+sure your subject indicates this is not the first version, I have lost
+count of the exact number of times you submitted this already (4?) so
+this could be [PATCH net v5] in the subject or something like that.
+
+Given you fix a bug please also provide an appropriate Fixes tag, which
+should be:
+
+Fixes: 466c5ac8bdf2 ("net: stmmac: create one debugfs dir per net-device")
 -- 
-2.24.1
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
