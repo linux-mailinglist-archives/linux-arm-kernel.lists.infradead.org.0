@@ -2,86 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1D37133762
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 00:27:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4670013376F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 00:29:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xHz2WFnCQUoawjOUs4q4sVB9k7ARtT4toKZiVD0ptDY=; b=HoVsXVMo+ylcYo
-	qiqPHlBGq3+oUiJf05Yk3qOvCxhzdwZVx9u6vf5Nr5TOJoi2Fo8kv+gCPXA0icC62SMeBbJGp7vp7
-	xuJkQip4qCDT+mi3oKcWhKOLaKAdW0qLF9JX0iGtB9mH8e15YogvvvoV6zg8uSa120/nVVySc+wKW
-	1KgJhOtlQEMaXRtUa1ch4Bt+LdlMU27VzLfEaE5tLfFRa01VYSAVovmRjgXE++FejhU9Q9jypdMaa
-	JrZDy7ofaIRyApUtiyJ7/q0i6+Bb+fbMoftlun0oef4M8LCBPzN7jkjupozr5ZPVANqF5snjnPmoW
-	DwP6rc/4X5ocBJFNXiwg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZAt129uU8zK0cmK0l61MJDrEhqWTAL9QErV2kzYM1BM=; b=toFZ+jMSvj8V0e
+	6EJrlXgnvX4mZbHRGFmsSnOKgJPe6IQKNF5ekDWOi2WXVMsuT0A+swZfTFG+PvlQjfgqbnVVN5cPG
+	TZqcWPXc1id1nBatnmCjyod2A/TfV9wDOeE4MU+AhNHoMcV+0HS48C/4VwTwiaMDjifo753KTrKA4
+	H3bfN/lAGii9uF1Mx9uLZHJ+rO6D0qRUbrugqca/WiWRosGbFNWTbZPpTJLRJCEQaG5g160IpMWHL
+	BVK64uW2OLkSPq7STEIOCxmMTTE21xDCFX+C5JOsbKjxGLA1Hpt1rBO7+XPEGY5qYHPZLelfGvQOe
+	ejIrgX/pSEAb5IJ/hLOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioyFe-00037q-20; Tue, 07 Jan 2020 23:27:06 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1ioyHs-0003VT-Cm; Tue, 07 Jan 2020 23:29:24 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioyFX-00036e-VE
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 23:27:01 +0000
-Received: by mail-lj1-x244.google.com with SMTP id l2so1366918lja.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 15:26:58 -0800 (PST)
+ id 1ioyHh-0003Tn-DY; Tue, 07 Jan 2020 23:29:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w15so1465051wru.4;
+ Tue, 07 Jan 2020 15:29:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ragnatech-se.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=IjTxC1FiNozeI8fwV+AfSJ/Kn6P8fUH4jlMJdxPN5HU=;
- b=XCG5rrqAtzsyhbl2V9392ti0zcF3zJgOsQVo/QmWRKwygcFbkmffauQmt57TH0cXiq
- PSOS1Br9CeQhTaqPREAHxsu33GK93w/7lSmJgntSQFgIFkTgQFpEjxs6yYRtT6d0EhCg
- a46GhaQseqsHlQ5oSRPv+NsvLJnjHEx7oYQH0DdFbjb+Iv7TGQMGK5qLnKIMcGVRfpyt
- +KohQi2L/FG5NdfirdOcggSHMAf7cU3Tx8ZOHjJBExYv4nPSjD0535QC8IhIOFb06xSx
- fZCb3fMIXUsV0tn6z/1lBZGc0wH+WERZcQDvQeSCazoojs5NvzHo6raP2JJz+9NUWKYZ
- LKDQ==
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1tW6HmVMiDgLM2CovlrlsfjuFYlon1yNOi28H4tR49g=;
+ b=fqh5U2fC4UTSDw9CbE6H1ohLxAJ9RdXme36gItZ/Gt4BTBe5ptN6v5SZyUnkgUGr7R
+ RbV0SOUOkw2j37tf26eow4UcUsd1w4+eNBL+we7Jkd2kV+4bJ/hBO0k5/AFmZPm2P7zm
+ L3rkCqNGELtYbgCQxb+NRyqWHeIYTW/iKwJVX/VRFV5K+IBPt++AxqEa8fmWIqodg13E
+ YoZUmPqlSvdvWoo1iqB88gYWRIfORC6tnRFv0vUOSLl3QbRFYYB5OpKEyr6CVIfw78LJ
+ BdmA25HOu5JsAYQ560uPmsiNOisrWDvJNWLo0ulxR1lrH6Q+Kr6HNpX4mUhIZOd8yNEB
+ C4+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=IjTxC1FiNozeI8fwV+AfSJ/Kn6P8fUH4jlMJdxPN5HU=;
- b=Lhj0etOo5zBVCvzX2iDaehfhizOgKiBDprec4uJpKj45xfspX0mFR6WABYEAoK8+LA
- /PXkL/w3J18X3T+yQqN4Noh4rRtEg0zafY1rXkaXnkJ2FdPUluq81tadWUkg9OZVePWX
- XLgr9dt2h6q44EB+pSAV7qnF3azRCz6u6wznyDUHfl6QzULv24bowmJHSvZ3liyG1rYS
- jRy1H1EQUA+WcTC+w9w3IfiDiOvz+B5zurpjmc5glu73ySIzYpXP/ofUbha92KAwd1UA
- pYwNxuGHFTs+6UE+2wkTDNprLtEaFVGNz1pbLkmyIUT5RyAsq0x7PRUDrFqyWaBncbXk
- 6p2A==
-X-Gm-Message-State: APjAAAXM8Eg72eIPPbgwGmKvYokbzOGxabhf5WO0rt8/NZt8OifOqI4f
- 7T5oTZc+ufWx1N/FMp3kk6IoBg==
-X-Google-Smtp-Source: APXvYqzI+Sfb+B5FpEUaIicFBEm/VR5Uqn3EtTC/EH9bjza4YElEGw8QUnFBkginCFXQRjQnntKpYg==
-X-Received: by 2002:a2e:3608:: with SMTP id d8mr1105809lja.152.1578439617424; 
- Tue, 07 Jan 2020 15:26:57 -0800 (PST)
-Received: from localhost (h-93-159.A463.priv.bahnhof.se. [46.59.93.159])
- by smtp.gmail.com with ESMTPSA id 2sm408365ljq.38.2020.01.07.15.26.56
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1tW6HmVMiDgLM2CovlrlsfjuFYlon1yNOi28H4tR49g=;
+ b=Wcx7Yh8+qtiaIe8XAm+QCgOADUVNjb8hWwPFrT7I3BiamdPCk7jENunkWNLsULFc/H
+ pmpUdXdcZakMQaXSlgXW5asmL+eO+sJncIjL4t9IkwLLu9+n5bIqDXHRhYjv+f4K0C5b
+ MViMCB5+a77vap8Bg5NIyFS3bdcRgkrKiU6PHIFzx3nmd8X4vT/W0Jy7sp+B9qSZqf7t
+ 6ATytMRXdB5K0gTPUMAwJPMU6zXv8wCB3VQUS9L1XylrfFdIUBlYjMKLEl/mDfJksI3X
+ BWs1Jd5zG5QhXUBNPpbF1SrlwBlABBYcUiEk6WHsjJpHZjvD+IE1NXU9ogGPy0KZfY+M
+ sutw==
+X-Gm-Message-State: APjAAAVa+U9Td8DPp9sg+WpR2/537rVzAtvOUsUenZs45aphBoGrp+vQ
+ jfnMuIpqD7MYA6elR07Xn3I=
+X-Google-Smtp-Source: APXvYqy414W/mvEzb9sLPeO3N9gkDzA+wEZN6OvA6Cds/IsShTOMuCZUlBnSZJPKh9rkCEmf+VB3tg==
+X-Received: by 2002:adf:dc86:: with SMTP id r6mr1540773wrj.68.1578439752099;
+ Tue, 07 Jan 2020 15:29:12 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:373a:1900:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id k13sm1714127wrx.59.2020.01.07.15.29.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Jan 2020 15:26:56 -0800 (PST)
-Date: Wed, 8 Jan 2020 00:26:55 +0100
-From: Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH 0/5] arm64: renesas: Split/rename R-Car H3 support
-Message-ID: <20200107232655.GR533370@oden.dyn.berto.se>
-References: <20191217183841.432-1-geert+renesas@glider.be>
+ Tue, 07 Jan 2020 15:29:11 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: linux-i2c@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ wsa@the-dreams.de
+Subject: [PATCH] i2c: meson: implement the master_xfer_atomic callback
+Date: Wed,  8 Jan 2020 00:29:01 +0100
+Message-Id: <20200107232901.891177-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217183841.432-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_152700_059004_CCF71F9F 
-X-CRM114-Status: GOOD (  20.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_152913_461717_F95A3BB0 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,153 +98,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Eugeniu Rosca <erosca@de.adit-jv.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: narmstrong@baylibre.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, b.galvani@gmail.com, jian.hu@amlogic.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+Boards with some of the 32-bit SoCs (mostly Meson8 and Meson8m2) use a
+Ricoh RN5T618 PMU which acts as system power controller. The driver for
+the system power controller may need to the I2C bus just before shutting
+down or rebooting the system. At this stage the interrupts may be
+disabled already.
 
-Nice cleanup of the otherwise sometimes confusing names :-)
+Implement the master_xfer_atomic callback so the driver for the RN5T618
+PMU can communicate properly with the PMU when shutting down or
+rebooting the board. The CTRL register has a status bit which can be
+polled to determine when processing has completed. According to the
+public S805 datasheet the value 0 means "idle" and 1 means "running".
 
-For the whole series,
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ drivers/i2c/busses/i2c-meson.c | 97 +++++++++++++++++++++++-----------
+ 1 file changed, 65 insertions(+), 32 deletions(-)
 
-Reviewed-by: Niklas S=F6derlund <niklas.soderlund+renesas@ragnatech.se>
+diff --git a/drivers/i2c/busses/i2c-meson.c b/drivers/i2c/busses/i2c-meson.c
+index 1e2647f9a2a7..7486b46e475f 100644
+--- a/drivers/i2c/busses/i2c-meson.c
++++ b/drivers/i2c/busses/i2c-meson.c
+@@ -10,6 +10,7 @@
+ #include <linux/i2c.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+@@ -213,6 +214,30 @@ static void meson_i2c_prepare_xfer(struct meson_i2c *i2c)
+ 	writel(i2c->tokens[1], i2c->regs + REG_TOK_LIST1);
+ }
+ 
++static void meson_i2c_transfer_complete(struct meson_i2c *i2c, u32 ctrl)
++{
++	if (ctrl & REG_CTRL_ERROR) {
++		/*
++		 * The bit is set when the IGNORE_NAK bit is cleared
++		 * and the device didn't respond. In this case, the
++		 * I2C controller automatically generates a STOP
++		 * condition.
++		 */
++		dev_dbg(i2c->dev, "error bit set\n");
++		i2c->error = -ENXIO;
++		i2c->state = STATE_IDLE;
++	} else {
++		if (i2c->state == STATE_READ && i2c->count)
++			meson_i2c_get_data(i2c, i2c->msg->buf + i2c->pos,
++					   i2c->count);
++
++		i2c->pos += i2c->count;
++
++		if (i2c->pos >= i2c->msg->len)
++			i2c->state = STATE_IDLE;
++	}
++}
++
+ static irqreturn_t meson_i2c_irq(int irqno, void *dev_id)
+ {
+ 	struct meson_i2c *i2c = dev_id;
+@@ -232,27 +257,9 @@ static irqreturn_t meson_i2c_irq(int irqno, void *dev_id)
+ 		return IRQ_NONE;
+ 	}
+ 
+-	if (ctrl & REG_CTRL_ERROR) {
+-		/*
+-		 * The bit is set when the IGNORE_NAK bit is cleared
+-		 * and the device didn't respond. In this case, the
+-		 * I2C controller automatically generates a STOP
+-		 * condition.
+-		 */
+-		dev_dbg(i2c->dev, "error bit set\n");
+-		i2c->error = -ENXIO;
+-		i2c->state = STATE_IDLE;
+-		complete(&i2c->done);
+-		goto out;
+-	}
+-
+-	if (i2c->state == STATE_READ && i2c->count)
+-		meson_i2c_get_data(i2c, i2c->msg->buf + i2c->pos, i2c->count);
++	meson_i2c_transfer_complete(i2c, ctrl);
+ 
+-	i2c->pos += i2c->count;
+-
+-	if (i2c->pos >= i2c->msg->len) {
+-		i2c->state = STATE_IDLE;
++	if (i2c->state == STATE_IDLE) {
+ 		complete(&i2c->done);
+ 		goto out;
+ 	}
+@@ -279,10 +286,11 @@ static void meson_i2c_do_start(struct meson_i2c *i2c, struct i2c_msg *msg)
+ }
+ 
+ static int meson_i2c_xfer_msg(struct meson_i2c *i2c, struct i2c_msg *msg,
+-			      int last)
++			      int last, bool atomic)
+ {
+ 	unsigned long time_left, flags;
+ 	int ret = 0;
++	u32 ctrl;
+ 
+ 	i2c->msg = msg;
+ 	i2c->last = last;
+@@ -300,13 +308,24 @@ static int meson_i2c_xfer_msg(struct meson_i2c *i2c, struct i2c_msg *msg,
+ 
+ 	i2c->state = (msg->flags & I2C_M_RD) ? STATE_READ : STATE_WRITE;
+ 	meson_i2c_prepare_xfer(i2c);
+-	reinit_completion(&i2c->done);
++
++	if (!atomic)
++		reinit_completion(&i2c->done);
+ 
+ 	/* Start the transfer */
+ 	meson_i2c_set_mask(i2c, REG_CTRL, REG_CTRL_START, REG_CTRL_START);
+ 
+-	time_left = msecs_to_jiffies(I2C_TIMEOUT_MS);
+-	time_left = wait_for_completion_timeout(&i2c->done, time_left);
++	if (atomic) {
++		ret = readl_poll_timeout_atomic(i2c->regs + REG_CTRL, ctrl,
++						!(ctrl & REG_CTRL_STATUS),
++						10, I2C_TIMEOUT_MS * 1000);
++	} else {
++		time_left = msecs_to_jiffies(I2C_TIMEOUT_MS);
++		time_left = wait_for_completion_timeout(&i2c->done, time_left);
++
++		if (!time_left)
++			ret = -ETIMEDOUT;
++	}
+ 
+ 	/*
+ 	 * Protect access to i2c struct and registers from interrupt
+@@ -315,13 +334,14 @@ static int meson_i2c_xfer_msg(struct meson_i2c *i2c, struct i2c_msg *msg,
+ 	 */
+ 	spin_lock_irqsave(&i2c->lock, flags);
+ 
++	if (atomic && !ret)
++		meson_i2c_transfer_complete(i2c, ctrl);
++
+ 	/* Abort any active operation */
+ 	meson_i2c_set_mask(i2c, REG_CTRL, REG_CTRL_START, 0);
+ 
+-	if (!time_left) {
++	if (ret)
+ 		i2c->state = STATE_IDLE;
+-		ret = -ETIMEDOUT;
+-	}
+ 
+ 	if (i2c->error)
+ 		ret = i2c->error;
+@@ -331,8 +351,8 @@ static int meson_i2c_xfer_msg(struct meson_i2c *i2c, struct i2c_msg *msg,
+ 	return ret;
+ }
+ 
+-static int meson_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
+-			  int num)
++static int meson_i2c_xfer_messages(struct i2c_adapter *adap,
++				   struct i2c_msg *msgs, int num, bool atomic)
+ {
+ 	struct meson_i2c *i2c = adap->algo_data;
+ 	int i, ret = 0;
+@@ -340,7 +360,7 @@ static int meson_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
+ 	clk_enable(i2c->clk);
+ 
+ 	for (i = 0; i < num; i++) {
+-		ret = meson_i2c_xfer_msg(i2c, msgs + i, i == num - 1);
++		ret = meson_i2c_xfer_msg(i2c, msgs + i, i == num - 1, atomic);
+ 		if (ret)
+ 			break;
+ 	}
+@@ -350,14 +370,27 @@ static int meson_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
+ 	return ret ?: i;
+ }
+ 
++static int meson_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
++			  int num)
++{
++	return meson_i2c_xfer_messages(adap, msgs, num, false);
++}
++
++static int meson_i2c_xfer_atomic(struct i2c_adapter *adap,
++				 struct i2c_msg *msgs, int num)
++{
++	return meson_i2c_xfer_messages(adap, msgs, num, true);
++}
++
+ static u32 meson_i2c_func(struct i2c_adapter *adap)
+ {
+ 	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
+ }
+ 
+ static const struct i2c_algorithm meson_i2c_algorithm = {
+-	.master_xfer	= meson_i2c_xfer,
+-	.functionality	= meson_i2c_func,
++	.master_xfer		= meson_i2c_xfer,
++	.master_xfer_atomic	= meson_i2c_xfer_atomic,
++	.functionality		= meson_i2c_func,
+ };
+ 
+ static int meson_i2c_probe(struct platform_device *pdev)
+-- 
+2.24.1
 
-On 2019-12-17 19:38:36 +0100, Geert Uytterhoeven wrote:
-> 	Hi all,
-> =
-
-> Despite using the same compatible values ("r8a7795"-based) because of
-> historical reasons, R-Car H3 ES1.x (R8A77950) and R-Car H3 ES2.0+
-> (R8A77951) are really different SoCs, with different part numbers.
-> =
-
-> Hence this patch series splits the config symbols for R-Car H3, and
-> renames the related DTS files, to maintain a clear separation between
-> early (ES1.x) and later (ES2.0+) SoC revisions.  This will pave the way
-> for configuring out support for early SoC revisions, which can reduce
-> kernel size, especially in the pin control subsystem.
-> This is similar to the recent split of R8A7796 symbols for R-Car M3-W
-> (R8A77960) and M3-W+ (R8A77961)[1], and the related DTS file renames[2],
-> but different due to the sharing of compatible values between R-Car H3
-> ES1.x and H3 ES2.0+.
-> =
-
-> This series also includes the rename/cleanup of the ULCB DTS file names,
-> as suggested by Eugeniu Rosca.  As DTS files are already being renamed
-> for v5.6[2], it makes sense to combine them with other renames, to avoid
-> inconveniencing the user with multiple renames in multiple kernel
-> versions.
-> =
-
-> The pin control part will be handled in a separate patch.
-> =
-
-> For your convenience, all of this is available in the
-> topic/r8a7795-rename-v1 branch of my renesas-drivers git repository at
-> git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git.
-> =
-
-> Thanks for your comments!
-> =
-
-> References:
->   [1] "[PATCH v2 00/11] arm64: renesas: Add r8a77961 support"
->       https://lore.kernel.org/linux-renesas-soc/20191023123342.13100-1-ge=
-ert+renesas@glider.be/
->   [2] "[PATCH/RFC] arm64: dts: renesas: Rename r8a7796* to r8a77960*"
->       https://lore.kernel.org/linux-renesas-soc/20191211131311.23661-1-ge=
-ert+renesas@glider.be/
-> =
-
-> Geert Uytterhoeven (5):
->   arm64: dts: renesas: Rename r8a7795{-es1,}* to r8a7795[01]*
->   arm64: dts: renesas: Drop redudant SoC prefixes from ULCB DTS file
->     names
->   arm64: dts: renesas: Sort DTBs in Makefile
->   arm64: dts: renesas: Prepare for split of ARCH_R8A7795 into
->     ARCH_R8A7795[01]
->   soc: renesas: Add ARCH_R8A7795[01] for existing R-Car H3
-> =
-
->  arch/arm64/boot/dts/renesas/Makefile          | 21 ++++++++++---------
->  ...salvator-x.dts =3D> r8a77950-salvator-x.dts} |  4 ++--
->  ...795-h3ulcb-kf.dts =3D> r8a77950-ulcb-kf.dts} |  4 ++--
->  ...a7795-es1-h3ulcb.dts =3D> r8a77950-ulcb.dts} |  4 ++--
->  .../{r8a7795-es1.dtsi =3D> r8a77950.dtsi}       |  4 ++--
->  ...salvator-x.dts =3D> r8a77951-salvator-x.dts} |  4 ++--
->  ...lvator-xs.dts =3D> r8a77951-salvator-xs.dts} |  8 +++----
->  ...es1-h3ulcb-kf.dts =3D> r8a77951-ulcb-kf.dts} |  4 ++--
->  .../{r8a7795-h3ulcb.dts =3D> r8a77951-ulcb.dts} |  4 ++--
->  .../renesas/{r8a7795.dtsi =3D> r8a77951.dtsi}   |  2 +-
->  ...960-m3ulcb-kf.dts =3D> r8a77960-ulcb-kf.dts} |  2 +-
->  ...{r8a77960-m3ulcb.dts =3D> r8a77960-ulcb.dts} |  0
->  ...65-m3nulcb-kf.dts =3D> r8a77965-ulcb-kf.dts} |  2 +-
->  ...r8a77965-m3nulcb.dts =3D> r8a77965-ulcb.dts} |  0
->  drivers/soc/renesas/Kconfig                   |  8 +++++++
->  15 files changed, 40 insertions(+), 31 deletions(-)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-es1-salvator-x.dts =3D> r8a7=
-7950-salvator-x.dts} (96%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb-kf.dts =3D> r8a77950-=
-ulcb-kf.dts} (75%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb.dts =3D> r8a77950=
--ulcb.dts} (89%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-es1.dtsi =3D> r8a77950.dtsi}=
- (98%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-salvator-x.dts =3D> r8a77951=
--salvator-x.dts} (96%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-salvator-xs.dts =3D> r8a7795=
-1-salvator-xs.dts} (96%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb-kf.dts =3D> r8a77=
-951-ulcb-kf.dts} (75%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb.dts =3D> r8a77951-ulc=
-b.dts} (92%)
->  rename arch/arm64/boot/dts/renesas/{r8a7795.dtsi =3D> r8a77951.dtsi} (99=
-%)
->  rename arch/arm64/boot/dts/renesas/{r8a77960-m3ulcb-kf.dts =3D> r8a77960=
--ulcb-kf.dts} (92%)
->  rename arch/arm64/boot/dts/renesas/{r8a77960-m3ulcb.dts =3D> r8a77960-ul=
-cb.dts} (100%)
->  rename arch/arm64/boot/dts/renesas/{r8a77965-m3nulcb-kf.dts =3D> r8a7796=
-5-ulcb-kf.dts} (92%)
->  rename arch/arm64/boot/dts/renesas/{r8a77965-m3nulcb.dts =3D> r8a77965-u=
-lcb.dts} (100%)
-> =
-
-> -- =
-
-> 2.17.1
-> =
-
-> Gr{oetje,eeting}s,
-> =
-
-> 						Geert
-> =
-
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m6=
-8k.org
-> =
-
-> In personal conversations with technical people, I call myself a hacker. =
-But
-> when I'm talking to journalists I just say "programmer" or something like=
- that.
-> 							    -- Linus Torvalds
-
--- =
-
-Regards,
-Niklas S=F6derlund
 
 _______________________________________________
 linux-arm-kernel mailing list
