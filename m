@@ -2,58 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5EF4132500
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:35:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F8D3132505
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 12:37:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qkUXE3PTwFz+Rri7SK152ZasQVxJFSUv4LxMNffmKro=; b=Qc9Z135Q2Ga7NsF2xHD11G3iw
-	rcbbDp9T0tAViSp0MnvHfN4cuAXm+8zPxtpbz+LecXK9+nCRV7th6huwlKwSQhxHA1htgVL2BXLKb
-	/Dss9iMKnPP4uwXuPP3iTlDU2914F9QfRxcBN61qQnOnE3YaXL43Zu2Da/k0RxFvUm7PlygCkndaf
-	Iq5vR8kHQ7/ydwNglap1wlxn3rfphYFnZj03VClYYMXyUqznNzz1qwcBylUYqeXBJVuHyzrhwJ1K+
-	O7vAqVzr34xtaQbPtymYbXc+WyBtreJ3ji71kTwdkoKXgAJZ3UsOYBImQAXE411c7lnD2bOHLV+Mg
-	IbN/rixLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p+LWeTLhqFH0HFaLW9NduWIt0m6Z7t1fbpL0rIXqC54=; b=jlTM/wfW74wuWG
+	DPyyaOl86N116+ARK181QT4oiKN4KoA96ckGzRifyQLbv/PQYt8fBYeqXdOjc08G/8+rDI9CFhfd0
+	lcYfTSsJyusuU1m+zqo59sbdjyBVyJBw94s/SOKFo33FB5ci0+grG3NyA3HWEO3WPnyxor/JBALJO
+	o/M0lMztibQZjBrpEi94aJ0klo/Eo0Bm00D+NcOoXhLFw8XvDUobSvqH8qj+KAtaWFRsxUaOtdjPv
+	8St12x1ccJFWUBjiR4s+yB1LdmRn/dzhWck3FZka6Wt2cnS/J2omYc/eKmtHGQDFV3RuGieGV1d9z
+	VZPUMoqgOc7bXNQfe2MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ion90-0008Ea-NI; Tue, 07 Jan 2020 11:35:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ion8r-0008E6-8y
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:35:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B62B7328;
- Tue,  7 Jan 2020 03:35:19 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 137283F534;
- Tue,  7 Jan 2020 03:35:17 -0800 (PST)
-Subject: Re: [PATCH v3 06/16] arm64: enable ptrauth earlier
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
- <1576486038-9899-7-git-send-email-amit.kachhap@arm.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <e49002f2-53fb-b997-8bd6-363e22153da3@arm.com>
-Date: Tue, 7 Jan 2020 11:35:17 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1ionAe-0000Qp-8w; Tue, 07 Jan 2020 11:37:12 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ionAX-0000Q0-Aw
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 11:37:06 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 007Bb3Ih031529;
+ Tue, 7 Jan 2020 05:37:03 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578397023;
+ bh=DRchkeBbfpXpoPDU4rLABJfItAYPhwbN4UBzSTInVco=;
+ h=From:To:CC:Subject:Date;
+ b=PwUaLm7vhc1r8FlRTJWufFy66U8m0B793SmevJROLewAoDC/DlN8QXKvYRyYSWPaQ
+ Dt4RMedAx46Z2f7Xtqvm68DiIVq4Me7uaBs+LujNRtXyHb/qQTEv7jRO1KttX2Tqbk
+ L+bo8d5lZrrir4BxxtgN+fvwz2WgPUSVYrSlDSrc=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007Bb2Ff065450;
+ Tue, 7 Jan 2020 05:37:03 -0600
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Jan
+ 2020 05:37:01 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Tue, 7 Jan 2020 05:37:01 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 007BawCS104100;
+ Tue, 7 Jan 2020 05:36:59 -0600
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <jic23@kernel.org>
+Subject: [PATCH v3] iio: adc: at91-sama5d2_adc: Use dma_request_chan() instead
+ dma_request_slave_channel()
+Date: Tue, 7 Jan 2020 13:37:29 +0200
+Message-ID: <20200107113729.5505-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <1576486038-9899-7-git-send-email-amit.kachhap@arm.com>
-Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_033521_405492_1D3C4F40 
-X-CRM114-Status: GOOD (  23.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_033705_420748_AE7810D0 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,82 +87,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>
+Cc: linux-iio@vger.kernel.org, ludovic.desroches@microchip.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, eugen.hristev@microchip.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/12/2019 08:47, Amit Daniel Kachhap wrote:
-> From: Kristina Martsenko <kristina.martsenko@arm.com>
-> 
-> When the kernel is compiled with pointer auth instructions, the boot CPU
-> needs to start using address auth very early, so change the cpucap to
-> account for this.
-> 
-> Pointer auth must be enabled before we call C functions, because it is
-> not possible to enter a function with pointer auth disabled and exit it
-> with pointer auth enabled. Note, mismatches between architected and
-> IMPDEF algorithms will still be caught by the cpufeature framework (the
-> separate *_ARCH and *_IMP_DEF cpucaps).
-> 
-> Note the change in behavior: if the boot CPU has address auth and a late
-> CPU does not, then we park the late CPU very early in booting. Also, if
-> the boot CPU does not have address auth and the late CPU has then system
-> panic will occur little later from inside the C code. Until now we would
-> have just disabled address auth in this case.
-> 
-> Leave generic authentication as a "system scope" cpucap for now, since
-> initially the kernel will only use address authentication.
-> 
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
-> [Amit: Re-worked ptrauth setup logic, comments]
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> ---
-> Changes since last version:
-> * None.
-> 
->   arch/arm64/Kconfig             |  5 +++++
->   arch/arm64/include/asm/smp.h   |  1 +
->   arch/arm64/kernel/cpufeature.c | 13 +++----------
->   arch/arm64/kernel/head.S       | 20 ++++++++++++++++++++
->   arch/arm64/kernel/smp.c        |  2 ++
->   arch/arm64/mm/proc.S           | 31 +++++++++++++++++++++++++++++++
->   6 files changed, 62 insertions(+), 10 deletions(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index b1b4476..5aabe8a 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1482,6 +1482,11 @@ config ARM64_PTR_AUTH
->   	  be enabled. However, KVM guest also require VHE mode and hence
->   	  CONFIG_ARM64_VHE=y option to use this feature.
->   
-> +	  If the feature is present on the primary CPU but not a secondary CPU,
-> +	  then the secondary CPU will be parked.
+dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+eating up the error code.
 
+The dma_request_chan() is the standard API to request slave channel,
+clients should be moved away from the legacy API to allow us to retire
+them.
+
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
+Hi,
 
->    Also, if the boot CPU does not
-> +	  have address auth and the late CPU has then system panic will occur.
-> +	  On such a system, this option should not be selected.
+Changes since v2:
+- Commit message updated
 
-Is this part of the text true ? We do not enable ptr-auth on the CPUs if
-we are missing the support on primary. So, given we disable SCTLR bits,
-the ptr-auth instructions should be a NOP and is thus safe.
+Changes since v1:
+- Subject prefix is corrected to "iio: adc: at91-sama5d2_adc:"
 
-The rest looks good to me. With the above text removed,
+Regards,
+Peter
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+ drivers/iio/adc/at91-sama5d2_adc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+index e1850f3d5cf3..a5c7771227d5 100644
+--- a/drivers/iio/adc/at91-sama5d2_adc.c
++++ b/drivers/iio/adc/at91-sama5d2_adc.c
+@@ -1444,10 +1444,10 @@ static void at91_adc_dma_init(struct platform_device *pdev)
+ 	if (st->dma_st.dma_chan)
+ 		return;
+ 
+-	st->dma_st.dma_chan = dma_request_slave_channel(&pdev->dev, "rx");
+-
+-	if (!st->dma_st.dma_chan)  {
++	st->dma_st.dma_chan = dma_request_chan(&pdev->dev, "rx");
++	if (IS_ERR(st->dma_st.dma_chan))  {
+ 		dev_info(&pdev->dev, "can't get DMA channel\n");
++		st->dma_st.dma_chan = NULL;
+ 		goto dma_exit;
+ 	}
+ 
+-- 
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
 
 _______________________________________________
 linux-arm-kernel mailing list
