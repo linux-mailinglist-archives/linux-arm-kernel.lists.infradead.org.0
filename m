@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D1C0131F95
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:51:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFECC131F96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 06:51:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dx0JuwqFAUVRI5Meg5tQmNe8FLjcI2bpAIOvDnxZ2eE=; b=UaK8Urv7D4i/yd
-	b0/hS/5ihT65UXLO+gsGkcsL/FFLNL0lhgFZUVUewWwRI0q2dj/FN7Vo2dpPE7a9nrJ92PYWyXCbp
-	iI7KkxF2pa+BppSum8lqc8tjEWrvcb5TfyfAtktm+3v730f5Y3WV0AHn2iba9ZqB4FGe557gEVsR5
-	4PYRyBITMSStkulL+QuPPEhvZ413XCb/X0gb2v996bUzw5ON84RBbMd5MXskZxeDEgxDkXG/Nuzrb
-	D/OCx3Ujf3xV8F3JcCMIjIaM0wth2Hhc4s9SNmA+os4+lXwsQku+0qC9eQiWJC2Rtgxv5Nzn9MTYS
-	AriGyovxATGGjHDh+mBg==;
+	List-Owner; bh=dx0JuwqFAUVRI5Meg5tQmNe8FLjcI2bpAIOvDnxZ2eE=; b=mAViB+OSWbhI42
+	hFuh7bWLjDJTz8h9NNn3lnncJGP3tAlPrpY5DzvH8EkPB0eXM1CcTxUdFOL2+g8y2BlR2yGHgSOIc
+	UPDKKunFMOtkp09LwMpNfWjbbhg2Uiv7qx1ERIO7bIf9xaIm6+AppXdmyOr2kWk6HsQTYp5GQarsR
+	LIAiUIP1OWDR36E2QAudQUOe3t41XUmnPuqLsq9cK6zXhV1L6Mn1dN6oOHzE+kinHGlsGrjrgwFnB
+	m/cM6uvEG21K5ahRnKRFDk6ZLlQzlsMo7XF7PlrQ0dEkh/TyLWKCM9DPtdp6JMg/uBKOkpi0qzwM8
+	tvuXyY6J6zuu0G0l9bdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iohlc-0000NJ-8M; Tue, 07 Jan 2020 05:51:00 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1iohlu-0000WZ-Rm; Tue, 07 Jan 2020 05:51:18 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iohlS-0000Le-JM
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:50:52 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id d5so8525445pjz.5
+ id 1iohlU-0000MH-1s
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 05:50:54 +0000
+Received: by mail-pl1-x644.google.com with SMTP id g6so22765003plt.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Jan 2020 21:50:50 -0800 (PST)
+ Mon, 06 Jan 2020 21:50:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
  bh=upFgnCPUP6bUNf0w4clZ6s4PfWYYFquwuIgCR0kvv0I=;
- b=RRgpM4IZ7Ugi4x7YbgRZeN0WtO7LqwkD4dg6w5KkY/r8hNPZGdjI46i0C8m+jPdvuS
- yncrE4QiBQuCRIiO/Usg8lAVFBg0o6J5lv8o8G+SP82CYeezie5r94ra5JE7UczeG3ix
- aiXnyFhAJ2/NUAeHGfiaFxv0/070gsHra0Sbua2jsKxQyYxLRvjqNnHmnWqB7pEhwBAC
- 6q1ywn7QjYjDMkeFbbkMdjYgpIWEXmCqbFaa5+LQvAlYrwWj0EIZcwN+2XJ23gzPJcOu
- qBRnmFnwqc7EGLh0ong3a2xuFnKqEWI3Dh5QoV0IagD1faJXXAYHBl8S5Tb4fKQIZNMy
- 5Q6A==
+ b=TEavNkJX+k/qA/roydejXmwwkeuJyf1H/Tf0GIc2hrC8eOo8QHKUAjvNbWKsX7Ep5O
+ heIrJTpMRK+kTuV+eGHm1lPDmDLydZcaC+GEpRPXDgUA1nge3fOmqc47PLcXecDYMnXL
+ kY+hOUohlNLbhy7vbptPpQQGwNGUy3kkStrLCX2/r0VaQzD91Y6QrcfxZgo8K6D8DTiH
+ jHhwfcgUK4xZ0l4Vw2ObBAG9sKNw6StMi0yp28OgLQT6W+SnMZIaiGPnvzkw9BSUVmjS
+ 6QEu51Dgj65UoLgNjgKuRclZavvUxSr2mWHB9qFeBesf2VD0LjeYaAu94hFS4Ls0q1Ef
+ RO9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
  bh=upFgnCPUP6bUNf0w4clZ6s4PfWYYFquwuIgCR0kvv0I=;
- b=LCP7AuZI/zz+cl6sKjwf0VsAPOBC0oMhXxj99xoYLLI5izL18FSi2QoXcz2H1jvyFf
- Pp/nUTwmvSMthc2lc1AZd6sZ8iBFFkH6Sz/9yA3UtFZohFlbK1GFxBixjdltTGztbENO
- lJLqdvReuwBr1ze0WmPxY8HYp1IYZGttFU+muuXZQ9PedXLxDgOMJAkfRojA9Xvq/HEN
- 60LK0y9Ab+2fMKV1OH03l1+tj42clN803SezQ8GoKKndljeTHASzcH2PpEqyQZlXXZBL
- HSJMTMQZudDtWJojx/uq1DVssquud/YMXu1MH3PAq92QEgucgA/IfO8hLZgE5zPRREaM
- L07w==
-X-Gm-Message-State: APjAAAVC47neeQ36smgmCfq5eVzolQE+U9Eu46O12ccKIlijRba+Fn3A
- xvngOyZ3VO5IgBdDbMhqn1uizzc0
-X-Google-Smtp-Source: APXvYqzMjEBLGmJ5W55zjacQs7lGU1d7RAurGeHTe+UGPbEspBa7NgnLaj1BmlmXGXuj49IiezMW0g==
-X-Received: by 2002:a17:90a:cb96:: with SMTP id
- a22mr47019768pju.96.1578376249131; 
- Mon, 06 Jan 2020 21:50:49 -0800 (PST)
+ b=pxD/b0S+5j+nDhW6XHHKtYeercQGSjgbW/Q0zyG4Cb0tek72K0g0KEyE0CL1/dIFzT
+ wF6394qw0SzjeOESPceAPWRTh8XlstTILM9nBFDvSdZKqeg+HVL1Vu9UFFkjft7sd/H2
+ 9M1LgbY1EJEgnGBRqo/4z7ZEpVlBB0BYDtTTOJN+mDVg9tWWhE7v0bhze03Na+VHyZ2x
+ lK6DRm++TnPr0kEdxgNXCAbP8bM3quHZU3bV4EK3x3mJXA7Hlo9G+pdrMReXT+ANpg7c
+ 09Hk2i3B7/tJXTpA+liNZDuoL4TXxVwXwdRrf2ZioSzXRDz+OwQ7b5kJhk9V8gRBQ06C
+ 6S4g==
+X-Gm-Message-State: APjAAAVL8GKd7ICLKayPHfkldm7UC3u8Ee5rDcc1y9Dr3T57tysXy7SK
+ 2cdlQu5PjENu/WYTekLMeEyIW2Ip
+X-Google-Smtp-Source: APXvYqypnbXjmjzfFiLtZwGRE8uynkBQpr3ZCa2ju53uEjXtfBkVe8I+mcbjmxrxP9s/2wiptwhCHw==
+X-Received: by 2002:a17:902:b908:: with SMTP id
+ bf8mr81302846plb.293.1578376250668; 
+ Mon, 06 Jan 2020 21:50:50 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- g19sm80983651pfh.134.2020.01.06.21.50.47
+ 64sm77921171pfd.48.2020.01.06.21.50.47
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 21:50:48 -0800 (PST)
+ Mon, 06 Jan 2020 21:50:49 -0800 (PST)
 Subject: Re: broonie-regmap/for-next bisection: boot on
  ox820-cloudengines-pogoplug-series-3
 To: Sriram Dash <sriram.dash@samsung.com>,
@@ -129,7 +129,7 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <54a292b8-3cac-0caf-08c7-841c469fb68f@gmail.com>
+Message-ID: <a925da0f-4840-1d30-8acd-b1f069da920a@gmail.com>
 Date: Mon, 6 Jan 2020 21:50:47 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.3.1
@@ -137,13 +137,16 @@ MIME-Version: 1.0
 In-Reply-To: <011801d5c51a$bd2e5710$378b0530$@samsung.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_215050_693442_FFB06A52 
+X-CRM114-CacheID: sfid-20200106_215052_099680_8FAF2074 
 X-CRM114-Status: GOOD (  15.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
