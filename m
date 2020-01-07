@@ -2,66 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04FFA1321FF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:14:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A3E13220B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Jan 2020 10:16:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SjIJlOcLfiBg9+KM61J5YNZf7Pd2102HU2+ClcXfygg=; b=ELevGWaqx4KI/aYr6Cqby2OMa
-	HfBDo6bfp0h9JQnbuPES3qRK/3gsmEDJ9GoSUYDvVis40FQmz1wDamLW7tTAtnyOXEUjPGQwPqjV4
-	DHj4vL5aycPCrknkjyrTVViqtTNlc4nk8G5ExrqTFVPd2gRSfs2m5hguo0fPaxb5//DR1hY5pf5/g
-	fKwjaa7ps5RwZKBtL6+O2Kl0nLjYmbR+YiGpYIdVzK23XVry5wg1ctvjZPIybNTn9ngYOZUHVDMXh
-	XxtVEEWW+89ksD0iibBq7jCpZz0hti2N7/Xch5nRlLgvA/H7SFttxVLeIPSrheeA3yVvl+qrZK0+w
-	26DZZsJJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uvfWi4n+a9adkZQbwYtINhq5uiomCX1kReh8JBHvEuE=; b=RSgK0RknJ6cDwg
+	sNMJ5PKE/esTkJHXjJoSZfULLvmnqAmmz9PZ416PmVNi9t3wmFRJQrj4SwqfjZDJmH2WKrI4ygMs6
+	bMS41S7+sr72wrA3xja7st2Ax6wibiDGr5ZpjBuHlwnf0zrW/tmyanOaUUcjK/B01wg2YZGbQ64AD
+	UCVOsZ76u/mxukN8bYlJkDODY3Ylk1pJfeUCGDBx9FVhAlWEYgruLbk4PmRZt7qarv/s13HHlUMBH
+	DSGi0mWSBR28NqB1MJDijtzp54hGwdF+K5mr2Nd9xSKDYAmyR2Q1B9di/oS+R4g1n3hLRj4X86c/v
+	qQlUYt8xglzBzhiyAmkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iokwM-0001UG-Ad; Tue, 07 Jan 2020 09:14:18 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1iokyP-0003Hk-HU; Tue, 07 Jan 2020 09:16:25 +0000
+Received: from mail-co1nam11on2063.outbound.protection.outlook.com
+ ([40.107.220.63] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iokwC-0001T8-Eh
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Jan 2020 09:14:10 +0000
-Received: from lhreml707-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id D28D1FC61E7209F280F5;
- Tue,  7 Jan 2020 09:13:57 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml707-cah.china.huawei.com (10.201.108.48) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 7 Jan 2020 09:13:44 +0000
-Received: from [127.0.0.1] (10.202.226.43) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 7 Jan 2020
- 09:13:44 +0000
-From: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH] perf tools: Add arm64 version of get_cpuid()
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
- <jolsa@redhat.com>, <namhyung@kernel.org>
-References: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
-Message-ID: <1005f572-e32a-a90e-1572-c85a2f202fdf@huawei.com>
-Date: Tue, 7 Jan 2020 09:13:43 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
-MIME-Version: 1.0
-In-Reply-To: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
+ id 1ioky9-0003GC-4E; Tue, 07 Jan 2020 09:16:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=agBsy/jrPf0B4Iab4vSo/C8LcPjxR5ChO3ZCtloAQOBiBO6Ks0nDqDz/XCIKMgmEsOYF30KtPSjTDJ6bx06KZcifvBmQgmH5ll+u77p4UTe0q94/1Vp9mUBqoRTTyCOKxyNLFqMo4X6UeqD+WSOnbsK7ewBRnLqV8V7eMJUAW33QkpvTLU6AyVslkb2lbfWe42xGqHG53Oln7h4ZVkWcJpDRUrHD+WW8SA0+Bp+WoWagMtla05OUn1Q4TA0GitPcF4pL1sXxL95149C+qShzSRQnzvRu2bz/h0ifqT8w5RBL+/5J2GUUANZhajduTA3scLk3Gw5IDuHoETND6ZP/dw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZTDomqYrN/WvPtLGjg+YTjp+hmq3bXyMaVRmPL8Oag4=;
+ b=g/upcJ483i6Ci92rvop/3QQxVba/Nv1pw4VhgOHPWQVOujORxFakAygz+STFnU+ltedRlxiXIiBxMnWIvqXu5gBsQ8SZFpS3qt+Oq0WSoynZ36mbZieB7LUU7JAWfCF7O0l7dbcqjGIm/ObUydH7O0C7WLmEN7dpeawkd2qNXArvOftRhcWwgKngDi2rzMwe8KXfy5kXaVDMnARrJsmpVS71hjqsVS+FMa5zgKsATgftilFbzHn4xuoK+c5OBdZDd0fqljcsT/zLnxGQ2TDhx0HbdUXHQSfYyvFHRzLHpax6lewT13X55i4LLsxz8H9KmDzAUrdIS45oJUY2ivCUqQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=micron.com; dmarc=pass action=none header.from=micron.com;
+ dkim=pass header.d=micron.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=micron.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZTDomqYrN/WvPtLGjg+YTjp+hmq3bXyMaVRmPL8Oag4=;
+ b=33/ltGgVCCo6FgNd5PkEowut976MktMlyHyTKIlTUbJbtcZbTxchgiIHhBeygtOMNIeie9h7e5LQtNRNY82T8flW9kj1/MPB3eu+WsBQ4FTN89XJdA9ls1XxQun2e6wvObgLDzmSSkMf3KbvazCvAgaw+gDTZSm9NDOHUQDBQs8=
+Received: from BN7PR08MB5684.namprd08.prod.outlook.com (20.176.179.87) by
+ BN7PR08MB5123.namprd08.prod.outlook.com (20.176.176.222) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.12; Tue, 7 Jan 2020 09:16:06 +0000
+Received: from BN7PR08MB5684.namprd08.prod.outlook.com
+ ([fe80::981f:90d7:d45f:fd11]) by BN7PR08MB5684.namprd08.prod.outlook.com
+ ([fe80::981f:90d7:d45f:fd11%7]) with mapi id 15.20.2602.016; Tue, 7 Jan 2020
+ 09:16:06 +0000
+From: "Bean Huo (beanhuo)" <beanhuo@micron.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>, "jejb@linux.ibm.com"
+ <jejb@linux.ibm.com>
+Subject: RE: [EXT] [PATCH v2 2/2] scsi: ufs-mediatek: add apply_dev_quirks
+ variant operation
+Thread-Topic: [EXT] [PATCH v2 2/2] scsi: ufs-mediatek: add apply_dev_quirks
+ variant operation
+Thread-Index: AQHVxCgRQlkyWmeZCES6JiJKGQMiW6fe3rgA
+Date: Tue, 7 Jan 2020 09:16:06 +0000
+Message-ID: <BN7PR08MB568474ADD8C6853D26A361C8DB3F0@BN7PR08MB5684.namprd08.prod.outlook.com>
+References: <1578270431-9873-1-git-send-email-stanley.chu@mediatek.com>
+ <1578270431-9873-3-git-send-email-stanley.chu@mediatek.com>
+In-Reply-To: <1578270431-9873-3-git-send-email-stanley.chu@mediatek.com>
+Accept-Language: en-150, en-US
 Content-Language: en-US
-X-Originating-IP: [10.202.226.43]
-X-ClientProxiedBy: lhreml729-chm.china.huawei.com (10.201.108.80) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcYmVhbmh1b1xhcHBkYXRhXHJvYW1pbmdcMDlkODQ5YjYtMzJkMy00YTQwLTg1ZWUtNmI4NGJhMjllMzViXG1zZ3NcbXNnLTU0MjUwYTU4LTMxMmUtMTFlYS04Yjg3LWRjNzE5NjFmOWRkM1xhbWUtdGVzdFw1NDI1MGE1OS0zMTJlLTExZWEtOGI4Ny1kYzcxOTYxZjlkZDNib2R5LnR4dCIgc3o9IjI2NCIgdD0iMTMyMjI4NjIxNjQ4ODE0MzMwIiBoPSJQL2NaaTdVVjR3MWVrTHZvMVF6eFViZElOZW89IiBpZD0iIiBibD0iMCIgYm89IjEiLz48L21ldGE+
+x-dg-rorf: true
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=beanhuo@micron.com; 
+x-originating-ip: [165.225.81.21]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 87e5fbcf-08f7-4293-2010-08d793523a36
+x-ms-traffictypediagnostic: BN7PR08MB5123:|BN7PR08MB5123:|BN7PR08MB5123:
+x-microsoft-antispam-prvs: <BN7PR08MB5123D89C7AD1F5D6B8205B82DB3F0@BN7PR08MB5123.namprd08.prod.outlook.com>
+x-ms-exchange-transport-forked: True
+x-ms-oob-tlc-oobclassifiers: OLM:400;
+x-forefront-prvs: 027578BB13
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(39860400002)(346002)(136003)(396003)(366004)(189003)(199004)(66476007)(64756008)(66446008)(9686003)(66556008)(7416002)(55016002)(55236004)(86362001)(66946007)(76116006)(4326008)(478600001)(33656002)(6506007)(316002)(7696005)(71200400001)(558084003)(81166006)(81156014)(8676002)(52536014)(26005)(54906003)(8936002)(186003)(5660300002)(110136005)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR08MB5123;
+ H:BN7PR08MB5684.namprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: micron.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: VMrzhLhCJtl3OJDL+Frn0kTSYHMmjX/BMLz2O95EU401IUIGElq1kH92QuSlTVNpSN8MUa7N9X0j3myiWQLtCm5QzVvxOjtjUX0u4ffS+CrWKpt5MsxBQ8DtiItswDiJF/NFKHG3/tgNPsDWS0r0NkO/D94d7nKIiCwqKHpPUgfDkBYwRVu1irq9TeWGlFnf2wAndbMIuuT7IiiHUrz2bd1qlLsgfXnnZWhis00kboO9qSY9eKqAzjHKdh3rt/njSrLbOrjjfPjvNdb+kb9ITXZcKVTFdBRsUJt7Xg3ZT+IDAsDb0G+7W9b1GzIAQ7E+8Kteovsn4HasXwwOnfiOvVzlFSfy2k/y4t5OHE7B6a7hpBCbLOn6QjG4313Xp3NoLZ3b5kD8cbVYO+Y7zbUrlHIAlPkfy2bUxDglPoFXIFfnOstZr7Uh9+kpO4mPI4bq
+MIME-Version: 1.0
+X-OriginatorOrg: micron.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 87e5fbcf-08f7-4293-2010-08d793523a36
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jan 2020 09:16:06.8548 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: f38a5ecd-2813-4862-b11b-ac1d563c806f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: d8k7CVfXqvkRqJ3EXrI0HOw2kk0BraYrRvnmchuIKUy3aHHZ8uo7reUGzMpSMWV3QBYESOaRerioz5MMuK3rfA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR08MB5123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_011408_642494_12FA89AA 
-X-CRM114-Status: GOOD (  17.56  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200107_011609_176302_4D4E36A2 
+X-CRM114-Status: UNSURE (   4.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.220.63 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,142 +128,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/12/2019 13:54, John Garry wrote:
-
-Hi Arnaldo,
-
-Do we need some reviews on this? Or was it missed/still catching up?
-
-Cheers,
-John
-
-> Add an arm64 version of get_cpuid(), which is used for various annotation
-> and headers - for example, I now get the CPUID in "perf report --header",
-> as shown in this snippet:
-> 
-> # hostname : ubuntu
-> # os release : 5.5.0-rc1-dirty
-> # perf version : 5.5.rc1.gbf8a13dc9851
-> # arch : aarch64
-> # nrcpus online : 96
-> # nrcpus avail : 96
-> # cpuid : 0x00000000480fd010
-> 
-> Since much of the code to read the MIDR is already in get_cpuid_str(),
-> factor out this code.
-> 
-> Signed-off-by: John Garry <john.garry@huawei.com>
-> 
-> diff --git a/tools/perf/arch/arm64/util/header.c b/tools/perf/arch/arm64/util/header.c
-> index a32e4b72a98f..d730666ab95d 100644
-> --- a/tools/perf/arch/arm64/util/header.c
-> +++ b/tools/perf/arch/arm64/util/header.c
-> @@ -1,8 +1,10 @@
->   #include <stdio.h>
->   #include <stdlib.h>
->   #include <perf/cpumap.h>
-> +#include <util/cpumap.h>
->   #include <internal/cpumap.h>
->   #include <api/fs/fs.h>
-> +#include <errno.h>
->   #include "debug.h"
->   #include "header.h"
->   
-> @@ -12,26 +14,21 @@
->   #define MIDR_VARIANT_SHIFT      20
->   #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
->   
-> -char *get_cpuid_str(struct perf_pmu *pmu)
-> +static int _get_cpuid(char *buf, size_t sz, struct perf_cpu_map *cpus)
->   {
-> -	char *buf = NULL;
-> -	char path[PATH_MAX];
->   	const char *sysfs = sysfs__mountpoint();
-> -	int cpu;
->   	u64 midr = 0;
-> -	struct perf_cpu_map *cpus;
-> -	FILE *file;
-> +	int cpu;
->   
-> -	if (!sysfs || !pmu || !pmu->cpus)
-> -		return NULL;
-> +	if (!sysfs || sz < MIDR_SIZE)
-> +		return EINVAL;
->   
-> -	buf = malloc(MIDR_SIZE);
-> -	if (!buf)
-> -		return NULL;
-> +	cpus = perf_cpu_map__get(cpus);
->   
-> -	/* read midr from list of cpus mapped to this pmu */
-> -	cpus = perf_cpu_map__get(pmu->cpus);
->   	for (cpu = 0; cpu < perf_cpu_map__nr(cpus); cpu++) {
-> +		char path[PATH_MAX];
-> +		FILE *file;
-> +
->   		scnprintf(path, PATH_MAX, "%s/devices/system/cpu/cpu%d"MIDR,
->   				sysfs, cpus->map[cpu]);
->   
-> @@ -57,12 +54,48 @@ char *get_cpuid_str(struct perf_pmu *pmu)
->   		break;
->   	}
->   
-> -	if (!midr) {
-> +	perf_cpu_map__put(cpus);
-> +
-> +	if (!midr)
-> +		return EINVAL;
-> +
-> +	return 0;
-> +}
-> +
-> +int get_cpuid(char *buf, size_t sz)
-> +{
-> +	struct perf_cpu_map *cpus = perf_cpu_map__new(NULL);
-> +	int ret;
-> +
-> +	if (!cpus)
-> +		return EINVAL;
-> +
-> +	ret = _get_cpuid(buf, sz, cpus);
-> +
-> +	perf_cpu_map__put(cpus);
-> +
-> +	return ret;
-> +}
-> +
-> +char *get_cpuid_str(struct perf_pmu *pmu)
-> +{
-> +	char *buf = NULL;
-> +	int res;
-> +
-> +	if (!pmu || !pmu->cpus)
-> +		return NULL;
-> +
-> +	buf = malloc(MIDR_SIZE);
-> +	if (!buf)
-> +		return NULL;
-> +
-> +	/* read midr from list of cpus mapped to this pmu */
-> +	res = _get_cpuid(buf, MIDR_SIZE, pmu->cpus);
-> +	if (res) {
->   		pr_err("failed to get cpuid string for PMU %s\n", pmu->name);
->   		free(buf);
->   		buf = NULL;
->   	}
->   
-> -	perf_cpu_map__put(cpus);
->   	return buf;
->   }
-> 
-
+> Reviewed-by: Avri Altman <avri.altman@wdc.com>
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
