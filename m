@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE195134B0D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:58:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42877134B0E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:58:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Tp+R7q4qDqR6QmmxVhzdR/ymgXX4hQxrOFivPuCDT+E=; b=OGm9tv8eaIDKhRrDh5bVEGVAuI
-	+8WPE75rmdPRNXe0WAocpBJAfwRCVXLnfpyv3yd8/tvEAJ8RB2amyaij8BjnAsVLcNWIhq6S5ILvg
-	75nvCn0boqvjPf2keNpFiCjUm4cWFawIGYg1JUeGK4XWpY84/aewvsCxB7r2vVlzsdW3EHDoaOI/L
-	gkxr/cWIWKEdG0PQrELslWcbmckMsIR9MlTHR/oKpCbap3pt9WfrDbwUxDkZTLW3XRqBqi2FgwWhW
-	VnRaS+Dd2KUDCVL2G+WIzLKW1FzUZhFwCZsWELtK0uLWqgpbL84NxgsXopONU3Bns+u2hq99HZKtR
-	TORhzHJQ==;
+	bh=kRhPP+WJxgYLZ6O08slBChTQT2pd9DWGC5cSujMfO3I=; b=YIi119TsozpuWq0jRXHp8IknBH
+	0Nfe3EKUwLcp2f758e7M6X8UB7zaC43olAoKb/3oXLyNxAm+DH35D3dZzXDqt9PuFfvb8ZPJo7jEU
+	zTiXwGAMQvBTVKrIacz2If5mhgBpGVsq47mHspHYmnMDgFz9eaqKLWH8efVE9sqLqC8vUIUFm4WGR
+	WdfClfv3Q7XXE7YWebxyGXRUUhd6vxURrwkZshNm/lR+MHTlQMHJkMltp05Qs0yA0n2LEObN5Vame
+	+ps6jpNSkCgV22RhZjnjaEcevk6pPwj0GiB+5iyIA++BhlG4HfKLJ55QzogkyT512BTzHOaW6vmsg
+	zSn0MBhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGWy-0008KE-5u; Wed, 08 Jan 2020 18:58:12 +0000
+	id 1ipGXB-00008m-Mi; Wed, 08 Jan 2020 18:58:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGVn-0007Pn-OU
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:01 +0000
+ id 1ipGVq-0007Td-Lx
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1C8EEDA7;
- Wed,  8 Jan 2020 10:56:59 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 450861FB;
+ Wed,  8 Jan 2020 10:57:01 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8A5EC3F534;
- Wed,  8 Jan 2020 10:56:57 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B55873F534;
+ Wed,  8 Jan 2020 10:56:59 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 04/17] arm64: entry: move preempt logic to C
-Date: Wed,  8 Jan 2020 18:56:21 +0000
-Message-Id: <20200108185634.1163-5-mark.rutland@arm.com>
+Subject: [PATCH 05/17] arm64: entry: add a call_on_stack helper
+Date: Wed,  8 Jan 2020 18:56:22 +0000
+Message-Id: <20200108185634.1163-6-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105659_912048_86657B51 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20200108_105703_005708_4AD25F71 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,86 +72,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some of our preeemption logic is in C, while a portion of it is in
-assembly. Let's pull the remainder  of it into C so that it lives in one
-place.
-
-At the same time, let's improve the comments regarding NMI preemption to
-make it clearer why we cannot preempt from NMIs.
-
-Subsequent patches will covert the caller of el1_preempt() to C.
+In some cases, we want to call a function from C code, using an
+alternative stack. Add a helper that we can use in such cases.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: James Morse <james.morse@arm.com>
-Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/entry-common.c | 18 +++++++++++++++++-
- arch/arm64/kernel/entry.S        | 13 +------------
- 2 files changed, 18 insertions(+), 13 deletions(-)
+ arch/arm64/include/asm/exception.h |  2 ++
+ arch/arm64/kernel/entry.S          | 21 +++++++++++++++++++++
+ 2 files changed, 23 insertions(+)
 
-diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index 4fa058453468..b93ca2148a20 100644
---- a/arch/arm64/kernel/entry-common.c
-+++ b/arch/arm64/kernel/entry-common.c
-@@ -8,6 +8,7 @@
- #include <linux/context_tracking.h>
- #include <linux/linkage.h>
- #include <linux/lockdep.h>
-+#include <linux/preempt.h>
- #include <linux/ptrace.h>
- #include <linux/sched/debug.h>
- #include <linux/thread_info.h>
-@@ -334,8 +335,23 @@ asmlinkage void notrace el0_sync_compat_handler(struct pt_regs *regs)
- NOKPROBE_SYMBOL(el0_sync_compat_handler);
- #endif /* CONFIG_COMPAT */
+diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+index b87c6e276ab1..a49038fa4faf 100644
+--- a/arch/arm64/include/asm/exception.h
++++ b/arch/arm64/include/asm/exception.h
+@@ -31,6 +31,8 @@ static inline u32 disr_to_esr(u64 disr)
+ 	return esr;
+ }
  
--asmlinkage void __sched arm64_preempt_schedule_irq(void)
-+asmlinkage void __sched el1_preempt(void)
- {
-+	if (!IS_ENABLED(CONFIG_PREEMPT) || preempt_count())
-+		return;
-+
-+	/*
-+	 * To avoid nesting NMIs and overflowing the stack, we must leave NMIs
-+	 * masked until the exception return. We want to context-switch with
-+	 * IRQs masked but NMIs enabled, so cannot preempt an NMI.
-+	 *
-+	 * PSTATE.{D,A,F} are cleared for IRQ and NMI by el1_irq().
-+	 * When gic_handle_irq() handles an NMI, it leaves PSTATE.I set.
-+	 * If anything is set in DAIF, this is an NMI.
-+	 */
-+	if (system_uses_irq_prio_masking() && read_sysreg(daif) != 0)
-+		return;
-+
- 	lockdep_assert_irqs_disabled();
- 
- 	/*
++asmlinkage void call_on_stack(struct pt_regs *, void (*)(struct pt_regs *),
++			      unsigned long);
+ asmlinkage void enter_from_user_mode(void);
+ void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
+ void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
 diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 7c6a0a41676f..53ce1877a4aa 100644
+index 53ce1877a4aa..184313c773ea 100644
 --- a/arch/arm64/kernel/entry.S
 +++ b/arch/arm64/kernel/entry.S
-@@ -606,18 +606,7 @@ el1_irq:
- 	irq_handler
+@@ -901,6 +901,27 @@ ENTRY(ret_from_fork)
+ ENDPROC(ret_from_fork)
+ NOKPROBE(ret_from_fork)
  
- #ifdef CONFIG_PREEMPT
--	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
--alternative_if ARM64_HAS_IRQ_PRIO_MASKING
--	/*
--	 * DA_F were cleared at start of handling. If anything is set in DAIF,
--	 * we come back from an NMI, so skip preemption
--	 */
--	mrs	x0, daif
--	orr	x24, x24, x0
--alternative_else_nop_endif
--	cbnz	x24, 1f				// preempt count != 0 || NMI return path
--	bl	arm64_preempt_schedule_irq	// irq en/disable is done inside
--1:
-+	bl	el1_preempt
- #endif
++/*
++ * x0 = argument to function
++ * x1 = function to call
++ * x2 = new stack pointer
++ */
++ENTRY(call_on_stack)
++	/* Create a frame record to save our LR and SP (implicit in FP) */
++	stp	x29, x30, [sp, #-16]!
++	mov	x29, sp
++
++	/* Move to the new stack and call the function there */
++	mov	sp, x2
++	blr	x1
++
++	/* Restore SP from the FP, FP and LR from the record, and return */
++	mov	sp, x29
++	ldp	x29, x30, [sp], #16
++	ret
++ENDPROC(call_on_stack)
++NOKPROBE(call_on_stack)
++
+ #ifdef CONFIG_ARM_SDE_INTERFACE
  
- #ifdef CONFIG_ARM64_PSEUDO_NMI
+ #include <asm/sdei.h>
 -- 
 2.11.0
 
