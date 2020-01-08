@@ -2,96 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CF821339A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 04:25:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 397531339B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 04:43:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9NWDlc6S/yyqwYFOr+a6U8wopQxolOGGS6N3Vv+doMo=; b=g8+RzbYgBvj7U2Dc00FH3UN6mo
-	YAO8kmVGY2GDl/e3tFh+BTFaSjsQy0UF0dSOmytaQNL/CWsQuDE84brIhcgq9DNovO9oj99EwJ+/n
-	6Q64KphWxol/0ekMXelW72eoH23r0YQT47trnUKeSzumgo6PGSgg34kg7ZGRjjIslGU1POJ4nLbwP
-	9Z/8jjEOZWVAf7B28NQ2rX3xHj+douj56N6bUetpQi/vxwFwbWG7vCMIiHRlXtXxeI7BTlhkx0FsC
-	YH/Fk/kQcE6DfNprfUClyeD23KEHOdZwYkw7KdmBq0sniR2i/lnm/IabucbFQuyC3lMm92tilHZPS
-	q3lKuACQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UDP6sNHrefNrgG5SY3nMxQuQVjeLmj6vWoCb3b8UO7k=; b=BgJJCp3RS93TSs
+	6w9mnk1zynAtod94mz0OPzAUExK07t3RqtildG8PUZU6JWH77FVJfLA6nVogLG1RBRvzDOrA6/jB9
+	xFTAgZgtmwOR4xND2sMm8PHJtNKsgJdcloULeBFZID6PBUqGIb5+zuxyvaX22GP8TTikD50onH48H
+	U59zSQu9I+I0fuKByh+y30Gtxeeoq7IyeIgVCIU9yPzPN1b4YnQ9yf3UTxj8biFk8/xfLyqa9ZXRr
+	qWNpV8Dyqy9AxDb8ajRv0Z9sM48wlVdTyImjnuKWIr5sizAxo5o6Ev+mKJGYFqunWOF7vR5x/Qvf0
+	l8EAnE0ugfHqytZwPddQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip1y8-0005Ok-Vx; Wed, 08 Jan 2020 03:25:16 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1ip2Fj-0003tR-2J; Wed, 08 Jan 2020 03:43:27 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip1x9-0004lI-JD
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 03:24:17 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id bg7so449252pjb.5
+ id 1ip2Fb-0003t7-RN
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 03:43:21 +0000
+Received: by mail-oi1-f195.google.com with SMTP id c77so1481179oib.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 19:24:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :in-reply-to:references;
- bh=lK0hzpi7lOKx/+vwwnIUmfL08coFZ79d+GQbKJpzbuw=;
- b=kCaReHFA/2m4OEHT4jLNp5pVtd/t9O5G9JwqiJ9+UasprWNPIFZUCmMOvsTtwblCZy
- BLFANaRq6BoJXO5M9gMEMwZE9QeERUxmzCV4qePVIyDEpeI6rq/wKc1JndkKLkHdQyz7
- hEWRhfORw2kWqCwEPOoxoE87VSxmB9c1PBOmwOjKTUlXcaTZErdZEKImufCRM1rMYjw1
- 242c6PO2wGpRhUz4RFm+B5mp6KEjdzG/3LVq49PTdSSISIczQ99tN122UCiW8EhJux8D
- FVsDzdwYQE3IIgBXx+Qaul/MeyXhAOjtKWroaViiEZ3emMHIlnf8YZDLqhNjK25uPJp7
- M+mg==
+ Tue, 07 Jan 2020 19:43:18 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:in-reply-to:references;
- bh=lK0hzpi7lOKx/+vwwnIUmfL08coFZ79d+GQbKJpzbuw=;
- b=QqQ/xRctods3i7riAWEEt0lZmyiwTSX5b/oV4ssvHDMozAgMEeP6o019iGQ8FaMXq3
- tPDjUl+KIAB1ibukEm2BEl8PnSPftNB68my0ASEy8W0p6uSgu7Y8zOpb0manTa94cGaM
- wJHr0XEv3B8LLXdAC7+XiD2UFmn+MKmsIKn0twmJzDNLARcfRbvbqNve4Qdxd919WCx4
- 7BuuerdpvB63Av6vHhs9iPEObkQ1jtSdM6ezCEHD/fok/Z5VXV44YpNEdkImzJTmV063
- W+aKZJRG+XTHfrRAuJbIQgJKoOpj29Gg4bFzcJ7IsOe/RbbtFp+yTBrJHeAjtrjfjy0+
- OD2Q==
-X-Gm-Message-State: APjAAAXXj15wMc5Qd21TN/CygBT3iWdbQv3CdV/rlCmcyQapVwF1z/wR
- 4vialGPy8LhYvuX/zMWr7zw=
-X-Google-Smtp-Source: APXvYqyf1gLmB4hhnarUAfaBLruqzaaorl1nD7HJculUE1wIQqdTMKqw2LGQwDmGsTse2kht9lXJvQ==
-X-Received: by 2002:a17:90a:8a12:: with SMTP id
- w18mr2028423pjn.68.1578453854183; 
- Tue, 07 Jan 2020 19:24:14 -0800 (PST)
-Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id g7sm1077875pfq.33.2020.01.07.19.24.10
- (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 07 Jan 2020 19:24:13 -0800 (PST)
-From: Baolin Wang <baolin.wang7@gmail.com>
-To: ohad@wizery.com,
-	bjorn.andersson@linaro.org,
-	baohua@kernel.org
-Subject: [PATCH RESEND 3/3] hwspinlock: sirf: Use devm_hwspin_lock_register()
- to register hwlock controller
-Date: Wed,  8 Jan 2020 11:23:46 +0800
-Message-Id: <8f94e67b5f9af20a93418a2fc9cc71b194f1285c.1578453662.git.baolin.wang7@gmail.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <cover.1578453662.git.baolin.wang7@gmail.com>
-References: <cover.1578453662.git.baolin.wang7@gmail.com>
-In-Reply-To: <cover.1578453662.git.baolin.wang7@gmail.com>
-References: <cover.1578453662.git.baolin.wang7@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=ilH05ihXEuc/NhF/tPgNdcykj6uPjvXn5uaHX6J7/Ak=;
+ b=MyoFoufpIBxU63/pqyjjE0jXF7RT14jq8QAwTCMxMdZuIWuvBvjAX7mmnwt8qyLAWG
+ kC1/5l6OPu4XPIJtoZ7bEOZAeG4ltQRpAGifL57RXPhHUyINGzwBhS7qQ2V/xUCUov2N
+ pPZw4PbQaiK4Um7SUlCekXjpVgK5DIkdke8Sk2eah/ItRbaq7lCXTfqf307dAWxQQLa1
+ zTTn4oG8dLBN3wU8MP5In0xZ4U9UP0HtwN+J1dhkk4GJ1ackEcrrCK6zpbsh5KpKOj5Y
+ +K1ZHj0EhwC/IUzn/85+5wv8wa3JGzBpTJJAhagPqLvBt0YaNgvgT/RVTd8G/0+rYz0T
+ NWbw==
+X-Gm-Message-State: APjAAAU+zyKxcMq7Sy9kNn8xUUxD4noEmiUwC18Ej0eZqKaCRaCcm613
+ 26XXsHkAazmsIIRfMWFio92PdP8=
+X-Google-Smtp-Source: APXvYqyREuYzTaUCc81d9bD3tovpHQlihrT/yPi2w5+GeyYpe3PtXy/xt6bB2VPtbYwdwVrXNakNAA==
+X-Received: by 2002:a05:6808:3d0:: with SMTP id
+ o16mr1484358oie.79.1578454997452; 
+ Tue, 07 Jan 2020 19:43:17 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id v25sm638254otk.51.2020.01.07.19.43.14
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 19:43:15 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2219e3
+ by rob-hp-laptop (DragonFly Mail Agent v0.11);
+ Tue, 07 Jan 2020 21:43:14 -0600
+Date: Tue, 7 Jan 2020 21:43:14 -0600
+From: Rob Herring <robh@kernel.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v2 01/14] dt-bindings: PCI: cadence: Add PCIe RC/EP DT
+ schema for Cadence PCIe
+Message-ID: <20200108034314.GA5412@bogus>
+References: <20200106102058.19183-1-kishon@ti.com>
+ <20200106102058.19183-2-kishon@ti.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200106102058.19183-2-kishon@ti.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_192415_650252_8B6B19D3 
-X-CRM114-Status: GOOD (  13.18  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200107_194319_887243_FF7B74ED 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (baolin.wang7[at]gmail.com)
+ in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (baolin.wang7[at]gmail.com)
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,64 +99,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baolin.wang7@gmail.com, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_hwspin_lock_register() to register the hwlock controller instead of
-unregistering the hwlock controller explicitly when removing the device.
+On Mon, Jan 06, 2020 at 03:50:45PM +0530, Kishon Vijay Abraham I wrote:
+> Add PCIe Host (RC) and Endpoint (EP) device tree schema for Cadence
+> PCIe core library. Platforms using Cadence PCIe core can include the
+> schemas added here in the platform specific schemas.
+> 
+> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+> ---
+>  .../devicetree/bindings/pci/cdns-pcie-ep.yaml | 20 ++++++++++++
+>  .../bindings/pci/cdns-pcie-host.yaml          | 30 +++++++++++++++++
+>  .../devicetree/bindings/pci/cdns-pcie.yaml    | 32 +++++++++++++++++++
+>  3 files changed, 82 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie.yaml
 
-Signed-off-by: Baolin Wang <baolin.wang7@gmail.com>
----
- drivers/hwspinlock/sirf_hwspinlock.c |   21 +++------------------
- 1 file changed, 3 insertions(+), 18 deletions(-)
+Need to remove the old files.
 
-diff --git a/drivers/hwspinlock/sirf_hwspinlock.c b/drivers/hwspinlock/sirf_hwspinlock.c
-index d62462e..823d3c4 100644
---- a/drivers/hwspinlock/sirf_hwspinlock.c
-+++ b/drivers/hwspinlock/sirf_hwspinlock.c
-@@ -79,23 +79,9 @@ static int sirf_hwspinlock_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, hwspin);
- 
--	return hwspin_lock_register(&hwspin->bank, &pdev->dev,
--				    &sirf_hwspinlock_ops, 0,
--				    HW_SPINLOCK_NUMBER);
--}
--
--static int sirf_hwspinlock_remove(struct platform_device *pdev)
--{
--	struct sirf_hwspinlock *hwspin = platform_get_drvdata(pdev);
--	int ret;
--
--	ret = hwspin_lock_unregister(&hwspin->bank);
--	if (ret) {
--		dev_err(&pdev->dev, "%s failed: %d\n", __func__, ret);
--		return ret;
--	}
--
--	return 0;
-+	return devm_hwspin_lock_register(&pdev->dev, &hwspin->bank,
-+					 &sirf_hwspinlock_ops, 0,
-+					 HW_SPINLOCK_NUMBER);
- }
- 
- static const struct of_device_id sirf_hwpinlock_ids[] = {
-@@ -106,7 +92,6 @@ static int sirf_hwspinlock_remove(struct platform_device *pdev)
- 
- static struct platform_driver sirf_hwspinlock_driver = {
- 	.probe = sirf_hwspinlock_probe,
--	.remove = sirf_hwspinlock_remove,
- 	.driver = {
- 		.name = "atlas7_hwspinlock",
- 		.of_match_table = of_match_ptr(sirf_hwpinlock_ids),
--- 
-1.7.9.5
+Note that I posted a conversion of Cadence host[1]. Yours goes further, 
+but please compare and add anything mine has that yours doesn't.
 
+[1] https://lore.kernel.org/linux-pci/20191231193903.15929-2-robh@kernel.org/
+
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+> new file mode 100644
+> index 000000000000..36aaae5931c3
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+> @@ -0,0 +1,20 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
+> +%YAML 1.2
+> +--
+> +$id: "http://devicetree.org/schemas/pci/cdns-pcie-ep.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Cadence PCIe Endpoint
+> +
+> +maintainers:
+> +  - Tom Joseph <tjoseph@cadence.com>
+> +
+> +allOf:
+> +  - $ref: "cdns-pcie.yaml#"
+> +
+> +properties:
+> +  max-functions:
+> +    description: Maximum number of functions that can be configured (default 1)
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint8
+> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+> new file mode 100644
+> index 000000000000..78261bc4f0c5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+> @@ -0,0 +1,30 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/pci/cdns-pcie-host.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Cadence PCIe Host
+> +
+> +maintainers:
+> +  - Tom Joseph <tjoseph@cadence.com>
+> +
+> +allOf:
+> +  - $ref: "/schemas/pci/pci-bus.yaml#"
+> +  - $ref: "cdns-pcie.yaml#"
+> +
+> +properties:
+> +  vendor-id:
+> +    description: The PCI vendor ID (16 bits, default is design dependent)
+> +
+> +  device-id:
+> +    description: The PCI device ID (16 bits, default is design dependent)
+
+While these got defined here as 16-bits, these should be fixed to 32-bit 
+because they are established properties for a long time.
+
+> +
+> +  cdns,no-bar-match-nbits:
+> +    description: Set into the no BAR match register to configure the number
+> +      of least significant bits kept during inbound (PCIe -> AXI) address
+> +      translations (default 32)
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+
+What about compatible?
+
+> +
+> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
+> new file mode 100644
+> index 000000000000..497d3dc2e6f2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
+> @@ -0,0 +1,32 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/pci/cdns-pcie.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Cadence PCIe Core
+> +
+> +maintainers:
+> +  - Tom Joseph <tjoseph@cadence.com>
+> +
+> +properties:
+> +  max-link-speed:
+> +    minimum: 1
+> +    maximum: 3
+> +
+> +  num-lanes:
+> +    minimum: 1
+> +    maximum: 2
+
+Needs a type.
+
+The Cadence IP can't support x4, x8, or x16?
+
+> +
+> +  cdns,max-outbound-regions:
+> +    description: Set to maximum number of outbound regions.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +  phys:
+> +    description: List of Generic PHY phandles. One per lane if more than one in
+> +      the list. If only one PHY listed it must manage all lanes.
+> +
+> +  phy-names:
+> +    description: List of names to identify the PHY.
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
