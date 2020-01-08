@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2DF3133C47
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:26:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE97C133C48
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:27:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=f0FluHzBleugIP3GJxzcgYTegdOfTjdKWmKZQneZPl8=; b=i1gwPfaay/pAP6o1zfCNBDCIiz
-	zuMPtjX9grsLX78pDolWns7pNNuDxpdpS5PxXe4gLZWnNSWwmajPiKy6THoGLfKrmusez5YPlFO58
-	CFazE6K1bH2VhyhD9DQ/W425cPOaXYec/kTw6+C0+SKLIfZFBz8WLdQ/k5/H3wB3kbOa5UFzOo/3+
-	ZCKTC/WMVTtauzgOvPIBdP5Q7xlwNq2gIjog0yKzcFCjI4RH/MC/IZpzPduGczo1dVXrd6j6wPuCs
-	VYx21g0q0WnMtFPaL/9CtTtyOeHJehbZHI8eBOBd+eKe1DeuoThzc0tbV8sOOi79kfB2AKgChA4Ds
-	gytQW1eA==;
+	bh=PkRiYdmfvFVt4YqMcc/H1qzc8c+Zt9HjVq/oN/CuCDE=; b=p7f8APPmhQOvlWH2oSJ47HAhLw
+	OuY9Ax3g1c2LV5yTQ5ulIqpc64TEnlEGjHk3ffb5TRyf8JXtCYagW0ESXcXoKnWKQDoxMj/SktMeO
+	I9AdCGNNLYVGpH/7giq+faBUfE6K9K/WB1QJ8zq9bxxAx+Mfcr03q9Lz6FK8Rlwzjb9c6DQoG4n5T
+	SUYvb+u3EqAr5pL3F/HQ+fdaluXpnDcMY5fmAg2q18fsfB4lxeXbh4MFuGOncZMUK3gKXZOkqSEYR
+	1oFuvczs48SeKCC3JLfbmFU7FULkNjAa8EoD+UBcbH2NFU8F1KPQvEoWgvIZdS3OdPDOYukl6q+qv
+	9/HDYHAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip5ju-0004o0-RG; Wed, 08 Jan 2020 07:26:50 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1ip5kC-0004xs-1H; Wed, 08 Jan 2020 07:27:08 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip5ji-0004mM-MV
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:26:40 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id a6so678724pjh.2
+ id 1ip5jn-0004pH-Tx
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:26:45 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bd4so752107plb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 23:26:38 -0800 (PST)
+ Tue, 07 Jan 2020 23:26:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YgvywnLyYzODjdUN5pjBnIAoT8QXrKrof9jZ9KWS50M=;
- b=uJidx6V2kVrDoRpmQOqy4JLM9x5893Q3qDlXO6/DMPh9J1EyCqLWtKvbpB3Z6msKqg
- 5DL89PlYEk6z3WSMFSLvW5H3UEoFOSYT94WkBEBxqGu1uuP+/Ty+LUD+3cMHtg0TockK
- CFznXxPOuKWpd4a+0bT3DaI68Apws19E/q7N8NT5fnXok79vlaZk/ABWhqY1sn5X/g+t
- vePRaCC9Nm0H89xhY1jlQujIMlrjsq1CMC/YnAYV10m4KlIuyZORz7ltiPih5NUngisk
- E4JU2H0JUuCoutaTj1grPfT2ebbLC0e6pltRWdoKwOPOBtiUWlai7vt63S6Ut5QJYS1v
- BHIQ==
+ bh=7VftiggN6dkZ3Wld3EMtRQ7oFxfSHkKpxj6onZ/SbJc=;
+ b=Glfycd+SSp+dBJBi3Ypl6EParnW4iGMSf+JYdW6Pd3J68JqoN/r8bol0HWwKdYSZ15
+ zc74LTakqvZhLaMNTzaGrk4zGl+4xLp1Qbo+Aca8Yz9MYe0qqOYqb3ZC/1GsUIt/id0e
+ uY9yR8PG2CcCbVXnpVfKqQ0kd6CTtdZ485/ggaCNAIGfJDI5yo6Rnr2mdRsfHb9TGi6+
+ LbcR9mwVMnpWIiu8rX3oPPdUxIwe3Htdn4XXDrMYQEbZMB+O2cyDOlT4WZBk3eXVaSHY
+ RdgxoHjAveUdhnyjGWm78KpGL2OyLi/zIcEyhCrDvy/SgGpdF+kYdM6OI/5jPh7Q5aD3
+ YT6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=YgvywnLyYzODjdUN5pjBnIAoT8QXrKrof9jZ9KWS50M=;
- b=FU93oPYpmd71C3VTcp5+zfooqWAYsiq1DnZUQMjDCL6kPj2ONViywhlrQ0low3u10A
- KR/zvu8k1dsYSSLgzRfmLEeuZ3DODT81NK/F17IG+BMK3WUtJ7yUrycsCN3KXPCX4iwx
- RHlc31RQBlswcl9f+4QU3e2MBavnsj3Pmd7GcFFZ/8rSqT+WJRbMnKcY71X5EaItQjj2
- wlNpUtHTrwmDAspTokwe+7hgoGx5vVwFapuIVQThal32Mzx2MxXJxDPxX+5uGYXmh8Qg
- 6YjJ7nsqPyIbiUWNoLMLGU4hMlxhwS7AnK0Ek8h6SC8jlRH6ITFUDQKa+qsJEHVe/3hZ
- 5TYg==
-X-Gm-Message-State: APjAAAV0Fm+nNdoEwPzX3mBXRvyRNf+RNwlIvS1zBzyb6nVG43w9+j30
- n76g2OCtomcgQCjlMpWZr90=
-X-Google-Smtp-Source: APXvYqwH9CfosT7s9ifO/AANNX8jvBDu0cCJazDa/8NyLgjjws4FKAWfUxN4dlltGJliD+L0TTNA6Q==
-X-Received: by 2002:a17:902:8c90:: with SMTP id
- t16mr3926013plo.186.1578468397944; 
- Tue, 07 Jan 2020 23:26:37 -0800 (PST)
+ bh=7VftiggN6dkZ3Wld3EMtRQ7oFxfSHkKpxj6onZ/SbJc=;
+ b=Q/3PCJwtsi4BVGbV7RDSrAODxyIao2yCfVKQYO0ZBGDTm4/f9lAzA2TWIc6ccmAtmO
+ 1L+riPaxMLUvhm+7Qb6qef9BRFnBLRfZUHFkSaMajVCQXnzZ3kyPOieqjqom69NfoIkP
+ 3d1OquX8NNCYrZsHuv/w3HiJEriflV1rGfA5zzUUuQx/T/0K7W1LSZnnbNtVzsJ40XLU
+ J8b4sxWaq7WdxLyaEtdPD1pN57gdc+Kyz6ereSIkDjPjomc36M9TotRgmwyeSX4Rorko
+ tROTWIr0DPEiZfuUi5nOixC2jl6IR35dvJ2vIDBUEJBwfyM4XnV+ZW0SxGBPAa7Y1eST
+ Ciig==
+X-Gm-Message-State: APjAAAXH65OAkKeuoIx6fm+hwY+y9bkhOYLUiFxyPXDj4NVSt6jt6pc/
+ Art2jx798f8IOCQpUWbgLacLMpY0
+X-Google-Smtp-Source: APXvYqxbFTnUZ6d8VqD/d4wmwctKRYDWxkXacHotBt/0Gx6M6rHuYA5t3zbUJvR7A0x/TKP1/atRdg==
+X-Received: by 2002:a17:90a:c706:: with SMTP id
+ o6mr2758419pjt.82.1578468403228; 
+ Tue, 07 Jan 2020 23:26:43 -0800 (PST)
 Received: from localhost (199.168.140.36.16clouds.com. [199.168.140.36])
- by smtp.gmail.com with ESMTPSA id o98sm1865266pjb.15.2020.01.07.23.26.36
+ by smtp.gmail.com with ESMTPSA id n4sm2149624pgg.88.2020.01.07.23.26.42
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 Jan 2020 23:26:37 -0800 (PST)
+ Tue, 07 Jan 2020 23:26:42 -0800 (PST)
 From: Dejin Zheng <zhengdejin5@gmail.com>
 To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
  davem@davemloft.net, mcoquelin.stm32@gmail.com,
  martin.blumenstingl@googlemail.com, treding@nvidia.com, andrew@lunn.ch,
  weifeng.voon@intel.com, tglx@linutronix.de
-Subject: [PATCH v2 1/2] net: stmmac: pci: remove the duplicate code of set
- phy_mask
-Date: Wed,  8 Jan 2020 15:25:49 +0800
-Message-Id: <20200108072550.28613-2-zhengdejin5@gmail.com>
+Subject: [PATCH v2 2/2] net: stmmac: remove the useless member phy_mask
+Date: Wed,  8 Jan 2020 15:25:50 +0800
+Message-Id: <20200108072550.28613-3-zhengdejin5@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200108072550.28613-1-zhengdejin5@gmail.com>
 References: <20200108072550.28613-1-zhengdejin5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_232638_811994_9C99CBE1 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20200107_232643_967004_CA743B23 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (zhengdejin5[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,48 +112,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-All members of mdio_bus_data are cleared to 0 when it was obtained
-by devm_kzalloc(). so It doesn't need to set phy_mask as 0 again.
+The value of phy_mask in struct stmmac_mdio_bus_data will be passed
+to phy_mask of struct mii_bus before register mdiobus, the mii_bus
+was obtained by mdiobus_alloc() and set mii_bus->phy_mask as zero
+by default. the stmmac_mdio_bus_data->phy_mask also set zero when
+got stmmac_mdio_bus_data by devm_kzalloc(), so doesn't need to pass
+the value and remove the useless member phy_mask in the struct
+stmmac_mdio_bus_data.
 
 Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
 ---
 
 Changes since v1:
-    adjust some commit comments.
+    add this new commit.
 
- drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c | 5 -----
- 1 file changed, 5 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 1 -
+ include/linux/stmmac.h                            | 1 -
+ 2 files changed, 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-index 8237dbc3e991..40f171d310d7 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-@@ -65,7 +65,6 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
- 	plat->force_sf_dma_mode = 1;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index cfe5d8b73142..662b1cde51ae 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -388,7 +388,6 @@ int stmmac_mdio_register(struct net_device *ndev)
+ 	snprintf(new_bus->id, MII_BUS_ID_SIZE, "%s-%x",
+ 		 new_bus->name, priv->plat->bus_id);
+ 	new_bus->priv = ndev;
+-	new_bus->phy_mask = mdio_bus_data->phy_mask;
+ 	new_bus->parent = priv->device;
  
- 	plat->mdio_bus_data->needs_reset = true;
--	plat->mdio_bus_data->phy_mask = 0;
+ 	err = of_mdiobus_register(new_bus, mdio_node);
+diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
+index d4bcd9387136..e9aaa9bfb304 100644
+--- a/include/linux/stmmac.h
++++ b/include/linux/stmmac.h
+@@ -79,7 +79,6 @@
+ /* Platfrom data for platform device structure's platform_data field */
  
- 	/* Set default value for multicast hash bins */
- 	plat->multicast_filter_bins = HASH_TABLE_SIZE;
-@@ -154,8 +153,6 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
- 	plat->tx_queues_cfg[6].weight = 0x0F;
- 	plat->tx_queues_cfg[7].weight = 0x10;
- 
--	plat->mdio_bus_data->phy_mask = 0;
--
- 	plat->dma_cfg->pbl = 32;
- 	plat->dma_cfg->pblx8 = true;
- 	plat->dma_cfg->fixed_burst = 0;
-@@ -386,8 +383,6 @@ static int snps_gmac5_default_data(struct pci_dev *pdev,
- 	plat->tso_en = 1;
- 	plat->pmt = 1;
- 
--	plat->mdio_bus_data->phy_mask = 0;
--
- 	/* Set default value for multicast hash bins */
- 	plat->multicast_filter_bins = HASH_TABLE_SIZE;
- 
+ struct stmmac_mdio_bus_data {
+-	unsigned int phy_mask;
+ 	int *irqs;
+ 	int probed_phy_irq;
+ 	bool needs_reset;
 -- 
 2.17.1
 
