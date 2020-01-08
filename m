@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A39D134D97
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:30:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD6A1134D98
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:30:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CMJ9ZiY0/FxNIx2Y0TEsAlhurCPwM3/yz6Mcm81/UQw=; b=KxxceKsSl8DJmF
-	aQb8DfEnFJRAV2JCf3ejVy93qt/gSWSM6uoPDfCLIpTIv16dmeLUZd06fyicTQT19Y5bfF6F7ppcs
-	dnjQoY5cxkeX09K+JZoFqIs2FY4hk7WSJQZzv7mQqBG/ObmUxFumr8oSR+tpvS2H/cvpHpmTxcQjg
-	/Y9F9INS4itdYpM0YoYMdoeoOSoZtyGlto2G9yMrpZ0ddeZUMF8svoqr/vLt7PEkKcJmAXRdz3UYi
-	SP4D7AVraCKfGC5UdpbMfSc6l8rOgKxhbLC/LVaQG+CAWYA8BQxNmkL3Z0S+GJje5e9fKOpAmjAV7
-	ANkFz1/DMrVPAf38RiAQ==;
+	List-Owner; bh=LUr4eLqugJ+dIn/WY51l1di3vRbHdmlh/ccamxag4SY=; b=avCI7DMxK6Weim
+	gRnsGzpqFlAOEWBvPsKTtL7wmee9ivfhC+4G8jLjCVePfPQtZREMW3CToGe939BhX/70UDpm3fxOH
+	5WkdH4TGxI1oWykyqvdIrak58FkOFiijtasvXAofNbn47/UfLSyQ3ubFcw8iojsbBHRjMjpb7oUWO
+	DQbMZYyOapwfcyXn7hUabJ5+1w2PSU/7LHKLgsaL/dpL+jFf4O4AYlVli95US/61ZQmsrvavS6KKQ
+	ilY1O3GtLkU0KWV080xeJo7TI2QMOhPHmrhw/0Lt2Qrh8vwuq67uRc53f3428ydw15essNNr7lWh9
+	ZBNpT8quAl4d9ICscZLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipHxh-00021U-8g; Wed, 08 Jan 2020 20:29:53 +0000
+	id 1ipHy0-0002Rb-9y; Wed, 08 Jan 2020 20:30:12 +0000
 Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipHv5-0008ED-L8
+ id 1ipHv5-0008Gp-KA
  for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:13 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
@@ -29,22 +29,22 @@ Received: from orsmga007.jf.intel.com ([10.7.209.58])
  by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  08 Jan 2020 12:27:06 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658380"
+X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658387"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga007.jf.intel.com with ESMTP; 08 Jan 2020 12:27:06 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 08/14] KVM: x86/mmu: Drop level optimization from
- fast_page_fault()
-Date: Wed,  8 Jan 2020 12:24:42 -0800
-Message-Id: <20200108202448.9669-9-sean.j.christopherson@intel.com>
+Subject: [PATCH 10/14] KVM: x86/mmu: Remove obsolete gfn restoration in
+ FNAME(fetch)
+Date: Wed,  8 Jan 2020 12:24:44 -0800
+Message-Id: <20200108202448.9669-11-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_122711_768873_DD0D26D5 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20200108_122711_766503_4606594D 
+X-CRM114-Status: GOOD (  12.43  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -88,50 +88,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove fast_page_fault()'s optimization to stop the shadow walk if the
-iterator level drops below the intended map level.  The intended map
-level is only acccurate for HugeTLB mappings (THP mappings are detected
-after fast_page_fault()), i.e. it's not required for correctness, and
-a future patch will also move HugeTLB mapping detection to after
-fast_page_fault().
+Remove logic to retrieve the original gfn now that HugeTLB mappings are
+are identified in FNAME(fetch), i.e. FNAME(page_fault) no longer adjusts
+the level or gfn.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/mmu/mmu.c | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+ arch/x86/kvm/mmu/paging_tmpl.h | 13 +++----------
+ 1 file changed, 3 insertions(+), 10 deletions(-)
 
-diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index 4bd7f745b56d..7d78d1d996ed 100644
---- a/arch/x86/kvm/mmu/mmu.c
-+++ b/arch/x86/kvm/mmu/mmu.c
-@@ -3593,7 +3593,7 @@ static bool is_access_allowed(u32 fault_err_code, u64 spte)
-  * - true: let the vcpu to access on the same address again.
-  * - false: let the real page fault path to fix it.
-  */
--static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa, int level,
-+static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa,
- 			    u32 error_code)
- {
- 	struct kvm_shadow_walk_iterator iterator;
-@@ -3611,8 +3611,7 @@ static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa, int level,
- 		u64 new_spte;
+diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
+index 841506a55815..0560982eda8b 100644
+--- a/arch/x86/kvm/mmu/paging_tmpl.h
++++ b/arch/x86/kvm/mmu/paging_tmpl.h
+@@ -621,7 +621,7 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
+ 	struct kvm_shadow_walk_iterator it;
+ 	unsigned direct_access, access = gw->pt_access;
+ 	int top_level, hlevel, ret;
+-	gfn_t gfn, base_gfn;
++	gfn_t base_gfn = gw->gfn;
  
- 		for_each_shadow_entry_lockless(vcpu, cr2_or_gpa, iterator, spte)
--			if (!is_shadow_present_pte(spte) ||
--			    iterator.level < level)
-+			if (!is_shadow_present_pte(spte))
- 				break;
+ 	direct_access = gw->pte_access;
  
- 		sp = page_header(__pa(iterator.sptep));
-@@ -4223,7 +4222,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
- 	if (level > PT_PAGE_TABLE_LEVEL)
- 		gfn &= ~(KVM_PAGES_PER_HPAGE(level) - 1);
+@@ -666,13 +666,6 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
+ 			link_shadow_page(vcpu, it.sptep, sp);
+ 	}
  
--	if (fast_page_fault(vcpu, gpa, level, error_code))
-+	if (fast_page_fault(vcpu, gpa, error_code))
- 		return RET_PF_RETRY;
+-	/*
+-	 * FNAME(page_fault) might have clobbered the bottom bits of
+-	 * gw->gfn, restore them from the virtual address.
+-	 */
+-	gfn = gw->gfn | ((addr & PT_LVL_OFFSET_MASK(gw->level)) >> PAGE_SHIFT);
+-	base_gfn = gfn;
+-
+ 	hlevel = kvm_mmu_hugepage_adjust(vcpu, gw->gfn, max_level, &pfn);
  
- 	mmu_seq = vcpu->kvm->mmu_notifier_seq;
+ 	trace_kvm_mmu_spte_requested(addr, gw->level, pfn);
+@@ -684,9 +677,9 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
+ 		 * We cannot overwrite existing page tables with an NX
+ 		 * large page, as the leaf could be executable.
+ 		 */
+-		disallowed_hugepage_adjust(it, gfn, &pfn, &hlevel);
++		disallowed_hugepage_adjust(it, gw->gfn, &pfn, &hlevel);
+ 
+-		base_gfn = gfn & ~(KVM_PAGES_PER_HPAGE(it.level) - 1);
++		base_gfn = gw->gfn & ~(KVM_PAGES_PER_HPAGE(it.level) - 1);
+ 		if (it.level == hlevel)
+ 			break;
+ 
 -- 
 2.24.1
 
