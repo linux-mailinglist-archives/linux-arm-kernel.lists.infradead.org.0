@@ -2,59 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F2B9134975
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:37:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 612FF134979
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:39:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p5bdEH4S0K+eFzJqWKP5h3IbBSJ2ZejcgPDHWiIBem0=; b=hAnu7BCHYgf7j49jnHUhGDa6x
-	kN5b3yiDSswNlQNhpOLrRo++M1eKJBTYlM97Mqc8gfw+s/LbaSO15kYOPT4Sihhq+/cHlDOxUfi0J
-	nKzerDh9Wa5fgb4GPSVZu7sLbhehGChDZLTdOeFcryWl5YeN1MVLIW4CJheV+DJi0JcgwoC2MLVCP
-	nBU8DkAq+dso07Ud1IDMI0ie7uHIRWUvp/P9eERidLRDlu2sD2FT3ZYPRysV/5Kx7ntbaGoiDhpTq
-	xbUgYFujAWU8emI75WoQb4ACCC1QU6nZeVQomQw13eKlkjnsQrEdZSeDIkazWE4TGyOsyB8NkXQvI
-	Rx12OV5vQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bPZ8vZ++Y48GHHRsMfD+nK6o/FItgEzGSpj3hgxprIo=; b=YeBAuty2RkVfFM
+	O9neZE9gCekkYoqnLCrlK1VNoUaEBl28X2kw79FETJ33P4xuZxf0wbW2Rq9i3itMplERmxlCGzLit
+	9/DHsPTSh1U9NmxljC2+IfgbTuBJS+pHU4lEgwQlY0WS+QbS00kmMFVvwo56kUAsatQKAylekFDE9
+	DOG1OgRpZPcMy6omTz+BEUh1puXzqXueWuC8/skH/DBka4S1WMqUZR/vhPqnkYfk5AvzDE4msY/CA
+	3KfxvjSJ/ChpdZPafu8cyAmjgzA0KvDAkNF/wfrJSzwl3izS4RULywhyxQI8PPo5EV3hCPEg2PoGV
+	Vbs2oZn/Xk2/EKIOKNlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFGR-0008Ae-Pp; Wed, 08 Jan 2020 17:37:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFGK-0008AI-N3
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:36:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 198061FB;
- Wed,  8 Jan 2020 09:36:56 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 975093F534;
- Wed,  8 Jan 2020 09:36:55 -0800 (PST)
-Date: Wed, 8 Jan 2020 17:36:54 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v8 2/3] arm64: random: Add data to pool from setup_arch()
-Message-ID: <20200108173654.GC4036@sirena.org.uk>
-References: <20200107183540.54794-1-broonie@kernel.org>
- <20200107183540.54794-3-broonie@kernel.org>
- <20200108172041.GI49203@lakrids.cambridge.arm.com>
+	id 1ipFIU-0000bA-BY; Wed, 08 Jan 2020 17:39:10 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipFIL-0000ao-2W
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:39:02 +0000
+Received: by mail-wm1-x341.google.com with SMTP id b19so3400146wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 09:39:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bBxFvxCoAh8l0Z98FBrlyytypYEDv8SPnKwcWHDa8Es=;
+ b=yjNl2Wu8dKhMmGTNlqqPsCzv6inqDqWP5D7Cxh4rpnIJcGW19Ec6OrsEX7LLylyf1+
+ R6xu/p2+5KhOll981LnHYSKlQTZI/cqBjjamJ4qPGaL0wLt8FGtpPCoV6q7ZkCxnX1G8
+ fINHdMPfsvDy+bg48F8E5QlMriwJstBHdjoNKOi1HKoePOmHmhx75WJ4m/hfC8EU2EYG
+ mlMSPn5848nj4AhDlSpCtNXIITdspmXHBRMrf4ibIqnsHmK24+9ZBjHvIAu33kABR38M
+ J9ifr0ytZNkV19ZW0Y20tytwrFqXc4MapnPzd7kqbh0PXR2RbMVs+ZaGEELzJMeR2S9R
+ 7hSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bBxFvxCoAh8l0Z98FBrlyytypYEDv8SPnKwcWHDa8Es=;
+ b=Za8zLHkS+kqifmsZVooj41L37U0PuISRE/kTH5UvNHY5IaQ+2o8/uRIM454ronVeYv
+ jxrRo6+WsU2RIJMQZnWAg1HemLAKgvrHCyo05ZBXYwJn8uBZqp2Ii7Cozhf+ihBSLoH6
+ KPHGkBJrjqqUCA9aNgKI+NNKjZe+z6DqOaCpyWj4ZVCr+TVv2zFrCv5SOwz0D0EVBbu5
+ AnAAvpBYZZuoBM/9C9A5nvuRu9NR5FsDOWsXArR4JhL9ja3sr3vVkp0Dvqf5wbp5DU3T
+ tL/qy4gwbthRj7MvtT3AfZLQM51St3ihhYUPxDnj6hfDBxL+PQEJ7yJdCgsDokX2ze+m
+ bTYA==
+X-Gm-Message-State: APjAAAX4L3axdl8huRNkxSutSyN2ehkYznT3qr6Dnc790XszgIs04OMr
+ QgAP8k2PvKygIq7afJtTw4F08RHqnNSJ26uTPdDKHA==
+X-Google-Smtp-Source: APXvYqyr6Pa9BfRWdebN7rQCUlGkh+8tXT+34IXtbKzvxQh+2PCAUXpMdq97CGTVhqY1AzC8tQPpTZCtoHP9VGAbLAU=
+X-Received: by 2002:a1c:3dc3:: with SMTP id k186mr5059016wma.95.1578505139613; 
+ Wed, 08 Jan 2020 09:38:59 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200108172041.GI49203@lakrids.cambridge.arm.com>
-X-Cookie: My vaseline is RUNNING...
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200107183540.54794-1-broonie@kernel.org>
+ <20200107183540.54794-4-broonie@kernel.org>
+In-Reply-To: <20200107183540.54794-4-broonie@kernel.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 8 Jan 2020 18:38:48 +0100
+Message-ID: <CAKv+Gu9265OuGrkdH=Mp_Ef+6h5Y8mdvATd-TrTXN_wUawsUBA@mail.gmail.com>
+Subject: Re: [PATCH v8 3/3] arm64: Use v8.5-RNG entropy for KASLR seed
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_093656_796806_FE663F3E 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200108_093901_121826_4198A8E4 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,77 +91,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
- ard.biesheuvel@linaro.org, Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6562723231110622507=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 7 Jan 2020 at 19:38, Mark Brown <broonie@kernel.org> wrote:
+>
+> When seeding KALSR on a system where we have architecture level random
+> number generation make use of that entropy, mixing it in with the seed
+> passed by the bootloader. Since this is run very early in init before
+> feature detection is complete we open code rather than use archrandom.h.
+>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
+>  arch/arm64/kernel/kaslr.c | 15 ++++++++++++++-
+>  1 file changed, 14 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+> index 2a11a962e571..fc38c4c25eb6 100644
+> --- a/arch/arm64/kernel/kaslr.c
+> +++ b/arch/arm64/kernel/kaslr.c
+> @@ -81,7 +81,8 @@ static __init const u8 *kaslr_get_cmdline(void *fdt)
+>  u64 __init kaslr_early_init(u64 dt_phys)
+>  {
+>         void *fdt;
+> -       u64 seed, offset, mask, module_range;
+> +       u64 seed, offset, mask, module_range, ftr;
+> +       unsigned long raw;
+>         const u8 *cmdline, *str;
+>         int size;
+>
+> @@ -120,6 +121,18 @@ u64 __init kaslr_early_init(u64 dt_phys)
+>                 return 0;
+>         }
+>
+> +       /*
+> +        * Mix in any entropy obtainable architecturally, open coded
+> +        * since this runs extremely early.
+> +        */
+> +       if (IS_ENABLED(CONFIG_ARCH_RANDOM)) {
+> +               ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
+> +               if ((ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf) {
+> +                       if (__arm64_rndr(&raw))
+> +                               seed += raw;
 
---===============6562723231110622507==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="da4uJneut+ArUgXk"
-Content-Disposition: inline
+Using addition rather than xor to combine seeds is slightly
+unidiomatic, so if you are doing this for a specific reason, it would
+be good to mention it.
 
-
---da4uJneut+ArUgXk
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Jan 08, 2020 at 05:20:41PM +0000, Mark Rutland wrote:
-> On Tue, Jan 07, 2020 at 06:35:39PM +0000, Mark Brown wrote:
-
-> > +	/* Add multiple values to mirror the generic code. */
-> > +	for (i = 0; i < 16; i++)
-> > +		if (__arm64_rndr(&val))
-> > +			add_device_randomness(&val, sizeof(val));
-> > +}
-
-> Given the next patch also needs to check the I reckon it is worth
-> factoring the ID register check into a helper:
-
-> /* Used on the boot CPU before the CPU feature framework is up */
-> static inline bool __init __early_cpu_has_rndr(void)
-> {
-> 	unsigned long ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
-> 	return (ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf;
-> }
-
-There was also some suggestion about making a generic helper that takes
-the register and bitfield to look at.
-
-At some point I do also start to question if we're really winning with
-all this stuff static inline...
-
---da4uJneut+ArUgXk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4WEzUACgkQJNaLcl1U
-h9DjHwgAgTyKHlhpYYEof1IBHo+ucBqCRJ2yifwNzjZjTW6IK2SZ1zoSNYdht5NI
-1PaeERePdP71hycoZxDbRG5HvjtnWcHacC002CYepazmgfUdBVlgj4py7YBjPeFS
-M5iPlG6ZyoXjKn9Zllf/XD8w3taluFoCT4gI+wcnzGw8VNAqTeO8pwDHM8kcQ3YP
-rdbudgB0a5P0lUFxrDXWN2cCGgK9OLRWECgofFn9eGE2faYSP7+sG0BSr5ae2Tcv
-/eiU8G9Tq8Mj4h1OV58ENxz/7eriRd+3qyHkT+HpFHbcvfATxI/VwpaeTUX/eOZl
-EQkw2jExfdBVK5cBN4HXFYMuPpW2bQ==
-=5jUY
------END PGP SIGNATURE-----
-
---da4uJneut+ArUgXk--
+On a system that implements these instructions, the existing seed is
+likely to come from the same source, but the ZF flag should catch any
+cases where the output is stale (which unfortunately is a thing that
+the spec does not ban). So using add instead of xor to mitigate
+against correlated seeds seems both unnecessary and insufficient at
+the same time, if that was the intention.
 
 
---===============6562723231110622507==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +               }
+> +       }
+> +
+>         if (!seed) {
+>                 kaslr_status = KASLR_DISABLED_NO_SEED;
+>                 return 0;
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6562723231110622507==--
-
