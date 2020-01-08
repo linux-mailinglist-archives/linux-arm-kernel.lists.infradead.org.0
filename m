@@ -2,81 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3E5A134D15
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:22:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C2F7134D66
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:27:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NbQ2gPf4C/Vl2I4CBAKEIE2+N++M5P1Jhu0UtT4q46s=; b=JOrkSpRgXoqy25
-	QbPiVg4mQ5n51YWSdU8oUtThiVrUbP99JSDJ5RsJ9EFC19ItvuR3/pq4FrK12FTjh9X8o3Vu/LpO4
-	9jo1//WOE4WIlKpUZ9H8Alq4LdnF775D7i0ToTXso9mXTUshPzOKZYaUEz6yxPnOc/Z9GlOgvu0X+
-	vlGip+F9eZSPTuHQVviah64dhCb+qSPL1dyrnIC+trEXEZ7fUX1gsFoXW8CPfnwZqQaOflqIeA4lX
-	CXyw2/zQAYq/wQH6APDgAWOuHq8uEf7qWk81xLAepu+VZr3EAl0JByYELZoIHewNe5z5PNaX+KG8o
-	BXKHE7fOoMJ6jYVlP1Cg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b3rw1qRy+cz6OR/vG9eVzz6ngk3tlttenvjPIQMspDY=; b=GDe8kjwkVqP2pi
+	Wa61JaMxMhbWH73AEQFiJA8O5xaJqHGg/WJQOoW1x780UdQdY9leYIg4+ZCewRcTG+A0UTQD7j7sN
+	qKmPP6rkoIWq40yBRrz4bwEoiML71Req4i2Du4TiygJZaulVlTSRG4ln+4mAJfugUZPtjuyAfXd7g
+	DpoyaKH8JgsRimDvRqoDfPjL7CfbS1JRiMwzXMj5Qox+Sn6dGixMXlcK+lQA/dTf0gEA5dWI/4aLD
+	nidXkEs2bVKRhOrki/ntd8tY400mBshUO1+WJG2Y7zpM3d+QHe1d+RBPdRMQ2OetJMOdyn03YB/CZ
+	a1tpul3IwpEukd5cnwHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipHq0-0005lr-Ue; Wed, 08 Jan 2020 20:21:56 +0000
-Received: from mail-wm1-f68.google.com ([209.85.128.68])
+	id 1ipHvM-0008Dd-5w; Wed, 08 Jan 2020 20:27:28 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipHpr-0005l3-7p
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:21:48 +0000
-Received: by mail-wm1-f68.google.com with SMTP id p9so316277wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 12:21:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DAChl6Ul9fKSKLSUyoPgGNo0ChhyAr0XJVth8mI90zs=;
- b=TkaY8dZ5NHUR+xoBaW1RNVFs1ueCv5yyFnOsFpP1YdRfM/uYnBxCbb9oSOryR+zOIB
- bCb98f4aAtNKhtFo1Ijtr+sRbWmzlQOaPKCEv7uEvY8NDsnwnr5N8Qds+WCx6yz3xuj1
- cMQHrh02t5wW3f80QfXBJsXqutqLmCgqvEoGqKzrAlpZbTRyKs3L7SAaygFfU7ZSSua9
- TrNElSB21DwpaeTz+QtH8+ON36Kf/PFLb6sx6iS4s1Rut9VVDhE+wxr3JJaXaFL5/LF+
- ngultWMhAYgRALIOFMcNTnuAU+DiUAFZqAhPATl9qg+LpUuVXhzM0ZTyWWv5CH69rnVi
- vEdA==
-X-Gm-Message-State: APjAAAXTs6+VwBFsYO2BDSap8VBea2xZKqqVGT0ZNQW1SgomKNFrG0SI
- 4B8kBGurX3Gtbgo2vXdrMY8=
-X-Google-Smtp-Source: APXvYqzpZx5bVmQEcf1bpPT5tN7m0CBp56yBmQq5PdtRIz3mJs/1AeH+ujtV+juGwD4/yfPcficuPA==
-X-Received: by 2002:a7b:c93a:: with SMTP id h26mr408703wml.83.1578514905607;
- Wed, 08 Jan 2020 12:21:45 -0800 (PST)
-Received: from kozik-book ([83.218.167.187])
- by smtp.googlemail.com with ESMTPSA id q3sm238868wmj.38.2020.01.08.12.21.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 08 Jan 2020 12:21:44 -0800 (PST)
-Date: Wed, 8 Jan 2020 21:21:42 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v2] ARM: dts: exynos: tiny4412: enable fimd node and add
- proper panel node
-Message-ID: <20200108202142.GA8492@kozik-book>
-References: <20200107191020.27475-1-tiny.windzz@gmail.com>
+ id 1ipHuz-0008Bf-HQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:07 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 Jan 2020 12:27:04 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658348"
+Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
+ by orsmga007.jf.intel.com with ESMTP; 08 Jan 2020 12:27:04 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Paolo Bonzini <pbonzini@redhat.com>
+Subject: [PATCH 00/14] KVM: x86/mmu: Huge page fixes, cleanup, and DAX
+Date: Wed,  8 Jan 2020 12:24:34 -0800
+Message-Id: <20200108202448.9669-1-sean.j.christopherson@intel.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200107191020.27475-1-tiny.windzz@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_122147_279783_9A36CAAE 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200108_122705_590479_3CFC25B0 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,29 +65,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, kgene@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@ozlabs.org>,
+ linux-mm@kvack.org, kvmarm@lists.cs.columbia.edu,
+ Andrea Arcangeli <aarcange@redhat.com>, Dave Jiang <dave.jiang@intel.com>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>,
+ syzbot+c9d1fb51ac9d0d10c39d@syzkaller.appspotmail.com,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Barret Rhoden <brho@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ kvm-ppc@vger.kernel.org, Liran Alon <liran.alon@oracle.com>,
+ Andy Lutomirski <luto@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>, Jason Zeng <jason.zeng@intel.com>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 07, 2020 at 07:10:20PM +0000, Yangtao Li wrote:
-> Enable fimd device node which is a display controller, and add panel
-> node required by it.
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> ---
-> v2:
-> -update commit msg and merge to one patch
-> ---
->  arch/arm/boot/dts/exynos4412-tiny4412.dts | 25 +++++++++++++++++++++++
+This series is a mix of bug fixes, cleanup and new support in KVM's
+handling of huge pages.  The series initially stemmed from a syzkaller
+bug report[1], which is fixed by patch 02, "mm: thp: KVM: Explicitly
+check for THP when populating secondary MMU".
 
-Thanks, applied.
+While investigating options for fixing the syzkaller bug, I realized KVM
+could reuse the approach from Barret's series to enable huge pages for DAX
+mappings in KVM[2] for all types of huge mappings, i.e. walk the host page
+tables instead of querying metadata (patches 05 - 09).
 
-Best regards,
-Krzysztof
+Walking the host page tables sidesteps the issues with refcounting and
+identifying THP mappings (in theory), and using a common method for
+identifying huge mappings should improve (haven't actually measured) KVM's
+overall page fault latency by eliminating the vma lookup that is currently
+used to identify HugeTLB mappings.  Eliminating the HugeTLB specific code
+also allows for additional cleanup (patches 10 - 13).
+
+Testing the page walk approach revealed several pre-existing bugs that
+are included here (patches 01, 03 and 04) because the changes interact
+with the rest of the series, e.g. without the read-only memslots fix,
+walking the host page tables without explicitly filtering out HugeTLB
+mappings would pick up read-only memslots and introduce a completely
+unintended functional change.
+
+Lastly, with the page walk infrastructure in place, supporting DAX-based
+huge mappings becomes a trivial change (patch 14).
+
+Based on kvm/queue, commit e41a90be9659 ("KVM: x86/mmu: WARN if root_hpa
+is invalid when handling a page fault")
+
+Paolo, assuming I understand your workflow, patch 01 can be squashed with
+the buggy commit as it's still sitting in kvm/queue.
+
+[1] https://lkml.kernel.org/r/0000000000003cffc30599d3d1a0@google.com
+[2] https://lkml.kernel.org/r/20191212182238.46535-1-brho@google.com
+
+Sean Christopherson (14):
+  KVM: x86/mmu: Enforce max_level on HugeTLB mappings
+  mm: thp: KVM: Explicitly check for THP when populating secondary MMU
+  KVM: Use vcpu-specific gva->hva translation when querying host page
+    size
+  KVM: Play nice with read-only memslots when querying host page size
+  x86/mm: Introduce lookup_address_in_mm()
+  KVM: x86/mmu: Refactor THP adjust to prep for changing query
+  KVM: x86/mmu: Walk host page tables to find THP mappings
+  KVM: x86/mmu: Drop level optimization from fast_page_fault()
+  KVM: x86/mmu: Rely on host page tables to find HugeTLB mappings
+  KVM: x86/mmu: Remove obsolete gfn restoration in FNAME(fetch)
+  KVM: x86/mmu: Zap any compound page when collapsing sptes
+  KVM: x86/mmu: Fold max_mapping_level() into kvm_mmu_hugepage_adjust()
+  KVM: x86/mmu: Remove lpage_is_disallowed() check from set_spte()
+  KVM: x86/mmu: Use huge pages for DAX-backed files
+
+ arch/powerpc/kvm/book3s_xive_native.c |   2 +-
+ arch/x86/include/asm/pgtable_types.h  |   4 +
+ arch/x86/kvm/mmu/mmu.c                | 208 ++++++++++----------------
+ arch/x86/kvm/mmu/paging_tmpl.h        |  29 +---
+ arch/x86/mm/pageattr.c                |  11 ++
+ include/linux/huge_mm.h               |   6 +
+ include/linux/kvm_host.h              |   3 +-
+ mm/huge_memory.c                      |  11 ++
+ virt/kvm/arm/mmu.c                    |   8 +-
+ virt/kvm/kvm_main.c                   |  24 ++-
+ 10 files changed, 145 insertions(+), 161 deletions(-)
+
+-- 
+2.24.1
 
 
 _______________________________________________
