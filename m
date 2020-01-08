@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B8A4134B09
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:57:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B984A134B0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:58:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QHQ+ZgrPJ5u6FaJ00jUh15UoI68FrC23SqJ84WRn2kQ=; b=L8daHkb7MBXhvzJBOV6zAREbXz
-	E6ECAoto0STIiUusOauhjtoNwQxxT57VaBD9tuDSzLRMpb+zx9o8n95qWYMYiuCkS5cc4AYJzhX4l
-	1PJDYIQ/2T+gh/EIo5AgfuPCoFMmMToo1gxPwSWNWD7nTAX0QClzEHLblxuPtSXd+H+y2W+QjAsDc
-	5BEhgDY4bIEW5eSVf4xCoCUigY1yjowdSM49KsB/0NlVLKNMU5MftdjMrgda4XgjYw8Cv2EixO2En
-	HGwJDQzBP2a6Fx4ToeFm5GUqer/fcmRci5Kmlpsazs1y3nwk225oG+aZmbu6XWfF6V7qHPDh8j+oj
-	CjLac1PQ==;
+	bh=M0Zz5l/4prVsPnviSH9ZqHmDAj1nI4k0VeGd7fmQNZo=; b=b/HnqCFbnk2VHYD2ASw+MODpDZ
+	SXLTEF6JPdmrJTEuZ6U397kUiu6NE9xwQm5hNtQSaU+TpTHm8MS3NnBnMN++y7icNfU69Pwzzc3kx
+	JDUW4ZNbT+TcrRRPGO3Jlb+UupsBXkJJqR3eraH6LTrd8vLFZ2muWjWIbT2oQh0AF5rUaGAccJ5QK
+	txtD3sunC2TJXLgMBmf2R4Z8IL90qrbZLk2CeOq7U79BgZhdZXsxJVhYnp5ZkrRT3Vc+GPwi8gWMg
+	U1y7lB+Z76TCNPr7HqzO7+W5fYZENf4phNq+UXCDLvzm5uNhtcdaTHxmy9VKNmg+WohfiJhhV6EDO
+	MWNQqzEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGWV-0007s2-H4; Wed, 08 Jan 2020 18:57:43 +0000
+	id 1ipGWh-00085l-Mx; Wed, 08 Jan 2020 18:57:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGVj-0007Jw-FI
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:56:57 +0000
+ id 1ipGVm-0007Of-QK
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B84D01FB;
- Wed,  8 Jan 2020 10:56:54 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAA2B328;
+ Wed,  8 Jan 2020 10:56:56 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 347753F534;
- Wed,  8 Jan 2020 10:56:53 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 66AFB3F534;
+ Wed,  8 Jan 2020 10:56:55 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 02/17] arm64: entry: cleanup el0 svc handler naming
-Date: Wed,  8 Jan 2020 18:56:19 +0000
-Message-Id: <20200108185634.1163-3-mark.rutland@arm.com>
+Subject: [PATCH 03/17] arm64: entry: move arm64_preempt_schedule_irq to
+ entry-common.c
+Date: Wed,  8 Jan 2020 18:56:20 +0000
+Message-Id: <20200108185634.1163-4-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105655_574682_245D6BD3 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200108_105659_038022_7A39E0D2 
+X-CRM114-Status: GOOD (  12.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,84 +73,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For most of the exception entry code, <foo>_handler() is the first C
-function called from the entry assembly in entry-common.c, and external
-functions handling the bulk of the logic are called do_<foo>().
+Subsequent patches will pull more of the IRQ entry handling into C. To
+keep this in one place, let's move arm64_preempt_schedule_irq() into
+entry-common.c along with the other entry management functions.
 
-For consistency, apply this scheme to el0_svc_handler and
-el0_svc_compat_hander, renaming them to do_el0_svc and do_el0_svc_compat
-respectively.
+We no longer need to include <linux/lockdep.h> in process.c, so the
+include directive is removed.
 
 There should be no functional change as a result of this patch.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/exception.h | 4 ++--
- arch/arm64/kernel/entry-common.c   | 4 ++--
- arch/arm64/kernel/syscall.c        | 4 ++--
- 3 files changed, 6 insertions(+), 6 deletions(-)
+---
+ arch/arm64/kernel/entry-common.c | 19 +++++++++++++++++++
+ arch/arm64/kernel/process.c      | 17 -----------------
+ 2 files changed, 19 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-index 4d5f3b5f50cd..b87c6e276ab1 100644
---- a/arch/arm64/include/asm/exception.h
-+++ b/arch/arm64/include/asm/exception.h
-@@ -45,8 +45,8 @@ void do_sysinstr(unsigned int esr, struct pt_regs *regs);
- void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
- void bad_el0_sync(struct pt_regs *regs, int reason, unsigned int esr);
- void do_cp15instr(unsigned int esr, struct pt_regs *regs);
--void el0_svc_handler(struct pt_regs *regs);
--void el0_svc_compat_handler(struct pt_regs *regs);
-+void do_el0_svc(struct pt_regs *regs);
-+void do_el0_svc_compat(struct pt_regs *regs);
- void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
- 			    struct pt_regs *regs);
- 
 diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index 67198142a0fc..fde59981445c 100644
+index fde59981445c..4fa058453468 100644
 --- a/arch/arm64/kernel/entry-common.c
 +++ b/arch/arm64/kernel/entry-common.c
-@@ -215,7 +215,7 @@ static void notrace el0_svc(struct pt_regs *regs)
- 	if (system_uses_irq_prio_masking())
- 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+@@ -6,7 +6,10 @@
+  */
  
--	el0_svc_handler(regs);
-+	do_el0_svc(regs);
+ #include <linux/context_tracking.h>
++#include <linux/linkage.h>
++#include <linux/lockdep.h>
+ #include <linux/ptrace.h>
++#include <linux/sched/debug.h>
+ #include <linux/thread_info.h>
+ 
+ #include <asm/cpufeature.h>
+@@ -330,3 +333,19 @@ asmlinkage void notrace el0_sync_compat_handler(struct pt_regs *regs)
  }
- NOKPROBE_SYMBOL(el0_svc);
+ NOKPROBE_SYMBOL(el0_sync_compat_handler);
+ #endif /* CONFIG_COMPAT */
++
++asmlinkage void __sched arm64_preempt_schedule_irq(void)
++{
++	lockdep_assert_irqs_disabled();
++
++	/*
++	 * Preempting a task from an IRQ means we leave copies of PSTATE
++	 * on the stack. cpufeature's enable calls may modify PSTATE, but
++	 * resuming one of these preempted tasks would undo those changes.
++	 *
++	 * Only allow a task to be preempted once cpufeatures have been
++	 * enabled.
++	 */
++	if (static_branch_likely(&arm64_const_caps_ready))
++		preempt_schedule_irq();
++}
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 71f788cd2b18..94b3ae351af9 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -17,7 +17,6 @@
+ #include <linux/sched/task.h>
+ #include <linux/sched/task_stack.h>
+ #include <linux/kernel.h>
+-#include <linux/lockdep.h>
+ #include <linux/mm.h>
+ #include <linux/stddef.h>
+ #include <linux/sysctl.h>
+@@ -633,19 +632,3 @@ static int __init tagged_addr_init(void)
  
-@@ -281,7 +281,7 @@ static void notrace el0_svc_compat(struct pt_regs *regs)
- 	if (system_uses_irq_prio_masking())
- 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
- 
--	el0_svc_compat_handler(regs);
-+	do_el0_svc_compat(regs);
- }
- NOKPROBE_SYMBOL(el0_svc_compat);
- 
-diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
-index 9a9d98a443fc..a12c0c88d345 100644
---- a/arch/arm64/kernel/syscall.c
-+++ b/arch/arm64/kernel/syscall.c
-@@ -154,14 +154,14 @@ static inline void sve_user_discard(void)
- 	sve_user_disable();
- }
- 
--void el0_svc_handler(struct pt_regs *regs)
-+void do_el0_svc(struct pt_regs *regs)
- {
- 	sve_user_discard();
- 	el0_svc_common(regs, regs->regs[8], __NR_syscalls, sys_call_table);
- }
- 
- #ifdef CONFIG_COMPAT
--void el0_svc_compat_handler(struct pt_regs *regs)
-+void do_el0_svc_compat(struct pt_regs *regs)
- {
- 	el0_svc_common(regs, regs->regs[7], __NR_compat_syscalls,
- 		       compat_sys_call_table);
+ core_initcall(tagged_addr_init);
+ #endif	/* CONFIG_ARM64_TAGGED_ADDR_ABI */
+-
+-asmlinkage void __sched arm64_preempt_schedule_irq(void)
+-{
+-	lockdep_assert_irqs_disabled();
+-
+-	/*
+-	 * Preempting a task from an IRQ means we leave copies of PSTATE
+-	 * on the stack. cpufeature's enable calls may modify PSTATE, but
+-	 * resuming one of these preempted tasks would undo those changes.
+-	 *
+-	 * Only allow a task to be preempted once cpufeatures have been
+-	 * enabled.
+-	 */
+-	if (static_branch_likely(&arm64_const_caps_ready))
+-		preempt_schedule_irq();
+-}
 -- 
 2.11.0
 
