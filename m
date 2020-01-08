@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B5EC134B25
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 20:01:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8BD2134B26
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 20:01:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=32TDCvFvLCLBPrUjOI05i7Y2nM3qqJWN6hhmKIMv6Gc=; b=ZwF58NnxmuyHkSkCLBE8YnzMpl
-	oGMrTN7zoDM+Q1FKa3JEdbCcnzRhPhe+Mt5NV3AU7k+yHI2/dqlqvUYx6yKVtOBf3+A7bkvs+tTj6
-	tOrW8YTOatm26MJ1Talif9Wfx4pGAT8Hp+8iA9ljUGQ24E265ri6uKMiMmKrw+QCgH10D+Lif38uT
-	8zdOVdXuA47AcZaUP4/zVkRhHRobOCxcDx2CHdepicsgWgZUdIXbp4TnU37bcvT4GF2Z2wcSh++er
-	V2wNqsJwk+Ov2iKNXT3CN/cBdIONB291y1nDZO/7se4AGTwwKUvjUEenchQBPitTfGwqv40e98rce
-	3DqDMRBA==;
+	bh=+ArpmF9w5EefC9+648ggV9/4RQDsQrvPhm99bLPcz38=; b=t/X8hWd9/qPGQ6d/3ETzsXcm6l
+	YWTAUrsikpntjbjCCqmVzaHH+0zdmt2oCVZ95AQQzcQFZF5NShE6Q8G5tBEIkv+kSvgjpCd2hqPGo
+	pqfMoJLFG10WyA2O8DKpA5/BXAo+MOmGaU5Uaj0rYS1DMRZX15YZFhdlzy3Q+CKtdo6BjeIkwhM5a
+	e19OEcQLmMLW49JnjdrXNBmlJG2bRCaB7PC5uwOUyUTjMAp6H9F1XL2qUQqdExId0xKWTfJnqjcyU
+	MZCWrk4YsiQjKxxhIcA/uU8d/WL0DyuPwZUG/3ezRRXCrEXlrRWirlki9NpcB3Mc5phlinuWCs35+
+	t/dKcrjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGZj-0003oq-6t; Wed, 08 Jan 2020 19:01:03 +0000
+	id 1ipGa5-00048y-Pe; Wed, 08 Jan 2020 19:01:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGWB-0007mN-GZ
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:25 +0000
+ id 1ipGWF-0007px-QC
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09FC6DA7;
- Wed,  8 Jan 2020 10:57:23 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16FF81FB;
+ Wed,  8 Jan 2020 10:57:27 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7A1D03F534;
- Wed,  8 Jan 2020 10:57:21 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 876243F534;
+ Wed,  8 Jan 2020 10:57:25 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 15/17] arm64: entry: move ARM64_ERRATUM_845719 workaround to C
-Date: Wed,  8 Jan 2020 18:56:32 +0000
-Message-Id: <20200108185634.1163-16-mark.rutland@arm.com>
+Subject: [PATCH 16/17] arm64: entry: move ARM64_ERRATUM_1418040 workaround to C
+Date: Wed,  8 Jan 2020 18:56:33 +0000
+Message-Id: <20200108185634.1163-17-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105723_634049_A0884FB7 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20200108_105727_977390_4AE59363 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,88 +73,96 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 To make the entry code less of a rats nest of overlapping labels and
-shared state, and to make the code easier to debug and maintain, let's
-move the workaround for ARM64_ERRATUM_845719 to C.
+shared state, and to make the code easier to debug and maintain, lets
+move the workaround for ARM64_ERRATUM_1418040 to C.
 
-The workaround requires us to perform a write to CONTEXTIDR_EL1 at
-AArch64 EL1 before retuning to an AArch32 EL0 task. There are no
-additional requirements on the state of the CPU, or on subsequent
-instructions prior to the ERET, so this can safely be performed in C
-code.
-
-As with the assembly version, we preserve the value of CONTEXTIDR if
-CONFIG_PID_IN_CONTEXTIDR is selected.
+The workaround requires us to disable EL0 access to the virtual counter,
+and emulate these accesses when they are trapped. The assembly code is
+only responsible for manipulating the trap control, which we can safely
+do in C code.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: James Morse <james.morse@arm.com>
 Cc: Marc Zyngier <maz@kernel.org>
+Cc: Robin Murphy <robin.murphy@arm.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/entry-common.c | 17 +++++++++++++++++
- arch/arm64/kernel/entry.S        | 14 --------------
- 2 files changed, 17 insertions(+), 14 deletions(-)
+ arch/arm64/kernel/entry-common.c | 20 ++++++++++++++++++++
+ arch/arm64/kernel/entry.S        | 15 ---------------
+ 2 files changed, 20 insertions(+), 15 deletions(-)
 
 diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index fa568284e73f..28b241cfd8f0 100644
+index 28b241cfd8f0..a7bebc3ce2a4 100644
 --- a/arch/arm64/kernel/entry-common.c
 +++ b/arch/arm64/kernel/entry-common.c
-@@ -121,6 +121,21 @@ static void notrace el0_prepare_entry(struct pt_regs *regs)
- }
- NOKPROBE_SYMBOL(el0_prepare_entry);
+@@ -28,6 +28,8 @@
+ #include <asm/stacktrace.h>
+ #include <asm/sysreg.h>
  
-+static void notrace workaround_arm64_erratum_845719(void)
-+{
-+	unsigned long val = 0;
++#include <clocksource/arm_arch_timer.h>
 +
-+	if (!IS_ENABLED(CONFIG_ARM64_ERRATUM_845719) ||
-+	    !cpus_have_const_cap(ARM64_WORKAROUND_845719) ||
-+	    !is_compat_task())
+ static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
+ {
+ 	unsigned long far = read_sysreg(far_el1);
+@@ -136,6 +138,23 @@ static void notrace workaround_arm64_erratum_845719(void)
+ }
+ NOKPROBE_SYMBOL(workaround_arm64_erratum_845719);
+ 
++static void notrace workaround_arm64_erratum_1418040(void)
++{
++	unsigned long clear = 0, set = 0;
++
++	if (!IS_ENABLED(CONFIG_ARM64_ERRATUM_1418040) ||
++	    !cpus_have_const_cap(ARM64_WORKAROUND_1418040))
 +		return;
 +
-+	if (IS_ENABLED(CONFIG_PID_IN_CONTEXTIDR))
-+		val = read_sysreg(contextidr_el1);
-+	write_sysreg(val, contextidr_el1);
++	if (is_compat_task())
++		clear = ARCH_TIMER_USR_VCT_ACCESS_EN;
++	else
++		set = ARCH_TIMER_USR_VCT_ACCESS_EN;
++
++	sysreg_clear_set(cntkctl_el1, clear, set);
 +}
-+NOKPROBE_SYMBOL(workaround_arm64_erratum_845719);
++NOKPROBE_SYMBOL(workaround_arm64_erratum_1418040);
 +
  static void notrace el0_prepare_return(struct pt_regs *regs)
  {
  	unsigned long flags;
-@@ -138,6 +153,8 @@ static void notrace el0_prepare_return(struct pt_regs *regs)
- 
+@@ -154,6 +173,7 @@ static void notrace el0_prepare_return(struct pt_regs *regs)
  	user_enter();
  
-+	workaround_arm64_erratum_845719();
-+
+ 	workaround_arm64_erratum_845719();
++	workaround_arm64_erratum_1418040();
+ 
  	stackleak_erase();
  }
- NOKPROBE_SYMBOL(el0_prepare_return);
 diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index d84718d272e9..a7340e551589 100644
+index a7340e551589..537b44c413df 100644
 --- a/arch/arm64/kernel/entry.S
 +++ b/arch/arm64/kernel/entry.S
-@@ -288,20 +288,6 @@ alternative_else_nop_endif
+@@ -288,21 +288,6 @@ alternative_else_nop_endif
  	.if	\el == 0
  	ldr	x23, [sp, #S_SP]		// load return stack pointer
  	msr	sp_el0, x23
--	tst	x22, #PSR_MODE32_BIT		// native task?
--	b.eq	3f
--
--#ifdef CONFIG_ARM64_ERRATUM_845719
--alternative_if ARM64_WORKAROUND_845719
--#ifdef CONFIG_PID_IN_CONTEXTIDR
--	mrs	x29, contextidr_el1
--	msr	contextidr_el1, x29
--#else
--	msr contextidr_el1, xzr
--#endif
+-#ifdef CONFIG_ARM64_ERRATUM_1418040
+-alternative_if_not ARM64_WORKAROUND_1418040
+-	b	4f
 -alternative_else_nop_endif
+-	/*
+-	 * if (x22.mode32 == cntkctl_el1.el0vcten)
+-	 *     cntkctl_el1.el0vcten = ~cntkctl_el1.el0vcten
+-	 */
+-	mrs	x1, cntkctl_el1
+-	eon	x0, x1, x22, lsr #3
+-	tbz	x0, #1, 4f
+-	eor	x1, x1, #2	// ARCH_TIMER_USR_VCT_ACCESS_EN
+-	msr	cntkctl_el1, x1
+-4:
 -#endif
--3:
- #ifdef CONFIG_ARM64_ERRATUM_1418040
- alternative_if_not ARM64_WORKAROUND_1418040
- 	b	4f
+ 	apply_ssbd 0, x0, x1
+ 	.endif
+ 
 -- 
 2.11.0
 
