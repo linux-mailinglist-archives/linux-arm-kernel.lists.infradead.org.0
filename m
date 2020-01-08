@@ -2,58 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F3A51346AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 16:51:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86DE01346C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 16:56:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Njg7K0fdHRXrzsXslWjAu9efzdxOf6dECS9DRfhtvs=; b=BxGRdHezU7PEUK
-	DR36ulx3tjcRVUtfFYrZu1pnnI4STfjn3zTJ9+3/wIRkSpFIIwNuRTQ+52KuEfSJPQY8UuM0EnkRX
-	QnCyIpxXYqfL+eioORLfKpkbp08RpQPsqBiloXCln+Pfv10XWQ8fPBMU70YDIAdTMtO9u8FitIxS+
-	khrGPq0NvTIaYGFrgnMV1XuhAkGPIojh1k7PiFE2NKpj3mllzuxgTPEGOlTM+sr6KomMafopwFyB3
-	vGG7dscKSxDINNns8Wk398GoCENfuEZmGsA+3npDq6VRUvfD+FrpqoO2Qjnd268Ma622AHyAjT+z3
-	/XVoDcZW8R6Bk5G5PHRw==;
+	List-Owner; bh=xJSOY797+OzKOQzObCkQ5k94RGuxemc9XWH3a0qm/0E=; b=YJ4UNCQI5xGzMi
+	0+Ey6ZrrSScq1Wgbw91KioQ9eMmmV785sLjTbB2x3ednByx5LVfdJ5CD9pzgGUyN8sk02xzEze8Cc
+	3pZGN+vVycGjLSXqU/CtRPCN21n5EZLs3kNf2ywAIqASF80BDuazqA3FkQt5VG18SiYGPmLj2LSUQ
+	rtwJdD67RUcq103mQUuO4i8SQuEzNzjukCkQlW6kcoPESpCsZ02cv7KJJLiT+dx6PNgBlqzNg7IDf
+	lGC89e5DCwb4iFyeEXj6zV4hMp/mwNQnI9fERPCtYfbmGCoOmOLR0AyvNJFH9JkCu+FvNaThQ+6Tr
+	OpN/FGSUpWTY4+lyLdFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipDbw-0002rM-La; Wed, 08 Jan 2020 15:51:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipDbq-0002qy-KK
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 15:51:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BA382328;
- Wed,  8 Jan 2020 07:51:01 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 507113F534;
- Wed,  8 Jan 2020 07:51:00 -0800 (PST)
-Date: Wed, 8 Jan 2020 15:50:58 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Alexandru Elisei <alexandru.elisei@arm.com>
-Subject: Re: [PATCHv2 2/3] KVM: arm/arm64: correct CPSR on exception entry
-Message-ID: <20200108155057.GG49203@lakrids.cambridge.arm.com>
-References: <20200108134324.46500-1-mark.rutland@arm.com>
- <20200108134324.46500-3-mark.rutland@arm.com>
- <3805fc5c-aa84-d203-11e4-b3a41ce5d809@arm.com>
+	id 1ipDgn-0005Ko-A2; Wed, 08 Jan 2020 15:56:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipDgf-0005KU-KE
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 15:56:02 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 20FA320705;
+ Wed,  8 Jan 2020 15:55:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578498961;
+ bh=mIybP4hijuAZNFwcJH7CrRcU+FHWkFZ73CZ/1r0Pnx0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bBQfwWd5QGEc5g3fjdlxVj5i8T0yuRUFW1nHnXreVZ6rKhUWkgeyR/be309xRqBoy
+ vt9G7u3FScxOFMirZal2juXZLYjHg3H+CYEp6QhS6Qfz3DVUB3Vx26vAK18ZgJSKR/
+ 57HDbFtFVhlCDGP9Lh70YRVOtgV2uC/2nfFuPIaQ=
+Date: Wed, 8 Jan 2020 15:55:52 +0000
+From: Will Deacon <will@kernel.org>
+To: Stefano Stabellini <sstabellini@kernel.org>
+Subject: Re: [PATCH v2] arm64: xen: Use modern annotations for assembly
+ functions
+Message-ID: <20200108155551.GA19197@willie-the-truck>
+References: <20191219122532.6538-1-broonie@kernel.org>
+ <alpine.DEB.2.21.1912191307410.9832@sstabellini-ThinkPad-T480s>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3805fc5c-aa84-d203-11e4-b3a41ce5d809@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <alpine.DEB.2.21.1912191307410.9832@sstabellini-ThinkPad-T480s>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_075102_711537_053FB7D2 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_075601_685581_D3B75BDD 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,45 +78,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peter.maydell@linaro.org, drjones@redhat.com, suzuki.poulose@arm.com,
- maz@kernel.org, stable@vger.kernel.org, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ Julien Grall <julien@xen.org>, linux-arm-kernel@lists.infradead.org,
+ xen-devel@lists.xenproject.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 08, 2020 at 02:41:04PM +0000, Alexandru Elisei wrote:
-> On 1/8/20 1:43 PM, Mark Rutland wrote:
-> > When KVM injects an exception into a guest, it generates the CPSR value
-> > from scratch, configuring CPSR.{M,A,I,T,E}, and setting all other
-> > bits to zero.
-> >
-> > This isn't correct, as the architecture specifies that some CPSR bits
-> > are (conditionally) cleared or set upon an exception, and others are
-> > unchanged from the original context.
-> >
-> > This patch adds logic to match the architectural behaviour. To make this
-> > simple to follow/audit/extend, documentation references are provided,
-> > and bits are configured in order of their layout in SPSR_EL2. This
-> > layout can be seen in the diagram on ARM DDI 0487E.a page C5-426.
-> >
-> > Note that this code is used by both arm and arm64, and is intended to
-> > fuction with the SPSR_EL2 and SPSR_HYP layouts.
-> >
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-
-> Looks good:
+On Thu, Dec 19, 2019 at 01:07:50PM -0800, Stefano Stabellini wrote:
+> On Thu, 19 Dec 2019, Mark Brown wrote:
+> > In an effort to clarify and simplify the annotation of assembly functions
+> > in the kernel new macros have been introduced. These replace ENTRY and
+> > ENDPROC. Update the annotations in the xen code to the new macros.
+> > 
+> > Signed-off-by: Mark Brown <broonie@kernel.org>
+> > Reviewed-by: Julien Grall <julien@xen.org>
+> > Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 > 
-> Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+> Thank you!
+> 
+> > ---
+> >  arch/arm64/xen/hypercall.S | 8 ++++----
+> >  1 file changed, 4 insertions(+), 4 deletions(-)
 
-Thanks!
+Is this going via the Xen tree, or shall I queue it along with the other
+asm annotation patches in the arm64 tree? I don't see it in -next yet.
 
-I've folded that in (along with your Reviewed-by on patch 1), and pushed
-out my kvm/exception-state branch again.
+Cheers,
 
-Mark.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
