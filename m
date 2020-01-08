@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37B6A13399F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 04:24:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0B561339A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 04:24:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XiIXk6DCmopDCfxrLCRO2OiOQ9KceOKTTDkEXsckenA=; b=Kif8d+Zq6dr6UgCUFIyeO4ydyP
-	NPdiywddXEj7c+4Y/xhiP29B0ayzzFFV1QGD6JF+0kzXXM4Gud0z3dFL7+/b3n3TaMRokVmPY+Y1W
-	n2L4En66CUAs0K7fFl2kFEKDMKOhuIDPSUBvdZ6AP3PvfFbdzDUiAR3RJ8z70J07QvIXnDFbacvfX
-	I5QSFiJ28wc+OLZeN8zGOTf2JM4uVecwaptT7gsB8gEK7hRGyeJNNCAQs0s26npCQP2HurYr3t+eI
-	BAcB7+vuDjkWs6sviyKfNosrJRpitK1LfcZG2pFftlps3ZrSupYH1zwi6fz5O4JwoUT0VfCWKdde6
-	fIVsaVAA==;
+	bh=MMxyLjxGApyF7ZUk4tDcrSYRSx1BGKciJTDnFO3g8R4=; b=A83hTI6bd9TDitgzlA59iQteWX
+	yCZMdrqn5oJPTBehfugHn8ASuZPa27I3/t3ZAop+ui4o3qfA7FNa4DdldCPEaD/qt8XCqLgts/ENU
+	ORcqs641luYRihYKTI/SoeG6A4XgVetIQhNKA0Ivl7ijsRXRI1ZEMB5n+V8ZiBvHF8ES51cSAALJb
+	VJE+cF4GGBermKjfonjUSi34XJyqmbm66SBLGNnYOki7Nzaf/nmd0qUUfj5laV3at0YOR5mInKruF
+	sgFBnluI9dGa02raPIuq0OAX7CYlbrbg0ScHQ/BvdroFUsKIxS7o238p2TeAzzct4kmpyOTFqj5+2
+	6dnEZlxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip1xU-0004sP-4T; Wed, 08 Jan 2020 03:24:36 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ip1xi-000564-Pw; Wed, 08 Jan 2020 03:24:50 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip1x2-0004eW-Cf
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 03:24:09 +0000
-Received: by mail-pf1-x441.google.com with SMTP id w62so874392pfw.8
+ id 1ip1x5-0004hY-CC
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 03:24:12 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x185so884122pfc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 19:24:08 -0800 (PST)
+ Tue, 07 Jan 2020 19:24:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=Yr7ow8GTmJkAHzIYaMaQkuIE5TitlU69AapCYxHxDps=;
- b=PJxpo/SHdwwoGkXr0J2qM59FCUCLggOZnuzUinBypKNTya68JfKqKnqrxRSzt8wlHL
- LjoUY1wArm6F+WoLHFjglR+sprDXVhrb7Z+BCgtliCTsjxv6F6wUoE+bjHpNvOrExaFr
- 5YVQVoe0Ix1q668tsWmMrJath+A5yK+IRiSri00cYc47i6edLxX9B4YmZjMzATkcco6p
- BAZ/wYrLibXK5+zAlGLuIlfjvvBCx6KQnsBkeOXCE4VilnyHd/QRSwGFwfmKhJ++hHV1
- XYkUsOpsWYO/0FUO20MoZeSN24Jiv4Kyn3ejlQXagD1MRAAr6yr9dHKg8Cg+93gz6xEk
- 15DA==
+ bh=aTQ2WmgfLL0RKpED5qehF/7+sveySkG+bgQJgoV8etc=;
+ b=cEz7w8dKWriMWqxMsuQxVa5e46S97vL2jdidPeIzqkB7Xvto9kfcvWQwx+jE8VhJsU
+ HhFz558l1P9wgZM2XF42O3c7SvlQkl3h6YWiCC+OA5HSxtrm3lyut6xjDHama/5ahHls
+ ybQ2CLhoTKeuxcZ/WDTCJZDcUBihGkNJnUe5af+piJ5vlnu1U4n3i0S2QX/8DbTSzG5i
+ OIvhHydKLAMskIeuZgYxKmQVNj26UcUHZ56pi66sn1NmW7DoYfyKRx+xNc8yQ0pQuLwt
+ ivXhmv7WsroUIdNNpMvAcPh7EY90iXVnrKBxTg3aqxL6QvzGOaRVCSLQQcNVw73ScGnn
+ ugWg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=Yr7ow8GTmJkAHzIYaMaQkuIE5TitlU69AapCYxHxDps=;
- b=lLsvQWIRf4K/Xzjk5xJy8Wu4ldomF4ytKktaGJ3MjooIiNSBEweoYiIiap3Pgk8FSS
- APIWQiPbf4R9rpa5DcJ0UXj2H/Oznm+Y+FS9zDDbpexfSC7HlIqTTqSynAe4Uo/5KB4R
- 7z2VJG6hNinFrd0Brl3Zwp5jpVov6d4FT+oCviYe7Vcld4EacPKZLOckHbMy2PrnS9Yx
- 24Qa4auooZyU1Ng2f+6A6vgkYVPkabFRTFuhJbClCqiShgKHXdSb9CE9kH0y17WGYYON
- zJ6vQAO8OUs9+qUUM0ZJZDRjnvWAAYCICjAqzq34hCi+og+r8z5a+57AHX5BSSEXlv6R
- /hAQ==
-X-Gm-Message-State: APjAAAWpEcPxt2pltcVFYqDIBT7uAU/9ziLjMlacnR3HKHfIFF3qmcIG
- rg0xxrJWOInPA1MfsRhOIG0=
-X-Google-Smtp-Source: APXvYqyagAGVADxDem+49GDTXFZMHJU/p7gFf50NwAr+NIMt6ry+FxLZ9Wx3VhxyRZHpmypX9eTPkw==
-X-Received: by 2002:a63:1d1a:: with SMTP id d26mr2920384pgd.98.1578453847905; 
- Tue, 07 Jan 2020 19:24:07 -0800 (PST)
+ bh=aTQ2WmgfLL0RKpED5qehF/7+sveySkG+bgQJgoV8etc=;
+ b=WXuQpIKaFwWlqsezQ4jMdl1bMrSaakytL88m8tL3MHC+/C8GADt+gIlk7MWa3BUBaa
+ NXpv7xK87y6SPUHr6gwYL/OjI7VY5w6WLt9LsLbswWjDdy0SPp18uz9ms6WbdJiswb3L
+ 8qAXmvQwbRy1rs0Uh03mGfixQj0OQrsEa44iJcx8WMWfV4gp9DEO4DX+CGuIwapmP/cF
+ tvWuo4XU2kobjh459ipRp2fLS1uSeIhMc4L0gHFR7WxZ7qOw5xKAMXyLd0DYR4fzlvNL
+ hf76yOVLsya+HAiZ/Q8iTkeFgyl9Wh4qGP694a3yMTIBPd/ZmndKfUXxoy0IR+qTfGcQ
+ vJ5A==
+X-Gm-Message-State: APjAAAXtVYW5eeSv9bA7q/QAfTKVHZPwE7yaXBiG8EOmOKn4iwB7yDmF
+ ZBXxPUwbOS3t2TtEkBaEaJw=
+X-Google-Smtp-Source: APXvYqwubCOQlf14pJ6s9xsa+Oo7lRpvIz1zNTzkr9RdY04nKFQeQkQ8sLpDUhNDQqJZFqBsw240/w==
+X-Received: by 2002:a65:4587:: with SMTP id o7mr2951256pgq.303.1578453850648; 
+ Tue, 07 Jan 2020 19:24:10 -0800 (PST)
 Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id g7sm1077875pfq.33.2020.01.07.19.24.05
+ by smtp.gmail.com with ESMTPSA id g7sm1077875pfq.33.2020.01.07.19.24.08
  (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 07 Jan 2020 19:24:07 -0800 (PST)
+ Tue, 07 Jan 2020 19:24:10 -0800 (PST)
 From: Baolin Wang <baolin.wang7@gmail.com>
 To: ohad@wizery.com,
 	bjorn.andersson@linaro.org,
 	baohua@kernel.org
-Subject: [PATCH RESEND 1/3] hwspinlock: sirf: Change to use
- devm_platform_ioremap_resource()
-Date: Wed,  8 Jan 2020 11:23:44 +0800
-Message-Id: <dfa043f317c609a6172468ac11598968dd751bce.1578453662.git.baolin.wang7@gmail.com>
+Subject: [PATCH RESEND 2/3] hwspinlock: sirf: Remove redundant PM runtime
+ functions
+Date: Wed,  8 Jan 2020 11:23:45 +0800
+Message-Id: <c921e391aa2a652d8d6ae0e4041202cec9d917e7.1578453662.git.baolin.wang7@gmail.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <cover.1578453662.git.baolin.wang7@gmail.com>
 References: <cover.1578453662.git.baolin.wang7@gmail.com>
 In-Reply-To: <cover.1578453662.git.baolin.wang7@gmail.com>
 References: <cover.1578453662.git.baolin.wang7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_192408_433076_449F7B31 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20200107_192411_445476_B1A95C25 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (baolin.wang7[at]gmail.com)
@@ -113,44 +113,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the new helper that wraps the calls to platform_get_resource()
-and devm_ioremap_resource() together, which can simpify the code.
+Since the hwspinlock core has changed the PM runtime to be optional, and
+the SIRF hardware spinlock has no pm runtime requirement, thus remove
+these redundant PM runtime functions.
 
 Signed-off-by: Baolin Wang <baolin.wang7@gmail.com>
 ---
- drivers/hwspinlock/sirf_hwspinlock.c |    9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ drivers/hwspinlock/sirf_hwspinlock.c |   22 ++++------------------
+ 1 file changed, 4 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/hwspinlock/sirf_hwspinlock.c b/drivers/hwspinlock/sirf_hwspinlock.c
-index 1f625cd..8cb5fd4 100644
+index 8cb5fd4..d62462e 100644
 --- a/drivers/hwspinlock/sirf_hwspinlock.c
 +++ b/drivers/hwspinlock/sirf_hwspinlock.c
-@@ -69,9 +69,9 @@ static int sirf_hwspinlock_probe(struct platform_device *pdev)
- 		return -ENOMEM;
+@@ -9,7 +9,6 @@
+ #include <linux/module.h>
+ #include <linux/device.h>
+ #include <linux/io.h>
+-#include <linux/pm_runtime.h>
+ #include <linux/slab.h>
+ #include <linux/spinlock.h>
+ #include <linux/hwspinlock.h>
+@@ -56,7 +55,7 @@ static int sirf_hwspinlock_probe(struct platform_device *pdev)
+ {
+ 	struct sirf_hwspinlock *hwspin;
+ 	struct hwspinlock *hwlock;
+-	int idx, ret;
++	int idx;
  
- 	/* retrieve io base */
--	hwspin->io_base = of_iomap(pdev->dev.of_node, 0);
--	if (!hwspin->io_base)
--		return -ENOMEM;
-+	hwspin->io_base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(hwspin->io_base))
-+		return PTR_ERR(hwspin->io_base);
+ 	if (!pdev->dev.of_node)
+ 		return -ENODEV;
+@@ -80,20 +79,9 @@ static int sirf_hwspinlock_probe(struct platform_device *pdev)
  
- 	for (idx = 0; idx < HW_SPINLOCK_NUMBER; idx++) {
- 		hwlock = &hwspin->bank.lock[idx];
-@@ -92,7 +92,6 @@ static int sirf_hwspinlock_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, hwspin);
  
- reg_failed:
- 	pm_runtime_disable(&pdev->dev);
--	iounmap(hwspin->io_base);
- 
- 	return ret;
+-	pm_runtime_enable(&pdev->dev);
+-
+-	ret = hwspin_lock_register(&hwspin->bank, &pdev->dev,
+-				   &sirf_hwspinlock_ops, 0,
+-				   HW_SPINLOCK_NUMBER);
+-	if (ret)
+-		goto reg_failed;
+-
+-	return 0;
+-
+-reg_failed:
+-	pm_runtime_disable(&pdev->dev);
+-
+-	return ret;
++	return hwspin_lock_register(&hwspin->bank, &pdev->dev,
++				    &sirf_hwspinlock_ops, 0,
++				    HW_SPINLOCK_NUMBER);
  }
-@@ -110,8 +109,6 @@ static int sirf_hwspinlock_remove(struct platform_device *pdev)
  
- 	pm_runtime_disable(&pdev->dev);
+ static int sirf_hwspinlock_remove(struct platform_device *pdev)
+@@ -107,8 +95,6 @@ static int sirf_hwspinlock_remove(struct platform_device *pdev)
+ 		return ret;
+ 	}
  
--	iounmap(hwspin->io_base);
+-	pm_runtime_disable(&pdev->dev);
 -
  	return 0;
  }
