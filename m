@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 228DE134B03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:57:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8A79134B08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:57:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZsL8YK0UI4xqVGFog+91MzORke/4ZNMTAOCcg9PYPaY=; b=BrW
-	RH1x6/CbaRq0da85gSnZ39Oo+zA75ImPHn7Jh38F98/3WlcSEc24d9R729jlxT4MKxW1ntOEmV0xn
-	YQkyotY3hVhknoVjlfdIUa+0AJ/2K3suNspGHxeMt2C5xNnWG7/pXrJgzNnOyeIOWCrsQC/37jmyj
-	CLg2QRH+r7NG4A3CSoTBQsOCfL+6MeRm0InxHp4zBtMyN/K4VenOQGsBQuljMTqtsMZCOC5httrTk
-	cDU8mpi+pg9yfyAodsBzo6kwjMhQniO04pCgmXcwM1FhG7t3KCVytQfTfzQEH0UMqieG2CsbnXxlU
-	lvzXIVi45j5i0+zCY9whL8nxBGhlY5A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Kql5LVKSXq4fdpEQycE88gi4In78BACbe7oRB4FiIjo=; b=Y2EmzNiRnh/PEUkFeUNRXtlqQd
+	9aShC6z9dHGQIk10GretDGpvAeLqWlaS5h/0fifv4HQW/sKz1QZXRM4e8UHc3l+djxxc2S6FZVzhx
+	ILIDpZ5pI0d1capaAHEy0ynveO6v3JXZPFnu/WDn8KeN0VG6YqF9imct/HTwXk/OlB/5W1Q7movwI
+	uYSTnVxlR+kJ3se0SVriYYxAhVseeXnSrQsF9E9TdAa8rqxSEJ/PVSZ471tOlRI4/HTGtunoRMQfI
+	SgbO0HDbBI69iHC1MNEfwFMpw3Hsa7+vJAXq6i4vRySc5jkmro5c5+/AkwBmgpy2rMxAtyDdeWMyf
+	vBRN9VRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGVo-0007J4-H9; Wed, 08 Jan 2020 18:57:00 +0000
+	id 1ipGWH-0007cS-09; Wed, 08 Jan 2020 18:57:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGVf-0007I0-9o
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:56:52 +0000
+ id 1ipGVh-0007IY-4V
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:56:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C0921FB;
- Wed,  8 Jan 2020 10:56:50 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DA98328;
+ Wed,  8 Jan 2020 10:56:52 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7BB3B3F534;
- Wed,  8 Jan 2020 10:56:48 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EE0303F534;
+ Wed,  8 Jan 2020 10:56:50 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 00/17] arm64: entry deasmification and cleanup
-Date: Wed,  8 Jan 2020 18:56:17 +0000
-Message-Id: <20200108185634.1163-1-mark.rutland@arm.com>
+Subject: [PATCH 01/17] arm64: entry: mark all entry code as notrace
+Date: Wed,  8 Jan 2020 18:56:18 +0000
+Message-Id: <20200108185634.1163-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
+References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105651_427709_760BB082 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20200108_105653_216753_D54D42B8 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,74 +72,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series aims to make the arm64 exception handling code easier to
-maintain and update, primarily by converting from assembly to C wherever
-reasonably possible. This allows us to remove infrastructure we had to
-duplicate for C and assembly, and leaves less assembly behind that may
-require special treatment (e.g. for BTI).
+Almost all functions in entry-common.c are marked notrace, with
+el1_undef and el1_inv being the only exceptions. We appear to have done
+this on the assumption that there were no exception registers that we
+needed to snapshot, and thus it was safe to run trace code that might
+result in further exceptions and clobber those registers.
 
-Previous patches converted syscall management to C, along with the rest
-of the synchronous exception vectors. This series converts the remaining
-IRQ and error paths, before factoring out the common EL0 exception
-entry/return work. Some parts of the existing assembly were somewhat
-arcane, and for these I've added more extensive comments than were
-present in the assembly.
+However, until we inherit the DAIF flags, our irq flag tracing is stale,
+and this discrepancy could set off warnings in some configurations.
+Given we don't expect to trigger el1_undef or el1_inv unless something
+is already wrong, any irqflag warnigns are liable to mask the
+information we'd actually care about.
 
-After converting the bulk of the logic to C, it was clear that a few
-structural inconsistencies had crept in over the years, so I've tried to
-clean those up and make the remaining assembly simpler and clearer.
+Let's keep things simple and mark el1_undef and el1_inv as notrace.
+Developers can trace do_undefinstr and bad_mode if they really want to
+monitor these cases.
 
-There are a couple more things which could be factored out, notably the
-SW PAN logic and the GIC prio masking entry/exit work. I've left those
-as-is for now.
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/entry-common.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The series has seen some basic testing, and is I'm currently fuzzing it
-with a local Syzkaller instance.
-
-I've pushed the patches to my arm64/entry-deasm branch [1,2], based on
-v5.5-rc3.
-
-Thanks,
-Mark.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/entry-deasm
-[2] git://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git arm64/entry-deasm
-
-Mark Rutland (17):
-  arm64: entry: mark all entry code as notrace
-  arm64: entry: cleanup el0 svc handler naming
-  arm64: entry: move arm64_preempt_schedule_irq to entry-common.c
-  arm64: entry: move preempt logic to C
-  arm64: entry: add a call_on_stack helper
-  arm64: entry: convert irq entry to C
-  arm64: entry: convert error entry to C
-  arm64: entry: Split el0_sync_compat from el0_sync
-  arm64: entry: organise handler stubs consistently
-  arm64: entry: consolidate EL1 return paths
-  stackleak: allow C to call stackleak_erase()
-  arm64: debug-monitors: refactor MDSCR manipulation
-  arm64: entry: move common el0 entry/return work to C
-  arm64: entry: move NO_SYSCALL setup to C
-  arm64: entry: move ARM64_ERRATUM_845719 workaround to C
-  arm64: entry: move ARM64_ERRATUM_1418040 workaround to C
-  arm64: entry: cleanup sp_el0 manipulation
-
- arch/arm64/include/asm/assembler.h      |  18 --
- arch/arm64/include/asm/debug-monitors.h |  10 +
- arch/arm64/include/asm/exception.h      |   8 +-
- arch/arm64/kernel/asm-offsets.c         |   1 -
- arch/arm64/kernel/debug-monitors.c      |  32 +--
- arch/arm64/kernel/entry-common.c        | 245 ++++++++++++++++++++++-
- arch/arm64/kernel/entry.S               | 333 +++++++-------------------------
- arch/arm64/kernel/irq.c                 |  15 --
- arch/arm64/kernel/process.c             |  17 --
- arch/arm64/kernel/signal.c              |   3 +-
- arch/arm64/kernel/syscall.c             |   4 +-
- arch/arm64/kernel/traps.c               |   2 +-
- arch/arm64/mm/fault.c                   |   7 -
- include/linux/stackleak.h               |   3 +
- 14 files changed, 338 insertions(+), 360 deletions(-)
-
+diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+index 5dce5e56995a..67198142a0fc 100644
+--- a/arch/arm64/kernel/entry-common.c
++++ b/arch/arm64/kernel/entry-common.c
+@@ -36,14 +36,14 @@ static void notrace el1_pc(struct pt_regs *regs, unsigned long esr)
+ }
+ NOKPROBE_SYMBOL(el1_pc);
+ 
+-static void el1_undef(struct pt_regs *regs)
++static void notrace el1_undef(struct pt_regs *regs)
+ {
+ 	local_daif_inherit(regs);
+ 	do_undefinstr(regs);
+ }
+ NOKPROBE_SYMBOL(el1_undef);
+ 
+-static void el1_inv(struct pt_regs *regs, unsigned long esr)
++static void notrace el1_inv(struct pt_regs *regs, unsigned long esr)
+ {
+ 	local_daif_inherit(regs);
+ 	bad_mode(regs, 0, esr);
 -- 
 2.11.0
 
