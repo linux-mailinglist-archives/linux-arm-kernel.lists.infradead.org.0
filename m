@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A071338E7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 03:01:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B31E1338ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 03:02:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ywHuMWHPTjitukk+rRVaPaGLumk4A/CL4aezY2a42Y=; b=T5BpEPs9ul4+TP
-	ZTbSA9ch7QPkWl9H3WhxYzilHlWgXrL7Dkwt70il4WRG2XYSKH+BmnP8/NAzRJJ2wdw4lkF+5hgc1
-	3IOxdPALHiOwOsYQ9BEgcV3c2sJ171x0DjB1gMqMC7KNUnvoSnZfjs7r7hXZlwwr85+yElOctQis9
-	kiKLtKP9czNvVFI8iCi2elggO3KRpUE3+m19UyP38jqOwcV01gg+jJUmWS+4qe0YWrKvz0SsL3ZoN
-	xKh8lPSQnIDf7CT/U+HM1I2/QvuEXEu9CrwTQ57c3sie19jht+ge0XKTtJbwlawUs2wEEXIozBQok
-	AtZTdJxwWZtK113GCVpw==;
+	List-Owner; bh=nvNCdbNHaE1OxLc1J1Ta9CpqDFYbtJVFaIkcWS1x8hc=; b=VYueMNEA2HauYd
+	+ppJ5sxBvW4OO6fH2zu3VHk+HVHlc7MJXqZ976O6u2mZi9vtWK/auV4UleaAPYK/5SZezbZ5Zwwz0
+	c/SmnfcaxJ4EznisqboxjYptVTV8Tj4P3Evx4fUKEuaPPvAAkETDDG5A/3eb7QFNdk3EPeB3U3CQx
+	xOm8hDSfSfrWMHT8jZX01I6Ner83coCZt+72A3SniL9a+qhgqHH9Yj3PpQbIw/u5CBMLxwbqUAfkb
+	hnr2mmXmLW4M8tMZydDn3/HWzCu725SRJNbWCNSOwEWlp1+YhlbTk0o9oTvTGVfnTPZ0DSswD76Uh
+	U79YAasLqDdAvRjbnmzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip0eu-0000Ky-9R; Wed, 08 Jan 2020 02:01:20 +0000
+	id 1ip0fd-00015I-EV; Wed, 08 Jan 2020 02:02:05 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip0eg-0000IY-Ei; Wed, 08 Jan 2020 02:01:07 +0000
-X-UUID: 1a135410574e43a581c1415729ad7654-20200107
+ id 1ip0ei-0000In-IC; Wed, 08 Jan 2020 02:01:10 +0000
+X-UUID: 8c7417cbc45b4226a1799180723044b8-20200107
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=3nT/zyPqTRXKX+qkYY8Mvpnq2j5E/DAPw3se4gA7isQ=; 
- b=SKePdRKDuT5QWhVEZsUCaLkiIW5kk34dALXq2BWnZuno9BC7zdp58CvfKtsVUUUw1QoWCJhzH2LH27DRhhjNP7hNMARcGtntlrrVLV/gKK545/a/KIr8uEQHzMgZ0Dd8SGp/YM5M+rnaKUmVKtK3Le8EXa2juCxG0JdZG7GMsAw=;
-X-UUID: 1a135410574e43a581c1415729ad7654-20200107
+ bh=oZdq+ZB5lizA1Zsv3OtqtZc7ySPrJ90tee+pr+IgKBQ=; 
+ b=AstZOzVdlKNQpGDw2kWutbSCtHKfXowENkD4LJkKW0wfe5lR4dqbKTFcYblOiYg19NnOXn5hLg6CiwcB71BPi2FlOVC3D1ZMD1id8+q+vlNtFuFbF5e9WhOl+LpkkRE/SLG3vl4wMH8nz7p4r+erhMp7Mz8vRPLdxuH22fMg6AU=;
+X-UUID: 8c7417cbc45b4226a1799180723044b8-20200107
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1831388280; Tue, 07 Jan 2020 18:01:02 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ with ESMTP id 474636169; Tue, 07 Jan 2020 18:01:02 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 Jan 2020 17:53:01 -0800
+ 15.0.1395.4; Tue, 7 Jan 2020 17:53:07 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 8 Jan 2020 09:50:44 +0800
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 Jan 2020 09:51:17 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 8 Jan 2020 09:52:58 +0800
+ Transport; Wed, 8 Jan 2020 09:53:02 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: [RESEND PATCH v5 02/11] dt-bindings: phy-mtk-tphy: make the ref clock
- optional
-Date: Wed, 8 Jan 2020 09:51:57 +0800
-Message-ID: <1578448326-27455-2-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [RESEND PATCH v5 06/11] phy: phy-mtk-tphy: add a property for
+ disconnect threshold
+Date: Wed, 8 Jan 2020 09:52:01 +0800
+Message-ID: <1578448326-27455-6-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1578448326-27455-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1578448326-27455-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 9D839053CFF735E21A66DF2F8599DF469A78D96CCF3DB75A4F64AD6A83A2EE562000:8
+X-TM-SNTS-SMTP: BFA84CA48E7339B3DB0587B4124D89784EB6BDEA2575B14996EC5CD22A51D9592000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_180106_516676_CE39CA4F 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200107_180108_636377_652A2768 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,53 +96,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the ref clock optional, then we no need refer to a fixed-clock
-in DTS anymore when the clock of USB3 PHY comes from oscillator
-directly
+This is used to tune the threshold of disconnect, the index range
+is [0, 15], the threshold voltage is about 400mV for 0, 700mV for
+15, and the step is 20mV.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
-v4~v5: no changes
+v5: no changes
 
-v3: add acked-by Rob
+v4: change commit log
 
-v2: no changes
+v2~3: no changes
 ---
- .../devicetree/bindings/phy/phy-mtk-tphy.txt        | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ drivers/phy/mediatek/phy-mtk-tphy.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-index ce6abfbdfbe1..1f4a36dd80e0 100644
---- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-+++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-@@ -34,12 +34,6 @@ Optional properties (controller (parent) node):
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index cb2ed3b25068..5afe33621dbc 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -60,6 +60,8 @@
+ #define U3P_USBPHYACR6		0x018
+ #define PA6_RG_U2_BC11_SW_EN		BIT(23)
+ #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
++#define PA6_RG_U2_DISCTH		GENMASK(7, 4)
++#define PA6_RG_U2_DISCTH_VAL(x)	((0xf & (x)) << 4)
+ #define PA6_RG_U2_SQTH		GENMASK(3, 0)
+ #define PA6_RG_U2_SQTH_VAL(x)	(0xf & (x))
  
- Required properties (port (child) node):
- - reg		: address and length of the register set for the port.
--- clocks	: a list of phandle + clock-specifier pairs, one for each
--		  entry in clock-names
--- clock-names	: must contain
--		  "ref": 48M reference clock for HighSpeed analog phy; and 26M
--			reference clock for SuperSpeed analog phy, sometimes is
--			24M, 25M or 27M, depended on platform.
- - #phy-cells	: should be 1 (See second example)
- 		  cell after port phandle is phy type from:
- 			- PHY_TYPE_USB2
-@@ -48,6 +42,13 @@ Required properties (port (child) node):
- 			- PHY_TYPE_SATA
+@@ -300,6 +302,7 @@ struct mtk_phy_instance {
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
++	int discth;
+ 	bool bc12_en;
+ };
  
- Optional properties (PHY_TYPE_USB2 port (child) node):
-+- clocks	: a list of phandle + clock-specifier pairs, one for each
-+		  entry in clock-names
-+- clock-names	: may contain
-+		  "ref": 48M reference clock for HighSpeed anolog phy; and 26M
-+			reference clock for SuperSpeed anolog phy, sometimes is
-+			24M, 25M or 27M, depended on platform.
+@@ -850,9 +853,12 @@ static void phy_parse_property(struct mtk_tphy *tphy,
+ 				 &instance->eye_vrt);
+ 	device_property_read_u32(dev, "mediatek,eye-term",
+ 				 &instance->eye_term);
+-	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d\n",
++	device_property_read_u32(dev, "mediatek,discth",
++				 &instance->discth);
++	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, disc:%d\n",
+ 		instance->bc12_en, instance->eye_src,
+-		instance->eye_vrt, instance->eye_term);
++		instance->eye_vrt, instance->eye_term,
++		instance->discth);
+ }
+ 
+ static void u2_phy_props_set(struct mtk_tphy *tphy,
+@@ -888,6 +894,13 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
+ 		tmp |= PA1_RG_TERM_SEL_VAL(instance->eye_term);
+ 		writel(tmp, com + U3P_USBPHYACR1);
+ 	}
 +
- - mediatek,eye-src	: u32, the value of slew rate calibrate
- - mediatek,eye-vrt	: u32, the selection of VRT reference voltage
- - mediatek,eye-term	: u32, the selection of HS_TX TERM reference voltage
++	if (instance->discth) {
++		tmp = readl(com + U3P_USBPHYACR6);
++		tmp &= ~PA6_RG_U2_DISCTH;
++		tmp |= PA6_RG_U2_DISCTH_VAL(instance->discth);
++		writel(tmp, com + U3P_USBPHYACR6);
++	}
+ }
+ 
+ static int mtk_phy_init(struct phy *phy)
 -- 
 2.24.0
 _______________________________________________
