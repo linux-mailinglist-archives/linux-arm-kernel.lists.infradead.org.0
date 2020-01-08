@@ -2,49 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB3D7134325
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:00:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C0AC134365
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:07:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wJ/bgvj48a6yFcIPGdKEzeWC8fHC7nbxpba7Tpsrymw=; b=k5RcfkPh2KkmMEh89/q8dY6eR
-	IFVRfVg6pXd5kwpEQoFEzVlRXPfhMzkBFgN7ZRKVN2cogvnjNRYQbQTQrngMQlNiB30jN368kxrUP
-	K3/SDSDuFY8c0GHqEPvCW7f3IZwBHeT2Vfy8kt+rNk9/kmN/1EBEbqgNmZQfD+HN5RbLxV8wsDgNd
-	N6e+57TioQ6mBunttKWKj4VMBgjrGBA39Kya06eJpfJSV3NSzSd7jUtvKDQXp5rzAomv/O1Y3H6fK
-	S3kLgmDTOWJ8xje3OBLQFGq53Xzw10DhJfgnHuPvyAf/M5uXDbyRROJ0Qf2eVRw+t+g5vZuGK9HdN
-	CuMvncgUA==;
+	 bh=OJu6D0zdbn1wM0FmgDw6ipK68z87/gDLyIYk5Pr0mGg=; b=OoJhMgsb9a2QTlWozXnRKrUtN
+	3+On7Mrik9iTFhgvyORLMhJ29pgnyAefP3s4unxZ9QVqMhnxTkDz+DESoE76Rt38LMO6uHLukK3+W
+	eof3efEzJ8CY2SO0S9vuSymYG7GMnN3/RJ+MK8pwK/IhkUAZZvEdZ8nvjQ0ZyHR6i0YsiSgz1FeCL
+	CttzXgPJA7Xd9LzPyCFDzC1U7mWhwrptKKKjGLdGNI0VJk+qYmYqKXNyeWXgXYmMLfdcB12+RPZLz
+	qfL1h7mZjkwVQmHPSaelOJZKkaMxxPRfnydZSDe1zw6QTlMnZEGQou7hY53/Tz+oXU80U73RBssRO
+	jEB/1fifQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipAwh-0006M8-Tn; Wed, 08 Jan 2020 13:00:23 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ipB3L-000642-9O; Wed, 08 Jan 2020 13:07:15 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipAtK-0003Hl-CH; Wed, 08 Jan 2020 12:56:57 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: alyssa) with ESMTPSA id 18140292E2E
-Date: Wed, 8 Jan 2020 07:56:45 -0500
-From: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Subject: Re: [PATCH v2 0/7] Add dts for mt8183 GPU (and misc panfrost patches)
-Message-ID: <20200108125645.GA3057@kevin>
-References: <20200108052337.65916-1-drinkcat@chromium.org>
+ id 1ipAwo-0007mr-D0
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 13:00:31 +0000
+Received: by mail-wr1-x443.google.com with SMTP id d16so3239287wre.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 05:00:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Vu/TEPKi3gH8supR1Fm33b81xSnPq5jh2aLIJG+pAp8=;
+ b=C38VsHkaSiTnMp8oEqik2sQ+UdujLVRJBOZhWNt4HwDT8TYYXUfc63GaVwY5Bm1w9C
+ l1wjcqYxCFc4z5QuoCYAByJVCEomoXceMFWonezy3nkqwlFOVaQtUzOMEjcSI1Gqndrq
+ PwCGeih3fbaQqS/TdXBE0iIUpYSKxkmOmnOc7cWU47OH5VHIXcTwa2YBK3zXz0eWEA9k
+ zHctIPV5y0jf0OR4wDs4zphKIonZ8+snGFwIaWWURmlXByQoWBXh7/Mz2/I5AV4+eouP
+ hOVz3Jf+EF58eqmBJBljqNoiroJzL/84XqKfiH7SXJgg/ez26ejE9IxJHfZFbjZmwl/R
+ 66hw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Vu/TEPKi3gH8supR1Fm33b81xSnPq5jh2aLIJG+pAp8=;
+ b=ljclTSld8v9nx9tCTmSDSU1N8S1+CtO7JwSLnOAHV69lOo+NRD1nFDMrzgglzRldqE
+ ud90g5ZG+6SVz5qUP/jCY5uWWpV1d4th2pYXF3ZS3gO8Lu5pq126A7To3nljUknACRhV
+ J4TxWn3DbuSBAgrwyhUuCS7Vu5HSVfChK6uawq3UyHd1lGBcm/0bsBLkazPMyDCogLjX
+ r47JTobuPa/mv+LLlNF8Hmg/weL7yKeg5i7FLAqDZW4Fq/3klIyVJMzog+eNTMEIo/Ov
+ qREw3RAnf2T1yiiINjvu2cPsolOX7RXwOej2qPPwcF2NTy83KGg9eXhk1dD6Fvb4zB2r
+ VQtQ==
+X-Gm-Message-State: APjAAAUrvKe1s4z9b+25sVtPfL7jZ9V5YkxI8tSVvI+B8z3u9necaIMg
+ ftexAw1nbKimbg03cIzx5R8=
+X-Google-Smtp-Source: APXvYqxfk6AD/hSdePxpW2VxHPJad/imk9QQ8DFlIIefqzAfODMxbLf89oGNQR1D54/rKDHPVZzaTQ==
+X-Received: by 2002:a5d:4386:: with SMTP id i6mr4444474wrq.63.1578488428368;
+ Wed, 08 Jan 2020 05:00:28 -0800 (PST)
+Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
+ by smtp.gmail.com with ESMTPSA id g9sm4228133wro.67.2020.01.08.05.00.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Jan 2020 05:00:27 -0800 (PST)
+Date: Wed, 8 Jan 2020 14:00:26 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+Subject: Re: [PATCH v2 0/6] Updates for the atmel PWM driver
+Message-ID: <20200108130026.GE1993114@ulmo>
+References: <20190824001041.11007-1-uwe@kleine-koenig.org>
 MIME-Version: 1.0
-In-Reply-To: <20200108052337.65916-1-drinkcat@chromium.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20190824001041.11007-1-uwe@kleine-koenig.org>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_045655_159025_F5CEF9A1 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200108_050030_473696_C4BC7602 
+X-CRM114-Status: GOOD (  15.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,154 +98,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, dri-devel@lists.freedesktop.org,
- Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: linux-pwm@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4534836398641046907=="
+Content-Type: multipart/mixed; boundary="===============0413883696728615855=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4534836398641046907==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0F1p//8PRICkK4MW"
+--===============0413883696728615855==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="7LkOrbQMr4cezO2T"
 Content-Disposition: inline
 
 
---0F1p//8PRICkK4MW
-Content-Type: text/plain; charset=us-ascii
+--7LkOrbQMr4cezO2T
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Patches 1,2,3,6 are:
+On Sat, Aug 24, 2019 at 02:10:35AM +0200, Uwe Kleine-K=C3=B6nig wrote:
+> Hello,
+>=20
+> this is v2 of my series to update the atmel PWM driver. (Implicit) v1
+> was sent on Aug 15, starting with Message-Id:
+> 20190815214133.11134-1-uwe@kleine-koenig.org.
+>=20
+> I updated the patches from the feedback I got in v1, see the individual
+> patches for the details.
+>=20
+> Best regards
+> Uwe
+>=20
+> Uwe Kleine-K=C3=B6nig (6):
+>   pwm: atmel: Add a hint where to find hardware documentation
+>   pwm: atmel: use a constant for maximum prescale value
+>   pwm: atmel: replace loop in prescale calculation by ad-hoc calculation
+>   pwm: atmel: document known weaknesses of both hardware and software
+>   pwm: atmel: use atmel_pwm_writel in atmel_pwm_ch_writel; ditto for
+>     readl
+>   pwm: atmel: implement .get_state()
+>=20
+>  drivers/pwm/pwm-atmel.c | 86 ++++++++++++++++++++++++++++++++++-------
+>  1 file changed, 73 insertions(+), 13 deletions(-)
 
-	Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
+There were two patches in this that were not reviewed or acked, but they
+seem trivial enough, so I've just applied the whole series.
 
-The remaining patches in the series are Acked-by.
+Thanks,
+Thierry
 
-Reportedly the kernel should work on certain Bifrost boards more or less
-as-is, but I'm not positive about the details. It's possible some of
-these are G72-specific or MT-specific issues; Robin and Stephen will
-know more.
-
-Very nice work so far!
-
-Alyssa
-
-On Wed, Jan 08, 2020 at 01:23:30PM +0800, Nicolas Boichat wrote:
-> Hi!
->=20
-> Sorry for the long delay since https://patchwork.kernel.org/patch/1113238=
-1/,
-> finally got around to give this a real try.
->=20
-> The main purpose of this series is to upstream the dts change and the bin=
-ding
-> document, but I wanted to see how far I could probe the GPU, to check tha=
-t the
-> binding is indeed correct. The rest of the patches are RFC/work-in-progre=
-ss, but
-> I think some of them could already be picked up.
->=20
-> So this is tested on MT8183 with a chromeos-4.19 kernel, and a ton of
-> backports to get the latest panfrost driver (I should probably try on
-> linux-next at some point but this was the path of least resistance).
->=20
-> I tested it as a module as it's more challenging (originally probing would
-> work built-in, on boot, but not as a module, as I didn't have the power
-> domain changes, and all power domains are on by default during boot).
->=20
-> Probing logs looks like this, currently:
-> [  221.867726] panfrost 13040000.gpu: clock rate =3D 511999970
-> [  221.867929] panfrost 13040000.gpu: Linked as a consumer to regulator.14
-> [  221.868600] panfrost 13040000.gpu: Linked as a consumer to regulator.31
-> [  221.870586] panfrost 13040000.gpu: Linked as a consumer to genpd:0:130=
-40000.gpu
-> [  221.871492] panfrost 13040000.gpu: Linked as a consumer to genpd:1:130=
-40000.gpu
-> [  221.871866] panfrost 13040000.gpu: Linked as a consumer to genpd:2:130=
-40000.gpu
-> [  221.872427] panfrost 13040000.gpu: mali-g72 id 0x6221 major 0x0 minor =
-0x3 status 0x0
-> [  221.872439] panfrost 13040000.gpu: features: 00000000,13de77ff, issues=
-: 00000000,00000400
-> [  221.872445] panfrost 13040000.gpu: Features: L2:0x07120206 Shader:0x00=
-000000 Tiler:0x00000809 Mem:0x1 MMU:0x00002830 AS:0xff JS:0x7
-> [  221.872449] panfrost 13040000.gpu: shader_present=3D0x7 l2_present=3D0=
-x1
-> [  221.873526] panfrost 13040000.gpu: error powering up gpu stack
-> [  221.878088] [drm] Initialized panfrost 1.1.0 20180908 for 13040000.gpu=
- on minor 2
-> [  221.940817] panfrost 13040000.gpu: error powering up gpu stack
-> [  222.018233] panfrost 13040000.gpu: error powering up gpu stack
-> (repeated)
->=20
-> So the GPU is probed, but there's an issue when powering up the STACK, not
-> quite sure why, I'll try to have a deeper look, at some point.
->=20
-> Thanks!
->=20
-> Nicolas
->=20
-> v2:
->  - Use sram instead of mali_sram as SRAM supply name.
->  - Rename mali@ to gpu@.
->  - Add dt-bindings changes
->  - Stacking patches after the device tree change that allow basic
->    probing (still incomplete and broken).
->=20
-> Nicolas Boichat (7):
->   dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
->   arm64: dts: mt8183: Add node for the Mali GPU
->   drm/panfrost: Improve error reporting in panfrost_gpu_power_on
->   drm/panfrost: Add support for a second regulator for the GPU
->   drm/panfrost: Add support for multiple power domain support
->   RFC: drm/panfrost: Add bifrost compatible string
->   RFC: drm/panfrost: devfreq: Add support for 2 regulators
->=20
->  .../bindings/gpu/arm,mali-bifrost.yaml        |  20 ++++
->  arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   7 ++
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 104 +++++++++++++++++
->  drivers/gpu/drm/panfrost/panfrost_devfreq.c   |  18 +++
->  drivers/gpu/drm/panfrost/panfrost_device.c    | 108 ++++++++++++++++--
->  drivers/gpu/drm/panfrost/panfrost_device.h    |   7 ++
->  drivers/gpu/drm/panfrost/panfrost_drv.c       |   1 +
->  drivers/gpu/drm/panfrost/panfrost_gpu.c       |  15 ++-
->  8 files changed, 267 insertions(+), 13 deletions(-)
->=20
-> --=20
-> 2.24.1.735.g03f4e72817-goog
->=20
-
---0F1p//8PRICkK4MW
+--7LkOrbQMr4cezO2T
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEQ17gm7CvANAdqvY4/v5QWgr1WA0FAl4V0YcACgkQ/v5QWgr1
-WA2z0Q//WX513kQuB2ztPrVdeEsNW0mXDe8s1n5AKMDsEY0qTeR48HQjPkug4+vX
-RCioXDCqH4EJDlQ+JSJZHD+Ehsy9NgMxFpBeJZNO/S9yh05ThDuxi1Cpp0jAan5L
-Xe1DqD9LeyOeH3UIOUkiUASyKs7JVozgO6x40jYa2z8bt4WN1aI4GOrJ0s0CpSOh
-2oaN9oSPeCZYkAPk40m1Ygk/MNa+mpaVA5kDOF90YyhSh8fjXfhCopjRRTQh7koH
-O94imgpCBY6WPDSQGQv9itX54ZR41JUTjE+APpGMG4wnoVt7bdRF/YZdePz8LNlZ
-IqFWQ1e0EM0/BkoIGje9DO+jdC+Gu3ADBNrs67kqDlwaHMS7yb7q7HfGVYyS0+tF
-cJylSj1GQ2ChQXu6KwyMf44IEloUfFZ7y2oJWBp1BMvLbu+Sgdr6uEBu2tYJ0AYA
-L4WnOrEADX6BWjbo1BjKRflVYyjiz1SWptE4BrADD7aDuXH9w0OSE70x1fCscVBN
-hhyT6aZSESsKSilhgCwrnacA+9htvu3uEmDS0YWpCZ9UpVw9a7rb/S4T6wUJZBBG
-MoGXDDbLnFq2JcI48k45gp2HTGnjHwTsLmTpxrEo+QfnawFRVmnqWyPrHFJ1lVVO
-BE0kDN4lbWYYZCZ4vKT4GLHwXGBLTaTI6b7/V2ZaLQtv4tCuHzM=
-=jsFA
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl4V0mgACgkQ3SOs138+
+s6GwPxAAi8QbyZuxjXTyrcwXhceTZn1UkH51OaRD7myFIQ8A/sanP7QV2f4jKug8
+TbrVlK9dpSj96Ne9UfXBW3+5+JvNpVshrqsc/IcIq6i+honBrJz9upJMKxt0+YRB
+wNMO5dM/XEzr93hAilRGrzW/63rPsqkP/Vj14Gf3lOo/qW9WoCbWx+3/1bupYwm2
+2ih1zLbDrR6d8PZ2mFkTl7WRXqOVcTpk/pyauBy2R/sq+7iK92lL4dugjlgtLO/W
+mwW1g/hswT2D0FQ7QYBgApRUIsKsaSjjcLairZFTTmYvYvGSzyAsSbWPkQfMrh/T
+qmMrL6TP49Ba0Ce1X7sff1hIeGsMMuhveg1viKbXDwPV0pvuT0ANejXHoPsW0Dum
+6iB9xNSGyYupsbFq+Wn2LXO6dkVNCAsMVoMnxTzgAMvxoxQ7erpktjOKl5vi2dna
+MHid3SqGo4kdRmGyKbGPATocpC/+A4f5fqx36Wo2sixGFpfsZhfoh2uXB9jo2bNx
+b1zVcUfHxjzckt3QJPgYALNtkv5cYqbfE5nayz2m14oJDzYd8LCBloEsqak3+RMm
+I4xoip1+vrA8c9qF30qHJTz4ef9s0sVB25GPd/rtOEduWvRm2rAPRmpij2u326su
+N4tqKheeJJ8vscS8j+9t+WYdAOVFECuCO6YHC9wikPuZ+o6PoPA=
+=opLK
 -----END PGP SIGNATURE-----
 
---0F1p//8PRICkK4MW--
+--7LkOrbQMr4cezO2T--
 
 
---===============4534836398641046907==
+--===============0413883696728615855==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -214,5 +184,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4534836398641046907==--
+--===============0413883696728615855==--
 
