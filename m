@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33FA81349BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:48:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D0BB1349C4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:49:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kPVMYr/PN1M6+mnzgNikwOBaP9EGRI43ja8x1tpO6FU=; b=XcRIB8TUTHlzMq
-	Mj0gyMlvCUK8qbbVbJk7ALGkONSuURuOgstm44NNt6EzPd+TwVsfQpycHDa2S6NRjDR9ZUfUnf0Pk
-	OjaW8oK5AkzJvZq84UoSHJlKLgCgM0K3wC9JwnE8tVVnxD2ohXBm9swW4P1Kv7J6EeuKwnke7/bPz
-	SdQ6OHinPTkXbudU+XwPKUa2kyWMd/uKfKSPs9sJ2TNn5MYzRl2nE3AUnQUSy5b/0kcTxiU2qTDN3
-	vcDMV9Bs0EefdRjAzq/D9GKslAOkK0Jj8kakC/8lLao5GGEFQCjrn/U31+xH3H7imehBKE+0t3dyq
-	JqiPSea48yXHHCDWJgKQ==;
+	List-Owner; bh=oCh0nnRmUcucmb6dj0BKiQzgWglJAlFW4JRjgIOu2C0=; b=JSm5+PadebBsyV
+	CHWtHZ3f+4Ljom7a8vCkXNUvDwgURKINc1EcapS5rSRopcxiDawWdTBNHZ0dMaJJtLn5WBn9wMLUv
+	tAIUoIA8VQmagtQuTPvuW258qjEJ0SrpebwY6ux021DrBBpYVDA6xCn/JJGRSWbBBql052/WdaBXT
+	LIAFaexe8vzDUL1LUngvBojDvCBdtwQGe6gihI8VtTt0wxIxdfrCyPbkhXJPlXzRzg62Jngc1SISe
+	O7MyUvDMV/bU/UNvHBRm7vSR55pRIxWby9jytFk4EXM2Z2SUjpBPh5cHpk+9WcmsEt10ewsLxp4o/
+	5ia5rNU222XoWDb1FC4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFRP-0008C6-Nq; Wed, 08 Jan 2020 17:48:23 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1ipFS0-0008UI-Ro; Wed, 08 Jan 2020 17:49:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFRH-0008AW-QK
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:48:17 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id c129so1198153vkh.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 09:48:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6fjeBXfdA5v8j8/xbcj6l8Tou8rGGc9L+qfhjRz0QRI=;
- b=LTssbe7xKtfJVDgsmMn2w88kRfx17N272Mz1utTbhfsLCjMFjPKI/5jq1OVsGaqA/q
- XdMmhJqxW1e83ABFojZyXrW0egWKzCycXb0O62a+JoAHeY5Xx8k6d+4OXPTQq+lexwaq
- twnq+XxLCP5A58S4nIVyd5jdb6MYrvhrtWTf8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6fjeBXfdA5v8j8/xbcj6l8Tou8rGGc9L+qfhjRz0QRI=;
- b=Dnut927CIKrfPdpdZbOaN94ri0a4P8ohdApvQJE9cg1gEDHsKp6OKxu6YZedOc6zZE
- Ege2v4Cqb+QTFDX8cu6ZNiNEVHDcyMBCJG2IW4TwSZm1yjgN73z9rr7bXo2PNlPcdmnr
- WDRQ+B+a7Vw88rWfiMHKBl3JhDnyMfr9kbFvwd22NMxRh8/5pYwZOXQ5wMB2nskRXUnD
- VJjphPJChnI/qTvtlXcPzjg5uZJ69hSBkrDg4qCSZNaBaG/DpVPwhFD6OaqX8M/WrQIU
- Yjm9p+VIkYrm1zueyo8Z+xjBkHKy+cstYrs0QJWHiWHP+hD9a5Gruj+05FQiryovXKOd
- z9fA==
-X-Gm-Message-State: APjAAAWPXQb+atMJE0+6xl+R9tXkapIxLDlfpunwCK6thCKljIlhN+9b
- FUdxZaJAFelJJKr1Z5YG4eYglVlCz8g=
-X-Google-Smtp-Source: APXvYqys0SYtqg3DbDSVrrq6kVpAwEvAcn/XUAPvkdAGSvJbMDQOadpprYHUO0JEim1cfeel8JIzOg==
-X-Received: by 2002:ac5:c1d4:: with SMTP id g20mr3778877vkk.83.1578505693611; 
- Wed, 08 Jan 2020 09:48:13 -0800 (PST)
-Received: from mail-vs1-f44.google.com (mail-vs1-f44.google.com.
- [209.85.217.44])
- by smtp.gmail.com with ESMTPSA id 94sm906268uaw.5.2020.01.08.09.48.12
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 08 Jan 2020 09:48:12 -0800 (PST)
-Received: by mail-vs1-f44.google.com with SMTP id b4so2393610vsa.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 09:48:12 -0800 (PST)
-X-Received: by 2002:a67:e342:: with SMTP id s2mr1091753vsm.198.1578505692418; 
- Wed, 08 Jan 2020 09:48:12 -0800 (PST)
+ id 1ipFRq-0008Sq-Jz; Wed, 08 Jan 2020 17:48:52 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F00E920692;
+ Wed,  8 Jan 2020 17:48:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578505729;
+ bh=DQI/BkNpa8zJ1+g1hyWRHV8tS4MMtyayFbWxc2vgiyw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h3yBxc/hA4bjF3KvLqRSYfytL3Up7Y+v8A9JJKzEHJYjVPObRZWSc3q39pJffsUBA
+ 5LDXlu5EaJrlbSkaclji1p+Y/IqUoHRs0UrSuL6+WR5M7vse0Adw0xVbxeL0aP3z4W
+ LengscAomIVlEEBl1lKGo81DzhKZSnNzIoCKjNEE=
+Date: Wed, 8 Jan 2020 17:48:39 +0000
+From: Will Deacon <will@kernel.org>
+To: AKASHI Takahiro <takahiro.akashi@linaro.org>, pasha.tatashin@soleen.com
+Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
+Message-ID: <20200108174839.GB21242@willie-the-truck>
+References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
+ <20191216021247.24950-3-takahiro.akashi@linaro.org>
 MIME-Version: 1.0
-References: <20200108092908.1.I3afd3535b65460e79f3976e9ebfa392a0dd75e01@changeid>
-In-Reply-To: <20200108092908.1.I3afd3535b65460e79f3976e9ebfa392a0dd75e01@changeid>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 8 Jan 2020 09:48:00 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=WFCjzRGv=8C-LU9O+fRi_C6E6zuyM7SyAX7CWx=wHnGw@mail.gmail.com>
-Message-ID: <CAD=FV=WFCjzRGv=8C-LU9O+fRi_C6E6zuyM7SyAX7CWx=wHnGw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use ABI name for recovery mode pin on
- veyron fievel/tiger
-To: Matthias Kaehlcke <mka@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <20191216021247.24950-3-takahiro.akashi@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_094815_877068_E49DFBD5 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_094850_676035_64B9D5B2 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,36 +76,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: catalin.marinas@arm.com, bhsharma@redhat.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, james.morse@arm.com,
+ frowand.list@gmail.com, kexec@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Wed, Jan 8, 2020 at 9:29 AM Matthias Kaehlcke <mka@chromium.org> wrote:
->
-> The recovery mode pin is currently named 'REC_MODE_L', which is
-> how the signal is called in the schematics. The Chrome OS ABI
-> requires the pin to be named 'RECOVERY_SW_L', which is also how
-> it is called on all other veyron devices. Rename the pin to match
-> the ABI.
->
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
+> Enabling crash dump (kdump) includes
+> * prepare contents of ELF header of a core dump file, /proc/vmcore,
+>   using crash_prepare_elf64_headers(), and
+> * add two device tree properties, "linux,usable-memory-range" and
+>   "linux,elfcorehdr", which represent respectively a memory range
+>   to be used by crash dump kernel and the header's location
+> 
+> Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Reviewed-by: James Morse <james.morse@arm.com>
+> Tested-and-reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
 > ---
-> Another misnamed pin, I should have noticed when fixing the
-> name of the write protect pin ...
+>  arch/arm64/include/asm/kexec.h         |   4 +
+>  arch/arm64/kernel/kexec_image.c        |   4 -
+>  arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
+>  3 files changed, 106 insertions(+), 8 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
+> index 12a561a54128..d24b527e8c00 100644
+> --- a/arch/arm64/include/asm/kexec.h
+> +++ b/arch/arm64/include/asm/kexec.h
+> @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
+>  struct kimage_arch {
+>  	void *dtb;
+>  	unsigned long dtb_mem;
+> +	/* Core ELF header buffer */
+> +	void *elf_headers;
+> +	unsigned long elf_headers_mem;
+> +	unsigned long elf_headers_sz;
+>  };
 
-...and I should have noticed when reviewing.  Sorry about that.
+This conflicts with the cleanup work from Pavel. Please can you check my
+resolution? [1]
 
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
+Will
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/diff/?h=for-kernelci&id=aef73191765a88cadc0a627cdc070e5a0086b015
+
 
 _______________________________________________
 linux-arm-kernel mailing list
