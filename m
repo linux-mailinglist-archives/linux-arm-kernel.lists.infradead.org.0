@@ -2,81 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF0DE134E3E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:00:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF253134E69
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:08:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=A5wmbYVpzv5au+8d3Fx8PEwxrcyET9OhUCHe15T5L1Q=; b=bwNULOH9yn8HQAg+i3oLA7mBkX
-	kQJAuTg9e9x6HrZ4xLQok3n2rrkD0ykkCc/50koarEI+KGP1xWI6HzA4uEyKArPnDWe2PaCJbqPJP
-	Qu/QSLoPynCLNZGF3gvLpXi9Yj/CDH3jvOQ/z1tVHIjQc0TN6cBP/0iDEUCJ18FO+sinmhj5Vq5Ji
-	W+DjeK9pACG3z1Yfr2gr1XgpSyF0OshjDYu6JfScfIiCTENQcwxmCxLfE44zwDa+MxO0A8JbS3hel
-	TET1RG3BNaXAsS+9m69+2BNI3dXQHOuh6fP77j5S5H6d9mfjoN4LszHpR2KdIwXWABoEKemEG2EJx
-	shRqTFcw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OS7poqgWvMe3nIU/gjadf0y6A8cXNbs/0yPwISyvV2o=; b=DIbaS1e1sk74WT
+	htBV2fYEjGBYlkcWPB0sZfezsUnOoM4ACa/bFe53XadAC9iALIhiDb5aDjh2T0OR76M1o5v7Sl2bk
+	t5pQZ+jmVOPHHbzGYtwAa2BVUS3DqyxFd3GOFj5sbkmsUtlTLsyhGHSlNk8xvNJ6K3mlz7sX/EIAR
+	/0NqspWqjONraky9w7YniG2FEwK7PUNoP7nt8REAWaZErAqqxFK8ITXgyVd8K8K8fd1Nn4+dbgiqt
+	MwHYJ9ioCQDw5Cdi6VU+l840rj6wnqKNeSWwJksXff89ASCXbQBxWNkZAEBtNYtMWXabtjXLaeqMd
+	ra3wK0HqA5kvn6IU7BAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipIRD-0004nk-Rc; Wed, 08 Jan 2020 21:00:23 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ipIZL-0000x9-0w; Wed, 08 Jan 2020 21:08:47 +0000
+Received: from o1.b.az.sendgrid.net ([208.117.55.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipIKx-0006Pb-I9; Wed, 08 Jan 2020 20:53:58 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z7so4852703wrl.13;
- Wed, 08 Jan 2020 12:53:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=F8uH8Ohf0/3msxdVq/elVtV9phQ+l7EJ3TnSIFW8Fo0=;
- b=e0kSxlvMjAEUSAiUAW4ICM7lkFZ2+g0/XlA56tjVT6RbtvXsMljyPPsICZYaqnXjEx
- 1Pl4fd1uchMzmbVCnXpwAADD3730auQp71lV3yeD/fHM/5DzT19YSdDVsjQTAzwJEWRI
- CQmC7v74Akdutq2yKBONZZjXl/KmT5+BX3AiQ80n6/RQGUXtd7pxwsvwMPq1UuRnE0iY
- OM84XVb8kdffdl/ij1JdieMxy4k8CZ++CcuyzQYtaAZ9Bv0NnEH6p+6w68lBsC60WvZM
- stZMy9Q8f9Cj2VTkBiDlSmAXUxENYvar+5YXCp8XxRMxh1XOXQhRKynw0+g0w0gdAyZn
- RMFQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=F8uH8Ohf0/3msxdVq/elVtV9phQ+l7EJ3TnSIFW8Fo0=;
- b=ebunRywdG9ohhhIROcUOZat7JawSt5hMua32//S31yI3bibLxR/Cw4PFHbhDaLoCye
- 4ClhYknJKo2l/xaWnTpe/JlTFnimSXJB94ypuDkqU9aC26CFvVGqbrFkFVTdJfQKI4DV
- 1tBGxBbmNzZ6mV5WDIjQ3QLRrm/pyn39d+gVy7DgweQgvcdTZBJxPMIukMipJTjofZYG
- Myltrm1PdG2uhJkDNH/1WgP2BrEkhrAT2KtYBl3liVjala8u4x6Zz6bjLsXQsLybPWe/
- c3734mo0VF43U6i7SB9ez0WYUQ53xJiAAzjZ3kEyQFt6iW+Cj7iT5uvhFXob+naVEKj1
- iwWw==
-X-Gm-Message-State: APjAAAWYnz20eYTKQUL4BvxOPEUN4+h9/00qbrNcl7IIHDIuBhKwOOIH
- KAXjjimVclodVInisvwLLY0=
-X-Google-Smtp-Source: APXvYqzc+xNsRHv3qmj0V/9o6spPl+YMOp2ERxVsBuT5Qvll3hQ2GWvJTQUwG9znzVyhruZwbxDrog==
-X-Received: by 2002:a5d:4e0a:: with SMTP id p10mr6657980wrt.229.1578516834066; 
- Wed, 08 Jan 2020 12:53:54 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id c5sm311835wmd.42.2020.01.08.12.53.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 Jan 2020 12:53:53 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: miquel.raynal@bootlin.com
-Subject: [RFC PATCH v1 07/10] arm64: dts: rockchip: add nandc node for px30
-Date: Wed,  8 Jan 2020 21:53:35 +0100
-Message-Id: <20200108205338.11369-8-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200108205338.11369-1-jbx6244@gmail.com>
-References: <20200108205338.11369-1-jbx6244@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_125355_841902_799C6F13 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: 0.1 (/)
+ id 1ipIYQ-0000BG-M9
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 21:07:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=from:subject:to:cc:content-type:content-transfer-encoding;
+ s=001; bh=uN626LkiVQ/IYQ07t5hafh9YVD29M1eVztEzw+fNXzo=;
+ b=L+7rDbSuAq0Ia9qc9SRmnvqqaFTp4cKR53aOnONEMw+LyuDyZ8cOez218+z0LcpnDLq+
+ I86taNWQY8ybiGAACLpwV/8+cOxvPGEtE+K4o1SB3TPbad7A+2MZm7uAqrh3PhPWfu2bqe
+ 0DMr6kaAbV/AbTZigTtv9Ag3u1KYVXdtg=
+Received: by filterdrecv-p3mdw1-56c97568b5-m6gw4 with SMTP id
+ filterdrecv-p3mdw1-56c97568b5-m6gw4-19-5E1644A3-A
+ 2020-01-08 21:07:47.202815829 +0000 UTC m=+1974280.427826101
+Received: from bionic.localdomain (unknown [98.128.173.80])
+ by ismtpd0005p1lon1.sendgrid.net (SG) with ESMTP id lJXBfmg9SiKtZf1InJRBnw
+ Wed, 08 Jan 2020 21:07:47.011 +0000 (UTC)
+From: Jonas Karlman <jonas@kwiboo.se>
+Subject: [PATCH v2 00/14] Support more HDMI modes on RK3228/RK3328
+Date: Wed, 08 Jan 2020 21:07:47 +0000 (UTC)
+Message-Id: <20200108210740.28769-1-jonas@kwiboo.se>
+X-Mailer: git-send-email 2.17.1
+X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
+ =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0h8tx7bkLKAWnDQBpQ?=
+ =?us-ascii?Q?ZEr7pUsi+B2Ai3fmPPFJg85m7ZXab8HQv0FysAB?=
+ =?us-ascii?Q?wzv2Lwwd2atjV7VtUYiUxWyFeOGsZB658mZxY1b?=
+ =?us-ascii?Q?L1j8bcIXZ0WNAbX9RMDg71zNujliuBDh2RIze14?=
+ =?us-ascii?Q?PwcwcCP9jILQhQ7Y49hiL7fZbGdoHE0sSOeT6Qq?=
+ =?us-ascii?Q?yUv21Uhs01blsXy4jbCTw=3D=3D?=
+To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [208.117.55.133 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
+ no trust [208.117.55.133 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,62 +78,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, vigneshr@ti.com,
- richard@nod.at, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-mtd@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- heiko@sntech.de
+Cc: Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Zheng Yang <zhengyang@rock-chips.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dingqiang Lin <jon.lin@rock-chips.com>
+This series make it possible to use more HDMI modes on RK3328,
+and presumably also on RK3228. It also prepares for a future YUV420 and
+10-bit output series.
 
-Add nandc node for px30.
+Part of this has been reworked from vendor BSP 4.4 kernel commits.
 
-Signed-off-by: Dingqiang Lin <jon.lin@rock-chips.com>
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+Patch 1-5 fixes issues and shortcomings in the inno hdmi phy driver.
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 9a0f77ea4..3f46b8852 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -25,6 +25,7 @@
- 		i2c1 = &i2c1;
- 		i2c2 = &i2c2;
- 		i2c3 = &i2c3;
-+		nandc0 = &nandc0;
- 		serial0 = &uart0;
- 		serial1 = &uart1;
- 		serial2 = &uart2;
-@@ -924,6 +925,20 @@
- 		status = "disabled";
- 	};
- 
-+	nandc0: nand-controller@ff3b0000 {
-+		compatible = "rockchip,nandc-v9";
-+		reg = <0x0 0xff3b0000 0x0 0x4000>;
-+		interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru SCLK_NANDC>, <&cru HCLK_NANDC>;
-+		clock-names = "clk_nandc", "hclk_nandc";
-+		assigned-clocks = <&cru SCLK_NANDC>;
-+		assigned-clock-parents = <&cru SCLK_NANDC_DIV50>;
-+		power-domains = <&power PX30_PD_MMC_NAND>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+	};
-+
- 	vopb: vop@ff460000 {
- 		compatible = "rockchip,px30-vop-big";
- 		reg = <0x0 0xff460000 0x0 0xefc>;
+Patch 6 prepares for use of high TMDS bit rates used with HDMI 2.0 and
+10-bit output modes.
+
+Patch 7-13 changes rk3228/rk3328 to use mode_valid functions suited for
+the inno hdmi phy instead of the dw-hdmi phy. These changes allows for
+more CEA modes to be usable, e.g. some 4K and fractal modes.
+
+Patch 14 adds support for more pixel clock rates in order to support
+common DMT modes in addition to CEA modes.
+
+Note: I have only been able to build test RK322x related changes
+as I do not have any RK322x device to test on.
+
+All modes, including fractal modes, has been tested with modetest on
+a RK3328 Rock64 device using e.g.
+
+  modetest -M rockchip -s 39:3840x2160-29.97
+
+Changes in v2:
+  - collect acked-by tag
+  - drop the limit resolution width to 3840 patch
+
+This series is also available at [1] and the early work on YUV420 and
+10-bit output is available at [2].
+
+[1] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-inno-hdmi-phy
+[2] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-bus-format
+
+Regards,
+Jonas
+
+Algea Cao (1):
+  phy/rockchip: inno-hdmi: Support more pre-pll configuration
+
+Huicong Xu (1):
+  phy/rockchip: inno-hdmi: force set_rate on power_on
+
+Jonas Karlman (11):
+  phy/rockchip: inno-hdmi: use correct vco_div_5 macro on rk3328
+  phy/rockchip: inno-hdmi: remove unused no_c from rk3328 recalc_rate
+  phy/rockchip: inno-hdmi: do not power on rk3328 post pll on reg write
+  drm/rockchip: dw-hdmi: allow high tmds bit rates
+  drm/rockchip: dw-hdmi: require valid vpll clock rate on rk3228/rk3328
+  clk: rockchip: set parent rate for DCLK_VOP clock on rk3228
+  arm64: dts: rockchip: increase vop clock rate on rk3328
+  arm64: dts: rockchip: add vpll clock to hdmi node on rk3328
+  ARM: dts: rockchip: add vpll clock to hdmi node on rk3228
+  drm/rockchip: dw-hdmi: limit tmds to 340mhz on rk3228/rk3328
+  drm/rockchip: dw-hdmi: remove unused plat_data on rk3228/rk3328
+
+Zheng Yang (1):
+  phy/rockchip: inno-hdmi: round fractal pixclock in rk3328 recalc_rate
+
+ arch/arm/boot/dts/rk322x.dtsi                 |   4 +-
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi      |   6 +-
+ drivers/clk/rockchip/clk-rk3228.c             |   2 +-
+ drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c   |  47 ++++++--
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 110 ++++++++++++------
+ 5 files changed, 120 insertions(+), 49 deletions(-)
+
 -- 
-2.11.0
+2.17.1
 
 
 _______________________________________________
