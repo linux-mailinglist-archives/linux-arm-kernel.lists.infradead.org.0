@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 520ED134D89
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:29:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A39D134D97
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:30:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ViheKtnbLGy9aJD0jJUl+naVfHAo/vyw0X4ZTq0ngHQ=; b=aZVPSrMWTQ3O3+
-	6IZl0LD45Oqm7fvY/8e8CsMjgwFlpAYM97qry5vOpaYF/bl2b2HHx7OrqYSyxZn8uzS9UWqFIBOdx
-	1sysoqigPE/Hc9m+qHyBozwQxQJZ4VBzto6iIjLwxRscyuTLEjZTEN6O7QC0JewJxHtHtvhSNoR3o
-	6LVwNI5dr8Ytt/aYaag6Ilh2KJ30xLuA3225LhZcrryJaT6oc1/JC9caeHNZsEW4nCDvdRm+3i6Rl
-	QFnRCmyhdOqtxX77u4J18KHxIp7XrUIVjAinvvIIvhEecNRBgi1OS9433mAVj0LKr8qx1jjSeZoeV
-	PIdbC7EkNWIVGymyaSwQ==;
+	List-Owner; bh=CMJ9ZiY0/FxNIx2Y0TEsAlhurCPwM3/yz6Mcm81/UQw=; b=KxxceKsSl8DJmF
+	aQb8DfEnFJRAV2JCf3ejVy93qt/gSWSM6uoPDfCLIpTIv16dmeLUZd06fyicTQT19Y5bfF6F7ppcs
+	dnjQoY5cxkeX09K+JZoFqIs2FY4hk7WSJQZzv7mQqBG/ObmUxFumr8oSR+tpvS2H/cvpHpmTxcQjg
+	/Y9F9INS4itdYpM0YoYMdoeoOSoZtyGlto2G9yMrpZ0ddeZUMF8svoqr/vLt7PEkKcJmAXRdz3UYi
+	SP4D7AVraCKfGC5UdpbMfSc6l8rOgKxhbLC/LVaQG+CAWYA8BQxNmkL3Z0S+GJje5e9fKOpAmjAV7
+	ANkFz1/DMrVPAf38RiAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipHws-0001PB-8E; Wed, 08 Jan 2020 20:29:02 +0000
+	id 1ipHxh-00021U-8g; Wed, 08 Jan 2020 20:29:53 +0000
 Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipHv3-0008ED-A3
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:11 +0000
+ id 1ipHv5-0008ED-L8
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:13 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga007.jf.intel.com ([10.7.209.58])
  by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  08 Jan 2020 12:27:06 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658377"
+X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658380"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga007.jf.intel.com with ESMTP; 08 Jan 2020 12:27:06 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 07/14] KVM: x86/mmu: Walk host page tables to find THP mappings
-Date: Wed,  8 Jan 2020 12:24:41 -0800
-Message-Id: <20200108202448.9669-8-sean.j.christopherson@intel.com>
+Subject: [PATCH 08/14] KVM: x86/mmu: Drop level optimization from
+ fast_page_fault()
+Date: Wed,  8 Jan 2020 12:24:42 -0800
+Message-Id: <20200108202448.9669-9-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_122709_449999_E8D48CEF 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20200108_122711_768873_DD0D26D5 
+X-CRM114-Status: GOOD (  13.01  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -87,88 +88,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Explicitly walk the host page tables to identify THP mappings instead
-of relying solely on the metadata in struct page.  This sets the stage
-for using a common method of identifying huge mappings regardless of the
-underlying implementation (HugeTLB vs THB vs DAX), and hopefully avoids
-the pitfalls of relying on metadata to identify THP mappings, e.g. see
-commit 169226f7e0d2 ("mm: thp: handle page cache THP correctly in
-PageTransCompoundMap") and the need for KVM to explicitly check for a
-THP compound page.  KVM will also naturally work with 1gb THP pages, if
-they are ever supported.
+Remove fast_page_fault()'s optimization to stop the shadow walk if the
+iterator level drops below the intended map level.  The intended map
+level is only acccurate for HugeTLB mappings (THP mappings are detected
+after fast_page_fault()), i.e. it's not required for correctness, and
+a future patch will also move HugeTLB mapping detection to after
+fast_page_fault().
 
-Walking the tables for THP mappings is likely marginally slower than
-querying metadata, but a future patch will reuse the walk to identify
-HugeTLB mappings, at which point eliminating the existing VMA lookup for
-HugeTLB will make this a net positive.
-
-Cc: Andrea Arcangeli <aarcange@redhat.com>
-Cc: Barret Rhoden <brho@google.com>
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/mmu/mmu.c | 40 ++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 38 insertions(+), 2 deletions(-)
+ arch/x86/kvm/mmu/mmu.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index 30836899be73..4bd7f745b56d 100644
+index 4bd7f745b56d..7d78d1d996ed 100644
 --- a/arch/x86/kvm/mmu/mmu.c
 +++ b/arch/x86/kvm/mmu/mmu.c
-@@ -3329,6 +3329,41 @@ static void direct_pte_prefetch(struct kvm_vcpu *vcpu, u64 *sptep)
- 	__direct_pte_prefetch(vcpu, sp, sptep);
- }
+@@ -3593,7 +3593,7 @@ static bool is_access_allowed(u32 fault_err_code, u64 spte)
+  * - true: let the vcpu to access on the same address again.
+  * - false: let the real page fault path to fix it.
+  */
+-static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa, int level,
++static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa,
+ 			    u32 error_code)
+ {
+ 	struct kvm_shadow_walk_iterator iterator;
+@@ -3611,8 +3611,7 @@ static bool fast_page_fault(struct kvm_vcpu *vcpu, gpa_t cr2_or_gpa, int level,
+ 		u64 new_spte;
  
-+static int host_pfn_mapping_level(struct kvm_vcpu *vcpu, gfn_t gfn,
-+				  kvm_pfn_t pfn)
-+{
-+	struct kvm_memory_slot *slot;
-+	unsigned long hva;
-+	pte_t *pte;
-+	int level;
-+
-+	BUILD_BUG_ON(PT_PAGE_TABLE_LEVEL != (int)PG_LEVEL_4K ||
-+		     PT_DIRECTORY_LEVEL != (int)PG_LEVEL_2M ||
-+		     PT_PDPE_LEVEL != (int)PG_LEVEL_1G);
-+
-+	if (!PageCompound(pfn_to_page(pfn)))
-+		return PT_PAGE_TABLE_LEVEL;
-+
-+	/*
-+	 * Manually do the equivalent of kvm_vcpu_gfn_to_hva() to avoid the
-+	 * "writable" check in __gfn_to_hva_many(), which will always fail on
-+	 * read-only memslots due to gfn_to_hva() assuming writes.  Earlier
-+	 * page fault steps have already verified the guest isn't writing a
-+	 * read-only memslot.
-+	 */
-+	slot = kvm_vcpu_gfn_to_memslot(vcpu, gfn);
-+	if (!memslot_valid_for_gpte(slot, true))
-+		return PT_PAGE_TABLE_LEVEL;
-+
-+	hva = __gfn_to_hva_memslot(slot, gfn);
-+
-+	pte = lookup_address_in_mm(vcpu->kvm->mm, hva, &level);
-+	if (unlikely(!pte))
-+		return PT_PAGE_TABLE_LEVEL;
-+
-+	return level;
-+}
-+
- static void transparent_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
- 					int max_level, kvm_pfn_t *pfnp,
- 					int *levelp)
-@@ -3344,10 +3379,11 @@ static void transparent_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
- 	    kvm_is_zone_device_pfn(pfn))
- 		return;
+ 		for_each_shadow_entry_lockless(vcpu, cr2_or_gpa, iterator, spte)
+-			if (!is_shadow_present_pte(spte) ||
+-			    iterator.level < level)
++			if (!is_shadow_present_pte(spte))
+ 				break;
  
--	if (!kvm_is_transparent_hugepage(pfn))
-+	level = host_pfn_mapping_level(vcpu, gfn, pfn);
-+	if (level == PT_PAGE_TABLE_LEVEL)
- 		return;
+ 		sp = page_header(__pa(iterator.sptep));
+@@ -4223,7 +4222,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
+ 	if (level > PT_PAGE_TABLE_LEVEL)
+ 		gfn &= ~(KVM_PAGES_PER_HPAGE(level) - 1);
  
--	level = PT_DIRECTORY_LEVEL;
-+	level = min(level, max_level);
+-	if (fast_page_fault(vcpu, gpa, level, error_code))
++	if (fast_page_fault(vcpu, gpa, error_code))
+ 		return RET_PF_RETRY;
  
- 	/*
- 	 * mmu_notifier_retry() was successful and mmu_lock is held, so
+ 	mmu_seq = vcpu->kvm->mmu_notifier_seq;
 -- 
 2.24.1
 
