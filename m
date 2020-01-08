@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FD08134A10
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:04:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA525134A2E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:07:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k4/O2QrKTwQFMLJiyYOjlKs4y2pYBqj/E44p4YH81HE=; b=sRppMisbF/syNr
-	AX29Ps1qiA0PS8l1EHYIsP5VlrNZdvoTSHysb5UXafbsO8a5SR0dsxmIWV944TFeisDu2QBy3uXwG
-	aiKqGJTXxa2Q/qA41kDGT4EhEDkPkP2/Oss2t7xD33R6gLCulwxCT0/NMjkjH8njf6hJ88M7o7oAb
-	NjVY7pO3/3buOtdfPLOlv3UF73drtbhmE6neZae5NrgsmSq2/deyXr3OLaC/Ubg0ShknozEKctwlF
-	hbYam62IT7UuiJcNUfuJGk286YN+qMJcEacqDFbnT+BbedrKygY5vQyziFDbEYLn6fSPjKj9/8Gnc
-	aiiNGkNeWhdmFD96tB3Q==;
+	List-Owner; bh=+5L68CAoQgtXXUxkwEi5GkZAqdHSTzCFlv6mmRs78kI=; b=mPoX7OA4wNTuCr
+	2RmmEXiURsb25TSHqoQL/AwMekE38YF8paq40MxPA2Pd0VvGHq7jp4P7GplaYDcL3WvqmDHdouohS
+	s06R7qJKRt7ZupdBgpnxpC9obMSecHNynCajBlK1yS+35P/66pX+lWMd3isJM65322nqteDbAP7X4
+	knRr+ArPtWXgKqfAjpG15mQgaWgGMZnlHv/Z5tc5iiD2Z75s05zZT7FjZscf4RqGXas2rgaLCaGjf
+	U08rlWi8xlGNUbf0PHwPd8EgRz0+LipjN1K1UPWNHz4+xQsxDoSrHvEjrGJhgtLti1O0W3gJbbmel
+	eGGPeQ4fxgJaYamEjP/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFgV-0006rJ-M6; Wed, 08 Jan 2020 18:03:59 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1ipFjk-0000V9-N4; Wed, 08 Jan 2020 18:07:20 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFgG-0006pg-HN; Wed, 08 Jan 2020 18:03:45 +0000
-Received: by mail-ed1-x542.google.com with SMTP id m8so3291225edi.13;
- Wed, 08 Jan 2020 10:03:44 -0800 (PST)
+ id 1ipFjd-0000UW-7Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:07:14 +0000
+Received: by mail-ed1-x543.google.com with SMTP id f8so3374218edv.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 10:07:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=i1tfu3hzWGLcDtJ61MWCbPmVimgAN/gzhifzT41dVSE=;
- b=slsvJMEWqH1SBUQ69EjoLHEAPtsa9rsw8bbf3/XGhip3C1CCmzLkiGl3cUcznFm6d0
- YoBIga6QCDw27V99V2ZBJLd0qBM+GGz9af4fyNZ79CSKIE2v52agOHj4JXN5+dyq8IIs
- akLLAwXmagBWpCp9CL7fGMpvu5eqxneFlNLjgj6B6USW7rCBU1iqvJfGxAYAE66Xdlk2
- 3GzIwvOKDwet90x5/PVhFa97Q+uQmNlpMJKjs0/3ESKYoDZuclXsuWRnyqTQPcF/eLER
- G93ocb1YDmrLGeLNGBkXUawvL3cK0z1UGwRQuTKEyr6lBnhhCKrebk15ZQ3vFZb1n/NJ
- hajA==
+ bh=DXy6P7nvLP7A4nGabp4KGrM6Ox1HgQ0XwO5nRHAGTNw=;
+ b=bUCxLSOkRlli8uZi4DWtnuTHBW/CR4uSwOMwJhz6BUHzIhdbxY+L4bOsNoXqeYRxW8
+ RusLaNA/lqRDVm6eiOoofxTBHu5VEWHPOyKYS9ScaYwgwlovtpQ3Yiizw61R+Oy/CzHa
+ j4zz6cWXFzFHIrP1DGNsnpYaYRxh85L6MAYa+uosTek6CoduoWuQFguSSGrsEjrBt1n7
+ S2gGm6G+5iEkioFGLUdn+VXCoxAK5BsXTNzzLBH1a028qpfL54nywYjhHsUqfp7r8D3x
+ W97Vanu5RiVizxHdvbKEBu5ZaQZeNNPFI4vN2kwEpvZYdnqjNT6Z/YxrBdLQZggpdigH
+ BCAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=i1tfu3hzWGLcDtJ61MWCbPmVimgAN/gzhifzT41dVSE=;
- b=ihPH291j/PdMR7YcFAQRIh0CmQU5fWSjGcpfdfHLD9+iTcDp9gUIgDIerYyWQY2cJL
- X6O9ruOaAmIvmli1hsrNHAL8n7/uMwJOYuVqqTkixB6pgEUH7QmQsmS/GXrmxTcjTFp7
- Hd7EfcC7vq7tGNMGWjfK0sEEQAlgQE9kyaJQjlEn6fZkTswFhGNEfFi7PsxTa5GMhzY4
- QmFotZHtbhuCmEpJFcMoVK2axdCoGrUKNhxVdDGkmcZRKk5bLKaPnb9TthVjFTBlDBD2
- X3L+XLnwlQam7x3TH46jFIBfg4zpxlP039L9rK/F90hYRFqpaquhhg97rc7T6xOpdILQ
- avew==
-X-Gm-Message-State: APjAAAWKo+u8X3O4P62w9YSR7zVX0/uCnJePmyiy5a7sISPmbUJ4lStJ
- agNwNvhur/Etr7C8bsyM/8j8RKN5
-X-Google-Smtp-Source: APXvYqwNUefmVlHNoyJRH4hhCju9yadMsulixPytlLWF1oSaxWokTX9EwW5ecLI0qm1p6Qt1Zx18NA==
-X-Received: by 2002:aa7:c550:: with SMTP id s16mr6827862edr.297.1578506622735; 
- Wed, 08 Jan 2020 10:03:42 -0800 (PST)
+ bh=DXy6P7nvLP7A4nGabp4KGrM6Ox1HgQ0XwO5nRHAGTNw=;
+ b=pZMme++Mx3gZ8O4zEGIOXmWkJxThGvhEqVjJXgIfgrzM5AB/UcitKufn1r2z4C8p1s
+ QOjfUSCJvYL4BYWZQOFhD7C7wOaJY/rfbR9LMe96W2x4yDDBR2k1NlRelSIQfKw//x3s
+ M57wj2nv+WQNcJ8CWjRB5r5whOFiDA+b0YznWJmwxkS0CQ89XpQgnYwb1ylffnc/Pq/T
+ JiekZWj4g7N7zJmrgKjppY+2kom/EZHsfcVQ10k/JukBdCWb9pzumWE3cfBJCadyg67Q
+ y6HGulOLwvFsziSbx9jLKqXHwEolGWXydxCZ0s3H4fRZn9G+kj4rtoLkNNRX7gDD1CzS
+ fhaQ==
+X-Gm-Message-State: APjAAAUTiUqLDe+A24O9DU3qmCyiJztLbO6TqIUcfkx403zxS+VYZ1Kq
+ oTKT/SwHpXPVMOhqbmUUZtA=
+X-Google-Smtp-Source: APXvYqzzy9Bb6gt/9ucEmJcOHTliFjd75FSQWFQcs2nC6nmkNklLjyLBB2xKnAw8L4OgGBLJD0ILtQ==
+X-Received: by 2002:a17:906:3786:: with SMTP id
+ n6mr6348181ejc.124.1578506831742; 
+ Wed, 08 Jan 2020 10:07:11 -0800 (PST)
 Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id u13sm55092ejz.69.2020.01.08.10.03.37
+ by smtp.googlemail.com with ESMTPSA id v2sm57356ejj.44.2020.01.08.10.07.08
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 08 Jan 2020 10:03:42 -0800 (PST)
-Subject: Re: [PATCH net-next] net: dsa: Remove indirect function call for flow
- dissection
-To: Vladimir Oltean <olteanv@gmail.com>
-References: <20200102233657.12933-1-f.fainelli@gmail.com>
- <CA+h21hrLO2Nfryu74Joj-T3-ithgoSFOQZsw4Z5QWOnhttvGiA@mail.gmail.com>
- <91eb2720-d933-f1fd-8d50-e9a81434545b@gmail.com>
- <CA+h21hqEnFjPHyK9ZanzwXdvkcdTA3uZzJMf0eo0FZWRTFzouw@mail.gmail.com>
+ Wed, 08 Jan 2020 10:07:10 -0800 (PST)
+Subject: Re: [PATCH v2 0/6] brcmstb_thermal updates for new processes
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, daniel.lezcano@linaro.org
+References: <20191211203143.2952-1-f.fainelli@gmail.com>
+ <277b5f3d-b25b-89b0-9fc1-e520242b3380@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,23 +118,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <1d56362d-2c8c-6cf2-86a3-8b082d5085c2@gmail.com>
-Date: Wed, 8 Jan 2020 10:03:36 -0800
+Message-ID: <eaa320a2-76ce-5115-ead6-70d8e7616762@gmail.com>
+Date: Wed, 8 Jan 2020 10:07:07 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <CA+h21hqEnFjPHyK9ZanzwXdvkcdTA3uZzJMf0eo0FZWRTFzouw@mail.gmail.com>
+In-Reply-To: <277b5f3d-b25b-89b0-9fc1-e520242b3380@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_100344_582002_89B0DA43 
-X-CRM114-Status: GOOD (  20.14  )
+X-CRM114-CacheID: sfid-20200108_100713_299464_1093BCB6 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -157,78 +158,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Song Liu <songliubraving@fb.com>,
- Vladimir Oltean <vladimir.oltean@nxp.com>,
- Alexander Lobakin <alobakin@dlink.ru>,
- Yoshiki Komachi <komachi.yoshiki@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Eric Dumazet <edumazet@google.com>,
- Stanislav Fomichev <sdf@google.com>, Matteo Croce <mcroce@redhat.com>,
- Petar Penkov <ppenkov@google.com>, Jakub Sitnicki <jakub@cloudflare.com>,
- Daniel Borkmann <daniel@iogearbox.net>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Woojung Huh <woojung.huh@microchip.com>, Hauke Mehrtens <hauke@hauke-m.de>,
- Sean Wang <sean.wang@mediatek.com>, Claudiu Manoil <claudiu.manoil@nxp.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, netdev <netdev@vger.kernel.org>,
- Paul Blakey <paulb@mellanox.com>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- "David S. Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
+ "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM STB AVS TMON DRIVER"
+ <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
+ Zhang Rui <rui.zhang@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/3/20 1:28 PM, Vladimir Oltean wrote:
-> On Fri, 3 Jan 2020 at 22:50, Florian Fainelli <f.fainelli@gmail.com> wrote:
+On 12/26/19 7:54 AM, Florian Fainelli wrote:
+> 
+> 
+> On 12/11/2019 12:31 PM, Florian Fainelli wrote:
+>> Hi,
 >>
->> The call path is the following on TX (e.g.: when you run a DHCP client),
-> 
-> Oh, it gets called on TX too, ok.
-> In that case, static proto_off information won't work for asymmetric
-> taggers such as ocelot which may have an independently configurable
-> prefix length on RX and TX.
-> I want to get rid of the RX tag prefix in ocelot though, but just saying.
-> 
->> I don't think your formula works for EDSA which has an EtherType, but
-> 
-> Why doesn't it work with edsa?
-
-It would, my bad.
-
-> 
->> this would probably work for all tags we currently support except trailer.
+>> This patch series contains a bug fix for the existing platforms and then
+>> paves the way for adding support for Broadcom STB's latest chips in 16nm
+>> processes, and finally updates the driver with pecularities introduced
+>> with the 16nm, like the lack of interrupt notification from the HW.
 >>
->> proto = (__be16 *)(skb->data)[overhead / 2 - 1];
->>
+>> Please queue up the first patch for -stable if you want, thanks!
 > 
-> I wasn't suggesting to do this exact calculation in flow_dissector.c,
-> but rather to pre-populate proto_off with a value statically derived
-> from it on a piece of paper, with the trailer exception where it would
-> be -2 in bytes or -1 in shorts, but nonetheless a negative and valid
-> value.
+> Amit, Daniel, Rui, does this look acceptable to you now? Thank you
 
-With the trailer, the EtherType is actually at the expected location,
-that is 12 bytes from the beginning of the Ethernet frame, so we can
-simplify things even more.
-
-> 
->>
->> I don't think anyone except Alexander did serious investigation this.
->> For now, what I am interested in is reducing the amount of technical
->> debt and expensive function calls.
-> 
-> Does the change bring any measurable improvement?
-
-I did not implement flow dissection for Broadcom tags largely because it
-did not show up as a performance problem with the different customers
-but I will try to collect some numbers. At any rate, the patch is not
-meant to be a performance improvement (though it might provide some
-improvements) but ease maintenance and make it more straight forward for
-future protocols to automatically gain dissection without having to
-provide a function pointer.
+Ping? Is this good to go now?
 -- 
 Florian
 
