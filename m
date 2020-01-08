@@ -2,133 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59486134210
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 13:44:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1F81134216
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 13:44:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HnIu8GFED/6c0zmEm4aWh/YZnrwOc2KFbjCYKqbPqQc=; b=Cc+lrvpQFw4n/n
-	ykJr0F+8vIo3/6K6bu2Gd82rIK3KMXwOq3fV8Rctk0BqXUSk3OPfu/N3cYAZF3DxvS1BLeCoyLS6r
-	38PpeOHzU2OZx+xJiZaDfxdQfBl9zn9u6mkv//AbbzOa9MbfSiIsRCiN4X4wdScJkdrSLsS4XV2Wk
-	m6DPw9ZOlK1SxjwLiBkCb4iuGEm+6I2mV8OsOnH2j9OlB5xTZ/Sujn0vElHkXhNK/GpduqzEMx8uC
-	CE0Q1aIx9enI0LI+M25tzp+0IiJyvlVmqtX/q6B+Z5O7wMUtx7gkTOZob9qarj9QCM93uL++cBxi4
-	k9fHVrgQyo6GrJx32PoA==;
+	List-Owner; bh=vDhUCLJJ2+FWmE1M/JvA4FTN7gDqLJ1/Fw2NlNUSDEM=; b=E5E8r/8/lh68+2
+	TLm1yGPO+ONk9EeuGXc6j44g3s2D425qzKKW4xr+xPn+XOjRjWhTIUzH1A6vK2BYPcUk8Al2bAN9s
+	2bR3omZlCxT56TOewKE70dICcMW+5CsVbdzv/Fc5B8r1yys+sdYL0e/km+/cfbFjaNuHtgc4BA7LB
+	HlWzJTg/TMciThNzCFRnickYCU63J97TUlko9jnc8YW9LSuroEZRK2ar10CNFAXJpZ/f5gspLxKKX
+	eQ8Oc06gW5rsT+SJGR/DTb0XpFrQuov7CLtYrzOxquExlJ/S5iplyEI2WrlCSibpxYz54OQiX9NJr
+	bIZ0Pomu6MKMqgQ4EN9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipAh8-0005Be-8J; Wed, 08 Jan 2020 12:44:18 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipAgv-0005B0-5p
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 12:44:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578487444;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=FlLAwZ5fqwHBJXyRiPabuWKe15jbJzHg7LgdOAui+VE=;
- b=a0UcdJzk4+sNtoc2j/Sfo6Yfpvqa8nhRQnsnLyC67Jw9OAdyTNlTl25C6FNLB136PrVJ76
- tMDtalPb1NYkDFfZJPtgDp8MHsTvM1nsHQ6OWxBbo4yKyiFDBccfLkhvSzorPUzwEWbuHL
- R0FbPvWz8zmGVbtNrBM59iSOPWUHh70=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-332-HFFavnQeNnqQGws89fqgVg-1; Wed, 08 Jan 2020 07:44:00 -0500
-X-MC-Unique: HFFavnQeNnqQGws89fqgVg-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 167CD800D41;
- Wed,  8 Jan 2020 12:43:57 +0000 (UTC)
-Received: from [10.36.117.90] (ovpn-117-90.ams2.redhat.com [10.36.117.90])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 435D660E1C;
- Wed,  8 Jan 2020 12:43:52 +0000 (UTC)
-Subject: Re: [PATCH v2 6/8] s390/mm: Thread pgprot_t through vmem_add_mapping()
-To: Logan Gunthorpe <logang@deltatee.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-ia64@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
- linux-sh@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- linux-mm@kvack.org, Dan Williams <dan.j.williams@intel.com>,
- Michal Hocko <mhocko@kernel.org>, Andrew Morton <akpm@linux-foundation.org>
-References: <20200107205959.7575-1-logang@deltatee.com>
- <20200107205959.7575-7-logang@deltatee.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <a5501f2a-ff8d-cea2-1540-1a70ea6bc2d2@redhat.com>
-Date: Wed, 8 Jan 2020 13:43:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1ipAhc-0005Vf-Ph; Wed, 08 Jan 2020 12:44:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipAhU-0005V3-Kx
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 12:44:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 658EE31B;
+ Wed,  8 Jan 2020 04:44:38 -0800 (PST)
+Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 947923F703;
+ Wed,  8 Jan 2020 04:44:36 -0800 (PST)
+Subject: Re: [PATCH 1/3] KVM: arm64: correct PSTATE on exception entry
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20191220150549.31948-1-mark.rutland@arm.com>
+ <20191220150549.31948-2-mark.rutland@arm.com>
+ <bace4197-a723-5312-3990-84232aab30d9@arm.com>
+ <20200108111253.GA49203@lakrids.cambridge.arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <4be2f666-1139-0087-a69e-f8b779e71e11@arm.com>
+Date: Wed, 8 Jan 2020 12:44:35 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200107205959.7575-7-logang@deltatee.com>
+In-Reply-To: <20200108111253.GA49203@lakrids.cambridge.arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_044405_301799_7FA31079 
-X-CRM114-Status: GOOD (  19.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_044440_771446_D2D94992 
+X-CRM114-Status: GOOD (  26.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,111 +66,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Badger <ebadger@gigaio.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>
+Cc: Peter Maydell <peter.maydell@linaro.org>, Drew Jones <drjones@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, maz@kernel.org,
+ stable@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07.01.20 21:59, Logan Gunthorpe wrote:
-> In prepartion to support a pgprot_t argument for arch_add_memory().
-> 
-> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> Cc: Vasily Gorbik <gor@linux.ibm.com>
-> Cc: Christian Borntraeger <borntraeger@de.ibm.com>
-> Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
-> ---
->  arch/s390/include/asm/pgtable.h |  3 ++-
->  arch/s390/mm/extmem.c           |  3 ++-
->  arch/s390/mm/init.c             |  2 +-
->  arch/s390/mm/vmem.c             | 10 +++++-----
->  4 files changed, 10 insertions(+), 8 deletions(-)
-> 
-> diff --git a/arch/s390/include/asm/pgtable.h b/arch/s390/include/asm/pgtable.h
-> index 7b03037a8475..e667a1a96879 100644
-> --- a/arch/s390/include/asm/pgtable.h
-> +++ b/arch/s390/include/asm/pgtable.h
-> @@ -1640,7 +1640,8 @@ static inline swp_entry_t __swp_entry(unsigned long type, unsigned long offset)
->  
->  #define kern_addr_valid(addr)   (1)
->  
-> -extern int vmem_add_mapping(unsigned long start, unsigned long size);
-> +extern int vmem_add_mapping(unsigned long start, unsigned long size,
-> +			    pgprot_t prot);
->  extern int vmem_remove_mapping(unsigned long start, unsigned long size);
->  extern int s390_enable_sie(void);
->  extern int s390_enable_skey(void);
-> diff --git a/arch/s390/mm/extmem.c b/arch/s390/mm/extmem.c
-> index fd0dae9d10f4..6cf7029a7b35 100644
-> --- a/arch/s390/mm/extmem.c
-> +++ b/arch/s390/mm/extmem.c
-> @@ -313,7 +313,8 @@ __segment_load (char *name, int do_nonshared, unsigned long *addr, unsigned long
->  		goto out_free;
->  	}
->  
-> -	rc = vmem_add_mapping(seg->start_addr, seg->end - seg->start_addr + 1);
-> +	rc = vmem_add_mapping(seg->start_addr, seg->end - seg->start_addr + 1,
-> +			      PAGE_KERNEL);
->  
->  	if (rc)
->  		goto out_free;
-> diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
-> index a0c88c1c9ad0..ef19522ddad2 100644
-> --- a/arch/s390/mm/init.c
-> +++ b/arch/s390/mm/init.c
-> @@ -277,7 +277,7 @@ int arch_add_memory(int nid, u64 start, u64 size,
->  	if (WARN_ON_ONCE(modifiers->altmap))
->  		return -EINVAL;
->  
-> -	rc = vmem_add_mapping(start, size);
-> +	rc = vmem_add_mapping(start, size, PAGE_KERNEL);
->  	if (rc)
->  		return rc;
->  
-> diff --git a/arch/s390/mm/vmem.c b/arch/s390/mm/vmem.c
-> index b403fa14847d..8a5e95f184a2 100644
-> --- a/arch/s390/mm/vmem.c
-> +++ b/arch/s390/mm/vmem.c
-> @@ -66,7 +66,7 @@ pte_t __ref *vmem_pte_alloc(void)
->  /*
->   * Add a physical memory range to the 1:1 mapping.
->   */
-> -static int vmem_add_mem(unsigned long start, unsigned long size)
-> +static int vmem_add_mem(unsigned long start, unsigned long size, pgprot_t prot)
->  {
->  	unsigned long pgt_prot, sgt_prot, r3_prot;
->  	unsigned long pages4k, pages1m, pages2g;
-> @@ -79,7 +79,7 @@ static int vmem_add_mem(unsigned long start, unsigned long size)
->  	pte_t *pt_dir;
->  	int ret = -ENOMEM;
->  
-> -	pgt_prot = pgprot_val(PAGE_KERNEL);
-> +	pgt_prot = pgprot_val(prot);
->  	sgt_prot = pgprot_val(SEGMENT_KERNEL);
->  	r3_prot = pgprot_val(REGION3_KERNEL);
+Hi,
 
-So, if we map as huge/gigantic pages, the protection would be discarded?
-That looks wrong.
+On 1/8/20 11:12 AM, Mark Rutland wrote:
+> Hi Alex,
+>
+> On Fri, Dec 27, 2019 at 01:01:57PM +0000, Alexandru Elisei wrote:
+>> On 12/20/19 3:05 PM, Mark Rutland wrote:
+>>> When KVM injects an exception into a guest, it generates the PSTATE
+>>> value from scratch, configuring PSTATE.{M[4:0],DAIF}, and setting all
+>>> other bits to zero.
+>>>
+>>> This isn't correct, as the architecture specifies that some PSTATE bits
+>>> are (conditionally) cleared or set upon an exception, and others are
+>>> unchanged from the original context.
+>>>
+>>> This patch adds logic to match the architectural behaviour. To make this
+>>> simple to follow/audit/extend, documentation references are provided,
+>>> and bits are configured in order of their layout in SPSR_EL2. This
+>>> layout can be seen in the diagram on ARM DDI 0487E.a page C5-429.
+>>> +/*
+>>> + * When an exception is taken, most PSTATE fields are left unchanged in the
+>>> + * handler. However, some are explicitly overridden (e.g. M[4:0]). Luckily all
+>>> + * of the inherited bits have the same position in the AArch64/AArch32 SPSR_ELx
+>>> + * layouts, so we don't need to shuffle these for exceptions from AArch32 EL0.
+>>> + *
+>>> + * For the SPSR_ELx layout for AArch64, see ARM DDI 0487E.a page C5-429.
+>>> + * For the SPSR_ELx layout for AArch32, see ARM DDI 0487E.a page C5-426.
+>> The commit message mentions only the SPSR_ELx layout for AArch64.
+> That was intentional; there I was only providing rationale for how to
+> review the patch...
+>
+>>> + * Here we manipulate the fields in order of the AArch64 SPSR_ELx layout, from
+>>> + * MSB to LSB.
+> ... as also commented here.
+>
+> I can drop the reference from the commit message, if that's confusing?
 
-s390x does not support ZONE_DEVICE yet. Maybe simply bail out for s390x
-as you do for sh to make your life easier?
+It's fine as it is, no need to change it.
 
-[...]
+>
+>>> + */
+>>> +static unsigned long get_except64_pstate(struct kvm_vcpu *vcpu)
+>>> +{
+>>> +	unsigned long sctlr = vcpu_read_sys_reg(vcpu, SCTLR_EL1);
+>>> +	unsigned long old, new;
+>>> +
+>>> +	old = *vcpu_cpsr(vcpu);
+>>> +	new = 0;
+>>> +
+>>> +	new |= (old & PSR_N_BIT);
+>>> +	new |= (old & PSR_Z_BIT);
+>>> +	new |= (old & PSR_C_BIT);
+>>> +	new |= (old & PSR_V_BIT);
+>>> +
+>>> +	// TODO: TCO (if/when ARMv8.5-MemTag is exposed to guests)
+>>> +
+>>> +	new |= (old & PSR_DIT_BIT);
+>>> +
+>>> +	// PSTATE.UAO is set to zero upon any exception to AArch64
+>>> +	// See ARM DDI 0487E.a, page D5-2579.
+>>> +
+>>> +	// PSTATE.PAN is unchanged unless overridden by SCTLR_ELx.SPAN
+>>> +	// See ARM DDI 0487E.a, page D5-2578.
+>>> +	new |= (old & PSR_PAN_BIT);
+>>> +	if (sctlr & SCTLR_EL1_SPAN)
+>>> +		new |= PSR_PAN_BIT;
+>> On page D13-3264, it is stated that the PAN bit is set unconditionally if
+>> SCTLR_EL1.SPAN is clear, not set.
+> very good spot, and that's a much better reference. 
+>
+> I had mistakenly assumed SPAN took effect when 0b1, since it wasn't
+> called nSPAN, and page D5-2578 doesn't mention the polarity of the bit:
+>
+> | When ARMv8.1-PAN is implemented, the SCTLR_EL1.SPAN and SCTLR_EL2.SPAN
+> | bits are used to control whether the PAN bit is set on an exception to
+> | EL1 or EL2. 
+>
+> I've updated this to be:
+>
+> |	// PSTATE.PAN is unchanged unless SCTLR_ELx.SPAN == 0b0
+> |	// SCTLR_ELx.SPAN is RES1 when ARMv8.1-PAN is not implemented
+> |	// See ARM DDI 0487E.a, page D13-3264.
+> |	new |= (old & PSR_PAN_BIT);
+> |	if (!(sctlr & SCTLR_EL1_SPAN))
+> |		new |= PSR_PAN_BIT;
 
--- 
+Looks good.
+
+>
+> [...]
+>
+>> I've also checked the ARM ARM pages mentioned in the comments, and the
+>> references are correct. The SPSR_EL2 layouts for exceptions taken from AArch64,
+>> respectively AArch32, states are compatible with the way we create the SPSR_EL2
+>> that will be used for eret'ing to the guest, just like the comment says.
+> Thanks for confirming this!
+>  
+>> I have a suggestion. I think that in ARM ARM, shuffling things between sections
+>> happens a lot less often than adding/removing things from one particular
+>> section, so the pages referenced are more likely to change in later versions.
+>> How about referencing the section instead of the exact page? Something like:
+>> "This layout can be seen in the diagram on ARM DDI 0487E.a, section C5.2.18,
+>> when an exception is taken from AArch64 state"?
+> I did something like that initially, but the comments got very verbose,
+> and so I moved to doc + page/section numbers alone.
+>
+> The section numbers and headings also vary between revisions of the ARM
+> ARM, so I'd prefer to leave this as-is for now. I think it's always
+> going to be necessary to look at the referenced version of the ARM ARM
+> (in addition to a subsequent revision when updating things).
+
+Makes sense.
+
 Thanks,
-
-David / dhildenb
-
+Alex
+>
+> Thanks,
+> Mark
 
 _______________________________________________
 linux-arm-kernel mailing list
