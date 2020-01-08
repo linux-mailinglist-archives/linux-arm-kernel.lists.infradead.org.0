@@ -2,76 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D240F134B7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 20:29:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E643134B95
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 20:41:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pO1RlMkmRV3nHJqhSH5eVxsU2idT9gxUrZxaBfnmdkE=; b=ip5IZP9AbsMP8E
-	fj3e6SZHp2xr1jW1HFf8AqM0P2a6IcCA5XspmqfU/UigPQO/FClDz+/79rTLp+1fJQt+SaSs+5ph0
-	9tWKyB6BqYpVYVPEytKO+o2gcTk0/YgGG9U69AYy+wNxukPugCAf98+2KJFq4FN2ZonzSipmSvyE/
-	WZ/AD5KtqFC9zSDRroW4QOc1q4LM84ZXwGeeNvJ/mr4BUvFGyrf10UAjuoa30d7V0c+eJuKX2LAaM
-	TyG6kTlARUqQhA9T1SwqzWu1BklAo05OuN4mivjI9a8nhrHYD1p9fC2Jp9YFA3hlfcFe/yUSWZbSz
-	CRimj2bkL6mx++EYnGFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QdIAmlx4V52AAjvkrS4Reet9NpMEmrb5uSe0u2aulBY=; b=Hdx1NF81doRptl
+	z8Ij0pRMyZiHJ4/speRngxGO5+6rWZFbn3dU1Rf/nBCPfvJJ3MVIZPEj4OjQkIoxLs6qxmlmXRrWG
+	TVh0kJx/N3Me/FOyvZhdi5Ce/2VlcwQEgFq1jOv/188VT1a2CcmSiav+3SdAt5yDfzeFM2LqbvagI
+	Hr1U8I0YMHKFr6PORnpZZlvLznMmyrNGj37FzICDZTsa86WgcmGe1kHxhcmhaVol6BZkX0yxBfiYg
+	OtOvd3qbZgCWnhOBjTgDt7uDduIxb4olC3QuurPd9LRfzs4hoR+XHpzi4AmiJ/DYG4sB6U+jx7r0v
+	br4viBFRuRH9qmKncZdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipH1J-00085H-Mt; Wed, 08 Jan 2020 19:29:33 +0000
-Received: from ale.deltatee.com ([207.54.116.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipH1A-00084v-CK
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 19:29:26 +0000
-Received: from s0106ac1f6bb1ecac.cg.shawcable.net ([70.73.163.230]
- helo=[192.168.11.155])
- by ale.deltatee.com with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.92) (envelope-from <logang@deltatee.com>)
- id 1ipH0r-0006vH-74; Wed, 08 Jan 2020 12:29:06 -0700
-To: Dan Williams <dan.j.williams@intel.com>,
- David Hildenbrand <david@redhat.com>
-References: <CAPcyv4hdpMs5om4_VrYUz98aWDJ9eRhj7WJr312Jwn6LCmAm9Q@mail.gmail.com>
- <5D5ED235-EB67-4072-8CCA-C046B7EC031C@redhat.com>
- <CAPcyv4jJgBm6rhLn2685HN3DnBKB1FO2ONXC1=Aftspu1hiqmA@mail.gmail.com>
-From: Logan Gunthorpe <logang@deltatee.com>
-Message-ID: <1786a855-de7e-f9f9-d9b1-9dbe081e7360@deltatee.com>
-Date: Wed, 8 Jan 2020 12:29:00 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+	id 1ipHD9-0005GW-Rg; Wed, 08 Jan 2020 19:41:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipHCz-0005Fj-M2
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 19:41:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B0131FB;
+ Wed,  8 Jan 2020 11:41:36 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1214F3F534;
+ Wed,  8 Jan 2020 11:41:35 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH v9 0/3] ARMv8.5-RNG support
+Date: Wed,  8 Jan 2020 19:41:30 +0000
+Message-Id: <20200108194133.44110-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <CAPcyv4jJgBm6rhLn2685HN3DnBKB1FO2ONXC1=Aftspu1hiqmA@mail.gmail.com>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 70.73.163.230
-X-SA-Exim-Rcpt-To: ebadger@gigaio.com, peterz@infradead.org, luto@kernel.org,
- dave.hansen@linux.intel.com, bp@alien8.de, mingo@redhat.com,
- tglx@linutronix.de, benh@kernel.crashing.org, will@kernel.org,
- catalin.marinas@arm.com, hch@lst.de, akpm@linux-foundation.org,
- mhocko@kernel.org, linux-mm@kvack.org, platform-driver-x86@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-s390@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-ia64@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- david@redhat.com, dan.j.williams@intel.com
-X-SA-Exim-Mail-From: logang@deltatee.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-8.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
- GREYLIST_ISWHITE autolearn=ham autolearn_force=no version=3.4.2
-Subject: Re: [PATCH v2 2/8] mm/memory_hotplug: Rename mhp_restrictions to
- mhp_modifiers
-X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
-X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_112924_421602_05920EB9 
-X-CRM114-Status: GOOD (  15.06  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200108_114137_763715_D9958B55 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.54.116.67 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,50 +63,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390 <linux-s390@vger.kernel.org>, Eric Badger <ebadger@gigaio.com>,
- linux-ia64@vger.kernel.org, Will Deacon <will@kernel.org>,
- Linux-sh <linux-sh@vger.kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- platform-driver-x86@vger.kernel.org, Linux MM <linux-mm@kvack.org>,
- Ingo Molnar <mingo@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Andy Lutomirski <luto@kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Borislav Petkov <bp@alien8.de>, Andrew Morton <akpm@linux-foundation.org>,
- Michal Hocko <mhocko@kernel.org>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Mark Brown <broonie@kernel.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLTAxLTA4IDEyOjEzIHAubS4sIERhbiBXaWxsaWFtcyB3cm90ZToKPiBPbiBXZWQs
-IEphbiA4LCAyMDIwIGF0IDExOjA4IEFNIERhdmlkIEhpbGRlbmJyYW5kIDxkYXZpZEByZWRoYXQu
-Y29tPiB3cm90ZToKPj4KPj4KPj4KPj4+IEFtIDA4LjAxLjIwMjAgdW0gMjA6MDAgc2NocmllYiBE
-YW4gV2lsbGlhbXMgPGRhbi5qLndpbGxpYW1zQGludGVsLmNvbT46Cj4+Pgo+Pj4g77u/T24gV2Vk
-LCBKYW4gOCwgMjAyMCBhdCA5OjE3IEFNIExvZ2FuIEd1bnRob3JwZSA8bG9nYW5nQGRlbHRhdGVl
-LmNvbT4gd3JvdGU6Cj4+Pj4KPj4+Pgo+Pj4+Cj4+Pj4+IE9uIDIwMjAtMDEtMDggNToyOCBhLm0u
-LCBEYXZpZCBIaWxkZW5icmFuZCB3cm90ZToKPj4+Pj4gT24gMDcuMDEuMjAgMjE6NTksIExvZ2Fu
-IEd1bnRob3JwZSB3cm90ZToKPj4+Pj4+IFRoZSBtaHBfcmVzdHJpY3Rpb25zIHN0cnVjdCByZWFs
-bHkgZG9lc24ndCBzcGVjaWZ5IGFueXRoaW5nIHJlc2VtYmxpbmcKPj4+Pj4+IGEgcmVzdHJpY3Rp
-b24gYW55bW9yZSBzbyByZW5hbWUgaXQgdG8gYmUgbWhwX21vZGlmaWVycy4KPj4+Pj4KPj4+Pj4g
-SSB3b25kZXIgaWYgc29tZXRoaW5nIGxpa2UgIm1ocF9wYXJhbXMiIHdvdWxkIGJlIGV2ZW4gYmV0
-dGVyLiBJdCdzCj4+Pj4+IGVzc2VudGlhbGx5IGp1c3QgYSB3YXkgdG8gYXZvaWQgY2hhbmdpbmcg
-Y2FsbCBjaGFpbnMgcm91Z2gtb3V0IGFsbCBhcmNocwo+Pj4+PiB3aGVuZXZlciB3ZSB3YW50IHRv
-IGFkZCBhIG5ldyBwYXJhbWV0ZXIuCj4+Pj4KPj4+PiBTdXJlLCB0aGF0IGRvZXMgc291bmQgYSBi
-aXQgbmljZXIgdG8gbWUuIEkgY2FuIGNoYW5nZSBpdCBmb3IgdjMuCj4+Pgo+Pj4gT2gsIEkgd2Fz
-IGp1c3QgYWJvdXQgdG8gY2hpbWUgaW4gdG8gc3VwcG9ydCAibW9kaWZpZXJzIiBiZWNhdXNlIEkK
-Pj4+IHdvdWxkIGV4cGVjdCBhbGwgcGFyYW1ldGVycyB0byBmb2xkZWQgaW50byBhICJwYXJhbXMi
-IHN0cnVjdC4gVGhlCj4+PiBtb2RpZmllcnMgc2VlbSB0byBiZSBsaW1pdGVkIHRvIHRoZSBzZXQg
-b2YgaXRlbXMgdGhhdCBhcmUgb25seQo+Pj4gY29uc2lkZXJlZCBpbiBhIG5vbi1kZWZhdWx0IC8g
-ZXhwZXJ0IG1lbW9yeSBob3RwbHVnIHVzZSBjYXNlcy4KCj4+Cj4+IEl04oCYcyBhIHNldCBvZiBl
-eHRlbmRlZCBwYXJhbWV0ZXJzIEnigJhkIHNheS4KCj4gU3VyZSwgd2UgY2FuIGNhbGwgdGhlbSAi
-bWhwX3BhcmFtcyIgYW5kIGp1c3QgY2xhcmlmeSB0aGF0IHRoZXkgYXJlCj4gb3B0aW9uYWwgLyBl
-eHRlbmRlZCBpbiB0aGUga2VybmVsLWRvYy4KCldlbGwgcGdwcm90IGlzbid0IGdvaW5nIHRvIGJl
-IG9wdGlvbmFsLi4uIEJ1dCBJJ2xsIGFkZCBzb21ldGhpbmcgdG8gdGhlCmtlcm5lbF9kb2MuCgpM
-b2dhbgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+This series is based on Richard Henderson's previous v7, it addresses
+review comments from that version by splitting the boot and runtime
+interaction with the core random code so that they are completely
+separate and adds a new change that uses the v8.5-RNG extension to seed
+KASLR when ARCH_RANDOM is enabled.
+
+v9:
+ - Make another static inline helper for early feature checks.
+ - Add init annotations.
+ - Use xor to add RNDR output to seed for KASLR.
+
+Mark Brown (2):
+  arm64: random: Add data to pool from setup_arch()
+  arm64: Use v8.5-RNG entropy for KASLR seed
+
+Richard Henderson (1):
+  arm64: Implement archrandom.h for ARMv8.5-RNG
+
+ Documentation/arm64/cpu-feature-registers.rst |  2 +
+ arch/arm64/Kconfig                            | 12 +++
+ arch/arm64/include/asm/archrandom.h           | 97 +++++++++++++++++++
+ arch/arm64/include/asm/cpucaps.h              |  3 +-
+ arch/arm64/include/asm/sysreg.h               |  4 +
+ arch/arm64/kernel/cpufeature.c                | 13 +++
+ arch/arm64/kernel/kaslr.c                     | 11 +++
+ arch/arm64/kernel/setup.c                     |  2 +
+ 8 files changed, 143 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/include/asm/archrandom.h
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
