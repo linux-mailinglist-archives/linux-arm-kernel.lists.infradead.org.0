@@ -2,56 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A030E134A33
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:08:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1139134A38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:09:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NBqUpysTjQLsj+13isiqIqn0UUPoViC5xm1HbXZtIts=; b=o29V3UJv99WOHK1mT9R0S1Hdg
-	qQrkOdE5bC5CclXqYmpUaCacnqAKWUGSrNmCiz0Bo+piSGxo0G/To3+KBA51h0Nz4d2/TWVeBS4tz
-	FcovBzS3+Bk6njI4O1D5tLBtvwMlNp0UIU7r8VjAZBI5BliWOH+MZkAf2VrL10Z/GtMPt8qFq2Owu
-	ENqi0zLJnmBj8NmtxGXLpW6W8k0zpYpODINfbi2pkHd1hxMDUr3a0AzsIobBsaUxJcz5qBCX31eBa
-	sa2h2bJl/u/3mAo1l4ctCyb3hoUnLDD+9Hwj0tBZZLYsN/RtfL5BOIdtxocHmoM0tDXysZyN83sSQ
-	EyRGk45+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fEKvk9zI+5yJ6hQ51wMKEgyZrqrECzaC4YeVODu34bM=; b=SGgUI8mpE5IuNQ
+	TLfbFXc7XN+hSrtpaKo2hNVHrUruz1a37uA4oFW3NKum37aF4taiPSv5xTt36lnCchqwYTcGWxNdJ
+	0baCW5xquDdGkXC+40vYVumvgS44Lu9jvkfJTzGwqp07zlr43GF8NLzNi7OSIHmnU3aY1zX8sWfW/
+	rIBABcNYl++6XIvlUzkoVVZdi2mcttRB8lq56cxZgI/qDPw6eMiNXw3De3UlzUotYpe0VG061qGhQ
+	yboWz5R7rbtNnijj3o5vzNiAyy4hH837Oux0lRxcrQlghaaTaFMefVKq8tbMxhUhjtSoEQNcTN3bx
+	DB3FyEM4K4czI5u/UcJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFku-0001Ul-3a; Wed, 08 Jan 2020 18:08:32 +0000
-Received: from avon.wwwdotorg.org ([104.237.132.123])
+	id 1ipFlZ-0001mc-JX; Wed, 08 Jan 2020 18:09:13 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFkl-0001UO-VZ
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:08:25 +0000
-Received: from [10.20.204.51] (unknown [216.228.112.24])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by avon.wwwdotorg.org (Postfix) with ESMTPSA id E337E1C0917;
- Wed,  8 Jan 2020 11:08:21 -0700 (MST)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.101.4 at avon.wwwdotorg.org
-Subject: Re: "arm64: alternatives: use tpidr_el2 on VHE hosts" v4.9 backport
- missing edits to proc.S
-From: Stephen Warren <swarren@wwwdotorg.org>
-To: James Morse <james.morse@arm.com>
-References: <a1cb6ca5-4806-0813-3aad-1246e65162a6@wwwdotorg.org>
-Message-ID: <aa09fae4-5b73-22d6-b3e8-91ff8d61d623@wwwdotorg.org>
-Date: Wed, 8 Jan 2020 11:08:20 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ipFlN-0001ls-S8; Wed, 08 Jan 2020 18:09:05 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 Jan 2020 10:09:01 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,410,1571727600"; d="scan'208";a="421521020"
+Received: from tfeiten-mobl1.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
+ ([10.252.37.105])
+ by fmsmga005.fm.intel.com with ESMTP; 08 Jan 2020 10:08:56 -0800
+Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
+ id B962521EDA; Wed,  8 Jan 2020 20:08:54 +0200 (EET)
+Date: Wed, 8 Jan 2020 20:08:54 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
+ yaml bindings
+Message-ID: <20200108180854.GA5438@kekkonen.localdomain>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <20191227200116.2612137-9-helen.koike@collabora.com>
+ <20200107140115.GQ19828@paasikivi.fi.intel.com>
+ <ad9d8ef7-5b52-d27e-ac95-db07dc1d443c@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <a1cb6ca5-4806-0813-3aad-1246e65162a6@wwwdotorg.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <ad9d8ef7-5b52-d27e-ac95-db07dc1d443c@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_100824_055333_77201BC6 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_100901_940591_187F04E9 
+X-CRM114-Status: GOOD (  19.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,44 +72,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, stable <stable@vger.kernel.org>,
- ARM kernel mailing list <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ ezequiel@collabora.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, joacim.zetterling@gmail.com,
+ mchehab@kernel.org, andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/7/20 6:09 PM, Stephen Warren wrote:
-> James,
+On Wed, Jan 08, 2020 at 01:50:38PM -0300, Helen Koike wrote:
+> Hi,
 > 
-> I'm looking at commit 6d99b68933fbcf51f84fcbba49246ce1209ec193 ("arm64: 
-> alternatives: use tpidr_el2 on VHE hosts"). When it was back-ported to 
-> v4.9.x as eea59020a7f2993018ccde317387031c04c62036, the changes to 
-> arch/arm64/mm/proc.S weren't included. I assume this was just an 
-> accident, or was there some specific reason for this? Either way, I do 
-> find that I need those changes for system suspend/resume to work in my 
-> downstream vendor fork of v4.9 if I enable KVM support in .config. I'm 
-> happy to send a patch for v4.9.x to add those changes back if that's the 
-> way to go. v4.14.x and later don't have this issue.
+> Thank you for your review.
+> 
+> On 1/7/20 12:01 PM, Sakari Ailus wrote:
+> > Hi Helen,
+> > 
+> > On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
+> >> Add yaml DT bindings for Rockchip ISP1.
+> >>
+> >> This was tested and verified with:
+> >> mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+> >> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >>
+> >> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> >>
+> >> ---
+> >>
+> >> Changes in v12:
+> >> - The commit replaces the following commit in previous series named
+> >> media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+> >> This new patch adds yaml binding and was verified with
+> >> make dtbs_check and make dt_binding_check
+> >>
+> >> Changes in v11:
+> >> - add clock-names values
+> >>
+> >> Changes in v10:
+> >> - unsquash
+> >>
+> >> Changes in v9:
+> >> - squash
+> >> - move to staging
+> >>
+> >> Changes in v8:
+> >> - fix title division style
+> >>
+> >> Changes in v7:
+> >> - update document with new design and tested example
+> >>
+> >>  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+> >>  1 file changed, 193 insertions(+)
+> >>  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >>
+> >> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >> new file mode 100644
+> >> index 000000000000..4d1b2c67a4cd
+> >> --- /dev/null
+> >> +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >> @@ -0,0 +1,193 @@
+> >> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> >> +%YAML 1.2
+> >> +---
+> >> +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
+> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> >> +
+> >> +title: Rockchip SoC Image Signal Processing unit v1
+> >> +
+> >> +maintainers:
+> >> +  - Helen Koike <helen.koike@collabora.com>
+> >> +
+> >> +description: |
+> >> +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
+> >> +  which contains image processing, scaling, and compression funcitons.
+> > 
+> > "functions"
+> > 
+> >> +
+> >> +properties:
+> >> +  compatible:
+> >> +    const: rockchip,rk3399-cif-isp
+> >> +
+> >> +  reg:
+> >> +    maxItems: 1
+> >> +
+> >> +  interrupts:
+> >> +    maxItems: 1
+> >> +
+> >> +  iommus:
+> >> +    maxItems: 1
+> >> +
+> >> +  power-domains:
+> >> +    maxItems: 1
+> >> +
+> >> +  phys:
+> >> +    maxItems: 1
+> >> +    description: phandle for the PHY port
+> >> +
+> >> +  phy-names:
+> >> +    const: dphy
+> >> +
+> >> +  clocks:
+> >> +    items:
+> >> +      - description: ISP clock
+> >> +      - description: ISP aclk clock
+> >> +      - description: ISP aclk wrapper clock
+> >> +      - description: ISP hclk clock
+> >> +      - description: ISP hclk wrapper clock
+> >> +
+> >> +  clock-names:
+> >> +    items:
+> >> +      - const: clk_isp
+> >> +      - const: aclk_isp
+> >> +      - const: aclk_isp_wrap
+> >> +      - const: hclk_isp
+> >> +      - const: hclk_isp_wrap
+> >> +
+> >> +  # See ./video-interfaces.txt for details
+> >> +  ports:
+> >> +    type: object
+> >> +    additionalProperties: false
+> >> +
+> >> +    properties:
+> >> +      "#address-cells":
+> >> +        const: 1
+> >> +
+> >> +      "#size-cells":
+> >> +        const: 0
+> >> +
+> >> +      port@0:
+> > 
+> > If you only have a single port node, you could drop reg as well as @0 on
+> > the port node.
+> 
+> After the discussions, we have a single port for now, but we might have port@1
+> for tx1rx1 in the future.
 
-Upon further investigation of git history, here's what happened:
+Ack. Please keep it as-is then.
 
-When When 6d99b68933fb was back-ported to upstream v4.9.x as 
-eea59020a7f2, proc.S didn't save/restore tpidr_el1 at all, so that's why 
-the edits to proc.S were dropped as part of the backport.
-
-Separately, in android-4.9, 0ec37136b90e ("UPSTREAM: arm64: move sp_el0 
-and tpidr_el1 into cpu_suspend_ctx") modified proc.S to save/restore 
-tpidir_el1. When those two commits were later merged together in 
-android-4.9, the modifications to proc.S to alternate between 
-tpidr_el1/2 should have been added back in, but weren't.
-
-Since our downstream 4.9 fork is based on android-4.9 after that merge, 
-it picked up this issue and needs to be patched for it. Anyone else 
-using android-4.9 would need this fix too. However, upstream 4.9.x 
-stable doesn't have an issue.
+-- 
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
