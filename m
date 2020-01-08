@@ -2,94 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98D27134EEC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:33:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DED98134F40
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 23:02:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEKTD+xRzZjcl+peZYH62VaHK/g0RBFEc9uxK2y0eug=; b=BrsyLtBPyVroKJ
-	tIawXb8OBfxJQ2ozhI3AjC8T8pWALmWVOteUoCubg4+fGiGKa4O/L10Q/XIf7QVjbxk+f/KnQxxWR
-	Z0hLIsxPMweafEZrWGqtO1FRQ2icRJKblT0dVMOCo78BNrxYW8pe05zTGuTGj/HUQmHBp3shaxXJM
-	D2RDVqZuU74nDRkcYwez2oB/TjPRkYnlJt/c7/iIOnwz81bX7YjizL6ZjzoLhBmDEASdfFWODKEhW
-	TUnvc43pda3woKj3SM6YTXYmAtzsrdSvJRjNU+A/ZrnnUrnVWXFB8GKNZe3AeOQRQqzu6yS9pirq2
-	Nd6+ExurDQy8EVnFVUsA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y/KtulT/Qs1sSMqxfrN3OaceZV/XvuGU9EElQx89dxs=; b=d/V1ao/8bSPpxw
+	IaqfklxR0ZVnEfkv4RTiBVbaqi3eYsrfSDvpxt9rqZiJgmn037qb9Vm+y6urbhv4nyR3rIUcNNNPw
+	QCY2TatY00z/Ho9vparqZzi9cp1PRCFYnyv5uIhtGnUU9LUQAKxRWKp8oSYHTxUae6BOc8WsYEohJ
+	mPbHOl7jBcogQO/FKrpnHqOvQrD93f567YwbEOGZ48SVOPsIC7OPNzB6tVU1colXF+FiAzMb88Ee2
+	HQiRVN+OmVpjbOgahgIRCZUCdQAPEAPHhn637GCpYkKwDpCtE4f+n8QzmEkQudrNcJCWDskpdphQE
+	VdmwgxFF3crGfFeMengw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipIxP-0007TV-Ps; Wed, 08 Jan 2020 21:33:39 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1ipJPZ-0004K6-GL; Wed, 08 Jan 2020 22:02:45 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipIxJ-0007Ss-Ay
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 21:33:34 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 6so2183124pgk.0
+ id 1ipJPS-0004Ip-Ix
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 22:02:40 +0000
+Received: by mail-ot1-f68.google.com with SMTP id b18so5209355otp.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 13:33:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=stHs+ksGbtueG8+co8cekOXB2PEDZ0+hg7ZuBPxiqUI=;
- b=TSaXx/zzCA0GmGa5JIeeHDlKXT81tq4FLektIrmMiPzwOTCp2UcZdmueU7L0mijqZx
- qDjGnmcyKkMq+/IhaoOQqV0Wmx8f60TG+KQNIY/IoUA8dJMdoLx29Qxot0q/79UbMhlJ
- NvsoCZupj5KFVAgFaK8+EVKkXK+Fe3K/bpEgDkIGhTiP2zoqpqbxNKXB50dheIHkdOAe
- +C/E115ZjI5oC4TnYO4qAbP2N6ZjMnyt8HqUlTrPKu1VIfK5r9csvg8oVngO4ePQ7XJO
- 1CbBvAfSaWqZxRHI/3i/WPqyM/UuzmmBYpYJkcDKQhKkY1G3vgg6z8ZxE0GFUNL0BDAa
- qcEA==
+ Wed, 08 Jan 2020 14:02:38 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=stHs+ksGbtueG8+co8cekOXB2PEDZ0+hg7ZuBPxiqUI=;
- b=T/M6gmk2YKwsJ5dKO5Lc3ZaR7iYiMOR2XELZB1OAmt+JaS25y0MYLO+a8rBkg95PHl
- fMRApKWJpFVCAOhfObub3TGvnFjX2/eW6JA7U1FrP3RBDDu78DOojHIMF3uy2r4R/GYc
- 3q2RnfHnjVUeTkRCUUjbgA8/IsZGnKwNZFro0/pvonThqifLSbc1QPJo9K8aItn4qjY+
- tUEbJZVndyJdoH2j2jzPg0rL/s/RUejzaz18zK6HDcRIDUNih6hNBnDJGW7V1ERTnuCl
- 8TsanIVySjtf7ZH/XUUWtxSwWfJS+QJvy61G3Hq5knuuHc0V27LbKOb8toAIOHCxur8A
- Qfmw==
-X-Gm-Message-State: APjAAAVtwYuN3dEwAJKKa/0JcSYFjT4iK3txHImL86ArDZX2rOuTpZ0b
- PwaBnbfCt8AVwK7f9qisKL95xw==
-X-Google-Smtp-Source: APXvYqzWV20C98heeL44DAoNwnQhaTHlx3+wtXrfPzmRT7dQiS8B0sOPLw8S0B3YF3hdHwh19aZhhA==
-X-Received: by 2002:a63:ea4b:: with SMTP id l11mr7286529pgk.357.1578519212332; 
- Wed, 08 Jan 2020 13:33:32 -0800 (PST)
-Received: from [192.168.15.12] (alanje.lnk.telstra.net. [120.151.179.201])
- by smtp.gmail.com with ESMTPSA id v9sm4825692pfi.37.2020.01.08.13.33.28
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=O9YsXaP1lcVI3YB10D/1yLJh0lm8KzUFBjhvxrtn8yA=;
+ b=IcEu9hvrE70URsMekBLL1GQFyNQRqjTwBeGbDZpTxIvI1xKi3G0qL9TZz9lieBpKbI
+ w7b0L1sWeog+weosh1Dj9U52xUEgpSO4R7iVDRmkzx+G4/X1A99Rv4tX6VWYX/O7P9vi
+ pvvKTxr6ryFkap320Y3o6NsMAdaGBONt8CM8qBc15k7x5tiNQdRN4NM2amGw/ObR61O5
+ xm+w9uABYM3rtxiLrDWg2TXuhRm9pOMpeubHSkyTu5i9I1qmVnoBNdhpB8SwSd2xfvGR
+ 08srjGYwjvpKBQd7ZIfHIhdMbHvQvffvdtVwZSr2aly9hg9Im1ueaodudaY4GwiQK7mJ
+ zYVw==
+X-Gm-Message-State: APjAAAU064bIU2SksOnvk36u1A4ezVLLQaNhbl5l9BZqBbIQWsKMqEW/
+ 4KfMnY1bBVe6v8I6BzDhEEO3jH9M
+X-Google-Smtp-Source: APXvYqwGI6RXFQSkfNOoRJ2+DEVgOJ3VPd3aT3mUZ/wlSbEen8dK0UHaCXqmN051lfhwZRhoTWQAbA==
+X-Received: by 2002:a9d:51ca:: with SMTP id d10mr5748545oth.76.1578520957086; 
+ Wed, 08 Jan 2020 14:02:37 -0800 (PST)
+Received: from mail-oi1-f178.google.com (mail-oi1-f178.google.com.
+ [209.85.167.178])
+ by smtp.gmail.com with ESMTPSA id 17sm1570483oty.48.2020.01.08.14.02.36
+ for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 08 Jan 2020 13:33:31 -0800 (PST)
-Subject: Re: [PATCH v9 2/3] arm64: random: Add data to pool from setup_arch()
-To: Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>
-References: <20200108194133.44110-1-broonie@kernel.org>
- <20200108194133.44110-3-broonie@kernel.org>
-From: Richard Henderson <richard.henderson@linaro.org>
-Message-ID: <1639b993-d056-5e32-b841-436d42f60df4@linaro.org>
-Date: Thu, 9 Jan 2020 08:33:25 +1100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ Wed, 08 Jan 2020 14:02:36 -0800 (PST)
+Received: by mail-oi1-f178.google.com with SMTP id c16so4118887oic.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 14:02:36 -0800 (PST)
+X-Received: by 2002:aca:d887:: with SMTP id p129mr615231oig.51.1578520956285; 
+ Wed, 08 Jan 2020 14:02:36 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200108194133.44110-3-broonie@kernel.org>
-Content-Language: en-US
+References: <20200108130926.45808-1-yuehaibing@huawei.com>
+In-Reply-To: <20200108130926.45808-1-yuehaibing@huawei.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Wed, 8 Jan 2020 16:02:25 -0600
+X-Gmail-Original-Message-ID: <CADRPPNQp7KxENbr+nZ8AAZkuBW-=6sjeXd8LU2LJJZqjCvY==g@mail.gmail.com>
+Message-ID: <CADRPPNQp7KxENbr+nZ8AAZkuBW-=6sjeXd8LU2LJJZqjCvY==g@mail.gmail.com>
+Subject: Re: [PATCH -next] soc: fsl: qe: remove set but not used variable
+ 'mm_gc'
+To: YueHaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_133333_537618_DECD9AE7 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_140238_626501_D7E696D7 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,46 +95,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ lkml <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Zhao Qiang <qiang.zhao@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/9/20 6:41 AM, Mark Brown wrote:
-> +/*
-> + * Our ARCH_RANDOM implementation does not function until relatively
-> + * late in the boot when cpufeature has detertmined system
-> + * capabilities so the core code can't use arch_get_random*() to
-> + * initialize, instead we call this function to inject data from
-> + * setup_arch() if the boot CPU supports v8.5-RNG.
-> + */
-> +static inline void __init arm64_add_early_rndr_entropy(void)
-> +{
-> +	unsigned long val;
-> +	int i;
-> +
-> +	if (!__early_cpu_has_rndr())
-> +		return;
-> +
-> +	/* Add multiple values to mirror the generic code. */
-> +	for (i = 0; i < 16; i++)
-> +		if (__arm64_rndr(&val))
-> +			add_device_randomness(&val, sizeof(val));
-> +}
+On Wed, Jan 8, 2020 at 7:12 AM YueHaibing <yuehaibing@huawei.com> wrote:
+>
+> drivers/soc/fsl/qe/gpio.c: In function qe_pin_request:
+> drivers/soc/fsl/qe/gpio.c:163:26: warning: variable mm_gc set but not used [-Wunused-but-set-variable]
+>
+> commit 1e714e54b5ca ("powerpc: qe_lib-gpio: use gpiochip data pointer")
+> left behind this unused variable.
+>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-This is not nearly the same thing as what crng_initialize does.  In particular,
-it's not going to advance crng_init at all.
+Applied for next.  Thanks.
 
-You could use add_hwgenerator_randomness, but you have no way to honor the
-random.trust_cpu command-line parameter that way.
+Btw, I find another patch from Chen Zhou fixing the same problem sent
+earlier.  I will add his signed-off-by to the commit for credit too.
 
-The only thing I can imagine that would satisfy MarkR's constraints is to have
-a new archrandom.h interface, arch_get_random_boot_long().
+Regards,
+Leo
 
-
-r~
+> ---
+>  drivers/soc/fsl/qe/gpio.c | 2 --
+>  1 file changed, 2 deletions(-)
+>
+> diff --git a/drivers/soc/fsl/qe/gpio.c b/drivers/soc/fsl/qe/gpio.c
+> index 12bdfd9..ed75198 100644
+> --- a/drivers/soc/fsl/qe/gpio.c
+> +++ b/drivers/soc/fsl/qe/gpio.c
+> @@ -160,7 +160,6 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
+>  {
+>         struct qe_pin *qe_pin;
+>         struct gpio_chip *gc;
+> -       struct of_mm_gpio_chip *mm_gc;
+>         struct qe_gpio_chip *qe_gc;
+>         int err;
+>         unsigned long flags;
+> @@ -186,7 +185,6 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
+>                 goto err0;
+>         }
+>
+> -       mm_gc = to_of_mm_gpio_chip(gc);
+>         qe_gc = gpiochip_get_data(gc);
+>
+>         spin_lock_irqsave(&qe_gc->lock, flags);
+> --
+> 2.7.4
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
