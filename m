@@ -2,151 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA525134A2E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:07:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A030E134A33
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:08:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+5L68CAoQgtXXUxkwEi5GkZAqdHSTzCFlv6mmRs78kI=; b=mPoX7OA4wNTuCr
-	2RmmEXiURsb25TSHqoQL/AwMekE38YF8paq40MxPA2Pd0VvGHq7jp4P7GplaYDcL3WvqmDHdouohS
-	s06R7qJKRt7ZupdBgpnxpC9obMSecHNynCajBlK1yS+35P/66pX+lWMd3isJM65322nqteDbAP7X4
-	knRr+ArPtWXgKqfAjpG15mQgaWgGMZnlHv/Z5tc5iiD2Z75s05zZT7FjZscf4RqGXas2rgaLCaGjf
-	U08rlWi8xlGNUbf0PHwPd8EgRz0+LipjN1K1UPWNHz4+xQsxDoSrHvEjrGJhgtLti1O0W3gJbbmel
-	eGGPeQ4fxgJaYamEjP/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NBqUpysTjQLsj+13isiqIqn0UUPoViC5xm1HbXZtIts=; b=o29V3UJv99WOHK1mT9R0S1Hdg
+	qQrkOdE5bC5CclXqYmpUaCacnqAKWUGSrNmCiz0Bo+piSGxo0G/To3+KBA51h0Nz4d2/TWVeBS4tz
+	FcovBzS3+Bk6njI4O1D5tLBtvwMlNp0UIU7r8VjAZBI5BliWOH+MZkAf2VrL10Z/GtMPt8qFq2Owu
+	ENqi0zLJnmBj8NmtxGXLpW6W8k0zpYpODINfbi2pkHd1hxMDUr3a0AzsIobBsaUxJcz5qBCX31eBa
+	sa2h2bJl/u/3mAo1l4ctCyb3hoUnLDD+9Hwj0tBZZLYsN/RtfL5BOIdtxocHmoM0tDXysZyN83sSQ
+	EyRGk45+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFjk-0000V9-N4; Wed, 08 Jan 2020 18:07:20 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1ipFku-0001Ul-3a; Wed, 08 Jan 2020 18:08:32 +0000
+Received: from avon.wwwdotorg.org ([104.237.132.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFjd-0000UW-7Y
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:07:14 +0000
-Received: by mail-ed1-x543.google.com with SMTP id f8so3374218edv.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 10:07:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=DXy6P7nvLP7A4nGabp4KGrM6Ox1HgQ0XwO5nRHAGTNw=;
- b=bUCxLSOkRlli8uZi4DWtnuTHBW/CR4uSwOMwJhz6BUHzIhdbxY+L4bOsNoXqeYRxW8
- RusLaNA/lqRDVm6eiOoofxTBHu5VEWHPOyKYS9ScaYwgwlovtpQ3Yiizw61R+Oy/CzHa
- j4zz6cWXFzFHIrP1DGNsnpYaYRxh85L6MAYa+uosTek6CoduoWuQFguSSGrsEjrBt1n7
- S2gGm6G+5iEkioFGLUdn+VXCoxAK5BsXTNzzLBH1a028qpfL54nywYjhHsUqfp7r8D3x
- W97Vanu5RiVizxHdvbKEBu5ZaQZeNNPFI4vN2kwEpvZYdnqjNT6Z/YxrBdLQZggpdigH
- BCAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=DXy6P7nvLP7A4nGabp4KGrM6Ox1HgQ0XwO5nRHAGTNw=;
- b=pZMme++Mx3gZ8O4zEGIOXmWkJxThGvhEqVjJXgIfgrzM5AB/UcitKufn1r2z4C8p1s
- QOjfUSCJvYL4BYWZQOFhD7C7wOaJY/rfbR9LMe96W2x4yDDBR2k1NlRelSIQfKw//x3s
- M57wj2nv+WQNcJ8CWjRB5r5whOFiDA+b0YznWJmwxkS0CQ89XpQgnYwb1ylffnc/Pq/T
- JiekZWj4g7N7zJmrgKjppY+2kom/EZHsfcVQ10k/JukBdCWb9pzumWE3cfBJCadyg67Q
- y6HGulOLwvFsziSbx9jLKqXHwEolGWXydxCZ0s3H4fRZn9G+kj4rtoLkNNRX7gDD1CzS
- fhaQ==
-X-Gm-Message-State: APjAAAUTiUqLDe+A24O9DU3qmCyiJztLbO6TqIUcfkx403zxS+VYZ1Kq
- oTKT/SwHpXPVMOhqbmUUZtA=
-X-Google-Smtp-Source: APXvYqzzy9Bb6gt/9ucEmJcOHTliFjd75FSQWFQcs2nC6nmkNklLjyLBB2xKnAw8L4OgGBLJD0ILtQ==
-X-Received: by 2002:a17:906:3786:: with SMTP id
- n6mr6348181ejc.124.1578506831742; 
- Wed, 08 Jan 2020 10:07:11 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id v2sm57356ejj.44.2020.01.08.10.07.08
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 08 Jan 2020 10:07:10 -0800 (PST)
-Subject: Re: [PATCH v2 0/6] brcmstb_thermal updates for new processes
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org, daniel.lezcano@linaro.org
-References: <20191211203143.2952-1-f.fainelli@gmail.com>
- <277b5f3d-b25b-89b0-9fc1-e520242b3380@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
- xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
- X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
- AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
- ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
- SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
- nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
- qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz80nRmxvcmlhbiBG
- YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+wmYEExECACYCGyMGCwkIBwMCBBUCCAME
- FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
- 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSDOwU0EVxvH8AEQAOqv6agYuT4x3DgFIJNv9i0e
- S443rCudGwmg+CbjXGA4RUe1bNdPHYgbbIaN8PFkXfb4jqg64SyU66FXJJJO+DmPK/t7dRNA
- 3eMB1h0GbAHlLzsAzD0DKk1ARbjIusnc02aRQNsAUfceqH5fAMfs2hgXBa0ZUJ4bLly5zNbr
- r0t/fqZsyI2rGQT9h1D5OYn4oF3KXpSpo+orJD93PEDeseho1EpmMfsVH7PxjVUlNVzmZ+tc
- IDw24CDSXf0xxnaojoicQi7kzKpUrJodfhNXUnX2JAm/d0f9GR7zClpQMezJ2hYAX7BvBajb
- Wbtzwi34s8lWGI121VjtQNt64mSqsK0iQAE6OYk0uuQbmMaxbBTT63+04rTPBO+gRAWZNDmQ
- b2cTLjrOmdaiPGClSlKx1RhatzW7j1gnUbpfUl91Xzrp6/Rr9BgAZydBE/iu57KWsdMaqu84
- JzO9UBGomh9eyBWBkrBt+Fe1qN78kM7JO6i3/QI56NA4SflV+N4PPgI8TjDVaxgrfUTV0gVa
- cr9gDE5VgnSeSiOleChM1jOByZu0JTShOkT6AcSVW0kCz3fUrd4e5sS3J3uJezSvXjYDZ53k
- +0GS/Hy//7PSvDbNVretLkDWL24Sgxu/v8i3JiYIxe+F5Br8QpkwNa1tm7FK4jOd95xvYADl
- BUI1EZMCPI7zABEBAAHCwagEGBECAAkFAlcbx/ACGwICKQkQYVeZFbVjdg7BXSAEGQECAAYF
- Alcbx/AACgkQh9CWnEQHBwSJBw//Z5n6IO19mVzMy/ZLU/vu8flv0Aa0kwk5qvDyvuvfiDTd
- WQzq2PLs+obX0y1ffntluhvP+8yLzg7h5O6/skOfOV26ZYD9FeV3PIgR3QYF26p2Ocwa3B/k
- P6ENkk2pRL2hh6jaA1Bsi0P34iqC2UzzLq+exctXPa07ioknTIJ09BT31lQ36Udg7NIKalnj
- 5UbkRjqApZ+Rp0RAP9jFtq1n/gjvZGyEfuuo/G+EVCaiCt3Vp/cWxDYf2qsX6JxkwmUNswuL
- C3duQ0AOMNYrT6Pn+Vf0kMboZ5UJEzgnSe2/5m8v6TUc9ZbC5I517niyC4+4DY8E2m2V2LS9
- es9uKpA0yNcd4PfEf8bp29/30MEfBWOf80b1yaubrP5y7yLzplcGRZMF3PgBfi0iGo6kM/V2
- 13iD/wQ45QTV0WTXaHVbklOdRDXDHIpT69hFJ6hAKnnM7AhqZ70Qi31UHkma9i/TeLLzYYXz
- zhLHGIYaR04dFT8sSKTwTSqvm8rmDzMpN54/NeDSoSJitDuIE8givW/oGQFb0HGAF70qLgp0
- 2XiUazRyRU4E4LuhNHGsUxoHOc80B3l+u3jM6xqJht2ZyMZndbAG4LyVA2g9hq2JbpX8BlsF
- skzW1kbzIoIVXT5EhelxYEGqLFsZFdDhCy8tjePOWK069lKuuFSssaZ3C4edHtkZ8gCfWWtA
- 8dMsqeOIg9Trx7ZBCDOZGNAAnjYQmSb2eYOAti3PX3Ex7vI8ZhJCzsNNBEjPuBIQEAC/6NPW
- 6EfQ91ZNU7e/oKWK91kOoYGFTjfdOatp3RKANidHUMSTUcN7J2mxww80AQHKjr3Yu2InXwVX
- SotMMR4UrkQX7jqabqXV5G+88bj0Lkr3gi6qmVkUPgnNkIBe0gaoM523ujYKLreal2OQ3GoJ
- PS6hTRoSUM1BhwLCLIWqdX9AdT6FMlDXhCJ1ffA/F3f3nTN5oTvZ0aVF0SvQb7eIhGVFxrlb
- WS0+dpyulr9hGdU4kzoqmZX9T/r8WCwcfXipmmz3Zt8o2pYWPMq9Utby9IEgPwultaP06MHY
- nhda1jfzGB5ZKco/XEaXNvNYADtAD91dRtNGMwRHWMotIGiWwhEJ6vFc9bw1xcR88oYBs+7p
- gbFSpmMGYAPA66wdDKGj9+cLhkd0SXGht9AJyaRA5AWB85yNmqcXXLkzzh2chIpSEawRsw8B
- rQIZXc5QaAcBN2dzGN9UzqQArtWaTTjMrGesYhN+aVpMHNCmJuISQORhX5lkjeg54oplt6Zn
- QyIsOCH3MfG95ha0TgWwyFtdxOdY/UY2zv5wGivZ3WeS0TtQf/BcGre2y85rAohFziWOzTaS
- BKZKDaBFHwnGcJi61Pnjkz82hena8OmsnsBIucsz4N0wE+hVd6AbDYN8ZcFNIDyt7+oGD1+c
- PfqLz2df6qjXzq27BBUboklbGUObNwADBQ//V45Z51Q4fRl/6/+oY5q+FPbRLDPlUF2lV6mb
- hymkpqIzi1Aj/2FUKOyImGjbLAkuBQj3uMqy+BSSXyQLG3sg8pDDe8AJwXDpG2fQTyTzQm6l
- OnaMCzosvALk2EOPJryMkOCI52+hk67cSFA0HjgTbkAv4Mssd52y/5VZR28a+LW+mJIZDurI
- Y14UIe50G99xYxjuD1lNdTa/Yv6qFfEAqNdjEBKNuOEUQOlTLndOsvxOOPa1mRUk8Bqm9BUt
- LHk3GDb8bfDwdos1/h2QPEi+eI+O/bm8YX7qE7uZ13bRWBY+S4+cd+Cyj8ezKYAJo9B+0g4a
- RVhdhc3AtW44lvZo1h2iml9twMLfewKkGV3oG35CcF9mOd7n6vDad3teeNpYd/5qYhkopQrG
- k2oRBqxyvpSLrJepsyaIpfrt5NNaH7yTCtGXcxlGf2jzGdei6H4xQPjDcVq2Ra5GJohnb/ix
- uOc0pWciL80ohtpSspLlWoPiIowiKJu/D/Y0bQdatUOZcGadkywCZc/dg5hcAYNYchc8AwA4
- 2dp6w8SlIsm1yIGafWlNnfvqbRBglSTnxFuKqVggiz2zk+1wa/oP+B96lm7N4/3Aw6uy7lWC
- HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
- TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <eaa320a2-76ce-5115-ead6-70d8e7616762@gmail.com>
-Date: Wed, 8 Jan 2020 10:07:07 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ipFkl-0001UO-VZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:08:25 +0000
+Received: from [10.20.204.51] (unknown [216.228.112.24])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by avon.wwwdotorg.org (Postfix) with ESMTPSA id E337E1C0917;
+ Wed,  8 Jan 2020 11:08:21 -0700 (MST)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.101.4 at avon.wwwdotorg.org
+Subject: Re: "arm64: alternatives: use tpidr_el2 on VHE hosts" v4.9 backport
+ missing edits to proc.S
+From: Stephen Warren <swarren@wwwdotorg.org>
+To: James Morse <james.morse@arm.com>
+References: <a1cb6ca5-4806-0813-3aad-1246e65162a6@wwwdotorg.org>
+Message-ID: <aa09fae4-5b73-22d6-b3e8-91ff8d61d623@wwwdotorg.org>
+Date: Wed, 8 Jan 2020 11:08:20 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <277b5f3d-b25b-89b0-9fc1-e520242b3380@gmail.com>
+In-Reply-To: <a1cb6ca5-4806-0813-3aad-1246e65162a6@wwwdotorg.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_100713_299464_1093BCB6 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_100824_055333_77201BC6 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -158,38 +63,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, stable <stable@vger.kernel.org>,
+ ARM kernel mailing list <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/26/19 7:54 AM, Florian Fainelli wrote:
+On 1/7/20 6:09 PM, Stephen Warren wrote:
+> James,
 > 
-> 
-> On 12/11/2019 12:31 PM, Florian Fainelli wrote:
->> Hi,
->>
->> This patch series contains a bug fix for the existing platforms and then
->> paves the way for adding support for Broadcom STB's latest chips in 16nm
->> processes, and finally updates the driver with pecularities introduced
->> with the 16nm, like the lack of interrupt notification from the HW.
->>
->> Please queue up the first patch for -stable if you want, thanks!
-> 
-> Amit, Daniel, Rui, does this look acceptable to you now? Thank you
+> I'm looking at commit 6d99b68933fbcf51f84fcbba49246ce1209ec193 ("arm64: 
+> alternatives: use tpidr_el2 on VHE hosts"). When it was back-ported to 
+> v4.9.x as eea59020a7f2993018ccde317387031c04c62036, the changes to 
+> arch/arm64/mm/proc.S weren't included. I assume this was just an 
+> accident, or was there some specific reason for this? Either way, I do 
+> find that I need those changes for system suspend/resume to work in my 
+> downstream vendor fork of v4.9 if I enable KVM support in .config. I'm 
+> happy to send a patch for v4.9.x to add those changes back if that's the 
+> way to go. v4.14.x and later don't have this issue.
 
-Ping? Is this good to go now?
--- 
-Florian
+Upon further investigation of git history, here's what happened:
+
+When When 6d99b68933fb was back-ported to upstream v4.9.x as 
+eea59020a7f2, proc.S didn't save/restore tpidr_el1 at all, so that's why 
+the edits to proc.S were dropped as part of the backport.
+
+Separately, in android-4.9, 0ec37136b90e ("UPSTREAM: arm64: move sp_el0 
+and tpidr_el1 into cpu_suspend_ctx") modified proc.S to save/restore 
+tpidir_el1. When those two commits were later merged together in 
+android-4.9, the modifications to proc.S to alternate between 
+tpidr_el1/2 should have been added back in, but weren't.
+
+Since our downstream 4.9 fork is based on android-4.9 after that merge, 
+it picked up this issue and needs to be patched for it. Anyone else 
+using android-4.9 would need this fix too. However, upstream 4.9.x 
+stable doesn't have an issue.
 
 _______________________________________________
 linux-arm-kernel mailing list
