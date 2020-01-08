@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10C52134346
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:03:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73E00134345
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:03:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=//cCddkkRfj/hOQoMr2yIlA0JXeag1peD4OEu9AySHU=; b=qmyZobm8V+Fnop
-	irFJhAeN9RpeGEQVvZ+NuFf/48wLFbmA4f1+2TL+RRJfoHZbt+sG4vYkCIkms9zwLtN71tk67o1E1
-	vF6H9mK+nI3wau55DUiBqBIEn7EoRfNbJbNtxzOP+ZhdoVtsw3b8qjuF7wAuaKcW5n+ZkmkAq81WH
-	eMltCEg7wL6Msd5ivZGj+9/30/hXoU28dLVHyN/0QEV6zv4rjikUTX++hEfNRRVNa6HseTjODMEqA
-	Yi8kWFgzw87H0wAH52j8ocAsApnuS1qOSi0JWVJYzm9VUj4hk6lc/453xj1j1yV7TC0XrIOZu32eZ
-	/G8mybW5YfjQ92JtEGfw==;
+	List-Owner; bh=ELNNFfea+XZ8eMLpiw1cIoPJANmSe2fSGu4VlQQiBKA=; b=HnWDFXA9V5MESo
+	diKv5V+2LzVpllkz/aCQNAuspAE0AtchbSfDZ2wlNz8tYR2iBFUEGgtFnUL4oAifM9PbvTusulvDx
+	ksuG4MJ1gHBjmJWgN8BZvV+jeVDlwi5UyMeI7ok7eRD4Vx4r6jGBCDwrDgL6CHrs4BGyHuFZSTrKj
+	0FS2gbYLmiyz2OurEuWoC2bNgynGQhpmLHzePz7/Zq/p4nJq+SwGg07MFCWwVZDeljU/jCAHUI24X
+	YCNvOUbAz/zEDtauo5fuV83v4dmQ+ktSmbHW4+bquFAp0u+eWI4iWfzTVIF2qs/pofr2XxlRkycat
+	fZFsZeOelFcN7pTV1JNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipAzh-0001n6-Ci; Wed, 08 Jan 2020 13:03:29 +0000
+	id 1ipAzU-0001VO-Kw; Wed, 08 Jan 2020 13:03:16 +0000
 Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipAtm-0003pW-De; Wed, 08 Jan 2020 12:57:27 +0000
+ id 1ipAtq-0003xa-9c; Wed, 08 Jan 2020 12:57:30 +0000
 Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -44,23 +44,23 @@ Authentication-Results: esa4.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: tEBIP2AD+c8PXWrQNHC3xz5eOwxGV2ntnn+eZrs3NjPB1XjDv4+GS8qp0ji3bWdSpDPSWOxesK
- rL204wPb2jZQLFNJIR3cH405BIWbxyvG8c+W9H9P4KTmTQrXfbUICNvZbggYLUI6Q5zbQiSql4
- G0j4AVuz8J7Jt8Gutx39eml+g10/fKnXihl3aTSvxwuNArxDt9NnPUQrvLAEBAi/ZBFeLLLAgh
- j2JL2DJ7lR5YuvABUWbOFL7TzKB3VMDOuQehWbhyv98CyeaCI6oD3TJlLqMFZfH+NhaQ5orUIy
- uKY=
-X-IronPort-AV: E=Sophos;i="5.69,410,1571727600"; d="scan'208";a="60517613"
+IronPort-SDR: ZRqGLnEX/dgguoo6tnKxnFR29JqBFIhsN9n4OlQd7/A/KkVW8Wy6mncp6Q4q53zkqUsMJ55Lhr
+ iYl4UGsYjX53qEKdRMNMLjGwrUlNcJnPZLXKaOdNYnzM8pB0ud/Inv9MvNeRHSSiN1r6E7Kofz
+ FmpRHL91Y588Eq5MJoISwi73aVxeIIYkC/hgeVsc9hI94kT3CHFaEo7m0OrFNxOHOU8Zgw62nM
+ zn4YebEuinbf0vUMB/yV3ppjiCOx0fRzfOGWN0ZMW397/SGO2DGvzoHk7LZzsnn5IWASP0BuoR
+ nXM=
+X-IronPort-AV: E=Sophos;i="5.69,410,1571727600"; d="scan'208";a="60517630"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 08 Jan 2020 05:57:21 -0700
+ 08 Jan 2020 05:57:24 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 8 Jan 2020 05:57:11 -0700
+ 15.1.1713.5; Wed, 8 Jan 2020 05:57:20 -0700
 Received: from m18063-ThinkPad-T460p.microchip.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 8 Jan 2020 05:57:04 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 8 Jan 2020 05:57:12 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
@@ -72,16 +72,16 @@ To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <miquel.raynal@bootlin.com>, <richard@nod.at>, <vigneshr@ti.com>,
  <wg@grandegger.com>, <mkl@pengutronix.de>, <a.zummo@towertech.it>,
  <broonie@kernel.org>
-Subject: [PATCH 09/16] dt-bindings: atmel-smc: add microchip,sam9x60-smc
-Date: Wed, 8 Jan 2020 14:55:16 +0200
-Message-ID: <1578488123-26127-10-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 10/16] dt-bindings: atmel-gpbr: add microchip,sam9x60-gpbr
+Date: Wed, 8 Jan 2020 14:55:17 +0200
+Message-ID: <1578488123-26127-11-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578488123-26127-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1578488123-26127-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_045722_520013_E2AEE24F 
-X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-CacheID: sfid-20200108_045728_684967_CC662E8D 
+X-CRM114-Status: UNSURE (   7.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -114,23 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add microchip,sam9x60-smc to DT bindings documentation.
+Add microchip,sam9x60-gpbr to DT bindings documentation.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- Documentation/devicetree/bindings/mfd/atmel-smc.txt | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/mfd/atmel-gpbr.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/mfd/atmel-smc.txt b/Documentation/devicetree/bindings/mfd/atmel-smc.txt
-index 1103ce2030fb..5696d9fcb5dc 100644
---- a/Documentation/devicetree/bindings/mfd/atmel-smc.txt
-+++ b/Documentation/devicetree/bindings/mfd/atmel-smc.txt
-@@ -9,6 +9,7 @@ Required properties:
- 			"atmel,at91sam9260-smc", "syscon"
- 			"atmel,sama5d3-smc", "syscon"
- 			"atmel,sama5d2-smc", "syscon"
-+			"microchip,sam9x60-smc", "syscon"
- - reg:			Contains offset/length value of the SMC memory
+diff --git a/Documentation/devicetree/bindings/mfd/atmel-gpbr.txt b/Documentation/devicetree/bindings/mfd/atmel-gpbr.txt
+index a28569540683..e8c525569f10 100644
+--- a/Documentation/devicetree/bindings/mfd/atmel-gpbr.txt
++++ b/Documentation/devicetree/bindings/mfd/atmel-gpbr.txt
+@@ -3,7 +3,9 @@
+ The GPBR are a set of battery-backed registers.
+ 
+ Required properties:
+-- compatible:		"atmel,at91sam9260-gpbr", "syscon"
++- compatible:		Should be one of the following:
++			"atmel,at91sam9260-gpbr", "syscon"
++			"microchip,sam9x60-gpbr", "syscon"
+ - reg:			contains offset/length value of the GPBR memory
  			region.
  
 -- 
