@@ -2,86 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF5EF13481A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 17:38:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9867413483D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 17:43:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vnubtcjq5cAA8QWtlvVEBGaXa+hqeE2eBlU8Gt+c+Q4=; b=bUsDtYb4083McC
-	XdWXtOWTCD/jIKMZ6nbg6ARItiVjKm1G9Rxw9d8eH+zlwxzH9C0pPHJWCXLcktmpew1FtWectqN5O
-	+btSg6jWAjmf9DXo32n3x/JhvgV3QuxYYCWcfNUOYwRqUuAJWRX8TizffEmjlGJyf+xko0VSPqSpn
-	dd8+fHFGiZBxQIi209fpbcjM0qw+TSBppJCSw7c27QCXOO3b2mkSV1dQL7uHM5Jg8NUml/30+TgyN
-	/2AuAAkTjtsx4k1kfSSQDpwLZ5i9XkivdEaXnb73sZdXKgtD40BofbBKydMlkd9OIR5bSXlayY0lO
-	s8G300bt+fRvCTMiIlMw==;
+	List-Owner; bh=zHTbsIdaVJJa+ys1jhvH5L/yxeWbZEuBZR5ZRNzWfXk=; b=noRwZ7693fUDQd
+	oeX7DhllmRaNT/2dChTiUg1VKJZi1GbDvHAfos8OuHqzxM/6DUGl0JExW8Mg9x5aQbo64msgB5VkR
+	pGYX/y+84d1lbMTDcvlnxGxVfreZEplW/jcu2CI61OFd5z3imoB1W3CER1POOKpMO/mPIt7jJlwpO
+	7RMNilHoi+1M2LDoWXq/7rhQe7vN2mjRJ2Q94ihsMCpIRzcwpd005go5tpuV6yk70RcOsKBMqcpLr
+	kPLRe1IfsuOS45PRBqVk9Wvc6F7L/0ADJTkgmRYMU0EHJPlxuoI6zWesvGOQrAiK+wszzgDUnIBmz
+	fNO0LEVY6iBZFn0T2h9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipEM1-00083Q-QO; Wed, 08 Jan 2020 16:38:45 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1ipEQ9-0001TT-Sx; Wed, 08 Jan 2020 16:43:01 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipELv-00082z-12
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 16:38:40 +0000
-Received: by mail-qt1-x843.google.com with SMTP id e12so3309260qto.2
+ id 1ipEQ3-0001RT-Af
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 16:42:56 +0000
+Received: by mail-ot1-f67.google.com with SMTP id a15so4217470otf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 08:38:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jdl/Zsr0GR9wBuZ25Y72IklTzgLcGojCcmTZU2xpvSg=;
- b=G4tD0yfYdDnfrLq6TvTy2oWfqDssiATWAjnbai2Baiw/Quy5iNNW4Wb0jpKPkKCHp8
- bKgaCZWpKQBK2EXito5CHHhUVMbGGsyhUVwAy+Z5WmDXcpoSFgU5RUCsVL8HZdYdIskQ
- enww8n54r/Cr3zRuLMNxyjg/Voc1UBfl+nW3iBbuVO8+19RRH2sB0mVrROSidCk4stAB
- rNskIBBoPNw+JT65vN2St1iVJY40mJIcnMW8lv8AGwBQ+zGElhw5xqHiNyjwVDIJHQ2n
- et9YXENki5a9zFTTDZHtvwfUlZZsN2J29OE3p84aIlneYKpaFp2h0S6Kk+RRkrYwGaBa
- d0Pw==
+ Wed, 08 Jan 2020 08:42:54 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jdl/Zsr0GR9wBuZ25Y72IklTzgLcGojCcmTZU2xpvSg=;
- b=b0JJAgYUhh5H52n+9BuDT05yKW99vCXs3B4+b294IZ1iFL/gCbRIEJb1ukxZLCvXsa
- N5fTQ3AOH5SG7Ww00ssjCTnqMmUtJmWZq8+uqNPMdVxvZ/NWNkU1Dk8qqCNFKlnETYXL
- EjXqDJr4dULZLG+FXKeFErDvRwEE1XXt/4S6knflacUNs01NmEI+PTos6ViqC2VmI4NS
- bphSAkJhMZWP+Ia+noQiXS1aXO0iXIFrjXFsVBsclUaEcNA/WHp2TC6lIvcdjinNhi4b
- ieBaNOSf5KuFNCSk1YE0TWJChd7RdvL2p3YGBhyPO8E1sby7rpo8ni+G85pAjOICFUDf
- BNew==
-X-Gm-Message-State: APjAAAXzNBvD+n64lgYBT7rZaE98F8eIRqjlkVQMUT3M7uHh/yR8nCFJ
- QQRjhkP9wO1/SAWrJ/saXCyPqzZitC6o8yRZhOg=
-X-Google-Smtp-Source: APXvYqyf8ZmS/Vrjl6yL8Ikem4yqs1zjEZKOgvwH7KEFK407Kx1Ytf+6kPZx0dXkcS9x/BJ6H4WWaHdPjSKOMkHL7y8=
-X-Received: by 2002:ac8:5241:: with SMTP id y1mr4256795qtn.373.1578501517734; 
- Wed, 08 Jan 2020 08:38:37 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=UKDNwGykO2dbNkNckCxJfHqBIvtnDZYUjcmwNmsSzE8=;
+ b=sXbPHIJnMBYzPjiB7rnRJeIcprky0KS9aIAj0wenNlAA9dYkD39+RoCyjtjsRqrFUY
+ m5FAHzFVOKRdcOj01dKqaEwLtcFv62lyPODerq8787ebKT3dk/3nl8j9TWdd/44QAddd
+ qLBSze8qK61RxKqBxN7sO2dXoUkJTh/++D03TOyE/XYWsnCnmUmYkoQhC3ZvAGNKXgVI
+ sSWmEfdIhYnkUdPGxvTT9UuRCJalQqe3ZBJ7K7Ei76CcXNc/hZOmkOOcg3FH3t8S3CVh
+ xwqckwybykjzXW74BlNEj8PDbdFWepIm6f/4/wM8qMYGVqfMIPqFEaeL2DVSSZvjWC2o
+ 3adQ==
+X-Gm-Message-State: APjAAAUQNy8owfqGjG14H2HfBC5/Y8Xl2YgtYXBL05PmxTHm3GnxxahL
+ 2mVA9kUquS2DAsjfaAhtmLBhQZU=
+X-Google-Smtp-Source: APXvYqxVAssxRZyj0WdOASHYZcHAVh9kGG5KKx2pTgYAo3Bxr7HDGx9g36lFLw84CvWpfVYT0I2BrA==
+X-Received: by 2002:a9d:d0b:: with SMTP id 11mr4972334oti.287.1578501773758;
+ Wed, 08 Jan 2020 08:42:53 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id v21sm1255574otr.72.2020.01.08.08.42.51
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Jan 2020 08:42:52 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2208fa
+ by rob-hp-laptop (DragonFly Mail Agent v0.11);
+ Wed, 08 Jan 2020 10:42:50 -0600
+Date: Wed, 8 Jan 2020 10:42:50 -0600
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 3/3] dt-bindings: arm: imx: Add the i.MX8MP EVK board
+Message-ID: <20200108164250.GA17075@bogus>
+References: <1577426385-31273-1-git-send-email-Anson.Huang@nxp.com>
+ <1577426385-31273-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-References: <20200108042018.571251-1-anarsoul@gmail.com>
- <20200108160402.u44odtfsuhiuytfl@gilmour.lan>
-In-Reply-To: <20200108160402.u44odtfsuhiuytfl@gilmour.lan>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Wed, 8 Jan 2020 08:38:10 -0800
-Message-ID: <CA+E=qVeMvJ96OZ62E_B3byr4dGgtWd3NVD6qqB40gS7ExZy5uw@mail.gmail.com>
-Subject: Re: [PATCH v2 0/4] arm64: allwinner: a64: Enable DVFS on A64
-To: Maxime Ripard <mripard@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1577426385-31273-3-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_083839_092687_923C85D7 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_084255_367252_27B422CC 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,44 +98,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, marcel.ziswiler@toradex.com, angus@akkea.ca,
+ gary.bisson@boundarydevices.com, manivannan.sadhasivam@linaro.org,
+ leonard.crestez@nxp.com, festevam@gmail.com, abel.vesa@nxp.com,
+ andrew.smirnov@gmail.com, Linux-imx@nxp.com, devicetree@vger.kernel.org,
+ s.hauer@pengutronix.de, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
+ cosmin.stoica@nxp.com, linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+ l.stach@pengutronix.de, shawnguo@kernel.org, jun.li@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 8, 2020 at 8:04 AM Maxime Ripard <mripard@kernel.org> wrote:
->
-> Hi,
->
-> On Tue, Jan 07, 2020 at 08:20:14PM -0800, Vasily Khoruzhick wrote:
-> > This series introduces new DTSI with operating points for A64,
-> > adds cooling maps and thermal tripping points and enables DVFS
-> > on all the supported A64-based boards
->
-> Thanks for that new series.
->
-> I'm not sure I've seen the answer, but how did you test that the OPPs
-> were stable?
+On Fri, 27 Dec 2019 13:59:45 +0800, Anson Huang wrote:
+> Add board binding for i.MX8MP EVK board.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
 
-I've been using them for close to 2 years and haven't seen any issues so far.
-
-> So far, the only method that proved to be reliable was to run
-> https://github.com/ssvb/cpuburn-arm/blob/master/cpufreq-ljt-stress-test
->
-> Could you paste the result (one board should be enough) ?
-
-Here is a run on Pine64-LTS:
-https://gist.github.com/anarsoul/23c361b42bcdf4f2e23624f74c4c94bc
-
-Regards,
-Vasily
-
-> Thanks
-> Maxime
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
