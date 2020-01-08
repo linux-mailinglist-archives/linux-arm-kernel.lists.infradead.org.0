@@ -2,87 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 945D0133C80
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:56:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66446133C8C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GH5260ezVdoVygEoEZ3Fi9pyOYf1zH/8xW7EvMPrHZc=; b=oVnbxq4Ht9YVWp
-	dwTFc9LRKKByhPg1A01CCvwnQgCvL6NoVVSSRJCvgZ/m9i6NVN+rVt5nJYArli+y/pTZrMABYORKa
-	UkAbotlW+7uwDHebWzGkbiIfZ1/tFAnT2Qo5uOsjo/HZlsi/EgycOwcYgnc25T1JMRU1EayH2r71s
-	775uSj5p9SCPExqzZBkLeWn6zNGTuUuYoLI301xbAHrwBW5kdoiGV17fxCogqFv4sx18+N4pP3yBo
-	kjPl7MR66o5gRdevZ1QesZiACQQF7l4DO+hoeSRvz5GRzgSKC3On6fOQKPBOd6ITTzucscuSeLXML
-	83Vfz71V6nOFJvOrVcKA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iZY7reA+Rmy+wW60zkQeo4ZvEd1eFdQsgkSusmLkg2I=; b=XmPC0v8Sbrpq5d
+	7izCoEQYF4DSB9qs9RV/HHISZPgSEoWi7rX1p6stI6dOWrPuJhNFugqFYp1W9/Q2cjkaEaTlDg0/o
+	pIPzqnutuz+QK+jkjhpeoxexF85SH/jyCdZ6VaOOnm9uNXOja44F3u5+Qvlre91vcHDA+Kj4rV86y
+	Bzj/juXrtiRjYh7TtjW3dl1oKYjWOKFvXxE2fkqDfkC8PxslXQiyTI63tREDc+47TVQe/0RL6uU9c
+	FpFb1xGs2Q1dm3SJJiZ8P3mJ6RBICg1EzAdHoSbhBQ/mBAJ/xAb6vvP/r6nYDECJPLR2Iv0cIq9+F
+	1NYpll8XelWw9ALtoYYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip6Cj-0000QN-Fa; Wed, 08 Jan 2020 07:56:37 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1ip6Fh-0001Mc-W0; Wed, 08 Jan 2020 07:59:41 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip6Cb-0000PK-K1
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:56:31 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0087uIfs049960;
- Wed, 8 Jan 2020 01:56:19 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578470179;
- bh=KhpU0u2bEtnbSBp/blmXJmSlFWzazsyzwOWjBb3p9KM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=pSo54nAUYeoghyNG2Vp0JJ4+ERQGPp7VcdfLFMh/PGgBvfSTc/km0YN787idyLnrU
- +BElqlIjyPCsML+/9157zyIDMEptsY4k5CRUOKZSjjGT5YrRTHpcxm5PoVRlncAG6R
- kR2N8SO9eFWv50Y3nayWz1aT1g5eyAjiWZXFxMa4=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0087uIvj092817
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 8 Jan 2020 01:56:18 -0600
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 8 Jan
- 2020 01:56:18 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 8 Jan 2020 01:56:18 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0087uG3g067723;
- Wed, 8 Jan 2020 01:56:16 -0600
-Subject: Re: [PATCH v2] dt-bindings: usb: Convert Allwinner A80 USB PHY
- controller to a schema
-To: Rob Herring <robh@kernel.org>, Maxime Ripard <maxime@cerno.tech>
-References: <20200103152824.47383-1-maxime@cerno.tech>
- <20200104221321.GA11672@bogus> <20200106092724.pi2kbui7zayrhhzi@gilmour.lan>
- <20200106215129.GB11672@bogus>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <b0777c04-c21c-3737-7957-4dda37b85838@ti.com>
-Date: Wed, 8 Jan 2020 13:28:22 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1ip6Fa-0001LP-PM
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:59:36 +0000
+Received: by mail-ed1-f68.google.com with SMTP id f8so1825923edv.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Jan 2020 23:59:32 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=cMtj+4fElMhagL+EzReN9239oHGv4iNUyK/a8PqjjnQ=;
+ b=Md+uAx/QYlMoM3LtWF1mk4cTlLep8uja7spOiyif+9lZSgDibYzoyzPnECz2HmDVph
+ JttHsGh+xf69m3wc1vZTAHD0IJQ3dE5OPhT+9ZZRZAy2yo3uPeZmKHzVE6BIzr0jxTWM
+ e7zsQ9qaseq7qgpFYywwrzUEPlIyMdrqGzCI/IcbSNoSoQKg5Pc0H134UkCvu5R2VUop
+ hWkusPuTqCNrvYaKaEJ1epLUcJc6IwdUSrlMB98otzy97LDCwDuLTdNL1pn/NTurmnex
+ EIoJGVRscMW8d7IXEk6xrh0ZJJ+fiMA89ZQuEM2Aec/8BRuQ3cSpv4Fht7hS+r4tlksx
+ 7Duw==
+X-Gm-Message-State: APjAAAWEfx2ISo3Pc8fVooZyYskttej6B/PIH4PKs/wgEb3iZ2cIZN+w
+ nvN8ThuBswZWd7dMImAr7Jc=
+X-Google-Smtp-Source: APXvYqx1oeIDihha1MbvAq15cZlBUGgIhGRDf0dk1K6ypd+mZhyiUjjB1ZsQjTlzbZgvEOTKZctg/A==
+X-Received: by 2002:a17:906:1d50:: with SMTP id
+ o16mr3510203ejh.111.1578470371251; 
+ Tue, 07 Jan 2020 23:59:31 -0800 (PST)
+Received: from pi3 ([194.230.155.149])
+ by smtp.googlemail.com with ESMTPSA id bm18sm58278edb.97.2020.01.07.23.59.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Jan 2020 23:59:30 -0800 (PST)
+Date: Wed, 8 Jan 2020 08:59:28 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Frank Lee <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: exynos: tiny4412: add proper panel node
+Message-ID: <20200108075928.GA9911@pi3>
+References: <20200106191003.21584-1-tiny.windzz@gmail.com>
+ <20200106191003.21584-2-tiny.windzz@gmail.com>
+ <20200107090449.GA32007@pi3>
+ <CAEExFWvJx82h1c1QBrQ+DpT4kgEZ0o3q_O7JLbk-1L-iuMGPEw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200106215129.GB11672@bogus>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <CAEExFWvJx82h1c1QBrQ+DpT4kgEZ0o3q_O7JLbk-1L-iuMGPEw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_235629_738595_7113588C 
-X-CRM114-Status: GOOD (  20.43  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200107_235935_335310_42ED4E8A 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,167 +90,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 07/01/20 3:21 AM, Rob Herring wrote:
-> On Mon, Jan 06, 2020 at 10:27:24AM +0100, Maxime Ripard wrote:
->> Hi Rob,
->>
->> On Sat, Jan 04, 2020 at 03:13:21PM -0700, Rob Herring wrote:
->>> On Fri, Jan 03, 2020 at 04:28:24PM +0100, Maxime Ripard wrote:
->>>> The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
->>>> with a matching Device Tree binding.
->>>>
->>>> Now that we have the DT validation in place, let's convert the device tree
->>>> bindings for that controller over to a YAML schemas.
->>>>
->>>> Reviewed-by: Chen-Yu Tsai <wens@csie.org>
->>>> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
->>>>
->>>> ---
->>>>
->>>> Changes from v1:
->>>>   - Added r-b tag from chen-yu
->>>> ---
->>>>  .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
->>>>  .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
->>>>  2 files changed, 135 insertions(+), 37 deletions(-)
->>>>  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
->>>>  delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
->>>> new file mode 100644
->>>> index 000000000000..ded7d6f0a119
->>>> --- /dev/null
->>>> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
->>>> @@ -0,0 +1,135 @@
->>>> +# SPDX-License-Identifier: GPL-2.0
->>>> +%YAML 1.2
->>>> +---
->>>> +$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
->>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>>> +
->>>> +title: Allwinner A80 USB PHY Device Tree Bindings
->>>> +
->>>> +maintainers:
->>>> +  - Chen-Yu Tsai <wens@csie.org>
->>>> +  - Maxime Ripard <mripard@kernel.org>
->>>> +
->>>> +properties:
->>>> +  "#phy-cells":
->>>> +    const: 0
->>>> +
->>>> +  compatible:
->>>> +    const: allwinner,sun9i-a80-usb-phy
->>>> +
->>>> +  reg:
->>>> +    maxItems: 1
->>>> +
->>>> +  clocks:
->>>> +    anyOf:
->>>> +      - description: Main PHY Clock
->>>> +
->>>> +      - items:
->>>> +          - description: Main PHY clock
->>>> +          - description: HSIC 12MHz clock
->>>> +          - description: HSIC 480MHz clock
->>>
->>> Rather than anyOf, just 'minItems: 1' would work here. Though I guess
->>> this disallows 2 items.
->>
->> Yeah, 2 items is not allowed so I wanted to prevent that.
->>
->>>> +
->>>> +  clock-names:
->>>> +    oneOf:
->>>> +      - const: phy
->>>> +
->>>> +      - items:
->>>> +          - const: phy
->>>> +          - const: hsic_12M
->>>> +          - const: hsic_480M
->>>> +
->>>> +  resets:
->>>> +    anyOf:
->>>> +      - description: Normal USB PHY reset
->>>> +
->>>> +      - items:
->>>> +          - description: Normal USB PHY reset
->>>> +          - description: HSIC Reset
->>>> +
->>>> +  reset-names:
->>>> +    oneOf:
->>>> +      - const: phy
->>>> +
->>>> +      - items:
->>>> +          - const: phy
->>>> +          - const: hsic
->>>> +
->>>> +  phy_type:
->>>> +    const: hsic
->>>> +    description:
->>>> +      When absent, the PHY type will be assumed to be normal USB.
->>>> +
->>>> +  phy-supply:
->>>> +    description:
->>>> +      Regulator that powers VBUS
->>>> +
->>>> +required:
->>>> +  - "#phy-cells"
->>>> +  - compatible
->>>> +  - reg
->>>> +  - clocks
->>>> +  - clock-names
->>>> +  - resets
->>>> +  - reset-names
->>>> +
->>>> +additionalProperties: false
->>>> +
->>>> +if:
->>>> +  properties:
->>>> +    phy_type:
->>>> +      const: hsic
->>>> +
->>>> +  required:
->>>> +    - phy_type
->>>> +
->>>> +then:
->>>> +  properties:
->>>> +    clocks:
->>>> +      maxItems: 3
->>>> +
->>>> +    clock-names:
->>>> +      maxItems: 3
->>>> +
->>>> +    resets:
->>>> +      maxItems: 2
->>>> +
->>>> +    reset-names:
->>>> +      maxItems: 2
->>>
->>> Do you intend that only a single item is allowed when not HSIC? If so,
->>> that's not what is happening.
->>
->> That's intentional indeed, the former binding was making the hsic
->> clocks and resets mandatory when the phy was in HSIC mode, but only
->> recommending listing them otherwise. Maybe we can change that in the
->> future, but that seems out of scope for a conversion.
+On Wed, Jan 08, 2020 at 03:07:25AM +0800, Frank Lee wrote:
+> On Tue, Jan 7, 2020 at 5:04 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> >
+> > On Mon, Jan 06, 2020 at 07:10:03PM +0000, Yangtao Li wrote:
+> > > This patch add at070tn92 panel for tiny4412 board.
+> >
+> > Please fix description as in patch 1.
+> >
+> > >
+> > > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> > > ---
+> > >  arch/arm/boot/dts/exynos4412-tiny4412.dts | 16 ++++++++++++++++
+> > >  1 file changed, 16 insertions(+)
+> > >
+> > > diff --git a/arch/arm/boot/dts/exynos4412-tiny4412.dts b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > > index 2b62cb27420c..57f9d09233ad 100644
+> > > --- a/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > > +++ b/arch/arm/boot/dts/exynos4412-tiny4412.dts
+> > > @@ -66,6 +66,16 @@
+> > >                       clock-frequency = <24000000>;
+> > >               };
+> > >       };
+> > > +
+> > > +     panel {
+> > > +             compatible = "innolux,at070tn92";
+> > > +
+> > > +             port {
+> > > +                     panel_input: endpoint {
+> > > +                             remote-endpoint = <&lcdc_output>;
+> > > +                     };
+> > > +             };
+> > > +     };
+> > >  };
+> > >
+> > >  &fimd {
+> > > @@ -74,6 +84,12 @@
+> > >       #address-cells = <1>;
+> > >       #size-cells = <0>;
+> > >       status = "okay";
+> >
+> > One empty space here.
+> >
+> > > +     port@3 {
+> > > +             reg = <3>;
+> >
+> > Why starting from "3"? Why this is port@3, not just "port"?
 > 
-> Okay. In that case,
+> From samsung-fimd.txt:
+> ---
+> The device node can contain 'port' child nodes according to the bindings defined
+> in [2]. The following are properties specific to those nodes:
+> - reg: (required) port index, can be:
+>                 0 - for CAMIF0 input,
+>                 1 - for CAMIF1 input,
+>                 2 - for CAMIF2 input,
+>                 3 - for parallel output,
+>                 4 - for write-back interface
+> ---
 > 
-> Reviewed-by: Rob Herring <robh@kernel.org>
+> I guess it is influenced here.
+> https://elixir.bootlin.com/linux/v5.5-rc5/source/drivers/gpu/drm/exynos/exynos_drm_dpi.c#L170
+> Without it, lcd is completely black.
 
-merged, thanks!
+Thanks for explanation.
 
--Kishon
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
