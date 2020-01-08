@@ -2,56 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C28E134579
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 15:57:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23AA11345E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 16:15:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NmXgtE5nCG+SD+Srf/13kvYSPJFld6U7KjbjuFrNjl0=; b=Epr9fomMHcX1Fq
-	MbV2QjmqmAi2xr4DWu1Bk6Nl6NRxEfF5CA5xwmJUhTI4bGfdxYAj5/erzV4fvn8zvbPv0LSgk5FYY
-	ne8mp2xAxXVy3bicYLMe7bQVCPbFrOFIm3EMdR/Yu5te9dgwhKXsQSnR3h2HlaqhjPl2WzAhHuXV6
-	6Qy7I2HCbu2F8cc6gzpAzcQTDtRkszk3b+dsSPuOx+tZDNt0bEG/82wOVVYfPg8p/G9cqB+QW5XAZ
-	MALNT4ama6vIqLYOap7dkI2ddQOwCdWqR5HfyFH8KyAIQ4zcvoosjGzkcSsaBlrb4wH0kD1CtM0Ok
-	GmyEgzgeFTTIdBtRg8kg==;
+	List-Owner; bh=+5c9EZo6TbNXoVqC3SbOqrxrZ2iNQJuP2Jppp5mQ3sE=; b=UOy8akO5oRRhkF
+	z8LhxXeXf9dDnmBsuiTvfYaxjzwSJDWaBkUqLxHPrsbbPcHaTpOoUkYaAOi2C3qH/2vJyrYrv4GBl
+	q3Db6py53IL0tarylMUbJGpoXIAR0JoqRXZ5qJspioDJyXPIDF9xwQR3sA0x5zbfU41CdqGjJmobQ
+	D0cRVbRfutGZDCTZjFfN1FHWCbK5P8rkZEKYJlrWtBYRM/fupbbJtQPMu3Rh6CLFsLuXnyrxLfTEo
+	SYi2R60VbUV73m4j5oCPWxWrL3vJMIdLkjXr+SO6x1w/R5hEd0h1Ez6YMeTfSQaHQZip55sng7pWd
+	K8Pj5bIUMr2c8mosZkWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipCm1-0004cC-LV; Wed, 08 Jan 2020 14:57:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipCls-0004ab-FR
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 14:57:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08D7531B;
- Wed,  8 Jan 2020 06:57:18 -0800 (PST)
-Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
- [10.1.194.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1BE13F703;
- Wed,  8 Jan 2020 06:57:16 -0800 (PST)
-From: Steven Price <steven.price@arm.com>
-To: Andrew Morton <akpm@linux-foundation.org>,
-	x86@kernel.org
-Subject: [PATCH] x86: mm: Avoid allocating struct mm_struct on the stack
-Date: Wed,  8 Jan 2020 14:57:10 +0000
-Message-Id: <20200108145710.34314-1-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200108145248.GA2584@arm.com>
-References: <20200108145248.GA2584@arm.com>
+	id 1ipD3S-0003px-Sx; Wed, 08 Jan 2020 15:15:30 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipD3J-0003oK-Ve
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 15:15:23 +0000
+Received: by mail-oi1-f196.google.com with SMTP id 13so1016414oij.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 07:15:19 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9MKeoU4FP/L/hIFVTYWRTXWHyDcNCL5GfbSqC8Dc1Ew=;
+ b=aIjhg+OLIUtEE42v78DKfHkCxK7o6DJZ8oWLdLJxRMcWCjXMvsEbSgL4lEcZz+U4Lb
+ hIBHM5CI/JBAfG2yd6eCJ1sg6Uslcaqdv6m+BuDJFlruPGyi2/F3JTCwam2O/KO8aQTj
+ NbGcoOtklzrcefLZ7L6MAvq4mX87Jvrsr/C54kH75onIbKit6H9+26m92gke3RhOlr80
+ Cem8TiXGY8RCKwfj1K5FKvyZxo6DYuaOTJFfO4pEXfTFMCVv8t7K/9wS7dQTVf+EXCTY
+ 4Brw/QijaXUezVYoA3OHvdRgxv/6HXnomWB1ICZc6ELTKSSoZ4cGIKAGT+2Fz9+p7xRb
+ QIBQ==
+X-Gm-Message-State: APjAAAVeknYTm1pWzQy03THhtdhfNpLyqqdVuE+ebiF/7fdgn4MiSxzp
+ uNK65d4W6kJ41hq//jQE8QTNpI0=
+X-Google-Smtp-Source: APXvYqxCZ9G5mMVb4A1WDRiKJC945GiUnS4s9tNuWrx/UPx68v3mlpbJr341eDB/TtOFOvyBXz+91g==
+X-Received: by 2002:aca:f242:: with SMTP id q63mr3544185oih.72.1578496518038; 
+ Wed, 08 Jan 2020 07:15:18 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id h1sm1177520otm.34.2020.01.08.07.15.15
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Jan 2020 07:15:16 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 220333
+ by rob-hp-laptop (DragonFly Mail Agent v0.11);
+ Wed, 08 Jan 2020 09:15:15 -0600
+Date: Wed, 8 Jan 2020 09:15:15 -0600
+From: Rob Herring <robh@kernel.org>
+To: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: mediatek: Add binding for MT6779 SMI
+Message-ID: <20200108151515.GA18724@bogus>
+References: <1578465691-30692-1-git-send-email-ming-fan.chen@mediatek.com>
+ <1578465691-30692-3-git-send-email-ming-fan.chen@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1578465691-30692-3-git-send-email-ming-fan.chen@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_065720_612329_3EF54FF3 
-X-CRM114-Status: GOOD (  18.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_071522_013859_DDF7C7DE 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,247 +97,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Price <steven.price@arm.com>, linux-mm@kvack.org,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Joerg Roedel <jroedel@suse.de>,
+ wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Yong Wu <yong.wu@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-struct mm_struct is quite large (~1664 bytes) and so allocating on the
-stack may cause problems as the kernel stack size is small.
+On Wed, Jan 08, 2020 at 02:41:29PM +0800, Ming-Fan Chen wrote:
+> This patch add description for MT6779 SMI.
+> There are GALS in smi-larb but without clock of GALS alone.
+> 
+> changelog since v2:
+> Add GALS for mt6779 in smi-common.txt
+> 
+> Signed-off-by: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+> ---
+>  .../memory-controllers/mediatek,smi-common.txt     |    5 +++--
+>  .../memory-controllers/mediatek,smi-larb.txt       |    3 ++-
+>  2 files changed, 5 insertions(+), 3 deletions(-)
 
-Since ptdump_walk_pgd_level_core() was only allocating the structure so
-that it could modify the pgd argument we can instead introduce a pgd
-override in struct mm_walk and pass this down the call stack to where it
-is needed.
-
-Since the correct mm_struct is now being passed down, it is now also
-unnecessary to take the mmap_sem semaphore because ptdump_walk_pgd()
-will now take the semaphore on the real mm.
-
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/mm/dump.c           |  4 ++--
- arch/x86/mm/debug_pagetables.c | 10 ++--------
- arch/x86/mm/dump_pagetables.c  | 18 +++++++-----------
- include/linux/pagewalk.h       |  3 +++
- include/linux/ptdump.h         |  2 +-
- mm/pagewalk.c                  |  7 ++++++-
- mm/ptdump.c                    |  4 ++--
- 7 files changed, 23 insertions(+), 25 deletions(-)
-
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index ef4b3ca1e058..860c00ec8bd3 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -323,7 +323,7 @@ void ptdump_walk(struct seq_file *s, struct ptdump_info *info)
- 		}
- 	};
- 
--	ptdump_walk_pgd(&st.ptdump, info->mm);
-+	ptdump_walk_pgd(&st.ptdump, info->mm, NULL);
- }
- 
- static void ptdump_initialize(void)
-@@ -361,7 +361,7 @@ void ptdump_check_wx(void)
- 		}
- 	};
- 
--	ptdump_walk_pgd(&st.ptdump, &init_mm);
-+	ptdump_walk_pgd(&st.ptdump, &init_mm, NULL);
- 
- 	if (st.wx_pages || st.uxn_pages)
- 		pr_warn("Checked W+X mappings: FAILED, %lu W+X pages found, %lu non-UXN pages found\n",
-diff --git a/arch/x86/mm/debug_pagetables.c b/arch/x86/mm/debug_pagetables.c
-index d0efec713c6c..4a3b62f780b4 100644
---- a/arch/x86/mm/debug_pagetables.c
-+++ b/arch/x86/mm/debug_pagetables.c
-@@ -15,11 +15,8 @@ DEFINE_SHOW_ATTRIBUTE(ptdump);
- 
- static int ptdump_curknl_show(struct seq_file *m, void *v)
- {
--	if (current->mm->pgd) {
--		down_read(&current->mm->mmap_sem);
-+	if (current->mm->pgd)
- 		ptdump_walk_pgd_level_debugfs(m, current->mm, false);
--		up_read(&current->mm->mmap_sem);
--	}
- 	return 0;
- }
- 
-@@ -28,11 +25,8 @@ DEFINE_SHOW_ATTRIBUTE(ptdump_curknl);
- #ifdef CONFIG_PAGE_TABLE_ISOLATION
- static int ptdump_curusr_show(struct seq_file *m, void *v)
- {
--	if (current->mm->pgd) {
--		down_read(&current->mm->mmap_sem);
-+	if (current->mm->pgd)
- 		ptdump_walk_pgd_level_debugfs(m, current->mm, true);
--		up_read(&current->mm->mmap_sem);
--	}
- 	return 0;
- }
- 
-diff --git a/arch/x86/mm/dump_pagetables.c b/arch/x86/mm/dump_pagetables.c
-index 411f6a758998..64229dad7eab 100644
---- a/arch/x86/mm/dump_pagetables.c
-+++ b/arch/x86/mm/dump_pagetables.c
-@@ -357,7 +357,8 @@ static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
- 	}
- }
- 
--static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
-+static void ptdump_walk_pgd_level_core(struct seq_file *m,
-+				       struct mm_struct *mm, pgd_t *pgd,
- 				       bool checkwx, bool dmesg)
- {
- 	const struct ptdump_range ptdump_ranges[] = {
-@@ -386,12 +387,7 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
- 		.seq		= m
- 	};
- 
--	struct mm_struct fake_mm = {
--		.pgd = pgd
--	};
--	init_rwsem(&fake_mm.mmap_sem);
--
--	ptdump_walk_pgd(&st.ptdump, &fake_mm);
-+	ptdump_walk_pgd(&st.ptdump, mm, pgd);
- 
- 	if (!checkwx)
- 		return;
-@@ -404,7 +400,7 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
- 
- void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm)
- {
--	ptdump_walk_pgd_level_core(m, mm->pgd, false, true);
-+	ptdump_walk_pgd_level_core(m, mm, mm->pgd, false, true);
- }
- 
- void ptdump_walk_pgd_level_debugfs(struct seq_file *m, struct mm_struct *mm,
-@@ -415,7 +411,7 @@ void ptdump_walk_pgd_level_debugfs(struct seq_file *m, struct mm_struct *mm,
- 	if (user && boot_cpu_has(X86_FEATURE_PTI))
- 		pgd = kernel_to_user_pgdp(pgd);
- #endif
--	ptdump_walk_pgd_level_core(m, pgd, false, false);
-+	ptdump_walk_pgd_level_core(m, mm, pgd, false, false);
- }
- EXPORT_SYMBOL_GPL(ptdump_walk_pgd_level_debugfs);
- 
-@@ -430,13 +426,13 @@ void ptdump_walk_user_pgd_level_checkwx(void)
- 
- 	pr_info("x86/mm: Checking user space page tables\n");
- 	pgd = kernel_to_user_pgdp(pgd);
--	ptdump_walk_pgd_level_core(NULL, pgd, true, false);
-+	ptdump_walk_pgd_level_core(NULL, &init_mm, pgd, true, false);
- #endif
- }
- 
- void ptdump_walk_pgd_level_checkwx(void)
- {
--	ptdump_walk_pgd_level_core(NULL, INIT_PGD, true, false);
-+	ptdump_walk_pgd_level_core(NULL, &init_mm, INIT_PGD, true, false);
- }
- 
- static int __init pt_dump_init(void)
-diff --git a/include/linux/pagewalk.h b/include/linux/pagewalk.h
-index 745a654c6ea7..b1cb6b753abb 100644
---- a/include/linux/pagewalk.h
-+++ b/include/linux/pagewalk.h
-@@ -74,6 +74,7 @@ enum page_walk_action {
-  * mm_walk - walk_page_range data
-  * @ops:	operation to call during the walk
-  * @mm:		mm_struct representing the target process of page table walk
-+ * @pgd:	pointer to PGD; only valid with no_vma (otherwise set to NULL)
-  * @vma:	vma currently walked (NULL if walking outside vmas)
-  * @action:	next action to perform (see enum page_walk_action)
-  * @no_vma:	walk ignoring vmas (vma will always be NULL)
-@@ -84,6 +85,7 @@ enum page_walk_action {
- struct mm_walk {
- 	const struct mm_walk_ops *ops;
- 	struct mm_struct *mm;
-+	pgd_t *pgd;
- 	struct vm_area_struct *vma;
- 	enum page_walk_action action;
- 	bool no_vma;
-@@ -95,6 +97,7 @@ int walk_page_range(struct mm_struct *mm, unsigned long start,
- 		void *private);
- int walk_page_range_novma(struct mm_struct *mm, unsigned long start,
- 			  unsigned long end, const struct mm_walk_ops *ops,
-+			  pgd_t *pgd,
- 			  void *private);
- int walk_page_vma(struct vm_area_struct *vma, const struct mm_walk_ops *ops,
- 		void *private);
-diff --git a/include/linux/ptdump.h b/include/linux/ptdump.h
-index b28f3f2acf90..a67065c403c3 100644
---- a/include/linux/ptdump.h
-+++ b/include/linux/ptdump.h
-@@ -17,6 +17,6 @@ struct ptdump_state {
- 	const struct ptdump_range *range;
- };
- 
--void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm);
-+void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm, pgd_t *pgd);
- 
- #endif /* _LINUX_PTDUMP_H */
-diff --git a/mm/pagewalk.c b/mm/pagewalk.c
-index 5895ce4f1a85..928df1638c30 100644
---- a/mm/pagewalk.c
-+++ b/mm/pagewalk.c
-@@ -206,7 +206,10 @@ static int walk_pgd_range(unsigned long addr, unsigned long end,
- 	const struct mm_walk_ops *ops = walk->ops;
- 	int err = 0;
- 
--	pgd = pgd_offset(walk->mm, addr);
-+	if (walk->pgd)
-+		pgd = walk->pgd + pgd_index(addr);
-+	else
-+		pgd = pgd_offset(walk->mm, addr);
- 	do {
- 		next = pgd_addr_end(addr, end);
- 		if (pgd_none_or_clear_bad(pgd)) {
-@@ -436,11 +439,13 @@ int walk_page_range(struct mm_struct *mm, unsigned long start,
-  */
- int walk_page_range_novma(struct mm_struct *mm, unsigned long start,
- 			  unsigned long end, const struct mm_walk_ops *ops,
-+			  pgd_t *pgd,
- 			  void *private)
- {
- 	struct mm_walk walk = {
- 		.ops		= ops,
- 		.mm		= mm,
-+		.pgd		= pgd,
- 		.private	= private,
- 		.no_vma		= true
- 	};
-diff --git a/mm/ptdump.c b/mm/ptdump.c
-index ad18a9839d6f..26208d0d03b7 100644
---- a/mm/ptdump.c
-+++ b/mm/ptdump.c
-@@ -122,14 +122,14 @@ static const struct mm_walk_ops ptdump_ops = {
- 	.pte_hole	= ptdump_hole,
- };
- 
--void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm)
-+void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm, pgd_t *pgd)
- {
- 	const struct ptdump_range *range = st->range;
- 
- 	down_read(&mm->mmap_sem);
- 	while (range->start != range->end) {
- 		walk_page_range_novma(mm, range->start, range->end,
--				      &ptdump_ops, st);
-+				      &ptdump_ops, pgd, st);
- 		range++;
- 	}
- 	up_read(&mm->mmap_sem);
--- 
-2.20.1
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
