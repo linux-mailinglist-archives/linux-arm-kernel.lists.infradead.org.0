@@ -2,59 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7960A134512
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 15:34:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67383134527
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 15:38:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uMPt52176FvMwrcTWSnVM7N7HILeOX5Fv21u7oIdg7Y=; b=YHukRLkBzvQpV2
-	9wY2oyW+By1t9uE65hCWtm1f4nxMdjHwTXHrUNOAh8iNpap7nKnfHwVg1v6qmpKnu9bmWc5DzvyaG
-	Gge/7HooSTollQKeivO8lZ9g0sMfcYE9Nrwp12x6gdJi/eRkONx3ouRZKtMYdvF5VFDd6fhQi/yWk
-	nHxECHoWOacdzKNVV6Cy1cGFWIaVOwbcTU5x30URKTMZeQT5yT9P8VQeowAm6z0KP9hdKF4K3Frwn
-	K7sObruYQwZmN8VNIZCWyohQM//CQsLdYesW1+ihjpWGfEgFBRdDb0Lpn4CjUibKmvv0UoIpQy1iH
-	KU7jjxQbtzAw22Zzyu9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R0YVSQ5c6mx39qqicSOaPcWGhxf2Uigx8wzPGrI22UI=; b=WtZVO5iqe2Snh9
+	5Fas762+DI20lKb0JoQDGSRt16Tn4jRavCmLFF/M1RmSrLhHRMg2RrTFEQGsFU5yjfkrbtiYA1kix
+	o0JwtnjvziH2AvCSoBZa6slW+8DCe94uBngLcAK2zXV+dXkg6fXL2i/pk0fRu4vL74QrH6qWpztpJ
+	4CUL3ODZZsLtwwiLDg3ELBn5Rv0TVjmqdy75ZX3pcZNnbMC+Ul/5Ne5S79khIEiHbXPsqyXRxP4lu
+	B2+LgD/rQFVq1qPJY7GaFq0J6KU4iF24gS5qPWXLZBnXgRtRcLXwgr5DXfM/Y2+e38hSOSngZ//Zi
+	+NbOFQZtzGj4h8qsea1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipCPf-0003Po-7c; Wed, 08 Jan 2020 14:34:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipCPW-0003PN-T7
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 14:34:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4150131B;
- Wed,  8 Jan 2020 06:34:11 -0800 (PST)
-Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C86E33F703;
- Wed,  8 Jan 2020 06:34:09 -0800 (PST)
-Subject: Re: [PATCHv2 1/3] KVM: arm64: correct PSTATE on exception entry
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- maz@kernel.org
-References: <20200108134324.46500-1-mark.rutland@arm.com>
- <20200108134324.46500-2-mark.rutland@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <074273a9-679f-9133-1488-6e84a6b0afb0@arm.com>
-Date: Wed, 8 Jan 2020 14:34:08 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ipCTO-00052i-C0; Wed, 08 Jan 2020 14:38:14 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipCTG-00051j-Sk
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 14:38:08 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MC2o9-1iymor10Tl-00CVYi; Wed, 08 Jan 2020 15:36:44 +0100
+From: Arnd Bergmann <arnd@arndb.de>
+To: Russell King <linux@armlinux.org.uk>,
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@kernel.org>
+Subject: [PATCH] arm/ftrace: fix building on BE32
+Date: Wed,  8 Jan 2020 15:36:30 +0100
+Message-Id: <20200108143640.1034808-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20200108134324.46500-2-mark.rutland@arm.com>
-Content-Language: en-US
+X-Provags-ID: V03:K1:DNg/f0DgH2AuFmls4CuTuds+KyudRqDqzfh6viVMfvvGdk8u9Q0
+ yf8f7lprW7tAoIgat71ySCreHfiHJ7a5EY2p18mcMrgmgGEusFJ2Rrv8CsB/Ny/NyVIb4/H
+ DGohQLlUBZmTTu2qasznjvrU7nxq3aTas5zlEKj5QdHDUqZ/6Lni94HX/qlXoZi7UJe6wZN
+ SZqt2en9FiTgT8KNvLZyg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:WFVEuGhsmHc=:5Ehnd9BB2/wv3L7ZBxOOvK
+ mBdj2KEKMtBAdFCvY2s40Q0UYqQsPm6WgiazzK3pEpOVb/GxiSZ303UtK2p7YHf9T8aptaISS
+ tFgKevI6rbeQYrGBRMSDKZQo6/4HQ6LUPFpD1Wl3/y+j9YLyPyMASie8IbgG66er9A6CP66Gh
+ rqLsDX92RbSBROptuOQvte6u0DmBzb740TgAybw8BBSWzOreRtrxPZVxCqAJh1cOPkCHYEKf2
+ +OzUY2/KeHDE0kfnz7u/Nz0IrtuS5j9FY8ck64ssj/FBt9Qs4/DAWMlRg6tLT4/OW0Oh2cFMk
+ M0UXudFGyWfwJQTUgNPkpE4LgUTHkbCoOoA30eLL82nHNavUgIuCUi6DEWyPaTRUthkvU40nE
+ 9D/RH80jyejtR2/gGXmaPuXNFJu1REfPrs/03nqv5ECbkF/oDdYZEIT1PMjkEKMjVSU2OOOGn
+ YArsYMaOGmywUc4nFK1Mlj+wc9P4YAtW35LedEY5+lOr4+l9TnHw10ze2h/IAii82/AAZ17Tv
+ Eb9ERvxeJ1gy1Y/0cKhUKH1+onKYwHaibjqu6+4hjm+BJlwbxO6gs8w5AapcKxFFTxf3/NTA3
+ GCQmgyEBVWQYUM3O886BshWTgLmAMN/0gj3p+eBWck5PeDJnG3fjPQ2VJqWJQf42zEMYd7zrs
+ An4ndfsWn0eHKchauHovwoUwasGxBJdHwOZblS4J7qzGXF/Jw1Z2ee1K2hMKDiNSGsdf8Fi/w
+ JWwn7D3ieXPbYhCUNVYgbfxQxZO42Cwvye018COjOKoCuZeVTHqIvRJeViNOcC42iDmOKQR8a
+ T9CuH0XYQgH3JoN6YVdGxAaDh7mCAaBwyO7DpF02xwGMgjkgmbdL2APK7dVUwXm9HRexhivu9
+ EgbBF0i++dXX0ftUQ5nA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_063415_031354_55517C3F 
-X-CRM114-Status: GOOD (  21.93  )
+X-CRM114-CacheID: sfid-20200108_063807_214587_B9DA095E 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,163 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peter.maydell@linaro.org, drjones@redhat.com, suzuki.poulose@arm.com,
- stable@vger.kernel.org, james.morse@arm.com, will@kernel.org,
- julien.thierry.kdev@gmail.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Denys Vlasenko <dvlasenk@redhat.com>,
+ Arnd Bergmann <arnd@arndb.de>, ard.biesheuvel@linaro.org,
+ Brian Gerst <brgerst@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Steven Rostedt <rostedt@goodmis.org>, linux-kernel@vger.kernel.org,
+ rabin@rab.in, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ james.morse@arm.com, Thomas Gleixner <tglx@linutronix.de>,
+ Enrico Weigelt <info@metux.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Compiling patch.c on BE32 fails because there is no definition
+of __opcode_to_mem_thumb32()
 
-On 1/8/20 1:43 PM, Mark Rutland wrote:
-> When KVM injects an exception into a guest, it generates the PSTATE
-> value from scratch, configuring PSTATE.{M[4:0],DAIF}, and setting all
-> other bits to zero.
->
-> This isn't correct, as the architecture specifies that some PSTATE bits
-> are (conditionally) cleared or set upon an exception, and others are
-> unchanged from the original context.
->
-> This patch adds logic to match the architectural behaviour. To make this
-> simple to follow/audit/extend, documentation references are provided,
-> and bits are configured in order of their layout in SPSR_EL2. This
-> layout can be seen in the diagram on ARM DDI 0487E.a page C5-429.
->
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Alexandru Elisei <alexandru.elisei@arm.com>
-> Cc: Drew Jones <drjones@redhat.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Peter Maydell <peter.maydell@linaro.org>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: stable@vger.kernel.org
-> ---
->  arch/arm64/include/uapi/asm/ptrace.h |  1 +
->  arch/arm64/kvm/inject_fault.c        | 70 +++++++++++++++++++++++++++++++++---
->  2 files changed, 66 insertions(+), 5 deletions(-)
->
-> diff --git a/arch/arm64/include/uapi/asm/ptrace.h b/arch/arm64/include/uapi/asm/ptrace.h
-> index 7ed9294e2004..d1bb5b69f1ce 100644
-> --- a/arch/arm64/include/uapi/asm/ptrace.h
-> +++ b/arch/arm64/include/uapi/asm/ptrace.h
-> @@ -49,6 +49,7 @@
->  #define PSR_SSBS_BIT	0x00001000
->  #define PSR_PAN_BIT	0x00400000
->  #define PSR_UAO_BIT	0x00800000
-> +#define PSR_DIT_BIT	0x01000000
->  #define PSR_V_BIT	0x10000000
->  #define PSR_C_BIT	0x20000000
->  #define PSR_Z_BIT	0x40000000
-> diff --git a/arch/arm64/kvm/inject_fault.c b/arch/arm64/kvm/inject_fault.c
-> index a9d25a305af5..a364a4ad5479 100644
-> --- a/arch/arm64/kvm/inject_fault.c
-> +++ b/arch/arm64/kvm/inject_fault.c
-> @@ -14,9 +14,6 @@
->  #include <asm/kvm_emulate.h>
->  #include <asm/esr.h>
->  
-> -#define PSTATE_FAULT_BITS_64 	(PSR_MODE_EL1h | PSR_A_BIT | PSR_F_BIT | \
-> -				 PSR_I_BIT | PSR_D_BIT)
-> -
->  #define CURRENT_EL_SP_EL0_VECTOR	0x0
->  #define CURRENT_EL_SP_ELx_VECTOR	0x200
->  #define LOWER_EL_AArch64_VECTOR		0x400
-> @@ -50,6 +47,69 @@ static u64 get_except_vector(struct kvm_vcpu *vcpu, enum exception_type type)
->  	return vcpu_read_sys_reg(vcpu, VBAR_EL1) + exc_offset + type;
->  }
->  
-> +/*
-> + * When an exception is taken, most PSTATE fields are left unchanged in the
-> + * handler. However, some are explicitly overridden (e.g. M[4:0]). Luckily all
-> + * of the inherited bits have the same position in the AArch64/AArch32 SPSR_ELx
-> + * layouts, so we don't need to shuffle these for exceptions from AArch32 EL0.
-> + *
-> + * For the SPSR_ELx layout for AArch64, see ARM DDI 0487E.a page C5-429.
-> + * For the SPSR_ELx layout for AArch32, see ARM DDI 0487E.a page C5-426.
-> + *
-> + * Here we manipulate the fields in order of the AArch64 SPSR_ELx layout, from
-> + * MSB to LSB.
-> + */
-> +static unsigned long get_except64_pstate(struct kvm_vcpu *vcpu)
-> +{
-> +	unsigned long sctlr = vcpu_read_sys_reg(vcpu, SCTLR_EL1);
-> +	unsigned long old, new;
-> +
-> +	old = *vcpu_cpsr(vcpu);
-> +	new = 0;
-> +
-> +	new |= (old & PSR_N_BIT);
-> +	new |= (old & PSR_Z_BIT);
-> +	new |= (old & PSR_C_BIT);
-> +	new |= (old & PSR_V_BIT);
-> +
-> +	// TODO: TCO (if/when ARMv8.5-MemTag is exposed to guests)
-> +
-> +	new |= (old & PSR_DIT_BIT);
-> +
-> +	// PSTATE.UAO is set to zero upon any exception to AArch64
-> +	// See ARM DDI 0487E.a, page D5-2579.
-> +
-> +	// PSTATE.PAN is unchanged unless SCTLR_ELx.SPAN == 0b0
-> +	// SCTLR_ELx.SPAN is RES1 when ARMv8.1-PAN is not implemented
-> +	// See ARM DDI 0487E.a, page D5-2578.
-> +	new |= (old & PSR_PAN_BIT);
-> +	if (!(sctlr & SCTLR_EL1_SPAN))
-> +		new |= PSR_PAN_BIT;
-> +
-> +	// PSTATE.SS is set to zero upon any exception to AArch64
-> +	// See ARM DDI 0487E.a, page D2-2452.
-> +
-> +	// PSTATE.IL is set to zero upon any exception to AArch64
-> +	// See ARM DDI 0487E.a, page D1-2306.
-> +
-> +	// PSTATE.SSBS is set to SCTLR_ELx.DSSBS upon any exception to AArch64
-> +	// See ARM DDI 0487E.a, page D13-3258
-> +	if (sctlr & SCTLR_ELx_DSSBS)
-> +		new |= PSR_SSBS_BIT;
-> +
-> +	// PSTATE.BTYPE is set to zero upon any exception to AArch64
-> +	// See ARM DDI 0487E.a, pages D1-2293 to D1-2294.
-> +
-> +	new |= PSR_D_BIT;
-> +	new |= PSR_A_BIT;
-> +	new |= PSR_I_BIT;
-> +	new |= PSR_F_BIT;
-> +
-> +	new |= PSR_MODE_EL1h;
-> +
-> +	return new;
-> +}
-> +
->  static void inject_abt64(struct kvm_vcpu *vcpu, bool is_iabt, unsigned long addr)
->  {
->  	unsigned long cpsr = *vcpu_cpsr(vcpu);
-> @@ -59,7 +119,7 @@ static void inject_abt64(struct kvm_vcpu *vcpu, bool is_iabt, unsigned long addr
->  	vcpu_write_elr_el1(vcpu, *vcpu_pc(vcpu));
->  	*vcpu_pc(vcpu) = get_except_vector(vcpu, except_type_sync);
->  
-> -	*vcpu_cpsr(vcpu) = PSTATE_FAULT_BITS_64;
-> +	*vcpu_cpsr(vcpu) = get_except64_pstate(vcpu);
->  	vcpu_write_spsr(vcpu, cpsr);
->  
->  	vcpu_write_sys_reg(vcpu, addr, FAR_EL1);
-> @@ -94,7 +154,7 @@ static void inject_undef64(struct kvm_vcpu *vcpu)
->  	vcpu_write_elr_el1(vcpu, *vcpu_pc(vcpu));
->  	*vcpu_pc(vcpu) = get_except_vector(vcpu, except_type_sync);
->  
-> -	*vcpu_cpsr(vcpu) = PSTATE_FAULT_BITS_64;
-> +	*vcpu_cpsr(vcpu) = get_except64_pstate(vcpu);
->  	vcpu_write_spsr(vcpu, cpsr);
->  
->  	/*
+arch/arm/kernel/patch.c: In function '__patch_text_real':
+arch/arm/kernel/patch.c:94:11: error: implicit declaration of function '__opcode_to_mem_thumb32' [-Werror=implicit-function-declaration]
 
-Looks fine to me:
+Since we don't actually call it, only a declaration is required
+here, add one without a definition that fixes the build here
+but will cause a link failure if someone actually relies on the
+result.
 
-Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Fixes: 5a735583b764 ("arm/ftrace: Use __patch_text()")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+Not sure if this version is any less ugly than the first
+approach of adding an #ifdef in patch.c
+---
+ arch/arm/include/asm/opcodes.h | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/include/asm/opcodes.h b/arch/arm/include/asm/opcodes.h
+index 6bff94b2372b..f75f59c1257a 100644
+--- a/arch/arm/include/asm/opcodes.h
++++ b/arch/arm/include/asm/opcodes.h
+@@ -110,14 +110,19 @@ extern asmlinkage unsigned int arm_check_condition(u32 opcode, u32 psr);
+ #define __opcode_to_mem_thumb16(x) ___opcode_identity16(x)
+ #define ___asm_opcode_to_mem_arm(x) ___asm_opcode_identity32(x)
+ #define ___asm_opcode_to_mem_thumb16(x) ___asm_opcode_identity16(x)
+-#ifndef CONFIG_CPU_ENDIAN_BE32
+ /*
+  * On BE32 systems, using 32-bit accesses to store Thumb instructions will not
+  * work in all cases, due to alignment constraints.  For now, a correct
+- * version is not provided for BE32.
++ * version is not provided for BE32, only an extern declaration to allow
++ * compiling patch.c
+  */
++#ifndef CONFIG_CPU_ENDIAN_BE32
+ #define __opcode_to_mem_thumb32(x) ___opcode_swahw32(x)
+ #define ___asm_opcode_to_mem_thumb32(x) ___asm_opcode_swahw32(x)
++#else
++#ifndef __ASSEMBLY__
++extern unsigned __opcode_to_mem_thumb32(unsigned);
++#endif
+ #endif
+ 
+ #endif /* ! CONFIG_CPU_ENDIAN_BE8 */
+-- 
+2.20.0
 
 
 _______________________________________________
