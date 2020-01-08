@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CCA9133E74
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:41:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07814133E7A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:43:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XyLGjn438QHPtwb85bBcdvcmzFGnGbF5jz0WfcoYXk4=; b=Y8ZaopLxpKnh3D
-	1qUiR+0p7Xr/3vAJDntlXvZaGqBHKl3hNwQpztQpqhEHyeWRghGxa4Faarbm/q+Id9jCwOHbakiob
-	FFOXv4myR+pQEW8LvjTKHVv9wTNn9rd/VrleFVuXQD3/2i36BRfj9NtdOYiwDuHO+gKQHI55avKmt
-	KFXkaF1hBj3dfhNBYwVgiUBTUbn0xI1VKOqF6O0Q+gKs0bvKfwla4vuZgiqj/syQVHU38uxTBTRjD
-	giXLusYm5mSDK2iF3TydFjbf5r9KEfhxDKpRS5Gd60WV+HpyLnWCLZ25/k3qRO5RtZFUKd6sInqhW
-	bPEn85aXv02YcevWK4gw==;
+	List-Owner; bh=77LQUmW0ZbgytjN0aahajF3/6J9FJ2sbM5T9tw4yMRw=; b=LNWcyrpIc0sF4a
+	/wrixOx/Uz0VKSYA7mkzsG3ABHJv82TZ06DF/to08DATyvLdI/Ho/bH+5DrWeeyk6tBJDd7+dnLBg
+	VcJIu8WW4jNdRyQQgyf0tt8uqQcsY+dEP9W+DmqPR3tBWoKs1FUuK09LCFM09rynn/gmythjZiSm0
+	7hFjaGqzRxkJ+5QMCZ5RLZD8pS2PDtrYguGpgROMFaT7nk1QwbS2QRFA5fxUfpikd/r4JS3vwGbk3
+	DhFy+EI/aMYGGV97RdLS2xnihOD/r5Nhr/SzHZ3h6gCXvkZz9BY8GVlhBZxKXtPrDDHxa2/JG2mIR
+	QdDMcdsZp1m3eJdjF1Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip7qW-0001qH-G8; Wed, 08 Jan 2020 09:41:48 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1ip7s4-0002B9-3p; Wed, 08 Jan 2020 09:43:24 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip7qO-0001oz-Ry; Wed, 08 Jan 2020 09:41:42 +0000
+ id 1ip7rv-00029r-1s; Wed, 08 Jan 2020 09:43:16 +0000
+X-Originating-IP: 90.65.102.129
 Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
  [90.65.102.129]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 97692200010;
- Wed,  8 Jan 2020 09:41:32 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id A72C020007;
+ Wed,  8 Jan 2020 09:43:04 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Yangtao Li <tiny.windzz@gmail.com>, ssantosh@kernel.org,
- paul@crapouillou.net, matthias.bgg@gmail.com, rogerq@ti.com, tony@atomide.com,
- lukasz.luba@arm.com, kgene@kernel.org, krzk@kernel.org,
- thierry.reding@gmail.com, jonathanh@nvidia.com, allison@lohutok.net,
- tglx@linutronix.de, yong.wu@mediatek.com, jroedel@suse.de,
- evgreen@chromium.org, rfontana@redhat.com, digetx@gmail.com,
- pdeschrijver@nvidia.com, john@phrozen.org, alexios.zavras@intel.com,
- sboyd@kernel.org, kstewart@linuxfoundation.org, info@metux.net,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-omap@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+To: Yangtao Li <tiny.windzz@gmail.com>, jassisinghbrar@gmail.com,
+ nsaenzjulienne@suse.de, f.fainelli@gmail.com, rjui@broadcom.com,
+ sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com, lftan@altera.com,
+ matthias.bgg@gmail.com, agross@kernel.org, bjorn.andersson@linaro.org,
+ mcoquelin.stm32@gmail.com, alexandre.torgue@st.com, thierry.reding@gmail.com,
+ jonathanh@nvidia.com, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ nios2-dev@lists.rocketboards.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
  linux-tegra@vger.kernel.org
-Subject: Re: [PATCH 3/9] memory: mvebu-devbus: convert to
+Subject: Re: [PATCH 13/13] mailbox: armada-37xx-rwtm: convert to
  devm_platform_ioremap_resource
-In-Reply-To: <20191222185034.4665-3-tiny.windzz@gmail.com>
-References: <20191222185034.4665-1-tiny.windzz@gmail.com>
- <20191222185034.4665-3-tiny.windzz@gmail.com>
-Date: Wed, 08 Jan 2020 10:41:32 +0100
-Message-ID: <87lfqib7zn.fsf@FE-laptop>
+In-Reply-To: <20191228183538.26189-13-tiny.windzz@gmail.com>
+References: <20191228183538.26189-1-tiny.windzz@gmail.com>
+ <20191228183538.26189-13-tiny.windzz@gmail.com>
+Date: Wed, 08 Jan 2020 10:43:04 +0100
+Message-ID: <87imlmb7x3.fsf@FE-laptop>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_014141_041381_B0DBAB4B 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20200108_014315_236384_ABF4C5C6 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,7 +81,6 @@ Hi Yangtao Li,
 >
 > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 
-
 Applied on mvebu/drivers
 
 Thanks,
@@ -90,31 +88,32 @@ Thanks,
 Gregory
 
 > ---
->  drivers/memory/mvebu-devbus.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
+>  drivers/mailbox/armada-37xx-rwtm-mailbox.c | 5 +----
+>  1 file changed, 1 insertion(+), 4 deletions(-)
 >
-> diff --git a/drivers/memory/mvebu-devbus.c b/drivers/memory/mvebu-devbus.c
-> index 095f8a3b2cfc..886aea587276 100644
-> --- a/drivers/memory/mvebu-devbus.c
-> +++ b/drivers/memory/mvebu-devbus.c
-> @@ -267,7 +267,6 @@ static int mvebu_devbus_probe(struct platform_device *pdev)
->  	struct devbus_read_params r;
->  	struct devbus_write_params w;
->  	struct devbus *devbus;
-> -	struct resource *res;
->  	struct clk *clk;
->  	unsigned long rate;
->  	int err;
-> @@ -277,8 +276,7 @@ static int mvebu_devbus_probe(struct platform_device *pdev)
+> diff --git a/drivers/mailbox/armada-37xx-rwtm-mailbox.c b/drivers/mailbox/armada-37xx-rwtm-mailbox.c
+> index 19f086716dc5..02b7b28e6969 100644
+> --- a/drivers/mailbox/armada-37xx-rwtm-mailbox.c
+> +++ b/drivers/mailbox/armada-37xx-rwtm-mailbox.c
+> @@ -143,7 +143,6 @@ static const struct mbox_chan_ops a37xx_mbox_ops = {
+>  static int armada_37xx_mbox_probe(struct platform_device *pdev)
+>  {
+>  	struct a37xx_mbox *mbox;
+> -	struct resource *regs;
+>  	struct mbox_chan *chans;
+>  	int ret;
+>  
+> @@ -156,9 +155,7 @@ static int armada_37xx_mbox_probe(struct platform_device *pdev)
+>  	if (!chans)
 >  		return -ENOMEM;
 >  
->  	devbus->dev = dev;
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	devbus->base = devm_ioremap_resource(&pdev->dev, res);
-> +	devbus->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(devbus->base))
->  		return PTR_ERR(devbus->base);
->  
+> -	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -
+> -	mbox->base = devm_ioremap_resource(&pdev->dev, regs);
+> +	mbox->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(mbox->base)) {
+>  		dev_err(&pdev->dev, "ioremap failed\n");
+>  		return PTR_ERR(mbox->base);
 > -- 
 > 2.17.1
 >
