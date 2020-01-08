@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A43F5134B19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:59:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B623134B1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 20:00:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9tWu59R8YQk4ZNpFRnr+nyIr7YdwpUctZ+Gl/ZuKugA=; b=RQcYkCaH0/VygR5sR8PGvNE/tS
-	/rFoZifGK9Grf/He2wcQZXn+QhOllOKObXm9m5FN7CogFfs8MEG64agDpkuLiGS5954Opd8yGn++Q
-	zavgHUzCrh7TWB7LQPi+NC5jAXRxlCrkRw9ue/7DVCK3o1c0Rn3Hu/eom10yW5sWURfgZQOT4mzC6
-	ad5alHm976D7+hHziRYqWXQBwU04dN/sflE1X+8BQvtWi6l+/BNo3fwku55m3/ITeBD2KuE02XSXc
-	MDX27AMKLCqO8l84uzGN7j4NffOzFfCPBZpjva7Pb+lVkhLcS8s042OP+Mj4d5HcDHjmeZZ164Xzi
-	S7hszghQ==;
+	bh=kmoS75KGcr2/xThMP7eQ6E+vHmaOPuDxcJP3mpPr2wc=; b=HY+YSV0OWeCJcll2I4nGzQdVq8
+	EotxwbeKDHwuAVxatnpkRBOn720K7jY9lpcMzBLuAnwKCcLdw8nFyXb3kbD0t+1QnU55GrinNghmd
+	KKj4i/FHENIIb09Xiti3OrvFXuzj3r8CFcwpm4cA29nlC2zCGi8kLzU4+O86fsumnpg44ASAhtFWO
+	RjkowCUq1shxoPfFl686PDR+84Pp2VmEx9CSLt9vDmEAOvaxgE4Is+rnM1Qx2ppe4XxOQqDeXG0ju
+	YdlZGOZBbvCEJF/w9GUDdoucSP2fB4j1MyQprM5qpATSgc4j3+3cTyg1OpBroNIjo7frjn5n4mmB3
+	sQvOkJNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGYP-0001MO-NF; Wed, 08 Jan 2020 18:59:41 +0000
+	id 1ipGYg-0001bG-75; Wed, 08 Jan 2020 18:59:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGW0-0007cT-Gz
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:15 +0000
+ id 1ipGW2-0007Td-ED
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09F2C328;
- Wed,  8 Jan 2020 10:57:12 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3506F1FB;
+ Wed,  8 Jan 2020 10:57:14 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 79ECB3F534;
- Wed,  8 Jan 2020 10:57:10 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A539C3F534;
+ Wed,  8 Jan 2020 10:57:12 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 10/17] arm64: entry: consolidate EL1 return paths
-Date: Wed,  8 Jan 2020 18:56:27 +0000
-Message-Id: <20200108185634.1163-11-mark.rutland@arm.com>
+Subject: [PATCH 11/17] stackleak: allow C to call stackleak_erase()
+Date: Wed,  8 Jan 2020 18:56:28 +0000
+Message-Id: <20200108185634.1163-12-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105712_635776_59AC6983 
-X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-CacheID: sfid-20200108_105714_537802_F9FC412B 
+X-CRM114-Status: UNSURE (   9.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,77 +73,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each of the EL1 exception handler stubs has an identical copy of the
-kernel_exit code. While each handler needs its own kernel_entry
-sequence, there's no need to duplicate this for each handler, and we can
-consolidate them for better I-cache usage.
+Currently, stackleak_erase() has no prototype in a header file, and has
+to be called directly from low-level architecture entry assembly code.
+This necessitates ifdeffery and complicates the entry assembly.
 
-This patch makes the EL1 handlers all use a common kernel_exit stub
-called ret_to_kernel, matching the ret_to_user stub used by EL0
-handlers.
-
-As with the handlers, ret_to_kenerl is aligned for better I-cache and
-brapnch predictor utilization, and for consistency the same alignment is
-applied to ret_to_user.
+To ameliorate matters, let's provide a prototype so that architecture
+can call stackleak_erase() from slightly higher level C code used as
+part of the entry flow. This makes things easier to read and maintain.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Alexander Popov <alex.popov@linux.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: James Morse <james.morse@arm.com>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Laura Abbott <labbott@redhat.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/entry.S | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+ include/linux/stackleak.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 35a8c56b0582..e76326feb1da 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -519,7 +519,7 @@ el1_sync:
- 	kernel_entry 1
- 	mov	x0, sp
- 	bl	el1_sync_handler
--	kernel_exit 1
-+	b	ret_to_kernel
- ENDPROC(el1_sync)
+diff --git a/include/linux/stackleak.h b/include/linux/stackleak.h
+index 3d5c3271a9a8..2b09d3759c76 100644
+--- a/include/linux/stackleak.h
++++ b/include/linux/stackleak.h
+@@ -15,6 +15,8 @@
+ #ifdef CONFIG_GCC_PLUGIN_STACKLEAK
+ #include <asm/stacktrace.h>
  
- 	.align	6
-@@ -527,7 +527,7 @@ el1_irq:
- 	kernel_entry 1
- 	mov	x0, sp
- 	bl	el1_irq_handler
--	kernel_exit 1
-+	b	ret_to_kernel
- ENDPROC(el1_irq)
- 
- 	.align	6
-@@ -535,10 +535,18 @@ el1_error:
- 	kernel_entry 1
- 	mov	x0, sp
- 	bl	el1_error_handler
--	kernel_exit 1
-+	b	ret_to_kernel
- ENDPROC(el1_error)
- 
- /*
-+ * Common EL1 exception return path
-+ */
-+	.align 6
-+ret_to_kernel:
-+	kernel_exit 1
-+ENDPROC(ret_to_kernel)
++asmlinkage void notrace stackleak_erase(void);
 +
-+/*
-  * EL0 mode handlers.
-  */
- 	.align	6
-@@ -606,6 +614,7 @@ work_pending:
- /*
-  * "slow" syscall return path.
-  */
-+	.align 6
- ret_to_user:
- 	disable_daif
- 	gic_prio_kentry_setup tmp=x3
+ static inline void stackleak_task_init(struct task_struct *t)
+ {
+ 	t->lowest_stack = (unsigned long)end_of_stack(t) + sizeof(unsigned long);
+@@ -30,6 +32,7 @@ int stack_erasing_sysctl(struct ctl_table *table, int write,
+ 
+ #else /* !CONFIG_GCC_PLUGIN_STACKLEAK */
+ static inline void stackleak_task_init(struct task_struct *t) { }
++static inline void stackleak_erase(void) { }
+ #endif
+ 
+ #endif
 -- 
 2.11.0
 
