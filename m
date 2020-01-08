@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D056134538
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 15:41:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09BB3134541
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 15:44:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j4todHVzUVTHtXcp8rTxSJYFA4X//lOm9YupXh6M+RI=; b=smiEWRh8IBV+yx
-	sL0DCSfxL1Ghsm56fzAEOxSIftvG0b0EiRU/74JFsBTWlqNipEOXY9L7lQJpHXCk07TfwkYjy4PB5
-	nCjw9C+7sbe44pBiIht1i+5Hw4wP0NEMJcUar2PZQcCNnCqdXpH38HYsOOhkoGw1RlUjpRzov9zo4
-	bPgJ3MNc05JK5/enWHRIjQwrK4lRnDkN0GAVKSO40mvexRz9y18wiSxWKbrdEW2FKdIXPDAJH2YfR
-	gMNhr4oB0K+qsqB8vjF+T49E5n0rIIohDX+w52Jhf3DUA20i+RIr2PC8wYDUtC5uiJ0PIM1uLeAhL
-	Am5qCy5SxQE3a2tkxYAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+VK1SGG+ds3vkajmG47N4cgghKUc/gP2SrIwlJaBkMA=; b=VtSixkzpN3snOrr8LhM/aJ3qh
+	pnyOKw4PAr5A67hpltT3+tqJ2e79pkjVsO+7ibpRmSxXKzVzCPCRT5E7GLR+dfJ1TUXx9/T+KLF27
+	cZIUdjYHu9L/46sgoj7c6PT1MJD5p6lqoNZNjMeN3To5YPNztUEBxfpxk+PFN9F1mt8oKAowiuLHd
+	94VWU0k3j0BnKkOg8+YTqF2uV7NPYGdXAV4r1fFDfRuSSjQUngILi6JmF+BMn2l483pDH1qIflnYw
+	N0mx4boZxVCQHduRT0PoI2NyUfE/0weq/iNNW4j3VCmtAQaQdS35HWT0G5LzT2v8WgAYkPluZLo/v
+	U6zbpQEmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipCWK-0006eu-Ov; Wed, 08 Jan 2020 14:41:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipCWC-0006e2-NQ
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 14:41:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0CF3A31B;
- Wed,  8 Jan 2020 06:41:08 -0800 (PST)
-Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 93AB73F703;
- Wed,  8 Jan 2020 06:41:06 -0800 (PST)
-Subject: Re: [PATCHv2 2/3] KVM: arm/arm64: correct CPSR on exception entry
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- maz@kernel.org
-References: <20200108134324.46500-1-mark.rutland@arm.com>
- <20200108134324.46500-3-mark.rutland@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <3805fc5c-aa84-d203-11e4-b3a41ce5d809@arm.com>
-Date: Wed, 8 Jan 2020 14:41:04 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ipCZO-0007Xs-FO; Wed, 08 Jan 2020 14:44:26 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipCZJ-0007Xk-43
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 08 Jan 2020 14:44:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ET1J3uK1Dewef1FxNFRUu0mrQemAkI6ZchfwqtpbXVA=; b=ixGcq98GC1AyyeHATz9m5Zywd
+ BTMhvYhFO9fCF2W/Jv/5sesBgxr7MkkDiL7C1Ne/QBRYNhQmSxDba1kUOm5R6SjIfgcQlkDmhJ4Gv
+ mw2eRlzW6MBVAF9Vz5umrAfmd1nNhILJ6SUXjI76h+RCE97/PC84DVrQcnfduBJ3bsDZdWPeVonbJ
+ rKgTdd/HjTXwOiik4Th9Jm28kiKzxA+f0718sv/7DiKx+mYvGmIEw2A6Xl92yM8jSdnfdMFRBknD2
+ ik0RZ8UGqdjOsWqhGjs3WOwT39fdPDILjfOoxtyfDom24l748Qsqi3AJtF+XbJohi19A6jLCJjwar
+ uz8Fd9tQQ==;
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipCZg-0005AM-BA
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 14:44:46 +0000
+X-Originating-IP: 90.76.211.102
+Received: from aptenodytes (lfbn-tou-1-1151-102.w90-76.abo.wanadoo.fr
+ [90.76.211.102])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 03BCE6001B;
+ Wed,  8 Jan 2020 14:43:36 +0000 (UTC)
+Date: Wed, 8 Jan 2020 15:43:36 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH v2 1/4] media: uapi: hevc: Add scaling matrix control
+Message-ID: <20200108144336.GB229960@aptenodytes>
+References: <20191213160428.54303-1-jernej.skrabec@siol.net>
+ <20191213160428.54303-2-jernej.skrabec@siol.net>
+ <20200108151157.17cf9774@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200108134324.46500-3-mark.rutland@arm.com>
-Content-Language: en-US
+In-Reply-To: <20200108151157.17cf9774@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_064108_847682_002C6D51 
-X-CRM114-Status: GOOD (  24.04  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20200108_144444_413113_E9C4CA4E 
+X-CRM114-Status: GOOD (  22.59  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,241 +81,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peter.maydell@linaro.org, drjones@redhat.com, suzuki.poulose@arm.com,
- stable@vger.kernel.org, james.morse@arm.com, will@kernel.org,
- julien.thierry.kdev@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ hverkuil@xs4all.nl, wens@csie.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6151989336795784658=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
 
-On 1/8/20 1:43 PM, Mark Rutland wrote:
-> When KVM injects an exception into a guest, it generates the CPSR value
-> from scratch, configuring CPSR.{M,A,I,T,E}, and setting all other
-> bits to zero.
->
-> This isn't correct, as the architecture specifies that some CPSR bits
-> are (conditionally) cleared or set upon an exception, and others are
-> unchanged from the original context.
->
-> This patch adds logic to match the architectural behaviour. To make this
-> simple to follow/audit/extend, documentation references are provided,
-> and bits are configured in order of their layout in SPSR_EL2. This
-> layout can be seen in the diagram on ARM DDI 0487E.a page C5-426.
->
-> Note that this code is used by both arm and arm64, and is intended to
-> fuction with the SPSR_EL2 and SPSR_HYP layouts.
->
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Alexandru Elisei <alexandru.elisei@arm.com>
-> Cc: Drew Jones <drjones@redhat.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Peter Maydell <peter.maydell@linaro.org>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: stable@vger.kernel.org
-> ---
->  arch/arm/include/asm/kvm_emulate.h |  12 ++++
->  arch/arm64/include/asm/ptrace.h    |   1 +
->  virt/kvm/arm/aarch32.c             | 111 +++++++++++++++++++++++++++++++++----
->  3 files changed, 114 insertions(+), 10 deletions(-)
->
-> diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
-> index 40002416efec..ad75c37da9c1 100644
-> --- a/arch/arm/include/asm/kvm_emulate.h
-> +++ b/arch/arm/include/asm/kvm_emulate.h
-> @@ -14,13 +14,25 @@
->  #include <asm/cputype.h>
->  
->  /* arm64 compatibility macros */
-> +#define PSR_AA32_MODE_FIQ	FIQ_MODE
-> +#define PSR_AA32_MODE_SVC	SVC_MODE
->  #define PSR_AA32_MODE_ABT	ABT_MODE
->  #define PSR_AA32_MODE_UND	UND_MODE
->  #define PSR_AA32_T_BIT		PSR_T_BIT
-> +#define PSR_AA32_F_BIT		PSR_F_BIT
->  #define PSR_AA32_I_BIT		PSR_I_BIT
->  #define PSR_AA32_A_BIT		PSR_A_BIT
->  #define PSR_AA32_E_BIT		PSR_E_BIT
->  #define PSR_AA32_IT_MASK	PSR_IT_MASK
-> +#define PSR_AA32_GE_MASK	0x000f0000
-> +#define PSR_AA32_DIT_BIT	0x00200000
-> +#define PSR_AA32_PAN_BIT	0x00400000
-> +#define PSR_AA32_SSBS_BIT	0x00800000
-> +#define PSR_AA32_Q_BIT		PSR_Q_BIT
-> +#define PSR_AA32_V_BIT		PSR_V_BIT
-> +#define PSR_AA32_C_BIT		PSR_C_BIT
-> +#define PSR_AA32_Z_BIT		PSR_Z_BIT
-> +#define PSR_AA32_N_BIT		PSR_N_BIT
->  
->  unsigned long *vcpu_reg(struct kvm_vcpu *vcpu, u8 reg_num);
->  
-> diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
-> index fbebb411ae20..bf57308fcd63 100644
-> --- a/arch/arm64/include/asm/ptrace.h
-> +++ b/arch/arm64/include/asm/ptrace.h
-> @@ -62,6 +62,7 @@
->  #define PSR_AA32_I_BIT		0x00000080
->  #define PSR_AA32_A_BIT		0x00000100
->  #define PSR_AA32_E_BIT		0x00000200
-> +#define PSR_AA32_PAN_BIT	0x00400000
->  #define PSR_AA32_SSBS_BIT	0x00800000
->  #define PSR_AA32_DIT_BIT	0x01000000
->  #define PSR_AA32_Q_BIT		0x08000000
-> diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
-> index c4c57ba99e90..773cf1439081 100644
-> --- a/virt/kvm/arm/aarch32.c
-> +++ b/virt/kvm/arm/aarch32.c
-> @@ -10,6 +10,7 @@
->   * Author: Christoffer Dall <c.dall@virtualopensystems.com>
->   */
->  
-> +#include <linux/bits.h>
->  #include <linux/kvm_host.h>
->  #include <asm/kvm_emulate.h>
->  #include <asm/kvm_hyp.h>
-> @@ -28,22 +29,112 @@ static const u8 return_offsets[8][2] = {
->  	[7] = { 4, 4 },		/* FIQ, unused */
->  };
->  
-> +/*
-> + * When an exception is taken, most CPSR fields are left unchanged in the
-> + * handler. However, some are explicitly overridden (e.g. M[4:0]).
-> + *
-> + * The SPSR/SPSR_ELx layouts differ, and the below is intended to work with
-> + * either format. Note: SPSR.J bit doesn't exist in SPSR_ELx, but this bit was
-> + * obsoleted by the ARMv7 virtualization extensions and is RES0.
-> + *
-> + * For the SPSR layout seen from AArch32, see:
-> + * - ARM DDI 0406C.d, page B1-1148
-> + * - ARM DDI 0487E.a, page G8-6264
-> + *
-> + * For the SPSR_ELx layout for AArch32 seen from AArch64, see:
-> + * - ARM DDI 0487E.a, page C5-426
-> + *
-> + * Here we manipulate the fields in order of the AArch32 SPSR_ELx layout, from
-> + * MSB to LSB.
-> + */
-> +static unsigned long get_except32_cpsr(struct kvm_vcpu *vcpu, u32 mode)
-> +{
-> +	u32 sctlr = vcpu_cp15(vcpu, c1_SCTLR);
-> +	unsigned long old, new;
-> +
-> +	old = *vcpu_cpsr(vcpu);
-> +	new = 0;
-> +
-> +	new |= (old & PSR_AA32_N_BIT);
-> +	new |= (old & PSR_AA32_Z_BIT);
-> +	new |= (old & PSR_AA32_C_BIT);
-> +	new |= (old & PSR_AA32_V_BIT);
-> +	new |= (old & PSR_AA32_Q_BIT);
-> +
-> +	// CPSR.IT[7:0] are set to zero upon any exception
-> +	// See ARM DDI 0487E.a, section G1.12.3
-> +	// See ARM DDI 0406C.d, section B1.8.3
-> +
-> +	new |= (old & PSR_AA32_DIT_BIT);
-> +
-> +	// CPSR.SSBS is set to SCTLR.DSSBS upon any exception
-> +	// See ARM DDI 0487E.a, page G8-6244
-> +	if (sctlr & BIT(31))
-> +		new |= PSR_AA32_SSBS_BIT;
-> +
-> +	// CPSR.PAN is unchanged unless SCTLR.SPAN == 0b0
-> +	// SCTLR.SPAN is RES1 when ARMv8.1-PAN is not implemented
-> +	// See ARM DDI 0487E.a, page G8-6246
-> +	new |= (old & PSR_AA32_PAN_BIT);
-> +	if (!(sctlr & BIT(23)))
-> +		new |= PSR_AA32_PAN_BIT;
-> +
-> +	// SS does not exist in AArch32, so ignore
-> +
-> +	// CPSR.IL is set to zero upon any exception
-> +	// See ARM DDI 0487E.a, page G1-5527
-> +
-> +	new |= (old & PSR_AA32_GE_MASK);
-> +
-> +	// CPSR.IT[7:0] are set to zero upon any exception
-> +	// See prior comment above
-> +
-> +	// CPSR.E is set to SCTLR.EE upon any exception
-> +	// See ARM DDI 0487E.a, page G8-6245
-> +	// See ARM DDI 0406C.d, page B4-1701
-> +	if (sctlr & BIT(25))
-> +		new |= PSR_AA32_E_BIT;
-> +
-> +	// CPSR.A is unchanged upon an exception to Undefined, Supervisor
-> +	// CPSR.A is set upon an exception to other modes
-> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
-> +	// See ARM DDI 0406C.d, page B1-1182
-> +	new |= (old & PSR_AA32_A_BIT);
-> +	if (mode != PSR_AA32_MODE_UND && mode != PSR_AA32_MODE_SVC)
-> +		new |= PSR_AA32_A_BIT;
-> +
-> +	// CPSR.I is set upon any exception
-> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
-> +	// See ARM DDI 0406C.d, page B1-1182
-> +	new |= PSR_AA32_I_BIT;
-> +
-> +	// CPSR.F is set upon an exception to FIQ
-> +	// CPSR.F is unchanged upon an exception to other modes
-> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
-> +	// See ARM DDI 0406C.d, page B1-1182
-> +	new |= (old & PSR_AA32_F_BIT);
-> +	if (mode == PSR_AA32_MODE_FIQ)
-> +		new |= PSR_AA32_F_BIT;
-> +
-> +	// CPSR.T is set to SCTLR.TE upon any exception
-> +	// See ARM DDI 0487E.a, page G8-5514
-> +	// See ARM DDI 0406C.d, page B1-1181
-> +	if (sctlr & BIT(30))
-> +		new |= PSR_AA32_T_BIT;
-> +
-> +	new |= mode;
-> +
-> +	return new;
-> +}
-> +
->  static void prepare_fault32(struct kvm_vcpu *vcpu, u32 mode, u32 vect_offset)
->  {
-> -	unsigned long cpsr;
->  	unsigned long new_spsr_value = *vcpu_cpsr(vcpu);
->  	bool is_thumb = (new_spsr_value & PSR_AA32_T_BIT);
->  	u32 return_offset = return_offsets[vect_offset >> 2][is_thumb];
->  	u32 sctlr = vcpu_cp15(vcpu, c1_SCTLR);
->  
-> -	cpsr = mode | PSR_AA32_I_BIT;
-> -
-> -	if (sctlr & (1 << 30))
-> -		cpsr |= PSR_AA32_T_BIT;
-> -	if (sctlr & (1 << 25))
-> -		cpsr |= PSR_AA32_E_BIT;
-> -
-> -	*vcpu_cpsr(vcpu) = cpsr;
-> +	*vcpu_cpsr(vcpu) = get_except32_cpsr(vcpu, mode);
->  
->  	/* Note: These now point to the banked copies */
->  	vcpu_write_spsr(vcpu, new_spsr_value);
-> @@ -84,7 +175,7 @@ static void inject_abt32(struct kvm_vcpu *vcpu, bool is_pabt,
->  		fsr = &vcpu_cp15(vcpu, c5_DFSR);
->  	}
->  
-> -	prepare_fault32(vcpu, PSR_AA32_MODE_ABT | PSR_AA32_A_BIT, vect_offset);
-> +	prepare_fault32(vcpu, PSR_AA32_MODE_ABT, vect_offset);
->  
->  	*far = addr;
->  
+--===============6151989336795784658==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="xgyAXRrhYN0wYx8y"
+Content-Disposition: inline
 
-Looks good:
 
-Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+--xgyAXRrhYN0wYx8y
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi Mauro,
+
+On Wed 08 Jan 20, 15:11, Mauro Carvalho Chehab wrote:
+> Em Fri, 13 Dec 2019 17:04:25 +0100
+> Jernej Skrabec <jernej.skrabec@siol.net> escreveu:
+>=20
+> > HEVC has a scaling matrix concept. Add support for it.
+>=20
+> > +struct v4l2_ctrl_hevc_scaling_matrix {
+> > +	__u8	scaling_list_4x4[6][16];
+> > +	__u8	scaling_list_8x8[6][64];
+> > +	__u8	scaling_list_16x16[6][64];
+> > +	__u8	scaling_list_32x32[2][64];
+> > +	__u8	scaling_list_dc_coef_16x16[6];
+> > +	__u8	scaling_list_dc_coef_32x32[2];
+> > +};
+>=20
+> I never looked at HEVC spec, but the above seems really weird.
+>=20
+> Please correct me if I am wrong, but each of the above matrixes
+> is independent, and the driver will use just one of the above on
+> any specific time (for a given video output node), right?
+
+I am not too sure about what the specification really entails, but it is my
+understanding that HEVC allows simultaneous block sizes between 4x4 and 32x=
+32
+to exist within the same coding tree and slice. That suggests that it makes
+sense to have specific coefficients for each case.
+
+Note that the hardware also has distinct registers for each scaling list.
+
+Cheers,
+
+Paul
+
+> If so, why would userspace be forced to update lots of matrixes, if would
+> likely use just one at a given time?
+>=20
+> IMO, the proper way would be, instead, to use an uAPI like:
+>=20
+> /*
+>  * Actually, as this is uAPI, we will use a fixed size integer type, like
+>  *  unsigned int
+>  */
+> enum hevc_scaling_matrix_type {
+> 	HEVC_SCALING_MATRIX_4x4,
+> 	HEVC_SCALING_MATRIX_8x8,
+> ...
+> 	HEVC_SCALING_MATRIX_DC_COEF_32x32,
+> };
+>=20
+> struct v4l2_ctrl_hevc_scaling_matrix {
+> 	__u32	scaling_type 		/* as defined by enum hevc_scaling_matrix_type */
+>=20
+> 	union {
+> 		__u8	scaling_list_4x4[6][16];
+> 		__u8	scaling_list_8x8[6][64];
+> 		__u8	scaling_list_16x16[6][64];
+> 		__u8	scaling_list_32x32[2][64];
+> 		__u8	scaling_list_dc_coef_16x16[6];
+> 		__u8	scaling_list_dc_coef_32x32[2];
+> 	};
+> };
+>=20
+> And let the core use a default for each scaling matrix, if userspace does=
+n't
+> set it.
+>=20
+>=20
+>=20
+> Cheers,
+> Mauro
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--xgyAXRrhYN0wYx8y
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl4V6pgACgkQ3cLmz3+f
+v9F7hQf/XAlLHjAzimIvRq2xlPR1NvyAr7jDe7fBqBk3L9lKzKcKlvkzuOd/DQd7
+/zm4Z01MtrhbBQvcufpIH0L4LFVyMIwNUoMoRP2ds+yt2fG9Pdc66yJG+mWdq370
+vZtDY5ExsIOrt7moQfB3XQ9/6TnEMMb7H+/u/g9GsuQ8JxlMnuo11xxoCjUfznZ+
+RCwBNxrBfD4sB5ZAl27J4lUiSisKQm/vP2k3WlWs/XWpEJYsNqij2juBFfFjlReQ
+t5qzEHJFEg3Q1p9JxjbTODWsVDw9NcIB+9n36nYIgwr0EhyY6hGtfAVgCcQ9cF/J
+rkslVxMZS9Qq6vCfzn7leATtsAQ1Mg==
+=HWQs
+-----END PGP SIGNATURE-----
+
+--xgyAXRrhYN0wYx8y--
+
+
+--===============6151989336795784658==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6151989336795784658==--
+
