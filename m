@@ -2,57 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76386134914
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:18:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C457134920
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:20:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uFHjthehE8Esm795GfdA6wx0cr5ukcOBZI1oLrAs4z0=; b=TAuxeR+C9LXhOz
-	u4skueVgEPQvHOKwQgFablA6F1eMQzt5hJdYnqDffF9GVcFDZFirzgDl+tNdvr3j+V/WBtpocmUH8
-	DaiJrDcrUo6CHJbileaVxkTzfuc8kuhcvsgvFSB5d5XSFZjJWV42t8jl3gdzms1dDsz50Vh3//tqN
-	SWZIDv8zVUVcXCl6mhMWaKlYAq4HRxuJUS98oMr9HATrraFm3gDfskbiGgH98kHwNt/6/PAPL/2MR
-	INlVi8Oi9mANO/7xd2jSbwawKYgMd8yEwf4PCjRaZJ8YJJqV0pQXqgF1YKR6NM/eWL52RWXCfN4Qa
-	fjoSVgtTi12BjmfMm/Rw==;
+	List-Owner; bh=eaHT42WtyyR4BpjXbx9j1qBqbuk2oYvpukEOcNBx5Io=; b=TbXhhQfYqCGLAu
+	yiTJLvsejWWUFd0TKoki9jk52oWDq9+PC36ym6+t1+cdqoJysBPaMYqbxBCnrtEtLTF5aqOYB1tPx
+	LFflVsiYVlXCRtDv+/mNuQCdlc1XQE5Kxl1EfzKtL1qBtPJhBJhp4v67zr96+V8KwDvU8wv2e11TN
+	WXtH87tAlL3+YwRsGVZpIxyUk15Mrae2YLeXd7Q8FtEZfR2waHSmc9HjAp/sGu3ZiqXmVMXvI+m4P
+	q8Xb/aXAi0meWvTnoiQZWdUAHfXOU7h8Wazq9I1VGwx0HfcKNXWj/Nos/Yvn5db4rGFedzPsp4kum
+	gj2cyjS2847WF6zzFdDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipEyh-0007iZ-Le; Wed, 08 Jan 2020 17:18:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipEyb-0007i5-A1
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:18:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A2C71FB;
- Wed,  8 Jan 2020 09:18:36 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8A3073F534;
- Wed,  8 Jan 2020 09:18:35 -0800 (PST)
-Date: Wed, 8 Jan 2020 17:18:33 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v8 1/3] arm64: Implement archrandom.h for ARMv8.5-RNG
-Message-ID: <20200108171833.GH49203@lakrids.cambridge.arm.com>
-References: <20200107183540.54794-1-broonie@kernel.org>
- <20200107183540.54794-2-broonie@kernel.org>
+	id 1ipF0B-00005k-94; Wed, 08 Jan 2020 17:20:15 +0000
+Received: from ale.deltatee.com ([207.54.116.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipEzw-0007zf-JR
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:20:03 +0000
+Received: from s0106ac1f6bb1ecac.cg.shawcable.net ([70.73.163.230]
+ helo=[192.168.11.155])
+ by ale.deltatee.com with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.92) (envelope-from <logang@deltatee.com>)
+ id 1ipEyy-0004Ky-QH; Wed, 08 Jan 2020 10:19:03 -0700
+To: Michal Hocko <mhocko@kernel.org>
+References: <20200107205959.7575-1-logang@deltatee.com>
+ <20200107205959.7575-8-logang@deltatee.com>
+ <20200108124238.GS32178@dhcp22.suse.cz>
+From: Logan Gunthorpe <logang@deltatee.com>
+Message-ID: <17c6017f-c53c-2066-4b07-24528402fa7f@deltatee.com>
+Date: Wed, 8 Jan 2020 10:18:51 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200107183540.54794-2-broonie@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20200108124238.GS32178@dhcp22.suse.cz>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 70.73.163.230
+X-SA-Exim-Rcpt-To: ebadger@gigaio.com, peterz@infradead.org, luto@kernel.org,
+ dave.hansen@linux.intel.com, bp@alien8.de, mingo@redhat.com,
+ tglx@linutronix.de, benh@kernel.crashing.org, will@kernel.org,
+ catalin.marinas@arm.com, hch@lst.de, akpm@linux-foundation.org,
+ david@redhat.com, dan.j.williams@intel.com, linux-mm@kvack.org,
+ platform-driver-x86@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-s390@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-ia64@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, mhocko@kernel.org
+X-SA-Exim-Mail-From: logang@deltatee.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=ham autolearn_force=no version=3.4.2
+Subject: Re: [PATCH v2 7/8] mm/memory_hotplug: Add pgprot_t to mhp_modifiers
+X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
+X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_091837_433073_2569A84D 
-X-CRM114-Status: GOOD (  25.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_092001_250110_42EC5176 
+X-CRM114-Status: GOOD (  22.66  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [207.54.116.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,231 +81,234 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
- ard.biesheuvel@linaro.org, Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, platform-driver-x86@vger.kernel.org,
+ linux-mm@kvack.org, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, linux-s390@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dan Williams <dan.j.williams@intel.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Eric Badger <ebadger@gigaio.com>,
+ linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 07, 2020 at 06:35:38PM +0000, Mark Brown wrote:
-> From: Richard Henderson <richard.henderson@linaro.org>
+
+
+On 2020-01-08 5:42 a.m., Michal Hocko wrote:
+> On Tue 07-01-20 13:59:58, Logan Gunthorpe wrote:
+>> devm_memremap_pages() is currently used by the PCI P2PDMA code to create
+>> struct page mappings for IO memory. At present, these mappings are created
+>> with PAGE_KERNEL which implies setting the PAT bits to be WB. However, on
+>> x86, an mtrr register will typically override this and force the cache
+>> type to be UC-. In the case firmware doesn't set this register it is
+>> effectively WB and will typically result in a machine check exception
+>> when it's accessed.
+>>
+>> Other arches are not currently likely to function correctly seeing they
+>> don't have any MTRR registers to fall back on.
+>>
+>> To solve this, add an argument to arch_add_memory() to explicitly
+>> set the pgprot value to a specific value.
+>>
+>> Of the arches that support MEMORY_HOTPLUG: x86_64, s390 and arm64 is a
+>> simple change to pass the pgprot_t down to their respective functions
+>> which set up the page tables. For x86_32, set the page tables explicitly
+>> using _set_memory_prot() (seeing they are already mapped). For sh, reject
+>> anything but PAGE_KERNEL settings -- this should be fine, for now, seeing
+>> sh doesn't support ZONE_DEVICE anyway.
+>>
+>> Cc: Dan Williams <dan.j.williams@intel.com>
+>> Cc: David Hildenbrand <david@redhat.com>
+>> Cc: Michal Hocko <mhocko@suse.com>
+>> Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
 > 
-> Expose the ID_AA64ISAR0.RNDR field to userspace, as the RNG system
-> registers are always available at EL0.
+> OK, this is less code churn than I expected. Having pgprot as an implcit
+> parameter de-facto is a bit fragile though. Should we add a WARN_ON_ONCE
+> (e.g. into the add_pages to catch all arches) for value 0?
+
+Sure, I can add that for v3.
+
+Logan
+
+> Other than that
+> Acked-by: Michal Hocko <mhocko@suse.com>
 > 
-> Implement arch_get_random_seed_long using RNDR.  Given that the
-> TRNG is likely to be a shared resource between cores, and VMs,
-> do not explicitly force re-seeding with RNDRRS.  In order to avoid
-> code complexity and potential issues with hetrogenous systems only
-> provide values after cpufeature has finalized the system capabilities.
-> 
-> Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
-> [Modified to only function after cpufeature has finalized the system
-> capabilities and move all the code into the header -- broonie]
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> ---
->  Documentation/arm64/cpu-feature-registers.rst |  2 +
->  arch/arm64/Kconfig                            | 12 ++++
->  arch/arm64/include/asm/archrandom.h           | 67 +++++++++++++++++++
->  arch/arm64/include/asm/cpucaps.h              |  3 +-
->  arch/arm64/include/asm/sysreg.h               |  4 ++
->  arch/arm64/kernel/cpufeature.c                | 13 ++++
->  6 files changed, 100 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm64/include/asm/archrandom.h
-> 
-> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> index b6e44884e3ad..ce320785fb0c 100644
-> --- a/Documentation/arm64/cpu-feature-registers.rst
-> +++ b/Documentation/arm64/cpu-feature-registers.rst
-> @@ -117,6 +117,8 @@ infrastructure:
->       +------------------------------+---------+---------+
->       | Name                         |  bits   | visible |
->       +------------------------------+---------+---------+
-> +     | RNDR                         | [63-60] |    y    |
-> +     +------------------------------+---------+---------+
->       | TS                           | [55-52] |    y    |
->       +------------------------------+---------+---------+
->       | FHM                          | [51-48] |    y    |
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index b1b4476ddb83..835f8158220e 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1484,6 +1484,18 @@ config ARM64_PTR_AUTH
->  
->  endmenu
->  
-> +menu "ARMv8.5 architectural features"
-> +
-> +config ARCH_RANDOM
-> +	bool "Enable support for random number generation"
-> +	default y
-> +	help
-> +	  Random number generation (part of the ARMv8.5 Extensions)
-> +	  provides a high bandwidth, cryptographically secure
-> +	  hardware random number generator.
-> +
-> +endmenu
-> +
->  config ARM64_SVE
->  	bool "ARM Scalable Vector Extension support"
->  	default y
-> diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
-> new file mode 100644
-> index 000000000000..364177954bef
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/archrandom.h
-> @@ -0,0 +1,67 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef _ASM_ARCHRANDOM_H
-> +#define _ASM_ARCHRANDOM_H
-> +
-> +#ifdef CONFIG_ARCH_RANDOM
-> +
-> +#include <linux/random.h>
-> +#include <asm/cpufeature.h>
-> +
-> +static inline bool __arm64_rndr(unsigned long *v)
-> +{
-> +	bool ok;
-> +
-> +	/*
-> +	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
-> +	 * and set PSTATE.NZCV to 0b0100 otherwise.
-> +	 */
-> +	asm volatile(
-> +		__mrs_s("%0", SYS_RNDR_EL0) "\n"
-> +	"	cset %w1, ne\n"
-> +	: "=r"(*v), "=r"(ok)
-
-Nit: missing spacing here, this last line should be:
-
-	: "=r" (*v), "=r (ok)
-
-Otherwise, the patch looks good to me. With that fixed:
-
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-
-Thanks for sorting this out!
-
-Mark.
-
-> +	:
-> +	: "cc");
-> +
-> +	return ok;
-> +}
-> +
-> +static inline bool __must_check arch_get_random_long(unsigned long *v)
-> +{
-> +	return false;
-> +}
-> +
-> +static inline bool __must_check arch_get_random_int(unsigned int *v)
-> +{
-> +	return false;
-> +}
-> +
-> +static inline bool __must_check arch_get_random_seed_long(unsigned long *v)
-> +{
-> +	/*
-> +	 * Only support the generic interface after we have detected
-> +	 * the system wide capability, avoiding complexity with the
-> +	 * cpufeature code and with potential scheduling between CPUs
-> +	 * with and without the feature.
-> +	 */
-> +	if (!cpus_have_const_cap(ARM64_HAS_RNG))
-> +		return false;
-> +
-> +	return __arm64_rndr(v);
-> +}
-> +
-> +
-> +static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
-> +{
-> +	unsigned long val;
-> +	bool ok = arch_get_random_seed_long(&val);
-> +
-> +	*v = val;
-> +	return ok;
-> +}
-> +
-> +#else
-> +
-> +static inline bool __arm64_rndr(unsigned long *v) { return false; }
-> +
-> +#endif /* CONFIG_ARCH_RANDOM */
-> +#endif /* _ASM_ARCHRANDOM_H */
-> diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-> index b92683871119..515f4fbcbf91 100644
-> --- a/arch/arm64/include/asm/cpucaps.h
-> +++ b/arch/arm64/include/asm/cpucaps.h
-> @@ -56,7 +56,8 @@
->  #define ARM64_WORKAROUND_CAVIUM_TX2_219_PRFM	46
->  #define ARM64_WORKAROUND_1542419		47
->  #define ARM64_WORKAROUND_1319367		48
-> +#define ARM64_HAS_RNG				49
->  
-> -#define ARM64_NCAPS				49
-> +#define ARM64_NCAPS				50
->  
->  #endif /* __ASM_CPUCAPS_H */
-> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> index 6e919fafb43d..5e718f279469 100644
-> --- a/arch/arm64/include/asm/sysreg.h
-> +++ b/arch/arm64/include/asm/sysreg.h
-> @@ -365,6 +365,9 @@
->  #define SYS_CTR_EL0			sys_reg(3, 3, 0, 0, 1)
->  #define SYS_DCZID_EL0			sys_reg(3, 3, 0, 0, 7)
->  
-> +#define SYS_RNDR_EL0			sys_reg(3, 3, 2, 4, 0)
-> +#define SYS_RNDRRS_EL0			sys_reg(3, 3, 2, 4, 1)
-> +
->  #define SYS_PMCR_EL0			sys_reg(3, 3, 9, 12, 0)
->  #define SYS_PMCNTENSET_EL0		sys_reg(3, 3, 9, 12, 1)
->  #define SYS_PMCNTENCLR_EL0		sys_reg(3, 3, 9, 12, 2)
-> @@ -539,6 +542,7 @@
->  			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
->  
->  /* id_aa64isar0 */
-> +#define ID_AA64ISAR0_RNDR_SHIFT		60
->  #define ID_AA64ISAR0_TS_SHIFT		52
->  #define ID_AA64ISAR0_FHM_SHIFT		48
->  #define ID_AA64ISAR0_DP_SHIFT		44
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 04cf64e9f0c9..0fea85228956 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -119,6 +119,7 @@ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
->   * sync with the documentation of the CPU feature register ABI.
->   */
->  static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TS_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_FHM_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_DP_SHIFT, 4, 0),
-> @@ -1566,6 +1567,18 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
->  		.sign = FTR_UNSIGNED,
->  		.min_field_value = 1,
->  	},
-> +#endif
-> +#ifdef CONFIG_ARCH_RANDOM
-> +	{
-> +		.desc = "Random Number Generator",
-> +		.capability = ARM64_HAS_RNG,
-> +		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-> +		.matches = has_cpuid_feature,
-> +		.sys_reg = SYS_ID_AA64ISAR0_EL1,
-> +		.field_pos = ID_AA64ISAR0_RNDR_SHIFT,
-> +		.sign = FTR_UNSIGNED,
-> +		.min_field_value = 1,
-> +	},
->  #endif
->  	{},
->  };
-> -- 
-> 2.20.1
+>> ---
+>>  arch/arm64/mm/mmu.c            | 3 ++-
+>>  arch/ia64/mm/init.c            | 4 ++++
+>>  arch/powerpc/mm/mem.c          | 3 ++-
+>>  arch/s390/mm/init.c            | 2 +-
+>>  arch/sh/mm/init.c              | 3 +++
+>>  arch/x86/mm/init_32.c          | 5 +++++
+>>  arch/x86/mm/init_64.c          | 2 +-
+>>  include/linux/memory_hotplug.h | 2 ++
+>>  mm/memory_hotplug.c            | 2 +-
+>>  mm/memremap.c                  | 6 +++---
+>>  10 files changed, 24 insertions(+), 8 deletions(-)
+>>
+>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>> index 3320406579c3..9b214b0d268f 100644
+>> --- a/arch/arm64/mm/mmu.c
+>> +++ b/arch/arm64/mm/mmu.c
+>> @@ -1058,7 +1058,8 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
+>>  
+>>  	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
+>> -			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
+>> +			     size, modifiers->pgprot, __pgd_pgtable_alloc,
+>> +			     flags);
+>>  
+>>  	memblock_clear_nomap(start, size);
+>>  
+>> diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
+>> index daf438e08b96..5fd6ae4929c9 100644
+>> --- a/arch/ia64/mm/init.c
+>> +++ b/arch/ia64/mm/init.c
+>> @@ -677,6 +677,10 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  	int ret;
+>>  
+>>  	ret = __add_pages(nid, start_pfn, nr_pages, modifiers);
+>> +	if (modifiers->pgprot != PAGE_KERNEL)
+>> +		return -EINVAL;
+>> +
+>> +	ret = __add_pages(nid, start_pfn, nr_pages, restrictions);
+>>  	if (ret)
+>>  		printk("%s: Problem encountered in __add_pages() as ret=%d\n",
+>>  		       __func__,  ret);
+>> diff --git a/arch/powerpc/mm/mem.c b/arch/powerpc/mm/mem.c
+>> index 631ee684721f..fddeaee53198 100644
+>> --- a/arch/powerpc/mm/mem.c
+>> +++ b/arch/powerpc/mm/mem.c
+>> @@ -137,7 +137,8 @@ int __ref arch_add_memory(int nid, u64 start, u64 size,
+>>  	resize_hpt_for_hotplug(memblock_phys_mem_size());
+>>  
+>>  	start = (unsigned long)__va(start);
+>> -	rc = create_section_mapping(start, start + size, nid, PAGE_KERNEL);
+>> +	rc = create_section_mapping(start, start + size, nid,
+>> +				    modifiers->pgprot);
+>>  	if (rc) {
+>>  		pr_warn("Unable to create mapping for hot added memory 0x%llx..0x%llx: %d\n",
+>>  			start, start + size, rc);
+>> diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
+>> index ef19522ddad2..c65fb33f6a89 100644
+>> --- a/arch/s390/mm/init.c
+>> +++ b/arch/s390/mm/init.c
+>> @@ -277,7 +277,7 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  	if (WARN_ON_ONCE(modifiers->altmap))
+>>  		return -EINVAL;
+>>  
+>> -	rc = vmem_add_mapping(start, size, PAGE_KERNEL);
+>> +	rc = vmem_add_mapping(start, size, modifiers->pgprot);
+>>  	if (rc)
+>>  		return rc;
+>>  
+>> diff --git a/arch/sh/mm/init.c b/arch/sh/mm/init.c
+>> index 7e64f42fb570..7071dc5bd2e4 100644
+>> --- a/arch/sh/mm/init.c
+>> +++ b/arch/sh/mm/init.c
+>> @@ -412,6 +412,9 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  	unsigned long nr_pages = size >> PAGE_SHIFT;
+>>  	int ret;
+>>  
+>> +	if (modifiers->pgprot != PAGE_KERNEL)
+>> +		return -EINVAL;
+>> +
+>>  	/* We only have ZONE_NORMAL, so this is easy.. */
+>>  	ret = __add_pages(nid, start_pfn, nr_pages, modifiers);
+>>  	if (unlikely(ret))
+>> diff --git a/arch/x86/mm/init_32.c b/arch/x86/mm/init_32.c
+>> index 630d8a36fcd7..737da0dbc0d5 100644
+>> --- a/arch/x86/mm/init_32.c
+>> +++ b/arch/x86/mm/init_32.c
+>> @@ -857,6 +857,11 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  {
+>>  	unsigned long start_pfn = start >> PAGE_SHIFT;
+>>  	unsigned long nr_pages = size >> PAGE_SHIFT;
+>> +	int ret;
+>> +
+>> +	ret = _set_memory_prot(start, nr_pages, modifiers->pgprot);
+>> +	if (ret)
+>> +		return ret;
+>>  
+>>  	return __add_pages(nid, start_pfn, nr_pages, modifiers);
+>>  }
+>> diff --git a/arch/x86/mm/init_64.c b/arch/x86/mm/init_64.c
+>> index 17ea0bfc0b83..cc9eb45ad120 100644
+>> --- a/arch/x86/mm/init_64.c
+>> +++ b/arch/x86/mm/init_64.c
+>> @@ -868,7 +868,7 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  	unsigned long start_pfn = start >> PAGE_SHIFT;
+>>  	unsigned long nr_pages = size >> PAGE_SHIFT;
+>>  
+>> -	init_memory_mapping(start, start + size, PAGE_KERNEL);
+>> +	init_memory_mapping(start, start + size, modifiers->pgprot);
+>>  
+>>  	return add_pages(nid, start_pfn, nr_pages, modifiers);
+>>  }
+>> diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
+>> index 2152efae2f4b..00dfb2016737 100644
+>> --- a/include/linux/memory_hotplug.h
+>> +++ b/include/linux/memory_hotplug.h
+>> @@ -56,9 +56,11 @@ enum {
+>>  /*
+>>   * Restrictions for the memory hotplug:
+>>   * altmap: alternative allocator for memmap array
+>> + * pgprot: page protection flags to apply to newly added page tables
+>>   */
+>>  struct mhp_modifiers {
+>>  	struct vmem_altmap *altmap;
+>> +	pgprot_t pgprot;
+>>  };
+>>  
+>>  /*
+>> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+>> index 1bb3f92e087d..0888f821af06 100644
+>> --- a/mm/memory_hotplug.c
+>> +++ b/mm/memory_hotplug.c
+>> @@ -1027,7 +1027,7 @@ static int online_memory_block(struct memory_block *mem, void *arg)
+>>   */
+>>  int __ref add_memory_resource(int nid, struct resource *res)
+>>  {
+>> -	struct mhp_modifiers modifiers = {};
+>> +	struct mhp_modifiers modifiers = {.pgprot = PAGE_KERNEL};
+>>  	u64 start, size;
+>>  	bool new_node = false;
+>>  	int ret;
+>> diff --git a/mm/memremap.c b/mm/memremap.c
+>> index e30be8ba706b..45ab4ef0643d 100644
+>> --- a/mm/memremap.c
+>> +++ b/mm/memremap.c
+>> @@ -163,8 +163,8 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
+>>  		 * We do not want any optional features only our own memmap
+>>  		 */
+>>  		.altmap = pgmap_altmap(pgmap),
+>> +		.pgprot = PAGE_KERNEL,
+>>  	};
+>> -	pgprot_t pgprot = PAGE_KERNEL;
+>>  	int error, is_ram;
+>>  	bool need_devmap_managed = true;
+>>  
+>> @@ -252,8 +252,8 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
+>>  	if (nid < 0)
+>>  		nid = numa_mem_id();
+>>  
+>> -	error = track_pfn_remap(NULL, &pgprot, PHYS_PFN(res->start), 0,
+>> -			resource_size(res));
+>> +	error = track_pfn_remap(NULL, &modifiers.pgprot, PHYS_PFN(res->start),
+>> +				0, resource_size(res));
+>>  	if (error)
+>>  		goto err_pfn_remap;
+>>  
+>> -- 
+>> 2.20.1
+>>
 > 
 
 _______________________________________________
