@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22883133EC3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:58:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80B84133EC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:59:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ge15nQr3EAXYfDRmtOS1BfQg6IK+YfyNK+5yGAF0Jas=; b=GGkuh6nXCPsEPB
-	AScdqsmfjKY11UWTfBSnM1GSCmYys8YzN5rNLQ76vR+2i03EcZpOpTAXzeULgL6jtD/SLVbbQs6LX
-	4bt9Jr3EnphhFEpikxpLjBYgDkAq56rpiG3pAX1UH+ZKh7KwQGzBH/aHn0qxHAzp2HoqPHQRRDJSS
-	lNARSvMoO/GBNduAYO5E2lDcXMCgWqy6TJ4wGu3kHaLHdnrTifSY4X0YdUd0cPxopCv470hu7OLQe
-	LAdmaJc6OGXH7igAO/zhbC/G0x7FKaOw6+HJwb/2tNPyfLJ/An0NT1yHC7ITa4/+vG7hoTZzfivZk
-	edBZkXmj4bRudAOgSMXQ==;
+	List-Owner; bh=dSqRlScsHG2OxWhXfqRIJn6qtF+MDNJ4kbQaCPH8Qjc=; b=O6J18+VLSOmmZB
+	/pUk/oLAj+ffSXMxDtYVuh6Rr6OLyG6rj64NhNuYXLBl3MZAEsZMVaFx4lcdV2eYjy8tTW5n2qfBb
+	N14qPdcyU5bDRZMHNGiR9HBja1Lo58b1dPJxE2E5nVY3TGglraa3OTVSvlFNTbfBFmn8Q6oU3wkzr
+	KLcSXidTTGa1o/PKfKv7chX2aMsjYgeQBG8Nj3WPLv/w6/a5wPg0Tf0iQeSSmUhGanUe6YOF8i8il
+	dDznZ5Aw6ZJ6h/Eix/yEW/m4DUWjmieLpSkHCsQ+TOOnP5icHvbnzHr6YJvTJjdSrZpfYtDH6CCoT
+	NAKsF5BPUDnaooVNR1Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip86v-0007XY-V1; Wed, 08 Jan 2020 09:58:45 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1ip87j-0007sm-6Z; Wed, 08 Jan 2020 09:59:35 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip86i-0007Vg-TD
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 09:58:36 +0000
-Received: by mail-io1-xd41.google.com with SMTP id t26so2486002ioi.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 01:58:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QAtR7WNLGbja1kZFYbC1LM6r/2gOOz73oNIxwZf1sK8=;
- b=LGhwTuIZMsvckUaUhJ+tDGp6Y0jn0LYn/xbxleZUSDMkTwotTTy+1Fg5ZHuiCgbnuW
- ABixaa78LQAMQqSXxlOdTlfDx+n2+WrJQM9cCO+dERP4pTnItxTE5IlWAuVhshqD5D0f
- 0ZiCF95TJ+fR3w2e37nT74ePbWYE2y6TFcorU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QAtR7WNLGbja1kZFYbC1LM6r/2gOOz73oNIxwZf1sK8=;
- b=BtMA4LBD4rZ8dni5k8w4SIy08OkN3vpky64UKMpJLU7+iJ5Aa+tDQnYO/KK3R1VBvz
- 7cICpt76h1eFB4ic+KOlxSpE5ZooFu+VFDFSY7dRIXr13I4eVS47iCPl22Ejpj0MT1RO
- 4KN0FcJz2HrIUWMgDEExmkEOJjK6Ent+LBUyaM/7irhywV2IoEKpucOBbFcfj0+YbUk9
- t0Au/Wn+qMndBjZ46d90FN6wPd16ALF5DiUUlVnEM6nrrLB56qNmROyyk3b6twPOBG6n
- qJS76wlQh/PgmyXkiroFDehI1WL0VsBe4U5biYpqwBi0BPF4GStCZWUOVPUYQch5rj7D
- /QGg==
-X-Gm-Message-State: APjAAAWIcFlJeX/LjxdCp2pNbXxzte+K4apnFifEI9MpEAzbImH5BLgk
- V3GKW3E3wLUtOpMqyeeRP6xomIM86vovmy2k05AsGw==
-X-Google-Smtp-Source: APXvYqwH5rufYzM9JfRPQjj7bRhJ6sm9RgJQyx7qvhgpJjalHtt1/UbVPcBLfTvCu23laYbDf4TKavfcetdwMpGEoRY=
-X-Received: by 2002:a6b:3845:: with SMTP id f66mr2819729ioa.102.1578477511547; 
- Wed, 08 Jan 2020 01:58:31 -0800 (PST)
+ id 1ip87W-0007s0-Hu
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 09:59:28 +0000
+X-Originating-IP: 90.65.102.129
+Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 5903CE0016;
+ Wed,  8 Jan 2020 09:59:20 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Baruch Siach <baruch@tkos.co.il>, Russell King <linux@armlinux.org.uk>,
+ Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Subject: Re: [PATCH 1/3] ARM: armada-38x-solidrun-microsom: move i2c0 to SOM DT
+In-Reply-To: <87fb5ab9674efaf5dbf5fed779926eccf248306b.1577953408.git.baruch@tkos.co.il>
+References: <87fb5ab9674efaf5dbf5fed779926eccf248306b.1577953408.git.baruch@tkos.co.il>
+Date: Wed, 08 Jan 2020 10:59:20 +0100
+Message-ID: <87d0bub75z.fsf@FE-laptop>
 MIME-Version: 1.0
-References: <20200103064407.19861-1-michael.kao@mediatek.com>
- <20200103064407.19861-7-michael.kao@mediatek.com>
-In-Reply-To: <20200103064407.19861-7-michael.kao@mediatek.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Wed, 8 Jan 2020 17:58:05 +0800
-Message-ID: <CAJMQK-hQ5BWp7isGDTz_Y4ttxfoM0guqfcAEFrh3Eq7SMcNM5w@mail.gmail.com>
-Subject: Re: [PATCH v3,
- 6/8] thermal: mediatek: mt8183: fix bank number settings
-To: Michael Kao <michael.kao@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_015832_968777_21521C2E 
-X-CRM114-Status: UNSURE (   8.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_015926_775016_711FE51A 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,28 +64,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, srv_heupstream@mediatek.com,
- linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- lkml <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Dennis Gilmore <dennis@ausil.us>, Baruch Siach <baruch@tkos.co.il>,
+ Aditya Prayoga <aditya@kobol.io>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 3, 2020 at 2:44 PM Michael Kao <michael.kao@mediatek.com> wrote:
+Hi Baruch,
+
+> Move the i2c0 controller properties to the SOM .dtsi. This is
+> preparation for adding an i2c device at the SOM level.
 >
-> MT8183_NUM_ZONES should be set to 1
-> because MT8183 doesn't have multiple banks.
->
-> Fixes: a4ffe6b52d27 ("thermal: mediatek: add support for MT8183")
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> Cc: Dennis Gilmore <dennis@ausil.us>
+> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+
+Applied on mvebu/dt
+
+Thanks,
+
+Gregory
+
 > ---
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+>  arch/arm/boot/dts/armada-388-clearfog.dtsi          | 5 -----
+>  arch/arm/boot/dts/armada-388-helios4.dts            | 5 -----
+>  arch/arm/boot/dts/armada-38x-solidrun-microsom.dtsi | 7 +++++++
+>  3 files changed, 7 insertions(+), 10 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/armada-388-clearfog.dtsi b/arch/arm/boot/dts/armada-388-clearfog.dtsi
+> index 0d81600ca247..a6edea6f50d1 100644
+> --- a/arch/arm/boot/dts/armada-388-clearfog.dtsi
+> +++ b/arch/arm/boot/dts/armada-388-clearfog.dtsi
+> @@ -111,11 +111,6 @@ &eth2 {
+>  };
+>  
+>  &i2c0 {
+> -	clock-frequency = <400000>;
+> -	pinctrl-0 = <&i2c0_pins>;
+> -	pinctrl-names = "default";
+> -	status = "okay";
+> -
+>  	/*
+>  	 * PCA9655 GPIO expander, up to 1MHz clock.
+>  	 *  0-CON3 CLKREQ#
+> diff --git a/arch/arm/boot/dts/armada-388-helios4.dts b/arch/arm/boot/dts/armada-388-helios4.dts
+> index 705adfa8c680..fb49df2a3bce 100644
+> --- a/arch/arm/boot/dts/armada-388-helios4.dts
+> +++ b/arch/arm/boot/dts/armada-388-helios4.dts
+> @@ -140,11 +140,6 @@ usb3_phy: usb3-phy {
+>  	soc {
+>  		internal-regs {
+>  			i2c@11000 {
+> -				clock-frequency = <400000>;
+> -				pinctrl-0 = <&i2c0_pins>;
+> -				pinctrl-names = "default";
+> -				status = "okay";
+> -
+>  				/*
+>  				 * PCA9655 GPIO expander, up to 1MHz clock.
+>  				 *  0-Board Revision bit 0 #
+> diff --git a/arch/arm/boot/dts/armada-38x-solidrun-microsom.dtsi b/arch/arm/boot/dts/armada-38x-solidrun-microsom.dtsi
+> index 3a7f9c1ac346..cd39312fb50d 100644
+> --- a/arch/arm/boot/dts/armada-38x-solidrun-microsom.dtsi
+> +++ b/arch/arm/boot/dts/armada-38x-solidrun-microsom.dtsi
+> @@ -71,6 +71,13 @@ phy_dedicated: ethernet-phy@0 {
+>  	};
+>  };
+>  
+> +&i2c0 {
+> +	clock-frequency = <400000>;
+> +	pinctrl-0 = <&i2c0_pins>;
+> +	pinctrl-names = "default";
+> +	status = "okay";
+> +};
+> +
+>  &pinctrl {
+>  	microsom_phy_clk_pins: microsom-phy-clk-pins {
+>  		marvell,pins = "mpp45";
+> -- 
+> 2.24.1
+>
+
+-- 
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
