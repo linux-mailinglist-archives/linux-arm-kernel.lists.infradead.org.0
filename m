@@ -2,76 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF4D13437F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:10:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CE1E1343B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 14:23:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qq/m5rULnNIJbAU0VH2rTXq4kQeP4YgVXFNG83c6xWc=; b=DbxZQwHtZkqjmr
-	PNFM55ywY/pU91fGrvE8IPhGpa/saBI2aKcDsI9/P5Ct4JjhbE9uC6HsKJpuOc9+Apao5THggiVF6
-	KrSf8AqkIqZh5liC118aRrhEKIvgTQDnfh4fCguTtpEAe9kPn+fZ6NVuCVOM1aDkJlfq9ubAGKyq5
-	nL18hTjyHFIbCiw5nwu2kbtIeLEIiAlJPZt7f9+/BZJrZ95k/TACiTbKDlkyhSZB96W23Frfryt1E
-	7KFUsL5xRdrWgeBEgvyhII119mL6XsEOMC4PslIAl3KuWUZ8dxyZ10NxAK6oNvFKtTbZ+9ufksZhN
-	vHrBIh9CpbKT4hfoLF5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xUW6YeQFGJ/82jly0DseQhORkFhqo4JzXH46IQlmchE=; b=gIN4D8w8w/TPpoEZ0in596CLR
+	9KxWbJ+PCfXllVZibT3bKpjybuYMasA6qxfT+/xmxTseMPHE8xp4MVJSrbtLTEGIHDYaJ/Pr9e0b6
+	PlUTEyI/F071TdCbU5oIQmjbHiEtEPhXolbsjx/WAKAOg3Au61/Z4Tmi7yp+c8TBUWLDYYEXqYPcv
+	PJMyXGeOlwBN/bZFVClQUHNC1B6IrRFz4mwJbfU3DnzU9EOeJqQnDXPqYAXSSvkY11u+9PfsBnMul
+	6HlsbMPoDAtvEIyqJ3TDUq32KC/28ybxSfkUw6AyrDq0HDWrgL9vRUEGt78qqe8ZAmaJ6w1KDtFLB
+	O8U9ULJfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipB6f-0000lE-VL; Wed, 08 Jan 2020 13:10:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipB6W-0000jC-62
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 13:10:34 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C341205F4;
- Wed,  8 Jan 2020 13:10:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578489031;
- bh=YWAjQGTx7BqSwb3NRHw94BdAJ9TevBImfPuZnNeApRg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vRA4td7eQhe14Dw6kpIUT5AKCpVJ8eThPzcv196v8clU/e8IxC95MhZ6KcIvPoIeX
- qVPjTikfCVOQRgH1/xQ6KhfVPAKUb+1NEa9acZrQpZjUEFj8shK2R3dmC/aeYUOF/Q
- BAC1G1isw5RJkjwuJG3xXL5lg7An+xfY0JjHe77c=
-Date: Wed, 8 Jan 2020 13:10:21 +0000
-From: Will Deacon <will@kernel.org>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
- full SPE profiling buffer controls
-Message-ID: <20200108131020.GB16658@willie-the-truck>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-10-andrew.murray@arm.com>
- <20191221141325.5a177343@why>
- <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
- <fc222fef381f4ada37966db0a1ec314a@kernel.org>
- <20200108115816.GB15861@willie-the-truck>
- <745529f7e469b898b74dfc5153e3daf6@kernel.org>
+	id 1ipBIm-0005U4-SA; Wed, 08 Jan 2020 13:23:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipBIf-0005TA-WC; Wed, 08 Jan 2020 13:23:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A8B431B;
+ Wed,  8 Jan 2020 05:23:04 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 99F2B3F703;
+ Wed,  8 Jan 2020 05:23:03 -0800 (PST)
+Date: Wed, 8 Jan 2020 13:23:02 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
+ for the GPU
+Message-ID: <20200108132302.GA3817@sirena.org.uk>
+References: <20200108052337.65916-1-drinkcat@chromium.org>
+ <20200108052337.65916-5-drinkcat@chromium.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <745529f7e469b898b74dfc5153e3daf6@kernel.org>
+In-Reply-To: <20200108052337.65916-5-drinkcat@chromium.org>
+X-Cookie: Trouble always comes at the wrong time.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_051032_282836_FC3EFAB1 
-X-CRM114-Status: GOOD (  27.88  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200108_052306_078226_FE6AB295 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,94 +65,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, kvm@vger.kernel.org,
- Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
- Sudeep Holla <Sudeep.Holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
- kvmarm <kvmarm@lists.cs.columbia.edu>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel@lists.freedesktop.org, Steven Price <steven.price@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4396707966912148552=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 08, 2020 at 12:36:11PM +0000, Marc Zyngier wrote:
-> On 2020-01-08 11:58, Will Deacon wrote:
-> > On Wed, Jan 08, 2020 at 11:17:16AM +0000, Marc Zyngier wrote:
-> > > On 2020-01-07 15:13, Andrew Murray wrote:
-> > > > Looking at the vcpu_load and related code, I don't see a way of saying
-> > > > 'don't schedule this VCPU on this CPU' or bailing in any way.
-> > > 
-> > > That would actually be pretty easy to implement. In vcpu_load(), check
-> > > that that the CPU physical has SPE. If not, raise a request for that
-> > > vcpu.
-> > > In the run loop, check for that request and abort if raised, returning
-> > > to userspace.
-> > > 
-> > > Userspace can always check /sys/devices/arm_spe_0/cpumask and work out
-> > > where to run that particular vcpu.
-> > 
-> > It's also worth considering systems where there are multiple
-> > implementations
-> > of SPE in play. Assuming we don't want to expose this to a guest, then
-> > the
-> > right interface here is probably for userspace to pick one SPE
-> > implementation and expose that to the guest. That fits with your idea
-> > above,
-> > where you basically get an immediate exit if we try to schedule a vCPU
-> > onto
-> > a CPU that isn't part of the SPE mask.
-> 
-> Then it means that the VM should be configured with a mask indicating
-> which CPUs it is intended to run on, and setting such a mask is mandatory
-> for SPE.
 
-Yeah, and this could probably all be wrapped up by userspace so you just
-pass the SPE PMU name or something and it grabs the corresponding cpumask
-for you.
+--===============4396707966912148552==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="KsGdsel6WgEHnImy"
+Content-Disposition: inline
 
-> > > > One solution could be to allow scheduling onto non-SPE VCPUs but wrap
-> > > > the
-> > > > SPE save/restore code in a macro (much like kvm_arm_spe_v1_ready) that
-> > > > reads the non-sanitised feature register. Therefore we don't go bang,
-> > > > but
-> > > > we also increase the size of any black-holes in SPE capturing. Though
-> > > > this
-> > > > feels like something that will cause grief down the line.
-> > > >
-> > > > Is there something else that can be done?
-> > > 
-> > > How does userspace deal with this? When SPE is only available on
-> > > half of
-> > > the CPUs, how does perf work in these conditions?
-> > 
-> > Not sure about userspace, but the kernel driver works by instantiating
-> > an
-> > SPE PMU instance only for the CPUs that have it and then that instance
-> > profiles for only those CPUs. You also need to do something similar if
-> > you had two CPU types with SPE, since the SPE configuration is likely to
-> > be
-> > different between them.
-> 
-> So that's closer to what Andrew was suggesting above (running a guest on a
-> non-SPE CPU creates a profiling black hole). Except that we can't really
-> run a SPE-enabled guest on a non-SPE CPU, as the SPE sysregs will UNDEF
-> at EL1.
 
-Right. I wouldn't suggest the "black hole" approach for VMs, but it works
-for userspace so that's why the driver does it that way.
+--KsGdsel6WgEHnImy
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> Conclusion: we need a mix of a cpumask to indicate which CPUs we want to
-> run on (generic, not-SPE related), and a check for SPE-capable CPUs.
-> If any of these condition is not satisfied, the vcpu exits for userspace
-> to sort out the affinity.
-> 
-> I hate heterogeneous systems.
+On Wed, Jan 08, 2020 at 01:23:34PM +0800, Nicolas Boichat wrote:
 
-They hate you too ;)
+> Some GPUs, namely, the bifrost/g72 part on MT8183, have a second
+> regulator for their SRAM, let's add support for that.
 
-Will
+> +	pfdev->regulator_sram = devm_regulator_get_optional(pfdev->dev, "sram");
+> +	if (IS_ERR(pfdev->regulator_sram)) {
+
+This supply is required for the devices that need it so I'd therefore
+expect the driver to request the supply non-optionally based on the
+compatible string rather than just hoping that a missing regulator isn't
+important.  Though I do have to wonder given the lack of any active
+management of the supply if this is *really* part of the GPU or if it's
+more of a SoC thing, it's not clear what exactly adding this code is
+achieving.
+
+--KsGdsel6WgEHnImy
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4V17MACgkQJNaLcl1U
+h9B1Tgf9F6myo+YZUDZcDAsE1tQHONaZ147hS3g2NDCgQf79b/fWyNVelAPRvxg+
+wz+J0q2LmDX9K0ldimkt+BEitrL5aVQsPjw/WOXbOk/n4FBP11uDMxk9i586GGfO
+EXHDmfUQh8D+wEjZBKck8+yaa0NYCFoHdlxc3rPILim9fGRiJKa18EdbPRfb7lNm
+86k2Nkicmd8gkBfk7GlJ8MgGabr1ezpiza+F/vhTkEm+WHCcDwy+BadJG5whNnC0
+GmKn0ieyraLxmVUjC4BpkJbeG/ye5VPCOcLn4ZjGrRU209STb45MyFAlAaYFNzX0
+0wWQAm/aPa23vn2QhxYUW1RALdueLQ==
+=UhEZ
+-----END PGP SIGNATURE-----
+
+--KsGdsel6WgEHnImy--
+
+
+--===============4396707966912148552==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4396707966912148552==--
+
