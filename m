@@ -2,52 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CB4C133ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:00:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB168133EFA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:10:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FJi7xFPrNsjieNNbyIApPcb3C5Vt1GxYkuro61AumAE=; b=RRlU2J84KIvJm7
-	I8r/PmjkE0s2MPOrw7FDtpx9m8bqXRfcbhDwAnsPA4yFQqdYGqcn91TWOpx72rpqdVDHOMjbIFJvO
-	Kpm2oEpujGM8NztGSG8VcFEnK9UhZ0TMUBr2O8E3YgAzyz+Hz+FkQg3gwh4bQrZ+KznBc/LTqPipE
-	9w3ISxDp1tGVMO6TjAwZarg/U8HCtxqdssS/ZKvfMMD3Zw2sxasCuOAouVbSbwIrrUGDynFUUPc8F
-	A5l7326Ew3luJMCAzNnaXUUrTWUJrFu3Z9zWHVSvtv1wV+PqhszmdE8e3C5J0CZF5SL5wcwsllszY
-	TPPOma6xH2HF9NbJKZGA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WJxd+DXLrOjWgmMM38ncYzsyfNJHESVslZEu6Bnzgyo=; b=Acv
+	BF27CmPskC4xKA4b/64oBTYt2pFmzN3WCE5GoEfQZLLlA0Dv7CwM99SZI/vlRGeiumNWm0bEEB7xo
+	wfFeQ1zmtPy+bHb2yOzwb5vWt5V0P5hrvtSxKM+kw86tGvFUPoQN37X1lIgf3OyQzvzKJTv8UMX4u
+	R4Jhhz1Vq9yfknX2ve0PBKVSSB2sYmlxKToRL7B89vlUIIMtbd5Rt/1DmaMKNCshiExj3Y9K32MoV
+	qqpQ/avqrrh9z+ZdE8P8U66N2rV0qxYhE0DL2JKlAgksKu0MHvRoEHTjQsICRZH4lUL1aq/9XE4DK
+	gjeLg1qRefutpqlGaEv2ukSHyoocZtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip88n-0001MS-6u; Wed, 08 Jan 2020 10:00:41 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip88c-0001LL-LK
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:00:32 +0000
-Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
- [90.65.102.129]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 7CE52200019;
- Wed,  8 Jan 2020 10:00:26 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
- Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Subject: Re: [PATCH] arm64: dts: marvell: clearfog-gt-8k: fix switch cpu port
- node
-In-Reply-To: <18a7fd3e75a172a7bca9feecfb8a77ecb802d8af.1576751325.git.baruch@tkos.co.il>
-References: <18a7fd3e75a172a7bca9feecfb8a77ecb802d8af.1576751325.git.baruch@tkos.co.il>
-Date: Wed, 08 Jan 2020 11:00:26 +0100
-Message-ID: <875zhmb745.fsf@FE-laptop>
-MIME-Version: 1.0
+	id 1ip8IP-00051L-Uc; Wed, 08 Jan 2020 10:10:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ip8IH-00050F-N9
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:10:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 935DB1FB;
+ Wed,  8 Jan 2020 02:10:26 -0800 (PST)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2904B3F6C4;
+ Wed,  8 Jan 2020 02:10:25 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH 0/2] arm64: dts: sun50i: H6: Enable SPI flash
+Date: Wed,  8 Jan 2020 10:10:04 +0000
+Message-Id: <20200108101006.150706-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_020030_833103_33C2E271 
-X-CRM114-Status: GOOD (  10.76  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200108_021029_798103_A0D8A60A 
+X-CRM114-Status: GOOD (  12.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,57 +59,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hubert Feurstein <h.feurstein@gmail.com>, Baruch Siach <baruch@tkos.co.il>,
- Denis Odintsov <d.odintsov@traviangames.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek =?utf-8?Q?Beh=C3=BAn?= <marek.behun@nic.cz>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-spi@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Mark Brown <broonie@kernel.org>,
+ Icenowy Zheng <icenowy@aosc.xyz>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Baruch,
+Even though the SPI controller in the Allwinner H6 SoC is more advanced
+than in the previous generations (it supports 3-wire and 4-wire mode),
+the register set stayed backwards-compatible. So we can use the existing
+driver to use the "normal" SPI mode, for instance to access the SPI
+flash soldered on the Pine H64 board.
 
-> Explicitly set the switch cpu (upstream) port phy-mode and managed
-> properties. This fixes the Marvell 88E6141 switch serdes configuration
-> with the recently enabled phylink layer.
->
-> Fixes: a612083327 ("arm64: dts: add support for SolidRun Clearfog GT 8K")
-> Reported-by: Denis Odintsov <d.odintsov@traviangames.com>
-> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+These two patches allow this by adding the SPI controller nodes to the
+DT. The compatible strings include an H6 specific name, so that any
+future 4-wire enhancements for instance would be automatically usable
+once the driver learns this new trick. For now we use the H3 fallback
+name to bind the current driver.
 
+This time I tested this actual branch ;-) (on top of sunxi/dt-for-5.6),
+on a Pine H64, both the internal SPI flash as well with SPI flash
+connected to the other SPI controller available on the GPIO headers.
 
-Applied on mvebu/dt64
+One thing I noticed: Only SPI0 seems to connect the two extra pins
+required for 4-wire mode. Does this require some extra DT property or
+the like? Can we derive this from the number of pins in the pinctrl-0
+property? Or will we later introduce a new compatible string to prepend
+to the current list?
 
-Thanks,
+Cheers,
+Andre.
 
-Gregory
+Andre Przywara (2):
+  arm64: dts: sun50i: H6: Add SPI controllers nodes and pinmuxes
+  arm64: dts: allwinner: h6: Pine H64: Add SPI flash node
 
-> ---
->  arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> index bd881497b872..a211a046b2f2 100644
-> --- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> +++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> @@ -408,6 +408,8 @@ port@5 {
->  				reg = <5>;
->  				label = "cpu";
->  				ethernet = <&cp1_eth2>;
-> +				phy-mode = "2500base-x";
-> +				managed = "in-band-status";
->  			};
->  		};
->  
-> -- 
-> 2.24.0
->
+ .../boot/dts/allwinner/sun50i-h6-pine-h64.dts | 13 +++++
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 54 +++++++++++++++++++
+ 2 files changed, 67 insertions(+)
 
 -- 
-Gregory Clement, Bootlin
-Embedded Linux and Kernel engineering
-http://bootlin.com
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
