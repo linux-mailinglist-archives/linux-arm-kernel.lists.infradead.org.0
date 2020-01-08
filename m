@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FB68134117
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 12:47:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AA5713414C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 12:58:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nUqEHBWbkLfQuKSYGK5MsiJgQVEJLSy8YVs4XJhouYY=; b=ZlK7+yScXeqXtM
-	s4CELtz65GvFOvO2mwk+V+J/gTZZHXGHM2lnCIzNdg7p9id7XaOJrm6J8sF6zPkC+3yAzSfEXKymT
-	59jfvio1yJCtByk5g2FD3wjvK4ThpK+ysNC6pFt1HXpGN1IBgMfcM8ugUXTlMOyDBKdDgxt9swkDF
-	7+EKj6lvQUMeSa/dU3VMzT/rcbvM1q95ykrFIu18+FD0jRoGhz0FBJwLF7ks65wO1gK5rUV1BK4qa
-	AkDmwKy8HN73MVurN+PcUeIUB+K/BwhOB13gWZp6Yg5RdSYsjOL8eo3Q645ay53yANNPq9W88cxSv
-	duHQJrOyMRuACJmwjJwQ==;
+	List-Owner; bh=p/HHb4yL93OpvA11MBGegN4IgtYJTqqQcnheDSqk9LY=; b=lTw5jZjiSx3DA1
+	kxhaBNaEutwSw14LY3npoT3BUtmfa9ztgpxpoNWR1arw41dVOzJTsMj3oqFmi2LrnHv7fmqSMPz2R
+	5yrJfe1XhIdRAt+uxgtSE1nfi5eYqT/Tsm+HOVyOKz86DhOvOBdGEcS9YaC8PNLvm0ed7FvXPRpts
+	EditAOzAkbsFbE9vtdqrN/d5ivg70yd/VVJOq6nhBYawWzrQx1kG9NM9VU+BK6T0V5YVvDGK6nj9r
+	nPvbaDC/O8vrmRCbu94C75y5H4JRfPNmuNTDXtYPGQIgKjfexQOo9oXRt5trdQUI0Z3Z/rlJWFbj2
+	1755Y6+HLXWKYnBlYV/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip9oB-0008JT-DI; Wed, 08 Jan 2020 11:47:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip9o4-0008J9-RM
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 11:47:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAE4231B;
- Wed,  8 Jan 2020 03:47:23 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 75C973F703;
- Wed,  8 Jan 2020 03:47:22 -0800 (PST)
-Date: Wed, 8 Jan 2020 11:47:06 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Emmanuel Vadot <manu@bidouilliste.com>
-Subject: Re: [PATCH 1/2] arm64: dts: sun50i: H6: Add SPI controllers nodes
- and pinmuxes
-Message-ID: <20200108114706.5f27a9b2@donnerap.cambridge.arm.com>
-In-Reply-To: <20200108123448.26286186e74f899caaf5ad35@bidouilliste.com>
-References: <20200108101006.150706-1-andre.przywara@arm.com>
- <20200108101006.150706-2-andre.przywara@arm.com>
- <20200108123448.26286186e74f899caaf5ad35@bidouilliste.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1ip9yq-0003bj-Pw; Wed, 08 Jan 2020 11:58:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ip9yl-0003bH-BP
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 11:58:28 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 60C4E206DA;
+ Wed,  8 Jan 2020 11:58:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578484706;
+ bh=vw48TG6VhKIFdgjzyzo2ERgtSK1lHZF/IJpQOpT3km4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=U6CgaRzqEC7uwX/YgsDOLCpB46/uXVTTPUc/oyYmrkfgGYqhWutbtf4LXtKtxtVSj
+ OtzHDVwriyEeF9LJ6Aacoq2DL1EtSwJSczVnOd0pqx3u2snfzUvJggtStlN2pWWigE
+ pwc5yrVc6FLtGiW1dyK5CYwqWOCN7DxOzrepsBRk=
+Date: Wed, 8 Jan 2020 11:58:17 +0000
+From: Will Deacon <will@kernel.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
+ full SPE profiling buffer controls
+Message-ID: <20200108115816.GB15861@willie-the-truck>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-10-andrew.murray@arm.com>
+ <20191221141325.5a177343@why>
+ <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
+ <fc222fef381f4ada37966db0a1ec314a@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <fc222fef381f4ada37966db0a1ec314a@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_034724_972636_3DA5DA9D 
-X-CRM114-Status: GOOD (  23.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_035827_433090_53A9C533 
+X-CRM114-Status: GOOD (  28.94  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,132 +81,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-sunxi@googlegroups.com,
- Maxime Ripard <mripard@kernel.org>, linux-spi@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Icenowy Zheng <icenowy@aosc.xyz>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>, kvm@vger.kernel.org,
+ Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Sudeep Holla <Sudeep.Holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
+ kvmarm <kvmarm@lists.cs.columbia.edu>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 8 Jan 2020 12:34:48 +0100
-Emmanuel Vadot <manu@bidouilliste.com> wrote:
-
-Hi Emmanuel,
-
-> On Wed,  8 Jan 2020 10:10:05 +0000
-> Andre Przywara <andre.przywara@arm.com> wrote:
-> 
-> > The Allwinner H6 SoC contains two SPI controllers similar to the H3/A64,
-> > but with the added capability of 3-wire and 4-wire operation modes.
-> > For now the driver does not support those, but the SPI registers are
-> > fully backwards-compatible, just adding bits and registers which were
-> > formerly reserved. So we can use the existing driver for the "normal" SPI
-> > modes, for instance to access the SPI NOR flash soldered on the PineH64
-> > board.
-> > We use an H6 specific compatible string in addition to the existing H3
-> > string, so when the driver later gains Quad SPI support, it should work
-> > automatically without any DT changes.
+On Wed, Jan 08, 2020 at 11:17:16AM +0000, Marc Zyngier wrote:
+> On 2020-01-07 15:13, Andrew Murray wrote:
+> > On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
+> > > On Fri, 20 Dec 2019 14:30:16 +0000
+> > > Andrew Murray <andrew.murray@arm.com> wrote:
+> > > 
+> > > [somehow managed not to do a reply all, re-sending]
+> > > 
+> > > > From: Sudeep Holla <sudeep.holla@arm.com>
+> > > >
+> > > > Now that we can save/restore the full SPE controls, we can enable it
+> > > > if SPE is setup and ready to use in KVM. It's supported in KVM only if
+> > > > all the CPUs in the system supports SPE.
+> > > >
+> > > > However to support heterogenous systems, we need to move the check if
+> > > > host supports SPE and do a partial save/restore.
+> > > 
+> > > No. Let's just not go down that path. For now, KVM on heterogeneous
+> > > systems do not get SPE.
 > > 
-> > Tested by accessing the SPI flash on a Pine H64 board (SPI0), also
-> > connecting another SPI flash to the SPI1 header pins.
+> > At present these patches only offer the SPE feature to VCPU's where the
+> > sanitised AA64DFR0 register indicates that all CPUs have this support
+> > (kvm_arm_support_spe_v1) at the time of setting the attribute
+> > (KVM_SET_DEVICE_ATTR).
 > > 
-> > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> > ---
-> >  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 54 ++++++++++++++++++++
-> >  1 file changed, 54 insertions(+)
+> > Therefore if a new CPU comes online without SPE support, and an
+> > existing VCPU is scheduled onto it, then bad things happen - which I
+> > guess
+> > must have been the intention behind this patch.
+> 
+> I guess that was the intent.
+> 
+> > > If SPE has been enabled on a guest and a CPU
+> > > comes up without SPE, this CPU should fail to boot (same as exposing a
+> > > feature to userspace).
 > > 
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > index 3329283e38ab..40835850893e 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > @@ -338,6 +338,30 @@
-> >  				bias-pull-up;
-> >  			};
-> >  
-> > +			/omit-if-no-ref/  
+> > I'm unclear as how to prevent this. We can set the FTR_STRICT flag on
+> > the sanitised register - thus tainting the kernel if such a non-SPE CPU
+> > comes online - thought that doesn't prevent KVM from blowing up. Though
+> > I don't believe we can prevent a CPU coming up. At the moment this is
+> > my preferred approach.
 > 
->  That would prevent users to use an overlay and use those pins, is that
-> something that we want ? I'm not sure that the space saved by those are
-> useful.
+> I'd be OK with this as a stop-gap measure. Do we know of any existing
+> design where only half of the CPUs have SPE?
 
-Me neither ;-), but Maxime asked for it before, and it doesn't really hurt.
+No, but given how few CPUs implement SPE I'd say that this configuration
+is inevitable. I certainly went out of my way to support it in the driver.
 
-For overlays: if a .dtb is compiled with support for overlays (-@ to generate symbols), this tag is ignored, and the nodes stay in the .dtb, regardless of being referenced or not. Just confirmed by trying this.
-
-Cheers,
-Andre.
-
+> > Looking at the vcpu_load and related code, I don't see a way of saying
+> > 'don't schedule this VCPU on this CPU' or bailing in any way.
 > 
->  Cheers,
+> That would actually be pretty easy to implement. In vcpu_load(), check
+> that that the CPU physical has SPE. If not, raise a request for that vcpu.
+> In the run loop, check for that request and abort if raised, returning
+> to userspace.
 > 
-> > +			spi0_pins: spi0-pins {
-> > +				pins = "PC0", "PC2", "PC3";
-> > +				function = "spi0";
-> > +			};
-> > +
-> > +			/omit-if-no-ref/
-> > +			spi0_cs_pin: spi0-cs-pin {
-> > +				pins = "PC5";
-> > +				function = "spi0";
-> > +			};
-> > +
-> > +			/omit-if-no-ref/
-> > +			spi1_pins: spi1-pins {
-> > +				pins = "PH4", "PH5", "PH6";
-> > +				function = "spi1";
-> > +			};
-> > +
-> > +			/omit-if-no-ref/
-> > +			spi1_cs_pin: spi1-cs-pin {
-> > +				pins = "PH3";
-> > +				function = "spi1";
-> > +			};
-> > +
-> >  			spdif_tx_pin: spdif-tx-pin {
-> >  				pins = "PH7";
-> >  				function = "spdif";
-> > @@ -504,6 +528,36 @@
-> >  			#size-cells = <0>;
-> >  		};
-> >  
-> > +		spi0: spi@5010000 {
-> > +			compatible = "allwinner,sun50i-h6-spi",
-> > +				     "allwinner,sun8i-h3-spi";
-> > +			reg = <0x05010000 0x1000>;
-> > +			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
-> > +			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
-> > +			clock-names = "ahb", "mod";
-> > +			dmas = <&dma 22>, <&dma 22>;
-> > +			dma-names = "rx", "tx";
-> > +			resets = <&ccu RST_BUS_SPI0>;
-> > +			status = "disabled";
-> > +			#address-cells = <1>;
-> > +			#size-cells = <0>;
-> > +		};
-> > +
-> > +		spi1: spi@5011000 {
-> > +			compatible = "allwinner,sun50i-h6-spi",
-> > +				     "allwinner,sun8i-h3-spi";
-> > +			reg = <0x05011000 0x1000>;
-> > +			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
-> > +			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
-> > +			clock-names = "ahb", "mod";
-> > +			dmas = <&dma 23>, <&dma 23>;
-> > +			dma-names = "rx", "tx";
-> > +			resets = <&ccu RST_BUS_SPI1>;
-> > +			status = "disabled";
-> > +			#address-cells = <1>;
-> > +			#size-cells = <0>;
-> > +		};
-> > +
-> >  		emac: ethernet@5020000 {
-> >  			compatible = "allwinner,sun50i-h6-emac",
-> >  				     "allwinner,sun50i-a64-emac";
-> > -- 
-> > 2.17.1
+> Userspace can always check /sys/devices/arm_spe_0/cpumask and work out
+> where to run that particular vcpu.
+
+It's also worth considering systems where there are multiple implementations
+of SPE in play. Assuming we don't want to expose this to a guest, then the
+right interface here is probably for userspace to pick one SPE
+implementation and expose that to the guest. That fits with your idea above,
+where you basically get an immediate exit if we try to schedule a vCPU onto
+a CPU that isn't part of the SPE mask.
+
+> > One solution could be to allow scheduling onto non-SPE VCPUs but wrap
+> > the
+> > SPE save/restore code in a macro (much like kvm_arm_spe_v1_ready) that
+> > reads the non-sanitised feature register. Therefore we don't go bang,
+> > but
+> > we also increase the size of any black-holes in SPE capturing. Though
+> > this
+> > feels like something that will cause grief down the line.
+> > 
+> > Is there something else that can be done?
+> 
+> How does userspace deal with this? When SPE is only available on half of
+> the CPUs, how does perf work in these conditions?
+
+Not sure about userspace, but the kernel driver works by instantiating an
+SPE PMU instance only for the CPUs that have it and then that instance
+profiles for only those CPUs. You also need to do something similar if
+you had two CPU types with SPE, since the SPE configuration is likely to be
+different between them.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
