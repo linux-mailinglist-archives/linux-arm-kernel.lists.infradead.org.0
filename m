@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02776134D9F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:31:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F285134DA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:31:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NZAbViX5XBik21511cYfkJeg8RVAWp8z0i5lBD8I3A=; b=PPbZEDogTWOAKt
-	vGEBmYIHsijvJp6JUabVqJ41pmhALDuwRITxLwQXeAoIvKQWCdFzoiwYoDpngei+ydUGyATVOCnjW
-	U7k07+oRP7xqrv4HTE8y8CJxP+lXnCi9+25yJzL0M/H/8Gd4TlKVly/Tl7Y+rU0frToihXQeEUtd8
-	ZAAsMnaoqa2b/3HAW90/nKRlk1bGx+mTXVkNujcm3nEK37nYTpPpymfoT1exnThJ+yD2dNU+xNe9e
-	iOMH9RZR6FSnVBScUKgclMWFqHHhsLuNDC5SuVCtaSILJ26QeOEF/GVLoBBcGM+9y//1OntfaPMdP
-	XwPA3rVu/LCz3jjZDT6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SzSPRM56Eojgs3h590MpiCne48Mrn7P9yssGC+DvTqQ=; b=tFp
+	JXpS/yi5j2BoeVeJTEwWrjRKrNoImglY2237yPDmTmSxwyv4YApVOykMZU5doOgJh4tDB415/HVcP
+	Pt83NZQcQ1Hj+D9oULb1/+J8yRY1ERFIU8it9ei2ueSzOVU1Jt0/b5usw7RdHCtfkpmAEFvQWCz53
+	E1iEFfOt+nOM8KCE4QTzd7m5E6219u5f0kSWAqvppniOzO4SmOzfZAt5FaG133AGNfSGfQENmShqq
+	djzZZW4UQbAzslsp+3wh+AlATC2MFw5VcRCpOTajNsmKAKdDrDWDpUxDKmUifhSQcZwJL9QthDjEm
+	6o+n9p95E3dokXysLN0ofrCGKcUsuWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipHzA-0004ml-IS; Wed, 08 Jan 2020 20:31:24 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1ipHzU-00057k-Ho; Wed, 08 Jan 2020 20:31:44 +0000
+Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipHvA-0008CC-6T
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:18 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Jan 2020 12:27:07 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658401"
-Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by orsmga007.jf.intel.com with ESMTP; 08 Jan 2020 12:27:07 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 14/14] KVM: x86/mmu: Use huge pages for DAX-backed files
-Date: Wed,  8 Jan 2020 12:24:48 -0800
-Message-Id: <20200108202448.9669-15-sean.j.christopherson@intel.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
-References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
+ id 1ipHwf-0001Ms-Cc
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:28:54 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 47tLRs72xPz9sPJ;
+ Thu,  9 Jan 2020 07:28:41 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1578515325;
+ bh=iXmqXirrsBQRqRiY/M5nTMqr0oBHja7Xprthl2OT4cg=;
+ h=Date:From:To:Cc:Subject:From;
+ b=glK3IIKQZ2iculhRlejO4Jt0yy1e/dVbGNbRDnvAUfeNBIS2hMhmDX+8rFnBpILMc
+ 341WGBr5hUIINTNUBmJ4BMzlKlkZjCnZXpwQS8OJ58Qt7P2NliBy3oXxNHdFf9lrDr
+ y6KVZlMEYzuxhPdLVBdnDThalt4A1t0Vl5BxLEtO2BFmGh10r8iJcoYVUw9Rrr+fqe
+ utWF8Q4BViQlRd1ii53mWqFEJmTkOkait/5Y1wHeSAR4cWXvL+44NRD5nKHvos9AZh
+ t1NqKPFCuXBf1I/usyZYyB//VBCxs8TAO/nQJWhT444z2lkJXx8oUMuDPB4ib8bPJd
+ 4/HKe397EYfvA==
+Date: Thu, 9 Jan 2020 07:28:40 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Gregory Clement <gregory.clement@bootlin.com>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: Fixes tag needs some work in the mvebu tree
+Message-ID: <20200109072840.0a8d1ef6@canb.auug.org.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_122716_391145_118DD768 
-X-CRM114-Status: GOOD (  14.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200108_122849_611687_0137ED5B 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [203.11.71.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,92 +76,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@ozlabs.org>,
- linux-mm@kvack.org, kvmarm@lists.cs.columbia.edu,
- Andrea Arcangeli <aarcange@redhat.com>, Dave Jiang <dave.jiang@intel.com>,
- linux-nvdimm <linux-nvdimm@lists.01.org>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>,
- syzbot+c9d1fb51ac9d0d10c39d@syzkaller.appspotmail.com,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Barret Rhoden <brho@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org, Liran Alon <liran.alon@oracle.com>,
- Andy Lutomirski <luto@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- James Morse <james.morse@arm.com>, Jason Zeng <jason.zeng@intel.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Baruch Siach <baruch@tkos.co.il>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: multipart/mixed; boundary="===============8586219132677560591=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Walk the host page tables to identify hugepage mappings for ZONE_DEVICE
-pfns, i.e. DAX pages.  Explicitly query kvm_is_zone_device_pfn() when
-deciding whether or not to bother walking the host page tables, as DAX
-pages do not set up the head/tail infrastructure, i.e. will return false
-for PageCompound() even when using huge pages.
+--===============8586219132677560591==
+Content-Type: multipart/signed; boundary="Sig_/fB+QLalH_DE.qdPRNRKeajb";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-Zap ZONE_DEVICE sptes when disabling dirty logging, e.g. if live
-migration fails, to allow KVM to rebuild large pages for DAX-based
-mappings.  Presumably DAX favors large pages, and worst case scenario is
-a minor performance hit as KVM will need to re-fault all DAX-based
-pages.
+--Sig_/fB+QLalH_DE.qdPRNRKeajb
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Suggested-by: Barret Rhoden <brho@google.com>
-Cc: David Hildenbrand <david@redhat.com>
-Cc: Dan Williams <dan.j.williams@intel.com>
-Cc: Jason Zeng <jason.zeng@intel.com>
-Cc: Dave Jiang <dave.jiang@intel.com>
-Cc: Liran Alon <liran.alon@oracle.com>
-Cc: linux-nvdimm <linux-nvdimm@lists.01.org>
-Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
----
- arch/x86/kvm/mmu/mmu.c | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
+Hi all,
 
-diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index 1e4e0ac169a7..324e1919722f 100644
---- a/arch/x86/kvm/mmu/mmu.c
-+++ b/arch/x86/kvm/mmu/mmu.c
-@@ -3250,7 +3250,7 @@ static int host_pfn_mapping_level(struct kvm_vcpu *vcpu, gfn_t gfn,
- 		     PT_DIRECTORY_LEVEL != (int)PG_LEVEL_2M ||
- 		     PT_PDPE_LEVEL != (int)PG_LEVEL_1G);
- 
--	if (!PageCompound(pfn_to_page(pfn)))
-+	if (!PageCompound(pfn_to_page(pfn)) && !kvm_is_zone_device_pfn(pfn))
- 		return PT_PAGE_TABLE_LEVEL;
- 
- 	/*
-@@ -3282,8 +3282,7 @@ static int kvm_mmu_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
- 	if (unlikely(max_level == PT_PAGE_TABLE_LEVEL))
- 		return PT_PAGE_TABLE_LEVEL;
- 
--	if (is_error_noslot_pfn(pfn) || kvm_is_reserved_pfn(pfn) ||
--	    kvm_is_zone_device_pfn(pfn))
-+	if (is_error_noslot_pfn(pfn) || kvm_is_reserved_pfn(pfn))
- 		return PT_PAGE_TABLE_LEVEL;
- 
- 	slot = kvm_vcpu_gfn_to_memslot(vcpu, gfn);
-@@ -5910,8 +5909,8 @@ static bool kvm_mmu_zap_collapsible_spte(struct kvm *kvm,
- 		 * mapping if the indirect sp has level = 1.
- 		 */
- 		if (sp->role.direct && !kvm_is_reserved_pfn(pfn) &&
--		    !kvm_is_zone_device_pfn(pfn) &&
--		    PageCompound(pfn_to_page(pfn))) {
-+		    (kvm_is_zone_device_pfn(pfn) ||
-+		     PageCompound(pfn_to_page(pfn)))) {
- 			pte_list_remove(rmap_head, sptep);
- 
- 			if (kvm_available_flush_tlb_with_range())
--- 
-2.24.1
+In commit
 
+  66f5ff1bf632 ("arm64: dts: marvell: clearfog-gt-8k: fix switch cpu port n=
+ode")
+
+Fixes tag
+
+  Fixes: a612083327 ("arm64: dts: add support for SolidRun Clearfog GT 8K")
+
+has these problem(s):
+
+  - SHA1 should be at least 12 digits long
+    Can be fixed by setting core.abbrev to 12 (or more) or (for git v2.11
+    or later) just making sure it is not set (or set to "auto").
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/fB+QLalH_DE.qdPRNRKeajb
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl4WO3gACgkQAVBC80lX
+0GzlBwf+IkqztACER0k99/iO/1AhWCYZOkD2h+h2E7BX8mxGC8uuswkNz37f0B+V
+1dvWtFY+iDtB9NEwwoNPPuiX/nvM7Pf7VLoVR/B72uz8XXlRuBQsshSBzDF1287r
+VECxdKw+K2pQkgZXLu4bkHfYhsbRrZgvLUaoIAbhpeihTtbmmboJ9G9wq9RPtKu8
+WI9Bb06Fw/cHmJkZF2EankNyn01TClE1UYd7kejZuB21wafFr9zsmaor4exDzoB4
+wjuW3l9Xl4gajI3BwmShCUG1nDrDORsK24OHpGREbctFyIFME+AyfdC85x5Slggm
+vCuZZO+It2+QgCJzt8grGpScsh7r3A==
+=uRcc
+-----END PGP SIGNATURE-----
+
+--Sig_/fB+QLalH_DE.qdPRNRKeajb--
+
+
+--===============8586219132677560591==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8586219132677560591==--
+
