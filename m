@@ -2,66 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A130133C28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:24:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D61B8133C53
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 08:29:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7grqotchEFgGi9bSXAEG+6MPitaXK4z151HzkcQ3R8c=; b=mLvICLlOlCoF3O
-	kpjbFZW2QecAy0a7xJtbQrAFPEgrH4IpLnlZ/vmpcjOyHp7uxjVTvK9yLFobpqd4i1ZlIhRzW73hr
-	O7ZdcVd9tJdEM70RNNIqcf+lb384jVrZj5Dtw92m2H1nECWC3gsFbR7xEIYDqrka37aGiaeUuPjmk
-	j7x4vIxX+f7t7tjGQ9i0NU0K5uuuR6puUsivZHbE3CBustOa35+zZcRhEn3Yb/hcFOU8kB9RvA15m
-	v9ugOuY0h8fkpMdHtu2bjLr1Gne282B2M+F+2d1Ml3w5Sgt8l6LK5uG9YaFbdIQBd8rWjPOgBRCAN
-	j+IGc2I6mHa/TWpRbFdA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fQDsNAMkMCJqR1P4s6Hr5gLSZSU3+PEzBAGw2+0EJFo=; b=kya
+	F9NXi4iSay4JQnnE6mKq3j0gOjR9zIES2OS6PIuJsdkWVDm5Ool6Sm00djghH0DDlSkQYYoCQPQuT
+	g1ES+HL9vbCm8XHxJlzQsMCbvnExdevfT946K1934YjM3fmF7NszGDLO4EjgkTdgGysUosqnCmpJ1
+	+2mOGCz/kOPo/fcPZe0+aEFtwCuvIC7Mtq6WsCnMttAWB5zWEz5NcB3AQXOxMF/HrTSMiBoP+VLfy
+	av0fWjWcbcDwT2g8OZM/vhLEAhd5ciB42Vi/SBDKqrCBSKv/391MmhOX3bvSadJbjj+cKocEgKbUh
+	yMi2H7MyZjjSJ95TTmRMs2jDBzJT0YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip5hN-0002fx-Oc; Wed, 08 Jan 2020 07:24:13 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ip5mg-0005N4-OL; Wed, 08 Jan 2020 07:29:42 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip5hH-0002fN-1Q
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:24:08 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ip5gu-0003RP-HA; Wed, 08 Jan 2020 08:23:44 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1ip5gs-0003MG-LI; Wed, 08 Jan 2020 08:23:42 +0100
-Date: Wed, 8 Jan 2020 08:23:42 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: fengping yu <fengping.yu@mediatek.com>
-Subject: Re: [PATCH V2 2/2] drivers: input: keyboard
-Message-ID: <20200108072342.xkym3bnqgwapgqjz@pengutronix.de>
-References: <20200108062923.14684-1-fengping.yu@mediatek.com>
- <20200108062923.14684-3-fengping.yu@mediatek.com>
- <20200108071130.leowzwzkexozumda@pengutronix.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200108071130.leowzwzkexozumda@pengutronix.de>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:22:13 up 53 days, 22:40, 46 users,  load average: 0.15, 0.09, 0.03
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1ip5mX-0005Lu-Mp
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 07:29:35 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E4E781A0B13;
+ Wed,  8 Jan 2020 08:29:29 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 617A51A03DB;
+ Wed,  8 Jan 2020 08:29:21 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4A74E402D9;
+ Wed,  8 Jan 2020 15:29:11 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ daniel.baluta@nxp.com, leonard.crestez@nxp.com, shengjiu.wang@nxp.com,
+ ping.bai@nxp.com, jun.li@nxp.com, aford173@gmail.com, peng.fan@nxp.com,
+ abel.vesa@nxp.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] arm64: dts: imx8mm: Memory node should be in board DT
+Date: Wed,  8 Jan 2020 15:25:28 +0800
+Message-Id: <1578468329-9983-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_232407_083465_745DDF9E 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200107_232933_885743_442545A8 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,44 +70,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- wsd_upstream@mediatek.com, Stefan Agner <stefan@agner.cn>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
- Anson Huang <Anson.Huang@nxp.com>, YueHaibing <yuehaibing@huawei.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- linux-input@vger.kernel.org, Thierry Reding <treding@nvidia.com>,
- Valentin Schneider <valentin.schneider@arm.com>, devicetree@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Maxime Ripard <mripard@kernel.org>,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Aisheng Dong <aisheng.dong@nxp.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
- Dinh Nguyen <dinguyen@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Memory address/size depends on board design, so memory node should
+be in board DT.
 
-On 20-01-08 08:11, Marco Felsch wrote:
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 5 +++++
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi    | 5 -----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
-...
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+index cf044dd..9e54747 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+@@ -16,6 +16,11 @@
+ 		stdout-path = &uart2;
+ 	};
+ 
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x0 0x40000000 0 0x80000000>;
++	};
++
+ 	leds {
+ 		compatible = "gpio-leds";
+ 		pinctrl-names = "default";
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index a3d179b..1e5e115 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -140,11 +140,6 @@
+ 		};
+ 	};
+ 
+-	memory@40000000 {
+-		device_type = "memory";
+-		reg = <0x0 0x40000000 0 0x80000000>;
+-	};
+-
+ 	osc_32k: clock-osc-32k {
+ 		compatible = "fixed-clock";
+ 		#clock-cells = <0>;
+-- 
+2.7.4
 
-> > +struct mtk_keypad {
-> > +	struct input_dev *input_dev;
-> > +	struct wakeup_source *suspend_lock;
-> > +	struct tasklet_struct tasklet;
-> 
-> Why do you use a tasklet instead of a simple softirq?
-
-Sorry, what I mean was a threaded_irq.
-
-Regards,
-  Marco
 
 _______________________________________________
 linux-arm-kernel mailing list
