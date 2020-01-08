@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4CEA134E84
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:11:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46E4F134E81
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:11:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,51 +11,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=mRvcdlMudXiYpRypudreH3Qgq5cGQdRbc+QhwuMy520=; b=tFb6qDsS+X6MtPrX0NScH/l0kz
-	WPUOIQvv23Xqs/iNEptzuuTdEzlVT/RZcno6btmMwHzAKlauvrWCqA938RiXcUOJOUlWwVFrEv8is
-	okjEOUF48sUP8KCGiEDl1DAT/Ypx26Dv7TR/L65qpJ7jE8CyfxiqNDfDKRwurbj+iFwsHgreo93Tk
-	CTIY/KrQzQ/MTqq3crqvDmLtWG25ojWNJPlGQC25DZSbBLXw9ZzSQi7xLQJsUW/5nLZqmfnFqUYkt
-	61D1VhYw0g2gDTIxbIap9H0MWoW5Um52Qn6t3hJP/ekqNj2+QFV/k2sWCmpUpsM24hV7FCs5wThec
-	2r+1n1zQ==;
+	bh=4nVcAyd3WDKpxOuQqSTDbas2FyFeUEy02QJDQTdt7Qg=; b=iQdx5I41PKMn+guMPjc9a4Rekb
+	G2/oI2cyxI4G2I9YQd6eoqzXA73Xir+nFUiqzNQVmwO4oREi/7wf374zNhXciLsHUzeTsxahw3JBO
+	27N/nBG16JsrqcCK6tNIemx3AHKLqhfWehGtM3C+qpx27Iq36tdQ03by/UehN+y78AyJPv0wX28rn
+	O1//d2mY1DEmgAmoQa5XfSlRTFMtQruBRD3xeHqCa+VWWXRsMGWKmv97yOhT6ldsJKvQthNlmPDbv
+	Q6mKLyvkqtD93rMyq6Jg7mpHM4AA/ct958A+2XTqryORV9YYPfWVKuWk/WljGtnpQamHQ13bsiB4s
+	VNr1LoYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipIbh-0004iy-J0; Wed, 08 Jan 2020 21:11:13 +0000
+	id 1ipIbT-0004VN-NO; Wed, 08 Jan 2020 21:10:59 +0000
 Received: from o1.b.az.sendgrid.net ([208.117.55.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipIYw-0000jp-CB
+ id 1ipIYw-0000kN-PF
  for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 21:08:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
  h=from:subject:in-reply-to:references:to:cc:content-type:
  content-transfer-encoding;
- s=001; bh=zGVrt1CaSjQ+KYxMuJ8yaAAfHLp2yzYIyOjxAJaDlEA=;
- b=RH6BuAjwFS2Uy67WI3hhoKteoCYavlm1gFlKO4p5CTas808UyS7DGlSqdR3GCslNOEoO
- Sl4pYw65bOfdp7onKU2dlanpEzajO7L++i1UKTHf90jQ9YuS095AWZHWMgXqw2t09BRyRr
- hkHVPSD1DMPXvvCf1hYwBnSmpeWyIHu1E=
-Received: by filterdrecv-p3mdw1-56c97568b5-m6gw4 with SMTP id
- filterdrecv-p3mdw1-56c97568b5-m6gw4-19-5E1644A7-18
- 2020-01-08 21:07:51.361082852 +0000 UTC m=+1974284.586093135
+ s=001; bh=9Jj+NAbgprA6DENYOuHp17AlmWy0xXfyrllq+OdkH7g=;
+ b=MBDdbuzSOQT00uVzFB1TeI26jQ5PDsgZnGvXzcl1mhwrxnNIJihsvibTsqsqjVFvv2AH
+ QCkPIfTMP8VrOfR9URTfX9EFYtsEXPODmCxrF/tb00YfTKt1eNZcU3EE/Q8cc6/UFIoqJ2
+ nOfv0S4+udiMZcqf23vtrLAQdCU229B/g=
+Received: by filterdrecv-p3mdw1-56c97568b5-9vfcv with SMTP id
+ filterdrecv-p3mdw1-56c97568b5-9vfcv-17-5E1644A7-6C
+ 2020-01-08 21:07:51.781361678 +0000 UTC m=+1974280.403924586
 Received: from bionic.localdomain (unknown [98.128.173.80])
- by ismtpd0005p1lon1.sendgrid.net (SG) with ESMTP id Sl3TaZXdSJ6-rD9zZJXxWw
- Wed, 08 Jan 2020 21:07:51.174 +0000 (UTC)
+ by ismtpd0005p1lon1.sendgrid.net (SG) with ESMTP id hV9nQRodQD6D2W9vsowA8Q
+ Wed, 08 Jan 2020 21:07:51.581 +0000 (UTC)
 From: Jonas Karlman <jonas@kwiboo.se>
-Subject: [PATCH v2 10/14] arm64: dts: rockchip: add vpll clock to hdmi node on
- rk3328
+Subject: [PATCH v2 11/14] ARM: dts: rockchip: add vpll clock to hdmi node on
+ rk3228
 Date: Wed, 08 Jan 2020 21:07:51 +0000 (UTC)
-Message-Id: <20200108210740.28769-11-jonas@kwiboo.se>
+Message-Id: <20200108210740.28769-12-jonas@kwiboo.se>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200108210740.28769-1-jonas@kwiboo.se>
 References: <20200108210740.28769-1-jonas@kwiboo.se>
 X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
- =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0hzchG1hbSefw3nPpK?=
- =?us-ascii?Q?SnZ=2FYbnfoXLVjCgB=2FbRoE+99Du8Gk2dg2yX4tND?=
- =?us-ascii?Q?97JSRLFvAhj=2FopZ=2FH6F8AZg3+Bpr6e31trevqFy?=
- =?us-ascii?Q?f3caFI6UsOujiRk6EmxF635ZjileCAvpzJE0J1V?=
- =?us-ascii?Q?xGDFFpA7tjmSVEqA2Pybp=2F9hLBz3pzXd3yiZATn?=
- =?us-ascii?Q?=2FONrzV6IgCCy6NsH2Ikyw=3D=3D?=
+ =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0h=2FbbmpOPRsDtGkVba?=
+ =?us-ascii?Q?CkWsg18J6MAJ=2F7UNlaGwK9UO1pBiv2MXipeMHJe?=
+ =?us-ascii?Q?4mrzEuk8+FykzeKYZEmvF9diWYbEVuFbn7jRrH8?=
+ =?us-ascii?Q?93W=2FC+TsVfxYtCLXEaxyQIZZirGY5vzaon0eX2V?=
+ =?us-ascii?Q?JwPLGL6SnO5ebPfC5+EhQ5=2FZ0LaIMaEChwP7K3r?=
+ =?us-ascii?Q?CDj03C53YRhqpXaV2owBQ=3D=3D?=
 To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_130822_473432_AECF73B2 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200108_130822_884327_5C5DC65A 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,25 +99,24 @@ Add the hdmiphy clock as the vpll in hdmi node.
 
 Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 ---
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/boot/dts/rk322x.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index fee896338cc1..5d8807aca62e 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -720,9 +720,11 @@
- 			     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru PCLK_HDMI>,
- 			 <&cru SCLK_HDMI_SFC>,
-+			 <&hdmiphy>,
- 			 <&cru SCLK_RTC32K>;
- 		clock-names = "iahb",
- 			      "isfr",
-+			      "vpll",
- 			      "cec";
- 		phys = <&hdmiphy>;
- 		phy-names = "hdmi";
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 340ed6ccb08f..16ad240d5f7f 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -639,8 +639,8 @@
+ 		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+ 		assigned-clocks = <&cru SCLK_HDMI_PHY>;
+ 		assigned-clock-parents = <&hdmi_phy>;
+-		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&cru SCLK_HDMI_CEC>;
+-		clock-names = "isfr", "iahb", "cec";
++		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&hdmi_phy>, <&cru SCLK_HDMI_CEC>;
++		clock-names = "isfr", "iahb", "vpll", "cec";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&hdmii2c_xfer &hdmi_hpd &hdmi_cec>;
+ 		resets = <&cru SRST_HDMI_P>;
 -- 
 2.17.1
 
