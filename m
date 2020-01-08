@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CFB1134E38
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:59:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6778134E39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:59:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Q1a+xOkENerEaK2i9xwBnHG+HSghqdTsCNTUS0y+S8E=; b=oXlLs+a+SyPuolZo4SCL9731He
-	gkTpqNqopVDK+siCe+xXMfB9rd044mcY1rwCyB3G3EdasHlpGeLsUlxlUVyL6iaCjA7oBMwM7TkjZ
-	SzrqyJuX/X7iq4N+7LMNnleM9hNFihTuDzmiWIphOaHMjHk60bfzUq43LpVTklIfet8PwA8w3l6e2
-	YJyOTU/y9BLrJJLiPfh4z048EjXqm5XvUozaF6MRmKI8W+t88X3siFyQeYlWqpYnVrlC409iq1yZ9
-	YliHkcE+y8ULfAChtmJHQ6cbXVwVGLELkp47QhpEdl7skbTQkDDzRe0pBXlga3qTRQU9HrvWRVbB2
-	5nD/+MOg==;
+	bh=frUqNB0KhMdvXUy2HRz9Thl1RBvbioMWhlzyKOinJHY=; b=uu1Aa7YLl8t+GBPYuVhtEEhYH5
+	z5sh6+Kg4cMMnYDA+5afN8OSb6Vb8HtD5xpOocEtM2eT42Kynu2xdrgAhapseRfWm3Qe3UtSm9ST4
+	wMppEpLADRXGdNHynWI96+LGWpYjUW0J3XwMLBkHUmRNLffCJgltC7t5AgBRtFPO9/wDHfAKfFh1Q
+	UCRIggH9IO3PugXliahVSzYCl8EtDhzWg8UuEbSmZA7bCLKeB/J0iZ3JSyHWYEyxC5QNvza3EwYVj
+	CvnJw4temrleLoZoABi2o3nCeVe0Js9TGUWGOb4rcF5PJzhNL848lD/ZITma+4bSDEdliQYuU7PTz
+	we5a5cvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipIQP-0003eN-6i; Wed, 08 Jan 2020 20:59:33 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ipIQb-0003ra-QD; Wed, 08 Jan 2020 20:59:45 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipIKw-0006P4-Im; Wed, 08 Jan 2020 20:53:57 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z3so4947147wru.3;
- Wed, 08 Jan 2020 12:53:54 -0800 (PST)
+ id 1ipIKy-0006QV-Ny; Wed, 08 Jan 2020 20:53:58 +0000
+Received: by mail-wr1-x443.google.com with SMTP id q10so4887612wrm.11;
+ Wed, 08 Jan 2020 12:53:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=C5fo2kz/QWgODg+pTRTkY/0WFd4gP4/o5NDNIjif8yU=;
- b=Zzt9Pq8z2X+9hwX1ST5OGPyVjrA4QVsYfsU5Wmyd3tl0c6equBtUPevbjEtiYvzq0V
- F4ZoiRMpeC1kWGUttJA/fkBaJH9ZbkCgpoVWHNF1yb/53vw00PaCsrZXs8eoBGeDohyj
- ak8k7t99ff5pwAliM9p+OyFpP9n2o+QGIWatkTwhaZQCkPSY+QMQPgkt5TvvZZl4AbRX
- Q4oPPhYByTA/wo0xeHiX6o1iWb0S50jScOoSDg0ZHHu1kw7/H2aK9fKdV1nVlWNZIy38
- rUDk8g4sQ9B1n0eCJLX4jloIxHW2SJoOPp8nvAoq6RdovfL4jjy4IGr+AvFLgkFwSRy8
- TiaA==
+ bh=Vmr2fEFzigW7NnBmDNTwUzT4ArM8axMJAbkHVc4Ns/0=;
+ b=U292Rre680z7wDSQHsQUS9uJRrA1Pr2tLM4NbXE/OrgCGOwMP5BmFcfZwtt7vl2TMF
+ utIikDp5Fgy62sWQ0YgW4GrQv6ESGNQ4McMWmvGuDUnitKop7SNvajhSom44f/2UxpHi
+ Nvh6iZtGbshUg+6hOO70D0QiCe7+aNjSB1qmEhRmTgZDfDqUoP247THopMK6wWT91uWw
+ y3VclLEwrBuv1+eiYcVn5jngCkqsLi65cdzganyu3GlUGRLU7i42mMua93ISNYfbA+sg
+ q7rh8GvGdX/pQwTApk6JetyqPLHQ5LhdCt46uOj1EZvEBA+aQwmrVKIVIeVe77uTAh+8
+ dIig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=C5fo2kz/QWgODg+pTRTkY/0WFd4gP4/o5NDNIjif8yU=;
- b=SOSWaY1FMadMACapsgKipMhP32tcgMtS5hDWDFQcNY/lMh00dKKqzCEEN6bhdkp7VY
- RwmtShUAQujAK/rqdtWvQFyb/yWyfDOLM/XsxPfm/04ZdmvpyqpC2vNIF36hOEXt4XmV
- prVq/+a5vdU+TgIq1gUrpXFFU0gwa8HGxBOlF3MPM/Xo43e31LUhWvryYuchJw/+safM
- r73ld2N8Ll0AYX6PS78SSmsvMD1ze3Cg5Of/+nuHkqGYDxVjhV/cmDUh0f9ofxpfnCnU
- pYa5qq50nZBYCY/DhYplkEMyT14A1Lw2LbX1z5vwgiOqedybyClq7dNfwDvpOIUXGN5p
- b3+Q==
-X-Gm-Message-State: APjAAAVmpVJ1P0so77d7hDPk4yGycLBlRU0zUpUTiWvqv7dgbza9SZ6r
- Pg7SQgp0ytzaAGSk7pzEbk4=
-X-Google-Smtp-Source: APXvYqxKzkRDBbLxFJJQrh3Cz/Joy5n0D+rLPkz5VnUoFXE6pFE8tWT1ElySl90OFe+0xb5oe68WBA==
-X-Received: by 2002:a05:6000:1187:: with SMTP id
- g7mr7021758wrx.109.1578516833133; 
- Wed, 08 Jan 2020 12:53:53 -0800 (PST)
+ bh=Vmr2fEFzigW7NnBmDNTwUzT4ArM8axMJAbkHVc4Ns/0=;
+ b=a6wPdWRqSdDUS/Tndq4xKjwlKmJMXpbpt/teyPFFJ1BdFm6GrR3kd6Bn4hcz8ugNn4
+ CLpdmpKuDXrCj/4eOJHKB8GY+n7+jsrkjSbuAtoagn4Wp6/4QGrPC9fkedmk9o7mvbSq
+ v/KRadzPgjdFd9vBdizSrvYAJQMx1EqBGM7fqnFPZwqRHant+5DV8rKkVdZ0CETdeZdu
+ LIN4qKzHa6SkgKWB3GEcOo7n0bIJ2R0vHUQuIm3aHFGIBuDRUMa3FV6xi5/LTzblMNQZ
+ 7NXOrks9VExeaKB+wJ6OCtXXw0Kt1q3AavXXZixdQZY+MX/bnrhnzaPuRlyjy8L5339E
+ dpLA==
+X-Gm-Message-State: APjAAAX9nAf4mjQaiODhv7Vak2hUn25ulapi6r3f/ssqLJwJP6o7MJFB
+ Bh1poChiWXxSXsu7RSgcFMQ=
+X-Google-Smtp-Source: APXvYqzp9b6RWmOcElE6RzuN+ZS1z6743gaRIYOSvn+KxRtvbtfKLCOwJAdUYr8HSfaxwgfx2X3Rdw==
+X-Received: by 2002:adf:f5cf:: with SMTP id k15mr7021876wrp.182.1578516835000; 
+ Wed, 08 Jan 2020 12:53:55 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id c5sm311835wmd.42.2020.01.08.12.53.52
+ by smtp.gmail.com with ESMTPSA id c5sm311835wmd.42.2020.01.08.12.53.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 Jan 2020 12:53:52 -0800 (PST)
+ Wed, 08 Jan 2020 12:53:54 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: miquel.raynal@bootlin.com
-Subject: [RFC PATCH v1 06/10] ARM: dts: rockchip: add nandc node for rv1108
-Date: Wed,  8 Jan 2020 21:53:34 +0100
-Message-Id: <20200108205338.11369-7-jbx6244@gmail.com>
+Subject: [RFC PATCH v1 08/10] arm64: dts: rockchip: add nandc node for rk3308
+Date: Wed,  8 Jan 2020 21:53:36 +0100
+Message-Id: <20200108205338.11369-9-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108205338.11369-1-jbx6244@gmail.com>
 References: <20200108205338.11369-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_125354_725134_5EA0B5DA 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20200108_125357_017370_BF3EE4B8 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (jbx6244[at]gmail.com)
@@ -109,28 +108,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Lin <jon.lin@rock-chips.com>
+From: Dingqiang Lin <jon.lin@rock-chips.com>
 
-Add nandc node for rv1108.
+Add nandc node for rk3308.
 
-Signed-off-by: Jon Lin <jon.lin@rock-chips.com>
+Signed-off-by: Dingqiang Lin <jon.lin@rock-chips.com>
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rv1108.dtsi | 11 +++++++++++
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 11 +++++++++++
  1 file changed, 11 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
-index 5876690ee..391073ada 100644
---- a/arch/arm/boot/dts/rv1108.dtsi
-+++ b/arch/arm/boot/dts/rv1108.dtsi
-@@ -456,6 +456,17 @@
- 		#reset-cells = <1>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index 8bdc66c62..62df531d1 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -627,6 +627,17 @@
+ 		status = "disabled";
  	};
  
-+	nandc: nand-controller@30100000 {
++	nandc: nand-controller@ff4b0000 {
 +		compatible = "rockchip,nandc-v6";
-+		reg = <0x30100000 0x1000>;
-+		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
++		reg = <0x0 0xff4b0000 0x0 0x4000>;
++		interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
 +		clocks = <&cru SCLK_NANDC>, <&cru HCLK_NANDC>;
 +		clock-names = "clk_nandc", "hclk_nandc";
 +		#address-cells = <1>;
@@ -138,9 +137,9 @@ index 5876690ee..391073ada 100644
 +		status = "disabled";
 +	};
 +
- 	emmc: dwmmc@30110000 {
- 		compatible = "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x30110000 0x4000>;
+ 	cru: clock-controller@ff500000 {
+ 		compatible = "rockchip,rk3308-cru";
+ 		reg = <0x0 0xff500000 0x0 0x1000>;
 -- 
 2.11.0
 
