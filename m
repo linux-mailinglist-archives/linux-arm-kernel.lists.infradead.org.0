@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B984A134B0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:58:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE195134B0D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:58:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=M0Zz5l/4prVsPnviSH9ZqHmDAj1nI4k0VeGd7fmQNZo=; b=b/HnqCFbnk2VHYD2ASw+MODpDZ
-	SXLTEF6JPdmrJTEuZ6U397kUiu6NE9xwQm5hNtQSaU+TpTHm8MS3NnBnMN++y7icNfU69Pwzzc3kx
-	JDUW4ZNbT+TcrRRPGO3Jlb+UupsBXkJJqR3eraH6LTrd8vLFZ2muWjWIbT2oQh0AF5rUaGAccJ5QK
-	txtD3sunC2TJXLgMBmf2R4Z8IL90qrbZLk2CeOq7U79BgZhdZXsxJVhYnp5ZkrRT3Vc+GPwi8gWMg
-	U1y7lB+Z76TCNPr7HqzO7+W5fYZENf4phNq+UXCDLvzm5uNhtcdaTHxmy9VKNmg+WohfiJhhV6EDO
-	MWNQqzEQ==;
+	bh=Tp+R7q4qDqR6QmmxVhzdR/ymgXX4hQxrOFivPuCDT+E=; b=OGm9tv8eaIDKhRrDh5bVEGVAuI
+	+8WPE75rmdPRNXe0WAocpBJAfwRCVXLnfpyv3yd8/tvEAJ8RB2amyaij8BjnAsVLcNWIhq6S5ILvg
+	75nvCn0boqvjPf2keNpFiCjUm4cWFawIGYg1JUeGK4XWpY84/aewvsCxB7r2vVlzsdW3EHDoaOI/L
+	gkxr/cWIWKEdG0PQrELslWcbmckMsIR9MlTHR/oKpCbap3pt9WfrDbwUxDkZTLW3XRqBqi2FgwWhW
+	VnRaS+Dd2KUDCVL2G+WIzLKW1FzUZhFwCZsWELtK0uLWqgpbL84NxgsXopONU3Bns+u2hq99HZKtR
+	TORhzHJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGWh-00085l-Mx; Wed, 08 Jan 2020 18:57:55 +0000
+	id 1ipGWy-0008KE-5u; Wed, 08 Jan 2020 18:58:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGVm-0007Of-QK
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:00 +0000
+ id 1ipGVn-0007Pn-OU
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:57:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAA2B328;
- Wed,  8 Jan 2020 10:56:56 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1C8EEDA7;
+ Wed,  8 Jan 2020 10:56:59 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 66AFB3F534;
- Wed,  8 Jan 2020 10:56:55 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8A5EC3F534;
+ Wed,  8 Jan 2020 10:56:57 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 03/17] arm64: entry: move arm64_preempt_schedule_irq to
- entry-common.c
-Date: Wed,  8 Jan 2020 18:56:20 +0000
-Message-Id: <20200108185634.1163-4-mark.rutland@arm.com>
+Subject: [PATCH 04/17] arm64: entry: move preempt logic to C
+Date: Wed,  8 Jan 2020 18:56:21 +0000
+Message-Id: <20200108185634.1163-5-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105659_038022_7A39E0D2 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20200108_105659_912048_86657B51 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,14 +72,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Subsequent patches will pull more of the IRQ entry handling into C. To
-keep this in one place, let's move arm64_preempt_schedule_irq() into
-entry-common.c along with the other entry management functions.
+Some of our preeemption logic is in C, while a portion of it is in
+assembly. Let's pull the remainder  of it into C so that it lives in one
+place.
 
-We no longer need to include <linux/lockdep.h> in process.c, so the
-include directive is removed.
+At the same time, let's improve the comments regarding NMI preemption to
+make it clearer why we cannot preempt from NMIs.
 
-There should be no functional change as a result of this patch.
+Subsequent patches will covert the caller of el1_preempt() to C.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
@@ -88,78 +87,71 @@ Cc: James Morse <james.morse@arm.com>
 Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
 Cc: Will Deacon <will@kernel.org>
 ---
----
- arch/arm64/kernel/entry-common.c | 19 +++++++++++++++++++
- arch/arm64/kernel/process.c      | 17 -----------------
- 2 files changed, 19 insertions(+), 17 deletions(-)
+ arch/arm64/kernel/entry-common.c | 18 +++++++++++++++++-
+ arch/arm64/kernel/entry.S        | 13 +------------
+ 2 files changed, 18 insertions(+), 13 deletions(-)
 
 diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index fde59981445c..4fa058453468 100644
+index 4fa058453468..b93ca2148a20 100644
 --- a/arch/arm64/kernel/entry-common.c
 +++ b/arch/arm64/kernel/entry-common.c
-@@ -6,7 +6,10 @@
-  */
- 
+@@ -8,6 +8,7 @@
  #include <linux/context_tracking.h>
-+#include <linux/linkage.h>
-+#include <linux/lockdep.h>
+ #include <linux/linkage.h>
+ #include <linux/lockdep.h>
++#include <linux/preempt.h>
  #include <linux/ptrace.h>
-+#include <linux/sched/debug.h>
+ #include <linux/sched/debug.h>
  #include <linux/thread_info.h>
- 
- #include <asm/cpufeature.h>
-@@ -330,3 +333,19 @@ asmlinkage void notrace el0_sync_compat_handler(struct pt_regs *regs)
- }
+@@ -334,8 +335,23 @@ asmlinkage void notrace el0_sync_compat_handler(struct pt_regs *regs)
  NOKPROBE_SYMBOL(el0_sync_compat_handler);
  #endif /* CONFIG_COMPAT */
-+
-+asmlinkage void __sched arm64_preempt_schedule_irq(void)
-+{
-+	lockdep_assert_irqs_disabled();
+ 
+-asmlinkage void __sched arm64_preempt_schedule_irq(void)
++asmlinkage void __sched el1_preempt(void)
+ {
++	if (!IS_ENABLED(CONFIG_PREEMPT) || preempt_count())
++		return;
 +
 +	/*
-+	 * Preempting a task from an IRQ means we leave copies of PSTATE
-+	 * on the stack. cpufeature's enable calls may modify PSTATE, but
-+	 * resuming one of these preempted tasks would undo those changes.
++	 * To avoid nesting NMIs and overflowing the stack, we must leave NMIs
++	 * masked until the exception return. We want to context-switch with
++	 * IRQs masked but NMIs enabled, so cannot preempt an NMI.
 +	 *
-+	 * Only allow a task to be preempted once cpufeatures have been
-+	 * enabled.
++	 * PSTATE.{D,A,F} are cleared for IRQ and NMI by el1_irq().
++	 * When gic_handle_irq() handles an NMI, it leaves PSTATE.I set.
++	 * If anything is set in DAIF, this is an NMI.
 +	 */
-+	if (static_branch_likely(&arm64_const_caps_ready))
-+		preempt_schedule_irq();
-+}
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 71f788cd2b18..94b3ae351af9 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -17,7 +17,6 @@
- #include <linux/sched/task.h>
- #include <linux/sched/task_stack.h>
- #include <linux/kernel.h>
--#include <linux/lockdep.h>
- #include <linux/mm.h>
- #include <linux/stddef.h>
- #include <linux/sysctl.h>
-@@ -633,19 +632,3 @@ static int __init tagged_addr_init(void)
++	if (system_uses_irq_prio_masking() && read_sysreg(daif) != 0)
++		return;
++
+ 	lockdep_assert_irqs_disabled();
  
- core_initcall(tagged_addr_init);
- #endif	/* CONFIG_ARM64_TAGGED_ADDR_ABI */
--
--asmlinkage void __sched arm64_preempt_schedule_irq(void)
--{
--	lockdep_assert_irqs_disabled();
--
+ 	/*
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 7c6a0a41676f..53ce1877a4aa 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -606,18 +606,7 @@ el1_irq:
+ 	irq_handler
+ 
+ #ifdef CONFIG_PREEMPT
+-	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+-alternative_if ARM64_HAS_IRQ_PRIO_MASKING
 -	/*
--	 * Preempting a task from an IRQ means we leave copies of PSTATE
--	 * on the stack. cpufeature's enable calls may modify PSTATE, but
--	 * resuming one of these preempted tasks would undo those changes.
--	 *
--	 * Only allow a task to be preempted once cpufeatures have been
--	 * enabled.
+-	 * DA_F were cleared at start of handling. If anything is set in DAIF,
+-	 * we come back from an NMI, so skip preemption
 -	 */
--	if (static_branch_likely(&arm64_const_caps_ready))
--		preempt_schedule_irq();
--}
+-	mrs	x0, daif
+-	orr	x24, x24, x0
+-alternative_else_nop_endif
+-	cbnz	x24, 1f				// preempt count != 0 || NMI return path
+-	bl	arm64_preempt_schedule_irq	// irq en/disable is done inside
+-1:
++	bl	el1_preempt
+ #endif
+ 
+ #ifdef CONFIG_ARM64_PSEUDO_NMI
 -- 
 2.11.0
 
