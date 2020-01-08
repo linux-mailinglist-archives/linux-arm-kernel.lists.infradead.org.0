@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC27134E63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:08:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD19B134E70
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 22:09:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Rvt04fkNS0EhPeeF4hFrgwVwFw60YISsCLqBGh4UF5U=; b=s3lhz6E2ZT8EHPxZlfjagb9il6
-	8Cx8YMu3bVIgb+v+GISg2iQkZ6w8eojdp/ZMeF3mzDk7PPk+9nt7Nbkl0YOi9UX2dlE+xP6eCU8tU
-	ORlBw00rKCBbU7N0bhL2j6Y/LsZOeQMC7B3iAL8Crt9fvDMoKHrFLJLmWL6sNRj9V44MsVEv/jH76
-	Q+89QxwIKMYRWOVKLEHbOucCncZXuCu+pcH4Zs7O55eRF7LrxRTIEokcEOnFlf7s1ybbtHMdMQ1uv
-	o+qpPvONr9Jc+mSnEZ9rBqLdh2/MtZqTtgSk8iuqN47RlDyPPjNmbYeJa8rjjiANQBYnZBiE54LNh
-	Qwyi1JKQ==;
+	bh=DHSTxk+1dPjslZVJsfFn0+dAKOyZ+OXJ4Bmiabm/DaU=; b=fFJjm7rVdsVfBzsVvgQCH3276J
+	0oiHOCsbY4ABBk6msVROKe5/L2LjVDISe247b2gKNFi1pgtCgGITeXQdmArF2nri33bkk83xMe1eT
+	6ICGPi88QyzFKutZlWxGYHRnQ4x4DY0aAnuiEyMWI+LlYYH4HlDKSA//xXKLXWKOo1sshAwhj+ScT
+	rrS47WOlP9czYD0tKQeKphNk6WqF6lZnaUTQ5ZkX52ilReKX7x3tPaSFUS7MtgvhcVwFQ1A3LUVB1
+	RZKmZrFoUFS7TbVsWtL62tdEw8P/q5gdtaV3FXkQRPrapLamp5m5mRhy9Cb3yPF1Dm7mfu7R2WdRV
+	jKOtbC/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipIYz-0000U1-64; Wed, 08 Jan 2020 21:08:25 +0000
+	id 1ipIZi-0001Gp-WB; Wed, 08 Jan 2020 21:09:11 +0000
 Received: from o1.b.az.sendgrid.net ([208.117.55.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipIYQ-0000B4-D6
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 21:07:53 +0000
+ id 1ipIYQ-0000BB-L8
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 21:07:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
  h=from:subject:in-reply-to:references:to:cc:content-type:
  content-transfer-encoding;
- s=001; bh=mikxWY2WrXrZaeo3Sy9pZz4F5Xpp8LK8RWbT2pvPkS8=;
- b=c5Zi1M/iQ2ds2zT20WYGa11guG+zfdVtMAe+CAkmqtjzemb3wjvXrWi1zmpmS9MAG5QK
- 8uNN63l+wgABhSq0edDU+iAi94G4bM9kYwsOSK29F8qljjGNGLcHLVaNrsiQAFNJEhcTHW
- rAi9ZBJnHh/16U3/uitUJe2uKJ2tR6LMc=
-Received: by filterdrecv-p3mdw1-56c97568b5-q2ks7 with SMTP id
- filterdrecv-p3mdw1-56c97568b5-q2ks7-18-5E1644A4-35
- 2020-01-08 21:07:48.439329 +0000 UTC m=+1974281.571208866
+ s=001; bh=nAJZakghzr7JwdXt31dydBHC6AGXJnAIYTAyCKaQf5U=;
+ b=olAzvIXs+468+uJpM5hc9UydRh8zXgV6l5BJ4Pu4pnK0qL8HTi7bwAV/YQ5/SYgrU7If
+ dKnjrsmOOl0+OpQeFTGvu5RKryBjI3l4wLZ7D5dO9g9zH10LNcUmD6kEs1H+6S5/0wbmOo
+ RPQUEcWbTxMC0Q2BRp2gq6JrANlf+CzXQ=
+Received: by filterdrecv-p3mdw1-56c97568b5-bbmbb with SMTP id
+ filterdrecv-p3mdw1-56c97568b5-bbmbb-18-5E1644A5-10
+ 2020-01-08 21:07:49.289120385 +0000 UTC m=+1974277.925691392
 Received: from bionic.localdomain (unknown [98.128.173.80])
- by ismtpd0005p1lon1.sendgrid.net (SG) with ESMTP id udtq48_xRBOkOOBGcfZLrA
- Wed, 08 Jan 2020 21:07:48.244 +0000 (UTC)
+ by ismtpd0005p1lon1.sendgrid.net (SG) with ESMTP id QpQFtE6kTYGCgtswu4iudQ
+ Wed, 08 Jan 2020 21:07:49.090 +0000 (UTC)
 From: Jonas Karlman <jonas@kwiboo.se>
-Subject: [PATCH v2 03/14] phy/rockchip: inno-hdmi: remove unused no_c from
- rk3328 recalc_rate
-Date: Wed, 08 Jan 2020 21:07:48 +0000 (UTC)
-Message-Id: <20200108210740.28769-4-jonas@kwiboo.se>
+Subject: [PATCH v2 05/14] phy/rockchip: inno-hdmi: force set_rate on power_on
+Date: Wed, 08 Jan 2020 21:07:49 +0000 (UTC)
+Message-Id: <20200108210740.28769-6-jonas@kwiboo.se>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200108210740.28769-1-jonas@kwiboo.se>
 References: <20200108210740.28769-1-jonas@kwiboo.se>
 X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
- =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0h9ysraDeTlvkeU=2FTa?=
- =?us-ascii?Q?=2F88pEB13iGtDbQ9qBh5gCDeW=2FIlYWIRb34k9xBj?=
- =?us-ascii?Q?hxE2oG2UH0lhwzjkeTUZnOOhuz86tZ6e5MQMC27?=
- =?us-ascii?Q?LRzyUT=2FT2D2YN=2F=2Fqk2WxYB4VSFuEnQUPgWJkjYl?=
- =?us-ascii?Q?mVwqbvf69b=2FaJhrHI4dqUENjKrDqVezmEOG3YFE?=
- =?us-ascii?Q?0RENpxmGJu5PmnaSMSTFA=3D=3D?=
+ =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0h=2F7F4adz3wm6ffQRT?=
+ =?us-ascii?Q?CTgb+AFqFhunflnZfCfUag8AxDjwfbQB0Wd5dom?=
+ =?us-ascii?Q?N1gIXRXtJdfpmpEbksvt+sFcrrxsghs3kdcE8Wr?=
+ =?us-ascii?Q?weyzsmjBL2vZH1pdvv34CsH08qCfB9UA=2Fb31F+3?=
+ =?us-ascii?Q?bl8copUYBxor4ORMQDvNUuVOKqmlkQjBr4awiJ=2F?=
+ =?us-ascii?Q?WYWbyYr07S1RVqDgwdytw=3D=3D?=
 To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_130750_728677_E05018B9 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200108_130750_843209_D168FC9C 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,44 +86,98 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
  dri-devel@lists.freedesktop.org, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Zheng Yang <zhengyang@rock-chips.com>
+ linux-rockchip@lists.infradead.org, Huicong Xu <xhc@rock-chips.com>,
+ linux-arm-kernel@lists.infradead.org, Zheng Yang <zhengyang@rock-chips.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-no_c is not used in any calculation, lets remove it.
+From: Huicong Xu <xhc@rock-chips.com>
 
+Regular 8-bit and Deep Color video formats mainly differ in TMDS rate and
+not in pixel clock rate.
+When the hdmiphy clock is configured with the same pixel clock rate using
+clk_set_rate() the clock framework do not signal the hdmi phy driver
+to set_rate when switching between 8-bit and Deep Color.
+This result in pre/post pll not being re-configured when switching between
+regular 8-bit and Deep Color video formats.
+
+Fix this by calling set_rate in power_on to force pre pll re-configuration.
+
+Signed-off-by: Huicong Xu <xhc@rock-chips.com>
 Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index 093d2334e8cd..06db69c8373e 100644
+index 3a59a6da0440..3719309ad0d0 100644
 --- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
 +++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -714,7 +714,7 @@ unsigned long inno_hdmi_phy_rk3328_clk_recalc_rate(struct clk_hw *hw,
- {
- 	struct inno_hdmi_phy *inno = to_inno_hdmi_phy(hw);
- 	unsigned long frac;
--	u8 nd, no_a, no_b, no_c, no_d;
-+	u8 nd, no_a, no_b, no_d;
- 	u64 vco;
- 	u16 nf;
+@@ -245,6 +245,7 @@ struct inno_hdmi_phy {
+ 	struct clk_hw hw;
+ 	struct clk *phyclk;
+ 	unsigned long pixclock;
++	unsigned long tmdsclock;
+ };
  
-@@ -737,9 +737,6 @@ unsigned long inno_hdmi_phy_rk3328_clk_recalc_rate(struct clk_hw *hw,
- 		no_b = inno_read(inno, 0xa5) & RK3328_PRE_PLL_PCLK_DIV_B_MASK;
- 		no_b >>= RK3328_PRE_PLL_PCLK_DIV_B_SHIFT;
- 		no_b += 2;
--		no_c = inno_read(inno, 0xa6) & RK3328_PRE_PLL_PCLK_DIV_C_MASK;
--		no_c >>= RK3328_PRE_PLL_PCLK_DIV_C_SHIFT;
--		no_c = 1 << no_c;
- 		no_d = inno_read(inno, 0xa6) & RK3328_PRE_PLL_PCLK_DIV_D_MASK;
+ struct pre_pll_config {
+@@ -485,6 +486,8 @@ static int inno_hdmi_phy_power_on(struct phy *phy)
  
- 		do_div(vco, (nd * (no_a == 1 ? no_b : no_a) * no_d * 2));
+ 	dev_dbg(inno->dev, "Inno HDMI PHY Power On\n");
+ 
++	inno->plat_data->clk_ops->set_rate(&inno->hw, inno->pixclock, 24000000);
++
+ 	ret = clk_prepare_enable(inno->phyclk);
+ 	if (ret)
+ 		return ret;
+@@ -509,6 +512,8 @@ static int inno_hdmi_phy_power_off(struct phy *phy)
+ 
+ 	clk_disable_unprepare(inno->phyclk);
+ 
++	inno->tmdsclock = 0;
++
+ 	dev_dbg(inno->dev, "Inno HDMI PHY Power Off\n");
+ 
+ 	return 0;
+@@ -628,6 +633,9 @@ static int inno_hdmi_phy_rk3228_clk_set_rate(struct clk_hw *hw,
+ 	dev_dbg(inno->dev, "%s rate %lu tmdsclk %lu\n",
+ 		__func__, rate, tmdsclock);
+ 
++	if (inno->pixclock == rate && inno->tmdsclock == tmdsclock)
++		return 0;
++
+ 	cfg = inno_hdmi_phy_get_pre_pll_cfg(inno, rate);
+ 	if (IS_ERR(cfg))
+ 		return PTR_ERR(cfg);
+@@ -670,6 +678,7 @@ static int inno_hdmi_phy_rk3228_clk_set_rate(struct clk_hw *hw,
+ 	}
+ 
+ 	inno->pixclock = rate;
++	inno->tmdsclock = tmdsclock;
+ 
+ 	return 0;
+ }
+@@ -781,6 +790,9 @@ static int inno_hdmi_phy_rk3328_clk_set_rate(struct clk_hw *hw,
+ 	dev_dbg(inno->dev, "%s rate %lu tmdsclk %lu\n",
+ 		__func__, rate, tmdsclock);
+ 
++	if (inno->pixclock == rate && inno->tmdsclock == tmdsclock)
++		return 0;
++
+ 	cfg = inno_hdmi_phy_get_pre_pll_cfg(inno, rate);
+ 	if (IS_ERR(cfg))
+ 		return PTR_ERR(cfg);
+@@ -820,6 +832,7 @@ static int inno_hdmi_phy_rk3328_clk_set_rate(struct clk_hw *hw,
+ 	}
+ 
+ 	inno->pixclock = rate;
++	inno->tmdsclock = tmdsclock;
+ 
+ 	return 0;
+ }
 -- 
 2.17.1
 
