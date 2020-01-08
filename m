@@ -2,68 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25285133F7F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:42:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41661133F8B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:45:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cUpxZdsG6ip8xxJji3UoCJ21F24yJPe5/WIurnq1+rY=; b=oTextjKB98BF1b
-	gsrxmLoUhWszAAOKQk2GIHQXQSEnEIfcwRIBvEwI67qbJ7Km75UfZ1+zWbopDhCBn2UdrSzaras/r
-	qZYGbwC61Ovnd/H34/yCw7Y8yh9UdMSMW9GC3GrKzCf3ja0ansdnLZ7MTjF9J2v1DN2JP2eLRGJTP
-	WpTFV5ah3D94iwEuOZm25/xE1hWeeuUty37Ugi/32EwtZJD3jybqQ2jHf/Lnnxhhy8VbNQ8zoeGMS
-	QBPZLnxJMkl7TluvH2yGpCCP2Bw4IU68t5UbXjI7Eskw3flZPpwODYp9df+q58CHpxpD97RoQPXcM
-	Nq8GIiQub4mxGVSHnU8g==;
+	List-Owner; bh=jkcLjl7RrXX5k8e3AoCd4iEuVRW3EbMZ0+yLG3Wd7Do=; b=sRR2OH/v2tM05T
+	nDz0uknKrSJKMRP0+UNv0FSgjElHAX8WJ3p8RDgZm1lDSRz0YdOjt6PmMEN900WoztpoKg4mIecYg
+	7nRM3lQH706H04lBpQP5wWgx7E4M7QFEu/EF29diMBEoPQV0W9yosXhmjDltbgP5+qVYJqeYU/PJS
+	N4CwF4yCRemUWq4zMFswUF6xA3oUx8hLwmIjxXrnSuaCVPuWRAIIg/y4QAQ58PNOM0RyEseWss+P2
+	kFZlyAzG3BqLaDccelzCFo2rUHliY5aDDHfQdadij/jcynoiydiXCa1eFEWallybN6OAe6jcFYGts
+	pZN2b4cckDxBR1zi+8Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip8nV-0001yM-Iu; Wed, 08 Jan 2020 10:42:45 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ip8qG-0003hN-Q6; Wed, 08 Jan 2020 10:45:36 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip8nO-0001xL-SN
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:42:40 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ip8nC-00006x-R3; Wed, 08 Jan 2020 11:42:26 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1ip8nB-0001aY-KK; Wed, 08 Jan 2020 11:42:25 +0100
-Date: Wed, 8 Jan 2020 11:42:25 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 1/3] ARM: dts: imx6: phycore-som: fix arm and soc
- minimum voltage
-Message-ID: <20200108104225.jvckkowexpmyf2ts@pengutronix.de>
-References: <20200108101057.29599-1-m.felsch@pengutronix.de>
- <20200108103407.GL25745@shell.armlinux.org.uk>
+ id 1ip8q8-0003gh-AD
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:45:29 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 20so1948073wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Jan 2020 02:45:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cWNocU7eA9+Wp59TtXNSPoHKPg/gQFuCfBlz6EP4IJM=;
+ b=XL4fjlnoCxTK5zuVeOatSIA0QPobR9ogTd6FCkUDTguco9kcRi9Tbnhk/6Vceo4ZRo
+ jar35VEPwdo1p2/UGuWCkf22+E/TvJ2RGq1aHs9TUQHytq9JhAgi/QSsTYzpvaNXM1uH
+ YtAXDpIYKRMyvRU7wONZ2e/Us8z48GwassZeYBUak8x3TTPT3hl5/PUrJCbNlweOhwNm
+ l2DlBC+QW9aCGTwb02ek/YJauLcmN0emIq4z8/76Y2jnJVpouUB0JpfsZ8AdmR7GtDG+
+ SqXmjRY9xY7BB4V7pz6oHGSo6xD0eXICGBijwUrM1evNAgt5o9JMAB0o/lBkl5ux0wGT
+ DTog==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cWNocU7eA9+Wp59TtXNSPoHKPg/gQFuCfBlz6EP4IJM=;
+ b=qoJAxPm+ZxyVRhTeKrIVJcSLQNpRCBmfdBJpYqxoYtYPZURG2WeLhADbeEBFnqq0oF
+ ZV/AC8O3JA/tNFAo26JvPDkOJ/CoA1PqSyyNtBZ97zy45Ns1xKXuer+CWe6pQl+aAPWj
+ OxWZFJqStH3jejDrZoR9ZR9pXjbpzFtetNTB24JyOR6e4F3TMWX5AFxpz3i3FU8d8DXX
+ fGs/soIC3pRUU1F9Obf4WESwIOfDaGBRMh+tvw5cjjtIbWQyYKaPwEbVj+7mHOYS1hXo
+ Th2PzxV3CTmtXzlLGpO6GfMZZhuzSp/J3d9pwp63mlv/hGdD8JCq/0YlotX4NeELq8Hh
+ rSRQ==
+X-Gm-Message-State: APjAAAUdR8JXypUkaSf7s2olSO66xAwKaPr5vILmXec5f2kuASjogCFd
+ TcCHgVhydowXDZl4g6tlmAN/FlE8n0OEZyrxHaA=
+X-Google-Smtp-Source: APXvYqxCEiSVPvqEPV1TYN+VTi6zRgss5wzhXYoBJ7RLBYKSCj5Cw8CA6v+eMTnefLxFNeJid/0wFmP3UfzNj91cJPQ=
+X-Received: by 2002:a1c:f008:: with SMTP id a8mr3018534wmb.81.1578480326589;
+ Wed, 08 Jan 2020 02:45:26 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200108103407.GL25745@shell.armlinux.org.uk>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 11:41:21 up 54 days,  1:59, 46 users,  load average: 0.03, 0.02, 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20200108101006.150706-1-andre.przywara@arm.com>
+ <20200108101006.150706-2-andre.przywara@arm.com>
+In-Reply-To: <20200108101006.150706-2-andre.przywara@arm.com>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Wed, 8 Jan 2020 11:45:15 +0100
+Message-ID: <CAJiuCccSWR4oMF5x67eUVMFL6YhRMJVo_r0VfCUVVRtAJ9uR2w@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH 1/2] arm64: dts: sun50i: H6: Add SPI
+ controllers nodes and pinmuxes
+To: Andre Przywara <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_024238_916216_9B6ECF1C 
-X-CRM114-Status: GOOD (  18.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_024528_362603_CE9651F7 
+X-CRM114-Status: GOOD (  24.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,95 +94,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.riedmueller@phytec.de, s.christ@phytec.de, chf.fritz@googlemail.com,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
- shawnguo@kernel.org, festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-spi@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Mark Brown <broonie@kernel.org>, Icenowy Zheng <icenowy@aosc.xyz>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-01-08 10:34, Russell King - ARM Linux admin wrote:
-> On Wed, Jan 08, 2020 at 11:10:55AM +0100, Marco Felsch wrote:
-> > The current set minimum voltage of 730000mV seems to be wrong. I don't
-> =
+Hi Andre,
 
-> mV =3D milli-volt, /1000th of a volt. So you just said 730V.
-> =B5V or uV =3D micro-volt, which I think is what you mean here.
+On Wed, 8 Jan 2020 at 11:10, Andre Przywara <andre.przywara@arm.com> wrote:
+>
+> The Allwinner H6 SoC contains two SPI controllers similar to the H3/A64,
+> but with the added capability of 3-wire and 4-wire operation modes.
+> For now the driver does not support those, but the SPI registers are
+> fully backwards-compatible, just adding bits and registers which were
+> formerly reserved. So we can use the existing driver for the "normal" SPI
+> modes, for instance to access the SPI NOR flash soldered on the PineH64
+> board.
+> We use an H6 specific compatible string in addition to the existing H3
+> string, so when the driver later gains Quad SPI support, it should work
+> automatically without any DT changes.
+>
+> Tested by accessing the SPI flash on a Pine H64 board (SPI0), also
+> connecting another SPI flash to the SPI1 header pins.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 54 ++++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> index 3329283e38ab..40835850893e 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> @@ -338,6 +338,30 @@
+>                                 bias-pull-up;
+>                         };
+>
+> +                       /omit-if-no-ref/
+> +                       spi0_pins: spi0-pins {
+> +                               pins = "PC0", "PC2", "PC3";
+> +                               function = "spi0";
+> +                       };
+> +
+> +                       /omit-if-no-ref/
+> +                       spi0_cs_pin: spi0-cs-pin {
+> +                               pins = "PC5";
+> +                               function = "spi0";
+> +                       };
+> +
+> +                       /omit-if-no-ref/
+> +                       spi1_pins: spi1-pins {
+> +                               pins = "PH4", "PH5", "PH6";
+> +                               function = "spi1";
+> +                       };
+> +
+> +                       /omit-if-no-ref/
+> +                       spi1_cs_pin: spi1-cs-pin {
+> +                               pins = "PH3";
+> +                               function = "spi1";
+> +                       };
+> +
+>                         spdif_tx_pin: spdif-tx-pin {
+>                                 pins = "PH7";
+>                                 function = "spdif";
+> @@ -504,6 +528,36 @@
+>                         #size-cells = <0>;
+>                 };
+>
+> +               spi0: spi@5010000 {
+> +                       compatible = "allwinner,sun50i-h6-spi",
+> +                                    "allwinner,sun8i-h3-spi";
 
-Arg.. you are right thanks for covering that.
+You need to document this compatible in the dt-bindings to avoid any warnings.
 
-> > know the document which specifies that but the imx6qdl datasheets says
-> > that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
-> > lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
-> > =
-
-> > Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i=
-.MX 6 SOM")
-> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > ---
-> > v2:
-> > - use ldo bypassed values
-> > - adapt commit message
-> > =
-
-> >  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > =
-
-> > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/a=
-rm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > index 6486df3e2942..f23eef1e54e0 100644
-> > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > @@ -107,14 +107,14 @@
-> >  		regulators {
-> >  			vdd_arm: buck1 {
-> >  				regulator-name =3D "vdd_arm";
-> > -				regulator-min-microvolt =3D <730000>;
-> > +				regulator-min-microvolt =3D <925000>;
-> >  				regulator-max-microvolt =3D <1380000>;
-> >  				regulator-always-on;
-> >  			};
-> >  =
-
-> >  			vdd_soc: buck2 {
-> >  				regulator-name =3D "vdd_soc";
-> > -				regulator-min-microvolt =3D <730000>;
-> > +				regulator-min-microvolt =3D <1150000>;
-> >  				regulator-max-microvolt =3D <1380000>;
-> >  				regulator-always-on;
-> >  			};
-> > -- =
-
-> > 2.20.1
-> > =
-
-> > =
-
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > =
-
-> =
-
-> -- =
-
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbp=
-s up
-> According to speedtest.net: 11.9Mbps down 500kbps up
-> =
+Regards,
+Clement
 
 
--- =
 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+> +                       reg = <0x05010000 0x1000>;
+> +                       interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+> +                       clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
+> +                       clock-names = "ahb", "mod";
+> +                       dmas = <&dma 22>, <&dma 22>;
+> +                       dma-names = "rx", "tx";
+> +                       resets = <&ccu RST_BUS_SPI0>;
+> +                       status = "disabled";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <0>;
+> +               };
+> +
+> +               spi1: spi@5011000 {
+> +                       compatible = "allwinner,sun50i-h6-spi",
+> +                                    "allwinner,sun8i-h3-spi";
+> +                       reg = <0x05011000 0x1000>;
+> +                       interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+> +                       clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
+> +                       clock-names = "ahb", "mod";
+> +                       dmas = <&dma 23>, <&dma 23>;
+> +                       dma-names = "rx", "tx";
+> +                       resets = <&ccu RST_BUS_SPI1>;
+> +                       status = "disabled";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <0>;
+> +               };
+> +
+>                 emac: ethernet@5020000 {
+>                         compatible = "allwinner,sun50i-h6-emac",
+>                                      "allwinner,sun50i-a64-emac";
+> --
+> 2.17.1
+>
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200108101006.150706-2-andre.przywara%40arm.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
