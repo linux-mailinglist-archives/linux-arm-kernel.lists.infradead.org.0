@@ -2,77 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A0CF134018
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 12:17:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDBD713402D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 12:19:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y6LYNevwt+h1R/LQ6Zsp+s1RWsasLT2u/gNxoAntClI=; b=DUuaBdhKZJdG6daaT1l2YmQis
-	edC2chx/vi9PCJ659BKRilTVEZGCX/Gs2v4aLldZccgsztfOoeyb2lfFVvXujG7JFun8nxMYMgo2i
-	p+DXaPnDg23viOX15vnap5mnBJ727MKp4iOOBjwA2J+D/UFAp8uLngEG34wsWbUCZf50KZpSZO6uU
-	79YmznAtX3uowsejRflEeY5DASWLu7RWI/wGikkJRrTtb2M0Nzakx5ZxQsW0rnDMF7HaQt1SZ8SSo
-	SRs3Sr4oqvIwDKjneYWGlXDGaOVIRGEgyLe0FLRPPnK0vDS6YP4onWKOOdxor2GnRsnT+1y3xAsFx
-	sYpZhlbmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=x0QFJgzTZ8h2BDsif5hI9lRELwWZhtw7lESFD038BDc=; b=K1Rbehra08h2Nr
+	z8o6qzrTSE+RzNOs2C+7+9rWzkj/u+25n+Us4gNvwzpB5eO1gcjKs5fqAuzXtOqdWcBHLX3gFGuq4
+	67aYUfJxbwklUDkosoiir79LvkmC/ymrL7pTlTdCMojtDGSENJsy9+PHWHjE1+3TdPQS10dAHMX3c
+	xWRPDhzABWEuWppuKLkQNCa5qS+TE7jdhRF2QxU4zAtolgrwot23n4VnxvHWGjNsQoNDZmZBNJ4qH
+	/HiUP1au/iT7pPdAaJoUOr4xBIbkgB8hXDcb8LxJjgxslwAJksoqCsu8LoKqTOOhGEV7X2EV12VUr
+	VxT6jusQlPXZeQisr1Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip9L5-0000dJ-5M; Wed, 08 Jan 2020 11:17:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ip9MV-00014G-I9; Wed, 08 Jan 2020 11:18:55 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip9Kx-0000cY-Px
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 11:17:21 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A98C520673;
- Wed,  8 Jan 2020 11:17:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578482238;
- bh=BOw+oxULUxi4SWAMJyt3dVvRgIUU2l4r0rjJa2+K9No=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hQwb5ISuoPH21WTJGlGGLWwDnR2n82LROt+g1wPcEIh2MQFLHHCWO7/dB4/oekUQE
- FsU91xjNAWVwjTIVCRYH/4aFnnEjLhUtWsU6wmQPdOnfZOrAqbQR3IHIKCN2ipbyJH
- wMIOLhicp0mRnS6E5gFHDa5Es3C1BAz/pd2U8Jvk=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1ip9Ku-0007XE-No; Wed, 08 Jan 2020 11:17:16 +0000
+ id 1ip9MD-00013Y-EL
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 11:18:39 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 008BIZGW061012;
+ Wed, 8 Jan 2020 05:18:35 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578482315;
+ bh=FqLEC/pOsMBk7A5Md0tMMrU9uar+Zzvg0fxQuLk+/v8=;
+ h=From:To:CC:Subject:Date;
+ b=Yn9zu4K1ug9wF+fp3naS2855kYroZsQyEECw3YHy0CxxopYBWwOhm+R/0JmMBKBb9
+ aQxLoPpbbb5n9juD8ooVqpwqcI6RfL1qB4+Uu9Nz+eOfZjiAYQYTrb0qDLPn87EkeD
+ SXztwnCvOYC9zY16rLjwKMVnK0y05UZmiFmwWuJo=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 008BIZDX036566
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 8 Jan 2020 05:18:35 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 8 Jan
+ 2020 05:18:35 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 8 Jan 2020 05:18:35 -0600
+Received: from lta0400828a.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 008BIWBp087830;
+ Wed, 8 Jan 2020 05:18:33 -0600
+From: Roger Quadros <rogerq@ti.com>
+To: <t-kristo@ti.com>
+Subject: [PATCH 0/5] arm64: ti: k3-j721e: Add SERDES PHY and USB3.0 support
+Date: Wed, 8 Jan 2020 13:18:25 +0200
+Message-ID: <20200108111830.8482-1-rogerq@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Date: Wed, 08 Jan 2020 11:17:16 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore full
- SPE profiling buffer controls
-In-Reply-To: <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-10-andrew.murray@arm.com>
- <20191221141325.5a177343@why>
- <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
-Message-ID: <fc222fef381f4ada37966db0a1ec314a@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: andrew.murray@arm.com, Catalin.Marinas@arm.com,
- Mark.Rutland@arm.com, will@kernel.org, Sudeep.Holla@arm.com,
- kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_031719_888644_5F0198DA 
-X-CRM114-Status: GOOD (  21.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200108_031837_542347_016FA27F 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,92 +87,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, kvm@vger.kernel.org,
- Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
- Sudeep Holla <Sudeep.Holla@arm.com>, will@kernel.org,
- kvmarm <kvmarm@lists.cs.columbia.edu>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: nm@ti.com, devicetree@vger.kernel.org, vigneshr@ti.com, nsekhar@ti.com,
+ linux-kernel@vger.kernel.org, kishon@ti.com,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-07 15:13, Andrew Murray wrote:
-> On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
->> On Fri, 20 Dec 2019 14:30:16 +0000
->> Andrew Murray <andrew.murray@arm.com> wrote:
->> 
->> [somehow managed not to do a reply all, re-sending]
->> 
->> > From: Sudeep Holla <sudeep.holla@arm.com>
->> >
->> > Now that we can save/restore the full SPE controls, we can enable it
->> > if SPE is setup and ready to use in KVM. It's supported in KVM only if
->> > all the CPUs in the system supports SPE.
->> >
->> > However to support heterogenous systems, we need to move the check if
->> > host supports SPE and do a partial save/restore.
->> 
->> No. Let's just not go down that path. For now, KVM on heterogeneous
->> systems do not get SPE.
-> 
-> At present these patches only offer the SPE feature to VCPU's where the
-> sanitised AA64DFR0 register indicates that all CPUs have this support
-> (kvm_arm_support_spe_v1) at the time of setting the attribute
-> (KVM_SET_DEVICE_ATTR).
-> 
-> Therefore if a new CPU comes online without SPE support, and an
-> existing VCPU is scheduled onto it, then bad things happen - which I 
-> guess
-> must have been the intention behind this patch.
+Hi Tero,
 
-I guess that was the intent.
+This series adds SERDES PHY support. The relevant PHY driver
+and bindings are already Acked and in phy/next [1]
 
->> If SPE has been enabled on a guest and a CPU
->> comes up without SPE, this CPU should fail to boot (same as exposing a
->> feature to userspace).
-> 
-> I'm unclear as how to prevent this. We can set the FTR_STRICT flag on
-> the sanitised register - thus tainting the kernel if such a non-SPE CPU
-> comes online - thought that doesn't prevent KVM from blowing up. Though
-> I don't believe we can prevent a CPU coming up. At the moment this is
-> my preferred approach.
+It also adds Super-Speed support to the Type-C port on the EVM.
+The USB Type-C related support is also Acked and in phy/next [2]
 
-I'd be OK with this as a stop-gap measure. Do we know of any existing
-design where only half of the CPUs have SPE?
+Please queue this for v5.6 if no objections. Thanks.
 
-> Looking at the vcpu_load and related code, I don't see a way of saying
-> 'don't schedule this VCPU on this CPU' or bailing in any way.
+[1] https://patchwork.kernel.org/cover/11293671/
+[2] https://lkml.org/lkml/2020/1/6/303
 
-That would actually be pretty easy to implement. In vcpu_load(), check
-that that the CPU physical has SPE. If not, raise a request for that 
-vcpu.
-In the run loop, check for that request and abort if raised, returning
-to userspace.
+cheers,
+-roger
 
-Userspace can always check /sys/devices/arm_spe_0/cpumask and work out
-where to run that particular vcpu.
+Kishon Vijay Abraham I (2):
+  arm64: dts: ti: k3-j721e-main: Add WIZ and SERDES PHY nodes
+  arm64: dts: ti: k3-j721e-main: Add serdes_ln_ctrl node to select
+    SERDES lane mux
 
-> 
-> One solution could be to allow scheduling onto non-SPE VCPUs but wrap 
-> the
-> SPE save/restore code in a macro (much like kvm_arm_spe_v1_ready) that
-> reads the non-sanitised feature register. Therefore we don't go bang, 
-> but
-> we also increase the size of any black-holes in SPE capturing. Though 
-> this
-> feels like something that will cause grief down the line.
-> 
-> Is there something else that can be done?
+Roger Quadros (3):
+  arm64: dts: ti: k3-j721e-main.dtsi: Add USB to SERDES MUX
+  arm64: dts: ti: k3-j721e: Enable Super-Speed support for USB0
+  arm64: dts: k3-j721e-proc-board: Add wait time for sampling Type-C DIR
+    line
 
-How does userspace deal with this? When SPE is only available on half of
-the CPUs, how does perf work in these conditions?
+ .../dts/ti/k3-j721e-common-proc-board.dts     |  33 ++-
+ arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 274 ++++++++++++++++++
+ include/dt-bindings/mux/mux-j721e-wiz.h       |  53 ++++
+ 3 files changed, 358 insertions(+), 2 deletions(-)
+ create mode 100644 include/dt-bindings/mux/mux-j721e-wiz.h
 
-Thanks,
-
-         M.
 -- 
-Jazz is not dead. It just smells funny...
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
 
 _______________________________________________
 linux-arm-kernel mailing list
