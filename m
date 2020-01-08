@@ -2,78 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41661133F8B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:45:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EA21133FB6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 11:54:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jkcLjl7RrXX5k8e3AoCd4iEuVRW3EbMZ0+yLG3Wd7Do=; b=sRR2OH/v2tM05T
-	nDz0uknKrSJKMRP0+UNv0FSgjElHAX8WJ3p8RDgZm1lDSRz0YdOjt6PmMEN900WoztpoKg4mIecYg
-	7nRM3lQH706H04lBpQP5wWgx7E4M7QFEu/EF29diMBEoPQV0W9yosXhmjDltbgP5+qVYJqeYU/PJS
-	N4CwF4yCRemUWq4zMFswUF6xA3oUx8hLwmIjxXrnSuaCVPuWRAIIg/y4QAQ58PNOM0RyEseWss+P2
-	kFZlyAzG3BqLaDccelzCFo2rUHliY5aDDHfQdadij/jcynoiydiXCa1eFEWallybN6OAe6jcFYGts
-	pZN2b4cckDxBR1zi+8Mg==;
+	List-Owner; bh=3QlVEo0JBxD4dPIXa84AzFJt2aReHq1QONxyFXNfVvY=; b=j0wPt1WLh3WwhH
+	DtvNnLvldi5WSCoYEnVy4wOjmUGFTk6x8LaLI4XFWP4Bzt41P6EGG8kJq4F67nTz/rX/MZemsgaDi
+	46DZ0K2kUToDnUka10BICi6SsXsgMbsD7rth7nT/VJ/kkVXi0uPstsHQE3cxf6x4Hjmq7iTSo40kU
+	5+I4CDcjRLyhXhZoi6H0lydZQO2U0I+SNjnXp0qJJOVPEgDPKZDFeA3B0sSsdWmaMjb3yUPf2bctS
+	gfpuFKq2dSBPm/Dof9Tmnss81CoWGu9saKav6vaPEnSh1B1HLJh3XswLFo8QL0LCFm30aVyoOpmCf
+	OKIcDW3XnFMgJyf5rw0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip8qG-0003hN-Q6; Wed, 08 Jan 2020 10:45:36 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ip8yL-000649-1C; Wed, 08 Jan 2020 10:53:57 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip8q8-0003gh-AD
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:45:29 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 20so1948073wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 02:45:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cWNocU7eA9+Wp59TtXNSPoHKPg/gQFuCfBlz6EP4IJM=;
- b=XL4fjlnoCxTK5zuVeOatSIA0QPobR9ogTd6FCkUDTguco9kcRi9Tbnhk/6Vceo4ZRo
- jar35VEPwdo1p2/UGuWCkf22+E/TvJ2RGq1aHs9TUQHytq9JhAgi/QSsTYzpvaNXM1uH
- YtAXDpIYKRMyvRU7wONZ2e/Us8z48GwassZeYBUak8x3TTPT3hl5/PUrJCbNlweOhwNm
- l2DlBC+QW9aCGTwb02ek/YJauLcmN0emIq4z8/76Y2jnJVpouUB0JpfsZ8AdmR7GtDG+
- SqXmjRY9xY7BB4V7pz6oHGSo6xD0eXICGBijwUrM1evNAgt5o9JMAB0o/lBkl5ux0wGT
- DTog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cWNocU7eA9+Wp59TtXNSPoHKPg/gQFuCfBlz6EP4IJM=;
- b=qoJAxPm+ZxyVRhTeKrIVJcSLQNpRCBmfdBJpYqxoYtYPZURG2WeLhADbeEBFnqq0oF
- ZV/AC8O3JA/tNFAo26JvPDkOJ/CoA1PqSyyNtBZ97zy45Ns1xKXuer+CWe6pQl+aAPWj
- OxWZFJqStH3jejDrZoR9ZR9pXjbpzFtetNTB24JyOR6e4F3TMWX5AFxpz3i3FU8d8DXX
- fGs/soIC3pRUU1F9Obf4WESwIOfDaGBRMh+tvw5cjjtIbWQyYKaPwEbVj+7mHOYS1hXo
- Th2PzxV3CTmtXzlLGpO6GfMZZhuzSp/J3d9pwp63mlv/hGdD8JCq/0YlotX4NeELq8Hh
- rSRQ==
-X-Gm-Message-State: APjAAAUdR8JXypUkaSf7s2olSO66xAwKaPr5vILmXec5f2kuASjogCFd
- TcCHgVhydowXDZl4g6tlmAN/FlE8n0OEZyrxHaA=
-X-Google-Smtp-Source: APXvYqxCEiSVPvqEPV1TYN+VTi6zRgss5wzhXYoBJ7RLBYKSCj5Cw8CA6v+eMTnefLxFNeJid/0wFmP3UfzNj91cJPQ=
-X-Received: by 2002:a1c:f008:: with SMTP id a8mr3018534wmb.81.1578480326589;
- Wed, 08 Jan 2020 02:45:26 -0800 (PST)
+ id 1ip8yD-00063G-Jo
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 10:53:51 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 008AprGZ021882; Wed, 8 Jan 2020 11:53:32 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : references : in-reply-to : content-type : content-id :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=kQyAI2kGrjAzX+brnj8/2WmK945o0OHDaqbW0tiyk38=;
+ b=jG8/vhWu3vI0zQ2/6ljT7lMhTFQRzNNPYHZwHdGzs2Eo5g5lMGGov6ZwJLOfIyariESU
+ hORNi1P+EC95M145rQh2UHaCPIW1iML0ztzP/eRKwOfKkQcPFMF3iAmm/sYqpbStnBX5
+ JTpBv3ah3Ev23TSN0/BN4mu6MtU5Z2E4xiQyj5Hb7YDoJByEqsx2/bRhCxV6cVnt3kGq
+ jU3R9MWJ5k0qEPhPhLFmHAl6xDJ/s8Lv+wuqSgNmjlN3nwh9BxptLWYUotCw2kvfunL/
+ UWuuUjEJvEW2qyQ1UKuwKedwt2QO8K/FBEQYCgeVk3ozvCXiWpHXIXqPpJ4pM2QFGXGP DA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xakm5keud-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 08 Jan 2020 11:53:32 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 32C4E100039;
+ Wed,  8 Jan 2020 11:53:28 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1F5312AC7B9;
+ Wed,  8 Jan 2020 11:53:28 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 8 Jan
+ 2020 11:53:27 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Wed, 8 Jan 2020 11:53:27 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>
+Subject: Re: [PATCH 0/2] ARM: dts: stih410-b2260: Fix ethernet PHY DT node
+Thread-Topic: [PATCH 0/2] ARM: dts: stih410-b2260: Fix ethernet PHY DT node
+Thread-Index: AQHVxVdeIJqDyaWz6EKL4LSB10p6hafgiEOA
+Date: Wed, 8 Jan 2020 10:53:27 +0000
+Message-ID: <ac361e0a-e5c8-ba7c-0d31-1f47a6ba4fab@st.com>
+References: <20200107123828.6586-1-patrice.chotard@st.com>
+In-Reply-To: <20200107123828.6586-1-patrice.chotard@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.45]
+Content-ID: <8FA654F671C57D4EA886F312BBD6A0E0@st.com>
 MIME-Version: 1.0
-References: <20200108101006.150706-1-andre.przywara@arm.com>
- <20200108101006.150706-2-andre.przywara@arm.com>
-In-Reply-To: <20200108101006.150706-2-andre.przywara@arm.com>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Wed, 8 Jan 2020 11:45:15 +0100
-Message-ID: <CAJiuCccSWR4oMF5x67eUVMFL6YhRMJVo_r0VfCUVVRtAJ9uR2w@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 1/2] arm64: dts: sun50i: H6: Add SPI
- controllers nodes and pinmuxes
-To: Andre Przywara <andre.przywara@arm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-08_03:2020-01-08,
+ 2020-01-08 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_024528_362603_CE9651F7 
-X-CRM114-Status: GOOD (  24.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_025350_111237_BF32B312 
+X-CRM114-Status: GOOD (  16.41  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,130 +110,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, linux-spi@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Mark Brown <broonie@kernel.org>, Icenowy Zheng <icenowy@aosc.xyz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andre,
-
-On Wed, 8 Jan 2020 at 11:10, Andre Przywara <andre.przywara@arm.com> wrote:
->
-> The Allwinner H6 SoC contains two SPI controllers similar to the H3/A64,
-> but with the added capability of 3-wire and 4-wire operation modes.
-> For now the driver does not support those, but the SPI registers are
-> fully backwards-compatible, just adding bits and registers which were
-> formerly reserved. So we can use the existing driver for the "normal" SPI
-> modes, for instance to access the SPI NOR flash soldered on the PineH64
-> board.
-> We use an H6 specific compatible string in addition to the existing H3
-> string, so when the driver later gains Quad SPI support, it should work
-> automatically without any DT changes.
->
-> Tested by accessing the SPI flash on a Pine H64 board (SPI0), also
-> connecting another SPI flash to the SPI1 header pins.
->
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 54 ++++++++++++++++++++
->  1 file changed, 54 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> index 3329283e38ab..40835850893e 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> @@ -338,6 +338,30 @@
->                                 bias-pull-up;
->                         };
->
-> +                       /omit-if-no-ref/
-> +                       spi0_pins: spi0-pins {
-> +                               pins = "PC0", "PC2", "PC3";
-> +                               function = "spi0";
-> +                       };
-> +
-> +                       /omit-if-no-ref/
-> +                       spi0_cs_pin: spi0-cs-pin {
-> +                               pins = "PC5";
-> +                               function = "spi0";
-> +                       };
-> +
-> +                       /omit-if-no-ref/
-> +                       spi1_pins: spi1-pins {
-> +                               pins = "PH4", "PH5", "PH6";
-> +                               function = "spi1";
-> +                       };
-> +
-> +                       /omit-if-no-ref/
-> +                       spi1_cs_pin: spi1-cs-pin {
-> +                               pins = "PH3";
-> +                               function = "spi1";
-> +                       };
-> +
->                         spdif_tx_pin: spdif-tx-pin {
->                                 pins = "PH7";
->                                 function = "spdif";
-> @@ -504,6 +528,36 @@
->                         #size-cells = <0>;
->                 };
->
-> +               spi0: spi@5010000 {
-> +                       compatible = "allwinner,sun50i-h6-spi",
-> +                                    "allwinner,sun8i-h3-spi";
-
-You need to document this compatible in the dt-bindings to avoid any warnings.
-
-Regards,
-Clement
-
-
-
-
-> +                       reg = <0x05010000 0x1000>;
-> +                       interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
-> +                       clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
-> +                       clock-names = "ahb", "mod";
-> +                       dmas = <&dma 22>, <&dma 22>;
-> +                       dma-names = "rx", "tx";
-> +                       resets = <&ccu RST_BUS_SPI0>;
-> +                       status = "disabled";
-> +                       #address-cells = <1>;
-> +                       #size-cells = <0>;
-> +               };
-> +
-> +               spi1: spi@5011000 {
-> +                       compatible = "allwinner,sun50i-h6-spi",
-> +                                    "allwinner,sun8i-h3-spi";
-> +                       reg = <0x05011000 0x1000>;
-> +                       interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
-> +                       clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
-> +                       clock-names = "ahb", "mod";
-> +                       dmas = <&dma 23>, <&dma 23>;
-> +                       dma-names = "rx", "tx";
-> +                       resets = <&ccu RST_BUS_SPI1>;
-> +                       status = "disabled";
-> +                       #address-cells = <1>;
-> +                       #size-cells = <0>;
-> +               };
-> +
->                 emac: ethernet@5020000 {
->                         compatible = "allwinner,sun50i-h6-emac",
->                                      "allwinner,sun50i-a64-emac";
-> --
-> 2.17.1
->
-> --
-> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200108101006.150706-2-andre.przywara%40arm.com.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkNCg0KVGhpcyBzZXJpZXMgaXMgYWJhbmRvbm5lZDoNCg0KwqDCoCAtIFBhdGNoIDEgaXMgbm8g
+bW9yZSBuZWVkZWQgZHVlIHRvIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcHJvamVjdC9s
+aW51eC1hcm0ta2VybmVsL2xpc3QvP3Nlcmllcz0yMjQ2MzcNCg0KwqDCoCAtIFBhdGNoIDIgd2ls
+bCBiZSByZXNlbmQgYWxvbmUNCg0KVGhhbmtzDQoNClBhdHJpY2UNCg0KDQpPbiAxLzcvMjAgMToz
+OCBQTSwgcGF0cmljZS5jaG90YXJkQHN0LmNvbSB3cm90ZToNCj4gRnJvbTogUGF0cmljZSBDaG90
+YXJkIDxwYXRyaWNlLmNob3RhcmRAc3QuY29tPg0KPg0KPiBUaGlzIHNlcmllcyBpcyBmaXhpbmcg
+YSBrZXJuZWwgT29wcyBhbmQgaXMgcmVtb3ZpbmcgZGVwcmVjYXRlZCBQSFkgcHJvcGVydGllczog
+DQo+DQo+ICAtIFNpbmNlIGNvbW1pdCAnZDNlMDE0ZWM3ZDVlICgibmV0OiBzdG1tYWM6IHBsYXRm
+b3JtOiBGaXggTURJTyBpbml0IGZvciANCj4gICAgcGxhdGZvcm1zIHdpdGhvdXQgUEhZIiknLCBh
+IGtlcm5lbCBPb3BzIG9jY3VycyBhbmQgZXRoZXJuZXQgaXMgbm8gbW9yZQ0KPiAgICBmdW5jdGlv
+bmFsLg0KPg0KPiAgLSBTb21lIGRlcHJlY2F0ZWQgU3lub3BzeXMgcGh5IHByb3BlcnRpZXMgd2Fz
+IGFsd2F5cyBwcmVzZW50IGluIERULCANCj4gICAgcmVtb3ZlIHRoZW0uDQo+DQo+IFBhdHJpY2Ug
+Q2hvdGFyZCAoMik6DQo+ICAgQVJNOiBkdHM6IHN0aWg0MTAtYjIyNjA6IEZpeCBldGhlcm5ldCBw
+aHkgRFQgbm9kZQ0KPiAgIEFSTTogZHRzOiBzdGloNDEwLWIyMjYwOiBSZW1vdmUgZGVwcmVjYXRl
+ZCBzbnBzIFBIWSBwcm9wZXJ0aWVzDQo+DQo+ICBhcmNoL2FybS9ib290L2R0cy9zdGloNDEwLWIy
+MjYwLmR0cyB8IDEzICsrKysrKysrKystLS0NCj4gIDEgZmlsZSBjaGFuZ2VkLCAxMCBpbnNlcnRp
+b25zKCspLCAzIGRlbGV0aW9ucygtKQ0KPgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
