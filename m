@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF07133A27
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 05:21:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BF66133A28
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 05:21:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vG4JZOcnisXI5MKdYS87bfXfnOX4h9rxUOn5LQJoTXo=; b=BstOdP0Fd3RnDU
-	EIoQJ+yb3yLJjPRs65L95Yg8XVseLy+d33jRGUn8dyhvOXukSMvb0E3Qsl0GUB4SgoOx/VdTw678O
-	t+OtxEy4QENxZwW10QTIDAAopOG+6AWiviy0hUY7TsYeN4nFd46LEB9UC1ycLDASqB7Y36S6WBGwf
-	MIQhWVkkianCg2exhLbvT/xijhWcOlX787FTmIYhCNwp14WoYqcIcgXydMjnQucGTk3L8s1IDZjqR
-	d+40XQDvpOEsmuiS469158SFRbD+8ZaOXAmIE2e6LoQQCcHI4k3M+qF/ygzHftYRqmom5cGDB1I26
-	r0Eqz7rTklVm/7ieCEYA==;
+	List-Owner; bh=D0rGvfYG18CKwjruuv4YF5XL7A8q6cpVqP0+66TP8fs=; b=Kboo+whptN9D97
+	M7XVoruWwDNI9cOmhyq4K+Wrs/KkiM0zzie3MoFki4HGY0O5OEjMZOxK0bvUps8s/++//4Yz9z23i
+	XnT8nJwYrczLHezraF6ZkCO1n2naqMOjwoeahIfwIZsWP9HQXz0k7w9Ffxo7vTBUMR7iLWOkb9XMs
+	VV8+9VO+0C6ijPilW8VyvvIzvZ3SGUNokztDIA9xh/yjV6DjMThO+3g8dgJ2ZbFygOfD70VHuLTui
+	mQ+A0TRBct+Bfu6S2gysTG7bkzGCY6uW2yW/AUCmsN/M192QeImeS3lh/KIhGtNOZpL5AbcaL3Fbu
+	fe0Hn0FhrKbyfIyjdmXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip2qZ-0000ej-5k; Wed, 08 Jan 2020 04:21:31 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1ip2qo-0000uM-Ag; Wed, 08 Jan 2020 04:21:46 +0000
+Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip2ps-0000A6-GM
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 04:20:50 +0000
-Received: by mail-pg1-x542.google.com with SMTP id s64so898130pgb.9
+ id 1ip2pu-0000AY-Nu
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 04:20:52 +0000
+Received: by mail-pl1-x630.google.com with SMTP id az3so565923plb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 20:20:48 -0800 (PST)
+ Tue, 07 Jan 2020 20:20:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=a9CbtpSeP2FndDuoSPtr7TkepCmjH+G9q6KhtPvuICk=;
- b=joSnIdykr9M65iSmT897djm+dYgRXOxKaLDa39hQjDBsRFT8cgHHS1HqfrC+8njn0S
- GmKpAfbIz9tI08oB05Mskl3Yrnlr1vqfYvN6GgvGWvX3FoY2D6jbqe2n4AiirNQdshck
- YcSK7KyOEEdgcfT1MDpDMqSH6+KBFM/JsK2panWK+6cq9d4i+8VHPl3LBwb3TRlt9GKC
- HWWP9v7YK8P8Gq1dR6DESgYndv5C65NUgUlKbRcPs16burh5GxlVTZ2qyyHDh2E6urd/
- xOk5klU4x4BpUSEAZqvVBMOap07jbZTKpxI8KR4tyg/7ZBcjNuYba9rroCATi6io/1NX
- eQ6Q==
+ bh=8i3jv2NcKPJav5JSnI7n2xF76BQZT2zWeKXSSkvhBZs=;
+ b=H/a717vhcYdvgT5UJJEdaEDhfGrJ1j0HoL7+znfKXxb1Y70kiaalEnKwTOftppJqSI
+ 1rMpWLSrGf+L+vwFltOJAWRQQ8V19AAuQS/hA1XYU/M6qHJC44Xu0X/km4PC8/gFrt4m
+ Q/d4OV1lPPcYQnf/mT/nhAU2ATiZy4PuxeMBrmsb9r8NVto8YVHZr1l1KKnLpIR0K5Qi
+ LXGTXmomlp2NTiyLWQ7JhRKhQ2iVdAi8i/NFE8ezioC0cVS14BvG/FDurgl4cAu+s/Qk
+ QMnA/efNS1Zwt1rW+ZbiOw2iP94KQOPzk1ETbHRF4LYvziTEAIwXRzdC2VKi2j1VTdoH
+ yDWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=a9CbtpSeP2FndDuoSPtr7TkepCmjH+G9q6KhtPvuICk=;
- b=eyyH7wf9H90W5PFoRVvkzRtCKJPOiRbspF+w/v0NMeJg4JgEg+vK6rRinqGMHOp25+
- mMmPmbu3dKClGNj0xT/3KuTsrJfk1Ns575sKZ0EpqZ8sBgUHqkP9eXzufxzttQLAz5Y/
- OxpcuL88ytlCQ4pEoZKcOAUhxwEjdghykOjeJexFEK2zVTFurLyhd8B+LtHEaS1N9XFu
- rlupBgedMtnwCzBLQklAXSgUZGmt8UsPAS1Bhke642xF00dTEomtbCdMKW3StytLIs5u
- sSYprjvMeMIaqxQPzCc136vQg2iPU2gZzsjLoDzW2yWVAmjENeCvcU6ImmXjJCPM6WDj
- qG5Q==
-X-Gm-Message-State: APjAAAXw2QxQ/zMFNaQIUeiM64ElbqUPrifGYxXy4AS/R91lZM8G8IKC
- H0BgGooHICB9a9kGzPqL9aM=
-X-Google-Smtp-Source: APXvYqzdjVZCW2V6yoSf9haV6oUXng2MFLJ+MiXr/PXgpLd1X/Um2PrG+0b8+5nZBm4rNj/J3c9wNQ==
-X-Received: by 2002:a63:de03:: with SMTP id f3mr3268086pgg.141.1578457247965; 
- Tue, 07 Jan 2020 20:20:47 -0800 (PST)
+ bh=8i3jv2NcKPJav5JSnI7n2xF76BQZT2zWeKXSSkvhBZs=;
+ b=Sa26N+QMDsFFCs3RdgeMfXpVJ5gx+ZnlE1PigU1ERFOe93vLT0a1PQfsztfopBoKkq
+ vHMIQz+vEfbhtmPI7/FZbf5fZhVD8eo8isBkA4y5DILeox4r/EfbjiygEmCvWIUvuVTg
+ YHeT+M4pfie+4c4OJ3dCUbKck1UuqHXTBcXiI9PwIyQYoOwilwR7OMi2mk5sVRDSCyPZ
+ WfetGHDEsDrX0wHC7nCt9EiDPTUOvP/jc0835nD9V+VuccB3/xcHgjkSyTYRWpw8beWo
+ YoFi8StwbBoG9f8gHlfuDS84i7uoYYrgyB2FhpIBi/TkEHK2F1HAESVFnka9wJE9QI1J
+ pv7Q==
+X-Gm-Message-State: APjAAAUmPLFYtnbXpVyeFvCieuXJhDHpJSxTPpLDdtCjYtYviyDaQLKp
+ DjkKdHXw2vh9+VESqolBUII=
+X-Google-Smtp-Source: APXvYqx/IAJeMafAjvWogVFDy3hU75s9q/3GXL6uTncLxHrzyp5S8XMfkOSmZjkMJCjL7Zk+tPqS4Q==
+X-Received: by 2002:a17:902:6501:: with SMTP id
+ b1mr3415381plk.121.1578457248856; 
+ Tue, 07 Jan 2020 20:20:48 -0800 (PST)
 Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
  [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id p12sm1133478pjo.5.2020.01.07.20.20.47
+ by smtp.gmail.com with ESMTPSA id p12sm1133478pjo.5.2020.01.07.20.20.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Jan 2020 20:20:47 -0800 (PST)
+ Tue, 07 Jan 2020 20:20:48 -0800 (PST)
 From: Vasily Khoruzhick <anarsoul@gmail.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-Subject: [PATCH v2 2/4] arm64: dts: allwinner: a64: add cooling maps and
- thermal tripping points
-Date: Tue,  7 Jan 2020 20:20:16 -0800
-Message-Id: <20200108042018.571251-3-anarsoul@gmail.com>
+Subject: [PATCH v2 3/4] arm64: dts: allwinner: a64: add dtsi with CPU
+ operating points
+Date: Tue,  7 Jan 2020 20:20:17 -0800
+Message-Id: <20200108042018.571251-4-anarsoul@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200108042018.571251-1-anarsoul@gmail.com>
 References: <20200108042018.571251-1-anarsoul@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_202048_540388_9B41F56D 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20200107_202050_833602_52581A9E 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:630 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (anarsoul[at]gmail.com)
@@ -107,98 +108,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add cooling maps and thermal tripping points to prevent CPU overheating when
-running at the highest frequency. Tripping points are taken from A33 dts since
-A64 user manual doesn't mention when we should start throttling.
+Add operating points for A64. These are taken from FEX file from BSP
+for A64.
 
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
+ .../dts/allwinner/sun50i-a64-cpu-opp.dtsi     | 75 +++++++++++++++++++
+ 1 file changed, 75 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 77b33087866d..54a741f3cd8c 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -92,6 +92,7 @@ cpu0: cpu@0 {
- 			next-level-cache = <&L2>;
- 			clocks = <&ccu CLK_CPUX>;
- 			clock-names = "cpu";
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu1: cpu@1 {
-@@ -102,6 +103,7 @@ cpu1: cpu@1 {
- 			next-level-cache = <&L2>;
- 			clocks = <&ccu CLK_CPUX>;
- 			clock-names = "cpu";
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu2: cpu@2 {
-@@ -112,6 +114,7 @@ cpu2: cpu@2 {
- 			next-level-cache = <&L2>;
- 			clocks = <&ccu CLK_CPUX>;
- 			clock-names = "cpu";
-+			#cooling-cells = <2>;
- 		};
- 
- 		cpu3: cpu@3 {
-@@ -122,6 +125,7 @@ cpu3: cpu@3 {
- 			next-level-cache = <&L2>;
- 			clocks = <&ccu CLK_CPUX>;
- 			clock-names = "cpu";
-+			#cooling-cells = <2>;
- 		};
- 
- 		L2: l2-cache {
-@@ -226,6 +230,46 @@ cpu_thermal: cpu0-thermal {
- 			polling-delay-passive = <0>;
- 			polling-delay = <0>;
- 			thermal-sensors = <&ths 0>;
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
+new file mode 100644
+index 000000000000..578c37490d90
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
+@@ -0,0 +1,75 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2020 Vasily khoruzhick <anarsoul@gmail.com>
++ */
 +
-+			cooling-maps {
-+				map0 {
-+					trip = <&cpu_alert0>;
-+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+				map1 {
-+					trip = <&cpu_alert1>;
-+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
++/ {
++	cpu0_opp_table: opp_table0 {
++		compatible = "operating-points-v2";
++		opp-shared;
 +
-+			trips {
-+				cpu_alert0: cpu_alert0 {
-+					/* milliCelsius */
-+					temperature = <75000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
++		opp-648000000 {
++			opp-hz = /bits/ 64 <648000000>;
++			opp-microvolt = <1040000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
 +
-+				cpu_alert1: cpu_alert1 {
-+					/* milliCelsius */
-+					temperature = <90000>;
-+					hysteresis = <2000>;
-+					type = "hot";
-+				};
++		opp-816000000 {
++			opp-hz = /bits/ 64 <816000000>;
++			opp-microvolt = <1100000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
 +
-+				cpu_crit: cpu_crit {
-+					/* milliCelsius */
-+					temperature = <110000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
- 		};
- 
- 		gpu0_thermal: gpu0-thermal {
++		opp-912000000 {
++			opp-hz = /bits/ 64 <912000000>;
++			opp-microvolt = <1120000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++
++		opp-960000000 {
++			opp-hz = /bits/ 64 <960000000>;
++			opp-microvolt = <1160000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++
++		opp-1008000000 {
++			opp-hz = /bits/ 64 <1008000000>;
++			opp-microvolt = <1200000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++
++		opp-1056000000 {
++			opp-hz = /bits/ 64 <1056000000>;
++			opp-microvolt = <1240000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++
++		opp-1104000000 {
++			opp-hz = /bits/ 64 <1104000000>;
++			opp-microvolt = <1260000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++
++		opp-1152000000 {
++			opp-hz = /bits/ 64 <1152000000>;
++			opp-microvolt = <1300000>;
++			clock-latency-ns = <244144>; /* 8 32k periods */
++		};
++	};
++};
++
++&cpu0 {
++	operating-points-v2 = <&cpu0_opp_table>;
++};
++
++&cpu1 {
++	operating-points-v2 = <&cpu0_opp_table>;
++};
++
++&cpu2 {
++	operating-points-v2 = <&cpu0_opp_table>;
++};
++
++&cpu3 {
++	operating-points-v2 = <&cpu0_opp_table>;
++};
 -- 
 2.24.1
 
