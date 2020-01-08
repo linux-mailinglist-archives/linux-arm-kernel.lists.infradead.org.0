@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD6A1134D98
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:30:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A72EA134D9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 21:31:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LUr4eLqugJ+dIn/WY51l1di3vRbHdmlh/ccamxag4SY=; b=avCI7DMxK6Weim
-	gRnsGzpqFlAOEWBvPsKTtL7wmee9ivfhC+4G8jLjCVePfPQtZREMW3CToGe939BhX/70UDpm3fxOH
-	5WkdH4TGxI1oWykyqvdIrak58FkOFiijtasvXAofNbn47/UfLSyQ3ubFcw8iojsbBHRjMjpb7oUWO
-	DQbMZYyOapwfcyXn7hUabJ5+1w2PSU/7LHKLgsaL/dpL+jFf4O4AYlVli95US/61ZQmsrvavS6KKQ
-	ilY1O3GtLkU0KWV080xeJo7TI2QMOhPHmrhw/0Lt2Qrh8vwuq67uRc53f3428ydw15essNNr7lWh9
-	ZBNpT8quAl4d9ICscZLw==;
+	List-Owner; bh=B8SSG2TI8C14+0Ra7ZqPJU0z7RTzb+FHCijHk/TnmF8=; b=sMBu68yMCce9y7
+	TI8J/RjxpkciUBt+o887S1S2lfOYMQFSiqFgnm4virhuAt569K9Fy1mvCaD+KiRpFH57wEScyvL3o
+	6KISF90Z1qXEN/wUAVEp2Yl2zq99O0saQRYpiYdrLPVT6Kig+DXBpN8tEJCx2PWg0kjfdwZqwztpn
+	H1Kx7R5cqIuwPkSlCIv6cmL01y1Fatl5BoyNkmL5j6KSqoNqYdvyrBkLflELEzRxxuxrTtIHnFuRb
+	n8WrQm9FFtQdBvlGMBna7oiCDGdP+S2xfKlshKZGKNQBmHuxG5xvsjD0JC2d0In1PNHRZh1iiH9hU
+	K31twaExmFV90NH9YYcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipHy0-0002Rb-9y; Wed, 08 Jan 2020 20:30:12 +0000
+	id 1ipHyk-0004Jv-5Y; Wed, 08 Jan 2020 20:30:58 +0000
 Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipHv5-0008Gp-KA
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:13 +0000
+ id 1ipHv5-0008CC-Ju
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 20:27:16 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga007.jf.intel.com ([10.7.209.58])
  by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  08 Jan 2020 12:27:06 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658387"
+X-IronPort-AV: E=Sophos;i="5.69,411,1571727600"; d="scan'208";a="211658383"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga007.jf.intel.com with ESMTP; 08 Jan 2020 12:27:06 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 10/14] KVM: x86/mmu: Remove obsolete gfn restoration in
- FNAME(fetch)
-Date: Wed,  8 Jan 2020 12:24:44 -0800
-Message-Id: <20200108202448.9669-11-sean.j.christopherson@intel.com>
+Subject: [PATCH 09/14] KVM: x86/mmu: Rely on host page tables to find HugeTLB
+ mappings
+Date: Wed,  8 Jan 2020 12:24:43 -0800
+Message-Id: <20200108202448.9669-10-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_122711_766503_4606594D 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20200108_122711_752861_6BC0A68F 
+X-CRM114-Status: GOOD (  19.62  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -88,54 +88,265 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove logic to retrieve the original gfn now that HugeTLB mappings are
-are identified in FNAME(fetch), i.e. FNAME(page_fault) no longer adjusts
-the level or gfn.
+Remove KVM's HugeTLB specific logic and instead rely on walking the host
+page tables (already done for THP) to identify HugeTLB mappings.
+Eliminating the HugeTLB-only logic avoids taking mmap_sem and calling
+find_vma() for all hugepage compatible page faults, and simplifies KVM's
+page fault code by consolidating all hugepage adjustments into a common
+helper.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/mmu/paging_tmpl.h | 13 +++----------
- 1 file changed, 3 insertions(+), 10 deletions(-)
+ arch/x86/kvm/mmu/mmu.c         | 84 ++++++++++------------------------
+ arch/x86/kvm/mmu/paging_tmpl.h | 15 +++---
+ 2 files changed, 29 insertions(+), 70 deletions(-)
 
-diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
-index 841506a55815..0560982eda8b 100644
---- a/arch/x86/kvm/mmu/paging_tmpl.h
-+++ b/arch/x86/kvm/mmu/paging_tmpl.h
-@@ -621,7 +621,7 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
- 	struct kvm_shadow_walk_iterator it;
- 	unsigned direct_access, access = gw->pt_access;
- 	int top_level, hlevel, ret;
--	gfn_t gfn, base_gfn;
-+	gfn_t base_gfn = gw->gfn;
+diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
+index 7d78d1d996ed..68aec984f953 100644
+--- a/arch/x86/kvm/mmu/mmu.c
++++ b/arch/x86/kvm/mmu/mmu.c
+@@ -1286,23 +1286,6 @@ static bool mmu_gfn_lpage_is_disallowed(struct kvm_vcpu *vcpu, gfn_t gfn,
+ 	return __mmu_gfn_lpage_is_disallowed(gfn, level, slot);
+ }
  
- 	direct_access = gw->pte_access;
+-static int host_mapping_level(struct kvm_vcpu *vcpu, gfn_t gfn)
+-{
+-	unsigned long page_size;
+-	int i, ret = 0;
+-
+-	page_size = kvm_host_page_size(vcpu, gfn);
+-
+-	for (i = PT_PAGE_TABLE_LEVEL; i <= PT_MAX_HUGEPAGE_LEVEL; ++i) {
+-		if (page_size >= KVM_HPAGE_SIZE(i))
+-			ret = i;
+-		else
+-			break;
+-	}
+-
+-	return ret;
+-}
+-
+ static inline bool memslot_valid_for_gpte(struct kvm_memory_slot *slot,
+ 					  bool no_dirty_log)
+ {
+@@ -1327,43 +1310,25 @@ gfn_to_memslot_dirty_bitmap(struct kvm_vcpu *vcpu, gfn_t gfn,
+ 	return slot;
+ }
  
-@@ -666,13 +666,6 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
- 			link_shadow_page(vcpu, it.sptep, sp);
+-static int mapping_level(struct kvm_vcpu *vcpu, gfn_t large_gfn,
+-			 int *max_levelp)
++static int max_mapping_level(struct kvm_vcpu *vcpu, gfn_t gfn,
++			     int max_level)
+ {
+-	int host_level, max_level = *max_levelp;
+ 	struct kvm_memory_slot *slot;
+ 
+ 	if (unlikely(max_level == PT_PAGE_TABLE_LEVEL))
+ 		return PT_PAGE_TABLE_LEVEL;
+ 
+-	slot = kvm_vcpu_gfn_to_memslot(vcpu, large_gfn);
+-	if (!memslot_valid_for_gpte(slot, true)) {
+-		*max_levelp = PT_PAGE_TABLE_LEVEL;
++	slot = kvm_vcpu_gfn_to_memslot(vcpu, gfn);
++	if (!memslot_valid_for_gpte(slot, true))
+ 		return PT_PAGE_TABLE_LEVEL;
+-	}
+ 
+ 	max_level = min(max_level, kvm_x86_ops->get_lpage_level());
+ 	for ( ; max_level > PT_PAGE_TABLE_LEVEL; max_level--) {
+-		if (!__mmu_gfn_lpage_is_disallowed(large_gfn, max_level, slot))
++		if (!__mmu_gfn_lpage_is_disallowed(gfn, max_level, slot))
+ 			break;
  	}
  
--	/*
--	 * FNAME(page_fault) might have clobbered the bottom bits of
--	 * gw->gfn, restore them from the virtual address.
--	 */
--	gfn = gw->gfn | ((addr & PT_LVL_OFFSET_MASK(gw->level)) >> PAGE_SHIFT);
--	base_gfn = gfn;
+-	*max_levelp = max_level;
 -
- 	hlevel = kvm_mmu_hugepage_adjust(vcpu, gw->gfn, max_level, &pfn);
+-	if (max_level == PT_PAGE_TABLE_LEVEL)
+-		return PT_PAGE_TABLE_LEVEL;
+-
+-	/*
+-	 * Note, host_mapping_level() does *not* handle transparent huge pages.
+-	 * As suggested by "mapping", it reflects the page size established by
+-	 * the associated vma, if there is one, i.e. host_mapping_level() will
+-	 * return a huge page level if and only if a vma exists and the backing
+-	 * implementation for the vma uses huge pages, e.g. hugetlbfs and dax.
+-	 * So, do not propagate host_mapping_level() to max_level as KVM can
+-	 * still promote the guest mapping to a huge page in the THP case.
+-	 */
+-	host_level = host_mapping_level(vcpu, large_gfn);
+-	return min(host_level, max_level);
++	return max_level;
+ }
+ 
+ /*
+@@ -3137,7 +3102,7 @@ static int set_spte(struct kvm_vcpu *vcpu, u64 *sptep,
+ 
+ 		/*
+ 		 * Other vcpu creates new sp in the window between
+-		 * mapping_level() and acquiring mmu-lock. We can
++		 * max_mapping_level() and acquiring mmu-lock. We can
+ 		 * allow guest to retry the access, the mapping can
+ 		 * be fixed if guest refault.
+ 		 */
+@@ -3364,24 +3329,23 @@ static int host_pfn_mapping_level(struct kvm_vcpu *vcpu, gfn_t gfn,
+ 	return level;
+ }
+ 
+-static void transparent_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
+-					int max_level, kvm_pfn_t *pfnp,
+-					int *levelp)
++static int kvm_mmu_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
++				   int max_level, kvm_pfn_t *pfnp)
+ {
+ 	kvm_pfn_t pfn = *pfnp;
+-	int level = *levelp;
+ 	kvm_pfn_t mask;
++	int level;
+ 
+-	if (max_level == PT_PAGE_TABLE_LEVEL || level > PT_PAGE_TABLE_LEVEL)
+-		return;
++	if (max_level == PT_PAGE_TABLE_LEVEL)
++		return PT_PAGE_TABLE_LEVEL;
+ 
+ 	if (is_error_noslot_pfn(pfn) || kvm_is_reserved_pfn(pfn) ||
+ 	    kvm_is_zone_device_pfn(pfn))
+-		return;
++		return PT_PAGE_TABLE_LEVEL;
+ 
+ 	level = host_pfn_mapping_level(vcpu, gfn, pfn);
+ 	if (level == PT_PAGE_TABLE_LEVEL)
+-		return;
++		return level;
+ 
+ 	level = min(level, max_level);
+ 
+@@ -3389,10 +3353,11 @@ static void transparent_hugepage_adjust(struct kvm_vcpu *vcpu, gfn_t gfn,
+ 	 * mmu_notifier_retry() was successful and mmu_lock is held, so
+ 	 * the pmd can't be split from under us.
+ 	 */
+-	*levelp = level;
+ 	mask = KVM_PAGES_PER_HPAGE(level) - 1;
+ 	VM_BUG_ON((gfn & mask) != (pfn & mask));
+ 	*pfnp = pfn & ~mask;
++
++	return level;
+ }
+ 
+ static void disallowed_hugepage_adjust(struct kvm_shadow_walk_iterator it,
+@@ -3419,20 +3384,19 @@ static void disallowed_hugepage_adjust(struct kvm_shadow_walk_iterator it,
+ }
+ 
+ static int __direct_map(struct kvm_vcpu *vcpu, gpa_t gpa, int write,
+-			int map_writable, int level, int max_level,
+-			kvm_pfn_t pfn, bool prefault,
+-			bool account_disallowed_nx_lpage)
++			int map_writable, int max_level, kvm_pfn_t pfn,
++			bool prefault, bool account_disallowed_nx_lpage)
+ {
+ 	struct kvm_shadow_walk_iterator it;
+ 	struct kvm_mmu_page *sp;
+-	int ret;
++	int level, ret;
+ 	gfn_t gfn = gpa >> PAGE_SHIFT;
+ 	gfn_t base_gfn = gfn;
+ 
+ 	if (WARN_ON(!VALID_PAGE(vcpu->arch.mmu->root_hpa)))
+ 		return RET_PF_RETRY;
+ 
+-	transparent_hugepage_adjust(vcpu, gfn, max_level, &pfn, &level);
++	level = kvm_mmu_hugepage_adjust(vcpu, gfn, max_level, &pfn);
+ 
+ 	trace_kvm_mmu_spte_requested(gpa, level, pfn);
+ 	for_each_shadow_entry(vcpu, gpa, it) {
+@@ -4206,7 +4170,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
+ 	gfn_t gfn = gpa >> PAGE_SHIFT;
+ 	unsigned long mmu_seq;
+ 	kvm_pfn_t pfn;
+-	int level, r;
++	int r;
+ 
+ 	if (page_fault_handle_page_track(vcpu, error_code, gfn))
+ 		return RET_PF_EMULATE;
+@@ -4218,9 +4182,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
+ 	if (lpage_disallowed)
+ 		max_level = PT_PAGE_TABLE_LEVEL;
+ 
+-	level = mapping_level(vcpu, gfn, &max_level);
+-	if (level > PT_PAGE_TABLE_LEVEL)
+-		gfn &= ~(KVM_PAGES_PER_HPAGE(level) - 1);
++	max_level = max_mapping_level(vcpu, gfn, max_level);
+ 
+ 	if (fast_page_fault(vcpu, gpa, error_code))
+ 		return RET_PF_RETRY;
+@@ -4240,7 +4202,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
+ 		goto out_unlock;
+ 	if (make_mmu_pages_available(vcpu) < 0)
+ 		goto out_unlock;
+-	r = __direct_map(vcpu, gpa, write, map_writable, level, max_level, pfn,
++	r = __direct_map(vcpu, gpa, write, map_writable, max_level, pfn,
+ 			 prefault, is_tdp && lpage_disallowed);
+ 
+ out_unlock:
+diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
+index 0029f7870865..841506a55815 100644
+--- a/arch/x86/kvm/mmu/paging_tmpl.h
++++ b/arch/x86/kvm/mmu/paging_tmpl.h
+@@ -613,14 +613,14 @@ static void FNAME(pte_prefetch)(struct kvm_vcpu *vcpu, struct guest_walker *gw,
+  */
+ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
+ 			 struct guest_walker *gw,
+-			 int write_fault, int hlevel, int max_level,
++			 int write_fault, int max_level,
+ 			 kvm_pfn_t pfn, bool map_writable, bool prefault,
+ 			 bool lpage_disallowed)
+ {
+ 	struct kvm_mmu_page *sp = NULL;
+ 	struct kvm_shadow_walk_iterator it;
+ 	unsigned direct_access, access = gw->pt_access;
+-	int top_level, ret;
++	int top_level, hlevel, ret;
+ 	gfn_t gfn, base_gfn;
+ 
+ 	direct_access = gw->pte_access;
+@@ -673,7 +673,7 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
+ 	gfn = gw->gfn | ((addr & PT_LVL_OFFSET_MASK(gw->level)) >> PAGE_SHIFT);
+ 	base_gfn = gfn;
+ 
+-	transparent_hugepage_adjust(vcpu, gw->gfn, max_level, &pfn, &hlevel);
++	hlevel = kvm_mmu_hugepage_adjust(vcpu, gw->gfn, max_level, &pfn);
  
  	trace_kvm_mmu_spte_requested(addr, gw->level, pfn);
-@@ -684,9 +677,9 @@ static int FNAME(fetch)(struct kvm_vcpu *vcpu, gpa_t addr,
- 		 * We cannot overwrite existing page tables with an NX
- 		 * large page, as the leaf could be executable.
- 		 */
--		disallowed_hugepage_adjust(it, gfn, &pfn, &hlevel);
-+		disallowed_hugepage_adjust(it, gw->gfn, &pfn, &hlevel);
  
--		base_gfn = gfn & ~(KVM_PAGES_PER_HPAGE(it.level) - 1);
-+		base_gfn = gw->gfn & ~(KVM_PAGES_PER_HPAGE(it.level) - 1);
- 		if (it.level == hlevel)
- 			break;
+@@ -775,7 +775,6 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
+ 	struct guest_walker walker;
+ 	int r;
+ 	kvm_pfn_t pfn;
+-	int level;
+ 	unsigned long mmu_seq;
+ 	bool map_writable, is_self_change_mapping;
+ 	bool lpage_disallowed = (error_code & PFERR_FETCH_MASK) &&
+@@ -825,9 +824,7 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
+ 	else
+ 		max_level = walker.level;
  
+-	level = mapping_level(vcpu, walker.gfn, &max_level);
+-	if (level > PT_PAGE_TABLE_LEVEL)
+-		walker.gfn = walker.gfn & ~(KVM_PAGES_PER_HPAGE(level) - 1);
++	max_level = max_mapping_level(vcpu, walker.gfn, max_level);
+ 
+ 	mmu_seq = vcpu->kvm->mmu_notifier_seq;
+ 	smp_rmb();
+@@ -867,8 +864,8 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
+ 	kvm_mmu_audit(vcpu, AUDIT_PRE_PAGE_FAULT);
+ 	if (make_mmu_pages_available(vcpu) < 0)
+ 		goto out_unlock;
+-	r = FNAME(fetch)(vcpu, addr, &walker, write_fault, level, max_level,
+-			 pfn, map_writable, prefault, lpage_disallowed);
++	r = FNAME(fetch)(vcpu, addr, &walker, write_fault, max_level, pfn,
++			 map_writable, prefault, lpage_disallowed);
+ 	kvm_mmu_audit(vcpu, AUDIT_POST_PAGE_FAULT);
+ 
+ out_unlock:
 -- 
 2.24.1
 
