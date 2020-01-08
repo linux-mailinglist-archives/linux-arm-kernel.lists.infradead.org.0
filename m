@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65ED7133E15
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:14:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DD3C133E1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 10:17:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Br4rqbyJjXhYnTx9vhqz8yahoJ/gAj1kBNYB6gfc/do=; b=POnaVDzIky9Q7L
-	rSzE1G2GG/6WhD4LRtL+qiiigXn3Ov0+/FEWC/hHclw+ArCV4MxtzvvvlavaSiFKD7qiy/tqIn6rM
-	ZES5d4YyymvLynfPT9WdxmH5dr+9nCj4eHR/uer+yjuA3ROW1UaON9LAgoFDPHKn7lfy4DVJP0ULh
-	ylFocI6tGhmMh6HYDwSPFeBbTmcnoFQPRGm0chr5nrlaLZV0fDYK6bMFNlnNmdn8M64IlvdKh55v7
-	wH5dWImX3D61IGW9ptE0j5r501iUUjVqlE6W7E3NA0VPKee56NsK+uYFSisgLoD2WUJontW/zBCd3
-	RcW5sSh04bodZhxhQWQg==;
+	List-Owner; bh=qT0Hxq/4JWiditgTnxiwoC6cguygTCsfmfMJzxmL2dE=; b=Ngiz+KMr4P5dAJ
+	jTgc3p+11a8jH6/YdHJhd3CiT62d89I3ZHJ6WGZosyxNg8msIXF924YUnQU4Zt0CvQQqnT2YRURqS
+	PeAMZ+xH77IzlfEGC5/chEMMqcOY8hJg1Wqf+6wgFFITWCCEJlUXq9RrFvznswQPNZanMcA8w7rWG
+	KC/AAkRWF2VmbwAL9rpON19z3WdHqaUfMVDFgSm+tV6KKP5kQcGpjlLio5D8HyIDkFcxGuQfVW0/d
+	YLpRpra+w1QD6IYww/2k3bUpwza8hcoRKHWJMr5EVXM9QvyhY679Ott7I+aoKdRsMQbraP3CI4HO0
+	RZHUcBSNBLBZaak/j87g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip7QM-0008BL-5F; Wed, 08 Jan 2020 09:14:46 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1ip7SX-0001Jd-3x; Wed, 08 Jan 2020 09:17:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip7QF-0008A9-N5
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 09:14:41 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id x1so1087310qvr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Jan 2020 01:14:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SPzHp/TCuO+PA2nHlHMVzeUghB/5uams6CZGUZBj35o=;
- b=K/jE8RWozDdRYmSsW9itFfvjGkVpL/zCzGu39X34ur7j0Be+cWMBI2auPmoluvn4c1
- /S/feNX81zbnksyn4ZVjM/8vfVA6T/7g7v52oVDY/X+5X9Y9F/hAbdyl8xKfHD3iR7ln
- 3kR5KrCmE2zxPQDibCfArttMxzqMRbVfVXuiM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SPzHp/TCuO+PA2nHlHMVzeUghB/5uams6CZGUZBj35o=;
- b=BUR4L5HiXqTLmYPeX/U+LEjIsTLn33oTzlh2T58H/DX4brTqhCWnzOLg+sjCck69n0
- g5kwSlTni96E+jUVxKR414jTJWhORKfAqY3FK7rNUd/+8m/ymoAb9RK10bH5LIJyEZ04
- v5w8c22dZ8zfDLn3YfBIt8uJVAEmkjF+coG7Q0JJ4BhqRiXfF11dkZZoVRH/xjJXOffq
- 1jihNihTVrR4suNO5q1rtJirGR59DjA5VCmQ2jC9rl8yDGN8wi5tF6ir6DBeozRpMtiL
- 0o/YwvsyOLT5XjEFNwambMbheLoh1hF6Rp8FE2Ua1sBuKzcErwfYxSCAFfqPybzwVO7J
- CYqQ==
-X-Gm-Message-State: APjAAAVFYFLH2ilhULLn8nTIUzfAKbQjRO+z7IegG0Q0n2IaFPh3Zvlv
- jjm/08FFNUBeuZtxkCA+K+TDPVY7oubEZcSsKAdTDg==
-X-Google-Smtp-Source: APXvYqxf/pnt/xOzQY9MksejO/BRE5fT3xBR6Oezhn4Kzl/SblH+zp9r0nnNwuErhStHc9QFh2BYf2nQYASas+C1/yI=
-X-Received: by 2002:a0c:f703:: with SMTP id w3mr3236524qvn.6.1578474878009;
- Wed, 08 Jan 2020 01:14:38 -0800 (PST)
+ id 1ip7SQ-0001J1-Dm
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 09:16:56 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C672C20705;
+ Wed,  8 Jan 2020 09:16:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578475012;
+ bh=+IAbT80Thjb7cm6WAP8wRkhDBitTa05E7byZ57Le5ag=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ie6mnSQIZ0/Cmh6ez45IJInqQwaokWY9MDyBZqRTZNt5uTgXRFmVAd2hNSM9uN3ID
+ y/12CJS7TUfkeqVSwEDmyPF/a5pSrE4SVd4XYt+znN6uP71KT5adACbICf8qRxpEXp
+ AQXOt9SNrLgS1q631MX+fnpE/s46nKozLm/TcjSk=
+Date: Wed, 8 Jan 2020 09:16:42 +0000
+From: Will Deacon <will@kernel.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH 0/3] iommu/arm-smmu: Qualcomm bootsplash/efifb
+Message-ID: <20200108091641.GA15147@willie-the-truck>
+References: <20191226221709.3844244-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
-References: <20191227141405.3396-1-yong.liang@mediatek.com>
- <20191227141405.3396-2-yong.liang@mediatek.com>
- <CANMq1KD=jAPn4Y7zQZrsg9FB7Cq6tNX0R8OF4qX21Sjy2=0Naw@mail.gmail.com>
-In-Reply-To: <CANMq1KD=jAPn4Y7zQZrsg9FB7Cq6tNX0R8OF4qX21Sjy2=0Naw@mail.gmail.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 8 Jan 2020 17:14:27 +0800
-Message-ID: <CANMq1KB4PzAUdp03go0Ur_khi2bM3+oNUhHtMK=--V6DmGXiDA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] amr64: dts: modify mt8183.dtsi
-To: Yong Liang <yong.liang@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <20191226221709.3844244-1-bjorn.andersson@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_011439_773801_345F1E2C 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_011654_488261_65F99ECC 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,47 +76,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux@roeck-us.net, Matthias Brugger <matthias.bgg@gmail.com>,
- wim@linux-watchdog.org,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Clark <robdclark@gmail.com>, Patrick Daly <pdaly@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ treding@nvidia.com, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Pratik Patel <pratikp@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 8, 2020 at 4:56 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> minor nit, s/amr64/arm64/ in the commit title.
->
-> On Fri, Dec 27, 2019 at 10:15 PM Yong Liang <yong.liang@mediatek.com> wrote:
-> >
-> > From: "yong.liang" <yong.liang@mediatek.com>
-> >
-> > 1. Include mt8183-reset.h and add reset-cells in infracfg
-> > in dtsi file
+On Thu, Dec 26, 2019 at 02:17:06PM -0800, Bjorn Andersson wrote:
+> These patches implements the stream mapping inheritance that's necessary in
+> order to not hit a security violation as the display hardware looses its stream
+> mapping during initialization of arm-smmu in various Qualcomm platforms.
+> 
+> This was previously posted as an RFC [1], changes since then involves the
+> rebase and migration of the read-back code to the Qualcomm specific
+> implementation, the mapping is maintained indefinitely - to handle probe
+> deferring clients - and rewritten commit messages.
 
-Err, wait, doesn't this depend on
-http://lists.infradead.org/pipermail/linux-mediatek/2020-January/026170.html
-?
+I don't think we should solve this in a Qualcomm-specific manner. Please can
+you take a look at the proposal from Thierry [1] and see whether or not it
+works for you?
 
-> > 2. Add watchdog device node
+Thanks,
 
-Can we have a patch with just this change instead, since you're
-sending the binding with it.
+Will
 
-> >
-> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
->
-> Tested-by: Nicolas Boichat <drinkcat@chromium.org>
->
-> > ---
-> >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 8 ++++++++
-> >  1 file changed, 8 insertions(+)
-> > [snip]
+[1] https://lore.kernel.org/lkml/20191209150748.2471814-1-thierry.reding@gmail.com
 
 _______________________________________________
 linux-arm-kernel mailing list
