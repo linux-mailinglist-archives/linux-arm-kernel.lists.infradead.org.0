@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8A79134B08
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:57:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B8A4134B09
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 19:57:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Kql5LVKSXq4fdpEQycE88gi4In78BACbe7oRB4FiIjo=; b=Y2EmzNiRnh/PEUkFeUNRXtlqQd
-	9aShC6z9dHGQIk10GretDGpvAeLqWlaS5h/0fifv4HQW/sKz1QZXRM4e8UHc3l+djxxc2S6FZVzhx
-	ILIDpZ5pI0d1capaAHEy0ynveO6v3JXZPFnu/WDn8KeN0VG6YqF9imct/HTwXk/OlB/5W1Q7movwI
-	uYSTnVxlR+kJ3se0SVriYYxAhVseeXnSrQsF9E9TdAa8rqxSEJ/PVSZ471tOlRI4/HTGtunoRMQfI
-	SgbO0HDbBI69iHC1MNEfwFMpw3Hsa7+vJAXq6i4vRySc5jkmro5c5+/AkwBmgpy2rMxAtyDdeWMyf
-	vBRN9VRA==;
+	bh=QHQ+ZgrPJ5u6FaJ00jUh15UoI68FrC23SqJ84WRn2kQ=; b=L8daHkb7MBXhvzJBOV6zAREbXz
+	E6ECAoto0STIiUusOauhjtoNwQxxT57VaBD9tuDSzLRMpb+zx9o8n95qWYMYiuCkS5cc4AYJzhX4l
+	1PJDYIQ/2T+gh/EIo5AgfuPCoFMmMToo1gxPwSWNWD7nTAX0QClzEHLblxuPtSXd+H+y2W+QjAsDc
+	5BEhgDY4bIEW5eSVf4xCoCUigY1yjowdSM49KsB/0NlVLKNMU5MftdjMrgda4XgjYw8Cv2EixO2En
+	HGwJDQzBP2a6Fx4ToeFm5GUqer/fcmRci5Kmlpsazs1y3nwk225oG+aZmbu6XWfF6V7qHPDh8j+oj
+	CjLac1PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipGWH-0007cS-09; Wed, 08 Jan 2020 18:57:29 +0000
+	id 1ipGWV-0007s2-H4; Wed, 08 Jan 2020 18:57:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipGVh-0007IY-4V
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:56:54 +0000
+ id 1ipGVj-0007Jw-FI
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 18:56:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DA98328;
- Wed,  8 Jan 2020 10:56:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B84D01FB;
+ Wed,  8 Jan 2020 10:56:54 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EE0303F534;
- Wed,  8 Jan 2020 10:56:50 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 347753F534;
+ Wed,  8 Jan 2020 10:56:53 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com
-Subject: [PATCH 01/17] arm64: entry: mark all entry code as notrace
-Date: Wed,  8 Jan 2020 18:56:18 +0000
-Message-Id: <20200108185634.1163-2-mark.rutland@arm.com>
+Subject: [PATCH 02/17] arm64: entry: cleanup el0 svc handler naming
+Date: Wed,  8 Jan 2020 18:56:19 +0000
+Message-Id: <20200108185634.1163-3-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200108185634.1163-1-mark.rutland@arm.com>
 References: <20200108185634.1163-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_105653_216753_D54D42B8 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20200108_105655_574682_245D6BD3 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,51 +73,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Almost all functions in entry-common.c are marked notrace, with
-el1_undef and el1_inv being the only exceptions. We appear to have done
-this on the assumption that there were no exception registers that we
-needed to snapshot, and thus it was safe to run trace code that might
-result in further exceptions and clobber those registers.
+For most of the exception entry code, <foo>_handler() is the first C
+function called from the entry assembly in entry-common.c, and external
+functions handling the bulk of the logic are called do_<foo>().
 
-However, until we inherit the DAIF flags, our irq flag tracing is stale,
-and this discrepancy could set off warnings in some configurations.
-Given we don't expect to trigger el1_undef or el1_inv unless something
-is already wrong, any irqflag warnigns are liable to mask the
-information we'd actually care about.
+For consistency, apply this scheme to el0_svc_handler and
+el0_svc_compat_hander, renaming them to do_el0_svc and do_el0_svc_compat
+respectively.
 
-Let's keep things simple and mark el1_undef and el1_inv as notrace.
-Developers can trace do_undefinstr and bad_mode if they really want to
-monitor these cases.
+There should be no functional change as a result of this patch.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: James Morse <james.morse@arm.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/entry-common.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/exception.h | 4 ++--
+ arch/arm64/kernel/entry-common.c   | 4 ++--
+ arch/arm64/kernel/syscall.c        | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
 
+diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+index 4d5f3b5f50cd..b87c6e276ab1 100644
+--- a/arch/arm64/include/asm/exception.h
++++ b/arch/arm64/include/asm/exception.h
+@@ -45,8 +45,8 @@ void do_sysinstr(unsigned int esr, struct pt_regs *regs);
+ void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
+ void bad_el0_sync(struct pt_regs *regs, int reason, unsigned int esr);
+ void do_cp15instr(unsigned int esr, struct pt_regs *regs);
+-void el0_svc_handler(struct pt_regs *regs);
+-void el0_svc_compat_handler(struct pt_regs *regs);
++void do_el0_svc(struct pt_regs *regs);
++void do_el0_svc_compat(struct pt_regs *regs);
+ void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
+ 			    struct pt_regs *regs);
+ 
 diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index 5dce5e56995a..67198142a0fc 100644
+index 67198142a0fc..fde59981445c 100644
 --- a/arch/arm64/kernel/entry-common.c
 +++ b/arch/arm64/kernel/entry-common.c
-@@ -36,14 +36,14 @@ static void notrace el1_pc(struct pt_regs *regs, unsigned long esr)
- }
- NOKPROBE_SYMBOL(el1_pc);
+@@ -215,7 +215,7 @@ static void notrace el0_svc(struct pt_regs *regs)
+ 	if (system_uses_irq_prio_masking())
+ 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
  
--static void el1_undef(struct pt_regs *regs)
-+static void notrace el1_undef(struct pt_regs *regs)
- {
- 	local_daif_inherit(regs);
- 	do_undefinstr(regs);
+-	el0_svc_handler(regs);
++	do_el0_svc(regs);
  }
- NOKPROBE_SYMBOL(el1_undef);
+ NOKPROBE_SYMBOL(el0_svc);
  
--static void el1_inv(struct pt_regs *regs, unsigned long esr)
-+static void notrace el1_inv(struct pt_regs *regs, unsigned long esr)
+@@ -281,7 +281,7 @@ static void notrace el0_svc_compat(struct pt_regs *regs)
+ 	if (system_uses_irq_prio_masking())
+ 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+ 
+-	el0_svc_compat_handler(regs);
++	do_el0_svc_compat(regs);
+ }
+ NOKPROBE_SYMBOL(el0_svc_compat);
+ 
+diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+index 9a9d98a443fc..a12c0c88d345 100644
+--- a/arch/arm64/kernel/syscall.c
++++ b/arch/arm64/kernel/syscall.c
+@@ -154,14 +154,14 @@ static inline void sve_user_discard(void)
+ 	sve_user_disable();
+ }
+ 
+-void el0_svc_handler(struct pt_regs *regs)
++void do_el0_svc(struct pt_regs *regs)
  {
- 	local_daif_inherit(regs);
- 	bad_mode(regs, 0, esr);
+ 	sve_user_discard();
+ 	el0_svc_common(regs, regs->regs[8], __NR_syscalls, sys_call_table);
+ }
+ 
+ #ifdef CONFIG_COMPAT
+-void el0_svc_compat_handler(struct pt_regs *regs)
++void do_el0_svc_compat(struct pt_regs *regs)
+ {
+ 	el0_svc_common(regs, regs->regs[7], __NR_compat_syscalls,
+ 		       compat_sys_call_table);
 -- 
 2.11.0
 
