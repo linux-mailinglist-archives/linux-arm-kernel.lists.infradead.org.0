@@ -2,69 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8864013492A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:21:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 486FA134929
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 18:21:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JN9GmXEIX/j7BjSRb7u3hEvD2ocEGj3/7/oJhZ6pbDI=; b=QHCchWajjNgPA9
-	ch3wH06tm24YrePfNzf1vFu4PDTIEQXEt6aK/qNbihy5IKH2ZV66+15deGZUmrwIwVhc04Uq0DWOi
-	b10ncEddiNcvhjJam3nVOLQTfMjqwl6WR9XybmlpJBppqxxD3JkKOpXjkY2E7Mmpl0sLaMZPGktUa
-	8nUWS1hjaXfex2OYtY9E5mLy1jEuSLxMpt4i7k4yfrJi5th5LIi+7znkTIocWZAHSHzHZcbCGLEyK
-	fzCL5DUXyBbIJPd3fgnbXmtWsAFU/CrWZOAAIlcuG+2Pw0sKNrilnFlhKS9bAve67aMgvRnFJy19F
-	Ndf4rt41nfBV6atHaNPQ==;
+	List-Owner; bh=pyL9wsICU5DmUL/dc3Lpuu+yXf4r1GdEIWUrATUUiJ4=; b=s8iJuKvsvxFTNB
+	drrbD9QIG0Su94nWYmVJFbmosbc8AE2sr/9ZRgMw53iVhiAj4bllxNZiFTJCcvPmNgjWtZn6NAIC0
+	KjUA1X/VpGDSzrc2lYhBzGLD1V1Z4yeOLT0nbxfYR0HwxTMr1Pa3NqrLqVYLWPwROn/dzgIhEf8db
+	WpFKX5Ke6gzePP1MGa3q2ys7dbEpcQ639fT74NYY0hmPfnCqtpZbqqT3+DFET2v8LM/AbzLn4K7WO
+	qUm53HopDIzcdj96a997VzO01EV5DKN7wg4NEhsY0u3bfneC5gyQs8VzslSfSKbElD4VkpGhxY8Wb
+	mMrX5eKs0aWoqUuyqrpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipF18-0001U1-Rw; Wed, 08 Jan 2020 17:21:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipF0l-0001Kl-GY
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:20:53 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 74E9E20673;
- Wed,  8 Jan 2020 17:20:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578504050;
- bh=VUJyfEn1oIGV5ncv+GS+aMRdkD4TGPu1zkqDR1v4rbk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=yZWfWD9quOsNiyIAjRRvw2SSTTkRmzZF3bh01BcTUU3xGwcz+PC5il9yI6tLjIlhr
- YH02L5v9mVg6uQ/j3y1kqVnrrtn/nR9RIUlzlbXOhMrtFh9HS6cJ2gvTpX98mYxkXC
- o5mskfOOwxKIZ1/Luu+Fhjd8407Jm8L7sG8fJFbA=
+	id 1ipF0t-0001Ii-5r; Wed, 08 Jan 2020 17:20:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipF0f-0001GT-AF
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 17:20:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7C3E61FB;
+ Wed,  8 Jan 2020 09:20:44 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C4883F534;
+ Wed,  8 Jan 2020 09:20:43 -0800 (PST)
 Date: Wed, 8 Jan 2020 17:20:41 +0000
-From: Will Deacon <will@kernel.org>
-To: Shaokun Zhang <zhangshaokun@hisilicon.com>, robin.murphy@arm.com
-Subject: Re: [PATCH v4] arm64: lib: accelerate do_csum
-Message-ID: <20200108172040.GA20541@willie-the-truck>
-References: <1573006806-12037-1-git-send-email-zhangshaokun@hisilicon.com>
+From: Mark Rutland <mark.rutland@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v8 2/3] arm64: random: Add data to pool from setup_arch()
+Message-ID: <20200108172041.GI49203@lakrids.cambridge.arm.com>
+References: <20200107183540.54794-1-broonie@kernel.org>
+ <20200107183540.54794-3-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1573006806-12037-1-git-send-email-zhangshaokun@hisilicon.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200107183540.54794-3-broonie@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_092051_612901_5D8B72A6 
-X-CRM114-Status: GOOD (  13.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200108_092045_524497_2E802AEA 
+X-CRM114-Status: GOOD (  25.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,59 +64,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lingyan Huang <huanglingyan2@huawei.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>
+Cc: suzuki.poulose@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
+ ard.biesheuvel@linaro.org, Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 10:20:06AM +0800, Shaokun Zhang wrote:
-> From: Lingyan Huang <huanglingyan2@huawei.com>
-> 
-> Function do_csum() in lib/checksum.c is used to compute checksum,
-> which is turned out to be slowly and costs a lot of resources.
-> Let's accelerate the checksum computation for arm64.
-> 
-> While we test its performance on Huawei Kunpeng 920 SoC, as follow:
->  1cycle  general(ns)  csum_128(ns) csum_64(ns)
->   64B:        160            80             50
->  256B:        120            70             60
-> 1023B:        350           140            150
-> 1024B:        350           130            140
-> 1500B:        470           170            180
-> 2048B:        630           210            240
-> 4095B:       1220           390            430
-> 4096B:       1230           390            430
-> 
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Robin Murphy <robin.murphy@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Originally-from: Robin Murphy <robin.murphy@arm.com>
-> Signed-off-by: Lingyan Huang <huanglingyan2@huawei.com>
-> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+On Tue, Jan 07, 2020 at 06:35:39PM +0000, Mark Brown wrote:
+> Since the arm64 ARCH_RANDOM implementation is not available until
+> cpufeature has determined the system capabilities it can't be used by
+> the generic random code to initialize the entropy pool for early use.
+> Instead explicitly add some data to the pool from setup_arch() if the
+> boot CPU supports v8.5-RNG, this is the point recommended by the generic
+> code.
+
+This structure looks good to me.
+
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 > ---
-> Hi,                                                                
-> Apologies that we post this version so later, because we want to   
-> optimise it better, Lingyan tested it performance which is attached
-> in commit log. Both(128 and 64) are much better than the initial   
-> code.                                                              
-> ChangeLog:
->     based on Robin's code and change strides from 64 to 128.
+>  arch/arm64/include/asm/archrandom.h | 24 ++++++++++++++++++++++++
+>  arch/arm64/kernel/setup.c           |  2 ++
+>  2 files changed, 26 insertions(+)
 > 
->  arch/arm64/include/asm/checksum.h |  3 ++
->  arch/arm64/lib/Makefile           |  2 +-
->  arch/arm64/lib/csum.c             | 81 +++++++++++++++++++++++++++++++++++++++
->  3 files changed, 85 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm64/lib/csum.c
+> diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
+> index 364177954bef..1d9b94fa9c45 100644
+> --- a/arch/arm64/include/asm/archrandom.h
+> +++ b/arch/arm64/include/asm/archrandom.h
+> @@ -59,9 +59,33 @@ static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
+>  	return ok;
+>  }
+>  
+> +/*
+> + * Our ARCH_RANDOM implementation does not function until relatively
+> + * late in the boot when cpufeature has detertmined system
+> + * capabilities so the core code can't use arch_get_random*() to
+> + * initialize, instead we call this function to inject data from
+> + * setup_arch() if the boot CPU supports v8.5-RNG.
+> + */
+> +static inline void arm64_add_early_rndr_entropy(void)
 
-Robin -- any chance you could look at this please? If it's based on your
-code then hopefully it's straightforward to review ;)
+Can we mark this as __init so that people aren't tempted to use it at
+runtime? I realsie it's inline, but it's at least something sparse can
+check.
 
-Will
+> +{
+> +	unsigned long val;
+> +	int i;
+> +
+> +	/* Open code as we run prior to the first call to cpufeature. */
+> +	val = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
+> +	if (!((val >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf))
+> +		return;
+> +
+> +	/* Add multiple values to mirror the generic code. */
+> +	for (i = 0; i < 16; i++)
+> +		if (__arm64_rndr(&val))
+> +			add_device_randomness(&val, sizeof(val));
+> +}
+
+Given the next patch also needs to check the I reckon it is worth
+factoring the ID register check into a helper:
+
+/* Used on the boot CPU before the CPU feature framework is up */
+static inline bool __init __early_cpu_has_rndr(void)
+{
+	unsigned long ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
+	return (ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf;
+}
+
+> +
+>  #else
+>  
+>  static inline bool __arm64_rndr(unsigned long *v) { return false; }
+> +static inline void arm64_add_early_rndr_entropy(void) { }
+
+... with a stub here:
+
+static inline bool __init __early_cpu_has_rndr(void) { return false; }
+
+... so the KASLR code can just check __early_cpu_has_rndr().
+
+Thanks,
+Mark.
+
+>  
+>  #endif /* CONFIG_ARCH_RANDOM */
+>  #endif /* _ASM_ARCHRANDOM_H */
+> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> index 56f664561754..170842965a32 100644
+> --- a/arch/arm64/kernel/setup.c
+> +++ b/arch/arm64/kernel/setup.c
+> @@ -344,6 +344,8 @@ void __init setup_arch(char **cmdline_p)
+>  	/* Init percpu seeds for random tags after cpus are set up. */
+>  	kasan_init_tags();
+>  
+> +	arm64_add_early_rndr_entropy();
+> +
+>  #ifdef CONFIG_ARM64_SW_TTBR0_PAN
+>  	/*
+>  	 * Make sure init_thread_info.ttbr0 always generates translation
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
