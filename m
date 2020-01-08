@@ -2,68 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E989B13470F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 17:04:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49DAD13472E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 17:07:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PaURUsmfdoeX8lkeWFHzAlfEiiuR4dAYs9REy0vYFNM=; b=Q9awWZlf3EU+1zrtKjGw2cUyi
-	g9FnWpXhzhWGGpZ75DPEYuAIeOKckkjjaL44Nb5kJ+4EWvHfbNwRz9LkOF5iEZTX4GwmnuV6+PpG4
-	2HrHzV7VkXEjBY9HbB37UNuYwdhdMhTfUJJlaUV4BeoeO3oqlQa0KvoH9WAHx3K7Au92NFwPI50oz
-	UcS40EInqKMmrxTWWscioMcD0S+0yxKKLXrTtc8txkP7egSpIKtaaX08pubWJ5027YGD6eKG66jma
-	EOdhvjPa+BfDjvWwUrAo0YbokaY2FZQ49JXah9OdIPQIFH1rMhPAVS2Wbsi7luLrXSn1ITrykrM6+
-	MhHjgG+mw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zumPBWUOqjtczP0cfxL8I5MlNDUiYrBSonb35ZJCLbE=; b=kblqyQBeIMdLey
+	tdlSLMtr3Bwphb6DBvA9RvZmH0txSf9973wuY0nCoM8P6teXbiF8BvArQtc4HM8zrGCuZOnxj1df8
+	HOqMwOOHKWjopZcZdSZPSMbXLRI/g3uG3e3WGtUv4F+NFULRyc+7T13F2Yu/w5xYDtaga6YjWxPe8
+	LkHcDHzxB/xmkWfmNj6JfR6gb3JiyGRNTVXvCVJHNpG2D1YwVUMxTIydDD/jdlkCHMP+Y1j6OCX95
+	gaX4C/OmpS4icWAfgnSH4pdMiVsUWTVOSgVCQtRIc6y62yIKD0asrlblvDUSw7gE1kdKfjbvMQ3m3
+	joCcC5rQSg6bzTcuTDgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipDob-0000lG-Cb; Wed, 08 Jan 2020 16:04:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipDoU-0000kc-7W
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 16:04:07 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
+	id 1ipDrp-0002bO-7g; Wed, 08 Jan 2020 16:07:33 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipDrb-0002aV-JF; Wed, 08 Jan 2020 16:07:19 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 976CA2070E;
- Wed,  8 Jan 2020 16:04:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578499445;
- bh=GlCfqyySpJw/Yg2GpZ82R6+4QUJLHH/cQeS3qO5FAhA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UJukIpmyM1pbBq48i7yegRvqVqK0MXi2sHAVWEk4t3RGKDVNK48wzTTGp/zRuxG5e
- 0TkFFzjhb1iL8ynNLJh9Ww6MEh1hQKEMDOk/cJD+DeuTq0K33iyxfyRLzUN4E42aPM
- 99gc1SyddQvIcmj8ic5XRmNURy+WNHrKbZxWjgyA=
-Date: Wed, 8 Jan 2020 17:04:02 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v2 0/4] arm64: allwinner: a64: Enable DVFS on A64
-Message-ID: <20200108160402.u44odtfsuhiuytfl@gilmour.lan>
-References: <20200108042018.571251-1-anarsoul@gmail.com>
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 0BFB530018B;
+ Wed,  8 Jan 2020 17:05:40 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 08A5520B79C82; Wed,  8 Jan 2020 17:07:14 +0100 (CET)
+Date: Wed, 8 Jan 2020 17:07:13 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alexey Budankov <alexey.budankov@linux.intel.com>
+Subject: Re: [PATCH v4 2/9] perf/core: open access for CAP_SYS_PERFMON
+ privileged process
+Message-ID: <20200108160713.GI2844@hirez.programming.kicks-ass.net>
+References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
+ <c93309dc-b920-f5fa-f997-e8b2faf47b88@linux.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20200108042018.571251-1-anarsoul@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_080406_291091_D371065B 
-X-CRM114-Status: GOOD (  10.30  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <c93309dc-b920-f5fa-f997-e8b2faf47b88@linux.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,68 +54,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2164117180680578353=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Stephane Eranian <eranian@google.com>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
+ Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
+ James Morris <jmorris@namei.org>, Ingo Molnar <mingo@redhat.com>,
+ oprofile-list@lists.sf.net, Serge Hallyn <serge@hallyn.com>,
+ Robert Richter <rric@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ Casey Schaufler <casey@schaufler-ca.com>,
+ "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Dec 18, 2019 at 12:25:35PM +0300, Alexey Budankov wrote:
+> 
+> Open access to perf_events monitoring for CAP_SYS_PERFMON privileged
+> processes. For backward compatibility reasons access to perf_events
+> subsystem remains open for CAP_SYS_ADMIN privileged processes but
+> CAP_SYS_ADMIN usage for secure perf_events monitoring is discouraged
+> with respect to CAP_SYS_PERFMON capability.
+> 
+> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
+> ---
+>  include/linux/perf_event.h | 6 +++---
+>  kernel/events/core.c       | 6 +++---
+>  2 files changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/include/linux/perf_event.h b/include/linux/perf_event.h
+> index 34c7c6910026..f46acd69425f 100644
+> --- a/include/linux/perf_event.h
+> +++ b/include/linux/perf_event.h
+> @@ -1285,7 +1285,7 @@ static inline int perf_is_paranoid(void)
+>  
+>  static inline int perf_allow_kernel(struct perf_event_attr *attr)
+>  {
+> -	if (sysctl_perf_event_paranoid > 1 && !capable(CAP_SYS_ADMIN))
+> +	if (sysctl_perf_event_paranoid > 1 && !perfmon_capable())
+>  		return -EACCES;
+>  
+>  	return security_perf_event_open(attr, PERF_SECURITY_KERNEL);
+> @@ -1293,7 +1293,7 @@ static inline int perf_allow_kernel(struct perf_event_attr *attr)
+>  
+>  static inline int perf_allow_cpu(struct perf_event_attr *attr)
+>  {
+> -	if (sysctl_perf_event_paranoid > 0 && !capable(CAP_SYS_ADMIN))
+> +	if (sysctl_perf_event_paranoid > 0 && !perfmon_capable())
+>  		return -EACCES;
+>  
+>  	return security_perf_event_open(attr, PERF_SECURITY_CPU);
+> @@ -1301,7 +1301,7 @@ static inline int perf_allow_cpu(struct perf_event_attr *attr)
+>  
+>  static inline int perf_allow_tracepoint(struct perf_event_attr *attr)
+>  {
+> -	if (sysctl_perf_event_paranoid > -1 && !capable(CAP_SYS_ADMIN))
+> +	if (sysctl_perf_event_paranoid > -1 && !perfmon_capable())
+>  		return -EPERM;
+>  
+>  	return security_perf_event_open(attr, PERF_SECURITY_TRACEPOINT);
 
---===============2164117180680578353==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="56arlx7x5vlcfzas"
-Content-Disposition: inline
+These are OK I suppose.
 
+> diff --git a/kernel/events/core.c b/kernel/events/core.c
+> index 059ee7116008..d9db414f2197 100644
+> --- a/kernel/events/core.c
+> +++ b/kernel/events/core.c
+> @@ -9056,7 +9056,7 @@ static int perf_kprobe_event_init(struct perf_event *event)
+>  	if (event->attr.type != perf_kprobe.type)
+>  		return -ENOENT;
+>  
+> -	if (!capable(CAP_SYS_ADMIN))
+> +	if (!perfmon_capable())
+>  		return -EACCES;
+>  
+>  	/*
 
---56arlx7x5vlcfzas
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+This one only allows attaching to already extant kprobes, right? It does
+not allow creation of kprobes.
 
-Hi,
+> @@ -9116,7 +9116,7 @@ static int perf_uprobe_event_init(struct perf_event *event)
+>  	if (event->attr.type != perf_uprobe.type)
+>  		return -ENOENT;
+>  
+> -	if (!capable(CAP_SYS_ADMIN))
+> +	if (!perfmon_capable())
+>  		return -EACCES;
+>  
+>  	/*
 
-On Tue, Jan 07, 2020 at 08:20:14PM -0800, Vasily Khoruzhick wrote:
-> This series introduces new DTSI with operating points for A64,
-> adds cooling maps and thermal tripping points and enables DVFS
-> on all the supported A64-based boards
+Idem, I presume.
 
-Thanks for that new series.
+> @@ -11157,7 +11157,7 @@ SYSCALL_DEFINE5(perf_event_open,
+>  	}
+>  
+>  	if (attr.namespaces) {
+> -		if (!capable(CAP_SYS_ADMIN))
+> +		if (!perfmon_capable())
+>  			return -EACCES;
+>  	}
 
-I'm not sure I've seen the answer, but how did you test that the OPPs
-were stable?
+And given we basically make the entire kernel observable with this CAP,
+busting namespaces shoulnd't be a problem either.
 
-So far, the only method that proved to be reliable was to run
-https://github.com/ssvb/cpuburn-arm/blob/master/cpufreq-ljt-stress-test
-
-Could you paste the result (one board should be enough) ?
-
-Thanks
-Maxime
-
---56arlx7x5vlcfzas
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhX9cgAKCRDj7w1vZxhR
-xYdAAQCD2eBEbQsMOmLn6QvePtBn+9ActC0b0QyoO9SE7cRp4AD9HV9OjxZAvMzi
-hmLfolvy8IcSXadEK9djjiNh65goiAA=
-=dYiD
------END PGP SIGNATURE-----
-
---56arlx7x5vlcfzas--
-
-
---===============2164117180680578353==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+So yeah, I suppose that works.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2164117180680578353==--
-
