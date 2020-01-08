@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2301F13394B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 03:55:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B43D133950
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Jan 2020 03:56:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RcP4LdJeZrVVKp9eN7uyMH2b9vWniHW79vkXBDHpllQ=; b=jRDGOhQ2OtE+St
-	vAumaTc9Vcu8KVRiQDMM0RvApqtrwirFs+Sijzzn9iFpIv+fqHACKYk+pidZnhC/giRoedCC28G0Q
-	hWcwuo/61ALZESc5xDDmfw1JiK4oxCz7CXTo9yGRhA80NnCOCC94a8Z1b27k3g7oZiuawK0SqJ/db
-	6iFZiNXx5ZX09QzeqHnbwK6j/bqP/X70AeIIzwxna1IvJf4Z521RL/DDOSGVPNFZX0gHJVL4PWNT0
-	VaNT0SRnP7Tbar80QV/H90XDVkTIwUksOh1bZHzZ2KfThs2n6Ab6T2ijyNlqLtPsUg5qjr4jvpOZ+
-	ysYaRsXe2yHWnjsupicg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=O+JiQycWE+qdV2S0y49PTovGAF4Mc4M+P12dB+kJH7o=; b=H0z
+	yh07SvX8o7Refxp5EO8nz9ZcH85qhhxFiUeEVMFfRZT7g7AK9ZWTgzx6cMEprfC/ymxc9cq7BnhVh
+	6YuW6F4Ax1P683YKGybchiCAcntJXXirHD394+ZMeP/AWPsW3XTvvb4b8zB6fy7Gb3+H0zKL1cVZ8
+	0VFMEUZgbKRCTpl+RYPhWgO0lPOxLnTivTRW5PHH/PvK5Ow4Xhvzjm4HfNj74mwI5O5kSsR/7fUOM
+	Y4qgMfslprOg14All8xUTfBTea9ZuruJV/PjCZU55CC7tTKJICu5glfpQ1cQRZ6L5lueNyC+dCRZ8
+	OFIiVtzSKDX50FrIkPWgMlXXgnVKmqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ip1VG-0003h5-T6; Wed, 08 Jan 2020 02:55:26 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1ip1WP-00041b-9M; Wed, 08 Jan 2020 02:56:37 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ip1VB-0003gb-GR
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 02:55:22 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id y8so814372qvk.6
+ id 1ip1WI-00041E-Kb
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Jan 2020 02:56:31 +0000
+Received: by mail-pf1-x441.google.com with SMTP id z16so864339pfk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Jan 2020 18:55:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=D9/u+j2j6zRtqERoabJ1WOdMTYaBzefBw5186J3rAKY=;
- b=GwTExAKssKvTTPZz/9+b+HQfwc03smWzvB50u8vCmP42imVJ0mDE4NV3FA1cv68pVi
- ugIkjOqcDLv5Dyv3H82MIlugGoEn+af8Ok7oW6PyFrYYZqf9ckXp9SOoqpSOw915FPDV
- lu6K1b/OHjTjlcmoHGgJFeqdBUOXXH2kmd9Ng=
+ Tue, 07 Jan 2020 18:56:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=QyroB5LXjxb8iNcU2ElAPCjALtlsDRJIi4SawaB0E7c=;
+ b=E3n6Gk5MirvuWn2qz2nIHVm+5Hxjz4Nq4wAdMyekVm9lA2tuXwuqxrIjy+bHKC6aRy
+ 29YP9weDLGP7P9gpfg+rJTz8bKsZdziuhhe78aqk5P0FQYw1x1Cxt19eIwU3FiJ6Y/k7
+ NwXUcOVepPCx6qcmZeR+tgGPaRqDgKb8TnZr5eOO6Qw/aIROygskXs0fAuif0zs0puaX
+ h/4PakQlPNNXEue27pSySzbAqBiXhfLYjmtKEBgQj+uimEl4Q+aHoJ78jWSQW04VJ+Z7
+ glvcWowQ6cbxVX7rUq4/7W7IeFANAJQqoleuAoftLI05xvciZ6epm3pCB+V5Xm/OFS0B
+ 6TWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=D9/u+j2j6zRtqERoabJ1WOdMTYaBzefBw5186J3rAKY=;
- b=PrZ/2zDYnCOkvTqyWSumKis9+3iW9J0oxPOFaCAiFXrAkvTtTVqqCXCcQiujtVNrYn
- ZOf/EIfFrAhcmFTd9jT/1bQF50ey8tvagr/6VW746EKfEs687U/pnDDBVpAyrBUnoGCC
- voTZrDleLv7dyEJoVUpv1CWMWWmYINMg2aGCO4Ox9R9B7E8yVR9DKmHYXUe7tgb4WgZc
- XuTAL+dU+wonK7+YiOB7lIdsXoXEszyAMC8gSWbO5vOgKlbC7z0bR57jS3uenlO8xE1y
- QSJzCUlonYCeE0rHsOjNjvmADMGmTxN3QTA9wSoh21Zve4+zSe+E3AAmMSkqDwVFBdN1
- DdUw==
-X-Gm-Message-State: APjAAAVp+5ehdMCeoNS2ayHvrEipvDVRnyO5jSa7ioXECXOD+Mb1bqF6
- n/7nnA10VlA34HVWg/YsfbRAj/gv9Rv5SQ6L9RY=
-X-Google-Smtp-Source: APXvYqy+yirOcMBT0dMGIZEA7YUC7mfEaQwZSAwSz/C6qZDcJWn2FzcYDFus2eFw4tYbNGF2fkE5wTHjrbyYr+qjJJg=
-X-Received: by 2002:a0c:ed32:: with SMTP id u18mr2306048qvq.2.1578452116247;
- Tue, 07 Jan 2020 18:55:16 -0800 (PST)
-MIME-Version: 1.0
-From: Joel Stanley <joel@jms.id.au>
-Date: Wed, 8 Jan 2020 02:55:04 +0000
-Message-ID: <CACPK8XcjazgORXNZBU1ECMukXG4HA8D9VeDxiSPifDk_iB7_dw@mail.gmail.com>
-Subject: [GIT PULL] aspeed: device tree fixes for 5.5
-To: arm <arm@kernel.org>, soc@kernel.org
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=QyroB5LXjxb8iNcU2ElAPCjALtlsDRJIi4SawaB0E7c=;
+ b=Wg+ln+GLy4gjDwAi3bh4x68qbe/YAl3XyaZ+TEwO7AjBqtsMaed6hGmaea1rQyeR1c
+ Ew1lDQ2n/Hn3r8S8GRTInHk34+A0BpNqgjtt4h5QHb2GspdUqiwKZbZ6IeOh7xBcOMUc
+ lE1wgsv+FJMeKqwTKJFdDQXEYxdqkeN6o6nF9wVa0DD1Jj/jxorhR8M8iXbK9IBtMR0e
+ C0pMDHXtnYfB8/0aPR3QcSOZG9p2uxSSvBQdYUAkovSlrBBfXRYxMsj84LzZ2IgTD0J6
+ s2l39SQAJPX7j2L0MBtli/hwF8eKSX7TFkdS1Uli/2ARcheAwAqGlighiXIEEHYa1vXw
+ X7zg==
+X-Gm-Message-State: APjAAAUfP5akjpCFzTqZ9cvcjFYQSid0zfcP7cAxBHCkAtQIdsWIFt4u
+ vmEq7uh9frCAXixSgJfSF0Y=
+X-Google-Smtp-Source: APXvYqx2B0gxIFJca1dgjrpJf7auzNgufbWz8vdqEcAFaSebP15mW1okQWAH7ySFcWH1sK9e1o+WwA==
+X-Received: by 2002:a65:538b:: with SMTP id x11mr2823226pgq.395.1578452189886; 
+ Tue, 07 Jan 2020 18:56:29 -0800 (PST)
+Received: from localhost (199.168.140.36.16clouds.com. [199.168.140.36])
+ by smtp.gmail.com with ESMTPSA id 144sm1021480pfc.124.2020.01.07.18.56.28
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 Jan 2020 18:56:29 -0800 (PST)
+From: Dejin Zheng <zhengdejin5@gmail.com>
+To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
+ davem@davemloft.net, mcoquelin.stm32@gmail.com
+Subject: [PATCH] net: stmmac: pci: remove the duplicate code of phy_mask
+Date: Wed,  8 Jan 2020 10:56:24 +0800
+Message-Id: <20200108025624.13968-1-zhengdejin5@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_185521_792350_39B666EC 
-X-CRM114-Status: UNSURE (   6.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200107_185630_699545_3C11CFC9 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zhengdejin5[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (zhengdejin5[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,51 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: netdev@vger.kernel.org, Dejin Zheng <zhengdejin5@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm maintainers,
+The value of phy_mask will be passed to phy_mask of struct mii_bus
+before register mdiobus, the mii_bus was obtained by mdiobus_alloc()
+and set mii_bus->phy_mask as zero by default. so It doesn't need to
+set phy_mask as zero again in this driver.
 
-Here are some fixes for some device tree mistakes that went in during
-the 5.5 merge window.
+Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-The following changes since commit ffcdc5df08bfc4f418693b22cf2a1182de3375b4:
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+index 8237dbc3e991..40f171d310d7 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+@@ -65,7 +65,6 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
+ 	plat->force_sf_dma_mode = 1;
+ 
+ 	plat->mdio_bus_data->needs_reset = true;
+-	plat->mdio_bus_data->phy_mask = 0;
+ 
+ 	/* Set default value for multicast hash bins */
+ 	plat->multicast_filter_bins = HASH_TABLE_SIZE;
+@@ -154,8 +153,6 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
+ 	plat->tx_queues_cfg[6].weight = 0x0F;
+ 	plat->tx_queues_cfg[7].weight = 0x10;
+ 
+-	plat->mdio_bus_data->phy_mask = 0;
+-
+ 	plat->dma_cfg->pbl = 32;
+ 	plat->dma_cfg->pblx8 = true;
+ 	plat->dma_cfg->fixed_burst = 0;
+@@ -386,8 +383,6 @@ static int snps_gmac5_default_data(struct pci_dev *pdev,
+ 	plat->tso_en = 1;
+ 	plat->pmt = 1;
+ 
+-	plat->mdio_bus_data->phy_mask = 0;
+-
+ 	/* Set default value for multicast hash bins */
+ 	plat->multicast_filter_bins = HASH_TABLE_SIZE;
+ 
+-- 
+2.17.1
 
-  ARM: dts: aspeed: rainier: Fix fan fault and presence (2020-01-08
-12:51:03 +1030)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
-tags/aspeed-5.5-devicetree-fixes
-
-for you to fetch changes up to ffcdc5df08bfc4f418693b22cf2a1182de3375b4:
-
-  ARM: dts: aspeed: rainier: Fix fan fault and presence (2020-01-08
-12:51:03 +1030)
-
-----------------------------------------------------------------
-ASPEED device tree fixes for 5.5
-
-Fixes for some badly applied patches that went in to 5.5. There is also
-a fix for an incorrect i2c address.
-
-----------------------------------------------------------------
-
-Brandon Wyman (1):
-      ARM: dts: aspeed: rainier: Fix fan fault and presence
-
-Joel Stanley (5):
-      ARM: dts: aspeed-g6: Fix FSI master location
-      ARM: dts: aspeed: tacoma: Fix fsi master node
-      ARM: dts: aspeed: tacoma: Remove duplicate i2c busses
-      ARM: dts: aspeed: tacoma: Remove duplicate flash nodes
-      ARM: dts: aspeed: rainier: Remove duplicate i2c busses
 
 _______________________________________________
 linux-arm-kernel mailing list
