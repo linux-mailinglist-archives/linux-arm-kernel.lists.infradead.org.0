@@ -2,59 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9FAA135721
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 11:38:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A07F13572B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 11:39:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=e584ctexpTQPXJhHxAnhVBNuxpMCCmPUd82EOK3XysE=; b=e0Rzej7xb4MOP+XKNyyhTUNsx
-	B4XJ4Nnwk/ui6urhzCuq932NjjQ8RnDbE0AW8gyWoljJlA/SMtwrC1jsQFo4PtwnXagW9S2tk7/Ag
-	BJRk1hZB893LjCzp76UX7t7iVaiLng2ai++ch7bPij98xQuk3aZDFsaJG2fGNH3PcEUT06c2H+w70
-	iHtXWY5JIttW3KTT1zpVyS/YJiEaTOgRCxhpVyqh2Ubwj15lWguQdJrK7IckCyPld+S11miKKukPT
-	aNZi6eed9v0YGOKUXp+OFpeTFGGTIQPp7XneLr17zq3WXXFWdlqBe9G3vv2Uy++4IBQQTwPSZMRgc
-	ci+T3aEVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sNJmgsJhFV/xk1v+ueQjjCryT1Lz6GZx9C91+9DlGdk=; b=PpYf7POGFAAYnU
+	/cS0X0Quvh/y6xeW4jkLC/IVXIIsfXSgPRS5Yyy9WSQ5+VJwUn/Fxkv756r5BoOEspHmGw7rGcsSZ
+	yOtu2ja1cuAtF68pivkc+AEZL5D2CnZMysA39sgRKNs06QoJBY/6c3eJbtaoqgQoxVJjjDNGMN0vZ
+	9+aIARWih1JWSFX88fviQGFzY5GM/dvpYJl8B14yG+DwpaQvaiNO4D1vepQWiKVZmyY+ELqN15zf5
+	/S7PvhptaGyqP1Z+1BHwR9LVkMYlR87NER0d1hJHb0XbmbA1zVpfHG9SPCcVFp++UUQtjYBrxG3io
+	z5jAjsrh1FxXKqdZOncg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipVCV-0002Qo-7G; Thu, 09 Jan 2020 10:38:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipVCA-0002Ke-RP; Thu, 09 Jan 2020 10:37:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7852E31B;
- Thu,  9 Jan 2020 02:37:41 -0800 (PST)
-Received: from [10.37.12.111] (unknown [10.37.12.111])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD0053F6C4;
- Thu,  9 Jan 2020 02:37:37 -0800 (PST)
-Subject: Re: [PATCH v2 02/11] PM / devfreq: Remove
- devfreq_get_devfreq_by_phandle function
-To: Chanwoo Choi <cw00.choi@samsung.com>, robh+dt@kernel.org,
- krzk@kernel.org, heiko@sntech.de, leonard.crestez@nxp.com
-References: <20191220002430.11995-1-cw00.choi@samsung.com>
- <CGME20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0@epcas1p4.samsung.com>
- <20191220002430.11995-3-cw00.choi@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
-Date: Thu, 9 Jan 2020 10:37:35 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ipVDJ-00031b-F9; Thu, 09 Jan 2020 10:38:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipVDB-00031G-Bf
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 10:38:46 +0000
+Received: from T480 (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE7C72073A;
+ Thu,  9 Jan 2020 10:38:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578566325;
+ bh=JtNVHuga6xmyefkyDg+GtPhTmmnZ7VHox9qyNsUyOmA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MJW5jK4lhz6XLeJECKpleUW7vlgPEe8DE0vS6YIPsamEZHl6wcT/Eu+4nydnLS/l0
+ 8NPgQ6SbWwbYXHLwF2Ocwv1yUMyrAQ/eAuamt+2MahQA9rDUcRJaAL9eBR9xW3p9Nd
+ 4NSPbtmk+lBGXGzply7GdkXG7qYydVy5/DoqQlTs=
+Date: Thu, 9 Jan 2020 18:38:33 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 1/5] ARM: dts: imx6qdl-sabresd: Remove incorrect power
+ supply assignment
+Message-ID: <20200109103832.GO4456@T480>
+References: <1577670071-1322-1-git-send-email-Anson.Huang@nxp.com>
+ <20200109080600.GH4456@T480>
+ <DB3PR0402MB39168406714A06869C33D037F5390@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20200109090950.GJ4456@T480>
+ <DB3PR0402MB3916EBF00EECB42C1F4E2D40F5390@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20191220002430.11995-3-cw00.choi@samsung.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB3916EBF00EECB42C1F4E2D40F5390@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_023743_002631_2CB47D2B 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_023845_417890_B7628114 
+X-CRM114-Status: GOOD (  17.94  )
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,125 +82,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
- myungjoo.ham@samsung.com, kgene@kernel.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "andreas@kemnade.info" <andreas@kemnade.info>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chanwoo,
-
-On 12/20/19 12:24 AM, Chanwoo Choi wrote:
-> Previously, devfreq core support 'devfreq' property in order to get
-> the devfreq device by phandle. But, 'devfreq' property name is not proper
-> on devicetree binding because this name doesn't mean the any h/w attribute.
+On Thu, Jan 09, 2020 at 09:25:35AM +0000, Anson Huang wrote:
+> Hi, Shawn
 > 
-> The devfreq core hand over the right to decide the property name
-> for getting the devfreq device on devicetree. Each devfreq driver
-> will decide the property name on devicetree binding and then get
-> the devfreq device by using devfreq_get_devfreq_by_node().
+> > Subject: Re: [PATCH 1/5] ARM: dts: imx6qdl-sabresd: Remove incorrect
+> > power supply assignment
+> > 
+> > On Thu, Jan 09, 2020 at 08:25:03AM +0000, Anson Huang wrote:
+> > > Hi, Shawn
+> > >
+> > > > Subject: Re: [PATCH 1/5] ARM: dts: imx6qdl-sabresd: Remove incorrect
+> > > > power supply assignment
+> > > >
+> > > > On Mon, Dec 30, 2019 at 09:41:07AM +0800, Anson Huang wrote:
+> > > > > The vdd3p0's input should be from external USB VBUS directly, NOT
+> > > >
+> > > > Shouldn't USB VBUS usually be 5V?  It doesn't seem to match 3.0V
+> > > > which is suggested by vdd3p0 name.
+> > > >
+> > > > > PMIC's sw2, so remove the power supply assignment for vdd3p0.
+> > > > >
+> > > > > Fixes: 93385546ba36 ("ARM: dts: imx6qdl-sabresd: Assign
+> > > > > corresponding power supply for LDOs")
+> > > >
+> > > > Is it only a description correcting or is it fixing a real problem?
+> > > > I'm trying to understand it is a 5.5-rc material or can be applied for 5.6.
+> > > >
+> > >
+> > > It is fixing a real problem about USB LDO voltage, that is why we noticed
+> > this issue.
+> > 
+> > Okay, please describe the problem a little bit in the commit log.  Also squash
+> > the series into one patch, which is easier to be merged into -rc as a fix.
 > 
-> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
-> ---
->   drivers/devfreq/devfreq.c    | 35 -----------------------------------
->   drivers/devfreq/exynos-bus.c | 12 +++++++++++-
->   include/linux/devfreq.h      |  8 --------
->   3 files changed, 11 insertions(+), 44 deletions(-)
-> 
-> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index cb8ca81c8973..c3d3c7c802a0 100644
-> --- a/drivers/devfreq/devfreq.c
-> +++ b/drivers/devfreq/devfreq.c
-> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
->   
->   	return ERR_PTR(-ENODEV);
->   }
-> -
-> -/*
-> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
-> - * @dev - instance to the given device
-> - * @index - index into list of devfreq
-> - *
-> - * return the instance of devfreq device
-> - */
-> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
-> -{
-> -	struct device_node *node;
-> -	struct devfreq *devfreq;
-> -
-> -	if (!dev)
-> -		return ERR_PTR(-EINVAL);
-> -
-> -	if (!dev->of_node)
-> -		return ERR_PTR(-EINVAL);
-> -
-> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
-> -	if (!node)
-> -		return ERR_PTR(-ENODEV);
-> -
-> -	devfreq = devfreq_get_devfreq_by_node(node);
-> -	of_node_put(node);
-> -
-> -	return devfreq;
-> -}
-> -
->   #else
->   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
->   {
->   	return ERR_PTR(-ENODEV);
->   }
-> -
-> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
-> -{
-> -	return ERR_PTR(-ENODEV);
-> -}
->   #endif /* CONFIG_OF */
->   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
-> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
->   
->   /**
->    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
-> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-> index 7f5917d59072..1bc4e3c81115 100644
-> --- a/drivers/devfreq/exynos-bus.c
-> +++ b/drivers/devfreq/exynos-bus.c
-> @@ -86,6 +86,16 @@ static int exynos_bus_get_event(struct exynos_bus *bus,
->   	return ret;
->   }
->   
-> +static struct devfreq *exynos_bus_get_parent_devfreq(struct device_node *np)
-> +{
-> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
-> +
-> +	if (!node)
-> +		return ERR_PTR(-ENODEV);
-> +
-> +	return devfreq_get_devfreq_by_node(node);
-> +}
-> +
->   /*
->    * devfreq function for both simple-ondemand and passive governor
->    */
-> @@ -353,7 +363,7 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
->   	profile->exit = exynos_bus_passive_exit;
->   
->   	/* Get the instance of parent devfreq device */
-> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
-> +	parent_devfreq = exynos_bus_get_parent_devfreq(dev->of_node);
->   	if (IS_ERR(parent_devfreq))
->   		return -EPROBE_DEFER;
->   
+> OK, will send a new patch with squashing them together, but will NOT have the fix tag,
+> is it OK? As the fix tag are different for each patch.
 
-These changes won't apply, probably I need some base for it.
+Good point.  I just applied series (as separate patch) to make the
+stable kernel back port easier.  Patch #5 is fixing a commit that hasn't
+landed on mainline, so I drop the fix tag, as the commit ID is not
+stable.
 
-Regards,
-Lukasz
-
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
