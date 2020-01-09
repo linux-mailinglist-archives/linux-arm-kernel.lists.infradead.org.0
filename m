@@ -2,55 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA32F135FAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 18:50:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC83E136007
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 19:16:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nusCV9S3W3YTXl6xfv++C27fIBnCFsbWJ5pZbDL0M1Y=; b=VYVjsqaE7tuwDT
-	qABvyYOyqHfN4FJD+q+N2WZzzGEn6ININz7Oq2+4tmaiykjQCOkcEO4gx2z7FxU97Qf5inAxcSnzg
-	ZDdL1TOVDrjKiMVGeGzs2L77HMz78bXcUMDYmKM5k48R7IGpbCTalnNDr8rI0buzuuEwVlV9EoHQu
-	x/Tv6Wkd6GmDbFJSbc0C4ESLEAygGqet6HJFK00z3ICQ8QDK9InWY6A1mpIE7XEh/6rWG6GvYGxjl
-	wuCehaVYKQYv5e/ZFvfGeECyqsAX/vYfg370aX2La2vwWsPEhM7OIwbzgpv4BEnU8Pw6gTMU3YxXM
-	8kfNcnXfMrwY7ShlZ8Kg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gvldH64JjL97UejPheYQh/DK3j9qJaJapC7gQ/xPLCQ=; b=b1NeybIEWHeXjRCjKvJfy4sL/
+	fLTuSlZKr15DVlBUdP1LjMk57KiJGDBDXlOKHiyplsPr6fs5xerJyd4vEcfVpQNXjwoLcB0qH09qj
+	OUue5oahTS+HY9rDcDwqnJ011zhVWACj5TkutKin0PkexZE7yPO5sJQLx3ClGWMBUfR2GFx1Jbiwb
+	c9ancGsn4K/E5HumXjEtGAB4pL/mEMPxu5fPI/XhZAvt48layI87bABKeLpoiCJ7/WcH1VIpV2dC8
+	4Wxz50hBdbNy+hDvniOZTqB/1UvGFmn0FD1G5y1LLLVKtyzjpxKpm636hlY+oSxn4zEIDYn297BlN
+	5lt+lbOZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipbx7-0003ZS-Po; Thu, 09 Jan 2020 17:50:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipbwQ-0001z6-RX
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 17:49:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A4421063;
- Thu,  9 Jan 2020 09:49:54 -0800 (PST)
-Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6FEFC3F703;
- Thu,  9 Jan 2020 09:49:53 -0800 (PST)
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] arm64: Move the LSE gas support detection to Kconfig
-Date: Thu,  9 Jan 2020 17:49:48 +0000
-Message-Id: <20200109174948.48211-3-catalin.marinas@arm.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20200109174948.48211-1-catalin.marinas@arm.com>
-References: <20200109174948.48211-1-catalin.marinas@arm.com>
+	id 1ipcMN-0006Fn-5y; Thu, 09 Jan 2020 18:16:43 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipcM1-000637-O3
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 18:16:24 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 43334210A8;
+ Thu,  9 Jan 2020 13:16:15 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Thu, 09 Jan 2020 13:16:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=CbN+aorqONlbNELTtzuFbMg82bT
+ FrQhC2jY+npe1Wp0=; b=ZjvHJYte5rlBUTqY86HTtTUqFU/uBMc1H38xTD1JY+r
+ RyahX5bGbyuzmMfeS+rMYfdjrKwcxVz0sVMWLAVlV62+RJfgnyZpK86x5cc+X0Pw
+ kmfp8yU5AJbKeTEOPIgDEezXj32EvsmkTh98z/E2MAePu46+b7vpOU4a5Xm7kmAt
+ 3cFPXo/Na761x8jGhBXghEDcotWrK41hftOn/U5AFCAiwrEOhFAZi+IeNKsrrf+y
+ 3tRgeDUHjt+tzKP8GQMxmGIjqiogwy+I5irS9gOcjJskHe9ew0hBPnM+iQyov7ox
+ 9FRdiogEyi8rgbGeOPzAnaKx7yQjy9CIgbq5g4mVxQA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=CbN+ao
+ rqONlbNELTtzuFbMg82bTFrQhC2jY+npe1Wp0=; b=N5/yBo5ElOP7e22MM8iAii
+ TjPxHNnJsZ2vq5tV/mnaEyv0c6iVFjfLa9m5fYbv36hdvTvmvtemK3oqzS6fsyiI
+ 7Y4XkyBP16Yyvn/CXZ8/NPgfML3i9E3NEt+weU7dAtFiv+6I1baTeCZjwwEJCuIv
+ dBc4TjV6+mtQIlx1Gt8Ljif0V/RCVxSYbHSzh0aYE5TcASKKL5cYsXmyzDVtDDhK
+ lZFqTZTAs1vTLnBde/7vOId3ZaN1IhKiyQDrX9zdMzyYs/GRd/+1wGZw7IwDEOxE
+ /XTuh6arz5Ypo79STZGn2RqYcFO4kZBfIuJAWaLA6DkFlCpuU+QuIUWcwhTcvEjQ
+ ==
+X-ME-Sender: <xms:7W0XXq4JZlKQg9UyLGlgSCWmKSh9QDhMmtS4kpb5dJKFiAOKShvJcQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdeiuddgjeehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
+ rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:7W0XXqxXNDejsd4ZTAy8NbX5vFSpt5x3hspiSfG1CYysDGLq7a7EqQ>
+ <xmx:7W0XXvv9MLFiarnDcjPlKborLkbC139OjjHWwa8dDp2OC5RsJgLH8g>
+ <xmx:7W0XXnj3Tq9wDrhNoHK73CcAWTy9sxExJ1kjfH6rz2Y1KagIJ0MuNQ>
+ <xmx:720XXpD_2WYgiAVApUtZOQdleyS15OTvMLAG8a8s468PYu0EYMRwxA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id CCFE880059;
+ Thu,  9 Jan 2020 13:16:12 -0500 (EST)
+Date: Thu, 9 Jan 2020 19:16:11 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v3 1/4] dt-bindings: display: Convert Allwinner display
+ pipeline to schemas
+Message-ID: <20200109181611.mtzoa4blgarjjv3u@gilmour.lan>
+References: <20200103152801.47254-1-maxime@cerno.tech>
+ <CAL_Jsq+nVOb5+yg=bOJMyOocJD6kst0BX7NGhZepNtm_B_35ow@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAL_Jsq+nVOb5+yg=bOJMyOocJD6kst0BX7NGhZepNtm_B_35ow@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_094954_976624_52E9EE15 
-X-CRM114-Status: GOOD (  13.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_101622_146087_31626589 
+X-CRM114-Status: GOOD (  15.75  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.28 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.28 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,143 +107,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Sean Paul <seanpaul@chromium.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============0435549506591969581=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As the Kconfig syntax gained support for $(as-instr) tests, move the LSE
-gas support detection from Makefile to the main arm64 Kconfig and remove
-the additional CONFIG_AS_LSE definition and check.
 
-Cc: Will Deacon <will@kernel.org>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
----
- arch/arm64/Kconfig                    |  4 ++++
- arch/arm64/Makefile                   | 13 ++-----------
- arch/arm64/include/asm/atomic_ll_sc.h |  2 +-
- arch/arm64/include/asm/lse.h          |  6 +++---
- arch/arm64/kernel/cpufeature.c        |  4 ++--
- 5 files changed, 12 insertions(+), 17 deletions(-)
+--===============0435549506591969581==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="j3z6fbcbzqyag56m"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index b1b4476ddb83..2a0521f0f156 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1362,8 +1362,12 @@ config ARM64_PAN
- 	 The feature is detected at runtime, and will remain as a 'nop'
- 	 instruction if the cpu does not implement the feature.
- 
-+config ARM64_AS_HAS_LSE
-+	def_bool $(as-instr,.arch_extension lse)
-+
- config ARM64_LSE_ATOMICS
- 	bool "Atomic instructions"
-+	depends on ARM64_AS_HAS_LSE
- 	depends on JUMP_LABEL
- 	default y
- 	help
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 1fbe24d4fdb6..cca6de192d42 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -30,15 +30,6 @@ LDFLAGS_vmlinux	+= --fix-cortex-a53-843419
-   endif
- endif
- 
--# Check for binutils support for specific extensions
--lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
--
--ifeq ($(CONFIG_ARM64_LSE_ATOMICS), y)
--  ifeq ($(lseinstr),)
--$(warning LSE atomics not supported by binutils)
--  endif
--endif
--
- cc_has_k_constraint := $(call try-run,echo				\
- 	'int main(void) {						\
- 		asm volatile("and w0, w0, %w0" :: "K" (4294967295));	\
-@@ -53,11 +44,11 @@ $(warning Detected assembler with broken .inst; disassembly will be unreliable)
-   endif
- endif
- 
--KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
-+KBUILD_CFLAGS	+= -mgeneral-regs-only $(brokengasinst)	\
- 		   $(compat_vdso) $(cc_has_k_constraint)
- KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
- KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
--KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
-+KBUILD_AFLAGS	+= $(brokengasinst) $(compat_vdso)
- 
- KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
- KBUILD_AFLAGS	+= $(call cc-option,-mabi=lp64)
-diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
-index 7b012148bfd6..13869b76b58c 100644
---- a/arch/arm64/include/asm/atomic_ll_sc.h
-+++ b/arch/arm64/include/asm/atomic_ll_sc.h
-@@ -12,7 +12,7 @@
- 
- #include <linux/stringify.h>
- 
--#if IS_ENABLED(CONFIG_ARM64_LSE_ATOMICS) && IS_ENABLED(CONFIG_AS_LSE)
-+#ifdef CONFIG_ARM64_LSE_ATOMICS
- #define __LL_SC_FALLBACK(asm_ops)					\
- "	b	3f\n"							\
- "	.subsection	1\n"						\
-diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
-index 80b388278149..4e1009fff686 100644
---- a/arch/arm64/include/asm/lse.h
-+++ b/arch/arm64/include/asm/lse.h
-@@ -4,7 +4,7 @@
- 
- #include <asm/atomic_ll_sc.h>
- 
--#if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
-+#ifdef CONFIG_ARM64_LSE_ATOMICS
- 
- #include <linux/compiler_types.h>
- #include <linux/export.h>
-@@ -36,7 +36,7 @@ static inline bool system_uses_lse_atomics(void)
- #define ARM64_LSE_ATOMIC_INSN(llsc, lse)				\
- 	ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
- 
--#else	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
-+#else	/* CONFIG_ARM64_LSE_ATOMICS */
- 
- static inline bool system_uses_lse_atomics(void) { return false; }
- 
-@@ -44,5 +44,5 @@ static inline bool system_uses_lse_atomics(void) { return false; }
- 
- #define ARM64_LSE_ATOMIC_INSN(llsc, lse)	llsc
- 
--#endif	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
-+#endif	/* CONFIG_ARM64_LSE_ATOMICS */
- #endif	/* __ASM_LSE_H */
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 04cf64e9f0c9..2595c2886d3f 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1291,7 +1291,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.cpu_enable = cpu_enable_pan,
- 	},
- #endif /* CONFIG_ARM64_PAN */
--#if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
-+#ifdef CONFIG_ARM64_LSE_ATOMICS
- 	{
- 		.desc = "LSE atomic instructions",
- 		.capability = ARM64_HAS_LSE_ATOMICS,
-@@ -1302,7 +1302,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.sign = FTR_UNSIGNED,
- 		.min_field_value = 2,
- 	},
--#endif /* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
-+#endif /* CONFIG_ARM64_LSE_ATOMICS */
- 	{
- 		.desc = "Software prefetching using PRFM",
- 		.capability = ARM64_HAS_NO_HW_PREFETCH,
+
+--j3z6fbcbzqyag56m
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Jan 09, 2020 at 11:14:26AM -0600, Rob Herring wrote:
+> On Fri, Jan 3, 2020 at 9:28 AM Maxime Ripard <maxime@cerno.tech> wrote:
+> >
+> > The Allwinner SoCs have a display engine composed of several controllers
+> > assembled differently depending on the SoC, the number and type of output
+> > they have, and the additional features they provide. A number of those are
+> > supported in Linux, with the matching bindings.
+> >
+> > Now that we have the DT validation in place, let's split into separate file
+> > and convert the device tree bindings for those controllers to schemas.
+> >
+> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> >
+> > ---
+> >
+> > Changes from v2:
+> >   - Changed a number of maxItems to minItems to make more sense
+> >   - Fixed a few enum that were improperly declared. This raised a bunch of
+> >     warnings that were unnoticed before. Fixed them.
+> >   - Added an if clause to the HDMI PHY binding to check the number of clocks
+> >
+> > Changes from v1:
+> >   - Declare the ports in the bindings
+> > ---
+> >  .../allwinner,sun4i-a10-display-backend.yaml  | 291 ++++++++
+> >  .../allwinner,sun4i-a10-display-engine.yaml   | 114 +++
+> >  .../allwinner,sun4i-a10-display-frontend.yaml | 138 ++++
+> >  .../display/allwinner,sun4i-a10-hdmi.yaml     | 183 +++++
+> >  .../display/allwinner,sun4i-a10-tcon.yaml     | 676 ++++++++++++++++++
+> >  .../allwinner,sun4i-a10-tv-encoder.yaml       |  62 ++
+> >  .../display/allwinner,sun6i-a31-drc.yaml      | 138 ++++
+> >  .../allwinner,sun8i-a83t-de2-mixer.yaml       | 118 +++
+> >  .../display/allwinner,sun8i-a83t-dw-hdmi.yaml | 273 +++++++
+> >  .../allwinner,sun8i-a83t-hdmi-phy.yaml        | 117 +++
+> >  .../display/allwinner,sun8i-r40-tcon-top.yaml | 382 ++++++++++
+> >  .../display/allwinner,sun9i-a80-deu.yaml      | 133 ++++
+> >  .../bindings/display/sunxi/sun4i-drm.txt      | 637 -----------------
+> >  13 files changed, 2625 insertions(+), 637 deletions(-)
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-display-backend.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-display-engine.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-display-frontend.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-hdmi.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tv-encoder.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun6i-a31-drc.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun8i-a83t-de2-mixer.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun8i-a83t-dw-hdmi.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun8i-a83t-hdmi-phy.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun8i-r40-tcon-top.yaml
+> >  create mode 100644 Documentation/devicetree/bindings/display/allwinner,sun9i-a80-deu.yaml
+> >  delete mode 100644 Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
+>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+
+Thanks!
+
+I just applied it to drm-misc-next
+
+Maxime
+
+--j3z6fbcbzqyag56m
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhdt6gAKCRDj7w1vZxhR
+xRPUAP9QTaAbDexzbjQkoJEbJpQCVsHu/4B3Wcfs4bFHWzwMDgD/XUI818zx8e57
+WeuVcrVDKdl1BAYRxaJaoUVoyCf93gQ=
+=xVWT
+-----END PGP SIGNATURE-----
+
+--j3z6fbcbzqyag56m--
+
+
+--===============0435549506591969581==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0435549506591969581==--
+
