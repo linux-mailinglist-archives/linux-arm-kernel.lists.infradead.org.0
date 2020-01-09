@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87942135AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:53:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE10E135AB1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:53:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fsYEYLClZVMv2OWJZPd3sN/W28NEJZ7q471HDYiN958=; b=Pv9bkP9ED1um0d
-	yOR11Ol4M3BOkfmvebcCoD2PMnOmGDPS/bBaLBWT0kIIN+CM9154N4Vu9RxBmF34Pwq6qZI6GWRxW
-	NDxhcLvCSCwfw24lb1g8cDlOUkrueiYXNeDLvRi/UN6oKR3ou30lQ31FiUJoOzEG2vPEWO1GphNMi
-	VpOusgJECzCsbazSRTGkGH9/L2KKmQlXlMgtnwMT5+HzsDjhsSSnwvOBsVv8ekyUvueNF+jFF3eC3
-	7gL0JRX10banoVydzNFq/0XOofxzLfhRPuaB1mBVZEg181R7fbi4iHP4Euwrx2PDURK+YK3hduzeG
-	0BTtr5hDAt9knC2A3H0Q==;
+	List-Owner; bh=pyGTP7Hl80c1XWJsQjRLzwMn0zSRS8sIFPeWg1jwBNk=; b=il2GNobup7wNKv
+	a+YpRBCZuDF0F2WJxG+QY4O/mqRyKhWJS/u0enyHVoUQrQqL2JqY22DCnKL9L2iXDmoYFZRaqsCxR
+	KjaVJ1CRpzmUXg+Bbbwg48LmX4ZnMafYTb8vgInCSxfCT+Dhl5ZtlciAgyfxMQ77XheMkztZOvl0p
+	RNl3w8bfBxJM/AWT+wZ8myCspqGHDljyrJv7KrUbxMJCYHRwjvxKwhWZdqC7JQXtY8I8wKizlKC4f
+	HfkwrFH0krBEfI816FKyUPzv+1+ZsqpjabpJpFTDm0dBWLV53yFtWxxaKGbpb//5lPv453n8TQpPA
+	cgy9R4aBKbAWOxyHG5kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYFN-0004OT-72; Thu, 09 Jan 2020 13:53:13 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1ipYFZ-0004gn-G9; Thu, 09 Jan 2020 13:53:25 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYEe-0003lx-ST
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:52:30 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id d73so3016371wmd.1
+ id 1ipYEg-0003nd-Hy
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:52:32 +0000
+Received: by mail-wm1-x334.google.com with SMTP id b19so2999515wmj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 05:52:28 -0800 (PST)
+ Thu, 09 Jan 2020 05:52:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=K7qiBD3jGRUcHWoFC2hnyMKPOIBb13dj8QhjT8ONsas=;
- b=nx5UGTtM+N44G5BfUdc3Hoj00fE93TiIJ0OTpxjq1JPUPs+YTEFkJU0EPhmhKSMdpY
- GhJPWXpNjCPzvGUsDdKGOMZb7xZudXYtkF9UGyP7wfllFAkothn8FMz2JKvyrki5FBtK
- j4P3Al8Q/wbAEZKPJaZrYxYLsZzBWAAhd/YahAfiFt67OxwmathgPog0CaEqdrFV5ICq
- RLI96sdHUMdQ+iHC8RUksj+lNrSj/JCEJNJCgb9Vu01X4/xqYlKVDx0Iofd5LSZvfzjL
- OAGDqmj8E6JTBqaxg1CHGV26yg+tAkvZO0t15qLBamNWhW3SusJbLgs7L66kcwsDA5qz
- pPJg==
+ bh=5Dls9W9bj1Gd/Lpqv5BPHUUP2RvMef3FCTEyB1xcyHE=;
+ b=ZmSrs3gfZlGX9yRHbls/OTOQJMinpbZpam24OqN4vYR9asSrgRGCPLZpt0NhLiuQpb
+ wzZ5XSKUTJDyRkmIWZwv1k8GW++vcg36BoxACbhfOj7wKKVrvbWDcc/W8gmp+lKivacg
+ JIB4lQwlXP4prJWeTZ0YTg/Y68sYDKVuKZyw+9WjU7vdXRXB5KUTw42Muyk/Rjv/tZkr
+ cP/8jjSpE7H1Dsr6NtQ9j23PVU2yF0P//wNubjtDiL/s/Q7TKk90DdUGyWpGeBCQpv38
+ KJnHpdATT/CUuFXt3P/CUcv+VH/LtGVavzS3Z/qFQcWMMakOkTfbV49mIPfR+4KNDcKf
+ gF3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=K7qiBD3jGRUcHWoFC2hnyMKPOIBb13dj8QhjT8ONsas=;
- b=KCU69GtjQ+4LyYWCe0tsEXLzdMC/w35izJvmsxVSswN29Oa1a1TkTPKDswWXnxtpAs
- 3lwKR/FMweNz0ypinXkFUEvSOLdEEw8mh4x/dMU9IHyscW2zWVTeoMjsFgl7UjGHgeFP
- WLpVFZ414kgtD5XSn30PTkXpIT3Pa/8ylCdEV7iO+l331YjYwZ86UOqd0BmuhewP4vr0
- c+1jh1LLqinu+RL3YPUXQm6P0mCCKFYBP93d09cfSUJJ69D/NI9w9tFdn7oSQgDFnejn
- UHC5KL6HDjpqDjvt9+LW37YqnGVL6KNWB4ETWmS9IrQuoQfEjkCHvulfsI18LnNK19I8
- g89A==
-X-Gm-Message-State: APjAAAUftnaV2/j09lLyyrDRV5Eyvv+xG9SDhOvmC7OJT7RHajXKS98W
- sK74qehZAd1GRPPq51IXHOSb7jeBkbSp/A==
-X-Google-Smtp-Source: APXvYqza39AuRdSj+WTPtS0AXsMxw2OjmXIO7LOV133rsNOr259smnP3qqSflId6/fIhXVciJNR8Eg==
-X-Received: by 2002:a1c:7205:: with SMTP id n5mr5243604wmc.9.1578577947211;
- Thu, 09 Jan 2020 05:52:27 -0800 (PST)
+ bh=5Dls9W9bj1Gd/Lpqv5BPHUUP2RvMef3FCTEyB1xcyHE=;
+ b=raJjqP+H6o9wd+rmuDAd9aMkm1SWCbuSLbMjafJJqnSZeeHoYFcYmpRCiRF9h9Usg1
+ k5IgGXVTvkiYCe8UdVq5yHuDg1Rba6GpnZ9u1oWyJDPGpERgZyyB7CM8JvGd7M2SBJkg
+ KKPPt4SqiVcDrTnm0tL8uPZmVCFOYdFOFeJhPF3dQ67CspwHV2fbyAwTblxxiWLm98bo
+ qSXwgvAvdIFZmMAO7IueKHu+4rkvbkkX7hcZH7VXzm1yD5BKabvTubCs1NqHJik5Qglp
+ soxtT2RWfh4N9mkTTNo0N9FJ+ZgMg7YK7WUEF0cPvehHyq2FOdehsw3acVTXdArZKgQS
+ 3pig==
+X-Gm-Message-State: APjAAAU/htOxjI5E4P1jJYsAt+vIuf8d4KYFLvYf7C9nz4dkWIR64nvx
+ GRJgLIOkfR3qSKpNTymnhoeYPLBx00b5BQ==
+X-Google-Smtp-Source: APXvYqx0+sXU9Xa6uVSv3/rkJoMDUEUGho9XMFd9d3+XzkDYUqX5o+JlJlKdL+1KOfK8+bnYRZVCOQ==
+X-Received: by 2002:a7b:c183:: with SMTP id y3mr4957307wmi.45.1578577948805;
+ Thu, 09 Jan 2020 05:52:28 -0800 (PST)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id v17sm7903169wrt.91.2020.01.09.05.52.26
+ by smtp.gmail.com with ESMTPSA id q68sm3178254wme.14.2020.01.09.05.52.28
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 Jan 2020 05:52:26 -0800 (PST)
+ Thu, 09 Jan 2020 05:52:28 -0800 (PST)
 From: Michal Simek <michal.simek@xilinx.com>
 To: linux-arm-kernel@lists.infradead.org,
 	git@xilinx.com
-Subject: [PATCH v2 2/8] arm64: zynqmp: Remove addition number in node name
-Date: Thu,  9 Jan 2020 14:52:16 +0100
-Message-Id: <34e9e2001a874428b3e3fb3c73799589783a6278.1578577931.git.michal.simek@xilinx.com>
+Subject: [PATCH v2 3/8] arm64: zynqmp: Fix address for tca6416_u97 chip on
+ zcu104
+Date: Thu,  9 Jan 2020 14:52:17 +0100
+Message-Id: <100294ed4d902923527de042cc87eb59648ce91f.1578577931.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <cover.1578577931.git.michal.simek@xilinx.com>
 References: <cover.1578577931.git.michal.simek@xilinx.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_055228_928852_127689DB 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20200109_055230_614571_044DC9C5 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32f listed in]
+ no trust [2a00:1450:4864:20:0:0:0:334 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -105,40 +106,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change is coming from mainline review that's why this patch is
-sync.
+I2c address is not 0x21 but 0x20.
 
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
 
-Changes in v2:
-- Add missing patch
+Changes in v2: None
 
- arch/arm64/boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts | 4 ++--
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts
-index b75235ae7d30..4a86efa32d68 100644
---- a/arch/arm64/boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts
-+++ b/arch/arm64/boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts
-@@ -123,7 +123,7 @@ &spi0 {
- 	status = "okay";
- 	num-cs = <1>;
- 
--	spi0_flash0: flash0@0 {
-+	spi0_flash0: flash@0 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		compatible = "sst,sst25wf080", "jedec,spi-nor";
-@@ -141,7 +141,7 @@ &spi1 {
- 	status = "okay";
- 	num-cs = <1>;
- 
--	spi1_flash0: flash0@0 {
-+	spi1_flash0: flash@0 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		compatible = "atmel,at45db041e", "atmel,at45", "atmel,dataflash";
+diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
+index 2d71b4431cce..7a4614e3f5fa 100644
+--- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
++++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
+@@ -118,9 +118,9 @@ i2c@4 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <4>;
+-			tca6416_u97: gpio@21 {
++			tca6416_u97: gpio@20 {
+ 				compatible = "ti,tca6416";
+-				reg = <0x21>;
++				reg = <0x20>;
+ 				gpio-controller;
+ 				#gpio-cells = <2>;
+ 				/*
 -- 
 2.24.0
 
