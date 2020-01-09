@@ -2,76 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEC8B135B74
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:34:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67EF3135B78
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:35:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ErIk/+QjAGUhrFj2kmFo1Kbnjigdjcprj9rhNKd8j+A=; b=Dsfx321GAaMf77
-	5vGNXuyLwXLYU/Zlvlqtk/zRPwOJ7IFCIkBrSn6GeWT+ThjHgYw/qpAlG4ZJQ+W1D/plpD7xF1ZPH
-	kNqST1GruQM+gX5iJ439tYxoRxnTiB2DKZlTRWyTcWcDrjygyM7qAEjHqwdlkbc5Mc4webq9tfSGw
-	wkgWJmrW5M8YApVmpxOFUkY2bKF8YbUHlow/kp+x+CWZNd6GSG3p4mLnRheYuWVzZcI//1QAIWemH
-	KH3HTMtqzMaziqLm/kIPvpwLPuudkADLQHLSFAhiThZb3dlIcKdGeuis6nGBlWN6Ns+N/lKvmZ7Ue
-	HtVcsqtc+wn3TXDSMLDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RYxuS/gN/KLknCA4leKTR7PI3uZmNCzi4oaIa7rjkz0=; b=hyzQLAmQJbDLG/N9T7CNFeNTU
+	hLs+ZgcX0hkAcb7fRvEATo8D4aE3GHD9+IfJ72mnqXrmnDTcsPkSWn4GySYt38zBb+ePc26LS1Ul6
+	MDEK6Y7xqyLDqw+XPK98qnxWuUg2908cAVNrVC1w+gX6Y1DfSUQAk8Da4dhSppYpgjyTVvO7UWP/l
+	bgg4kkWYnME/nz+jnFPbXtyXaXMZpB4btKJYkldWlCQDaFStgOwslR4uLS9aNCGAne+X/jLINm04z
+	HxRixzfsgFBSNg0Ivdj+lDO+rX4lLcBfT7jAWEqxCKQxJGDHmxFfEvzBTOK7G6nio7195+NDtxQTd
+	s1r3JsYKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYsv-0002O7-AE; Thu, 09 Jan 2020 14:34:05 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ipYuZ-00045i-5g; Thu, 09 Jan 2020 14:35:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYsj-0002Lx-FA
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:33:55 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p17so3095550wma.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 06:33:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bsEH/6ZxbOWHzoiprvPjw2BBo+vXeuRRpym/r1C+eME=;
- b=O1mEbBFAc+LTujgcgEW69/WpgHdDMwtg1j4VmjL2RtvVQgjMdjoBUGNViLAs9iwZfr
- orNMBTb42seSump+jLcjdnzTzgIVLjqzaBt9p0/ew1v3eRl6LpqRov9OlEaXJ8KPXMjQ
- 6jhv9Zs9nWQDQ32hvNdui47FJ4o0adi+QUm0MEjTaWjMsTmgSU0qGsxoZIbuLz/jlmDC
- NeQkTYpzWyh2Vywh4sRLd/BJQ1cLSKKu0SRIt4QZp5ZPd+TnrekzKVeUQHfL9ZOnMLvf
- SjJOWnXL5RTUc6Uwzc7TlNZsCfGbT9Cx5G0OoZCCpeydWlnov3SXA3ml1Wgrt3iNNsMB
- AYvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bsEH/6ZxbOWHzoiprvPjw2BBo+vXeuRRpym/r1C+eME=;
- b=ad0uYnRQBlHnXg+1fvdMNR/wMKxmDkwQiWJQTD4CpyU3LL/FJbCHQDI16Lc34nfmfS
- UAMM96GW9jrK7VyGSG+LHsM48j4dGMwGIp0ABW16hmQyrfaUPO5qP++oHpXqnUjf1OLI
- 8IZ5hqkWgSslkUPJjuCYce3cArSlyAP5bbwse9drSvhvseFSsAngjF8FtA+HRtNY0hc6
- mzQicmysgOJqRXKAzNIJkhe8Px34Npq1lXaTxV0+lRX0VCrxnFyF7iwFjpFdxkvjELOO
- EWknRpQNS1RVoCLYwWO4M+CriNY5Dbm46QX0cR/ge2o1z6ksmfg691JzTpoI41Htwe3s
- eP8g==
-X-Gm-Message-State: APjAAAX7NiMvX1VYo6uAE9+M77y35c/Xsn2EFHhIlgSjEA0a1ptEKCml
- 20tsg3q6mHjKi5fPbOE6hzJEAkv8+1ovj8zsK28T4w==
-X-Google-Smtp-Source: APXvYqy/x4UOQADZ/0HLoRlmUlJwkD2WULQMcQ1qLLn581R7u9sQav6GqjVH9N4f/W5fMqVlrsHL5HWPHPm0sYSVCFc=
-X-Received: by 2002:a1c:9d52:: with SMTP id g79mr5356424wme.148.1578580432049; 
- Thu, 09 Jan 2020 06:33:52 -0800 (PST)
+ id 1ipYuR-000459-Tl
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:35:41 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0715B2077B;
+ Thu,  9 Jan 2020 14:35:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578580539;
+ bh=6WcORVtf3DjfJCucb8ciuJeOMemSw+59Xl2wf5Zg4As=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JLcoFRE0CEI7rPiUjb8T/kz3hk2H769jyw7uuBhU49RmZ4zEs9p46DqAOS5b2bRy9
+ 6VyNrlThT3o75JaweEKKKaEBq8ZmQE4NHf9JZluGVF82sah/LMOlJ9OcGJhyd1Bfzg
+ 2MMAGgxQME80cfdAM2ugWu8VvdVlTa1nwwTEC49M=
+Date: Thu, 9 Jan 2020 09:35:37 -0500
+From: Sasha Levin <sashal@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [stable] [PATCH 1/2] coresight: etb10: Do not call
+ smp_processor_id from preemptible
+Message-ID: <20200109143537.GE1706@sasha-vm>
+References: <20200108110541.318672-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
-References: <20191224044146.232713-1-saravanak@google.com>
- <CAKv+Gu_yDWhvR80Wg1-bzpD1aGwGC-UA+obcgn8CEKKjMdR7rQ@mail.gmail.com>
-In-Reply-To: <CAKv+Gu_yDWhvR80Wg1-bzpD1aGwGC-UA+obcgn8CEKKjMdR7rQ@mail.gmail.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 9 Jan 2020 15:33:41 +0100
-Message-ID: <CAKv+Gu87zrOzN9GRrDdHsTOG=XGGY4sxXT_gZRD-BGfLuU0FiQ@mail.gmail.com>
-Subject: Re: [PATCH v2] efi: arm: defer probe of PCIe backed efifb on DT
- systems
-To: Saravana Kannan <saravanak@google.com>
+Content-Disposition: inline
+In-Reply-To: <20200108110541.318672-1-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_063353_520546_38D89B1A 
-X-CRM114-Status: GOOD (  34.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_063539_979153_7E280829 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,218 +78,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Will Deacon <will@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Android Kernel Team <kernel-team@android.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mathieu.poirier@linaro.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+ gregkh@linuxfoundation.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 9 Jan 2020 at 15:05, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+On Wed, Jan 08, 2020 at 11:05:40AM +0000, Suzuki K Poulose wrote:
+>[ Upstream commit 730766bae3280a25d40ea76a53dc6342e84e6513 ]
 >
-> On Tue, 24 Dec 2019 at 05:41, Saravana Kannan <saravanak@google.com> wrote:
-> >
-> > From: Ard Biesheuvel <ardb@kernel.org>
-> >
-> > The new of_devlink support breaks PCIe probing on ARM platforms booting
-> > via UEFI if the firmware exposes a EFI framebuffer that is backed by a
-> > PCI device. The reason is that the probing order gets reversed,
-> > resulting in a resource conflict on the framebuffer memory window when
-> > the PCIe probes last, causing it to give up entirely.
-> >
-> > Given that we rely on PCI quirks to deal with EFI framebuffers that get
-> > moved around in memory, we cannot simply drop the memory reservation, so
-> > instead, let's use the device link infrastructure to register this
-> > dependency, and force the probing to occur in the expected order.
-> >
-> > Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > Co-developed-by: Saravana Kannan <saravanak@google.com>
-> > Signed-off-by: Saravana Kannan <saravanak@google.com>
-> > ---
-> >
-> > Hi Ard,
-> >
-> > I compile tested it and I think it should work. If you can actually run
-> > and test it, that'd be nice.
-> >
-> > You can also optimize find_pci_overlap_node() by caching the result if
-> > you think that's necessary.
-> >
-> > Right now this code will run always just like your code did. But once I
-> > rename of_devlink to fw_devlink, this code won't be run if fw_devlink is
-> > disabled.
-> >
-> > v1 -> v2:
-> > - Rewrote the device linking part to not depend on initcall ordering
-> >
-> >  drivers/firmware/efi/arm-init.c | 106 ++++++++++++++++++++++++++++++--
-> >  1 file changed, 102 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
-> > index 904fa09e6a6b..8b789ff83af0 100644
-> > --- a/drivers/firmware/efi/arm-init.c
-> > +++ b/drivers/firmware/efi/arm-init.c
-> > @@ -10,10 +10,12 @@
-> >  #define pr_fmt(fmt)    "efi: " fmt
-> >
-> >  #include <linux/efi.h>
-> > +#include <linux/fwnode.h>
-> >  #include <linux/init.h>
-> >  #include <linux/memblock.h>
-> >  #include <linux/mm_types.h>
-> >  #include <linux/of.h>
-> > +#include <linux/of_address.h>
-> >  #include <linux/of_fdt.h>
-> >  #include <linux/platform_device.h>
-> >  #include <linux/screen_info.h>
-> > @@ -276,15 +278,111 @@ void __init efi_init(void)
-> >                 efi_memmap_unmap();
-> >  }
-> >
-> > +static bool efifb_overlaps_pci_range(const struct of_pci_range *range)
-> > +{
-> > +       u64 fb_base = screen_info.lfb_base;
-> > +
-> > +       if (screen_info.capabilities & VIDEO_CAPABILITY_64BIT_BASE)
-> > +               fb_base |= (u64)(unsigned long)screen_info.ext_lfb_base << 32;
-> > +
-> > +       return fb_base >= range->cpu_addr &&
-> > +              fb_base < (range->cpu_addr + range->size);
-> > +}
-> > +
-> > +static struct device_node *find_pci_overlap_node(void)
-> > +{
-> > +       struct device_node *np;
-> > +
-> > +       for_each_node_by_type(np, "pci") {
-> > +               struct of_pci_range_parser parser;
-> > +               struct of_pci_range range;
-> > +               int err;
-> > +
-> > +               err = of_pci_range_parser_init(&parser, np);
-> > +               if (err) {
-> > +                       pr_warn("of_pci_range_parser_init() failed: %d\n", err);
-> > +                       continue;
-> > +               }
-> > +
-> > +               for_each_of_pci_range(&parser, &range)
-> > +                       if (efifb_overlaps_pci_range(&range))
-> > +                               return np;
-> > +       }
-> > +       return NULL;
-> > +}
-> > +
-> > +/*
-> > + * If the efifb framebuffer is backed by a PCI graphics controller, we have
-> > + * to ensure that this relation is expressed using a device link when
-> > + * running in DT mode, or the probe order may be reversed, resulting in a
-> > + * resource reservation conflict on the memory window that the efifb
-> > + * framebuffer steals from the PCIe host bridge.
-> > + */
-> > +static int efifb_add_links(const struct fwnode_handle *fwnode,
-> > +                          struct device *dev)
-> > +{
-> > +       struct device_node *sup_np;
-> > +       struct device *sup_dev;
-> > +
-> > +       sup_np = find_pci_overlap_node();
-> > +
-> > +       /*
-> > +        * If there's no PCI graphics controller backing the efifb, we are
-> > +        * done here.
-> > +        */
-> > +       if (!sup_np)
-> > +               return 0;
-> > +
-> > +       sup_dev = get_dev_from_fwnode(&sup_np->fwnode);
-> > +       of_node_put(sup_np);
-> > +
-> > +       /*
-> > +        * Return -ENODEV if the PCI graphics controller device hasn't been
-> > +        * registered yet.  This ensures that efifb isn't allowed to probe
-> > +        * and this function is retried again when new devices are
-> > +        * registered.
-> > +        */
-> > +       if (!sup_dev)
-> > +               return -ENODEV;
-> > +
-> > +       /*
-> > +        * If this fails, retrying this function at a later point won't
-> > +        * change anything. So, don't return an error after this.
-> > +        */
-> > +       if (!device_link_add(dev, sup_dev, 0))
-> > +               dev_warn(dev, "device_link_add() failed\n");
-> > +
-> > +       put_device(sup_dev);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static struct fwnode_operations efifb_fwnode_ops = {
+>During a perf session we try to allocate buffers on the "node" associated
+>with the CPU the event is bound to. If it is not bound to a CPU, we
+>use the current CPU node, using smp_processor_id(). However this is unsafe
+>in a pre-emptible context and could generate the splats as below :
 >
-> Please make this const
+> BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
 >
-> > +       .add_links = efifb_add_links,
-> > +};
-> > +
-> > +static struct fwnode_handle efifb_fwnode = {
-> > +       .ops = &efifb_fwnode_ops,
-> > +};
-> > +
-> >  static int __init register_gop_device(void)
-> >  {
-> > -       void *pd;
-> > +       struct platform_device *pd;
-> > +       int err;
-> >
-> >         if (screen_info.orig_video_isVGA != VIDEO_TYPE_EFI)
-> >                 return 0;
-> >
-> > -       pd = platform_device_register_data(NULL, "efi-framebuffer", 0,
-> > -                                          &screen_info, sizeof(screen_info));
-> > -       return PTR_ERR_OR_ZERO(pd);
-> > +       pd = platform_device_alloc("efi-framebuffer", 0);
-> > +       if (!pd)
-> > +               return -ENOMEM;
-> > +
+>Use NUMA_NO_NODE hint instead of using the current node for events
+>not bound to CPUs.
 >
-> Add
->
->   if (IS_ENABLED(CONFIG_PCI))
->
-> here
->
-> > +       pd->dev.fwnode = &efifb_fwnode;
-> > +
-> > +       err = platform_device_add_data(pd, &screen_info, sizeof(screen_info));
-> > +       if (err)
-> > +               return err;
-> > +
-> > +       return platform_device_add(pd);
-> >  }
-> >  subsys_initcall(register_gop_device);
-> > --
-> > 2.24.1.735.g03f4e72817-goog
-> >
->
-> With the changes above
->
-> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
->
-> but it still needs testing as well.
+>Fixes: 2997aa4063d97fdb39 ("coresight: etb10: implementing AUX API")
+>Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+>Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>Cc: stable <stable@vger.kernel.org> # v4.9 to v4.19
+>Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>Link: https://lore.kernel.org/r/20190620221237.3536-5-mathieu.poirier@linaro.org
 
-I'm having trouble reproducing the original issue, so it is difficult
-to confirm that it works as before.
+I've queued this for 4.9-4.19. There was a simple conflict on 4.9 which
+also had to be resolved.
 
-In any case, I'm inclined to just take this through the EFI tree for
-v5.6, and if it needs additional tweaks, we can apply them as fixes on
-top.
+-- 
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
