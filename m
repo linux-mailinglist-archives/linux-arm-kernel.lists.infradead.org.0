@@ -2,90 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65EE3135E19
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:21:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 565C7135E1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:22:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BnpkrwI7JuBUUMltDq/HU3eGPnaBHesoz512wNvT6tw=; b=J1FhLoUb69TvNp
-	hiVv2ZqTdwg46SFtVq7s9V5xZbxrA3bUj4Xy0aGpUe94i25n/P7R2Hfc4uIdKw2O0ks7qRQpyIfWD
-	hQuh06Etb7J9drfFR3nCYwnPTWKSmu62ujYkopGEASodEPfsyEss+FS0KAbZfndQZehPW+SqHkTY1
-	YLT/aS83gCRAOjkgGA32nOBvPdmigMQhtCY3s8XOKZDpIEYU76HlC59BJiP3JI3m3IrQwsmqr5Fgc
-	5bBHMLBHYHppGbGo07bAPkAwzFN4wntc4OP5CEWUSo2JGuOZeUJ7CFNGsBtJurKPUc/ovcSL7Av0T
-	Y9EpP7urPZsjeY3MIW1A==;
+	List-Owner; bh=Rstr0bQmnbiVAKQoXLcR+jNPmgW7ZIpYI79pcjescPs=; b=U9yC7Av0/GPm3D
+	01U7kU2Wj/6tM2CgvTl27v4RbM0wPXzw22nz0DsBVat6a6zb88isTbTbi8Ms+5gPHh3qNn13y0qQn
+	A840+DXEpnOAiG8+tyi/6tDa9a6rBanmHRLy+MK62tyAoxZMlU0VSxzt41AX/plMXwatIPQyK9/9d
+	ho5wway3VoGVUtF3+SPcSRJ3j087s65H0XcmNfW0LuZ79GuS3ZLBr9DV4YfimNWNIWxqCCeWssL1N
+	pyTGSbWP/QaMlDJ0cQKh2wb0wgaJGBJWD1uYn0mROe91qcDEnyAPCgOMOmSv5rpBBuevxzVZfmgal
+	DN1c2waXhySuJrxy6OWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaYj-0007xU-Km; Thu, 09 Jan 2020 16:21:21 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ipaZY-0000DE-2g; Thu, 09 Jan 2020 16:22:12 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaNR-0002d8-OW
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:09:43 +0000
+ id 1ipaNy-0004Dm-7G
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:10:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578586180;
+ s=mimecast20190719; t=1578586213;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=z92LbMne7Yt4VDMBIOJNt2FZqBadMcBmYAHWqfjNEw8=;
- b=HTLpXl9ZOTLwCIlGDPmEkitrMyTrD6D0jlP6CgTw/Plt5N63LKYtEu+BbbmrmQxu1l+TwO
- 5ez0AzHG5VG7J7fXJ8M8pw73Jr0uskttLV8iiZ8+hVTE8x8u+yH58JUkuYIFEFpT02MJjt
- 71HK6jFPox/f8g80IbidDdgLE+M3ZT8=
-Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
- [209.85.128.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-78-dEX7-1S6M8-UerYq3OvkKQ-1; Thu, 09 Jan 2020 11:09:39 -0500
-Received: by mail-wm1-f70.google.com with SMTP id t16so1103729wmt.4
+ bh=+i3Z5hWXW12eDu4B56KhWBmac7Q2y5XMkxb+3N11Qwo=;
+ b=Wc9VQur51J0ug+Urdh1GgWnoOqal7IHMJWQt2qGLn9cVcBATUp/aWTFnR+gHLnKgv3z64w
+ 8YaBEnC0NWC3rETZM9OivUNFbOP7Bqs7i1fo/0ILK0oIBg1HkfNZOszk6JawNJD3VVqrBH
+ km3A0eCXMCqLbg8aEoV5bPnAfJUEvyI=
+Received: from mail-wr1-f70.google.com (mail-wr1-f70.google.com
+ [209.85.221.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-288-bRcJlu6vMziG5nxC_F4RMw-1; Thu, 09 Jan 2020 11:10:11 -0500
+Received: by mail-wr1-f70.google.com with SMTP id b13so3033175wrx.22
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:09:38 -0800 (PST)
+ Thu, 09 Jan 2020 08:10:11 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=wMGHjJl3e1P107q4BQ6psOhaStZ5a/m6KJ9UhI8WuJA=;
- b=KhV6ECe2kcIEc2MXdd+xWVM2b2IKEuF/UXBxqf27J8n8m0MR4KDa9M4EsG7NYAcQiF
- kP5YQK0UnVUvO7mJQ2jLCHHjMZWxXufQNS6NpTRbihCv6iWw8wwpkqnFLafXnqZwbHKq
- QQ6b0nNyyRrIxxhu09Vc/kqESatel2LUPyZkVtk9daS21C/XZCn6E7gohlmV3Tu0grdC
- aqgNGP13vjyHmE1tUwHDpkvXG6Whd08dmsTUVZhqyJ1li/8WE62ULOR+lD6ezDaDnLK4
- kcp6BbPLjaE7DSaHdu12nun7bg/UQEZBU8ZCgHaGU65Ts2zFvrnCWJgf8UH6XpwweBQT
- G8gA==
-X-Gm-Message-State: APjAAAVjRRSQ0RxM9l61R8PCR5ymWRoE1ekBkCZFn0YpvYXsHEtvmTSN
- rDrUiziKHe2Ken8wtxHEXLzai1M8CRaqdFMqbgL6q4+LnM6AgOweYtgwD1HjvQ9sMavfxqwkWq/
- I8oZ1mMoqZCoX/TriV0s/iclrEmmAGgpWmWQ=
-X-Received: by 2002:a7b:c93a:: with SMTP id h26mr5626263wml.83.1578586178082; 
- Thu, 09 Jan 2020 08:09:38 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxbW0SbCoj52xkl2G5xsHM6LJP70fkM18f+faXI8eAh4PCwOpImStNR0bRzwb42NSJPmkTJoA==
-X-Received: by 2002:a7b:c93a:: with SMTP id h26mr5626254wml.83.1578586177927; 
- Thu, 09 Jan 2020 08:09:37 -0800 (PST)
+ bh=DAmIKVrG0XTaKJJzMfiZimG349dykVofBy5TCpIMs8E=;
+ b=hInq3S1Yvl4xSA2+lKJiEIBVxTfQliD9xoEDENxme819qkcOXg0uKrFK0VPZuafeLP
+ GfWneaoJNkgpBcUr48w0H3uJ/8PEIsKWlTutfRPtjdjsJxcPT9oPEPw6C79NGvVXCInJ
+ VcXPnRSXQGuWKQkKN5FA1cOngDunQvb4oKJ8ybT8FW/on/MjHgxQNgoVX8Jj/spa1L7V
+ NYBQ+ZWviSslrtSv+xrHj/ouFquDYPoxmtSj5tP/IO4nvxf2aC+DkICu6EKIWSnkeXWt
+ EZayPBm8/wya0B1ELwyRc8VRwKyIsheim5VYGWXmCaE2/450vzTyzv/q5SvHY3tVhALq
+ EYUQ==
+X-Gm-Message-State: APjAAAUqBQmdlu4YiJXpE8g33imH/XevBIiWi4Nra8ysHcvo08cJDjgB
+ u7jBwGVpXHihapaG9Dne7exMvzMCaF6VYEqFDN6a883cAr2ap3Hf5dv0TjyOk5blCekkSBQD1Vy
+ q2NaXbW1mNb1Ll/xTBVGQdX++80g6Z7QIU0g=
+X-Received: by 2002:a7b:cb91:: with SMTP id m17mr5844660wmi.146.1578586210076; 
+ Thu, 09 Jan 2020 08:10:10 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyFva8eO8YAHVsY7yqkadvzeSK9FfRmzCmEmBFRtKNIs9P8qgXGmLAvH+I97ylIV2hDbJg/RA==
+X-Received: by 2002:a7b:cb91:: with SMTP id m17mr5844651wmi.146.1578586209923; 
+ Thu, 09 Jan 2020 08:10:09 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id e8sm8517707wrt.7.2020.01.09.08.09.36
+ by smtp.gmail.com with ESMTPSA id y17sm2820948wma.36.2020.01.09.08.10.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:09:37 -0800 (PST)
+ Thu, 09 Jan 2020 08:10:09 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 54/57] arm64: Move constant to rodata
-Date: Thu,  9 Jan 2020 16:02:57 +0000
-Message-Id: <20200109160300.26150-55-jthierry@redhat.com>
+Subject: [RFC v5 55/57] arm64: Mark sigreturn32.o as containing non standard
+ code
+Date: Thu,  9 Jan 2020 16:02:58 +0000
+Message-Id: <20200109160300.26150-56-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: dEX7-1S6M8-UerYq3OvkKQ-1
+X-MC-Unique: bRcJlu6vMziG5nxC_F4RMw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080941_888309_44691582 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20200109_081014_360076_6F2BEC1B 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -115,34 +116,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Constant arm64_relocate_new_kernel_size does not need to be in
-the same section as the new kernel code/data region.
+sigreturn32.o contains aarch32 getting copied to the VDSO for
+compat user tasks.
 
-Move it to ".rodata" section.
+This code shouldn't get validated by arm64 objtool.
 
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- arch/arm64/kernel/relocate_kernel.S | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/kernel/Makefile | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-index 5e08845f701a..e7a5fded59e6 100644
---- a/arch/arm64/kernel/relocate_kernel.S
-+++ b/arch/arm64/kernel/relocate_kernel.S
-@@ -122,10 +122,13 @@ ENDPROC(arm64_relocate_new_kernel)
- /* Ensure we didn't go past the limit */
- .org	KEXEC_CONTROL_PAGE_SIZE
+diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+index f5994679db5f..b978026ea368 100644
+--- a/arch/arm64/kernel/Makefile
++++ b/arch/arm64/kernel/Makefile
+@@ -31,6 +31,7 @@ obj-$(CONFIG_COMPAT)			+= sys32.o signal32.o			\
+ 					   sys_compat.o
+ ifneq ($(CONFIG_COMPAT_VDSO), y)
+ obj-$(CONFIG_COMPAT)			+= sigreturn32.o
++OBJECT_FILES_NON_STANDARD_sigreturn32.o := y
+ endif
+ obj-$(CONFIG_KUSER_HELPERS)		+= kuser32.o
  
-+.pushsection ".rodata", "a"
- /*
-  * arm64_relocate_new_kernel_size - Number of bytes to copy to the
-  * control_code_page.
-  */
- .globl arm64_relocate_new_kernel_size
-+.align 8
- arm64_relocate_new_kernel_size:
- 	.quad	.Lcopy_end - arm64_relocate_new_kernel
-+.popsection
 -- 
 2.21.0
 
