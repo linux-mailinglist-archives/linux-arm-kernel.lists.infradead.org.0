@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42EC8135E2E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:24:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86E0135E3C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:28:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DnNC92lEyiMOcGD1AumzIX8eNMn/sMud8xPC/pnaBjo=; b=A2N8lKDPP9Le+rbwWVVRXhrCt
-	8D4KDxdgkLibOOlIBkdNt0YsnlqsLCieom6eivaFL72we0/aiNVzAG4yiI0yPasTstWdLOGSSBVwH
-	aTQg3BlDhE7nFWt9ZDwCxVYsZWCqI30qsSiZUk/8bRYAC/QsPCXd8a4id7aXZ9xUv3OSfj2/L/M5a
-	/5h2D8SpAJrriAG0KW1Su2jT0OAKwYZNylGwwcagANnC1wX2qC4s1GigCRml7TsavvBthQ9brAe78
-	BIW6AIue/Y/lrZqBPFgWio4Z1mihGZMyBNNXYDqu3htPBkC/6RFpz1AEFS6wfRjN4CYHL936HYbv2
-	LLjScl5jQ==;
+	 bh=4BUeGwTJZ/nu/eaV1ff6tvbS1f7pXq6GQr9C9WXgRWw=; b=D2WuNOk+LKPYtoC4AiXy8P8Bk
+	n+34/N3rdFfaq8z+ax0Y0/WYrvFUx78ZEgdJaZb+uFUJcwNk06m0mpWyoSQhNBbu54BM1TIzQ3bHA
+	kJMMEuzmHl1wwgfBeWnw49helZfXiowJSrOVmpzJuNKsigBeoXOr8aSmGM6j2ooCcXMEgA3wnTCK2
+	tvQbd5ygV9bjUwj/8szUAUugBcb4qgtLvfQvwERFzqPa03RG/Pq2rpESNtgTc3+XO/0Lt7T5GQcel
+	KAzO4LLcILtPQNuklJxU5B18Msb25PWb+wev4QAnu5hONj5bkj/V00Qv20IzGzSmQebt0M+oOB+UL
+	XPWM6qJEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipabR-0001wX-Nx; Thu, 09 Jan 2020 16:24:09 +0000
+	id 1ipafZ-0004tF-PG; Thu, 09 Jan 2020 16:28:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaWU-0004vY-O2
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:19:08 +0000
+ id 1ipafR-0004sc-Rt; Thu, 09 Jan 2020 16:28:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 445841FB;
- Thu,  9 Jan 2020 08:19:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE6271FB;
+ Thu,  9 Jan 2020 08:28:16 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C03033F703;
- Thu,  9 Jan 2020 08:18:59 -0800 (PST)
-Date: Thu, 9 Jan 2020 16:18:58 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 52D173F703;
+ Thu,  9 Jan 2020 08:28:16 -0800 (PST)
+Date: Thu, 9 Jan 2020 16:28:14 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Richard Henderson <richard.henderson@linaro.org>
-Subject: Re: [PATCH v9 2/3] arm64: random: Add data to pool from setup_arch()
-Message-ID: <20200109161858.GA3702@sirena.org.uk>
-References: <20200108194133.44110-1-broonie@kernel.org>
- <20200108194133.44110-3-broonie@kernel.org>
- <1639b993-d056-5e32-b841-436d42f60df4@linaro.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
+ for the GPU
+Message-ID: <20200109162814.GB3702@sirena.org.uk>
+References: <20200108052337.65916-1-drinkcat@chromium.org>
+ <20200108052337.65916-5-drinkcat@chromium.org>
+ <20200108132302.GA3817@sirena.org.uk>
+ <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
+ <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <1639b993-d056-5e32-b841-436d42f60df4@linaro.org>
+In-Reply-To: <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
 X-Cookie: Killing turkeys causes winter.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_081902_876737_60E45C89 
-X-CRM114-Status: GOOD (  20.46  )
+X-CRM114-CacheID: sfid-20200109_082817_985507_D6229024 
+X-CRM114-Status: GOOD (  23.14  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -67,90 +69,99 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Content-Type: multipart/mixed; boundary="===============5047336238347507874=="
+ Devicetree List <devicetree@vger.kernel.org>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============3164395380486573612=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5047336238347507874==
+--===============3164395380486573612==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="cNdxnHkX5QqsyA0e"
+	protocol="application/pgp-signature"; boundary="St7VIuEGZ6dlpu13"
 Content-Disposition: inline
 
 
---cNdxnHkX5QqsyA0e
+--St7VIuEGZ6dlpu13
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Thu, Jan 09, 2020 at 08:33:25AM +1100, Richard Henderson wrote:
-> On 1/9/20 6:41 AM, Mark Brown wrote:
+On Thu, Jan 09, 2020 at 02:14:42PM +0000, Steven Price wrote:
+> On 08/01/2020 22:52, Nicolas Boichat wrote:
 
-> > +	for (i = 0; i < 16; i++)
-> > +		if (__arm64_rndr(&val))
-> > +			add_device_randomness(&val, sizeof(val));
-> > +}
+> > That'd be a bit awkward to match, though... Currently all bifrost
+> > share the same compatible "arm,mali-bifrost", and it'd seem
+> > weird/wrong to match "mediatek,mt8183-mali" in this driver? I have no
+> > idea if any other Mali implementation will require a second regulator,
+> > but with the MT8183 we do need it, see below.
 
-> This is not nearly the same thing as what crng_initialize does.  In particular,
-> it's not going to advance crng_init at all.
+This doesn't sound particularly hard, just new.  Plenty of other devices
+have quirks done based on the SoC they're in or the IP revision, this
+would just be another of those quirks.
 
-That's right, but I think that's good enough to get us going here.  It
-will add data into the pool so we're mitigating against a lack of per
-device entropy which seems clearly better than doing nothing at all and
-has no issues with integration with the decision about trusting the RNG
-to provide entropy so it's safe.  The commit message does say we add
-data rather than entropy, though I agree that on reflection the callback
-isn't clearly named there and people not familiar with the random
-subsystem will likely not notice the difference.
+> > Well if devfreq was working (see patch 7
+> > https://patchwork.kernel.org/patch/11322851/ for a partial
+> > implementation), it would adjust both mali and sram regulators, see
+> > the OPP table in patch 2
+> > (https://patchwork.kernel.org/patch/11322825/): SRAM voltage needs to
+> > be increased for frequencies >=698Mhz.
 
-We could definitely improve the commit message a bit here or even drop
-the patch but I think we're better off with this than without it, and
-exposing the feature to userspace, allowing in kernel usage after init
-and using it for KASAN are clear wins regardless of what we do with the
-pool.  If we can do something that credits the entropy at boot that'd be
-even better of course but I don't think that needs to block everything
-else.
+> > Now if you have some better idea how to implement this, I'm all ears!
 
-> You could use add_hwgenerator_randomness, but you have no way to honor the
-> random.trust_cpu command-line parameter that way.
+Set a flag based on the compatible, then base runtime decisions off
+that.
 
-Right, that'd definitely be the wrong thing to do here.
+> I'm not sure if it's better, but could we just encode the list of
+> regulators into device tree. I'm a bit worried about special casing an
+> "sram" regulator given that other platforms might have a similar
+> situation but call the second regulator a different name.
 
-> The only thing I can imagine that would satisfy MarkR's constraints is to have
+Obviously the list of regulators bound on a given platform is encoded in
+the device tree but you shouldn't really be relying on that to figure
+out what to request in the driver - the driver should know what it's
+expecting.  Bear in mind that getting regulator stuff wrong can result
+in physical damage to the system so it pays to be careful and to
+consider that platform integrators have a tendency to rely on things
+that just happen to work but aren't a good idea or accurate
+representations of the system.  It's certainly *possible* to do
+something like that, the information is there, but I would not in any
+way recommend doing things that way as it's likely to not be robust.
 
-The main issue he had was as far as I can tell with adding complexity to
-the main runtime path which we now avoid, we now don't have anything
-that needs to disable preemption or anything like that.
+The possibility that the regulator setup may vary on other platforms
+(which I'd expect TBH) does suggest that just requesting a bunch of
+supply names optionally and hoping that we got all the ones that are
+important on a given platform is going to lead to trouble down the line.
 
-> a new archrandom.h interface, arch_get_random_boot_long().
+Steve, please fix your mail client to word wrap within paragraphs at
+something substantially less than 80 columns.  Doing this makes your
+messages much easier to read and reply to.
 
-An equivalent of device_add_randomness() that credits entropy would also
-do the trick for adding entropy, it'd definitely be more hassle to
-implement and quite possibly more trouble than it's worth compared to a
-simple call like you suggest but it does have the advantage that you
-know the core can't try to call it once we've got multiple CPUs up.
-
---cNdxnHkX5QqsyA0e
+--St7VIuEGZ6dlpu13
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4XUnEACgkQJNaLcl1U
-h9DGAQf/QSD41ePGeyBDzC2rWPZKUle+PpWqW8OGFYboYKFVlEsbJRl1bHx5lU4S
-+zHylR0A+cH11hS1KXFEmbmn9YeiHXK4m2Z/r+/FRXTwu5WF23NXb4HzpfGAsbxR
-lHpw6roQ+182EZoedzyQvAvKDuBsqXinB4Whmc7QWeTYNXEhfaA0nYq2KIq+DHoB
-/6GfZ1nRd6pVPcAyT6KL3ru6xidnWvmfapae/9uRD4PwdVqPrCriThBXy7qWe+8Q
-ebIVL0DFHf3ktCWMP7hpjT4WJJi4pn6qCo9yW/j6BvzQUQXt38Yii9oV0xqCI16Z
-1VFLu0VjuW8GrV0sjOLzJd27K8kPUg==
-=QpK3
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4XVJ0ACgkQJNaLcl1U
+h9AYxwf+KvXLp3chGCrua6k7mYwzuRnBu6lxudNUYlU35S6W/jvj7j24xoetg2SJ
+9bvm5PnWREES8yFnNE3P0v0XhwZ7KP223VeOsNEUEXaD34txxpfgIsFJ0pBSl5MY
+2s7l8R4CSe0EYuBc2Rg1g+KGb8mOwvdVaOYKdgMXHiscQ4Iq2QNNA+1kVjLFGE72
+kTPnycN7SvQLsxzJbMm7zday5eObx2CHrfxZjdlnSjGnao7fIcyIRnc6rjSf4VkG
++WjOYltzHe0oe9yfN+4+wjawAPt5OIr9BeD3L/Vdm9Lvy59wTPuairTYgV1e0+oV
+GDQ1CHWCdcr1P9Yi96zKy/4P4eEShw==
+=+CID
 -----END PGP SIGNATURE-----
 
---cNdxnHkX5QqsyA0e--
+--St7VIuEGZ6dlpu13--
 
 
---===============5047336238347507874==
+--===============3164395380486573612==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -161,5 +172,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5047336238347507874==--
+--===============3164395380486573612==--
 
