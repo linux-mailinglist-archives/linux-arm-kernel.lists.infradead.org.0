@@ -2,64 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2BFC1357DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 12:25:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D2B41357EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 12:28:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9LTdEOqZbKWmlcnirVVwt4TCEbq2Eo8CrbKkWUosOU4=; b=FOVL81QaNhXAJB
-	zifO0u6+UPI0i4jzQscWoJVQGOKAqEvXi5vtGYNg69ea0GGvhCT0gMUAjxWJelE889iCYexrBVSCn
-	ACg7ygt4qYOgnCrqA0wjP9tBatRMsjEAQ1aurvLuPXfeq5lNluTC4O4q23TDWsfi9EeMMKAdM48k1
-	+CItdWxWS/JZGWO0dDAVpsYOyBOGgnbToQQGNPppydRI77oHixGrjAAlWnB1DkHk4dn7XhTMW0fj3
-	svEfD8g8BIwn3UsV0lAalmXLMD3UHPCL+8BV1W866PU+mdt+z+mU++m5KYemQwUOsQ1q75/2jWBAm
-	SkFZWXOt5OwqacCUOj0g==;
+	List-Owner; bh=AMy1LJDjDaYG9aLYuVh5YMHR9VgHVeRG/rI1sgO5hTQ=; b=tQpdBQ4Z7mLAoK
+	JLmVm8qPB2xfFuq0pbfavlp0AwuBwLhbaa95zwDv6nqJoZKWRr1EwKiXJg3iNdAyTRR8CCPG6O2H/
+	MDQh+SvMBrG1btOdhYffnX2wFLU3+N9nq2FxXeeCp6YFkQbwYEp0DTd6PnIyUTJfK5lsO255MK/1R
+	QR+3whzqV9el+WlK6+0nLA3lGW8jF1qIm67hKBwCcQno0i5MyQEDsLg0XkLvwFugK2hhopgyw4OOe
+	lC+BouKU3fXJ33YZ0fgqnOWDKnxhOYgICya5vSQgA+1ZZ3geNcvnFefDGBQXcVEhpLCVF5cW3gsj8
+	5bjov1kg7JLPnuoHxPvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipVwD-0004gq-SA; Thu, 09 Jan 2020 11:25:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipVw3-0004J9-Eh
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 11:25:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C6A9A31B;
- Thu,  9 Jan 2020 03:25:06 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A57D3F703;
- Thu,  9 Jan 2020 03:25:06 -0800 (PST)
-Date: Thu, 9 Jan 2020 11:25:04 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
- full SPE profiling buffer controls
-Message-ID: <20200109112504.GZ42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-10-andrew.murray@arm.com>
- <20191221141325.5a177343@why>
- <20200107151328.GW42593@e119886-lin.cambridge.arm.com>
- <fc222fef381f4ada37966db0a1ec314a@kernel.org>
- <20200108115816.GB15861@willie-the-truck>
- <745529f7e469b898b74dfc5153e3daf6@kernel.org>
- <20200108131020.GB16658@willie-the-truck>
- <20200109112336.GY42593@e119886-lin.cambridge.arm.com>
+	id 1ipVza-0005QL-NR; Thu, 09 Jan 2020 11:28:46 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipVzT-0005Of-6Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 11:28:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=XBQ7YSDKaGefQuT+N4f2xVlGbixhEq0PXxbll+D7NZE=; b=xiPw2/XqAg3k8AUG8DihFK5vY
+ Ce6HPopQhhmgJOMJURZUMDq7mmmWWoDcze3D5y/ZeOcigz7l7KfhomjYvVtfi9x0RIY+O5+815QSk
+ xiqI9UBC/Qr9+ZOKgiCgr9IngY0XWIDv0KyFXbP/zKlUiF6lH8vCsECcc3GM1VbMz7x8AQ8xl1MIx
+ 4ui8g64W2WagWmCbD7z9gaschivtDA4XjAsmfD5KOHt5DlMRlsbNGAAz2FyVOsNd/HN5O9KK/ARaT
+ OtoC00lFbC8mHwVmScN7lkYjmgtFUnLEflletfuGBQ4gItcWIXBN8TNx1l5b3kB2xJGKZn6CfmVNi
+ 5E3MgA6Cg==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:36030)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ipVzC-0004gX-Eq; Thu, 09 Jan 2020 11:28:22 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ipVz6-0000Sn-IU; Thu, 09 Jan 2020 11:28:16 +0000
+Date: Thu, 9 Jan 2020 11:28:16 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Shawn Guo <shawn.guo@linaro.org>
+Subject: Re: [PATCH] PCI: dwc: Separate CFG0 and CFG1 into different ATU
+ regions
+Message-ID: <20200109112816.GP25745@shell.armlinux.org.uk>
+References: <20200109060657.1953-1-shawn.guo@linaro.org>
+ <CH2PR12MB40073FCB953227A37F7A1A91DA390@CH2PR12MB4007.namprd12.prod.outlook.com>
+ <20200109111457.GA18850@T480>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200109112336.GY42593@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20200109111457.GA18850@T480>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_032507_596575_BAD6B159 
-X-CRM114-Status: GOOD (  37.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_032839_243069_3A92B719 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,142 +89,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, kvm@vger.kernel.org,
- Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
- Sudeep Holla <Sudeep.Holla@arm.com>, kvmarm <kvmarm@lists.cs.columbia.edu>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Zaihai Yu <yuzaihai@hisilicon.com>, Jingoo Han <jingoohan1@gmail.com>,
+ Pratyush Anand <pratyush.anand@gmail.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 11:23:37AM +0000, Andrew Murray wrote:
-> On Wed, Jan 08, 2020 at 01:10:21PM +0000, Will Deacon wrote:
-> > On Wed, Jan 08, 2020 at 12:36:11PM +0000, Marc Zyngier wrote:
-> > > On 2020-01-08 11:58, Will Deacon wrote:
-> > > > On Wed, Jan 08, 2020 at 11:17:16AM +0000, Marc Zyngier wrote:
-> > > > > On 2020-01-07 15:13, Andrew Murray wrote:
-> > > > > > Looking at the vcpu_load and related code, I don't see a way of saying
-> > > > > > 'don't schedule this VCPU on this CPU' or bailing in any way.
-> > > > > 
-> > > > > That would actually be pretty easy to implement. In vcpu_load(), check
-> > > > > that that the CPU physical has SPE. If not, raise a request for that
-> > > > > vcpu.
-> > > > > In the run loop, check for that request and abort if raised, returning
-> > > > > to userspace.
+On Thu, Jan 09, 2020 at 07:14:58PM +0800, Shawn Guo wrote:
+> Hi Gustavo,
 > 
-> I hadn't really noticed the kvm_make_request mechanism - however it's now
-> clear how this could be implemented.
+> Thanks for taking a look.
 > 
-> This approach gives responsibility for which CPUs should be used to userspace
-> and if userspace gets it wrong then the KVM_RUN ioctl won't do very much.
+> On Thu, Jan 09, 2020 at 10:37:14AM +0000, Gustavo Pimentel wrote:
+> > Hi Shawn,
+> > 
+> > On Thu, Jan 9, 2020 at 6:6:57, Shawn Guo <shawn.guo@linaro.org> wrote:
+> > 
+> > > Some platform has 4 (or more) viewports.  In that case, CFG0 and CFG1
+> > 
+> > Remove double space before "In that..." 
 > 
-> 
-> > > > > 
-> > > > > Userspace can always check /sys/devices/arm_spe_0/cpumask and work out
-> > > > > where to run that particular vcpu.
-> > > > 
-> > > > It's also worth considering systems where there are multiple
-> > > > implementations
-> > > > of SPE in play. Assuming we don't want to expose this to a guest, then
-> > > > the
-> > > > right interface here is probably for userspace to pick one SPE
-> > > > implementation and expose that to the guest.
-> 
-> If I understand correctly then this implies the following:
-> 
->  - If the host userspace indicates it wants support for SPE in the guest (via 
->    KVM_SET_DEVICE_ATTR at start of day) - then we should check in vcpu_load that
->    the minimum version of SPE is present on the current CPU. 'minimum' because
->    we don't know why userspace has selected the given cpumask.
-> 
->  - Userspace can get it wrong, i.e. it can create a CPU mask with CPUs that
->    have SPE with differing versions. If it does, and all CPUs have some form of
->    SPE then errors may occur in the guest. Perhaps this is OK and userspace
->    shouldn't get it wrong?
+> Hmm, that was intentional.  My writing practice is using two spaces
+> after a period and single space after a comma.  Is it a bad habit?
 
-Actually this could be guarded against by emulating the ID_AA64DFR0_EL1 such to
-cap the version to the minimum SPE version - if absolutely required.
+Mine too.  It is not a bad habit, it's just a different style, but
+some people can't cope with other people having different styles
+and feel an urge to try and make them conform to their own ideals.
+At the end of the day, it is personal style, and should *not* be
+commented on, IMHO.
 
-Thanks,
-
-Andrew Murray
-
-> 
-> 
-> > > >  That fits with your idea
-> > > > above,
-> > > > where you basically get an immediate exit if we try to schedule a vCPU
-> > > > onto
-> > > > a CPU that isn't part of the SPE mask.
-> > > 
-> > > Then it means that the VM should be configured with a mask indicating
-> > > which CPUs it is intended to run on, and setting such a mask is mandatory
-> > > for SPE.
-> > 
-> > Yeah, and this could probably all be wrapped up by userspace so you just
-> > pass the SPE PMU name or something and it grabs the corresponding cpumask
-> > for you.
-> > 
-> > > > > > One solution could be to allow scheduling onto non-SPE VCPUs but wrap
-> > > > > > the
-> > > > > > SPE save/restore code in a macro (much like kvm_arm_spe_v1_ready) that
-> > > > > > reads the non-sanitised feature register. Therefore we don't go bang,
-> > > > > > but
-> > > > > > we also increase the size of any black-holes in SPE capturing. Though
-> > > > > > this
-> > > > > > feels like something that will cause grief down the line.
-> > > > > >
-> > > > > > Is there something else that can be done?
-> > > > > 
-> > > > > How does userspace deal with this? When SPE is only available on
-> > > > > half of
-> > > > > the CPUs, how does perf work in these conditions?
-> > > > 
-> > > > Not sure about userspace, but the kernel driver works by instantiating
-> > > > an
-> > > > SPE PMU instance only for the CPUs that have it and then that instance
-> > > > profiles for only those CPUs. You also need to do something similar if
-> > > > you had two CPU types with SPE, since the SPE configuration is likely to
-> > > > be
-> > > > different between them.
-> > > 
-> > > So that's closer to what Andrew was suggesting above (running a guest on a
-> > > non-SPE CPU creates a profiling black hole). Except that we can't really
-> > > run a SPE-enabled guest on a non-SPE CPU, as the SPE sysregs will UNDEF
-> > > at EL1.
-> > 
-> > Right. I wouldn't suggest the "black hole" approach for VMs, but it works
-> > for userspace so that's why the driver does it that way.
-> > 
-> > > Conclusion: we need a mix of a cpumask to indicate which CPUs we want to
-> > > run on (generic, not-SPE related), 
-> 
-> If I understand correctly this mask isn't exposed to KVM (in the kernel) and
-> KVM (in the kernel) is unware of how the CPUs that have KVM_RUN called are
-> selected.
-> 
-> Thus this implies the cpumask is a feature of KVM tool or QEMU that would
-> need to be added there. (E.g. kvm_cmd_run_work would set some affinity when
-> creating pthreads - based on a CPU mask triggered by setting the --spe flag)?
-> 
-> Thanks,
-> 
-> Andrew Murray
-> 
-> > and a check for SPE-capable CPUs.
-> > > If any of these condition is not satisfied, the vcpu exits for userspace
-> > > to sort out the affinity.
-> > > 
-> > > I hate heterogeneous systems.
-> > 
-> > They hate you too ;)
-> > 
-> > Will
-> _______________________________________________
-> kvmarm mailing list
-> kvmarm@lists.cs.columbia.edu
-> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
