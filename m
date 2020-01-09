@@ -2,91 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44CAD135E16
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:20:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D3F2135E18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:21:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IIpl/u0diF1kkLiuZx73Lv+8LiV91+PnvYs/2IWzhOg=; b=ZzObYQPNlhM0Qu
-	g74zHGz92iFQSJpuNxNTLnJoRXnz4gJa8WuxlE4gerZktzHOvlgAhnOXT3S97eLssadkmaYqYPmzf
-	QQDlz5BzzXeasBABJFDMHRy/Z2AEU7iGZZS9ouZaNfaBh6smhdo/y6RLq+UdqekewE1PirYlRzrwY
-	+RDqoOFfCwzcYNn02PI15x81c47s2v1kzSWUDZku85P/IoPTQkN0NzWjAWa5bDq1I5BjgmxNFAQ+t
-	PsQ3gyHXA3VDFd9THY1ul+yFDlGyEG4jv5aQgc+RheJIp0bSeVB1QcewlUZz6h/hXQhIAhbbcjTud
-	SqPh//F1wZ1tdjCEANyA==;
+	List-Owner; bh=MxTWSFtD9JXBfXA22lR/Ec2FFF/ZvKTOwJ1ipDEb9KI=; b=s+p0IJs8buYQiU
+	F013KV2KOTh3FzK2GCqDDxDPGYibFq5ga3TcO4u/kxWXollv564odaaPDdgf5fKX/XYZi7LzRL3KE
+	WA3ISmKdRAb1PifnYAg08XE/R5G5zIaBGSdX1/dnRTHkWKAN1jUrw4KgnwT0JEYjZbI0RcKewb5+y
+	LN/XyZIFEBMMr7dqe29LdMYt4n8sudxk0SlxBkkRdmq51XRLTnVkJjrXnzPSwdJzTfalTfCIbMG4E
+	Xwu5JjVZyOtixs10NRO6AwxDsUl+Fi2uxRxyDCQ8IOdf8h3v8DBdmwy3u4Y5/RCB+cCX4+DndKjqJ
+	/9l62NwtJ3sCVa8hPRrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaXy-0007Fc-TP; Thu, 09 Jan 2020 16:20:34 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ipaYZ-0007m5-NC; Thu, 09 Jan 2020 16:21:11 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaNN-0002YP-L9
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:09:39 +0000
+ id 1ipaNP-0002Zx-Im
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:09:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578586176;
+ s=mimecast20190719; t=1578586178;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=IvAAZHcfP6t4zLwyXztvIUrcq7T/iPtXd+REm1qHjSI=;
- b=LIkK9OsfPfI4FHZLo4LPY4w5ZKD28CWLE+4mcKpI4V5Tr2y6x3bObSIU+Aa5UJ4kntUDbE
- 7hb9YyXxU5tGKLSKXgvhs5xsyiS3rvRHP1dnnhspeVRAeRqmHJj5Dy2zV4NOiTGYAibBZK
- c/X61wq3BDaLrPB8WopzsySPDUFCzLk=
-Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
- [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-327-aFtrgCRwPaKRKUrUC3jcAg-1; Thu, 09 Jan 2020 11:09:33 -0500
-Received: by mail-wr1-f69.google.com with SMTP id u18so3047070wrn.11
+ bh=wn1PlW5FinwniCqrxDmb+VE4wicag5GxlG8u/eXxlDw=;
+ b=AZnf+wMBi8oBnLj3J3X/2hjZCEjUEhQT9MN0XtcbNjEV7vcXZoxKHQnetuLtwF6v2BOsDU
+ M9dubHtfVgur8xvUgoKskFo82pYJhuiwCKwrLdgn010e4t+aLcG6kwL/jfzmRD8f0nDj7A
+ Aw0vdc9uj2Ba/AEXlw+CSNKSjWOJy6k=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-417-X5JnqSg4O1GQfhPsEUKapA-1; Thu, 09 Jan 2020 11:09:35 -0500
+Received: by mail-wr1-f71.google.com with SMTP id o6so3042271wrp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:09:32 -0800 (PST)
+ Thu, 09 Jan 2020 08:09:34 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+WGb3puDmUzCYPuLm6oXYBSJ99/bjzxumOQhQE5nO+o=;
- b=jhLvMeWZ+xr7LH12/98UqDem2tE1nWBF420wx07k+hr8Z+2XhHWtPgsoDtcbxBpGyz
- pWNAjVW1zbnZTuVVwXHwZFcCiOghWlLHAoN1ShjU/fg5mMAV4DQTy7C1o9YCQESRlZZB
- COAh/uQ9udC/dr2qfxHiDiuINuKaiemdILYtK7uzDOslfC81H6TS5XZ77f+5/N0qkEie
- y2RZ4iB45dx6qZ65ACaXCvCoH9LiVd7VqA8m27t5fqdkH28MH8DUqJ79E8zHN8keItwX
- orZ4n4vpY6+3UvTvZMimv4yngOX+KaOBUkHq7Kkr1oloS8rSewhTV0mX7ya2aXubYi0Y
- 4y0Q==
-X-Gm-Message-State: APjAAAVQ91enCReCBzSZ5I4EFPoVVhCsqi3VHZm5Pp2UDLwUc7BFWKjF
- z2Sbf5Szvdcj+xlTAHdWOJwS+4+CzKLYkR5VSnxQT+W2ZlqofPzK6Nsm/VdEt5wxeQS0opfrhck
- eO4RrjrWQtG0P3rLQVHidVR6694rf2VBnebI=
-X-Received: by 2002:a5d:6a0f:: with SMTP id m15mr11728058wru.40.1578586172085; 
- Thu, 09 Jan 2020 08:09:32 -0800 (PST)
-X-Google-Smtp-Source: APXvYqz5V26QjGcxR+qc3PnQJZqKeHaPwzwzDGc3YkRawBmFtmaeyy4yWAZvPxOmJY0ku0p1ZNx85w==
-X-Received: by 2002:a5d:6a0f:: with SMTP id m15mr11728054wru.40.1578586171944; 
- Thu, 09 Jan 2020 08:09:31 -0800 (PST)
+ bh=x/rxJnoz2dp9/OgwOSiXn1XXvPb+lm1fPDfoPO+TlzQ=;
+ b=K/Z5CIZ9Gg4AYWxiJ3yZWCWo6QdC1bhJZlsj+68FO3KLmVUdgqhtLPu2jd8+KF3rQK
+ 3XTDrkRk1KN/zEnVoMY/nCYHtzqBtQzsU+2kwf2FPDb/h8jUYcoladiC6tDmDAHAL6EY
+ JoDN1zGYqqA1OgrNXYe0+98FbpCGd6Xh+uMhl2d9Bjc1PmXcGVtzi2aUtBr4CKSqn2GL
+ pZeR7AM5tqr1p7EelZjXpp0+/yo6f8VFxylt5xRsJMgkItD4Z3/xOLDwg4YOtjF+/eLE
+ P1jJGx7S9ikkE2udRnatsksSeBVwx2nUaZECEmUdbFSF4LS0Wn6o6xj6VsQseVOzv+ns
+ R2vQ==
+X-Gm-Message-State: APjAAAUgGoDWHIN/MGJ7/Am//YZOAa8nxLYy3xb34nyD1YB8W8FnkCxP
+ +2KmwCxXLklamQX708GxCjnHiUMZG4WbfKnckbLtnP1aA+4nd2m+cx2AeZ2JKYmUAaxibgjRJpK
+ KVS2Y+URO0MDf7S1pj10w6afIxaTKpRP7YFg=
+X-Received: by 2002:a5d:6a88:: with SMTP id s8mr11396382wru.173.1578586173702; 
+ Thu, 09 Jan 2020 08:09:33 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzzBZ0BLVEYI65yhSFFLKAZJl16GgmFQUcOJvP3sjdvkoaxTwI5EQ3O12ZHhk4lBNKmTURtAg==
+X-Received: by 2002:a5d:6a88:: with SMTP id s8mr11396364wru.173.1578586173488; 
+ Thu, 09 Jan 2020 08:09:33 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id e8sm8517707wrt.7.2020.01.09.08.09.30
+ by smtp.gmail.com with ESMTPSA id e8sm8517707wrt.7.2020.01.09.08.09.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:09:31 -0800 (PST)
+ Thu, 09 Jan 2020 08:09:32 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 50/57] arm64: kernel: Add exception on kuser32 to prevent
- stack analysis
-Date: Thu,  9 Jan 2020 16:02:53 +0000
-Message-Id: <20200109160300.26150-51-jthierry@redhat.com>
+Subject: [RFC v5 51/57] arm64: crypto: Add exceptions for crypto object to
+ prevent stack analysis
+Date: Thu,  9 Jan 2020 16:02:54 +0000
+Message-Id: <20200109160300.26150-52-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: aFtrgCRwPaKRKUrUC3jcAg-1
+X-MC-Unique: X5JnqSg4O1GQfhPsEUKapA-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080937_789675_70E6F49D 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20200109_080939_725922_D4FCF51B 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -118,31 +118,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Raphael Gault <raphael.gault@arm.com>
 
-kuser32 being used for compatibility, it contains a32 instructions
-which are not recognised by objtool when trying to analyse arm64
-object files. Thus, we add an exception to skip validation on this
-particular file.
+Some crypto modules contain `.word` of data in the .text section.
+Since objtool can't make the distinction between data and incorrect
+instruction, it gives a warning about the instruction being unknown
+and stops the analysis of the object file.
+
+The exception can be removed if the data are moved to another section
+or if objtool is tweaked to handle this particular case.
 
 Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- arch/arm64/kernel/Makefile | 3 +++
+ arch/arm64/crypto/Makefile | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
-index fc6488660f64..f5994679db5f 100644
---- a/arch/arm64/kernel/Makefile
-+++ b/arch/arm64/kernel/Makefile
-@@ -33,6 +33,9 @@ ifneq ($(CONFIG_COMPAT_VDSO), y)
- obj-$(CONFIG_COMPAT)			+= sigreturn32.o
- endif
- obj-$(CONFIG_KUSER_HELPERS)		+= kuser32.o
-+
-+OBJECT_FILES_NON_STANDARD_kuser32.o := y
-+
- obj-$(CONFIG_FUNCTION_TRACER)		+= ftrace.o entry-ftrace.o
- obj-$(CONFIG_MODULES)			+= module.o
- obj-$(CONFIG_ARM64_MODULE_PLTS)		+= module-plts.o
+diff --git a/arch/arm64/crypto/Makefile b/arch/arm64/crypto/Makefile
+index d0901e610df3..576a19923185 100644
+--- a/arch/arm64/crypto/Makefile
++++ b/arch/arm64/crypto/Makefile
+@@ -43,9 +43,11 @@ aes-neon-blk-y := aes-glue-neon.o aes-neon.o
+ 
+ obj-$(CONFIG_CRYPTO_SHA256_ARM64) += sha256-arm64.o
+ sha256-arm64-y := sha256-glue.o sha256-core.o
++OBJECT_FILES_NON_STANDARD_sha256-core.o := y
+ 
+ obj-$(CONFIG_CRYPTO_SHA512_ARM64) += sha512-arm64.o
+ sha512-arm64-y := sha512-glue.o sha512-core.o
++OBJECT_FILES_NON_STANDARD_sha512-core.o := y
+ 
+ obj-$(CONFIG_CRYPTO_CHACHA20_NEON) += chacha-neon.o
+ chacha-neon-y := chacha-neon-core.o chacha-neon-glue.o
+@@ -62,6 +64,7 @@ aes-arm64-y := aes-cipher-core.o aes-cipher-glue.o
+ 
+ obj-$(CONFIG_CRYPTO_AES_ARM64_BS) += aes-neon-bs.o
+ aes-neon-bs-y := aes-neonbs-core.o aes-neonbs-glue.o
++OBJECT_FILES_NON_STANDARD_aes-neonbs-core.o := y
+ 
+ CFLAGS_aes-glue-ce.o	:= -DUSE_V8_CRYPTO_EXTENSIONS
+ 
 -- 
 2.21.0
 
