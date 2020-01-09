@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DDB3135DDD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:13:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60683135DE2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:13:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjanM//+zgpRXeGnXUpMmap32m1qdMiQS0b7zLQorVI=; b=HmMs+RIaFi/MMW
-	4WOZcqJNcfuH/fwQPs8yMNRyPuHO9bmGLotIJBfdDUSsKqdb26f8KABEtXtIzpWgbn11uexs214TU
-	7lBiBDgwJ1rNPwqXkowMrGiF6jxXY4JFYwd8VSQAgOfBGr8Gom/RYnE0ee3GMIzEc6oWnfmyZZ4/C
-	amHMmscapPGnZFh4hc4foyrD/ETcNtAS/TFqkabH7opjZ1NbO10/q0D+UJWGviQ2RDywuELWZNbCC
-	Y59rC1HkDwV2Da/UPgd9xm981aMO6WCbHM6fZJ8f6cn0Mrz1aleVK+NFXNPMNc96vGIVLq55p12Na
-	+vG39TuSxOPkg2vv7Agg==;
+	List-Owner; bh=et7yWr5LfG4Te29SAXMdkxdMoVROdRWD7TciuO1zGTY=; b=ipvVO8+WYIoVBg
+	LT+57jDesldjFDu+so3lXowAmBGdWU1UowAdVFxWmVfk6qKxcY2UcJABPtAiDtZvkMKJksyJich3j
+	hmDhpP0ZnG79akSzJB83wmSk8UFLQWlGswjU52odKQ1Meg9CxVEvQAKKvQe7+fjGYvfN5MFsJWYJg
+	B++9MS+sSacmDfjjdbBdo0mZK5zIoAWynFSg/HQ8gI4T3BdJBLndky4TCOkSR+WG3yXWVR1yRT2xE
+	IWJbXcaOboBPcEFHhRQzxdwuaCG+ysMLX6XHxzLOcqyC70cvMddgaYkohcqEKlSPE20A8+DKgdihl
+	Y9azpPOY6YIF1aLeH6Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaQS-0006P5-FB; Thu, 09 Jan 2020 16:12:48 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1ipaQy-0006sL-3d; Thu, 09 Jan 2020 16:13:20 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaKJ-0007xw-1Y
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:06:28 +0000
+ id 1ipaKO-00082N-6S
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:06:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578585985;
+ s=mimecast20190719; t=1578585990;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=2idOYVbFUu8UYWjig8IIHjgpdBbgTVkfK7tIeXEZk8w=;
- b=espufZzuc/NsM4Efm6qptHC8sj8P/YQRxLsbWAuHagCsviRaVglFV6Dt0unsAY3X9Ffqni
- Wd4iKgDykN7fPSQHmZm3Drwgso0hl2uMd3tyDvotEys81TQuSGMheYNcodamlp64M/FYFs
- eJD8yenfUHCHCygC952eIHcCScJdd6c=
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-209-KuzAGEg_N_KCJu7e_3AtrQ-1; Thu, 09 Jan 2020 11:06:24 -0500
-Received: by mail-wm1-f69.google.com with SMTP id h130so1094331wme.7
+ bh=tlQRkFiwtOzDsnF1EvmrQl/6BVM4mJGyHhan4vNK2JU=;
+ b=egMSxT1ojSXQOE3UzrJdRBqE21wPBts+Q0HOZJ4hyw1NfabaCJ3oSjciCj3DmfPnV5+yfY
+ q8dmapjLEyvlAjpUt412CwDqwlf84RD22pA4FDK8+fiLjT+u/fsxFd/JLpIzYyR4NBCY2R
+ LEq00RwSiJrRhLYK/jRgF5N1FkHfyOY=
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-345-vdmisrpVM3qaXn4RHFGepA-1; Thu, 09 Jan 2020 11:06:26 -0500
+Received: by mail-wm1-f71.google.com with SMTP id t17so618165wmi.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:06:24 -0800 (PST)
+ Thu, 09 Jan 2020 08:06:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HNhyss2u9SsGVYYccTk/iU0pIIQIcXT3bxVXb0UyHWg=;
- b=RXJd+KAqdhAOEA4QHYMu8R5xZtv1tIf7NFNrcGEplRIDZsOSd+bYKNa4cmS1ODE0xc
- goq+X8s5yOSWu8CO8Ay1LnpYx3UZBi3FV4LdF0+/hm5DBQMhXzPxYB4TFVA3Ylu2V4Le
- V98ow8KurFGWqXu0dW3WyX9cL5TlaJVtDcxRyBek5dKeZFj24NcgIJw52W/0OMzDVuE6
- vSegijSjvAIyJWCAfMoQoHyB0V8DdpdFVYocqWPBpkaZE16quFrjOKewCYUm7K4M1hWB
- 5X0P14PdP8Oa9GvdSA+aJvk+eVaCuaGyHCguEAKeuW+9dV9bpoq3QZJbUPOaw3nQYui5
- 0kyA==
-X-Gm-Message-State: APjAAAUO2I6xhSWK2qiGU/S6NqFWJkwSlHt0JUwP/If1jADF565+6DWk
- L7pEAfTWz+IQ0q6b2iWzc8+YW+UQqnUDFLWa0UH9YtsVrAcCNB7GdYk+iDEIncvYdgxZyV/SjKf
- Sv+dGCo+UvfmpxCYFKavaIDFDnEH8it/5pp8=
-X-Received: by 2002:adf:f10a:: with SMTP id r10mr11698854wro.202.1578585983152; 
- Thu, 09 Jan 2020 08:06:23 -0800 (PST)
-X-Google-Smtp-Source: APXvYqwfuKPzYnuaQfyIgBEkCdvvo1v0X3eOw5Mldms4E6Ry3uTgyBQ8xNyJC89tB0eee772rraRfA==
-X-Received: by 2002:adf:f10a:: with SMTP id r10mr11698826wro.202.1578585982936; 
- Thu, 09 Jan 2020 08:06:22 -0800 (PST)
+ bh=J63NkwzczmrLcPGsOIe2c0tfTD5HWt1z/wmViklA3es=;
+ b=p+Ss6gTSwwJpM6a15njb7ihs7euNFFPvkPDQa4w64ES9oRfhxuwy1fZ27npF0+bVfP
+ 9hkL5/UjLAZVrtgFwxAY7bik4Usy9aS7C7DPHUEOBmbRXGTDcwbZV3NkUqc3c9UFYjR9
+ 6+UOoqmC3ynSGNJtK9On2znZ0jOVeJ12IGFIHdxHLZLzKR5E9Lb3MxSJfqURSXP/Kz1e
+ zvaueClzG9TK6go1hsCTlISHyj2Mk35hrbpVmIUDVTlayIKSnGWf/0ZbKXOfVi4EqTEy
+ QunAPPi4sWC8P0aldA8G2vTx7sUHtnSrzqgLVZ8u5Fu3Zv4RUGuE2KGzzuOtoQS41eo0
+ Vx0Q==
+X-Gm-Message-State: APjAAAUAbBBifD3NOcyhPi9RGVEzcCyW2O9/sC42vkjNwwWWY8HX5fqi
+ q491Wfoket5MXFh/J35YK5c3etMJUw2omQL2f85htjDmD2P7LsCvLT2U9nLO9RUE8dZNRPzEiFm
+ XcqGHy6S04LbCYl459IX4b6jXop+hFwo8lms=
+X-Received: by 2002:a5d:4ed0:: with SMTP id s16mr11380323wrv.144.1578585985410; 
+ Thu, 09 Jan 2020 08:06:25 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxG3LuVTogmg7FJSWlNc329KhrNkP0B6SiHOu3F08s0s+2V12EeNGQmM0ARlcnccvAJXUA4Ew==
+X-Received: by 2002:a5d:4ed0:: with SMTP id s16mr11380293wrv.144.1578585985185; 
+ Thu, 09 Jan 2020 08:06:25 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id e18sm8643101wrr.95.2020.01.09.08.06.21
+ by smtp.gmail.com with ESMTPSA id e18sm8643101wrr.95.2020.01.09.08.06.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:06:22 -0800 (PST)
+ Thu, 09 Jan 2020 08:06:24 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 27/57] objtool: arm64: Decode instruction triggering context
- switch
-Date: Thu,  9 Jan 2020 16:02:30 +0000
-Message-Id: <20200109160300.26150-28-jthierry@redhat.com>
+Subject: [RFC v5 28/57] objtool: arm64: Decode branch instructions with PC
+ relative immediates
+Date: Thu,  9 Jan 2020 16:02:31 +0000
+Message-Id: <20200109160300.26150-29-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: KuzAGEg_N_KCJu7e_3AtrQ-1
+X-MC-Unique: vdmisrpVM3qaXn4RHFGepA-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080627_170118_229314CE 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200109_080632_425352_4A514D43 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -117,44 +116,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Decode instructions that volutarily trigger an exception to change
-the context of execution.
+Decode instructions that cause a jump in the execution flow, adding
+an immediate value to the current instruction counter.
 
 Suggested-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- tools/objtool/arch/arm64/decode.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ tools/objtool/arch/arm64/decode.c             | 79 +++++++++++++++++++
+ .../objtool/arch/arm64/include/insn_decode.h  | 11 +++
+ 2 files changed, 90 insertions(+)
 
 diff --git a/tools/objtool/arch/arm64/decode.c b/tools/objtool/arch/arm64/decode.c
-index 1609750cc4b9..5eba83c5d5bc 100644
+index 5eba83c5d5bc..7986ded8b622 100644
 --- a/tools/objtool/arch/arm64/decode.c
 +++ b/tools/objtool/arch/arm64/decode.c
-@@ -508,6 +508,10 @@ int arm_decode_except_gen(u32 instr, enum insn_type *type,
- #define INSN_HVC	0b00000010
- #define INSN_SMC	0b00000011
- #define INSN_BRK	0b00100000
-+#define INSN_HLT	0b01000000
-+#define INSN_DCPS1	0b10100001
-+#define INSN_DCPS2	0b10100010
-+#define INSN_DCPS3	0b10100011
+@@ -424,6 +424,26 @@ static struct aarch64_insn_decoder br_sys_decoder[] = {
+ 		.value = 0b1100000000000000000000,
+ 		.decode_func = arm_decode_except_gen,
+ 	},
++	{
++		.mask = 0b1111000000000000000000,
++		.value = 0b0100000000000000000000,
++		.decode_func = arm_decode_br_cond_imm,
++	},
++	{
++		.mask = 0b0110000000000000000000,
++		.value = 0b0000000000000000000000,
++		.decode_func = arm_decode_br_uncond_imm,
++	},
++	{
++		.mask = 0b0111000000000000000000,
++		.value = 0b0010000000000000000000,
++		.decode_func = arm_decode_br_comp_imm,
++	},
++	{
++		.mask = 0b0111000000000000000000,
++		.value = 0b0011000000000000000000,
++		.decode_func = arm_decode_br_tst_imm,
++	},
+ };
  
- 	switch (decode_field) {
- 	case INSN_SVC:
-@@ -551,6 +555,13 @@ int arm_decode_except_gen(u32 instr, enum insn_type *type,
- 			break;
- 		}
- 		return 0;
-+	case INSN_HLT:
-+	case INSN_DCPS1:
-+	case INSN_DCPS2:
-+	case INSN_DCPS3:
-+		*immediate = imm16;
-+		*type = INSN_CONTEXT_SWITCH;
-+		return 0;
- 	default:
- 		return arm_decode_unknown(instr, type, immediate, ops_list);
- 	}
+ int arm_decode_br_sys(u32 instr, enum insn_type *type,
+@@ -575,3 +595,62 @@ int arm_decode_except_gen(u32 instr, enum insn_type *type,
+ #undef INSN_DCPS2
+ #undef INSN_DCPS3
+ }
++
++int arm_decode_br_cond_imm(u32 instr, enum insn_type *type,
++			   unsigned long *immediate, struct list_head *ops_list)
++{
++	unsigned char o0 = 0, o1 = 0;
++	u32 imm19;
++
++	o0 = EXTRACT_BIT(instr, 4);
++	o1 = EXTRACT_BIT(instr, 24);
++	imm19 = (instr >> 5) & ONES(19);
++
++	*immediate = SIGN_EXTEND(imm19 << 2, 19);
++
++	if ((o1 << 1) | o0)
++		return arm_decode_unknown(instr, type, immediate, ops_list);
++
++	*type = INSN_JUMP_CONDITIONAL;
++
++	return 0;
++}
++
++int arm_decode_br_uncond_imm(u32 instr, enum insn_type *type,
++			     unsigned long *immediate,
++			     struct list_head *ops_list)
++{
++	unsigned char decode_field = 0;
++	u32 imm26 = 0;
++
++	decode_field = EXTRACT_BIT(instr, 31);
++	imm26 = instr & ONES(26);
++
++	*immediate = SIGN_EXTEND(imm26 << 2, 28);
++	if (decode_field == 0)
++		*type = INSN_JUMP_UNCONDITIONAL;
++	else
++		*type = INSN_CALL;
++
++	return 0;
++}
++
++int arm_decode_br_comp_imm(u32 instr, enum insn_type *type,
++			   unsigned long *immediate, struct list_head *ops_list)
++{
++	u32 imm19 = (instr >> 5) & ONES(19);
++
++	*immediate = SIGN_EXTEND(imm19 << 2, 21);
++	*type = INSN_JUMP_CONDITIONAL;
++	return 0;
++}
++
++int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
++			  unsigned long *immediate, struct list_head *ops_list)
++{
++	u32 imm14 = (instr >> 5) & ONES(14);
++
++	*immediate = SIGN_EXTEND(imm14 << 2, 16);
++	*type = INSN_JUMP_CONDITIONAL;
++	return 0;
++}
+diff --git a/tools/objtool/arch/arm64/include/insn_decode.h b/tools/objtool/arch/arm64/include/insn_decode.h
+index a55dcbfcfed2..ceb80a58c548 100644
+--- a/tools/objtool/arch/arm64/include/insn_decode.h
++++ b/tools/objtool/arch/arm64/include/insn_decode.h
+@@ -72,4 +72,15 @@ int arm_decode_system_regs(u32 instr, enum insn_type *type,
+ 			   struct list_head *ops_list);
+ int arm_decode_except_gen(u32 instr, enum insn_type *type,
+ 			  unsigned long *immediate, struct list_head *ops_list);
++int arm_decode_br_uncond_imm(u32 instr, enum insn_type *type,
++			     unsigned long *immediate,
++			     struct list_head *ops_list);
++int arm_decode_br_comp_imm(u32 instr, enum insn_type *type,
++			   unsigned long *immediate,
++			   struct list_head *ops_list);
++int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
++			  unsigned long *immediate, struct list_head *ops_list);
++int arm_decode_br_cond_imm(u32 instr, enum insn_type *type,
++			   unsigned long *immediate,
++			   struct list_head *ops_list);
+ #endif /* _ARM_INSN_DECODE_H */
 -- 
 2.21.0
 
