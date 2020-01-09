@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E6D51358C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 13:04:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED77F1358DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 13:08:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lvhmrpAvUptnlxfu3dWtLlTZIyJt5r79WQW44tJm24w=; b=UcsoY+LQVVaOvdtTKMSKT6bGO
-	qam6egpPtwA/RW5dulaElR3J9qJtRAMMMkEDmo2yzRSaXU8oMFzDSxkbz6w35ECR0ycSIw9CJGwlR
-	oj2sq8T/aEleAyKNn93R8gNS9PXL2YY/5QVTQoTWyGKRGNmYGHzGOgub+w/6X/3Jre6adM2HK10b/
-	PwT7MJ0Iax+kZh/lItk6MRbonUiNqeVhiNk7NcaakTw0H7eSM0+RkNn5qKgxE8SwVA7KXGY4mplVr
-	JR4L9S7UMuGVF4N+MWM3cnhVLnc44N0i2K8p+gS5lzVUdY5KHkS8zxvdf4Ckdb/1Juyg4M7tmFes9
-	Mw8mlgBMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Px4PWR9sM0DZrnnMbo3ZMZqFWF3Pdgmpd71sc371kGU=; b=f2EQ+QmQMUC1Bk
+	l4iODmN02ddnKYqdfRZK7OD7mroE1j3X6bwhNCJxNR2ZrxRLLSPohltZfYcQeq89P6yjHbU+nFT1/
+	euMg7bIoFkZdmcW/CxcsZneltoRhaCZCdtiyCl1ld6Nxs//zI3g3y0fLJgR6aVsOT0sjnwzCcfwU7
+	YHr3umER3OzhaAu6oDHzMQTnExpUS+g9F4G3N0g1bKUPo1ZrCdFTrWlMJ46Gvkg5XQsEgDXV7YMsf
+	+SzGrUXsj3TIgh3+4UO6wpnxu9poZXoJUgCoSmrC3W7HlaWS8l+qw635LFdo/SckMbZkM0Ig5CKJM
+	QoZ7oY5m0YEdwi9gQWoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipWXr-00069r-TB; Thu, 09 Jan 2020 12:04:11 +0000
+	id 1ipWbm-00082Q-3D; Thu, 09 Jan 2020 12:08:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipWXc-00069B-Tq; Thu, 09 Jan 2020 12:03:58 +0000
+ id 1ipWbd-00081a-G8
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 12:08:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7293831B;
- Thu,  9 Jan 2020 04:03:56 -0800 (PST)
-Received: from [10.1.32.29] (e122027.cambridge.arm.com [10.1.32.29])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C6553F534;
- Thu,  9 Jan 2020 04:03:53 -0800 (PST)
-Subject: Re: [PATCH v2 3/7] drm/panfrost: Improve error reporting in
- panfrost_gpu_power_on
-To: Nicolas Boichat <drinkcat@chromium.org>, Rob Herring <robh+dt@kernel.org>
-References: <20200108052337.65916-1-drinkcat@chromium.org>
- <20200108052337.65916-4-drinkcat@chromium.org>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <3997e444-e388-929f-b764-537d62643bae@arm.com>
-Date: Thu, 9 Jan 2020 12:03:51 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 91D68328;
+ Thu,  9 Jan 2020 04:08:02 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 244513F534; Thu,  9 Jan 2020 04:08:02 -0800 (PST)
+Date: Thu, 9 Jan 2020 12:08:00 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vladimir Murzin <vladimir.murzin@arm.com>
+Subject: Re: [PATCH] arm64: context: Free up kernel ASIDs if KPTI is not in use
+Message-ID: <20200109120759.GC25655@arrakis.emea.arm.com>
+References: <1578392883-13294-1-git-send-email-vladimir.murzin@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200108052337.65916-4-drinkcat@chromium.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1578392883-13294-1-git-send-email-vladimir.murzin@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_040357_048967_F1691397 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20200109_040805_625266_EA1F034A 
+X-CRM114-Status: GOOD (  23.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,80 +62,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- linux-mediatek@lists.infradead.org,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>, hsinyi@chromium.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/01/2020 05:23, Nicolas Boichat wrote:
-> It is useful to know which component cannot be powered on.
+On Tue, Jan 07, 2020 at 10:28:03AM +0000, Vladimir Murzin wrote:
+> We can extend user ASID space if it turns out that system does not
+> require KPTI. We start with kernel ASIDs reserved because CPU caps are
+> not finalized yet and free them up lazily on the next rollover if we
+> confirm than KPTI is not in use.
 > 
-> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-
-Looks like helpful error reporting.
-
-Reviewed-by: Steven Price <steven.price@arm.com>
-
-> 
+> Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
 > ---
+>  arch/arm64/mm/context.c | 38 ++++++++++++++++++++++++++++++--------
+>  1 file changed, 30 insertions(+), 8 deletions(-)
 > 
-> Was useful when trying to probe bifrost GPU, to understand what
-> issue we are facing.
-> ---
->   drivers/gpu/drm/panfrost/panfrost_gpu.c | 15 ++++++++++-----
->   1 file changed, 10 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/panfrost/panfrost_gpu.c b/drivers/gpu/drm/panfrost/panfrost_gpu.c
-> index 8822ec13a0d619f..ba02bbfcf28c011 100644
-> --- a/drivers/gpu/drm/panfrost/panfrost_gpu.c
-> +++ b/drivers/gpu/drm/panfrost/panfrost_gpu.c
-> @@ -308,21 +308,26 @@ void panfrost_gpu_power_on(struct panfrost_device *pfdev)
->   	gpu_write(pfdev, L2_PWRON_LO, pfdev->features.l2_present);
->   	ret = readl_relaxed_poll_timeout(pfdev->iomem + L2_READY_LO,
->   		val, val == pfdev->features.l2_present, 100, 1000);
-> +	if (ret)
-> +		dev_err(pfdev->dev, "error powering up gpu L2");
->   
->   	gpu_write(pfdev, STACK_PWRON_LO, pfdev->features.stack_present);
-> -	ret |= readl_relaxed_poll_timeout(pfdev->iomem + STACK_READY_LO,
-> +	ret = readl_relaxed_poll_timeout(pfdev->iomem + STACK_READY_LO,
->   		val, val == pfdev->features.stack_present, 100, 1000);
-> +	if (ret)
-> +		dev_err(pfdev->dev, "error powering up gpu stack");
+> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+> index b5e329f..8ef73e8 100644
+> --- a/arch/arm64/mm/context.c
+> +++ b/arch/arm64/mm/context.c
+> @@ -29,15 +29,9 @@ static cpumask_t tlb_flush_pending;
+>  #define ASID_MASK		(~GENMASK(asid_bits - 1, 0))
+>  #define ASID_FIRST_VERSION	(1UL << asid_bits)
+>  
+> -#ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+> -#define NUM_USER_ASIDS		(ASID_FIRST_VERSION >> 1)
+> -#define asid2idx(asid)		(((asid) & ~ASID_MASK) >> 1)
+> -#define idx2asid(idx)		(((idx) << 1) & ~ASID_MASK)
+> -#else
+> -#define NUM_USER_ASIDS		(ASID_FIRST_VERSION)
+> +#define NUM_USER_ASIDS		ASID_FIRST_VERSION
+>  #define asid2idx(asid)		((asid) & ~ASID_MASK)
+>  #define idx2asid(idx)		asid2idx(idx)
+> -#endif
+>  
+>  /* Get the ASIDBits supported by the current CPU */
+>  static u32 get_cpu_asid_bits(void)
+> @@ -77,13 +71,33 @@ void verify_cpu_asid_bits(void)
+>  	}
+>  }
+>  
+> +static void set_kpti_asid_bits(void)
+> +{
+> +	unsigned int len = BITS_TO_LONGS(NUM_USER_ASIDS) * sizeof(unsigned long);
+> +	/*
+> +	 * In case of KPTI kernel/user ASIDs are allocated in
+> +	 * pairs, the bottom bit distinguishes the two: if it
+> +	 * is set, then the ASID will map only userspace. Thus
+> +	 * mark even as reserved for kernel.
+> +	 */
+> +	memset(asid_map, 0xaa, len);
+> +}
+> +
+> +static void set_reserved_asid_bits(void)
+> +{
+> +	if (arm64_kernel_unmapped_at_el0())
+> +		set_kpti_asid_bits();
+> +	else
+> +		bitmap_clear(asid_map, 0, NUM_USER_ASIDS);
+> +}
+> +
+>  static void flush_context(void)
+>  {
+>  	int i;
+>  	u64 asid;
+>  
+>  	/* Update the list of reserved ASIDs and the ASID bitmap. */
+> -	bitmap_clear(asid_map, 0, NUM_USER_ASIDS);
+> +	set_reserved_asid_bits();
+>  
+>  	for_each_possible_cpu(i) {
+>  		asid = atomic64_xchg_relaxed(&per_cpu(active_asids, i), 0);
+> @@ -261,6 +275,14 @@ static int asids_init(void)
+>  		panic("Failed to allocate bitmap for %lu ASIDs\n",
+>  		      NUM_USER_ASIDS);
+>  
+> +	/*
+> +	 * We cannot call set_reserved_asid_bits() here because CPU
+> +	 * caps are not finalized yet, so it is safer to assume KPTI
+> +	 * and reserve kernel ASID's from beginning.
+> +	 */
+> +	if (IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+> +		set_kpti_asid_bits();
+> +
+>  	pr_info("ASID allocator initialised with %lu entries\n", NUM_USER_ASIDS);
+>  	return 0;
+>  }
 
-As mentioned in my previous email - we could just drop this entire section dealing with the core stacks and let the GPU's own dependency management code handle it. Of course there might be a GPU out there for which that is broken... in which case some sort of quirk handling will be needed :(
+Even if we don't need KPTI, we still reserve half of ASIDs until the
+first roll-over but that's fine. I was hoping we can get rid of
+IS_ENABLED() and call set_reserved_asid_bits() directly in asids_init()
+once the patch below is merged:
 
-Steve
+https://lore.kernel.org/linux-arm-kernel/20191209181217.44890-5-broonie@kernel.org/
 
->   
->   	gpu_write(pfdev, SHADER_PWRON_LO, pfdev->features.shader_present);
-> -	ret |= readl_relaxed_poll_timeout(pfdev->iomem + SHADER_READY_LO,
-> +	ret = readl_relaxed_poll_timeout(pfdev->iomem + SHADER_READY_LO,
->   		val, val == pfdev->features.shader_present, 100, 1000);
-> +	if (ret)
-> +		dev_err(pfdev->dev, "error powering up gpu shader");
->   
->   	gpu_write(pfdev, TILER_PWRON_LO, pfdev->features.tiler_present);
-> -	ret |= readl_relaxed_poll_timeout(pfdev->iomem + TILER_READY_LO,
-> +	ret = readl_relaxed_poll_timeout(pfdev->iomem + TILER_READY_LO,
->   		val, val == pfdev->features.tiler_present, 100, 1000);
-> -
->   	if (ret)
-> -		dev_err(pfdev->dev, "error powering up gpu");
-> +		dev_err(pfdev->dev, "error powering up gpu tiler");
->   }
->   
->   void panfrost_gpu_power_off(struct panfrost_device *pfdev)
-> 
+but we can still turn KPTI on during boot even if the primary CPU didn't
+have it. Also deferring asids_init() may not interact well with EFI
+run-time services which need an ASID.
 
+Anyway, your patch looks fine to me:
+
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
