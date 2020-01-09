@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5252A135733
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 11:39:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20641135744
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 11:43:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8aQzKpX9jJfkuxCabuxwbZSCvLh5dAxuMfk9FcEw9Tc=; b=TICST2VmHeFiwp
-	acgqNtQsaDuponVY0f4Dh6vQScUEtEjUU79Y2piJbJ/nAsPbpGrm0U+c6LegNQmH2GfQKXdrYeRyY
-	CpK84XzMXho7MaA//LkY3htsa+x0r2UeLp1NWc13KqmW31UzLPh3hxuu78WUMl4a8WCOQwlQDf5Ue
-	KTbye1J2veBCYL8onJlKTBWl62jJWx4n4xv2nSR9M8vWK8efTjNcucnXqZJV0N5GwzqtZhgLgbcan
-	22HSB+SYyArxWFGq+TyMLIW9I9jpnYi8SnUyFRwu9nFrhDq+gvIyCYT1K1Xz1L94vkpQV6F+h2qOW
-	LZSas/FPUugS8Ce0ArzQ==;
+	List-Owner; bh=HBxJZ3k1zdpdDoYjKLRqf511mRllgxG/vGz1OazPH4c=; b=p8xRLq703g8K68
+	wUYeYj/QPcMOYNKB0Rz7R482Gl9YNzg+5Vyj+SZB6otCdwpHb5k4/kpllIGorj5SDen+XDKuqvk9g
+	mAqDjgZthTBJY+vZMR04FAYkRTePLH04ZyjCl6uG4wQQqYsTFq0kLyOEWkKQ6nj8Dkp5/fPhlNJbI
+	ELSkZYUtxUkn+bmCAYUV8ZvCx94gpdE65yV0GBrh+s503ODvyqSqEf3ptZbU/dUtgek+O1SDaEKm6
+	jCcYBQm91av4hV7vI6GOJVOxbqCzvVgPhlL3tx/thaiEeoTCI8lDtPT5cFOIDCxlmz0uUMImIKgD3
+	f1Z8xQioL9O9rl1EUMuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipVEB-0003Kr-VR; Thu, 09 Jan 2020 10:39:47 +0000
+	id 1ipVHT-0004w4-4C; Thu, 09 Jan 2020 10:43:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipVE3-0003KQ-7P
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 10:39:40 +0000
+ id 1ipVHK-0004vU-Km
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 10:43:03 +0000
 Received: from T480 (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8978520673;
- Thu,  9 Jan 2020 10:39:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B25AE2067D;
+ Thu,  9 Jan 2020 10:42:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578566378;
- bh=4zBOYHX6eeVFAgflBYqbR1VmzzyGdmrN6kkQCLA9ZYE=;
+ s=default; t=1578566582;
+ bh=YNqb12KEnTIPfkhGZEULgW7dTJYPnkCVqbWis7dT6TU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2PNDEIdtYgnGmThcdeExByKs/hjypEDmN5Nm9AV5zYqSDgsPT5G3thzCYKUnG9moj
- Sc+DZkCaq2t9A1e1A2cdzHdYX7DcbK8nECEqm4QHUrYVQfpQLBVbWXDQFSRK3INveM
- fxDu3mPK2XuZrUeklhIzw8FtOZ/wN0KmzgAgJYTc=
-Date: Thu, 9 Jan 2020 18:39:30 +0800
+ b=qZiIMUBCmB6il2OBWLC4G23Lk2FnsUJAMrGmvcmZYsfVPMfhitVMg4Cw5aoxAj8vz
+ jXAadX+HGRf6R4yJCMjHXEnuJsRohyBD66Zph83bmygqrD18ZauYYTvaI3QTl4YhEl
+ aJSlmauHVbuyCuJqnUowPFOH0ugzEefrdUVg8zQw=
+Date: Thu, 9 Jan 2020 18:42:54 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] ARM: dts: imx6: Remove incorrect power supply
- assignment
-Message-ID: <20200109103929.GP4456@T480>
-References: <1578562682-32548-1-git-send-email-Anson.Huang@nxp.com>
+To: Horia =?utf-8?Q?Geant=C4=83?= <horia.geanta@nxp.com>
+Subject: Re: [PATCH 2/2] arm64: dts: imx8mn: add crypto node
+Message-ID: <20200109104254.GQ4456@T480>
+References: <20200106200154.30643-1-horia.geanta@nxp.com>
+ <20200106200154.30643-2-horia.geanta@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578562682-32548-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200106200154.30643-2-horia.geanta@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_023939_290529_12B12FBB 
-X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-CacheID: sfid-20200109_024302_702003_63B9A88A 
+X-CRM114-Status: UNSURE (   8.04  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.9 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,29 +78,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, andreas@kemnade.info,
- Linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 05:38:02PM +0800, Anson Huang wrote:
-> The vdd3p0 LDO's input should be from external USB VBUS directly, NOT
-> PMIC's power supply, the vdd3p0 LDO's target output voltage can be
-> controlled by SW, and it requires input voltage to be high enough, with
-> incorrect power supply assigned, if the power supply's voltage is lower
-> than the LDO target output voltage, it will return fail and skip the LDO
-> voltage adjustment, so remove the power supply assignment for vdd3p0 to
-> avoid such scenario.
-
-I applied v1 patches with using this version of commit log.
-
-Shawn
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBKYW4gMDYsIDIwMjAgYXQgMTA6MDE6NTRQTSArMDIwMCwgSG9yaWEgR2VhbnTEgyB3
+cm90ZToKPiBBZGQgbm9kZSBmb3IgQ0FBTSAtIENyeXB0b2dyYXBoaWMgQWNjZWxlcmF0aW9uIGFu
+ZCBBc3N1cmFuY2UgTW9kdWxlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEhvcmlhIEdlYW50xIMgPGhv
+cmlhLmdlYW50YUBueHAuY29tPgoKQXBwbGllZCwgdGhhbmtzLgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
