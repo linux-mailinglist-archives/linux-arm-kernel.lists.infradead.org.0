@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EFCD135AFA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:06:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24863135B11
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:09:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hciHl89JRu/kNSBp8oCbEYWnpADyk4fRbqiDL6upm84=; b=Vfe/14wuSNVl6N
-	Dt7QEhRDr5aimcXulEhyVhiKGomgddgxBvMaO2b6XrUVLrZkPpFpnpARSK+Gtx857+3UCAmgC5Rrd
-	vGPs/rAVueea/sAC2sYLhuDERjREP4J3Ni2IPIYJttYgYhej/+MZWyugzUrRxmewY8HzpanKWmqrr
-	O4uY9UqAw1hnw96guGSBVeWL5nh+8CpfHtwPMA5cMruZiylV3y8S9eGn7JYnawFxv2TuVwTVFjqrc
-	TzAx1lSH5Hb28pDQhYI4pmpOpbuLIuX79DeB6pZOOgA2g387BhaHRwm503grgyR902RR2bCEZqpN0
-	T82SC0NZjHTDrdEpBkiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=v/c849wOimF1MsJPtqXI0upXQKbNm9Q6EDh2F9OvaIU=; b=CL6UuzKVNJwz24fKVrBbjfoa+
+	UfFTNpnMSIjhIJKnysGGHncwZzFZkgn9kOdW3ezhwOcumsSQTAV2Kze8z6LfEQ2wuIIKZKCA8D/+m
+	oyV1ijmxAuLfpbIsgjON2mTRyzrDZcDEtkXJnGtEdLPsvRMCXw+3Anywxio7t59bU4zXF1Oe21bvS
+	QaIHbBT8HfGUkQZKLTlX06aA+3SpO3lPFX8FLYe1FokDPGZFpHjx6KzfbeTFwBzMBW3i22mzvm3EL
+	//u0lzAP+WAfajwJP+Pge8C3kAPF5LzJxcoEnvjAWiIxnkB6g8ZYE5HTPI9scUQTDtJQXNCwy1V2B
+	WiT89xy6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYRs-0006si-K3; Thu, 09 Jan 2020 14:06:08 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYRl-0006sI-CA
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:06:02 +0000
-Received: by mail-wr1-x442.google.com with SMTP id c14so7513531wrn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 06:06:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5wHV7fLu1+idd5lVfa6Y08ed98hFBV7NTBA+k+ClsUc=;
- b=s8+lJx8XPCKl1bu/IDbDXnGALgg5kCvFvoWSnaeATdrbv9UyIVL47+GxgeX7EZzEQ/
- CEhTmb4J1Pub+C8EdKXf49I16Fg76XlSzshUSdokReGc4W0S8ZVzYFqtiu6lCgcX1v0v
- 7E4HEtIHMZHgjfItNNZY5avIw/0bEZMUGGEF7TMzZ/RgfvttxI9cWuBeYhFx2hgu/XWO
- kfFFJBqHxxshh+xkmV0vF8EJbO2L3D1woe3KT4K8YayKhNepIIXuq0Ub1ijiji2pBsEU
- YdfuBxcyX1Hx9AYsgEkDmu/VZVX7oP8GDALRix0uFaa8w1zZCpzKXBMqxHQj4aRhZClv
- b6HA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5wHV7fLu1+idd5lVfa6Y08ed98hFBV7NTBA+k+ClsUc=;
- b=eUgkECrwXIBfvw2chOcD/KTRwshnz+vHSRs7dVZ6iVoyR8exM8Oq2ijwyffS9qaeWs
- GEVS9mEx07l+HownqU11+NLxiN5LJwgsTymVhT5Nl2aTsCSoDZ4+Tf06/St81tQUzKKQ
- 3nE04pYfrRqK4dN3/YKOOFHyajyxD+bv0OtFy5Jl66nKetL+cfHAHJzh4k4wNu38UDd8
- 80lM91ajVeouu8QihxnRYXEdtS7UI+KR9mG614/ANqSyGzm9zHE8IHZPo++bOLjRszyD
- 1c6pa4bVwVW8dS8ZKqFv0BzmzYbPBeQRkIUjA4nREY9RgAP1+pz+Jzy1Tsc2xT9jNmiz
- TcZQ==
-X-Gm-Message-State: APjAAAVsYOeK6wOBVt2bXluXcXke5E5mvQd4QCMeBY5unJdZwvWfslV3
- RN8O98wTWvZLZhmDNAxGfTSQRe3f5lQuauZIBdGShw==
-X-Google-Smtp-Source: APXvYqwpjC3WHE1zynzAigSBunMBepaBFYapFG+fVgkhXZNIcZe8TqNUmQIFjSFfBzCL2JNVxbvTaTG3U6WW8FMSEEE=
-X-Received: by 2002:a5d:43c7:: with SMTP id v7mr10620602wrr.32.1578578759741; 
- Thu, 09 Jan 2020 06:05:59 -0800 (PST)
+	id 1ipYUh-0008BG-GM; Thu, 09 Jan 2020 14:09:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipYUX-0008Ak-Uw; Thu, 09 Jan 2020 14:08:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E6011FB;
+ Thu,  9 Jan 2020 06:08:53 -0800 (PST)
+Received: from [10.1.27.38] (unknown [10.1.27.38])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34AA63F534;
+ Thu,  9 Jan 2020 06:08:49 -0800 (PST)
+Subject: Re: [PATCH v2 5/7] drm/panfrost: Add support for multiple power
+ domain support
+To: Nicolas Boichat <drinkcat@chromium.org>, Rob Herring <robh+dt@kernel.org>
+References: <20200108052337.65916-1-drinkcat@chromium.org>
+ <20200108052337.65916-6-drinkcat@chromium.org>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <b58a8cf9-3275-cf89-6dff-596aceeb8000@arm.com>
+Date: Thu, 9 Jan 2020 14:08:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20191224044146.232713-1-saravanak@google.com>
-In-Reply-To: <20191224044146.232713-1-saravanak@google.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 9 Jan 2020 15:05:48 +0100
-Message-ID: <CAKv+Gu_yDWhvR80Wg1-bzpD1aGwGC-UA+obcgn8CEKKjMdR7rQ@mail.gmail.com>
-Subject: Re: [PATCH v2] efi: arm: defer probe of PCIe backed efifb on DT
- systems
-To: Saravana Kannan <saravanak@google.com>
+In-Reply-To: <20200108052337.65916-6-drinkcat@chromium.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_060601_415951_0D9E04E2 
-X-CRM114-Status: GOOD (  29.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_060854_083319_F98B477B 
+X-CRM114-Status: GOOD (  25.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,209 +64,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Will Deacon <will@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Android Kernel Team <kernel-team@android.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Dec 2019 at 05:41, Saravana Kannan <saravanak@google.com> wrote:
->
-> From: Ard Biesheuvel <ardb@kernel.org>
->
-> The new of_devlink support breaks PCIe probing on ARM platforms booting
-> via UEFI if the firmware exposes a EFI framebuffer that is backed by a
-> PCI device. The reason is that the probing order gets reversed,
-> resulting in a resource conflict on the framebuffer memory window when
-> the PCIe probes last, causing it to give up entirely.
->
-> Given that we rely on PCI quirks to deal with EFI framebuffers that get
-> moved around in memory, we cannot simply drop the memory reservation, so
-> instead, let's use the device link infrastructure to register this
-> dependency, and force the probing to occur in the expected order.
->
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> Co-developed-by: Saravana Kannan <saravanak@google.com>
-> Signed-off-by: Saravana Kannan <saravanak@google.com>
+On 08/01/2020 05:23, Nicolas Boichat wrote:
+> When there is a single power domain per device, the core will
+> ensure the power domains are all switched on.
+> 
+> However, when there are multiple ones, as in MT8183 Bifrost GPU,
+> we need to handle them in driver code.
+> 
+> 
+> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
 > ---
->
-> Hi Ard,
->
-> I compile tested it and I think it should work. If you can actually run
-> and test it, that'd be nice.
->
-> You can also optimize find_pci_overlap_node() by caching the result if
-> you think that's necessary.
->
-> Right now this code will run always just like your code did. But once I
-> rename of_devlink to fw_devlink, this code won't be run if fw_devlink is
-> disabled.
->
-> v1 -> v2:
-> - Rewrote the device linking part to not depend on initcall ordering
->
->  drivers/firmware/efi/arm-init.c | 106 ++++++++++++++++++++++++++++++--
->  1 file changed, 102 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
-> index 904fa09e6a6b..8b789ff83af0 100644
-> --- a/drivers/firmware/efi/arm-init.c
-> +++ b/drivers/firmware/efi/arm-init.c
-> @@ -10,10 +10,12 @@
->  #define pr_fmt(fmt)    "efi: " fmt
->
->  #include <linux/efi.h>
-> +#include <linux/fwnode.h>
->  #include <linux/init.h>
->  #include <linux/memblock.h>
->  #include <linux/mm_types.h>
->  #include <linux/of.h>
-> +#include <linux/of_address.h>
->  #include <linux/of_fdt.h>
->  #include <linux/platform_device.h>
->  #include <linux/screen_info.h>
-> @@ -276,15 +278,111 @@ void __init efi_init(void)
->                 efi_memmap_unmap();
->  }
->
-> +static bool efifb_overlaps_pci_range(const struct of_pci_range *range)
+> 
+> The downstream driver we use on chromeos-4.19 currently uses 2
+> additional devices in device tree to accomodate for this [1], but
+> I believe this solution is cleaner.
+
+I'm not sure what is best, but it seems odd to encode this into the Panfrost driver itself - it doesn't have any knowledge of what to do with these power domains. The naming of the domains looks suspiciously like someone thought that e.g. only half of the cores could be powered, but it doesn't look like that was implemented in the chromeos driver linked and anyway that is *meant* to be automatic in the hardware! (I.e. if you only power up one cores in one core stack then the PDC should only enable the power domain for that set of cores).
+
+Steve
+
+> 
+> [1] https://chromium.googlesource.com/chromiumos/third_party/kernel/+/refs/heads/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#31
+> 
+> drivers/gpu/drm/panfrost/panfrost_device.c | 87 ++++++++++++++++++++--
+>   drivers/gpu/drm/panfrost/panfrost_device.h |  4 +
+>   2 files changed, 83 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_device.c b/drivers/gpu/drm/panfrost/panfrost_device.c
+> index a0b0a6fef8b4e63..c6e9e059de94a4d 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_device.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_device.c
+> @@ -5,6 +5,7 @@
+>   #include <linux/clk.h>
+>   #include <linux/reset.h>
+>   #include <linux/platform_device.h>
+> +#include <linux/pm_domain.h>
+>   #include <linux/regulator/consumer.h>
+>   
+>   #include "panfrost_device.h"
+> @@ -131,6 +132,67 @@ static void panfrost_regulator_fini(struct panfrost_device *pfdev)
+>   	regulator_disable(pfdev->regulator_sram);
+>   }
+>   
+> +static void panfrost_pm_domain_fini(struct panfrost_device *pfdev)
 > +{
-> +       u64 fb_base = screen_info.lfb_base;
+> +	int i;
 > +
-> +       if (screen_info.capabilities & VIDEO_CAPABILITY_64BIT_BASE)
-> +               fb_base |= (u64)(unsigned long)screen_info.ext_lfb_base << 32;
+> +	for (i = 0; i < ARRAY_SIZE(pfdev->pm_domain_devs); i++) {
+> +		if (!pfdev->pm_domain_devs[i])
+> +			break;
 > +
-> +       return fb_base >= range->cpu_addr &&
-> +              fb_base < (range->cpu_addr + range->size);
+> +		if (pfdev->pm_domain_links[i])
+> +			device_link_del(pfdev->pm_domain_links[i]);
+> +
+> +		dev_pm_domain_detach(pfdev->pm_domain_devs[i], true);
+> +	}
 > +}
 > +
-> +static struct device_node *find_pci_overlap_node(void)
+> +static int panfrost_pm_domain_init(struct panfrost_device *pfdev)
 > +{
-> +       struct device_node *np;
+> +	int err;
+> +	int i, num_domains;
 > +
-> +       for_each_node_by_type(np, "pci") {
-> +               struct of_pci_range_parser parser;
-> +               struct of_pci_range range;
-> +               int err;
+> +	num_domains = of_count_phandle_with_args(pfdev->dev->of_node,
+> +						 "power-domains",
+> +						 "#power-domain-cells");
+> +	/* Single domains are handled by the core. */
+> +	if (num_domains < 2)
+> +		return 0;
 > +
-> +               err = of_pci_range_parser_init(&parser, np);
-> +               if (err) {
-> +                       pr_warn("of_pci_range_parser_init() failed: %d\n", err);
-> +                       continue;
-> +               }
+> +	if (num_domains > ARRAY_SIZE(pfdev->pm_domain_devs)) {
+> +		dev_err(pfdev->dev, "Too many pm-domains: %d\n", num_domains);
+> +		return -EINVAL;
+> +	}
 > +
-> +               for_each_of_pci_range(&parser, &range)
-> +                       if (efifb_overlaps_pci_range(&range))
-> +                               return np;
-> +       }
-> +       return NULL;
+> +	for (i = 0; i < num_domains; i++) {
+> +		pfdev->pm_domain_devs[i] =
+> +			dev_pm_domain_attach_by_id(pfdev->dev, i);
+> +		if (IS_ERR(pfdev->pm_domain_devs[i])) {
+> +			err = PTR_ERR(pfdev->pm_domain_devs[i]);
+> +			pfdev->pm_domain_devs[i] = NULL;
+> +			dev_err(pfdev->dev,
+> +				"failed to get pm-domain %d: %d\n", i, err);
+> +			goto err;
+> +		}
+> +
+> +		pfdev->pm_domain_links[i] = device_link_add(pfdev->dev,
+> +				pfdev->pm_domain_devs[i], DL_FLAG_PM_RUNTIME |
+> +				DL_FLAG_STATELESS | DL_FLAG_RPM_ACTIVE);
+> +		if (!pfdev->pm_domain_links[i]) {
+> +			dev_err(pfdev->pm_domain_devs[i],
+> +				"adding device link failed!\n");
+> +			err = -ENODEV;
+> +			goto err;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +
+> +err:
+> +	panfrost_pm_domain_fini(pfdev);
+> +	return err;
 > +}
 > +
-> +/*
-> + * If the efifb framebuffer is backed by a PCI graphics controller, we have
-> + * to ensure that this relation is expressed using a device link when
-> + * running in DT mode, or the probe order may be reversed, resulting in a
-> + * resource reservation conflict on the memory window that the efifb
-> + * framebuffer steals from the PCIe host bridge.
-> + */
-> +static int efifb_add_links(const struct fwnode_handle *fwnode,
-> +                          struct device *dev)
-> +{
-> +       struct device_node *sup_np;
-> +       struct device *sup_dev;
+>   int panfrost_device_init(struct panfrost_device *pfdev)
+>   {
+>   	int err;
+> @@ -161,37 +223,45 @@ int panfrost_device_init(struct panfrost_device *pfdev)
+>   		goto err_out1;
+>   	}
+>   
+> +	err = panfrost_pm_domain_init(pfdev);
+> +	if (err) {
+> +		dev_err(pfdev->dev, "pm_domain init failed %d\n", err);
+> +		goto err_out2;
+> +	}
 > +
-> +       sup_np = find_pci_overlap_node();
-> +
-> +       /*
-> +        * If there's no PCI graphics controller backing the efifb, we are
-> +        * done here.
-> +        */
-> +       if (!sup_np)
-> +               return 0;
-> +
-> +       sup_dev = get_dev_from_fwnode(&sup_np->fwnode);
-> +       of_node_put(sup_np);
-> +
-> +       /*
-> +        * Return -ENODEV if the PCI graphics controller device hasn't been
-> +        * registered yet.  This ensures that efifb isn't allowed to probe
-> +        * and this function is retried again when new devices are
-> +        * registered.
-> +        */
-> +       if (!sup_dev)
-> +               return -ENODEV;
-> +
-> +       /*
-> +        * If this fails, retrying this function at a later point won't
-> +        * change anything. So, don't return an error after this.
-> +        */
-> +       if (!device_link_add(dev, sup_dev, 0))
-> +               dev_warn(dev, "device_link_add() failed\n");
-> +
-> +       put_device(sup_dev);
-> +
-> +       return 0;
-> +}
-> +
-> +static struct fwnode_operations efifb_fwnode_ops = {
+>   	res = platform_get_resource(pfdev->pdev, IORESOURCE_MEM, 0);
+>   	pfdev->iomem = devm_ioremap_resource(pfdev->dev, res);
+>   	if (IS_ERR(pfdev->iomem)) {
+>   		dev_err(pfdev->dev, "failed to ioremap iomem\n");
+>   		err = PTR_ERR(pfdev->iomem);
+> -		goto err_out2;
+> +		goto err_out3;
+>   	}
+>   
+>   	err = panfrost_gpu_init(pfdev);
+>   	if (err)
+> -		goto err_out2;
+> +		goto err_out3;
+>   
+>   	err = panfrost_mmu_init(pfdev);
+>   	if (err)
+> -		goto err_out3;
+> +		goto err_out4;
+>   
+>   	err = panfrost_job_init(pfdev);
+>   	if (err)
+> -		goto err_out4;
+> +		goto err_out5;
+>   
+>   	err = panfrost_perfcnt_init(pfdev);
+>   	if (err)
+> -		goto err_out5;
+> +		goto err_out6;
+>   
+>   	return 0;
+> -err_out5:
+> +err_out6:
+>   	panfrost_job_fini(pfdev);
+> -err_out4:
+> +err_out5:
+>   	panfrost_mmu_fini(pfdev);
+> -err_out3:
+> +err_out4:
+>   	panfrost_gpu_fini(pfdev);
+> +err_out3:
+> +	panfrost_pm_domain_fini(pfdev);
+>   err_out2:
+>   	panfrost_reset_fini(pfdev);
+>   err_out1:
+> @@ -208,6 +278,7 @@ void panfrost_device_fini(struct panfrost_device *pfdev)
+>   	panfrost_mmu_fini(pfdev);
+>   	panfrost_gpu_fini(pfdev);
+>   	panfrost_reset_fini(pfdev);
+> +	panfrost_pm_domain_fini(pfdev);
+>   	panfrost_regulator_fini(pfdev);
+>   	panfrost_clk_fini(pfdev);
+>   }
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_device.h b/drivers/gpu/drm/panfrost/panfrost_device.h
+> index a124334d69e7e93..92d471676fc7823 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_device.h
+> +++ b/drivers/gpu/drm/panfrost/panfrost_device.h
+> @@ -19,6 +19,7 @@ struct panfrost_job;
+>   struct panfrost_perfcnt;
+>   
+>   #define NUM_JOB_SLOTS 3
+> +#define MAX_PM_DOMAINS 3
+>   
+>   struct panfrost_features {
+>   	u16 id;
+> @@ -62,6 +63,9 @@ struct panfrost_device {
+>   	struct regulator *regulator;
+>   	struct regulator *regulator_sram;
+>   	struct reset_control *rstc;
+> +	/* pm_domains for devices with more than one. */
+> +	struct device *pm_domain_devs[MAX_PM_DOMAINS];
+> +	struct device_link *pm_domain_links[MAX_PM_DOMAINS];
+>   
+>   	struct panfrost_features features;
+>   
+> 
 
-Please make this const
-
-> +       .add_links = efifb_add_links,
-> +};
-> +
-> +static struct fwnode_handle efifb_fwnode = {
-> +       .ops = &efifb_fwnode_ops,
-> +};
-> +
->  static int __init register_gop_device(void)
->  {
-> -       void *pd;
-> +       struct platform_device *pd;
-> +       int err;
->
->         if (screen_info.orig_video_isVGA != VIDEO_TYPE_EFI)
->                 return 0;
->
-> -       pd = platform_device_register_data(NULL, "efi-framebuffer", 0,
-> -                                          &screen_info, sizeof(screen_info));
-> -       return PTR_ERR_OR_ZERO(pd);
-> +       pd = platform_device_alloc("efi-framebuffer", 0);
-> +       if (!pd)
-> +               return -ENOMEM;
-> +
-
-Add
-
-  if (IS_ENABLED(CONFIG_PCI))
-
-here
-
-> +       pd->dev.fwnode = &efifb_fwnode;
-> +
-> +       err = platform_device_add_data(pd, &screen_info, sizeof(screen_info));
-> +       if (err)
-> +               return err;
-> +
-> +       return platform_device_add(pd);
->  }
->  subsys_initcall(register_gop_device);
-> --
-> 2.24.1.735.g03f4e72817-goog
->
-
-With the changes above
-
-Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-
-but it still needs testing as well.
 
 _______________________________________________
 linux-arm-kernel mailing list
