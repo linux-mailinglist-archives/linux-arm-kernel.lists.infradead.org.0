@@ -2,47 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79F7B1351D7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 04:18:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 084E41351EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 04:25:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=szu8DkTpkLqm+jcisaa1unpzQMpNxSBrxjYy8+tWIB4=; b=Xlw6lPaUSyti34
-	inazTGvO6Jrlf83wTnAg24TJvyyRNngmUV5IezbmrOB4IweAdUw5N18QLfrX6gYWbmX1rKBk2YhEb
-	kUefE0YqwrrFHbxh+T3FXho8PzX7bkuiWVHKTexXcPD9nujV21dVyH1x7mSZfq6Ap7jsbTBZp+wlp
-	9Gb0pIM/U1+BpI45UQ0vYH7B/7xwN5lMvv9S3JS2a6/WblFs/p+siI2HCGCwbkqpD+i+1WkUhT9nY
-	TXsrKNF/0gcfz5zw/4Q7HQ4Ns1lvMRA08h648vrOHTTvKgU+XmLNhfvdMXS6ARX+K7nhKoiBgjTdz
-	KvBFpxiPkIT/CwdvIN1A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UY6mg5bxtMXL93HrDsEJUpiemo3amutCPnlUCi6CHHY=; b=OYXnxyhH+RPdOG
+	/Lc1ah4XVc5Kqsva42NG23TWtIH11UByNfWV8omI0C0gDKBCe4eT2pwTiH0cDWpimF1K5AYEXfOAK
+	VX9RDo7tHrh0tUqcm0EmrOMuP3YejUQLaEzRjU/nxzfDIAx/0x+5qSqyC8Re7TkrVhj1JEA9+SAWP
+	zbEEP5v2XJfcrJZI6C2HFhHFPRBFEE9t+8nbeZy3nwls+Il8AdN8b9Hs3MZk/53ZUGT8KMms3kprx
+	NIUGvNQ+Odte06WnysmspKBE0coXcTeTfZhpJeeVQ3zdl7Jj29XvA2NkKYs7zGi5yfH6QseHXd8m5
+	C+jUSZElucxjUR4wiwQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipOKz-00048e-FZ; Thu, 09 Jan 2020 03:18:21 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipOKf-0003mO-73; Thu, 09 Jan 2020 03:18:09 +0000
-Received: from droid15-sz.amlogic.com (10.28.8.25) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Thu, 9 Jan 2020
- 11:18:24 +0800
-From: Jian Hu <jian.hu@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-Subject: [PATCH v4] arm64: dts: meson-a1: add I2C nodes
-Date: Thu, 9 Jan 2020 11:17:56 +0800
-Message-ID: <20200109031756.176547-1-jian.hu@amlogic.com>
-X-Mailer: git-send-email 2.24.0
+	id 1ipORv-0000Ol-JR; Thu, 09 Jan 2020 03:25:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipORU-0007ZC-0x
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 03:25:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4613431B;
+ Wed,  8 Jan 2020 19:25:01 -0800 (PST)
+Received: from [10.162.40.138] (p8cg001049571a15.blr.arm.com [10.162.40.138])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ DE4BE3F534; Wed,  8 Jan 2020 19:24:56 -0800 (PST)
+Subject: Re: [PATCH 1/1] arm/arm64: add support for folded p4d page tables
+To: Mike Rapoport <rppt@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <20191230082734.28954-1-rppt@kernel.org>
+ <20191230082734.28954-2-rppt@kernel.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <7f18fc35-3380-564b-b660-0c003d7d3107@arm.com>
+Date: Thu, 9 Jan 2020 08:56:10 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-Originating-IP: [10.28.8.25]
+In-Reply-To: <20191230082734.28954-2-rppt@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_191801_275910_2132B06F 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200108_192504_505483_63B79C8F 
+X-CRM114-Status: GOOD (  20.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -56,214 +64,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Jianxin Pan <jianxin.pan@amlogic.com>, Wolfram Sang <wsa@the-dreams.de>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, Jian Hu <jian.hu@amlogic.com>,
- linux-i2c@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, James Morse <james.morse@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are four I2C controllers in A1 series,
-Share the same comptible with AXG. Compared to AXG,
-Drive strength feature is newly added in A1.
 
-Signed-off-by: Jian Hu <jian.hu@amlogic.com>
 
----
-This patch depends on A1 clock patchset at [0][3]
+On 12/30/2019 01:57 PM, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> 
+> Implement primitives necessary for the 4th level folding, add walks of p4d
+> level where appropriate, replace 5level-fixup.h with pgtable-nop4d.h and
+> remove __ARCH_USE_5LEVEL_HACK.
+> 
+> Since arm and arm64 share kvm memory management bits, make the conversion
+> for both variants at once to avoid breaking the builds in the middle.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> ---
+>  arch/arm/include/asm/kvm_mmu.h          |   5 +-
+>  arch/arm/include/asm/pgtable.h          |   1 -
+>  arch/arm/include/asm/stage2_pgtable.h   |  15 +-
+>  arch/arm/lib/uaccess_with_memcpy.c      |   9 +-
+>  arch/arm/mach-sa1100/assabet.c          |   2 +-
+>  arch/arm/mm/dump.c                      |  29 +++-
+>  arch/arm/mm/fault-armv.c                |   7 +-
+>  arch/arm/mm/fault.c                     |  28 +++-
+>  arch/arm/mm/idmap.c                     |   3 +-
+>  arch/arm/mm/init.c                      |   2 +-
+>  arch/arm/mm/ioremap.c                   |  12 +-
+>  arch/arm/mm/mm.h                        |   2 +-
+>  arch/arm/mm/mmu.c                       |  35 +++-
+>  arch/arm/mm/pgd.c                       |  40 ++++-
+>  arch/arm64/include/asm/kvm_mmu.h        |  10 +-
+>  arch/arm64/include/asm/pgalloc.h        |  10 +-
+>  arch/arm64/include/asm/pgtable-types.h  |   5 +-
+>  arch/arm64/include/asm/pgtable.h        |  37 +++--
+>  arch/arm64/include/asm/stage2_pgtable.h |  48 ++++--
+>  arch/arm64/kernel/hibernate.c           |  46 +++++-
+>  arch/arm64/mm/dump.c                    |  29 +++-
+>  arch/arm64/mm/fault.c                   |   9 +-
+>  arch/arm64/mm/hugetlbpage.c             |  15 +-
+>  arch/arm64/mm/kasan_init.c              |  41 ++++-
+>  arch/arm64/mm/mmu.c                     |  52 ++++--
+>  arch/arm64/mm/pageattr.c                |   7 +-
+>  virt/kvm/arm/mmu.c                      | 209 ++++++++++++++++++++----
+>  27 files changed, 565 insertions(+), 143 deletions(-)
+> 
 
-Changes since v3 at [4]:
--put the i2c pins under periphs_pinctrl
--replace bias-pull-up as bias-disable
--add missing space in i2c pins node
+^^^^^^
 
-Changes since v2 at [2]:
--remove the dependence the commit description
--remove i2c alias in dtsi
--reorder the i2c nodes
--reorder the i2c pins
+> diff --git a/arch/arm64/mm/kasan_init.c b/arch/arm64/mm/kasan_init.c
+> index f87a32484ea8..fd6220508711 100644
+> --- a/arch/arm64/mm/kasan_init.c
+> +++ b/arch/arm64/mm/kasan_init.c
+> @@ -84,17 +84,32 @@ static pmd_t *__init kasan_pmd_offset(pud_t *pudp, unsigned long addr, int node,
+>  	return early ? pmd_offset_kimg(pudp, addr) : pmd_offset(pudp, addr);
+>  }
+>  
+> -static pud_t *__init kasan_pud_offset(pgd_t *pgdp, unsigned long addr, int node,
+> +static pud_t *__init kasan_pud_offset(p4d_t *p4dp, unsigned long addr, int node,
+>  				      bool early)
+>  {
+> -	if (pgd_none(READ_ONCE(*pgdp))) {
+> +	if (p4d_none(READ_ONCE(*p4dp))) {
+>  		phys_addr_t pud_phys = early ?
+>  				__pa_symbol(kasan_early_shadow_pud)
+>  					: kasan_alloc_zeroed_page(node);
+> -		__pgd_populate(pgdp, pud_phys, PMD_TYPE_TABLE);
+> +		__p4d_populate(p4dp, pud_phys, PMD_TYPE_TABLE);
+> +	}
+> +
+> +	return early ? pud_offset_kimg(p4dp, addr) : pud_offset(p4dp, addr);
+> +}
+> +
+> +static p4d_t *__init kasan_p4d_offset(pgd_t *pgdp, unsigned long addr, int node,
+> +				      bool early)
+> +{
+> +#ifndef __PAGETABLE_P4D_FOLDED
+> +	if (pgd_none(READ_ONCE(*pgdp))) {
+> +		phys_addr_t p4d_phys = early ?
+> +				__pa_symbol(kasan_early_shadow_p4d)
+> +					: kasan_alloc_zeroed_page(node);
+> +		__pgd_populate(pgdp, p4d_phys, PMD_TYPE_TABLE);
 
-Changes since v1 at [1]:
--change reg length to 0x20
--assign i2c bus alias in dts file
--add new feature note compared to AXG in changelog
+We dont have __pgd_populate() definition any more. AFAICS __PAGETABLE_P4D_FOLDED
+is always defined because pgtable-nop4d.h gets pulled in for all configurations
+via pgtable-nopud.h and pgtable-nopmd.h headers.
 
-[0] https://lkml.kernel.org/r/20191206074052.15557-1-jian.hu@amlogic.com
-[1] https://lkml.kernel.org/r/20191202111253.94872-1-jian.hu@amlogic.com
-[2] https://lkml.kernel.org/r/20191211032802.83309-1-jian.hu@amlogic.com
-[3] https://lkml.kernel.org/r/20191206074052.15557-1-jian.hu@amlogic.com
-[4] https://lkml.kernel.org/r/20191220091611.36319-1-jian.hu@amlogic.com
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 140 ++++++++++++++++++++++
- 1 file changed, 140 insertions(+)
+>  	}
+> +#endif
+>  
+> -	return early ? pud_offset_kimg(pgdp, addr) : pud_offset(pgdp, addr);
+> +	return early ? p4d_offset_kimg(pgdp, addr) : p4d_offset(pgdp, addr);
+>  }
+>  
+>  static void __init kasan_pte_populate(pmd_t *pmdp, unsigned long addr,
+> @@ -126,11 +141,11 @@ static void __init kasan_pmd_populate(pud_t *pudp, unsigned long addr,
+>  	} while (pmdp++, addr = next, addr != end && pmd_none(READ_ONCE(*pmdp)));
+>  }
+>  
+> -static void __init kasan_pud_populate(pgd_t *pgdp, unsigned long addr,
+> +static void __init kasan_pud_populate(p4d_t *p4dp, unsigned long addr,
+>  				      unsigned long end, int node, bool early)
+>  {
+>  	unsigned long next;
+> -	pud_t *pudp = kasan_pud_offset(pgdp, addr, node, early);
+> +	pud_t *pudp = kasan_pud_offset(p4dp, addr, node, early);
+>  
+>  	do {
+>  		next = pud_addr_end(addr, end);
+> @@ -138,6 +153,18 @@ static void __init kasan_pud_populate(pgd_t *pgdp, unsigned long addr,
+>  	} while (pudp++, addr = next, addr != end && pud_none(READ_ONCE(*pudp)));
+>  }
+>  
+> +static void __init kasan_p4d_populate(pgd_t *pgdp, unsigned long addr,
+> +				      unsigned long end, int node, bool early)
+> +{
+> +	unsigned long next;
+> +	p4d_t *p4dp = kasan_p4d_offset(pgdp, addr, node, early);
+> +
+> +	do {
+> +		next = p4d_addr_end(addr, end);
+> +		kasan_pmd_populate(p4dp, addr, next, node, early);
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index eab2ecd36aa8..009c8c496b58 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -115,6 +115,116 @@
- 				       #gpio-cells = <2>;
- 				       gpio-ranges = <&periphs_pinctrl 0 0 62>;
- 				};
-+
-+				i2c0_f9_pins: i2c0-f9 {
-+					mux {
-+						groups = "i2c0_sck_f9",
-+							"i2c0_sda_f10";
-+						function = "i2c0";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c0_f11_pins: i2c0-f11 {
-+					mux {
-+						groups = "i2c0_sck_f11",
-+							"i2c0_sda_f12";
-+						function = "i2c0";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c1_a_pins: i2c1-a {
-+					mux {
-+						groups = "i2c1_sck_a",
-+							"i2c1_sda_a";
-+						function = "i2c1";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c1_x_pins: i2c1-x {
-+					mux {
-+						groups = "i2c1_sck_x",
-+							"i2c1_sda_x";
-+						function = "i2c1";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c2_a4_pins: i2c2-a4 {
-+					mux {
-+						groups = "i2c2_sck_a4",
-+							"i2c2_sda_a5";
-+						function = "i2c2";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c2_a8_pins: i2c2-a8 {
-+					mux {
-+						groups = "i2c2_sck_a8",
-+							"i2c2_sda_a9";
-+						function = "i2c2";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c2_x0_pins: i2c2-x0 {
-+					mux {
-+						groups = "i2c2_sck_x0",
-+							"i2c2_sda_x1";
-+						function = "i2c2";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c2_x15_pins: i2c2-x15 {
-+					mux {
-+						groups = "i2c2_sck_x15",
-+							"i2c2_sda_x16";
-+						function = "i2c2";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c3_f_pins: i2c3-f {
-+					mux {
-+						groups = "i2c3_sck_f",
-+							"i2c3_sda_f";
-+						function = "i2c3";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+
-+				i2c3_x_pins: i2c3-x {
-+					mux {
-+						groups = "i2c3_sck_x",
-+							"i2c3_sda_x";
-+						function = "i2c3";
-+						bias-disable;
-+						drive-strength-microamp = <3000>;
-+					};
-+				};
-+			};
-+
-+			i2c0: i2c@1400 {
-+				compatible = "amlogic,meson-axg-i2c";
-+				reg = <0x0 0x1400 0x0 0x20>;
-+				interrupts = <GIC_SPI 32 IRQ_TYPE_EDGE_RISING>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				clocks = <&clkc_periphs CLKID_I2C_M_A>;
-+				status = "disabled";
- 			};
- 
- 			uart_AO: serial@1c00 {
-@@ -136,6 +246,36 @@
- 				clock-names = "xtal", "pclk", "baud";
- 				status = "disabled";
- 			};
-+
-+			i2c1: i2c@5c00 {
-+				compatible = "amlogic,meson-axg-i2c";
-+				reg = <0x0 0x5c00 0x0 0x20>;
-+				interrupts = <GIC_SPI 68 IRQ_TYPE_EDGE_RISING>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				clocks = <&clkc_periphs CLKID_I2C_M_B>;
-+				status = "disabled";
-+			};
-+
-+			i2c2: i2c@6800 {
-+				compatible = "amlogic,meson-axg-i2c";
-+				reg = <0x0 0x6800 0x0 0x20>;
-+				interrupts = <GIC_SPI 76 IRQ_TYPE_EDGE_RISING>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				clocks = <&clkc_periphs CLKID_I2C_M_C>;
-+				status = "disabled";
-+			};
-+
-+			i2c3: i2c@6c00 {
-+				compatible = "amlogic,meson-axg-i2c";
-+				reg = <0x0 0x6c00 0x0 0x20>;
-+				interrupts = <GIC_SPI 78 IRQ_TYPE_EDGE_RISING>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				clocks = <&clkc_periphs CLKID_I2C_M_D>;
-+				status = "disabled";
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
--- 
-2.24.0
-
+s/kasan_pmd_populate()/kasan_pud_populate()
 
 _______________________________________________
 linux-arm-kernel mailing list
