@@ -2,78 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10326135A93
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:51:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B25B135A9F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:52:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPWuXGTOK+/xSWejJJsdK3m5lGSQ25pYb2XwOT/16v0=; b=B7Ass2d3jC40Vu
-	jigSAuQ0+Htsg6yAJHL6q9tXiV7CCdyqCBQUGaKLG9VrnnzBJvzDT9+B4DmJBBVi/KbTn1Y2cKlGj
-	dzlyKqKwtimU6pAQ4sJ2rvYL3EL0h62shfCSTIcCbHSLgoEbquJUKoslwpEs4LyY9f/P0KohAASwE
-	ODiFP0X44cFgtv9xahjFurmmcQmVDut3eDULx6OOo9b9QYTeRDJ5QPsGeImEnjxxrjKcadJGMlKt8
-	UcBzzRBHLPiUJpUpA4GuLivDpI0jyCECnNPdjoOHcXBjAO02uwt4vdU6osCqW/FpP4s9j7Ex+WUr+
-	6ZbSHDl2eGAT8lR9O1FA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qPtBHn9OT6b4uzKBOjytL3jpla4uG0WuaDGIrlS6K6A=; b=TDMgOrcTZLOcg8
+	PXQp9tfXIQjgitoRANgr7kB8n70uHSRKsw0hiI74jzWfI7C1tIDudHrKzstZCUTelSXC8BJsdnVag
+	VlyeZ+YN++kpdYTQb39kW2pE7WRusM6NeOj+5r1KUtdcZKDF54p9OUJzXPRuQcXQu1yapjCEw9+Fl
+	J8FxYiesY0sA2Knz2rAOUcgeU7lyvgWo7WRsxvu6F6g7GRc2+jUmnw8gh/wlI+sIN5xM/8hnJDqfP
+	lZHv8q0Bj1wUDTmMjyWXR6E06iNZl2/piiQoX4wy4sQwultPZoz+E4VuIiBkxz8PZj0LS92nbpJnH
+	5PXCYZjEqo7b75fhq+1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYDq-0003VV-42; Thu, 09 Jan 2020 13:51:38 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ipYEp-0003m6-KS; Thu, 09 Jan 2020 13:52:39 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYDj-0003Ur-GY
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:51:32 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g17so7490234wro.2
+ id 1ipYEb-0003lL-IU
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:52:26 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y17so7501431wrh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 05:51:30 -0800 (PST)
+ Thu, 09 Jan 2020 05:52:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=XDCI6TLpdeIYPij5yOHYCifq+NjQyJfwW4dyJEujviU=;
- b=G3hIUulK4TgEq82wz5GNtf5wS7Mq2sgiYrOa/+OvqMHJJNB+YkDsyumIDlcCCGezFj
- HhXGOIkHJkDvYMuJCmaFP8yZYz5J0m9VCj1xx+9Me5O68XQr8zMuMvFsy7n1V5NfOBAg
- yKDeiHq/64ozhgaPBvsuPgK3un1Cz9HQs2Tl1dcS7eCeC2XIdGcwXpWz+1yAvfQw09vX
- vtKx6J1uFA2d5uG0T9Wr3TFZoFQAPMlNG5WDxJ9tQBnJu1G+Ghd/unu/ESnKGg1BcK2P
- mnhyOGn3lLylsBqzjiUj360YW3DdgotpRceA50aZfwY32TVnatQod9+G/+iR0BX4Vs6u
- tyIQ==
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vmHw6Rztk1LgVkwramcXLwEMbfT/KPvyudxKdtElSqM=;
+ b=hU1Mn+ipMihLL4KLrkeIpBebma65ax6OVx/CZ7BMWMJ7lkiVPGfRvuGNDb+rOkVZlT
+ CMhcMe9oKcneUvShrYwP0MqHMcHPUdR1UY0XrSxfYU8lwwqgfCZkOQuaAaHfHRHu72Su
+ HNOoSVZDaEq+nyADGyYORh3MddsE2t/0JeQyV8dN6e7ouM4cmVGC+CH/wyF7r8qZBYmf
+ Z5UdGMTNB9eHuDxiZpopOpMID3V4bttz7E5u6m37m1ira7tSHyhMOnYHsd14XiEQRNqr
+ x7gKpM4AxlEpWENMj1rNooOmhT0Z8vfkEO5rzzCFgXp+UrRkzpaxEIABkJ2BPdzdLh1+
+ EAtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=XDCI6TLpdeIYPij5yOHYCifq+NjQyJfwW4dyJEujviU=;
- b=QHfRy0xwFglHD3dnUO1phYRSWMn6nTrIiRY7JN6cg98YfjliYzrbVikUD9AvD7zW6E
- /iycQOKDncEc5dshbJyfLTa7dNtcEbqIswDPAALK+rPorNhzUIX9hm4FSY8yj6c5uSxX
- WvhiijkqWx10cwIzgGHwUkyKrqQb9h5A7uUST7Q2upvrrCVkitFY41LuATNHY3KUY5pK
- O49u8uGKWfihHDOtb3LRHGYKaE0JZWGanixOM6D9tm/H0s8Hb8ugohZgjUY6hGAlKKcP
- 8jrKUtdcpSTlL8UopXpLPvsWMxXaeZWEhzIhf6lv6tYWYMgE1/F1l1ALRMAWYGPBlBYk
- xC4g==
-X-Gm-Message-State: APjAAAV4E+xL4O33/z9GTbv5SGA288RiWz819fijBaXv6xVKg+1TPSsI
- b8PCTE4POa/b1YXBA8H7VSJG8DTDfHM6QfP525vIqbXGGHc=
-X-Google-Smtp-Source: APXvYqz8e1hxJpaPqVsNsHKM5ImeIdIGCduTba279//zephv/DVYc8tIyk0DE067Xb7xRCg7Bq0x3Ng81eVOKS4awRo=
-X-Received: by 2002:a5d:44cd:: with SMTP id z13mr11245464wrr.104.1578577889103; 
- Thu, 09 Jan 2020 05:51:29 -0800 (PST)
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=vmHw6Rztk1LgVkwramcXLwEMbfT/KPvyudxKdtElSqM=;
+ b=Pn5yZUh5vmkfyvMwPLQ+1dsuKA7aziuEUSCjOT+Mm0CyVqvQC3Y8gkNx7Uhy84Wx5v
+ aibD804r2ES23rn5UjdHaJH5A9Mpa/V/ZNk856bHbTUa4VrSfJ/p/DWvf3o7VuqXX3rv
+ Jogm5MrcGxoR8ly3nCAdGJhF6/uHq1VGl763qCgDJye899vs6tEtKkKWboDKkJjUWcKL
+ tcwRnR9j7A8ZF3mWLYPg4fOtBXkIWTxS1iHH1LvGrFhD9jwFdApH5EfjrmuoeLEBqpyq
+ Flm1qNTPeCcUvftjGK2clm4pXaggkq/1UEv7jz002jbGn6DrS0s+5H6F5VA80oEqOmBM
+ uTtg==
+X-Gm-Message-State: APjAAAXYdxYPyrskrtPcbyVGw4w5rcm9MhtbHdboNBprJqyIR9t8R/O8
+ A0c4vlhW6G/w5dJqA3xfnLjFUcjF1+vnVQ==
+X-Google-Smtp-Source: APXvYqz+VUgDWR5JboQ+8bL+OdFFBBWwy95DgHFHZ12Ed6yWxa7cNlhqpM6SgsefPSWzNDnk6l65FA==
+X-Received: by 2002:adf:dfc2:: with SMTP id q2mr10759562wrn.251.1578577944116; 
+ Thu, 09 Jan 2020 05:52:24 -0800 (PST)
+Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
+ by smtp.gmail.com with ESMTPSA id j12sm8350363wrt.55.2020.01.09.05.52.23
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 09 Jan 2020 05:52:23 -0800 (PST)
+From: Michal Simek <michal.simek@xilinx.com>
+To: linux-arm-kernel@lists.infradead.org,
+	git@xilinx.com
+Subject: [PATCH v2 0/8] arm64: zynqmp: Various DT fixes
+Date: Thu,  9 Jan 2020 14:52:14 +0100
+Message-Id: <cover.1578577931.git.michal.simek@xilinx.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <cover.1578577147.git.michal.simek@xilinx.com>
-In-Reply-To: <cover.1578577147.git.michal.simek@xilinx.com>
-From: Michal Simek <monstr@monstr.eu>
-Date: Thu, 9 Jan 2020 14:51:18 +0100
-Message-ID: <CAHTX3dJDuoXjX4CJJ88Vf_uUWSi7GDMGM5vYmxwNFB+9Sqw7cg@mail.gmail.com>
-Subject: Re: [PATCH 0/6] arm64: zynqmp: Various DT fixes
-To: linux-arm <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_055131_547276_1BA351C5 
-X-CRM114-Status: GOOD (  11.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_055225_613203_C373A490 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,44 +95,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Ulf Hansson <ulf.hansson@linaro.org>,
  Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
  Rajan Vaja <rajan.vaja@xilinx.com>, Jan Kiszka <jan.kiszka@siemens.com>,
  Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
  Harini Katakam <harini.katakam@xilinx.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-xI10IDkuIDEuIDIwMjAgdiAxNDozOSBvZGVzw61sYXRlbCBNaWNoYWwgU2ltZWsgPG1pY2hhbC5z
-aW1la0B4aWxpbnguY29tPiBuYXBzYWw6Cj4KPiBIaSwKPgo+IEkgYW0gc2VuZGluZyB2YXJpb3Vz
-IERUIGZpeGVzIHdoaWNoIGhhdmUgYmVlbiBmb3VuZCBvdmVyIHRoZSB4aWxpbngKPiByZWxlYXNl
-Lgo+IDEtMiBwYXRjaGVzIGFyZSBmaXhpbmcgcmVwb3J0ZWQgZGVzY3JpcHRpb24gaXNzdWVzCj4g
-My02IHBhdGNoZXMgYXJlIGFjdHVhbCBmaXhlcy4KPgo+IFRoYW5rcywKPiBNaWNoYWwKPgo+Cj4g
-TWljaGFsIFNpbWVrICg1KToKPiAgIGFybTY0OiB6eW5xbXA6IEZpeCBhZGRyZXNzIGZvciB0Y2E2
-NDE2X3U5NyBjaGlwIG9uIHpjdTEwNAo+ICAgYXJtNjQ6IHp5bnFtcDogVHVybiBjb21tZW50IHRv
-IGdwaW8tbGluZS1uYW1lcwo+ICAgYXJtNjQ6IHp5bnFtcDogU2V0dXAgY2xvY2stb3V0cHV0LW5h
-bWVzIGZvciBzaTU3MCBjaGlwcwo+ICAgYXJtNjQ6IHp5bnFtcDogUmVtb3ZlIGJyb2tlbi1jZCBm
-cm9tIHpjdTEwMC1yZXZDCj4gICBhcm02NDogenlucW1wOiBTZXR1cCBkZWZhdWx0IG51bWJlciBv
-ZiBjaGlwc2VsZWN0cyBmb3IgemN1MTAwCj4KPiBWZW5rYXRlc2ggWWFkYXYgQWJiYXJhcHUgKDEp
-Ogo+ICAgYXJtNjQ6IHp5bnFtcDogRml4IHRoZSBzaTU3MCBjbG9jayBmcmVxdWVuY3kgb24gemN1
-MTExCj4KPiAgLi4uL2Jvb3QvZHRzL3hpbGlueC96eW5xbXAtemN1MTAwLXJldkMuZHRzICAgIHwg
-IDMgKy0KPiAgLi4uL2Jvb3QvZHRzL3hpbGlueC96eW5xbXAtemN1MTAyLXJldkEuZHRzICAgIHwg
-NDUgKysrKystLS0tLS0tLS0tLS0tLQo+ICAuLi4vYm9vdC9kdHMveGlsaW54L3p5bnFtcC16Y3Ux
-MDQtcmV2QS5kdHMgICAgfCAgNCArLQo+ICAuLi4vYm9vdC9kdHMveGlsaW54L3p5bnFtcC16Y3Ux
-MDYtcmV2QS5kdHMgICAgfCAgMiArCj4gIC4uLi9ib290L2R0cy94aWxpbngvenlucW1wLXpjdTEx
-MS1yZXZBLmR0cyAgICB8ICA0ICstCj4gIDUgZmlsZXMgY2hhbmdlZCwgMjAgaW5zZXJ0aW9ucygr
-KSwgMzggZGVsZXRpb25zKC0pCj4KPiAtLQo+IDIuMjQuMAo+CgpQbGVhc2UgaWdub3JlIHRoaXMg
-cGF0Y2hzZXQuIEkgc2VudCBqdXN0IDYgcGF0Y2hlcyBpbnN0ZWFkIG9mIDggdGhhdCdzCndoeSBk
-ZXNjcmlwdGlvbiBoZXJlIGlzIG5vdCBjb3JyZWN0LgoKVGhhbmtzLApNaWNoYWwKCi0tIApNaWNo
-YWwgU2ltZWssIEluZy4gKE0uRW5nKSwgT3BlblBHUCAtPiBLZXlJRDogRkUzRDFGOTEKdzogd3d3
-Lm1vbnN0ci5ldSBwOiArNDItMC03MjE4NDI4NTQKTWFpbnRhaW5lciBvZiBMaW51eCBrZXJuZWwg
-LSBYaWxpbnggTWljcm9ibGF6ZQpNYWludGFpbmVyIG9mIExpbnV4IGtlcm5lbCAtIFhpbGlueCBa
-eW5xIEFSTSBhbmQgWnlucU1QIEFSTTY0IFNvQ3MKVS1Cb290IGN1c3RvZGlhbiAtIFhpbGlueCBN
-aWNyb2JsYXplL1p5bnEvWnlucU1QL1ZlcnNhbCBTb0NzCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+
+I am sending various DT fixes which have been found over the xilinx
+release.
+1-2 patches are fixing reported description issues
+3-8 patches are actual fixes.
+
+Thanks,
+Michal
+
+Changes in v2:
+- Add missing patch
+- Add missing patch
+
+Michal Simek (7):
+  arm64: zynqmp: Use ethernet-phy as node name for ethernet phys
+  arm64: zynqmp: Remove addition number in node name
+  arm64: zynqmp: Fix address for tca6416_u97 chip on zcu104
+  arm64: zynqmp: Turn comment to gpio-line-names
+  arm64: zynqmp: Setup clock-output-names for si570 chips
+  arm64: zynqmp: Remove broken-cd from zcu100-revC
+  arm64: zynqmp: Setup default number of chipselects for zcu100
+
+Venkatesh Yadav Abbarapu (1):
+  arm64: zynqmp: Fix the si570 clock frequency on zcu111
+
+ .../dts/xilinx/zynqmp-zc1751-xm015-dc1.dts    |  2 +-
+ .../dts/xilinx/zynqmp-zc1751-xm016-dc2.dts    |  6 +--
+ .../dts/xilinx/zynqmp-zc1751-xm017-dc3.dts    |  2 +-
+ .../dts/xilinx/zynqmp-zc1751-xm019-dc5.dts    |  2 +-
+ .../boot/dts/xilinx/zynqmp-zcu100-revC.dts    |  3 +-
+ .../boot/dts/xilinx/zynqmp-zcu102-revA.dts    | 47 +++++--------------
+ .../boot/dts/xilinx/zynqmp-zcu102-revB.dts    |  4 +-
+ .../boot/dts/xilinx/zynqmp-zcu104-revA.dts    |  6 +--
+ .../boot/dts/xilinx/zynqmp-zcu106-revA.dts    |  4 +-
+ .../boot/dts/xilinx/zynqmp-zcu111-revA.dts    |  6 ++-
+ 10 files changed, 32 insertions(+), 50 deletions(-)
+
+-- 
+2.24.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
