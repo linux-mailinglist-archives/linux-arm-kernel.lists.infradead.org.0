@@ -2,63 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 053B61353BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 08:33:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 634BC1353C7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 08:35:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l9SIZjpj4EKxotdXbWjNL2R+MsxnrisqXlrYMyP8c4o=; b=kWRroVzfv7iQ6M
-	PWWYBpj3WrY0ANRd22MuefOXbG5/qPTwTnhXc0zbrjAPU5HPqIEwAOzZrNNR85lIqJ8+ntqucSaiR
-	x8sD0N6HLbjfEhynZltMw7B9NaLLd9X1ZEwt/Tdy89MiKnD6DlXvMYHQCDVH5S6VyJlH+PPO7Dop2
-	DDHemU0hYfUmimxf6t/j7WUwCdVLh8SBIa8XZICSX/Nnku92NQDsbF6Il6I7nhP6JSyWpzlE4NJV1
-	X7aY/fbMC+xxphjTuEMGYQYI3T9/UOJsql0QnkQ5iRuNVEC+gcVHYSaopp+gBLwXg5YzgDjFdiS5+
-	CM8mvBlA3KS6dsu3/UjQ==;
+	List-Owner; bh=MJO40kbT4DuqMRFl+P+aY2jZjFVXE07ptv93xwzbjEE=; b=u65FRZgKENavyY
+	iAAfqU/wREpzoqOrgHDOPvmg7kEAWyjEYWh8gKC35vk8kEcJ02fmj6hsucpWE3lrQgd4nZLJLfXTZ
+	7z4pIXV1U+Wmgex9Udu9DD3uRNQH3LR1absVi+30QbqinTsbZztV88AfyBN5OImy0p3L//2D6z9WF
+	e0b7BLvhPb66VaK0JdPM++MEbDmnl83LfzF001HYkOASOT4l7jNsQJ3FLCsqF4SbZ3IK3BNkn9Pq7
+	SXWl4VDkJP6dYyl7YN3jTy/qUxgW9/t+5RIRAH5vJvtSg7n9zrb+WS3y8ZCs4SxDQUDYr8Cmlhvgi
+	e7FaN3hCRYZDfU0UP6DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipSJm-0008C7-4Y; Thu, 09 Jan 2020 07:33:22 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ipSM3-0001nV-O7; Thu, 09 Jan 2020 07:35:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipSJZ-00088t-6g
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 07:33:11 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1ipSJX-0001FH-C0; Thu, 09 Jan 2020 08:33:07 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1ipSJV-00065H-KM; Thu, 09 Jan 2020 08:33:05 +0100
-Date: Thu, 9 Jan 2020 08:33:05 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Richard Genoud <richard.genoud@gmail.com>
-Subject: Re: [PATCH] tty/serial: atmel: RS485 & ISO7816: wait for TXRDY
- before sending data
-Message-ID: <20200109073305.yn5y6sgomjniwwj6@pengutronix.de>
-References: <20200107111656.26308-1-codrin.ciubotariu@microchip.com>
- <b11e47c3-8b94-7915-ae5a-d9e8f5b02047@gmail.com>
+ id 1ipSLm-0001ik-Va
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 07:35:28 +0000
+Received: from T480 (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E4B3720673;
+ Thu,  9 Jan 2020 07:35:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578555326;
+ bh=LBZcB4ZPhcMLMC2MDHNLxhWRe934Xzv6zheivRkJnJU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mZUAvSDU+nHa6MUnJp67FGYfnJQUFOdk0uhBDDXR1f6FYSU/TOXIc7k4Ztz3Nzu4g
+ NQa+ZVCMyBXmO8qcwfqYmgpMVg6NzxznQa+cqji7lGOXHKiBHovnvzPqi/wqC77nXd
+ QPRSvrcyQXPMdkS39vuVrjUa8GUr2ivrjtF/jiek=
+Date: Thu, 9 Jan 2020 15:35:21 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH v2] ARM: dts: imx7: Unify temp-grade and speed-grade nodes
+Message-ID: <20200109073520.GD4456@T480>
+References: <20191223120719.7448-1-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b11e47c3-8b94-7915-ae5a-d9e8f5b02047@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20191223120719.7448-1-festevam@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_233309_248609_757FAB6A 
-X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-CacheID: sfid-20200108_233527_069333_3FD54DF0 
+X-CRM114-Status: UNSURE (   8.26  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,31 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- linux-serial@vger.kernel.org, jslaby@suse.com, Codrin.Ciubotariu@microchip.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On Mon, Dec 23, 2019 at 09:07:19AM -0300, Fabio Estevam wrote:
+> The following warning is seen when building with W=1:
+> 
+> arch/arm/boot/dts/imx7s.dtsi:551.39-553.7: Warning (unique_unit_address): /soc/aips-bus@30000000/ocotp-ctrl@30350000/temp-grade@10: duplicate unit-address (also used in node /soc/aips-bus@30000000/ocotp-ctrl@30350000/speed-grade@10)
+> 
+> Since temp-grade and speed-grade point to the same node, replace them by
+> a single one to avoid the duplicate unit-address warning.
+> 
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
-On Wed, Jan 08, 2020 at 02:45:05PM +0100, Richard Genoud wrote:
-> NB: MS exchange has added some =3D3D and =3D20 here and there, but git am
-> doesn't seems to be bothered by them.
-
-Unless I missed something I cannot confirm. In mutt I don't see any =3D3D
-or =3D20.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
