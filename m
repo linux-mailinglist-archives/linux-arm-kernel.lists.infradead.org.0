@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 868A8135FAA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 18:50:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7604B135FAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 18:50:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VHzD1ZbrskffDc4cqmX7/Q/IgHNwzlGuSSFkIAeUw2E=; b=bbDBZ0WKViYYaQ
-	MDmnAoR8o1UXFKf83S+0Z1meYIJ3Fijk6dkXwoiJSID/MsHgJ4e6kMefQ8ycVwBs/agt0q4MUUO0/
-	kYUolp1GT6DcizmASQPpkBgLWMF8ESaDQhZj1zRtLzmOj0mFzF/zXkAsYR6XNWpZ8bzST+p8AWyPr
-	UgnUyIG7iyuDtGp92WSDSZS0iuUePyrNXgJbrzoY2rqb4NXb2gP/759/JGm2VBZsXp8ASIPytkre1
-	GUp4duk7DVp1s3bSVIWcEQimM4cVJHunFRPK9YeajuDcI8mbSB/dJSyYkv5isa+bpjnUsuhKrvnuC
-	0GAQSkWVcRS81r4c1Nbg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u54yBw0GImLag6zj61ZMPb4rrdbMPewTp/fBLyQNyj0=; b=KdlrPZA1iwIZxf
+	rjaAppzBijASh3IcU61xl9P15OvemB+00cq0lDXow0MSFzSMyXy0TjBiScC3fI4vBMxv+JqBK0BOG
+	AwT4cVEfiss2NTqLMoQezCaVuB8FgIZP9X2xVyz61yNDCHdnLcjb1A8n7abqJzebiBaliWrUChsQN
+	27iyUNp2chMvRZB0FlzIifcvRwLkjMB4LvRDUhOqcrUa5mJFBzs6rPeDiVLoSw9raBo5gdFKJpow8
+	8tLLTp56xfQPwafGh1SwWcAJowvJdRk63E7dcCorzlIQTLuT0uZ8w7HnGtkQ//DUCLUXR/70+z6aX
+	08qAbJZwyqG455NcrNHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipbwe-0001zg-9m; Thu, 09 Jan 2020 17:50:08 +0000
+	id 1ipbwt-0003H9-Nc; Thu, 09 Jan 2020 17:50:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipbwP-0001yS-7J
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 17:49:54 +0000
+ id 1ipbwQ-0001yq-K3
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 17:49:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F15C328;
- Thu,  9 Jan 2020 09:49:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3425A1007;
+ Thu,  9 Jan 2020 09:49:53 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9ABE93F703;
- Thu,  9 Jan 2020 09:49:51 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 89E043F703;
+ Thu,  9 Jan 2020 09:49:52 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] arm64: Simplify gas LSE support detection
-Date: Thu,  9 Jan 2020 17:49:46 +0000
-Message-Id: <20200109174948.48211-1-catalin.marinas@arm.com>
+Subject: [PATCH 1/2] kbuild: Add support for 'as-instr' to be used in Kconfig
+ files
+Date: Thu,  9 Jan 2020 17:49:47 +0000
+Message-Id: <20200109174948.48211-2-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200109174948.48211-1-catalin.marinas@arm.com>
+References: <20200109174948.48211-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_094953_303467_72F8B325 
-X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-CacheID: sfid-20200109_094954_704635_C66AEC88 
+X-CRM114-Status: UNSURE (   9.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,27 +70,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The first patch was developed as part the of the MTE support [1] and
-acked by the kbuild maintainers [2].
+Similar to 'cc-option' or 'ld-option', it is occasionally necessary to
+check whether the assembler supports certain ISA extensions. In the
+arm64 code we currently do this in Makefile with an additional define:
 
-The second patch removes the Makefile logic to define CONFIG_AS_LSE
-since the $(as-instr) check can now be handled in Kconfig.
+lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
 
-[1] https://lore.kernel.org/linux-arm-kernel/20191211184027.20130-3-catalin.marinas@arm.com/
-[2] https://lore.kernel.org/linux-arm-kernel/CAK7LNARR=DjdnZdu=L+0H8ALr4XJNpVbcRTOz_sVZdZpcM0pdQ@mail.gmail.com/
+Add the 'as-instr' option so that it can be used in Kconfig directly:
 
-Catalin Marinas (2):
-  kbuild: Add support for 'as-instr' to be used in Kconfig files
-  arm64: Move the LSE gas support detection to Kconfig
+	def_bool $(as-instr,.arch_extension lse)
 
- arch/arm64/Kconfig                    |  4 ++++
- arch/arm64/Makefile                   | 13 ++-----------
- arch/arm64/include/asm/atomic_ll_sc.h |  2 +-
- arch/arm64/include/asm/lse.h          |  6 +++---
- arch/arm64/kernel/cpufeature.c        |  4 ++--
- scripts/Kconfig.include               |  4 ++++
- 6 files changed, 16 insertions(+), 17 deletions(-)
+Acked-by: Masahiro Yamada <masahiroy@kernel.org>
+Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ scripts/Kconfig.include | 4 ++++
+ 1 file changed, 4 insertions(+)
 
+diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+index d4adfbe42690..9d07e59cbdf7 100644
+--- a/scripts/Kconfig.include
++++ b/scripts/Kconfig.include
+@@ -31,6 +31,10 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -E -x c /dev/null -o /de
+ # Return y if the linker supports <flag>, n otherwise
+ ld-option = $(success,$(LD) -v $(1))
+ 
++# $(as-instr,<instr>)
++# Return y if the assembler supports <instr>, n otherwise
++as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
++
+ # check if $(CC) and $(LD) exist
+ $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
+ $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
 
 _______________________________________________
 linux-arm-kernel mailing list
