@@ -2,75 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF9DA135461
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:33:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CEDD135466
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:34:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a+DREV3yUV+wAyskrFw5Enm0S3O997JBtw/tMfcQD5s=; b=LzXQaLlDLm6WsM
-	PzAL8O8dOb93KEEL1UUqrwOU9YkWPvu142FhUR4KjiNYxoV0UciaekV0i5wWXiL7yi9I7enqdHJ/R
-	N4LoV/vbrqxnMbIdzkgnafGUlFIKyBaVwZTfk+K7AIjdRMJwqt1uxC25QJV0tDPzAG7lkpDP7qeBZ
-	QMOEH1XjiQVwik/S1yungIaaYfb3n8clLO1TbEiypuh26XHzGBV9s5bIowlDNNe+jWbSsRY/qI5VB
-	AqDR815w/0bGBEIevi005ziRLk4pzbIPEqFl6qAMqyQA0UP499jtO9VR+0hIaaNCvoesFhBmxcsCO
-	wsfX9XgX6QhluD6cjZBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RSTbl/kleYS1ugzIwgSwdYCbwGv3Xx10D6uWLDdty14=; b=FoVyGLyRPVkcm0xCDpxm6S7HF
+	A5uuNkG4lktzUo7dXqhuCa/NnGDY1NgKN254JK/ZFfUBCOjuWGNi2jJrYE/t9tJv4zGrTeowwMOtn
+	OW21GBXt5Sd12bjxI1/Q8KeUswJ7LWl8/xKPTNVw1tDR31aICmOGLVn8jJmlCwdCc7QfsT7OI4aSB
+	Co+ImJc3jYWwpggYgyc0w9hVwDACUonw1IVcDmOLI2rTkFQpD8S1VbDokioGd0FG9tXi2SwdaL73p
+	ngF7vGn+xzoxDwamfjHV3nKQMzVplH+3CDbx8rNPbeMvx3QqmYPKY0jErksVTgYrB7E3Rud3eOqM6
+	+i0kc61Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTFj-0003zD-9a; Thu, 09 Jan 2020 08:33:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTFU-0003xh-V5; Thu, 09 Jan 2020 08:33:02 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6F20C20673;
- Thu,  9 Jan 2020 08:32:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578558780;
- bh=K/8jTc/G+/G9KpLYm2RrQRaA/2Ksqd3676QEmOVLgSY=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=ZW24qfX6vZYfde10oWKxf9doyhrwmVhaLRivKfvaF5mR/fSL/C16gzZHTAQ4nT/3U
- 6ySBgEy6Xf8tUj3pT9Ux/29vphkZezo7EaYvT819taR+g978O9qOri3Drqs+vad1iD
- rQoeyPPniBw4IlEyCE3lH7ePUIpPr/RMxZnPiPds=
-Date: Thu, 9 Jan 2020 08:32:55 +0000
-From: Will Deacon <will@kernel.org>
-To: AKASHI Takahiro <takahiro.akashi@linaro.org>, pasha.tatashin@soleen.com,
- catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com, bhsharma@redhat.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
-Message-ID: <20200109083254.GA7280@willie-the-truck>
-References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
- <20191216021247.24950-3-takahiro.akashi@linaro.org>
- <20200108174839.GB21242@willie-the-truck>
- <20200109004654.GA28530@linaro.org>
+	id 1ipTGZ-0004bT-Tu; Thu, 09 Jan 2020 08:34:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipTGP-0004az-KX
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 08:33:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 06C121FB;
+ Thu,  9 Jan 2020 00:33:57 -0800 (PST)
+Received: from [10.163.1.42] (unknown [10.163.1.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB7ED3F6C4;
+ Thu,  9 Jan 2020 00:36:56 -0800 (PST)
+Subject: Re: [PATCH v3 05/16] arm64: ptrauth: Add bootup/runtime flags for
+ __cpu_setup
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-6-git-send-email-amit.kachhap@arm.com>
+ <a83267b6-ad1e-ceba-60ee-aecd647880cc@arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <f38fab33-51c1-2018-eaeb-88126fb5534c@arm.com>
+Date: Thu, 9 Jan 2020 14:03:18 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200109004654.GA28530@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <a83267b6-ad1e-ceba-60ee-aecd647880cc@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_003301_022955_4DED192E 
-X-CRM114-Status: GOOD (  19.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200109_003357_716778_604868E9 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,61 +67,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 09:46:55AM +0900, AKASHI Takahiro wrote:
-> On Wed, Jan 08, 2020 at 05:48:39PM +0000, Will Deacon wrote:
-> > On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
-> > > Enabling crash dump (kdump) includes
-> > > * prepare contents of ELF header of a core dump file, /proc/vmcore,
-> > >   using crash_prepare_elf64_headers(), and
-> > > * add two device tree properties, "linux,usable-memory-range" and
-> > >   "linux,elfcorehdr", which represent respectively a memory range
-> > >   to be used by crash dump kernel and the header's location
-> > > 
-> > > Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Will Deacon <will.deacon@arm.com>
-> > > Reviewed-by: James Morse <james.morse@arm.com>
-> > > Tested-and-reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
-> > > ---
-> > >  arch/arm64/include/asm/kexec.h         |   4 +
-> > >  arch/arm64/kernel/kexec_image.c        |   4 -
-> > >  arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
-> > >  3 files changed, 106 insertions(+), 8 deletions(-)
-> > > 
-> > > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > > index 12a561a54128..d24b527e8c00 100644
-> > > --- a/arch/arm64/include/asm/kexec.h
-> > > +++ b/arch/arm64/include/asm/kexec.h
-> > > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
-> > >  struct kimage_arch {
-> > >  	void *dtb;
-> > >  	unsigned long dtb_mem;
-> > > +	/* Core ELF header buffer */
-> > > +	void *elf_headers;
-> > > +	unsigned long elf_headers_mem;
-> > > +	unsigned long elf_headers_sz;
-> > >  };
-> > 
-> > This conflicts with the cleanup work from Pavel. Please can you check my
-> > resolution? [1]
+
+
+On 1/7/20 4:48 PM, Suzuki Kuruppassery Poulose wrote:
+> On 16/12/2019 08:47, Amit Daniel Kachhap wrote:
+>> This patch allows __cpu_setup to be invoked with one of these flags,
+>> ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_LATE or ARM64_CPU_RUNTIME.
+>> This is required as some cpufeatures need different handling during
+>> different scenarios.
+>>
+>> The input parameter in x0 is preserved till the end to be used inside
+>> this function.
+>>
+>> There should be no functional change with this patch and is useful
+>> for the subsequent ptrauth patch which utilizes it. Some upcoming
+>> arm cpufeatures can also utilize these flags.
+>>
+>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 > 
-> I don't know why we need to change a type of dtb_mem,
-> otherwise it looks good.
+> You may add:
 > 
-> (I also assume that you notice that kimage_arch is of no use for kexec.)
+> Suggested-by: James Morse <james.morse@arm.com>
 
-Yes, that's why I'd like the resolution checked. If you reckon it's cleaner
-to drop Pavel's patch altogether in light of your changes, we can do that
-instead.
+Sure. I missed it.
 
-Thoughts?
+> 
+> 
+> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Will
+Thanks for reviewing.
+
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
