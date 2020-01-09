@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7604B135FAB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 18:50:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA32F135FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 18:50:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u54yBw0GImLag6zj61ZMPb4rrdbMPewTp/fBLyQNyj0=; b=KdlrPZA1iwIZxf
-	rjaAppzBijASh3IcU61xl9P15OvemB+00cq0lDXow0MSFzSMyXy0TjBiScC3fI4vBMxv+JqBK0BOG
-	AwT4cVEfiss2NTqLMoQezCaVuB8FgIZP9X2xVyz61yNDCHdnLcjb1A8n7abqJzebiBaliWrUChsQN
-	27iyUNp2chMvRZB0FlzIifcvRwLkjMB4LvRDUhOqcrUa5mJFBzs6rPeDiVLoSw9raBo5gdFKJpow8
-	8tLLTp56xfQPwafGh1SwWcAJowvJdRk63E7dcCorzlIQTLuT0uZ8w7HnGtkQ//DUCLUXR/70+z6aX
-	08qAbJZwyqG455NcrNHA==;
+	List-Owner; bh=nusCV9S3W3YTXl6xfv++C27fIBnCFsbWJ5pZbDL0M1Y=; b=VYVjsqaE7tuwDT
+	qABvyYOyqHfN4FJD+q+N2WZzzGEn6ININz7Oq2+4tmaiykjQCOkcEO4gx2z7FxU97Qf5inAxcSnzg
+	ZDdL1TOVDrjKiMVGeGzs2L77HMz78bXcUMDYmKM5k48R7IGpbCTalnNDr8rI0buzuuEwVlV9EoHQu
+	x/Tv6Wkd6GmDbFJSbc0C4ESLEAygGqet6HJFK00z3ICQ8QDK9InWY6A1mpIE7XEh/6rWG6GvYGxjl
+	wuCehaVYKQYv5e/ZFvfGeECyqsAX/vYfg370aX2La2vwWsPEhM7OIwbzgpv4BEnU8Pw6gTMU3YxXM
+	8kfNcnXfMrwY7ShlZ8Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipbwt-0003H9-Nc; Thu, 09 Jan 2020 17:50:23 +0000
+	id 1ipbx7-0003ZS-Po; Thu, 09 Jan 2020 17:50:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipbwQ-0001yq-K3
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 17:49:55 +0000
+ id 1ipbwQ-0001z6-RX
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 17:49:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3425A1007;
- Thu,  9 Jan 2020 09:49:53 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A4421063;
+ Thu,  9 Jan 2020 09:49:54 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 89E043F703;
- Thu,  9 Jan 2020 09:49:52 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6FEFC3F703;
+ Thu,  9 Jan 2020 09:49:53 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] kbuild: Add support for 'as-instr' to be used in Kconfig
- files
-Date: Thu,  9 Jan 2020 17:49:47 +0000
-Message-Id: <20200109174948.48211-2-catalin.marinas@arm.com>
+Subject: [PATCH 2/2] arm64: Move the LSE gas support detection to Kconfig
+Date: Thu,  9 Jan 2020 17:49:48 +0000
+Message-Id: <20200109174948.48211-3-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20200109174948.48211-1-catalin.marinas@arm.com>
 References: <20200109174948.48211-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_094954_704635_C66AEC88 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200109_094954_976624_52E9EE15 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,38 +68,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to 'cc-option' or 'ld-option', it is occasionally necessary to
-check whether the assembler supports certain ISA extensions. In the
-arm64 code we currently do this in Makefile with an additional define:
+As the Kconfig syntax gained support for $(as-instr) tests, move the LSE
+gas support detection from Makefile to the main arm64 Kconfig and remove
+the additional CONFIG_AS_LSE definition and check.
 
-lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
-
-Add the 'as-instr' option so that it can be used in Kconfig directly:
-
-	def_bool $(as-instr,.arch_extension lse)
-
-Acked-by: Masahiro Yamada <masahiroy@kernel.org>
-Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+Cc: Will Deacon <will@kernel.org>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- scripts/Kconfig.include | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/Kconfig                    |  4 ++++
+ arch/arm64/Makefile                   | 13 ++-----------
+ arch/arm64/include/asm/atomic_ll_sc.h |  2 +-
+ arch/arm64/include/asm/lse.h          |  6 +++---
+ arch/arm64/kernel/cpufeature.c        |  4 ++--
+ 5 files changed, 12 insertions(+), 17 deletions(-)
 
-diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
-index d4adfbe42690..9d07e59cbdf7 100644
---- a/scripts/Kconfig.include
-+++ b/scripts/Kconfig.include
-@@ -31,6 +31,10 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -E -x c /dev/null -o /de
- # Return y if the linker supports <flag>, n otherwise
- ld-option = $(success,$(LD) -v $(1))
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index b1b4476ddb83..2a0521f0f156 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1362,8 +1362,12 @@ config ARM64_PAN
+ 	 The feature is detected at runtime, and will remain as a 'nop'
+ 	 instruction if the cpu does not implement the feature.
  
-+# $(as-instr,<instr>)
-+# Return y if the assembler supports <instr>, n otherwise
-+as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
++config ARM64_AS_HAS_LSE
++	def_bool $(as-instr,.arch_extension lse)
 +
- # check if $(CC) and $(LD) exist
- $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
- $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
+ config ARM64_LSE_ATOMICS
+ 	bool "Atomic instructions"
++	depends on ARM64_AS_HAS_LSE
+ 	depends on JUMP_LABEL
+ 	default y
+ 	help
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 1fbe24d4fdb6..cca6de192d42 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -30,15 +30,6 @@ LDFLAGS_vmlinux	+= --fix-cortex-a53-843419
+   endif
+ endif
+ 
+-# Check for binutils support for specific extensions
+-lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
+-
+-ifeq ($(CONFIG_ARM64_LSE_ATOMICS), y)
+-  ifeq ($(lseinstr),)
+-$(warning LSE atomics not supported by binutils)
+-  endif
+-endif
+-
+ cc_has_k_constraint := $(call try-run,echo				\
+ 	'int main(void) {						\
+ 		asm volatile("and w0, w0, %w0" :: "K" (4294967295));	\
+@@ -53,11 +44,11 @@ $(warning Detected assembler with broken .inst; disassembly will be unreliable)
+   endif
+ endif
+ 
+-KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
++KBUILD_CFLAGS	+= -mgeneral-regs-only $(brokengasinst)	\
+ 		   $(compat_vdso) $(cc_has_k_constraint)
+ KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
+ KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+-KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
++KBUILD_AFLAGS	+= $(brokengasinst) $(compat_vdso)
+ 
+ KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
+ KBUILD_AFLAGS	+= $(call cc-option,-mabi=lp64)
+diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+index 7b012148bfd6..13869b76b58c 100644
+--- a/arch/arm64/include/asm/atomic_ll_sc.h
++++ b/arch/arm64/include/asm/atomic_ll_sc.h
+@@ -12,7 +12,7 @@
+ 
+ #include <linux/stringify.h>
+ 
+-#if IS_ENABLED(CONFIG_ARM64_LSE_ATOMICS) && IS_ENABLED(CONFIG_AS_LSE)
++#ifdef CONFIG_ARM64_LSE_ATOMICS
+ #define __LL_SC_FALLBACK(asm_ops)					\
+ "	b	3f\n"							\
+ "	.subsection	1\n"						\
+diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
+index 80b388278149..4e1009fff686 100644
+--- a/arch/arm64/include/asm/lse.h
++++ b/arch/arm64/include/asm/lse.h
+@@ -4,7 +4,7 @@
+ 
+ #include <asm/atomic_ll_sc.h>
+ 
+-#if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
++#ifdef CONFIG_ARM64_LSE_ATOMICS
+ 
+ #include <linux/compiler_types.h>
+ #include <linux/export.h>
+@@ -36,7 +36,7 @@ static inline bool system_uses_lse_atomics(void)
+ #define ARM64_LSE_ATOMIC_INSN(llsc, lse)				\
+ 	ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
+ 
+-#else	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
++#else	/* CONFIG_ARM64_LSE_ATOMICS */
+ 
+ static inline bool system_uses_lse_atomics(void) { return false; }
+ 
+@@ -44,5 +44,5 @@ static inline bool system_uses_lse_atomics(void) { return false; }
+ 
+ #define ARM64_LSE_ATOMIC_INSN(llsc, lse)	llsc
+ 
+-#endif	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
++#endif	/* CONFIG_ARM64_LSE_ATOMICS */
+ #endif	/* __ASM_LSE_H */
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 04cf64e9f0c9..2595c2886d3f 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1291,7 +1291,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.cpu_enable = cpu_enable_pan,
+ 	},
+ #endif /* CONFIG_ARM64_PAN */
+-#if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
++#ifdef CONFIG_ARM64_LSE_ATOMICS
+ 	{
+ 		.desc = "LSE atomic instructions",
+ 		.capability = ARM64_HAS_LSE_ATOMICS,
+@@ -1302,7 +1302,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.sign = FTR_UNSIGNED,
+ 		.min_field_value = 2,
+ 	},
+-#endif /* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
++#endif /* CONFIG_ARM64_LSE_ATOMICS */
+ 	{
+ 		.desc = "Software prefetching using PRFM",
+ 		.capability = ARM64_HAS_NO_HW_PREFETCH,
 
 _______________________________________________
 linux-arm-kernel mailing list
