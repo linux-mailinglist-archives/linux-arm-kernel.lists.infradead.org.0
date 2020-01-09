@@ -2,63 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA6C71354E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:56:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F39813550F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 10:01:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZvMbs0GHOeUqBLa6UwBa4UX6iEKvuCqUeN94RTEPm0k=; b=sfs
-	u7mwaMt2VDsOlqCEiUR3WkQE2hhSI+Hjk3bWy8Nk079GpEM8XjCj8kGAUt7xQbw/yFWefQKDXzcjS
-	yzpeaFryuhPnLEg/VF2Q/NzPdgdXrkvOQdLQCICaVB5a+gdr7897oKwTIfgSreH9AFCwn0MyG7qHK
-	dZufpWYY2hX7YE5+m4RT0uK0ch+fL16LQGDeDbm9hPD3kpvgeNhXeiq+Yv4CcoFTGa+ANGGO9b9q4
-	VztEFngN+zTAtV8jPvFq/kIqJ1S3/c5Gx5w60wwAp9rEpv+EIhgr9ahUTj7+C2ZvzpOvrH+pVsNGa
-	ZcWCuJNq5f0VPgutXBCQIQZgYmAw/aA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WM6+qnQsVbSrK2yP7g79vyEhuYrh5d0a4wiPNLR5YbI=; b=DhmZvDRVDJf/ZshTzyySIu2kx
+	J3q4Db/+A6Kig0hWyhKEuDvEskhUgQdxiCqZmW/CZkpxEkSLBNc7tv15Q2fPW7CxhLxrgX0GQl0cO
+	kwbz+yOqlyTvslau861XCAI7jobATGga6VbnjdX64g9djsaakBtxxvcPoKuiUj8oyuzwzbiUWA+dB
+	4pGW+Tz20WgT4mrSaP9YSSzNgfAjOD5VT9VrRG5Z7ma2RiRaqd9oo104HUWsg0JloQSFRvo4tc2o0
+	WV29q2Nelb6tFzoVlqdkJqSeFM7JazUcP/Lb59GVRT+ozNgyXwDxRcYseldRftySK+jKWImunZP7A
+	u0IFmuaUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTcO-0008Ef-Tw; Thu, 09 Jan 2020 08:56:40 +0000
-Received: from ozlabs.org ([2401:3900:2:1::2])
+	id 1ipTgt-0001df-J4; Thu, 09 Jan 2020 09:01:19 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTcI-0008Dl-Ca
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 08:56:35 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 47tg2l4VSNz9sR0;
- Thu,  9 Jan 2020 19:56:31 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1578560191;
- bh=80jI77AOoYFB7RRyd6uDjLgdDaixjsEjEGudOjmOH/A=;
- h=Date:From:To:Cc:Subject:From;
- b=JCOdhCaXZ5S1ODqx4HOTSwZAQqa7f5B5wIEZVMRNVeeFNUfo4Vhc+pnG4e+TfLG+G
- 1D81VF1EnMfrQq9hyh/WUc0pbtyxSs88pDfuspfpo4D/xWnnDlwvpz8TijeLo9BmBQ
- r5gTmNzT9XBCOIRxgEXEMYXrkbykZx/2wfhhFuLwwyS774rTyVS4HcsmIanTtXT4pq
- xtzKnaxZGsRjBWoodOFTOczsjq8zJgPSjYalDHqqtVcD+1CBoHlg7Bf/EVMnd5qyfF
- fh5NczIvS7yAmll2GeN0/weBcvKi3CFhdR30/rfw3+kjEQ3gpvIzoGVh3KUoj82RMd
- 3sTdVK0HUnFXg==
-Date: Thu, 9 Jan 2020 19:56:30 +1100
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
- <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: Signed-off-by missing for commit in the arm-soc tree
-Message-ID: <20200109195630.2dba4028@canb.auug.org.au>
+ id 1ipTgl-0001cy-TP
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 09:01:14 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0098vluo027339; Thu, 9 Jan 2020 10:01:04 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=VrpNqw1ml8Zy129ySb4TfJry+4/8mCEXYVXi+jrwUo4=;
+ b=Ex9Eg7dwD08Sqq4AnJ4VKMz3942ON5mW6GSfi09pXE0WW191YtZAisAaWCGBdxfOM/c0
+ +L36s7Y8wXA2XNDhbMWlBE3xDgKh0vt4Lp3ZqT1EUHJHNQK0MBS4qJf55ikNF+tpwJdu
+ 17xK4xrsqfKIbIEIpEkJo/rW/325R8lIcAlTHUqcbK6oYl/eCU1bUp3bXa1CCp6y5AkQ
+ XmaNsD3S+ebYb1xpG3BUge2ypZ7lY5wAY2+YlqIpFUimdLhzF+lsBl0Ts2qJivyvioMg
+ IrtcXNwgrJZvnCQr5o3b9hiGz8gMT+FqzJXdT7SNR4O4LJSPQxDx3BJri8lVEXNzPM7C VA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xakur0ggh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 09 Jan 2020 10:01:04 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8495A10002A;
+ Thu,  9 Jan 2020 10:01:04 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6AFAB2A4D7B;
+ Thu,  9 Jan 2020 10:01:04 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 9 Jan
+ 2020 10:01:03 +0100
+Subject: Re: [PATCH 0/3] Convert STM32 ROMEM to json-schema
+To: Benjamin Gaignard <benjamin.gaignard@st.com>,
+ <srinivas.kandagatla@linaro.org>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
+ <fabrice.gasnier@st.com>
+References: <20191219144117.21527-1-benjamin.gaignard@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <c3326bf5-f3f8-489b-5245-3b9fd47324bb@st.com>
+Date: Thu, 9 Jan 2020 10:01:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
+In-Reply-To: <20191219144117.21527-1-benjamin.gaignard@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-09_02:2020-01-08,
+ 2020-01-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_005634_629484_EEF5D079 
-X-CRM114-Status: UNSURE (   5.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200109_010112_316562_79B9E93A 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -75,63 +99,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============8470572650671217522=="
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============8470572650671217522==
-Content-Type: multipart/signed; boundary="Sig_/824GcS9jCs456SzDeQhXmGM";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+Hi Benjamin,
 
---Sig_/824GcS9jCs456SzDeQhXmGM
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+On 12/19/19 3:41 PM, Benjamin Gaignard wrote:
+> Convert STM32 ROMEM to json-schema and fix the issues detected on stm32 dtsi
+> files.
+> Note that stm32mp1 patch should be applied on top of the stm32-next tree.
+> 
+> Benjamin Gaignard (3):
+>    dt-bindings: nvmem: Convert STM32 ROMEM to json-schema
+>    ARM: dts: stm32: change nvmem node name on stm32f429
+>    ARM: dts: stm32: change nvmem node name on stm32mp1
+> 
+>   .../devicetree/bindings/nvmem/st,stm32-romem.txt   | 31 ---------------
+>   .../devicetree/bindings/nvmem/st,stm32-romem.yaml  | 46 ++++++++++++++++++++++
+>   arch/arm/boot/dts/stm32f429.dtsi                   |  2 +-
+>   arch/arm/boot/dts/stm32mp151.dtsi                  |  2 +-
+>   4 files changed, 48 insertions(+), 33 deletions(-)
+>   delete mode 100644 Documentation/devicetree/bindings/nvmem/st,stm32-romem.txt
+>   create mode 100644 Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
+> 
 
-Hi all,
+DT patches applied on stm32-next.
 
-Commit
-
-  4386aa866d99 ("cpuidle: psci: Align psci_power_state count with idle stat=
-e count")
-
-is missing a Signed-off-by from its committer.
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/824GcS9jCs456SzDeQhXmGM
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl4W6r4ACgkQAVBC80lX
-0GwZlQgAirkY8xW4wHeY2GrIGzjzWjMtLySs51/+GFxYIQkiukdFuzXStFgI6sqZ
-m02dL0NKR2rmKx9Imk2Q/NI5Y+J0pOId2l8HSCGLBJqYJnYeqzG+8/eSuYYngmHr
-OVQ0WvgR32aD90t10v+0B6ynscsROyCc/e+kUDuQoeQpod1xmME3J50g3a3sbGr8
-VHusxWauZifmjl2IWzvaVIgGo+CGpf79iiEue7pMMkodrfAIF93Ie933ai9wTwIu
-ycUjU4kgRC20myd1bPjvi/977JsrC/lDp//jUkhX31sWl1z82Jqnzem18ePzJ1b2
-bRo5rCD9sTF454g9dMy0rfCJUeTyhA==
-=l+fn
------END PGP SIGNATURE-----
-
---Sig_/824GcS9jCs456SzDeQhXmGM--
-
-
---===============8470572650671217522==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8470572650671217522==--
-
