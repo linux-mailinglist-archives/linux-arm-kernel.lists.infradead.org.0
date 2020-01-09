@@ -2,92 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75383135E2F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:24:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42EC8135E2E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:24:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MbbcRYshi/bcTQhLzlQd3Kb7tfL09zFiLdpTYUrSMVg=; b=OXNL/EQD4iGtXw
-	CHk1L42oPD7z8l55/iVwx2+t1iDWdGB5A9iZnja+uZEaQR6dAcZqVC4aIsa4MTfqi1DJQp7ELWYse
-	nqZxUX6bRSsLX1RPAgdrxdOKjrYCD8/kKnFA0e5W0LBlxwawMiK/ko/R5uGrJf3VS6I3sK3Aahy5e
-	12q7boa2HEYcihR5evmj+Q0SKtwxEwMd7GKzZc2FxkcFCxJ7Vkd1L927yj2JvdrxhD24keIkifhze
-	90ciop8mqbppF3ffKotybHArPr+bkAKoOzeXfRboTvYSIuRkGrjZ1sonz9PFW0WWjUttg4gpf/c2D
-	vwQM5fUss/LcTmlpj7og==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DnNC92lEyiMOcGD1AumzIX8eNMn/sMud8xPC/pnaBjo=; b=A2N8lKDPP9Le+rbwWVVRXhrCt
+	8D4KDxdgkLibOOlIBkdNt0YsnlqsLCieom6eivaFL72we0/aiNVzAG4yiI0yPasTstWdLOGSSBVwH
+	aTQg3BlDhE7nFWt9ZDwCxVYsZWCqI30qsSiZUk/8bRYAC/QsPCXd8a4id7aXZ9xUv3OSfj2/L/M5a
+	/5h2D8SpAJrriAG0KW1Su2jT0OAKwYZNylGwwcagANnC1wX2qC4s1GigCRml7TsavvBthQ9brAe78
+	BIW6AIue/Y/lrZqBPFgWio4Z1mihGZMyBNNXYDqu3htPBkC/6RFpz1AEFS6wfRjN4CYHL936HYbv2
+	LLjScl5jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipabi-0002CG-AT; Thu, 09 Jan 2020 16:24:26 +0000
-Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaWW-0004yQ-LV
+	id 1ipabR-0001wX-Nx; Thu, 09 Jan 2020 16:24:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipaWU-0004vY-O2
  for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:19:08 +0000
-Received: by mail-qk1-x736.google.com with SMTP id z76so6513220qka.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:19:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
- h=from:mime-version:date:message-id:subject:to;
- bh=d88Xq53MKTDEJhK31IGTSeb6nL+720DGGuqob3OXfa0=;
- b=rwFdPy8zJV4rDrzUrwoPihzrxRWL7XDmnNQCU13Evd8P428xLWbB0UgvxHcq2BJqY3
- YbBbyQPLxRfmJGz+MMr10dlPkhL6KjBEZrFaYA7R7ZFC7IfUfETQwL2h4rUcF4zEdUlj
- la/rkaKJqCSfxyRTKFV3YB8ZXwbEUgeIBpJEOeoJANe+C8lJE7c/jznxB5bn7evGqJJM
- UfZqc8Y1CsOIQAFM7wl5hYnqpscgaqkaamRsrOIpuAxyQU20x5geSNeLEZHXftaWYeFL
- 7RYDenLf2lsm9oJMxdfMul82aUBQm8VNgaBo3k6oPk/LR09QV7XrzolQl9klQ4lqkiTn
- Tc/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
- bh=d88Xq53MKTDEJhK31IGTSeb6nL+720DGGuqob3OXfa0=;
- b=cBGMLbdP24w703VFA953RCwAx2kboZ0eGjuaM3YxOGF1Rjwt9/17sqC9FiLjAc/7uR
- TcgNWfHq7vwIbgN9hffeiRO4GLkvH9tEjYd2sOEHnfFOaYWv5XvReRuOOSz/YKQvzgtB
- nRZV2P3EGFaJtye1l9OHJtibAcett6wu4NMz1OGuLGAVlFpo14lcu+xGMRZDt7PS5pC6
- WANzg637BVuDPjlrzONFGjbv6bhcV3NMeHdPJL3mvifKUC5daIBCgmslHnty/SvGHtsy
- vlerA9gbiclqJiQGpx/ePEKwAtM4slsKmALkkI4S7WGke2VbshDJEC+ceFO+ADbfvWzj
- O8yA==
-X-Gm-Message-State: APjAAAXMKz5ofvSR9ksi6UotTneLR7D/daknuiT0xejBeIrKnl3zmyhs
- g8TqZrnD+Aic38ypNp+2rhCQ+Hc4ubld0w==
-X-Google-Smtp-Source: APXvYqzzWkUVjRPOS0Y0J9KQ/NQNGUhmS1t/fSvFmJ5E0fawJ9DIhQ8e55Ag5otdDv0V3Vmr+DCekA==
-X-Received: by 2002:a05:620a:16bb:: with SMTP id
- s27mr10743638qkj.368.1578586742217; 
- Thu, 09 Jan 2020 08:19:02 -0800 (PST)
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com.
- [209.85.160.176])
- by smtp.gmail.com with ESMTPSA id i5sm3498762qtv.80.2020.01.09.08.19.01
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Jan 2020 08:19:02 -0800 (PST)
-From: Otavio Salvador <otavio.salvador@ossystems.com.br>
-X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
-Received: by mail-qt1-f176.google.com with SMTP id i13so1493864qtr.3;
- Thu, 09 Jan 2020 08:19:01 -0800 (PST)
-X-Received: by 2002:ac8:3510:: with SMTP id y16mr8837483qtb.6.1578586740862;
- Thu, 09 Jan 2020 08:19:00 -0800 (PST)
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 445841FB;
+ Thu,  9 Jan 2020 08:19:00 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C03033F703;
+ Thu,  9 Jan 2020 08:18:59 -0800 (PST)
+Date: Thu, 9 Jan 2020 16:18:58 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Richard Henderson <richard.henderson@linaro.org>
+Subject: Re: [PATCH v9 2/3] arm64: random: Add data to pool from setup_arch()
+Message-ID: <20200109161858.GA3702@sirena.org.uk>
+References: <20200108194133.44110-1-broonie@kernel.org>
+ <20200108194133.44110-3-broonie@kernel.org>
+ <1639b993-d056-5e32-b841-436d42f60df4@linaro.org>
 MIME-Version: 1.0
-Date: Thu, 9 Jan 2020 13:18:48 -0300
-X-Gmail-Original-Message-ID: <CAP9ODKo8UPbU+JR45T2rjJH3FefcWw=tS71EmjFzVyPMA_R7gg@mail.gmail.com>
-Message-ID: <CAP9ODKo8UPbU+JR45T2rjJH3FefcWw=tS71EmjFzVyPMA_R7gg@mail.gmail.com>
-Subject: RV1108G run-time detection
-To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- Heiko Stuebner <heiko@sntech.de>,
- Kernel development list <linux-kernel@vger.kernel.org>
+In-Reply-To: <1639b993-d056-5e32-b841-436d42f60df4@linaro.org>
+X-Cookie: Killing turkeys causes winter.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_081904_821407_E19BD7A5 
-X-CRM114-Status: UNSURE (   7.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_081902_876737_60E45C89 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:736 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,36 +66,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: multipart/mixed; boundary="===============5047336238347507874=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-We would like to know if there is a way to distinguish between RV1108
-and RV1108G versions in run-time.
+--===============5047336238347507874==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="cNdxnHkX5QqsyA0e"
+Content-Disposition: inline
 
-The reason we are asking is because arch/arm/boot/dts/rv1108.dtsi
-defines the following operational points: 408, 600, 816, 1008 MHz, but
-the RV1108G version does not support 1GHz and its maximum operating
-frequency is 800MHz (not 816 MHz).
 
-In the i.MX SoCs we can read a fuse that indicates the "speed grading"
-of the chip and decide which operating points could be used for that
-particular version.
+--cNdxnHkX5QqsyA0e
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Is there such a mechanism in RV1108? Any suggestions to limiting the
-RV1108G operational point at 800MHz?
+On Thu, Jan 09, 2020 at 08:33:25AM +1100, Richard Henderson wrote:
+> On 1/9/20 6:41 AM, Mark Brown wrote:
 
-Thanks
+> > +	for (i = 0; i < 16; i++)
+> > +		if (__arm64_rndr(&val))
+> > +			add_device_randomness(&val, sizeof(val));
+> > +}
 
--- 
-Otavio Salvador                             O.S. Systems
-http://www.ossystems.com.br        http://code.ossystems.com.br
-Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
+> This is not nearly the same thing as what crng_initialize does.  In particular,
+> it's not going to advance crng_init at all.
+
+That's right, but I think that's good enough to get us going here.  It
+will add data into the pool so we're mitigating against a lack of per
+device entropy which seems clearly better than doing nothing at all and
+has no issues with integration with the decision about trusting the RNG
+to provide entropy so it's safe.  The commit message does say we add
+data rather than entropy, though I agree that on reflection the callback
+isn't clearly named there and people not familiar with the random
+subsystem will likely not notice the difference.
+
+We could definitely improve the commit message a bit here or even drop
+the patch but I think we're better off with this than without it, and
+exposing the feature to userspace, allowing in kernel usage after init
+and using it for KASAN are clear wins regardless of what we do with the
+pool.  If we can do something that credits the entropy at boot that'd be
+even better of course but I don't think that needs to block everything
+else.
+
+> You could use add_hwgenerator_randomness, but you have no way to honor the
+> random.trust_cpu command-line parameter that way.
+
+Right, that'd definitely be the wrong thing to do here.
+
+> The only thing I can imagine that would satisfy MarkR's constraints is to have
+
+The main issue he had was as far as I can tell with adding complexity to
+the main runtime path which we now avoid, we now don't have anything
+that needs to disable preemption or anything like that.
+
+> a new archrandom.h interface, arch_get_random_boot_long().
+
+An equivalent of device_add_randomness() that credits entropy would also
+do the trick for adding entropy, it'd definitely be more hassle to
+implement and quite possibly more trouble than it's worth compared to a
+simple call like you suggest but it does have the advantage that you
+know the core can't try to call it once we've got multiple CPUs up.
+
+--cNdxnHkX5QqsyA0e
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4XUnEACgkQJNaLcl1U
+h9DGAQf/QSD41ePGeyBDzC2rWPZKUle+PpWqW8OGFYboYKFVlEsbJRl1bHx5lU4S
++zHylR0A+cH11hS1KXFEmbmn9YeiHXK4m2Z/r+/FRXTwu5WF23NXb4HzpfGAsbxR
+lHpw6roQ+182EZoedzyQvAvKDuBsqXinB4Whmc7QWeTYNXEhfaA0nYq2KIq+DHoB
+/6GfZ1nRd6pVPcAyT6KL3ru6xidnWvmfapae/9uRD4PwdVqPrCriThBXy7qWe+8Q
+ebIVL0DFHf3ktCWMP7hpjT4WJJi4pn6qCo9yW/j6BvzQUQXt38Yii9oV0xqCI16Z
+1VFLu0VjuW8GrV0sjOLzJd27K8kPUg==
+=QpK3
+-----END PGP SIGNATURE-----
+
+--cNdxnHkX5QqsyA0e--
+
+
+--===============5047336238347507874==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5047336238347507874==--
+
