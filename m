@@ -2,150 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BF0413625B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 22:18:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3097713627C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 22:29:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KPpbaHuL43wb47rxjPMmdN4oFGvIYruunM2wLXgRWRE=; b=Wc+Os9UYwI+hrA
-	Ec54sx1O81Ee+MnbpuyxjXChnjbWLoTYMeL1W/NV7yB8ocEe8zt+4ktCyRHTjV8MStQPVR17xMPHz
-	iPJi+cY/bclHF/T6FZw3Teu+ryPYWDdGXxrZnXV1qluBiffWFAIL9n4WyToMDDeUGarvfoY2kKXMe
-	G1uvIAdc4NlHtnhNkKOieTeUeiEGiqqPW2bOkitCqCr1fe9nclANbCCqu8AsVARYtxTWgjW19gj/d
-	RYTGk0/2gg5J7MhagYPt8sU/h5FajIsbMNz1cGywrq7Ocfmw98YQmQ4UUtQe6/+IHvJBIFMW78mAI
-	T69d/UT0GVkwcTZLK2Tg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=X8IUvASqBXsChbHOm44QijOUfWYTkOCasNXSgAzee+A=; b=l2K
+	YQGr3Cm/mGtZFYOze7oWvRbJC1AkajounoiSqsnQCUjZXWJVTft6chnrSnau2g9S/9mldX6yKOxtG
+	Hjo03ERzPr6xyu8GSf6gPXOaaLxfeE7+jd8ykwfmcXRZINOa9ZLKmRcQKj+fNmw8HIy58OYYARXZs
+	5jt2u7tVtyG75FHggZIVVm0GO4CsX247tcr9z9R1++ucHBHWeoaPRt6eplpxDT3pG5iqwdu5xkjCX
+	m59FMFMsgzg55RZkWsWnHXwqnF5Cj/wGa6XdsakdOJi0b9sI8PbvAI+gSKx2K8bzquHCovgAHfota
+	fJQoyyVzicAzFpvPeP/fQGcIpjjkPew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipfBi-00034N-Kl; Thu, 09 Jan 2020 21:17:54 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipfBa-00033z-UX
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 21:17:49 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z3so8984492wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 13:17:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=qyCXD4vr+CxrllLBvsL4+jVtHYuViKNKBfxikWr3PLM=;
- b=oRoij5JnWSAzDoK+ggWMXcAqnWhKoBf/TwQrJL3Gd9j4PxZIOAR8KqBO9MB8uHfGnX
- Y2GZwLjcQRCIbMmjJwv/OkYagNEIppnFmO/sF4Fzm0lch6vUJAVdgELnxoVwH/KhEyg3
- ekOZUKipGGhrY1E8z5yBttQpWCLLqlAu6UwxZod69xVmwITFG0j+68LltOp0Dp2UoAT7
- MivWhDveT1P6FYVNCC6fZJWaY5z1njBz6tk+Xyv9vnuOBIlPfHoyziSlBYXhcAtBOoWv
- 3Rd/SfD9LCLBH6pa7FdWVhBGoEb7rtV2Krpre7Hj8Q83qdxLt6swFg69HCsloczWJv1q
- EM5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=qyCXD4vr+CxrllLBvsL4+jVtHYuViKNKBfxikWr3PLM=;
- b=fnDCG1gjkRTCFExl3jtaV/4cEWFDzTINLNHfWsVtZ9YFSZiejqVLaMOPrw13WcP3Hu
- S1oOoaaY4BIojvijY7fqPpbVQdU2Ue5IyfmY+O9iAul1BreHyu6aDx5vLSxfHxG717BQ
- TJ2/s4I3RQJZ+1f4OCLLL2LesFK9CQBYm+RZ1uwIb4yzhsJBgFCQjddFMRFCDEiPBKTV
- IWUBuFtw6ZGVG13pO1PLH2MaskzxwHp7rMpgbp/TmTICR89SErX9ZfD+wie0x1kWqXZO
- F98lAxUL+3HGcWbEh5i+ydEqIFT/XbmFpDUkBB+qc8IdO+TmFdXt1LGbzd93/vAW6zF/
- ezPA==
-X-Gm-Message-State: APjAAAU4FaKbKfIJ6S68zYCX8Z+A+dIoQ0fNJqI7wKEFLAXZoR6lg+Tl
- EFE58gMSZzFqV6KFkWJR3CFjMA==
-X-Google-Smtp-Source: APXvYqxsXWMWUZCh/HEmygjcgJ8fi+WlzDrhxZ5x0b/eKvFt06A6uu6ebKswkzOKN89tLFRMo+/RVg==
-X-Received: by 2002:a5d:6748:: with SMTP id l8mr13221008wrw.188.1578604664754; 
- Thu, 09 Jan 2020 13:17:44 -0800 (PST)
-Received: from ?IPv6:2a01:e34:ed2f:f020:f1d5:61e0:e9d8:1c3d?
- ([2a01:e34:ed2f:f020:f1d5:61e0:e9d8:1c3d])
- by smtp.googlemail.com with ESMTPSA id m7sm4111134wma.39.2020.01.09.13.17.41
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Jan 2020 13:17:44 -0800 (PST)
-Subject: Re: [PATCH v2 2/6] thermal: brcmstb_thermal: Prepare to support a
- different process
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191211203143.2952-1-f.fainelli@gmail.com>
- <20191211203143.2952-3-f.fainelli@gmail.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <a8e6cb1a-fa03-a443-eaa2-2a6385ac6a37@linaro.org>
-Date: Thu, 9 Jan 2020 22:17:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20191211203143.2952-3-f.fainelli@gmail.com>
-Content-Language: en-US
+	id 1ipfN1-0007cs-DY; Thu, 09 Jan 2020 21:29:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipfMq-0007bj-RC
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 21:29:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63D701007;
+ Thu,  9 Jan 2020 13:29:23 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC26A3F534;
+ Thu,  9 Jan 2020 13:29:22 -0800 (PST)
+Date: Thu, 09 Jan 2020 21:29:21 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Applied "ASoC: stm32: sai: fix possible circular locking" to the asoc
+ tree
+In-Reply-To: <20200109083254.478-1-olivier.moysan@st.com>
+Message-Id: <applied-20200109083254.478-1-olivier.moysan@st.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_131747_371241_F78C42C1 
-X-CRM114-Status: GOOD (  25.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_132926_570224_859210A6 
+X-CRM114-Status: GOOD (  23.87  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,123 +63,499 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
+ tiwai@suse.com, linux-kernel@vger.kernel.org, lgirdwood@gmail.com,
+ Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com, perex@perex.cz,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTEvMTIvMjAxOSAyMTozMSwgRmxvcmlhbiBGYWluZWxsaSB3cm90ZToKPiBUaGUgZHJpdmVy
-IGlzIGN1cnJlbnRseSBhc3N1bWluZyB0aGF0IGl0IGlzIG9wZXJhdGluZyB3aXRoIGEgMjhubQo+
-IHByb2Nlc3MgY2hpcCwgd2hpY2ggaGFzIGEgc3BlY2lmaWMgZm9ybXVsYSB0byBjb252ZXJ0IHRl
-bXBlcmF0dXJlIHRvIGEKPiBjb2RlIGFuZCB2aWNlIHZlcnNhLiBVcGRhdGUgdGhlIGNvZGUgdG8g
-c3VwcG9ydCBwcm92aWRpbmcgdHdvIGtleQo+IHZhbHVlczogb2Zmc2V0IGFuZCBtdWx0aXBsaWVy
-IHRvIGRlcml2ZSB0aGUgY29ycmVjdCBmb3JtdWxhcy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBGbG9y
-aWFuIEZhaW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KPiAtLS0KPiAgZHJpdmVycy90aGVy
-bWFsL2Jyb2FkY29tL2JyY21zdGJfdGhlcm1hbC5jIHwgNTQgKysrKysrKysrKysrKysrKy0tLS0t
-LQo+ICAxIGZpbGUgY2hhbmdlZCwgMzkgaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25zKC0pCj4g
-Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9icm9hZGNvbS9icmNtc3RiX3RoZXJtYWwu
-YyBiL2RyaXZlcnMvdGhlcm1hbC9icm9hZGNvbS9icmNtc3RiX3RoZXJtYWwuYwo+IGluZGV4IDY4
-MGYxYTA3MDYwNi4uNjhmODlmN2M3ZTdmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvdGhlcm1hbC9i
-cm9hZGNvbS9icmNtc3RiX3RoZXJtYWwuYwo+ICsrKyBiL2RyaXZlcnMvdGhlcm1hbC9icm9hZGNv
-bS9icmNtc3RiX3RoZXJtYWwuYwo+IEBAIC0xMDIsMTggKzEwMiwyNyBAQCBzdGF0aWMgc3RydWN0
-IGF2c190bW9uX3RyaXAgYXZzX3Rtb25fdHJpcHNbXSA9IHsKPiAgCX0sCj4gIH07Cj4gIAo+ICtz
-dHJ1Y3QgYnJjbXN0Yl90aGVybWFsX3BhcmFtcyB7Cj4gKwl1bnNpZ25lZCBpbnQgb2Zmc2V0Owo+
-ICsJdW5zaWduZWQgaW50IG11bHQ7Cj4gK307Cj4gKwo+ICBzdHJ1Y3QgYnJjbXN0Yl90aGVybWFs
-X3ByaXYgewo+ICAJdm9pZCBfX2lvbWVtICp0bW9uX2Jhc2U7Cj4gIAlzdHJ1Y3QgZGV2aWNlICpk
-ZXY7Cj4gIAlzdHJ1Y3QgdGhlcm1hbF96b25lX2RldmljZSAqdGhlcm1hbDsKPiArCS8qIFByb2Nl
-c3Mgc3BlY2lmaWMgdGhlcm1hbCBwYXJhbWV0ZXJzIHVzZWQgZm9yIGNhbGN1bGF0aW9ucyAqLwo+
-ICsJc3RydWN0IGJyY21zdGJfdGhlcm1hbF9wYXJhbXMgdGVtcF9wYXJhbXM7Cj4gIH07Cj4gIAo+
-ICAvKiBDb252ZXJ0IGEgSFcgY29kZSB0byBhIHRlbXBlcmF0dXJlIHJlYWRpbmcgKG1pbGxpZGVn
-cmVlIGNlbHNpdXMpICovCj4gLXN0YXRpYyBpbmxpbmUgaW50IGF2c190bW9uX2NvZGVfdG9fdGVt
-cChzdHJ1Y3QgdGhlcm1hbF96b25lX2RldmljZSAqdHosCj4gK3N0YXRpYyBpbmxpbmUgaW50IGF2
-c190bW9uX2NvZGVfdG9fdGVtcChzdHJ1Y3QgYnJjbXN0Yl90aGVybWFsX3ByaXYgKnByaXYsCj4g
-IAkJCQkJdTMyIGNvZGUpCj4gIHsKPiAtCXJldHVybiAoQVZTX1RNT05fVEVNUF9PRkZTRVQgLQo+
-IC0JCShpbnQpKChjb2RlICYgQVZTX1RNT05fVEVNUF9NQVgpICogQVZTX1RNT05fVEVNUF9TTE9Q
-RSkpOwo+ICsJaW50IG9mZnNldCA9IHByaXYtPnRlbXBfcGFyYW1zLm9mZnNldDsKPiArCWludCBt
-dWx0ID0gcHJpdi0+dGVtcF9wYXJhbXMubXVsdDsKPiArCj4gKwlyZXR1cm4gKG9mZnNldCAtIChp
-bnQpKChjb2RlICYgQVZTX1RNT05fVEVNUF9NQVNLKSAqIG11bHQpKTsKPiAgfQo+ICAKPiAgLyoK
-PiBAQCAtMTIyLDIxICsxMzEsMjIgQEAgc3RhdGljIGlubGluZSBpbnQgYXZzX3Rtb25fY29kZV90
-b190ZW1wKHN0cnVjdCB0aGVybWFsX3pvbmVfZGV2aWNlICp0eiwKPiAgICogQHRlbXA6IHRlbXBl
-cmF0dXJlIHRvIGNvbnZlcnQKPiAgICogQGxvdzogaWYgdHJ1ZSwgcm91bmQgdG93YXJkIHRoZSBs
-b3cgc2lkZQo+ICAgKi8KPiAtc3RhdGljIGlubGluZSB1MzIgYXZzX3Rtb25fdGVtcF90b19jb2Rl
-KHN0cnVjdCB0aGVybWFsX3pvbmVfZGV2aWNlICp0eiwKPiArc3RhdGljIGlubGluZSB1MzIgYXZz
-X3Rtb25fdGVtcF90b19jb2RlKHN0cnVjdCBicmNtc3RiX3RoZXJtYWxfcHJpdiAqcHJpdiwKPiAg
-CQkJCQlpbnQgdGVtcCwgYm9vbCBsb3cpCj4gIHsKPiArCWludCBvZmZzZXQgPSBwcml2LT50ZW1w
-X3BhcmFtcy5vZmZzZXQ7Cj4gKwlpbnQgbXVsdCA9IHByaXYtPnRlbXBfcGFyYW1zLm11bHQ7Cj4g
-Kwo+ICAJaWYgKHRlbXAgPCBBVlNfVE1PTl9URU1QX01JTikKPiAtCQlyZXR1cm4gQVZTX1RNT05f
-VEVNUF9NQVg7CS8qIE1heGltdW0gY29kZSB2YWx1ZSAqLwo+ICsJCXJldHVybiBBVlNfVE1PTl9U
-RU1QX01BU0s7CS8qIE1heGltdW0gY29kZSB2YWx1ZSAqLwoKV2h5IHRoaXMgY2hhbmdlPwoKPiAg
-Cj4gLQlpZiAodGVtcCA+PSBBVlNfVE1PTl9URU1QX09GRlNFVCkKPiArCWlmICh0ZW1wID49IG9m
-ZnNldCkKPiAgCQlyZXR1cm4gMDsJLyogTWluaW11bSBjb2RlIHZhbHVlICovCj4gIAo+ICAJaWYg
-KGxvdykKPiAtCQlyZXR1cm4gKHUzMikoRElWX1JPVU5EX1VQKEFWU19UTU9OX1RFTVBfT0ZGU0VU
-IC0gdGVtcCwKPiAtCQkJCQkgIEFWU19UTU9OX1RFTVBfU0xPUEUpKTsKPiArCQlyZXR1cm4gKHUz
-MikoRElWX1JPVU5EX1VQKG9mZnNldCAtIHRlbXAsIG11bHQpKTsKPiAgCWVsc2UKPiAtCQlyZXR1
-cm4gKHUzMikoKEFWU19UTU9OX1RFTVBfT0ZGU0VUIC0gdGVtcCkgLwo+IC0JCQkgICAgICBBVlNf
-VE1PTl9URU1QX1NMT1BFKTsKPiArCQlyZXR1cm4gKHUzMikoKG9mZnNldCAtIHRlbXApIC8gbXVs
-dCk7Cj4gIH0KPiAgCj4gIHN0YXRpYyBpbnQgYnJjbXN0Yl9nZXRfdGVtcCh2b2lkICpkYXRhLCBp
-bnQgKnRlbXApCj4gQEAgLTE1NCw3ICsxNjQsNyBAQCBzdGF0aWMgaW50IGJyY21zdGJfZ2V0X3Rl
-bXAodm9pZCAqZGF0YSwgaW50ICp0ZW1wKQo+ICAKPiAgCXZhbCA9ICh2YWwgJiBBVlNfVE1PTl9T
-VEFUVVNfZGF0YV9tc2spID4+IEFWU19UTU9OX1NUQVRVU19kYXRhX3NoaWZ0Owo+ICAKPiAtCXQg
-PSBhdnNfdG1vbl9jb2RlX3RvX3RlbXAocHJpdi0+dGhlcm1hbCwgdmFsKTsKPiArCXQgPSBhdnNf
-dG1vbl9jb2RlX3RvX3RlbXAocHJpdiwgdmFsKTsKPiAgCWlmICh0IDwgMCkKPiAgCQkqdGVtcCA9
-IDA7Cj4gIAllbHNlCj4gQEAgLTE4OCw3ICsxOTgsNyBAQCBzdGF0aWMgaW50IGF2c190bW9uX2dl
-dF90cmlwX3RlbXAoc3RydWN0IGJyY21zdGJfdGhlcm1hbF9wcml2ICpwcml2LAo+ICAJdmFsICY9
-IHRyaXAtPnJlZ19tc2s7Cj4gIAl2YWwgPj49IHRyaXAtPnJlZ19zaGlmdDsKPiAgCj4gLQlyZXR1
-cm4gYXZzX3Rtb25fY29kZV90b190ZW1wKHByaXYtPnRoZXJtYWwsIHZhbCk7Cj4gKwlyZXR1cm4g
-YXZzX3Rtb25fY29kZV90b190ZW1wKHByaXYsIHZhbCk7Cj4gIH0KPiAgCj4gIHN0YXRpYyB2b2lk
-IGF2c190bW9uX3NldF90cmlwX3RlbXAoc3RydWN0IGJyY21zdGJfdGhlcm1hbF9wcml2ICpwcml2
-LAo+IEBAIC0yMDEsNyArMjExLDcgQEAgc3RhdGljIHZvaWQgYXZzX3Rtb25fc2V0X3RyaXBfdGVt
-cChzdHJ1Y3QgYnJjbXN0Yl90aGVybWFsX3ByaXYgKnByaXYsCj4gIAlkZXZfZGJnKHByaXYtPmRl
-diwgInNldCB0ZW1wICVkIHRvICVkXG4iLCB0eXBlLCB0ZW1wKTsKPiAgCj4gIAkvKiByb3VuZCB0
-b3dhcmQgbG93IHRlbXAgZm9yIHRoZSBsb3cgaW50ZXJydXB0ICovCj4gLQl2YWwgPSBhdnNfdG1v
-bl90ZW1wX3RvX2NvZGUocHJpdi0+dGhlcm1hbCwgdGVtcCwKPiArCXZhbCA9IGF2c190bW9uX3Rl
-bXBfdG9fY29kZShwcml2LCB0ZW1wLAo+ICAJCQkJICAgIHR5cGUgPT0gVE1PTl9UUklQX1RZUEVf
-TE9XKTsKPiAgCj4gIAl2YWwgPDw9IHRyaXAtPnJlZ19zaGlmdDsKPiBAQCAtMjE4LDcgKzIyOCw3
-IEBAIHN0YXRpYyBpbnQgYXZzX3Rtb25fZ2V0X2ludHJfdGVtcChzdHJ1Y3QgYnJjbXN0Yl90aGVy
-bWFsX3ByaXYgKnByaXYpCj4gIAl1MzIgdmFsOwo+ICAKPiAgCXZhbCA9IF9fcmF3X3JlYWRsKHBy
-aXYtPnRtb25fYmFzZSArIEFWU19UTU9OX1RFTVBfSU5UX0NPREUpOwo+IC0JcmV0dXJuIGF2c190
-bW9uX2NvZGVfdG9fdGVtcChwcml2LT50aGVybWFsLCB2YWwpOwo+ICsJcmV0dXJuIGF2c190bW9u
-X2NvZGVfdG9fdGVtcChwcml2LCB2YWwpOwo+ICB9Cj4gIAo+ICBzdGF0aWMgaXJxcmV0dXJuX3Qg
-YnJjbXN0Yl90bW9uX2lycV90aHJlYWQoaW50IGlycSwgdm9pZCAqZGF0YSkKPiBAQCAtMjgyLDE5
-ICsyOTIsMzIgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCB0aGVybWFsX3pvbmVfb2ZfZGV2aWNlX29w
-cyBvZl9vcHMgPSB7Cj4gIAkuc2V0X3RyaXBzCT0gYnJjbXN0Yl9zZXRfdHJpcHMsCj4gIH07Cj4g
-IAo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IGJyY21zdGJfdGhlcm1hbF9wYXJhbXMgYnJjbXN0Yl8y
-OG5tX3BhcmFtcyA9IHsKPiArCS5vZmZzZXQJPSA0MTAwNDAsCj4gKwkubXVsdAk9IDQ4NywKPiAr
-fTsKPiArCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIGJyY21zdGJfdGhlcm1h
-bF9pZF90YWJsZVtdID0gewo+IC0JeyAuY29tcGF0aWJsZSA9ICJicmNtLGF2cy10bW9uIiB9LAo+
-ICsJeyAuY29tcGF0aWJsZSA9ICJicmNtLGF2cy10bW9uIiwgLmRhdGEgPSAmYnJjbXN0Yl8yOG5t
-X3BhcmFtcyB9LAo+ICAJe30sCj4gIH07Cj4gIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGJyY21z
-dGJfdGhlcm1hbF9pZF90YWJsZSk7Cj4gIAo+ICBzdGF0aWMgaW50IGJyY21zdGJfdGhlcm1hbF9w
-cm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICB7Cj4gKwljb25zdCBzdHJ1Y3Qg
-YnJjbXN0Yl90aGVybWFsX3BhcmFtcyAqcGFyYW1zOwo+ICsJY29uc3Qgc3RydWN0IG9mX2Rldmlj
-ZV9pZCAqb2ZfaWQgPSBOVUxMOwo+ICAJc3RydWN0IHRoZXJtYWxfem9uZV9kZXZpY2UgKnRoZXJt
-YWw7Cj4gIAlzdHJ1Y3QgYnJjbXN0Yl90aGVybWFsX3ByaXYgKnByaXY7Cj4gIAlzdHJ1Y3QgcmVz
-b3VyY2UgKnJlczsKPiAgCWludCBpcnEsIHJldDsKPiAgCj4gKwlvZl9pZCA9IG9mX21hdGNoX25v
-ZGUoYnJjbXN0Yl90aGVybWFsX2lkX3RhYmxlLCBwZGV2LT5kZXYub2Zfbm9kZSk7Cj4gKwlpZiAo
-IW9mX2lkIHx8ICFvZl9pZC0+ZGF0YSkKPiArCQlyZXR1cm4gLUVJTlZBTDsKCm9mX2RldmljZV9n
-ZXRfbWF0Y2hfZGF0YSgmcGRldi0+ZGV2KSA/Cgo+ICsJcGFyYW1zID0gb2ZfaWQtPmRhdGE7Cj4g
-Kwo+ICAJcHJpdiA9IGRldm1fa3phbGxvYygmcGRldi0+ZGV2LCBzaXplb2YoKnByaXYpLCBHRlBf
-S0VSTkVMKTsKPiAgCWlmICghcHJpdikKPiAgCQlyZXR1cm4gLUVOT01FTTsKPiBAQCAtMzA0LDYg
-KzMyNyw3IEBAIHN0YXRpYyBpbnQgYnJjbXN0Yl90aGVybWFsX3Byb2JlKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpCj4gIAlpZiAoSVNfRVJSKHByaXYtPnRtb25fYmFzZSkpCj4gIAkJcmV0
-dXJuIFBUUl9FUlIocHJpdi0+dG1vbl9iYXNlKTsKPiAgCj4gKwltZW1jcHkoJnByaXYtPnRlbXBf
-cGFyYW1zLCBwYXJhbXMsIHNpemVvZihwcml2LT50ZW1wX3BhcmFtcykpOwoKRG8geW91IHJlYWxs
-eSBuZWVkIGEgY29weSBoZXJlPyBXaHkgbm90IGNvbnZlcnQgdG8gYSBwb2ludGVyIGFuZCBhc3Np
-Z24gaXQ/Cgo+ICAJcHJpdi0+ZGV2ID0gJnBkZXYtPmRldjsKPiAgCXBsYXRmb3JtX3NldF9kcnZk
-YXRhKHBkZXYsIHByaXYpOwo+ICAKPiAKCgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBM
-aW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBM
-aW5hcm86ICA8aHR0cDovL3d3dy5mYWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8
-CjxodHRwOi8vdHdpdHRlci5jb20vIyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cu
-bGluYXJvLm9yZy9saW5hcm8tYmxvZy8+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+The patch
+
+   ASoC: stm32: sai: fix possible circular locking
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.5
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From a14bf98c045bf119b7e779f186528e38c6428830 Mon Sep 17 00:00:00 2001
+From: Olivier Moysan <olivier.moysan@st.com>
+Date: Thu, 9 Jan 2020 09:32:54 +0100
+Subject: [PATCH] ASoC: stm32: sai: fix possible circular locking
+
+In current driver, locks can be taken as follows:
+- Register access: take a lock on regmap config and then on clock.
+- Master clock provider: take a lock on clock and then on regmap config.
+This can lead to the circular locking summarized below.
+
+Remove peripheral clock management through regmap framework, and manage
+peripheral clock in driver instead. On register access, lock on clock
+is taken first, which allows to avoid possible locking issue.
+
+[ 6696.561513] ======================================================
+[ 6696.567670] WARNING: possible circular locking dependency detected
+[ 6696.573842] 4.19.49 #866 Not tainted
+[ 6696.577397] ------------------------------------------------------
+[ 6696.583566] pulseaudio/6439 is trying to acquire lock:
+[ 6696.588697] 87b0a25b (enable_lock){..-.}, at: clk_enable_lock+0x64/0x128
+[ 6696.595377]
+[ 6696.595377] but task is already holding lock:
+[ 6696.601197] d858f825 (stm32_sai_sub:1342:(sai->regmap_config)->lock){....}
+...
+[ 6696.812513]  Possible unsafe locking scenario:
+[ 6696.812513]
+[ 6696.818418]        CPU0                    CPU1
+[ 6696.822935]        ----                    ----
+[ 6696.827451]   lock(stm32_sai_sub:1342:(sai->regmap_config)->lock);
+[ 6696.833618]                                lock(enable_lock);
+[ 6696.839350]                                lock(stm32_sai_sub:1342:
+                                              (sai->regmap_config)->lock);
+[ 6696.848035]   lock(enable_lock);
+
+Fixes: 03e78a242a15 ("ASoC: stm32: sai: add h7 support")
+
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Link: https://lore.kernel.org/r/20200109083254.478-1-olivier.moysan@st.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/stm/stm32_sai_sub.c | 194 ++++++++++++++++++++++++----------
+ 1 file changed, 140 insertions(+), 54 deletions(-)
+
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index 48e629ac2d88..30bcd5d3a32a 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -184,6 +184,56 @@ static bool stm32_sai_sub_writeable_reg(struct device *dev, unsigned int reg)
+ 	}
+ }
+ 
++static int stm32_sai_sub_reg_up(struct stm32_sai_sub_data *sai,
++				unsigned int reg, unsigned int mask,
++				unsigned int val)
++{
++	int ret;
++
++	ret = clk_enable(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
++
++	ret = regmap_update_bits(sai->regmap, reg, mask, val);
++
++	clk_disable(sai->pdata->pclk);
++
++	return ret;
++}
++
++static int stm32_sai_sub_reg_wr(struct stm32_sai_sub_data *sai,
++				unsigned int reg, unsigned int mask,
++				unsigned int val)
++{
++	int ret;
++
++	ret = clk_enable(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
++
++	ret = regmap_write_bits(sai->regmap, reg, mask, val);
++
++	clk_disable(sai->pdata->pclk);
++
++	return ret;
++}
++
++static int stm32_sai_sub_reg_rd(struct stm32_sai_sub_data *sai,
++				unsigned int reg, unsigned int *val)
++{
++	int ret;
++
++	ret = clk_enable(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
++
++	ret = regmap_read(sai->regmap, reg, val);
++
++	clk_disable(sai->pdata->pclk);
++
++	return ret;
++}
++
+ static const struct regmap_config stm32_sai_sub_regmap_config_f4 = {
+ 	.reg_bits = 32,
+ 	.reg_stride = 4,
+@@ -295,7 +345,7 @@ static int stm32_sai_set_clk_div(struct stm32_sai_sub_data *sai,
+ 
+ 	mask = SAI_XCR1_MCKDIV_MASK(SAI_XCR1_MCKDIV_WIDTH(version));
+ 	cr1 = SAI_XCR1_MCKDIV_SET(div);
+-	ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, mask, cr1);
++	ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX, mask, cr1);
+ 	if (ret < 0)
+ 		dev_err(&sai->pdev->dev, "Failed to update CR1 register\n");
+ 
+@@ -372,8 +422,8 @@ static int stm32_sai_mclk_enable(struct clk_hw *hw)
+ 
+ 	dev_dbg(&sai->pdev->dev, "Enable master clock\n");
+ 
+-	return regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-				  SAI_XCR1_MCKEN, SAI_XCR1_MCKEN);
++	return stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++				    SAI_XCR1_MCKEN, SAI_XCR1_MCKEN);
+ }
+ 
+ static void stm32_sai_mclk_disable(struct clk_hw *hw)
+@@ -383,7 +433,7 @@ static void stm32_sai_mclk_disable(struct clk_hw *hw)
+ 
+ 	dev_dbg(&sai->pdev->dev, "Disable master clock\n");
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, SAI_XCR1_MCKEN, 0);
++	stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX, SAI_XCR1_MCKEN, 0);
+ }
+ 
+ static const struct clk_ops mclk_ops = {
+@@ -446,15 +496,15 @@ static irqreturn_t stm32_sai_isr(int irq, void *devid)
+ 	unsigned int sr, imr, flags;
+ 	snd_pcm_state_t status = SNDRV_PCM_STATE_RUNNING;
+ 
+-	regmap_read(sai->regmap, STM_SAI_IMR_REGX, &imr);
+-	regmap_read(sai->regmap, STM_SAI_SR_REGX, &sr);
++	stm32_sai_sub_reg_rd(sai, STM_SAI_IMR_REGX, &imr);
++	stm32_sai_sub_reg_rd(sai, STM_SAI_SR_REGX, &sr);
+ 
+ 	flags = sr & imr;
+ 	if (!flags)
+ 		return IRQ_NONE;
+ 
+-	regmap_write_bits(sai->regmap, STM_SAI_CLRFR_REGX, SAI_XCLRFR_MASK,
+-			  SAI_XCLRFR_MASK);
++	stm32_sai_sub_reg_wr(sai, STM_SAI_CLRFR_REGX, SAI_XCLRFR_MASK,
++			     SAI_XCLRFR_MASK);
+ 
+ 	if (!sai->substream) {
+ 		dev_err(&pdev->dev, "Device stopped. Spurious IRQ 0x%x\n", sr);
+@@ -503,8 +553,8 @@ static int stm32_sai_set_sysclk(struct snd_soc_dai *cpu_dai,
+ 	int ret;
+ 
+ 	if (dir == SND_SOC_CLOCK_OUT && sai->sai_mclk) {
+-		ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-					 SAI_XCR1_NODIV,
++		ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++					   SAI_XCR1_NODIV,
+ 					 freq ? 0 : SAI_XCR1_NODIV);
+ 		if (ret < 0)
+ 			return ret;
+@@ -583,7 +633,7 @@ static int stm32_sai_set_dai_tdm_slot(struct snd_soc_dai *cpu_dai, u32 tx_mask,
+ 
+ 	slotr_mask |= SAI_XSLOTR_SLOTEN_MASK;
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_SLOTR_REGX, slotr_mask, slotr);
++	stm32_sai_sub_reg_up(sai, STM_SAI_SLOTR_REGX, slotr_mask, slotr);
+ 
+ 	sai->slot_width = slot_width;
+ 	sai->slots = slots;
+@@ -665,7 +715,7 @@ static int stm32_sai_set_dai_fmt(struct snd_soc_dai *cpu_dai, unsigned int fmt)
+ 	cr1_mask |= SAI_XCR1_CKSTR;
+ 	frcr_mask |= SAI_XFRCR_FSPOL;
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_FRCR_REGX, frcr_mask, frcr);
++	stm32_sai_sub_reg_up(sai, STM_SAI_FRCR_REGX, frcr_mask, frcr);
+ 
+ 	/* DAI clock master masks */
+ 	switch (fmt & SND_SOC_DAIFMT_MASTER_MASK) {
+@@ -693,7 +743,7 @@ static int stm32_sai_set_dai_fmt(struct snd_soc_dai *cpu_dai, unsigned int fmt)
+ 	cr1_mask |= SAI_XCR1_SLAVE;
+ 
+ conf_update:
+-	ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, cr1_mask, cr1);
++	ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX, cr1_mask, cr1);
+ 	if (ret < 0) {
+ 		dev_err(cpu_dai->dev, "Failed to update CR1 register\n");
+ 		return ret;
+@@ -730,12 +780,12 @@ static int stm32_sai_startup(struct snd_pcm_substream *substream,
+ 	}
+ 
+ 	/* Enable ITs */
+-	regmap_write_bits(sai->regmap, STM_SAI_CLRFR_REGX,
+-			  SAI_XCLRFR_MASK, SAI_XCLRFR_MASK);
++	stm32_sai_sub_reg_wr(sai, STM_SAI_CLRFR_REGX,
++			     SAI_XCLRFR_MASK, SAI_XCLRFR_MASK);
+ 
+ 	imr = SAI_XIMR_OVRUDRIE;
+ 	if (STM_SAI_IS_CAPTURE(sai)) {
+-		regmap_read(sai->regmap, STM_SAI_CR2_REGX, &cr2);
++		stm32_sai_sub_reg_rd(sai, STM_SAI_CR2_REGX, &cr2);
+ 		if (cr2 & SAI_XCR2_MUTECNT_MASK)
+ 			imr |= SAI_XIMR_MUTEDETIE;
+ 	}
+@@ -745,8 +795,8 @@ static int stm32_sai_startup(struct snd_pcm_substream *substream,
+ 	else
+ 		imr |= SAI_XIMR_AFSDETIE | SAI_XIMR_LFSDETIE;
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_IMR_REGX,
+-			   SAI_XIMR_MASK, imr);
++	stm32_sai_sub_reg_up(sai, STM_SAI_IMR_REGX,
++			     SAI_XIMR_MASK, imr);
+ 
+ 	return 0;
+ }
+@@ -763,10 +813,10 @@ static int stm32_sai_set_config(struct snd_soc_dai *cpu_dai,
+ 	 * SAI fifo threshold is set to half fifo, to keep enough space
+ 	 * for DMA incoming bursts.
+ 	 */
+-	regmap_write_bits(sai->regmap, STM_SAI_CR2_REGX,
+-			  SAI_XCR2_FFLUSH | SAI_XCR2_FTH_MASK,
+-			  SAI_XCR2_FFLUSH |
+-			  SAI_XCR2_FTH_SET(STM_SAI_FIFO_TH_HALF));
++	stm32_sai_sub_reg_wr(sai, STM_SAI_CR2_REGX,
++			     SAI_XCR2_FFLUSH | SAI_XCR2_FTH_MASK,
++			     SAI_XCR2_FFLUSH |
++			     SAI_XCR2_FTH_SET(STM_SAI_FIFO_TH_HALF));
+ 
+ 	/* DS bits in CR1 not set for SPDIF (size forced to 24 bits).*/
+ 	if (STM_SAI_PROTOCOL_IS_SPDIF(sai)) {
+@@ -795,7 +845,7 @@ static int stm32_sai_set_config(struct snd_soc_dai *cpu_dai,
+ 	if ((sai->slots == 2) && (params_channels(params) == 1))
+ 		cr1 |= SAI_XCR1_MONO;
+ 
+-	ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, cr1_mask, cr1);
++	ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX, cr1_mask, cr1);
+ 	if (ret < 0) {
+ 		dev_err(cpu_dai->dev, "Failed to update CR1 register\n");
+ 		return ret;
+@@ -809,7 +859,7 @@ static int stm32_sai_set_slots(struct snd_soc_dai *cpu_dai)
+ 	struct stm32_sai_sub_data *sai = snd_soc_dai_get_drvdata(cpu_dai);
+ 	int slotr, slot_sz;
+ 
+-	regmap_read(sai->regmap, STM_SAI_SLOTR_REGX, &slotr);
++	stm32_sai_sub_reg_rd(sai, STM_SAI_SLOTR_REGX, &slotr);
+ 
+ 	/*
+ 	 * If SLOTSZ is set to auto in SLOTR, align slot width on data size
+@@ -831,16 +881,16 @@ static int stm32_sai_set_slots(struct snd_soc_dai *cpu_dai)
+ 		sai->slots = 2;
+ 
+ 	/* The number of slots in the audio frame is equal to NBSLOT[3:0] + 1*/
+-	regmap_update_bits(sai->regmap, STM_SAI_SLOTR_REGX,
+-			   SAI_XSLOTR_NBSLOT_MASK,
+-			   SAI_XSLOTR_NBSLOT_SET((sai->slots - 1)));
++	stm32_sai_sub_reg_up(sai, STM_SAI_SLOTR_REGX,
++			     SAI_XSLOTR_NBSLOT_MASK,
++			     SAI_XSLOTR_NBSLOT_SET((sai->slots - 1)));
+ 
+ 	/* Set default slots mask if not already set from DT */
+ 	if (!(slotr & SAI_XSLOTR_SLOTEN_MASK)) {
+ 		sai->slot_mask = (1 << sai->slots) - 1;
+-		regmap_update_bits(sai->regmap,
+-				   STM_SAI_SLOTR_REGX, SAI_XSLOTR_SLOTEN_MASK,
+-				   SAI_XSLOTR_SLOTEN_SET(sai->slot_mask));
++		stm32_sai_sub_reg_up(sai,
++				     STM_SAI_SLOTR_REGX, SAI_XSLOTR_SLOTEN_MASK,
++				     SAI_XSLOTR_SLOTEN_SET(sai->slot_mask));
+ 	}
+ 
+ 	dev_dbg(cpu_dai->dev, "Slots %d, slot width %d\n",
+@@ -870,14 +920,14 @@ static void stm32_sai_set_frame(struct snd_soc_dai *cpu_dai)
+ 	dev_dbg(cpu_dai->dev, "Frame length %d, frame active %d\n",
+ 		sai->fs_length, fs_active);
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_FRCR_REGX, frcr_mask, frcr);
++	stm32_sai_sub_reg_up(sai, STM_SAI_FRCR_REGX, frcr_mask, frcr);
+ 
+ 	if ((sai->fmt & SND_SOC_DAIFMT_FORMAT_MASK) == SND_SOC_DAIFMT_LSB) {
+ 		offset = sai->slot_width - sai->data_size;
+ 
+-		regmap_update_bits(sai->regmap, STM_SAI_SLOTR_REGX,
+-				   SAI_XSLOTR_FBOFF_MASK,
+-				   SAI_XSLOTR_FBOFF_SET(offset));
++		stm32_sai_sub_reg_up(sai, STM_SAI_SLOTR_REGX,
++				     SAI_XSLOTR_FBOFF_MASK,
++				     SAI_XSLOTR_FBOFF_SET(offset));
+ 	}
+ }
+ 
+@@ -994,9 +1044,9 @@ static int stm32_sai_configure_clock(struct snd_soc_dai *cpu_dai,
+ 					return -EINVAL;
+ 				}
+ 
+-				regmap_update_bits(sai->regmap,
+-						   STM_SAI_CR1_REGX,
+-						   SAI_XCR1_OSR, cr1);
++				stm32_sai_sub_reg_up(sai,
++						     STM_SAI_CR1_REGX,
++						     SAI_XCR1_OSR, cr1);
+ 
+ 				div = stm32_sai_get_clk_div(sai, sai_clk_rate,
+ 							    sai->mclk_rate);
+@@ -1058,12 +1108,12 @@ static int stm32_sai_trigger(struct snd_pcm_substream *substream, int cmd,
+ 	case SNDRV_PCM_TRIGGER_PAUSE_RELEASE:
+ 		dev_dbg(cpu_dai->dev, "Enable DMA and SAI\n");
+ 
+-		regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-				   SAI_XCR1_DMAEN, SAI_XCR1_DMAEN);
++		stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++				     SAI_XCR1_DMAEN, SAI_XCR1_DMAEN);
+ 
+ 		/* Enable SAI */
+-		ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-					 SAI_XCR1_SAIEN, SAI_XCR1_SAIEN);
++		ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++					   SAI_XCR1_SAIEN, SAI_XCR1_SAIEN);
+ 		if (ret < 0)
+ 			dev_err(cpu_dai->dev, "Failed to update CR1 register\n");
+ 		break;
+@@ -1072,16 +1122,16 @@ static int stm32_sai_trigger(struct snd_pcm_substream *substream, int cmd,
+ 	case SNDRV_PCM_TRIGGER_STOP:
+ 		dev_dbg(cpu_dai->dev, "Disable DMA and SAI\n");
+ 
+-		regmap_update_bits(sai->regmap, STM_SAI_IMR_REGX,
+-				   SAI_XIMR_MASK, 0);
++		stm32_sai_sub_reg_up(sai, STM_SAI_IMR_REGX,
++				     SAI_XIMR_MASK, 0);
+ 
+-		regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-				   SAI_XCR1_SAIEN,
+-				   (unsigned int)~SAI_XCR1_SAIEN);
++		stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++				     SAI_XCR1_SAIEN,
++				     (unsigned int)~SAI_XCR1_SAIEN);
+ 
+-		ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+-					 SAI_XCR1_DMAEN,
+-					 (unsigned int)~SAI_XCR1_DMAEN);
++		ret = stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX,
++					   SAI_XCR1_DMAEN,
++					   (unsigned int)~SAI_XCR1_DMAEN);
+ 		if (ret < 0)
+ 			dev_err(cpu_dai->dev, "Failed to update CR1 register\n");
+ 
+@@ -1101,7 +1151,7 @@ static void stm32_sai_shutdown(struct snd_pcm_substream *substream,
+ 	struct stm32_sai_sub_data *sai = snd_soc_dai_get_drvdata(cpu_dai);
+ 	unsigned long flags;
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_IMR_REGX, SAI_XIMR_MASK, 0);
++	stm32_sai_sub_reg_up(sai, STM_SAI_IMR_REGX, SAI_XIMR_MASK, 0);
+ 
+ 	clk_disable_unprepare(sai->sai_ck);
+ 
+@@ -1169,7 +1219,7 @@ static int stm32_sai_dai_probe(struct snd_soc_dai *cpu_dai)
+ 	cr1_mask |= SAI_XCR1_SYNCEN_MASK;
+ 	cr1 |= SAI_XCR1_SYNCEN_SET(sai->sync);
+ 
+-	return regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, cr1_mask, cr1);
++	return stm32_sai_sub_reg_up(sai, STM_SAI_CR1_REGX, cr1_mask, cr1);
+ }
+ 
+ static const struct snd_soc_dai_ops stm32_sai_pcm_dai_ops = {
+@@ -1322,8 +1372,13 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 	if (STM_SAI_HAS_PDM(sai) && STM_SAI_IS_SUB_A(sai))
+ 		sai->regmap_config = &stm32_sai_sub_regmap_config_h7;
+ 
+-	sai->regmap = devm_regmap_init_mmio_clk(&pdev->dev, "sai_ck",
+-						base, sai->regmap_config);
++	/*
++	 * Do not manage peripheral clock through regmap framework as this
++	 * can lead to circular locking issue with sai master clock provider.
++	 * Manage peripheral clock directly in driver instead.
++	 */
++	sai->regmap = devm_regmap_init_mmio(&pdev->dev, base,
++					    sai->regmap_config);
+ 	if (IS_ERR(sai->regmap)) {
+ 		dev_err(&pdev->dev, "Failed to initialize MMIO\n");
+ 		return PTR_ERR(sai->regmap);
+@@ -1420,6 +1475,10 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 		return PTR_ERR(sai->sai_ck);
+ 	}
+ 
++	ret = clk_prepare(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
++
+ 	if (STM_SAI_IS_F4(sai->pdata))
+ 		return 0;
+ 
+@@ -1501,22 +1560,48 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int stm32_sai_sub_remove(struct platform_device *pdev)
++{
++	struct stm32_sai_sub_data *sai = dev_get_drvdata(&pdev->dev);
++
++	clk_unprepare(sai->pdata->pclk);
++
++	return 0;
++}
++
+ #ifdef CONFIG_PM_SLEEP
+ static int stm32_sai_sub_suspend(struct device *dev)
+ {
+ 	struct stm32_sai_sub_data *sai = dev_get_drvdata(dev);
++	int ret;
++
++	ret = clk_enable(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
+ 
+ 	regcache_cache_only(sai->regmap, true);
+ 	regcache_mark_dirty(sai->regmap);
++
++	clk_disable(sai->pdata->pclk);
++
+ 	return 0;
+ }
+ 
+ static int stm32_sai_sub_resume(struct device *dev)
+ {
+ 	struct stm32_sai_sub_data *sai = dev_get_drvdata(dev);
++	int ret;
++
++	ret = clk_enable(sai->pdata->pclk);
++	if (ret < 0)
++		return ret;
+ 
+ 	regcache_cache_only(sai->regmap, false);
+-	return regcache_sync(sai->regmap);
++	ret = regcache_sync(sai->regmap);
++
++	clk_disable(sai->pdata->pclk);
++
++	return ret;
+ }
+ #endif /* CONFIG_PM_SLEEP */
+ 
+@@ -1531,6 +1616,7 @@ static struct platform_driver stm32_sai_sub_driver = {
+ 		.pm = &stm32_sai_sub_pm_ops,
+ 	},
+ 	.probe = stm32_sai_sub_probe,
++	.remove = stm32_sai_sub_remove,
+ };
+ 
+ module_platform_driver(stm32_sai_sub_driver);
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
