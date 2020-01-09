@@ -2,94 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC42D13510D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 02:52:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B9B513511D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 02:58:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=unAIHm6Y/XydBdVR6bXqI3mdJdcrHUF5jqu4gpE6b/g=; b=muHBwLo6xaTMFRV75qqnAi3JwU
-	5HJUNTcpid6zXZHF137cbIOMHyUdEWv8WkG8lemu06ZbkusBQ+71plyzLt3spZYwImdcfeGPQg3mM
-	MqzedAYoC9uSXveLwqW+uOvC9JXca9m0AtRSU2B2DiV5O3qaeegHOvICqFLd7rDLePlzTj9WndPOT
-	jO+g5VJ7tt8qoAtcFGgFO/hcbVwWwvt7l+r9wBmG7eK2OBKMmC8WqUehK5zct7aHTE34US3F/mXqp
-	vCAI+Uz/T2IQWe/4WPF8CrX948mqq8IQMK/g/0VZ7C5YiB3vsn/GFNFm/cJ5qzvFWl2Ehu04INE1J
-	ALoc9Ilw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v+vtK8hy2h6HU22iTWWLhxye1IeMYqHQ2OoOLSnbYsw=; b=qKT9TeXiwGX3ca
+	B8XWMBLFJ2VZxLL2oyR5Da5VmcdILaBdWDuvepnpUt02r6RcL85UKx7a9GQVfhHXVVux57jBdHypZ
+	mNwWHlnvHsGPcLbC/4efHP/VPViaTLQqpGiknJiT99nmTJdnzpGm0hjv0J/IlRAoH1aKbCYyJdGEI
+	mCE8K47tZxEleGJ/df5C3W6p7oAfvp7Qmd9osdut6t4SuxVgjUekmB6PJNlNXNGghUcRbW94sC4Ld
+	P8GWpDOm4l93Z+eGKy15mN5MwToJrbD+HAJoyVlmw4EiPzlxW7/Q+rYeE1Zyh1MEfh6bh2aVak9Fd
+	5Vz08xfdsBaUnW1eZsEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipMzJ-00024B-QO; Thu, 09 Jan 2020 01:51:53 +0000
-Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
+	id 1ipN5k-0004vB-42; Thu, 09 Jan 2020 01:58:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipMzB-00022w-Bn
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 01:51:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id AE5D99B3;
- Wed,  8 Jan 2020 20:51:35 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 08 Jan 2020 20:51:36 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to
- :subject:content-type; s=fm1; bh=INrQczsxRVeplZbqXtrfLCVklXpA8YI
- m9Wl7iloiOdU=; b=HhawAe0dt3VweQT6qHrXNP1ZSkPljYrSelvC7ilR4GMUb3a
- jgAxXhZB3mQ5RU36n0gAomx55Pou5sBdrhZ21jvxvnnrVefWcRP2FnphsTsIb9tO
- g1QYz3TkyH4NX/nFItjlMv6eRKkubAvnYfXhE1H3kxXx+HBofgA/Hk4M/FS0pyeg
- XB8Hfjif9rtxh7bTVBGntvhwNEhSay6JKHo0fvK2YVCW7hUjnn55C9ygNhgNh4wp
- zhUNat1wi1usZqPOWRN6Mb5WyTbrAQGaofT47XdLldaL2EdQP7HRnFz3TH9vdQDt
- YYHtMzzMeFfKm/PLRKNj6ZIYnyttuSQmc2trlJg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=INrQcz
- sxRVeplZbqXtrfLCVklXpA8YIm9Wl7iloiOdU=; b=NPkzPNo3vXx0BFVsVInI9b
- ZrJ8p4t1Bad6m+l4Il0iH6JrHJjYBE4X3RbswTWgD8FMBoHm0lTaOCIPdB93a16s
- kDIor4EMVpRi2pfT5Ckl4QzxwT6fYW7ndZBbdrriY5BPfUjvlq/WiIbtuPVeu0w1
- B769QYtTXCicO6hOT1jhHgV7QgMkzp0Y7y6txomyRIjOtHGxQSDZPTWnxAnVvWPr
- b+nMt95+XJK+ymtOEBNVDdf8UY5s6E0as860cHOMFwLkWNu8ydUGFr2/6GaGLLWy
- kHrH1ddHkwyKQ5QcxDPkZNsf12RzphBCDa4FiknEFNb5l50Wfp3MUGsoPexJwz0A
- ==
-X-ME-Sender: <xms:JocWXux7bDeAvG3jS9Bh2t_9UUjKfMOvuUv5qNmmuhV5rUU92i0wFg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdehledgfeekucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:JocWXnzDiMIeKUQfypNqgS8HaCY-IizfGQayAcN83yjccJiD2es4_A>
- <xmx:JocWXmpkGcAWz6FSIs_5wuSDbmN8ktpyEY1zrH6HnpdKKtV289JV8A>
- <xmx:JocWXrokrz_BkKts3uJpuIak45JS92JBZRoBft8gpECbZH76_FRi-Q>
- <xmx:J4cWXjh2ymWQgJd1bgMz_VkV0kbeWE4v1-5q8bNS6PYD_VHQXRnAWQ>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 12408E00A2; Wed,  8 Jan 2020 20:51:34 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-731-g1812a7f-fmstable-20200106v2
-Mime-Version: 1.0
-Message-Id: <f93bd92d-e509-4825-a4bf-00f5b7c6ff7d@www.fastmail.com>
-In-Reply-To: <20191228190631.26777-1-tiny.windzz@gmail.com>
-References: <20191228190631.26777-1-tiny.windzz@gmail.com>
-Date: Thu, 09 Jan 2020 12:23:32 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Yangtao Li" <tiny.windzz@gmail.com>, "Jeremy Kerr" <jk@ozlabs.org>,
- "Joel Stanley" <joel@jms.id.au>, "Alistair Popple" <alistair@popple.id.au>,
- "Eddie James" <eajames@linux.ibm.com>, linux-fsi@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] fsi: aspeed: convert to devm_platform_ioremap_resource
+ id 1ipN5a-0004uG-UQ; Thu, 09 Jan 2020 01:58:26 +0000
+X-UUID: 7b11e70b72aa4ddd84544787989bd1ef-20200108
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=f8V/w28keayMesUZndCtYcFhLlpst9SQecLMZIoZ2Ow=; 
+ b=jcIaSPWVnZTrfouW4dPUXFy601FrkzqHDA0qFmcRZI1Ll83ivQNN2ulQpOBUIApIHpKMICRTUByw0V48GLWfUg/PqWZoU9+a3sofFBQkl7peWEDNjs0evgk9zUFALobP3Gbtp4SfsZHU0E8OkI9k5VN74q6Tkr5S145s1/PPUw0=;
+X-UUID: 7b11e70b72aa4ddd84544787989bd1ef-20200108
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <yong.liang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1535939948; Wed, 08 Jan 2020 17:58:08 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 Jan 2020 17:58:05 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Thu, 9 Jan 2020 09:56:53 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 9 Jan 2020 09:58:22 +0800
+Message-ID: <1578535081.20923.5.camel@mhfsdcap03>
+Subject: Re: [PATCH v10 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
+From: Yong Liang <yong.liang@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Thu, 9 Jan 2020 09:58:01 +0800
+In-Reply-To: <20200106215721.GB31059@bogus>
+References: <1578280296-18946-1-git-send-email-jiaxin.yu@mediatek.com>
+ <1578280296-18946-2-git-send-email-jiaxin.yu@mediatek.com>
+ <20200106215721.GB31059@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: C4E159BAC36ECB497154526A379FBD41D7CD188C7E791C104A8D9215220B2C4D2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_175145_431154_3AD33F8B 
-X-CRM114-Status: UNSURE (   4.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200108_175823_014337_D6024D7E 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,20 +85,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Freddy Hsin =?UTF-8?Q?=28=E8=BE=9B=E6=81=92=E8=B1=90=29?=
+ <Freddy.Hsin@mediatek.com>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
+ <Jiaxin.Yu@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
+ <Yingjoe.Chen@mediatek.com>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ Chang-An Chen =?UTF-8?Q?=28=E9=99=B3=E6=98=B6=E5=AE=89=29?=
+ <Chang-An.Chen@mediatek.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "linux@roeck-us.net" <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Sun, 29 Dec 2019, at 05:36, Yangtao Li wrote:
-> Use devm_platform_ioremap_resource() to simplify code.
+On Tue, 2020-01-07 at 05:57 +0800, Rob Herring wrote:
+> On Mon, 6 Jan 2020 11:11:35 +0800, Jiaxin Yu wrote:
+> > Add #reset-cells property and update example
+> > 
+> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
+> > Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
+> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+> > Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+> > ---
+> >  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
+> >  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
+> >  .../reset-controller/mt8183-resets.h          | 17 ++++++++++++++
+> >  3 files changed, 46 insertions(+), 3 deletions(-)
+> >  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
+> > 
 > 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
+> 
+> If a tag was not added on purpose, please state why and what changed.
 
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-
+  Sorry not add you in Reviewed-by:
+  We will add you in Reviewed-by: if have next patch.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
