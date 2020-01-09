@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC154135AB5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:54:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ECA7135AB6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:54:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KKPQAEwUGf7QD/cC/uNB1NRuQsTTsCcCnwqIzat8+9Y=; b=GAopYUGd9Uf4u2
-	tlAnPEl42ID1B2OoNKcVkkdGmXuOKdmCjMihywgayz7rgPV3z+uZfZsZLwrKA9Y/uAAgSnrQ5FxFE
-	tkvHmQ8YFzxMaN+nIZHrTe+PTElz017WIy43pmh+WJtkUEoS/XRjMVEO3bxJgaRYufmbdLLI3MwHm
-	2K88AQGIslGNUhTl0AIovLMfEjH3omaBZWf4+6DfDjR8GTwkq+adWQ8WCDx/QkwZ27DNfwKjdeXZY
-	OtDs1wizHVn9asctKVi14X4FchTjbB3W/uwW9k6yHV1qS9MMSH4GTYwxw/JC/dMn9Ff90dDR9bD3h
-	2+acqBHkwvBQXoJjn2sA==;
+	List-Owner; bh=QyBUWIbih3jd3gFe+6ngBpIDmNg7skFP9owmKqLixIE=; b=ZCj72y6W8gepm5
+	AJr6F+OA913Y6q5EflA1704xnR+mGwWnJVq+BmDYadnJp8sIucDmd5ZCi4Yt6llOYLkrsV21lXUCO
+	l4TcKCO/sYBSEa8t2AstHSfMJm3zYbcxq0JNoFDsw2nfsQLHsCZwGxTzn/u+iEkiPEV9srzsUJrIZ
+	h4D3SeQT7Z5pH/PV69xC+O803LCs/UBlptsCZ9I/E0A648diRT11nIgS5fE8Jx6jUJP767uCMekMC
+	V6IvDXHMGfvDFc0w8bPwKHdEVq6KLohMZ9+SSmJjxHuploSOaJL2KRVeOc5GyVSB8IUfVhPEaMwTX
+	S4GeCRcv3Vqz/P0bwZeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYGI-0005bn-QG; Thu, 09 Jan 2020 13:54:10 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ipYGW-0005qa-4O; Thu, 09 Jan 2020 13:54:24 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYEl-0003uo-Dy
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:52:36 +0000
-Received: by mail-wm1-x342.google.com with SMTP id d73so3016777wmd.1
+ id 1ipYEm-0003x4-Qv
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:52:38 +0000
+Received: by mail-wr1-x442.google.com with SMTP id d16so7433507wre.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 05:52:35 -0800 (PST)
+ Thu, 09 Jan 2020 05:52:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=wDdT9mwNJb39SdHGme3Rl9FLVtZ/pPu7zEryCFQu5mw=;
- b=dpQhhEzU8ZdAV6dngpJDK3vCdHcsoKFGCyJyp60edFReYxuWDiZXLCljlb0JMvhG0A
- 50BZK6liDrJjpi7/eqHoCqYPwnETOCpaQ4qArOHdegCqviTE3qfNrE6iMzmAjmv80SQ9
- OMbO+VkEitn1bWBdLoPAb7xKgjBZCFuBS9HqcRVktviHRiyzUKiBv2Q/mxotrIHhmR++
- ULYRzUpqfJHqRu9lU2kCDjPdtthchZFQ7tM3D5XDysbInMt2Bx2i4uprH0VooHLPmYY5
- wTOj7Hf+cHVaIsfajvI9aG4FkiwGqDKATl4pMuGV0011ZNBf938GuUpJNLvO43t2k4cl
- AZGQ==
+ bh=cY7VEq1SDPcCbR2gLted+yBjAeKIqKC5FGvxBvtyOjU=;
+ b=YJV0pzx6ld6r0Ittxt8eGiqDQWelxWmJaXiOraeu7kqgy6yUKEl5CjC6krtJ4rrrxp
+ 4houNQ8Q8UXHox536aXCM7bWjnJil2sW4Ifwt+ACXDVydt8XuYEkC39UKfu0kzF+FufS
+ a7g15u0+b0YHpt7dOUYfYHYD9xA5DZpLdHpNvgf6yEZzC8ttI2NzhYTjJyAOiloqwbaj
+ bPWnY4DxpIgqUaZwfq9y210ggcbkH6fn+qB9lXXlVSK68lp3bFhfX08XzhhjgVZ3q8r6
+ 30Q/n6atlyOxZY/9UzXlCX2VifEXBhYnOQqhehai/Oesy1RbkJkDpih43bF3FMS6g507
+ pd+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=wDdT9mwNJb39SdHGme3Rl9FLVtZ/pPu7zEryCFQu5mw=;
- b=ehiWxN0guOJKUgPzjt4a6Ogv9zrsQllCPQe99SNRJazjOUCPtemOCcJdIDRrJNiP1Q
- tc1XMt4YWbmPTdhH2qUx9CoTbMDr8sXxwVsHVC3U0tovdKxfP4UCFNsH7c/OUsLQrQ7a
- m5y0Jebqd9/UwBs+eU2aG1gXTnMSPZCnnGBe13YDY2zY4JRJ6mKK7ZZSRVyjZUCkUbCk
- CozkAiLoHT771L6AN0gWDJIrgZVbjBqulgynfb1Q9qT5M5rCjFsulxvQmvGnf8h8NjDj
- Jv9EM5jskipiU3me8gJmuw/uJb9FB2qaA76SIVlZyfOF6+yQNCdJMa6l+p4kTUWa5zip
- LjAQ==
-X-Gm-Message-State: APjAAAUyqqLS7g0UvPhmTp+DJw97lfhCSuN2FQGwZ/lBhJtMvCtTJY0z
- vyA6E4mMWsZEjvus/ddPiIqaY6i9kQ47eg==
-X-Google-Smtp-Source: APXvYqwi6eSbXZCs88gz3BT3ZgLThAHMy95DtZQwNI4D3VZDjgmv6pCPIEVoxQkMsNmck5ND5GcXqw==
-X-Received: by 2002:a1c:7f4f:: with SMTP id a76mr5153449wmd.77.1578577953676; 
- Thu, 09 Jan 2020 05:52:33 -0800 (PST)
+ bh=cY7VEq1SDPcCbR2gLted+yBjAeKIqKC5FGvxBvtyOjU=;
+ b=U7BZkqsX6EsOOHyaPGKh+bokHhQRX0+HpIfZsxqIEPjsU8Fjv1eYc9dPBPtUzx4FBA
+ W39rhf7A5TaOhq+nZr+8i3T9UCbuchUZHVJ+8aCA1Ye21osxUDfrb/2KU5Kq7lIgyyBt
+ Z3GV/UdpIbKVohSX2EKTT/f1hIGLedfvshtuFyEs7STES/BY4wFbaGYHnsEh3V5MRoX3
+ XXuuLisSo4fsNYyO9MOTjLdzP2lLAMwKTXQsxDZDniD5odO85lThyoGRO7MsK0qCq/hI
+ l+MiLZ6EZ+zVwvWErTaZnleRBmBYlLUQkZXD1aOy3LxxhTE4Bq7jgdouPamMG31J+5HF
+ gmEA==
+X-Gm-Message-State: APjAAAU03iVWUz7FFlTjU1hYA/KDTjPqPxmKioxjI17/p0RVzYIC//Q1
+ dXbHJeCt4b8TbJLciqdd9L2pr2E8qYNJkA==
+X-Google-Smtp-Source: APXvYqxIdhdkFDDM3qDOhD9CTVBp8Wso36d/Vi3BKD/mngqoG1YAwUgO6ZuEWuzzKIDn2YcQz8XRbw==
+X-Received: by 2002:a5d:6ca1:: with SMTP id a1mr10795256wra.36.1578577955315; 
+ Thu, 09 Jan 2020 05:52:35 -0800 (PST)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id u24sm2880054wml.10.2020.01.09.05.52.32
+ by smtp.gmail.com with ESMTPSA id e6sm8476868wru.44.2020.01.09.05.52.34
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 Jan 2020 05:52:33 -0800 (PST)
+ Thu, 09 Jan 2020 05:52:34 -0800 (PST)
 From: Michal Simek <michal.simek@xilinx.com>
 To: linux-arm-kernel@lists.infradead.org,
 	git@xilinx.com
-Subject: [PATCH v2 6/8] arm64: zynqmp: Fix the si570 clock frequency on zcu111
-Date: Thu,  9 Jan 2020 14:52:20 +0100
-Message-Id: <02f0e609601065c8aa4acb4ed9916bade10c6a14.1578577931.git.michal.simek@xilinx.com>
+Subject: [PATCH v2 7/8] arm64: zynqmp: Remove broken-cd from zcu100-revC
+Date: Thu,  9 Jan 2020 14:52:21 +0100
+Message-Id: <b068e60d4058ccb0d784a0cc35e8aecf5ffb98fd.1578577931.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <cover.1578577931.git.michal.simek@xilinx.com>
 References: <cover.1578577931.git.michal.simek@xilinx.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_055235_563081_0CEF7DAA 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20200109_055236_900382_8CD11E66 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -97,42 +97,38 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>,
  Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
- Rajan Vaja <rajan.vaja@xilinx.com>,
- Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Harini Katakam <harini.katakam@xilinx.com>
+ Rajan Vaja <rajan.vaja@xilinx.com>, Jan Kiszka <jan.kiszka@siemens.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
+Card detect bit was broken on revA and it is working fine with revC
+board that's why this property can be removed.
 
-The si570 clock frequency should be 156.25MHz as per datasheet.
-
-Signed-off-by: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
 
 Changes in v2: None
 
- arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts
-index 022c732005ee..cb2e46833a7b 100644
---- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts
-+++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts
-@@ -317,7 +317,7 @@ si570_2: clock-generator@5d { /* USER MGT SI570 - u49 */
- 				reg = <0x5d>;
- 				temperature-stability = <50>;
- 				factory-fout = <156250000>;
--				clock-frequency = <148500000>;
-+				clock-frequency = <156250000>;
- 				clock-output-names = "si570_mgt";
- 			};
- 		};
+diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
+index dd60f7d85cc8..2b3757dd74cc 100644
+--- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
++++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
+@@ -226,7 +226,6 @@ &rtc {
+ &sdhci0 {
+ 	status = "okay";
+ 	no-1-8-v;
+-	broken-cd; /* CD has to be enabled by default */
+ 	disable-wp;
+ };
+ 
 -- 
 2.24.0
 
