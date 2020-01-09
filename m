@@ -2,92 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DB8D135D91
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:06:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1ED0135D92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:06:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3P9MAzqiCyxNvu+8B7kgQIBObrs4lVnaqLSY9jJsQ5c=; b=CkTabWD7FUxfuG
-	68w/DFgNaOD3+dk7fpMnAlMS0fSAc0IXLiHYHsMyUuJS3vcXTFjJzdLRklXBAYl4z1lr+phojMjbq
-	FtJAfK5FWQnZgT6e6pGvw4t9v5woaM4v7RJe+H2YMpaIdtVJljIljNcMuYZW5+QTUvke5hX5tAPkq
-	Xx1LBDhOeQBf2SoIHn3ifmIiXksIlefzQhu3UHJoXN86A7wc8LoFiL+V0PNtHyy7n7pgyxl03PdeG
-	cS1dUgNGjnQIe34qEMxnjvUc0Xaqs9nzYcN54fTDaMeY3Avh5oql2Qm09JsCKrzIm6r8ov+JTkPAp
-	4YdZNtaQBTo50ohNrlzg==;
+	List-Owner; bh=9f3m5C0vcOkkKHNafu8ERsungF4YtgvpRi6kYQBHoTA=; b=MbOt5IiSfcbBLb
+	xDOXSlTJVJUVDMD8UP7wnsdSqJaySUcHM2llhJ8x3/N4u1ByLUyvDPmZDmKbiHv5W2ReoDmrS3qoF
+	xExJwMDkN43F6Rr/FjvsNV9kbyqJnorWY0pAyiUVYYhzAMt+/GZBkKve62Vxe+E6fstMHoWxHzRH4
+	zti3VPMosg5M1XxFBL5XqOBABwtPMTqNJIBmb+4+257fBqEEvpvfc3ySocfJe+vlZ1hIKEuQfHD7Z
+	I7mTHuPwmDTJ45wnHwMl2oCTkO12zs21rH21YD9TQ+KmNRBx3AmtUEQUsrkQN1rMx2at635aK3HI3
+	qBEy8p/2pC9VI2kogXbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaK7-0007Yu-3p; Thu, 09 Jan 2020 16:06:15 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+	id 1ipaKP-0007oZ-M6; Thu, 09 Jan 2020 16:06:33 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaIS-00057R-Q0
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:04:35 +0000
+ id 1ipaIT-00058B-4B
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:04:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
  s=mimecast20190719; t=1578585871;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=85A3jXho/OiEn29VGhQa36f2B6U6e4WqdxbgEUrqO6w=;
- b=fUVxxrcCgcz2xz/NsGBHtBdcgX2atWiRxpoZbjnVKg/KCjRrv8P4LLwnUZiYS2QyttvKSg
- EBTf75PSGMDKKgqRKcrHBuXIk+ruHXoZ9D3l9SjfoAoh0bD9lhpjdbkr666nFOo0p3FCtx
- fPA1Fh9JwQDVH1lo9Rngzeqkd1KP6O0=
-Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
- [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-29-i2OAVtuCO5uLd393UWjt1Q-1; Thu, 09 Jan 2020 11:04:29 -0500
-Received: by mail-wr1-f69.google.com with SMTP id f15so3075165wrr.2
+ bh=FXQxfKCa95iVhzNUh/d4s107aoEQ/uGIdoZfuhqnFqc=;
+ b=IcXVAPng4dB+tFbFODawYi3UH+k4AP0HQ2x5QT94/7ZzUk0GfjK1ahZscXu7sIbc9l9cxp
+ ZM8JxkCCfYHKBhFxeLIi/dmso3Qd8vYnw8NRPoM8c65HyIZlUNEpdxWNscFkHjqy7vmurK
+ 7jlSPHmHK+0gjR34aIzLjz8tBnh+FwA=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-212-ZpcPUJn-NpObNV3EmD4eFg-1; Thu, 09 Jan 2020 11:04:30 -0500
+Received: by mail-wr1-f71.google.com with SMTP id j13so3033875wrr.20
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:04:28 -0800 (PST)
+ Thu, 09 Jan 2020 08:04:29 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=LKRV6Dbt/iehaVr8Oe5+bZly0BQdm7b+eiiMLnIM3KI=;
- b=oS6LoY19l9iraUJnlQ+cFaV9iCdvqRzOlbMlAjW/hyiegoMlww9xtXaun+homdos/x
- TPriJuuc26sZnHqA3GtYSjvhukulPyLzrUwEbRvQ9rZxYTtPx+HBh8ZCYt6UmWXI3yO+
- FRkGzYaitQ5e/al30py5n3i4ifzgRX2VHNIXWwVnGkdhH6T371Hctzb6o+j/j6MhpZPj
- Eeeuqz1xqUG/pk4LHT+QTfcsIq6aveO79U9POlLE43npPuGeLJ1FqBYaiWlQJcFz/oBr
- fA3a/N9gbzOhUWidFKDD0qJA6MSEGUHxf7rNKEuJPofgkNc4ev1+CaPycaij5pw9OeqM
- iGhw==
-X-Gm-Message-State: APjAAAUYF5QD13oi6FalchGEgpZstDS4sLd68FE+LvpGrQEUMT9Ybs3x
- LiQg1xL31bSgX7wJvsjYLris6hWH5bIfVnXCmXYH4rQ69Hsilzo5uajDnaEmo0f8DkiIn1GYzbz
- 1Py5VWxOzWuFqyloozlUnHvty0H0sXO9B8Ws=
-X-Received: by 2002:a05:6000:149:: with SMTP id
- r9mr11718060wrx.147.1578585867816; 
- Thu, 09 Jan 2020 08:04:27 -0800 (PST)
-X-Google-Smtp-Source: APXvYqwE3TyBDC9AqG/yX8Wr+TMrqckkMWTYZH3Gv26HTZhn0fYryvFxFkZBJQubZ1op9IAokDJnzw==
-X-Received: by 2002:a05:6000:149:: with SMTP id
- r9mr11718025wrx.147.1578585867532; 
- Thu, 09 Jan 2020 08:04:27 -0800 (PST)
+ bh=xt5DbHzH/EVOyMc37NjjTNOfxPGZdHy+R4yzKk2QEI0=;
+ b=pgky8o7P/lyk/Q/+1SdnB9VpLJ0ArlMWwKuuyWdoeI8AcebU7mAJE0mWHHxz2ZeQc1
+ /Wllltnr1dUmivqxFezfNaWzkdJid05MgkgPd64JTUVez1hrij/wAdagVc/x7b42MJ9W
+ nGSyxur7N2u4hciNxrFvBIQOA2Eao/pUhOQpcrvLkuOH5hVSqwirEBNxV+dcLLcTWKU/
+ o4uu9OS8ZewlrIBWF0iGDDwaLbwAdVoQZl2RV0lcZrfVCjO5PkgL7lVwtbRm1pcWQSQ0
+ nVDnVMD0O6Q8/iM8uFylxPbeqWaNvox7tOCglBCMvsMRZ7SZGybpR/QLdSMH1DEKYvrG
+ DEHA==
+X-Gm-Message-State: APjAAAV5xk0T/euS3zlYHnf9mzagLnm3lUliwxWU4AOqH2+L+AMq34UC
+ oe+1T3ya4xP7fyIgh3d8MXX5tcDupC2PTIPxCsJUHxRP5u1Lnr5xq32JRx1TkkzXQq9Yo65BvfF
+ vgj15bpC563hCpLZiVVlcj8nRzDqqkBDJ9Xw=
+X-Received: by 2002:a05:600c:294:: with SMTP id
+ 20mr5609171wmk.97.1578585868940; 
+ Thu, 09 Jan 2020 08:04:28 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzq/Alj0h2G/J2VQULJA01MqEGedUbxb2oF0V48iKffuNbHJbUHRhKAG5KbZl3knGLHvbjRuw==
+X-Received: by 2002:a05:600c:294:: with SMTP id
+ 20mr5609151wmk.97.1578585868751; 
+ Thu, 09 Jan 2020 08:04:28 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id b17sm8615898wrp.49.2020.01.09.08.04.26
+ by smtp.gmail.com with ESMTPSA id b17sm8615898wrp.49.2020.01.09.08.04.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:04:27 -0800 (PST)
+ Thu, 09 Jan 2020 08:04:28 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 11/57] objtool: Abstract alternative special case handling
-Date: Thu,  9 Jan 2020 16:02:14 +0000
-Message-Id: <20200109160300.26150-12-jthierry@redhat.com>
+Subject: [RFC v5 12/57] objtool: check: Allow jumps from an alternative group
+ to itself
+Date: Thu,  9 Jan 2020 16:02:15 +0000
+Message-Id: <20200109160300.26150-13-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: i2OAVtuCO5uLd393UWjt1Q-1
+X-MC-Unique: ZpcPUJn-NpObNV3EmD4eFg-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080432_949897_273FD079 
-X-CRM114-Status: GOOD (  16.35  )
+X-CRM114-CacheID: sfid-20200109_080433_270180_B938613D 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -117,144 +118,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some alternatives associated with a specific feature need to be treated
-in a special way. Since the features and how to treat them vary from one
-architecture to another, move the special case handling to arch specific
-code.
+Alternatives can contain instructions that jump to another instruction
+in the same alternative group. This is actually a common pattern on
+arm64.
+
+Keep track of instructions jumping within their own alternative group
+and carry on validating such branches.
 
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- tools/objtool/arch/x86/Build                  |  1 +
- tools/objtool/arch/x86/arch_special.c         | 34 +++++++++++++++++++
- tools/objtool/arch/x86/include/arch_special.h |  5 +++
- tools/objtool/special.c                       | 25 +-------------
- tools/objtool/special.h                       |  8 +++++
- 5 files changed, 49 insertions(+), 24 deletions(-)
- create mode 100644 tools/objtool/arch/x86/arch_special.c
+ tools/objtool/check.c | 48 ++++++++++++++++++++++++++++++++++---------
+ tools/objtool/check.h |  1 +
+ 2 files changed, 39 insertions(+), 10 deletions(-)
 
-diff --git a/tools/objtool/arch/x86/Build b/tools/objtool/arch/x86/Build
-index e43fd6fa0ee1..971f9fa90a3c 100644
---- a/tools/objtool/arch/x86/Build
-+++ b/tools/objtool/arch/x86/Build
-@@ -1,3 +1,4 @@
-+objtool-y += arch_special.o
- objtool-y += decode.o
- objtool-y += orc_dump.o
- objtool-y += orc_gen.o
-diff --git a/tools/objtool/arch/x86/arch_special.c b/tools/objtool/arch/x86/arch_special.c
-new file mode 100644
-index 000000000000..6dba31f419d0
---- /dev/null
-+++ b/tools/objtool/arch/x86/arch_special.c
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+#include "../../special.h"
-+#include "../../builtin.h"
+diff --git a/tools/objtool/check.c b/tools/objtool/check.c
+index 8f2ff030936d..c7b3f1e2a628 100644
+--- a/tools/objtool/check.c
++++ b/tools/objtool/check.c
+@@ -722,6 +722,14 @@ static int handle_group_alt(struct objtool_file *file,
+ 	sec_for_each_insn_from(file, insn) {
+ 		if (insn->offset >= special_alt->orig_off + special_alt->orig_len)
+ 			break;
++		/* Is insn a jump to an instruction within the alt_group */
++		if (insn->jump_dest && insn->sec == insn->jump_dest->sec &&
++		    (insn->type == INSN_JUMP_CONDITIONAL ||
++		     insn->type == INSN_JUMP_UNCONDITIONAL)) {
++			dest_off = insn->jump_dest->offset;
++			insn->intra_group_jump = special_alt->orig_off <= dest_off &&
++				dest_off < special_alt->orig_off + special_alt->orig_len;
++		}
+ 
+ 		insn->alt_group = true;
+ 		last_orig_insn = insn;
+@@ -1853,14 +1861,33 @@ static int validate_sibling_call(struct instruction *insn, struct insn_state *st
+ 	return validate_call(insn, state);
+ }
+ 
++static int validate_branch_alt_safe(struct objtool_file *file,
++				    struct symbol *func,
++				    struct instruction *first,
++				    struct insn_state state);
 +
-+void arch_handle_alternative(unsigned short feature, struct special_alt *alt)
++static int validate_branch(struct objtool_file *file, struct symbol *func,
++			   struct instruction *first, struct insn_state state)
 +{
-+	/*
-+	 * If UACCESS validation is enabled; force that alternative;
-+	 * otherwise force it the other way.
-+	 *
-+	 * What we want to avoid is having both the original and the
-+	 * alternative code flow at the same time, in that case we can
-+	 * find paths that see the STAC but take the NOP instead of
-+	 * CLAC and the other way around.
-+	 */
-+	switch (feature) {
-+	case X86_FEATURE_SMAP:
-+		if (uaccess)
-+			alt->skip_orig = true;
-+		else
-+			alt->skip_alt = true;
-+		break;
-+	case X86_FEATURE_POPCNT:
-+		/*
-+		 * It has been requested that we don't validate the !POPCNT
-+		 * feature path which is a "very very small percentage of
-+		 * machines".
-+		 */
-+		alt->skip_orig = true;
-+		break;
-+	default:
-+		break;
++	if (first->alt_group && list_empty(&first->alts)) {
++		WARN_FUNC("don't know how to handle branch to middle of alternative instruction group",
++			  first->sec, first->offset);
++		return 1;
 +	}
++
++	return validate_branch_alt_safe(file, func, first, state);
 +}
-diff --git a/tools/objtool/arch/x86/include/arch_special.h b/tools/objtool/arch/x86/include/arch_special.h
-index 426178d504a8..3ab2dc32424b 100644
---- a/tools/objtool/arch/x86/include/arch_special.h
-+++ b/tools/objtool/arch/x86/include/arch_special.h
-@@ -20,4 +20,9 @@
- #define X86_FEATURE_POPCNT (4 * 32 + 23)
- #define X86_FEATURE_SMAP   (9 * 32 + 20)
- 
-+struct special_alt;
 +
-+#define arch_handle_alternative arch_handle_alternative
-+void arch_handle_alternative(unsigned short feature, struct special_alt *alt);
-+
- #endif /* _X86_ARCH_SPECIAL_H */
-diff --git a/tools/objtool/special.c b/tools/objtool/special.c
-index b8ccee1b5382..67461b25e649 100644
---- a/tools/objtool/special.c
-+++ b/tools/objtool/special.c
-@@ -75,30 +75,7 @@ static int get_alt_entry(struct elf *elf, struct special_entry *entry,
+ /*
+  * Follow the branch starting at the given instruction, and recursively follow
+  * any other branches (jumps).  Meanwhile, track the frame pointer state at
+  * each instruction and validate all the rules described in
+  * tools/objtool/Documentation/stack-validation.txt.
+  */
+-static int validate_branch(struct objtool_file *file, struct symbol *func,
+-			   struct instruction *first, struct insn_state state)
++static int validate_branch_alt_safe(struct objtool_file *file,
++				    struct symbol *func,
++				    struct instruction *first,
++				    struct insn_state state)
+ {
+ 	struct alternative *alt;
+ 	struct instruction *insn, *next_insn;
+@@ -1871,12 +1898,6 @@ static int validate_branch(struct objtool_file *file, struct symbol *func,
+ 	insn = first;
+ 	sec = insn->sec;
  
- 		feature = *(unsigned short *)(sec->data->d_buf + offset +
- 					      entry->feature);
+-	if (insn->alt_group && list_empty(&insn->alts)) {
+-		WARN_FUNC("don't know how to handle branch to middle of alternative instruction group",
+-			  sec, insn->offset);
+-		return 1;
+-	}
 -
--		/*
--		 * It has been requested that we don't validate the !POPCNT
--		 * feature path which is a "very very small percentage of
--		 * machines".
--		 */
--		if (feature == X86_FEATURE_POPCNT)
--			alt->skip_orig = true;
--
--		/*
--		 * If UACCESS validation is enabled; force that alternative;
--		 * otherwise force it the other way.
--		 *
--		 * What we want to avoid is having both the original and the
--		 * alternative code flow at the same time, in that case we can
--		 * find paths that see the STAC but take the NOP instead of
--		 * CLAC and the other way around.
--		 */
--		if (feature == X86_FEATURE_SMAP) {
--			if (uaccess)
--				alt->skip_orig = true;
--			else
--				alt->skip_alt = true;
--		}
-+		arch_handle_alternative(feature, alt);
- 	}
+ 	while (1) {
+ 		next_insn = next_insn_same_sec(file, insn);
  
- 	orig_rela = find_rela_by_dest(sec, offset + entry->orig);
-diff --git a/tools/objtool/special.h b/tools/objtool/special.h
-index 35061530e46e..738a05bc6d3a 100644
---- a/tools/objtool/special.h
-+++ b/tools/objtool/special.h
-@@ -8,6 +8,7 @@
+@@ -2023,8 +2044,15 @@ static int validate_branch(struct objtool_file *file, struct symbol *func,
+ 					return ret;
  
- #include <stdbool.h>
- #include "elf.h"
-+#include "arch_special.h"
+ 			} else if (insn->jump_dest) {
+-				ret = validate_branch(file, func,
+-						      insn->jump_dest, state);
++				if (insn->intra_group_jump)
++					ret = validate_branch_alt_safe(file,
++								       func,
++								       insn->jump_dest,
++								       state);
++				else
++					ret = validate_branch(file, func,
++							      insn->jump_dest,
++							      state);
+ 				if (ret) {
+ 					if (backtrace)
+ 						BT_FUNC("(branch)", insn);
+diff --git a/tools/objtool/check.h b/tools/objtool/check.h
+index af87b55db454..d13ee02f28a4 100644
+--- a/tools/objtool/check.h
++++ b/tools/objtool/check.h
+@@ -46,6 +46,7 @@ struct instruction {
+ 	struct stack_op stack_op;
+ 	struct insn_state state;
+ 	struct orc_entry orc;
++	bool intra_group_jump;
+ };
  
- struct special_alt {
- 	struct list_head list;
-@@ -28,4 +29,11 @@ struct special_alt {
- 
- int special_get_alts(struct elf *elf, struct list_head *alts);
- 
-+#ifndef arch_handle_alternative
-+static inline void arch_handle_alternative(unsigned short feature,
-+					   struct special_alt *alt)
-+{
-+}
-+#endif
-+
- #endif /* _SPECIAL_H */
+ struct objtool_file {
 -- 
 2.21.0
 
