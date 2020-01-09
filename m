@@ -2,59 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D438135B29
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:15:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AEA5135B3C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:21:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZKHHnwawQNkCEA5EqMOq0n7+RG9tCd5ZHDefT4qaE4E=; b=YgQETHSmXE/1ELJPjDgK6IIyd
-	QhUxFMGHnXuFomI2DonmklkrwgE2rQeQTALzHwtRlcgGXWzsQ7XhSiqkR74D5+Sne2LYdc6fIp1UL
-	BgFz5InbmS11jV0i1dnfkhUaGVbxmd3kl25rZrGC51nTvka4PJf1GqFGsxCev5ZdNWVO/0KDoJ01w
-	O7WV7FYepgD29v1vLkyv71hCNJk7V0VVUb6zUA/K4mwj2UXJsUAvW5q/uHzIeewAQlMTeiLmRYBy+
-	WsGoYsBkz23VzA1pAAPi9z7U3f9HhK7zs4wX1k8Oa63Twyr+0eN8stAV8Lzg6XwtYW7PO9NGPL0U0
-	ud7OQSNqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=evrWqJMOHn2RZ2Ti/5xmjImRvhEfwQj0/ahnyO4WGbA=; b=DHG
+	KQD/ebA47Hatpha13ptOw/iu29cAMqSpzivmJ84HFx5PttCJOb+rm1Q5+RW0bwotT0EX/MJHml/OQ
+	mbqC63p/rm+gshIIdqLdwvOE3UZHMn/aVWThh7AfavH0joi1E5pH39qM4h4InkZv4A9Ugo47ZpKjz
+	ujD8xfAPnfTVeqDfW4kFOJAAKK7PeU+dB4hXtU6XWgBNBViAfzMop+QUNmh0Eh8dADhXN1k5CcxiS
+	HWaM0ESVUpyQg7900PzLlzDQQv/tSRWxtGkb9btGlUWR7Z5u1TO6uyfW5yDGbJxg4Ia+ZCW1wrdQN
+	0+n3zOcW2PDJI2DVrnjwkzRwqzN8GyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYaO-0002H2-SG; Thu, 09 Jan 2020 14:14:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYaF-0002GH-HI; Thu, 09 Jan 2020 14:14:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D33C81FB;
- Thu,  9 Jan 2020 06:14:46 -0800 (PST)
-Received: from [10.1.27.38] (unknown [10.1.27.38])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 254C93F534;
- Thu,  9 Jan 2020 06:14:43 -0800 (PST)
-Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
- for the GPU
-To: Nicolas Boichat <drinkcat@chromium.org>, Mark Brown <broonie@kernel.org>
-References: <20200108052337.65916-1-drinkcat@chromium.org>
- <20200108052337.65916-5-drinkcat@chromium.org>
- <20200108132302.GA3817@sirena.org.uk>
- <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
-Date: Thu, 9 Jan 2020 14:14:42 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
-Content-Language: en-GB
+	id 1ipYgX-0005eJ-Qd; Thu, 09 Jan 2020 14:21:17 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipYgM-0005cj-Ez; Thu, 09 Jan 2020 14:21:10 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j42so7515872wrj.12;
+ Thu, 09 Jan 2020 06:21:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=WK9gkU3m513Bp7Cu1KXOPb6NwVeeFqZuUplsaUVFOIk=;
+ b=ghO3EugBL0+/4U4+kMiJ6nLW+1QsNX88U6mry2WtI8EVV8HzkEHzR0K87NLTCQSos0
+ kihimaZh5YvIbuaSzQGGkHW8qo48pxNQDa+GEEa+n0X55v7xC6OrJB40TC21P3OIb2Jh
+ P6CmXgLCA/oiF8najEnmbqZ5hNYbpdIiI7R1JXjH0Ce2PX6fXWyFR1prAuR337wZljBu
+ vZtcohvXrDx9I3jNflVUw/E1UiC8k9swnJCkaFY+ZDImtNMEzpN3tw/m6f/nQgFe4FKp
+ JRo862ZtpCgPSmEZeIkqteJKZMFjytf90Roz9N1nDzwPNO92bXCALRQwg2Rcb7l9Dlh8
+ FPqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=WK9gkU3m513Bp7Cu1KXOPb6NwVeeFqZuUplsaUVFOIk=;
+ b=fYXNO4Exc8AnOKyh0fpjse8pUyvBt09yMZngm2F8nDpYNED7aSRy6RWJ4RlsauFfmR
+ K12xd8Muc3CgBycSonkx0adCQfDwv2Vbpz/W5+YT90/n6dVGTAsKc5biPfN4BVTQvJhF
+ cPNe+XRagYtk+CGcH9fUte/l8opqb50sBhrTbdMQZpSxR5o3Eh7s9KDnILXltaeqa1Fq
+ URYtc69IuYGC2dvhkPXe4jleRA6LpjWn0rvC0009Eq+dyZqq+xPuDlEMqM/sWNM2B+Zy
+ /gJO7Q/xnDPqFYFbXItlzV8/L6tWl/QsdE45pSumzVBZrBLIrs3gD1Y3A4K3SV8hDBZE
+ Fbcw==
+X-Gm-Message-State: APjAAAWOQ6UnPFe6NXBBNDBhUbZRevIy7DwR/gchI4+oxMlD2BgRsFYa
+ fCbA+CWCBG0JASphNGWuDiU=
+X-Google-Smtp-Source: APXvYqwf5cjzGgESlCq81pbBePPTkbxeU1QNXFhPZqiJ69f3+QB80EdywpsFxWfxqtJMEgBWZVeCAg==
+X-Received: by 2002:adf:8b4f:: with SMTP id v15mr11505791wra.231.1578579664576; 
+ Thu, 09 Jan 2020 06:21:04 -0800 (PST)
+Received: from localhost.localdomain ([197.254.95.38])
+ by smtp.googlemail.com with ESMTPSA id b17sm8337337wrp.49.2020.01.09.06.21.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Jan 2020 06:21:03 -0800 (PST)
+From: Wambui Karuga <wambui.karugax@gmail.com>
+To: hjc@rock-chips.com,
+	heiko@sntech.de,
+	airlied@linux.ie,
+	daniel@ffwll.ch
+Subject: [PATCH] drm/rockchip: use DIV_ROUND_UP macro for calculations.
+Date: Thu,  9 Jan 2020 17:20:57 +0300
+Message-Id: <20200109142057.10744-1-wambui.karugax@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_061447_621180_4EE0ACB4 
-X-CRM114-Status: GOOD (  20.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_062106_523500_44E2B8FB 
+X-CRM114-Status: GOOD (  11.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wambui.karugax[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,66 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/01/2020 22:52, Nicolas Boichat wrote:
-> On Wed, Jan 8, 2020 at 9:23 PM Mark Brown <broonie@kernel.org> wrote:
->>
->> On Wed, Jan 08, 2020 at 01:23:34PM +0800, Nicolas Boichat wrote:
->>
->>> Some GPUs, namely, the bifrost/g72 part on MT8183, have a second
->>> regulator for their SRAM, let's add support for that.
->>
->>> +     pfdev->regulator_sram = devm_regulator_get_optional(pfdev->dev, "sram");
->>> +     if (IS_ERR(pfdev->regulator_sram)) {
->>
->> This supply is required for the devices that need it so I'd therefore
->> expect the driver to request the supply non-optionally based on the
->> compatible string rather than just hoping that a missing regulator isn't
->> important.
-> 
-> That'd be a bit awkward to match, though... Currently all bifrost
-> share the same compatible "arm,mali-bifrost", and it'd seem
-> weird/wrong to match "mediatek,mt8183-mali" in this driver? I have no
-> idea if any other Mali implementation will require a second regulator,
-> but with the MT8183 we do need it, see below.
-> 
->> Though I do have to wonder given the lack of any active
->> management of the supply if this is *really* part of the GPU or if it's
->> more of a SoC thing, it's not clear what exactly adding this code is
->> achieving.
-> 
-> Well if devfreq was working (see patch 7
-> https://patchwork.kernel.org/patch/11322851/ for a partial
-> implementation), it would adjust both mali and sram regulators, see
-> the OPP table in patch 2
-> (https://patchwork.kernel.org/patch/11322825/): SRAM voltage needs to
-> be increased for frequencies >=698Mhz.
-> 
-> Now if you have some better idea how to implement this, I'm all ears!
+Replace the open coded calculation with the more concise and readable
+DIV_ROUND_UP macro.
 
-I'm not sure if it's better, but could we just encode the list of regulators into device tree. I'm a bit worried about special casing an "sram" regulator given that other platforms might have a similar situation but call the second regulator a different name.
+Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
+---
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Steve
-
-> Thanks.
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> 
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+index 0b3d18c457b2..cc672620d6e0 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+@@ -328,7 +328,7 @@ static inline uint16_t scl_get_bili_dn_vskip(int src_h, int dst_h,
+ {
+ 	int act_height;
+ 
+-	act_height = (src_h + vskiplines - 1) / vskiplines;
++	act_height = DIV_ROUND_UP(src_h, vskiplines);
+ 
+ 	if (act_height == dst_h)
+ 		return GET_SCL_FT_BILI_DN(src_h, dst_h) / vskiplines;
+-- 
+2.17.1
 
 
 _______________________________________________
