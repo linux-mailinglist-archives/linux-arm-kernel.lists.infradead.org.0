@@ -2,102 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8A36135E20
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:22:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75383135E2F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:24:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BBnZMlYZvoItkSxKHv3d5RnDZJ2nfj2AwJvKhjXRIIk=; b=SmH6fI9C2BQ9H8
-	sLAB+KAlFCt7zegVaF0rNHIR0p7ig6HpnFMiD8SqR4sXoR8tSsV+g0IVFjKzMI85E8NDXNpRZwXhO
-	N8SJI3L7ntKBuQcYbGCf6JxBosoETsGC8R2dDOpzF24ngvcrbKCNz+pv8RqI4YWwCpcQg2RITWBML
-	dClpe11eSlgxfIzmNlu+prFrC/JEHs64JnwgIubzut8XxJT9fLtyQY65II8yQY4tCZ/AJNDDRMHPv
-	1T0xcZwFP75j9AcSDbM0AR+Dc0E2OhHbe688KWg80p4koL0cwYRSO/+g0yjyY2t9/Enpj8DGt/THS
-	nQmWuWPy/l/kJEBwcjRw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MbbcRYshi/bcTQhLzlQd3Kb7tfL09zFiLdpTYUrSMVg=; b=OXNL/EQD4iGtXw
+	CHk1L42oPD7z8l55/iVwx2+t1iDWdGB5A9iZnja+uZEaQR6dAcZqVC4aIsa4MTfqi1DJQp7ELWYse
+	nqZxUX6bRSsLX1RPAgdrxdOKjrYCD8/kKnFA0e5W0LBlxwawMiK/ko/R5uGrJf3VS6I3sK3Aahy5e
+	12q7boa2HEYcihR5evmj+Q0SKtwxEwMd7GKzZc2FxkcFCxJ7Vkd1L927yj2JvdrxhD24keIkifhze
+	90ciop8mqbppF3ffKotybHArPr+bkAKoOzeXfRboTvYSIuRkGrjZ1sonz9PFW0WWjUttg4gpf/c2D
+	vwQM5fUss/LcTmlpj7og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaZs-0000W2-JS; Thu, 09 Jan 2020 16:22:32 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ipabi-0002CG-AT; Thu, 09 Jan 2020 16:24:26 +0000
+Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaO2-0004PL-Ts
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:10:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578586217;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=sbYnzt6Q3TQUglatyKTswckBiC0xrNxpjYH5/smlmTQ=;
- b=eJ6vuxumQru9kwCeDB4poaj9tNfaGERle0KeyygqX0t5lpro2ucOl/Yi+FOTOEVmZrRIq8
- KNhmNT5yxar3i/LnpKodNoFkZj0HAruUIH+dBQpPOybUaBp/KweLRpCXk83km396NXxFGx
- uFZ8mcSQRkTWDDSewYB6ac6zwu7PRgc=
-Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
- [209.85.128.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-26-8yvO9ik2O5WwptoBeeNTBA-1; Thu, 09 Jan 2020 11:10:14 -0500
-Received: by mail-wm1-f70.google.com with SMTP id c4so1097816wmb.8
+ id 1ipaWW-0004yQ-LV
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:19:08 +0000
+Received: by mail-qk1-x736.google.com with SMTP id z76so6513220qka.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:10:13 -0800 (PST)
+ Thu, 09 Jan 2020 08:19:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
+ h=from:mime-version:date:message-id:subject:to;
+ bh=d88Xq53MKTDEJhK31IGTSeb6nL+720DGGuqob3OXfa0=;
+ b=rwFdPy8zJV4rDrzUrwoPihzrxRWL7XDmnNQCU13Evd8P428xLWbB0UgvxHcq2BJqY3
+ YbBbyQPLxRfmJGz+MMr10dlPkhL6KjBEZrFaYA7R7ZFC7IfUfETQwL2h4rUcF4zEdUlj
+ la/rkaKJqCSfxyRTKFV3YB8ZXwbEUgeIBpJEOeoJANe+C8lJE7c/jznxB5bn7evGqJJM
+ UfZqc8Y1CsOIQAFM7wl5hYnqpscgaqkaamRsrOIpuAxyQU20x5geSNeLEZHXftaWYeFL
+ 7RYDenLf2lsm9oJMxdfMul82aUBQm8VNgaBo3k6oPk/LR09QV7XrzolQl9klQ4lqkiTn
+ Tc/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ZnSP0pZ70yH/YNEnLlm1kliMX25WmuqwN7ivPVxI2v0=;
- b=CltvDGN1nUtde+RzNKLr9Dbvr7k9h8tTbfkzhU9ewxMyGJ6H1cIvsiUvw/dBUMBpPD
- TbgZKJ9HTL1ZvqQpCU5aidFGRsuX4PrMvIw9DHT9nQaPG7o6Oy/kRvLyhZyONOlb/HdY
- sYGD0J/amPz8Vxf+yub2/cd1yfb5+I+m0rqJRUmwOm7McrK/2+we5eWytSKfvR8fiC+O
- 84/3w+XI5PoBxpJwvXHRmcgqLZDW/ztSR2Cft3bFQ9Ru+EDHsM3nkfWxguaX85mVM46d
- fjKN75Zzxc4hjdTULerH5qFYutzLwXKL9ofGl4IhGs0gUDB5v23/umUhKFtLjygBNgWY
- Pqyg==
-X-Gm-Message-State: APjAAAVrAXd/9Fkv2lNEo+3KsNJ/yHoQyr+Xf+vzQndRKnQvcybJmSUX
- 5NTcr9VVW67VgMfMriot0XHdb3aTokqzEvLG+tvJ8f+2L+ba1JKqkZaMu1FEGRDq+YKK8gNSBtJ
- 83z+2HTh+CdCzMpBAjSRbs6MJkDpxkOXLA+A=
-X-Received: by 2002:a05:600c:108a:: with SMTP id
- e10mr5542132wmd.38.1578586212974; 
- Thu, 09 Jan 2020 08:10:12 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxZtD+rP6Em4mTjnCX/pV4lGl7JJYz5/HOrqpOas0kvGyMcAfBoXa6ico6Rve7JUKRHzsZgbw==
-X-Received: by 2002:a05:600c:108a:: with SMTP id
- e10mr5542098wmd.38.1578586212717; 
- Thu, 09 Jan 2020 08:10:12 -0800 (PST)
-Received: from redfedo.redhat.com
- (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id y17sm2820948wma.36.2020.01.09.08.10.11
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:10:12 -0800 (PST)
-From: Julien Thierry <jthierry@redhat.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 57/57] arm64: crypto: Remove redundant branch
-Date: Thu,  9 Jan 2020 16:03:00 +0000
-Message-Id: <20200109160300.26150-58-jthierry@redhat.com>
-X-Mailer: git-send-email 2.21.1
-In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
-References: <20200109160300.26150-1-jthierry@redhat.com>
+ h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
+ bh=d88Xq53MKTDEJhK31IGTSeb6nL+720DGGuqob3OXfa0=;
+ b=cBGMLbdP24w703VFA953RCwAx2kboZ0eGjuaM3YxOGF1Rjwt9/17sqC9FiLjAc/7uR
+ TcgNWfHq7vwIbgN9hffeiRO4GLkvH9tEjYd2sOEHnfFOaYWv5XvReRuOOSz/YKQvzgtB
+ nRZV2P3EGFaJtye1l9OHJtibAcett6wu4NMz1OGuLGAVlFpo14lcu+xGMRZDt7PS5pC6
+ WANzg637BVuDPjlrzONFGjbv6bhcV3NMeHdPJL3mvifKUC5daIBCgmslHnty/SvGHtsy
+ vlerA9gbiclqJiQGpx/ePEKwAtM4slsKmALkkI4S7WGke2VbshDJEC+ceFO+ADbfvWzj
+ O8yA==
+X-Gm-Message-State: APjAAAXMKz5ofvSR9ksi6UotTneLR7D/daknuiT0xejBeIrKnl3zmyhs
+ g8TqZrnD+Aic38ypNp+2rhCQ+Hc4ubld0w==
+X-Google-Smtp-Source: APXvYqzzWkUVjRPOS0Y0J9KQ/NQNGUhmS1t/fSvFmJ5E0fawJ9DIhQ8e55Ag5otdDv0V3Vmr+DCekA==
+X-Received: by 2002:a05:620a:16bb:: with SMTP id
+ s27mr10743638qkj.368.1578586742217; 
+ Thu, 09 Jan 2020 08:19:02 -0800 (PST)
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com.
+ [209.85.160.176])
+ by smtp.gmail.com with ESMTPSA id i5sm3498762qtv.80.2020.01.09.08.19.01
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 09 Jan 2020 08:19:02 -0800 (PST)
+From: Otavio Salvador <otavio.salvador@ossystems.com.br>
+X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
+Received: by mail-qt1-f176.google.com with SMTP id i13so1493864qtr.3;
+ Thu, 09 Jan 2020 08:19:01 -0800 (PST)
+X-Received: by 2002:ac8:3510:: with SMTP id y16mr8837483qtb.6.1578586740862;
+ Thu, 09 Jan 2020 08:19:00 -0800 (PST)
 MIME-Version: 1.0
-X-MC-Unique: 8yvO9ik2O5WwptoBeeNTBA-1
-X-Mimecast-Spam-Score: 0
+Date: Thu, 9 Jan 2020 13:18:48 -0300
+X-Gmail-Original-Message-ID: <CAP9ODKo8UPbU+JR45T2rjJH3FefcWw=tS71EmjFzVyPMA_R7gg@mail.gmail.com>
+Message-ID: <CAP9ODKo8UPbU+JR45T2rjJH3FefcWw=tS71EmjFzVyPMA_R7gg@mail.gmail.com>
+Subject: RV1108G run-time detection
+To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ Heiko Stuebner <heiko@sntech.de>,
+ Kernel development list <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_081019_049259_1A6CC3CF 
-X-CRM114-Status: GOOD (  11.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_081904_821407_E19BD7A5 
+X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:736 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,88 +99,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <jthierry@redhat.com>, peterz@infradead.org,
- catalin.marinas@arm.com, raphael.gault@arm.com, jpoimboe@redhat.com,
- will@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Having a unconditional branch between the macros do_cond_yield_neon and
-endif_yeild_neon causes the endif_yeild_neon to be unreachable. It so
-happens that endif_yeild_neon expands to a branch and already allows to
-provide the label to jump to after the yeild.
+Hi,
 
-Get rid of the redundant branch instruction.
+We would like to know if there is a way to distinguish between RV1108
+and RV1108G versions in run-time.
 
-Signed-off-by: Julien Thierry <jthierry@redhat.com>
----
- arch/arm64/crypto/sha1-ce-core.S   | 3 +--
- arch/arm64/crypto/sha2-ce-core.S   | 3 +--
- arch/arm64/crypto/sha3-ce-core.S   | 3 +--
- arch/arm64/crypto/sha512-ce-core.S | 3 +--
- 4 files changed, 4 insertions(+), 8 deletions(-)
+The reason we are asking is because arch/arm/boot/dts/rv1108.dtsi
+defines the following operational points: 408, 600, 816, 1008 MHz, but
+the RV1108G version does not support 1GHz and its maximum operating
+frequency is 800MHz (not 816 MHz).
 
-diff --git a/arch/arm64/crypto/sha1-ce-core.S b/arch/arm64/crypto/sha1-ce-core.S
-index c2ce1f820706..50ca9d11a61f 100644
---- a/arch/arm64/crypto/sha1-ce-core.S
-+++ b/arch/arm64/crypto/sha1-ce-core.S
-@@ -132,8 +132,7 @@ CPU_LE(	rev32		v11.16b, v11.16b	)
- 	st1		{dgav.4s}, [x19]
- 	str		dgb, [x19, #16]
- 	do_cond_yield_neon
--	b		0b
--	endif_yield_neon
-+	endif_yield_neon 0b
- 
- 	b		1b
- 
-diff --git a/arch/arm64/crypto/sha2-ce-core.S b/arch/arm64/crypto/sha2-ce-core.S
-index 6f728a419009..c64716f5de19 100644
---- a/arch/arm64/crypto/sha2-ce-core.S
-+++ b/arch/arm64/crypto/sha2-ce-core.S
-@@ -139,8 +139,7 @@ CPU_LE(	rev32		v19.16b, v19.16b	)
- 	if_will_cond_yield_neon
- 	st1		{dgav.4s, dgbv.4s}, [x19]
- 	do_cond_yield_neon
--	b		0b
--	endif_yield_neon
-+	endif_yield_neon 0b
- 
- 	b		1b
- 
-diff --git a/arch/arm64/crypto/sha3-ce-core.S b/arch/arm64/crypto/sha3-ce-core.S
-index a7d587fa54f6..2448d8dec0de 100644
---- a/arch/arm64/crypto/sha3-ce-core.S
-+++ b/arch/arm64/crypto/sha3-ce-core.S
-@@ -203,8 +203,7 @@ ENTRY(sha3_ce_transform)
- 	st1	{v20.1d-v23.1d}, [x8], #32
- 	st1	{v24.1d}, [x8]
- 	do_cond_yield_neon
--	b		0b
--	endif_yield_neon
-+	endif_yield_neon 0b
- 
- 	b	1b
- 
-diff --git a/arch/arm64/crypto/sha512-ce-core.S b/arch/arm64/crypto/sha512-ce-core.S
-index ce65e3abe4f2..703724703f8f 100644
---- a/arch/arm64/crypto/sha512-ce-core.S
-+++ b/arch/arm64/crypto/sha512-ce-core.S
-@@ -207,8 +207,7 @@ CPU_LE(	rev64		v19.16b, v19.16b	)
- 	if_will_cond_yield_neon
- 	st1		{v8.2d-v11.2d}, [x19]
- 	do_cond_yield_neon
--	b		0b
--	endif_yield_neon
-+	endif_yield_neon 0b
- 
- 	b		1b
- 
+In the i.MX SoCs we can read a fuse that indicates the "speed grading"
+of the chip and decide which operating points could be used for that
+particular version.
+
+Is there such a mechanism in RV1108? Any suggestions to limiting the
+RV1108G operational point at 800MHz?
+
+Thanks
+
 -- 
-2.21.0
-
+Otavio Salvador                             O.S. Systems
+http://www.ossystems.com.br        http://code.ossystems.com.br
+Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
 
 _______________________________________________
 linux-arm-kernel mailing list
