@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60683135DE2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:13:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66A34135DE3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:13:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=et7yWr5LfG4Te29SAXMdkxdMoVROdRWD7TciuO1zGTY=; b=ipvVO8+WYIoVBg
-	LT+57jDesldjFDu+so3lXowAmBGdWU1UowAdVFxWmVfk6qKxcY2UcJABPtAiDtZvkMKJksyJich3j
-	hmDhpP0ZnG79akSzJB83wmSk8UFLQWlGswjU52odKQ1Meg9CxVEvQAKKvQe7+fjGYvfN5MFsJWYJg
-	B++9MS+sSacmDfjjdbBdo0mZK5zIoAWynFSg/HQ8gI4T3BdJBLndky4TCOkSR+WG3yXWVR1yRT2xE
-	IWJbXcaOboBPcEFHhRQzxdwuaCG+ysMLX6XHxzLOcqyC70cvMddgaYkohcqEKlSPE20A8+DKgdihl
-	Y9azpPOY6YIF1aLeH6Wg==;
+	List-Owner; bh=8oFYADSbb8kC+0j3algdgjAq9/vbur+wqd4gRDYxirc=; b=hLHD18u/bO4Rg3
+	tK5f0y52A6JfqwNCcdf15wumvRHHXBrBbVJTyZu1TkrTgipQPLWt8FHfZzIY6AqsLKUy391NNyYLn
+	wAyu7tDoQ5JWls4WUqqYIDbuPqBDW9mrPy/B2DbxeEc/akx4HmswgPUI0xK8Ct1XDWsHaF/FtaSja
+	k+32twIkZQmv/MaS3wfzE7bPdGPQ9Bwt7uWKkCprElv8fX/P1w1NUGKIe6tJSxiObgtv/cSk7w7oT
+	bhS4USXtfyk0ux9TXY/YbY8iC7Lhci/r4/uzhgZmxmFXb9oQ3QcdduE4xAEx0AnbKSzNZImPw3W5I
+	8nriFZq6RXxjzEjItXZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaQy-0006sL-3d; Thu, 09 Jan 2020 16:13:20 +0000
+	id 1ipaRK-0007DZ-8p; Thu, 09 Jan 2020 16:13:42 +0000
 Received: from us-smtp-1.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaKO-00082N-6S
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:06:34 +0000
+ id 1ipaKP-00083F-CL
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:06:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578585990;
+ s=mimecast20190719; t=1578585991;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=tlQRkFiwtOzDsnF1EvmrQl/6BVM4mJGyHhan4vNK2JU=;
- b=egMSxT1ojSXQOE3UzrJdRBqE21wPBts+Q0HOZJ4hyw1NfabaCJ3oSjciCj3DmfPnV5+yfY
- q8dmapjLEyvlAjpUt412CwDqwlf84RD22pA4FDK8+fiLjT+u/fsxFd/JLpIzYyR4NBCY2R
- LEq00RwSiJrRhLYK/jRgF5N1FkHfyOY=
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-345-vdmisrpVM3qaXn4RHFGepA-1; Thu, 09 Jan 2020 11:06:26 -0500
-Received: by mail-wm1-f71.google.com with SMTP id t17so618165wmi.7
+ bh=lff3/TR6Gb5NqDs05d1xwkpfdI5PSaFFzDQEvi96bk0=;
+ b=f86zNbuftjnQ5oPhOj5L4DMnvRdzfrfJ0WqP4XAr2qzXADxmt47oafjW0njFnbDPNlCrfA
+ zg4XbNKMuEdYjprqD9X/l1CzliE6OZqOTMg3tlUEgHeCel1AIwfXwh0pd/V/HVuVgiEXMJ
+ 1C7u0pWQFNTn9zeymP6UAvc+7deYXxM=
+Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
+ [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-187-6IxzOp-7MhqiRXpXkx24ZQ-1; Thu, 09 Jan 2020 11:06:27 -0500
+Received: by mail-wr1-f69.google.com with SMTP id f15so3077491wrr.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:06:26 -0800 (PST)
+ Thu, 09 Jan 2020 08:06:27 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=J63NkwzczmrLcPGsOIe2c0tfTD5HWt1z/wmViklA3es=;
- b=p+Ss6gTSwwJpM6a15njb7ihs7euNFFPvkPDQa4w64ES9oRfhxuwy1fZ27npF0+bVfP
- 9hkL5/UjLAZVrtgFwxAY7bik4Usy9aS7C7DPHUEOBmbRXGTDcwbZV3NkUqc3c9UFYjR9
- 6+UOoqmC3ynSGNJtK9On2znZ0jOVeJ12IGFIHdxHLZLzKR5E9Lb3MxSJfqURSXP/Kz1e
- zvaueClzG9TK6go1hsCTlISHyj2Mk35hrbpVmIUDVTlayIKSnGWf/0ZbKXOfVi4EqTEy
- QunAPPi4sWC8P0aldA8G2vTx7sUHtnSrzqgLVZ8u5Fu3Zv4RUGuE2KGzzuOtoQS41eo0
- Vx0Q==
-X-Gm-Message-State: APjAAAUAbBBifD3NOcyhPi9RGVEzcCyW2O9/sC42vkjNwwWWY8HX5fqi
- q491Wfoket5MXFh/J35YK5c3etMJUw2omQL2f85htjDmD2P7LsCvLT2U9nLO9RUE8dZNRPzEiFm
- XcqGHy6S04LbCYl459IX4b6jXop+hFwo8lms=
-X-Received: by 2002:a5d:4ed0:: with SMTP id s16mr11380323wrv.144.1578585985410; 
- Thu, 09 Jan 2020 08:06:25 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxG3LuVTogmg7FJSWlNc329KhrNkP0B6SiHOu3F08s0s+2V12EeNGQmM0ARlcnccvAJXUA4Ew==
-X-Received: by 2002:a5d:4ed0:: with SMTP id s16mr11380293wrv.144.1578585985185; 
- Thu, 09 Jan 2020 08:06:25 -0800 (PST)
+ bh=tp6JL9rGP8VcGeIdUkesp1xLP6ts4YGw1IAU9COITC4=;
+ b=kEucIgWkzTd8sO5wmHSXR9uEWAmwTP2VGwIh+ssK2cmSj0uVrKpKkoUVEcsuW4yxp1
+ ilV3aNpEDp5LZw0KOUa0u/uNDDKPeyL90pSBsItWLV9eRWO2jARJA6E6IMqbpOMxmGLS
+ 0kiXki7EPonGf33kmyzux65iWLDpvVNOjcqfbaYTI2dQzIpK8oDSbM+tRU1c0kFYQwBh
+ CHfoqNlhNbXvAvjqwMcBKwzycLsLa8V3WPq7xk+7KgQpPGUjOASWLOyUIAmt5Jb0JPOK
+ hGDUEEhbmWxpsTHX2G9AULaccCf5xPf1FX+d2Rd+3rCOxBxyiJ0gh1I3obWpbPdKjU5Q
+ 51SA==
+X-Gm-Message-State: APjAAAW0vclqf32ne22wG9vKNB9Kz4pntTzcBI5laSlsstfsoaS5Jv10
+ UBWi/twNjzh1eLhJHy58xTMdSQhE9rQi7q/7XCdQwkIsU93INiEeaPX8ruiH7QtQPeEx6zzMkHD
+ s0szlYSQD8rpfreE9wmxGH3G9pRX9n5Cuius=
+X-Received: by 2002:a05:600c:2215:: with SMTP id
+ z21mr5990741wml.55.1578585986754; 
+ Thu, 09 Jan 2020 08:06:26 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxEYx+b+ZCp2ZXGZSAYjmTHkSxr4PiMHPsV7FrExWj8/adU6yZ5L8AF6L4WgU01bYY7ltzeEg==
+X-Received: by 2002:a05:600c:2215:: with SMTP id
+ z21mr5990707wml.55.1578585986501; 
+ Thu, 09 Jan 2020 08:06:26 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id e18sm8643101wrr.95.2020.01.09.08.06.23
+ by smtp.gmail.com with ESMTPSA id e18sm8643101wrr.95.2020.01.09.08.06.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:06:24 -0800 (PST)
+ Thu, 09 Jan 2020 08:06:25 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 28/57] objtool: arm64: Decode branch instructions with PC
- relative immediates
-Date: Thu,  9 Jan 2020 16:02:31 +0000
-Message-Id: <20200109160300.26150-29-jthierry@redhat.com>
+Subject: [RFC v5 29/57] objtool: arm64: Decode branch to register instruction
+Date: Thu,  9 Jan 2020 16:02:32 +0000
+Message-Id: <20200109160300.26150-30-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: vdmisrpVM3qaXn4RHFGepA-1
+X-MC-Unique: 6IxzOp-7MhqiRXpXkx24ZQ-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080632_425352_4A514D43 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200109_080633_509339_337D2EB7 
+X-CRM114-Status: GOOD (  11.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -116,129 +117,195 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Decode instructions that cause a jump in the execution flow, adding
-an immediate value to the current instruction counter.
+Decode instructions producing jumps in the execution flow, taking the
+value of their operand register as the target address.
+
+Return instructions are just branch to register instruction with
+the link register (x31) as implicit operand.
 
 Suggested-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- tools/objtool/arch/arm64/decode.c             | 79 +++++++++++++++++++
- .../objtool/arch/arm64/include/insn_decode.h  | 11 +++
- 2 files changed, 90 insertions(+)
+ tools/objtool/arch/arm64/decode.c             | 150 ++++++++++++++++++
+ .../objtool/arch/arm64/include/insn_decode.h  |   3 +
+ 2 files changed, 153 insertions(+)
 
 diff --git a/tools/objtool/arch/arm64/decode.c b/tools/objtool/arch/arm64/decode.c
-index 5eba83c5d5bc..7986ded8b622 100644
+index 7986ded8b622..bf9334451b40 100644
 --- a/tools/objtool/arch/arm64/decode.c
 +++ b/tools/objtool/arch/arm64/decode.c
-@@ -424,6 +424,26 @@ static struct aarch64_insn_decoder br_sys_decoder[] = {
- 		.value = 0b1100000000000000000000,
- 		.decode_func = arm_decode_except_gen,
+@@ -444,6 +444,11 @@ static struct aarch64_insn_decoder br_sys_decoder[] = {
+ 		.value = 0b0011000000000000000000,
+ 		.decode_func = arm_decode_br_tst_imm,
  	},
 +	{
 +		.mask = 0b1111000000000000000000,
-+		.value = 0b0100000000000000000000,
-+		.decode_func = arm_decode_br_cond_imm,
-+	},
-+	{
-+		.mask = 0b0110000000000000000000,
-+		.value = 0b0000000000000000000000,
-+		.decode_func = arm_decode_br_uncond_imm,
-+	},
-+	{
-+		.mask = 0b0111000000000000000000,
-+		.value = 0b0010000000000000000000,
-+		.decode_func = arm_decode_br_comp_imm,
-+	},
-+	{
-+		.mask = 0b0111000000000000000000,
-+		.value = 0b0011000000000000000000,
-+		.decode_func = arm_decode_br_tst_imm,
++		.value = 0b1101000000000000000000,
++		.decode_func = arm_decode_br_uncond_reg,
 +	},
  };
  
  int arm_decode_br_sys(u32 instr, enum insn_type *type,
-@@ -575,3 +595,62 @@ int arm_decode_except_gen(u32 instr, enum insn_type *type,
- #undef INSN_DCPS2
- #undef INSN_DCPS3
+@@ -654,3 +659,148 @@ int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
+ 	*type = INSN_JUMP_CONDITIONAL;
+ 	return 0;
  }
 +
-+int arm_decode_br_cond_imm(u32 instr, enum insn_type *type,
-+			   unsigned long *immediate, struct list_head *ops_list)
-+{
-+	unsigned char o0 = 0, o1 = 0;
-+	u32 imm19;
++static struct aarch64_insn_decoder ret_decoder[] = {
++	/*
++	 * RET, RETAA, RETAB
++	 */
++	{
++		.mask = 0b1111111111111110000011111,
++		.value = 0b0010111110000000000000000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111111111111111,
++		.value = 0b0010111110000101111111111,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111111111111111,
++		.value = 0b0010111110000111111111111,
++		.decode_func = NULL,
++	},
++};
 +
-+	o0 = EXTRACT_BIT(instr, 4);
-+	o1 = EXTRACT_BIT(instr, 24);
-+	imm19 = (instr >> 5) & ONES(19);
++static struct aarch64_insn_decoder br_decoder[] = {
++	/*
++	 * BR, BRAA, BRAAZ, BRAB, BRABZ
++	 */
++	{
++		.mask = 0b1111111111111110000011111,
++		.value = 0b0000111110000000000000000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000011111,
++		.value = 0b0000111110000100000011111,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000011111,
++		.value = 0b0000111110000110000011111,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000000000,
++		.value = 0b1000111110000100000000000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000000000,
++		.value = 0b1000111110000110000000000,
++		.decode_func = NULL,
++	},
++};
 +
-+	*immediate = SIGN_EXTEND(imm19 << 2, 19);
++#define INSN_DRPS_FIELD		0b0101111110000001111100000
++#define INSN_DRPS_MASK		0b1111111111111111111111111
 +
-+	if ((o1 << 1) | o0)
-+		return arm_decode_unknown(instr, type, immediate, ops_list);
++static struct aarch64_insn_decoder ct_sw_decoder[] = {
++	/*
++	 * ERET, ERETAA, ERETAB
++	 */
++	{
++		.mask = INSN_DRPS_MASK,
++		.value = 0b0100111110000001111100000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = INSN_DRPS_MASK,
++		.value = 0b0100111110000101111111111,
++		.decode_func = NULL,
++	},
++	{
++		.mask = INSN_DRPS_MASK,
++		.value = 0b0100111110000111111111111,
++		.decode_func = NULL,
++	},
++};
 +
-+	*type = INSN_JUMP_CONDITIONAL;
++static struct aarch64_insn_decoder call_decoder[] = {
++	/*
++	 * BLR, BLRAA, BLRAAZ, BLRAB, BLRABZ
++	 */
++	{
++		.mask = 0b1111111111111110000011111,
++		.value =  0b0001111110000000000000000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000011111,
++		.value = 0b0001111110000100000011111,
++		.decode_func = NULL,
++	},
++	{
++		0b1111111111111110000011111,
++		0b0001111110000110000011111,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000000000,
++		.value = 0b1001111110000100000000000,
++		.decode_func = NULL,
++	},
++	{
++		.mask = 0b1111111111111110000000000,
++		.value = 0b1001111110000110000000000,
++		.decode_func = NULL,
++	},
++};
 +
-+	return 0;
-+}
-+
-+int arm_decode_br_uncond_imm(u32 instr, enum insn_type *type,
++int arm_decode_br_uncond_reg(u32 instr, enum insn_type *type,
 +			     unsigned long *immediate,
 +			     struct list_head *ops_list)
 +{
-+	unsigned char decode_field = 0;
-+	u32 imm26 = 0;
++	u32 decode_field = 0;
++	int i = 0;
 +
-+	decode_field = EXTRACT_BIT(instr, 31);
-+	imm26 = instr & ONES(26);
-+
-+	*immediate = SIGN_EXTEND(imm26 << 2, 28);
-+	if (decode_field == 0)
-+		*type = INSN_JUMP_UNCONDITIONAL;
-+	else
-+		*type = INSN_CALL;
-+
++	decode_field = instr & ONES(25);
++	*type = 0;
++	for (i = 0; i < ARRAY_SIZE(br_decoder); i++) {
++		if ((decode_field & br_decoder[i].mask) == br_decoder[i].value)
++			*type = INSN_JUMP_DYNAMIC;
++	}
++	for (i = 0; i < ARRAY_SIZE(call_decoder); i++) {
++		if ((decode_field & call_decoder[i].value) ==
++		    call_decoder[i].value)
++			*type = INSN_CALL_DYNAMIC;
++	}
++	for (i = 0; i < ARRAY_SIZE(ret_decoder); i++) {
++		if ((decode_field & ret_decoder[i].mask) ==
++		    ret_decoder[i].value)
++			*type = INSN_RETURN;
++	}
++	for (i = 0; i < ARRAY_SIZE(ct_sw_decoder); i++) {
++		if ((decode_field & ct_sw_decoder[i].mask) ==
++		    ct_sw_decoder[i].value)
++			*type = INSN_CONTEXT_SWITCH;
++	}
++	if ((decode_field & INSN_DRPS_MASK) == INSN_DRPS_FIELD)
++		*type = INSN_OTHER;
++	if (*type == 0)
++		return arm_decode_unknown(instr, type, immediate, ops_list);
 +	return 0;
 +}
 +
-+int arm_decode_br_comp_imm(u32 instr, enum insn_type *type,
-+			   unsigned long *immediate, struct list_head *ops_list)
-+{
-+	u32 imm19 = (instr >> 5) & ONES(19);
-+
-+	*immediate = SIGN_EXTEND(imm19 << 2, 21);
-+	*type = INSN_JUMP_CONDITIONAL;
-+	return 0;
-+}
-+
-+int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
-+			  unsigned long *immediate, struct list_head *ops_list)
-+{
-+	u32 imm14 = (instr >> 5) & ONES(14);
-+
-+	*immediate = SIGN_EXTEND(imm14 << 2, 16);
-+	*type = INSN_JUMP_CONDITIONAL;
-+	return 0;
-+}
++#undef INSN_DRPS_FIELD
++#undef INSN_DRPS_MASK
 diff --git a/tools/objtool/arch/arm64/include/insn_decode.h b/tools/objtool/arch/arm64/include/insn_decode.h
-index a55dcbfcfed2..ceb80a58c548 100644
+index ceb80a58c548..6e600f408bea 100644
 --- a/tools/objtool/arch/arm64/include/insn_decode.h
 +++ b/tools/objtool/arch/arm64/include/insn_decode.h
-@@ -72,4 +72,15 @@ int arm_decode_system_regs(u32 instr, enum insn_type *type,
+@@ -83,4 +83,7 @@ int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
+ int arm_decode_br_cond_imm(u32 instr, enum insn_type *type,
+ 			   unsigned long *immediate,
  			   struct list_head *ops_list);
- int arm_decode_except_gen(u32 instr, enum insn_type *type,
- 			  unsigned long *immediate, struct list_head *ops_list);
-+int arm_decode_br_uncond_imm(u32 instr, enum insn_type *type,
++int arm_decode_br_uncond_reg(u32 instr, enum insn_type *type,
 +			     unsigned long *immediate,
 +			     struct list_head *ops_list);
-+int arm_decode_br_comp_imm(u32 instr, enum insn_type *type,
-+			   unsigned long *immediate,
-+			   struct list_head *ops_list);
-+int arm_decode_br_tst_imm(u32 instr, enum insn_type *type,
-+			  unsigned long *immediate, struct list_head *ops_list);
-+int arm_decode_br_cond_imm(u32 instr, enum insn_type *type,
-+			   unsigned long *immediate,
-+			   struct list_head *ops_list);
  #endif /* _ARM_INSN_DECODE_H */
 -- 
 2.21.0
