@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E4E9135BAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2328A135BC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:53:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R/QJ+VWF7HeFydMRCMmKDly8wK8uwqo1t0+2MTBXgMk=; b=JcH+JnTA7LKeD3
-	v1wuIVyWYP9WkUEUpePS13Zv0PrbwBHHP38jHOWsVIqJH1HI5IU1t+uoseOGBjZaqO23XP1ypWtYo
-	Bl52sPq6aiKTv2f95z3U1z+lSugVitnUsMun3f2gdh5tv295qNVEjSg5ZVkZUaLqsxcodEX21rTvG
-	OnVfmwRwa97hvM4mpmUnFCVzdJE2fKBCOTzUI0hCUfCpiO/ebov8WIZnPjjQQ3dYkeSX2+WD/NOVc
-	mezy5ZVqL5/PYgsPeUwbQryLSj5JkvOL/q/YhpMVrLy73amoEyPHcI2cmtkE/QmY8qoIV4q6xNOu1
-	0vlq8NdKXHlA8KT7JlXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ajTT20tiEcW9ewN3p67z8vqTIkBbAst8gDOCE7kYmI0=; b=Q5YNZQ3EB3TQvYD/4zuVrLZug
+	W/DsIC4QCzZZ3384Cw/ZU9/8Dgq/tW0OFH3Kl1FHUmTrvBNWaB+MUqMps1NFtNlTzTFTtKNbL8b8k
+	npJhd4T0ZHwF+EE9ncNwN8jPqb2Ouh+HObqmiqfcsJwLEOsT5VcYsqcAoYbDQ0eNkVYUvRA6iaZvc
+	s2OnUBuXk2uC8LqC2cY/tSBFo5mbIp9RIjjmtJYoAzZXY9g8DXuIIaX3E7xti40Ok1i3qjqkc8h63
+	A1PemA/PV7ddotsfn765QTHBFT2Ox61AP2AzSb18h5BAMZnIBuLLw9bBZ3lreXEz4f701tzrEG18M
+	TkEwmGU4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipZ7r-00022U-8f; Thu, 09 Jan 2020 14:49:31 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipZ7j-00021m-5l
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:49:24 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 9ECB268BFE; Thu,  9 Jan 2020 15:49:20 +0100 (CET)
-Date: Thu, 9 Jan 2020 15:49:20 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/2] arm: use swiotlb for bounce buffer on LPAE configs
-Message-ID: <20200109144920.GB22907@lst.de>
-References: <20190709142011.24984-1-hch@lst.de>
- <20190709142011.24984-3-hch@lst.de>
- <9bbd87c2-5b6c-069c-dd22-5105dc827428@ti.com> <20191219150259.GA3003@lst.de>
- <20106a84-8247-fa78-2381-2c94fad9cb6a@ti.com>
- <eca457b6-c685-59ac-1dec-5b28e4430e1d@ti.com>
- <d3921764-840c-4d1c-f240-b974b9b83ec8@arm.com>
- <27450c0e-c8aa-d59b-aa32-37f23c232eb7@ti.com>
- <0e6decce-c54e-9791-473e-0aef05650f39@arm.com>
+	id 1ipZBZ-0003u5-6S; Thu, 09 Jan 2020 14:53:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipZBQ-0003tM-6s
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:53:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2267C1FB;
+ Thu,  9 Jan 2020 06:53:11 -0800 (PST)
+Received: from [10.1.27.38] (e122027.cambridge.arm.com [10.1.27.38])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 120D93F534;
+ Thu,  9 Jan 2020 06:53:08 -0800 (PST)
+Subject: Re: [PATCH v2 1/6] KVM: arm64: Document PV-lock interface
+To: Zengruan Ye <yezengruan@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ virtualization@lists.linux-foundation.org
+References: <20191226135833.1052-1-yezengruan@huawei.com>
+ <20191226135833.1052-2-yezengruan@huawei.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <c26ebc8d-6a10-6bc4-0af8-cd4883addbf0@arm.com>
+Date: Thu, 9 Jan 2020 14:53:08 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0e6decce-c54e-9791-473e-0aef05650f39@arm.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20191226135833.1052-2-yezengruan@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_064923_363393_E0048DCD 
-X-CRM114-Status: GOOD (  21.46  )
+X-CRM114-CacheID: sfid-20200109_065312_335480_F382DABB 
+X-CRM114-Status: GOOD (  24.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,62 +67,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- iommu@lists.linux-foundation.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ daniel.lezcano@linaro.org, linux@armlinux.org.uk, james.morse@arm.com,
+ maz@kernel.org, will@kernel.org, julien.thierry.kdev@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 08, 2020 at 03:20:07PM +0000, Robin Murphy wrote:
->> The problem - I think - is that the DMA_BIT_MASK(32) from
->> dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32)) is treated as physical
->> address along the call path so the dma_pfn_offset is applied to it and
->> the check will fail, saying that DMA_BIT_MASK(32) can not be supported.
->
-> But that's the thing - in isolation, that is entirely correct. Considering 
-> ZONE_DMA32 for simplicity, in general the zone is expected to cover the 
-> physical address range 0x0000_0000 - 0xffff_ffff (because DMA offsets are 
-> relatively rare), and a device with a dma_pfn_offset of more than 
-> (0x1_0000_0000 >> PAGE_SHIFT) *cannot* support that range with any mask, 
-> because the DMA address itself would have to be negative.
+On 26/12/2019 13:58, Zengruan Ye wrote:
+> Introduce a paravirtualization interface for KVM/arm64 to obtain the VCPU
+> is currently running or not.
+> 
+> The PV lock structure of the guest is allocated by user space.
+> 
+> A hypercall interface is provided for the guest to interrogate the
+> hypervisor's support for this interface and the location of the shared
+> memory structures.
+> 
+> Signed-off-by: Zengruan Ye <yezengruan@huawei.com>
+> ---
+>   Documentation/virt/kvm/arm/pvlock.rst   | 63 +++++++++++++++++++++++++
+>   Documentation/virt/kvm/devices/vcpu.txt | 14 ++++++
+>   2 files changed, 77 insertions(+)
+>   create mode 100644 Documentation/virt/kvm/arm/pvlock.rst
+> 
+> diff --git a/Documentation/virt/kvm/arm/pvlock.rst b/Documentation/virt/kvm/arm/pvlock.rst
+> new file mode 100644
+> index 000000000000..58b3b8ee7537
+> --- /dev/null
+> +++ b/Documentation/virt/kvm/arm/pvlock.rst
+> @@ -0,0 +1,63 @@
+> +.. SPDX-License-Identifier: GPL-2.0
+> +
+> +Paravirtualized lock support for arm64
+> +======================================
+> +
+> +KVM/arm64 provides some hypervisor service calls to support a paravirtualized
+> +guest obtaining the VCPU is currently running or not.
+NIT:              ^ whether
 
-Note that ZONE_DMA32 is irrelevant in this particular case, as we are
-talking about arm32.  But with ZONE_DMA instead this roughly makes sense.
+> +
+> +Two new SMCCC compatible hypercalls are defined:
+> +
+> +* PV_LOCK_FEATURES:   0xC6000020
+> +* PV_LOCK_PREEMPTED:  0xC6000021
+> +
+> +The existence of the PV_LOCK hypercall should be probed using the SMCCC 1.1
+> +ARCH_FEATURES mechanism before calling it.
 
-> The problem is that platforms with esoteric memory maps have no right thing 
-> to do. If the base of RAM is at at 0x1_0000_0000 or higher, the "correct" 
-> ZONE_DMA32 would be empty while ZONE_NORMAL above it would not, and last 
-> time I looked that makes the page allocator break badly. So the standard 
-> bodge on such platforms is to make ZONE_DMA32 cover not the first 4GB of 
-> *PA space*, but the first 4GB of *RAM*, wherever that happens to be. That 
-> then brings different problems - now the page allocator is happy and 
-> successfully returns GFP_DMA32 allocations from the range 0x8_0000_0000 - 
-> 0x8_ffff_ffff that are utterly useless to 32-bit devices with zero 
-> dma_pfn_offset - see the AMD Seattle SoC for the prime example of that. If 
-> on the other hand all devices are guaranteed to have a dma_pfn_offset that 
-> puts the base of RAM at DMA address 0 then GFP_DMA32 allocations do end up 
-> working as expected, but now the original assumption of where ZONE_DMA32 
-> actually is is broken, so generic code unaware of the 
-> platform/architecture-specific bodge will be misled - that's the case 
-> you're running into.
->
-> Having thought this far, if there's a non-hacky way to reach in and grab 
-> ZONE_DMA{32} such that dma_direct_supported() could use zone_end_pfn() 
-> instead of trying to assume either way, that might be the most robust 
-> general solution.
+Since these are within the "vendor specific" SMCCC region ideally you should also check that you are talking to KVM. (Other hypervisors could allocate SMCCC IDs differently within this block). Will has a patch on a branch which gives an example of how this could work [1]
 
-zone_dma_bits is our somewhat ugly way to try to poke into this
-information, although the way it is done right now sucks pretty badly.
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/commit/?h=kvm/hvc&id=464f5a1741e5959c3e4d2be1966ae0093b4dce06
 
-The patch I sent to Peter in December was trying to convey that
-information in a way similar to what the arm32 legacy dma code does, but
-it didn't work, so I'll need to find some time to sit down and figure out
-why.
+> +
+> +PV_LOCK_FEATURES
+> +    ============= ========    ==========
+> +    Function ID:  (uint32)    0xC6000020
+> +    PV_call_id:   (uint32)    The function to query for support.
+> +    Return value: (int64)     NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
+> +                              PV-lock feature is supported by the hypervisor.
+> +    ============= ========    ==========
+> +
+> +PV_LOCK_PREEMPTED
+> +    ============= ========    ==========
+> +    Function ID:  (uint32)    0xC6000021
+> +    Return value: (int64)     NOT_SUPPORTED (-1) or SUCCESS (0) if the IPA of
+> +                              this VCPU's pv data structure is configured by
+> +                              the hypervisor.
+> +    ============= ========    ==========
+
+PV_LOCK_PREEMPTED also needs to return the address of this data structure. Either by returning this in another register, or by e.g. treating a positive return as an address and a negative value as an error.
+
+> +
+> +The IPA returned by PV_LOCK_PREEMPTED should be mapped by the guest as normal
+> +memory with inner and outer write back caching attributes, in the inner
+> +shareable domain.
+> +
+> +PV_LOCK_PREEMPTED returns the structure for the calling VCPU.
+> +
+> +PV lock state
+> +-------------
+> +
+> +The structure pointed to by the PV_LOCK_PREEMPTED hypercall is as follows:
+> +
+> ++-----------+-------------+-------------+---------------------------------+
+> +| Field     | Byte Length | Byte Offset | Description                     |
+> ++===========+=============+=============+=================================+
+> +| preempted |      8      |      0      | Indicate the VCPU who owns this |
+
+NIT: s/Indicate/Indicates that/. Also more common English would be "the VCPU *that* owns"
+
+> +|           |             |             | struct is running or not.       |
+> +|           |             |             | Non-zero values mean the VCPU   |
+> +|           |             |             | has been preempted. Zero means  |
+> +|           |             |             | the VCPU is not preempted.      |
+> ++-----------+-------------+-------------+---------------------------------+
+> +
+> +The preempted field will be updated to 1 by the hypervisor prior to scheduling
+> +a VCPU. When the VCPU is scheduled out, the preempted field will be updated
+> +to 0 by the hypervisor.
+> +
+> +The structure will be present within a reserved region of the normal memory
+> +given to the guest. The guest should not attempt to write into this memory.
+> +There is a structure per VCPU of the guest.
+
+I think it would be worth mentioning in this document that the structure is guaranteed to be 64-byte aligned.
+
+Steve
+
+> +
+> +For the user space interface see Documentation/virt/kvm/devices/vcpu.txt
+> +section "4. GROUP: KVM_ARM_VCPU_PVLOCK_CTRL".
+> diff --git a/Documentation/virt/kvm/devices/vcpu.txt b/Documentation/virt/kvm/devices/vcpu.txt
+> index 6f3bd64a05b0..c10a5945075b 100644
+> --- a/Documentation/virt/kvm/devices/vcpu.txt
+> +++ b/Documentation/virt/kvm/devices/vcpu.txt
+> @@ -74,3 +74,17 @@ Specifies the base address of the stolen time structure for this VCPU. The
+>   base address must be 64 byte aligned and exist within a valid guest memory
+>   region. See Documentation/virt/kvm/arm/pvtime.txt for more information
+>   including the layout of the stolen time structure.
+> +
+> +4. GROUP: KVM_ARM_VCPU_PVLOCK_CTRL
+> +Architectures: ARM64
+> +
+> +4.1 ATTRIBUTE: KVM_ARM_VCPU_PVLOCK_IPA
+> +Parameters: 64-bit base address
+> +Returns: -ENXIO:  PV lock not implemented
+> +         -EEXIST: Base address already set for this VCPU
+> +         -EINVAL: Base address not 64 byte aligned
+> +
+> +Specifies the base address of the PV lock structure for this VCPU. The
+> +base address must be 64 byte aligned and exist within a valid guest memory
+> +region. See Documentation/virt/kvm/arm/pvlock.rst for more information
+> +including the layout of the pv lock structure.
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
