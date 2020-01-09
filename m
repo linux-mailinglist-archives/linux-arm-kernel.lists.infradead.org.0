@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA123135192
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 03:44:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA05B1351B9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 04:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mzbMjsxii7hU2m59njrNrb0I2rUF9H6gS6upineo2Bs=; b=XE/6HXeCbU259b
-	mIJLfPrt7TcKF6RhR9uj1D7DdQQfsuaAvd5cj73YSbDv3pzQilEtPCp+Vg17R3RGvGWi2Pb9lk+sx
-	IlELZqx0/2bLsa1t1t/POKH5hJGXZABPf90CIatScw7hy7eF9jsoPKTxOXmuyIlhnZx21H/udTztd
-	D1lWrajcrHyt18Rr1WA9gCxxmGuaHm0J15fJGNuAg5th6vemAzwU2Wom+hZlFu/yxKq22ba9EGIZ3
-	wvyP5z0caeZXL55FgfiOanIx5Eu/gt9wJTTcFuDN3f4yVAdWchcWcWt7k25DeL2yELncwhtkSDtzv
-	WodOSTAQkx6Z65nqFfag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eVZsQ0CwHzUwdORZPaQh87qGrSA6nvnY/TFEuzW1U7c=; b=BH/Wvkd7k3+sRX
+	4IHgzGEqL68ASW186UFQwegGaU4LAsFPHJ+I31xopZIWsi5Flf6w9/CJLN0VyQe7LT9nNZKm5iiuy
+	/Rx/A+n43oBNFANaRY40nGWxgCknhUfycOKGf1lTLv4o4VWVQ9aDhpSsfIDvkxJijh7Vjd9ya4CLi
+	Jzrloq77elAMkPrVchyI7k6m/T6LuX6QHMf/JYJ8fzWrhq7JUHtSUaoo5ob1roobYYz6qXcu6LMYO
+	kfauU8oGO/Yp9N+C5dtK/NGq91idMqLxiM9WNj/QwOa7jdjx4pSQfTkrX3AO8+8J6Plf5+Ld3xv6q
+	dQn/nj5iRrmSWiVzgjIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipNnt-0001Ci-IR; Thu, 09 Jan 2020 02:44:09 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipNni-0001BG-2H
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 02:43:59 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 4BE1D6694D10E423C6C8;
- Thu,  9 Jan 2020 10:43:51 +0800 (CST)
-Received: from [127.0.0.1] (10.184.52.56) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 9 Jan 2020
- 10:43:42 +0800
-From: Xiongfeng Wang <wangxiongfeng2@huawei.com>
-To: <will@kernel.org>, <mark.rutland@arm.com>
-Subject: [Question] About handling PMU context loss in the deepest idle state
- where the core is powered down
-Message-ID: <d62d9ac1-3af9-b692-a84a-aab4582e5eb8@huawei.com>
-Date: Thu, 9 Jan 2020 10:43:40 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.6.0
+	id 1ipOAv-0005iv-7K; Thu, 09 Jan 2020 03:07:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipOAo-0005iK-Pf
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 03:07:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F353131B;
+ Wed,  8 Jan 2020 19:07:45 -0800 (PST)
+Received: from [10.162.40.138] (p8cg001049571a15.blr.arm.com [10.162.40.138])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B53F93F534; Wed,  8 Jan 2020 19:07:41 -0800 (PST)
+Subject: Re: [PATCH 0/1] arm/arm64: add support for folded p4d page tables
+To: Mike Rapoport <rppt@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <20191230082734.28954-1-rppt@kernel.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <19fc0640-2b7e-a06f-a4c8-2736d54dd565@arm.com>
+Date: Thu, 9 Jan 2020 08:38:54 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20191230082734.28954-1-rppt@kernel.org>
 Content-Language: en-US
-X-Originating-IP: [10.184.52.56]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_184358_273042_0C0BB67A 
-X-CRM114-Status: GOOD (  10.05  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200108_190750_873545_10BF7B39 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,37 +63,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wangzhe59@huawei.com, Catalin Marinas <catalin.marinas@arm.com>,
- huawei.libin@huawei.com, guohanjun@huawei.com, wangxiongfeng2@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, James Morse <james.morse@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will, Mark,
 
-Sorry to bother you. It's just that we have come across some problems about PMU recently.
 
-We are working on deep power state on CPU cores. In the deepest idle state, the core will be
-powered down. In our implementation, the PMU and the core are in the same power domain,
-so the PMU will also be powered down. But I didn't find where we saved the PMU context
-in kernel before entering the deepest idle state.
+On 12/30/2019 01:57 PM, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> 
+> Hi,
 
-Before we enter the system sleep state, we update the kernel PMU counter and stop the PMU
-in 'cpu_pm_pmu_notify()'. But we didn't do that before we enter idle state.
-I only find some system registers saving in 'psci_cpu_suspend_enter()->cpu_susend()->cpu_do_suspend()'
+Hello Mike,
 
-Do you have some suggestion about how we can handle this problem ?
-Should we save and restore the PMU context before and after the deepest idle state . I don't know
-if we can take care of the PMU  counters and interrupts properly by saving and restoring
-the PMU registers.
-Or we should update the kernel counter and stop the PMU, like what we did in system sleep situation.
-Or we should let the firmware to handle the saving and restoring problem.
+> 
+> This is a part of clean up of the page table manipulation code that aims to
+> remove asm-generic/5level-fixup.h and asm-generic/pgtable-nop4d-hack.h
+> 
+> There is a single patch for both arm and arm64 because doing the conversion
+> separately would mean breaking the shared mmu bits in virt/kvm/arm.
+> 
+> The patch is build tested and boot tested on qemu-system-{arm,aarch64}.
 
-Thanks,
-Xiongfeng
+There are lots of code changes here for a single patch but as you have
+mentioned shared KVM bits would have prevented splitting arm and arm64
+changes into separate patches. Just curious, are you planning to respin
+this patch sooner after fixing the reported build problems caused by
+missing p4d_offset_kimg() and p4d_sect() definitions ?
 
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
