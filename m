@@ -2,89 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33495135A68
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:41:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD246135A6E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:42:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ninL9JIeBR/0sRp/XLMNJOkpP2SXDGvOa4MW9H5v/68=; b=sdvT+dlKjzmEdA
-	IRPkYzpdM1x0EEMXLs9ueC064mmiyFwngMwikgG3V/iOoGRfH+RFAx0P3sZh0Uxit0o4WOOi42mZu
-	qQoucpqGQfKhpNpDrF8ASZQlUQjmn5kcMnymWa7nrZpC9iz+zjMEpPlNB2zoYA2WWwbxgf935tKqP
-	MLZalpb1isaT61NrSOxvQ/HMhw2hZly6ZMySJe1fFQ8UeLhXZbEu02ardY6AkDNFsDR9So7dWOiQk
-	yZJrdt6TfGFY2JGtpkbTxLZP9/XhLbg+oJ78ScovL8FrmYeiMJvVdA0hD0WTRWNqbyh0ZjV9DVdq3
-	jt+Wfqpw/AZlTlSccW1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=x20fAykMKQTqs2lPbyRm1/BOuSBjwXBSaMvePc5FVYQ=; b=RZYHHl1KBftpOouvRhL9R1h+s
+	piAza9atdSFAbuv9CHvxRYthrXJ7YZMkOQXLg+U4mJrgRC1TpAi/opqUqxRkxYbD8J6h5dfNoPLl6
+	Z2+3AIzaCGXofEGjOf77ZLsXx0oa4IwUtKOYLfaFRqBApPE+Z1m8bxvmoCtuvPQPK20cUagraLexh
+	oxechJpjfyRej8b1V2ARZ+AtjtiuTpNk3CLuT8YwVcQ72dYZRKSGA/TY/g8E+kwm5/qqpVtSCBIt3
+	H4hpDB6gRhj4j1qeeSFqIA9YmVr/HsDau1EMo6YQgwK8kMTP346Z/jiR9rsJm1ilJmNlkPBqcT0sm
+	BKiOsTPfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipY3f-0007AM-79; Thu, 09 Jan 2020 13:41:07 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipY25-0004Yj-Vb
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:39:31 +0000
-Received: by mail-wm1-x344.google.com with SMTP id b19so2953191wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 05:39:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=3uTRVYc3CwuaK7vmscKhsuq+TjWl2SbzmcNvk0jneyE=;
- b=NzBNdntB5n+8cI1SL4hqMv75gF5qlYVZoch0u5XZUNN4uJshZpMC51TbpQMMmZfbz4
- /2T+YoXIspoZOzWP7ZZp2UN/RCcGF882X7PoCZ86N8BWE6MXAmqVVqSbBKbeYE0XmQZM
- tESlcMvjCBE24H8bTMS5E1AGelx5r61vXOojuK8GbCRdchRQ7lVB++1TT7gVfM0usSD/
- iS2T3WgMxXxWXF8QWlfW6xUiRoJsABW+Z/uoss5qUGF9PvrlI5gZR64dLhTr351ioKeX
- mZoxh4DBVAjdM3a6aLJzGN/bXBq4dBjShu18PMl/Dt1UcljrSlVPQpSfzbDbBmJc7DPu
- FEpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=3uTRVYc3CwuaK7vmscKhsuq+TjWl2SbzmcNvk0jneyE=;
- b=pov6SzxbUEGBw/LGYRW11RzBTioDl1yqRXgSxWy8/iOR7aAg/Js1yL8uSwQsaBEmKy
- OeTBQ4Y1kpUhogaIXT7KnnwBIgkq+OwUPTaekYAmn2vj8LgHKPUVaUgCHwOZOPQg3gks
- 0XvUTFMLOXQ5akzfF65UmBbzhrq79PtsWSDSl3DFafMNnMq0ixZ8/YeaCKeT7e8IAzt2
- lYk9S7r2L6mfcvTeu4uclacuYzibMe+XorJ0xupcgTzRL/ym3597sfdCKMX+6kubCvo9
- SDPYKoWcUegPoVpXG1pGJrKEm04s67JU1wWnQ4UlNSthbpjY37albWcuM4FEOjPkQOim
- nIaA==
-X-Gm-Message-State: APjAAAWnFWu3uKTMjQmdaDsabwOfdtYTk+qANR9NTJReitpmYM4Iaafg
- Jx2EwseTLtfyp1/ZZF4CUsN67SN0e9PUrA==
-X-Google-Smtp-Source: APXvYqxf0QTNnxUA/HlCe/Xc2QU9JGp9/9H2D79UhXJ9ShL1knOd6pTuDj94GA14KOuiRGe/kR1Lvw==
-X-Received: by 2002:a1c:720a:: with SMTP id n10mr4856590wmc.74.1578577168009; 
- Thu, 09 Jan 2020 05:39:28 -0800 (PST)
-Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id s8sm7846492wrt.57.2020.01.09.05.39.27
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 Jan 2020 05:39:27 -0800 (PST)
-From: Michal Simek <michal.simek@xilinx.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 6/6] arm64: zynqmp: Setup default number of chipselects for
- zcu100
-Date: Thu,  9 Jan 2020 14:39:15 +0100
-Message-Id: <0565b9a88830f0d995d666a9c4bf346641a2b040.1578577147.git.michal.simek@xilinx.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <cover.1578577147.git.michal.simek@xilinx.com>
-References: <cover.1578577147.git.michal.simek@xilinx.com>
+	id 1ipY4c-0007VX-Rn; Thu, 09 Jan 2020 13:42:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipY4V-0007UR-NF
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:42:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2492031B;
+ Thu,  9 Jan 2020 05:41:59 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 329D43F534;
+ Thu,  9 Jan 2020 05:41:58 -0800 (PST)
+Subject: Re: [PATCH 2/2] iommu/arm-smmu-v3: simplify parse_driver_options()
+To: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org
+References: <20191226095141.30352-1-yamada.masahiro@socionext.com>
+ <20191226095141.30352-2-yamada.masahiro@socionext.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <1383eeb0-4148-a798-5e24-81ce33013f1d@arm.com>
+Date: Thu, 9 Jan 2020 13:41:56 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20191226095141.30352-2-yamada.masahiro@socionext.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_053930_042423_9512AB72 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200109_054159_797338_AB7EF335 
+X-CRM114-Status: GOOD (  17.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,47 +66,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
- Rajan Vaja <rajan.vaja@xilinx.com>, Jan Kiszka <jan.kiszka@siemens.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is only one chipselect on each connector.
-Define it directly in board dts file.
-There should be an option to use more chipselects via gpios.
+On 26/12/2019 9:51 am, Masahiro Yamada wrote:
+> Using ARRAY_SIZE() instead of the sentinel is slightly simpler, IMHO.
 
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
----
+Given that it's fairly well-decided that we don't want to add any more 
+of these anyway, I'd be inclined to lose the array/loop machinery 
+altogether. As it is we'd need a lot more options for it to actually 
+offer any kind of code size saving.
 
- arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts | 2 ++
- 1 file changed, 2 insertions(+)
+Robin.
 
-diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
-index 2b3757dd74cc..a109e82982ae 100644
---- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
-+++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts
-@@ -250,11 +250,13 @@ wlcore: wifi@2 {
- &spi0 { /* Low Speed connector */
- 	status = "okay";
- 	label = "LS-SPI0";
-+	num-cs = <1>;
- };
- 
- &spi1 { /* High Speed connector */
- 	status = "okay";
- 	label = "HS-SPI1";
-+	num-cs = <1>;
- };
- 
- &uart0 {
--- 
-2.24.0
-
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+> ---
+> 
+>   drivers/iommu/arm-smmu-v3.c | 7 +++----
+>   1 file changed, 3 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index ed9933960370..b27489b7f9d8 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -676,7 +676,6 @@ struct arm_smmu_option_prop {
+>   static const struct arm_smmu_option_prop arm_smmu_options[] = {
+>   	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
+>   	{ ARM_SMMU_OPT_PAGE0_REGS_ONLY, "cavium,cn9900-broken-page1-regspace"},
+> -	{ 0, NULL},
+>   };
+>   
+>   static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
+> @@ -696,16 +695,16 @@ static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+>   
+>   static void parse_driver_options(struct arm_smmu_device *smmu)
+>   {
+> -	int i = 0;
+> +	int i;
+>   
+> -	do {
+> +	for (i = 0; i < ARRAY_SIZE(arm_smmu_options); i++) {
+>   		if (of_property_read_bool(smmu->dev->of_node,
+>   						arm_smmu_options[i].prop)) {
+>   			smmu->options |= arm_smmu_options[i].opt;
+>   			dev_notice(smmu->dev, "option %s\n",
+>   				arm_smmu_options[i].prop);
+>   		}
+> -	} while (arm_smmu_options[++i].opt);
+> +	};
+>   }
+>   
+>   /* Low-level queue manipulation functions */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
