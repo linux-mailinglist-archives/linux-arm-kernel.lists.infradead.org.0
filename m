@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 587C21353F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 08:59:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 977E013540C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:05:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKje+6jSOTWwrHSfKbiIWxghC6eS+TdLyOtf3peqJtU=; b=sRhfh8o2RqpXnL
-	HZWNWNFEKzycvcxCyiVqAYVSvVFC0QAjmBqbSL6qyMz4R30ro7yFdUokaIZrC4wyBv1oOkwm3aHQS
-	O2OSuKW98c4o4v2qjk9r+NDBKZceW/dBy45916vn4wNFGsVYg3f999jYXqFKVDxJ5mI1chbGYTcwi
-	gMfNCZBQpWSMsGnoMgKEqupfnZrvJsIOOjUOT6fdG82I3a59DhfFhB7SuH6lGkdZ+nm8xKCa7kp2+
-	bDfsjm+c2qja1ZE6J4I8u2eY3bOYsJ+vRgLfq0Q/fufV7qh2ULvaAqrqH11KoZvuyGptTgIsxChOA
-	5qa+nJkmHryQ/iJKpv1A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LKR+RvcbtLCGjNohMNTGSuzlV2+fuXUnLNSQwBCJ8Ws=; b=qxerRjobbEt9Fl
+	2XIsXgAKodA6ycHIALxWUzYtTsWrA7UMX5woEQ84vBY2qfheJr+OG+yhri0fJ+awgGJjJ/5jB2sO8
+	EWyzixGP8Nt1vjniksNVqNGK5L7YC+gpftAik6MNHLuc1Tp4WGRht5G0OXaoaqcQPlj+BgZEmP2F0
+	KYv4ctL4aNo2Cptwt8rJDZ6P5VvdVA6mQBGcB3JsuzbnJpR+ASBsQaRWZFm3ugMEvR3mt8f4Fpcbs
+	RibuDsZUmh4TSlNzNT5jkHAedPwNFa9KA+BsiXBBJ8KYb5n+rfXvL71mbYITAmJCZsc7KLF5fEUgm
+	GkILjlPLNFpyJqgPy3Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipSiu-0004X8-Ly; Thu, 09 Jan 2020 07:59:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipSiU-0004RA-Nq
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 07:58:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 818D31FB;
- Wed,  8 Jan 2020 23:58:53 -0800 (PST)
-Received: from [10.162.40.138] (p8cg001049571a15.blr.arm.com [10.162.40.138])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 4E4453F6C4; Thu,  9 Jan 2020 00:02:16 -0800 (PST)
-Subject: Re: [PATCH 05/17] arm64: entry: add a call_on_stack helper
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
- will@kernel.org, james.morse@arm.com
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-6-mark.rutland@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <98534fbd-5600-5ae2-a117-3bad76ddbe04@arm.com>
-Date: Thu, 9 Jan 2020 13:30:02 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ipSp9-000864-7d; Thu, 09 Jan 2020 08:05:47 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipSp1-000851-SI
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 08:05:41 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1578557138; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-Id: Date: Subject: To: From: Sender;
+ bh=BuUdAvhMRovZFUB4BJ0UiwY2Y6k8o8mctzHNiqvFTHc=;
+ b=lbOEo8d05OJctLkz2OWU9xi2YTyFxYUfbsBe8T3vnk72WZ9zAW8b5mF074hRHEjEHQo0aO7L
+ 60VXy1gPJu25P9vAd3fcR0bt3R2+/KRrQIwCo/voFGnGk5oS7z+dLZ7C66nQYrub+kTXWnJH
+ geVXR0RCXZJt7n/QdtrXOQ3JMmQ=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e16ded0.7f5881f2d030-smtp-out-n01;
+ Thu, 09 Jan 2020 08:05:36 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id E0840C447A3; Thu,  9 Jan 2020 08:05:35 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from srichara1-linux.qualcomm.com
+ (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: sricharan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id BD78EC4479C;
+ Thu,  9 Jan 2020 08:05:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org BD78EC4479C
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=sricharan@codeaurora.org
+From: Sricharan R <sricharan@codeaurora.org>
+To: agross@kernel.org, devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-soc@vger.kernel.org,
+ robh+dt@kernel.org, sivaprak@codeaurora.org, sricharan@codeaurora.org,
+ sboyd@kernel.org
+Subject: [PATCH V2 0/2] Add Global clock controller support for IPQ6018
+Date: Thu,  9 Jan 2020 13:35:19 +0530
+Message-Id: <1578557121-423-1-git-send-email-sricharan@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <20200108185634.1163-6-mark.rutland@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_235854_862755_84DE49F7 
-X-CRM114-Status: GOOD (  17.30  )
+X-CRM114-CacheID: sfid-20200109_000539_980181_E93AF88E 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,84 +93,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, broonie@kernel.org,
- labbott@redhat.com, robin.murphy@arm.com, julien.thierry.kdev@gmail.com,
- alex.popov@linux.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 01/09/2020 12:26 AM, Mark Rutland wrote:
-> In some cases, we want to call a function from C code, using an
-> alternative stack. Add a helper that we can use in such cases.
-> 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> ---
->  arch/arm64/include/asm/exception.h |  2 ++
->  arch/arm64/kernel/entry.S          | 21 +++++++++++++++++++++
->  2 files changed, 23 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-> index b87c6e276ab1..a49038fa4faf 100644
-> --- a/arch/arm64/include/asm/exception.h
-> +++ b/arch/arm64/include/asm/exception.h
-> @@ -31,6 +31,8 @@ static inline u32 disr_to_esr(u64 disr)
->  	return esr;
->  }
->  
-> +asmlinkage void call_on_stack(struct pt_regs *, void (*)(struct pt_regs *),
-> +			      unsigned long);
->  asmlinkage void enter_from_user_mode(void);
->  void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
->  void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index 53ce1877a4aa..184313c773ea 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -901,6 +901,27 @@ ENTRY(ret_from_fork)
->  ENDPROC(ret_from_fork)
->  NOKPROBE(ret_from_fork)
->  
-> +/*
-> + * x0 = argument to function
-
-A small nit. Though the definition here itself does not limit the
-argument type, it might worth to mention that to be struct pt_regs
-per the previous declaration.
-
-> + * x1 = function to call
-> + * x2 = new stack pointer
-> + */
-> +ENTRY(call_on_stack)
-> +	/* Create a frame record to save our LR and SP (implicit in FP) */
-> +	stp	x29, x30, [sp, #-16]!
-> +	mov	x29, sp
-> +
-> +	/* Move to the new stack and call the function there */
-> +	mov	sp, x2
-> +	blr	x1
-> +
-> +	/* Restore SP from the FP, FP and LR from the record, and return */
-> +	mov	sp, x29
-> +	ldp	x29, x30, [sp], #16
-> +	ret
-> +ENDPROC(call_on_stack)
-> +NOKPROBE(call_on_stack)
-> +
->  #ifdef CONFIG_ARM_SDE_INTERFACE
->  
->  #include <asm/sdei.h>
-> 
-
-Reviewed-by: Anshuman Khandual <anshuman.khandual@arm.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIElQUTYwMTggaXMgUXVhbGNvbW3igJlzIDgwMi4xMWF4L3UyMDE5cyBTb0MgZm9yIFJvdXRl
+cnMsCkdhdGV3YXlzIGFuZCBBY2Nlc3MgUG9pbnRzLgoKW1YyXQogKiBBZGRyZXNzZWQgc3BhcnNl
+IHdhcm5pbmdzIHJlcG9ydGVkIGJ5IEtidWlsZCB0ZXN0IHJvYm90LgoKVGhpcyBzZXJpZXMgYWRk
+cyBHbG9iYWwgY2xvY2sgY29udHJvbGxlciBzdXBwb3J0IGZvciBpcHE2MDE4LgoKU3JpY2hhcmFu
+IFIgKDIpOgogIGNsazogcWNvbTogQWRkIERUIGJpbmRpbmdzIGZvciBpcHE2MDE4IGdjYyBjbG9j
+ayBjb250cm9sbGVyCiAgY2xrOiBxY29tOiBBZGQgaXBxNjAxOCBHbG9iYWwgQ2xvY2sgQ29udHJv
+bGxlciBzdXBwb3J0CgogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svcWNvbSxnY2MueWFt
+bCAgICAgICAgfCAgICAzICstCiBkcml2ZXJzL2Nsay9xY29tL0tjb25maWcgICAgICAgICAgICAg
+ICAgICAgICAgICAgICB8ICAgIDggKwogZHJpdmVycy9jbGsvcWNvbS9NYWtlZmlsZSAgICAgICAg
+ICAgICAgICAgICAgICAgICAgfCAgICAxICsKIGRyaXZlcnMvY2xrL3Fjb20vZ2NjLWlwcTYwMTgu
+YyAgICAgICAgICAgICAgICAgICAgIHwgNDY0MyArKysrKysrKysrKysrKysrKysrKwogaW5jbHVk
+ZS9kdC1iaW5kaW5ncy9jbG9jay9xY29tLGdjYy1pcHE2MDE4LmggICAgICAgfCAgMjYyICsrCiBp
+bmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0L3Fjb20sZ2NjLWlwcTYwMTguaCAgICAgICB8ICAxNTcg
+KwogNiBmaWxlcyBjaGFuZ2VkLCA1MDczIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKIGNy
+ZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2Nsay9xY29tL2djYy1pcHE2MDE4LmMKIGNyZWF0ZSBt
+b2RlIDEwMDY0NCBpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3Fjb20sZ2NjLWlwcTYwMTguaAog
+Y3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvZHQtYmluZGluZ3MvcmVzZXQvcWNvbSxnY2MtaXBx
+NjAxOC5oCgotLSAKMS45LjEKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
