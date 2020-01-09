@@ -2,56 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 686431351F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 04:29:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78E011351F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 04:33:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rZonDqh1PwgSnyodlqcMcJG4vli8WGwbY33wH0nkLZg=; b=cyFPAT7v2Szf43p5gfuDnzte1+
-	psfUo0iYP15npqwvr7BQc3EE5bAJ+MXJFCogREjvopKeOR8NJE2FOYuf2EhHVJhnXKi4dNydQlifp
-	kNzmXKBZFvEbqHOBOr0HcoqmXnHiDVfzKvUzTmSLj5Wn5GLbAg0TzJA7MadsIAn+xqb/XyKOkdIC5
-	ejEp3C/xjqOeJTWu80uKhTDr7DB3qz7nb1nk+c6thaiDSiUBQO8+ochZdxrzhlIMwDncEghRVXXsb
-	Fzv0apZpuNh8M2VpBnLl7mHGd95PLSu0AQc7AgvSeZyYFkyPoSUzpYyvv5Z4LjWJSG8JEq5jwtFV9
-	DCUCgwcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8BeAcEjDzQovD9/hoEVVUr3GuH1oWHUFu0Jln7ruU3s=; b=TBAfJ202fA5DNTaTAy0+WFKFFE
+	uVxkH8S4ZIzjHQd0zPohRzgq9YZCMwjopngtsgQVaRpg/7RqNhQaAcVQf/fbE+JZXXoeWvt6spbEB
+	1Cx0YGQwHbnaudXgs7oBvBINhhcFVS2CaXS1Rwv9YjZ7GNGIHDIP+s8RDNHVGZtt7v6N5YjJBK/wI
+	H4Ol+aE2q6vP5mLTCrZtqjgDoei0E7CRJ8I9XbCj2SaLJAcZUfD47q+MGeHSfwPjFUYrsMDOcWyKU
+	fzGZ7qXHAp6GhVwz76TCkyukNHU55S8HdtvOV5Xd+8/3EvxMNZ3uvIoftPDyqwm9ChG+CFz5erNE4
+	6F7aS6TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipOVo-0001DA-IN; Thu, 09 Jan 2020 03:29:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ipOZF-00036Q-Aj; Thu, 09 Jan 2020 03:33:05 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipOVL-0000sX-HC
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 03:29:05 +0000
-Received: from localhost (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CDF77206F0;
- Thu,  9 Jan 2020 03:29:02 +0000 (UTC)
-From: Shawn Guo <shawn.guo@linaro.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH v2 2/2] PCI: histb: Correct PCIe reset operation
-Date: Thu,  9 Jan 2020 11:28:51 +0800
-Message-Id: <20200109032851.13377-3-shawn.guo@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200109032851.13377-1-shawn.guo@linaro.org>
-References: <20200109032851.13377-1-shawn.guo@linaro.org>
+ id 1ipOZ8-00035w-8Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 03:32:59 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 0C09EF3CF5707CAD02D1;
+ Thu,  9 Jan 2020 11:32:54 +0800 (CST)
+Received: from [127.0.0.1] (10.57.101.250) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 9 Jan 2020
+ 11:32:47 +0800
+To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
+ "Arnd Bergmann" <arnd@arndb.de>
+From: Wei Xu <xuwei5@hisilicon.com>
+Subject: [GIT PULL] arm64: dts: hisilicon dts updates for v5.6
+Message-ID: <5E169EDE.8020809@hisilicon.com>
+Date: Thu, 9 Jan 2020 11:32:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.2.0
+MIME-Version: 1.0
+X-Originating-IP: [10.57.101.250]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_192903_681118_D6BA9CC4 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20200108_193258_458557_91D78E57 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,75 +68,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, Jun Nie <jun.nie@linaro.org>,
- Shawn Guo <shawn.guo@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ Tangkunshan <tangkunshan@huawei.com>, John Garry <john.garry@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>, xuwei5@hisilicon.com,
+ huangdaode <huangdaode@hisilicon.com>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Shawn Guo <shawn.guo@linaro.org>, "Liguozhu
+ \(Kenneth\)" <liguozhu@hisilicon.com>, Zhangyi ac <zhangyi.ac@huawei.com>,
+ Shiju Jose <shiju.jose@huawei.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PCIe reset via GPIO in the driver never worked as expected.  Per
-"Power Sequencing and Reset Signal Timings" table in
-PCI EXPRESS CARD ELECTROMECHANICAL SPECIFICATION, the PERST# should be
-deasserted after minimum of 100us once REFCLK is stable.
+Hi ARM-SoC team,
 
-The assertion has been done when the GPIO is being requested, and
-deassertion should be done in host enabling rather than disabling. Also
-a bit wait is added to ensure device get ready after reset.
+Please consider to pull the following changes.
+Thanks!
 
-Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
+Best Regards,
+Wei
+
 ---
- drivers/pci/controller/dwc/pcie-histb.c | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/pci/controller/dwc/pcie-histb.c b/drivers/pci/controller/dwc/pcie-histb.c
-index 112254619ed0..67c27a8036c7 100644
---- a/drivers/pci/controller/dwc/pcie-histb.c
-+++ b/drivers/pci/controller/dwc/pcie-histb.c
-@@ -219,9 +219,6 @@ static void histb_pcie_host_disable(struct histb_pcie *hipcie)
- 	clk_disable_unprepare(hipcie->sys_clk);
- 	clk_disable_unprepare(hipcie->bus_clk);
- 
--	if (hipcie->reset_gpio)
--		gpiod_set_value_cansleep(hipcie->reset_gpio, 0);
--
- 	if (hipcie->vpcie)
- 		regulator_disable(hipcie->vpcie);
- }
-@@ -242,9 +239,6 @@ static int histb_pcie_host_enable(struct pcie_port *pp)
- 		}
- 	}
- 
--	if (hipcie->reset_gpio)
--		gpiod_set_value_cansleep(hipcie->reset_gpio, 1);
--
- 	ret = clk_prepare_enable(hipcie->bus_clk);
- 	if (ret) {
- 		dev_err(dev, "cannot prepare/enable bus clk\n");
-@@ -278,6 +272,20 @@ static int histb_pcie_host_enable(struct pcie_port *pp)
- 	reset_control_assert(hipcie->bus_reset);
- 	reset_control_deassert(hipcie->bus_reset);
- 
-+	if (hipcie->reset_gpio) {
-+		/*
-+		 * "Power Sequencing and Reset Signal Timings" table in
-+		 * PCI EXPRESS CARD ELECTROMECHANICAL SPECIFICATION, indicates
-+		 * PERST# should be deasserted after minimum of 100us
-+		 * once REFCLK is stable.
-+		 */
-+		usleep_range(100, 200);
-+		gpiod_set_value_cansleep(hipcie->reset_gpio, 0);
-+
-+		/* wait 1ms for device to be ready */
-+		usleep_range(1000, 2000);
-+	}
-+
- 	return 0;
- 
- err_aux_clk:
--- 
-2.17.1
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+   git://github.com/hisilicon/linux-hisi.git tags/hisi-arm64-dt-for-5.6
+
+for you to fetch changes up to 6fa154e46c723b1eaa24ad16fbe92c2a3bf98dbc:
+
+   arm64: dts: hi3798cv200: correct PCIe 'bus-range' setting (2020-01-08 
+19:33:54 +0800)
+
+----------------------------------------------------------------
+ARM64: DT: Hisilicon SoCs DT updates for 5.6
+
+- Add remote control map name of the IR device for the hi3798cv200 
+poplar board
+- Correct the PCIe bus range setting for the hi3798cv200
+
+----------------------------------------------------------------
+Shawn Guo (2):
+       arm64: dts: hi3798cv200-poplar: add linux,rc-map-name for IR
+       arm64: dts: hi3798cv200: correct PCIe 'bus-range' setting
+
+  arch/arm64/boot/dts/hisilicon/hi3798cv200-poplar.dts | 1 +
+  arch/arm64/boot/dts/hisilicon/hi3798cv200.dtsi       | 2 +-
+  2 files changed, 2 insertions(+), 1 deletion(-)
 
 
 _______________________________________________
