@@ -2,71 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E308413602B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 19:30:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4028913606E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 19:48:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=Em6sIp/2/rtaxZIJDgY2MWnA/hiD/NdgNnW0u3lUQOw=; b=nUgKTEW1Mio49H
-	/89WU9q5mI0Z274XfHzxpnBhJ/fGReJgen7W/6X+kNmc89/JlZUz9ckdew+DuL3s12OKG+vveA2sN
-	e3ejBb9J6M9RSKgCijmID5cArbxCDuQlWylrgRjaUtZfJt7PFTPXSZxRnFASPMAicgej0BvVl1Mc0
-	rUJya5qwdsy9cbnru0uDFfzZu/QYNN9FG1Bw+ZapWi64aupxRuNp4qtuezXk9wxeiWkHezNDqV5XV
-	PY2ZK9xGQAuLSqo8pVGkI0/sNlwowMaJ+b9qaHYzFxNe3BQHhQreNIjtAnSkxNryqGu7SuxwIWhGP
-	pqu0qGS7mAe7ysubZNJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fN0ynwAT/osciM3alCraMYhgQCaWKmXOsXOQXq0NfRY=; b=OF3rhjQKIAUFVc
+	oPYbLBDhYrFBibJ+Huk1whKhuMAAtYfCGR0IFgaiNIM22lcvgRw5X3b2XL84DIBiGX4QCbVDJ3Vtz
+	xQPHibCzHwMJlFDFYUe8dI3zTb89B7StjnGvcBFgagdw0lC8wnCJoxAcevJ4/vEz4/q14vDyE6naz
+	DR6t+KCl3PQ1jO1EhFWNP3s4G6I4D9wvSwK8txernNdOfNGJoAiR4OTVUAdI46RxCYnyS/DCWDvto
+	1Pyut3kPL5p39eM9rMsT/EF/m7w186S2DoR8NDaZBIAG7JqxrADlV3qZgGBgwMpMbOvrPLvwIQ/Gw
+	2931OeLa66UIHF+l33Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipcZS-0003hd-28; Thu, 09 Jan 2020 18:30:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ipcqz-0002rd-BI; Thu, 09 Jan 2020 18:48:21 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipcZD-0003fS-MU
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 18:30:00 +0000
-Received: from localhost (mobile-166-170-223-177.mycingular.net
- [166.170.223.177])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8C6552072A;
- Thu,  9 Jan 2020 18:29:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578594598;
- bh=uJrGvHiJ0jLq+t8TWq4ljCMDSX4ZBF5RxHoNG5ABlW4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=enobhZX2ZoNb9qAxtib8xHmL6/fRDwaisFCRxj4Rf1j/PP+QUuT4XMXvvEjJutjZd
- e4G20pdiCUCoBAbKSHVFkYdRPe1UlgHbwnyfEU7pQKpRqdYsUB+RmsrG/dTLhRwBb/
- wyy+Wwp8up5gxnEbTfpHUH+L5SbaGIyk5w0VLXNg=
-Date: Thu, 9 Jan 2020 12:29:57 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>
-Subject: Re: [PATCH] PCI: dwc: Separate CFG0 and CFG1 into different ATU
- regions
-Message-ID: <20200109182957.GA252973@google.com>
+ id 1ipcqq-0002pM-Cp
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 18:48:14 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id r67so1509560pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 10:48:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=AFKnbyhyZNGBZVJ66dibHIBX9df0tTokbpfAzp91zxg=;
+ b=Lw0ZM7JFUdMV6yT7I4F1Pt8oFDH5ds/xjWqTbeQ7fK+MBVghCa05WNYVhrkbuHr4gR
+ D4j5nsO8obxCSS38jHZuDKA45B+GWCEXgGuodhfD5lE65AqFnhGbjSre9LUb3qnBJEiV
+ 2GX/FWBRHFKbsbe/7EkEHo8XCHNJwOFXLkgefMaz9MIGShm3jEG+XKWwzKU3f67Lu9HT
+ wOksY0ywwDM5xfnR1a5E8+hoDGaob6BVWGgj7onPQWmv77UFq8MTxNJWNJK/VoRsYqsT
+ grF9LC1MMoLOZqzyJ03Xt+0q/t4l6s/0bbF3eT2PMOAu+g1qZqJpuoL1H9us+/VpfTw2
+ Dv0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version;
+ bh=AFKnbyhyZNGBZVJ66dibHIBX9df0tTokbpfAzp91zxg=;
+ b=YMgrz2E3jN9hDPE3el2ruUS59/z2g5CWc8RZ2p5MZb7VzNdYEJ4mbrUD+4v/vZjemA
+ UfIKzLTHYbWcAaKjJHKdLLASvewPByD0ZdIMfI7MMeDidFqC0hKMj0DHnPdoLSZpkfzV
+ uesGTu6Ug3iIwMV7jxv70EuG3K+kdsyA2UHiCDNt9ZXqLm5dnUL7XYPUncJkfwfgsK5f
+ WM9AjwV3VcRAeyFoG0HW4lMIoFw9WQBECm0ufA4sAMglhJhAJcL92QH4Jpx1Qgwxv//p
+ Rvs21LM2+ORxO5Bv/VZe+IvbhcP/5JJmxw7j0t8cpR2ueSpYDy1+khCpf6U9jsEI/nAm
+ 1RJA==
+X-Gm-Message-State: APjAAAV8D4+EVan6/r3qernlfQtok4V6//o0Ryq2V500uOmRwokLDTdv
+ Pm678vwTcIlcJf2qWWxsJqvbmQ==
+X-Google-Smtp-Source: APXvYqzhhNhM4fKvpU+h5B8fuFhKma4joGE9R3gZUuxyb6oVyxScqS3M3fq9QoasYjHGpUGZXDF0KQ==
+X-Received: by 2002:a17:902:b691:: with SMTP id
+ c17mr13417643pls.254.1578595691527; 
+ Thu, 09 Jan 2020 10:48:11 -0800 (PST)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id e16sm8248150pgk.77.2020.01.09.10.48.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 09 Jan 2020 10:48:11 -0800 (PST)
+From: Kevin Hilman <khilman@baylibre.com>
+To: soc@kernel.org
+Subject: [GIT PULL] arm64: defconfig updates for v5.6
+Date: Thu, 09 Jan 2020 10:48:10 -0800
+Message-ID: <7hftgoeaad.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CH2PR12MB4007CC62E0939BAAABA0E64FDA390@CH2PR12MB4007.namprd12.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_102959_756599_4488F60F 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200109_104812_432514_7C71F653 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,53 +88,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Zaihai Yu <yuzaihai@hisilicon.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Pratyush Anand <pratyush.anand@gmail.com>, Jingoo Han <jingoohan1@gmail.com>,
- Shawn Guo <shawn.guo@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-amlogic@lists.infradead.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 12:24:17PM +0000, Gustavo Pimentel wrote:
-> On Thu, Jan 9, 2020 at 11:14:58, Shawn Guo <shawn.guo@linaro.org> wrote:
-> 
-> > Hi Gustavo,
-> > 
-> > Thanks for taking a look.
-> > 
-> > On Thu, Jan 09, 2020 at 10:37:14AM +0000, Gustavo Pimentel wrote:
-> > > Hi Shawn,
-> > > 
-> > > On Thu, Jan 9, 2020 at 6:6:57, Shawn Guo <shawn.guo@linaro.org> wrote:
-> > > 
-> > > > Some platform has 4 (or more) viewports.  In that case, CFG0 and CFG1
-> > > 
-> > > Remove double space before "In that..." 
-> > 
-> > Hmm, that was intentional.  My writing practice is using two spaces
-> > after a period and single space after a comma.  Is it a bad habit?
-> 
-> I thought it was a typo. I personally don't have anything against it, but 
-> I didn't see this style on the comments till now. To keep the coherence 
-> between all patches, I know that Bjorn and Lorenzo like to have it the 
-> most standardized possible. It is OK by Lorenzo and Bjorn, it's fine for 
-> me too.
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
-Eagle eyes!  I was taught in the dark ages of typewriters to use two
-spaces after a period, but I don't really care either way.  If I
-rework a commit log for other reasons I might use two spaces, and I
-frequently use vim 'gq' to reformat paragraphs to use the whole line
-width, and I think that inserts two spaces (by default), so I try to
-be consistent at least within each commit log.  But either is really
-fine with me.
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-Thanks for taking the time to read and pay attention to commit logs!
+are available in the git repository at:
 
-Bjorn
+  https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-defconfig
+
+for you to fetch changes up to f8683c2abdf5129ec75d35d438aeff50df4f7208:
+
+  arm64: defconfig: enable FUSB302 as module (2019-12-16 11:34:29 -0800)
+
+----------------------------------------------------------------
+arm64: defconfig updates for v5.6
+- enable FUSB302 as module
+
+----------------------------------------------------------------
+Jerome Brunet (1):
+      arm64: defconfig: enable FUSB302 as module
+
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
