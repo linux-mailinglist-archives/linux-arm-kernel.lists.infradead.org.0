@@ -2,90 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3CF2135DEB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:15:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFE03135DEC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:15:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gRcO5rjY9e897WoH5WTrSGboqT+4b03HZATSOU9TW+A=; b=tW2pkMdnTRtXt+
-	lCfgZ84habzD/XE8axGbAW/38SIMbIQlXl/yLjJgm32aQspWCLB/n4A+WpsYP3Ucyg0RSm+Lc3zbR
-	MUhY4GLV8bKQzReLlGVpHYRYWZV+mDG2HXIZ3RCcD3Q5J+blsFJroyFQ5Lvsonesy6nbpYDH/MGPj
-	Q8eWtmQbxzf4j4U7lKbwa003xsEsA++uolPxPY/ecQhCk+x2asZO6Y2FF2SCchJpnZxXm5pKDA0ab
-	PJduwvpcdt6lxJTHfjQ6UnSqI6fiPQ0xKsl7lQkvpne9XIEYSfLJl7Wvthbwg6ab7YGC/bJy4DET+
-	UUpFlsk88upTjRRH3uYw==;
+	List-Owner; bh=VV1gYYPmZ4Hd77h3Y0ZxlUnJ6Dp2x2qK0N50DnY1wdo=; b=sk5ETX7QPmKy5f
+	64WXApEtcDEGE4N6YS5jfHDEYouG7OukG8Je/4Th5XEanN3oiDKTTOrSecmim63aOU4PxTLSDg3XP
+	nB9LCgjPqjuy3UPixvCQRwE1/Rx9jSjMJvpiHKRMkQBfqx7X/B0DjG6lLTk3tK/Y0PTX7n76PCbc4
+	hiLjIxI9hsqKgtRwq7FIwOM54wZQtFGqujW/JYVe/+bpui6ajsa2t4nvwPDlAggsDlc46/uPVyQ5G
+	FFk+2ON4aaz1+8CABKWiNbBLq7gqLyyYurhhtbgglwOx2WsyGsNMmhGRRKnxJNDH941Px3x4XqVAB
+	JNZ1voC9VvyAajXEpXfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaSZ-00007a-42; Thu, 09 Jan 2020 16:14:59 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-1.mimecast.com)
+	id 1ipaSv-0000Lf-K0; Thu, 09 Jan 2020 16:15:21 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaKx-0000D7-OE
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:07:13 +0000
+ id 1ipaKz-0000F9-FQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:07:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578586026;
+ s=mimecast20190719; t=1578586028;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=ZrHIGMfa1ezX1wLKOejBrnNEGuBrWXKv+McP9/MFns4=;
- b=PBKIZFPBNqnh0nJ4tadqJgv9F0qaaR+3rEHJFt8PkCREstJSOQ8hSSUrla2MJYiHLKx5Yq
- XAV4WbMcoaVD9uxwo/s6ElkAm0MiLjrAaC03U3teiCA7Sc0q4mpytY7JrQ+7nfNf+Rd+DB
- NRfprbpzjBQQ+SGmdun5sJm2LB/bJyk=
-Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
- [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-2-VfZw8porNpexTRH4-_cr5g-1; Thu, 09 Jan 2020 11:07:05 -0500
-Received: by mail-wr1-f71.google.com with SMTP id c6so3028623wrm.18
+ bh=mL32uzZtS4A4WxOY9naPKxSGCWugpIBuatEE3CXVbYc=;
+ b=AvSHZEUyn5C4i33XWzqADuIj6Upln0mn+jukacjxXvR/mrHzg9BbwR9B8yI1y3wYFhNMHd
+ NClAg3TzIq3LoTWueX5FZyjBBHEq8ufQikpLK2oBllokYzKCEgM8pgHQn/MaWj4umWgmAu
+ g/36K6ozYYxhp6jpTw0D8VWIst+y1YI=
+Received: from mail-wm1-f72.google.com (mail-wm1-f72.google.com
+ [209.85.128.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-105-pDVe2TogPXyv4TYlsnqgVA-1; Thu, 09 Jan 2020 11:07:06 -0500
+Received: by mail-wm1-f72.google.com with SMTP id c4so1094283wmb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:07:04 -0800 (PST)
+ Thu, 09 Jan 2020 08:07:06 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=674vedoaHlOK+sohBzVeKsD1bt4H4p7wzQDNyJHcuUU=;
- b=UletLu8ZxcBvppRzXmLgPr6R9Xe2UjoyQ5XmRYDiaB4vQEGR96bYQpVuPUA9spkKal
- ZOu7aAskd7Nv/5rq6yE94MDbPtNAk/1Hf5tnQAKgExOiuGRrd3gPxHWAiAh/W/Aq76Nk
- iVME5qdIN0TWL1AQM45pIPYXLXtOyu1frjajgXNDAgr34mgVzRvTFIaOgWvissng2z1v
- 8HAKl8Yga+wisDkFZXfot50CBvB/W14z0BtiruYYnyO6bRvw4wwq8an4D2jXaEyWCJZu
- 7N6VKAmwPoFqX5vybRzk6cBfK4hes2dmFDoWoicO3sWIeBkDV3vNF/rPYTR7f2B+ZBnX
- GEWQ==
-X-Gm-Message-State: APjAAAUyMX0xalT/dFOuDoYh2mjIHJZ3CXz/5tdYR0Ql/AFAJi7rd9lG
- y8ekCMJGWM6n7X+yUO3tYWrrNPc4QPf7xG30a4HvYd+F+m8vyMkuZWzh4XvozNK14VyrNB/qLHq
- +TDr0Nk+b2eqp8Pe3SczKsbdu+f4qsTb+r6U=
-X-Received: by 2002:a7b:cbcd:: with SMTP id n13mr5750920wmi.104.1578586023795; 
- Thu, 09 Jan 2020 08:07:03 -0800 (PST)
-X-Google-Smtp-Source: APXvYqyYyTRISBUXfTdMjMVF0DyWCzXa8gRzRagckK39rZstNu1/RnqpteCWutzTgpkE45cGgf1BEw==
-X-Received: by 2002:a7b:cbcd:: with SMTP id n13mr5750895wmi.104.1578586023548; 
- Thu, 09 Jan 2020 08:07:03 -0800 (PST)
+ bh=Io3pe+yXhkH0XtVt81FPsOl3c54xtZQ9M8pNFcB3Jec=;
+ b=T/GcxlfzPLyxZZXXR1DciDrtSeEVri5F9o2jlSmD2I2htiIv8gvTeKyEbqQUWfkp9d
+ xGXGX+ihtDksfqJ6wGXn5qrZ+ChrurdWfsoC0KQXjYw8AFcOu71Eo7fqiCH2K4FBnkn1
+ cIU2nF/TQIa1eX+H/mJxw2pvbEkXQ83VfDbkrYkfOMWjoFMD8ZLlu2QNo2W9DKfi9j0A
+ ZtCMRWpcMdochkOdw/o0nqextJLBiyou6KWJ6cnGblOfh48t3lBVBSn1cUlRaEEsSVpT
+ 4OKq5D85SYmPjUGzondM2IAap/4of+xJ2wJiy7Grj0+YabMWbc0BiT0tZk9WNnnw8STq
+ h7jQ==
+X-Gm-Message-State: APjAAAWuyPx41g8nN3DCyGkMTuDl8lTPDDYmZ/U+MQhHgjpvZ1/Lfo+O
+ BkBRZ5hXCkyBbfHFTsnoMB51kGtbip5+Diytk+/eq5IeTFablTfKUckZOznP/H1tDQ7V581HSlj
+ bVpW9yW/eRL262F78BKvBNCj5CZ4CZjPQGOA=
+X-Received: by 2002:a5d:5273:: with SMTP id l19mr12042235wrc.175.1578586024905; 
+ Thu, 09 Jan 2020 08:07:04 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyhV2DNPneDJ3INZRmEMT5LfpnDkTy4hQ+cTQKOs/UrhpfRFlyh+43dh8pZyrUb2ibu33ow8w==
+X-Received: by 2002:a5d:5273:: with SMTP id l19mr12042205wrc.175.1578586024671; 
+ Thu, 09 Jan 2020 08:07:04 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id q3sm9123252wrn.33.2020.01.09.08.07.02
+ by smtp.gmail.com with ESMTPSA id q3sm9123252wrn.33.2020.01.09.08.07.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:07:03 -0800 (PST)
+ Thu, 09 Jan 2020 08:07:04 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 33/57] objtool: arm64: Decode FP/SIMD load/store instructions
-Date: Thu,  9 Jan 2020 16:02:36 +0000
-Message-Id: <20200109160300.26150-34-jthierry@redhat.com>
+Subject: [RFC v5 34/57] objtool: arm64: Decode load/store exclusive
+Date: Thu,  9 Jan 2020 16:02:37 +0000
+Message-Id: <20200109160300.26150-35-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: VfZw8porNpexTRH4-_cr5g-1
+X-MC-Unique: pDVe2TogPXyv4TYlsnqgVA-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080707_925771_A09CB705 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20200109_080709_624058_A60612D6 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -115,358 +115,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Decode load/store instruction acting on floating point and SIMD
-registers.
+Decode load/store exclusive instructions. From objtool's point
+of view there aren't particular semantics to these operations.
 
 Suggested-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- tools/objtool/arch/arm64/decode.c             | 301 ++++++++++++++++++
- .../objtool/arch/arm64/include/insn_decode.h  |  12 +
- 2 files changed, 313 insertions(+)
+ tools/objtool/arch/arm64/decode.c             | 140 ++++++++++++++++++
+ .../objtool/arch/arm64/include/insn_decode.h  |   3 +
+ 2 files changed, 143 insertions(+)
 
 diff --git a/tools/objtool/arch/arm64/decode.c b/tools/objtool/arch/arm64/decode.c
-index 2aaac4e3786c..7d480efe0bc2 100644
+index 7d480efe0bc2..e3f77d68b282 100644
 --- a/tools/objtool/arch/arm64/decode.c
 +++ b/tools/objtool/arch/arm64/decode.c
-@@ -810,6 +810,26 @@ int arm_decode_br_uncond_reg(u32 instr, enum insn_type *type,
- #undef INSN_DRPS_MASK
- 
- static struct aarch64_insn_decoder ld_st_decoder[] = {
+@@ -830,6 +830,11 @@ static struct aarch64_insn_decoder ld_st_decoder[] = {
+ 		.value = 0b000011100000000,
+ 		.decode_func = arm_decode_adv_simd_single_post,
+ 	},
 +	{
-+		.mask = 0b101111111111100,
-+		.value = 0b000010000000000,
-+		.decode_func = arm_decode_adv_simd_mult,
-+	},
-+	{
-+		.mask = 0b101111110000000,
-+		.value = 0b000010100000000,
-+		.decode_func = arm_decode_adv_simd_mult_post,
-+	},
-+	{
-+		.mask = 0b101111101111100,
-+		.value = 0b000011000000000,
-+		.decode_func = arm_decode_adv_simd_single,
-+	},
-+	{
-+		.mask = 0b101111100000000,
-+		.value = 0b000011100000000,
-+		.decode_func = arm_decode_adv_simd_single_post,
++		.mask = 0b001111000000000,
++		.value = 0b000000000000000,
++		.decode_func = arm_decode_ld_st_exclusive,
 +	},
  	{
  		.mask = 0b001101100000000,
  		.value = 0b001000000000000,
-@@ -889,6 +909,287 @@ int arm_decode_ld_st(u32 instr, enum insn_type *type,
- 	return arm_decode_unknown(instr, type, immediate, ops_list);
+@@ -1190,6 +1195,141 @@ int arm_decode_adv_simd_single_post(u32 instr, enum insn_type *type,
+ 	return ret;
  }
  
-+static int adv_simd_mult_fields[] = {
-+	0b00000,
-+	0b00010,
-+	0b00100,
-+	0b00110,
-+	0b00111,
-+	0b01000,
-+	0b01010,
-+	0b10000,
-+	0b10010,
-+	0b10100,
-+	0b10110,
-+	0b10111,
-+	0b11000,
-+	0b11010,
++#define ST_EXCL_UNALLOC_1 0b001010
++#define ST_EXCL_UNALLOC_2 0b000010
++
++#define LDXRB		0b000100
++#define LDAXRB		0b000101
++#define LDLARB		0b001100
++#define LDARB		0b001101
++#define LDXRH		0b010100
++#define LDAXRH		0b010101
++#define LDLARH		0b011100
++#define LDARH		0b011101
++#define LDXR		0b100100
++#define LDAXR		0b100101
++#define LDXP		0b100110
++#define LDAXP		0b100111
++#define LDLAR		0b101100
++#define LDAR		0b101101
++#define LDXR_64		0b110100
++#define LDAXR_64	0b110101
++#define LDXP_64		0b110110
++#define LDAXP_64	0b110111
++#define LDLAR_64	0b111100
++#define LDAR_64		0b111101
++
++#define LD_EXCL_NUMBER	20
++
++static int ld_excl_masks[] = {
++	LDXRB,
++	LDAXRB,
++	LDLARB,
++	LDARB,
++	LDXRH,
++	LDAXRH,
++	LDLARH,
++	LDARH,
++	LDXR,
++	LDAXR,
++	LDXP,
++	LDAXP,
++	LDLAR,
++	LDAR,
++	LDXR_64,
++	LDAXR_64,
++	LDXP_64,
++	LDAXP_64,
++	LDLAR_64,
++	LDAR_64,
 +};
 +
-+int arm_decode_adv_simd_mult(u32 instr, enum insn_type *type,
-+			     unsigned long *immediate,
-+			     struct list_head *ops_list)
-+{
-+	unsigned char L = 0, opcode = 0, rn = 0;
-+	unsigned char decode_field = 0;
-+	int i = 0;
-+
-+	L = EXTRACT_BIT(instr, 22);
-+	opcode = (instr >> 12) & ONES(4);
-+
-+	decode_field = (L << 4) | opcode;
-+	rn = (instr >> 5) & ONES(5);
-+	*type = INSN_OTHER;
-+
-+	for (i = 0; i < ARRAY_SIZE(adv_simd_mult_fields); i++) {
-+		if ((decode_field & 0b11111) == adv_simd_mult_fields[i]) {
-+			if (!stack_related_reg(rn))
-+				return 0;
-+		}
-+	}
-+
-+	return arm_decode_unknown(instr, type, immediate, ops_list);
-+}
-+
-+int arm_decode_adv_simd_mult_post(u32 instr, enum insn_type *type,
-+				  unsigned long *immediate,
-+				  struct list_head *ops_list)
-+{
-+	/* same opcode as for the no offset variant */
-+	int ret = 0;
-+
-+	ret = arm_decode_adv_simd_mult(instr, type, immediate, ops_list);
-+
-+	/* TODO: Create stack_op for post increment with immediate */
-+	return ret;
-+}
-+
-+static struct aarch64_insn_decoder simd_single_decoder[] = {
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b00000000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b00001000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b00010000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b00011000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b00100000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b00100001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b00101000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b00101001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b01000000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b01001000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b01010000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b01011000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b01100000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b01100001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b01101000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b01101001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b10000000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b10001000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b10010000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b10011000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b10100000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b10100001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b10101000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b10101001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111100,
-+		.value = 0b10110000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111100,
-+		.value = 0b10111000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11000000,
-+		.value = 0b11111000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111000,
-+		.value = 0b11001000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b11010000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111001,
-+		.value = 0b11011000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b11100000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b11100001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111011,
-+		.value = 0b11101000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111111,
-+		.value = 0b11101001,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111100,
-+		.value = 0b11110000,
-+		.decode_func = NULL,
-+	},
-+	{
-+		.mask = 0b11111100,
-+		.value = 0b11111000,
-+		.decode_func = NULL,
-+	},
-+};
-+
-+int arm_decode_adv_simd_single(u32 instr, enum insn_type *type,
++int arm_decode_ld_st_exclusive(u32 instr, enum insn_type *type,
 +			       unsigned long *immediate,
 +			       struct list_head *ops_list)
 +{
-+	unsigned char L = 0, R = 0, S = 0, opcode = 0, size = 0;
-+	unsigned char rn = 0, dfield = 0;
++	unsigned char size = 0, o2 = 0, L = 0, o1 = 0, o0 = 0;
++	unsigned char rt = 0, rt2 = 0, rn = 0;
++	unsigned char decode_field = 0;
++	struct stack_op *op;
 +	int i = 0;
 +
++	size = (instr >> 30) & ONES(2);
++	o2 = EXTRACT_BIT(instr, 23);
 +	L = EXTRACT_BIT(instr, 22);
-+	R = EXTRACT_BIT(instr, 21);
-+	S = EXTRACT_BIT(instr, 12);
-+	opcode = (instr >> 13) & ONES(3);
-+	size = (instr >> 10) & ONES(2);
++	o1 = EXTRACT_BIT(instr, 21);
++	o0 = EXTRACT_BIT(instr, 15);
 +
-+	dfield = (L << 7) | (R << 6) | (opcode << 3) | (S << 2) | size;
++	rt2 = (instr >> 10) & ONES(5);
++	rn = (instr >> 5) & ONES(5);
++	rt = instr & ONES(5);
 +
-+	*type = INSN_OTHER;
-+	rn = (instr << 5) & ONES(5);
++	decode_field = (size << 4) | (o2 << 3) | (L << 2) | (o1 << 1) | o0;
 +
-+	for (i = 0; i < ARRAY_SIZE(simd_single_decoder); i++) {
-+		if ((dfield & simd_single_decoder[i].mask) ==
-+		    simd_single_decoder[i].value) {
-+			if (!stack_related_reg(rn))
-+				return 0;
++	if ((decode_field & ST_EXCL_UNALLOC_1) == ST_EXCL_UNALLOC_1 ||
++	    (decode_field & 0b101010) == ST_EXCL_UNALLOC_2) {
++		if (rt2 != 31)
++			return arm_decode_unknown(instr, type, immediate,
++						  ops_list);
++	}
++
++	if (!stack_related_reg(rn)) {
++		*type = INSN_OTHER;
++		return 0;
++	}
++
++	*type = INSN_STACK;
++	op = calloc(1, sizeof(*op));
++	list_add_tail(&op->list, ops_list);
++
++	for (i = 0; i < LD_EXCL_NUMBER; i++) {
++		if ((decode_field & 0b111111) == ld_excl_masks[i]) {
++			op->src.type = OP_SRC_REG_INDIRECT;
++			op->src.reg = rn;
++			op->src.offset = 0;
++			op->dest.type = OP_DEST_REG;
++			op->dest.reg = rt;
++			op->dest.offset = 0;
++			return 0;
 +		}
 +	}
 +
-+	return arm_decode_unknown(instr, type, immediate, ops_list);
++	op->dest.type = OP_DEST_REG_INDIRECT;
++	op->dest.reg = rn;
++	op->dest.offset = 0;
++	op->src.type = OP_SRC_REG;
++	op->src.reg = rt;
++	op->src.offset = 0;
++
++	return 0;
 +}
 +
-+int arm_decode_adv_simd_single_post(u32 instr, enum insn_type *type,
-+				    unsigned long *immediate,
-+				    struct list_head *ops_list)
-+{
-+	/* same opcode as for the no offset variant */
-+	int ret = 0;
++#undef ST_EXCL_UNALLOC_1
++#undef ST_EXCL_UNALLOC_2
 +
-+	ret = arm_decode_adv_simd_single(instr, type, immediate, ops_list);
++#undef LD_EXCL_NUMBER
 +
-+	/* TODO: Create stack_op for post increment with immediate */
-+	return ret;
-+}
++#undef LDXRB
++#undef LDAXRB
++#undef LDLARB
++#undef LDARB
++#undef LDXRH
++#undef LDAXRH
++#undef LDLARH
++#undef LDARH
++#undef LDXR
++#undef LDAXR
++#undef LDXP
++#undef LDAXP
++#undef LDLAR
++#undef LDAR
++#undef LDXR_64
++#undef LDAXR_64
++#undef LDXP_64
++#undef LDAXP_64
++#undef LDLAR_64
++#undef LDAR_64
 +
  int arm_decode_ld_st_regs_unsc_imm(u32 instr, enum insn_type *type,
  				   unsigned long *immediate,
  				   struct list_head *ops_list)
 diff --git a/tools/objtool/arch/arm64/include/insn_decode.h b/tools/objtool/arch/arm64/include/insn_decode.h
-index caeb40942b18..7fd333f88612 100644
+index 7fd333f88612..61152b4aa42a 100644
 --- a/tools/objtool/arch/arm64/include/insn_decode.h
 +++ b/tools/objtool/arch/arm64/include/insn_decode.h
-@@ -94,6 +94,18 @@ int arm_decode_br_uncond_reg(u32 instr, enum insn_type *type,
- 			     struct list_head *ops_list);
- 
- /* arm64 load/store instructions */
-+int arm_decode_adv_simd_mult(u32 instr, enum insn_type *type,
-+			     unsigned long *immediate,
-+			     struct list_head *ops_list);
-+int arm_decode_adv_simd_mult_post(u32 instr, enum insn_type *type,
-+				  unsigned long *immediate,
-+				  struct list_head *ops_list);
-+int arm_decode_adv_simd_single(u32 instr, enum insn_type *type,
+@@ -136,4 +136,7 @@ int arm_decode_ld_st_regs_off(u32 instr, enum insn_type *type,
+ int arm_decode_ld_st_regs_unsigned(u32 instr, enum insn_type *type,
+ 				   unsigned long *immediate,
+ 				   struct list_head *ops_list);
++int arm_decode_ld_st_exclusive(u32 instr, enum insn_type *type,
 +			       unsigned long *immediate,
 +			       struct list_head *ops_list);
-+int arm_decode_adv_simd_single_post(u32 instr, enum insn_type *type,
-+				    unsigned long *immediate,
-+				    struct list_head *ops_list);
- int arm_decode_ld_st_noalloc_pair_off(u32 instr, enum insn_type *type,
- 				      unsigned long *immediate,
- 				      struct list_head *ops_list);
+ #endif /* _ARM_INSN_DECODE_H */
 -- 
 2.21.0
 
