@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5742713560D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 10:46:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E6EE135613
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 10:47:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4e+4EEkm7CDHa7gfAWoypBLWkMPpBz/Jxf545YbmMeA=; b=UPUBlc7iKA465yLzUl52Wbxs7
-	igESzCT9lI/+0f+tgu2FxJzKB0H8OpsmRjysebxhQ1/cUxA2HNdXfp+/7y+tSdAJSjYPhI1jFMZC1
-	CPQpLPEG1sQjLjIiOuSWnPOLHG2UEX/yHYCon77n3YlQ11foo0okz8A8tuDamv/jALv2RSqLsXAE0
-	Pk15tJhCD/3StRMXIqb9D2tySJZpo22fYVmcvWZ6XurBmt8EO38Okq2Oy1Lup3n+VvHXvGj9vS10h
-	0b2L3lC/bxTc9gAC3ScAipr8AXuOqXxYiS7Vp/RqQuXYUqo857CF5cgHAJpVgWpgsc0srNXOmFcwX
-	saqK+xxGA==;
+	 bh=7nwAV5GtM2U1Xv3130NpIloUzHSCWjDRW0jMbjs8eCA=; b=A0P5wK4rXJPZ2Ehu58bCnnY6K
+	USC8IjTl0k6Lnuo04SSvE+mHWVinreDLAbTN1+eOMow1PlnNk9Gvo2TSePPwXicK9SFQbiuvoGhTA
+	m0y/0kCAfZyYJGHt46MWY1Q0W+lfVu3fKl4/U9lCWRF+W0Zv/WrWx736esG2PxAe6FF1xMMlluA8P
+	S3UpESAZ6beLcIocnmCViVRnsBFTfQ48z8VN2b5TkvYZJbBcm5iQd0DU75Qar5Y80hU6TuA4FcwCY
+	2DosVoLLpjvz+MyXTLyS6B7Qno46PnCj4lLeS64p6bHEGpN6+HQWW8gQEgv8q+oem2a3rckMfBFot
+	4WDbkSQRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipUOX-000123-2T; Thu, 09 Jan 2020 09:46:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ipUPF-0001IP-79; Thu, 09 Jan 2020 09:47:09 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipUOP-00011i-Er
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 09:46:18 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8ED0920678;
- Thu,  9 Jan 2020 09:46:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578563176;
- bh=NHHel1PVO2HlRqINTAayeLOlQXHvdSb0MKXB6GwG2Xo=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Lv9mjO62CPa1so1ZNZc7FENfSViFFVsdY2DTNxbyY0LlNLpor7G78cti04LiXbtAQ
- i1UplCiDuC04AomjvqZIGN5V5p177tJ+wuJY8hHksssGF7ld7YsHQULYsaCu+Rzqoe
- SJjCc7PRPQRTg+7rJf13faQFdPYCd31nGKHrR8L8=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1ipUOM-0002fn-Nv; Thu, 09 Jan 2020 09:46:14 +0000
+ id 1ipUP7-0001Hp-Gi
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 09:47:03 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0099bweL010751; Thu, 9 Jan 2020 10:46:56 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=kaxJeJxsQ9kniwCq7eta3R28bBgqLC1dveeyS7Ju7cY=;
+ b=a5Pp6DTZ/GlpD0FCtQUjLWhUkZwYV9XTBXGlEbgqM3xXjL83GA5aBjJHRtBdxLxFebD6
+ YM8UtNwT1nPY+2lUxtgZn0hkLiH2X32GrsXvWvKPsBlAuk+72KzgGmRRoQewLA9cUh/Y
+ 5HbmkmBrUWs03P7nHFuHDrDO28ZknO+yzv0S1oXiNpSxqvsYpsZhKCROm5ycEEQmgvze
+ stnUxKE+c535SLRRjBUeE8uXVpS1PSswLjOv5mIkg6f1ecjRDDHjwf8R6S4THUBobKox
+ dtNGnv8UU29aXLYW6pidPc8CYc//SZgbGEfZ1VD1DYUAdhrIp8rBMwldu02/hFpyc5bP nQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2xakkb0ysg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 09 Jan 2020 10:46:56 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 175E510003D;
+ Thu,  9 Jan 2020 10:46:52 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 01FEC2A791B;
+ Thu,  9 Jan 2020 10:46:52 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 9 Jan
+ 2020 10:46:51 +0100
+Subject: Re: [PATCH] ARM: dts: stm32: Add power-supply for RGB panel on
+ stm32429i-eval
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, <mcoquelin.stm32@gmail.com>, 
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>
+References: <20200108132647.26131-1-benjamin.gaignard@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <2af148e9-c67c-0654-716b-1e65a77510b7@st.com>
+Date: Thu, 9 Jan 2020 10:46:51 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Date: Thu, 09 Jan 2020 09:46:14 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Jianyong Wu <Jianyong.Wu@arm.com>
-Subject: Re: [RFC PATCH v9 7/8] ptp: arm64: Enable ptp_kvm for arm64
-In-Reply-To: <ee801dacbf4143e8d41807d5bfad1409@kernel.org>
-References: <20191210034026.45229-1-jianyong.wu@arm.com>
- <20191210034026.45229-8-jianyong.wu@arm.com>
- <ca162efb3a0de530e119f5237c006515@kernel.org>
- <HE1PR0801MB1676EE12CF0DB7C5BB8CC62DF4390@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <ee801dacbf4143e8d41807d5bfad1409@kernel.org>
-Message-ID: <a5f5fc5bf913c9a22923d1a556f511e6@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: Jianyong.Wu@arm.com, netdev@vger.kernel.org,
- yangbo.lu@nxp.com, john.stultz@linaro.org, tglx@linutronix.de,
- pbonzini@redhat.com, sean.j.christopherson@intel.com, richardcochran@gmail.com,
- Mark.Rutland@arm.com, will@kernel.org, Suzuki.Poulose@arm.com,
- Steven.Price@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, Steve.Capper@arm.com, Kaly.Xin@arm.com, Justin.He@arm.com,
- nd@arm.com, kvm-owner@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200108132647.26131-1-benjamin.gaignard@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-09_02:2020-01-08,
+ 2020-01-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_014617_520584_B4593CAE 
-X-CRM114-Status: GOOD (  10.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200109_014701_911482_457368F1 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -86,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,46 +99,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Justin He <Justin.He@arm.com>,
- kvm-owner@vger.kernel.org, kvm@vger.kernel.org,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, netdev@vger.kernel.org,
- richardcochran@gmail.com, Steve Capper <Steve.Capper@arm.com>,
- linux-kernel@vger.kernel.org, sean.j.christopherson@intel.com,
- Steven Price <Steven.Price@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- john.stultz@linaro.org, yangbo.lu@nxp.com, pbonzini@redhat.com,
- tglx@linutronix.de, nd <nd@arm.com>, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-09 09:24, Marc Zyngier wrote:
-> On 2020-01-09 05:59, Jianyong Wu wrote:
+Hi
 
-[...]
-
->> So we focus it on arm64. Also I have never tested it on arm32 machine
->> ( we lack of arm32 machine)
+On 1/8/20 2:26 PM, Benjamin Gaignard wrote:
+> Add a fixed regulator and use it as power supply for RBG panel.
 > 
-> I'm sure your employer can provide you with such a box. I can probably
-> even tell you which cupboard they are stored in... ;-)
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+>   arch/arm/boot/dts/stm32429i-eval.dts | 8 ++++++++
+>   1 file changed, 8 insertions(+)
 > 
->> Do you think it's necessary to enable ptp_kvm on arm32? If so, I can 
->> do that.
+> diff --git a/arch/arm/boot/dts/stm32429i-eval.dts b/arch/arm/boot/dts/stm32429i-eval.dts
+> index 58288aa53fee..c27fa355e5ab 100644
+> --- a/arch/arm/boot/dts/stm32429i-eval.dts
+> +++ b/arch/arm/boot/dts/stm32429i-eval.dts
+> @@ -95,6 +95,13 @@
+>   		regulator-max-microvolt = <3300000>;
+>   	};
+>   
+> +	vdd_panel: vdd-panel {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vdd_panel";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +	};
+> +
+>   	leds {
+>   		compatible = "gpio-leds";
+>   		green {
+> @@ -138,6 +145,7 @@
+>   
+>   	panel_rgb: panel-rgb {
+>   		compatible = "ampire,am-480272h3tmqw-t01h";
+> +		power-supply = <&vdd_panel>;
+>   		status = "okay";
+>   		port {
+>   			panel_in_rgb: endpoint {
 > 
-> I can't see why we wouldn't, given that it should be a zero effort task
-> (none of the code here is arch specific).
 
-To be clear, what I'm after is support for 32bit *guests*. I don't 
-expect any
-issue with a 32bit host (it's all common code), but you should be able 
-to test
-32bit guests pretty easily (most ARMv8.0 CPUs support 32bit EL1).
+Applied on stm32-next.
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Thanks
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
