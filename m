@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3223513628A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 22:31:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BED31362A4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 22:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=DaKkXz7HFYCntv66G+BWjL2BrHjJfQmqe2tGUsOhXCs=; b=D5/
-	2NFAf+hX4HY3iLAGxIitjd8tGjhlWhlappoyZal5RnKoLwTjxcXxy8AU0+Z4JcZrZ6a4ilolSt2jN
-	4ZDXJ3R2KF8vGES7fmJswHXEowFbMs3jH/yBRnUHrCnMwnS9RpAbVyVzwFKD19AQNZmHLkhCSCcdE
-	7E3YIiK6XxbWCl56OX/BA20sb307IhNQH5bfGq6nVtpjmZWf/zmV5DDGs80hdZ/1bH+Qnn9Ruji7d
-	3bbGUalMAFepA/mFbm+9rVgoClDC4tdbDxrdlle/Y5yHWtQrK7rxtuz/OOkOTdsBnd3dgFm6DzuY/
-	ms4g0uXvblKTqjRB4eB7KdSlul/uHBw==;
+	List-Owner; bh=S+sk5qtg3kJyLraTmx7U4fdM3mfBGx+5xxZ2FwtDrhk=; b=IclvTqJI36cnjK
+	d+nd/rgpP+lpEdaSaRVU+FliPyhhrodDiBvs0JQ+fAjdbp1nT+e4GQ9bCEkQ1ocPNEk4Dr+1j0QJ7
+	cHhXoLNRebHgeV4nepi9JVbDdfYAzOtGyhA0KcjPU1Lfsp5C6hxslOSTOAqaQ2K0ZHndWzBHMo3DD
+	DNhIZWaw02pYx44tTH7ZXQDGl/W9MWWJSUrTaATA7M0ob3vAesnjI8SmCf7wiX+wQOgw1tl7HidRv
+	rrr2mSyP+I+yZ1v20MR5DyceiWs2OK5ntSo5u5hpSe4Qp0itUKLJ932ZT1SPAvEnEKvkUXxXlltZi
+	ZVtOsp+v1e+SyUXjbkrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipfOl-0000pD-F0; Thu, 09 Jan 2020 21:31:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipfOX-0000nj-7h; Thu, 09 Jan 2020 21:31:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 59B6931B;
- Thu,  9 Jan 2020 13:31:07 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB1DB3F534;
- Thu,  9 Jan 2020 13:31:06 -0800 (PST)
-Date: Thu, 09 Jan 2020 21:31:05 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Applied "dt-bindings: spi_atmel: add microchip,
- sam9x60-spi" to the spi tree
-In-Reply-To: <1578488123-26127-13-git-send-email-claudiu.beznea@microchip.com>
-Message-Id: <applied-1578488123-26127-13-git-send-email-claudiu.beznea@microchip.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1ipfRz-0001jr-4y; Thu, 09 Jan 2020 21:34:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipfRr-0001jY-7w
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 21:34:36 +0000
+Received: from mail-qv1-f52.google.com (mail-qv1-f52.google.com
+ [209.85.219.52])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A9BA82077C
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  9 Jan 2020 21:34:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578605674;
+ bh=yn8sZNTzca5AhB7S6VZtExiIG/wWNPNaKx+okU9FHHo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=l1s44wy6UQynSATYWDgO5lND21qsYB27at/WiYGXThb9dukwcZWPlnPwqmyf1t1T3
+ E3YqBNzDLgwtmj9PFMKzD2g6ret177fA/5yfx6jk12MyVu5e9bIrdpD7lJJgJxtmRj
+ gxj0vOhLoR4+pnt933b303hp2OWtYntBh3Xl3BSU=
+Received: by mail-qv1-f52.google.com with SMTP id p2so3625914qvo.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 13:34:34 -0800 (PST)
+X-Gm-Message-State: APjAAAWPN6L23iDwgGjgfrQ8dAKj9pVrCk0h2T2zj3qC5zZvjnlzJXxJ
+ BlRIdtzAb6KQ0Aff4detflwlc9no09O/u5ss7A==
+X-Google-Smtp-Source: APXvYqx43aMDqlaNqB0yVv64A+3XvbHK2prKiNN1FroBxw1xay/yrMm6w+12fNYNnHKqtqhTf/NG9bpdwJoHep0cNuk=
+X-Received: by 2002:a0c:f6cd:: with SMTP id d13mr10492240qvo.20.1578605673756; 
+ Thu, 09 Jan 2020 13:34:33 -0800 (PST)
+MIME-Version: 1.0
+References: <20191108103526.22254-1-christophe.roullier@st.com>
+ <20191108103526.22254-2-christophe.roullier@st.com>
+ <20191108104231.GE4345@gilmour.lan>
+ <f934df21-ac57-50ad-3e7b-b3b337daabe1@st.com>
+ <20191115075008.GY4345@gilmour.lan>
+ <009e8c0e-6a72-7e14-699e-8a897199ae16@st.com>
+In-Reply-To: <009e8c0e-6a72-7e14-699e-8a897199ae16@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 9 Jan 2020 15:34:20 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLQoo0RMtdKgYbWP=wUiO6z2QM7tVzGJv_iMekFKQUDiQ@mail.gmail.com>
+Message-ID: <CAL_JsqLQoo0RMtdKgYbWP=wUiO6z2QM7tVzGJv_iMekFKQUDiQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: net: dwmac: increase 'maxItems' for
+ 'clocks', 'clock-names' properties
+To: Christophe ROULLIER <christophe.roullier@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_133109_319163_07FB7E3A 
-X-CRM114-Status: GOOD (  13.58  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200109_133435_326457_F7FB5BCF 
+X-CRM114-Status: GOOD (  22.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,81 +91,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, alexandre.belloni@bootlin.com, vigneshr@ti.com,
- linux-iio@vger.kernel.org, linux-mtd@lists.infradead.org, pmeerw@pmeerw.net,
- miquel.raynal@bootlin.com, lee.jones@linaro.org, linux-rtc@vger.kernel.org,
- lars@metafoo.de, richard@nod.at, ludovic.desroches@microchip.com,
- wg@grandegger.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- tudor.ambarus@microchip.com, radu_nicolae.pirea@upb.ro,
- linux-can@vger.kernel.org, Mark Brown <broonie@kernel.org>, mkl@pengutronix.de,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
- richard.genoud@gmail.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, vkoul@kernel.org, robh+dt@kernel.org,
- knaack.h@gmx.de, dmaengine@vger.kernel.org, eugen.hristev@microchip.com,
- jic23@kernel.org
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "martin.blumenstingl@googlemail.com" <martin.blumenstingl@googlemail.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "alexandru.ardelean@analog.com" <alexandru.ardelean@analog.com>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Thu, Jan 9, 2020 at 3:07 AM Christophe ROULLIER
+<christophe.roullier@st.com> wrote:
+>
+> On 15/11/2019 08:50, Maxime Ripard wrote:
+> > On Fri, Nov 08, 2019 at 01:02:14PM +0000, Christophe ROULLIER wrote:
+> >> On 11/8/19 11:42 AM, Maxime Ripard wrote:
+> >>> Hi,
+> >>>
+> >>> On Fri, Nov 08, 2019 at 11:35:25AM +0100, Christophe Roullier wrote:
+> >>>> This change is needed for some soc based on snps,dwmac, which have
+> >>>> more than 3 clocks.
+> >>>>
+> >>>> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+> >>>> ---
+> >>>>    Documentation/devicetree/bindings/net/snps,dwmac.yaml | 8 +++++++-
+> >>>>    1 file changed, 7 insertions(+), 1 deletion(-)
+> >>>>
+> >>>> diff --git a/Documentation/devicetree/bindings/net/snps,dwmac.yaml b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
+> >>>> index 4845e29411e4..376a531062c2 100644
+> >>>> --- a/Documentation/devicetree/bindings/net/snps,dwmac.yaml
+> >>>> +++ b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
+> >>>> @@ -27,6 +27,7 @@ select:
+> >>>>              - snps,dwmac-3.710
+> >>>>              - snps,dwmac-4.00
+> >>>>              - snps,dwmac-4.10a
+> >>>> +          - snps,dwmac-4.20a
+> >>>>              - snps,dwxgmac
+> >>>>              - snps,dwxgmac-2.10
+> >>>>
+> >>>> @@ -62,6 +63,7 @@ properties:
+> >>>>            - snps,dwmac-3.710
+> >>>>            - snps,dwmac-4.00
+> >>>>            - snps,dwmac-4.10a
+> >>>> +        - snps,dwmac-4.20a
+> >>>>            - snps,dwxgmac
+> >>>>            - snps,dwxgmac-2.10
+> >>>>
+> >>>> @@ -87,7 +89,8 @@ properties:
+> >>>>
+> >>>>      clocks:
+> >>>>        minItems: 1
+> >>>> -    maxItems: 3
+> >>>> +    maxItems: 5
+> >>>> +    additionalItems: true
+> >>> Those additional clocks should be documented
+> >>>
+> >>> Maxime
+> >> Hi Maxime,
+> >>
+> >> The problem it is specific to our soc, so is it possible to
+> >>
+> >> propose "optional clock" for 2 extras clocks in snps,dwmac.yaml
+> >>
+> >> and "official" description in soc yaml file (stm32-dwmac.yaml) ?
+> >>
+> >>     clocks:
+> >>       minItems: 1
+> >>       maxItems: 5
+> >>       additionalItems: true
+> >>       items:
+> >>         - description: GMAC main clock
+> >>         - description: Peripheral registers interface clock
+> >>         - description:
+> >>             PTP reference clock. This clock is used for programming the
+> >>             Timestamp Addend Register. If not passed then the system
+> >>             clock will be used and this is fine on some platforms.
+> >>
+> >> +      - description: optional clock
+> >>
+> >> +      - description: optional clock
+> > I guess we'd really need to figure out what those clocks are doing,
+> > they are probably helpful (and used, under a different name) by
+> > others.
+> >
+> > Hopefully the questions Rob asked will clear that out
+>
+> Rob, do you have any ideas, suggestions ?
 
-   dt-bindings: spi_atmel: add microchip,sam9x60-spi
+Answer my questions from patch 2:
 
-has been applied to the spi tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.6
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 0a1eb761ff30cdc089bcc94e1bd540b6956487c5 Mon Sep 17 00:00:00 2001
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-Date: Wed, 8 Jan 2020 14:55:19 +0200
-Subject: [PATCH] dt-bindings: spi_atmel: add microchip,sam9x60-spi
-
-Add microchip,sam9x60-spi to DT bindings documentation.
-
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-Link: https://lore.kernel.org/r/1578488123-26127-13-git-send-email-claudiu.beznea@microchip.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- Documentation/devicetree/bindings/spi/spi_atmel.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/spi/spi_atmel.txt b/Documentation/devicetree/bindings/spi/spi_atmel.txt
-index f99c733d75c1..5bb4a8f1df7a 100644
---- a/Documentation/devicetree/bindings/spi/spi_atmel.txt
-+++ b/Documentation/devicetree/bindings/spi/spi_atmel.txt
-@@ -1,7 +1,7 @@
- Atmel SPI device
- 
- Required properties:
--- compatible : should be "atmel,at91rm9200-spi".
-+- compatible : should be "atmel,at91rm9200-spi" or "microchip,sam9x60-spi".
- - reg: Address and length of the register set for the device
- - interrupts: Should contain spi interrupt
- - cs-gpios: chipselects (optional for SPI controller version >= 2 with the
--- 
-2.20.1
-
+> What does 'power mode' mean? IIRC, some DW MACs have a clock for WoL
+> called LPI or something. Are you sure this is ST specific and not DW
+> config or version specific?
 
 _______________________________________________
 linux-arm-kernel mailing list
