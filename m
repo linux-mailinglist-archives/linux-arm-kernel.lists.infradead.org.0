@@ -2,90 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8DCA13610A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 20:26:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80A3F13615E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 20:48:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OB49ref5uIyEoVC9FUalYTrbDx9Ea5H1KQ/nxu3Whxo=; b=j+mpgIKW5wPX+h
-	H37jzujcBBmKvaXWe+RXkDtjrDAMbZWyS5n7W6Pxl+srme24oMXc3BF8sNpTozI466DIPApPnzaKU
-	ChTGLUM00IOC2YszSRxRL72VK/ZmoaYXJXbSdUkJ3MLL4yL0sLma++XlrGVF5fpIsFcRets7wyd/y
-	dTK20lJfrnrIa+OJuhAmZxf9Lox+glidbwrwAnbwilH5DYS5QmpPl4Sa6B4PxcyULwaONLu6pSfoh
-	9dPmsOKA5p8K0DcZIsNpnEPza8f9Qm7EQUs6CJz7xX6XVqnjItk0GE4EyIDExA7sg0E3Kc4UhKHM9
-	rmaI/FDX3rW4WimLxE+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KEt0Dn66dpG/bVYzwhQDn0aqjGtHoay9k1iuuXaZ+UI=; b=TonSzXraRl3EsEsT9ZjjTbvO6
+	PBY66cXbNRKosCSpbJWGBE+X71fnjPx6kNUAd8YdhElkdGUQzNkOHDZi1EHu0xC8aA0rIbGUcfICU
+	YaDs9XaBhekxWllX8My/ZdyFphRAf03kLTOUZ23KCYyDWGqt1D4yPPTVGCeTLot9fqTQo27Z/O/5A
+	BYogj0zYr4aPrsI9U4SC5BS9iHDFSp4CSnAOU8r4sRPzvbtwCOBr6TI0HMlpSl9Nh6G7Cd8KT8POu
+	B9Q7ZqcY+cDEJX3e1GoRqRruIPLxOPIJeeMQU0AT5KyPwNTRHpLcGl7x/V76eGhPhZINJRVdTDPYQ
+	jNQz5pX3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipdRY-0007VY-9y; Thu, 09 Jan 2020 19:26:08 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1ipdmd-0000AT-Rb; Thu, 09 Jan 2020 19:47:55 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipdRO-0007Uf-8u
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 19:26:01 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1578597958; h=In-Reply-To: Content-Type: MIME-Version:
- References: Message-ID: Subject: Cc: To: From: Date: Sender;
- bh=P7iT6C4yS6d0pj4gGc3+4Aans4LpK2LQk8W2gXRqLqE=;
- b=TboG/PhGTZ9UYMCdGn/fqmM9FASSp59FWTkdl2iU+/Ns9KlpdjoIWCZ+aYaqAmL6iHQ/AbZk
- 2Le5kUU/cSYYvZozwEracaoCjG7yVWr8+l7IOS9ZmfbYFJlM7CvXDKrjum4onFfbcu32cHjy
- q7surRL9PNytwyESZiY9mAIXcZM=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e177e40.7f828cb111f0-smtp-out-n02;
- Thu, 09 Jan 2020 19:25:52 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id BFD70C447A1; Thu,  9 Jan 2020 19:25:51 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jcrouse)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 8F006C433CB;
- Thu,  9 Jan 2020 19:25:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 8F006C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-Date: Thu, 9 Jan 2020 12:25:47 -0700
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v3 2/5] iommu/arm-smmu: Add support for split pagetables
-Message-ID: <20200109192547.GA14008@jcrouse1-lnx.qualcomm.com>
-Mail-Followup-To: Will Deacon <will@kernel.org>,
- iommu@lists.linux-foundation.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joerg Roedel <joro@8bytes.org>
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
- <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
- <20200109143333.GB12236@willie-the-truck>
+ id 1ipdmX-0008Sw-B3
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 19:47:50 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q8so3846020pfh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 11:47:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=tOr15WETxbkLw/hVhIIJI77xVs+gy+a9H8+1jFpIRfc=;
+ b=cG0QOwda3n2lMKGGwl2gvG+FY0g5k14CGaWhbv4nmRcoT2JX4qtut3O08AYJiZSsJ1
+ cr8cRqsI97d5/bOkzP8tKl3Tt9qtR5JvXtPKrWUCiPl4DV38hUy0eNUJDkm8kHbJEuBE
+ yaFZx1vNucRxrssnQpATjd86jpNCMGp+2Uyc8U06zuHuUL2AoQcrnZJ+y884oRxt8t+n
+ VRC8uxlGUAtadaiER22t+8Zb5vtrFxei+x4QHt8BHfVM01jX4dRRdZl9Mv3Dje2YTVYW
+ tV4Ihp6XBYA3izk3Ms3j7QY4sBnbwek7lIwiWDhHQ5xPFFbll2klVlmKSmR8wUaYCyZ9
+ y5qQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=tOr15WETxbkLw/hVhIIJI77xVs+gy+a9H8+1jFpIRfc=;
+ b=NxYMnltF3kf3jw/O9QMkVZzh57CsIQLTu3nCxF6a56ZqXv10+jDt0PuyM5TOHjlVKj
+ hXFVA0qqAJKkuv4tu4g9bc0CX/MqXT0rWrxf+rpncQ7hSGzs6ur+ccEumMefwM2sD2dM
+ ABRAr3O7vHXOJfkhad34HjXOF+MsdoxELAny8YsjUoAIosXY2WiKKb/YkfG+CjBzRHUR
+ 9oWvyxYlzJ8EkxsW8ZwkCffikJvnodK8LhMBNHV2krtCGZDBukNRKw4JEPqnuoE1POsq
+ k7rbo2MYZI7eOKLCY3jZXfAPe2aJBCnQSx+1+mDfz1x48kadAN3mG4ESXQfsfGUcXrFW
+ T9Jg==
+X-Gm-Message-State: APjAAAUB2IglPpZXR6d7knm7Ncv9Qy/dWKUokwQgWNJA+/mdQ35zuS7w
+ q1qWrpDAphmNmYZvBh0vFiOvWA==
+X-Google-Smtp-Source: APXvYqzh23zJ0M/6YUkb1gak5IeC/b1rxGMe/2+na8ui5AM37mG7vNvlQ/Y50JVkaXV8dlCW2yJyFQ==
+X-Received: by 2002:a62:e30f:: with SMTP id g15mr235672pfh.124.1578599265739; 
+ Thu, 09 Jan 2020 11:47:45 -0800 (PST)
+Received: from gnomeregan01.cam.corp.google.com
+ ([2620:15c:6:14:50b7:ffca:29c4:6488])
+ by smtp.googlemail.com with ESMTPSA id z130sm8572761pgz.6.2020.01.09.11.47.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 09 Jan 2020 11:47:44 -0800 (PST)
+Subject: Re: [PATCH 00/14] KVM: x86/mmu: Huge page fixes, cleanup, and DAX
+To: Sean Christopherson <sean.j.christopherson@intel.com>,
+ Paolo Bonzini <pbonzini@redhat.com>
+References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
+From: Barret Rhoden <brho@google.com>
+Message-ID: <e3e12d17-32e4-84ad-94da-91095d999238@google.com>
+Date: Thu, 9 Jan 2020 14:47:41 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200109143333.GB12236@willie-the-truck>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_112559_082591_165DE955 
-X-CRM114-Status: GOOD (  32.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_114749_408007_C38F5D0A 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,233 +107,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@ozlabs.org>,
+ linux-mm@kvack.org, kvmarm@lists.cs.columbia.edu,
+ Andrea Arcangeli <aarcange@redhat.com>, Dave Jiang <dave.jiang@intel.com>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>,
+ syzbot+c9d1fb51ac9d0d10c39d@syzkaller.appspotmail.com,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ Liran Alon <liran.alon@oracle.com>, Andy Lutomirski <luto@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Jason Zeng <jason.zeng@intel.com>, Vitaly Kuznetsov <vkuznets@redhat.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 02:33:34PM +0000, Will Deacon wrote:
-> On Mon, Dec 16, 2019 at 09:37:48AM -0700, Jordan Crouse wrote:
-> > Add support to enable split pagetables (TTBR1) if the supporting driver
-> > requests it via the DOMAIN_ATTR_SPLIT_TABLES flag. When enabled, the driver
-> > will set up the TTBR0 and TTBR1 regions and program the default domain
-> > pagetable on TTBR1.
-> > 
-> > After attaching the device, the value of he domain attribute can
-> > be queried to see if the split pagetables were successfully programmed.
-> > Furthermore the domain geometry will be updated so that the caller can
-> > determine the active region for the pagetable that was programmed.
-> > 
-> > Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> > ---
-> > 
-> >  drivers/iommu/arm-smmu.c | 40 +++++++++++++++++++++++++++++++++++-----
-> >  drivers/iommu/arm-smmu.h | 45 +++++++++++++++++++++++++++++++++++++++------
-> >  2 files changed, 74 insertions(+), 11 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > index c106406..7b59116 100644
-> > --- a/drivers/iommu/arm-smmu.c
-> > +++ b/drivers/iommu/arm-smmu.c
-> > @@ -538,9 +538,17 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> >  			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
-> >  			cb->ttbr[1] = 0;
-> >  		} else {
-> > -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > -			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > -			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > +			if (pgtbl_cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> > +				cb->ttbr[0] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > +				cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > +				cb->ttbr[1] |=
-> > +					FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > +			} else {
-> > +				cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > +				cb->ttbr[0] |=
-> > +					FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > +				cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > +			}
+Hi -
+
+On 1/8/20 3:24 PM, Sean Christopherson wrote:
+> This series is a mix of bug fixes, cleanup and new support in KVM's
+> handling of huge pages.  The series initially stemmed from a syzkaller
+> bug report[1], which is fixed by patch 02, "mm: thp: KVM: Explicitly
+> check for THP when populating secondary MMU".
 > 
-> I still don't understand why you have to set the ASID in both of the TTBRs.
-> Assuming TCR.A1 is clear, then we should only need to set the field in
-> TTBR0.
+> While investigating options for fixing the syzkaller bug, I realized KVM
+> could reuse the approach from Barret's series to enable huge pages for DAX
+> mappings in KVM[2] for all types of huge mappings, i.e. walk the host page
+> tables instead of querying metadata (patches 05 - 09).
 
-This is mostly out of a sense of symmetry with the non-split configuration. I'll
-clean it up.
+Thanks, Sean.  I tested this patch series out, and it works for me. 
+(Huge KVM mappings of a DAX file, etc.).
 
-> 
-> >  		}
-> >  	} else {
-> >  		cb->ttbr[0] = pgtbl_cfg->arm_lpae_s2_cfg.vttbr;
-> > @@ -651,6 +659,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
-> >  	enum io_pgtable_fmt fmt;
-> >  	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> >  	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> > +	u32 quirks = 0;
-> >  
-> >  	mutex_lock(&smmu_domain->init_mutex);
-> >  	if (smmu_domain->smmu)
-> > @@ -719,6 +728,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
-> >  		oas = smmu->ipa_size;
-> >  		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
-> >  			fmt = ARM_64_LPAE_S1;
-> > +			if (smmu_domain->split_pagetables)
-> > +				quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
-> >  		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
-> >  			fmt = ARM_32_LPAE_S1;
-> >  			ias = min(ias, 32UL);
-> > @@ -788,6 +799,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
-> >  		.coherent_walk	= smmu->features & ARM_SMMU_FEAT_COHERENT_WALK,
-> >  		.tlb		= smmu_domain->flush_ops,
-> >  		.iommu_dev	= smmu->dev,
-> > +		.quirks		= quirks,
-> >  	};
-> >  
-> >  	if (smmu_domain->non_strict)
-> > @@ -801,8 +813,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
-> >  
-> >  	/* Update the domain's page sizes to reflect the page table format */
-> >  	domain->pgsize_bitmap = pgtbl_cfg.pgsize_bitmap;
-> > -	domain->geometry.aperture_end = (1UL << ias) - 1;
-> > -	domain->geometry.force_aperture = true;
-> > +
-> > +	if (pgtbl_cfg.quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> > +		domain->geometry.aperture_start = ~((1ULL << ias) - 1);
-> > +		domain->geometry.aperture_end = ~0UL;
-> > +	} else {
-> > +		domain->geometry.aperture_end = (1UL << ias) - 1;
-> > +		domain->geometry.force_aperture = true;
-> > +		smmu_domain->split_pagetables = false;
-> > +	}
-> >  
-> >  	/* Initialise the context bank with our page table cfg */
-> >  	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
-> > @@ -1484,6 +1503,9 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
-> >  		case DOMAIN_ATTR_NESTING:
-> >  			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
-> >  			return 0;
-> > +		case DOMAIN_ATTR_SPLIT_TABLES:
-> > +			*(int *)data = smmu_domain->split_pagetables;
-> > +			return 0;
-> >  		default:
-> >  			return -ENODEV;
-> >  		}
-> > @@ -1524,6 +1546,14 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
-> >  			else
-> >  				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
-> >  			break;
-> > +		case DOMAIN_ATTR_SPLIT_TABLES:
-> > +			if (smmu_domain->smmu) {
-> > +				ret = -EPERM;
-> > +				goto out_unlock;
-> > +			}
-> > +			if (*(int *)data)
-> > +				smmu_domain->split_pagetables = true;
-> > +			break;
-> >  		default:
-> >  			ret = -ENODEV;
-> >  		}
-> > diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> > index afab9de..68526cc 100644
-> > --- a/drivers/iommu/arm-smmu.h
-> > +++ b/drivers/iommu/arm-smmu.h
-> > @@ -177,6 +177,16 @@ enum arm_smmu_cbar_type {
-> >  #define TCR_IRGN0			GENMASK(9, 8)
-> >  #define TCR_T0SZ			GENMASK(5, 0)
-> >  
-> > +#define TCR_TG1				GENMASK(31, 30)
-> > +
-> > +#define TG0_4K				0
-> > +#define TG0_64K				1
-> > +#define TG0_16K				2
-> > +
-> > +#define TG1_16K				1
-> > +#define TG1_4K				2
-> > +#define TG1_64K				3
-> > +
-> >  #define ARM_SMMU_CB_CONTEXTIDR		0x34
-> >  #define ARM_SMMU_CB_S1_MAIR0		0x38
-> >  #define ARM_SMMU_CB_S1_MAIR1		0x3c
-> > @@ -329,16 +339,39 @@ struct arm_smmu_domain {
-> >  	struct mutex			init_mutex; /* Protects smmu pointer */
-> >  	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
-> >  	struct iommu_domain		domain;
-> > +	bool				split_pagetables;
-> >  };
-> >  
-> > +static inline u32 arm_smmu_lpae_tcr_tg(struct io_pgtable_cfg *cfg)
-> > +{
-> > +	u32 val;
-> > +
-> > +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
-> > +		return FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg);
-> > +
-> > +	val = FIELD_PREP(TCR_TG1, cfg->arm_lpae_s1_cfg.tcr.tg);
-> > +
-> > +	if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_4K)
-> > +		val |= FIELD_PREP(TCR_TG0, TG0_4K);
-> > +	else if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_16K)
-> > +		val |= FIELD_PREP(TCR_TG0, TG0_16K);
-> > +	else
-> > +		val |= FIELD_PREP(TCR_TG0, TG0_64K);
-> 
-> This looks like it's making assumptions about the order in which page-tables
-> are installed, which I'd really like to avoid. See below.
+Thanks,
 
-> >  static inline u32 arm_smmu_lpae_tcr(struct io_pgtable_cfg *cfg)
-> >  {
-> > -	return TCR_EPD1 |
-> > -	       FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg) |
-> > -	       FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> > -	       FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> > -	       FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> > -	       FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> > +	u32 tcr = FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> > +		FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> > +		FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> > +		FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> > +
-> > +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
-> > +		return tcr | TCR_EPD1 | arm_smmu_lpae_tcr_tg(cfg);
-> 
-> This is interesting. If the intention is to have both TTBR0 and TTBR1
-> used concurrently by different domains, then we probably need to be a bit
-> smarter about setting TCR_EPDx. Can we do something like start off with them
-> both set, and then just clear the one we want when installing a page-table?
+Barret
 
-My intention is that there should only be one domain that programs the hardware
-and installs the TTBR1 page-table.
 
-Under the proposed design [1] we used an aux domain that was basically a wrapper
-for a page-table and a domain attribute to return the physical address of the
-page-table to the GPU hardware which can program the TTBR0 register at runtime
-[2].  
 
-The object of this patch is that in split pagetable mode the "master" domain
-programs both the TTBR0 and TTBR1 sides of the TCR register but leaves the
-actual TTBR0 register empty for the GPU to manage.
-
-The GPU isn't currently set up to program register configuration outside of
-swapping the TTBR0 register and hitting the TIBALL bit which is part of an
-built in opcode and its not practical to add TCR configuration to the mix.
-
-I also feel pretty strongly that we should leave register configuration to the
-arm-smmu driver as much as possible so that was my motivation for doing this
-patch in this manner.
-
-Jordan
-
-[1] https://patchwork.freedesktop.org/patch/306117/
-[2] https://patchwork.freedesktop.org/patch/307616/?series=57441&rev=3
-
-> Will
-
--- 
-The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
-a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
