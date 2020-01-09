@@ -2,100 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80A3F13615E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 20:48:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28AEC13616A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 20:49:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KEt0Dn66dpG/bVYzwhQDn0aqjGtHoay9k1iuuXaZ+UI=; b=TonSzXraRl3EsEsT9ZjjTbvO6
-	PBY66cXbNRKosCSpbJWGBE+X71fnjPx6kNUAd8YdhElkdGUQzNkOHDZi1EHu0xC8aA0rIbGUcfICU
-	YaDs9XaBhekxWllX8My/ZdyFphRAf03kLTOUZ23KCYyDWGqt1D4yPPTVGCeTLot9fqTQo27Z/O/5A
-	BYogj0zYr4aPrsI9U4SC5BS9iHDFSp4CSnAOU8r4sRPzvbtwCOBr6TI0HMlpSl9Nh6G7Cd8KT8POu
-	B9Q7ZqcY+cDEJX3e1GoRqRruIPLxOPIJeeMQU0AT5KyPwNTRHpLcGl7x/V76eGhPhZINJRVdTDPYQ
-	jNQz5pX3w==;
+	 bh=0wlLLgStH2jVFdDBAXn5BRYwld9bnzZ6fWvPZwHYCMw=; b=fpHz0I8VP80OUG0bZ46XWbMaw
+	6rcTWEsz71Kl5Mw+39EWotmUhNfUCHeI2BDlEp+E3jhBx2esa88DZBJymx6ErRN06Qka613kQgZPQ
+	li1a7qoKA0n2Ct70b24WtElb1INQVmvJf2fxzjdVgyn7jSzCgwC2Y8LaOAxTzd5UySnroUZcVgm5f
+	VbaWyp9Z5oPCnhzx4RuB+7TThmaOujcwpp6kkP2Aj68RnlEIdrDu7kNaK8gyzaGXInjolTnIm/N5q
+	94Th5msZ7vCHY8HpcbYjIZ1t4XHAAenCL0fwCPXYxnHu5DWaAGVe/2GobQdP0Skwz2viZjuIYXTe5
+	zDVojLOCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipdmd-0000AT-Rb; Thu, 09 Jan 2020 19:47:55 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipdmX-0008Sw-B3
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 19:47:50 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q8so3846020pfh.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 11:47:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=tOr15WETxbkLw/hVhIIJI77xVs+gy+a9H8+1jFpIRfc=;
- b=cG0QOwda3n2lMKGGwl2gvG+FY0g5k14CGaWhbv4nmRcoT2JX4qtut3O08AYJiZSsJ1
- cr8cRqsI97d5/bOkzP8tKl3Tt9qtR5JvXtPKrWUCiPl4DV38hUy0eNUJDkm8kHbJEuBE
- yaFZx1vNucRxrssnQpATjd86jpNCMGp+2Uyc8U06zuHuUL2AoQcrnZJ+y884oRxt8t+n
- VRC8uxlGUAtadaiER22t+8Zb5vtrFxei+x4QHt8BHfVM01jX4dRRdZl9Mv3Dje2YTVYW
- tV4Ihp6XBYA3izk3Ms3j7QY4sBnbwek7lIwiWDhHQ5xPFFbll2klVlmKSmR8wUaYCyZ9
- y5qQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=tOr15WETxbkLw/hVhIIJI77xVs+gy+a9H8+1jFpIRfc=;
- b=NxYMnltF3kf3jw/O9QMkVZzh57CsIQLTu3nCxF6a56ZqXv10+jDt0PuyM5TOHjlVKj
- hXFVA0qqAJKkuv4tu4g9bc0CX/MqXT0rWrxf+rpncQ7hSGzs6ur+ccEumMefwM2sD2dM
- ABRAr3O7vHXOJfkhad34HjXOF+MsdoxELAny8YsjUoAIosXY2WiKKb/YkfG+CjBzRHUR
- 9oWvyxYlzJ8EkxsW8ZwkCffikJvnodK8LhMBNHV2krtCGZDBukNRKw4JEPqnuoE1POsq
- k7rbo2MYZI7eOKLCY3jZXfAPe2aJBCnQSx+1+mDfz1x48kadAN3mG4ESXQfsfGUcXrFW
- T9Jg==
-X-Gm-Message-State: APjAAAUB2IglPpZXR6d7knm7Ncv9Qy/dWKUokwQgWNJA+/mdQ35zuS7w
- q1qWrpDAphmNmYZvBh0vFiOvWA==
-X-Google-Smtp-Source: APXvYqzh23zJ0M/6YUkb1gak5IeC/b1rxGMe/2+na8ui5AM37mG7vNvlQ/Y50JVkaXV8dlCW2yJyFQ==
-X-Received: by 2002:a62:e30f:: with SMTP id g15mr235672pfh.124.1578599265739; 
- Thu, 09 Jan 2020 11:47:45 -0800 (PST)
-Received: from gnomeregan01.cam.corp.google.com
- ([2620:15c:6:14:50b7:ffca:29c4:6488])
- by smtp.googlemail.com with ESMTPSA id z130sm8572761pgz.6.2020.01.09.11.47.42
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Jan 2020 11:47:44 -0800 (PST)
-Subject: Re: [PATCH 00/14] KVM: x86/mmu: Huge page fixes, cleanup, and DAX
-To: Sean Christopherson <sean.j.christopherson@intel.com>,
- Paolo Bonzini <pbonzini@redhat.com>
-References: <20200108202448.9669-1-sean.j.christopherson@intel.com>
-From: Barret Rhoden <brho@google.com>
-Message-ID: <e3e12d17-32e4-84ad-94da-91095d999238@google.com>
-Date: Thu, 9 Jan 2020 14:47:41 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ipdoN-0000XL-JM; Thu, 09 Jan 2020 19:49:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipdoF-0000WI-0K; Thu, 09 Jan 2020 19:49:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2264531B;
+ Thu,  9 Jan 2020 11:49:32 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CFEA3F534;
+ Thu,  9 Jan 2020 11:49:31 -0800 (PST)
+Date: Thu, 9 Jan 2020 19:49:30 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
+ for the GPU
+Message-ID: <20200109194930.GD3702@sirena.org.uk>
+References: <20200108052337.65916-1-drinkcat@chromium.org>
+ <20200108052337.65916-5-drinkcat@chromium.org>
+ <20200108132302.GA3817@sirena.org.uk>
+ <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
+ <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
+ <20200109162814.GB3702@sirena.org.uk>
+ <a40baddb-cbab-d8fc-3fd9-0582f1b5b24e@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200108202448.9669-1-sean.j.christopherson@intel.com>
-Content-Language: en-US
+In-Reply-To: <a40baddb-cbab-d8fc-3fd9-0582f1b5b24e@arm.com>
+X-Cookie: Killing turkeys causes winter.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_114749_408007_C38F5D0A 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200109_114935_136161_4879AD03 
+X-CRM114-Status: GOOD (  29.39  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,51 +70,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@ozlabs.org>,
- linux-mm@kvack.org, kvmarm@lists.cs.columbia.edu,
- Andrea Arcangeli <aarcange@redhat.com>, Dave Jiang <dave.jiang@intel.com>,
- linux-nvdimm <linux-nvdimm@lists.01.org>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>,
- syzbot+c9d1fb51ac9d0d10c39d@syzkaller.appspotmail.com,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- Liran Alon <liran.alon@oracle.com>, Andy Lutomirski <luto@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Jason Zeng <jason.zeng@intel.com>, Vitaly Kuznetsov <vkuznets@redhat.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============1941268867205470007=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi -
 
-On 1/8/20 3:24 PM, Sean Christopherson wrote:
-> This series is a mix of bug fixes, cleanup and new support in KVM's
-> handling of huge pages.  The series initially stemmed from a syzkaller
-> bug report[1], which is fixed by patch 02, "mm: thp: KVM: Explicitly
-> check for THP when populating secondary MMU".
-> 
-> While investigating options for fixing the syzkaller bug, I realized KVM
-> could reuse the approach from Barret's series to enable huge pages for DAX
-> mappings in KVM[2] for all types of huge mappings, i.e. walk the host page
-> tables instead of querying metadata (patches 05 - 09).
-
-Thanks, Sean.  I tested this patch series out, and it works for me. 
-(Huge KVM mappings of a DAX file, etc.).
-
-Thanks,
-
-Barret
+--===============1941268867205470007==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="pQhZXvAqiZgbeUkD"
+Content-Disposition: inline
 
 
+--pQhZXvAqiZgbeUkD
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Thu, Jan 09, 2020 at 04:53:02PM +0000, Steven Price wrote:
+> On 09/01/2020 16:28, Mark Brown wrote:
+> > On Thu, Jan 09, 2020 at 02:14:42PM +0000, Steven Price wrote:
+
+> > > I'm not sure if it's better, but could we just encode the list of
+> > > regulators into device tree. I'm a bit worried about special casing an
+> > > "sram" regulator given that other platforms might have a similar
+> > > situation but call the second regulator a different name.
+
+> > Obviously the list of regulators bound on a given platform is encoded in
+> > the device tree but you shouldn't really be relying on that to figure
+> > out what to request in the driver - the driver should know what it's
+> > expecting.
+
+> From a driver perspective we don't expect to have to worry about power
+> domains/multiple regulators - the hardware provides a bunch of power
+> registers to turn on/off various parts of the hardware and this should be
+> linked (in hardware) to a PDC which sorts it out. The GPU/PDC handles the
+> required sequencing. So it *should* be a case of turn power/clocks on and
+> go.
+
+Ah, the well abstracted and consistent hardware with which we are all so
+fortunate to work :) .  More seriously perhaps the thing to do here is
+create a driver that provides a soft PDC and then push all the special
+case handling into that?  It can then get instantiated based on the
+compatible or perhaps represented directly in the device tree if that
+makes sense.
+
+> However certain integrations may have quirks such that there are physically
+> multiple supplies. These are expected to all be turned on before using the
+> GPU. Quite how this is best represented is something I'm not sure about.
+
+If they're always on and don't ever change then that's really easy to
+represent in the DT without involving drivers, it's when you need to
+actively manage them that it's more effort.
+
+> > Bear in mind that getting regulator stuff wrong can result
+> > in physical damage to the system so it pays to be careful and to
+> > consider that platform integrators have a tendency to rely on things
+> > that just happen to work but aren't a good idea or accurate
+> > representations of the system.  It's certainly *possible* to do
+> > something like that, the information is there, but I would not in any
+> > way recommend doing things that way as it's likely to not be robust.
+
+> > The possibility that the regulator setup may vary on other platforms
+> > (which I'd expect TBH) does suggest that just requesting a bunch of
+> > supply names optionally and hoping that we got all the ones that are
+> > important on a given platform is going to lead to trouble down the line.
+
+> Certainly if we miss a regulator the GPU isn't going to work properly (some
+> cores won't be able to power up successfully). However at the moment the
+> driver will happily do this if someone provides it with a DT which includes
+> regulators that it doesn't know about. So I'm not sure how adding special
+> case code for a SoC would help here.
+
+I thought this SoC neeed to vary the voltage on both rails as part of
+the power management?  Things like that can lead to hardware damage if
+we go out of spec far enough for long enough - there can be requirements
+like keeping one rail a certain voltage above another or whatever.
+
+--pQhZXvAqiZgbeUkD
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4Xg8kACgkQJNaLcl1U
+h9DhIQf9HZ2Q1blNvGt1n4U2y9oZgTgphMEa0JMJU6uCB4DzokV/ki8co9SwPcFC
+feV+gosXXo6A98jenPsWIobEfWSUiwEYa5w3ClUYlcVrKLIwlUmThXvSiIS1+uva
+LEnxvF+4WP37piAr891qK5iZdpOoMniy8m1bBXSm75midArEGcV2rqCorXEStIih
+LNey+eFBxgweMQNmVL/FElCItrW6+x9HyxEGdBL4TLDMOpxC1cb/qyQUs9dAlRwQ
+evp+V1ZYh5rSuQqAF5XEJwA+f8k33X0VJki7BJ+Nh3IkQpVWtg0ORKW3e4hw5+DW
+B6Gvn1/3P+OYjc/Azm6w18G1USraiQ==
+=M45L
+-----END PGP SIGNATURE-----
+
+--pQhZXvAqiZgbeUkD--
+
+
+--===============1941268867205470007==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1941268867205470007==--
+
