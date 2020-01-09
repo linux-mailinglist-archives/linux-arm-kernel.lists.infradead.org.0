@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF5D6135A58
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:39:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDCB3135A5E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 14:40:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xGB7U/Z/VuRy1Yw/QoZa3+SaQnaN8YVeYJZ9sdbVl9A=; b=Erikmce213rizv
-	6+a4TG3pVHLmXnpT8cXSSV9qww1LCmgMU9EP98p3FrhjT6xSCETD/wAbIkOwkCrn3/CiBdWErf87h
-	TCGX1MLzPXBrh5FMi7jN6GcYZPsbxYY6+yq5aUzI331M2tH0p5fao3jTrQSeW6tDocjjWsEBOtRTD
-	1jzCY4mH/C9ThRZulO8e9kPf/M/ZW+LFiveCmAXwfet5rCUMPbQd/1YSoVcbVbdNJ5AApUewT+p9F
-	s1CC7ydNwf3WraWDvkenTKV1Iqb68Z6wmGqiTbfYxhaEjuBSb8Y9RoLt2uin04v4UVDx+dItq7rMv
-	HZvMs4uFnHaIIAxjUsIw==;
+	List-Owner; bh=8OOYVs8gZqtwJn/EiqOnkr9ufc0vx3zSbA/Bj5CiXsA=; b=EsQiV431+idpoe
+	FaNa1bH7N8suuQnvJEcmSPMsqQ8w/Fh6Q6XyTwZBdO37moJ7e/KEsDz0jTKZJUaDsRZw/Dg/T0pGz
+	ghKQ2OUOCw0iURW6/BIYfN3PWVNBPAGzoYqHj+jju5St3qqtSBl3ePBes2nSo84RmKasFbPoe0nXx
+	qyEN4pB/SZq73vXkBEVCVNUV5b35FFsBwcuRCd2g/1j8a6Oj6OuST6az5AfODCmGIvY1jJ+R2ohZ1
+	ZmYUSkegJAMkkkthdL9x0EynEmJjbXdGzmZ6l21dprTF7b6msNEOxvD8XayDHJFBRsjFZFcHoT2Ob
+	ZJp69oGgWyg6jgst/bcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipY2M-0004dP-27; Thu, 09 Jan 2020 13:39:46 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ipY2b-0004s0-4y; Thu, 09 Jan 2020 13:40:01 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipY1w-0004QY-Vs
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:39:22 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a5so2979060wmb.0
+ id 1ipY1y-0004Qy-OT
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 13:39:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j42so7368149wrj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 05:39:20 -0800 (PST)
+ Thu, 09 Jan 2020 05:39:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=iSLBbyZMom5Gh2asx6vSf9spPxO1dtGNpvUOI6kKFOE=;
- b=QJIiAeT3487JndkFw1jxkB1fCvzWWv1O/7PNOPDhXs5owXnctuTcuHcb1znb8OtuO9
- Yu4bJeEkL3whooM4CuY9LnTpi+PR2IOFXUY1iqV0UG2KmRoaITgkSSog+eyBrDp1yh9N
- Va/CFMOSakJqAkXehUGqRdpGniZFLlTrYVtGhWmq7YHBBMcsrEJHkXfK0PzXXtY4mEr/
- iQk1hg9dVrsTPRwOAKBoBUQGre82zVyKrNN3a0xplz322eKPr+GuXIlXUUoyFDInhKQI
- 5MVkN5kYQJrZC0Z86vsy6hfZC48nhM5DP0DPS0kRcBxmqWUURi0P0ocbfA0N0ZaN4hZ8
- kyPg==
+ bh=r7WTFcFTk1QmmtFD4T5h5vDKOxEbNevvnGjMspC9SaQ=;
+ b=yB+cXjham6iu3QWUiauzuVhna2pI/lM3ap1PyFVUgIdf30z80pj5V0REouRFMrmXeb
+ bxHZZ3PvHKPP1+LkEXDd9Gde0FPU3HRc6pALcVoVz4lW2JKgdN0qWpOloTRNYIs/+JsR
+ PSr02LwEXLY1Y/8kDuEkbMsnKt4iK9RpGiq8N37cls+E7WBdBvMQ5VG3g0bU9P5m1pAj
+ 51cSJpVp2nw7HJlV1B8w/yUNvoa0uM6JoiyXEAJ1fugzcAE+Afj/1kFkgl1t2A0lGBwg
+ 9G4vyVJtLJNKoBaMVpn60KFoDIlCkBGHlcsfaTMcrFK22AH2+5s8G1GXHWwx7xsyy6iR
+ 07hQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=iSLBbyZMom5Gh2asx6vSf9spPxO1dtGNpvUOI6kKFOE=;
- b=C2C4Dzqisgps8NTECvOT3MdJuyvs68O6EL8Zp1Q70Nl8xYjO82gUnglAOmEhHbCEon
- 9LnbmAt5A1hDAHoBvVCQHv/ew3Ye8ZkWk4ODcPECfBko2vjb2g1oX6/BCH9ctU8J0cjD
- 2Xg2P2qCH8DOX6bpfY5rj47MeX+RnaM+zC/KSv5Tq8GFPJOz2iGtPGIwWbEJsn3usOUy
- H3qYTSgk7OF2N2KSEz/fAL6N2fKA9OCyAtQ1MjS6+akLBZu8Yqx959iUYWg0s2gAsihi
- w3jUKzcxFYfTami/FmcXY/9uLD1OsPk5XI5FYBuzX/9eQpCR4AjHgECvuFdN7Db/etDh
- I5xw==
-X-Gm-Message-State: APjAAAUs7fx4d7/Uu+MCuQyXLz50et+Btgb4aApQzEcyH9OozbfE7laF
- 6rdtahBYBsFf6nkYeyB+mmJuM7/bRrbsRQ==
-X-Google-Smtp-Source: APXvYqwGbw1JXeoKM7gwrs21nIc0OoNINaE7UVW4HZCYixEZBd/0C48GvM2p3JS33LvusyNKo9Tkag==
-X-Received: by 2002:a1c:81ce:: with SMTP id c197mr5072174wmd.96.1578577159200; 
- Thu, 09 Jan 2020 05:39:19 -0800 (PST)
+ bh=r7WTFcFTk1QmmtFD4T5h5vDKOxEbNevvnGjMspC9SaQ=;
+ b=RVy46gV/47gfLtrM9B7eAbq7k9ob5f3XoYPV+d+K5fs+GN+oP2AshPIqIQunkUdRTI
+ SAAjmBoF0MSncFURzM16kuY1RQ4KcJI237KA9IMquEVW09yTa78vF2KjNuUVPSwEwV3Y
+ 200UbOJN41pR3xDibV0dAFt/Ahjs/oY+O0FYEh+nDEAEIXzzWADxYw/B2zRdxyl3SaOi
+ qsvuiUp/L8so3KuvHBwK1O/1dmrjtU1BF5oX5zuoqgVdB+krIvZrOunNTpKRofnBRtdJ
+ PgUO9AaUl0enHuTCHOYap40Pd6Nlkl+AX3IZvlIwnBA/tERL/xUQ3VQmyzoPHd3Wtk2r
+ ErWA==
+X-Gm-Message-State: APjAAAVkWYgAtkmjTVFBExT5qqWeYdKrofraggTB/QllWw9gWpBzBSeE
+ jlv0NFe78gX0TQqxSovIBxZxtiRNCZRKig==
+X-Google-Smtp-Source: APXvYqzBNJJfU6vCVqf/kckPeYyOk9us+nNsVs1xLIoX1DFcfCCm47/9vDfpkL8wjDjT2Bi7VzAFnw==
+X-Received: by 2002:a05:6000:118e:: with SMTP id
+ g14mr1797127wrx.39.1578577161031; 
+ Thu, 09 Jan 2020 05:39:21 -0800 (PST)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id q68sm3136809wme.14.2020.01.09.05.39.18
+ by smtp.gmail.com with ESMTPSA id a16sm8167344wrt.37.2020.01.09.05.39.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 Jan 2020 05:39:18 -0800 (PST)
+ Thu, 09 Jan 2020 05:39:20 -0800 (PST)
 From: Michal Simek <michal.simek@xilinx.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/6] arm64: zynqmp: Fix address for tca6416_u97 chip on zcu104
-Date: Thu,  9 Jan 2020 14:39:10 +0100
-Message-Id: <c542d6e305010dd08ff1d434de6f9d1996a6b0d6.1578577147.git.michal.simek@xilinx.com>
+Subject: [PATCH 2/6] arm64: zynqmp: Turn comment to gpio-line-names
+Date: Thu,  9 Jan 2020 14:39:11 +0100
+Message-Id: <5c7d1ef3643f6ac96e8a7c0144da224d8eabc529.1578577147.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <cover.1578577147.git.michal.simek@xilinx.com>
 References: <cover.1578577147.git.michal.simek@xilinx.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_053921_019275_D71C0B67 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20200109_053922_792612_26623337 
+X-CRM114-Status: GOOD (  10.17  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -104,30 +105,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I2c address is not 0x21 but 0x20.
+Label gpio lines properly.
 
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
 
- arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../boot/dts/xilinx/zynqmp-zcu102-revA.dts    | 43 ++++---------------
+ 1 file changed, 9 insertions(+), 34 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
-index 2d71b4431cce..7a4614e3f5fa 100644
---- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
-+++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts
-@@ -118,9 +118,9 @@ i2c@4 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <4>;
--			tca6416_u97: gpio@21 {
-+			tca6416_u97: gpio@20 {
- 				compatible = "ti,tca6416";
--				reg = <0x21>;
-+				reg = <0x20>;
- 				gpio-controller;
- 				#gpio-cells = <2>;
- 				/*
+diff --git a/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revA.dts b/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revA.dts
+index 7c6b538490f8..c96e8416fa7e 100644
+--- a/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revA.dts
++++ b/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revA.dts
+@@ -125,21 +125,11 @@ &i2c0 {
+ 	tca6416_u97: gpio@20 {
+ 		compatible = "ti,tca6416";
+ 		reg = <0x20>;
+-		gpio-controller;
++		gpio-controller; /* IRQ not connected */
+ 		#gpio-cells = <2>;
+-		/*
+-		 * IRQ not connected
+-		 * Lines:
+-		 * 0 - PS_GTR_LAN_SEL0
+-		 * 1 - PS_GTR_LAN_SEL1
+-		 * 2 - PS_GTR_LAN_SEL2
+-		 * 3 - PS_GTR_LAN_SEL3
+-		 * 4 - PCI_CLK_DIR_SEL
+-		 * 5 - IIC_MUX_RESET_B
+-		 * 6 - GEM3_EXP_RESET_B
+-		 * 7, 10 - 17 - not connected
+-		 */
+-
++		gpio-line-names = "PS_GTR_LAN_SEL0", "PS_GTR_LAN_SEL1", "PS_GTR_LAN_SEL2", "PS_GTR_LAN_SEL3",
++				"PCI_CLK_DIR_SEL", "IIC_MUX_RESET_B", "GEM3_EXP_RESET_B",
++				"", "", "", "", "", "", "", "", "";
+ 		gtr-sel0 {
+ 			gpio-hog;
+ 			gpios = <0 0>;
+@@ -169,27 +159,12 @@ gtr-sel3 {
+ 	tca6416_u61: gpio@21 {
+ 		compatible = "ti,tca6416";
+ 		reg = <0x21>;
+-		gpio-controller;
++		gpio-controller; /* IRQ not connected */
+ 		#gpio-cells = <2>;
+-		/*
+-		 * IRQ not connected
+-		 * Lines:
+-		 * 0 - VCCPSPLL_EN
+-		 * 1 - MGTRAVCC_EN
+-		 * 2 - MGTRAVTT_EN
+-		 * 3 - VCCPSDDRPLL_EN
+-		 * 4 - MIO26_PMU_INPUT_LS
+-		 * 5 - PL_PMBUS_ALERT
+-		 * 6 - PS_PMBUS_ALERT
+-		 * 7 - MAXIM_PMBUS_ALERT
+-		 * 10 - PL_DDR4_VTERM_EN
+-		 * 11 - PL_DDR4_VPP_2V5_EN
+-		 * 12 - PS_DIMM_VDDQ_TO_PSVCCO_ON
+-		 * 13 - PS_DIMM_SUSPEND_EN
+-		 * 14 - PS_DDR4_VTERM_EN
+-		 * 15 - PS_DDR4_VPP_2V5_EN
+-		 * 16 - 17 - not connected
+-		 */
++		gpio-line-names = "VCCPSPLL_EN", "MGTRAVCC_EN", "MGTRAVTT_EN", "VCCPSDDRPLL_EN", "MIO26_PMU_INPUT_LS",
++				"PL_PMBUS_ALERT", "PS_PMBUS_ALERT", "MAXIM_PMBUS_ALERT", "PL_DDR4_VTERM_EN",
++				"PL_DDR4_VPP_2V5_EN", "PS_DIMM_VDDQ_TO_PSVCCO_ON", "PS_DIMM_SUSPEND_EN",
++				"PS_DDR4_VTERM_EN", "PS_DDR4_VPP_2V5_EN", "", "";
+ 	};
+ 
+ 	i2c-mux@75 { /* u60 */
 -- 
 2.24.0
 
