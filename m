@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B27CD135C71
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 16:18:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CE8E135C75
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 16:18:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MlCfXTaCh00hm9qW9LfHMrWXXXy47MxNb5qVteWFKw0=; b=B2UM4ocWd4HdXU
-	aVvngwePlRdrImCXuUucRUu++LL36NuKRyXeFhiX8AOla5Nc3CVaYSR0OBweHh7ml4YGjbSF+ZrcY
-	JtghxMi5F53+VxxdcHyJYv0dOY1odW13NEc7+1kp42AkRL6acqVcP2nNX7+WlF7Jvbq+oLmgbk1tr
-	sKYcPD4lF94XYKsGOP/aOAjUPBHUjvTWc8P/d0kSc0cNpguFHOxCDzNYSWWmc9WB2l4E2tsWltCUF
-	22nbxxZIa1QdzkVykzL+TvncdngzF5Wk1hEg7DjpSX8/rzmoU5qkxW6aS+4TcXZDuhb+bpi1v+EDI
-	liYnSQLIOJI1aim+sCBQ==;
+	List-Owner; bh=SFYQsGLXOki+69+TaNlEtN7+uEILC6u2rJ0JDt/EGAs=; b=nSarendDNLp/3Y
+	49bQsyQszxvDbZeiJhu0Rc7KuU/MRmvHwnwfC3MZmUTs/KfLzYtNx7eyFnij9ENW+7hgjq72KFV1Z
+	oaInjGZKk3AGn+pAWaGDCtwerBITBGAP7dbnxhiWaX5gugagKPS3gpZp5rkT1Ar4p2h2jk5LlHUmt
+	lvIVev4lBeOhM/tZOMOIlgjfSLkkz8gzlU0GQ5hUrRrBtcrnW9BOuPjXGBMlWC9Zb710WN20H/Zb/
+	WcPlI/YWbt6ey6frkrV5N5g7TbfWDEEtUx7gSg+Ysxf5NrOxyQK3QbjcpyCnh3eX5Wy5vmHWLy1RR
+	8oI4wgpJ1W+pIGO5NNwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipZZZ-0000M8-Sa; Thu, 09 Jan 2020 15:18:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ipZaC-0000cq-LP; Thu, 09 Jan 2020 15:18:48 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipZZS-0000LM-Tu
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 15:18:04 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 418E4206ED;
- Thu,  9 Jan 2020 15:18:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578583082;
- bh=wwTkulcWNrf8/WnDIcLNGlEiuiK3aNjEJ0Ao6P3jLx8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=V6tQ2nfhWozNQ3WNBxLm/6dfX9TD28B9GdBZdjeTZQ6hOapDoVOaApZajf9G8DOWE
- +eISC137+7dtioAZSNt3iRl/UVkOQKuB/W8iThl/6EcKMphY/hp2e6LQc+anmIdiEh
- Ijd6kQgGCuGIeuG2Y5cPSqWBV0qUYoPUkn7Y/UTs=
-Date: Thu, 9 Jan 2020 15:17:57 +0000
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH] arm64: Set SSBS for user threads while creation
-Message-ID: <20200109151756.GG12236@willie-the-truck>
-References: <1577106146-8999-1-git-send-email-sramana@codeaurora.org>
- <20200102180145.GE27940@arrakis.emea.arm.com>
+ id 1ipZa3-0000cF-IK; Thu, 09 Jan 2020 15:18:41 +0000
+X-Originating-IP: 91.224.148.103
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AA51DE0009;
+ Thu,  9 Jan 2020 15:18:27 +0000 (UTC)
+Date: Thu, 9 Jan 2020 16:18:26 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 3/3] mtd: onenand: Enable compile testing of OMAP and
+ Samsung drivers
+Message-ID: <20200109161826.7fda02a4@xps13>
+In-Reply-To: <20191231073339.GA6747@pi3>
+References: <20191229183612.22133-3-krzk@kernel.org>
+ <201912310904.9iM6MaFr%lkp@intel.com> <20191231073339.GA6747@pi3>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200102180145.GE27940@arrakis.emea.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_071802_988430_6F699F6E 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200109_071839_738655_D509E640 
+X-CRM114-Status: GOOD (  12.76  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,45 +65,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, linux-arm-msm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Srinivas Ramana <sramana@codeaurora.org>,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-samsung-soc@vger.kernel.org, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, Richard Weinberger <richard@nod.at>,
+ linux-kernel@vger.kernel.org, Kyungmin Park <kyungmin.park@samsung.com>,
+ linux-mtd@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Vignesh Raghavendra <vigneshr@ti.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 02, 2020 at 06:01:45PM +0000, Catalin Marinas wrote:
-> On Mon, Dec 23, 2019 at 06:32:26PM +0530, Srinivas Ramana wrote:
-> > Current SSBS implementation takes care of setting the
-> > SSBS bit in start_thread() for user threads. While this works
-> > for tasks launched with fork/clone followed by execve, for cases
-> > where userspace would just call fork (eg, Java applications) this
-> > leaves the SSBS bit unset. This results in performance
-> > regression for such tasks.
-> > 
-> > It is understood that commit cbdf8a189a66 ("arm64: Force SSBS
-> > on context switch") masks this issue, but that was done for a
-> > different reason where heterogeneous CPUs(both SSBS supported
-> > and unsupported) are present. It is appropriate to take care
-> > of the SSBS bit for all threads while creation itself.
-> > 
-> > Fixes: 8f04e8e6e29c ("arm64: ssbd: Add support for PSTATE.SSBS rather than trapping to EL3")
-> > Signed-off-by: Srinivas Ramana <sramana@codeaurora.org>
-> 
-> I suppose the parent process cleared SSBS explicitly. Isn't the child
-> after fork() supposed to be nearly identical to the parent? If we did as
-> you suggest, someone else might complain that SSBS has been set in the
-> child after fork().
-
-Right, I'd expect the parent SSBS to be inherited when we copy the pstate
-field along with the other regs, and I think this is the correct behaviour.
-
-Is that broken somehow?
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgS3J6eXN6dG9mLAoKS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPiB3cm90
+ZSBvbiBUdWUsIDMxIERlYyAyMDE5CjA4OjMzOjM5ICswMTAwOgoKPiBPbiBUdWUsIERlYyAzMSwg
+MjAxOSBhdCAxMDowMDo0OEFNICswODAwLCBrYnVpbGQgdGVzdCByb2JvdCB3cm90ZToKPiA+IEhp
+IEtyenlzenRvZiwKPiA+IAo+ID4gSSBsb3ZlIHlvdXIgcGF0Y2ghIFBlcmhhcHMgc29tZXRoaW5n
+IHRvIGltcHJvdmU6Cj4gPiAKPiA+IFthdXRvIGJ1aWxkIHRlc3QgV0FSTklORyBvbiBsaW51cy9t
+YXN0ZXJdCj4gPiBbYWxzbyBidWlsZCB0ZXN0IFdBUk5JTkcgb24gdjUuNS1yYzQgbmV4dC0yMDE5
+MTIyMF0KPiA+IFtpZiB5b3VyIHBhdGNoIGlzIGFwcGxpZWQgdG8gdGhlIHdyb25nIGdpdCB0cmVl
+LCBwbGVhc2UgZHJvcCB1cyBhIG5vdGUgdG8gaGVscAo+ID4gaW1wcm92ZSB0aGUgc3lzdGVtLiBC
+VFcsIHdlIGFsc28gc3VnZ2VzdCB0byB1c2UgJy0tYmFzZScgb3B0aW9uIHRvIHNwZWNpZnkgdGhl
+Cj4gPiBiYXNlIHRyZWUgaW4gZ2l0IGZvcm1hdC1wYXRjaCwgcGxlYXNlIHNlZSBodHRwczovL3N0
+YWNrb3ZlcmZsb3cuY29tL2EvMzc0MDY5ODJdCj4gPiAKPiA+IHVybDogICAgaHR0cHM6Ly9naXRo
+dWIuY29tLzBkYXktY2kvbGludXgvY29tbWl0cy9Lcnp5c3p0b2YtS296bG93c2tpL210ZC1vbmVu
+YW5kLXNhbXN1bmctRml4LXBvaW50ZXItY2FzdC1XcG9pbnRlci10by1pbnQtY2FzdC13YXJuaW5n
+cy1vbi02NC1iaXQvMjAxOTEyMzAtMDMwODM4Cj4gPiBiYXNlOiAgIGh0dHBzOi8vZ2l0Lmtlcm5l
+bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdCBiZjhkMWNk
+NDM4NjUzNTAwNGM0YWZlN2YwM2QzN2Y5ODY0Yzk5NDBlCj4gPiByZXByb2R1Y2U6Cj4gPiAgICAg
+ICAgICMgYXB0LWdldCBpbnN0YWxsIHNwYXJzZQo+ID4gICAgICAgICAjIHNwYXJzZSB2ZXJzaW9u
+OiB2MC42LjEtMTI5LWczNDFkYWYyMC1kaXJ0eQo+ID4gICAgICAgICBtYWtlIEFSQ0g9eDg2XzY0
+IGFsbG1vZGNvbmZpZwo+ID4gICAgICAgICBtYWtlIEM9MSBDRj0nLWZkaWFnbm9zdGljLXByZWZp
+eCAtRF9fQ0hFQ0tfRU5ESUFOX18nCj4gPiAKPiA+IElmIHlvdSBmaXggdGhlIGlzc3VlLCBraW5k
+bHkgYWRkIGZvbGxvd2luZyB0YWcKPiA+IFJlcG9ydGVkLWJ5OiBrYnVpbGQgdGVzdCByb2JvdCA8
+bGtwQGludGVsLmNvbT4KPiA+ICAgCj4gCj4gSXQgaXMgbm90IHJlbGF0ZWQgdG8gbXkgcGF0Y2gu
+IEknbGwgZml4IGl0IHVwIHNvb24uCgpJIHdvdWxkIGxpa2UgdGhpcyB0byBiZSBmaXhlZCBiZWZv
+cmUgZW5hYmxpbmcgY29tcGlsZSB0ZXN0aW5nLCBpcyB5b3VyCmZpeCByZWFkPwoKVGhhbmtzLApN
+aXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
