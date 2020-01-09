@@ -2,120 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11186135B63
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:31:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19184135B6D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:33:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DidHdn3cTEAFWWgvYEobfRp7iqAaXEvAScPc2MkG7og=; b=LtDbeQV9+KQXgNrA19HDLrG2i
-	UY0LUFqXJbJhZcjU1DjZV8zJAY72kVKpozMtYhvKh0YTR31LmCrNbyFJBS2t126Ae2I9vpbMVxpdA
-	6kcdY9YKK+qH1cQTPL6itLoKYawVfxWG4wCnFQEkMn+WVEQiPVT4cGHYnaRPIJJGQoIH8pJu+DVbv
-	OxtCaAPNxLqkzy55uKIk8TuHfs00JVtYvLGiAccVWKsK+Jr/tphaKWU/4n9ee5ZjjUGLPIEdHpe2j
-	WWIBrA0/3H2VDYK/pff7434Ys0m5AzWf6PnA1Mkvtsz/aS3RRg2+mdRli0CKi4ktrzofWy3CHWT4f
-	+V3piGIxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tx5iIfHMwbaYhJ+IcUnHJ0LziOq/GtEY8Ccq+fBRdEA=; b=oCUNntosV62c4W
+	+tNGyIZzh0BF+WfbpfPjhsOlRp/twvBoibS642n6YIv10C5Wcwy8/RubwMv909CCJS9X8O/VYrf28
+	yOhQsjrQgvxmcK1/7LDesYHSjE0aOmZ4tVB0gDMbOXNhtbLpdRR/NOtu7wCA9ssWVl2ZYyBjyG409
+	/i+sLEhpsbZXylUh9utxZDU9t4k05y0sQPa2oJW/gtQPF2LbOVQukyBv7Mn0AS5Hk0jB4YNJZEGsy
+	ylCDdItD0fEjOlZyDN1sQHaVODANv/WwnwnqBQMsLDo72EdOW6XIGe5PxXK6EANBnQvD0HK7BmHVv
+	YAjSjsmnBerG0XH+TQ5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYq2-0001eJ-Oi; Thu, 09 Jan 2020 14:31:06 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1ipYse-0002AF-5Q; Thu, 09 Jan 2020 14:33:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYpw-0001do-38
- for linux-arm-kernel@bombadil.infradead.org; Thu, 09 Jan 2020 14:31:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=dgtbOJ6GPSiUuAHZ+hyLv7NQt+/i4zk9t9P9ivBbasg=; b=B2w5rLF9thuImoQDuWXcYBIhFX
- Pyf40IZMFJPbqfSRX3UdORRTYBrqlohASUtNGv6yC+7AIaseHFHj1ZRqFzi10SFiUU4nt4Llqz+TB
- hO2lO4huAKvcdO6oCyYHaxEK4KZmS5IbEQJ0l9SO7vS3YZ5SRL9NGaKo9UbGyl2tyvFR3dYa7FI9f
- Y9HfOJs8fJ4QwoBGoQlfVnUT60rQ+IAJZY1MHgvzBPtYWhJMrxd9ykx7JGgu++Uvc+j8N99LLqoRo
- s6GnvGPajBsrhL5fvHuYpOFj3knRXGyhLrwGTd+DwfBbCnlL8S4KeTQHzWeKTCWY0TK6ij2ZSK9bJ
- UkAlfehQ==;
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYqJ-0002iW-NQ
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:31:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578580222;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=dgtbOJ6GPSiUuAHZ+hyLv7NQt+/i4zk9t9P9ivBbasg=;
- b=aKldbH5UjLDX8uzDYx1t8KMCu3RdMykU6tdJCQxZAa1xgRCBBeV/mvOxQMzthYkYFOQYVv
- 3FEsgw2RYfoXpkzcYS8M7SQ4hnpl9/4yn1gkwXcpX+wVkKiJ3It4ZnitnQZnN4UV0Agb1+
- 7hRlZC2MCDdzjimgfxrDMuR1I41b0t8=
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
- [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-335-OCtH6KGBM12G-F8vcPsLfQ-1; Thu, 09 Jan 2020 09:30:20 -0500
-Received: by mail-qv1-f72.google.com with SMTP id v5so4199961qvn.21
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 06:30:20 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dgtbOJ6GPSiUuAHZ+hyLv7NQt+/i4zk9t9P9ivBbasg=;
- b=OklrKMc9zGsgYKo8dk8DahItTnpmPhsJRV3QG/emUxMko9IDT4lzvo/IllMZP/usYG
- B/Pz0etANNMiWUhkdpZ/YdVoYWtZR0eWNrfIZX8UEp3K8IhsFAOwx9dnUPIxDtZxQNpe
- htCfoqaYjsVWJKEVNfwPC6eGwYStQjFvHAe6Nn1/uySXHT6XqZFuWSUHeNCceKN9Wq70
- +O74tKSwy7rlL0O4hx5FVrvRW0RH7WIur2yenbC+QXkUTpmGqzT0hEyiOlWorENmBP/Q
- op+cdehfbHPU0WJ8k52UlAO+VNCZ8aOIjB6zewgG6H3VMxG8mDpREXlgew5/OEKdaOA1
- gOUQ==
-X-Gm-Message-State: APjAAAX2ayyYOtMOFPRwOldXKqo3p9994TepWu1JNWkWwybOnOA64iAT
- lpcOSx8pZzIQYy9+VullFJJxCuiIGQrt242yGruTmYdKJ2cSSwPUvX3xpw0ESrO7+S+NVtCt8it
- pT4ME5cKOKKjm2Jt5RNicwVDyEjBLYo6dTNI=
-X-Received: by 2002:a37:a4e:: with SMTP id 75mr9572040qkk.411.1578580220082;
- Thu, 09 Jan 2020 06:30:20 -0800 (PST)
-X-Google-Smtp-Source: APXvYqzt4B7tgq2PavzNdkZGbd5tvlTNS5Mhk08noiU5L+HqjrMpQcMLEo0+3AA0j6b0Z3Nup07vAg==
-X-Received: by 2002:a37:a4e:: with SMTP id 75mr9572024qkk.411.1578580219840;
- Thu, 09 Jan 2020 06:30:19 -0800 (PST)
-Received: from [192.168.1.157] (pool-96-235-39-235.pitbpa.fios.verizon.net.
- [96.235.39.235])
- by smtp.gmail.com with ESMTPSA id z4sm3049877qkz.62.2020.01.09.06.30.14
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Jan 2020 06:30:18 -0800 (PST)
-Subject: Re: [PATCH 05/17] arm64: entry: add a call_on_stack helper
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
- will@kernel.org, james.morse@arm.com
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-6-mark.rutland@arm.com>
-From: Laura Abbott <labbott@redhat.com>
-Message-ID: <5fdf8bfe-a0a9-350c-e3f5-6621ce4fc564@redhat.com>
-Date: Thu, 9 Jan 2020 09:30:13 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1ipYsV-00029u-IM
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:33:41 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9A4392077C;
+ Thu,  9 Jan 2020 14:33:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578580418;
+ bh=iGOEz/hd1dajLkuo+QJdAwuEYVey87O4SzhgybBzufo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=k+txAh4DRhzHX9ZFz6UAQye8UQSO9GwCPT6GLUqRJ+e61xER8ry0es52k8mDrcgbH
+ k/htYVe8g5lfnmUQFDAGJpz/0A9uU2Fh7UAZ97L3kEltgclQ0NR6jVcphmeDEBv75b
+ 8aWBr9pmFk5ubeRqFV4bUQzPhqoYhBU7L6Lb5Faw=
+Date: Thu, 9 Jan 2020 14:33:34 +0000
+From: Will Deacon <will@kernel.org>
+To: Jordan Crouse <jcrouse@codeaurora.org>
+Subject: Re: [PATCH v3 2/5] iommu/arm-smmu: Add support for split pagetables
+Message-ID: <20200109143333.GB12236@willie-the-truck>
+References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
+ <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20200108185634.1163-6-mark.rutland@arm.com>
-Content-Language: en-US
-X-MC-Unique: OCtH6KGBM12G-F8vcPsLfQ-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_143123_866447_C5D818E8 
-X-CRM114-Status: GOOD (  20.13  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200109_063339_645157_CEE76CFE 
+X-CRM114-Status: GOOD (  23.69  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -128,80 +77,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, broonie@kernel.org,
- robin.murphy@arm.com, julien.thierry.kdev@gmail.com, alex.popov@linux.com
+Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/8/20 1:56 PM, Mark Rutland wrote:
-> In some cases, we want to call a function from C code, using an
-> alternative stack. Add a helper that we can use in such cases.
+On Mon, Dec 16, 2019 at 09:37:48AM -0700, Jordan Crouse wrote:
+> Add support to enable split pagetables (TTBR1) if the supporting driver
+> requests it via the DOMAIN_ATTR_SPLIT_TABLES flag. When enabled, the driver
+> will set up the TTBR0 and TTBR1 regions and program the default domain
+> pagetable on TTBR1.
 > 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+> After attaching the device, the value of he domain attribute can
+> be queried to see if the split pagetables were successfully programmed.
+> Furthermore the domain geometry will be updated so that the caller can
+> determine the active region for the pagetable that was programmed.
+> 
+> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
 > ---
->   arch/arm64/include/asm/exception.h |  2 ++
->   arch/arm64/kernel/entry.S          | 21 +++++++++++++++++++++
->   2 files changed, 23 insertions(+)
 > 
-> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-> index b87c6e276ab1..a49038fa4faf 100644
-> --- a/arch/arm64/include/asm/exception.h
-> +++ b/arch/arm64/include/asm/exception.h
-> @@ -31,6 +31,8 @@ static inline u32 disr_to_esr(u64 disr)
->   	return esr;
->   }
->   
-> +asmlinkage void call_on_stack(struct pt_regs *, void (*)(struct pt_regs *),
-> +			      unsigned long);
->   asmlinkage void enter_from_user_mode(void);
->   void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
->   void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index 53ce1877a4aa..184313c773ea 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -901,6 +901,27 @@ ENTRY(ret_from_fork)
->   ENDPROC(ret_from_fork)
->   NOKPROBE(ret_from_fork)
->   
-> +/*
-> + * x0 = argument to function
-> + * x1 = function to call
-> + * x2 = new stack pointer
-> + */
-> +ENTRY(call_on_stack)
-> +	/* Create a frame record to save our LR and SP (implicit in FP) */
-> +	stp	x29, x30, [sp, #-16]!
-> +	mov	x29, sp
-> +
-> +	/* Move to the new stack and call the function there */
-> +	mov	sp, x2
-> +	blr	x1
-> +
-> +	/* Restore SP from the FP, FP and LR from the record, and return */
-> +	mov	sp, x29
-> +	ldp	x29, x30, [sp], #16
-> +	ret
-> +ENDPROC(call_on_stack)
-> +NOKPROBE(call_on_stack)
-> +
->   #ifdef CONFIG_ARM_SDE_INTERFACE
->   
->   #include <asm/sdei.h>
+>  drivers/iommu/arm-smmu.c | 40 +++++++++++++++++++++++++++++++++++-----
+>  drivers/iommu/arm-smmu.h | 45 +++++++++++++++++++++++++++++++++++++++------
+>  2 files changed, 74 insertions(+), 11 deletions(-)
 > 
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index c106406..7b59116 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -538,9 +538,17 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+>  			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
+>  			cb->ttbr[1] = 0;
+>  		} else {
+> -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
+> -			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
+> -			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +			if (pgtbl_cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
+> +				cb->ttbr[0] = FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +				cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
+> +				cb->ttbr[1] |=
+> +					FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +			} else {
+> +				cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
+> +				cb->ttbr[0] |=
+> +					FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +				cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +			}
 
-I'm a little worried this makes a very tempting gadget for
-attackers to use. Maybe future security features will
-make this less vulnerable?
+I still don't understand why you have to set the ASID in both of the TTBRs.
+Assuming TCR.A1 is clear, then we should only need to set the field in
+TTBR0.
 
-Thanks,
-Laura
+>  		}
+>  	} else {
+>  		cb->ttbr[0] = pgtbl_cfg->arm_lpae_s2_cfg.vttbr;
+> @@ -651,6 +659,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>  	enum io_pgtable_fmt fmt;
+>  	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+>  	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> +	u32 quirks = 0;
+>  
+>  	mutex_lock(&smmu_domain->init_mutex);
+>  	if (smmu_domain->smmu)
+> @@ -719,6 +728,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>  		oas = smmu->ipa_size;
+>  		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
+>  			fmt = ARM_64_LPAE_S1;
+> +			if (smmu_domain->split_pagetables)
+> +				quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
+>  		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
+>  			fmt = ARM_32_LPAE_S1;
+>  			ias = min(ias, 32UL);
+> @@ -788,6 +799,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>  		.coherent_walk	= smmu->features & ARM_SMMU_FEAT_COHERENT_WALK,
+>  		.tlb		= smmu_domain->flush_ops,
+>  		.iommu_dev	= smmu->dev,
+> +		.quirks		= quirks,
+>  	};
+>  
+>  	if (smmu_domain->non_strict)
+> @@ -801,8 +813,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>  
+>  	/* Update the domain's page sizes to reflect the page table format */
+>  	domain->pgsize_bitmap = pgtbl_cfg.pgsize_bitmap;
+> -	domain->geometry.aperture_end = (1UL << ias) - 1;
+> -	domain->geometry.force_aperture = true;
+> +
+> +	if (pgtbl_cfg.quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
+> +		domain->geometry.aperture_start = ~((1ULL << ias) - 1);
+> +		domain->geometry.aperture_end = ~0UL;
+> +	} else {
+> +		domain->geometry.aperture_end = (1UL << ias) - 1;
+> +		domain->geometry.force_aperture = true;
+> +		smmu_domain->split_pagetables = false;
+> +	}
+>  
+>  	/* Initialise the context bank with our page table cfg */
+>  	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
+> @@ -1484,6 +1503,9 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
+>  		case DOMAIN_ATTR_NESTING:
+>  			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
+>  			return 0;
+> +		case DOMAIN_ATTR_SPLIT_TABLES:
+> +			*(int *)data = smmu_domain->split_pagetables;
+> +			return 0;
+>  		default:
+>  			return -ENODEV;
+>  		}
+> @@ -1524,6 +1546,14 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
+>  			else
+>  				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
+>  			break;
+> +		case DOMAIN_ATTR_SPLIT_TABLES:
+> +			if (smmu_domain->smmu) {
+> +				ret = -EPERM;
+> +				goto out_unlock;
+> +			}
+> +			if (*(int *)data)
+> +				smmu_domain->split_pagetables = true;
+> +			break;
+>  		default:
+>  			ret = -ENODEV;
+>  		}
+> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+> index afab9de..68526cc 100644
+> --- a/drivers/iommu/arm-smmu.h
+> +++ b/drivers/iommu/arm-smmu.h
+> @@ -177,6 +177,16 @@ enum arm_smmu_cbar_type {
+>  #define TCR_IRGN0			GENMASK(9, 8)
+>  #define TCR_T0SZ			GENMASK(5, 0)
+>  
+> +#define TCR_TG1				GENMASK(31, 30)
+> +
+> +#define TG0_4K				0
+> +#define TG0_64K				1
+> +#define TG0_16K				2
+> +
+> +#define TG1_16K				1
+> +#define TG1_4K				2
+> +#define TG1_64K				3
+> +
+>  #define ARM_SMMU_CB_CONTEXTIDR		0x34
+>  #define ARM_SMMU_CB_S1_MAIR0		0x38
+>  #define ARM_SMMU_CB_S1_MAIR1		0x3c
+> @@ -329,16 +339,39 @@ struct arm_smmu_domain {
+>  	struct mutex			init_mutex; /* Protects smmu pointer */
+>  	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
+>  	struct iommu_domain		domain;
+> +	bool				split_pagetables;
+>  };
+>  
+> +static inline u32 arm_smmu_lpae_tcr_tg(struct io_pgtable_cfg *cfg)
+> +{
+> +	u32 val;
+> +
+> +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
+> +		return FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg);
+> +
+> +	val = FIELD_PREP(TCR_TG1, cfg->arm_lpae_s1_cfg.tcr.tg);
+> +
+> +	if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_4K)
+> +		val |= FIELD_PREP(TCR_TG0, TG0_4K);
+> +	else if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_16K)
+> +		val |= FIELD_PREP(TCR_TG0, TG0_16K);
+> +	else
+> +		val |= FIELD_PREP(TCR_TG0, TG0_64K);
 
+This looks like it's making assumptions about the order in which page-tables
+are installed, which I'd really like to avoid. See below.
+
+>  static inline u32 arm_smmu_lpae_tcr(struct io_pgtable_cfg *cfg)
+>  {
+> -	return TCR_EPD1 |
+> -	       FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg) |
+> -	       FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
+> -	       FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
+> -	       FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
+> -	       FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
+> +	u32 tcr = FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
+> +		FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
+> +		FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
+> +		FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
+> +
+> +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
+> +		return tcr | TCR_EPD1 | arm_smmu_lpae_tcr_tg(cfg);
+
+This is interesting. If the intention is to have both TTBR0 and TTBR1
+used concurrently by different domains, then we probably need to be a bit
+smarter about setting TCR_EPDx. Can we do something like start off with them
+both set, and then just clear the one we want when installing a page-table?
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
