@@ -2,51 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73AA5135E57
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:33:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BBAE135E5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:34:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hqAFNiaJwievbr6LYCKQHjlEOqSSkhywhah8mxFIB7Q=; b=MBzwvBTYk815yrHyjMPSxBlEr
-	ihqDIqZvMtVE4Os7DrJy/gnEP0tjJ75+loO29I0DFPkUGpuYixkeaFFKJCbM9TuQD4isknYmmBPZZ
-	e8f9d4I3n5wvRFx3qqXysB8k8+RjMR04fa5ya/lHSh9Xrl2Bw6n28LU/Bw52RGc8+HpaCAobjOUhL
-	k6vvaeHXrbJVi6w4fLfhNS37b4fDsUhZ+yuKvmVdm73QxrB85TadPN3G44yuAdecOJZ17WsA91BBz
-	MsBvQGy78Zx6QMbAMRTUAK1p2PFqt2epGInl/o/2IRqgrBfxlozFLMYR4S96VHzg6/mbH/vu7qN7d
-	iHerPiIIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BsQxZcy28wkiaZmOl9puJfx9twP0dfCx7cokrKMQ4IE=; b=SQUfgaUrNGCa2c
+	a9DBfbrr+mr5m1lRWrxsvr1GXZmryf9Q7sJ7CFyroixR5RLQYKo+ygn9eo4rgdq1aVo01x1HwhPgh
+	pi0QnBjHJIeqBth6fWi3rA9Crdc3Gv0h2Dx0V2qBzuIx2HuRtFRRWbHMIMhuaqdJr1dvuECcZajnh
+	VvBE8KkS7F4hN5hHy08AQ2mESPhkHKMkPBGSwnGzBKF38hEU4P0qrHkyXCv7Zi8WZYTmcL6xghy0v
+	FEQ5VVuQF6A2hGegWEqNsVtvsT1vnHkxrcckKp/4TgRi8EEFHp49LH1vqb6NvUnc+VvhQ+dnRirQR
+	dr1CYUxcq9KPDMfKoP6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipakR-0008GA-QC; Thu, 09 Jan 2020 16:33:27 +0000
+	id 1ipaks-0008V3-5b; Thu, 09 Jan 2020 16:33:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipakG-0008Fm-9C
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:33:17 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 77D4B2067D;
- Thu,  9 Jan 2020 16:33:15 +0000 (UTC)
+ id 1ipaki-0008Uf-Dj
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:33:45 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 827B220721;
+ Thu,  9 Jan 2020 16:33:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578587596;
- bh=4WvK/Vwr0t6fsucuKLCWVDS1adVfhfWQioHJ5iOeZRY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ydf7n9Fblw0iNZ7Arj3yiZSJiFz2NDxehhoAbru69iCdNO66RvhNsnfvoS8WDSNqs
- rAqX4tcjxr+8u8wFi1CgBA48Tic44A4o6BODfLxU6I/XNwcXLTCa3dfZVt+CUXJWCc
- RZeqKAIzAI5Hf5CruQW2y4qEvlZ7FUwa0ZqORn1Y=
-Date: Thu, 9 Jan 2020 17:33:13 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v2 0/4] arm64: allwinner: a64: Enable DVFS on A64
-Message-ID: <20200109163313.wrotyymf5hgiazki@gilmour.lan>
-References: <20200108042018.571251-1-anarsoul@gmail.com>
+ s=default; t=1578587623;
+ bh=0PvoObVIe31z/I11WaTniqIm+DpgJaepCXn4s0n62Rc=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=RNGp5ZZmEJnSlqvfJe5nm/ypHkLJV9g9kK5hilHSNrsib6h0YIdUZplI4kU6w5QfR
+ 57esxv7xBqXygIOv7orp+wk+yGXSosbUsALeZQmRL3LYo6TTrw5wp/MyJTGwvFDI+x
+ tXwqZf1PTZY0BDwZaLK1xky4mBbok6DgBpyloxRw=
+Date: Thu, 9 Jan 2020 08:33:37 -0800 (PST)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2] arm64: xen: Use modern annotations for assembly
+ functions
+In-Reply-To: <20200109155824.GG25655@arrakis.emea.arm.com>
+Message-ID: <alpine.DEB.2.21.2001090833280.18413@sstabellini-ThinkPad-T480s>
+References: <20191219122532.6538-1-broonie@kernel.org>
+ <alpine.DEB.2.21.1912191307410.9832@sstabellini-ThinkPad-T480s>
+ <20200108155551.GA19197@willie-the-truck>
+ <20200109155824.GG25655@arrakis.emea.arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <20200108042018.571251-1-anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_083316_347430_9C1BBB5B 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200109_083344_476440_C4A165F8 
+X-CRM114-Status: GOOD (  15.19  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,62 +80,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1598049057469384955=="
+Cc: Stefano Stabellini <sstabellini@kernel.org>, Julien Grall <julien@xen.org>,
+ Mark Brown <broonie@kernel.org>, xen-devel@lists.xenproject.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 9 Jan 2020, Catalin Marinas wrote:
+> On Wed, Jan 08, 2020 at 03:55:52PM +0000, Will Deacon wrote:
+> > On Thu, Dec 19, 2019 at 01:07:50PM -0800, Stefano Stabellini wrote:
+> > > On Thu, 19 Dec 2019, Mark Brown wrote:
+> > > > In an effort to clarify and simplify the annotation of assembly functions
+> > > > in the kernel new macros have been introduced. These replace ENTRY and
+> > > > ENDPROC. Update the annotations in the xen code to the new macros.
+> > > > 
+> > > > Signed-off-by: Mark Brown <broonie@kernel.org>
+> > > > Reviewed-by: Julien Grall <julien@xen.org>
+> > > > Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
+> > > 
+> > > Thank you!
+> > > 
+> > > > ---
+> > > >  arch/arm64/xen/hypercall.S | 8 ++++----
+> > > >  1 file changed, 4 insertions(+), 4 deletions(-)
+> > 
+> > Is this going via the Xen tree, or shall I queue it along with the other
+> > asm annotation patches in the arm64 tree? I don't see it in -next yet.
+> 
+> Since it has been reviewed by the Xen maintainers, just queue it via the
+> arm64 tree.
 
---===============1598049057469384955==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="63v3ohpo2ubteem4"
-Content-Disposition: inline
-
-
---63v3ohpo2ubteem4
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Jan 07, 2020 at 08:20:14PM -0800, Vasily Khoruzhick wrote:
-> This series introduces new DTSI with operating points for A64,
-> adds cooling maps and thermal tripping points and enables DVFS
-> on all the supported A64-based boards
->
-> v2: - drop two commits that were merged
->     - mention where tripping points and OPP were taken from
->     - add new line after each node in OPP table
->     - split adding CPU clock and OPP into separate commits
->     - put operating points into their own dtsi
-
-Applied, thanks!
-Maxime
-
---63v3ohpo2ubteem4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhdVyQAKCRDj7w1vZxhR
-xYoLAQDaU8aVVWmJIe8ePJZeGdrN601c8Zsful46WQo20L/sTQEA9e+OUlu72vXf
-e/JDVRzPVUXp3lH5nVT6lcbUGhiErAU=
-=0Q1E
------END PGP SIGNATURE-----
-
---63v3ohpo2ubteem4--
-
-
---===============1598049057469384955==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Yes, that's fine by me
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1598049057469384955==--
-
