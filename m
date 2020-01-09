@@ -2,70 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF372135B94
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:41:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 845AD135BA3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:47:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DJwsTl8+77oCBw9ZU2NKsuos+21+s9V4bmZXNDMCsZY=; b=dLHGalKdcKmeLA
-	g5NhFhO1i06vs3/ZF6Qba0eZR1O1UZS/OEtk4RvC+eqETt16EBafNfm6nz5DmhT+RDgZH7AXokNnw
-	xKDExNfceaKJWJzK0boUVTo/0LTK+NW23RJC8AatocXlUNVlOCsTx79zjr1KEjFIZ4dHY2lzlbJcj
-	QheUvVEhIcfMaq/Jw4xvzgwFX4o5wl5aoqYpXLtIwkjROIUuzbB4opTuW8zCTdYpKdcbXJS3h0da0
-	3+1Ita+uyNAHpBuont1sts29HLvooGKy7l+wV9hNWAYAwLXP2DrQpb9QlxKTHK9bGcee9Lzzq3bTc
-	8So74GQF1RZ39u5Zzj6A==;
+	List-Owner; bh=HFff+PlVhj7Wnyh5bOW+anGGEZVw++NX5grmmbMUizM=; b=D+pagQ04bhcLJ3
+	NXwK0KZ9S5waTz4nAKqSJoVS6hb95mNAc4/h0naml+1sjVm+M5L/+aWW5B6JdbRA1PAfi64fjq+DL
+	Ig12x1Q7XlJ3mUyR+u1Pk3FA6dXyaMntTs3whqsSUjWLDyJfTQOQCDmnXHoLRWVyLTlLvADd3/329
+	sRL83Y7fiPWEpVeJDl6Fj/roQzA2W1w6MZm3bmvo7IFJKcGpTOyv1W037mFOoMQvRkJJhxjVwpBHD
+	gtqO86iup+yXbn3DZ9+pOtFO5eB0V7hUV6vLN2ASSn5AMQlRCxMfdOTM/fdNAozxNz5kwRKvtxDuD
+	V/6iSLkAEaRLNkjMKH+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYzs-0007oR-CU; Thu, 09 Jan 2020 14:41:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ipZ5O-0001Fx-0a; Thu, 09 Jan 2020 14:46:58 +0000
+Received: from mailoutvs19.siol.net ([185.57.226.210] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYzj-0007o4-5T
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:41:08 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7461720673;
- Thu,  9 Jan 2020 14:41:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578580866;
- bh=DlrMPvVhccNEDW9koI+U3MM8MLRCHlA/GNRJ1PYg/fQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hBGaU9mYNlsPavcKzkYmo8SaTZNfzP/+FyxOm3wgOBXu17YOlpUXWG+DX8Km4vn61
- nhbPjGDttsPWISCNuaksOju0v0lwRPNIzEjOpQmHmWIn2zp2h5RLc3ywrmizM5H0fE
- JZIoKiMKQKpN+2PBhZR09JXUtzQDao5gIDDtK21A=
-Date: Thu, 9 Jan 2020 14:41:01 +0000
-From: Will Deacon <will@kernel.org>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 00/13] iommu: Add PASID support to Arm SMMUv3
-Message-ID: <20200109144100.GD12236@willie-the-truck>
-References: <20191219163033.2608177-1-jean-philippe@linaro.org>
- <20200109143618.GA942461@myrica>
+ id 1ipZ5G-0001EP-Cj
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:46:52 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 313305220DE;
+ Thu,  9 Jan 2020 15:46:42 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id Jkx5YzaTqnNS; Thu,  9 Jan 2020 15:46:41 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id B7B3452123B;
+ Thu,  9 Jan 2020 15:46:41 +0100 (CET)
+Received: from jernej-laptop.localnet (unknown [194.6.237.34])
+ (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 93E4E5220DE;
+ Thu,  9 Jan 2020 15:46:40 +0100 (CET)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH v2 3/4] media: uapi: hevc: Add segment address field
+Date: Thu, 09 Jan 2020 15:46:40 +0100
+Message-ID: <4523910.31r3eYUQgx@jernej-laptop>
+In-Reply-To: <20200108153126.49698491@kernel.org>
+References: <20191213160428.54303-1-jernej.skrabec@siol.net>
+ <20191213160428.54303-4-jernej.skrabec@siol.net>
+ <20200108153126.49698491@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200109143618.GA942461@myrica>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_064107_225230_4A9C21E3 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200109_064650_590052_AEBB9C24 
+X-CRM114-Status: GOOD (  16.09  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.210 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,39 +71,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- sudeep.holla@arm.com, rjw@rjwysocki.net, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, robh+dt@kernel.org, guohanjun@huawei.com,
- bhelgaas@google.com, zhangfei.gao@linaro.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: devel@driverdev.osuosl.org, hverkuil@xs4all.nl, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org,
+ paul.kocialkowski@bootlin.com, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 03:36:18PM +0100, Jean-Philippe Brucker wrote:
-> On Thu, Dec 19, 2019 at 05:30:20PM +0100, Jean-Philippe Brucker wrote:
-> > Add support for Substream ID and PASIDs to the SMMUv3 driver. Since v3
-> > [1], I added review and tested tags where appropriate and applied the
-> > suggested changes, shown in the diff below. Thanks all!
-> > 
-> > I'm testing using the zip accelerator on the Hisilicon KunPeng920 and
-> > Zhangfei's uacce module [2]. The full SVA support, which I'll send out
-> > early next year, is available on my branch sva/zip-devel at
-> > https://jpbrucker.net/git/linux/
+Hi!
+
+Dne sreda, 08. januar 2020 ob 15:31:26 CET je Mauro Carvalho Chehab 
+napisal(a):
+> Em Fri, 13 Dec 2019 17:04:27 +0100
 > 
-> Is there anything more I should do for the PASID support? Ideally I'd like
-> to get this in v5.6 so I can focus on the rest of the SVA work and on
-> performance improvements.
+> Jernej Skrabec <jernej.skrabec@siol.net> escreveu:
+> > If HEVC frame consists of multiple slices, segment address has to be
+> > known in order to properly decode it.
+> > 
+> > Add segment address field to slice parameters.
+> > 
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > 
+> >  Documentation/media/uapi/v4l/ext-ctrls-codec.rst | 5 ++++-
+> >  include/media/hevc-ctrls.h                       | 5 ++++-
+> >  2 files changed, 8 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst index
+> > aab1451e54d4..5415d5babcc2 100644
+> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > @@ -3975,6 +3975,9 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
+> > 
+> >      * - __u32
+> >      
+> >        - ``data_bit_offset``
+> >        - Offset (in bits) to the video data in the current slice data.
+> > 
+> > +    * - __u32
+> > +      - ``slice_segment_addr``
+> > +      -
+> > 
+> >      * - __u8
+> >      
+> >        - ``nal_unit_type``
+> >        -
+> > 
+> > @@ -4052,7 +4055,7 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
+> > 
+> >        - ``num_rps_poc_lt_curr``
+> >        - The number of reference pictures in the long-term set.
+> >      
+> >      * - __u8
+> > 
+> > -      - ``padding[7]``
+> > +      - ``padding[5]``
+> > 
+> >        - Applications and drivers must set this to zero.
+> >      
+> >      * - struct :c:type:`v4l2_hevc_dpb_entry`
+> >      
+> >        - ``dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX]``
+> > 
+> > diff --git a/include/media/hevc-ctrls.h b/include/media/hevc-ctrls.h
+> > index 1592e52c3614..3e2e32098312 100644
+> > --- a/include/media/hevc-ctrls.h
+> > +++ b/include/media/hevc-ctrls.h
+> > @@ -167,6 +167,9 @@ struct v4l2_ctrl_hevc_slice_params {
+> > 
+> >  	__u32	bit_size;
+> >  	__u32	data_bit_offset;
+> > 
+> > +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header 
+*/
+> > +	__u32	slice_segment_addr;
+> > +
+> 
+> Why are you adding it in the middle of the data? This will break any
+> existing userspace code that might be relying on it.
+> 
+> Ok, I know that this header is not yet under include/uapi,and there's a
+> warning on it for letting people know that it shouldn't be used anywhere.
+> 
+> Still, people might be using it.
 
-Apologies, I'm just behind with review what with the timing of the new
-year. You're on the list, but I was hoping to get Robin's TCR stuff dusted
-off so that Jordan doesn't have to depend on patches languishing on the
-mailing list and there's also the nvidia stuff to review as well.
+I did it that way to keep fields aligned. Cedrus is currently the only 
+mainlined driver to use this structure and userspace users are also very rare 
+at this time.
 
-Going as fast as I can!
+Anyway, not all HEVC features are supported at this time, which means that 
+this structure might grow. Once that happens, you'll lose binary compatibility 
+anyway, but source compatibility should be fine.
 
-Will
+Best regards,
+Jernej
+
+> 
+> >  	/* ISO/IEC 23008-2, ITU-T Rec. H.265: NAL unit header */
+> >  	__u8	nal_unit_type;
+> >  	__u8	nuh_temporal_id_plus1;
+> > 
+> > @@ -200,7 +203,7 @@ struct v4l2_ctrl_hevc_slice_params {
+> > 
+> >  	__u8	num_rps_poc_st_curr_after;
+> >  	__u8	num_rps_poc_lt_curr;
+> > 
+> > -	__u8	padding;
+> > +	__u8	padding[5];
+> > 
+> >  	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header 
+*/
+> >  	struct v4l2_hevc_dpb_entry dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> 
+> Cheers,
+> Mauro
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
