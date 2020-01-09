@@ -2,61 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54CED135EBD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:53:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06374135EC3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:54:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6AI5cj9rysm9kai2v1lmXr8O7fTa2SyXsGX651NKYQQ=; b=Ju0FYW6OmQnZEVkad9MwADC2E
-	lin563WyDpGIwb7lK6WQ5A48RABklDveCmJjePgtnrgTw9GtiEcLCuugdFIPKw5nyWlSI1DzEM0zO
-	MAtDY92mgAa2S1W+/egF1dEpGyB6FVEAJpJQlRqAl13Afi3avRzQHGqh+EADa++cxEl/TmxAuhrAh
-	QTuQN2X8lfY9oBv4JavHUfkLb+t1E/G7sKjlajiiIr6smkUa8qRuPfct0MwtWhjnmaUJloYBpk8O1
-	zFjbl1BLVxulBTIqp6wNuUw0FbkR2PW8ksvXCS0pMjJhnRaKLf/w/kyxaLwfdkARE6jgiMKMXjHZQ
-	xuNljVAHQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X74fkWN4Fd3mrD2g7KVeHdqLbqT1oF99ci6VaJsAtmw=; b=AsTJYmqhwkEf79
+	79lpww969Aoz3apFlABAb2PNAqhrBJ2TRM3uT3ToQH15tuL9xTcU6PEB5nkSe8D/Q+bNvgMZbVtRM
+	8pNgz081oy6yj8ec9enR3Wx5Dbq7P18pgItjf4GWeEa3p6rM6gzEWVSUIG5YRwMdJrRfNUSqD5GMO
+	b5lc/2iNI/I6DUAAytgRRDZEJG1fuxgr4FoS2FEKgKv4n+T0NMufpqv380t90p3NrJn9Vu7MhQYbQ
+	xogiwJDfLlKUfpE0hcoVmtYHCSvh5EXUK8IThzHUfddPYwPLEgdgCsoegTItG00bZx28haUdtJV0U
+	LcdyQy5CuGjw01OgMyhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipb3c-0001el-3j; Thu, 09 Jan 2020 16:53:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipb3U-0001eI-Cj; Thu, 09 Jan 2020 16:53:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E4EBE1FB;
- Thu,  9 Jan 2020 08:53:07 -0800 (PST)
-Received: from [10.1.38.29] (e122027.cambridge.arm.com [10.1.38.29])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9D45A3F703;
- Thu,  9 Jan 2020 08:53:04 -0800 (PST)
-Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
- for the GPU
-To: Mark Brown <broonie@kernel.org>
-References: <20200108052337.65916-1-drinkcat@chromium.org>
- <20200108052337.65916-5-drinkcat@chromium.org>
- <20200108132302.GA3817@sirena.org.uk>
- <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
- <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
- <20200109162814.GB3702@sirena.org.uk>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <a40baddb-cbab-d8fc-3fd9-0582f1b5b24e@arm.com>
-Date: Thu, 9 Jan 2020 16:53:02 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ipb4V-0002Hy-KL; Thu, 09 Jan 2020 16:54:11 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipb4M-0002Gp-Tw
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:54:04 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id C5D3F52F;
+ Thu,  9 Jan 2020 17:53:59 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1578588839;
+ bh=sOC8mik59yBJH+Ojdmaq5uVi1sLgq4RG29ymvZmJjzc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=rNYxP1oi3fClt3LDl93WQ3Ybt5/HuHty+5P/KtrXWipsEjipStzncldV5Lnv8yY7V
+ dXPT/rRRo9HGE6n9p2GqEXsV5fT/gbPwMVy5dP+Bw4GdDvHlxmB0vyBrbqMnTvhEL/
+ jTXO9KrEe06aGTp0a0YjBqU3DcGp3uwUcVo35U6Q=
+Date: Thu, 9 Jan 2020 18:53:48 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH] media: xilinx: Use dma_request_chan() instead
+ dma_request_slave_channel()
+Message-ID: <20200109165348.GG31792@pendragon.ideasonboard.com>
+References: <20191217104235.23771-1-peter.ujfalusi@ti.com>
+ <20200109164847.GF31792@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <20200109162814.GB3702@sirena.org.uk>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200109164847.GF31792@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_085308_518947_2B80410C 
-X-CRM114-Status: GOOD (  28.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_085403_104814_CB30F3B4 
+X-CRM114-Status: GOOD (  16.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,97 +75,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: hyun.kwon@xilinx.com, michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
+ vkoul@kernel.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/01/2020 16:28, Mark Brown wrote:
-> On Thu, Jan 09, 2020 at 02:14:42PM +0000, Steven Price wrote:
->> On 08/01/2020 22:52, Nicolas Boichat wrote:
-> 
->>> That'd be a bit awkward to match, though... Currently all bifrost
->>> share the same compatible "arm,mali-bifrost", and it'd seem
->>> weird/wrong to match "mediatek,mt8183-mali" in this driver? I have no
->>> idea if any other Mali implementation will require a second regulator,
->>> but with the MT8183 we do need it, see below.
-> 
-> This doesn't sound particularly hard, just new.  Plenty of other devices
-> have quirks done based on the SoC they're in or the IP revision, this
-> would just be another of those quirks.
-> 
->>> Well if devfreq was working (see patch 7
->>> https://patchwork.kernel.org/patch/11322851/ for a partial
->>> implementation), it would adjust both mali and sram regulators, see
->>> the OPP table in patch 2
->>> (https://patchwork.kernel.org/patch/11322825/): SRAM voltage needs to
->>> be increased for frequencies >=698Mhz.
-> 
->>> Now if you have some better idea how to implement this, I'm all ears!
-> 
-> Set a flag based on the compatible, then base runtime decisions off
-> that.
-> 
->> I'm not sure if it's better, but could we just encode the list of
->> regulators into device tree. I'm a bit worried about special casing an
->> "sram" regulator given that other platforms might have a similar
->> situation but call the second regulator a different name.
-> 
-> Obviously the list of regulators bound on a given platform is encoded in
-> the device tree but you shouldn't really be relying on that to figure
-> out what to request in the driver - the driver should know what it's
-> expecting. 
+Hello again,
 
- From a driver perspective we don't expect to have to worry about power 
-domains/multiple regulators - the hardware provides a bunch of power 
-registers to turn on/off various parts of the hardware and this should 
-be linked (in hardware) to a PDC which sorts it out. The GPU/PDC handles 
-the required sequencing. So it *should* be a case of turn power/clocks 
-on and go.
-
-However certain integrations may have quirks such that there are 
-physically multiple supplies. These are expected to all be turned on 
-before using the GPU. Quite how this is best represented is something 
-I'm not sure about.
-
-> Bear in mind that getting regulator stuff wrong can result
-> in physical damage to the system so it pays to be careful and to
-> consider that platform integrators have a tendency to rely on things
-> that just happen to work but aren't a good idea or accurate
-> representations of the system.  It's certainly *possible* to do
-> something like that, the information is there, but I would not in any
-> way recommend doing things that way as it's likely to not be robust.
+On Thu, Jan 09, 2020 at 06:48:47PM +0200, Laurent Pinchart wrote:
+> On Tue, Dec 17, 2019 at 12:42:35PM +0200, Peter Ujfalusi wrote:
+> > dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+> > eating up the error code.
+> > 
+> > By using dma_request_chan() directly the driver can support deferred
+> > probing against DMA.
+> > 
+> > Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 > 
-> The possibility that the regulator setup may vary on other platforms
-> (which I'd expect TBH) does suggest that just requesting a bunch of
-> supply names optionally and hoping that we got all the ones that are
-> important on a given platform is going to lead to trouble down the line.
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> 
+> Vinod, could you please pick this up ?
 
-Certainly if we miss a regulator the GPU isn't going to work properly 
-(some cores won't be able to power up successfully). However at the 
-moment the driver will happily do this if someone provides it with a DT 
-which includes regulators that it doesn't know about. So I'm not sure 
-how adding special case code for a SoC would help here.
+I spoke too fast.
 
-> Steve, please fix your mail client to word wrap within paragraphs at
-> something substantially less than 80 columns.  Doing this makes your
-> messages much easier to read and reply to.
+> > ---
+> >  drivers/media/platform/xilinx/xilinx-dma.c | 6 +++---
+> >  1 file changed, 3 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/media/platform/xilinx/xilinx-dma.c b/drivers/media/platform/xilinx/xilinx-dma.c
+> > index b211380a11f2..9ce515ff9c0a 100644
+> > --- a/drivers/media/platform/xilinx/xilinx-dma.c
+> > +++ b/drivers/media/platform/xilinx/xilinx-dma.c
+> > @@ -725,10 +725,10 @@ int xvip_dma_init(struct xvip_composite_device *xdev, struct xvip_dma *dma,
+> >  
+> >  	/* ... and the DMA channel. */
+> >  	snprintf(name, sizeof(name), "port%u", port);
+> > -	dma->dma = dma_request_slave_channel(dma->xdev->dev, name);
+> > -	if (dma->dma == NULL) {
+> > +	dma->dma = dma_request_chan(dma->xdev->dev, name);
+> > +	if (IS_ERR(dma->dma)) {
+> >  		dev_err(dma->xdev->dev, "no VDMA channel found\n");
+> > -		ret = -ENODEV;
+> > +		ret = PTR_ERR(dma->dma);
+> >  		goto error;
 
-Sorry about that - I switched to my laptop to escape the noisy work 
-going on outside the office, and apparently that was misconfigured. 
-Hopefully fixed now, thanks for letting me know!
+At the error label, we have
 
-Steve
+error:
+	xvip_dma_cleanup(dma);
+	return ret;
+
+and xvip_dma_cleanup() contains
+
+	if (dma->dma)
+		dma_release_channel(dma->dma);
+
+You need to turn this into
+
+	if (!IS_ERR_OR_NULL(dma->dma))
+
+or add a
+
+		dma->dma = NULL;
+
+in the error case in xvip_dma_init().
+
+> >  	}
+> >  
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
