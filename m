@@ -2,91 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C10CB135DD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:12:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1631A135DA7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:07:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Trxk/GJ1GOzQ7Bxk51xYuMdUpKBGI9YefkUNeV/hEE=; b=OykNLmMIki9ive
-	PcnEPxNSjIB1NiqdlH+6JW2mKM3SY8D/X1ty+6vlEw89VIeOGAKNU6IgMqEF6+Z6K5uqvltiHGX+k
-	iQWdX84pFcgfxzJ8yfceBShcrNL0+6Tnjyu/bvDHqw6VCg677waee5K+KMYHhgIl/ayHLR76Xslai
-	QJCSOQ+jpnIAFuiD7+eYyTFc84SIsHrz3lowb4Mtr6XkLTg9ZG/EZLGraWDfnascoSQV37pbTnPKR
-	qVr6NxupdCR348CPbhkHfxJhyv+OD2faoQf3Na5z0CGe3S7072z61FU8iDzDyyqYH9O89QQloCPRV
-	UEMCLWUkcau4Fug7rb+g==;
+	List-Owner; bh=J+uOSgDDroPtEJxcOJ40IWdwj05hXFzaEy8MfyZI6ww=; b=t+AFPPkwGQNw+G
+	MjyTxi9QVpSGrK0jx6WNjKxMwZtm2kYeIIOBHMrt54UHlC+cAv7Tst6QFvGjTi7+XmbgNzeoq/ffF
+	n5Ac7d21nx3pinPZJLV4ZXNmri2tiStBX8X2NEdKDdQAsRYUBhDGMTehb2DC/+nryasYtkbOT4mpS
+	WpjeRBw77NV+6Dt8nVrJvbU4R5cAUnANVw4LjZBGwVpaQjaQ/Yrl4mLC08gV2gc2/QSDgZbPbnNEX
+	C1K/q6qt1jE4n9/1vA4sxDsdo3oJNkRdjtwK7Utc+EFVFzVxn3G4KlHMI2yEXltBQL1QQ/6m1kWI0
+	AteYyTZ0/8EkUT3RAgrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaPa-0005cX-Ei; Thu, 09 Jan 2020 16:11:54 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ipaLV-0000VU-Jq; Thu, 09 Jan 2020 16:07:41 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaJv-0007eB-L8
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:06:08 +0000
+ id 1ipaJ6-00065h-3W
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:05:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578585961;
+ s=mimecast20190719; t=1578585907;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=0uuxcpkn5JFDgE+lOpghWftUHEKd37cfHOyYmtcckKY=;
- b=R1LLK4JBWtp8bXARd6Bo/AaGg5Pr6XPvDy/7c+v3F3gRjRuwsqpP+X13yFPm7HQgci/+yG
- SYX5yvJSrWdZrq48AgXw8gaK9xBAxOCoIE46thIH8aoxnzBdm4uzQ2Z9UnbJF5DQqALEXX
- 8PElYy+1eCMRKF3tP9q8MrMKdwukAnw=
+ bh=nrmsztAj2poxJxg6fxmu2Z7SI2LPSgd3Nzrj9Xbra3A=;
+ b=Ax3v47puuIJgFDm0PqPs4xp6S2l/nZWqyjrz6MOezjoWMbGoUL6qQHMJYSu+jZIpGEssHH
+ dH/H/yBHM8wMA25JWjZkjBTC2NeU8tX2yqhW9a1H+DRabxClXrbpJW+GqZ7P73kYxMNPjD
+ vivjhIQPBvKK9jqXYK/D5TXUmAj3naQ=
 Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
  [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-104-W9StxrtnMWCYEZ9R-uBqXQ-1; Thu, 09 Jan 2020 11:03:14 -0500
-Received: by mail-wm1-f71.google.com with SMTP id y125so882917wmg.1
+ us-mta-126-mnJq83umP9WKXcwPF7dSvw-1; Thu, 09 Jan 2020 11:03:18 -0500
+Received: by mail-wm1-f71.google.com with SMTP id p2so1097984wma.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:03:14 -0800 (PST)
+ Thu, 09 Jan 2020 08:03:18 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=2TbvKMt2I2jso1SowXcHnsxCi6YkVVHUp/mczZ9qxkU=;
- b=txD/3p8LulNWoQBYGgRfPFZ23ekglyYa9Ahncsd95+hqBRlOSAIgqHJX3mCrvbglLD
- lh+v8l8uhDB8qrmRTkwvEleWsHRlinWvf7TVgXIhDCXKSCZuxdGaRz1PwaahFH0oV+kk
- kBlNwSKddFBeh6OjWs5KlDEMvA/mXJ7VWQz6cyzU56dFctib72J77paHkG/MjKCHivDz
- TRTsLQgM7Fbjb/PsrVhAM9Np/4W39gejRl12BgiUbaFzwKbc+1NhvedwhZ0DP3lH5u9G
- oW1Ps45Ykj9vwDfQGhoM8PHB9gNG+yIPNUY48vtnEDs6mrGJaLxVs+NXvMGCnBrE17RM
- cmjA==
-X-Gm-Message-State: APjAAAXvxpMJoifGDVoT9mOynCRdLR4tmc9iTCqgxf45kcvJtk/IqvLG
- v5KXh2GJgFkESXTFONMaGCXyXWYx4Ki6aJjgGB8Lz+BERl0Jk26LcOb4L367qLXnY5+NSeNcXX4
- 2WFl1rZznkx6VZnZ2y3LXQ4HZzVFCqoz9JpY=
-X-Received: by 2002:a7b:c3d2:: with SMTP id t18mr5903399wmj.90.1578585793360; 
- Thu, 09 Jan 2020 08:03:13 -0800 (PST)
-X-Google-Smtp-Source: APXvYqx1i6RTYzKo5WMbgBgJvZ21maBSBOwlzW/NH2DdpXZf53ZMSa43jR/D3EBbhqlU18Cm4YAYbg==
-X-Received: by 2002:a7b:c3d2:: with SMTP id t18mr5903384wmj.90.1578585793218; 
- Thu, 09 Jan 2020 08:03:13 -0800 (PST)
+ bh=IEmOZ+3NX8EHnBrXs7JpcZGqiWky8RDzrGpjGW3JhOk=;
+ b=SPc4QwZaXZlwMzVzKOu8bzJGBXDJRiT5hC0zY6RLs/NoHGI44XwK/qjw5O/xtp/UIk
+ zOntZNKrgyGrKhA8n7USdOZpjbrBJ1UKUUcy63C5CObzRVyAFmmSvQUS1nMu6m0x+v+X
+ nCluN9pcTVrWIU+tEM1oHovQoE3MT9wHIcOMF+SNz0kUEVYqmGyYqQ07EAU5wfNOOJ/j
+ KCtyozEXsD9M6C8ub6+cB2jGLdEgEGzW1cO+0DpRv4n0TZHG5QQttaW8fG9G6wIihM99
+ DmY3iiJFABYi3UpmcngfUlMHd0CpNGcujbZNV1HCD0OL11Cmq7GlD/U4qB/HilIwy7wO
+ JsUQ==
+X-Gm-Message-State: APjAAAX7VJbrPcvSZ/TZZH0/sHkfXaWFD3l0uyxYV/H0jXyInINfTnYg
+ JkMuQqzmpbnIubRiQLxBp5HBM5NfaNGOoUkjOF5p2rrIo8uFrivvvbbu8CjSvKqGtgyyMKpqjGy
+ pKUqNjlVbqIGbCa2uOHkxjdbqg1TcoSXDh/Q=
+X-Received: by 2002:adf:806e:: with SMTP id 101mr12284644wrk.300.1578585795605; 
+ Thu, 09 Jan 2020 08:03:15 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxhJw7oN3KdrwJWeebHQd7OtKE/MeC5SWWnNta8sWE9upFVwuTQwP5gOrTZf1dc7nb4l3igCQ==
+X-Received: by 2002:adf:806e:: with SMTP id 101mr12284536wrk.300.1578585794619; 
+ Thu, 09 Jan 2020 08:03:14 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id z21sm3258969wml.5.2020.01.09.08.03.12
+ by smtp.gmail.com with ESMTPSA id z21sm3258969wml.5.2020.01.09.08.03.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:03:12 -0800 (PST)
+ Thu, 09 Jan 2020 08:03:14 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 02/57] objtool: check: Clean instruction state before each
- function validation
-Date: Thu,  9 Jan 2020 16:02:05 +0000
-Message-Id: <20200109160300.26150-3-jthierry@redhat.com>
+Subject: [RFC v5 03/57] objtool: check: Use arch specific values in
+ restore_reg()
+Date: Thu,  9 Jan 2020 16:02:06 +0000
+Message-Id: <20200109160300.26150-4-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: W9StxrtnMWCYEZ9R-uBqXQ-1
+X-MC-Unique: mnJq83umP9WKXcwPF7dSvw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080603_783456_DD063E2E 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20200109_080512_357652_086179F7 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -116,50 +116,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When a function fails its validation, it might leave a stale state
-that will be used for the validation of other functions. That would
-cause false warnings on potentially valid functions.
+Initial register state is set up by arch specific code. Use the value
+the arch code has set when restoring registers from the stack.
 
-Reset the instruction state before the validation of each individual
-function.
-
+Suggested-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
 ---
- tools/objtool/check.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ tools/objtool/check.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/tools/objtool/check.c b/tools/objtool/check.c
-index a04778421144..4784f0f6a3ae 100644
+index 4784f0f6a3ae..5968e6f08891 100644
 --- a/tools/objtool/check.c
 +++ b/tools/objtool/check.c
-@@ -2348,13 +2348,6 @@ static int validate_functions(struct objtool_file *file)
- 	struct insn_state state;
- 	int ret, warnings = 0;
-
--	clear_insn_state(&state);
--
--	state.cfa = initial_func_cfi.cfa;
--	memcpy(&state.regs, &initial_func_cfi.regs,
--	       CFI_NUM_REGS * sizeof(struct cfi_reg));
--	state.stack_size = initial_func_cfi.cfa.offset;
--
- 	for_each_sec(file, sec) {
- 		list_for_each_entry(func, &sec->symbol_list, list) {
- 			if (func->type != STT_FUNC)
-@@ -2373,6 +2366,12 @@ static int validate_functions(struct objtool_file *file)
- 			if (!insn || insn->ignore || insn->visited)
- 				continue;
-
-+			clear_insn_state(&state);
-+			state.cfa = initial_func_cfi.cfa;
-+			memcpy(&state.regs, &initial_func_cfi.regs,
-+			       CFI_NUM_REGS * sizeof(struct cfi_reg));
-+			state.stack_size = initial_func_cfi.cfa.offset;
-+
- 			state.uaccess = func->uaccess_safe;
-
- 			ret = validate_branch(file, func, insn, state);
---
+@@ -1437,8 +1437,8 @@ static void save_reg(struct insn_state *state, unsigned char reg, int base,
+ 
+ static void restore_reg(struct insn_state *state, unsigned char reg)
+ {
+-	state->regs[reg].base = CFI_UNDEFINED;
+-	state->regs[reg].offset = 0;
++	state->regs[reg].base = initial_func_cfi.regs[reg].base;
++	state->regs[reg].offset = initial_func_cfi.regs[reg].offset;
+ }
+ 
+ /*
+-- 
 2.21.0
 
 
