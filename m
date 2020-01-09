@@ -2,63 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 763841358EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 13:12:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92381135909
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 13:18:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=190FiRsv+S/gPbYNIZcwR8DSHgB266OsCnQN0ESv7kk=; b=QbyhBdq+9Q5bWA
-	0HbF+aurg4bt4K1aPNGKC1zWQKy1tcHtZtz3WFJst53QZnVlPw/KUfpJ802v/iBobarWkKCfqlcZo
-	s4JlU9kLBdF5ZVNMxq0/OLlZc5Fyn5Jyq6DvjI9WR9NMwef/DggKaBPwHuoliVM6JN7wJm8Gx9wKK
-	XHb3voUXuyWRHqefJ1m1VMUZJcYpME0veJInx7c2xShC19jQ4V1u3b7bjiDxC+D2j/JFllx9LjwOo
-	Jw3dJkwevRhdo9IDg7618MUI5W7tYcjJ3bbq/EHjTjPfF2d/xot6pj3H5mayIlA7LuO1QbEgCpcrl
-	lX5ZJj13avjS5oTBau2g==;
+	List-Owner; bh=yGF0iIScgpfd5uX1oY2zdisrwvckUO2Z9Z4we+dzvoU=; b=EWGnNVOiqVYITh
+	K6D0dy9DaCeBcDpXO4/g4lC7ae4SOnapv2xgN+wiwBcknRIlSFAckrpCxJF1HcIor30EDEJpa1X0v
+	na/Gc04tsGtFo0sLcVtbTp2Hpjp4nHqloU3VuV82hCeOQUM3Bb+MZGIkyTNz02KF403KLCnz19PCJ
+	TMgrETtV7yHNZYsISouGNzCk4X3IHaKNXHRZoafQGPCR21fODPuZT5EwEEZs5KFaJnw6pJUP/NFkx
+	mgOtXB8kogrKD4/qNyPb706R1U3GgRVyounS74qlALJfAhvokkdzdBoUGKuDCPjlCQEOikX5+SWSj
+	kOd+ttEbH6PWtQN9Bbxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipWfw-0001DN-4w; Thu, 09 Jan 2020 12:12:32 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipWfo-0001CS-HI
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 12:12:26 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 09 Jan 2020 21:12:20 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id A5D3B603AB;
- Thu,  9 Jan 2020 21:12:20 +0900 (JST)
-Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
- Thu, 9 Jan 2020 21:13:11 +0900
-Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by iyokan.css.socionext.com (Postfix) with ESMTP id 322C540343;
- Thu,  9 Jan 2020 21:12:20 +0900 (JST)
-Received: from [10.213.132.48] (unknown [10.213.132.48])
- by yuzu.css.socionext.com (Postfix) with ESMTP id F0BFA120136;
- Thu,  9 Jan 2020 21:12:19 +0900 (JST)
-Date: Thu, 09 Jan 2020 21:12:20 +0900
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH 2/2] dmaengine: uniphier-xdmac: Add UniPhier external DMA
- controller driver
-In-Reply-To: <20191227063411.GG3006@vkoul-mobl>
-References: <1576630620-1977-3-git-send-email-hayashi.kunihiko@socionext.com>
- <20191227063411.GG3006@vkoul-mobl>
-Message-Id: <20200109211219.57FC.4A936039@socionext.com>
+	id 1ipWl9-0004AW-LZ; Thu, 09 Jan 2020 12:17:55 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipWl2-00049o-Ir
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 12:17:50 +0000
+Received: by mail-lj1-x234.google.com with SMTP id u1so6988650ljk.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 04:17:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kJr9DdZZf2/ANld+Ul9RudgAsohen5RqZzNVnbAqTsg=;
+ b=mjvHnzbEaIbsQ0NrLtzCJRIhUTVzBGpQVrz43beSCllrFgzbAODIdEWPM6fiwSkcIu
+ xD/gC+72yKJXiV0m/oD9K9IyhwgwpCMl2rrp0ynPOetXgn3z4+wy5Frbb36/2PqTqZHn
+ HcHBVnCKltDcjjTRy+NsKATYq8umfzgbRbIroF1FYyTOLdBhKJsARpLUQ/uDGdqqtnRj
+ x6IL2kwuJCygf3xZtI5IguBxcK4MlZjaYTVcrO9+PrG2dTV90SlbpjXZByf6qskfTMDL
+ OqSqTQJLRYLbZkRDtN7X6jbLlHh+aBwkl7O0axkckjmj46m89yeyNbKH73C2Pohga2Pk
+ CpfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kJr9DdZZf2/ANld+Ul9RudgAsohen5RqZzNVnbAqTsg=;
+ b=VjsdoebDlqGHk3nY/3h9c7TRKuaD4VWSKMMBkhqt5NKa+zj5Vj7etoR2mmLRXh+EcH
+ lUu8WP3GvaTsOxK4ZrHw9J2RVdJMRkQllFdrYmfujeq9bh9/m05+g/mqJZvywp3Pv/j8
+ 5dmzr9srknmZmzvaWU44jYRDlsnBQTlOfMxGp0nzq39ZSCtLsPn4TFYfE/Y+87ZdeKgB
+ kcfiUyurHlCzcmEZKjJgMNYfXqjmMa2gqdMt1cODV6S3DcJfj02wgH8DZLe0npesWGDf
+ AA2iNKlCQGXYXH5xIjkpHsbH78tKNm21ugU2a5aVIVd0/cjGN+88zQ/eQ94wgDfk3CFL
+ Cx2w==
+X-Gm-Message-State: APjAAAXW3ba3CnDPyqaIYsrWmBPcg6JwK4/M/J7X7qALFfEThdNUaRPu
+ uEmm9wHjItXWmqfJUc5pnlGFBnjNOXWEzSn2cng=
+X-Google-Smtp-Source: APXvYqwTcIlvIE0lUCJi3FRLOlS1u3VgGMOmgYWiU57KWCLBT1IzZv7XrENayxwaVo2Wm+OfP7BbhpaMMuEa7apsGDA=
+X-Received: by 2002:a2e:943:: with SMTP id 64mr6356480ljj.17.1578572266871;
+ Thu, 09 Jan 2020 04:17:46 -0800 (PST)
 MIME-Version: 1.0
-X-Mailer: Becky! ver. 2.70 [ja]
+References: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
+ <20191203101509.wte47aad5k4mqu2y@pengutronix.de>
+ <CAOMZO5Cn993y9VeFN6hPO3-cfNnUKiuFd_rqAZ8htz=dO6t6ig@mail.gmail.com>
+ <CAOMZO5BniszDhWKkoWY=P62kv9cY160r9P=pjpbSOZasxJvdBA@mail.gmail.com>
+ <77fff313-3f40-6b5e-fe30-5a65a189bdff@gmail.com>
+In-Reply-To: <77fff313-3f40-6b5e-fe30-5a65a189bdff@gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 9 Jan 2020 09:17:35 -0300
+Message-ID: <CAOMZO5DyJ_niuoBX62B1NLkKRpYQQtKUiX06L62TmA6PNMKO5A@mail.gmail.com>
+Subject: Re: Issue with imx_get_temp()
+To: Igor Plyatov <plyatov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_041224_811715_95C7F14B 
-X-CRM114-Status: GOOD (  22.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_041748_645991_E1491D52 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:234 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,127 +97,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-kernel@vger.kernel.org,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Marco Felsch <m.felsch@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vinod,
+Hi Igor,
 
-Thank you for your comment.
+On Tue, Dec 3, 2019 at 11:36 AM Igor Plyatov <plyatov@gmail.com> wrote:
+>
+> Dear Fabio,
+>
+> > Does the following patch help?
+> > http://code.bulix.org/l3rz2e-982595
+>
+> Thank you!
+>
+> Patch applied and will be tested.
+>
+> I will inform you about results.
 
-On Fri, 27 Dec 2019 12:04:11 +0530 <vkoul@kernel.org> wrote:
-
-> On 18-12-19, 09:57, Kunihiko Hayashi wrote:
-> > This adds external DMA controller driver implemented in Socionext
-> > UniPhier SoCs. This driver supports DMA_MEMCPY and DMA_SLAVE modes.
-> > 
-> > Since this driver does not support the the way to transfer size
-> > unaligned to burst width, 'src_maxburst' or 'dst_maxburst' of
-> 
-> You mean driver does not support any unaligned bursts?
-
-Yes. If transfer size is unaligned to burst size, the final transfer
-will be overrun.
-
-> 
-> > +static int uniphier_xdmac_probe(struct platform_device *pdev)
-> > +{
-> > +	struct uniphier_xdmac_device *xdev;
-> > +	struct device *dev = &pdev->dev;
-> > +	struct dma_device *ddev;
-> > +	int irq;
-> > +	int nr_chans;
-> > +	int i, ret;
-> > +
-> > +	if (of_property_read_u32(dev->of_node, "dma-channels", &nr_chans))
-> > +		return -EINVAL;
-> > +	if (nr_chans > XDMAC_MAX_CHANS)
-> > +		nr_chans = XDMAC_MAX_CHANS;
-> > +
-> > +	xdev = devm_kzalloc(dev, struct_size(xdev, channels, nr_chans),
-> > +			    GFP_KERNEL);
-> > +	if (!xdev)
-> > +		return -ENOMEM;
-> > +
-> > +	xdev->nr_chans = nr_chans;
-> > +	xdev->reg_base = devm_platform_ioremap_resource(pdev, 0);
-> > +	if (IS_ERR(xdev->reg_base))
-> > +		return PTR_ERR(xdev->reg_base);
-> > +
-> > +	ddev = &xdev->ddev;
-> > +	ddev->dev = dev;
-> > +	dma_cap_zero(ddev->cap_mask);
-> > +	dma_cap_set(DMA_MEMCPY, ddev->cap_mask);
-> > +	dma_cap_set(DMA_SLAVE, ddev->cap_mask);
-> > +	ddev->src_addr_widths = UNIPHIER_XDMAC_BUSWIDTHS;
-> > +	ddev->dst_addr_widths = UNIPHIER_XDMAC_BUSWIDTHS;
-> > +	ddev->directions = BIT(DMA_DEV_TO_MEM) | BIT(DMA_MEM_TO_DEV) |
-> > +			   BIT(DMA_MEM_TO_MEM);
-> > +	ddev->residue_granularity = DMA_RESIDUE_GRANULARITY_BURST;
-> > +	ddev->max_burst = XDMAC_MAX_WORDS;
-> > +	ddev->device_free_chan_resources = uniphier_xdmac_free_chan_resources;
-> > +	ddev->device_prep_dma_memcpy = uniphier_xdmac_prep_dma_memcpy;
-> > +	ddev->device_prep_slave_sg = uniphier_xdmac_prep_slave_sg;
-> > +	ddev->device_config = uniphier_xdmac_slave_config;
-> > +	ddev->device_terminate_all = uniphier_xdmac_terminate_all;
-> > +	ddev->device_synchronize = uniphier_xdmac_synchronize;
-> > +	ddev->device_tx_status = dma_cookie_status;
-> > +	ddev->device_issue_pending = uniphier_xdmac_issue_pending;
-> > +	INIT_LIST_HEAD(&ddev->channels);
-> > +
-> > +	for (i = 0; i < nr_chans; i++) {
-> > +		ret = uniphier_xdmac_chan_init(xdev, i);
-> > +		if (ret) {
-> > +			dev_err(dev,
-> > +				"Failed to initialize XDMAC channel %d\n", i);
-> > +			return ret;
-> 
-> so on error for channel N we leave N-1 channels initialized?
-
-The uniphier_xdmac_chan_init() always returns 0, so this error decision
-can be removed.
-
-> > +static int uniphier_xdmac_remove(struct platform_device *pdev)
-> > +{
-> > +	struct uniphier_xdmac_device *xdev = platform_get_drvdata(pdev);
-> > +	struct dma_device *ddev = &xdev->ddev;
-> > +	struct dma_chan *chan;
-> > +	int ret;
-> > +
-> > +	/*
-> > +	 * Before reaching here, almost all descriptors have been freed by the
-> > +	 * ->device_free_chan_resources() hook. However, each channel might
-> > +	 * be still holding one descriptor that was on-flight at that moment.
-> > +	 * Terminate it to make sure this hardware is no longer running. Then,
-> > +	 * free the channel resources once again to avoid memory leak.
-> > +	 */
-> > +	list_for_each_entry(chan, &ddev->channels, device_node) {
-> > +		ret = dmaengine_terminate_sync(chan);
-> > +		if (ret)
-> > +			return ret;
-> > +		uniphier_xdmac_free_chan_resources(chan);
-> 
-> terminating sounds okayish but not freeing here. .ree_chan_resources()
-> should have been called already and that should ensure that termination
-> is already done...
-
-If all transfers are complete, .device_free_chan_resources() should be called.
-Since _remove() might be called asynchronously, this is post-processing just
-before transfer completion.
-
-Thank you,
-
----
-Best Regards,
-Kunihiko Hayashi
-
+Have you had a chance to test the patch?
 
 _______________________________________________
 linux-arm-kernel mailing list
