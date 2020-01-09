@@ -2,80 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A2F7135430
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:18:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A64E7135437
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 09:21:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uhGBWooH2kQW4+4FB6MI62DthP5jvncTigAYXC6+aaE=; b=QoEwOd4XJbxtvd
-	wk2f4yGhJvX50tGPlOr+cjHhMEzSmF0h0QxzzggDqda0T7YqZTZgqrgV8aoSGSEZByE6UyajHU5tT
-	Eh79XCxYjYIgtzmjhZNA//ZnsU4SjyIKInBjM37mZKyoIaITeJdo3BgAVd2+aNe4Ebyq2Uiq9ylWu
-	ofJTpX0XHn7hINMtnERajZ/bFS8Sr2qDHnur8zNffDTfLj+M0bMkRNyOG7Vh9tgujlQJwlLLP0yaw
-	gpdq9+Xgh2dJ38Gs1pFBYtaWR2Qb/ao2GXSfvbQSjpz8FcjEK6NuYid/zVWjnQSNoesdUPukYjFJh
-	xnLFn6XE5p4gZxtbaXZQ==;
+	List-Owner; bh=Qnk/MxuL3eHMzYT0j3xT3qvKjvUOS9iyioH3q6iubOo=; b=lDk8v7GQN/bZkK
+	Vy3UlZNNDleXwq20PHbX4ar2u0NF3Muo8qzgWWQJfXn0iui5Qy6EBEJKdpH8jrDMAmy6qr9Md36lZ
+	Ru4SBX70vNb6uXl2W/sRFp5m+qWQVPe43ZKZ0VTUm7ReQWW3aZjK7vLLUe0g423M/cTqPtov47ALU
+	sxjXS+xc+Yb9SnCX/z40XXM/CuRth0dbTySqcwTxL2RsbDj1m3xWWU9czo/qHrmfcy6Shnpr1aVQH
+	8kMbJcSpm1z6/NxGqgks4HlLSLpOIXOWS7dj19vLEbv63RVxuT4BrArrwyIfyFu0dSj7wiGBC6x35
+	3Gtnx0HxHQEuk8UjqybA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipT1i-0005ZS-W0; Thu, 09 Jan 2020 08:18:46 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1ipT3l-0007K9-El; Thu, 09 Jan 2020 08:20:53 +0000
+Received: from mail-db8eur05on2059.outbound.protection.outlook.com
+ ([40.107.20.59] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipT1Z-0005YC-0t
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 08:18:38 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MgRYd-1jKz183hbL-00hwjn for <linux-arm-kernel@lists.infradead.org>; Thu,
- 09 Jan 2020 09:18:30 +0100
-Received: by mail-qk1-f180.google.com with SMTP id t129so5182766qke.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 00:18:29 -0800 (PST)
-X-Gm-Message-State: APjAAAXDls4+QtU0ovEf6HXb6vtw4OcNHujt8EVogNiQfpRcUhzGeptw
- MD9U/WPKDMp+l4lG5uUApq9v+JDpX8KBJSRH0VI=
-X-Google-Smtp-Source: APXvYqwrLUeYgK37ZgRpSE5ftnQA149aKKqaEoy2+dBDh0yYplmE9JgRJrB0Wlay2W/JZAZoEkEavviGz+ak9iB2ijQ=
-X-Received: by 2002:a37:84a:: with SMTP id 71mr8135294qki.138.1578557908396;
- Thu, 09 Jan 2020 00:18:28 -0800 (PST)
+ id 1ipT3a-0007Il-9d
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 08:20:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GlSmpeFF5ckBEz9xAOgS3CIztpAAZ1Jx0w+iF+HqUU7V71lZ8VONHFVpOnsi1q1kvpv6rOcuKSPx3YIkjU4DSPHztqnkDSS1H6yohTaT399JLegUFmnG53QravutNEAyhaaJtTcUmo15UK74OUGE5+sUk/BrbVGvnJyG92eEFNXzAYNxOlKPk6HdSPwvntSx0l1gPH8uCW0hDSI6Fjau98qaHWcjEJKwDnDbzisJWCe7/r9JFztcArHLdP3jtGx8eF0rXiVcIALneNOeFM5m/yjbBTp1VVjk8dkix6ofMh1wY8ivIXPGM4wmbV4L2OUvZSu5Ur40pdjtTkHhMIqcVA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=g/RlDsNBIbovVw78AZrEWsHUv0BHUUi0PAnQAQ1O3Yo=;
+ b=BrXqZAjruzsFjlBWXUp4wpXRCTmRtnkGnr8StFxJt9JhjNrl3XqHjf1IjS4OL9sYj7QDT3Xd18fLGX7mNTvsoFpB17u2bJgpD3okKy4/nrYfNcvVKvxsbiAEkwpbkoGSPW5fZWLLjEHXPFdkp439yFkU6NeT2jFHcBLh6Ai7ac2xUsyI3tQRuO4hDHlCzCUJ3mE3731SaFsATmt7Yh3zH4G1nobLyYvqbnuld4L3GbJCGROc/1c5CpznmPxzlOLHKuAvr2erqR24wissE3merdAfb5Qaude9nz+piIc0tIJQpGTC+Fv7x3KfJMdAxfJycyOxMarjh1kKXj3ka94YPw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=g/RlDsNBIbovVw78AZrEWsHUv0BHUUi0PAnQAQ1O3Yo=;
+ b=AZu8LgeDcT1bTZO3bILew6E65MusLMuyzIBiFcUquyOyJnm3W0mi2qN9+crRidXb0AMYy4zrh71dMGB2RxM7DqRjAe+VyCcZRaT1WPDx18q8OSMdNE2x8fgyjzcB8D+NzA2hokHTR9eOKCzlFYGGdQr4axN6yjKTV/t1KKu0F6o=
+Received: from VI1PR04MB4496.eurprd04.prod.outlook.com (20.177.54.92) by
+ VI1PR04MB3229.eurprd04.prod.outlook.com (10.170.231.30) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.15; Thu, 9 Jan 2020 08:20:38 +0000
+Received: from VI1PR04MB4496.eurprd04.prod.outlook.com
+ ([fe80::25c7:9207:684a:5e2b]) by VI1PR04MB4496.eurprd04.prod.outlook.com
+ ([fe80::25c7:9207:684a:5e2b%6]) with mapi id 15.20.2623.010; Thu, 9 Jan 2020
+ 08:20:38 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>
+Subject: RE: [PATCH] ARM: imx: use of_root to simplify code
+Thread-Topic: [PATCH] ARM: imx: use of_root to simplify code
+Thread-Index: AQHVvvAOkP5pfM/SI0ufVklMt6+KwqfiDDEAgAAAu+A=
+Date: Thu, 9 Jan 2020 08:20:38 +0000
+Message-ID: <VI1PR04MB4496D19E97406E9AC71BAE9F88390@VI1PR04MB4496.eurprd04.prod.outlook.com>
+References: <1577696316-27635-1-git-send-email-peng.fan@nxp.com>
+ <20200109081603.GI4456@T480>
+In-Reply-To: <20200109081603.GI4456@T480>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: f73319ba-d399-491b-44d0-08d794dccef4
+x-ms-traffictypediagnostic: VI1PR04MB3229:|VI1PR04MB3229:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB3229CBD636A1F5E9259B8B9388390@VI1PR04MB3229.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2733;
+x-forefront-prvs: 02778BF158
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(346002)(39860400002)(396003)(366004)(376002)(189003)(199004)(2906002)(26005)(76116006)(66556008)(66476007)(8676002)(64756008)(66446008)(186003)(55016002)(81166006)(966005)(8936002)(9686003)(478600001)(81156014)(71200400001)(316002)(33656002)(6506007)(54906003)(110136005)(86362001)(4326008)(66946007)(7696005)(5660300002)(44832011)(52536014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3229;
+ H:VI1PR04MB4496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ckQkR1zCHVklCswp+AqTiJRs2SRSJ/q2r4zNeF6HWSrhw8WQaOAzTjoHwJoJOw8li72dvAw+HFPHPkke5rgw+fDzv/WmxTGVlYMlBvj/XrJv6zC2T6zmX6XKdil5XF3lpYwxbuPLs4orcm+PGdsSY3Yq0aHhDllkeVL4iA5RBH71PIZ/sAUhJh05Q2G7qezcEgA2zZdGF4ClcTXD4+Mh8UJrVtLyiMvTUMxOBO9Elr9r4B6GNs7UjRqOvlwrNGaDt4LwKeqC8wnE1cWc2qEPN20YbQ3gvbRu8PKu/e/w1XAfxYoieP/K3O+fhmN6MSGnBgT8wywZmRD3VVgG6x0om6U1VoU8reRpcyGWa55ida0ZDJkg2uUJppUOhj/ea5KHd17Q6dkfK/9yW0Iuii8Q4Yi8rmSL7znyuHtgoKBqQJySjGnwCSF8BmGVLFqg9U+9rnC3sm2pFitXDwxts3mbwQP/YyFGWYZAO3TfPALMnEH7805MclBwyAF2BAL0G+ks3OdIaNpMOUHvNi4ou8mmIw==
 MIME-Version: 1.0
-References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
-In-Reply-To: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 9 Jan 2020 09:18:12 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
-Message-ID: <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
-Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>
-X-Provags-ID: V03:K1:h5k4q4mowramQHxiZz455MqoY2YB4DBcxBbaR25Kp3FW+Baqu7I
- +WTe39SqGsdiN/x0PiMvm87b1QIxRu4BUnDWmVfe1MY9TFrfHYbWR0Vc67hh1QZjTxSAGPy
- lAOniO6bdnEvLy76oRHpx1YRtKeYJ347oA8PhtcdHCQvl7BZNbnopSbje3ItzyG/XoJYnY4
- NzvlTprkA4mD8EJR8fXgA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:l1Xkizmgbvk=:rZr6/8qRzmfTna/DB42mMU
- EWJUXtYI8e3fOBazlvphx+VdMugdZEVM/EWgeMNpUqupA/UyiwTVvPOb9EVEV9BCQzaeswTRy
- duQNMC5pu0Ab4sn41HInPVrS/hOqnv3T1HryjdL5CYQj6D1XE3uD4TmIghRISAIH2uVKU3f1R
- mDVJnIUwxnbXnSBOAdzsT/z9LxPzmAPe6WmSbr8ZX8lfB7UtcR8nFYI5fe1CuoK0L7DrwX2f7
- ooi27iQG1kKuOCL03Fq/jpygvT8K/qmvKizW+k3sDsy/eANuetPmpOQmDZOtZU6KMo/RjhOK6
- ZiU9pr3UKpH2C7TKrVjNv9RTpWC3wvx/mztCH5/j5JG34PzdFqFWGnJJsrjQzhI58QQRukEWX
- w3yP0cSwQkyi6/im2PakhTIr5bLpzY+f7BUX/h08weD9cJ02SJmCDWolBAD+iVtOVBHUCqiHm
- GaYaFPzDjbr0qoQvrq6dhTZj9hnerpMUmungHrD7shsZgfZoUKLMzTUCwSKwplMPuLOGiHj+J
- vN6/OgmCKtAJvidUVn6A3JKSyiju8vlVchposu7eXpGwAwrFOYDU5PgKW/T6TyGzvI6ix7Mgg
- Qg/4VbKpVikqwgFc8FSoO+28ccqejpt3LvAI+AF1W+U2tdcJhMVg1UGYSQoB1DJfoC2yGuQuT
- 30wMvaYEswII1135Jr+fTC/U6OkL7drGb/LStRd4APzQc3jd7YBHvc0VMUsRHF0ZNMADCOVrW
- Pl5+4dw5QdEQT93YNKl5r9ZCIwu2JMsGFXPc15dM1kWGbqkPrkpqDCkIOXDnszo3+GGTAVlSt
- Cg9d9grmNM4CYF4IJolQ3rweb+k5RBj5od6pFf8FD+eDQFsb3+qcBjgYfopNbX8cT36LgcwGV
- 8m5g6qCTgqjf3VeAQupw==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f73319ba-d399-491b-44d0-08d794dccef4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jan 2020 08:20:38.1635 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9ZHAcOgyDtcgF+jr6C/2isYjgKFsZDU/SQ/z8W5JWxSQ32WXGKnsBZTQ+ryeh5DdTgxiLi4v5NdCiRVt+vLm3A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3229
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_001837_365045_DFFF1A02 
-X-CRM114-Status: GOOD (  20.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_002042_411956_CF4968AA 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [40.107.20.59 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,101 +120,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jassi Brar <jassisinghbrar@gmail.com>,
+Cc: "cniedermaier@dh-electronics.com" <cniedermaier@dh-electronics.com>,
+ Anson Huang <anson.huang@nxp.com>, Alice Guo <alice.guo@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 29, 2019 at 10:32 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
->
-> The SCMI specification is fairly independent of the transport protocol,
-> which can be a simple mailbox (already implemented) or anything else.
-> The current Linux implementation however is very much dependent of the
-> mailbox transport layer.
->
-> This patch makes the SCMI core code (driver.c) independent of the
-> mailbox transport layer and moves all mailbox related code to a new
-> file: mailbox.c.
->
-> We can now implement more transport protocols to transport SCMI
-> messages.
->
-> The transport protocols just need to provide struct scmi_transport_ops,
-> with its version of the callbacks to enable exchange of SCMI messages.
->
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
++Rob
 
-Conceptually I think this is fine, but as others have said, it would be
-better to have another transport implementation posted along with this
-to see if the interfaces actually work out.
+Hi Shawn,
 
-> +/**
-> + * struct scmi_chan_info - Structure representing a SCMI channel information
-> + *
-> + * @payload: Transmit/Receive payload area
-> + * @dev: Reference to device in the SCMI hierarchy corresponding to this
-> + *      channel
-> + * @handle: Pointer to SCMI entity handle
-> + * @transport_info: Transport layer related information
-> + */
-> +struct scmi_chan_info {
-> +       void __iomem *payload;
-> +       struct device *dev;
-> +       struct scmi_handle *handle;
-> +       void *transport_info;
-> +};
+> Subject: Re: [PATCH] ARM: imx: use of_root to simplify code
+> 
+> On Mon, Dec 30, 2019 at 09:03:51AM +0000, Peng Fan wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > start_kernel
+> >      |->setup_arch
+> >      |       |->unflatten_device_tree->of_root ready
+> >      |
+> >      |->do_initcalls
+> >            |->customize_machine
+> >                        |->init_machine
+> >                               |->imx_soc_device_init
+> >
+> > When imx_soc_device_init, of_root is ready, so we could directly use it.
+> 
+> IMO, of_root is something for OF core code, not really for platform.
 
-I would assume that with another transport, the 'payload' pointer would
-not be __iomem
+From below link, I see powerpc and some driver use of_root directly.
+https://elixir.bootlin.com/linux/v5.5-rc5/ident/of_root
 
-> +static int scmi_set_transport_ops(struct scmi_info *info)
-> +{
-> +       struct scmi_transport_ops *ops;
-> +       struct device *dev = info->dev;
-> +
-> +       /* Only mailbox method supported for now */
-> +       ops = scmi_mailbox_get_ops(dev);
-> +       if (!ops) {
-> +               dev_err(dev, "Transport protocol not found in %pOF\n",
-> +                       dev->of_node);
-> +               return -EINVAL;
-> +       }
-> +
-> +       info->transport_ops = ops;
-> +       return 0;
-> +}
+of_root is exported as a symbol. Rob, could you please clarify whether
+platform code could use of_root directly?
 
-This looks odd: rather than guessing the transport type based on
-random DT properties, I would prefer to have it determined by
-the device compatible string, and have different drivers bind
-to one of them each, with each driver linking against a common
-base implementation, either as separate modules or in one file.
+Thanks,
+Peng.
 
-> +static int mailbox_chan_free(int id, void *p, void *data)
-> +{
-> +       struct scmi_chan_info *cinfo = p;
-> +       struct scmi_mailbox *smbox = cinfo->transport_info;
-> +
-> +       if (!IS_ERR_OR_NULL(smbox->chan)) {
-> +               mbox_free_channel(smbox->chan);
-> +               cinfo->transport_info = NULL;
-> +               smbox->chan = NULL;
-> +               smbox->cinfo = NULL;
-> +       }
-
-There is something wrong if smbox->chan can be be one of
-three things (a valid pointer, a NULL pointer, or an error value).
-
-I see this is a preexisting problem, but please add a patch to
-make it consistently use either NULL pointers or error codes
-and remove all instances of IS_ERR_OR_NULL() from this
-subsystem.
-
-        Arnd
+> 
+> Shawn
+> 
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >
+> > V1:
+> >  Tested on i.MX7D-SDB
+> >
+> >  arch/arm/mach-imx/cpu.c | 5 +----
+> >  1 file changed, 1 insertion(+), 4 deletions(-)
+> >
+> > diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c index
+> > 06f8d64b65af..77319b359070 100644
+> > --- a/arch/arm/mach-imx/cpu.c
+> > +++ b/arch/arm/mach-imx/cpu.c
+> > @@ -88,7 +88,6 @@ struct device * __init imx_soc_device_init(void)
+> >  	struct soc_device_attribute *soc_dev_attr;
+> >  	const char *ocotp_compat = NULL;
+> >  	struct soc_device *soc_dev;
+> > -	struct device_node *root;
+> >  	struct regmap *ocotp = NULL;
+> >  	const char *soc_id;
+> >  	u64 soc_uid = 0;
+> > @@ -101,9 +100,7 @@ struct device * __init imx_soc_device_init(void)
+> >
+> >  	soc_dev_attr->family = "Freescale i.MX";
+> >
+> > -	root = of_find_node_by_path("/");
+> > -	ret = of_property_read_string(root, "model", &soc_dev_attr->machine);
+> > -	of_node_put(root);
+> > +	ret = of_property_read_string(of_root, "model",
+> > +&soc_dev_attr->machine);
+> >  	if (ret)
+> >  		goto free_soc;
+> >
+> > --
+> > 2.16.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
