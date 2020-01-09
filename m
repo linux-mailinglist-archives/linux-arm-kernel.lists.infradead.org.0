@@ -2,59 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2E0D13553D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 10:11:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8CDC13554B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 10:13:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k21The47fj1aExbnMFW/Cdn60rXmHSuzw49UsdlYyyM=; b=iRC0lkusoGFWoN
-	S+xZJEm6Q9qbPrPsthySFVMQREEyNfdd70EYw71+aHzO+Q/e2+zEG5QA3H1D9QFRw4H/SatXoYEee
-	MGwjtmazzd16yJwBIMn64Nw3asE7zN14iilMaapXZIvx2yxeaE/3qxwvCLjMuaz3oe6DzrOjNE101
-	rehq1uFnOKBm9jCIUfaw0qgbvqKdtAHamIWk6zaWy7M5cJFK6HtFgyo9JdFEgAdfO2KYudrtomWXY
-	/kKh0fY+4MmD2KuulcKUsSdJ1IEIbpGWrEFMYPYJGKAuTiPPoQcC4DZba5kkjX9ZBlYkve2O8/jbS
-	D5A48uy4SQXbG7HAde+A==;
+	List-Owner; bh=5sx/CAOEh6pIFpgWifXbTGoXeyhGqyE1qG4Vgr5q0OM=; b=fXWg8wC/1sibem
+	AavBjDdRrZSLyQpGqsYMQ64ZUUBBdX+8AsMI2cDgXWD7EeHv+oDiiK0Zz8VljpXtXQDCBe/Nj477p
+	7kY410GhB9ajz4FFWpouMRKj3Aydb7WFIMLaaI8LHtbqIgS7RrUGIUpdaM2gdttjJjCZSTTdfkXk2
+	moZcsx5AzBg7RS7DsOihXUNfFvnLPZHYqV12em3dUHqS/2qtuzVh9vlIYLbtTpwYczyBLSUB7hDn1
+	LdRfM0+tBTnVp7ZtVRdAZau809ClX+/11OJ2ZL6XI0gUb/p8FuygbXREZDgiz7zSCbSzi8/C4SYQa
+	qtxWD4Y4M4ob+hq9Ckqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTqk-0006Ja-QI; Thu, 09 Jan 2020 09:11:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTqX-0006Iz-Ap
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 09:11:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CB30231B;
- Thu,  9 Jan 2020 01:11:13 -0800 (PST)
-Received: from [10.162.40.138] (p8cg001049571a15.blr.arm.com [10.162.40.138])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- BA4F63F6C4; Thu,  9 Jan 2020 01:11:09 -0800 (PST)
-Subject: Re: [PATCH 07/17] arm64: entry: convert error entry to C
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
- will@kernel.org, james.morse@arm.com
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-8-mark.rutland@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <71785264-d196-b84c-d527-1a49f8aa7dda@arm.com>
-Date: Thu, 9 Jan 2020 14:42:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ipTsX-0006u8-Ni; Thu, 09 Jan 2020 09:13:21 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipTsQ-0006th-Q6
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 09:13:16 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00997oCh021592; Thu, 9 Jan 2020 10:13:08 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=WeMi3HpOU5AF0rGrPKqX2WxavTF7Z+TyGKSaY1oSknc=;
+ b=oWnYAgf2miTJ94ASkmeXawkZn7a43R5ZQu/HUcQXoRuUmxx/jNDbbufLprF050RfmSoc
+ FKcPzdnfhEYDHzhXBmrkPyh+9keWY1lWsMY4JdQLyhPnpfXPFlgTeELJnmhVTNG3D+pJ
+ Pcpc8ncq2IiK5n3FCOYZgVuewJ2IoIgVUP5Fbk0qa5sy/EY4fxNxesWIfLfUJGjYXAM9
+ xYiJe4UQDMYCSc0Rn5paW6LJWC6C1pyUOB/Wl9E2HsjzIbdQ/SB0H8v2I8WrCmAXFonN
+ LAzniOJggG4aIcFKZN8JWhwJN6KCquIkxooO2vPVuEI44LkUXYTcptFXxRqBv7F5/jSb xA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xakur0jsc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 09 Jan 2020 10:13:08 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 13E74100038;
+ Thu,  9 Jan 2020 10:13:04 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 033752A6184;
+ Thu,  9 Jan 2020 10:13:04 +0100 (CET)
+Received: from [10.48.0.71] (10.75.127.45) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 9 Jan
+ 2020 10:13:03 +0100
+Subject: Re: [PATCH v2] iio: adc: stm32-dfsdm: Use dma_request_chan() instead
+ dma_request_slave_channel()
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <jic23@kernel.org>,
+ <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
+References: <20200107114532.6697-1-peter.ujfalusi@ti.com>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <eade6657-8470-0d70-b3c1-fcdddf891c6c@st.com>
+Date: Thu, 9 Jan 2020 10:13:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200108185634.1163-8-mark.rutland@arm.com>
+In-Reply-To: <20200107114532.6697-1-peter.ujfalusi@ti.com>
 Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-09_02:2020-01-08,
+ 2020-01-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_011117_460988_63AACE66 
-X-CRM114-Status: GOOD (  18.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_011315_145092_FE8906E9 
+X-CRM114-Status: GOOD (  21.65  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,146 +98,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, broonie@kernel.org,
- labbott@redhat.com, robin.murphy@arm.com, julien.thierry.kdev@gmail.com,
- alex.popov@linux.com
+Cc: Olivier MOYSAN <olivier.moysan@st.com>, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 01/09/2020 12:26 AM, Mark Rutland wrote:
-> Portions of our error entry logic are handled in C while other parts are
-> handled in assembly. Let's migrate the bulk of it to C so that it's
-> easier to follow and maintain.
+On 1/7/20 12:45 PM, Peter Ujfalusi wrote:
+> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+> eating up the error code.
 > 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+> By using dma_request_chan() directly the driver can support deferred
+> probing against DMA.
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 > ---
->  arch/arm64/include/asm/exception.h |  1 +
->  arch/arm64/kernel/entry-common.c   | 26 ++++++++++++++++++++++++++
->  arch/arm64/kernel/entry.S          | 19 ++++++-------------
->  arch/arm64/kernel/traps.c          |  2 +-
->  4 files changed, 34 insertions(+), 14 deletions(-)
+> Hi,
 > 
-> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-> index a49038fa4faf..220a7c3971d8 100644
-> --- a/arch/arm64/include/asm/exception.h
-> +++ b/arch/arm64/include/asm/exception.h
-> @@ -51,5 +51,6 @@ void do_el0_svc(struct pt_regs *regs);
->  void do_el0_svc_compat(struct pt_regs *regs);
->  void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
->  			    struct pt_regs *regs);
-> +void do_serror(struct pt_regs *regs, unsigned int esr);
->  
->  #endif	/* __ASM_EXCEPTION_H */
-> diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-> index 45155d9f72da..bf9d497e620c 100644
-> --- a/arch/arm64/kernel/entry-common.c
-> +++ b/arch/arm64/kernel/entry-common.c
-> @@ -442,3 +442,29 @@ asmlinkage void notrace el0_irq_handler(struct pt_regs *regs)
->  	trace_hardirqs_on();
->  }
->  NOKPROBE_SYMBOL(el0_irq_handler);
-> +
-> +asmlinkage void el1_error_handler(struct pt_regs *regs)
-> +{
-> +	unsigned long esr = read_sysreg(esr_el1);
-> +
-> +	if (system_uses_irq_prio_masking())
-> +		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
-> +
-> +	local_daif_restore(DAIF_ERRCTX);
-> +	do_serror(regs, esr);
-> +}
-> +NOKPROBE_SYMBOL(el1_error_handler);
-> +
-> +asmlinkage void el0_error_handler(struct pt_regs *regs)
-> +{
-> +	unsigned long esr = read_sysreg(esr_el1);
-> +
-> +	if (system_uses_irq_prio_masking())
-> +		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
-> +
-> +	user_exit_irqoff();
-> +	local_daif_restore(DAIF_ERRCTX);
+> Changes since v1:
+> - Fall back to IRQ mode for ADC only in case of ENODEV
 
-Just being curious. local_daif_restore(DAIF_ERRCTX) has the same
-effect as enable_dbg asm macro previously ?
+Hi Peter,
+
+Thanks for the patch,
+
+Please find a minor comment here after. Apart from that, you can add my:
+
+Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 
 
-> +	do_serror(regs, esr);
-> +	local_daif_restore(DAIF_PROCCTX_NOIRQ);
-> +}
-> +NOKPROBE_SYMBOL(el0_error_handler);
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index 55c4be1e996a..0c5117ef7c3c 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -559,7 +559,10 @@ ENDPROC(el0_irq_compat)
->  
->  el0_error_compat:
->  	kernel_entry 0, 32
-> -	b	el0_error_naked
-> +	mov	x0, sp
-> +	bl	el0_error_handler
-> +	b	ret_to_user
-> +ENDPROC(el0_error_compat)
->  #endif
->  
->  	.align	6
-> @@ -572,25 +575,15 @@ ENDPROC(el0_irq)
->  
->  el1_error:
->  	kernel_entry 1
-> -	mrs	x1, esr_el1
-> -	gic_prio_kentry_setup tmp=x2
-> -	enable_dbg
->  	mov	x0, sp
-> -	bl	do_serror
-> +	bl	el1_error_handler
->  	kernel_exit 1
->  ENDPROC(el1_error)
->  
->  el0_error:
->  	kernel_entry 0
-> -el0_error_naked:
-> -	mrs	x25, esr_el1
-> -	gic_prio_kentry_setup tmp=x2
-> -	ct_user_exit_irqoff
-> -	enable_dbg
->  	mov	x0, sp
-> -	mov	x1, x25
-> -	bl	do_serror
-> -	enable_da_f
-> +	bl	el0_error_handler
->  	b	ret_to_user
->  ENDPROC(el0_error)
-
-Macros enable_da_f and ct_user_exit_irqoff can be removed here itself
-although it is eventually getting dropped off in a later patch.
-
->  
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index 73caf35c2262..170e637bb87b 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -901,7 +901,7 @@ bool arm64_is_fatal_ras_serror(struct pt_regs *regs, unsigned int esr)
->  	}
->  }
->  
-> -asmlinkage void do_serror(struct pt_regs *regs, unsigned int esr)
-> +void do_serror(struct pt_regs *regs, unsigned int esr)
+> 
+> Regards,
+> Peter
+> 
+>  drivers/iio/adc/stm32-dfsdm-adc.c | 21 +++++++++++++++++----
+>  1 file changed, 17 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
+> index e493242c266e..74a2211bdff4 100644
+> --- a/drivers/iio/adc/stm32-dfsdm-adc.c
+> +++ b/drivers/iio/adc/stm32-dfsdm-adc.c
+> @@ -1383,9 +1383,13 @@ static int stm32_dfsdm_dma_request(struct iio_dev *indio_dev)
 >  {
->  	const bool was_in_nmi = in_nmi();
+>  	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
 >  
-> 
+> -	adc->dma_chan = dma_request_slave_channel(&indio_dev->dev, "rx");
+> -	if (!adc->dma_chan)
+> -		return -EINVAL;
+> +	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
+> +	if (IS_ERR(adc->dma_chan)) {
+> +		int ret = PTR_ERR(adc->dma_chan);
+> +
+> +		adc->dma_chan = NULL;
+> +		return ret;
 
-Should not we add NOKPROBE_SYMBOL() for the symbol.
+You may "return PTR_ERR(adc->dma_chan);" directly here.
+
+Best Regards,
+Fabrice
+
+> +	}
+>  
+>  	adc->rx_buf = dma_alloc_coherent(adc->dma_chan->device->dev,
+>  					 DFSDM_DMA_BUFFER_SIZE,
+> @@ -1509,7 +1513,16 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
+>  	init_completion(&adc->completion);
+>  
+>  	/* Optionally request DMA */
+> -	if (stm32_dfsdm_dma_request(indio_dev)) {
+> +	ret = stm32_dfsdm_dma_request(indio_dev);
+> +	if (ret) {
+> +		if (ret != -ENODEV) {
+> +			if (ret != -EPROBE_DEFER)
+> +				dev_err(&indio_dev->dev,
+> +					"DMA channel request failed with %d\n",
+> +					ret);
+> +			return ret;
+> +		}
+> +
+>  		dev_dbg(&indio_dev->dev, "No DMA support\n");
+>  		return 0;
+>  	}
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
