@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D90BE135E7B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:39:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E166D135E9E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:47:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qDFzCzshI6IFYpetB6AvjFZHQV7mfZo+oI4BfjOV1kA=; b=lpfcfLZHrgTF8w
-	7FlEytbsgxFKZG2GIga3MTehLIQnJekHRtu8KB91byd6AJQn1rJ70whoHauMI5juvrddmJa7GL0D7
-	TAfMj0w/TaoNmRMZfXHmnkhMTRk8E45CCnDOTTHaa48EbUmIqp6SDXze7MaTvs1G82zeIY10mvimQ
-	pgfj47yrUcRKt65UY1d8tOBLHKiasvdWUUiC7sidDaOLiaHjL8uK94Kabx/SWDnEoPIRFkwG1Xah+
-	5vvScjWWW/GbAgXAFHPr0wGGYdOvIwzCI5MduNy77nSvdGRak94YgrfG1utpz+mZ567tC8MrER+lr
-	Fi+UjhdvOAHGZGPNEXRg==;
+	List-Owner; bh=K3e8t7xbLXYvLtzakaYQE+kNIjRbrZ5cuQQjg31fpzE=; b=tw3eu900WyoIl+
+	DUMKsuLlbzrGH4Vu7Rl1ApRnmnZShsVRlSfYEI2Bf416cIpW5F+Y/vyS95UPMD/4Dam0xKjShiGZB
+	NGBGWYt7fX9GBzYU7+FWl1AmU5j7AQdjcACWhtr+ysr8JfX7hzpS6SayAOx2hgktD4rEoQgZ44mtZ
+	qFD7JiQn+s7r0HqeHqE6Xgu6yntQkuAd69YAItBQ33sS1yVOidpK3VtLbMvqT+qNFg9/YAGni36Uv
+	n8shy/d1wX6Pz5pQ/Ghf/yJUH6qcAkPVIQx0Aa0xt1uI7SLriY6f0yLUcv6kyn/eGdycEqxEfrVAn
+	yWWUXdeY+RAq/ZQmGedA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaq3-0005Y9-68; Thu, 09 Jan 2020 16:39:15 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipapu-0005Mh-Tj
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:39:09 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id B926C5C0851;
- Thu,  9 Jan 2020 17:38:59 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1578587939;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=+7QRbpCQCLpJtr9o/1yXmDxjFSuJgiIQLzz0w1N4r6s=;
- b=aKAyF8CLGWR8xRlX2djzBwChcIOAOxSqYTm26RteV0smbme5yaes3L7mgFNpzaB3FGFjt5
- NBLeelG098R03EFQPBh8Wi7188/flYj8MmDpmobgM3nojZHKFpdMSCQz9Fihb/Kim8V2ar
- MXH/dmwfzqiMuybuZ+NCg+pEZkrJ/9w=
+	id 1ipaxo-0005zV-CP; Thu, 09 Jan 2020 16:47:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipaxf-0005ry-CP
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:47:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5215C328;
+ Thu,  9 Jan 2020 08:47:06 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B0513F703;
+ Thu,  9 Jan 2020 08:47:04 -0800 (PST)
+Date: Thu, 9 Jan 2020 16:46:55 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [Question] About handling PMU context loss in the deepest idle
+ state where the core is powered down
+Message-ID: <20200109164655.GA29943@e121166-lin.cambridge.arm.com>
+References: <d62d9ac1-3af9-b692-a84a-aab4582e5eb8@huawei.com>
+ <20200109150318.GF12236@willie-the-truck>
 MIME-Version: 1.0
-Date: Thu, 09 Jan 2020 17:38:59 +0100
-From: Stefan Agner <stefan@agner.ch>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V5 2/3] pinctrl: freescale: Add i.MX8MP pinctrl driver
- support
-In-Reply-To: <1578535023-10064-2-git-send-email-Anson.Huang@nxp.com>
-References: <1578535023-10064-1-git-send-email-Anson.Huang@nxp.com>
- <1578535023-10064-2-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Roundcube Webmail/1.4.1
-Message-ID: <c31574bb2ac60ee2eb4dc1c1308b437b@agner.ch>
-X-Sender: stefan@agner.ch
+Content-Disposition: inline
+In-Reply-To: <20200109150318.GF12236@willie-the-truck>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_083907_413975_0D237084 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200109_084707_462708_3F7F5958 
+X-CRM114-Status: GOOD (  15.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,423 +65,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, mark.rutland@arm.com, abel.vesa@nxp.com,
- will@kernel.org, linux-gpio@vger.kernel.org, festevam@gmail.com,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, devicetree@vger.kernel.org,
- robh+dt@kernel.org, maxime@cerno.tech, kernel@pengutronix.de,
- catalin.marinas@arm.com, olof@lixom.net, leonard.crestez@nxp.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, Linux-imx@nxp.com
+Cc: mark.rutland@arm.com, wangzhe59@huawei.com,
+ Catalin Marinas <catalin.marinas@arm.com>, huawei.libin@huawei.com,
+ guohanjun@huawei.com, Xiongfeng Wang <wangxiongfeng2@huawei.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-09 02:57, Anson Huang wrote:
-> Add the pinctrl driver support for i.MX8MP.
+On Thu, Jan 09, 2020 at 03:03:19PM +0000, Will Deacon wrote:
+> [+Lorenzo]
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
-> ---
-> No changes.
-> ---
->  drivers/pinctrl/freescale/Kconfig          |   7 +
->  drivers/pinctrl/freescale/Makefile         |   1 +
->  drivers/pinctrl/freescale/pinctrl-imx8mp.c | 345 +++++++++++++++++++++++++++++
->  3 files changed, 353 insertions(+)
->  create mode 100644 drivers/pinctrl/freescale/pinctrl-imx8mp.c
+> On Thu, Jan 09, 2020 at 10:43:40AM +0800, Xiongfeng Wang wrote:
+> > Sorry to bother you. It's just that we have come across some problems
+> > about PMU recently.
 > 
-> diff --git a/drivers/pinctrl/freescale/Kconfig
-> b/drivers/pinctrl/freescale/Kconfig
-> index 3ea9ce3..de775a8 100644
-> --- a/drivers/pinctrl/freescale/Kconfig
-> +++ b/drivers/pinctrl/freescale/Kconfig
-> @@ -137,6 +137,13 @@ config PINCTRL_IMX8MN
->  	help
->  	  Say Y here to enable the imx8mn pinctrl driver
->  
-> +config PINCTRL_IMX8MP
-> +	bool "IMX8MP pinctrl driver"
-> +	depends on ARCH_MXC && ARM64
-> +	select PINCTRL_IMX
-> +	help
-> +	  Say Y here to enable the imx8mp pinctrl driver
-> +
->  config PINCTRL_IMX8MQ
->  	bool "IMX8MQ pinctrl driver"
->  	depends on ARCH_MXC && ARM64
-> diff --git a/drivers/pinctrl/freescale/Makefile
-> b/drivers/pinctrl/freescale/Makefile
-> index 78e9140..0ebd3af 100644
-> --- a/drivers/pinctrl/freescale/Makefile
-> +++ b/drivers/pinctrl/freescale/Makefile
-> @@ -20,6 +20,7 @@ obj-$(CONFIG_PINCTRL_IMX7D)	+= pinctrl-imx7d.o
->  obj-$(CONFIG_PINCTRL_IMX7ULP)	+= pinctrl-imx7ulp.o
->  obj-$(CONFIG_PINCTRL_IMX8MM)	+= pinctrl-imx8mm.o
->  obj-$(CONFIG_PINCTRL_IMX8MN)	+= pinctrl-imx8mn.o
-> +obj-$(CONFIG_PINCTRL_IMX8MP)	+= pinctrl-imx8mp.o
->  obj-$(CONFIG_PINCTRL_IMX8MQ)	+= pinctrl-imx8mq.o
->  obj-$(CONFIG_PINCTRL_IMX8QM)	+= pinctrl-imx8qm.o
->  obj-$(CONFIG_PINCTRL_IMX8QXP)	+= pinctrl-imx8qxp.o
-> diff --git a/drivers/pinctrl/freescale/pinctrl-imx8mp.c
-> b/drivers/pinctrl/freescale/pinctrl-imx8mp.c
-> new file mode 100644
-> index 0000000..869cf0b
-> --- /dev/null
-> +++ b/drivers/pinctrl/freescale/pinctrl-imx8mp.c
-> @@ -0,0 +1,345 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP
-> + */
-> +
-> +#include <linux/err.h>
-> +#include <linux/init.h>
-> +#include <linux/of.h>
-> +#include <linux/pinctrl/pinctrl.h>
-> +#include <linux/platform_device.h>
-> +
-> +#include "pinctrl-imx.h"
-> +
-> +enum imx8mp_pads {
-> +	MX8MP_IOMUXC_RESERVE0 = 0,
-> +	MX8MP_IOMUXC_RESERVE1 = 1,
-> +	MX8MP_IOMUXC_RESERVE2 = 2,
-> +	MX8MP_IOMUXC_RESERVE3 = 3,
-> +	MX8MP_IOMUXC_RESERVE4 = 4,
-> +	MX8MP_IOMUXC_GPIO1_IO00 = 5,
-> +	MX8MP_IOMUXC_GPIO1_IO01 = 6,
-> +	MX8MP_IOMUXC_GPIO1_IO02 = 7,
-> +	MX8MP_IOMUXC_GPIO1_IO03 = 8,
-> +	MX8MP_IOMUXC_GPIO1_IO04 = 9,
-> +	MX8MP_IOMUXC_GPIO1_IO05 = 10,
-> +	MX8MP_IOMUXC_GPIO1_IO06 = 11,
-> +	MX8MP_IOMUXC_GPIO1_IO07 = 12,
-> +	MX8MP_IOMUXC_GPIO1_IO08 = 13,
-> +	MX8MP_IOMUXC_GPIO1_IO09 = 14,
-> +	MX8MP_IOMUXC_GPIO1_IO10 = 15,
-> +	MX8MP_IOMUXC_GPIO1_IO11 = 16,
-> +	MX8MP_IOMUXC_GPIO1_IO12 = 17,
-> +	MX8MP_IOMUXC_GPIO1_IO13 = 18,
-> +	MX8MP_IOMUXC_GPIO1_IO14 = 19,
-> +	MX8MP_IOMUXC_GPIO1_IO15 = 20,
-> +	MX8MP_IOMUXC_ENET_MDC = 21,
-> +	MX8MP_IOMUXC_ENET_MDIO = 22,
-> +	MX8MP_IOMUXC_ENET_TD3 = 23,
-> +	MX8MP_IOMUXC_ENET_TD2 = 24,
-> +	MX8MP_IOMUXC_ENET_TD1 = 25,
-> +	MX8MP_IOMUXC_ENET_TD0 = 26,
-> +	MX8MP_IOMUXC_ENET_TX_CTL = 27,
-> +	MX8MP_IOMUXC_ENET_TXC = 28,
-> +	MX8MP_IOMUXC_ENET_RX_CTL = 29,
-> +	MX8MP_IOMUXC_ENET_RXC = 30,
-> +	MX8MP_IOMUXC_ENET_RD0 = 31,
-> +	MX8MP_IOMUXC_ENET_RD1 = 32,
-> +	MX8MP_IOMUXC_ENET_RD2 = 33,
-> +	MX8MP_IOMUXC_ENET_RD3 = 34,
-> +	MX8MP_IOMUXC_SD1_CLK = 35,
-> +	MX8MP_IOMUXC_SD1_CMD = 36,
-> +	MX8MP_IOMUXC_SD1_DATA0 = 37,
-> +	MX8MP_IOMUXC_SD1_DATA1 = 38,
-> +	MX8MP_IOMUXC_SD1_DATA2 = 39,
-> +	MX8MP_IOMUXC_SD1_DATA3 = 40,
-> +	MX8MP_IOMUXC_SD1_DATA4 = 41,
-> +	MX8MP_IOMUXC_SD1_DATA5 = 42,
-> +	MX8MP_IOMUXC_SD1_DATA6 = 43,
-> +	MX8MP_IOMUXC_SD1_DATA7 = 44,
-> +	MX8MP_IOMUXC_SD1_RESET_B = 45,
-> +	MX8MP_IOMUXC_SD1_STROBE = 46,
-> +	MX8MP_IOMUXC_SD2_CD_B = 47,
-> +	MX8MP_IOMUXC_SD2_CLK = 48,
-> +	MX8MP_IOMUXC_SD2_CMD = 49,
-> +	MX8MP_IOMUXC_SD2_DATA0 = 50,
-> +	MX8MP_IOMUXC_SD2_DATA1 = 51,
-> +	MX8MP_IOMUXC_SD2_DATA2 = 52,
-> +	MX8MP_IOMUXC_SD2_DATA3 = 53,
-> +	MX8MP_IOMUXC_SD2_RESET_B = 54,
-> +	MX8MP_IOMUXC_SD2_WP = 55,
-> +	MX8MP_IOMUXC_NAND_ALE = 56,
-> +	MX8MP_IOMUXC_NAND_CE0_B = 57,
-> +	MX8MP_IOMUXC_NAND_CE1_B = 58,
-> +	MX8MP_IOMUXC_NAND_CE2_B = 59,
-> +	MX8MP_IOMUXC_NAND_CE3_B = 60,
-> +	MX8MP_IOMUXC_NAND_CLE = 61,
-> +	MX8MP_IOMUXC_NAND_DATA00 = 62,
-> +	MX8MP_IOMUXC_NAND_DATA01 = 63,
-> +	MX8MP_IOMUXC_NAND_DATA02 = 64,
-> +	MX8MP_IOMUXC_NAND_DATA03 = 65,
-> +	MX8MP_IOMUXC_NAND_DATA04 = 66,
-> +	MX8MP_IOMUXC_NAND_DATA05 = 67,
-> +	MX8MP_IOMUXC_NAND_DATA06 = 68,
-> +	MX8MP_IOMUXC_NAND_DATA07 = 69,
-> +	MX8MP_IOMUXC_NAND_DQS = 70,
-> +	MX8MP_IOMUXC_NAND_RE_B = 71,
-> +	MX8MP_IOMUXC_NAND_READY_B = 72,
-> +	MX8MP_IOMUXC_NAND_WE_B = 73,
-> +	MX8MP_IOMUXC_NAND_WP_B = 74,
-> +	MX8MP_IOMUXC_SAI5_RXFS = 75,
-> +	MX8MP_IOMUXC_SAI5_RXC = 76,
-> +	MX8MP_IOMUXC_SAI5_RXD0 = 77,
-> +	MX8MP_IOMUXC_SAI5_RXD1 = 78,
-> +	MX8MP_IOMUXC_SAI5_RXD2 = 79,
-> +	MX8MP_IOMUXC_SAI5_RXD3 = 80,
-> +	MX8MP_IOMUXC_SAI5_MCLK = 81,
-> +	MX8MP_IOMUXC_SAI1_RXFS = 82,
-> +	MX8MP_IOMUXC_SAI1_RXC = 83,
-> +	MX8MP_IOMUXC_SAI1_RXD0 = 84,
-> +	MX8MP_IOMUXC_SAI1_RXD1 = 85,
-> +	MX8MP_IOMUXC_SAI1_RXD2 = 86,
-> +	MX8MP_IOMUXC_SAI1_RXD3 = 87,
-> +	MX8MP_IOMUXC_SAI1_RXD4 = 88,
-> +	MX8MP_IOMUXC_SAI1_RXD5 = 89,
-> +	MX8MP_IOMUXC_SAI1_RXD6 = 90,
-> +	MX8MP_IOMUXC_SAI1_RXD7 = 91,
-> +	MX8MP_IOMUXC_SAI1_TXFS = 92,
-> +	MX8MP_IOMUXC_SAI1_TXC = 93,
-> +	MX8MP_IOMUXC_SAI1_TXD0 = 94,
-> +	MX8MP_IOMUXC_SAI1_TXD1 = 95,
-> +	MX8MP_IOMUXC_SAI1_TXD2 = 96,
-> +	MX8MP_IOMUXC_SAI1_TXD3 = 97,
-> +	MX8MP_IOMUXC_SAI1_TXD4 = 98,
-> +	MX8MP_IOMUXC_SAI1_TXD5 = 99,
-> +	MX8MP_IOMUXC_SAI1_TXD6 = 100,
-> +	MX8MP_IOMUXC_SAI1_TXD7 = 101,
-> +	MX8MP_IOMUXC_SAI1_MCLK = 102,
-> +	MX8MP_IOMUXC_SAI2_RXFS = 103,
-> +	MX8MP_IOMUXC_SAI2_RXC = 104,
-> +	MX8MP_IOMUXC_SAI2_RXD0 = 105,
-> +	MX8MP_IOMUXC_SAI2_TXFS = 106,
-> +	MX8MP_IOMUXC_SAI2_TXC = 107,
-> +	MX8MP_IOMUXC_SAI2_TXD0 = 108,
-> +	MX8MP_IOMUXC_SAI2_MCLK = 109,
-> +	MX8MP_IOMUXC_SAI3_RXFS = 110,
-> +	MX8MP_IOMUXC_SAI3_RXC = 111,
-> +	MX8MP_IOMUXC_SAI3_RXD = 112,
-> +	MX8MP_IOMUXC_SAI3_TXFS = 113,
-> +	MX8MP_IOMUXC_SAI3_TXC = 114,
-> +	MX8MP_IOMUXC_SAI3_TXD = 115,
-> +	MX8MP_IOMUXC_SAI3_MCLK = 116,
-> +	MX8MP_IOMUXC_SPDIF_TX = 117,
-> +	MX8MP_IOMUXC_SPDIF_RX = 118,
-> +	MX8MP_IOMUXC_SPDIF_EXT_CLK = 119,
-> +	MX8MP_IOMUXC_ECSPI1_SCLK = 120,
-> +	MX8MP_IOMUXC_ECSPI1_MOSI = 121,
-> +	MX8MP_IOMUXC_ECSPI1_MISO = 122,
-> +	MX8MP_IOMUXC_ECSPI1_SS0 = 123,
-> +	MX8MP_IOMUXC_ECSPI2_SCLK = 124,
-> +	MX8MP_IOMUXC_ECSPI2_MOSI = 125,
-> +	MX8MP_IOMUXC_ECSPI2_MISO = 126,
-> +	MX8MP_IOMUXC_ECSPI2_SS0 = 127,
-> +	MX8MP_IOMUXC_I2C1_SCL = 128,
-> +	MX8MP_IOMUXC_I2C1_SDA = 129,
-> +	MX8MP_IOMUXC_I2C2_SCL = 130,
-> +	MX8MP_IOMUXC_I2C2_SDA = 131,
-> +	MX8MP_IOMUXC_I2C3_SCL = 132,
-> +	MX8MP_IOMUXC_I2C3_SDA = 133,
-> +	MX8MP_IOMUXC_I2C4_SCL = 134,
-> +	MX8MP_IOMUXC_I2C4_SDA = 135,
-> +	MX8MP_IOMUXC_UART1_RXD = 136,
-> +	MX8MP_IOMUXC_UART1_TXD = 137,
-> +	MX8MP_IOMUXC_UART2_RXD = 138,
-> +	MX8MP_IOMUXC_UART2_TXD = 139,
-> +	MX8MP_IOMUXC_UART3_RXD = 140,
-> +	MX8MP_IOMUXC_UART3_TXD = 141,
-> +	MX8MP_IOMUXC_UART4_RXD = 142,
-> +	MX8MP_IOMUXC_UART4_TXD = 143,
-> +	MX8MP_IOMUXC_HDMI_DDC_SCL = 144,
-> +	MX8MP_IOMUXC_HDMI_DDC_SDA = 145,
-> +	MX8MP_IOMUXC_HDMI_CEC = 146,
-> +	MX8MP_IOMUXC_HDMI_HPD = 147,
-> +};
-> +
-> +/* Pad names for the pinmux subsystem */
-> +static const struct pinctrl_pin_desc imx8mp_pinctrl_pads[] = {
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_RESERVE0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_RESERVE1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_RESERVE2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_RESERVE3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_RESERVE4),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO00),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO01),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO02),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO03),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO04),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO05),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO06),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO07),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO08),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO09),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO10),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO11),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO12),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO13),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO14),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_GPIO1_IO15),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_MDC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_MDIO),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TD3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TD2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TD1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TX_CTL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_TXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RX_CTL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RD1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RD2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ENET_RD3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_CLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_CMD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA4),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA5),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA6),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_DATA7),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_RESET_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD1_STROBE),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_CD_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_CLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_CMD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_DATA0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_DATA1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_DATA2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_DATA3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_RESET_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SD2_WP),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_ALE),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_CE0_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_CE1_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_CE2_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_CE3_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_CLE),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA00),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA01),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA02),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA03),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA04),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA05),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA06),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DATA07),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_DQS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_RE_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_READY_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_WE_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_NAND_WP_B),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXD1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXD2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_RXD3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI5_MCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD4),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD5),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD6),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_RXD7),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD1),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD2),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD3),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD4),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD5),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD6),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_TXD7),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI1_MCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_RXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_RXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_RXD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_TXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_TXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_TXD0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI2_MCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_RXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_RXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_RXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_TXFS),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_TXC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_TXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SAI3_MCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SPDIF_TX),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SPDIF_RX),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_SPDIF_EXT_CLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI1_SCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI1_MOSI),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI1_MISO),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI1_SS0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI2_SCLK),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI2_MOSI),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI2_MISO),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_ECSPI2_SS0),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C1_SCL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C1_SDA),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C2_SCL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C2_SDA),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C3_SCL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C3_SDA),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C4_SCL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_I2C4_SDA),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART1_RXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART1_TXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART2_RXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART2_TXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART3_RXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART3_TXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART4_RXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_UART4_TXD),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_HDMI_DDC_SCL),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_HDMI_DDC_SDA),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_HDMI_CEC),
-> +	IMX_PINCTRL_PIN(MX8MP_IOMUXC_HDMI_HPD),
-> +};
-> +
-> +static struct imx_pinctrl_soc_info imx8mp_pinctrl_info = {
-> +	.pins = imx8mp_pinctrl_pads,
-> +	.npins = ARRAY_SIZE(imx8mp_pinctrl_pads),
-> +	.gpr_compatible = "fsl,imx8mp-iomuxc-gpr",
-> +};
-> +
-> +static struct of_device_id imx8mp_pinctrl_of_match[] = {
-> +	{ .compatible = "fsl,imx8mp-iomuxc", .data = &imx8mp_pinctrl_info, },
-> +	{ /* sentinel */ }
-> +};
+> No bother, and thanks for including the mailing list.
+> 
+> > We are working on deep power state on CPU cores. In the deepest idle
+> > state, the core will be powered down. In our implementation, the PMU
+> > and the core are in the same power domain, so the PMU will also be
+> > powered down. But I didn't find where we saved the PMU context in
+> > kernel before entering the deepest idle state.
+> > 
+> > Before we enter the system sleep state, we update the kernel PMU
+> > counter and stop the PMU in 'cpu_pm_pmu_notify()'. But we didn't do
+> > that before we enter idle state.
 
-These two structures can be const.
+ACPI or DT firmware ? I suspect that's ACPI, with LPI idle state
+flags set to 0x0 (3.1.3 - save and restore flags):
 
---
-Stefan
+http://infocenter.arm.com/help/topic/com.arm.doc.den0048a/DEN0048A_ARM_FFH_Specification.pdf
 
-> +
-> +static int imx8mp_pinctrl_probe(struct platform_device *pdev)
-> +{
-> +	return imx_pinctrl_probe(pdev, &imx8mp_pinctrl_info);
-> +}
-> +
-> +static struct platform_driver imx8mp_pinctrl_driver = {
-> +	.driver = {
-> +		.name = "imx8mp-pinctrl",
-> +		.of_match_table = of_match_ptr(imx8mp_pinctrl_of_match),
-> +	},
-> +	.probe = imx8mp_pinctrl_probe,
-> +};
-> +
-> +static int __init imx8mp_pinctrl_init(void)
-> +{
-> +	return platform_driver_register(&imx8mp_pinctrl_driver);
-> +}
-> +arch_initcall(imx8mp_pinctrl_init);
+If that's the case a firmware update is needed (ie currently the kernel
+expects the PMU state to be retained).
+
+arch/arm64/kernel/cpuidle.c
+
+ARM64_LPI_IS_RETENTION_STATE()
+
+In DT in the PSCI CPUidle driver we run the notifiers irrespective
+of the idle state depth so I don't think this behaviour can happen
+in a DT bootstrapped system.
+
+I am just guessing - please let me know if my assumption is correct.
+
+> > I only find some system registers saving in 'psci_cpu_suspend_enter()->cpu_susend()->cpu_do_suspend()'
+> 
+> I'm not sure what you mean by "system sleep state"
+
+I think they mean suspend-to-RAM - in suspend-to-RAM the notifiers
+are run through syscore operations which are decoupled from CPUidle.
+
+Regardless, CPUidle should call the notifiers if instructed by firmware
+correctly.
+
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
