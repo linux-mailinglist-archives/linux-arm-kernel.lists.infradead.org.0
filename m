@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E85135E17
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:21:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 243EB135E1A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 17:21:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hhCcVVIfhWsFM52qlAKiwdgap6nWeOwbTLaU1bh+AY8=; b=QSNC3JiKJYKsqz
-	i0w9CELpX6zOLOtXSRCG+Qowk8355waKQgwViELKAvT8dbofz+iSeGFBnRnPy8kAchEhivQbsypID
-	eVJ6wIYd9PhNYW0YEpiyEa8r+5YdFxTuFS8eY08bA1+heXxtdjnuBXLr/JWNAta1+NoQzAbOkcDqD
-	CByu4zACfkBVb0/ZJPWsdineA3r5jf9GuCElQTGO/7fXSH9xDCSOUWN1mDHJsYCXzMNoRowrEoJK5
-	p2nbm8VqvxTaZ4z4CnTyYkd/Jn7H3gSg3Z1xsiWEXYDRglPri6i8QnfAh6op00FQ5bKkVA3JqmlWV
-	61kcakIXf9bQrdoYFNmg==;
+	List-Owner; bh=zSrlD4wfkFGR+5+na6iY76rPJ3mzWClpH9cGcsoBeto=; b=NHIkgz1tj9AGVZ
+	4ax3enqe+Chtb5zVlgX1f+Cx6WXB08SFp/sXPeMIepjUfFla9FoPqQZlPD+QdJbepYX2KT1JgCedy
+	LssPomnkqUVZnMpylYxMT3PXuMrpC3E8nZwqgggUntab8kuyapHOmoaoSCrAmBZCdKMHUNYnoMZME
+	67D0KZiYqghvv+XOLfQmuZs9dwJntackKgqHsx/ujtw5O41bJvw6e9oBsFJXhrCqLLCKfQSdjZsSE
+	NsmMOQcAZeNAZviLnKe2o1W2a7q41rUg0sntxtvmNfGvPip3ZtXBfQVfkfPJbwzk1PyYeSEi4DZ+U
+	oEE4+tSqqzLGhCDeaIWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipaYL-0007XV-R0; Thu, 09 Jan 2020 16:20:57 +0000
+	id 1ipaZ3-00089q-My; Thu, 09 Jan 2020 16:21:41 +0000
 Received: from us-smtp-1.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipaNP-0002Zg-7m
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:09:41 +0000
+ id 1ipaNS-0002e5-VK
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 16:09:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578586177;
+ s=mimecast20190719; t=1578586181;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=mua/qHbvjxBZzAa9DGgUWjthaiVLr4wGp81bwymTxFo=;
- b=c5Eljg8ZOZJt2KVzzWYiZiw3aAQddX008DirZRopY94TzxdWlSAdeD+1yhGNpTh8hZaE6W
- JSy0+27pVuUYTvRUhnrOTD6mKMb+GVGdusg7CbW+euTg1wt8ju8/DYfu7tihrlx+djVE6N
- Ot+EXxd/x57x+GWpO3+Wkag9fuPNfO4=
+ bh=7axxFTtCe4/hNmI9OgXAAlvq0RYtj2z6BU573XVOuhg=;
+ b=ScP1hP7tnYBCoTdzLy6977XFqZKc7mKqW9cIXiKcuLVWuDnWZUYU18ssKc81Kci8oiLgGY
+ FVP3HbH1a8Mt0Uxr+m+uo1F8gZsmbQ/I64CLJ7bnjUah/lmfqxlwKOrKkxDZsy7ioEuzwD
+ IAyggqh4IJ2XujpIOdiR6p/MndIKvuY=
 Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
  [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-250-80kOVaZRNVazXTyRuax1zw-1; Thu, 09 Jan 2020 11:09:36 -0500
-Received: by mail-wm1-f71.google.com with SMTP id y125so890767wmg.1
+ us-mta-222-vM5fI1FqP5CQuAVlgM5l-g-1; Thu, 09 Jan 2020 11:09:37 -0500
+Received: by mail-wm1-f71.google.com with SMTP id h130so1097948wme.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 08:09:36 -0800 (PST)
+ Thu, 09 Jan 2020 08:09:37 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=NXlvrJt6z83MLX+WxwdFOCINB+GcX+Yj981D0b2qPGQ=;
- b=YyviGqgCpCymOHBRFcC6EC/kG4ge2x+I65KXV3UrVCE67WgIk83QJRDdybBOlhYYhi
- RAzdVGit2Xr8wp+PeuUCbAWPk3iA6DVe5Uy4CsZ4+AxmvhoNGM6LRciiH/WKeV+Jnhhu
- IWuiCt0R6rOAbiyjjjXuyemCNI6iEsDJUtSubYMKt3bBKelN3NV81sgN8gyf6uPC8wq8
- McrFwuwf3EtZvvwO3ZhoqTRAG3/d6p+rUifsMiuZ72rIge2qyBIiQ7I9Wf8mQha4jJE5
- OUTdaLD85mNi+N+pnuqxd1akN0Q4vIZRXeL5f9h4k+ikzBtuW78bHyYgoq1G67dt/qUn
- LmwQ==
-X-Gm-Message-State: APjAAAXHutwl4J3CG92tC6pCOit4w17t+3wYxF1DbrrKoOAcNc1tw0EU
- lfsJE0Qc26QuMQf0DwRdboO/VvWLk9sFTyBJI0pdDEN0wsyCxbWY29sTQd224bL0yspdE0B2ZHS
- 0k3GrFtbFOnbVhEIMtFFN4+yx+pIandJsaDc=
-X-Received: by 2002:a7b:cbc9:: with SMTP id n9mr5807751wmi.89.1578586175320;
- Thu, 09 Jan 2020 08:09:35 -0800 (PST)
-X-Google-Smtp-Source: APXvYqzmBZZfDXBq6RqR3Rkcb9sOH+t9Q3MfPwQWoV78KSevOPVEW0amjALm+VNPMHJy5/8IKwjOOA==
-X-Received: by 2002:a7b:cbc9:: with SMTP id n9mr5807724wmi.89.1578586175172;
- Thu, 09 Jan 2020 08:09:35 -0800 (PST)
+ bh=ODS9WlTRJORgY55Us9ipxq26EI7DMMwmFDGmBIaDtSs=;
+ b=t9Kij7xddZJWvsASWKRKAvlymcsBQJn6PNQBzfn4NdU6R7FkvE79HloAhA9U2zMn+R
+ T413pwBW6k5BR2AmOI7hkbIb1QgoR9OZxcytVWa8o6W88u8PvgLiKYiolbH4ZWUB6V4X
+ n4HdBS46ovMn1pTpHfHOmQeErTOwt3FBBH90XG8SZuVxjT7uTkh5Cl3BjnsTZUR2lKVQ
+ NFvt10KAYPwgBungRIHYoxnNXtZeSOK06kNtTbjymdnOjwgLsMuzMthLzWHEvVmbIUSv
+ QqhSTA7PpNZqT+NQoCs06KsY0ALPcPOOkFF5Q6Akv8q/a9UPbhMez0WbJTJA/klMnX7/
+ /9zA==
+X-Gm-Message-State: APjAAAVD2GAcS5pF2E0H0P5nIEIYakKy3T3hyLkSMA+P818EifYfKJbU
+ RhmxiVf7JCuuotXWvS0RCMFY0kdCUdv0wLoeO05ZyKjplblfm8bCWIiWRXV6bjh6QC1gFPzKjOf
+ 7jT8BCx6H37qpv2DgTiQgDk+1fwBmDIVkuiM=
+X-Received: by 2002:a1c:a78c:: with SMTP id q134mr5391859wme.98.1578586176750; 
+ Thu, 09 Jan 2020 08:09:36 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwxEWwuCOkJR5Ut8BjsE0zeZF0JVq4HT7AdNp/Reici8OM453wT+4LqvjkdS8rpxKybepscTA==
+X-Received: by 2002:a1c:a78c:: with SMTP id q134mr5391844wme.98.1578586176598; 
+ Thu, 09 Jan 2020 08:09:36 -0800 (PST)
 Received: from redfedo.redhat.com
  (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id e8sm8517707wrt.7.2020.01.09.08.09.33
+ by smtp.gmail.com with ESMTPSA id e8sm8517707wrt.7.2020.01.09.08.09.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 08:09:34 -0800 (PST)
+ Thu, 09 Jan 2020 08:09:35 -0800 (PST)
 From: Julien Thierry <jthierry@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC v5 52/57] arm64: kernel: Annotate non-standard stack frame
- functions
-Date: Thu,  9 Jan 2020 16:02:55 +0000
-Message-Id: <20200109160300.26150-53-jthierry@redhat.com>
+Subject: [RFC v5 53/57] arm64: Generate no-ops to pad executable section
+Date: Thu,  9 Jan 2020 16:02:56 +0000
+Message-Id: <20200109160300.26150-54-jthierry@redhat.com>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200109160300.26150-1-jthierry@redhat.com>
 References: <20200109160300.26150-1-jthierry@redhat.com>
 MIME-Version: 1.0
-X-MC-Unique: 80kOVaZRNVazXTyRuax1zw-1
+X-MC-Unique: vM5fI1FqP5CQuAVlgM5l-g-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_080939_366627_0177BE79 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20200109_080943_119949_72666D71 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,89 +107,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Julien Thierry <jthierry@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, peterz@infradead.org,
- catalin.marinas@arm.com, raphael.gault@arm.com,
- James Morse <james.morse@arm.com>, jpoimboe@redhat.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu
+Cc: Julien Thierry <jthierry@redhat.com>, peterz@infradead.org,
+ catalin.marinas@arm.com, raphael.gault@arm.com, jpoimboe@redhat.com,
+ will@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Raphael Gault <raphael.gault@arm.com>
+Directive .org fills the gap left to get to the new location with bytes
+of value 0.
 
-Annotate assembler functions which are callable but do not
-setup a correct stack frame.
+Having an executable section contain invalid opcodes confuses objtool,
+so use .balign to fill the gap with nop instructions instead.
 
-Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 Signed-off-by: Julien Thierry <jthierry@redhat.com>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: James Morse <james.morse@arm.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: kvmarm@lists.cs.columbia.edu
 ---
- arch/arm64/kernel/hyp-stub.S | 3 +++
- arch/arm64/kvm/hyp-init.S    | 3 +++
- 2 files changed, 6 insertions(+)
+ arch/arm64/kernel/relocate_kernel.S | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/kernel/hyp-stub.S b/arch/arm64/kernel/hyp-stub.S
-index 73d46070b315..8917d42f38c7 100644
---- a/arch/arm64/kernel/hyp-stub.S
-+++ b/arch/arm64/kernel/hyp-stub.S
-@@ -6,6 +6,7 @@
-  * Author:	Marc Zyngier <marc.zyngier@arm.com>
-  */
-
-+#include <linux/frame.h>
- #include <linux/init.h>
- #include <linux/linkage.h>
- #include <linux/irqchip/arm-gic-v3.h>
-@@ -42,6 +43,7 @@ ENTRY(__hyp_stub_vectors)
- 	ventry	el1_fiq_invalid			// FIQ 32-bit EL1
- 	ventry	el1_error_invalid		// Error 32-bit EL1
- ENDPROC(__hyp_stub_vectors)
-+asm_stack_frame_non_standard __hyp_stub_vectors
-
- 	.align 11
-
-@@ -69,6 +71,7 @@ el1_sync:
- 9:	mov	x0, xzr
- 	eret
- ENDPROC(el1_sync)
-+asm_stack_frame_non_standard el1_sync
-
- .macro invalid_vector	label
- \label:
-diff --git a/arch/arm64/kvm/hyp-init.S b/arch/arm64/kvm/hyp-init.S
-index 160be2b4696d..63deea39313d 100644
---- a/arch/arm64/kvm/hyp-init.S
-+++ b/arch/arm64/kvm/hyp-init.S
-@@ -12,6 +12,7 @@
- #include <asm/pgtable-hwdef.h>
- #include <asm/sysreg.h>
- #include <asm/virt.h>
-+#include <linux/frame.h>
-
- 	.text
- 	.pushsection	.hyp.idmap.text, "ax"
-@@ -118,6 +119,7 @@ CPU_BE(	orr	x4, x4, #SCTLR_ELx_EE)
- 	/* Hello, World! */
- 	eret
- ENDPROC(__kvm_hyp_init)
-+asm_stack_frame_non_standard __kvm_hyp_init
-
- ENTRY(__kvm_handle_stub_hvc)
- 	cmp	x0, #HVC_SOFT_RESTART
-@@ -159,6 +161,7 @@ reset:
- 	eret
-
- ENDPROC(__kvm_handle_stub_hvc)
-+asm_stack_frame_non_standard __kvm_handle_stub_hvc
-
- 	.ltorg
-
---
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index c1d7db71a726..5e08845f701a 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -118,6 +118,8 @@ ENDPROC(arm64_relocate_new_kernel)
+ .align 3	/* To keep the 64-bit values below naturally aligned. */
+ 
+ .Lcopy_end:
++.balign	KEXEC_CONTROL_PAGE_SIZE
++/* Ensure we didn't go past the limit */
+ .org	KEXEC_CONTROL_PAGE_SIZE
+ 
+ /*
+-- 
 2.21.0
 
 
