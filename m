@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51658135ACF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:01:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D35D135AD5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Jan 2020 15:02:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4fcyKJSigom/CY77Ljqd3j+un1AJdCxpJuDurbJY2EM=; b=GvRv/c0bUgilqR
-	/gC0tCBb68RoGu9V2Q+LQTsOMK3MtBycfw6td/HV/qVwBmFsNXktWZsgh5QZCEEZDGHEED+HQUt3v
-	li+vGygfsDdN1ulTh3q3cu4hDf8GAuurgpDbx+5HtqZqXPRGAcWXGv7Mq08jTTM/OxQ+oj0w6UyQl
-	C81AKHno3Xt0n/63QqdYYZ6S2tgPuVKYe8Yn2iE0lyOBKjPhsEHrEW01rVnY1wujGhg7VKJjJ5In2
-	pjTzvqL0sxboEHgm+xlQYkWR6KNZWewbgqSt2Z9ok0rtnSEW0kHMAcmVnzkLVAGpVmEuIcbxYyZzq
-	jt7ls/MgY7KOlj1tX2UA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pMMfc8pVbGmeDCVZCbK97PlfeoZ2fodXPf0ra/oeBXk=; b=h0LPil0NNsBsPf
+	gLVrsbQiYU6fRT+ZQ0qgsTGI4zyj0k5dWiqZ8bd1kAwaJw5+21cG4/lcEF08kpHiL5QQXi7qbSrJQ
+	VoaFoGECDc2LC/qwKqLhUAppjmlC1kgKTmy4ZcSkuYnlGfWWP7C3LZzjVP3oOMhp1FnMacAJel5kv
+	SxA5/fr8h1LI2DajQc9MjIzUPeuojxhm+Oj08JYtvo3/vvCPo2OZKgN/R3jjxteWHUfS1pkmkdBLt
+	Fmvt48xJnHMnJ1eJszW8+M9NlAcahy3wfbdwAggLDFD7om/5+WkCgtC5V5T5lNVc5aDaPqIlNBdcQ
+	HLdDFKoo7AFHw8QH3vKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipYMm-0001Ye-78; Thu, 09 Jan 2020 14:00:52 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ipYON-0002DI-7t; Thu, 09 Jan 2020 14:02:31 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipYMd-0001Xn-65
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:00:45 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d16so7461791wre.10
+ id 1ipYOH-0002Cs-00
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Jan 2020 14:02:26 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u2so2964482wmc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Jan 2020 06:00:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b8xbfR1e+uIythd38166wCVY5KnjUVf+wZJ6jFWaQhg=;
- b=wQpb3FJkQMvVRdPTLz/ZEeOxsu9Om4MJxR1KRtPYR5JbY+7EuRwAbGeEmQe7twR+fg
- 7z5ww8hk7wZpIF52etX2RsjS0jhKsWl5LI+eq9DMciZX0adY4/KfVzkwlsy4veLC9zWH
- 1SZwYGAdfy5uLmSn5+uCPz35k9qJcHwtxtTEedlQTUDC2qZx/aquR+9ndc1kmBJfeg1z
- oRLeLE0PvIP82BDJ4f6twG7ILqFJkO9Ze0GkXrVj9x7C998Nce4kZvk8rZBnq9g89Mut
- 2IrC6AbyAUuL8Flh2irof4z2acmkGF4Kl0GEE/1Jri6DfibaUPz/pmcUXMYx/PR/BU/m
- XTYw==
+ Thu, 09 Jan 2020 06:02:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cH3/OtZ3DAvw8IgKFnqPXU8D4jtKtoD9aLE/M0BbcKs=;
+ b=Q7PFKTGxpyCSu9tOEMplXNfwBzehjnBpiHUyvo+zkGU7Jnf4Pk73EORE5sthX5quPi
+ NZfAq9ONyqTNDWQUy4XkVGDXC/iLmaFl6eHu/m+CGEyOKWB2SRTyN1Uh4M9aYlQyUCgI
+ lPGue0manFc74H5onYbbMtUeLfH150STGLEYotHrptrBwpwaQX5908a5KWP/o3UuS/mc
+ +Fhsc2Cgc6sI3nRyMiKGzsTlVjMYnosUMQoLRtSO0m4H2tbVrcV566XiPwRaTQYq1XrT
+ h7oXEmdZf1tbOffD4LeeZ4Ye5a3GON25kL38+23iJBXg6Y65XEWVSDfxgNTVCq7X/h8o
+ YkDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=b8xbfR1e+uIythd38166wCVY5KnjUVf+wZJ6jFWaQhg=;
- b=SUkhwBtPXEgldSd+uP40yYz85SiN7BKEOU9eL0hYx4yNXR5zORnp568lZgIdLKoRs8
- 8++AHsYmgu4kvYKfwh3yupv87gcnmfGM2USnzfeGQbvfaqMX80IHzfpWwvkwE9q6weYn
- HXKmN2N9izbjcPKm5z/hyZk6giyQeHLgU6q/hRs4pkKZTTKc6zOAkwzXAYaSnPJJ+UwT
- Xam1mhtAiHBwtb3FnkVpFFnWRBMOVx4W/aROmY+SsZEfev8yvBQ+Zeb8zj4uzN1vDTkh
- wavPLUp7ROq7qV0TRCyrw2ATOQR5GdDBNBGBa/Zmt1khXGiK5N1e97nVbCdRY/cukEnh
- 6FKQ==
-X-Gm-Message-State: APjAAAX9hyJ9QX76XT7ZJGup0BQchnQXyjHfjXAYIrRsa1SLQwRJhBm7
- 0IoGC6vO1LqAF9DVUin0GKN/283FgToPJxmjAjiqOw==
-X-Google-Smtp-Source: APXvYqxWquiIBHbuG6bV1XMbdGm6bS/RcE2rvYNATF5+D9Tep5mXvc7r+Liq4irXwUqNWK0IilpoNfAGru9LuFbNsFQ=
-X-Received: by 2002:adf:cf0a:: with SMTP id o10mr10711881wrj.325.1578578441234; 
- Thu, 09 Jan 2020 06:00:41 -0800 (PST)
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=cH3/OtZ3DAvw8IgKFnqPXU8D4jtKtoD9aLE/M0BbcKs=;
+ b=S6AtI8ZmrX2xIvlrOp+A6M5PVlETFaUJNzMenmAzKgYAsc6b6JqqXh6AGPe+DskJk6
+ d4rFZztSadcAvnftR7yGhH4sLp0yUu2b3gsWTcxX4FA2XtRSOsSR2h5pUGbSYrUJGEYY
+ 6+h6EtA9plxsEWcDEqGZqhwTTWhQkWgf+pd/iLQhG+/YzFWyv4hIYnPsy5a5sVn4kk7b
+ q3ebt9zlSOq2VKjmZNiYrizSi4sPH322Hgf9GkVDaMi5efCP/j1TNC+zYXBLRbgoTzdM
+ n+sv9LB31SNUwWsgDy3FYWjKx/QE0xg3Aic5s47Re5nsodpSSIiIbkwgDe08QmcnXtky
+ swfA==
+X-Gm-Message-State: APjAAAV4x71ft8otxPosFiyQj3OsOsz0YeJvhJGj8t8ojRWf5ptXP5K/
+ HLN+BQVtqDoxlltI0bCnndLG5nFPYYC5eA==
+X-Google-Smtp-Source: APXvYqz9WNWkReumkSXQjkJSbEUPQl0vWe2bk7mCzx+9uimnftzUwsh7ehidAGZy+lLpg/8XU0tk6w==
+X-Received: by 2002:a1c:7901:: with SMTP id l1mr5038497wme.67.1578578543372;
+ Thu, 09 Jan 2020 06:02:23 -0800 (PST)
+Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
+ by smtp.gmail.com with ESMTPSA id g18sm2851975wmh.48.2020.01.09.06.02.22
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 09 Jan 2020 06:02:22 -0800 (PST)
+From: Michal Simek <michal.simek@xilinx.com>
+To: linux-arm-kernel@lists.infradead.org,
+	git@xilinx.com
+Subject: [PATCH 0/7] arm64: zynqmp: Enable iio-hwmon based on iio ina226
+ driver with labels
+Date: Thu,  9 Jan 2020 15:02:14 +0100
+Message-Id: <cover.1578578535.git.michal.simek@xilinx.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <20191224044146.232713-1-saravanak@google.com>
- <201912252258.5LQtnCYg%lkp@intel.com>
- <CAGETcx90nkOQXgKWtTSg7SRZCTmH9RQijYsZLP6CWpHCmW1Mxw@mail.gmail.com>
-In-Reply-To: <CAGETcx90nkOQXgKWtTSg7SRZCTmH9RQijYsZLP6CWpHCmW1Mxw@mail.gmail.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 9 Jan 2020 15:00:30 +0100
-Message-ID: <CAKv+Gu_3CGrWwMeP5tWYusD8p99r54KFsK4SvWn3zU=Q8X9jcQ@mail.gmail.com>
-Subject: Re: [PATCH v2] efi: arm: defer probe of PCIe backed efifb on DT
- systems
-To: Saravana Kannan <saravanak@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_060043_232956_0250AEC2 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_060225_032135_68513679 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,67 +96,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Android Kernel Team <kernel-team@android.com>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
+ Rajan Vaja <rajan.vaja@xilinx.com>, Jan Kiszka <jan.kiszka@siemens.com>,
+ Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Harini Katakam <harini.katakam@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 9 Jan 2020 at 03:23, Saravana Kannan <saravanak@google.com> wrote:
->
-> On Wed, Dec 25, 2019 at 6:46 AM kbuild test robot <lkp@intel.com> wrote:
-> >
-> > Hi Saravana,
-> >
-> > I love your patch! Yet something to improve:
-> >
-> > [auto build test ERROR on efi/next]
-> > [cannot apply to rockchip/for-next keystone/next arm64/for-next/core arm-soc/for-next shawnguo/for-next clk/clk-next arm/for-next linux-rpi/for-rpi-next at91/at91-next v5.5-rc3 next-20191220]
-> > [if your patch is applied to the wrong git tree, please drop us a note to help
-> > improve the system. BTW, we also suggest to use '--base' option to specify the
-> > base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-> >
-> > url:    https://github.com/0day-ci/linux/commits/Saravana-Kannan/efi-arm-defer-probe-of-PCIe-backed-efifb-on-DT-systems/20191225-182253
-> > base:   https://git.kernel.org/pub/scm/linux/kernel/git/efi/efi.git next
-> > config: arm64-alldefconfig (attached as .config)
-> > compiler: aarch64-linux-gcc (GCC) 7.5.0
-> > reproduce:
-> >         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-> >         chmod +x ~/bin/make.cross
-> >         # save the attached .config to linux build tree
-> >         GCC_VERSION=7.5.0 make.cross ARCH=arm64
-> >
-> > If you fix the issue, kindly add following tag
-> > Reported-by: kbuild test robot <lkp@intel.com>
-> >
-> > All errors (new ones prefixed by >>):
-> >
-> >    drivers/firmware/efi/arm-init.o: In function `efifb_add_links':
-> > >> arm-init.c:(.text+0x64): undefined reference to `of_pci_range_parser_init'
-> >    arm-init.c:(.text+0x64): relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol `of_pci_range_parser_init'
-> > >> arm-init.c:(.text+0x78): undefined reference to `of_pci_range_parser_one'
-> >    arm-init.c:(.text+0x78): relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol `of_pci_range_parser_one'
->
-> Ard,
->
-> Not sure what's going on here. of_pci_range_parser_init() and
-> of_pci_range_parser_one() has a stub if CONFIG_OF_ADDRESS isn't
-> defined. So not sure why the bot is reporting "undefined symbol".
-> Thoughts?
->
+Hi,
 
-You'll need a #ifdef CONFIG_PCI somewhere, I guess.
+the patch 2c3d0c9ffd24 ("iio: core: Add optional symbolic label to device attributes")
+added support for labelling IIO devices that's why I can enable iio based
+ina226 driver with label property.
 
-> Also, thoughts on my patch?
->
+Thanks,
+Michal
 
-Looks ok to me, but I haven't had a chance to test it yet.
+
+Michal Simek (7):
+  arm64: zynqmp: Enable iio-hwmon for ina226 on zcu100
+  arm64: zynqmp: Enable iio-hwmon for ina226 on zcu111
+  arm64: zynqmp: Add label property to all ina226 on zcu111
+  arm64: zynqmp: Enable iio-hwmon for ina226 on zcu102
+  arm64: zynqmp: Add label property to all ina226 on zcu102
+  arm64: zynqmp: Enable iio-hwmon for ina226 on zcu106
+  arm64: zynqmp: Add label property to all ina226 on zcu106
+
+ .../boot/dts/xilinx/zynqmp-zcu100-revC.dts    |   8 +-
+ .../boot/dts/xilinx/zynqmp-zcu102-revA.dts    | 145 +++++++++++++++---
+ .../boot/dts/xilinx/zynqmp-zcu106-revA.dts    | 145 +++++++++++++++---
+ .../boot/dts/xilinx/zynqmp-zcu111-revA.dts    | 113 ++++++++++++--
+ 4 files changed, 360 insertions(+), 51 deletions(-)
+
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
