@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8EBF136F6B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:30:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41A21136F7A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:31:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MlwOKQMLUeFh6gGGAVyn3zBvq4cSLSUjeTUKcyo+/GQ=; b=ekc5hv41ABf2rj
-	9W1uMH5pmJCxpiqBCtPI0K2gm5XtzlsAmXDiOqy86nEZKMFhkD5mooePuGCQe7NOm0XBRaA2C0Lif
-	AiaK+ENp02U1cb0xQWwEPk+OxLX0QPLoMjqZ4UaPtRrU1apepDla2yHo6xsZzi9eBs08eS3rCC5Ck
-	pdlwsaHX2/d6nS2g4i0WVAIUPlFYha3zsY1iUh087rlAb5TSDVLBQTaEy5dfm2esd0XQUJopj7LSb
-	s/iXruplojwtfrP16oFheBXr5/Swt3U6s5Hx95U3fKeurJvxbli9P1prdpoJqVYryNbFcfnF4inMy
-	oPYB3BkA8YFwTNUbQdwQ==;
+	List-Owner; bh=U4J7xEuA59fQmuL1By+/JfYRl1CMPtikkoyswjTadYk=; b=CjhNeFShMSBBcn
+	tb+zIBycxi0SHO+XD8hH5NJ09Zm2IfMrUaLpTtzyesHLL/p9q45nNqa2AwNSbvQnMtWsOwJrFrwNB
+	U0uDMvejKOy0pQ97EGsr8U3SMAwNhEsW2nMqDotd5Pg6sg9gsmOBkHxhy72T5icY1UWpkJ6Glo/Nc
+	48YBPZTFwFKrd2B6RML5FzjkD+tccg9EhcVwA9fjkpabFYfXjEED1zsuK3H6JSO9A9bPCI77tCyDv
+	2XAps14n7OmwmIn1QiAyUhKkRJul8tvy8RVT27aSBw2NJseyFN7O7/8g1lthLHj5uhG1z/1pztEuJ
+	KPR99+WkKBvMaS80mDiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipvIv-0000cW-H6; Fri, 10 Jan 2020 14:30:25 +0000
+	id 1ipvKE-0001CL-De; Fri, 10 Jan 2020 14:31:46 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipvIg-0008Rf-VV; Fri, 10 Jan 2020 14:30:17 +0000
+ id 1ipvK3-00017p-KN; Fri, 10 Jan 2020 14:31:37 +0000
 Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
  [90.65.102.129])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 5C95724001B;
- Fri, 10 Jan 2020 14:30:01 +0000 (UTC)
-Date: Fri, 10 Jan 2020 15:30:01 +0100
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 774B624000A;
+ Fri, 10 Jan 2020 14:31:30 +0000 (UTC)
+Date: Fri, 10 Jan 2020 15:31:30 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH 11/16] dt-bindings: atmel,at91rm9200-rtc: add
- microchip,sam9x60-rtc
-Message-ID: <20200110143001.GE1027187@piout.net>
+Subject: Re: [PATCH 13/16] dt-bindings: atmel-usart: add microchip,<chip>-usart
+Message-ID: <20200110143130.GF1027187@piout.net>
 References: <1578488123-26127-1-git-send-email-claudiu.beznea@microchip.com>
- <1578488123-26127-12-git-send-email-claudiu.beznea@microchip.com>
+ <1578488123-26127-14-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578488123-26127-12-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1578488123-26127-14-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_063011_173249_DCC95EA7 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20200110_063135_817716_70412019 
+X-CRM114-Status: GOOD (  13.92  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,34 +76,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 08/01/2020 14:55:18+0200, Claudiu Beznea wrote:
-> Add microchip,sam9x60-rtc to DT bindings documentation.
-
-This will have to be rebased on top of
-https://lore.kernel.org/linux-rtc/20191229204421.337612-2-alexandre.belloni@bootlin.com/
-
+On 08/01/2020 14:55:20+0200, Claudiu Beznea wrote:
+> Add microchip,<chip>-usart to DT bindings documentation. This is for
+> microchip,sam9x60-usart.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/mfd/atmel-usart.txt | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt b/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-> index 5d3791e789c6..35eab9138d0b 100644
-> --- a/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-> +++ b/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-> @@ -1,7 +1,8 @@
->  Atmel AT91RM9200 Real Time Clock
+> diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+> index 699fd3c9ace8..e5c7331abe09 100644
+> --- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+> +++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+> @@ -1,10 +1,12 @@
+>  * Atmel Universal Synchronous Asynchronous Receiver/Transmitter (USART)
 >  
->  Required properties:
-> -- compatible: should be: "atmel,at91rm9200-rtc" or "atmel,at91sam9x5-rtc"
-> +- compatible: should be: "atmel,at91rm9200-rtc", "atmel,at91sam9x5-rtc" or
-> +  "microchip,sam9x60-rtc"
->  - reg: physical base address of the controller and length of memory mapped
->    region.
->  - interrupts: rtc alarm/event interrupt
+>  Required properties for USART:
+> -- compatible: Should be "atmel,<chip>-usart" or "atmel,<chip>-dbgu"
+> +- compatible: Should be "atmel,<chip>-usart", "microchip,<chip>-usart" or
+> +  "atmel,<chip>-dbgu".
+>    The compatible <chip> indicated will be the first SoC to support an
+>    additional mode or an USART new feature.
+> -  For the dbgu UART, use "atmel,<chip>-dbgu", "atmel,<chip>-usart"
+> +  For the dbgu UART, use "atmel,<chip>-dbgu", "atmel,<chip>-usart",
+> +  "microchip,<chip>-usart".
+
+The wildcard here should be eliminated because all the combinations are
+not allowed. This would also make it clearer that this change is to
+introduce a new IP instead of renamed atmel to microchip.
+
+>  - reg: Should contain registers location and length
+>  - interrupts: Should contain interrupt
+>  - clock-names: tuple listing input clock names.
 > -- 
 > 2.7.4
 > 
