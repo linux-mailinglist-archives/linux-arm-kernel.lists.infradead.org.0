@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04AF01365E0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:44:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC3F11365E1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:46:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R68e7hT6UAUNdk4jycYWGpJeyLXYB26Cydrt/dDsSVg=; b=CZdDYSQxUHcuyi
-	ukuwW7Vp9C9NEsPX6wCQ5H3Qf1IGTSixYIAZOoqZPBItY8x5gXJqNLMLOKDVUdqn8V3tW4PsTKXfq
-	WYbEKpX8C2pB5l4Ue3kW0TLQmj0awObbCPnsZf7QfKi9LCtcx1G6kZQhkMedyXXebjlsiFxkUVYfO
-	EhLJ7Iqn2P2SGwNjdwaTA4Fvs6EYFzG/wJPSOpNKkNPRl0I1BVYCdPWYzzHwlv2eZ60eDXmXfEeqt
-	Uwc7iGvpDI9LafVpHwXsKeQl18UleNEANupZ2ruuup+eMij9zZLUIib4hU6IYyY/JWFFoOIbgxrFA
-	pvs9IUQbR6YEhHo5jivg==;
+	List-Owner; bh=cED2W10E3CS3v+cSN+fzb/cKDxredcM7DMVHog/Q86Y=; b=CYOuT3c4YVZd5Z
+	W0qhRH9WTnY7LnKvuEDugKFo4BWRWAzHfHsQeVaePaQi5vJOryDkTgoYHntyXwWfhgwc3Pl/J9tiV
+	3WrH7iA1Z4R0oBXBPASxh5yoyvHv/UXAuL0+rldF+TXYxlSt1kQD1dCYoGNl9im85xNIPq/2o3KKn
+	LwFGwIaUymYPfaGX6vsud968E8x4QAZcXSaZ+e2itnFjNAkLyW8AeWWjUr8HCKyQHKoaCF+uWDWMM
+	g4uHbVWGy0MsSno1T2UNCnwrbSnOLtHpSGeQY1yajmGH0w0zh43aKxDmzCOpu2e9gRgRk53dCVFyE
+	wox+F5KPnVgwSrB1SA6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iplDo-00070F-GE; Fri, 10 Jan 2020 03:44:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iplDg-0006ze-US
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:44:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 062E91396;
- Thu,  9 Jan 2020 19:44:20 -0800 (PST)
-Received: from [10.162.42.128] (p8cg001049571a15.blr.arm.com [10.162.42.128])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- EC3FF3F703; Thu,  9 Jan 2020 19:44:16 -0800 (PST)
-Subject: Re: [PATCH 11/17] stackleak: allow C to call stackleak_erase()
-To: Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
- will@kernel.org, james.morse@arm.com
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-12-mark.rutland@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <b7c6d434-16a1-f270-b656-a1814ea6bab3@arm.com>
-Date: Fri, 10 Jan 2020 09:15:31 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iplFc-00008n-1S; Fri, 10 Jan 2020 03:46:20 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iplFT-00008E-2r
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:46:12 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 65C7E247182F62F41B06;
+ Fri, 10 Jan 2020 11:46:09 +0800 (CST)
+Received: from [127.0.0.1] (10.184.52.56) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Fri, 10 Jan 2020
+ 11:45:59 +0800
+Subject: Re: [Question] About handling PMU context loss in the deepest idle
+ state where the core is powered down
+To: Will Deacon <will@kernel.org>
+References: <d62d9ac1-3af9-b692-a84a-aab4582e5eb8@huawei.com>
+ <20200109150318.GF12236@willie-the-truck>
+From: Xiongfeng Wang <wangxiongfeng2@huawei.com>
+Message-ID: <31ec228b-a51b-637d-1c1c-543c81653a96@huawei.com>
+Date: Fri, 10 Jan 2020 11:45:57 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200108185634.1163-12-mark.rutland@arm.com>
+In-Reply-To: <20200109150318.GF12236@willie-the-truck>
 Content-Language: en-US
+X-Originating-IP: [10.184.52.56]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_194421_030531_2F12744B 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_194611_291012_1DF9E184 
+X-CRM114-Status: GOOD (  18.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,9 +67,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, broonie@kernel.org,
- labbott@redhat.com, robin.murphy@arm.com, julien.thierry.kdev@gmail.com,
- alex.popov@linux.com
+Cc: mark.rutland@arm.com, wangzhe59@huawei.com, lorenzo.pieralisi@arm.com,
+ Catalin Marinas <catalin.marinas@arm.com>, huawei.libin@huawei.com,
+ guohanjun@huawei.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -76,52 +77,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 01/09/2020 12:26 AM, Mark Rutland wrote:
-> Currently, stackleak_erase() has no prototype in a header file, and has
-> to be called directly from low-level architecture entry assembly code.
-> This necessitates ifdeffery and complicates the entry assembly.
+On 2020/1/9 23:03, Will Deacon wrote:
+> [+Lorenzo]
 > 
-> To ameliorate matters, let's provide a prototype so that architecture
-> can call stackleak_erase() from slightly higher level C code used as
-> part of the entry flow. This makes things easier to read and maintain.
+> On Thu, Jan 09, 2020 at 10:43:40AM +0800, Xiongfeng Wang wrote:
+>> Sorry to bother you. It's just that we have come across some problems
+>> about PMU recently.
+> 
+> No bother, and thanks for including the mailing list.
+> 
+>> We are working on deep power state on CPU cores. In the deepest idle state, the core will be
+>> powered down. In our implementation, the PMU and the core are in the same power domain,
+>> so the PMU will also be powered down. But I didn't find where we saved the PMU context
+>> in kernel before entering the deepest idle state.
+>>
+>> Before we enter the system sleep state, we update the kernel PMU counter and stop the PMU
+>> in 'cpu_pm_pmu_notify()'. But we didn't do that before we enter idle state.
+>> I only find some system registers saving in 'psci_cpu_suspend_enter()->cpu_susend()->cpu_do_suspend()'
+> 
+> I'm not sure what you mean by "system sleep state", but if you're putting
+> the CPU into a state where register contents is lost, then I think you need
+> those PM notifiers to run. My understanding was that CPUidle took care of
+> this. Why is that not sufficient for you?
 
-Does this need to be a separate patch or should it be folded into
-"[PATCH 13/17] arm64: entry: move common el0 entry/return work to C"
-which actually adds the first C call site for this function.
+Sorry, I didn't notice the PM notifiers are called in CPUidle when 'arch_flags' is set.
+I thought it's only called in 'cpu_pm_syscore_ops', I mean Susepnd-to-RAM.
+
+Thanks,
+Xiongfeng
 
 > 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Alexander Popov <alex.popov@linux.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Kees Cook <keescook@chromium.org>
-> Cc: Laura Abbott <labbott@redhat.com>
-> Cc: Will Deacon <will@kernel.org>
-> ---
->  include/linux/stackleak.h | 3 +++
->  1 file changed, 3 insertions(+)
+>> Do you have some suggestion about how we can handle this problem ?
+>> Should we save and restore the PMU context before and after the deepest idle state . I don't know
+>> if we can take care of the PMU  counters and interrupts properly by saving and restoring
+>> the PMU registers.
+>> Or we should update the kernel counter and stop the PMU, like what we did in system sleep situation.
+>> Or we should let the firmware to handle the saving and restoring problem.
 > 
-> diff --git a/include/linux/stackleak.h b/include/linux/stackleak.h
-> index 3d5c3271a9a8..2b09d3759c76 100644
-> --- a/include/linux/stackleak.h
-> +++ b/include/linux/stackleak.h
-> @@ -15,6 +15,8 @@
->  #ifdef CONFIG_GCC_PLUGIN_STACKLEAK
->  #include <asm/stacktrace.h>
->  
-> +asmlinkage void notrace stackleak_erase(void);
-> +
->  static inline void stackleak_task_init(struct task_struct *t)
->  {
->  	t->lowest_stack = (unsigned long)end_of_stack(t) + sizeof(unsigned long);
-> @@ -30,6 +32,7 @@ int stack_erasing_sysctl(struct ctl_table *table, int write,
->  
->  #else /* !CONFIG_GCC_PLUGIN_STACKLEAK */
->  static inline void stackleak_task_init(struct task_struct *t) { }
-> +static inline void stackleak_erase(void) { }
->  #endif
->  
->  #endif
+> If the idle state is somehow autonomous (i.e. the kernel is not aware of
+> it), then I suppose firmware has to save/restore the register state that
+> is not otherwise preserved. However, I'd like to understand if this is
+> really what's happening and why CPUidle isn't just doing the right thing.
 > 
+> Thanks,
+> 
+> Will
+> 
+> .
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
