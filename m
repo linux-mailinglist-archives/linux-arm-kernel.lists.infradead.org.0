@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BFF4136ED8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 14:57:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C706B136EEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:03:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qt515P6Q1yNN/Bja6dxriN/j2ZAdQeVBZ3vIG7KZOr8=; b=lNC
-	802Adp44q5s0ktyprRsunPyCoLvs90+Zmvf1LpF3O9GdRrwY+Nbq7LZoeqj7I2jjPWtXtaG4Lug91
-	+cXb2/Bk9+9CCg2HlqegscbBFgmiBjbEfm4STUAkiRXHDXRRlggZLUjAGgVZKrqjcwpJ7hrSJGZGh
-	r8xX1sOYnxY5fQr1IXivrueQDPQmoqfvEPVaK78LiGXpyJJeEPwZblxL1/+6ttG0UhwVZIc5bx5Vc
-	0ZEFJ96zaNsDdA52pa/D1PPn/G0vuY12l+c6YhNLa0Z4Lmsg1KNP+BeWuVEqeSeYATxYMwsqyi88t
-	f+L4XNJPanbQPuT44bXNLBJ7azywy4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0NI7MoJEIxfFB4RKvqxg42FniI0wWR9SasnHqB907IE=; b=qGB+rbT2vqahsk
+	Eu36a61WVflE9Lj0gsEI6Xqg9qRiJyCCx+k+dOop3tDi+fFt+Cs/KPvtNCeJUGBF+B99wuDcESbaR
+	MaBig3ay5QuV62T6xkD8eOqHh5bsFav1Vz9Xfdkomk9VOmSCuz4ReEsjQLtsGEwOpVie3DEZA3usa
+	iVqU5fQbyeigHAQWGHc3lOhzJQh6wKipsqMll1ySQe21c47mGSd24tYDKL6E70qh/aV63bRVXEzMq
+	1gRp28eaLBV7k8/gFhMxLWkSxZYADI2OjMEXopIGiDD4MwV3Ihd5EkLaStdhjEfnmeNG+Jugtnek1
+	HAzcc6W2kdhbbnCgmokw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipun0-0001jj-PA; Fri, 10 Jan 2020 13:57:26 +0000
-Received: from conuserg-11.nifty.com ([210.131.2.78])
+	id 1ipusX-0003y9-AI; Fri, 10 Jan 2020 14:03:09 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipumt-0001jC-Dl; Fri, 10 Jan 2020 13:57:21 +0000
-Received: from grover.flets-west.jp (softbank126093102113.bbtec.net
- [126.93.102.113]) (authenticated)
- by conuserg-11.nifty.com with ESMTP id 00ADuLH8021001;
- Fri, 10 Jan 2020 22:56:22 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com 00ADuLH8021001
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1578664582;
- bh=zVyX+jnC81yFPW4LBhJZnImuwwlFDcqtIGqjvmZlyqg=;
- h=From:To:Cc:Subject:Date:From;
- b=vwOmdHD4C4wa/uGHgTN9FkESn/XEWK+Uevv4ZerrGKBY1PZMEDPK7/IWY78IuB2Mg
- 4sGcQi7DeKxMh93gH9tb9e5OTYcmRtDlOlgj2FJP7o/S+vnzRE0FEhO29I2LlM9G70
- pLjgpTZ5+v9HHS7E9f+5BUTWn//cnwGU5oXYOi8NfAzmB6X/5vFUzsugJ9Za6S2Hqr
- DzuvkJaDVrha+uERl+0LNUmJC9ys9+d1BUA1BQEg6t3YC6vRiQfWmuFBtSSZZcALJz
- NbDpOLMUsOlv7cxWnKuD1Dln0Rvk0GIuNl1zSysPA3whmpr9SBm+7ufHhfEAZAHV5J
- ga5SnnQ6h6Uaw==
-X-Nifty-SrcIP: [126.93.102.113]
-From: Masahiro Yamada <masahiroy@kernel.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, devel@driverdev.osuosl.org
-Subject: [PATCH v2] staging: vc04_services: remove header include path to
- vc04_services
-Date: Fri, 10 Jan 2020 22:56:15 +0900
-Message-Id: <20200110135615.11617-1-masahiroy@kernel.org>
-X-Mailer: git-send-email 2.17.1
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_055719_685528_E922273E 
-X-CRM114-Status: UNSURE (   8.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.78 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ id 1ipusK-0003xF-N2
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 10 Jan 2020 14:02:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=YfX4Wn1/pqccM1olKxdBD79TA9u9Lbt27vICyToE+ls=; b=hUd/+pKHQBBDMpuaTCGYlb6oP
+ tHjI1NofTkszYxvkTnNNqmYmw6EzgYCrcSu2vsBjWQUO0IgTKKkb11WzaDx4LmzdHtz9LW/Hm0RgC
+ ZdIv+jcU1kRIITHLD0QOfmJzN7/LA/mfZPgCHq6NIEoLWkJujRv4Sla98UT6cKhPOKLcPGcxN+HMy
+ AUc5AvlNE3kz0tVvky+aV9FX0vpYZfR/A3TN2D0GIH29lrbxj3mFkAp1ukIqg0k68ObHXAUR8NbZi
+ RCwiUEVFD1oEMiNUTjmJ1fIFGQS7nm2/X6ijHCr37Eyn+JkfXY5mT7EQ0um89vJiV6zkfuXOSIYS0
+ +ziuTrUqw==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipus5-0003rT-5A; Fri, 10 Jan 2020 14:02:41 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 7AC7C30018B;
+ Fri, 10 Jan 2020 15:01:00 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 61C442B612603; Fri, 10 Jan 2020 15:02:34 +0100 (CET)
+Date: Fri, 10 Jan 2020 15:02:34 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alexey Budankov <alexey.budankov@linux.intel.com>
+Subject: Re: [PATCH v4 2/9] perf/core: open access for CAP_SYS_PERFMON
+ privileged process
+Message-ID: <20200110140234.GO2844@hirez.programming.kicks-ass.net>
+References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
+ <c93309dc-b920-f5fa-f997-e8b2faf47b88@linux.intel.com>
+ <20200108160713.GI2844@hirez.programming.kicks-ass.net>
+ <cc239899-5c52-2fd0-286d-4bff18877937@linux.intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <cc239899-5c52-2fd0-286d-4bff18877937@linux.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,73 +72,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <masahiroy@kernel.org>, linux-kernel@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Stephane Eranian <eranian@google.com>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
+ Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
+ James Morris <jmorris@namei.org>, Ingo Molnar <mingo@redhat.com>,
+ oprofile-list@lists.sf.net, Serge Hallyn <serge@hallyn.com>,
+ Robert Richter <rric@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>, mhiramat@kernel.org,
+ Casey Schaufler <casey@schaufler-ca.com>,
+ "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix up some relative paths in #include "..." directives, and remove
-the include path to drivers/staging/vc04_services.
+On Thu, Jan 09, 2020 at 02:36:50PM +0300, Alexey Budankov wrote:
+> On 08.01.2020 19:07, Peter Zijlstra wrote:
+> > On Wed, Dec 18, 2019 at 12:25:35PM +0300, Alexey Budankov wrote:
 
-Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
----
+> >> diff --git a/kernel/events/core.c b/kernel/events/core.c
+> >> index 059ee7116008..d9db414f2197 100644
+> >> --- a/kernel/events/core.c
+> >> +++ b/kernel/events/core.c
+> >> @@ -9056,7 +9056,7 @@ static int perf_kprobe_event_init(struct perf_event *event)
+> >>  	if (event->attr.type != perf_kprobe.type)
+> >>  		return -ENOENT;
+> >>  
+> >> -	if (!capable(CAP_SYS_ADMIN))
+> >> +	if (!perfmon_capable())
+> >>  		return -EACCES;
+> >>  
+> >>  	/*
+> > 
+> > This one only allows attaching to already extant kprobes, right? It does
+> > not allow creation of kprobes.
+> 
+> This unblocks creation of local trace kprobes and uprobes by CAP_SYS_PERFMON 
+> privileged process, exactly the same as for CAP_SYS_ADMIN privileged process.
 
-Changes in v2:
-  - fix up some relative paths.
-    I tested with/without O= option this time.
+I've no idea what you just said; it's just words.
 
- drivers/staging/vc04_services/Makefile                        | 2 +-
- drivers/staging/vc04_services/interface/vchi/vchi.h           | 4 ++--
- .../staging/vc04_services/interface/vchiq_arm/vchiq_shim.c    | 2 +-
- 3 files changed, 4 insertions(+), 4 deletions(-)
+Again, this only allows attaching to previously created kprobes, it does
+not allow creating kprobes, right?
 
-diff --git a/drivers/staging/vc04_services/Makefile b/drivers/staging/vc04_services/Makefile
-index afe43fa5a6d7..54d9e2f31916 100644
---- a/drivers/staging/vc04_services/Makefile
-+++ b/drivers/staging/vc04_services/Makefile
-@@ -13,5 +13,5 @@ vchiq-objs := \
- obj-$(CONFIG_SND_BCM2835)	+= bcm2835-audio/
- obj-$(CONFIG_VIDEO_BCM2835)	+= bcm2835-camera/
- 
--ccflags-y += -Idrivers/staging/vc04_services -D__VCCOREVER__=0x04000000
-+ccflags-y += -D__VCCOREVER__=0x04000000
- 
-diff --git a/drivers/staging/vc04_services/interface/vchi/vchi.h b/drivers/staging/vc04_services/interface/vchi/vchi.h
-index 56b1037d8e25..ff2b960d8cac 100644
---- a/drivers/staging/vc04_services/interface/vchi/vchi.h
-+++ b/drivers/staging/vc04_services/interface/vchi/vchi.h
-@@ -4,8 +4,8 @@
- #ifndef VCHI_H_
- #define VCHI_H_
- 
--#include "interface/vchi/vchi_cfg.h"
--#include "interface/vchi/vchi_common.h"
-+#include "vchi_cfg.h"
-+#include "vchi_common.h"
- 
- /******************************************************************************
-  * Global defs
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-index 0ce3b08b3441..efdd3b1c7d85 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-@@ -3,7 +3,7 @@
- #include <linux/module.h>
- #include <linux/types.h>
- 
--#include "interface/vchi/vchi.h"
-+#include "../vchi/vchi.h"
- #include "vchiq.h"
- #include "vchiq_core.h"
- 
--- 
-2.17.1
+That is; I don't think CAP_SYS_PERFMON should be allowed to create
+kprobes.
 
+As might be clear; I don't actually know what the user-ABI is for
+creating kprobes.
 
 _______________________________________________
 linux-arm-kernel mailing list
