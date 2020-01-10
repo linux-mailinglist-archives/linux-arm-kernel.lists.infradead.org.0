@@ -2,80 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCC40136BCE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:16:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DAE9136BDD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:19:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0LibxUVYeLQa7bQgfnUCwwjGmqpf8RzpEA43Oq1wjE=; b=eCGEIgHe4nSbyR
-	QwM+xK92M+0CcsRm8UUpGQaezdY+NKgVqm52dTZITqn0IaNt2jajC3spvWd1pxnO1Gyar+cBlFRML
-	2sNMe33Iiwd1CNMgZF0OYh/13rnt60duvat8gDOYyp84EyZSYawCJlRhLMUB2tpQXSrHfMhANRUGe
-	+USfeCudNk08qUatotoRI40Izeg3hHrjub9QetOKniP3PmrMADFamsrYzECz+FZK9NgeC6MFdKZra
-	ugkjXZFMrFvRxe+5s9F0DHwX8nwFM07zkj8NaAiVfODPsTF/2Js+AqfZ63DLJ7UxmZvR1raE1p+7A
-	/BmtV/c4wRnz0rhNp0rg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kWORoVhEkl+2LvTSuX9HzcAk4re74Ix9k9V7uKzpsCM=; b=d7oUIHZ6WGULO1vudCzdZN5Mi
+	zzp/fHjOburqxm6gZR3TEf89T7F7jPbG37LLy92Q1lKVHyguGaYiPy8VmpnfR8r2Ag1LTR0Ktghms
+	VSHiUv+NGxe5bLr2kkdKkPYGwHMNO/+2TDbALczFfXrt+0Q2mkyp1OOpU50wUzgzS22E/Ue20GTvX
+	2iIunkodAIU/3SmkPts8ixR3AQemTe83nXtzLUfghplf/72xTx3kXy1AvUJTctNLWbfylN6Z0uYXi
+	tLVFDNtqJOiaLfK7/Lu41JZ1ENSC9q6y7X94yq4YSymPrcpEd3v7voGVnuSQ7bfMtWgudrNFGrKYe
+	Vwy1CIbtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipsHI-0006I3-B5; Fri, 10 Jan 2020 11:16:32 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1ipsJf-0007Ln-7p; Fri, 10 Jan 2020 11:18:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipsH6-0006EZ-MU
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:16:22 +0000
-Received: from mail-qt1-f172.google.com ([209.85.160.172]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MFb38-1itjLE3nhe-00HANx for <linux-arm-kernel@lists.infradead.org>; Fri,
- 10 Jan 2020 12:16:15 +0100
-Received: by mail-qt1-f172.google.com with SMTP id i13so1575301qtr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 03:16:13 -0800 (PST)
-X-Gm-Message-State: APjAAAWI3QPhF58ePf6/f8k9PLmAq5jQCOU4+lWSonHI8/P1/ckoTyl2
- iVQx/LM3+fg1bwEIB/xxuV3JpOI73bpNZ4j5dyM=
-X-Google-Smtp-Source: APXvYqzPSbZnYflLqoz2lIHl1CaiiXPaPPS2fouoKNm2ggHKUo+eBphF/usWgjsuuKRSk7/g/+RZJMdHGQs0hp2ZmSI=
-X-Received: by 2002:ac8:6153:: with SMTP id d19mr1898412qtm.18.1578654972819; 
- Fri, 10 Jan 2020 03:16:12 -0800 (PST)
+ id 1ipsJW-0007KM-Ud
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:18:52 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5495220721;
+ Fri, 10 Jan 2020 11:18:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578655130;
+ bh=1LXfK2dJUcjEJ/EmR+OcVddqMQyjQI8vDoMgOjLi3b0=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=uZTO5Gz+DQOgGNkBKt57eCylxQVOQJ13c1PEu/PUgWHYK2TzX0uZZrC2CqODnE1MI
+ cNypNlMcjguIdHHa1okYIgyDOe5Ff60aVCYwNLaP122m1SJiSTG5PZF4Gkv3xvfQ1Y
+ vAk5zesvuPiBciANd04ELBjbDQzRC7nl0HcJO0g8=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1ipsJU-0007qA-M4; Fri, 10 Jan 2020 11:18:48 +0000
 MIME-Version: 1.0
-References: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
-In-Reply-To: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 10 Jan 2020 12:15:56 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a1MLyP4ooyEDiBF1fE0BJGocgDmO1f5Qrvn_W5eqahz8g@mail.gmail.com>
-Message-ID: <CAK8P3a1MLyP4ooyEDiBF1fE0BJGocgDmO1f5Qrvn_W5eqahz8g@mail.gmail.com>
-Subject: Re: [PATCH V2] firmware: arm_scmi: Make scmi core independent of
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>
-X-Provags-ID: V03:K1:PYnfW+WOKMGMI6zUm4c1TEH3SXzMvvI85uFQPE7mtgekrufNmmk
- zz9EnvH9UZmGM9IwgieAN4Gh9sIf5ty/5wc3C3LiEVfh/mXYBRmhRaQXK/Zi3WclJXqtSdD
- FfwKa0OjaSjb8JdcJpXqNR9w69uemloaA0qvW4FCd91+jp0qv6tVdJBV0jzTI2VmwB6oNMW
- wGSt/sc1J30OVPROo6YyA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vTJXkNBqJ2k=:ghO3diM/3AcsY0EK/TPCWK
- aVZ9OC/ayLlII50TjDiL6alkWen6EyAmOTSZMtbhbW4s/+PnA8ahwZ1zkdxJQzrcLotOuPiFT
- DrUdcuWuW7iNXwvgm4lQEiOl46NolEsZ2oEaK1by60a+HnDibdfD6Qae1ekANrZwarziPe/Ne
- IujdrXa6X0bsl2MpqAAFlUCCnIo6EqAeTTt/3yHLzN69kD5RjC/DFp0n0URBeocEu8VOWy28g
- W1nN66GDglvVWNU9Nhe3CASros5WRzqVEzoQYwiHRKMdXlcoTFb7wX/XQzh9qQs9FaOQ3VRMD
- 6c1H8G60IvqY71Ay+fvSUODa7ZvrI3IR8PUPtSrmI3iHOtSIeK/tBn9WfYtZrwaOJGIV3+KUO
- KA9twAEcaUMi/AX0hvm/E4UPY8N9HSZmize2zK2iUz4FiWoLzFCfMsD2PwB7kL7WJ1bQm/fnI
- 7NAQDq49J9pSToZ6+jKfm8xoZn6OBdUceat/2qBFbdgq9/8/4jmLRsBvTTDIrC5tyIYExv02c
- fymzkoGNIS3yVoa+WBcpcs9RVstLJAlTaf2kbWy0hL7kqb+jrCUv/kbhI29gslHP4etha9jYQ
- Hken3jvjbwEvkt/HlPiAOxIvBePjNUENKrUQGoAu05yoaxeM7dDdI2+ljvtUp3RENLU3fCpVH
- k9jYRtmY8EOwgCkO5A+8cPzL7F2fYfYikR6bONalDbEdMNTTqvCxevVivzSMnpxh0U8Wgn6Eq
- TtJJwU0DXcq3ZfRfVERI2PbVFASX8YMcVdPrNcPjt5MPyTXxLptQzazsNkVqGc2vjfALW5F3n
- GxHE6i6uOhsvpbtS4YzodDZGvYgyZGxXfUDvD1cINSfRiJ1QGKELOr5amwGib6ypcl4A9LAn+
- K/ciifavMqX3zhvIeiHA==
+Date: Fri, 10 Jan 2020 11:18:48 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore full
+ SPE profiling buffer controls
+In-Reply-To: <20200110105435.GC42593@e119886-lin.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-10-andrew.murray@arm.com>
+ <20191221141325.5a177343@why>
+ <20200110105435.GC42593@e119886-lin.cambridge.arm.com>
+Message-ID: <2a9c9076588ef1dd36a6a365848cdfe7@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: andrew.murray@arm.com, Catalin.Marinas@arm.com,
+ Mark.Rutland@arm.com, will@kernel.org, Sudeep.Holla@arm.com,
+ kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_031621_021546_8CC127AD 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_031851_033517_618A195F 
+X-CRM114-Status: GOOD (  29.17  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,90 +94,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- cristian.marussi@arm.com, Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <Mark.Rutland@arm.com>, kvm@vger.kernel.org,
+ Catalin Marinas <Catalin.Marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Sudeep Holla <Sudeep.Holla@arm.com>, will@kernel.org,
+ kvmarm <kvmarm@lists.cs.columbia.edu>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 10:43 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
->
-> The SCMI specification is fairly independent of the transport protocol,
-> which can be a simple mailbox (already implemented) or anything else.
-> The current Linux implementation however is very much dependent of the
-> mailbox transport layer.
->
-> This patch makes the SCMI core code (driver.c) independent of the
-> mailbox transport layer and moves all mailbox related code to a new
-> file: mailbox.c.
->
-> We can now implement more transport protocols to transport SCMI
-> messages, some of the transport protocols getting discussed currently
-> are SMC/HVC, SPCI (built on top of SMC/HVC), OPTEE based mailbox
-> (similar to SPCI), and vitio based transport as alternative to mailbox.
->
-> The transport protocols just need to provide struct scmi_desc, which
-> also implements the struct scmi_transport_ops.
->
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> ---
-> V2:
-> - Dropped __iomem from payload data.
+On 2020-01-10 10:54, Andrew Murray wrote:
+> On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
+>> On Fri, 20 Dec 2019 14:30:16 +0000
+>> Andrew Murray <andrew.murray@arm.com> wrote:
+>> 
+>> [somehow managed not to do a reply all, re-sending]
+>> 
+>> > From: Sudeep Holla <sudeep.holla@arm.com>
+>> >
+>> > Now that we can save/restore the full SPE controls, we can enable it
+>> > if SPE is setup and ready to use in KVM. It's supported in KVM only if
+>> > all the CPUs in the system supports SPE.
+>> >
+>> > However to support heterogenous systems, we need to move the check if
+>> > host supports SPE and do a partial save/restore.
+>> 
+>> No. Let's just not go down that path. For now, KVM on heterogeneous
+>> systems do not get SPE. If SPE has been enabled on a guest and a CPU
+>> comes up without SPE, this CPU should fail to boot (same as exposing a
+>> feature to userspace).
+>> 
+>> >
+>> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+>> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+>> > ---
+>> >  arch/arm64/kvm/hyp/debug-sr.c | 33 ++++++++++++++++-----------------
+>> >  include/kvm/arm_spe.h         |  6 ++++++
+>> >  2 files changed, 22 insertions(+), 17 deletions(-)
+>> >
+>> > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+>> > index 12429b212a3a..d8d857067e6d 100644
+>> > --- a/arch/arm64/kvm/hyp/debug-sr.c
+>> > +++ b/arch/arm64/kvm/hyp/debug-sr.c
+>> > @@ -86,18 +86,13 @@
+>> >  	}
+>> >
+>> >  static void __hyp_text
+>> > -__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+>> > +__debug_save_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+>> >  {
+>> >  	u64 reg;
+>> >
+>> >  	/* Clear pmscr in case of early return */
+>> >  	ctxt->sys_regs[PMSCR_EL1] = 0;
+>> >
+>> > -	/* SPE present on this CPU? */
+>> > -	if (!cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
+>> > -						  ID_AA64DFR0_PMSVER_SHIFT))
+>> > -		return;
+>> > -
+>> >  	/* Yes; is it owned by higher EL? */
+>> >  	reg = read_sysreg_s(SYS_PMBIDR_EL1);
+>> >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
+>> > @@ -142,7 +137,7 @@ __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+>> >  }
+>> >
+>> >  static void __hyp_text
+>> > -__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+>> > +__debug_restore_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+>> >  {
+>> >  	if (!ctxt->sys_regs[PMSCR_EL1])
+>> >  		return;
+>> > @@ -210,11 +205,14 @@ void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
+>> >  	struct kvm_guest_debug_arch *host_dbg;
+>> >  	struct kvm_guest_debug_arch *guest_dbg;
+>> >
+>> > +	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+>> > +	guest_ctxt = &vcpu->arch.ctxt;
+>> > +
+>> > +	__debug_restore_spe_context(guest_ctxt, kvm_arm_spe_v1_ready(vcpu));
+>> > +
+>> >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+>> >  		return;
+>> >
+>> > -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+>> > -	guest_ctxt = &vcpu->arch.ctxt;
+>> >  	host_dbg = &vcpu->arch.host_debug_state.regs;
+>> >  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+>> >
+>> > @@ -232,8 +230,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+>> >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+>> >  	guest_ctxt = &vcpu->arch.ctxt;
+>> >
+>> > -	if (!has_vhe())
+>> > -		__debug_restore_spe_nvhe(host_ctxt, false);
+>> > +	__debug_restore_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
+>> 
+>> So you now do an unconditional save/restore on the exit path for VHE 
+>> as
+>> well? Even if the host isn't using the SPE HW? That's not acceptable
+>> as, in most cases, only the host /or/ the guest will use SPE. Here, 
+>> you
+>> put a measurable overhead on each exit.
+>> 
+>> If the host is not using SPE, then the restore/save should happen in
+>> vcpu_load/vcpu_put. Only if the host is using SPE should you do
+>> something in the run loop. Of course, this only applies to VHE and
+>> non-VHE must switch eagerly.
+>> 
+> 
+> On VHE where SPE is used in the guest only - we save/restore in 
+> vcpu_load/put.
 
-Simply dropping the __iomem isn't much better, now you get other
-type mismatches.
+Yes.
 
-> - Moved transport ops to scmi_desc, and that has a per transport
->   instance now which is differentiated using the compatible string.
-> - Converted IS_ERR_OR_NULL to IS_ERR.
+> On VHE where SPE is used in the host only - we save/restore in the run 
+> loop.
 
-These look good to me.
+Why? If only the host is using SPE, why should we do *anything at all*?
 
-> + * @payload: Transmit/Receive payload area
-> + * @dev: Reference to device in the SCMI hierarchy corresponding to this
-> + *      channel
-> + * @handle: Pointer to SCMI entity handle
-> + * @transport_info: Transport layer related information
-> + */
-> +struct scmi_chan_info {
-> +       void *payload;
-> +       struct device *dev;
-> +       struct scmi_handle *handle;
-> +       void *transport_info;
-> +};
+> On VHE where SPE is used in guest and host - we save/restore in the run 
+> loop.
+> 
+> As the guest can't trace EL2 it doesn't matter if we restore guest SPE 
+> early
+> in the vcpu_load/put functions. (I assume it doesn't matter that we 
+> restore
+> an EL0/EL1 profiling buffer address at this point and enable tracing 
+> given
+> that there is nothing to trace until entering the guest).
 
-Maybe you can wrap the scmi_chan_info inside of another
-structure that contains  the payload pointer, and use container_of
-to convert between them?
+As long as you do it after the EL1 sysregs have need restored so that 
+the SPE
+HW has a valid context, we should be fine. Don't restore it before that 
+point
+though (you have no idea whether the SPE HW can do speculative memory 
+accesses
+that would use the wrong page tables).
 
-It's not obvious which parts of the structure should be shared and
-which are transport specific.
+> However the reason for moving save/restore to vcpu_load/put when the 
+> host is
+> using SPE is to minimise the host EL2 black-out window.
 
-> -static void scmi_rx_callback(struct mbox_client *cl, void *m)
-> +void scmi_rx_callback(struct scmi_chan_info *cinfo, struct scmi_xfer *t)
->  {
->         u8 msg_type;
->         u32 msg_hdr;
->         u16 xfer_id;
->         struct scmi_xfer *xfer;
-> -       struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
->         struct device *dev = cinfo->dev;
->         struct scmi_info *info = handle_to_scmi_info(cinfo->handle);
->         struct scmi_xfers_info *minfo = &info->tx_minfo;
-> -       struct scmi_shared_mem __iomem *mem = cinfo->payload;
-> +       struct scmi_shared_mem *mem = cinfo->payload;
->
->         msg_hdr = ioread32(&mem->msg_header);
+You should move it to *the run loop* when both host and guest are using 
+SPE.
 
-This is where it goes wrong: you cannot pass a kernel pointer
-without __iomem into ioread32(). Building the driver with sparse
-(using "make C=1") should show you this and possibly other
-related conversion bugs.
+> On nVHE we always save/restore in the run loop. For the SPE 
+> guest-use-only
+> use-case we can't save/restore in vcpu_load/put - because the guest 
+> runs at
+> the same ELx level as the host - and thus doing so would result in the 
+> guest
+> tracing part of the host.
 
-       Arnd
+Not only. It would actively corrupt memory in the host by using the 
+wrong
+page tables.
+
+> Though if we determine that (for nVHE systems) the guest SPE is 
+> profiling only
+> EL0 - then we could also save/restore in vcpu_load/put where SPE is 
+> only being
+> used in the guest.
+
+Same as above: wrong MM context, speculation, potential memory 
+corruption.
+
+> Does that make sense, are my reasons correct?
+
+Not entirely. I think you should use the following table:
+
+VHE | Host-SPE | Guest-SPE | Switch location
+  0  |     0    |     0     | none
+  0  |     0    |     1     | run loop
+  0  |     1    |     0     | run loop
+  0  |     1    |     1     | run loop
+  1  |     0    |     0     | none
+  1  |     0    |     1     | load/put
+  1  |     1    |     0     | none
+  1  |     1    |     1     | run loop
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
