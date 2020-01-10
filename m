@@ -2,61 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5136F13747E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:12:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BD52137480
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:13:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W8nsV92Xe4MPSvrymVRb4pCK/iImDxcOgdy4msY4MO4=; b=jABOLov2i8wxf0
-	IKxw4y6/IjKJrvjBFC+ALj40RKLgSS1T2KO8mhQPUSshrxgAMsmP3fhrJ2b2oZC78alfbRWAysNdx
-	YqlXFZtkmYLD5Fw+Cb8azugTBEQ4wRDq0o4sSpfOJgl9OQecVvLVXm/XCqWvsBN4/tGbFr4qWtE9i
-	RKjK6xLrj15oHTKxEkMPwtSPfKxq9ySN2pTACBzJvU48MGp24o2FvLDZY8fC0McHZc/Ojd+o6MSBu
-	cw1VlCS1U5J9J6UmOzO3S6qmSYbuRd2PzCqSbqzVfycB/eq4L2EeLZgJoEdFdZ8Qal28w2Wt51x47
-	d73Fg0rCvwXyrNrE12Mw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=W2HW2YgwBA/Lc+nc9SdQkMCpDJMmONsLjWnOn+J6FpI=; b=ZQo
+	ypdvJxFje3NXHZQ/C7fa23dA+Zbc0r2kHcbPOJcMJpsnxYQDIS7rLcmgZDZSz66Asg/gORAiKcmDT
+	EPSsq0C8MK9bGYfeXB2bclDDXKN9kNY6xybUBYmygTruua9OjsW+Qwygn86AihK4RxZfiFbY8unJl
+	0Va2JB60tBI+88Hi2nxxhVymW0prcBfx55mF72Koi5ngPaiSUduwCDvC8TGSPG98KFh0FXPJuRFXU
+	IoAj69R4EeRcvCZoRivfNeRXC7vcGfuEM4FvvZGJQJdPL7e/cyUgNqca7PxP0ETgaHSPivXkUkT2Z
+	Q5kUv4brOSsbIDFutVlQHDM4K8SSzxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipxps-0004P1-U9; Fri, 10 Jan 2020 17:12:36 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1ipxqu-0004fO-DH; Fri, 10 Jan 2020 17:13:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipxpl-0004Oe-Dr
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 17:12:31 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
+ id 1ipxqm-0004f2-59
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 17:13:33 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 5463420053;
- Fri, 10 Jan 2020 18:12:27 +0100 (CET)
-Date: Fri, 10 Jan 2020 18:12:26 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH 2/5] dt-bindings: panel: add Feixin K101 IM2BA02 MIPI-DSI
- panel
-Message-ID: <20200110171226.GB25099@ravnborg.org>
-References: <20200110155225.1051749-1-icenowy@aosc.io>
- <20200110155225.1051749-3-icenowy@aosc.io>
+ by mail.kernel.org (Postfix) with ESMTPSA id A12DB2072E;
+ Fri, 10 Jan 2020 17:13:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578676411;
+ bh=jsE3r3ZjqAr+XHVAdXhhni6B0ns8osql2vNkogrgO/w=;
+ h=Date:From:To:Cc:Subject:From;
+ b=THAqIQHo4r0AjBHc5uzM/1aGdyBUaBavdGaCq1uim1wO11UuLgmjuecLSYgUXwRhy
+ FQ3X8hRgEwHzJ2FpNXKqSYgmeVWHVlyFrDuBfhRuBzT4K/5gtjcZ1SRNz6zMjxrA/U
+ Z4VM9pGLuRmJo8HrchpDDCMLeTDqbixtZ8Y3VpDc=
+Date: Fri, 10 Jan 2020 18:13:28 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] Allwinner arm Defconfig Changes for 5.6
+Message-ID: <472336e0-11e0-4cad-bd47-216ba7321200.lettre@localhost>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200110155225.1051749-3-icenowy@aosc.io>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=gEfo2CItAAAA:8
- a=q9ad5_0hBVDqaoZWYP0A:9 a=AFdBQuwNfT9Z_ji9:21 a=HW4JGcA6RQc568Jt:21
- a=CjuIK1q_8ugA:10 a=sptkURWiP4Gy88Gu7hUp:22 a=pHzHmUro8NiASowvMSCR:22
- a=6VlIyEUom7LUIeUMNQJH:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_091229_832349_8EC5C54E 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_091332_215897_1C8899B1 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,123 +73,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, David Airlie <airlied@linux.ie>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <mripard@kernel.org>
+Content-Type: multipart/mixed; boundary="===============4756971649239548625=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Icenowy.
 
-On Fri, Jan 10, 2020 at 11:52:22PM +0800, Icenowy Zheng wrote:
-> Feixin K101 IM2BA02 is a 10.1" 800x1280 4-lane MIPI-DSI panel.
-> 
-> Add device tree binding for it.
-Thanks for using the new meta-schema format and with the correct
-license.
+--===============4756971649239548625==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="RnlQjJ0d97Da+TV1"
+Content-Disposition: inline
 
 
-The example fails dt_binding_check - I had to do the following to make
-it pass:
+--RnlQjJ0d97Da+TV1
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-diff --git a/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml b/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-index 7176d14893ff..c43f884de6ac 100644
---- a/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-+++ b/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-@@ -37,7 +37,9 @@ additionalProperties: false
- 
- examples:
-   - |
--    &dsi {
-+    #include <dt-bindings/gpio/gpio.h>
-+
-+    dsi {
-         #address-cells = <1>;
-         #size-cells = <0>;
-         panel@0 {
+Hi Arnd, Olof,
 
-Added include to get definition of GPIO_...
-And dropped the "&" as it is not OK in the example here.
+Happy New Year!
 
-And please consider if backlight really is a required property.
+Please pull the following changes for the next release.
 
-	Sam
-> 
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> ---
->  .../display/panel/feixin,k101-im2ba02.yaml    | 54 +++++++++++++++++++
->  1 file changed, 54 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml b/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-> new file mode 100644
-> index 000000000000..7176d14893ff
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/panel/feixin,k101-im2ba02.yaml
-> @@ -0,0 +1,54 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/panel/feixin,k101-im2ba02.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Feixin K101 IM2BA02 10.1" MIPI-DSI LCD panel
-> +
-> +maintainers:
-> +  - Icenowy Zheng <icenowy@aosc.io>
-> +
-> +allOf:
-> +  - $ref: panel-common.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: feixin,k101-im2ba02
-> +  reg: true
-> +  backlight: true
-> +  reset-gpios: true
-> +  avdd-supply:
-> +     description: regulator that supplies the AVDD voltage
-> +  dvdd-supply:
-> +     description: regulator that supplies the DVDD voltage
-> +  cvdd-supply:
-> +     description: regulator that supplies the CVDD voltage
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - backlight
-> +  - avdd-supply
-> +  - dvdd-supply
-> +  - cvdd-supply
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    &dsi {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +        panel@0 {
-> +            compatible = "feixin,k101-im2ba02";
-> +            reg = <0>;
-> +            avdd-supply = <&reg_dc1sw>;
-> +            dvdd-supply = <&reg_dc1sw>;
-> +            cvdd-supply = <&reg_ldo_io1>;
-> +            reset-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>;
-> +            backlight = <&backlight>;
-> +        };
-> +    };
-> +
-> +...
-> -- 
-> 2.23.0
+Thanks!
+Maxime
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/tags/sunxi-config-for-5.6
+
+for you to fetch changes up to b6eee45a0a87ae6e5519e6df10a2757423a2f48b:
+
+  ARM: sunxi: Enable CONFIG_SUN8I_THERMAL (2020-01-02 10:29:44 +0100)
+
+----------------------------------------------------------------
+One patch to enable the new thermal sensor driver found on newer
+Allwinner SoCs.
+
+----------------------------------------------------------------
+Yangtao Li (1):
+      ARM: sunxi: Enable CONFIG_SUN8I_THERMAL
+
+
+ arch/arm/configs/sunxi_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+--RnlQjJ0d97Da+TV1
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhiwuAAKCRDj7w1vZxhR
+xWH9AQC2wpwsfPlV7+eXrLA1YGNygdeQVv615vo4OVTkoJVw0AEAxWp/tug9JWSj
+MPZW9oCgfdtcYqjvg3VIc47rlH2PUwY=
+=VCoB
+-----END PGP SIGNATURE-----
+
+--RnlQjJ0d97Da+TV1--
+
+
+--===============4756971649239548625==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4756971649239548625==--
+
