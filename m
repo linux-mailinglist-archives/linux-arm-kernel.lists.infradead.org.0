@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC8C136C8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:57:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63B71136C8D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:57:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Qb5tfTHz8kH5KQniXGYBwPvDMnS4FQxHVKfwPf5oVAU=; b=Ftzs9//iXShVu3jTGq8tEQjoli
-	pAC3XlmhEibQ2t2wG8YcGcC6pFjagVruIrweoEXZU8ZcPuZ6l8tiUFXj+RWa4Ugop6v8hyVOOvzCN
-	9ICQ8xhFtxSkjD7iBwbTbFLzkuBkPb0dkCqRG7H1j0bLpp+wPWuFH1CuYR5pfKVDjnpWs98vLXbcJ
-	I/d0DWaxpKQSZiJPcNXgeWkGN0OrvpVQEIWBXQkN8MOis9/+0QUqRrTZN78uDKo/GOjZwdBURuVOD
-	2UOXjnjQ1FXBLE2ubwliIDgWKaU27+2/eSnz63dIdFqAs3jnPlW3Ep31yFNsPalP/ciDgo9TwL042
-	+m3YucYg==;
+	bh=D0KUBiL8kPvYd5MRQKzNb6BYXVZ5nT+8jTPipw20sZ4=; b=hSaWn/VcvneGAfZNoqusAKUnC2
+	hP7zSRnyvYZiFHdGrBnVV0l3L0Lqj5jRRmPRtiHNhzq46xIpqgxKC1xYHlchMYg0lq62bwvdx2M6M
+	A5K8F/FmAWZnCRspfU0jJaZtWYwr0HtKzw3PwuQERgxd5x9pi36rxX4Bscl/nIBX7h4qa2jRgc76b
+	bbLW1zwjJ2aE655L+s9iwgbmpUXYZ131mU227lNTHwqbvQKUbGIMMv4Ru+QPKTOCTxNsE7hJhJju9
+	9np72qmB6cYLygb8M570UzuPZjXCtCPdQ/PlLMnPc2WRWGTbITmQlA8zD/ySdMhYvNUROn6ODegbp
+	HkRAX2/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipsuy-0001jn-PQ; Fri, 10 Jan 2020 11:57:32 +0000
+	id 1ipsvE-00022a-HW; Fri, 10 Jan 2020 11:57:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipss5-0006eD-2F
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:54:40 +0000
+ id 1ipss7-0006ko-39
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:54:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B75DB13A1;
- Fri, 10 Jan 2020 03:54:32 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11C0F139F;
+ Fri, 10 Jan 2020 03:54:34 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 97D9A3F534;
- Fri, 10 Jan 2020 03:54:31 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EABEB3F534;
+ Fri, 10 Jan 2020 03:54:32 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH 07/14] net: axienet: Fix SGMII support
-Date: Fri, 10 Jan 2020 11:54:08 +0000
-Message-Id: <20200110115415.75683-8-andre.przywara@arm.com>
+Subject: [PATCH 08/14] net: axienet: Drop MDIO interrupt registers from
+ ethtools dump
+Date: Fri, 10 Jan 2020 11:54:09 +0000
+Message-Id: <20200110115415.75683-9-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200110115415.75683-1-andre.przywara@arm.com>
 References: <20200110115415.75683-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_035433_198791_80A7FF2F 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20200110_035435_236033_39E68D20 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,70 +73,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With SGMII, the MAC and the PHY can negotiate the link speed between
-themselves, without the host needing to mediate between them.
-Linux recognises this, and will call phylink's mac_config with the speed
-member set to SPEED_UNKNOWN (-1).
-Currently the axienet driver will bail out and complain about an
-unsupported link speed.
-
-Teach axienet's mac_config callback to leave the MAC's speed setting
-alone if the requested speed is SPEED_UNKNOWN.
-
-This fixes axienet operation when the hardware is using SGMII.
+Newer revisions of the IP don't have these registers. Since we don't
+really use them, just drop them from the ethtools dump.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../net/ethernet/xilinx/xilinx_axienet_main.c | 21 ++++++++++++-------
- 1 file changed, 14 insertions(+), 7 deletions(-)
+ drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ----
+ 1 file changed, 4 deletions(-)
 
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 8d2b67cbecf9..e83c7b005f50 100644
+index e83c7b005f50..7a747345e98e 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -1512,20 +1512,21 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
- {
- 	struct net_device *ndev = to_net_dev(config->dev);
- 	struct axienet_local *lp = netdev_priv(ndev);
--	u32 emmc_reg, fcc_reg;
-+	u32 fcc_reg, speed_reg = ~0;
- 
--	emmc_reg = axienet_ior(lp, XAE_EMMC_OFFSET);
--	emmc_reg &= ~XAE_EMMC_LINKSPEED_MASK;
- 
- 	switch (state->speed) {
-+	case SPEED_UNKNOWN:
-+		/* Keep the current MAC speed setting. Used for SGMII. */
-+		break;
- 	case SPEED_1000:
--		emmc_reg |= XAE_EMMC_LINKSPD_1000;
-+		speed_reg = XAE_EMMC_LINKSPD_1000;
- 		break;
- 	case SPEED_100:
--		emmc_reg |= XAE_EMMC_LINKSPD_100;
-+		speed_reg = XAE_EMMC_LINKSPD_100;
- 		break;
- 	case SPEED_10:
--		emmc_reg |= XAE_EMMC_LINKSPD_10;
-+		speed_reg = XAE_EMMC_LINKSPD_10;
- 		break;
- 	default:
- 		dev_err(&ndev->dev,
-@@ -1533,7 +1534,13 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
- 		break;
- 	}
- 
--	axienet_iow(lp, XAE_EMMC_OFFSET, emmc_reg);
-+	if (speed_reg != ~0) {
-+		u32 emmc_reg = axienet_ior(lp, XAE_EMMC_OFFSET);
-+
-+		emmc_reg &= ~XAE_EMMC_LINKSPEED_MASK;
-+		emmc_reg |= speed_reg;
-+		axienet_iow(lp, XAE_EMMC_OFFSET, emmc_reg);
-+	}
- 
- 	fcc_reg = axienet_ior(lp, XAE_FCC_OFFSET);
- 	if (state->pause & MLO_PAUSE_TX)
+@@ -1239,10 +1239,6 @@ static void axienet_ethtools_get_regs(struct net_device *ndev,
+ 	data[20] = axienet_ior(lp, XAE_MDIO_MCR_OFFSET);
+ 	data[21] = axienet_ior(lp, XAE_MDIO_MWD_OFFSET);
+ 	data[22] = axienet_ior(lp, XAE_MDIO_MRD_OFFSET);
+-	data[23] = axienet_ior(lp, XAE_MDIO_MIS_OFFSET);
+-	data[24] = axienet_ior(lp, XAE_MDIO_MIP_OFFSET);
+-	data[25] = axienet_ior(lp, XAE_MDIO_MIE_OFFSET);
+-	data[26] = axienet_ior(lp, XAE_MDIO_MIC_OFFSET);
+ 	data[27] = axienet_ior(lp, XAE_UAW0_OFFSET);
+ 	data[28] = axienet_ior(lp, XAE_UAW1_OFFSET);
+ 	data[29] = axienet_ior(lp, XAE_FMI_OFFSET);
 -- 
 2.17.1
 
