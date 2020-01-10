@@ -2,49 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3223D136D12
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:31:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D989C136D18
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:32:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3LXzBlkeCDHnIDtRQl/nLa2F6BJbB2FV2Yrh06WvnTI=; b=Nv6LZTMEJpq/5+
-	ZUP6b7L6ZZXni+hEEhfyLtn6wHuyrH+Pr3I0yYh3rXdxrXSspNiJNDU5ufc4TJukz/vuYwg1FXUdW
-	WtNjhC4PGzVw5HK7sLAPCQCvJ544NXy6se76ApGqyB4k2LIDjjyGQg58qAGPEBJPZx1mga4DftnF1
-	TM1zAfO5C3YXvTxbZ+KdlgnYHbg6or5sIShqmh+bp1iCbor4S46CbUJTrE7N7BTro1oy/fIaQwmcz
-	2e9qZvF2yULcHoHP8xs43c+CgYuVD/UUQXGdO91HEgGLSO5tq4DeqGP0R3ahjBbryU7fs5xuiAE75
-	MRT+R33/FNlpkv8w6joA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LZBnkl8EkgHxpFnum68AzHOyW7VV6Ogj+yeRsgiLs40=; b=elzWtA2htyB6g7
+	m6ppMzqgfa+z9gDFpAyZJn1MBvULPcGMglb5jHYfFQSubFnX6PTkdyjAc6U4QrEI++kTvZU2WgEM4
+	0FD2nhmgtIHsyRZAbl6ktyzW1YlqilOerMBq2/fJZpdyQM7jqyQLRi7t/cXet2MkEO/yMDcCcmQdx
+	782OMAvplQnNBWDQLFoGQeCCAlN2wjPsyfSt4BqPazEPU23DntECNTBXozbMGpZfxkn6mIydffGNA
+	bQMMLcKbADi3FK7gZ+eIVyII5ia5q73FPqh8Pr20cIy5oXBJjekhrDeTV0/NblECly1i3HPpUjmfu
+	6uVChkOQr8M2vfUw8tvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iptRd-0003FD-Gd; Fri, 10 Jan 2020 12:31:17 +0000
+	id 1iptSI-0003XX-Rk; Fri, 10 Jan 2020 12:31:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iptRT-0003EW-C5
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:31:08 +0000
+ id 1iptS7-0003Wc-J1
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:31:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84B151063;
- Fri, 10 Jan 2020 04:31:06 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6AA483F534;
- Fri, 10 Jan 2020 04:31:05 -0800 (PST)
-Date: Fri, 10 Jan 2020 12:31:03 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
- transport type
-Message-ID: <20200110123103.GC45077@bogus>
-References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
- <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
- <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B11601063;
+ Fri, 10 Jan 2020 04:31:44 -0800 (PST)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0E0943F534;
+ Fri, 10 Jan 2020 04:31:43 -0800 (PST)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux@armlinux.org.uk
+Subject: [PATCH] arm: Fix Kexec compilation issue.
+Date: Fri, 10 Jan 2020 12:31:25 +0000
+Message-Id: <20200110123125.51092-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_043107_504628_84D841CB 
-X-CRM114-Status: GOOD (  27.00  )
+X-CRM114-CacheID: sfid-20200110_043147_669583_76B12EA7 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,106 +60,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, Arnd Bergmann <arnd@arndb.de>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: vincenzo.frascino@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 03:04:42PM +0530, Viresh Kumar wrote:
-> On 09-01-20, 09:18, Arnd Bergmann wrote:
-> > On Fri, Nov 29, 2019 at 10:32 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> > >
-> > > The SCMI specification is fairly independent of the transport protocol,
-> > > which can be a simple mailbox (already implemented) or anything else.
-> > > The current Linux implementation however is very much dependent of the
-> > > mailbox transport layer.
-> > >
-> > > This patch makes the SCMI core code (driver.c) independent of the
-> > > mailbox transport layer and moves all mailbox related code to a new
-> > > file: mailbox.c.
-> > >
-> > > We can now implement more transport protocols to transport SCMI
-> > > messages.
-> > >
-> > > The transport protocols just need to provide struct scmi_transport_ops,
-> > > with its version of the callbacks to enable exchange of SCMI messages.
-> > >
-> > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> >
-> > Conceptually I think this is fine, but as others have said, it would be
-> > better to have another transport implementation posted along with this
-> > to see if the interfaces actually work out.
->
-> @Sudeep/Vincent: Do you think we can add another transport
-> implementation something right away for it ?
->
-> @Peng ?
->
-> > > +/**
-> > > + * struct scmi_chan_info - Structure representing a SCMI channel information
-> > > + *
-> > > + * @payload: Transmit/Receive payload area
-> > > + * @dev: Reference to device in the SCMI hierarchy corresponding to this
-> > > + *      channel
-> > > + * @handle: Pointer to SCMI entity handle
-> > > + * @transport_info: Transport layer related information
-> > > + */
-> > > +struct scmi_chan_info {
-> > > +       void __iomem *payload;
-> > > +       struct device *dev;
-> > > +       struct scmi_handle *handle;
-> > > +       void *transport_info;
-> > > +};
-> >
-> > I would assume that with another transport, the 'payload' pointer would
-> > not be __iomem
->
-> Hmm, okay. I just separated things based on the current transport and
-> didn't add much changes on top of it as I wasn't sure how things are
-> going to look with next transport and so left the changes for then.
->
-> I can now drop it though.
->
-> > > +static int scmi_set_transport_ops(struct scmi_info *info)
-> > > +{
-> > > +       struct scmi_transport_ops *ops;
-> > > +       struct device *dev = info->dev;
-> > > +
-> > > +       /* Only mailbox method supported for now */
-> > > +       ops = scmi_mailbox_get_ops(dev);
-> > > +       if (!ops) {
-> > > +               dev_err(dev, "Transport protocol not found in %pOF\n",
-> > > +                       dev->of_node);
-> > > +               return -EINVAL;
-> > > +       }
-> > > +
-> > > +       info->transport_ops = ops;
-> > > +       return 0;
-> > > +}
-> >
-> > This looks odd: rather than guessing the transport type based on
-> > random DT properties, I would prefer to have it determined by
-> > the device compatible string, and have different drivers bind
-> > to one of them each, with each driver linking against a common
-> > base implementation, either as separate modules or in one file.
->
-> Since there are no platforms using the scmi binding in mainline kernel
-> for now, it won't be difficult to add new compatible strings.
-
-I am fine adding new compatible but since the binding is present in the
-mainline for several releases now, we may have to have fallback to mailbox
-as default if any of the new compatibles added is missing.
-
---
-Regards,
-Sudeep
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VG8gcGVyZm9ybSB0aGUgcmVzZXJ2ZV9jcmFzaGtlcm5lbCgpIG9wZXJhdGlvbiBrZXhlYyB1c2Vz
+IFNFQ1RJT05fU0laRSB0bwpmaW5kIGEgbWVtYmxvY2sgaW4gYSByYW5nZS4KU0VDVElPTl9TSVpF
+IGlzIG5vdCBkZWZpbmVkIGZvciBub21tdSBzeXN0ZW1zLiBUcnlpbmcgdG8gY29tcGlsZSBrZXhl
+YyBpbgp0aGVzZSBjb25kaXRpb25zIHJlc3VsdHMgaW4gYSBidWlsZCBlcnJvcjoKCiAgbGludXgv
+YXJjaC9hcm0va2VybmVsL3NldHVwLmM6IEluIGZ1bmN0aW9uIOKAmHJlc2VydmVfY3Jhc2hrZXJu
+ZWzigJk6CiAgbGludXgvYXJjaC9hcm0va2VybmVsL3NldHVwLmM6MTAxNjoyNTogZXJyb3I6IOKA
+mFNFQ1RJT05fU0laReKAmSB1bmRlY2xhcmVkCiAgICAgKGZpcnN0IHVzZSBpbiB0aGlzIGZ1bmN0
+aW9uKTsgZGlkIHlvdSBtZWFuIOKAmFNFQ1RJT05TX1dJRFRI4oCZPwogICAgICAgICAgICAgY3Jh
+c2hfc2l6ZSwgU0VDVElPTl9TSVpFKTsKICAgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+
+fn5+fgogICAgICAgICAgICAgICAgICAgICAgICAgU0VDVElPTlNfV0lEVEgKICBsaW51eC9hcmNo
+L2FybS9rZXJuZWwvc2V0dXAuYzoxMDE2OjI1OiBub3RlOiBlYWNoIHVuZGVjbGFyZWQgaWRlbnRp
+ZmllcgogICAgIGlzIHJlcG9ydGVkIG9ubHkgb25jZSBmb3IgZWFjaCBmdW5jdGlvbiBpdCBhcHBl
+YXJzIGluCiAgbGludXgvc2NyaXB0cy9NYWtlZmlsZS5idWlsZDoyNjU6IHJlY2lwZSBmb3IgdGFy
+Z2V0ICdhcmNoL2FybS9rZXJuZWwvc2V0dXAubycKICAgICBmYWlsZWQKCk1ha2UgS0VYRUMgZGVw
+ZW5kIG9uIE1NVSB0byBmaXggdGhlIGNvbXBpbGF0aW9uIGlzc3VlLgoKQ2M6IFJ1c3NlbGwgS2lu
+ZyA8bGludXhAYXJtbGludXgub3JnLnVrPgpTaWduZWQtb2ZmLWJ5OiBWaW5jZW56byBGcmFzY2lu
+byA8dmluY2Vuem8uZnJhc2Npbm9AYXJtLmNvbT4KLS0tCiBhcmNoL2FybS9LY29uZmlnIHwgMiAr
+LQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0t
+Z2l0IGEvYXJjaC9hcm0vS2NvbmZpZyBiL2FyY2gvYXJtL0tjb25maWcKaW5kZXggYmE3NWUzNjYx
+YTQxLi5iYzk5NTgyYmRjODUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL0tjb25maWcKKysrIGIvYXJj
+aC9hcm0vS2NvbmZpZwpAQCAtMTkwNCw3ICsxOTA0LDcgQEAgY29uZmlnIFhJUF9ERUZMQVRFRF9E
+QVRBCiBjb25maWcgS0VYRUMKIAlib29sICJLZXhlYyBzeXN0ZW0gY2FsbCAoRVhQRVJJTUVOVEFM
+KSIKIAlkZXBlbmRzIG9uICghU01QIHx8IFBNX1NMRUVQX1NNUCkKLQlkZXBlbmRzIG9uICFDUFVf
+VjdNCisJZGVwZW5kcyBvbiBNTVUKIAlzZWxlY3QgS0VYRUNfQ09SRQogCWhlbHAKIAkgIGtleGVj
+IGlzIGEgc3lzdGVtIGNhbGwgdGhhdCBpbXBsZW1lbnRzIHRoZSBhYmlsaXR5IHRvIHNodXRkb3du
+IHlvdXIKLS0gCjIuMjQuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
