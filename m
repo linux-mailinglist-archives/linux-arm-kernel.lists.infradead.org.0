@@ -2,52 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F0F71366E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 06:45:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 091B813676D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 07:30:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+jycfYTOUOomt3bG+SZy28QmYLHG+nHXCAOaG78VVBY=; b=gkHH7UOJcQ+DRD
-	rB6cqBmMM4N14LrpHokoD43z+mPbzNsMFHiJGG9vPa/tzgFjkYiFfeZZys7J7/uh3hsi8zigcCiCN
-	/DhnzkiGBU5LIR1JtkZdWahAu5EArdJ3Ho+04q902BbcdvNXD4UTyrITwhBZAg68Nh6NAFt2HAnMX
-	dc10i/CfR2GWSDvpDjcNlUJGXUVDEpAQonL/vjcD/kW4A6xap01B5JzDtaaMqGYvu4BSLed7JXKeB
-	EaweelC256yS05ncQXhhrBFXp4tJSyfoNgxpyiK3Qmm4MONBBQ879DNDlM6aQkTPGOc87X8rUAfi6
-	o3n2Oqhuv3pzQgJ2HnAA==;
+	List-Owner; bh=9ubkhwFOISi47zN5xwo6NnnYnoTJY7CIILrXyXL1AJ0=; b=QXl06wza1WdWyF
+	Ire+rogLUf4SNfMD3OQu5/xrqjyNbgCJUTEytYxTcPcZas+REvJf8t+aw83MyGuQPS6IUwDKP85vi
+	3yVAUlx7O5ZxJVizK9kyz3JLbY+7aFqsBKvuwV+gs9LIXudyOd2khdBdBSIhEfj5Ld0bAWF6fyCua
+	pkmwO/eK+dx6Q5RfE17ASojta7wNFjosODnYoj+6Z2nLjn49xclZahjrRtyrp9pGEJz2XtKngeSBM
+	wP+SdRcaE0W6eHXFV8fwobt2zGZzysCwE+51rdi3x1NxfMJbbeO5Ia7kSEXWabA/XOorIALfmmuuB
+	bOPzw1B4Ha6h+u9WiI9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipn6g-0004lU-KL; Fri, 10 Jan 2020 05:45:14 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1ipnoD-00069v-Nx; Fri, 10 Jan 2020 06:30:13 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipn4q-00035U-In; Fri, 10 Jan 2020 05:43:22 +0000
-Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 10 Jan 2020
- 13:43:29 +0800
-From: Hanjie Lin <hanjie.lin@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH v5 6/6] arm64: dts: meson: a1: Enable DWC3 controller
-Date: Fri, 10 Jan 2020 13:42:37 +0800
-Message-ID: <1578634957-54826-7-git-send-email-hanjie.lin@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578634957-54826-1-git-send-email-hanjie.lin@amlogic.com>
-References: <1578634957-54826-1-git-send-email-hanjie.lin@amlogic.com>
+ id 1ipno2-0005M0-MZ; Fri, 10 Jan 2020 06:30:04 +0000
+X-UUID: 3a709631d0df46f19b826d746124cbce-20200109
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=2hX33a9oKQvAaZtJ3NQ0cW54cICk0Docx++JIfjlN54=; 
+ b=C1L+sKksrUCaSk1L4aeeOVIVRwEj1HUrt9aleg63TRWpo7VBpUS81ERuh3PNSUunD9Xu1wprIqEyvlTGUgv9u46+P+pc5ZtS6J/CrC9/cU+QCMQc5rn+h0O25Y2pUfHBO53nYFXa68rXi9isephJKUdMzm32vi13QPLKNVRvKQI=;
+X-UUID: 3a709631d0df46f19b826d746124cbce-20200109
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1538986212; Thu, 09 Jan 2020 22:29:49 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 9 Jan 2020 22:20:25 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 Jan 2020 14:18:47 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 10 Jan 2020 14:20:24 +0800
+Message-ID: <1578637185.29400.3.camel@mtksdaap41>
+Subject: Re: [PATCH] drm/mediatek: check for comp->funcs
+From: CK Hu <ck.hu@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 10 Jan 2020 14:19:45 +0800
+In-Reply-To: <20200109072900.17988-1-hsinyi@chromium.org>
+References: <20200109072900.17988-1-hsinyi@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-Originating-IP: [10.18.11.213]
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_214320_654462_64C1CA90 
-X-CRM114-Status: UNSURE (   7.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_223002_754966_A17C232D 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,80 +84,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-usb@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
+Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable DWC3 controller for Meson A1 SoC.
+Hi, Hsin-yi:
 
-Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
-Signed-off-by: Yue Wang <yue.wang@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+On Thu, 2020-01-09 at 15:29 +0800, Hsin-Yi Wang wrote:
+> There might be some comp that doesn't have funcs, eg. hdmi-connector.
+> Check for comp->funcs otherwise there will be NULL pointer dereference
+> crash.
+> 
+> Fixes: bd3de8cd782b ("drm/mediatek: Add gamma property according to hardware capability")
+> Fixes: 7395eab077f9 ("drm/mediatek: Add ctm property support")
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index fb0ba85..9077ffa 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -7,6 +7,8 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/power/meson-a1-power.h>
- #include <dt-bindings/reset/amlogic,meson-a1-reset.h>
-+#include <dt-bindings/clock/a1-pll-clkc.h>
-+#include <dt-bindings/clock/a1-clkc.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -127,6 +129,35 @@
- 			#interrupt-cells = <3>;
- 			#address-cells = <0>;
- 		};
-+
-+		usb: usb@ffe09000 {
-+			status = "okay";
-+			compatible = "amlogic,meson-a1-usb-ctrl";
-+			reg = <0x0 0xffe09000 0x0 0xa0>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
-+			clocks = <&clkc_periphs CLKID_USB_CTRL>,
-+				 <&clkc_periphs CLKID_USB_BUS>,
-+				 <&clkc_periphs CLKID_XTAL_USB_CTRL>;
-+			clock-names = "usb_ctrl", "usb_bus", "xtal_usb_ctrl";
-+			resets = <&reset RESET_USBCTRL>;
-+
-+			dr_mode = "host";
-+
-+			phys = <&usb2_phy1>;
-+			phy-names = "usb2-phy1";
-+
-+			dwc3: usb@ff400000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0xff400000 0x0 0x100000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				dr_mode = "host";
-+				snps,dis_u2_susphy_quirk;
-+				snps,quirk-frame-length-adjustment = <0x20>;
-+			};
-+		};
- 	};
- 
- 	timer {
--- 
-2.7.4
+Because the fixed patches are still in my tree, so I merge this patch
+with the fixed patches in mediatek-drm-next-5.6 [1].
 
+[1]
+https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
+
+Regards,
+CK
+
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> ---
+> This patch is based on mediatek's drm branch:
+> https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
+> 
+> After
+> https://patchwork.freedesktop.org/patch/344477/?series=63328&rev=59,
+> there will also be funcs for hdmi-connector.
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++----
+>  1 file changed, 6 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index fb142fcfc353..7b392d6c71cc 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -808,11 +808,13 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  
+>  		mtk_crtc->ddp_comp[i] = comp;
+>  
+> -		if (comp->funcs->ctm_set)
+> -			has_ctm = true;
+> +		if (comp->funcs) {
+> +			if (comp->funcs->ctm_set)
+> +				has_ctm = true;
+>  
+> -		if (comp->funcs->gamma_set)
+> -			gamma_lut_size = MTK_LUT_SIZE;
+> +			if (comp->funcs->gamma_set)
+> +				gamma_lut_size = MTK_LUT_SIZE;
+> +		}
+>  	}
+>  
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
 
 _______________________________________________
 linux-arm-kernel mailing list
