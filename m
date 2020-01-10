@@ -2,77 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 091B813676D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 07:30:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE38213675C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 07:23:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ubkhwFOISi47zN5xwo6NnnYnoTJY7CIILrXyXL1AJ0=; b=QXl06wza1WdWyF
-	Ire+rogLUf4SNfMD3OQu5/xrqjyNbgCJUTEytYxTcPcZas+REvJf8t+aw83MyGuQPS6IUwDKP85vi
-	3yVAUlx7O5ZxJVizK9kyz3JLbY+7aFqsBKvuwV+gs9LIXudyOd2khdBdBSIhEfj5Ld0bAWF6fyCua
-	pkmwO/eK+dx6Q5RfE17ASojta7wNFjosODnYoj+6Z2nLjn49xclZahjrRtyrp9pGEJz2XtKngeSBM
-	wP+SdRcaE0W6eHXFV8fwobt2zGZzysCwE+51rdi3x1NxfMJbbeO5Ia7kSEXWabA/XOorIALfmmuuB
-	bOPzw1B4Ha6h+u9WiI9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x0ZgFP8kSkQX90DEo494lipgqXC+xOgOoc9pbmdz330=; b=VYkmXj1zCKTXki
+	bjaw2xhddllp7yZfh8b76aaClvIQvRJQ60ecZVRay/NcMig8veLdGXS/35t1sXGea9rkUQ7+JDERn
+	HiUsPTRB/Pt9ktTRbwg7Kig2Neni15Z6IUEk83lsmlKDzmtnSxeS2Y2ZnY3Cvez7/RBH6biqADZ7C
+	nAf0iVXIPxRXt3HSKMYhV4sOdGyRLV+7BHa8prEu0XI/hSCjdxuFwKSmAqiaq0YfHDaKh/1ky7bHV
+	wmIrZAAWbih0c3cRJuVLvf7Ch5/1v90rRWeR6+sNn9LsH66F6acyrj6gsUccI5uzjRan9p/KGEt+N
+	OpQ5mFOxntQCurm3cp4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipnoD-00069v-Nx; Fri, 10 Jan 2020 06:30:13 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ipnhH-0002IJ-QK; Fri, 10 Jan 2020 06:23:03 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipno2-0005M0-MZ; Fri, 10 Jan 2020 06:30:04 +0000
-X-UUID: 3a709631d0df46f19b826d746124cbce-20200109
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=2hX33a9oKQvAaZtJ3NQ0cW54cICk0Docx++JIfjlN54=; 
- b=C1L+sKksrUCaSk1L4aeeOVIVRwEj1HUrt9aleg63TRWpo7VBpUS81ERuh3PNSUunD9Xu1wprIqEyvlTGUgv9u46+P+pc5ZtS6J/CrC9/cU+QCMQc5rn+h0O25Y2pUfHBO53nYFXa68rXi9isephJKUdMzm32vi13QPLKNVRvKQI=;
-X-UUID: 3a709631d0df46f19b826d746124cbce-20200109
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1538986212; Thu, 09 Jan 2020 22:29:49 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 9 Jan 2020 22:20:25 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 10 Jan 2020 14:18:47 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 10 Jan 2020 14:20:24 +0800
-Message-ID: <1578637185.29400.3.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: check for comp->funcs
-From: CK Hu <ck.hu@mediatek.com>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 10 Jan 2020 14:19:45 +0800
-In-Reply-To: <20200109072900.17988-1-hsinyi@chromium.org>
-References: <20200109072900.17988-1-hsinyi@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ipnh9-0002H6-VU
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 06:22:58 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id C5869A7AE2945C902281;
+ Fri, 10 Jan 2020 14:22:41 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Fri, 10 Jan 2020
+ 14:22:33 +0800
+Subject: Re: [PATCH v1] ACPI/IORT: Workaround for IORT ID count "minus one"
+ issue
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Robin Murphy
+ <robin.murphy@arm.com>
+References: <1577708824-4873-1-git-send-email-guohanjun@huawei.com>
+ <2ce224b2-d926-67b0-f9dd-85ac53d967c5@arm.com>
+ <20200109160220.GA27079@e121166-lin.cambridge.arm.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <4cee4a91-6459-819b-d4d4-f5e8899103b9@huawei.com>
+Date: Fri, 10 Jan 2020 14:22:22 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200109160220.GA27079@e121166-lin.cambridge.arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_223002_754966_A17C232D 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_222256_193240_6A358875 
+X-CRM114-Status: GOOD (  27.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,69 +69,207 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, John Garry <john.garry@huawei.com>,
+ linuxarm@huawei.com, linux-acpi@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Hsin-yi:
-
-On Thu, 2020-01-09 at 15:29 +0800, Hsin-Yi Wang wrote:
-> There might be some comp that doesn't have funcs, eg. hdmi-connector.
-> Check for comp->funcs otherwise there will be NULL pointer dereference
-> crash.
+On 2020/1/10 0:02, Lorenzo Pieralisi wrote:
+> On Mon, Jan 06, 2020 at 05:19:32PM +0000, Robin Murphy wrote:
+>> On 30/12/2019 12:27 pm, Hanjun Guo wrote:
+>>> The IORT spec [0] says Number of IDs = The number of IDs in the range minus
+>>> one, it is confusing but it was written down in the first version of the
 > 
-> Fixes: bd3de8cd782b ("drm/mediatek: Add gamma property according to hardware capability")
-> Fixes: 7395eab077f9 ("drm/mediatek: Add ctm property support")
+> Why is it confusing ? Because we botched the kernel code :) ?
 
-Because the fixed patches are still in my tree, so I merge this patch
-with the fixed patches in mediatek-drm-next-5.6 [1].
+I think 'minus one' is not bringing any benefit :)
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
-
-Regards,
-CK
-
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> This patch is based on mediatek's drm branch:
-> https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
 > 
-> After
-> https://patchwork.freedesktop.org/patch/344477/?series=63328&rev=59,
-> there will also be funcs for hdmi-connector.
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++----
->  1 file changed, 6 insertions(+), 4 deletions(-)
+>>> IORT spec. But the IORT ID mapping function iort_id_map() did something
+>>> wrong from the start, which bails out if:
+>>>
+>>> the request ID >= the input base + number of IDs
+>>>
+>>> This is wrong because it ignored the "minus one", and breaks some valid
+>>> usecases such as ID mapping to contain single device mapping without
+>>> single mapping flag set.
+>>>
+>>> Pankaj Bansal proposed a solution to fix the issue [1], which bails
+>>> out if:
+>>>
+>>> the request ID > the input base + number of IDs
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index fb142fcfc353..7b392d6c71cc 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -808,11 +808,13 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  
->  		mtk_crtc->ddp_comp[i] = comp;
->  
-> -		if (comp->funcs->ctm_set)
-> -			has_ctm = true;
-> +		if (comp->funcs) {
-> +			if (comp->funcs->ctm_set)
-> +				has_ctm = true;
->  
-> -		if (comp->funcs->gamma_set)
-> -			gamma_lut_size = MTK_LUT_SIZE;
-> +			if (comp->funcs->gamma_set)
-> +				gamma_lut_size = MTK_LUT_SIZE;
-> +		}
->  	}
->  
->  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+> Add a Link: tag, when I read a commit log I want to have a reference
+> to the patches relevant to the commit in question (which in turn
+> will help understand what Pankaj suggested).
+> 
+>>> This works as the spec defined, unfortunately some firmware didn't
+>>> minus one for the number of IDs in the range, and the propoased
+>>> solution will break those systems in this way:
+>>>
+>>> PCI hostbridge mapping entry 1:
+>>> Input base:  0x1000
+>>> ID Count:    0x100
+>>> Output base: 0x1000
+>>> Output reference: 0xC4  //ITS reference
+>>>
+>>> PCI hostbridge mapping entry 2:
+>>> Input base:  0x1100
+>>> ID Count:    0x100
+>>> Output base: 0x2000
+>>> Output reference: 0xD4  //ITS reference
+>>>
+>>> Two mapping entries which the second entry's Input base = the first
+>>> entry's Input base + ID count, so for requester ID 0x1100 will map
+>>> to ITS 0xC4 not 0xD4 if we update '>=' to '>'.
+>>>
+>>> So introduce a workaround to match the IORT's OEM information for
+>>> the broken firmware, also update the logic of the ID mapping for
+>>> firmwares report the number of IDs as the IORT spec defined, to
+>>> make the code compatible for both kinds of system.
+>>>
+>>> I checked the ACPI tables in the tianocore/edk2-platforms [2], only
+>>> HiSilicon HIP07/08 did wrong, so just add HIP07/08 to the workaround
+>>> info table, if we break other platforms, we can add that later.
+>>>
+>>> [0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
+>>> [1]: https://patchwork.kernel.org/patch/11292823/
+> 
+> Add a Link: tag to a message-ID
+> 
+>>> [2]: https://github.com/tianocore/edk2-platforms
+> 
+> It is useless in a commit log - this is a moving target.
+> 
+> I can rewrite this commit log if you think it is faster.
+
+That will be very helpful, please do so, thanks!
+
+> 
+>>>
+>>> Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
+>>> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+>>> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+>>> ---
+>>>
+>>> RFC->v1:
+>>> - Print warning when matched the workaround info, suggested by Pankaj.
+>>>
+>>>   drivers/acpi/arm64/iort.c | 55 ++++++++++++++++++++++++++++++++++++++++++++---
+>>>   1 file changed, 52 insertions(+), 3 deletions(-)
+>>>
+>>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+>>> index 33f7198..60eb10d 100644
+>>> --- a/drivers/acpi/arm64/iort.c
+>>> +++ b/drivers/acpi/arm64/iort.c
+>>> @@ -298,6 +298,42 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
+>>>   	return status;
+>>>   }
+>>> +struct iort_workaround_oem_info {
+>>> +	char oem_id[ACPI_OEM_ID_SIZE + 1];
+>>> +	char oem_table_id[ACPI_OEM_TABLE_ID_SIZE + 1];
+>>> +	u32 oem_revision;
+>>> +};
+>>> +
+>>> +static bool apply_id_count_workaround;
+>>> +
+>>> +static struct iort_workaround_oem_info wa_info[] __initdata = {
+>>> +	{
+>>> +		.oem_id		= "HISI  ",
+>>> +		.oem_table_id	= "HIP07   ",
+>>> +		.oem_revision	= 0,
+>>> +	}, {
+>>> +		.oem_id		= "HISI  ",
+>>> +		.oem_table_id	= "HIP08   ",
+>>> +		.oem_revision	= 0,
+>>> +	}
+>>> +};
+>>> +
+>>> +static void __init
+>>> +iort_check_id_count_workaround(struct acpi_table_header *tbl)
+>>> +{
+>>> +	int i;
+>>> +
+>>> +	for (i = 0; i < ARRAY_SIZE(wa_info); i++) {
+>>> +		if (!memcmp(wa_info[i].oem_id, tbl->oem_id, ACPI_OEM_ID_SIZE) &&
+>>> +		    !memcmp(wa_info[i].oem_table_id, tbl->oem_table_id, ACPI_OEM_TABLE_ID_SIZE) &&
+>>> +		    wa_info[i].oem_revision == tbl->oem_revision) {
+>>> +			apply_id_count_workaround = true;
+>>> +			pr_warn(FW_BUG "ID count for ID mapping entry is wrong, applying workaround\n");
+>>> +			break;
+>>> +		}
+>>> +	}
+>>> +}
+>>> +
+>>>   static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>>>   		       u32 *rid_out)
+>>>   {
+>>> @@ -314,9 +350,21 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>>>   		return -ENXIO;
+>>>   	}
+>>> -	if (rid_in < map->input_base ||
+>>> -	    (rid_in >= map->input_base + map->id_count))
+>>> -		return -ENXIO;
+>>> +	/*
+>>> +	 * IORT spec says Number of IDs = The number of IDs in the range minus
+> 
+> Section, page, table number please, "IORT spec says" is too vague.
+> 
+>>> +	 * one, but the IORT code ingored the "minus one", and some firmware
+> 
+> s/ingored/ignored/
+> 
+>>> +	 * did that too, so apply a workaround here to keep compatible with
+>>> +	 * both new and old versions of the firmware.
+> 
+> It is not "new" vs "old" it is spec compliant vs non-spec compliant.
+
+Agreed.
+
+> 
+>>> +	 */
+>>> +	if (apply_id_count_workaround) {
+>>> +		if (rid_in < map->input_base ||
+>>> +			(rid_in >= map->input_base + map->id_count))
+>>> +			return -ENXIO;
+>>> +	} else {
+>>> +		if (rid_in < map->input_base ||
+>>> +			(rid_in > map->input_base + map->id_count))
+>>> +			return -ENXIO;
+>>> +	}
+>>
+>> This seems needlessly repetitive and convoluted... how about refactoring to
+>> something like:
+> 
+> +1
+> 
+>>
+>> 	map_max = map->input_base + map->id_count;
+>> 	if (apply_id_count_workaround)
+>> 		map_max--;
+> 
+> You can even turn it into an inline function (ie iort_get_map_max())
+> with the comment above in it so that the quirk is isolated instead
+> of having it in the middle of iort_id_map().
+
+I vote for this one, it's self-contained.
+
+> 
+> I am fine either way. We need test coverage since I feel this may
+> break a number of systems (ie I don't think it should be merged as
+> a fix).
+
+Will you resend this patch with commit log and the updated code? or
+let me do that? Both are ok to me, let's get it tested for longer time
+if we merge it ASAP.
+
+Thanks
+Hanjun
+
 
 _______________________________________________
 linux-arm-kernel mailing list
