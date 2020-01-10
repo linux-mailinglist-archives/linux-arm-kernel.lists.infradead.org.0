@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B0FE136C76
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:55:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3E38136C78
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:56:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xhL8wbjLjH5C+BxEihIv8vYwmNwjG+/OPfvG3oyb6EU=; b=gSowfQItfUJ+/3Uc/hjnw0iQsL
-	fsR5PPSIWbpoDlOxfUryFoGkm8PAWlx+gKYu2TibbJ34O6CQOm7Kf6gu2Xh0/oA/FSYXeKIzDcnZC
-	mBxutGltg6y9e4zkBm6cvsPHI2yNXKL9uRlJWD5kxK9Pv+Kah1OkdBHT6NNZF3abKdnH9EIRGgQww
-	AUTL1amPmnqjOshWJ97N9KsG0TZZJoPlQ2DHhmO5Uiq0gZvzJqPNGrOSyZENe0OM83Ur9uxIR8ssd
-	WO0kBoqDxIjbr6y6RfA8bxkyoYgX/rxJWAvGS3R5vps91bFEoFTeNmE9pTbUpBZGH8xZqpKDf2gze
-	qslfOo8Q==;
+	bh=TuC5GFmGVlpxlVT7Vf62R+VKajVGQiyndCXSoPw4h7I=; b=H5WUyZct+50wxq9ygUeu+VjRRq
+	MSc1mmPJPV1WtBT95VKxI5X5e9mqRgWoUzvV0xI8fqH5q2j1TXhOkeDszhUVAxoJwCdITEcjRPnG1
+	neZLVlh8UKlIJQ2aW2FX9L5kKmS/6Gb8ugO+4sfCmsOYNaNnSxN99cfp0F688kUR8vLOu7DNBRiMM
+	kpoShsQbKIPOgeGH/t0IdsYLgqFiUbukrOBgcbUVN7EVsona8Eoj6JydzViHfQRs416+aUATNylJK
+	D9lkoWmJ2kERJuV7CCHI51h6QYRH31B3sCEVJR393Mvn4fF5dOFd/J5U0c1LsOY1p9K4U3MInGgNQ
+	VXKKMadg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipst7-0008RQ-OC; Fri, 10 Jan 2020 11:55:37 +0000
+	id 1ipsth-0000ZH-Vp; Fri, 10 Jan 2020 11:56:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipsrz-0006Zj-6N
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:54:29 +0000
+ id 1ipss0-0006bW-6a
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:54:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BAB7B1063;
- Fri, 10 Jan 2020 03:54:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16A13139F;
+ Fri, 10 Jan 2020 03:54:26 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A13593F534;
- Fri, 10 Jan 2020 03:54:23 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE2283F534;
+ Fri, 10 Jan 2020 03:54:24 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH 01/14] net: xilinx: temac: Relax Kconfig dependencies
-Date: Fri, 10 Jan 2020 11:54:02 +0000
-Message-Id: <20200110115415.75683-2-andre.przywara@arm.com>
+Subject: [PATCH 02/14] net: axienet: Propagate failure of DMA descriptor setup
+Date: Fri, 10 Jan 2020 11:54:03 +0000
+Message-Id: <20200110115415.75683-3-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200110115415.75683-1-andre.przywara@arm.com>
 References: <20200110115415.75683-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_035427_381618_100480A5 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20200110_035428_516298_C9ADF243 
+X-CRM114-Status: GOOD (  15.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,37 +71,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to axienet, the temac driver is now architecture agnostic, and
-can be at least compiled for several architectures.
-Especially the fact that this is a soft IP for implementing in FPGAs
-makes the current restriction rather pointless, as it could literally
-appear on any architecture, as long as an FPGA is connected to the bus.
+When we fail allocating the DMA buffers in axienet_dma_bd_init(), we
+report this error, but carry on with initialisation nevertheless.
 
-The driver hasn't been actually tried on any hardware, it is just a
-drive-by patch when doing the same for axienet (a similar patch for
-axienet is already merged).
+This leads to a kernel panic when the driver later wants to send a
+packet, as it uses uninitialised data structures.
 
-This (temac and axienet) have been compile-tested for:
-alpha hppa64 microblaze mips64 powerpc powerpc64 riscv64 s390 sparc64
-(using kernel.org cross compilers).
+Make the axienet_device_reset() routine return an error value, as it
+contains the DMA buffer initialisation. Make sure we propagate the error
+up the chain and eventually fail the driver initialisation, to avoid
+relying on non-initialised buffers.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- drivers/net/ethernet/xilinx/Kconfig | 1 -
- 1 file changed, 1 deletion(-)
+ .../net/ethernet/xilinx/xilinx_axienet_main.c | 25 +++++++++++++------
+ 1 file changed, 18 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/ethernet/xilinx/Kconfig b/drivers/net/ethernet/xilinx/Kconfig
-index 6304ebd8b5c6..0810af8193cb 100644
---- a/drivers/net/ethernet/xilinx/Kconfig
-+++ b/drivers/net/ethernet/xilinx/Kconfig
-@@ -32,7 +32,6 @@ config XILINX_AXI_EMAC
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+index 20746b801959..97482cf093ce 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+@@ -437,9 +437,10 @@ static void axienet_setoptions(struct net_device *ndev, u32 options)
+ 	lp->options |= options;
+ }
  
- config XILINX_LL_TEMAC
- 	tristate "Xilinx LL TEMAC (LocalLink Tri-mode Ethernet MAC) driver"
--	depends on PPC || MICROBLAZE || X86 || COMPILE_TEST
- 	select PHYLIB
- 	---help---
- 	  This driver supports the Xilinx 10/100/1000 LocalLink TEMAC
+-static void __axienet_device_reset(struct axienet_local *lp)
++static int __axienet_device_reset(struct axienet_local *lp)
+ {
+ 	u32 timeout;
++
+ 	/* Reset Axi DMA. This would reset Axi Ethernet core as well. The reset
+ 	 * process of Axi DMA takes a while to complete as all pending
+ 	 * commands/transfers will be flushed or completed during this
+@@ -455,9 +456,11 @@ static void __axienet_device_reset(struct axienet_local *lp)
+ 		if (--timeout == 0) {
+ 			netdev_err(lp->ndev, "%s: DMA reset timeout!\n",
+ 				   __func__);
+-			break;
++			return -ETIMEDOUT;
+ 		}
+ 	}
++
++	return 0;
+ }
+ 
+ /**
+@@ -471,12 +474,15 @@ static void __axienet_device_reset(struct axienet_local *lp)
+  * Ethernet core. No separate hardware reset is done for the Axi Ethernet
+  * core.
+  */
+-static void axienet_device_reset(struct net_device *ndev)
++static int axienet_device_reset(struct net_device *ndev)
+ {
+ 	u32 axienet_status;
+ 	struct axienet_local *lp = netdev_priv(ndev);
++	int ret;
+ 
+-	__axienet_device_reset(lp);
++	ret = __axienet_device_reset(lp);
++	if (ret)
++		return ret;
+ 
+ 	lp->max_frm_size = XAE_MAX_VLAN_FRAME_SIZE;
+ 	lp->options |= XAE_OPTION_VLAN;
+@@ -491,9 +497,11 @@ static void axienet_device_reset(struct net_device *ndev)
+ 			lp->options |= XAE_OPTION_JUMBO;
+ 	}
+ 
+-	if (axienet_dma_bd_init(ndev)) {
++	ret = axienet_dma_bd_init(ndev);
++	if (ret) {
+ 		netdev_err(ndev, "%s: descriptor allocation failed\n",
+ 			   __func__);
++		return ret;
+ 	}
+ 
+ 	axienet_status = axienet_ior(lp, XAE_RCW1_OFFSET);
+@@ -518,6 +526,8 @@ static void axienet_device_reset(struct net_device *ndev)
+ 	axienet_setoptions(ndev, lp->options);
+ 
+ 	netif_trans_update(ndev);
++
++	return 0;
+ }
+ 
+ /**
+@@ -921,8 +931,9 @@ static int axienet_open(struct net_device *ndev)
+ 	 */
+ 	mutex_lock(&lp->mii_bus->mdio_lock);
+ 	axienet_mdio_disable(lp);
+-	axienet_device_reset(ndev);
+-	ret = axienet_mdio_enable(lp);
++	ret = axienet_device_reset(ndev);
++	if (ret == 0)
++		ret = axienet_mdio_enable(lp);
+ 	mutex_unlock(&lp->mii_bus->mdio_lock);
+ 	if (ret < 0)
+ 		return ret;
 -- 
 2.17.1
 
