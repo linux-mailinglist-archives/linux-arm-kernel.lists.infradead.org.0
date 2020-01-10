@@ -2,65 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C706B136EEA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:03:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AE4C136EF0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:04:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0NI7MoJEIxfFB4RKvqxg42FniI0wWR9SasnHqB907IE=; b=qGB+rbT2vqahsk
-	Eu36a61WVflE9Lj0gsEI6Xqg9qRiJyCCx+k+dOop3tDi+fFt+Cs/KPvtNCeJUGBF+B99wuDcESbaR
-	MaBig3ay5QuV62T6xkD8eOqHh5bsFav1Vz9Xfdkomk9VOmSCuz4ReEsjQLtsGEwOpVie3DEZA3usa
-	iVqU5fQbyeigHAQWGHc3lOhzJQh6wKipsqMll1ySQe21c47mGSd24tYDKL6E70qh/aV63bRVXEzMq
-	1gRp28eaLBV7k8/gFhMxLWkSxZYADI2OjMEXopIGiDD4MwV3Ihd5EkLaStdhjEfnmeNG+Jugtnek1
-	HAzcc6W2kdhbbnCgmokw==;
+	List-Owner; bh=9MdE/8LhqFv8ox0KBc7PKK6fZrdrO0RJaInlFq3YA90=; b=j/OjlsXUxXZGeo
+	vWSn41nUHH3lg8GzlnOdhGtIENvURxx3wObUMEmZ+B9qZgzu4EmcifubgeB2l+Eadq/TXivEaAqjL
+	/tGXKd0aLu8Plx9snKbxybUVUxLPhBXoVGX9MtPFe0JJigyJ7e47uU5fwqy6RuT1mPiVD8XmXADsZ
+	G68DvCvyeN1Ueeen7bOuNTJxjGd59o1hrvIllBumBRqzqteekHA9VlFk22x9EhJyAmiB/KhklIR7W
+	Q0q3twp1T7GuAFsCafG3wQhLLhqLU/8YjyEo2YuifJvKrroAiaMw1RLUO3j0sBkeQiAZSC15CB/Yr
+	1AMxH2AO31wlibwTkf0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipusX-0003y9-AI; Fri, 10 Jan 2020 14:03:09 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iputw-0004MT-Sv; Fri, 10 Jan 2020 14:04:36 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipusK-0003xF-N2
- for linux-arm-kernel@bombadil.infradead.org; Fri, 10 Jan 2020 14:02:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YfX4Wn1/pqccM1olKxdBD79TA9u9Lbt27vICyToE+ls=; b=hUd/+pKHQBBDMpuaTCGYlb6oP
- tHjI1NofTkszYxvkTnNNqmYmw6EzgYCrcSu2vsBjWQUO0IgTKKkb11WzaDx4LmzdHtz9LW/Hm0RgC
- ZdIv+jcU1kRIITHLD0QOfmJzN7/LA/mfZPgCHq6NIEoLWkJujRv4Sla98UT6cKhPOKLcPGcxN+HMy
- AUc5AvlNE3kz0tVvky+aV9FX0vpYZfR/A3TN2D0GIH29lrbxj3mFkAp1ukIqg0k68ObHXAUR8NbZi
- RCwiUEVFD1oEMiNUTjmJ1fIFGQS7nm2/X6ijHCr37Eyn+JkfXY5mT7EQ0um89vJiV6zkfuXOSIYS0
- +ziuTrUqw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipus5-0003rT-5A; Fri, 10 Jan 2020 14:02:41 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 7AC7C30018B;
- Fri, 10 Jan 2020 15:01:00 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 61C442B612603; Fri, 10 Jan 2020 15:02:34 +0100 (CET)
-Date: Fri, 10 Jan 2020 15:02:34 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v4 2/9] perf/core: open access for CAP_SYS_PERFMON
- privileged process
-Message-ID: <20200110140234.GO2844@hirez.programming.kicks-ass.net>
-References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
- <c93309dc-b920-f5fa-f997-e8b2faf47b88@linux.intel.com>
- <20200108160713.GI2844@hirez.programming.kicks-ass.net>
- <cc239899-5c52-2fd0-286d-4bff18877937@linux.intel.com>
+ id 1iputn-0004LM-0e
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:04:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=nFFRscT+IEUSdIlTKVGLh7JmrVqmM9hERdN1OMh753E=; b=sqPc5dtbH/Pa0ldbgijbqpyiA2
+ NFyuGhgwcNaakqdbI7Fre08QK1jIO5X0Eetn3g2gL3g8c+mIthPeKgpbWxx1Hqutbz18+SJyLrYTQ
+ 0TU7jTBOx6kkKbB0aaPXW5acQkYmvdtR41mJm+BcnhG5LwDyOp2E0+d5HH/gZ4w5M0UQ=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1iputb-0007IB-O4; Fri, 10 Jan 2020 15:04:15 +0100
+Date: Fri, 10 Jan 2020 15:04:15 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
+Message-ID: <20200110140415.GE19739@lunn.ch>
+References: <20200110115415.75683-1-andre.przywara@arm.com>
+ <20200110115415.75683-8-andre.przywara@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cc239899-5c52-2fd0-286d-4bff18877937@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200110115415.75683-8-andre.przywara@arm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200110_060427_056924_715B5FE7 
+X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,76 +76,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
- Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
- Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
- James Morris <jmorris@namei.org>, Ingo Molnar <mingo@redhat.com>,
- oprofile-list@lists.sf.net, Serge Hallyn <serge@hallyn.com>,
- Robert Richter <rric@kernel.org>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, mhiramat@kernel.org,
- Casey Schaufler <casey@schaufler-ca.com>,
- "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: netdev@vger.kernel.org,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Robert Hancock <hancock@sedsystems.ca>,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 02:36:50PM +0300, Alexey Budankov wrote:
-> On 08.01.2020 19:07, Peter Zijlstra wrote:
-> > On Wed, Dec 18, 2019 at 12:25:35PM +0300, Alexey Budankov wrote:
-
-> >> diff --git a/kernel/events/core.c b/kernel/events/core.c
-> >> index 059ee7116008..d9db414f2197 100644
-> >> --- a/kernel/events/core.c
-> >> +++ b/kernel/events/core.c
-> >> @@ -9056,7 +9056,7 @@ static int perf_kprobe_event_init(struct perf_event *event)
-> >>  	if (event->attr.type != perf_kprobe.type)
-> >>  		return -ENOENT;
-> >>  
-> >> -	if (!capable(CAP_SYS_ADMIN))
-> >> +	if (!perfmon_capable())
-> >>  		return -EACCES;
-> >>  
-> >>  	/*
-> > 
-> > This one only allows attaching to already extant kprobes, right? It does
-> > not allow creation of kprobes.
+On Fri, Jan 10, 2020 at 11:54:08AM +0000, Andre Przywara wrote:
+> With SGMII, the MAC and the PHY can negotiate the link speed between
+> themselves, without the host needing to mediate between them.
+> Linux recognises this, and will call phylink's mac_config with the speed
+> member set to SPEED_UNKNOWN (-1).
+> Currently the axienet driver will bail out and complain about an
+> unsupported link speed.
 > 
-> This unblocks creation of local trace kprobes and uprobes by CAP_SYS_PERFMON 
-> privileged process, exactly the same as for CAP_SYS_ADMIN privileged process.
+> Teach axienet's mac_config callback to leave the MAC's speed setting
+> alone if the requested speed is SPEED_UNKNOWN.
 
-I've no idea what you just said; it's just words.
+Hi Andre
 
-Again, this only allows attaching to previously created kprobes, it does
-not allow creating kprobes, right?
+Is there an interrupt when SGMII signals a change in link state? If
+so, you should call phylink_mac_change().
 
-That is; I don't think CAP_SYS_PERFMON should be allowed to create
-kprobes.
-
-As might be clear; I don't actually know what the user-ABI is for
-creating kprobes.
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
