@@ -2,93 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61444136947
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 09:56:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D313136953
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 10:01:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yEllDTM3UvToY0EwnrbwtunF0AU0Xg/Psb4PDUru4A0=; b=FRczW9jweTXmxi
-	BxV3NdN9RTTmDF4PD/5q3BbEchFpOPaT5HZjOIlaJQQYOCsoSnbB3ARYBxxtkn6VRP/wEeTHA3bEc
-	okhZjvBwlF3q4ZSpIVFNgC/1aU/nP1v+q1TOux+VsLV00bZh13+YW4gw6fKLv6hyBFnsJ5igk/fZL
-	KcOMl6MkS+zDJA3ErD/DlACJDDBUSplZOlgAAzaNIDvdiHPoj8+PaSU2SVN+m0e9V/2YPBFzT5oEn
-	W4KcWZjUJ2mXvwzcD638d07nFM3N5iaqFU6lfSilocHQJt8TkOSi7ozPMR9Yzx9Gp96XWqnmnRxcw
-	sfT4ASJYTrcHJISuJpnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=15+R0puM7GOqyIXepVE/LY+j43PTcYo5Z+fVdxQIK84=; b=qK7uKiQ8LJIwLm
+	3yHB1teCUI5TUG1KuIxdeGiYtuaJ2qNnw3OpQSVk5ddXIFI3awNBvztPbouUWREf6Y+Q/9CAGSS/E
+	2lcdZBnJf2p0M7t0Vazcoz02lsGtKkCvDgIkL98lsUm8vdgUUYksmZ86DI60mJzZZjBANiu4FDm4/
+	S8tm2+H9N9Ne/iwu3gzAvrlncNGhz5rxZO4VrRFoLLBXa+X/4NR0C/iHlec6866fAAfxlg0OUMUYU
+	T+dGB2PKLoM/Qtj802zPh22zEgfwSrk283ybYuP+YvU+xe5r7DJL87bEMBRv9KhQlXMpMtDVT1h5V
+	/BLimxrOOxyJfCx3nw4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipq63-0007rX-GB; Fri, 10 Jan 2020 08:56:47 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ipqAX-00011c-VJ; Fri, 10 Jan 2020 09:01:25 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipq5t-0007qV-33
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 08:56:38 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ay11so612569plb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 00:56:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=mtkMEc02hXcR+20gh5yanXRHRh9eVEHsJBoW93ABkXo=;
- b=YMENjTwxc2x1aZh9cvqZtVp9X+gzmXBfgyOFu25Rw9m4fkkrrKiShS8BtfH3gAqIA/
- foxdYZNNM7cFnVVnTQQnSqXg1J00PFqe4YPY8Aq6IgVBYin7QPVPD3WrOpT2zIHderyl
- V3RpHlCIpMrJvklAXVEELBgPliPXrGWqi5IXNcMgdvBd+PtFHZwFZRDiVzGAlzKPWekb
- aQdQLm941KrBHI8pXhX6fNx7nNQ8YP9aajNFwmRDva9AkSTjiLdZj8iU3+LtIb8K4sCj
- jNvL8EfIPdukdDJLXXzmelH5H4BH4VALKv6n2SwioemXe+ah4XmmXCWyaA1qZ80aufVj
- daNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mtkMEc02hXcR+20gh5yanXRHRh9eVEHsJBoW93ABkXo=;
- b=LVzcxareM5yVjJro5ktBwvXieFVfYQcctu2vRWK8To9bEMEFMzV+Ryxvi8y8sOYHQb
- MWP9ZC2M0bk1wvtJ5PxynNUQwdxL6dYGUINHyDPgUNMPead/PzIj2fcwlPZF1uw7/8gH
- USFWPHLfb1qWcBMn2I6UVdSHyDNihsPJA0OUNmkhdQpxZcoampYcXG4HqK2Gq/Xs9vtB
- PnzUNj/o/ivUK0QHD69zvRd4b0cZJLU5am1lJxXjNAb8dSzk8KHT6rpe7OuGxg0XAzGV
- KSS18JjG9A0cxtBzxko57WCQBQ7dlhNH6CEH0nnxSpXgNX0LVL/5mw4jgGIF6BBHY8lA
- Bk2Q==
-X-Gm-Message-State: APjAAAX9QAPiYV/BZLFh7vD5e6qrywtMwMzIljgVKUImE/Tp9D56czM8
- mStX7cZMmDclhy8ITQqHKdPyBw==
-X-Google-Smtp-Source: APXvYqwvvqWWDtlZMEyHeR3o0UJrf+fM/69T5OTeEzspifsxckyDh5dV2k+bJZqhudcsAanWCaCgmQ==
-X-Received: by 2002:a17:90b:2286:: with SMTP id
- kx6mr3333120pjb.95.1578646596036; 
- Fri, 10 Jan 2020 00:56:36 -0800 (PST)
-Received: from T480 (98.142.130.235.16clouds.com. [98.142.130.235])
- by smtp.gmail.com with ESMTPSA id d14sm2079709pfq.117.2020.01.10.00.56.32
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 10 Jan 2020 00:56:35 -0800 (PST)
-Date: Fri, 10 Jan 2020 16:56:28 +0800
-From: Shawn Guo <shawn.guo@linaro.org>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH] PCI: dwc: Separate CFG0 and CFG1 into different ATU
- regions
-Message-ID: <20200110085626.GA17787@T480>
-References: <20200109060657.1953-1-shawn.guo@linaro.org>
- <beda8923-a3b7-47eb-7cf1-19a3bacf1e34@nvidia.com>
+ id 1ipqAQ-00010H-IG
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 09:01:20 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: OlHI+8CDomYN0cclRuIYBTRZzd7t/OhG8bnMA3JRzOdcLYDhCvsqgfacUkL33LkZxlrsRkLmna
+ gA9c028symbv3o45n/NvFJU5BEdPdSPwoUvcBlTTNjkTxkbNJxxn/255az8QpO7VBKPRJerGyn
+ nxfEjY3hWzseJQ3dK9qTSbaR5Cx5oqu7/DIG6P3UFgMm1sqs5u7N+e1wwZLBqEHf6wEop16yyn
+ Y+tCQuCJlbiLTicFCRfR4sqb023W1FmVtuxfTZH1S06HL0K2FCyaGisCDftLHjvuG243IrqFRc
+ qlk=
+X-IronPort-AV: E=Sophos;i="5.69,415,1571727600"; d="scan'208";a="61465529"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Jan 2020 02:01:10 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 10 Jan 2020 02:01:09 -0700
+Received: from tenerife.corp.atmel.com (10.10.85.251) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Fri, 10 Jan 2020 02:01:08 -0700
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+To: Ludovic Desroches <ludovic.desroches@microchip.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] ARM: at91: Documentation: add sam9x60 product and datasheet
+Date: Fri, 10 Jan 2020 10:01:03 +0100
+Message-ID: <20200110090103.7728-1-nicolas.ferre@microchip.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <beda8923-a3b7-47eb-7cf1-19a3bacf1e34@nvidia.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_005637_349087_A140D295 
-X-CRM114-Status: GOOD (  11.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200110_010118_607873_F0006A91 
+X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,45 +94,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jingoo Han <jingoohan1@gmail.com>, linux-pci@vger.kernel.org,
- Pratyush Anand <pratyush.anand@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Zaihai Yu <yuzaihai@hisilicon.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, Claudiu Beznea <claudiu.beznea@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vidya,
+Add the new SAM9X60 ARM926-based SoC from Microchip and its associated
+datasheet.
 
-On Thu, Jan 09, 2020 at 11:04:01PM +0530, Vidya Sagar wrote:
-> 
-> 
-> On 1/9/2020 11:36 AM, Shawn Guo wrote:
-> > External email: Use caution opening links or attachments
-> > 
-> > 
-> > Some platform has 4 (or more) viewports.  In that case, CFG0 and CFG1
-> > can be separated into different ATU regions.
-> Is there any specific benefit with this scheme?
+Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+---
+ Documentation/arm/microchip.rst | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Thanks much for the question which leads me to go back to vendor for
-checking design details of 4 (or more) viewports.
+diff --git a/Documentation/arm/microchip.rst b/Documentation/arm/microchip.rst
+index 1adf53dfc494..05e5f2dfb814 100644
+--- a/Documentation/arm/microchip.rst
++++ b/Documentation/arm/microchip.rst
+@@ -92,6 +92,12 @@ the Microchip website: http://www.microchip.com.
+ 
+           http://ww1.microchip.com/downloads/en/DeviceDoc/DS60001517A.pdf
+ 
++      - sam9x60
++
++          * Datasheet
++
++          http://ww1.microchip.com/downloads/en/DeviceDoc/SAM9X60-Data-Sheet-DS60001579A.pdf
++
+     * ARM Cortex-A5 based SoCs
+       - sama5d3 family
+ 
+-- 
+2.17.1
 
-It turns out the patch is not complete.  We need more code change to
-get the benefit of using separate ATU region for CFG0 and CFG1, that
-is the dw_pcie_prog_outbound_atu() call in dw_pcie_access_other_conf()
-function can  be saved.  But in the meanwhile, we need to pass
-'va_cfg_base | busdev' as the first argument to dw_pcie_write/read()
-in there.
-
-@Lorenzo, @Bjorn,
-
-Please ignore this patch.
-
-Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
