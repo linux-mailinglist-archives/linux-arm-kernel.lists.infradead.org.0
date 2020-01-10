@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A9DB136D05
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:27:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3223D136D12
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:31:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KBUzu3KwmP4RYlCue8huTFkVX7ZvFCCiR+neuwf7ZrY=; b=oVnzGPmJOzpqJy
-	XjgjQRDp8KXDaZ+zGDKTFNjktARiUesmjrzeJMHQKlprD9CVDToUT23ed7zyfF2NJgZELnjpkw82d
-	7TzkEHIo3S+E+6Fx6yTBVBmJwBC8nybkrOeSyOYDvAzqQiK/Hcop3jmw05xihqMl6qiKHK7Fy4LJ4
-	qLDqvOFQXOgXk1ZYFAU5/LNgQejR4V/u0N1mYBPqKo2rxldux15OuJi6tLgZxya/fZO8UsyiITQQC
-	tSWeyWNgpfdand4PxfRD6wdbFJStESV/QNlirsbgkolUoACwyeDJxuApovMK07Vp0J2D7DC63MHll
-	QVIdDvF2HTg7slQ4i7tA==;
+	List-Owner; bh=3LXzBlkeCDHnIDtRQl/nLa2F6BJbB2FV2Yrh06WvnTI=; b=Nv6LZTMEJpq/5+
+	ZUP6b7L6ZZXni+hEEhfyLtn6wHuyrH+Pr3I0yYh3rXdxrXSspNiJNDU5ufc4TJukz/vuYwg1FXUdW
+	WtNjhC4PGzVw5HK7sLAPCQCvJ544NXy6se76ApGqyB4k2LIDjjyGQg58qAGPEBJPZx1mga4DftnF1
+	TM1zAfO5C3YXvTxbZ+KdlgnYHbg6or5sIShqmh+bp1iCbor4S46CbUJTrE7N7BTro1oy/fIaQwmcz
+	2e9qZvF2yULcHoHP8xs43c+CgYuVD/UUQXGdO91HEgGLSO5tq4DeqGP0R3ahjBbryU7fs5xuiAE75
+	MRT+R33/FNlpkv8w6joA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iptOA-0000qn-3i; Fri, 10 Jan 2020 12:27:42 +0000
+	id 1iptRd-0003FD-Gd; Fri, 10 Jan 2020 12:31:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iptNx-0000qJ-H1
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:27:30 +0000
+ id 1iptRT-0003EW-C5
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:31:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C9B01063;
- Fri, 10 Jan 2020 04:27:29 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84B151063;
+ Fri, 10 Jan 2020 04:31:06 -0800 (PST)
 Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E69F33F534;
- Fri, 10 Jan 2020 04:27:27 -0800 (PST)
-Date: Fri, 10 Jan 2020 12:27:25 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6AA483F534;
+ Fri, 10 Jan 2020 04:31:05 -0800 (PST)
+Date: Fri, 10 Jan 2020 12:31:03 +0000
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Viresh Kumar <viresh.kumar@linaro.org>
 Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
  transport type
-Message-ID: <20200110122725.GB45077@bogus>
+Message-ID: <20200110123103.GC45077@bogus>
 References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
  <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
  <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
@@ -43,8 +43,8 @@ Content-Disposition: inline
 In-Reply-To: <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_042729_606689_2E51244B 
-X-CRM114-Status: GOOD (  19.58  )
+X-CRM114-CacheID: sfid-20200110_043107_504628_84D841CB 
+X-CRM114-Status: GOOD (  27.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -103,19 +103,62 @@ On Thu, Jan 09, 2020 at 03:04:42PM +0530, Viresh Kumar wrote:
 > @Sudeep/Vincent: Do you think we can add another transport
 > implementation something right away for it ?
 >
-
-Even if we don't add new transport right away, I would like to see if
-the requirements are met. I will take a look at you v2 with that in mind
-anyways. We need not wait, we I want to see people think it meets their
-requirement. I will also add couple of guys working on virtio transport
-for SCMI when I respond to your v2. Thanks for posting it.
-
 > @Peng ?
 >
-Peng, Did you get a chance to try this with SMC ? If SCMI was the only
-usecase, you can try this approach instead of mailbox, now that no one
-has any objects to this approach conceptually. Please use v2 as base
-and update us.
+> > > +/**
+> > > + * struct scmi_chan_info - Structure representing a SCMI channel information
+> > > + *
+> > > + * @payload: Transmit/Receive payload area
+> > > + * @dev: Reference to device in the SCMI hierarchy corresponding to this
+> > > + *      channel
+> > > + * @handle: Pointer to SCMI entity handle
+> > > + * @transport_info: Transport layer related information
+> > > + */
+> > > +struct scmi_chan_info {
+> > > +       void __iomem *payload;
+> > > +       struct device *dev;
+> > > +       struct scmi_handle *handle;
+> > > +       void *transport_info;
+> > > +};
+> >
+> > I would assume that with another transport, the 'payload' pointer would
+> > not be __iomem
+>
+> Hmm, okay. I just separated things based on the current transport and
+> didn't add much changes on top of it as I wasn't sure how things are
+> going to look with next transport and so left the changes for then.
+>
+> I can now drop it though.
+>
+> > > +static int scmi_set_transport_ops(struct scmi_info *info)
+> > > +{
+> > > +       struct scmi_transport_ops *ops;
+> > > +       struct device *dev = info->dev;
+> > > +
+> > > +       /* Only mailbox method supported for now */
+> > > +       ops = scmi_mailbox_get_ops(dev);
+> > > +       if (!ops) {
+> > > +               dev_err(dev, "Transport protocol not found in %pOF\n",
+> > > +                       dev->of_node);
+> > > +               return -EINVAL;
+> > > +       }
+> > > +
+> > > +       info->transport_ops = ops;
+> > > +       return 0;
+> > > +}
+> >
+> > This looks odd: rather than guessing the transport type based on
+> > random DT properties, I would prefer to have it determined by
+> > the device compatible string, and have different drivers bind
+> > to one of them each, with each driver linking against a common
+> > base implementation, either as separate modules or in one file.
+>
+> Since there are no platforms using the scmi binding in mainline kernel
+> for now, it won't be difficult to add new compatible strings.
+
+I am fine adding new compatible but since the binding is present in the
+mainline for several releases now, we may have to have fallback to mailbox
+as default if any of the new compatibles added is missing.
 
 --
 Regards,
