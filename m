@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B27631372D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43778137305
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:20:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BQihb17nTxAlnheGzg53Cxn2NLseiWy4hln7Z54U1zY=; b=lz1H38nESChWEg
-	MtbKfplCSrm/j7TvPuXng2xd6J5lcDKGd/zuUOknyKNdi//VCnoA2Dwh5WeUFE9rjBefPEl3Fts10
-	2yBUx2/d5M07NZerABbwEM1yH/IFPoUkbtmDxRs7WMqG5IMJDpvAkChpgc6voScQmsF8PVGYzQ2q/
-	xWxJLD/HIeKA8merymlUdYTCZFqIA2Nb8ZNpvBlLtD+7tG45Ogi0ob4OuVNMnCSIZLcvBd1xvE4Ch
-	IRkFM+4uUSDqLYqVF8CzEZXN6LSnm3urh5WaM476fy35bPU6EEJrhHIOCwzHYbhV6lYTw4XS6spv6
-	CJ7dl0E6lcEsjm3o3IqA==;
+	List-Owner; bh=dahV9I/+fZK8IMpbGf/NNYCL4g7zG+CAExwhw6zebzI=; b=N/6fX01ILdp7BL
+	fKzvjyHtaGgHrWQdSoyThZ9Vfk9hepY37Jfwh2spH0yWLGQKlKyyCLHstcozL5jQZRIcq9grYdDbU
+	PfTB2HRAF0q7Oci/fb7l1gK60YZb/hHblR8LWDrINyf+7T8eicfck9fctcR5GLV9jcxxjhMkPJ1e6
+	nJkDVh5DsOCEnefi9heZQ60TMGHL1Ov9QLjEjx5K6gXmwdF0yzVYXujJfokJ9Z0CoLdMO87Byd8tU
+	iwE79G1G+A3UBRvOIdJBZdBeWBPmbm4WPFqevoEwNV4fQFlp5VlHJw/ZoWEAADDZFhWys65lXlyQI
+	Wd0/RGxOgjj6wtQzqCUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipx0p-0005I0-KE; Fri, 10 Jan 2020 16:19:51 +0000
+	id 1ipx1W-00072E-VJ; Fri, 10 Jan 2020 16:20:34 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipwzt-0004kX-PV; Fri, 10 Jan 2020 16:18:55 +0000
+ id 1ipwzz-0004kX-NK; Fri, 10 Jan 2020 16:19:01 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -44,23 +44,23 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 4g0fpLEraewUpnwanCBO4SqagWXfgX1jP3CXlv28NEsZBdS/uZuhUFNSEbSYH6jYoEvYB0aiBj
- 194PvpUb5b1McfsGhfslRLvON+jBCEi6iPMszCQ9b7rJmydxf1uOeD27LVYxtgvylebtxVbNdH
- fZsn8MgGK+FBR1AZZ0mwfXiTLZWJL9Xw6EU19tVNfB2wfFlN7y9GZM7OLtzNZ3YPIGynxQVdbu
- l58CMi4eKbzqOzi8jWqZgPUTnN1CJUMgOU16Luit3p0obIQCT4AMHYfTTonRukd36qWLpbvYn4
- mNM=
-X-IronPort-AV: E=Sophos;i="5.69,417,1571727600"; d="scan'208";a="60405364"
+IronPort-SDR: lrq47mL7qhwA585mWG+BwUWIZWJwbAApkiDLdqgSDLklrW3on+OakJhoRxYu8FHc2Y4C1zzB9h
+ r71KxO9ibPu1eKFnWfrKrVLYLKXpZ0CCyibSqHMRj8c+svI9OVzeIb0ugfBNGd2pSYvEC4YSRT
+ eocGqMRcIxUn8M8VRebrTuCrOaEw6o5W7m5c386XXpl8qiW2nPA3WBgblp0MQ4Tx/89ZjUPFnM
+ A+bJTHkiwq/OqOsZfnBlCe70Sx1Kxf9xYjJgoBmiy5fVOttLNV6JHYRgrauP9Q0y17AdlcRf90
+ h1w=
+X-IronPort-AV: E=Sophos;i="5.69,417,1571727600"; d="scan'208";a="60405393"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Jan 2020 09:18:49 -0700
+ 10 Jan 2020 09:18:57 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 10 Jan 2020 09:18:49 -0700
+ 15.1.1713.5; Fri, 10 Jan 2020 09:18:57 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 10 Jan 2020 09:18:41 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 10 Jan 2020 09:18:49 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
@@ -71,16 +71,16 @@ To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <richard.genoud@gmail.com>, <tudor.ambarus@microchip.com>,
  <miquel.raynal@bootlin.com>, <richard@nod.at>, <vigneshr@ti.com>,
  <wg@grandegger.com>, <mkl@pengutronix.de>, <a.zummo@towertech.it>
-Subject: [PATCH v2 01/17] dt-bindings: at_xdmac: remove wildcard
-Date: Fri, 10 Jan 2020 18:17:53 +0200
-Message-ID: <1578673089-3484-2-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v2 02/17] dt-bindings: at_xdmac: add microchip,sam9x60-dma
+Date: Fri, 10 Jan 2020 18:17:54 +0200
+Message-ID: <1578673089-3484-3-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_081853_916955_C84FEA98 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20200110_081859_813915_4D13B1AD 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -113,25 +113,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove wildcard and use the available compatible.
+Add microchip,sam9x60-dma to DT bindings documentation.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- Documentation/devicetree/bindings/dma/atmel-xdma.txt | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ Documentation/devicetree/bindings/dma/atmel-xdma.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Documentation/devicetree/bindings/dma/atmel-xdma.txt b/Documentation/devicetree/bindings/dma/atmel-xdma.txt
-index 0eb2b3207e08..ad03920b7a28 100644
+index ad03920b7a28..4dc398e1a371 100644
 --- a/Documentation/devicetree/bindings/dma/atmel-xdma.txt
 +++ b/Documentation/devicetree/bindings/dma/atmel-xdma.txt
-@@ -2,9 +2,7 @@
+@@ -2,7 +2,7 @@
  
  * XDMA Controller
  Required properties:
--- compatible: Should be "atmel,<chip>-dma".
--  <chip> compatible description:
--  - sama5d4: first SoC adding the XDMAC
-+- compatible: Should be "atmel,sama5d4-dma".
+-- compatible: Should be "atmel,sama5d4-dma".
++- compatible: Should be "atmel,sama5d4-dma" or "microchip,sam9x60-dma".
  - reg: Should contain DMA registers location and length.
  - interrupts: Should contain DMA interrupt.
  - #dma-cells: Must be <1>, used to represent the number of integer cells in
