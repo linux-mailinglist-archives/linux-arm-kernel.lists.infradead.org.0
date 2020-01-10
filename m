@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A9C6136D77
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 14:12:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73D6A136DF4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 14:25:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2q8bLmXuukjBeWGrXu4bs3fgdQTfENmzLnBIIgSoBIU=; b=pZWGjOHvlaOuvw
-	Y8gjPEoIBw0LL3IkaJtX86dX+X+kK624kOifiaPW3CDTvo/iQq6d/ZvLN1brzY7PFOodrnmbFfp4L
-	C5uTm2Mu2qXXzp2VAHagiAFmI+ETvJmYc1R40iI53WrpVFLQev9HVOgf9FrS6LL+1+msh3KABhpLY
-	eq/61j/nJlrMumtMAl1UDIrkW1Bxy2BbU3kcAshVCaG5tLzoSElR8jA6OtD+F5De+wQ0kyMjHOJyF
-	UcweKQiPn8LFecjZGi/BUF0lZ3nOsobq1WgnpQUj4INKyf+5IoXcpSPHoh4fnMjiVv/W3iPCi34ZQ
-	1eU9G4NuOch6am5N93lw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IBGULSViROYtJWrSF6BJUwgwScFHN8z4BK8ovHUdWEE=; b=KMvwRNyXT2QaPj
+	bxhJ4UC56XWfuj2pr2DglMJItEixM6UGD10rKVi0euuQhGFfCILo7A3RELUtwnp8T7JSFzvshDGZa
+	ytOKKhOXwB3wZSdU1OVdThxWyyKNpvH8sNhLa4+RYEv6W4YaajfmKJ2VC+BNooB+Z3iudFbXb9voH
+	/jngUmD+iEXLRcD+xMjZ8mIOtBGbOv1XROYrept29F0Zb15r5QuRide+kiCKUVFHE9QxDIk3Jk2Wq
+	B+8kFcBtPz+Z1W7X4nvaC7PuvSrs43cXB8ooGN6h5mBuct496vHjnboY91R6GTTGtBcsTdFs3hWm2
+	IdtI0hkh6ik6HP4tJejA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipu52-0003iN-Es; Fri, 10 Jan 2020 13:12:00 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1ipuIL-0001Qk-KK; Fri, 10 Jan 2020 13:25:45 +0000
+Received: from lb1-smtp-cloud8.xs4all.net ([194.109.24.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipu4u-0003hv-Hh
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 13:11:54 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00AD86U6008915; Fri, 10 Jan 2020 14:11:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=haY87gSwex8rCh0FoiCdqRy2whnAZkCD7EIrYWg4L6k=;
- b=qOyO055nx9VMMiP9IRWmPO2wbA8r4CSqjeVvgO1nCDHWhpUOdIiIr5lyjShgcOg7d5CM
- XjlEQW9y8KOfw30+NLIQ8i60i+FVd69tstJoQWGgY+UhEjFHcLz2OlJtNQ3fP6Jq/slt
- ZRgL+aFD0hzX+tLeyoa4nKXHttqbdSDldPTBb8C4KHKWSOOQXNY+LYk6ZY6rn5UMZiqM
- LIiNKfkjzhFJlhh/fTV1zjNoMx2DxLppFSIYiAw3f3oBoJ3ZuOaaC1LWe8X6K6/9NPGp
- MfL7EI3Ri++yw69vbWT0VZB1vvfaWDQTTHnU/5rHL3wfh7e/otFK8yOfW2CLTDcoto8B kw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xakkb7rur-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 10 Jan 2020 14:11:39 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7CE4A100034;
- Fri, 10 Jan 2020 14:11:33 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 913662B7742;
- Fri, 10 Jan 2020 14:11:33 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 10 Jan 2020 14:11:33 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
- <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <alsa-devel@alsa-project.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>
-Subject: [PATCH] ASoC: stm32: dfsdm: fix 16 bits record
-Date: Fri, 10 Jan 2020 14:11:31 +0100
-Message-ID: <20200110131131.3191-1-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1ipuI6-0001NL-Hj; Fri, 10 Jan 2020 13:25:32 +0000
+Received: from [IPv6:2001:420:44c1:2577:c967:e1d3:183a:b8ef]
+ ([IPv6:2001:420:44c1:2577:c967:e1d3:183a:b8ef])
+ by smtp-cloud8.xs4all.net with ESMTPA
+ id puHrin9xDpLtbpuHuiQmSe; Fri, 10 Jan 2020 14:25:23 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1578662723; bh=I0b7s/xDqtbd60FacQFIRFFagV1Bh2XVzbaw6GJ8UFk=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=TTtT0/u+HRhWOQa06QDndrU0bUEOOnpgZ7+dEC97BkRPFIGB6+mexFpX5KgD0Ycg7
+ yhQzvpBQhpk2DygTF4OkK7SbCzkIEdbt1VBG6UrD+kwFD6l10FwZudPsgW7v4eMGeL
+ aYwHyNPBtNy6/lyBAFseDupjlwYKHL69gvkN/Cq4uYQTv02WDFPYe6/H3/nZ+1y+tA
+ BALkMj/5GvNS1nAx0I4g/1Vkw1rgqgcm08uw2jwao9fUsMlB844kKhFq4HAFqE21zy
+ nTRdmkh4N365san1LzaN8h2TVUGaY8Hytm1MaugFO+7c4Ri1RfYmfqNAU0fotrD5oM
+ l7dFQzn+02NNg==
+Subject: Re: [PATCH] staging/vc04_services/bcm2835-camera: distinct numeration
+ and names for devices
+To: Michael Kupfer <michael.kupfer@fau.de>, eric@anholt.net,
+ wahrenst@gmx.net, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ mchehab+samsung@kernel.org, linux-media@vger.kernel.org
+References: <20191206085432.19962-1-michael.kupfer@fau.de>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <3db2350b-0a6d-0693-258c-9d47f71c0627@xs4all.nl>
+Date: Fri, 10 Jan 2020 14:25:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-10_01:2020-01-10,
- 2020-01-09 signatures=0
+In-Reply-To: <20191206085432.19962-1-michael.kupfer@fau.de>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfBd3XXTXHJXsWfyVxCd2xYnZO0N8s/BDiJigBt9fBzOuvI1qg7Ov9vJHlQwwroeHfDptOn2x6LGe/NF17tiYIHe6IKGtbMu6lyUonjXvZHlMv8StSdIC
+ KjYmD4yv2S6PG8353r9KVWVoWKnWpExFpS00SMNPq5IJsX0GyIHHf370xIlWiBo1uFBPJrF+j9ZsO01XP4FQMp1f6UC1jRrs61fg77hJ1wy4Zgliil7O9MiI
+ pvMz1R6SFwWlhjOzw9WPqyNWo8SWxUYcyyfl2v53V+CvWgwJ5DZG7hUbdZP/qv+bKOk5xyhfl26PIEeuFIG6UMCgRYfGFOYgyV991fAuAVn2Dl9s1kexO+eh
+ tpS7DuSgD76w957xPtmjizhbEK3EmsdZ+k/6hrHyjkRb3KLCufZaCXa92/oMKYXPD3EmQEqcCJAZFxvg1thOoX7sSWbv5i9/KTtAn+VIMvFR58Zn88QVT/xo
+ D8/JfnqE8C4zdH9i2TrB90rHJKxmGPFc91KhbCbQaPjrg38xmbFqJcOEL/n/XHiROQtHdEhKeUmzL+4YZJ3WDWuvUhprcNE6aPBSeDmnpTKkpbqgiCwjsfFx
+ d4HTR0D5GW2x8wmWayKH432z9lI6vqffHTdck7Vrvb7hTmdesfRvgriuI8o4dt6SQuT9nJC9rt7gedvyKw7nsxUw4ODfbr24oLSb/ZkIO0o5i9yK2ZpiaWaF
+ 8xfVbVb8KZVaxBQ4srQRGIc3bE4uizhm3PTr00SnN0xw9EXC01pJoNmd2cDfozvoMO3xwPWME7KAsoFn8WDu/XKTRBI2lN7SShrCVzRTZ7f9CEOO/08TtnON
+ N1dWwwey5LGcCnce6F7Dp2Lmnl+Y2/FYR1WiEk3Ad5N+IsvZOD2DORmv4Xwh12IK0kVRpntnSOLvX7ZLyWK1VfnbCoGLBHMQA04SKM8L6IDC+76awJcUkbxl
+ L/eY2w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_051152_942838_A4CCA283 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20200110_052530_747977_B02D3C5D 
+X-CRM114-Status: GOOD (  16.30  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.21 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [194.109.24.21 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,67 +93,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devel@driverdev.osuosl.org, f.fainelli@gmail.com,
+ Kay Friedrich <kay.friedrich@fau.de>, sbranden@broadcom.com,
+ linux-kernel@i4.cs.fau.de, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, daniela.mormocea@gmail.com,
+ dave.stevenson@raspberrypi.org, rjui@broadcom.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In stm32_afsdm_pcm_cb function, the transfer size is provided in bytes.
-However, samples are copied as 16 bits words from iio buffer.
-Divide by two the transfer size, to copy the right number of samples.
+Hi Michael, Kay,
 
-Fixes: 1e7f6e1c69f0 ("ASoC: stm32: dfsdm: add 16 bits audio record support")
+On 12/6/19 9:54 AM, Michael Kupfer wrote:
+> Create a static atomic counter for numerating cameras.
+> Use the Media Subsystem Kernel Internal API to create distinct
+> device-names, so that the camera-number (given by the counter)
+> matches the camera-name.
+> 
+> Co-developed-by: Kay Friedrich <kay.friedrich@fau.de>
+> Signed-off-by: Kay Friedrich <kay.friedrich@fau.de>
+> Signed-off-by: Michael Kupfer <michael.kupfer@fau.de>
+> ---
+>  .../vc04_services/bcm2835-camera/bcm2835-camera.c        | 9 ++++++---
+>  1 file changed, 6 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> index beb6a0063bb8..be5f90a8b49d 100644
+> --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> @@ -60,6 +60,9 @@ MODULE_PARM_DESC(max_video_width, "Threshold for video mode");
+>  module_param(max_video_height, int, 0644);
+>  MODULE_PARM_DESC(max_video_height, "Threshold for video mode");
+>  
+> +/* camera instance counter */
+> +static atomic_t camera_instance = ATOMIC_INIT(0);
+> +
+>  /* global device data array */
+>  static struct bm2835_mmal_dev *gdev[MAX_BCM2835_CAMERAS];
+>  
+> @@ -1870,7 +1873,6 @@ static int bcm2835_mmal_probe(struct platform_device *pdev)
+>  
+>  		/* v4l2 core mutex used to protect all fops and v4l2 ioctls. */
+>  		mutex_init(&dev->mutex);
+> -		dev->camera_num = camera;
+>  		dev->max_width = resolutions[camera][0];
+>  		dev->max_height = resolutions[camera][1];
+>  
+> @@ -1886,8 +1888,9 @@ static int bcm2835_mmal_probe(struct platform_device *pdev)
+>  		dev->capture.fmt = &formats[3]; /* JPEG */
+>  
+>  		/* v4l device registration */
+> -		snprintf(dev->v4l2_dev.name, sizeof(dev->v4l2_dev.name),
+> -			 "%s", BM2835_MMAL_MODULE_NAME);
+> +		dev->camera_num = v4l2_device_set_name(&dev->v4l2_dev,
+> +						       BM2835_MMAL_MODULE_NAME,
+> +						       &camera_instance);
+>  		ret = v4l2_device_register(NULL, &dev->v4l2_dev);
+>  		if (ret) {
+>  			dev_err(&pdev->dev, "%s: could not register V4L2 device: %d\n",
+> 
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
----
- sound/soc/stm/stm32_adfsdm.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+Actually, in this specific case I would not use v4l2_device_set_name().
 
-diff --git a/sound/soc/stm/stm32_adfsdm.c b/sound/soc/stm/stm32_adfsdm.c
-index 807fee1eac66..51407a21c440 100644
---- a/sound/soc/stm/stm32_adfsdm.c
-+++ b/sound/soc/stm/stm32_adfsdm.c
-@@ -153,13 +153,13 @@ static const struct snd_soc_component_driver stm32_adfsdm_dai_component = {
- 	.name = "stm32_dfsdm_audio",
- };
- 
--static void memcpy_32to16(void *dest, const void *src, size_t n)
-+static void stm32_memcpy_32to16(void *dest, const void *src, size_t n)
- {
- 	unsigned int i = 0;
- 	u16 *d = (u16 *)dest, *s = (u16 *)src;
- 
- 	s++;
--	for (i = n; i > 0; i--) {
-+	for (i = n >> 1; i > 0; i--) {
- 		*d++ = *s++;
- 		s++;
- 	}
-@@ -186,8 +186,8 @@ static int stm32_afsdm_pcm_cb(const void *data, size_t size, void *private)
- 
- 	if ((priv->pos + src_size) > buff_size) {
- 		if (format == SNDRV_PCM_FORMAT_S16_LE)
--			memcpy_32to16(&pcm_buff[priv->pos], src_buff,
--				      buff_size - priv->pos);
-+			stm32_memcpy_32to16(&pcm_buff[priv->pos], src_buff,
-+					    buff_size - priv->pos);
- 		else
- 			memcpy(&pcm_buff[priv->pos], src_buff,
- 			       buff_size - priv->pos);
-@@ -196,8 +196,8 @@ static int stm32_afsdm_pcm_cb(const void *data, size_t size, void *private)
- 	}
- 
- 	if (format == SNDRV_PCM_FORMAT_S16_LE)
--		memcpy_32to16(&pcm_buff[priv->pos],
--			      &src_buff[src_size - cur_size], cur_size);
-+		stm32_memcpy_32to16(&pcm_buff[priv->pos],
-+				    &src_buff[src_size - cur_size], cur_size);
- 	else
- 		memcpy(&pcm_buff[priv->pos], &src_buff[src_size - cur_size],
- 		       cur_size);
--- 
-2.17.1
+Instead just use:
 
+		snprintf(dev->v4l2_dev.name, sizeof(dev->v4l2_dev.name),
+			 "%s-%u", BM2835_MMAL_MODULE_NAME, camera);
+
+It would be even better if there would be just one top-level v4l2_device used
+for all the camera instances. After all, there really is just one platform
+device for all of the cameras, and I would expect to see just a single
+v4l2_device as well.
+
+It doesn't hurt to have multiple v4l2_device structs, but it introduces a
+slight memory overhead since one would have been sufficient.
+
+v4l2_device_set_name() is meant for pci-like devices. And it really
+is a bit overkill to have it as a helper function.
+
+Regards,
+
+	Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
