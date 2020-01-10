@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BC9F136B96
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:00:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BCBA136BA7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:04:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V2GCehRFd5j/JeYUHmoTx4oVfuIk5EYQ5Hp3OR5CEQ8=; b=aKC6KAMBHK2+sm
-	ZZG8nrC/nshpyx2svMm/FSWmZv1tt3ViU2GTSBW0PkNMsRw8rp0xa4DaqtQWvqT81PjD3H+YCV27e
-	q9ic+NM7E/yYhII2h41TdQwiNxNT9oQ6UIyViOglwT7sOiHFMOjWaE+vx44WXVuHd5faErfjBw5xC
-	XpH8vRgV0vNc1wSSUmDd3uc3tsXrmhAnetYaMfePKxcqO7WjfXTaPrTzrR6unP46qH43/QipMPNnM
-	hMqGms5Y5SiD1XqbUYK3asJxBFvruJWgY3C49INLnWkNs6BlSPN2V3gys6A4VqilWIFhPPv+qnJxf
-	quliP6ZA/j8AqtwnkCvQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DeeBv0XTJeI/t+JSFLC9ARvGbvh2HHvYJ5qjiZ9bvZ8=; b=RLww2VqBfMiIDr
+	3jlQz9qIB7mU2E6pKXA4wFFUqbKintwmK1608TiqgVi1fHvri+FrBqcYkbtx4gogZtJrzTSjqXMkC
+	F88o4EgCxyR02yp90BTgcLOgxmU1hAFKX3lHFjeHxfyaAIhc/EyRtBMhUkSn6ilvwpBnu/JmdTfTK
+	5JhElPqeMvU9q9D+ovRy9Pp7F/tni9x68ILUJcIG2+dE4G/bY8kJ5cjeLBhpZD2DElr4sVNITjxpr
+	8X5wkTg5gg5lfksUgzm6Z1OiuZufyDwKXlEbJmod/u8F5dSKLUiTyRm1Xsv45JPZPQW7V0lxRGA/m
+	qREnykNxyFdU1omXaOmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ips1E-0004ju-95; Fri, 10 Jan 2020 10:59:56 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ips14-0004hj-AP; Fri, 10 Jan 2020 10:59:48 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxZTe081793;
- Fri, 10 Jan 2020 04:59:35 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578653975;
- bh=9+Ck3PRaRVIdp1krLVpCgf4FURcXnlnWOb8T6coy79M=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=nyfrNejkNB1FiPAWgbDHVtQ3iiC2/Jp8H1uiZfT+cRUg1ai0DpE4z38L1wvYHw6Hq
- 8cWFwy/ozYcxI31BVErd34xjIXMOHvvUdkNWpstpTW72gan8oeLU1scsQrmutxpChP
- jalicy0DTy0H6D+m2wH6BzDJ/S8XBZFmMsJS2to4=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00AAxZhE012420
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 10 Jan 2020 04:59:35 -0600
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 10
- Jan 2020 04:59:34 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 10 Jan 2020 04:59:35 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxWRT044018;
- Fri, 10 Jan 2020 04:59:32 -0600
-Subject: Re: [PATCH v2 00/14] Support more HDMI modes on RK3228/RK3328
-To: Jonas Karlman <jonas@kwiboo.se>, Heiko Stuebner <heiko@sntech.de>, Sandy
- Huang <hjc@rock-chips.com>
-References: <20200108210740.28769-1-jonas@kwiboo.se>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <b159ee28-213e-35d2-6d09-516abc3358bb@ti.com>
-Date: Fri, 10 Jan 2020 16:31:40 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1ips5g-00078E-A7; Fri, 10 Jan 2020 11:04:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ips5X-000740-Rf
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:04:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 42E28328;
+ Fri, 10 Jan 2020 03:04:23 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B939C3F703;
+ Fri, 10 Jan 2020 03:04:22 -0800 (PST)
+Date: Fri, 10 Jan 2020 11:04:21 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
+ full SPE profiling buffer controls
+Message-ID: <20200110110420.GD42593@e119886-lin.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-10-andrew.murray@arm.com>
+ <20191221141325.5a177343@why>
+ <20200110105435.GC42593@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200108210740.28769-1-jonas@kwiboo.se>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200110105435.GC42593@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_025946_481804_E3C00B3D 
-X-CRM114-Status: GOOD (  23.78  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200110_030423_985936_45B4583A 
+X-CRM114-Status: GOOD (  35.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,91 +66,225 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Zheng Yang <zhengyang@rock-chips.com>
+Cc: kvm@vger.kernel.org, Catalin Marinas <Catalin.Marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <Sudeep.Holla@arm.com>,
+ will@kernel.org, kvmarm <kvmarm@lists.cs.columbia.edu>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jan 10, 2020 at 10:54:36AM +0000, Andrew Murray wrote:
+> On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
+> > On Fri, 20 Dec 2019 14:30:16 +0000
+> > Andrew Murray <andrew.murray@arm.com> wrote:
+> > 
+> > [somehow managed not to do a reply all, re-sending]
+> > 
+> > > From: Sudeep Holla <sudeep.holla@arm.com>
+> > > 
+> > > Now that we can save/restore the full SPE controls, we can enable it
+> > > if SPE is setup and ready to use in KVM. It's supported in KVM only if
+> > > all the CPUs in the system supports SPE.
+> > > 
+> > > However to support heterogenous systems, we need to move the check if
+> > > host supports SPE and do a partial save/restore.
+> > 
+> > No. Let's just not go down that path. For now, KVM on heterogeneous
+> > systems do not get SPE. If SPE has been enabled on a guest and a CPU
+> > comes up without SPE, this CPU should fail to boot (same as exposing a
+> > feature to userspace).
+> > 
+> > > 
+> > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > > ---
+> > >  arch/arm64/kvm/hyp/debug-sr.c | 33 ++++++++++++++++-----------------
+> > >  include/kvm/arm_spe.h         |  6 ++++++
+> > >  2 files changed, 22 insertions(+), 17 deletions(-)
+> > > 
+> > > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+> > > index 12429b212a3a..d8d857067e6d 100644
+> > > --- a/arch/arm64/kvm/hyp/debug-sr.c
+> > > +++ b/arch/arm64/kvm/hyp/debug-sr.c
+> > > @@ -86,18 +86,13 @@
+> > >  	}
+> > >  
+> > >  static void __hyp_text
+> > > -__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > > +__debug_save_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > >  {
+> > >  	u64 reg;
+> > >  
+> > >  	/* Clear pmscr in case of early return */
+> > >  	ctxt->sys_regs[PMSCR_EL1] = 0;
+> > >  
+> > > -	/* SPE present on this CPU? */
+> > > -	if (!cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
+> > > -						  ID_AA64DFR0_PMSVER_SHIFT))
+> > > -		return;
+> > > -
+> > >  	/* Yes; is it owned by higher EL? */
+> > >  	reg = read_sysreg_s(SYS_PMBIDR_EL1);
+> > >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
+> > > @@ -142,7 +137,7 @@ __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > >  }
+> > >  
+> > >  static void __hyp_text
+> > > -__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > > +__debug_restore_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > >  {
+> > >  	if (!ctxt->sys_regs[PMSCR_EL1])
+> > >  		return;
+> > > @@ -210,11 +205,14 @@ void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
+> > >  	struct kvm_guest_debug_arch *host_dbg;
+> > >  	struct kvm_guest_debug_arch *guest_dbg;
+> > >  
+> > > +	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > > +	guest_ctxt = &vcpu->arch.ctxt;
+> > > +
+> > > +	__debug_restore_spe_context(guest_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> > > +
+> > >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+> > >  		return;
+> > >  
+> > > -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > > -	guest_ctxt = &vcpu->arch.ctxt;
+> > >  	host_dbg = &vcpu->arch.host_debug_state.regs;
+> > >  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+> > >  
+> > > @@ -232,8 +230,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+> > >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > >  	guest_ctxt = &vcpu->arch.ctxt;
+> > >  
+> > > -	if (!has_vhe())
+> > > -		__debug_restore_spe_nvhe(host_ctxt, false);
+> > > +	__debug_restore_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> > 
+> > So you now do an unconditional save/restore on the exit path for VHE as
+> > well? Even if the host isn't using the SPE HW? That's not acceptable
+> > as, in most cases, only the host /or/ the guest will use SPE. Here, you
+> > put a measurable overhead on each exit.
+> > 
+> > If the host is not using SPE, then the restore/save should happen in
+> > vcpu_load/vcpu_put. Only if the host is using SPE should you do
+> > something in the run loop. Of course, this only applies to VHE and
+> > non-VHE must switch eagerly.
+> > 
+> 
+> On VHE where SPE is used in the guest only - we save/restore in vcpu_load/put.
+> 
+> On VHE where SPE is used in the host only - we save/restore in the run loop.
+> 
+> On VHE where SPE is used in guest and host - we save/restore in the run loop.
+> 
+> As the guest can't trace EL2 it doesn't matter if we restore guest SPE early
+> in the vcpu_load/put functions. (I assume it doesn't matter that we restore
+> an EL0/EL1 profiling buffer address at this point and enable tracing given
+> that there is nothing to trace until entering the guest).
+> 
+> However the reason for moving save/restore to vcpu_load/put when the host is
+> using SPE is to minimise the host EL2 black-out window.
+> 
+> 
+> On nVHE we always save/restore in the run loop. For the SPE guest-use-only
+> use-case we can't save/restore in vcpu_load/put - because the guest runs at
+> the same ELx level as the host - and thus doing so would result in the guest
+> tracing part of the host.
+> 
+> Though if we determine that (for nVHE systems) the guest SPE is profiling only
+> EL0 - then we could also save/restore in vcpu_load/put where SPE is only being
+> used in the guest.
+> 
+> Does that make sense, are my reasons correct?
 
+Also I'm making the following assumptions:
 
-On 09/01/20 2:37 AM, Jonas Karlman wrote:
-> This series make it possible to use more HDMI modes on RK3328,
-> and presumably also on RK3228. It also prepares for a future YUV420 and
-> 10-bit output series.
-> 
-> Part of this has been reworked from vendor BSP 4.4 kernel commits.
-> 
-> Patch 1-5 fixes issues and shortcomings in the inno hdmi phy driver.
-> 
-> Patch 6 prepares for use of high TMDS bit rates used with HDMI 2.0 and
-> 10-bit output modes.
-> 
-> Patch 7-13 changes rk3228/rk3328 to use mode_valid functions suited for
-> the inno hdmi phy instead of the dw-hdmi phy. These changes allows for
-> more CEA modes to be usable, e.g. some 4K and fractal modes.
-> 
-> Patch 14 adds support for more pixel clock rates in order to support
-> common DMT modes in addition to CEA modes.
+ - We determine if the host or guest are using SPE by seeing if profiling
+   (e.g. PMSCR_EL1) is enabled. That should determine *when* we restore as per
+   my previous email.
 
-Is it possible to split the series targeted for different subsystems or
-is it required for all the patches to be merged together?
+ - I'm less sure on this: We should determine *what* we restore based on the
+   availability of the SPE feature and not if it is being used - so for guest
+   this is if the guest has the feature on the vcpu. For host this is based on
+   the CPU feature registers.
 
-Thanks
-Kishon
+   The downshot of this is that if you have SPE support present on guest and
+   host and they aren't being used, then you still save/restore upon entering/
+   leaving a guest. The reason I feel this is needed is to prevent the issue
+   where the host starts programming the SPE registers, but is preempted by
+   KVM entering a guest, before it could enable host SPE. Thus when we enter the
+   guest we don't save all the registers, we return to the host and the host
+   SPE carries on from where it left of and enables it - yet because we didn't
+   restore all the programmed registers it doesn't work.
+
+Thanks,
+
+Andrew Murray
+
 > 
-> Note: I have only been able to build test RK322x related changes
-> as I do not have any RK322x device to test on.
+> Thanks,
 > 
-> All modes, including fractal modes, has been tested with modetest on
-> a RK3328 Rock64 device using e.g.
+> Andrew Murray
 > 
->   modetest -M rockchip -s 39:3840x2160-29.97
 > 
-> Changes in v2:
->   - collect acked-by tag
->   - drop the limit resolution width to 3840 patch
-> 
-> This series is also available at [1] and the early work on YUV420 and
-> 10-bit output is available at [2].
-> 
-> [1] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-inno-hdmi-phy
-> [2] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-bus-format
-> 
-> Regards,
-> Jonas
-> 
-> Algea Cao (1):
->   phy/rockchip: inno-hdmi: Support more pre-pll configuration
-> 
-> Huicong Xu (1):
->   phy/rockchip: inno-hdmi: force set_rate on power_on
-> 
-> Jonas Karlman (11):
->   phy/rockchip: inno-hdmi: use correct vco_div_5 macro on rk3328
->   phy/rockchip: inno-hdmi: remove unused no_c from rk3328 recalc_rate
->   phy/rockchip: inno-hdmi: do not power on rk3328 post pll on reg write
->   drm/rockchip: dw-hdmi: allow high tmds bit rates
->   drm/rockchip: dw-hdmi: require valid vpll clock rate on rk3228/rk3328
->   clk: rockchip: set parent rate for DCLK_VOP clock on rk3228
->   arm64: dts: rockchip: increase vop clock rate on rk3328
->   arm64: dts: rockchip: add vpll clock to hdmi node on rk3328
->   ARM: dts: rockchip: add vpll clock to hdmi node on rk3228
->   drm/rockchip: dw-hdmi: limit tmds to 340mhz on rk3228/rk3328
->   drm/rockchip: dw-hdmi: remove unused plat_data on rk3228/rk3328
-> 
-> Zheng Yang (1):
->   phy/rockchip: inno-hdmi: round fractal pixclock in rk3328 recalc_rate
-> 
->  arch/arm/boot/dts/rk322x.dtsi                 |   4 +-
->  arch/arm64/boot/dts/rockchip/rk3328.dtsi      |   6 +-
->  drivers/clk/rockchip/clk-rk3228.c             |   2 +-
->  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c   |  47 ++++++--
->  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 110 ++++++++++++------
->  5 files changed, 120 insertions(+), 49 deletions(-)
-> 
+> > >  
+> > >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+> > >  		return;
+> > > @@ -249,19 +246,21 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+> > >  
+> > >  void __hyp_text __debug_save_host_context(struct kvm_vcpu *vcpu)
+> > >  {
+> > > -	/*
+> > > -	 * Non-VHE: Disable and flush SPE data generation
+> > > -	 * VHE: The vcpu can run, but it can't hide.
+> > > -	 */
+> > >  	struct kvm_cpu_context *host_ctxt;
+> > >  
+> > >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> > > -	if (!has_vhe())
+> > > -		__debug_save_spe_nvhe(host_ctxt, false);
+> > > +	if (cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
+> > > +						 ID_AA64DFR0_PMSVER_SHIFT))
+> > > +		__debug_save_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
+> > >  }
+> > >  
+> > >  void __hyp_text __debug_save_guest_context(struct kvm_vcpu *vcpu)
+> > >  {
+> > > +	bool kvm_spe_ready = kvm_arm_spe_v1_ready(vcpu);
+> > > +
+> > > +	/* SPE present on this vCPU? */
+> > > +	if (kvm_spe_ready)
+> > > +		__debug_save_spe_context(&vcpu->arch.ctxt, kvm_spe_ready);
+> > >  }
+> > >  
+> > >  u32 __hyp_text __kvm_get_mdcr_el2(void)
+> > > diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
+> > > index 48d118fdb174..30c40b1bc385 100644
+> > > --- a/include/kvm/arm_spe.h
+> > > +++ b/include/kvm/arm_spe.h
+> > > @@ -16,4 +16,10 @@ struct kvm_spe {
+> > >  	bool irq_level;
+> > >  };
+> > >  
+> > > +#ifdef CONFIG_KVM_ARM_SPE
+> > > +#define kvm_arm_spe_v1_ready(v)		((v)->arch.spe.ready)
+> > > +#else
+> > > +#define kvm_arm_spe_v1_ready(v)		(false)
+> > > +#endif /* CONFIG_KVM_ARM_SPE */
+> > > +
+> > >  #endif /* __ASM_ARM_KVM_SPE_H */
+> > 
+> > Thanks,
+> > 
+> > 	M.
+> > -- 
+> > Jazz is not dead. It just smells funny...
+> _______________________________________________
+> kvmarm mailing list
+> kvmarm@lists.cs.columbia.edu
+> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
 
 _______________________________________________
 linux-arm-kernel mailing list
