@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FFDB136C77
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:56:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B0FE136C76
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=7/NiZcFBoEDSGQ7BMRw6/nam5ohqMsZtVou4ZZEuYLg=; b=ndh
-	al1DBscxsYjNAEGlmMz5jVu1mZxNTlVoa8ifw2WhtFfmP/Bk9BxnN7cFzXWgj7+VxdjGsHuN/eCb8
-	f9Ow1zB1ShLJ7xw1zHsgOjMxHm4vswkFFmeMeMkwq+Pi+83GqqArw0vlX3S5bnXM8T1l+0KjWF/QR
-	yItqLddjP80Vym3EwB7/SPYNhLNBMlFL4y5loChF0YJ3x6qi+wl8Civm3LsE4HhxpbtrMmGwp1q2+
-	qFaI6L/U3bhuEPGAIpbrpE6jfrKfbD1OqRkNMQ2Jv2/MQehTNdlemAfe69TutTaNWXgNvvUQTimCW
-	zrgoJ1CoE+tLr4FXuQ+U469TwMtoobw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xhL8wbjLjH5C+BxEihIv8vYwmNwjG+/OPfvG3oyb6EU=; b=gSowfQItfUJ+/3Uc/hjnw0iQsL
+	fsR5PPSIWbpoDlOxfUryFoGkm8PAWlx+gKYu2TibbJ34O6CQOm7Kf6gu2Xh0/oA/FSYXeKIzDcnZC
+	mBxutGltg6y9e4zkBm6cvsPHI2yNXKL9uRlJWD5kxK9Pv+Kah1OkdBHT6NNZF3abKdnH9EIRGgQww
+	AUTL1amPmnqjOshWJ97N9KsG0TZZJoPlQ2DHhmO5Uiq0gZvzJqPNGrOSyZENe0OM83Ur9uxIR8ssd
+	WO0kBoqDxIjbr6y6RfA8bxkyoYgX/rxJWAvGS3R5vps91bFEoFTeNmE9pTbUpBZGH8xZqpKDf2gze
+	qslfOo8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipstR-0000Ez-Er; Fri, 10 Jan 2020 11:55:57 +0000
+	id 1ipst7-0008RQ-OC; Fri, 10 Jan 2020 11:55:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipsrz-0006ZF-9z
+ id 1ipsrz-0006Zj-6N
  for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:54:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D45A1396;
- Fri, 10 Jan 2020 03:54:23 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BAB7B1063;
+ Fri, 10 Jan 2020 03:54:24 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5382B3F534;
- Fri, 10 Jan 2020 03:54:22 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A13593F534;
+ Fri, 10 Jan 2020 03:54:23 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH 00/14] net: axienet: Error handling, SGMII and 64-bit DMA fixes
-Date: Fri, 10 Jan 2020 11:54:01 +0000
-Message-Id: <20200110115415.75683-1-andre.przywara@arm.com>
+Subject: [PATCH 01/14] net: xilinx: temac: Relax Kconfig dependencies
+Date: Fri, 10 Jan 2020 11:54:02 +0000
+Message-Id: <20200110115415.75683-2-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200110115415.75683-1-andre.przywara@arm.com>
+References: <20200110115415.75683-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_035427_540971_1AB6BBBC 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20200110_035427_381618_100480A5 
+X-CRM114-Status: GOOD (  11.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,61 +71,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Similar to axienet, the temac driver is now architecture agnostic, and
+can be at least compiled for several architectures.
+Especially the fact that this is a soft IP for implementing in FPGAs
+makes the current restriction rather pointless, as it could literally
+appear on any architecture, as long as an FPGA is connected to the bus.
 
-this series updates the Xilinx Axienet driver to work on our board
-here. One big issue was broken SGMII support, which patch 7 fixes.
-While debugging and understanding the driver, I found several problems
-in the error handling and cleanup paths, which patches 2-6 address.
-Patch 8 paves the way for newer revisions of the IP, the following patch
-adds mii-tool support, just for good measure.
+The driver hasn't been actually tried on any hardware, it is just a
+drive-by patch when doing the same for axienet (a similar patch for
+axienet is already merged).
 
-The next four patches add support for 64-bit DMA. This is an integration
-option on newer IP revisions (>= v7.1), and expects MSB bits in formerly
-reserved registers. Without writing to those MSB registers, the state
-machine won't trigger, so it's mandatory to access them, even if they
-are zero. Patches 10 and 11 prepare the code by adding accessors, to
-wrap this properly and keep it working on older IP revisions.
-Patch 12 enables access to the MSB registers, by trying to write a
-non-zero value to them and checking if that sticks. Older IP revisions
-always read those registers as zero.
+This (temac and axienet) have been compile-tested for:
+alpha hppa64 microblaze mips64 powerpc powerpc64 riscv64 s390 sparc64
+(using kernel.org cross compilers).
 
-Patch 13 then adjusts the DMA mask, if it finds a "xlnx,addrwidth"
-property in the DMA DT node. I did not manage to autodetect this actual
-implemented DMA width, so we need to rely on a DT property. If this is
-missing, it will fall back to the current default of 32 bit.
-The final patch updates the DT binding documentation in this respect.
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ drivers/net/ethernet/xilinx/Kconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
-The Xilinx PG138 and PG021 documents (in versions 7.1 in both cases)
-were used for this series.
-
-Please have a look and comment!
-
-Cheers,
-Andre
-
-Andre Przywara (14):
-  net: xilinx: temac: Relax Kconfig dependencies
-  net: axienet: Propagate failure of DMA descriptor setup
-  net: axienet: Fix DMA descriptor cleanup path
-  net: axienet: Improve DMA error handling
-  net: axienet: Factor out TX descriptor chain cleanup
-  net: axienet: Check for DMA mapping errors
-  net: axienet: Fix SGMII support
-  net: axienet: Drop MDIO interrupt registers from ethtools dump
-  net: axienet: Add mii-tool support
-  net: axienet: Wrap DMA pointer writes to prepare for 64 bit
-  net: axienet: Upgrade descriptors to hold 64-bit addresses
-  net: axienet: Autodetect 64-bit DMA capability
-  net: axienet: Allow DMA to beyond 4GB
-  net: axienet: Update devicetree binding documentation
-
- .../bindings/net/xilinx_axienet.txt           |  57 ++-
- drivers/net/ethernet/xilinx/Kconfig           |   1 -
- drivers/net/ethernet/xilinx/xilinx_axienet.h  |  10 +-
- .../net/ethernet/xilinx/xilinx_axienet_main.c | 366 +++++++++++++-----
- 4 files changed, 328 insertions(+), 106 deletions(-)
-
+diff --git a/drivers/net/ethernet/xilinx/Kconfig b/drivers/net/ethernet/xilinx/Kconfig
+index 6304ebd8b5c6..0810af8193cb 100644
+--- a/drivers/net/ethernet/xilinx/Kconfig
++++ b/drivers/net/ethernet/xilinx/Kconfig
+@@ -32,7 +32,6 @@ config XILINX_AXI_EMAC
+ 
+ config XILINX_LL_TEMAC
+ 	tristate "Xilinx LL TEMAC (LocalLink Tri-mode Ethernet MAC) driver"
+-	depends on PPC || MICROBLAZE || X86 || COMPILE_TEST
+ 	select PHYLIB
+ 	---help---
+ 	  This driver supports the Xilinx 10/100/1000 LocalLink TEMAC
 -- 
 2.17.1
 
