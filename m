@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05586136BF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:28:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 241EE136BFB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:31:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aL6xrpJLIjRdwsTg09LKHQeuhIIiqiCu1t3s+g9ztZ8=; b=GBCzULyxtxTQi4Z1D45u7Xk2O
-	C3rYYYGZMIYUycZGvJ6HC5CKIB0uocwx8vGiVxC//nif45ETKV+7wk8Y44UjNyR5TDPGvQkCoqTJG
-	icO9L8SWxuxLAy3esuB3ptKLCVX622TqkAJzeeFB2GUwLKftC8N0IceVpuLIJRymU8a7nhMPkT3rb
-	GZwdxA7YObk1jaaRQsGnwjaa3UuqwsBhGIAWvWhmwbkTzSGpmEMq2pnZJeWDoUrdnVwfmtqPX5gDo
-	NFZmfO+mfwhEUaPFssH6eiqd6ScbInuU/YXAs6J7ArD5MeS05SVHQ8Td2yTlQG87qWd+R3Q2dSeXY
-	x2md9mFYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7L1kmfuRjbC+YOe1idk4MfScbywd7D7R4ZMymg/zmM4=; b=Eb3CRMe92ewcKA
+	1QrjB5wK6jt2PX/pTQLwnMMDGdTgZexYbcvyfd405tAUw87DmWIsxotF7jCiQEX5iyMqiD62VeL5X
+	xka0JKI8i9WqmGKbS6J595oy5i5epbwQznq9Z9am5HCVXLQYy6aNMUnaRgTWOgsSDC+ncfgASKPWv
+	FyWVFJoLuzzL56nqK1/Sco2l/Qb/9tULylTzld/ZonK9E6gd3chRoyuFmBhY+cizZzFuQIk7V+buN
+	z3HrAjhpr5zZ/6EOkF4GCgSOb9I4v5evYH73VCeGTBY/JW/fxVzM7b/AbCl/wXDzVlGjqT5nzVf3Y
+	u6LK7qONXKcpRli9zGxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipsT9-0003be-Tx; Fri, 10 Jan 2020 11:28:47 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipsT0-0003Yh-DN
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 11:28:40 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 22CB5E1CF0C553E95238;
- Fri, 10 Jan 2020 19:28:29 +0800 (CST)
-Received: from [127.0.0.1] (10.133.217.236) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 10 Jan 2020 19:28:18 +0800
-Subject: Re: [RFC PATCH] arm64/ftrace: support dynamically allocated
- trampolines
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200109142736.1122-1-cj.chengjian@huawei.com>
- <20200109164858.GH3112@lakrids.cambridge.arm.com>
-From: "chengjian (D)" <cj.chengjian@huawei.com>
-Message-ID: <b0457ef0-f1b2-e258-b59d-aa9af8e48c5d@huawei.com>
-Date: Fri, 10 Jan 2020 19:28:17 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1ipsVL-0005JO-I4; Fri, 10 Jan 2020 11:31:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipsVC-0005IQ-Px; Fri, 10 Jan 2020 11:30:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 19FED1063;
+ Fri, 10 Jan 2020 03:30:53 -0800 (PST)
+Received: from [10.1.194.52] (e112269-lin.cambridge.arm.com [10.1.194.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4776C3F534;
+ Fri, 10 Jan 2020 03:30:51 -0800 (PST)
+Subject: Re: [PATCH v2 4/7] drm/panfrost: Add support for a second regulator
+ for the GPU
+To: Mark Brown <broonie@kernel.org>
+References: <20200108052337.65916-1-drinkcat@chromium.org>
+ <20200108052337.65916-5-drinkcat@chromium.org>
+ <20200108132302.GA3817@sirena.org.uk>
+ <CANMq1KBo8ND+YDHaCw3yZZ0RUr69-NSUcVbqu38DuZvHUB-LFw@mail.gmail.com>
+ <09ddfac3-da8d-c039-92a0-d0f51dc3fea5@arm.com>
+ <20200109162814.GB3702@sirena.org.uk>
+ <a40baddb-cbab-d8fc-3fd9-0582f1b5b24e@arm.com>
+ <20200109194930.GD3702@sirena.org.uk>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <90993401-6896-bf95-a15a-d99c465ec12a@arm.com>
+Date: Fri, 10 Jan 2020 11:30:49 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <20200109164858.GH3112@lakrids.cambridge.arm.com>
+In-Reply-To: <20200109194930.GD3702@sirena.org.uk>
 Content-Language: en-US
-X-Originating-IP: [10.133.217.236]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_032838_799300_4C23EAA8 
-X-CRM114-Status: GOOD (  28.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200110_033054_931700_19937681 
+X-CRM114-Status: GOOD (  26.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,180 +70,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "chengjian \(D\)" <cj.chengjian@huawei.com>, xiexiuqi@huawei.com,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- bobo.shaobowang@huawei.com, duwe@lst.de, huawei.libin@huawei.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIE1hcmsKCiDCoMKgwqAgVGhhbmtzIGZvciB5b3VyIHJlcGx5LgoKT24gMjAyMC8xLzEwIDA6
-NDgsIE1hcmsgUnV0bGFuZCB3cm90ZToKPiBPbiBUaHUsIEphbiAwOSwgMjAyMCBhdCAwMjoyNzoz
-NlBNICswMDAwLCBDaGVuZyBKaWFuIHdyb3RlOgo+Cj4gSnVzdCBob3cgYmFkIGlzIHRoaXMsIGFu
-ZCB3aGVuL3doZXJlIGRvZXMgaXQgbWF0dGVyPwo+Cj4gSG93IG11Y2ggZG9lcyB0aGlzIHBhdGNo
-IGltcHJvdmUgbWF0dGVycz8KCkkgd2lsbCBoYXZlIGEgdGVzdCBhYm91dCB0aGlzLgoKPj4gS25v
-d24gaXNzdWVzIDoKPj4gSWYga2FzbHIgaXMgZW5hYmxlZCwgdGhlIGFkZHJlc3Mgb2YgdHJhbXAg
-YW5kIGZ0cmFjZSBjYWxsCj4+IG1heSBiZSBmYXIgYXdheS4gVGhlcmVmb3JlLCBsb25nIGp1bXAg
-c3VwcG9ydCBpcyByZXF1aXJlZC4KPj4gSGVyZSBJIGludGVuZCB0byB1c2UgdGhlIHNhbWUgc29s
-dXRpb24gYXMgbW9kdWxlIHJlbG9jYXRpbmcsCj4+IFJlc2VydmUgZW5vdWdoIHNwYWNlIGZvciBQ
-TFQgYXQgdGhlIGVuZCB3aGVuIGFsbG9jYXRpbmcsIGNhbgo+PiB1c2UgUExUIHRvIGNvbXBsZXRl
-IHRoZXNlIGxvbmcganVtcHMuCj4gVGhpcyBjYW4gaGFwcGVuIGJvdGggd2F5czsgdGhlIGNhbGxz
-aXRlIGNhbiBhbHNvIGJlIHRvbyBmYXIgZnJvbSB0aGUKPiB0cmFtcG9saW5lIHRvIGJlIGFibGUg
-dG8gYnJhbmNoIHRvIGl0LgoKClllcywgdGhhdCBjYW4gaGFwcGVuIGJvdGggd2F5cy4KCj4gSSd2
-ZSBoYWQgaXNzdWVzIHdpdGggdGhhdCBmb3Igb3RoZXIgcmVhc29ucywgYW5kIEkgdGhpbmsgdGhh
-dCB3ZSBtaWdodAo+IGJlIGFibGUgdG8gdXNlIC1mcGF0Y2hhYmxlLWZ1bmN0aW9uLWVudHJ5PU4s
-TSB0byBwbGFjZSBhIFBMVCBpbW1lZGlhdGVseQo+IGJlZm9yZSBlYWNoIGZ1bmN0aW9uIGZvciB0
-aGF0LiBIb3dldmVyLCBJJ20gd2FyeSBvZiBkb2luZyBzbyBiZWNhdXNlIGl0Cj4gbWFrZXMgaXQg
-bXVjaCBoYXJkZXIgdG8gbW9kaWZ5IHRoZSBwYXRjaCBzaXRlIGl0c2VsZi4KCgpUaGlzIHNvdW5k
-cyBnb29kLiBJIGhhdmUgbm8gYmV0dGVyIGlkZWEgdGhhbiB0aGlzIG5vdy4KCkF0IGxlYXN0IHRy
-eSBpdCBmaXJzdC4KCgo+Cj4+ICAgCj4+ICtHTE9CQUwoZnRyYWNlX2NvbW1vbl9lbmQpCj4+ICAg
-CXJldAl4OQo+IFRoaXMgZG9lc24ndCBsb29rIHJpZ2h0LiBTdXJlbHkgeW91IHdhbnQgdGhlIFJF
-VCwgdG9vPwoKCkkgd2lsbCBmaXggdGhpcyBlcnJvciwgdGhhbmtzLgoKPiArLyoKPiArICogZnRy
-YWNlX2NhbGxlcigpIG9yIGZ0cmFjZV9yZWdzX2NhbGxlcigpIHRyYW1wb2xpbmUKPiArICoJCQkJ
-Ky0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+ICsgKiBmdHJhY2VfKHJlZ3NfKWNhbGxlciA9Pgl8
-CS4uLi4uLgkJfAo+ICsgKiBmdHJhY2VfKHJlZ3NfKWNhbGxlcl9lbmQgPT4JfCBiIGZ0cmFjZV9j
-b21tb24JfCA9PiBub3AKPiArICoJCQkJKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+ICsgKiBm
-dHJhY2VfY29tbW9uID0+CQl8CS4uLi4uLgkJfAo+ICsgKiBmdW5jdGlvbl90cmFjZV9vcF9wdHIg
-PT4JfCBhZHJwIHgyLCBzeW0JCXwgPT4gbm9wCj4gKyAqCQkJCXwgbGRyICB4MixbeDIsOmxvMTI6
-c3ltXXwgPT4gbGRyIHgyIDxmdHJhY2Vfb3A+Cj4gKyAqCQkJCXwJLi4uLi4uCQl8Cj4gKyAqIGZ0
-cmFjZV9jb21tb25fZW5kICA9Pgl8CXJldHEJCXwKPiBDb3B5LXBhc3RlIGZyb20geDg2PyBhcm02
-NCBkb2Vzbid0IGhhdmUgYSByZXRxIGluc3RydWN0aW9uLgo+Cj4+ICsgKgkJCQkrLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0rCj4+ICsgKiBmdHJhY2Vfb3B0ID0+CQl8CWZ0cmFjZV9vcHQJfAo+PiAr
-ICoJCQkJKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+IFR5cG86IHMvb3B0L29wcy8gPwoKU29y
-cnkgZm9yIHRoZXNlIHNjZW5lcy4KCgo+PiArICovCj4+ICtzdGF0aWMgdW5zaWduZWQgbG9uZyBj
-cmVhdGVfdHJhbXBvbGluZShzdHJ1Y3QgZnRyYWNlX29wcyAqb3BzLCB1bnNpZ25lZCBpbnQgKnRy
-YW1wX3NpemUpCj4+ICt7Cj4+ICsJdW5zaWduZWQgbG9uZyBzdGFydF9vZmZzZXRfY2FsbGVyLCBl
-bmRfb2Zmc2V0X2NhbGxlciwgY2FsbGVyX3NpemU7Cj4+ICsJdW5zaWduZWQgbG9uZyBzdGFydF9v
-ZmZzZXRfY29tbW9uLCBlbmRfb2Zmc2V0X2NvbW1vbiwgY29tbW9uX3NpemU7Cj4+ICsJdW5zaWdu
-ZWQgbG9uZyBvcF9vZmZzZXQsIG9mZnNldCwgc2l6ZSwgaXAsIG5wYWdlczsKPj4gKwl2b2lkICp0
-cmFtcG9saW5lOwo+PiArCXVuc2lnbmVkIGxvbmcgKnB0cjsKPj4gKwkvKiBsZHIgeDIsIDxsYWJl
-bD4gKi8KPj4gKwl1MzIgcGNfbGRyID0gMHg1ODAwMDAwMjsKPj4gKwl1MzIgbWFzayA9IEJJVCgx
-OSkgLSAxOwo+IEluc3RlYWQgb2Ygb3Blbi1jb2RpbmcgdGhpcywgcGxlYXNlIHRlYWNoIHRoZSBp
-bnNuIGZyYW1ld29yayBob3cgdG8KPiBlbmNvZGUgTERSIChpbW1lZGlhdGUpLgoKCkkgd2lsbCwg
-VGhhbmsgeW91LgoKPgo+PiArCWludCBzaGlmdCA9IDU7Cj4+ICsJaW50IHJldDsKPj4gKwl1MzIg
-bm9wOwo+PiArCj4+ICsJaWYgKG9wcy0+ZmxhZ3MgJiBGVFJBQ0VfT1BTX0ZMX1NBVkVfUkVHUykg
-ewo+PiArCQlzdGFydF9vZmZzZXRfY2FsbGVyID0gKHVuc2lnbmVkIGxvbmcpZnRyYWNlX3JlZ3Nf
-Y2FsbGVyOwo+PiArCQllbmRfb2Zmc2V0X2NhbGxlciA9ICh1bnNpZ25lZCBsb25nKWZ0cmFjZV9y
-ZWdzX2NhbGxlcl9lbmQ7Cj4+ICsJfSBlbHNlIHsKPj4gKwkJc3RhcnRfb2Zmc2V0X2NhbGxlciA9
-ICh1bnNpZ25lZCBsb25nKWZ0cmFjZV9jYWxsZXI7Cj4+ICsJCWVuZF9vZmZzZXRfY2FsbGVyID0g
-KHVuc2lnbmVkIGxvbmcpZnRyYWNlX2NhbGxlcl9lbmQ7Cj4+ICsJfQo+PiArCXN0YXJ0X29mZnNl
-dF9jb21tb24gPSAodW5zaWduZWQgbG9uZylmdHJhY2VfY29tbW9uOwo+PiArCWVuZF9vZmZzZXRf
-Y29tbW9uID0gKHVuc2lnbmVkIGxvbmcpZnRyYWNlX2NvbW1vbl9lbmQ7Cj4+ICsKPj4gKwlvcF9v
-ZmZzZXQgPSAodW5zaWduZWQgbG9uZylmdW5jdGlvbl90cmFjZV9vcF9wdHI7Cj4+ICsKPj4gKwkv
-Kgo+PiArCSAqIE1lcmdlIGZ0cmFjZV9jYWxsZXIvZnRyYWNlX3JlZ3NfY2FsbGVyIGFuZCBmdHJh
-Y2VfY29tbW9uCj4+ICsJICogdG8gb25lIGZ1bmN0aW9uIGluIGZ0cmFjZSB0cmFtcG9saW5lLgo+
-PiArCSAqLwo+PiArCWNhbGxlcl9zaXplID0gZW5kX29mZnNldF9jYWxsZXIgLSBzdGFydF9vZmZz
-ZXRfY2FsbGVyICsgQUFSQ0g2NF9JTlNOX1NJWkU7Cj4+ICsJY29tbW9uX3NpemUgPSBlbmRfb2Zm
-c2V0X2NvbW1vbiAtIHN0YXJ0X29mZnNldF9jb21tb24gKyBBQVJDSDY0X0lOU05fU0laRTsKPj4g
-KwlzaXplID0gY2FsbGVyX3NpemUgKyBjb21tb25fc2l6ZTsKPj4gKwo+PiArCXRyYW1wb2xpbmUg
-PSBhbGxvY190cmFtcChjYWxsZXJfc2l6ZSArIGNvbW1vbl9zaXplICsgc2l6ZW9mKHZvaWQgKikp
-Owo+PiArCWlmICghdHJhbXBvbGluZSkKPj4gKwkJcmV0dXJuIDA7Cj4+ICsKPj4gKwkqdHJhbXBf
-c2l6ZSA9IGNhbGxlcl9zaXplICsgY29tbW9uX3NpemUgKyBzaXplb2Yodm9pZCAqKTsKPj4gKwlu
-cGFnZXMgPSBESVZfUk9VTkRfVVAoKnRyYW1wX3NpemUsIFBBR0VfU0laRSk7Cj4+ICsKPj4gKwkv
-KiBDb3B5IGZ0cmFjZV9jYWxsZXIvZnRyYWNlX3JlZ3NfY2FsbGVyIG9udG8gdGhlIHRyYW1wb2xp
-bmUgbWVtb3J5ICovCj4+ICsJcmV0ID0gcHJvYmVfa2VybmVsX3JlYWQodHJhbXBvbGluZSwgKHZv
-aWQgKilzdGFydF9vZmZzZXRfY2FsbGVyLCBjYWxsZXJfc2l6ZSk7Cj4+ICsJaWYgKFdBUk5fT04o
-cmV0IDwgMCkpCj4+ICsJCWdvdG8gZnJlZTsKPj4gKwo+PiArCS8qCj4+ICsJICogQ29weSBmdHJh
-Y2VfY29tbW9uIHRvIHRoZSB0cmFtcG9saW5lIG1lbW9yeQo+PiArCSAqIGJlbG93IGZ0cmFjZV9j
-YWxsZXIvZnRyYWNlX3JlZ3NfY2FsbGVyLiBzbwo+PiArCSAqIHdlIGNhbiBtZXJnZSB0aGUgdHdv
-IGZ1bmN0aW9uIHRvIG9uZSBmdW5jdGlvbi4KPj4gKwkgKi8KPj4gKwlyZXQgPSBwcm9iZV9rZXJu
-ZWxfcmVhZCh0cmFtcG9saW5lICsgY2FsbGVyX3NpemUsICh2b2lkICopc3RhcnRfb2Zmc2V0X2Nv
-bW1vbiwgY29tbW9uX3NpemUpOwo+PiArCWlmIChXQVJOX09OKHJldCA8IDApKQo+PiArCQlnb3Rv
-IGZyZWU7Cj4+ICsKPj4gKwkvKgo+PiArCSAqIFdlIG1lcmdlIHRoZSB0d28gZnVuY3Rpb25zIHRv
-IG9uZSBmdW5jdGlvbiwgc28gdGhlc2UgaXMKPj4gKwkgKiBubyBuZWVkIHRvIHVzZSBqdW1wIGlu
-c3RydWN0aW9ucyB0byBmdHJhY2VfY29tbW9uLCBtb2RpZnkKPj4gKwkgKiBpdCB0byBOT1AuCj4+
-ICsJICovCj4+ICsJaXAgPSAodW5zaWduZWQgbG9uZyl0cmFtcG9saW5lICsgY2FsbGVyX3NpemUg
-LSBBQVJDSDY0X0lOU05fU0laRTsKPj4gKwlub3AgPSBhYXJjaDY0X2luc25fZ2VuX25vcCgpOwo+
-PiArCW1lbWNweSgodm9pZCAqKWlwLCAmbm9wLCBBQVJDSDY0X0lOU05fU0laRSk7Cj4+ICsKPj4g
-KwkvKgo+PiArCSAqIFN0b3JlZCBmdHJhY2Vfb3BzIGF0IHRoZSBlbmQgb2YgdGhlIHRyYW1wb2xp
-bmUuCj4+ICsJICogVGhpcyB3aWxsIGJlIHVzZWQgdG8gbG9hZCB0aGUgdGhpcmQgcGFyYW1ldGVy
-IGZvciB0aGUgY2FsbGJhY2suCj4+ICsJICogQmFzaWNhbGx5LCB0aGF0IGxvY2F0aW9uIGF0IHRo
-ZSBlbmQgb2YgdGhlIHRyYW1wb2xpbmUgdGFrZXMgdGhlCj4+ICsJICogcGxhY2Ugb2YgdGhlIGds
-b2JhbCBmdW5jdGlvbl90cmFjZV9vcCB2YXJpYWJsZS4KPj4gKwkgKi8KPj4gKwlwdHIgPSAodW5z
-aWduZWQgbG9uZyAqKSh0cmFtcG9saW5lICsgc2l6ZSk7Cj4+ICsJKnB0ciA9ICh1bnNpZ25lZCBs
-b25nKW9wczsKPj4gKwo+PiArCS8qCj4+ICsJICogVXBkYXRlIHRoZSB0cmFtcG9saW5lIG9wcyBS
-RUYKPj4gKwkgKgo+PiArCSAqIE9MRCBJTlNOUyA6IGxkcl9sIHgyLCBmdW5jdGlvbl90cmFjZV9v
-cAo+PiArCSAqCWFkcnAJeDIsIHN5bQo+PiArCSAqCWxkcgl4MiwgW3gyLCA6bG8xMjpcc3ltXQo+
-PiArCSAqCj4+ICsJICogTkVXIElOU05TOgo+PiArCSAqCW5vcAo+PiArCSAqCWxkciB4MiwgPGZ0
-cmFjZV9vcHM+Cj4+ICsJICovCj4+ICsJb3Bfb2Zmc2V0IC09IHN0YXJ0X29mZnNldF9jb21tb247
-Cj4+ICsJaXAgPSAodW5zaWduZWQgbG9uZyl0cmFtcG9saW5lICsgY2FsbGVyX3NpemUgKyBvcF9v
-ZmZzZXQ7Cj4+ICsJbm9wID0gYWFyY2g2NF9pbnNuX2dlbl9ub3AoKTsKPj4gKwltZW1jcHkoKHZv
-aWQgKilpcCwgJm5vcCwgQUFSQ0g2NF9JTlNOX1NJWkUpOwo+PiArCj4+ICsJb3Bfb2Zmc2V0ICs9
-IEFBUkNINjRfSU5TTl9TSVpFOwo+PiArCWlwID0gKHVuc2lnbmVkIGxvbmcpdHJhbXBvbGluZSAr
-IGNhbGxlcl9zaXplICsgb3Bfb2Zmc2V0Owo+PiArCW9mZnNldCA9ICh1bnNpZ25lZCBsb25nKXB0
-ciAtIGlwOwo+PiArCWlmIChXQVJOX09OKG9mZnNldCAlIEFBUkNINjRfSU5TTl9TSVpFICE9IDAp
-KQo+PiArCQlnb3RvIGZyZWU7Cj4+ICsJb2Zmc2V0ID0gb2Zmc2V0IC8gQUFSQ0g2NF9JTlNOX1NJ
-WkU7Cj4+ICsJcGNfbGRyIHw9IChvZmZzZXQgJiBtYXNrKSA8PCBzaGlmdDsKPj4gKwltZW1jcHko
-KHZvaWQgKilpcCwgJnBjX2xkciwgQUFSQ0g2NF9JTlNOX1NJWkUpOwo+IEkgdGhpbmsgaXQgd291
-bGQgYmUgbXVjaCBiZXR0ZXIgdG8gaGF2ZSBhIHNlcGFyYXRlIHRlbXBsYXRlIGZvciB0aGUKPiB0
-cmFtcG9saW5lIHdoaWNoIHdlIGRvbid0IGhhdmUgdG8gcGF0Y2ggaW4gdGhpcyB3YXkuIEl0IGNh
-biBldmVuIGJlCj4gcGxhY2VkIGludG8gYSBub24tZXhlY3V0YWJsZSBSTyBzZWN0aW9uLCBzaW5j
-ZSB0aGUgdGVtcGxhdGUgc2hvdWxkbid0IGJlCj4gZXhlY3V0ZWQgZGlyZWN0bHkuCgoKQSBzZXBh
-cmF0ZSB0ZW1wbGF0ZSAhCgpUaGlzIG1heSBiZSBhIGdvb2Qgd2F5LCBhbmQgSSB0aGluayB0aGUg
-cGF0Y2hpbmcgaGVyZSBpcyB2ZXJ5IEhBQ0sgCnRvbyhOb3QgdmVyeSBmcmllbmRseSkuCgpJIGhh
-ZCB0aG91Z2h0IG9mIG90aGVyIHdheXMgYmVmb3JlLCBzaW1pbGFyIHRvIHRoZSBtZXRob2Qgb24g
-WDg2XzY0LCByZW1vdmUKdGhlIGZ0cmFjZV9jb21tb24oKSwgZGlyZWN0bHkgbW9kaWZ5aW5nIGZ0
-cmFjZV9jYWxsZXIvZnRyYWNlX3JlZ19jYWxsZXIsIApXZSB3aWxsCgpvbmx5IG5lZWQgdG8gY29w
-eSB0aGUgY29kZSBvbmNlIGluIHRoaXMgd2F5LCBhbmQgdGhlc2UgaXMgbm8gbmVlZCB0byBtb2Rp
-ZnkKCmNhbGwgZnRyYWNlX2NvbW1vbiB0byBOT1AuCgoKVXNpbmcgYSB0cmFtcG9saW5lIHRlbXBs
-YXRlIHNvdW5kcyBncmVhdC4gYnV0IHRoaXMgYWxzbyBtZWFucyB0aGF0IHdlIApuZWVkIHRvCgpt
-YWludGFpbiBhIHRlbXBsYXRlKG9yIG1heWJlIHR3byB0ZW1wbGF0ZXM6IG9uZSBmb3IgY2FsbGVy
-LCBhbm90aGVyIGZvciAKcmVnc19jYWxsZXIpLgoKSGksIE1hcmssIHdoYXQgZG8geW91IHRoaW5r
-IGFib3V0IGl0ID8KCgo+PiArCj4+ICsJb3BzLT5mbGFncyB8PSBGVFJBQ0VfT1BTX0ZMX0FMTE9D
-X1RSQU1QOwo+PiArCj4+ICsJc2V0X3ZtX2ZsdXNoX3Jlc2V0X3Blcm1zKHRyYW1wb2xpbmUpOwo+
-PiArCj4+ICsJLyoKPj4gKwkgKiBNb2R1bGUgYWxsb2NhdGlvbiBuZWVkcyB0byBiZSBjb21wbGV0
-ZWQgYnkgbWFraW5nIHRoZSBwYWdlCj4+ICsJICogZXhlY3V0YWJsZS4gVGhlIHBhZ2UgaXMgc3Rp
-bGwgd3JpdGFibGUsIHdoaWNoIGlzIGEgc2VjdXJpdHkgaGF6YXJkLAo+PiArCSAqIGJ1dCBhbnlo
-b3cgZnRyYWNlIGJyZWFrcyBXXlggY29tcGxldGVseS4KPj4gKwkgKi8KPj4gKwlzZXRfbWVtb3J5
-X3goKHVuc2lnbmVkIGxvbmcpdHJhbXBvbGluZSwgbnBhZ2VzKTsKPiBXaHkgaXMgdGhlIHBhZ2Ug
-c3RpbGwgd3JpdGVhYmxlPyBTdXJlbHkgeW91IGNhbiBtYWtlIGl0IFJPIGZpcnN0Pwo+Cj4gUGxl
-YXNlIGRvIG5vdCBicmVhayBXXlggcmVzdHJpY3Rpb25zOyB3ZSd2ZSB0cmllZCB0byBlbnN1cmUg
-dGhhdCBhcm02NAo+IGRvZXMgdGhlIHJpZ2h0IHRoaW5nIGJ5IGRlZmF1bHQgaGVyZS4KPgo+IE5v
-dGUgdGhhdCBhcm02NCdzIGZ0cmFjZV9tb2RpZnlfY29kZSgpIHdpbGwgdXNlIGEgd3JpdGVhYmxl
-IGFsaWFzLCBzbyBpdAo+IGNhbiBiZSB1c2VkIGFmdGVyIHRoZSBtZW1vcnkgaGFzIGJlZW4gbWFy
-a2VkIFJPLgoKWUVBSCwgSSB3aWxsLiBhcm02NCdzIGZ0cmFjZV9tb2RpZnlfY29kZSBjYW4gd29y
-ayBhZnRlciB0aGUgdHJhbXBvbGluZSBoYXMKYmVlbiBtYXJrZWQgUk8uCgo+PiArCj4+ICsJcmV0
-dXJuICh1bnNpZ25lZCBsb25nKXRyYW1wb2xpbmU7Cj4+ICsKPj4gK2ZyZWU6Cj4+ICsJdHJhbXBf
-ZnJlZSh0cmFtcG9saW5lKTsKPj4gKwlyZXR1cm4gMDsKPj4gK30KPj4gKwo+PiArc3RhdGljIHVu
-c2lnbmVkIGxvbmcgY2FsY190cmFtcG9saW5lX2NhbGxfb2Zmc2V0KHN0cnVjdCBmdHJhY2Vfb3Bz
-ICpvcHMpCj4+ICt7Cj4+ICsJdW5zaWduZWQgY2FsbF9vZmZzZXQsIGVuZF9vZmZzZXQsIG9mZnNl
-dDsKPj4gKwo+PiArCWNhbGxfb2Zmc2V0ID0gKHVuc2lnbmVkIGxvbmcpJmZ0cmFjZV9jYWxsOwo+
-PiArCWVuZF9vZmZzZXQgPSAodW5zaWduZWQgbG9uZylmdHJhY2VfY29tbW9uX2VuZDsKPj4gKwlv
-ZmZzZXQgPSBlbmRfb2Zmc2V0IC0gY2FsbF9vZmZzZXQ7Cj4+ICsKPj4gKwlyZXR1cm4gb3BzLT50
-cmFtcG9saW5lX3NpemUgLSBBQVJDSDY0X0lOU05fU0laRSAtIHNpemVvZih2b2lkICopIC0gb2Zm
-c2V0Owo+PiArfQo+PiArCj4+ICtzdGF0aWMgaW50IGZ0cmFjZV90cmFtcG9saW5lX21vZGlmeV9j
-YWxsKHN0cnVjdCBmdHJhY2Vfb3BzICpvcHMpCj4+ICt7Cj4+ICsJdW5zaWduZWQgbG9uZyBvZmZz
-ZXQ7Cj4+ICsJdW5zaWduZWQgbG9uZyBwYzsKPj4gKwlmdHJhY2VfZnVuY190IGZ1bmM7Cj4+ICsJ
-dTMyIG5ldzsKPj4gKwo+PiArCW9mZnNldCA9IGNhbGNfdHJhbXBvbGluZV9jYWxsX29mZnNldChv
-cHMpOwo+PiArCXBjID0gb3BzLT50cmFtcG9saW5lICsgb2Zmc2V0Owo+PiArCj4+ICsJZnVuYyA9
-IGZ0cmFjZV9vcHNfZ2V0X2Z1bmMob3BzKTsKPj4gKwluZXcgPSBhYXJjaDY0X2luc25fZ2VuX2Jy
-YW5jaF9pbW0ocGMsICh1bnNpZ25lZCBsb25nKWZ1bmMsIEFBUkNINjRfSU5TTl9CUkFOQ0hfTElO
-Syk7Cj4+ICsKPj4gKwlyZXR1cm4gZnRyYWNlX21vZGlmeV9jb2RlKHBjLCAwLCBuZXcsIGZhbHNl
-KTsKPj4gK30KPj4gKwo+PiArI2lmZGVmIENPTkZJR19GVU5DVElPTl9HUkFQSF9UUkFDRVIKPj4g
-Kwo+PiArc3RhdGljIHVuc2lnbmVkIGxvbmcgY2FsY190cmFtcG9saW5lX2dyYXBoX2NhbGxfb2Zm
-c2V0KHN0cnVjdCBmdHJhY2Vfb3BzICpvcHMpCj4+ICt7Cj4+ICsJdW5zaWduZWQgZW5kX29mZnNl
-dCwgY2FsbF9vZmZzZXQsIG9mZnNldDsKPj4gKwo+PiArCWNhbGxfb2Zmc2V0ID0gKHVuc2lnbmVk
-IGxvbmcpJmZ0cmFjZV9ncmFwaF9jYWxsOwo+PiArCWVuZF9vZmZzZXQgPSAodW5zaWduZWQgbG9u
-ZylmdHJhY2VfY29tbW9uX2VuZDsKPj4gKwlvZmZzZXQgPSBlbmRfb2Zmc2V0IC0gY2FsbF9vZmZz
-ZXQ7Cj4+ICsKPj4gKwlyZXR1cm4gb3BzLT50cmFtcG9saW5lX3NpemUgLSBBQVJDSDY0X0lOU05f
-U0laRSAtIHNpemVvZih2b2lkICopIC0gb2Zmc2V0Owo+PiArfQo+PiArCj4+ICtleHRlcm4gaW50
-IGZ0cmFjZV9ncmFwaF9hY3RpdmU7Cj4+ICtzdGF0aWMgaW50IGZ0cmFjZV90cmFtcG9saW5lX21v
-ZGlmeV9ncmFwaF9jYWxsKHN0cnVjdCBmdHJhY2Vfb3BzICpvcHMpCj4+ICt7Cj4+ICsJdW5zaWdu
-ZWQgbG9uZyBvZmZzZXQ7Cj4+ICsJdW5zaWduZWQgbG9uZyBwYzsKPj4gKwl1MzIgYnJhbmNoLCBu
-b3A7Cj4+ICsKPj4gKwlvZmZzZXQgPSBjYWxjX3RyYW1wb2xpbmVfZ3JhcGhfY2FsbF9vZmZzZXQo
-b3BzKTsKPj4gKwlwYyA9IG9wcy0+dHJhbXBvbGluZSArIG9mZnNldDsKPj4gKwo+PiArCWJyYW5j
-aCA9IGFhcmNoNjRfaW5zbl9nZW5fYnJhbmNoX2ltbShwYywKPj4gKwkJCQkJICAgICAodW5zaWdu
-ZWQgbG9uZylmdHJhY2VfZ3JhcGhfY2FsbGVyLAo+PiArCQkJCQkgICAgIEFBUkNINjRfSU5TTl9C
-UkFOQ0hfTk9MSU5LKTsKPj4gKwlub3AgPSBhYXJjaDY0X2luc25fZ2VuX25vcCgpOwo+PiArCj4+
-ICsJaWYgKGZ0cmFjZV9ncmFwaF9hY3RpdmUpCj4+ICsJCXJldHVybiBmdHJhY2VfbW9kaWZ5X2Nv
-ZGUocGMsIDAsIGJyYW5jaCwgZmFsc2UpOwo+PiArCWVsc2UKPj4gKwkJcmV0dXJuIGZ0cmFjZV9t
-b2RpZnlfY29kZShwYywgMCwgbm9wLCBmYWxzZSk7Cj4+ICt9Cj4gSXQgc2hvdWxkIGJlIHBvc2Jp
-bGUgdG8gc2hhcmUgdGhlIGJ1bGsgb2YgdGhpcyBjb2RlIHdpdGggdGhlIG5vbi1ncmFwaAo+IHZl
-cnNpb25zLgoKSXQgc2VlbXMgdGhhdCwgSSB3aWxsIGNsZWFudXAgbXkgY29kZS4KCgo+Cj4gVGhh
-bmtzLAo+IE1hcmsuCj4KPiAuCgoKVGhhbmsgeW91IHZlcnkgbXVjaC4KCi0tIENoZW5nIEppYW4u
-CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On 09/01/2020 19:49, Mark Brown wrote:
+> On Thu, Jan 09, 2020 at 04:53:02PM +0000, Steven Price wrote:
+>> On 09/01/2020 16:28, Mark Brown wrote:
+>>> On Thu, Jan 09, 2020 at 02:14:42PM +0000, Steven Price wrote:
+> 
+>>>> I'm not sure if it's better, but could we just encode the list of
+>>>> regulators into device tree. I'm a bit worried about special casing an
+>>>> "sram" regulator given that other platforms might have a similar
+>>>> situation but call the second regulator a different name.
+> 
+>>> Obviously the list of regulators bound on a given platform is encoded in
+>>> the device tree but you shouldn't really be relying on that to figure
+>>> out what to request in the driver - the driver should know what it's
+>>> expecting.
+> 
+>> From a driver perspective we don't expect to have to worry about power
+>> domains/multiple regulators - the hardware provides a bunch of power
+>> registers to turn on/off various parts of the hardware and this should be
+>> linked (in hardware) to a PDC which sorts it out. The GPU/PDC handles the
+>> required sequencing. So it *should* be a case of turn power/clocks on and
+>> go.
+> 
+> Ah, the well abstracted and consistent hardware with which we are all so
+> fortunate to work :) .  More seriously perhaps the thing to do here is
+> create a driver that provides a soft PDC and then push all the special
+> case handling into that?  It can then get instantiated based on the
+> compatible or perhaps represented directly in the device tree if that
+> makes sense.
+
+That makes sense to me.
+
+>> However certain integrations may have quirks such that there are physically
+>> multiple supplies. These are expected to all be turned on before using the
+>> GPU. Quite how this is best represented is something I'm not sure about.
+> 
+> If they're always on and don't ever change then that's really easy to
+> represent in the DT without involving drivers, it's when you need to
+> actively manage them that it's more effort.
+
+Sorry, I should have been more clear. They are managed as a group - so
+either the entire GPU is powered off, or powered on. There's no support
+in Panfrost or mali_kbase for attempting to power part of the GPU.
+
+>>> Bear in mind that getting regulator stuff wrong can result
+>>> in physical damage to the system so it pays to be careful and to
+>>> consider that platform integrators have a tendency to rely on things
+>>> that just happen to work but aren't a good idea or accurate
+>>> representations of the system.  It's certainly *possible* to do
+>>> something like that, the information is there, but I would not in any
+>>> way recommend doing things that way as it's likely to not be robust.
+> 
+>>> The possibility that the regulator setup may vary on other platforms
+>>> (which I'd expect TBH) does suggest that just requesting a bunch of
+>>> supply names optionally and hoping that we got all the ones that are
+>>> important on a given platform is going to lead to trouble down the line.
+> 
+>> Certainly if we miss a regulator the GPU isn't going to work properly (some
+>> cores won't be able to power up successfully). However at the moment the
+>> driver will happily do this if someone provides it with a DT which includes
+>> regulators that it doesn't know about. So I'm not sure how adding special
+>> case code for a SoC would help here.
+> 
+> I thought this SoC neeed to vary the voltage on both rails as part of
+> the power management?  Things like that can lead to hardware damage if
+> we go out of spec far enough for long enough - there can be requirements
+> like keeping one rail a certain voltage above another or whatever.
+
+Yes, you are correct. My concern is that a DT which specifies a new
+regulator (e.g. "sram2") would be accepted by an old kernel (because it
+wouldn't know to look for the new regulator) but wouldn't know to
+control the regulator. It could then create a situation which puts the
+board out of spec - potentially in a damaging way. Hence I'd like to
+express the regulator structure in such a way that old kernels wouldn't
+"half-work". Your "soft-PDC" approach would seem to fit that requirement.
+
+Steve
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
