@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25DC513714F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:32:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6033B13715D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:34:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FsICC8WodzGzJ4VupasabIOiRYCbIRtorr4ibG9uCH8=; b=f5Hu3n3Yth2jTH
-	GqubIwUVaPOgDC3sTIS7vZ3uQfZkErkBTWTJKmVqVEoLFT5Lzxd8fRL1PgnqK+UUXzpud+gt/2Q5M
-	ISdnxDnKLXWpFVSsGenIp7vuJgLOsgg67u4uI8XrHsKqEkmFcQogH2mUpDQzPeP39TlzNF05lqCIr
-	R2U8YXRR0S8R4z5EvCl0Ht5bmE6MWZuZlUpPG/ZIfEm5XynVFP2OieY6bXgHfzT6RuaBdNwYrDIEr
-	xG+3FH29QEnAUd6zI5byU7/W2PJXQW/qnaCfPkcWf59bkRNgng0qc/DIyhc594YaYSbRu4BIs/hvy
-	U7MTEpNWoJo5CVpciZVg==;
+	List-Owner; bh=2XFf5tlfXtzBGdIO1rIqMvvnoGitKfX5AMnYCGEH63o=; b=G+vtk3trzhkWCI
+	zpgOyIq2I1TmY4kFUa0bihYFTsMavSggE6oX0D7t2HMek+ozPJNbm5BnCIHvaBj6Em2a1Tzapav1P
+	btrS8lUaV05yqN5Fmkx37LoNbXWNRU132jEQjf2hAeGjo81FVEhX7HTXBFAb4X/U15IfYPDHpcK/C
+	c+QiIZ1i2XSolBaWkvPhNTrzZt3y+vLFm1oN/Gyua2BhouzQTL6BrIcQV+hdXydGM8BrnmpYz5Wnm
+	F1TxACIYpGwkVyiZ+zOq7eTU6CM8FFKEoteBLNScyWRk1fT/neh2z39OMggyHEpRsmLzDBM9TkRoi
+	FAfePdmeWeffX8TkpDSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipwGU-0004kV-IK; Fri, 10 Jan 2020 15:31:58 +0000
+	id 1ipwIZ-0005ST-9B; Fri, 10 Jan 2020 15:34:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipwEr-0003Zq-Ps
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:30:22 +0000
+ id 1ipwIP-0005Rt-BH
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:33:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A40C830E;
- Fri, 10 Jan 2020 07:30:16 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1AEBC3F6C4; Fri, 10 Jan 2020 07:30:16 -0800 (PST)
-Date: Fri, 10 Jan 2020 15:30:14 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 2/2] arm64: Move the LSE gas support detection to Kconfig
-Message-ID: <20200110153013.GH8786@arrakis.emea.arm.com>
-References: <20200109174948.48211-1-catalin.marinas@arm.com>
- <20200109174948.48211-3-catalin.marinas@arm.com>
- <fb5f92cd-8f67-911d-8849-177689702bb9@arm.com>
- <20200110120826.GC10066@willie-the-truck>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D7BC30E;
+ Fri, 10 Jan 2020 07:33:56 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268623F6C4;
+ Fri, 10 Jan 2020 07:33:54 -0800 (PST)
+Date: Fri, 10 Jan 2020 15:33:47 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+Message-ID: <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
+References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
+ <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
+ <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200110120826.GC10066@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_073017_911996_C2A9ADDE 
-X-CRM114-Status: GOOD (  16.83  )
+X-CRM114-CacheID: sfid-20200110_073357_433904_24DE8DE3 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,81 +66,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vladimir Murzin <vladimir.murzin@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
+ "arnd@arndb.de" <arnd@arndb.de>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "bhelgaas@google.com" <bhelgaas@google.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Olof Johansson <olof@lixom.net>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 12:08:26PM +0000, Will Deacon wrote:
-> On Fri, Jan 10, 2020 at 11:54:38AM +0000, Vladimir Murzin wrote:
-> > On 1/9/20 5:49 PM, Catalin Marinas wrote:
-> > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > > index 04cf64e9f0c9..2595c2886d3f 100644
-> > > --- a/arch/arm64/kernel/cpufeature.c
-> > > +++ b/arch/arm64/kernel/cpufeature.c
-> > > @@ -1291,7 +1291,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
-> > >  		.cpu_enable = cpu_enable_pan,
-> > >  	},
-> > >  #endif /* CONFIG_ARM64_PAN */
-> > > -#if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
-> > > +#ifdef CONFIG_ARM64_LSE_ATOMICS
-> > >  	{
-> > >  		.desc = "LSE atomic instructions",
-> > >  		.capability = ARM64_HAS_LSE_ATOMICS,
-> > > @@ -1302,7 +1302,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
-> > >  		.sign = FTR_UNSIGNED,
-> > >  		.min_field_value = 2,
-> > >  	},
-> > > -#endif /* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
-> > > +#endif /* CONFIG_ARM64_LSE_ATOMICS */
-> > >  	{
-> > >  		.desc = "Software prefetching using PRFM",
-> > >  		.capability = ARM64_HAS_NO_HW_PREFETCH,
-> > > 
-> > 
-> > I was not lucky with the similar patch [1], anyway
-> > 
-> > Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
-> > 
-> > 
-> > [1] https://www.spinics.net/lists/linux-crypto/msg36059.html
-> 
-> It's the loss of the warning that I object to, since I think it's a useful
-> diagnostic to have. Is there some way we can keep that, but using the new
-> kbuild logic?
-
-With the kbuild logic, you can't select CONFIG_ARM64_LSE_ATOMICS because
-CONFIG_AS_HAS_LSE is n (when gas doesn't support LSE). I consider this a
-good indication to the user trying to enable it without the need for a
-warning.
-
-The alternative is to let the user state their preference with a config
-option without any dependencies:
-
-config ARM64_WANT_LSE_ATOMICS
-	bool "..."
-	depends on JUMP_LABEL
-	default y
-
-config ARM64_LSE_ATOMICS
-	def_bool CONFIG_ARM64_WANT_LSE_ATOMICS
-	depends on CONFIG_AS_HAS_LSE
-
-and in the Makefile, warn if CONFIG_ARM64_WANT_LSE_ATOMICS &&
-!CONFIG_ARM64_LSE_ATOMICS.
-
-You can even get the warning directly from kbuild if you select
-ARM64_LSE_ATOMICS from ARM64_WANT_* (unmet dependency).
-
-I personally don't think it's worth the hassle. We don't warn if the
-compiler doesn't support jump labels, why would we do this for LSE.
-
--- 
-Catalin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBEZWMgMTcsIDIwMTkgYXQgMDI6NTA6MTVBTSArMDAwMCwgWi5xLiBIb3Ugd3JvdGU6
+Cj4gSGkgTG9yZW56bywKPiAKPiBUaGUgdjkgcGF0Y2hlcyBoYXZlIGFkZHJlc3NlZCB0aGUgY29t
+bWVudHMgZnJvbSBBbmRyZXcsIGFuZCBpdCBoYXMKPiBiZWVuIGRyaWVkIGFib3V0IDEgbW9udGgs
+IGNhbiB5b3UgaGVscCB0byBhcHBseSB0aGVtPwoKV2Ugc2hhbGwgaGF2ZSBhIGxvb2sgYmVnaW5u
+aW5nIG9mIG5leHQgd2Vlaywgc29ycnkgZm9yIHRoZSBkZWxheQppbiBnZXR0aW5nIGJhY2sgdG8g
+eW91LgoKTG9yZW56bwoKPiBUaGFua3MsCj4gWmhpcWlhbmcKPiAKPiA+IC0tLS0tT3JpZ2luYWwg
+TWVzc2FnZS0tLS0tCj4gPiBGcm9tOiBPbG9mIEpvaGFuc3NvbiA8b2xvZkBsaXhvbS5uZXQ+Cj4g
+PiBTZW50OiAyMDE55bm0MTLmnIgxNOaXpSAyOjM3Cj4gPiBUbzogWi5xLiBIb3UgPHpoaXFpYW5n
+LmhvdUBueHAuY29tPjsgYmhlbGdhYXNAZ29vZ2xlLmNvbQo+ID4gQ2M6IGxpbnV4LXBjaUB2Z2Vy
+Lmtlcm5lbC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsKPiA+IGRl
+dmljZXRyZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOwo+
+ID4gcm9iaCtkdEBrZXJuZWwub3JnOyBhcm5kQGFybmRiLmRlOyBtYXJrLnJ1dGxhbmRAYXJtLmNv
+bTsKPiA+IGwuc3VicmFobWFueWFAbW9iaXZlaWwuY28uaW47IHNoYXduZ3VvQGtlcm5lbC5vcmc7
+Cj4gPiBtLmthcnRoaWtleWFuQG1vYml2ZWlsLmNvLmluOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhw
+LmNvbT47Cj4gPiBsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tOyBjYXRhbGluLm1hcmluYXNAYXJt
+LmNvbTsKPiA+IHdpbGwuZGVhY29uQGFybS5jb207IGFuZHJldy5tdXJyYXlAYXJtLmNvbTsgTWlu
+Z2thaSBIdQo+ID4gPG1pbmdrYWkuaHVAbnhwLmNvbT47IE0uaC4gTGlhbiA8bWluZ2h1YW4ubGlh
+bkBueHAuY29tPjsgWGlhb3dlaSBCYW8KPiA+IDx4aWFvd2VpLmJhb0BueHAuY29tPgo+ID4gU3Vi
+amVjdDogUmU6IFtQQVRDSHY5IDAwLzEyXSBQQ0k6IFJlY29kZSBNb2JpdmVpbCBkcml2ZXIgYW5k
+IGFkZCBQQ0llIEdlbjQKPiA+IGRyaXZlciBmb3IgTlhQIExheWVyc2NhcGUgU29Dcwo+ID4gCj4g
+PiBIaSEKPiA+IAo+ID4gT24gVHVlLCBOb3YgMTksIDIwMTkgYXQgNzo0NSBQTSBaLnEuIEhvdSA8
+emhpcWlhbmcuaG91QG54cC5jb20+IHdyb3RlOgo+ID4gPgo+ID4gPiBGcm9tOiBIb3UgWmhpcWlh
+bmcgPFpoaXFpYW5nLkhvdUBueHAuY29tPgo+ID4gPgo+ID4gPiBUaGlzIHBhdGNoIHNldCBpcyB0
+byByZWNvZGUgdGhlIE1vYml2ZWlsIGRyaXZlciBhbmQgYWRkIFBDSWUgc3VwcG9ydAo+ID4gPiBm
+b3IgTlhQIExheWVyc2NhcGUgc2VyaWVzIFNvQ3MgaW50ZWdyYXRlZCBNb2JpdmVpbCdzIFBDSWUg
+R2VuNAo+ID4gPiBjb250cm9sbGVyLgo+ID4gCj4gPiBDYW4gd2UgZ2V0IGEgcmVzcGluIGZvciB0
+aGlzIG9uIHRvcCBvZiB0aGUgNS41IG1lcmdlIHdpbmRvdyBtYXRlcmlhbD8KPiA+IEdpdmVuIHRo
+YXQgaXQncyBhIGJ1bmNoIG9mIHJlZmFjdG9yaW5ncywgbWFueSBvZiB0aGVtIGRvbid0IGFwcGx5
+IG9uIHRvcCBvZgo+ID4gdGhlIG1hdGVyaWFsIHRoYXQgd2FzIG1lcmdlZC4KPiA+IAo+ID4gSSdk
+IGxvdmUgdG8gc2VlIHRoZXNlIGdvIGluIHNvb25lciByYXRoZXIgdGhhbiBsYXRlciBzbyBJIGNh
+biBzdGFydCBnZXR0aW5nIC1uZXh0Cj4gPiBydW5uaW5nIG9uIGxzMjE2MGEgaGVyZS4KPiA+IAo+
+ID4gCj4gPiAtT2xvZgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
