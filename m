@@ -2,44 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72B211373F8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:45:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F1D013742D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:56:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=68hv+HOwWqeux3udTIhG9kUfk6Us+k19OXOEVkclyls=; b=b+kfxB/E8bbof9
-	aeRt8CmiZ9qG4uBmMwVbkGH9teKIcd7eK72W2Phnk/krf8v4S1XrfPAqMNdERby8zuzbhjCBpxjuY
-	p/huTrY/vTAJnUPXRoWIh2r41MN+yDmcQVLR3qpabgPiRGU78Tfke1Hax0FlM03DPJkePajXw77FN
-	+uTgOGykaIjZfVbJ1SyPbCZ9VoxAaXkjZ0/JKvQyjQvRVeNHcdRruvLDb4C4nFSi2eLIjweJjmmzz
-	hWdncGDXYEv7si2tIJYUbCQCjpp/HcDtKJuxsy9y3pq2Pv8ct4byryI6rNrmZYnsUqe5eF5J7bGKB
-	rJISUUJRY/WcCRSx9rSg==;
+	List-Owner; bh=elrXS4SbdDrJnbKfoIxq/P8XJP6dCvFbpW9kdg3tKiM=; b=euiXlH738TPKFg
+	e3TdkppiBglcboWN9NqU5j1cUCdIva9xqS0N7xlNd8kBmmTd9ePqWl0ojRMuhO+XtqSig9lE7609R
+	4eTGoNrqj2zE3H1ydpZWvt5dA/pLmFcJSExDMH38AeVYvKimCNUIw/5vw3B1bfQPNSgLuGTw4bA7z
+	0k9dQMoaWPbwLsZU5agmYJI8Uz1OjZ5XNeF4RGYMa95pDkeL06vBlsDJRF/cLuVO/Pl2dp/JkJk0/
+	GEL5RI9YGH8ig/qbeZrR47eQ7k01LrxKy1rlTqIhyV6DhAKyEOzI38u1sl71RNx2+H984vQxA5h1p
+	FdmlRIG/4Yv6ToKWDswg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipxPp-0000ji-8e; Fri, 10 Jan 2020 16:45:41 +0000
-Received: from [179.97.37.151] (helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipxPi-0000jN-Lz; Fri, 10 Jan 2020 16:45:34 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id BCA6F40DFD; Fri, 10 Jan 2020 13:45:31 -0300 (-03)
-Date: Fri, 10 Jan 2020 13:45:31 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH v4 2/9] perf/core: open access for CAP_SYS_PERFMON
- privileged process
-Message-ID: <20200110164531.GA2598@kernel.org>
-References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
- <c93309dc-b920-f5fa-f997-e8b2faf47b88@linux.intel.com>
- <20200108160713.GI2844@hirez.programming.kicks-ass.net>
- <cc239899-5c52-2fd0-286d-4bff18877937@linux.intel.com>
- <20200110140234.GO2844@hirez.programming.kicks-ass.net>
- <20200111005213.6dfd98fb36ace098004bde0e@kernel.org>
+	id 1ipxaF-0004BY-SC; Fri, 10 Jan 2020 16:56:27 +0000
+Received: from o1.b.az.sendgrid.net ([208.117.55.133])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipxa7-00049f-B0
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 16:56:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=subject:references:from:mime-version:in-reply-to:to:cc:content-type:
+ content-transfer-encoding;
+ s=001; bh=qSIj+Q/eviriLbr4bwIlJlojdPvdcmcScS/njDhyucQ=;
+ b=LhwpGXfR08rN9g16BlVN8gbCN9ye/zQBHzIsxKPxQh3U83DR/TBmKPdQog3hbSdONNnr
+ dyOWBHmPkX+EcdEB75xJAjEAYbwV/jtoHwaCq+0kWoibQBWbMl7gzfzfORscv8JpHCRg63
+ 3pFUdmg+c8Aq4AfWopJU/Pz0KMMc/TUsw=
+Received: by filterdrecv-p3iad2-57f487d66-l92zz with SMTP id
+ filterdrecv-p3iad2-57f487d66-l92zz-17-5E18ACAC-63
+ 2020-01-10 16:56:12.829615348 +0000 UTC m=+2131774.242187522
+Received: from [80.251.203.67] (unknown [80.251.203.67])
+ by ismtpd0073p1mdw1.sendgrid.net (SG) with ESMTP id 2KGoAlXLSRW0ynbiZTRwlA
+ Fri, 10 Jan 2020 16:56:12.443 +0000 (UTC)
+Subject: Re: [PATCH v2 00/14] Support more HDMI modes on RK3228/RK3328
+References: <20200108210740.28769-1-jonas@kwiboo.se>
+ <b159ee28-213e-35d2-6d09-516abc3358bb@ti.com>
+From: Jonas Karlman <jonas@kwiboo.se>
+Message-ID: <a188146c-b424-b8b5-d9dd-189a84f5c046@kwiboo.se>
+Date: Fri, 10 Jan 2020 16:56:12 +0000 (UTC)
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200111005213.6dfd98fb36ace098004bde0e@kernel.org>
-X-Url: http://acmel.wordpress.com
+In-Reply-To: <b159ee28-213e-35d2-6d09-516abc3358bb@ti.com>
+X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
+ =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0h88Wy6SX3=2F1iV6Uej?=
+ =?us-ascii?Q?3Xa3x+z7=2FIqgRn9rdyg=2F6rE6t8oWfMo1X9LETIX?=
+ =?us-ascii?Q?eguuHt+rMgQYsQTVdR=2FtMP2d9t21ViSV7Ne7Rtc?=
+ =?us-ascii?Q?sUzxQBbl27zAW+jQcMLVxXWn84LeMm0vaK8pADu?=
+ =?us-ascii?Q?RkWrPKGjsWo4jZWrAXNhYHfcJbUA3iaJFsyEIH5?=
+ =?us-ascii?Q?bT0wFxIJXWOxFyFB8OH4w=3D=3D?=
+To: Kishon Vijay Abraham I <kishon@ti.com>, Heiko Stuebner <heiko@sntech.de>, 
+ Sandy Huang <hjc@rock-chips.com>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200110_085619_443260_8B93EB14 
+X-CRM114-Status: GOOD (  21.45  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [208.117.55.133 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [208.117.55.133 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -51,63 +88,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
- Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
- Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
- Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- Casey Schaufler <casey@schaufler-ca.com>,
- "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Zheng Yang <zhengyang@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Sat, Jan 11, 2020 at 12:52:13AM +0900, Masami Hiramatsu escreveu:
-> On Fri, 10 Jan 2020 15:02:34 +0100 Peter Zijlstra <peterz@infradead.org> wrote:
-> > Again, this only allows attaching to previously created kprobes, it does
-> > not allow creating kprobes, right?
+On 2020-01-10 12:01, Kishon Vijay Abraham I wrote:
+> 
+> 
+> On 09/01/20 2:37 AM, Jonas Karlman wrote:
+>> This series make it possible to use more HDMI modes on RK3328,
+>> and presumably also on RK3228. It also prepares for a future YUV420 and
+>> 10-bit output series.
+>>
+>> Part of this has been reworked from vendor BSP 4.4 kernel commits.
+>>
+>> Patch 1-5 fixes issues and shortcomings in the inno hdmi phy driver.
+>>
+>> Patch 6 prepares for use of high TMDS bit rates used with HDMI 2.0 and
+>> 10-bit output modes.
+>>
+>> Patch 7-13 changes rk3228/rk3328 to use mode_valid functions suited for
+>> the inno hdmi phy instead of the dw-hdmi phy. These changes allows for
+>> more CEA modes to be usable, e.g. some 4K and fractal modes.
+>>
+>> Patch 14 adds support for more pixel clock rates in order to support
+>> common DMT modes in addition to CEA modes.
+> 
+> Is it possible to split the series targeted for different subsystems or
+> is it required for all the patches to be merged together?
 
-> > That is; I don't think CAP_SYS_PERFMON should be allowed to create
-> > kprobes.
+I think it should be possible to split the patches without any issue.
 
-> > As might be clear; I don't actually know what the user-ABI is for
-> > creating kprobes.
+The phy changes mainly targets HDMI mode rates that is currently not in use,
+filtered out by current mode_valid or YUV420/Deep Color modes not yet supported.
+And the drm changes should not have a hard requirement on the phy changes
+in this series, but I have not tested them separately.
 
-> There are 2 ABIs nowadays, ftrace and ebpf. perf-probe uses ftrace interface to
-> define new kprobe events, and those events are treated as completely same as
-> tracepoint events. On the other hand, ebpf tries to define new probe event
-> via perf_event interface. Above one is that interface. IOW, it creates new kprobe.
+I will split this series and re-run some tests before sending independent series.
 
-Masami, any plans to make 'perf probe' use the perf_event_open()
-interface for creating kprobes/uprobes?
+Regards,
+Jonas
 
-- Arnaldo
+> 
+> Thanks
+> Kishon
+>>
+>> Note: I have only been able to build test RK322x related changes
+>> as I do not have any RK322x device to test on.
+>>
+>> All modes, including fractal modes, has been tested with modetest on
+>> a RK3328 Rock64 device using e.g.
+>>
+>>   modetest -M rockchip -s 39:3840x2160-29.97
+>>
+>> Changes in v2:
+>>   - collect acked-by tag
+>>   - drop the limit resolution width to 3840 patch
+>>
+>> This series is also available at [1] and the early work on YUV420 and
+>> 10-bit output is available at [2].
+>>
+>> [1] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-inno-hdmi-phy
+>> [2] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-bus-format
+>>
+>> Regards,
+>> Jonas
+>>
+>> Algea Cao (1):
+>>   phy/rockchip: inno-hdmi: Support more pre-pll configuration
+>>
+>> Huicong Xu (1):
+>>   phy/rockchip: inno-hdmi: force set_rate on power_on
+>>
+>> Jonas Karlman (11):
+>>   phy/rockchip: inno-hdmi: use correct vco_div_5 macro on rk3328
+>>   phy/rockchip: inno-hdmi: remove unused no_c from rk3328 recalc_rate
+>>   phy/rockchip: inno-hdmi: do not power on rk3328 post pll on reg write
+>>   drm/rockchip: dw-hdmi: allow high tmds bit rates
+>>   drm/rockchip: dw-hdmi: require valid vpll clock rate on rk3228/rk3328
+>>   clk: rockchip: set parent rate for DCLK_VOP clock on rk3228
+>>   arm64: dts: rockchip: increase vop clock rate on rk3328
+>>   arm64: dts: rockchip: add vpll clock to hdmi node on rk3328
+>>   ARM: dts: rockchip: add vpll clock to hdmi node on rk3228
+>>   drm/rockchip: dw-hdmi: limit tmds to 340mhz on rk3228/rk3328
+>>   drm/rockchip: dw-hdmi: remove unused plat_data on rk3228/rk3328
+>>
+>> Zheng Yang (1):
+>>   phy/rockchip: inno-hdmi: round fractal pixclock in rk3328 recalc_rate
+>>
+>>  arch/arm/boot/dts/rk322x.dtsi                 |   4 +-
+>>  arch/arm64/boot/dts/rockchip/rk3328.dtsi      |   6 +-
+>>  drivers/clk/rockchip/clk-rk3228.c             |   2 +-
+>>  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c   |  47 ++++++--
+>>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 110 ++++++++++++------
+>>  5 files changed, 120 insertions(+), 49 deletions(-)
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
