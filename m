@@ -2,65 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E80FF137109
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:23:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C46D137116
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:24:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3VuoCyxmEBsDmAwObCxkGv90tmxqhcs7cFHpS3D1ZYE=; b=YieREQ4BecuZQY
-	ZQZdcuof3FYCT6fA+pJMMHQLR6uP5vKv4qAfedQgFxhzCtWhn86Y1u8gHwU8IbxWkHDNDw0bdPozj
-	Ecse0ymQfcZoQoTcTNCZBb2yVvlCUrEJ8IDxIdLxXr38abzkDLG0Dayx04OQeTAybtpwGlyCgyNoG
-	y1sSWQ+a2orc/E7Mrhi0iq+LmcHxoVGLYJu5y4Is2QqUOH2Vxc6MDWi/bqF7AXftMK2V6QRI0YcQb
-	CmTJe5wnNaVUiszLzh1YLAfMofZW9cG8IBK67PuZim0xNPjJAdy2+54yxEdQi4pHdOAeKeqwhhoxw
-	eFHVI7MdIdRWGGg/eJbQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=U/L8+mfyO6fiiNekf7yGoiMFiBpyq+LPPTHQciwy0x8=; b=hA8
+	e6ce8Yxl4fo411L9plxH3ltajiYjJ7ctTUKQGP2ZqDNvMG37jpS7aMTNh698R3YgHMRB620K1ttNE
+	0fsTQb3L/+o7TJlLBugqmlhQHUC5U+qPK/TJ6nd22KWO19Z9l4AsCV4U4TBEL9Q5W1LCeHoSvDNoL
+	lJD3PMJxgNAUZqqcesHcC3QVmJ2+EmFcTXQfdgOr+BYv3ki319zYT0Ssn/ESi++Bls7dYY8KP5E2V
+	8N10U4FwvZdix/ma/bQuGa9nmCET6xqhSMuYxK45RzpesH0MAw0eeYv7Q0GU9bOlsH3cLGSV2+5qR
+	fmsRUs575YvStDUAhiuDvupr+zkPxWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipw7o-0005zZ-SO; Fri, 10 Jan 2020 15:23:00 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1ipw9R-0007Oz-IO; Fri, 10 Jan 2020 15:24:41 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipw7d-0005vz-7Q
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:22:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=OID1dlSTSaamVryi8LpcNEnO4aY2wUMBFndKhtzt064=; b=YNCJV+sUCXt2W5mSotj16fSaar
- fokY4RYQbPWvs3Euir9u1Io2CTIPDHwYmXK9h1y4agZS/mgaPE5lEhKboyRl8hcP7s36UhulvgVcH
- uW9K0VV/5rV0rvXxBxdlYoRVCTi4/7I+bZ0uFbWlZ+85jxbZ8tZpbUgHs0gRMhKrDGQM=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1ipw7V-000085-Uk; Fri, 10 Jan 2020 16:22:41 +0100
-Date: Fri, 10 Jan 2020 16:22:41 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 12/14] net: axienet: Autodetect 64-bit DMA capability
-Message-ID: <20200110152241.GB10802@lunn.ch>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-13-andre.przywara@arm.com>
- <20200110140852.GF19739@lunn.ch>
- <20200110141303.2e5863ab@donnerap.cambridge.arm.com>
- <20200110142250.GH19739@lunn.ch>
- <20200110150836.1f92a0a8@donnerap.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200110150836.1f92a0a8@donnerap.cambridge.arm.com>
+ id 1ipw8j-0006u2-Nm
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:24:04 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 54EBE4060D;
+ Fri, 10 Jan 2020 15:23:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1578669837; bh=YXcyxyil0lGkpQvMbPeFKs6Zw5fWZ1TPJ+83+aDSukc=;
+ h=From:To:Cc:Subject:Date:From;
+ b=LiDZcVgMNPYNpj8ZItMUc7By1O3X+Kf0pfyJ9pUPyJjxg662goHX4A8W8Epnwl0nh
+ 03GdcCOwwRaxbxeLNPTvtlpIN/WljR1OKmdetvow9Rk4cH3U2nN4lhXRJ+MTY13KE4
+ vyjmTBgqaxRZrsGu79plinbaib6fudxjrLOMIoxGSp65+8aavDVISsYI2JLLNBN/lz
+ H4XBubZejjwzaXw2q039iBCyyxuNSs8HEIfKR1foGfJtKeKCwi0oA6Z5lrZmkADNYG
+ 5I+WudyRal7y0sBBOssxKDZXqzerT+huCJc/cJZYVukn6XtRD0s4CHHWTFlRphaXYE
+ rRCkdjsrdYzdA==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 120B4A0061;
+ Fri, 10 Jan 2020 15:23:56 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net 0/2] net: stmmac: Filtering fixes
+Date: Fri, 10 Jan 2020 16:23:51 +0100
+Message-Id: <cover.1578669661.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_072249_273979_D10597DB 
-X-CRM114-Status: UNSURE (   4.78  )
+X-CRM114-CacheID: sfid-20200110_072401_579655_6DC393FE 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -80,29 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- Robert Hancock <hancock@sedsystems.ca>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> So far I couldn't be bothered to put my asbestos trousers on and go
-> into BSP land ;-)
+Two single fixes for the L3 and L4 filtering in stmmac.
 
-Are you in Cambridge? 7 degrees, so you can pop outside to cool off a
-bit :-)
+1) Updates the internal status of RSS when disabling it in order to keep
+internal driver status consistent.
 
-> So if you were hoping for an official blessing, I have to disappoint you ;-)
+2) Do not lets user add a filter if RSS is enabled because the filter will
+not work correctly as RSS bypasses this mechanism.
 
-Well, everything you have done is at least sensible. The patches have
-also drawn the interest of Radhey. Let see if he says this is safe for
-IP version 0.0 through to 7.1.
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
 
-   Andrew
+Jose Abreu (2):
+  net: stmmac: selftests: Update status when disabling RSS
+  net: stmmac: tc: Do not setup flower filtering if RSS is enabled
+
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c   | 20 ++++++++++++++------
+ drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c      |  4 ++++
+ 2 files changed, 18 insertions(+), 6 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
