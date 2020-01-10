@@ -2,79 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 571A51367FA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:09:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33E64136803
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:13:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uhS8R9lGQQVdKcrlAvbxBOIWOZPkDnK2wGl04cZSzzc=; b=ICr5ONP+EAA6cc
-	URqQnjVI95hCzUXwqC5K28ke3x3PlELyu9ojmhYCwod13nikEMU0JnlRx/Gq5ieAktZlkn8z7YhrE
-	XDE1iv/a1/is7LoQkkYSxu39RX8ipN8VHvFX8ryUk3VthvZLNgX0ISI+/yP7I8KdGjMruWmnaRyfJ
-	xmNiBeMKwOPAHEfnbJeQi6XkVT79HMDMYVHqKHFKE4r2B/+skd//xZJjdFLg5tJGfV7aPJCiO0rV2
-	iXnsRq3WMqwNrE0TjBypu3e5hHn5ZigjuGXgzNIDWrbzEDFYcYOYLHIieRxUa+F+Dn6Y6Nk6EbLGt
-	XF/kBUqIG7w9d3oxMPXQ==;
+	List-Owner; bh=pwCsj0kbtddx2/rmMcaLfcB2E5vKnImwaatsr8u36h8=; b=bsueH75KEh1f+r
+	L9lyCTvYxJ1vM5eMQmpCK1gMd5JQWyTD58jPBfR8pFpn61RWNza58EOMPBev6yXeN643D4Sj86OYI
+	ZgZVd1DQalERIzcnwOY9t9aoyaWlP2HyF2Om5sLQLulCLzVrIXkTJO2RwS4urM1RSJbyvzo/odIA4
+	ezcbCyrh71BKY8zpQZ8/Llbf/imR54GNv54YRtLIj/fjLI5PIBWb1aQYTGf2kgaVmK44Y3M1IIuNQ
+	a1cePxuZB2sFAxROYxrBe/wWr4kEQX2GLa+QHHWXAows844UyrrNvDMqaXYgn/h+B8iFA43fWkpqv
+	yCAQt3kDxqgP7wTrbkvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipoQH-0007Lu-Fj; Fri, 10 Jan 2020 07:09:33 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ipoTv-0001CJ-9w; Fri, 10 Jan 2020 07:13:19 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipoPY-0006f6-0O; Fri, 10 Jan 2020 07:08:49 +0000
-X-UUID: 051adf20a9ad47ed852432d33dddd02c-20200109
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ffhcrwjsBwsjrgzkid/yOQ1liD4E9HyfxuER96MEH2g=; 
- b=ayGQqiUWEf6Ot02/A+ME7PCtwFS9rvCN3bTRfL5Ubp5cZC6itfr/vewvWrWfJlv4TTranHZvzva+GLM8V2yVLUcmvNhKFD47gN6joQoTzR/sLn2stuPzhKyaHM//434KpARA/T3FXhHRMdIB4lY+HI0yL1LHn78gVvHkIIKVBm0=;
-X-UUID: 051adf20a9ad47ed852432d33dddd02c-20200109
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 618961714; Thu, 09 Jan 2020 23:08:44 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 9 Jan 2020 23:09:21 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 10 Jan 2020 15:07:43 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 10 Jan 2020 15:07:04 +0800
-Message-ID: <1578640121.17435.7.camel@mtkswgap22>
-Subject: Re: [PATCH v2 1/2] scsi: ufs: pass device information to
- apply_dev_quirks
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "Martin K. Petersen" <martin.petersen@oracle.com>
-Date: Fri, 10 Jan 2020 15:08:41 +0800
-In-Reply-To: <yq136cnx1yo.fsf@oracle.com>
-References: <1578270431-9873-1-git-send-email-stanley.chu@mediatek.com>
- <1578270431-9873-2-git-send-email-stanley.chu@mediatek.com>
- <yq136cnx1yo.fsf@oracle.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1ipoTm-0001BN-Ir
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 07:13:12 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1ipoTj-0001U6-9h; Fri, 10 Jan 2020 08:13:07 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1ipoTi-00020H-LB; Fri, 10 Jan 2020 08:13:06 +0100
+Date: Fri, 10 Jan 2020 08:13:06 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH] [RFC] pwm: sun4i: Move pwm_calculate out of spin_lock
+Message-ID: <20200110071306.uyqcyftb4bt7b2gw@pengutronix.de>
+References: <20200109233106.17060-1-peron.clem@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200109233106.17060-1-peron.clem@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_230848_107405_8A901C62 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200109_231310_624588_63C32892 
+X-CRM114-Status: GOOD (  19.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,36 +67,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
- jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, Alex Mobigo <alex.mobigo@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Martin,
+Hello Cl=E9ment,
 
-On Fri, 2020-01-10 at 01:25 -0500, Martin K. Petersen wrote:
-> Stanley,
-> 
-> > Pass UFS device information to vendor-specific variant callback
-> > "apply_dev_quirks" because some platform vendors need to know such
-> > information to apply special handlings or quirks in specific devices.
-> 
-> This doesn't compile. You missed adding the additional argument to one
-> caller of ufshcd_tune_unipro_params().
-> 
+On Fri, Jan 10, 2020 at 12:31:06AM +0100, Cl=E9ment P=E9ron wrote:
+> pwm_calculate calls clk_get_rate while holding a spin_lock.
+> =
 
-Sorry for this. I'll fix it in next version and try to separate vendor's
-implementation and common driver to different commits if this is the
-root cause of compile issue.
+> This create an issue as clk_get_rate() may sleep.
 
-Thanks.
-Stanley
+Slightly orthogonal to this issue, it might be a good idea to add a
+might_sleep() to clk_get_rate(). (Added clk maintainers to Cc: for this
+suggestion.)
+
+> Move pwm_calculate out of this spin_lock.
+> =
+
+> Fixes: c32c5c50d4fe ("pwm: sun4i: Switch to atomic PWM")
+> Reported-by: Alex Mobigo <alex.mobigo@gmail.com>
+> Suggested-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+> =
+
+> Hi,
+> =
+
+> this issue has been reported on linux-sunxi Google groups.
+> =
+
+> I don't have a board with PWM to confirm it.
+> =
+
+> Please wait a tested-by.
+> =
+
+> Thanks,
+> Cl=E9ment
+> =
+
+>  drivers/pwm/pwm-sun4i.c | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
+> =
+
+> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> index 1afd41ebd3fd..6b230029dc49 100644
+> --- a/drivers/pwm/pwm-sun4i.c
+> +++ b/drivers/pwm/pwm-sun4i.c
+> @@ -248,19 +248,18 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, s=
+truct pwm_device *pwm,
+>  		}
+>  	}
+>  =
+
+> -	spin_lock(&sun4i_pwm->ctrl_lock);
+> -	ctrl =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
+> -
+>  	ret =3D sun4i_pwm_calculate(sun4i_pwm, state, &duty, &period, &prescale=
+r,
+>  				  &bypass);
+>  	if (ret) {
+>  		dev_err(chip->dev, "period exceeds the maximum value\n");
+> -		spin_unlock(&sun4i_pwm->ctrl_lock);
+>  		if (!cstate.enabled)
+>  			clk_disable_unprepare(sun4i_pwm->clk);
+>  		return ret;
+>  	}
+>  =
+
+> +	spin_lock(&sun4i_pwm->ctrl_lock);
+> +	ctrl =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
+> +
+>  	if (sun4i_pwm->data->has_direct_mod_clk_output) {
+>  		if (bypass) {
+>  			ctrl |=3D BIT_CH(PWM_BYPASS, pwm->hwpwm);
+
+As sun4i_pwm_calculate does nothing that depends on (or modifies)
+hardware state (apart from clk_get_rate(sun4i_pwm->clk) which can be
+assumed to be constant) the change looks good.
+
+Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
