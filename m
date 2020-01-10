@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2427F13654A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 03:17:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 896A2136568
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 03:35:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=4hbnFfL5QRKhg94277qAfNQHO5Ze7IVtAAFeybO2qa0=; b=F+4YGh/bzBq/BRmTkA70RNMdJG
-	qBxZJChWmZBNTQ5AwS/J2+7bSfN9bJLUPB3keo7tT+MUzZi33AvJle+ICdt+cfK10KQ1xAN9xTIXi
-	L2eaiXRYCPFJvr0eh9bhvc10BjGxjSYc21EOck5n8vhzGivLGls8DnbFA4sDBNFYXVDCmndv1/8Ul
-	H8HM6C+jHQK3xAfWFgoxnEpcrAP4gUrDKIaljpbmNs9QlANIwzJQKKVNGK+OAbRuP3KzNsZ9sVcub
-	2X5ipOGARHB0Q1dHBO6ZzgTFFpDtyTT8OjKorWckAHjTDpU9ilkesQxfQEj4qePMZ7ZHLLwnJJXNH
-	sT6K0kmA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hTj0KZXg7e+H4UFAO3uHcddbDJWxv4oVQsOo6+b4iMI=; b=r+w3L9Dx3QJOFT
+	+K7cTAE8BAdALsZDd0bRroZ2mtbB7kzDpUhVKpyaT9oe9sKQIuVBoZgWem10DukjNtV79ChOXZeKU
+	yHUfYwGgrOlIJJyTeHfC1C//VcgBrcOAB+7rv4HgN1OnZlTovi2vyr4ukA1bB1VqI9RPhfr1W2riF
+	Lxx30QHQoDklBOf8NE+2DXSFNNVpIlfXh8ODTOzYs0ubPolx/bgPpraDt6V6tUWA+AgdZAGoBIEMW
+	qroFxI5XBRZzdX+nM3GEuPz4PMV3Qh452YqP8gkeP3FxMeVEYjOiyXBi+nsNcEmnmObfmK7Q4ERCk
+	yeilcZWCp1UVL4B4x7dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipjrp-0005XV-6S; Fri, 10 Jan 2020 02:17:41 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ipk8s-0004Ny-QQ; Fri, 10 Jan 2020 02:35:18 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipjrO-0005Ld-UF
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 02:17:16 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0CC0620005C;
- Fri, 10 Jan 2020 03:17:13 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F15372016AF;
- Fri, 10 Jan 2020 03:17:05 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 81285402D7;
- Fri, 10 Jan 2020 10:16:57 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
- stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, s.hauer@pengutronix.de,
- linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] dt-bindings: pinctrl: Convert i.MX8MN to json-schema
-Date: Fri, 10 Jan 2020 10:13:08 +0800
-Message-Id: <1578622388-23370-3-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578622388-23370-1-git-send-email-Anson.Huang@nxp.com>
-References: <1578622388-23370-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ipk8l-0004L2-L9
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 02:35:12 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 1BB40157363F6;
+ Thu,  9 Jan 2020 18:35:04 -0800 (PST)
+Date: Thu, 09 Jan 2020 18:35:03 -0800 (PST)
+Message-Id: <20200109.183503.1012921424196803099.davem@davemloft.net>
+To: zhengdejin5@gmail.com
+Subject: Re: [PATCH v3] net: stmmac: pci: remove the duplicate code of set
+ phy_mask
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200108135649.6091-1-zhengdejin5@gmail.com>
+References: <20200108135649.6091-1-zhengdejin5@gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 09 Jan 2020 18:35:04 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_181715_247948_864CF38C 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200109_183511_695098_00F4CBEA 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,144 +64,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX8MN pinctrl binding to DT schema format using json-schema
+From: Dejin Zheng <zhengdejin5@gmail.com>
+Date: Wed,  8 Jan 2020 21:56:49 +0800
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- .../bindings/pinctrl/fsl,imx8mn-pinctrl.txt        | 39 -------------
- .../bindings/pinctrl/fsl,imx8mn-pinctrl.yaml       | 67 ++++++++++++++++++++++
- 2 files changed, 67 insertions(+), 39 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
- create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
+> All members of mdio_bus_data are cleared to 0 when it was obtained
+> by devm_kzalloc(). so It doesn't need to set phy_mask as 0 again.
+> 
+> Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+> ---
+> 
+> Changes since v2:
+>     Abandoned the other commits, now only this one commit is
+>     in the patch set.
+> 
+> Changes since v1:
+>     adjust some commit comments.
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
-deleted file mode 100644
-index 330716c..0000000
---- a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
-+++ /dev/null
-@@ -1,39 +0,0 @@
--* Freescale IMX8MN IOMUX Controller
--
--Please refer to fsl,imx-pinctrl.txt and pinctrl-bindings.txt in this directory
--for common binding part and usage.
--
--Required properties:
--- compatible: "fsl,imx8mn-iomuxc"
--- reg: should contain the base physical address and size of the iomuxc
--  registers.
--
--Required properties in sub-nodes:
--- fsl,pins: each entry consists of 6 integers and represents the mux and config
--  setting for one pin.  The first 5 integers <mux_reg conf_reg input_reg mux_val
--  input_val> are specified using a PIN_FUNC_ID macro, which can be found in
--  <arch/arm64/boot/dts/freescale/imx8mn-pinfunc.h>. The last integer CONFIG is
--  the pad setting value like pull-up on this pin. Please refer to i.MX8M Nano
--  Reference Manual for detailed CONFIG settings.
--
--Examples:
--
--&uart1 {
--       pinctrl-names = "default";
--       pinctrl-0 = <&pinctrl_uart1>;
--};
--
--iomuxc: pinctrl@30330000 {
--        compatible = "fsl,imx8mn-iomuxc";
--        reg = <0x0 0x30330000 0x0 0x10000>;
--
--        pinctrl_uart1: uart1grp {
--                fsl,pins = <
--			MX8MN_IOMUXC_UART1_RXD_UART1_DCE_RX	0x140
--			MX8MN_IOMUXC_UART1_TXD_UART1_DCE_TX	0x140
--			MX8MN_IOMUXC_UART3_RXD_UART1_DCE_CTS_B	0x140
--			MX8MN_IOMUXC_UART3_TXD_UART1_DCE_RTS_B	0x140
--			MX8MN_IOMUXC_SD1_DATA4_GPIO2_IO6	0x19
--                >;
--        };
--};
-diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
-new file mode 100644
-index 0000000..44bf4e0
---- /dev/null
-+++ b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
-@@ -0,0 +1,67 @@
-+# SPDX-License-Identifier: GPL-2.0-or-later
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/pinctrl/fsl,imx8mn-pinctrl.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Freescale IMX8MN IOMUX Controller
-+
-+maintainers:
-+  - Anson Huang <Anson.Huang@nxp.com>
-+
-+description:
-+  Please refer to fsl,imx-pinctrl.txt and pinctrl-bindings.txt in this directory
-+  for common binding part and usage.
-+
-+properties:
-+  compatible:
-+    const: fsl,imx8mn-iomuxc
-+
-+# Client device subnode's properties
-+patternProperties:
-+  '-grp$':
-+    type: object
-+    description:
-+      Pinctrl node's client devices use subnodes for desired pin configuration.
-+      Client device subnodes use below standard properties.
-+
-+    properties:
-+      fsl,pins:
-+        allOf:
-+	  - $ref: /schemas/types.yaml#/definitions/uint32-array
-+        maxItems: 6
-+        description:
-+          each entry consists of 6 integers and represents the mux and config
-+          setting for one pin. The first 5 integers <mux_reg conf_reg input_reg
-+          mux_val input_val> are specified using a PIN_FUNC_ID macro, which can
-+          be found in <arch/arm64/boot/dts/freescale/imx8mn-pinfunc.h>. The last
-+          integer CONFIG is the pad setting value like pull-up on this pin. Please
-+          refer to i.MX8M Nano Reference Manual for detailed CONFIG settings.
-+
-+    required:
-+      - fsl,pins
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  # Pinmux controller node
-+  - |
-+    iomuxc: pinctrl@30330000 {
-+        compatible = "fsl,imx8mn-iomuxc";
-+        reg = <0x30330000 0x10000>;
-+
-+        pinctrl_uart2: uart2grp {
-+            fsl,pins = <
-+                0x23C 0x4A4 0x4FC 0x0 0x0	0x140
-+                0x240 0x4A8 0x000 0x0 0x0	0x140
-+            >;
-+        };
-+    };
-+
-+...
--- 
-2.7.4
-
+Applied to net-next, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
