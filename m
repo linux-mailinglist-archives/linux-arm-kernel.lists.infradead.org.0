@@ -2,129 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8B6E13742F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:56:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8E9A137450
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:05:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uDn5Oc6jL1vSq/6LDQfMbrplmWuAp+VQ9/GQuMw1brI=; b=dw6DobYQb4fDpU
-	Ey446nXL9xfx6RYm5gEVbYmFFA9myp/O1MF1au3JjuX72L7Q5L6fbA6WtPE2yNYz8SOs4K7JjEzbp
-	G1EoOSSzUWAnvqWDkzQvBdVj08JVUx+C2AOakx8KUTyEC6PFs9V/eAlHPd9STKtOkPluDY9uF6swv
-	P3q4NcZ2HnBnhC9ldcHq6MjF9ouYkWuLFGrOADcfPZ+L2dvAwc0ZHIt+aB7ZCPOj9jfuntw0NR7AY
-	JRfDGEHUmleyy+i8P839P/crw6AXmQyYD1Vn1Gqld4mGNdcaH/r0YPMk+H3Patv4pSE4dGWeF1O+/
-	kXWfzdn45DyZsN5AXkNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K6oi+XaVg+hiiwa12zUzZUhpAhC6EMx5u9H9vCCycGI=; b=uIjGSLiC4axzCy
+	AcgsM6GXmlegN9rToinBKuQMOcWv/0XJz1lBSoZZB188qAUChE5Jr7o8wA65qy9YY5iuwj/EHiui+
+	zuRj+i3wSDQZgqtz9OwZnaIzI0R9gsj1mjYyFId8/6EHIdHF7TjppweSZU7QUI61M6JXq2Ua7R1gS
+	a/pB12omv+fXaGbBfrc2mjaGeuYodNJDVJJBvanLdEgtwk9pdBYtU1r1dwLyy80bbYDe0P0/iMO/A
+	X/n10IVcitfpsbxQzPDVUSMxObJ5u9JY0sgPNs2lUY07BntALNYySxQrOk3M26+8cHnKacc1XguCl
+	mlUIBA9Em7Q1R1hfh4ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipxaX-0004Ls-N1; Fri, 10 Jan 2020 16:56:45 +0000
-Received: from mail-wm1-f65.google.com ([209.85.128.65])
+	id 1ipxiz-0008RK-Oi; Fri, 10 Jan 2020 17:05:29 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipxaE-0004EH-4D
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 16:56:27 +0000
-Received: by mail-wm1-f65.google.com with SMTP id 20so2703205wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 08:56:25 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=hhy+D+Y638NFesS4UWxMs4YRL6hkOF6UIwSPS4DTzV0=;
- b=g340D9VnBXSLkiw3t7CAaKYa/dsJV4cRxot6p92as3FI5NJdkTf9I5tLG5GgqlYp8t
- 4JEdAb2WlIsguOFc96nIXO55jFTkhRB5+c/rXVgM7aftvpFuvQXehmxhsWbY9RsUkgJR
- Qk6NJ3KP9opeJ+FgDyEjsWIcvx9i/HrXTju+HcF+xTOUuj/6wmS8uuXAudNL4L41iM5D
- /7Wr5NrxlCKDr3v4xnntRviN2v5+3YPrTCi2Ygs4qcW9ZfC1YVnpSYUCtFRxmudPEnyF
- cjc6p9DqsIqobhG7e7gul0a/IoEpLnpBs3DyqZUGoPI3f7mgo0szaeZvJeoCdnY/PwNt
- ZmNA==
-X-Gm-Message-State: APjAAAVKogPu9IRlrfKCH7OvjMyKSMkHzQ1AnauY11vHbq9uJaj22n9w
- n9/ITfLXVx08cmeMlY62qTfuEK+W
-X-Google-Smtp-Source: APXvYqxWBJsUHmu+7WRx7lZEt6eMzudXXneSzx/A1SJSkl49Z7dcCFQALr3WSLSri9cYzV9RLjMj8Q==
-X-Received: by 2002:a7b:cf26:: with SMTP id m6mr5071890wmg.17.1578675383895;
- Fri, 10 Jan 2020 08:56:23 -0800 (PST)
-Received: from ?IPv6:2a0b:e7c0:0:107::70f? ([2a0b:e7c0:0:107::70f])
- by smtp.gmail.com with ESMTPSA id g18sm2731399wmh.48.2020.01.10.08.56.22
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 10 Jan 2020 08:56:23 -0800 (PST)
-Subject: Re: [PATCH 2/3] arm64: lib: Use modern annotations for assembly
- functions
-To: Will Deacon <will@kernel.org>, Mark Brown <broonie@kernel.org>
-References: <20200106195818.56351-1-broonie@kernel.org>
- <20200106195818.56351-3-broonie@kernel.org>
- <20200107144445.GC29001@willie-the-truck>
- <20200107174741.GG4877@sirena.org.uk>
- <20200108122957.GA16658@willie-the-truck>
-From: Jiri Slaby <jslaby@suse.com>
-Autocrypt: addr=jslaby@suse.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <c241898d-3a0f-4356-0f2c-7d18ee35f45c@suse.com>
-Date: Fri, 10 Jan 2020 17:56:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ipxir-0008Qm-Ma
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 17:05:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=GW1m7aDNt8V3wz2tMHUyNfTML3DbAJB8v1NQ3l/dxuQ=; b=lyrlJXxXX7/J4lS+N5eis6wuP
+ 5jbnv8o2YpA45QmPBEr5nvDFnDdiWNANqkus9+StrN4doMfiHmno7Drrs0PmxNafAA3dRfAcVt2q8
+ o1Ob634FzmXqJ0VcEWUW8oBQHln0bx4fPEOovcPqPoI74PLoA35C6FiTGeTQ5B2O8FYwjCYXwXZMF
+ mJpzIQ7dopdfplLybMir6FvixIRxLAeyi5m61p9QewRy+dijzlPwvXES+i6yA1gAOd92smaO5ZXG5
+ CBJqLuBWX9cgcrFgQ/XIVVmJ2FMu0RhxhqE4VHgIKLGlhya8rCkeTKGnP01wHcb8uI6ZLLGVdAKXl
+ HxX7pGeTA==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:60688)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ipxiY-0004N7-Br; Fri, 10 Jan 2020 17:05:02 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ipxiT-0001fh-HO; Fri, 10 Jan 2020 17:04:57 +0000
+Date: Fri, 10 Jan 2020 17:04:57 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
+Message-ID: <20200110170457.GH25745@shell.armlinux.org.uk>
+References: <20200110115415.75683-1-andre.przywara@arm.com>
+ <20200110115415.75683-8-andre.przywara@arm.com>
+ <20200110140415.GE19739@lunn.ch>
+ <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
+ <20200110150409.GD25745@shell.armlinux.org.uk>
+ <20200110152215.GF25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200108122957.GA16658@willie-the-truck>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200110152215.GF25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_085626_204720_F4138BB9 
-X-CRM114-Status: GOOD (  23.15  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200110_090522_020658_B5C76ECC 
+X-CRM114-Status: GOOD (  26.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jirislaby[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,59 +91,231 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Robert Hancock <hancock@sedsystems.ca>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08. 01. 20, 13:29, Will Deacon wrote:
-> On Tue, Jan 07, 2020 at 05:47:41PM +0000, Mark Brown wrote:
->> On Tue, Jan 07, 2020 at 02:44:46PM +0000, Will Deacon wrote:
->>> Jiri -- is it ok to omit the stack frame for leaf functions annotated with
->>> SYM_FUNC_START? I'm guessing it should be, since the link register isn't
->>> going to be clobbered. Could we update the documentation to reflect that?
->>
->> Yeah, the documentation isn't great on that.  I was going on the basis
->> of both trying to minimize changes to the generated output as part of
->> the bulk change and looking at it from the point of view of the caller -
->> if as in this case the caller thinks it's a regular C function it seems
->> sensible to annotate it as such.
+On Fri, Jan 10, 2020 at 03:22:15PM +0000, Russell King - ARM Linux admin wrote:
+> On Fri, Jan 10, 2020 at 03:04:09PM +0000, Russell King - ARM Linux admin wrote:
+> > On Fri, Jan 10, 2020 at 02:20:38PM +0000, Andre Przywara wrote:
+> > > On Fri, 10 Jan 2020 15:04:15 +0100
+> > > Andrew Lunn <andrew@lunn.ch> wrote:
+> > > 
+> > > Hi Andrew,
+> > > 
+> > > > On Fri, Jan 10, 2020 at 11:54:08AM +0000, Andre Przywara wrote:
+> > > > > With SGMII, the MAC and the PHY can negotiate the link speed between
+> > > > > themselves, without the host needing to mediate between them.
+> > > > > Linux recognises this, and will call phylink's mac_config with the speed
+> > > > > member set to SPEED_UNKNOWN (-1).
+> > > > > Currently the axienet driver will bail out and complain about an
+> > > > > unsupported link speed.
+> > > > > 
+> > > > > Teach axienet's mac_config callback to leave the MAC's speed setting
+> > > > > alone if the requested speed is SPEED_UNKNOWN.  
+> > > > 
+> > > > Hi Andre
+> > > > 
+> > > > Is there an interrupt when SGMII signals a change in link state? If
+> > > > so, you should call phylink_mac_change().
+> > > 
+> > > Good point. The doc describes a "Auto-Negotiation Complete" interrupt
+> > > status bit, which signal that " ... auto-negotiation of the SGMII or
+> > > 1000BASE-X interface has completed."
+> > 
+> > It depends what they mean by "Auto-negotiation complete" in SGMII.
+> > SGMII can complete the handshake, yet the config_reg word indicate
+> > link down.  If such an update causes an "Auto-negotiation complete"
+> > interrupt, then that's sufficient.
+> > 
+> > However, looking at axienet_mac_pcs_get_state(), that is just reading
+> > back what the MAC was set to in axienet_mac_config(), which is not
+> > how this is supposed to work.  axienet_mac_pcs_get_state() is
+> > supposed to get the results of the SGMII/1000BASE-X "negotiation".
+> > That also needs to be fixed.
 > 
-> Maybe a small tweak to the documentation as per below, indicating that the
-> stack stuff is just an x86-specific example?
+> I found "pg138-axi-ethernet.pdf" online, which I guess is this IP.
+> It says for SGMII:
 > 
-> Jiri?
+> The results of the SGMII auto-negotiation can be read from the SGMII
+> Management Auto-Negotiation Link Partner Ability Base register
+> (Table 2-54). The speed of the subsystem should then be set to match.
+> 
+> and similar for 1000BASE-X (referencing the same register.)
+> 
+> However, what they give in table 2-54 is the 1000BASE-X version of
+> the config_reg word, not the SGMII version (which is different.)
+> 
+> Hmm, I guess there's probably some scope for phylink to start
+> handling an IEEE 802.3 compliant PCS accessed over MDIO rather
+> than having each network driver implement this, but for now your
+> axienet_mac_pcs_get_state() implementation needs to be reading
+> from the register described in table 2-54 and interpreting the
+> results according to whether state->interface is 802.3z or not.
+> 
+> Also note, don't set state->interface in axienet_mac_pcs_get_state(),
+> you will be passed the currently selected interface that was last
+> configured via axienet_mac_config().
 
-Yes, the text in the documentation was too x86-specific. Could you send
-the below as a proper patch? Thanks.
+Maybe something like the below will help?
 
-> diff --git a/Documentation/asm-annotations.rst b/Documentation/asm-annotations.rst
-> index f55c2bb74d00..32ea57483378 100644
-> --- a/Documentation/asm-annotations.rst
-> +++ b/Documentation/asm-annotations.rst
-> @@ -73,10 +73,11 @@ The new macros are prefixed with the ``SYM_`` prefix and can be divided into
->  three main groups:
->  
->  1. ``SYM_FUNC_*`` -- to annotate C-like functions. This means functions with
-> -   standard C calling conventions, i.e. the stack contains a return address at
-> -   the predefined place and a return from the function can happen in a
-> -   standard way. When frame pointers are enabled, save/restore of frame
-> -   pointer shall happen at the start/end of a function, respectively, too.
-> +   standard C calling conventions. For example, on x86, this means that the
-> +   stack contains a return address at the predefined place and a return from
-> +   the function can happen in a standard way. When frame pointers are enabled,
-> +   save/restore of frame pointer shall happen at the start/end of a function,
-> +   respectively, too.
->  
->     Checking tools like ``objtool`` should ensure such marked functions conform
->     to these rules. The tools can also easily annotate these functions with
+Basically, use phylink_mii_pcs_get_state() instead of
+axienet_mac_pcs_get_state(), and setup lp->phylink_config.pcs_mii
+to point at the MII bus, and lp->phylink_config.pcs_mii_addr to
+access the internal PHY (as per C_PHYADDR parameter.)
 
-thanks,
+You may have some fuzz (with gnu patch) while trying to apply this,
+as you won't have the context for the first and last hunks in this
+patch.
+
+This will probably not be the final version of the patch anyway;
+there's some possibility to pull some of the functionality out of
+phylib into a more general library which would avoid some of the
+functional duplication.
+
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index 75a74a16dc3d..44198fdb3c01 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -2073,4 +2073,105 @@ phy_interface_t phylink_select_serdes_interface(unsigned long *interfaces,
+ }
+ EXPORT_SYMBOL_GPL(phylink_select_serdes_interface);
+ 
++static void phylink_decode_advertisement(struct phylink_link_state *state)
++{
++	__ETHTOOL_DECLARE_LINK_MODE_MASK(u);
++
++	linkmode_and(u, state->lp_advertising, state->advertising);
++
++	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT, u)) {
++		state->pause = MLO_PAUSE_RX | MLO_PAUSE_TX;
++	} else if (linkmode_test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, u)) {
++		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT,
++				      state->lp_advertising))
++			state->pause |= MLO_PAUSE_TX;
++		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT,
++				      state->advertising))
++			state->pause |= MLO_PAUSE_RX;
++	}
++
++	if (linkmode_test_bit(ETHTOOL_LINK_MODE_2500baseX_Full_BIT, u)) {
++		state->speed = SPEED_2500;
++		state->duplex = DUPLEX_FULL;
++	} else if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseX_Full_BIT, u)) {
++		state->pause = SPEED_1000;
++		state->duplex = DUPLEX_FULL;
++	} else {
++		state->link = false;
++	}
++}
++
++void phylink_mii_pcs_get_state(struct phylink_config *config,
++			       struct phylink_link_state *state)
++{
++	struct mii_bus *bus = config->pcs_mii;
++	int addr = config->pcs_mii_addr;
++	int bmsr, lpa;
++
++	bmsr = mdiobus_read(bus, addr, MII_BMSR);
++	lpa = mdiobus_read(bus, addr, MII_LPA);
++	if (bmsr < 0 || lpa < 0) {
++		state->link = false;
++		return;
++	}
++
++	state->link = !!(bmsr & BMSR_LSTATUS);
++	state->an_complete = !!(bmsr & BMSR_ANEGCOMPLETE);
++
++	switch (state->interface) {
++	case PHY_INTERFACE_MODE_1000BASEX:
++		if (lpa & LPA_1000XFULL)
++			linkmode_set_bit(ETHTOOL_LINK_MODE_1000baseX_Full_BIT,
++					 state->lp_advertising);
++		goto lpa_8023z;
++
++	case PHY_INTERFACE_MODE_2500BASEX:
++		if (lpa & LPA_1000XFULL)
++			linkmode_set_bit(ETHTOOL_LINK_MODE_2500baseX_Full_BIT,
++					 state->lp_advertising);
++	lpa_8023z:
++		if (lpa & LPA_1000XPAUSE)
++			linkmode_set_bit(ETHTOOL_LINK_MODE_Pause_BIT,
++					 state->lp_advertising);
++		if (lpa & LPA_1000XPAUSE_ASYM)
++			linkmode_set_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT,
++					 state->lp_advertising);
++		if (lpa & LPA_LPACK)
++			linkmode_set_bit(ETHTOOL_LINK_MODE_Autoneg_BIT,
++					 state->lp_advertising);
++		phylink_decode_advertisement(state);
++		break;
++
++	case PHY_INTERFACE_MODE_SGMII:
++		switch (lpa & 0x8c00) {
++		case 0x8000:
++			state->speed = SPEED_10;
++			break;
++		case 0x8400:
++			state->speed = SPEED_100;
++			break;
++		case 0x8800:
++			state->speed = SPEED_1000;
++			break;
++		default:
++			state->link = false;
++			break;
++		}
++		switch (lpa & 0x9000) {
++		case 0x9000:
++			state->duplex = DUPLEX_FULL;
++			break;
++		case 0x8000:
++			state->duplex = DUPLEX_HALF;
++			break;
++		}
++		break;
++
++	default:
++		state->link = false;
++		break;
++	}
++}
++EXPORT_SYMBOL_GPL(phylink_mii_pcs_get_state);
++
+ MODULE_LICENSE("GPL v2");
+diff --git a/include/linux/phylink.h b/include/linux/phylink.h
+index 4ea76e083847..cf0fa39b4b21 100644
+--- a/include/linux/phylink.h
++++ b/include/linux/phylink.h
+@@ -65,6 +65,9 @@ enum phylink_op_type {
+ struct phylink_config {
+ 	struct device *dev;
+ 	enum phylink_op_type type;
++
++	struct mii_bus *pcs_mii;
++	int pcs_mii_addr;
+ };
+ 
+ /**
+@@ -292,4 +295,7 @@ phy_interface_t phylink_select_serdes_interface(unsigned long *interfaces,
+ 						const phy_interface_t *pref,
+ 						size_t nprefs);
+ 
++void phylink_mii_pcs_get_state(struct phylink_config *config,
++			       struct phylink_link_state *state);
++
+ #endif
+
 -- 
-js
-suse labs
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
