@@ -2,147 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6F30137590
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:57:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6588B1375CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 19:05:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Yu4Cr2nlctTthl7oUIvGZQPb0SlIsbCCk7B1ur7nX8=; b=pe0yOO0S2B3kmh
-	lEqjA4vVryC2ITuXM3rniKFBi7EP/a9Sc0W+4kmD/6fmlkObU/haglsUo7JPQ48NpLa63BjfOi+UQ
-	1iehmiyDlnNSceFgigzDYDS7vVitQPxHMLB3hM4ID95ZhDMfH5dDjXToz9zk+K1cFrbOy3va7MrvW
-	WFyQ7Or6hlK8Nn+LC/qpUNitmxI+Hc4NKazgI5rrHFvDw3jkonVF0pav3ZUIp9uw4FpY/IbM5p7Ja
-	0hlh7XHDM0wIK6k45SN4hmnuzkOZd98pq39W63ecqH6nnQXeYtzL8FncXNg55o68TXyGeD+qOXFlE
-	aWKvw+/+qFEbAjKvTfqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZS6Qzq3AljY961wqgSw5XU3LS6z3DVgaDBzEFyWVF8Q=; b=QZyuDNMQzpgf+K
+	WbF1cdt6xnsH8bU5JO9pk2xKh31JDURdAXpGHBV48ixCVkRgPYmRvRbVW1BQpvliMCUGWo9OISZh/
+	JpFZVWGpEi9tjktfW3xM22YBSl8MMUrVaJ7LOEVZ9dyQbvyYoCJDZLSIqDE4UyPrzUoXQcjeaJeqr
+	QZea4Wefq+V2UFyrCglBfMmIcKVFX13qRmucROQUH0CuxrUqHHlWCR4pVAY+b96PEiPTSTwO0D/5f
+	gdSSwz3ZymyLIG/s+rd9w/caR7zj9knlcXGNcm+klUUtlkhM2Z2+ZtxFgwdBslVFspM04wWR4vKbJ
+	soFWHYPFmTvOfCux9zYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipyWr-0003ui-98; Fri, 10 Jan 2020 17:57:01 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ipyeo-0006Zz-AO; Fri, 10 Jan 2020 18:05:14 +0000
+Received: from mail-eopbgr700051.outbound.protection.outlook.com
+ ([40.107.70.51] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipyWj-0003ta-85; Fri, 10 Jan 2020 17:56:54 +0000
-Received: by mail-pg1-x541.google.com with SMTP id x8so1330013pgk.8;
- Fri, 10 Jan 2020 09:56:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=LV3ZO51UnSzYbU8f+RohedOpPRRnxaXUWqjrXj7/zLM=;
- b=VDHTmh4NJXlsjOFE5IoHJv3DrkRBok8rss1fiJ9kXXBecuqVneoYsDwCBg/7UrtgPM
- xMjDR0Fi96n2+BXJ/8G6QdB/yH6F6RWyoChp0jcFlqbTVHQxEsvAx+VrZ+PBUjpIFngo
- Za3M7rTYCVMXPxKMd2lJg98qOb4vqF8ITLRcvTbCYDMbr3iyZCYce/iE+e1I5guzo+cy
- QbMdc4zB52dtQpsdtQVsatZrCuj10My3Wkqhv7htMeXkYbeXMGYD/9QX7hO95R84bpva
- Px4RUa7DYKRjZ2nh1Xz6qL3v71YyB/uBxpAlkBWOTHwgFfkxhU5hknhxqHl4a+p0Hi0v
- iNag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=LV3ZO51UnSzYbU8f+RohedOpPRRnxaXUWqjrXj7/zLM=;
- b=H6y76/KdB8ID/fkOc8USD5FjtM0yrMH/XQGYssC5Io5zhPccIPAm6hxSBansJpENyq
- IrsBxMLD3DFwjXQaGrX3uAnK6aGIe+B8CJP2hJ18dV++Jzy+A/JfY0Ls4X4wifUgymLZ
- 6+k76p2KRSyUCgBbZRcPwPxKKMu8tt9cFK6S0kI0jB70+P2vxm9QIhuMI84PIu7NjvI+
- wrEJhldjyG/+CyLSAaWDGKyxbrSi9OSmALLneDFQkfxDhO4iQwQAf1nKVzyCEWmoaLJj
- eFIuVxOTxhHwvYDlX/utKLG+Kt8qn/9SrVdj6rSpgTLQy2KfanjPs272vrRmv/KiskdC
- 1M9g==
-X-Gm-Message-State: APjAAAXrQpnLQmIVZ8RRIHayOo2///LRQvwF0DvOaSAtIgvJ+w1pJEUv
- LVbHywxBasUyKGqZfHX4/9BouSCd
-X-Google-Smtp-Source: APXvYqzfBxUGFYn3Yc+VhTxmob3vaFEXrFDjxvlMIPBq2Skh3j5kLcfSwJffLEhLdcGLfofkSGsh8g==
-X-Received: by 2002:a65:5788:: with SMTP id b8mr5813123pgr.324.1578679012342; 
- Fri, 10 Jan 2020 09:56:52 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id 144sm3995871pfc.124.2020.01.10.09.56.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 10 Jan 2020 09:56:51 -0800 (PST)
-Subject: Re: [RFC] ARM: add multi_v7_lpae_defconfig
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Russell King <linux@armlinux.org.uk>
-References: <20200110173425.21895-1-nsaenzjulienne@suse.de>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <28c80303-1476-a9ce-32f5-15e0148167b7@gmail.com>
-Date: Fri, 10 Jan 2020 09:56:50 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20200110173425.21895-1-nsaenzjulienne@suse.de>
+ id 1ipyea-0006Kl-SM
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 18:05:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dsnpDjrUkxAqlYyYsOz1BoqTfgNOc9V2OsVpuTqcEhcBaK+syAmErDBesOe7pfsi5Zz1L6q6ADuve/yhdeoBmfKPxaI7p6Umcq9lIXuI/IGoctKvOnzyhU6eLFdDaTPhhBw2oz+WHJAkHOgR+Y5g8Az3Z5UEJbmMk4vEDsVNyuOAma6SgkM7Bebi+8aWKaoZgq3Kth1fEPQl0hGs9cgIxM/ViBs4HcpBZ7InyFWTS7jM7Q3RWkSDSFqMJyxdC/jvPF6nL0WhgAD2pdnbVCn8zY4eBwGCaR9OexhWAWx8u1mWV1M6z+FYO5tgHWnbuZp4sLbCdBofRyR8b8Sm9Bv3Og==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7yPPa3JLLa4I/H4Qu9wp7czG/Kk1JExm4W1OpBFiIxE=;
+ b=Z2QOyfMJb4LwdtPDjDhRZtTyQKDTLLTJ/F+uYnDG3xkE3Io4uG/87PMXGl6vecs6xGFhgLMF4xOlx7WJqeWAGk5c8hdaws+yf7oJ2fImWNSAFpzUaqy+6T3qmL9S0rldpMjSS8DUzwSrsVv94Ze8nxAv2UnS+RmqzBBBHF2ayomfKIc23DZujp/Rqkbacm3BiBJNs1JqI+3sh6KqCVt9cwajd3+UGiYn9QHC5lg+ychyEgkS+PZRRPi7Z0tpyrTrgSnvxuQgKmkMoWHbEOggotjQKAtFOF7gc3pS2ORff2iNraB4n0Ylao3F7MlxPwNwODDHG2D0STn9lr/pGw3TqA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7yPPa3JLLa4I/H4Qu9wp7czG/Kk1JExm4W1OpBFiIxE=;
+ b=UFCJfzYrVHKXX1yvYlHRqVh3ccVYk9HrCmhMGYIHHPCaG/hFZPFnkxNUOkUj+DEQD8OKvVW3wIzYWZa4IhHY3ELmnn3UIKQnAiO0vVii43eynTwjyxsBpkWaaO9T04mcth7CB5qweJlZ0fV/ah7T7kmw5ecsgxjImTG34HkEJMk=
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
+ CH2PR02MB6760.namprd02.prod.outlook.com (10.141.156.73) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.9; Fri, 10 Jan 2020 18:04:57 +0000
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2623.013; Fri, 10 Jan 2020
+ 18:04:57 +0000
+From: Radhey Shyam Pandey <radheys@xilinx.com>
+To: Andre Przywara <andre.przywara@arm.com>, "David S . Miller"
+ <davem@davemloft.net>
+Subject: RE: [PATCH 05/14] net: axienet: Factor out TX descriptor chain cleanup
+Thread-Topic: [PATCH 05/14] net: axienet: Factor out TX descriptor chain
+ cleanup
+Thread-Index: AQHVx6y4/M+QpndI/06Wqu2OHMXL/6fkL3TQ
+Date: Fri, 10 Jan 2020 18:04:57 +0000
+Message-ID: <CH2PR02MB70003A0D500B9A78697FC311C7380@CH2PR02MB7000.namprd02.prod.outlook.com>
+References: <20200110115415.75683-1-andre.przywara@arm.com>
+ <20200110115415.75683-6-andre.przywara@arm.com>
+In-Reply-To: <20200110115415.75683-6-andre.przywara@arm.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=radheys@xilinx.com; 
+x-originating-ip: [183.83.136.244]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: c607d19e-82b1-44ec-d02f-08d795f79a35
+x-ms-traffictypediagnostic: CH2PR02MB6760:|CH2PR02MB6760:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CH2PR02MB6760AED6AC77B252D5C2A215C7380@CH2PR02MB6760.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 02788FF38E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(136003)(346002)(39860400002)(376002)(199004)(189003)(13464003)(54906003)(110136005)(26005)(8676002)(86362001)(81166006)(81156014)(186003)(66446008)(478600001)(7696005)(6506007)(2906002)(316002)(8936002)(53546011)(71200400001)(64756008)(66556008)(4326008)(52536014)(33656002)(55016002)(66476007)(5660300002)(76116006)(66946007)(9686003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6760;
+ H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: t2enkk7V2Z05goohCRPryr2KrDs/VydFR8BmlxXpEKXVpVQp5qz8cxB+nKJTnd78KUIWGgIY8xyZfgvZKp/xG7kKA4r6GjIw+QvlkJ3vC4utNlhtr2WJ5QXePdYYLfGSGMgqSygYWPeYduqf/6DGJ+5Aq4LGWm1T7v2eoVzoJLSlhMC/ymwkCXGgRrgnRFqGZ1Y1JsWZNyJME95Zu3yPbH0QU/5rJvSnn+JxPlL7rjKTp2K66HpyzNjyMMO1uG2WuJFnF/tflYxjW3/VMBu7Jf5i0B1P5fWo7lexnBf9EctySbdbHj/6Ygl6peVzT2HfrdRaQ5TLPWawdA4oZDWSRWSB8fdpj6IiM9R0EJMLBCUB4Sk+SMDnWri1uU6i3+Wx3VKs4AqmaaZZTRcwcLEhn2whbnOVHRynAxRjW1FY3lGqLp/yK82EnxjfvjKivk1BZz13N+JeZnGZ7FvxC227fM8Zd7a6iUR85JFkINtjeQpr5JI4sOi3nqMnCJ46o7hm
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c607d19e-82b1-44ec-d02f-08d795f79a35
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jan 2020 18:04:57.2056 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: bYjkePUNeHIOFPlPuefjyac8pU+MWZcuPsz2hZHd7TA6JLH0ufwjpiLtOHcroi1XkEvnRvTjYoGnQwItyV6qCQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6760
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_095653_314477_BE6360DA 
-X-CRM114-Status: GOOD (  20.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200110_100500_918972_8040A548 
+X-CRM114-Status: GOOD (  23.07  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.70.51 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,81 +120,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, phil@raspberrypi.org, wahrenst@gmx.net,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: Robert Hancock <hancock@sedsystems.ca>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Michal Simek <michals@xilinx.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/10/20 9:34 AM, Nicolas Saenz Julienne wrote:
-> The only missing configuration option preventing us from using
-> multi_v7_defconfig with the RPi4 is ARM_LPAE. It's needed as the PCIe
-> controller found on the SoC depends on 64bit addressing, yet can't be
-> included as not all v7 boards support LPAE.
-
-You might still be able to map the PCIe space above 4GB by using a super
-section though I am not sure how easy that would be to do with
-__map_init_section for instance and for the 4GB Pi4, we would not be
-able to address the entire DRAM space anyway.
-
-Besides, having a LPAE variant of the multi_v7_defconfig has a lot of
-value given that there are a few ARMv7 platforms that support LPAE.
-
+> -----Original Message-----
+> From: Andre Przywara <andre.przywara@arm.com>
+> Sent: Friday, January 10, 2020 5:24 PM
+> To: David S . Miller <davem@davemloft.net>; Radhey Shyam Pandey
+> <radheys@xilinx.com>
+> Cc: Michal Simek <michals@xilinx.com>; Robert Hancock
+> <hancock@sedsystems.ca>; netdev@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
+> Subject: [PATCH 05/14] net: axienet: Factor out TX descriptor chain cleanup
 > 
-> Introduce multi_v7_lpae_defconfig, built off multi_v7_defconfig, which will
-> avoid us having to duplicate and maintain multiple similar configurations.
+> Factor out the code that cleans up a number of connected TX descriptors,
+> as we will need it to properly roll back a failed _xmit() call.
+> There are subtle differences between cleaning up a successfully sent
+> chain (unknown number of involved descriptors, total data size needed)
+> and a chain that was about to set up (number of descriptors known), so
+> cater for those variations with some extra parameters.
 > 
-> Note that merge_into_defconfig was taken from arch/powerpc/Makefile.
-
-Would it make sense to move that make macro to scripts and keep just the
-multi_v7_lape_defconfig make target under arch/arm/Makefile?
-
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 > ---
->  arch/arm/Makefile            | 14 ++++++++++++++
->  arch/arm/configs/lpae.config |  1 +
->  2 files changed, 15 insertions(+)
->  create mode 100644 arch/arm/configs/lpae.config
+>  .../net/ethernet/xilinx/xilinx_axienet_main.c | 75 ++++++++++++-------
+>  1 file changed, 50 insertions(+), 25 deletions(-)
 > 
-> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-> index db857d07114f..3d157777a465 100644
-> --- a/arch/arm/Makefile
-> +++ b/arch/arm/Makefile
-> @@ -356,6 +356,20 @@ archclean:
->  # My testing targets (bypasses dependencies)
->  bp:;	$(Q)$(MAKE) $(build)=$(boot) MACHINE=$(MACHINE) $(boot)/bootpImage
->  
-> +# Used to create 'merged defconfigs'
-> +# To use it $(call) it with the first argument as the base defconfig
-> +# and the second argument as a space separated list of .config files to merge,
-> +# without the .config suffix.
-> +define merge_into_defconfig
-> +	$(Q)$(CONFIG_SHELL) $(srctree)/scripts/kconfig/merge_config.sh \
-> +		-m -O $(objtree) $(srctree)/arch/$(ARCH)/configs/$(1) \
-> +		$(foreach config,$(2),$(srctree)/arch/$(ARCH)/configs/$(config).config)
-> +	+$(Q)$(MAKE) -f $(srctree)/Makefile olddefconfig
-> +endef
+> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> index ec5d01adc1d5..82abe2b0f16a 100644
+> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> @@ -543,33 +543,37 @@ static int axienet_device_reset(struct net_device
+> *ndev)
+>  	return 0;
+>  }
+> 
+> -/**
+> - * axienet_start_xmit_done - Invoked once a transmit is completed by the
+> - * Axi DMA Tx channel.
+> - * @ndev:	Pointer to the net_device structure
+> - *
+> - * This function is invoked from the Axi DMA Tx isr to notify the completion
+> - * of transmit operation. It clears fields in the corresponding Tx BDs and
+> - * unmaps the corresponding buffer so that CPU can regain ownership of
+> the
+> - * buffer. It finally invokes "netif_wake_queue" to restart transmission if
+> - * required.
+> +/* Clean up a series of linked TX descriptors. Would either be called
+> + * after a successful transmit operation, or after there was an error
+> + * when setting up the chain.
+> + * Returns the number of descriptors handled.
+>   */
+> -static void axienet_start_xmit_done(struct net_device *ndev)
+
+To be consistent we can add the doxygen function description.
+The rest looks good. Feel free to add:
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+
+> +static int axienet_free_tx_chain(struct net_device *ndev, u32 first_bd,
+> +				 int nr_bds, u32 *sizep)
+>  {
+> -	u32 size = 0;
+> -	u32 packets = 0;
+>  	struct axienet_local *lp = netdev_priv(ndev);
+> +	int max_bds = (nr_bds != -1) ? nr_bds : lp->tx_bd_num;
+>  	struct axidma_bd *cur_p;
+> -	unsigned int status = 0;
+> +	unsigned int status;
+> +	int i;
 > +
-> +PHONY += multi_v7_lpae_defconfig
-> +multi_v7_lpae_defconfig:
-> +	$(call merge_into_defconfig,multi_v7_defconfig,lpae)
->  
->  define archhelp
->    echo  '* zImage        - Compressed kernel image (arch/$(ARCH)/boot/zImage)'
-> diff --git a/arch/arm/configs/lpae.config b/arch/arm/configs/lpae.config
-> new file mode 100644
-> index 000000000000..19bab134e014
-> --- /dev/null
-> +++ b/arch/arm/configs/lpae.config
-> @@ -0,0 +1 @@
-> +CONFIG_ARM_LPAE=y
+> +	for (i = 0; i < max_bds; i++) {
+> +		cur_p = &lp->tx_bd_v[(first_bd + i) % lp->tx_bd_num];
+> +		status = cur_p->status;
+> +
+> +		/* If no number is given, clean up *all* descriptors that have
+> +		 * been completed by the MAC.
+> +		 */
+> +		if (nr_bds == -1 && !(status &
+> XAXIDMA_BD_STS_COMPLETE_MASK))
+> +			break;
 > 
+> -	cur_p = &lp->tx_bd_v[lp->tx_bd_ci];
+> -	status = cur_p->status;
+> -	while (status & XAXIDMA_BD_STS_COMPLETE_MASK) {
+>  		dma_unmap_single(ndev->dev.parent, cur_p->phys,
+>  				(cur_p->cntrl &
+> XAXIDMA_BD_CTRL_LENGTH_MASK),
+>  				DMA_TO_DEVICE);
+> -		if (cur_p->skb)
+> +
+> +		if (cur_p->skb && (status &
+> XAXIDMA_BD_STS_COMPLETE_MASK))
+>  			dev_consume_skb_irq(cur_p->skb);
+> +
+>  		cur_p->cntrl = 0;
+>  		cur_p->app0 = 0;
+>  		cur_p->app1 = 0;
+> @@ -578,15 +582,36 @@ static void axienet_start_xmit_done(struct
+> net_device *ndev)
+>  		cur_p->status = 0;
+>  		cur_p->skb = NULL;
+> 
+> -		size += status & XAXIDMA_BD_STS_ACTUAL_LEN_MASK;
+> -		packets++;
+> -
+> -		if (++lp->tx_bd_ci >= lp->tx_bd_num)
+> -			lp->tx_bd_ci = 0;
+> -		cur_p = &lp->tx_bd_v[lp->tx_bd_ci];
+> -		status = cur_p->status;
+> +		if (sizep)
+> +			*sizep += status &
+> XAXIDMA_BD_STS_ACTUAL_LEN_MASK;
+>  	}
+> 
+> +	return i;
+> +}
+> +
+> +/**
+> + * axienet_start_xmit_done - Invoked once a transmit is completed by the
+> + * Axi DMA Tx channel.
+> + * @ndev:	Pointer to the net_device structure
+> + *
+> + * This function is invoked from the Axi DMA Tx isr to notify the completion
+> + * of transmit operation. It clears fields in the corresponding Tx BDs and
+> + * unmaps the corresponding buffer so that CPU can regain ownership of
+> the
+> + * buffer. It finally invokes "netif_wake_queue" to restart transmission if
+> + * required.
+> + */
+> +static void axienet_start_xmit_done(struct net_device *ndev)
+> +{
+> +	u32 size = 0;
+> +	u32 packets = 0;
+> +	struct axienet_local *lp = netdev_priv(ndev);
+> +
+> +	packets = axienet_free_tx_chain(ndev, lp->tx_bd_ci, -1, &size);
+> +
+> +	lp->tx_bd_ci += packets;
+> +	if (lp->tx_bd_ci >= lp->tx_bd_num)
+> +		lp->tx_bd_ci -= lp->tx_bd_num;
+> +
+>  	ndev->stats.tx_packets += packets;
+>  	ndev->stats.tx_bytes += size;
+> 
+> --
+> 2.17.1
 
-
--- 
-Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
