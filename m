@@ -2,93 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30297136AE6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:18:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12639136AF0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:19:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gjS4IL6dqwLZTkalRleY+jIUyBRKDGNh7MFOdJ09Huo=; b=oxsQF0Hj4/YJZL
-	ifskgz466zyZgge1yxWQ1NVRK3VE1DI2r/PGy3Zcs8RvdmUTw+iAQro58rij+Cye0f246238ay+B5
-	7VBgsIfh03HVuGGpJYGMVUirxX2ETNoGQ7TN+DUzwAsU7eGGHp6zC/ldXS/WVlSfJ0T4MgbOTK3Xw
-	IavR9yrxaYkSxA4lBokohr9dSM80kfT+1tPWDRNAfRal6U1O7f2MGFG1NHguOSMPwaX6OaHZRN5rZ
-	acuhZHHVPKBWMDmDueBk/dlphcty0GJ9FJ0+d6cCQ7cqQf6FaFbuhoIgzFSF09aHUDOIr3xNr1ezu
-	/r3lWpHS533MuMvtmNmQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z1rrS3wk4xdbDWpKvSGXsbupt0WdHbzX49aaPneepUs=; b=AIRY9a6c3WTTmU
+	kJjwYKoHOsKAaVTnyF7RUOLn+Jz+ikKbF2vli7v4d9MfJWMoYxR968deFK/1wOwbBAFFxPFR4snJU
+	QusFhZm8HIPg4zrKtAf+zJjaQt9BpbX8Pa6IMY+gBvG7vOhnTTz/xwS2OvfMZHe7SpYYJUpMjXNf2
+	GDqa4ytDR2mFKEkLnNXg7VcwaO3iZbvCJnVNvg34I2VlaS4z5rcISNbvpdX09hSsz+Aglky/kiTdT
+	CQJYWuUwXodbih5brsgK7YCA0Y/d0spFVbDN/WKv2LRFc2Arwjl/v/Ukg8ssdeVg/u+yRzsQb6ThE
+	SUDYTgm3my2ClCyc4YrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iprMf-0002Lw-0y; Fri, 10 Jan 2020 10:18:01 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iprNx-0003Wj-DS; Fri, 10 Jan 2020 10:19:21 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iprL6-0001Cy-Av
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:16:27 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00AAE3Yq031197; Fri, 10 Jan 2020 11:16:18 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=AAD/GToJl17SoA/ncPjv8bRydogH2ZBtCfUpPZ40ub0=;
- b=zpzL2mKRX3XGn9bOo1I7gmQD4k8aW36S5+loLQuhg/U2FX8Zy9tx3LU9PvGDkccAfS3L
- nMQyx8AO/LbrSHjrFvlp8s5SWocc15VluEjiN6j9OZM5WHGW81paA0Qtd4pUuiCn188w
- ZPsF7j0IWLJgh3SYnzlfDisKc0MG/+p6WSOnaHQNUpn0w+iEA2fiSm9dkvQowp1/1rMs
- GG6k3bPmUujVOdYPXcrvMOJhCC9cxc1lehVrKdV1k/GqRSZ7Krj9aCTtpBXy5kGcMs5t
- iSZR1hTQRBc1OphTho7YI3NKeg8ouiv6/FYHeH+pDuu/ky3AtbrGiWWtD47VNKC6eXoA 7g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xepyt83ft-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 10 Jan 2020 11:16:18 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BFA92100038;
- Fri, 10 Jan 2020 11:16:12 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B1AFE2A7907;
- Fri, 10 Jan 2020 11:16:12 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 10 Jan 2020 11:16:12 +0100
-From: Pascal Paillet <p.paillet@st.com>
-To: <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>, 
- <amit.kucheria@verdurent.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <p.paillet@st.com>,
- <david.hernandezsanchez@st.com>, <horms+renesas@verge.net.au>,
- <wsa+renesas@sang-engineering.com>, <linux-pm@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH_V3 6/6] thermal: stm32: fix low threshold interrupt flood
-Date: Fri, 10 Jan 2020 11:16:05 +0100
-Message-ID: <20200110101605.24984-7-p.paillet@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200110101605.24984-1-p.paillet@st.com>
-References: <20200110101605.24984-1-p.paillet@st.com>
+ id 1iprMy-0002tl-P6
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:18:24 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1578651500; h=Content-Transfer-Encoding: MIME-Version:
+ Message-Id: Date: Subject: Cc: To: From: Sender;
+ bh=Sur98Trxip0lS2J0kZIUVd9Xdj/kghewp4wUiHEmGZQ=;
+ b=M/Mr9nz0qo0Su6EHX+056Xc8tmijy5pFBPyIiOUsBaWgS2psh/hiSizrpv5FaqGUMa3ChxBJ
+ 04bZRY3dUMCnogzvRzSQTYqu4CN5Icqt/oSQmu7QDRcMd6pAQjVdvyd3wK1R1DMpC/SjJpfD
+ PYAFrY64yz7gBshNpkzFmSqgswY=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e184f66.7f3c6f870500-smtp-out-n03;
+ Fri, 10 Jan 2020 10:18:14 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 34C62C43383; Fri, 10 Jan 2020 10:18:14 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=ham autolearn_force=no version=3.4.0
+Received: from blr-ubuntu-253.qualcomm.com
+ (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 67727C433A2;
+ Fri, 10 Jan 2020 10:18:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 67727C433A2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: qcom: sc7180: Add iommus property to QUP0 and QUP1
+Date: Fri, 10 Jan 2020 15:48:02 +0530
+Message-Id: <20200110101802.4491-1-saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-10_01:2020-01-10,
- 2020-01-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_021624_726323_8C7893D0 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200110_021820_905590_1F5BD12A 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,48 +91,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With the STM32 thermal peripheral, it is not possible to dump the
-temperature that has caused the interrupt.
-When the temperature reaches the low threshold, we generally read
-a temperature that is a little bit higher than the low threshold.
-This maybe due to sampling precision, and also because the CPU becomes
-hotter when it quits WFI mode.
-In that case, the framework does not change the trip points. This leads
-to a lot of low threshold interrupts.
+Define iommus property for QUP0 and QUP1 with the proper SID
+and mask. Below SMMU global faults are seen without this during
+boot and when using i2c touchscreen.
 
-The fix is to set the low threshold value 0.5 degrees Celsius
-below the actual request.
+QUP0:
+arm-smmu 15000000.iommu: Unexpected global fault, this could be serious
+arm-smmu 15000000.iommu: GFSR 0x00000002, GFSYNR0 0x00000002, GFSYNR1 0x00000043, GFSYNR2 0x00000000
 
-The problem is not so frequent with the high threshold and it would
-no be a good idea to set the threshold value higher than the request.
+QUP1:
+arm-smmu 15000000.iommu: Unexpected global fault, this could be serious
+arm-smmu 15000000.iommu: GFSR 0x00000002, GFSYNR0 0x00000002, GFSYNR1 0x000004c3, GFSYNR2 0x00000000
 
-Signed-off-by: Pascal Paillet <p.paillet@st.com>
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 ---
- drivers/thermal/st/stm_thermal.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/sc7180.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/thermal/st/stm_thermal.c b/drivers/thermal/st/stm_thermal.c
-index aaf25ca2f118..1cc5e6c5709e 100644
---- a/drivers/thermal/st/stm_thermal.c
-+++ b/drivers/thermal/st/stm_thermal.c
-@@ -321,7 +321,8 @@ static int stm_thermal_set_trips(void *data, int low, int high)
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 8011c5fe2a31..01e431f49c18 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -338,6 +338,7 @@ qupv3_id_0: geniqup@8c0000 {
+ 			#address-cells = <2>;
+ 			#size-cells = <2>;
+ 			ranges;
++			iommus = <&apps_smmu 0x43 0x0>;
+ 			status = "disabled";
  
- 	if (low > -INT_MAX) {
- 		sensor->low_temp_enabled = 1;
--		ret = stm_thermal_calculate_threshold(sensor, low, &th);
-+		/* add 0.5 of hysteresis due to measurement error */
-+		ret = stm_thermal_calculate_threshold(sensor, low - 500, &th);
- 		if (ret)
- 			return ret;
+ 			i2c0: i2c@880000 {
+@@ -546,6 +547,7 @@ qupv3_id_1: geniqup@ac0000 {
+ 			#address-cells = <2>;
+ 			#size-cells = <2>;
+ 			ranges;
++			iommus = <&apps_smmu 0x4c3 0x0>;
+ 			status = "disabled";
  
+ 			i2c6: i2c@a80000 {
 -- 
-2.17.1
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
