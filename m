@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ED3F136AE5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:17:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A24C136AE4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:17:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8smL6rM2esX5KwveaIrL91k+WpadlORJT1Qk35CRkiI=; b=jyHHfTo6xFHjpw
-	R3+RlsVXfUdBmfY0Rnf7gnMzLZM1K6KsMIiZm3N/RfpzzMIobq/cbB4P/Zw4FifMvklZIrsbVmKDa
-	zrms/7cQGz5aDRV+Id0zS5MqGeF3C87b7cbuHRxQhYEucWevpUGszRFo8TVXZmyxxyyhmNypUbTfQ
-	lJm6OJuky8rmkQo7o1OZDjTiPDEIvB697Y/vaXDm8GcMFjrqiYlKiFD7ZkWJk8kYqAVckvPgTA3ui
-	pNku6A6wThvpcJOXt5Zdok02MWdkFlZ7IsIMoSvlKtzGeKasIMJrnS+33XZavO3J99zNXB3iARQYb
-	BGJKz15UDpSkBZ+vK/Nw==;
+	List-Owner; bh=5HbmhOFcjxuluK6fq4FdUJYdj4xEKz0G/gcCEd8WsuM=; b=PMxqtqMt2TnPwo
+	2A2KzeBKI4xW6SDcTj4/l6Nz95B2Dac/M+iCrvSljgAIcQ3RUuoS0bUOzQbgz4+BHX3QPw5RuR3zW
+	gv2pZJZiS9LntXfvdE6E+ehgf+imCtQDJpOW1Exn2SOMnMu8VTB43CzZXRmHuyrPkLhcSyibMkPAf
+	rn7a4g73PAJ2b0bn2ZCy3sQtCQXESf9Q5zrTxtDOJqSPLH6DW1jj1zCU1avDTh6oLGS6aIUkRsFNc
+	U6L569yNrYB5N60xpNDwx1JG2csnc+SzU+wpUqnY+/n7bsra+mxg779n+I8189j5R6m2damXwEgyd
+	+oBI3DjBdjBN28NzXKCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iprMM-000290-Ep; Fri, 10 Jan 2020 10:17:42 +0000
+	id 1iprMC-0001tl-Uh; Fri, 10 Jan 2020 10:17:32 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iprL4-00017D-FX
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:16:24 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1iprL1-00014R-9f
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:16:22 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00AADCs2031451; Fri, 10 Jan 2020 11:16:11 +0100
+ 00AAE8Dx029396; Fri, 10 Jan 2020 11:16:11 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : subject :
  date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=Hldl398s+nOsQdaXOAH6nd6BIu7pyZ6GdjoQzcUnb9A=;
- b=p5pYZN/WKAF6KKnv7UYIix4OmJOWjfMgBObE4Spfn7X55oeAvaQ1iekhxqTOVr3OxuhV
- uUjtiWWqNTMTe0/wFFGa7UC92vymXSWjm5GRklaQwXr5ZzeXnlkEdAHQxVwv8PZE5myo
- ICtjAdAZxPeZ4oTCELMP4HckIz9hZ1bOGjhaNEv0nMGXxv3z010QA1K5fIwmWXknkZN2
- hraEdcqW6m2mIGwF5PeDqnm41Z1ZAVvVUcvHMIaaIZ5b7v2ZbWz6cFdlBroZmGvj9Lzm
- QWODCkBhVMAENM1rI2L9l42MJi97Qh6rpbtEZmAYW1ZdBUq+/DkvdjytnXmD/zZX/Ufg iA== 
+ bh=MsYZtSJTRtofOX1+DaEAVsiSRhsLl0necGZ8OJbUceY=;
+ b=accDVAbHVcJLvFxLvvSntdbWOxM1RFgWQAK86Kkg8SLmaJWvoS5tTeuahNLi9Jm3u68T
+ 8ZgQ5D6EDnwWAEPgcYf25gFwQxd0UWoapJB2PqUPJx6mo09R4LXA1EKH7/W307+NWWv/
+ NuEi7GDvf7PK6VFwhxpOnWbgTaOhlHtLzCqH9d/A9h+vPPqf4nPtVmwM0GcMksWxe0yr
+ Pxw1SR+tTM/NNkDpDNRXSCFR52B6MHSKyD+bOx4Y5Y0aj1wl2qcN7ubGAH9OtpALZ7eT
+ JJI5waYLhLVx1eXHk5ArYsAuxVhsluQi45ceA/teUD0P5Y7c3rRNK1fkL8WdQv5wjyPF OA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xdw8b7kv1-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xakkb742a-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Fri, 10 Jan 2020 11:16:11 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3D526100034;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DC53810003A;
  Fri, 10 Jan 2020 11:16:09 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 24F622A7905;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CCC992A7907;
  Fri, 10 Jan 2020 11:16:09 +0100 (CET)
 Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 10 Jan 2020 11:16:08 +0100
+ Fri, 10 Jan 2020 11:16:09 +0100
 From: Pascal Paillet <p.paillet@st.com>
 To: <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>, 
  <amit.kucheria@verdurent.com>, <mcoquelin.stm32@gmail.com>,
@@ -58,22 +58,22 @@ To: <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>,
  <wsa+renesas@sang-engineering.com>, <linux-pm@vger.kernel.org>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH_V3 1/6] thermal: stm32: fix icifr register name
-Date: Fri, 10 Jan 2020 11:16:00 +0100
-Message-ID: <20200110101605.24984-2-p.paillet@st.com>
+Subject: [PATCH_V3 2/6] thermal: stm32: rework sensor mode management
+Date: Fri, 10 Jan 2020 11:16:01 +0100
+Message-ID: <20200110101605.24984-3-p.paillet@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200110101605.24984-1-p.paillet@st.com>
 References: <20200110101605.24984-1-p.paillet@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG6NODE2.st.com
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG6NODE2.st.com
  (10.75.127.17)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-10_01:2020-01-10,
  2020-01-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_021622_816383_CFF707AC 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20200110_021619_634587_3AEE07EB 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,57 +106,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix a mistake with the ICIFR register name.
+Be sure get_temp returns an error while disabling or enabling the device.
+Set THERMAL_DEVICE_ENABLED state at the end of power on function.
+Set THERMAL_DEVICE_DISABLED state at the beginning of power off function.
 
 Signed-off-by: Pascal Paillet <p.paillet@st.com>
 ---
- drivers/thermal/st/stm_thermal.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/thermal/st/stm_thermal.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/thermal/st/stm_thermal.c b/drivers/thermal/st/stm_thermal.c
-index cf9ddc52f30e..7835e109692e 100644
+index 7835e109692e..a21fa7e0c72b 100644
 --- a/drivers/thermal/st/stm_thermal.c
 +++ b/drivers/thermal/st/stm_thermal.c
-@@ -30,7 +30,7 @@
- #define DTS_DR_OFFSET		0x1C
- #define DTS_SR_OFFSET		0x20
- #define DTS_ITENR_OFFSET	0x24
--#define DTS_CIFR_OFFSET		0x28
-+#define DTS_ICIFR_OFFSET	0x28
+@@ -160,6 +160,8 @@ static int stm_sensor_power_on(struct stm_thermal_sensor *sensor)
+ 	writel_relaxed(value, sensor->base +
+ 		       DTS_CFGR1_OFFSET);
  
- /* DTS_CFGR1 register mask definitions */
- #define HSREF_CLK_DIV_MASK	GENMASK(30, 24)
-@@ -122,10 +122,10 @@ static irqreturn_t stm_thermal_alarm_irq_thread(int irq, void *sdata)
- 	value = readl_relaxed(sensor->base + DTS_SR_OFFSET);
++	sensor->mode = THERMAL_DEVICE_ENABLED;
++
+ 	return 0;
+ }
  
- 	if ((value & LOW_THRESHOLD) == LOW_THRESHOLD)
--		writel_relaxed(LOW_THRESHOLD, sensor->base + DTS_CIFR_OFFSET);
-+		writel_relaxed(LOW_THRESHOLD, sensor->base + DTS_ICIFR_OFFSET);
+@@ -167,6 +169,8 @@ static int stm_sensor_power_off(struct stm_thermal_sensor *sensor)
+ {
+ 	u32 value;
  
- 	if ((value & HIGH_THRESHOLD) == HIGH_THRESHOLD)
--		writel_relaxed(HIGH_THRESHOLD, sensor->base + DTS_CIFR_OFFSET);
-+		writel_relaxed(HIGH_THRESHOLD, sensor->base + DTS_ICIFR_OFFSET);
++	sensor->mode = THERMAL_DEVICE_DISABLED;
++
+ 	/* Stop measuring */
+ 	value = readl_relaxed(sensor->base + DTS_CFGR1_OFFSET);
+ 	value &= ~TS1_START;
+@@ -374,7 +378,6 @@ static int stm_thermal_update_threshold(struct stm_thermal_sensor *sensor)
+ {
+ 	int ret;
  
- 	thermal_zone_device_update(sensor->th_dev, THERMAL_EVENT_UNSPECIFIED);
+-	sensor->mode = THERMAL_DEVICE_DISABLED;
  
-@@ -347,7 +347,7 @@ static int stm_enable_irq(struct stm_thermal_sensor *sensor)
- 	 */
+ 	ret = stm_sensor_power_off(sensor);
+ 	if (ret)
+@@ -576,8 +579,6 @@ static int stm_thermal_suspend(struct device *dev)
+ 	if (ret)
+ 		return ret;
  
- 	/* Make sure LOW_THRESHOLD IT is clear before enabling */
--	writel_relaxed(LOW_THRESHOLD, sensor->base + DTS_CIFR_OFFSET);
-+	writel_relaxed(LOW_THRESHOLD, sensor->base + DTS_ICIFR_OFFSET);
+-	sensor->mode = THERMAL_DEVICE_DISABLED;
+-
+ 	return 0;
+ }
  
- 	/* Enable IT generation for low threshold */
- 	value = readl_relaxed(sensor->base + DTS_ITENR_OFFSET);
-@@ -356,7 +356,7 @@ static int stm_enable_irq(struct stm_thermal_sensor *sensor)
- 	/* Enable the low temperature threshold if needed */
- 	if (sensor->low_temp_enabled) {
- 		/* Make sure HIGH_THRESHOLD IT is clear before enabling */
--		writel_relaxed(HIGH_THRESHOLD, sensor->base + DTS_CIFR_OFFSET);
-+		writel_relaxed(HIGH_THRESHOLD, sensor->base + DTS_ICIFR_OFFSET);
+@@ -590,7 +591,6 @@ static int stm_thermal_resume(struct device *dev)
+ 	if (ret)
+ 		return ret;
  
- 		/* Enable IT generation for high threshold */
- 		value |= HIGH_THRESHOLD;
+-	sensor->mode = THERMAL_DEVICE_ENABLED;
+ 
+ 	return 0;
+ }
+@@ -718,8 +718,6 @@ static int stm_thermal_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto err_tz;
+ 
+-	sensor->mode = THERMAL_DEVICE_ENABLED;
+-
+ 	dev_info(&pdev->dev, "%s: Driver initialized successfully\n",
+ 		 __func__);
+ 
 -- 
 2.17.1
 
