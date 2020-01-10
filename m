@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F6BC13685D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:37:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CEC9136867
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:38:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vfQbYRa5IvQzJgIgFibW1DbvwHzRbkz/zpgbR5mytxw=; b=eJehmQb9Ww0OpQ
-	gpp2kBwsit9lnmF3wNDKTol7invbHeE6kbNyyiEh02s+bJG0Y/8sLjroHeqqMP2XotEyYoui5sCBt
-	RUjYmuwaMg4AAtnC60EvFygUv8gM510r5sFI1qq2rb6ulQ3aPIiAkrkSQRD5LWzdIbW6qmno41PL6
-	DaeLlBd0d1TPBvEplvhgOqBm2dQeeBqgqNJeg/iBa308oKUK1YtPm6UQKdHJK9yYJahRdNRwd9y3W
-	i/VMVw6y8GD7IBHj/qhgHHf5ruFBdM5HRbpb2SWM1Ae2caqdBqqhkE4W9N3XbO/m7Nl1ts0EPHN1R
-	EdJh69Uafx1i9734clQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w1Thmly1ahSXxCIhp9ajQsNTPz5VATw9DT6NyP/QtKo=; b=bhZByeqrJWKTql
+	3NtxYtDZL55KmF84S7wrj8e+4XlsUe8L94StDxfnYkDIRof9olRMG7xQ+dsyWAuJcBrKYIY6XHbfY
+	ZmWPmR/8l4HgWy3wNNmnQaeq+IKnO6OpciifTH+isn898swc+KhsuebHyhTtUEiOJG71uV08kTxJL
+	ElIlcKKO+Ya5tp9tVX8cmPsLNSJjr4KBBcRP8kLJI84LhN0zUqtMobcOJHl8qG/JaFQ5Wmf/7hd0F
+	aar9PqwfjBRU51OfvLhnkpRXdt8YoYPC/p69GC90BO04e5XgzSOhTHhI6JwZZkddHEjb0QB/5Mzcn
+	Ev9LGMkacyMvfh1fRt/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipoqz-000679-6G; Fri, 10 Jan 2020 07:37:09 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iporj-0006Wy-H8; Fri, 10 Jan 2020 07:37:55 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipoqq-00066h-2j; Fri, 10 Jan 2020 07:37:01 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id n59so629313pjb.1;
- Thu, 09 Jan 2020 23:36:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yTj4OJccQHZ2BrF4urivSeZlUB6G0DA2jB2WOE566iw=;
- b=U9S1u6MURdSbih/awgcGfOrKcqm8Vkw7+33OoYTsoFVsWAOcNOyxVoIwr5xxwkDjfg
- GgNxv/WnxbAdFR1H68bnX2vI2cla0dT6WbZJb02XejnWHpKcOSOZRJ6OEau3nz4Fiz2+
- QTj/EpWng6qg/kdSWBMWoO3WUnb4/0a93XE0phpqok+ZuZDsw75BTlsjGbRE8D0X8get
- oC8r2haOMhnRRNIKOzbgGVehuNzhnpTDQlYXxwgez08WJNAQMhw7WgIe9L0TKOcYDdnN
- UfJn1M1CneOkhninJNPdVb40dtFJu1a7G5A51AUfaWE784PDwnPkIQQgpiFKFUxJOR43
- sIww==
+ id 1iporS-0006VE-TF
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 07:37:40 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id u63so1652888pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 23:37:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SvaOTqe9vv2vgBX/0s0tlxD/m/5uJBFVxQC6/f12J1w=;
+ b=KjSa4cmcgVBqcSfdfv8n61/028FjDGN6C1grjJKBT0FgzX9Z2+DacVwxR8bjn4zRx+
+ aAZodAJZNLZv0D4Ysy5Buay9JdlGluTI/2xRKLasjw3WCBfwmpV8ZBAI6HNqiV5jpGBn
+ RsThcEfoNkOlPgLLcQrb3HyeiULZUdvQCNKO0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yTj4OJccQHZ2BrF4urivSeZlUB6G0DA2jB2WOE566iw=;
- b=gwhaUEcjm1s4r96vmvRaj2q2U6OZoBtEFWqOxQRMIIWO9a4j0xnFR1PbS/XccaTzpY
- pQeXaqhWKhXEtd6gH2abmnUksqW+Uc4b1X+TnIXWod3t61YKJ5B9ngx0KVKYUs1B85D8
- vxonBGsGlxdNMr8g+I7/Qz4quMS4eAFWgsMQeDyBB1FTcgmtZBhClBvptBva595qFGSl
- +YHRxGnbzgNR6Fn+EGry+0yXMhfvSYaVgyje5kcyoKaMS4cQrAka/ODXeDzVfRMy6d1d
- DRf6RSpLOoXjbTJbP0u6SI1Zp+JZ/qE/lF/ODP51nvz/nn3YLLaQAezAtjf/GanHxyQ0
- qOTQ==
-X-Gm-Message-State: APjAAAUnWq+aBrJSsS50oRXiaOrDQEIRsbjO6P9cn+q1WF3g9oUN9PvH
- I7smDctdCDc+KDJZJZ4XBQG4J5+Ms4WMDX7Psg0=
-X-Google-Smtp-Source: APXvYqzPmV7BK59xh7j+/AotZwJxnKvCKvDFyUX9AG5hXPOx5Bk8qmVEtPzgimgz8T9tDl1dzgD1mOB1nffV/fd5Xgo=
-X-Received: by 2002:a17:902:8d96:: with SMTP id
- v22mr2634726plo.262.1578641819147; 
- Thu, 09 Jan 2020 23:36:59 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SvaOTqe9vv2vgBX/0s0tlxD/m/5uJBFVxQC6/f12J1w=;
+ b=pdFC4nfHW8ra6YpwP+a4UFaYyYPMF08NruoYRABnniLY5CysBiUUUh27m2dJ7jKYEp
+ cC19SQ9+UFngsTRIDH25CilY1nWdtrTrfq7i4W5szGuSi+OX3GessbEeD8rxmxbfhqmF
+ iSyEpBbeZc09I+FTpPrj3Jh/4t7eF2QHu9kQ7UFMOKsu7X61VwNTjmEFL6YOHwDtHUhs
+ UUg/c+ada6J991nVmkzgJjIMapMG0N1FFrpTBO33ZkOsM1lxcLrQkHzoYtno4BzNs7jB
+ ISrFW5Yn7uDQz1hKbX2scpl/67vIjGErsN0XliFRpPa2EwQatEZHM2AtKEpV6l0hDgu7
+ yM9A==
+X-Gm-Message-State: APjAAAX73KsSvZyd8xSWvad+5R2mjCdub2KotZSrqnGdCIOFndj7Fi8r
+ lMTA/bJdHEWx8cBGLQi1Xq669pFLXRE=
+X-Google-Smtp-Source: APXvYqxytG7Z9y6Z61d5GQU9Hnb21hBVtECYCvXx3qYivuDVxrF71+ICMHxhkVi4/n0R+pxRlfjnuw==
+X-Received: by 2002:a17:902:34d:: with SMTP id
+ 71mr2644975pld.140.1578641857781; 
+ Thu, 09 Jan 2020 23:37:37 -0800 (PST)
+Received: from hsinyi-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:b852:bd51:9305:4261])
+ by smtp.gmail.com with ESMTPSA id p28sm1373919pgb.93.2020.01.09.23.37.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Jan 2020 23:37:37 -0800 (PST)
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/2] Add mt8173 elm and hana board
+Date: Fri, 10 Jan 2020 15:37:28 +0800
+Message-Id: <20200110073730.213789-1-hsinyi@chromium.org>
+X-Mailer: git-send-email 2.25.0.rc1.283.g88dfdc4193-goog
 MIME-Version: 1.0
-References: <20200108062923.14684-1-fengping.yu@mediatek.com>
- <20200108062923.14684-3-fengping.yu@mediatek.com>
- <20200110013230.GS8314@dtor-ws>
-In-Reply-To: <20200110013230.GS8314@dtor-ws>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 10 Jan 2020 09:35:30 +0200
-Message-ID: <CAHp75VcELo3f5VYqGbgjgBzOZOj360+EPmRF5Oh3VqBAF8TeHw@mail.gmail.com>
-Subject: Re: [PATCH V2 2/2] drivers: input: keyboard
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_233700_125298_29CA1E13 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20200109_233738_941742_BCAF8904 
+X-CRM114-Status: GOOD (  10.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andy.shevchenko[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,55 +91,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- wsd_upstream@mediatek.com, Stefan Agner <stefan@agner.cn>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Marco Felsch <m.felsch@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
- Anson Huang <Anson.Huang@nxp.com>, YueHaibing <yuehaibing@huawei.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- linux-input <linux-input@vger.kernel.org>, Thierry Reding <treding@nvidia.com>,
- Valentin Schneider <valentin.schneider@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Maxime Ripard <mripard@kernel.org>, Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Olof Johansson <olof@lixom.net>, fengping yu <fengping.yu@mediatek.com>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, linux-kernel@vger.kernel.org,
+ Daniel Kurtz <djkurtz@chromium.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 3:34 AM Dmitry Torokhov
-<dmitry.torokhov@gmail.com> wrote:
-> On Wed, Jan 08, 2020 at 02:29:23PM +0800, fengping yu wrote:
-> > From: "fengping.yu" <fengping.yu@mediatek.com>
+This series adds devicetree and binding document for Acer Chromebook R13 (elm)
+and Lenovo Chromebook (hana), which are using mt8173 as SoC.
 
-...
+Changes in v2:
+- fix mediatek.yaml
+- fixup some nodes and remove unused nodes in dts
 
-> > +static void kpd_get_keymap_state(void __iomem *kp_base, u16 state[])
-> > +{
-> > +     state[0] = readw(kp_base + KP_MEM1);
-> > +     state[1] = readw(kp_base + KP_MEM2);
-> > +     state[2] = readw(kp_base + KP_MEM3);
-> > +     state[3] = readw(kp_base + KP_MEM4);
-> > +     state[4] = readw(kp_base + KP_MEM5);
->
-> Please use memcpy_formio() here.
+Hsin-Yi Wang (2):
+  dt-bindings: arm64: dts: mediatek: Add mt8173 elm and hana
+  arm64: dts: mediatek: add mt8173 elm and hana board
 
-Actually it's not an equivalent and may have side effects.
-I already told somewhere that we lack of
-mem*_*io{32,16,8}() implementation.
+ .../devicetree/bindings/arm/mediatek.yaml     |   27 +
+ arch/arm64/boot/dts/mediatek/Makefile         |    3 +
+ .../dts/mediatek/mt8173-elm-hana-rev7.dts     |   27 +
+ .../boot/dts/mediatek/mt8173-elm-hana.dts     |   16 +
+ .../boot/dts/mediatek/mt8173-elm-hana.dtsi    |   60 +
+ arch/arm64/boot/dts/mediatek/mt8173-elm.dts   |   15 +
+ arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi  | 1040 +++++++++++++++++
+ 7 files changed, 1188 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dts
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dts
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtsi
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm.dts
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi
 
 -- 
-With Best Regards,
-Andy Shevchenko
+2.25.0.rc1.283.g88dfdc4193-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
