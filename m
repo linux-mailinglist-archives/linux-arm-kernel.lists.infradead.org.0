@@ -2,134 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5290136924
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 09:48:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE91C136934
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 09:52:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lCXzQJaCvkeJ+XQ7DCRkXmn/RIQG3+ECtalSDDzupk=; b=ACEoZT/cpEXono
-	PLS7XVyuILrD3JIYksq7FtFBP0OOdBoh2P3fnUeCOaWSS+XOBv0yDz8JJeYTRnjzesp6xkUalSWH2
-	oANL9bVe1zjpKxIFatOJVrCq/0IwgzvXJgRxkN+RIeS5IjWGUfmYs1pIcZPx3ygNG4eNEC7Yd6qhY
-	hboBnGUbt0TU3joLVOC8Rg+4Om3he+m7+JcMBbygiOyFc/dWkuPYsAddmv5ODJNwi79foJuRzGB0b
-	m1xtbcaT5pxRrMgRFAcpu1w+LzcqIPTBCfJHLXQhPCgsXSE527ERXTURhxL5DEgifDzoVCFPG+6dB
-	CubRixOXec5BhLmXgB5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WnQ21eu7zlj+SOBjjht0n2xNwgkKGU+grFgQhqBJamw=; b=PXUV6BKIMUgdud
+	3t3u2L7dZlky7tyr/1/9VkG5TcCn6k0cZICAZel77Voc6ZMzekSCk5XSNiZTrja+E1wHfp9W+X5p7
+	vPSTCH9UXcbygaCIyw9ni2b8gSdgx9F7maCFGuv99M6r8ETK0VnhV2f2NyMSFl8b0ijnRw8v+SqRM
+	BkRzqE8FpZz/iwJXAF3fqPa4TSso0jV0kbYOijNCPWrMmGfEvqT8zNszFRtppBOKvcVBEfuMYzAJM
+	11Mpd1ZjTnAM3CQChboo+CsT83WV7ya4mmOR2JGw1IAodG5QookR6Dq4gxpYNzWjwTtnQ4Vep9lez
+	WlbKokVaig+Vx7kH7gMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ippy8-0003sA-On; Fri, 10 Jan 2020 08:48:36 +0000
-Received: from mail-bn8nam11on2089.outbound.protection.outlook.com
- ([40.107.236.89] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1ipq26-0005uv-Rc; Fri, 10 Jan 2020 08:52:42 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ippy1-0003rj-SO
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 08:48:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Lcmwc4kOdqWHYVCXWe3CVWGWZ8pAu+DnNis0kkdmuZ5mhhhgX6ChmKGDbUESAcKA1xSAFp8JYx5FsPJiYvK3DmCgaZ+7QeHbqbBegOXgyr3vZw5LBZtWPQ3iIOryVDFi3uUDNjGTEePl3waCa2B+FwjD1U33CEXFIoftk5QOW23bmomaShgESiGyLtL+HXvPJcmLIrxJFw6I3BTr6Kt89MSIcol3e7phzWsbmhSJNouhc7ArEKH83rqoEDoxJ4JMHh2DEvfyXl4XHJ2GKu2L8IvlT4Vh3oXfLhDVjQjed+saSfJn7F8hZB5pkekDbrGZ+mY9bwa0kxa867zQ2/pxOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CuuPUTfWmZ+dbKri9hg78PRUUPVjFwTaW9PN5PIcZnc=;
- b=gTWevHPg947YJZReiWq5+77OYZsMWVfFNpna6FWrojtw81v67JUxMW5zqK36sEnjXveYPPKEdJp93iwRJHuTc+yVFP9Y/5ST3BEUZejSHxz6g7qRSZuNAZ4oYybYYbP7YVhr3WEmewuoFQhm871xpJOmSRtleG2N57JjwVegKVn1Wt1oG6Nf60GMGapTqPDklSf/1UqbL7zOw+lmD7fahNteF1VeDahjawAYWJqcijpzpmj7MhNReo1IUPN/KQNBJOE6zfVvf1wt5XC2W5qtRxPOKhwo1uP5S9jj7oaEqUg/L0KGpJx7b+of7hGeDtFraiOErHeXNEFvVQ7vNWCP7Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=wolfvision.net smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CuuPUTfWmZ+dbKri9hg78PRUUPVjFwTaW9PN5PIcZnc=;
- b=SCT6zbDQ6WYIM3lz218aHw2RfQKWeKdDDNAlD7DSR+nsCIjcAFHUjCuy0ahdWwfhM2uo2Fm5VyZh4jYGWWXIhuyu6k9WBsn3VdB+KYaGyGT79LxZTHO8L2hnJyQkdKDN3TT67oGBJRyjlwaZqFg3Mqxmqk6+LwIYhScSgCxCmLI=
-Received: from CY4PR02CA0036.namprd02.prod.outlook.com (2603:10b6:903:117::22)
- by BN6PR02MB2355.namprd02.prod.outlook.com (2603:10b6:404:2a::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2623.11; Fri, 10 Jan
- 2020 08:48:25 +0000
-Received: from CY1NAM02FT053.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::205) by CY4PR02CA0036.outlook.office365.com
- (2603:10b6:903:117::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2602.12 via Frontend
- Transport; Fri, 10 Jan 2020 08:48:25 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; wolfvision.net; dkim=none (message not signed)
- header.d=none;wolfvision.net; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT053.mail.protection.outlook.com (10.152.74.165) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2623.9
- via Frontend Transport; Fri, 10 Jan 2020 08:48:24 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ippxw-0001Zo-Eq; Fri, 10 Jan 2020 00:48:24 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ippxr-0001DN-Au; Fri, 10 Jan 2020 00:48:19 -0800
-Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 00A8mIi6014248; 
- Fri, 10 Jan 2020 00:48:18 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1ippxq-0001D4-5D; Fri, 10 Jan 2020 00:48:18 -0800
-Subject: Re: [PATCH] dmaengine: zynqmp_dma: fix burst length configuration
-To: Matthias Fend <matthias.fend@wolfvision.net>,
- linux-arm-kernel@lists.infradead.org
-References: <20200110082607.25353-1-matthias.fend@wolfvision.net>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <137545d8-466d-e2f6-1e3e-8879dcee423d@xilinx.com>
-Date: Fri, 10 Jan 2020 09:48:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ipq1w-0005az-Da; Fri, 10 Jan 2020 08:52:34 +0000
+X-UUID: e827c589892c432a9286efcc8396da2d-20200110
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=y/OSJpRfsXPqxj4MvMlH1zRHUOGo+E0kY4E8nZfJ6qo=; 
+ b=kXx2Ru1YN0sUN/YySq3X+kpat7OrFYzLllQH+6wgzmzH0V7MKjL6r8WgOU75o/0gr2U6AXIFoAtqNG4YjWajT/LFq1puMIwenDGytSMk4stioH7UINIit8LlvwUalVjR855XK7NzmTa4kNEx338mft4i07CWbRBzyKSPtNK3DpM=;
+X-UUID: e827c589892c432a9286efcc8396da2d-20200110
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <yingjoe.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 441199512; Fri, 10 Jan 2020 00:52:25 -0800
+Received: from mtkexhb02.mediatek.inc (172.21.101.103) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 Jan 2020 00:52:23 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by mtkexhb02.mediatek.inc
+ (172.21.101.103) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 10 Jan 2020 16:52:25 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 10 Jan 2020 16:50:50 +0800
+Message-ID: <1578646330.18795.4.camel@mtksdaap41>
+Subject: Re: [PATCH v2 2/2] arm64: dts: mediatek: add mt8173 elm and hana board
+From: Yingjoe Chen <yingjoe.chen@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 10 Jan 2020 16:52:10 +0800
+In-Reply-To: <20200110073730.213789-3-hsinyi@chromium.org>
+References: <20200110073730.213789-1-hsinyi@chromium.org>
+ <20200110073730.213789-3-hsinyi@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200110082607.25353-1-matthias.fend@wolfvision.net>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(39860400002)(376002)(346002)(199004)(189003)(426003)(336012)(186003)(31686004)(478600001)(81156014)(2616005)(26005)(70586007)(8676002)(44832011)(70206006)(4326008)(36756003)(81166006)(8936002)(9786002)(5660300002)(107886003)(54906003)(316002)(356004)(31696002)(6666004)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR02MB2355; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: bea40be5-16f4-4a00-49b6-08d795a9dae6
-X-MS-TrafficTypeDiagnostic: BN6PR02MB2355:
-X-Microsoft-Antispam-PRVS: <BN6PR02MB2355D805B17FB5B977C9411FC6380@BN6PR02MB2355.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
-X-Forefront-PRVS: 02788FF38E
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: zEkP89caZXCns8EF83ee31fbjBppeF8Q/PAzJG8kdNc/4jR+/8lYZVO4YMclai+7mJjmVwkQcB455nI9v0F2NjgtSAEohx9ZQK6cxYc5fEVV4EGSGPXuFh4qIFsaKuxtX8tix9Ehi9Bhv1Sdq4UqmfL8lbLFMmY0a7CfLObgllMZTR+hs9GK9snFQ3nbNrAyXLsS8jfbVQsBtgWH8dPaP//eNWc8gRMh00Ll2EK9BMVtG4k+qdHt/NMQLH2L5MuoM99Iwu2oBXwsq1eDzf/+eYu2+x79cfhx3kINXw5ITj1Lr6f0ksTCiqdUbQ94B/CSJcIPcIY19Mz+7C/cmqBu+1hzEFlkZi6oTTux/K3dTUMgf1F25lqYY6AxA6WsNBsaAeFFQuQx4RTZVoWc/auOJ7bWDk4u4GS4p2V+6NyLC/WJ3C770fn617n8M2VinXqj
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jan 2020 08:48:24.9020 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bea40be5-16f4-4a00-49b6-08d795a9dae6
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2355
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_004829_925619_48EFCA87 
-X-CRM114-Status: GOOD (  17.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200110_005232_477260_562DD287 
+X-CRM114-Status: GOOD (  17.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.89 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,97 +83,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, Harini Katakam <harini.katakam@xilinx.com>,
- vkoul@kernel.org, Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- michal.simek@xilinx.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Enric Balletbo i
+ Serra <enric.balletbo@collabora.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+Radhey and Harini
-
-On 10. 01. 20 9:26, Matthias Fend wrote:
-> Since the dma engine expects the burst length register content as
-> power of 2 value, the burst length needs to be converted first.
-> Additionally add a burst length range check to avoid corrupting unrelated
-> register bits.
+On Fri, 2020-01-10 at 15:37 +0800, Hsin-Yi Wang wrote:
+> Elm is Acer Chromebook R13. Hana is Lenovo Chromebook. Both uses mt8173
+> SoC.
 > 
-> Signed-off-by: Matthias Fend <matthias.fend@wolfvision.net>
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
->  drivers/dma/xilinx/zynqmp_dma.c | 24 +++++++++++++++---------
->  1 file changed, 15 insertions(+), 9 deletions(-)
+> Changes in v2:
+> - remove downstream nodes and unused nodes
+> - use GPIO_ACTIVE_LOW for ps8640 gpios
+> - move trackpad to hana
+> ---
+>  arch/arm64/boot/dts/mediatek/Makefile         |    3 +
+>  .../dts/mediatek/mt8173-elm-hana-rev7.dts     |   27 +
+>  .../boot/dts/mediatek/mt8173-elm-hana.dts     |   16 +
+>  .../boot/dts/mediatek/mt8173-elm-hana.dtsi    |   60 +
+>  arch/arm64/boot/dts/mediatek/mt8173-elm.dts   |   15 +
+>  arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi  | 1040 +++++++++++++++++
+>  6 files changed, 1161 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dts
+>  create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dts
+>  create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtsi
+>  create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm.dts
+>  create mode 100644 arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi
 > 
-> diff --git a/drivers/dma/xilinx/zynqmp_dma.c b/drivers/dma/xilinx/zynqmp_dma.c
-> index 9c845c07b107..aa4de6c6688a 100644
-> --- a/drivers/dma/xilinx/zynqmp_dma.c
-> +++ b/drivers/dma/xilinx/zynqmp_dma.c
-> @@ -123,10 +123,12 @@
->  /* Max transfer size per descriptor */
->  #define ZYNQMP_DMA_MAX_TRANS_LEN	0x40000000
->  
-> +/* Max burst lengths */
-> +#define ZYNQMP_DMA_MAX_DST_BURST_LEN    16
-> +#define ZYNQMP_DMA_MAX_SRC_BURST_LEN    16
+> diff --git a/arch/arm64/boot/dts/mediatek/Makefile b/arch/arm64/boot/dts/mediatek/Makefile
+> index 458bbc422a94..b45a45a565a1 100644
+> --- a/arch/arm64/boot/dts/mediatek/Makefile
+> +++ b/arch/arm64/boot/dts/mediatek/Makefile
+> @@ -6,5 +6,8 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-evb.dtb
+>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-x20-dev.dtb
+>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-rfb1.dtb
+>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-bananapi-bpi-r64.dtb
+> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt8173-elm.dtb
+> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt8173-elm-hana.dtb
+> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt8173-elm-hana-rev7.dtb
+>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8173-evb.dtb
+>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8183-evb.dtb
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dts b/arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dts
+> new file mode 100644
+> index 000000000000..a3616bc3d859
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dts
+> @@ -0,0 +1,27 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright 2019 MediaTek Inc.
+> + */
 > +
->  /* Reset values for data attributes */
->  #define ZYNQMP_DMA_AXCACHE_VAL		0xF
-> -#define ZYNQMP_DMA_ARLEN_RST_VAL	0xF
-> -#define ZYNQMP_DMA_AWLEN_RST_VAL	0xF
->  
->  #define ZYNQMP_DMA_SRC_ISSUE_RST_VAL	0x1F
->  
-> @@ -534,17 +536,19 @@ static void zynqmp_dma_handle_ovfl_int(struct zynqmp_dma_chan *chan, u32 status)
->  
->  static void zynqmp_dma_config(struct zynqmp_dma_chan *chan)
->  {
-> -	u32 val;
-> +	u32 val, burst_val;
->  
->  	val = readl(chan->regs + ZYNQMP_DMA_CTRL0);
->  	val |= ZYNQMP_DMA_POINT_TYPE_SG;
->  	writel(val, chan->regs + ZYNQMP_DMA_CTRL0);
->  
->  	val = readl(chan->regs + ZYNQMP_DMA_DATA_ATTR);
-> +	burst_val = __ilog2_u32(chan->src_burst_len);
->  	val = (val & ~ZYNQMP_DMA_ARLEN) |
-> -		(chan->src_burst_len << ZYNQMP_DMA_ARLEN_OFST);
-> +		(burst_val << ZYNQMP_DMA_ARLEN_OFST);
-> +	burst_val = __ilog2_u32(chan->dst_burst_len);
->  	val = (val & ~ZYNQMP_DMA_AWLEN) |
-> -		(chan->dst_burst_len << ZYNQMP_DMA_AWLEN_OFST);
-> +		(burst_val << ZYNQMP_DMA_AWLEN_OFST);
->  	writel(val, chan->regs + ZYNQMP_DMA_DATA_ATTR);
->  }
->  
-> @@ -560,8 +564,10 @@ static int zynqmp_dma_device_config(struct dma_chan *dchan,
->  {
->  	struct zynqmp_dma_chan *chan = to_chan(dchan);
->  
-> -	chan->src_burst_len = config->src_maxburst;
-> -	chan->dst_burst_len = config->dst_maxburst;
-> +	chan->src_burst_len = clamp(config->src_maxburst, 1U,
-> +		(u32) ZYNQMP_DMA_MAX_SRC_BURST_LEN);
-> +	chan->dst_burst_len = clamp(config->dst_maxburst, 1U,
-> +		(u32) ZYNQMP_DMA_MAX_DST_BURST_LEN);
->  
->  	return 0;
->  }
-> @@ -887,8 +893,8 @@ static int zynqmp_dma_chan_probe(struct zynqmp_dma_device *zdev,
->  		return PTR_ERR(chan->regs);
->  
->  	chan->bus_width = ZYNQMP_DMA_BUS_WIDTH_64;
-> -	chan->dst_burst_len = ZYNQMP_DMA_AWLEN_RST_VAL;
-> -	chan->src_burst_len = ZYNQMP_DMA_ARLEN_RST_VAL;
-> +	chan->dst_burst_len = ZYNQMP_DMA_MAX_DST_BURST_LEN;
-> +	chan->src_burst_len = ZYNQMP_DMA_MAX_SRC_BURST_LEN;
->  	err = of_property_read_u32(node, "xlnx,bus-width", &chan->bus_width);
->  	if (err < 0) {
->  		dev_err(&pdev->dev, "missing xlnx,bus-width property\n");
-> 
+> +/dts-v1/;
+> +#include "mt8173-elm-hana.dtsi"
+> +
+> +/ {
+> +	model = "Mediatek Hana rev7 board";
+> +	compatible = "google,hana-rev7", "mediatek,mt8173";
+> +};
+> +
+> +&cpu_thermal {
+> +	trips {
+> +		cpu_crit: cpu_crit@0 {
+> +			temperature = <100000>;
+> +			type = "critical";
+> +		};
+> +	};
+> +};
+> +
+> +&gpio_keys {
+> +	/delete-node/tablet_mode;
+> +	/delete-node/volume_down;
+> +	/delete-node/volume_up;
+> +};
+> \ No newline at end of file
 
-M
+nit: Please add a newline at end of file for all files in this patch.
 
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dts b/arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dts
+> new file mode 100644
+> index 000000000000..8cbcc75192e3
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dts
+> @@ -0,0 +1,16 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright 2016 MediaTek Inc.
+> + */
+> +
+> +/dts-v1/;
+> +#include "mt8173-elm-hana.dtsi"
+> +
+> +/ {
+> +	model = "Mediatek Hana rev0 board";
+> +	compatible = "google,hana-rev6",
+> +			"google,hana-rev5", "google,hana-rev4",
+> +			"google,hana-rev3", "google,hana-rev2",
+> +			"google,hana-rev1", "google,hana-rev0",
+> +			"google,hana", "mediatek,mt8173";
+> +};
+> \ No newline at end of file
+
+<...>
+
+> +
+> +&pwrap {
+> +	pmic: mt6397 {
+> +		compatible = "mediatek,mt6397";
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		interrupt-parent = <&pio>;
+> +		interrupts = <11 IRQ_TYPE_LEVEL_HIGH>;
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;
+> +
+> +		mt6397rtc: mt6397rtc {
+> +			compatible = "mediatek,mt6397-rtc";
+> +		};
+> +
+> +		syscfg_pctl_pmic: syscfg_pctl_pmic@c000 {
+> +			compatible = "mediatek,mt6397-pctl-pmic-syscfg",
+> +				     "syscon";
+> +			reg = <0 0x0000c000 0 0x0108>;
+> +		};
+> +
+> +		pio6397: pinctrl@c000 {
+> +			compatible = "mediatek,mt6397-pinctrl";
+> +			pins-are-numbered;
+> +			gpio-controller;
+> +			#gpio-cells = <2>;
+> +		};
+> +
+> +		mt6397clock: mt6397clock {
+> +			compatible = "mediatek,mt6397-clk";
+> +			#clock-cells = <1>;
+> +		};
+> +
+> +		mt6397regulator: mt6397regulator {
+> +			compatible = "mediatek,mt6397-regulator";
+> +
+> +			mt6397_vpca15_reg: buck_vpca15 {
+> +				regulator-compatible = "buck_vpca15";
+> +				regulator-name = "vpca15";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +				regulator-allowed-modes = <0 1>;
+> +			};
+> +
+> +			mt6397_vpca7_reg: buck_vpca7 {
+> +				regulator-compatible = "buck_vpca7";
+> +				regulator-name = "vpca7";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-enable-ramp-delay = <115>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vsramca15_reg: buck_vsramca15 {
+> +				regulator-compatible = "buck_vsramca15";
+> +				regulator-name = "vsramca15";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vsramca7_reg: buck_vsramca7 {
+> +				regulator-compatible = "buck_vsramca7";
+> +				regulator-name = "vsramca7";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vcore_reg: buck_vcore {
+> +				regulator-compatible = "buck_vcore";
+> +				regulator-name = "vcore";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vgpu_reg: buck_vgpu {
+> +				regulator-compatible = "buck_vgpu";
+> +				regulator-name = "vgpu";
+> +				regulator-min-microvolt = < 700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-enable-ramp-delay = <115>;
+> +			};
+> +
+> +			mt6397_vdrm_reg: buck_vdrm {
+> +				regulator-compatible = "buck_vdrm";
+> +				regulator-name = "vdrm";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <1400000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vio18_reg: buck_vio18 {
+> +				regulator-compatible = "buck_vio18";
+> +				regulator-name = "vio18";
+> +				regulator-min-microvolt = <1620000>;
+> +				regulator-max-microvolt = <1980000>;
+> +				regulator-ramp-delay = <12500>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vtcxo_reg: ldo_vtcxo {
+> +				regulator-compatible = "ldo_vtcxo";
+> +				regulator-name = "vtcxo";
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_va28_reg: ldo_va28 {
+> +				regulator-compatible = "ldo_va28";
+> +				regulator-name = "va28";
+> +			};
+> +
+> +			mt6397_vcama_reg: ldo_vcama {
+> +				regulator-compatible = "ldo_vcama";
+> +				regulator-name = "vcama";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vio28_reg: ldo_vio28 {
+> +				regulator-compatible = "ldo_vio28";
+> +				regulator-name = "vio28";
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vusb_reg: ldo_vusb {
+> +				regulator-compatible = "ldo_vusb";
+> +				regulator-name = "vusb";
+> +			};
+> +
+> +			mt6397_vmc_reg: ldo_vmc {
+> +				regulator-compatible = "ldo_vmc";
+> +				regulator-name = "vmc";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vmch_reg: ldo_vmch {
+> +				regulator-compatible = "ldo_vmch";
+> +				regulator-name = "vmch";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vemc_3v3_reg: ldo_vemc3v3 {
+> +				regulator-compatible = "ldo_vemc3v3";
+> +				regulator-name = "vemc_3v3";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vgp1_reg: ldo_vgp1 {
+> +				regulator-compatible = "ldo_vgp1";
+> +				regulator-name = "vcamd";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-enable-ramp-delay = <240>;
+> +			};
+> +
+> +			mt6397_vgp2_reg: ldo_vgp2 {
+> +				regulator-compatible = "ldo_vgp2";
+> +				regulator-name = "vcamio";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vgp3_reg: ldo_vgp3 {
+> +				regulator-compatible = "ldo_vgp3";
+> +				regulator-name = "vcamaf";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vgp4_reg: ldo_vgp4 {
+> +				regulator-compatible = "ldo_vgp4";
+> +				regulator-name = "vgp4";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vgp5_reg: ldo_vgp5 {
+> +				regulator-compatible = "ldo_vgp5";
+> +				regulator-name = "vgp5";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <3000000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +
+> +			mt6397_vgp6_reg: ldo_vgp6 {
+> +				regulator-compatible = "ldo_vgp6";
+> +				regulator-name = "vgp6";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			mt6397_vibr_reg: ldo_vibr {
+> +				regulator-compatible = "ldo_vibr";
+> +				regulator-name = "vibr";
+> +				regulator-min-microvolt = <1300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-enable-ramp-delay = <218>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&spi {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&spi_pins_a>;
+> +	mediatek,pad-select = <1>;
+> +	status = "okay";
+> +	/* clients */
+> +	cros_ec: ec@0 {
+> +		compatible = "google,cros-ec-spi";
+> +		reg = <0x0>;
+> +		spi-max-frequency = <12000000>;
+> +		interrupt-parent = <&pio>;
+> +		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
+> +		google,cros-ec-spi-msg-delay = <500>;
+> +
+> +		i2c_tunnel: i2c-tunnel@0 {
+> +			compatible = "google,cros-ec-i2c-tunnel";
+> +			google,remote-bus = <0>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			battery: sbs-battery@b {
+> +				compatible = "sbs,sbs-battery";
+> +				reg = <0xb>;
+> +				sbs,i2c-retry-count = <2>;
+> +				sbs,poll-retry-count = <1>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&thermal {
+> +	bank0-supply = <&mt6397_vpca15_reg>;
+> +	bank1-supply = <&da9211_vcpu_reg>;
+> +};
+> +
+> +&uart0 {
+> +	status = "okay";
+> +};
+> +
+> +&ssusb {
+
+sorting according to name, please put this before thermal.
+
+Joe.C
 
 _______________________________________________
 linux-arm-kernel mailing list
