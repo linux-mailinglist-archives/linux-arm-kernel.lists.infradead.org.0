@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88EBC136F40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:23:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65CA5136F48
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:27:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M4u7WBz/kVyxOSSN9hhCSWFmnMwq4CYV3z/FOBIANrY=; b=g2yHeesngjYA1t
-	H+dfjq4PAR2ao3H6uoDl6POYDtGqooPYf9a6xgGGdzAJwbQujUKQQR2uocVlW5T1F3t2Wo/DdLqX8
-	eakU7xRoOj7pyQyu2NqhvaUXv4N9aQUrszyt1db2jlzcmQ51bijZfpL0kQS9aKymiE7EHqNlQYZwb
-	FXw2KgWTjtOv98gsU74Kl+wz9MmbuLDCEeA1vtAk64ajgF8QrGDV0uIWUCSnzfEdmCK58TyIJawdR
-	oinvBRwWk5gmdHIxBObm92/R7dUJPfMPR8S9/zw+CKYxFfiKilD9LtA+pWZxXoJDaEIW8NRoOYVJp
-	zdW3nDTS269Q+Wekf5Dg==;
+	List-Owner; bh=dfKBe2i2nS1p8FiY866weEeUEb2cumzYpQ+SY86tWrI=; b=jtr1CXt0j3iMw1
+	KbC+3zN8spnAesia5VIdI4+mT6RpeJKrH9g13syumQfue1DjxMM/H88uOdMvPTjIiNiBTz9NcHubs
+	gS5ApoLpB70rXQOoJL5BHdpE9lYF09Y4Aedd2QtO99hAa4UyyFSRtmgliVVOSv0XoRxWnphZl2C01
+	oYofMbIbFi0BPoZsLZvFX2nbJILVwS8KDDUvEUkrnbpqnXHmQmrzXpeD9wxqVw3lwbeHvi25LDNqE
+	NrWNmzSBIsAU9QhWMekD7nZVgvEVvjxwqlFxpKRN7U4/YSwSwoq4aZPoZj09xJJCJSi1AhHOH/BXh
+	vmWbdh3v3BnDOvqoWXKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipvBo-0004j4-1h; Fri, 10 Jan 2020 14:23:04 +0000
+	id 1ipvFT-0006OZ-Ms; Fri, 10 Jan 2020 14:26:51 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipvBh-0004ig-C1
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:22:58 +0000
+ id 1ipvFK-0006OF-8I
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:26:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=/LqUWTGBt5gIEmNEJ7QzFyPyiWRNbMxwiltxq0x8igc=; b=Gp+lCFbhq8KoEC210hcrrMI+wF
- 0JmIiELjl9bsPWXOe+seRjm5/SPB27amgsTcYWk3K7slz6nTL7Ap4HOtQKZQxxSen6qMer/4I6JEo
- yAvQ+UulpPXYSX6w61WiKyIYOL/UICkN8rDzumQnp6aSzIjQp9ojDzMowUF4uRGZOLNk=;
+ bh=cWGwCc62opavZnegbiqCMtfyBG1T7+ozcmU/luokREM=; b=cvmCthiCJhkSj4eL7Otj+ZmXlu
+ Kd7YxwWKApotRkPUWC4Z2aDxzr1GfvUwJ6VIGbZjH2N6HZhIu9MRo8g5sRf7S3FtzgP8g5hVNdte/
+ GavVqoBmtcdYHEhYruYVoxNaNFqYvlZ2EoaVGt7aWyuHjG9yd52D7vya027Tg0En60i8=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
  (envelope-from <andrew@lunn.ch>)
- id 1ipvBa-0007bd-5w; Fri, 10 Jan 2020 15:22:50 +0100
-Date: Fri, 10 Jan 2020 15:22:50 +0100
+ id 1ipvFE-0007eu-Kp; Fri, 10 Jan 2020 15:26:36 +0100
+Date: Fri, 10 Jan 2020 15:26:36 +0100
 From: Andrew Lunn <andrew@lunn.ch>
 To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 12/14] net: axienet: Autodetect 64-bit DMA capability
-Message-ID: <20200110142250.GH19739@lunn.ch>
+Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
+Message-ID: <20200110142636.GI19739@lunn.ch>
 References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-13-andre.przywara@arm.com>
- <20200110140852.GF19739@lunn.ch>
- <20200110141303.2e5863ab@donnerap.cambridge.arm.com>
+ <20200110115415.75683-8-andre.przywara@arm.com>
+ <20200110140415.GE19739@lunn.ch>
+ <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200110141303.2e5863ab@donnerap.cambridge.arm.com>
+In-Reply-To: <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_062257_405670_05B40542 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20200110_062642_294638_FB7ED1AB 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -81,36 +82,24 @@ Cc: netdev@vger.kernel.org,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
  Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
  Robert Hancock <hancock@sedsystems.ca>,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
  "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 02:13:03PM +0000, Andre Przywara wrote:
-> On Fri, 10 Jan 2020 15:08:52 +0100
-> Andrew Lunn <andrew@lunn.ch> wrote:
-> 
-> Hi Andrew,
-> 
-> thanks for having a look!
-> 
-> > > To autodetect this configuration, at probe time we write all 1's to such
-> > > an MSB register, and see if any bits stick.  
-> > 
-> > So there is no register you can read containing the IP version?
-> 
-> There is, and I actually read this before doing this check. But the 64-bit DMA capability is optional even in this revision. It depends on what you give it as the address width. If you say 32, the IP config tool disables the 64-bit capability completely, so it stays compatible with older revisions.
-> Anything beyond 32 will enable the MSB register and will also require you to write to them.
+> But I have no clue whether that would trigger on a link status
+> *change*.
 
-So you are saying there is no way to enumerate the synthesised
-configuration of the IP. Great :-(
+It should do, but without testing...
 
-Do Xilinx at least document you can discover the DMA size by writing
-into these upper bits? Does Xilinx own 'vendor crap' driver do this?
+> Is there a way to test this without pulling the cable? My board sits
+> in a data centre, so is not easily accessible to me.
 
-Thanks
-	Andrew
+Down and up the other end?
+
+     Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
