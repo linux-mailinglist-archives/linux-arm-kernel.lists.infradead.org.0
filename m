@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47BA7137004
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:51:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24808137032
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:54:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fmQVCCVVh4Jrbcb/rMTkK2ZceFc1F8Oo+dU0+4LWd1Q=; b=CTaT+IYCTgqn6F
-	HkY8UT8SZ81Rp2k/OvI/jXDHmyEYHwtKqTfZdV+Pwikd6fuoHmp2d3wmk97gmVOs2tPqvylK/2lG+
-	uzw0F/0KYuDm6QWTBLmfW8KE1ZvYf97y8bj/D0f1D7xDIlgbYqC4bPw0S95ECFcoxlv/FesZB6JBJ
-	25KP9bh/uvwcSUyV6PXdZcg4tMCmQ4nfdklfbLbnuAg4nFwN9Wh8pecC/V3sPgBdPwXhk9pDop964
-	0tHW/NOQIQCxxnucvPs5DcdsiIXYTkkbzDzoPosIaYEWBAUOD6GIE1Z/I6Nl8jCQ/KAkXN3crr9kK
-	+l9wq5ZAZlCwoZGW0q2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6piXuJvwZcRa5FBgmgYarKH0pU/deL26Wfhy6ui+0Vw=; b=dPd6y+GlMnXxh2
+	weXQDirL7uwJvcwzvc6sJXuqJD1m466+vrZIu4KQI3wA7pXY7CjWu7tN3KRW5ff5XaIl6gA7g5ZOw
+	Yba5aLsRfc+vdcbgBu/4ay8nMdguLBwcBQZBTQOj21l/3k7whzYl6kgh6SIqatuE5l23FmDINpt9t
+	6z+MP4iY3ACeqF8HlPBYaVhw3U8azMAxXa6pdGlelDIwWNh6xYM0xMHkfJTMBnleESf0BTquIVKhK
+	DrMmFPREmUPbYSAi6n4um3LgeC1piS7S2BGkFKUzqdL5M+W3OkZMoAAHRiqW5R2t0H0is1y8ePI96
+	4VzF462d3Hi7eIdWsmAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipvdG-0002m4-LY; Fri, 10 Jan 2020 14:51:26 +0000
+	id 1ipvgV-0003RO-1G; Fri, 10 Jan 2020 14:54:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipvd7-0002kj-2v
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:51:18 +0000
+ id 1ipvgC-0003QY-Fk
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:54:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 599C830E;
- Fri, 10 Jan 2020 06:51:16 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 26B913F6C4; Fri, 10 Jan 2020 06:51:15 -0800 (PST)
-Date: Fri, 10 Jan 2020 14:51:13 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v2 4/7] arm64: cpufeature: Set the FP/SIMD compat HWCAP
- bits properly
-Message-ID: <20200110145112.GF8786@arrakis.emea.arm.com>
-References: <20191217183402.2259904-1-suzuki.poulose@arm.com>
- <20191217183402.2259904-5-suzuki.poulose@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C647A30E;
+ Fri, 10 Jan 2020 06:54:27 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4AFA33F6C4;
+ Fri, 10 Jan 2020 06:54:27 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: linux-arch@vger.kernel.org
+Subject: [PATCH v2 00/10] Impveovements for random.h/archrandom.h
+Date: Fri, 10 Jan 2020 14:54:12 +0000
+Message-Id: <20200110145422.49141-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217183402.2259904-5-suzuki.poulose@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_065117_187727_B297D0B0 
-X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-CacheID: sfid-20200110_065428_570277_CD356327 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,29 +62,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ard.biesheuvel@linaro.org, maz@kernel.org,
- linux-kernel@vger.kernel.org, christoffer.dall@arm.com, will@kernel.org,
- dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-s390@vger.kernel.org, herbert@gondor.apana.org.au, x86@kernel.org,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Mark Brown <broonie@kernel.org>, Borislav Petkov <bp@alien8.de>,
+ linux-crypto@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 06:33:59PM +0000, Suzuki K Poulose wrote:
-> We set the compat_elf_hwcap bits unconditionally on arm64 to
-> include the VFP and NEON support. However, the FP/SIMD unit
-> is optional on Arm v8 and thus could be missing. We already
-> handle this properly in the kernel, but still advertise to
-> the COMPAT applications that the VFP is available. Fix this
-> to make sure we only advertise when we really have them.
-> 
-> Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+This is a resend of a series from Richard Henderson last posted back in
+November:
 
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+   https://lore.kernel.org/linux-arm-kernel/20191106141308.30535-1-rth@twiddle.net/
+
+Back then Borislav said they looked good and asked if he should take
+them through the tip tree but things seem to have got lost since then.
+
+Original cover letter:
+
+During patch review for an addition of archrandom.h for arm64, it was
+suggeted that the arch_random_get_* functions should be marked __must_check.
+Which does sound like a good idea, since the by-reference integer output
+may be uninitialized when the boolean result is false.
+
+In addition, it turns out that arch_has_random() and arch_has_random_seed()
+are not used, and not easy to support for arm64.  Rather than cobble
+something together that would not be testable, remove the interfaces
+against some future accidental use.
+
+In addition, I noticed a few other minor inconsistencies between the
+different architectures, e.g. powerpc isn't using bool.
+
+Change since v1:
+   * Remove arch_has_random, arch_has_random_seed.
+
+Richard Henderson (10):
+  x86: Remove arch_has_random, arch_has_random_seed
+  powerpc: Remove arch_has_random, arch_has_random_seed
+  s390: Remove arch_has_random, arch_has_random_seed
+  linux/random.h: Remove arch_has_random, arch_has_random_seed
+  linux/random.h: Use false with bool
+  linux/random.h: Mark CONFIG_ARCH_RANDOM functions __must_check
+  x86: Mark archrandom.h functions __must_check
+  powerpc: Use bool in archrandom.h
+  powerpc: Mark archrandom.h functions __must_check
+  s390x: Mark archrandom.h functions __must_check
+
+ arch/powerpc/include/asm/archrandom.h | 27 +++++++++-----------------
+ arch/s390/include/asm/archrandom.h    | 20 ++++---------------
+ arch/x86/include/asm/archrandom.h     | 28 ++++++++++++---------------
+ include/linux/random.h                | 24 ++++++++---------------
+ 4 files changed, 33 insertions(+), 66 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
