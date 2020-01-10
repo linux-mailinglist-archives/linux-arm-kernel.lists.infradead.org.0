@@ -2,76 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F3A6137106
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:22:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E80FF137109
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:23:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yKiljyC0ISmh2gnQGi+Q8lPz5/UmjAwXndZ/oliiF8A=; b=lViOyD3SAk29Qm
-	5Y+YZuFCLm6mEpGSS9saNvp1za4oEbKcWiySopFuNmF0WFAgVWh0Ss62VJ2Fgnm4SdTbM7Rz/Gnj1
-	r6OJF+y4LKTW8RxI/CxJx2rUTRiUNPADs78MU/Ww9+JIr3RBfDPpSdBXZHKikuF7yWffOxfnnoArK
-	q5AstOSp/n5fa5iRglD3GbQxrtw89I50XS4UjM6W1BjhzVmqqUQRTQJtMoA0y4nDdDENHa/PS3Bam
-	YUr7QoIqS4actDiFPCrncN2e0MuvZrRMEFY1+jdHNqUOdhs9Un9Y6hknt18ONmpM5j8o1lesyJvyQ
-	MuNxMRPhfXo8aNpziKKA==;
+	List-Owner; bh=3VuoCyxmEBsDmAwObCxkGv90tmxqhcs7cFHpS3D1ZYE=; b=YieREQ4BecuZQY
+	ZQZdcuof3FYCT6fA+pJMMHQLR6uP5vKv4qAfedQgFxhzCtWhn86Y1u8gHwU8IbxWkHDNDw0bdPozj
+	Ecse0ymQfcZoQoTcTNCZBb2yVvlCUrEJ8IDxIdLxXr38abzkDLG0Dayx04OQeTAybtpwGlyCgyNoG
+	y1sSWQ+a2orc/E7Mrhi0iq+LmcHxoVGLYJu5y4Is2QqUOH2Vxc6MDWi/bqF7AXftMK2V6QRI0YcQb
+	CmTJe5wnNaVUiszLzh1YLAfMofZW9cG8IBK67PuZim0xNPjJAdy2+54yxEdQi4pHdOAeKeqwhhoxw
+	eFHVI7MdIdRWGGg/eJbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipw7Z-0005kt-Gg; Fri, 10 Jan 2020 15:22:45 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1ipw7o-0005zZ-SO; Fri, 10 Jan 2020 15:23:00 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipw7P-0005i4-KA
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:22:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1E/aUdlk2arQ+SgSotrUtWIN6SqdTC20k5Cqzx8WCNs=; b=0JZtdRfljjz4qgkWuL0oGkzp0
- nq1qHKyhsYYJuXG4AIYrlcpNIYcxOfteqWB8MHTk2SU/q/wvIAWX2h7pQxs2s89p14SvKZq6z8xSf
- exp5CsuBFgJdAfM50miQir4F03FecXhau/sBHpCNiZoXZvHOJJHUDIiXdsvGn0aKRxEsy6+esF5Vb
- oGA9PQt23aQ5hu7e0dXzupaDtAL544Ej+Xbx5jDhb56uV6ijx6v41lrCap5gorWfPWJQTqaejk7s7
- l6NwSYmBR3vePezA8du+dP0bM0Yp1Vn6NKm2sTcXcg6wrYKOi+ujb1IOFaANmw3avL57ByAJuMrj3
- mXohN2q5Q==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:60652)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1ipw78-0003rJ-Hz; Fri, 10 Jan 2020 15:22:18 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1ipw75-0001c2-SL; Fri, 10 Jan 2020 15:22:15 +0000
-Date: Fri, 10 Jan 2020 15:22:15 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1ipw7d-0005vz-7Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:22:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=OID1dlSTSaamVryi8LpcNEnO4aY2wUMBFndKhtzt064=; b=YNCJV+sUCXt2W5mSotj16fSaar
+ fokY4RYQbPWvs3Euir9u1Io2CTIPDHwYmXK9h1y4agZS/mgaPE5lEhKboyRl8hcP7s36UhulvgVcH
+ uW9K0VV/5rV0rvXxBxdlYoRVCTi4/7I+bZ0uFbWlZ+85jxbZ8tZpbUgHs0gRMhKrDGQM=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1ipw7V-000085-Uk; Fri, 10 Jan 2020 16:22:41 +0100
+Date: Fri, 10 Jan 2020 16:22:41 +0100
+From: Andrew Lunn <andrew@lunn.ch>
 To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
-Message-ID: <20200110152215.GF25745@shell.armlinux.org.uk>
+Subject: Re: [PATCH 12/14] net: axienet: Autodetect 64-bit DMA capability
+Message-ID: <20200110152241.GB10802@lunn.ch>
 References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-8-andre.przywara@arm.com>
- <20200110140415.GE19739@lunn.ch>
- <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
- <20200110150409.GD25745@shell.armlinux.org.uk>
+ <20200110115415.75683-13-andre.przywara@arm.com>
+ <20200110140852.GF19739@lunn.ch>
+ <20200110141303.2e5863ab@donnerap.cambridge.arm.com>
+ <20200110142250.GH19739@lunn.ch>
+ <20200110150836.1f92a0a8@donnerap.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200110150409.GD25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200110150836.1f92a0a8@donnerap.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_072235_669026_A05780EB 
-X-CRM114-Status: GOOD (  17.54  )
+X-CRM114-CacheID: sfid-20200110_072249_273979_D10597DB 
+X-CRM114-Status: UNSURE (   4.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,7 +80,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
+Cc: netdev@vger.kernel.org,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
  Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
  Robert Hancock <hancock@sedsystems.ca>,
@@ -100,71 +90,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 03:04:09PM +0000, Russell King - ARM Linux admin wrote:
-> On Fri, Jan 10, 2020 at 02:20:38PM +0000, Andre Przywara wrote:
-> > On Fri, 10 Jan 2020 15:04:15 +0100
-> > Andrew Lunn <andrew@lunn.ch> wrote:
-> > 
-> > Hi Andrew,
-> > 
-> > > On Fri, Jan 10, 2020 at 11:54:08AM +0000, Andre Przywara wrote:
-> > > > With SGMII, the MAC and the PHY can negotiate the link speed between
-> > > > themselves, without the host needing to mediate between them.
-> > > > Linux recognises this, and will call phylink's mac_config with the speed
-> > > > member set to SPEED_UNKNOWN (-1).
-> > > > Currently the axienet driver will bail out and complain about an
-> > > > unsupported link speed.
-> > > > 
-> > > > Teach axienet's mac_config callback to leave the MAC's speed setting
-> > > > alone if the requested speed is SPEED_UNKNOWN.  
-> > > 
-> > > Hi Andre
-> > > 
-> > > Is there an interrupt when SGMII signals a change in link state? If
-> > > so, you should call phylink_mac_change().
-> > 
-> > Good point. The doc describes a "Auto-Negotiation Complete" interrupt
-> > status bit, which signal that " ... auto-negotiation of the SGMII or
-> > 1000BASE-X interface has completed."
-> 
-> It depends what they mean by "Auto-negotiation complete" in SGMII.
-> SGMII can complete the handshake, yet the config_reg word indicate
-> link down.  If such an update causes an "Auto-negotiation complete"
-> interrupt, then that's sufficient.
-> 
-> However, looking at axienet_mac_pcs_get_state(), that is just reading
-> back what the MAC was set to in axienet_mac_config(), which is not
-> how this is supposed to work.  axienet_mac_pcs_get_state() is
-> supposed to get the results of the SGMII/1000BASE-X "negotiation".
-> That also needs to be fixed.
+> So far I couldn't be bothered to put my asbestos trousers on and go
+> into BSP land ;-)
 
-I found "pg138-axi-ethernet.pdf" online, which I guess is this IP.
-It says for SGMII:
+Are you in Cambridge? 7 degrees, so you can pop outside to cool off a
+bit :-)
 
-The results of the SGMII auto-negotiation can be read from the SGMII
-Management Auto-Negotiation Link Partner Ability Base register
-(Table 2-54). The speed of the subsystem should then be set to match.
+> So if you were hoping for an official blessing, I have to disappoint you ;-)
 
-and similar for 1000BASE-X (referencing the same register.)
+Well, everything you have done is at least sensible. The patches have
+also drawn the interest of Radhey. Let see if he says this is safe for
+IP version 0.0 through to 7.1.
 
-However, what they give in table 2-54 is the 1000BASE-X version of
-the config_reg word, not the SGMII version (which is different.)
-
-Hmm, I guess there's probably some scope for phylink to start
-handling an IEEE 802.3 compliant PCS accessed over MDIO rather
-than having each network driver implement this, but for now your
-axienet_mac_pcs_get_state() implementation needs to be reading
-from the register described in table 2-54 and interpreting the
-results according to whether state->interface is 802.3z or not.
-
-Also note, don't set state->interface in axienet_mac_pcs_get_state(),
-you will be passed the currently selected interface that was last
-configured via axienet_mac_config().
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
