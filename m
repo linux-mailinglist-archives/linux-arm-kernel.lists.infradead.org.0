@@ -2,56 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6480137745
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 20:32:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8210E13774B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 20:34:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JNfgQcfYKhvvBHZMz2yyplKvK8557NRdur0jOmy1xJw=; b=HMs6fHSJIKwyC2
-	NXI6wPmKmYrRqXhjrhrp7Z10wY1uacm5y9BNUY7YTDEl4m+693O6y6c3qL/El10nVfFxVemw7169c
-	LJ2T8FGX9vUFgHmOTPkxIPVrlmeGLbuY21ju4Vq75upNdlhnC1LrHiz88H+PFhGS23KrsXcAcI4Jz
-	ab74JMtxGiisiPcIz0Ms0lzQpG/pAs4WSk9tRkXffbTPIm8U30wvI2VRp9J5mBONj5EObSvBZA//h
-	wxYE43od/XfXb/j7IolW066bshRK4Ip+1PvPumMI/PXjhHDlTkXzJ/78HDDN8BM1wdgxqIUxdETwv
-	RAdAPplulz4Dvu/KPY5g==;
+	List-Owner; bh=5gr1+GElvUEcpT5Mo10kKkzzSLuU5A5ctKRZ/jkI4+g=; b=m5TAR8z15zNmYp
+	T9p9SB/ndt412EKXUk/1OcvsMf1XeKqRSh6kpSdAa/RUgbbykTpaN9xISaAnUvXE/QPF+19RPw7Yn
+	xDhU6VgrKEOpl2O3yeExb/MrZSmH197jtjLGxfvc/veF2HscCwvWfrVK25lWJSAlYupLWhDpQpyVA
+	XwLfZCIkDQcICO7ePKsawaIrc0oBc+tpz1F8Tywh8rZgMn9yKqYNKwQKT4wGaE3Aktf2bPoxQF5il
+	sqHsRYVuhpMdSzXUBm4btoGMV0cl8RkG40ogNInHI3fFtaPkXt+LxsMeajBSSvg05M250+ereXgDY
+	XtvShDgw3rV4zAXd9EmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq01I-0002Zd-B9; Fri, 10 Jan 2020 19:32:32 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1iq02m-0002w0-Mq; Fri, 10 Jan 2020 19:34:04 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq01B-0002ZE-1K
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 19:32:26 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 7E9CA1577F52F;
- Fri, 10 Jan 2020 11:32:24 -0800 (PST)
-Date: Fri, 10 Jan 2020 11:32:23 -0800 (PST)
-Message-Id: <20200110.113223.993180749814320634.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net 0/2] net: stmmac: Filtering fixes
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <cover.1578669661.git.Jose.Abreu@synopsys.com>
-References: <cover.1578669661.git.Jose.Abreu@synopsys.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Fri, 10 Jan 2020 11:32:24 -0800 (PST)
+ id 1iq02d-0002uw-Sj
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 19:33:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=Y+GDTn9tkHWTYtCXAFZVZoOP4Q0QrqzM4C7IlKEbmaY=; b=nR2k6fVjFvLF1j/GiSSvtMLFMl
+ USN7WfA5tsouTLhDE1FUPbT1Jf5yFAg+ipFsCXEkrBRxOtjgr5tcZ+X5e9aWUrMyxiL9OjG4bdQyR
+ 9sKV8LVCVE9KQiJUiMDG/STXbtoArq8NmaVG2WeUPxB3jiHsWnvHiM6CQk26lJzpHCXY=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1iq02T-0003sa-9C; Fri, 10 Jan 2020 20:33:45 +0100
+Date: Fri, 10 Jan 2020 20:33:45 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
+Message-ID: <20200110193345.GR19739@lunn.ch>
+References: <20200110115415.75683-1-andre.przywara@arm.com>
+ <20200110115415.75683-8-andre.przywara@arm.com>
+ <20200110145849.GC25745@shell.armlinux.org.uk>
+ <20200110173249.0b086a76@donnerap.cambridge.arm.com>
+ <20200110180546.GK25745@shell.armlinux.org.uk>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200110180546.GK25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_113225_076170_D112B1D5 
-X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-CacheID: sfid-20200110_113355_926310_357D7EF6 
+X-CRM114-Status: UNSURE (   8.17  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,27 +79,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Andre Przywara <andre.przywara@arm.com>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Robert Hancock <hancock@sedsystems.ca>, netdev@vger.kernel.org,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Fri, 10 Jan 2020 16:23:51 +0100
+> Phylink currently expects the result of the in-band negotiation at
+> the MAC PCS to be propagated to the MAC by hardware (as this is what
+> happens with mvneta and mvpp2, the first two MACs that phylink
+> supports.)  If there is hardware that requires something else, then
+> that will need to be revisited, and will result in not only code but
+> also documentation updates as well.
 
-> Two single fixes for the L3 and L4 filtering in stmmac.
-> 
-> 1) Updates the internal status of RSS when disabling it in order to keep
-> internal driver status consistent.
-> 
-> 2) Do not lets user add a filter if RSS is enabled because the filter will
-> not work correctly as RSS bypasses this mechanism.
+Hi Russell
 
-Series applied and queued up for v5.4 -stable, thanks.
+This is an issue i'm having at the moment with Marvell switches. They
+do not propagate the results to the MAC. So when i get an interrupt
+from the SERDES that the link is up, i'm programming the MAC as
+needed.
+
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
