@@ -2,112 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3365E137127
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:26:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31BB6137138
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:29:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h2Qj5fGKFcOqWOpFHgfh0LmrPeDOu/ZWWAR9Mz2B/DE=; b=UHDpuADXVWziZb
-	DbvdPHFS5DVZMKijRAhwfdLk1Qo6vSALrRTdFxro4p+36XBvVk97+eI6GeFCaCY+5/vt4ewEghZIV
-	zTx8NsT56VtuhzaZ2g1oPHCIE0wn14FKE9HoO12KaM6DYdSbYHJ7KzHwak7kdLFnHDWYMM8XqtZiW
-	Et5CIQVRQXN0Wpx7IdjhpiK5yG8gt3qCdkSfLs+808DQ45YwtlwGymqdNJHKuivx6a4uFdcp/JF7/
-	1jHkXGDLp08u3tM921QcgoR9g6Z7olyX6H7CFQlo1wj9Pv/tSbguPlzmaf3qL88zNX+srZAltbEmV
-	MeV5XHp1XJKro3R1WfmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Uz5VO+a/h5P4taGYbxV0ITKs499n78/n9OP7SUlDJVU=; b=peWEsTfdlvILD8
+	UOgbIY4e6NN6VZHKRgnOlM5Yb1FhUur4FpWT5setGHBoO9LLsBdIZWtD21wfURWLgE7rl2p/jjUM+
+	DvzE2JW9dNwEVGQ+vDZQupPE3TcOGZOrioh/qxzGFMqM+V962mTgQWqOhhol8fIbZsQGfIDTkRKQJ
+	wiwIn140/i/06fk5M7OyJBV5uT02of+dS0fMG7pN4/IdS+2szvra6WQrFB8jYYpGV52L+qT4+u1Od
+	fbpEudDceiMhDjAKjf3WraPa5HcIGBrUf0ye4IBK/TUksQpeXqogtbU43u81EeR1ilOgYPi1te8Kh
+	aIEHp42hdza74o9SOm+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipwBG-0000kK-W5; Fri, 10 Jan 2020 15:26:35 +0000
-Received: from mail-eopbgr770041.outbound.protection.outlook.com
- ([40.107.77.41] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1ipwDs-0001EW-Dy; Fri, 10 Jan 2020 15:29:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipwAu-0000XP-E0
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:26:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CxVHubgsWjeOSoIkWP+f5d9AsY/mV59/0bPCoY4BzS/5FKh3wwMxY7oFrXFyq1NQ4G1vboUUksddRqW/CErCOUX6VSXEkB82XZ4b3Z2rG6P6xIbIUBlD/j9JyBCkybf75v8EYNwdMcd6DsMt4tEX/5C30L6uV52WivchxYII50wPAr/y0hWevztclgGMIiE1IlmOM/XIwP4OLtDYf/7//Gu/LzlkrxmzO0uIkP8ScqR37h0vuMK8yeVjjhLerUzcImdqhYpdxIF4kaCqsIHbF1/a086Mr92PJkTQXDtAG5mGaH69f+dnjH2NA+maJQ8TJlaIe8l25mnH5cKPxjNY4Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=d5ZU/2wNnNvO5tCKBY6bDVys832k2AyReblQh/5hf9o=;
- b=HZ/U2lUig1vvm8yCe/p/lvIyh+GBx1yCrey1bHZ4LZ6TvlM1qFrk9EogmboZxEGLBcv2drUYIH3X2ek6KmQVM+7JDPjA5IOCzegDRXV+4wLFZyEMjtFUFxaHTcuef3PUlKnTqGQw7VPAzCRDiy0swz1T295Of5DKt1Q6VrcuWfKTzj5aC4mbhFjn2hg0BK77+todbu2iEdtyARivJ9o2fe9sHxtdsCwtzEWf7mAne1Q4EBkYhWGDRtbLjbfaolBcrlDVL5bUJhMQctMXCDatU6/uAbB07LAixZIOU9UKjvHmvsIANQxJZeWIZIDRhW0ku/4n2gE4zPfrLfKB90EsLQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=d5ZU/2wNnNvO5tCKBY6bDVys832k2AyReblQh/5hf9o=;
- b=ffgEfOeHutMlhUOZh6GzAmlhl4g6XFjedoASU0Fc9EplHMS+0z5dsy6zlbLJrtTzw11ylIBkHNNXVU98EtX4atpfsceAZsDyW62xBnItSklq9esiMbb7v4E9KVB7zngg5/W7fW9CQTFjAd05IoXzobYVvmglDxY66sTfpxCaGLg=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6279.namprd02.prod.outlook.com (52.132.230.26) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Fri, 10 Jan 2020 15:26:10 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2623.013; Fri, 10 Jan 2020
- 15:26:10 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Andre Przywara <andre.przywara@arm.com>, "David S . Miller"
- <davem@davemloft.net>
-Subject: RE: [PATCH 04/14] net: axienet: Improve DMA error handling
-Thread-Topic: [PATCH 04/14] net: axienet: Improve DMA error handling
-Thread-Index: AQHVx6y35Khes/KcW0SEYqGJBhT9tafkBDWQ
-Date: Fri, 10 Jan 2020 15:26:10 +0000
-Message-ID: <CH2PR02MB7000EDAE2A7D85D50A52EE81C7380@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-5-andre.przywara@arm.com>
-In-Reply-To: <20200110115415.75683-5-andre.przywara@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c7a45f9a-8fea-4b2d-fa69-08d795e16bc4
-x-ms-traffictypediagnostic: CH2PR02MB6279:|CH2PR02MB6279:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB6279620A1D61B3CD01C3C1E9C7380@CH2PR02MB6279.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 02788FF38E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(39840400004)(136003)(346002)(396003)(13464003)(199004)(189003)(5660300002)(110136005)(8936002)(54906003)(7696005)(26005)(186003)(33656002)(6506007)(478600001)(66446008)(8676002)(66476007)(64756008)(66556008)(2906002)(76116006)(66946007)(316002)(81156014)(81166006)(86362001)(4326008)(52536014)(55016002)(71200400001)(53546011)(9686003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6279;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: U7O3K3+EKD+Y7OtMrumMHxohZXAf1FUhxmPSKpK6wfinI7k3SS0mivphgUCMiZHcPitAA6CI55VzR7xJgCJpzHsGXj4rb12t2IzMyDIV+KDqaMnkDE2YAQqJ72eFonYfM9+IKwuRhJ3HdKSpngb7Z82rwK+GlRqN7THb9GhQ/FsErn+RM+BwJVWJpWQFAKBbCHJq8MxfVgXfSLQFKtUdrgUZihPcfBOcJjP617+8DaSOBHzTzv0UXZF9ckYAJuo6de/ZzofNJkz7RwBbgEBv8dihvB2rZxIOykAmBtKJZLGuP7jSfbIEwTNWnqQ5TV5VzHLkmbyfbXMusosF7ixjsUplq4yqxacHMqZlbNHVCo6YMUwzflgxfLQCXMKVEl38dOzcKY4jBIprHiEiGXVtkGepo52zK+RsvH67qkXwhLF6D/DK13PXLH5HoRThiacyXLtp4A5qY5MWpcWB0YpB7TNm1BH8AspcmHQrkSzDi18rcuAc/qrMBXyKfYMBkbkF
+ id 1ipwDZ-0001DY-Kc
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:28:59 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 35C6E2072E;
+ Fri, 10 Jan 2020 15:28:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578670137;
+ bh=ahdxfdIjALO4E1DfYPrQ3mWPi2V7mWynaKkIQzETaJ0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=PLkuLRiHhENh4kbiHti7nMQR83afwfNZ1SCnF9R8bBSi/5+zaXkGEWh2ZFnR8fWGi
+ 0LVlLE1TFGJ4df+gdQzGuj0Fcf6kpQSBKB0r6Ubph2C2XR6+EGWYecSCV01RR5piEh
+ jAj5CE4jIsyosrFSO+SusBszgYX5LYqbGhdEKSOA=
+From: Will Deacon <will@kernel.org>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH 0/8] Finish off the split page table prep work
+Date: Fri, 10 Jan 2020 15:28:44 +0000
+Message-Id: <20200110152852.24259-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c7a45f9a-8fea-4b2d-fa69-08d795e16bc4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jan 2020 15:26:10.3042 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: KNZUMPr9ikTgkfwSVtMr9y1pZ7Y4SqNM1MJA9Idj2gMnKu43Y6uR1oBqRRvKfhRwmsUnDpQHMJcR0XNrSqvDEg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6279
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_072612_484349_CD92B2A3 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200110_072857_701782_2989CA1C 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.77.41 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,68 +74,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Hancock <hancock@sedsystems.ca>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Will Deacon <will@kernel.org>, Jordan Crouse <jcrouse@codeaurora.org>,
+ kernel-team@android.com, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Andre Przywara <andre.przywara@arm.com>
-> Sent: Friday, January 10, 2020 5:24 PM
-> To: David S . Miller <davem@davemloft.net>; Radhey Shyam Pandey
-> <radheys@xilinx.com>
-> Cc: Michal Simek <michals@xilinx.com>; Robert Hancock
-> <hancock@sedsystems.ca>; netdev@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: [PATCH 04/14] net: axienet: Improve DMA error handling
-> 
-> Since 0 is a valid DMA address, we cannot use the physical address to
-> check whether a TX descriptor is valid and is holding a DMA mapping.
-> 
-> Use the "cntrl" member of the descriptor to make this decision, as it
-> contains at least the length of the buffer, so 0 points to an
-> uninitialised buffer.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Hi all,
 
-> ---
->  drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index 7e90044cf2d9..ec5d01adc1d5 100644
-> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -570,7 +570,7 @@ static void axienet_start_xmit_done(struct
-> net_device *ndev)
->  				DMA_TO_DEVICE);
->  		if (cur_p->skb)
->  			dev_consume_skb_irq(cur_p->skb);
-> -		/*cur_p->phys = 0;*/
-> +		cur_p->cntrl = 0;
->  		cur_p->app0 = 0;
->  		cur_p->app1 = 0;
->  		cur_p->app2 = 0;
-> @@ -1557,7 +1557,7 @@ static void axienet_dma_err_handler(unsigned
-> long data)
-> 
->  	for (i = 0; i < lp->tx_bd_num; i++) {
->  		cur_p = &lp->tx_bd_v[i];
-> -		if (cur_p->phys)
-> +		if (cur_p->cntrl)
->  			dma_unmap_single(ndev->dev.parent, cur_p->phys,
->  					 (cur_p->cntrl &
-> 
-> XAXIDMA_BD_CTRL_LENGTH_MASK),
-> --
-> 2.17.1
+Last merge window, I merged most of the split page table prep work from Robin
+[1], but there were a few patches left pending some rework. I think Robin was
+hoping to get that done for 5.5, but what with the holidays falling like they
+did and other committments, I've ended up picked up the bits that were left
+over.
+
+I'm pretty limited with regards to SMMU hardware on which I can test this lot,
+so I might have broken something.
+
+Applies against for-joerg/arm-smmu/updates.
+
+Will
+
+[1] https://lore.kernel.org/lkml/20191104202012.GN24909@willie-the-truck
+
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: Jordan Crouse <jcrouse@codeaurora.org>
+
+--->8
+
+Robin Murphy (3):
+  iommu/io-pgtable-arm: Rationalise TTBRn handling
+  iommu/io-pgtable-arm: Rationalise TCR handling
+  iommu/io-pgtable-arm: Prepare for TTBR1 usage
+
+Will Deacon (5):
+  iommu/io-pgtable-arm: Support non-coherent stage-2 page tables
+  iommu/io-pgtable-arm: Ensure non-cacheable mappings are Outer
+    Shareable
+  iommu/io-pgtable-arm: Ensure ARM_64_LPAE_S2_TCR_RES1 is unsigned
+  iommu/arm-smmu: Rename public #defines under ARM_SMMU_ namespace
+  iommu/io-pgtable-arm: Rationalise VTCR handling
+
+ drivers/iommu/arm-smmu-impl.c      |   2 +-
+ drivers/iommu/arm-smmu-v3.c        |  60 ++++----
+ drivers/iommu/arm-smmu.c           | 171 ++++++++++++----------
+ drivers/iommu/arm-smmu.h           | 228 ++++++++++++++++++-----------
+ drivers/iommu/io-pgtable-arm-v7s.c |  23 ++-
+ drivers/iommu/io-pgtable-arm.c     | 155 +++++++++-----------
+ drivers/iommu/io-pgtable.c         |   2 +-
+ drivers/iommu/ipmmu-vmsa.c         |   2 +-
+ drivers/iommu/msm_iommu.c          |   4 +-
+ drivers/iommu/mtk_iommu.c          |   4 +-
+ drivers/iommu/qcom_iommu.c         |  25 ++--
+ include/linux/io-pgtable.h         |  27 +++-
+ 12 files changed, 381 insertions(+), 322 deletions(-)
+
+-- 
+2.25.0.rc1.283.g88dfdc4193-goog
 
 
 _______________________________________________
