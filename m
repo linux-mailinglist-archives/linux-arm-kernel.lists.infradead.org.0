@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5032A136CF4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:22:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0278C136CF6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:24:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTq2wgQ8uV6g6C3eKotY6l4Z4D+bzQyt0/fhdTJfuh4=; b=R4yE9/BVvKMYTk
-	OUb9xpdnWL7K8OJdFEaMy61aJhda3G7PpJOKmag739dnnkMuEqghVWr2pneOgzEwT6vqYZg/FlGi7
-	JtX5wtgiHf4/0Aq/ahkTehhPY8q1b0sobM1hEXLoAoOtmH78HutBWBrRcY3eEPCXV48hHv7UZO7KN
-	DZfA68KTmQswtZeIMKWhlBQiDcS/XSNBcZuCpixowpcl5DXTRPWq22C8gCm4pfFsrrmwUkQI+yqzq
-	A21OKPBeCmGkQ+0LxYuwVkTR/4YZ+VSssAGqQi/vZgwuFmNf/D9QZB9iZFGz8BQVwHypXtrqjcl66
-	UlEFAcBPhMqlX/lp4u9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nPJEvdu82u3TIZ1vQ0XXbkMu4Zpoe4PConkzqweNhNM=; b=s91dseioUWuiIH
+	qhsjuo4gLD2Kb+shvbBaA+ToZMFGyeUKBK8NGWvadeg/OEslFRT8jvwyyUBKxvKqcOHu5sa5F7e0F
+	nCdTXXZjQBX6/vp4CLoPnMuVS9KXO3kMp2s1iME7RE7d6tJRStpndS7l+n3ylYClhgJ82bu375nVb
+	RVHSLIPIe8wirg9nkoMSbZIPkHCp66P3872uiqli1n0ohqQqAUpW7hjSTayEg9+1/M7ONB1ooi9G1
+	2zafOgZOrGCZ/63EQBfFNkyh8UtB2K4ix0umFWKj3bTxpc+hGOCyBUg+KmcLvt+2EYcCnIg6K/nmR
+	ALHHOP9qDujbDPystIcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iptJK-0005kD-Nq; Fri, 10 Jan 2020 12:22:42 +0000
+	id 1iptKY-0006CV-2B; Fri, 10 Jan 2020 12:23:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iptJC-0005iz-OE
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:22:36 +0000
+ id 1iptKK-0006Bx-V7
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:23:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8A951063;
- Fri, 10 Jan 2020 04:22:33 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A5AB23F534;
- Fri, 10 Jan 2020 04:22:32 -0800 (PST)
-Date: Fri, 10 Jan 2020 12:22:26 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
- transport type
-Message-ID: <20200110122226.GA45077@bogus>
-References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
- <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
- <20200109091613.fx2ggmmjvgjempks@vireshk-i7>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 854041063;
+ Fri, 10 Jan 2020 04:23:44 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F2343F534;
+ Fri, 10 Jan 2020 04:23:43 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH v10 0/3] ARMv8.5-RNG support
+Date: Fri, 10 Jan 2020 12:23:38 +0000
+Message-Id: <20200110122341.8445-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200109091613.fx2ggmmjvgjempks@vireshk-i7>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Mailer: git-send-email 2.20.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_042234_833338_D9EB341E 
-X-CRM114-Status: GOOD (  16.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_042345_046778_F6399EAC 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,49 +63,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Mark Brown <broonie@kernel.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 02:46:13PM +0530, Viresh Kumar wrote:
-> On 09-01-20, 09:18, Arnd Bergmann wrote:
-> > > +static int mailbox_chan_free(int id, void *p, void *data)
-> > > +{
-> > > +       struct scmi_chan_info *cinfo = p;
-> > > +       struct scmi_mailbox *smbox = cinfo->transport_info;
-> > > +
-> > > +       if (!IS_ERR_OR_NULL(smbox->chan)) {
-> > > +               mbox_free_channel(smbox->chan);
-> > > +               cinfo->transport_info = NULL;
-> > > +               smbox->chan = NULL;
-> > > +               smbox->cinfo = NULL;
-> > > +       }
-> >
-> > There is something wrong if smbox->chan can be be one of
-> > three things (a valid pointer, a NULL pointer, or an error value).
-> >
-> > I see this is a preexisting problem, but please add a patch to
-> > make it consistently use either NULL pointers or error codes
-> > and remove all instances of IS_ERR_OR_NULL() from this
-> > subsystem.
->
-> This isn't a subsystem problem actually. mbox_request_channel() never
-> returns NULL on error.
->
-> @Sudeep, do we really need the IS_ERR_OR_NULL() check in
-> scmi_mbox_free_channel() helper ? Or can it just be IS_ERR() ?
->
+This series is based on Richard Henderson's previous v7, it addresses
+review comments from that version by splitting the boot and runtime
+interaction with the core random code so that they are completely
+separate and adds a new change that uses the v8.5-RNG extension to seed
+KASLR when ARCH_RANDOM is enabled.
 
-It can be just IS_ERR, just not noticed it so far I believe.
+v10:
+ - Spell out that we're adding data not entropy from setup_arch() in
+   the commit message for patch 2.
+v9:
+ - Make another static inline helper for early feature checks.
+ - Add init annotations.
+ - Use xor to add RNDR output to seed for KASLR.
 
---
-Regards,
-Sudeep
+Mark Brown (2):
+  arm64: random: Add data to pool from setup_arch()
+  arm64: Use v8.5-RNG entropy for KASLR seed
+
+Richard Henderson (1):
+  arm64: Implement archrandom.h for ARMv8.5-RNG
+
+ Documentation/arm64/cpu-feature-registers.rst |  2 +
+ arch/arm64/Kconfig                            | 12 +++
+ arch/arm64/include/asm/archrandom.h           | 97 +++++++++++++++++++
+ arch/arm64/include/asm/cpucaps.h              |  3 +-
+ arch/arm64/include/asm/sysreg.h               |  4 +
+ arch/arm64/kernel/cpufeature.c                | 13 +++
+ arch/arm64/kernel/kaslr.c                     | 11 +++
+ arch/arm64/kernel/setup.c                     |  2 +
+ 8 files changed, 143 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/include/asm/archrandom.h
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
