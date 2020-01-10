@@ -2,58 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9B81374DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:33:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65D5A1374EA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 18:35:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tXLP1Srwmm2Wk63yuPSMpqqWMbveIIjPvESXU55tFwo=; b=oOqKP7HXGooNyJ
-	MpyEwqrsUjIOt5BPiAXSA+BQkdn9yEzgY6FSSdjNVFnbgoXo3PhlL3sGE1duHbHid+uhZJzcP8ibN
-	YGzueT168YfpLJnOaDb06XtsweVZxeCtPmqtoyy4+4XZqbks1UIcvOftKZ8CMByjY/tj9gNeR29PP
-	wcr4QmcFWHWUUuXyBzNwNKsNT5sQp64B6XZPfvlR6oUQcLxhaJr4AHUvwBFV1TfO7xcy+dD1V4zF/
-	VCVFqc6VHwY1HePc2s2uiHHXh4jJ5hD+RRRjaGHJW1nMcW5YDCGGbbnKMyy9VjVLiBXMyJh1m+7MI
-	CCLQ5lR5T2Z7C0E5LTFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Dw8+/A6E5gHg8uFE6dtrxnpIjk11A4jY9yTvtQ8NLWM=; b=rTe8NzE/F2qUnU
+	yPJelnTz5o/88JIRzAgofEqqp9CKLX8G/952zowInEap2EVoJxAItUHo/S0NbWDhAixjlaFty22fb
+	jKxviuzPjU+YyQVLCgqnfJHo3nmBX2okxb7xCZHOldDbAFz6zMooKO03RJtwLz3V4qZIkqnI5wPRD
+	tlaTcGWWQFr23z9sI1V4/WpqG/UvwpoELmg8pNSoH6q1NHW9UhyTRtYEyfkLtN4kCHsXnpnGGyF6f
+	fS2p9Kj82rEk9eTG4xcXEKDynNPsAaBXFLou/TbjtjajuFga3JB2MLx/z5ZWpJsF3bALKdc0ILXdA
+	u4IZQiZeHVvhjxrTe0Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipy9e-00009D-A5; Fri, 10 Jan 2020 17:33:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipy9X-00008A-0P
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 17:32:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2653E30E;
- Fri, 10 Jan 2020 09:32:53 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BE693F6C4;
- Fri, 10 Jan 2020 09:32:51 -0800 (PST)
-Date: Fri, 10 Jan 2020 17:32:49 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
-Message-ID: <20200110173249.0b086a76@donnerap.cambridge.arm.com>
-In-Reply-To: <20200110145849.GC25745@shell.armlinux.org.uk>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-8-andre.przywara@arm.com>
- <20200110145849.GC25745@shell.armlinux.org.uk>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1ipyC6-0000q3-68; Fri, 10 Jan 2020 17:35:34 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipyBN-0000b5-Bw; Fri, 10 Jan 2020 17:34:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 1B735B25F;
+ Fri, 10 Jan 2020 17:34:47 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [RFC] ARM: add multi_v7_lpae_defconfig
+Date: Fri, 10 Jan 2020 18:34:25 +0100
+Message-Id: <20200110173425.21895-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_093255_097983_9E9FB20F 
-X-CRM114-Status: GOOD (  15.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_093449_583717_C8E15B6F 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,55 +59,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- Robert Hancock <hancock@sedsystems.ca>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: f.fainelli@gmail.com, phil@raspberrypi.org, linux-kernel@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, wahrenst@gmx.net,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 14:58:49 +0000
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+The only missing configuration option preventing us from using
+multi_v7_defconfig with the RPi4 is ARM_LPAE. It's needed as the PCIe
+controller found on the SoC depends on 64bit addressing, yet can't be
+included as not all v7 boards support LPAE.
 
-> On Fri, Jan 10, 2020 at 11:54:08AM +0000, Andre Przywara wrote:
-> > With SGMII, the MAC and the PHY can negotiate the link speed between
-> > themselves, without the host needing to mediate between them.
-> > Linux recognises this, and will call phylink's mac_config with the speed
-> > member set to SPEED_UNKNOWN (-1).  
-> 
-> I wonder whether you have read the documentation for the phylink
-> mac_config() method (if not, please read it, it contains some very
-> important information about what mac_config() should do.)  When
-> operating in SGMII in-band mode, state->speed and state->duplex are
-> not actually valid.
-> 
-> You'll probably want to submit a better patch after reading the
-> documentation.
+Introduce multi_v7_lpae_defconfig, built off multi_v7_defconfig, which will
+avoid us having to duplicate and maintain multiple similar configurations.
 
-Sure, I am admittedly quite clueless about phylink in particular, and found the available information quite daunting.
-So I tried my best in looking at what other drivers do. From what I got there is that you speed=-1 should be ignored, but the other fields still handled.
-Also I was somewhat puzzled, as I was expecting "mode" being MLO_AN_INBAND. But in fact it's called twice with MLO_AN_PHY, and mac_pcs_get_state() never gets called:
+Note that merge_into_defconfig was taken from arch/powerpc/Makefile.
 
-[  166.516583] xilinx_axienet 7fe00000.ethernet eth0: PHY [axienet-7fe00000:01] driver [Generic PHY]
-[  166.547309] xilinx_axienet 7fe00000.ethernet eth0: configuring for phy/sgmii link mode
-[  166.572343] axienet_mac_config(mode=0, speed=-1, duplex=255, pause=16, link=0, an_en=1)
-udhcpc: sending discover
-[  168.652152] axienet_mac_config(mode=0, speed=-1, duplex=255, pause=0, link=1, an_en=0)
-[  168.683538] xilinx_axienet 7fe00000.ethernet eth0: Link is Up - Unknown/Unknown - flow control off
-[  168.712560] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
-udhcpc: sending discover
-udhcpc: sending select for 10.1.x.y
-udhcpc: lease of 10.1.x.y obtained, lease time 691200
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+---
+ arch/arm/Makefile            | 14 ++++++++++++++
+ arch/arm/configs/lpae.config |  1 +
+ 2 files changed, 15 insertions(+)
+ create mode 100644 arch/arm/configs/lpae.config
 
-I was just wondering if the DT description is giving Linux a wrong impression, but I have phy-mode set to sgmii, also just tried phy-connection-type on top of that. The DT snippet is the same as the example in patch 14. The PHY is a Marvell 88E1111, connected via SGMII.
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index db857d07114f..3d157777a465 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -356,6 +356,20 @@ archclean:
+ # My testing targets (bypasses dependencies)
+ bp:;	$(Q)$(MAKE) $(build)=$(boot) MACHINE=$(MACHINE) $(boot)/bootpImage
  
-I would be grateful for any advice!
++# Used to create 'merged defconfigs'
++# To use it $(call) it with the first argument as the base defconfig
++# and the second argument as a space separated list of .config files to merge,
++# without the .config suffix.
++define merge_into_defconfig
++	$(Q)$(CONFIG_SHELL) $(srctree)/scripts/kconfig/merge_config.sh \
++		-m -O $(objtree) $(srctree)/arch/$(ARCH)/configs/$(1) \
++		$(foreach config,$(2),$(srctree)/arch/$(ARCH)/configs/$(config).config)
++	+$(Q)$(MAKE) -f $(srctree)/Makefile olddefconfig
++endef
++
++PHONY += multi_v7_lpae_defconfig
++multi_v7_lpae_defconfig:
++	$(call merge_into_defconfig,multi_v7_defconfig,lpae)
+ 
+ define archhelp
+   echo  '* zImage        - Compressed kernel image (arch/$(ARCH)/boot/zImage)'
+diff --git a/arch/arm/configs/lpae.config b/arch/arm/configs/lpae.config
+new file mode 100644
+index 000000000000..19bab134e014
+--- /dev/null
++++ b/arch/arm/configs/lpae.config
+@@ -0,0 +1 @@
++CONFIG_ARM_LPAE=y
+-- 
+2.24.1
 
-Cheers,
-Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
