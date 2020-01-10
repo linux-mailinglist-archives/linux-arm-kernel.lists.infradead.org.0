@@ -2,170 +2,172 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E96CE136AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BECA136AC0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:15:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HI3ZO9+C6upWXrncb+dnzejIIn6CI5bPVMr5U3Thqbw=; b=JwSD28yxmufvPC
-	agOaTymCmz6Io5k0QKoYPaaeDo72mlsSo4bnhmHwDFuYxG7G5+GbkvdbyQxX8veJZ2jkA4fKHGNub
-	cQ7uET6BIDdZpRLB714MZdYPdsV+C5KdL0ua1cv/5nj1m5w0sQ+dP8HtzhggqeFdb8goReziHfb/q
-	xTPsUN/pBecpzh2WHXgUhg6PqQ6Njkb+YGOOnSvlQKCZ6JI6No8Ttfh8Wz6RPj2K4PRQro2uU37Oa
-	YYiF1Xg0CE1+LU9oYo5KHIeNamBAaKCwB02mqdIUlJPCyrCYkTPKjQx9Ox6pj3PRer0PdRl1dH58c
-	/XfVo1hjBnbcARDGoBjw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zwymACa/J6KwxwRZjbkpjCjRO+dtVjfhf5xicdJ2T6Q=; b=WEPdW3mQFj7p5r
+	rFXQ4/nJo0PLssLGPjPY0dKiOlT1hQYCL9pWLrZK/DBPRTAOmZ1uzGlk8QLlSxqS2txTWtccJbKyD
+	3cE0ExAxQptPnHFXuqHeYkU/WELQsyP033+sqadMPhgcmcisKztba0FqoifUxuE/SD7ptEuzOyHOz
+	gbrzApRx35LF5TlndwFNjV63t0Cb90qenhZE2p1gxn+XKekzgtcPO+sFs7NDiaI1PKrHOyaGgFSYj
+	LUx0MsIUpnW9XjaJL0JEnP6KUDbXHB3UOj/Dx5uMn+g6Gp2YynsYy1TNUy4tVUxM/QPhc1I/FyuIt
+	URx7j14miF5VZmbZwRaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iprFB-0006PI-LI; Fri, 10 Jan 2020 10:10:17 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iprKG-0000l8-3u; Fri, 10 Jan 2020 10:15:32 +0000
+Received: from mail-am6eur05on2042.outbound.protection.outlook.com
+ ([40.107.22.42] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iprEu-00060g-Kw; Fri, 10 Jan 2020 10:10:02 +0000
-Received: by mail-wm1-x341.google.com with SMTP id q9so1331712wmj.5;
- Fri, 10 Jan 2020 02:10:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=f+2uf3MGxpYvKaMNA0D99qiwEYaHHwzfaVwKj9HYiHQ=;
- b=fi0+K6qPeSvKG0epIS0KzONNfQq63iPubERZsKRh9LlIRq8bFaVEvjzKTgejczc7vp
- BKse1wYBpegSFAPZHCcWaq9AybJ+PQg9OV4aVFGozqJuNYpLEH65ycIxFgzu8L9HZS8z
- oH0c9uReAm4nwclsyL0ci7B2kmKzbd3gVLFwgxcYHZDS1U0MsxsBXhgqlFxw4D67B6Xs
- g3zz9s4+WeMC71bIIbdLHwclE83YLAn4XtiGNULfLO8xIDgzWIS+VVtc47mFGolrGANv
- qTnsdnitkX8SC9462wz/vtL4jUBezPmCgUCyFkmRFW/VNoHbleNH9r4zodtShDoXM5QC
- XYrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=f+2uf3MGxpYvKaMNA0D99qiwEYaHHwzfaVwKj9HYiHQ=;
- b=VthMHL4B+DDhE3zIYHaFoYr9Y7mfpYeTaj1q+sUtYNHA/au/Xcyvu7cNyS8F1Wmipg
- NYmiwo2OZb2ISdQAazckigJ6HPBFkz9QIox7Krhyf3M7AZaen5zuJjgwi/6A09VnMIqM
- I7H6Vod4GCahKU1JTNq+oO6kbE5Dz/7ZFdlqZTQy81bZW+AXhxjiQvBgELUYM3NkuRQ0
- 0Sr8iaD1LRFmJHbQ2h2sA0rX3WC/Ho6PtB0mBPe1JwJPCFg5DlsEMMbmZLnaY1FWjHkP
- ZwAPBZ/nM3I+uANf2BrSZqmmiZDvshbHW3ulZax7OWYA2Nm7Q6dBMZ9w2dzHNJ55mxDW
- Uj3w==
-X-Gm-Message-State: APjAAAXHT6QcQAbghSUt4wyUagyInojxKeB7BGIhMsdynQYQaCcLzFZM
- SANCsCITp4qed4oN/Zl9r60=
-X-Google-Smtp-Source: APXvYqxMtyXa3PGgnRc+yH/8ZaV94x0f6QCbOF/OCfKenz46bmM3FtF/dsGGoCu1b2FokHdN8phJTA==
-X-Received: by 2002:a1c:7ed0:: with SMTP id z199mr3287410wmc.58.1578650998815; 
- Fri, 10 Jan 2020 02:09:58 -0800 (PST)
-Received: from ziggy.stardust ([95.169.227.92])
- by smtp.gmail.com with ESMTPSA id w22sm1598980wmk.34.2020.01.10.02.09.57
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 10 Jan 2020 02:09:58 -0800 (PST)
-Subject: Re: [PATCH v3 1/2] amr64: dts: modify mt8183.dtsi
-To: Nicolas Boichat <drinkcat@chromium.org>,
- Yong Liang <yong.liang@mediatek.com>
-References: <20191227141405.3396-1-yong.liang@mediatek.com>
- <20191227141405.3396-2-yong.liang@mediatek.com>
- <CANMq1KD=jAPn4Y7zQZrsg9FB7Cq6tNX0R8OF4qX21Sjy2=0Naw@mail.gmail.com>
- <CANMq1KB4PzAUdp03go0Ur_khi2bM3+oNUhHtMK=--V6DmGXiDA@mail.gmail.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <2bbd8f47-fe68-574c-cbe9-bcc680dd4c84@gmail.com>
-Date: Fri, 10 Jan 2020 11:09:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <CANMq1KB4PzAUdp03go0Ur_khi2bM3+oNUhHtMK=--V6DmGXiDA@mail.gmail.com>
+ id 1iprK6-0000jt-EA
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:15:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8AEjMsUrseAf90qT+Z0OehLac26IXVM3JdC5KWmLUS0=;
+ b=DQoYhK8oB5TsLDmDS7vjle1/kiykeC0rV17v1Y177oLBclyqcLxlbgwggeOZRDTq5n2saYHor1TdeECjoCW9SDkD4mJ/s45hh8Un5IBPeX+v0fsJMMJsd3h9kmo92RjV64F/gG4QYnRKRtmP7ZuSpSMQEEygZd8jFRDNu+w6S0E=
+Received: from VI1PR08CA0182.eurprd08.prod.outlook.com (2603:10a6:800:d2::12)
+ by VI1PR0801MB1998.eurprd08.prod.outlook.com (2603:10a6:800:89::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2623.9; Fri, 10 Jan
+ 2020 10:15:16 +0000
+Received: from VE1EUR03FT031.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e09::202) by VI1PR08CA0182.outlook.office365.com
+ (2603:10a6:800:d2::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2623.8 via Frontend
+ Transport; Fri, 10 Jan 2020 10:15:16 +0000
+Authentication-Results: spf=pass (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
+ dmarc=bestguesspass action=none header.from=arm.com;
+Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
+ 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
+ client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ VE1EUR03FT031.mail.protection.outlook.com (10.152.18.69) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.11 via Frontend Transport; Fri, 10 Jan 2020 10:15:15 +0000
+Received: ("Tessian outbound 28955e0c1ca8:v40");
+ Fri, 10 Jan 2020 10:15:15 +0000
+X-CR-MTA-TID: 64aa7808
+Received: from d613faf3656f.2
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 13A71204-3F44-4011-BEFA-79C2B423EA1A.1; 
+ Fri, 10 Jan 2020 10:15:10 +0000
+Received: from EUR04-DB3-obe.outbound.protection.outlook.com
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id d613faf3656f.2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Fri, 10 Jan 2020 10:15:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mo9Dn9OPOAMTBCPlIMOwF+7dbCacXK0WE6uldDVf74ivbfikLp+VZNxgU66VEJ/GlYeO4AAhFA87fm33vsmqSr4mTF4irO+aQ3xwryuP3epM9MmyEcZKfNyOFA89qX4BlVKmgyFX+f4ZfPJJnFx7I8L94oi7ACeO8XyLmvvWZhMGD2a8PBZTlXmgXaf0clexgxozth0I1lwr4zV4eICqNVm7Bxi/ooktywdoiNf49gsw0hR9iZiMITkYsDs31lhnf0izEJyjykZpce0c63byo9YYrLsSn0yT9BfVNqrx8DGtV7tAgRzsok2jOoWWGaoSXVAw09zRzfQzWW2Hv16w0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8AEjMsUrseAf90qT+Z0OehLac26IXVM3JdC5KWmLUS0=;
+ b=h6rQFKneLlvcfZraiXaJy7GG2NSeSSTrPZuldQeV9DCbX8ljtbjTf1pH+6zJPaZ2hV6xnJuuFg/7nTtVRgQrQTrNmhv5EuqPgzfTTFPhREUXE2x5riFTtc1Dr+AfCPciERxfRJm2Q4E2qj7wUa+FsbF7jTjH8wBKl+SPE2gvVDKd3zMepB9KhHZ0ghIh6+1fwoM/nwoYNYnWY8wEQNQTildn1rcVevMMPbg8h9yR7GHFeh/B4QhXc93vSQ++M6i3cP20cKxZ//fXdhf28g+BF9EN5qnwUdssljwfyS1dEKZeWv1i1i0guEP5XFAsSZAhLJF8AaDl91Tp6Qgupiq1KA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8AEjMsUrseAf90qT+Z0OehLac26IXVM3JdC5KWmLUS0=;
+ b=DQoYhK8oB5TsLDmDS7vjle1/kiykeC0rV17v1Y177oLBclyqcLxlbgwggeOZRDTq5n2saYHor1TdeECjoCW9SDkD4mJ/s45hh8Un5IBPeX+v0fsJMMJsd3h9kmo92RjV64F/gG4QYnRKRtmP7ZuSpSMQEEygZd8jFRDNu+w6S0E=
+Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com (10.168.146.150) by
+ HE1PR0801MB1883.eurprd08.prod.outlook.com (10.168.94.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.9; Fri, 10 Jan 2020 10:15:07 +0000
+Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com
+ ([fe80::49c0:e8df:b9be:724f]) by HE1PR0801MB1676.eurprd08.prod.outlook.com
+ ([fe80::49c0:e8df:b9be:724f%8]) with mapi id 15.20.2623.013; Fri, 10 Jan 2020
+ 10:15:07 +0000
+From: Jianyong Wu <Jianyong.Wu@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: RE: [RFC PATCH v9 7/8] ptp: arm64: Enable ptp_kvm for arm64
+Thread-Topic: [RFC PATCH v9 7/8] ptp: arm64: Enable ptp_kvm for arm64
+Thread-Index: AQHVrwu1ZTEnzkrQbEOo/hXDFqaU6affG9SAgALmpVCAADyUAIABmc4A
+Date: Fri, 10 Jan 2020 10:15:07 +0000
+Message-ID: <HE1PR0801MB16765B52E5DCD8EA480EDABFF4380@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+References: <20191210034026.45229-1-jianyong.wu@arm.com>
+ <20191210034026.45229-8-jianyong.wu@arm.com>
+ <ca162efb3a0de530e119f5237c006515@kernel.org>
+ <HE1PR0801MB1676EE12CF0DB7C5BB8CC62DF4390@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+ <ee801dacbf4143e8d41807d5bfad1409@kernel.org>
+In-Reply-To: <ee801dacbf4143e8d41807d5bfad1409@kernel.org>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ts-tracking-id: fdcedd1e-5194-4357-9cb7-8e2d77cd7500.1
+x-checkrecipientchecked: true
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=Jianyong.Wu@arm.com; 
+x-originating-ip: [113.29.88.7]
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 21a041e8-f128-41fb-b1cf-08d795b5fcda
+X-MS-TrafficTypeDiagnostic: HE1PR0801MB1883:|HE1PR0801MB1883:|VI1PR0801MB1998:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0801MB1998EB4C69752778DB1FB565F4380@VI1PR0801MB1998.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+nodisclaimer: True
+x-ms-oob-tlc-oobclassifiers: OLM:10000;OLM:10000;
+x-forefront-prvs: 02788FF38E
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(136003)(396003)(346002)(39860400002)(376002)(199004)(189003)(13464003)(55016002)(316002)(4001150100001)(55236004)(26005)(81156014)(8676002)(6916009)(54906003)(8936002)(81166006)(5660300002)(4326008)(7416002)(64756008)(71200400001)(66946007)(66476007)(66556008)(66446008)(7696005)(2906002)(76116006)(478600001)(52536014)(86362001)(30864003)(6506007)(9686003)(33656002)(53546011)(186003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0801MB1883;
+ H:HE1PR0801MB1676.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: Pz3Tlrkb0QODjpoVbCOa6kauY66U6LCS8on+O56/9A5W5BoVnJK3bhd4uxr75ZHNn0AYff2korfT4Vlop8YpklKeHie9CenOLqbFqXp4NJ/ghoHwGyO3ky7tVOzRJVoijh4Ax45slStn2ILOXRqkFXumUmypb763h52XnMG5abLr4eHy4zTvlLj0DMQigH68dfPzWq+xAiYxr+JqE3a/uQstXIZ2uokGEYWdXg72syrCTArytiGpNMOnPyZGMzZeRmRIv221JKA2wjFdmaKV3+zKkfsCQADSSm+Jbv/+iMXMyo+nLhnw8EnvFmocVf49H3cY+YBwtgNgnu9wUUCuMn1rC0CQ8RbOy7NxPFzxI8Et82hjohWFBs6GMxezj3Q2dkvV+KD7YQH3RYEI8GVxBqb2UCpurqnWLDj56yMdyRsut1ZfwN5i5WDYzGZvQCbpgioKdBBmfLZeoklArp8F8fyd1xyVmE764kmNq1AAmjDMBX+opqC+oGIpaKLdCCJo
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0801MB1883
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Jianyong.Wu@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT031.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(346002)(39860400002)(136003)(376002)(189003)(199004)(13464003)(2906002)(55016002)(54906003)(316002)(30864003)(33656002)(6506007)(53546011)(36906005)(4326008)(6862004)(52536014)(5660300002)(356004)(7696005)(26005)(86362001)(8676002)(186003)(81166006)(4001150100001)(336012)(70586007)(8936002)(70206006)(9686003)(478600001)(81156014)(26826003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0801MB1998;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:Pass; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 86505b31-9a77-47fb-7d80-08d795b5f7f3
+X-Forefront-PRVS: 02788FF38E
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 6ApP34BH0JgZo7L5hHlxFfXSnus8xmph0Vx85bBPY/Xs+TVYDFQ0j0jxkpAH2rhIlBv7/6wbw4w0l1Q83ZQQXqkNf91533VVgaPh87nc+9lDuE4oNmcFpr/Zs75jWykoxf+1cPeLOa6xCGOcFRfModNTh/dI75BT2nIi7UBFBXDYuVfA/nAOJF8pVGcLn//b9/MA/8/DtgvBXNFTcSi1vQjlotiBuEBOAOTWxDPsL1HvH0Qt/p7c8xK7IirSe0lxiLJCDIUn3dbEMRSYf+hdPGXbKSKSL3EC/KsqgGXt2irYaHshtOqAogt1f73VKhuZgawRIU0TqIMiiTGbP5+TbcUll+IZg/6LgAbW4bI0LMZz8iBSDXELgCK5bADU5eXP27aKe6O3T43/+usD29LSwKYEuQTFXYJtwMBByvIGfAHYKUgTyfGPEviDcp5fe04UHD9VUlj+Ee9CcyRw5DnQGy6kqL4jO8USH2eP0/7FwRR8Yk5XkYSa9F3Ph7FzMH7S
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jan 2020 10:15:15.8453 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 21a041e8-f128-41fb-b1cf-08d795b5fcda
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1998
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_021000_711380_133EE514 
-X-CRM114-Status: GOOD (  17.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200110_021522_636863_747ACE58 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matthias.bgg[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.22.42 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -177,62 +179,354 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux@roeck-us.net, wim@linux-watchdog.org,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Justin He <Justin.He@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ Steve Capper <Steve.Capper@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ Steven Price <Steven.Price@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "pbonzini@redhat.com" <pbonzini@redhat.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marc,
 
-
-On 08/01/2020 10:14, Nicolas Boichat wrote:
-> On Wed, Jan 8, 2020 at 4:56 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
->>
->> minor nit, s/amr64/arm64/ in the commit title.
->>
->> On Fri, Dec 27, 2019 at 10:15 PM Yong Liang <yong.liang@mediatek.com> wrote:
->>>
->>> From: "yong.liang" <yong.liang@mediatek.com>
->>>
->>> 1. Include mt8183-reset.h and add reset-cells in infracfg
->>> in dtsi file
+> -----Original Message-----
+> From: Marc Zyngier <maz@kernel.org>
+> Sent: Thursday, January 9, 2020 5:24 PM
+> To: Jianyong Wu <Jianyong.Wu@arm.com>
+> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
+> tglx@linutronix.de; pbonzini@redhat.com; sean.j.christopherson@intel.com;
+> richardcochran@gmail.com; Mark Rutland <Mark.Rutland@arm.com>;
+> will@kernel.org; Suzuki Poulose <Suzuki.Poulose@arm.com>; Steven Price
+> <Steven.Price@arm.com>; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; kvmarm@lists.cs.columbia.edu;
+> kvm@vger.kernel.org; Steve Capper <Steve.Capper@arm.com>; Kaly Xin
+> <Kaly.Xin@arm.com>; Justin He <Justin.He@arm.com>; nd <nd@arm.com>
+> Subject: Re: [RFC PATCH v9 7/8] ptp: arm64: Enable ptp_kvm for arm64
 > 
-> Err, wait, doesn't this depend on
-> http://lists.infradead.org/pipermail/linux-mediatek/2020-January/026170.html
-> ?
+> On 2020-01-09 05:59, Jianyong Wu wrote:
+> > Hi Marc,
+> >
+> >> -----Original Message-----
+> >> From: Marc Zyngier <maz@kernel.org>
+> >> Sent: Tuesday, January 7, 2020 5:29 PM
+> >> To: Jianyong Wu <Jianyong.Wu@arm.com>
+> >> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com;
+> >> john.stultz@linaro.org; tglx@linutronix.de; pbonzini@redhat.com;
+> >> sean.j.christopherson@intel.com; richardcochran@gmail.com; Mark
+> >> Rutland <Mark.Rutland@arm.com>; will@kernel.org; Suzuki Poulose
+> >> <Suzuki.Poulose@arm.com>; Steven Price <Steven.Price@arm.com>;
+> >> linux-kernel@vger.kernel.org; linux-arm- kernel@lists.infradead.org;
+> >> kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org; Steve Capper
+> >> <Steve.Capper@arm.com>; Kaly Xin <Kaly.Xin@arm.com>; Justin He
+> >> <Justin.He@arm.com>; nd <nd@arm.com>
+> >> Subject: Re: [RFC PATCH v9 7/8] ptp: arm64: Enable ptp_kvm for arm64
+> >>
+> >> On 2019-12-10 03:40, Jianyong Wu wrote:
+> >> > Currently in arm64 virtualization environment, there is no
+> >> > mechanism to keep time sync between guest and host. Time in guest
+> >> > will drift compared with host after boot up as they may both use
+> >> > third party time sources to correct their time respectively. The
+> >> > time deviation will be in order of milliseconds but some scenarios
+> >> > ask for higher time precision, like in cloud envirenment, we want
+> >> > all the VMs running in the host aquire the same level accuracy from host
+> clock.
+> >> >
+> >> > Use of kvm ptp clock, which choose the host clock source clock as a
+> >> > reference clock to sync time clock between guest and host has been
+> >> > adopted by x86 which makes the time sync order from milliseconds to
+> >> > nanoseconds.
+> >> >
+> >> > This patch enable kvm ptp on arm64 and we get the similar clock
+> >> > drift as found with x86 with kvm ptp.
+> >> >
+> >> > Test result comparison between with kvm ptp and without it in arm64
+> >> > are as follows. This test derived from the result of command
+> >> > 'chronyc sources'. we should take more cure of the last sample
+> >> > column which shows the offset between the local clock and the
+> >> > source at the last measurement.
+> >> >
+> >> > no kvm ptp in guest:
+> >> > MS Name/IP address   Stratum Poll Reach LastRx Last sample
+> >> >
+> >>
+> ==========================================================
+> >> ==============
+> >> > ^* dns1.synet.edu.cn      2   6   377    13  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    21  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    29  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    37  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    45  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    53  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    61  +1040us[+1581us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377     4   -130us[ +796us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    12   -130us[ +796us] +/-
+> >> > 21ms
+> >> > ^* dns1.synet.edu.cn      2   6   377    20   -130us[ +796us] +/-
+> >> > 21ms
+> >> >
+> >> > in host:
+> >> > MS Name/IP address   Stratum Poll Reach LastRx Last sample
+> >> >
+> >>
+> ==========================================================
+> >> ==============
+> >> > ^* 120.25.115.20          2   7   377    72   -470us[ -603us] +/-
+> >> > 18ms
+> >> > ^* 120.25.115.20          2   7   377    92   -470us[ -603us] +/-
+> >> > 18ms
+> >> > ^* 120.25.115.20          2   7   377   112   -470us[ -603us] +/-
+> >> > 18ms
+> >> > ^* 120.25.115.20          2   7   377     2   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377    22   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377    43   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377    63   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377    83   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377   103   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> > ^* 120.25.115.20          2   7   377   123   +872ns[-6808ns] +/-
+> >> > 17ms
+> >> >
+> >> > The dns1.synet.edu.cn is the network reference clock for guest and
+> >> > 120.25.115.20 is the network reference clock for host. we can't get
+> >> > the clock error between guest and host directly, but a roughly
+> >> > estimated value will be in order of hundreds of us to ms.
+> >> >
+> >> > with kvm ptp in guest:
+> >> > chrony has been disabled in host to remove the disturb by network
+> >> > clock.
+> >> >
+> >> > MS Name/IP address         Stratum Poll Reach LastRx Last sample
+> >> >
+> >>
+> ==========================================================
+> >> ==============
+> >> > * PHC0                    0   3   377     8     -7ns[   +1ns] +/-
+> >> > 3ns
+> >> > * PHC0                    0   3   377     8     +1ns[  +16ns] +/-
+> >> > 3ns
+> >> > * PHC0                    0   3   377     6     -4ns[   -0ns] +/-
+> >> > 6ns
+> >> > * PHC0                    0   3   377     6     -8ns[  -12ns] +/-
+> >> > 5ns
+> >> > * PHC0                    0   3   377     5     +2ns[   +4ns] +/-
+> >> > 4ns
+> >> > * PHC0                    0   3   377    13     +2ns[   +4ns] +/-
+> >> > 4ns
+> >> > * PHC0                    0   3   377    12     -4ns[   -6ns] +/-
+> >> > 4ns
+> >> > * PHC0                    0   3   377    11     -8ns[  -11ns] +/-
+> >> > 6ns
+> >> > * PHC0                    0   3   377    10    -14ns[  -20ns] +/-
+> >> > 4ns
+> >> > * PHC0                    0   3   377     8     +4ns[   +5ns] +/-
+> >> > 4ns
+> >> >
+> >> > The PHC0 is the ptp clock which choose the host clock as its source
+> >> > clock. So we can be sure to say that the clock error between host
+> >> > and guest is in order of ns.
+> >> >
+> >> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> >> > ---
+> >> >  drivers/clocksource/arm_arch_timer.c | 22 ++++++++++++
+> >> >  drivers/ptp/Kconfig                  |  2 +-
+> >> >  drivers/ptp/ptp_kvm_arm64.c          | 53
+> >> ++++++++++++++++++++++++++++
+> >> >  3 files changed, 76 insertions(+), 1 deletion(-)  create mode
+> >> > 100644 drivers/ptp/ptp_kvm_arm64.c
+> >> >
+> >> > diff --git a/drivers/clocksource/arm_arch_timer.c
+> >> > b/drivers/clocksource/arm_arch_timer.c
+> >> > index 277846decd33..72260b66f02e 100644
+> >> > --- a/drivers/clocksource/arm_arch_timer.c
+> >> > +++ b/drivers/clocksource/arm_arch_timer.c
+> >> > @@ -1636,3 +1636,25 @@ static int __init
+> >> > arch_timer_acpi_init(struct acpi_table_header *table)  }
+> >> > TIMER_ACPI_DECLARE(arch_timer, ACPI_SIG_GTDT,
+> >> > arch_timer_acpi_init);  #endif
+> >> > +
+> >> > +#if IS_ENABLED(CONFIG_PTP_1588_CLOCK_KVM)
+> >> > +#include <linux/arm-smccc.h>
+> >> > +int kvm_arch_ptp_get_crosststamp(unsigned long *cycle, struct
+> >> > timespec64 *ts,
+> >> > +			      struct clocksource **cs)
+> >> > +{
+> >> > +	struct arm_smccc_res hvc_res;
+> >> > +	ktime_t ktime_overall;
+> >> > +
+> >> > +
+> >> 	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_KVM_PTP_FU
+> >> NC_ID, &hvc_res);
+> >> > +	if ((long)(hvc_res.a0) < 0)
+> >> > +		return -EOPNOTSUPP;
+> >> > +
+> >> > +	ktime_overall = hvc_res.a0 << 32 | hvc_res.a1;
+> >> > +	*ts = ktime_to_timespec64(ktime_overall);
+> >> > +	*cycle = hvc_res.a2 << 32 | hvc_res.a3;
+> >>
+> >> So why isn't that just a read of the virtual counter, given that what
+> >> you do in the hypervisor seems to be "cntpct - cntvoff"?
+> >>
+> >> What am I missing here?
+> >>
+> > We need get clock time and counter cycle at the same time, so we can't
+> > just read virtual counter at guest and must get it from host.
 > 
-
-That's all a bit confusing, I thought we are fine to add the reset cells to
-infracfg as we have the resets defined in
-64ebb57a3df6 ("clk: reset: Modify reset-controller driver")
-
-That's why I took this part from:
-https://lore.kernel.org/linux-mediatek/20191226093930.22413-1-yong.liang@mediatek.com/
-
-Please let me know if I'm wrong and I'll drop it.
-
-Regards,
-Matthias
-
->>> 2. Add watchdog device node
+> See my comment in my reply to patch #6: *Must* seems like a very strong
+> word, and you don't explain *why* that's better than just computing the
+> total hypercall cost. Hint: given the frequency of the counter (in the few MHz
+> range) vs the frequency of a CPU (in the multiple GHz range, and with an IPC
+> close enough to 1), I doubt that you'll see the counter making much progress
+> across a hypercall.
 > 
-> Can we have a patch with just this change instead, since you're
-> sending the binding with it.
+Sorry, I will avoid to use those strong words.
+
+It's really the case that the hypercall won't across cycle in general. But sometimes, kernel preempt 
+may happen in the middle of the hypercall which we can't assume how long before schedule back. so it's better capture them
+together at the same time.
+
+> >
+> >> > +	*cs = &clocksource_counter;
+> >> > +
+> >> > +	return 0;
+> >> > +}
+> >> > +EXPORT_SYMBOL_GPL(kvm_arch_ptp_get_crosststamp);
+> >> > +#endif
+> >> > diff --git a/drivers/ptp/Kconfig b/drivers/ptp/Kconfig index
+> >> > 9b8fee5178e8..3c31ff8eb05f 100644
+> >> > --- a/drivers/ptp/Kconfig
+> >> > +++ b/drivers/ptp/Kconfig
+> >> > @@ -110,7 +110,7 @@ config PTP_1588_CLOCK_PCH  config
+> >> > PTP_1588_CLOCK_KVM
+> >> >  	tristate "KVM virtual PTP clock"
+> >> >  	depends on PTP_1588_CLOCK
+> >> > -	depends on KVM_GUEST && X86
+> >> > +	depends on KVM_GUEST && X86 || ARM64 && ARM_ARCH_TIMER
+> >> >  	default y
+> >> >  	help
+> >> >  	  This driver adds support for using kvm infrastructure as a PTP
+> >> > diff --git a/drivers/ptp/ptp_kvm_arm64.c
+> >> > b/drivers/ptp/ptp_kvm_arm64.c new file mode 100644 index
+> >> > 000000000000..f3f957117865
+> >> > --- /dev/null
+> >> > +++ b/drivers/ptp/ptp_kvm_arm64.c
+> >> > @@ -0,0 +1,53 @@
+> >> > +// SPDX-License-Identifier: GPL-2.0-only
+> >> > +/*
+> >> > + *  Virtual PTP 1588 clock for use with KVM guests
+> >> > + *  Copyright (C) 2019 ARM Ltd.
+> >> > + *  All Rights Reserved
+> >> > + */
+> >> > +
+> >> > +#include <linux/kernel.h>
+> >> > +#include <linux/err.h>
+> >> > +#include <asm/hypervisor.h>
+> >> > +#include <linux/module.h>
+> >> > +#include <linux/psci.h>
+> >> > +#include <linux/arm-smccc.h>
+> >> > +#include <linux/timecounter.h>
+> >> > +#include <linux/sched/clock.h>
+> >> > +#include <asm/arch_timer.h>
+> >> > +
+> >> > +int kvm_arch_ptp_init(void)
+> >> > +{
+> >> > +	struct arm_smccc_res hvc_res;
+> >> > +
+> >> > +
+> >> 	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_KVM_PTP_FU
+> >> NC_ID,
+> >> > +			     &hvc_res);
+> >> > +	if ((long)(hvc_res.a0) < 0)
+> >> > +		return -EOPNOTSUPP;
+> >> > +
+> >> > +	return 0;
+> >> > +}
+> >> > +
+> >> > +int kvm_arch_ptp_get_clock_generic(struct timespec64 *ts,
+> >> > +				   struct arm_smccc_res *hvc_res) {
+> >> > +	ktime_t ktime_overall;
+> >> > +
+> >> > +
+> >> 	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_KVM_PTP_FU
+> >> NC_ID,
+> >> > +				  hvc_res);
+> >> > +	if ((long)(hvc_res->a0) < 0)
+> >> > +		return -EOPNOTSUPP;
+> >> > +
+> >> > +	ktime_overall = hvc_res->a0 << 32 | hvc_res->a1;
+> >> > +	*ts = ktime_to_timespec64(ktime_overall);
+> >> > +
+> >> > +	return 0;
+> >> > +}
+> >> > +
+> >> > +int kvm_arch_ptp_get_clock(struct timespec64 *ts) {
+> >> > +	struct arm_smccc_res hvc_res;
+> >> > +
+> >> > +	kvm_arch_ptp_get_clock_generic(ts, &hvc_res);
+> >> > +
+> >> > +	return 0;
+> >> > +}
+> >>
+> >> I also wonder why this is all arm64 specific, while everything should
+> >> also work just fine on 32bit.
+> >>
+> > ptp_kvm is a feature for cloud computing to keep time consistency from
+> > container to container and to host on server,
 > 
->>>
->>> Signed-off-by: yong.liang <yong.liang@mediatek.com>
->>
->> Tested-by: Nicolas Boichat <drinkcat@chromium.org>
->>
->>> ---
->>>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 8 ++++++++
->>>  1 file changed, 8 insertions(+)
->>> [snip]
+> Cloud computing? Never heard of that. Will probably never catch on.
+> 
+Eh...
+
+> > So we focus it on arm64. Also I have never tested it on arm32 machine
+> > ( we lack of arm32 machine)
+> 
+> I'm sure your employer can provide you with such a box. I can probably even
+> tell you which cupboard they are stored in... ;-)
+> 
+I'm working on building environment for arm32 from now.
+
+> > Do you think it's necessary to enable ptp_kvm on arm32? If so, I can
+> > do that.
+> 
+> I can't see why we wouldn't, given that it should be a zero effort task (none
+> of the code here is arch specific).
+
+Ok, I will test it on arm32.
+By the way, does nested virtualization diff between arm64 and arm32?
+
+Thanks
+Jianyong
+> 
+> Thanks,
+> 
+>          M.
+> --
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
