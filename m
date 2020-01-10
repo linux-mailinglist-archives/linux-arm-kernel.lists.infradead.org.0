@@ -2,69 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 187AA137274
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:07:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B56EF137286
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:10:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=58KpccXXnila4Qb17xlz7EvapNCKUHel/+c8+dQEjKE=; b=kkbpALMPbZInvI
-	Hq/MXedi7VIQlfMyIefgWS2/EN1Xql0zluS/jop0TfSmxIupjxYFz3SxkKdPdjo8TF2gcxQFSsSyB
-	9RtNKl8MULh+zci5LwY6RH6ssoiZNy40KAlwjmEuyzElYhZVmvPpvHGR3gd72yr8uYpCSsbDrmpyd
-	xKH5ph4i5ENW9W/UFzYGawQUC6jpNHG43XA+dBkpB7thp+C1S30qt73xi4RYHaCNBHN+1mRgPUxmE
-	ghedCeWZzsTnUQPCrKspHCPJd0dqXWAs0BD1lrSz/QPPYWEV0E+jAeR2fs1z+8Ozry+hkDaNW3cRq
-	UEvvydiaW3kjHCz6fYPQ==;
+	List-Owner; bh=6MnQUTkhikxOt7k9a371uxq9o0j/xEvbRifnzp1tHEw=; b=Jq9ZO+RvzIHaiP
+	9hRuI58cPJk8kpYP+2ssBhvLY75yER7d6Nv6/DBc6qronmTL/VBaTs2I8NX+/uxEq4NvfRPxVB+r6
+	mZRKc4Ks3LwZfhMp1pn0ISVNDkpRhStZQWflhXV4DZ04+3aSN3JN4zcy210KlfPW1FUiy05iGRaLS
+	JMMKBNPjde1wDrq7s18ZuYCiOyZF2TCyiKPPCx0aDpzMhm/xFy52rALUxQpJ40reJ1LK5t4fReqUh
+	0DoZ9gaaw4dp4E4kt7Qz2mj7D/CdmhaD7689SwNTJMMHvnNJ+hWUYOB00/gOYTVQlzrFfDROfmuFX
+	RbAVzT1NhvaeoV6GzhrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipwp9-0007eW-8b; Fri, 10 Jan 2020 16:07:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipwp1-0007dI-FA
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 16:07:40 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE3352087F;
- Fri, 10 Jan 2020 16:07:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578672459;
- bh=NT+C3rfa0dgCpqIe7AgVcCYVZuZOmuBB7mp9Rl6qMH0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dahUTwJ30pZ1S5w3UEki1z3pxuLb35tZGM1zPZZIkphU2wXhzS6Lsbs09//bQTeRj
- CHwPppKCvWhmzZtu+qLyMu33nUYWb8/QHMewGS+Lq9Pfb0Kwpax18TcdbH8KUgrKEX
- 6OhasiYhZDvWbZVokhuaha18qHthxUyEWnavFXrQ=
-Date: Fri, 10 Jan 2020 16:07:34 +0000
-From: Will Deacon <will@kernel.org>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH -next] arm64/mm/dump: fix a compilation error
-Message-ID: <20200110160734.GA25891@willie-the-truck>
-References: <20200110145112.7959-1-cai@lca.pw> <20200110153447.GA30104@arm.com>
+	id 1ipwrY-0008E6-ED; Fri, 10 Jan 2020 16:10:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipwr3-00085N-Rn
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 16:09:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F148B30E;
+ Fri, 10 Jan 2020 08:09:44 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6C5533F6C4;
+ Fri, 10 Jan 2020 08:09:43 -0800 (PST)
+Date: Fri, 10 Jan 2020 16:09:41 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH 12/17] arm64: debug-monitors: refactor MDSCR manipulation
+Message-ID: <20200110160941.GH33536@lakrids.cambridge.arm.com>
+References: <20200108185634.1163-1-mark.rutland@arm.com>
+ <20200108185634.1163-13-mark.rutland@arm.com>
+ <c616e5c0-301c-7c26-6954-9e287e6c9673@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200110153447.GA30104@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <c616e5c0-301c-7c26-6954-9e287e6c9673@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_080739_523955_BCFDF723 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200110_080945_982089_2F281268 
+X-CRM114-Status: GOOD (  25.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,61 +65,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>, Qian Cai <cai@lca.pw>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: keescook@chromium.org, maz@kernel.org, robin.murphy@arm.com,
+ broonie@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ catalin.marinas@arm.com, labbott@redhat.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, alex.popov@linux.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 03:34:48PM +0000, Steven Price wrote:
-> On Fri, Jan 10, 2020 at 02:51:12PM +0000, Qian Cai wrote:
-> > The linux-next commit "x86: mm: avoid allocating struct mm_struct on the
-> > stack" [1] introduced a compilation error with "arm64: mm: convert
-> > mm/dump.c to use walk_page_range()" [2]. Fixed it by using the new API.
+On Fri, Jan 10, 2020 at 10:05:48AM +0530, Anshuman Khandual wrote:
+> 
+> 
+> On 01/09/2020 12:26 AM, Mark Rutland wrote:
+> > When we convert the ret_to_user/work_pending code to C, we're going to
+> > want to poke the MDSCR to enable/disable single-step. Let's factor out
+> > the existing code for this from debug-monitors.c.
 > > 
-> > arch/arm64/mm/dump.c:326:38: error: too few arguments to function call,
-> > expected 3, have 2
-> >         ptdump_walk_pgd(&st.ptdump, info->mm);
-> >         ~~~~~~~~~~~~~~~                     ^
-> > ./include/linux/ptdump.h:20:1: note: 'ptdump_walk_pgd' declared here
-> > void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm,
-> > pgd_t *pgd);
-> > ^
-> > arch/arm64/mm/dump.c:364:38: error: too few arguments to function call,
-> > expected 3, have 2
-> >         ptdump_walk_pgd(&st.ptdump, &init_mm);
-> >         ~~~~~~~~~~~~~~~                     ^
-> > ./include/linux/ptdump.h:20:1: note: 'ptdump_walk_pgd' declared here
-> > void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm,
-> > pgd_t *pgd);
-> > ^
-> > 2 errors generated.
+> > At the same time, we can make use of {read,write}_sysreg() directly, and
+> > get rid of the mdscr_{read,write} wrappers.
 > > 
-> > [1] http://lkml.kernel.org/r/20200108145710.34314-1-steven.price@arm.com
+> > The existing code masked DAIF when manipulating MDSCR_EL1, but this
+> > should not be necessary. Exceptions can be taken immediately before DAIF
+> > is masked, and given the lack of an ISB can also be taken after DAIF is
+> > unmasked as writes to DAIF are only self-synchronizing and not
+> > context-synchronizing in general. We may want to add an ISB to ensure
+> > that updates to MDSCR have taken effect, however.
 > 
-> Actually this was in the patch I originally posted - somehow it got
-> lost when Andrew picked it up.
-> 
-> > [2] http://lkml.kernel.org/r/20191218162402.45610-22-steven.price@arm.com
-> > 
-> > Signed-off-by: Qian Cai <cai@lca.pw>
-> 
-> Since this matches what I originally wrote... ;)
-> 
-> Reviewed-by: Steven Price <steven.price@arm.com>
+> Any reason this patch choose not add that ISB for now after writing
+> mdscr_el1 register via sysreg_clear_set().
 
-Acked-by: Will Deacon <will@kernel.org>
-
-I'm assuming Andrew will queue this alongside the others.
+I didn't want to make that functional change without justification. For
+example, the ISB wouldn't be needed for changes that only affect
+userspace.
 
 Thanks,
+Mark.
 
-Will
+> 
+> > 
+> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > ---
+> >  arch/arm64/include/asm/debug-monitors.h | 10 ++++++++++
+> >  arch/arm64/kernel/debug-monitors.c      | 32 +++++++-------------------------
+> >  2 files changed, 17 insertions(+), 25 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
+> > index 7619f473155f..342867e50c54 100644
+> > --- a/arch/arm64/include/asm/debug-monitors.h
+> > +++ b/arch/arm64/include/asm/debug-monitors.h
+> > @@ -107,6 +107,16 @@ enum dbg_active_el {
+> >  void enable_debug_monitors(enum dbg_active_el el);
+> >  void disable_debug_monitors(enum dbg_active_el el);
+> >  
+> > +static __always_inline void __enable_single_step_nosync(void)
+> > +{
+> > +	sysreg_clear_set(mdscr_el1, 0, DBG_MDSCR_SS);
+> > +}
+> > +
+> > +static __always_inline void __disable_single_step_nosync(void)
+> > +{
+> > +	sysreg_clear_set(mdscr_el1, DBG_MDSCR_SS, 0);
+> > +}
+> > +
+> >  void user_rewind_single_step(struct task_struct *task);
+> >  void user_fastforward_single_step(struct task_struct *task);
+> >  
+> > diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+> > index 48222a4760c2..fa2d4145bd07 100644
+> > --- a/arch/arm64/kernel/debug-monitors.c
+> > +++ b/arch/arm64/kernel/debug-monitors.c
+> > @@ -32,24 +32,6 @@ u8 debug_monitors_arch(void)
+> >  }
+> >  
+> >  /*
+> > - * MDSCR access routines.
+> > - */
+> > -static void mdscr_write(u32 mdscr)
+> > -{
+> > -	unsigned long flags;
+> > -	flags = local_daif_save();
+> > -	write_sysreg(mdscr, mdscr_el1);
+> > -	local_daif_restore(flags);
+> > -}
+> > -NOKPROBE_SYMBOL(mdscr_write);
+> > -
+> > -static u32 mdscr_read(void)
+> > -{
+> > -	return read_sysreg(mdscr_el1);
+> > -}
+> > -NOKPROBE_SYMBOL(mdscr_read);
+> > -
+> > -/*
+> >   * Allow root to disable self-hosted debug from userspace.
+> >   * This is useful if you want to connect an external JTAG debugger.
+> >   */
+> > @@ -91,9 +73,9 @@ void enable_debug_monitors(enum dbg_active_el el)
+> >  		enable |= DBG_MDSCR_KDE;
+> >  
+> >  	if (enable && debug_enabled) {
+> > -		mdscr = mdscr_read();
+> > +		mdscr = read_sysreg(mdscr_el1);
+> >  		mdscr |= enable;
+> > -		mdscr_write(mdscr);
+> > +		write_sysreg(mdscr, mdscr_el1);
+> >  	}
+> >  }
+> >  NOKPROBE_SYMBOL(enable_debug_monitors);
+> > @@ -112,9 +94,9 @@ void disable_debug_monitors(enum dbg_active_el el)
+> >  		disable &= ~DBG_MDSCR_KDE;
+> >  
+> >  	if (disable) {
+> > -		mdscr = mdscr_read();
+> > +		mdscr = read_sysreg(mdscr_el1);
+> >  		mdscr &= disable;
+> > -		mdscr_write(mdscr);
+> > +		write_sysreg(mdscr, mdscr_el1);
+> >  	}
+> >  }
+> >  NOKPROBE_SYMBOL(disable_debug_monitors);
+> > @@ -409,7 +391,7 @@ void kernel_enable_single_step(struct pt_regs *regs)
+> >  {
+> >  	WARN_ON(!irqs_disabled());
+> >  	set_regs_spsr_ss(regs);
+> > -	mdscr_write(mdscr_read() | DBG_MDSCR_SS);
+> > +	__enable_single_step_nosync();
+> >  	enable_debug_monitors(DBG_ACTIVE_EL1);
+> >  }
+> >  NOKPROBE_SYMBOL(kernel_enable_single_step);
+> > @@ -417,7 +399,7 @@ NOKPROBE_SYMBOL(kernel_enable_single_step);
+> >  void kernel_disable_single_step(void)
+> >  {
+> >  	WARN_ON(!irqs_disabled());
+> > -	mdscr_write(mdscr_read() & ~DBG_MDSCR_SS);
+> > +	__disable_single_step_nosync();
+> >  	disable_debug_monitors(DBG_ACTIVE_EL1);
+> >  }
+> >  NOKPROBE_SYMBOL(kernel_disable_single_step);
+> > @@ -425,7 +407,7 @@ NOKPROBE_SYMBOL(kernel_disable_single_step);
+> >  int kernel_active_single_step(void)
+> >  {
+> >  	WARN_ON(!irqs_disabled());
+> > -	return mdscr_read() & DBG_MDSCR_SS;
+> > +	return read_sysreg(mdscr_el1) & DBG_MDSCR_SS;
+> >  }
+> >  NOKPROBE_SYMBOL(kernel_active_single_step);
+> >  
+> > 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
