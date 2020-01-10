@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4078013654B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 03:17:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2427F13654A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 03:17:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=46D7ooU+0wkBhFZYAiD+OcuzWdqCDizGo53PVnlt31k=; b=X6BzHTasvGBM0cBrXmoiViCtFU
-	1xNpRURieybl/FLVyfuSgywnwetq9l1vRKsydTWpn7bMb16QeI+tuFsHVd0/LeACEsxKASfdsKMET
-	7OK62xQpeNvLH9UHXuvZMOvs6zpw7v0mxNllzjvY3X9ttktBLy7X5yIPFwC5ka/EDqXpQgqILgn3/
-	1XpKlGmvyfYWaodEkW2xQ6PwercmOnDe/0hwrzEssrCj6RaWRBsSBPHzsYA+67Y1zFw6BW1WQOpCP
-	2lxsznjL1Q26209jLd5RV5XqCJj3i6QXRK/rHcepgW5eoRzZghTKw9dgkzEfKOrjlL+38Bk1B/ffE
-	l5hs+ucA==;
+	bh=4hbnFfL5QRKhg94277qAfNQHO5Ze7IVtAAFeybO2qa0=; b=F+4YGh/bzBq/BRmTkA70RNMdJG
+	qBxZJChWmZBNTQ5AwS/J2+7bSfN9bJLUPB3keo7tT+MUzZi33AvJle+ICdt+cfK10KQ1xAN9xTIXi
+	L2eaiXRYCPFJvr0eh9bhvc10BjGxjSYc21EOck5n8vhzGivLGls8DnbFA4sDBNFYXVDCmndv1/8Ul
+	H8HM6C+jHQK3xAfWFgoxnEpcrAP4gUrDKIaljpbmNs9QlANIwzJQKKVNGK+OAbRuP3KzNsZ9sVcub
+	2X5ipOGARHB0Q1dHBO6ZzgTFFpDtyTT8OjKorWckAHjTDpU9ilkesQxfQEj4qePMZ7ZHLLwnJJXNH
+	sT6K0kmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipjry-0005mS-4n; Fri, 10 Jan 2020 02:17:50 +0000
+	id 1ipjrp-0005XV-6S; Fri, 10 Jan 2020 02:17:41 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipjrS-0005N1-6g
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 02:17:20 +0000
+ id 1ipjrO-0005Ld-UF
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 02:17:16 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B3CDE20052E;
- Fri, 10 Jan 2020 03:17:11 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0CC0620005C;
+ Fri, 10 Jan 2020 03:17:13 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A558D200525;
- Fri, 10 Jan 2020 03:17:04 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F15372016AF;
+ Fri, 10 Jan 2020 03:17:05 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E7E35402C1;
- Fri, 10 Jan 2020 10:16:55 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 81285402D7;
+ Fri, 10 Jan 2020 10:16:57 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
  stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, s.hauer@pengutronix.de,
  linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3] dt-bindings: pinctrl: Convert i.MX8MM to json-schema
-Date: Fri, 10 Jan 2020 10:13:07 +0800
-Message-Id: <1578622388-23370-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 3/3] dt-bindings: pinctrl: Convert i.MX8MN to json-schema
+Date: Fri, 10 Jan 2020 10:13:08 +0800
+Message-Id: <1578622388-23370-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578622388-23370-1-git-send-email-Anson.Huang@nxp.com>
 References: <1578622388-23370-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_181718_520303_59E3E399 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20200109_181715_247948_864CF38C 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,29 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX8MM pinctrl binding to DT schema format using json-schema
+Convert the i.MX8MN pinctrl binding to DT schema format using json-schema
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- .../bindings/pinctrl/fsl,imx8mm-pinctrl.txt        | 36 ------------
- .../bindings/pinctrl/fsl,imx8mm-pinctrl.yaml       | 67 ++++++++++++++++++++++
- 2 files changed, 67 insertions(+), 36 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
- create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
+ .../bindings/pinctrl/fsl,imx8mn-pinctrl.txt        | 39 -------------
+ .../bindings/pinctrl/fsl,imx8mn-pinctrl.yaml       | 67 ++++++++++++++++++++++
+ 2 files changed, 67 insertions(+), 39 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
+ create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
+diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
 deleted file mode 100644
-index e4e01c0..0000000
---- a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
+index 330716c..0000000
+--- a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.txt
 +++ /dev/null
-@@ -1,36 +0,0 @@
--* Freescale IMX8MM IOMUX Controller
+@@ -1,39 +0,0 @@
+-* Freescale IMX8MN IOMUX Controller
 -
 -Please refer to fsl,imx-pinctrl.txt and pinctrl-bindings.txt in this directory
 -for common binding part and usage.
 -
 -Required properties:
--- compatible: "fsl,imx8mm-iomuxc"
+-- compatible: "fsl,imx8mn-iomuxc"
 -- reg: should contain the base physical address and size of the iomuxc
 -  registers.
 -
@@ -108,8 +108,8 @@ index e4e01c0..0000000
 -- fsl,pins: each entry consists of 6 integers and represents the mux and config
 -  setting for one pin.  The first 5 integers <mux_reg conf_reg input_reg mux_val
 -  input_val> are specified using a PIN_FUNC_ID macro, which can be found in
--  <arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h>. The last integer CONFIG is
--  the pad setting value like pull-up on this pin.  Please refer to i.MX8M Mini
+-  <arch/arm64/boot/dts/freescale/imx8mn-pinfunc.h>. The last integer CONFIG is
+-  the pad setting value like pull-up on this pin. Please refer to i.MX8M Nano
 -  Reference Manual for detailed CONFIG settings.
 -
 -Examples:
@@ -120,29 +120,32 @@ index e4e01c0..0000000
 -};
 -
 -iomuxc: pinctrl@30330000 {
--        compatible = "fsl,imx8mm-iomuxc";
+-        compatible = "fsl,imx8mn-iomuxc";
 -        reg = <0x0 0x30330000 0x0 0x10000>;
 -
 -        pinctrl_uart1: uart1grp {
 -                fsl,pins = <
--                        MX8MM_IOMUXC_UART1_RXD_UART1_DCE_RX             0x140
--                        MX8MM_IOMUXC_UART1_TXD_UART1_DCE_TX             0x140
+-			MX8MN_IOMUXC_UART1_RXD_UART1_DCE_RX	0x140
+-			MX8MN_IOMUXC_UART1_TXD_UART1_DCE_TX	0x140
+-			MX8MN_IOMUXC_UART3_RXD_UART1_DCE_CTS_B	0x140
+-			MX8MN_IOMUXC_UART3_TXD_UART1_DCE_RTS_B	0x140
+-			MX8MN_IOMUXC_SD1_DATA4_GPIO2_IO6	0x19
 -                >;
 -        };
 -};
-diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
+diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
 new file mode 100644
-index 0000000..2ef2fe3
+index 0000000..44bf4e0
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
++++ b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mn-pinctrl.yaml
 @@ -0,0 +1,67 @@
 +# SPDX-License-Identifier: GPL-2.0-or-later
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/pinctrl/fsl,imx8mm-pinctrl.yaml#
++$id: http://devicetree.org/schemas/pinctrl/fsl,imx8mn-pinctrl.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Freescale IMX8MM IOMUX Controller
++title: Freescale IMX8MN IOMUX Controller
 +
 +maintainers:
 +  - Anson Huang <Anson.Huang@nxp.com>
@@ -153,7 +156,7 @@ index 0000000..2ef2fe3
 +
 +properties:
 +  compatible:
-+    const: fsl,imx8mm-iomuxc
++    const: fsl,imx8mn-iomuxc
 +
 +# Client device subnode's properties
 +patternProperties:
@@ -172,9 +175,9 @@ index 0000000..2ef2fe3
 +          each entry consists of 6 integers and represents the mux and config
 +          setting for one pin. The first 5 integers <mux_reg conf_reg input_reg
 +          mux_val input_val> are specified using a PIN_FUNC_ID macro, which can
-+          be found in <arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h>. The last
++          be found in <arch/arm64/boot/dts/freescale/imx8mn-pinfunc.h>. The last
 +          integer CONFIG is the pad setting value like pull-up on this pin. Please
-+          refer to i.MX8M Mini Reference Manual for detailed CONFIG settings.
++          refer to i.MX8M Nano Reference Manual for detailed CONFIG settings.
 +
 +    required:
 +      - fsl,pins
@@ -191,7 +194,7 @@ index 0000000..2ef2fe3
 +  # Pinmux controller node
 +  - |
 +    iomuxc: pinctrl@30330000 {
-+        compatible = "fsl,imx8mm-iomuxc";
++        compatible = "fsl,imx8mn-iomuxc";
 +        reg = <0x30330000 0x10000>;
 +
 +        pinctrl_uart2: uart2grp {
