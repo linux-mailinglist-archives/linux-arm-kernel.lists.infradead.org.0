@@ -2,65 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B6C1368AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 09:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 437C71368B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 09:02:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=A+NsUizNMF0bhRaGx+3RbLcqBXDrYHHwxMyjDnZ+FaY=; b=ItaEVoM1o9BIhIsGl5kWrilhna
-	EcdFZGRmNfacASX5/ZjSMQLR2VAvhE4aFnriSz/K2hc/CdqjNbBgEB/ccjKL6BPA2pmAU5iq1IX9b
-	wLzeTpEsa+9VTRLKMZwueLRSXz3cytKHK+IZyAKnT7Dw+S0LqcHAJMBR+qFvAyie4gIDwpPQchB9k
-	uP0MXijv1gc9FLLmRRdv1fHnPWzjSlkOFm9XENNk9U2xgSwvRkCp7fsH+NODEhYyWkYEWdHRC26dI
-	mFpRLgXPRqlXe+XL75R19iTwraigq5x5ukYoB6CMFbVXPXxspVKNAWRQ4UNxWvu0vBa9dk2nlAmE3
-	Fkb+lzCQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iReek/tXuVplTGyo9ChE3BEMSKMRCler2ZqGybwCGFI=; b=Tnu6+iTeXk8s4U
+	9HM3GUAq94nGhbfN5hurTPEzhZOFHwe6mdZU/nubkIhQ39zmNOkKkrzooqq61Rbffn8Rg1F6T8pUZ
+	8kz+DiCP5z8aJsFiuoUViQI14YqfMRNSKPx/pMqZG2F5j90TLE+yFev/DEc+lPp7pg/t1zW6A02w6
+	2sEwSUht7c3JK5ggWqLKvo4iixA0Gs7XRTSZwR6azrU7Cuajwh5czgNs+xwtHMKnywdDLRC/okwAF
+	rPwuZYFfM72IPiLWm1Raa8H4ghy0s+MNR9KGQlx6X4lWOyws+gfVmdgFkJnUo4rrkgdksPkHjcOU4
+	qV8S+CS/FUpnMdHJZ3tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ippD1-0007wT-Rz; Fri, 10 Jan 2020 07:59:55 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ippFM-0001HO-FF; Fri, 10 Jan 2020 08:02:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ippCQ-0007X7-BO
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 07:59:19 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 251DC1A02DF;
- Fri, 10 Jan 2020 08:59:17 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 37ADB1A05AA;
- Fri, 10 Jan 2020 08:59:11 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BBC9C402D9;
- Fri, 10 Jan 2020 15:59:03 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] dt-bindings: clock: Refine i.MX8MN clock binding
-Date: Fri, 10 Jan 2020 15:55:14 +0800
-Message-Id: <1578642914-838-3-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578642914-838-1-git-send-email-Anson.Huang@nxp.com>
-References: <1578642914-838-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ippFE-0001H1-Ra
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 08:02:14 +0000
+Received: from localhost (unknown [223.226.110.118])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 21B1320678;
+ Fri, 10 Jan 2020 08:02:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578643332;
+ bh=EGGrFg82AwWBngiHY+ftg7F0R1HyNOaQp8gvY2ISO+Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=u0L3uzcmQqZZM6x9wv0Y7nfmO3uZwSBsIuGcuVnBO/opMAojueHHAOkK03CZ7Faaj
+ Iov7lqHgklf9rtbq3N+HLmG94IvqUgy/rF/MQH6WWFiPKoWfD+I6nEKKtrfEl2Rqo1
+ iEmuf/kkc7kUlQpjJOMY7r1rkSL3mBwBxpEGxywA=
+Date: Fri, 10 Jan 2020 13:31:56 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH 2/2] dmaengine: uniphier-xdmac: Add UniPhier external DMA
+ controller driver
+Message-ID: <20200110080156.GG2818@vkoul-mobl>
+References: <1576630620-1977-3-git-send-email-hayashi.kunihiko@socionext.com>
+ <20191227063411.GG3006@vkoul-mobl>
+ <20200109211219.57FC.4A936039@socionext.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200109211219.57FC.4A936039@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_235918_522110_B09C1902 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200110_000212_930064_783A1923 
+X-CRM114-Status: GOOD (  14.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,96 +78,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Refine i.MX8MN clock binding by removing useless content and
-updating the example, it makes all i.MX8M SoCs' clock binding
-aligned.
+On 09-01-20, 21:12, Kunihiko Hayashi wrote:
+> Hi Vinod,
+> 
+> Thank you for your comment.
+> 
+> On Fri, 27 Dec 2019 12:04:11 +0530 <vkoul@kernel.org> wrote:
+> 
+> > On 18-12-19, 09:57, Kunihiko Hayashi wrote:
+> > > This adds external DMA controller driver implemented in Socionext
+> > > UniPhier SoCs. This driver supports DMA_MEMCPY and DMA_SLAVE modes.
+> > > 
+> > > Since this driver does not support the the way to transfer size
+> > > unaligned to burst width, 'src_maxburst' or 'dst_maxburst' of
+> > 
+> > You mean driver does not support any unaligned bursts?
+> 
+> Yes. If transfer size is unaligned to burst size, the final transfer
+> will be overrun.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- .../devicetree/bindings/clock/imx8mn-clock.yaml    | 48 +---------------------
- 1 file changed, 2 insertions(+), 46 deletions(-)
+That is fine, you shoudl return error for bursts which are not aligned
+when preparing the descriptors
 
-diff --git a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-index 622f365..da2103d 100644
---- a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-+++ b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-@@ -40,7 +40,7 @@ properties:
- 
-   '#clock-cells':
-     const: 1
--    description: |
-+    description:
-       The clock consumer should specify the desired clock by having the clock
-       ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mn-clock.h
-       for the full list of i.MX8M Nano clock IDs.
-@@ -57,7 +57,7 @@ examples:
-   - |
-     clk: clock-controller@30380000 {
-         compatible = "fsl,imx8mn-ccm";
--        reg = <0x0 0x30380000 0x0 0x10000>;
-+        reg = <0x30380000 0x10000>;
-         #clock-cells = <1>;
-         clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
-                  <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
-@@ -65,48 +65,4 @@ examples:
-                       "clk_ext2", "clk_ext3", "clk_ext4";
-     };
- 
--  # Required external clocks for Clock Control Module node:
--  - |
--    osc_32k: clock-osc-32k {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency = <32768>;
--        clock-output-names = "osc_32k";
--    };
--
--    osc_24m: clock-osc-24m {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency = <24000000>;
--        clock-output-names = "osc_24m";
--    };
--
--    clk_ext1: clock-ext1 {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency = <133000000>;
--        clock-output-names = "clk_ext1";
--    };
--
--    clk_ext2: clock-ext2 {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency = <133000000>;
--        clock-output-names = "clk_ext2";
--    };
--
--    clk_ext3: clock-ext3 {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency = <133000000>;
--        clock-output-names = "clk_ext3";
--    };
--
--    clk_ext4: clock-ext4 {
--        compatible = "fixed-clock";
--        #clock-cells = <0>;
--        clock-frequency= <133000000>;
--        clock-output-names = "clk_ext4";
--    };
--
- ...
 -- 
-2.7.4
-
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
