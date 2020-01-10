@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1878E136CD3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:13:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07655136D00
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:25:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSPpIOLpdq5mR6BBOXrRPkPffIqLnPO8I/kPDbCev/g=; b=ZB6KD0JNBwnq9R
-	DewvLQuaY95mFXQfl4IkyXBGP6scyzgFzlcJyD9v97ZS2PaZE5jqu1/hG/FFK3vQPz7bll6UzY3zm
-	2i8Vr18+pqUJv4LUnTP3fr5E6p5Zzs1jBe7F8QiOHruoqu2YgLJS1wBIgKxK2wFIA8EfkMZS/AJ3g
-	GTfBPDJYjgFClZ4lLxQJ14R2ismLFMlm21JglJD7Xxs0hyNrOAf0pqqvgEu5iuw+kJ0yXx1jEn4LI
-	ba8BzWyNsiB2v/aiXo2UBm5HYphFnbBIMOBBJg2gX/HZtgn4aWnsbIYz6AM4O6hark6z5ndNr+YNO
-	1lGOAQI1Slun+Kcvpqjw==;
+	List-Owner; bh=3h78GQNpkW4LEfO1UnsIcpVCx2q0kbc4gp3QFwjkDs8=; b=Tyc//5VBt98Pxj
+	etU0LRLxde0Li0Nvds9hR0fUt2jTuBWpkv432Awwwrr16l002+Av7djYJi238BVadxX0qmlDXQn49
+	+r/8db2M1pAg7bKtbqpdXmRkdJR84qzvqYqMGnVr4wn/k3OEw1ebnlyfGWgOsZNKqU8nY2+qg+28k
+	B8js8yApZ/pEeztgHFLn8JPd2Lp7Apd1HjKvFRgtnEf1Goi1zU7R/TBc9He6BqVKaDdWXt+I1duFa
+	eWzJTujETfYOabptzENtKPDw9+b81Zv4EV90UEOVTKOjueFC5+sQc2c5xhAwUi4D1YmtvwKsmKU33
+	pdsuYyw5YOKZVtFk5nxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iptA6-00021K-Ny; Fri, 10 Jan 2020 12:13:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipt9v-0001zm-Ow
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:13:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35F751063;
- Fri, 10 Jan 2020 04:12:59 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 834023F534;
- Fri, 10 Jan 2020 04:12:58 -0800 (PST)
-Date: Fri, 10 Jan 2020 12:12:57 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore
- full SPE profiling buffer controls
-Message-ID: <20200110121256.GF42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-10-andrew.murray@arm.com>
- <20191221141325.5a177343@why>
- <20200110105435.GC42593@e119886-lin.cambridge.arm.com>
- <20200110110420.GD42593@e119886-lin.cambridge.arm.com>
- <ee0fd7bcdbbbcc942117468eb676b18f@kernel.org>
+	id 1iptLS-0007ER-NI; Fri, 10 Jan 2020 12:24:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iptLD-000782-5d; Fri, 10 Jan 2020 12:24:41 +0000
+Received: from localhost (83-84-126-242.cable.dynamic.v4.ziggo.nl
+ [83.84.126.242])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0F1C52077C;
+ Fri, 10 Jan 2020 12:24:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578659077;
+ bh=HCvJP+UdwCX6Q2crGVwKn7N7yPIf75Fk5SPzBBin100=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=kk0BBdWnW5aZ1JZ6Bcv8/vIsAgIMssATKbTDPONtWkM/Cgi7cxGtGWEXBOoieyrvg
+ Zj1aE3c6SqAmUSHHkXwNZOhcnMGRVV0iBdWd/cnqUR4lKSjCL5Ko79R7x32ydPB4U7
+ Ee8QKutkNtOIosejv/SM5hQu39TB3vjjFxTzbWxw=
+Date: Fri, 10 Jan 2020 13:19:51 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Masahiro Yamada <masahiroy@kernel.org>
+Subject: Re: [PATCH] staging: vc04_service: remove unused header include path
+Message-ID: <20200110121951.GA1047840@kroah.com>
+References: <20200104162829.20400-1-masahiroy@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ee0fd7bcdbbbcc942117468eb676b18f@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20200104162829.20400-1-masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_041259_896934_EBD8E2EF 
-X-CRM114-Status: GOOD (  38.20  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_042439_332224_E3A6CFDE 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,207 +71,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Catalin Marinas <Catalin.Marinas@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <Sudeep.Holla@arm.com>,
- will@kernel.org, kvmarm <kvmarm@lists.cs.columbia.edu>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 11:51:39AM +0000, Marc Zyngier wrote:
-> On 2020-01-10 11:04, Andrew Murray wrote:
-> > On Fri, Jan 10, 2020 at 10:54:36AM +0000, Andrew Murray wrote:
-> > > On Sat, Dec 21, 2019 at 02:13:25PM +0000, Marc Zyngier wrote:
-> > > > On Fri, 20 Dec 2019 14:30:16 +0000
-> > > > Andrew Murray <andrew.murray@arm.com> wrote:
-> > > >
-> > > > [somehow managed not to do a reply all, re-sending]
-> > > >
-> > > > > From: Sudeep Holla <sudeep.holla@arm.com>
-> > > > >
-> > > > > Now that we can save/restore the full SPE controls, we can enable it
-> > > > > if SPE is setup and ready to use in KVM. It's supported in KVM only if
-> > > > > all the CPUs in the system supports SPE.
-> > > > >
-> > > > > However to support heterogenous systems, we need to move the check if
-> > > > > host supports SPE and do a partial save/restore.
-> > > >
-> > > > No. Let's just not go down that path. For now, KVM on heterogeneous
-> > > > systems do not get SPE. If SPE has been enabled on a guest and a CPU
-> > > > comes up without SPE, this CPU should fail to boot (same as exposing a
-> > > > feature to userspace).
-> > > >
-> > > > >
-> > > > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > > > ---
-> > > > >  arch/arm64/kvm/hyp/debug-sr.c | 33 ++++++++++++++++-----------------
-> > > > >  include/kvm/arm_spe.h         |  6 ++++++
-> > > > >  2 files changed, 22 insertions(+), 17 deletions(-)
-> > > > >
-> > > > > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-> > > > > index 12429b212a3a..d8d857067e6d 100644
-> > > > > --- a/arch/arm64/kvm/hyp/debug-sr.c
-> > > > > +++ b/arch/arm64/kvm/hyp/debug-sr.c
-> > > > > @@ -86,18 +86,13 @@
-> > > > >  	}
-> > > > >
-> > > > >  static void __hyp_text
-> > > > > -__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > > > > +__debug_save_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > > > >  {
-> > > > >  	u64 reg;
-> > > > >
-> > > > >  	/* Clear pmscr in case of early return */
-> > > > >  	ctxt->sys_regs[PMSCR_EL1] = 0;
-> > > > >
-> > > > > -	/* SPE present on this CPU? */
-> > > > > -	if (!cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
-> > > > > -						  ID_AA64DFR0_PMSVER_SHIFT))
-> > > > > -		return;
-> > > > > -
-> > > > >  	/* Yes; is it owned by higher EL? */
-> > > > >  	reg = read_sysreg_s(SYS_PMBIDR_EL1);
-> > > > >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
-> > > > > @@ -142,7 +137,7 @@ __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > > > >  }
-> > > > >
-> > > > >  static void __hyp_text
-> > > > > -__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > > > > +__debug_restore_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > > > >  {
-> > > > >  	if (!ctxt->sys_regs[PMSCR_EL1])
-> > > > >  		return;
-> > > > > @@ -210,11 +205,14 @@ void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
-> > > > >  	struct kvm_guest_debug_arch *host_dbg;
-> > > > >  	struct kvm_guest_debug_arch *guest_dbg;
-> > > > >
-> > > > > +	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-> > > > > +	guest_ctxt = &vcpu->arch.ctxt;
-> > > > > +
-> > > > > +	__debug_restore_spe_context(guest_ctxt, kvm_arm_spe_v1_ready(vcpu));
-> > > > > +
-> > > > >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
-> > > > >  		return;
-> > > > >
-> > > > > -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-> > > > > -	guest_ctxt = &vcpu->arch.ctxt;
-> > > > >  	host_dbg = &vcpu->arch.host_debug_state.regs;
-> > > > >  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
-> > > > >
-> > > > > @@ -232,8 +230,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
-> > > > >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-> > > > >  	guest_ctxt = &vcpu->arch.ctxt;
-> > > > >
-> > > > > -	if (!has_vhe())
-> > > > > -		__debug_restore_spe_nvhe(host_ctxt, false);
-> > > > > +	__debug_restore_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
-> > > >
-> > > > So you now do an unconditional save/restore on the exit path for VHE as
-> > > > well? Even if the host isn't using the SPE HW? That's not acceptable
-> > > > as, in most cases, only the host /or/ the guest will use SPE. Here, you
-> > > > put a measurable overhead on each exit.
-> > > >
-> > > > If the host is not using SPE, then the restore/save should happen in
-> > > > vcpu_load/vcpu_put. Only if the host is using SPE should you do
-> > > > something in the run loop. Of course, this only applies to VHE and
-> > > > non-VHE must switch eagerly.
-> > > >
-> > > 
-> > > On VHE where SPE is used in the guest only - we save/restore in
-> > > vcpu_load/put.
-> > > 
-> > > On VHE where SPE is used in the host only - we save/restore in the
-> > > run loop.
-> > > 
-> > > On VHE where SPE is used in guest and host - we save/restore in the
-> > > run loop.
-> > > 
-> > > As the guest can't trace EL2 it doesn't matter if we restore guest
-> > > SPE early
-> > > in the vcpu_load/put functions. (I assume it doesn't matter that we
-> > > restore
-> > > an EL0/EL1 profiling buffer address at this point and enable tracing
-> > > given
-> > > that there is nothing to trace until entering the guest).
-> > > 
-> > > However the reason for moving save/restore to vcpu_load/put when the
-> > > host is
-> > > using SPE is to minimise the host EL2 black-out window.
-> > > 
-> > > 
-> > > On nVHE we always save/restore in the run loop. For the SPE
-> > > guest-use-only
-> > > use-case we can't save/restore in vcpu_load/put - because the guest
-> > > runs at
-> > > the same ELx level as the host - and thus doing so would result in
-> > > the guest
-> > > tracing part of the host.
-> > > 
-> > > Though if we determine that (for nVHE systems) the guest SPE is
-> > > profiling only
-> > > EL0 - then we could also save/restore in vcpu_load/put where SPE is
-> > > only being
-> > > used in the guest.
-> > > 
-> > > Does that make sense, are my reasons correct?
-> > 
-> > Also I'm making the following assumptions:
-> > 
-> >  - We determine if the host or guest are using SPE by seeing if
-> > profiling
-> >    (e.g. PMSCR_EL1) is enabled. That should determine *when* we restore
-> > as per
-> >    my previous email.
+On Sun, Jan 05, 2020 at 01:28:29AM +0900, Masahiro Yamada wrote:
+> I can build drivers/staging/vc04_services without this.
 > 
-> Yes.
+> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+> ---
 > 
-> >  - I'm less sure on this: We should determine *what* we restore based on
-> > the
-> >    availability of the SPE feature and not if it is being used - so for
-> > guest
-> >    this is if the guest has the feature on the vcpu. For host this is
-> > based on
-> >    the CPU feature registers.
+>  drivers/staging/vc04_services/Makefile | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> As long as the guest's feature is conditionned on the HW being present *and*
-> that you're running on a CPU that has the HW.
-
-Yes that makes sense.
-
-
-> 
-> >    The downshot of this is that if you have SPE support present on guest
-> > and
-> >    host and they aren't being used, then you still save/restore upon
-> > entering/
-> >    leaving a guest. The reason I feel this is needed is to prevent the
-> > issue
-> >    where the host starts programming the SPE registers, but is preempted
-> > by
-> >    KVM entering a guest, before it could enable host SPE. Thus when we
-> > enter the
-> >    guest we don't save all the registers, we return to the host and the
-> > host
-> >    SPE carries on from where it left of and enables it - yet because we
-> > didn't
-> >    restore all the programmed registers it doesn't work.
-> 
-> Saving the host registers is never optional if they are shared with the
-> guest.
-
-That make me feel better :)
-
-Thanks,
-
-Andrew Murray
-
-> 
->         M.
+> diff --git a/drivers/staging/vc04_services/Makefile b/drivers/staging/vc04_services/Makefile
+> index afe43fa5a6d7..54d9e2f31916 100644
+> --- a/drivers/staging/vc04_services/Makefile
+> +++ b/drivers/staging/vc04_services/Makefile
+> @@ -13,5 +13,5 @@ vchiq-objs := \
+>  obj-$(CONFIG_SND_BCM2835)	+= bcm2835-audio/
+>  obj-$(CONFIG_VIDEO_BCM2835)	+= bcm2835-camera/
+>  
+> -ccflags-y += -Idrivers/staging/vc04_services -D__VCCOREVER__=0x04000000
+> +ccflags-y += -D__VCCOREVER__=0x04000000
+>  
 > -- 
-> Jazz is not dead. It just smells funny...
+
+This patch breaks the build for me:
+drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c:6:10: fatal error: interface/vchi/vchi.h: No such file or directory
+    6 | #include "interface/vchi/vchi.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+So maybe you did't select all of the modules to build?
+
+Sorry, I can't take this as-is :(
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
