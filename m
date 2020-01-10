@@ -2,82 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E36C136B7C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 11:56:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BC9F136B96
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 12:00:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qByhmlMJwIMixjaiuHZ6TOsLed6q1Q4euX5/o22bZzY=; b=jNZmVTGVZcf10nuYnaupmuoIH
-	N1GapyFgmIfZiK7Y9IIPqaGJSzWV44Qg5i3szOPbxRo1wzCptGM24TV2SfMwHGdZ2oA6T4xmwMZsa
-	ieJLOfAxfn9fF496K9c0PyBw3pF9nFjBhXl9izioZMmgBntqLiPc/O+3KuqIqGQQBTKk571M7AyoK
-	7N/VwWTVQBWpwNQpYuKJNx/zK8Jo+VHmERQb9CisFjb/vj4booGe/qx+wg5MUtXHkg69cVh9dlPnb
-	mFX6OyxD00R+Xync+9+cb5OpkzeYlngY3UbTnIwjmnZm4mLfTMtDbOpfvuhCcWBHG/HIcAKFGWkjc
-	0ISOMpY6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V2GCehRFd5j/JeYUHmoTx4oVfuIk5EYQ5Hp3OR5CEQ8=; b=aKC6KAMBHK2+sm
+	ZZG8nrC/nshpyx2svMm/FSWmZv1tt3ViU2GTSBW0PkNMsRw8rp0xa4DaqtQWvqT81PjD3H+YCV27e
+	q9ic+NM7E/yYhII2h41TdQwiNxNT9oQ6UIyViOglwT7sOiHFMOjWaE+vx44WXVuHd5faErfjBw5xC
+	XpH8vRgV0vNc1wSSUmDd3uc3tsXrmhAnetYaMfePKxcqO7WjfXTaPrTzrR6unP46qH43/QipMPNnM
+	hMqGms5Y5SiD1XqbUYK3asJxBFvruJWgY3C49INLnWkNs6BlSPN2V3gys6A4VqilWIFhPPv+qnJxf
+	quliP6ZA/j8AqtwnkCvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipry2-00047D-5h; Fri, 10 Jan 2020 10:56:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ips1E-0004ju-95; Fri, 10 Jan 2020 10:59:56 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iprxr-00046h-Eh
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 10:56:29 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8C6A2082E;
- Fri, 10 Jan 2020 10:56:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578653787;
- bh=g0NGsgvtWDcQEwVAn4jBHCPYsY/MFSFg1Hq2ESPb2i0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=gd9YLLjDwQH55ZByg8BPeOnN0T8pWoE/KMlkAklE5GVagFD/dBEvbncrgx9izcbXn
- 83GgfSArCppaYma/XT3TLp7vROLiuIEJa5nsrniJli4P29feXubWrETQpWVO4H5Rqa
- P1SZ7EG3hojV6ZG2FnYgc/T6hw+8tbT1aGY1ZuVA=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1iprxp-0007Zo-5s; Fri, 10 Jan 2020 10:56:25 +0000
+ id 1ips14-0004hj-AP; Fri, 10 Jan 2020 10:59:48 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxZTe081793;
+ Fri, 10 Jan 2020 04:59:35 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578653975;
+ bh=9+Ck3PRaRVIdp1krLVpCgf4FURcXnlnWOb8T6coy79M=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nyfrNejkNB1FiPAWgbDHVtQ3iiC2/Jp8H1uiZfT+cRUg1ai0DpE4z38L1wvYHw6Hq
+ 8cWFwy/ozYcxI31BVErd34xjIXMOHvvUdkNWpstpTW72gan8oeLU1scsQrmutxpChP
+ jalicy0DTy0H6D+m2wH6BzDJ/S8XBZFmMsJS2to4=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00AAxZhE012420
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 10 Jan 2020 04:59:35 -0600
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 10
+ Jan 2020 04:59:34 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 10 Jan 2020 04:59:35 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxWRT044018;
+ Fri, 10 Jan 2020 04:59:32 -0600
+Subject: Re: [PATCH v2 00/14] Support more HDMI modes on RK3228/RK3328
+To: Jonas Karlman <jonas@kwiboo.se>, Heiko Stuebner <heiko@sntech.de>, Sandy
+ Huang <hjc@rock-chips.com>
+References: <20200108210740.28769-1-jonas@kwiboo.se>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <b159ee28-213e-35d2-6d09-516abc3358bb@ti.com>
+Date: Fri, 10 Jan 2020 16:31:40 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Date: Fri, 10 Jan 2020 10:56:25 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Jianyong Wu <Jianyong.Wu@arm.com>
-Subject: Re: [RFC PATCH v9 6/8] psci: Add hvc call service for ptp_kvm.
-In-Reply-To: <HE1PR0801MB16765B507D9B5A1A7827078BF4380@HE1PR0801MB1676.eurprd08.prod.outlook.com>
-References: <20191210034026.45229-1-jianyong.wu@arm.com>
- <20191210034026.45229-7-jianyong.wu@arm.com>
- <7383dc06897bba253f174cd21a19b5c0@kernel.org>
- <HE1PR0801MB1676AB738138AB24E2158AD4F4390@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <099a26ffef5d554b88a5e33d7f2a6e3a@kernel.org>
- <HE1PR0801MB16765B507D9B5A1A7827078BF4380@HE1PR0801MB1676.eurprd08.prod.outlook.com>
-Message-ID: <ca80d88f5e00937fca7ee80be8f5c962@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: Jianyong.Wu@arm.com, netdev@vger.kernel.org,
- yangbo.lu@nxp.com, john.stultz@linaro.org, tglx@linutronix.de,
- pbonzini@redhat.com, sean.j.christopherson@intel.com, richardcochran@gmail.com,
- Mark.Rutland@arm.com, will@kernel.org, Suzuki.Poulose@arm.com,
- Steven.Price@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, Steve.Capper@arm.com, Kaly.Xin@arm.com, Justin.He@arm.com,
- nd@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200108210740.28769-1-jonas@kwiboo.se>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_025627_540409_23DF3CE7 
-X-CRM114-Status: GOOD (  25.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200110_025946_481804_E3C00B3D 
+X-CRM114-Status: GOOD (  23.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,217 +91,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Justin He <Justin.He@arm.com>,
- kvm@vger.kernel.org, Suzuki Poulose <Suzuki.Poulose@arm.com>,
- netdev@vger.kernel.org, richardcochran@gmail.com,
- Steve Capper <Steve.Capper@arm.com>, linux-kernel@vger.kernel.org,
- sean.j.christopherson@intel.com, Steven Price <Steven.Price@arm.com>,
- Kaly Xin <Kaly.Xin@arm.com>, john.stultz@linaro.org, yangbo.lu@nxp.com,
- pbonzini@redhat.com, tglx@linutronix.de, nd <nd@arm.com>, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Zheng Yang <zhengyang@rock-chips.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-10 09:51, Jianyong Wu wrote:
-> Hi Marc,
+
+
+On 09/01/20 2:37 AM, Jonas Karlman wrote:
+> This series make it possible to use more HDMI modes on RK3328,
+> and presumably also on RK3228. It also prepares for a future YUV420 and
+> 10-bit output series.
 > 
->> -----Original Message-----
->> From: Marc Zyngier <maz@kernel.org>
->> Sent: Thursday, January 9, 2020 5:16 PM
->> To: Jianyong Wu <Jianyong.Wu@arm.com>
->> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
->> tglx@linutronix.de; pbonzini@redhat.com; 
->> sean.j.christopherson@intel.com;
->> richardcochran@gmail.com; Mark Rutland <Mark.Rutland@arm.com>;
->> will@kernel.org; Suzuki Poulose <Suzuki.Poulose@arm.com>; Steven Price
->> <Steven.Price@arm.com>; linux-kernel@vger.kernel.org; linux-arm-
->> kernel@lists.infradead.org; kvmarm@lists.cs.columbia.edu;
->> kvm@vger.kernel.org; Steve Capper <Steve.Capper@arm.com>; Kaly Xin
->> <Kaly.Xin@arm.com>; Justin He <Justin.He@arm.com>; nd <nd@arm.com>
->> Subject: Re: [RFC PATCH v9 6/8] psci: Add hvc call service for 
->> ptp_kvm.
->> 
->> On 2020-01-09 05:45, Jianyong Wu wrote:
->> > Hi Marc,
->> >
->> >> -----Original Message-----
->> >> From: Marc Zyngier <maz@kernel.org>
->> >> Sent: Tuesday, January 7, 2020 5:16 PM
->> >> To: Jianyong Wu <Jianyong.Wu@arm.com>
->> >> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com;
->> >> john.stultz@linaro.org; tglx@linutronix.de; pbonzini@redhat.com;
->> >> sean.j.christopherson@intel.com; richardcochran@gmail.com; Mark
->> >> Rutland <Mark.Rutland@arm.com>; will@kernel.org; Suzuki Poulose
->> >> <Suzuki.Poulose@arm.com>; Steven Price <Steven.Price@arm.com>;
->> >> linux-kernel@vger.kernel.org; linux-arm- kernel@lists.infradead.org;
->> >> kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org; Steve Capper
->> >> <Steve.Capper@arm.com>; Kaly Xin <Kaly.Xin@arm.com>; Justin He
->> >> <Justin.He@arm.com>; nd <nd@arm.com>
->> >> Subject: Re: [RFC PATCH v9 6/8] psci: Add hvc call service for
->> >> ptp_kvm.
->> >>
->> >> On 2019-12-10 03:40, Jianyong Wu wrote:
->> >> > ptp_kvm modules will call hvc to get this service.
->> >> > The service offers real time and counter cycle of host for guest.
->> >> >
->> >> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
->> >> > ---
->> >> >  include/linux/arm-smccc.h | 12 ++++++++++++
->> >> >  virt/kvm/arm/psci.c       | 22 ++++++++++++++++++++++
->> >> >  2 files changed, 34 insertions(+)
->> >> >
->> >> > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
->> >> > index 6f82c87308ed..aafb6bac167d 100644
->> >> > --- a/include/linux/arm-smccc.h
->> >> > +++ b/include/linux/arm-smccc.h
->> >> > @@ -94,6 +94,7 @@
->> >> >
->> >> >  /* KVM "vendor specific" services */
->> >> >  #define ARM_SMCCC_KVM_FUNC_FEATURES		0
->> >> > +#define ARM_SMCCC_KVM_PTP			1
->> >> >  #define ARM_SMCCC_KVM_FUNC_FEATURES_2		127
->> >> >  #define ARM_SMCCC_KVM_NUM_FUNCS			128
->> >> >
->> >> > @@ -103,6 +104,17 @@
->> >> >  			   ARM_SMCCC_OWNER_VENDOR_HYP,
->> >> 		\
->> >> >  			   ARM_SMCCC_KVM_FUNC_FEATURES)
->> >> >
->> >> > +/*
->> >> > + * This ID used for virtual ptp kvm clock and it will pass second
->> >> > value
->> >> > + * and nanosecond value of host real time and system counter by
->> >> > +vcpu
->> >> > + * register to guest.
->> >> > + */
->> >> > +#define ARM_SMCCC_VENDOR_HYP_KVM_PTP_FUNC_ID
->> >> 		\
->> >> > +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,
->> >> 		\
->> >> > +			   ARM_SMCCC_SMC_32,
->> >> 	\
->> >> > +			   ARM_SMCCC_OWNER_VENDOR_HYP,
->> >> 		\
->> >> > +			   ARM_SMCCC_KVM_PTP)
->> >> > +
->> >>
->> >> All of this depends on patches that have never need posted to any ML,
->> >> and just linger in Will's tree. You need to pick them up and post
->> >> them as part of this series so that they can at least be reviewed.
->> >>
->> > Ok, I will add them next version.
->> >
->> >> >  #ifndef __ASSEMBLY__
->> >> >
->> >> >  #include <linux/linkage.h>
->> >> > diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c index
->> >> > 0debf49bf259..682d892d6717 100644
->> >> > --- a/virt/kvm/arm/psci.c
->> >> > +++ b/virt/kvm/arm/psci.c
->> >> > @@ -9,6 +9,7 @@
->> >> >  #include <linux/kvm_host.h>
->> >> >  #include <linux/uaccess.h>
->> >> >  #include <linux/wait.h>
->> >> > +#include <linux/clocksource_ids.h>
->> >> >
->> >> >  #include <asm/cputype.h>
->> >> >  #include <asm/kvm_emulate.h>
->> >> > @@ -389,6 +390,8 @@ static int kvm_psci_call(struct kvm_vcpu *vcpu)
->> >> >
->> >> >  int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)  {
->> >> > +	struct system_time_snapshot systime_snapshot;
->> >> > +	u64 cycles;
->> >> >  	u32 func_id = smccc_get_function(vcpu);
->> >> >  	u32 val[4] = {};
->> >> >  	u32 option;
->> >> > @@ -431,6 +434,25 @@ int kvm_hvc_call_handler(struct kvm_vcpu
->> *vcpu)
->> >> >  	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
->> >> >  		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
->> >> >  		break;
->> >> > +	/*
->> >> > +	 * This will used for virtual ptp kvm clock. three
->> >> > +	 * values will be passed back.
->> >> > +	 * reg0 stores high 32-bit host ktime;
->> >> > +	 * reg1 stores low 32-bit host ktime;
->> >> > +	 * reg2 stores high 32-bit difference of host cycles and cntvoff;
->> >> > +	 * reg3 stores low 32-bit difference of host cycles and cntvoff.
->> >>
->> >> That's either two or four values, and not three as you claim above.
->> >>
->> > Sorry, I'm not sure what do you mean "three", the registers here is 4
->> > from reg0 to reg3.
->> 
->> Please read the comment you have written above...
+> Part of this has been reworked from vendor BSP 4.4 kernel commits.
 > 
-> oh, I see it.
+> Patch 1-5 fixes issues and shortcomings in the inno hdmi phy driver.
 > 
->> 
->> >> Also, I fail to understand the meaning of the host cycle vs cntvoff
->> >> comparison.
->> >> This is something that guest can perform on its own (it has access to
->> >> both physical and virtual timers, and can compute cntvoff without
->> >> intervention of the hypervisor).
->> >>
->> > To keep consistency and precision, clock time and counter cycle must
->> > captured at the same time. It will perform at ktime_get_snapshot.
->> 
->> Fair enough. It would vertainly help if you documented it. It would 
->> also help if
->> you explained why it is so much worse to read the counter in the guest
->> before *and* after the call, and assume that the clock time read 
->> happened
->> right in the middle?
->> 
-> ok, I will give explain in comments.
+> Patch 6 prepares for use of high TMDS bit rates used with HDMI 2.0 and
+> 10-bit output modes.
 > 
->> That aside, what you are returning is something that *looks* like the 
->> virtual
->> counter. What if the guest is using the physical counter, which is 
->> likely to be
->> the case with nested virt? Do you expect the guest to always use the 
->> virtual
->> counter? This isn't going to fly.
+> Patch 7-13 changes rk3228/rk3328 to use mode_valid functions suited for
+> the inno hdmi phy instead of the dw-hdmi phy. These changes allows for
+> more CEA modes to be usable, e.g. some 4K and fractal modes.
 > 
-> To be honest, I have little knowledge of nested virtualization for arm
-> and I'm confused with that guest'guest will use physical counter.
+> Patch 14 adds support for more pixel clock rates in order to support
+> common DMT modes in addition to CEA modes.
 
-Not the guest's guest (L2), but L1. Just look at what counter the
-KVM host uses: that's the physical counter. Now imagine you run that
-host as a guest, no other change.
+Is it possible to split the series targeted for different subsystems or
+is it required for all the patches to be merged together?
 
-> IMO, ptp_kvm will call hvc to trap to its hypervisor adjacent to it.
-> So guest'guest will trap to hypervisor in guest and will
-> get guest's counter cycle then calculate guest'guest's counter cycle
-> by something like offset to sync time with it. So only if the
-> guest's hypervisor can calculate the guest'guest's counter value, can
-> ptp_kvm works.
-
-Sure, but that's not the problem we're trying to solve. The issue is 
-that
-of the reference counter value you're including in the hypercall 
-response.
-It needs to be a value that makes sense to the guest, and so far you're
-assuming virtual.
-
-NV breaks that assumtion, because the guest hypervisor is using the 
-physical
-counter. Also, let's not forget that the hypercall isn't Linux specific.
-I can write my own non-Linux guest and still use this hypercall. Nothing
-in there says that I can't use the physical counter if I want to.
-
-So somehow, you need to convey the the hypervisor the notion of *which*
-counter the guest uses.
-
-Does it make sense? Or am I missing something?
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Thanks
+Kishon
+> 
+> Note: I have only been able to build test RK322x related changes
+> as I do not have any RK322x device to test on.
+> 
+> All modes, including fractal modes, has been tested with modetest on
+> a RK3328 Rock64 device using e.g.
+> 
+>   modetest -M rockchip -s 39:3840x2160-29.97
+> 
+> Changes in v2:
+>   - collect acked-by tag
+>   - drop the limit resolution width to 3840 patch
+> 
+> This series is also available at [1] and the early work on YUV420 and
+> 10-bit output is available at [2].
+> 
+> [1] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-inno-hdmi-phy
+> [2] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-bus-format
+> 
+> Regards,
+> Jonas
+> 
+> Algea Cao (1):
+>   phy/rockchip: inno-hdmi: Support more pre-pll configuration
+> 
+> Huicong Xu (1):
+>   phy/rockchip: inno-hdmi: force set_rate on power_on
+> 
+> Jonas Karlman (11):
+>   phy/rockchip: inno-hdmi: use correct vco_div_5 macro on rk3328
+>   phy/rockchip: inno-hdmi: remove unused no_c from rk3328 recalc_rate
+>   phy/rockchip: inno-hdmi: do not power on rk3328 post pll on reg write
+>   drm/rockchip: dw-hdmi: allow high tmds bit rates
+>   drm/rockchip: dw-hdmi: require valid vpll clock rate on rk3228/rk3328
+>   clk: rockchip: set parent rate for DCLK_VOP clock on rk3228
+>   arm64: dts: rockchip: increase vop clock rate on rk3328
+>   arm64: dts: rockchip: add vpll clock to hdmi node on rk3328
+>   ARM: dts: rockchip: add vpll clock to hdmi node on rk3228
+>   drm/rockchip: dw-hdmi: limit tmds to 340mhz on rk3228/rk3328
+>   drm/rockchip: dw-hdmi: remove unused plat_data on rk3228/rk3328
+> 
+> Zheng Yang (1):
+>   phy/rockchip: inno-hdmi: round fractal pixclock in rk3328 recalc_rate
+> 
+>  arch/arm/boot/dts/rk322x.dtsi                 |   4 +-
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi      |   6 +-
+>  drivers/clk/rockchip/clk-rk3228.c             |   2 +-
+>  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c   |  47 ++++++--
+>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 110 ++++++++++++------
+>  5 files changed, 120 insertions(+), 49 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
