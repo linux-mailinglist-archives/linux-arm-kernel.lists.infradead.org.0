@@ -2,60 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC3F11365E1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:46:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78DA91365E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:55:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cED2W10E3CS3v+cSN+fzb/cKDxredcM7DMVHog/Q86Y=; b=CYOuT3c4YVZd5Z
-	W0qhRH9WTnY7LnKvuEDugKFo4BWRWAzHfHsQeVaePaQi5vJOryDkTgoYHntyXwWfhgwc3Pl/J9tiV
-	3WrH7iA1Z4R0oBXBPASxh5yoyvHv/UXAuL0+rldF+TXYxlSt1kQD1dCYoGNl9im85xNIPq/2o3KKn
-	LwFGwIaUymYPfaGX6vsud968E8x4QAZcXSaZ+e2itnFjNAkLyW8AeWWjUr8HCKyQHKoaCF+uWDWMM
-	g4uHbVWGy0MsSno1T2UNCnwrbSnOLtHpSGeQY1yajmGH0w0zh43aKxDmzCOpu2e9gRgRk53dCVFyE
-	wox+F5KPnVgwSrB1SA6w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5wpd8RflaRpr6gEnDGAhki1sjeAC420gJk0sxKj8Otg=; b=b4E
+	BPjDTzwSYEW4YIE+mbMP8vWx2eMt2wwGL0Q9SKdffU7dvEJ7ggbWuwdxDyzxFPsQcjzRz9nN8hBJJ
+	mRVijAa5vNKzhBPB6F+PL0m9FR4JMixGctKcska0CFhtmma4YS4gPEfJ0S5toZg/j7aV+znj7xkbW
+	/DcOf6XzA2L/N3yMzJIr5s/CW3YiXJVU0DPNURJQUP3cSt86JzJwFffz/vuy4nodFjXsbN1Lxuut9
+	VvGrAx1icDOcHGkftpCdHWKRKbRLcm4c8ERuZUjuizEacUgcwX84XrzwTy957IVk1GH/GxnR4A4wp
+	jnbx3poKduUrEtvKBborH8w2XYTVjBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iplFc-00008n-1S; Fri, 10 Jan 2020 03:46:20 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iplOl-0004Mq-4J; Fri, 10 Jan 2020 03:55:47 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iplFT-00008E-2r
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:46:12 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 65C7E247182F62F41B06;
- Fri, 10 Jan 2020 11:46:09 +0800 (CST)
-Received: from [127.0.0.1] (10.184.52.56) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Fri, 10 Jan 2020
- 11:45:59 +0800
-Subject: Re: [Question] About handling PMU context loss in the deepest idle
- state where the core is powered down
-To: Will Deacon <will@kernel.org>
-References: <d62d9ac1-3af9-b692-a84a-aab4582e5eb8@huawei.com>
- <20200109150318.GF12236@willie-the-truck>
-From: Xiongfeng Wang <wangxiongfeng2@huawei.com>
-Message-ID: <31ec228b-a51b-637d-1c1c-543c81653a96@huawei.com>
-Date: Fri, 10 Jan 2020 11:45:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.6.0
-MIME-Version: 1.0
-In-Reply-To: <20200109150318.GF12236@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.184.52.56]
-X-CFilter-Loop: Reflected
+ id 1iplOe-0004Lv-AZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:55:41 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y17so442714wrh.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Jan 2020 19:55:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=kxV5SqlkFgP5zhfbsJuuWIogZXN6mvLl8MHissFHHxg=;
+ b=PIFFStt4M2Cz2Rebcs6yKg3KO/1NffcQ2nsyYGiF3v14UXaVwoRU1JK1x+PnCqCias
+ 74Zj31cQwCO/1M+d7BTwBRHAB4EfVm5qDSnqowwCT+NfnBPsorCxstjYNi4FZ+X5BcOm
+ 3aYiA/2X+XiQCNOGr+aouB2NYaezcDRqlSh3o=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=kxV5SqlkFgP5zhfbsJuuWIogZXN6mvLl8MHissFHHxg=;
+ b=KPvpfFsUhhmbJvr0h6JkecsACwyWvE2cByRUwEU9Ce2WdKXdMVYNq/4mEoKMBWe5bR
+ jdz+Avpda4MXwQIqa7ArDYwjovdbwNQeme9tTPC9U/HesJbSrw/AHTZ8BPbxSFLhjqxk
+ NjjIY+aVUNcuBsIhigmxw7nNTwo0/SsxI5sZIDDdzA/FHV3StjR7l3OO+SC00Vw7lCbB
+ LrNyFc9wjiV6uc3TOzwYTH+8fL3NOa6sfG0EvryTVt1eUFgtegoP9FEGpTVpAlGBHce6
+ 3bPB7ckMUwcm7nTC7Te4IjnxFI+DGheCgoq/pyztRr2UjveXDzMP0+P5IaLTzAchNxVU
+ l+4g==
+X-Gm-Message-State: APjAAAUDtiqeYnDq7Xo79Kd+245TGwMBM3PbAePpggpGy9c1Z/wpSsim
+ kxHPCvT+vvNc7jyUHfITfDfRFA==
+X-Google-Smtp-Source: APXvYqwhH4tu3jlKFGUg12Tzi7qWJWfnfZa+c/G1dxcpt5oyAFIOPeAhb3CJjIDnMMTvI/n6+5g50w==
+X-Received: by 2002:a5d:6748:: with SMTP id l8mr952505wrw.188.1578628537787;
+ Thu, 09 Jan 2020 19:55:37 -0800 (PST)
+Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id e18sm674999wrw.70.2020.01.09.19.55.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Jan 2020 19:55:37 -0800 (PST)
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+To: Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ Li Jin <li.jin@broadcom.com>, YueHaibing <yuehaibing@huawei.com>,
+ linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v1 1/1] pinctrl: iproc: Use platform_get_irq_optional() to
+ avoid error message
+Date: Fri, 10 Jan 2020 09:25:24 +0530
+Message-Id: <20200110035524.23511-1-rayagonda.kokatanur@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_194611_291012_1DF9E184 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200109_195540_368269_E9082298 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,64 +96,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, wangzhe59@huawei.com, lorenzo.pieralisi@arm.com,
- Catalin Marinas <catalin.marinas@arm.com>, huawei.libin@huawei.com,
- guohanjun@huawei.com, linux-arm-kernel@lists.infradead.org
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Use platform_get_irq_optional() instead of platform_get_irq() to avoid
+below error message during probe:
 
+[ 0.589121] iproc-gpio 66424800.gpio: IRQ index 0 not found
 
-On 2020/1/9 23:03, Will Deacon wrote:
-> [+Lorenzo]
-> 
-> On Thu, Jan 09, 2020 at 10:43:40AM +0800, Xiongfeng Wang wrote:
->> Sorry to bother you. It's just that we have come across some problems
->> about PMU recently.
-> 
-> No bother, and thanks for including the mailing list.
-> 
->> We are working on deep power state on CPU cores. In the deepest idle state, the core will be
->> powered down. In our implementation, the PMU and the core are in the same power domain,
->> so the PMU will also be powered down. But I didn't find where we saved the PMU context
->> in kernel before entering the deepest idle state.
->>
->> Before we enter the system sleep state, we update the kernel PMU counter and stop the PMU
->> in 'cpu_pm_pmu_notify()'. But we didn't do that before we enter idle state.
->> I only find some system registers saving in 'psci_cpu_suspend_enter()->cpu_susend()->cpu_do_suspend()'
-> 
-> I'm not sure what you mean by "system sleep state", but if you're putting
-> the CPU into a state where register contents is lost, then I think you need
-> those PM notifiers to run. My understanding was that CPUidle took care of
-> this. Why is that not sufficient for you?
+Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+---
+ drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Sorry, I didn't notice the PM notifiers are called in CPUidle when 'arch_flags' is set.
-I thought it's only called in 'cpu_pm_syscore_ops', I mean Susepnd-to-RAM.
-
-Thanks,
-Xiongfeng
-
-> 
->> Do you have some suggestion about how we can handle this problem ?
->> Should we save and restore the PMU context before and after the deepest idle state . I don't know
->> if we can take care of the PMU  counters and interrupts properly by saving and restoring
->> the PMU registers.
->> Or we should update the kernel counter and stop the PMU, like what we did in system sleep situation.
->> Or we should let the firmware to handle the saving and restoring problem.
-> 
-> If the idle state is somehow autonomous (i.e. the kernel is not aware of
-> it), then I suppose firmware has to save/restore the register state that
-> is not otherwise preserved. However, I'd like to understand if this is
-> really what's happening and why CPUidle isn't just doing the right thing.
-> 
-> Thanks,
-> 
-> Will
-> 
-> .
-> 
+diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+index 831a9318c384..0d2bdb818d41 100644
+--- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
++++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+@@ -843,7 +843,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
+ 							"gpio-ranges");
+ 
+ 	/* optional GPIO interrupt support */
+-	irq = platform_get_irq(pdev, 0);
++	irq = platform_get_irq_optional(pdev, 0);
+ 	if (irq > 0) {
+ 		struct irq_chip *irqc;
+ 		struct gpio_irq_chip *girq;
+-- 
+2.17.1
 
 
 _______________________________________________
