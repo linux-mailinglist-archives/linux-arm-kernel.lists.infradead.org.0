@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76172136F0C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:12:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BDDC136F10
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 15:12:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XLm2XWlP8jQkL0DQ+Jj1+RYzf9YOqksyTpa91vrMmN8=; b=jtf
-	03yj+1V/ymVDrdhofC/ngPDdU0jOV5F4CH3WotPGj/Hvi+i6OazPkoXKV/vPG0GYOhpR9dqA/v0pT
-	OVvHbcnl5VYZtHLDCFzj8SoynMQIZBsCLy1O34OFRPPnRA9TPZw/Zqek+DtHt5NjOOoS8daHgjUZ7
-	PqA2V6/6Ea0reUTWr31sq0bO5Bkc+7NSC07Fmi1Siy3Om4YyqAjvLGdxtJIDRMwQTW9K/pTuiF5Jc
-	FI1lM6eg1FtSUD1yedUN9aHxjSIUUF4WwBz1/TKANu7D4aDt5idvAJ+A2s/9N497GYYVaMiFAGw7E
-	iyH9lITwdgDdEy50CZPlKrIbhDufTdw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tucQxrpy2hDrcbb5GRBUq7o+smWSqwUvc/o4yphZCgs=; b=BxYZNNoMeNhEXAvlMWWkaOqEYr
+	JYZRSRCvs2LSGkKxSIOzan5cJhnxwALJXUCePKOg+doELiE9DkckbRPJGG9uu9Mi6+AfU1+L0XGdZ
+	XIxcxjWNu9QrtdhtC2tlDOgWBMvjJEHZBqawK9AoG+5KtTxZep00ZFBvBwoaMkoqQP38J0U+gjzTl
+	Z2mpFiJlJ7V7oTwdG2ASzU5YehhBxuui6vn7ABCYJOugYfty5XO4HoqylOAc7b124jbqWeLJWFCNG
+	XRO6pR3VnVmO9PM3my998K49041XOSaXkbG5o7jDXBTCZnVfsHydQxCa2vjVUjjVNinvTH/YGlX+t
+	kFhPnX7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipv1K-0008PZ-Qb; Fri, 10 Jan 2020 14:12:14 +0000
-Received: from olimex.com ([2001:470:0:1f2::b869:4820])
+	id 1ipv1v-0000Rr-By; Fri, 10 Jan 2020 14:12:51 +0000
+Received: from olimex.com ([184.105.72.32])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipv1E-0008PE-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:12:09 +0000
+ id 1ipv1Q-00008H-Qa
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 14:12:23 +0000
 Received: from localhost.localdomain ([94.155.250.134])
  by olimex.com with ESMTPSA
  (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
  (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 10 Jan 2020 06:11:56 -0800
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 10 Jan 2020 06:12:01 -0800
 From: Stefan Mavrodiev <stefan@olimex.com>
 To: Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -37,13 +38,16 @@ To: Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
  linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC
  support), 
  dri-devel@lists.freedesktop.org (open list:DRM DRIVERS FOR ALLWINNER A10)
-Subject: [PATCH 0/2] Add support for sun4i HDMI audio
-Date: Fri, 10 Jan 2020 16:11:38 +0200
-Message-Id: <20200110141140.28527-1-stefan@olimex.com>
+Subject: [PATCH 1/2] dmaengine: sun4i: Add support for cyclic requests with
+ dedicated DMA
+Date: Fri, 10 Jan 2020 16:11:39 +0200
+Message-Id: <20200110141140.28527-2-stefan@olimex.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200110141140.28527-1-stefan@olimex.com>
+References: <20200110141140.28527-1-stefan@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_061208_351920_1A71C0AC 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20200110_061220_892964_AA72A085 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -69,30 +73,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series add support for HDMI audio for sun4i HDMI encored.
-The code uses some parts from the Allwinners's BSP kernel.
+Currently the cyclic transfers can be used only with normal DMAs. They
+can be used by pcm_dmaengine module, which is required for implementing
+sound with sun4i-hdmi encoder. This is so because the controller can
+accept audio only from a dedicated DMA.
 
-Currently cyclic DMA transfers are disabled. The first patch permits them
-as they are required for the audio.
+This patch enables them, following the existing style for the
+scatter/gather type transfers.
 
-The patch is tested on A20 chip. For the other chips, only the addresses
-of the registers are checked.
+Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
+---
+ drivers/dma/sun4i-dma.c | 45 ++++++++++++++++++++++-------------------
+ 1 file changed, 24 insertions(+), 21 deletions(-)
 
-Stefan Mavrodiev (2):
-  dmaengine: sun4i: Add support for cyclic requests with dedicated DMA
-  drm: sun4i: hdmi: Add support for sun4i HDMI encoder audio
-
- drivers/dma/sun4i-dma.c                  |  45 +--
- drivers/gpu/drm/sun4i/Kconfig            |   1 +
- drivers/gpu/drm/sun4i/Makefile           |   1 +
- drivers/gpu/drm/sun4i/sun4i_hdmi.h       |  30 ++
- drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c | 375 +++++++++++++++++++++++
- drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c   |   4 +
- 6 files changed, 435 insertions(+), 21 deletions(-)
- create mode 100644 drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c
-
+diff --git a/drivers/dma/sun4i-dma.c b/drivers/dma/sun4i-dma.c
+index e397a50058c8..7b41815d86fb 100644
+--- a/drivers/dma/sun4i-dma.c
++++ b/drivers/dma/sun4i-dma.c
+@@ -669,43 +669,41 @@ sun4i_dma_prep_dma_cyclic(struct dma_chan *chan, dma_addr_t buf, size_t len,
+ 	dma_addr_t src, dest;
+ 	u32 endpoints;
+ 	int nr_periods, offset, plength, i;
++	u8 ram_type, io_mode, linear_mode;
+ 
+ 	if (!is_slave_direction(dir)) {
+ 		dev_err(chan2dev(chan), "Invalid DMA direction\n");
+ 		return NULL;
+ 	}
+ 
+-	if (vchan->is_dedicated) {
+-		/*
+-		 * As we are using this just for audio data, we need to use
+-		 * normal DMA. There is nothing stopping us from supporting
+-		 * dedicated DMA here as well, so if a client comes up and
+-		 * requires it, it will be simple to implement it.
+-		 */
+-		dev_err(chan2dev(chan),
+-			"Cyclic transfers are only supported on Normal DMA\n");
+-		return NULL;
+-	}
+-
+ 	contract = generate_dma_contract();
+ 	if (!contract)
+ 		return NULL;
+ 
+ 	contract->is_cyclic = 1;
+ 
+-	/* Figure out the endpoints and the address we need */
++	if (vchan->is_dedicated) {
++		io_mode = SUN4I_DDMA_ADDR_MODE_IO;
++		linear_mode = SUN4I_DDMA_ADDR_MODE_LINEAR;
++		ram_type = SUN4I_DDMA_DRQ_TYPE_SDRAM;
++	} else {
++		io_mode = SUN4I_NDMA_ADDR_MODE_IO;
++		linear_mode = SUN4I_NDMA_ADDR_MODE_LINEAR;
++		ram_type = SUN4I_NDMA_DRQ_TYPE_SDRAM;
++	}
++
+ 	if (dir == DMA_MEM_TO_DEV) {
+ 		src = buf;
+ 		dest = sconfig->dst_addr;
+-		endpoints = SUN4I_DMA_CFG_SRC_DRQ_TYPE(SUN4I_NDMA_DRQ_TYPE_SDRAM) |
+-			    SUN4I_DMA_CFG_DST_DRQ_TYPE(vchan->endpoint) |
+-			    SUN4I_DMA_CFG_DST_ADDR_MODE(SUN4I_NDMA_ADDR_MODE_IO);
++		endpoints = SUN4I_DMA_CFG_DST_DRQ_TYPE(vchan->endpoint) |
++			    SUN4I_DMA_CFG_DST_ADDR_MODE(io_mode) |
++			    SUN4I_DMA_CFG_SRC_DRQ_TYPE(ram_type);
+ 	} else {
+ 		src = sconfig->src_addr;
+ 		dest = buf;
+-		endpoints = SUN4I_DMA_CFG_SRC_DRQ_TYPE(vchan->endpoint) |
+-			    SUN4I_DMA_CFG_SRC_ADDR_MODE(SUN4I_NDMA_ADDR_MODE_IO) |
+-			    SUN4I_DMA_CFG_DST_DRQ_TYPE(SUN4I_NDMA_DRQ_TYPE_SDRAM);
++		endpoints = SUN4I_DMA_CFG_DST_DRQ_TYPE(ram_type) |
++			    SUN4I_DMA_CFG_SRC_DRQ_TYPE(vchan->endpoint) |
++			    SUN4I_DMA_CFG_SRC_ADDR_MODE(io_mode);
+ 	}
+ 
+ 	/*
+@@ -747,8 +745,13 @@ sun4i_dma_prep_dma_cyclic(struct dma_chan *chan, dma_addr_t buf, size_t len,
+ 			dest = buf + offset;
+ 
+ 		/* Make the promise */
+-		promise = generate_ndma_promise(chan, src, dest,
+-						plength, sconfig, dir);
++		if (vchan->is_dedicated)
++			promise = generate_ddma_promise(chan, src, dest,
++							plength, sconfig);
++		else
++			promise = generate_ndma_promise(chan, src, dest,
++							plength, sconfig, dir);
++
+ 		if (!promise) {
+ 			/* TODO: should we free everything? */
+ 			return NULL;
 -- 
 2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
