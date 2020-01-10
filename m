@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0D5137642
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 19:42:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 386B1137646
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 19:42:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UHjtU99HZfH16nhvfn0muGTYTTiOM7ysxLrmSeTHyNA=; b=nHL5UujMLjtrn/gLZ7v40t4/8
-	FKrWxiTDmVmTG39/9vhl4SN0mOGuz/hHT4VWVn+athyZFgZFbnLHGCdmqN28vIV4eqqHVu//eQ5Yf
-	WVm9PSuywZV9LtQrdnnUOyVTVgRaBzd3aVs238y3uWiZLsvzq3+X1Js+qHNp8aWQlIBFxI94lsQOn
-	qLwe+oH3MqJaG36BGxJ4/pVKQsiKi5ZlXCzadTREVMgY7sSSMIg5MvLVvFxwrZXaObpnpQsP42XsX
-	lQKi7/lgPDbBzGK7QPMpm9u/x5V9C0b4RjAM35Y6Ua7YVgqqT2rop/b77Jcw3DFcxn7b0bjR4tAwN
-	gH88fILkw==;
+	 bh=dwAtC7vnDPpWYI7ojYcR/eAC0qMtVOeNPhNCcN1wvoc=; b=g8T3RaU+UPzvOjxEoNyjw9xS5
+	Aq4D0BE8jMtMHwsCOVgWzK4MFzRFId+SRWLYrDpZUcwPvjYpQmCS6FAH6bcvol+zYdVgmSnQrKmrq
+	uUi+/3JeZ/XjZZVF+E/K9gQNTTHm0nU56d9rORhKdeGwaYt31vzbVJfajdMzz5bb1YpooCf2hwbrM
+	/dd8Yi3uX+0MooVBbgRfCJHn8jaDJqEsS/+qGxh1ZixclwGr5R/jcY3tW3KocUDaUv5UBuL1g1sUd
+	DAZsCR7ZzWi7Tkl44nCS7KkqPjYYXv/CDvzv91W9bDjdboMMNQyrCCnvEdDFvH/zzhWF1RLHn51zk
+	r/UqJBZ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipzEQ-0005Ze-5A; Fri, 10 Jan 2020 18:42:02 +0000
+	id 1ipzFC-0005sk-T8; Fri, 10 Jan 2020 18:42:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipzEI-0005Z2-PZ
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 18:41:56 +0000
+ id 1ipzF3-0005rC-NQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 18:42:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D11E830E;
- Fri, 10 Jan 2020 10:41:51 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 934AC30E;
+ Fri, 10 Jan 2020 10:42:40 -0800 (PST)
 Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A8B03F6C4;
- Fri, 10 Jan 2020 10:41:50 -0800 (PST)
-Subject: Re: [PATCH v2 2/7] arm64: fpsimd: Make sure SVE setup is complete
- before SIMD is used
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D6EA3F6C4;
+ Fri, 10 Jan 2020 10:42:39 -0800 (PST)
+Subject: Re: [PATCH v2 5/7] arm64: ptrace: nofpsimd: Fail FP/SIMD regset
+ operations
 To: Catalin Marinas <catalin.marinas@arm.com>
 References: <20191217183402.2259904-1-suzuki.poulose@arm.com>
- <20191217183402.2259904-3-suzuki.poulose@arm.com>
- <20200110115132.GA8786@arrakis.emea.arm.com>
+ <20191217183402.2259904-6-suzuki.poulose@arm.com>
+ <20200110151231.GG8786@arrakis.emea.arm.com>
 From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <aa5a4242-7684-4212-f03e-fdf3a5784dfb@arm.com>
-Date: Fri, 10 Jan 2020 18:41:49 +0000
+Message-ID: <2078734b-fba5-8207-a73a-3eee4b899256@arm.com>
+Date: Fri, 10 Jan 2020 18:42:38 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.3.1
 MIME-Version: 1.0
-In-Reply-To: <20200110115132.GA8786@arrakis.emea.arm.com>
+In-Reply-To: <20200110151231.GG8786@arrakis.emea.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_104154_874603_72562DE3 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20200110_104241_805104_AFCAA1C9 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,31 +75,29 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/01/2020 11:51, Catalin Marinas wrote:
-> On Tue, Dec 17, 2019 at 06:33:57PM +0000, Suzuki K Poulose wrote:
->> In-kernel users of NEON rely on may_use_simd() to check if the SIMD
->> can be used. However, we must initialize the SVE before SIMD can
->> be used. Add a sanity check to make sure that we have completed the
->> SVE setup before anyone uses the SIMD.
->>
->> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->> ---
->> Discussion here : https://lkml.kernel.org/r/20191014145204.GS27757@arm.com
+On 10/01/2020 15:12, Catalin Marinas wrote:
+> On Tue, Dec 17, 2019 at 06:34:00PM +0000, Suzuki K Poulose wrote:
+>> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+>> index 6771c399d40c..0135b944b8db 100644
+>> --- a/arch/arm64/kernel/ptrace.c
+>> +++ b/arch/arm64/kernel/ptrace.c
+>> @@ -637,6 +637,9 @@ static int fpr_get(struct task_struct *target, const struct user_regset *regset,
+>>   		   unsigned int pos, unsigned int count,
+>>   		   void *kbuf, void __user *ubuf)
+>>   {
+>> +	if (!system_supports_fpsimd())
+>> +		return -EINVAL;
+>> +
+>>   	if (target == current)
+>>   		fpsimd_preserve_current_state();
 > 
-> Re-reading this thread, I think the conclusion was more towards having a
-> WARN_ON in system_supports_fpsimd() (or may_use_simd()). We don't expect
-> code to start using neon before the SMP is initialised (other than
-> early_initcall(), the rest run after the secondary CPUs are brought up).
+> I checked the coredump code (fill_thread_core_info) and works correctly
+> if we return -EINVAL here. But for completeness, we could add an
+> fpr_active() callback to aarch{32,64}_regsets (x86 does the same).
+> 
 
-Thanks for pointing out. I missed this from the Dave's last email.
-I have added a WARN_ON(!system_capabilities_finalized()) to
-may_use_simd() for the next version.
-
-Thanks for the review !
+Sure, makes sense. I have now added fpr_active() hook for the FP
+regsets.
 
 Suzuki
 
