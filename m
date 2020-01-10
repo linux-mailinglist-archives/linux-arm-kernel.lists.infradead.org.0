@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B56EF137286
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75C13137295
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 17:12:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6MnQUTkhikxOt7k9a371uxq9o0j/xEvbRifnzp1tHEw=; b=Jq9ZO+RvzIHaiP
-	9hRuI58cPJk8kpYP+2ssBhvLY75yER7d6Nv6/DBc6qronmTL/VBaTs2I8NX+/uxEq4NvfRPxVB+r6
-	mZRKc4Ks3LwZfhMp1pn0ISVNDkpRhStZQWflhXV4DZ04+3aSN3JN4zcy210KlfPW1FUiy05iGRaLS
-	JMMKBNPjde1wDrq7s18ZuYCiOyZF2TCyiKPPCx0aDpzMhm/xFy52rALUxQpJ40reJ1LK5t4fReqUh
-	0DoZ9gaaw4dp4E4kt7Qz2mj7D/CdmhaD7689SwNTJMMHvnNJ+hWUYOB00/gOYTVQlzrFfDROfmuFX
-	RbAVzT1NhvaeoV6GzhrQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fQEwh8avOmkt6sPN/GJV92lyM2ex7pFWkTNmBCSL4fo=; b=aLq
+	rB2Cw8vbbhZCuvcW8y8SOrUryGQfqDJoc5KRC3L9h0UfmB7rKC5Mr/AkPPnxaRlFj0uXQSxLIGby9
+	KhKt1z8iKfL7EHh+lrS/cSnrTDJxc1wwtHtrTjATni6zz/Oxb+ks+/00ziGzLpu5r13sndQIgAh60
+	ut6Xo4OfGYY2u+mlOAUMNgdH2KMTdyDrV+3Jf5pF2nFE1b9yWMJjJarQL4SqZytLWh7CgyAPB6COd
+	DdGYVknP2KzPl3cthI3qz947VuxcetHzWXv9jUZEJ0uHCT6B0bvxhFW0LZykSaMKYlQJsklhYzCGL
+	7d0VF3hjS3qPFvEBNAzTGX66uJseyOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipwrY-0008E6-ED; Fri, 10 Jan 2020 16:10:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipwr3-00085N-Rn
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 16:09:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F148B30E;
- Fri, 10 Jan 2020 08:09:44 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6C5533F6C4;
- Fri, 10 Jan 2020 08:09:43 -0800 (PST)
-Date: Fri, 10 Jan 2020 16:09:41 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 12/17] arm64: debug-monitors: refactor MDSCR manipulation
-Message-ID: <20200110160941.GH33536@lakrids.cambridge.arm.com>
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-13-mark.rutland@arm.com>
- <c616e5c0-301c-7c26-6954-9e287e6c9673@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c616e5c0-301c-7c26-6954-9e287e6c9673@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1ipwtV-0001XN-EP; Fri, 10 Jan 2020 16:12:17 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipwtN-0001Wm-PH; Fri, 10 Jan 2020 16:12:11 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a5so2615135wmb.0;
+ Fri, 10 Jan 2020 08:12:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=xkMOmNmLa62Vpfa8/ICLyRTkAbbIVBU7ErtKb0uzIMQ=;
+ b=aPkSw08SMUilULHj7HsZy/gdCwo3Abv1ABNWaL48dKNFzHJDyXA/Yz4/F0YVY1jkDo
+ lhP+Pox6M56eJW/hGKC6Tij4PUxV3RJrHSSUiKta+i1LBsgvkc/rfQNL3pHfSYonDvCq
+ +BZU5WF2BhqM37KlGhgv7jAgx7Vmx46Fw67w7QekdaKwOSMdbmhbOBgCer1EjC4riXaB
+ uNWGAtr+tWsO7JOtMKgs/8fv2p4oVebAwKgpiQJU9jRIQig/UaTuvTbRNhgSOPYuwm14
+ QYYo8gkDPgpY2c/UygtbWCK5g7gibLoVKxF9R82X8vXy/n0U19hq2NJaZC0BEuhPafF3
+ 3YBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=xkMOmNmLa62Vpfa8/ICLyRTkAbbIVBU7ErtKb0uzIMQ=;
+ b=n17ru6ilCWXqQHAk7C2ClNV47BTKzHQwHBHJhfSUuxkDowRmZ9+hIZWbEMgnY9xZwc
+ TFxmjxdRR93PNsrZuFq5077smKwi6W+oeIg28YNF8aywtbaLJv4+0ZcLjjT3cAic8bHK
+ tPd6HJUNv6OOofpDBBUbpaM66cWvN2ck6vfitOLlu1CE639/ocSRD5QPczEQ4NUcZ/pH
+ P540DOGha85MFf4JthpiSlOPxRsVy0snQPScjKHfA5IUoQowbHw99XpjSzehYK9OygRN
+ XHUaxjtNsOkKoKQZCk1J5/KXXjlNfSQqrJ2v1N4w+qL5g6dVLVDJC1uNMUK1ldIItEMc
+ H9YQ==
+X-Gm-Message-State: APjAAAUmys3CWSr6cdjeAJNW04gmNDgjfosWtwmf5Fvqm1Nj+9S2njVc
+ AXcGzCXJ2wmHZEQ5plBfalg=
+X-Google-Smtp-Source: APXvYqzAXbMEDqrzxi6gn4Xy/KMH6yHFAQP4FHoyyt5JulLOcl6Xolbecb4sqUX5qD/e9+jnjevHCw==
+X-Received: by 2002:a1c:a982:: with SMTP id s124mr5063032wme.132.1578672728261; 
+ Fri, 10 Jan 2020 08:12:08 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id x10sm2713533wrp.58.2020.01.10.08.12.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 10 Jan 2020 08:12:07 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: fix dwmmc clock name for px30 and rk3308
+Date: Fri, 10 Jan 2020 17:12:00 +0100
+Message-Id: <20200110161200.22755-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_080945_982089_2F281268 
-X-CRM114-Status: GOOD (  25.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_081209_819540_EC2D1F17 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,160 +93,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, robin.murphy@arm.com,
- broonie@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- catalin.marinas@arm.com, labbott@redhat.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, alex.popov@linux.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 10:05:48AM +0530, Anshuman Khandual wrote:
-> 
-> 
-> On 01/09/2020 12:26 AM, Mark Rutland wrote:
-> > When we convert the ret_to_user/work_pending code to C, we're going to
-> > want to poke the MDSCR to enable/disable single-step. Let's factor out
-> > the existing code for this from debug-monitors.c.
-> > 
-> > At the same time, we can make use of {read,write}_sysreg() directly, and
-> > get rid of the mdscr_{read,write} wrappers.
-> > 
-> > The existing code masked DAIF when manipulating MDSCR_EL1, but this
-> > should not be necessary. Exceptions can be taken immediately before DAIF
-> > is masked, and given the lack of an ISB can also be taken after DAIF is
-> > unmasked as writes to DAIF are only self-synchronizing and not
-> > context-synchronizing in general. We may want to add an ISB to ensure
-> > that updates to MDSCR have taken effect, however.
-> 
-> Any reason this patch choose not add that ISB for now after writing
-> mdscr_el1 register via sysreg_clear_set().
+An experimental test with the command below gives this error:
+px30-evb.dt.yaml: dwmmc@ff390000: clock-names:2:
+'ciu-drive' was expected
+rk3308-evb.dt.yaml: dwmmc@ff480000: clock-names:2:
+'ciu-drive' was expected
 
-I didn't want to make that functional change without justification. For
-example, the ISB wouldn't be needed for changes that only affect
-userspace.
+'ciu-drv' is not a valid dwmmc clock name,
+so fix this by changing it to 'ciu-drive'.
 
-Thanks,
-Mark.
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 
-> 
-> > 
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > ---
-> >  arch/arm64/include/asm/debug-monitors.h | 10 ++++++++++
-> >  arch/arm64/kernel/debug-monitors.c      | 32 +++++++-------------------------
-> >  2 files changed, 17 insertions(+), 25 deletions(-)
-> > 
-> > diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-> > index 7619f473155f..342867e50c54 100644
-> > --- a/arch/arm64/include/asm/debug-monitors.h
-> > +++ b/arch/arm64/include/asm/debug-monitors.h
-> > @@ -107,6 +107,16 @@ enum dbg_active_el {
-> >  void enable_debug_monitors(enum dbg_active_el el);
-> >  void disable_debug_monitors(enum dbg_active_el el);
-> >  
-> > +static __always_inline void __enable_single_step_nosync(void)
-> > +{
-> > +	sysreg_clear_set(mdscr_el1, 0, DBG_MDSCR_SS);
-> > +}
-> > +
-> > +static __always_inline void __disable_single_step_nosync(void)
-> > +{
-> > +	sysreg_clear_set(mdscr_el1, DBG_MDSCR_SS, 0);
-> > +}
-> > +
-> >  void user_rewind_single_step(struct task_struct *task);
-> >  void user_fastforward_single_step(struct task_struct *task);
-> >  
-> > diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-> > index 48222a4760c2..fa2d4145bd07 100644
-> > --- a/arch/arm64/kernel/debug-monitors.c
-> > +++ b/arch/arm64/kernel/debug-monitors.c
-> > @@ -32,24 +32,6 @@ u8 debug_monitors_arch(void)
-> >  }
-> >  
-> >  /*
-> > - * MDSCR access routines.
-> > - */
-> > -static void mdscr_write(u32 mdscr)
-> > -{
-> > -	unsigned long flags;
-> > -	flags = local_daif_save();
-> > -	write_sysreg(mdscr, mdscr_el1);
-> > -	local_daif_restore(flags);
-> > -}
-> > -NOKPROBE_SYMBOL(mdscr_write);
-> > -
-> > -static u32 mdscr_read(void)
-> > -{
-> > -	return read_sysreg(mdscr_el1);
-> > -}
-> > -NOKPROBE_SYMBOL(mdscr_read);
-> > -
-> > -/*
-> >   * Allow root to disable self-hosted debug from userspace.
-> >   * This is useful if you want to connect an external JTAG debugger.
-> >   */
-> > @@ -91,9 +73,9 @@ void enable_debug_monitors(enum dbg_active_el el)
-> >  		enable |= DBG_MDSCR_KDE;
-> >  
-> >  	if (enable && debug_enabled) {
-> > -		mdscr = mdscr_read();
-> > +		mdscr = read_sysreg(mdscr_el1);
-> >  		mdscr |= enable;
-> > -		mdscr_write(mdscr);
-> > +		write_sysreg(mdscr, mdscr_el1);
-> >  	}
-> >  }
-> >  NOKPROBE_SYMBOL(enable_debug_monitors);
-> > @@ -112,9 +94,9 @@ void disable_debug_monitors(enum dbg_active_el el)
-> >  		disable &= ~DBG_MDSCR_KDE;
-> >  
-> >  	if (disable) {
-> > -		mdscr = mdscr_read();
-> > +		mdscr = read_sysreg(mdscr_el1);
-> >  		mdscr &= disable;
-> > -		mdscr_write(mdscr);
-> > +		write_sysreg(mdscr, mdscr_el1);
-> >  	}
-> >  }
-> >  NOKPROBE_SYMBOL(disable_debug_monitors);
-> > @@ -409,7 +391,7 @@ void kernel_enable_single_step(struct pt_regs *regs)
-> >  {
-> >  	WARN_ON(!irqs_disabled());
-> >  	set_regs_spsr_ss(regs);
-> > -	mdscr_write(mdscr_read() | DBG_MDSCR_SS);
-> > +	__enable_single_step_nosync();
-> >  	enable_debug_monitors(DBG_ACTIVE_EL1);
-> >  }
-> >  NOKPROBE_SYMBOL(kernel_enable_single_step);
-> > @@ -417,7 +399,7 @@ NOKPROBE_SYMBOL(kernel_enable_single_step);
-> >  void kernel_disable_single_step(void)
-> >  {
-> >  	WARN_ON(!irqs_disabled());
-> > -	mdscr_write(mdscr_read() & ~DBG_MDSCR_SS);
-> > +	__disable_single_step_nosync();
-> >  	disable_debug_monitors(DBG_ACTIVE_EL1);
-> >  }
-> >  NOKPROBE_SYMBOL(kernel_disable_single_step);
-> > @@ -425,7 +407,7 @@ NOKPROBE_SYMBOL(kernel_disable_single_step);
-> >  int kernel_active_single_step(void)
-> >  {
-> >  	WARN_ON(!irqs_disabled());
-> > -	return mdscr_read() & DBG_MDSCR_SS;
-> > +	return read_sysreg(mdscr_el1) & DBG_MDSCR_SS;
-> >  }
-> >  NOKPROBE_SYMBOL(kernel_active_single_step);
-> >  
-> > 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/px30.dtsi   | 6 +++---
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index 9a0f77ea4..07fe187cf 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -885,7 +885,7 @@
+ 		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+ 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+@@ -900,7 +900,7 @@
+ 		interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+ 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+@@ -915,7 +915,7 @@
+ 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+ 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index 8bdc66c62..fa0d55f1a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -591,7 +591,7 @@
+ 		bus-width = <4>;
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+ 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+@@ -606,7 +606,7 @@
+ 		bus-width = <8>;
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+ 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		status = "disabled";
+@@ -619,7 +619,7 @@
+ 		bus-width = <4>;
+ 		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+ 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
