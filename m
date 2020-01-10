@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 932091370DF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:14:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DC291370DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 16:14:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=37QRGViwLlsWpkb7eBlXuJs9yP7Tu8c8dHHkEQh8a/U=; b=Y8pJDsKdXfUpnFzHRuxEFzIpbJ
-	uG/ucnCfzb1vgrI0zLRAdpGc69cSp/s3H7Nou2qQpQemfoybaA/Zy6EysJEWalxByHRQBgTIz/SnD
-	MdXAyA8nP0HAQuTixSA0eem9fBz+Jae3E500W1JYZpSS54beJBin52CXoGz8rLZAL5IFEfEdn41+B
-	SVkInOr2GIYBGpaerDuvwqQ5FgKXdloxM17hZ5kzzTHVLMw6k3I6E+HsI1KgF0pCLExTg3nkfnIkt
-	+OUjbzvKCD2hasmEIefRdemXxvv3a+aMi0qWkg66BPxViO3oaaYNg3mDALIQF2JJtF4FHDJeWdbog
-	WU4y2xTw==;
+	bh=Ow/kQKIlEQvbdHsf2Nyr2qDZg0z1bxoDwNx3M6kYFVU=; b=tRG/TQbSQSo01tGxS3Q+AqO0b+
+	con95Zpb0mSh2U+uuSBdS1dKf9SiLXcjap0D5c2AAMkAi462UDDXc9XgQuLt3SRCvY7tM3mOiw5H0
+	t6jgoc2/vQzubcrg+4VKS2lZ9Q5+LT1GdUxQuvHXr/V+j6uxzN/dYytlO3/lt/sIHPrINCsKOhYna
+	Y70nkUZcsieocvbfW1DAj57qJS2ouZVLWalEOgkCk9hPlX6ySqn5rfV4FsHW31c3JwagxIuFrW6K5
+	o/75Pzk/yQTv42ZY8pA4v1pViaOXScMgLpfFfTQqtPDui+Ji+/w9ExxBIlnjXXPigaDIit0VSwGL5
+	ZjzBKFNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipvzE-0001R7-8Q; Fri, 10 Jan 2020 15:14:08 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ipvz1-0001Hw-O8; Fri, 10 Jan 2020 15:13:55 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipvyo-0001GK-8f
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:13:45 +0000
+ id 1ipvyn-0001GG-Vu
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 15:13:43 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1C461C0522;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 237B44060C;
  Fri, 10 Jan 2020 15:13:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1578669220; bh=m62mtPJSBlHY0ixcqJ0iQUPZHLHvY4azjA/cSUMxlA4=;
+ t=1578669220; bh=NQsm6egfjz1AjvbIX8szBOLKNIQdQ/x4a9hjA8nOve4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=QwltsTjis72UcOn/ju1CBT3hvuUF8kzWv/AtR/Tw0TtgFdUWJuTTvT1mo0offS+9i
- tKck/aO+oc1X3tiJYWbvDoUuCeMzrPDZSoEhwyyzIU4NcIeiqNB8KT58CMyun9x9qZ
- n2/dmi62IpYI2ioyqHVrQFgVw4SjzwcOt8zH2Zj/xl8fuqhLsRlnjz+GqAAAvk94o7
- 1u7SR+84rpbugK1cobB14AOk+t9olnPz8w+/zno055Ej57TqMS55uDvM4cfGVZ8xVQ
- c7nr2uRmWku+4uW2BACC61oKpZfJlI/8xzmAD014ShWBvkweQqd4cOd9C8svnxCJUM
- VSiaUvR+khRMA==
+ b=l5WMTDg7sZKfVE7G7JOjv+aQ/zsGskTwAhmdpOjl9O55pgyQKD4XmqEPKBLuXrlzG
+ wE8xFdFBTFmbC3S+n1c/yrQVqzr9hWPfcCFccZXcNGDFme6KxdHBz+KfUukJJADxOH
+ Kvd+X106bBks+ZMvTiBbB/XLk0I9znsW8wN/YE4SIlVj2pdQoDmYyZL/+te6o7ZtnM
+ QWmUkVKf1AJ9uTJGtnLFpCOUAsFXhuyP4fDHXeF4EkOTHhuLn+/MO8fV+ZLQG7sRLV
+ LHaOH9U9Xe8ZZ6wOq/pmfqr1ureRTiTH9rVUfJndt3/fUPHe/jHbbnMsN5m92MCYma
+ xbNBnuMiOORcg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 95981A0063;
+ by mailhost.synopsys.com (Postfix) with ESMTP id A9D36A0067;
  Fri, 10 Jan 2020 15:13:38 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 1/2] net: stmmac: xgmac: Fix missing return
-Date: Fri, 10 Jan 2020 16:13:34 +0100
-Message-Id: <19e465556983a8c758781c4ac90d237fd7f007ba.1578669088.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 2/2] net: stmmac: gmac5+: Fix missing return
+Date: Fri, 10 Jan 2020 16:13:35 +0100
+Message-Id: <1f4783ff9f89fc3fc207d72a69152a44cfd5ba30.1578669088.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1578669088.git.Jose.Abreu@synopsys.com>
 References: <cover.1578669088.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1578669088.git.Jose.Abreu@synopsys.com>
 References: <cover.1578669088.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_071342_351403_D7FBF4F9 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200110_071342_033262_35705B01 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,7 +96,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 If FPE is supposed to be disabled we need to return after disabling it.
 
-Fixes: f0e56c8d8f7d ("net: stmmac: xgmac3+: Add support for Frame Preemption")
+Fixes: 7c7282746883 ("net: stmmac: gmac5+: Add support for Frame Preemption")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -111,21 +110,21 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 1 +
+ drivers/net/ethernet/stmicro/stmmac/dwmac5.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-index 307105e8dea0..2af3ac5409b7 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-@@ -1421,6 +1421,7 @@ static void dwxgmac3_fpe_configure(void __iomem *ioaddr, u32 num_txq,
- 		value &= ~XGMAC_EFPE;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
+index 5d4a3c2458ea..494c859b4ade 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
+@@ -657,6 +657,7 @@ void dwmac5_fpe_configure(void __iomem *ioaddr, u32 num_txq, u32 num_rxq,
+ 		value &= ~EFPE;
  
- 		writel(value, ioaddr + XGMAC_FPE_CTRL_STS);
+ 		writel(value, ioaddr + MAC_FPE_CTRL_STS);
 +		return;
  	}
  
- 	value = readl(ioaddr + XGMAC_RXQ_CTRL1);
+ 	value = readl(ioaddr + GMAC_RXQ_CTRL1);
 -- 
 2.7.4
 
