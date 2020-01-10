@@ -2,45 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC4561365AD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:08:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3ACA1365AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 04:09:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=CDXYcuQlyCXYtp7i0T5rDyyjAUJiGeJEHKDejlQqJHs=; b=coU
-	JB7AmIi9cxDjynivprCWoOJQRSZNK2uQrxkLcYyOtsJqldLncoopz/oSYyJKpfm7UDMfhLy2/i7W2
-	ZDLJ3+oWXPghB+DnYuxCUI9DQYP7OsSTvD4F8/jIYvBIiZ5w+yF0uMUQ5MaJgid4NOL94pv+JIF86
-	WCYf+2NGrT+qwee1CmFu9qqnmlGNcP4OPmgPU3Iw/gWmJUnI3ZcDttE3Fy0a+HbaAYNL1zoP+YDN5
-	6SsnOpzd9nzfjoxFctp419h4GgOpNqwgjIQH5SS1l5M0JrqDhfmtaNXwFlC1ZY5f5vOqKDqFqcyOW
-	1wE0FFkSpZTelwCVw41oiUX+h015Agg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ZP7wCgMMHlOb2zN5eB2YpPocP7vUwh7gPM1V1rebmtI=; b=ROaBsV2jfyGuhYxh+sFQTko6qH
+	/LDHKvxXg1QAkqK4pj9EL3Lm9baU5JjE5AlsXTfIxZ/FShRqw48rwBOzyWEP7SGqCO2apKWDJpPBP
+	tZKxsmhVgmSCmNmYo4NVRZad07xp96Jx3yad02kSHDv7M9aqjIErUG1wHKhUnO3bnEeL1MDmg2ssO
+	ILuRr2fVrgWIoOrua2eu0QBaQG1uxrjFsl478fIZaRGPdBeKSikTUfbSJ0lHB8+WwQN+WD83e9l3E
+	bzmsPp/rcJ0YorjTGfEsT5S4fdU/AhWr6TLnjuVn7xfnnhBs8M18jDuznZFgmptKiQQLOyL/hfbxR
+	DuMY0MtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipkf6-0000b9-EQ; Fri, 10 Jan 2020 03:08:36 +0000
+	id 1ipkfW-0000ps-6T; Fri, 10 Jan 2020 03:09:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipkex-0000aS-8A
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:08:29 +0000
+ id 1ipkfJ-0000p1-MM
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 03:08:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37B4631B;
- Thu,  9 Jan 2020 19:08:23 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8D211007;
+ Thu,  9 Jan 2020 19:08:48 -0800 (PST)
 Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
  [10.162.42.128])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8CD2E3F703;
- Thu,  9 Jan 2020 19:08:15 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 064CB3F703;
+ Thu,  9 Jan 2020 19:08:40 -0800 (PST)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
  catalin.marinas@arm.com, will@kernel.org
-Subject: [PATCH V11 0/5] arm64/mm: Enable memory hot remove
-Date: Fri, 10 Jan 2020 08:39:10 +0530
-Message-Id: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V11 1/5] mm/hotplug: Introduce arch callback validating the
+ hot remove range
+Date: Fri, 10 Jan 2020 08:39:11 +0530
+Message-Id: <1578625755-11792-2-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
+References: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_190827_381066_7ABA82C5 
-X-CRM114-Status: GOOD (  20.71  )
+X-CRM114-CacheID: sfid-20200109_190849_818254_12D516C4 
+X-CRM114-Status: GOOD (  14.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,197 +77,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series enables memory hot remove functionality on arm64 platform. This
-is based on Linux 5.5-rc5 and particularly deals with a problem caused when
-boot memory is attempted to be removed. It introduces couple of new generic
-constructs while trying to solve this boot memory problem.
+Currently there are two interfaces to initiate memory range hot removal i.e
+remove_memory() and __remove_memory() which then calls try_remove_memory().
+Platform gets called with arch_remove_memory() to tear down required kernel
+page tables and other arch specific procedures. But there are platforms
+like arm64 which might want to prevent removal of certain specific memory
+ranges irrespective of their present usage or movability properties.
 
-On arm64 platform, it is essential to ensure that the boot time discovered
-memory couldn't be hot-removed so that,
+Current arch call back arch_remove_memory() is too late in the process to
+abort memory hot removal as memory block devices and firmware memory map
+entries would have already been removed. Platforms should be able to abort
+the process before taking the mem_hotplug_lock with mem_hotplug_begin().
+This essentially requires a new arch callback for memory range validation.
 
-1. FW data structures used across kexec are idempotent
-   e.g. the EFI memory map.
+This differentiates memory range validation between memory hot add and hot
+remove paths before carving out a new helper check_hotremove_memory_range()
+which incorporates a new arch callback. This call back provides platforms
+an opportunity to refuse memory removal at the very onset. In future the
+same principle can be extended for memory hot add path if required.
 
-2. linear map or vmemmap would not have to be dynamically split, and can
-   map boot memory at a large granularity
+Platforms can choose to override this callback in order to reject specific
+memory ranges from removal or can just fallback to a default implementation
+which allows removal of all memory ranges.
 
-3. Avoid penalizing paths that have to walk page tables, where we can be
-   certain that the memory is not hot-removable
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+---
+ include/linux/memory_hotplug.h |  7 +++++++
+ mm/memory_hotplug.c            | 21 ++++++++++++++++++++-
+ 2 files changed, 27 insertions(+), 1 deletion(-)
 
-This problem has been extensively discussed previously during V10 version
-which can be found here (https://lkml.org/lkml/2019/10/11/233). Never the
-less this series adds a new memblock flag MEMBLOCK_BOOT in order to track
-boot memory at runtime and an arch specific callback arch_memory_removable()
-in try_remove_memory() which can be overridden if required to reject any
-given memory removal request like boot memory overlapping ranges on arm64.
-It also fixes a potential race condition which might happen while trying to
-dump kernel page table entries along with a concurrent memory hot remove
-operation.
-
-Concurrent vmalloc() and hot-remove conflict:
-
-As pointed out earlier on the V5 thread [2] there can be potential conflict
-between concurrent vmalloc() and memory hot-remove operation. The problem here
-is caused by inadequate locking in vmalloc() which protects installation of a
-page table page but not the page table walk or the leaf entry modification.
-
-Now free_empty_tables() and it's children functions take into account a maximum
-possible range on which it operates as a floor-ceiling boundary. This makes sure
-that no page table page is freed unless its fully within the maximum possible
-range as decided by the caller.
-
-Testing:
-
-Memory hot remove has been tested on arm64 for 4K, 16K, 64K page config
-options with all possible CONFIG_ARM64_VA_BITS and CONFIG_PGTABLE_LEVELS
-combinations.
-
-Changes in V11:
-
-- Bifurcated check_hotplug_memory_range() and carved out check_hotremove_memory_range()
-- Introduced arch_memory_removable() call back while validating hot remove range
-- Introduced memblock flag MEMBLOCK_BOOT in order to track boot memory at runtime
-- Marked all boot memory ranges on arm64 with MEMBLOCK_BOOT flag while processing FDT
-- Overridden arch_memory_removable() on arm64 to reject boot memory removal requests
-- Added an WARN_ON() in arch_remove_memory() when it receives boot memory removal request
-- Added arch_memory_removable() related updates in the commit message for core hot remove
-
-Changes in V10: (https://lkml.org/lkml/2019/10/11/233)
-
-- Perform just single TLBI invalidation for PMD or PUD block mappings per Catalin
-- Added comment in free_empty_pte_table() while validating PTE level clears per Catalin
-- Added comments in free_empty_pxx_table() while checking for non-clear entries per Catalin
-
-Changes in V9: (https://lkml.org/lkml/2019/10/9/131)
-
-- Dropped ACK tags from Steve and David as this series has changed since
-- Dropped WARN(!page) in free_hotplug_page_range() per Matthew Wilcox
-- Replaced pxx_page() with virt_to_page() in free_pxx_table() per Catalin
-- Dropped page and call virt_to_page() in free_hotplug_pgtable_page()
-- Replaced sparse_vmap with free_mapped per Catalin
-- Dropped ternary operators in all unmap_hotplug_pxx_range() per Catalin
-- Collapsed all free_pxx_table() into free_empty_pxx_table() per Catalin
-
-Changes in V8: (https://lkml.org/lkml/2019/9/23/22)
-
-- Dropped the first patch (memblock_[free|remove] reorder) from the series which
-  is no longer needed for arm64 hot-remove enablement and was posted separately
-  as (https://patchwork.kernel.org/patch/11146361/)
-- Dropped vmalloc-vmemmap detection and subsequent skipping of free_empty_tables()
-- Changed free_empty_[pxx]_tables() functions which now accepts a possible maximum
-  floor-ceiling address range on which it operates. Also changed free_pxx_table()
-  functions to check against required alignment as well as maximum floor-ceiling
-  range as another prerequisite before freeing the page table page.
-- Dropped remove_pagetable(), instead call it's constituent functions directly
-
-Changes in V7: (https://lkml.org/lkml/2019/9/3/326)
-
-- vmalloc_vmemmap_overlap gets evaluated early during boot for a given config
-- free_empty_tables() gets conditionally called based on vmalloc_vmemmap_overlap
-
-Changes in V6: (https://lkml.org/lkml/2019/7/15/36)
-
-- Implemented most of the suggestions from Mark Rutland
-- Added <linux/memory_hotplug.h> in ptdump
-- remove_pagetable() now has two distinct passes over the kernel page table
-- First pass unmap_hotplug_range() removes leaf level entries at all level
-- Second pass free_empty_tables() removes empty page table pages
-- Kernel page table lock has been dropped completely
-- vmemmap_free() does not call freee_empty_tables() to avoid conflict with vmalloc()
-- All address range scanning are converted to do {} while() loop
-- Added 'unsigned long end' in __remove_pgd_mapping()
-- Callers need not provide starting pointer argument to free_[pte|pmd|pud]_table() 
-- Drop the starting pointer argument from free_[pte|pmd|pud]_table() functions
-- Fetching pxxp[i] in free_[pte|pmd|pud]_table() is wrapped around in READ_ONCE()
-- free_[pte|pmd|pud]_table() now computes starting pointer inside the function
-- Fixed TLB handling while freeing huge page section mappings at PMD or PUD level
-- Added WARN_ON(!page) in free_hotplug_page_range()
-- Added WARN_ON(![pm|pud]_table(pud|pmd)) when there is no section mapping
-
-- [PATCH 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls in try_remove_memory()
-- Request earlier for separate merger (https://patchwork.kernel.org/patch/10986599/)
-- s/__remove_memory/try_remove_memory in the subject line
-- s/arch_remove_memory/memblock_[free|remove] in the subject line
-- A small change in the commit message as re-order happens now for memblock remove
-  functions not for arch_remove_memory()
-
-Changes in V5: (https://lkml.org/lkml/2019/5/29/218)
-
-- Have some agreement [1] over using memory_hotplug_lock for arm64 ptdump
-- Change 7ba36eccb3f8 ("arm64/mm: Inhibit huge-vmap with ptdump") already merged
-- Dropped the above patch from this series
-- Fixed indentation problem in arch_[add|remove]_memory() as per David
-- Collected all new Acked-by tags
+diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
+index ba0dca6..f661bd5 100644
+--- a/include/linux/memory_hotplug.h
++++ b/include/linux/memory_hotplug.h
+@@ -305,6 +305,13 @@ static inline void pgdat_resize_init(struct pglist_data *pgdat) {}
  
-Changes in V4: (https://lkml.org/lkml/2019/5/20/19)
-
-- Implemented most of the suggestions from Mark Rutland
-- Interchanged patch [PATCH 2/4] <---> [PATCH 3/4] and updated commit message
-- Moved CONFIG_PGTABLE_LEVELS inside free_[pud|pmd]_table()
-- Used READ_ONCE() in missing instances while accessing page table entries
-- s/p???_present()/p???_none() for checking valid kernel page table entries
-- WARN_ON() when an entry is !p???_none() and !p???_present() at the same time
-- Updated memory hot-remove commit message with additional details as suggested
-- Rebased the series on 5.2-rc1 with hotplug changes from David and Michal Hocko
-- Collected all new Acked-by tags
-
-Changes in V3: (https://lkml.org/lkml/2019/5/14/197)
+ #ifdef CONFIG_MEMORY_HOTREMOVE
  
-- Implemented most of the suggestions from Mark Rutland for remove_pagetable()
-- Fixed applicable PGTABLE_LEVEL wrappers around pgtable page freeing functions
-- Replaced 'direct' with 'sparse_vmap' in remove_pagetable() with inverted polarity
-- Changed pointer names ('p' at end) and removed tmp from iterations
-- Perform intermediate TLB invalidation while clearing pgtable entries
-- Dropped flush_tlb_kernel_range() in remove_pagetable()
-- Added flush_tlb_kernel_range() in remove_pte_table() instead
-- Renamed page freeing functions for pgtable page and mapped pages
-- Used page range size instead of order while freeing mapped or pgtable pages
-- Removed all PageReserved() handling while freeing mapped or pgtable pages
-- Replaced XXX_index() with XXX_offset() while walking the kernel page table
-- Used READ_ONCE() while fetching individual pgtable entries
-- Taken overall init_mm.page_table_lock instead of just while changing an entry
-- Dropped previously added [pmd|pud]_index() which are not required anymore
-- Added a new patch to protect kernel page table race condition for ptdump
-- Added a new patch from Mark Rutland to prevent huge-vmap with ptdump
-
-Changes in V2: (https://lkml.org/lkml/2019/4/14/5)
-
-- Added all received review and ack tags
-- Split the series from ZONE_DEVICE enablement for better review
-- Moved memblock re-order patch to the front as per Robin Murphy
-- Updated commit message on memblock re-order patch per Michal Hocko
-- Dropped [pmd|pud]_large() definitions
-- Used existing [pmd|pud]_sect() instead of earlier [pmd|pud]_large()
-- Removed __meminit and __ref tags as per Oscar Salvador
-- Dropped unnecessary 'ret' init in arch_add_memory() per Robin Murphy
-- Skipped calling into pgtable_page_dtor() for linear mapping page table
-  pages and updated all relevant functions
-
-Changes in V1: (https://lkml.org/lkml/2019/4/3/28)
-
-References:
-
-[1] https://lkml.org/lkml/2019/5/28/584
-[2] https://lkml.org/lkml/2019/6/11/709
-
-Anshuman Khandual (5):
-  mm/hotplug: Introduce arch callback validating the hot remove range
-  mm/memblock: Introduce MEMBLOCK_BOOT flag
-  of/fdt: Mark boot memory with MEMBLOCK_BOOT
-  arm64/mm: Hold memory hotplug lock while walking for kernel page table dump
-  arm64/mm: Enable memory hot remove
-
- arch/arm64/Kconfig              |   3 +
- arch/arm64/include/asm/memory.h |   6 +
- arch/arm64/mm/mmu.c             | 334 ++++++++++++++++++++++++++++++++++++++--
- arch/arm64/mm/ptdump_debugfs.c  |   4 +
- drivers/of/fdt.c                |   1 +
- include/linux/memblock.h        |  10 ++
- include/linux/memory_hotplug.h  |   7 +
- mm/memblock.c                   |  37 +++++
- mm/memory_hotplug.c             |  21 ++-
- 9 files changed, 413 insertions(+), 10 deletions(-)
-
++#ifndef arch_memory_removable
++static inline bool arch_memory_removable(u64 base, u64 size)
++{
++	return true;
++}
++#endif
++
+ extern bool is_mem_section_removable(unsigned long pfn, unsigned long nr_pages);
+ extern void try_offline_node(int nid);
+ extern int offline_pages(unsigned long start_pfn, unsigned long nr_pages);
+diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+index a91a072..7cdf800 100644
+--- a/mm/memory_hotplug.c
++++ b/mm/memory_hotplug.c
+@@ -1014,6 +1014,23 @@ static int check_hotplug_memory_range(u64 start, u64 size)
+ 	return 0;
+ }
+ 
++static int check_hotremove_memory_range(u64 start, u64 size)
++{
++	int rc;
++
++	BUG_ON(check_hotplug_memory_range(start, size));
++
++	/*
++	 * First check if the platform is willing to have this
++	 * memory range removed else just abort.
++	 */
++	rc = arch_memory_removable(start, size);
++	if (!rc)
++		return -EINVAL;
++
++	return 0;
++}
++
+ static int online_memory_block(struct memory_block *mem, void *arg)
+ {
+ 	return device_online(&mem->dev);
+@@ -1762,7 +1779,9 @@ static int __ref try_remove_memory(int nid, u64 start, u64 size)
+ {
+ 	int rc = 0;
+ 
+-	BUG_ON(check_hotplug_memory_range(start, size));
++	rc = check_hotremove_memory_range(start, size);
++	if (rc)
++		return rc;
+ 
+ 	mem_hotplug_begin();
+ 
 -- 
 2.7.4
 
