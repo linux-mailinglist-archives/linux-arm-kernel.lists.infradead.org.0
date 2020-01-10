@@ -2,76 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1C591367E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:06:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571A51367FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 08:09:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4dOESjuyfJ1g6atSLP675NtjBoX3I0uEgckP0Ev3kVI=; b=uQg8GH3Q2ljAoc
-	zjpBlQC3tnvopPHPMk5uHIB+Nw5TP/ID5hn+Q6LiSGGuMhk7G+L+L0A4alidv3ICNDFxLSIjZ2X1B
-	QPRNe34jtZHqKFKiRDDPhnjd0NB2iGTtP77Mdnc0MgUW3BbsU4lcDAozgBnMnfjSadfK7T6Pv4tuH
-	dt0cyxGBUeHqb5IdvOLQ5u9SUUN1qGDBUrm51ObkegzgT3+Qpcfsb3ALTQiV1yCTc1iRiFg6Zbmxa
-	1COiKL5ovAbb5X2DyHDHl3INEUppoeCdbwHVB7jacKpo9kHdXdTrRVSM1gZRTXxnjHQOOczSPi7e0
-	HI3GkqhZlrEY/M9nBU3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uhS8R9lGQQVdKcrlAvbxBOIWOZPkDnK2wGl04cZSzzc=; b=ICr5ONP+EAA6cc
+	URqQnjVI95hCzUXwqC5K28ke3x3PlELyu9ojmhYCwod13nikEMU0JnlRx/Gq5ieAktZlkn8z7YhrE
+	XDE1iv/a1/is7LoQkkYSxu39RX8ipN8VHvFX8ryUk3VthvZLNgX0ISI+/yP7I8KdGjMruWmnaRyfJ
+	xmNiBeMKwOPAHEfnbJeQi6XkVT79HMDMYVHqKHFKE4r2B/+skd//xZJjdFLg5tJGfV7aPJCiO0rV2
+	iXnsRq3WMqwNrE0TjBypu3e5hHn5ZigjuGXgzNIDWrbzEDFYcYOYLHIieRxUa+F+Dn6Y6Nk6EbLGt
+	XF/kBUqIG7w9d3oxMPXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipoMn-0005Ih-4P; Fri, 10 Jan 2020 07:05:57 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1ipoQH-0007Lu-Fj; Fri, 10 Jan 2020 07:09:33 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipoMf-0005HQ-LS
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 07:05:51 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00A75cER115272;
- Fri, 10 Jan 2020 01:05:38 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578639938;
- bh=kpORGyTnFiUB2kyV4rh9SVQZSJpHZQmOr0++G25k5Oc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=WqqWhJ008QHlSIDVi34sOqZuXoEJmGIeNFnfPWDFSCvpu1SlX7OMiEoPbYuK//T6Y
- oqiaD5ciDKWocqn9lJ8EJJEXDxHNCjhtc2JbLBbb7Y17fZ86Ek8WJceVPSc5pA5Zwp
- WIg1PC5VkRDWBFdqEJrl0uOG71YPeSNcjwcHhNjo=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00A75cYD031065;
- Fri, 10 Jan 2020 01:05:38 -0600
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 10
- Jan 2020 01:05:38 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 10 Jan 2020 01:05:38 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00A75ZF7099102;
- Fri, 10 Jan 2020 01:05:36 -0600
-Subject: Re: [PATCH] media: xilinx: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-References: <20191217104235.23771-1-peter.ujfalusi@ti.com>
- <20200109164847.GF31792@pendragon.ideasonboard.com>
- <20200109165348.GG31792@pendragon.ideasonboard.com>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <1a58e0e2-b1c2-1b97-22a8-8c0f366882d3@ti.com>
-Date: Fri, 10 Jan 2020 09:06:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ipoPY-0006f6-0O; Fri, 10 Jan 2020 07:08:49 +0000
+X-UUID: 051adf20a9ad47ed852432d33dddd02c-20200109
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=ffhcrwjsBwsjrgzkid/yOQ1liD4E9HyfxuER96MEH2g=; 
+ b=ayGQqiUWEf6Ot02/A+ME7PCtwFS9rvCN3bTRfL5Ubp5cZC6itfr/vewvWrWfJlv4TTranHZvzva+GLM8V2yVLUcmvNhKFD47gN6joQoTzR/sLn2stuPzhKyaHM//434KpARA/T3FXhHRMdIB4lY+HI0yL1LHn78gVvHkIIKVBm0=;
+X-UUID: 051adf20a9ad47ed852432d33dddd02c-20200109
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 618961714; Thu, 09 Jan 2020 23:08:44 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 9 Jan 2020 23:09:21 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 Jan 2020 15:07:43 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 10 Jan 2020 15:07:04 +0800
+Message-ID: <1578640121.17435.7.camel@mtkswgap22>
+Subject: Re: [PATCH v2 1/2] scsi: ufs: pass device information to
+ apply_dev_quirks
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: "Martin K. Petersen" <martin.petersen@oracle.com>
+Date: Fri, 10 Jan 2020 15:08:41 +0800
+In-Reply-To: <yq136cnx1yo.fsf@oracle.com>
+References: <1578270431-9873-1-git-send-email-stanley.chu@mediatek.com>
+ <1578270431-9873-2-git-send-email-stanley.chu@mediatek.com>
+ <yq136cnx1yo.fsf@oracle.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20200109165348.GG31792@pendragon.ideasonboard.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_230549_825458_BEEA53E6 
-X-CRM114-Status: GOOD (  21.41  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200109_230848_107405_8A901C62 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,52 +86,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hyun.kwon@xilinx.com, michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- vkoul@kernel.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
+ jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAwOS8wMS8yMDIwIDE4LjUzLCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+IEhlbGxvIGFn
-YWluLAo+IAo+IE9uIFRodSwgSmFuIDA5LCAyMDIwIGF0IDA2OjQ4OjQ3UE0gKzAyMDAsIExhdXJl
-bnQgUGluY2hhcnQgd3JvdGU6Cj4+IE9uIFR1ZSwgRGVjIDE3LCAyMDE5IGF0IDEyOjQyOjM1UE0g
-KzAyMDAsIFBldGVyIFVqZmFsdXNpIHdyb3RlOgo+Pj4gZG1hX3JlcXVlc3Rfc2xhdmVfY2hhbm5l
-bCgpIGlzIGEgd3JhcHBlciBvbiB0b3Agb2YgZG1hX3JlcXVlc3RfY2hhbigpCj4+PiBlYXRpbmcg
-dXAgdGhlIGVycm9yIGNvZGUuCj4+Pgo+Pj4gQnkgdXNpbmcgZG1hX3JlcXVlc3RfY2hhbigpIGRp
-cmVjdGx5IHRoZSBkcml2ZXIgY2FuIHN1cHBvcnQgZGVmZXJyZWQKPj4+IHByb2JpbmcgYWdhaW5z
-dCBETUEuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFs
-dXNpQHRpLmNvbT4KPj4KPj4gUmV2aWV3ZWQtYnk6IExhdXJlbnQgUGluY2hhcnQgPGxhdXJlbnQu
-cGluY2hhcnRAaWRlYXNvbmJvYXJkLmNvbT4KPj4KPj4gVmlub2QsIGNvdWxkIHlvdSBwbGVhc2Ug
-cGljayB0aGlzIHVwID8KPiAKPiBJIHNwb2tlIHRvbyBmYXN0Lgo+IAo+Pj4gLS0tCj4+PiAgZHJp
-dmVycy9tZWRpYS9wbGF0Zm9ybS94aWxpbngveGlsaW54LWRtYS5jIHwgNiArKystLS0KPj4+ICAx
-IGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+Pj4KPj4+IGRp
-ZmYgLS1naXQgYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3hpbGlueC94aWxpbngtZG1hLmMgYi9k
-cml2ZXJzL21lZGlhL3BsYXRmb3JtL3hpbGlueC94aWxpbngtZG1hLmMKPj4+IGluZGV4IGIyMTEz
-ODBhMTFmMi4uOWNlNTE1ZmY5YzBhIDEwMDY0NAo+Pj4gLS0tIGEvZHJpdmVycy9tZWRpYS9wbGF0
-Zm9ybS94aWxpbngveGlsaW54LWRtYS5jCj4+PiArKysgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3Jt
-L3hpbGlueC94aWxpbngtZG1hLmMKPj4+IEBAIC03MjUsMTAgKzcyNSwxMCBAQCBpbnQgeHZpcF9k
-bWFfaW5pdChzdHJ1Y3QgeHZpcF9jb21wb3NpdGVfZGV2aWNlICp4ZGV2LCBzdHJ1Y3QgeHZpcF9k
-bWEgKmRtYSwKPj4+ICAKPj4+ICAJLyogLi4uIGFuZCB0aGUgRE1BIGNoYW5uZWwuICovCj4+PiAg
-CXNucHJpbnRmKG5hbWUsIHNpemVvZihuYW1lKSwgInBvcnQldSIsIHBvcnQpOwo+Pj4gLQlkbWEt
-PmRtYSA9IGRtYV9yZXF1ZXN0X3NsYXZlX2NoYW5uZWwoZG1hLT54ZGV2LT5kZXYsIG5hbWUpOwo+
-Pj4gLQlpZiAoZG1hLT5kbWEgPT0gTlVMTCkgewo+Pj4gKwlkbWEtPmRtYSA9IGRtYV9yZXF1ZXN0
-X2NoYW4oZG1hLT54ZGV2LT5kZXYsIG5hbWUpOwo+Pj4gKwlpZiAoSVNfRVJSKGRtYS0+ZG1hKSkg
-ewo+Pj4gIAkJZGV2X2VycihkbWEtPnhkZXYtPmRldiwgIm5vIFZETUEgY2hhbm5lbCBmb3VuZFxu
-Iik7CgphbmQgcHJpbnQgdGhpcyBvbmx5IGluIGNhc2Ugb2YgIUVQUk9CRV9ERUZFUgoKPj4+IC0J
-CXJldCA9IC1FTk9ERVY7Cj4+PiArCQlyZXQgPSBQVFJfRVJSKGRtYS0+ZG1hKTsKPj4+ICAJCWdv
-dG8gZXJyb3I7Cj4gCj4gQXQgdGhlIGVycm9yIGxhYmVsLCB3ZSBoYXZlCj4gCj4gZXJyb3I6Cj4g
-CXh2aXBfZG1hX2NsZWFudXAoZG1hKTsKPiAJcmV0dXJuIHJldDsKPiAKPiBhbmQgeHZpcF9kbWFf
-Y2xlYW51cCgpIGNvbnRhaW5zCj4gCj4gCWlmIChkbWEtPmRtYSkKPiAJCWRtYV9yZWxlYXNlX2No
-YW5uZWwoZG1hLT5kbWEpOwo+IAo+IFlvdSBuZWVkIHRvIHR1cm4gdGhpcyBpbnRvCj4gCj4gCWlm
-ICghSVNfRVJSX09SX05VTEwoZG1hLT5kbWEpKQoKSSBnZW5lcmFsbHkgdHJ5IHRvIGF2b2lkIElT
-X0VSUl9PUl9OVUxMKCkKCj4gCj4gb3IgYWRkIGEKPiAKPiAJCWRtYS0+ZG1hID0gTlVMTDsKCkJ1
-dCBpbiB0aGlzIGNhc2UgSSB0aGluayBpdCBsb29rcyBiZXR0ZXIgdGhhdCB3YXkuCgo+IAo+IGlu
-IHRoZSBlcnJvciBjYXNlIGluIHh2aXBfZG1hX2luaXQoKS4KPiAKPj4+ICAJfQo+Pj4gIAo+IAoK
-LSBQw6l0ZXIKClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIs
-IDAwMTgwIEhlbHNpbmtpLgpZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFp
-a2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Martin,
+
+On Fri, 2020-01-10 at 01:25 -0500, Martin K. Petersen wrote:
+> Stanley,
+> 
+> > Pass UFS device information to vendor-specific variant callback
+> > "apply_dev_quirks" because some platform vendors need to know such
+> > information to apply special handlings or quirks in specific devices.
+> 
+> This doesn't compile. You missed adding the additional argument to one
+> caller of ufshcd_tune_unipro_params().
+> 
+
+Sorry for this. I'll fix it in next version and try to separate vendor's
+implementation and common driver to different commits if this is the
+root cause of compile issue.
+
+Thanks.
+Stanley
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
