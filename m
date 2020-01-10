@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0F6B136CFE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:24:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A9DB136D05
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 13:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oXxeDYuYhU0/xYoP2LD0lj8DQgbSdBqM+qEYAXysRFY=; b=KMfaWxyUJArxdu
-	jR59igC9q3bh9HI2B0dkBn/HrBTF8vLygx7/3H8iqvAvXh16iA/BYhb/Gu37AxXyylYRcYYuWx6fx
-	Pg0btS9LIGDh+BxaNxAmvv6wtQ1+o/Fln9vavJknBOudJ6cMksvTEvRbDzBEboZTjzrkZeRGzHxQ1
-	MboGbfw6HAFvI5GGnmQZiB7ZxGhoYQqm14n0x2UvrrteIC3aPdOLEjhWk2ijv4VproQrzzq8JZIdK
-	T0jFfchzsnCgxeePpoM5TdHqJLAwhAecUCxMNqT2ptui8diBYEZ1vDHVrQyWT/pp5IOwE/Xr5zxnk
-	FrklZST3x058HrKRAdYg==;
+	List-Owner; bh=KBUzu3KwmP4RYlCue8huTFkVX7ZvFCCiR+neuwf7ZrY=; b=oVnzGPmJOzpqJy
+	XjgjQRDp8KXDaZ+zGDKTFNjktARiUesmjrzeJMHQKlprD9CVDToUT23ed7zyfF2NJgZELnjpkw82d
+	7TzkEHIo3S+E+6Fx6yTBVBmJwBC8nybkrOeSyOYDvAzqQiK/Hcop3jmw05xihqMl6qiKHK7Fy4LJ4
+	qLDqvOFQXOgXk1ZYFAU5/LNgQejR4V/u0N1mYBPqKo2rxldux15OuJi6tLgZxya/fZO8UsyiITQQC
+	tSWeyWNgpfdand4PxfRD6wdbFJStESV/QNlirsbgkolUoACwyeDJxuApovMK07Vp0J2D7DC63MHll
+	QVIdDvF2HTg7slQ4i7tA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iptLA-0006ru-KT; Fri, 10 Jan 2020 12:24:36 +0000
+	id 1iptOA-0000qn-3i; Fri, 10 Jan 2020 12:27:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iptKR-0006I5-RP
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:23:53 +0000
+ id 1iptNx-0000qJ-H1
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 12:27:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E33E1063;
- Fri, 10 Jan 2020 04:23:51 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BBC6F3F534;
- Fri, 10 Jan 2020 04:23:50 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>,
-	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v10 3/3] arm64: Use v8.5-RNG entropy for KASLR seed
-Date: Fri, 10 Jan 2020 12:23:41 +0000
-Message-Id: <20200110122341.8445-4-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200110122341.8445-1-broonie@kernel.org>
-References: <20200110122341.8445-1-broonie@kernel.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C9B01063;
+ Fri, 10 Jan 2020 04:27:29 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E69F33F534;
+ Fri, 10 Jan 2020 04:27:27 -0800 (PST)
+Date: Fri, 10 Jan 2020 12:27:25 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+Message-ID: <20200110122725.GB45077@bogus>
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+ <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
+ <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_042351_941475_D7747DA2 
-X-CRM114-Status: GOOD (  10.87  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200110_042729_606689_2E51244B 
+X-CRM114-Status: GOOD (  19.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,50 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Mark Brown <broonie@kernel.org>,
- Richard Henderson <richard.henderson@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: peng.fan@nxp.com, Arnd Bergmann <arnd@arndb.de>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When seeding KALSR on a system where we have architecture level random
-number generation make use of that entropy, mixing it in with the seed
-passed by the bootloader. Since this is run very early in init before
-feature detection is complete we open code rather than use archrandom.h.
+On Thu, Jan 09, 2020 at 03:04:42PM +0530, Viresh Kumar wrote:
+> On 09-01-20, 09:18, Arnd Bergmann wrote:
+> > On Fri, Nov 29, 2019 at 10:32 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
+> > >
+> > > The SCMI specification is fairly independent of the transport protocol,
+> > > which can be a simple mailbox (already implemented) or anything else.
+> > > The current Linux implementation however is very much dependent of the
+> > > mailbox transport layer.
+> > >
+> > > This patch makes the SCMI core code (driver.c) independent of the
+> > > mailbox transport layer and moves all mailbox related code to a new
+> > > file: mailbox.c.
+> > >
+> > > We can now implement more transport protocols to transport SCMI
+> > > messages.
+> > >
+> > > The transport protocols just need to provide struct scmi_transport_ops,
+> > > with its version of the callbacks to enable exchange of SCMI messages.
+> > >
+> > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> >
+> > Conceptually I think this is fine, but as others have said, it would be
+> > better to have another transport implementation posted along with this
+> > to see if the interfaces actually work out.
+>
+> @Sudeep/Vincent: Do you think we can add another transport
+> implementation something right away for it ?
+>
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/kernel/kaslr.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+Even if we don't add new transport right away, I would like to see if
+the requirements are met. I will take a look at you v2 with that in mind
+anyways. We need not wait, we I want to see people think it meets their
+requirement. I will also add couple of guys working on virtio transport
+for SCMI when I respond to your v2. Thanks for posting it.
 
-diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
-index 2a11a962e571..53b8a4ee64ff 100644
---- a/arch/arm64/kernel/kaslr.c
-+++ b/arch/arm64/kernel/kaslr.c
-@@ -120,6 +120,17 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 		return 0;
- 	}
- 
-+	/*
-+	 * Mix in any entropy obtainable architecturally, open coded
-+	 * since this runs extremely early.
-+	 */
-+	if (__early_cpu_has_rndr()) {
-+		unsigned long raw;
-+
-+		if (__arm64_rndr(&raw))
-+			seed ^= raw;
-+	}
-+
- 	if (!seed) {
- 		kaslr_status = KASLR_DISABLED_NO_SEED;
- 		return 0;
--- 
-2.20.1
+> @Peng ?
+>
+Peng, Did you get a chance to try this with SMC ? If SCMI was the only
+usecase, you can try this approach instead of mailbox, now that no one
+has any objects to this approach conceptually. Please use v2 as base
+and update us.
 
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
