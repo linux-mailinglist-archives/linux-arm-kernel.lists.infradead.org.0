@@ -2,106 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 322F9136761
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 07:25:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6718136773
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Jan 2020 07:32:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mnrD2YBZ76qqU2+2NCn7GKBNNKpHyfrZ3xn2u81soEQ=; b=kSp9pK7RhVBJSG
-	P8sXL9wenGb0TrGpCGBmbINFjCSrmHvEDX21OqMRkM/6owH8e6Ua/MiyiXafq+gAIHe0XnIbk7/iR
-	xP1iUfVcYnuNCedYkk2qCHOMobFz37CQzOfaFCFL+37wH75gh3V3SkOoweSK21g8sRk6jh1d4AFzB
-	+H8nLbsSv+rD+mJo+D1ikZgNPEObAP3DQ119vy453254ZM/WJTWZy6MDjDCxxeNg/uld/yPd7rdfo
-	aLq7Q5qD0hYAodePHbDpU0CZXAcLMHD4ry8sMx1Y8fiUoCKahVD9AMGWM1+lAlWdjUwIgFPL7sVLx
-	GXrK1fu7xKr++FKlCVlg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TNWX31pya1iHG01cGgSUtfHXVGcegqLg2PDNwd25TcY=; b=bfh+GEL+1c6EmE
+	gBnJ7Ku9MIv8HgUZImvtBFApoMorDn8ZzF/FuH3XOnSru1bYFHCnCfcKKVnWY4fP07kUkAQvjK6lO
+	eP3Dt9kgF3gT6mdV/BadH5N6FHuf3o/Fv3k/R4qdv7qAYT6fYZPN8pK++HrJJ5ug/j/lXd+ON6M/O
+	hERv+wk1WwGyQrs85msh6534dmRoOqlKmzGaAGTN7Pn0ZA7YjONgL0X7wU+nczi75JSSHNCQE0i5P
+	xxa5vMMlB99khnmrRfwU9O+bxNaTpy9Pub0FyL5LsD+YwJ/phxEGIHNSuICI3F/pNLJNlsPW2X/9z
+	TjtNiS5BmkWrlY+ttntA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipnjq-0004Sc-T4; Fri, 10 Jan 2020 06:25:42 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1ipnqE-0007Gi-NE; Fri, 10 Jan 2020 06:32:18 +0000
+Received: from mail-eopbgr700070.outbound.protection.outlook.com
+ ([40.107.70.70] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipnjg-0004RB-Jc; Fri, 10 Jan 2020 06:25:34 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00A6NNub074168;
- Fri, 10 Jan 2020 06:25:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=to : cc : subject :
- from : references : date : in-reply-to : message-id : mime-version :
- content-type; s=corp-2019-08-05;
- bh=veoc8SAh5raYubqVF2DcuEKl3hDl1XkW9HHOfqTTJEk=;
- b=pYopxm+dSg8/FOaCPFQiyESvQ2St+k9FEDnnfvOUWS2cc5lzd5MpqcZRq67Q1Xaxny21
- fVKsT6HUQfdhDn3OEvP6TBjUZeHetCKqTKhn6aSQBjbFpejAMkUfXH+TdejRnAfoQ7a6
- RQc+RkeYL4cfqsa+/z7Z6sZA5BTiXfL0I3JJfAsPPdOYGqTUA0Hi16wVUxPkfvCx6ssc
- hCo+0W09HlgBQVNlEssMUBdacd768jT59KxNqdf6dv657Q2NtHV0W5zSIh4131WgFfbm
- NHrxLVCcSOp7UC7lyQxw7viHTrgKetJQ1Onk6VbM3hN7qICyfPGPOAXigtFK5x+1NNKw GQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 2xajnqfxk8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 10 Jan 2020 06:25:26 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00A6Ntpi161701;
- Fri, 10 Jan 2020 06:25:25 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 2xekku9auh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 10 Jan 2020 06:25:25 +0000
-Received: from abhmp0008.oracle.com (abhmp0008.oracle.com [141.146.116.14])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 00A6PN9o002659;
- Fri, 10 Jan 2020 06:25:23 GMT
-Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 09 Jan 2020 22:25:23 -0800
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v2 1/2] scsi: ufs: pass device information to
- apply_dev_quirks
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
-References: <1578270431-9873-1-git-send-email-stanley.chu@mediatek.com>
- <1578270431-9873-2-git-send-email-stanley.chu@mediatek.com>
-Date: Fri, 10 Jan 2020 01:25:19 -0500
-In-Reply-To: <1578270431-9873-2-git-send-email-stanley.chu@mediatek.com>
- (Stanley Chu's message of "Mon, 6 Jan 2020 08:27:10 +0800")
-Message-ID: <yq136cnx1yo.fsf@oracle.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
+ id 1ipnq6-0007FZ-OA
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Jan 2020 06:32:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ab7Co9dMabYAnmvNJSREHKZq3ucKGDaLYRkFlI37PfYBvvuSZBDJ32+KpeNxDbE+U+RSyQ3wWdxgQj226qfyBx+pivKiUVRCniWxjmlfcoZNloFPVzyuhyT6J+GJULF4q/nPtL6zAke3iHFojc6cNNmFoBEcnVW8nerE91YNmWOiMKRtflhb5WHVPnyKWLtrck3tmi6j3pd0lGO6tCGmOuP/qEV9WUiuNKIkcnTl+BpdQsWa6CKpJeoN3E4f9TCenYCQGuWRZl0OUOVCD6Y5VMVOq3UpPQFqfEMNl87646hhc9qcD7vZrsHzoXnGAdIKyb5H85nNLbkToeH6DCVD5w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5lSh0Lexav0MT75SWYllPAxUasBVeq6qrtP2qJhM3IU=;
+ b=XMudsDh+gy5i07MJKW3JYav48+bJao4rORxFinrZYTtf6NkmuKQEseS5ULO2RGOsQdyhM0eWKFLrJcun5ZOuYFsd2kjMcPNTN2vJmlVAw0aOk0hvKoWDLqJXTdPisLKJt0i2xxtsGgdPOgBc6i4w9urIPafBGr4q9BQ0HXVx6kv3kW1vlDW5CoWmwQwe6puH888mq+Cl066zRtu5JxYr3V/iIzUgRM6UAs+GeP8Spo5gaMPKm3RpeovdQZVftvtiCeAT5bwDL+u9lJf2aWlcm6EK6SoLTKogZkThdY3Bpe+N3QGowCUXn7W41MUeysIcbvyA+6SKqv0RKn57eIh5Bg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5lSh0Lexav0MT75SWYllPAxUasBVeq6qrtP2qJhM3IU=;
+ b=BhLSL8oPOAkAS/pPU5srVSUI42mnN0UlviBP+D7es7OfD/+tOFvayuIO6Xm7J6kYpQo0DGCYi8t9Pdg05wdNOMSO4xgLrn/jgSrwuImaG1ZEP16CGVRLTDG8Po1KjxFyFs+Sutb/egs0fNOiGJ6v0kdp7+8dETSTtxONxpNAaOg=
+Received: from BN7PR02CA0015.namprd02.prod.outlook.com (2603:10b6:408:20::28)
+ by DM5PR0201MB3448.namprd02.prod.outlook.com (2603:10b6:4:76::26)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2623.9; Fri, 10 Jan
+ 2020 06:32:02 +0000
+Received: from SN1NAM02FT031.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::209) by BN7PR02CA0015.outlook.office365.com
+ (2603:10b6:408:20::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2623.10 via Frontend
+ Transport; Fri, 10 Jan 2020 06:32:02 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT031.mail.protection.outlook.com (10.152.72.116) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2623.9
+ via Frontend Transport; Fri, 10 Jan 2020 06:32:01 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <nava.manne@xilinx.com>)
+ id 1ipnpx-0004yr-KA; Thu, 09 Jan 2020 22:32:01 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <nava.manne@xilinx.com>)
+ id 1ipnps-000371-Gl; Thu, 09 Jan 2020 22:31:56 -0800
+Received: from [10.140.6.60] (helo=xhdnavam40.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <nava.manne@xilinx.com>)
+ id 1ipnpp-00036R-Qy; Thu, 09 Jan 2020 22:31:54 -0800
+From: Nava kishore Manne <nava.manne@xilinx.com>
+To: mdf@kernel.org, michal.simek@xilinx.com, linux-fpga@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] fpga: xilinx-pr-decoupler: Remove clk_get error message for
+ probe defer
+Date: Fri, 10 Jan 2020 12:01:13 +0530
+Message-Id: <20200110063113.3064-1-nava.manne@xilinx.com>
+X-Mailer: git-send-email 2.18.0
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(136003)(376002)(396003)(39860400002)(189003)(199004)(107886003)(1076003)(15650500001)(478600001)(36756003)(26005)(4744005)(7696005)(5660300002)(356004)(4326008)(6666004)(2616005)(8676002)(70206006)(70586007)(426003)(81156014)(186003)(316002)(2906002)(9786002)(336012)(81166006)(8936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR0201MB3448; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9495
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001100053
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9495
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001100053
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 12edb634-0bf3-47a3-537d-08d79596cd76
+X-MS-TrafficTypeDiagnostic: DM5PR0201MB3448:
+X-Microsoft-Antispam-PRVS: <DM5PR0201MB3448481C5AF067DBBA6D58D5C2380@DM5PR0201MB3448.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:1091;
+X-Forefront-PRVS: 02788FF38E
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: e4AxsplylpkBPEKiFIybXSah0sUNSkh2qYdaMDhfRvUDUu2YfWU5nSTFLMQxq7PPRJa+jvY6MRYwpVF7+4xK5To2/MoaJFc15hf6xXEdky1u2+pSr1uR+NDj6duoMrprX2fLCwbKBXrquq4Edei+ULdsHwsQj6g54a5VPlhSfgI97emcpoSbmJj71qN5bVn70Tl8aizXiCWA+MRqSovo4XaEVFlZ46qgj8YYsTjbr595ZCBYGL3XqD2HGrWCR43BnF+kx+Tk7LPNJMRmirMPFWFHlE2+PxYWAXcmxYy+WHaXZzQ/oykHAmAP+deRHqM/bDjmvaTWN8KKRDyHJlzOVLRNATJsDyRdvBNzNmIZex2AAvhBI3SbZ1uR8hmI+FlFdpoBfTVz3tOBv16OxWsLWm943t8I02JVdNXI7SxBy+XtZ1DlrSE69zNQAp7YHLyS
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jan 2020 06:32:01.9810 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 12edb634-0bf3-47a3-537d-08d79596cd76
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR0201MB3448
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_222532_743042_0B2365CC 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200109_223210_790121_BBD80E4F 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.70.70 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,30 +135,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- cang@codeaurora.org, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
- asutoshd@codeaurora.org, bvanassche@acm.org,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
 
-Stanley,
+In probe, the driver checks for devm_clk_get return and print error
+message in the failing case. However for -EPROBE_DEFER this message
+is confusing so avoid it.
 
-> Pass UFS device information to vendor-specific variant callback
-> "apply_dev_quirks" because some platform vendors need to know such
-> information to apply special handlings or quirks in specific devices.
+Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+---
+ drivers/fpga/xilinx-pr-decoupler.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-This doesn't compile. You missed adding the additional argument to one
-caller of ufshcd_tune_unipro_params().
-
+diff --git a/drivers/fpga/xilinx-pr-decoupler.c b/drivers/fpga/xilinx-pr-decoupler.c
+index af9b387c56d3..7d69af230567 100644
+--- a/drivers/fpga/xilinx-pr-decoupler.c
++++ b/drivers/fpga/xilinx-pr-decoupler.c
+@@ -101,7 +101,8 @@ static int xlnx_pr_decoupler_probe(struct platform_device *pdev)
+ 
+ 	priv->clk = devm_clk_get(&pdev->dev, "aclk");
+ 	if (IS_ERR(priv->clk)) {
+-		dev_err(&pdev->dev, "input clock not found\n");
++		if (PTR_ERR(priv->clk) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "input clock not found\n");
+ 		return PTR_ERR(priv->clk);
+ 	}
+ 
 -- 
-Martin K. Petersen	Oracle Linux Engineering
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
