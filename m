@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3136E138390
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 21:45:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46E88138395
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 21:51:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bLn30tPJMl+el+FMIHQNVlDq4ZoZTwT3Pcl4J7hvKDI=; b=afT3Rp43CfydJb
-	UXpB4y2nuc7NfUlA/byX/DrnSffTsXvrTgTdJFS6jIdfXG12ryULs4bDVK/n5GLe5GO2U52ow2pl/
-	Q0r2rIsQsL1Iu0znJR9/9QOEkJj5vsn+ctwNux3xpmKXz32mBMP1fdiFRKx8PY6aR5HTC3/SnXquX
-	nqfvnhqOHbIK9NRIe6F+RETMpAkActPXUpZRQc4qagtJibIhdLQmltcTu4fGkxFxS3YglBWfDRi5k
-	kl+U8xmr9XyUbi3/zCwmXrgKR2SOBXIInPPsPhausCKEtuFNhSyfqoGJSuHmF/IGBP4VvHx2o8EY1
-	kscL6i9S6RazRVErLFdg==;
+	List-Owner; bh=HyQWCg3uvY1CZQojLfDw6DYA31a4/aqbF8J4B6wBH6I=; b=lrL8pEP33d6KLr
+	tivQofkqPmMeI2h4NCb0sZdKLFQkECDGfYpPtm4IrjhW7PpfiCTGC9srEKcBCgmVZ6C9ASqjR+/Ju
+	5spetqfK+qiiRXX+JoHailBHlOhlz7eIkI/IpxUtEVKpgDDc9ZLWcHhfgXaIZryHdrMY3D3swHFVB
+	3u4qXzlu0BsnWWxiMR62Fur9iMoLs4FYenRzdgtAx2jNfLxRasypaHufde5ajzxUsyITwBGj1UPKX
+	9mlSHJ2NccSvNEJSqICxqTkfIVubggXt7E/rroT/8HfMxG2WwYXfHJCclTfPKVm39ZRKFNH0zE+U4
+	1D8BGGeF4FUYJ8i9CopQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqNdW-0003AQ-3b; Sat, 11 Jan 2020 20:45:34 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iqNip-0004jw-1p; Sat, 11 Jan 2020 20:51:03 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqNdM-000393-TJ; Sat, 11 Jan 2020 20:45:26 +0000
-Received: by mail-ed1-x543.google.com with SMTP id c26so4995376eds.8;
- Sat, 11 Jan 2020 12:45:23 -0800 (PST)
+ id 1iqNif-0004ih-6v; Sat, 11 Jan 2020 20:50:54 +0000
+Received: by mail-ed1-x544.google.com with SMTP id v28so4998127edw.12;
+ Sat, 11 Jan 2020 12:50:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fptJHxfJcn8XPXLFZgO9QVg2TjNMVukyouEJjCWDXV8=;
- b=GF+UHv17+im9hGltahc9unerkHkyQ5OVQwSM50qplG7IuREOcD9QMEgYUblCEqN3N/
- 0OPv7W8dvRSeoheT6OzralJLFc/pzzaOVIpL/4AsoHIHWeAvrs9l1ohuyF0cllD182AO
- nol87ON0HLhrbhewaDhNPnOO/XyY7xHUhu6BA/DiC0dQ0ljBV2Jw33WUVlttfemgj74x
- oBpj2x1V9D2QBf6OHoEUjhmVo0mxOGwPVoNGxvK7np5dmL6UTj8SeB2PDfKMKFx2mDUb
- GxcVozLSn++R9TAG1YaHI/GWTRuQOjDj24OnYvwWI6bTNlkkcalppgx2r/YDVv5Zdztr
- t6Sg==
+ :cc; bh=Z1allRQVVIcRb3GsPlExTsGVhorTeSQyvjX+yCE+qh8=;
+ b=hJUBjxnQ14Mkg+v0KZ6c/t3nrYWqpGIc4sggWABjJRnGUyE8mJZqSJlWevR+X2pXLM
+ LQSpClltwxH4ooVGw4tHTB7JHmbb1UXYc905RnfaGPl+4J7rl3o46naKcJtWdi3V6V56
+ /TMMbfEbpBJ01C3LFZPaUGan+dJaiT4c8Pxd94x0Ut8sbRA97vGiBJNbgq7xGxIxQnhp
+ Up1nQRDJ9JeBKdnQU4B6yRXhH6N57MPmMCHXeoyAEHpZzEykyCldLD1aQkir+dw1Pn+F
+ FBUrNk6ERO1+Vf5Gx12umJkOkHkqBzc16yNhfNr7QJmEIdJfFGeCXpUUCgI4JdMUqm87
+ Rpvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=fptJHxfJcn8XPXLFZgO9QVg2TjNMVukyouEJjCWDXV8=;
- b=tYDfazlakZV0tmscq+4K1s+ChV+Hsip4e6JfdPQXKCDmmHw+LR5wJmi33PPpeqlUcK
- gCnXtrrh/mrzdohmb6EvbSLRvY3/B9Xvs9yYBFiG6fralx335KkXnVR6kbT746GfPuMc
- zhvAsXt1iLbfAZkutL2kk9OSbVWjs4tPtUuR57/45Khg2SXavtY46o3rlqc+OwLg9qBh
- GJzfbG2Ml9i9ONrLEtZ4uhw7yBsGpGlRlsRKNBrtFr8xFV2SGp2RQaxbmE+riHLq2kzZ
- 1jmUnixToXrtttMy+3+YvCpIh3m6CzfWARoPwCWNb8NstW12nKeZndTHgRrhZgWUlThz
- d6Jw==
-X-Gm-Message-State: APjAAAUJQXUYIEchQzI+DRVZojDHhQ0H7FA0P9W17ynD6LGRj1PsMo7l
- zH2gsOLS2FA7rQ7aM9fmk89xomvIAuX/VVtL1b4=
-X-Google-Smtp-Source: APXvYqxx35msRJwJFzncZx/Qn0rrX3K1+YRYlLX5GGk8pBBABXjfJI1q8LiSfcgC2cSU3qRDnzBHHHafnSeTQ/+zoKg=
-X-Received: by 2002:aa7:d94d:: with SMTP id l13mr7296961eds.328.1578775522271; 
- Sat, 11 Jan 2020 12:45:22 -0800 (PST)
+ bh=Z1allRQVVIcRb3GsPlExTsGVhorTeSQyvjX+yCE+qh8=;
+ b=BPWewb2wXkQ2hSBrEss/1kyJh3jWP5KLwTvMmi/bPoOHJ13/ESou+5qOCk+5tjGUD2
+ ozD+zglYNmzRIu3r8Nu8yTfhPEhA+Q7GL1/E281hpTaW1UljdE1fZqvIYhmxdP7A6FO4
+ CP2LViVEEsmfFQDuNqmN+TGjd/4ngbAVXhOHzFZmn3D1fCE7yZn3fYpIORECGR0c87Fz
+ NXvNEamkqOEfoNY2jxSdlYOzA6MlZf8TFb1amZkrymSIVKVfaO/U+XE27PhWgk5h/jA3
+ ArKzQNvF96Gh95FKCo/D35fvL8ZgCAGXjFtwwTe38UFLuzATgTyva2HMxzFr6g3IROPf
+ puCA==
+X-Gm-Message-State: APjAAAWczVbRBIf4rBxgOdH6jySKa4sPRMvPKWotTxMu2sc/VseVltIG
+ Q7RuTRRu1JxwY4lg2btITwH0oSqAsdSHs2n5IYQ=
+X-Google-Smtp-Source: APXvYqwtaXUZxukv72KXhDvEgYsMrVJcbOLsej/ezPWjeRTXXD9cuqhLaJNWOoMJYBnJuHEu/7anl+4YWFW8qwXN598=
+X-Received: by 2002:a17:906:27cb:: with SMTP id
+ k11mr9466692ejc.301.1578775846889; 
+ Sat, 11 Jan 2020 12:50:46 -0800 (PST)
 MIME-Version: 1.0
 References: <1578634957-54826-1-git-send-email-hanjie.lin@amlogic.com>
- <1578634957-54826-5-git-send-email-hanjie.lin@amlogic.com>
-In-Reply-To: <1578634957-54826-5-git-send-email-hanjie.lin@amlogic.com>
+ <1578634957-54826-3-git-send-email-hanjie.lin@amlogic.com>
+In-Reply-To: <1578634957-54826-3-git-send-email-hanjie.lin@amlogic.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 11 Jan 2020 21:45:11 +0100
-Message-ID: <CAFBinCCFUDst_-QtSuNioAa3ckt5GzTFDAhZWh3zu42VRByPpw@mail.gmail.com>
-Subject: Re: [PATCH v5 4/6] usb: dwc3: Add Amlogic A1 DWC3 glue
+Date: Sat, 11 Jan 2020 21:50:35 +0100
+Message-ID: <CAFBinCCZSBWdKQwmcvponuUu_aiTnDCyRiPqKDgqfNkJQoq06w@mail.gmail.com>
+Subject: Re: [PATCH v5 2/6] dt-bindings: usb: dwc3: Add the Amlogic A1 Family
+ DWC3 Glue Bindings
 To: Hanjie Lin <hanjie.lin@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_124524_971812_7DA33ADF 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20200111_125053_255508_B6B1EEC1 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,30 +115,26 @@ Hi Hanjie,
 
 On Fri, Jan 10, 2020 at 6:43 AM Hanjie Lin <hanjie.lin@amlogic.com> wrote:
 [...]
-> -       devm_add_action_or_reset(dev,
-> -                                (void(*)(void *))clk_disable_unprepare,
-> -                                priv->clk);
-> +       ret = clk_bulk_prepare_enable(priv->drvdata->num_clks,
-> +                                     priv->drvdata->clks);
-I don't see clk_bulk_disable_unprepare in dwc3_meson_g12a_remove()
-please test that the clocks are all disabled (see
-/sys/kernel/debug/clk/clk_summary for example) when unloading all USB
-related kernel modules
+> @@ -37,6 +43,11 @@ properties:
+>
+>    clocks:
+>      minItems: 1
+> +    maxItems: 4
+the driver parses one clock for G12A/G12B/SM1 and three clocks for A1
+if there is a fourth clock: do we need to manage it in the driver?
+(note: dt-bindings always represent the hardware, so if there's a
+fourth clock which the driver doesn't need then it's perfectly valid
+to describe it here. a comment which clock this is helps in the
+code-review process)
 
-> +
-> +       if (!priv->drvdata->otg_switch_supported)
-> +               goto setup_pm_runtime;
-my brain doesn't like the goto in this place because this is not an
-error condition. I was about to write that
-usb_role_switch_unregister() is now skipped even though we're calling
-usb_role_switch_register().
-
-I want to hear Neil's opinion on this because I got confused while
-reading the code again.
-my proposal is to move all of this OTG related code from
-dwc3_meson_g12a_probe() into a new function, for example called
-dwc3_meson_g12a_otg_init()
-then only call that function when OTG switching is supported
+> +  clock-names:
+> +    minItems: 1
+> +    maxItems: 4
+I let Rob comment on this, personally I prefer naming the clocks explicitly
+also I think clock-names has to be a mandatory property for A1 (see
+Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+for an example which makes properties mandatory depending on the
+compatible string)
 
 
 Martin
