@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0C76137AAD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:36:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E681E137AAE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:37:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQ9FBtnIDO3Ic6Ory07i41sYxOYh6CFkZrzlWjNfowU=; b=bqsfutwNzaS4Ea
-	ubR4i9uAjeyvB01GLj4jrhp19PRLNs+r+qyL7R9U3zO+uR9rjKmlmpvg0MyrwBhlAFbInUysKkV9D
-	umR87a7d0Gnqp0D8imjtZrM0fD2FYnPOugW18jtu8OMh7UH/A67uRYz3giX4Gp4F38agPh0hrluWV
-	yxEKxJwmq4OTW3386o6sDZwa4glhisgioeE0GZfiydlq7FZig+Wey7MGX1CUwoHyGAOzZQ+hLj4em
-	wpiYw20hVuUqPaOGJrrYHmBCxJCHhLqC8p7AIxKvZaccLJKrZwtByVXL2BJudo3c0a9j8Pn3IFOry
-	hn3royE6UPduz0z0sspg==;
+	List-Owner; bh=tg88mJhoh/YEIJPAT1LAY5V04FV4DjRqv0NI+YNgvmo=; b=iPuEhLSbpHV+13
+	EEPYKcKqj6Z6KoKgHpBlUvLjuHMx5QUIzeKcDkoll3xWTA/Oj5NM6R0cEdrclJGF4MGqe66XMdyv9
+	cBiMVQf6W+NGuKBnING22jRsIDI7NKC2YLi7AxX3sS1t0Q3HYMubP7ldJ8eOya0EHFreEicpRZ6Di
+	0GmdoQ9oGhucQ8dtuhTnFniriZaxmLL0I0ZNF20d+AloIjb26pT7TWWpI8+0hMWldz0tsCtxOeJ1y
+	uqA5t46+MKOIVY33g/3PAWt0dbtWEBvpxCzne7/Ayl8ef5tzKDUJri386Ljgi0yoTGGuwBlh91Tl+
+	FeH1p5bBbiSRESluvMKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq4lh-00070b-La; Sat, 11 Jan 2020 00:36:45 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iq4m2-0007HC-Kn; Sat, 11 Jan 2020 00:37:06 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq4l1-0006a2-P5
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:36:05 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g17so3470008wro.2
+ id 1iq4l3-0006aP-5T
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:36:06 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id c9so3442226wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 16:36:03 -0800 (PST)
+ Fri, 10 Jan 2020 16:36:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=DfFWEYOrKeczPJ3XK4soniW4tzy+GmC4nNvc+3g9T8A=;
- b=ZI/nZUOZWUNvO+ce5wPUrutG+eMxHj+AVzCJ5WqbwSS75gn0tKvmDWCSEgxAbuzlYF
- NriseRMQmaKqAdj+n74NG/4X7ldVJOwvKwFJHF0/u1PxHNK5SLmEG4zlXpwfcFv2zVlf
- KbuMgkc2cNn22zPdLXHzdsmNZieyvMdMxtKgQ+/rSAVoP83cnxpy32C6LbHjTrVGigBj
- NfWspNnzYnzuUlrcGKklluYQNMsVOokcFYiU3BFlKG+cu2L3tcwOIEmbUVje2c/os9Gc
- wKcrcYtvhSOe+aHyZ/P5y+Y3ns+jokVM4Q/9CvBJqfMK/hn7Wr4Q9nlhZUmUxu+kWLKk
- XgNg==
+ bh=aWpAXNzFoYtxf2UeMCD20vvhdE5STvbqiF5TJSOU+4Y=;
+ b=fBgp78rdrXpRlIt1ulc0IOC+sYpunb8zcV0yntvGiMK4Rq1GAR0kXFX0V2sCR79xcd
+ Iua8ECLP+06o9zPYxHE9GOK/rQvjf5KzpJwqjrnHS+zv8j+rTKqzsSpGsGklnVXFQHQu
+ Jddp3KHmIW2qQJxR5VNr5oJuTaN4/DSGkeayiNaCALXPw1HdDTm3i6DV86ruJVVMdew/
+ Nc3KgOGRpEMWahspkCtJX+Cz7+2T8PNHMUBH4ZJT73qz2e4TZ/IMzOm7J7idN50/JPWt
+ XD/XAyzcBPpq9NxgKKg2gVmOmDq/NCeEhTjVCCXLAldkJdjnYjpELLBA+HynUpa/mFda
+ lkCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=DfFWEYOrKeczPJ3XK4soniW4tzy+GmC4nNvc+3g9T8A=;
- b=bMjoeT4b2bzrYR9MYKlosTa91OzsYHi8jljagzwSn+UwWvSV/AtrDCI2Nagz8Ql6tN
- UTCFVftzK4/iwkqmH9mgOVrsiYK3coCJoMGyZA1cWc7/na2kJPNnIzyJsdkxkEJvp+qz
- 8RVkl7U+7nQCqZi0I3ryMh0eLKNpwPv0dMsN4ERG7zXUbdvtSLsIhWvYYIrPL2ov9rs/
- rbTyBdiWbfYo7L69WxlefK7lXgc1e2S6sPaBXd5fP9vt1AsjOUsGfZ0FT6b+ESmlW6bw
- UpIrOjVVrMyWNeph64m3i1SAxg5NY+N3SOWKAudSXQVjpjzpR/X6Ng7nfZ/hYo8e7R0N
- tcFA==
-X-Gm-Message-State: APjAAAVICGLOIkz8gwPE6wEssdjmtSNKExod+m52G/L7M58cGemmTJfB
- 0HP6MLccNPlzHqcdipLbYX8=
-X-Google-Smtp-Source: APXvYqykLEcbUN9GC32HzSWckg0KzGu4rjtF08ttP9eWJnZ6dHSn+yTU5MEIwnWbguQ1oskF2qV/wQ==
-X-Received: by 2002:a5d:5267:: with SMTP id l7mr6372124wrc.84.1578702961948;
- Fri, 10 Jan 2020 16:36:01 -0800 (PST)
+ bh=aWpAXNzFoYtxf2UeMCD20vvhdE5STvbqiF5TJSOU+4Y=;
+ b=Y6Ct0NM/6UIqcREKg8dKz+9aaNacsoecVD2uFmRR9+pndIqX9aDS1zKfea12gOrqSF
+ Ww57/hncedyGwDFPrDuVcQYYDIlv93amEUPPY09YgYEOCBs5K8RDMSyXOCBYNLka3xBP
+ uBrKXJjANIpa+Cxvmlc1qLF3Ox0aTNl+LxQ+tCDOccbgHYKazo1JcySMMGyMkviAjcqJ
+ dZisFovefaB9LckzbI60EYXwANKaHf9Q9a6z4FlADR90WklwY6xEnutQKQVn+orVCEz9
+ INZ10t5ZGW5rmbyq2s95xpmSEESOJef7hX4lKS/Ouy/cTtXhZKxQaMOlimdg7zn08NmH
+ cHRg==
+X-Gm-Message-State: APjAAAXeDNnabz2spEy0r2Xs1F6CCZDghueL9x+bmA9BgXXY9yc+nGWw
+ DdWdO+zAIpEVF8ZeiTDS534=
+X-Google-Smtp-Source: APXvYqyzp2HbmutsntCMdiaaHJ/1+fk+Rk4v4O+Q+fhHma9PbkMwjsZ7WmZHtELg/Mno1HMVzqGY5Q==
+X-Received: by 2002:adf:de86:: with SMTP id w6mr6119495wrl.115.1578702963537; 
+ Fri, 10 Jan 2020 16:36:03 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id w8sm4345050wmm.0.2020.01.10.16.36.00
+ by smtp.gmail.com with ESMTPSA id m7sm4104792wma.39.2020.01.10.16.36.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Jan 2020 16:36:01 -0800 (PST)
+ Fri, 10 Jan 2020 16:36:02 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 3/8] memory: tegra: Changes for v5.6-rc1
-Date: Sat, 11 Jan 2020 01:35:48 +0100
-Message-Id: <20200111003553.2411874-3-thierry.reding@gmail.com>
+Subject: [GIT PULL 4/8] soc: tegra: Changes for v5.6-rc1
+Date: Sat, 11 Jan 2020 01:35:49 +0100
+Message-Id: <20200111003553.2411874-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200111003553.2411874-1-thierry.reding@gmail.com>
 References: <20200111003553.2411874-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_163603_811765_1FDC99D2 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20200110_163605_247860_F188851C 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:42c listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -114,51 +114,43 @@ The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.6-memory
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.6-soc
 
-for you to fetch changes up to 5e5eca6644873da93f5a32904f43220380f34e88:
+for you to fetch changes up to 02676345e9b31ad8907af3755960e3cfef575f8d:
 
-  memory: tegra30-emc: Correct error message for timed out auto calibration (2020-01-10 15:48:48 +0100)
+  soc/tegra: fuse: Unmap registers once they are not needed anymore (2020-01-10 15:59:43 +0100)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-memory: tegra: Changes for v5.6-rc1
+soc: tegra: Changes for v5.6-rc1
 
-This adds a couple of fixes for the Tegra30 EMC frequency scaling code
-and adds support for EMC frequency scaling on Tegra186 and later.
+This adds a couple of optimizations to how the chip ID and straps are
+read and adds support for the FUSE block on Tegra194. Included is also a
+small optimization for the coupled regulator driver to abort early if no
+voltage change has occurred.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (3):
-      memory: tegra30-emc: Firm up suspend/resume sequence
-      memory: tegra30-emc: Firm up hardware programming sequence
-      memory: tegra30-emc: Correct error message for timed out auto calibration
+Dmitry Osipenko (6):
+      soc/tegra: fuse: Add APB DMA dependency for Tegra20
+      soc/tegra: regulators: Do nothing if voltage is unchanged
+      soc/tegra: fuse: Cache values of straps and Chip ID registers
+      soc/tegra: fuse: Warn if straps are not ready
+      soc/tegra: fuse: Correct straps' address for older Tegra124 device trees
+      soc/tegra: fuse: Unmap registers once they are not needed anymore
 
-Nicolin Chen (1):
-      memory: tegra: Correct reset value of xusb_hostr
+JC Kuo (1):
+      soc/tegra: fuse: Add Tegra194 support
 
-Thierry Reding (10):
-      memory: tegra: Refashion EMC debugfs interface on Tegra124
-      memory: tegra: Implement EMC debugfs interface on Tegra20
-      memory: tegra: Implement EMC debugfs interface on Tegra30
-      memory: tegra: Rename tegra_mc to tegra186_mc on Tegra186
-      memory: tegra: Add per-SoC data for Tegra186
-      memory: tegra: Extract memory client SID programming
-      memory: tegra: Add system sleep support
-      memory: tegra: Support DVFS on Tegra186 and later
-      memory: tegra: Only include support for enabled SoCs
-      memory: tegra: Add support for the Tegra194 memory controller
-
- drivers/memory/tegra/Makefile       |    3 +-
- drivers/memory/tegra/tegra124-emc.c |  185 ++++--
- drivers/memory/tegra/tegra186-emc.c |  293 ++++++++++
- drivers/memory/tegra/tegra186.c     | 1067 ++++++++++++++++++++++++++++++++++-
- drivers/memory/tegra/tegra20-emc.c  |  175 ++++++
- drivers/memory/tegra/tegra210.c     |    2 +-
- drivers/memory/tegra/tegra30-emc.c  |  352 +++++++++---
- 7 files changed, 1928 insertions(+), 149 deletions(-)
- create mode 100644 drivers/memory/tegra/tegra186-emc.c
+ drivers/soc/tegra/Kconfig              |  1 +
+ drivers/soc/tegra/fuse/fuse-tegra.c    |  3 +++
+ drivers/soc/tegra/fuse/fuse-tegra30.c  | 29 +++++++++++++++++++++++++++++
+ drivers/soc/tegra/fuse/fuse.h          |  4 ++++
+ drivers/soc/tegra/fuse/tegra-apbmisc.c | 34 ++++++++++++++++++++--------------
+ drivers/soc/tegra/regulators-tegra20.c |  8 +++++++-
+ drivers/soc/tegra/regulators-tegra30.c |  6 ++++++
+ 7 files changed, 70 insertions(+), 15 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
