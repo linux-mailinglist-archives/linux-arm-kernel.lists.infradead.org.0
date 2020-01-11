@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DEBA137C90
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 10:10:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86AF137F2A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 11:17:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H7KGiiCdSfdlOOzqqazwaEQGniSMsn2ggunHl665nqk=; b=nVB6Vx31hUntSM
-	01V/kmQ3r3XtUcXEN/f3YiSjoCdw6fhhHeUczEJSWFh9i69yVd7JoYz2UlCHVBoJsOTLbjRgwrxwS
-	ZhIY83TYKREG71zn2HC9jHO3yiK6JCSPBpZLT/ervdlSuzurliLCPLlr8APP7jPkKkYfXHbP0tnGW
-	cfVrijMylR2uZfpQi32o9M9bsMu8pZ8CYEl7QbmErSezSyxCsvDhkV6L3kLbVYiPMdYfCa4l9d5rT
-	kg0VrYXldkKEx8rOPFcT8cK+6J2hZV8slTUwgvTz3A496c6FqWkEO+tA5CzCyRW4Vv6LNFEwqlf74
-	ourxkrgN8IEliuxh/efg==;
+	List-Owner; bh=xDIkOneXLsL/5LcOrSwOb7n7R/qBks4g8JwcTEnv3K8=; b=kTS7It9HAYeIBQ
+	0IDVNuxASGdShqQ6o2JbSaYaZKGrYDW8c03dIwv7sa5nFx/xBQWFZNcUwaVjBijjP2Gob9oMop78h
+	izIAW1vwgS/8UwIB1ZyWfusE4PZB8PZ6oSmeTbl4TqWlgxNHbc8JxQASwSIPrL6MK7k1MFJm039/O
+	M+/iYLxlKRX/QMt8NWSAb+JcvehswWNOOWNY0xgLTJPJEeHO7AZyhbovspIxk7jVGtkO0jYiLZual
+	o3WU6ljzmmOgAChXKt+KXn4fK/DjS7LD5VPWd05lZjlk2e3Cfx32elmYzkcSfaj6MqS6/x/9WtdLE
+	zikQIimVYZeKdT/NreOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqCmL-0002m8-B8; Sat, 11 Jan 2020 09:09:57 +0000
+	id 1iqDp9-0003T9-Rc; Sat, 11 Jan 2020 10:16:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqCmC-0002lc-0n
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 09:09:49 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
+ id 1iqDp1-0003SH-NP; Sat, 11 Jan 2020 10:16:48 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0BA742072E;
- Sat, 11 Jan 2020 09:09:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E34AB20673;
+ Sat, 11 Jan 2020 10:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578733785;
- bh=/wOYyslEj9NPNKLRD59xFo5JlZfjaoFB/WiqIyPEQXo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OMGxJuukYtn3EXTIYccrLVExf1DA6E+F/dX/H3fuf9asRNYmpKV7E1f8blYJTGnvb
- h3/RvR1SpDyocUmHfO6sfSASupm5d3YzJcD8qXwhjWqQfTvPZAxQqA0Qqz31gRK4gv
- enLBHx8fU+JM+Za6/FXczuUlrxeeNvknshQ+08EI=
-Date: Sat, 11 Jan 2020 10:09:42 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Olof Johansson <olof@lixom.net>
-Subject: Re: [GIT PULL] Allwinner arm64 Defconfig Changes for 5.6
-Message-ID: <20200111090942.su7j3v3dvfbfhmrr@gilmour.lan>
-References: <3b09a9b4-9d46-4f05-9c4d-420b93f0f88b.lettre@localhost>
- <20200111062349.esn2rfeppbt4b5kv@localhost>
+ s=default; t=1578737807;
+ bh=cWDB7LJUkZzYeNN+RNZaHLYw/EuP9iPySeFRixVAIjA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=0qhrTvJ622zuqqpkVY6pldy0gCLgzoi6fLpEKdLGssA+K+q3Fav7TZlYrzPTGIIBl
+ TVokV2Sr087WkhwqRXpD6MVH1E4QUO9n4BX+xy9AuCHloJLmKQFiIN3G08ewL08zRg
+ Je0b8p1WKEiuZZW1e3Yt6xXOhhTJXUYByXAEcbvI=
+Date: Sat, 11 Jan 2020 10:16:38 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH v2 06/17] dt-bindings: at91-sama5d2_adc: add
+ microchip,sam9x60-adc
+Message-ID: <20200111101638.7920f26c@archlinux>
+In-Reply-To: <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
+References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200111062349.esn2rfeppbt4b5kv@localhost>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_010948_083954_A7A44EB1 
-X-CRM114-Status: GOOD (  17.95  )
+X-CRM114-CacheID: sfid-20200111_021647_788759_4022E0B2 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,56 +77,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm@kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, alexandre.belloni@bootlin.com, vigneshr@ti.com,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, pmeerw@pmeerw.net, miquel.raynal@bootlin.com,
+ lee.jones@linaro.org, linux-rtc@vger.kernel.org, lars@metafoo.de,
+ richard@nod.at, ludovic.desroches@microchip.com, wg@grandegger.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ tudor.ambarus@microchip.com, radu_nicolae.pirea@upb.ro,
+ linux-can@vger.kernel.org, robh+dt@kernel.org, mkl@pengutronix.de,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
+ richard.genoud@gmail.com, linux-spi@vger.kernel.org, vkoul@kernel.org,
+ knaack.h@gmx.de, dmaengine@vger.kernel.org, eugen.hristev@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof,
+On Fri, 10 Jan 2020 18:17:58 +0200
+Claudiu Beznea <claudiu.beznea@microchip.com> wrote:
 
-On Fri, Jan 10, 2020 at 10:23:49PM -0800, Olof Johansson wrote:
-> On Fri, Jan 10, 2020 at 06:13:57PM +0100, Maxime Ripard wrote:
-> > Hi,
-> >
-> > Please pull the following changes for the next release.
-> >
-> > Thanks!
-> > Maxime
-> >
-> > The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
-> >
-> >   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
-> >
-> > are available in the Git repository at:
-> >
-> >   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/tags/sunxi-config64-for-5.6
-> >
-> > for you to fetch changes up to cb4132672f76954ddc234aa343b4d2a1f1b8437a:
-> >
-> >   arm64: defconfig: Enable DRM_SUN6I_DSI (2020-01-02 10:30:35 +0100)
-> >
-> > ----------------------------------------------------------------
-> > Two patches to enable the new thermal sensor driver found on newer
-> > Allwinner SoCs and to enable the MIPI-DSI controller.
->
-> This adds a SUN8I_THERMAL that I can't find in the tree? (this also goes for
-> the 32-bit branch)
+> Add microchip,sam9x60-adc to DT bindings documentation.
+> 
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-This is a new driver that got merged through the thermal tree and
-should be in 5.6 as well:
-https://git.kernel.org/pub/scm/linux/kernel/git/thermal/linux.git/commit/?h=thermal/linux-next&id=730a45ccd9322dd918a5dcaf8ae1482400fa5b23
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
-> Also, is there a reason to have it =y, or would =m suffice? I see that RCAR is
-> =y, but we should revisit that as well.
+I'm assuming this lot of binding changes will all go via Rob.
+Let me know if you are expecting it to go via the various
+individual trees.
 
-That driver is used for thermal throttling which is pretty critical
-for us since the boards can get pretty hot, pretty fast (and they
-don't have a pretty wide temperature operating range either), so it
-felt natural to have it as y?
+Thanks,
 
-Maxime
+Jonathan
+
+
+> ---
+>  Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt b/Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt
+> index 4a3c1d496e1a..07c59f301b31 100644
+> --- a/Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt
+> +++ b/Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt
+> @@ -1,7 +1,7 @@
+>  * AT91 SAMA5D2 Analog to Digital Converter (ADC)
+>  
+>  Required properties:
+> -  - compatible: Should be "atmel,sama5d2-adc".
+> +  - compatible: Should be "atmel,sama5d2-adc" or "microchip,sam9x60-adc".
+>    - reg: Should contain ADC registers location and length.
+>    - interrupts: Should contain the IRQ line for the ADC.
+>    - clocks: phandle to device clock.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
