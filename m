@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC201137AB1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:37:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 836D9137AB6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:38:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2SFhrzKOr3T0U7GgYHpODYKK/6SJlXglvh0obmmNDQs=; b=eFv22OTS8xQ1s8
-	iwVzrluBlE0EqhWxSf32SDD0AF+dFhwCQ0pbsoTLL1vdpcxkSN+BbKhvt76Dee0gECPeZ+za/W89L
-	UvQKeieoT4ZZJA1lbggKudaMDsG+LuruKveVBEP6pfJdwKS+9gr+jXxntsu9TTkevrgFxSWET5ieb
-	plqHX3Y82/yplPSTu+8n/oTy3P8g83EOaefmjYI4mjMWdoTQQoD6QC04csNMgr4vo4s104UmgoLTT
-	uPFcbKfow6nylXQY0WI5UIhjCRHhvqZGd9zWX8ssJ0CqznvL/3AyQAvviqrShq0siE6Q6wyjh75C7
-	gy0brvRYTNYWdALmxT+g==;
+	List-Owner; bh=nXvWGXPI1aNeeu2chXBTu9pMaRCgncHdyys0Y0MyySo=; b=pAafAzhCTZDzK/
+	VgzdBnuyfuj4Eh/7/p8j5wLlIe2YJkNDTimpd33yDp1bSB9nLLFO8WvPNfr9lkUxUa10wfGIVh2qI
+	KuKuOGDckQYrAaPHfpr4t4DfGLrM8LEkmjuxtKvASFmOpoGpVMhx7O+DjiwCmoDcZny3myA5q6vzV
+	r/JmNEk4VObCWM6u/UrZa3x7lIFuU+cI563XfXRS3u2cnbcWynyklUuYnMM4bkCzc0ZBWvEWgBoOM
+	jiQfZXZNOn4i/9gLIr/Lhf2RsCNy5prtkEBuAPeAdviJJiuJHAPCsWHbSb9j5dQvK/lkUTqa0Amat
+	saT4v15czzKUpVSEE+TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq4mo-00009Z-03; Sat, 11 Jan 2020 00:37:54 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iq4n2-0000Lf-T8; Sat, 11 Jan 2020 00:38:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq4l8-0006fo-BE
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:36:11 +0000
-Received: by mail-wr1-x441.google.com with SMTP id g17so3470126wro.2
+ id 1iq4lA-0006hn-3l
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:36:13 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a5so3846661wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 16:36:09 -0800 (PST)
+ Fri, 10 Jan 2020 16:36:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IE/B8lJDJdDvcxuIuFq2qqc4guWFpnttAgVt4Kc0orQ=;
- b=fgXOdmpu5/W+zrykGfg/zMG2w+1t4ZsGYpSc43DU9XF2hUtwjVQ/MrEETqF9ut4EVh
- a1Y6G5Bp1xIz27IQtrot+lw6aC/bIs+LjCD9VE6CCgzw72gubLULWOj/+UQ8c5mwEVzQ
- zEvLm7QOTJWVBFw5p7GsvOpfbI7nnBSV2rYCwHT8bfHqiLwoe/u6AdHtmzP1RdfA0yd7
- uPcM+fD7wOK12tzm+cOGaSGcjkrdUvzRtTbWb7IJm44SeLxFfASno9xUBX5JUBv7PeRJ
- JZ2qjiEuTjOEOvbMACU3hgPLjCIzU9sgd5+Y2Q2aVcpPDvqM/lsErqZ1L8PeyomWrdL1
- inTw==
+ bh=QJ/kMGVDSllyNMBMZ6FICn2DJm9xwwWpuLKmv3girkw=;
+ b=nqn0/JTQ4Pral6SaL5i2zIuv4kOqmhZZTUTtHAukh9VoFN92dnDCpM2EavqOH/4itj
+ 4NGxEOvrvs+XiHFOGDkZq2DeHiSlxAX14ipeLZ/amiNcEvHypiNOinr2SARzsOvqy3kC
+ fOa/aO+a4exiY/LZCrISoo0t/h/CLUOiBU+im8pzR+w1h3hWxyOIS1fy7nAKz9aZ5fAm
+ 4h6a8fGIAtbuRUf79EB680hEgJa9FTSM8eoqiUl6nchqV/ZaKTXutkRUHvwYLKjs+4GM
+ P6dGo0VPbAzz5dNMz7+blP9UVA1hTaKGBnLHh7LyDjd5Kgvi9VRULv/3ens2O6cKIny9
+ jd2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IE/B8lJDJdDvcxuIuFq2qqc4guWFpnttAgVt4Kc0orQ=;
- b=PmZ6FCVjxMblahNwW6khziEjz/fV1CpA5wI1/XcgKfTyM4Kw5oZNemsLj4mCIqJvSe
- lpS+TILveVRbezMoh58NIO9hUGivWmcfqHKc1SQaKszm+7tWa763lFvP1n+Xe3y+MEP4
- K6A5SznqsnAvpWsMO23MRskEAtCMa7UHVfNy6cqg0CNJtcgFJh06AoqJaJ/QPWEevs7y
- 3m4C2SbmqrBQ39kqug5C1KLINf+C5/NxlT71Bf12EoRbtuNH+rx68ZRzvI3c9jjczmEJ
- ACivLLzh7L/5PGmofuu0e6fgxJM+JBCR/9/HfX4nllOsCsw6iOTOA65ybsRlhwQRkgWw
- z7Ag==
-X-Gm-Message-State: APjAAAUtwybEADCNKLdvUAouJBoJNiqpa/6QA7EZPVQDR/bU1iMZjNJE
- Qe2iKtM1gflutsbhphTnoaI=
-X-Google-Smtp-Source: APXvYqx1bEgH4MS9+ajTliW2gTn7GRE+wVeS+fhR65QJTy4NUZDj5C+TSmgPW7YHPTjB8V+pok9aFA==
-X-Received: by 2002:a05:6000:1288:: with SMTP id
- f8mr5997069wrx.66.1578702968707; 
- Fri, 10 Jan 2020 16:36:08 -0800 (PST)
+ bh=QJ/kMGVDSllyNMBMZ6FICn2DJm9xwwWpuLKmv3girkw=;
+ b=tgd538GG+QmIZOXIYpd+mE55eIszW8j7lG/bBEodNKeQQ0WO4Z3iz9n/Zvf2AQYJZh
+ M9qDVr3UBY2IukDHiz971n3/klj5PTLPlr4oCeqcA6OB/7bezmfzs0kei0Cd25DlpJ2X
+ 4Mg+Dg/LGRcqK2QIeNDrI6ko/5BMhw7LfQvRxwlNx/H64iqfMItEQV9plqltLpOX//zS
+ mgfsSBzuhIfHu4hPXTFHV1W5kuJpVd/4/98BB3Hx0qohNM3vMSapdu9vDL/jiZNbaNEy
+ rHTSghlgmq6ZHsdeTe2wxzUc2CwaQKxl6dr6oauFlz7Cm6IIuS4Qe8Ee19eo/sa8d56v
+ Cv8A==
+X-Gm-Message-State: APjAAAW0+hjUtw3+UoHm0KlZvrpLrJ2YGwe2C1GbMxSrLZUnHjwtv7NC
+ Kqa4zLsFOfbFrnAgKlflfP8=
+X-Google-Smtp-Source: APXvYqzQhxYn4MDQYfkvzlfpMW3Ab0vNF7NvhJB8OLTdqYx34ccECCEeKPoI7OHwXsvu4WocIGXg2Q==
+X-Received: by 2002:a1c:4c5:: with SMTP id 188mr6935237wme.82.1578702970469;
+ Fri, 10 Jan 2020 16:36:10 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id e8sm4250249wrt.7.2020.01.10.16.36.07
+ by smtp.gmail.com with ESMTPSA id i5sm4181787wrv.34.2020.01.10.16.36.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Jan 2020 16:36:07 -0800 (PST)
+ Fri, 10 Jan 2020 16:36:09 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 7/8] arm64: tegra: Device tree changes for v5.6-rc1
-Date: Sat, 11 Jan 2020 01:35:52 +0100
-Message-Id: <20200111003553.2411874-7-thierry.reding@gmail.com>
+Subject: [GIT PULL 8/8] dt-bindings: Changes for v5.6-rc1
+Date: Sat, 11 Jan 2020 01:35:53 +0100
+Message-Id: <20200111003553.2411874-8-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200111003553.2411874-1-thierry.reding@gmail.com>
 References: <20200111003553.2411874-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_163610_388087_420789A1 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20200110_163612_175272_34A8B2B9 
+X-CRM114-Status: GOOD (  10.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -102,53 +101,43 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQVJNIFNvQyBtYWludGFpbmVycywKClRoZSBmb2xsb3dpbmcgY2hhbmdlcyBzaW5jZSBjb21t
-aXQgZTQyNjE3YjgyNWY4MDczNTY5ZGE3NmRjNDUxMGJmYTAxOWIxYzM1YToKCiAgTGludXggNS41
-LXJjMSAoMjAxOS0xMi0wOCAxNDo1Nzo1NSAtMDgwMCkKCmFyZSBhdmFpbGFibGUgaW4gdGhlIEdp
-dCByZXBvc2l0b3J5IGF0OgoKICBnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tl
-cm5lbC9naXQvdGVncmEvbGludXguZ2l0IHRhZ3MvdGVncmEtZm9yLTUuNi1hcm02NC1kdAoKZm9y
-IHlvdSB0byBmZXRjaCBjaGFuZ2VzIHVwIHRvIGY0MWYzNGRkY2VlNjc5NjQxZmY3ZDE3N2IzNzU5
-Nzg0NGQ4MmQ2MzQ6CgogIGFybTY0OiB0ZWdyYTogQWxsb3cgYm9vdGxvYWRlciB0byBjb25maWd1
-cmUgRXRoZXJuZXQgTUFDIG9uIEpldHNvbiBUWDIgKDIwMjAtMDEtMTAgMTc6MDQ6MjkgKzAxMDAp
-CgpUaGFua3MsClRoaWVycnkKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYXJtNjQ6IHRlZ3JhOiBEZXZpY2UgdHJlZSBjaGFu
-Z2VzIGZvciB2NS42LXJjMQoKVGhlc2UgcGF0Y2hlcyBkbyBzb21lIGNsZWFudXAgdG8gZXhpc3Rp
-bmcgbm9kZXMsIGFkZCB0aGUgbWVtb3J5CnN1YnN5c3RlbSBvbiBUZWdyYTE4NiBhbmQgVGVncmEx
-OTQgYXMgd2VsbCBhcyB0aGUgRlVTRSBhbmQgQVBCIE1JU0MKbm9kZXMgb24gVGVncmExOTQuIFRo
-ZXJlIGFyZSBhbHNvIGEgZmV3IGFkZGl0aW9ucyB0byB0aGUgSmV0c29uIE5hbm8KZGV2aWNlIHRy
-ZWUgdG8gZW5hYmxlIGFkZGl0aW9uYWwgZmVhdHVyZXMgYW5kIHRoZSBmb3JjZSByZWNvdmVyeQpi
-dXR0b24gb24gdGhlIEpldHNvbiBBR1ggWGF2aWVyIG5vdyBwcm9kdWNlcyBhIGtleSBjb2RlIHRo
-YXQgaXMKYWN0dWFsbHkgdmFsaWQuIEZpbmFsbHksIGFuIGFsaWFzIGlzIGFkZGVkIGZvciB0aGUg
-RXRoZXJuZXQgY2FyZCBvbgpKZXRzb24gVFgyIHRvIGFsbG93IGZpcm13YXJlIHRvIGZpbmQgaXQg
-YW5kIHBhc3MgYSBNQUMgYWRkcmVzcyB2aWEKZGV2aWNlIHRyZWUuCgotLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkpDIEt1byAo
-MSk6CiAgICAgIGFybTY0OiB0ZWdyYTogQWRkIGZ1c2UvYXBibWlzYyBub2RlIG9uIFRlZ3JhMTk0
-CgpQZXRlciBSb2JpbnNvbiAoMSk6CiAgICAgIGFybTY0OiB0ZWdyYTogQWxsb3cgYm9vdGxvYWRl
-ciB0byBjb25maWd1cmUgRXRoZXJuZXQgTUFDIG9uIEpldHNvbiBUWDIKClRhbcOhcyBTesWxY3Mg
-KDIpOgogICAgICBhcm02NDogdGVncmE6IEVuYWJsZSBQV00gZmFuIG9uIEpldHNvbiBOYW5vCiAg
-ICAgIGFybTY0OiB0ZWdyYTogRW5hYmxlIFNESU8gb24gSmV0c29uIE5hbm8gTS4yIEtleSBFCgpU
-aGllcnJ5IFJlZGluZyAoNyk6CiAgICAgIGFybTY0OiB0ZWdyYTogTGV0IHRoZSBFTUMgaGFyZHdh
-cmUgdXNlIHRoZSBFTUMgY2xvY2sKICAgICAgYXJtNjQ6IHRlZ3JhOiBSZW5hbWUgRU1DIG9uIFRl
-Z3JhMTMyCiAgICAgIGFybTY0OiB0ZWdyYTogQWRkIGludGVycnVwdCBmb3IgbWVtb3J5IGNvbnRy
-b2xsZXIgb24gVGVncmExODYKICAgICAgYXJtNjQ6IHRlZ3JhOiBBZGQgZXh0ZXJuYWwgbWVtb3J5
-IGNvbnRyb2xsZXIgb24gVGVncmExODYKICAgICAgYXJtNjQ6IHRlZ3JhOiBBZGQgdGhlIG1lbW9y
-eSBzdWJzeXN0ZW0gb24gVGVncmExOTQKICAgICAgYXJtNjQ6IHRlZ3JhOiBNYWtlIFhVU0Igbm9k
-ZSBjb25zaXN0ZW50IHdpdGggdGhlIHJlc3QKICAgICAgYXJtNjQ6IHRlZ3JhOiBSZWRlZmluZSBm
-b3JjZSByZWNvdmVyeSBrZXkgb24gSmV0c29uIEFHWCBYYXZpZXIKCiBhcmNoL2FybTY0L2Jvb3Qv
-ZHRzL252aWRpYS90ZWdyYTEzMi5kdHNpICAgICAgICAgICB8ICA0ICstCiBhcmNoL2FybTY0L2Jv
-b3QvZHRzL252aWRpYS90ZWdyYTE4Ni1wMzMxMC5kdHNpICAgICB8ICAxICsKIGFyY2gvYXJtNjQv
-Ym9vdC9kdHMvbnZpZGlhL3RlZ3JhMTg2LmR0c2kgICAgICAgICAgIHwgMzQgKysrKysrKy0tLQog
-YXJjaC9hcm02NC9ib290L2R0cy9udmlkaWEvdGVncmExOTQtcDI4ODguZHRzaSAgICAgfCAgNCAr
-KwogYXJjaC9hcm02NC9ib290L2R0cy9udmlkaWEvdGVncmExOTQtcDI5NzItMDAwMC5kdHMgfCAg
-MiArLQogYXJjaC9hcm02NC9ib290L2R0cy9udmlkaWEvdGVncmExOTQuZHRzaSAgICAgICAgICAg
-fCA1NiArKysrKysrKysrKysrKysrKwogYXJjaC9hcm02NC9ib290L2R0cy9udmlkaWEvdGVncmEy
-MTAtcDM0NTAtMDAwMC5kdHMgfCA3MyArKysrKysrKysrKysrKysrKysrKysrCiA3IGZpbGVzIGNo
-YW5nZWQsIDE2NCBpbnNlcnRpb25zKCspLCAxMCBkZWxldGlvbnMoLSkKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi ARM SoC maintainers,
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.6-arm64-defconfig
+
+for you to fetch changes up to ddb8840d2777bfca7c9ebc8c24ea20f9a37145ba:
+
+  arm64: defconfig: Enable tegra XUDC support (2020-01-10 18:34:14 +0100)
+
+Thanks,
+Thierry
+
+----------------------------------------------------------------
+dt-bindings: Changes for v5.6-rc1
+
+This contains a conversion of the Tegra124 EMC bindings to json-schema
+as well as the addition of the bindings for the memory subsystem found
+on Tegra186 and Tegra194.
+
+----------------------------------------------------------------
+Nagarjuna Kristam (1):
+      arm64: defconfig: Enable tegra XUDC support
+
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
