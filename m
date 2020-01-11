@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00254137AD1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:55:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A06C137AD3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 01:57:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zDvNyF39K/5Ggj5AW/uo5pInQa59M2lFugWkvEvyaa0=; b=VHm787VVUUl2lF
-	mN6zmyFf921u74ovcsFlWTXIrblL8ySgrQiJ7p9hzhnHuZ/5k4J0HDFRC6P5qX2xSn0ZARNJHbvpb
-	lM8mPumhuMTbJL0i/aug1xqtGmBTdxEABoWoxPWujIjRRR6mDmAd+5mfKLBgXb8au4MR5xtquLW5I
-	/JH2XFYhH2Gaay4kUh5jUJiB4ZPZJ8hx2huvFK9N5VR370AnHJpwxMPbXJCZSputyg8TuE6uYFbei
-	KphFlTl0WWWdluWD+PAVSi0ZT6RfU1Fx6HBU7a6DYLGDL1yMH2MVN/QNv0lA99IXfd8dai08R2W1+
-	s3nUf16L67cuSVthm6zA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QxZpV4pjInQQhJW90ZIsYR7XmbIbisT4S3TCThKIEiI=; b=FxKPHK3+nWYUYtnAnJRdqGWZu
+	IMru/RpxOQ79cQ/b4NTxcem8TXIonEkTJFzu2s/QgfVZZmR9W2r7Z0EY+ZToTpGvdvsf1pVFIKLTO
+	qnNiEPFbpjGo9HhdPwyjhD4TnCHEVG3O3YiVMDWE6ZgH3iVfm27oc4E1XOF0569xcn1iHrNiv5VY3
+	M2gHSw6kkDQMSYyhjwHqPdc6U0QsZoE82gHsN3SFJJcU1UwdFyk2/zktFDyhJGVg2703r2/8Tt3bp
+	RTiE4DRGCbx4iHpAV4BFQJZGO+LZwEhhjr+q6N9bdXfMeFD+3WiXGFlBLWcBIsU9elEhbN+3FpGjG
+	C+tILN8xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq53v-0000dB-P8; Sat, 11 Jan 2020 00:55:35 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iq55v-0000vQ-H2; Sat, 11 Jan 2020 00:57:39 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq53p-0000co-Kg
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:55:30 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z7so3443493wrl.13
+ id 1iq55l-0000v6-DY
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 00:57:30 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a5so3873543wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 16:55:29 -0800 (PST)
+ Fri, 10 Jan 2020 16:57:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=MM/Yf3NVecuRSv0F4n7CfUV2baWCyZwpXRLFf3og0OY=;
- b=B2gbk1Gu8moLMZJ6A4tpGJaZpA1f+g7PnE2GYTl8BWG2u+bV+lKJDRAl18+NOFETWC
- rLzqMQmbNNJXArAXTsrym2XrgsNjD6NFIXr/B/YY5fv4EuiaHfsYqcsgXDa1//ssrXLU
- aCCnocz661VFfGf10DvEgB8uxTyJPW2gU1D5y85bsUYqfe0yxfsmuJ8ncqmzVr6XDxnP
- KtuKKKkVR5EwgPbQ8INFyxOI11/lVI+zueO9HWRjzq7VSjokGolcoyj8a/4zFgZs4k7+
- me4Bw2D7Pc7HhTXhRjz0W4RZQn4IQDAJ72L6C+nXQcWDa7gsL6eBoYZ0YA+vHv8dQE2D
- tblw==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=46ibCrb21ZuBeioA2f4GKI33QnIcmomDF/lpRa1Rv4E=;
+ b=olC/Kmu/IkrdUqkKB2OqZW1A3kPzoRDxkHQ85EQExY2cJ/gMsBgF5CxHbz8AR4IOf+
+ FcgRQhMqhIokOrXx9hdOgwC9m2IQPWR/4cLuKtYqEmU/Uxm7RBr4oloxmjBSn6E34w2E
+ iH8SFwHmIjZwK9M+FRoQpdq44xu5suMDkUqMSvRZVjD7YF8JDhJX79QKO97ay+YWBocZ
+ 33nywS9hYBsOQeSTE3R0iMEq5GFwl35k3+2TkY0EXj2lovL9u35buIVFcnZJUkcyhA46
+ 7hqfCefAhDgp0z1JXDBfSI03kFp+NvS/Yw5wcmBIaS3+pSrHuMHmSwrl3w0fchZHoMYa
+ jQ+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=MM/Yf3NVecuRSv0F4n7CfUV2baWCyZwpXRLFf3og0OY=;
- b=kK5aLrSAHX3TB5Vos+4Lofg8nhINOlUS2dGcs7RYeL+9tuqc1e/2nBq5ZthrxKHSk/
- SZ8sm9BuRXNI3UEGQCBGxtDFIa48aJlnl+1DI7jGmv61ntVNJGQ0tEgOu56OxbDmPUsP
- iRaQvxBW9ZJfwElboHacBQBSlogJZVWKPgCT9j7X00SiD364i8uOi5ifDF12FSCJfJ0i
- U9Jf/QzCvszEFdMvrdZK3vipEN0N+M+KiIv4WubJkLShPD2KgC4utyFcsdOhqIC3ZM4d
- O6VZbsbKULH19k5Yg325w8E5d6MGiyBxCkwSCezWtr8ko1FtBBIxwIjDj9CdPtB3n5bN
- dn7Q==
-X-Gm-Message-State: APjAAAXjUSpHqvDoxeEzg1ihPvfnm7qQzWnDy6xKNI2yc1Ovq0D+HyHq
- i+xo6MoopR55TCk0VkSQyuc=
-X-Google-Smtp-Source: APXvYqzzx2qGeaHgnUv7FNOKQYgX+2m7m3CmddjG0TJqOQyk2fkrvbxi2eQQ5EfKXSpRdibKytrmow==
-X-Received: by 2002:a5d:6a8e:: with SMTP id s14mr6266194wru.150.1578704128361; 
- Fri, 10 Jan 2020 16:55:28 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=46ibCrb21ZuBeioA2f4GKI33QnIcmomDF/lpRa1Rv4E=;
+ b=oePYeklq51Qj8emJaiqgxTJI39GGPjmr8Q6qvY8mY6b6o6gpOflp/xYZ5yDpk4H5LO
+ GjJjGB5zZA3CceSx/ZWNd2vCp//LgA6XKKqtPrQlR+dbpkqSJ1owOgDYw1zbeYRG2WLT
+ XDdK+Ht6CxBjHlT8vGtBNY2ez7/xvNcpYqjLgHmaacIwuJQRy//gViIBk7n/5ySh7eeN
+ cKJ56lGHDJtAlO9mRaXQ9p14ZRKf6Vyv7kPui8D12SRzflBuG5296wfVR9uHMA9cflaw
+ EuSFBw9N5gaoMy9QkTLu8wOi77Wr/RO6XOoA1wqsQwUPJk9WIXAFfAF91Nrx89zFpZYC
+ ikxw==
+X-Gm-Message-State: APjAAAWPJRdYOSZ9OP21C5N7UgdqSLqH01rqwEniG4dwVynE6xq7BMJY
+ qeBLJnsMcvrQ/SQMdSf51Ig=
+X-Google-Smtp-Source: APXvYqzILsJ2W1LWqm1d5va62ZcsWOKo5aAPbpuVEnXyEsapjX70PwXEZ9wnpjyyIWz4TO9MaNLEEQ==
+X-Received: by 2002:a1c:49c2:: with SMTP id w185mr6788028wma.138.1578704247929; 
+ Fri, 10 Jan 2020 16:57:27 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id x10sm4127803wrv.60.2020.01.10.16.55.27
+ by smtp.gmail.com with ESMTPSA id t25sm4274672wmj.19.2020.01.10.16.57.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Jan 2020 16:55:27 -0800 (PST)
+ Fri, 10 Jan 2020 16:57:26 -0800 (PST)
+Date: Sat, 11 Jan 2020 01:57:25 +0100
 From: Thierry Reding <thierry.reding@gmail.com>
-To: arm@kernel.org,
-	soc@kernel.org
-Subject: [GIT PULL 8/8] arm64: tegra: Default configuration updates for
- v5.6-rc1
-Date: Sat, 11 Jan 2020 01:55:26 +0100
-Message-Id: <20200111005526.2413959-1-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200111003553.2411874-1-thierry.reding@gmail.com>
+To: arm@kernel.org, soc@kernel.org
+Subject: Re: [GIT PULL 8/8] dt-bindings: Changes for v5.6-rc1
+Message-ID: <20200111005725.GA2414054@ulmo>
 References: <20200111003553.2411874-1-thierry.reding@gmail.com>
+ <20200111003553.2411874-8-thierry.reding@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <20200111003553.2411874-8-thierry.reding@gmail.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_165529_679641_2CD293A2 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20200110_165729_460087_5573AF4A 
+X-CRM114-Status: GOOD (  13.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -100,44 +99,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jon Hunter <jonathanh@nvidia.com>
+Content-Type: multipart/mixed; boundary="===============1269765636094190553=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC maintainers,
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+--===============1269765636094190553==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="+HP7ph2BbKc20aGI"
+Content-Disposition: inline
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-are available in the Git repository at:
+--+HP7ph2BbKc20aGI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.6-arm64-defconfig
+On Sat, Jan 11, 2020 at 01:35:53AM +0100, Thierry Reding wrote:
+> Hi ARM SoC maintainers,
+>=20
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c3=
+5a:
+>=20
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+>=20
+> are available in the Git repository at:
+>=20
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegr=
+a-for-5.6-arm64-defconfig
+>=20
+> for you to fetch changes up to ddb8840d2777bfca7c9ebc8c24ea20f9a37145ba:
+>=20
+>   arm64: defconfig: Enable tegra XUDC support (2020-01-10 18:34:14 +0100)
+>=20
+> Thanks,
+> Thierry
+>=20
+> ----------------------------------------------------------------
+> dt-bindings: Changes for v5.6-rc1
+>=20
+> This contains a conversion of the Tegra124 EMC bindings to json-schema
+> as well as the addition of the bindings for the memory subsystem found
+> on Tegra186 and Tegra194.
+>=20
+> ----------------------------------------------------------------
 
-for you to fetch changes up to ddb8840d2777bfca7c9ebc8c24ea20f9a37145ba:
+Looks like I messed up the tag description for this one. Please ignore
+this, I've sent a corrected version of pull 8/8 now.
 
-  arm64: defconfig: Enable tegra XUDC support (2020-01-10 18:34:14 +0100)
-
-Thanks,
 Thierry
 
-----------------------------------------------------------------
-arm64: tegra: Default configuration updates for v5.6-rc1
+--+HP7ph2BbKc20aGI
+Content-Type: application/pgp-signature; name="signature.asc"
 
-This enables the USB GPIO connector and Tegra XUDC drivers in the
-default configuration.
+-----BEGIN PGP SIGNATURE-----
 
-----------------------------------------------------------------
-Nagarjuna Kristam (1):
-      arm64: defconfig: Enable tegra XUDC support
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl4ZHXUACgkQ3SOs138+
+s6H0nhAAkL8m7+IYeOhWSL5T3B60NqF7jmJfsXikf5q09AZgWwoKvPyudv3/EBll
+Hwkp4NxZKD3J9ExgJhKmX0/1Pl5nzZFUtTz5sgMBpmEGHNHDqDnAIHn0Oqi3ew9H
+J9sXNB4cMRFfMPaZth8e62AaWgnqHBLygefOf8MnbqS11smugiQRd1/eAKpaUY1w
+MZUEEcTIFETxmIdBWbs/GXZGgLq9FfmH6LDVPj1cvKHA/tWXhgoyeknmiOTjI28c
+xsk/BFA1LLD4ZrLV+6dtuN28nwjR+NipjdJ0t17r1J63KvNgkUgvHe04+Lk9x+AF
+J44yYfpnRXOfpC+Z20BBkAsmckK14/TDWt6KiW5aI120HdXffRxca7cYjCUYfl54
+DutIdwRznp9pOd/taqsQ7BYZdMTyegvPqn3vbuccdhREjAPHiazFDkE68I/qyFAD
+OAl3nFtqkwZCslmiLYp0CAOgkHxsqLvTdfMnHpE2QAjZu6LoVmpPmwH4tEwkch/M
+l7EGOe2N5GPnVkuoZn0f0iciJhv+TNQJ1ze+sn8lMGjBCqn+DIWY0KP1gldR70QI
+M6CB8O8xLAKsP1taImTLVfW0OEX8c9x3xzcKkfKvl/PoiL8CmlvT/m3B2LfvVk5y
+g8zHL6yBJHu2LHs3eKng+Wu2Y59zPXfVuwrMggoR8FbbM2E0dFI=
+=AApv
+-----END PGP SIGNATURE-----
 
- arch/arm64/configs/defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+--+HP7ph2BbKc20aGI--
+
+
+--===============1269765636094190553==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1269765636094190553==--
+
