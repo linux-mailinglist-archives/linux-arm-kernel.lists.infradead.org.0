@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 060D5138251
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 17:16:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC605138252
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 17:17:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hoJDAs/wP6ll62xK5w5ydnRbKIXjaKYQv5ynkZSJqcc=; b=B4b27yvoscW0D+NA6Hr/jpgwMU
-	ViBRYv5BAfp7CehuF1aYZ7iqVUuAcpq8FXl11+d5xktkY+62xuHQRBTUd3Yah9WhIctI382JIDuwa
-	Y/yu21x33wQ/Qb/K1GvBKTNs8puO3pbGILjhw/LuI0HDhtPEE6lkJwzG+cho3Ld+rs5DccuPxXX1/
-	bd5ChYFg4KHp315zA09TuSnsyesIg+MVRbYNUu537IcmTLLz/Oo/jSAhHR0PszPUTXJpz594hMq5p
-	rpmLzPhmOLpLOavD/w9Nz0s6X1aPDixXYlZRllICNDvKO7USNsEWZEdwz/LIl4uvWQKeJhcZlgNyM
-	Nje6A/bQ==;
+	bh=yrPEobDXSLXpAr8YSPiFzl3yQWKsUDKVgx7cTId8eUc=; b=R0ME6G0ThDu6kfFcWvqXm+6tCH
+	LvfqK4JyzQJxnEJJ2okS2gV9MPbC8mRZjG965Mmbstu/ujGvcnWP/RX2ymmE1Pi86LSEfuglEfcSF
+	Nmpr//oZstI28rzPmljGBSB93sdmvMyKXpfRpWOm9eKrai5ealo95auVbihILqV+WXZtE0A+HxfZx
+	omL5Z2jJrNDIRLtAlA9v21BeBpvHSYnYwxXLzeeAciIF6gHyoS1FtKt1tmtZ818ElkfXBizwYPMQX
+	gWEsD3hBjNz8HPj6W60/TW19hCMpUDYgPYNao/AxzyzTmQSGKkYaqSCt//QMXSFFdRXIqX4be4fmv
+	P0sYbQMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqJRF-0002yd-Ex; Sat, 11 Jan 2020 16:16:37 +0000
+	id 1iqJRS-0003HP-LS; Sat, 11 Jan 2020 16:16:50 +0000
 Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqJQn-0002ql-Or
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 16:16:11 +0000
+ id 1iqJQn-0002qn-VB
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 16:16:13 +0000
 Received: from localhost.localdomain ([37.4.249.154]) by
  mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MMWcT-1j9DUG0YRr-00JcDG; Sat, 11 Jan 2020 17:15:51 +0100
+ id 1N2VGj-1joql63Bip-013ze2; Sat, 11 Jan 2020 17:15:51 +0100
 From: Stefan Wahren <stefan.wahren@i2se.com>
 To: Zhang Rui <rui.zhang@intel.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
@@ -35,34 +35,34 @@ To: Zhang Rui <rui.zhang@intel.com>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH V4 1/4] dt-bindings: Add Broadcom AVS RO thermal
-Date: Sat, 11 Jan 2020 17:15:39 +0100
-Message-Id: <1578759342-4550-2-git-send-email-stefan.wahren@i2se.com>
+Subject: [PATCH V4 2/4] thermal: Add BCM2711 thermal driver
+Date: Sat, 11 Jan 2020 17:15:40 +0100
+Message-Id: <1578759342-4550-3-git-send-email-stefan.wahren@i2se.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578759342-4550-1-git-send-email-stefan.wahren@i2se.com>
 References: <1578759342-4550-1-git-send-email-stefan.wahren@i2se.com>
-X-Provags-ID: V03:K1:c1+Mg9NKoWCLsN8E1wZaMxrh5a2EHZsNfpj80gj1+uD4c7oIiwg
- B3VvaHwXDziW/0JZNSoLmcZX8rLv0yBvdngyCtKwW1gYSC5Tb2b7wF6GswrAYW9I+WHKu/o
- LTaFSb+hdE937/T5VA55+bpUm7bMwoXxhCnwMuCcO7Kvivv9lh/LFNaaELpESpgXuR7c5Od
- yOjaNwupb1GP1TMr/Lp0g==
+X-Provags-ID: V03:K1:jpF70Cx2jUyAw6JIvYmMLcAnFVDLZaCts+nTxiBrfb4+0NVpStD
+ bD85rov7s3eKlRtF9OCsAN8N5X3nelMp777k//ChHAsvbr0um0P1eenRhsKIcgi54EDv1e4
+ Yaej82NAf2Q8NWZhsrJyI/y3lRJi0GKAWmr8TAZjZ6EM0XoSWryu9wUogTheqEl5rWtYrU6
+ 8FHknqHHCKqXgJFPc+wlA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bDV4gChWJ6A=:zVDMyHIm0wg/sFXJsxBFfg
- vngWYXC+y1Ggagzjk+77JYoa5b8mlaU7s3yQysh/DUcYDchjc2QE+oKBV2X/cMebilELriIOu
- GhmEp0SQpix3GArGJMKuMqF1IxCI15L9gjDGX/RNoJVqFqxqgGOs647EWR1TAcGe12Xl/UFzF
- yQQ3cDZ/IbLfKTKf3FUm27gVfsJFK+as6TGliiefFdHgdRg2HE4hklN4EPR3EFivwP8bpboNc
- 3ZvgkRDm7duKqdiWFQSZ1zB6e0WeTBhbrJ9UZaT6D7af6Bu/U6072B+qAUgA+2w0h1zJUppqH
- Hr8vvVFWdZo3nyqjZ+qiB6EJ8QkkeU9rCxBlxU7ZjF9IInhJBOamwjbNAudlesivbMfVy0jzz
- a+JlGtygizahGncvqBM+hLVuYgPeMvUBieneXCq24uAVJEFch9oUeUn3bEulqZ0Sj/2gRFe63
- wqRPYahB1wAEch+A/wKcVMj7y37TTMtvm0A84VT9UnkEE56//NhE5gL7BUmA7m2MfABMb4aVg
- vKkjETfAuqYxj0A2yh6+v5cOyztnjBG/zt8+/eryT11h91mPcDtd5ltWmSuhVeqomXNIjaDIJ
- JxoEgCFbd/fAHqE/tczrz0Of38IQjktzXm96FpwwLa8u8hKjLBcf6oYjOJv5sNgbDoZBHu7YR
- 1Gvjse1+vdz6hef6XU/FO/D3xqp+taSVj9IUZIOsV1lGBaeVUcI1zVA1quOEhVza36sLDPamj
- xGoaGYGp0FYhbEdG3ZlTLzHLtZM8N0nE5YZ0cunW8Yv5NPSCTwZ0oBp6hnT6Y1eeBAyM+K+7W
- apIiRHo9Vaa68SxMS4JXRGizA4wnUmXXPxX0Jbo4/0YDzMSDHc+JBLFeDxKTbgmlLlAY5+4en
- QmlpyU4MCCmOIQr/pmA6q3/sIYrU2c0p6DC4rPrwA=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:6yyhpYWfYjg=:hDWk++0d+zTF3NotoYlqgq
+ dG1kqCik+ZYKFdfG1J+91LHuJhIvdsLxxSgJAAx6RbWf2sAiLBClM1kFG6It9JDlGhOsgAprt
+ IVqH3P5G+DoHKrl0klrpG99Bb9M0hCQ633IEzToWodC4rzWNR0GlL6YrWucrLxAc+cEI7c8ft
+ PqJZKxnVY0OiGqsdm+OwB9ffRINi4YFvDrtdyxv7dgNmiYc42TMr0TMRrsUasbTkISu3aQ22r
+ qeDJYBfzm104DvYM6PP+NvSn5+6YfCgddo7V/OlQafkutHPyYWAuDfULVVds5njv6c8dS2gjm
+ FaC/icnWnM8HBDMLsCTptyQelF9DSH4SjYwPm1TvbtMhMqqMj91CtsYqlI30dCacRWtDI3bSP
+ 97bejCjJ4gt3GE2qEVfMXKme9RrhDWkYe9FyPK+gdUSdKkWXgRsuYmkfq83ts0T02KBswQhHB
+ ceoIZlaA1YYvsrc4Hc8SkUq5MJt2Uyc1hL0FOaKEsbExkr5GVF3XiSfWVIkky30E204OZxV2A
+ L+ROBXxw+NeeA8L97GSLzlCXRLn0Cth+f9R+3AZJu7NtpDXsMa64wHPOL8xG5ZrH3f/6CulbN
+ /X/IO09piUzG7lRtBXozPsGqKxYdWPCxC7EuWZubUYsUXhskbJeL68d1xISpwUqFCm6N1TmR4
+ H17hhOGx40U2JTDZG5xRWq06SFXECzBw4yNR579WkkfMagtoT1q3sEUEumVhzT+B178qlqjvC
+ HzXXxXG79AFfjWXyVWYnaYC9Z9XdKQKlrAawejVGNwQI3X3ZHtTcYcf4vABglID+NF4qgsL6P
+ Zo2ymwSegKqbHeK5Xf4K2CIpj0tDG9cbIiKbQh1jOzuUpxMW34LH5zSGDXrMfN2tvfAvlORaO
+ 88yVTTYPEmWnTTBBOSdpFhlO5+IfaddBSqysmbmGk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_081610_100762_DEFA5C65 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20200111_081610_298312_5B244188 
+X-CRM114-Status: GOOD (  20.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -92,69 +92,182 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the BCM2711 doesn't have a AVS TMON block, the thermal information
-must be retrieved from the AVS ring oscillator block. This block is part
-of the AVS monitor which contains a bunch of raw sensors.
+This adds the thermal sensor driver for the Broadcom BCM2711 SoC,
+which is placed on the Raspberry Pi 4. The driver only provides
+SoC temperature reading so far.
 
 Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- .../bindings/thermal/brcm,avs-ro-thermal.yaml      | 45 ++++++++++++++++++++++
- 1 file changed, 45 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+ drivers/thermal/broadcom/Kconfig           |   7 ++
+ drivers/thermal/broadcom/Makefile          |   1 +
+ drivers/thermal/broadcom/bcm2711_thermal.c | 129 +++++++++++++++++++++++++++++
+ 3 files changed, 137 insertions(+)
+ create mode 100644 drivers/thermal/broadcom/bcm2711_thermal.c
 
-diff --git a/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+diff --git a/drivers/thermal/broadcom/Kconfig b/drivers/thermal/broadcom/Kconfig
+index cf43e15..061f1db 100644
+--- a/drivers/thermal/broadcom/Kconfig
++++ b/drivers/thermal/broadcom/Kconfig
+@@ -1,4 +1,11 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++config BCM2711_THERMAL
++	tristate "Broadcom AVS RO thermal sensor driver"
++	depends on ARCH_BCM2835 || COMPILE_TEST
++	depends on THERMAL_OF && MFD_SYSCON
++	help
++	  Support for thermal sensors on Broadcom BCM2711 SoCs.
++
+ config BCM2835_THERMAL
+ 	tristate "Thermal sensors on bcm2835 SoC"
+ 	depends on ARCH_BCM2835 || COMPILE_TEST
+diff --git a/drivers/thermal/broadcom/Makefile b/drivers/thermal/broadcom/Makefile
+index 490ab1f..c917b24 100644
+--- a/drivers/thermal/broadcom/Makefile
++++ b/drivers/thermal/broadcom/Makefile
+@@ -1,4 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_BCM2711_THERMAL)		+= bcm2711_thermal.o
+ obj-$(CONFIG_BCM2835_THERMAL)		+= bcm2835_thermal.o
+ obj-$(CONFIG_BRCMSTB_THERMAL)		+= brcmstb_thermal.o
+ obj-$(CONFIG_BCM_NS_THERMAL)		+= ns-thermal.o
+diff --git a/drivers/thermal/broadcom/bcm2711_thermal.c b/drivers/thermal/broadcom/bcm2711_thermal.c
 new file mode 100644
-index 0000000..98e7b57
+index 0000000..b1d3c4d
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
-@@ -0,0 +1,45 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/thermal/brcm,avs-ro-thermal.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/thermal/broadcom/bcm2711_thermal.c
+@@ -0,0 +1,129 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Broadcom AVS RO thermal sensor driver
++ *
++ * based on brcmstb_thermal
++ *
++ * Copyright (C) 2020 Stefan Wahren
++ */
 +
-+title: Broadcom AVS ring oscillator thermal
++#include <linux/bitops.h>
++#include <linux/clk.h>
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/mfd/syscon.h>
++#include <linux/module.h>
++#include <linux/platform_device.h>
++#include <linux/of_device.h>
++#include <linux/regmap.h>
++#include <linux/thermal.h>
 +
-+maintainers:
-+  - Stefan Wahren <wahrenst@gmx.net>
++#include "../thermal_hwmon.h"
 +
-+description: |+
-+  The thermal node should be the child of a syscon node with the
-+  required property:
++#define AVS_RO_TEMP_STATUS		0x200
++ #define AVS_RO_TEMP_STATUS_valid_msk	(BIT(16) | BIT(10))
++ #define AVS_RO_TEMP_STATUS_data_msk	GENMASK(9, 0)
 +
-+  - compatible: Should be one of the following:
-+                "brcm,bcm2711-avs-monitor", "syscon", "simple-mfd"
++struct bcm2711_thermal_priv {
++	struct regmap *regmap;
++	struct device *dev;
++	struct thermal_zone_device *thermal;
++};
 +
-+  Refer to the the bindings described in
-+  Documentation/devicetree/bindings/mfd/syscon.txt
++static int bcm2711_get_temp(void *data, int *temp)
++{
++	struct bcm2711_thermal_priv *priv = data;
++	int slope = thermal_zone_get_slope(priv->thermal);
++	int offset = thermal_zone_get_offset(priv->thermal);
++	u32 val;
++	int ret;
++	long t;
 +
-+properties:
-+  compatible:
-+    const: brcm,bcm2711-thermal
++	ret = regmap_read(priv->regmap, AVS_RO_TEMP_STATUS, &val);
++	if (ret)
++		return ret;
 +
-+  reg:
-+    maxItems: 1
++	if (!(val & AVS_RO_TEMP_STATUS_valid_msk)) {
++		dev_err(priv->dev, "reading not valid\n");
++		return -EIO;
++	}
 +
-+required:
-+  - compatible
-+  - reg
++	val &= AVS_RO_TEMP_STATUS_data_msk;
 +
-+examples:
-+  - |
-+        avs-monitor@7d5d2000 {
-+                compatible = "brcm,bcm2711-avs-monitor",
-+                             "syscon", "simple-mfd";
-+                reg = <0x7d5d2000 0xf00>;
++	/* Convert a HW code to a temperature reading (millidegree celsius) */
++	t = slope * val + offset;
++	if (t < 0)
++		*temp = 0;
++	else
++		*temp = t;
 +
-+                thermal: thermal {
-+                        compatible = "brcm,bcm2711-thermal";
-+                        #thermal-sensor-cells = <0>;
-+                };
-+        };
-+...
++	return 0;
++}
++
++static const struct thermal_zone_of_device_ops bcm2711_thermal_of_ops = {
++	.get_temp	= bcm2711_get_temp,
++};
++
++static const struct of_device_id bcm2711_thermal_id_table[] = {
++	{ .compatible = "brcm,bcm2711-thermal" },
++	{},
++};
++MODULE_DEVICE_TABLE(of, bcm2711_thermal_id_table);
++
++static int bcm2711_thermal_probe(struct platform_device *pdev)
++{
++	struct thermal_zone_device *thermal;
++	struct bcm2711_thermal_priv *priv;
++	struct device *dev = &pdev->dev;
++	struct device_node *parent;
++	struct regmap *regmap;
++	int ret;
++
++	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	/* get regmap from syscon node */
++	parent = of_get_parent(dev->of_node); /* parent should be syscon node */
++	regmap = syscon_node_to_regmap(parent);
++	of_node_put(parent);
++	if (IS_ERR(regmap)) {
++		ret = PTR_ERR(regmap);
++		dev_err(dev, "failed to get regmap: %d\n", ret);
++		return ret;
++	}
++	priv->regmap = regmap;
++	priv->dev = dev;
++
++	thermal = devm_thermal_zone_of_sensor_register(dev, 0, priv,
++						       &bcm2711_thermal_of_ops);
++	if (IS_ERR(thermal)) {
++		ret = PTR_ERR(thermal);
++		dev_err(dev, "could not register sensor: %d\n", ret);
++		return ret;
++	}
++
++	priv->thermal = thermal;
++
++	thermal->tzp->no_hwmon = false;
++	ret = thermal_add_hwmon_sysfs(thermal);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
++static struct platform_driver bcm2711_thermal_driver = {
++	.probe = bcm2711_thermal_probe,
++	.driver = {
++		.name = "bcm2711_thermal",
++		.of_match_table = bcm2711_thermal_id_table,
++	},
++};
++module_platform_driver(bcm2711_thermal_driver);
++
++MODULE_LICENSE("GPL");
++MODULE_AUTHOR("Stefan Wahren");
++MODULE_DESCRIPTION("Broadcom AVS RO thermal sensor driver");
 -- 
 2.7.4
 
