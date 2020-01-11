@@ -2,87 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 282BA137B70
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 05:57:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA93E137BD9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 07:24:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3d7EIy7EYY1xNkFA2ZA8HBTdCoK8zPATHKwt2o/TEnw=; b=iuUOpZLVAiyKTl
-	0rMMOraG3UikgoSEbYMVHeMcxoC30UABFUw0pj2F4Iu3+K1MrqF37QxYHltBnisgbirYaIncN+n1w
-	qUfgShSufjVPa4i3o1ejkyTP9Yp0Hx5N9T+2TqPw7Xjl9Sv9r5KXTfbW/dd+hBQQ9uPEn9BUXqGj9
-	kSDOWLSF+ZZxe9M3FAKLrHcuXC1NtUcHrNpM7i0a7YPZSUZDJEMaEoN1Tqaood/UwKpjQXw/mSjBy
-	V80DGrMPpd61SqPXgGXtiteEG83TzWrvmOrr/Iu/iljJ/MFqWWZpqi0JOzu0xjx9kHk3XafSCy086
-	9QuRYRPDO4jZdxvQ497A==;
+	List-Owner; bh=fb6eKb0MMnQykKYbDO5HRSclxE/3js/Ji1VOf7p7Q8E=; b=lzwwEK21AlZyzZ
+	108ZxNQirPI+3IfTr4Foi+tJB7mmnZ4K0SnG29GiHTtaOK0M0eaCFF0IR3E1IyWWIc+pEBuJBPcYC
+	+VeR/t3N2bfrkovZT3DeIXLsPiR85TQX1oSIcbmdFrDRwQv7AUoKU6Babd/wVCzOBFAGCo+QjSGkP
+	qHLlIzR1kyNaVzjzmdFCU69vAe4GD3FxtSGDaiWvDFAkzZAju0jazi08jHu8PfQwDq+oFm42k2MyY
+	Z1SWRamkHl4qd1R4HTvLadddQHdk+uB1+CaEoPSNIvwTw0hLTHbrLnvBjOcgcgcIbLp4nSR2lk7x+
+	G9Fkjb/PVvoSxvjcUMqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq8pS-0008IY-8f; Sat, 11 Jan 2020 04:56:54 +0000
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
+	id 1iqAC4-00033f-OE; Sat, 11 Jan 2020 06:24:20 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq8pJ-0008I6-4G
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 04:56:46 +0000
-Received: by mail-pl1-x649.google.com with SMTP id k9so2249362pll.12
+ id 1iqABv-00033I-Lx
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 06:24:13 +0000
+Received: by mail-lj1-x242.google.com with SMTP id z22so4414219ljg.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Jan 2020 20:56:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=RjLzBv4qlo+z7GYjo6uSKDnHrbZe99ibYMQ8E0CYwHw=;
- b=K0QbsSu9JkSBJauq5SjLqo6PxvRTkqJsdB2vro3IKA1ZG8/ckNrvFMDL0SFIQB58t7
- 5LDzHFXI7cdYhOTuNUneLFBT83kHI5SmNQ2M9LjhLBuZBpvhRuKFUya/sSZ4OGyqVzo4
- O3eJr0WcfVpg0aDjqZDBEJgLpPAEdVA72EmoflXIRUCp+ryA6TbEDWt9XCO847V5v01P
- Jpzbdu/r+e7UAo4Id9d+rEHxJsJFS5Q4Zlzo/3P8VxNlUWQ5JVgXzswIWioMcVm0ep06
- oexphr6+T1IfwVGVCHIA5cUeqr+EH9BGhFdiIrNcnxWzZ9bAEi6HkhDfCul0USbieNL0
- 5Vig==
+ Fri, 10 Jan 2020 22:24:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wpZ5PoKKRd15qOuI0SNAciXiJpKUUbFsosRz3wh7nlg=;
+ b=wUshejiHdsNXjOSPCUjvIeGq/Ot8fOv4cJ5isAPotFmZi1/O7aPiq8QONpxu/qcJLT
+ 2to+wp2tmRKTV5XyBRiXlHmdbjrQC3Jw75HksQcDnH7nIlSzP9ryh95JSOtrxTz+jN35
+ cffkDs3+lywNfmr6HDFZnzG/MoQo29wDQEHmda59javYiVRNZDbLvaiLt7F8niHJb6zd
+ 7F64HFGef4mmXTARefe+7xpOkP3sx3zfYl9+BC4bNvuN4Wh/8VyLp89rh2AG9+3sZT4t
+ gLxJmeb4q5IZTtJuX9S3OSrtRquDsKihcMsGwpZS9wKYcE8KB5gNMYoOEXh8NI9SuiFG
+ 0RIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=RjLzBv4qlo+z7GYjo6uSKDnHrbZe99ibYMQ8E0CYwHw=;
- b=sr6E0j2pb9WhNkw1REZMnLoTySzheCY19a/6P+ZkzgWMkqrZhdmhpNufK1UVyGF2oB
- kuNjBCVDIke2+0pIs39IhYmLTBuQfNy606jjlVvrCYXdQmMWKC6/sDqpYqzBZZXCajxZ
- MnTLk8dR/CUVaDtPLcO06NwDEU8etxK2Xn8uEYa6lh8mI0FJ1CydmMp2TlORLtECIO65
- KYTpGIvd9Hyja7TBX7UCjzkCpbKY2FsCux+A6MGz/CJiOTbVXJGg7dSeXWFNtzigqc85
- H+qCKx9QHNk1ydfH1HdZxdTNLC0v83x2/q8PchHBv/9QvjkWjLAtQ8yqPnx9IuH8C18A
- gBOQ==
-X-Gm-Message-State: APjAAAXPlXQxX48jVJnD63XC3hWQXeUp9DkJF4JORXqYNEhwxvRsiFCO
- PN3RFMKKpUBByaJkb8/v0FE/5CNXl7OglYU=
-X-Google-Smtp-Source: APXvYqzKmsGlqJpeihD7vxzuMcgio6xYtq4QElmTQfynt8iK9bmE01b6bbQij88VWMmN1+xvy6ZrRXWGp8DXKA8=
-X-Received: by 2002:a63:8041:: with SMTP id j62mr8822576pgd.41.1578718603417; 
- Fri, 10 Jan 2020 20:56:43 -0800 (PST)
-Date: Fri, 10 Jan 2020 20:56:39 -0800
-In-Reply-To: <20191209150748.2471814-1-thierry.reding@gmail.com>
-Message-Id: <20200111045639.210486-1-saravanak@google.com>
-Mime-Version: 1.0
-References: <20191209150748.2471814-1-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.25.0.rc1.283.g88dfdc4193-goog
-Subject: Re: [RFC 0/2] iommu: arm-smmu: Add support for early direct mappings
-From: Saravana Kannan <saravanak@google.com>
-To: thierry.reding@gmail.com
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wpZ5PoKKRd15qOuI0SNAciXiJpKUUbFsosRz3wh7nlg=;
+ b=RYeXoOibDr4L0h3AuwNW8WwAb9/698rPjVpAsQptM2CFOAm6XVLwjV+YGjgXzOS3Py
+ SMy80nFzjiGTtRisLrlaYYHfrgmPrlMKZ8ODwWXB70z0vRGQ6cCgwPD8f2g+/VUBrkDl
+ 9XAW1fzeXiMIxkNlbKIsxmo92PFZZecj8CXy9dRR7YHBZI27BQJQEu/zVM34FHR26BgY
+ dOYEw5Ys5v2ApW42CLiSmKKLxq0HU5jfJKBZGsJ43c0MrrtcrtF84bKuYVzwFx/c3Nex
+ 2yoYZ401ZeNuxdgInQxvgJpa+5k4vS5rv8wr7nv00G+9mFT3/Ri+LC1piNijDKPT4wkP
+ 5JFw==
+X-Gm-Message-State: APjAAAWCczVpqypHZcTKgZSnlM/1x1IGeMRvbRAkygh93hv2el567UkP
+ HGzhdrPyCux9514BeWt19MOjTQ==
+X-Google-Smtp-Source: APXvYqydJPzXrQYXHB//CvuUEPG97yRIQPyrupdMvctwGiuSJOMQdia0rmZfmLHdvyN2esmzwRqgig==
+X-Received: by 2002:a05:651c:1b0:: with SMTP id
+ c16mr5061540ljn.236.1578723849430; 
+ Fri, 10 Jan 2020 22:24:09 -0800 (PST)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id y1sm1996438ljm.12.2020.01.10.22.24.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 10 Jan 2020 22:24:08 -0800 (PST)
+Date: Fri, 10 Jan 2020 22:23:49 -0800
+From: Olof Johansson <olof@lixom.net>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [GIT PULL] Allwinner arm64 Defconfig Changes for 5.6
+Message-ID: <20200111062349.esn2rfeppbt4b5kv@localhost>
+References: <3b09a9b4-9d46-4f05-9c4d-420b93f0f88b.lettre@localhost>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <3b09a9b4-9d46-4f05-9c4d-420b93f0f88b.lettre@localhost>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_205645_196000_569CC190 
-X-CRM114-Status: GOOD (  23.75  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200110_222411_856097_B35699F5 
+X-CRM114-Status: GOOD (  16.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,86 +95,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, Saravana Kannan <saravanak@google.com>,
- Patrick Daly <pdaly@codeaurora.org>, robin.murphy@arm.com, joro@8bytes.org,
- Rob Clark <robdclark@gmail.com>, iommu@lists.linux-foundation.org,
- linux-tegra@vger.kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, Pratik Patel <pratikp@codeaurora.org>
+Cc: soc@kernel.org, arm@kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thierry,
-
-I happened upon this thread while looking into another thread [1].
-
-> From: Thierry Reding <treding@nvidia.com>
+On Fri, Jan 10, 2020 at 06:13:57PM +0100, Maxime Ripard wrote:
+> Hi,
 > 
-> On some platforms, the firmware will setup hardware to read from a given
-> region of memory. One such example is a display controller that is
-> scanning out a splash screen from physical memory.
+> Please pull the following changes for the next release.
 > 
-> During Linux' boot process, the ARM SMMU will configure all contexts to
-> fault by default. This means that memory accesses that happen by an SMMU
-> master before its driver has had a chance to properly set up the IOMMU
-> will cause a fault. This is especially annoying for something like the
-> display controller scanning out a splash screen because the faults will
-> result in the display controller getting bogus data (all-ones on Tegra)
-> and since it repeatedly scans that framebuffer, it will keep triggering
-> such faults and spam the boot log with them.
-
-While I'm not an expert on IOMMUs, I have a decent high level
-understanding of the problem you are trying to solve.
-
-> In order to work around such problems, scan the device tree for IOMMU
-> masters and set up a special identity domain that will map 1:1 all of
-> the reserved regions associated with them. This happens before the SMMU
-> is enabled, so that the mappings are already set up before translations
-> begin.
-
-I'm not sure if this RFC will solve the splash screen issue across SoCs
-([1] seems to have a different issue and might not have memory-regions).
-
-> One thing that was pointed out earlier, and which I don't have a good
-> idea on how to solve it, is that the early identity domain is not
-> discarded. The assumption is that the standard direct mappings code of
-> the IOMMU framework will replace the early identity domain once devices
-> are properly attached to domains, but we don't have a good point in time
-> when it would be safe to remove the early identity domain.
-
-You are in luck! I added sync_state() driver callbacks [2] exactly for
-cases like this. Heck, I even listed IOMMUs as an example use case. :)
-sync_state() works even with modules if one enables of_devlink [3] kernel
-parameter (which already supports iommus DT bindings). I'd be happy to
-answer any question you have on sync_state() and of_devlink.
-
-> One option that I can think of would be to create an early identity
-> domain for each master and inherit it when that master is attached to
-> the domain later on, but that seems rather complicated from an book-
-> keeping point of view and tricky because we need to be careful not to
-> map regions twice, etc.
+> Thanks!
+> Maxime
 > 
-> Any good ideas on how to solve this? It'd also be interesting to see if
-> there's a more generic way of doing this. I know that something like
-> this isn't necessary on earlier Tegra SoCs with the custom Tegra SMMU
-> because translations are only enabled when the devices are attached to a
-> domain.
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+> 
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/tags/sunxi-config64-for-5.6
+> 
+> for you to fetch changes up to cb4132672f76954ddc234aa343b4d2a1f1b8437a:
+> 
+>   arm64: defconfig: Enable DRM_SUN6I_DSI (2020-01-02 10:30:35 +0100)
+> 
+> ----------------------------------------------------------------
+> Two patches to enable the new thermal sensor driver found on newer
+> Allwinner SoCs and to enable the MIPI-DSI controller.
 
-Good foresight. As [1] shows, identity mapping doesn't solve it in a
-generic way.
+This adds a SUN8I_THERMAL that I can't find in the tree? (this also goes for
+the 32-bit branch)
 
-How about actually reading the current settings/mappings and just
-inheriting that instead of always doing a 1:1 identity mapping? And then
-those "inherited" mappings can be dropped when you get a sync_state().
-What's wrong with that option?
+Also, is there a reason to have it =y, or would =m suffice? I see that RCAR is
+=y, but we should revisit that as well.
 
-Cheers,
-Saravana
 
-[1] https://lore.kernel.org/linux-arm-msm/20200108091641.GA15147@willie-the-truck/
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/driver-api/driver-model/driver.rst#n172
-[3] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/admin-guide/kernel-parameters.txt#n3239
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
