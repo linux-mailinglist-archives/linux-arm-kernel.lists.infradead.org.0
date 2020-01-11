@@ -2,61 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75C1713818E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 15:32:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B70A513824E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 17:16:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oTubnCDT4pBbmO/K+lfVi6wNR92id+fVQf2swkiCFTI=; b=WHc+nckvwcpHd/oqhoX2tNtKH
-	Oo/bwTPfYA2j0B5+9lzvKrWXlL4/yaPKsA9WrhuuPRuo4JwMnvoaZnczvEZ9gN8lDhJNd4TrXR7TG
-	Am2tU6sQcRCmPNz/UiTzm+7f9JZxVccNt0NG6WbVO6PClxbbTWbX9VDEy/3P2nQpKEJSWHV4RTVVC
-	PYwDDYicLnGSVFlNfqoWu56gw5dcilJPSsHT0mjEGnzX2/IdnV6tz7DX/7VfgQM2j/T7uJ7n8vgF5
-	B9sFlc8p+CUbcyauuUs6BzzciYxBgQtvBzPgZWzuR/e7DeaAeqK5Gqn+xPGeRJdf6jgYfTgEvQjfD
-	N4Q6cN6Bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=v5Zlb2Q3fBb3w2sQ1g5prZd4PeUfVrMS2BXjO0RDHPI=; b=Tyj
+	0V2BMiispGyqaqhbtYJ4YqhZgZz5EUbIJPJqpGSsQ2a2hrm4fH62MK6q7vS5ROiTDmAXvizj0DT+S
+	aDB13g6S1XOm7tM2pddSjdTJeZZMKYDw8DkcygwEljgqzh1fPyyNgvKhGm2u3M4j70/rUPVG7KCP8
+	2lR3tzuo/hw4BmytB0k005NYPBg3cfGlsPJO3uHnjZSMLZIxXWHYClgKZ9xf0THvalOK82PzM67NE
+	ox54FiLd2mkHqZp+yOzq6qNMyxqB6ZAld3yBCGLWsxC7feleG7grnA9+ZhTn1cDQL3C/Nv4R2l/sQ
+	NAxVaFxagbLmM/LfeYi/u4WmMRjan7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqHo7-0007vn-EY; Sat, 11 Jan 2020 14:32:07 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1iqJQw-0002s5-95; Sat, 11 Jan 2020 16:16:18 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqHo0-0007uZ-2p
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 14:32:02 +0000
-X-Originating-IP: 79.86.19.127
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alexandre@ghiti.fr)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id D0921E0002;
- Sat, 11 Jan 2020 14:31:50 +0000 (UTC)
-From: Alexandre Ghiti <alexandre@ghiti.fr>
-Subject: Re: linux-next: build warning after merge of the bpf-next tree
-To: Palmer Dabbelt <palmerdabbelt@google.com>
-References: <a367af4d-7267-2e94-74dc-2a2aac204080@ghiti.fr>
- <20191018105657.4584ec67@canb.auug.org.au>
- <20191028110257.6d6dba6e@canb.auug.org.au>
- <mhng-0daa1a90-2bed-4b2e-833e-02cd9c0aa73f@palmerdabbelt-glaptop>
-Message-ID: <d5d59f54-e391-3659-d4c0-eada50f88187@ghiti.fr>
-Date: Sat, 11 Jan 2020 09:31:48 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <mhng-0daa1a90-2bed-4b2e-833e-02cd9c0aa73f@palmerdabbelt-glaptop>
-Content-Language: en-US
+ id 1iqJQn-0002qm-Q6
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 16:16:11 +0000
+Received: from localhost.localdomain ([37.4.249.154]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1N8nrc-1jmtkG2NRW-015tRv; Sat, 11 Jan 2020 17:15:50 +0100
+From: Stefan Wahren <stefan.wahren@i2se.com>
+To: Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH V4 0/4] ARM: Enable thermal support for Raspberry Pi 4
+Date: Sat, 11 Jan 2020 17:15:38 +0100
+Message-Id: <1578759342-4550-1-git-send-email-stefan.wahren@i2se.com>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:rYmDnJ/p/2M5yiHMY7ZWxfCjQjh91TWH0PLDwBcOocszvwo4FvW
+ /5Zp8iJJ6i8SKmxc7FAQLWOrCNndtm4ltII4dKOa/Lc2hcwNCug7Z5ysI3NzigQwPz9nSkK
+ IhIWsHT2k8OuICKKpSD2aFWvZHOL8XGQ2GWfRnrB1ThvqcLcz+1MKNv4EWgaFmvrrs7w9HV
+ k1M+ynnUFDunJNdGrCgpg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:7SUTA/eFNfI=:Z28JbYq+DuU6GRmgZR0LOQ
+ ZO70M+X4H27vFIM45Cj6FFdVPQEEMrPHPCb9nByN8I9fWgMRINE37LEMrV31RfCRazjt2zevo
+ 4DuXisXWONXO3/alzWuzrC5q2/+bhZ1fPPLFWYFyGhfH4APGy6w+Kb+qh7prTDEuBOMp6aACN
+ cRTVo7ysP5wmuGD01ggtubUYMi/CCPsOqKygjl0FFOw2Yze2/m2g7n5mAR5qhly/935ysbU56
+ Fz7TEFMxnau+MgWFETs+ga+L3+qGLox+8q2XE445mCZMuo023SIwcecz6Qx+i0BCdF2IApvjN
+ ZqGxlF1Tau7OjAshAdmCVeps2hAVBLHZ6/jCnAmj2TbttM6UZ0sIbvICOrKWQMpYkxGgbPj/s
+ rPPz1EmaSsvFtCOCEmaaV3Up27AGb1HWaEGRMkOUNqbukwmFnUPlEI70nlW1eNRuzw3hJ7D09
+ VnLm9d6D5JMd8RXXyguFf0ZEkuLlWTp0ZDG5e/u+/V8SSxC2PMioA1ZNG3YXTpmdziF5loD9v
+ OmLzudHLDR5RbDmImBRBfPlotE0Fv0eneXeje1Ky+i8qsQoXDKd7l9X5d1p6H7JBOFfM1A9Zj
+ QHs4IyuwTSXmTwv/IADR8JVS4sqftU792FvEr61GWDU+l7boA4U6Fa1DU7+16TGn4mjWYReLX
+ 3S3zgzaF3y6RP+sYkJcXJ+ACcr0udFC8SIOegxMRc2iSOS6tSMdNRmCQsJvsrAneW/BWc6tW7
+ NxIiQ3Vtd/2Kj4AzwHU3X2Y0xHOQdm1esznXEFjI+VbgGrXQUtf44+BFNcpMh3XUeAU6X8BgA
+ MGDVlDFhlFqymcq7IhlWFTbMrIrWzlQfjJWt06XX9ZCqJh1ynEjcbHnjef7CDhIns7NdQxx9w
+ kFTxt4HunVn04QHpo4Hhgg9DDiRJ7OPJvoVPsQigE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_063200_404586_C8AC634E 
-X-CRM114-Status: GOOD (  20.66  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200111_081610_134226_E183C805 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,63 +80,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, daniel@iogearbox.net,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, ast@kernel.org,
- linux-next@vger.kernel.org, zong.li@sifive.com, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, devicetree@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDEvMTAvMjAgNzoyMCBQTSwgUGFsbWVyIERhYmJlbHQgd3JvdGU6Cj4gT24gRnJpLCAxMCBK
-YW4gMjAyMCAxNDoyODoxNyBQU1QgKC0wODAwKSwgYWxleGFuZHJlQGdoaXRpLmZyIHdyb3RlOgo+
-PiBIaSBndXlzLAo+Pgo+PiBPbiAxMC8yNy8xOSA4OjAyIFBNLCBTdGVwaGVuIFJvdGh3ZWxsIHdy
-b3RlOgo+Pj4gSGkgYWxsLAo+Pj4KPj4+IE9uIEZyaSwgMTggT2N0IDIwMTkgMTA6NTY6NTcgKzEx
-MDAgU3RlcGhlbiBSb3Rod2VsbCAKPj4+IDxzZnJAY2FuYi5hdXVnLm9yZy5hdT4gd3JvdGU6Cj4+
-Pj4gSGkgYWxsLAo+Pj4+Cj4+Pj4gQWZ0ZXIgbWVyZ2luZyB0aGUgYnBmLW5leHQgdHJlZSwgdG9k
-YXkncyBsaW51eC1uZXh0IGJ1aWxkIChwb3dlcnBjCj4+Pj4gcHBjNjRfZGVmY29uZmlnKSBwcm9k
-dWNlZCB0aGlzIHdhcm5pbmc6Cj4+Pj4KPj4+PiBXQVJOSU5HOiAyIGJhZCByZWxvY2F0aW9ucwo+
-Pj4+IGMwMDAwMDAwMDE5OThhNDggUl9QUEM2NF9BRERSNjQgX2JpbmFyeV9fYnRmX3ZtbGludXhf
-YmluX3N0YXJ0Cj4+Pj4gYzAwMDAwMDAwMTk5OGE1MCBSX1BQQzY0X0FERFI2NCBfYmluYXJ5X19i
-dGZfdm1saW51eF9iaW5fZW5kCj4+Pj4KPj4+PiBJbnRyb2R1Y2VkIGJ5IGNvbW1pdAo+Pj4+Cj4+
-Pj4gwqDCoCA4NTgwYWM5NDA0ZjYgKCJicGY6IFByb2Nlc3MgaW4ta2VybmVsIEJURiIpCj4+PiBU
-aGlzIHdhcm5pbmcgbm93IGFwcGVhcnMgaW4gdGhlIG5ldC1uZXh0IHRyZWUgYnVpbGQuCj4+Pgo+
-Pj4KPj4gSSBidW1wIHRoYXQgdGhyZWFkIHVwIGJlY2F1c2UgWm9uZyBhbHNvIG5vdGljZWQgdGhh
-dCAyIG5ldyAKPj4gcmVsb2NhdGlvbnMgZm9yCj4+IHRob3NlIHN5bWJvbHMgYXBwZWFyZWQgaW4g
-bXkgcmlzY3YgcmVsb2NhdGFibGUga2VybmVsIGJyYW5jaCBmb2xsb3dpbmcKPj4gdGhhdCBjb21t
-aXQuCj4+Cj4+IEkgYWxzbyBub3RpY2VkIDIgbmV3IHJlbG9jYXRpb25zIFJfQUFSQ0g2NF9BQlM2
-NCBhcHBlYXJpbmcgaW4gYXJtNjQgCj4+IGtlcm5lbC4KPj4KPj4gVGhvc2UgMiB3ZWFrIHVuZGVm
-aW5lZCBzeW1ib2xzIGhhdmUgZXhpc3RlZCBzaW5jZSBjb21taXQKPj4gMzQxZGZjZjhkNzhlICgi
-YnRmOiBleHBvc2UgQlRGIGluZm8gdGhyb3VnaCBzeXNmcyIpIGJ1dCB0aGlzIGlzIHRoZSBmYWN0
-Cj4+IHRvIGRlY2xhcmUgdGhvc2Ugc3ltYm9scyBpbnRvIGJ0Zi5jIHRoYXQgcHJvZHVjZWQgdGhv
-c2UgcmVsb2NhdGlvbnMuCj4+Cj4+IEknbSBub3Qgc3VyZSB3aGF0IHRoaXMgYWxsIG1lYW5zLCBi
-dXQgdGhpcyBpcyBub3Qgc29tZXRoaW5nIEkgZXhwZWN0ZWQKPj4gZm9yIHJpc2N2IGZvcgo+PiBh
-IGtlcm5lbCBsaW5rZWQgd2l0aCAtc2hhcmVkLy1mcGllLiBNYXliZSBzaG91bGQgd2UganVzdCBs
-ZWF2ZSB0aGVtIHRvCj4+IHplcm8gPwo+Pgo+PiBJIHRoaW5rIHRoYXQgZGVzZXJ2ZXMgYSBkZWVw
-ZXIgbG9vayBpZiBzb21lb25lIHVuZGVyc3RhbmRzIGFsbCB0aGlzCj4+IGJldHRlciB0aGFuIEkg
-ZG8uCj4KPiBDYW4geW91IGdpdmUgbWUgYSBwb2ludGVyIHRvIHlvdXIgdHJlZSBhbmQgaG93IHRv
-IGJ1aWxkIGEgcmVsb2NhdGFibGUgCj4ga2VybmVsPwo+IFdlYWsgdW5kZWZpbmVkIHN5bWJvbHMg
-aGF2ZSB0aGUgYWJzb2x1dGUgdmFsdWUgMCwKCgpTbyBhY2NvcmRpbmcgdG8geW91IHRoZSAyIG5l
-dyByZWxvY2F0aW9ucyBSX1JJU0NWXzY0IGFyZSBub3JtYWwgYW5kIApzaG91bGQgbm90CmJlIG1v
-ZGlmaWVkIGF0IHJ1bnRpbWUgcmlnaHQgPwoKCj4gYnV0IHRoZSBrZXJuZWwgaXMgbGlua2VkIGF0
-Cj4gYW4gYWRkcmVzcyBzdWNoIHRoYXQgMCBjYW4ndCBiZSByZWFjaGVkIGJ5IG5vcm1hbCBtZWFu
-cy7CoCBXaGVuIEkgYWRkZWQgCj4gc3VwcG9ydAo+IHRvIGJpbnV0aWxzIGZvciB0aGlzIEkgZGlk
-IGl0IGluIGEgd2F5IHRoYXQgcmVxdWlyZWQgYWxtb3N0IG5vIGNvZGUgLS0KPiBlc3NldGlhbGx5
-IEkganVzdCBzdG9wcGVkIGRpc3NhbGxvd2luZyB4MCBhcyBhIHBvc3NpYmxlIGJhc2UgcmVnaXN0
-ZXIgCj4gZm9yIFBDUkVMCj4gcmVsb2NhdGlvbnMsIHdoaWNoIHJlc3VsdHMgaW4gMCBhbHdheXMg
-YmVpbmcgYWNjZXNzaWJsZS7CoCBJIGp1c3QgCj4gd2FudGVkIHRvIGdldAo+IHRoZSBrZXJuZWwg
-dG8gYnVpbGQgYWdhaW4sIHNvIEkgZGlkbid0IHdvcnJ5IGFib3V0IGNoYXNpbmcgYXJvdW5kIGFs
-bCB0aGUKPiBhZGRyZXNzaW5nIG1vZGVzLsKgIFRoZSBQSUMvUElFIHN1cHBvcnQgZ2VuZXJhdGVz
-IGRpZmZlcmVudCByZWxvY2F0aW9ucyAKPiBhbmQgSQo+IHdvdWxkbid0IGJlIHN1cnByaXNlZCBp
-ZiBJIGp1c3QgbWlzc2VkIG9uZSAob3IgbW9yZSBsaWtlbHkgYWxsKSBvZiB0aGVtLgo+Cj4gSXQn
-cyBwcm9iYWJseSBhIHNpbXBsZSBmaXgsIHRob3VnaCBJIGZlZWwgbGlrZSBldmVyeSB0aW1lIEkg
-c2F5IHRoYXQgCj4gYWJvdXQgdGhlCj4gbGlua2VyIEkgZW5kIHVwIHNwZW5kaW5nIGEgbW9udGgg
-aW4gdGhlcmUuLi4KCllvdSBjYW4gZmluZCBpdCBoZXJlOgoKaHR0cHM6Ly9naXRodWIuY29tL0Fs
-ZXhHaGl0aS9yaXNjdi1saW51eC90cmVlL2ludC9hbGV4L3Jpc2N2X3JlbG9jYXRhYmxlX3YxCgpa
-b25nIGZpeGVkIHRoZSBidWcgaW50cm9kdWNlZCBieSB0aG9zZSAyIG5ldyByZWxvY2F0aW9ucyBh
-bmQgZXZlcnl0aGluZyAKd29ya3MKbGlrZSBhIGNoYXJtLCBzbyBJJ20gbm90IHN1cmUgeW91IGhh
-dmUgdG8gZGlnIGluIHRoZSBsaW5rZXIgOikKCkFsZXgKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+This series enables thermal support for the Raspberry Pi 4. Neither the
+bcm2835_thermal nor the brcmstb_thermal are suitable for the BCM2711.
+So add a new thermal driver to read out the SoC temperature from the
+AVS RO block of the BCM2711.
+
+Changes in V4:
+- change my email address to avoid spurious characters
+
+Changes in V3:
+- add Rob's, Florian's and Nicolas' reviewed-by/tested-by
+- adjust binding license
+- make error pointer handling consistent
+
+Changes in V2:
+- rebase on thermal/linux-next
+- convert binding to YAML
+- make AVS RO block a subnode of AVS monitor and access it via syscon
+- drop unnecessary TSENS clock and get the rid of remove callback
+- add Florian's reviewed-by to last/unchanged patch
+
+Stefan Wahren (4):
+  dt-bindings: Add Broadcom AVS RO thermal
+  thermal: Add BCM2711 thermal driver
+  ARM: dts: bcm2711: Enable thermal
+  ARM: configs: Build BCM2711 thermal as module
+
+ .../bindings/thermal/brcm,avs-ro-thermal.yaml      |  45 +++++++
+ arch/arm/boot/dts/bcm2711.dtsi                     |  12 ++
+ arch/arm/configs/multi_v7_defconfig                |   1 +
+ arch/arm64/configs/defconfig                       |   1 +
+ drivers/thermal/broadcom/Kconfig                   |   7 ++
+ drivers/thermal/broadcom/Makefile                  |   1 +
+ drivers/thermal/broadcom/bcm2711_thermal.c         | 129 +++++++++++++++++++++
+ 7 files changed, 196 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+ create mode 100644 drivers/thermal/broadcom/bcm2711_thermal.c
+
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
