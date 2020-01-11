@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A34BA13829F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 18:27:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20F41382A0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 18:28:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x3SP8OPQM1xFpvcrdlOB50XygEq6oZj+tD4Eh94r6eg=; b=WhGPqFF9VYhmwe
-	fQxAmm2rsE9iKp76y6xSLnc6alPD6cq9nv9xvZot+YVLLTR5+0x+lzEi8v4PSvo26NH98RnNApQua
-	FG9+7Vjm2+3OhRgmvPbpzATvhyUB4yC/5aZsR7NDxdpRgcG10drRgLWdXW7v2ZvVmDIpPALHF95Jk
-	iHOnK/Kmn9cjXuI6O7vVDsG+7JwLND4Wd8BGCMCkGBXQggWVcaTdPTXVdwRFp7R0f+lvjJQpebB7w
-	8oEReBE2Zk0iItyDqzMrYP2/39Ce50gkR8Ej89+zqpAedUgK9F7OEIq1wJ15kYFkjptwUp9Oy4kvm
-	S0CY5XXdHwLJnnZFEMBA==;
+	List-Owner; bh=K161quCAjOBlEosLVxq/URr59A4XfJUrCpCoGLn+VYk=; b=Pol3bhVyHIBSdi
+	cRjY6AjvPcLBRZ2TohHs3I4JS15o2IyBNViQOMuQpGlK6z2rwMh8269e60ZIQXoUgTQtRjff2XbCz
+	UOaL5RETkV2/1WYtu8WgPNigQXkSbCF5g8c9autfE3B2B/pVbC6KiuNpCeQZIrt+ChL8rLc7x8nsa
+	Mxf1CRvL4R/ryuJ3xc45LBkii9hDSnvms0oEa/UqPMul8R4jood5Lf3NunQmr/QTHuqIjBQw9YwXg
+	RviFdbY+o6AHxAiacJZofxnNzKEq6RQeLy9KM/NLUsKRyx2m/DZwWjE9IMBwlBXI/MvM9+sAganrV
+	Jp7xmC2e0/q8urXlziEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqKXY-0003KG-A6; Sat, 11 Jan 2020 17:27:12 +0000
+	id 1iqKYK-0003as-Ba; Sat, 11 Jan 2020 17:28:00 +0000
 Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqKXO-0003Ib-Hz
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 17:27:04 +0000
+ id 1iqKY9-0003a7-IH
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 17:27:54 +0000
 X-Originating-IP: 81.185.160.252
 Received: from localhost (252.160.185.81.rev.sfr.net [81.185.160.252])
  (Authenticated sender: gregory.clement@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 2E22640006;
- Sat, 11 Jan 2020 17:27:00 +0000 (UTC)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 990D140003;
+ Sat, 11 Jan 2020 17:27:47 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
 To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
  <arm@kernel.org>, soc@kernel.org
-Subject: [GIT PULL] ARM: mvebu: dt for v5.6 (#1)
-Date: Sat, 11 Jan 2020 18:26:58 +0100
-Message-ID: <874kx13nvh.fsf@FE-laptop>
+Subject: [GIT PULL] ARM: mvebu: dt64 for v5.6 (#1)
+Date: Sat, 11 Jan 2020 18:27:46 +0100
+Message-ID: <871rs53nu5.fsf@FE-laptop>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_092702_733857_C393E54B 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20200111_092752_839077_D2F91254 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -71,7 +72,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-Here is the first pull request for dt for mvebu for v5.6.
+Here is the first pull request for dt64 for mvebu for v5.6.
 
 Gregory
 
@@ -81,38 +82,34 @@ The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
 are available in the Git repository at:
 
-  git://git.infradead.org/linux-mvebu.git tags/mvebu-dt-5.6-1
+  git://git.infradead.org/linux-mvebu.git tags/mvebu-dt64-5.6-1
 
-for you to fetch changes up to e4018a496b721e0401b8cf2d583bb0d897f9ce5d:
+for you to fetch changes up to 62bba54d99407aedfe9b0a02e72e23c06e2b0116:
 
-  ARM: dts: armada-388-clearfog: add eeprom (2020-01-08 10:56:54 +0100)
-
-----------------------------------------------------------------
-mvebu dt for 5.6 (part 1)
-
- - Add support for SolidRun Clearfog GTR (Armada 385 based board)
- - Move i2c0 to the SoliRrun Microsom dtsi (Armada 38x based)
- - Add EEPROM node on SoliRrun Microsom (rev 2.1)
- - Add EEPROM node on SoliRrun ClearFog Pro
+  arm64: dts: marvell: clearfog-gt-8k: fix switch cpu port node (2020-01-08 22:16:03 +0100)
 
 ----------------------------------------------------------------
-Baruch Siach (4):
-      ARM: dts: mvebu: add support for SolidRun Clearfog GTR
-      ARM: armada-38x-solidrun-microsom: move i2c0 to SOM DT
-      ARM: dts: armada-38x-solidrun-microsom: add eeprom
-      ARM: dts: armada-388-clearfog: add eeprom
+mvebu dt64 for 5.6 (part 1)
 
- arch/arm/boot/dts/Makefile                         |   2 +
- arch/arm/boot/dts/armada-385-clearfog-gtr-l8.dts   | 115 ++++++
- arch/arm/boot/dts/armada-385-clearfog-gtr-s4.dts   |  79 ++++
- arch/arm/boot/dts/armada-385-clearfog-gtr.dtsi     | 450 +++++++++++++++++++++
- arch/arm/boot/dts/armada-388-clearfog.dtsi         |  11 +-
- arch/arm/boot/dts/armada-388-helios4.dts           |   5 -
- .../arm/boot/dts/armada-38x-solidrun-microsom.dtsi |  13 +
- 7 files changed, 665 insertions(+), 10 deletions(-)
- create mode 100644 arch/arm/boot/dts/armada-385-clearfog-gtr-l8.dts
- create mode 100644 arch/arm/boot/dts/armada-385-clearfog-gtr-s4.dts
- create mode 100644 arch/arm/boot/dts/armada-385-clearfog-gtr.dtsi
+ micro-DPU (uDPU) board changes (Armada 3270 based board):
+ - Fix broken ethernet
+ - Remove i2c-fast-mode property
+ - Indicate that SFP cages support 3W modules
+ SolidRun Clearfog GT 8K (Armada 8040 base board):
+ - Fix switch cpu port node
+
+----------------------------------------------------------------
+Baruch Siach (1):
+      arm64: dts: marvell: clearfog-gt-8k: fix switch cpu port node
+
+Russell King (3):
+      arm64: dts: uDPU: fix broken ethernet
+      arm64: dts: uDPU: remove i2c-fast-mode
+      arm64: dts: uDPU: SFP cages support 3W modules
+
+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts           | 8 ++++++++
+ arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 2 ++
+ 2 files changed, 10 insertions(+)
 
 -- 
 Gregory Clement, Bootlin
