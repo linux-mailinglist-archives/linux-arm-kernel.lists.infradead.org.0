@@ -2,55 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86CED13829B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 18:26:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60EF713829E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Jan 2020 18:27:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kH7UWkgGeL4lgS7URmKQXFvWG8Ptu9/hiTrq46Btm2E=; b=OCvflHEAEDAfGJ
-	xACAMqWlOiFLCm8bKYG/SR7d/FfewObpk0g8YDwix5IBSaVJFCcGhTpc/kmgFunEQGxJ2W5W6vgig
-	psgx3ZVtOek8QlxyA+coDR+WdTPeFE/smQmmBgKUzCpYZg0krEfp+0R6VN2qzJ7pb6lBjwyrIXGAB
-	rdTQnQdUZiPjbt6t0h63AtTYwT688yggW5rSQRCTx0vRrjYcorynn+bD16DPO8HwJgbDQd0vqabX4
-	awVZ40WAqFrkx1mgi02dYGhcAmEx6vYrIuMl9atFF4EiBtiVbtu9yxn+j782GEGqj5l4Os6SnDf3q
-	4cfJqxNbiN0s5G7XwdCA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5SbUrUVi0njsoQNYgkTQkQ3jeSlKaZGaQTwjsK44chs=; b=hoKipzVG5s6X7/
+	0O0W1Rkz2hkBHTPSQa3Qr3S2p7TF9Ao6vF4A+J1agp71gUP8hqfWmRvWkgxQZwXXJKj1aoNGNwSSz
+	dwT3cMpJDwFdeunm3kAI9yfQCFRLof+rI0loY+me2kJ7YPCosP843eOrmZlIZse5tL11w+9LUkwQI
+	U4ocSvH8/kTtdbz4+0FvmNh30KjFOrArkcS11kvPdKtlHlItrFVu3ZhGQ7rbCutM7uagRLnx4J2jE
+	pGQpyl1PF9chpF509TfU9IKBPcugPpdoUEPoIrKtddvm90xDyU1Hw807/m0a7dfp8LwbR8vctNkcs
+	0/bAw5S128T1d55bFeXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqKWZ-0002ns-5r; Sat, 11 Jan 2020 17:26:11 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1iqKXG-00035O-Vx; Sat, 11 Jan 2020 17:26:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqKWR-0002ml-VG
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 17:26:05 +0000
-X-Originating-IP: 81.185.160.252
-Received: from localhost (252.160.185.81.rev.sfr.net [81.185.160.252])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id BC2C840003;
- Sat, 11 Jan 2020 17:25:52 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
- <arm@kernel.org>, soc@kernel.org
-Subject: [GIT PULL] ARM: mvebu: drivers for v5.6 (#1)
-Date: Sat, 11 Jan 2020 18:25:51 +0100
-Message-ID: <877e1x3nxc.fsf@FE-laptop>
+ id 1iqKX5-00034s-44
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 17:26:44 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA2B6206ED;
+ Sat, 11 Jan 2020 17:26:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578763602;
+ bh=ktFS9YWjiT6ht7tc+v11qTbRy7B1vTvUdZZhKJ0Egnw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MVi3m3sZJlBPvA51bmf/sgXDrDsOxKOQ3pU47IiGlF7fi3vkjBCtPAK/evnvnIW0b
+ N/SukqfHK00DO9Ix+FNtpuGle7O6iweMUvBkPN1rhwNke2cKxyRlMapRr32lo+/7M0
+ RZy/zc7DJGUoa0MATrwjwkCRusi9Lwsxx0M2bLKM=
+Date: Sat, 11 Jan 2020 18:26:39 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 1/2] arm64: dts: sun50i: H6: Add SPI controllers nodes
+ and pinmuxes
+Message-ID: <20200111172639.to3lhzros6ca5hj2@gilmour.lan>
+References: <20200108101006.150706-1-andre.przywara@arm.com>
+ <20200108101006.150706-2-andre.przywara@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200108101006.150706-2-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_092604_140071_30F7165F 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200111_092643_192157_87D29AA8 
+X-CRM114-Status: GOOD (  19.52  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.194 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,40 +78,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ linux-spi@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Icenowy Zheng <icenowy@aosc.xyz>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpIZXJlIGlzIHRoZSBmaXJzdCBwdWxsIHJlcXVlc3QgZm9yIGRyaXZlcnMgZm9yIG12ZWJ1
-IGZvciB2NS42LgoKR3JlZ29yeQoKVGhlIGZvbGxvd2luZyBjaGFuZ2VzIHNpbmNlIGNvbW1pdCBl
-NDI2MTdiODI1ZjgwNzM1NjlkYTc2ZGM0NTEwYmZhMDE5YjFjMzVhOgoKICBMaW51eCA1LjUtcmMx
-ICgyMDE5LTEyLTA4IDE0OjU3OjU1IC0wODAwKQoKYXJlIGF2YWlsYWJsZSBpbiB0aGUgR2l0IHJl
-cG9zaXRvcnkgYXQ6CgogIGdpdDovL2dpdC5pbmZyYWRlYWQub3JnL2xpbnV4LW12ZWJ1LmdpdCB0
-YWdzL212ZWJ1LWRyaXZlcnMtNS42LTEKCmZvciB5b3UgdG8gZmV0Y2ggY2hhbmdlcyB1cCB0byAz
-NGVmYzgzNzI3Yzg1NDMwYTc2M2Y3MTE5ZGFiYTU2Y2NkYzgwNjA4OgoKICBtYWlsYm94OiBhcm1h
-ZGEtMzd4eC1yd3RtOiBjb252ZXJ0IHRvIGRldm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZSAo
-MjAyMC0wMS0wOCAxMDo0MTo1MiArMDEwMCkKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KbXZlYnUgZHJpdmVycyBmb3IgNS42
-IChwYXJ0IDEpCgogLSBWYXJpb3VzIGNsZWFudXAgb24gdGhlIGZvbGxvd2luZyBkcml2ZXJzOgog
-ICAtIFR1cnJpcyBNb3ggcldUTSBmaXJtd2FyZQogICAtIE1veHRldCBidXMKICAgLSBBcm1hZGEg
-Mzd4eCByV1RNIG1haWxib3gKICAgLSBNYXJ2ZWxsIEVCVSBEZXZpY2UgQnVzCgotLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkRh
-biBDYXJwZW50ZXIgKDEpOgogICAgICBmaXJtd2FyZTogdHVycmlzLW1veC1yd3RtOiBzbWFsbCB3
-aGl0ZSBzcGFjZSBjbGVhbnVwCgpNYXJlayBCZWjDum4gKDEpOgogICAgICBidXM6IG1veHRldDog
-ZGVjbGFyZSBtb3h0ZXRfYnVzX3R5cGUgYXMgc3RhdGljCgpZYW5ndGFvIExpICgyKToKICAgICAg
-bWVtb3J5OiBtdmVidS1kZXZidXM6IGNvbnZlcnQgdG8gZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jl
-c291cmNlCiAgICAgIG1haWxib3g6IGFybWFkYS0zN3h4LXJ3dG06IGNvbnZlcnQgdG8gZGV2bV9w
-bGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlCgogZHJpdmVycy9idXMvbW94dGV0LmMgICAgICAgICAg
-ICAgICAgICAgICAgIHwgMyArLS0KIGRyaXZlcnMvZmlybXdhcmUvdHVycmlzLW1veC1yd3RtLmMg
-ICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbWFpbGJveC9hcm1hZGEtMzd4eC1yd3RtLW1haWxib3gu
-YyB8IDUgKy0tLS0KIGRyaXZlcnMvbWVtb3J5L212ZWJ1LWRldmJ1cy5jICAgICAgICAgICAgICB8
-IDQgKy0tLQogNCBmaWxlcyBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDEwIGRlbGV0aW9ucygt
-KQoKCi0tIApHcmVnb3J5IENsZW1lbnQsIEJvb3RsaW4KRW1iZWRkZWQgTGludXggYW5kIEtlcm5l
-bCBlbmdpbmVlcmluZwpodHRwOi8vYm9vdGxpbi5jb20KCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Jan 08, 2020 at 10:10:05AM +0000, Andre Przywara wrote:
+> The Allwinner H6 SoC contains two SPI controllers similar to the H3/A64,
+> but with the added capability of 3-wire and 4-wire operation modes.
+> For now the driver does not support those, but the SPI registers are
+> fully backwards-compatible, just adding bits and registers which were
+> formerly reserved. So we can use the existing driver for the "normal" SPI
+> modes, for instance to access the SPI NOR flash soldered on the PineH64
+> board.
+> We use an H6 specific compatible string in addition to the existing H3
+> string, so when the driver later gains Quad SPI support, it should work
+> automatically without any DT changes.
+>
+> Tested by accessing the SPI flash on a Pine H64 board (SPI0), also
+> connecting another SPI flash to the SPI1 header pins.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 54 ++++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> index 3329283e38ab..40835850893e 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> @@ -338,6 +338,30 @@
+>  				bias-pull-up;
+>  			};
+>
+> +			/omit-if-no-ref/
+> +			spi0_pins: spi0-pins {
+> +				pins = "PC0", "PC2", "PC3";
+> +				function = "spi0";
+> +			};
+> +
+> +			/omit-if-no-ref/
+> +			spi0_cs_pin: spi0-cs-pin {
+> +				pins = "PC5";
+> +				function = "spi0";
+> +			};
+
+It seems suspicious to use it in the Pine H64, since PC5 is also used
+by the eMMC (and this prevents either the SPI or the emmc controller
+to probe, depending on which probed first).
+
+Maxime
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
