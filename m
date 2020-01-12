@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 280861383E6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 00:04:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14081138447
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 01:25:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQdPClp04i6dydwSW5O2k8x+nSbwXC5/kTDQ9FEx5BA=; b=ftxD5B/oSEX0VX
-	D7CYkzSx+zTupgBVg/YkK2gvv/BGUlsTYYX9Y1dWM0qMV4YT4E05dZ7YEf56deuxoXjxyo9dwNLBh
-	IdjpiedzoQXVqzZnu+xKazhZg/r2Hkxyqly19k+R4KvlefjgnD9VvQo1i+PK7GJdWV3jjnZOHh89O
-	fRIZBYZzW0aZNDzLWTWsfMVcbWntnAY3GCGfJochtjWaY2PxAu/URnFDyLp6jPgAHNBDUJpOz83XY
-	L/C/dc/U3z6OMu8I3FJwANXJlL0Fy6yCurghCDAnoDHAle/zix8SrymLBvlXtro1odHvO4y7Y3puT
-	X93GG0OudatUZxpB4zkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+6/LlGZm23lj5kYoQaIxF8hqg+x6K29AW6Y8xQUMPgg=; b=OwotNkn8xzMUGi
+	qgHGXChNnqG5sSpa0r0rrDQeZxrDAPVHBbUNMajYP/5MTA6+O57oRoP5dgohF8uKMe9SKp3pKzlfQ
+	hVZb6VRxsgjjwcTx3rL9I0ks7fzdmftqGL9SpMmhTNm/mgXLXAUkGlc0tY8qBnAWqwQ5b6GTu8a35
+	kFHwYN+u+AbsGjvD8Tilo6kPU0ET1isvhiiAD09IMszBRhvSHxfVOpafU5VMydR88tTOqiGLI2A+U
+	6xmdvXfy8Ww5aJKZKPXbyG4YEqpzwD3rQ+pavw0m0IM/6HBPf3AfkDMm9P3nnuuJJXhmGvrPSo6k9
+	85tOAiqJGi3HEUobc0TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqPoB-0004rt-Ge; Sat, 11 Jan 2020 23:04:43 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iqR4d-0000rA-O3; Sun, 12 Jan 2020 00:25:47 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqPnn-0004kl-OR
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Jan 2020 23:04:21 +0000
-Received: by mail-lf1-x144.google.com with SMTP id y19so4211080lfl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 11 Jan 2020 15:04:19 -0800 (PST)
+ id 1iqR4E-0000c7-0J; Sun, 12 Jan 2020 00:25:23 +0000
+Received: by mail-wr1-x441.google.com with SMTP id d16so5181654wre.10;
+ Sat, 11 Jan 2020 16:25:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=dQdoE0uzb2OiAAVhK/85PGSNAyD0vBUw1vXhnMg19d8=;
- b=uYesVjMxhDubijDa607QgE9XPxp+tdlQ0bUvNRq9bLi9EV8x+L7qe6SJtCnShHY1bL
- qgNGuLg4eI3PQpogPW/hKMWPmeWtMLrNP2+Dsub/6MC0V21H9lWw1Jb0dI3GeaNdg5lf
- lfWEcf6b9asgw5ahBKtSu0F356BKJui9IEz0FPgtODobgG4KAk/5DpsS66TyajMC+WPa
- waSwFBAWkna1+CZA2KKOsYfHCbTo9Qjok/DX57yECw7u9KLFFvkqc0n2Do62qSoVOErk
- rkRbE1joP479G4C+9ep7joZs+gv0Gx21Wyy/SzrpKkGrBrzTA1XkuHd4v5GHvPO8PstC
- ocRg==
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wAWyALOSBn7tzzbJwWZbezVclSVN3Btt3DEixhDkQII=;
+ b=ArkxWsHLmXqGxa1xxpcAewKDkopPwoqRQ7Sjvi4wr/dZmFyo6BGIZf+NkgvpfZsGpJ
+ lwYzzi3Vq4uSIXp06HKX/2z+nzbEz/sVLzH99QYWZc0F7m83wAW+0SHvXQCrUevzYGIj
+ Io8kio+2MSj/PkepGFUnLmhr91JIfkVLJ8+OiQIMPibdBRag7Rshnw06wBn1ZNvGawfT
+ GIQLE6QHORS7QOl4/6HL6zGsWWH+QytT9ZZJ7zdoTM+y+gNcTxZjtlBF//Ld8TaVMdas
+ K28Y5imMrNB2RQhUIGEBV+cxZCY2xhwL6bkKBMUEpgBQx0YOPrKsO/xWLCfgxA6LmFkJ
+ ZyzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dQdoE0uzb2OiAAVhK/85PGSNAyD0vBUw1vXhnMg19d8=;
- b=PyWNupWL5u2eSrlnXI6c2kmH/N2SMu8RpC4hawp9WfdPKkTZg0PDbE5PH32DDYAYyx
- 34z8RHmTH116cW8a1biY36RVNQ/NzZUj5PIs0DljNMU9Wimk0JLoXdndfzVIiAOpVx3V
- geuKgyYURZIt8M0qWGSGcJGJwmp7GNLkoSeh+NSFyCHPDQri/mEGhIQqd5Gf2VkccO2G
- hnfGkRyXJDijDVZwYnraOczvxX7kG6Qd09N3+RVOoV1ksUt8YztaLCcMIoEQbleFmr5D
- hu519aX1VcYWl3odlyA2DjcfVdw0sQlKB2J4g3XMPisIO2BHDB/tyNBnFVLf9aO2J0hn
- TE4A==
-X-Gm-Message-State: APjAAAWSuQOnYkaBr91E/qzdNaxXtKBN8L7hGYz2q1iO59GmvAwVzSqu
- YZiSY5RzoQvH8zRThm24iHdwMQ==
-X-Google-Smtp-Source: APXvYqxRSXZoMMiuXP1XCWkwkU3vDj33uWpTBuXPN4X0DNEdZJV6RV1vWsn+/5922EaTR2BtisCpMQ==
-X-Received: by 2002:a19:491a:: with SMTP id w26mr6024983lfa.98.1578783858036; 
- Sat, 11 Jan 2020 15:04:18 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id 192sm3356558lfh.28.2020.01.11.15.04.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 11 Jan 2020 15:04:16 -0800 (PST)
-Date: Sat, 11 Jan 2020 14:59:38 -0800
-From: Olof Johansson <olof@lixom.net>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [GIT PULL] Allwinner Device Tree Changes for 5.6
-Message-ID: <20200111225938.hp6xxr4k7jp7yvv2@localhost>
-References: <18b6a136-9198-4d4c-878c-e6962e3a833e.lettre@localhost>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wAWyALOSBn7tzzbJwWZbezVclSVN3Btt3DEixhDkQII=;
+ b=Q4NrAXqW9X9L+slCe1Z3cJyBy+K0n/t+jNkzQcsmpi4zy/mSDYiBmlqISfo/1H9vDY
+ yhCbLF+R1hzYBj0bI14dgk/JKk6JAxxk9H22L2Iry0a2ATuCCMt3Zmznu0SrmMu3TUy7
+ aDBfgQrMNBVy3BnhyFJXWXJ8k1LEVG+ZhL93kp2x1605vvhxxZy0/oU5wT4yTyf5Z00h
+ d7NZ0wgGCOucDuhdQhPcHfIfEtPfAU5Tex7+SHHn2TN7YsU1Zuj3hfPQti/Kuq221S0t
+ ymF2VbrlQ6x/wo2QbIdAacVuiFtUAYuY4dgRb8CZMgFTJknxNUgEkjMizcYeCfPDwQtV
+ Yamw==
+X-Gm-Message-State: APjAAAXxmTRe5dz93wmFjdGA+WKrZZeqoJz5vrQzyAXhEwOegoGlRH8w
+ UD8ZtqNGKUdjsN7UbXzBB1CLDgYO
+X-Google-Smtp-Source: APXvYqyqzfmZato1T8Am2AwdE0KKjdA9VaLATr7JDYJTE28SkegxKFwsYTzvgGymCNZnpbtnOunttw==
+X-Received: by 2002:a5d:5091:: with SMTP id a17mr10663002wrt.362.1578788719231; 
+ Sat, 11 Jan 2020 16:25:19 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:373a:1900:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id t5sm8407389wrr.35.2020.01.11.16.25.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 11 Jan 2020 16:25:18 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-mmc@vger.kernel.org, ulf.hansson@linaro.org, robh+dt@kernel.org
+Subject: [PATCH v4 0/3] Amlogic 32-bit Meson SoC SDHC MMC controller driver
+Date: Sun, 12 Jan 2020 01:24:56 +0100
+Message-Id: <20200112002459.2124850-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <18b6a136-9198-4d4c-878c-e6962e3a833e.lettre@localhost>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_150419_792844_B5525035 
-X-CRM114-Status: GOOD (  15.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200111_162522_075947_61F8D5AB 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,59 +98,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm@kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jianxin.pan@amlogic.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, yinxin_1989@aliyun.com,
+ linux-arm-kernel@lists.infradead.org, lnykww@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 06:14:51PM +0100, Maxime Ripard wrote:
-> Hi,
-> 
-> Please pull the following changes for the next release.
-> 
-> Thanks!
-> Maxime
-> 
-> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
-> 
->   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
-> 
-> are available in the Git repository at:
-> 
->   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/tags/sunxi-dt-for-5.6
-> 
-> for you to fetch changes up to 6163ce8467052cdfe42581036bc71fe4aac09eab:
-> 
->   arm64: dts: allwinner: a64: enable DVFS (2020-01-09 17:31:39 +0100)
-> 
-> ----------------------------------------------------------------
-> This is our usual set of DT patches for the Allwinner SoCs.
-> 
-> It's fairly big this time, but the highlights are:
->   - Enable cpufreq and CPU thermal throttling on the A64
->   - CSI0 support on the R40
->   - CSI1 support on the A10 and A20
->   - SPI support on the R40
->   - PMU support on the H3, H5, H6 and R40
->   - MIPI-DSI support on the A64
->   - PWM support on the H6
->   - Thermal sensor on the A64, A83t, H3, H5, H6 and R40
->   - More DT schemas fixes and conversions
->   - New boards: LibreComputer ALL-H5-CC H5, LibreComputer ALL-H3-IT H5,
->                 Pine64 H64 Model B, Neutis N5H3
+Hello,
 
-This doesn't build for arm64 defconfig. What happened at your end that
-made this slip through your testing? :(
+this is the patchset for a driver for the Amlogic "SDHC" MMC controller
+found on Meson6, Meson8, Meson8b and Meson8m2 SoCs.
 
-I've had to rebase arm/dt to drop this branch. Please send a new tested/fixed
-version.
+The public S805 (Meson8b) datasheet has some documentation starting on
+page 74: [0]
+
+It's performance is still not as good as the driver from Amlogic's 3.10
+kernel, but it does not corrupt data anymore (as RFC v1 did).
+
+Special thanks to the people who supported me off-list - you are
+amazing and deserve to be mentioned here:
+- Xin Yin who helped me fix two more write corruption problems. I am
+  hoping that he will reply with Reviewed-by, Tested-by and Bug-fixed-by
+- Jianxin Pan for sharing some of the internal workings of this MMC
+  controller with me
+- Wei Wang for spotting the initial write corruption problem and helping
+  test this driver on his board. I have his permission to add his
+  Tested-by (off-list, he's Cc'ed so if there's any problem he can speak
+  up)
 
 
-Thanks,
+Changes since v3 at [3]:
+- split the clock bits into a separate clock controller driver because
+  of two reasons: 1) it keeps the MMC controller driver mostly clean of
+  the clock bits 2) the pure clock controller can use
+  devm_clk_hw_register() (instead of devm_clk_register(), which is
+  deprecated) and the MMC controller can act as a pure clock consumer.
+  This also affects the dt-bindings which is why I dropped Rob's
+  Reviewed-by. Thanks to Ulf for the suggestions
 
--Olof
+Changes since v2 at [2]:
+- rebased on top of v5.5-rc1
+- added Rob's and Xin Yin's Reviewed-by and Tested-by (thank you!)
+- (note: Kevin had v2 of this series in -next for a few days so the
+   build test robots could play with it. I haven't received any negative
+   feedback in that time)
+
+Changes since RFC v1 at [1]:
+- don't set MESON_SDHC_MISC_MANUAL_STOP to fix one of three write
+  corruption problems. the out-of-tree 3.10 "reference" driver doesn't
+  set it either
+- check against data->flags instead of cmd->flags when testing for
+  MMC_DATA_WRITE as spotted by Xin Yin (many thanks!). This fixes
+  another write corruption problem
+- clear the FIFOs after successfully transferring data as suggested by
+  Xin Yin (many thanks!). This is what the 3.10 driver did and fixes yet
+  another write corruption problem
+- integrate the clock suggestions from Jianxin Pan so the driver is now
+  able to set up the clocks correctly for all known cases. documentation
+  is also added to the patch description. Thank you Jianxin for the
+  help!
+- set the correct max_busy_timeout as suggested by Jianxin Pan (thanks!)
+- convert the dt-bindings to .yaml (which is why I didn't add Rob's
+  Reviewed-by)
+- switch to struct clk_parent_data as part of newer common clock
+  framework APIs to simplify the clock setup
+- dropped CMD23 support because it seems to hurt read and write
+  performance by 10-20% in my tests. it's not clear why, but for now we
+  can live without this.
+- use devm_platform_ioremap_resource instead of open-coding it
+
+
+[0] https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
+[1] https://patchwork.kernel.org/cover/11035505/
+[2] http://lists.infradead.org/pipermail/linux-amlogic/2019-November/014576.html
+[3] https://patchwork.kernel.org/cover/11283179/
+
+
+Martin Blumenstingl (3):
+  dt-bindings: mmc: Document the Amlogic Meson SDHC MMC host controller
+  clk: meson: add a driver for the Meson8/8b/8m2 SDHC clock controller
+  mmc: host: meson-mx-sdhc: new driver for the Amlogic Meson SDHC host
+
+ .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   |   83 ++
+ drivers/clk/meson/Kconfig                     |    9 +
+ drivers/clk/meson/Makefile                    |    1 +
+ drivers/clk/meson/meson-mx-sdhc.c             |  212 ++++
+ drivers/mmc/host/Kconfig                      |   14 +
+ drivers/mmc/host/Makefile                     |    1 +
+ drivers/mmc/host/meson-mx-sdhc.c              | 1064 +++++++++++++++++
+ .../dt-bindings/clock/meson-mx-sdhc-clkc.h    |    8 +
+ 8 files changed, 1392 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
+ create mode 100644 drivers/clk/meson/meson-mx-sdhc.c
+ create mode 100644 drivers/mmc/host/meson-mx-sdhc.c
+ create mode 100644 include/dt-bindings/clock/meson-mx-sdhc-clkc.h
+
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
