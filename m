@@ -2,74 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7C6C1386C1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 15:01:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E72D1386DC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 16:10:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7uJfGJjMtL3XtEN9fzW3oAr4cV1iyFv3d82GtcGutLI=; b=VkMVWOipMVoxHf
-	Ase+DvZ7xHLE3UKgXWeAndxVRggWqYSiwfazHgkJ33wQnwyy5Ff736rnYj+r09QQ3wn2HBLbcqmqp
-	Qiex6vWSF8vv5PzlT80HC7frxDIRoWhycTcLTSu7xgZdefYFQo0/kZWifcYlkX/6eETvdVaTuWcZI
-	E+S8sZ38oE/LS0MWglPAWuqIjSMMS5uBUxot85ImjS3Kl1gehRTC9FXGZk75/XaVyggl0B5Ddzlr0
-	FK7K/KIVikNyMLEZ04PMXPv5jOdU5DxGjmr30AzJrZNyPEXZtAeZOWOqqXu3SNA4cWO23xUQ1b9hI
-	a0+oveow0xCJKwhlJ36g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3RMdL6xVj0FFXxSu3az4UAqMovayv1xNNFuLLj1vcus=; b=ngw
+	sXOS1y2PGry5kz0VM8TJC+PSAucmUvel7DK1VOSJi/pKgujtIkRpmyAKxig1j3MSeCH1Y5jaAD2zS
+	w31tgmMB+TCzc+48br5SOKbCoGD60MmeRbtZYbccLyk7AqbClpzpJSLsEdUjBA5nOLCFaLt5ab16i
+	zm146xiwqTxOOJzyXazLEd5X2fG+ykjfb+GZLQj5n0wz7Y79CGUAVqQ+S+k8f4GiNR3ydGidbgbB7
+	fWxTSve341L7zACG5/yjc5mrxVRGmLgZvgJqyUW2H1c9uz4dgYvgRNMVKty4LpDmFcQlIqmJgEs5E
+	hgIjC9LDhSLhg/Z4yrlZudFUo1AyINQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqdnc-0000JN-Oc; Sun, 12 Jan 2020 14:01:04 +0000
-Received: from mail.kapsi.fi ([2001:67c:1be8::25])
+	id 1iqeso-0006Wr-FP; Sun, 12 Jan 2020 15:10:30 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqdnV-0000Ie-K4
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 14:00:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=kapsi.fi;
- s=20161220; h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject
- :Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=x/nFsgxdZk2EqfYZUP7PzEgKBJXPtYD799bZSXKee+k=; b=PeFHqgnJWiimG9LrZ3vLnHxqif
- oYhJwWGkITCb/A2EvB/FCHV1/EfHeVVA3JePB5swfYvm+mVI0ZnxlFCz0ZUcPuZ+G2XNKB5Gmbq4V
- XUh+2MiZxMMO1yExblF8UO+tqO0DPVONvEMNU8q6jEcI4p0wWptjevLW9W90qIqvOq1qR0/Bvw8ML
- X+6zlocRWHQZh4HV4i0uB0GxmrKVmKUWpjonBUha48JK4IhnFehltEcNDBquiLRwl+2E7ufZoeoTy
- lSaAN14TswxPNNcTHdYLmGgBEIMBBz28pNthx1MfE9ABK7aPMSmpAiUVS9XDLut1/6bJeMCi0Yo32
- sWqEe6yQ==;
-Received: from puh7.kyla.fi ([82.130.43.239] helo=localhost)
- by mail.kapsi.fi with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <aapo.vienamo@iki.fi>)
- id 1iqdnQ-0004c3-Q3; Sun, 12 Jan 2020 16:00:52 +0200
-From: Aapo Vienamo <aapo.vienamo@iki.fi>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH v3] ARM: mxs: Enable usbphy1 and usb1 on apx4devkit DTS
-Date: Sun, 12 Jan 2020 16:00:39 +0200
-Message-Id: <20200112140039.25420-1-aapo.vienamo@iki.fi>
-X-Mailer: git-send-email 2.24.1
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 82.130.43.239
-X-SA-Exim-Mail-From: aapo.vienamo@iki.fi
-X-SA-Exim-Scanned: No (on mail.kapsi.fi); SAEximRunCond expanded to false
+ id 1iqesi-0006WP-CN
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 15:10:25 +0000
+Received: by mail-wm1-x342.google.com with SMTP id d73so6919737wmd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 12 Jan 2020 07:10:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=8TRUc/6qxbRonZeyu/eHrwf3zVnyXzkArPwmJIDUMtM=;
+ b=faGaNLeEsi9zRIq0pP/293K60JMkZuUkjdss4WXSVGjHEm1hIrRXBizUiSuOpa+dHk
+ sTw/O7EBXcWCOMxzh/DImX2Odsm3BUK3BeS17Txe2lTZHBwSsr+57DI2p/sEpYwHtgPc
+ uSUaHs4/Ox0yLu0z4+8m0wMQSHLJtRBqE6DpB73K3DPcNpGyamxXjVvenOwwbfIdluKz
+ 6s0JW03Ojnf+ZWla6FQu995wsqrCXNbgm4aPF8Eo54RJaWwOEme2mx5en4Y42uhIYUml
+ eDmog5p6uj5Cw2kq7hRU2+ffPArXZTA74kB0u3vO6pAwK//yeGr0IoAolygxacpA5Swc
+ k9+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8TRUc/6qxbRonZeyu/eHrwf3zVnyXzkArPwmJIDUMtM=;
+ b=Ug5RGs3GOpaf679UEn63Rq0P1sL7v9TZDl0Ea+msHgxEV+b/7btpb4fCxPQrJdWi3g
+ yIYMIcSaBabcRyBXukimfeuLIzoR893B+nSi7vE0Lkm1jmkAAgz9NluY0vBzC3BKTwpd
+ e041lEdjlEWQhaxDGTMUgRqxcR2D5dk8D2bdjU8CVDFCN2eJwOWbkmAnbiEQ+auJzer8
+ XzO5UsUcttgkcqXPNN3XV80c18Z4KWT6UCkC3TLpovqBa/mDO0CVNU4iETY3zaC2Ft4t
+ tupRGJDTezhJNebbAQ3V114Dk7fj2w9Zj/JrLkYodOetRCmejR9Iggler8AcpTWqAuln
+ vgzw==
+X-Gm-Message-State: APjAAAXci8EDOjzjdehkjkqK2WbWE/0tOTLpsr3N3+qUk0w0cjIxP855
+ Q+ilR5APGIjFX5dGsr7C6qo=
+X-Google-Smtp-Source: APXvYqzuRX2BbB5bKpbltjPVNZNf254isGsSnnHbYaWxVaOrFk33bGcEzQ0YZE+p5H3Hk4FdweBwLg==
+X-Received: by 2002:a1c:81ce:: with SMTP id c197mr15433901wmd.96.1578841822489; 
+ Sun, 12 Jan 2020 07:10:22 -0800 (PST)
+Received: from localhost.localdomain (h-213.61.242.164.host.de.colt.net.
+ [213.61.242.164])
+ by smtp.gmail.com with ESMTPSA id b17sm10887885wrp.49.2020.01.12.07.10.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 12 Jan 2020 07:10:21 -0800 (PST)
+From: Chanho Park <parkch98@gmail.com>
+To: catalin.marinas@arm.com,
+	will@kernel.org
+Subject: [PATCH] arm64: add Cortex-A76 to spectre v2 safe-list
+Date: Sun, 12 Jan 2020 16:10:14 +0100
+Message-Id: <20200112151014.2593-1-parkch98@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_060057_835561_0A70E21F 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20200112_071024_446820_D1F20753 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:67c:1be8:0:0:0:0:25 listed in] [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (parkch98[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (parkch98[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,47 +98,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Aapo Vienamo <aapo.vienamo@iki.fi>
+Cc: maz@kernel.org, linux-arm-kernel@lists.infradead.org,
+ Chanho Park <parkch98@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the USB host port on the APx4 development board.
+Cortex A76(Enyo) core can be added in spectre v2(CVE-2017-5715 (Spectre,
+Variant 2, Branch Target Injection) safe list.
 
-Signed-off-by: Aapo Vienamo <aapo.vienamo@iki.fi>
+Signed-off-by: Chanho Park <parkch98@gmail.com>
 ---
- arch/arm/boot/dts/imx28-apx4devkit.dts | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/kernel/cpu_errata.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/imx28-apx4devkit.dts b/arch/arm/boot/dts/imx28-apx4devkit.dts
-index 3a184d13887b..c5acc19c982d 100644
---- a/arch/arm/boot/dts/imx28-apx4devkit.dts
-+++ b/arch/arm/boot/dts/imx28-apx4devkit.dts
-@@ -183,10 +183,20 @@ auart2: serial@8006e000 {
- 				pinctrl-0 = <&auart2_2pins_a>;
- 				status = "okay";
- 			};
-+
-+			usbphy1: usbphy@8007e000 {
-+				pinctrl-names = "default";
-+				pinctrl-0 = <&usb1_pins_a>;
-+				status = "okay";
-+			};
- 		};
- 	};
- 
- 	ahb@80080000 {
-+		usb1: usb@80090000 {
-+		      status = "okay";
-+		};
-+
- 		mac0: ethernet@800f0000 {
- 			phy-mode = "rmii";
- 			pinctrl-names = "default";
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 85f4bec22f6d..9895d56bf5ac 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -546,6 +546,7 @@ static const struct midr_range spectre_v2_safe_list[] = {
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A35),
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
++	MIDR_ALL_VERSIONS(MIDR_CORTEX_A76),
+ 	MIDR_ALL_VERSIONS(MIDR_BRAHMA_B53),
+ 	MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+ 	{ /* sentinel */ }
 -- 
-2.24.1
+2.17.1
 
 
 _______________________________________________
