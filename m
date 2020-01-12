@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EC221387F9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 20:51:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 803181387FA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 20:53:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8cLe2vrcsklyw8nNjH078Q5F0nH6al0P4yPdydeF074=; b=GQqVN7Z1NjuLJY
-	Udd94y9oEjaIxW8vT+fYcUhQZzu8PbhiiPcOHEpyD8GoLuBwNfdPDIgb0gJx1GuB3klekjE/QXyJ1
-	G6aF5AEwuWtqzUiu2q5skYvOUR/LOIIODs4PcxozddnJtDkJXQ1VP0CMtDvrs0Casl21xjZYIY0R2
-	j/n6AiW0K4ZhCGSmFbsRJF/xb7jEzUH6e2p3W1wg8KTMlScbx+lORS93mUheB8DJhp/OJ5fOveSAg
-	pL6mD52Xv1CG+XO8kMWQHWCyG9kw29xqSRCV4CmJMMozQJhdzmQVpTJB59US9hXWuHjB/7Le2aLh9
-	KsnXS1G8cn9edWOe0X2g==;
+	List-Owner; bh=GfQ3Iwz1tJ6viC+vUaZ8QT7N2i/u+Y1v82UoaGv9oiQ=; b=PkWtpJGm2FHCNE
+	27NXhykO3mLtRlbGYvEiQKKjWV959W56rDKa/enUXTMRv+fz0pqaTGkWUg/zuufVFc4cpBjaR6jKM
+	z1Q5gkEr83gv2+IazOj7jrRDFbTfQ8acDQPrFG3p44zBDS35uILOwUz51QEw8ijnQJuTjQCQFCgKy
+	/h/VLYjz5kEj3Y31Nw3+He2WYHRk5FraE3yTEcjr4p+7d6v3tnR489XyzN4mg+4drU0W5lQXE5v2l
+	l4k8ArVNVztPK98j60lPdwMrRecWDaZCqFZQVWq2zxRrWX/uP8+0gqRTX1goIeYh7VGi4OgskXUiy
+	NB/G0lnXS0t3vLGoY7HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqjGf-0006jI-OP; Sun, 12 Jan 2020 19:51:25 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iqjII-0007MA-E6; Sun, 12 Jan 2020 19:53:06 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqjGW-0006iM-NL
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 19:51:18 +0000
-Received: by mail-io1-xd42.google.com with SMTP id n21so7316863ioo.10
+ id 1iqjIA-0007La-W4
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 19:53:00 +0000
+Received: by mail-il1-x144.google.com with SMTP id z12so6087143iln.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Jan 2020 11:51:16 -0800 (PST)
+ Sun, 12 Jan 2020 11:52:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=REmH10/0/8xQ7k+OvzyeQmQ9it7Xxyg3EjuGe+TsGnY=;
- b=vt47ukZrybvWAeptWdA2VYKJuKDIM5rG8gfVgVcwk16lAZig37c8aQEVScEvXjCgJq
- kyfDW2D11/19ueUZMsfgYB7KT1pV8+lnu1DNZ+Ug8VB8Z0QsiPtSPRhx6AU7IIuOG72k
- IsgGsmWy6sNW45h1kFl63kiLKnSHxXAHfUmCXEI5Ln+Crwb48wdjyJm2Pfts5Kga6dZ6
- A1bbn9hgHcyNVnuwoMcPm6F5hwVO9fMVt1z4p3V6piKOgPfeVolh6aEBr0PzSQJdfjB8
- eVcGrvslYFiFckag5SwhnVVMULl5/Z+IBRYinIpgYy36sV+HnO2C827PBMkN5kjBAhWg
- jzDA==
+ :cc; bh=FciysstNs4s9XIIyOOQXxJ7o5Mf6P4dS67p4qSOo1sE=;
+ b=aNDgy+hr/2CWmns4WXsiehuhiy59de3xALxmEK0X6qLdqVYJGmuRdNF1pZur/prkcZ
+ L+LYtQbJjwuJYqqNnXQN4HUSGUjzyhXvoFlK5F+mdY5EWUn18bH+CXkdf8ny2+0UFWx3
+ 7C+pHn2/x9rCsu/PJ6+As90XZfxgA5XV/LV2T1PBo5Lu/UjnQNGn/Xb6Ak2PuKJOkb4I
+ FzXhGm1QoDUQwzCoCoxDcwDXsrp/yFUhqboqLVJIIjYM+ehwuqqdUy8qx7z8NCjcFfIZ
+ Fh5yZUPDzV0Ecl768zXLyr1aJAstXReQ54gX/t0Qvxean1muR3g+XhiYyWahmLWvIuBn
+ 31+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=REmH10/0/8xQ7k+OvzyeQmQ9it7Xxyg3EjuGe+TsGnY=;
- b=uEdD+4BkQ4eVd8cjfzlkXFHLGmb706QUr3S+pgNDZBs3dltl8zGECiDcDLmDouGHLq
- kC+flIWjFm8Up2bl4Fec3N89eE7v6Nz38XsHu4a1dFYWn2drOTvh+gEYFOmTIjDxqaDM
- ENIEb4dNQjuL5uCwWGG4Crt0TlR2+yOOLWvS9BFpm14TmektAFAfugAvCZQYIlljP1tY
- gH7PLAnVxd47DIAlJqWuakjgPCGSU5OfU0OIYneZJJyyBa3SXr15sbe7fCpRSXkps/Be
- 5sMW5f9fFj9dQekPcMWl+97ZkXcl8wm8PNrAL8RIl4qtgsNoRYdXZSq026+LdfmZN4qq
- CK6Q==
-X-Gm-Message-State: APjAAAVNTaC8gA4Yaic8PUxu8jk7P/bJ5+56urq1/YDDSEgRGfFEuq4c
- XSeTEV+GKz/dhvRPB9pDUUgCAgf5MFZRmAupeGfmqw==
-X-Google-Smtp-Source: APXvYqwA/wUce7PObFd/HBY7rmKaCk71Y8EsmtYHpneyLVR294R7hKEWRlQ+hiRZU8PROXtUm8/MzSrP1RitepUDExU=
-X-Received: by 2002:a02:ce8a:: with SMTP id y10mr11980243jaq.21.1578858675345; 
- Sun, 12 Jan 2020 11:51:15 -0800 (PST)
+ bh=FciysstNs4s9XIIyOOQXxJ7o5Mf6P4dS67p4qSOo1sE=;
+ b=lNktwgo96EunNg9+7cXstpsO7dP+b8fZISQo41EHSWcQe27dJLNxnFf1bnluB6bkmC
+ NnUB2CXo/DuK0/FVXWkPZlUD43lPZ4e29SK9jV/byDXjdPop1pCdchkWJpkIoNOiXogM
+ TZ11CI+Erniaw9H5dFMBxYYWYd/RFcupY5rPwktAno50EsBPoVM6Ig0aBEC9bSuCrzNx
+ z2uj13jv6lJra0Yy5wkHtcSPiDm1X8Nu/XEV4rAZBUz7b3APxSkrFfCwl3V6ZOmtiil5
+ /n4xBvOnu+URkkEYFI3XcyvVR/+bMakRb68DeWccZWfvzqkgS3vxUOsir0s72ZJwXteR
+ 2XgA==
+X-Gm-Message-State: APjAAAXiel9zgicNR9NjidLsPL7juCisB7R+s0MCDddaWFWEiu656bn5
+ WLSc9OBli9Bht4e//Qts3w81dYnJKOuonIsVUbs+i+MD2F/CXg==
+X-Google-Smtp-Source: APXvYqxXS8qGoi4OUyj9E4Dm4YzfydoMzOV078KRrAVbCKfCs69aZo4A0j8oAy6wTvHhSoZv63HrWfu69V011lleQdA=
+X-Received: by 2002:a92:db49:: with SMTP id w9mr11162510ilq.277.1578858778027; 
+ Sun, 12 Jan 2020 11:52:58 -0800 (PST)
 MIME-Version: 1.0
-References: <202001120045.BaGKHeel%lkp@intel.com>
- <CA+E=qVdq-zNJDOV_4PXEA_MfvkbXjPbaTVe1S66Zc0FVAdgpMw@mail.gmail.com>
-In-Reply-To: <CA+E=qVdq-zNJDOV_4PXEA_MfvkbXjPbaTVe1S66Zc0FVAdgpMw@mail.gmail.com>
+References: <18b6a136-9198-4d4c-878c-e6962e3a833e.lettre@localhost>
+ <20200111225938.hp6xxr4k7jp7yvv2@localhost>
+ <20200112134933.sq7njjxdm5gxtmek@gilmour.lan>
+In-Reply-To: <20200112134933.sq7njjxdm5gxtmek@gilmour.lan>
 From: Olof Johansson <olof@lixom.net>
-Date: Sun, 12 Jan 2020 11:51:04 -0800
-Message-ID: <CAOesGMh4TaDNCa7-DqGgotjReSFosx1RNDerient7_UA7KWLFQ@mail.gmail.com>
-Subject: Re: [arm-soc:sunxi/dt 49/52] Error:
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi:54.19-20 syntax error
-To: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Sun, 12 Jan 2020 11:52:47 -0800
+Message-ID: <CAOesGMgWc4XBDSXnRsQ_Ba4oB0uvh5mgDq7Nj6P7FM6BhVdcyg@mail.gmail.com>
+Subject: Re: [GIT PULL] Allwinner Device Tree Changes for 5.6
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_115116_811775_1BCFC668 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20200112_115259_032214_296FDBBF 
+X-CRM114-Status: GOOD (  20.06  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -89,58 +89,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ARM-SoC Maintainers <arm@kernel.org>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Maxime Ripard <maxime@cerno.tech>
+Cc: SoC Team <soc@kernel.org>, ARM-SoC Maintainers <arm@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jan 12, 2020 at 11:06 AM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> On Sat, Jan 11, 2020 at 8:57 AM kbuild test robot <lkp@intel.com> wrote:
+On Sun, Jan 12, 2020 at 5:49 AM Maxime Ripard <mripard@kernel.org> wrote:
 >
 > Hi,
 >
-> > tree:   https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git sunxi/dt
-> > head:   6163ce8467052cdfe42581036bc71fe4aac09eab
-> > commit: 7486ee80f62e610053a33e4f94fb04172c09a41a [49/52] arm64: dts: allwinner: a64: add CPU clock to CPU0-3 nodes
+> On Sat, Jan 11, 2020 at 02:59:38PM -0800, Olof Johansson wrote:
+> > On Fri, Jan 10, 2020 at 06:14:51PM +0100, Maxime Ripard wrote:
+> > > Please pull the following changes for the next release.
+> > >
+> > > Thanks!
+> > > Maxime
+> > >
+> > > The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+> > >
+> > >   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+> > >
+> > > are available in the Git repository at:
+> > >
+> > >   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/tags/sunxi-dt-for-5.6
+> > >
+> > > for you to fetch changes up to 6163ce8467052cdfe42581036bc71fe4aac09eab:
+> > >
+> > >   arm64: dts: allwinner: a64: enable DVFS (2020-01-09 17:31:39 +0100)
+> > >
+> > > ----------------------------------------------------------------
+> > > This is our usual set of DT patches for the Allwinner SoCs.
+> > >
+> > > It's fairly big this time, but the highlights are:
+> > >   - Enable cpufreq and CPU thermal throttling on the A64
+> > >   - CSI0 support on the R40
+> > >   - CSI1 support on the A10 and A20
+> > >   - SPI support on the R40
+> > >   - PMU support on the H3, H5, H6 and R40
+> > >   - MIPI-DSI support on the A64
+> > >   - PWM support on the H6
+> > >   - Thermal sensor on the A64, A83t, H3, H5, H6 and R40
+> > >   - More DT schemas fixes and conversions
+> > >   - New boards: LibreComputer ALL-H5-CC H5, LibreComputer ALL-H3-IT H5,
+> > >                 Pine64 H64 Model B, Neutis N5H3
+> >
+> > This doesn't build for arm64 defconfig. What happened at your end
+> > that made this slip through your testing? :(
 >
-> I can't find sunxi/dt branch in arm-soc tree nor this commit, 'git
-> show 7486ee80f62e610053a33e4f94fb04172c09a41a' complains "fatal: bad
-> object 7486ee80f62e610053a33e4f94fb04172c09a41a"
+> The patch in question is using a define that was merged into a
+> separate branch, and I only tested the result of the merge between the
+> two branches... Sorry.
 
-Yeah, I dropped it based on these failures:
+It happens. Might be worth running each pull request through a quick
+test at your end to avoid it in the future. Ideally we'll set up
+automation on patchwork for it at some point as well, so we can catch
+it pre-merge.
 
-https://lore.kernel.org/linux-arm-kernel/20200111225938.hp6xxr4k7jp7yvv2@localhost/
-
-> > config: arm64-defconfig (attached as .config)
-> > compiler: aarch64-linux-gcc (GCC) 7.5.0
-> > reproduce:
-> >         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-> >         chmod +x ~/bin/make.cross
-> >         git checkout 7486ee80f62e610053a33e4f94fb04172c09a41a
-> >         # save the attached .config to linux build tree
-> >         GCC_VERSION=7.5.0 make.cross ARCH=arm64
-> >
-> > If you fix the issue, kindly add following tag
-> > Reported-by: kbuild test robot <lkp@intel.com>
-> >
-> > All errors (new ones prefixed by >>):
-> >
-> > >> Error: arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi:54.19-20 syntax error
+> > I've had to rebase arm/dt to drop this branch. Please send a new tested/fixed
+> > version.
 >
-> Line 54 references "CLK_CPUX" in sunxi tree sunxi/for-next branch, so
-> I assume that someone merged sunxi/dt-for-5.6, but not
-> sunxi/clk-for-5.6 which exports this clock.
+> Ok, I will, thanks!
 
-Yeah, Maxime missed the dependency when he sent in the merge request.
-Bindings headers cause pain like this, unfortunately. We often end up
-needing a stable branch for the binding/header change and bring that
-in as a base to both clock and DT branches.
-
+Sounds good.
 
 -Olof
 
