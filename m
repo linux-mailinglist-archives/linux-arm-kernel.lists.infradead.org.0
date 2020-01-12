@@ -2,82 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C37813881C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 21:00:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4268513881F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Jan 2020 21:01:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6FV3zxKONRcLw5GPDdTdCbYHHNqxrJCfk8o2D9U4evk=; b=fSCSiyechlI8vv
-	WftSzTMqeyhKrERkShbZcdoCvt01viZJtekg0ur+SGQN0ntzqFOM4xdBJ5JIzPKxtRUPGCURdv5qe
-	3VMBm8wgQxApoQv4Zjgg0+YHU6q1orSE2UgXjDQZNHJc4SzydtmRCIkGsAjJ3+/W5I4XxPGFS7x/w
-	yQu7SAbec1gywfXT9N47B6x7tZ7tEXOjl4XUjLY3Wkiu3p2izI6wUEnNoYULb2vB3t0QkH/NnM9Dz
-	m/k24IcmzQYuwSwEArva7KPgTvUlaWmaTTAch7ZtAMUxfxrIKve2mIzLbvZgwyXRsq4UcKmzBoBVM
-	z5vsKqqwJg8vDABWOr0A==;
+	List-Owner; bh=sutUjgP3W6MhVTy7AS21lfdTNdRC5upL08MJSRq8Fio=; b=kE+CDqJ/4C6a6P
+	hG3PV8IGS7g5jZf/quSdOwKZ3C5kqbbap8BAbCsTo6zs79aypQewJOWQ6iHrCuph/pBPjPT5DswpV
+	TF83LwHHMOUo1ZZKLEK14LBn5PvVNP9XSNuzgQ+K9t0KW3FQwmysrPXe2KCND9+R9dayaXpsOe5wV
+	2WRq3sXV2vzyjz6xOXhcQGyOG6jrlylMJQebRRvaSJuNHupP61GeurBe4vrY+zjwPEMBPs3P6M1Ml
+	ftvILQWxAWg7JVOk5gweM3dCdSlSF9pwkqOTvLulKvJITziCARg2OT4tUjSqYa145Zd/8ZJcitfOF
+	M3+/VFd8G555LqZx+nXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqjPY-00025H-3H; Sun, 12 Jan 2020 20:00:36 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iqjQ9-0003mp-Pt; Sun, 12 Jan 2020 20:01:13 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqjP9-0001y3-2m
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 20:00:12 +0000
-Received: by mail-io1-xd43.google.com with SMTP id x1so7334295iop.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Jan 2020 12:00:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4mB/pHZUD7pjqdY45Y5CDvGVoduZ0ZQ2r5DCq1x4iog=;
- b=UPPSeWIa8hQFLkbNLWRaxUgSYb7TwmCHtvRkLp1TpTRt4i0ahGu0JrwZmLsSVBtxef
- fOvWys6QfXgKHL5I6BAgz+e/whyHzQjbg5WP8MI2J7qEjPtaYm40v/8CsdeIbs/F3CNF
- zK1T3MvNTJ2UPXusLsfkZ3t4FlycfJoxPvPS6jErw5AFU7u1dy62EgZJllR4weH/vj/R
- eoI1j+iqmk4ttbJ1xX9uvw/SyCaZ2Fcn52DUxkynHOwRMpo3HVnzt6QdJ0a5pgWphPln
- pFkXqHo1ud5kQrIU1zlHrq4w86zzD6u2vo2/HEjtTEF5PVcJqJVKqRhGiZc8wAhojoTW
- 183Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4mB/pHZUD7pjqdY45Y5CDvGVoduZ0ZQ2r5DCq1x4iog=;
- b=ZcMBw8NfA5TlBUy4SgmpW9+Rhv9Z2au4rpX1PJCeXz9c6ZBbmS0vfZqHu/1HZl6UpT
- N4yQ9VQ4bvbQD9r0dvABnOX5WHazxSKklVxLztUN15IB5IhheLCjbJVaiF/MY9ka7IBo
- amYq13rBH1JJJEGfsZsLzocwQd2cfJsiY3yQQ95IY8DVa/Teg0HbVxjcBYJ/xG8s0Y2k
- k0sLGwCtFYr2pc/72gxrxhPFWYzPJPb0zo377Cgo/srZDSB4BvHxFkejznh5lpcUqm/W
- 1fPY9hNgOsMLP83cNmAqn1jeReL/3tt5RpNn8cPpk8QT9ppy95gTvCIs/s6vLlnq8IWP
- na/g==
-X-Gm-Message-State: APjAAAUgiT7trVy6M2rNgXK/017rM9TtycaZiUoxx6ivRVUU4ppnsivf
- iqYEQ3SAUJp5Pi3mszrOahBt7mJpWQ5XQNU7jojKIvhHzLY5HA==
-X-Google-Smtp-Source: APXvYqyqtIdNVp4dAlM2o9n7nX85aZbnej16a5k16emsTD5losR5+msLRBN07golodtkhQMVuCOh2ZGuVt7FoBUusA8=
-X-Received: by 2002:a02:7fd0:: with SMTP id
- r199mr11669542jac.126.1578859209969; 
- Sun, 12 Jan 2020 12:00:09 -0800 (PST)
+ id 1iqjPz-0003jm-RG
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Jan 2020 20:01:06 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 288D083646;
+ Mon, 13 Jan 2020 09:00:55 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1578859255;
+ bh=IL1PdJcKPjwwEdc8J7wiAsXAM3GoztCVHbvafOTX1zQ=;
+ h=From:To:Subject:Date:References:In-Reply-To;
+ b=CSIf8zzef7dEYp1DL6QhYthfJZu/dlT6Ctgg0s6NR4HbVeIvHatiwZ7die+7XNVjr
+ CC4+GikPKHqO+1pvUroGu/Qon2OI/M3TVNyl91GckDt2Qc3Jmfzx4j9cGizptbPJmd
+ 9avqT1OeHSxnUw1ll+it/3j9/K0MQ7eGBsC4SDHND/YPUQKAmftd4T4mg4TE1BW/9h
+ 5F910XTXZ9/Ax+tO+Y+jaj9GMkZo0JaW81jUje+JrntmyqWXOBPRfjdOUVURJ3oSDe
+ SljtZkXPv7N2ZWVSTBlyPdzbrAMK51cpYCEOR7lW2hNLLQOczvRuBt6q+iXE5478dy
+ QHhZ6xQRLO0LA==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5e1b7af70000>; Mon, 13 Jan 2020 09:00:55 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8)
+ by svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8) with
+ Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 Jan 2020 09:00:54 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1473.005; Mon, 13 Jan 2020 09:00:54 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, "yuehaibing@huawei.com"
+ <yuehaibing@huawei.com>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "linux-gpio@vger.kernel.org"
+ <linux-gpio@vger.kernel.org>, "rjui@broadcom.com" <rjui@broadcom.com>,
+ "rayagonda.kokatanur@broadcom.com" <rayagonda.kokatanur@broadcom.com>,
+ "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "li.jin@broadcom.com"
+ <li.jin@broadcom.com>
+Subject: Re: [PATCH v1 1/1] pinctrl: iproc: Use platform_get_irq_optional() to
+ avoid error message
+Thread-Topic: [PATCH v1 1/1] pinctrl: iproc: Use platform_get_irq_optional()
+ to avoid error message
+Thread-Index: AQHVx2nXfGk87Uyk9UmbQT0PK/pn36fmnTwA
+Date: Sun, 12 Jan 2020 20:00:54 +0000
+Message-ID: <f9ea8a877194fb0a928ab4f41171a5a7ef3233f0.camel@alliedtelesis.co.nz>
+References: <20200110035524.23511-1-rayagonda.kokatanur@broadcom.com>
+In-Reply-To: <20200110035524.23511-1-rayagonda.kokatanur@broadcom.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:d1a1:ea74:6baa:5aa3]
+Content-ID: <B700B6FD4109D04A82F8CC6910E30027@atlnz.lc>
 MIME-Version: 1.0
-References: <20200113065808.25f28c40@canb.auug.org.au>
-In-Reply-To: <20200113065808.25f28c40@canb.auug.org.au>
-From: Olof Johansson <olof@lixom.net>
-Date: Sun, 12 Jan 2020 11:59:58 -0800
-Message-ID: <CAOesGMifHn6DbNgYm6YUbdKjSL5rNgdWrq+HX9dEusrOr9xX2A@mail.gmail.com>
-Subject: Re: linux-next: Signed-off-by missing for commit in the arm-soc tree
-To: Stephen Rothwell <sfr@canb.auug.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_120011_176996_78EF05AF 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200112_120104_354843_E74E191E 
+X-CRM114-Status: GOOD (  15.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [202.36.163.20 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,43 +108,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Yann Gautier <yann.gautier@st.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- ARM <linux-arm-kernel@lists.infradead.org>,
- Ludovic Barre <ludovic.barre@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Stephen,
+On Fri, 2020-01-10 at 09:25 +0530, Rayagonda Kokatanur wrote:
+> Use platform_get_irq_optional() instead of platform_get_irq() to avoid
+> below error message during probe:
+> 
+> [ 0.589121] iproc-gpio 66424800.gpio: IRQ index 0 not found
+> 
+> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 
-Thanks for the report. Time to automate this at our end, we've had a
-few too many of these slip through all the way to you lately.
+Reviewed-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 
-Where do you keep your scripts that you catch these things with? Do
-you have a writeup of the checks you do? I should add it to my
-automation once and for all.
-
-
--Olof
-
-On Sun, Jan 12, 2020 at 11:58 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
->
-> Hi all,
->
-> Commit
->
->   7e5d83981911 ("ARM: dts: stm32: add sdmmc3 node for STM32MP1 boards")
->
-> is missing a Signed-off-by from its committer.
->
-> --
-> Cheers,
-> Stephen Rothwell
-
+> ---
+>  drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+> index 831a9318c384..0d2bdb818d41 100644
+> --- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+> +++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+> @@ -843,7 +843,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
+>  							"gpio-ranges");
+>  
+>  	/* optional GPIO interrupt support */
+> -	irq = platform_get_irq(pdev, 0);
+> +	irq = platform_get_irq_optional(pdev, 0);
+>  	if (irq > 0) {
+>  		struct irq_chip *irqc;
+>  		struct gpio_irq_chip *girq;
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
