@@ -2,68 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBEE21391FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:17:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A7A3139207
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:19:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7FrgRNe944jOUhyLR6S6HsSqzwgxJLm/dTgvNBLHKVM=; b=P+9e0eJnTlbgTQ
-	26XOyNml4pxvuC2DbL2T+NKeqjoNE3bj1ecjuAoX4jGLrTJRRqOn3OGDBUbG3Mm2DJvuSix+hbkdE
-	AgRuTR178NhqNnL/7N/D/4LHq5RwPzk7oGWwBzDRnrABOfMT7Hl3RaYPDt/imH2cegw5wj2pKfrWH
-	k7YAvjrCPfZdQasZFz66pkXcvEwSP7U4ZLFkof3YCOudeoHNkm1P1i+TBO9b6yBcW0W9+zrs0BQg0
-	GMVc5UpLvc4sSqRFvD1gEZDVhFP+XtiV9V5BSimHrKlhBLMTXzodreLEMH61mVV6X4yGqEOh5hjZ6
-	Pwv2O9NYdJ/8ExmrFEyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yZwPZZXP4Pv+XVsPcCt27BUSH0R/5QP1HkT84Ncre5Y=; b=lFem7QtrpfsPE+
+	9je1wub5m7rrTR+OJY6SAgwvS1/WPTOkO/MaJUaf+9jqAsa+06d7ckqbFzzTSA/FYsZ/7OVUMqfdA
+	C0/3fSAT6W/NLm/16IBkcFbbpN2w0yE72D/vg6dOnAnW/NNaPj7I5kJOvW8pSzzakJm5F8pxkWLL+
+	ASv61WzC22xlaR5EMXgPhP+oeuqwO43vqRFBOVSqPTzg7h3VdwGk7e2LeelyxajIcHrTFuUk3/UYc
+	z5TNY87m2t+N9qg1VJSNOV1+2bu8PHvxa+k+hWQ/ulwM1bHQ8ztEQBJQNf7AWxYrioDxmpDcD/l2k
+	WDBT/wwMSpWOMtY+XWcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqzbC-0001TR-Li; Mon, 13 Jan 2020 13:17:42 +0000
-Received: from mx3.wp.pl ([212.77.101.9])
+	id 1iqzdA-0001pU-Py; Mon, 13 Jan 2020 13:19:44 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqzb1-0001Rw-MM
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 13:17:33 +0000
-Received: (wp-smtpd smtp.wp.pl 467 invoked from network);
- 13 Jan 2020 14:17:26 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1578921446; bh=fiL5feLAQg1wnn446GC+3zMpF7346AQGDCS3XeChSTA=;
- h=From:To:Cc:Subject;
- b=qzBDUTyY3N87LSG2hKt7ZSXgIJ4yQdIF3Os+2js59ftWgJBrd/cPmAI/+Hdwlnkg6
- Fyed6NcUYyiy55TmsPGH5Wenjb7lct8Nj6qQX3SY6YaR/ETLhN91iUyNG/C0oGr5Hi
- kCBZomcIlnMvzE7EYGBk9nRfqXBXXMu5T905jGjM=
-Received: from c-73-93-4-247.hsd1.ca.comcast.net (HELO cakuba)
- (kubakici@wp.pl@[73.93.4.247]) (envelope-sender <kubakici@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <boon.leong.ong@intel.com>; 13 Jan 2020 14:17:26 +0100
-Date: Mon, 13 Jan 2020 05:17:12 -0800
-From: Jakub Kicinski <kubakici@wp.pl>
-To: Ong Boon Leong <boon.leong.ong@intel.com>
-Subject: Re: [PATCH net 3/7] net: stmmac: fix missing netdev->features in
- stmmac_set_features
-Message-ID: <20200113051712.73442991@cakuba>
-In-Reply-To: <1578967276-55956-4-git-send-email-boon.leong.ong@intel.com>
-References: <1578967276-55956-1-git-send-email-boon.leong.ong@intel.com>
- <1578967276-55956-4-git-send-email-boon.leong.ong@intel.com>
+ id 1iqzct-0001oS-0V
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 13:19:28 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00DDIVCk021817; Mon, 13 Jan 2020 14:19:22 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=PNpmZ/1bn7ZvtvS1FYTPLDxvUN515Mcm8HzueivD4+0=;
+ b=BZ3bX30GGJDNZ+GCxhSU4q7rNQBOnnslt+RwvEWXid6vy9gJsyP7nkdyzLJLkW6JE+OS
+ XBv73V/9HRnUYHL0l9h0wDsDKNr1XUGIhbNDeb3eXseoGPCxsh+sZzOmt+IqKR5T7b8u
+ RncjhkcbwGx+MM0D2b5z1JjGNMG5jKDvelShapkfeMQoG6v17D5i9UTxHCDeIy270wRg
+ Ozvqga/4kDrdCnN49Nlj97Qj9H20ePJuW36/s2HGEo5PnMcWIm71+TGZJySI2BVAxy5N
+ t+SKrT7b1uGLHjrQvr41heCV3OOmhpwFi/wuM83A91yWZIpJXw+htV5L5Nn+iKgl0mYZ HQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xf77arbpq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 13 Jan 2020 14:19:22 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E376C10002A;
+ Mon, 13 Jan 2020 14:19:21 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D36A42B8214;
+ Mon, 13 Jan 2020 14:19:21 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Mon, 13 Jan 2020 14:19:21 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: stm32-adc: don't print an error on probe deferral
+Date: Mon, 13 Jan 2020 14:18:59 +0100
+Message-ID: <1578921539-6353-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-WP-MailID: 9114ca6d95137af99c81d33196a332a9
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 0000000 [YVNE]                               
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-13_03:2020-01-13,
+ 2020-01-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_051731_913500_3A38C0C4 
-X-CRM114-Status: GOOD (  11.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_051927_354445_D87C7523 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.9 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.77.101.9 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kubakici[at]wp.pl)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -82,50 +91,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Voon Weifeng <weifeng.voon@intel.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Tan Tee Min <tee.min.tan@intel.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: etienne.carriere@st.com, lars@metafoo.de, olivier.moysan@st.com,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com, knaack.h@gmx.de,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 14 Jan 2020 10:01:12 +0800, Ong Boon Leong wrote:
+From: Etienne Carriere <etienne.carriere@st.com>
 
-Please fix the date on your system.
+Do not print an error trace when deferring probe for some resource.
 
-Please always provide a patch description. For bug fixes description of
-how the bug manifest to the users is important to have.
+Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/iio/adc/stm32-adc-core.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-> Fixes: d2afb5bdffde ("stmmac: fix the rx csum feature")
-> 
-
-Please remove the empty lines between the Fixes tag and the other tags
-on all patches.
-
-> Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
-> ---
->  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> index cd55d16..dc739cd 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> @@ -3911,6 +3911,8 @@ static int stmmac_set_features(struct net_device *netdev,
->  	for (chan = 0; chan < priv->plat->rx_queues_to_use; chan++)
->  		stmmac_enable_sph(priv, priv->ioaddr, sph_en, chan);
->  
-> +	netdev->features = features;
-> +
->  	return 0;
->  }
->  
+diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+index 97655d7..2df88d2 100644
+--- a/drivers/iio/adc/stm32-adc-core.c
++++ b/drivers/iio/adc/stm32-adc-core.c
+@@ -688,7 +688,8 @@ static int stm32_adc_probe(struct platform_device *pdev)
+ 	priv->vref = devm_regulator_get(&pdev->dev, "vref");
+ 	if (IS_ERR(priv->vref)) {
+ 		ret = PTR_ERR(priv->vref);
+-		dev_err(&pdev->dev, "vref get failed, %d\n", ret);
++		if (ret != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "vref get failed, %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -696,7 +697,8 @@ static int stm32_adc_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->aclk)) {
+ 		ret = PTR_ERR(priv->aclk);
+ 		if (ret != -ENOENT) {
+-			dev_err(&pdev->dev, "Can't get 'adc' clock\n");
++			if (ret != -EPROBE_DEFER)
++				dev_err(&pdev->dev, "Can't get 'adc' clock\n");
+ 			return ret;
+ 		}
+ 		priv->aclk = NULL;
+@@ -706,7 +708,8 @@ static int stm32_adc_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->bclk)) {
+ 		ret = PTR_ERR(priv->bclk);
+ 		if (ret != -ENOENT) {
+-			dev_err(&pdev->dev, "Can't get 'bus' clock\n");
++			if (ret != -EPROBE_DEFER)
++				dev_err(&pdev->dev, "Can't get 'bus' clock\n");
+ 			return ret;
+ 		}
+ 		priv->bclk = NULL;
+-- 
+2.7.4
 
 
 _______________________________________________
