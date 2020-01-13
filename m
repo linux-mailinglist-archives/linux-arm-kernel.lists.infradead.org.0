@@ -2,149 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 239E6139A98
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:13:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8350139AAF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:26:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rGnvlIj1ReNAt0uAnA7ig8H6RiP3pAf7sodBOQayBaU=; b=qAyGI6rnkHzSf7
-	VoEvsTORBi/rHxCBQ/a1wNjwB/PYBmWitzyXAksaNhq/2MBFO3iJUt6fSx6IB1p5Tx2qQ2He1jeDL
-	NBi0RhPRWlu32Xdws7julCmEJvNYnnS9HcexRNvWTuD9nbz6tn61evCOr4D2yA/9tZgCizNrm0AEB
-	reBLle8F9RTYrDTBh4kXpe8jK1bEUNCD3C0Db3ct8cGohXXGnHe/0D8nUG7b6LWyFZs+E9sHqxlFq
-	dQanJg1qIb8SN8PoBPkU04tPSdbHAt5QlaGlpyodLlwssBMrQxKTwN0cstd/OPSkI1m5wsUoH5bni
-	L7/m0FjcfJY/C/Ofei3A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y4mjLGtpxKhGjzkOHqhyKoxsDmcxqpEH8NyvleS2iHA=; b=cajn8oNIh1bZuQ
+	PU73Df3J6A6ZYKqc5g/TFKiX9DCRG9pvOLprBh8n8Zq9sSADDjja0nrbdTTxFy/9mOd1o30GjDqUY
+	IL8XuYwKCKMatAN0Iq9azS1uLuEh56i6r2XzMWS0VafCPBr+CWIRzH1GgKrjrU08LdNjqhQuEhZMS
+	MXb/EO4EcakN+frjWIQmXP66ETnPvGrghUdXqiStqHlmT3tcXewUAWEgOaJrfChSRJC3DQRcgyCGi
+	MLQtn9GrjDoqTgtgHkMMNXMkLN7S7P1UAXcBeuh10c/ANfz7ffrandWIBbVQVTrF0LMedex4cbXLM
+	/bKjqAyO4vGT7fPrUo6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir65b-0003OB-4c; Mon, 13 Jan 2020 20:13:31 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1ir6IE-0008Na-NY; Mon, 13 Jan 2020 20:26:34 +0000
+Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir65U-0003Nr-Mv
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:13:26 +0000
-Received: by mail-ed1-x541.google.com with SMTP id dc19so9700490edb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 12:13:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=rOEiC8GKPmnGW5ckz6XjSwFgNch4y3tNED39Fm8Bs3s=;
- b=kutyIJ+XPsiXIuGALMEKavzxxdwRXOgdG6kGjfI1umMwQJooMevFxflcjbKizsUxqw
- yxQCyz0QA31kyXi/LpJIYQzxhHCmdLWS7f/ROcBDwA1QOB6VfqNPb5tfNHLD5247p+rX
- zGMvxBwtXFX7kQVol+tFMJlNhGZoj6Qis/YN3WcWzZCGCB6YpKZSZ9p3d1uDmxrpVKTq
- QxvjzO+aDC/A26GuyPHWsEWhcIQ7XiOgPbugsiKay1n+Ug5U0VevMJ2dNwMCasdrJlHf
- ox7t1p2vVnI5kElYBd5AZVxucUugMMBkWdzv5sfthPAxaMSwqabe6EBoNtnUdhKORh+9
- +1VQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=rOEiC8GKPmnGW5ckz6XjSwFgNch4y3tNED39Fm8Bs3s=;
- b=oEI6O1OF908kLNiIUkqGM+q8+Uc+hYB1ZgyBGZSxQPgLwi+tuAhwh+VvCeL8LFzyrK
- 2Ua8uJQKmQukrKP1B553psNu1FuzFfr43WO3D6oHm8H998VaIe05fe1UyXsB6yura78d
- 04yhS3NZPgUZ4CswHU/6lrkywvhZDj9zhbJb87Dsvx7trtuJqVdrdDzvR0zQ1CWkH0C6
- z7SHghSTLnUn7wtbv+Z96QcZR0f9lHVux9Qtr5YpxI1+E3+vpx2gP1zTIAp4ItrJ9Aj2
- qPK6f34LHBOfAry03EgzkXqOAclc5zrq7Ez675i610i5RPYPh1boN2JfhxucoSo19FJC
- ns1w==
-X-Gm-Message-State: APjAAAUqWr+/WKO+wst3xu2Zg6i85dvWOIQbpmFj4PsklnEFwhjsId7q
- D4hCpdtTTlnCXS1F/rNBIRQ=
-X-Google-Smtp-Source: APXvYqzatgZ9+7YX+f46SUVVAWVlPZzK5JS/QuSasQ1dGK+ccQoTpcneOzZVqY5P5jN2zJNdH0SGoQ==
-X-Received: by 2002:a05:6402:3046:: with SMTP id
- bu6mr19085544edb.139.1578946402921; 
- Mon, 13 Jan 2020 12:13:22 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id v8sm485229edw.21.2020.01.13.12.13.19
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Jan 2020 12:13:22 -0800 (PST)
-Subject: Re: [PATCH V5 3/4] ARM: dts: bcm2711: Enable thermal
-To: Stefan Wahren <stefan.wahren@i2se.com>, Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
- <1578941778-23321-4-git-send-email-stefan.wahren@i2se.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <926485bf-296e-3d6c-340c-cc80f2a0dcad@gmail.com>
-Date: Mon, 13 Jan 2020 12:13:18 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <1578941778-23321-4-git-send-email-stefan.wahren@i2se.com>
+ id 1ir6I7-0008N8-HW
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:26:29 +0000
+Received: from pps.filterd (m0148460.ppops.net [127.0.0.1])
+ by mx0a-00082601.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00DKOPB7007093; Mon, 13 Jan 2020 12:25:42 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=facebook;
+ bh=YMVBJbGmTCMPeM/KVL6fG5VRMvMQhDHKxQT5748iQoI=;
+ b=J1yz0yzFlWbAqfSdSFvN18+X/vkzNVaNVdkMmu90ykfymEeEPIrNIlbCqePr2SiXZT5E
+ YBrdfbfJRb9n6AJuCyjsMfYL+ibbtwCnfkPR7D5JxhdLO5whLSrjYiSsabN5zmrHffct
+ rbO1BrOAvaq8t14boTTD2cDLQSw4Ku5HhSc= 
+Received: from maileast.thefacebook.com ([163.114.130.16])
+ by mx0a-00082601.pphosted.com with ESMTP id 2xfcrshsg2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
+ Mon, 13 Jan 2020 12:25:42 -0800
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (100.104.31.183)
+ by o365-in.thefacebook.com (100.104.35.175) with Microsoft SMTP
+ Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 13 Jan 2020 12:25:38 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=eY87z+fcajIgIiB0WyUvT0oRz5pI9CqN2atf1I+Cge+CBUTSmdqOg0hhTbkoQFZvMpJdwgluFB5nOqeoD8jj/AYp1GoaW/8Xf76/LxcPDrj+8SnYOWc/iAg1glWnmWJ2274pRaFbEVJQlSgxomAhDpAnIveCfe1lYLFJsGWD/cjJA09dUXmlAaWsCEgb2g2aL5Ft2fRIUKNRYV18ng55kirHKoA/OGbYAMdRMRXU54ULlSCK1IGCOvTSFrNGSpu6SFLb0A08gajOgj2yiykPwtzMypUnVI9beW3I22PMCgwTdRacHMoOrmbRHe107tXqFoAIWvxnTKnXsIODU8aT5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YMVBJbGmTCMPeM/KVL6fG5VRMvMQhDHKxQT5748iQoI=;
+ b=nnLDJ4QKQ29/uQ9ryWgIARhJwpyxMF8W8FGJgT+Zhs9rgStRVX86Bg/29UgXzxisDTrFkNIt0sGNNIEA3ej1BAJdGDzjZ2cWkLhM7uBOfX4dpPA5772lPAY/ZzeKOhJT+KPyP02/vQBeAFiqevO3gg9/xnyt9Rb9N9XwIMl4SDMiXnHo9s6xiJ7fvhKjicmwymSvWgIeb3wnrHX/H138c8Q16Eu6rloKvWA5BI1veaRQKXvG3AFDyZ0ot/9TUBXYrMcp8NgM8ME7etn6TDJaf6kze4bTxHFvlpiv+wKRkk6B8KiSFWXlwDfDe4NLTeCc5pgd8qeS8x8Kn0I0ZqKUSQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=fb.com; dmarc=pass action=none header.from=fb.com; dkim=pass
+ header.d=fb.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
+ s=selector2-fb-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YMVBJbGmTCMPeM/KVL6fG5VRMvMQhDHKxQT5748iQoI=;
+ b=UejVoVVehUKHXOKod/wLceoE+nTaCc2CLL0TwnuEC27LqH/bRd3nJaYN+cQJ65qEEh15Yv20XdTiSnBRWhMdIzFaKw5LMuax/Zbkdd3uCjNFEycv/gleddpLZx1aNyTQA4pGvFJPOzRVU2Q3y1YlUD1kIxUD2oi/L2PuGt3sgAk=
+Received: from BYAPR15MB3029.namprd15.prod.outlook.com (20.178.238.208) by
+ BYAPR15MB2934.namprd15.prod.outlook.com (20.178.237.83) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.8; Mon, 13 Jan 2020 20:25:37 +0000
+Received: from BYAPR15MB3029.namprd15.prod.outlook.com
+ ([fe80::3541:85d8:c4c8:760d]) by BYAPR15MB3029.namprd15.prod.outlook.com
+ ([fe80::3541:85d8:c4c8:760d%3]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
+ 20:25:37 +0000
+From: Song Liu <songliubraving@fb.com>
+To: Alexey Budankov <alexey.budankov@linux.intel.com>
+Subject: Re: [PATCH v4 1/9] capabilities: introduce CAP_SYS_PERFMON to kernel
+ and user space
+Thread-Topic: [PATCH v4 1/9] capabilities: introduce CAP_SYS_PERFMON to kernel
+ and user space
+Thread-Index: AQHVtYUIRY0pFUyTckCQImxjUxqfyafpNC8A
+Date: Mon, 13 Jan 2020 20:25:37 +0000
+Message-ID: <7EBC6A81-1DA7-4D5C-972F-4D5987B12E2A@fb.com>
+References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
+ <e0cb2b8d-e964-bc23-bf80-58d7ac4ed6f1@linux.intel.com>
+In-Reply-To: <e0cb2b8d-e964-bc23-bf80-58d7ac4ed6f1@linux.intel.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Apple Mail (2.3608.40.2.2.4)
+x-originating-ip: [2620:10d:c090:200::6df5]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 03276049-59e7-43f8-60f6-08d79866c03b
+x-ms-traffictypediagnostic: BYAPR15MB2934:
+x-microsoft-antispam-prvs: <BYAPR15MB2934A2DFF73E81C06F0FB5B1B3350@BYAPR15MB2934.namprd15.prod.outlook.com>
+x-fb-source: Internal
+x-ms-oob-tlc-oobclassifiers: OLM:2089;
+x-forefront-prvs: 028166BF91
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(376002)(39860400002)(346002)(396003)(136003)(199004)(189003)(54906003)(186003)(6916009)(5660300002)(6486002)(36756003)(316002)(53546011)(2906002)(6506007)(6512007)(2616005)(478600001)(8676002)(81156014)(966005)(33656002)(7406005)(7416002)(81166006)(4326008)(8936002)(64756008)(86362001)(66476007)(66946007)(66556008)(91956017)(76116006)(66446008)(71200400001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR15MB2934;
+ H:BYAPR15MB3029.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: fb.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 93Hm0kDIkITp9ifXxQSnvwqQi/nLTYmv/XQNEvA6iByhmIC42RXbg9GFaRPap1DkmFm2TMjtF+vJQOUc4A15pzLxa/GH7pz2GPIK9k8KFY/eNEh9unpL2aZiK4IohZ0+7or6EhGqWCoN+75t+C9WT10MAjC/5WBt6nT+q+ZZwqcwQ2tyAbBU2aYJDsGpVmRvxJzYisedobb29zt8tu4M2s4FBSVMyC/xirbpxFlFa/dFADwzedAT6mkLIYlzu25g4kAv0Qj/fXBoo0Qv/kN/za3gww/XW1pnjbeX+u4WPiOj9JSsTRg6yqK2TOgAeK0E1mmk6SnkI3s5qXyeQATEChR9u03k8YzDkh45sMx7uwkDKMDQrc8kqUznD3Y8P7xQTJPmPJzALHjUJ733EUJgs+mtnqV+Vq3JJ2H3X7LNdFaFtQ4zFdqpwsUfF0O5Yh4nHZDhDiDLas+WXl/VPIxByL/APdBJmRnsub2jZZvrTdl1sTt9EJcMYUfhPlMBuObiSzRMFIm4v+mSauhJGPx8cA==
+x-ms-exchange-transport-forked: True
+Content-ID: <05A2858D29365040812017508B06EED0@namprd15.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 03276049-59e7-43f8-60f6-08d79866c03b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 20:25:37.1870 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8+VmdSsiQuGj0Q9kUsqQcqOgDEsWz97kXDupKj5HtKvzd7cAP55W7Hv5QSr4PnYK5XDcJnsTFBFGVigD0kGpHg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR15MB2934
+X-OriginatorOrg: fb.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-13_06:2020-01-13,
+ 2020-01-13 signatures=0
+X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
+ phishscore=0
+ mlxlogscore=764 mlxscore=0 adultscore=0 clxscore=1015 bulkscore=0
+ impostorscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0
+ priorityscore=1501 malwarescore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-1910280000 definitions=main-2001130166
+X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_121324_775325_911AF56C 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_122627_708441_DEF0BB7F 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.153.30 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [67.231.153.30 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -152,6 +143,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -163,25 +155,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Stephane Eranian <eranian@google.com>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Paul
+ Mackerras <paulus@samba.org>, Jiri Olsa <jolsa@redhat.com>,
+ Andi Kleen <ak@linux.intel.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>,
+ "oprofile-list@lists.sf.net" <oprofile-list@lists.sf.net>,
+ Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
+ Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ Casey Schaufler <casey@schaufler-ca.com>,
+ "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/13/20 10:56 AM, Stefan Wahren wrote:
-> This enables thermal for the BCM2711 (used on Raspberry Pi 4) by adding
-> the AVS monitor and a subnode for the thermal part.
+
+
+> On Dec 18, 2019, at 1:24 AM, Alexey Budankov <alexey.budankov@linux.intel.com> wrote:
 > 
-> Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-> Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> 
+> Introduce CAP_SYS_PERFMON capability devoted to secure system performance
+> monitoring and observability operations so that CAP_SYS_PERFMON would
+> assist CAP_SYS_ADMIN capability in its governing role for perf_events,
+> i915_perf and other subsystems of the kernel.
+> 
+> CAP_SYS_PERFMON intends to harden system security and integrity during
+> system performance monitoring and observability operations by decreasing
+> attack surface that is available to CAP_SYS_ADMIN privileged processes.
+> 
+> CAP_SYS_PERFMON intends to take over CAP_SYS_ADMIN credentials related
+> to system performance monitoring and observability operations and balance
+> amount of CAP_SYS_ADMIN credentials in accordance with the recommendations
+> provided in the man page for CAP_SYS_ADMIN [1]: "Note: this capability
+> is overloaded; see Notes to kernel developers, below."
+> 
+> [1] https://urldefense.proofpoint.com/v2/url?u=http-3A__man7.org_linux_man-2Dpages_man7_capabilities.7.html&d=DwICaQ&c=5VD0RTtNlTh3ycd41b3MUw&r=dR8692q0_uaizy0jkrBJQM5k2hfm4CiFxYT8KaysFrg&m=L5qCuMRrTvYhyjR1rpgE9vEv4HppVlOXDIzKzoGL30c&s=FNJpET4buKFRuqktVHQphaY1qE7IsdFpU4iYwpCn4tY&e= 
+> 
+> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
--- 
-Florian
-
+Acked-by: Song Liu <songliubraving@fb.com>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
