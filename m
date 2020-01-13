@@ -2,75 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87F5F1390A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 13:03:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 802CA1390AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 13:04:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uZmEj+W/uDJNzpfNzwLXlqDpSxzoTBdRYxRPfR8yw9A=; b=CbQJHxduamBcBj
-	tAq/xgc+iMAJE2IxlXIYk5kdkfDaBl4hRb0eOvRKKaqHF7CPcEVbsu5K9xyXrk0oRTn4pWY/1uWrW
-	W6CfFUPKK72hziJj8FWp2ZN2UP1+Buu1cKlWwrbFMs/FY/Nm0npN2AtSb9/ETr9Zt0uOGQHnDgMmk
-	hS7Aurq1Zq/LMu79ojLCqGlIIw+ZN/quGxFYWsl1BeP1gt/++oFd77/NuPl+B5NRbhcJoaFsxpB9/
-	joSZzGmivvPI7yWJvUdvfkdTWR/dF94E0+NQimhRIKdLwb3Ygxb+hIiazXeGmFJ7ATDKS58gAi0qf
-	msV2tDZqNcgPG1V8sW8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sSUfXcuBwR92iQUIcXt0FKw223zTd8Yvp3h4IZL1cTc=; b=Hqu4UtM8PSS8oCrRL7Ckvayhp
+	0O5jzdIyXEVSAJlLyVljjrX8TDtek7h0ffIbjACmonElc1kJyhb238M4v/ld9mUdqmG7LdVHkKs7Y
+	6fgqUBrEDo6PE9uw1BwNgkuDAMBXeWN7eKx3VuGtfkvhCbZg/mhqGDbBZ/1dBhAH3LpAVlgPIBiPi
+	8MT8QPi55LHrIdYECLfYpZnCr9YmDMSic0fR58CvjJc/0SUuO59UX979gLfB0pdjtqqE8FTDCnOzf
+	FTLVKzNPyK44y/LDLvhYsLnJQEkSJ+jaoSF1zsthmpGAWDyKESAqcSgJU0zD9IDkcDT7gZkMpB5SH
+	3VQbK7ukw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqyRl-0000i7-US; Mon, 13 Jan 2020 12:03:53 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iqyST-00011i-FT; Mon, 13 Jan 2020 12:04:37 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqyRe-0000hS-8A
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 12:03:47 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00DC2xCT066475;
- Mon, 13 Jan 2020 06:02:59 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1578916979;
- bh=rCDlfrd8km2xUmG6bzFw3i5aptxyHAA7AlJkzYZgtyQ=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=cVuC+W4kzuwU4qxTixwv/TGhE6fRZz/ARLeW8MJZAtDXQPZb4HXWQPyB4Nyd+6V6q
- 7SELq/VFOVplT8d3W53dtCWrJ8wfaMZBkz19lA4npqPLJ7idhj+U4nFvkH0g5V06Ii
- SC5cgrYR4BPSeeu4khDvOCA79SAKKuoccTORr71Y=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00DC2xu1105405
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 13 Jan 2020 06:02:59 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 13
- Jan 2020 06:02:59 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 13 Jan 2020 06:02:59 -0600
-Received: from [172.24.145.246] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00DC2tJF015538;
- Mon, 13 Jan 2020 06:02:57 -0600
-Subject: Re: [PATCH] ARM: davinci: select CONFIG_RESET_CONTROLLER
-From: Sekhar Nori <nsekhar@ti.com>
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20191210195202.622734-1-arnd@arndb.de>
- <ba94531d-1f16-b985-5638-c226bab28d5b@ti.com>
-Message-ID: <1513bfee-6623-47fa-1eef-6074ba9ab3b8@ti.com>
-Date: Mon, 13 Jan 2020 17:32:54 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iqySH-00010G-Kh
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 12:04:27 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 47xC1R5FbGz9txxD;
+ Mon, 13 Jan 2020 13:04:11 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=RYPWm/IX; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id Hval_bWc400h; Mon, 13 Jan 2020 13:04:11 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 47xC1R4CpHz9txxC;
+ Mon, 13 Jan 2020 13:04:11 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1578917051; bh=MvSTc3YCiZWGwG0qnYB8ibq5lqkALByXbfzJloZm6VI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=RYPWm/IXQ/KxMHRniZs4sJA0UPIhBFyVBryEW3BKqF+e4rY1+/0Wr9KTb1Oy2Acmm
+ QrU95xCviWgxho42vEOCHJ/Ec2LbEtDqIZJ4fGcLpTEgDDzqFJ3q5Tte95EDnP9ZWN
+ /49rH0RisWsJHOGyX6JNukoKDcuHt44/tBSegBbY=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 82B088B7B7;
+ Mon, 13 Jan 2020 13:04:16 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id 5C6xgoSYmG2P; Mon, 13 Jan 2020 13:04:16 +0100 (CET)
+Received: from [172.25.230.100] (po15451.idsi0.si.c-s.fr [172.25.230.100])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 47C788B79F;
+ Mon, 13 Jan 2020 13:04:16 +0100 (CET)
+Subject: Re: [PATCH] lib: vdso: mark __cvdso_clock_getres() as static
+To: Thomas Gleixner <tglx@linutronix.de>, arnd@arndb.de,
+ vincenzo.frascino@arm.com, luto@kernel.org
+References: <e7becc50bee355e3872b84d91cc68ae8d7776bb9.1578764712.git.christophe.leroy@c-s.fr>
+ <875zhhsr0h.fsf@nanos.tec.linutronix.de>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <658045cd-3f97-946d-6920-bea772e9be24@c-s.fr>
+Date: Mon, 13 Jan 2020 13:04:14 +0100
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <ba94531d-1f16-b985-5638-c226bab28d5b@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <875zhhsr0h.fsf@nanos.tec.linutronix.de>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_040346_328309_A9D90893 
-X-CRM114-Status: GOOD (  12.42  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200113_040425_832493_43ACEB36 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,43 +97,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: x86@kernel.org, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
-
-On 11/12/19 3:42 PM, Sekhar Nori wrote:
-> Hi Arnd,
-> 
-> On 11/12/19 1:21 AM, Arnd Bergmann wrote:
->> Selecting RESET_CONTROLLER is actually required, otherwise we
->> can get a link failure in the clock driver:
->>
->> drivers/clk/davinci/psc.o: In function `__davinci_psc_register_clocks':
->> psc.c:(.text+0x9a0): undefined reference to `devm_reset_controller_register'
->> drivers/clk/davinci/psc-da850.o: In function `da850_psc0_init':
->> psc-da850.c:(.text+0x24): undefined reference to `reset_controller_add_lookup'
->>
->> Fixes: f962396ce292 ("ARM: davinci: support multiplatform build for ARM v5")
->> Cc: <stable@vger.kernel.org> # v5.4
->> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
-> Assuming you are going to apply directly to ARM-SoC,
-> 
-> Acked-by: Sekhar Nori <nsekhar@ti.com>
-
-This is not yet in Linus's master. Let me know if I should collect it
-and send a pull request.
-
-Thanks,
-Sekhar
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAxMS8wMS8yMDIwIMOgIDIwOjU5LCBUaG9tYXMgR2xlaXhuZXIgYSDDqWNyaXTCoDoKPiBD
+aHJpc3RvcGhlIExlcm95IDxjaHJpc3RvcGhlLmxlcm95QGMtcy5mcj4gd3JpdGVzOgo+PiBXaGVu
+IF9fY3Zkc29fY2xvY2tfZ2V0cmVzKCkgYmVjYW1lIF9fY3Zkc29fY2xvY2tfZ2V0cmVzX2NvbW1v
+bigpCj4+IGFuZCBhIG5ldyBfX2N2ZHNvX2Nsb2NrX2dldHJlcygpIHdhcyBhZGRlZCwgc3RhdGlj
+IHF1YWxpZmllciB3YXMKPj4gZm9yZ290dGVuLgo+Pgo+PiBGaXhlczogNTAyYTU5MGExNzBiICgi
+bGliL3Zkc286IE1vdmUgZmFsbGJhY2sgaW52b2NhdGlvbiB0byB0aGUgY2FsbGVycyIpCj4+IFNp
+Z25lZC1vZmYtYnk6IENocmlzdG9waGUgTGVyb3kgPGNocmlzdG9waGUubGVyb3lAYy1zLmZyPgo+
+IAo+IEkndmUgYWxyZWFkeSBxdWV1ZWQ6Cj4gCj4gICAgICAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5v
+cmcvci8yMDE5MTEyODExMTcxOS44MjgyLTEtdmluY2Vuem8uZnJhc2Npbm9AYXJtLmNvbQo+IAo+
+IGJ1dCB0aGFua3MgZm9yIGNhcmluZyEKPiAKCgpJcyB0aGVyZSBhIGdpdCB0cmVlIHdpdGggdGhl
+IGxhdGVzdCBWRFNPIHN0YXR1cyA/CgpodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGlu
+dXgva2VybmVsL2dpdC90aXAvdGlwLmdpdD9oPXRpbWVycyUyRnZkc28gCmlzIDYgbW9udGhlcyBv
+bGQuCgpDaHJpc3RvcGhlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
