@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBEF9139A3E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:34:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C6F0139A5B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:53:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:MIME-Version:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FCojxWGO/bJWY423tRxRp3EXUUExM4/khCnYDHkOWOk=; b=XFnX8ZvN4VygLk
-	3VjhDAB422caEtydakItJc4cz3efeGKnNhh9HT2v4CD66oVqju8mTDTvRGxXm5It2XRJm3+uFrBeF
-	jBsu6m/G+7aqGeqVL0vKacAne5CFPSuthW6VkyPbbkxXwRUsyvFhKog2fkvHGcCZaLllEkfMQOkp6
-	BG3gVC4/u6WyWWou4P452eXloY9TELMMF5zUauQH12JUDGIPsYRWQc9xZmpNqdpR71p9+85Fctqsz
-	3hfjTmTpHZcZ6/XQ62AKSnyx99zI1pBjolrUNzjQo6Anuw7Ft+mNGtHdsGrGtzPOrlUmESt/U92Uh
-	YPoH1dk9wiPTKAjLMorg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QzGJaGrTTgrmeN+EsxmUiBCQA158lq5h4I7nx95IVoQ=; b=jg1qoz8bkB89Gm
+	ADdmB4n/b68XEkK4xvEi0TCw+VdMp2Z5wzcysfx2+XhX6g+xPO0kqtn4x5RRtWwb5JzavPAAkq9y2
+	PBX4r11PmKW/hfSXD8UzaH+C6TKhsFcK4mQTrtqAaVqDm/W92ajD0S4ZqqBLFeNtbmsepUTWiflIK
+	g/bK41pcKnlzh0l6nGN8Zq1LYRgo5OvLvt1dpNbM5OYz+HKTqQ+BGC7iyC+1Pdhxgvnu6/f0evMRR
+	Xw19XhXo+oQgmSpwBxs4XsPlqw/7PjqxafBIw9NE7ITjfFnCOqh9ZiNufAw/PDbmOS13PEK2G05+X
+	UH0IHDn1MVStBheR0Amw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir5Th-000673-Kt; Mon, 13 Jan 2020 19:34:21 +0000
-Received: from mail-io1-f72.google.com ([209.85.166.72])
+	id 1ir5mN-0004k0-Ho; Mon, 13 Jan 2020 19:53:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir5TZ-000666-15
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:34:14 +0000
-Received: by mail-io1-f72.google.com with SMTP id m12so6429660ioh.8
+ id 1ir5mD-0004jV-QX
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:53:31 +0000
+Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
+ [209.85.222.171])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C28B21569
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 11:34:11 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=iKgXkUUifDTHe1wYti7XokONx9JjbAC539M6HstQB/k=;
- b=L5PTFXKz1gtRzB7a3nz82hL085WADgusoKD+Pa7FwUHBGonuLFkRn/lj9iUIYTYdAv
- ayjr4oK+QSSZWnh1icJ59c6wafIlMb4epv8GOYQ1O63ELBoTNj0gLhiJ3dXUeNOV9dtl
- dNmv1KjR6alwaOU6S5hAmq1l9ac3lX15sl0G7zNrVYXWDw7hEYOie3ah/3erGjoGZ2r7
- kjtjDwoh9jtMgaKMYAwjC/4tYgBy0k+rNmGBtyD74jv2s3Gw5SZ3J5VX0ETvEPda2q2w
- ue4zt/agsenckUmrR5TKSZygdHf68S0zleRz4p8Jm0evV6+RcOUtx8OTnFQbekO09slj
- t7Hg==
-X-Gm-Message-State: APjAAAVc8LuV0BMlAjK28+ml55L1ObSNP/jrqTb4h4uI434uT/VeTIEj
- 0Fsd9eCCVY+NJ6R/cPrGGc3hVFLwVHQxEqcdZ+0S7m4flrZ+
-X-Google-Smtp-Source: APXvYqzaNcVpE7dne1l1ihiEgfr6Zy2LxQzVYEVdovLQ5xW8OKaJwY513n5SHhDdl21ILG0FBwo9bbP7vlQ9sXE0LfOo+H5i3o5w
+ Mon, 13 Jan 2020 19:53:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578945209;
+ bh=xzYW2uhVI+aXarY9n9PQpB2Bfi4AeG3LBomJ2hCtre4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=k78wWJUkVg3b1XgWjuaX0n82hrZZptS+SaCTiEoz7/Rz/HDJy4r9xKWhN9G+72NS9
+ WNBS5+pN0/apV1w45Jr1ieJs3HH8dpvgmIzx4pzr04GJCyWbrs3qDF+aULF+yh0vd0
+ Ne3APpjRj1oCFyUpmdTQDX1J8YJl3aqg1+GR8Ez4=
+Received: by mail-qk1-f171.google.com with SMTP id j9so9769041qkk.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Jan 2020 11:53:29 -0800 (PST)
+X-Gm-Message-State: APjAAAWfKep2ooLZApJiFDL5f4SXLaka7i2MeKIwO+PzAWlYE/jKbrCJ
+ +DdUjwjkVK9ZGYrgTnyxRiTqdW42jGzEaSJcNg==
+X-Google-Smtp-Source: APXvYqz37D/+nm/syz7FDGHDM3IpVykZdcqQUZsr42Rn0qQNc/m+H0XRxC1v+j1WR4fPRZdgGLKp9DlNaXjMSSx09uY=
+X-Received: by 2002:a05:620a:135b:: with SMTP id
+ c27mr16459721qkl.119.1578945208245; 
+ Mon, 13 Jan 2020 11:53:28 -0800 (PST)
 MIME-Version: 1.0
-X-Received: by 2002:a6b:6e06:: with SMTP id d6mr13077449ioh.95.1578944051034; 
- Mon, 13 Jan 2020 11:34:11 -0800 (PST)
-Date: Mon, 13 Jan 2020 11:34:11 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000048427b059c0a8f9d@google.com>
-Subject: WARNING: locking bug in finish_task_switch
-From: syzbot <syzbot+edec84a8b77e5a0cae31@syzkaller.appspotmail.com>
-To: coreteam@netfilter.org, davem@davemloft.net, johan.hedberg@gmail.com, 
- kaber@trash.net, kadlec@blackhole.kfki.hu, kernel@stlinux.com, 
- linux-arm-kernel@lists.infradead.org, linux-bluetooth@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
- marcel@holtmann.org, mchehab@kernel.org, mchehab@s-opensource.com, 
- netdev@vger.kernel.org, netfilter-devel@vger.kernel.org, pablo@netfilter.org, 
- patrice.chotard@st.com, peter.griffin@linaro.org, 
- syzkaller-bugs@googlegroups.com
+References: <20191230144402.30195-1-ulf.hansson@linaro.org>
+ <20191230144402.30195-3-ulf.hansson@linaro.org>
+In-Reply-To: <20191230144402.30195-3-ulf.hansson@linaro.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 13 Jan 2020 13:53:16 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+cAKEGOMnBwwvLt03zx8Gcxh4ijziaBnnY5TPEG0Mekg@mail.gmail.com>
+Message-ID: <CAL_Jsq+cAKEGOMnBwwvLt03zx8Gcxh4ijziaBnnY5TPEG0Mekg@mail.gmail.com>
+Subject: Re: [PATCH v5 02/15] dt: psci: Update DT bindings to support
+ hierarchical PSCI states
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_113413_073702_C2D7AC8D 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-CRM114-CacheID: sfid-20200113_115329_904267_6A0CE667 
+X-CRM114-Status: GOOD (  25.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.72 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.72 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,129 +88,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
+ Lina Iyer <lina.iyer@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On Mon, Dec 30, 2019 at 8:44 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> Update PSCI DT bindings to allow to represent idle states for CPUs and the
+> CPU topology, by using a hierarchical layout. Primarily this is done by
+> re-using the existing DT bindings for PM domains [1] and for PM domain idle
+> states [2].
+>
+> Let's also add an example into the document for the PSCI DT bindings, to
+> clearly show the new hierarchical based layout. The currently supported
+> flattened layout, is already described in the ARM idle states bindings [3],
+> so let's leave that as is.
+>
+> [1] Documentation/devicetree/bindings/power/power_domain.txt
+> [2] Documentation/devicetree/bindings/power/domain-idle-state.txt
+> [3] Documentation/devicetree/bindings/arm/idle-states.txt
+>
+> Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+> Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
+> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>
+> Changes in v5:
+>         - None.
 
-syzbot found the following crash on:
+First I'm seeing this as the DT list was not copied. The example has
+problems when running 'make dt_binding_check':
 
-HEAD commit:    6c09d7db Add linux-next specific files for 20200110
-git tree:       linux-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=150b6a9ee00000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=7dc7ab9739654fbe
-dashboard link: https://syzkaller.appspot.com/bug?extid=edec84a8b77e5a0cae31
-compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=16d005e1e00000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1527b6aee00000
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
+compatible: Additional items are not allowed ('arm,armv8' was
+unexpected)
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
+compatible: ['arm,cortex-a53', 'arm,armv8'] is too long
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
+compatible: Additional items are not allowed ('arm,armv8' was
+unexpected)
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
+compatible: ['arm,cortex-a57', 'arm,armv8'] is too long
 
-The bug was bisected to:
+'arm,armv8' is only valid for s/w models.
 
-commit 7152c88e556bcbee525689063c260cd296f295a8
-Author: Mauro Carvalho Chehab <mchehab@s-opensource.com>
-Date:   Tue Oct 18 19:44:11 2016 +0000
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
+idle-states: cluster-retention:compatible:0: 'arm,idle-state' was
+expected
+Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
+idle-states: cluster-power-down:compatible:0: 'arm,idle-state' was
+expected
 
-     [media] c8sectpfe: don't break long lines
+The last 2 are due to my conversion of the idle-states binding which
+is in my tree now. Probably need to add 'domain-idle-state' as a
+compatible at a minimum. It looks like domain-idle-state.txt is pretty
+much the same as arm/idle-state.txt, so we should perhaps merge them.
 
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=10930c21e00000
-final crash:    https://syzkaller.appspot.com/x/report.txt?x=12930c21e00000
-console output: https://syzkaller.appspot.com/x/log.txt?x=14930c21e00000
+There's some bigger issues though.
 
-IMPORTANT: if you fix the bug, please add the following tag to the commit:
-Reported-by: syzbot+edec84a8b77e5a0cae31@syzkaller.appspotmail.com
-Fixes: 7152c88e556b ("[media] c8sectpfe: don't break long lines")
+> ---
+>  .../devicetree/bindings/arm/cpus.yaml         |  15 +++
+>  .../devicetree/bindings/arm/psci.yaml         | 104 ++++++++++++++++++
+>  2 files changed, 119 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
+> index c23c24ff7575..7a9c3ce2dbef 100644
+> --- a/Documentation/devicetree/bindings/arm/cpus.yaml
+> +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
+> @@ -242,6 +242,21 @@ properties:
+>
+>        where voltage is in V, frequency is in MHz.
+>
+> +  power-domains:
+> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+> +    description:
+> +      List of phandles and PM domain specifiers, as defined by bindings of the
+> +      PM domain provider (see also ../power_domain.txt).
+> +
+> +  power-domain-names:
+> +    $ref: '/schemas/types.yaml#/definitions/string-array'
+> +    description:
+> +      A list of power domain name strings sorted in the same order as the
+> +      power-domains property.
+> +
+> +      For PSCI based platforms, the name corresponding to the index of the PSCI
+> +      PM domain provider, must be "psci".
+> +
+>    qcom,saw:
+>      $ref: '/schemas/types.yaml#/definitions/phandle'
+>      description: |
+> diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+> index 7abdf58b335e..8ef85420b2ab 100644
+> --- a/Documentation/devicetree/bindings/arm/psci.yaml
+> +++ b/Documentation/devicetree/bindings/arm/psci.yaml
+> @@ -102,6 +102,34 @@ properties:
+>        [1] Kernel documentation - ARM idle states bindings
+>          Documentation/devicetree/bindings/arm/idle-states.txt
+>
+> +  "#power-domain-cells":
 
-------------[ cut here ]------------
-DEBUG_LOCKS_WARN_ON(1)
-WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167 hlock_class  
-kernel/locking/lockdep.c:167 [inline]
-WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167 hlock_class  
-kernel/locking/lockdep.c:156 [inline]
-WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167  
-__lock_acquire+0x21dd/0x4a00 kernel/locking/lockdep.c:3950
-Kernel panic - not syncing: panic_on_warn set ...
-CPU: 1 PID: 9970 Comm: syz-executor719 Not tainted  
-5.5.0-rc5-next-20200110-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS  
-Google 01/01/2011
-Call Trace:
-  __dump_stack lib/dump_stack.c:77 [inline]
-  dump_stack+0x197/0x210 lib/dump_stack.c:118
-  panic+0x2e3/0x75c kernel/panic.c:221
-  __warn.cold+0x2f/0x3e kernel/panic.c:582
-  report_bug+0x289/0x300 lib/bug.c:195
-  fixup_bug arch/x86/kernel/traps.c:176 [inline]
-  fixup_bug arch/x86/kernel/traps.c:171 [inline]
-  do_error_trap+0x11b/0x200 arch/x86/kernel/traps.c:269
-  do_invalid_op+0x37/0x50 arch/x86/kernel/traps.c:288
-  invalid_op+0x23/0x30 arch/x86/entry/entry_64.S:1027
-RIP: 0010:hlock_class kernel/locking/lockdep.c:167 [inline]
-RIP: 0010:hlock_class kernel/locking/lockdep.c:156 [inline]
-RIP: 0010:__lock_acquire+0x21dd/0x4a00 kernel/locking/lockdep.c:3950
-Code: 05 98 39 4a 09 85 c0 75 a0 48 c7 c6 e0 91 4b 88 48 c7 c7 20 92 4b 88  
-4c 89 9d 30 ff ff ff 4c 89 95 70 ff ff ff e8 b2 ff ea ff <0f> 0b 31 db 4c  
-8b 95 70 ff ff ff 4c 8b 9d 30 ff ff ff e9 22 f8 ff
-RSP: 0018:ffffc90002d87738 EFLAGS: 00010086
-RAX: 0000000000000000 RBX: 00000000000005e3 RCX: 0000000000000000
-RDX: 0000000040000000 RSI: ffffffff815e8546 RDI: fffff520005b0ed9
-RBP: ffffc90002d87850 R08: ffff8880903f8380 R09: fffffbfff13748ed
-R10: fffffbfff13748ec R11: ffffffff89ba4763 R12: 000000009ecb23e7
-R13: ffffffff8aa50270 R14: ffff8880903f8c48 R15: 0000000000000000
-  lock_acquire+0x190/0x410 kernel/locking/lockdep.c:4484
-  finish_lock_switch kernel/sched/core.c:3123 [inline]
-  finish_task_switch+0x13f/0x750 kernel/sched/core.c:3224
-  context_switch kernel/sched/core.c:3388 [inline]
-  __schedule+0x93c/0x1f90 kernel/sched/core.c:4081
-  preempt_schedule_irq+0xb5/0x160 kernel/sched/core.c:4338
-  retint_kernel+0x1b/0x2b
-RIP: 0010:arch_local_irq_restore arch/x86/include/asm/paravirt.h:752  
-[inline]
-RIP: 0010:lock_acquire+0x20b/0x410 kernel/locking/lockdep.c:4487
-Code: 9c 08 00 00 00 00 00 00 48 c1 e8 03 80 3c 10 00 0f 85 d3 01 00 00 48  
-83 3d a9 a4 58 08 00 0f 84 53 01 00 00 48 8b 7d c8 57 9d <0f> 1f 44 00 00  
-48 8d 65 d8 5b 41 5c 41 5d 41 5e 41 5f 5d c3 65 8b
-RSP: 0018:ffffc90002d87ae0 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff13
-RAX: 1ffffffff13675eb RBX: ffff8880903f8380 RCX: ffffffff815ad05a
-RDX: dffffc0000000000 RSI: 0000000000000004 RDI: 0000000000000286
-RBP: ffffc90002d87b28 R08: 0000000000000004 R09: fffffbfff1708c51
-R10: fffffbfff1708c50 R11: ffff8880903f8380 R12: ffff888094a93d28
-R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
-  flush_workqueue+0x126/0x14c0 kernel/workqueue.c:2775
-  hci_dev_open+0xe0/0x280 net/bluetooth/hci_core.c:1626
-  hci_sock_bind+0x4bf/0x12d0 net/bluetooth/hci_sock.c:1189
-  __sys_bind+0x239/0x290 net/socket.c:1662
-  __do_sys_bind net/socket.c:1673 [inline]
-  __se_sys_bind net/socket.c:1671 [inline]
-  __x64_sys_bind+0x73/0xb0 net/socket.c:1671
-  do_syscall_64+0xfa/0x790 arch/x86/entry/common.c:294
-  entry_SYSCALL_64_after_hwframe+0x49/0xbe
-RIP: 0033:0x4483b9
-Code: e8 9c e6 ff ff 48 83 c4 18 c3 0f 1f 80 00 00 00 00 48 89 f8 48 89 f7  
-48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff  
-ff 0f 83 3b 05 fc ff c3 66 2e 0f 1f 84 00 00 00 00
-RSP: 002b:00007fb43a523d88 EFLAGS: 00000246 ORIG_RAX: 0000000000000031
-RAX: ffffffffffffffda RBX: 00000000006e4a18 RCX: 00000000004483b9
-RDX: 0000000000000006 RSI: 00000000200007c0 RDI: 0000000000000004
-RBP: 00000000006e4a10 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 00000000006e4a1c
-R13: 00007ffc78f07a4f R14: 00007fb43a5249c0 R15: 20c49ba5e353f7cf
-Shutting down cpus with NMI
-Kernel Offset: disabled
-Rebooting in 86400 seconds..
+This is wrong because you are saying the /psci node should have these
+properties. You need to define the child nodes (at least a pattern you
+can match on) and put these properties there.
 
+> +    description:
+> +      The number of cells in a PM domain specifier as per binding in [3].
+> +      Must be 0 as to represent a single PM domain.
+> +
+> +      ARM systems can have multiple cores, sometimes in an hierarchical
+> +      arrangement. This often, but not always, maps directly to the processor
+> +      power topology of the system. Individual nodes in a topology have their
+> +      own specific power states and can be better represented hierarchically.
+> +
+> +      For these cases, the definitions of the idle states for the CPUs and the
+> +      CPU topology, must conform to the binding in [3]. The idle states
+> +      themselves must conform to the binding in [4] and must specify the
+> +      arm,psci-suspend-param property.
+> +
+> +      It should also be noted that, in PSCI firmware v1.0 the OS-Initiated
+> +      (OSI) CPU suspend mode is introduced. Using a hierarchical representation
+> +      helps to implement support for OSI mode and OS implementations may choose
+> +      to mandate it.
+> +
+> +      [3] Documentation/devicetree/bindings/power/power_domain.txt
+> +      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
+> +
+> +  power-domains:
+> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+> +    description:
+> +      List of phandles and PM domain specifiers, as defined by bindings of the
+> +      PM domain provider.
 
----
-This bug is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+A schema for 'domain-idle-states' property is missing.
 
-syzbot will keep track of this bug report. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
-syzbot can test patches for this bug, for details see:
-https://goo.gl/tpsmEJ#testing-patches
+>
+>  required:
+>    - compatible
+> @@ -160,4 +188,80 @@ examples:
+>        cpu_on = <0x95c10002>;
+>        cpu_off = <0x95c10001>;
+>      };
+> +
+> +  - |+
+> +
+> +    // Case 4: CPUs and CPU idle states described using the hierarchical model.
+> +
+> +    cpus {
+> +      #size-cells = <0>;
+> +      #address-cells = <1>;
+> +
+> +      CPU0: cpu@0 {
+> +        device_type = "cpu";
+> +        compatible = "arm,cortex-a53", "arm,armv8";
+> +        reg = <0x0>;
+> +        enable-method = "psci";
+> +        power-domains = <&CPU_PD0>;
+> +        power-domain-names = "psci";
+> +      };
+> +
+> +      CPU1: cpu@1 {
+> +        device_type = "cpu";
+> +        compatible = "arm,cortex-a57", "arm,armv8";
+> +        reg = <0x100>;
+> +        enable-method = "psci";
+> +        power-domains = <&CPU_PD1>;
+> +        power-domain-names = "psci";
+> +      };
+> +
+> +      idle-states {
+> +
+> +        CPU_PWRDN: cpu-power-down {
+> +          compatible = "arm,idle-state";
+> +          arm,psci-suspend-param = <0x0000001>;
+> +          entry-latency-us = <10>;
+> +          exit-latency-us = <10>;
+> +          min-residency-us = <100>;
+> +        };
+> +
+> +        CLUSTER_RET: cluster-retention {
+> +          compatible = "domain-idle-state";
+> +          arm,psci-suspend-param = <0x1000011>;
+> +          entry-latency-us = <500>;
+> +          exit-latency-us = <500>;
+> +          min-residency-us = <2000>;
+> +        };
+> +
+> +        CLUSTER_PWRDN: cluster-power-down {
+> +          compatible = "domain-idle-state";
+> +          arm,psci-suspend-param = <0x1000031>;
+> +          entry-latency-us = <2000>;
+> +          exit-latency-us = <2000>;
+> +          min-residency-us = <6000>;
+> +        };
+> +      };
+> +    };
+> +
+> +    psci {
+> +      compatible = "arm,psci-1.0";
+> +      method = "smc";
+> +
+> +      CPU_PD0: cpu-pd0 {
+> +        #power-domain-cells = <0>;
+> +        domain-idle-states = <&CPU_PWRDN>;
+> +        power-domains = <&CLUSTER_PD>;
+> +      };
+> +
+> +      CPU_PD1: cpu-pd1 {
+> +        #power-domain-cells = <0>;
+> +        domain-idle-states =  <&CPU_PWRDN>;
+> +        power-domains = <&CLUSTER_PD>;
+> +      };
+> +
+> +      CLUSTER_PD: cluster-pd {
+> +        #power-domain-cells = <0>;
+> +        domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
+> +      };
+> +    };
+>  ...
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
