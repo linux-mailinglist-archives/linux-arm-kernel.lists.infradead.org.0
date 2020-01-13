@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60DBA139664
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:31:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 395F2139682
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:40:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJW9/8+41kZumyLX7zz79Jcz+9e6HJjRlUT9m7e+mv0=; b=UGSmv1iWsfheb9
-	IDYl+tbbmKtnqB+YOtHWBEVQAAlDMnbmW7e9iLnUMWF/zlktnU458txMYlEAyUxXQHGamLN3n11af
-	w1KnQjE+p/Ll8Xg8HYodbjfpiX/MsH1V5Lp6k2CDbDSMMESpy2OMEuXV40LvTe3eYZI02ILvrlRAE
-	nrLS2JGS8Jq00Ea+lEzl+n0NudG5WARCHyIYJ+pZHEEbHXl/N2I0qD8evDmCUBVqV2XmtIWN7TE8i
-	RF3tpYnQ5ND8F6j5v4GFNcYgCuEfSFJevdPc+5dtYwv6XI33sXm62GOYP3tEN2cOle/0N38J9lRMW
-	p+AW9TI72lhiZlt585jA==;
+	List-Owner; bh=1ugnizuI4x22houaULT0OTRLrSZkYUJnxvvgSGwhbeo=; b=m5hi/7Zu5OQc7L
+	/OO7BtIqLZHt8wBOu4OAlSRvRU/JLuCslGncgrcK44ugjQC63V/DTCmY87xGKmBZHyjNtueT4txZ7
+	mQwqS64qSBPjRj+CyW0YTQBIEz6kar0y0YtGF+6RA/b59TPCRPyKOuKLDcq+HJD16ZQ/9H9Jv7aDS
+	hyOLsNiQbQgCwg2yVCpmQHdAcS0JyyWofPcqdMHbY0MjW4G2G1wBDsc3B5ZjFo+Z4XipevSAq/AVI
+	jxnJ26eBhgPEuQF3KUEnmhgFpRxZ8lg09D2cScxKr59CH0ZZHYrbPsG3wRuwEDuzTOnI03AVO3zw4
+	hf1XwREqjAjo9yGMO/Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir2d3-0004fB-VO; Mon, 13 Jan 2020 16:31:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir2cx-0004eB-OX
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:31:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3EC1011B3;
- Mon, 13 Jan 2020 08:31:41 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A69683F534;
- Mon, 13 Jan 2020 08:31:40 -0800 (PST)
-Date: Mon, 13 Jan 2020 16:31:38 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 10/18] arm64: KVM/debug: use EL1&0 stage 1 translation
- regime
-Message-ID: <20200113163138.GP42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-11-andrew.murray@arm.com>
- <86d0cgir74.wl-maz@kernel.org>
+	id 1ir2lg-000832-JY; Mon, 13 Jan 2020 16:40:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ir2lY-00082H-Qq
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:40:38 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A6A1C21569;
+ Mon, 13 Jan 2020 16:40:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578933635;
+ bh=sCmFCwYbsvnNPm2PkRZEhJA1442m+QaJCHhH5zkDbgM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=aJR9K9bFdFK7SVbODxkwPKvqlChV/1xoJ/6AECR8oQ/b9Ga67JCoa2iqvC7O6ZkjW
+ PjIz4V4LSComMuz2EKx/7aDA0KTg0oKFTGG6EyftvOZMW4d2Xl2VGEDVI1U+gd7197
+ 1qodocFPpKwz//GfBSb6NyziIq0TLQlWIVj0dBJc=
+Date: Mon, 13 Jan 2020 16:40:29 +0000
+From: Will Deacon <will@kernel.org>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [RFC PATCH v3 00/12] Unify SMP stop generic logic to common code
+Message-ID: <20200113164029.GE4458@willie-the-truck>
+References: <20191219121905.26905-1-cristian.marussi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <86d0cgir74.wl-maz@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20191219121905.26905-1-cristian.marussi@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_083143_844317_7942DCF9 
-X-CRM114-Status: GOOD (  22.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200113_084036_888525_8FC43A24 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,76 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+Cc: linux-arch@vger.kernel.org, mark.rutland@arm.com,
+ sparclinux@vger.kernel.org, dzickus@redhat.com, ehabkost@redhat.com,
+ peterz@infradead.org, catalin.marinas@arm.com, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux@armlinux.org.uk, hch@infradead.org,
+ takahiro.akashi@linaro.org, mingo@redhat.com, james.morse@arm.com,
+ hidehiro.kawai.ez@hitachi.com, tglx@linutronix.de, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 22, 2019 at 10:34:55AM +0000, Marc Zyngier wrote:
-> On Fri, 20 Dec 2019 14:30:17 +0000,
-> Andrew Murray <andrew.murray@arm.com> wrote:
-> > 
-> > From: Sudeep Holla <sudeep.holla@arm.com>
-> > 
-> > Now that we have all the save/restore mechanism in place, lets enable
-> > the translation regime used by buffer from EL2 stage 1 to EL1 stage 1
-> > on VHE systems.
-> > 
-> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > [ Reword commit, don't trap to EL2 ]
-> 
-> Not trapping to EL2 for the case where we don't allow SPE in the
-> guest is not acceptable.
-> 
-> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > ---
-> >  arch/arm64/kvm/hyp/switch.c | 2 ++
-> >  1 file changed, 2 insertions(+)
-> > 
-> > diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> > index 67b7c160f65b..6c153b79829b 100644
-> > --- a/arch/arm64/kvm/hyp/switch.c
-> > +++ b/arch/arm64/kvm/hyp/switch.c
-> > @@ -100,6 +100,7 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
-> >  
-> >  	write_sysreg(val, cpacr_el1);
-> >  
-> > +	write_sysreg(vcpu->arch.mdcr_el2 | 3 << MDCR_EL2_E2PB_SHIFT, mdcr_el2);
-> >  	write_sysreg(kvm_get_hyp_vector(), vbar_el1);
-> >  }
-> >  NOKPROBE_SYMBOL(activate_traps_vhe);
-> > @@ -117,6 +118,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
-> >  		__activate_traps_fpsimd32(vcpu);
-> >  	}
-> >  
-> > +	write_sysreg(vcpu->arch.mdcr_el2 | 3 << MDCR_EL2_E2PB_SHIFT, mdcr_el2);
-> 
-> There is a _MASK macro that can replace this '3', and is in keeping
-> with the rest of the code.
-> 
-> It still remains that it looks like the wrong place to do this, and
-> vcpu_load seems much better. Why should you write to mdcr_el2 on each
-> entry to the guest, since you know whether it has SPE enabled at the
-> point where it gets scheduled?
+On Thu, Dec 19, 2019 at 12:18:53PM +0000, Cristian Marussi wrote:
+> the logic underlying SMP stop and kexec crash procedures, beside containing
+> some arch-specific bits, is mostly generic and common across all archs:
+> despite this fact, such logic is now scattered across all architectures and
+> on some of them is flawed, in such a way that, under some specific
+> conditions, you can end up with a CPU left still running after a panic and
+> possibly lost across a subsequent kexec crash reboot. [1]
 
-For nVHE, the only reason we'd want to change E2PB on entry/exit of guest
-would be if the host is also using SPE. If the host is using SPE whilst
-the vcpu is 'loaded' but we're not in the guest, then host SPE could raise
-an interrupt - we need the E2PB bits to allow access from EL1 (host).
+Is this still the case even after 20bb759a66be ("panic: ensure preemption is
+disabled during panic()")?
 
-Thanks,
-
-Andrew Murray
-
-> 
-> 	M.
-> 
-> -- 
-> Jazz is not dead, it just smells funny.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
