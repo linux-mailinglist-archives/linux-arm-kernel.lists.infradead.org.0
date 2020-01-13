@@ -2,61 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF506138E0F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:44:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15E01138E1B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:46:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0lrN1PLldnbqWl7AkV/x1ZBgEJvhVJsoFDJnNLF8Pyc=; b=VU3lvkKSaITha6z1ougVjWet7
-	LQTMLXwPunMfqMCjr8P9wVFVAivuVgafNSnCS3fTdRbZl2mC3QZHCTlvk7/s0tY9bx1/HdNUahXh6
-	qcrzpW7Bwx+QQBYiY5kfvRDqfmvTMr1/8TIxMyZL4B0wDbE0EBiYZM7ZCYQPRxWRsG0US2+AwTG3g
-	gDWVyLA5ABOO4Hm8HNNS/M3ThAmj29aHSwup1ngFZip188rp8bL4+VPkpS+J3Xgp6yaQrYHQduF0S
-	aDQKcc8amwhHcQkhdBY6a0+froXkOdsIT1ReK5+iNOGaBZ15obVCGJxJW26+otMPthPYOFKZXenLP
-	lwv6cD/Kw==;
+	 bh=n5xdHLm/PPnEOl6jozDKT+9lDzBq5Wahxg2DkDxDYv8=; b=dz0vvICvuIZ0HbS2A4mTjLFD9
+	FARL9cjdQLmreTsOAWubaururEFdE0zTV45XNvo9FqJTfFt8Wh3X11XSdK532STdKxtYK94A2tcaz
+	X+OAaRMSAiJ2MPiEJmNOVs0sx09hVthx9ZBDiDmc7CkB/JcjXKYoiAgMH37hdJUdMuW/AWiGdGJj1
+	qdhIZNYMfevM0CgGPnNHrCnrxxJsYk+rs5WCZtsMNNcqBohMaVw5LhwlI0QnuaR8d8sbM7Xv31IVz
+	wK7+/nzyXgSioLJYgO8W469tlogg4PhGvLaorjFZog+QyG1LEBORXK19SpnEgwJBiLYjMUckfUy5R
+	3YVFhpfkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqwGe-0008S5-NW; Mon, 13 Jan 2020 09:44:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqwGO-0008Qj-T1
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 09:44:02 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 10BF82075B;
- Mon, 13 Jan 2020 09:43:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578908640;
- bh=UtHfmZbsNcplNP3k+bEt4c2k9o181tnaCpLdxVZFFQI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Chqov/hf8tR7oy+LK2yRjMCtLFz+wPmkrkH0qv6ptZ93DU/La0cx0HYm1cohXJsSc
- kgcX/e9UlSQAUk6fWS5TSErd/fDzcDnG+oT58Jx636C92DgH56LFKSjJWk5s7Djmkd
- hSW/oqvXZ/oAFkr6VUIml5NMHscjdN8PYHy7QV1U=
-Date: Mon, 13 Jan 2020 10:43:58 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH 3/9] dt-bindings: irq: Add a compatible for the H3 R_INTC
-Message-ID: <20200113094358.7jefihp4i4rt4orm@gilmour.lan>
-References: <20200113044936.26038-1-samuel@sholland.org>
- <20200113044936.26038-4-samuel@sholland.org>
+	id 1iqwIs-0002PR-VH; Mon, 13 Jan 2020 09:46:34 +0000
+Received: from fd.dlink.ru ([178.170.168.18])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iqwIk-0002Op-US; Mon, 13 Jan 2020 09:46:28 +0000
+Received: by fd.dlink.ru (Postfix, from userid 5000)
+ id 99E031B2106E; Mon, 13 Jan 2020 12:46:25 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 99E031B2106E
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dlink.ru; s=mail;
+ t=1578908785; bh=mHvumthM4kqA6nZVMBkNipV495noJBzqsUxcFANvR+c=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=hfLyTf3xSyNoxIIT481x14LwyHM7eYyCAci8Di7elz3YMGPPtwb3pr+eJhcPlOOiN
+ kyoURwrWQOwnQHCsjEy0CbuanQaAmUenCc6dQKkNuBELbyFhwDfy2xx6QhTMneST8L
+ fv2tOftpc0WC8u/kSEtDuOpCm9JgSixLWVaTdU3g=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dlink.ru
+X-Spam-Level: 
+X-Spam-Status: No, score=-99.2 required=7.5 tests=BAYES_50,URIBL_BLOCKED,
+ USER_IN_WHITELIST autolearn=disabled version=3.4.2
+Received: from mail.rzn.dlink.ru (mail.rzn.dlink.ru [178.170.168.13])
+ by fd.dlink.ru (Postfix) with ESMTP id 466E51B201E9;
+ Mon, 13 Jan 2020 12:46:14 +0300 (MSK)
+DKIM-Filter: OpenDKIM Filter v2.11.0 fd.dlink.ru 466E51B201E9
+Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
+ by mail.rzn.dlink.ru (Postfix) with ESMTP id D30BE1B20320;
+ Mon, 13 Jan 2020 12:46:13 +0300 (MSK)
+Received: from mail.rzn.dlink.ru (localhost [127.0.0.1])
+ by mail.rzn.dlink.ru (Postfix) with ESMTPA;
+ Mon, 13 Jan 2020 12:46:13 +0300 (MSK)
 MIME-Version: 1.0
-In-Reply-To: <20200113044936.26038-4-samuel@sholland.org>
+Date: Mon, 13 Jan 2020 12:46:13 +0300
+From: Alexander Lobakin <alobakin@dlink.ru>
+To: Vladimir Oltean <olteanv@gmail.com>
+Subject: Re: [PATCH RFC net-next 05/19] net: dsa: tag_ar9331: add GRO callbacks
+In-Reply-To: <CA+h21hoSoZT+ieaOu8N=MCSqkzey0L6HeoXSyLtHjZztT0S9ug@mail.gmail.com>
+References: <20191230143028.27313-1-alobakin@dlink.ru>
+ <20191230143028.27313-6-alobakin@dlink.ru>
+ <ee6f83fd-edf4-5a98-9868-4cbe9e226b9b@gmail.com>
+ <ed0ad0246c95a9ee87352d8ddbf0d4a1@dlink.ru>
+ <CA+h21hoSoZT+ieaOu8N=MCSqkzey0L6HeoXSyLtHjZztT0S9ug@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.4.0
+Message-ID: <0002a7388dfd5fb70db4b43a6c521c52@dlink.ru>
+X-Sender: alobakin@dlink.ru
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_014400_951202_C663CDC2 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200113_014627_165594_B9983390 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.170.168.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -64,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,90 +90,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- linux-sunxi@googlegroups.com, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1494185500556121134=="
+Cc: Andrew Lunn <andrew@lunn.ch>, Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ Yoshiki Komachi <komachi.yoshiki@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>, Eric Dumazet <edumazet@google.com>,
+ Stanislav Fomichev <sdf@google.com>, Matteo Croce <mcroce@redhat.com>,
+ Edward Cree <ecree@solarflare.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Jakub Sitnicki <jakub@cloudflare.com>, Daniel Borkmann <daniel@iogearbox.net>,
+ Paolo Abeni <pabeni@redhat.com>, Vivien Didelot <vivien.didelot@gmail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Sean Wang <sean.wang@mediatek.com>,
+ Jiri Pirko <jiri@mellanox.com>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, netdev <netdev@vger.kernel.org>,
+ Paul Blakey <paulb@mellanox.com>,
+ Stephen Hemminger <stephen@networkplumber.org>,
+ "David S. Miller" <davem@davemloft.net>, Taehee Yoo <ap420073@gmail.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============1494185500556121134==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="smzsasjwaytwgncj"
-Content-Disposition: inline
-
-
---smzsasjwaytwgncj
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Sun, Jan 12, 2020 at 10:49:30PM -0600, Samuel Holland wrote:
-> The Allwinner H3 SoC contains an R_INTC that is, as far as we know,
-> compatible with the R_INTC present in other sun8i/sun50i SoCs starting
-> with the A31. Since the R_INTC hardware is undocumented, introduce a new
-> compatible for the R_INTC variant in this SoC, in case there turns out
-> to be some difference.
->
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> ---
->  .../interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml       | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
-> index 0eccf5551786..fffffcd0eea3 100644
-> --- a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
-> +++ b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
-> @@ -29,6 +29,9 @@ properties:
->        - items:
->          - const: allwinner,sun8i-a83t-r-intc
->          - const: allwinner,sun6i-a31-r-intc
-> +      - items:
-> +        - const: allwinner,sun8i-h3-r-intc
-> +        - const: allwinner,sun6i-a31-r-intc
-
-If we are to add more compatibles, I guess we could switch to
-something like:
-
-items:
-  - enum:
-    - allwinner,sun8i-a83t-r-intc
-    - allwinner,sun8i-h3-r-intc
-  - const: allwinner,sun6i-a31-r-intc
-
-It's going to be easier to maintain in the long run.
-
-Thanks!
-Maxime
-
---smzsasjwaytwgncj
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXhw73gAKCRDj7w1vZxhR
-xfhpAQDaJubC92ncM6GPUUqzW3nc++GjfRAhdInV8usAwqdmxwD+P5/2e/W5eeaW
-kJxLxEHrY7QaX68C60fWL9XuCd6QbAc=
-=lixO
------END PGP SIGNATURE-----
-
---smzsasjwaytwgncj--
-
-
---===============1494185500556121134==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1494185500556121134==--
-
+VmxhZGltaXIgT2x0ZWFuIHdyb3RlIDEzLjAxLjIwMjAgMTI6NDI6Cj4gSGkgQWxleGFuZGVyLAo+
+IAo+IE9uIE1vbiwgMTMgSmFuIDIwMjAgYXQgMTE6MjIsIEFsZXhhbmRlciBMb2Jha2luIDxhbG9i
+YWtpbkBkbGluay5ydT4gCj4gd3JvdGU6Cj4+IAo+PiBDUFUgcG9ydHMgY2FuJ3QgYmUgYnJpZGdl
+ZCBhbnl3YXkKPj4gCj4+IFJlZ2FyZHMsCj4+IOGatyDhm5Yg4ZqiIOGapiDhmqAg4ZqxCj4gCj4g
+VGhlIGZhY3QgdGhhdCBDUFUgcG9ydHMgY2FuJ3QgYmUgYnJpZGdlZCBpcyBhbHJlYWR5IG5vdCBp
+ZGVhbC4KPiBPbmUgY2FuIGhhdmUgYSBEU0Egc3dpdGNoIHdpdGggY2FzY2FkZWQgc3dpdGNoZXMg
+b24gZWFjaCBwb3J0LCBzbyBpdAo+IGFjdHMgbGlrZSBOIERTQSBtYXN0ZXJzIChub3QgYXMgRFNB
+IGxpbmtzLCBzaW5jZSB0aGUgdGFnZ2VycyBhcmUKPiBpbmNvbXBhdGlibGUpLCB3aXRoIGVhY2gg
+c3dpdGNoIGZvcm1pbmcgaXRzIG93biB0cmVlLiBJdCBpcyBkZXNpcmFibGUKPiB0aGF0IHRoZSBw
+b3J0cyBvZiB0aGUgRFNBIHN3aXRjaCBvbiB0b3AgYXJlIGJyaWRnZWQsIHNvIHRoYXQKPiBmb3J3
+YXJkaW5nIGJldHdlZW4gY2FzY2FkZWQgc3dpdGNoZXMgZG9lcyBub3QgcGFzcyB0aHJvdWdoIHRo
+ZSBDUFUuCgpPaCwgSSBzZWUuIEJ1dCBjdXJyZW50bHkgRFNBIGluZnJhIGZvcmJpZHMgdGhlIGFk
+ZGluZyBEU0EgbWFzdGVycyB0bwpicmlkZ2VzIElJUkMuIENhbid0IG5hbWUgaXQgZ29vZCBvciBi
+YWQgZGVjaXNpb24sIGJ1dCB3YXMgaW50cm9kdWNlZAp0byBwcmV2ZW50IGFjY2lkZW50YWwgcGFj
+a2V0IGZsb3cgYnJlYWtpbmcgb24gRFNBIHNldHVwcy4KCj4gLVZsYWRpbWlyCgpSZWdhcmRzLArh
+mrcg4ZuWIOGaoiDhmqYg4ZqgIOGasQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
