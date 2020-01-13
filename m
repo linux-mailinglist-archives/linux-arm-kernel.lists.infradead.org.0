@@ -2,113 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D93D138BF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:47:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A172B138C13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:53:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/yZ1qZ0n4cKQGn8yeIEHTl1fz+0ZXAPkHp8AEku/vR8=; b=PLiL4kWfKWF1HN
-	HZ4Wb5b6u8rtkgnb7nNm0lih5ej+m/fYvUMvLsiXZqLA4ncqxlo031Splsfu7OT5DUWiydlZn7hI2
-	8d+IRw6MszGeQY3zwLuerbyffCsQ1X3caKgMGR9ZLLAlX0hB/7acCJnHpQIzHZ3ZZa14w0v+XOktW
-	zBObc2YrpkZjqts/3fnNBSuWDqQFRaGbT36In9PM4weum2uWwf2CSozpFojmd8UjDp5Fuusp2vjIF
-	mjBh/JL507ie5oeeZpaBCGiuanIu6CShV4eKJ0+RSNKtWXjnAYmQc6r6DZdGEDXOxHeWYCaxpaJJP
-	TIbxtSLZ7lmJYafFOt2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=P2DaEerMz2WjH9U95GfBv4k94lx3bYSPK3Hohi2sl7Y=; b=iM5vpQXvA0lYZyyRFommUQ5r4
+	lysGbmFyDioKdl2lTrB/T2ik/KfyG9fK61GM6ZYvgqUve+85M+4BF2dDDpZLudUVlZFhEcaSoTeAy
+	3YmSHsRO6QD4AjZdbiq6Tc7F5BFj1J0VvgcInhQIROnNKb0Ix1W6wBRFKXI310Mst3cjWYBTrSUC+
+	oC6ChQsGsTqZIVL1lxZ7RDgi3dqzjQUH3XkQuHK8QVLPaKsrZy0wdjsreagcFfTN4a/TFH063WKBa
+	Csvk0OB9JL0HWEHoiIkAq2gEhWmkp4I0ZywroqGqS83nfDRA5HbcWj0nMU2pP5p3ioFJXoCGf6vcV
+	ZW7zrtweQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqtVB-0006sE-Eb; Mon, 13 Jan 2020 06:47:05 +0000
-Received: from mail-co1nam11on2047.outbound.protection.outlook.com
- ([40.107.220.47] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1iqtb0-0000Vk-Cd; Mon, 13 Jan 2020 06:53:06 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqtV3-0006ql-5F
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:46:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=n1OUK7rQ6HupzMNr0wLveSMl9s76FbkDRMRYW2eN8iEi0uiwqN1R4hoEQKndRq2dY4UobqwsgF8V9FhqnLkton3mUlReeUsenzY7IzMe8GTc/coq2Yju9s7SE9KyoP7C7mwRc82/obKwU8456IoBXQvXaSuesw+jJSpnctlVPUs3MbYWYBgJnDnZmmvlgK2O0QYt6tnIoZDRNxbbztjgwkhHlocMVYpBvIoluYJCjVZNExKxZiTFi4Vkc5H2Hmz0Q6vykAY8XdXaESyn0HbvaaFCDKIU8AfmT+yCgpqFaT7I2tGQQg5r3NWZZ1H2Zl4xMwhcj/b5QSaJARrMuHNzOw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8oPjHj4o/d7Xv4MBb9hIWNEje+pKnsEqxm8je1jYIcw=;
- b=cPvXVijhmgjMzTrrE6IwmcvTeH+vsXthUqOF+Yml07ESvq7ZzD6pc7V6U8wWwCpfkqpRiLfLkdWi7kjvxfzsNYHgcBkiIcF3+kWI9QWu6dauJHkZV3MRdCGyi4MiU2uJJleE6tQm3m9RaGQRyjbB9s9vsrRphak4ce2jmP8QSf/UGNhafU8Xb6HiWao/7/SIq6LUNf5UjyRhn3OpZVR7qyD4CtfHtWEm6JJV0F1nWjhZTlV04yOQ+Yv1WJkETXYHXHT8lvh3ATAwDF9mM7t6k5sTczERZV/g4fkX0/WRrqdoun5KCgX9ZDywjFCwvNAgag7kVqm5hU2ItVQtDUQkMA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8oPjHj4o/d7Xv4MBb9hIWNEje+pKnsEqxm8je1jYIcw=;
- b=r6dMLAb7fH/LUzp6hFTc985roRs/oFHkQbHzaK0qOm7Avsf265TduDqZiuXFyxvttb9u8Sx5Y/72xUVm36H3N8MNsMeuWSHWDgAWR9FeplPnLjPRwsmJw0gM+nwtE3Ch4wDb8Fcfs8rtAq89vSrr5mxTo9ULw0ux7fbhTBV3tqE=
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com (52.135.202.143) by
- BYAPR02MB4007.namprd02.prod.outlook.com (52.135.204.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Mon, 13 Jan 2020 06:46:53 +0000
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::f964:6ae7:834b:8fa7]) by BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::f964:6ae7:834b:8fa7%5]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 06:46:53 +0000
-From: Rajan Vaja <RAJANV@xilinx.com>
-To: Sudeep Holla <sudeep.holla@arm.com>, Jolly Shah <JOLLYS@xilinx.com>
-Subject: RE: [PATCH 0/2] arch: arm64: xilinx: Make zynqmp_firmware driver
- optional
-Thread-Topic: [PATCH 0/2] arch: arm64: xilinx: Make zynqmp_firmware driver
- optional
-Thread-Index: AQHVxx/fTp0hk3voQU+k+EbrUrDiSqfjyxyAgARcgUA=
-Date: Mon, 13 Jan 2020 06:46:52 +0000
-Message-ID: <BYAPR02MB4055B8A5ED27C2F23A28D8D0B7350@BYAPR02MB4055.namprd02.prod.outlook.com>
-References: <1578596764-29351-1-git-send-email-jolly.shah@xilinx.com>
- <20200110115415.GC39451@bogus>
-In-Reply-To: <20200110115415.GC39451@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=RAJANV@xilinx.com; 
-x-originating-ip: [149.199.62.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1bcce14a-0afb-4db4-60bf-08d797f45fbe
-x-ms-traffictypediagnostic: BYAPR02MB4007:|BYAPR02MB4007:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR02MB4007595357165A74D9E5081EB7350@BYAPR02MB4007.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(376002)(396003)(39860400002)(346002)(366004)(199004)(189003)(26005)(7696005)(33656002)(9686003)(55016002)(478600001)(186003)(86362001)(4326008)(107886003)(8676002)(81156014)(81166006)(54906003)(6506007)(53546011)(2906002)(110136005)(8936002)(316002)(66476007)(66446008)(66556008)(66946007)(52536014)(5660300002)(71200400001)(7416002)(76116006)(64756008)(6636002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB4007;
- H:BYAPR02MB4055.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: nAKgNQZhGFoNroJhafWP73JhB+Mn6usySi2myHF2ba4sw9b17vs2GkzltV0RyhbK55/1HhtVae14jcyb2BK39XLN+6ftzhfxB2mH9vVqEqnfSTNRkvKjqCHIkML0jbo9b5AqhIeCEJh/I4WFaCSz/86kSLyIn8H6dZP/khVt47cKDym++6kO8bFraRzCxnZ4aKgfxbhBtLhH0IjHVo/+2E9J0MH2CcXnKh7VIRo29RgK/yLXPJXjwCTxVGt6YKjNbIWSs6lqWH4lTKzFHVzbru6Di+SlxsY26VeZ6+QWSpVlLVrWsdJ8OA+bRsVPMcQ/StdNeJK1UhVCC8uDOKeJG/dobwc4xhojJHdmQR1lq0OpaYa2ssvTJhmqw3aT3xg0MpZ4PNqHaZFo0XlCaa0Aq3J168QFgxYbTQ4LUi5fTtBkcHHSzTEiY8hH9EzqK4Vm
+ id 1iqtap-0000Qx-QD
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:52:57 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 47x45m5vGSz9ttgG;
+ Mon, 13 Jan 2020 07:52:28 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=NVd27d+g; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id 1iwCVC8X-I0R; Mon, 13 Jan 2020 07:52:28 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 47x45m4fd0z9ttgD;
+ Mon, 13 Jan 2020 07:52:28 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1578898348; bh=BEG+waaqceEGqvmTkmRPJ8Qzyso8PEjwXnIakVOqtZc=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=NVd27d+gFiIyUuKl/HLoK+La1AiiYRZnEQtAMYVLE60YGvnlTuLzA+Zj2M0GA+Ket
+ FpVfMNKOrYwhgR+zTPLHtu0BWa6zZ6Ph7297vQIxUho+xhYLUTI/NMu1Gj3zsDCx0k
+ Uvvo9nAJ3jOmw8RlqvoHHkfMpgYirFnUFWki46WU=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 30D588B79C;
+ Mon, 13 Jan 2020 07:52:33 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id gGYtxlUDGq_J; Mon, 13 Jan 2020 07:52:33 +0100 (CET)
+Received: from [172.25.230.100] (po15451.idsi0.si.c-s.fr [172.25.230.100])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id AD2CA8B752;
+ Mon, 13 Jan 2020 07:52:32 +0100 (CET)
+Subject: Re: [RFC PATCH v2 07/10] lib: vdso: don't use READ_ONCE() in
+ __c_kernel_time()
+To: Thomas Gleixner <tglx@linutronix.de>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ arnd@arndb.de, vincenzo.frascino@arm.com, luto@kernel.org
+References: <cover.1577111363.git.christophe.leroy@c-s.fr>
+ <fc1ff722c7cbe63a63ae02ade3a714d2049d54a5.1577111367.git.christophe.leroy@c-s.fr>
+ <87lfqfrp7d.fsf@nanos.tec.linutronix.de>
+ <a995445f-9b00-ca13-d23a-1aea3b345718@c-s.fr>
+ <878smes13d.fsf@nanos.tec.linutronix.de>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <dfd30b00-5d5c-29c3-6b91-aac0533635ca@c-s.fr>
+Date: Mon, 13 Jan 2020 07:52:31 +0100
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1bcce14a-0afb-4db4-60bf-08d797f45fbe
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 06:46:52.8891 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 6z1nV7YtSIYq67J+gveFWN2FlgQZ+UInLbrkHSVhKNoAIOkHAL+tIJRJgebpl2LYaK0lCCQZT5WuRClMnem3nw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4007
+In-Reply-To: <878smes13d.fsf@nanos.tec.linutronix.de>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_224657_211634_81AF0120 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200112_225256_146177_C50ED985 
+X-CRM114-Status: GOOD (  16.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.220.47 listed in list.dnswl.org]
+ no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,65 +102,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "keescook@chromium.org" <keescook@chromium.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "matt@codeblueprint.co.uk" <matt@codeblueprint.co.uk>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>, Tejas Patel <TEJASP@xilinx.com>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "hkallweit1@gmail.com" <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: x86@kernel.org, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
-
-Thanks for the reviewing patch.
-
-> -----Original Message-----
-> From: Sudeep Holla <sudeep.holla@arm.com>
-> Sent: 10 January 2020 05:24 PM
-> To: Jolly Shah <JOLLYS@xilinx.com>
-> Cc: ard.biesheuvel@linaro.org; mingo@kernel.org; gregkh@linuxfoundation.org;
-> matt@codeblueprint.co.uk; hkallweit1@gmail.com; keescook@chromium.org;
-> dmitry.torokhov@gmail.com; Michal Simek <michals@xilinx.com>; Rajan Vaja
-> <RAJANV@xilinx.com>; linux-arm-kernel@lists.infradead.org; linux-
-> kernel@vger.kernel.org; Sudeep Holla <sudeep.holla@arm.com>; Tejas Patel
-> <TEJASP@xilinx.com>
-> Subject: Re: [PATCH 0/2] arch: arm64: xilinx: Make zynqmp_firmware driver
-> optional
-> 
-> EXTERNAL EMAIL
-> 
-> On Thu, Jan 09, 2020 at 11:06:02AM -0800, Jolly Shah wrote:
-> > From: Tejas Patel <tejas.patel@xilinx.com>
-> >
-> > Zynqmp firmware driver requires firmware to be present in system.
-> > Zynqmp firmware driver will crash if firmware is not present in system.
-> > For example single arch QEMU, may not have firmware, with such setup
-> > Linux booting fails.
-> >
-> > So make zynqmp_firmware driver as optional to disable it if user don't
-> > have firmware in system.
-> >
-> 
-> Why can't it be detected runtime ? How do you handle single binary if you
-> make this compile time option ?
-[Rajan] There is PMU register which indicates if firmware is present or not, but in case of single arch QEMU that register will not be available so  there is no way to detect if firmware is present or not from Linux.
-Linux firmware crashes while arm_smccc_smc() call for firmware, but before this call there is no way  to identify if firmware is present or not. So we are just giving user an option if they want to use it on single arch
-Platform they can disable firmware driver.
-
-Thanks,
-Rajan
-> --
-> Regards,
-> Sudeep
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAxMS8wMS8yMDIwIMOgIDEyOjA3LCBUaG9tYXMgR2xlaXhuZXIgYSDDqWNyaXTCoDoKPiBD
+aHJpc3RvcGhlIExlcm95IDxjaHJpc3RvcGhlLmxlcm95QGMtcy5mcj4gd3JpdGVzOgo+Pgo+PiBX
+aXRoIFJFQURfT05DRSgpIHRoZSA2NCBiaXRzIGFyZSBiZWluZyByZWFkOgo+Pgo+PiBXaXRob3V0
+IHRoZSBSRUFEX09OQ0UoKSBvbmx5IDMyIGJpdHMgYXJlIHJlYWQuIFRoYXQncyB0aGUgbW9zdCBv
+cHRpbWFsLgo+Pgo+PiBXaXRob3V0IFJFQURfT05DRSgpIGJ1dCB3aXRoIGEgYmFycmllcigpIGFm
+dGVyIHRoZSByZWFkLCB3ZSBzaG91bGQgZ2V0Cj4+IHRoZSBzYW1lIHJlc3VsdCBidXQgR0NDIChH
+Q0MgOC4xKSBkb2VzIGxlc3MgZ29vZDoKPj4KPj4gQXNzdW1pbmcgYm90aCBwYXJ0IG9mIHRoZSA2
+NCBiaXRzIGRhdGEgd2lsbCBmYWxsIGludG8gYSBzaW5nbGUKPj4gY2FjaGVsaW5lLCB0aGUgc2Vj
+b25kIHJlYWQgaXMgaW4gdGhlIG5vaXNlLgo+IAo+IFRoZXkgZGVmaW5pdGVseSBhcmUgaW4gdGhl
+IHNhbWUgY2FjaGVsaW5lLgo+IAo+PiBTbyBhZ3JlZWQgdG8gZHJvcCB0aGlzIGNoYW5nZS4KPiAK
+PiBXZSBjb3VsZCBiZSBzbWFydCBhYm91dCB0aGlzIGFuZCBmb3JjZSB0aGUgY29tcGlsZXIgdG8g
+aXNzdWUgYSAzMmJpdAo+IHJlYWQgZm9yIDMyYml0IGJ1aWxkcy4gU2VlIGJlbG93LiBOb3Qgc3Vy
+ZSB3aGV0aGVyIGl0J3Mgd29ydGggaXQsIGJ1dAo+IE9UT0ggaXQgd2lsbCB0YWtlIHF1aXRlIGEg
+d2hpbGUgdW50aWwgdGhlIDMyYml0IHRpbWUgaW50ZXJmYWNlcyBkaWUKPiBjb21wbGV0ZWx5LgoK
+SSBkb24ndCB0aGluayBpdCBpcyB3b3J0aCBzb21ldGhpbmcgc28gYmlnIHRvIGp1c3Qgc2F2ZSAx
+IG9yIDIgY3ljbGVzIGluIAp0aW1lKCkgZnVuY3Rpb24uIExldHMga2VlcCBpdCBhcyBpdCBpcy4K
+ClRoYW5rcywKQ2hyaXN0b3BoZQoKPiAKPiBUaGFua3MsCj4gCj4gICAgICAgICAgdGdseAo+IAo+
+IDg8LS0tLS0tLS0tLS0tCj4gLS0tIGEvaW5jbHVkZS92ZHNvL2RhdGFwYWdlLmgKPiArKysgYi9p
+bmNsdWRlL3Zkc28vZGF0YXBhZ2UuaAo+IEBAIC0yMSw2ICsyMSwxOCBAQAo+ICAgI2RlZmluZSBD
+U19SQVcJCTEKPiAgICNkZWZpbmUgQ1NfQkFTRVMJKENTX1JBVyArIDEpCj4gICAKPiArI2lmZGVm
+IF9fTElUVExFX0VORElBTgo+ICtzdHJ1Y3Qgc2VjX2hsIHsKPiArCXUzMglzZWNfbDsKPiArCXUz
+MglzZWNfaDsKPiArfTsKPiArI2Vsc2UKPiArc3RydWN0IHNlY19obCB7Cj4gKwl1MzIJc2VjX2g7
+Cj4gKwl1MzIJc2VjX2w7Cj4gK307Cj4gKyNlbmRpZgo+ICsKPiAgIC8qKgo+ICAgICogc3RydWN0
+IHZkc29fdGltZXN0YW1wIC0gYmFzZXRpbWUgcGVyIGNsb2NrX2lkCj4gICAgKiBAc2VjOglzZWNv
+bmRzCj4gQEAgLTM1LDcgKzQ3LDEwIEBACj4gICAgKiB2ZHNvX2RhdGEuY3NbeF0uc2hpZnQuCj4g
+ICAgKi8KPiAgIHN0cnVjdCB2ZHNvX3RpbWVzdGFtcCB7Cj4gLQl1NjQJc2VjOwo+ICsJdW5pb24g
+ewo+ICsJCXU2NAkJc2VjOwo+ICsJCXN0cnVjdCBzZWNfaGwJc2VjX2hsOwo+ICsJfTsKPiAgIAl1
+NjQJbnNlYzsKPiAgIH07Cj4gICAKPiAtLS0gYS9saWIvdmRzby9nZXR0aW1lb2ZkYXkuYwo+ICsr
+KyBiL2xpYi92ZHNvL2dldHRpbWVvZmRheS5jCj4gQEAgLTE2NSw4ICsxNjUsMTMgQEAgc3RhdGlj
+IF9fbWF5YmVfdW51c2VkIGludAo+ICAgc3RhdGljIF9fbWF5YmVfdW51c2VkIF9fa2VybmVsX29s
+ZF90aW1lX3QgX19jdmRzb190aW1lKF9fa2VybmVsX29sZF90aW1lX3QgKnRpbWUpCj4gICB7Cj4g
+ICAJY29uc3Qgc3RydWN0IHZkc29fZGF0YSAqdmQgPSBfX2FyY2hfZ2V0X3Zkc29fZGF0YSgpOwo+
+IC0JX19rZXJuZWxfb2xkX3RpbWVfdCB0ID0gUkVBRF9PTkNFKHZkW0NTX0hSRVNfQ09BUlNFXS5i
+YXNldGltZVtDTE9DS19SRUFMVElNRV0uc2VjKTsKPiArCV9fa2VybmVsX29sZF90aW1lX3QgdDsK
+PiAgIAo+ICsjaWYgQklUU19QRVJfTE9ORyA9PSAzMgo+ICsJdCA9IFJFQURfT05DRSh2ZFtDU19I
+UkVTX0NPQVJTRV0uYmFzZXRpbWVbQ0xPQ0tfUkVBTFRJTUVdLnNlY19obC5zZWNfbCk7Cj4gKyNl
+bHNlCj4gKwl0ID0gUkVBRF9PTkNFKHZkW0NTX0hSRVNfQ09BUlNFXS5iYXNldGltZVtDTE9DS19S
+RUFMVElNRV0uc2VjKTsKPiArI2VuZGlmCj4gICAJaWYgKHRpbWUpCj4gICAJCSp0aW1lID0gdDsK
+PiAgIAo+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
