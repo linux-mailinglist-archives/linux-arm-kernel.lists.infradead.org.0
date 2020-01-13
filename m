@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B98C6139D6E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:37:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31ABD139D89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:41:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=clgIjJlgoF3NwUn4PwpXEmqTXVrbL0394SPEbsFqrBI=; b=HrRxukZaWXvpwL
-	1iVyp0bcRUgnRSIsyrRUQzI4plspyTBsHVRnaMCZ3kPJr3MYb/3tMee+B+e27cj9r23d31VwLNyKp
-	q17ji5TQiD6HAUOisZrufgOdVWC0CTnMTnE8dgSaL8XZMloXRXxEEPfkmsOrVdW8Fo4M3jYbS7ePs
-	qxFPd4bMazucE0kkgo6iH9dvA1uyCcGEimS3v0pIrfgrCbuQyG3gUYq8LU3u3xT/pNMo4yy/FN473
-	ocdLHvrTarqf4N+QvXmzK1pcxbiZcwfOnsRj0V6rxFOM/h1rv0uwF00jAAZYJtVla/EqRWDk+rkX/
-	OEp0SpCSg0DEEXx7J3lg==;
+	List-Owner; bh=nwH5SieJps2mJzmxWSTOK88AUJxY4SQ/TnzC23TeEnM=; b=gp03MjzoHqlA8f
+	GxXPtiiVuSo7opJGc8CCGp5le9AcqJkidpiBLVm6yrt2CVaDeNzlOara8JQB8lgLzbZcPFh1UobIt
+	aIaBoWH+2s4vhAp8k/HLU8D0RoWU5Vy1i/4nZPUNpnPTnWwAyrXH0uA4JCBVtiD1NG1HuMdrUFNh1
+	rIiKCKY7NZXXROf1OnZ+23OnWhPTUMuR8zKpKdW1EizXpAKyVtHIoiT+1qB3W3/BoFmCe8oQaUXMI
+	ulzWjwEVMSNkSWNvjscuVz8MrBceYVZ3yn9ttxi4dMHlXFfk5uQ7aoI5mDXo/ckpWbRQOzcdf7KUN
+	8EH0vt+pmKg8KwFRLgEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir9Gj-0001G9-PA; Mon, 13 Jan 2020 23:37:13 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1ir9Kv-00045l-Mf; Mon, 13 Jan 2020 23:41:33 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir9Ga-0001Dj-1l
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 23:37:06 +0000
-Received: by mail-pl1-x644.google.com with SMTP id p9so4439345plk.9
+ id 1ir9Jn-0003FK-SG
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 23:40:25 +0000
+Received: by mail-pf1-x441.google.com with SMTP id n9so5618106pff.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 15:37:03 -0800 (PST)
+ Mon, 13 Jan 2020 15:40:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=URU0nYVVIvG9fQe+g2UcCIBs+6Op8N6XSVfeKx2sX+I=;
- b=b/ab/jdXLWIU3ED09YHc4yD7PEZYMen7BL6s7F1/kjYZZ83fH7thRSgRFb4nvmHi9+
- I8uOh4axY1udmFUQ9CRB6Ak22NsM0Q5kOUrMSui9gEu5AZwkkiQGPJxHY4Ek0jT/BU7x
- dN3GGRtSBhufBlwxACNUPr6YqSRNplN/UB1VyIzSrV23VJ/BxtF8x8jOUP/NEUxtfkff
- VucOsF7idPxxRbVhU5/fTAEEDTXLWM6GxHyPAO3/NDMx+eTcgWfIn5rfkPyTksPsZSjP
- e4eZNbaY5gv76V7loiTc0SQ3nvjtNOKckOayZ/Icwb44Nfq+t/qB4ZXVB/jumkX3KfWa
- mBoA==
+ :mime-version; bh=sO+iqS5at4kQoqKYaj93x28+XPq7u/VZF7pgBa0PTKw=;
+ b=Ox+WPUIgcZKuEnZWTkLLPQgzYp0JAP6+RHmNZarXHOR1VEGRUFuB3vTek415XOepq0
+ T1NSsiZB7v7KbLRXYYYv/0yKmrgtGstw2OHUg4uo193MIY3mW8dAuo2BhttsmEdDXsGf
+ hQY1jh58eJp6Zex+n1KUCz+YfneiZYP3+vOcHHdcShOZx9YPW6qyBfEKE4Q7I22oj8SX
+ Ixg+YB3Zxv98M4zeXiWrXtWbgOXkobDXN5OsDDK11D1EdvzjpcfSb4HbnYYcx9lhXceA
+ uZHFuRjkq6c5LEX6Vi3iY9gOP2qzhfbfu16G9H1LoHOT0rLJ6zfFU4XYyn5ed/BPFvX8
+ aKEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=URU0nYVVIvG9fQe+g2UcCIBs+6Op8N6XSVfeKx2sX+I=;
- b=BlWRMDUfIWRaC3mTXf/B5DpOewy1t4SYgk3dfx1RRrvFyBcVtxgCXsaIuysyFtMyKK
- 4GT6xCqXb1IpDM2aqEMIjYrSdk7z86cdMib+TQzv9jMqLYK5z8CE8hbe/Zwtmot8vGj9
- L7cSp+YFDeXGzFOndIxgeYGbXkeCbEfwaG9Lbjzo6M4L8pVRXGTRqwvd811xypMJ+n7L
- yA9SjppqVX7CB7D0O81QmNfPZ/X6OwlueIKULByn7G8mO1K1nysatGRlPnAXtii/qF0H
- faJl2j3pZ64VLueJvJCFnsnqq88KCkJlwSo2hUm+iOHErOWIjNSuRCmaxCRH7JXur2A7
- +cKw==
-X-Gm-Message-State: APjAAAXS1IV9d0XuPi55il92wTh0JCKlZdTj+gXMg+RdhL1nHQwelShO
- 7VcpUnukh3GEl8x3Ua9Wu9/9Lw==
-X-Google-Smtp-Source: APXvYqzCuoCV4QA2/uQQXAdoLv7iqVZ5/gY2tfSqNNG6zeLXktzaA9OsR+piF0ld/u9H+WkLG6qR5Q==
-X-Received: by 2002:a17:902:bf0a:: with SMTP id
- bi10mr17117837plb.324.1578958623194; 
- Mon, 13 Jan 2020 15:37:03 -0800 (PST)
+ bh=sO+iqS5at4kQoqKYaj93x28+XPq7u/VZF7pgBa0PTKw=;
+ b=ghu038Q2SJZrBcus+xE1nRpeQd8emVbPMNVciuYm8grYNFGhejl4JLh3JWR8OMB97u
+ wOG586sJNMVDQR9DSJWxp61NYbsvG0bS0UiMXcqCRTWquMpivC36F/CDOaYkBJ0ONF0O
+ KrQKAAsiBhM9xw4d6v9+UOomrn2ha9iTeyOUWHA37NhbU127FTy/Il850gU4ctI1/kcP
+ 0Ro/Q/4W9PsMV88OtUr7spV3RJV/8gC/tKOe7ZqcjyZkwzom2AKIoMaVBs5Dgi9Dwoem
+ bDsHTMEYKIoNW2QNSZGQaYMWrlTM0SLDHZzi+bkhgo5zQ9LVGR+7QCn4/iDn/XkfH/jE
+ UW5Q==
+X-Gm-Message-State: APjAAAW6qORd5iXLNY1ubfWzPZlWGe9K6CUtHMme6J5Sva5An0GCfMpJ
+ byY4Np+9sgZI511TS+h41uv48w==
+X-Google-Smtp-Source: APXvYqxOFnkt4NJld1GAc3enPtDOXFGVXS9iJaH6cGEgh6sJnOSmCeK3VGF0VCf5MdcABcrSc1YLIA==
+X-Received: by 2002:a63:114a:: with SMTP id 10mr23486632pgr.250.1578958822095; 
+ Mon, 13 Jan 2020 15:40:22 -0800 (PST)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id q15sm14613132pgi.55.2020.01.13.15.37.02
+ by smtp.gmail.com with ESMTPSA id 144sm16256684pfc.124.2020.01.13.15.40.21
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 Jan 2020 15:37:02 -0800 (PST)
+ Mon, 13 Jan 2020 15:40:21 -0800 (PST)
 From: Kevin Hilman <khilman@baylibre.com>
 To: Jianxin Pan <jianxin.pan@amlogic.com>, linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH v5 1/4] dt-bindings: power: add Amlogic secure power
- domains bindings
-In-Reply-To: <1573532930-39505-2-git-send-email-jianxin.pan@amlogic.com>
+Subject: Re: [PATCH v5 0/4] arm64: meson: add support for A1 Power Domains
+In-Reply-To: <1573532930-39505-1-git-send-email-jianxin.pan@amlogic.com>
 References: <1573532930-39505-1-git-send-email-jianxin.pan@amlogic.com>
- <1573532930-39505-2-git-send-email-jianxin.pan@amlogic.com>
-Date: Mon, 13 Jan 2020 15:37:02 -0800
-Message-ID: <7ha76rdj35.fsf@baylibre.com>
+Date: Mon, 13 Jan 2020 15:40:21 -0800
+Message-ID: <7h7e1vdixm.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_153704_227680_08FCB9E8 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20200113_154023_951218_D67FC015 
+X-CRM114-Status: UNSURE (   7.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,62 +108,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Jianxin Pan <jianxin.pan@amlogic.com> writes:
 
-> Add the bindings for the Amlogic Secure power domains, controlling the
-> secure power domains.
+> This patchset introduces a "Secure Power Doamin Controller". In A1/C1, power
+> controller registers such as PWRCTRL_FOCRSTN, PWRCTRL_PWR_OFF, PWRCTRL_MEM_PD
+> and PWRCTRL_ISO_EN, are in the secure domain, and should be accessed from ATF
+> by smc.
 >
-> The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
-> power domain registers are in secure world.
->
-> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
-> ---
->  .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 37 ++++++++++++++++++++++
->  include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++++
->  2 files changed, 69 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->  create mode 100644 include/dt-bindings/power/meson-a1-power.h
->
-> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-> new file mode 100644
-> index 00000000..2ed269f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-> @@ -0,0 +1,37 @@
-> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +# Copyright (c) 2019 Amlogic, Inc
-> +# Author: Jianxin Pan <jianxin.pan@amlogic.com>
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/power/amlogic,meson-sec-pwrc.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Amlogic Meson Secure Power Domains
-> +
-> +maintainers:
-> +  - Jianxin Pan <jianxin.pan@amlogic.com>
-> +
-> +description: |+
-> +  Meson Secure Power Domains used in A1/C1 SoCs.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - amlogic,meson-a1-pwrc
-> +
-> +  "#power-domain-cells":
-> +    const: 1
-> +
-> +required:
-> +  - compatible
-> +  - "#power-domain-cells"
-> +
-> +examples:
-> +  - |
-> +    pwrc: power-controller {
-> +          compatible = "amlogic,meson-a1-pwrc";
-> +          #power-domain-cells = <1>;
-> +          secure-monitor = <&sm>;
+> Changes since v4 at [3]:                                                         
+>  - add SM_A1_ prefix for PWRC_SET/GET
+>  - rename variable and update comments
 
-As requested by Rob, please put this under the secure-monitor node.
+Thanks for those updates
+
+After the bindings issues are worked out, this is ready for merge.
 
 Kevin
 
