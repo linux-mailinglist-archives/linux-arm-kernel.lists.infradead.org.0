@@ -2,76 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD489138BED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:44:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57FF6138BF6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:46:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MUHNqabTYOGFaBqEq5/qbbW2GSGgRRSE3elGAl/YAII=; b=SVGJ+h4t/Q2gGK
-	31fixja0z4/bSGC1naHJAme32T7ZSzgzPqbCgzhWxAi5HbsQ0OjGGXdrewAqqugI0oXeRWCDmESU4
-	iqSyyuogDoSe2kWvkwNv+tquWVPtTfj8rsMJ7tqA6jcMHHYWUaZrX9ojupqVTL8uJaU7Ng1WjyifR
-	6Hvjz+lxS5jildhTTKyrA8mae7l0dt4WbEl6dYSpnde25xcUiye2WTMlOcWeRQL+JDS1F4q5yPS2i
-	+gmRithVRIEt2K6n+F6G2y8nNZVgIzGMqC5VNRe+m0GT2hr2zDgyryyCTZHMZ2cY8Or3O1DKsrwUy
-	sr+EMAKfUIJdqLM45vVw==;
+	List-Owner; bh=q/mQWCuPioAdgqduiVqiz7cnp/kk9PoUe1rzYM9u6ZU=; b=sact4+cD3rdTdG
+	AXaD+t4zZpRF3EYUw2giTwWNKZK/JNLrQm0vA6KSWeQ9PYzX7Z8V8/V35bm9AIAWLmIgJfIozZGQT
+	Fc/AC4q7jw6F8iZ7sGJw8MFs+Rdw9KV6B/n9abZ2OyayhPz5ktlfjEqeYIZ5rN7kfV/CvZCeNyOse
+	ccbHV/C6SmABDyRkeuQml4fm7MGS66XP5h/Y8duKXn6HeRlrBaBv1Ly3IG4OBCihlJdhz0v5yys3O
+	qSKhm/EF5SapOpD25fAZD0jwyZg1PjJxerRdD21aJqdci6IbnMvZ8xYVBBrQRgQiUp3vMqwnT2tpm
+	JU+tSxr9tcJ9QixIgHXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqtSf-0004zp-7r; Mon, 13 Jan 2020 06:44:29 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1iqtTy-0006Yn-7J; Mon, 13 Jan 2020 06:45:50 +0000
+Received: from mail-eopbgr80082.outbound.protection.outlook.com ([40.107.8.82]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqtSV-0004ys-9t
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:44:20 +0000
-Received: by mail-qk1-x744.google.com with SMTP id r14so7535206qke.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Jan 2020 22:44:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BNID1+xlk/LusKrfyvTRadaTjl4JTdHdZqFClmlrkE8=;
- b=OyvIPxXK+9gRKfh1j2g/pw9Okrn9nsbKhZjAf9nvWrFWTasOHoycaN/UYYMfhcIC19
- q7V2LwdxqeCs4zYNYujxCALeZwUnxdGHWOyse3uCMcKGt+LjGnSL1M0bpUfxgD4n2fec
- c1TWiw/luhrhXoyB6w/D1tFMJi+V+IvKJEasQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BNID1+xlk/LusKrfyvTRadaTjl4JTdHdZqFClmlrkE8=;
- b=gpGusY3sFGXkw2yjBznIGP2CV7wgj0Cie0JR8bTEBcOJ7L+5OlrLOu/9BwqPdRRY7W
- Y9qTtw66FQosThppj23hrNyT3SVPjKJF2e/Rr1gA5xF7wvcHmu4NuUrbvRv93Y7v/3iS
- 5hGkcfmhKDEVl2pWIjoQxcOuPvLRkjzZ1WUPfnlD3ll/pIS5k2fjCf5WKsUVrNrh+Wlo
- hpz8EiYiw4L161c3SaqiMFKVjxDCHV1vbqkwV5IYwlNKbEg0X7hLVc6oxoVM3rttMDnH
- t/LylQxv5TeDo9UxP8gZB41RFtO/MUYq1dkvIukhBEgLMflJ6ZLBROmImobfrwXyG0T/
- QLHQ==
-X-Gm-Message-State: APjAAAVrUwH6YWuudpQkCdTp7WF50xW8M/hkMvrzdHi/oPhlpN4aXVGY
- GWHl2aGJ5ZT6EW1bih4hvqRZ0aCah8UftXnyYuIoMg==
-X-Google-Smtp-Source: APXvYqzL5B5r73soR628uc2jDkq8fU1OUh+0wVt0KMcWK9cN8MbW5ohquaKM4R+Ks/ACv40A/WWnmnHJYeJHxhoohe8=
-X-Received: by 2002:a05:620a:6d7:: with SMTP id
- 23mr14117387qky.299.1578897858106; 
- Sun, 12 Jan 2020 22:44:18 -0800 (PST)
+ id 1iqtTn-0006XG-Em
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:45:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RXT3NxssAkyOQauTEZknust8+ISQIoCkcTLTnPm5lgJI7TSWyvnlP+44TjGqAUZCUhQ3GSwMB3RZ6qjtbzdlH0QjOckXql6pARWJ/9T+vLJwVofLwpW5nLFyk2V2wwCfG99MtFdkjE5wPI7+UhWoDOBNHaYzfhWbLRhn38nsqfYNi8cP5lBrZMbpozke5Oar52k4EbAaZ+Du6wHJo4GDfB/lFr2jM+vXMMPHCe3aFzhXuwoSstFXeWWfL/WlOahUlVaCGkKmaaN+y66M3R2NDDpfgzxGFI2uAmIjeq5MBXJAPckAwKx/M+mmacrwc1VucqqQn74kxR7D3QJNFAIEUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0AqYxbeUjev659w2GF9CDhC1hBk4wSIEV3nAm3LD1e8=;
+ b=UjZy6Coo38kp+KywMFravV2eYxvm9AL6b5kjFjsaPaZuS3NCbFKCAmH8sdk3wQIamRxpV/M5rk8v4Q2r2foSLZC2IKsf1qegkZ7NiLaTbqkcZhDZQMgl8VFGlDM/6I1LNZ0oNbLV0K5fQkMYR4zN4tK4GrYoCstXJw3zV27wRukj6NZ5lETR4/tD+F+5eHsGjcl0Z/iB5MzhtEP/dZBdoIKjCkgOvVdOiFnCor1DiYxThVShQ4kpcmImuhR6Zu9PM2eRfj/BLhKEwhUpyiA0CRoDwP87DwzFdHjKseu4KwNHWS1K/hlj65D9mWjfpBG3F+FFtloLGIJmZl3eUgOvsQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0AqYxbeUjev659w2GF9CDhC1hBk4wSIEV3nAm3LD1e8=;
+ b=nUG955hDbmcAWlTxnW92AI+CD7MXizVJdL5e8mzJavKiJrHrwmh03LiB+VaxvRU/XiudFK6WMcsE0i18e/fk9rySovwiT2OWtTY8uARXXC+BXEU/uRvzPblIDJS4jzkrctbplFxMYeH7RYI4rv471HnScqaEcrbpAWMmX49hGuI=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4498.eurprd04.prod.outlook.com (52.135.148.148) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.9; Mon, 13 Jan 2020 06:45:35 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
+ 06:45:35 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Sudeep Holla <sudeep.holla@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>
+Subject: RE: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+Thread-Topic: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+Thread-Index: AQHVppfygI23RUpETUWFTxolQ+nTs6fiPXoAgAAVYACAAcKWgIAEV0ng
+Date: Mon, 13 Jan 2020 06:45:34 +0000
+Message-ID: <AM0PR04MB448197C42958AE684D021FE288350@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+ <CAK8P3a3=q2zX9xQo7eZKp7e70rAeNB8VoSjg2aE06QJuSw8y3Q@mail.gmail.com>
+ <20200109093442.4jt44eu2zlmjaq3f@vireshk-i7> <20200110122725.GB45077@bogus>
+In-Reply-To: <20200110122725.GB45077@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: c2d4186f-beee-4089-8480-08d797f4313b
+x-ms-traffictypediagnostic: AM0PR04MB4498:
+x-microsoft-antispam-prvs: <AM0PR04MB4498BA22702923F212DFC4A888350@AM0PR04MB4498.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 028166BF91
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(366004)(136003)(346002)(376002)(396003)(199004)(189003)(8936002)(8676002)(86362001)(9686003)(26005)(186003)(55016002)(44832011)(81156014)(81166006)(5660300002)(53546011)(7696005)(6506007)(52536014)(4326008)(54906003)(71200400001)(66446008)(76116006)(33656002)(110136005)(316002)(2906002)(478600001)(66946007)(66476007)(66556008)(64756008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4498;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: gd2ItDIT2UUcY4WTxKUfUEWTTf8FiQhWhuD6levtnaizW9oPTAT9HAMpb50f7ESAhno5bsEpRTiQ/CdCmewnbWmaLBZ1ylOP0T5gLoCzhq+dTO0IDRIsqWk2GcwO8XtNck/CVkNzuQ0h+QhE9RYzpGA5dTsECgDtZFyX3c94mg7h2lqC/8x+78yqkLsbjZgH6PtWZjHHPcMRGJt+Cj+NexOjMZLiixAorqG1su3Nl2nke4ZJ5uephAkQ7FXFZwWx9jYRsZe0aZ+Ht9iAbuUqjVooYRujqgDiATd+WTpGifvGsU6Ku5ajv9CoX/H0ZZjFSXadYkddli/pEc7T4sU0kUBVeu3kt1fqQCiynCstO4XWnREF5V7J+khW9bPCa6M5kqCP2GX1cdoJtpHBsxLwpxvnxPgaTY+Njz27URhkkCnun1jaZMR0DnjOpZTeZGWx
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20200107070154.1574-1-roger.lu@mediatek.com>
- <20200107070154.1574-2-roger.lu@mediatek.com>
- <20200108203829.GA18987@bogus>
-In-Reply-To: <20200108203829.GA18987@bogus>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Mon, 13 Jan 2020 14:44:07 +0800
-Message-ID: <CANMq1KBu-gFy701BgFcjEwyhV9GgCCU2mkT9c8LviOJKBF30UA@mail.gmail.com>
-Subject: Re: [PATCH v6 1/3] dt-bindings: soc: add mtk svs dt-bindings
-To: Rob Herring <robh@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c2d4186f-beee-4089-8480-08d797f4313b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 06:45:34.9193 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: VDW2P+WcDxt0tuD/d82bvnw9DX8ZJHoHFIDO8rlCsjlFKK4/YzdbtUXB+w5ilGNrCFEepvnCWIK+6W/0lR0GZw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4498
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_224419_368513_A79E4DC4 
-X-CRM114-Status: GOOD (  21.24  )
+X-CRM114-CacheID: sfid-20200112_224539_607549_AFDBFD9B 
+X-CRM114-Status: GOOD (  20.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ no trust [40.107.8.82 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,7 +112,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,116 +123,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Angus Lin <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-pm@vger.kernel.org,
- Roger Lu <roger.lu@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
- HenryC Chen <HenryC.Chen@mediatek.com>, YT Lee <yt.lee@mediatek.com>,
- Fan Chen <fan.chen@mediatek.com>, Devicetree List <devicetree@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
- Charles Yang <Charles.Yang@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 9, 2020 at 4:38 AM Rob Herring <robh@kernel.org> wrote:
->
-> On Tue, Jan 07, 2020 at 03:01:52PM +0800, Roger Lu wrote:
-> > Document the binding for enabling mtk svs on MediaTek SoC.
+Hi Sudeep,
+
+> Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+> transport type
+> 
+> On Thu, Jan 09, 2020 at 03:04:42PM +0530, Viresh Kumar wrote:
+> > On 09-01-20, 09:18, Arnd Bergmann wrote:
+> > > On Fri, Nov 29, 2019 at 10:32 AM Viresh Kumar <viresh.kumar@linaro.org>
+> wrote:
+> > > >
+> > > > The SCMI specification is fairly independent of the transport
+> > > > protocol, which can be a simple mailbox (already implemented) or
+> anything else.
+> > > > The current Linux implementation however is very much dependent of
+> > > > the mailbox transport layer.
+> > > >
+> > > > This patch makes the SCMI core code (driver.c) independent of the
+> > > > mailbox transport layer and moves all mailbox related code to a
+> > > > new
+> > > > file: mailbox.c.
+> > > >
+> > > > We can now implement more transport protocols to transport SCMI
+> > > > messages.
+> > > >
+> > > > The transport protocols just need to provide struct
+> > > > scmi_transport_ops, with its version of the callbacks to enable exchange
+> of SCMI messages.
+> > > >
+> > > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> > >
+> > > Conceptually I think this is fine, but as others have said, it would
+> > > be better to have another transport implementation posted along with
+> > > this to see if the interfaces actually work out.
 > >
-> > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
-> > ---
-> >  .../devicetree/bindings/power/mtk-svs.txt     | 76 +++++++++++++++++++
-> >  1 file changed, 76 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+> > @Sudeep/Vincent: Do you think we can add another transport
+> > implementation something right away for it ?
 > >
-> > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > new file mode 100644
-> > index 000000000000..9a3e81b9e1d2
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > @@ -0,0 +1,76 @@
-> > +* Mediatek Smart Voltage Scaling (MTK SVS)
-> > +
-> > +This describes the device tree binding for the MTK SVS controller (bank)
-> > +which helps provide the optimized CPU/GPU/CCI voltages. This device also
-> > +needs thermal data to calculate thermal slope for accurately compensate
-> > +the voltages when temperature change.
-> > +
-> > +Required properties:
-> > +- compatible:
-> > +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
-> > +- reg: Address range of the MTK SVS controller.
-> > +- interrupts: IRQ for the MTK SVS controller.
-> > +- clocks, clock-names: Clocks needed for the svs hardware. required
-> > +                       clocks are:
-> > +                    "main": Main clock for svs controller to work.
-> > +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
-> > +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
-> > +
-> > +Subnodes:
-> > +- svs-cpu-little: SVS bank device node of little CPU
-> > +  compatible: "mediatek,mt8183-svs-cpu-little"
-> > +  operating-points-v2: OPP table hooked by SVS little CPU bank.
-> > +                    SVS will optimze this OPP table voltage part.
-> > +  vcpu-little-supply: PMIC buck of little CPU
-> > +- svs-cpu-big: SVS bank device node of big CPU
-> > +  compatible: "mediatek,mt8183-svs-cpu-big"
-> > +  operating-points-v2: OPP table hooked by SVS big CPU bank.
-> > +                    SVS will optimze this OPP table voltage part.
-> > +  vcpu-big-supply: PMIC buck of big CPU
-> > +- svs-cci: SVS bank device node of CCI
-> > +  compatible: "mediatek,mt8183-svs-cci"
-> > +  operating-points-v2: OPP table hooked by SVS CCI bank.
-> > +                    SVS will optimze this OPP table voltage part.
-> > +  vcci-supply: PMIC buck of CCI
-> > +- svs-gpu: SVS bank device node of GPU
-> > +  compatible: "mediatek,mt8183-svs-gpu"
-> > +  operating-points-v2: OPP table hooked by SVS GPU bank.
-> > +                    SVS will optimze this OPP table voltage part.
-> > +  vgpu-supply: PMIC buck of GPU
-> > +
-> > +Example:
-> > +
-> > +     svs: svs@1100b000 {
-> > +             compatible = "mediatek,mt8183-svs";
-> > +             reg = <0 0x1100b000 0 0x1000>;
-> > +             interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
-> > +             clocks = <&infracfg CLK_INFRA_THERM>;
-> > +             clock-names = "main_clk";
-> > +             nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
-> > +             nvmem-cell-names = "svs-calibration-data", "calibration-data";
-> > +
-> > +             svs_cpu_little: svs-cpu-little {
-> > +                     compatible = "mediatek,mt8183-svs-cpu-little";
-> > +                     operating-points-v2 = <&cluster0_opp>;
-> > +                     vcpu-little-supply = <&mt6358_vproc12_reg>;
-> > +             };
->
-> I don't think this is a good binding. This information already exists
-> elsewhere in the DT, so your driver should just look in those nodes.
-> For example the regulator can be in the cpu nodes or the OPP table
-> itself.
+> 
+> Even if we don't add new transport right away, I would like to see if the
+> requirements are met. I will take a look at you v2 with that in mind anyways.
+> We need not wait, we I want to see people think it meets their requirement. I
+> will also add couple of guys working on virtio transport for SCMI when I
+> respond to your v2. Thanks for posting it.
+> 
+> > @Peng ?
+> >
+> Peng, Did you get a chance to try this with SMC ? If SCMI was the only
+> usecase, you can try this approach instead of mailbox, now that no one has
+> any objects to this approach conceptually. Please use v2 as base and update
+> us.
 
-Roger, if that helps, without changing any other binding, on 8183,
-basically you could have:
- - svs-cpu-little: Add a handle to &cpu0 and get the regulator/opp
-table from it.
- - svs-cpu-big: Handle to &cpu4
- - svs-cci: Handle to &cci
- - svs-gpu: Handle to &gpu (BTW, it is expected that SVS would only
-apply to vgpu/mali regulator, and not vsram regulator?)
+I will try that, but might be a bit later.
 
-I'm not too sure how we'd fetch the right regulator name, however (for
-the first 3 the name is "proc", for the last one it's "mali"), maybe
-add a regulator-name list in the DT?
+Thanks,
+Peng.
 
->
-> Rob
+> 
+> --
+> Regards,
+> Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
