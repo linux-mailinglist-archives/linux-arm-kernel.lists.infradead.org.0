@@ -2,105 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F167139A71
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:00:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 239E6139A98
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:13:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=v5GsGee01nwsMneMW82urW20HiDNc66dr/hs188V4mA=; b=S59OqRFa1epWMY
-	HduBKRXLgn3NWldxzbkAncvDQryMQA14QybfP4v7p21NhEgKcyLUTOVRy6FKo2XLKha02VDMp7Rkw
-	Q5TjSbz+6bTfzbBKJoE2U7usGXRuGTjB7RUUZAeOYrXQoQ/p978jTD+h735nTGuUlTEYIyt7sgsV3
-	qMm47tsqZNLfTsc6XOxlG+O81o4pHVytKRMTDZNpQ0j1TZ4YnO63cEnk4hyN4dgJ5NHPr5Xx+N3Q3
-	X+ilxNsQxzNUIXxXNC8hV+L8/Mdg0o04UcFVkwqU7rKqJawQ7k0ZndO/h/+vsgLj9jN+TusdHmEox
-	g+dd0fT3VIMB9oBPnr7Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rGnvlIj1ReNAt0uAnA7ig8H6RiP3pAf7sodBOQayBaU=; b=qAyGI6rnkHzSf7
+	VoEvsTORBi/rHxCBQ/a1wNjwB/PYBmWitzyXAksaNhq/2MBFO3iJUt6fSx6IB1p5Tx2qQ2He1jeDL
+	NBi0RhPRWlu32Xdws7julCmEJvNYnnS9HcexRNvWTuD9nbz6tn61evCOr4D2yA/9tZgCizNrm0AEB
+	reBLle8F9RTYrDTBh4kXpe8jK1bEUNCD3C0Db3ct8cGohXXGnHe/0D8nUG7b6LWyFZs+E9sHqxlFq
+	dQanJg1qIb8SN8PoBPkU04tPSdbHAt5QlaGlpyodLlwssBMrQxKTwN0cstd/OPSkI1m5wsUoH5bni
+	L7/m0FjcfJY/C/Ofei3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir5tC-0008Hw-FC; Mon, 13 Jan 2020 20:00:42 +0000
-Received: from mail-eopbgr80045.outbound.protection.outlook.com ([40.107.8.45]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1ir65b-0003OB-4c; Mon, 13 Jan 2020 20:13:31 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir5sk-0007zA-Sl
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:00:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=c6i0tZiuP6vx+yrtZNqvzmow4YxPAwonGmk+R2asdVEiAbdnou2IiCN4bU0l5siAZ8kBIommpQgEXa+AAJULj8/tldaLoQrr9DXVr9KCYCY0PEHqCGbVAOyuIRQkhvxif1KtmYmpcsTTLkIg9E3O+2vSq4aah+Ews841drP9HTCVefUwHBVXw8iLOcCtC9FXvoJ7gituxomyp85fUyacrxcInQSutUd9r3FAuVv45xjfI5tI5X4/Z2HC6gH/mcJZgGGsxX7z8mMeAf1hNs50BxpTFZ3vUkKQ/xWTtLRzXmVq2UcQbTODmchfMMlYEMiZsIMo4M71oL8FnKNzxsi12w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ssdFqmg4SDBHgOOjt5/+gOcmGQrJOedWSUiNP5nGpcY=;
- b=S5JlkE2IZc9M3z5wGO/IM0rbHTmv4iwtLc/E0WoXo8fEnXg/J6O+2AvGCGMF+v5LH7tScgJfHZYM43LgZBxToBFQse2hnjcDV8caRZJwAu4qcPLt28HUaYKF1HjyXXQoB66eFp/LwKqnoofTzQLJCn83uPtTTJEcGWXmnG/w/NFqC8MxdX1t+Y+PYrZEcUOhcG20e9LyUs+z2T+ixN7iyKYlYDHkOMgvvJ47HjRw1mmeNshin7SZ0S2P1fz5I4G7DzSaR1x1bz2u4+goAUb+Fc5qJu5lOBU9QiVOsMR3M/NUcPIRMBBkH8DJSupz7eTzdAxFKrBBUyoiA9mZfYZaqw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ssdFqmg4SDBHgOOjt5/+gOcmGQrJOedWSUiNP5nGpcY=;
- b=j0ixoaqdcqWdiN0GDpWGNGqHk8ekkNl34OjnnobHQZIeWe8Ra+iZHzw+yHkxCY6m00LACEqZMgM/motyDv8Qlrlys3iP1NNI8SdZd5lhIyDLOBZ2ow3XCYLF0GEUWIN1KBGUoTuoo0vfsDhgpSCatcvIyUA/N7qNel7g9rRFIH8=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB4430.eurprd04.prod.outlook.com (20.177.53.95) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Mon, 13 Jan 2020 20:00:08 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953%7]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 20:00:08 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Joakim Zhang <qiangqing.zhang@nxp.com>, Frank Li <frank.li@nxp.com>, Will
- Deacon <will@kernel.org>
-Subject: Re: [PATCH] perf/imx_ddr: Fix leaking cpuhp_state
-Thread-Topic: [PATCH] perf/imx_ddr: Fix leaking cpuhp_state
-Thread-Index: AQHVtfm6st46ByBunk2ileZaCpNmwA==
-Date: Mon, 13 Jan 2020 20:00:08 +0000
-Message-ID: <VI1PR04MB70235D44E2534E2714BBC171EE350@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <3cff630697d76d24d4ab93dfcddc978d84b8f2d8.1576711200.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9e0a0beb-568d-4f12-7b96-08d7986330f5
-x-ms-traffictypediagnostic: VI1PR04MB4430:|VI1PR04MB4430:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB4430DD726A747C57CF6091D0EE350@VI1PR04MB4430.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4125;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(346002)(136003)(366004)(39860400002)(189003)(199004)(478600001)(71200400001)(33656002)(66946007)(66446008)(91956017)(64756008)(76116006)(66476007)(316002)(86362001)(66556008)(4326008)(54906003)(110136005)(44832011)(9686003)(6506007)(81156014)(8676002)(8936002)(53546011)(186003)(81166006)(52536014)(5660300002)(26005)(55016002)(2906002)(7696005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4430;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 2Nitg7KBxiisulIvJ6brcwoqLeH5D1r0DB/PfCoA8u5kzU/I75CqAj/oliTCRGgtD+DceS8ni+IaVY3H+rRXv24AWaOav0DjmbuKxIMjpsGPz75FfwSNj/2lrfDaCx/v5fiaZeUiM8HMPKWFIMl/SylbMxkcy1eXM0O2gHYtqIVlxt6j8L2AYB+Fgb0u5Uw1Pnrpg3OH2LbdxrimBq3JO3pp0/IJcs9mbSfZf+Xbu5tGEeh56KzK5k7+Pomq7UmxrJnA5YVXOZYcwEQp7lAHoYVP6jzwvO9fwryBDpbE+3lya9f2HH3JHpJRBcvt3/AebOaqJVhUCkjui+WiEHyOcqOzu4di2v6TM0n1HhWE4osKL3J4qHUx7nraFfqLe8o/tOQtc0hJT+5XgqoiMdS2KiIx/EuCdQ2pxjBDN97S5Rgz7g79+Jw5yC47aSBduyOV
+ id 1ir65U-0003Nr-Mv
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:13:26 +0000
+Received: by mail-ed1-x541.google.com with SMTP id dc19so9700490edb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Jan 2020 12:13:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=rOEiC8GKPmnGW5ckz6XjSwFgNch4y3tNED39Fm8Bs3s=;
+ b=kutyIJ+XPsiXIuGALMEKavzxxdwRXOgdG6kGjfI1umMwQJooMevFxflcjbKizsUxqw
+ yxQCyz0QA31kyXi/LpJIYQzxhHCmdLWS7f/ROcBDwA1QOB6VfqNPb5tfNHLD5247p+rX
+ zGMvxBwtXFX7kQVol+tFMJlNhGZoj6Qis/YN3WcWzZCGCB6YpKZSZ9p3d1uDmxrpVKTq
+ QxvjzO+aDC/A26GuyPHWsEWhcIQ7XiOgPbugsiKay1n+Ug5U0VevMJ2dNwMCasdrJlHf
+ ox7t1p2vVnI5kElYBd5AZVxucUugMMBkWdzv5sfthPAxaMSwqabe6EBoNtnUdhKORh+9
+ +1VQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=rOEiC8GKPmnGW5ckz6XjSwFgNch4y3tNED39Fm8Bs3s=;
+ b=oEI6O1OF908kLNiIUkqGM+q8+Uc+hYB1ZgyBGZSxQPgLwi+tuAhwh+VvCeL8LFzyrK
+ 2Ua8uJQKmQukrKP1B553psNu1FuzFfr43WO3D6oHm8H998VaIe05fe1UyXsB6yura78d
+ 04yhS3NZPgUZ4CswHU/6lrkywvhZDj9zhbJb87Dsvx7trtuJqVdrdDzvR0zQ1CWkH0C6
+ z7SHghSTLnUn7wtbv+Z96QcZR0f9lHVux9Qtr5YpxI1+E3+vpx2gP1zTIAp4ItrJ9Aj2
+ qPK6f34LHBOfAry03EgzkXqOAclc5zrq7Ez675i610i5RPYPh1boN2JfhxucoSo19FJC
+ ns1w==
+X-Gm-Message-State: APjAAAUqWr+/WKO+wst3xu2Zg6i85dvWOIQbpmFj4PsklnEFwhjsId7q
+ D4hCpdtTTlnCXS1F/rNBIRQ=
+X-Google-Smtp-Source: APXvYqzatgZ9+7YX+f46SUVVAWVlPZzK5JS/QuSasQ1dGK+ccQoTpcneOzZVqY5P5jN2zJNdH0SGoQ==
+X-Received: by 2002:a05:6402:3046:: with SMTP id
+ bu6mr19085544edb.139.1578946402921; 
+ Mon, 13 Jan 2020 12:13:22 -0800 (PST)
+Received: from [10.67.50.41] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id v8sm485229edw.21.2020.01.13.12.13.19
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 13 Jan 2020 12:13:22 -0800 (PST)
+Subject: Re: [PATCH V5 3/4] ARM: dts: bcm2711: Enable thermal
+To: Stefan Wahren <stefan.wahren@i2se.com>, Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
+ <1578941778-23321-4-git-send-email-stefan.wahren@i2se.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <926485bf-296e-3d6c-340c-cc80f2a0dcad@gmail.com>
+Date: Mon, 13 Jan 2020 12:13:18 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9e0a0beb-568d-4f12-7b96-08d7986330f5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 20:00:08.5339 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sM71i1HCXCo2GgUHD47EHUtwaUbgZTOtAPQ6fUZfcb4vy9w/TjMfvoFxi05rtzc2mcgP92ByMOIOkb2fY63QpQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4430
+In-Reply-To: <1578941778-23321-4-git-send-email-stefan.wahren@i2se.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_120015_128847_A96780D6 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20200113_121324_775325_911AF56C 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.45 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -119,71 +163,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19.12.2019 01:20, Leonard Crestez wrote:
-> This driver allocates a dynamic cpu hotplug state but never releases it.
-> If reloaded in a loop it will quickly trigger a WARN message:
+On 1/13/20 10:56 AM, Stefan Wahren wrote:
+> This enables thermal for the BCM2711 (used on Raspberry Pi 4) by adding
+> the AVS monitor and a subnode for the thermal part.
 > 
-> 	"No more dynamic states available for CPU hotplug"
-> 
-> Fix by calling cpuhp_remove_multi_state like several other perf pmu
-> drivers.
-> 
-> Fixes: 8f4c58ae59f5 ("perf/imx_ddr: Fix leaking cpuhp_state")
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com> > ---
->   drivers/perf/fsl_imx8_ddr_perf.c | 5 ++++-
->   1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> index 3be61be1ba91..aa30ca5f6b29 100644
-> --- a/drivers/perf/fsl_imx8_ddr_perf.c
-> +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> @@ -672,12 +672,14 @@ static int ddr_perf_probe(struct platform_device *pdev)
->   		goto ddr_perf_err;
->   
->   	return 0;
->   
->   ddr_perf_err:
-> -	if (pmu->cpuhp_state)
-> +	if (pmu->cpuhp_state) {
->   		cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> +		cpuhp_remove_multi_state(pmu->cpuhp_state);
-> +	}
->   
->   	ida_simple_remove(&ddr_ida, pmu->id);
->   	dev_warn(&pdev->dev, "i.MX8 DDR Perf PMU failed (%d), disabled\n", ret);
->   	return ret;
->   }
-> @@ -685,10 +687,11 @@ static int ddr_perf_probe(struct platform_device *pdev)
->   static int ddr_perf_remove(struct platform_device *pdev)
->   {
->   	struct ddr_pmu *pmu = platform_get_drvdata(pdev);
->   
->   	cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> +	cpuhp_remove_multi_state(pmu->cpuhp_state);
->   	irq_set_affinity_hint(pmu->irq, NULL);
->   
->   	perf_pmu_unregister(&pmu->pmu);
->   
->   	ida_simple_remove(&ddr_ida, pmu->id);
-> 
+> Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
+> Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-Gentle ping?
-
-I believe this got lost over the holidays.
-
---
-Regards,
-Leonard
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
