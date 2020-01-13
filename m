@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53D891395D0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:25:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0F631395CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:24:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cIgT4c1GrfrhPSZf5wZKKXKApt+VUCaKA3DMT1emzRY=; b=h90xHhlKtPeQjkwMIuJkURz343
-	7vrALBs7oqeQodhMPv99+h9NkmPMGduk8sMbqniZwUKf6RHdrg6BBgbZw/eC7Iwzht0LulB9oplPs
-	TIAUDwcCAVXpN5T86h8AYY3u8qvSQkJGB+FrRC8lwl0I3Ae/BTKDKMxoG3p644TnNHfRPMfR5U3WE
-	hDeA2pbXfHk3y21RTn5AkRUCUwF/FjpH3lPs20gdW0RPMR7jTtLa1e4fkC7msxXlk3ImThtJ2CPws
-	zLl/O0xI7ggrbiR8HrrOBN0m5xOdjtKe97DdgY+75dhOBTNejzNEuQFYo4LFtV8ne709BUBN4FbF0
-	H0rAFo+Q==;
+	bh=E6jN4zjfLyLh0ExcBlb19iJetncqIiPkQ5BT/gUeeCc=; b=EfN4Bw2uF/ZOf3S32SWLL4rcQX
+	I5ibXeHdhr9ntCWPnmbBt2/0mDjmYd2TApRVR0D5v85ooPq6EK2p2pGabUI7voWoQaeykc3aArQul
+	D6xG8c7CCSYuo9j7o6nFq0oKZbvFQZWUA3k7/OLpPTM5pZNWl3ZLHkrrlJ6MxOwyoAG4frUaFoBe+
+	UoIoiimPs+hLrK76rLqT3KvaruFnzy3d6CmTE66apk8s6MrerYLTAK2RkrGBpGJi2j9yfgURBS4nR
+	i/BOeU2UVkAYTC7y+y16Xj5flotsUUrKgR3ByQkZ4Tr7NhAVw8gqKYLTWFxm0nPHuqr8EI8kqz54j
+	hvp86K1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir2WQ-0007fq-9w; Mon, 13 Jan 2020 16:24:58 +0000
+	id 1ir2W2-0007Vs-Hw; Mon, 13 Jan 2020 16:24:34 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir2Vq-0007So-Dq
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:24 +0000
+ id 1ir2Vq-0007Sj-Dp
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:23 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CDA55C05DE;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D730AC05E0;
  Mon, 13 Jan 2020 16:24:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1578932661; bh=Ben06d7t9W2BvCud3kGg7X4OfXW/BtwnEBLz0+lX38c=;
+ t=1578932661; bh=KfUuj7FkYk8P0Zny6DjZbC4vjoy9xayAvDkveS1KNOQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=YEG+GRgRvVDW4CAqFAlZOfTbRLafsivnMEKFflF0UVptXUddfSdswKiRU8SKdcI9N
- 7CZcf3QRWppLXxmAV4hImDfVybV5NH0jJfPg0ZopbOkWiiEWgbnzZgIIOEymTUbxe1
- SPK6ujCOT9xYIoJgEmPR7srqyVY//s7EIJbPZwLXQDvG5h0ADCEyy1DZf+77xj8dw1
- GYfYJ7Li4UG5zIOgeWfZvfCCAr7c+GS8V/f9CnRdcPcahSBlE2RFLu04z6rRSd3JwP
- X1/Qg4Dt/3R6zlSrN6k/uDT77iiuusFgrfK0KbuHt4V8Ep25AX4f1HDVO5ccQ1epLb
- 3T1amaINevb1g==
+ b=FOT706iIpRhlE72P2lXrfvKsHj0TCPxOaLl0XvoqfuZC8M6rM7QgWwhjl7rZ1gIiR
+ 39CBhuOCRCeQ+P7jDvHT1krqSxRo33bxC60r+qmHOocAHcwX5urv/H2K2KAQjPVPcq
+ 3gVzfDRQCkNgklbWpJCz7WXuyrBneYNS2y+XngbDWy4arR1/g/oOywloXh4G7o09n6
+ x7iQyVfOeRBpqi15w5Q9/d/1UlQNiZlGgg9cegMKoLUDhEw6G4swp/e9nbqyqYRPWy
+ lgP/Ucg1yzP794xrcWSFyoeh5+GqOfaFOQelL+KhIvlg2/mnmy9/ZxrJaMREg97DKT
+ jyFdrL2pRGqbQ==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 7FEE2A0070;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 9A9BAA0073;
  Mon, 13 Jan 2020 16:24:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v3 5/8] net: stmmac: pci: Enable TBS on GMAC5 IPK PCI
- entry
-Date: Mon, 13 Jan 2020 17:24:13 +0100
-Message-Id: <99badb6125d321877cf52097d368b8eca874b447.1578932287.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next v3 6/8] net: stmmac: Add missing information in
+ DebugFS capabilities file
+Date: Mon, 13 Jan 2020 17:24:14 +0100
+Message-Id: <091120c35e058e48868dc81ef80ea0f3b0fac99c.1578932287.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_082422_522311_0B2812FF 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200113_082422_528062_A6257192 
+X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,7 +97,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable TBS support on GMAC5 PCI entry for all Queues except Queue 0.
+Adds more information regarding HW Capabilities in the corresponding
+DebugFS file.
+
+Changes from v2:
+- Remove the TX/RX queues in use (Jakub)
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -111,22 +116,26 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-index 40f171d310d7..623521052152 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
-@@ -401,6 +401,8 @@ static int snps_gmac5_default_data(struct pci_dev *pdev,
- 		plat->tx_queues_cfg[i].use_prio = false;
- 		plat->tx_queues_cfg[i].mode_to_use = MTL_QUEUE_DCB;
- 		plat->tx_queues_cfg[i].weight = 25;
-+		if (i > 0)
-+			plat->tx_queues_cfg[i].tbs_en = 1;
- 	}
- 
- 	plat->rx_sched_algorithm = MTL_RX_ALGORITHM_SP;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index 43af4fc5ab8f..2738d97495e6 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -4365,6 +4365,12 @@ static int stmmac_dma_cap_show(struct seq_file *seq, void *v)
+ 		   priv->dma_cap.l3l4fnum);
+ 	seq_printf(seq, "\tARP Offloading: %s\n",
+ 		   priv->dma_cap.arpoffsel ? "Y" : "N");
++	seq_printf(seq, "\tEnhancements to Scheduled Traffic (EST): %s\n",
++		   priv->dma_cap.estsel ? "Y" : "N");
++	seq_printf(seq, "\tFrame Preemption (FPE): %s\n",
++		   priv->dma_cap.fpesel ? "Y" : "N");
++	seq_printf(seq, "\tTime-Based Scheduling (TBS): %s\n",
++		   priv->dma_cap.tbssel ? "Y" : "N");
+ 	return 0;
+ }
+ DEFINE_SHOW_ATTRIBUTE(stmmac_dma_cap);
 -- 
 2.7.4
 
