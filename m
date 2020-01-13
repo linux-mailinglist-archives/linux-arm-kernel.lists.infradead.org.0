@@ -2,82 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E7671391F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:16:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBEE21391FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:17:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rNSSsM1YlaPv6JInEtUj1DmaieuP/31g/5UqMEZnVbM=; b=C1cgp27gfOEG7C
-	xLBXTjB1HEeGctHCp3DE36ZBw5MzZJ6JCYlNlSrILS7jzVPOJpFmeoLaYbfsFzZqyO9i4OJwk8MRL
-	BIgzCM+UD+pqQM/p5biBhUIMB8XL39XUcyZrG4Ilyc6vyBUPjMtLME5i50sdxd470GAbtnmEoAhgw
-	YPQUDbkg59mOc/IcoA99aRnFHIuHUqLm9MXbwIaY2GOOnQTPU8Yqd/gnWSiyApAS2JfbbmBF0BZRz
-	M+MLfz2AWBGN7oKywg9TULVNmpGOoXTFDoGENwovLwXqOm+LS+Cw7CZ5WLZQH8E3Q9iYq3bKZBT2/
-	CUxiqbvp+KSbo+HvS1uw==;
+	List-Owner; bh=7FrgRNe944jOUhyLR6S6HsSqzwgxJLm/dTgvNBLHKVM=; b=P+9e0eJnTlbgTQ
+	26XOyNml4pxvuC2DbL2T+NKeqjoNE3bj1ecjuAoX4jGLrTJRRqOn3OGDBUbG3Mm2DJvuSix+hbkdE
+	AgRuTR178NhqNnL/7N/D/4LHq5RwPzk7oGWwBzDRnrABOfMT7Hl3RaYPDt/imH2cegw5wj2pKfrWH
+	k7YAvjrCPfZdQasZFz66pkXcvEwSP7U4ZLFkof3YCOudeoHNkm1P1i+TBO9b6yBcW0W9+zrs0BQg0
+	GMVc5UpLvc4sSqRFvD1gEZDVhFP+XtiV9V5BSimHrKlhBLMTXzodreLEMH61mVV6X4yGqEOh5hjZ6
+	Pwv2O9NYdJ/8ExmrFEyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqza1-00014t-9B; Mon, 13 Jan 2020 13:16:29 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iqzbC-0001TR-Li; Mon, 13 Jan 2020 13:17:42 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqzZG-0000Ya-Iu
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 13:15:45 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00DDCY4e025708; Mon, 13 Jan 2020 14:15:35 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=DU1Kp8lh2uFkanGLFhtVCisPZCszaBxv5SgsLyQ1bx0=;
- b=EtavOXx/JdnjibUoR7WnFypLoKMkRohpE5L/Nb81EOal4LSsz/5uTlINyd4wZ0v4P992
- xZBqWFbOPXSUD74IL1Z4L+mmRF+lGgBy+o8EM35keWM3XB2s4HbsE/fTnFdivv/SO9uR
- gKIf5AM//8nZh+s6ihTSOG56U7BL2x/vBDf24X6c83oPdEYn+5Rpt7xzV87MJMBu/QRb
- 2bDzK6ENeUhu1NyPuBL7wR0Hbq+YcCPRwnSXi1Y4/H+8hX6NE+uCtl2+X+v+BvlB0onm
- w6XngRN5MWimVD+I3RiHa9aTYP+gLdxgDu3pr1IiAsVZkqwKVQjebx29KbGbX/lx9UPr sg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf78s07du-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 13 Jan 2020 14:15:35 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A03BF10003A;
- Mon, 13 Jan 2020 14:15:34 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 925452B820F;
- Mon, 13 Jan 2020 14:15:34 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 13 Jan 2020 14:15:34 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH 2/2] iio: dac: stm32-dac: better handle reset controller
- failures
-Date: Mon, 13 Jan 2020 14:14:26 +0100
-Message-ID: <1578921266-6025-3-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578921266-6025-1-git-send-email-fabrice.gasnier@st.com>
-References: <1578921266-6025-1-git-send-email-fabrice.gasnier@st.com>
+ id 1iqzb1-0001Rw-MM
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 13:17:33 +0000
+Received: (wp-smtpd smtp.wp.pl 467 invoked from network);
+ 13 Jan 2020 14:17:26 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1578921446; bh=fiL5feLAQg1wnn446GC+3zMpF7346AQGDCS3XeChSTA=;
+ h=From:To:Cc:Subject;
+ b=qzBDUTyY3N87LSG2hKt7ZSXgIJ4yQdIF3Os+2js59ftWgJBrd/cPmAI/+Hdwlnkg6
+ Fyed6NcUYyiy55TmsPGH5Wenjb7lct8Nj6qQX3SY6YaR/ETLhN91iUyNG/C0oGr5Hi
+ kCBZomcIlnMvzE7EYGBk9nRfqXBXXMu5T905jGjM=
+Received: from c-73-93-4-247.hsd1.ca.comcast.net (HELO cakuba)
+ (kubakici@wp.pl@[73.93.4.247]) (envelope-sender <kubakici@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <boon.leong.ong@intel.com>; 13 Jan 2020 14:17:26 +0100
+Date: Mon, 13 Jan 2020 05:17:12 -0800
+From: Jakub Kicinski <kubakici@wp.pl>
+To: Ong Boon Leong <boon.leong.ong@intel.com>
+Subject: Re: [PATCH net 3/7] net: stmmac: fix missing netdev->features in
+ stmmac_set_features
+Message-ID: <20200113051712.73442991@cakuba>
+In-Reply-To: <1578967276-55956-4-git-send-email-boon.leong.ong@intel.com>
+References: <1578967276-55956-1-git-send-email-boon.leong.ong@intel.com>
+ <1578967276-55956-4-git-send-email-boon.leong.ong@intel.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-13_03:2020-01-13,
- 2020-01-13 signatures=0
+X-WP-MailID: 9114ca6d95137af99c81d33196a332a9
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [YVNE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_051542_923808_75A97192 
-X-CRM114-Status: GOOD (  15.67  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200113_051731_913500_3A38C0C4 
+X-CRM114-Status: GOOD (  11.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.9 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.77.101.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kubakici[at]wp.pl)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,57 +82,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: etienne.carriere@st.com, lars@metafoo.de, olivier.moysan@st.com,
- alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com, knaack.h@gmx.de,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Voon Weifeng <weifeng.voon@intel.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Tan Tee Min <tee.min.tan@intel.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Etienne Carriere <etienne.carriere@st.com>
+On Tue, 14 Jan 2020 10:01:12 +0800, Ong Boon Leong wrote:
 
-Use devm_reset_control_get_optional_exclusive() instead of
-devm_reset_control_get_exclusive() as reset controller is optional.
+Please fix the date on your system.
 
-Nevertheless if reset controller is expected but reports an
-error, propagate the error code to the caller. In such case
-a nice error trace is emitted unless we're deferring the probe
-operation.
+Please always provide a patch description. For bug fixes description of
+how the bug manifest to the users is important to have.
 
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/iio/dac/stm32-dac-core.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+> Fixes: d2afb5bdffde ("stmmac: fix the rx csum feature")
+> 
 
-diff --git a/drivers/iio/dac/stm32-dac-core.c b/drivers/iio/dac/stm32-dac-core.c
-index 4d93446..7e5809b 100644
---- a/drivers/iio/dac/stm32-dac-core.c
-+++ b/drivers/iio/dac/stm32-dac-core.c
-@@ -147,8 +147,16 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 	priv->common.vref_mv = ret / 1000;
- 	dev_dbg(dev, "vref+=%dmV\n", priv->common.vref_mv);
- 
--	rst = devm_reset_control_get_exclusive(dev, NULL);
--	if (!IS_ERR(rst)) {
-+	rst = devm_reset_control_get_optional_exclusive(dev, NULL);
-+	if (rst) {
-+		if (IS_ERR(rst)) {
-+			ret = PTR_ERR(rst);
-+			if (ret != -EPROBE_DEFER)
-+				dev_err(dev, "reset get failed, %d\n", ret);
-+
-+			goto err_hw_stop;
-+		}
-+
- 		reset_control_assert(rst);
- 		udelay(2);
- 		reset_control_deassert(rst);
--- 
-2.7.4
+Please remove the empty lines between the Fixes tag and the other tags
+on all patches.
+
+> Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
+> ---
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> index cd55d16..dc739cd 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> @@ -3911,6 +3911,8 @@ static int stmmac_set_features(struct net_device *netdev,
+>  	for (chan = 0; chan < priv->plat->rx_queues_to_use; chan++)
+>  		stmmac_enable_sph(priv, priv->ioaddr, sph_en, chan);
+>  
+> +	netdev->features = features;
+> +
+>  	return 0;
+>  }
+>  
 
 
 _______________________________________________
