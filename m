@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A65F0139B33
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:08:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42A57139B34
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:09:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TSelmyxQctPrN0QApMCKXjw++HPn6vibR07oGDFuVfg=; b=ZvrgBlc5kDAS1Mku/0RUEQSqZ2
-	YSF1a7WOWcrXr6IGdREYL9hVAgN/K1Y0w+ZjqrdrgJXb6baXFYtWystiBoCdNcBKrR7vovAUZ9CYs
-	FApvjo5y7H5nuAlD+r73hPC/A8Ggh5Jy+x6f0GCveTMcXyLvBI0E8rTDWOJiaaRhJ+IV9yEG+08ad
-	Bc+ytzRf6guN6gpXcLgyHJye3j4eAX6fNMU07w+uj3iHmRMvNMIaXWQgidLoBwKVETRy2t9f0iRSp
-	NVbWOdU4S2EiFS7tG8Mc2cDieJitzQJgstHDV/OmYiTQaFQdPs9nni83cqm/c/rLrB7t8k9D8lzSg
-	K9rH1BpA==;
+	bh=0+1jAuHB7GdFcsD/e81gwFFizUMbAM3scx+m1Sdqfyc=; b=JNeLXQ8WnAIhAQUhVfXgnOrF0S
+	oVMMvlt6LqyC1Hs3atfGOf7IaI/8UlubJHoUOQX1PnAuAwcKYZOPFfXJvcvWW2vR2eF9Sz66gY8+7
+	lix7ab/XlvOf5WAMWB0D4sQCovHO10dAHkUFq8HByIreNYTITGiZh3iOLWKgaKb1vxnG2FHcNfbHL
+	+HW+k8jpNROsvXC+88ysiuW+FjzfZPOzoCPLiG4S2b2iiqZUUpqZfahTKrB1BrqnFPNiQGsjPNmz0
+	XirRtlQIeuHkH33C0vubK/vOIDFQVpJagn+mvahW/vFNMi9kSRKADp3dKKp1oj9Rm6YUrJ3iRi0hA
+	avVauXNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir6x0-0007XF-Tq; Mon, 13 Jan 2020 21:08:42 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1ir6xH-0007nN-UI; Mon, 13 Jan 2020 21:08:59 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir6wD-0006xY-4F
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:07:54 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id e11so3275172pjt.4
+ id 1ir6wG-00070o-4a
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:07:57 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x185so5468470pfc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 13:07:52 -0800 (PST)
+ Mon, 13 Jan 2020 13:07:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZCAEUSlUeHjJbOzhybZNdXvqq8RaBrp2R/gTbl2SsA4=;
- b=imf2N9GC3kHPqBbRGoBeoJtgVzok4YeYS3x1fRz8ck7RDWL0pktxyfg99w0VH067cP
- CuA2T30U80nscFo4jgx2jWiI/QlhO0N5HJT7ZMMQb0YlILKo6DefBL+DtkTB7cAybz5H
- scXKuPGm9p+ULT6R1oiWMTPz8YFxw531D4gNlI1L5MZpdlWBx6CweB+22+w5BEyO1YBs
- k6DN0vyNhFKzvzkEHcw+aXvF7FFB++6iDxB4GqfEOKNn8MxkQrsIEaEe/eKCw+lNDBmQ
- 3RNOhrmOVYsoAsuDwf4Hw2as4TLZaeKD3WSGcxtHsEFHaBFAQPgnm5A8NnzS66UeTjwn
- cU6A==
+ bh=c4EwOwGyRZn732m62F/bmkLNPBHupsvQnM8EZTJTEOU=;
+ b=TvNq4fxIGcMuRSTocpaToEWweIJ2INFcSGkfkTb2PGFYP4PexLnpNWn0jgZYGYkBrv
+ VcgNEUh9ux0x752QjnvpckLrBNTTBhvRbXKtk3vwZq8JrI/K3L+8JDPweSfGXHyj/NDp
+ SvdW6n05jJp7R3pUNZSHm0PkJ2hw1hb2HhRkTO/XwdTOK6H3f1xhiznskz7KsLuroa/l
+ 9xL/gQ8ciwMwcwuf7vlBvbai/qoolqJVhLzDwQXYFaAQUJloAe5eBq1QOfzWp/0ZmigB
+ FnOcocIKY7rYAWBeSySjqqTjLIRtFhGBdyrIyskrV6zXFmRPVx0TZeQbIzuOaZttRLWi
+ WKRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ZCAEUSlUeHjJbOzhybZNdXvqq8RaBrp2R/gTbl2SsA4=;
- b=f38Ouc+s4EP/OOoNrZ5sb0te8tvY5s7FjUm4lxXWlHs0EhSgEq8sCZCEOfSMjHQ9Fo
- xjY9tDLw90uPK3YTAVlRm+lSBZSRQkSE+cIUNF7NC6WKQlQpTLZ3gJMA9oWyWqcYUM/9
- 85w2BtjKftQ1sq20urZmpdxepMXNBSKGIm3bkraU63pqVUjY2y3MPs1dsYRlcXb4U2HQ
- LTUtm+tPw54qkLxt6ZiYw8lcKiZzAlcj9vnu5hUQuuMbpGshmXsgXYXTDvZCvyZEzSdq
- eqzdOoyYqv+alr7QaofuXQ6p0AlS4F4SBnVSTjlLCRlHcnW8Q78b9oBjj5F0Xaf9Y2ff
- AhvQ==
-X-Gm-Message-State: APjAAAXy4fSONP/tW+k9ywUetT0uQVpjmoal9VnqV9S/Xk5FLDE04rc6
- zbxiCVTheYSBO4JhtiVTmc4=
-X-Google-Smtp-Source: APXvYqyErGp9uGm8FttvDm8IHO5klXLdH9nJDmcvZ44xGfQ3O2sLApMIAp/CiMUrsi0IV/v10P7o5g==
-X-Received: by 2002:a17:902:5ac9:: with SMTP id
- g9mr15616765plm.69.1578949672068; 
- Mon, 13 Jan 2020 13:07:52 -0800 (PST)
+ bh=c4EwOwGyRZn732m62F/bmkLNPBHupsvQnM8EZTJTEOU=;
+ b=pqJTWj4fLwqNtASSWBz44CrTF3+E/DommHLABe+3f1R8juM7Z8kzpDk5gpzeoLXwFp
+ WvhBWUdw7cR+71O/zt1z3kORnNjhQpy2cyF9cvpruS+xnPlcef0PKiZWnIQBho8F85TS
+ xrsQO/xDndX+vn6x1oMW6PWOPtKKg612e1yGirdH5ykcc0qcvMwhfOJMlTyjKfn3MrCk
+ /v+Yc2TTvQfY9XR3S8fMQWg6ZNiv1xrSkoxnTEnR36v+qXelCSnh6VvB7IdTkSUeflCI
+ SVSxIPH6pJjWG92fk7dz32Z6B1b1nbC+gDDfA+Vxo7h/zGHxLighwT6QjD/gnD685oLb
+ xXnw==
+X-Gm-Message-State: APjAAAU1UXOr1AAXnngoTlj/Kmz0nFxY3tmuyZihdfZJjTMenoWOxnbE
+ AZHG9AxPBSGdxGGAQiIDjf0=
+X-Google-Smtp-Source: APXvYqx1R7S8pIV0K8TV9qoZ4dBSE0XGBn6qp4kgOM11WVqKY4FU4nvS/xhY19oqkjyQfl1iY2QsUg==
+X-Received: by 2002:a63:a43:: with SMTP id z3mr22981828pgk.232.1578949674958; 
+ Mon, 13 Jan 2020 13:07:54 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id s1sm14195827pgv.87.2020.01.13.13.07.49
+ by smtp.gmail.com with ESMTPSA id s1sm14195827pgv.87.2020.01.13.13.07.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 13:07:51 -0800 (PST)
+ Mon, 13 Jan 2020 13:07:54 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/6] mmc: sdhci-brcmstb: Add ability to use HS400ES transfer
- mode
-Date: Mon, 13 Jan 2020 16:07:02 -0500
-Message-Id: <20200113210706.11972-3-alcooperx@gmail.com>
+Subject: [PATCH 3/6] mmc: sdhci-brcmstb: Fix driver to defer on clk_get defer
+Date: Mon, 13 Jan 2020 16:07:03 -0500
+Message-Id: <20200113210706.11972-4-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200113210706.11972-1-alcooperx@gmail.com>
 References: <20200113210706.11972-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_130753_231864_9408FC27 
-X-CRM114-Status: GOOD (  20.39  )
+X-CRM114-CacheID: sfid-20200113_130756_205879_3286243E 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,185 +113,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The latest eMMC JEDEC specification version 5.1 added a new
-transfer mode, HS400 with enhanced strobe (HS400ES). This mode
-will be selected if both the host controller and eMMC device
-support it. The latest Arasan 5.1 controller in the 7216a0
-supports this mode. The "Host Controller Specification" has
-not been updated so the controller register bit used to enable
-this mode is not specified and varies the with controller vendor.
-The Linux SDHCI driver supplies a callback for enabling HS400ES
-mode and that callback will be used to supply a routine that
-will set the proper bit in the Arasan Vendor register.
+The new SCMI clock protocol driver does not get probed that early in
+boot. Brcmstb drivers typically have the following code when getting
+a clock:
+
+        priv->clk = devm_clk_get(&pdev->dev, NULL);
+        if (IS_ERR(priv->clk)) {
+                dev_err(&pdev->dev, "Clock not found in Device Tree\n");
+                priv->clk = NULL;
+        }
+
+This commit changes the driver to do what is below.
+
+        priv->clk = devm_clk_get(&pdev->dev, NULL);
+        if (IS_ERR(priv->clk)) {
+                if (PTR_ERR(priv->clk) == -EPROBE_DEFER)
+                        return -EPROBE_DEFER;
+                dev_err(&pdev->dev, "Clock not found in Device Tree\n");
+                priv->clk = NULL;
+        }
 
 Signed-off-by: Al Cooper <alcooperx@gmail.com>
 ---
- drivers/mmc/host/sdhci-brcmstb.c | 97 ++++++++++++++++++++++++++++----
- 1 file changed, 86 insertions(+), 11 deletions(-)
+ drivers/mmc/host/sdhci-brcmstb.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/mmc/host/sdhci-brcmstb.c b/drivers/mmc/host/sdhci-brcmstb.c
-index 73bb440aaf93..daa89ca232a2 100644
+index daa89ca232a2..218176b79b6a 100644
 --- a/drivers/mmc/host/sdhci-brcmstb.c
 +++ b/drivers/mmc/host/sdhci-brcmstb.c
-@@ -9,9 +9,41 @@
- #include <linux/mmc/host.h>
- #include <linux/module.h>
- #include <linux/of.h>
-+#include <linux/bitops.h>
+@@ -91,6 +91,8 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
  
- #include "sdhci-pltfm.h"
- 
-+#define SDHCI_VENDOR 0x78
-+#define  SDHCI_VENDOR_ENHANCED_STRB 0x1
-+
-+#define BRCMSTB_PRIV_FLAGS_NO_64BIT		BIT(0)
-+#define BRCMSTB_PRIV_FLAGS_BROKEN_TIMEOUT	BIT(1)
-+
-+struct sdhci_brcmstb_priv {
-+	void __iomem *cfg_regs;
-+};
-+
-+struct brcmstb_match_priv {
-+	void (*hs400es)(struct mmc_host *mmc, struct mmc_ios *ios);
-+	unsigned int flags;
-+};
-+
-+static void sdhci_brcmstb_hs400es(struct mmc_host *mmc, struct mmc_ios *ios)
-+{
-+	struct sdhci_host *host = mmc_priv(mmc);
-+
-+	u32 reg;
-+
-+	dev_dbg(mmc_dev(mmc), "%s(): Setting HS400-Enhanced-Strobe mode\n",
-+		__func__);
-+	reg = readl(host->ioaddr + SDHCI_VENDOR);
-+	if (ios->enhanced_strobe)
-+		reg |= SDHCI_VENDOR_ENHANCED_STRB;
-+	else
-+		reg &= ~SDHCI_VENDOR_ENHANCED_STRB;
-+	writel(reg, host->ioaddr + SDHCI_VENDOR);
-+}
-+
- static const struct sdhci_ops sdhci_brcmstb_ops = {
- 	.set_clock = sdhci_set_clock,
- 	.set_bus_width = sdhci_set_bus_width,
-@@ -23,13 +55,40 @@ static const struct sdhci_pltfm_data sdhci_brcmstb_pdata = {
- 	.ops = &sdhci_brcmstb_ops,
- };
- 
-+static const struct brcmstb_match_priv match_priv_7425 = {
-+	.flags = BRCMSTB_PRIV_FLAGS_NO_64BIT |
-+	BRCMSTB_PRIV_FLAGS_BROKEN_TIMEOUT,
-+};
-+
-+static const struct brcmstb_match_priv match_priv_7445 = {
-+	.flags = BRCMSTB_PRIV_FLAGS_BROKEN_TIMEOUT,
-+};
-+
-+static const struct brcmstb_match_priv match_priv_7216 = {
-+	.hs400es = sdhci_brcmstb_hs400es,
-+};
-+
-+static const struct of_device_id sdhci_brcm_of_match[] = {
-+	{ .compatible = "brcm,bcm7425-sdhci", .data = &match_priv_7425 },
-+	{ .compatible = "brcm,bcm7445-sdhci", .data = &match_priv_7445 },
-+	{ .compatible = "brcm,bcm7216-sdhci", .data = &match_priv_7216 },
-+	{},
-+};
-+
- static int sdhci_brcmstb_probe(struct platform_device *pdev)
- {
--	struct sdhci_host *host;
-+	const struct brcmstb_match_priv *match_priv;
- 	struct sdhci_pltfm_host *pltfm_host;
-+	const struct of_device_id *match;
-+	struct sdhci_brcmstb_priv *priv;
-+	struct sdhci_host *host;
-+	struct resource *iomem;
- 	struct clk *clk;
- 	int res;
- 
-+	match = of_match_node(sdhci_brcm_of_match, pdev->dev.of_node);
-+	match_priv = match->data;
-+
  	clk = devm_clk_get(&pdev->dev, NULL);
  	if (IS_ERR(clk)) {
++		if (PTR_ERR(clk) == -EPROBE_DEFER)
++			return -EPROBE_DEFER;
  		dev_err(&pdev->dev, "Clock not found in Device Tree\n");
-@@ -39,36 +98,57 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
- 	if (res)
- 		return res;
- 
--	host = sdhci_pltfm_init(pdev, &sdhci_brcmstb_pdata, 0);
-+	host = sdhci_pltfm_init(pdev, &sdhci_brcmstb_pdata,
-+				sizeof(struct sdhci_brcmstb_priv));
- 	if (IS_ERR(host)) {
- 		res = PTR_ERR(host);
- 		goto err_clk;
+ 		clk = NULL;
  	}
- 
-+	pltfm_host = sdhci_priv(host);
-+	priv = sdhci_pltfm_priv(pltfm_host);
-+
-+	/* Map in the non-standard CFG registers */
-+	iomem = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-+	priv->cfg_regs = devm_ioremap_resource(&pdev->dev, iomem);
-+	if (IS_ERR(priv->cfg_regs)) {
-+		res = PTR_ERR(priv->cfg_regs);
-+		goto err;
-+	}
-+
- 	sdhci_get_of_property(pdev);
- 	res = mmc_of_parse(host->mmc);
- 	if (res)
- 		goto err;
- 
-+	/*
-+	 * If the chip has enhanced strobe and it's enabled, add
-+	 * callback
-+	 */
-+	if (match_priv->hs400es &&
-+	    (host->mmc->caps2 & MMC_CAP2_HS400_ES))
-+		host->mmc_host_ops.hs400_enhanced_strobe = match_priv->hs400es;
-+
- 	/*
- 	 * Supply the existing CAPS, but clear the UHS modes. This
- 	 * will allow these modes to be specified by device tree
- 	 * properties through mmc_of_parse().
- 	 */
- 	host->caps = sdhci_readl(host, SDHCI_CAPABILITIES);
--	if (of_device_is_compatible(pdev->dev.of_node, "brcm,bcm7425-sdhci"))
-+	if (match_priv->flags & BRCMSTB_PRIV_FLAGS_NO_64BIT)
- 		host->caps &= ~SDHCI_CAN_64BIT;
- 	host->caps1 = sdhci_readl(host, SDHCI_CAPABILITIES_1);
- 	host->caps1 &= ~(SDHCI_SUPPORT_SDR50 | SDHCI_SUPPORT_SDR104 |
- 			SDHCI_SUPPORT_DDR50);
--	host->quirks |= SDHCI_QUIRK_MISSING_CAPS |
--		SDHCI_QUIRK_BROKEN_TIMEOUT_VAL;
-+	host->quirks |= SDHCI_QUIRK_MISSING_CAPS;
-+
-+	if (match_priv->flags & BRCMSTB_PRIV_FLAGS_BROKEN_TIMEOUT)
-+		host->quirks |= SDHCI_QUIRK_BROKEN_TIMEOUT_VAL;
- 
- 	res = sdhci_add_host(host);
- 	if (res)
- 		goto err;
- 
--	pltfm_host = sdhci_priv(host);
- 	pltfm_host->clk = clk;
- 	return res;
- 
-@@ -79,11 +159,6 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
- 	return res;
- }
- 
--static const struct of_device_id sdhci_brcm_of_match[] = {
--	{ .compatible = "brcm,bcm7425-sdhci" },
--	{ .compatible = "brcm,bcm7445-sdhci" },
--	{},
--};
- MODULE_DEVICE_TABLE(of, sdhci_brcm_of_match);
- 
- static struct platform_driver sdhci_brcmstb_driver = {
 -- 
 2.17.1
 
