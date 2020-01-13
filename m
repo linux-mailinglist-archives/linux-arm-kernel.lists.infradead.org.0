@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEC7A138C33
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:13:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88B1A138C35
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:14:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ffLEknzGMIGJ/zCMdH9IM4pcSeMRQhH46bhCjqRQeE0=; b=AjQ
-	ppDDmiuS+aOxW2oBrdAKo0qhLeAGOdzu/0cluvugph4Puf4Fy/xfv42Q+xgTQDkauznr9OXVU0zc6
-	er3N7/4V8OlcdXoWcGXX0kbPgk5puKP5j6RDNITicjoYSWtaATTrU8Bti0iVlc04IpdmweaZ28Xb+
-	+QLgDDBEhne3wT0wiKrenEy89wyxz8Y8X3sFg2fJFGQTmvHHe53oFat7rbfHzbaVqhtc1zv0xG8bC
-	vpicxAK4681OTTL2rWr6W7MuFs+H4brTcRl1rFKQD/Vi2yC599kd7my/cdeRvPSXdR3c5AVuuuPGd
-	TBDV8X9cFzCIYNVY2FTS4ajUH9iyK0w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oOQxx56ClimpqzA57j+M8bIBq1ppaqEQSGWTvRNx8lo=; b=WvWV7COYySZ+QztfAz+U0Qg/sK
+	CtFZJv40UrdrM+D0aWPe1tbK9Q5hQH58237Ixuo9gTpU8MK9qvTTmPt8dfaYn1jNhDvuimuev8T1G
+	SMhCVFoKH3H60BEPSeNg+IVR5JwBLin9AcIkhKMxp//prbQv14G/ADr4HScH/tkdKe7uh3ZAppJ5V
+	XUkdzIiYtqiybeF5uIIRjU9lnkPxtAtJMu4P5yhx8ES8g5V85yH0d+xTdPZ1QG2e6KcV2aaCPJ+o/
+	zmaZzPPAQtF8GUnpYqtyS1FC9V8USOeyXWGX+VsDrRwYT1tN4XWfJkYAwykyxoPvNPIm36H0xh9p4
+	wpJkG02A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqtui-0000D9-SL; Mon, 13 Jan 2020 07:13:28 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iqtv7-0000eR-9K; Mon, 13 Jan 2020 07:13:53 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqtuU-0000BX-SU
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 07:13:16 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F34B1A0103;
- Mon, 13 Jan 2020 08:13:10 +0100 (CET)
+ id 1iqtuW-0000Bi-0D
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 07:13:18 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DE7BA2001DD;
+ Mon, 13 Jan 2020 08:13:11 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A1C791A0017;
- Mon, 13 Jan 2020 08:13:04 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E0F0D2000EB;
+ Mon, 13 Jan 2020 08:13:05 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2580E40285;
- Mon, 13 Jan 2020 15:12:57 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5DAF4402A0;
+ Mon, 13 Jan 2020 15:12:58 +0800 (SGT)
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: maz@kernel.org, jason@lakedaemon.net, tglx@linutronix.de,
  robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de
-Subject: [PATCH V4 RESEND 0/2] irqchip: add NXP INTMUX interrupt controller
-Date: Mon, 13 Jan 2020 15:08:39 +0800
-Message-Id: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
+Subject: [PATCH V4 RESEND 1/2] dt-bindings/irq: add binding for NXP INTMUX
+ interrupt multiplexer
+Date: Mon, 13 Jan 2020 15:08:40 +0800
+Message-Id: <1578899321-1365-2-git-send-email-qiangqing.zhang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
+References: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_231315_063757_72EA4EE3 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200112_231316_698764_597B144B 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,45 +80,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch set adds driver for NXP INTMUX interrupt controller.
+This patch adds the DT bindings for the NXP INTMUX interrupt multiplexer
+for i.MX8 family SoCs.
 
-ChangeLogs:
-V3->V4:
-	*set IRQ_TYPE_LEVEL_HIGH flag in .xlate callback.
-	*fix comment format.
-	*use an intermediate variable for irq_domain_add_linear().
-	*disable interrupts before enabling chained interrupt.
-	*disable interrupt in imx_remove() for level interrupt.
-	*convert binding to DT schema.
-
-V2->V3:
-	*impletement .xlate and .select callback.
-
-V1->V2:
-	*squash patches:
-		drivers/irqchip: enable INTMUX interrupt controller driver
- 		drivers/irqchip: add NXP INTMUX interrupt multiplexer support
-	*remove properity "fsl,intmux_chans", only support channel 0 by
-	default.
-	*delete two unused macros.
-	*align the various field in struct intmux_data.
-	*turn to spin lock _irqsave version.
-	*delete struct intmux_irqchip_data.
-	*disable interrupt in probe stage and clear pending status in remove
-	stage.
-
-Joakim Zhang (2):
-  dt-bindings/irq: add binding for NXP INTMUX interrupt multiplexer
-  drivers/irqchip: add NXP INTMUX interrupt multiplexer support
-
- .../interrupt-controller/fsl,intmux.yaml      |  77 +++++
- drivers/irqchip/Kconfig                       |   6 +
- drivers/irqchip/Makefile                      |   1 +
- drivers/irqchip/irq-imx-intmux.c              | 309 ++++++++++++++++++
- 4 files changed, 393 insertions(+)
+Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+---
+ .../interrupt-controller/fsl,intmux.yaml      | 77 +++++++++++++++++++
+ 1 file changed, 77 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.yaml
- create mode 100644 drivers/irqchip/irq-imx-intmux.c
 
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.yaml b/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.yaml
+new file mode 100644
+index 000000000000..4dba532fe0bd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.yaml
+@@ -0,0 +1,77 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/interrupt-controller/fsl,intmux.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale INTMUX interrupt multiplexer
++
++maintainers:
++  - Marc Zyngier <maz@kernel.org>
++
++properties:
++  compatible:
++    items:
++      const: fsl,imx-intmux
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    minItems: 1
++    maxItems: 8
++    description: |
++      Should contain the parent interrupt lines (up to 8) used to multiplex
++      the input interrupts.
++
++  interrupt-controller: true
++
++  '#interrupt-cells':
++    const: 2
++
++  clocks:
++    maxItems: 1
++    description: ipg clock.
++
++  clock-names:
++    items:
++      const: ipg
++
++  fsl,intmux_chans:
++    maxItems: 1
++    description: |
++      The number of channels used for interrupt source. The Maximum value is 8.
++      If this property is not set in DT then driver uses 1 channel by default.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - interrupt-controller
++  - '#interrupt-cells'
++  - clocks
++  - clock-name
++  - fsl,intmux_chans
++
++additionalProperties: false
++
++Example:
++
++	intmux@37400000 {
++		compatible = "fsl,imx-intmux";
++		reg = <0x37400000 0x1000>;
++		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-controller;
++		#interrupt-cells = <2>;
++		clocks = <&clk IMX8QM_CM40_IPG_CLK>;
++		clock-names = "ipg";
++		fsl,intmux_chans = <8>;
++	};
++
 -- 
 2.17.1
 
