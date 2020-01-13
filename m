@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4F75139037
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 12:36:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0003C13905A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 12:46:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pn/A0QoNOi4rkF6m3cRbXBz7LMb+l/2rHEYO8jcNAZE=; b=YmbPmmJ1rykyJX
-	Pd5ZJi2bOONeNaKGUuoDKS+AkJC95qaKfA9BmQqoMeLz/2DrzLoBrWlS/CxdLjLBHv90GyixOYu5f
-	Z8MccBv//u9YH9ehJaGcWzRcnX4fwYqHZ7Q2LuUZKJGwg2lWwM8WERyql0yQIpgzMNyVz60PgsFhv
-	xk8Cixonxo04iHsW0c9EkktDkNflmERvEl+uKhuSxJNE8EFCz5gPY/+dVcL5RDAIxqgS7R4GBAihp
-	6bll+txxVR6VMv4qNDoA874fXyGCfTmUtAiA5JVDg0uzrZ5Wl6TQhwXW+SpLxupji6nFpYaGExxfs
-	LMAI5mFfrMpahmPMrhzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Luad8CD0b+q2A7gzWKP2/HW7fr8VEuWD2JZuTH5vTrE=; b=ar+JhLsFgDMaCS7DMpuRPWIP6
+	h1SodDZdytS9ZtTtr+BFYwXGOSUTqFt75ZFxvd46aSYDZ3gU9p2xAuP7tVg7wOj2WPL7fdAILAZrA
+	1rk45EEzr2OxPEyRGU/Ead24+0iQS5XkLCOwnzowz7NshvU+Rnik3Y5D+4l1JBwOPQfWpB8LTUawg
+	XQ/SzPgLj7JaxqxWdQdv+MRGjZ0OtdYzdVWLaJKaF1titYybPArWnYJPkRx8UJRQFjr2iL+z+3ypI
+	8MFWD5Ceu0Y50t4w3di662jOckNJxTIiRYOzR1Fs76xdIiF6DQeXj0gzu+5f9fcqu3wkTQ6pPpwTi
+	DsM9MuaIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqy1a-0005CY-WE; Mon, 13 Jan 2020 11:36:51 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1iqyB1-0001JQ-9f; Mon, 13 Jan 2020 11:46:35 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqy1S-0005Ax-3F
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 11:36:43 +0000
-Received: from mail-qt1-f174.google.com ([209.85.160.174]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N1Ofr-1jpIcR3Hul-012rU1 for <linux-arm-kernel@lists.infradead.org>; Mon,
- 13 Jan 2020 12:36:36 +0100
-Received: by mail-qt1-f174.google.com with SMTP id w47so8777009qtk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 03:36:35 -0800 (PST)
-X-Gm-Message-State: APjAAAUFIIwaTY33Q81Cygo/6A1RfJzhDwhM3m2K/lRCme4J47gGzm9M
- bMpUQeOtISVuWFm0yvEgGrPX+o9b6XPMX+dy6Ks=
-X-Google-Smtp-Source: APXvYqy4d5Y865StavZXLM6RVQnqg1jOobhsOc+SKK7Ta7Xbx6KIewCh7Nm3l9DGq6gktI9KWSqh+RU8fwyhDyVDD2g=
-X-Received: by 2002:ac8:47d3:: with SMTP id d19mr13346118qtr.142.1578915394643; 
- Mon, 13 Jan 2020 03:36:34 -0800 (PST)
+ id 1iqyAr-0001Io-DS
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 11:46:26 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 47xBct6Vspz9s29;
+ Mon, 13 Jan 2020 22:46:22 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1578915983;
+ bh=Sh68xlWSgpVZrv++dSyLP0Le2vIlTkF8lE0AjArMEOA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Y8Mxd7gDqddqPKQNgM9mgu3S8Fp/8KtSQwcmErzilZxDxNe7wUdI0WyFOpsVrhY/p
+ oJmlFbdzAAn/MhQmEfOsqOx6MXZPyJvll7FETmJ4P+WUStUxWug5iDUwOaTRSa9Me4
+ jc1U4Sb4pCNRj3M2U5H5ZbcKnYutKwwL4c0x10XdNM7wZx84tdMcAJQoB3QygUr6o2
+ v2mwkuX57RPr16M8z1U34Qj39b/75/GMEAcvh4ZgYCdXof0LVzsKKJ5OLkA+aDtpYM
+ 0csj7e8xlfUYrUA6MEwKu4jyAXiqrHtyOYBxNuTLstG12h8jfsse16JOJdYRPOdUJf
+ LUBdqddVNyiFQ==
+Date: Mon, 13 Jan 2020 22:46:20 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: Re: linux-next: Signed-off-by missing for commit in the arm-soc tree
+Message-ID: <20200113224620.5d33fa63@canb.auug.org.au>
+In-Reply-To: <caeb1af8-4aa2-71dc-0a70-127c0b474f93@st.com>
+References: <20200113065808.25f28c40@canb.auug.org.au>
+ <CAOesGMifHn6DbNgYm6YUbdKjSL5rNgdWrq+HX9dEusrOr9xX2A@mail.gmail.com>
+ <20200113113837.130c3936@canb.auug.org.au>
+ <caeb1af8-4aa2-71dc-0a70-127c0b474f93@st.com>
 MIME-Version: 1.0
-References: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
- <CAK8P3a1MLyP4ooyEDiBF1fE0BJGocgDmO1f5Qrvn_W5eqahz8g@mail.gmail.com>
- <20200113064156.lt3xxpzygattz3he@vireshk-i7>
-In-Reply-To: <20200113064156.lt3xxpzygattz3he@vireshk-i7>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 13 Jan 2020 12:36:18 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a2u6s4MAM_9bOqSt5NwVc4XrXs9W36tp-7rWWTXx0+pRg@mail.gmail.com>
-Message-ID: <CAK8P3a2u6s4MAM_9bOqSt5NwVc4XrXs9W36tp-7rWWTXx0+pRg@mail.gmail.com>
-Subject: Re: [PATCH V2] firmware: arm_scmi: Make scmi core independent of
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>
-X-Provags-ID: V03:K1:Tgpv592JoZa8KhPoyQkYiNX7qWpb0xaKeYxPPNgtODeseWH/wyR
- I0cNVHdOVKlBWg8WaJ3zoasimam92gwDJri4Ntmz6sp/JrDV4Nsibw8WIkXWwTqbIgkLHZy
- pW3mDPzEiNClJr/CCMmzvt/F1K46EoH5j/llS/ICanF0zr2+JHZ831LhApipBz1QYxMk7Qz
- U6K3a+myFl36ppeZ4mU9g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3WIuvaXmAZg=:9LMRtcntZH21S/HhzOIYSk
- +/KQK3pFQT3LR2sZM6D/Geb5EG9R6A2kEDiawKKbcWWEgoPVW76Ga9Gnim5kT+IWzrNXh3vJu
- rarv8brx5Y7q0Aiw0bPexTdh9mcOn8qPGWfYKVL/VBjMJfnmzmdhR1DSItSRY+ug4RG4ioagi
- ks3XRF/PQ+ifTZHfYGDFzct0Fv8phLXYQh28oFicDO/enoXsSWWHb0hEVbs2qIVwp4U4mt+Zg
- MsOHlcd/itNx85CeLbsQ5RxmH9mZYZhaJpAT0g/oi2SGPrC4dAcdZzLe7jf2DE4Thj3lDPYk5
- j+Q/QvH0tfBHKdJ+YViTuBhwasw1f798sPOxCOhRUx9RGYihy/yf5btepCYqDCyRXN8PUAMUR
- HlMge04zbiWs27Qu7oNHvzQ2vkhsAFKGW96QDkj6goSE5A3Zsty2J/lh9NamR9usxaG1sNpv3
- Bap7IquguV3Dtwq7fKLA0qB8sJj8pjXFsCuKf7lmPqr2glp8nv2s1Rle7wl5eyBquzWOERYwy
- 8bBjlQf7YzN8+lOkwWmcsi8DjtQdJDWBtJEn/FJXNHPbM9uH9G/4eil7i8tC8ykU2muuRz5Bi
- Za5wK2sYxLrh7VQsXDYwFxfmAGaCtNSMTUB4fMOLZsFwME+fTFLq3m38HG43JqAVQXkf7fp1g
- 3lNwmyeZYeR2nIsrneJIYdK1f5s83yNqBL5SqwQRLpnXv5/BszhhT7sKQAWB1j+VG13vYp4bZ
- 5ZKL0uh7N84FjQk81lJXInkd3oSVD94pqq2y/BPz5V3D1cdYs6DbJW8kSmkEw+dM6EwURjPhF
- iAPT8wxFJg4mh1UHJRZb+mQh2cxWwLG2Ueek24dEgEU+qzs/5N4YJoMBczGCpcI39IfcxGcXo
- vLA9KzKZsLodx2BGAXdA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_033642_425330_919A5834 
-X-CRM114-Status: GOOD (  16.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200113_034625_620155_06092627 
+X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,54 +79,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- cristian.marussi@arm.com, Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>, Yann Gautier <yann.gautier@st.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ ARM <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
+ Ludovic Barre <ludovic.barre@st.com>
+Content-Type: multipart/mixed; boundary="===============2410534757080264205=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 7:42 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> On 10-01-20, 12:15, Arnd Bergmann wrote:
-> > On Fri, Jan 10, 2020 at 10:43 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> >
-> > Simply dropping the __iomem isn't much better, now you get other
-> > type mismatches.
+--===============2410534757080264205==
+Content-Type: multipart/signed; boundary="Sig_/5U+lfpyJ0sr9Nz20/hiiLBb";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
+
+--Sig_/5U+lfpyJ0sr9Nz20/hiiLBb
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+Hi Alexandre,
+
+On Mon, 13 Jan 2020 09:17:08 +0100 Alexandre Torgue <alexandre.torgue@st.co=
+m> wrote:
 >
-> Right. So what exactly do you suggest I should do now? Drop __iomem
-> from the structure's payload field but keep all local variables and
-> function arguments with __iomem ?
+> Sorry for this oversight. DO I have something to do ? (except to not=20
+> forget to check my signed-off next time).
 
-> > > +struct scmi_chan_info {
-> > > +       void *payload;
-> > > +       struct device *dev;
-> > > +       struct scmi_handle *handle;
-> > > +       void *transport_info;
-> > > +};
-> >
-> > Maybe you can wrap the scmi_chan_info inside of another
-> > structure that contains  the payload pointer, and use container_of
-> > to convert between them?
->
-> We don't need to convert between the two of them, isn't it ? Are you
-> referring some other field here ?
+That is up to the arm-soc tree maintainers.
 
-> > It's not obvious which parts of the structure should be shared and
-> > which are transport specific.
->
-> All transport specific information is kept in the transport specific
-> structure which is saved here in the transport_info field. Is there
-> something else that isn't clear ?
+--=20
+Cheers,
+Stephen Rothwell
 
-To answer all three, what I meant is that the payload pointer appears
-to be transport specific and should not be part of the common
-structure if there is generic way to access it.
+--Sig_/5U+lfpyJ0sr9Nz20/hiiLBb
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
 
-      Arnd
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl4cWIwACgkQAVBC80lX
+0GyzLQf/V4IXMNSIMAQSE7qdmrM7ue4ZAsvi3rn9G+gFcSjsnB+S7hpuWQAzKxpq
+5z8xVd9L33CLY+8FG8pvFW6qaOoo+vcw5XRnJvJPeC8ptkThTSwVocqlV9BEVIvT
+76j27n+cMqMlXAdQtuHgquyVW6T2uK9wT3tzeGVejmw0YBWp2k7g4MnzNIvaF/bn
+qE09LuWS5GGyvzhMd5MHEeHOq6eIu6vRTWeDLyYa3CvNiTNpjtNwI+Hg/9/2JsWO
+v1h8GLlDlmfB1Xl+xQmlXy6m5hqoNDj4IcCWPNPwNDrBNgxn87UwQiqSRkHJN0GB
+2bQBARTGtpXW4LuLgFRvNtr3J302bQ==
+=b67J
+-----END PGP SIGNATURE-----
+
+--Sig_/5U+lfpyJ0sr9Nz20/hiiLBb--
+
+
+--===============2410534757080264205==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2410534757080264205==--
+
