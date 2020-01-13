@@ -2,49 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC27D138D80
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:16:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF19E138D83
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:17:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZpK99WVvId4diLuuDdbX+m7Bt48nabX9P2P5oP/krR4=; b=r4aX7LnKfeoA2A
-	MuFOG9Vevsz9j/jWIJBBXeIUECkfU++eoeAJMQdT1hinzq5SH+ly76R9MVCSGJ8oIxLZL6B9obZtq
-	7RrajN5JKNBTnM8F7P0bMZ8qRtzgMgK2Z+JJv3IuiwLWelyDw7wVaa/F8GrAy4dLMzXFRHNo5nGhd
-	+cSAYhaWrOAsx29eHF/XtjBekrPCTpzhXrUZSNaiNTy3VpNeG7voVVYJYAlZlUBu5nfngLHUiTvue
-	0xJJJHk7tO49uiwGQ22vm/cDSMP6An5txW/QQzRMweLepgOWsHWeGQQv6U/kdHZ+T3uf4QS8ilBhx
-	1ZfxHlNRGitwqXek96ZQ==;
+	List-Owner; bh=3sRvnRmKDJ2NENA6Bc5+WVdnF2VMCRuaWxKX0s1aZNY=; b=LdVAs2FYZThB1z
+	UjrlMZo4uKVhYteeUVq77GmrzQ+1fXbiGo3TfaH/Okm01tuUcI/cUyNM4N9VxgKbvqq+4S/SyQl+0
+	RMqNsqrQ309ZgSk9kABIAQIhTXKVpgOX8BPtntpVpYDyGBPHQG9VW8yWCHDDjLT/67KQ7zZVTKVU1
+	1mjvPo+9HRGjdcNPF3adBJCeiflepXQGEM+Swy51r8i5XpffB5zj6IS1PTfs5LPfs+HcCJbayW0Sw
+	BqG4NSXZ8CWSL5C7r+2DbeOTik7ZIXEqTYljih+nCVUyqhWdEs0PU2aeiL3mgkJeweGl+t3EZAi0P
+	rR6PhquLwPyGnP5BFB2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqvpg-0001So-22; Mon, 13 Jan 2020 09:16:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iqvqD-0001pZ-E5; Mon, 13 Jan 2020 09:16:57 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqvpL-0001R8-EY; Mon, 13 Jan 2020 09:16:05 +0000
-Received: from wf0253.dip.tu-dresden.de ([141.76.180.253] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1iqvpF-0001xO-Fh; Mon, 13 Jan 2020 10:15:57 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix dwmmc clock name for px30 and
- rk3308
-Date: Mon, 13 Jan 2020 10:15:56 +0100
-Message-ID: <3203839.F8si9oFvou@phil>
-In-Reply-To: <20200110161200.22755-1-jbx6244@gmail.com>
-References: <20200110161200.22755-1-jbx6244@gmail.com>
+ id 1iqvpT-0001UM-Qb
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 09:16:16 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1iqvpJ-0000eB-1E; Mon, 13 Jan 2020 10:16:01 +0100
+Message-ID: <a4ff0a8571895c65ed5c20abd0c332b0d92defab.camel@pengutronix.de>
+Subject: Re: [PATCH v6 2/6] mailbox: sun6i-msgbox: Add a new mailbox driver
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Samuel Holland <samuel@sholland.org>, Maxime Ripard
+ <mripard@kernel.org>,  Chen-Yu Tsai <wens@csie.org>, Jassi Brar
+ <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>, Vasily
+ Khoruzhick <anarsoul@gmail.com>
+Date: Mon, 13 Jan 2020 10:15:58 +0100
+In-Reply-To: <20200113051852.15996-3-samuel@sholland.org>
+References: <20200113051852.15996-1-samuel@sholland.org>
+ <20200113051852.15996-3-samuel@sholland.org>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_011603_638023_4DB3AC46 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20200113_011611_886127_31E05EC7 
+X-CRM114-Status: GOOD (  17.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -57,38 +68,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Johan,
-
-Am Freitag, 10. Januar 2020, 17:12:00 CET schrieb Johan Jonker:
-> An experimental test with the command below gives this error:
-> px30-evb.dt.yaml: dwmmc@ff390000: clock-names:2:
-> 'ciu-drive' was expected
-> rk3308-evb.dt.yaml: dwmmc@ff480000: clock-names:2:
-> 'ciu-drive' was expected
+On Sun, 2020-01-12 at 23:18 -0600, Samuel Holland wrote:
+> Allwinner sun6i, sun8i, sun9i, and sun50i SoCs contain a hardware
+> message box used for communication between the ARM CPUs and the ARISC
+> management coprocessor. This mailbox contains 8 unidirectional
+> 4-message FIFOs.
 > 
-> 'ciu-drv' is not a valid dwmmc clock name,
-> so fix this by changing it to 'ciu-drive'.
+> Add a driver for it, so it can be used for SCPI or other communication
+> protocols.
 > 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+>  drivers/mailbox/Kconfig        |   9 +
+>  drivers/mailbox/Makefile       |   2 +
+>  drivers/mailbox/sun6i-msgbox.c | 332 +++++++++++++++++++++++++++++++++
+>  3 files changed, 343 insertions(+)
+>  create mode 100644 drivers/mailbox/sun6i-msgbox.c
 > 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+[...]
+> diff --git a/drivers/mailbox/sun6i-msgbox.c b/drivers/mailbox/sun6i-msgbox.c
+> new file mode 100644
+> index 000000000000..15d6fd522dc5
+> --- /dev/null
+> +++ b/drivers/mailbox/sun6i-msgbox.c
+> @@ -0,0 +1,332 @@
+[...]
+> +	reset = devm_reset_control_get_exclusive(dev, NULL);
+> +	if (IS_ERR(reset)) {
+> +		ret = PTR_ERR(reset);
+> +		dev_err(dev, "Failed to get reset control: %d\n", ret);
+> +		goto err_disable_unprepare;
+> +	}
+> +
+> +	/*
+> +	 * NOTE: We rely on platform firmware to preconfigure the channel
+> +	 * directions, and we share this hardware block with other firmware
+> +	 * that runs concurrently with Linux (e.g. a trusted monitor).
+> +	 *
+> +	 * Therefore, we do *not* assert the reset line if probing fails or
+> +	 * when removing the device.
+> +	 */
+> +	ret = reset_control_deassert(reset);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to deassert reset: %d\n", ret);
+> +		goto err_disable_unprepare;
+> +	}
 
-thanks for this fix, I've split it into two patches (px30 and rk3308) and
-applied for 5.6
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-Thanks
-Heiko
-
-
+regards
+Philipp
 
 
 _______________________________________________
