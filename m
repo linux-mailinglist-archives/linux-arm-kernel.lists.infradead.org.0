@@ -2,75 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C18D139266
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:44:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19915139277
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 14:47:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HL9jlDTFezdx8+HsCsMOgmBOChSbFtcv4YzfrmTDqYg=; b=HGqQiw6Uexyj61
-	B4/tjg8QYRxXmfFiAsBpkM0TzOUs1IjWzf70Cda9Vv/nnGk0hhuxXOSq7QrFBJc+1hLrI7d6IEnLp
-	STTF1XnJaLwRpKYtrAYSbOaUTo6TAOa01W2vXH198HtDQojlUrVB5jubfWnOLTl2zDzGPPws+VMEQ
-	cbD99Onti0Js0Dh81Cnxxn3BDPmp5zh5hRBm77VKeoAODmu2zgxdFhm5zMbjbtQJPCsU5+qurUp5H
-	OnvLN9FEj7hB9Lg+9ivOP+YUGGplvK+bcmYxuHWUolbqcErzDn3TFd00ptE0EbpL2pKViPDy2nwGa
-	hNGi+zocMhQaMp6COGGQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W4NbU40nOv4UhULVWNxdFU9xwxm9AziqVL8FXkFZB6w=; b=LxuW+vvaVAKhfM
+	T4sdsTlavwxjNJY35Rq1oMhN8fHXPBppIWFmze2QmkahTBOHpczKuKQR89I3EmnzX1q156TqG+mMl
+	OH9OZBWk0cjtW2Frf0fe+LUuqwEgksYjKb4YjSdGdxWh4P3cTOtiBh+x9dtfVSaVMjcGBCJ0DVs24
+	52mq8/YWfFybyuSFpPhVXYy7DbPbmJUIvVCA/gxrmLM1EoOGnPA68hUDJXFPDnUOrTeapyrGZlOIQ
+	snM7bABUCVCx7XJbiWcXfimUSp8z10UX93BEveeRAKuPIFAYUe/HoXi5JSQDFc8fEJXBzmZU6Jfao
+	X0E0KNMcqvk5UeIemLTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir00u-0004vi-9U; Mon, 13 Jan 2020 13:44:16 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ir03T-0006fl-11; Mon, 13 Jan 2020 13:46:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir00k-0004ug-Rq
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 13:44:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578923045;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=AqBRApPWTS4UYgbRglBP86D95EvSqTw+5TZoVneRKdM=;
- b=FIqGK+EP8Q1qAUP00AsWGNB5sn5iIhWZyp+cgRNM1eqtLHfVaEXwU4S0GMW36mcwDUYMqW
- ilwwGZf2kmRkPIqA7+IY1zFwQDk+cODKlMsXgL09FkSKwniKD5cs0gIxpoJNOLa46Z2hfP
- gB0qygL0vB/tmMO1Dc569gpmzCWr2Ek=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-287-4hpGEeUuMIueudT7ttaOyg-1; Mon, 13 Jan 2020 08:44:02 -0500
-X-MC-Unique: 4hpGEeUuMIueudT7ttaOyg-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1ir03H-0006eo-B3; Mon, 13 Jan 2020 13:46:46 +0000
+Received: from mail-qv1-f48.google.com (mail-qv1-f48.google.com
+ [209.85.219.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 766961007310;
- Mon, 13 Jan 2020 13:44:00 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 48EF960BF4;
- Mon, 13 Jan 2020 13:43:59 +0000 (UTC)
-Subject: Re: [PATCH v2] locking/osq: Use optimized spinning loop for arm64
-To: Will Deacon <will@kernel.org>
-References: <20200112235854.32089-1-longman@redhat.com>
- <20200113115715.GA3260@willie-the-truck>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <a4233fec-89e7-08e2-01a6-35a2ffb289b1@redhat.com>
-Date: Mon, 13 Jan 2020 08:43:58 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EB302187F;
+ Mon, 13 Jan 2020 13:46:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578923202;
+ bh=AIlrTSnZ1J1BYZeDE/zgmZ4IXahNEVbk9lgMh1AEQ7Y=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=iuAnG+CuflajR1/NGCyzA+4OgWdGpK3JBRoW8i3KxcgXNDqf9Araj+ScJo6ZeOjjT
+ ToxoD9QgrlII2z7n3Hm7SMXMKF36MPInnWtwtpDLa2NsPpMtB1H9dT9mt/EKuNq5Z+
+ kUI3gsWP6kXyJfteOQcIJNHfn36dpPu35Nr5/ljs=
+Received: by mail-qv1-f48.google.com with SMTP id dc14so3972904qvb.9;
+ Mon, 13 Jan 2020 05:46:42 -0800 (PST)
+X-Gm-Message-State: APjAAAWT7Sg2VcsgTN819vVhkFEKOIQpgZ8UGk9wING5Nyua0y8FkN+C
+ e/yhd8vzUJfbfMF2472vZ4yvgdEoIUWUWbgGXw==
+X-Google-Smtp-Source: APXvYqyIYYc2t9K2miXG3KyEWH3O5mjcXutnn4DUpikq6B35lTbFFyOCnIJ1ccg69kvCPXEd2zULH+m1JMCJtqyImI8=
+X-Received: by 2002:a0c:f6cd:: with SMTP id d13mr15327544qvo.20.1578923201111; 
+ Mon, 13 Jan 2020 05:46:41 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200113115715.GA3260@willie-the-truck>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+References: <20191230090419.137141-1-enric.balletbo@collabora.com>
+ <20191230090419.137141-2-enric.balletbo@collabora.com>
+In-Reply-To: <20191230090419.137141-2-enric.balletbo@collabora.com>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 13 Jan 2020 07:46:29 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLHWa9n167xn+aPFVDvcFLNZpNvWVkrJ15v1WnTtYBLWg@mail.gmail.com>
+Message-ID: <CAL_JsqLHWa9n167xn+aPFVDvcFLNZpNvWVkrJ15v1WnTtYBLWg@mail.gmail.com>
+Subject: Re: [PATCH v24 1/2] Documentation: bridge: Add documentation for
+ ps8640 DT properties
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_054406_983386_E6C3F13A 
-X-CRM114-Status: GOOD (  22.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_054643_402596_10D91168 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,118 +85,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>, maz@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulrich Hecht <uli@fpond.eu>,
+ Nicolas Boichat <drinkcat@chromium.org>, Jitao Shi <jitao.shi@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/13/20 6:57 AM, Will Deacon wrote:
-> [+Marc]
+On Mon, Dec 30, 2019 at 3:04 AM Enric Balletbo i Serra
+<enric.balletbo@collabora.com> wrote:
 >
-> On Sun, Jan 12, 2020 at 06:58:54PM -0500, Waiman Long wrote:
->> Arm64 has a more optimized spinning loop (atomic_cond_read_acquire)
->> for spinlock that can boost performance of sibling threads by putting
->> the current cpu to a shallow sleep state that is woken up only when
->> the monitored variable changes or an external event happens.
->>
->> OSQ has a more complicated spinning loop. Besides the lock value, it
->> also checks for need_resched() and vcpu_is_preempted(). The check for
->> need_resched() is not a problem as it is only set by the tick interrupt
->> handler. That will be detected by the spinning cpu right after iret.
->>
->> The vcpu_is_preempted() check, however, is a problem as changes to the
->> preempt state of of previous node will not affect the sleep state. For
->> ARM64, vcpu_is_preempted is not defined and so is a no-op. To guard
->> against future addition of vcpu_is_preempted() to arm64, code is added
->> to cause build error when vcpu_is_preempted becomes defined in arm64
->> without the corresponding changes in the OSQ spinning code.
->>
->> On a 2-socket 56-core 224-thread ARM64 system, a kernel mutex locking
->> microbenchmark was run for 10s with and without the patch. The
->> performance numbers before patch were:
->>
->> Running locktest with mutex [runtime = 10s, load = 1]
->> Threads = 224, Min/Mean/Max = 316/123,143/2,121,269
->> Threads = 224, Total Rate = 2,757 kop/s; Percpu Rate = 12 kop/s
->>
->> After patch, the numbers were:
->>
->> Running locktest with mutex [runtime = 10s, load = 1]
->> Threads = 224, Min/Mean/Max = 334/147,836/1,304,787
->> Threads = 224, Total Rate = 3,311 kop/s; Percpu Rate = 15 kop/s
->>
->> So there was about 20% performance improvement.
->>
->> Signed-off-by: Waiman Long <longman@redhat.com>
->> ---
->>  arch/arm64/include/asm/barrier.h | 10 ++++++++++
->>  kernel/locking/osq_lock.c        | 25 ++++++++++++-------------
->>  2 files changed, 22 insertions(+), 13 deletions(-)
->>
->> diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
->> index 7d9cc5ec4971..8eb5f1239885 100644
->> --- a/arch/arm64/include/asm/barrier.h
->> +++ b/arch/arm64/include/asm/barrier.h
->> @@ -152,6 +152,16 @@ do {									\
->>  	VAL;								\
->>  })
->>  
->> +/*
->> + * In osq_lock(), smp_cond_load_relaxed() is called with a condition
->> + * that includes vcpu_is_preempted(). For arm64, vcpu_is_preempted is not
->> + * currently defined. So it is a no-op. If vcpu_is_preempted is defined in
->> + * the future, smp_cond_load_relaxed() will not response to changes in the
->> + * preempt state in a timely manner. So code changes will have to be made
->> + * to address this deficiency.
->> + */
->> +#define vcpu_is_preempted_not_used
->> +
->>  #define smp_cond_load_acquire(ptr, cond_expr)				\
->>  ({									\
->>  	typeof(ptr) __PTR = (ptr);					\
->> diff --git a/kernel/locking/osq_lock.c b/kernel/locking/osq_lock.c
->> index 6ef600aa0f47..69ec5161c3cc 100644
->> --- a/kernel/locking/osq_lock.c
->> +++ b/kernel/locking/osq_lock.c
->> @@ -13,6 +13,14 @@
->>   */
->>  static DEFINE_PER_CPU_SHARED_ALIGNED(struct optimistic_spin_node, osq_node);
->>  
->> +/*
->> + * The optimized smp_cond_load_relaxed() spin loop should not be used with
->> + * vcpu_is_preempted defined.
->> + */
->> +#if defined(vcpu_is_preempted) && defined(vcpu_is_preempted_not_used)
->> +#error "vcpu_is_preempted() inside smp_cond_load_relaxed() may not work!"
->> +#endif
-> Although I appreciate you going the extra mile for arm64 (thanks!), I think
-> this is probably a bit overkill given that I don't plan to merge the series
-> from Zengruan any time soon. Instead, how about just defining
-> vcpu_is_preempted in arch/arm64/include/asm/spinlock.h with a comment:
+> From: Jitao Shi <jitao.shi@mediatek.com>
 >
+> Add documentation for DT properties supported by
+> ps8640 DSI-eDP converter.
 >
-> 	/*
-> 	 * Changing this will break osq_lock() thanks to the call inside
-> 	 * smp_cond_load_relaxed().
-> 	 *
-> 	 * See:
-> 	 * https://lore.kernel.org/lkml/20200110100612.GC2827@hirez.programming.kicks-ass.net
-> 	 */
-> 	#define vcpu_is_preempted(cpu)	false
->
->
-> So we'll notice that when somebody tries to change it.
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Acked-by: Rob Herring <robh@kernel.org>
+> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> ---
+> I maintained the ack from Rob Herring and the review from Philipp
+> because in essence the only thing I did is migrate to YAML format and
+> check that no errors are reported via dtbs_check. Just let me know if
+> you're not agree.
 
-Yes, that works for me. I just want to make sure that if any changes to
-add vcpu_is_preempted to arm64 in the future will get caught.
-
-Cheers,
-Longman
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
