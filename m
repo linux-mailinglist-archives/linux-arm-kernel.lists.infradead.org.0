@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 505EE139B27
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:08:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A782139B32
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:08:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4fLpGxgY00f9GoBZI13I4GbBglyceRFl0TamR0Ih2bk=; b=BXS
-	UERq/x1nm7WUsBQBNbWklO4wAsE/cclSYNY4DbuLE9Suhd1BmHIfraI6xIcVCXFO6/83E0ZHtm4oi
-	xmu/6UtZwFQH+5x/UEkzqM6eVOV97VVxuur+g0hoFv5XOPchb+Y1Yw9tikwuYMVrAFiws4mDchIEC
-	BijJtdMpx9COU6CDmBrPUa1kXCwskLEdm2vBANofU/TIakaNRe4B8+mCwNvM3ejaOU7Hz+wHOKcGU
-	t1u+8pbv6AQD0Jgm9Q1IUsEZ3OlCUW02nc/SbOsR0nH5lKTZINFkKSvMiybse1JdoPFIE4Hp8pgrq
-	az4LiRJ6TFZDnQeSohDzp3EkvlIAVUw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=F1bbzR4mc53xuqj+jE6ljxX3WUCudgxN/PMSzuBzrsE=; b=MToojv0uNevbT/+VA2jVHCEjnN
+	YJMXTTZUpzRIwERdoI3tARHnBk8axUZLu61WdQLkymVorczG1Xbx+b+iygJ3c18PfbGjOWzXgro+I
+	Y26dARBtjJWi+9OaUCnN+2RbIF+EsPlWqP+AzompW3vujtUXYeoG2PLewwXHeVJvzUy9qvdJkcL5u
+	jWKubh+HTiuU6fBeo/Rgzdk89inoQG8Yl64IO0L1h1iKMC8gD1rBW5MHO/TYUMzmF6i1uz+nQBNNH
+	kUm2bbsKnsyY2ALR3QFqBKul5qnixjZ4IT/oyW1+NYjNhi3eMOKYEyqaAWLdmQmMAgabR+d4FTZ5B
+	wSNnXCrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir6wP-0006uy-S3; Mon, 13 Jan 2020 21:08:05 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1ir6wi-0007H0-M5; Mon, 13 Jan 2020 21:08:24 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir6w7-0006tl-Ra
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:07:49 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bd4so4300648plb.8
+ id 1ir6wA-0006uQ-0C
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:07:51 +0000
+Received: by mail-pl1-x642.google.com with SMTP id ay11so4315911plb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 13:07:47 -0800 (PST)
+ Mon, 13 Jan 2020 13:07:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=hH2HYPUX9M6K2Z8XwzaDO6EO0dTrQa3gOricl4ewwpo=;
- b=vFyGHYP6n86HZaGZ9+4JdkQf7CK+H28vzqquaSDxb9MCqb+LcyGTzf2CskjHwbZklD
- TvVhs2vnzH7pOxSJkGYxxT8XoJIS1R1KWU8qREHewOXxvI8X5jKtIfumStAJf4i54LvI
- 0nYJVtU7/VdKjAjuKxnlPrJa23m7cyCSuswO+W4rukIKZNkHgQCqAYiWErw1pNVyciR7
- kX0Lbh5SdY1k4R3mzHXSq8q8wDlvc4fHX7lgWSw8e4zWs3yt6BmwdOKbht1djw8W7U+w
- WdzDDPAPeXiELByAweQWdH9LJyV7lmNpVnkoiuxsuTQz40qJXdxa5iUWz28aqEjNX2+j
- /lXg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=LyQkYDM/KZKONjplFnyoxpxnLT5IGwQv8MiMr7YPN3I=;
+ b=utfA3alrv7tHpghnKdkmJ3E0IqLvR/zXbdnViKLkrLfW8ko7gw7GTfXLrgEkbIqSJe
+ OmHci07hmtJ8jlSGaF8s1zDVjPIzQbipUsLUzcvg4+SmZNpGatNqyPmtr4yXj5HXue9w
+ v+le4kOlRgwDbA7LBe4l6BQhXCP+r7kjMT7xUiEmxzx6IYN+SGFsaTbYx6zfeKDTOSE3
+ QtJB3IIApfjxmV/26ONJgL9AMVrAS5+lJNBUc25L8k0i0m0dkVyHBKAeM9wZkok2+SRZ
+ bp1R7RwtXcAXMCWfGMM4Ej4kts9WxU5aHmRNFNAidPjM9ZZjSZVaBdYTKjYI9xzrHzX4
+ LKGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hH2HYPUX9M6K2Z8XwzaDO6EO0dTrQa3gOricl4ewwpo=;
- b=RMJ3JxRUoOJo1DaPk89StV9Qy3pRcxKRFUqDERrYv02qn4HlS/ErvOZfM8T1WoEdKt
- 7BtkL9P8t/jjh/XzPzpBaiXLQY1eBS9llXrxa/snv/RPocWxRzBePPksUInEbAEOZdls
- y1eYNRvkILP6nTWGr9dgPS4qjunOpAAzQpo+FIq5XqM6k8On3IFHxxVHCTwEJaOuUZ4d
- X2PbT6Zg5tnc1BLt/VZbZT6PNOlRIf59W7JtNF7vnJ86/Cn/NureAiCNXMseMvRI0D6u
- 3hd3Cpmt5dLCTXGEtMpd3X6FpaG5EQty2mOkoHJo2AIMVms2hCwdLTnpzzY1Eblc7v7d
- TC+g==
-X-Gm-Message-State: APjAAAUm2Z/lJSY3sFQt7+TYfJdejMbvXI6rMI4Jk459BkXIwaWY0gKn
- S0JfT8AY9sOiBzDVYDAmZ00=
-X-Google-Smtp-Source: APXvYqwKyTtQjzJW+9Hz6nQj31Gm7sA7wdoCBN07yvu9rXr0QkOkuRpV9u3YHV2lN2zba3A+W0wLJA==
-X-Received: by 2002:a17:90a:7f01:: with SMTP id
- k1mr9851033pjl.81.1578949666986; 
- Mon, 13 Jan 2020 13:07:46 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=LyQkYDM/KZKONjplFnyoxpxnLT5IGwQv8MiMr7YPN3I=;
+ b=mNd/6NrHdxyaojO0bPgrsLxCuYQ5ycYVu6hcxftV5jJNGx/fauDkvdEpqboHMvu4/Q
+ Hf+Y8y3FJ+PBURWAQG6HeC613Lory0j/IWhblnTRBsuS84VGEI09pAwT46zfya9G30oR
+ Pu7ge9D0cXav/E7biVTCxKNJpEKwSGAWIzq95GPgUgSZ+QtScFGJSMrM9AT2WnyWGbGf
+ 6EmgeALsOEbJcHrudUETkPgczTyABAbfKL1dEuUpvrMKGr4M5R3r5y7ptlCvs+ay2q/w
+ gHFlcrF7EbafyNECozOxouPslQLZVelQsNckIXq5IO+33UiNx8cm0dgjGFJDZCJ0h6NA
+ 2kGQ==
+X-Gm-Message-State: APjAAAVuUcD/KNjdPnWoJcnj8xt14y/d+oTddZBCiiUhtvFDrXwN8VK1
+ WK5pQmWaOkux2LsmPyF0G/Sf0Cays+kjCg==
+X-Google-Smtp-Source: APXvYqzliCyBk9qFpUk4+wdWthbVhifyZvXlrNnXV9vrs6fPOu67hIWB75V3MJEl+WkyzYcNilvw3g==
+X-Received: by 2002:a17:90a:9b88:: with SMTP id
+ g8mr24522340pjp.72.1578949669444; 
+ Mon, 13 Jan 2020 13:07:49 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id s1sm14195827pgv.87.2020.01.13.13.07.44
+ by smtp.gmail.com with ESMTPSA id s1sm14195827pgv.87.2020.01.13.13.07.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 13:07:46 -0800 (PST)
+ Mon, 13 Jan 2020 13:07:49 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/6] mmc: sdhci-brcmstb: Driver updates
-Date: Mon, 13 Jan 2020 16:07:00 -0500
-Message-Id: <20200113210706.11972-1-alcooperx@gmail.com>
+Subject: [PATCH 1/6] dt-bindings: mmc: brcm,
+ sdhci-brcmstb: Add support for 7216b0
+Date: Mon, 13 Jan 2020 16:07:01 -0500
+Message-Id: <20200113210706.11972-2-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200113210706.11972-1-alcooperx@gmail.com>
+References: <20200113210706.11972-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_130747_918008_2DF29DC8 
-X-CRM114-Status: GOOD (  10.63  )
+X-CRM114-CacheID: sfid-20200113_130750_039904_24CA6BD6 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,25 +115,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The latest BRCMSTB SoC's now use a new Arasan controller along
-with a custom Broadcom PHY that supports HS200, HS400, SDR104,
-HS400E-ES and CQE. This series of commits adds support for these
-new features along with a few bug fixes. The 7216 is the first
-SoC to have this new hardware.
+Add 7216b0 with supports CQE, HS400, HS400-ES and SDR104.
 
-Al Cooper (6):
-  dt-bindings: mmc: brcm,sdhci-brcmstb: Add support for 7216b0
-  mmc: sdhci-brcmstb: Add ability to use HS400ES transfer mode
-  mmc: sdhci-brcmstb: Fix driver to defer on clk_get defer
-  mmc: sdhci-brcmstb: Add shutdown callback
-  mmc: sdhci-brcmstb: Add support for Command Queuing (CQE)
-  mmc: sdhci-brcmstb: Fix incorrect switch to HS mode
+Signed-off-by: Al Cooper <alcooperx@gmail.com>
+---
+ .../bindings/mmc/brcm,sdhci-brcmstb.txt       | 41 +++++++++++++------
+ 1 file changed, 28 insertions(+), 13 deletions(-)
 
- .../bindings/mmc/brcm,sdhci-brcmstb.txt       |  41 ++-
- drivers/mmc/host/Kconfig                      |   1 +
- drivers/mmc/host/sdhci-brcmstb.c              | 270 +++++++++++++++++-
- 3 files changed, 284 insertions(+), 28 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/mmc/brcm,sdhci-brcmstb.txt b/Documentation/devicetree/bindings/mmc/brcm,sdhci-brcmstb.txt
+index 733b64a4d8eb..ae2074184528 100644
+--- a/Documentation/devicetree/bindings/mmc/brcm,sdhci-brcmstb.txt
++++ b/Documentation/devicetree/bindings/mmc/brcm,sdhci-brcmstb.txt
+@@ -11,28 +11,43 @@ Required properties:
+ - compatible: should be one of the following
+   - "brcm,bcm7425-sdhci"
+   - "brcm,bcm7445-sdhci"
++  - "brcm,bcm7216-sdhci"
+ 
+ Refer to clocks/clock-bindings.txt for generic clock consumer properties.
+ 
+ Example:
+ 
+-	sdhci@f03e0100 {
+-		compatible = "brcm,bcm7425-sdhci";
+-		reg = <0xf03e0000 0x100>;
+-		interrupts = <0x0 0x26 0x0>;
+-		sdhci,auto-cmd12;
+-		clocks = <&sw_sdio>;
++	sdhci@84b0000 {
+ 		sd-uhs-sdr50;
+ 		sd-uhs-ddr50;
++		sd-uhs-sdr104;
++		sdhci,auto-cmd12;
++		compatible = "brcm,bcm7216-sdhci",
++			   "brcm,bcm7445-sdhci",
++			   "brcm,sdhci-brcmstb";
++		reg = <0x84b0000 0x260 0x84b0300 0x200>;
++		reg-names = "host", "cfg";
++		interrupts = <0x0 0x26 0x4>;
++		interrupt-names = "sdio0_0";
++		clocks = <&scmi_clk 245>;
++		clock-names = "sw_sdio";
+ 	};
+ 
+-	sdhci@f03e0300 {
++	sdhci@84b1000 {
++		mmc-ddr-1_8v;
++		mmc-hs200-1_8v;
++		mmc-hs400-1_8v;
++		mmc-hs400-enhanced-strobe;
++		supports-cqe;
+ 		non-removable;
+ 		bus-width = <0x8>;
+-		compatible = "brcm,bcm7425-sdhci";
+-		reg = <0xf03e0200 0x100>;
+-		interrupts = <0x0 0x27 0x0>;
+-		sdhci,auto-cmd12;
+-		clocks = <sw_sdio>;
+-		mmc-hs200-1_8v;
++		compatible = "brcm,bcm7216-sdhci",
++			   "brcm,bcm7445-sdhci",
++			   "brcm,sdhci-brcmstb";
++		reg = <0x84b1000 0x260 0x84b1300 0x200>;
++		reg-names = "host", "cfg";
++		interrupts = <0x0 0x27 0x4>;
++		interrupt-names = "sdio1_0";
++		clocks = <&scmi_clk 245>;
++		clock-names = "sw_sdio";
+ 	};
 -- 
 2.17.1
 
