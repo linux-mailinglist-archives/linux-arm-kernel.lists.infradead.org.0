@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 798D0138CB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 09:17:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 762E2138CE4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 09:30:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LrJC+eGMKhzCk5snzO+WOmsvNEdOd2HhSaaww7rRAyc=; b=DKyJI/dOfoVLhVKBYrrfV/nak
-	J4PPd5iDA3s3qvjgF7ITOuRikJxFZpJPV5BlyqVrSfL/MYivebwWMglaMUjlxcEoZTkxiFZptEMwC
-	6jTwYJGr63ffidbD7g6FJ/+s4C77+qgNgi0msDDZiTCQV3IzDJCT3G5qtm1WF8gXcYZuGyzByLUyB
-	EfIuKZDielXrKGgsH9V17kxwf/2j70gQ/BfKB0GeQboTWogWRmZKxy3C5xiiXnnE2eMfzFpRgGe6D
-	MIFiYWTXbXFeoKxXfyyTSy5avzvpEPdvFCuYCTB6MQoQBOgqs4D9Ehh2/PJ8EaWlZyV1yBw5IUSmH
-	DaSIGx6ew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wAwSpzvGrYvYYRPpB8MMWrNI/bwZO67z9VBxiwAoqdw=; b=nWa
+	Gho/XuqxWbj6Zg0WubuAVVgPZPeWJwaNLWd1tXUbuQHuxz+Of8axU9A2t/Jp950eTAZYdIOrl+x/v
+	zYj0mfHYGVRF8wrXobO6w7KSh4yp0FS4EUpDlk9Oxk9cEGcqOxI5gDKsUZ336qVzrgdlNkeOYfCkM
+	6klmMa5riH2a7lO8F+keHbnQn2a2/wZC5Lle8/qYmT9UuRVPNiynRoyJC+KI9Y64fLcgdul0lWEC5
+	sgKCuDEvK7e6EtRCkSGT/Ut1iteGmvQ655mO+TMQdcCFM9kqP6T7nrop03xFctbwMvLQoMAkJisoz
+	0k3ZeWB9L7SHI+Hg8zbAmPIeC8o+X7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iquuj-0000em-Le; Mon, 13 Jan 2020 08:17:33 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iqv7P-0006EW-0q; Mon, 13 Jan 2020 08:30:39 +0000
+Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iquuZ-0000dl-O4
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 08:17:25 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00D8ENoO003461; Mon, 13 Jan 2020 09:17:11 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=BNM4YoMzz8mNUvF1txkbtT7/0heb6WHqiZtZ1ldOKhw=;
- b=qPoyNKH8jTIWXU82omvks7gDUV71lAKVshmwiphNM1ReCj6JiZZ6bPp3/pgnAekSihDC
- RUUhnOVJZirq6ZdKAGWeK0u23lxjzSMd452NLEb9EM7UXaZHjMuTLgfE7736DbUlBozb
- KhPWBtL9oh3yzDeLfTqrQYYxvTxwARKDMF90tv/HaOZ1FmVGN5Oh+MiZ+tqIhGD5WCGs
- /9q0HeU+/bOI6bhou9rrmZlNSTHHoIw/8SRr0Y4eccYqZgsBF4Zn5+p89Gda5sDFC6Gl
- Xa9fmHlvLuLrLEENXSjKC0e68J9Fm4MT5tTIMk2bFE5utK+fkJCzF43b66PSCj9ZRzys bw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7jp6whm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 13 Jan 2020 09:17:11 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CFEC210003A;
- Mon, 13 Jan 2020 09:17:09 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B4A912A4D88;
- Mon, 13 Jan 2020 09:17:09 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 13 Jan
- 2020 09:17:09 +0100
-Subject: Re: linux-next: Signed-off-by missing for commit in the arm-soc tree
-To: Stephen Rothwell <sfr@canb.auug.org.au>, Olof Johansson <olof@lixom.net>
-References: <20200113065808.25f28c40@canb.auug.org.au>
- <CAOesGMifHn6DbNgYm6YUbdKjSL5rNgdWrq+HX9dEusrOr9xX2A@mail.gmail.com>
- <20200113113837.130c3936@canb.auug.org.au>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <caeb1af8-4aa2-71dc-0a70-127c0b474f93@st.com>
-Date: Mon, 13 Jan 2020 09:17:08 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20200113113837.130c3936@canb.auug.org.au>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-13_02:2020-01-13,
- 2020-01-13 signatures=0
+ id 1iqv6k-0004m9-79
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 08:29:59 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 925CC40688;
+ Mon, 13 Jan 2020 08:29:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1578904196; bh=9KZBCoBScps294ahSGzzYLQE+3wpdcKilU3Fh+QcUD0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=DAZMo4c69MlMllYQsngPi1DCHBNLU1Jy6ZYeom1eS0wElvBml443ufSMAWaQOcn1m
+ YYmbBlEvt4MRPEp87GCXBuQkjcFdEW+g10GgQvx2QxTzaTy3DERIjISCKZWMFdvbPn
+ HZBbP3eFr4mdouCzuFJpV7oyeQvfSCesYy5aj/Tsy95njBIw2Oad64W+A92lCRtG5O
+ apRmE+d/E/m+eGFVxvX038SYEaM04vvnZrVuj4ab75kE++CQK2IVdV97sTgnvDBufb
+ 8hBS2FpD8hFsvBiQ5S9C20XUDYCade3ehnub68uv4G3qkfU7ziw+J01KPUmvrL6Bie
+ pRaW651lscthg==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 5F7B4A0061;
+ Mon, 13 Jan 2020 08:29:48 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 0/6] net: stmmac: ETF support
+Date: Mon, 13 Jan 2020 09:29:34 +0100
+Message-Id: <cover.1578903874.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_001724_247344_88B6EF9F 
-X-CRM114-Status: GOOD (  15.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200113_002958_283486_323845D8 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,43 +77,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Yann Gautier <yann.gautier@st.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- ARM <linux-arm-kernel@lists.infradead.org>,
- Ludovic Barre <ludovic.barre@st.com>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys
+This series adds the support for ETF scheduler in stmmac.
 
-On 1/13/20 1:38 AM, Stephen Rothwell wrote:
-> Hi Olof,
-> 
-> On Sun, 12 Jan 2020 11:59:58 -0800 Olof Johansson <olof@lixom.net> wrote:
->>
->> Thanks for the report. Time to automate this at our end, we've had a
->> few too many of these slip through all the way to you lately.
->>
->> Where do you keep your scripts that you catch these things with? Do
->> you have a writeup of the checks you do? I should add it to my
->> automation once and for all.
-> 
-> I should export my linux-next scripts as a git repo, but I haven't (yet) :-(
-> 
-> Attached pleas find check_commits which I run after fetching each tree
-> and pass the changed commit range.  This, in turn, runs check_fixes
-> (also attached).
-> 
+1) Starts adding the support by implementing Enhanced Descriptors in stmmac
+main core. This is needed for ETF feature in XGMAC and QoS cores.
 
+2) Integrates the ETF logic into stmmac TC core.
 
-Sorry for this oversight. DO I have something to do ? (except to not 
-forget to check my signed-off next time).
+3) and 4) adds the HW specific support for ETF in XGMAC and QoS cores. The
+IP feature is called TBS (Time Based Scheduling).
 
-Regards
-Alex
+5) Enables ETF in GMAC5 IPK PCI entry for all Queues except Queue 0.
+
+6) Adds the new TBS feature and even more information into the debugFS
+HW features file.
+
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+
+Jose Abreu (6):
+  net: stmmac: Initial support for TBS
+  net: stmmac: tc: Add support for ETF Scheduler using TBS
+  net: stmmac: xgmac: Add TBS support
+  net: stmmac: gmac4+: Add TBS support
+  net: stmmac: pci: Enable TBS on GMAC5 IPK PCI entry
+  net: stmmac: Add missing information in DebugFS capabilities file
+
+ drivers/net/ethernet/stmicro/stmmac/common.h       |   1 +
+ drivers/net/ethernet/stmicro/stmmac/descs.h        |   9 ++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |   4 +
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c |  10 ++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h |   7 +
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c   |  21 +++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h   |   7 +
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  14 ++
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_descs.c   |   9 ++
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  24 ++++
+ drivers/net/ethernet/stmicro/stmmac/hwif.h         |  12 ++
+ drivers/net/ethernet/stmicro/stmmac/stmmac.h       |   3 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 149 ++++++++++++++++-----
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c   |   2 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c    |  18 +++
+ include/linux/stmmac.h                             |   1 +
+ 16 files changed, 259 insertions(+), 32 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
