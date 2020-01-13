@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E201139AE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:44:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73A66139AEC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 21:45:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3R4qKZXJW1mMTVf1y9k8Uq6ezN+gpxiof7jrFXbK5Gw=; b=I9dHs+Dzcdk0Gv
-	u/i6XwozFdpfDoZ64sKgqHcNe+yBBmD0saKNzcITMgohK60mEp1DiZ7U1NZTb5O+n+jHKxQuaWTZZ
-	vPaq+01Wsaxn8H/08JYgYWlCP8ejujU4C5dXBrA+OY6ewBkx7TpYLysuSIbsBN+br9fP6kXfeJSkT
-	vPROYIx48mfANXmj2EBG891CQTzub6QvKo1zL01rxqbX+cBjGjUk1W9MJ6iWUMY5tf0cz+XWXBiws
-	buwUHLhOc9dKQnJJiN9FsTR42clAUUTBVgmnWmAdntLdoMUXrWnSi/A9pNQhGDCdjgyyttWQtwxXH
-	LggAc+OUX8umOzw/wR9Q==;
+	List-Owner; bh=uMqgm0QBSat9iu6qvbAZ1BfLBl2ikmXEY3otThxL+do=; b=KX1kLk1M6m0fOc
+	mXhKIZsOvH9B97UPpOXGwVkHXYONqpif9PIBqC6mWkmw7bLUK//4Zw078EKSzwQtL7/WLvCdVvFd7
+	oXlU39UidqDVwklTRDvKiWkW+DxqpXMj2+faZ+4l0AzmcKUfKEHVNJR0mDQeQQ8wiI3UqkL5YzDdy
+	R/ZKd0lf1uWX7fi6HPciOj4PlihJFDb9VY2YHdL/G31qsa1Uw1keg2uJk/0dCoboEugrYbO6iK8Ng
+	SxfQqZhMrY31FP/6YXu/L42CbNb1hHibfeALSYjWarKAUf6H+euAhlsvP6RemiS/egRUZCcw1U9Qm
+	rqk5RSUnvrJq4V/GFQ5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir6ZT-0005uU-RQ; Mon, 13 Jan 2020 20:44:23 +0000
+	id 1ir6aG-0006G7-Qq; Mon, 13 Jan 2020 20:45:12 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir6ZF-0005tx-7F
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:44:10 +0000
-Received: by mail-pg1-x542.google.com with SMTP id s64so5263771pgb.9
+ id 1ir6Zv-0006Fm-K3
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 20:44:53 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k3so5276573pgc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 12:44:09 -0800 (PST)
+ Mon, 13 Jan 2020 12:44:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=IS3OPRaipGwb6SDedGmvTz6F6ADZoIh+zjI/wxisAKE=;
- b=eTWW69nNpsITRLeUbjhj30qR/Go5gQdI5vug5bH7RaFEpcCxLBdlkcMy9xjfvgl9Md
- WsuPrVhJ8eFnhNESdcvRbbyBppLj5MP+hDi4YDfPIlpedMTf3r2alm2jJ4w/V+cdqk+0
- YOcOEKDPBI5oLJDItd2sV2gXCAjsA+4RmEv9+FYrf0yS1DwBXMW1YS4z0e6CLFGUQ49x
- rJ8R6mzOciG6sLVJ832K9Ek18nH8XyFWWjzsS3WKV6/N7Q9cZuYAvVx3ZJUrqxAu61jO
- /rlkJK1lwhP73pVGH/h67V0xb29G5sgIA4HKw4H4NfX0fve30EzDKb8mPeDahAmovWuk
- 1ZCg==
+ :user-agent; bh=a00SxwkHfm6ZVifQ6iKU+RaUHfIU7yzSAqjw2eCdeog=;
+ b=HNZlpwIF7dI1PLL4JVeBl4LpcTopWQh/MvmUrbhzD4++L+w0bvDhdej2qRmk01BcPL
+ TSm/TzMHtS+ZjK+rZ1Hc9WbjZOwGFmcA06xrLhFfaSbbDJOrXTbx3YcQ0MXj2FjTjW3V
+ NhQt3V2epkwAdVIkw+OTtZ7uuBYe2icwruf8z6Tw4J5NvYcWrxxDPLmXFWX8VKf5ByME
+ R2+5al9R3XlT53QiM/0/zZ5UBl9yhM8GHo8InPkCXDb67PUgMtTZOPIPNsbCSpi0CXTn
+ 2mkk2qc1IMEaKr/lEIeeSRFn0uGaJzDFVeRBx8RGyZUe9hfHsluoVybYvf82A9ayFBND
+ psWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
  :content-disposition:user-agent;
- bh=IS3OPRaipGwb6SDedGmvTz6F6ADZoIh+zjI/wxisAKE=;
- b=pyM7lb5G0e69t7hB0eVVJNLAYvOXyIvd7Tr4WNLteWRKe6Uo2xxbxDCZgFbz+EJwyE
- LoofiLKqZymvhz09UvDvZ9TZfAFv9YI2qnBvcuQ7CJcJ8Ht/uHB6BgHsUZLLmTMtsjut
- sH828q90UlH94tg3L1orx4SeAXuC27nsobwfuyL7N4Tn9u9zuTZLQokm8HThfhRbq+n/
- VYTLbtaMsrTDSQ6srMGEEcSJyV8RagBXWojAD+WNMtiN14D2vYwItbcDw1w2HFrWAx6M
- 6/HZj6fs0OKEusa6ceabtYOKHeeHOHH8kdrhimn/kVj6TQuosK0OWtS1sCcwoG3+2Jww
- Chlw==
-X-Gm-Message-State: APjAAAUJ5M1yDj+W6oDXgf1sg30eHqZBakFezeTzqy4V0nrYIAMAbNbq
- 5wQGMi4LynO/JgJ4ch1jN4ePgw==
-X-Google-Smtp-Source: APXvYqzBlSY6COwVN91zi0NmCeOSR/L97Fhol7ZFksfge4T8I0sw2EYjN1OsJ2Uxz2CoN1+9+LmVKw==
-X-Received: by 2002:a63:da4d:: with SMTP id l13mr23826999pgj.106.1578948248559; 
- Mon, 13 Jan 2020 12:44:08 -0800 (PST)
+ bh=a00SxwkHfm6ZVifQ6iKU+RaUHfIU7yzSAqjw2eCdeog=;
+ b=ZnGa5yZ/OkFwgT/zncnJpiBFAUR8p9rpTXL7MLoCnRxw0ZS8dAZFVeXzylno2HmNHB
+ Pp0g+LXHK0PYThpO+3OxMtYoBQTyqAeBxZ6mvPhvtVmLG2nJkLIIhBKOGD5aiojO4eu/
+ gsqGaurfYZje7V/RsSISb5WYgITA6NoWhDGeixiZ8AONHRtKlTv8FRBNzyo6OOjAVgJE
+ qJMLWlQkYnBMTVbYHUitD2iTxG1KAuYGmjjME1fcfNtb24DmwKTpFLS+OdRD9QAbgaEH
+ lxvSTLq3YoRd2imz8gSfZUZ9yNZniCr1iGGzmVXlO5EaGPN7SVBJgCa/xWF7krwZuiX8
+ 5fLQ==
+X-Gm-Message-State: APjAAAVvu1w+IBSIJ7kyfDBbGOwSRZaKpm7lY939ab5Tt0SbC+bj3Krh
+ +n5v1/jMfZxR5dIk3OKDNaKsbA==
+X-Google-Smtp-Source: APXvYqy5UAb/06wqSnu1lMkxpHEOFQlm0XR3fn8suaQuLUYIG18xk4SSMjFUOiB/nLtOMdFfCe6fjQ==
+X-Received: by 2002:aa7:9115:: with SMTP id 21mr21540453pfh.224.1578948291197; 
+ Mon, 13 Jan 2020 12:44:51 -0800 (PST)
 Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id v8sm14875557pff.151.2020.01.13.12.44.07
+ by smtp.gmail.com with ESMTPSA id b128sm14228781pga.43.2020.01.13.12.44.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 12:44:08 -0800 (PST)
-Date: Mon, 13 Jan 2020 12:44:05 -0800
+ Mon, 13 Jan 2020 12:44:50 -0800 (PST)
+Date: Mon, 13 Jan 2020 12:44:48 -0800
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] Qualcomm driver updates for v5.6
-Message-ID: <20200113204405.GD3325@yoga>
+Subject: [GIT PULL] Qualcomm ARM dts updates for v5.6
+Message-ID: <20200113204448.GE3325@yoga>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_124409_264277_AD1B5525 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20200113_124451_663754_1698C910 
+X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,13 +95,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Arnd Bergmann <arnd@arndb.de>, Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
- linux-arm-msm@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Andy Gross <agross@kernel.org>,
- Elliot Berman <eberman@codeaurora.org>, Kevin Hilman <khilman@baylibre.com>,
- Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org,
- Sibi Sankar <sibis@codeaurora.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Luca Weiss <luca@z3ntu.xyz>,
+ Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@sonymobile.com>,
+ Kevin Hilman <khilman@baylibre.com>, Olof Johansson <olof@lixom.net>,
+ Damir Franusic <damir.franusic@sartura.hr>,
+ Victhor Foster <victhor.foster@ufpe.br>, linux-arm-kernel@lists.infradead.org,
+ Brian Masney <masneyb@onstation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -113,84 +114,49 @@ The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-drivers-for-5.6
+  https://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-dts-for-5.6
 
-for you to fetch changes up to 9a434cee773ae15309ac225f27551b5492618e4a:
+for you to fetch changes up to 5e4548922009870a38bcf1d887317676d4e08f54:
 
-  firmware: qcom_scm: Dynamically support SMCCC and legacy conventions (2020-01-07 22:14:43 -0800)
-
-----------------------------------------------------------------
-Qualcomm driver updates for v5.6
-
-* SCM major refactoring and cleanup
-* Properly flag active only power domains as active only
-* Add SC7180 and SM8150 RPMH power domains
-* Return EPROBE_DEFER from QMI if packet family is not yet available
+  ARM: dts: qcom: Add nodes for SMP boot in IPQ40xx (2019-12-28 22:21:24 -0800)
 
 ----------------------------------------------------------------
-Douglas Anderson (1):
-      soc: qcom: rpmhpd: Set 'active_only' for active only power domains
+Qualcomm ARM dts updates for v5.6
 
-Elliot Berman (17):
-      firmware: qcom_scm: Rename macros and structures
-      firmware: qcom_scm: Apply consistent naming scheme to command IDs
-      firmware: qcom_scm: Remove unused qcom_scm_get_version
-      firmware: qcom_scm-64: Make SMC macros less magical
-      firmware: qcom_scm-64: Move svc/cmd/owner into qcom_scm_desc
-      firmware: qcom_scm-64: Add SCM results struct
-      firmware: qcom_scm-64: Move SMC register filling to qcom_scm_call_smccc
-      firmware: qcom_scm-64: Improve SMC convention detection
-      firmware: qcom_scm-32: Use SMC arch wrappers
-      firmware: qcom_scm-32: Add funcnum IDs
-      firmware: qcom_scm-32: Use qcom_scm_desc in non-atomic calls
-      firmware: qcom_scm-32: Move SMCCC register filling to qcom_scm_call
-      firmware: qcom_scm-32: Create common legacy atomic call
-      firmware: qcom_scm-32: Add device argument to atomic calls
-      firmware: qcom_scm: Order functions, definitions by service/command
-      firmware: qcom_scm: Remove thin wrappers
-      firmware: qcom_scm: Dynamically support SMCCC and legacy conventions
+* Add SAW L2 nodes to boot secondary cpus on IPQ40xx
+* Fix remaining IRQ_TYPE_NONE on APQ8084
+* Update tsens node to new style
+* Add modem remoteproc node to MSM8974
+* Move ADSP SMD edge into ADSP remoteproc node for MSM8974
+* Add and enable wireless communication subsystem on MSM8974 and Fairphone 2
+* Add MSM8974 interconnect provider nodes
+* Add MSM8974 OCMEM node
 
-Jeffrey Hugo (1):
-      soc: qcom: qmi: Return EPROBE_DEFER if no address family
+----------------------------------------------------------------
+Bjorn Andersson (3):
+      ARM: dts: msm8974: Introduce the wcnss remoteproc node
+      ARM: dts: msm8974: Add modem remoteproc node
+      ARM: dts: msm8974: Move ADSP smd edge to ADSP PIL
 
-Krzysztof Kozlowski (2):
-      soc: qcom: Fix Kconfig indentation
-      firmware: scm: Add stubs for OCMEM and restore_sec_cfg_available
+Brian Masney (2):
+      ARM: dts: qcom: msm8974: add ocmem node
+      ARM: dts: qcom: msm8974: add interconnect nodes
 
-Sai Prakash Ranjan (1):
-      dt-bindings: msm: Rename cache-controller to system-cache-controller
+Damir Franusic (1):
+      ARM: dts: qcom: Add nodes for SMP boot in IPQ40xx
 
-Sibi Sankar (5):
-      dt-bindings: power: Add rpmh power-domain bindings for SM8150
-      soc: qcom: rpmhpd: Add SM8150 RPMH power-domains
-      dt-bindings: power: Add rpmh power-domain bindings for sc7180
-      soc: qcom: rpmhpd: Add SC7180 RPMH power-domains
-      dt-bindings: power: rpmpd: Convert rpmpd bindings to yaml
+Luca Weiss (1):
+      ARM: dts: msm8974-FP2: Introduce the wcnss remoteproc node
 
- .../devicetree/bindings/arm/msm/qcom,llcc.yaml     |   2 +-
- .../devicetree/bindings/power/qcom,rpmpd.txt       | 148 ----
- .../devicetree/bindings/power/qcom,rpmpd.yaml      | 170 ++++
- drivers/firmware/Kconfig                           |   8 -
- drivers/firmware/Makefile                          |   5 +-
- drivers/firmware/qcom_scm-32.c                     | 671 ----------------
- drivers/firmware/qcom_scm-64.c                     | 579 --------------
- drivers/firmware/qcom_scm-legacy.c                 | 242 ++++++
- drivers/firmware/qcom_scm-smc.c                    | 151 ++++
- drivers/firmware/qcom_scm.c                        | 854 ++++++++++++++++-----
- drivers/firmware/qcom_scm.h                        | 178 +++--
- drivers/soc/qcom/Kconfig                           |  30 +-
- drivers/soc/qcom/qmi_interface.c                   |   8 +-
- drivers/soc/qcom/rpmhpd.c                          |  56 ++
- include/dt-bindings/power/qcom-rpmpd.h             |  24 +
- include/linux/qcom_scm.h                           | 119 +--
- 16 files changed, 1504 insertions(+), 1741 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/power/qcom,rpmpd.txt
- create mode 100644 Documentation/devicetree/bindings/power/qcom,rpmpd.yaml
- delete mode 100644 drivers/firmware/qcom_scm-32.c
- delete mode 100644 drivers/firmware/qcom_scm-64.c
- create mode 100644 drivers/firmware/qcom_scm-legacy.c
- create mode 100644 drivers/firmware/qcom_scm-smc.c
+Victhor Foster (2):
+      ARM: dts: qcom: apq8084: Change tsens definition to new style
+      ARM: dts: qcom: apq8084: Remove all instances of IRQ_TYPE_NONE
 
+ arch/arm/boot/dts/qcom-apq8084.dtsi              |  44 ++---
+ arch/arm/boot/dts/qcom-ipq4019.dtsi              |   7 +
+ arch/arm/boot/dts/qcom-msm8974-fairphone-fp2.dts |  45 +++++
+ arch/arm/boot/dts/qcom-msm8974.dtsi              | 222 +++++++++++++++++++++--
+ 4 files changed, 280 insertions(+), 38 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
