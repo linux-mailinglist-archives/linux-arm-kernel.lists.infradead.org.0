@@ -2,66 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43683138CF1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 09:33:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6EA138D23
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 09:42:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yzCoA05zwknohk566b9jmlD9jC0nQakKQttjSFNGXdE=; b=ngoLtNlAc6dfAW
-	oU2ZqmOOc8OnPocSSrWtU5IqjfhS+JL5lHS4j6kTkScKqgWaF1LM5tG7kxy4jtKo8oUDelRO2Tzlr
-	Iqn9RpU9cPttwfmRst8+0y6s80P1ki8tq4lEn+1cvJdqAGiHtq8RPRazyEW+db4nSJreLGpdYjwkm
-	DxmvAQo+u3UYJCNMC3Llyj238GvjMwE3GLe4OKVXRkhw7rlnPw5/y9ad91OhFgrSuQHlPdumNg3GV
-	fLnMj1obnGBqUanolQ1MUJbUqkj89szU59PndT74yy9UuNin6wkBNtLhXesj2fpDnxpgJ086Z0X3O
-	7m4tfw+EQbhbsLpId6EQ==;
+	List-Owner; bh=XeGFAQucpyEKcsOqq+EGbcMhi6RDnMnuQ8lMOub/2TU=; b=CBaLPG4hlAWnUF
+	SDQ6csdk2F40QiexvqSTqCFBO5GTVFq3raMcQpWJDKpkbJI3lAGOMIQaWZa7Rin7xd9l11PBYTAL4
+	W5jt11RCFiHlSg1lKX85ebZ9FA/3rlx31PR5T3Igg3UogFSL6HEyum3XMnDferWJpn2IvGmAbvfZK
+	WEMvDwUp22ZT/KtVE2KazRDQV43f5DW8YAkAWGTuyplwQ42qdr7HeAsgEXF3cNdL8HA0kfAS2lWfM
+	uRkXXJuOy1447FjIcHr7wYNfVc5agHNoKowNjT4ypTH85aSfsrSSJ8WWAGVvwJmyOqcixq24wMn3B
+	gNLYSUmB1T1SCK1SjDsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqv9m-0008N5-Uc; Mon, 13 Jan 2020 08:33:06 +0000
-Received: from szxga03-in.huawei.com ([45.249.212.189] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqv98-0007vz-Ft
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 08:32:29 +0000
-Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.56])
- by Forcepoint Email with ESMTP id 7FED0671E1313F80D63B;
- Mon, 13 Jan 2020 16:32:17 +0800 (CST)
-Received: from dggeme755-chm.china.huawei.com (10.3.19.101) by
- DGGEMM402-HUB.china.huawei.com (10.3.20.210) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Mon, 13 Jan 2020 16:32:17 +0800
-Received: from [127.0.0.1] (10.173.221.248) by dggeme755-chm.china.huawei.com
- (10.3.19.101) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 13
- Jan 2020 16:32:16 +0800
-Subject: Re: [PATCH v2] locking/osq: Use optimized spinning loop for arm64
-To: Waiman Long <longman@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, Will Deacon <will.deacon@arm.com>, "Catalin
- Marinas" <catalin.marinas@arm.com>
-References: <20200112235854.32089-1-longman@redhat.com>
-From: yezengruan <yezengruan@huawei.com>
-Message-ID: <108e58d2-56f8-5ee2-23a8-f1260e428195@huawei.com>
-Date: Mon, 13 Jan 2020 16:32:14 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+	id 1iqvIM-0004SW-Le; Mon, 13 Jan 2020 08:41:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iqvID-0004Ru-Ry
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 08:41:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61C13DA7;
+ Mon, 13 Jan 2020 00:41:48 -0800 (PST)
+Received: from [10.162.43.142] (p8cg001049571a15.blr.arm.com [10.162.43.142])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 851303F534; Mon, 13 Jan 2020 00:41:42 -0800 (PST)
+Subject: Re: [PATCH V11 2/5] mm/memblock: Introduce MEMBLOCK_BOOT flag
+To: Mike Rapoport <rppt@linux.ibm.com>
+References: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
+ <1578625755-11792-3-git-send-email-anshuman.khandual@arm.com>
+ <20200113073711.GA4214@linux.ibm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <08a2f82a-3201-055a-316a-a2f11c7ff7a5@arm.com>
+Date: Mon, 13 Jan 2020 14:13:00 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20200112235854.32089-1-longman@redhat.com>
+In-Reply-To: <20200113073711.GA4214@linux.ibm.com>
 Content-Language: en-US
-X-Originating-IP: [10.173.221.248]
-X-ClientProxiedBy: dggeme710-chm.china.huawei.com (10.1.199.106) To
- dggeme755-chm.china.huawei.com (10.3.19.101)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_003227_178249_4FF8A2D2 
-X-CRM114-Status: GOOD (  27.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200113_004149_991608_5E032DFB 
+X-CRM114-Status: GOOD (  19.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.189 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,130 +65,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, david@redhat.com, catalin.marinas@arm.com,
+ linux-mm@kvack.org, arunks@codeaurora.org, cpandya@codeaurora.org,
+ ira.weiny@intel.com, will@kernel.org, steven.price@arm.com,
+ valentin.schneider@arm.com, suzuki.poulose@arm.com, broonie@kernel.org,
+ cai@lca.pw, ard.biesheuvel@arm.com, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, osalvador@suse.de,
+ mgorman@techsingularity.net, steve.capper@arm.com, logang@deltatee.com,
+ linux-kernel@vger.kernel.org, akpm@linux-foundation.org, Robin.Murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Waiman,
 
-On 2020/1/13 7:58, Waiman Long wrote:
-> Arm64 has a more optimized spinning loop (atomic_cond_read_acquire)
-> for spinlock that can boost performance of sibling threads by putting
-> the current cpu to a shallow sleep state that is woken up only when
-> the monitored variable changes or an external event happens.
-> 
-> OSQ has a more complicated spinning loop. Besides the lock value, it
-> also checks for need_resched() and vcpu_is_preempted(). The check for
-> need_resched() is not a problem as it is only set by the tick interrupt
-> handler. That will be detected by the spinning cpu right after iret.
-> 
-> The vcpu_is_preempted() check, however, is a problem as changes to the
-> preempt state of of previous node will not affect the sleep state. For
-> ARM64, vcpu_is_preempted is not defined and so is a no-op. To guard
-> against future addition of vcpu_is_preempted() to arm64, code is added
-> to cause build error when vcpu_is_preempted becomes defined in arm64
-> without the corresponding changes in the OSQ spinning code.
 
-Recently, I am supporting vcpu_is_preempted() for arm64. There is a patch set which do this[1].
-
-[1] https://lore.kernel.org/linux-arm-kernel/20191226135833.1052-1-yezengruan@huawei.com/
-
-> 
-> On a 2-socket 56-core 224-thread ARM64 system, a kernel mutex locking
-> microbenchmark was run for 10s with and without the patch. The
-> performance numbers before patch were:
-> 
-> Running locktest with mutex [runtime = 10s, load = 1]
-> Threads = 224, Min/Mean/Max = 316/123,143/2,121,269
-> Threads = 224, Total Rate = 2,757 kop/s; Percpu Rate = 12 kop/s
-> 
-> After patch, the numbers were:
-> 
-> Running locktest with mutex [runtime = 10s, load = 1]
-> Threads = 224, Min/Mean/Max = 334/147,836/1,304,787
-> Threads = 224, Total Rate = 3,311 kop/s; Percpu Rate = 15 kop/s
-> 
-> So there was about 20% performance improvement.
-> 
-> Signed-off-by: Waiman Long <longman@redhat.com>
-> ---
->  arch/arm64/include/asm/barrier.h | 10 ++++++++++
->  kernel/locking/osq_lock.c        | 25 ++++++++++++-------------
->  2 files changed, 22 insertions(+), 13 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
-> index 7d9cc5ec4971..8eb5f1239885 100644
-> --- a/arch/arm64/include/asm/barrier.h
-> +++ b/arch/arm64/include/asm/barrier.h
-> @@ -152,6 +152,16 @@ do {									\
->  	VAL;								\
->  })
+On 01/13/2020 01:07 PM, Mike Rapoport wrote:
+> On Fri, Jan 10, 2020 at 08:39:12AM +0530, Anshuman Khandual wrote:
+>> On arm64 platform boot memory should never be hot removed due to certain
+>> platform specific constraints. Hence the platform would like to override
+>> earlier added arch call back arch_memory_removable() for this purpose. In
+>> order to reject boot memory hot removal request, it needs to first track
+>> them at runtime. In the future, there might be other platforms requiring
+>> runtime boot memory enumeration. Hence lets expand the existing generic
+>> memblock framework for this purpose rather then creating one just for
+>> arm64 platforms.
+>>
+>> This introduces a new memblock flag MEMBLOCK_BOOT along with helpers which
+>> can be marked by given platform on all memory regions discovered during
+>> boot.
 >  
-> +/*
-> + * In osq_lock(), smp_cond_load_relaxed() is called with a condition
-> + * that includes vcpu_is_preempted(). For arm64, vcpu_is_preempted is not
-> + * currently defined. So it is a no-op. If vcpu_is_preempted is defined in
-> + * the future, smp_cond_load_relaxed() will not response to changes in the
-> + * preempt state in a timely manner. So code changes will have to be made
-> + * to address this deficiency.
-> + */
-> +#define vcpu_is_preempted_not_used
-> +
->  #define smp_cond_load_acquire(ptr, cond_expr)				\
->  ({									\
->  	typeof(ptr) __PTR = (ptr);					\
-> diff --git a/kernel/locking/osq_lock.c b/kernel/locking/osq_lock.c
-> index 6ef600aa0f47..69ec5161c3cc 100644
-> --- a/kernel/locking/osq_lock.c
-> +++ b/kernel/locking/osq_lock.c
-> @@ -13,6 +13,14 @@
->   */
->  static DEFINE_PER_CPU_SHARED_ALIGNED(struct optimistic_spin_node, osq_node);
->  
-> +/*
-> + * The optimized smp_cond_load_relaxed() spin loop should not be used with
-> + * vcpu_is_preempted defined.
-> + */
-> +#if defined(vcpu_is_preempted) && defined(vcpu_is_preempted_not_used)
-> +#error "vcpu_is_preempted() inside smp_cond_load_relaxed() may not work!"
-> +#endif
-> +
->  /*
->   * We use the value 0 to represent "no CPU", thus the encoded value
->   * will be the CPU number incremented by 1.
-> @@ -134,20 +142,11 @@ bool osq_lock(struct optimistic_spin_queue *lock)
->  	 * cmpxchg in an attempt to undo our queueing.
->  	 */
->  
-> -	while (!READ_ONCE(node->locked)) {
-> -		/*
-> -		 * If we need to reschedule bail... so we can block.
-> -		 * Use vcpu_is_preempted() to avoid waiting for a preempted
-> -		 * lock holder:
-> -		 */
-> -		if (need_resched() || vcpu_is_preempted(node_cpu(node->prev)))
-> -			goto unqueue;
-> -
-> -		cpu_relax();
-> -	}
-> -	return true;
-> +	if (smp_cond_load_relaxed(&node->locked, VAL || need_resched() ||
-> +				  vcpu_is_preempted(node_cpu(node->prev))))
-> +		return true;
->  
-> -unqueue:
-> +	/* unqueue */
->  	/*
->  	 * Step - A  -- stabilize @prev
->  	 *
+> We already have MEMBLOCK_HOTPLUG to mark hotpluggable region. Can't we use
+> it for your use-case?
+
+At present MEMBLOCK_HOTPLUG flag helps in identifying parts of boot memory
+as hotpluggable as indicated by the firmware. This information is then used
+to avoid those regions during standard memblock_alloc_*() API requests and
+later marking them as ZONE_MOVABLE when buddy gets initialized.
+
+Memory hot remove does not check for MEMBLOCK_HOTPLUG flag as a requirement
+before initiating the process. We could probably use this flag if generic
+hot remove can be changed to check for MEMBLOCK_HOTPLUG as a prerequisite
+which will require changes to memblock handling (boot and runtime) on all
+existing platforms currently supporting hot remove. But what about handling
+the movable boot memory created with movablecore/kernelcore command line,
+should generic MM update their memblock regions with MEMBLOCK_HOTPLUG ?
+
 > 
-
-Thanks,
-
-Zengruan
-
+>> Cc: Mike Rapoport <rppt@linux.ibm.com>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>> ---
+>>  include/linux/memblock.h | 10 ++++++++++
+>>  mm/memblock.c            | 37 +++++++++++++++++++++++++++++++++++++
+>>  2 files changed, 47 insertions(+)
+>>
+>> diff --git a/include/linux/memblock.h b/include/linux/memblock.h
+>> index b38bbef..fb04c87 100644
+>> --- a/include/linux/memblock.h
+>> +++ b/include/linux/memblock.h
+>> @@ -31,12 +31,14 @@ extern unsigned long long max_possible_pfn;
+>>   * @MEMBLOCK_HOTPLUG: hotpluggable region
+>>   * @MEMBLOCK_MIRROR: mirrored region
+>>   * @MEMBLOCK_NOMAP: don't add to kernel direct mapping
+>> + * @MEMBLOCK_BOOT: memory received from firmware during boot
+>>   */
+>>  enum memblock_flags {
+>>  	MEMBLOCK_NONE		= 0x0,	/* No special request */
+>>  	MEMBLOCK_HOTPLUG	= 0x1,	/* hotpluggable region */
+>>  	MEMBLOCK_MIRROR		= 0x2,	/* mirrored region */
+>>  	MEMBLOCK_NOMAP		= 0x4,	/* don't add to kernel direct mapping */
+>> +	MEMBLOCK_BOOT		= 0x8,	/* memory received from firmware during boot */
+>>  };
+>>  
+>>  /**
+>> @@ -116,6 +118,8 @@ int memblock_reserve(phys_addr_t base, phys_addr_t size);
+>>  void memblock_trim_memory(phys_addr_t align);
+>>  bool memblock_overlaps_region(struct memblock_type *type,
+>>  			      phys_addr_t base, phys_addr_t size);
+>> +int memblock_mark_boot(phys_addr_t base, phys_addr_t size);
+>> +int memblock_clear_boot(phys_addr_t base, phys_addr_t size);
+>>  int memblock_mark_hotplug(phys_addr_t base, phys_addr_t size);
+>>  int memblock_clear_hotplug(phys_addr_t base, phys_addr_t size);
+>>  int memblock_mark_mirror(phys_addr_t base, phys_addr_t size);
+>> @@ -216,6 +220,11 @@ static inline bool memblock_is_nomap(struct memblock_region *m)
+>>  	return m->flags & MEMBLOCK_NOMAP;
+>>  }
+>>  
+>> +static inline bool memblock_is_boot(struct memblock_region *m)
+>> +{
+>> +	return m->flags & MEMBLOCK_BOOT;
+>> +}
+>> +
+>>  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
+>>  int memblock_search_pfn_nid(unsigned long pfn, unsigned long *start_pfn,
+>>  			    unsigned long  *end_pfn);
+>> @@ -449,6 +458,7 @@ void memblock_cap_memory_range(phys_addr_t base, phys_addr_t size);
+>>  void memblock_mem_limit_remove_map(phys_addr_t limit);
+>>  bool memblock_is_memory(phys_addr_t addr);
+>>  bool memblock_is_map_memory(phys_addr_t addr);
+>> +bool memblock_is_boot_memory(phys_addr_t addr);
+>>  bool memblock_is_region_memory(phys_addr_t base, phys_addr_t size);
+>>  bool memblock_is_reserved(phys_addr_t addr);
+>>  bool memblock_is_region_reserved(phys_addr_t base, phys_addr_t size);
+>> diff --git a/mm/memblock.c b/mm/memblock.c
+>> index 4bc2c7d..e10207f 100644
+>> --- a/mm/memblock.c
+>> +++ b/mm/memblock.c
+>> @@ -865,6 +865,30 @@ static int __init_memblock memblock_setclr_flag(phys_addr_t base,
+>>  }
+>>  
+>>  /**
+>> + * memblock_mark_bootmem - Mark boot memory with flag MEMBLOCK_BOOT.
+>> + * @base: the base phys addr of the region
+>> + * @size: the size of the region
+>> + *
+>> + * Return: 0 on success, -errno on failure.
+>> + */
+>> +int __init_memblock memblock_mark_boot(phys_addr_t base, phys_addr_t size)
+>> +{
+>> +	return memblock_setclr_flag(base, size, 1, MEMBLOCK_BOOT);
+>> +}
+>> +
+>> +/**
+>> + * memblock_clear_bootmem - Clear flag MEMBLOCK_BOOT for a specified region.
+>> + * @base: the base phys addr of the region
+>> + * @size: the size of the region
+>> + *
+>> + * Return: 0 on success, -errno on failure.
+>> + */
+>> +int __init_memblock memblock_clear_boot(phys_addr_t base, phys_addr_t size)
+>> +{
+>> +	return memblock_setclr_flag(base, size, 0, MEMBLOCK_BOOT);
+>> +}
+>> +
+>> +/**
+>>   * memblock_mark_hotplug - Mark hotpluggable memory with flag MEMBLOCK_HOTPLUG.
+>>   * @base: the base phys addr of the region
+>>   * @size: the size of the region
+>> @@ -974,6 +998,10 @@ static bool should_skip_region(struct memblock_region *m, int nid, int flags)
+>>  	if ((flags & MEMBLOCK_MIRROR) && !memblock_is_mirror(m))
+>>  		return true;
+>>  
+>> +	/* if we want boot memory skip non-boot memory regions */
+>> +	if ((flags & MEMBLOCK_BOOT) && !memblock_is_boot(m))
+>> +		return true;
+>> +
+>>  	/* skip nomap memory unless we were asked for it explicitly */
+>>  	if (!(flags & MEMBLOCK_NOMAP) && memblock_is_nomap(m))
+>>  		return true;
+>> @@ -1785,6 +1813,15 @@ bool __init_memblock memblock_is_map_memory(phys_addr_t addr)
+>>  	return !memblock_is_nomap(&memblock.memory.regions[i]);
+>>  }
+>>  
+>> +bool __init_memblock memblock_is_boot_memory(phys_addr_t addr)
+>> +{
+>> +	int i = memblock_search(&memblock.memory, addr);
+>> +
+>> +	if (i == -1)
+>> +		return false;
+>> +	return memblock_is_boot(&memblock.memory.regions[i]);
+>> +}
+>> +
+>>  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
+>>  int __init_memblock memblock_search_pfn_nid(unsigned long pfn,
+>>  			 unsigned long *start_pfn, unsigned long *end_pfn)
+>> -- 
+>> 2.7.4
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
