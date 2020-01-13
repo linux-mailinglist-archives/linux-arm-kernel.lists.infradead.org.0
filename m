@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60BC01389D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 04:40:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99E421389D3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 04:41:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=SR4y5XGrEcmK77anBJcoyajTj7AS3FhH0fYTVxFn7gc=; b=Mi4
-	2KXxVN16Eq02Pr5P13zRSgO4VxMIQLxuFY4+j85rifjCGfbXaO9mzakprsrROndiz4y1oWqfiL1Lt
-	8E4gDJBmJjVYS//YbwODMvV6ipM2p7WetGybMh1Omjqs/4ZSXbUgccCb85bYgl/DX3HLh0GQdb0aM
-	J5n8sZ0js+vDu3gnVB9tBCfUsQa97ygsMYElu+7dIOvqKByZZW6ynyUZi5gViAJ5Hw0g97wIRq7Rv
-	th4Z/v7jW+x3WbiPXEG1eBGgcsClNiNSla/z5yM5CxsMBagWq5YX3DVma5sX94qoUVGy7p3IVAiHG
-	o/vvM3z6crBBlc4e6S2rEke5VTKODTw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HiQ9Om3TofXOEdPb3P9qsSG1NDkHgrYiagNFxEozK8k=; b=asaMKKldQUQgnt+i69ItuJn4Mn
+	9MCx8GMjhpHqDKEq8q0AlsFkpBXEhtDY85ZcjKV5Ne8SzM0JHb0mGSLuHl8SehQzGQ4hycrZPhMkq
+	rd/fgFQq70a93ZPO0QXtCHlyJOPXmtoGE/Fcy1dII4lGxWuRau7SSqg1e6R9QlYT01KvIOlbafu+T
+	dEKOCEWB6AiYt1IyF+o6U1g9NslKys2K9kKP8EjJdsGK+PcDdZKRP8tCpJfBNffgif69HNU5WZVbn
+	ZN3FoNCH+MXns9QcL4TQzsVP3CCFA937vNR9bOb30NIqQyjDWGwaiMKtj3JWbAkazRt11Gginagja
+	fHe3F6Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqqan-0002Xm-OQ; Mon, 13 Jan 2020 03:40:41 +0000
+	id 1iqqb7-0002eE-4b; Mon, 13 Jan 2020 03:41:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqqah-0002XV-9J
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 03:40:36 +0000
+ id 1iqqaj-0002Xx-EK
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 03:40:38 +0000
 Received: from localhost (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5D53A206D7;
- Mon, 13 Jan 2020 03:40:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F1290222D9;
+ Mon, 13 Jan 2020 03:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578886834;
- bh=gGK34dJogVl/YYrRvG1PL0kOw3Q6TX6Ai6aJkaYEfjc=;
- h=From:To:Cc:Subject:Date:From;
- b=f7zT6fllFsnZC0q6OQRFphPtsE0segN8G7XqfnC1lDSaASBiIY6EBjt1sGFRzuFem
- b54g/Y/+P6oejZq3DwhdNFYgi/R4SxjnSsEpeYscmiDCB7sE6nkCl96f6Qq4r5dzP8
- JSu6NYLEAs505HXJHyVBUOlxV/H5iY5CzWTjgrwQ=
+ s=default; t=1578886837;
+ bh=EUeePAeG/mYTMvXQxeWkd+i8flc9SNcQQxhofZeZAqQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=C4P8t6gcJzXocfFXdonQteRBzh8/pJk7kHKea9m1AvtqZqQdyleyopsnr3nZuGhSJ
+ vlWcELalTyECul7Xobigw/w+3awaNSCAHI9XZKP2E58zWQPHlP2t88TtpqddYlkvM9
+ Furi/TfMC6ShSCVpx/1bXAPbaKVg9mHj6qzxfjnQ=
 From: Shawn Guo <shawnguo@kernel.org>
 To: soc@kernel.org,
 	arm@kernel.org
-Subject: [GIT PULL 1/6] i.MX driver changes for 5.6
-Date: Mon, 13 Jan 2020 11:40:01 +0800
-Message-Id: <20200113034006.17430-1-shawnguo@kernel.org>
+Subject: [GIT PULL 2/6] i.MX SoC changes for 5.6
+Date: Mon, 13 Jan 2020 11:40:02 +0800
+Message-Id: <20200113034006.17430-2-shawnguo@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200113034006.17430-1-shawnguo@kernel.org>
+References: <20200113034006.17430-1-shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_194035_348346_36E55A21 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200112_194037_503515_02F449A5 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,44 +85,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+Hi,
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+To resolve a conflict on arch/arm/mach-imx/cpu.c, this pull request is
+based on tag imx-fixes-5.5, which has been merged.  Please consider to
+pull, thanks!
+
+Shawn
+
+
+The following changes since commit 7947e3238b64c00c396e6f5738f94c4d653bc6a2:
+
+  ARM: imx: Fix boot crash if ocotp is not found (2019-12-12 10:44:28 +0800)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-driver-5.6
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-soc-5.6
 
-for you to fetch changes up to f52cdcce9197fef9d4a68792dd3b840ad2b77117:
+for you to fetch changes up to c74067a0f776c1d695a713a4388c3b6a094ee40a:
 
-  firmware: imx: Allow IMX DSP to be selected as module (2020-01-09 17:21:33 +0800)
-
-----------------------------------------------------------------
-i.MX driver changes for 5.6:
-
- - Add i.MX8MP SoC driver support.
- - Allow IMX DSP Protocol driver to be built as module.
- - Add COMPILE_TEST for IMX_SCU_SOC driver to increase build coverage.
- - Print SoC type and revision in i.MX8 SoC driver, as this is useful
-   information to have when looking through boot log.
+  ARM: imx: only select ARM_ERRATA_814220 for ARMv7-A (2020-01-09 18:48:35 +0800)
 
 ----------------------------------------------------------------
-Anson Huang (1):
-      soc: imx: Add i.MX8MP SoC driver support
+i.MX SoC changes for 5.6:
 
-Daniel Baluta (1):
-      firmware: imx: Allow IMX DSP to be selected as module
+ - Add support for reading serial number from OCOTP on i.MX7ULP.
+ - A patch from Anson to enable ARM_ERRATA_814220 for i.MX6UL & i.MX7D,
+   and a fixup patch from Arnd to select the option only for ARMv7-A.
 
-Krzysztof Kozlowski (1):
-      soc: imx: Enable compile testing of IMX_SCU_SOC
+----------------------------------------------------------------
+Anson Huang (2):
+      ARM: imx: Add i.MX7ULP SoC serial number support
+      ARM: imx: Enable ARM_ERRATA_814220 for i.MX6UL and i.MX7D
 
-Lucas Stach (1):
-      soc: imx8: print SoC type and revision
+Arnd Bergmann (1):
+      ARM: imx: only select ARM_ERRATA_814220 for ARMv7-A
 
- drivers/firmware/imx/Kconfig | 2 +-
- drivers/soc/imx/Kconfig      | 2 +-
- drivers/soc/imx/soc-imx8.c   | 9 +++++++++
- 3 files changed, 11 insertions(+), 2 deletions(-)
+ arch/arm/mach-imx/Kconfig |  2 ++
+ arch/arm/mach-imx/cpu.c   | 30 +++++++++++++++++++++++++-----
+ 2 files changed, 27 insertions(+), 5 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
