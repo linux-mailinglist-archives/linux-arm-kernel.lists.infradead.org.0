@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2187A139719
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 18:09:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE5B5139722
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 18:10:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	From:References:In-Reply-To:Message-Id:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Ljtw7MTcaEpL1AaB8Ua7DSwQMly3RnBIuga+ELwoEi0=; b=BhtFqSJPQ+GDCU2VFWTYbSLVQY
-	eYAGClSigGxwQfMKMiCVX+KiRTthrKmsK/z36m6FuydpAza4gGFcGxB40iAkC7NH+cznRqkuAesQd
-	SfQxZ5+BxR8rKmm9GEiu12O0IMmE7Q42sbJOE8veR6SkMx6XQ8BDxHbgpJy61UUx6SpYWq1eraR1o
-	dY+2twV0GvQLLDWLtKeENZhSalKsUIgmOt9TIbWy9MI0o/qJZ6k2rDEHDjndTMWYyLDIEhV91tHnh
-	VE/sM2yUmlCOwPlykDbpF+Uucu4Yt1Y50JyNS9m62nubt8roplhL3UnhstJdXfiXhsuyTrInNVjlh
-	S4ChrjEQ==;
+	bh=IrzCAcFc9qDPpIrQYv6DJecfDyn2odlljXira69oRaU=; b=q51C4ZEvydzZTgIOo6Et/zx8VP
+	VXiCUjp6yLfigeqL66Ml5bcBHWheQuENZF+Mv2xnlPgKrq1QSAYQB+jRbSgl9p/cxxeuoZHkezVg3
+	T99c799q8u9oZ+ul5lMbWn1HJ5swSxR0+/rb6HOMftEuJiIC6/jKW0q3d5805bgXshfTb1S6p2W2k
+	B5cZRHbUL2howoFI/JZK8NHtUZKjJaO9xxH5BReBRO3QvQoqBhxmz7H4PXhHWkIs5s9PLg+d3A6n2
+	zGuqU27NgIeW/3edaf39QhWT14UflocYGOOeaTZATN/xRfQ5F0xvrQV+BIRDLKN4FgUSwAVhrwzQ2
+	/oiThVRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir3DS-0002Zy-Lf; Mon, 13 Jan 2020 17:09:26 +0000
+	id 1ir3EE-0003Qj-Ac; Mon, 13 Jan 2020 17:10:14 +0000
 Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir3Cl-0002Iv-Fp
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 17:08:44 +0000
+ id 1ir3Co-0002KS-6V
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 17:08:50 +0000
 Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 47xKmh6GKJz9txyv;
- Mon, 13 Jan 2020 18:08:36 +0100 (CET)
+ by localhost (Postfix) with ESMTP id 47xKmk07Phz9txyw;
+ Mon, 13 Jan 2020 18:08:38 +0100 (CET)
 Authentication-Results: localhost; dkim=pass
  reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=mBpCKKG/; dkim-adsp=pass;
+ header.d=c-s.fr header.i=@c-s.fr header.b=RhThshVb; dkim-adsp=pass;
  dkim-atps=neutral
 X-Virus-Scanned: Debian amavisd-new at c-s.fr
 Received: from pegase1.c-s.fr ([192.168.12.234])
  by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id 47SfHxDpbXMG; Mon, 13 Jan 2020 18:08:36 +0100 (CET)
+ with ESMTP id hi6YDy-nSTFK; Mon, 13 Jan 2020 18:08:37 +0100 (CET)
 Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 47xKmh5CtGz9txyq;
- Mon, 13 Jan 2020 18:08:36 +0100 (CET)
+ by pegase1.c-s.fr (Postfix) with ESMTP id 47xKmj68nxz9txyq;
+ Mon, 13 Jan 2020 18:08:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1578935316; bh=FbDYhvBTgQ/Lrh5RwFYuCQEYwJvHYlZlnPbutz2hvUg=;
+ t=1578935317; bh=aRVCODNqlpogffdcxAo9rl2jrXtK1fAZ2Yi8uLoDcQI=;
  h=In-Reply-To:References:From:Subject:To:Cc:Date:From;
- b=mBpCKKG/R/EQyJZFZ9dsTIMC+sg7c/c1wXtd7QEgOWLNi3i2AAC9Vfv/Ud7HFmFuU
- HmlggOZhmWRHXKl/lKRl+RpCLeyu9Xi5gNGL0xjvd+JpWn5zcRECBbDM9OHFWWIXGo
- YorKxdnV/93taISEusU2hS50irb55O/OVnGaRC+k=
+ b=RhThshVbUL4jv+5S+SxWZzpxtdMaaFBZAob5AEBGqwjBsuHm1Wx+s+wNNOGbyb8Q5
+ 4Te2ejtiGvX8509XCo5J8GSBHWfFu6v/aQQFmgOxj5BGbYNc8lQPKjaNoPy8gV3mwo
+ FX0G38hQ5jQO+raWCdy2z6YMeXqRUvBTTTsbbSMk=
 Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 0E6EF8B7C9;
- Mon, 13 Jan 2020 18:08:42 +0100 (CET)
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 309198B7C9;
+ Mon, 13 Jan 2020 18:08:43 +0100 (CET)
 X-Virus-Scanned: amavisd-new at c-s.fr
 Received: from messagerie.si.c-s.fr ([127.0.0.1])
  by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id 6e0G3CbwxoJN; Mon, 13 Jan 2020 18:08:41 +0100 (CET)
+ with ESMTP id uDhYnHcG98bc; Mon, 13 Jan 2020 18:08:43 +0100 (CET)
 Received: from po14934vm.idsi0.si.c-s.fr (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id D00BE8B7BE;
- Mon, 13 Jan 2020 18:08:41 +0100 (CET)
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id DDE338B7BE;
+ Mon, 13 Jan 2020 18:08:42 +0100 (CET)
 Received: by localhost.localdomain (Postfix, from userid 0)
- id A66B564A1D; Mon, 13 Jan 2020 17:08:41 +0000 (UTC)
-Message-Id: <9f0f72424a8f0260470ecd50d5803db685285ba5.1578934751.git.christophe.leroy@c-s.fr>
+ id AD1B964A1D; Mon, 13 Jan 2020 17:08:42 +0000 (UTC)
+Message-Id: <25d3e027aeef5cdbe1b205ecfbf8d80270fc2bd9.1578934751.git.christophe.leroy@c-s.fr>
 In-Reply-To: <cover.1578934751.git.christophe.leroy@c-s.fr>
 References: <cover.1578934751.git.christophe.leroy@c-s.fr>
 From: Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [RFC PATCH v3 03/12] lib: vdso: mark __cvdso_clock_getres() as static
+Subject: [RFC PATCH v3 04/12] lib: vdso: inline do_hres() and do_coarse()
 To: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>, 
  arnd@arndb.de, tglx@linutronix.de, vincenzo.frascino@arm.com,
  luto@kernel.org
-Date: Mon, 13 Jan 2020 17:08:41 +0000 (UTC)
+Date: Mon, 13 Jan 2020 17:08:42 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_090843_674693_4E73C62F 
-X-CRM114-Status: UNSURE (   9.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200113_090846_574050_93C10F32 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,41 +104,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When __cvdso_clock_getres() became __cvdso_clock_getres_common()
-and a new __cvdso_clock_getres() was added, static qualifier was
-forgotten.
+do_hres() is called from several places, so GCC doesn't inline
+it at first.
 
-This change allows the compiler to inline __cvdso_clock_getres_common(),
-and the performance improvement is significant:
+do_hres() takes a struct __kernel_timespec * parameter for
+passing the result. In the 32 bits case, this parameter corresponds
+to a local var in the caller. In order to provide a pointer
+to this structure, the caller has to put it in its stack and
+do_hres() has to write the result in the stack. This is suboptimal,
+especially on RISC processor like powerpc.
 
+By making GCC inline the function, the struct __kernel_timespec
+remains a local var using registers, avoiding the need to write and
+read stack.
+
+The improvement is significant on powerpc:
 Before:
-clock-getres-realtime-coarse:    vdso: 984 nsec/call
-clock-getres-realtime:    vdso: 922 nsec/call
-clock-getres-monotonic-raw:    vdso: 968 nsec/call
+gettimeofday:    vdso: 1379 nsec/call
+clock-gettime-realtime-coarse:    vdso: 868 nsec/call
+clock-gettime-realtime:    vdso: 1511 nsec/call
+clock-gettime-monotonic-raw:    vdso: 1576 nsec/call
 
 After:
-clock-getres-realtime-coarse:    vdso: 753 nsec/call
-clock-getres-realtime:    vdso: 691 nsec/call
-clock-getres-monotonic-raw:    vdso: 737 nsec/call
+gettimeofday:    vdso: 1078 nsec/call
+clock-gettime-realtime-coarse:    vdso: 807 nsec/call
+clock-gettime-realtime:    vdso: 1256 nsec/call
+clock-gettime-monotonic-raw:    vdso: 1316 nsec/call
 
-Fixes: 502a590a170b ("lib/vdso: Move fallback invocation to the callers")
+At the same time, change the return type of do_coarse() to int, this
+increase readability of the if/elseif/elseif/else  section
+in __cvdso_clock_gettime_common()
+
 Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
 ---
- lib/vdso/gettimeofday.c | 1 +
- 1 file changed, 1 insertion(+)
+ lib/vdso/gettimeofday.c | 29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
 
 diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
-index 9ecfd3b547ba..42bd8ab955fa 100644
+index 42bd8ab955fa..d75e44ba716f 100644
 --- a/lib/vdso/gettimeofday.c
 +++ b/lib/vdso/gettimeofday.c
-@@ -221,6 +221,7 @@ int __cvdso_clock_getres_common(clockid_t clock, struct __kernel_timespec *res)
+@@ -38,8 +38,8 @@ u64 vdso_calc_delta(u64 cycles, u64 last, u64 mask, u32 mult)
+ }
+ #endif
+ 
+-static int do_hres(const struct vdso_data *vd, clockid_t clk,
+-		   struct __kernel_timespec *ts)
++static __always_inline int do_hres(const struct vdso_data *vd, clockid_t clk,
++				   struct __kernel_timespec *ts)
+ {
+ 	const struct vdso_timestamp *vdso_ts = &vd->basetime[clk];
+ 	u64 cycles, last, sec, ns;
+@@ -68,8 +68,8 @@ static int do_hres(const struct vdso_data *vd, clockid_t clk,
  	return 0;
  }
  
-+static __maybe_unused
- int __cvdso_clock_getres(clockid_t clock, struct __kernel_timespec *res)
+-static void do_coarse(const struct vdso_data *vd, clockid_t clk,
+-		      struct __kernel_timespec *ts)
++static __always_inline int do_coarse(const struct vdso_data *vd, clockid_t clk,
++				     struct __kernel_timespec *ts)
  {
- 	int ret = __cvdso_clock_getres_common(clock, res);
+ 	const struct vdso_timestamp *vdso_ts = &vd->basetime[clk];
+ 	u32 seq;
+@@ -79,6 +79,8 @@ static void do_coarse(const struct vdso_data *vd, clockid_t clk,
+ 		ts->tv_sec = vdso_ts->sec;
+ 		ts->tv_nsec = vdso_ts->nsec;
+ 	} while (unlikely(vdso_read_retry(vd, seq)));
++
++	return 0;
+ }
+ 
+ static __maybe_unused int
+@@ -96,15 +98,16 @@ __cvdso_clock_gettime_common(clockid_t clock, struct __kernel_timespec *ts)
+ 	 * clocks are handled in the VDSO directly.
+ 	 */
+ 	msk = 1U << clock;
+-	if (likely(msk & VDSO_HRES)) {
+-		return do_hres(&vd[CS_HRES_COARSE], clock, ts);
+-	} else if (msk & VDSO_COARSE) {
+-		do_coarse(&vd[CS_HRES_COARSE], clock, ts);
+-		return 0;
+-	} else if (msk & VDSO_RAW) {
+-		return do_hres(&vd[CS_RAW], clock, ts);
+-	}
+-	return -1;
++	if (likely(msk & VDSO_HRES))
++		vd += CS_HRES_COARSE;
++	else if (msk & VDSO_COARSE)
++		return do_coarse(&vd[CS_HRES_COARSE], clock, ts);
++	else if (msk & VDSO_RAW)
++		vd += CS_RAW;
++	else
++		return -1;
++
++	return do_hres(vd, clock, ts);
+ }
+ 
+ static __maybe_unused int
 -- 
 2.13.3
 
