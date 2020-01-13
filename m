@@ -2,89 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3420138E04
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:42:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0806C138E12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:44:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E1ro11ycWUcKhjoqOqvLq7Yc11kRIJmosbKI6ln9uMY=; b=OGUlI6bR3DF8kT
-	tLteaFL4mq6iw6rQoVkgknn2ow3xp9bRRUPdU2I6N5yu3rWFin3FvmebO7FU+XM5TBafNqrPGSmCV
-	ZRKgtR3D7zBW1oTjqGwq7FUV1ia2iABDHM7ISsFeZwBbUpt1RiF/7pa//b4kP37lDQDXB+svVli4n
-	8YCEIzkXX29apTiBJNExINgBkTfoWNfx4vMvzK0cKnNx0N1ASoInXsPYxA4EzRRSt8VT+0ZbWV8BR
-	R9T5TBFNSc6VHnqZ7HHVswj5HuXQyf4v9QpW5YPROGEwW6L9ASQ3Yb53VZt2DkMk2S2wQSCL8VXp7
-	vLJ5VtuKlarKvwYAh18A==;
+	List-Owner; bh=XF9HLEH7CBEno1fDKpOV5INGVpNDitd5vVDo7kS/Df4=; b=tP42PVIhKgYDYC
+	sQcsKJpWAoPXWHU0Gfjog+Rjcxsol8M4dRqdDOZkR+n+iyfHmjoXdsX6FXJj1HYHojlU9iuOYj/Ai
+	TIncjHb65wBDK3eXhj63rGUuTr0nv1T6/PWtCb6nn3Y/gC6jKBsIL3rU6z3ufnqOz+YqY80ZxGB6D
+	oYI0fONtgrisop374Imv9okFq8WebAvO3HowZVIoe5c8L2W1vopnAf1XuloywXts5wWTIDKefGcq5
+	VD99fIcVdLWfxydTxNowUZmpQHOesAeOSQDzofQODjCRAFY1VJ7ef9imIVCJpPDHrPLCZMqApcLjx
+	/hTen5oUqpTTifkTfYvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqwEy-00081c-5t; Mon, 13 Jan 2020 09:42:32 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iqwGt-0000Ha-NU; Mon, 13 Jan 2020 09:44:31 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqwEi-0007yp-4u; Mon, 13 Jan 2020 09:42:17 +0000
-Received: by mail-ed1-x543.google.com with SMTP id e10so7860942edv.9;
- Mon, 13 Jan 2020 01:42:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=U7KeLP59PevGGC5Z3wB8REEwHPKJRQN3w5hiDB2hOxQ=;
- b=gkdIVs2lFneKxILRe08ZFuatX83Y1qz9EEbVaioH/dqogaaCCdsTaKHQ+JHTS3srR0
- F2mHpMbTne+ScQQODsLLcDSztAY3RlD3ghO5cSKu6JhHjDUP0evfCBmHnx+sHdPYehLT
- fhE8+ad2EaaexkZhkPJenTbckLlM9La2xTJvRtcbhratmc6w7+iKbpp5cQuHiILJ2BG5
- rcNMTHI46v9qSBc77zu1QQX+Gxhm6sq8Pmv4X4Ky6xew543BRMrEDsZ1e+ns3w58ZE+Z
- G0fSFsa9y6c3vxWrWSK9c3OlJ+Y/2MGU0BafdEHzo839WVJuRNU+wFRCJGIReeY89RKc
- eLYA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=U7KeLP59PevGGC5Z3wB8REEwHPKJRQN3w5hiDB2hOxQ=;
- b=erED3pNcmuDK3VBI6uO1898QZEkIOs3kfFrfv8oHYKI+xUCsje5bK/v2bDqm9+CHaX
- X6NYzyfgwvu3kUQIoIABEGWuxWAJfJW8TYYd4DaNW07+bCrE1UTVNpMwenKSi1t6gfCo
- 46LgEjLH/1iAZfr6CnHYQkOQQLHR4lkgoD12Mk7E6SX2P82rDlyUEyYEKbWxz4eBApHl
- mHuTdTWvnKeHnpMMtbirNz7LcqdzCqk8wuCaEj6QvHjICjFPOaDLVHUKL1+Dj0X6YMuX
- WjLcVJUlMGMMMq3XPuNfxRKbnIglH/4JfO61KElNvTFIv0d/FLSuuGvmDUPgAUsy0DnS
- 2Mww==
-X-Gm-Message-State: APjAAAWhSCXHSPayRkdhKGI2VoNSDct61DXuPHYaQzSGW9t2yR8MpIhv
- s1pbE6dCOL+lxqa8BXN/DE5O2f1aYch0hMrqdRg=
-X-Google-Smtp-Source: APXvYqy8SM8Y+cR4BrF+oboBLfO9xNOTU4QgWP76WoRWA5nmy26BCRXzTEgIWDK02oI7osEZsjrKqq2/XWN0/Rs4LNQ=
-X-Received: by 2002:a05:6402:1742:: with SMTP id
- v2mr16594732edx.171.1578908534048; 
- Mon, 13 Jan 2020 01:42:14 -0800 (PST)
+ id 1iqwGO-0008Qh-Sx; Mon, 13 Jan 2020 09:44:02 +0000
+X-UUID: 3d95b25487884a1d9a2477db12bd5452-20200113
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=noXFWD818Dq+jF4a9F98f3vlDXsWrqXwFtIlauFJG+o=; 
+ b=O5mblPXUPPoqu1XDQ1PgPL2XFjBMI9Cbdy6qQVITdxVNm8AD51kTdM0QjIfSvT9WAuH+v2LcD5mWtvQNSKruE+sT9V7PoojnQxGn20INbspilCcn/sSLSvx5vDSSfNUK+ej2wlNUpY49v0htzOLio5qfQddncLPXL/4x+cPUIDI=;
+X-UUID: 3d95b25487884a1d9a2477db12bd5452-20200113
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1143793970; Mon, 13 Jan 2020 01:43:57 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 13 Jan 2020 01:44:39 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 13 Jan 2020 17:42:52 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 13 Jan 2020 17:44:25 +0800
+Message-ID: <1578908621.17435.18.camel@mtkswgap22>
+Subject: RE: [EXT] [PATCH v1 1/3] scsi: ufs: fix empty check of error history
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: "Bean Huo (beanhuo)" <beanhuo@micron.com>
+Date: Mon, 13 Jan 2020 17:43:41 +0800
+In-Reply-To: <BN7PR08MB56841F049CEF89CD8F40B4E3DB350@BN7PR08MB5684.namprd08.prod.outlook.com>
+References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
+ <1578147968-30938-2-git-send-email-stanley.chu@mediatek.com>
+ <BN7PR08MB56841F049CEF89CD8F40B4E3DB350@BN7PR08MB5684.namprd08.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20191230143028.27313-1-alobakin@dlink.ru>
- <20191230143028.27313-6-alobakin@dlink.ru>
- <ee6f83fd-edf4-5a98-9868-4cbe9e226b9b@gmail.com>
- <ed0ad0246c95a9ee87352d8ddbf0d4a1@dlink.ru>
-In-Reply-To: <ed0ad0246c95a9ee87352d8ddbf0d4a1@dlink.ru>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Mon, 13 Jan 2020 11:42:03 +0200
-Message-ID: <CA+h21hoSoZT+ieaOu8N=MCSqkzey0L6HeoXSyLtHjZztT0S9ug@mail.gmail.com>
-Subject: Re: [PATCH RFC net-next 05/19] net: dsa: tag_ar9331: add GRO callbacks
-To: Alexander Lobakin <alobakin@dlink.ru>
+X-TM-SNTS-SMTP: 0B6A6572D0047A1634FF6C19BE1983D218D296312C76252440D25A87F28CA4082000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_014216_220123_53B6AC33 
-X-CRM114-Status: UNSURE (   7.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200113_014400_941523_D5A58B8A 
+X-CRM114-Status: GOOD (  11.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,39 +87,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Song Liu <songliubraving@fb.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Yoshiki Komachi <komachi.yoshiki@gmail.com>,
- lkml <linux-kernel@vger.kernel.org>, Eric Dumazet <edumazet@google.com>,
- Stanislav Fomichev <sdf@google.com>, Matteo Croce <mcroce@redhat.com>,
- Edward Cree <ecree@solarflare.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Jakub Sitnicki <jakub@cloudflare.com>, Daniel Borkmann <daniel@iogearbox.net>,
- Paolo Abeni <pabeni@redhat.com>, Vivien Didelot <vivien.didelot@gmail.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Sean Wang <sean.wang@mediatek.com>,
- Jiri Pirko <jiri@mellanox.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, netdev <netdev@vger.kernel.org>,
- Paul Blakey <paulb@mellanox.com>,
- Stephen Hemminger <stephen@networkplumber.org>,
- "David S. Miller" <davem@davemloft.net>, Taehee Yoo <ap420073@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "bvanassche@acm.org" <bvanassche@acm.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQWxleGFuZGVyLAoKT24gTW9uLCAxMyBKYW4gMjAyMCBhdCAxMToyMiwgQWxleGFuZGVyIExv
-YmFraW4gPGFsb2Jha2luQGRsaW5rLnJ1PiB3cm90ZToKPgo+IENQVSBwb3J0cyBjYW4ndCBiZSBi
-cmlkZ2VkIGFueXdheQo+Cj4gUmVnYXJkcywKPiDhmrcg4ZuWIOGaoiDhmqYg4ZqgIOGasQoKVGhl
-IGZhY3QgdGhhdCBDUFUgcG9ydHMgY2FuJ3QgYmUgYnJpZGdlZCBpcyBhbHJlYWR5IG5vdCBpZGVh
-bC4KT25lIGNhbiBoYXZlIGEgRFNBIHN3aXRjaCB3aXRoIGNhc2NhZGVkIHN3aXRjaGVzIG9uIGVh
-Y2ggcG9ydCwgc28gaXQKYWN0cyBsaWtlIE4gRFNBIG1hc3RlcnMgKG5vdCBhcyBEU0EgbGlua3Ms
-IHNpbmNlIHRoZSB0YWdnZXJzIGFyZQppbmNvbXBhdGlibGUpLCB3aXRoIGVhY2ggc3dpdGNoIGZv
-cm1pbmcgaXRzIG93biB0cmVlLiBJdCBpcyBkZXNpcmFibGUKdGhhdCB0aGUgcG9ydHMgb2YgdGhl
-IERTQSBzd2l0Y2ggb24gdG9wIGFyZSBicmlkZ2VkLCBzbyB0aGF0CmZvcndhcmRpbmcgYmV0d2Vl
-biBjYXNjYWRlZCBzd2l0Y2hlcyBkb2VzIG5vdCBwYXNzIHRocm91Z2ggdGhlIENQVS4KCi1WbGFk
-aW1pcgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+Hi Bean,
+
+On Mon, 2020-01-13 at 09:28 +0000, Bean Huo (beanhuo) wrote:
+> Hi, Stanley
+> 
+> > 
+> > Currently checking if an error history element is empty or not is by its "value". In
+> > most cases, value is error code.
+> > 
+> > However this checking is not correct because some errors or events do not
+> > specify any values in error history so values remain as 0, and this will lead to
+> > incorrect empty checking.
+> > 
+> Do you think this is a bug of UFS host controller? According to the UFS host Spec, 
+> If there had error detected in each layer, at least bit31 in its error code register
+> Should be set to 1.
+> 
+> Why there was an error happening, but host didn't set this bit31?
+> 
+
+Thanks so much for review.
+
+Yes, the case bit[31] set is true for UIC errors.
+
+However the users of UFS error history, i.e., users of
+ufshcd_update_reg_hlist(), are not only UIC errors. Some other essential
+events will update history too, for example, device reset events and
+abort events.
+
+Take "device reset events" as example: parameter "val" may be 0 while
+invoking ufshcd_update_reg_hlist(). If this happens, the device reset
+event will not be printed out because its err_hist->reg[p] is 0
+according to the original logic in ufshcd_print_err_hist().
+
+Feel free to correct above description if it is wrong.
+
+Thanks,
+Stanley
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
