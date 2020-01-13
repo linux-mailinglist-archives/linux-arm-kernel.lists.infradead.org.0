@@ -2,105 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF183138A54
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 05:46:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAD6B138A6C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 05:50:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a/R5ba5sMyP6JYSTja3lAHc/E4P7zD+078INbWM87+I=; b=BxUHaRQx6VAESa
-	4uH8JdUwyIZe+iHQij3HN8E9NQMuDBC43H9rZThwn6EShQChg5OCICoKGzDCDneheLSWvRwmyAqGA
-	YuzBbCJxAnBlOReWUCaX+NcZlPGjLk51juUSJztBT0LJ2iYnyO48QnOCFs5mfPi6K1kgKLol1DWKX
-	PiSTVuugMeUjPOVEq/ZfxgnBRScVMIAl/Swe3fCXcRQAB0pqqmgyzRuAqiG6bjP4ady7i3pEnykOt
-	DxKPiYBRB5m6KDb1SE3rXDGoL+0kHxL/8HV8i9sPfBkwJEIHDXqzXMNxOm5sGdxxsCTljlGHebst8
-	qWSp/x7NlgkNmtJEL+gg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nQAUvCun4O3EfKMI8YSpxoyhW//neSG04skTGEQMlmA=; b=rQJmiXpABB4LXT
+	fQsZ+EBSL9lp8A04d10aTeYw3BuVYaKppwnItnsRnX4VRJuErUWFGdbppbNa0bsfWRbBoeJXzsmQW
+	AIZOHNMOUIHiQnLIeW6Q2mP4+wUj7UUHGljnLzSgu+075TzvyoJNjTi/yFIPNZaKe5GlPcDOF32QP
+	d26tiCHPU7iTn731mOonfEaEm8004bD0SjgVTonIJce6DbP9OiwBPzFjMCDItF6NGTN+cAfrDzg4e
+	r/zE2vzHxgvhUQrunXivMf0FPt+Y6okORrlQYWVdChmLRdkcjOpBYLeV2ziot1QiKbNs2zMy07sTT
+	niibHd/IEkIYEQbK8V7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqrck-0008Cq-Pm; Mon, 13 Jan 2020 04:46:46 +0000
-Received: from mail-eopbgr00059.outbound.protection.outlook.com ([40.107.0.59]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1iqrgK-0000NR-Ds; Mon, 13 Jan 2020 04:50:28 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqrcY-0008CO-MV
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 04:46:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fKfVPgOH0uBhTHJWxYY05GvKBT1KgcTpIMWjy3pL/dKRPo3AxkaVLBi2UgFPRTdQmgbN23lrc7hPbFWoVjF+aKj2onEK/NB3Y5Q/7Q82RhKTSvFOl7muYRe3732XM+KXW8wZXOO9yiQRjL5CWW4etUEr2buYYfdouFU3/6bZIe/b/PgIkwmdEioPkSQEA8rcvHWENTBW2PH9imJyLvnUcRwjjC4jrctLhPxhnll0+oJT4v9a0q0Sr2D6RQlVFKyZemVZ8yKYxz2misrNj+nJLUeV8BPgSbUyA+kteY13PcrxshmD+lf5SqbiyieCw5jgjO1XLblPuBKkzUlmmwGoPw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=55q9vQWUK1bH/rj9SHO/+PTKPD1UAQPuZ74VsjbyNmU=;
- b=cp5S0rzLLkGYldaSGHvKggzz6gaB/wH9b+rkL1vatz+y627dPq9Rrdjhup4wL/QyeXKQwUXewsnWz8Asd94uM0KEEoNmMaSFMAaluTOpWDxUS7gWUvkmKcPho1VMLyPgDdxcXkn3tOl7mPfnDj9uMPu2l7e2XiGgWXT4BblMDBlkCyYbsWAYDIvi5q6wpbCS1G7BrdnYmZsJaAE90MDyKFQ45FOgMcuvpqEf50sPKf2coz+tVTe6sgqX6UuiDdntWeCZqozZZBZmiZvoFIK9uhwYLOswUGSjm9TxhZp2wq9qSHRt/MA7HzVJRPjsRR+Whtr9b4FM8Wfcx5ZuaTIS8Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=55q9vQWUK1bH/rj9SHO/+PTKPD1UAQPuZ74VsjbyNmU=;
- b=rii3dEznMjijZtGhiwbzEaZTaRT7qGZOg4bVWADBA+EtRW+y+KPAjraCQjqPIKCR96NWLs/sKVCBp2Xs67hAMCOoZj4D98Ab4ENnmJnNodjUyh13WZUJArYXP2de21V4aNB+osWDHIxJg3LrYseeWscdwzg2JWdVfTAzfBaTdCg=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3739.eurprd04.prod.outlook.com (52.134.67.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.13; Mon, 13 Jan 2020 04:46:30 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 04:46:30 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH 1/3] arm64: dts: freescale: Add i.MX8MP dtsi support
-Thread-Topic: [PATCH 1/3] arm64: dts: freescale: Add i.MX8MP dtsi support
-Thread-Index: AQHVvHtUnEoQIAgvOkiEEUvFrDfNX6fmXO2AgAHBPtA=
-Date: Mon, 13 Jan 2020 04:46:30 +0000
-Message-ID: <DB3PR0402MB39167BDB6C279AD0D7952F44F5350@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1577426385-31273-1-git-send-email-Anson.Huang@nxp.com>
- <20200112015228.GX4456@T480>
-In-Reply-To: <20200112015228.GX4456@T480>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ef77d4c0-25a2-4b82-9644-08d797e38ed0
-x-ms-traffictypediagnostic: DB3PR0402MB3739:|DB3PR0402MB3739:|DB3PR0402MB3739:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3739EE842256DD99F57629C6F5350@DB3PR0402MB3739.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(346002)(136003)(396003)(39860400002)(189003)(199004)(8676002)(2906002)(81156014)(66476007)(76116006)(7416002)(54906003)(4326008)(44832011)(478600001)(66556008)(81166006)(316002)(8936002)(66946007)(66446008)(64756008)(7696005)(5660300002)(86362001)(26005)(71200400001)(6506007)(52536014)(30864003)(55016002)(9686003)(186003)(6916009)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3739;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: a69d8GHoEBQZry7bc2jZxmx1YiMUN9eVd4POt3g1Ux+05ldKuc8/bw405zTxdDZsi1DfPWOpxI5XiWIV2rbAgT/2qENW/Ck8AlvwmyJGH7UGBZtx4iW/arSeLkogWoQQYE01ExYcvTzq4HkKiQ4YOPmZzAOtyd7IQg0lCp5sigF3JRqMZphcI+9O/iiAwMDWs+h8fL70dy5NPDvG7dre7lq+QCfnM02/TZ3LeRBla0egmDumUL1o1PXLyGPS9oBFUvENS/Nv9lUtMFPz0f0j37WI8PzPpXCJdgw3w2F66/xCicZPXqIUiqb2xwV4Uk4HBWXmga2e+gpaFDqMIM5ttbVvKRsXX7toN7CrReku2vwWPnvED2E7n3JR+/2x+1iqdg3aiIqnvMezAFz8F8QrgtBgmLesVTH4nGMgQGHI0s8p9t0OLOjUCxHGmFn/XMwZ
+ id 1iqrff-0000AN-Qt
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 04:49:49 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id E80BC59D4;
+ Sun, 12 Jan 2020 23:49:38 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Sun, 12 Jan 2020 23:49:39 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=ZAn6MQce4uKUtndJ1m5HH2EX6l
+ yQdEDWgaq9zd0WUx0=; b=gMmDoSwsIYM77p+0EbyAAz6SG2SUNcLVrVw3c16GHR
+ YJz7O6gAinTcNH1jvDg98t8PllfQYUZXYcdNAyqaRi0NbCIbBBFxHWHxLSp1nxM1
+ TGXJge9UsbU6HCIANucRR5v9FPDUU87pZ0RyDjTvuQWG0stQzfkpJAMwQKwFqylC
+ Z+hgSA3d9Gk9V87uo/vdpQELE2FQYqwO7ngQW6QXlMdeSL+Uh+whlvgQiUnGigo8
+ PGlfwE0yvePlQhDAA5qfZa+ccEhQd1WXxkrQazco/+51u2fnd2PSnBPF4GHwsZwK
+ FBjFt+/5pC+R2myDYo3QR/AcPE77acKD7L6vMjRsvtPw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=ZAn6MQce4uKUtndJ1
+ m5HH2EX6lyQdEDWgaq9zd0WUx0=; b=UWSSGxQSQXrgWKVsUdwIDvZMY2UTv8Wfw
+ a2zAHrAlQv8dZySqyTiMDRCBD5TRjRgdFz0SZ30370Cl/uKln2u83YcJUsn/DnCM
+ PBdW9RFueSOKF1K1WqK25130MuBSA73Ly+bosuA125GFMeMhncIHcorBgSoO8VEh
+ ZgXguMQZPiu0hLi29QhCW77Al9MVKcatg864JJ1FEL4dSXgghzX/eAvJfKefBTsU
+ laPueHhQpNSdva+qHeDaKX384EvV9UfblxmsuUT/fzx6WsRp1xSl16rxK7BoyXQO
+ vWnmgX2LB17VV9DMkFD5r8UKCyOK+5ILyN20D1xLAnExhzXx04vwA==
+X-ME-Sender: <xms:4fYbXvsG6eilVQSrcF_nVlxn2liWYoYsxtTGgbo6Y3xnlu3os34Vcg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdeiledgjeekucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
+ jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkphepje
+ dtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgv
+ lhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:4fYbXnPLpCPYWsBhAziX4L_zFxIOSRi0s000chrUYk3BUSmF6kH-cw>
+ <xmx:4fYbXkjSq7boBMFPQPxpoXdH9vkj6JH7QasRLaWH8adjzj6hFvHaWQ>
+ <xmx:4fYbXp4Nk_ecgCLSCwj9n2EATJLNYwHrHqk6G2pkbL-hANW7z2citA>
+ <xmx:4vYbXgAhuDMP2CSy_ebnszctpqTLwHiIrm_a002Q9ND3x2eikfiCdw>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id E8F2930607B0;
+ Sun, 12 Jan 2020 23:49:36 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Russell King <linux@armlinux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH 0/9] sunxi: Support IRQ wakeup from deep sleep
+Date: Sun, 12 Jan 2020 22:49:27 -0600
+Message-Id: <20200113044936.26038-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ef77d4c0-25a2-4b82-9644-08d797e38ed0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 04:46:30.4260 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9MFc0jVqmnpr+LlrdlGoK4oyN11Chc6kqlI1OABLls/U0VT/BCQPwUlGhnNOrXkJd9ea3+8yYSp8uCTNrsZgzQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3739
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_204635_029332_7CA5912A 
-X-CRM114-Status: GOOD (  19.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200112_204948_037116_3CAC6015 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.59 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -121,727 +104,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jun Li <jun.li@nxp.com>, Gary Bisson <gary.bisson@boundarydevices.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Samuel Holland <samuel@sholland.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Shawn
+Allwinner sun8i/sun50i SoCs (A31 and newer) have two interrupt
+controllers: GIC and R_INTC. GIC does not support wakeup, and is
+inaccessible from the ARISC (power management coprocessor). R_INTC
+controls the NMI pin, and provides 16-32 IRQs to the ARISC. The first 16
+of these correspond 1:1 to a block of GIC IRQs starting with the NMI.
 
-> Subject: Re: [PATCH 1/3] arm64: dts: freescale: Add i.MX8MP dtsi support
-> 
-> On Fri, Dec 27, 2019 at 01:59:43PM +0800, Anson Huang wrote:
-> > The i.MX8M Plus Media Applications Processor is part of the growing
-> > mScale family targeting the consumer and industrial market. It brings
-> > an effective Machine Learning and AI accelerator that enables a new
-> > class of applications. It is built in Samsung 14LPP to achieve both
-> > high performance and low power consumption and relies on a powerful
-> > fully coherent core complex based on a quad core ARM Cortex-A53
-> > cluster and Cortex-M7 low-power coprocessor, audio digital signal
-> > processor, machine learning and graphics accelerators.
-> >
-> > Add the basic dtsi support for i.MX8MP.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8mp.dtsi | 598
-> > ++++++++++++++++++++++++++++++
-> >  1 file changed, 598 insertions(+)
-> >  create mode 100644 arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> > new file mode 100644
-> > index 0000000..0fb29cc
-> > --- /dev/null
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> > @@ -0,0 +1,598 @@
-> > +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> > +/*
-> > + * Copyright 2019 NXP
-> > + */
-> > +
-> > +#include <dt-bindings/clock/imx8mp-clock.h>
-> > +#include <dt-bindings/gpio/gpio.h>
-> > +#include <dt-bindings/input/input.h>
-> > +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> > +
-> > +#include "imx8mp-pinfunc.h"
-> > +
-> > +/ {
-> > +	interrupt-parent = <&gic>;
-> > +	#address-cells = <2>;
-> > +	#size-cells = <2>;
-> > +
-> > +	aliases {
-> > +		ethernet0 = &fec;
-> > +		gpio0 = &gpio1;
-> > +		gpio1 = &gpio2;
-> > +		gpio2 = &gpio3;
-> > +		gpio3 = &gpio4;
-> > +		gpio4 = &gpio5;
-> > +		mmc0 = &usdhc1;
-> > +		mmc1 = &usdhc2;
-> > +		mmc2 = &usdhc3;
-> > +		serial0 = &uart1;
-> > +		serial1 = &uart2;
-> > +		serial2 = &uart3;
-> > +		serial3 = &uart4;
-> > +	};
-> > +
-> > +	cpus {
-> > +		#address-cells = <1>;
-> > +		#size-cells = <0>;
-> > +
-> > +		A53_0: cpu@0 {
-> > +			device_type = "cpu";
-> > +			compatible = "arm,cortex-a53";
-> > +			reg = <0x0>;
-> > +			clock-latency = <61036>;
-> > +			clocks = <&clk IMX8MP_CLK_ARM>;
-> > +			enable-method = "psci";
-> > +			next-level-cache = <&A53_L2>;
-> > +		};
-> > +
-> > +		A53_1: cpu@1 {
-> > +			device_type = "cpu";
-> > +			compatible = "arm,cortex-a53";
-> > +			reg = <0x1>;
-> > +			clock-latency = <61036>;
-> > +			clocks = <&clk IMX8MP_CLK_ARM>;
-> > +			enable-method = "psci";
-> > +			next-level-cache = <&A53_L2>;
-> > +		};
-> > +
-> > +		A53_2: cpu@2 {
-> > +			device_type = "cpu";
-> > +			compatible = "arm,cortex-a53";
-> > +			reg = <0x2>;
-> > +			clock-latency = <61036>;
-> > +			clocks = <&clk IMX8MP_CLK_ARM>;
-> > +			enable-method = "psci";
-> > +			next-level-cache = <&A53_L2>;
-> > +		};
-> > +
-> > +		A53_3: cpu@3 {
-> > +			device_type = "cpu";
-> > +			compatible = "arm,cortex-a53";
-> > +			reg = <0x3>;
-> > +			clock-latency = <61036>;
-> > +			clocks = <&clk IMX8MP_CLK_ARM>;
-> > +			enable-method = "psci";
-> > +			next-level-cache = <&A53_L2>;
-> > +		};
-> > +
-> > +		A53_L2: l2-cache0 {
-> > +			compatible = "cache";
-> > +		};
-> > +	};
-> > +
-> > +	osc_32k: clock-osc-32k {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency = <32768>;
-> > +		clock-output-names = "osc_32k";
-> > +	};
-> > +
-> > +	osc_24m: clock-osc-24m {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency = <24000000>;
-> > +		clock-output-names = "osc_24m";
-> > +	};
-> > +
-> > +	clk_ext1: clock-ext1 {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency = <133000000>;
-> > +		clock-output-names = "clk_ext1";
-> > +	};
-> > +
-> > +	clk_ext2: clock-ext2 {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency = <133000000>;
-> > +		clock-output-names = "clk_ext2";
-> > +	};
-> > +
-> > +	clk_ext3: clock-ext3 {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency = <133000000>;
-> > +		clock-output-names = "clk_ext3";
-> > +	};
-> > +
-> > +	clk_ext4: clock-ext4 {
-> > +		compatible = "fixed-clock";
-> > +		#clock-cells = <0>;
-> > +		clock-frequency= <133000000>;
-> > +		clock-output-names = "clk_ext4";
-> > +	};
-> > +
-> > +	psci {
-> > +		compatible = "arm,psci-1.0";
-> > +		method = "smc";
-> > +	};
-> > +
-> > +	timer {
-> > +		compatible = "arm,armv8-timer";
-> > +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) |
-> IRQ_TYPE_LEVEL_LOW)>,
-> > +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) |
-> IRQ_TYPE_LEVEL_LOW)>,
-> > +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) |
-> IRQ_TYPE_LEVEL_LOW)>,
-> > +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) |
-> IRQ_TYPE_LEVEL_LOW)>;
-> > +		clock-frequency = <8000000>;
-> > +		arm,no-tick-in-suspend;
-> > +	};
-> > +
-> > +	soc@0 {
-> > +		compatible = "simple-bus";
-> > +		#address-cells = <1>;
-> > +		#size-cells = <1>;
-> > +		ranges = <0x0 0x0 0x0 0x3e000000>;
-> > +
-> > +		aips1: bus@30000000 {
-> > +			compatible = "simple-bus";
-> > +			reg = <0x30000000 0x400000>;
-> > +			#address-cells = <1>;
-> > +			#size-cells = <1>;
-> > +			ranges;
-> > +
-> > +			gpio1: gpio@30200000 {
-> > +				compatible = "fsl,imx8mp-gpio", "fsl,imx35-
-> gpio";
-> 
-> I would enforce that any new compatible needs to be documented.
+This series replaces the existing chained irqchip driver used only to
+control the NMI, with a stacked irqchip driver that also provides wakeup
+capability for those 16 IRQs. The idea is that we preconfigure the
+ARISC's IRQ controller, and then it knows to wake up as soon as it
+receives an IRQ.
 
-The i.MX GPIO binding doc has below compatible statement to cover all i.MX GPIO, so
-no need to update the binding doc when adding new SoC's GPIO compatible?
+I went back and forth about updating the existing driver versus writing
+a new one. The NMI-only control on sun7i (A20) and sun9i (A80) is
+missing MASK_REG, so it would need a different irq_chip definition. And
+the only benefit it would get is the chained->stacked conversion, since
+there's no separate coprocessor to see the IRQs during suspend. So
+ultimately I went with a new driver. It may be useful to separately do
+the chained->stacked conversion on the sunxi-nmi driver as well.
 
-  Required properties:
-    - compatible : Should be "fsl,<soc>-gpio"
+Patch 1 adds the new driver.
+Patch 2 adds wakeup capability.
+Remaining patches update the DT+bindings to use R_INTC where beneficial
 
-BTW, for those un-documented compatible, I will update the binding doc in V2. 
+With appropriate firmware, this series allows waking from RTC and NMI
+(power button, plugging in USB, etc.). Wake from Port L GPIO interrupts
+(gpio-keys, wifi, etc.) requires some patches to the pinctrl driver.
 
-> 
-> > +				reg = <0x30200000 0x10000>;
-> > +				interrupts = <GIC_SPI 64
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +					     <GIC_SPI 65
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_GPIO1_ROOT>;
-> > +				gpio-controller;
-> > +				#gpio-cells = <2>;
-> > +				interrupt-controller;
-> > +				#interrupt-cells = <2>;
-> > +				gpio-ranges = <&iomuxc 0 5 30>;
-> > +			};
-> > +
-> > +			gpio2: gpio@30210000 {
-> > +				compatible = "fsl,imx8mp-gpio", "fsl,imx35-
-> gpio";
-> > +				reg = <0x30210000 0x10000>;
-> > +				interrupts = <GIC_SPI 66
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +					     <GIC_SPI 67
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_GPIO2_ROOT>;
-> > +				gpio-controller;
-> > +				#gpio-cells = <2>;
-> > +				interrupt-controller;
-> > +				#interrupt-cells = <2>;
-> > +				gpio-ranges = <&iomuxc 0 35 21>;
-> > +			};
-> > +
-> > +			gpio3: gpio@30220000 {
-> > +				compatible = "fsl,imx8mp-gpio", "fsl,imx35-
-> gpio";
-> > +				reg = <0x30220000 0x10000>;
-> > +				interrupts = <GIC_SPI 68
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +					     <GIC_SPI 69
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_GPIO3_ROOT>;
-> > +				gpio-controller;
-> > +				#gpio-cells = <2>;
-> > +				interrupt-controller;
-> > +				#interrupt-cells = <2>;
-> > +				gpio-ranges = <&iomuxc 0 56 26>, <&iomuxc
-> 0 144 4>;
-> > +			};
-> > +
-> > +			gpio4: gpio@30230000 {
-> > +				compatible = "fsl,imx8mp-gpio", "fsl,imx35-
-> gpio";
-> > +				reg = <0x30230000 0x10000>;
-> > +				interrupts = <GIC_SPI 70
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +					     <GIC_SPI 71
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_GPIO4_ROOT>;
-> > +				gpio-controller;
-> > +				#gpio-cells = <2>;
-> > +				interrupt-controller;
-> > +				#interrupt-cells = <2>;
-> > +				gpio-ranges = <&iomuxc 0 82 32>;
-> > +			};
-> > +
-> > +			gpio5: gpio@30240000 {
-> > +				compatible = "fsl,imx8mp-gpio", "fsl,imx35-
-> gpio";
-> > +				reg = <0x30240000 0x10000>;
-> > +				interrupts = <GIC_SPI 72
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +					     <GIC_SPI 73
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_GPIO5_ROOT>;
-> > +				gpio-controller;
-> > +				#gpio-cells = <2>;
-> > +				interrupt-controller;
-> > +				#interrupt-cells = <2>;
-> > +				gpio-ranges = <&iomuxc 0 114 30>;
-> > +			};
-> > +
-> > +			wdog1: watchdog@30280000 {
-> > +				compatible = "fsl,imx8mp-wdt", "fsl,imx21-
-> wdt";
-> > +				reg = <0x30280000 0x10000>;
-> > +				interrupts = <GIC_SPI 78
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_WDOG1_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			iomuxc: pinctrl@30330000 {
-> > +				compatible = "fsl,imx8mp-iomuxc";
-> > +				reg = <0x30330000 0x10000>;
-> > +			};
-> > +
-> > +			gpr: iomuxc-gpr@30340000 {
-> > +				compatible = "fsl,imx8mp-iomuxc-gpr",
-> "syscon";
-> > +				reg = <0x30340000 0x10000>;
-> > +			};
-> > +
-> > +			ocotp: ocotp-ctrl@30350000 {
-> > +				compatible = "fsl,imx8mp-ocotp",
-> "fsl,imx8mm-ocotp", "syscon";
-> > +				reg = <0x30350000 0x10000>;
-> > +				clocks = <&clk IMX8MP_CLK_OCOTP_ROOT>;
-> > +				/* For nvmem subnodes */
-> > +				#address-cells = <1>;
-> > +				#size-cells = <1>;
-> > +
-> > +				cpu_speed_grade: speed-grade@10 {
-> > +					reg = <0x10 4>;
-> > +				};
-> > +			};
-> > +
-> > +			anatop: anatop@30360000 {
-> > +				compatible = "fsl,imx8mp-anatop",
-> "fsl,imx8mm-anatop",
-> > +					     "syscon";
-> > +				reg = <0x30360000 0x10000>;
-> > +			};
-> > +
-> > +			snvs: snvs@30370000 {
-> > +				compatible = "fsl,sec-v4.0-mon","syscon",
-> "simple-mfd";
-> > +				reg = <0x30370000 0x10000>;
-> > +
-> > +				snvs_rtc: snvs-rtc-lp {
-> > +					compatible = "fsl,sec-v4.0-mon-rtc-
-> lp";
-> > +					regmap =<&snvs>;
-> > +					offset = <0x34>;
-> > +					interrupts = <GIC_SPI 19
-> IRQ_TYPE_LEVEL_HIGH>,
-> > +						     <GIC_SPI 20
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +					clocks = <&clk
-> IMX8MP_CLK_SNVS_ROOT>;
-> > +					clock-names = "snvs-rtc";
-> > +				};
-> > +
-> > +				snvs_pwrkey: snvs-powerkey {
-> > +					compatible = "fsl,sec-v4.0-pwrkey";
-> > +					regmap = <&snvs>;
-> > +					interrupts = <GIC_SPI 4
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +					linux,keycode = <KEY_POWER>;
-> > +					wakeup-source;
-> > +					status = "disabled";
-> > +				};
-> > +			};
-> > +
-> > +			clk: clock-controller@30380000 {
-> > +				compatible = "fsl,imx8mp-ccm";
-> > +				reg = <0x30380000 0x10000>;
-> > +				#clock-cells = <1>;
-> > +				clocks = <&osc_32k>, <&osc_24m>,
-> <&clk_ext1>, <&clk_ext2>,
-> > +					 <&clk_ext3>, <&clk_ext4>;
-> > +				clock-names = "osc_32k", "osc_24m",
-> "clk_ext1", "clk_ext2",
-> > +					      "clk_ext3", "clk_ext4";
-> > +				assigned-clocks = <&clk
-> IMX8MP_CLK_AUDIO_AHB>,
-> > +						  <&clk
-> IMX8MP_CLK_IPG_AUDIO_ROOT>,
-> > +						  <&clk
-> IMX8MP_AUDIO_PLL1>,
-> > +						  <&clk
-> IMX8MP_AUDIO_PLL2>;
-> > +			};
-> > +
-> > +			src: src@30390000 {
-> > +				compatible = "fsl,imx8mp-src", "fsl,imx8mq-
-> src", "syscon";
-> > +				reg = <0x30390000 0x10000>;
-> > +				interrupts = <GIC_SPI 89
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				#reset-cells = <1>;
-> > +			};
-> > +		};
-> > +
-> > +		aips2: bus@30400000 {
-> > +			compatible = "simple-bus";
-> > +			reg = <0x30400000 0x400000>;
-> > +			#address-cells = <1>;
-> > +			#size-cells = <1>;
-> > +			ranges;
-> > +
-> > +			pwm1: pwm@30660000 {
-> > +				compatible = "fsl,imx8mp-pwm", "fsl,imx27-
-> pwm";
-> > +				reg = <0x30660000 0x10000>;
-> > +				interrupts = <GIC_SPI 81
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_PWM1_ROOT>,
-> > +					 <&clk IMX8MP_CLK_PWM1_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				#pwm-cells = <2>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			pwm2: pwm@30670000 {
-> > +				compatible = "fsl,imx8mp-pwm", "fsl,imx27-
-> pwm";
-> > +				reg = <0x30670000 0x10000>;
-> > +				interrupts = <GIC_SPI 82
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_PWM2_ROOT>,
-> > +					 <&clk IMX8MP_CLK_PWM2_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				#pwm-cells = <2>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			pwm3: pwm@30680000 {
-> > +				compatible = "fsl,imx8mp-pwm", "fsl,imx27-
-> pwm";
-> > +				reg = <0x30680000 0x10000>;
-> > +				interrupts = <GIC_SPI 83
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_PWM3_ROOT>,
-> > +					 <&clk IMX8MP_CLK_PWM3_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				#pwm-cells = <2>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			pwm4: pwm@30690000 {
-> > +				compatible = "fsl,imx8mp-pwm", "fsl,imx27-
-> pwm";
-> > +				reg = <0x30690000 0x10000>;
-> > +				interrupts = <GIC_SPI 84
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_PWM4_ROOT>,
-> > +					 <&clk IMX8MP_CLK_PWM4_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				#pwm-cells = <2>;
-> > +				status = "disabled";
-> > +			};
-> > +		};
-> > +
-> > +		aips3: bus@30800000 {
-> > +			compatible = "simple-bus";
-> > +			reg = <0x30800000 0x400000>;
-> > +			#address-cells = <1>;
-> > +			#size-cells = <1>;
-> > +			ranges;
-> > +
-> > +			ecspi1: spi@30820000 {
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-
-> ecspi";
-> > +				reg = <0x30820000 0x10000>;
-> > +				interrupts = <GIC_SPI 31
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_ECSPI1_ROOT>,
-> > +					 <&clk IMX8MP_CLK_ECSPI1_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 0 7 1>, <&sdma1 1 7 2>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			ecspi2: spi@30830000 {
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-
-> ecspi";
-> > +				reg = <0x30830000 0x10000>;
-> > +				interrupts = <GIC_SPI 32
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_ECSPI2_ROOT>,
-> > +					 <&clk IMX8MP_CLK_ECSPI2_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 2 7 1>, <&sdma1 3 7 2>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			ecspi3: spi@30840000 {
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-
-> ecspi";
-> > +				reg = <0x30840000 0x10000>;
-> > +				interrupts = <GIC_SPI 33
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_ECSPI3_ROOT>,
-> > +					 <&clk IMX8MP_CLK_ECSPI3_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 4 7 1>, <&sdma1 5 7 2>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			uart1: serial@30860000 {
-> > +				compatible = "fsl,imx8mp-uart", "fsl,imx6q-
-> uart";
-> > +				reg = <0x30860000 0x10000>;
-> > +				interrupts = <GIC_SPI 26
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_UART1_ROOT>,
-> > +					 <&clk IMX8MP_CLK_UART1_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 22 4 0>, <&sdma1 23 4 0>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			uart3: serial@30880000 {
-> > +				compatible = "fsl,imx8mp-uart", "fsl,imx6q-
-> uart";
-> > +				reg = <0x30880000 0x10000>;
-> > +				interrupts = <GIC_SPI 28
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_UART3_ROOT>,
-> > +					 <&clk IMX8MP_CLK_UART3_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 26 4 0>, <&sdma1 27 4 0>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			uart2: serial@30890000 {
-> > +				compatible = "fsl,imx8mp-uart", "fsl,imx6q-
-> uart";
-> > +				reg = <0x30890000 0x10000>;
-> > +				interrupts = <GIC_SPI 27
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_UART2_ROOT>,
-> > +					 <&clk IMX8MP_CLK_UART2_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c1: i2c@30a20000 {
-> > +				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30a20000 0x10000>;
-> > +				interrupts = <GIC_SPI 35
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C1_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c2: i2c@30a30000 {
-> > +				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30a30000 0x10000>;
-> > +				interrupts = <GIC_SPI 36
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C2_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c3: i2c@30a40000 {
-> > +				compatible = "fsl,imx8mm-i2c", "fsl,imx21-
-> i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30a40000 0x10000>;
-> > +				interrupts = <GIC_SPI 37
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C3_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c4: i2c@30a50000 {
-> > +				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30a50000 0x10000>;
-> > +				interrupts = <GIC_SPI 38
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C4_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			uart4: serial@30a60000 {
-> > +				compatible = "fsl,imx8mp-uart", "fsl,imx6q-
-> uart";
-> > +				reg = <0x30a60000 0x10000>;
-> > +				interrupts = <GIC_SPI 29
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_UART4_ROOT>,
-> > +					 <&clk IMX8MP_CLK_UART4_ROOT>;
-> > +				clock-names = "ipg", "per";
-> > +				dmas = <&sdma1 28 4 0>, <&sdma1 29 4 0>;
-> > +				dma-names = "rx", "tx";
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c5: i2c@30ad0000 {
-> > +				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30ad0000 0x10000>;
-> > +				interrupts = <GIC_SPI 76
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C5_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			i2c6: i2c@30ae0000 {
-> > +				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
-> > +				reg = <0x30ae0000 0x10000>;
-> > +				interrupts = <GIC_SPI 77
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_I2C6_ROOT>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			usdhc1: mmc@30b40000 {
-> > +				compatible = "fsl,imx8mm-usdhc",
-> "fsl,imx7d-usdhc";
-> 
-> Why would we need two non-imx8mp compatibles here?
+Samuel Holland (9):
+  irqchip/sun6i-r: Switch to a stacked irqchip driver
+  irqchip/sun6i-r: Add wakeup support
+  dt-bindings: irq: Add a compatible for the H3 R_INTC
+  ARM: dts: sunxi: h3/h5: Add r_intc node
+  ARM: dts: sunxi: h3/h5: Move wakeup-capable IRQs to r_intc
+  ARM: dts: sunxi: a83t: Move wakeup-capable IRQs to r_intc
+  arm64: dts: allwinner: a64: Move wakeup-capable IRQs to r_intc
+  arm64: dts: allwinner: h6: Fix indentation of IR node
+  arm64: dts: allwinner: Move wakeup-capable IRQs to r_intc
 
-It is a mistake, will use "fsl,imx8mp-usdhc" in V2.
+ .../allwinner,sun7i-a20-sc-nmi.yaml           |   3 +
+ arch/arm/boot/dts/sun8i-a83t.dtsi             |   9 +-
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi            |  20 +-
+ arch/arm/mach-sunxi/Kconfig                   |   1 +
+ arch/arm64/Kconfig.platforms                  |   1 +
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  11 +-
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  33 ++-
+ drivers/irqchip/Makefile                      |   1 +
+ drivers/irqchip/irq-sun6i-r.c                 | 273 ++++++++++++++++++
+ drivers/irqchip/irq-sunxi-nmi.c               |  26 +-
+ 10 files changed, 329 insertions(+), 49 deletions(-)
+ create mode 100644 drivers/irqchip/irq-sun6i-r.c
 
-> 
-> > +				reg = <0x30b40000 0x10000>;
-> > +				interrupts = <GIC_SPI 22
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_DUMMY>,
-> > +					 <&clk
-> IMX8MP_CLK_NAND_USDHC_BUS>,
-> > +					 <&clk IMX8MP_CLK_USDHC1_ROOT>;
-> > +				clock-names = "ipg", "ahb", "per";
-> > +				fsl,tuning-start-tap = <20>;
-> > +				fsl,tuning-step= <2>;
-> > +				bus-width = <4>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			usdhc2: mmc@30b50000 {
-> > +				compatible = "fsl,imx8mm-usdhc",
-> "fsl,imx7d-usdhc";
-> > +				reg = <0x30b50000 0x10000>;
-> > +				interrupts = <GIC_SPI 23
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_DUMMY>,
-> > +					 <&clk
-> IMX8MP_CLK_NAND_USDHC_BUS>,
-> > +					 <&clk IMX8MP_CLK_USDHC2_ROOT>;
-> > +				clock-names = "ipg", "ahb", "per";
-> > +				fsl,tuning-start-tap = <20>;
-> > +				fsl,tuning-step= <2>;
-> > +				bus-width = <4>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			usdhc3: mmc@30b60000 {
-> > +				compatible = "fsl,imx8mm-usdhc",
-> "fsl,imx7d-usdhc";
-> > +				reg = <0x30b60000 0x10000>;
-> > +				interrupts = <GIC_SPI 24
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_DUMMY>,
-> > +					 <&clk
-> IMX8MP_CLK_NAND_USDHC_BUS>,
-> > +					 <&clk IMX8MP_CLK_USDHC3_ROOT>;
-> > +				clock-names = "ipg", "ahb", "per";
-> > +				fsl,tuning-start-tap = <20>;
-> > +				fsl,tuning-step= <2>;
-> > +				bus-width = <4>;
-> > +				status = "disabled";
-> > +			};
-> > +
-> > +			sdma1: dma-controller@30bd0000 {
-> > +				compatible = "fsl,imx8mp-sdma",
-> "fsl,imx8mq-sdma";
-> > +				reg = <0x30bd0000 0x10000>;
-> > +				interrupts = <GIC_SPI 2
-> IRQ_TYPE_LEVEL_HIGH>;
-> > +				clocks = <&clk IMX8MP_CLK_SDMA1_ROOT>,
-> > +					 <&clk IMX8MP_CLK_SDMA1_ROOT>;
-> > +				clock-names = "ipg", "ahb";
-> > +				#dma-cells = <3>;
-> > +				fsl,sdma-ram-script-name =
-> "imx/sdma/sdma-imx7d.bin";
-> > +			};
-> > +
-> > +			fec: ethernet@30be0000 {
-> > +				compatible = "fsl,imx8mm-fec", "fsl,imx8mq-
-> fec",
-> > +"fsl,imx6sx-fec";
-> 
-> We need only one non-imx8mp fallback compatible to get it probed, right?
+-- 
+2.23.0
 
-It should be "fsl,imx8mp-fec" and followed by "fsl,imx8mq-fec", will fix it in V2.
-
-Thanks,
-Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
