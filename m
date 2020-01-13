@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01729139D5A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:32:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20C71139D5C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:32:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kZeCihkL+3UygJbSyVhQRHgx2mGBdJys7c0ar1C4NFc=; b=ZO8NXTbJYb9XTz
-	NZ/XQc1RqKZ+k0BMzqzP2QTRJFute+HXu9WUi3Wy5lltrKNLGgX5AECSIhWsfvPRuStdd317xYRaU
-	NPXoUeh3Yp9PzqTcRCwJbcrCQyDq0z7NskrTEIupRiN1W50cAYWU2WnKSOvoG4cuEeIJtFz9e8yw+
-	puXyjAqCpRw5pKKG/Oqy4CbuphGWoWGVrWEWiJkTKwItVwVSK0oBT6bAXVPFN+GL4UGx3pOtbaSX6
-	z5Y4HD6W8PAzg+s/WPZOZkePO7IP4+Grng/tmXucC3QLpsxCgEDDHDAzbQHIj51rtCh5mGqYa2h9O
-	MtkZ5SRh7vUzkNHFNbGQ==;
+	List-Owner; bh=xE0xnNnj/M2aiN6ER9RrP+J+leqlYP2ZCvhDx8f8Eyc=; b=SN4paQncLEgFrn
+	Z76m+VUkjdgqPcRzmUJoz5BEpOatWnoqYorbBoMQnCUYPKjf1Qnv4lzBEyBJgu0EKYEDhfVHKhV+T
+	DAbAKOu1A7Ide+4T7p2Px/vaLmQBxSOxTPOAV7A1x0A7pFL/Z+a1PHdHWzolLg6PPeIIsqItwf59C
+	biFFV0qMotWjtFq7bpg3SctX2yjHNzoHspzT/fFeD69x3ZZvrqQ8FV7eaY23kOML3USzayAxFzWkV
+	AbfqvzB7nlr21Y9ASITwtVvWjhzJA/7YXWB6cndLDIZ3Njp++uJk7Dqbzs2N5BgAT6dMUhI3BWBa6
+	xlPxsb581ElWgp0iCvcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir9C0-0006Tj-7A; Mon, 13 Jan 2020 23:32:20 +0000
+	id 1ir9CG-0006iQ-AG; Mon, 13 Jan 2020 23:32:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir9B8-0005rZ-9t
+ id 1ir9B9-0005sf-Du
  for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 23:31:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC5C511B3;
- Mon, 13 Jan 2020 15:31:25 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 04E6F142F;
+ Mon, 13 Jan 2020 15:31:27 -0800 (PST)
 Received: from ewhatever.cambridge.arm.com (ewhatever.cambridge.arm.com
  [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 92F703F68E;
- Mon, 13 Jan 2020 15:31:24 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DF5863F68E;
+ Mon, 13 Jan 2020 15:31:25 -0800 (PST)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 5/7] arm64: ptrace: nofpsimd: Fail FP/SIMD regset operations
-Date: Mon, 13 Jan 2020 23:30:21 +0000
-Message-Id: <20200113233023.928028-6-suzuki.poulose@arm.com>
+Subject: [PATCH v3 6/7] arm64: signal: nofpsimd: Handle fp/simd context for
+ signal frames
+Date: Mon, 13 Jan 2020 23:30:22 +0000
+Message-Id: <20200113233023.928028-7-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200113233023.928028-1-suzuki.poulose@arm.com>
 References: <20200113233023.928028-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_153126_404690_A9870A54 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20200113_153127_541521_A125E72A 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,95 +71,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When fp/simd is not supported on the system, fail the operations
-of FP/SIMD regsets.
+Make sure we try to save/restore the vfp/fpsimd context for signal
+handling only when the fp/simd support is available. Otherwise, skip
+the frames.
 
-Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
 Changes since v2:
-  - Add active hook for fpsimd(AArch64)/vfp(AArch32) regsets
+  - Remove WARN_ON() from static functions already checked for
+    the presence of fpsmid.
 ---
- arch/arm64/kernel/ptrace.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ arch/arm64/kernel/signal.c   | 6 ++++--
+ arch/arm64/kernel/signal32.c | 4 ++--
+ 2 files changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-index 6771c399d40c..cd6e5fa48b9c 100644
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -615,6 +615,13 @@ static int gpr_set(struct task_struct *target, const struct user_regset *regset,
- 	return 0;
- }
+diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+index dd2cdc0d5be2..339882db5a91 100644
+--- a/arch/arm64/kernel/signal.c
++++ b/arch/arm64/kernel/signal.c
+@@ -371,6 +371,8 @@ static int parse_user_sigframe(struct user_ctxs *user,
+ 			goto done;
  
-+static int fpr_active(struct task_struct *target, const struct user_regset *regset)
-+{
-+	if (!system_supports_fpsimd())
-+		return -ENODEV;
-+	return regset->n;
-+}
-+
- /*
-  * TODO: update fp accessors for lazy context switching (sync/flush hwstate)
-  */
-@@ -637,6 +644,9 @@ static int fpr_get(struct task_struct *target, const struct user_regset *regset,
- 		   unsigned int pos, unsigned int count,
- 		   void *kbuf, void __user *ubuf)
- {
-+	if (!system_supports_fpsimd())
-+		return -EINVAL;
-+
- 	if (target == current)
- 		fpsimd_preserve_current_state();
+ 		case FPSIMD_MAGIC:
++			if (!system_supports_fpsimd())
++				goto invalid;
+ 			if (user->fpsimd)
+ 				goto invalid;
  
-@@ -676,6 +686,9 @@ static int fpr_set(struct task_struct *target, const struct user_regset *regset,
- {
- 	int ret;
+@@ -506,7 +508,7 @@ static int restore_sigframe(struct pt_regs *regs,
+ 	if (err == 0)
+ 		err = parse_user_sigframe(&user, sf);
  
-+	if (!system_supports_fpsimd())
-+		return -EINVAL;
-+
- 	ret = __fpr_set(target, regset, pos, count, kbuf, ubuf, 0);
- 	if (ret)
- 		return ret;
-@@ -1134,6 +1147,7 @@ static const struct user_regset aarch64_regsets[] = {
- 		 */
- 		.size = sizeof(u32),
- 		.align = sizeof(u32),
-+		.active = fpr_active,
- 		.get = fpr_get,
- 		.set = fpr_set
- 	},
-@@ -1348,6 +1362,9 @@ static int compat_vfp_get(struct task_struct *target,
- 	compat_ulong_t fpscr;
- 	int ret, vregs_end_pos;
+-	if (err == 0) {
++	if (err == 0 && system_supports_fpsimd()) {
+ 		if (!user.fpsimd)
+ 			return -EINVAL;
  
-+	if (!system_supports_fpsimd())
-+		return -EINVAL;
-+
- 	uregs = &target->thread.uw.fpsimd_state;
+@@ -623,7 +625,7 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
  
- 	if (target == current)
-@@ -1381,6 +1398,9 @@ static int compat_vfp_set(struct task_struct *target,
- 	compat_ulong_t fpscr;
- 	int ret, vregs_end_pos;
+ 	err |= __copy_to_user(&sf->uc.uc_sigmask, set, sizeof(*set));
  
-+	if (!system_supports_fpsimd())
-+		return -EINVAL;
-+
- 	uregs = &target->thread.uw.fpsimd_state;
+-	if (err == 0) {
++	if (err == 0 && system_supports_fpsimd()) {
+ 		struct fpsimd_context __user *fpsimd_ctx =
+ 			apply_user_offset(user, user->fpsimd_offset);
+ 		err |= preserve_fpsimd_context(fpsimd_ctx);
+diff --git a/arch/arm64/kernel/signal32.c b/arch/arm64/kernel/signal32.c
+index 12a585386c2f..82feca6f7052 100644
+--- a/arch/arm64/kernel/signal32.c
++++ b/arch/arm64/kernel/signal32.c
+@@ -223,7 +223,7 @@ static int compat_restore_sigframe(struct pt_regs *regs,
+ 	err |= !valid_user_regs(&regs->user_regs, current);
  
- 	vregs_end_pos = VFP_STATE_SIZE - sizeof(compat_ulong_t);
-@@ -1438,6 +1458,7 @@ static const struct user_regset aarch32_regsets[] = {
- 		.n = VFP_STATE_SIZE / sizeof(compat_ulong_t),
- 		.size = sizeof(compat_ulong_t),
- 		.align = sizeof(compat_ulong_t),
-+		.active = fpr_active,
- 		.get = compat_vfp_get,
- 		.set = compat_vfp_set
- 	},
+ 	aux = (struct compat_aux_sigframe __user *) sf->uc.uc_regspace;
+-	if (err == 0)
++	if (err == 0 && system_supports_fpsimd())
+ 		err |= compat_restore_vfp_context(&aux->vfp);
+ 
+ 	return err;
+@@ -419,7 +419,7 @@ static int compat_setup_sigframe(struct compat_sigframe __user *sf,
+ 
+ 	aux = (struct compat_aux_sigframe __user *) sf->uc.uc_regspace;
+ 
+-	if (err == 0)
++	if (err == 0 && system_supports_fpsimd())
+ 		err |= compat_preserve_vfp_context(&aux->vfp);
+ 	__put_user_error(0, &aux->end_magic, err);
+ 
 -- 
 2.24.1
 
