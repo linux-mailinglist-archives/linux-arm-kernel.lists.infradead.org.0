@@ -2,48 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61FB61394C5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 16:27:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CBD8139518
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 16:44:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2H8KzGDGClG/0xsH9OWEDPwHjaGbcEm5F5yinFAxTSA=; b=Iah+z6asln21fn
-	5ZkRMhv3X0VIs8b8eDQJSCAc7In2XPXlQLhU5/qg9RQumR/Se1+ak5QLHw9zUDvp9cYRtOsj/PlYd
-	lAYAv2w70sZePE7VFTID6FHFwXyiKnaUwZuvsJ82KsKQEnZfbsL6DxDpmHJzBlKzFOPRk6nnzR0xi
-	ueQIrixZc6BhP58athvEV7muyChGz87ou+qrDGz7B9n1eqBkuhA3j0z5M0qrFYn4SaHHvDS2+S6P4
-	NbG6t4MMvL8L9q8VhIFd9c10y7Mf/DS3d9WcpzQ8Wjs0hixsbxde0OomoLrV05ntI3vei7u/1uqzV
-	PQys2Vj8NEA7IK0sy1aQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hf5ujH3As547Y1WKlqU0q4D08MSuUtzwNK40UP5pAcg=; b=fcCnJCSQpGcMOm
+	/ZCFSnyvB+pjCsVEJKyXAdMBGTo5cstRl2IOH9hUJPe/IJOMRE2hH5IoH4Zp4O9a/XDFFVm9EZLN2
+	Qs2Pq85JLuDBljU1kifbIQaPdfaP+izOKWPny4KoYNywMq7ZEC0IfqwN04VQ7Hn8md6IZppNSRhBF
+	sykTZKRmLkn4OZiTeNcyY1US7gTa2TXsxp06SbOcCZd9SswDnyvHiZ5BO6TNQKszni0MkniyETINf
+	sixvb0550KQMARRBZXzmuxz3AoUjgF+8bCPhHHNs1X+3AdTx669n8fG1VSW7rr/Uf0UoqHKw9vDsz
+	VVY6aBDXpycrkryQeVbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir1cc-0002XK-RO; Mon, 13 Jan 2020 15:27:18 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir1cU-0002Wj-OO; Mon, 13 Jan 2020 15:27:12 +0000
-Received: from wf0253.dip.tu-dresden.de ([141.76.180.253] helo=phil.sntech)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ir1cQ-0003Zh-SO; Mon, 13 Jan 2020 16:27:06 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH] clk: rockchip: convert rk3036 pll type to use internal lock
- status
-Date: Mon, 13 Jan 2020 16:26:56 +0100
-Message-Id: <20200113152656.2313846-1-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.1
+	id 1ir1t8-0000uG-25; Mon, 13 Jan 2020 15:44:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ir1sy-0000tb-Il
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 15:44:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17EF611B3;
+ Mon, 13 Jan 2020 07:44:10 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8057F3F68E;
+ Mon, 13 Jan 2020 07:44:08 -0800 (PST)
+Date: Mon, 13 Jan 2020 15:44:04 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH 01/17] arm64: entry: mark all entry code as notrace
+Message-ID: <20200113154259.GA17782@lakrids.cambridge.arm.com>
+References: <20200108185634.1163-1-mark.rutland@arm.com>
+ <20200108185634.1163-2-mark.rutland@arm.com>
+ <6ac3017e-07cb-8ef4-c2e9-22a6fc8d8e24@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <6ac3017e-07cb-8ef4-c2e9-22a6fc8d8e24@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_072710_963680_093DA0E4 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20200113_074412_666963_5A887391 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,84 +65,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, sboyd@kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, mturquette@baylibre.com,
- zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: keescook@chromium.org, maz@kernel.org, robin.murphy@arm.com,
+ broonie@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ catalin.marinas@arm.com, labbott@redhat.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, alex.popov@linux.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+On Thu, Jan 09, 2020 at 10:51:10AM +0530, Anshuman Khandual wrote:
+> 
+> 
+> On 01/09/2020 12:26 AM, Mark Rutland wrote:
+> > Almost all functions in entry-common.c are marked notrace, with
+> > el1_undef and el1_inv being the only exceptions. We appear to have done
+> > this on the assumption that there were no exception registers that we
+> > needed to snapshot, and thus it was safe to run trace code that might
+> > result in further exceptions and clobber those registers.
+> > 
+> > However, until we inherit the DAIF flags, our irq flag tracing is stale,
+> > and this discrepancy could set off warnings in some configurations.
+> 
+> Could you give some example scenarios when this might happen ?
 
-The rk3036 pll type exposes its lock status in both its pllcon registers
-as well as the General Register Files. To remove one dependency convert
-it to the "internal" lock status, similar to how rk3399 handles it.
+With CONFIG_DEBUG_LOCKDEP, any locked-instrumented function which calls
+check_flags() would trigger this. So if your trace function does any
+sort of lock manipulation it's liable to set this off.
 
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
- drivers/clk/rockchip/clk-pll.c | 24 +++++++++++++++++++++---
- 1 file changed, 21 insertions(+), 3 deletions(-)
+I'll amend the above:
 
-diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-index 198417d56300..37378ded0993 100644
---- a/drivers/clk/rockchip/clk-pll.c
-+++ b/drivers/clk/rockchip/clk-pll.c
-@@ -118,12 +118,30 @@ static int rockchip_pll_wait_lock(struct rockchip_clk_pll *pll)
- #define RK3036_PLLCON1_REFDIV_SHIFT		0
- #define RK3036_PLLCON1_POSTDIV2_MASK		0x7
- #define RK3036_PLLCON1_POSTDIV2_SHIFT		6
-+#define RK3036_PLLCON1_LOCK_STATUS		BIT(10)
- #define RK3036_PLLCON1_DSMPD_MASK		0x1
- #define RK3036_PLLCON1_DSMPD_SHIFT		12
-+#define RK3036_PLLCON1_PWRDOWN			BIT(13)
- #define RK3036_PLLCON2_FRAC_MASK		0xffffff
- #define RK3036_PLLCON2_FRAC_SHIFT		0
- 
--#define RK3036_PLLCON1_PWRDOWN			(1 << 13)
-+static int rockchip_rk3036_pll_wait_lock(struct rockchip_clk_pll *pll)
-+{
-+	u32 pllcon;
-+	int delay = 24000000;
-+
-+	/* poll check the lock status in rk3399 xPLLCON2 */
-+	while (delay > 0) {
-+		pllcon = readl_relaxed(pll->reg_base + RK3036_PLLCON(1));
-+		if (pllcon & RK3036_PLLCON1_LOCK_STATUS)
-+			return 0;
-+
-+		delay--;
-+	}
-+
-+	pr_err("%s: timeout waiting for pll to lock\n", __func__);
-+	return -ETIMEDOUT;
-+}
- 
- static void rockchip_rk3036_pll_get_params(struct rockchip_clk_pll *pll,
- 					struct rockchip_pll_rate_table *rate)
-@@ -221,7 +239,7 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
- 	writel_relaxed(pllcon, pll->reg_base + RK3036_PLLCON(2));
- 
- 	/* wait for the pll to lock */
--	ret = rockchip_pll_wait_lock(pll);
-+	ret = rockchip_rk3036_pll_wait_lock(pll);
- 	if (ret) {
- 		pr_warn("%s: pll update unsuccessful, trying to restore old params\n",
- 			__func__);
-@@ -260,7 +278,7 @@ static int rockchip_rk3036_pll_enable(struct clk_hw *hw)
- 
- 	writel(HIWORD_UPDATE(0, RK3036_PLLCON1_PWRDOWN, 0),
- 	       pll->reg_base + RK3036_PLLCON(1));
--	rockchip_pll_wait_lock(pll);
-+	rockchip_rk3036_pll_wait_lock(pll);
- 
- 	return 0;
- }
--- 
-2.24.1
+| However, until we inherit the DAIF flags, our irq flag tracing is
+| stale, and this discrepancy could set off warnings in some
+| configurations (e.g. with CONFIG_DEBUG_LOCKDEP).
 
+I also hope that flag checking is performed more generally in future,
+since at the moment it's only strictly performed for locking operations.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
