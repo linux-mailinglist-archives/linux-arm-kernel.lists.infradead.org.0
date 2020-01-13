@@ -2,71 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14705139C14
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 23:02:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28617139C47
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 23:16:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ixnq7aqQ2np+3/rw2lTUHNGqMRzFuwnwahPVGkG3jxw=; b=LhCrEzolzb4o9j
-	823KM7YnQGqAcOjGM88xT/LJgfJBRNPa/JsZRQaQ+x8HocIhy2qAXbhAh+4VPGACnoYvI6jktBF4X
-	t/NG19GiRwMH1b2XqWcsqJwAB2wByRmkuPl9tVDviDAgBKxtefpzCHEZqg+1O9cBNYzDjm+rYiI6r
-	FI5q/TOeFzcduoh3hSbsL8BvudwLbiovTpr8V0Sqg0v7UfqWcWm9xPpS6v4xR3aJ0Dv67GaEHlqEu
-	awjC3KEjYXcqADf3vVxQod0DQAiOoLTRKlfxxH1kJucz8PVNQfl+LO8fTe2RbOVY3Q6ifaZFDKmDV
-	vdPdgUl9jSaaLJbvgfoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DmCMtpPVjIzGb9Ijfq62QUvy7X6UcIUsrAte66Qlp6Y=; b=fOB7QrnL2p7wtrFE3isL7nlPd
+	o9Cy07Sz2svBa7eYzA/5NxX++W/Ofuolp3HlC4Bj37iC742ZLQsBvgSEfnaOU5/d3gpsbwY+XE1WW
+	zd+ZAANAzTzc8V/va3MjfSW/qwxnQGaA2/fTWJlVp9nUUECPw/wXp7bAQEjKTjwcsdha0uK9uSXBo
+	Z8CoRiG9KBe7fVJpBo2jIPHoHxx3L9D/QkW+hKsOLbLhtVKO4ltL1mlu6Ai/8W+ViDH9+EpTSEf2x
+	zIp+Y1J5AM5USm0Zh6vwUFBYLwV+r/sTLwzSKs87pA3oLt8+rGKU6aalOcGU2RLcKRH+D/i7LHv3B
+	KZMc0byuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir7mx-0003NH-8a; Mon, 13 Jan 2020 22:02:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir7mp-0003Mj-34
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 22:02:16 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D42022072B;
- Mon, 13 Jan 2020 22:02:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578952934;
- bh=OgKDay9p8f2ObZyGcicQ+gy/7tCHu46EYwzbBIFy4Bw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=pHT5bBh0iez8IKcr+GlyuKn5q/SAP7pNTjWGjKMvkbXrd1UI/wSmspGEACN7yYH+I
- /1/yBtWWtpU2t/cc18f2m4bbAs+Isbe3BZKwPYV8SnxhrkdWXoRJX+Oftin0kAmLtO
- +Wkfw8ev1pXrvi9Or7YvB4Zb1BizyIiaKPqXo3EY=
-Date: Mon, 13 Jan 2020 22:02:08 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Olivier MOYSAN <olivier.moysan@st.com>
-Subject: Re: [PATCH v2] iio: adc: stm32-dfsdm: adapt sampling rate to
- oversampling ratio
-Message-ID: <20200113220208.6471ba42@archlinux>
-In-Reply-To: <9b7e2161-1a31-8d69-52f9-ae9dedc902e3@st.com>
-References: <20191127131008.18896-1-olivier.moysan@st.com>
- <9b7e2161-1a31-8d69-52f9-ae9dedc902e3@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+	id 1ir7zz-0001ZS-Cf; Mon, 13 Jan 2020 22:15:51 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ir7zn-0001W3-MI; Mon, 13 Jan 2020 22:15:41 +0000
+Received: from localhost (p54B332D5.dip0.t-ipconnect.de [84.179.50.213])
+ by pokefinder.org (Postfix) with ESMTPSA id 2B8B32C06DA;
+ Mon, 13 Jan 2020 23:15:33 +0100 (CET)
+Date: Mon, 13 Jan 2020 23:15:32 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH] i2c: meson: implement the master_xfer_atomic callback
+Message-ID: <20200113221532.GC2689@ninjato>
+References: <20200107232901.891177-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
+In-Reply-To: <20200107232901.891177-1-martin.blumenstingl@googlemail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_140215_175410_11F4E7B2 
-X-CRM114-Status: GOOD (  17.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200113_141539_880243_91B8F0AD 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,115 +58,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "lars@metafoo.de" <lars@metafoo.de>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "knaack.h@gmx.de" <knaack.h@gmx.de>, Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: narmstrong@baylibre.com, khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ b.galvani@gmail.com, jian.hu@amlogic.com, linux-i2c@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7845711142637825660=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 10:06:13 +0000
-Olivier MOYSAN <olivier.moysan@st.com> wrote:
 
-> Hi Jonathan, all,
-> 
-> Kind reminder on this patch.
-Thanks!
-
-Applied to the togreg branch of iio.git and pushed out of testing
-to give the build bots a brief period to poke at it.
-
-Sorry again for the delay
-
-Thanks,
-
-Jonathan
+--===============7845711142637825660==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="+xNpyl7Qekk2NvDX"
+Content-Disposition: inline
 
 
-> Regards
-> Olivier
-> 
-> On 11/27/19 2:10 PM, Olivier Moysan wrote:
-> > Update sampling rate when oversampling ratio is changed
-> > through the IIO ABI.
-> >
-> > Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> > ---
-> > changes in version 2:
-> > - correct title
-> > ---
-> >   drivers/iio/adc/stm32-dfsdm-adc.c | 32 ++++++++++++++++++-------------
-> >   1 file changed, 19 insertions(+), 13 deletions(-)
-> >
-> > diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-> > index 0339ecdd06bd..87a842507509 100644
-> > --- a/drivers/iio/adc/stm32-dfsdm-adc.c
-> > +++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-> > @@ -1221,14 +1221,32 @@ static int stm32_dfsdm_write_raw(struct iio_dev *indio_dev,
-> >   	unsigned int spi_freq;
-> >   	int ret = -EINVAL;
-> >   
-> > +	switch (ch->src) {
-> > +	case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL:
-> > +		spi_freq = adc->dfsdm->spi_master_freq;
-> > +		break;
-> > +	case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL_DIV2_FALLING:
-> > +	case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL_DIV2_RISING:
-> > +		spi_freq = adc->dfsdm->spi_master_freq / 2;
-> > +		break;
-> > +	default:
-> > +		spi_freq = adc->spi_freq;
-> > +	}
-> > +
-> >   	switch (mask) {
-> >   	case IIO_CHAN_INFO_OVERSAMPLING_RATIO:
-> >   		ret = iio_device_claim_direct_mode(indio_dev);
-> >   		if (ret)
-> >   			return ret;
-> > +
-> >   		ret = stm32_dfsdm_compute_all_osrs(indio_dev, val);
-> > -		if (!ret)
-> > +		if (!ret) {
-> > +			dev_dbg(&indio_dev->dev,
-> > +				"Sampling rate changed from (%u) to (%u)\n",
-> > +				adc->sample_freq, spi_freq / val);
-> >   			adc->oversamp = val;
-> > +			adc->sample_freq = spi_freq / val;
-> > +		}
-> >   		iio_device_release_direct_mode(indio_dev);
-> >   		return ret;
-> >   
-> > @@ -1240,18 +1258,6 @@ static int stm32_dfsdm_write_raw(struct iio_dev *indio_dev,
-> >   		if (ret)
-> >   			return ret;
-> >   
-> > -		switch (ch->src) {
-> > -		case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL:
-> > -			spi_freq = adc->dfsdm->spi_master_freq;
-> > -			break;
-> > -		case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL_DIV2_FALLING:
-> > -		case DFSDM_CHANNEL_SPI_CLOCK_INTERNAL_DIV2_RISING:
-> > -			spi_freq = adc->dfsdm->spi_master_freq / 2;
-> > -			break;
-> > -		default:
-> > -			spi_freq = adc->spi_freq;
-> > -		}
-> > -
-> >   		ret = dfsdm_adc_set_samp_freq(indio_dev, val, spi_freq);
-> >   		iio_device_release_direct_mode(indio_dev);
-> >   		return ret;  
+--+xNpyl7Qekk2NvDX
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Wed, Jan 08, 2020 at 12:29:01AM +0100, Martin Blumenstingl wrote:
+> Boards with some of the 32-bit SoCs (mostly Meson8 and Meson8m2) use a
+> Ricoh RN5T618 PMU which acts as system power controller. The driver for
+> the system power controller may need to the I2C bus just before shutting
+> down or rebooting the system. At this stage the interrupts may be
+> disabled already.
+>=20
+> Implement the master_xfer_atomic callback so the driver for the RN5T618
+> PMU can communicate properly with the PMU when shutting down or
+> rebooting the board. The CTRL register has a status bit which can be
+> polled to determine when processing has completed. According to the
+> public S805 datasheet the value 0 means "idle" and 1 means "running".
+>=20
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+Applied to for-next, thanks!
+
+
+--+xNpyl7Qekk2NvDX
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4c7AQACgkQFA3kzBSg
+KbbuRRAAnOvYecXtAAQlFI9kpCVUGmLW8USmChX+JFEbpguc3uyPI0jnz7hPjLsx
+664PGVOPwfaMIfcClLCVM8abtgjyUpbX4AmLrM0mGq5xgYATUCnV85hjcqXIvEKM
+ecfAR522mRm3ZVSUEJO5UPzwjDY1QxON7BEgY6iRa9F4wLEAXdV3MYXBLkMKK7YR
+IvX92X/SX30jqLIYfihH1T/5Livk08f3M70GQH8Ngcr1HMK5clSyrVxp2mT4L4o+
+Y9RoB7hdhEv96O+oaEfXmeGowe5co+d2JGTbCPT9/Fuo0Curv+ScNbKMrf8dMqW2
++/Qz1EQDsIGd4uh1w/DMmFHslQcVYX3lfKLZASk0rcPs1ofoja5uXEzKvTTCrsgI
+GImOvyV9hxSFEbpL5ZUY8PHIplRsqpRnMOpeXiK6xmPTQPAE1Tk2eng2uCuvJk1V
+0EhFNVHR3pNMw966d+kw+oFOC3hFSR+s4rw7CiOpOI/Cgl6AhLCvrqpqWRF4asfX
+DvuqSGCH2Z5Li9xuFJHU5kLR8MLX5Y6yeVOPMFCgqhBr22cV5JInznSODpg56WjH
+V7kmPJOm3HIwgk93ZySC7g5eCOX/h14xK7EWRM42cxv8otcmJfJ85YRxSKAfKjYV
+ptAxuxClf+v9HsFRGD4ZSMb00igmwTiW9y/E0TiMw4Q01tUtYWY=
+=pX3/
+-----END PGP SIGNATURE-----
+
+--+xNpyl7Qekk2NvDX--
+
+
+--===============7845711142637825660==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7845711142637825660==--
+
