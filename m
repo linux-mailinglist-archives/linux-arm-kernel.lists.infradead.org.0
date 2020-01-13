@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4476B139BED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:54:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 037F6139BEF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:54:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zABd/LVdF6DlHnUe6WkjWPvHpvcFv4/r4L6IquQpc10=; b=P4AFKsZ3QMYfNC
-	0e888g33+Qr3OkxLFwxrsgOG22tF3unh8ymzYZd0by3gxIPx52b3+Q7iLLK05saQsBDpzpq9AoZ+5
-	m27cvoCTDqtVjNcVCHvYmf9pQdIqdN2KM0iFEUyvUJ1S+AcNP9OrMY6TfhjevmuxDyZHJn3OJ8HIg
-	4UwS3xqzmpZPyyO86znJ0+J/7YCoEil4Sc6epZvl82DDQuBLwtIhSJ+NszaN7TXQuyal4K7bpJ9qJ
-	o7Mn/p/w96ouAKno2TFOeyUyfGDwAfxGAOcurKRTVdfjjyt7JX1RWuKJX9N62IVYTShrtj7r3tgIw
-	msieOhod3CKIfkLuypNQ==;
+	List-Owner; bh=8Br+5zsXusIpIv+FvoM90SUDm7SoJxup94dmS2faobo=; b=Wv2fnMqIrFf8GF
+	jLLlX4pu+pYstJNu9FAMyeLVnxcdRawBsbyK9hetp0ZlQKG6t6cUzQ6eqe/tr0RJ05V+QiiHcxN2j
+	5vQF5aaBz4nocfr/mX590XTtjK3u/Dx7aDWQA98wEVG4U4gTMe1MCBDjzez5mfs6PPcnIB93ATzyz
+	Jlm8SHquZ9hWRMRlL8N5wRIKoPZndiENXQXDrAxSLX6M6sNlWabfYrhUPcNG5qjzLKKnVeZZo5FEo
+	f9e04bpzUsncegPncLH1kNfgDhXJsudfcJQTqbpUlOxVbV1UjyD3IN5F7hAAAR4hm9506Q8obCgQb
+	BMJEgPLsB/N3CD2GS8LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir7el-0007Yg-NY; Mon, 13 Jan 2020 21:53:55 +0000
+	id 1ir7f1-0007gi-ND; Mon, 13 Jan 2020 21:54:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir7ee-0007Xv-8B
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:53:49 +0000
+ id 1ir7ef-0007YJ-Up
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:53:51 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B6F421569;
- Mon, 13 Jan 2020 21:53:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2458C2072B;
+ Mon, 13 Jan 2020 21:53:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578952426;
- bh=GFQnshSETvbEDlF28EvtV4bdghDNPLN8w00/hc4Yl58=;
+ s=default; t=1578952429;
+ bh=E5M2fwsexzUeGxorU/uMyVyYctBbqMbYqkbEB3PIMgQ=;
  h=Subject:To:Cc:From:Date:From;
- b=qGKcSKdrhtSzWloCfNau0/CXM0OlfrOi/+HMEtV+qruOQ/GcCyHE1utUH70Qc8BEx
- GqqYoyzemegv+TSbJ2Bsfy7ZH1jkzkHQJ4q+vL9nRe615b7g9KmRNFdVjvcKg2nsmZ
- KalVwNtM8clcMfkaaGipfn2g+pgF6NhbRcnrU2VI=
-Subject: Patch "arm64: Implement copy_thread_tls" has been added to the
- 5.4-stable tree
-To: 20200102172413.654385-3-amanieu@gmail.com, amanieu@gmail.com,
+ b=TYgpI+4W6+nIP85N3UR06DVDEj/vsFNSIFFWCo6ACaK4ms+/wFooq38sd98aY8cYm
+ NR/18Hrnq+ilY6PaM7WQfy94oywP0AhL7tkrrLDWw/+fvCSMniikTslo/buLvrunA/
+ meT4AcYQLBCHAv/6gek+piyOYaBIL0cMpq4wVXpc=
+Subject: Patch "arm64: Move __ARCH_WANT_SYS_CLONE3 definition to uapi headers"
+ has been added to the 5.4-stable tree
+To: 20200102172413.654385-2-amanieu@gmail.com, amanieu@gmail.com, arnd@arndb.de,
  christian.brauner@ubuntu.com, gregkh@linuxfoundation.org,
- linux-arm-kernel@lists.infradead.org, will@kernel.org
+ linux-arm-kernel@lists.infradead.org
 From: <gregkh@linuxfoundation.org>
 Date: Mon, 13 Jan 2020 22:53:35 +0100
-Message-ID: <1578952415233140@kroah.com>
+Message-ID: <157895241534163@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_135348_332385_FA76F687 
-X-CRM114-Status: GOOD (  13.54  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200113_135350_009246_D9D0E9AB 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,82 +84,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 This is a note to let you know that I've just added the patch titled
 
-    arm64: Implement copy_thread_tls
+    arm64: Move __ARCH_WANT_SYS_CLONE3 definition to uapi headers
 
 to the 5.4-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
-     arm64-implement-copy_thread_tls.patch
+     arm64-move-__arch_want_sys_clone3-definition-to-uapi-headers.patch
 and it can be found in the queue-5.4 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
 
 
-From a4376f2fbcc8084832f2f114577c8d68234c7903 Mon Sep 17 00:00:00 2001
+From 3e3c8ca5a351350031f0f3d5ecedf7048b1b9008 Mon Sep 17 00:00:00 2001
 From: Amanieu d'Antras <amanieu@gmail.com>
-Date: Thu, 2 Jan 2020 18:24:08 +0100
-Subject: arm64: Implement copy_thread_tls
+Date: Thu, 2 Jan 2020 18:24:07 +0100
+Subject: arm64: Move __ARCH_WANT_SYS_CLONE3 definition to uapi headers
 
 From: Amanieu d'Antras <amanieu@gmail.com>
 
-commit a4376f2fbcc8084832f2f114577c8d68234c7903 upstream.
+commit 3e3c8ca5a351350031f0f3d5ecedf7048b1b9008 upstream.
 
-This is required for clone3 which passes the TLS value through a
-struct rather than a register.
+Previously this was only defined in the internal headers which
+resulted in __NR_clone3 not being defined in the user headers.
 
 Signed-off-by: Amanieu d'Antras <amanieu@gmail.com>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: <stable@vger.kernel.org> # 5.3.x
-Acked-by: Will Deacon <will@kernel.org>
-Link: https://lore.kernel.org/r/20200102172413.654385-3-amanieu@gmail.com
+Reviewed-by: Arnd Bergmann <arnd@arndb.de>
+Link: https://lore.kernel.org/r/20200102172413.654385-2-amanieu@gmail.com
 Signed-off-by: Christian Brauner <christian.brauner@ubuntu.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 ---
- arch/arm64/Kconfig          |    1 +
- arch/arm64/kernel/process.c |   10 +++++-----
- 2 files changed, 6 insertions(+), 5 deletions(-)
+ arch/arm64/include/asm/unistd.h      |    1 -
+ arch/arm64/include/uapi/asm/unistd.h |    1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -139,6 +139,7 @@ config ARM64
- 	select HAVE_CMPXCHG_DOUBLE
- 	select HAVE_CMPXCHG_LOCAL
- 	select HAVE_CONTEXT_TRACKING
-+	select HAVE_COPY_THREAD_TLS
- 	select HAVE_DEBUG_BUGVERBOSE
- 	select HAVE_DEBUG_KMEMLEAK
- 	select HAVE_DMA_CONTIGUOUS
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -360,8 +360,8 @@ int arch_dup_task_struct(struct task_str
+--- a/arch/arm64/include/asm/unistd.h
++++ b/arch/arm64/include/asm/unistd.h
+@@ -42,7 +42,6 @@
+ #endif
  
- asmlinkage void ret_from_fork(void) asm("ret_from_fork");
+ #define __ARCH_WANT_SYS_CLONE
+-#define __ARCH_WANT_SYS_CLONE3
  
--int copy_thread(unsigned long clone_flags, unsigned long stack_start,
--		unsigned long stk_sz, struct task_struct *p)
-+int copy_thread_tls(unsigned long clone_flags, unsigned long stack_start,
-+		unsigned long stk_sz, struct task_struct *p, unsigned long tls)
- {
- 	struct pt_regs *childregs = task_pt_regs(p);
+ #ifndef __COMPAT_SYSCALL_NR
+ #include <uapi/asm/unistd.h>
+--- a/arch/arm64/include/uapi/asm/unistd.h
++++ b/arch/arm64/include/uapi/asm/unistd.h
+@@ -19,5 +19,6 @@
+ #define __ARCH_WANT_NEW_STAT
+ #define __ARCH_WANT_SET_GET_RLIMIT
+ #define __ARCH_WANT_TIME32_SYSCALLS
++#define __ARCH_WANT_SYS_CLONE3
  
-@@ -394,11 +394,11 @@ int copy_thread(unsigned long clone_flag
- 		}
- 
- 		/*
--		 * If a TLS pointer was passed to clone (4th argument), use it
--		 * for the new thread.
-+		 * If a TLS pointer was passed to clone, use it for the new
-+		 * thread.
- 		 */
- 		if (clone_flags & CLONE_SETTLS)
--			p->thread.uw.tp_value = childregs->regs[3];
-+			p->thread.uw.tp_value = tls;
- 	} else {
- 		memset(childregs, 0, sizeof(struct pt_regs));
- 		childregs->pstate = PSR_MODE_EL1h;
+ #include <asm-generic/unistd.h>
 
 
 Patches currently in stable-queue which might be from amanieu@gmail.com are
