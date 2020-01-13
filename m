@@ -2,74 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAD921392F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 15:01:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BCA9139320
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 15:07:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kuk43yIXtu6MKVIJQjVakvJp9ZYNAegxNxptV+p2w2M=; b=OEfY4N/58bbv7mVvmJKeRu4CO
-	+DktC3BnnkYEa+gvJ1a9+E1fC334iIP7fAcnyUACQMwI0AUloI+vsQN4yA+D/OLzFOAonL+b9ccmG
-	RgRuSRqQq4j9cRPVFxXD12MjmnjOLE5Zc21/ulk5hGgvP5mKkYRpB1B3B5oN/u+RHTCv7DPhl9Bru
-	zQua+lh0P05JC3aaCP9u7rtfQsEG+EYSuRkOzXfXwMs01WkCtxQX3mx3asiopB8Xo5xzeEvV09rFR
-	TD/BpCeVnFqzc0E2SusJshvTTR/ENO8AWv19IMWFYoP45kihHOKAkA6S31T/7j8KF+l1u0UdPf0bW
-	n/DabSUSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5GQaMVC0tmzUcDj/59JwZu8RhKGnVR7RoRVjEEXCFvE=; b=GHhu4RZRbmr8Gq
+	7rAeTlLZHhjxbtZWA/EnEGeK3GDHsBqnaOP3zth0j4L5w59Tr0BoyUFSlwgA8CpSddQA1jEbr5uXv
+	Asry9/H7cSywsPpggM2FjvnJCjiDlOo86y92imGtQDu2z1jI0dKIelqjLfDVTJZrpg6nBBnNaCdSF
+	OLo8p6dqHz3DbZypDvXC6oEq0KLmldpG6GgcD9lpVvnhjI862Cy4Snu7MKNWBW/RmMx3PWX3NSgrk
+	kdvNpQM5TJoCiv+2VfyzMWX89nmuhYqntCBK9Up+US8cyBKCw5yhhjdWxROY8JNz9STQSAeX1KT7C
+	uaZpqkBUHXLq25tB0lIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir0HO-0005GR-JM; Mon, 13 Jan 2020 14:01:18 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir0HE-0005FA-Ky
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 14:01:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=MBncayY8JFbtWZipBvPDMpyU9p9lUG4BGjNxMb/pcj4=; b=L8AzG+iRGAic/smvC6OcGFDiI
- wf4bKJgdZRGQY0F0T1pYeEmOyUHR0QsUFTyTn4T0MZXTqNHgTXuCpQzeaOl5f3X/oKB55S80PtuWq
- idAwjgI4bRtlFV0S8Usye1ny16RDeXmKz2NFF1Q2sTC9LT74MHp+y+npRu/duB3bba5X4=;
-Received: from fw-tnat-cam7.arm.com ([217.140.106.55]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1ir0Gy-0002c0-UE; Mon, 13 Jan 2020 14:00:52 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 16F67D01965; Mon, 13 Jan 2020 14:00:52 +0000 (GMT)
-Date: Mon, 13 Jan 2020 14:00:51 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v4 04/12] arm64: Basic Branch Target Identification support
-Message-ID: <20200113140051.GI3897@sirena.org.uk>
-References: <20191211154206.46260-1-broonie@kernel.org>
- <20191211154206.46260-5-broonie@kernel.org>
- <20200110182800.GI8786@arrakis.emea.arm.com>
+	id 1ir0Nd-0007do-95; Mon, 13 Jan 2020 14:07:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ir0NV-0007cA-3h
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 14:07:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 612991045;
+ Mon, 13 Jan 2020 06:07:35 -0800 (PST)
+Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8DA933F68E;
+ Mon, 13 Jan 2020 06:07:34 -0800 (PST)
+Subject: Re: [kvm-unit-tests PATCH] arm: expand the timer tests
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+To: =?UTF-8?Q?Alex_Benn=c3=a9e?= <alex.bennee@linaro.org>, pbonzini@redhat.com
+References: <20200110160511.17821-1-alex.bennee@linaro.org>
+ <8455cdf6-e5c3-bd84-5b85-33ffad581d0e@arm.com>
+Message-ID: <7be15e14-78c7-788f-7a9c-08e80bdb5600@arm.com>
+Date: Mon, 13 Jan 2020 14:07:33 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200110182800.GI8786@arrakis.emea.arm.com>
-X-Cookie: Programming is an unnatural act.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <8455cdf6-e5c3-bd84-5b85-33ffad581d0e@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_060108_695208_F9059030 
-X-CRM114-Status: GOOD (  15.77  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200113_060737_201528_5D5A6E9F 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,103 +65,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
- Sudakshina Das <sudi.das@arm.com>
-Content-Type: multipart/mixed; boundary="===============8660508429306946478=="
+Cc: linux-arm-kernel@lists.infradead.org, maz@kernel.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 1/13/20 1:48 PM, Alexandru Elisei wrote:
+> [..]
+>> +	isb();
+>> +	report(!gic_timer_pending(info), "not pending before UINT64_MAX (irqs on)");
+> This check can be improved. You want to check the timer CTL.ISTATUS here, not the
+> gic. A device (in this case, the timer) can assert the interrupt, but the gic does
+> not sample it immediately. Come to think of it, the entire timer test is wrong
+> because of this.
 
---===============8660508429306946478==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="h22Fi9ANawrtbNPX"
-Content-Disposition: inline
+I'll write a patch for it in v4 of my fixes series.
 
-
---h22Fi9ANawrtbNPX
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Jan 10, 2020 at 06:28:00PM +0000, Catalin Marinas wrote:
-> On Wed, Dec 11, 2019 at 03:41:58PM +0000, Mark Brown wrote:
-
-> >  /* Additional SPSR bits not exposed in the UABI */
-> > +#define PSR_BTYPE_SHIFT		10
-> > +
-> >  #define PSR_IL_BIT		(1 << 20)
-> > =20
-> > +/* Convenience names for the values of PSTATE.BTYPE */
-> > +#define PSR_BTYPE_NONE		(0b00 << PSR_BTYPE_SHIFT)
-> > +#define PSR_BTYPE_JC		(0b01 << PSR_BTYPE_SHIFT)
-> > +#define PSR_BTYPE_C		(0b10 << PSR_BTYPE_SHIFT)
-> > +#define PSR_BTYPE_J		(0b11 << PSR_BTYPE_SHIFT)
-
-> Would these be better placed in the uapi/ptrace.h?
-
-Seems reasonable, they might be useful to virt stuff and they're
-part of the architecture so it's not like we might change them.
-
-> > +	/*
-> > +	 * BTI note:
-> > +	 * The architecture does not guarantee that SPSR.BTYPE is zero
-> > +	 * on taking an SVC, so we could return to userspace with a
-> > +	 * non-zero BTYPE after the syscall.
-
-> On page 2580 of the ARM ARM there is a statement that "any instruction
-> other than BR, ..." sets BTYPE to 0. Wouldn't SVC fall into the same
-> category?
-
-I think what Dave was referring to there is that (unless I'm
-misreading things) that section of the ARM says that BTYPE is set
-at the end of the execution of the instruction but since SVC is
-specified as generating an exception that means that when we
-enter the kernel the instruction won't have ended yet and we
-still have the BTYPE from the previous instruction.
-
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-
-Thanks.
-
---h22Fi9ANawrtbNPX
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4ceBAACgkQJNaLcl1U
-h9DLSQf6Apx/rsxXW/+0SHiXPGDJpdzgdlaKg/WkwvZD5tKjvP5SnU3YQ8L96jEk
-YLvo3VX4o6G174B4i7eQvKINZJOQXPzcgYtwV8LjZIxfg7qSygSFOlfxqXPxYoh1
-M3UeD4sFYwQcvvuisyxxehY7F2Qpy7r2AGPcEz/lIgJBK/afVqze34aedkAc8USs
-RiEH1OneNIi0iiKiqrJTEjTNNH4eXokXteOoWKCQONDeMkBQUyGSJB09LKZibH/+
-n1bqPuST5v4Qtag8JcHi9/z/xytJf6oO1QLWnXTqpUR3IUem+LucwksP8+xXIlXC
-vchzbBePuEZheDLobl52IOjKdmX2Vg==
-=X4rD
------END PGP SIGNATURE-----
-
---h22Fi9ANawrtbNPX--
+Thanks,
+Alex
 
 
---===============8660508429306946478==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8660508429306946478==--
-
