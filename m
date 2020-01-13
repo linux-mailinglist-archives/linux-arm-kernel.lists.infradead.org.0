@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEFBE13900A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 12:27:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40104139023
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 12:31:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aiD32NH2rXg8aRysooDAbOVFd7+Mklv50U6Zmy3OzsY=; b=pjPi0Lch0zHDgL
-	CUUwxkYUEKb5tMjUJvz9cXlgHX06lRnmIvHzqdPQzMOoBvPOjI2ui5qxuJ/eWPqEyGkIFp+gygvIV
-	uNqhfCM/3753xQyGto3N6OJolwGFwmmHvYrxwTAyCRSf5Ow+yMPaO3gitVzDbm6H0ikR/rD5lhTqq
-	xDylY7w59LOyS4Tfvr8IJhGx/NFNbhIWRoyGhk9OVy7caX49PyJac/NfyucS+cM7jatfc+uOMmUCd
-	WxYdaq88mOElEAxHj8fvDJJG66tZ6AAvCYAcEYYlY1iPdIB4p0RAZtBJVG4gWVZPwaY7DDDPq8oRz
-	OMIpWVztwJOCMN1N1UEw==;
+	List-Owner; bh=YKRBDuxEn9o1IxX0Dym/zxoUHVHh3I3jdYuP49uWTtA=; b=WOxZjM1ESGku9U
+	/IMBwQYKS01JqwoIsksNalSfcf4lro4XGLaTqh+opumF6JfzxMGi0oIxuNCdApCD6NoaUZTsdzR7i
+	PqKluI5r6pJOwkp+WaDhhx+DQYym6RyCUJkL91C1fl0LyKe9EyFn2w4gm7YN9AqYFlprGhfHHqSEv
+	s2+iiYCiLKd8T79/pSz+jG47cWz+zul8Kr7THktHGwP5F9tMoTjzjNS8yqoc0vV2IzouLWwyJtPeq
+	xL8LBCkSSU7E0IQfxfNCqP6TR8g+OOK8PPekqwUn23UFiMvgbsKKXyXcziM2GUOfOyuctgakV9zy7
+	ciLAFP+LW7Kdo+/O8EcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqxsC-0001KG-Sm; Mon, 13 Jan 2020 11:27:08 +0000
+	id 1iqxwg-0003Av-Lt; Mon, 13 Jan 2020 11:31:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqxs4-0001JZ-75
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 11:27:01 +0000
+ id 1iqxwZ-0003AG-5I
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 11:31:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65CB213D5;
- Mon, 13 Jan 2020 03:26:59 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95C6113D5;
+ Mon, 13 Jan 2020 03:31:37 -0800 (PST)
 Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D0A263F6C4;
- Mon, 13 Jan 2020 03:26:58 -0800 (PST)
-Date: Mon, 13 Jan 2020 11:26:57 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA5453F6C4;
+ Mon, 13 Jan 2020 03:31:36 -0800 (PST)
+Date: Mon, 13 Jan 2020 11:31:35 +0000
 From: Andrew Murray <andrew.murray@arm.com>
 To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-Subject: Re: [PATCHv9 07/12] PCI: mobiveil: Make mobiveil_host_init() can be
- used to re-init host
-Message-ID: <20200113112655.GM42593@e119886-lin.cambridge.arm.com>
+Subject: Re: [PATCHv9 08/12] PCI: mobiveil: Add 8-bit and 16-bit CSR register
+ accessors
+Message-ID: <20200113113135.GN42593@e119886-lin.cambridge.arm.com>
 References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <20191120034451.30102-8-Zhiqiang.Hou@nxp.com>
+ <20191120034451.30102-9-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191120034451.30102-8-Zhiqiang.Hou@nxp.com>
+In-Reply-To: <20191120034451.30102-9-Zhiqiang.Hou@nxp.com>
 User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_032700_349263_0B95E214 
-X-CRM114-Status: GOOD (  19.97  )
+X-CRM114-CacheID: sfid-20200113_033139_247813_D766E2D7 
+X-CRM114-Status: GOOD (  14.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,91 +85,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 20, 2019 at 03:46:03AM +0000, Z.q. Hou wrote:
+On Wed, Nov 20, 2019 at 03:46:10AM +0000, Z.q. Hou wrote:
 > From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 > 
-> Make the mobiveil_host_init() function can be used to re-init
-
-Perhaps reword to "Allow the mobiveil_host_init() function to be
-used to ...
-
-> host controller's PAB and GPEX CSR register block, as NXP
-> integrated Mobiveil IP has to reset and then re-init the PAB
-> and GPEX CSR registers upon hot-reset.
+> There are some 8-bit and 16-bit registers in PCIe configuration
+> space, so add these accessors accordingly.
 > 
 > Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
 > Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
 > ---
 > V9:
 >  - No change
 > 
->  .../controller/mobiveil/pcie-mobiveil-host.c  | 19 ++++++++++++-------
->  .../pci/controller/mobiveil/pcie-mobiveil.h   |  1 +
->  2 files changed, 13 insertions(+), 7 deletions(-)
+>  .../pci/controller/mobiveil/pcie-mobiveil.h   | 23 +++++++++++++++++++
+>  1 file changed, 23 insertions(+)
 > 
-> diff --git a/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c b/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
-> index 3cd93df6fe6e..9bc3da036720 100644
-> --- a/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
-> +++ b/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
-> @@ -221,18 +221,23 @@ static void mobiveil_pcie_enable_msi(struct mobiveil_pcie *pcie)
->  	writel_relaxed(1, pcie->apb_csr_base + MSI_ENABLE_OFFSET);
+> diff --git a/drivers/pci/controller/mobiveil/pcie-mobiveil.h b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> index 37116c2a19fe..750a7fd95bc1 100644
+> --- a/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> +++ b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> @@ -182,10 +182,33 @@ static inline u32 mobiveil_csr_readl(struct mobiveil_pcie *pcie, u32 off)
+>  	return mobiveil_csr_read(pcie, off, 0x4);
 >  }
 >  
-> -static int mobiveil_host_init(struct mobiveil_pcie *pcie)
-> +int mobiveil_host_init(struct mobiveil_pcie *pcie, bool reinit)
->  {
->  	struct root_port *rp = &pcie->rp;
->  	struct pci_host_bridge *bridge = rp->bridge;
->  	u32 value, pab_ctrl, type;
->  	struct resource_entry *win;
->  
-> -	/* setup bus numbers */
-> -	value = mobiveil_csr_readl(pcie, PCI_PRIMARY_BUS);
-> -	value &= 0xff000000;
-> -	value |= 0x00ff0100;
-> -	mobiveil_csr_writel(pcie, value, PCI_PRIMARY_BUS);
-> +	pcie->ib_wins_configured = 0;
-> +	pcie->ob_wins_configured = 0;
+> +static inline u32 mobiveil_csr_readw(struct mobiveil_pcie *pcie, u32 off)
+> +{
+> +	return mobiveil_csr_read(pcie, off, 0x2);
+> +}
+> +
+> +static inline u32 mobiveil_csr_readb(struct mobiveil_pcie *pcie, u32 off)
+> +{
+> +	return mobiveil_csr_read(pcie, off, 0x1);
+> +}
 
-This works so long as the number of bridge->windows never reduces. I
-think this assumption holds true.
+Do you think the above two return types should reflect the size of the access?
 
 Thanks,
 
 Andrew Murray
 
 > +
-> +	if (!reinit) {
-> +		/* setup bus numbers */
-> +		value = mobiveil_csr_readl(pcie, PCI_PRIMARY_BUS);
-> +		value &= 0xff000000;
-> +		value |= 0x00ff0100;
-> +		mobiveil_csr_writel(pcie, value, PCI_PRIMARY_BUS);
-> +	}
+> +
+>  static inline void mobiveil_csr_writel(struct mobiveil_pcie *pcie, u32 val,
+>  				       u32 off)
+>  {
+>  	mobiveil_csr_write(pcie, val, off, 0x4);
+>  }
 >  
->  	/*
->  	 * program Bus Master Enable Bit in Command Register in PAB Config
-> @@ -569,7 +574,7 @@ int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie)
->  	 * configure all inbound and outbound windows and prepare the RC for
->  	 * config access
->  	 */
-> -	ret = mobiveil_host_init(pcie);
-> +	ret = mobiveil_host_init(pcie, false);
->  	if (ret) {
->  		dev_err(dev, "Failed to initialize host\n");
->  		return ret;
-> diff --git a/drivers/pci/controller/mobiveil/pcie-mobiveil.h b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
-> index 95d2e7c809b8..37116c2a19fe 100644
-> --- a/drivers/pci/controller/mobiveil/pcie-mobiveil.h
-> +++ b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
-> @@ -166,6 +166,7 @@ struct mobiveil_pcie {
->  };
->  
->  int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie);
-> +int mobiveil_host_init(struct mobiveil_pcie *pcie, bool reinit);
->  bool mobiveil_pcie_link_up(struct mobiveil_pcie *pcie);
->  int mobiveil_bringup_link(struct mobiveil_pcie *pcie);
->  void program_ob_windows(struct mobiveil_pcie *pcie, int win_num, u64 cpu_addr,
+> +static inline void mobiveil_csr_writew(struct mobiveil_pcie *pcie, u32 val,
+> +				       u32 off)
+> +{
+> +	mobiveil_csr_write(pcie, val, off, 0x2);
+> +}
+> +
+> +static inline void mobiveil_csr_writeb(struct mobiveil_pcie *pcie, u32 val,
+> +				       u32 off)
+> +{
+> +	mobiveil_csr_write(pcie, val, off, 0x1);
+> +}
+> +
+>  #endif /* _PCIE_MOBIVEIL_H */
 > -- 
 > 2.17.1
 > 
