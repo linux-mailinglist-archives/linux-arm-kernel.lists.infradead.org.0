@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A9BA138A98
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 06:19:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 299BE138AA7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 06:20:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9JTQug0DVvg1Y96etUB58LICNf4uX1/BJlFbK1I/u9A=; b=eUCvJ5ZSwDlPz2
-	bv5Mbe2f0hCoEF8kWTyi8cLKhGX9x6KN7VBb5CauiO8CYBOGFMD9YM1/2S8XZUW4grzMkpl8adHdN
-	SQs34D1y2SpEA1wBrO69djpUJPhwNceFP/ywNIUc1cH3VXfGcLifsf9fnBykGX5jFwS5WPPRp4lBf
-	UhTXY6F7peYDcqNGv5MEFzH8JOwj2gZ1HCAbzW1DMtjbex+lTOxTBqaIMKYB7vJ5FFPe8yGSlNqb4
-	PWA+ulF+KGc/6sFWNKwBlObv/iKauxGlMwr3Kkl4R5GjGVIoXCdPuoApEtcdWf/8SH3Jz/wzYd3OR
-	Bj8YzRiSom+oNvRaXKWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lZNVd51lro/ro3uJC4oNLt6t4dV1tiA2gPzwAKEb9qI=; b=T8C6Anx9a+4mvP
+	EjaGizkKMmSClgtXJ5ldGf11/JRjkWolx06qrUsLs1VEb0whWP/s3JjwMsgqsPSdsegLlPzWTmuO4
+	ph//0/LI9n93ZRGsQGxc2dPHeqWA80GaPQbaB3q2LFB75WfBcZXxW2pJfQW4DGvYBLv+0NpdnI38B
+	6RQb86UWYEiQWkaOmZdBgq8joCME2ztso4etwM2s7COR3yD9WE6YgNmxD1h8ivCJp3aMrrn376bvi
+	VUKnusdC5rY1TJOeW8IZ2UTzQbRRDPbWZsMHjYyVlBBd+zWVK1NP8h8kA+mQ7LVeuPdWqspA5OumH
+	fbizpJmD8R0E4J8UtAQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqs8X-0003lo-2O; Mon, 13 Jan 2020 05:19:37 +0000
+	id 1iqs9F-0004IN-7k; Mon, 13 Jan 2020 05:20:21 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqs7u-0003Wt-AS
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 05:19:00 +0000
+ id 1iqs7u-0003Wv-AR
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 05:19:01 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 5203E5E53;
+ by mailnew.nyi.internal (Postfix) with ESMTP id 5962A61D0;
  Mon, 13 Jan 2020 00:18:57 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
  by compute5.internal (MEProxy); Mon, 13 Jan 2020 00:18:57 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=6RlrtGe1q52aL1FVbHTu04Aqfx
- pcbL40rnxbamSASaQ=; b=YQsB2aith4yB1iR4q7Qv83xSwXmzwCJPLCqu22y4D4
- WOvCJ5nJCXPYv1NwGctRu2pNiXX7Eb/bK97QCbnmxTSerI3r2BCJ1oc21tS42wH5
- /XeOpgBxGZcqjazPw9djtJ/3UjGfWju3G0/dYWSAMSbBKjtGS8y3+fIawbTmrut2
- +8ake2cs7vPMk+kP0/8L2DP3wFgdF2r1YZiqxOJ5Oa19agjPB4WgpRZOnkVz34wi
- y0WLg5ah5owKJqTV8/xqjlLGF/o6TVy9Sc/hCcDk9jNGdtUJQq5Wxts33p1uK+Ly
- B9/MN+TMltbC7doz0lgLzMMncYdWj1X+20lkC5caFe9Q==
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=EmmLtCjrK7RsX
+ RRqPJrB9bPRF/NolERlt2uFv3dLhTc=; b=TX1kx6z3NpofCraAdgp9otpxgSE5p
+ vKMli4ZP6LFzdCfz/wuNh5f3kK7OSnU7/n6eHsEwNN4zVDku2kbfimmTk6kCGJeK
+ NOPdQyvWx4gc3FOacM8VBuTWV2IoB6qL5cZHQt+7C/j1EZFPUMGcIlSosbInMDu0
+ VkNVxn5RAghoQbuZSa/YtTpVZThIVLS6mexZiuhgcdzbAjevQbV4RM7mYtxVcz/W
+ KyEpMH2XDNEmsj9Fe5+roV2oBMjIwHUFUQHAEiMKiHA9dBdRZfxTetr6ljft39nH
+ my/JmcQ9C6yAg2r9s5A9FTADe/v6JJmTQIlFTIw3X4L5ljVMCcczbKXWg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=6RlrtGe1q52aL1FVb
- HTu04AqfxpcbL40rnxbamSASaQ=; b=puh6hTBxLgcHepAg9hBIwKzIbBlH+8SA9
- v8MZxJqQZFZnU3AIyGRg9IRPQJIamqanw6kh4nLB3sSP6pE66V2ibV+ZN+2Owgea
- nbCLTzLX4C8DOn3ERRs/XdMQX5ru2g4QT1woctQVoUXuq9rP3IANNl3iypMy2ox/
- 7rCb1stKNDmu2Z+ILQX59ZaEzogQUUMv0O8rSnLN7GcTxh0S6rISA058P24zcix7
- BKXYw7TlMsU9gYSRKbiMJyck2kgePy0rBHCL8a4d8l5Oo6TyCeDL6FF61HO931I4
- WIqJyFe3quteXs2A3EFyqde27f4Xi0jgQDNoQqa1QFOr2raFPQ0dA==
-X-ME-Sender: <xms:vf0bXo56cXW2l6Y1on66Ze8BLTfeYodBIAvglnEqjcAdHVbuAinP7A>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm1; bh=EmmLtCjrK7RsXRRqPJrB9bPRF/NolERlt2uFv3dLhTc=; b=cUZbY8fd
+ yrvLF71QKUy/fHI6c9irvJyq3GPDGdKFV9mnM7thfkY2753qAIqFfNVr+9eM+G9U
+ B++rODEtF6E5XhpMcrVkab0/ik+ENvYpnt9/FwNnzx7TCbMe4uNn4sTmEwLG6xak
+ 7YmupRYr/XONe/1PTIPIZAmrUMbNW4Fk7YvXYW6FaE4CRqlkMGFvaSLu/kYkVz54
+ 8rtiE+F3paOXMOSksJzBX20MXlJpDaRZXhkd/t2hRLyDXmp/Nlp4pJpfLB702bv+
+ B77WU2IeYP46BtkatUmprDZu799bXStluiXgbsXGkDvDv1Ui88qp88fPe5ScrTaD
+ cW4gFjLt8Cpp/g==
+X-ME-Sender: <xms:vf0bXktms61j_Pnj0J_f7WUeqObswn1CKYGII5tFqeCZoCyVGfE4iA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvdeiledgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
- jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucffohhmrg
- hinhepkhgvrhhnvghlrdhorhhgnecukfhppeejtddrudefhedrudegkedrudehudenucfr
- rghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrghenuc
- evlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:vf0bXn0LLzwxeJtfTtss5-A73Z59R1ByuHmCkmT5Eo5c0GHajikHfA>
- <xmx:vf0bXvCvXMuf0aqxoNHxw8jHwGLHy7K5KqTmHNLEazGZNwnHFqfHBw>
- <xmx:vf0bXp10YMv7sB_lSQiegZl2J5GZvuD4JIs0lsQ-mqCx1i14pm-jHg>
- <xmx:wf0bXnydl4R1ASwqR8oeqLGwNj4wXOu9KC6-DgomT9xP51_EI6hBNg>
+ cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucffoh
+ hmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppeejtddrudefhedrudegkedr
+ udehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnug
+ drohhrghenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:vf0bXsX5QOgUAs85nzMPcubWRq9kYP3sOffYRsuhBhbfpuEVSCfJ5w>
+ <xmx:vf0bXnkX3L7Tyd-Rxb9mhlBL7BcOtuLHLKpBd-wNZmr3SigyaG_k2Q>
+ <xmx:vf0bXlbCQgBDv4roZVvAulJKFeq5VPYSK0pU_dSzo4XiOS4gKlabNQ>
+ <xmx:wf0bXjVABqRYl4XUHO3vwy_oyon7YhLg3SxS5fuEHPsFnpcMXGrlEw>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 75AE630607B4;
+ by mail.messagingengine.com (Postfix) with ESMTPA id 0239330602DB;
  Mon, 13 Jan 2020 00:18:52 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -70,14 +71,16 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Mark Rutland <mark.rutland@arm.com>,
  Philipp Zabel <p.zabel@pengutronix.de>, Ondrej Jirman <megous@megous.com>,
  Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: [PATCH v6 0/6] Allwinner sun6i message box support
-Date: Sun, 12 Jan 2020 23:18:46 -0600
-Message-Id: <20200113051852.15996-1-samuel@sholland.org>
+Subject: [PATCH v6 1/6] dt-bindings: mailbox: Add a sun6i message box binding
+Date: Sun, 12 Jan 2020 23:18:47 -0600
+Message-Id: <20200113051852.15996-2-samuel@sholland.org>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200113051852.15996-1-samuel@sholland.org>
+References: <20200113051852.15996-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_211858_512568_41498E35 
-X-CRM114-Status: GOOD (  16.75  )
+X-CRM114-CacheID: sfid-20200112_211858_516421_2BCE85FC 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,85 +116,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for the "hardware message box" in sun8i, sun9i,
-and sun50i SoCs, used for communication with the ARISC management
-processor (the platform's equivalent of the ARM SCP). The end goal is to
-use the arm_scpi driver as a client, communicating with firmware running
-on the ARISC CPU.
+This mailbox hardware is present in Allwinner sun6i, sun8i, sun9i, and
+sun50i SoCs. Add a device tree binding for it.
 
-I have tested this driver with various firmware programs and mailbox
-clients on the A64, H5, and H6 SoCs (including specifically the arm_scpi
-driver), and Ondrej Jirman has tested the driver on the A83T (using a
-similar patch to arm_scpi).
-
-The clock changes are dropped in favor of:
-https://lore.kernel.org/linux-clk/20191230193127.8803-1-samuel@sholland.org/
-
-Hopefully I've learned my lesson that adding more tangentially-related
-patches doesn't increase the likelihood of getting things merged. This
-patch just includes the driver and the device tree changes.
-
-Thanks,
-Samuel
-
-Changes from v5:
-  - Rebased on tag sunxi-dt-for-5.5-2
-  - Dropped unnecessary/unrelated patches
-  - Addressed Maxime's dt-binding comments
-  - Used devm_reset_control_get_exclusive
-
-Changes from v4:
-  - Rebased on sunxi-next
-  - Dropped AR100 clock patch, as it was controversial and unnecessary
-  - Renamed sunxi-msgbox to sun6i-msgbox and sun6i-a31-msgbox
-  - Added comments about not asserting the reset line
-  - Dropped A80 DTS changes as they were untested
-  - Added Ondrej's Tested-by for A83T
-  - Dropped the demo; replaced with a real arm_scpi fix
-
-Changes from v3:
-  - Rebased on sunxi-next
-  - Added Rob's Reviewed-by for patch 3
-  - Fixed a crash when receiving a message on a disabled channel
-  - Cleaned up some comments/formatting in the driver
-  - Fixed #mbox-cells in sunxi-h3-h5.dtsi (patch 7)
-  - Removed the irqchip example (no longer relevant to the fw design)
-  - Added a demo/example client that uses the driver and a toy firmware
-
-Changes from v2:
-  - Merge patches 1-3
-  - Add a comment in the code explaining the CLK_IS_CRITICAL usage
-  - Add a patch to mark the AR100 clocks as critical
-  - Use YAML for the device tree binding
-  - Include a not-for-merge example usage of the mailbox
-
-Changes from v1:
-  - Marked message box clocks as critical instead of hacks in the driver
-  - 8 unidirectional channels instead of 4 bidirectional pairs
-  - Use per-SoC compatible strings and an A31 fallback compatible
-  - Dropped the mailbox framework patch
-  - Include DT patches for SoCs that document the message box
-
-Samuel Holland (6):
-  dt-bindings: mailbox: Add a sun6i message box binding
-  mailbox: sun6i-msgbox: Add a new mailbox driver
-  ARM: dts: sunxi: a83t: Add msgbox node
-  ARM: dts: sunxi: h3/h5: Add msgbox node
-  arm64: dts: allwinner: a64: Add msgbox node
-  arm64: dts: allwinner: h6: Add msgbox node
-
- .../mailbox/allwinner,sun6i-a31-msgbox.yaml   |  80 +++++
- arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
- arch/arm/boot/dts/sunxi-h3-h5.dtsi            |  10 +
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  10 +
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  10 +
- drivers/mailbox/Kconfig                       |   9 +
- drivers/mailbox/Makefile                      |   2 +
- drivers/mailbox/sun6i-msgbox.c                | 332 ++++++++++++++++++
- 8 files changed, 463 insertions(+)
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ .../mailbox/allwinner,sun6i-a31-msgbox.yaml   | 80 +++++++++++++++++++
+ 1 file changed, 80 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
- create mode 100644 drivers/mailbox/sun6i-msgbox.c
 
+diff --git a/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+new file mode 100644
+index 000000000000..75d5d97305e1
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mailbox/allwinner,sun6i-a31-msgbox.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner sunxi Message Box
++
++maintainers:
++  - Samuel Holland <samuel@sholland.org>
++
++description: |
++  The hardware message box on sun6i, sun8i, sun9i, and sun50i SoCs is a
++  two-user mailbox controller containing 8 unidirectional FIFOs. An interrupt
++  is raised for received messages, but software must poll to know when a
++  transmitted message has been acknowledged by the remote user. Each FIFO can
++  hold four 32-bit messages; when a FIFO is full, clients must wait before
++  attempting more transmissions.
++
++  Refer to ./mailbox.txt for generic information about mailbox device-tree
++  bindings.
++
++properties:
++  compatible:
++    oneOf:
++      - items:
++          - enum:
++              - allwinner,sun8i-a83t-msgbox
++              - allwinner,sun8i-h3-msgbox
++              - allwinner,sun9i-a80-msgbox
++              - allwinner,sun50i-a64-msgbox
++              - allwinner,sun50i-h6-msgbox
++          - const: allwinner,sun6i-a31-msgbox
++      - const: allwinner,sun6i-a31-msgbox
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++    description: bus clock
++
++  resets:
++    maxItems: 1
++    description: bus reset
++
++  interrupts:
++    maxItems: 1
++
++  '#mbox-cells':
++    const: 1
++    description: first cell is the channel number (0-7)
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++  - interrupts
++  - '#mbox-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/sun8i-h3-ccu.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/reset/sun8i-h3-ccu.h>
++
++    msgbox: mailbox@1c17000 {
++            compatible = "allwinner,sun8i-h3-msgbox",
++                         "allwinner,sun6i-a31-msgbox";
++            reg = <0x01c17000 0x1000>;
++            clocks = <&ccu CLK_BUS_MSGBOX>;
++            resets = <&ccu RST_BUS_MSGBOX>;
++            interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
++            #mbox-cells = <1>;
++    };
++
++...
 -- 
 2.23.0
 
