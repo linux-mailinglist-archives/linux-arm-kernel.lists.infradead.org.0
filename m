@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23A73139819
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 18:52:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC3B5139831
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 18:59:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y1Qj8A1HleYvpfpR6MNtbexMx0PQGa0Xu1BqC6RRA3E=; b=Vt8wpLImpIQpD9
-	GYZJpZi2deIejLZJe/Zou08Edzhq1pkE3wGh2G3yDJJEJp5dDVmij47446tIO8Gzf9YxrfjutGZZf
-	sL8/OEzy6B6F9Srs9FRLmrDRdTagDUg/yaO6GlZgz5TjSiUWXa1ht7LA9CDwlTMHIPTumYKl/DlL0
-	suZipoUXTDeIGkmrTgN/aSOEc9jvJbUb2108SAsi4jTQRsAY9hyo7T0VchKZWnrxf4pPJh9zN9CHe
-	P2OLVLDLPEEt0J8VtRFzG+PmL8NWRKsThs25ZtY+O6zbuJxJo1K8UJvscnFIBsJKMBMgL0l87oD3F
-	RkLtZQnjUm6+mf1ifzPQ==;
+	List-Owner; bh=GHQ2jBg/mpWiKe1Km+SnMCtIghOBRhzhw7/9YmOwpPM=; b=Kf6Ld6k7qWMrgZ
+	EQY6FuRx4fuibmi3DjERICx73zrCGXMfxjOxI2fIjkdhEY4I0lMq/OiRryMIRP1O+jPBk8W9Evw0G
+	6KuGfPi+4VbUHztIV80o00rBCgHmX0uA8Tqe6lal1V8yQjVkvEUeadwY3saMr7wUJRCzTlOIUY1Cm
+	kCo5IqGdDFJL59zGzmBUuSieLjFwhqY1XRmV11BI92ltpvikvsAyd/oEj9gpfxhTAMjPhUgZ+T2Yh
+	a7ccCahRlPu1u1hefCfg66XNZXT85yWRxS3NASyVjMkyjgfLgCY98rx867AjQm/aEW1RaJhMRL1ek
+	2qKhoZC50IvU3E7Uh02w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir3tH-0006ST-HC; Mon, 13 Jan 2020 17:52:39 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1ir3zv-0008SU-Lt; Mon, 13 Jan 2020 17:59:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir3t5-0006Qk-UM
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 17:52:29 +0000
-Received: by mail-il1-x143.google.com with SMTP id t2so8905227ilq.9
+ id 1ir3zj-0008R8-Es
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 17:59:22 +0000
+Received: from mail-qv1-f42.google.com (mail-qv1-f42.google.com
+ [209.85.219.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3015C2187F
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 09:52:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tR/PVmec9Acg9lLoWkjAACYeH6TaFlhfszmRPXAXo1I=;
- b=MfRDokUBQY6p/kpal7XLw/g38Gh/IYdjm7i351TEXrATsDe15BahgFzUxUw2OmWv3l
- PYV4Mv2Il9WIz8LTiICJ1SBtYdi5VjGf38h8gB80wwGQAUlIlbhv7UhJhatiNCgeoZqk
- JM+eizhJUClZ7yCT3TMjSjHSi++Sn0aZWVSBOv53ifvZlTrnUsu+yNtpcbvb46ywW/TC
- Sb536csF4MpO14QhxwoKAlHNmxLu++s2/9SMwgGmd+4wnm1E+JUuxkJZSlGgL9zxpGzD
- 3Zelh6J1MpWq1zuisaeDHXlCuztNvunhxSLppqDpUE8fmnD09ZPY7oFLG0MX/nyceWlV
- 3umg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tR/PVmec9Acg9lLoWkjAACYeH6TaFlhfszmRPXAXo1I=;
- b=dG5rU+TUTnvL3dl+l2kCc74HfpGL+E5VrJBYlRQEDHamHPuiBqgyp9TYmwFOmEHMbW
- kIy2BDcW712KgkN7f3yDhS9/3Ekw4ylaXbLqGUkf0Q6uxM/teof6qsAq3wSdJCbb042U
- 8xgE1JRY3Cal+G++3/lmuMkTfRDLmqPSjMYAf5Mbv1G9M0bRa43DcaNJKtPizl9AKTyg
- FNuHVtjPa+Pc/Rz/JWVjlgFBdDbbkaIzJpqNoVzLyNk+8+0fXbFPyXBhbSo/xhyvOXSd
- OxfREyUFzmKdcORTTvpxLbWXXqeN8sFAD5MTBEY+U4+910jcoIJCnHan7RRyJi6+q8y5
- KRfQ==
-X-Gm-Message-State: APjAAAVJPFn05IqWVMob5xYFpqqda3t8q7aEWP2OFRKwRYIifq7pRlNx
- /1m/cacfjjyp1DcGSs3LbfO1L8Xsx3ZquK2PF3St0xyU7oQ=
-X-Google-Smtp-Source: APXvYqwmifsPMIM7NR3deurhYvdhd2YslDh3Tb150YC7L/n4Un9cMt8a1ojcsrjY1X3Jknn0LNc6fVsXk09C2r1UTTE=
-X-Received: by 2002:a92:db49:: with SMTP id w9mr14818680ilq.277.1578937945418; 
- Mon, 13 Jan 2020 09:52:25 -0800 (PST)
+ Mon, 13 Jan 2020 17:59:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578938358;
+ bh=BvVwQDaXG7nwaYX7s05ct6eQ4sajxiQAfTIqBPjSazQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=TVamThhNpcOiouQ5EIgoTET4yaCryoc6Pao2h9UlS71C5yf1A+vYIZtyeIHNbHr+i
+ ta/vR8+ga5cMTvxvM+Vg6JP5QpDwFZXGzXLuGw/l/e7ogDwkhmE1FFxF24YFj53zkO
+ 9HWJvIe5Sm2rqowNSujmvVhaRUa7DB6yBtPOGR+0=
+Received: by mail-qv1-f42.google.com with SMTP id f16so4403074qvi.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Jan 2020 09:59:18 -0800 (PST)
+X-Gm-Message-State: APjAAAXQJOSZJLqAwKzad2naz6PKKvOMBbqGdt+rj4sLutK+/GcsJfmi
+ L2By4vvAS93kIhZsVaCocYx7ZJOngNbC9ZMSDg==
+X-Google-Smtp-Source: APXvYqxkC/xxiGwV4y31SedhMvlakVHw6kIvrXmJKJotUeMzr4RJqQNYzfbp6MAF0rK3ARaJW3fvP0OPAZP7qCIIIFg=
+X-Received: by 2002:ad4:450a:: with SMTP id k10mr15796764qvu.136.1578938357304; 
+ Mon, 13 Jan 2020 09:59:17 -0800 (PST)
 MIME-Version: 1.0
-References: <20200113065808.25f28c40@canb.auug.org.au>
- <CAOesGMifHn6DbNgYm6YUbdKjSL5rNgdWrq+HX9dEusrOr9xX2A@mail.gmail.com>
- <20200113113837.130c3936@canb.auug.org.au>
- <caeb1af8-4aa2-71dc-0a70-127c0b474f93@st.com>
- <20200113224620.5d33fa63@canb.auug.org.au>
-In-Reply-To: <20200113224620.5d33fa63@canb.auug.org.au>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 13 Jan 2020 09:52:13 -0800
-Message-ID: <CAOesGMh0yfq_0RPzASjNPUgff4P+PMdo2fEB3BFO++Y6zz1n0g@mail.gmail.com>
-Subject: Re: linux-next: Signed-off-by missing for commit in the arm-soc tree
-To: Stephen Rothwell <sfr@canb.auug.org.au>
+References: <20191216095712.13266-14-kishon@ti.com>
+ <20200102095631.1165-1-kishon@ti.com>
+In-Reply-To: <20200102095631.1165-1-kishon@ti.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 13 Jan 2020 11:59:06 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJVmyXirczaWJb4hCsnVjXYt6ki22sBLe5D0240x4Xtzw@mail.gmail.com>
+Message-ID: <CAL_JsqJVmyXirczaWJb4hCsnVjXYt6ki22sBLe5D0240x4Xtzw@mail.gmail.com>
+Subject: Re: [PATCH v5 13/14] dt-bindings: phy: Document WIZ (SERDES wrapper)
+ bindings
+To: Kishon Vijay Abraham I <kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_095228_119981_55270ABA 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200113_095919_544011_B3D620AF 
+X-CRM114-Status: GOOD (  22.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,38 +87,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Yann Gautier <yann.gautier@st.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Ludovic Barre <ludovic.barre@st.com>,
- ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jyri Sarha <jsarha@ti.com>, Swapnil Kashinath Jakhade <sjakhade@cadence.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 3:46 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+On Thu, Jan 2, 2020 at 3:54 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
 >
-> Hi Alexandre,
+> Add DT binding documentation for WIZ (SERDES wrapper). WIZ is *NOT* a
+> PHY but a wrapper used to configure some of the input signals to the
+> SERDES. It is used with both Sierra(16G) and Torrent(10G) serdes.
 >
-> On Mon, 13 Jan 2020 09:17:08 +0100 Alexandre Torgue <alexandre.torgue@st.com> wrote:
-> >
-> > Sorry for this oversight. DO I have something to do ? (except to not
-> > forget to check my signed-off next time).
+> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+> [jsarha@ti.com: Add separate compatible for Sierra(16G) and Torrent(10G)
+>  SERDES]
+> Signed-off-by: Jyri Sarha <jsarha@ti.com>
+> ---
+> Changes from v4:
+> *) Fixed the indentation as suggested by Rob v4
 >
-> That is up to the arm-soc tree maintainers.
+>  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 204 ++++++++++++++++++
+>  1 file changed, 204 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> new file mode 100644
+> index 000000000000..e010ea46b88d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> @@ -0,0 +1,204 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/phy/ti,phy-j721e-wiz.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: TI J721E WIZ (SERDES Wrapper)
+> +
+> +maintainers:
+> +  - Kishon Vijay Abraham I <kishon@ti.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - ti,j721e-wiz-16g
+> +      - ti,j721e-wiz-10g
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 3
+> +    description: clock-specifier to represent input to the WIZ
+> +
+> +  clock-names:
+> +    items:
+> +      - const: fck
+> +      - const: core_ref_clk
+> +      - const: ext_ref_clk
+> +
+> +  num-lanes:
+> +    minimum: 1
+> +    maximum: 4
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  "#reset-cells":
+> +    const: 1
+> +
+> +  ranges: true
+> +
+> +  assigned-clocks:
+> +    maxItems: 2
+> +
+> +  assigned-clock-parents:
+> +    maxItems: 2
+> +
+> +patternProperties:
+> +  "^pll[0|1]-refclk$":
+> +    type: object
+> +    description: |
+> +      WIZ node should have subnodes for each of the PLLs present in
+> +      the SERDES.
+> +    properties:
+> +      clocks:
+> +        maxItems: 2
+> +        description: Phandle to clock nodes representing the two inputs to PLL.
+> +
+> +      "#clock-cells":
+> +        const: 0
+> +
+> +      assigned-clocks:
+> +        maxItems: 1
+> +
+> +      assigned-clock-parents:
+> +        maxItems: 1
+> +
+> +    required:
+> +      - clocks
+> +      - "#clock-cells"
+> +      - assigned-clocks
+> +      - assigned-clock-parents
+> +
+> +  "^cmn-refclk1?-dig-div$":
+> +    type: object
+> +    description:
+> +      WIZ node should have subnodes for each of the PMA common refclock
+> +      provided by the SERDES.
+> +    properties:
+> +      clocks:
+> +        maxItems: 1
+> +        description: Phandle to the clock node representing the input to the
+> +          divider clock.
+> +
+> +      "#clock-cells":
+> +        const: 0
+> +
+> +    required:
+> +      - clocks
+> +      - "#clock-cells"
+> +
+> +  "^refclk-dig$":
+> +    type: object
+> +    description: |
+> +      WIZ node should have subnode for refclk_dig to select the reference
+> +      clock source for the reference clock used in the PHY and PMA digital
+> +      logic.
+> +    properties:
+> +      clocks:
+> +        maxItems: 4
+> +        description: Phandle to four clock nodes representing the inputs to
+> +          refclk_dig
+> +
+> +      "#clock-cells":
+> +        const: 0
+> +
+> +      assigned-clocks:
+> +        maxItems: 1
+> +
+> +      assigned-clock-parents:
+> +        maxItems: 1
+> +
+> +    required:
+> +      - clocks
+> +      - "#clock-cells"
+> +      - assigned-clocks
+> +      - assigned-clock-parents
+> +
+> +  "^serdes@[0-9a-f]+$":
+> +    type: object
+> +    description: |
+> +      WIZ node should have '1' subnode for the SERDES. It could be either
+> +      Sierra SERDES or Torrent SERDES. Sierra SERDES should follow the
+> +      bindings specified in
+> +      Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
+> +      Torrent SERDES should follow the bindings specified in
+> +      Documentation/devicetree/bindings/phy/phy-cadence-dp.txt
+> +
+> +required:
+> +  - compatible
+> +  - power-domains
+> +  - clocks
+> +  - clock-names
+> +  - num-lanes
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - "#reset-cells"
+> +  - ranges
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
+> +
+> +    wiz@5000000 {
+> +           compatible = "ti,j721e-wiz-16g";
+> +           #address-cells = <1>;
+> +           #size-cells = <1>;
+> +           power-domains = <&k3_pds 292 TI_SCI_PD_EXCLUSIVE>;
+> +           clocks = <&k3_clks 292 5>, <&k3_clks 292 11>, <&dummy_cmn_refclk>;
+> +           clock-names = "fck", "core_ref_clk", "ext_ref_clk";
+> +           assigned-clocks = <&k3_clks 292 11>, <&k3_clks 292 0>;
+> +           assigned-clock-parents = <&k3_clks 292 15>, <&k3_clks 292 4>;
+> +           num-lanes = <2>;
+> +           #reset-cells = <1>;
+> +           ranges = <0x5000000 0x0 0x5000000 0x10000>;
 
-Nothing needed at this time.
+This fails in linux-next:
 
-The point of making sure maintainers sign off on patches is to track
-their path into the tree. In this case we still know it comes in via
-you. But make sure you're diligent on this for future patches.
+Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.example.dts:30.16-59:
+Warning (ranges_format): /example-0/wiz@50
+00000:ranges: "ranges" property has invalid length (16 bytes) (parent
+#address-cells == 1, child #address-cells == 1, #
+size-cells == 1)
 
+Please fix.
 
-Thanks!
-
--Olof
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
