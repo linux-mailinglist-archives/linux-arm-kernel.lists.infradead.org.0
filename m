@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D069139D84
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:41:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61AF2139D8C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 00:42:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NbLspltT+hJuEv+L60hrdpOT9kssER5e6TCU7omp6cs=; b=Q7mc88xUBdvpO3
-	vN0ssQCyntCBe9kpbXWOd3dcDZlZ1ofDa/TrcC9TaV4JLPfaaUobrmyRObclabyvB4AVZpAZJEzPG
-	++4lFkTj5E2cokH3QSPyxUMdItv4onUmPJqyoo/eq4Ncw1XY2FW66mT8oQZGUGsNdpMeFIVloOOPK
-	s0fFizmHH9COm+OPE4jVVBWMzn7fWaep70bmiIblPvB8haIirzjHp0uPDLb9BrzBasWpLZtoIdB2e
-	hoMX4acmaQduMZh6O8Z8l30ZBwCQHdT2ioflysJTTm66BMsQiplWr+Or2bftDT/xJyL8TLk7QDDUh
-	QrIjJUKiN0pDdtgtXHmQ==;
+	List-Owner; bh=WDU7LHj+vQNXozcjb4Y+VWEKlXYnE44pr9ox+rs59gg=; b=lJJkvXoFJAnxbg
+	PBk1rDRds1wgMZK0XEXNydLV6VXQcCNowd0btH53yStPXCTeCC9BroSI8QaE6GzHCAS7esS5f98or
+	y60BokZ8MyOUU957YL6PeenOD1Qd1ZAHDbNfyygNyXLQJ0T1MkbS0Ba9OXKDpRYh36Z+w3ksoKGMQ
+	YYVJnfwZXiCaSNvq8Kf9tuPIFfVm1527FvMK3dcGZB05srDJjBlOfxeGBfgFozRAfpsgq+LMbPzwe
+	2hboS1E4hgsdYANgF8kLdkoZJIoPpnBvhn3V0i3R2JRPDxn7vrE3Drr1PTOCnZFG/T7EfdqJvVVfZ
+	e86oSTfjpZIzt9jlpJfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir9KJ-0003W7-Vt; Mon, 13 Jan 2020 23:40:56 +0000
+	id 1ir9LU-0004XZ-HC; Mon, 13 Jan 2020 23:42:08 +0000
 Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir9JX-0002WB-NG
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 23:40:09 +0000
-Received: by mail-ot1-f67.google.com with SMTP id r9so10743597otp.13
+ id 1ir9K1-0003Td-VU
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 23:40:40 +0000
+Received: by mail-ot1-f67.google.com with SMTP id r9so10744828otp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 15:40:07 -0800 (PST)
+ Mon, 13 Jan 2020 15:40:37 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=T2alnzvz8KAPkt6TNZdOKsvg51Cv8nSh38BXX535N54=;
- b=ZFIYQy+yiKh1KL3lwnVDUcBrqojduDnQzk9vpeAB++w2qlr3mbGc7UhEZJNdkQbDUr
- Z0fEC6ZyoFtpfITc6h96KLy3H/eElhcUIu5zN3rRJQ0aOO6a3mHuOy6NOgKRsqOnf2wF
- /ph11EUo7QZ99dCWolK0/xjFoEMiakwAO1cpwnp8iCeghIttaf3xfabdAH/LIcLatGby
- uJZxUiVwBeCbUoMfmb/sis6sRXE7NfH1Z/dw4d14qU8JcKsZ60S9EWNpSuEEmYTIJ+5S
- w7uwPTKS146FGdHfWDz/OfJXQfBAQOkOr2CahMOtcKgl78cLtjfQqmxpmFhBMHdXYtxQ
- 5XGQ==
-X-Gm-Message-State: APjAAAVOxYDu2MZvrWTueZXmkdXTEDBJryMqhEmK1EjEsmqvsrEi/1ob
- sDMvWfx+uQJUBNztUgV9QW+PzsYgpw==
-X-Google-Smtp-Source: APXvYqyHPi211FvguIhsFnxOoxC+HlAI1eWTF3aalsXpXHq/kjQF+tsL+m/gIUMTbvRJ5zzRiikxyA==
-X-Received: by 2002:a9d:7f12:: with SMTP id j18mr15499677otq.17.1578958806274; 
- Mon, 13 Jan 2020 15:40:06 -0800 (PST)
+ bh=1hWr5fTf0UvM/FdokqnbY78OahK5vgKtckbIjPFsKcM=;
+ b=bAAdAjgOsjNejHFJc9OhT7ctnwBGgFOf/J5WIBT2Gak3RMVKJ8cqWy2kci6T9dg24r
+ 4sEDlWzK2UOKghops4ItRjx737cWDfygGUVdCzUZN/k1QQolqW6++XxFa9PM5iThmPJc
+ cPFTmCSjgM1yP6PtgGlkceu4k4XepE0QvL24QuZjSx2IW0+IriHpFPBlFoOWRN2WXRwe
+ hXkKck5enAvn1cCz19wuCRLlXybDo4QeZU67BtTFOMEvixGrrmCmDdfcvRgiP0WzeGvY
+ DPuKa++ouFHLsNb70PlljmFDDHU9wYRlQWSCQXgUezjTPAiWfO3uieMVqJwv4HtggPUD
+ uzuw==
+X-Gm-Message-State: APjAAAXdHOkOxM4agJ56v6/TEixLT5nK7a6FWzzHNbO1d4fpS6GaR/hm
+ X3PgJ+YfF7Ls9xAAdZ1ezMzRFlxSuQ==
+X-Google-Smtp-Source: APXvYqwMAQNPMx+B8ypLUVSqpvk7Cn3nRKUWKv4WLSW44T9aV3JxDtf/uXuwZbaPutNUwSJvnoyVkw==
+X-Received: by 2002:a9d:12a8:: with SMTP id g37mr15195448otg.261.1578958837037; 
+ Mon, 13 Jan 2020 15:40:37 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 47sm4762291otf.54.2020.01.13.15.40.03
+ by smtp.gmail.com with ESMTPSA id r25sm4721829otk.2.2020.01.13.15.40.35
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 15:40:05 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 221ac9
+ Mon, 13 Jan 2020 15:40:36 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 223f23
  by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Mon, 13 Jan 2020 17:25:02 -0600
-Date: Mon, 13 Jan 2020 17:25:02 -0600
+ Mon, 13 Jan 2020 17:25:51 -0600
+Date: Mon, 13 Jan 2020 17:25:51 -0600
 From: Rob Herring <robh@kernel.org>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 04/17] dt-bindings: atmel-tcb: add microchip,sam9x60-tcb
-Message-ID: <20200113232502.GA31265@bogus>
+Subject: Re: [PATCH v2 05/17] dt-bindings: atmel-isi: add microchip,sam9x60-isi
+Message-ID: <20200113232550.GA2344@bogus>
 References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
- <1578673089-3484-5-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578673089-3484-5-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_154007_809197_91CDEC1F 
-X-CRM114-Status: GOOD (  14.15  )
+X-CRM114-CacheID: sfid-20200113_154038_051294_60C20A0D 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -105,44 +106,26 @@ Cc: mark.rutland@arm.com, alexandre.belloni@bootlin.com, vigneshr@ti.com,
  richard@nod.at, ludovic.desroches@microchip.com, wg@grandegger.com,
  linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  tudor.ambarus@microchip.com, radu_nicolae.pirea@upb.ro,
- linux-can@vger.kernel.org, mkl@pengutronix.de, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
+ linux-can@vger.kernel.org, robh+dt@kernel.org, mkl@pengutronix.de,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
  richard.genoud@gmail.com, linux-spi@vger.kernel.org, vkoul@kernel.org,
  knaack.h@gmx.de, dmaengine@vger.kernel.org, eugen.hristev@microchip.com,
- jic23@kernel.org
+ Claudiu Beznea <claudiu.beznea@microchip.com>, jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 06:17:56PM +0200, Claudiu Beznea wrote:
-> Add microchip,sam9x60-tcb to DT bindings documentation.
+On Fri, 10 Jan 2020 18:17:57 +0200, Claudiu Beznea wrote:
+> Add microchip,sam9x60-isi to DT bindings documentation.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  Documentation/devicetree/bindings/mfd/atmel-tcb.txt | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  Documentation/devicetree/bindings/media/atmel-isi.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/mfd/atmel-tcb.txt b/Documentation/devicetree/bindings/mfd/atmel-tcb.txt
-> index c4a83e364cb6..cf0edf5381c9 100644
-> --- a/Documentation/devicetree/bindings/mfd/atmel-tcb.txt
-> +++ b/Documentation/devicetree/bindings/mfd/atmel-tcb.txt
-> @@ -1,6 +1,6 @@
->  * Device tree bindings for Atmel Timer Counter Blocks
-> -- compatible: Should be "atmel,<chip>-tcb", "simple-mfd", "syscon".
-> -  <chip> can be "at91rm9200" or "at91sam9x5"
-> +- compatible: Should be "atmel,at91rm9200-tcb", "atmel,at91sam9x5-tcb",
-> +  "microchip,sam9x60-tcb", "simple-mfd", "syscon".
 
-How many valid combinations are there? 1 with 5 strings? List one valid 
-combination per line.
-
->  - reg: Should contain registers location and length
->  - #address-cells: has to be 1
->  - #size-cells: has to be 0
-> -- 
-> 2.7.4
-> 
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
