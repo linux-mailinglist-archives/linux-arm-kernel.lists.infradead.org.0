@@ -2,85 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51851139B65
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:27:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC321139B69
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 22:27:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQdP7q05MrQq8z4ii4pWmfgMQ0GMUsuSMWLlpo/cSp8=; b=QMrV53qBz80pzS
-	q9SRFdI6f/4wHWU+orEf0bnTedrdvmtAx5s/9X63cH9/b/a7AgjuO+AtmmM0N+h7BjVkSKL3VnyJs
-	4rqFKlj3clo+eR8Qs9U0WTH+NVLa1XtzXcD8xk6G6QO4s92G/FxG32T4hQePiBhORFeGhTAZWtXy8
-	lDCk4eczeBaKxJEGSvLW2cUqI7wAmtYscT+DyOeucg3zED4+jIxkIn69qrwRCtY/EMs+7zaMSXsEi
-	Qiy//bPLfrJA5lQWAzZKxQXQ5/HQr6ohHje/H+2RAHIw7vC+zAw5b4ELwGy2udDG7zomfRXvm3PB/
-	Q8/HRlLHZWGyWh0kqmyg==;
+	List-Owner; bh=HV+Mo0F0mMHfIpEsvrGBz3a2iyjULRwU36ISApcGFqE=; b=FqAyeaeGb/JUST
+	1YUmHYo3kZvvwtXNgobyiQxEfK1TurGkDU8gLH8exsdrEiBWh6ki8pVt4EB49ivK6ITXQq/kWWNDN
+	CZqc35oDG6CyUjB3R2wRcr6BqCkW1Ucig4B/UTQwlOOMTw1kNcVi9gsZLZ69vPRNMl58O14eyj4ss
+	4yBI1XMEL9mpO+BEbxHlALPBgfvQmWnzIOUcZpGmm7gMCnQJ/bT9iveefTbEaTUhtkOw7qo6DQB5X
+	NJDf0LvXrFtiwoqgDgiyowOGGl4ZGMuVOKGiRG5Q418aXN+6co8/y7quPkvjYUxNaUYpFiklqo3nE
+	TN95vOJptkDnyn25yHGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir7Ez-0001JE-KX; Mon, 13 Jan 2020 21:27:17 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1ir7FW-0001ew-Ve; Mon, 13 Jan 2020 21:27:51 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir7Eq-0001Hz-45
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:27:10 +0000
-Received: by mail-qt1-x842.google.com with SMTP id g1so10449791qtr.13
+ id 1ir7FK-0001eB-DU
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 21:27:40 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 77so10422169oty.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 13:27:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gcgIXagv9xlLeS1uftnUlf0r/3UfyI9j0EIrXBwdKws=;
- b=sbEHlL88mPlpn6n70LlQP7W2VtELrkH7ImeUzIwEWDL9yn9gaaGkL8jfRbZR7vsPXC
- cFpbJgpG7nikKxhg8c7d4FBy0CFRtdt3YoH5kCb383DLWhvan1zP66nrKjkuWirgsOdL
- H8RjUQJC1eZkgQS7sRa4+r5m2Ru5bxNMR/LEzoaNuGtvwfUo8+tBB4+2P0CQH6Jqhobu
- 7beSPEV1VdCjWpx7xabXxdKPFGXh68Em/woWEjR3Z7QJ9oPx4VkDUNUBbw2657npgOW6
- 4olO0Nb2tGH0VVve8j9s8SYlU9q/zUDuhHhTw3JzQbENufo+DqOsCS0iAKW4uA3ELv82
- psjQ==
+ Mon, 13 Jan 2020 13:27:38 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gcgIXagv9xlLeS1uftnUlf0r/3UfyI9j0EIrXBwdKws=;
- b=Fde9NksQlAHPavP37KgpJL8ws8WEfBq5nJYFSERGuPpXgCAvydnLTf4uCE+y08Q7lx
- BDJV+cMPg49bSs1FCwcTD8R53XfD49DjJfGsc7Q+CeFeADduY1KK6Tk9MzyodDEDSWMT
- mlhzAji3g3XKTbfcB/R3JcQJYlvMUAVMoSwwPkXUC9Yd/j9HA/btaJfP4PH/VDkSFZ/r
- qSo91CALZwkqK6aN6WTB8agnQB3erbR1YtAaytxmreMN4mufJqdRCD9+sgtKjRWsMUtq
- uPNRTihuqNuiifO+oE3R6/OBCTUNZYikL4OsYDLtEw7Nw1kIqh3ThSnbSMZikdoNvE9w
- E5/w==
-X-Gm-Message-State: APjAAAWg6XTo4Du2DZiRz1l1ugeu/MsHomD6eFhbTzUqbIcTb9IuVAAQ
- g6jOARKs67qrWx/vwP9s53pUG8UsdxQ6+QTKF2mtHg==
-X-Google-Smtp-Source: APXvYqyM/xikDuCaNzYus/59D6sHaBSDSDCnTVnEruA+p256OWEmOn9Mf67OV2i5zDtjEOlM0GwhnK9DfXdMigBIP8M=
-X-Received: by 2002:ac8:7b9b:: with SMTP id p27mr652514qtu.2.1578950826327;
- Mon, 13 Jan 2020 13:27:06 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wpi+Y6/xhviC2Sqtl/ej/5/Y4u+j7SMkoib6d0WEkK8=;
+ b=GzVEP3iokIx/j7GdkaUUIyUOKYuuvamGsRzNon57jbI37HSCYupqbI8NGVBAjttm9I
+ P9LwFD9aV0rGpqzjdt88+tuTWk6PaQBNoTsK7BiJRo+7L58xV7ilMpJJGMv+Vszhprru
+ +w3KwiuiDxp0Sj1do/2xv2LijMyJc2VcN5Dyv+iSA8HHKbvGbTPIkyrzsNmCbksULpOH
+ CVACQlx/CKiEN/sdlIZOItON37ZwEkIhU0yzDr3MpgjeB1SaZK5AfkRIbKhH9RSQuiR3
+ mLtG+Kwv/SYo/Wb3q5FeK+9w8sJeYt/QfYQbDSNtjgmBHGx4GVy9XwfIRJew+plojZ4y
+ X0Qg==
+X-Gm-Message-State: APjAAAU61S0GAJK17IFNCgnp2IRwOQmwUDUv+6MX7koQg8igaAt2uJeR
+ 2xwyvVvFPjh6qOLgOSCNbvZDcdE=
+X-Google-Smtp-Source: APXvYqyQkYQWb3SBNLD9Eke4AVIKmRF19Ezwycyh1Ha9P0p7uFIjB6QH5tdV29t1a0RFVV4bn9UicA==
+X-Received: by 2002:a9d:7c8f:: with SMTP id q15mr14756570otn.140.1578950857392; 
+ Mon, 13 Jan 2020 13:27:37 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id a74sm3946965oii.37.2020.01.13.13.27.36
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 13 Jan 2020 13:27:36 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 220b00
+ by rob-hp-laptop (DragonFly Mail Agent v0.11);
+ Mon, 13 Jan 2020 15:27:35 -0600
+Date: Mon, 13 Jan 2020 15:27:35 -0600
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/3] dt-bindings: clock: Convert i.MX8MQ to json-schema
+Message-ID: <20200113212735.GA9275@bogus>
+References: <1578642914-838-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-References: <20191230164441.28375-1-mike.leach@linaro.org>
- <5948ee00-c3e8-749d-2354-5089b0103cee@infradead.org>
-In-Reply-To: <5948ee00-c3e8-749d-2354-5089b0103cee@infradead.org>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Mon, 13 Jan 2020 21:26:55 +0000
-Message-ID: <CAJ9a7VjdnWw1KOiRHLpSRu8kLHfpBEeqh7bQvednE0hDjngYYA@mail.gmail.com>
-Subject: Re: [PATCH v7 13/15] docs: coresight: Update documentation for
- CoreSight to cover CTI.
-To: Randy Dunlap <rdunlap@infradead.org>
+Content-Disposition: inline
+In-Reply-To: <1578642914-838-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_132708_171894_3A8E7FC2 
-X-CRM114-Status: GOOD (  33.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_132738_480451_E861D464 
+X-CRM114-Status: GOOD (  18.60  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,283 +97,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- linux-arm-msm@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Andy Gross <agross@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
- Sudeep Holla <sudeep.holla@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sboyd@kernel.org,
+ festevam@gmail.com, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ shawnguo@kernel.org, s.hauer@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks - these will be fixed in v8
+On Fri, Jan 10, 2020 at 03:55:12PM +0800, Anson Huang wrote:
+> Convert the i.MX8MQ clock binding to DT schema format using json-schema
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  .../devicetree/bindings/clock/imx8mq-clock.txt     | 20 ------
+>  .../devicetree/bindings/clock/imx8mq-clock.yaml    | 72 ++++++++++++++++++++++
+>  2 files changed, 72 insertions(+), 20 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/clock/imx8mq-clock.txt
+>  create mode 100644 Documentation/devicetree/bindings/clock/imx8mq-clock.yaml
 
-Mike
+Fails 'make dt_binding_check':
 
-On Mon, 30 Dec 2019 at 22:31, Randy Dunlap <rdunlap@infradead.org> wrote:
->
-> Hi Mike,
->
-> Just a couple of small nits below.
->
->
-> On 12/30/19 8:44 AM, Mike Leach wrote:
-> > Add new document covering CTI / CTM usage in CoreSight.
-> >
-> > Add section in coresight.rst introducing CTI and CTM modules with link
-> > to new document.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > ---
-> >  .../trace/coresight/coresight-ect.rst         | 211 ++++++++++++++++++
-> >  Documentation/trace/coresight/coresight.rst   |  13 ++
-> >  2 files changed, 224 insertions(+)
-> >  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
-> >
-> > diff --git a/Documentation/trace/coresight/coresight-ect.rst b/Documentation/trace/coresight/coresight-ect.rst
-> > new file mode 100644
-> > index 000000000000..3e06588f24fa
-> > --- /dev/null
-> > +++ b/Documentation/trace/coresight/coresight-ect.rst
-> > @@ -0,0 +1,211 @@
-> > +=============================================
-> > +CoreSight Embedded Cross Trigger (CTI & CTM).
-> > +=============================================
-> > +
-> > +    :Author:   Mike Leach <mike.leach@linaro.org>
-> > +    :Date:     November 2019
-> > +
-> > +Hardware Description
-> > +--------------------
-> > +
-> > +The CoreSight Cross Trigger Interface (CTI) is a hardware device that takes
-> > +individual input and output hardware signals known as triggers to and from
-> > +devices and interconnects them via the Cross Trigger Matrix (CTM) to other
-> > +devices via numbered channels, in order to propagate events between devices.
-> > +
-> > +e.g.::
-> > +
-> > + 0000000  in_trigs  :::::::
-> > + 0 C   0----------->:     :             +======>(other CTI channel IO)
-> > + 0  P  0<-----------:     :             v
-> > + 0   U 0  out_trigs :     : Channels  *****      :::::::
-> > + 0000000            : CTI :<=========>*CTM*<====>: CTI :---+
-> > + #######  in_trigs  :     : (id 0-3)  *****      :::::::   v
-> > + # ETM #----------->:     :                         ^   #######
-> > + #     #<-----------:     :                         +---# ETR #
-> > + ####### out_trigs  :::::::                             #######
-> > +
-> > +The CTI driver enables the programming of the CTI to attach triggers to
-> > +channels. When an input trigger becomes active, the attached channel will
-> > +become active. Any output trigger attached to that channel will also
-> > +become active. The active channel is propagated to other CTIs via the CTM,
-> > +activating connected output triggers there, unless filtered by the CTI
-> > +channel gate.
-> > +
-> > +It is also possible to activate a channel using system software directly
-> > +programming registers in the CTI.
-> > +
-> > +The CTIs are registered by the system to be associated with CPUs and/or other
-> > +CoreSight devices on the trace data path. When these devices are enabled the
-> > +attached CTIs will also be enabled. By default/on power up the CTIs have
-> > +no programmed trigger/channel attachments, so will not affect the system
-> > +until explicitly programmed.
-> > +
-> > +The hardware trigger connections between CTIs and devices is implementation
-> > +defined, unless the CPU/ETM combination is a v8 architecture, in which case
-> > +the connections have an architecturally defined standard layout.
-> > +
-> > +The hardware trigger signals can also be connected to non-CoreSight devices
-> > +(e.g. UART), or be propagated off chip as hardware IO lines.
-> > +
-> > +All the CTI devices are associated with a CTM. On many systems there will be a
-> > +single effective CTM (one CTM, or multiple CTMs all interconnected), but it is
-> > +possible that systems can have nets of CTIs+CTM that are not interconnected by
-> > +a CTM to each other. On these systems a CTM index is declared to associate
-> > +CTI devices that are interconnected via a given CTM.
-> > +
-> > +Sysfs files and directories
-> > +---------------------------
-> > +
-> > +The CTI devices appear on the existing CoreSight bus alongside the other
-> > +CoreSight devices::
-> > +
-> > +    >$ ls /sys/bus/coresight/devices
-> > +     cti_cpu0  cti_cpu2  cti_sys0  etm0  etm2  funnel0  replicator0  tmc_etr0
-> > +     cti_cpu1  cti_cpu3  cti_sys1  etm1  etm3  funnel1  tmc_etf0     tpiu0
-> > +
-> > +The ``cti_cpu<N>`` named CTIs are associated with a CPU, and any ETM used by
-> > +that core. the ``cti_sys<N>`` CTIs are general system infrastructure CTIs that
->
->               The
->
-> > +can be associated with other CoreSight devices, or other system hardware
-> > +capable of generating or using trigger signals.::
-> > +
-> > +  >$ ls /sys/bus/coresight/devices/etm0/cti_cpu0
-> > +  channels  ctmid  enable  nr_trigger_cons mgmt  power  regs  subsystem
-> > +  triggers0 triggers1  uevent
-> > +
-> > +*Key file items are:-*
-> > +   * ``enable``: enables/disables the CTI.
-> > +   * ``ctmid`` : associated CTM - only relevant if system has multiple CTI+CTM
-> > +     clusters that are not interconnected.
-> > +   * ``nr_trigger_cons`` : total connections - triggers<N> directories.
-> > +
-> > +*Sub-directories:-*
-> > +   * ``triggers<N>``: contains list of triggers for an individual connection.
-> > +   * ``channels``: Contains the channel API - CTI main programming interface.
-> > +   * ``regs``: Gives access to the raw programmable CTI regs.
-> > +   * ``mgmt``: the standard CoreSight management registers.
-> > +
-> > +
-> > +triggers<N> directories
-> > +~~~~~~~~~~~~~~~~~~~~~~~
-> > +
-> > +Individual trigger connection information. This describes trigger signals for
-> > +CoreSight and non-CoreSight connections.
-> > +
-> > +Each triggers directory has a set of parameters describing the triggers for
-> > +the connection.
-> > +
-> > +   * ``name`` : name of connection
-> > +   * ``in_signals`` : input trigger signal indexes used in this connection.
-> > +   * ``in_types`` : functional types for in signals.
-> > +   * ``out_signals`` : output trigger signals for this connection.
-> > +   * ``out_types`` : functional types for out signals.
-> > +
-> > +e.g::
-> > +
-> > +    >$ ls ./cti_cpu0/triggers0/
-> > +    in_signals  in_types  name  out_signals  out_types
-> > +    >$ cat ./cti_cpu0/triggers0/name
-> > +    cpu0
-> > +    >$ cat ./cti_cpu0/triggers0/out_signals
-> > +    0-2
-> > +    >$ cat ./cti_cpu0/triggers0/out_types
-> > +    pe_edbgreq pe_dbgrestart pe_ctiirq
-> > +    >$ cat ./cti_cpu0/triggers0/in_signals
-> > +    0-1
-> > +    >$ cat ./cti_cpu0/triggers0/in_types
-> > +    pe_dbgtrigger pe_pmuirq
-> > +
-> > +If a connection has zero signals in either the 'in' or 'out' triggers then
-> > +those parameters will be omitted.
-> > +
-> > +Channels API Directory
-> > +~~~~~~~~~~~~~~~~~~~~~~
-> > +
-> > +This provides an easy way to attach triggers to channels, without needing
-> > +the multiple register operations that are required if manipulating the
-> > +'regs' sub-dir elements directly.
->
-> spell out: sub-directory
->
-> > +
-> > +A number of files provide this API::
-> > +
-> > +   >$ ls ./cti_sys0/channels/
-> > +   chan_clear         chan_inuse         chan_xtrigs_view      trigin_detach
-> > +   chan_free          chan_pulse         chan_xtrigs_view_sel  trigout_attach
-> > +   chan_gate_disable  chan_set           trig_filter_enable    trigout_detach
-> > +   chan_gate_enable   chan_xtrigs_reset  trigin_attach         trigout_filtered
-> > +
-> > +Most access to these elements take the form::
-> > +
-> > +  echo <chan> [<trigger>] > /<device_path>/<operation>
-> > +
-> > +where the optional <trigger> is only needed for trigXX_attach | detach
-> > +operations.
-> > +
-> > +e.g.::
-> > +
-> > +   >$ echo 0 1 > ./cti_sys0/channels/trigout_attach
-> > +   >$ echo 0 > ./cti_sys0/channels/chan_set
-> > +
-> > +Attaches trigout(1) to channel(0), then activates channel(0) generating a
-> > +set state on cti_sys0.trigout(1)
-> > +
-> > +
-> > +*API operations*
-> > +
-> > +   * ``trigin_attach, trigout_attach``: Attach a channel to a trigger signal.
-> > +   * ``trigin_detach, trigout_detach``: Detach a channel from a trigger signal.
-> > +   * ``chan_set``: Set the channel - the set state will be propagated around
-> > +     the CTM to other connected devices.
-> > +   * ``chan_clear``: Clear the channel.
-> > +   * ``chan_pulse``: Set the channel for a single CoreSight clock cycle.
-> > +   * ``chan_gate_enable``: Write operation sets the CTI gate to propagate
-> > +     (enable) the channel to other devices. This operation takes a channel
-> > +     number. CTI gate is enabled for all channels by default at power up. Read
-> > +     to list the currently enabled channels on the gate.
-> > +   * ``chan_gate_disable``: Write channel number to disable gate for that
-> > +     channel.
-> > +   * ``chan_inuse``: Show the current channels attached to any signal
-> > +   * ``chan_free``: Show channels with no attached signals.
-> > +   * ``chan_xtrig_view``: write a channel number to select a channel to view,
-> > +     read to show the cross triggers programmed for the selected channel.
-> > +   * ``trig_filter_enable``: Defaults to enabled, disable to allow potentially
-> > +     dangerous output signals to be set.
-> > +   * ``trigout_filtered``: Trigger out signals that are prevented from being
-> > +     set if filtering ``trig_filter_enable`` is enabled. One use is to prevent
-> > +     accidental ``EDBGREQ`` signals stopping a core.
-> > +   * ``chan_xtrigs_reset``: Write 1 to clear all channel / trigger programming.
-> > +     Resets device hardware to default state.
-> > +
-> > +
-> > +The example below attaches input trigger index 1 to channel 2, and output
-> > +trigger index 6 to the same channel. It then examines the state of the
-> > +channel / trigger connections using the appropriate sysfs attributes.
-> > +
-> > +The settings mean that if either input trigger 1, or channel 2 go active then
-> > +trigger out 6 will go active. We then enable the CTI, and use the software
-> > +channel control to activate channel 2. We see the active channel on the
-> > +``choutstatus`` register and the active signal on the ``trigoutstatus``
-> > +register. Finally clearing the channel removes this.
-> > +
-> > +e.g.::
-> > +
-> > +   .../cti_sys0/channels# echo 2 1 > trigin_attach
-> > +   .../cti_sys0/channels# echo 2 6 > trigout_attach
-> > +   .../cti_sys0/channels# cat chan_free
-> > +   0-1,3
-> > +   .../cti_sys0/channels# cat chan_inuse
-> > +   2
-> > +   .../cti_sys0/channels# echo 2 > chan_xtrigs_view
-> > +   .../cti_sys0/channels# cat chan_xtrigs_view
-> > +   [2] IN: 1 OUT: 6
-> > +   .../cti_sys0/# echo 1 > enable
-> > +   .../cti_sys0/channels# echo 2 > chan_set
-> > +   .../cti_sys0/channels# cat ../regs/choutstatus
-> > +   0x4
-> > +   .../cti_sys0/channels# cat ../regs/trigoutstatus
-> > +   0x40
-> > +   .../cti_sys0/channels# echo 2 > chan_clear
-> > +   .../cti_sys0/channels# cat ../regs/trigoutstatus
-> > +   0x0
-> > +   .../cti_sys0/channels# cat ../regs/choutstatus
-> > +   0x0
->
->
-> Reviewed-by: Randy Dunlap <rdunlap@infradead.org>
->
-> thanks.
-> --
-> ~Randy
->
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:0: 'ckil' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:1: 'osc_25m' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:2: 'osc_27m' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:3: 'clk_ext1' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:4: 'clk_ext2' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names:5: 'clk_ext3' was expected
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clock-names: ['osc_32k', 'osc_24m', 'clk_ext1', 'clk_ext2', 'clk_ext3', 'clk_ext4'] is too short
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/clock/imx8mn-clock.example.dt.yaml: 
+clock-controller@30380000: clocks: [[1], [2], [3], [4], [5], [6]] is too short
 
+> 
+> diff --git a/Documentation/devicetree/bindings/clock/imx8mq-clock.txt b/Documentation/devicetree/bindings/clock/imx8mq-clock.txt
+> deleted file mode 100644
+> index 52de826..0000000
+> --- a/Documentation/devicetree/bindings/clock/imx8mq-clock.txt
+> +++ /dev/null
+> @@ -1,20 +0,0 @@
+> -* Clock bindings for NXP i.MX8M Quad
+> -
+> -Required properties:
+> -- compatible: Should be "fsl,imx8mq-ccm"
+> -- reg: Address and length of the register set
+> -- #clock-cells: Should be <1>
+> -- clocks: list of clock specifiers, must contain an entry for each required
+> -          entry in clock-names
+> -- clock-names: should include the following entries:
+> -    - "ckil"
+> -    - "osc_25m"
+> -    - "osc_27m"
+> -    - "clk_ext1"
+> -    - "clk_ext2"
+> -    - "clk_ext3"
+> -    - "clk_ext4"
+> -
+> -The clock consumer should specify the desired clock by having the clock
+> -ID in its "clocks" phandle cell.  See include/dt-bindings/clock/imx8mq-clock.h
+> -for the full list of i.MX8M Quad clock IDs.
+> diff --git a/Documentation/devicetree/bindings/clock/imx8mq-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mq-clock.yaml
+> new file mode 100644
+> index 0000000..881c01c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/imx8mq-clock.yaml
+> @@ -0,0 +1,72 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/bindings/clock/imx8mq-clock.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP i.MX8M Quad Clock Control Module Binding
+> +
+> +maintainers:
+> +  - Anson Huang <Anson.Huang@nxp.com>
+> +
+> +description: |
+> +  NXP i.MX8M Quad clock control module is an integrated clock controller, which
+> +  generates and supplies to all modules.
+> +
+> +properties:
+> +  compatible:
+> +    const: fsl,imx8mn-ccm
 
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+Wrong compatible...
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: 32k osc
+> +      - description: 25m osc
+> +      - description: 27m osc
+> +      - description: ext1 clock input
+> +      - description: ext2 clock input
+> +      - description: ext3 clock input
+> +      - description: ext4 clock input
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ckil
+> +      - const: osc_25m
+> +      - const: osc_27m
+> +      - const: clk_ext1
+> +      - const: clk_ext2
+> +      - const: clk_ext3
+> +      - const: clk_ext4
+> +
+> +  '#clock-cells':
+> +    const: 1
+> +    description:
+> +      The clock consumer should specify the desired clock by having the clock
+> +      ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mq-clock.h
+> +      for the full list of i.MX8M Quad clock IDs.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - '#clock-cells'
+> +
+> +examples:
+> +  # Clock Control Module node:
+> +  - |
+> +    clk: clock-controller@30380000 {
+> +        compatible = "fsl,imx8mq-ccm";
+> +        reg = <0x30380000 0x10000>;
+> +        #clock-cells = <1>;
+> +        clocks = <&ckil>, <&osc_25m>, <&osc_27m>,
+> +                 <&clk_ext1>, <&clk_ext2>,
+> +                 <&clk_ext3>, <&clk_ext4>;
+> +        clock-names = "ckil", "osc_25m", "osc_27m",
+> +                      "clk_ext1", "clk_ext2",
+> +                      "clk_ext3", "clk_ext4";
+> +    };
+> +
+> +...
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
