@@ -2,96 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87B25138C6F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:37:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEC35138C7D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:47:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mVU7n2blqLbnkFbf09DTrFA5oOzeA3caM4DUNKA9/vI=; b=K5jyv/mdkPlvWU
-	6+9v3/Wdbix4Bm7TA6ZLf7MBRSeEWLSYAeQ9ADKUCwXTVGGHUnBtQNAjI5xJ02vX7MfIhAkFLdGvk
-	tZuGw5dj1pF7iuo0iB6S4UdQ1lu7K16FMUL2m8AhY0ZkiMJd+XWeMxZENKqPuccv+vBA5UDSzcKlW
-	Ao+BCFrGKDT3EILDYpeZQua+ErvReGd7hz8bvLTNLpEdtOGr6gh84O1wedgmENobpqR4cxVQnZAwN
-	QlcJ7WdDgRB1lIuyqB9pHkODpAeGTtcBIGS2fARxRPn6VSJrb81kC0XVeCJ/Mo+Cpojt9f+4vvAtO
-	Nfw4UQ5q6HqxvyzWSDaA==;
+	List-Owner; bh=kf/cTPwrOIYNi7ONstj9bCf8ZYReq3UNsenbwk+IOcU=; b=YCbGrHl360GpOU
+	5BQ/usElAkfi/XmqVpuRITLcEE5ZtDPS1enmPuaO5J0I7eyt6U6xCpgCRVejfhMMNd9KhNJTo4/oc
+	2AX7vvpS6A8GOnTgLXVWOohaMJeuBa5WwF1skSsU6Lq6gTUvKPCItArpNpxW7kl8AXx6+SoF3L4fw
+	r5Cey+1Pd9YxgIVUszbiY8ZcvnbrlWoaDIQykK0NjcCXqlA3BDkViQ0fvneCgT34GofBYd0CYWKA+
+	3cwE2r02aq5/PujsG4htfnzWkOS394izfmWHr9og0ky9Di39cNCrv69Gpf6TCgjRk35cZzp//uxuE
+	E1mdgy8MMSg2ex8r64NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iquI5-0001QI-4m; Mon, 13 Jan 2020 07:37:37 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1iquRE-0004xJ-4c; Mon, 13 Jan 2020 07:47:04 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iquHx-0001PU-1Q
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 07:37:30 +0000
-Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00D7bRMq073032
- for <linux-arm-kernel@lists.infradead.org>; Mon, 13 Jan 2020 02:37:27 -0500
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2xfbs7exvk-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 13 Jan 2020 02:37:26 -0500
-Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Mon, 13 Jan 2020 07:37:23 -0000
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 13 Jan 2020 07:37:16 -0000
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 00D7bFdm59899960
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 13 Jan 2020 07:37:15 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 66762A4040;
- Mon, 13 Jan 2020 07:37:15 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id C58E7A404D;
- Mon, 13 Jan 2020 07:37:13 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.8.170])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Mon, 13 Jan 2020 07:37:13 +0000 (GMT)
-Date: Mon, 13 Jan 2020 09:37:12 +0200
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V11 2/5] mm/memblock: Introduce MEMBLOCK_BOOT flag
-References: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
- <1578625755-11792-3-git-send-email-anshuman.khandual@arm.com>
+ id 1iquQn-0004o5-Ab; Mon, 13 Jan 2020 07:46:38 +0000
+Received: by mail-ed1-f68.google.com with SMTP id m8so7574253edi.13;
+ Sun, 12 Jan 2020 23:46:36 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=9+NYHUXqWb5LThglCHJH2RV2/Z3BgkHI4Ngou8ygTeM=;
+ b=B/nlr/OIlpwTd9td418golQHSuT1IDDoftuvid4SEK3OmyavaxJjeRQYbjDczyLj7l
+ 8nlU1BmStmJmdwkNsQq7oLTG86voAz9Tur9AAPrOKYshw2FtDifjz7jGiVMmAeAXC/K9
+ ekuyXvQGifBMjy1CqTkrHqfyq734SR6E5kQlSaRg0O0Je764J6/bxSyNh9Ffhb5RXATA
+ IgCvwo00x1yew8ObNUoqkDjS1nWG2A9gYqEIbIxhm0nItVJcJy1USuVBWCCFifCTqS29
+ /J/TgaACg0Lx/TkkUg4pxuKNAwSTQ/6G5C9RCBSlr8ZqG4PMIItwR1s5yW+DU0F8+1W+
+ Is1Q==
+X-Gm-Message-State: APjAAAUPpqCEx7hgaRl7c2yjam5Cj6xLlnvfqUkXb+bU2PTLNVDon2E+
+ kmKkAfR4t563o+ATPUFQ2i4=
+X-Google-Smtp-Source: APXvYqzi2butQD8WUbdthxqJ+MEw6KBLKjtLWPlvu/eksm5HSQg2bqJpNmL4e5nbvOjMdE7ge3nd1Q==
+X-Received: by 2002:a17:906:948e:: with SMTP id
+ t14mr15643734ejx.123.1578901595055; 
+ Sun, 12 Jan 2020 23:46:35 -0800 (PST)
+Received: from pi3 ([194.230.155.229])
+ by smtp.googlemail.com with ESMTPSA id n14sm400975ejs.40.2020.01.12.23.46.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 12 Jan 2020 23:46:34 -0800 (PST)
+Date: Mon, 13 Jan 2020 08:46:32 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 3/3] mtd: onenand: Enable compile testing of OMAP and
+ Samsung drivers
+Message-ID: <20200113074632.GA1187@pi3>
+References: <20191229183612.22133-3-krzk@kernel.org>
+ <201912310904.9iM6MaFr%lkp@intel.com> <20191231073339.GA6747@pi3>
+ <20200109161826.7fda02a4@xps13>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578625755-11792-3-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 20011307-0008-0000-0000-00000348D902
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20011307-0009-0000-0000-00004A69272A
-Message-Id: <20200113073711.GA4214@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-13_01:2020-01-13,
- 2020-01-13 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0
- priorityscore=1501 mlxlogscore=999 suspectscore=0 adultscore=0
- clxscore=1011 bulkscore=0 malwarescore=0 impostorscore=0 mlxscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1910280000 definitions=main-2001130064
+In-Reply-To: <20200109161826.7fda02a4@xps13>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_233729_087280_ED41E619 
-X-CRM114-Status: GOOD (  30.36  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200112_234637_365050_9CB41EB5 
+X-CRM114-Status: GOOD (  16.98  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,162 +88,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, david@redhat.com, catalin.marinas@arm.com,
- linux-mm@kvack.org, arunks@codeaurora.org, cpandya@codeaurora.org,
- will@kernel.org, ira.weiny@intel.com, steven.price@arm.com,
- valentin.schneider@arm.com, suzuki.poulose@arm.com, Robin.Murphy@arm.com,
- broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
- osalvador@suse.de, steve.capper@arm.com, logang@deltatee.com,
- linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
- mgorman@techsingularity.net
+Cc: linux-samsung-soc@vger.kernel.org, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, Richard Weinberger <richard@nod.at>,
+ linux-kernel@vger.kernel.org, Kyungmin Park <kyungmin.park@samsung.com>,
+ linux-mtd@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Vignesh Raghavendra <vigneshr@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 08:39:12AM +0530, Anshuman Khandual wrote:
-> On arm64 platform boot memory should never be hot removed due to certain
-> platform specific constraints. Hence the platform would like to override
-> earlier added arch call back arch_memory_removable() for this purpose. In
-> order to reject boot memory hot removal request, it needs to first track
-> them at runtime. In the future, there might be other platforms requiring
-> runtime boot memory enumeration. Hence lets expand the existing generic
-> memblock framework for this purpose rather then creating one just for
-> arm64 platforms.
+On Thu, Jan 09, 2020 at 04:18:26PM +0100, Miquel Raynal wrote:
+> Hi Krzysztof,
 > 
-> This introduces a new memblock flag MEMBLOCK_BOOT along with helpers which
-> can be marked by given platform on all memory regions discovered during
-> boot.
- 
-We already have MEMBLOCK_HOTPLUG to mark hotpluggable region. Can't we use
-it for your use-case?
+> Krzysztof Kozlowski <krzk@kernel.org> wrote on Tue, 31 Dec 2019
+> 08:33:39 +0100:
+> 
+> > On Tue, Dec 31, 2019 at 10:00:48AM +0800, kbuild test robot wrote:
+> > > Hi Krzysztof,
+> > > 
+> > > I love your patch! Perhaps something to improve:
+> > > 
+> > > [auto build test WARNING on linus/master]
+> > > [also build test WARNING on v5.5-rc4 next-20191220]
+> > > [if your patch is applied to the wrong git tree, please drop us a note to help
+> > > improve the system. BTW, we also suggest to use '--base' option to specify the
+> > > base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+> > > 
+> > > url:    https://github.com/0day-ci/linux/commits/Krzysztof-Kozlowski/mtd-onenand-samsung-Fix-pointer-cast-Wpointer-to-int-cast-warnings-on-64-bit/20191230-030838
+> > > base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git bf8d1cd4386535004c4afe7f03d37f9864c9940e
+> > > reproduce:
+> > >         # apt-get install sparse
+> > >         # sparse version: v0.6.1-129-g341daf20-dirty
+> > >         make ARCH=x86_64 allmodconfig
+> > >         make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+> > > 
+> > > If you fix the issue, kindly add following tag
+> > > Reported-by: kbuild test robot <lkp@intel.com>
+> > >   
+> > 
+> > It is not related to my patch. I'll fix it up soon.
+> 
+> I would like this to be fixed before enabling compile testing, is your
+> fix read?
 
-> Cc: Mike Rapoport <rppt@linux.ibm.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  include/linux/memblock.h | 10 ++++++++++
->  mm/memblock.c            | 37 +++++++++++++++++++++++++++++++++++++
->  2 files changed, 47 insertions(+)
-> 
-> diff --git a/include/linux/memblock.h b/include/linux/memblock.h
-> index b38bbef..fb04c87 100644
-> --- a/include/linux/memblock.h
-> +++ b/include/linux/memblock.h
-> @@ -31,12 +31,14 @@ extern unsigned long long max_possible_pfn;
->   * @MEMBLOCK_HOTPLUG: hotpluggable region
->   * @MEMBLOCK_MIRROR: mirrored region
->   * @MEMBLOCK_NOMAP: don't add to kernel direct mapping
-> + * @MEMBLOCK_BOOT: memory received from firmware during boot
->   */
->  enum memblock_flags {
->  	MEMBLOCK_NONE		= 0x0,	/* No special request */
->  	MEMBLOCK_HOTPLUG	= 0x1,	/* hotpluggable region */
->  	MEMBLOCK_MIRROR		= 0x2,	/* mirrored region */
->  	MEMBLOCK_NOMAP		= 0x4,	/* don't add to kernel direct mapping */
-> +	MEMBLOCK_BOOT		= 0x8,	/* memory received from firmware during boot */
->  };
->  
->  /**
-> @@ -116,6 +118,8 @@ int memblock_reserve(phys_addr_t base, phys_addr_t size);
->  void memblock_trim_memory(phys_addr_t align);
->  bool memblock_overlaps_region(struct memblock_type *type,
->  			      phys_addr_t base, phys_addr_t size);
-> +int memblock_mark_boot(phys_addr_t base, phys_addr_t size);
-> +int memblock_clear_boot(phys_addr_t base, phys_addr_t size);
->  int memblock_mark_hotplug(phys_addr_t base, phys_addr_t size);
->  int memblock_clear_hotplug(phys_addr_t base, phys_addr_t size);
->  int memblock_mark_mirror(phys_addr_t base, phys_addr_t size);
-> @@ -216,6 +220,11 @@ static inline bool memblock_is_nomap(struct memblock_region *m)
->  	return m->flags & MEMBLOCK_NOMAP;
->  }
->  
-> +static inline bool memblock_is_boot(struct memblock_region *m)
-> +{
-> +	return m->flags & MEMBLOCK_BOOT;
-> +}
-> +
->  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
->  int memblock_search_pfn_nid(unsigned long pfn, unsigned long *start_pfn,
->  			    unsigned long  *end_pfn);
-> @@ -449,6 +458,7 @@ void memblock_cap_memory_range(phys_addr_t base, phys_addr_t size);
->  void memblock_mem_limit_remove_map(phys_addr_t limit);
->  bool memblock_is_memory(phys_addr_t addr);
->  bool memblock_is_map_memory(phys_addr_t addr);
-> +bool memblock_is_boot_memory(phys_addr_t addr);
->  bool memblock_is_region_memory(phys_addr_t base, phys_addr_t size);
->  bool memblock_is_reserved(phys_addr_t addr);
->  bool memblock_is_region_reserved(phys_addr_t base, phys_addr_t size);
-> diff --git a/mm/memblock.c b/mm/memblock.c
-> index 4bc2c7d..e10207f 100644
-> --- a/mm/memblock.c
-> +++ b/mm/memblock.c
-> @@ -865,6 +865,30 @@ static int __init_memblock memblock_setclr_flag(phys_addr_t base,
->  }
->  
->  /**
-> + * memblock_mark_bootmem - Mark boot memory with flag MEMBLOCK_BOOT.
-> + * @base: the base phys addr of the region
-> + * @size: the size of the region
-> + *
-> + * Return: 0 on success, -errno on failure.
-> + */
-> +int __init_memblock memblock_mark_boot(phys_addr_t base, phys_addr_t size)
-> +{
-> +	return memblock_setclr_flag(base, size, 1, MEMBLOCK_BOOT);
-> +}
-> +
-> +/**
-> + * memblock_clear_bootmem - Clear flag MEMBLOCK_BOOT for a specified region.
-> + * @base: the base phys addr of the region
-> + * @size: the size of the region
-> + *
-> + * Return: 0 on success, -errno on failure.
-> + */
-> +int __init_memblock memblock_clear_boot(phys_addr_t base, phys_addr_t size)
-> +{
-> +	return memblock_setclr_flag(base, size, 0, MEMBLOCK_BOOT);
-> +}
-> +
-> +/**
->   * memblock_mark_hotplug - Mark hotpluggable memory with flag MEMBLOCK_HOTPLUG.
->   * @base: the base phys addr of the region
->   * @size: the size of the region
-> @@ -974,6 +998,10 @@ static bool should_skip_region(struct memblock_region *m, int nid, int flags)
->  	if ((flags & MEMBLOCK_MIRROR) && !memblock_is_mirror(m))
->  		return true;
->  
-> +	/* if we want boot memory skip non-boot memory regions */
-> +	if ((flags & MEMBLOCK_BOOT) && !memblock_is_boot(m))
-> +		return true;
-> +
->  	/* skip nomap memory unless we were asked for it explicitly */
->  	if (!(flags & MEMBLOCK_NOMAP) && memblock_is_nomap(m))
->  		return true;
-> @@ -1785,6 +1813,15 @@ bool __init_memblock memblock_is_map_memory(phys_addr_t addr)
->  	return !memblock_is_nomap(&memblock.memory.regions[i]);
->  }
->  
-> +bool __init_memblock memblock_is_boot_memory(phys_addr_t addr)
-> +{
-> +	int i = memblock_search(&memblock.memory, addr);
-> +
-> +	if (i == -1)
-> +		return false;
-> +	return memblock_is_boot(&memblock.memory.regions[i]);
-> +}
-> +
->  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
->  int __init_memblock memblock_search_pfn_nid(unsigned long pfn,
->  			 unsigned long *start_pfn, unsigned long *end_pfn)
-> -- 
-> 2.7.4
-> 
+Yes, you picked up the fix here:
+https://lore.kernel.org/lkml/20200103164158.4265-1-krzk@kernel.org/
 
--- 
-Sincerely yours,
-Mike.
+Best regards,
+Krzysztof
 
 
 _______________________________________________
