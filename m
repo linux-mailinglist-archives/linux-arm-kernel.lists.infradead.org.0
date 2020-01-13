@@ -2,114 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9239138B94
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:02:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 339D8138BB1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:11:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uRC6ujXVbDNGy2ENu23OG6PTnsoCHBy77LxzH+RhzD4=; b=BUyW3rk/CG6Foq
-	yo1hsoCPz1tVPP1yEPfbV8rUpuDezzh8znXQ8tcYETyidqG1CS/4FwYGZZcEJ8vao3R0UrCEvsCbt
-	QCNTAZqTlhWb5SMTqm2VvdFvzh6NCiUezEsyD3uWnM3OHltJDN/gzt9dGyI66+VGKQQgG/dEl1xuP
-	CFKFgXSdx1mNgMkduRuyybxWinbY7qNnxYUmbrqjQ8zwVZs0vWqFyoO9XF8tFGUZD1uCoep2VREN0
-	GlSP6WWlbfOwDrrDAk9FxqTt34y5s5Ru3Ggg69lim8NM923d//iGmeks0FZxvek7ed9LGO3NXyZ3s
-	7HNjKvEExhegl7fCTwvA==;
+	List-Owner; bh=dubYTmm/mjhK+XF7jq/fb3N1iZE9iAnhOincQXoHtLs=; b=sYsl47kzGuvs+Y
+	h7cZS1Wc0AK5cQytwmk+IqZhjSttbisLJjAwE3SO/UKrvNQsD3Zbs08OMFkzIDj/2QOD6MIqk4Anq
+	O+awJxvRzCzeA5eZQyVoBL7M1AgE/wOqJYE9+BYrwUmF2daYIJs9J79/if/8MUkmgiGkDtj4yFCdZ
+	VSs1Sj5QTTAI2QFeTKDJpP+IFBRCsQPij+RcMQ8rcKa3RPG6A4v4Swo9mF3841DQe3ARbdi865JRC
+	YUgVnIaaitvNcaHoP8QuDqmGfgGHwkFVej81BMGQV10695PQ/QPwVry6AQA0cBbmEGvw8mS6Did7T
+	XfGVcjB8q7J8j2KS29KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqsnr-0006B8-5M; Mon, 13 Jan 2020 06:02:19 +0000
-Received: from mail-eopbgr770042.outbound.protection.outlook.com
- ([40.107.77.42] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1iqswB-0000uJ-9E; Mon, 13 Jan 2020 06:10:55 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqsnh-0006AA-3l
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:02:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MOQ+ietlEQwLfDu997h0pyyiFuXocLgVTVD7PzyhS0say4PWLOF1UZ3dUqPW2Cq/8+gkxgvCUfgTNmW4WIn0E/+7xmArNfvS2m4X+H2YFdHJu5ICn5jxR5PkZWJ5qDNlr0+01vxmlhyVe/kG4ZNntL4mdegUmVK13KdmtD7qkyq/ki4uJOPgctZIFARBkQtJ5zDMEBpqG3mZK/aQwmbDpRxkoshzseKOecihPwZ2fWZkX3fjnidQlQfPuZhwnzKIVCw9w6ogdbeqorHiIkQ0Iab2l06p9P+TvtWVN6n77vcEbdR7K9LoPU9cN9pBKrFi5GY4F5/apynqXUNEKzBm7Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AFdO11OKxeoVt4iOmV+DEvFLiaBH7k429f1RnfyonLE=;
- b=k4P8kyzgW3o5JhudB1hcrkzZdhJGuV5rxvt5mLs7Z4nBl8qLFp8HQ7FiuyaP7VTD4NEZkaCxUDczNNlVtbgv7lSRIJ8UbjhybhrEV02W571X3R7MCLiuwfceMHMCXUniplJgGOMxtIW9V4h5iqZIuhYV8KBFZOr1tJfzaWbAGyATHLPzzVIbetSKDSthDAsNHLWGMzYTuUhu4NEeqst3zNZO2yHhL+QB4UM1sxdL7UljJMIyPzE2GyJfqC/krYXr2513b4Kz7CK+zeGMJ6t0WZfoz9nm3bcsoD/8z+q6EvGBu8KZb8DDjaPIPdNKEt1NLew61ofRrj7JqNY3wqhfhA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AFdO11OKxeoVt4iOmV+DEvFLiaBH7k429f1RnfyonLE=;
- b=akSfqgawdKoh3uVNEqPhKcv3e8LbJTtB2UppNnx7KqJBoDUhIQqL/UFh7FwTy58zthAuAV0h94bsmn6Ze6OGHiq3hTQ0ooii+U28ZNZfJCYrIbfhCsPCMWZ7GhbeD0sWIX+mPPvnbRlGxYIgCbMR8ey4iQ/Z+LBdcObV0g4lJUU=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6151.namprd02.prod.outlook.com (52.132.230.92) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.13; Mon, 13 Jan 2020 06:02:06 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 06:02:06 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Andre Przywara <andre.przywara@arm.com>, "David S . Miller"
- <davem@davemloft.net>
-Subject: RE: [PATCH 08/14] net: axienet: Drop MDIO interrupt registers from
- ethtools dump
-Thread-Topic: [PATCH 08/14] net: axienet: Drop MDIO interrupt registers from
- ethtools dump
-Thread-Index: AQHVx6y7Cl3Mr7YIzE6y4oKaxbl9yafoHX0A
-Date: Mon, 13 Jan 2020 06:02:06 +0000
-Message-ID: <CH2PR02MB7000F73F928C719596BF3611C7350@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-9-andre.przywara@arm.com>
-In-Reply-To: <20200110115415.75683-9-andre.przywara@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e0d130ff-50ad-4d42-726a-08d797ee1e93
-x-ms-traffictypediagnostic: CH2PR02MB6151:|CH2PR02MB6151:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB6151CC6117C68EEAD868DF25C7350@CH2PR02MB6151.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:513;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(376002)(396003)(346002)(366004)(189003)(199004)(4326008)(54906003)(6506007)(7696005)(316002)(53546011)(110136005)(8936002)(64756008)(66476007)(66946007)(71200400001)(86362001)(76116006)(66556008)(66446008)(2906002)(81156014)(81166006)(186003)(52536014)(478600001)(8676002)(26005)(55016002)(9686003)(5660300002)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6151;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1ZrD/D383Ufh18YMHlLbLIasokfXGZL2UE7M6Y4mCO40MUfo1LV9c4lKj+9ESk0Xp2XCR8YF2znQHbp4FFPq590JNZealkyZ6vNDrO3AmLhWm5AshWnoWYcwgueKumRuFWgY/dBnApiXTUVjEKkoks51iXyaFvZahzf9mKQGBNtpAB5rxokkwJr6dvujhMeQIK8oefzJx1lmBZb87vKr0SxD8LzW/RN0sMY6acZ+1Cs/1bofMCRj1Iympf88/L9USoxka+Mj2BVLVGzDngTa8gTy15vmF2qP6jdoEFAKWD/HCLqH4PEWnZgR+baxDFR+m6Fff7T4XwDhTls0Y5smVX+PnX6WB+At0FpI8GLstWnI4mIowJiPs9tyV+S/EdaZsFKWIwacLKhu+MxJhlLqRb3RZ36P1pkWCMYn1iAG67NPrOC52+gts89yHbGXL+GG
+ id 1iqsvv-0000sR-Bk
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:10:41 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id m14so3538507qvl.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 12 Jan 2020 22:10:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7DfRwJTOPvTtWVkT74WE0+0Wv9fnsKAGouTb1Izq89A=;
+ b=Qatwxt+OoQ71OqIjEakHG18BOGUTpja+9P/RSKDnHwYK9mlMKhnsjaJ4Qe78pwcKjA
+ EUHvEFOX4TtEYQGZXQ0Nrtq2IaqhIOos4xgXVC9FNe4Vmd1R/eL/TNIr1ZBdkzqw+QC4
+ hkfY5cWW6CUPnnIq7Y57SsJYESMlI6UHhEQ5Y=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7DfRwJTOPvTtWVkT74WE0+0Wv9fnsKAGouTb1Izq89A=;
+ b=BEnm9S6pEvjJFUh+dYkeUms3v/e7FUI8tj4xi4lQ8smTRekO5tLfOJvmEakZGAz6Lv
+ b+V2yl7u5mS8Lrtk5ZugR3sYUuuXWI0UGv+vBnE8BinYwv95q7DB++VnD8AkplyIVw0C
+ VcXi9CGysXKdTofsdO0u/B9fBs/hUi+LJOReoAHu/nSVM/f9qTN72SEBmQd7AC5wG3cF
+ UOa6ABH+cvQAxYQoOCwwy8MaLet6cJi7c/ASaXccAFdKvhyfrFyqoNMlPBmKekvRgzkA
+ 63ofkuCk5WYJcLvJ0UdEuEd5OT3vSIGeYP6WiJ2GI+C7dE0ofOO04pbgYtIzG/+dMO3d
+ PzbA==
+X-Gm-Message-State: APjAAAUQSOvE8Mb1g8arQ3c/cGGkzh95K21otQr/R7tiScNGUsooLygc
+ gjbZqbVZbfBxqv7EJYh7ThT0K+cVyQdkk73DWSqc7w==
+X-Google-Smtp-Source: APXvYqzNnf0+5zf15VXfHELZbqC0F4Qy+EwQSLKu7IESG3soghZ70PDiWBmTa+q/Q8H2Xj5h4riou90hhvsdIXG1nTo=
+X-Received: by 2002:a0c:f703:: with SMTP id w3mr14287635qvn.6.1578895837978;
+ Sun, 12 Jan 2020 22:10:37 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e0d130ff-50ad-4d42-726a-08d797ee1e93
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 06:02:06.5472 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Wl2DZcKfWSYLjtZYQ2XCaOPVX5NZEOLnDIRXyofENuncxC57l30QEm4WZ5gmmYftMipq6zJN8tJFvI5YL/fF1A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6151
+References: <1578639862-14480-1-git-send-email-jiaxin.yu@mediatek.com>
+ <1578639862-14480-2-git-send-email-jiaxin.yu@mediatek.com>
+In-Reply-To: <1578639862-14480-2-git-send-email-jiaxin.yu@mediatek.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Mon, 13 Jan 2020 14:10:27 +0800
+Message-ID: <CANMq1KBNuJDEn57d0ysc2XG0ezWEvJ2Pm88YihDiSZJ=-E=W9g@mail.gmail.com>
+Subject: Re: [PATCH v11 1/3] dt-bindings: mediatek: mt8183: Add #reset-cells
+To: Jiaxin Yu <jiaxin.yu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_220209_158072_58FE6E1C 
-X-CRM114-Status: GOOD (  11.45  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200112_221039_426868_2EF0FE48 
+X-CRM114-Status: GOOD (  17.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.77.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,60 +86,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Hancock <hancock@sedsystems.ca>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Devicetree List <devicetree@vger.kernel.org>,
+ Yong Liang <yong.liang@mediatek.com>, freddy.hsin@mediatek.com,
+ linux-watchdog@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, chang-an.chen@mediatek.com,
+ wim@linux-watchdog.org, linux@roeck-us.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Andre Przywara <andre.przywara@arm.com>
-> Sent: Friday, January 10, 2020 5:24 PM
-> To: David S . Miller <davem@davemloft.net>; Radhey Shyam Pandey
-> <radheys@xilinx.com>
-> Cc: Michal Simek <michals@xilinx.com>; Robert Hancock
-> <hancock@sedsystems.ca>; netdev@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: [PATCH 08/14] net: axienet: Drop MDIO interrupt registers from
-> ethtools dump
-> 
-> Newer revisions of the IP don't have these registers. Since we don't
-> really use them, just drop them from the ethtools dump.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Jiaxin,
+
+On Fri, Jan 10, 2020 at 3:04 PM Jiaxin Yu <jiaxin.yu@mediatek.com> wrote:
+>
+> Add #reset-cells property and update example
+>
+> Signed-off-by: yong.liang <yong.liang@mediatek.com>
+> Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
+> Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Reviewed-by: Guenter Roeck <groeck7@gmail.com>
+
+From previous feedback
+(https://patchwork.kernel.org/patch/11318687/#23086211), it seems like
+we lost track of which exact version had the Reviewed-By, so I'd just
+drop all those tags and let people review again.
+
 > ---
->  drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ----
->  1 file changed, 4 deletions(-)
-> 
-> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index e83c7b005f50..7a747345e98e 100644
-> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -1239,10 +1239,6 @@ static void axienet_ethtools_get_regs(struct
-> net_device *ndev,
->  	data[20] = axienet_ior(lp, XAE_MDIO_MCR_OFFSET);
->  	data[21] = axienet_ior(lp, XAE_MDIO_MWD_OFFSET);
->  	data[22] = axienet_ior(lp, XAE_MDIO_MRD_OFFSET);
-> -	data[23] = axienet_ior(lp, XAE_MDIO_MIS_OFFSET);
-> -	data[24] = axienet_ior(lp, XAE_MDIO_MIP_OFFSET);
-> -	data[25] = axienet_ior(lp, XAE_MDIO_MIE_OFFSET);
-> -	data[26] = axienet_ior(lp, XAE_MDIO_MIC_OFFSET);
 
-We can also remove these #defines from the header.
-Alternatively, we can cherry-pick commit f5b9e58 " net: xilinx: axiethernet:
-Fix axiethernet register description" from xilinx tree and include it in this
-series.
->  	data[27] = axienet_ior(lp, XAE_UAW0_OFFSET);
->  	data[28] = axienet_ior(lp, XAE_UAW1_OFFSET);
->  	data[29] = axienet_ior(lp, XAE_FMI_OFFSET);
+It would have been nice to mention that this patch depends on
+https://patchwork.kernel.org/patch/11311241/ (as your example makes
+use of it below).
+
+>  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
+>  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
+>  .../reset-controller/mt8183-resets.h          | 17 ++++++++++++++
+>  3 files changed, 46 insertions(+), 3 deletions(-)
+>  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
+>
+> diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> index 92181b648f52..5a76ac262f8d 100644
+> --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> @@ -4,6 +4,7 @@ Required properties:
+>
+>  - compatible should contain:
+>         "mediatek,mt2701-wdt", "mediatek,mt6589-wdt": for MT2701
+> +       "mediatek,mt2712-wdt", "mediatek,mt6589-wdt": for MT2712
+
+Please separate this as another patch.
+
+>         "mediatek,mt6589-wdt": for MT6589
+>         "mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
+>         "mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
+> @@ -14,11 +15,14 @@ Required properties:
+>
+>  Optional properties:
+>  - timeout-sec: contains the watchdog timeout in seconds.
+> +- #reset-cells: Should be 1.
+>
+>  Example:
+>
+> -wdt: watchdog@10000000 {
+> -       compatible = "mediatek,mt6589-wdt";
+> -       reg = <0x10000000 0x18>;
+> +watchdog: watchdog@10007000 {
+> +       compatible = "mediatek,mt8183-wdt",
+> +                    "mediatek,mt6589-wdt";
+> +       reg = <0 0x10007000 0 0x100>;
+>         timeout-sec = <10>;
+> +       #reset-cells = <1>;
+>  };
+> diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
+> new file mode 100644
+> index 000000000000..9e7ee762f076
+> --- /dev/null
+> +++ b/include/dt-bindings/reset-controller/mt2712-resets.h
+> @@ -0,0 +1,22 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + * Author: Yong Liang <yong.liang@mediatek.com>
+> + */
+> +
+> +#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
+> +#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
+> +
+> +#define MT2712_TOPRGU_INFRA_SW_RST                             0
+> +#define MT2712_TOPRGU_MM_SW_RST                                        1
+> +#define MT2712_TOPRGU_MFG_SW_RST                               2
+> +#define MT2712_TOPRGU_VENC_SW_RST                              3
+> +#define MT2712_TOPRGU_VDEC_SW_RST                              4
+> +#define MT2712_TOPRGU_IMG_SW_RST                               5
+> +#define MT2712_TOPRGU_INFRA_AO_SW_RST                          8
+> +#define MT2712_TOPRGU_USB_SW_RST                               9
+> +#define MT2712_TOPRGU_APMIXED_SW_RST                           10
+> +
+> +#define MT2712_TOPRGU_SW_RST_NUM                               11
+> +
+> +#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
+> diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
+> index 8804e34ebdd4..a1bbd41e0d12 100644
+> --- a/include/dt-bindings/reset-controller/mt8183-resets.h
+> +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
+> @@ -78,4 +78,21 @@
+>  #define MT8183_INFRACFG_AO_I2C7_SW_RST                         126
+>  #define MT8183_INFRACFG_AO_I2C8_SW_RST                         127
+>
+> +#define MT8183_INFRACFG_SW_RST_NUM                             128
+> +
+> +#define MT8183_TOPRGU_MM_SW_RST                                        1
+> +#define MT8183_TOPRGU_MFG_SW_RST                               2
+> +#define MT8183_TOPRGU_VENC_SW_RST                              3
+> +#define MT8183_TOPRGU_VDEC_SW_RST                              4
+> +#define MT8183_TOPRGU_IMG_SW_RST                               5
+> +#define MT8183_TOPRGU_MD_SW_RST                                        7
+> +#define MT8183_TOPRGU_CONN_SW_RST                              9
+> +#define MT8183_TOPRGU_CONN_MCU_SW_RST                          12
+> +#define MT8183_TOPRGU_IPU0_SW_RST                              14
+> +#define MT8183_TOPRGU_IPU1_SW_RST                              15
+> +#define MT8183_TOPRGU_AUDIO_SW_RST                             17
+> +#define MT8183_TOPRGU_CAMSYS_SW_RST                            18
+> +
+> +#define MT8183_TOPRGU_SW_RST_NUM                               19
+> +
+>  #endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT8183 */
 > --
-> 2.17.1
-
+> 2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
