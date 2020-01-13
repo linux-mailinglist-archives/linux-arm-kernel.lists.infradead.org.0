@@ -2,154 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60F4A139A1E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:24:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBEF9139A3E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:34:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+xQoi7kGmEIGaNQP+ENC/yh4eUd+xKviauiwsi4QN0=; b=rtwMLG4hc+aRk0
-	g2Z5bqr3eVK4b3EKLMvd0nxsbtlJTku1XJRFs4ZdusAwrkvztwwx1Mq+zmkPdgFdTmFPDD5j9i3N/
-	WUqOTBIv7PmAJI6I+/P3OEVm0H+5N+v2EJcTKyCzll1qKZB9/X3S6WiUwOgEMUIRiZCnDMp798D5D
-	VuKkQUpSNl2DbuF7TvunuM4/qHskj9xxcEEUbzY/4USqrYuo/JRLIgOaf0lRP4G1XHdlJzoI7jSh/
-	mtXjxFtLIjITWnB8vaIKqia2NO//zi6Lkam9N2VE6PPeBXkSHndFj6M0o9fEF6QwtmvFnUNT98E0W
-	qk8ExdeUblrrbOKxVRbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:MIME-Version:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FCojxWGO/bJWY423tRxRp3EXUUExM4/khCnYDHkOWOk=; b=XFnX8ZvN4VygLk
+	3VjhDAB422caEtydakItJc4cz3efeGKnNhh9HT2v4CD66oVqju8mTDTvRGxXm5It2XRJm3+uFrBeF
+	jBsu6m/G+7aqGeqVL0vKacAne5CFPSuthW6VkyPbbkxXwRUsyvFhKog2fkvHGcCZaLllEkfMQOkp6
+	BG3gVC4/u6WyWWou4P452eXloY9TELMMF5zUauQH12JUDGIPsYRWQc9xZmpNqdpR71p9+85Fctqsz
+	3hfjTmTpHZcZ6/XQ62AKSnyx99zI1pBjolrUNzjQo6Anuw7Ft+mNGtHdsGrGtzPOrlUmESt/U92Uh
+	YPoH1dk9wiPTKAjLMorg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir5KP-0002XY-Tx; Mon, 13 Jan 2020 19:24:45 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ir5Th-000673-Kt; Mon, 13 Jan 2020 19:34:21 +0000
+Received: from mail-io1-f72.google.com ([209.85.166.72])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir5KH-0002Wu-HH
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:24:38 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q10so9820774wrm.11
+ id 1ir5TZ-000666-15
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:34:14 +0000
+Received: by mail-io1-f72.google.com with SMTP id m12so6429660ioh.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 11:24:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Fh0mTOfszshVblZQdBekGWNp97zG+Y4obA9kQr1H00o=;
- b=WBkbC9y0jfCTYY8z5YGGuiv2hD/REmThr0M/iiQHbtztOl4DZUTggYXjw6AY08pbmN
- lNNnQaqza6qvEodPx1huosQOzwa7oRkiCi15o1eUg9byNnegWgMF/YnpTfoKGMk5LkYW
- FmgxoboOe2TQGtkb1XqoEgpc13Cj4UkSSCSwCue7ThImKDkn8s7XN0+07acZxNWLnWrD
- 9qNb+PA5F8caiYV7/yhs2p56YPmn6GosdGOJkhVC27pCE/FSyn6C4Q6oc4i5PBRJAH8A
- BPOtd3gN3O5UmWdreuk6FUp0y1wk+ivr8Q8WNQo83m5Yepc6GUJISFrw7q0Q4S/cRst+
- 3LpA==
+ Mon, 13 Jan 2020 11:34:11 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Fh0mTOfszshVblZQdBekGWNp97zG+Y4obA9kQr1H00o=;
- b=n+Hk/IvshCSDafQddWRmNSh3OTkYPLynHdJxKtJ9DA0kotDqcjjPsxLPO2uv0hBsja
- LBRMqTo8pjk4J0MRgfyQGIRwtlR/PSB5vzb0m4LAx26raG6HELJn2wk+KoUKHYBJdQzJ
- e8hbvaUyUgAuvCOGw1/gvCk7t7MEJSumQopsRy43lP02PG9VI9QDDYHpEsqddeWgRE8H
- 5v38dE/oBIDnzHUlmWnqCwsdrZ7l3SD2ffswFbz8kqtBj4RWGIzIJ+4s6jlA2bUtwrSc
- k/1fncgjtuLD2/8rbfLBKWcsxN9nhVOSNdDF24XOxyFaiEtDG9LjVRvSZ0euWuYBJ38E
- iZmw==
-X-Gm-Message-State: APjAAAXm7RjU/GNtHLU5L6UXeeDs/uHV8cX//bXq8YvjPXP7P9WXO5o4
- clqCwV9Qb1VHzS6uOkqBGQRPwQ==
-X-Google-Smtp-Source: APXvYqxSk/gZs6oGqvNVma3Wmp11kxN02uzfKEv/vQXDQnn9yHVF59w6PtO5Zouvg1uWIxNBqMNDSw==
-X-Received: by 2002:adf:82a7:: with SMTP id 36mr21268502wrc.203.1578943475537; 
- Mon, 13 Jan 2020 11:24:35 -0800 (PST)
-Received: from ?IPv6:2a01:e34:ed2f:f020:257b:a7b6:7749:8057?
- ([2a01:e34:ed2f:f020:257b:a7b6:7749:8057])
- by smtp.googlemail.com with ESMTPSA id k8sm16179002wrl.3.2020.01.13.11.24.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Jan 2020 11:24:34 -0800 (PST)
-Subject: Re: [PATCH V5 0/4] ARM: Enable thermal support for Raspberry Pi 4
-To: Stefan Wahren <stefan.wahren@i2se.com>, Zhang Rui <rui.zhang@intel.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
- <250b15ef-636f-d964-3eba-0067c07e5a9c@linaro.org>
- <4a2b7974-db0f-bd0d-21f5-ccdc0ad2bc30@i2se.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <fee791c9-afdc-fd3e-2ab9-d5e45e23f7f0@linaro.org>
-Date: Mon, 13 Jan 2020 20:24:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+ bh=iKgXkUUifDTHe1wYti7XokONx9JjbAC539M6HstQB/k=;
+ b=L5PTFXKz1gtRzB7a3nz82hL085WADgusoKD+Pa7FwUHBGonuLFkRn/lj9iUIYTYdAv
+ ayjr4oK+QSSZWnh1icJ59c6wafIlMb4epv8GOYQ1O63ELBoTNj0gLhiJ3dXUeNOV9dtl
+ dNmv1KjR6alwaOU6S5hAmq1l9ac3lX15sl0G7zNrVYXWDw7hEYOie3ah/3erGjoGZ2r7
+ kjtjDwoh9jtMgaKMYAwjC/4tYgBy0k+rNmGBtyD74jv2s3Gw5SZ3J5VX0ETvEPda2q2w
+ ue4zt/agsenckUmrR5TKSZygdHf68S0zleRz4p8Jm0evV6+RcOUtx8OTnFQbekO09slj
+ t7Hg==
+X-Gm-Message-State: APjAAAVc8LuV0BMlAjK28+ml55L1ObSNP/jrqTb4h4uI434uT/VeTIEj
+ 0Fsd9eCCVY+NJ6R/cPrGGc3hVFLwVHQxEqcdZ+0S7m4flrZ+
+X-Google-Smtp-Source: APXvYqzaNcVpE7dne1l1ihiEgfr6Zy2LxQzVYEVdovLQ5xW8OKaJwY513n5SHhDdl21ILG0FBwo9bbP7vlQ9sXE0LfOo+H5i3o5w
 MIME-Version: 1.0
-In-Reply-To: <4a2b7974-db0f-bd0d-21f5-ccdc0ad2bc30@i2se.com>
-Content-Language: en-US
+X-Received: by 2002:a6b:6e06:: with SMTP id d6mr13077449ioh.95.1578944051034; 
+ Mon, 13 Jan 2020 11:34:11 -0800 (PST)
+Date: Mon, 13 Jan 2020 11:34:11 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000048427b059c0a8f9d@google.com>
+Subject: WARNING: locking bug in finish_task_switch
+From: syzbot <syzbot+edec84a8b77e5a0cae31@syzkaller.appspotmail.com>
+To: coreteam@netfilter.org, davem@davemloft.net, johan.hedberg@gmail.com, 
+ kaber@trash.net, kadlec@blackhole.kfki.hu, kernel@stlinux.com, 
+ linux-arm-kernel@lists.infradead.org, linux-bluetooth@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
+ marcel@holtmann.org, mchehab@kernel.org, mchehab@s-opensource.com, 
+ netdev@vger.kernel.org, netfilter-devel@vger.kernel.org, pablo@netfilter.org, 
+ patrice.chotard@st.com, peter.griffin@linaro.org, 
+ syzkaller-bugs@googlegroups.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_112437_587425_B081CEC7 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_113413_073702_C2D7AC8D 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.72 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.72 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -161,26 +86,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTMvMDEvMjAyMCAyMDoyMCwgU3RlZmFuIFdhaHJlbiB3cm90ZToKPiBIaSBEYW5pZWwsCj4g
-Cj4gQW0gMTMuMDEuMjAgdW0gMjA6MTAgc2NocmllYiBEYW5pZWwgTGV6Y2FubzoKPj4gSGkgU3Rl
-ZmFuLAo+Pgo+PiBob3cgZG8geW91IHdhbnQgdGhlIHNlcmllcyBtZXJnZWQ/Cj4gCj4gaSdtIG5v
-dCBCQ00yODM1IG1haW50YWluZXIgYW55bW9yZSwgc28gdGhlIGZpbmFsIGRlY2lzaW9uIGlzIHVw
-IHRvCj4gTmljb2xhcyBvciBGbG9yaWFuLgo+IAo+IEJ1dCBpZiBpIGNhbiBtYWtlIGEgd2lzaCwg
-aXQgd291bGQgYmUgbmljZSB0byB0YWtlIGFzIG11Y2ggYXMgcG9zc2libGUKPiB2aWEgdGhlIHRo
-ZXJtYWwgdHJlZSwgYmVjYXVzZSBOaWNvbGFzIGFscmVhZHkgc2VudCB0aGUgcHVsbCByZXF1ZXN0
-cyBmb3IKPiA1LjYuCgpPaywgSSBjYW4gdGFrZSB0aGUgc2VyaWVzIGlmIGl0IGlzIGZpbmUgZm9y
-IGV2ZXJ5b25lIGVsc2UuCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9y
-ZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAg
-PGh0dHA6Ly93d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDov
-L3R3aXR0ZXIuY29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5v
-cmcvbGluYXJvLWJsb2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hello,
+
+syzbot found the following crash on:
+
+HEAD commit:    6c09d7db Add linux-next specific files for 20200110
+git tree:       linux-next
+console output: https://syzkaller.appspot.com/x/log.txt?x=150b6a9ee00000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=7dc7ab9739654fbe
+dashboard link: https://syzkaller.appspot.com/bug?extid=edec84a8b77e5a0cae31
+compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=16d005e1e00000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1527b6aee00000
+
+The bug was bisected to:
+
+commit 7152c88e556bcbee525689063c260cd296f295a8
+Author: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+Date:   Tue Oct 18 19:44:11 2016 +0000
+
+     [media] c8sectpfe: don't break long lines
+
+bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=10930c21e00000
+final crash:    https://syzkaller.appspot.com/x/report.txt?x=12930c21e00000
+console output: https://syzkaller.appspot.com/x/log.txt?x=14930c21e00000
+
+IMPORTANT: if you fix the bug, please add the following tag to the commit:
+Reported-by: syzbot+edec84a8b77e5a0cae31@syzkaller.appspotmail.com
+Fixes: 7152c88e556b ("[media] c8sectpfe: don't break long lines")
+
+------------[ cut here ]------------
+DEBUG_LOCKS_WARN_ON(1)
+WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167 hlock_class  
+kernel/locking/lockdep.c:167 [inline]
+WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167 hlock_class  
+kernel/locking/lockdep.c:156 [inline]
+WARNING: CPU: 1 PID: 9970 at kernel/locking/lockdep.c:167  
+__lock_acquire+0x21dd/0x4a00 kernel/locking/lockdep.c:3950
+Kernel panic - not syncing: panic_on_warn set ...
+CPU: 1 PID: 9970 Comm: syz-executor719 Not tainted  
+5.5.0-rc5-next-20200110-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS  
+Google 01/01/2011
+Call Trace:
+  __dump_stack lib/dump_stack.c:77 [inline]
+  dump_stack+0x197/0x210 lib/dump_stack.c:118
+  panic+0x2e3/0x75c kernel/panic.c:221
+  __warn.cold+0x2f/0x3e kernel/panic.c:582
+  report_bug+0x289/0x300 lib/bug.c:195
+  fixup_bug arch/x86/kernel/traps.c:176 [inline]
+  fixup_bug arch/x86/kernel/traps.c:171 [inline]
+  do_error_trap+0x11b/0x200 arch/x86/kernel/traps.c:269
+  do_invalid_op+0x37/0x50 arch/x86/kernel/traps.c:288
+  invalid_op+0x23/0x30 arch/x86/entry/entry_64.S:1027
+RIP: 0010:hlock_class kernel/locking/lockdep.c:167 [inline]
+RIP: 0010:hlock_class kernel/locking/lockdep.c:156 [inline]
+RIP: 0010:__lock_acquire+0x21dd/0x4a00 kernel/locking/lockdep.c:3950
+Code: 05 98 39 4a 09 85 c0 75 a0 48 c7 c6 e0 91 4b 88 48 c7 c7 20 92 4b 88  
+4c 89 9d 30 ff ff ff 4c 89 95 70 ff ff ff e8 b2 ff ea ff <0f> 0b 31 db 4c  
+8b 95 70 ff ff ff 4c 8b 9d 30 ff ff ff e9 22 f8 ff
+RSP: 0018:ffffc90002d87738 EFLAGS: 00010086
+RAX: 0000000000000000 RBX: 00000000000005e3 RCX: 0000000000000000
+RDX: 0000000040000000 RSI: ffffffff815e8546 RDI: fffff520005b0ed9
+RBP: ffffc90002d87850 R08: ffff8880903f8380 R09: fffffbfff13748ed
+R10: fffffbfff13748ec R11: ffffffff89ba4763 R12: 000000009ecb23e7
+R13: ffffffff8aa50270 R14: ffff8880903f8c48 R15: 0000000000000000
+  lock_acquire+0x190/0x410 kernel/locking/lockdep.c:4484
+  finish_lock_switch kernel/sched/core.c:3123 [inline]
+  finish_task_switch+0x13f/0x750 kernel/sched/core.c:3224
+  context_switch kernel/sched/core.c:3388 [inline]
+  __schedule+0x93c/0x1f90 kernel/sched/core.c:4081
+  preempt_schedule_irq+0xb5/0x160 kernel/sched/core.c:4338
+  retint_kernel+0x1b/0x2b
+RIP: 0010:arch_local_irq_restore arch/x86/include/asm/paravirt.h:752  
+[inline]
+RIP: 0010:lock_acquire+0x20b/0x410 kernel/locking/lockdep.c:4487
+Code: 9c 08 00 00 00 00 00 00 48 c1 e8 03 80 3c 10 00 0f 85 d3 01 00 00 48  
+83 3d a9 a4 58 08 00 0f 84 53 01 00 00 48 8b 7d c8 57 9d <0f> 1f 44 00 00  
+48 8d 65 d8 5b 41 5c 41 5d 41 5e 41 5f 5d c3 65 8b
+RSP: 0018:ffffc90002d87ae0 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff13
+RAX: 1ffffffff13675eb RBX: ffff8880903f8380 RCX: ffffffff815ad05a
+RDX: dffffc0000000000 RSI: 0000000000000004 RDI: 0000000000000286
+RBP: ffffc90002d87b28 R08: 0000000000000004 R09: fffffbfff1708c51
+R10: fffffbfff1708c50 R11: ffff8880903f8380 R12: ffff888094a93d28
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+  flush_workqueue+0x126/0x14c0 kernel/workqueue.c:2775
+  hci_dev_open+0xe0/0x280 net/bluetooth/hci_core.c:1626
+  hci_sock_bind+0x4bf/0x12d0 net/bluetooth/hci_sock.c:1189
+  __sys_bind+0x239/0x290 net/socket.c:1662
+  __do_sys_bind net/socket.c:1673 [inline]
+  __se_sys_bind net/socket.c:1671 [inline]
+  __x64_sys_bind+0x73/0xb0 net/socket.c:1671
+  do_syscall_64+0xfa/0x790 arch/x86/entry/common.c:294
+  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+RIP: 0033:0x4483b9
+Code: e8 9c e6 ff ff 48 83 c4 18 c3 0f 1f 80 00 00 00 00 48 89 f8 48 89 f7  
+48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff  
+ff 0f 83 3b 05 fc ff c3 66 2e 0f 1f 84 00 00 00 00
+RSP: 002b:00007fb43a523d88 EFLAGS: 00000246 ORIG_RAX: 0000000000000031
+RAX: ffffffffffffffda RBX: 00000000006e4a18 RCX: 00000000004483b9
+RDX: 0000000000000006 RSI: 00000000200007c0 RDI: 0000000000000004
+RBP: 00000000006e4a10 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00000000006e4a1c
+R13: 00007ffc78f07a4f R14: 00007fb43a5249c0 R15: 20c49ba5e353f7cf
+Shutting down cpus with NMI
+Kernel Offset: disabled
+Rebooting in 86400 seconds..
+
+
+---
+This bug is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this bug report. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+syzbot can test patches for this bug, for details see:
+https://goo.gl/tpsmEJ#testing-patches
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
