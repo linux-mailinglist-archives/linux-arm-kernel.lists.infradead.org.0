@@ -2,61 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9CE1138C34
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:13:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87B25138C6F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 08:37:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7fGsSVLE1iQDlyilNDP1FR0yHtwAnDurCconTNtIjII=; b=ZeWBcMd10DA6QvVhHd+zcYyKvt
-	EGhf3Avdl0LU443FlbHQVu+mHLBpD9wy6voE2emI4Le4VL+XZfnWM6yEecoqwPVd/Hz9zVnNwpV2Y
-	VpUXNPTujZH6G3X0pGSheInzeGJHk/c/oYgfHzGdNkz9WX3YgN601cTVGWMOGHDoDopofFtmh17ap
-	tS7HaPH2/U99jXLeG09BiND0pbH7zeq2xP+OseLT6rRtfp4NnDqFT/avBwk6RALH+wUCVPbUb2OcW
-	BR2Jh1bubaeLAKJb6egVbXOW5AkihIqThcfprr14MoovvpEuBK5TlM8WBsPs5ZBBBLulcDkQPLYSp
-	i888mufw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mVU7n2blqLbnkFbf09DTrFA5oOzeA3caM4DUNKA9/vI=; b=K5jyv/mdkPlvWU
+	6+9v3/Wdbix4Bm7TA6ZLf7MBRSeEWLSYAeQ9ADKUCwXTVGGHUnBtQNAjI5xJ02vX7MfIhAkFLdGvk
+	tZuGw5dj1pF7iuo0iB6S4UdQ1lu7K16FMUL2m8AhY0ZkiMJd+XWeMxZENKqPuccv+vBA5UDSzcKlW
+	Ao+BCFrGKDT3EILDYpeZQua+ErvReGd7hz8bvLTNLpEdtOGr6gh84O1wedgmENobpqR4cxVQnZAwN
+	QlcJ7WdDgRB1lIuyqB9pHkODpAeGTtcBIGS2fARxRPn6VSJrb81kC0XVeCJ/Mo+Cpojt9f+4vvAtO
+	Nfw4UQ5q6HqxvyzWSDaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqtut-0000Pa-EL; Mon, 13 Jan 2020 07:13:39 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iquI5-0001QI-4m; Mon, 13 Jan 2020 07:37:37 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqtuV-0000Bj-9y
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 07:13:17 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 14BEA1A0017;
- Mon, 13 Jan 2020 08:13:14 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 837081A03D9;
- Mon, 13 Jan 2020 08:13:07 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 95260402AE;
- Mon, 13 Jan 2020 15:12:59 +0800 (SGT)
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: maz@kernel.org, jason@lakedaemon.net, tglx@linutronix.de,
- robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de
-Subject: [PATCH V4 RESEND 2/2] drivers/irqchip: add NXP INTMUX interrupt
- multiplexer support
-Date: Mon, 13 Jan 2020 15:08:41 +0800
-Message-Id: <1578899321-1365-3-git-send-email-qiangqing.zhang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
-References: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iquHx-0001PU-1Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 07:37:30 +0000
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00D7bRMq073032
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 13 Jan 2020 02:37:27 -0500
+Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2xfbs7exvk-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 13 Jan 2020 02:37:26 -0500
+Received: from localhost
+ by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Mon, 13 Jan 2020 07:37:23 -0000
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Mon, 13 Jan 2020 07:37:16 -0000
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 00D7bFdm59899960
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 13 Jan 2020 07:37:15 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 66762A4040;
+ Mon, 13 Jan 2020 07:37:15 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id C58E7A404D;
+ Mon, 13 Jan 2020 07:37:13 +0000 (GMT)
+Received: from linux.ibm.com (unknown [9.148.8.170])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Mon, 13 Jan 2020 07:37:13 +0000 (GMT)
+Date: Mon, 13 Jan 2020 09:37:12 +0200
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V11 2/5] mm/memblock: Introduce MEMBLOCK_BOOT flag
+References: <1578625755-11792-1-git-send-email-anshuman.khandual@arm.com>
+ <1578625755-11792-3-git-send-email-anshuman.khandual@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1578625755-11792-3-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 20011307-0008-0000-0000-00000348D902
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20011307-0009-0000-0000-00004A69272A
+Message-Id: <20200113073711.GA4214@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-13_01:2020-01-13,
+ 2020-01-13 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 phishscore=0
+ priorityscore=1501 mlxlogscore=999 suspectscore=0 adultscore=0
+ clxscore=1011 bulkscore=0 malwarescore=0 impostorscore=0 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-2001130064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_231315_628281_47BE06C2 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200112_233729_087280_ED41E619 
+X-CRM114-Status: GOOD (  30.36  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,379 +103,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, fugang.duan@nxp.com,
- Shengjiu Wang <shengjiu.wang@nxp.com>, linux-kernel@vger.kernel.org,
- Joakim Zhang <qiangqing.zhang@nxp.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, david@redhat.com, catalin.marinas@arm.com,
+ linux-mm@kvack.org, arunks@codeaurora.org, cpandya@codeaurora.org,
+ will@kernel.org, ira.weiny@intel.com, steven.price@arm.com,
+ valentin.schneider@arm.com, suzuki.poulose@arm.com, Robin.Murphy@arm.com,
+ broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ osalvador@suse.de, steve.capper@arm.com, logang@deltatee.com,
+ linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
+ mgorman@techsingularity.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Interrupt Multiplexer (INTMUX) expands the number of peripherals
-that can interrupt the core:
-* The INTMUX has 8 channels that are assigned to 8 NVIC interrupt slots.
-* Each INTMUX channel can receive up to 32 interrupt sources and has 1
-  interrupt output.
-* The INTMUX routes the interrupt sources to the interrupt outputs.
-
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
-Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
----
- drivers/irqchip/Kconfig          |   6 +
- drivers/irqchip/Makefile         |   1 +
- drivers/irqchip/irq-imx-intmux.c | 309 +++++++++++++++++++++++++++++++
- 3 files changed, 316 insertions(+)
- create mode 100644 drivers/irqchip/irq-imx-intmux.c
-
-diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
-index ba152954324b..7e2b1e9d0b45 100644
---- a/drivers/irqchip/Kconfig
-+++ b/drivers/irqchip/Kconfig
-@@ -457,6 +457,12 @@ config IMX_IRQSTEER
- 	help
- 	  Support for the i.MX IRQSTEER interrupt multiplexer/remapper.
+On Fri, Jan 10, 2020 at 08:39:12AM +0530, Anshuman Khandual wrote:
+> On arm64 platform boot memory should never be hot removed due to certain
+> platform specific constraints. Hence the platform would like to override
+> earlier added arch call back arch_memory_removable() for this purpose. In
+> order to reject boot memory hot removal request, it needs to first track
+> them at runtime. In the future, there might be other platforms requiring
+> runtime boot memory enumeration. Hence lets expand the existing generic
+> memblock framework for this purpose rather then creating one just for
+> arm64 platforms.
+> 
+> This introduces a new memblock flag MEMBLOCK_BOOT along with helpers which
+> can be marked by given platform on all memory regions discovered during
+> boot.
  
-+config IMX_INTMUX
-+	def_bool y if ARCH_MXC
-+	select IRQ_DOMAIN
-+	help
-+	  Support for the i.MX INTMUX interrupt multiplexer.
-+
- config LS1X_IRQ
- 	bool "Loongson-1 Interrupt Controller"
- 	depends on MACH_LOONGSON32
-diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
-index e806dda690ea..af976a79d1fb 100644
---- a/drivers/irqchip/Makefile
-+++ b/drivers/irqchip/Makefile
-@@ -100,6 +100,7 @@ obj-$(CONFIG_CSKY_MPINTC)		+= irq-csky-mpintc.o
- obj-$(CONFIG_CSKY_APB_INTC)		+= irq-csky-apb-intc.o
- obj-$(CONFIG_SIFIVE_PLIC)		+= irq-sifive-plic.o
- obj-$(CONFIG_IMX_IRQSTEER)		+= irq-imx-irqsteer.o
-+obj-$(CONFIG_IMX_INTMUX)		+= irq-imx-intmux.o
- obj-$(CONFIG_MADERA_IRQ)		+= irq-madera.o
- obj-$(CONFIG_LS1X_IRQ)			+= irq-ls1x.o
- obj-$(CONFIG_TI_SCI_INTR_IRQCHIP)	+= irq-ti-sci-intr.o
-diff --git a/drivers/irqchip/irq-imx-intmux.c b/drivers/irqchip/irq-imx-intmux.c
-new file mode 100644
-index 000000000000..bfd5a94ddd6d
---- /dev/null
-+++ b/drivers/irqchip/irq-imx-intmux.c
-@@ -0,0 +1,309 @@
-+// SPDX-License-Identifier: GPL-2.0
-+// Copyright 2017 NXP
-+
-+/*                     INTMUX Block Diagram
-+ *
-+ *                               ________________
-+ * interrupt source #  0  +---->|                |
-+ *                        |     |                |
-+ * interrupt source #  1  +++-->|                |
-+ *            ...         | |   |   channel # 0  |--------->interrupt out # 0
-+ *            ...         | |   |                |
-+ *            ...         | |   |                |
-+ * interrupt source # X-1 +++-->|________________|
-+ *                        | | |
-+ *                        | | |
-+ *                        | | |  ________________
-+ *                        +---->|                |
-+ *                        | | | |                |
-+ *                        | +-->|                |
-+ *                        | | | |   channel # 1  |--------->interrupt out # 1
-+ *                        | | +>|                |
-+ *                        | | | |                |
-+ *                        | | | |________________|
-+ *                        | | |
-+ *                        | | |
-+ *                        | | |       ...
-+ *                        | | |       ...
-+ *                        | | |
-+ *                        | | |  ________________
-+ *                        +---->|                |
-+ *                          | | |                |
-+ *                          +-->|                |
-+ *                            | |   channel # N  |--------->interrupt out # N
-+ *                            +>|                |
-+ *                              |                |
-+ *                              |________________|
-+ *
-+ *
-+ * N: Interrupt Channel Instance Number (N=7)
-+ * X: Interrupt Source Number for each channel (X=32)
-+ *
-+ * The INTMUX interrupt multiplexer has 8 channels, each channel receives 32
-+ * interrupt sources and generates 1 interrupt output.
-+ *
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/interrupt.h>
-+#include <linux/irq.h>
-+#include <linux/irqchip/chained_irq.h>
-+#include <linux/irqdomain.h>
-+#include <linux/kernel.h>
-+#include <linux/of_irq.h>
-+#include <linux/of_platform.h>
-+#include <linux/spinlock.h>
-+
-+#define CHANIER(n)	(0x10 + (0x40 * n))
-+#define CHANIPR(n)	(0x20 + (0x40 * n))
-+
-+#define CHAN_MAX_NUM		0x8
-+
-+struct intmux_irqchip_data {
-+	int			chanidx;
-+	int			irq;
-+	struct irq_domain	*domain;
-+};
-+
-+struct intmux_data {
-+	raw_spinlock_t			lock;
-+	void __iomem			*regs;
-+	struct clk			*ipg_clk;
-+	int				channum;
-+	struct intmux_irqchip_data	irqchip_data[];
-+};
-+
-+static void imx_intmux_irq_mask(struct irq_data *d)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->chip_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long flags;
-+	void __iomem *reg;
-+	u32 val;
-+
-+	raw_spin_lock_irqsave(&data->lock, flags);
-+	reg = data->regs + CHANIER(idx);
-+	val = readl_relaxed(reg);
-+	/* disable the interrupt source of this channel */
-+	val &= ~BIT(d->hwirq);
-+	writel_relaxed(val, reg);
-+	raw_spin_unlock_irqrestore(&data->lock, flags);
-+}
-+
-+static void imx_intmux_irq_unmask(struct irq_data *d)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->chip_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long flags;
-+	void __iomem *reg;
-+	u32 val;
-+
-+	raw_spin_lock_irqsave(&data->lock, flags);
-+	reg = data->regs + CHANIER(idx);
-+	val = readl_relaxed(reg);
-+	/* enable the interrupt source of this channel */
-+	val |= BIT(d->hwirq);
-+	writel_relaxed(val, reg);
-+	raw_spin_unlock_irqrestore(&data->lock, flags);
-+}
-+
-+static struct irq_chip imx_intmux_irq_chip = {
-+	.name		= "intmux",
-+	.irq_mask	= imx_intmux_irq_mask,
-+	.irq_unmask	= imx_intmux_irq_unmask,
-+};
-+
-+static int imx_intmux_irq_map(struct irq_domain *h, unsigned int irq,
-+			      irq_hw_number_t hwirq)
-+{
-+	irq_set_chip_data(irq, h->host_data);
-+	irq_set_chip_and_handler(irq, &imx_intmux_irq_chip, handle_level_irq);
-+
-+	return 0;
-+}
-+
-+static int imx_intmux_irq_xlate(struct irq_domain *d, struct device_node *node,
-+				const u32 *intspec, unsigned int intsize,
-+				unsigned long *out_hwirq, unsigned int *out_type)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->host_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+
-+	/*
-+	 * two cells needed in interrupt specifier:
-+	 * the 1st cell: hw interrupt number
-+	 * the 2nd cell: channel index
-+	 */
-+	if (WARN_ON(intsize != 2))
-+		return -EINVAL;
-+
-+	if (WARN_ON(intspec[1] >= data->channum))
-+		return -EINVAL;
-+
-+	*out_hwirq = intspec[0];
-+	*out_type = IRQ_TYPE_LEVEL_HIGH;
-+
-+	return 0;
-+}
-+
-+static int imx_intmux_irq_select(struct irq_domain *d, struct irq_fwspec *fwspec,
-+				 enum irq_domain_bus_token bus_token)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->host_data;
-+
-+	/* Not for us */
-+	if (fwspec->fwnode != d->fwnode)
-+		return false;
-+
-+	return irqchip_data->chanidx == fwspec->param[1];
-+}
-+
-+static const struct irq_domain_ops imx_intmux_domain_ops = {
-+	.map		= imx_intmux_irq_map,
-+	.xlate		= imx_intmux_irq_xlate,
-+	.select		= imx_intmux_irq_select,
-+};
-+
-+static void imx_intmux_irq_handler(struct irq_desc *desc)
-+{
-+	struct intmux_irqchip_data *irqchip_data = irq_desc_get_handler_data(desc);
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long irqstat;
-+	int pos, virq;
-+
-+	chained_irq_enter(irq_desc_get_chip(desc), desc);
-+
-+	/* read the interrupt source pending status of this channel */
-+	irqstat = readl_relaxed(data->regs + CHANIPR(idx));
-+
-+	for_each_set_bit(pos, &irqstat, 32) {
-+		virq = irq_find_mapping(irqchip_data->domain, pos);
-+		if (virq)
-+			generic_handle_irq(virq);
-+	}
-+
-+	chained_irq_exit(irq_desc_get_chip(desc), desc);
-+}
-+
-+static int imx_intmux_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	struct irq_domain *domain;
-+	struct intmux_data *data;
-+	int channum;
-+	int i, ret;
-+
-+	ret = of_property_read_u32(np, "fsl,intmux_chans", &channum);
-+	if (ret) {
-+		channum = 1;
-+	} else if (channum > CHAN_MAX_NUM) {
-+		dev_err(&pdev->dev, "supports up to %d multiplex channels\n",
-+			CHAN_MAX_NUM);
-+		return -EINVAL;
-+	}
-+
-+	data = devm_kzalloc(&pdev->dev, sizeof(*data) +
-+			    channum * sizeof(data->irqchip_data[0]), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(data->regs)) {
-+		dev_err(&pdev->dev, "failed to initialize reg\n");
-+		return PTR_ERR(data->regs);
-+	}
-+
-+	data->ipg_clk = devm_clk_get(&pdev->dev, "ipg");
-+	if (IS_ERR(data->ipg_clk)) {
-+		ret = PTR_ERR(data->ipg_clk);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "failed to get ipg clk: %d\n", ret);
-+		return ret;
-+	}
-+
-+	data->channum = channum;
-+	raw_spin_lock_init(&data->lock);
-+
-+	ret = clk_prepare_enable(data->ipg_clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to enable ipg clk: %d\n", ret);
-+		return ret;
-+	}
-+
-+	for (i = 0; i < channum; i++) {
-+		data->irqchip_data[i].chanidx = i;
-+
-+		data->irqchip_data[i].irq = irq_of_parse_and_map(np, i);
-+		if (data->irqchip_data[i].irq <= 0) {
-+			ret = -EINVAL;
-+			dev_err(&pdev->dev, "failed to get irq\n");
-+			goto out;
-+		}
-+
-+		domain = irq_domain_add_linear(np, 32, &imx_intmux_domain_ops,
-+					       &data->irqchip_data[i]);
-+		if (!domain) {
-+			ret = -ENOMEM;
-+			dev_err(&pdev->dev, "failed to create IRQ domain\n");
-+			goto out;
-+		}
-+		data->irqchip_data[i].domain = domain;
-+
-+		/* disable all interrupt sources of this channel firstly */
-+		writel_relaxed(0, data->regs + CHANIER(i));
-+
-+		irq_set_chained_handler_and_data(data->irqchip_data[i].irq,
-+						 imx_intmux_irq_handler,
-+						 &data->irqchip_data[i]);
-+	}
-+
-+	platform_set_drvdata(pdev, data);
-+
-+	return 0;
-+out:
-+	clk_disable_unprepare(data->ipg_clk);
-+	return ret;
-+}
-+
-+static int imx_intmux_remove(struct platform_device *pdev)
-+{
-+	struct intmux_data *data = platform_get_drvdata(pdev);
-+	int i;
-+
-+	for (i = 0; i < data->channum; i++) {
-+		/* disable all interrupt sources of this channel */
-+		writel_relaxed(0, data->regs + CHANIER(i));
-+
-+		irq_set_chained_handler_and_data(data->irqchip_data[i].irq,
-+						 NULL, NULL);
-+
-+		irq_domain_remove(data->irqchip_data[i].domain);
-+	}
-+
-+	clk_disable_unprepare(data->ipg_clk);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id imx_intmux_id[] = {
-+	{ .compatible = "fsl,imx-intmux", },
-+	{ /* sentinel */ },
-+};
-+
-+static struct platform_driver imx_intmux_driver = {
-+	.driver = {
-+		.name = "imx-intmux",
-+		.of_match_table = imx_intmux_id,
-+	},
-+	.probe = imx_intmux_probe,
-+	.remove = imx_intmux_remove,
-+};
-+builtin_platform_driver(imx_intmux_driver);
+We already have MEMBLOCK_HOTPLUG to mark hotpluggable region. Can't we use
+it for your use-case?
+
+> Cc: Mike Rapoport <rppt@linux.ibm.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>  include/linux/memblock.h | 10 ++++++++++
+>  mm/memblock.c            | 37 +++++++++++++++++++++++++++++++++++++
+>  2 files changed, 47 insertions(+)
+> 
+> diff --git a/include/linux/memblock.h b/include/linux/memblock.h
+> index b38bbef..fb04c87 100644
+> --- a/include/linux/memblock.h
+> +++ b/include/linux/memblock.h
+> @@ -31,12 +31,14 @@ extern unsigned long long max_possible_pfn;
+>   * @MEMBLOCK_HOTPLUG: hotpluggable region
+>   * @MEMBLOCK_MIRROR: mirrored region
+>   * @MEMBLOCK_NOMAP: don't add to kernel direct mapping
+> + * @MEMBLOCK_BOOT: memory received from firmware during boot
+>   */
+>  enum memblock_flags {
+>  	MEMBLOCK_NONE		= 0x0,	/* No special request */
+>  	MEMBLOCK_HOTPLUG	= 0x1,	/* hotpluggable region */
+>  	MEMBLOCK_MIRROR		= 0x2,	/* mirrored region */
+>  	MEMBLOCK_NOMAP		= 0x4,	/* don't add to kernel direct mapping */
+> +	MEMBLOCK_BOOT		= 0x8,	/* memory received from firmware during boot */
+>  };
+>  
+>  /**
+> @@ -116,6 +118,8 @@ int memblock_reserve(phys_addr_t base, phys_addr_t size);
+>  void memblock_trim_memory(phys_addr_t align);
+>  bool memblock_overlaps_region(struct memblock_type *type,
+>  			      phys_addr_t base, phys_addr_t size);
+> +int memblock_mark_boot(phys_addr_t base, phys_addr_t size);
+> +int memblock_clear_boot(phys_addr_t base, phys_addr_t size);
+>  int memblock_mark_hotplug(phys_addr_t base, phys_addr_t size);
+>  int memblock_clear_hotplug(phys_addr_t base, phys_addr_t size);
+>  int memblock_mark_mirror(phys_addr_t base, phys_addr_t size);
+> @@ -216,6 +220,11 @@ static inline bool memblock_is_nomap(struct memblock_region *m)
+>  	return m->flags & MEMBLOCK_NOMAP;
+>  }
+>  
+> +static inline bool memblock_is_boot(struct memblock_region *m)
+> +{
+> +	return m->flags & MEMBLOCK_BOOT;
+> +}
+> +
+>  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
+>  int memblock_search_pfn_nid(unsigned long pfn, unsigned long *start_pfn,
+>  			    unsigned long  *end_pfn);
+> @@ -449,6 +458,7 @@ void memblock_cap_memory_range(phys_addr_t base, phys_addr_t size);
+>  void memblock_mem_limit_remove_map(phys_addr_t limit);
+>  bool memblock_is_memory(phys_addr_t addr);
+>  bool memblock_is_map_memory(phys_addr_t addr);
+> +bool memblock_is_boot_memory(phys_addr_t addr);
+>  bool memblock_is_region_memory(phys_addr_t base, phys_addr_t size);
+>  bool memblock_is_reserved(phys_addr_t addr);
+>  bool memblock_is_region_reserved(phys_addr_t base, phys_addr_t size);
+> diff --git a/mm/memblock.c b/mm/memblock.c
+> index 4bc2c7d..e10207f 100644
+> --- a/mm/memblock.c
+> +++ b/mm/memblock.c
+> @@ -865,6 +865,30 @@ static int __init_memblock memblock_setclr_flag(phys_addr_t base,
+>  }
+>  
+>  /**
+> + * memblock_mark_bootmem - Mark boot memory with flag MEMBLOCK_BOOT.
+> + * @base: the base phys addr of the region
+> + * @size: the size of the region
+> + *
+> + * Return: 0 on success, -errno on failure.
+> + */
+> +int __init_memblock memblock_mark_boot(phys_addr_t base, phys_addr_t size)
+> +{
+> +	return memblock_setclr_flag(base, size, 1, MEMBLOCK_BOOT);
+> +}
+> +
+> +/**
+> + * memblock_clear_bootmem - Clear flag MEMBLOCK_BOOT for a specified region.
+> + * @base: the base phys addr of the region
+> + * @size: the size of the region
+> + *
+> + * Return: 0 on success, -errno on failure.
+> + */
+> +int __init_memblock memblock_clear_boot(phys_addr_t base, phys_addr_t size)
+> +{
+> +	return memblock_setclr_flag(base, size, 0, MEMBLOCK_BOOT);
+> +}
+> +
+> +/**
+>   * memblock_mark_hotplug - Mark hotpluggable memory with flag MEMBLOCK_HOTPLUG.
+>   * @base: the base phys addr of the region
+>   * @size: the size of the region
+> @@ -974,6 +998,10 @@ static bool should_skip_region(struct memblock_region *m, int nid, int flags)
+>  	if ((flags & MEMBLOCK_MIRROR) && !memblock_is_mirror(m))
+>  		return true;
+>  
+> +	/* if we want boot memory skip non-boot memory regions */
+> +	if ((flags & MEMBLOCK_BOOT) && !memblock_is_boot(m))
+> +		return true;
+> +
+>  	/* skip nomap memory unless we were asked for it explicitly */
+>  	if (!(flags & MEMBLOCK_NOMAP) && memblock_is_nomap(m))
+>  		return true;
+> @@ -1785,6 +1813,15 @@ bool __init_memblock memblock_is_map_memory(phys_addr_t addr)
+>  	return !memblock_is_nomap(&memblock.memory.regions[i]);
+>  }
+>  
+> +bool __init_memblock memblock_is_boot_memory(phys_addr_t addr)
+> +{
+> +	int i = memblock_search(&memblock.memory, addr);
+> +
+> +	if (i == -1)
+> +		return false;
+> +	return memblock_is_boot(&memblock.memory.regions[i]);
+> +}
+> +
+>  #ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
+>  int __init_memblock memblock_search_pfn_nid(unsigned long pfn,
+>  			 unsigned long *start_pfn, unsigned long *end_pfn)
+> -- 
+> 2.7.4
+> 
+
 -- 
-2.17.1
+Sincerely yours,
+Mike.
 
 
 _______________________________________________
