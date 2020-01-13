@@ -2,72 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC206139551
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 16:53:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E764139553
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 16:54:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NPsjYzyA57KnT6koWGtTyGc6XNMaItnvnqrJ9p06CEo=; b=SjeYrbB7FeVCB1ZVxTA+PRXTz
-	S/ObXoAVZ8ttf51GqUn7aE+ujvv+ac6e/BLVHUVFMkC7oOsBMsGwBLL0vRDmsl+vpQiJFJhc0jTe9
-	kvKiP28j38mfUsa0u6zemuYazdvD8tkeEfxAZw7YUSf+Zmp259sv10IY7a+fK38ztmgL1sAyB4UHU
-	HyxyN4mVO/gOEhbwzXpDvrhmM18miDPEFmOXEDzL2mjFNcRabPNvIYpMBbl7zBGZz+5K6xng3x3wN
-	RE6AW8X6CbNVLHQEjy5nG6nxEp1LEFWfmcOSQaV+ugrMyS1W+5lnJpjmBfYsTGxAQjZvkMP55gKYU
-	LDpHdXQAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wsdyHc/AcGQnVZjETVtCoZ5yH8Iyk2z9iIeyPfiY4HI=; b=GwCM1NdJ6L0K+T
+	wWRJ7Ped/2XC3+JGpGvdpospQaeZ4xOau4m8HEOjEu/OuO2jDklsMoMxKnH8uGt8FBv5vtXm8b4nL
+	eYqqvb078MYWtZakLsut6KDt3rIXHFpiYb8P4UXAZHZa6IRkjI1USVSHlzznhkpinpi9EHKryiOIs
+	C0rzf0YMNw7SkG4IzCUo35/HpQF6GAngUnbByVZa6IzRJRiaX2UitAHQ/b9s6ws+QazZ3nvFtBjly
+	JNPSulWHEEz5+9Q6adfGT1zMByw76D3mexx4ujY+2aMAp06AbRwnWfpyB0OKSkJGnayVfyABJk0d5
+	KnatMq+7KNgxOc+jh6dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir22F-0004Sz-LC; Mon, 13 Jan 2020 15:53:47 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1ir23E-0004kg-7n; Mon, 13 Jan 2020 15:54:48 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir224-0004SN-PC
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 15:53:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=aEQXcauEtwtBTMlxbZX7udfUWpI37znKKr88yDEAqxQ=; b=YHz+pZ1lLirdpU1tTN1eAEZ2r
- IKMucJkzS5KpRS42TeZub17Go3/m4+Xkn5fk9nhWtKp4qqjQyjd1r3LaIiKeX6KJXflCOXbC1xFzR
- tmuyU8lo7BM7sfjZHKTJFEx0qmxLii1sMLT3GN3YFn9kxPMQCfVmki8F+sTgc5FHcSKYk=;
-Received: from fw-tnat-cam7.arm.com ([217.140.106.55]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1ir221-0003bw-8n; Mon, 13 Jan 2020 15:53:33 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id A2941D01965; Mon, 13 Jan 2020 15:53:32 +0000 (GMT)
-Date: Mon, 13 Jan 2020 15:53:32 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Jeff Chang <richtek.jeff.chang@gmail.com>
-Subject: Re: [PATCH v5] ASoC: Add MediaTek MT6660 Speaker Amp Driver
-Message-ID: <20200113155332.GO3897@sirena.org.uk>
-References: <1578644496-16575-1-git-send-email-richtek.jeff.chang@gmail.com>
+ id 1ir233-0004jr-VG
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 15:54:40 +0000
+X-Originating-IP: 90.65.102.129
+Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 05650E000B;
+ Mon, 13 Jan 2020 15:54:23 +0000 (UTC)
+Date: Mon, 13 Jan 2020 16:54:23 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] ARM: at91: DT for 5.6 #1
+Message-ID: <20200113155423.GA1357189@piout.net>
 MIME-Version: 1.0
-In-Reply-To: <1578644496-16575-1-git-send-email-richtek.jeff.chang@gmail.com>
-X-Cookie: Programming is an unnatural act.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_075336_815452_13C6D625 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200113_075438_276216_D7FF6533 
+X-CRM114-Status: GOOD (  13.63  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,81 +63,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
- lgirdwood@gmail.com, jeff_chang@richtek.com, matthias.bgg@gmail.com,
- perex@perex.cz, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3373422345699227730=="
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Arnd, Olof,
 
---===============3373422345699227730==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="/TUrtqMIkCP4YtJm"
-Content-Disposition: inline
+Here is the first AT91 DT pull request for 5.6. A few new boards and not
+so urgent fixes this cycle. I may have a second pull request by then end
+of the week with the sam9x60 device tree.
 
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
---/TUrtqMIkCP4YtJm
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-On Fri, Jan 10, 2020 at 04:21:36PM +0800, Jeff Chang wrote:
+are available in the Git repository at:
 
-> +	- rt,init_setting_num : The initial register setting element number.
-> +
-> +	- rt,init_setting_addr : the addreses array for INIT Setting table.
-> +
-> +	- rt,init_setting_mask : the mask array for INIT Setting table.
-> +
-> +	- rt,init_setting_val : the value array for INIT Setting table.
+  git://git.kernel.org/pub/scm/linux/kernel/git/at91/linux tags/at91-5.6-dt-1
 
-I'm not 100% clear what this is indended to be used for but given
-that it's just raw register writes it's hard to see how it can be
-used well in a general driver - it basically means we have no
-idea how the chip might be configured in any given system which
-*might* be fine but it could break some assumption the driver
-makes about the state of the system on some particular OS or
-version.  If there are some system specific tuning parameters
-that need to be set as raw values it would be safer to do that by
-just including the data in DT (eg, "X bytes of data to be written
-starting at register Y to tune component Z" type stuff) or by
-exposing individual parameters for things that are documentable.
-Allowing a completely unconstrained sequence of register writes
-doesn't seem like a good idea.
+for you to fetch changes up to a7e0f3fc01df4b1b7077df777c37feae8c9e8b6d:
 
-If possible it might be best to send a version of the driver that
-doesn't let this stuff be configured at all then a patch on top
-of that which configures all this stuff, the rest of the driver
-looks good now.
+  ARM: dts: at91: sama5d3: define clock rate range for tcb1 (2020-01-10 18:25:14 +0100)
 
---/TUrtqMIkCP4YtJm
-Content-Type: application/pgp-signature; name="signature.asc"
+----------------------------------------------------------------
+AT91 DT for 5.6
 
------BEGIN PGP SIGNATURE-----
+ - Fix sama5d3 peripheral clock rate range
+ - New boards: Overkiz Smartikz and Kizbox Mini, Microchip SAMA5D27
+   wlsom1-ek
+ - sama5d2 sdmcc fixes
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4cknsACgkQJNaLcl1U
-h9BTeAf8C55cmcfxY+HHqvC1iVVcYfUzf1wTdh3zed7cpd624wm6yrjvr2UzzcR4
-t/LEvnTIeZTPFvorQNMaZLDM5KWU8YWrll6SM6deiXo2dv5uAFzs2XGY+eRvTnN3
-HjcX+dnQlvd7ZCekd/b7M03IhNGIx5VY3QDDhbDTDrHA26wpil5GT3seJhV0yXsM
-w1+ITl4WshJ1kDwE8+jIBG5j7FfR/4ig3ZDb2iP2frIKn7r12AJDlQXfM/pf3vpm
-IXFs+JX8tyuHEU35AyG1vMOoReF0/UDGvgKI0m0hiV7E9W37FHfB+bJS64sSmnTv
-4EUo2bTKPCiJv7BxPJVngMSK1D+qeA==
-=xYed
------END PGP SIGNATURE-----
+----------------------------------------------------------------
+Alexandre Belloni (3):
+      ARM: dts: at91: nattis 2: remove unnecessary include
+      ARM: dts: at91: sama5d3: fix maximum peripheral clock rates
+      ARM: dts: at91: sama5d3: define clock rate range for tcb1
 
---/TUrtqMIkCP4YtJm--
+Andrei Stefanescu (1):
+      ARM: dts: at91: sama5d2: mark secumod as a GPIO controller
 
+Eugen Hristev (3):
+      dt-bindings: ARM: at91: Document SAMA5D27 WLSOM1 and Evaluation Kit
+      ARM: dts: at91: sama5d27_wlsom1: add SAMA5D27 wlsom1 and wlsom1-ek
+      ARM: dts: at91: sama5d27_som1_ek: add i2c filters properties
 
---===============3373422345699227730==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Ingo van Lil (1):
+      ARM: dts: at91: Reenable UART TX pull-ups
+
+Kamel Bouhara (3):
+      ARM: dts: at91: rearrange kizbox dts using aliases nodes
+      dt-bindings: arm: at91: Document Kizboxmini and Smartkiz boards binding
+      ARM: dts: at91: add smartkiz support and a common kizboxmini dtsi file
+
+Ludovic Desroches (1):
+      ARM: dts: at91: sama5d2: set the sdmmc gclk frequency
+
+Nicolas Ferre (1):
+      ARM: dts: at91: sama5d27_som1_ek: add the microchip,sdcal-inverted on sdmmc0
+
+Razvan Stefanescu (1):
+      ARM: dts: at91: sama5d2: disable pwm0 by default
+
+ .../devicetree/bindings/arm/atmel-at91.yaml        |  25 ++
+ arch/arm/boot/dts/Makefile                         |   6 +-
+ arch/arm/boot/dts/at91-kizbox.dts                  | 172 ++++++------
+ arch/arm/boot/dts/at91-kizboxmini-base.dts         |  24 ++
+ ...-kizboxmini.dts => at91-kizboxmini-common.dtsi} | 163 ++++++-----
+ arch/arm/boot/dts/at91-kizboxmini-mb.dts           |  26 ++
+ arch/arm/boot/dts/at91-kizboxmini-rd.dts           |  49 ++++
+ arch/arm/boot/dts/at91-nattis-2-natte-2.dts        |   1 -
+ arch/arm/boot/dts/at91-sama5d27_som1.dtsi          |   4 +
+ arch/arm/boot/dts/at91-sama5d27_som1_ek.dts        |   6 +
+ arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi        | 304 +++++++++++++++++++++
+ arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts      | 270 ++++++++++++++++++
+ arch/arm/boot/dts/at91-smartkiz.dts                | 109 ++++++++
+ arch/arm/boot/dts/at91sam9260.dtsi                 |  16 +-
+ arch/arm/boot/dts/at91sam9261.dtsi                 |   6 +-
+ arch/arm/boot/dts/at91sam9263.dtsi                 |   6 +-
+ arch/arm/boot/dts/at91sam9g45.dtsi                 |   8 +-
+ arch/arm/boot/dts/at91sam9rl.dtsi                  |   8 +-
+ arch/arm/boot/dts/sama5d2.dtsi                     |  10 +-
+ arch/arm/boot/dts/sama5d3.dtsi                     |  28 +-
+ arch/arm/boot/dts/sama5d3_can.dtsi                 |   4 +-
+ arch/arm/boot/dts/sama5d3_tcb1.dtsi                |   1 +
+ arch/arm/boot/dts/sama5d3_uart.dtsi                |   4 +-
+ 23 files changed, 1037 insertions(+), 213 deletions(-)
+ create mode 100644 arch/arm/boot/dts/at91-kizboxmini-base.dts
+ rename arch/arm/boot/dts/{at91-kizboxmini.dts => at91-kizboxmini-common.dtsi} (51%)
+ create mode 100644 arch/arm/boot/dts/at91-kizboxmini-mb.dts
+ create mode 100644 arch/arm/boot/dts/at91-kizboxmini-rd.dts
+ create mode 100644 arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
+ create mode 100644 arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
+ create mode 100644 arch/arm/boot/dts/at91-smartkiz.dts
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3373422345699227730==--
-
