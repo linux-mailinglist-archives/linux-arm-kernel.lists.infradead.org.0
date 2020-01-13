@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F41C613961F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:25:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16378139627
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:26:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PdsW/n1GO3ij6Efd+vnEPH154y7bOJOjp1J/A0nb8ZY=; b=V5DswZEARv+dOniJe8ysIJXknq
-	X1uTVNuXc3mh87RP1US1vsJ+ZFUx5Cz/w+rYG4PQIYKmz1RR5cGILV5766vQ2yuM1f4NQrME34jDc
-	06FIStSrh4q4u44Kx3TBojug4aB0sJz2qTlOLhGImEdsdkCNp0kXnxlYV6A5QyfooQWjs0qOfWKeR
-	pFcX5BZg26ESmCPcGo2kJXJG5ZqyzdZDAk5nBdF+VW+c9pAblzXlvGlLF8lRVTl5VwohvhkQLeEM+
-	2wLySa1FC29dZXOGWOSnV7tBlKw37X5wvjDsUXsqaQLZX8W2dLalhIt9IOga6Jm7lP+wQLDH+uwoO
-	Ui4K6B+A==;
+	bh=i6sIZscqJFiR4916Wef8ZSUmpdCmT1CJxYqWyydcFZ8=; b=LpfffiP7509Lfb8bPJ/qXaSzBA
+	+nzfR3sZRQuQXZ6B9cKnB9RVw+eaPBb9YnkLgp4hoSTA2xyI+V8e0JkNZesLLnKi1Qc8f11MSjw+K
+	WpxDAthI29TcwdwK0A54n2sNxDEUsjn2xjlQBtDULoWJQQJnmFvyYsoJwo9SR4YhzLvthHKZ1aHoC
+	Fm+3CkrN7VMt+jfhBZEWH79iPmDPFHOPcN0bb+idwBq8KyLJ/supqI7B7j6E8/ugF49n0EhzxEuU1
+	MWXGjUz/ziQJCaHyOrZGEi8D0LrW4GrvZuabfH1kcy8rYUp6C6C82yzbZocWoDlEQVXdW4m8b+ON1
+	k42Rxbaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir2X6-0008UK-AI; Mon, 13 Jan 2020 16:25:40 +0000
+	id 1ir2Xd-0000pu-Px; Mon, 13 Jan 2020 16:26:13 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir2Vq-0007Sq-Ds
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:24 +0000
+ id 1ir2Vq-0007Sp-Du
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:28 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BF727C05DC;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D3709C05DF;
  Mon, 13 Jan 2020 16:24:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1578932661; bh=QFbAowEgES03c5XYlcvZ5klAPG5SDoJ9C9pBH1nnTfI=;
+ t=1578932661; bh=+Et9MFkbtSRJVkOU4n9NKLthz4fCYsmxr3gPjk2wX0I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=jo5rAFMt1qGcknTDOEZyL4jidlTULM8iivZaO6vPh6Ofnv8I0xw5sXsBLIKyK5KSS
- 8WrpV8FCrW7TtbVE8nJafDNNiCZBbeXEmoj36VeYhtm0+9mda6S/1x7ACfZ5flD3ch
- R9O/qrtjFuYoSPVc0V5ju4lSkgEH0qcyeFTMRzZxN4BZ1WOgH1HpYeA/zvLGukf35g
- 3ClgAkzO0fqQryMNzQaevJzyoS5OdhsYU1WmOU8OxHCrVqORbQF2b+d+4gUhfl0Vqi
- YjVnhF8mx5y5fOx1yo57iINyJqd/m5Fwzie2AofyqqT4+Sw6fd5N0ShciJr9KQcHgT
- 9i7vkpdeigDSg==
+ b=bjI2dpJ0TEEDXyA+bjNLyPs2cWdmWwJwoHb8ZAp8rog5Ig0yeuJNLu2mvlaUdSC0s
+ dUfVAoPF2v9FZHDsj8gjfJZwOIMibUAeIVEkSfvKof4r1MtfiX5piTNCFgp7Bc15EF
+ nkO+h7M4S2hwzbzs6qg56Mm6grHJlK7b8rc0MANHlX0GtdPhfMRjWX99hPhLRw5FWF
+ 4PwtGptxV3aPYzAiRFCzSn6a+/+kyiqD8WmHiPYV53Rrj/oGBlGNJP6EY3WfGAF6/d
+ F4xM007Pz9qu5PCUJ5L33Yemj/tEdJKbNkLJp7MMgcpcA67TZW5nMReUNP51Yqeb77
+ 0dbK7c737TUKA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 6797BA0062;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 6F76CA0066;
  Mon, 13 Jan 2020 16:24:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v3 2/8] net: stmmac: tc: Add support for ETF
- Scheduler using TBS
-Date: Mon, 13 Jan 2020 17:24:10 +0100
-Message-Id: <eabd50e0464d13911b5512c9f2e0ed0f3dc7e6ef.1578932287.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next v3 3/8] net: stmmac: xgmac: Add TBS support
+Date: Mon, 13 Jan 2020 17:24:11 +0100
+Message-Id: <8036baa14425e1ff1f2d3a7dd60acbe010144e59.1578932287.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_082422_573176_CC1F27BC 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20200113_082422_612437_1BA72DE6 
+X-CRM114-Status: GOOD (  13.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,12 +94,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds the support for ETF scheduler using TBS feature which is available
-in XGMAC and QoS IPs.
+Adds all the necessary HW hooks to support TBS feature in XGMAC cores.
 
-Changes from v2:
-- Fix checkpatch issues (Jakub)
-- Use the TBS bitfield
+Changes from v1:
+- Remove unneeded LT shift as the IP already does this.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -115,102 +112,134 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h      |  1 +
- drivers/net/ethernet/stmicro/stmmac/hwif.h        |  5 +++++
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |  2 ++
- drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c   | 21 +++++++++++++++++++++
- 4 files changed, 29 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     | 13 ++++++++++++
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_descs.c   |  9 ++++++++
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 24 ++++++++++++++++++++++
+ 3 files changed, 46 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 31003b67d24f..487099092693 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -368,6 +368,7 @@ struct dma_features {
- 	unsigned int estdep;
- 	unsigned int estsel;
- 	unsigned int fpesel;
-+	unsigned int tbssel;
- };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+index 64d13e50e403..6c3b8a950f58 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+@@ -139,6 +139,7 @@
+ #define XGMAC_HWFEAT_TXQCNT		GENMASK(9, 6)
+ #define XGMAC_HWFEAT_RXQCNT		GENMASK(3, 0)
+ #define XGMAC_HW_FEATURE3		0x00000128
++#define XGMAC_HWFEAT_TBSSEL		BIT(27)
+ #define XGMAC_HWFEAT_FPESEL		BIT(26)
+ #define XGMAC_HWFEAT_ESTWID		GENMASK(24, 23)
+ #define XGMAC_HWFEAT_ESTDEP		GENMASK(22, 20)
+@@ -346,6 +347,13 @@
+ #define XGMAC_TDPS			GENMASK(29, 0)
+ #define XGMAC_RX_EDMA_CTRL		0x00003044
+ #define XGMAC_RDPS			GENMASK(29, 0)
++#define XGMAC_DMA_TBS_CTRL0		0x00003054
++#define XGMAC_DMA_TBS_CTRL1		0x00003058
++#define XGMAC_DMA_TBS_CTRL2		0x0000305c
++#define XGMAC_DMA_TBS_CTRL3		0x00003060
++#define XGMAC_FTOS			GENMASK(31, 8)
++#define XGMAC_FTOV			BIT(0)
++#define XGMAC_DEF_FTOS			(XGMAC_FTOS | XGMAC_FTOV)
+ #define XGMAC_DMA_SAFETY_INT_STATUS	0x00003064
+ #define XGMAC_MCSIS			BIT(31)
+ #define XGMAC_MSUIS			BIT(29)
+@@ -360,6 +368,7 @@
+ #define XGMAC_SPH			BIT(24)
+ #define XGMAC_PBLx8			BIT(16)
+ #define XGMAC_DMA_CH_TX_CONTROL(x)	(0x00003104 + (0x80 * (x)))
++#define XGMAC_EDSE			BIT(28)
+ #define XGMAC_TxPBL			GENMASK(21, 16)
+ #define XGMAC_TxPBL_SHIFT		16
+ #define XGMAC_TSE			BIT(12)
+@@ -404,6 +413,9 @@
+ #define XGMAC_REGSIZE			((0x0000317c + (0x80 * 15)) / 4)
  
- /* RX Buffer size must be multiple of 4/8/16 bytes */
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.h b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-index 71c23cbd7af8..df63b0367aff 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-@@ -533,6 +533,7 @@ struct tc_cls_u32_offload;
- struct tc_cbs_qopt_offload;
- struct flow_cls_offload;
- struct tc_taprio_qopt_offload;
-+struct tc_etf_qopt_offload;
- 
- struct stmmac_tc_ops {
- 	int (*init)(struct stmmac_priv *priv);
-@@ -544,6 +545,8 @@ struct stmmac_tc_ops {
- 			 struct flow_cls_offload *cls);
- 	int (*setup_taprio)(struct stmmac_priv *priv,
- 			    struct tc_taprio_qopt_offload *qopt);
-+	int (*setup_etf)(struct stmmac_priv *priv,
-+			 struct tc_etf_qopt_offload *qopt);
- };
- 
- #define stmmac_tc_init(__priv, __args...) \
-@@ -556,6 +559,8 @@ struct stmmac_tc_ops {
- 	stmmac_do_callback(__priv, tc, setup_cls, __args)
- #define stmmac_tc_setup_taprio(__priv, __args...) \
- 	stmmac_do_callback(__priv, tc, setup_taprio, __args)
-+#define stmmac_tc_setup_etf(__priv, __args...) \
-+	stmmac_do_callback(__priv, tc, setup_etf, __args)
- 
- struct stmmac_counters;
- 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index baffb4e8d99a..43af4fc5ab8f 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4159,6 +4159,8 @@ static int stmmac_setup_tc(struct net_device *ndev, enum tc_setup_type type,
- 		return stmmac_tc_setup_cbs(priv, priv, type_data);
- 	case TC_SETUP_QDISC_TAPRIO:
- 		return stmmac_tc_setup_taprio(priv, priv, type_data);
-+	case TC_SETUP_QDISC_ETF:
-+		return stmmac_tc_setup_etf(priv, priv, type_data);
- 	default:
- 		return -EOPNOTSUPP;
- 	}
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-index 6c4686b77516..a4ce165af36b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-@@ -727,10 +727,31 @@ static int tc_setup_taprio(struct stmmac_priv *priv,
- 	return ret;
+ /* Descriptors */
++#define XGMAC_TDES0_LTV			BIT(31)
++#define XGMAC_TDES0_LT			GENMASK(7, 0)
++#define XGMAC_TDES1_LT			GENMASK(31, 8)
+ #define XGMAC_TDES2_IVT			GENMASK(31, 16)
+ #define XGMAC_TDES2_IVT_SHIFT		16
+ #define XGMAC_TDES2_IOC			BIT(31)
+@@ -422,6 +434,7 @@
+ #define XGMAC_TDES3_TCMSSV		BIT(26)
+ #define XGMAC_TDES3_SAIC		GENMASK(25, 23)
+ #define XGMAC_TDES3_SAIC_SHIFT		23
++#define XGMAC_TDES3_TBSV		BIT(24)
+ #define XGMAC_TDES3_THL			GENMASK(22, 19)
+ #define XGMAC_TDES3_THL_SHIFT		19
+ #define XGMAC_TDES3_IVTIR		GENMASK(19, 18)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
+index bd5838ce1e8a..c3d654cfa9ef 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
+@@ -339,6 +339,14 @@ static void dwxgmac2_set_vlan(struct dma_desc *p, u32 type)
+ 	p->des2 |= cpu_to_le32(type & XGMAC_TDES2_VTIR);
  }
  
-+static int tc_setup_etf(struct stmmac_priv *priv,
-+			struct tc_etf_qopt_offload *qopt)
++static void dwxgmac2_set_tbs(struct dma_edesc *p, u32 sec, u32 nsec)
 +{
-+	if (!priv->dma_cap.tbssel)
-+		return -EOPNOTSUPP;
-+	if (qopt->queue >= priv->plat->tx_queues_to_use)
-+		return -EINVAL;
-+	if (!(priv->tx_queue[qopt->queue].tbs & STMMAC_TBS_AVAIL))
-+		return -EINVAL;
++	p->des4 = cpu_to_le32((sec & XGMAC_TDES0_LT) | XGMAC_TDES0_LTV);
++	p->des5 = cpu_to_le32(nsec & XGMAC_TDES1_LT);
++	p->des6 = 0;
++	p->des7 = 0;
++}
 +
-+	if (qopt->enable)
-+		priv->tx_queue[qopt->queue].tbs |= STMMAC_TBS_EN;
+ const struct stmmac_desc_ops dwxgmac210_desc_ops = {
+ 	.tx_status = dwxgmac2_get_tx_status,
+ 	.rx_status = dwxgmac2_get_rx_status,
+@@ -368,4 +376,5 @@ const struct stmmac_desc_ops dwxgmac210_desc_ops = {
+ 	.set_sarc = dwxgmac2_set_sarc,
+ 	.set_vlan_tag = dwxgmac2_set_vlan_tag,
+ 	.set_vlan = dwxgmac2_set_vlan,
++	.set_tbs = dwxgmac2_set_tbs,
+ };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index bbbfa793a367..77308c5c5d29 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -429,6 +429,7 @@ static void dwxgmac2_get_hw_feature(void __iomem *ioaddr,
+ 
+ 	/* MAC HW feature 3 */
+ 	hw_cap = readl(ioaddr + XGMAC_HW_FEATURE3);
++	dma_cap->tbssel = (hw_cap & XGMAC_HWFEAT_TBSSEL) >> 27;
+ 	dma_cap->fpesel = (hw_cap & XGMAC_HWFEAT_FPESEL) >> 26;
+ 	dma_cap->estwid = (hw_cap & XGMAC_HWFEAT_ESTWID) >> 23;
+ 	dma_cap->estdep = (hw_cap & XGMAC_HWFEAT_ESTDEP) >> 20;
+@@ -523,6 +524,28 @@ static void dwxgmac2_enable_sph(void __iomem *ioaddr, bool en, u32 chan)
+ 	writel(value, ioaddr + XGMAC_DMA_CH_CONTROL(chan));
+ }
+ 
++static int dwxgmac2_enable_tbs(void __iomem *ioaddr, bool en, u32 chan)
++{
++	u32 value = readl(ioaddr + XGMAC_DMA_CH_TX_CONTROL(chan));
++
++	if (en)
++		value |= XGMAC_EDSE;
 +	else
-+		priv->tx_queue[qopt->queue].tbs &= ~STMMAC_TBS_EN;
++		value &= ~XGMAC_EDSE;
 +
-+	netdev_info(priv->dev, "%s ETF for Queue %d\n",
-+		    qopt->enable ? "enabled" : "disabled", qopt->queue);
++	writel(value, ioaddr + XGMAC_DMA_CH_TX_CONTROL(chan));
++
++	value = readl(ioaddr + XGMAC_DMA_CH_TX_CONTROL(chan)) & XGMAC_EDSE;
++	if (en && !value)
++		return -EIO;
++
++	writel(XGMAC_DEF_FTOS, ioaddr + XGMAC_DMA_TBS_CTRL0);
++	writel(XGMAC_DEF_FTOS, ioaddr + XGMAC_DMA_TBS_CTRL1);
++	writel(XGMAC_DEF_FTOS, ioaddr + XGMAC_DMA_TBS_CTRL2);
++	writel(XGMAC_DEF_FTOS, ioaddr + XGMAC_DMA_TBS_CTRL3);
 +	return 0;
 +}
 +
- const struct stmmac_tc_ops dwmac510_tc_ops = {
- 	.init = tc_init,
- 	.setup_cls_u32 = tc_setup_cls_u32,
- 	.setup_cbs = tc_setup_cbs,
- 	.setup_cls = tc_setup_cls,
- 	.setup_taprio = tc_setup_taprio,
-+	.setup_etf = tc_setup_etf,
+ const struct stmmac_dma_ops dwxgmac210_dma_ops = {
+ 	.reset = dwxgmac2_dma_reset,
+ 	.init = dwxgmac2_dma_init,
+@@ -550,4 +573,5 @@ const struct stmmac_dma_ops dwxgmac210_dma_ops = {
+ 	.qmode = dwxgmac2_qmode,
+ 	.set_bfsize = dwxgmac2_set_bfsize,
+ 	.enable_sph = dwxgmac2_enable_sph,
++	.enable_tbs = dwxgmac2_enable_tbs,
  };
 -- 
 2.7.4
