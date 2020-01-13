@@ -2,83 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FF00138F09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 11:28:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86F7138F0E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 11:29:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7+uiyYLOm2mzgL3JgjkJObit9ItANnw9j/Gel+KDlRM=; b=hAFRZcniUyJvRK
-	+avAnvKkgb472Zr2xXjM1SSWjnNoEV/SqcXoKHNqeVO6+N/rfgO1lBOzLBEMszULpATxrmH4Po/DQ
-	+BzWGXRSx1sbvTTpgEk6bbfp1ltBUvTmWWcRW1ZWE5IB/8K1Jn8HBl5ymK2kDYOl83l4PEBWNL1i6
-	M5rXDL1YrD4kYkPC3rVn+1frJGyOzvDVQriCZiOyXnpSmuAVaZfhIingzJGqR3xlYRTIlduj5V5H7
-	tpv3KSfU6lPc4tHwVshBdNHKqpZVCPPXZrd5s5FVSbaMHSMMGVdvSYRCbvJPiM2l3/e61vtUxvueq
-	KhlOhsAIrABBY2SzXQrg==;
+	List-Owner; bh=z6Wc+KWGbHAwbkA5fx6zYnOI/+O62wGnc9H9n5zhV6Y=; b=DRwQBl2IAIxyEc
+	MRoSIbzpF+ngmUmIBoNaHTWxuwir88nw8jUkDEWb1LKZNKJdIwzfjeSudp/eGYuReAQVot1986MpR
+	gw0Hxb53GhNbQGYokZtVeiHHfG2TomTn4xadermY2kanrFdNPQ5FIzDFp3zkzUghBVCK2Bjjo/+jJ
+	Cb8Dnc6b0kLMy/rvzUufkZv19ljvjoqOTLe5CML4KCfW1n0JGAD/0w3SHaC2dNlckspJBk7CmJa4E
+	NmD94wnIsk7+DArkuWky615rSBrHvYvo/dZ0/Y8v89Ypk7fDsmeIdI3q3Vvbmvu8YoTt3EZMuKA95
+	rF7/tpPWCRxzbNXltI2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqwxi-0000lX-8m; Mon, 13 Jan 2020 10:28:46 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iqwye-00019u-2K; Mon, 13 Jan 2020 10:29:44 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqwxJ-0000br-Gz; Mon, 13 Jan 2020 10:28:23 +0000
-Received: by mail-ed1-x543.google.com with SMTP id j17so7980446edp.3;
- Mon, 13 Jan 2020 02:28:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=iMaJqGe+/87KiNUvJjKYz57OCMd9euJzaVWaUN0lP1s=;
- b=DObAAOFbSbrVsGeQHDd10Vzw+tqaEuBubMD9TEHteChXl3Os6q57ah95lTayO9eabr
- 4H8lfic+3PgOkOYTAmV9yTJ5Rd17E7OyzZZmH6MvfpcrduFUp2wPJuFxohfeg9RHwr1l
- XtNYo0ro+an7eUtSAAvkNbMR6TasOwacC/o0rhmpmTaMO4K9IvJ4kbQAAwny4MY9z6q/
- +KLC9BGC9NsZS1hjdc//LeCh68StWNhrw5FHOZ15I/LsTIIfvhhzIFJ0v1RT/3CpXbgY
- QT19mQoAGaH9rq7xwv2sjdTE/NsDMw/GXBgONCEvOUpG56varewMdFKAHBZ6Pg23b5MK
- S/VQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=iMaJqGe+/87KiNUvJjKYz57OCMd9euJzaVWaUN0lP1s=;
- b=D4A4txA99XjQ0JFFbX1znAB9NHkcQiqMhX1T6+blVhOzJ0ix+AupQn1fPpzKmt0s01
- EwhE5PJv+SahrLFl1HhzXBQQEVgKXXh2/+kWNm0bUfuIeynZQPyBWlACRrlCdboZPWh0
- 5grS/FHO1FgiSRjPurQNb7qTvog6f9m/Vk5LQ7j1s7LJTSROXMTNkzEpOZacDccUiQu0
- NbBgKIVdmxxUX+baClvPKrQtD6hZYRMw78bEAyWuFLuXYb5Vmpy4rsZGbHOgWqjhu/gv
- CtC0KwxzBK5JKL7fyEvyATTbnHLIHVwDQLKnymJilOA1mxMrDrlq0U3QdiS10LgUspEV
- 1+3A==
-X-Gm-Message-State: APjAAAXruuDmRUiOXZ8CtHtFYf2zrcjTSd0ntHoo/vRFt9uFd4Qv9Mfi
- 8oIEf/gmvNFzKyQ6yt6wBKjK+2xVbeNtt87MCG8=
-X-Google-Smtp-Source: APXvYqyePqN9rysuFPmxEhUlGyUdY4qvbz40qryhjRRm5hpgejdUM23whTYnPjgS7seBJrNUneoHgAgsHduYxvuLJZQ=
-X-Received: by 2002:a17:906:504d:: with SMTP id
- e13mr16068802ejk.103.1578911300006; 
- Mon, 13 Jan 2020 02:28:20 -0800 (PST)
+ id 1iqwyV-00018q-O3
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 10:29:37 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9027540695;
+ Mon, 13 Jan 2020 10:29:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1578911371; bh=u2GypkXkDvkZAGG0sDMzV7zgLpkJam+sMYHnQ+/IzCw=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=URLww37lKEeLfuTqukMxuuSPM1BpRxs3V14n3FCbiZYPXh6ajudIN4fStlN0FTPly
+ GTzvJHC7BVpswf61JCYFZ5ofmkJGDf3XEwrApcAy1tuWKGesxX9TSucEd456mi+LVd
+ v9QdYaDyIFXV1J9XdYQeBOoovB1yGj/OeOVPJAOC+rZDYutujR004K6y96XyM5dbDY
+ cKAqCK2p4+Tcm104eRcAzb/a0xRBKpeCv83gsMt0RWpTQ94HLgGSkwkvjO1mFtc0cO
+ pDuzUvGzjwIPlXrFf/JKeI77uc3HSeqAT1WHjNZP6PF1DQaw9PK3+RfXLDhf8lWAfo
+ Y+xxAb5olyf1g==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 4443CA0085;
+ Mon, 13 Jan 2020 10:29:29 +0000 (UTC)
+Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 13 Jan 2020 02:29:28 -0800
+Received: from NAM10-DM6-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Mon, 13 Jan 2020 02:29:27 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BmrXezVm+tkFQMGK+nKkgRnzvv/OX/VI19SNFXrZlVd1yD7GdbIRro4168/vIaG6Wgb2uIPGxoKz17oj1nYyJ2EKhsTWvAtOJinpN/YtoAe2rDgZ29xK8SIjH7MKsxcDQIlRYRf6wIS/1wAisHdtX+nsit0sdY7KUTfgf587ZjPbYAljq7XeOIqeT8oLL7J2lcsuBvNPDtRbxrJz5Ka29vh6UBOb8J5jRbsOLj4z7Xg3td00QD6v6hPeSgt7zx5Iy2kwf8BvHj6uPz46+P9yv3ijCjfKfMYq/KRyvNNWCve5WqSX37sbMQMIuftq5OxBZwJoqHdDHoHAN7c8yIA/gA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=u2GypkXkDvkZAGG0sDMzV7zgLpkJam+sMYHnQ+/IzCw=;
+ b=C20drIuLM38M7HSLpM4fxGCV8AyryN7uxAvLrCPQQqUNaAHw4+ZmW8yyl24fjTKP8H0XFYxYuIhmoxI+R5pYyh6Ab8tfZeFtMVpXxkoyxMk+Z7KuNcggA8ZFuXdS0UfBe2jOY/zytdO+3lUfyiOSt4sPIF3QMNHHMclz6FQTwEhbNXlLe6eb8MADPw4yHUgc0LSTvXXVa9Giiu7FowcNigurqn+LjlGOTeaHOuWvrtSoolX7CwKdCCpVvzHzD1WhnLA1Oca7kHpggk3ld/eefT3jrMmX4Nfaswk/DNMqIzhqtRTFT2SE4h93nJOC8i0lkHid76fiN3FlwU9FEd9l7A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=u2GypkXkDvkZAGG0sDMzV7zgLpkJam+sMYHnQ+/IzCw=;
+ b=gdyd+wz6pugjcDGPduZFG1O59MkWvBrisEAn0RD1PzZtNX2cYZn1yEmeOokKa/X4lbv6sofpmd1dPnFbho8cYjv0rRiJyhuTI7I3XNsF8uCqYMSX9eLlirRilhrwSvsSzqE9nS74/pnJjWvw2LxOlGsQtTiejtxTDJlKPaLjSL4=
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.67.145) by
+ BN8PR12MB3155.namprd12.prod.outlook.com (20.178.223.222) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.9; Mon, 13 Jan 2020 10:29:26 +0000
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::c62:b247:6963:9da2]) by BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::c62:b247:6963:9da2%6]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
+ 10:29:26 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Ong Boon Leong <boon.leong.ong@intel.com>, "netdev@vger.kernel.org"
+ <netdev@vger.kernel.org>
+Subject: RE: [PATCH net 1/7] net: stmmac: fix error in updating rx tail
+ pointer to last free entry
+Thread-Topic: [PATCH net 1/7] net: stmmac: fix error in updating rx tail
+ pointer to last free entry
+Thread-Index: AQHVyfow7Yt+TlL/YEW2hhh7BAxzpqfoYdLQ
+Date: Mon, 13 Jan 2020 10:29:26 +0000
+Message-ID: <BN8PR12MB32661345472470F495EFAC0DD3350@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <1578967276-55956-1-git-send-email-boon.leong.ong@intel.com>
+ <1578967276-55956-2-git-send-email-boon.leong.ong@intel.com>
+In-Reply-To: <1578967276-55956-2-git-send-email-boon.leong.ong@intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 683ed4e5-9ff6-424c-70c2-08d79813771d
+x-ms-traffictypediagnostic: BN8PR12MB3155:
+x-microsoft-antispam-prvs: <BN8PR12MB3155CBCF9B4F1CFC29B58D08D3350@BN8PR12MB3155.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 028166BF91
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(39850400004)(346002)(366004)(396003)(136003)(189003)(199004)(64756008)(54906003)(86362001)(66476007)(8936002)(2906002)(110136005)(81166006)(81156014)(316002)(66556008)(76116006)(66946007)(66446008)(8676002)(7416002)(5660300002)(478600001)(33656002)(6506007)(52536014)(55016002)(26005)(186003)(71200400001)(9686003)(4326008)(7696005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3155;
+ H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Zq3yKPDUCz7D7QW3sJpLxKTOF8pEnOeeITEiwemoHFs9v/2ngaMiLtw4Aq7Z22zVfo8o4efMcTju74BrmthFS+Yq4GZvNMJHiUZhWkWlcax1T9flDAgfs0EsMzXNWVB0lyAtFm3qdfa/27s5akwsgB+1C+gBTeZJw78Rht+RdU97nIe1tD0g1iq898vyjiRRMBehouPfXpwhqr08mxf3j4W0lDxDS9D9ZP/QgA7+aFdvDJnv9ldzi1Ddx1ExEaNhKe53jyuxZi7mxebz7LzTN+h7FyqWmpqIT6ZZsd5ISgCPSSBrWoKCEE2r3W2mN5scmYaVVVlE2R1awfGo6O6NQvzgaeAOqEBj+HGZT/1vyjWRK/3JHThl0Nb0C3e3HFnnkFiNm0qQAoj1y0BXLBmcQyP9EfMIdRjUsVdcJM8iWHsSh0UZvzRLes43kYjLsEaG
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20191230143028.27313-1-alobakin@dlink.ru>
- <20191230143028.27313-6-alobakin@dlink.ru>
- <ee6f83fd-edf4-5a98-9868-4cbe9e226b9b@gmail.com>
- <ed0ad0246c95a9ee87352d8ddbf0d4a1@dlink.ru>
- <CA+h21hoSoZT+ieaOu8N=MCSqkzey0L6HeoXSyLtHjZztT0S9ug@mail.gmail.com>
- <0002a7388dfd5fb70db4b43a6c521c52@dlink.ru>
-In-Reply-To: <0002a7388dfd5fb70db4b43a6c521c52@dlink.ru>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Mon, 13 Jan 2020 12:28:09 +0200
-Message-ID: <CA+h21hqZoLrU7nL3Vo0KcmFnOxNxQPwoOVSEd6styyjK7XO+5w@mail.gmail.com>
-Subject: Re: [PATCH RFC net-next 05/19] net: dsa: tag_ar9331: add GRO callbacks
-To: Alexander Lobakin <alobakin@dlink.ru>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 683ed4e5-9ff6-424c-70c2-08d79813771d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 10:29:26.6033 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ugTI5NAl7jF87GxkMIAFWDGRjO0JuXjZEiO1hoVfONfzLwoYP8EBGP6YPw+onFZV1v8MX0DWqdoobPPD0EgowA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3155
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_022821_608817_4B952539 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200113_022935_930242_34769A01 
+X-CRM114-Status: GOOD (  15.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,52 +147,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Song Liu <songliubraving@fb.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Yoshiki Komachi <komachi.yoshiki@gmail.com>,
- lkml <linux-kernel@vger.kernel.org>, Eric Dumazet <edumazet@google.com>,
- Stanislav Fomichev <sdf@google.com>, Matteo Croce <mcroce@redhat.com>,
- Edward Cree <ecree@solarflare.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Jakub Sitnicki <jakub@cloudflare.com>, Daniel Borkmann <daniel@iogearbox.net>,
- Paolo Abeni <pabeni@redhat.com>, Vivien Didelot <vivien.didelot@gmail.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Sean Wang <sean.wang@mediatek.com>,
- Jiri Pirko <jiri@mellanox.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, netdev <netdev@vger.kernel.org>,
- Paul Blakey <paulb@mellanox.com>,
- Stephen Hemminger <stephen@networkplumber.org>,
- "David S. Miller" <davem@davemloft.net>, Taehee Yoo <ap420073@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Voon Weifeng <weifeng.voon@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, Maxime
+ Coquelin <mcoquelin.stm32@gmail.com>, Tan Tee Min <tee.min.tan@intel.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAxMyBKYW4gMjAyMCBhdCAxMTo0NiwgQWxleGFuZGVyIExvYmFraW4gPGFsb2Jha2lu
-QGRsaW5rLnJ1PiB3cm90ZToKPgo+IFZsYWRpbWlyIE9sdGVhbiB3cm90ZSAxMy4wMS4yMDIwIDEy
-OjQyOgo+ID4gSGkgQWxleGFuZGVyLAo+ID4KPiA+IE9uIE1vbiwgMTMgSmFuIDIwMjAgYXQgMTE6
-MjIsIEFsZXhhbmRlciBMb2Jha2luIDxhbG9iYWtpbkBkbGluay5ydT4KPiA+IHdyb3RlOgo+ID4+
-Cj4gPj4gQ1BVIHBvcnRzIGNhbid0IGJlIGJyaWRnZWQgYW55d2F5Cj4gPj4KPiA+PiBSZWdhcmRz
-LAo+ID4+IOGatyDhm5Yg4ZqiIOGapiDhmqAg4ZqxCj4gPgo+ID4gVGhlIGZhY3QgdGhhdCBDUFUg
-cG9ydHMgY2FuJ3QgYmUgYnJpZGdlZCBpcyBhbHJlYWR5IG5vdCBpZGVhbC4KPiA+IE9uZSBjYW4g
-aGF2ZSBhIERTQSBzd2l0Y2ggd2l0aCBjYXNjYWRlZCBzd2l0Y2hlcyBvbiBlYWNoIHBvcnQsIHNv
-IGl0Cj4gPiBhY3RzIGxpa2UgTiBEU0EgbWFzdGVycyAobm90IGFzIERTQSBsaW5rcywgc2luY2Ug
-dGhlIHRhZ2dlcnMgYXJlCj4gPiBpbmNvbXBhdGlibGUpLCB3aXRoIGVhY2ggc3dpdGNoIGZvcm1p
-bmcgaXRzIG93biB0cmVlLiBJdCBpcyBkZXNpcmFibGUKPiA+IHRoYXQgdGhlIHBvcnRzIG9mIHRo
-ZSBEU0Egc3dpdGNoIG9uIHRvcCBhcmUgYnJpZGdlZCwgc28gdGhhdAo+ID4gZm9yd2FyZGluZyBi
-ZXR3ZWVuIGNhc2NhZGVkIHN3aXRjaGVzIGRvZXMgbm90IHBhc3MgdGhyb3VnaCB0aGUgQ1BVLgo+
-Cj4gT2gsIEkgc2VlLiBCdXQgY3VycmVudGx5IERTQSBpbmZyYSBmb3JiaWRzIHRoZSBhZGRpbmcg
-RFNBIG1hc3RlcnMgdG8KPiBicmlkZ2VzIElJUkMuIENhbid0IG5hbWUgaXQgZ29vZCBvciBiYWQg
-ZGVjaXNpb24sIGJ1dCB3YXMgaW50cm9kdWNlZAo+IHRvIHByZXZlbnQgYWNjaWRlbnRhbCBwYWNr
-ZXQgZmxvdyBicmVha2luZyBvbiBEU0Egc2V0dXBzLgo+CgpJIGp1c3Qgd2FudGVkIHRvIHBvaW50
-IG91dCB0aGF0IHNvbWUgcGVvcGxlIGFyZSBnb2luZyB0byBiZSBsb29raW5nIGF0CndheXMgYnkg
-d2hpY2ggdGhlIEVUSF9QX1hEU0EgaGFuZGxlciBjYW4gYmUgbWFkZSB0byBwbGF5IG5pY2Ugd2l0
-aCB0aGUKbWFzdGVyJ3MgcnhfaGFuZGxlciwgYW5kIHRoYXQgaXQgd291bGQgYmUgbmljZSB0byBh
-dCBsZWFzdCBub3QgbWFrZQp0aGUgbGltaXRhdGlvbiB3b3JzZSB0aGFuIGl0IGlzIGJ5IGNvbnZl
-cnRpbmcgZXZlcnl0aGluZyB0bwpyeF9oYW5kbGVycyAod2hpY2ggImN1cnJlbnRseSIgY2FuJ3Qg
-YmUgc3RhY2tlZCwgZnJvbSB0aGUgY29tbWVudHMgaW4KbmV0ZGV2aWNlLmgpLgoKPiA+IC1WbGFk
-aW1pcgo+Cj4gUmVnYXJkcywKPiDhmrcg4ZuWIOGaoiDhmqYg4ZqgIOGasQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+From: Ong Boon Leong <boon.leong.ong@intel.com>
+Date: Jan/14/2020, 02:01:10 (UTC+00:00)
+
+> DMA_CH(#i)_RxDesc_Tail_Pointer points to an offset from the base and
+> indicates the location of the last valid descriptor.
+> 
+> The change introduced by "net: stmmac: Update RX Tail Pointer to last
+> free entry" incorrectly updates the RxDesc_Tail_Pointer and causess
+> Rx operation to freeze in corner case. The issue is explained as
+> follow:-
+> 
+> Say, cur_rx=1 and dirty_rx=0, then we have dirty=1 and entry=0 before
+> the while (dirty-- > 0) loop of stmmac_rx_refill() is entered. When
+> the while loop is 1st entered, Rx buffer[entry=0] is refilled and after
+> entry++, then, entry=1. Now, the while loop condition check "dirty-- > 0"
+> and the while loop bails out because dirty=0. Up to this point, the
+> driver code works correctly.
+> 
+> However, the current implementation sets the Rx Tail Pointer to the
+> location pointed by dirty_rx, just updated to the value of entry(=1).
+> This is incorrect because the last Rx buffer that is refileld with empty
+> buffer is with entry=0. In another words, the current logics always sets
+> Rx Tail Pointer to the next Rx buffer to be refilled (too early).
+> 
+> So, we fix this by tracking the index of the most recently refilled Rx
+> buffer by using "last_refill" and use "last_refill" to update the Rx Tail
+> Pointer instead of using "entry" which points to the next dirty_rx to be
+> refilled in future.
+
+I'm not sure about this ...
+
+RX Tail points to last valid descriptor but it doesn't point to the base 
+address of that one, it points to the end address.
+
+Let's say we have a ring buffer with just 1 descriptor. With your new 
+logic then: RX base == RX tail (== RX base), so the IP will not see any 
+descriptor. But with old logic: RX base == (RX base + 1), which causes 
+the IP to correctly see the descriptor.
+
+Can you provide more information on the Rx operation freeze you 
+mentioned ? Can it be another issue ?
+
+---
+Thanks,
+Jose Miguel Abreu
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
