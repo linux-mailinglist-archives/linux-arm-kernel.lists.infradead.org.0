@@ -2,112 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF6ED138BB4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:12:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D282138BBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 07:18:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsSaSIMFvmTS0V+OfextmfmVYYx2o5QfDeDJvvYGbeU=; b=kqYuYxHevrFQI4
-	n24AcQ03Yn2I9RzLjMmDWOMtuPWCtn1VjKkScXE6FaRZt2Eapt+TeuiPyPH1g9fTtIK7oLZLDsSM+
-	BLhF1bHAlVyjywggNYbZ2od9BOj4O5LOJWwo96pEX68G04Vf5jWhCwqjwRYCpyMfAHyymm+TdkCjt
-	uvE6QAmvoDjudAonxKZ4XGJnqz6eewdZT09ZhYHDYQ0mRSjEA3GEh0UgRcVHAlnDaQ0Kqe8CQBDJx
-	So1NPxkTRvW1vtl3TzQRF7Sw/W5HVifvBnUAbwbPKXl2J/jCAWH+CFZjoPY791XikvdpLcftzJU18
-	LLs0VlUjHgu6vWnWMSEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=B/OVhcMSPVKGxe5XYQ4dQYPFJnw9zfA+nDC8FzC4Z/k=; b=ORMXfX0yV6agETzXueZZKV7Sy
+	6f9L9zT6qjdu2qWRn8zel3fd1UyYNEkObIvV+3EjVc/3miTH30UvgsNY4npU4ZcKqpi7eShVBflR8
+	WdCeJiwBOhfqDnTgWGMFqTzGiZP2bHn+rcKIMcFkkVh84FuJUcTlnPDbBZyMAzlQtz2o/q71QQUzF
+	p0oJ0a82GJE0ZLdj07VRPq2MWj6vonVoHjPY5eAiQzXEkQc/Wu6BF+3We0vkrY7vTw6Fez1d6p0HN
+	pYn725NTMvsY519XDlg0v93vgTTbsx1qDAqbGZuhctciPZVZk71IY6ndKVLxM5bX+xE8x4ra62a6f
+	9V9+AxFpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqsxc-0001I1-IE; Mon, 13 Jan 2020 06:12:24 +0000
-Received: from mail-bn8nam12on2055.outbound.protection.outlook.com
- ([40.107.237.55] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1iqt3o-000358-0i; Mon, 13 Jan 2020 06:18:48 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqsxR-0001H5-8F
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:12:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hgpfADQ+/wH241dxTjK/KfEsCyuENM5EAZzc1OBu2OVTzCUqCRFeagUCqwT2GuJVXMGGJQIHt+jnLzoNFs0GeKWOj+1MFEeTdFFv3NU6VGSAIqxqEm626AiBjwZB9WMY0OIu0cC/rWvX2jFwaSKb8s4ddNAfKrAcVG0i99NIDQVa6/Szpx31v/UQicHNvXhuGm6LeMJOnuvCTtG5KaI+j6ZQkJVPK2ZorefwQS0PIQSLYhzOg+HHCV7yKUyPLhdLa72FEtGNWvLrHYgE3QIAQCIw8dzelZ1YGKyK9k2EPSs/oH03CFL8PFZDeMuvdztQ/EF//RUvbRGRYBYmjEw9iQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KeLb/RbhQZSDQoQJ/eWbzkLqeR8+z7ElgOb5/VTxEy4=;
- b=SazQKbSjnRxB1l0+IhrBd/Glu3Kn4g8C2Y0MwSS/xF4TbkX+QnW0Tzn10FNnQ4zMh7H9OEBVEDML7hMLqaYtASW06fkSomZeIbscZqkrnHi6MxN2V7nFzgO2SfNG32SPK0AsygGcCCTjzx8FIQNdQ3OsAAKz3mMLyXHwbjNp3me3v/BHZNziXORaJrx4Uv5eq8OVjza6kd5kvpZ0I6DFcY40MRWt9mVu8q0BZ6mSAtknxUKNyTXyZ32wLKsS8SIDINC7sBMOhAIRDQxeTMEgeCm/BEhaV2WnUWM5THFvWQ11Qk3HDxPzenHYxuZVxGuo5mwKjFV7vou/DPlzCge0EA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KeLb/RbhQZSDQoQJ/eWbzkLqeR8+z7ElgOb5/VTxEy4=;
- b=rOewxgNJBGSrO4m/zZCEDpQohiIBCtYRL8iDhw/MmSN5qMsDq/DWNU6doUcNTR6tF2n0/YWHkqHvqeoO9AGgwGSVUMlpWLNBwNb8/9u3e19YuOLBGWY/myscifw1YlxnSPPxL8N2nBG3VOc4BdTVzu052mVpADBLojc3HHkB5Co=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6632.namprd02.prod.outlook.com (10.141.156.71) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Mon, 13 Jan 2020 06:12:11 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 06:12:10 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Andre Przywara <andre.przywara@arm.com>, "David S . Miller"
- <davem@davemloft.net>
-Subject: RE: [PATCH 09/14] net: axienet: Add mii-tool support
-Thread-Topic: [PATCH 09/14] net: axienet: Add mii-tool support
-Thread-Index: AQHVx6y7unY7S2F2T0yZeT1nU7iHwafoHtrA
-Date: Mon, 13 Jan 2020 06:12:10 +0000
-Message-ID: <CH2PR02MB700089E502A8C146D71C67C8C7350@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-10-andre.przywara@arm.com>
-In-Reply-To: <20200110115415.75683-10-andre.przywara@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 632de85d-79bf-45d1-7c2e-08d797ef86b9
-x-ms-traffictypediagnostic: CH2PR02MB6632:|CH2PR02MB6632:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB6632377B72E13B34F18E0567C7350@CH2PR02MB6632.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(39850400004)(396003)(366004)(346002)(136003)(189003)(199004)(66476007)(66446008)(2906002)(6506007)(53546011)(26005)(71200400001)(66556008)(64756008)(66946007)(76116006)(33656002)(186003)(7696005)(86362001)(52536014)(5660300002)(8936002)(4326008)(81166006)(316002)(9686003)(478600001)(8676002)(55016002)(81156014)(110136005)(54906003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6632;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: mY8ne1LYocl0i01S7yPGT+XqI79esG6e25g21897Yq/JGrLZ+wVgzB0deudikyWvPpifw18t/xHnktc5IZe01fyLLCtyIomyr2yDm8+ju/EK+IvGxRZxLRukQ1BzVJPSfM0bZST2KjwLgZgv9DgRSOKE91/xspXGRkXue2Zmwi4xfHtgHBtl+xN50+x2XOWsboDaUicofSqPPVNVCM7/zFZ99Dsc4UiSTDWDP9AiEAY45AfbqLj5+6h2tBrBZfwd12wdXrX8U5xD/bVBrqJeFGmnTCMHAlbMgOQeOieYgCbBEdGOmdRfocyy/69QBYgQ55eTmJI9AkSeZRE2egiDXGvJGQLjsb8Ru51OEGkdcfBTVaJx63+pl+EjOM4ODJ5hdv1flEs8RAYLKFAtFC5Ap4slXJMNaoyg7o//Nqodhz2Md2FBcTjVxQW2Q5BhEeWG
+ id 1iqt3d-00034G-LW
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 06:18:39 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id AABD8CDEBF98212D63B5;
+ Mon, 13 Jan 2020 14:18:25 +0800 (CST)
+Received: from [127.0.0.1] (10.133.217.236) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0;
+ Mon, 13 Jan 2020 14:18:15 +0800
+Subject: Re: [RFC PATCH] arm64/ftrace: support dynamically allocated
+ trampolines
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20200109142736.1122-1-cj.chengjian@huawei.com>
+ <20200109164858.GH3112@lakrids.cambridge.arm.com>
+ <b0457ef0-f1b2-e258-b59d-aa9af8e48c5d@huawei.com>
+ <20200110121234.GA31707@lakrids.cambridge.arm.com>
+From: "chengjian (D)" <cj.chengjian@huawei.com>
+Message-ID: <5fd602dd-a909-5209-56b6-39c7a34dfcff@huawei.com>
+Date: Mon, 13 Jan 2020 14:18:14 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 632de85d-79bf-45d1-7c2e-08d797ef86b9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 06:12:10.6558 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4Q8RWQR1U/j7avijrcT4EYIpX3ydu0hQIE/3PBCVWxsRVxLg0E2Gb95//5EvwQDus8P3Zn0mqG4rwJ9iNREjsA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6632
+In-Reply-To: <20200110121234.GA31707@lakrids.cambridge.arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.133.217.236]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_221216_666128_230F2D05 
-X-CRM114-Status: GOOD (  16.51  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200112_221837_875206_896730E5 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.55 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,76 +69,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Hancock <hancock@sedsystems.ca>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: xiexiuqi@huawei.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ bobo.shaobowang@huawei.com, duwe@lst.de, huawei.libin@huawei.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Andre Przywara <andre.przywara@arm.com>
-> Sent: Friday, January 10, 2020 5:24 PM
-> To: David S . Miller <davem@davemloft.net>; Radhey Shyam Pandey
-> <radheys@xilinx.com>
-> Cc: Michal Simek <michals@xilinx.com>; Robert Hancock
-> <hancock@sedsystems.ca>; netdev@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: [PATCH 09/14] net: axienet: Add mii-tool support
-> 
-> mii-tool is useful for debugging, and all it requires to work is to wire
-> up the ioctl ops function pointer.
-> Add this to the axienet driver to enable mii-tool.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index 7a747345e98e..64f799f3d248 100644
-> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -1152,6 +1152,16 @@ static void axienet_poll_controller(struct net_device
-> *ndev)
->  }
->  #endif
-> 
-> +static int axienet_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
-> +{
-> +	struct axienet_local *lp = netdev_priv(dev);
-> +
-> +	if (!netif_running(dev))
-> +		return -EINVAL;
-
-I think phy ioctl should be allowed even if the device is not up. 
-Or is there any specific reason for keeping it?
-
-> +
-> +	return phylink_mii_ioctl(lp->phylink, rq, cmd);
-> +}
-> +
->  static const struct net_device_ops axienet_netdev_ops = {
->  	.ndo_open = axienet_open,
->  	.ndo_stop = axienet_stop,
-> @@ -1159,6 +1169,7 @@ static const struct net_device_ops
-> axienet_netdev_ops = {
->  	.ndo_change_mtu	= axienet_change_mtu,
->  	.ndo_set_mac_address = netdev_set_mac_address,
->  	.ndo_validate_addr = eth_validate_addr,
-> +	.ndo_do_ioctl = axienet_ioctl,
->  	.ndo_set_rx_mode = axienet_set_multicast_list,
->  #ifdef CONFIG_NET_POLL_CONTROLLER
->  	.ndo_poll_controller = axienet_poll_controller,
-> --
-> 2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC8xLzEwIDIwOjEyLCBNYXJrIFJ1dGxhbmQgd3JvdGU6Cj4gT24gRnJpLCBKYW4gMTAs
+IDIwMjAgYXQgMDc6Mjg6MTdQTSArMDgwMCwgY2hlbmdqaWFuIChEKSB3cm90ZToKPj4gT24gMjAy
+MC8xLzEwIDA6NDgsIE1hcmsgUnV0bGFuZCB3cm90ZToKPj4+IE9uIFRodSwgSmFuIDA5LCAyMDIw
+IGF0IDAyOjI3OjM2UE0gKzAwMDAsIENoZW5nIEppYW4gd3JvdGU6Cj4+Pj4gKwkvKgo+Pj4+ICsJ
+ICogVXBkYXRlIHRoZSB0cmFtcG9saW5lIG9wcyBSRUYKPj4+PiArCSAqCj4+Pj4gKwkgKiBPTEQg
+SU5TTlMgOiBsZHJfbCB4MiwgZnVuY3Rpb25fdHJhY2Vfb3AKPj4+PiArCSAqCWFkcnAJeDIsIHN5
+bQo+Pj4+ICsJICoJbGRyCXgyLCBbeDIsIDpsbzEyOlxzeW1dCj4+Pj4gKwkgKgo+Pj4+ICsJICog
+TkVXIElOU05TOgo+Pj4+ICsJICoJbm9wCj4+Pj4gKwkgKglsZHIgeDIsIDxmdHJhY2Vfb3BzPgo+
+Pj4+ICsJICovCj4+Pj4gKwlvcF9vZmZzZXQgLT0gc3RhcnRfb2Zmc2V0X2NvbW1vbjsKPj4+PiAr
+CWlwID0gKHVuc2lnbmVkIGxvbmcpdHJhbXBvbGluZSArIGNhbGxlcl9zaXplICsgb3Bfb2Zmc2V0
+Owo+Pj4+ICsJbm9wID0gYWFyY2g2NF9pbnNuX2dlbl9ub3AoKTsKPj4+PiArCW1lbWNweSgodm9p
+ZCAqKWlwLCAmbm9wLCBBQVJDSDY0X0lOU05fU0laRSk7Cj4+Pj4gKwo+Pj4+ICsJb3Bfb2Zmc2V0
+ICs9IEFBUkNINjRfSU5TTl9TSVpFOwo+Pj4+ICsJaXAgPSAodW5zaWduZWQgbG9uZyl0cmFtcG9s
+aW5lICsgY2FsbGVyX3NpemUgKyBvcF9vZmZzZXQ7Cj4+Pj4gKwlvZmZzZXQgPSAodW5zaWduZWQg
+bG9uZylwdHIgLSBpcDsKPj4+PiArCWlmIChXQVJOX09OKG9mZnNldCAlIEFBUkNINjRfSU5TTl9T
+SVpFICE9IDApKQo+Pj4+ICsJCWdvdG8gZnJlZTsKPj4+PiArCW9mZnNldCA9IG9mZnNldCAvIEFB
+UkNINjRfSU5TTl9TSVpFOwo+Pj4+ICsJcGNfbGRyIHw9IChvZmZzZXQgJiBtYXNrKSA8PCBzaGlm
+dDsKPj4+PiArCW1lbWNweSgodm9pZCAqKWlwLCAmcGNfbGRyLCBBQVJDSDY0X0lOU05fU0laRSk7
+Cj4+PiBJIHRoaW5rIGl0IHdvdWxkIGJlIG11Y2ggYmV0dGVyIHRvIGhhdmUgYSBzZXBhcmF0ZSB0
+ZW1wbGF0ZSBmb3IgdGhlCj4+PiB0cmFtcG9saW5lIHdoaWNoIHdlIGRvbid0IGhhdmUgdG8gcGF0
+Y2ggaW4gdGhpcyB3YXkuIEl0IGNhbiBldmVuIGJlCj4+PiBwbGFjZWQgaW50byBhIG5vbi1leGVj
+dXRhYmxlIFJPIHNlY3Rpb24sIHNpbmNlIHRoZSB0ZW1wbGF0ZSBzaG91bGRuJ3QgYmUKPj4+IGV4
+ZWN1dGVkIGRpcmVjdGx5Lgo+PiBBIHNlcGFyYXRlIHRlbXBsYXRlICEKPj4KPj4gVGhpcyBtYXkg
+YmUgYSBnb29kIHdheSwgYW5kIEkgdGhpbmsgdGhlIHBhdGNoaW5nIGhlcmUgaXMgdmVyeSBIQUNL
+IHRvbyhOb3QKPj4gdmVyeSBmcmllbmRseSkuCj4+Cj4+IEkgaGFkIHRob3VnaHQgb2Ygb3RoZXIg
+d2F5cyBiZWZvcmUsIHNpbWlsYXIgdG8gdGhlIG1ldGhvZCBvbiBYODZfNjQsCj4+IHJlbW92ZSB0
+aGUgZnRyYWNlX2NvbW1vbigpLCBkaXJlY3RseSBtb2RpZnlpbmcKPj4gZnRyYWNlX2NhbGxlci9m
+dHJhY2VfcmVnX2NhbGxlciwgV2Ugd2lsbCBvbmx5IG5lZWQgdG8gY29weSB0aGUgY29kZQo+PiBv
+bmNlIGluIHRoaXMgd2F5LCBhbmQgdGhlc2UgaXMgbm8gbmVlZCB0byBtb2RpZnkgY2FsbCBmdHJh
+Y2VfY29tbW9uIHRvCj4+IE5PUC4KPj4KPj4gVXNpbmcgYSB0cmFtcG9saW5lIHRlbXBsYXRlIHNv
+dW5kcyBncmVhdC4gYnV0IHRoaXMgYWxzbyBtZWFucyB0aGF0IHdlCj4+IG5lZWQgdG8gYWludGFp
+biBhIHRlbXBsYXRlKG9yIG1heWJlIHR3byB0ZW1wbGF0ZXM6IG9uZSBmb3IgY2FsbGVyLAo+PiBh
+bm90aGVyIGZvciByZWdzX2NhbGxlcikuCj4+Cj4+IEhpLCBNYXJrLCB3aGF0IGRvIHlvdSB0aGlu
+ayBhYm91dCBpdCA/Cj4gSSB0aGluayB0aGF0IGhhdmluZyB0d28gdGVtcGxhdGVzIGlzIGZpbmUu
+IFdlIGNhbiBmYWN0b3IKPiBmdHJhY2VfY29tbW9uX3JldHVybiBpbnRvIGEgbWFjcm8gbWlycm9y
+aW5nIGZ0cmFjZV9yZWdzX2VudHJ5LCBhbmQgSQo+IHN1c3BlY3Qgd2UgY2FuIHByb2JhYmx5IGZp
+Z3VyZSBvdXQgc29tZSB3YXkgdG8gZmFjdG9yIHRoZSBjb21tb24KPiBwb3J0aW9uLgo+Cj4gVGhh
+bmtzLAo+IE1hcmsuCj4KPiAuCgoKT0ssIEkgd2lsbCBkbyBpdC4KClRoYW5rIHlvdSwgTWFyay4K
+CgoKIMKgIC0tQ2hlbmcgSmlhbgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
