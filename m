@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D61E813999B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:09:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21151399BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 20:10:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NL5SKiv6Fj3vG0VyKJ94oeuXngo0W3FO+a3MgiCHLuQ=; b=ZIvecDPNbIQbPe
-	An+ljj2hKXmgp/sL14vwWAhqMXpvmaw2Y6cVCG/aeJqdPvtanSisLR+xcUegPy0F5v2t30aG0WaNv
-	3E87oZGxUqyp7mfuO/5BNNFYJOrhiQ16dVdSrVj8xFEVN9WJxisACtNHNdO4elRNBCXIkE4OfmyEd
-	vnKXxz/vehWzrazjMb4o0NxpXXRmOqjG7+JNMIf+uWsNFelM6RzHW2qR4Wd27KmXv8a+ocWlXfGwm
-	cuOsZqq4YJdlYkJiFOGCEfcAeVoJ8CY/WjhAEKxHyVDsykNfa0vHHYrF8R1LRFPs+d8OWLt56tDCc
-	RIC+Cf11lYNZZFkFyJjw==;
+	List-Owner; bh=QxrSKiylcZIQFrAJPsvCcy9Jc18Bfn9bwrIFNyRbKGU=; b=jGGqhYI5cd8VOG
+	R3cA18JIJU0lJatdlJdCoJzaEyPpStfN4krN9eiewnX5b0DuNIDIfVVLLors6EYssTvEk1JOwfi0C
+	SEDTxp2ewMfQK3F4xLhXUupJxaSTFp80RYdw2mJkWT0lYfhMoJuI2WHPG/f7dgdweUc58oMRqZyMY
+	rxXKz7PulRYLsTbhNEdsinWX9jSlwk0nsU+VvbPpJOh5OjlJO2gczW290QoDPJ+jIQXOYOUyoarM2
+	nHBUnUu9EDzf9MQmeK2sskfgAHUQmaxBYVmKnLTbuu/zyILop4lis89swdQgzvd5VFsQuRg0c7PFm
+	1NVqnhKoTcDfkNSzmx8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir55Y-0004h9-1m; Mon, 13 Jan 2020 19:09:24 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ir56O-0005yJ-5A; Mon, 13 Jan 2020 19:10:16 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir55Q-0004gl-UN
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:09:18 +0000
-Received: by mail-pf1-x443.google.com with SMTP id x185so5319090pfc.5
+ id 1ir56D-0005Sz-25
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 19:10:06 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 2so5298402pfg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 11:09:16 -0800 (PST)
+ Mon, 13 Jan 2020 11:10:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Ge6FxKbujm8HaMVdZjrEJxIYzXVxgY56fz3e6UisU+c=;
- b=hx1X00RT0gEptv1npnWwE2KGcmSK4VQ7hTR6BShNgAy3y0On5YqkmiQ5OVVpYxR2GH
- IduBE0ek+uy2QgDVdcrVcBcRRNxbWWz1cMAkJsZ62Spuiay37hAYBhVi90LX6Pa1C//D
- gsi8SM+3Jv3s/oqcc6l+c9Af9ULz0kvnDJv4Tz2DJcnOFKHqli/gUgU8pmubBsHwmoTb
- 4MyiUv92IEmUyTqwzNLh/51mCSvEN1kG0nvgdMe/nCKsK+Z7mw92bE+It3MlIAm7wQrF
- hs+0+1x2Z3g1/5EbfaohrrYpveXqcTd6mwvCjrUggnzFzVXnt5VLpn/lOgbAICu4ovm5
- ymvQ==
+ bh=WV7k9KiYoDcnFOZOqkZqw+JoPHmLrbLAx4GqZihcSbU=;
+ b=Q+xB8BroCzZqi5qAZITzRpyWlMelyTSU0Z5Y/uT2+MD+WQdDIcGptkJU8fni5djVoF
+ W7KlmZfu5jYOCiNJXhJfCMUQ4S+svPIXdaEqUJsmi6te69uIBDF56e8ouezQ79mpFymP
+ AIztlFOnW7dOAAKfYXN49rIZx+WawY8R1wLuzvSbuR9kkkxhx7eL7pfeyhyrZddXUvhq
+ MzVX0o6ppinM7qCZcNxHHZdwHKc9XQ8/J+9cQLfAMR0tCx//kZzJ85Nimp/JSAUmS4E9
+ Wn3OqCAM2AMn+055k9Cpi7Rghima0sqIUngzh1fRDH6PUs8CmZKmqADzqPOudj+C9egS
+ Y4Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Ge6FxKbujm8HaMVdZjrEJxIYzXVxgY56fz3e6UisU+c=;
- b=byJ2X1TJWii3dyX6PH12vvMdvDpIcDK5T0FjqJvrFzQLSTIuY2mLaQlaGHf3RMwFvv
- zSKOzr4Gi2Zco63+U0EQQJtgAwQnu0iSJ80uY1MGtJfVglu7Za/Rj3R9H/Vwn9D8EbZO
- fMdLUXq2w87oPGQeRI3zTtXjncuiXRH29T0QvrYKKRs5L5NJSoRF6v8WXxVsaKv0LSTW
- cIPv0XladTP4Uj5O/3DaGFF1iMyUVo5Jx0diduGsoITT87AXWo2Ypc/rPMtD6hKXp+oA
- NkkfFVagDk9Zkuqe3aoCnFSNnu74H9GzOmiFQpetic9si2qcDF7Az1l55z1uIfc8Ver2
- bcEw==
-X-Gm-Message-State: APjAAAXZ0GjEGmlGMfNKyLPph980tuzcD00m0hEsDBdOU1jBguPdd4gu
- 1v8CphUIq+2oPJwjIkkKu9bT7A==
-X-Google-Smtp-Source: APXvYqylm+AmKnRnGtnI/pwatHzp40sgStxKXs3Yqpwj3aaWQd5aD7G4j9XVxr9jum4USHUImW/5nQ==
-X-Received: by 2002:a63:d017:: with SMTP id z23mr22557567pgf.110.1578942555971; 
- Mon, 13 Jan 2020 11:09:15 -0800 (PST)
+ bh=WV7k9KiYoDcnFOZOqkZqw+JoPHmLrbLAx4GqZihcSbU=;
+ b=PDpj4E7F7GBJdDM7PLvZkgMw6IAidu1k+/uBIpbaTLYj6TUj3DoMYSithoYyPTVfH4
+ x6pudUgac0f8U9ba3+iDX+RdMbUA2xm2qOCGLSxQR1Xe5pMdf6LD36ytspFbf15oaVNK
+ opEuiu98bGd0yEDCNH5OHKG0icHfzzbnjHO2JpW5L2kk3lCOCOX7CrMNJUeNr12jwrtr
+ TNZfF/CXecULoZmnXrqREL25anH6+YZx0mv285i7zNkL4QTN9YtDpfrKW1iuFJl4aNzj
+ Jz9aPWQiiQphE6sC0XGPMPZlOsZQhOPJ8UWxcQyoNgBats+GsLe8mutFzpDPwoKSQddv
+ aISg==
+X-Gm-Message-State: APjAAAVUE9a7d9nsPSmU3EewUNvvfiK8M6YUS+ztHYvYXc/CS8AYiuHF
+ NX5aekA9Rrq/PZ6vMi3+oZE7mSfPQ6E=
+X-Google-Smtp-Source: APXvYqzzkr/fgM14XSSFf598fyNiDJTFfa9zMr2lpK0PxBJUURaaf+q+inbmgYxqdlLS6URl9Mlx3g==
+X-Received: by 2002:a63:c652:: with SMTP id x18mr22635670pgg.211.1578942604106; 
+ Mon, 13 Jan 2020 11:10:04 -0800 (PST)
 Received: from [192.168.3.43] (rrcs-66-91-136-155.west.biz.rr.com.
  [66.91.136.155])
- by smtp.gmail.com with ESMTPSA id o2sm14079920pjo.26.2020.01.13.11.09.12
+ by smtp.gmail.com with ESMTPSA id k44sm14309889pjb.20.2020.01.13.11.10.01
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Jan 2020 11:09:15 -0800 (PST)
-Subject: Re: [PATCH v10 2/3] arm64: random: Add data to pool from setup_arch()
+ Mon, 13 Jan 2020 11:10:03 -0800 (PST)
+Subject: Re: [PATCH v10 3/3] arm64: Use v8.5-RNG entropy for KASLR seed
 To: Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>
 References: <20200110122341.8445-1-broonie@kernel.org>
- <20200110122341.8445-3-broonie@kernel.org>
+ <20200110122341.8445-4-broonie@kernel.org>
 From: Richard Henderson <richard.henderson@linaro.org>
-Message-ID: <3c22586b-a994-2542-d3be-9de9a59d3606@linaro.org>
-Date: Mon, 13 Jan 2020 09:09:09 -1000
+Message-ID: <cbab0b40-06e5-80a9-bc33-0b08a9b257cd@linaro.org>
+Date: Mon, 13 Jan 2020 09:09:59 -1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200110122341.8445-3-broonie@kernel.org>
+In-Reply-To: <20200110122341.8445-4-broonie@kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_110916_984845_53B21ED1 
-X-CRM114-Status: GOOD (  18.03  )
+X-CRM114-CacheID: sfid-20200113_111005_108451_332EB6E5 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,26 +110,16 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 1/10/20 2:23 AM, Mark Brown wrote:
-> Since the arm64 ARCH_RANDOM implementation is not available until
-> cpufeature has determined the system capabilities it can't be used by
-> the generic random code to initialize the entropy pool for early use.
-> Instead explicitly add some data to the pool from setup_arch() if the
-> boot CPU supports v8.5-RNG, this is the point recommended by the generic
-> code.
-> 
-> Note that we are only adding data here, it will be mixed into the pool
-> but won't be credited as entropy. There are currently no suitable
-> interfaces for that at present - extending the random code to provide
-> those will be done as a future step. Providing data is better than not
-> doing so as it will still provide an increase in variation in the output
-> from the random code and there will be no impact on the rate at which
-> entropy is credited compared to what we have without this patch.
+> When seeding KALSR on a system where we have architecture level random
+> number generation make use of that entropy, mixing it in with the seed
+> passed by the bootloader. Since this is run very early in init before
+> feature detection is complete we open code rather than use archrandom.h.
 > 
 > Signed-off-by: Mark Brown <broonie@kernel.org>
 > ---
->  arch/arm64/include/asm/archrandom.h | 30 +++++++++++++++++++++++++++++
->  arch/arm64/kernel/setup.c           |  2 ++
->  2 files changed, 32 insertions(+)
+>  arch/arm64/kernel/kaslr.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+
 Reviewed-by: Richard Henderson <richard.henderson@linaro.org>
 
 
