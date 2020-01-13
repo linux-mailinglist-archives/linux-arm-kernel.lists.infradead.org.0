@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04177139971
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 19:57:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EB9413997A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 19:59:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=y8yFrKqN9mI0o4tN9YnVC4jEakp+Uli2+mSL+/FGU2Y=; b=FkTxBcEAkCpxCJ3Vznyd/YGG08
-	Vb+Y4G11WqGFvpFoy6WIwsNsZRMQ7XEGfeErrTtkJcic3zjM/4EDbhNb38fqGzfSYWs007l7sJ78Z
-	1P3uuOFmLT2LLMdGexcK4yksKXjIImwIc7xOqvRwGhDMUVgbh63AN/9duLh3v9K2F/ughQFvd+alP
-	cb7y+Pas7eQuOUYPzgqpNnX+TNB/Fg3pbB/6bF/aj2CZ1zgoPBNHKKqAz74I4urHt4iaaWNsNLRz0
-	hU8myAzO5xQYGJDaWMdwNZ9AcIEfjr+9vPQKgc8vB5vWvgf/NsUEHhHwbvBP9b74/dnUuqhGn/A2G
-	fekcnUdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bMRQ9l/uF2wLMK5ZafrMndVj0vkU7yXvvpBlY2MHzgs=; b=Ot7KmMha54DSDNIK6ib5/c6ek
+	4ceX5UNztCDdGnzfjLAL+RuVbYI/uGGGmqiAFoF14Bl91cEcsPso5IghwTWakvGQ8ZDfeT1LGFP4/
+	YX55DOlT823NJaMBGepXm2pObcXg0dnjl3aaxm3mUq/4t5m7+f6lKsaqwlWK/fUEA3y+jJNpmE0A4
+	QtPh/9kI7YyNEop2spS+2kXJ4znJuh5pQdkPH4yV232lpIANzYJ6bKEYMsQWuwh7G2sqEfzPrkldO
+	1jlfVPaKrCKuy9S6lNLnGma5OnM8hvJvunu6HpkZmTgnQKN2Xy+d004ANOr5n4oac6d/moR6SStf2
+	QCE8YkVig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir4u6-0000Eo-14; Mon, 13 Jan 2020 18:57:34 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1ir4vy-0001Fo-SU; Mon, 13 Jan 2020 18:59:30 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir4tR-0008EP-Kp
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 18:56:55 +0000
-Received: from localhost.localdomain ([37.4.249.154]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M1YtP-1iphB20GaJ-0032W1; Mon, 13 Jan 2020 19:56:43 +0100
-From: Stefan Wahren <stefan.wahren@i2se.com>
-To: Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH V5 4/4] ARM: configs: Build BCM2711 thermal as module
-Date: Mon, 13 Jan 2020 19:56:18 +0100
-Message-Id: <1578941778-23321-5-git-send-email-stefan.wahren@i2se.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
-References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
-X-Provags-ID: V03:K1:O+u6pr4dhxrOSuuoknJ0DKNWGQ3vtlKGMbnvZc7/pEHB71+lP+5
- GOE3qd05FrcJ8FBdCfOzxwdLICo+DAZoBiHFL/n+IQJKXnOiIJL7YGMZ20AzSjIq1ukoC1k
- elTVjDTE9+1ElflUv3hqX3kqVI8HCckwLZJlI+51Jn/I85rOFSrPc4g8HLA2f9tFtpFbgQ3
- H3qP+9vGpB34IcID6KaKw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Gyygl/ACfQE=:ygkkfD/TXRtXjs1fyw13d2
- LemAh7UlXhneJPcb07l0sfrl7GzRJh/ZPAL16wRuc41qmzH5OQl8n5WB3qmNrVihu9rXn/SYx
- tyxY8fhIOfIO50B1fHtKyqsidXwaY+3dROUCan/WHRqmQHEfTpSJCrjR2EwVO5RtmJAjgOGyU
- HdFY6KvdqoTBtkOdfWFIok2dwV8n7B5QhTPJShug6GIzAE9t7ZbPk/vGtQudnCtYrNjRgEi3A
- LisEhG9GRYvYXSUYEuSfhjAchrzpGbgphwLSrNI54kEI42m3xOsaSmEl5MIssagEhz5BmEUDX
- v9qXfc0Y0iJTSPPVuhHn1HPwb0De+TcZblaYLPVqaMFTeSn7kKQqDPyUy9R0Y7FIFacIT2UoV
- yS7LLW7E4hvecp6tnJOzb0rAtF1FHocjspL5Iyo2V7LGSeSKGNjBFtz8B25qr3ce3wh3cHhr+
- FC8ZWFxW5pNG4AXxRxgutVAKwT7PdEXXqbC3MWVitACsC9yw7e52ac0NcjO7WwSZ/sCvl9f+I
- 7q+mon0DP0fLEGVlHXkvLIslsrC34MBQPIroSCnBd3gf/TPd756a75uYRRNAjYrnBEP5K1A6O
- yH7hHnia+mEhijrqKPSIvQ7Pl9iIdaTfA70otgD+BDaUDDU5Syq+G0zoZzZTB7MN7jSaPcs05
- SxaU4FjP+9ZLo0fJSoxqlXMWV2iMaVPuIxlO+Xrk0R8kbJ67Iu0mR/4sfFqAmSIgJXaSpL8FW
- vhwLxYtKvCeW7h8+jOZ7VUfWf0AEkyTYzaeITvznreg5BV8rJ26VmFm3EVgjGdRWcIcf599k2
- HaulVm5OR6GEEfjuGUQLziZSl1UtnpxZIvTngLsUdAKNiKqt3b1ms/BVl0bJEhyc9RVv6rjHl
- +SMoH/iES+i0u8k/7sL4B9Xba9duNZ4+zQrhI0ldo=
+ id 1ir4vl-0001Ec-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 18:59:19 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1578941958; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=rEVhNoA+SMCklIOXL2qRZ8K89XUanuaNJQR/wOG0Dcw=;
+ b=rdHuiu7lgZkXohhgbFRqPIm/E4F7DjpvpIXG16Cx0Q58yMszUpD/2OYzmF07ZLhh7BNicWAi
+ +yB0CSbhdpTjZpIs/hh2An+WIcJXtMfqbX6+dF4TRlqkThH77H6+sRxsncTpVXoBel5flxnq
+ i+g6HmloB1cItkZPFVM4l88Nz60=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e1cbdfa.7f83ae025fb8-smtp-out-n01;
+ Mon, 13 Jan 2020 18:59:06 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id D2515C447A5; Mon, 13 Jan 2020 18:59:04 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 758BBC433CB;
+ Mon, 13 Jan 2020 18:59:03 +0000 (UTC)
+MIME-Version: 1.0
+Date: Mon, 13 Jan 2020 10:59:03 -0800
+From: asutoshd@codeaurora.org
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 2/3] scsi: ufs: add device reset history for vendor
+ implementations
+In-Reply-To: <1578147968-30938-3-git-send-email-stanley.chu@mediatek.com>
+References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
+ <1578147968-30938-3-git-send-email-stanley.chu@mediatek.com>
+Message-ID: <20ed97a2333ff27d5901c373579f710a@codeaurora.org>
+X-Sender: asutoshd@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_105653_992878_56C4BE5C 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20200113_105918_306966_F026514C 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [104.130.122.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,53 +87,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>, devicetree@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ cang@codeaurora.org, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
+ bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This builds the BCM2711 thermal driver as module for the Raspberry Pi 4.
+On 2020-01-04 06:26, Stanley Chu wrote:
+> Device reset history shall be also added for vendor's device
+> reset variant operation implementation.
+> 
+> Cc: Alim Akhtar <alim.akhtar@samsung.com>
+> Cc: Asutosh Das <asutoshd@codeaurora.org>
+> Cc: Avri Altman <avri.altman@wdc.com>
+> Cc: Bart Van Assche <bvanassche@acm.org>
+> Cc: Bean Huo <beanhuo@micron.com>
+> Cc: Can Guo <cang@codeaurora.org>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>  drivers/scsi/ufs/ufshcd.c | 5 +++--
+>  drivers/scsi/ufs/ufshcd.h | 6 +++++-
+>  2 files changed, 8 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index bae43da00bb6..29e3d50aabfb 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -4346,13 +4346,14 @@ static inline int
+> ufshcd_disable_device_tx_lcc(struct ufs_hba *hba)
+>  	return ufshcd_disable_tx_lcc(hba, true);
+>  }
+> 
+> -static void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
+> -				   u32 reg)
+> +void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
+> +			    u32 reg)
+>  {
+>  	reg_hist->reg[reg_hist->pos] = reg;
+>  	reg_hist->tstamp[reg_hist->pos] = ktime_get();
+>  	reg_hist->pos = (reg_hist->pos + 1) % UFS_ERR_REG_HIST_LENGTH;
+>  }
+> +EXPORT_SYMBOL_GPL(ufshcd_update_reg_hist);
+> 
+>  /**
+>   * ufshcd_link_startup - Initialize unipro link startup
+> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+> index e05cafddc87b..de1be6a862b0 100644
+> --- a/drivers/scsi/ufs/ufshcd.h
+> +++ b/drivers/scsi/ufs/ufshcd.h
+> @@ -805,6 +805,8 @@ int ufshcd_wait_for_register(struct ufs_hba *hba,
+> u32 reg, u32 mask,
+>  				u32 val, unsigned long interval_us,
+>  				unsigned long timeout_ms, bool can_sleep);
+>  void ufshcd_parse_dev_ref_clk_freq(struct ufs_hba *hba, struct clk 
+> *refclk);
+> +void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
+> +			    u32 reg);
+> 
+>  static inline void check_upiu_size(void)
+>  {
+> @@ -1083,8 +1085,10 @@ static inline void
+> ufshcd_vops_dbg_register_dump(struct ufs_hba *hba)
+> 
+>  static inline void ufshcd_vops_device_reset(struct ufs_hba *hba)
+>  {
+> -	if (hba->vops && hba->vops->device_reset)
+> +	if (hba->vops && hba->vops->device_reset) {
+>  		hba->vops->device_reset(hba);
+> +		ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, 0);
+> +	}
+>  }
+> 
+>  extern struct ufs_pm_lvl_states ufs_pm_lvl_states[];
 
-Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
- arch/arm/configs/multi_v7_defconfig | 1 +
- arch/arm64/configs/defconfig        | 1 +
- 2 files changed, 2 insertions(+)
-
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 3f1b96d..f5d19cc 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -496,6 +496,7 @@ CONFIG_IMX_THERMAL=y
- CONFIG_ROCKCHIP_THERMAL=y
- CONFIG_RCAR_THERMAL=y
- CONFIG_ARMADA_THERMAL=y
-+CONFIG_BCM2711_THERMAL=m
- CONFIG_BCM2835_THERMAL=m
- CONFIG_BRCMSTB_THERMAL=m
- CONFIG_ST_THERMAL_MEMMAP=y
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 6a83ba2..b2f6673 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -442,6 +442,7 @@ CONFIG_ROCKCHIP_THERMAL=m
- CONFIG_RCAR_THERMAL=y
- CONFIG_RCAR_GEN3_THERMAL=y
- CONFIG_ARMADA_THERMAL=y
-+CONFIG_BCM2711_THERMAL=m
- CONFIG_BCM2835_THERMAL=m
- CONFIG_BRCMSTB_THERMAL=m
- CONFIG_EXYNOS_THERMAL=y
--- 
-2.7.4
-
+Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
