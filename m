@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F631395CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:24:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5687A139616
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 17:25:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,55 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E6jN4zjfLyLh0ExcBlb19iJetncqIiPkQ5BT/gUeeCc=; b=EfN4Bw2uF/ZOf3S32SWLL4rcQX
-	I5ibXeHdhr9ntCWPnmbBt2/0mDjmYd2TApRVR0D5v85ooPq6EK2p2pGabUI7voWoQaeykc3aArQul
-	D6xG8c7CCSYuo9j7o6nFq0oKZbvFQZWUA3k7/OLpPTM5pZNWl3ZLHkrrlJ6MxOwyoAG4frUaFoBe+
-	UoIoiimPs+hLrK76rLqT3KvaruFnzy3d6CmTE66apk8s6MrerYLTAK2RkrGBpGJi2j9yfgURBS4nR
-	i/BOeU2UVkAYTC7y+y16Xj5flotsUUrKgR3ByQkZ4Tr7NhAVw8gqKYLTWFxm0nPHuqr8EI8kqz54j
-	hvp86K1g==;
+	bh=cxV/TifW9Ej2+VsCGcDr6qe1VIpqm2ykavtL7SUtNLQ=; b=F1MARfwFeR594MNnHlC/TiwzzR
+	bJPVPaRdDvU/f5MF6j6NaEys8154WMa+RqqtQpm3k0kkpKmIk9egzRlb+r313foA8cOKoGWR1kKab
+	Lp6/AkOTMfcz1THro7utZfWtiFjDlD4QshYO4Uaso538m+f4tFDi9uZUlNpj7ZJTDMX/3Lk1jLMhl
+	czh9bspF2QWEkwtP65ZG3ACjO1hwqo2Nml/BSLs8G9C7VgCxU3OfmIsmJo8rVs3Hl0c/nK4TYL8+4
+	PXrSJ3QQh2B8QV5UsQrhYhzRK3a67OYep5Xoj/lK7wA5RwPoFRaJ+6BxXZCvtRANmRpzvdb847drB
+	jEuKq9PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir2W2-0007Vs-Hw; Mon, 13 Jan 2020 16:24:34 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ir2Wd-00080N-AT; Mon, 13 Jan 2020 16:25:11 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir2Vq-0007Sj-Dp
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:23 +0000
+ id 1ir2Vq-0007Sc-Dt
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 16:24:24 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D730AC05E0;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E74E6C05E1;
  Mon, 13 Jan 2020 16:24:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1578932661; bh=KfUuj7FkYk8P0Zny6DjZbC4vjoy9xayAvDkveS1KNOQ=;
+ t=1578932661; bh=kN5PiGdIWi7yxdqxRCTpBO3hPGrie9JabgsZPaL70oM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=FOT706iIpRhlE72P2lXrfvKsHj0TCPxOaLl0XvoqfuZC8M6rM7QgWwhjl7rZ1gIiR
- 39CBhuOCRCeQ+P7jDvHT1krqSxRo33bxC60r+qmHOocAHcwX5urv/H2K2KAQjPVPcq
- 3gVzfDRQCkNgklbWpJCz7WXuyrBneYNS2y+XngbDWy4arR1/g/oOywloXh4G7o09n6
- x7iQyVfOeRBpqi15w5Q9/d/1UlQNiZlGgg9cegMKoLUDhEw6G4swp/e9nbqyqYRPWy
- lgP/Ucg1yzP794xrcWSFyoeh5+GqOfaFOQelL+KhIvlg2/mnmy9/ZxrJaMREg97DKT
- jyFdrL2pRGqbQ==
+ b=NHwAG/OO67WAmnilec/npwNv0kLoKS78/gJRXe9B8DzW47QoSbr+4AiVRHGLuNZ7C
+ ZuTRqkmB77UU40x5nhVs1TFLtc2n/hU3EaktYIU3m2645Ic7DONQNOGJIhQlKo5Rcb
+ olGFBrV4bGJ/TLD5KxJJbvO0vE7Wyu8rerPt8btINZb8806dVkLu+Z8PRw1SDSaiPQ
+ KiCdkkQKk9tlrtlGhdhJVtfhRxzHzRrqgxhlFQkxHcZlFBot34lpicTOyTLGjchlLj
+ Oq2rBFbYi3KK0GOB4mBPl+eoJICvSCnDTCnhpplDZB2b4YAWYelacRLIHIDgRRjrdr
+ q/kCIJedMBOrQ==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 9A9BAA0073;
+ by mailhost.synopsys.com (Postfix) with ESMTP id A2A0DA007A;
  Mon, 13 Jan 2020 16:24:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v3 6/8] net: stmmac: Add missing information in
- DebugFS capabilities file
-Date: Mon, 13 Jan 2020 17:24:14 +0100
-Message-Id: <091120c35e058e48868dc81ef80ea0f3b0fac99c.1578932287.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next v3 7/8] net: stmmac: selftests: Switch to
+ dev_direct_xmit()
+Date: Mon, 13 Jan 2020 17:24:15 +0100
+Message-Id: <98c64074079767307ee3bb1664d298d17bebf6ea.1578932287.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 References: <cover.1578932287.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_082422_528062_A6257192 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200113_082422_573449_0CAD344B 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,11 +95,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds more information regarding HW Capabilities in the corresponding
-DebugFS file.
-
-Changes from v2:
-- Remove the TX/RX queues in use (Jakub)
+In the upcoming commit for TBS selftest we will need to send a packet on
+a specific Queue. As stmmac fallsback to netdev_pick_tx() on the select
+Queue callback, we need to switch all selftests logic to
+dev_direct_xmit() so that we can send the given SKB on a specific Queue.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -116,26 +113,99 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 25 ++++++----------------
+ 1 file changed, 6 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 43af4fc5ab8f..2738d97495e6 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4365,6 +4365,12 @@ static int stmmac_dma_cap_show(struct seq_file *seq, void *v)
- 		   priv->dma_cap.l3l4fnum);
- 	seq_printf(seq, "\tARP Offloading: %s\n",
- 		   priv->dma_cap.arpoffsel ? "Y" : "N");
-+	seq_printf(seq, "\tEnhancements to Scheduled Traffic (EST): %s\n",
-+		   priv->dma_cap.estsel ? "Y" : "N");
-+	seq_printf(seq, "\tFrame Preemption (FPE): %s\n",
-+		   priv->dma_cap.fpesel ? "Y" : "N");
-+	seq_printf(seq, "\tTime-Based Scheduling (TBS): %s\n",
-+		   priv->dma_cap.tbssel ? "Y" : "N");
- 	return 0;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index 13227909287c..d50ae59fe3d8 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -339,8 +339,7 @@ static int __stmmac_test_loopback(struct stmmac_priv *priv,
+ 		goto cleanup;
+ 	}
+ 
+-	skb_set_queue_mapping(skb, attr->queue_mapping);
+-	ret = dev_queue_xmit(skb);
++	ret = dev_direct_xmit(skb, attr->queue_mapping);
+ 	if (ret)
+ 		goto cleanup;
+ 
+@@ -926,8 +925,7 @@ static int __stmmac_test_vlanfilt(struct stmmac_priv *priv)
+ 			goto vlan_del;
+ 		}
+ 
+-		skb_set_queue_mapping(skb, 0);
+-		ret = dev_queue_xmit(skb);
++		ret = dev_direct_xmit(skb, 0);
+ 		if (ret)
+ 			goto vlan_del;
+ 
+@@ -1018,8 +1016,7 @@ static int __stmmac_test_dvlanfilt(struct stmmac_priv *priv)
+ 			goto vlan_del;
+ 		}
+ 
+-		skb_set_queue_mapping(skb, 0);
+-		ret = dev_queue_xmit(skb);
++		ret = dev_direct_xmit(skb, 0);
+ 		if (ret)
+ 			goto vlan_del;
+ 
+@@ -1286,8 +1283,7 @@ static int stmmac_test_vlanoff_common(struct stmmac_priv *priv, bool svlan)
+ 	__vlan_hwaccel_put_tag(skb, htons(proto), tpriv->vlan_id);
+ 	skb->protocol = htons(proto);
+ 
+-	skb_set_queue_mapping(skb, 0);
+-	ret = dev_queue_xmit(skb);
++	ret = dev_direct_xmit(skb, 0);
+ 	if (ret)
+ 		goto vlan_del;
+ 
+@@ -1639,8 +1635,7 @@ static int stmmac_test_arpoffload(struct stmmac_priv *priv)
+ 	if (ret)
+ 		goto cleanup;
+ 
+-	skb_set_queue_mapping(skb, 0);
+-	ret = dev_queue_xmit(skb);
++	ret = dev_direct_xmit(skb, 0);
+ 	if (ret)
+ 		goto cleanup_promisc;
+ 
+@@ -1869,7 +1864,6 @@ void stmmac_selftest_run(struct net_device *dev,
+ {
+ 	struct stmmac_priv *priv = netdev_priv(dev);
+ 	int count = stmmac_selftest_get_count(priv);
+-	int carrier = netif_carrier_ok(dev);
+ 	int i, ret;
+ 
+ 	memset(buf, 0, sizeof(*buf) * count);
+@@ -1879,15 +1873,12 @@ void stmmac_selftest_run(struct net_device *dev,
+ 		netdev_err(priv->dev, "Only offline tests are supported\n");
+ 		etest->flags |= ETH_TEST_FL_FAILED;
+ 		return;
+-	} else if (!carrier) {
++	} else if (!netif_carrier_ok(dev)) {
+ 		netdev_err(priv->dev, "You need valid Link to execute tests\n");
+ 		etest->flags |= ETH_TEST_FL_FAILED;
+ 		return;
+ 	}
+ 
+-	/* We don't want extra traffic */
+-	netif_carrier_off(dev);
+-
+ 	/* Wait for queues drain */
+ 	msleep(200);
+ 
+@@ -1942,10 +1933,6 @@ void stmmac_selftest_run(struct net_device *dev,
+ 			break;
+ 		}
+ 	}
+-
+-	/* Restart everything */
+-	if (carrier)
+-		netif_carrier_on(dev);
  }
- DEFINE_SHOW_ATTRIBUTE(stmmac_dma_cap);
+ 
+ void stmmac_selftest_get_strings(struct stmmac_priv *priv, u8 *data)
 -- 
 2.7.4
 
