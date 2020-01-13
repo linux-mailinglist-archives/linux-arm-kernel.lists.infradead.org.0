@@ -2,69 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8611C138DA8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:23:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E98F138D76
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:15:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:MIME-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=adPZxNoUKx+pgA5dsq1NMeUk+aHCZKOO3YkEhUxwk5U=; b=p2OAHZkFqCWqIY
-	nudEXRh/y8hKB8i3qiOqvhN20fYh33++d2goXaw30zvyNpIAR8G93bn/an8EryE2ckl9c9AqwaRlZ
-	DeE1Hy+YO0D+6+x7evJval0DGe3cGOGcKm6MrTkQIQzh0lS0D5K9VfHhTrO7Uf6VybtE2VD/el2s1
-	Hszp3gahTMtown78DijTL4yMi+dRKlbwf2GSEAxE+Mpl/0/doqr19kXHtjCi5Gdv6lTozC4vuF1Y7
-	t6RVmBQftfzK/N9eLC9M9dIq3SokvlVaXS7jQtI9p6/K6tyz0gLay0xCT8YDVqf2+gb4vxqcJ/hMm
-	iuQTG+7j8O9aZ3EWEJbw==;
+	List-Owner; bh=2z5TYZpb9WyRD/j7dPayKlUJWbl16LEAOaS33LhmobE=; b=BlgEXoVQ0NclUd
+	nUDETaNF2BtVjYDcuim4W/RQsQyodnhr4E9IEB5X5QqPeU/+uTHPUYeJoJvE9Kvhwy446SXBfJ5NQ
+	g6zwMFPlkN0pXNK/xyuJlAPAfx9IA3JVh/RNumVzmWehZzos9gTbdZeHbWWrsmPkCdZBfqp5AFQ1H
+	M+u07ayd7r/vRWl4PMwAjdsTyLU9/ths9rXqW6FJ+m4PqESZIb5k3Q3set7KGopHT8x78b+gfXMEp
+	GO+w54bUGHJdiB0Zo4eGfS9HrLxdFnriG+JvN2t+7/d/CtOiw5vojkDTy+akuuPLgs7zSU4UJWhf9
+	Uc3ffx9PnwIf/yf4B7IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqvwO-0005hh-UO; Mon, 13 Jan 2020 09:23:20 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iqvoC-0008MM-BO; Mon, 13 Jan 2020 09:14:52 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqvwD-0005gw-PU; Mon, 13 Jan 2020 09:23:11 +0000
-X-UUID: 7491c760f3df40eb8c8dd25af7d99857-20200113
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=03EqN3IpDnYeVpvM1ObMsu1BpXwziE5X5TdFsnPY33Q=; 
- b=ezmMER8TvMpJHbek6FFuMM7i8A56A4U3tGXsBA/IV8Qjj+SvxHtmgQXNDolhqm9tkt2tOLzSdLGDoITgvHjubptDC9jzT3kkbHhZtWa/nuGrBAzPB14xN2k5DDX/kS6Nv8cApHTZvqwQCEDjlkcqWjL4Y/yGeJzKOr4TOlMZFH8=;
-X-UUID: 7491c760f3df40eb8c8dd25af7d99857-20200113
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.liang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 778286375; Mon, 13 Jan 2020 01:23:01 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 13 Jan 2020 01:13:42 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 13 Jan 2020 17:11:42 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 13 Jan 2020 17:12:16 +0800
-Message-ID: <1578906770.20923.22.camel@mhfsdcap03>
-Subject: Re: [PATCH v11 1/3] dt-bindings: mediatek: mt8183: Add #reset-cells
-From: Yong Liang <yong.liang@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Date: Mon, 13 Jan 2020 17:12:50 +0800
-In-Reply-To: <CANMq1KBNuJDEn57d0ysc2XG0ezWEvJ2Pm88YihDiSZJ=-E=W9g@mail.gmail.com>
-References: <1578639862-14480-1-git-send-email-jiaxin.yu@mediatek.com>
- <1578639862-14480-2-git-send-email-jiaxin.yu@mediatek.com>
- <CANMq1KBNuJDEn57d0ysc2XG0ezWEvJ2Pm88YihDiSZJ=-E=W9g@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iqvo1-0008LT-HR
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 09:14:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1578906878;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=uspd5zkOPeMtHgKJ5e4ZESBs1SxHQ7Z6JFFqEWtfDCY=;
+ b=THWRiMxCI8V6v1L50bYo/s6yU9qCMHl5ggvrfi1/5RiQdxLanlp8TFRmdr5PHDaraShW6Q
+ EkUrQmBvCHOYYdeTEUvRbA3iDM1PRnEW4ssbAy0IrxCHzYAcwkbvgbTAM7L5FLLjJeL35Y
+ 1JUYHuEm+iPQp/UNiH2eeQTTwBgpGj4=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-258-P9ovJyJbO9STwUB_mH_sYQ-1; Mon, 13 Jan 2020 04:14:34 -0500
+X-MC-Unique: P9ovJyJbO9STwUB_mH_sYQ-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CD33C800D50;
+ Mon, 13 Jan 2020 09:14:31 +0000 (UTC)
+Received: from colo-mx.corp.redhat.com
+ (colo-mx01.intmail.prod.int.phx2.redhat.com [10.5.11.20])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 5557D5D9CA;
+ Mon, 13 Jan 2020 09:14:31 +0000 (UTC)
+Received: from zmail19.collab.prod.int.phx2.redhat.com
+ (zmail19.collab.prod.int.phx2.redhat.com [10.5.83.22])
+ by colo-mx.corp.redhat.com (Postfix) with ESMTP id AE28318089C8;
+ Mon, 13 Jan 2020 09:14:30 +0000 (UTC)
+From: David Hildenbrand <dhildenb@redhat.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: DF2A40E9DBFE98B116BEB7409F16A843F2BF153D6F6462540D4A00352B2557502000:8
-X-MTK: N
+Subject: Re: [PATCH V11 1/5] mm/hotplug: Introduce arch callback validating
+ the hot remove range
+Date: Mon, 13 Jan 2020 04:14:30 -0500 (EST)
+Message-Id: <3C3BE5FA-0CFC-4C90-8657-63EF5B680B0B@redhat.com>
+References: <6f0efddc-f124-58ca-28b6-4632469cf992@arm.com>
+In-Reply-To: <6f0efddc-f124-58ca-28b6-4632469cf992@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Thread-Topic: mm/hotplug: Introduce arch callback validating the hot remove
+ range
+Thread-Index: 9dRMYHGdvxy56yfkC0YmYq8UQHzCmA==
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_012309_837486_B8B7A10D 
-X-CRM114-Status: GOOD (  20.22  )
+X-CRM114-CacheID: sfid-20200113_011441_656885_D6CD0C62 
+X-CRM114-Status: GOOD (  17.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -74,8 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,155 +96,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Devicetree List <devicetree@vger.kernel.org>,
- Freddy Hsin =?UTF-8?Q?=28=E8=BE=9B=E6=81=92=E8=B1=90=29?=
- <Freddy.Hsin@mediatek.com>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
- <Jiaxin.Yu@mediatek.com>, "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
- <Yingjoe.Chen@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Chang-An Chen =?UTF-8?Q?=28=E9=99=B3=E6=98=B6=E5=AE=89=29?=
- <Chang-An.Chen@mediatek.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux@roeck-us.net" <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, David Hildenbrand <david@redhat.com>,
+ catalin.marinas@arm.com, linux-mm@kvack.org, arunks@codeaurora.org,
+ cpandya@codeaurora.org, will@kernel.org, ira.weiny@intel.com,
+ steven.price@arm.com, valentin.schneider@arm.com, suzuki.poulose@arm.com,
+ robin.murphy@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ osalvador@suse.de, steve.capper@arm.com, logang@deltatee.com,
+ linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
+ mgorman@techsingularity.net
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-01-13 at 14:10 +0800, Nicolas Boichat wrote:
-> Jiaxin,
-> 
-> On Fri, Jan 10, 2020 at 3:04 PM Jiaxin Yu <jiaxin.yu@mediatek.com> wrote:
-> >
-> > Add #reset-cells property and update example
-> >
-> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> > Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
-> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-> > Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
-> > Reviewed-by: Rob Herring <robh@kernel.org>
-> > Reviewed-by: Guenter Roeck <groeck7@gmail.com>
-> 
-> From previous feedback
-> (https://patchwork.kernel.org/patch/11318687/#23086211), it seems like
-> we lost track of which exact version had the Reviewed-By, so I'd just
-> drop all those tags and let people review again.
-> 
-  Need I do someting?
-> > ---
-> 
-> It would have been nice to mention that this patch depends on
-> https://patchwork.kernel.org/patch/11311241/ (as your example makes
-> use of it below).
-
-  Can I drop the mtk-wdt.txt of
-https://patchwork.kernel.org/patch/11311241/?
-  And I want add 8183 in mtk-wdt.txt in this patch.
-> >  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
-> >  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
-> >  .../reset-controller/mt8183-resets.h          | 17 ++++++++++++++
-> >  3 files changed, 46 insertions(+), 3 deletions(-)
-> >  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
-> >
-> > diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > index 92181b648f52..5a76ac262f8d 100644
-> > --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > @@ -4,6 +4,7 @@ Required properties:
-> >
-> >  - compatible should contain:
-> >         "mediatek,mt2701-wdt", "mediatek,mt6589-wdt": for MT2701
-> > +       "mediatek,mt2712-wdt", "mediatek,mt6589-wdt": for MT2712
-> 
-> Please separate this as another patch.
-  So I can send mtk-wdt.c(MT2712) and mt2712-resets.h in one patch and
-send mtk-wdt.c(MT8183) and mt8183-resets.h in another patch?
-> 
-> >         "mediatek,mt6589-wdt": for MT6589
-> >         "mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
-> >         "mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
-> > @@ -14,11 +15,14 @@ Required properties:
-> >
-> >  Optional properties:
-> >  - timeout-sec: contains the watchdog timeout in seconds.
-> > +- #reset-cells: Should be 1.
-> >
-> >  Example:
-> >
-> > -wdt: watchdog@10000000 {
-> > -       compatible = "mediatek,mt6589-wdt";
-> > -       reg = <0x10000000 0x18>;
-> > +watchdog: watchdog@10007000 {
-> > +       compatible = "mediatek,mt8183-wdt",
-> > +                    "mediatek,mt6589-wdt";
-> > +       reg = <0 0x10007000 0 0x100>;
-> >         timeout-sec = <10>;
-> > +       #reset-cells = <1>;
-> >  };
-> > diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
-> > new file mode 100644
-> > index 000000000000..9e7ee762f076
-> > --- /dev/null
-> > +++ b/include/dt-bindings/reset-controller/mt2712-resets.h
-> > @@ -0,0 +1,22 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * Copyright (c) 2019 MediaTek Inc.
-> > + * Author: Yong Liang <yong.liang@mediatek.com>
-> > + */
-> > +
-> > +#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> > +#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> > +
-> > +#define MT2712_TOPRGU_INFRA_SW_RST                             0
-> > +#define MT2712_TOPRGU_MM_SW_RST                                        1
-> > +#define MT2712_TOPRGU_MFG_SW_RST                               2
-> > +#define MT2712_TOPRGU_VENC_SW_RST                              3
-> > +#define MT2712_TOPRGU_VDEC_SW_RST                              4
-> > +#define MT2712_TOPRGU_IMG_SW_RST                               5
-> > +#define MT2712_TOPRGU_INFRA_AO_SW_RST                          8
-> > +#define MT2712_TOPRGU_USB_SW_RST                               9
-> > +#define MT2712_TOPRGU_APMIXED_SW_RST                           10
-> > +
-> > +#define MT2712_TOPRGU_SW_RST_NUM                               11
-> > +
-> > +#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
-> > diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
-> > index 8804e34ebdd4..a1bbd41e0d12 100644
-> > --- a/include/dt-bindings/reset-controller/mt8183-resets.h
-> > +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
-> > @@ -78,4 +78,21 @@
-> >  #define MT8183_INFRACFG_AO_I2C7_SW_RST                         126
-> >  #define MT8183_INFRACFG_AO_I2C8_SW_RST                         127
-> >
-> > +#define MT8183_INFRACFG_SW_RST_NUM                             128
-> > +
-> > +#define MT8183_TOPRGU_MM_SW_RST                                        1
-> > +#define MT8183_TOPRGU_MFG_SW_RST                               2
-> > +#define MT8183_TOPRGU_VENC_SW_RST                              3
-> > +#define MT8183_TOPRGU_VDEC_SW_RST                              4
-> > +#define MT8183_TOPRGU_IMG_SW_RST                               5
-> > +#define MT8183_TOPRGU_MD_SW_RST                                        7
-> > +#define MT8183_TOPRGU_CONN_SW_RST                              9
-> > +#define MT8183_TOPRGU_CONN_MCU_SW_RST                          12
-> > +#define MT8183_TOPRGU_IPU0_SW_RST                              14
-> > +#define MT8183_TOPRGU_IPU1_SW_RST                              15
-> > +#define MT8183_TOPRGU_AUDIO_SW_RST                             17
-> > +#define MT8183_TOPRGU_CAMSYS_SW_RST                            18
-> > +
-> > +#define MT8183_TOPRGU_SW_RST_NUM                               19
-> > +
-> >  #endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT8183 */
-> > --
-> > 2.18.0
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCj4gQW0gMTMuMDEuMjAyMCB1bSAxMDoxMCBzY2hyaWViIEFuc2h1bWFuIEtoYW5kdWFsIDxh
+bnNodW1hbi5raGFuZHVhbEBhcm0uY29tPjoNCj4gDQo+IO+7vw0KPiANCj4+IE9uIDAxLzEwLzIw
+MjAgMDI6MTIgUE0sIERhdmlkIEhpbGRlbmJyYW5kIHdyb3RlOg0KPj4+IE9uIDEwLjAxLjIwIDA0
+OjA5LCBBbnNodW1hbiBLaGFuZHVhbCB3cm90ZToNCj4+PiBDdXJyZW50bHkgdGhlcmUgYXJlIHR3
+byBpbnRlcmZhY2VzIHRvIGluaXRpYXRlIG1lbW9yeSByYW5nZSBob3QgcmVtb3ZhbCBpLmUNCj4+
+PiByZW1vdmVfbWVtb3J5KCkgYW5kIF9fcmVtb3ZlX21lbW9yeSgpIHdoaWNoIHRoZW4gY2FsbHMg
+dHJ5X3JlbW92ZV9tZW1vcnkoKS4NCj4+PiBQbGF0Zm9ybSBnZXRzIGNhbGxlZCB3aXRoIGFyY2hf
+cmVtb3ZlX21lbW9yeSgpIHRvIHRlYXIgZG93biByZXF1aXJlZCBrZXJuZWwNCj4+PiBwYWdlIHRh
+YmxlcyBhbmQgb3RoZXIgYXJjaCBzcGVjaWZpYyBwcm9jZWR1cmVzLiBCdXQgdGhlcmUgYXJlIHBs
+YXRmb3Jtcw0KPj4+IGxpa2UgYXJtNjQgd2hpY2ggbWlnaHQgd2FudCB0byBwcmV2ZW50IHJlbW92
+YWwgb2YgY2VydGFpbiBzcGVjaWZpYyBtZW1vcnkNCj4+PiByYW5nZXMgaXJyZXNwZWN0aXZlIG9m
+IHRoZWlyIHByZXNlbnQgdXNhZ2Ugb3IgbW92YWJpbGl0eSBwcm9wZXJ0aWVzLg0KPj4gDQo+PiBX
+aHk/IElzIHRoaXMgb25seSByZWxldmFudCBmb3IgYm9vdCBtZW1vcnk/IEkgaG9wZSBzbywgb3Ro
+ZXJ3aXNlIHRoZQ0KPj4gYXJjaCBjb2RlIG5lZWRzIGZpeGluZyBJTUhPLg0KPiANCj4gUmlnaHQs
+IGl0IGlzIHJlbGV2YW50IG9ubHkgZm9yIHRoZSBib290IG1lbW9yeSBvbiBhcm02NCBwbGF0Zm9y
+bS4gQnV0IHRoaXMNCj4gbmV3IGFyY2ggY2FsbGJhY2sgbWFrZXMgaXQgZmxleGlibGUgdG8gcmVq
+ZWN0IGFueSBnaXZlbiBtZW1vcnkgcmFuZ2UuDQo+IA0KPj4gDQo+PiBJZiBpdCdzIG9ubHkgYm9v
+dCBtZW1vcnksIHdlIHNob3VsZCBkaXNhbGxvdyBvZmZsaW5pbmcgaW5zdGVhZCB2aWEgYQ0KPj4g
+bWVtb3J5IG5vdGlmaWVyIC0gbXVjaCBjbGVhbmVyLg0KPiANCj4gRG9udCBoYXZlIG11Y2ggZGV0
+YWlsIHVuZGVyc3RhbmRpbmcgb2YgTU1VIG5vdGlmaWVyIG1lY2hhbmlzbSBidXQgZnJvbSBzb21l
+DQo+IGluaXRpYWwgcmVhZGluZywgaXQgc2VlbXMgbGlrZSB3ZSBuZWVkIHRvIGhhdmUgYSBtbV9z
+dHJ1Y3QgZm9yIGEgbm90aWZpZXINCj4gdG8gbW9uaXRvciB2YXJpb3VzIGV2ZW50cyBvbiB0aGUg
+cGFnZSB0YWJsZS4gSnVzdCB3b25kZXJpbmcgaG93IGEgcGh5c2ljYWwNCj4gbWVtb3J5IHJhbmdl
+IGxpa2UgYm9vdCBtZW1vcnkgY2FuIGJlIG1vbml0b3JlZCBiZWNhdXNlIGl0IGNhbiBiZSB1c2Vk
+IGJvdGgNCj4gZm9yIGZvciBrZXJuZWwgKGluaXRfbW0pIG9yIHVzZXIgc3BhY2UgcHJvY2VzcyBh
+dCBzYW1lIHRpbWUuIElzIHRoZXJlIHNvbWUNCj4gbWVjaGFuaXNtIHdlIGNvdWxkIGRvIHRoaXMg
+Pw0KPiANCj4+IA0KPj4+IA0KPj4+IEN1cnJlbnQgYXJjaCBjYWxsIGJhY2sgYXJjaF9yZW1vdmVf
+bWVtb3J5KCkgaXMgdG9vIGxhdGUgaW4gdGhlIHByb2Nlc3MgdG8NCj4+PiBhYm9ydCBtZW1vcnkg
+aG90IHJlbW92YWwgYXMgbWVtb3J5IGJsb2NrIGRldmljZXMgYW5kIGZpcm13YXJlIG1lbW9yeSBt
+YXANCj4+PiBlbnRyaWVzIHdvdWxkIGhhdmUgYWxyZWFkeSBiZWVuIHJlbW92ZWQuIFBsYXRmb3Jt
+cyBzaG91bGQgYmUgYWJsZSB0byBhYm9ydA0KPj4+IHRoZSBwcm9jZXNzIGJlZm9yZSB0YWtpbmcg
+dGhlIG1lbV9ob3RwbHVnX2xvY2sgd2l0aCBtZW1faG90cGx1Z19iZWdpbigpLg0KPj4+IFRoaXMg
+ZXNzZW50aWFsbHkgcmVxdWlyZXMgYSBuZXcgYXJjaCBjYWxsYmFjayBmb3IgbWVtb3J5IHJhbmdl
+IHZhbGlkYXRpb24uDQo+PiANCj4+IEkgc29tZXdoYXQgZGlzbGlrZSB0aGlzIHZlcnkgbXVjaC4g
+TWVtb3J5IHJlbW92YWwgc2hvdWxkIG5ldmVyIGZhaWwgaWYNCj4+IHVzZWQgc2FuZWx5LiBTZWUg
+ZS5nLiwgX19yZW1vdmVfbWVtb3J5KCksIGl0IHdpbGwgQlVHKCkgd2hlbmV2ZXINCj4+IHNvbWV0
+aGluZyBsaWtlIHRoYXQgd291bGQgc3RyaWtlLg0KPj4gDQo+Pj4gDQo+Pj4gVGhpcyBkaWZmZXJl
+bnRpYXRlcyBtZW1vcnkgcmFuZ2UgdmFsaWRhdGlvbiBiZXR3ZWVuIG1lbW9yeSBob3QgYWRkIGFu
+ZCBob3QNCj4+PiByZW1vdmUgcGF0aHMgYmVmb3JlIGNhcnZpbmcgb3V0IGEgbmV3IGhlbHBlciBj
+aGVja19ob3RyZW1vdmVfbWVtb3J5X3JhbmdlKCkNCj4+PiB3aGljaCBpbmNvcnBvcmF0ZXMgYSBu
+ZXcgYXJjaCBjYWxsYmFjay4gVGhpcyBjYWxsIGJhY2sgcHJvdmlkZXMgcGxhdGZvcm1zDQo+Pj4g
+YW4gb3Bwb3J0dW5pdHkgdG8gcmVmdXNlIG1lbW9yeSByZW1vdmFsIGF0IHRoZSB2ZXJ5IG9uc2V0
+LiBJbiBmdXR1cmUgdGhlDQo+Pj4gc2FtZSBwcmluY2lwbGUgY2FuIGJlIGV4dGVuZGVkIGZvciBt
+ZW1vcnkgaG90IGFkZCBwYXRoIGlmIHJlcXVpcmVkLg0KPj4+IA0KPj4+IFBsYXRmb3JtcyBjYW4g
+Y2hvb3NlIHRvIG92ZXJyaWRlIHRoaXMgY2FsbGJhY2sgaW4gb3JkZXIgdG8gcmVqZWN0IHNwZWNp
+ZmljDQo+Pj4gbWVtb3J5IHJhbmdlcyBmcm9tIHJlbW92YWwgb3IgY2FuIGp1c3QgZmFsbGJhY2sg
+dG8gYSBkZWZhdWx0IGltcGxlbWVudGF0aW9uDQo+Pj4gd2hpY2ggYWxsb3dzIHJlbW92YWwgb2Yg
+YWxsIG1lbW9yeSByYW5nZXMuDQo+PiANCj4+IEkgc3VzcGVjdCB3ZSB3YW50IHJlYWxseSB3YW50
+IHRvIGRpc2FsbG93IG9mZmxpbmluZyBpbnN0ZWFkLiBFLmcuLCBJDQo+IA0KPiBJZiBib290IG1l
+bW9yeSBwYWdlcyBjYW4gYmUgcHJldmVudGVkIGZyb20gYmVpbmcgb2ZmbGluZWQgZm9yIHN1cmUs
+IHRoZW4gaXQNCj4gd291bGQgaW5kaXJlY3RseSBkZWZpbml0ZWx5IHByZXZlbnQgaG90IHJlbW92
+ZSBwcm9jZXNzIGFzIHdlbGwuDQo+IA0KPj4gcmVtZW1iZXIgczM5MHggZG9lcyB0aGF0IHdpdGgg
+Y2VydGFpbiBhcmVhcyBuZWVkZWQgZm9yIGR1bXBpbmcva2V4ZWMuDQo+IA0KPiBDb3VsZCBub3Qg
+ZmluZCBhbnkgcmVmZXJlbmNlcyB0byBtbXVfbm90aWZpZXIgaW4gYXJjaC9zMzkwIG9yIGFueSBv
+dGhlciBhcmNoDQo+IGZvciB0aGF0IG1hdHRlciBhcGFydCBmcm9tIEtWTSAod2hpY2ggaGFzIGFu
+IHVzZXIgc3BhY2UgY29tcG9uZW50KSwgY291bGQgeW91DQo+IHBsZWFzZSBnaXZlIHNvbWUgcG9p
+bnRlcnMgPw0KDQpNZW1vcnkgKGhvdHBsdWcpIG5vdGlmaWVyLCBub3QgTU1VIG5vdGlmaWVyIDop
+DQoNCk5vdCBvbiBteSBub3RlYm9vayByaWdodCBub3csIGdyZXAgZm9yIE1FTV9HT0lOR19PRkZM
+SU5FLCB0aGF0IHNob3VsZCBiZSBpdC4KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
