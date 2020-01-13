@@ -2,107 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91830138E60
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 10:59:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA46D138E68
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Jan 2020 11:00:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oHEB8C6HS7WeeiEEbfEYRSdrH3Ux1sYY8TaYuPFjM4s=; b=aDubF8Tn6emr2O
-	fM0pf5sjbUQ/roSXGPmx8Qu3lSmzuazaXTaQ998BNm7zgLPFUntlbR5fPNLa18qMMHcFHeVRMwHrd
-	v+UXQxt53XEvp62T5lYVt6VRLoc5mQhbAAuRYrQUTd7Xn4A5C7f6+NNbpmjlsGmDF29Fl7RfSbYu+
-	mrE4Y/kbsrSyo3qG5wWkZKHyIJ4HprT3p0FTM/swNloLFazMtBq1etUcxMcrDOA8OY2gkzIG+n1CQ
-	R7lOFaqI+cl0JeVwq5QXcQRpopSBg5+neSOdUnqgSRMyBhJLEpfl5ywP65LMLKpqguPSQYUWJhKW5
-	P1KfmmrI729kdpyuLBig==;
+	List-Owner; bh=tuW+2j2tC/Pcivo416/zYt0XkeNZ2RwvC8mMnp0xTWw=; b=Y8XFsDplFYji9A
+	Lj0l245STIYJeiZM3QFRi+J93A32BhHveIduSN9OJr2oVERz40XnIzy4tZ3fHVehonAqThFmsiS4+
+	E+RQ9a84EIjmYyK/D+Ubjsma/Tltln8cwLUFZPebojAAAKOyA4ProEEkyya+H76yi4uQ5r0n6BcQV
+	lwjh6uBH7M9PyiQV2zpTpsmlXudzz2sxE+rCUKRv7PeGZdPZZII7zfVxIdtd6sPDCv7YjFM2qGJoD
+	bBIbVCHEZcS8IDM5t1ReIuI4Q5RnGYIFPewcBgRI8Ed0d5+3ZmIN8Vzj3bJNA6oxIzEb2eJKqtTXq
+	IVD/bpaFzSDdkmDMvoqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqwV7-00081S-4i; Mon, 13 Jan 2020 09:59:13 +0000
-Received: from mail-mw2nam12on2078.outbound.protection.outlook.com
- ([40.107.244.78] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1iqwVn-0000CO-HZ; Mon, 13 Jan 2020 09:59:55 +0000
+Received: from mail-eopbgr70045.outbound.protection.outlook.com ([40.107.7.45]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqwUp-0007zS-BF; Mon, 13 Jan 2020 09:58:56 +0000
+ id 1iqwVN-0008QF-PU
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Jan 2020 09:59:31 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HOz/eEFrG1inWPOM1JJcLgsv4JBMX1suVKQn5dE4h65JIwvEWQOmtxS+piOe9RV+rTxdG42rbnc7R/ox0PUHn4vzHN/ORrAgGyi+AyGJ5nCSY2s+aQ1zPyT70HuxGR4ItL/WuNstqu/xIu6A+d86ZX2iXPKxCeqHUp/ZU7SkTT2/YOETchRBoWvqhlWsWQu15OtE1DQHqT3K6TWi5gvpC6IE2XgTPDYMLX64z3YjHO+7FdwDbSsVnQdJtbSSVMP5VYjfxSqDuNjpHrBB8qgR2/CVtm4JufQHn6IgRHhKMy5vk8CUnfQp1Ct1cFuGJLygkDGZlO0s7Ws94669nt421A==
+ b=TNoTCfKc7cbb59ae24DZIarIabCh8Le/XKElyy4/k2UN09QHnRpLxKKiw/dn+KJlxazPw9ZdZyvNgHWgY9X7aizdJHwmXR/GfYBpKuQ/ZsLIWuSWYqu6nSD92HJHhhl7oRW7GJyAjyv3lbUsC56SxEQ3ydTNANKOyNMAPM2xO5Gs632UXsfzcnYxqiLnSjVaaUxLuslmvYg6em9W6PddywRWBBM+OnLVih3siB2mbzvu/GdLVbdHqFKNr5kyOUc2DnkjF1V93/2HwIN0cw+lCOjzRTntZjwVFIakSj3mYay0it6iOOpDHojLytaPuY8pd914CJyARwf4cN7vnaOKoQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mkzh2HqmbmY1jtwx3yTyry6Lixdo5GjU70EYVHBqcZI=;
- b=Kx8weRhF4MLXzGE3A5r2jRxXxjMcvBATMgwNZ3s/dfQ1wCn3z/YnWD6cDWeKDs5ROdG0dopFGZNxP5vZPRTeR313HMAHvKIC779BYOaXP/0K4T22cJ4Qq4+ujxpO82iZ0D9YJ75qLbz3ZcpO9Ao98q9edJJ1pX8tvw4DgrKIqMtqFrXul0QPL+Gfiv521T0Uy5ya8YQBYsIdA3ptVZF+I3iBR3cFB+5/4DBNiCfkUOh1jNIOA2WcF1CGYprQTY+tsC/XL/yIJ3XrV20ClqSH2uLpBTks29N65rwQJFWIrZKFDck2q6j+FJr67lzu1F/jwXU0in9pvRN9rwKdhQLHPA==
+ bh=dbEatXMBrj0x0ICDnGWcEZrOY7xPagEsurxWski5hNA=;
+ b=eQ/OWFcuHaNcvpLsqm/3qtos/H275+fcDYqjKxv/OB9cmZzprnuWY+1j2qiQbP2B4FrqKMk+nctNM0SgsyAfChSD/TMx7QQKezCC4QhR/ZHx36oH8ocGzGTiN1LQxuPR1oA3Oe0EcHdqRLTjofmmbT14VsaYAdkuExyFpT9U7qWm++L0iG5grUQ8uF0wRyXN9pkWG9eDvcLNJl+PywCwWmcRYDieSgS0pEqfRo0d+UZc0ES5h3bLIbGXfaItvrXlYxVf7H0/KHVZ3psZHYV3DfayAOeZlIqmhH+c+s1V3h8wxSBRspjo546dvOBdkdEkAPe9dgZ0GXRd7EnXupdsqA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=micron.com; dmarc=pass action=none header.from=micron.com;
- dkim=pass header.d=micron.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=micron.com;
- s=selector2;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mkzh2HqmbmY1jtwx3yTyry6Lixdo5GjU70EYVHBqcZI=;
- b=xRNgMX619b8LJzLAVJHBEl9NVPl0K/FdIT5TIVK7aAYi7ACN50UsZDdntrXZL6g/OZ/LpHtIAZ0jVIRiZPqHE4IQJKYaNMWqebNus4AydKQ271avkxHpqK+iGyPf07zoviqISfWmnp8KjcVp1M9CjcfxNEJY4PXY1EWAPh4Nmew=
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com (20.176.179.87) by
- BN7PR08MB5089.namprd08.prod.outlook.com (20.176.177.220) with Microsoft SMTP
+ bh=dbEatXMBrj0x0ICDnGWcEZrOY7xPagEsurxWski5hNA=;
+ b=BaSn1iIc9MqNlBGz74SbZFqD063QyKAN8I1Ge1oKA5L+N1hkh/s7sqS4ox535l8uxvHKqTs2HKbwn452c5OcJeDR2QhDnywmitT9gJAw6n/JQDt5EkCwDo83Oea6SvrVCeiSsT99N/gMPNHQqyqVaL87KWlr7nQByXIiH347Av4=
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB4554.eurprd04.prod.outlook.com (52.135.138.32) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Mon, 13 Jan 2020 09:58:52 +0000
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::981f:90d7:d45f:fd11]) by BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::981f:90d7:d45f:fd11%7]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 09:58:52 +0000
-From: "Bean Huo (beanhuo)" <beanhuo@micron.com>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: RE: [EXT] [PATCH v1 1/3] scsi: ufs: fix empty check of error history
-Thread-Topic: [EXT] [PATCH v1 1/3] scsi: ufs: fix empty check of error history
-Thread-Index: AQHVwwrtYdyISOHmvEWfKtFqbPPmzqfoX2LQgAAGaICAAABC0A==
-Date: Mon, 13 Jan 2020 09:58:51 +0000
-Message-ID: <BN7PR08MB568462931864FC928D262098DB350@BN7PR08MB5684.namprd08.prod.outlook.com>
-References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
- <1578147968-30938-2-git-send-email-stanley.chu@mediatek.com>
- <BN7PR08MB56841F049CEF89CD8F40B4E3DB350@BN7PR08MB5684.namprd08.prod.outlook.com>
- <1578908621.17435.18.camel@mtkswgap22>
-In-Reply-To: <1578908621.17435.18.camel@mtkswgap22>
-Accept-Language: en-150, en-US
+ 15.20.2623.13; Mon, 13 Jan 2020 09:59:25 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
+ 09:59:25 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: RE: [PATCH V4 RESEND 1/2] dt-bindings/irq: add binding for NXP INTMUX
+ interrupt multiplexer
+Thread-Topic: [PATCH V4 RESEND 1/2] dt-bindings/irq: add binding for NXP
+ INTMUX interrupt multiplexer
+Thread-Index: AQHVyeDroUXufH5Iq0+ZDldne7GnO6foUHcAgAAL3oA=
+Date: Mon, 13 Jan 2020 09:59:25 +0000
+Message-ID: <DB7PR04MB46185D8F8B19ADFCDBF857FBE6350@DB7PR04MB4618.eurprd04.prod.outlook.com>
+References: <1578899321-1365-1-git-send-email-qiangqing.zhang@nxp.com>
+ <1578899321-1365-2-git-send-email-qiangqing.zhang@nxp.com>
+ <e5aa95d7fd1c2d9c0586b7d8689cbfa0@kernel.org>
+In-Reply-To: <e5aa95d7fd1c2d9c0586b7d8689cbfa0@kernel.org>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcYmVhbmh1b1xhcHBkYXRhXHJvYW1pbmdcMDlkODQ5YjYtMzJkMy00YTQwLTg1ZWUtNmI4NGJhMjllMzViXG1zZ3NcbXNnLTQ5ZWNkZDY2LTM1ZWItMTFlYS04Yjg4LWRjNzE5NjFmOWRkM1xhbWUtdGVzdFw0OWVjZGQ2Ny0zNWViLTExZWEtOGI4OC1kYzcxOTYxZjlkZDNib2R5LnR4dCIgc3o9IjE3MjkiIHQ9IjEzMjIzMzgzMTI3MjU3NzA3MCIgaD0iR29mQVgwaU90MEJUTmtzY0FBenVqZFdncnhNPSIgaWQ9IiIgYmw9IjAiIGJvPSIxIi8+PC9tZXRhPg==
-x-dg-rorf: true
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=beanhuo@micron.com; 
-x-originating-ip: [195.89.176.137]
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d3551af9-03c7-4af9-e0cb-08d7980f31df
-x-ms-traffictypediagnostic: BN7PR08MB5089:|BN7PR08MB5089:|BN7PR08MB5089:
-x-microsoft-antispam-prvs: <BN7PR08MB508900ADDE6689A1C0C35D9DDB350@BN7PR08MB5089.namprd08.prod.outlook.com>
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 1e8008f4-3e29-48f0-4225-08d7980f457d
+x-ms-traffictypediagnostic: DB7PR04MB4554:|DB7PR04MB4554:
 x-ms-exchange-transport-forked: True
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-microsoft-antispam-prvs: <DB7PR04MB45542D197095D40F884A338BE6350@DB7PR04MB4554.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:538;
 x-forefront-prvs: 028166BF91
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(376002)(346002)(366004)(396003)(189003)(199004)(4326008)(54906003)(71200400001)(86362001)(8936002)(9686003)(55016002)(8676002)(7696005)(81156014)(2906002)(6916009)(66946007)(33656002)(66556008)(76116006)(66446008)(64756008)(66476007)(478600001)(81166006)(7416002)(5660300002)(6506007)(52536014)(26005)(186003)(316002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR08MB5089;
- H:BN7PR08MB5684.namprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: micron.com does not designate
+ SFS:(10001)(10009020)(4636009)(39860400002)(396003)(376002)(366004)(136003)(346002)(199004)(189003)(86362001)(54906003)(316002)(8676002)(186003)(966005)(45080400002)(71200400001)(478600001)(8936002)(55016002)(4326008)(2906002)(9686003)(52536014)(7416002)(66946007)(66446008)(66476007)(64756008)(66556008)(33656002)(6916009)(26005)(5660300002)(81166006)(7696005)(81156014)(6506007)(76116006)(53546011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4554;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6zrUJ3uxkhrShR1eBkUvsN2fwy2LNolvKQwC/GgTAkgQx2mUepfSOkeoDlFo3aVnKjUkL+2JEe6Eo84Gn+JfRvE0Dxrav2q4nlJpGR6tBGyO9mP81/I2KvyTRWCIov03SH09KbLDtyupnk+JiOOy9GTHvkkSwdSBqCc6ZnRZP4Vzvk36cbGglo/nqdHhQsxCd2drhN89Vl4cGBp6XvJDGc3JucXmZ1LUfXtlJ8Zr/4WWjJrmyQMr2ZwPMoLRduDUVk6/oq6XRbywOOvQAxqfJNmtecJicWu5m5NdDn+muwDBe4dQIeIg1TBgXaWSXH7weMHCfNITGARk2MEAWGbppja9r5rTU08PLOMUPFpPn6FGTnPYLPI171adMBTVRWH81pQiX97qV2mMlS+izGIPYADcbRS5L5GQ9ajeDBaME5qfXA8e5cz1iw7LXGS7lTet
+x-microsoft-antispam-message-info: x4hQ5PCdUDpOwhFAYYUCJ9OkAcEAdf3cPonZM3v3bQT8+/yRvMLZLbLHPLcEUtcKR/g2LEEXI14ZWDct1uk9xcNZDGjFuzw1UUcsQrDZzKsJ4nKirKr90pfkQehsS3opvwpYeeF24DhPIKWnxqMnSiXo75eWAQfd1JB+AGnisDNUzZaSl3JEENQ2IHBjBBYHC4sWhNn8EptB6/vuXC7b+iaDsIzyMNJ6U7p1ITTNgrc3ZnSHHjnYfpoXer1BZp6ghc55Ink5CXBbghBmJjF/s2NpEgIVX3VSDQwpgRywfFVvV26gQW4q8SncRDkt36Vy9NqgUGSpNsz02LQ35NvQCezBZ77a/IcBxcUcEtzZrOmwjJpKuIuHXTr0dgmmolzHP0R7ls7BLQhO/XyfeAd75XB7guP3RSjNkkHUdMGg8q2ZhfUv0lxYrek02t/9xD/yFD5mgnJucEghxz2ENvNU6lwQnlcbTuHP5XXAECOSh8YtYDEcNAjI/QRyoLvRXGrnTMiOMsyywRhtXIKTCguoTtIAL4VFhOEME62wt3WxS2A9D/r+H1RQgnt/S3PgJkdOlqdUJpYmKeLQcKWuy3lfgvt3rfMjmH/z+yf9jgGHCZevzgeA1XDqDKiVyiHgoL6o
 MIME-Version: 1.0
-X-OriginatorOrg: micron.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d3551af9-03c7-4af9-e0cb-08d7980f31df
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 09:58:52.2715 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1e8008f4-3e29-48f0-4225-08d7980f457d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 09:59:25.0974 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f38a5ecd-2813-4862-b11b-ac1d563c806f
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: kpVHKFgO4HKMqNpgRCfInpjUdg5mAM31h63RDvRDe400+3SHFjbOqc26FfMPdry3pRqRZCaPotwaWFeh6DrDug==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR08MB5089
+X-MS-Exchange-CrossTenant-userprincipalname: G5TIRnY+H/8LDL2ntzxDhHF0WABkdnPZHVIVhGnJ0l6UZTS+vIV4c2Sfldw3+7gYyoS0JAAEVT/zwEgJxQzARQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4554
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_015855_388614_C8933D53 
-X-CRM114-Status: GOOD (  16.47  )
+X-CRM114-CacheID: sfid-20200113_015929_844713_356344CF 
+X-CRM114-Status: GOOD (  15.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.244.78 listed in list.dnswl.org]
+ no trust [40.107.7.45 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -123,72 +123,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Andy Duan <fugang.duan@nxp.com>, "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: RE: [EXT] [PATCH v1 1/3] scsi: ufs: fix empty check of error history
-> 
-> Hi Bean,
-> 
-> On Mon, 2020-01-13 at 09:28 +0000, Bean Huo (beanhuo) wrote:
-> > Hi, Stanley
-> >
-> > >
-> > > Currently checking if an error history element is empty or not is by
-> > > its "value". In most cases, value is error code.
-> > >
-> > > However this checking is not correct because some errors or events
-> > > do not specify any values in error history so values remain as 0,
-> > > and this will lead to incorrect empty checking.
-> > >
-> > Do you think this is a bug of UFS host controller? According to the
-> > UFS host Spec, If there had error detected in each layer, at least
-> > bit31 in its error code register Should be set to 1.
-> >
-> > Why there was an error happening, but host didn't set this bit31?
-> >
-> 
-> Thanks so much for review.
-> 
-> Yes, the case bit[31] set is true for UIC errors.
-> 
-> However the users of UFS error history, i.e., users of ufshcd_update_reg_hlist(),
-> are not only UIC errors. Some other essential events will update history too, for
-> example, device reset events and abort events.
-> 
-> Take "device reset events" as example: parameter "val" may be 0 while invoking
-> ufshcd_update_reg_hlist(). If this happens, the device reset event will not be
-> printed out because its err_hist->reg[p] is 0 according to the original logic in
-> ufshcd_print_err_hist().
-> 
-> Feel free to correct above description if it is wrong.
-> 
-> Thanks,
-> Stanley
-
-Hi, Stanley
-Thanks, now clear, it is not controller negative act issue.
-
-Reviewed-by: Bean Huo <beanhuo@micron.com>
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IE1hcmMgWnluZ2llciA8bWF6
+QGtlcm5lbC5vcmc+DQo+IFNlbnQ6IDIwMjDE6jHUwjEzyNUgMTc6MTYNCj4gVG86IEpvYWtpbSBa
+aGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+DQo+IENjOiBqYXNvbkBsYWtlZGFlbW9uLm5l
+dDsgdGdseEBsaW51dHJvbml4LmRlOyByb2JoK2R0QGtlcm5lbC5vcmc7DQo+IG1hcmsucnV0bGFu
+ZEBhcm0uY29tOyBzaGF3bmd1b0BrZXJuZWwub3JnOyBzLmhhdWVyQHBlbmd1dHJvbml4LmRlOw0K
+PiBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IGZlc3RldmFtQGdtYWlsLmNvbTsgbGludXgta2VybmVs
+QHZnZXIua2VybmVsLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgZGwtbGludXgtaW14DQo+IDxsaW51eC1pbXhA
+bnhwLmNvbT47IEFuZHkgRHVhbiA8ZnVnYW5nLmR1YW5AbnhwLmNvbT4NCj4gU3ViamVjdDogUmU6
+IFtQQVRDSCBWNCBSRVNFTkQgMS8yXSBkdC1iaW5kaW5ncy9pcnE6IGFkZCBiaW5kaW5nIGZvciBO
+WFANCj4gSU5UTVVYIGludGVycnVwdCBtdWx0aXBsZXhlcg0KPiANCj4gT24gMjAyMC0wMS0xMyAw
+NzowOCwgSm9ha2ltIFpoYW5nIHdyb3RlOg0KPiA+IFRoaXMgcGF0Y2ggYWRkcyB0aGUgRFQgYmlu
+ZGluZ3MgZm9yIHRoZSBOWFAgSU5UTVVYIGludGVycnVwdA0KPiA+IG11bHRpcGxleGVyIGZvciBp
+Lk1YOCBmYW1pbHkgU29Dcy4NCj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IEpvYWtpbSBaaGFuZyA8
+cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+DQo+ID4gLS0tDQo+ID4gIC4uLi9pbnRlcnJ1cHQtY29u
+dHJvbGxlci9mc2wsaW50bXV4LnlhbWwgICAgICB8IDc3ICsrKysrKysrKysrKysrKysrKysNCj4g
+PiAgMSBmaWxlIGNoYW5nZWQsIDc3IGluc2VydGlvbnMoKykNCj4gPiAgY3JlYXRlIG1vZGUgMTAw
+NjQ0DQo+ID4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ludGVycnVwdC1jb250
+cm9sbGVyL2ZzbCxpbnRtdXgueWFtbA0KPiA+DQo+ID4gZGlmZiAtLWdpdA0KPiA+IGEvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2ZzbCxpbnRt
+dXgueWENCj4gPiBtbA0KPiA+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2lu
+dGVycnVwdC1jb250cm9sbGVyL2ZzbCxpbnRtdXgueWENCj4gPiBtbA0KPiA+IG5ldyBmaWxlIG1v
+ZGUgMTAwNjQ0DQo+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi40ZGJhNTMyZmUwYmQNCj4gPiAtLS0g
+L2Rldi9udWxsDQo+ID4gKysrDQo+ID4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvaW50ZXJydXB0LWNvbnRyb2xsZXIvZnNsLGludG11eC55YQ0KPiA+IG1sDQo+ID4gQEAgLTAs
+MCArMSw3NyBAQA0KPiA+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBC
+U0QtMi1DbGF1c2UpICVZQU1MIDEuMg0KPiA+ICstLS0NCj4gPiArJGlkOg0KPiA+IGh0dHBzOi8v
+ZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwJTNBJTJGJTJG
+ZGV2aWMNCj4gPg0KPiBldHJlZS5vcmclMkZzY2hlbWFzJTJGaW50ZXJydXB0LWNvbnRyb2xsZXIl
+MkZmc2wlMkNpbnRtdXgueWFtbCUyMyZhbQ0KPiBwOw0KPiA+DQo+IGRhdGE9MDIlN0MwMSU3Q3Fp
+YW5ncWluZy56aGFuZyU0MG54cC5jb20lN0MzZjc0ZWE1ZDRlZTg0ZGZjZDQ5OTA4DQo+IGQ3OTgw
+DQo+ID4NCj4gOTQxZjIlN0M2ODZlYTFkM2JjMmI0YzZmYTkyY2Q5OWM1YzMwMTYzNSU3QzAlN0Mw
+JTdDNjM3MTQ1MDM3ODUxDQo+IDU0NTkyNCYNCj4gPg0KPiBhbXA7c2RhdGE9NHdZRkZuZHpYOWVj
+ZXhhQWtHRUUzaFFMMnd1SEwxN0xVcldwODR3SHlZNCUzRCZhbXA7DQo+IHJlc2VydmVkPQ0KPiA+
+IDANCj4gPiArJHNjaGVtYToNCj4gPiAraHR0cHM6Ly9ldXIwMS5zYWZlbGlua3MucHJvdGVjdGlv
+bi5vdXRsb29rLmNvbS8/dXJsPWh0dHAlM0ElMkYlMkZkZXZpDQo+ID4NCj4gK2NldHJlZS5vcmcl
+MkZtZXRhLXNjaGVtYXMlMkZjb3JlLnlhbWwlMjMmYW1wO2RhdGE9MDIlN0MwMSU3Q3FpYQ0KPiBu
+Z3FpbmcNCj4gPg0KPiArLnpoYW5nJTQwbnhwLmNvbSU3QzNmNzRlYTVkNGVlODRkZmNkNDk5MDhk
+Nzk4MDk0MWYyJTdDNjg2ZWExZDNiDQo+IGMyYjRjNg0KPiA+DQo+ICtmYTkyY2Q5OWM1YzMwMTYz
+NSU3QzAlN0MwJTdDNjM3MTQ1MDM3ODUxNTQ1OTI0JmFtcDtzZGF0YT0yTmJyQw0KPiBBZ2pEQnJw
+DQo+ID4gK2x6WVB1bFZzWSUyRm1IZ1Z1cHNvbnd3SzFnbiUyQnNkQjdvJTNEJmFtcDtyZXNlcnZl
+ZD0wDQo+ID4gKw0KPiA+ICt0aXRsZTogRnJlZXNjYWxlIElOVE1VWCBpbnRlcnJ1cHQgbXVsdGlw
+bGV4ZXINCj4gPiArDQo+ID4gK21haW50YWluZXJzOg0KPiA+ICsgIC0gTWFyYyBaeW5naWVyIDxt
+YXpAa2VybmVsLm9yZz4NCj4gDQo+IEVyci4uLiBOby4gSSBoYXZlIGFic29sdXRlbHkgbm8gZGVz
+aXJlIHRvIG1haW50YWluIHRoaXMgYmluZGluZyBvbiBpdHMgb3duLg0KPiBGZWVsIGZyZWUgdG8g
+YWRkIHlvdXJzZWxmIGFzIHRoZSBtYWludGFpbmVyIGZvciB0aGlzIGZpbGUsIGFzIEknbSBtZXJl
+bHkgdGhlDQo+IGNvbmR1aXQgZm9yIHVwZGF0ZXMgdG8gaXJxY2hpcCBEVCBiaW5kaW5ncy4NCg0K
+R290IGl0ISBUaGFua3M6LSkNCg0KQmVzdCBSZWdhcmRzLA0KSm9ha2ltIFpoYW5nDQo+IFRoYW5r
+cywNCj4gDQo+ICAgICAgICAgIE0uDQo+IC0tDQo+IEphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qg
+c21lbGxzIGZ1bm55Li4uDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
