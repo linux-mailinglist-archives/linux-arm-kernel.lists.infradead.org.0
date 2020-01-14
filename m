@@ -2,80 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B2513A969
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 13:34:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 992CF13A979
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 13:38:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IJ2nQ9F94qEiEc+n7Z3kQuw2k/2VrUvmDykK3eWIlb0=; b=dUxHJlHFynlJOK
-	QGYBq1MmWAL7zaU3nu/jWH3n3zX9QzS8zufbhd3pBrrAx5+3RpeEUQiUb9Sl9OvsxYZAqIY+/BWx0
-	iS6CqJvo9VpUXI515ifirLSJ8NN/Y+hx8Gxz2YguDbvzrqntwc1E8xn8CKPymUoksVbWPGDpQCBY1
-	rij6oad06F33a9yBECp1T4CjJPjHYdcbI0IPA/MOyns5RBzhU6VHXf96WwUDgdg8PJzu5a1/HmCY7
-	A6kvZ+tI5skHuMyo0h5tFtjoQ8ROGjHa3d/n3sW4Qg68Zu0GwyVCNn7fTVeDN5PU7kJvV5yn896Ly
-	guj0txpQZjzKy3y0XIJg==;
+	List-Owner; bh=nSlFuWfiPoRtG/OBijpd00tMq9iyIjfpqmV3d52XbLs=; b=SgJUgQd7auABYd
+	D/aUoIUnostEJKzxegBnLM+eqrUebo+l5mNGO19HiTfYwtF8EwT9ltdzg2xKtcsqK0fXvdhHW5oTB
+	IcdQn5LI6NoUM3DmFPXs+bZCCoh7b4c2S6nZOMCahhQ6NKhdKRfW1pdIsAluotm6QnyChlV1Oz6YP
+	VZiJy+ZbRxrQcaeQ5QHMmTywbv3BmXSjHLIQUquSPOgL/MIz+Iqfonp+kTMGDw0P7UGAltwHB2zaP
+	HhlOTJKsmyVk2AfjdVWkNvDuYDR1av/7Y8RTRIydVK5cxJstnOYnq/iNvCzrUULh1c0bkxvodxaeF
+	KZ7gQeCXagZRoLdm7Vqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irLP3-0008Rv-5G; Tue, 14 Jan 2020 12:34:37 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1irLSy-000256-Ls; Tue, 14 Jan 2020 12:38:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irLOG-0007xc-Cu
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 12:33:57 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00ECWbZi023934; Tue, 14 Jan 2020 13:33:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=4Zw+r/mcuIQdGav3Gfbbdj8AtLqPaIWXCkURYNpxfY4=;
- b=0Lncu1efiEmSixKOeiOFmG4NByddmwwfZngVxnuNYqWjU7aPH7j0P1iCQpdDpYsbqdNj
- je/J2b1vm99dJ5ug1ZBQUETdhFe8abMWibYKr/zXL5DPdgRpBky41NGh/p8ZzBDIRMD9
- N2Ds3/0YRoPrAYYrWS/A6ebAYp4CgjitvWEpqnUcNRg44oJz+9nxRFJH28blG8dNLjaw
- mtnXzT4KQIBYU1GfVM9ngo3dFHFQhs4mCH9RSlpJEAoz/EE8Y7/jsdEdi9S3xEWouGWp
- NQCQSvWgsV8XTCVqA/1AE4ySCYbmwM+2buLLr4v52k6EYzlclFL/rg4z8KMQut8Ttj3C aQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7jpddg4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 14 Jan 2020 13:33:39 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9A8B010003B;
- Tue, 14 Jan 2020 13:33:34 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8D7292AD9EB;
- Tue, 14 Jan 2020 13:33:34 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 14 Jan 2020 13:33:34
- +0100
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 2/2] dt-bindings: serial: Convert STM32 UART to json-schema
-Date: Tue, 14 Jan 2020 13:33:29 +0100
-Message-ID: <20200114123329.3792-3-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20200114123329.3792-1-benjamin.gaignard@st.com>
-References: <20200114123329.3792-1-benjamin.gaignard@st.com>
+ id 1irLSk-00020i-EB
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 12:38:30 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1007B24672;
+ Tue, 14 Jan 2020 12:38:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579005506;
+ bh=4qRrU6xmKvpy8FR7qF450rvS7P/WNYx1D18kyu0KUL8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=n4X6TGCnSCEYxOD71ysSAp8JqXB5gP16QX5rGahs/0uN3bqmXYSyl+JtzTnAQh8Tf
+ x6BPKCttM9fo/zNYtq5QNsdsMIX4hoCnE4RWUwWnlqYn6E2/eom8qg/1I9dkGMouZ/
+ efdkw+13BcWXIYmoiRfeHQ56lSg9kxK6OTMT5GpI=
+Date: Tue, 14 Jan 2020 12:38:19 +0000
+From: Will Deacon <will@kernel.org>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v4 07/13] iommu/arm-smmu-v3: Add support for Substream IDs
+Message-ID: <20200114123819.GC29222@willie-the-truck>
+References: <20191219163033.2608177-1-jean-philippe@linaro.org>
+ <20191219163033.2608177-8-jean-philippe@linaro.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-14_03:2020-01-13,
- 2020-01-14 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20191219163033.2608177-8-jean-philippe@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_043348_913826_F18AA8A5 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200114_043826_567321_23E2BCBE 
+X-CRM114-Status: GOOD (  24.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,177 +77,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
- linux-kernel@vger.kernel.org, erwan.leray@st.com, linux-serial@vger.kernel.org,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ eric.auger@redhat.com, linux-pci@vger.kernel.org, joro@8bytes.org,
+ sudeep.holla@arm.com, rjw@rjwysocki.net, linux-acpi@vger.kernel.org,
+ iommu@lists.linux-foundation.org, robh+dt@kernel.org,
+ jonathan.cameron@huawei.com, guohanjun@huawei.com, bhelgaas@google.com,
+ zhangfei.gao@linaro.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert STM32 UART bindings to json-schema.
+On Thu, Dec 19, 2019 at 05:30:27PM +0100, Jean-Philippe Brucker wrote:
+> At the moment, the SMMUv3 driver implements only one stage-1 or stage-2
+> page directory per device. However SMMUv3 allows more than one address
+> space for some devices, by providing multiple stage-1 page directories. In
+> addition to the Stream ID (SID), that identifies a device, we can now have
+> Substream IDs (SSID) identifying an address space. In PCIe, SID is called
+> Requester ID (RID) and SSID is called Process Address-Space ID (PASID).
+> A complete stage-1 walk goes through the context descriptor table:
+> 
+>       Stream tables       Ctx. Desc. tables       Page tables
+>         +--------+   ,------->+-------+   ,------->+-------+
+>         :        :   |        :       :   |        :       :
+>         +--------+   |        +-------+   |        +-------+
+>    SID->|  STE   |---'  SSID->|  CD   |---'  IOVA->|  PTE  |--> IPA
+>         +--------+            +-------+            +-------+
+>         :        :            :       :            :       :
+>         +--------+            +-------+            +-------+
+> 
+> Rewrite arm_smmu_write_ctx_desc() to modify context descriptor table
+> entries. To keep things simple we only implement one level of context
+> descriptor tables here, but as with stream and page tables, an SSID can
+> be split to index multiple levels of tables.
+> 
+> Tested-by: Zhangfei Gao <zhangfei.gao@linaro.org>
+> Reviewed-by: Eric Auger <eric.auger@redhat.com>
+> Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 125 +++++++++++++++++++++++++++++-------
+>  1 file changed, 102 insertions(+), 23 deletions(-)
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- .../devicetree/bindings/serial/st,stm32-uart.yaml  | 80 ++++++++++++++++++++++
- .../devicetree/bindings/serial/st,stm32-usart.txt  | 57 ---------------
- 2 files changed, 80 insertions(+), 57 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
- delete mode 100644 Documentation/devicetree/bindings/serial/st,stm32-usart.txt
+--->8
 
-diff --git a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
-new file mode 100644
-index 000000000000..238c44192d31
---- /dev/null
-+++ b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
-@@ -0,0 +1,80 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/serial/st,stm32-uart.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+maintainers:
-+  - Erwan Le Ray <erwan.leray@st.com>
-+
-+title: STMicroelectronics STM32 USART bindings
-+
-+allOf:
-+  - $ref: rs485.yaml
-+
-+properties:
-+  compatible:
-+    enum:
-+      - st,stm32-uart
-+      - st,stm32f7-uart
-+      - st,stm32h7-uart
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  label:
-+    description: label associated with this uart
-+
-+  st,hw-flow-ctrl:
-+    description: enable hardware flow control
-+    $ref: /schemas/types.yaml#/definitions/flag
-+
-+  dmas:
-+    minItems: 1
-+    maxItems: 2
-+
-+  dma-names:
-+    items:
-+      enum: [ rx, tx ]
-+    minItems: 1
-+    maxItems: 2
-+
-+  wakeup-source: true
-+
-+  rs485-rts-delay: true
-+  rs485-rts-active-low: true
-+  linux,rs485-enabled-at-boot-time: true
-+  rs485-rx-during-tx: true
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    usart1: serial@40011000 {
-+      compatible = "st,stm32-uart";
-+      reg = <0x40011000 0x400>;
-+      interrupts = <37>;
-+      clocks = <&rcc 0 164>;
-+      dmas = <&dma2 2 4 0x414 0x0>,
-+             <&dma2 7 4 0x414 0x0>;
-+      dma-names = "rx", "tx";
-+      rs485-rts-active-low;
-+    };
-+
-+...
-diff --git a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
-deleted file mode 100644
-index 8620f7fcbd50..000000000000
---- a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
-+++ /dev/null
-@@ -1,57 +0,0 @@
--* STMicroelectronics STM32 USART
--
--Required properties:
--- compatible: can be either:
--  - "st,stm32-uart",
--  - "st,stm32f7-uart",
--  - "st,stm32h7-uart".
--  depending is compatible with stm32(f4), stm32f7 or stm32h7.
--- reg: The address and length of the peripheral registers space
--- interrupts:
--  - The interrupt line for the USART instance,
--  - An optional wake-up interrupt.
--- clocks: The input clock of the USART instance
--
--Optional properties:
--- resets: Must contain the phandle to the reset controller.
--- pinctrl: The reference on the pins configuration
--- st,hw-flow-ctrl: bool flag to enable hardware flow control.
--- rs485-rts-delay, rs485-rx-during-tx, rs485-rts-active-low,
--  linux,rs485-enabled-at-boot-time: see rs485.txt.
--- dmas: phandle(s) to DMA controller node(s). Refer to stm32-dma.txt
--- dma-names: "rx" and/or "tx"
--- wakeup-source: bool flag to indicate this device has wakeup capabilities
--- interrupt-names, if optional wake-up interrupt is used, should be:
--  - "event": the name for the interrupt line of the USART instance
--  - "wakeup" the name for the optional wake-up interrupt
--
--
--Examples:
--usart4: serial@40004c00 {
--	compatible = "st,stm32-uart";
--	reg = <0x40004c00 0x400>;
--	interrupts = <52>;
--	clocks = <&clk_pclk1>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_usart4>;
--};
--
--usart2: serial@40004400 {
--	compatible = "st,stm32-uart";
--	reg = <0x40004400 0x400>;
--	interrupts = <38>;
--	clocks = <&clk_pclk1>;
--	st,hw-flow-ctrl;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_usart2 &pinctrl_usart2_rtscts>;
--};
--
--usart1: serial@40011000 {
--	compatible = "st,stm32-uart";
--	reg = <0x40011000 0x400>;
--	interrupts = <37>;
--	clocks = <&rcc 0 164>;
--	dmas = <&dma2 2 4 0x414 0x0>,
--	       <&dma2 7 4 0x414 0x0>;
--	dma-names = "rx", "tx";
--};
--- 
-2.15.0
+> @@ -1456,6 +1472,33 @@ static int arm_smmu_cmdq_issue_sync(struct arm_smmu_device *smmu)
+>  }
+>  
+>  /* Context descriptor manipulation functions */
+> +static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
+> +			     int ssid, bool leaf)
+> +{
+> +	size_t i;
+> +	unsigned long flags;
+> +	struct arm_smmu_master *master;
+> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> +	struct arm_smmu_cmdq_ent cmd = {
+> +		.opcode	= CMDQ_OP_CFGI_CD,
+> +		.cfgi	= {
+> +			.ssid	= ssid,
+> +			.leaf	= leaf,
+> +		},
+> +	};
+> +
+> +	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
+> +	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
+> +		for (i = 0; i < master->num_sids; i++) {
+> +			cmd.cfgi.sid = master->sids[i];
+> +			arm_smmu_cmdq_issue_cmd(smmu, &cmd);
+> +		}
+> +	}
+> +	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+> +
+> +	arm_smmu_cmdq_issue_sync(smmu);
 
+Can you send a follow-up patch converting this to batch submission, please?
+
+> +}
+> +
+>  static int arm_smmu_alloc_cd_leaf_table(struct arm_smmu_device *smmu,
+>  					struct arm_smmu_cd_table *table,
+>  					size_t num_entries)
+> @@ -1498,34 +1541,65 @@ static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
+>  	return val;
+>  }
+>  
+> -static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
+> -				    struct arm_smmu_s1_cfg *cfg)
+> +static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+> +				   int ssid, struct arm_smmu_ctx_desc *cd)
+>  {
+> -	u64 val;
+> -	__le64 *cdptr = cfg->table.ptr;
+> -
+>  	/*
+> -	 * We don't need to issue any invalidation here, as we'll invalidate
+> -	 * the STE when installing the new entry anyway.
+> +	 * This function handles the following cases:
+> +	 *
+> +	 * (1) Install primary CD, for normal DMA traffic (SSID = 0).
+> +	 * (2) Install a secondary CD, for SID+SSID traffic.
+> +	 * (3) Update ASID of a CD. Atomically write the first 64 bits of the
+> +	 *     CD, then invalidate the old entry and mappings.
+> +	 * (4) Remove a secondary CD.
+>  	 */
+> -	val = arm_smmu_cpu_tcr_to_cd(cfg->cd.tcr) |
+> -#ifdef __BIG_ENDIAN
+> -	      CTXDESC_CD_0_ENDI |
+> -#endif
+> -	      CTXDESC_CD_0_R | CTXDESC_CD_0_A | CTXDESC_CD_0_ASET |
+> -	      CTXDESC_CD_0_AA64 | FIELD_PREP(CTXDESC_CD_0_ASID, cfg->cd.asid) |
+> -	      CTXDESC_CD_0_V;
+> +	u64 val;
+> +	bool cd_live;
+> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> +	__le64 *cdptr = smmu_domain->s1_cfg.table.ptr + ssid *
+> +			CTXDESC_CD_DWORDS;
+>  
+> -	/* STALL_MODEL==0b10 && CD.S==0 is ILLEGAL */
+> -	if (smmu->features & ARM_SMMU_FEAT_STALL_FORCE)
+> -		val |= CTXDESC_CD_0_S;
+> +	val = le64_to_cpu(cdptr[0]);
+> +	cd_live = !!(val & CTXDESC_CD_0_V);
+>  
+> -	cdptr[0] = cpu_to_le64(val);
+> +	if (!cd) { /* (4) */
+> +		val = 0;
+> +	} else if (cd_live) { /* (3) */
+> +		val &= ~CTXDESC_CD_0_ASID;
+> +		val |= FIELD_PREP(CTXDESC_CD_0_ASID, cd->asid);
+> +		/*
+> +		 * Until CD+TLB invalidation, both ASIDs may be used for tagging
+> +		 * this substream's traffic
+> +		 */
+
+I don't think you need to change anything here, but I do find it a little
+scary that we can modify live CDs like this. However, given that the
+hardware is permitted to cache the structures regardless of validity, it
+appears to be the only option. Terrifying!
+
+> +	} else { /* (1) and (2) */
+> +		cdptr[1] = cpu_to_le64(cd->ttbr & CTXDESC_CD_1_TTB0_MASK);
+
+Can you use FIELD_PREP here too?
+
+> +		cdptr[2] = 0;
+> +		cdptr[3] = cpu_to_le64(cd->mair);
+> +
+> +		/*
+> +		 * STE is live, and the SMMU might read dwords of this CD in any
+> +		 * order. Ensure that it observes valid values before reading
+> +		 * V=1.
+> +		 */
+> +		arm_smmu_sync_cd(smmu_domain, ssid, true);
+>  
+> -	val = cfg->cd.ttbr & CTXDESC_CD_1_TTB0_MASK;
+> -	cdptr[1] = cpu_to_le64(val);
+> +		val = arm_smmu_cpu_tcr_to_cd(cd->tcr) |
+> +#ifdef __BIG_ENDIAN
+> +			CTXDESC_CD_0_ENDI |
+> +#endif
+> +			CTXDESC_CD_0_R | CTXDESC_CD_0_A | CTXDESC_CD_0_ASET |
+> +			CTXDESC_CD_0_AA64 |
+> +			FIELD_PREP(CTXDESC_CD_0_ASID, cd->asid) |
+> +			CTXDESC_CD_0_V;
+>  
+> -	cdptr[3] = cpu_to_le64(cfg->cd.mair);
+> +		/* STALL_MODEL==0b10 && CD.S==0 is ILLEGAL */
+> +		if (smmu->features & ARM_SMMU_FEAT_STALL_FORCE)
+> +			val |= CTXDESC_CD_0_S;
+> +	}
+> +
+> +	WRITE_ONCE(cdptr[0], cpu_to_le64(val));
+
+Can you add a comment here citing 3.21.3 ("Configuration structures and
+configuration invalidation completion") please? Specifically, the note that
+states:
+
+  | The size of single-copy atomic reads made by the SMMU is IMPLEMENTATION
+  | DEFINED but must be at least 64 bits.
+
+Because that's really crucial to the WRITE_ONCE() above!
+
+Shouldn't we also do the same thing for the STE side of things? I think so,
+and you can just comment of them with the quote and cite the comment from
+the other callsite.
+
+Thanks,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
