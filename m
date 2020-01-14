@@ -2,149 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E11C13B0BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:20:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CDD713B0E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:29:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6xZfxJDGXLMg4Wd9wY8MBmFHBo4oPC++3YZM8NIlBNI=; b=Qo2QPC6Ptz+xyl
-	gPmCvKshFvEQiIQOErJ5HjP0jWp14e1FiBYCxYH9cfhLm84Xbepz2Uqhutpq2n588JROibz6sv88x
-	VMtsQ4Cm5e2WrmjBJNGaZPSrsV51OIhsQeguxjMZPjoUQBn6BQjkkMI7UAlf93hutY6617aZ8TnpZ
-	HlMt1NQHWU64y1sBL22zThY3woudZoI1KmjHfApuTyF4FcuEqkXFeYcIwzo0Sq/h4LDQkUFcx/hUi
-	+NV6K4aCPT5N/ZIQYwTBEDkd7JYDC3Nofx8F59gr/b7ofAEOaGaxqKMv8nHbrAWl6kzXSRSvjOKKZ
-	cGFH6vlm/3onNflqC1+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=je7AXfYXJouE5YWZPxyIlAXG9zTXIexy+DNStZklWhs=; b=JfrYN7Wu4I3C6wQF1D4jdfsof
+	U1w7o/HzXUlXZL1CGkrczcBbsLCjFflCRWcbCwpgnyraizoxS2L4X/H6+hfQzHGy8nnlut96foBxr
+	54v1RKOWkhB54RReslwE79dA9B5prKPK9B7tloNHKFw99opmCx3yC7s8kSQKuLePsSojMEygho32G
+	g2lSswEmDZZ7DNbvve5cafMDpP2Z7Vmw90gfHblPEAlTcLTCEQeBJN8OlAqsMmuKaBomvWDbpp7VF
+	GXBPSwn4M0M0k2cA84KWcKduzLle/VaBHJNadaKzDkUPLS6w+/mpIrjdQuTlM67fNgKwmAoH0xQWZ
+	N0qR/IqSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irPrx-0001hP-8V; Tue, 14 Jan 2020 17:20:45 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1irQ06-0004VD-5c; Tue, 14 Jan 2020 17:29:10 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irPri-0001g9-Vb; Tue, 14 Jan 2020 17:20:35 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g6so5499103plt.2;
- Tue, 14 Jan 2020 09:20:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=4gC9u15Or/R4P4AfQXvTsOMcBdVUB5Pw1dPQDI3g/Tc=;
- b=CK2QdrcuUjn8jOYbXQG/LgxR/wVZ5Mof6hhEdvCn0b/s8SM1H+7iXyrOxbLaWbfzyi
- EWohFAkxaJJ+7d/ihHh9XgRlYCr2Jgisr6RU1pvqJZfEVDYooZUH5JI120FBJCRaamma
- 3FHOVdvYgd6YRSFQSi+Xm9R3dMnLk6Di6YlOMLATP6q0JB2Z8pi9oKF8r7vxyuQ71AFK
- mFzD0ikA9D+rX1Kw2kRgAF2vMBX6aPrlnJJY7OUyT0sGnftfL7wIFNQ96SWK/vN2Pq/C
- z3HaQUf5tW5KfJL058eEDyjSS/whufOHDPTX6zZadbyeniZ8x+GpGXd9YyHcQtcTWL7D
- 2OLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=4gC9u15Or/R4P4AfQXvTsOMcBdVUB5Pw1dPQDI3g/Tc=;
- b=E2J3guEcY33IQhgK0pbbV6E+gudrs2kAi5IWW6XinGiDjt5dW+vvM3sTeewK1J+/M7
- CL4EnwtV+mGDl+y415qwAJwTZ339Kf8crQq7IWrYCcXW/Uf2Xy7Wj/Op6e8Z+oAr8bDf
- Ztj5NoqJOtzuAUl4OPowfvkCPG4jVB+FQJIvGtVVbJCB6JLCd/j/3L94K7KDCas5AG+l
- SRkDejQuABfLLwBJDf7dbnSc39BfJCOORiMiZ87XROjVAz5cuZk70SdBUdOgqOCPsL4G
- CnWwkochOg1TnHzy86uQeKXNNGyRji0yESjJ9rvKlmmo+HghwJP6mm8d2TClWaEKyD05
- E+vA==
-X-Gm-Message-State: APjAAAW3ToWs4+NUCy6xmE4fVRNGKUmnzahz2mXDbiEXYbjOlEmEdZ6f
- TY1CQfOoOFJo/qag6a2AUqhsgrK3
-X-Google-Smtp-Source: APXvYqyQkPq8AvurkoagynnJ/SeNwUN3mUwvt+FdR1fFaD6LSdboNJH/b1l+Bvwj+GUp7fHM7vw/+g==
-X-Received: by 2002:a17:90a:109:: with SMTP id b9mr9730712pjb.77.1579022430146; 
- Tue, 14 Jan 2020 09:20:30 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id
- x21sm18738281pfn.164.2020.01.14.09.20.29
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Jan 2020 09:20:29 -0800 (PST)
-Subject: Re: [PATCH] arm64: defconfig: Enable Boradcom's GENET Ethernet
- controller
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org
-References: <20200114164900.27483-1-nsaenzjulienne@suse.de>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <a10b3e49-9c4f-5124-9e25-ef1482681287@gmail.com>
-Date: Tue, 14 Jan 2020 09:20:27 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1irPzt-0004Uw-OR
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 17:29:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=i70L8DNui8VPmavm+tZ8ivBeZkZeG8PnKWDI53xqtSM=; b=t1Oe+sLzVhteGVH2G8L+ZuR9d
+ 9utrcXUyXrsEEQ/BJ6ZWl8JUkosr9QdU1c25uUJ79QZPFWw4dH0VxlptSVkRIH+eNsz7uWLaowKzz
+ bgZPklFW6glxzoPk2PfOWBAv2D8dgvyuOKSrZSrBaS7HS/Y4X20Ab+mqLujGICknxGT2E=;
+Received: from fw-tnat-cam7.arm.com ([217.140.106.55]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1irPzh-0001qO-Tk; Tue, 14 Jan 2020 17:28:45 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 97845D01965; Tue, 14 Jan 2020 17:28:45 +0000 (GMT)
+Date: Tue, 14 Jan 2020 17:28:45 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v4 02/12] ELF: Add ELF program property parsing support
+Message-ID: <20200114172845.GF3897@sirena.org.uk>
+References: <20191211154206.46260-1-broonie@kernel.org>
+ <20191211154206.46260-3-broonie@kernel.org>
+ <20200114163402.GH30444@arrakis.emea.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200114164900.27483-1-nsaenzjulienne@suse.de>
-Content-Language: en-US
+In-Reply-To: <20200114163402.GH30444@arrakis.emea.arm.com>
+X-Cookie: Programming is an unnatural act.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_092031_020984_308A2095 
-X-CRM114-Status: GOOD (  15.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200114_092857_792438_3EDD19B8 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,44 +82,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: multipart/mixed; boundary="===============3176572017771585041=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/14/20 8:48 AM, Nicolas Saenz Julienne wrote:
-> Currently used on the Raspberry Pi 4.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-Typo in the subject: s/Boradcom/Broadcom/ other than that, do you want
-me to pick that up now for 5.6?
-
-> ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 38b4f998e24a..245d52a4d009 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -256,6 +256,7 @@ CONFIG_VIRTIO_NET=y
->  CONFIG_AMD_XGBE=y
->  CONFIG_NET_XGENE=y
->  CONFIG_ATL1C=m
-> +CONFIG_BCMGENET=m
->  CONFIG_BNX2X=m
->  CONFIG_MACB=y
->  CONFIG_THUNDER_NIC_PF=y
-> 
+--===============3176572017771585041==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="656hIAUFSU7Oh46B"
+Content-Disposition: inline
 
 
--- 
-Florian
+--656hIAUFSU7Oh46B
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Jan 14, 2020 at 04:34:03PM +0000, Catalin Marinas wrote:
+
+> The logic looks fine to me but I'm not sure the choice of returning -EIO
+> is suitable in most cases. I think apart from kernel_read() returning an
+> error, there rest look like malformed ELF notes, so rather -ENOEXEC.
+
+Sure, I don't have strong opinions either way.
+
+--656hIAUFSU7Oh46B
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4d+koACgkQJNaLcl1U
+h9BzOAf/ZW4b8JHQ9qlWZwLXs7dElEQgCxM18zekE7pOdxU3oF7g7qLspavQhRB9
+6VwtDC7KE1ohuOMkwPE5HFSzlOW5WyGKodH8581UTigsQ3vp5Y4OKdIwNYCmvI0O
+OaPHa1Us+qy5w2fwhYFGQpJaKBAo52VFWFb1eS65cv/A1RVktrwfF0/5CUKQlOvT
+eUsZAkU1zgYf5BTaFmLlhrKlfbfOZE7U3nSMfRpM9k0uHS8TkV4gJY8Krs2/IKWG
+1ePbKRpoEnul7u915WZxspdgU8UI556Y1gmiJEO1RyMOWH56mWwEgHrQc/8MxLpG
+AoSckdNGC+G7zG4pARh7eWJDwYq3GA==
+=w1Xx
+-----END PGP SIGNATURE-----
+
+--656hIAUFSU7Oh46B--
+
+
+--===============3176572017771585041==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3176572017771585041==--
+
