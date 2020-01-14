@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C66613A44D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:51:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 808EB13A453
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:52:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O804gTcXtn29H3euWaPBwAa4P+vxTu5FbQ1T6Q5Xoeg=; b=i2nGblaJGGkrRy
-	V0fT5U9xc6NHUz+2G64iuJWIux2LEiOg1HfX/SfAUx3lv9AYeO0QyOHidS0NI1Z/tQg0Nt/yg1l0k
-	drl6t6CbwB1QWSvQmi7kwip0iSX/AJ9PXw7zIn+wCmgh9WkRsiEAtVEs6I94kJNXvsiCIFSPfgp9u
-	xKyTRqAp35LM2CCXs8vNV7A0EcXoyN84ZaMAhMyM6l8CQL9wnJmhzt9dgv5UHU2Ig27XhYEDg+RBP
-	NwJ77U9Fv/nKvIowpPczykGBn0sPFQ+7Qktd0auNQL2Q8+VzosbxKNCptsgtKltJIAisRhkXG1kdz
-	+rC7xTnPd8I/dJwGJTvQ==;
+	List-Owner; bh=03Z0bVxpaPanrzJhnIFD1SI4i5+d3lHvFlaB5Xxfhic=; b=eL/8RJQtnKI1Oq
+	WUzwm6R2KcNSsGN+6H8OCrTRSX/3Sjz333rmgNj+pU43GhznW3n9Vsz2WPGMzmYnK4q2S3yNB9AM7
+	Su3QXh1d/AfRiVwu04x29EhFZC9pchweomvkv3zdtMwKaCnRBekxf2RApYO3G7m2j7WSVf0gEAGnk
+	4hkOXDN7itfM4cIQnql9kbROp8BN6zO88oo3af6PTN5fIFmLyWJ0ZpyAzOg7DJH6eLzDnB+33QzgO
+	zaQl01lF57l0LG9jpMdU8YHZBYtoKrO8yqkJ8XnGmrEPA7JtahtrQXQzl7M6N9EwF9RpdokXju2CX
+	ebmqwBjHY4sk3qzjKuEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irIrI-0002yZ-Tx; Tue, 14 Jan 2020 09:51:36 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1irIry-0003eh-8y; Tue, 14 Jan 2020 09:52:18 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIr2-0002rS-5V; Tue, 14 Jan 2020 09:51:24 +0000
+ id 1irIrg-0003ah-19; Tue, 14 Jan 2020 09:52:04 +0000
 X-Originating-IP: 90.65.102.129
 Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
  [90.65.102.129])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 531832000F;
- Tue, 14 Jan 2020 09:51:16 +0000 (UTC)
-Date: Tue, 14 Jan 2020 10:51:16 +0100
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 61F64C0009;
+ Tue, 14 Jan 2020 09:51:55 +0000 (UTC)
+Date: Tue, 14 Jan 2020 10:51:55 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 03/17] dt-bindings: atmel-can: add microchip,sam9x60-can
-Message-ID: <20200114095116.GD3137@piout.net>
+Subject: Re: [PATCH v2 05/17] dt-bindings: atmel-isi: add microchip,sam9x60-isi
+Message-ID: <20200114095155.GE3137@piout.net>
 References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
- <1578673089-3484-4-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578673089-3484-4-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_015120_381624_267EB3DA 
-X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-CacheID: sfid-20200114_015200_221400_EBC0B20E 
+X-CRM114-Status: UNSURE (   7.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -48,7 +48,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,14 +78,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/01/2020 18:17:55+0200, Claudiu Beznea wrote:
-> Add microchip,sam9x60-can to DT bindings documentation.
+On 10/01/2020 18:17:57+0200, Claudiu Beznea wrote:
+> Add microchip,sam9x60-isi to DT bindings documentation.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  Documentation/devicetree/bindings/net/can/atmel-can.txt | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
+>  Documentation/devicetree/bindings/media/atmel-isi.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 Applied, thanks.
 
 -- 
