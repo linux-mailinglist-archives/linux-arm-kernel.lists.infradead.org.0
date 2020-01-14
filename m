@@ -2,110 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 035C413B1AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:08:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1D9E13B1C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:12:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Rfx2OnoSw6yxFNP2SChgUtdzET2bTxCG/f2gKvCrQKY=; b=U/CdJGW0d1420zxev44BcoW0n
-	VZYZEAc8SzYtAYPYl2Ub/SwOfkOBvvPjPwn5CZjj4e+beZH13HUC8uXa0qr+U1dogeMoxkQjf+SZu
-	xqej0gNFnEpjOjn49bhPddUCd6TuYIX30DswTCXhRvBFLBa6YGl9iqt6TOup+DIFnkENifVfaDadH
-	GMP6bPaKrbFVV3aDXR42rT2CixtizC4APw8YMsm3q9ELpzADx5r89lPsE9q0C5krK/rjgQ0W7gmZO
-	JimEEGuwWXa5AOCc/vFcbhSj63EN9bcuK4Y7415MeX99L6Mtp0g1ur80KhzZLuA2yEbPvsgFNatv0
-	pYDnkCV1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XXxoMA6DJR7e/VrPZcZs+/Fli8QXYsehfDDaw5BaCCw=; b=a/s8DV0pUIVRYu
+	xX1S74FVQeO5RO2M6/DZkydGTT9FnNGZj0MtBpBLUbSVC1dwIZ2eK9ELEE2n4pt7hjPtD7zTufDfJ
+	7NiXqC//9JInjORNDPjWgMNunRO0NsfhYT3VnIO65voM5Jc8OlxSJn9KBG5KqJSaUp7rqvkzkv0gt
+	liGyPZhHJi/aiHdpKpZK61b05gmZFwQHNLhMS34pQDc4rffMKXx8iGOXNpedv3zYuASmWIBB0pVJi
+	+MVLVF9yX5jzBs+qfoX8dPYkX0hl94W3vXSAOCKnx7QcSsjUzsISGCU8yuX4BIJ4vkwdMmXauNqhV
+	xKWGeLHi/h5PiIfEHe1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irQc7-0006mv-5v; Tue, 14 Jan 2020 18:08:27 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irQbw-0006mN-La
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 18:08:20 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00EI35PI135086;
- Tue, 14 Jan 2020 18:08:10 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2019-08-05;
- bh=8huRquYJuRzktEGhLgBn3jch4GfJtH2XqGhnCkGfssw=;
- b=sjLkjcigTAvd2hbqEY+IHT16I8X12Wq7ECnPesHsmDHbQRezbEyd9oHjd08M/zLLFDqg
- hi5VDwFKAjeUYuj6e9YguvE9eYYGMhd7JUEGxXtzCoeGG2UPDW45I1ETz1lbj3/gNANV
- Xp5je2uSnPrmvxD4z+ai8OmRR+lKMfa+tYmxPbDXZRUMkHfu4Rz4DhtDAN4/Dg+j45i+
- qiuKZ5lWW/B/mLTXmxIeVtvqai0vf5bXwtWmBIUAhur/m2p/M6LrNJqmhu1Nmf1v6wVj
- 0cKchYbG4CUGNeezEAdFtssB2fntWkimymkl1m4GvWhUaNeb4hbHHWBr69gRDVEwIWow pg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 2xf73tqk92-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 14 Jan 2020 18:08:10 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00EI4KsI061308;
- Tue, 14 Jan 2020 18:06:10 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2xh2tp4n1b-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 14 Jan 2020 18:06:09 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00EI688F009660;
- Tue, 14 Jan 2020 18:06:09 GMT
-Received: from [10.209.227.41] (/10.209.227.41)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 14 Jan 2020 10:06:08 -0800
-Subject: Re: [PATCH v8 02/18] soc: ti: k3: add navss ringacc driver
-To: Sekhar Nori <nsekhar@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- vkoul@kernel.org, robh+dt@kernel.org, nm@ti.com, ssantosh@kernel.org
-References: <20191223110458.30766-1-peter.ujfalusi@ti.com>
- <20191223110458.30766-3-peter.ujfalusi@ti.com>
- <6d70686b-a94e-18d1-7b33-ff9df7176089@ti.com>
- <900c2f21-22bf-47f9-5c3c-0a3d95a5d645@oracle.com>
- <ea6a87ae-b978-a786-27eb-db99483a82d9@ti.com>
- <f0230e88-bd9b-cd6d-433d-06d507cafcbd@ti.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <9177657a-71c7-7bd0-a981-3ef1f736d4dc@oracle.com>
-Date: Tue, 14 Jan 2020 10:06:06 -0800
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.2
+	id 1irQfn-0000T1-DQ; Tue, 14 Jan 2020 18:12:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irQfd-0000HP-18; Tue, 14 Jan 2020 18:12:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B59841396;
+ Tue, 14 Jan 2020 10:12:03 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8509B3F68E;
+ Tue, 14 Jan 2020 10:12:01 -0800 (PST)
+Date: Tue, 14 Jan 2020 18:11:59 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, olof@lixom.net
+Subject: Re: [PATCH v5 2/6] ARM: dts: bcm2711: Enable PCIe controller
+Message-ID: <20200114181159.GB11177@e121166-lin.cambridge.arm.com>
+References: <20191216110113.30436-1-nsaenzjulienne@suse.de>
+ <20191216110113.30436-3-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
-In-Reply-To: <f0230e88-bd9b-cd6d-433d-06d507cafcbd@ti.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9499
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=2
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001140143
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9499
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=2 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001140143
+Content-Disposition: inline
+In-Reply-To: <20191216110113.30436-3-nsaenzjulienne@suse.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_100816_797554_A3DEA777 
-X-CRM114-Status: GOOD (  24.73  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200114_101205_124201_C584FD33 
+X-CRM114-Status: GOOD (  17.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,131 +63,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, vigneshr@ti.com,
- lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
- t-kristo@ti.com, tony@atomide.com, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, frowand.list@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ mbrugger@suse.com, maz@kernel.org, f.fainelli@gmail.com, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ wahrenst@gmx.net, james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ andrew.murray@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/14/20 12:11 AM, Sekhar Nori wrote:
-> On 14/01/20 12:28 PM, Peter Ujfalusi wrote:
->> Hi Santosh,
->>
->> On 13/01/2020 23.28, santosh.shilimkar@oracle.com wrote:
->>>
->>>
->>> On 12/23/19 3:38 AM, Peter Ujfalusi wrote:
->>>> Hi Santosh,
->>>>
->>>> On 23/12/2019 13.04, Peter Ujfalusi wrote:
->>>>> From: Grygorii Strashko <grygorii.strashko@ti.com>
->>>>>
->>>>> The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
->>>>> enable straightforward passing of work between a producer and a
->>>>> consumer.
->>>>> There is one RINGACC module per NAVSS on TI AM65x SoCs.
->>>>>
->>>>> The RINGACC converts constant-address read and write accesses to
->>>>> equivalent
->>>>> read or write accesses to a circular data structure in memory. The
->>>>> RINGACC
->>>>> eliminates the need for each DMA controller which needs to access ring
->>>>> elements from having to know the current state of the ring (base
->>>>> address,
->>>>> current offset). The DMA controller performs a read or write access to a
->>>>> specific address range (which maps to the source interface on the
->>>>> RINGACC)
->>>>> and the RINGACC replaces the address for the transaction with a new
->>>>> address
->>>>> which corresponds to the head or tail element of the ring (head for
->>>>> reads,
->>>>> tail for writes). Since the RINGACC maintains the state, multiple DMA
->>>>> controllers or channels are allowed to coherently share the same
->>>>> rings as
->>>>> applicable. The RINGACC is able to place data which is destined towards
->>>>> software into cached memory directly.
->>>>>
->>>>> Supported ring modes:
->>>>> - Ring Mode
->>>>> - Messaging Mode
->>>>> - Credentials Mode
->>>>> - Queue Manager Mode
->>>>>
->>>>> TI-SCI integration:
->>>>>
->>>>> Texas Instrument's System Control Interface (TI-SCI) Message Protocol
->>>>> now
->>>>> has control over Ringacc module resources management (RM) and Rings
->>>>> configuration.
->>>>>
->>>>> The corresponding support of TI-SCI Ringacc module RM protocol
->>>>> introduced as option through DT parameters:
->>>>> - ti,sci: phandle on TI-SCI firmware controller DT node
->>>>> - ti,sci-dev-id: TI-SCI device identifier as per TI-SCI firmware spec
->>>>>
->>>>> if both parameters present - Ringacc driver will configure/free/reset
->>>>> Rings
->>>>> using TI-SCI Message Ringacc RM Protocol.
->>>>>
->>>>> The Ringacc driver manages Rings allocation by itself now and requests
->>>>> TI-SCI firmware to allocate and configure specific Rings only. It's done
->>>>> this way because, Linux driver implements two stage Rings allocation and
->>>>> configuration (allocate ring and configure ring) while TI-SCI Message
->>>>> Protocol supports only one combined operation (allocate+configure).
->>>>>
->>>>> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
->>>>> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
->>>>> Reviewed-by: Tero Kristo <t-kristo@ti.com>
->>>>> Tested-by: Keerthy <j-keerthy@ti.com>
->>>>
->>>> Can you please giver your Acked-by for the ringacc patches if they are
->>>> still OK from your point of view as you had offered to take them before
->>>> I got comments from Lokesh.
->>>>
->>> Sure. But you really need to split the series so that dma engine and
->>> soc driver patches can be applied independently.
->>
->> The ringacc is a build and runtime dependency for the DMA. I have hoped
->> that all of them can go via DMAengine (hence asking for your ACK on the
->> drivers/soc/ti/ patches) for 5.6.
->>
->>> Can you please do that?
->>
->> This late in the merge window that would really mean that I will miss
->> another release for the KS3 DMA...
->> I can live with that if you can pick the ringacc for 5.6 and if Vinod
->> takes the DMAengine core changes as well.
->>
->> That would leave only the DMA drivers for 5.7 and we can also queue up
->> changes for 5.7 which depends on the DMAengine API (ASoC changes, UART,
->> sa2ul, etc).
->>
->> If they go independently and nothing makes it to 5.6 then 5.8 is the
->> realistic target for the DMA support for the KS3 family of devices...
+On Mon, Dec 16, 2019 at 12:01:08PM +0100, Nicolas Saenz Julienne wrote:
+> This enables bcm2711's PCIe bus, which is hardwired to a VIA
+> Technologies XHCI USB 3.0 controller.
 > 
-> Thats too many kernel versions to get this important piece in.
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > 
-> Santosh, if you do not have anything else queued up that clashes with
-> this, can the whole series be picked up by Vinod with your ack on the
-> drivers/soc/ti/ pieces?
+> ---
 > 
-I would prefer driver patches to go via driver tree.
+> Changes since v4:
+>   - Rebase commit taking into account genet support series
+> 
+> Changes since v3:
+>   - Remove unwarranted comment
+> 
+> Changes since v2:
+>   - Remove unused interrupt-map
+>   - correct dma-ranges to it's full size, non power of 2 bus DMA
+>     constraints now supported in linux-next[1]
+>   - add device_type
+>   - rename alias from pcie_0 to pcie0
+> 
+> Changes since v1:
+>   - remove linux,pci-domain
+> 
+> [1] https://lkml.org/lkml/2019/11/21/235
+> 
+>  arch/arm/boot/dts/bcm2711.dtsi | 31 ++++++++++++++++++++++++++++++-
+>  1 file changed, 30 insertions(+), 1 deletion(-)
 
-> Vinod could also perhaps setup an immutable branch based on v5.5-rc1
-> with just the drivers/soc/ti parts applied so you can merge that branch
-> in case you end up having to send up anything that conflicts.
-> 
-As suggested on other email to Peter, these DMA engine related patches
-should be queued up since they don't have any dependency. Based on
-the status of that patchset, will take care of pulling in the driver
-patches either for this merge window or early part of next merge window.
+Olof as we discussed previously, I will not merge this dts change and
+drop it from the series - Nicolas should redirect it to arm-soc, please
+let me know if my understanding is correct.
 
-Regards,
-Santosh
+Thanks,
+Lorenzo
+
+> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+> index e2f6ffb00aa9..b56388ce1216 100644
+> --- a/arch/arm/boot/dts/bcm2711.dtsi
+> +++ b/arch/arm/boot/dts/bcm2711.dtsi
+> @@ -331,7 +331,36 @@ scb {
+>  		#address-cells = <2>;
+>  		#size-cells = <1>;
+>  
+> -		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>;
+> +		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>,
+> +			 <0x6 0x00000000  0x6 0x00000000  0x40000000>;
+> +
+> +		pcie0: pcie@7d500000 {
+> +			compatible = "brcm,bcm2711-pcie";
+> +			reg = <0x0 0x7d500000 0x9310>;
+> +			device_type = "pci";
+> +			#address-cells = <3>;
+> +			#interrupt-cells = <1>;
+> +			#size-cells = <2>;
+> +			interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "pcie", "msi";
+> +			interrupt-map-mask = <0x0 0x0 0x0 0x7>;
+> +			interrupt-map = <0 0 0 1 &gicv2 GIC_SPI 143
+> +							IRQ_TYPE_LEVEL_HIGH>;
+> +			msi-controller;
+> +			msi-parent = <&pcie0>;
+> +
+> +			ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000
+> +				  0x0 0x04000000>;
+> +			/*
+> +			 * The wrapper around the PCIe block has a bug
+> +			 * preventing it from accessing beyond the first 3GB of
+> +			 * memory.
+> +			 */
+> +			dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000
+> +				      0x0 0xc0000000>;
+> +			brcm,enable-ssc;
+> +		};
+>  
+>  		genet: ethernet@7d580000 {
+>  			compatible = "brcm,bcm2711-genet-v5";
+> -- 
+> 2.24.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
