@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1616F13AD74
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 16:20:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E00B13AD77
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 16:20:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5YG852CQWb/uKMCkx5XnsVDkshAixtBTa0PE5sLoU8E=; b=if6XtvClE0sMe6
-	VqwQX1Yn3bJ3nzWAzaVgLvCUvgowjxVzKy06po489DG/aUWXWiwhtKVPSHvgoYTlNv8M6y2Y/cxg6
-	uHg3dF2cAsJ4BrxIGSwtJWLLs4wod4T+JyTGzVrYhIgN+RSLLR4mE5OzIDL2TNUoo4wvs+mnOgi3F
-	ErL2N4gApsMWqxoG6Gob0o3KiwRxLGe36enrMZfrF7KbjE6UyGQeLWnBBiqKa6RI9BLbJ7jDWtYm+
-	DIvcN/4+1Xh/70wr5A0DcXVmHsrvqK6VuZtGlyNIIQDk7SLIYo9Wr0boYZ+UEVWw3F8gsMMA5RSsz
-	7IH82nUyPArEWH3w1IGQ==;
+	List-Owner; bh=64B/nWpzqQt3BTDq8yffIIRekL7kwYBWyzHe0p6mDRc=; b=fN8Tus37eYC8UY
+	uIU91oSzUgxEx+szxGQKpWd0wK6+wmih8RsgCl2gkO/+hnKDEOqhJdMKLI0YsUmG18BsNVv5JwmJv
+	44KNcb8plOUxT63VYUB5cZwwUqAUZ/+0zVCIS3qcdFVEEpVaHx+P3Zn0EDb5CQx8dhqAjhxOJIv4j
+	7u5a+SSLOiXGoHvx1yJZwgIjdpkvkJ58nndzPHHaSaixhyDgi81QrVVRBFQAqy1X6H98Q2J9ksELl
+	NtoSKSFZV2T9P99nawg/Dm70Qf6PFnhSgZUHnpLvdM1J4wv/wWJPgK4SBLTMrV9+Qr9DqjuL8rjeH
+	dSLjQnBJU6jg87hqDk3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irNz5-0002Wj-PC; Tue, 14 Jan 2020 15:19:59 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1irNzO-0002nM-H7; Tue, 14 Jan 2020 15:20:18 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irNyZ-00028O-4m
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 15:19:31 +0000
-Received: by mail-pg1-x542.google.com with SMTP id z124so6515735pgb.13
+ id 1irNya-00028e-Kr
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 15:19:34 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p14so6731232pfn.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 07:19:27 -0800 (PST)
+ Tue, 14 Jan 2020 07:19:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oHR18xSTLKzfXADaEQF/DRKA3JuNk6378Q7TLhUdjGA=;
- b=MX5VY8kt+Tn08+h/fUUpnksMzFRwu9H0e26yWbE8j5DnU0ARn+a7YISb5IkjPzWtO0
- 1ZugUunTv+iew4DJKfLLQVK6n/S72uRin1uStVNAFPzXPWGCgx7qyczs1GGFIXpjiCI5
- my1Oo8oejUQdpbuc9GRruc4wo1ctQL4arNvSPOIFwhtwzfJAOtbVicF8gn/nvJ6pO0t1
- T9Db9wXh9I2kE86IGIx7kUzQOoKphmv53dNhNCzUUNjchLxIR+DTuvWUv+7FX7LoENJu
- Iryolc0bS5DHW+6PCdaXdHKP5Z/ex+PYHS/XVoytpycChKkQ3IGFcmP+SS6Ow7x6HUgU
- JlMA==
+ bh=uMWy9u/32jVL1tXriZ9xy59fE2pwEAGTC/AyEXL/bc8=;
+ b=DcQbpa5XsdLmDArxppuX0QUlt+0JecePQVimW1hZS6yqNKV8WedJ1vYTK6hHiWOM0p
+ os1JhrPNE+Dhkr1uyfcI5eAYf25io4b/BJ5rB4LgbEjujkmmRsoK6ODXV3TuUHyamQXu
+ S+eMETdSe1vOKzDxMhPOh06+1tXqK4/ocIIonLHOUSlWv/xHXOHA0yjPmn8JSbhYMl4G
+ fAdXP9drouHYBd30NfvoGcznbJzemetl2KLo86Hk1Nyx6pVtjLPwRB43/8j5uXhgRfD9
+ EQctZimuVNgkcJ96A3Z3Ge7sPL20jd9/N2Na9pGKjcH+Jq+c8WnZ7TJ9mHuHCh0VvFhV
+ sbxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oHR18xSTLKzfXADaEQF/DRKA3JuNk6378Q7TLhUdjGA=;
- b=R1VYGaeahgbJ3vHXAHCn+aUqHf7SN/wTvp3wHAP81/UL6qWj1znUeI5KQ4OS0Eq+iT
- th3Z1c1+qiEhdMwhh0hTmR9Te6tHG5l0HMJZtDB4C59Wm+CT5kTEke6z0fMZWghHgCvV
- KlsHNT2kyg7mBmCXNFvqEc2DM9+OGvU0ho97IijSD30u6X4Y/h1MP57mlscFDhe24KJf
- +raBIjoKsVuwxvcQxPDZAq6xS8YqHUUnnC8+svVsGqnfwgfSAjsDDUnZcuLnYkxclo5z
- WrR5fqcsNXL8ZCNxJqVcG5a8bkIyJ+4181Vxc3OzXGTcrvrDv1G1NyG2egaN4UsVzg0Q
- DHlg==
-X-Gm-Message-State: APjAAAWkpXAlgweSppyDds0Vancmt/Y3eex2M9OyQyl0i46SixxsXBAK
- ad9+9iPuEyNEOWqkttxBhnPQ5Lg9
-X-Google-Smtp-Source: APXvYqz5rxYxys49gaz1iQGzXcuSBUjumrrreqOitO48K/qaFccWPnB47zLTKKj7thqJ7REaulAUpA==
-X-Received: by 2002:aa7:982d:: with SMTP id q13mr26222953pfl.152.1579015166342; 
- Tue, 14 Jan 2020 07:19:26 -0800 (PST)
+ bh=uMWy9u/32jVL1tXriZ9xy59fE2pwEAGTC/AyEXL/bc8=;
+ b=gNsxn6/4svyQ3Fgxg0FqmAW86ZF9HRTxWIlREvb6EI+rxxH/Hoaw0q4BtoGd1+e4RY
+ I8S+lr5stDtaURz4ofoUX8K+WpaZ+FKl7T+5Qh1JM6bX0kvUPLHdRkIYM4Tp5RpU5UlJ
+ anPhUGWJmQCUcxH90CLRfe7CLZypXKxYC7vSH8w3zLk1DpIvntq9DXwHCcdvZyPNCCmY
+ hiWRnBRcL7f7Oz9Z0BGopeLTG7SRrlUGv2Ra4jljethqJf+OH2B0HXDVsogKPTJF7JLN
+ /F8IAfGEV5hMh+xRSM+dQPEje82KW6DDZZRJu67nHbbpp2tex/Ww3llOkdRqJJThkBDn
+ EYsA==
+X-Gm-Message-State: APjAAAWlmwxpnuIn9CK+B9FnidhBxVqmkTwGKWfkvNOTaooaOvKYB7G/
+ JPXyODQFq5OtORclnE2qjlAsBfAa
+X-Google-Smtp-Source: APXvYqzIQi4kLmAraK/ke5nkp/cK8TN4YzKhEtyN2XiAzZrW/qst02Mb/5Yu89lTJeh1dC98Y9Q3gA==
+X-Received: by 2002:a63:1c13:: with SMTP id c19mr27595123pgc.450.1579015167647; 
+ Tue, 14 Jan 2020 07:19:27 -0800 (PST)
 Received: from localhost.localdomain (c-67-165-113-11.hsd1.wa.comcast.net.
  [67.165.113.11])
- by smtp.gmail.com with ESMTPSA id 207sm18834425pfu.88.2020.01.14.07.19.24
+ by smtp.gmail.com with ESMTPSA id 207sm18834425pfu.88.2020.01.14.07.19.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 07:19:25 -0800 (PST)
+ Tue, 14 Jan 2020 07:19:26 -0800 (PST)
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/5] ARM: dts: vf610-zii-ssmb-spu3: Add voltage monitor DT node
-Date: Tue, 14 Jan 2020 07:19:02 -0800
-Message-Id: <20200114151906.25491-2-andrew.smirnov@gmail.com>
+Subject: [PATCH 2/5] ARM: dts: vf610-zii-ssmb-dtu: Add voltage monitor DT node
+Date: Tue, 14 Jan 2020 07:19:03 -0800
+Message-Id: <20200114151906.25491-3-andrew.smirnov@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200114151906.25491-1-andrew.smirnov@gmail.com>
 References: <20200114151906.25491-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_071927_184927_00FAD526 
+X-CRM114-CacheID: sfid-20200114_071928_677481_7560D6FF 
 X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -118,13 +118,13 @@ Cc: linux-arm-kernel@lists.infradead.org
 Cc: devicetree@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 ---
- arch/arm/boot/dts/vf610-zii-ssmb-spu3.dts | 8 ++++++++
+ arch/arm/boot/dts/vf610-zii-ssmb-dtu.dts | 8 ++++++++
  1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm/boot/dts/vf610-zii-ssmb-spu3.dts b/arch/arm/boot/dts/vf610-zii-ssmb-spu3.dts
-index 453fce80f858..3d05c894bdc0 100644
---- a/arch/arm/boot/dts/vf610-zii-ssmb-spu3.dts
-+++ b/arch/arm/boot/dts/vf610-zii-ssmb-spu3.dts
+diff --git a/arch/arm/boot/dts/vf610-zii-ssmb-dtu.dts b/arch/arm/boot/dts/vf610-zii-ssmb-dtu.dts
+index 847c5858fea1..a6c22a79779e 100644
+--- a/arch/arm/boot/dts/vf610-zii-ssmb-dtu.dts
++++ b/arch/arm/boot/dts/vf610-zii-ssmb-dtu.dts
 @@ -46,6 +46,14 @@
  		regulator-min-microvolt = <3300000>;
  		regulator-max-microvolt = <3300000>;
