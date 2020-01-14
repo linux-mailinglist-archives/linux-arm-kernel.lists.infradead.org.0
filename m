@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61C7113B4E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 22:57:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A6B813B4E7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 22:58:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a/snjSPQcnM0Qu5Bc6bGC9rwQqTDD9YS1h6w6QwO3xo=; b=eDHCowUNho6Os6
-	g2p/MfPXoSCNDm/5uKjVsgFsMTTcf17Tgy8BaTjDnQTNwS9QiU6qq6XlQ94yoMmW0ImURW3OTWhsP
-	tMu+rNWr/UV9UThaw81wS8xUr48TUlVIabR9KOmmAhBcRwTiw4ccf9o4PMDy0IVmQtk3jvt/rFkIj
-	7XvdnCCPjbsZS5fcgYpzSjmQ42Fa7UjDGQcI3C7Iiqqe+gn4fdEEqls8QK+VBNYbyyELHRCeYRMoB
-	6xss1+HF1oyTwYi4qdB8s53ocXty8YCOwsl3JDeHEOUmEpTeRvwzdLL+j9D510xa2LNRWN8uapDcl
-	vRvICM8W+mLyUbr7wvew==;
+	List-Owner; bh=mn1XHX7/3mox1SaqP5TOJlVK5/JPwzPcVxn3cOcStdg=; b=ns7ihpNO0Jr7xE
+	cdAQqasZwZ4wlEOMpgXsOmubJLcP7duWL6im6GrWg1cFtkn3reXmUXib0LKyFAGQUGKQuWLUAh9pW
+	D3Qxqn9CTgURzek+H9NzdZOSHVM1BlaQEp8x5iVDCH8i56mNKCdheS4cSPawE3POQcRno8heuiIoy
+	AhBqvWhFNszqs/73Dsh2KtVupKUvu9nVNocdT5Haawn2iINFGtAbcztPqBYYY0bwWwVNLyejlKDqY
+	b8PXlip2ewz8CZ+hFfmvi8HNyVpzMUGUSdP/C9OuJlVNqO1Ar4WCERYjx5zieQvn/dn8+9/URJXEx
+	Iy8OPWGROZ6MDiUGCmXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irUBX-0002dw-R9; Tue, 14 Jan 2020 21:57:15 +0000
+	id 1irUCY-00032W-KZ; Tue, 14 Jan 2020 21:58:18 +0000
 Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irUBQ-0002cj-NR; Tue, 14 Jan 2020 21:57:10 +0000
-Received: by mail-ed1-x541.google.com with SMTP id f8so13471866edv.2;
- Tue, 14 Jan 2020 13:57:08 -0800 (PST)
+ id 1irUCP-000310-MO; Tue, 14 Jan 2020 21:58:11 +0000
+Received: by mail-ed1-x541.google.com with SMTP id cy15so13493100edb.4;
+ Tue, 14 Jan 2020 13:58:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dWX0qH3iccx0g4AYWNuVHAofcVC/hMHz2INt2O8t/GA=;
- b=NjvFavWXuubzGh467wyrmrgu/taGZf/9CWRMDm1ZpUOXqXRtdphGeRW77uSbeyPQsv
- v9pr+Wm0ouvQJd6o4bFZYTbOhr2X9wZImTpQLo0kwzRSaAlHcpfFp/fZfesfqF13kTA9
- +HrHFyNAw9f4jA0z36wRvMGWbu2zORRVdvoz7ABCf909a86w+pYdSV7ENLBK55Dm78mw
- 6N+WC/1BK+1LGTw4agLY02HhgKGnAGKmZW6tGuf24wO8NjgYD0HjABo10jcidpYTb/ik
- SUTR/B43SHq4fiUkUa41jymCwUKy9D2/ET/JF8rNE8nSRFDnIpBr6zhTK2J938OX2/pH
- Ghjg==
+ bh=Mye4LmyzQE+LrbbIEq6tP/9MPNsewchUD91k+otVz+w=;
+ b=n52rsCEiRkzPFenvyx25SeM1GC8hE/eMjP0sjse+wfLL1IXV4keBvfRflPo8igr69f
+ m2z5keNNqfIGqxNsbFUM7CmlS/ifpZYvSUKWsyMKdtN08cpWEk20wH1+1EWO6mawknjh
+ 04hnMapLyNp4Mmzxxm0ddfuLS1xMgl8Cn8ULxDjtqPpai9AiDAhjPD9yZJoEzc0bzC7+
+ mY2YfGbdky7W3S+neN+QY5bkt0Htu+ChM2KLROgntLWCuPWBpIvJwkCZu4GCnLU7BNel
+ othYC5z84OXy7XQThXKC98DIQnbCTTQuFS8/qeLA1GycbCPMxd/Peq6HFSRX6VjtLFxM
+ 2Otw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=dWX0qH3iccx0g4AYWNuVHAofcVC/hMHz2INt2O8t/GA=;
- b=kdIUWOWa0ooTn2gi38ujiGCQzqjfo23teB0X4f/5/YqZPzQrDAc16UFWq5So/bHjuV
- lnWOxCSibE07HwX4jbgAEs6reNyzSpLWT8Nqc0WzgMm+TyGD4mqkVWoZKNjs7kbiLQT9
- oUfkmSwZb5LQ6JD5qF3YaACapNhE+VIH3CkX3Dx6/JDPTFAMdHFe7figOPeb+aoWY9F3
- 41orvuraoOpP5a0I5dLfUFdSbsgXndV+sDlvIBrYwe7n/uQWCmWvryoL5dPwJ+8dqF5h
- n594CdvNyUslULO+IN6bDM8StJOYI5o0iRv3LaUFKbZ23A2HuFJZtW6A0p2IakE61FMe
- 2Nrg==
-X-Gm-Message-State: APjAAAU70LbkDmBZBkWzj7KA/YYmRhyJY9qlTGwZlhE56gE2YnFt1ykO
- U8/ghamVakQQtaVl/bx8jzMjgc+f
-X-Google-Smtp-Source: APXvYqzSYmganXj/6DwiVipHB62E3FOeOHJ3lMar2NcWyAIMaP6N4qyIYkAfeJDBjRznzIDNewaV7g==
-X-Received: by 2002:a05:6402:609:: with SMTP id
- n9mr26283516edv.305.1579039027311; 
- Tue, 14 Jan 2020 13:57:07 -0800 (PST)
+ bh=Mye4LmyzQE+LrbbIEq6tP/9MPNsewchUD91k+otVz+w=;
+ b=bgpu5zBfWIpYUsk1AQoNXtWuGlKgaUSDg6Q6Zw/Gz4EE5IwQeSQT3BRajwtudTtlFB
+ 5dolw1qK/ZqysM47UxlsX7yoWysXlZzsqKmUZJ3DXbgmLIzrIEm2DhfmgEejuYfOLKzR
+ ykWmpBSwR6zRUoGn5710KNVOAmhSusWMTr+nNFl8mhXw6ZpRzMo4XwRk5aynWiLUTIUw
+ 569ya3jAGI2pEjIH3kYRC4MaYA5jFsakvvcfQI2XPxLp+xfNVHdBDWbKbH0jYIdWxiIL
+ egXEfGtycTy3ATWjkGEOmv0QmdFj6nC4KD4i1rO/VbUMWTtEDbu/9tjdQXjF3dVKok/3
+ 2j0g==
+X-Gm-Message-State: APjAAAWbKGgxJCrN0U96SxoV1LIiyI04MqykBdqx4MtpqlKU5OaQ+CgT
+ xEU2fG8iQgWjvQFPKTenb7pq9ce4
+X-Google-Smtp-Source: APXvYqxB09DwRODZB2nlJ/k1cFJE9gsRdldb66R9ThkKbXcsmtV8y8kBgCC6iLHu2bkV3WZ35PRLCQ==
+X-Received: by 2002:a17:906:1356:: with SMTP id
+ x22mr25313595ejb.55.1579039088179; 
+ Tue, 14 Jan 2020 13:58:08 -0800 (PST)
 Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id lc20sm662295ejb.78.2020.01.14.13.57.02
+ by smtp.googlemail.com with ESMTPSA id ba29sm655434edb.47.2020.01.14.13.57.58
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Jan 2020 13:57:06 -0800 (PST)
-Subject: Re: [PATCH RFC net-next 16/19] net: dsa: tag_qca: fix doubled Tx
- statistics
+ Tue, 14 Jan 2020 13:58:07 -0800 (PST)
+Subject: Re: [PATCH RFC net-next 06/19] net: dsa: tag_gswip: fix typo in tag
+ name
 To: Andrew Lunn <andrew@lunn.ch>, Alexander Lobakin <alobakin@dlink.ru>
 References: <20191230143028.27313-1-alobakin@dlink.ru>
- <20191230143028.27313-17-alobakin@dlink.ru> <20191230172345.GF13569@lunn.ch>
+ <20191230143028.27313-7-alobakin@dlink.ru> <20191230172209.GE13569@lunn.ch>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -116,16 +116,16 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <2a9bdadd-4724-bbad-a8c2-79066a03ba36@gmail.com>
-Date: Tue, 14 Jan 2020 13:57:00 -0800
+Message-ID: <0edda44f-7a75-e6c9-eec3-48259630bb3d@gmail.com>
+Date: Tue, 14 Jan 2020 13:57:56 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191230172345.GF13569@lunn.ch>
+In-Reply-To: <20191230172209.GE13569@lunn.ch>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_135708_882352_616E4D49 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20200114_135809_851437_ACA0BDE2 
+X-CRM114-Status: GOOD (  10.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -175,19 +175,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/30/19 9:23 AM, Andrew Lunn wrote:
-> On Mon, Dec 30, 2019 at 05:30:24PM +0300, Alexander Lobakin wrote:
->> DSA core updates Tx stats for slaves in dsa_slave_xmit(), no need to do
->> it manually in .xmit() tagger callback.
+On 12/30/19 9:22 AM, Andrew Lunn wrote:
+> On Mon, Dec 30, 2019 at 05:30:14PM +0300, Alexander Lobakin wrote:
+>> "gwsip" -> "gswip".
 >>
 >> Signed-off-by: Alexander Lobakin <alobakin@dlink.ru>
 > 
 > Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 
-Alexander, can you submit that separately from your GRO series and add a
-Fixes tag for this?
+Likewise, this is a bug fix that should be extracted out of this GRO
+series and a Fixes: tag be put since this has an user-visible impact
+through /sys/class/net/*/dsa/tagging.
 
-Thanks!
+Thanks
 -- 
 Florian
 
