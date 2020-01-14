@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2A0513ABA7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:00:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CFD13ABA8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:00:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DoGpGlHutIMON87qMzaUWTKtXE8wVH3q81NFszS2JQA=; b=FRUwvcRX4eomkT
-	l7rjAZ+m3PfAXYvhPFCI1ElwM0RnHDCRnwO61ceYLsKf3+26g6QU7xKDyUxS7003p7WHYJ0tZ13cA
-	rY+YeMJPRS7Wg+3kTIa2XIfhzzi2r/8qfj0LaMP6j1pQysfc/DqVeMk5NyFr/nCGMCj2ASJC3+3kw
-	dYxQh7NO83GMI/k21G4AGB4ULlW5jcky8X5lrF4DlyLSZ9yz8YQe+Nxe5VGdQYa3CcUYyom1+PEyy
-	V5UwL8x1pZRROO85fIHAbh2mx24htdXvvGjobOsL62ZfzY2UcNQDF+E8bSDABcx+yCpZp5kwnKJMT
-	oDkA0kaXPa4fdndSj0Ww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CAthQoP1bdG5GSEacJY6wKcc1pDBXUJk2MTJ0BAnSjs=; b=LY0AQeNEe/8tnD
+	eqju+us1tC+t2JgCZiEp2YbT7crxUmtrXAXb8I0DIjMzgiuvXVGJP0dpYpUR7jItSsxLM6LaNAFXQ
+	lTq6wK+51QGwJ/iWmHqRdYAuMbdb2CuAazizMq7typOpF3Nr/U5PHVKV+xNttL/B1GXkTXo0DYnO0
+	CkLTu/aZ3mTY7mZl2xLNQ9viplmUapmR8nnM5bhi5T2jtjmWRN4XGm15tl9vOHhnCm4fqz8LNzpIB
+	4GG1+4yNMOc5L9jAqmlnhlrTvkS/UmtISilQzUDR0Vpy5tjlMjbq4NwaDtBLQwSYx1dnAhvcGmIkT
+	RygFZYH8QHrsyUF3HyCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irMjy-0007aa-IL; Tue, 14 Jan 2020 14:00:18 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1irMkJ-0000kW-I9; Tue, 14 Jan 2020 14:00:39 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irMjX-0007Yj-SN
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 13:59:57 +0000
-Received: by mail-wm1-x330.google.com with SMTP id f129so13858464wmf.2
+ id 1irMja-0007Yk-O2
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 14:00:00 +0000
+Received: by mail-wm1-x342.google.com with SMTP id t14so13842045wmi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 05:59:50 -0800 (PST)
+ Tue, 14 Jan 2020 05:59:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WxdkQ4fln/Ubg69SQWZPku8d8xfNPtcWo6lDszFAgoU=;
- b=W5yD7THh9GoPrqpAR+V6A99baoCffIA80ESDKdfUT4jQ43HWe7mgvJtpFBECNzWpfo
- bz8xxkmz7NEenvBfXfcRuOdyeWxr/pUVVyFOh9D5p9Nqf4DNNkAg8yMwt2KipmDXSA4m
- F/Xi7b8c+8LkgBp35W80e9OVXqAPJNH2bBe+He6wKRT0YZa0l/hFhJpvHkcEUovLUEpi
- UHyC1DShgeL4HbPe4cvV8l153bzO81NZY3bLWpc1uh9L8pOP8grJOHDrSBs/SEUo7Q/G
- C6IkbFOdSBNykmToWLZSS6dvZWgV7mwwdZTUK+lIjdgNba/X1T0dVEkSEzSu50mSY97i
- xWOQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=CpAqaZx6JeHzamdabNXS/MeiqNHInVywNzBkpn7W7C4=;
+ b=EGE60Tz9ZomQozYGZ/klz3rYuQFmxyX/3ipXjYNC2U1eKb5UWY4x3m/pWmsI9myf1r
+ UpibKFW4DOAw/goE/hdwe8S4JkRJvWfA7bQR4zvQm10+mEvPFqQJThEeKdgs7JKeMIQG
+ fiUgFXYCSS+7SlaTMVUD1Vys/I00NPBymU0+qrlXceClhkgNI+4lFy+rM+Ud36ROg/4c
+ 1fHrX+5g9m9d1xROUHKCSLUz1+yeyQnke9P7l0rheXf6k4lTij/EkdAGpqoAm4FdY3/I
+ fNBXEgHqARWslgm5hDKc4ORHALnr9CQIC2Y9RljKGyDgNy/mfxqYXGpw1GwiEAFjRx6A
+ 4BwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WxdkQ4fln/Ubg69SQWZPku8d8xfNPtcWo6lDszFAgoU=;
- b=p92dxvmFy8hcIz9PAjPP+dbah+9bhySaAsw2CV7ctnH3S1CQ4VdCYsPBTLtt3DiMId
- U5YCM3yTR5v70G7pGDi9RraMWoOCz9rfK/RW/D0Aj95w9LFQmKaEkeQ/SFXj5CRCvwdw
- 4+slfeWSrErpAqnn6HqqwXzjGi3bhxbIBATtcg9w0VLxzKfQQ7sreTMaiZxwf0XeQYHH
- Sp+v3DDBHri7ph7wIVL+lb+ch/wdWkbmGfzCRLeb5lHHN6SKUd0U369arimhT+2bJhsj
- HbRZR1EKrRFJvksriQhcDoFu1KNCIZdt6b3KrTzWbma4cTF4EoPFRb8U+ahPZhu6zY/g
- kwlg==
-X-Gm-Message-State: APjAAAX4Y10jnGZrhjinOga2bkFG/je/ydJBl9ZglzoXFeO2Yl8DF9QI
- uzwyv4LFX3NqOnv8BpOzdEg=
-X-Google-Smtp-Source: APXvYqzNVQbW7IsfrQ2HGsc5vwBjjCjT9FNXhoYr/xxz+X6aphiPMpyQ6yCNL9Z9aspgGTjXkf82iw==
-X-Received: by 2002:a05:600c:20e:: with SMTP id
- 14mr19620970wmi.104.1579010389767; 
- Tue, 14 Jan 2020 05:59:49 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=CpAqaZx6JeHzamdabNXS/MeiqNHInVywNzBkpn7W7C4=;
+ b=kpiVMEQy/7WKqHmLGSNp71bgtR8lCGSpLc8x0FTRMHJ+5TUIOtZbmK5UEUjR8eNd9Y
+ wjqughj3cGijHF8SBNwEivIytue8tWsJrXp3q8Nhie9Cyo3obLlOC/tAp1dY540iONyl
+ hr8FeXN62vU8T/MVikYd6lCeJkVZEron0MlfVm7Aas27LzK5lo0u76vUCIWZvBq6hDJj
+ z7BJ3zx+sPdxDe6MZFabm6GDSB2tU7BE0DVFs8fc1ajmhJ6BNI73PtIN6iTE34SclI0k
+ UETXb7oyU5B89Jw7OeLD+1XKNKpkkZegc3jcsummDD52q4Xsi8553LGLOxbiIH01Vbwi
+ LkTQ==
+X-Gm-Message-State: APjAAAWLA3wfI99JdYJ7OuunQJoj+IVbg9m+zkq8pQGkzdgt4798zvn3
+ e7aAQkiTwy6AlZLy4qD2lW8=
+X-Google-Smtp-Source: APXvYqw+ky2HWP39jMAlwguBjhRJJXXYNObsWOMbBN+eNALLt0hLuU+EgqRGX3WRMq+vYEMZZ16sGQ==
+X-Received: by 2002:a05:600c:1003:: with SMTP id
+ c3mr27443453wmc.47.1579010391218; 
+ Tue, 14 Jan 2020 05:59:51 -0800 (PST)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id 4sm17854448wmg.22.2020.01.14.05.59.48
+ by smtp.googlemail.com with ESMTPSA id 4sm17854448wmg.22.2020.01.14.05.59.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 05:59:49 -0800 (PST)
+ Tue, 14 Jan 2020 05:59:50 -0800 (PST)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: alexandre.torgue@st.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  mcoquelin.stm32@gmail.com, mripard@kernel.org, wens@csie.org,
  iuliana.prodan@nxp.com, horia.geanta@nxp.com, aymen.sghaier@nxp.com
-Subject: [PATCH RFC 00/10] crypto: engine: permit to batch requests
-Date: Tue, 14 Jan 2020 14:59:26 +0100
-Message-Id: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
+Subject: [PATCH RFC 01/10] crypto: sun8i-ce: move iv data to request context
+Date: Tue, 14 Jan 2020 14:59:27 +0100
+Message-Id: <20200114135936.32422-2-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
+References: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_055951_934938_9336D389 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20200114_055954_778230_E65B6ABE 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:330 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,57 +109,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello
+Instead of storing IV data in the channel context, store them in the
+request context.
+Storing them in the channel structure was conceptualy wrong since they
+are per request related.
 
-The sun8i-ce hardware can work on multiple requests in one batch.
-For this it use a task descriptor, and chain them.
-For the moment, the driver does not use this mechanism and do requests
-one at a time and issue an irq for each.
+Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+---
+ .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 27 +++++++++----------
+ drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  | 10 ++++---
+ 2 files changed, 19 insertions(+), 18 deletions(-)
 
-Using the chaning will permit to issue less interrupts, and increase
-thoughput.
-
-But the crypto/engine can enqueue lots of requests but can ran them only
-one by one.
-
-This serie introduce a way to batch requests in crypto/engine by
-- setting a batch limit (1 by default)
-- refactor the prepare/unprepare code to permit to have x requests
-  prepared/unprepared at the same time.
-
-For testing the serie, the selftest are not enough, since it issue
-request one at a time.
-I have used LUKS for testing it.
-
-Please give me what you think about this serie, specially maintainers
-which have hardware with the same kind of capability.
-
-Regards
-
-Corentin Labbe (10):
-  crypto: sun8i-ce: move iv data to request context
-  crypto: sun8i-ce: increase task list size
-  crypto: sun8i-ce: split into prepare/run/unprepare
-  crypto: sun8i-ce: introduce the slot number
-  crypto: engine: transform cur_req in an array
-  crypto: engine: introduce ct
-  crypto: sun8i-ce: handle slot > 0
-  crypto: engine: add slot parameter
-  crypto: engine: permit to batch requests
-  crypto: sun8i-ce: use the new batch mechanism
-
- crypto/crypto_engine.c                        |  76 +++++++----
- .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 121 +++++++++++++-----
- .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |  17 ++-
- drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  |  17 ++-
- drivers/crypto/omap-aes-gcm.c                 |   2 +-
- drivers/crypto/omap-aes.c                     |   4 +-
- drivers/crypto/omap-des.c                     |   4 +-
- drivers/crypto/stm32/stm32-cryp.c             |   8 +-
- drivers/crypto/stm32/stm32-hash.c             |   4 +-
- include/crypto/engine.h                       |  27 +++-
- 10 files changed, 201 insertions(+), 79 deletions(-)
-
+diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
+index 75e2bef2b363..6108cea0e0bd 100644
+--- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
++++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
+@@ -91,7 +91,6 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
+ 	struct scatterlist *sg;
+ 	unsigned int todo, len, offset, ivsize;
+ 	dma_addr_t addr_iv = 0, addr_key = 0;
+-	void *backup_iv = NULL;
+ 	u32 common, sym;
+ 	int flow, i;
+ 	int nr_sgs = 0;
+@@ -154,24 +153,24 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
+ 
+ 	ivsize = crypto_skcipher_ivsize(tfm);
+ 	if (areq->iv && crypto_skcipher_ivsize(tfm) > 0) {
+-		chan->ivlen = ivsize;
+-		chan->bounce_iv = kzalloc(ivsize, GFP_KERNEL | GFP_DMA);
+-		if (!chan->bounce_iv) {
++		rctx->ivlen = ivsize;
++		rctx->bounce_iv = kzalloc(ivsize, GFP_KERNEL | GFP_DMA);
++		if (!rctx->bounce_iv) {
+ 			err = -ENOMEM;
+ 			goto theend_key;
+ 		}
+ 		if (rctx->op_dir & CE_DECRYPTION) {
+-			backup_iv = kzalloc(ivsize, GFP_KERNEL);
+-			if (!backup_iv) {
++			rctx->backup_iv = kzalloc(ivsize, GFP_KERNEL);
++			if (!rctx->backup_iv) {
+ 				err = -ENOMEM;
+ 				goto theend_key;
+ 			}
+ 			offset = areq->cryptlen - ivsize;
+-			scatterwalk_map_and_copy(backup_iv, areq->src, offset,
+-						 ivsize, 0);
++			scatterwalk_map_and_copy(rctx->backup_iv, areq->src,
++						 offset, ivsize, 0);
+ 		}
+-		memcpy(chan->bounce_iv, areq->iv, ivsize);
+-		addr_iv = dma_map_single(ce->dev, chan->bounce_iv, chan->ivlen,
++		memcpy(rctx->bounce_iv, areq->iv, ivsize);
++		addr_iv = dma_map_single(ce->dev, rctx->bounce_iv, rctx->ivlen,
+ 					 DMA_TO_DEVICE);
+ 		cet->t_iv = cpu_to_le32(addr_iv);
+ 		if (dma_mapping_error(ce->dev, addr_iv)) {
+@@ -252,17 +251,17 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
+ theend_iv:
+ 	if (areq->iv && ivsize > 0) {
+ 		if (addr_iv)
+-			dma_unmap_single(ce->dev, addr_iv, chan->ivlen,
++			dma_unmap_single(ce->dev, addr_iv, rctx->ivlen,
+ 					 DMA_TO_DEVICE);
+ 		offset = areq->cryptlen - ivsize;
+ 		if (rctx->op_dir & CE_DECRYPTION) {
+-			memcpy(areq->iv, backup_iv, ivsize);
+-			kzfree(backup_iv);
++			memcpy(areq->iv, rctx->backup_iv, ivsize);
++			kzfree(rctx->backup_iv);
+ 		} else {
+ 			scatterwalk_map_and_copy(areq->iv, areq->dst, offset,
+ 						 ivsize, 0);
+ 		}
+-		kfree(chan->bounce_iv);
++		kfree(rctx->bounce_iv);
+ 	}
+ 
+ theend_key:
+diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
+index 8f8404c84a4d..49507ef2ec63 100644
+--- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
++++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
+@@ -129,8 +129,6 @@ struct ce_task {
+ /*
+  * struct sun8i_ce_flow - Information used by each flow
+  * @engine:	ptr to the crypto_engine for this flow
+- * @bounce_iv:	buffer which contain the IV
+- * @ivlen:	size of bounce_iv
+  * @complete:	completion for the current task on this flow
+  * @status:	set to 1 by interrupt if task is done
+  * @t_phy:	Physical address of task
+@@ -139,8 +137,6 @@ struct ce_task {
+  */
+ struct sun8i_ce_flow {
+ 	struct crypto_engine *engine;
+-	void *bounce_iv;
+-	unsigned int ivlen;
+ 	struct completion complete;
+ 	int status;
+ 	dma_addr_t t_phy;
+@@ -183,10 +179,16 @@ struct sun8i_ce_dev {
+  * struct sun8i_cipher_req_ctx - context for a skcipher request
+  * @op_dir:	direction (encrypt vs decrypt) for this request
+  * @flow:	the flow to use for this request
++ * @backup_iv:	buffer which contain the next IV to store
++ * @bounce_iv:	buffer which contain a copy of IV
++ * @ivlen:	size of bounce_iv
+  */
+ struct sun8i_cipher_req_ctx {
+ 	u32 op_dir;
+ 	int flow;
++	void *backup_iv;
++	void *bounce_iv;
++	unsigned int ivlen;
+ };
+ 
+ /*
 -- 
 2.24.1
 
