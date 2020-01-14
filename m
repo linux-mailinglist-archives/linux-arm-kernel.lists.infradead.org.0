@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF09B13A6F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:25:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C990913A70D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:26:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s4mjpZYAG12MjnUfM2LCC8385ZmJDMgW9x2iaNMjhfE=; b=mKWn1aTw+m318/
-	tcCjeQaponygs7+1v5qoGG61Kjrwgs6wo9VrSUpWq1AIesSGvYOdJVKRfwb1KHBzq9htzUwXvaz8y
-	Zs6uslpn6OqqgKkb4Whoe1+TgAd1H+8usKWwX6mkRiPlS4WsrPu8OG9Jc8BSunpJ+4DEK0gGkucHd
-	r3GSMVC1EHfM9bc5flO8anttVr8rV1WG/vALyb+suJxoul9blMsORI9Emxzr2FzQZFeLLugSPd8Lf
-	8cuVpfWpZ0OfV8wj5gV9tnpMNLdqTXJvHpBt6ybIun0BCLlvnj4rtdNIvJ/sVAytDjyuvDzMgakcC
-	ZUG72WzuptRuAauBcl8g==;
+	List-Owner; bh=D0tXn3/KOWQUdKd4bvNwkjkIRjXLbzxlPVKiaR2FDHQ=; b=befcAsmzhFtyKW
+	ilukKEB61XsS5VtGJo3HcjPOq4vSME2EP5LggKaGvW0JpIU/qWC9AhchDrupXdIv2rUlCcq7l/3AT
+	Q9hB9W1wdKq5ycOCGhrnWsEjIq85v/qayfcZ4j4rlYZoH6kHnHBi4Hj5EE40trkv9pQwh/SGBn2fD
+	TuHqymhADy1MbV1Cp71YYGZR4Bb9KZw6rgzdqTZpB6W7IDJ6/W3BIvvbF6YXiMNzUbtYhTZJuQFVC
+	DjEOelFQJuKWFDXSR9C4Sqa/dEEn8bMuHR62P2IcE1+bbZdn/uoHsAliU4AY8XROfuUq+LpcFFS8g
+	hfVZYRNosbRbl/EbZ5xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irJOJ-0007df-Cu; Tue, 14 Jan 2020 10:25:43 +0000
+	id 1irJOV-0007rf-DQ; Tue, 14 Jan 2020 10:25:55 +0000
 Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irJMV-0005AZ-CI
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 10:23:55 +0000
+ id 1irJMZ-0005EB-Ju
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 10:23:59 +0000
 Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,39 +45,39 @@ Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 25xbzRJ+pg/ltSXJOaCSibtzYpIQDAS+n26yjcLMPVDVOJzHQ89Hls8bew9cF80IG4fBmXTzyJ
- 6SD2pcUGpl7PCwDKfhwdG85bJLzpG+zvRgvteg+hiF7yRjxdcNzMqfkSjawyKcIwqIsPj94yLJ
- zJheM18Mj0dK3+Ta2QNJD0/aYK1qUf+Y28bpecCp3ZLcnnFvbkusq++WhJUH6yv/m8p1sP+Btt
- gx7kcuPq+XnM+k7YmSiaq9zsCMuOWXWlqEPtE5apXKYPVV0gWsOXJ+8fjM2sBAdl9RRtNwL9kk
- 8TQ=
-X-IronPort-AV: E=Sophos;i="5.69,432,1571727600"; d="scan'208";a="61849248"
+IronPort-SDR: GvRYKR2ayyplV6UdninP9KLm+QaPK5i6DALfFXUiqqZvzT6invH5o01ZVUgmgdSq2UOd1/sCdi
+ fvEK5kh85tKqrKmvBddqSi9OGqPvE6xvm9qTjCobJzpbDgAVQ764m4aOhE+RoQkC681ofop5Fr
+ 2NE/JI+XAZ71S0t78+OI6Js+mOxc48Y6Cq7OItZIjMIwcoeF6+vaEB8pCyKtT4yASuJUDm23HY
+ evwkaYPGHe1UQpT2m5N+t/9xtZpiLygp5DlnVwsDyTfmvq0LEFMWciK79ZdAD2B+xTjMoDfLvs
+ 0tc=
+X-IronPort-AV: E=Sophos;i="5.69,432,1571727600"; d="scan'208";a="61849252"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 14 Jan 2020 03:23:51 -0700
+ 14 Jan 2020 03:23:55 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 14 Jan 2020 03:23:50 -0700
+ 15.1.1713.5; Tue, 14 Jan 2020 03:23:54 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 14 Jan 2020 03:23:45 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 14 Jan 2020 03:23:50 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <robh+dt@kernel.org>, <lee.jones@linaro.org>, <mark.rutland@arm.com>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <ludovic.desroches@microchip.com>, <radu_nicolae.pirea@upb.ro>,
  <richard.genoud@gmail.com>, <a.zummo@towertech.it>
-Subject: [PATCH v3 5/7] dt-bindings: atmel-usart: add microchip, sam9x60-{usart,
- dbgu}
-Date: Tue, 14 Jan 2020 12:23:15 +0200
-Message-ID: <1578997397-23165-6-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v3 6/7] ARM: at91/defconfig: enable MMC_SDHCI_OF_AT91 and
+ MICROCHIP_PIT64B
+Date: Tue, 14 Jan 2020 12:23:16 +0200
+Message-ID: <1578997397-23165-7-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_022351_493928_D507D743 
-X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-CacheID: sfid-20200114_022355_724755_1CCBF10C 
+X-CRM114-Status: UNSURE (   6.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -108,26 +108,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add microchip,sam9x60-usart and add microchip,sam9x60-dbgu to DT
-bindings documentation.
+Enable MMC_SDHCI_OF_AT91 and MICROCHIP_PIT64B. These are necessary
+for SAM9X60.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- Documentation/devicetree/bindings/mfd/atmel-usart.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/configs/at91_dt_defconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-index 778e8310606a..851b406c18b6 100644
---- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-+++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-@@ -4,6 +4,7 @@ Required properties for USART:
- - compatible: Should be one of the following:
- 	- "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
- 	- "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
-+	- "microchip,sam9x60-dbgu", "microchip,sam9x60-usart"
- - reg: Should contain registers location and length
- - interrupts: Should contain interrupt
- - clock-names: tuple listing input clock names.
+diff --git a/arch/arm/configs/at91_dt_defconfig b/arch/arm/configs/at91_dt_defconfig
+index 5c5df8bc0074..f66bb98a5cce 100644
+--- a/arch/arm/configs/at91_dt_defconfig
++++ b/arch/arm/configs/at91_dt_defconfig
+@@ -160,6 +160,9 @@ CONFIG_USB_AT91=y
+ CONFIG_USB_ATMEL_USBA=y
+ CONFIG_USB_G_SERIAL=y
+ CONFIG_MMC=y
++CONFIG_MMC_SDHCI=y
++CONFIG_MMC_SDHCI_PLTFM=y
++CONFIG_MMC_SDHCI_OF_AT91=y
+ CONFIG_MMC_ATMELMCI=y
+ CONFIG_MMC_SPI=y
+ CONFIG_NEW_LEDS=y
+@@ -177,6 +180,7 @@ CONFIG_RTC_DRV_AT91SAM9=y
+ CONFIG_DMADEVICES=y
+ CONFIG_AT_HDMAC=y
+ CONFIG_AT_XDMAC=y
++CONFIG_MICROCHIP_PIT64B=y
+ # CONFIG_IOMMU_SUPPORT is not set
+ CONFIG_IIO=y
+ CONFIG_AT91_ADC=y
 -- 
 2.7.4
 
