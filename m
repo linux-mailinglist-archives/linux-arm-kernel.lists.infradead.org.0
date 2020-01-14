@@ -2,82 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C9A813ADE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 16:43:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03C2F13AE44
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 17:02:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yZxbq4LPtiXx0Rl6HYnt9WAXbQogVYG7VizLx81JQms=; b=umJJW1PcmiaWD+H4RrOJqjjrO
-	SNdUti3QyOXHkI75p7QocqKoFyMBmA6SAqKa+EKu+KSHmdi8maRl0R3/fC8AMubq6uyJO86yGB+uj
-	mLWN1rV3XWNqYtbb2iPsdXzTvoLJVnHnpZ/wjJFNTNPyYdDsyJF5w57eh2e+jDjfW4HR1knof+xyi
-	mrSfU7foqT8vKrqlbSP183FmSdOEz5hnQZzhJIvJrK+PpTcsKga+LF78qefQiXG/nWCfCY4cEtqgU
-	xi29cfZS4ht5OL4PJFUQGaoXm/b46tO7+mxzxqN18QXW5TngdocxmCtVrKQIcmS/yQ1uK9P5M2nKk
-	eKNuwRg2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6yAaNwlwtWAnx/6Ez/a6mj5M7NTF3M7rItLAlmM/JxA=; b=tJnk8NpO+DplDd
+	MLm3lrHqTf0O5b/p7Kve1phnHLIefp5KehkDAvpRbNUZHViEBuYRPW+Sa9aDb+Lo0x/8q7LF7U27g
+	syIY8YAFYPzrC+H/qlNGoBLScrX0BahIuQ2+AgGBmLvyNwsjtHMNUHUVvYIVXJbLyZeDuaFcxdv5A
+	vvd4hX95MLKR9KMHD2Pv3kN4cND9Nh+mn8Je93OTOLOy4i6eriiKpxN/HER1lpfpKMkcjMzk0+cWl
+	UbOhcPb94vN5m0AAe1pvcOSfDi8LwJRaukQx6qdRlbyQ3K9Sk/DRPSpLdIipj0vOG3RJEcDnOLEf/
+	WRICxYinW81ZaczErEXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irOLv-0004og-51; Tue, 14 Jan 2020 15:43:35 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1irOe2-00030o-JW; Tue, 14 Jan 2020 16:02:18 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irOLf-0004o9-No
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 15:43:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZCTSH+k6xThdH79h0I5oh1zVw+T2m5gqrWX7QMFhKd4=; b=UpQ1WewlV5QqhtFdaZ8w6ORpF
- 8M9iXrAUdbtW9g5RYjBjRrjEDY4WYvrb7K/SZOdWF5OskeoDuNHqszDZeK8AHaoLAH7unGua0Uiuf
- Onsb4Voox3RhmYdBl7MgsARFkeAKvNV6JjYHwLu3CouBWfw4L+7XUAqTJXgQDH0Sexj5g=;
-Received: from fw-tnat-cam7.arm.com ([217.140.106.55]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1irOLa-0000KP-L6; Tue, 14 Jan 2020 15:43:14 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 2CE91D002CB; Tue, 14 Jan 2020 15:43:14 +0000 (GMT)
-Date: Tue, 14 Jan 2020 15:43:14 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Message-ID: <20200114154314.GZ3897@sirena.org.uk>
-References: <20191212161019.GF4310@sirena.org.uk>
- <20191212162152.5uu3feacduetysq7@pengutronix.de>
- <20191212165124.GJ4310@sirena.org.uk>
- <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
- <20191216114454.GB4161@sirena.org.uk>
- <20191217073533.GC31182@pengutronix.de>
- <20191217125832.GF4755@sirena.org.uk>
- <20200107083654.atgbjhrnhyax2gqq@pengutronix.de>
- <20200107130911.GD4877@sirena.org.uk>
- <20200107133811.rua5i6lflzyzlh24@pengutronix.de>
+ id 1irOds-0002zT-9P
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 16:02:13 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00EFqmCb023389; Tue, 14 Jan 2020 17:01:55 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=iqcbAO7gn5oc2a+bEcf0WOjlJoRulApDnHTG5smDQ34=;
+ b=DWk0khVZQxpCW7NxPaFvTtniHCfvkDLVAsv5oVI0FSt7q8G4/RtcRqOT+KOIsoNbTRSc
+ l1VmZtujDMkOFgjxAaqefoqNxQb9G8WKVqcOBL1Ir+u6SW4NfagLfjZ0FQLwK9IC6oym
+ YaCXXUL+ZJBODdlCll1CNR935UKHZmdOZKzFyhWSF8mTA1cTQl/r25KU1ZLcd44hQ2Tl
+ TApcE4LAReDFVWKGkv+z0mr02RMokcLgCf4KhvfBKehWZxlJVMaJQSuUHdHtKRGo2lu6
+ uRQvl5itEy/A7DfyZYMFJHfZmyx1HICO4oezIsP1KmppLA/qokU4li0N6II4gC9fy+Tw 7w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xf7jpebd8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 14 Jan 2020 17:01:55 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A2FB1100044;
+ Tue, 14 Jan 2020 17:01:54 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6AC7A2C38A2;
+ Tue, 14 Jan 2020 17:01:54 +0100 (CET)
+Received: from [10.48.0.71] (10.75.127.46) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 14 Jan
+ 2020 17:01:53 +0100
+Subject: Re: [PATCH v2] dt-bindings: iio: adc: stm32-adc: convert bindings to
+ json-schema
+To: Rob Herring <robh@kernel.org>
+References: <1575649028-10909-1-git-send-email-fabrice.gasnier@st.com>
+ <20191217234345.GA7738@bogus>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <cadc76a7-7e9d-1f0a-21fd-2d7942dbe5c9@st.com>
+Date: Tue, 14 Jan 2020 17:01:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200107133811.rua5i6lflzyzlh24@pengutronix.de>
-X-Cookie: Programming is an unnatural act.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191217234345.GA7738@bogus>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-14_04:2020-01-14,
+ 2020-01-14 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_074319_779776_950945A0 
-X-CRM114-Status: GOOD (  15.20  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200114_080208_616004_25BD4102 
+X-CRM114-Status: GOOD (  21.99  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,87 +99,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============0908207313765864400=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com, jic23@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============0908207313765864400==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="yhqQ34TVR4fE8mPU"
-Content-Disposition: inline
-
-
---yhqQ34TVR4fE8mPU
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Jan 07, 2020 at 02:38:11PM +0100, Marco Felsch wrote:
-> On 20-01-07 13:09, Mark Brown wrote:
-> > On Tue, Jan 07, 2020 at 09:36:54AM +0100, Marco Felsch wrote:
-
-> > > The input signal is routed trough the da9062 gpio block to the
-> > > regualtors. You can't set any voltage value using a gpio instead you
-> > > decide which voltage setting is applied. The voltage values for
-> > > runtime/suspend comes from the dt-data. No it's not just a fast
-> > > switching option imagine the system suspend case where the cpu and soc
-> > > voltage can be reduced to a very low value. Older soc's like the imx6
-> > > signaling this state by a hard wired gpio line because the soc and
-> > > cpu cores don't work properly on such low voltage values. This is
-> > > my use case and I can't use the sequencer.
-
-> > My point is that I can't tell any of this from the description.
-
-> Therefore I want to discuss the dt-binding documentation with you and
-> the others to get this done. Is the above description better to
-> understand the dt-binding?
-
-That text really doesn't feel like text that'd be idiomatic
-directly in a binding document but some of those ideas probably
-do need to be in the text I think.
-
---yhqQ34TVR4fE8mPU
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4d4ZEACgkQJNaLcl1U
-h9CJjAf+Lyl6pKu3ywfkP8t2CeYxi0Fz9ndEKvYqp7nK6CZxn8OgX9Jjem3iwm4w
-vhgB2B06edcnP8wIDEgk8YUMirzG0/Rc475SlTvVg/1BYOaGftqksTiEZfHJf0qt
-4mcWgT+Agw3YzPMkM6kahAu243KxKHAwojM3iVV7gb9PX/rOVtInStggPxzdcxtk
-jQQo2RvYBo2mEBArehWE+PGGT2/JElQGTLyhRVx3BrhuAXXoNKuwkS9fUrVAnyk5
-m5kKBygRDyY4MdZ/a53/E8URMDJbctEtveN03mzI+QQ//PMDTufBPqSmURaODb5c
-PAal49kxIE8ZAfvvCgimhdhS3yzmTg==
-=m6uy
------END PGP SIGNATURE-----
-
---yhqQ34TVR4fE8mPU--
+On 12/18/19 12:43 AM, Rob Herring wrote:
+> On Fri, Dec 06, 2019 at 05:17:08PM +0100, Fabrice Gasnier wrote:
+>> Convert the STM32 ADC binding to DT schema format using json-schema
+>>
+>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+>> ---
+>> Note: this applies on top of IIO tree currently (iio-for-5.5c).
+>>
+>> Changes in V2:
+>> - Take almost all of Rob suggestions (removed reg generic description,
+>>   added minItems, maxItems, st,max-clk-rate-hz range, drop some pipes,
+>>   simplify clock-names, remove unneeded allOfs)
+>> - For now, keep all in one file despite there are lots of if/thens in the
+>>   bindings
+>> ---
+>>  .../devicetree/bindings/iio/adc/st,stm32-adc.txt   | 149 -------
+>>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 454 +++++++++++++++++++++
+>>  2 files changed, 454 insertions(+), 149 deletions(-)
+>>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
+>>  create mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
+> 
+> 
 
 
---===============0908207313765864400==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[snip]
+
+>> +
+>> +      st,adc-channels:
+>> +        description: |
+>> +          List of single-ended channels muxed for this ADC. It can have up to:
+>> +            - 16 channels, numbered from 0 to 15 (for in0..in15) on stm32f4
+>> +            - 20 channels, numbered from 0 to 19 (for in0..in19) on stm32h7 and
+>> +              stm32mp1.
+>> +        allOf:
+>> +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+>> +
+
+[snip]
+
+>> +
+>> +    allOf:
+>> +      - if:
+>> +          properties:
+>> +            compatible:
+>> +              contains:
+>> +                const: st,stm32f4-adc
+>> +
+>> +        then:
+>> +          properties:
+>> +            reg:
+>> +              enum:
+>> +                - 0x0
+>> +                - 0x100
+>> +                - 0x200
+>> +
+>> +            interrupts:
+>> +              minimum: 0
+>> +              maximum: 2
+>> +
+>> +            assigned-resolution-bits:
+>> +              enum: [6, 8, 10, 12]
+>> +              default: 12
+>> +
+>> +            st,adc-channels:
+>> +              minItems: 1
+>> +              maxItems: 16
+>> +              minimum: 0
+>> +              maximum: 15
+> 
+> You are mixing array and scalar constraints here. You need:
+> 
+> minItems: 1
+> maxItems:16
+> items:
+>   minimum: 0
+>   maximum: 15
+> 
+> Update dtschema. It will now catch this. There's a few others too.
+
+Hi Rob,
+
+Sorry for the late reply. I updated dtschema. Now it catches it.
+
+I've tried your suggestion, but when I test it, I don't get any error on
+maxItems.
+
+In the example: "st,adc-channels = <0>, <1>, ... more than 16 items;"
+
+Is it possible I face some other issue with dtschema ?
+
+I tried another way below... Not sure that's correct. But it catches
+errors on maxItems:
+
+            st,adc-channels:
+              allOf:
+                - minItems: 1
+                  maxItems: 16
+              items:
+                minimum: 0
+                maximum: 15
+
+Error message is ... "is too long" with bad example above.
+
+Please advise,
+Regards,
+Fabrice
+
+> 
+> 
+>> +
+>> +            st,adc-diff-channels: false
+>> +
+>> +            st,min-sample-time-nsecs:
+>> +              minItems: 1
+>> +              maxItems: 16
+>> +              minimum: 80
+>> +
+>> +          required:
+>> +            - clocks
+>> +
+>> +      - if:
+>> +          properties:
+>> +            compatible:
+>> +              contains:
+>> +                enum:
+>> +                  - st,stm32h7-adc
+>> +                  - st,stm32mp1-adc
+>> +
+>> +        then:
+>> +          properties:
+>> +            reg:
+>> +              enum:
+>> +                - 0x0
+>> +                - 0x100
+>> +
+>> +            interrupts:
+>> +              minimum: 0
+>> +              maximum: 1
+>> +
+>> +            assigned-resolution-bits:
+>> +              enum: [8, 10, 12, 14, 16]
+>> +              default: 16
+>> +
+>> +            st,adc-channels:
+>> +              minItems: 1
+>> +              maxItems: 20
+>> +              minimum: 0
+>> +              maximum: 19
+>> +
+>> +            st,min-sample-time-nsecs:
+>> +              minItems: 1
+>> +              maxItems: 20
+>> +              minimum: 40
+>> +
+>> +    additionalProperties: false
+>> +
+>> +    anyOf:
+>> +      - required:
+>> +          - st,adc-channels
+>> +      - required:
+>> +          - st,adc-diff-channels
+>> +
+>> +    required:
+>> +      - compatible
+>> +      - reg
+>> +      - interrupts
+>> +      - '#io-channel-cells'
+>> +
+>> +examples:
+>> +  - |
+>> +    // Example 1: with stm32f429
+>> +      adc123: adc@40012000 {
+>> +        compatible = "st,stm32f4-adc-core";
+>> +        reg = <0x40012000 0x400>;
+>> +        interrupts = <18>;
+>> +        clocks = <&rcc 0 168>;
+>> +        clock-names = "adc";
+>> +        st,max-clk-rate-hz = <36000000>;
+>> +        vdda-supply = <&vdda>;
+>> +        vref-supply = <&vref>;
+>> +        interrupt-controller;
+>> +        #interrupt-cells = <1>;
+>> +        #address-cells = <1>;
+>> +        #size-cells = <0>;
+>> +        adc@0 {
+>> +          compatible = "st,stm32f4-adc";
+>> +          #io-channel-cells = <1>;
+>> +          reg = <0x0>;
+>> +          clocks = <&rcc 0 168>;
+>> +          interrupt-parent = <&adc123>;
+>> +          interrupts = <0>;
+>> +          st,adc-channels = <8>;
+>> +          dmas = <&dma2 0 0 0x400 0x0>;
+>> +          dma-names = "rx";
+>> +          assigned-resolution-bits = <8>;
+>> +        };
+>> +        // ...
+>> +        // other adc child nodes follow...
+>> +      };
+>> +
+>> +  - |
+>> +    // Example 2: with stm32mp157c to setup ADC1 with:
+>> +    // - channel 1 as single-ended
+>> +    // - channels 2 & 3 as differential (with resp. 6 & 7 negative inputs)
+>> +      #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +      #include <dt-bindings/clock/stm32mp1-clks.h>
+>> +      adc12: adc@48003000 {
+>> +        compatible = "st,stm32mp1-adc-core";
+>> +        reg = <0x48003000 0x400>;
+>> +        interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
+>> +                     <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
+>> +        clocks = <&rcc ADC12>, <&rcc ADC12_K>;
+>> +        clock-names = "bus", "adc";
+>> +        booster-supply = <&booster>;
+>> +        vdd-supply = <&vdd>;
+>> +        vdda-supply = <&vdda>;
+>> +        vref-supply = <&vref>;
+>> +        st,syscfg = <&syscfg>;
+>> +        interrupt-controller;
+>> +        #interrupt-cells = <1>;
+>> +        #address-cells = <1>;
+>> +        #size-cells = <0>;
+>> +        adc@0 {
+>> +          compatible = "st,stm32mp1-adc";
+>> +          #io-channel-cells = <1>;
+>> +          reg = <0x0>;
+>> +          interrupt-parent = <&adc12>;
+>> +          interrupts = <0>;
+>> +          st,adc-channels = <1>;
+>> +          st,adc-diff-channels = <2 6>, <3 7>;
+>> +          st,min-sample-time-nsecs = <5000>;
+>> +          dmas = <&dmamux1 9 0x400 0x05>;
+>> +          dma-names = "rx";
+>> +        };
+>> +        // ...
+>> +        // other adc child node follow...
+>> +      };
+>> +
+>> +...
+>> -- 
+>> 2.7.4
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0908207313765864400==--
-
