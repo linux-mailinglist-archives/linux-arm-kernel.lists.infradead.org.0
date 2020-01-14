@@ -2,55 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 808EB13A453
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:52:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A9E913A46C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:53:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=03Z0bVxpaPanrzJhnIFD1SI4i5+d3lHvFlaB5Xxfhic=; b=eL/8RJQtnKI1Oq
-	WUzwm6R2KcNSsGN+6H8OCrTRSX/3Sjz333rmgNj+pU43GhznW3n9Vsz2WPGMzmYnK4q2S3yNB9AM7
-	Su3QXh1d/AfRiVwu04x29EhFZC9pchweomvkv3zdtMwKaCnRBekxf2RApYO3G7m2j7WSVf0gEAGnk
-	4hkOXDN7itfM4cIQnql9kbROp8BN6zO88oo3af6PTN5fIFmLyWJ0ZpyAzOg7DJH6eLzDnB+33QzgO
-	zaQl01lF57l0LG9jpMdU8YHZBYtoKrO8yqkJ8XnGmrEPA7JtahtrQXQzl7M6N9EwF9RpdokXju2CX
-	ebmqwBjHY4sk3qzjKuEg==;
+	List-Owner; bh=qm0HgOMlHkn2ZhcmQc8HgO46Z8O5+tOkfj7vwSqemc4=; b=Gy1xDDnGfPUJTi
+	ifmQEODGOrGTyO5QRRaUH43BOH9jP+qzqVpUpI79Rxd8uPmO0x5kWoFS9kzEmeNZqHZJFxFzLHqL8
+	mX/xCkDj2nkjNN27YG0wEkbRXtMpeEH2cmuDGNqlkb4LChbXymDLdEvyWehRC2w/LYu6Ar+FlmpyB
+	iUE8r3G6MsVBPyimA5OsVl1+rWyFK3Rm0MzXMoKp5l+bmPXcXPD98RFXOMLY1q8blSLzc4R4N+Pw2
+	Rpw7JyWwuUxd5bEfNhBiHJTs5m+n3+hNEfAp7uyjlekPG3Uob+onxmWuysL12jA4KnvS7hoSay7Ve
+	bW7WKXLgboA+GeInfrIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irIry-0003eh-8y; Tue, 14 Jan 2020 09:52:18 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1irIsv-0004cI-C4; Tue, 14 Jan 2020 09:53:17 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIrg-0003ah-19; Tue, 14 Jan 2020 09:52:04 +0000
+ id 1irIse-0004Pu-UP; Tue, 14 Jan 2020 09:53:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Fr/tL1N9zJcY69dJUGwg8on8z8D7PvqK10GbRlVYjgg=; b=WCAVFWr7eftgxjj2BhhxPUxem
+ qeHxJHUBxu/QGwS1c2SGZXn1kA+84C3sOOA8/4hGRwC4IA8WJPUJXos62aHbrbt13PcGQWkqE0v6n
+ GcmdFjAv/PGHSqznR/FzeSXx8tiDyODXrVr9zAGdkrjO9955Fg0ED32AvvCR/kUox51SB/c9K3CQM
+ lunS9zUQB6cWSSMpSRNhXoczPJ9WbapACRBBfWQzv7+6DJINTzkFQXweclJMeM77XDcpMgHcje9rY
+ zYtCzQiGS/7/KjSRWjxB9/oseb08Dzb8/jTA4ASqIT0tVTNLyWb6LDdzIDlGApsnLHBktTl37c8Jz
+ TT2YNyDow==;
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irIsY-0006fx-Fl; Tue, 14 Jan 2020 09:52:59 +0000
 X-Originating-IP: 90.65.102.129
 Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
  [90.65.102.129])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 61F64C0009;
- Tue, 14 Jan 2020 09:51:55 +0000 (UTC)
-Date: Tue, 14 Jan 2020 10:51:55 +0100
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 70EBB240006;
+ Tue, 14 Jan 2020 09:52:18 +0000 (UTC)
+Date: Tue, 14 Jan 2020 10:52:18 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 05/17] dt-bindings: atmel-isi: add microchip,sam9x60-isi
-Message-ID: <20200114095155.GE3137@piout.net>
+Subject: Re: [PATCH v2 06/17] dt-bindings: at91-sama5d2_adc: add
+ microchip,sam9x60-adc
+Message-ID: <20200114095218.GF3137@piout.net>
 References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
- <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578673089-3484-6-git-send-email-claudiu.beznea@microchip.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_015200_221400_EBC0B20E 
-X-CRM114-Status: UNSURE (   7.10  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,12 +94,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/01/2020 18:17:57+0200, Claudiu Beznea wrote:
-> Add microchip,sam9x60-isi to DT bindings documentation.
+On 10/01/2020 18:17:58+0200, Claudiu Beznea wrote:
+> Add microchip,sam9x60-adc to DT bindings documentation.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  Documentation/devicetree/bindings/media/atmel-isi.txt | 2 +-
+>  Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 Applied, thanks.
 
