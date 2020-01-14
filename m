@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A89D213A4AB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:57:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A16913A4AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:57:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kl5PClwbu1zpngAwzxMtFUJVezXXFZ7NCW33Tv8FVPc=; b=Fu3NSWvmJDFuPe
-	HAlZp6oYdWxiLeThJi1xU4LszQmfQCbF3WcOSrmUohxgdsUxANqL8bi/sW+ehPRcNQkdWlMjDjvCD
-	dyh3gZCftrinyZtSNPaAXycV1AARxyvujK94RYnapAV3aazL40CpFmtPI7akSLcK3ppbYUzQSQyFB
-	o4HzrGDtuhD4ccSSkL/5X4I0qxSD0JYpX+dE8oZNtjamlChRX1m4RM3MUD7O5G2p9NEEi+V1y4cff
-	h+3aGQlY/NQ00kMhdlDz3FrfEWaEJihzftVEnNCa0vg4RyzsTmK7ssvkTRUszHooOXedADC4ehYv5
-	LbNEA4QfK8RTGYDaoAzw==;
+	List-Owner; bh=qJIMLxX934lUEGfDlkI/GBJvN/jlyq70yD152mazE0U=; b=gg+G5xACNYRIgK
+	wus1nGbti06nYayIjyHvXH3j7aCl2Uek5f8F8JOC/gIqKc4Zi8lSoO8IOOffnebc3qwvO0W+mJWVe
+	evg+ue/T0Iaa5fh4x957wisdqqkRivc8CSi5AwyURlVs5SVM0CVdQHKR4fjQnUfRyKunZl5MVEsrB
+	eow1sfBgA0waJQEfZ39hsfcotOBsKI7IhXjapppdGVArWbN5Cmb9JHFZSlYasS5bF3MnnhMSL6eVg
+	PK5fvKvlA6JSJEqb0ud3UmqDEXbd/R7F3pCGnoVoaBVEF1LY+t83MiM7q+gtMNEP1O+8tq+xJUvFc
+	dahVlUYiqKTaWtIrjMyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irIwW-0000YK-5O; Tue, 14 Jan 2020 09:57:00 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1irIwn-0000nQ-Gj; Tue, 14 Jan 2020 09:57:17 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIw8-0000Oh-Ou
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 09:56:41 +0000
-Received: from mail-qt1-f182.google.com ([209.85.160.182]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1Mo7if-1jSrwv0eL5-00pawu for <linux-arm-kernel@lists.infradead.org>; Tue,
- 14 Jan 2020 10:56:34 +0100
-Received: by mail-qt1-f182.google.com with SMTP id 5so11937130qtz.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 01:56:33 -0800 (PST)
-X-Gm-Message-State: APjAAAXcQAslwXWcVJkH8BmLchBgMMig3NriRQtGHCMqBUMi7KeEfLWJ
- Zjjc4Tmq9eDQkM67LF+fgbdyh1WiBznZDe0PD7k=
-X-Google-Smtp-Source: APXvYqzAj8PJkE5/uF+NxfL3FE7u4OmKH2n+jc3UkRoq4QVztBCleDWEbe6N30Yqnyj3pc1ZnGojUB2ACXN7L/Bma0w=
-X-Received: by 2002:ac8:6153:: with SMTP id d19mr2796033qtm.18.1578995792883; 
- Tue, 14 Jan 2020 01:56:32 -0800 (PST)
+ id 1irIwO-0000cn-4G; Tue, 14 Jan 2020 09:56:56 +0000
+X-Originating-IP: 90.65.102.129
+Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 0D34920018;
+ Tue, 14 Jan 2020 09:56:47 +0000 (UTC)
+Date: Tue, 14 Jan 2020 10:56:47 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH v2 11/17] dt-bindings: atmel-gpbr: add
+ microchip,sam9x60-gpbr
+Message-ID: <20200114095647.GK3137@piout.net>
+References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-12-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
-References: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
- <CAK8P3a1MLyP4ooyEDiBF1fE0BJGocgDmO1f5Qrvn_W5eqahz8g@mail.gmail.com>
- <20200113064156.lt3xxpzygattz3he@vireshk-i7>
- <CAK8P3a2u6s4MAM_9bOqSt5NwVc4XrXs9W36tp-7rWWTXx0+pRg@mail.gmail.com>
- <20200114092615.nvj6mkwkplub5ul7@vireshk-i7>
-In-Reply-To: <20200114092615.nvj6mkwkplub5ul7@vireshk-i7>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 14 Jan 2020 10:56:16 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0jXyJArzQFd+u68iRvXNnXb_oHbWF9-abvvFuqhpi-NA@mail.gmail.com>
-Message-ID: <CAK8P3a0jXyJArzQFd+u68iRvXNnXb_oHbWF9-abvvFuqhpi-NA@mail.gmail.com>
-Subject: Re: [PATCH V2] firmware: arm_scmi: Make scmi core independent of
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>
-X-Provags-ID: V03:K1:uEORnW5znfDkLueJOJMTdNgajbcCOQKo2rr+nN9+dvFnT+U8UQH
- 6hNv/k32bmUZv252bcr6gtnd6mm0GA9pHHVhmZIQKttoUkBF3TbzWDewXhWTWnRtI0JnzbI
- JTZbD0DN20spstYgrw4cMrooP6WxWlO3uHtA+O07fkzmCiJDaCIt0GCcCdeX+W7I3kjclOT
- AxzF7OY3/l3NHELLm2GoQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:S9h4+pHR1Nc=:T6qviW4vCkcbKGYPK02gEJ
- 87u8cB/Jf9wQuLXuXYdafbmZsML4P5W81WThbWuQ/H/j8FR+9Vsu6CR8B5RV487P5ZMcULXsj
- U/eXvuEneSZPHx2xkFwO6q/EAAjpFWsAGTC5a8jweqhiQun26s5o7G+6Kt85FPv7L2AIcXZiw
- fFT7Yfqq9Bi3hbYsi6/nWOkZPBtipb8ZvcBo7L8PUO/7vZCbiZMaborws+hgfXgPMidGq8uI5
- EAkQe2oh+lXN8myzDKV252H0w3VOgC8DCXc31igqmaieJygo2X+XmsgBSwkb6FnehbKjarFSF
- oB+4tV0HZImPqVNLPyAqH0dCIRI/GtIG1Bmf6v6dZcJP+e6DU8drKbk8StrfEFUusJY6QP5RD
- AZ9xnKTkZmU/v5m+T9GxlaU1wB5TToN6hpWen1QcszcSbiJUUFu/QrqWvLbFUluh/hQB6Vd07
- K7F/u01trIYSeP/yVjWqa7Nl4FJ+7b24ro/dF6EunX2D7nREr0ZzTyPcLk85usnoaO2Bh7ezH
- k63M5ToeNzi6tECBKXbS343CgfYFz072gwMOZVRmdO8Vw+8pVTOyI6JW9uRmd7SOhnFpNxDX9
- 0A05ieeOO7wkAngdEKrbbC6GQDuxczO5JHzB4gfo8WU427Thex/E5kD+zU77vavtWwHgKahFd
- oFXeoalIt1OLJRW3HqUYzXy7Yblv0ElIZvN5009/LYmcbhQca0WIpL9hnIkXWalQ307U8hzQt
- RzzZNtBDy3hgW52wf6gVVr6HHyMxlZhwd+xE8ofm7xwR6KUb5OCdkjwzHN9s6nxMrRWDAHMzi
- mQXleURZP2HY+ihsq9gHX5LV6HRGKikKihJUpe6ppRilZWVs/jBx1xabkMdTPJVJIuDI66Ai4
- eAfhL8Nf019IrwW3ZDvA==
+Content-Disposition: inline
+In-Reply-To: <1578673089-3484-12-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_015637_122966_3318B934 
-X-CRM114-Status: GOOD (  17.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200114_015652_330486_CF58DC87 
+X-CRM114-Status: UNSURE (   7.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,46 +63,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- cristian.marussi@arm.com, Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, vigneshr@ti.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org, pmeerw@pmeerw.net,
+ miquel.raynal@bootlin.com, lee.jones@linaro.org, linux-rtc@vger.kernel.org,
+ lars@metafoo.de, richard@nod.at, ludovic.desroches@microchip.com,
+ wg@grandegger.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ tudor.ambarus@microchip.com, radu_nicolae.pirea@upb.ro,
+ linux-can@vger.kernel.org, robh+dt@kernel.org, mkl@pengutronix.de,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
+ richard.genoud@gmail.com, linux-spi@vger.kernel.org, vkoul@kernel.org,
+ knaack.h@gmx.de, dmaengine@vger.kernel.org, eugen.hristev@microchip.com,
+ jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 14, 2020 at 10:26 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> On 13-01-20, 12:36, Arnd Bergmann wrote:
-> > On Mon, Jan 13, 2020 at 7:42 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> >
-> > To answer all three, what I meant is that the payload pointer appears
-> > to be transport specific and
->
-> I am not sure if I understood the below statement properly. Is there
-> something missing from it ?
->
-> > should not be part of the common
-> > structure if there is generic way to access it.
->
-> The scmi protocol requires a block of shared memory which is
-> represented by struct scmi_shared_mem, and payload is this memory
-> block itself. This block of memory is accessed throughout driver.c
-> file using ioread/write commands. If payload is transport specific, so
-> will be those accesses, isn't it ? Are you suggesting to move all this
-> to mailbox.c (the transport specific file) instead ? I am sorry, but I
-> am not able to understand how exactly you want me to reorder code here
-> :(
+On 10/01/2020 18:18:03+0200, Claudiu Beznea wrote:
+> Add microchip,sam9x60-gpbr to DT bindings documentation.
+> 
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+> ---
+>  Documentation/devicetree/bindings/mfd/atmel-gpbr.txt | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+Applied, thanks.
 
-My point was that you cannot mix __iomem accesses with pointer
-accesses. As I understood it, the current version uses a pointer to a
-hardware mailbox with structured data, so you have to use ioremap()
-to get a token you can pass into ioread(), but (some of) the new
-transport types would just be backed by regular RAM, on which this
-is not a well-defined operation and you have to use memremap()
-and memcpy() instead.
-
-     Arnd
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
