@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B7713B107
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:34:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3D3F13B10B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:35:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DoWzwWbFK02WCzHE5sfSyH0TLDxkq1xdK+o0Sm1N4wM=; b=CLX52Sbg5fN+Yp
-	QPCFb+xyLKkeeTK0SnjUAQCr334gKw/+i56PpnqOUH8rMzG2yI1Hjz6TVXUwOLfInOsWUcRLr7qZg
-	CCtukneWl2QtrypuBCEvK0BsbwLeWeEyqH7uQ0/eyZXY5w8+tTBdfjAu1cxOSwdmMqPxiTbEs+ohX
-	OsGY5fpO3KzmWvzDQctboExWR1HX6yRnEeSZMXxjAakS0uSZsFntA4weFJTpHzM4nwJnF43VPQ7ib
-	O6vKjI2ashM0+JpZXb7izer7S5Y8FSzPqwh602VDFldSxaa3vnfz+TmP89DibNI27qxy2rRq5M/Xr
-	S25p6ZH3jwzrCjpnVluA==;
+	List-Owner; bh=1M5spH/9mhVOCmqaGJq3PisIoRIEI109dJRCsshF4Hs=; b=Y6VrB9/XNIuUxx
+	hssKeUaPqACYJZLEM6HUR3Q6+sJWUVb2WbMjyOuiES2oGotkKZSA2Hn5KaMHytyUnj+/2YhxoQWNt
+	OOQO+WZWCpqiwPFUT/Tgbgdn66NHWKLIZtfr7NU4d6Ivc2tTu37ByyXUggoFmddONrk15xDBOsZcp
+	ZeWCwCz9KJ1ffpCP4+3+WUS5SXml8PzTwm9sVvjRMr+LLWbK/zIKPjM8EFci8x/ajh9/UL+Zf1u2K
+	JTIkoR2ubUC26go5orB2K6SYPcB95kJS2eXRsssj5JgfCUoeRqAVRgM/3BJc0rqoRKsScHn6yhVaY
+	oXcxvW6bFJ8P046tGNTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irQ5b-0007rG-2h; Tue, 14 Jan 2020 17:34:51 +0000
+	id 1irQ6A-0000sJ-Se; Tue, 14 Jan 2020 17:35:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irQ5Q-0007q9-90
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 17:34:45 +0000
+ id 1irQ5x-0000rO-NQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 17:35:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF31F1396;
- Tue, 14 Jan 2020 09:34:38 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F28CD1396;
+ Tue, 14 Jan 2020 09:35:11 -0800 (PST)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- E58F83F68E; Tue, 14 Jan 2020 09:34:35 -0800 (PST)
-Date: Tue, 14 Jan 2020 17:34:33 +0000
+ 22D9F3F68E; Tue, 14 Jan 2020 09:35:09 -0800 (PST)
+Date: Tue, 14 Jan 2020 17:35:07 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v4 07/12] arm64: BTI: Decode BYTPE bits when printing
- PSTATE
-Message-ID: <20200114173433.GK30444@arrakis.emea.arm.com>
+Subject: Re: [PATCH v4 09/12] arm64: traps: Shuffle code to eliminate forward
+ declarations
+Message-ID: <20200114173506.GL30444@arrakis.emea.arm.com>
 References: <20191211154206.46260-1-broonie@kernel.org>
- <20191211154206.46260-8-broonie@kernel.org>
+ <20191211154206.46260-10-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191211154206.46260-8-broonie@kernel.org>
+In-Reply-To: <20191211154206.46260-10-broonie@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_093440_358194_D4EB2EAB 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20200114_093513_806760_A5F13E08 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,28 +83,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 03:42:01PM +0000, Mark Brown wrote:
+On Wed, Dec 11, 2019 at 03:42:03PM +0000, Mark Brown wrote:
 > From: Dave Martin <Dave.Martin@arm.com>
 > 
-> The current code to print PSTATE symbolically when generating
-> backtraces etc., does not include the BYTPE field used by Branch
-> Target Identification.
+> Hoist the IT state handling code earlier in traps.c, to avoid
+> accumulating forward declarations.
 > 
-> So, decode BYTPE and print it too.
-> 
-> In the interests of human-readability, print the classes of BTI
-> matched.  The symbolic notation, BYTPE (PSTATE[11:10]) and
-> permitted classes of subsequent instruction are:
-> 
->     -- (BTYPE=0b00): any insn
->     jc (BTYPE=0b01): BTI jc, BTI j, BTI c, PACIxSP
->     -c (BYTPE=0b10): BTI jc, BTI c, PACIxSP
->     j- (BTYPE=0b11): BTI jc, BTI j
+> No functional change.
 > 
 > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 > Signed-off-by: Mark Brown <broonie@kernel.org>
 
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
