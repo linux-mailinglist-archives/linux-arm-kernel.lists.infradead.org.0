@@ -2,103 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 484DE13A802
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:10:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7789613A809
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:11:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sNeq0D2GK2xm2Q1Y4I3ZoUL7N83y8DOK6dU6cZxxY4k=; b=L4+3wjAxXCKADG
-	pmxeJU6/jFIU2qkJ2sOJj8kXUMfRFjdh7GhOdG6m1oczyWi0MGyLgALFWhACARLWF3quDfCxqTerG
-	Zj1IpBnyaCGySQXx9JlhHBKjPv2O/DWGyioxOmnuQlatVxiMuMvMlglSWp1Wu8fQAXwkHzDg2l+Yw
-	NQ/YkiP+STejJxSltlvyBXlCSg2Y/7cf4O2oXc4VtvqqMBBHbOmVmZNgxE+Zz8JbJnzD/fPFgL2/O
-	0FzBE0XpJM1Nvn/Y0KG8IZC3go2nkm300ol1RcrFnSOv6mECBBmmlg1M2RpAOkt/5b+gm3T5nHGk3
-	Rtczs+FJZQysjj3E4qiA==;
+	List-Owner; bh=ER8YEbfYegfXqw//cvnaO8aV2XcxOQTRAYUj77wX6ts=; b=Ye0S/rUguP4pbD
+	jO8bgyxGVijL9GMGyE17wkmNHWvx0WzXzGPw4bIR7/+3l/REg+jaTwrR/Qza4DzsIR1cAz2vgJScg
+	UJyODFjMbCMxAfGfnD9kZET0iw1M1f3NeU0v3W1HGp1ZBr2vMzaVGS7LLWTWsPYvjSTBgJuu0UybI
+	Vbu4k0XD2mM8994MKOiWVcjuUA3IkdOHaDcxdgk+XDapWUH2ANbYQ3CvX1cuVk+qZGppcazxGQz+r
+	3dJxXjxYCAi8CV8As90IttdNoFRYIB777+efZaNUD4s6FfxyDB5wa61I3mT0PnmS7xJmfC7aYRDSk
+	kZiDAhQzLjO+fWhn5wlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irK5Y-00007S-5T; Tue, 14 Jan 2020 11:10:24 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1irK61-0000cR-Ht; Tue, 14 Jan 2020 11:10:53 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irK5M-0008OT-TB
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:10:17 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00EB2U77011423; Tue, 14 Jan 2020 12:09:44 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=ucZAM2cIKc0/MATE5BBAxoNnJTwj27q1VBl4Ts+mzvc=;
- b=eJ81EjPZAocn5iYHcW6pxX5VHrbvdMOEDeFGkGeo2l6e0tjlPGUhmejDhECaqr9BricK
- 0shj0Uts6xH7ImYjbaMtLbGzrGXUco5T6solJu/yyuw4Qv55dyJWdFlIwnWaPmzY76Cs
- /XrVCF7jLRoo2Xazxkn8VobFznhPGd69qNDRL9C2NtaG2QimOxgSpmIFWLF60JtDB8q0
- sNH2ndKZGuWDbeUOwRmXMATxkcHmwEEA+XYG5DCUlG+GQAMmpgDPsoCzBbbnZ52aX3zb
- sexTBUGCFhD9Jmi2p7X/6jZ+NjNI3Nii7d2scHUEU4+8PYcseyCFDFTcXwC/iHO+loeV kg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7jpd28c-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 14 Jan 2020 12:09:44 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6679510003A;
- Tue, 14 Jan 2020 12:09:37 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4B9FC2A9004;
- Tue, 14 Jan 2020 12:09:37 +0100 (CET)
-Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG3NODE3.st.com
- (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 14 Jan
- 2020 12:09:36 +0100
-Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
- SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
- 15.00.1473.003; Tue, 14 Jan 2020 12:09:36 +0100
-From: Christophe ROULLIER <christophe.roullier@st.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
- schema
-Thread-Topic: [PATCH 2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
- schema
-Thread-Index: AQHVyssbd0SA+ach30uRoVqg2DKqZg==
-Date: Tue, 14 Jan 2020 11:09:36 +0000
-Message-ID: <deb077f1-44f7-d2ad-73ea-9ada9704da72@st.com>
-References: <20191108103526.22254-1-christophe.roullier@st.com>
- <20191108103526.22254-3-christophe.roullier@st.com>
- <20191114182214.GA22693@bogus>
-In-Reply-To: <20191114182214.GA22693@bogus>
-Accept-Language: fr-FR, en-US
+ id 1irK5p-0000SG-R5
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:10:46 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: UvjBIf+DfnY1S0cSL5Svga2gj+VGC9x7Laqp3CxJ9VwS1DURoZFpO9xQYTrxUamMg/bcLPYIss
+ rr1t/A+OoqcGsxTpSoC3H1wqE1gOg/VKO7d4Ekqx8gK/KmdpWulV5YQDMvD0wMCgUJlhuOlMLn
+ KatDO6UFfP0uNQfQQdOnrCwh4nZ8EELndVUDDW5/BhXOytEkt+EiuqF2FBQ1UIqYEQjiWirn6h
+ 4xm/eZXgHcT3gXBzD50r4VrJJWK1ircc0cMeNXDxrAtSbgET1LAy2Jku+LNhsY9zl48rgs1AlR
+ 5NM=
+X-IronPort-AV: E=Sophos;i="5.69,432,1571727600"; d="scan'208";a="60725974"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 14 Jan 2020 04:10:17 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 14 Jan 2020 04:10:16 -0700
+Received: from NAM04-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Tue, 14 Jan 2020 04:10:16 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=h0cj49H7p/Lt9pxpiNDJsXD7D3v0fQDh7REiz3GGtZ+v3NJytLGfdLOWBzVAlP2wpLoZaa8C182ZSfk9siRehC6Cpic24UZLaHBMhMUUQuzMmSkj23tRXwmKKGjfAnwmeIUcUNff3DlZ6O7OVtNeHv+6kDHgJ1GUTC9CpxqcPY6+e/ISlB0ZBII+NLJ1cxBWqbQW2LWFvsLg+gX/E/57fUzxdh026v2cpGJQ/Z2yNE5Vz0ctIRhhoZCfiopJ1XH0uCFInvhRKWVDkqt8KEsWdB/k87z4wgtp5ZbtbIljx5RGlQXUm1sEMH+lZk00iLNzNW5qzIuYkb/Cx9Ul8RUFHg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pLzNbfQihk1dznnXQaesD9TJLtjYVE/FWtHivYp0/RQ=;
+ b=LjwXofR/r/gB9PI/B8RLLk/2sVFNKKedQj1+kA9SG+FrieD5CjSLtl4EfAHMcmr8Iaidut5mpcKOmNWE5McaZE3AIHA4C1jPh9GaRdMIOBGGHG6Mp1TpB/6h8fpnpF6RS/41mb6eevO0aVnh0Zz5wWz2Pmm1VRkAKzADiAPXaT1YPjm35+CEYTPNafaPn7TsoclPsMVxxZkJ2cHlU7IxTKD/pXKJKI59xfp01MQDBfFnbzewGbkVGja1m9xPZo5rlCbR7KwDdSlHx+lQ+u2Czrsj6661cMqL5HHEmWwBAKm7R5tDqcFtl/2btlpHY8d2z4Ethc8zmI+i5Q6lf26DOA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pLzNbfQihk1dznnXQaesD9TJLtjYVE/FWtHivYp0/RQ=;
+ b=kyZr80i1CNDX0pFqAqgDgVpgdwyutfYkDC+HCbasuzlxk3OuvAiurJgyGiPZoUC4u7rr0gAVzbHgYU6kVuYU9XnbNmpeDvTTvyXsOsXDEwrrXu6QBoqertHpfmmu075HPqsUfpczCgpvPwVi84qkT9VpU1bo8LjG8EipkA8+E40=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
+ DM6PR11MB3403.namprd11.prod.outlook.com (20.176.119.88) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.13; Tue, 14 Jan 2020 11:10:15 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2623.015; Tue, 14 Jan 2020
+ 11:10:15 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v3 4/7] dt-bindings: atmel-usart: remove wildcard
+Thread-Topic: [PATCH v3 4/7] dt-bindings: atmel-usart: remove wildcard
+Thread-Index: AQHVyssxad36L/lyDU2/n1XqgFNXSA==
+Date: Tue, 14 Jan 2020 11:10:14 +0000
+Message-ID: <f3c4d460-cff6-2e14-428a-a732a6bffe38@microchip.com>
+References: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
+ <1578997397-23165-5-git-send-email-claudiu.beznea@microchip.com>
+ <20200114104237.GM3137@piout.net>
+In-Reply-To: <20200114104237.GM3137@piout.net>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.51]
-Content-ID: <5C7EE8151C4CA64FB52AC56F9D52B939@st.com>
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7707f527-dfd7-426f-7c15-08d798e254f7
+x-ms-traffictypediagnostic: DM6PR11MB3403:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB3403FAAF17B4E3B080A813A787340@DM6PR11MB3403.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 028256169F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(376002)(39860400002)(136003)(346002)(366004)(199004)(189003)(8936002)(316002)(54906003)(6486002)(76116006)(6506007)(71200400001)(53546011)(966005)(81156014)(6512007)(6916009)(2616005)(81166006)(66946007)(66476007)(31686004)(66446008)(7416002)(8676002)(86362001)(478600001)(4326008)(64756008)(5660300002)(36756003)(186003)(91956017)(66556008)(2906002)(26005)(31696002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3403;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: QRtof8i5WtSixCYcvsPiZ/KhzRAWZ4iiao4TB/9vA62fPfmSViKZVB5sKj1OmfzJq3shgrDg9cXxo6/0q7TM2wL9iL/q6i+Wc1dcogj3+Gbhq+6vvVO9MObBha6qHv8W6hTebOeiXLqfqXgre27HCtBblxGK2KNY2HSKVTS6/Kx0wTCjJo9q5NNhIVP4wQ2HwOh4Lr1jZpQG+tCQbkXCYy3odG19VA6t3T90i/AtjKS+9Nr05P0qE/0hJTkxFLLcxB6rMj1zzdskFSa732DVcywjyhmlJomBXjHz5SoTdtiOgnSJNEEi/UIXMePsLXCNOU75iE3xwRC2paEXIpi4kGYr3ec9ltbZHxeW5Tm5iV/WBH0RCHx8H9gedwb3QH2YOsXyDc7rOMPUW6l7xP6T/tMIR5FCBcaVgTk0ut5XPAZYRVxRKg23Z5yUHdOMU7GPDTk4Db706iCNb6eLg8PGBCtuNlP7n40K+akD+DtoVdk=
+Content-ID: <B3E5FBED8BFF834FA0DF10EA00CB34FA@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-14_03:2020-01-13,
- 2020-01-14 signatures=0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7707f527-dfd7-426f-7c15-08d798e254f7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jan 2020 11:10:14.9701 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Z2aB7LzulXLO/srePqPWhP5Jkw3Ykow5Ij4ZKBq/rNoOJHva47az2ONcTXHnCYlbZLcc79PO39ndwJvxZS7ZphBqFD16pFZwUC95FCuNrOI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3403
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_031013_393311_ABFE0FB7 
-X-CRM114-Status: GOOD (  24.76  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200114_031041_934712_9B0D09C8 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,294 +155,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "martin.blumenstingl@googlemail.com" <martin.blumenstingl@googlemail.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mripard@kernel.org" <mripard@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "alexandru.ardelean@analog.com" <alexandru.ardelean@analog.com>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, devicetree@vger.kernel.org,
+ richard.genoud@gmail.com, radu_nicolae.pirea@upb.ro,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ robh+dt@kernel.org, linux-spi@vger.kernel.org, lee.jones@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob, all,
 
-On 11/14/19 7:22 PM, Rob Herring wrote:
-> On Fri, Nov 08, 2019 at 11:35:26AM +0100, Christophe Roullier wrote:
->> Convert stm32 dwmac to DT schema.
-> Lots of checkpatch errors with trailing WS.
-ok, sorry I forgot to execute checkpatch before upstream.
->> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+
+On 14.01.2020 12:42, Alexandre Belloni wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+> 
+> On 14/01/2020 12:23:14+0200, Claudiu Beznea wrote:
+>> Remove chip whildcard and introduce the list of compatibles instead.
+>>
+>> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 >> ---
->>   .../devicetree/bindings/net/stm32-dwmac.txt   |  44 -----
->>   .../devicetree/bindings/net/stm32-dwmac.yaml  | 161 ++++++++++++++++++
->>   2 files changed, 161 insertions(+), 44 deletions(-)
->>   delete mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.txt
->>   create mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+>>  Documentation/devicetree/bindings/mfd/atmel-usart.txt | 7 +++----
+>>  1 file changed, 3 insertions(+), 4 deletions(-)
 >>
->> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.txt b/Documentation/devicetree/bindings/net/stm32-dwmac.txt
->> deleted file mode 100644
->> index a90eef11dc46..000000000000
->> --- a/Documentation/devicetree/bindings/net/stm32-dwmac.txt
->> +++ /dev/null
->> @@ -1,44 +0,0 @@
->> -STMicroelectronics STM32 / MCU DWMAC glue layer controller
->> -
->> -This file documents platform glue layer for stmmac.
->> -Please see stmmac.txt for the other unchanged properties.
->> -
->> -The device node has following properties.
->> -
->> -Required properties:
->> -- compatible:  For MCU family should be "st,stm32-dwmac" to select glue, and
->> -	       "snps,dwmac-3.50a" to select IP version.
->> -	       For MPU family should be "st,stm32mp1-dwmac" to select
->> -	       glue, and "snps,dwmac-4.20a" to select IP version.
->> -- clocks: Must contain a phandle for each entry in clock-names.
->> -- clock-names: Should be "stmmaceth" for the host clock.
->> -	       Should be "mac-clk-tx" for the MAC TX clock.
->> -	       Should be "mac-clk-rx" for the MAC RX clock.
->> -	       For MPU family need to add also "ethstp" for power mode clock
->> -- interrupt-names: Should contain a list of interrupt names corresponding to
->> -           the interrupts in the interrupts property, if available.
->> -		   Should be "macirq" for the main MAC IRQ
->> -		   Should be "eth_wake_irq" for the IT which wake up system
->> -- st,syscon : Should be phandle/offset pair. The phandle to the syscon node which
->> -	       encompases the glue register, and the offset of the control register.
->> -
->> -Optional properties:
->> -- clock-names:     For MPU family "eth-ck" for PHY without quartz
->> -- st,eth-clk-sel (boolean) : set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
->> -- st,eth-ref-clk-sel (boolean) :  set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
->> -
->> -Example:
->> -
->> -	ethernet@40028000 {
->> -		compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
->> -		reg = <0x40028000 0x8000>;
->> -		reg-names = "stmmaceth";
->> -		interrupts = <0 61 0>, <0 62 0>;
->> -		interrupt-names = "macirq", "eth_wake_irq";
->> -		clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
->> -		clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
->> -		st,syscon = <&syscfg 0x4>;
->> -		snps,pbl = <8>;
->> -		snps,mixed-burst;
->> -		dma-ranges;
->> -	};
->> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.yaml b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
->> new file mode 100644
->> index 000000000000..eb0fd831f59d
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
->> @@ -0,0 +1,161 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +# Copyright 2019 BayLibre, SAS
->> +%YAML 1.2
->> +---
->> +$id: "http://devicetree.org/schemas/net/stm32-dwmac.yaml#"
->> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->> +
->> +title: STMicroelectronics STM32 / MCU DWMAC glue layer controller
->> +
->> +maintainers:
->> +  - Alexandre Torgue <alexandre.torgue@st.com>
->> +  - Christophe Roullier <christophe.roullier@st.com>
->> +
->> +description:
->> +  This file documents platform glue layer for stmmac.
->> +
->> +# We need a select here so we don't match all nodes with 'snps,dwmac'
->> +select:
->> +  properties:
->> +    compatible:
->> +      contains:
->> +        enum:
->> +          - st,stm32-dwmac
->> +          - st,stm32mp1-dwmac
->> +  required:
->> +    - compatible
->> +
->> +allOf:
->> +  - $ref: "snps,dwmac.yaml#"
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - st,stm32-dwmac
->> +              - st,stm32mp1-dwmac
->> +    then:
->> +      properties:
->> +       clocks:
->> +         minItems: 3
->> +         maxItems: 5
->> +         items:
->> +          - description: GMAC main clock
->> +          - description: MAC TX clock
->> +          - description: MAC RX clock
->> +          - description: For MPU family, used for power mode
-> What does 'power mode' mean? IIRC, some DW MACs have a clock for WoL
-> called LPI or something. Are you sure this is ST specific and not DW
-> config or version specific?
-
-Yes that right, it is clock used to manage WoL during suspend.
-
-My problem it is may be to manage MCU and MPU family in same yaml file
-
-Because in MCU family only 3 clocks used (GMAC main clock, MAC TX clock 
-and MAC RX clock)
-
-In MPU family it is same clocks + clock to manage WoL and clock to 
-manage PHY without Cristal
-
->> +          - description: For MPU family, used for PHY without quartz
-> It would be cleaner to define the clock always present and use a
-> fixed-clock when you have an external quartz.
-
-You are right, I will define clocks always present and manage them in my 
-driver (enable or disable it in function of phy mode, if with or without 
-quartz in PHY etc..)
-
-So for MCU (st,stm32-dwmac) I need 3 clocks and for MPU 
-(st,stm32mp1-dwmac) 5 clocks
-
-How to manage this in yaml ? 2 differents files ?
-
->> +
->> +       clock-names:
->> +         minItems: 3
->> +         maxItems: 5
->> +         contains:
->> +          enum:
->> +            - stmmaceth
->> +            - mac-clk-tx
->> +            - mac-clk-rx
->> +            - ethstp
->> +            - eth-ck
->> +
->> +properties:
->> +  compatible:
->> +    oneOf:
->> +      - items:
->> +          - enum:
->> +              - st,stm32mp1-dwmac
->> +          - const: snps,dwmac-4.20a
->> +      - items:
->> +          - enum:
->> +              - st,stm32-dwmac
->> +          - const: snps,dwmac-4.10a
->> +      - items:
->> +          - enum:
->> +              - st,stm32-dwmac
->> +          - const: snps,dwmac-3.50a
->> +
->> +  st,syscon:
->> +    allOf:
->> +      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
->> +    description:
->> +      Should be phandle/offset pair. The phandle to the syscon node which
->> +      encompases the glue register, and the offset of the control register
->> +
->> +  st,eth-clk-sel:
->> +    description:
->> +      set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
->> +    type: boolean
->> +
->> +  st,eth-ref-clk-sel:
->> +    description:
->> +      set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
-> Wrap lines.
-ok
->> +    type: boolean
->> +
->> +required:
->> +  - compatible
->> +  - clocks
->> +  - clock-names
->> +  - st,syscon
->> +
->> +examples:
->> + - |
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/clock/stm32mp1-clks.h>
->> +    #include <dt-bindings/reset/stm32mp1-resets.h>
->> +    #include <dt-bindings/mfd/stm32h7-rcc.h>
->> +    //Example 1
->> +     ethernet0: ethernet@5800a000 {
->> +       compatible = "st,stm32mp1-dwmac", "snps,dwmac-4.20a";
->> +       reg = <0x5800a000 0x2000>;
->> +       reg-names = "stmmaceth";
->> +       interrupts = <&intc GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
->> +       interrupt-names = "macirq";
->> +       clock-names = "stmmaceth",
->> +                     "mac-clk-tx",
->> +                     "mac-clk-rx",
->> +                     "ethstp",
->> +                     "eth-ck";				
->> +       clocks = <&rcc ETHMAC>,
->> +                <&rcc ETHTX>,
->> +                <&rcc ETHRX>,
->> +                <&rcc ETHSTP>,
->> +                <&rcc ETHCK_K>;	
->> +       st,syscon = <&syscfg 0x4>;
->> +       snps,pbl = <2>;
->> +       snps,axi-config = <&stmmac_axi_config_0>;
->> +       snps,tso;
->> +       status = "disabled";
->> +       phy-mode = "rgmii";
->> +       };
->> +
->> +    //Example 1 (MCU example)
-> 2 Example 1's?
->
-exact, I will rename it
-
-Thanks Rob
-
->> +     ethernet1: ethernet@40028000 {
->> +       compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
->> +       reg = <0x40028000 0x8000>;
->> +       reg-names = "stmmaceth";
->> +       interrupts = <0 61 0>, <0 62 0>;
->> +       interrupt-names = "macirq", "eth_wake_irq";
->> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
->> +       clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
->> +       st,syscon = <&syscfg 0x4>;
->> +       snps,pbl = <8>;
->> +       snps,mixed-burst;
->> +       dma-ranges;
->> +       phy-mode = "mii";
->> +       };
->> +
->> +    //Example 2
->> +     ethernet2: ethernet@40027000 {
->> +       compatible = "st,stm32-dwmac", "snps,dwmac-4.10a";
->> +       reg = <0x40028000 0x8000>;
->> +       reg-names = "stmmaceth";
->> +       interrupts = <61>;
->> +       interrupt-names = "macirq";
->> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
->> +       clocks = <&rcc 62>, <&rcc 61>, <&rcc 60>;
->> +       st,syscon = <&syscfg 0x4>;
->> +       snps,pbl = <8>;
->> +       status = "disabled";
->> +       phy-mode = "mii";
->> +       };
->> +
->> +
->> -- 
->> 2.17.1
+>> diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>> index 699fd3c9ace8..778e8310606a 100644
+>> --- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>> +++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>> @@ -1,10 +1,9 @@
+>>  * Atmel Universal Synchronous Asynchronous Receiver/Transmitter (USART)
 >>
+>>  Required properties for USART:
+>> -- compatible: Should be "atmel,<chip>-usart" or "atmel,<chip>-dbgu"
+>> -  The compatible <chip> indicated will be the first SoC to support an
+>> -  additional mode or an USART new feature.
+>> -  For the dbgu UART, use "atmel,<chip>-dbgu", "atmel,<chip>-usart"
+>> +- compatible: Should be one of the following:
+>> +     - "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
+>> +     - "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
+> 
+> All the uarts are not dbgus, so this need to be:
+> 
+>  - "atmel,at91rm9200-usart"
+>  - "atmel,at91sam9260-usart"
+>  - "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
+>  - "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
+
+Ok!
+
+> 
+> Also, you need to update drivers/soc/atmel/soc.c
+
+OK. Did you refer to CIDR, EXID registers? They are at the same offsets as
+for the old products. So we can rely on old compatible for them. Is this OK?
+
+Thank you,
+Claudiu Beznea
+
+> 
+>>  - reg: Should contain registers location and length
+>>  - interrupts: Should contain interrupt
+>>  - clock-names: tuple listing input clock names.
+>> --
+>> 2.7.4
+>>
+> 
+> --
+> Alexandre Belloni, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
