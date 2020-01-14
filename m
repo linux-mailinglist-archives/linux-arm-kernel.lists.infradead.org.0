@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2A0D13A8D0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:56:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5745513A8D5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:57:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uPtljRFqSLX/bAGYMCPhqP0JF0PBFici+TgWfxkQPgc=; b=FmnLLTZNhhcjZc
-	nE7vJdvqYLDQOCs7Y39ncCcg5ib36OlHdbYwuPS4bvKQE7nZxEw/IPaIt/BD60B8I5PqTegW+oi7f
-	rN+cHF4705PM/qvUVtWx4rOptH7RtQHwWVdnahu9ZbjAh0dGN4726Y2T77Z+UBTswejQwUUD8pp8e
-	eac6qOTUI5MpYqoHpfMISYEqo/mlRU7WxKUEIZzVMNwo6tUb/XY40uRaqeowEih3mgFvNVoeMGgjb
-	DzhJMTlWpYBcWjf77cFgvPq6duqR9+qJRxAcz9XBFaEAL/sujSDqw8s0M3wZRLb2TBzxGyRQ/6vbK
-	aX9TnVOH1gihzhhKYzQw==;
+	List-Owner; bh=y3+xfQhjH/+Ru0wj4JxRNqDUsRoWhIrzhCbTqxRhpbk=; b=FZ9a+/vDm6E0pY
+	oM0OBohB78sGm3ofAZX1GUgToAI1s8SqtbXJnZ9gXPD3ozNympwFBe2HvEdLfZfjfGztGRaW6i7er
+	e7btvU6viTKL7Lr0FsSwT7THKhNLpHoVZwB5FMO2MjTVX/HN9XtCm8FMBcamCYP7Fv+5txK5QZgg2
+	o/eFT5nuagThFqKojLnEC1mKyO7pivBkHRrqAjJh+oeYn7wecOwrhJFx1xfOMV3yHtHFf3LUyvt+r
+	l6rkZKzwuLbb/iVoIbnL+bnGIlDFhSQu2758nB8SbrRA0f+3iRxvteXlsMgWLIyb3/PuYaKY3A8Y9
+	zFZbKH0FSktTo5iRo6Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irKoN-0002D3-AJ; Tue, 14 Jan 2020 11:56:43 +0000
+	id 1irKp1-0002iC-Oi; Tue, 14 Jan 2020 11:57:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irKo3-00025J-DQ
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:56:24 +0000
+ id 1irKop-0002du-Rq
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:57:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A25AA1435;
- Tue, 14 Jan 2020 03:56:20 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49D921435;
+ Tue, 14 Jan 2020 03:57:11 -0800 (PST)
 Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9B3433F6C4;
- Tue, 14 Jan 2020 03:56:18 -0800 (PST)
-Date: Tue, 14 Jan 2020 11:56:14 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B4A13F6C4;
+ Tue, 14 Jan 2020 03:57:10 -0800 (PST)
+Date: Tue, 14 Jan 2020 11:57:07 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v3 2/7] arm64: fpsimd: Make sure SVE setup is complete
- before SIMD is used
-Message-ID: <20200114115613.GC2289@mbp>
+Subject: Re: [PATCH v3 5/7] arm64: ptrace: nofpsimd: Fail FP/SIMD regset
+ operations
+Message-ID: <20200114115707.GD2289@mbp>
 References: <20200113233023.928028-1-suzuki.poulose@arm.com>
- <20200113233023.928028-3-suzuki.poulose@arm.com>
+ <20200113233023.928028-6-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200113233023.928028-3-suzuki.poulose@arm.com>
+In-Reply-To: <20200113233023.928028-6-suzuki.poulose@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_035623_516322_F3D8F131 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20200114_035711_940998_C326FCC8 
+X-CRM114-Status: UNSURE (   8.08  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,15 +73,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 11:30:18PM +0000, Suzuki K Poulose wrote:
-> In-kernel users of NEON rely on may_use_simd() to check if the SIMD
-> can be used. However, we must initialize the SVE before SIMD can
-> be used. Add a sanity check to make sure that we have completed the
-> SVE setup before anyone uses the SIMD.
+On Mon, Jan 13, 2020 at 11:30:21PM +0000, Suzuki K Poulose wrote:
+> When fp/simd is not supported on the system, fail the operations
+> of FP/SIMD regsets.
 > 
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
+> Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
 > Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
 > Cc: Catalin Marinas <catalin.marinas@arm.com>
 > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
