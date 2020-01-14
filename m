@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D68CD13A98F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 13:43:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD95013A99D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 13:46:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=stQe9r6Nc84EAjmRrOxO08DSMk0roXcHsRL3VeiClvY=; b=sXKltIMtgf/DJW
-	a6PtfdBu0FBXhca775GXqA80n8WNhAiEzFgwA89X4RznCo8PTfHTa4tAqc7muXrHlpQfxGb7SqJxV
-	z+LHvymPXAS4smDcdxll0gkL3miEKd7maNA3m3xSY7hqdv4WT6e1z/Bopgf47s7oCfUGg04wHLNIB
-	d2WNooNenCwUKOw9BgdMQijAbkfLYZxw6OzQryoMC3k//dxTYaQvovrYzCdSi5l9cKsHpWGBly91O
-	qum5zy3mlHn4au4/v3QOxpTpgceXWnfMV7et5MDP3DFrD6JoMHap6gEkCDtO1lrys0ghPx+PYV0/4
-	lFG+UbQZTEKQqDODQp6g==;
+	List-Owner; bh=H6D+76xHx1accwLUYPZlijgYfhchULvNNFflNU4Lrhg=; b=f1yMPVVy4PoqNd
+	VQ7S8X+vFi1ZR+07DNN8eofAe2PUGJr6NIhB2Bw5JgXRJZllqcvdYuDYzH8r+10XukXvm2S0RtiNw
+	+OraOXZDW38X7YEx3d8i3wfU8a32yZBFI7IkXDgATSsH+QdnUnucjG++6H70c5f/pFWMFmr4Q2H1p
+	neNohDLKlj4x6P/uIwLDQonB9ZuGjX2wbCTW9G+0ONbOKrmWSAnOk/rsVkQu4dfSctRY9FBVDwPh/
+	Md9OCXMEh8+Erzdco8drsVAQZq+9OgCcV3vxXqS/o3zywChjddCycxK4wqQ0aD4WPYZ0rmifJv19b
+	1U7QcQt72Jitv1t4nlSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irLXG-0004US-9G; Tue, 14 Jan 2020 12:43:06 +0000
+	id 1irLa4-00063b-FV; Tue, 14 Jan 2020 12:46:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irLX3-0004Se-Vr
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 12:42:58 +0000
+ id 1irLZt-00062f-1c
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 12:45:53 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A41E12072B;
- Tue, 14 Jan 2020 12:42:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 933DE2072B;
+ Tue, 14 Jan 2020 12:45:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579005773;
- bh=EqGlPOQVjDwFdU3xKCH6PmzQ7/ovsT61O4x/R8FJr0M=;
+ s=default; t=1579005948;
+ bh=5Xx/5E6xOw7Km9R4I0Y6ZaqaGkVDzTuF66OmQwdPn0E=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xstpOZpYaauuDO7rrBvagRtD5xotb6YaNsJ3bGzP45QIu7rDnCEgguFTiL2Kb7JOm
- f8rRQe68B+s3Z0VF1eMWatZycY80kQJmaPrykY3dX9iwp2WIX9vSMlXowT4YjkO30q
- i+WQTgjqrCUOu4uB7Ngo8LL8ZZ0SYYSt2ZTQ9/1A=
-Date: Tue, 14 Jan 2020 12:42:47 +0000
+ b=bDc54IzA8ITZll+FHhUYtsE6hTFFY9uwR6VuweAldUJOd68jiEkQPnwPebJRTLQO+
+ /JK0iqybSZ6IFE7ctCE9JOcIWFAbKtuHzaLB8CQ1OvRQF4IwDwk7m4hMTAhOhYIATp
+ YxYGMSEdh6ZleqDwG8kEfIHWmFTlT3zfbWbqdSMM=
+Date: Tue, 14 Jan 2020 12:45:42 +0000
 From: Will Deacon <will@kernel.org>
 To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 09/13] iommu/arm-smmu-v3: Prepare for handling
- arm_smmu_write_ctx_desc() failure
-Message-ID: <20200114124247.GD29222@willie-the-truck>
+Subject: Re: [PATCH v4 13/13] iommu/arm-smmu-v3: Add support for PCI PASID
+Message-ID: <20200114124541.GE29222@willie-the-truck>
 References: <20191219163033.2608177-1-jean-philippe@linaro.org>
- <20191219163033.2608177-10-jean-philippe@linaro.org>
+ <20191219163033.2608177-14-jean-philippe@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191219163033.2608177-10-jean-philippe@linaro.org>
+In-Reply-To: <20191219163033.2608177-14-jean-philippe@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_044254_046799_985A604B 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20200114_044549_129158_E7765085 
+X-CRM114-Status: GOOD (  18.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,42 +89,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 19, 2019 at 05:30:29PM +0100, Jean-Philippe Brucker wrote:
-> Second-level context descriptor tables will be allocated lazily in
-> arm_smmu_write_ctx_desc(). Help with handling allocation failure by
-> moving the CD write into arm_smmu_domain_finalise_s1().
+On Thu, Dec 19, 2019 at 05:30:33PM +0100, Jean-Philippe Brucker wrote:
+> Enable PASID for PCI devices that support it. Since the SSID tables are
+> allocated by arm_smmu_attach_dev(), PASID has to be enabled early enough.
+> arm_smmu_dev_feature_enable() would be too late, since by that time the
+
+What is arm_smmu_dev_feature_enable()?
+
+> main DMA domain has already been attached. Do it in add_device() instead.
 > 
-> Reviewed-by: Eric Auger <eric.auger@redhat.com>
+> Tested-by: Zhangfei Gao <zhangfei.gao@linaro.org>
 > Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->  drivers/iommu/arm-smmu-v3.c | 11 +++++++----
->  1 file changed, 7 insertions(+), 4 deletions(-)
+>  drivers/iommu/arm-smmu-v3.c | 55 ++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 54 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index e147087198ef..b825a5639afc 100644
+> index e62ca80f2f76..8e95ecad4c9a 100644
 > --- a/drivers/iommu/arm-smmu-v3.c
 > +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -2301,8 +2301,15 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->  	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
->  	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
->  	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> +
-> +	ret = arm_smmu_write_ctx_desc(smmu_domain, 0, &cfg->cd);
-
-Hmm. This ends up calling arm_smmu_sync_cd() but I think that happens before
-we've added the master to the devices list of the domain. Does that mean we
-miss the new SSID during the invalidation?
-
-> +	if (ret)
-> +		goto out_free_tables;
-> +
->  	return 0;
+> @@ -2644,6 +2644,53 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+>  	atomic_dec(&smmu_domain->nr_ats_masters);
+>  }
 >  
-> +out_free_tables:
+> +static int arm_smmu_enable_pasid(struct arm_smmu_master *master)
+> +{
+> +	int ret;
+> +	int features;
+> +	int num_pasids;
+> +	struct pci_dev *pdev;
+> +
+> +	if (!dev_is_pci(master->dev))
+> +		return -ENODEV;
+> +
+> +	pdev = to_pci_dev(master->dev);
+> +
+> +	features = pci_pasid_features(pdev);
+> +	if (features < 0)
+> +		return features;
+> +
+> +	num_pasids = pci_max_pasids(pdev);
+> +	if (num_pasids <= 0)
+> +		return num_pasids;
+> +
+> +	ret = pci_enable_pasid(pdev, features);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Failed to enable PASID\n");
+> +		return ret;
+> +	}
+> +
+> +	master->ssid_bits = min_t(u8, ilog2(num_pasids),
+> +				  master->smmu->ssid_bits);
+> +	return 0;
+> +}
+> +
+> +static void arm_smmu_disable_pasid(struct arm_smmu_master *master)
+> +{
+> +	struct pci_dev *pdev;
+> +
+> +	if (!dev_is_pci(master->dev))
+> +		return;
+> +
+> +	pdev = to_pci_dev(master->dev);
+> +
+> +	if (!pdev->pasid_enabled)
+> +		return;
+> +
+> +	master->ssid_bits = 0;
+> +	pci_disable_pasid(pdev);
+> +}
+> +
+>  static void arm_smmu_detach_dev(struct arm_smmu_master *master)
+>  {
+>  	unsigned long flags;
+> @@ -2852,13 +2899,16 @@ static int arm_smmu_add_device(struct device *dev)
+>  
+>  	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
+>  
+> +	/* Note that PASID must be enabled before, and disabled after ATS */
+> +	arm_smmu_enable_pasid(master);
 
-nit: We have more tables in this driver than you can shake a stick at, so
-please rename the label "out_free_cd_tables" or something like that.
+Is that part of the PCIe specs? If so, please can you add a citation to the
+comment?
+
+Are there any other ordering requirements, i.e. with respect to enabling
+substreams at the SMMU? For example, can a speculative ATS request provide
+a PASID?
 
 Will
 
