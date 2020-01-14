@@ -2,63 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E52313B20B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:25:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0952613B217
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:27:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qs5Gx+SjPeEx8e1m5K41mOnE0l1NJ/g4ZoWJcuo5UR4=; b=p9WwfLisPT+U0I
-	EareFq7KxK/qz3Z9IcS+HyVlut8OM2mg62rFacQX0rExxzyOe353d1iEfzytK+GDnnBSFF6NgRdnm
-	jEAN+peoGldF+tqi1UmmlZWgMJmaWw5kFP1D26Ap0tjhTd87qmxcgjn5u28UCHKVdA42pZEzVmg2B
-	GMdy9CPHh41KnCwrF8zvkDE4C6zcEeqK0Q6cIqsEp2PaV7+KP1oYi50xNe16GLfXG22SN1Rlllqkk
-	8EB3sJYAGjeDNEb/k6jLOI+tyZzYKV5DrsUaYJuzCfVv5KWGx4+XPT02VJCvsswgv7zfv3prLIvBJ
-	GtA5Mhd35HfUUK9NMaBA==;
+	List-Owner; bh=pUe7aNO6ehm1aC6FRasn0BBpWirceFyaj8LM5ktogMM=; b=TIkFplLmQvPWXg
+	BRE1pPeTBR2mY7P/eIWmIrWEEg4pBoTRX1O0zTMpr5k2EYIBl26dWqHveM55gb/02rtwa4m7fzzSR
+	KH4qO4yPu64wL8uVwxUgQdtd+OTSSQ6/oFXcFSt41fpoR5P2pRATGJfsYyvDiqV2t7jZ2Av3hxX1S
+	J8ffvuDH4v/b3tkbDUQS0GxF/QWb/pceY9BFWgWkMJgOTNyiZ0Ctv8XMZzEn4fvTwfkQb6naXXXS0
+	XIdoL2iCU/Y5N1kcFQuXW7PINpB0juLPqus5NbYlMah2DNuUyuJS1oaByJ3LtrvLBtaO5vPT2W31Y
+	Q0Ma2fZIV7cFbBFgxlOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irQsT-00072r-RG; Tue, 14 Jan 2020 18:25:21 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1irQuA-0007Nb-ER; Tue, 14 Jan 2020 18:27:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irQsF-0006ag-Ve
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 18:25:14 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 14 Jan 2020 10:25:07 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,319,1574150400"; d="scan'208";a="225636474"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by orsmga006.jf.intel.com with ESMTP; 14 Jan 2020 10:25:07 -0800
-Date: Tue, 14 Jan 2020 10:25:07 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v4 16/19] KVM: Ensure validity of memslot with respect to
- kvm_get_dirty_log()
-Message-ID: <20200114182506.GF16784@linux.intel.com>
-References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
- <20191217204041.10815-17-sean.j.christopherson@intel.com>
- <20191224181930.GC17176@xz-x1>
+ id 1irQtt-0007Mm-2x
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 18:26:53 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C615C24672;
+ Tue, 14 Jan 2020 18:26:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579026408;
+ bh=qnqGgrP8e9yV1OsuzVTzNXGikt0eU6jSP1VAIcJyBmg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lrXuON6lNa/3kGMXfWgCZKeqToNfMEc/Bm81yU3i7YyzltzarzjHAYDGNnu+exqw5
+ BWS8V+7Xk+pe0HfRkw7crfwWY+Sy7P0uSpIjfo6TNo07VEnP4BztnoU+rYjHs0VLrh
+ fHeuTQaoSAjpIpBO2njoR8F/VNZT+HfKdUby0EI4=
+Date: Tue, 14 Jan 2020 18:26:41 +0000
+From: Will Deacon <will@kernel.org>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v5 5/6] arm64: move ARM64_HAS_CACHE_DIC/_IDC from asm to C
+Message-ID: <20200114182641.GI2579@willie-the-truck>
+References: <20200102211357.8042-1-pasha.tatashin@soleen.com>
+ <20200102211357.8042-6-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191224181930.GC17176@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20200102211357.8042-6-pasha.tatashin@soleen.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_102508_071742_13E4C6C5 
-X-CRM114-Status: GOOD (  14.82  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200114_102649_156069_38A78FE5 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,98 +77,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>,
- kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, stefan@agner.ch,
+ jmorris@namei.org, yamada.masahiro@socionext.com, boris.ostrovsky@oracle.com,
+ sashal@kernel.org, sstabellini@kernel.org, maz@kernel.org,
+ linux@armlinux.org.uk, linux-arm-kernel@lists.infradead.org,
+ xen-devel@lists.xenproject.org, vladimir.murzin@arm.com, julien@xen.org,
+ alexios.zavras@intel.com, tglx@linutronix.de, allison@lohutok.net,
+ jgross@suse.com, steve.capper@arm.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, james.morse@arm.com, andrew.cooper3@citrix.com,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 24, 2019 at 01:19:30PM -0500, Peter Xu wrote:
-> On Tue, Dec 17, 2019 at 12:40:38PM -0800, Sean Christopherson wrote:
-> > +int kvm_get_dirty_log(struct kvm *kvm, struct kvm_dirty_log *log,
-> > +		      int *is_dirty, struct kvm_memory_slot **memslot)
-> >  {
-> >  	struct kvm_memslots *slots;
-> > -	struct kvm_memory_slot *memslot;
-> >  	int i, as_id, id;
-> >  	unsigned long n;
-> >  	unsigned long any = 0;
-> >  
-> > +	*memslot = NULL;
-> > +	*is_dirty = 0;
-> > +
-> >  	as_id = log->slot >> 16;
-> >  	id = (u16)log->slot;
-> >  	if (as_id >= KVM_ADDRESS_SPACE_NUM || id >= KVM_USER_MEM_SLOTS)
-> >  		return -EINVAL;
-> >  
-> >  	slots = __kvm_memslots(kvm, as_id);
-> > -	memslot = id_to_memslot(slots, id);
-> > -	if (!memslot->dirty_bitmap)
-> > +	*memslot = id_to_memslot(slots, id);
-> > +	if (!(*memslot)->dirty_bitmap)
-> >  		return -ENOENT;
-> >  
-> > -	n = kvm_dirty_bitmap_bytes(memslot);
-> > +	kvm_arch_sync_dirty_log(kvm, *memslot);
+On Thu, Jan 02, 2020 at 04:13:56PM -0500, Pavel Tatashin wrote:
+> The assmbly functions __asm_flush_cache_user_range and
+> __asm_invalidate_icache_range have alternatives:
 > 
-> Should this line belong to previous patch?
-
-No.
-
-The previous patch, "KVM: Provide common implementation for generic dirty
-log functions", is consolidating the implementation of dirty log functions
-for architectures with CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y.
-
-This code is being moved from s390's kvm_vm_ioctl_get_dirty_log(), as s390
-doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.  It's functionally a nop
-as kvm_arch_sync_dirty_log() is empty for PowerPC, the only other arch that
-doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.
-
-Arguably, the call to kvm_arch_sync_dirty_log() should be moved in a
-separate prep patch.  It can't be a follow-on patch as that would swap the
-ordering of kvm_arch_sync_dirty_log() and kvm_dirty_bitmap_bytes(), etc...
-
-My reasoning for not splitting it to a separate patch is that prior to this
-patch, the common code and arch specific code are doing separate memslot
-lookups via id_to_memslot(), i.e. moving the kvm_arch_sync_dirty_log() call
-would operate on a "different" memslot.   It can't actually be a different
-memslot because slots_lock is held, it just felt weird.
-
-All that being said, I don't have a strong opinion on moving the call to
-kvm_arch_sync_dirty_log() in a separate patch; IIRC, I vascillated between
-the two options when writing the code.  If anyone wants it to be a separate
-patch I'll happily split it out.
-
+> alternative_if ARM64_HAS_CACHE_DIC
+> ...
 > 
-> > +
-> > +	n = kvm_dirty_bitmap_bytes(*memslot);
-> >  
-> >  	for (i = 0; !any && i < n/sizeof(long); ++i)
-> > -		any = memslot->dirty_bitmap[i];
-> > +		any = (*memslot)->dirty_bitmap[i];
-> >  
-> > -	if (copy_to_user(log->dirty_bitmap, memslot->dirty_bitmap, n))
-> > +	if (copy_to_user(log->dirty_bitmap, (*memslot)->dirty_bitmap, n))
-> >  		return -EFAULT;
-> >  
-> >  	if (any)
-> > -- 
-> > 2.24.1
+> alternative_if ARM64_HAS_CACHE_IDC
+> ...
 > 
-> -- 
-> Peter Xu
+> But, the implementation of those alternatives is trivial and therefore
+> can be done in the C inline wrappers.
 > 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> ---
+>  arch/arm64/include/asm/cacheflush.h | 19 +++++++++++++++++++
+>  arch/arm64/mm/cache.S               | 27 +++++----------------------
+>  arch/arm64/mm/flush.c               |  1 +
+>  3 files changed, 25 insertions(+), 22 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
+> index 047af338ba15..fc5217a18398 100644
+> --- a/arch/arm64/include/asm/cacheflush.h
+> +++ b/arch/arm64/include/asm/cacheflush.h
+> @@ -77,8 +77,22 @@ static inline long __flush_cache_user_range(unsigned long start,
+>  {
+>  	int ret;
+>  
+> +	if (cpus_have_const_cap(ARM64_HAS_CACHE_IDC)) {
+> +		dsb(ishst);
+> +		if (cpus_have_const_cap(ARM64_HAS_CACHE_DIC)) {
+> +			isb();
+> +			return 0;
+> +		}
+> +	}
+> +
+>  	uaccess_ttbr0_enable();
+>  	ret = __asm_flush_cache_user_range(start, end);
+
+I don't understand this. Doesn't it mean a CPU with IDC but not DIC will
+end up with doing the D-cache maintenance?
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
