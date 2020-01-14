@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60DDB13A411
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:46:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DCAC13A41B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:46:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4L/bZxCKR9xX36yoF65k+SZJf8hbNIJHdbON7rIju5E=; b=YL6HB/PgH86YKz
-	+u+PZfop3nYSR5YngHfkt++IoZNMNjUkVxaoHFiDgnB69M21jk8HN3D8z4xRLGedi/9KqL2zmN97S
-	HUU20huN+mNPeefznE8yBiKkIrapeZTsIDP+OZC4F0C8KgKG8LLa4TDtUSjp2CctYDz/lxEVec5iO
-	DyN4fHKbhkiT352TuglpsYgNJ+EYe7GsZ8IsGMKbrjW8B1F8HPN44PEp9rCGjebmBz7E0UuCjFYyz
-	e5KBXqHoRMYXBR+whyBGJvrCpMDzdaloYX78byKxcPsyiZid4KNDR1f09gvAQTbmkTeJUtGN6gkRY
-	rLoyKVZH+kBwXdV1Xbsg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iFiiLmmK6nlRfWEPVoqnEc4y61nxwSnSjW1vMU0kKVo=; b=FCzK05W23H7OTk
+	GTH0c1a6lMQrQmNTLN+sxKMYEGmgozlar8ZDLFSdbixXXSibusgWvSQdwY//+MbLmI8fTRLIKhTxK
+	mznd7tU3NFtr5zttPCkJm2ChQ1Avz6zy/JB8YjT/o/SMWdNAxOhyavKU94VGNe0ev101R6ejWHki/
+	nKZb8MglKeKz0OVLbuXjnqyW2wT1S2zlmg1qhM6mP1XpBN5S5lq4encPmTXnF3+T2DqpXq54N5x6q
+	Ic4NUu3h1qfzxnp/oCBgq/4WJKpHHP6aChOYKyTT03oe+QEsjyGCe/s8eSGqx2mpo84fo5SElWhTV
+	djIM4AVGg3oqaPbDzBnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irImC-0007hN-5z; Tue, 14 Jan 2020 09:46:20 +0000
+	id 1irImT-0007s6-2E; Tue, 14 Jan 2020 09:46:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIlv-0007g9-4o
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 09:46:08 +0000
+ id 1irIlx-0007gL-3H
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 09:46:10 +0000
 Received: from dogfood.home (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr
  [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5FCE24670;
- Tue, 14 Jan 2020 09:46:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E582124673;
+ Tue, 14 Jan 2020 09:46:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578995162;
- bh=oXoVf5FYzK2l54ZMTKBmt/diqvZDokYRd/mYU7Iuj7w=;
- h=From:To:Cc:Subject:Date:From;
- b=ofFAsr0yMlwqOasIzmRJEYHG7eCD55Tw4XqWV8py/NHRxsNvvsm9h+vw/whb8uWXZ
- 6LhHsk/1b5w3U50AnfJon2zQ7Jyt2wPN4kOL/cG/Zp7TOb3w8YUjBw6r0CpUS/O3kn
- t7N/DVvu3lAy41/P2bAc+9c+6VSwH5DisAhMffX4=
+ s=default; t=1578995164;
+ bh=q26RMnhv4e6vnyl7On3dw2ZS7Ofbxt7I4hTv9fYgiXc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=XyydpypudDBcz8etUqufb5GnphOu22iRcWN0zlHbwPz1qgMRTO4QEmBwLSmlUsMHV
+ bZ/08I5PIoeMSmQhF2KQBhtfiwa9+uSxaLiBQf3k79JorHQ8QE7jq4xfPsn949mILa
+ Qzv+Yg/4y2fJdcgoxzQveBdcZQn63pqLSHcrRt6E=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: jarkko.sakkinen@linux.intel.com
-Subject: [PATCH 0/2] synquacer: add TPM support
-Date: Tue, 14 Jan 2020 10:45:03 +0100
-Message-Id: <20200114094505.11855-1-ardb@kernel.org>
+Subject: [PATCH 1/2] dt-bindings: tpm-tis-mmio: add compatible string for
+ SynQuacer TPM
+Date: Tue, 14 Jan 2020 10:45:04 +0100
+Message-Id: <20200114094505.11855-2-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200114094505.11855-1-ardb@kernel.org>
+References: <20200114094505.11855-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_014603_208064_D1AF8DDD 
-X-CRM114-Status: UNSURE (   8.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200114_014605_153412_35E3EE8C 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,7 +78,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, jgg@ziepe.ca, masahisa.kojima@linaro.org,
+ Ard Biesheuvel <ardb@kernel.org>, jgg@ziepe.ca,
+ Rob Herring <robh+dt@kernel.org>, masahisa.kojima@linaro.org,
  peterhuewe@gmx.de, linux-integrity@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -84,17 +87,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds support for driving the TPM on Socionext SynQuacer platforms
-using the existing driver for a memory mapped TIS frame.
+Add a compatible string for the SynQuacer TPM to the binding for a
+TPM exposed via a memory mapped TIS frame. The MMIO window behaves
+slightly differently on this hardware, so it requires its own
+identifier.
 
-Ard Biesheuvel (2):
-  dt-bindings: tpm-tis-mmio: add compatible string for SynQuacer TPM
-  tpm: tis: add support for MMIO TPM on SynQuacer
+Cc: Rob Herring <robh+dt@kernel.org>
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
- Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt |  1 +
- drivers/char/tpm/tpm_tis.c                                      | 31 ++++++++++++++++++--
- 2 files changed, 30 insertions(+), 2 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt b/Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt
+index 7c6304426da1..b604c8688dc8 100644
+--- a/Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt
++++ b/Documentation/devicetree/bindings/security/tpm/tpm_tis_mmio.txt
+@@ -12,6 +12,7 @@ Required properties:
+ - compatible: should contain a string below for the chip, followed by
+               "tcg,tpm-tis-mmio". Valid chip strings are:
+ 	          * "atmel,at97sc3204"
++		  * "socionext,synquacer-tpm-mmio"
+ - reg: The location of the MMIO registers, should be at least 0x5000 bytes
+ - interrupts: An optional interrupt indicating command completion.
+ 
 -- 
 2.20.1
 
