@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57407139EF0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 02:30:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B389D139EFD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 02:31:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3jpw4UNJZi1UX2p4bN51pPjpy8/IczYJxCexNvB49jU=; b=cjTjFHhfUuUJKinCtjIp/tIsdJ
-	H9CjBFk7jT1FxyXMFcS1tn3Y/iNUeWTrFhTgoA3/HO+fO2SN/VDWo6/sYP0DCR6eiIkSDWPdKpiXe
-	rPxKBzyQhO9TRqqBRZ/ySH58xGY/vwRuuX1eovKdV7RClLtYaxd6A0+ZY+rGuDBC+1VbJ0MODvoN7
-	93m0jfvP+M9GRl14pPeFBi0ox4oBLxTg7tu1g9h+MMeZ45VGxAAkUM7fVBzZPyXrNETReoonvTS9z
-	lvSQAcYsAI0XjPuXSGVOL0Gn0ayXHpHkQLLQ+kSb55PFyRBT4VlXERFUN2CEcJp9xD95ylHc3v4t6
-	+nPRId/g==;
+	bh=iuuWw8CF+u420C+atcOIT6r16Fztrjt9Q4U08nnooOo=; b=YD6KN87mEx//tpoA8VOUTdlnSd
+	cvse5r2zLQyxS26ELJQsXTDANB37eOnfa1RuoY4jlN6UhVwlH4kUhf4QJLe/FeSQSh0Sn4u3FE0m6
+	g1JFNhNQQ0XAVMkgVFOjlfp0I1lleFYvxJSdDSNGuDl/qQ2j6fSRj9AhHDObMutQtA241UjUSWOD+
+	H0HCBZ18hzaNgRd6ooywFLEdAG/+RRcaoxIAvED6cg93YZmuORDhpdRadCwgqmx5pywkalwOK0EFj
+	qqUJooUCXTz++D4yb6U3Iwpnn4dtrXYp4/SG3gt9AyLtURyYFA0gL0p+SwAG7hrIrwwN2xsuxNRev
+	Av+yvF/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irB2K-0004Xs-PX; Tue, 14 Jan 2020 01:30:28 +0000
+	id 1irB2r-00050w-HK; Tue, 14 Jan 2020 01:31:01 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irB2A-0004Wo-Ur
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 01:30:20 +0000
+ id 1irB2B-0004Wp-QY
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 01:30:22 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B52FA1A01C9;
- Tue, 14 Jan 2020 02:30:17 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 981E91A07BA;
+ Tue, 14 Jan 2020 02:30:18 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3B32E1A07BA;
- Tue, 14 Jan 2020 02:30:12 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4EB4D1A01BD;
+ Tue, 14 Jan 2020 02:30:13 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D2002402C7;
- Tue, 14 Jan 2020 09:30:05 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0DD0B402DF;
+ Tue, 14 Jan 2020 09:30:06 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, linux-clk@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2 2/3] dt-bindings: clock: Convert i.MX8MM to json-schema
-Date: Tue, 14 Jan 2020 09:26:06 +0800
-Message-Id: <1578965167-31588-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 3/3] dt-bindings: clock: Refine i.MX8MN clock binding
+Date: Tue, 14 Jan 2020 09:26:07 +0800
+Message-Id: <1578965167-31588-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578965167-31588-1-git-send-email-Anson.Huang@nxp.com>
 References: <1578965167-31588-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_173019_278259_B1FA3DB5 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20200113_173019_994795_6C859069 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,127 +79,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX8MM clock binding to DT schema format using json-schema
+Refine i.MX8MN clock binding by removing useless content and
+updating the example, it makes all i.MX8M SoCs' clock binding
+aligned.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No change.
 ---
- .../devicetree/bindings/clock/imx8mm-clock.txt     | 29 ---------
- .../devicetree/bindings/clock/imx8mm-clock.yaml    | 68 ++++++++++++++++++++++
- 2 files changed, 68 insertions(+), 29 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/clock/imx8mm-clock.txt
- create mode 100644 Documentation/devicetree/bindings/clock/imx8mm-clock.yaml
+ .../devicetree/bindings/clock/imx8mn-clock.yaml    | 48 +---------------------
+ 1 file changed, 2 insertions(+), 46 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/clock/imx8mm-clock.txt b/Documentation/devicetree/bindings/clock/imx8mm-clock.txt
-deleted file mode 100644
-index 8e4ab9e..0000000
---- a/Documentation/devicetree/bindings/clock/imx8mm-clock.txt
-+++ /dev/null
-@@ -1,29 +0,0 @@
--* Clock bindings for NXP i.MX8M Mini
--
--Required properties:
--- compatible: Should be "fsl,imx8mm-ccm"
--- reg: Address and length of the register set
--- #clock-cells: Should be <1>
--- clocks: list of clock specifiers, must contain an entry for each required
--          entry in clock-names
--- clock-names: should include the following entries:
--    - "osc_32k"
--    - "osc_24m"
--    - "clk_ext1"
--    - "clk_ext2"
--    - "clk_ext3"
--    - "clk_ext4"
--
--clk: clock-controller@30380000 {
--	compatible = "fsl,imx8mm-ccm";
--	reg = <0x0 0x30380000 0x0 0x10000>;
--	#clock-cells = <1>;
--	clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>, <&clk_ext2>,
--		 <&clk_ext3>, <&clk_ext4>;
--	clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
--		      "clk_ext3", "clk_ext4";
--};
--
--The clock consumer should specify the desired clock by having the clock
--ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mm-clock.h
--for the full list of i.MX8M Mini clock IDs.
-diff --git a/Documentation/devicetree/bindings/clock/imx8mm-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mm-clock.yaml
-new file mode 100644
-index 0000000..f5be181
---- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/imx8mm-clock.yaml
-@@ -0,0 +1,68 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/bindings/clock/imx8mm-clock.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP i.MX8M Mini Clock Control Module Binding
-+
-+maintainers:
-+  - Anson Huang <Anson.Huang@nxp.com>
-+
-+description: |
-+  NXP i.MX8M Mini clock control module is an integrated clock controller, which
-+  generates and supplies to all modules.
-+
-+properties:
-+  compatible:
-+    const: fsl,imx8mm-ccm
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: 32k osc
-+      - description: 24m osc
-+      - description: ext1 clock input
-+      - description: ext2 clock input
-+      - description: ext3 clock input
-+      - description: ext4 clock input
-+
-+  clock-names:
-+    items:
-+      - const: osc_32k
-+      - const: osc_24m
-+      - const: clk_ext1
-+      - const: clk_ext2
-+      - const: clk_ext3
-+      - const: clk_ext4
-+
-+  '#clock-cells':
-+    const: 1
+diff --git a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+index 622f365..da2103d 100644
+--- a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+@@ -40,7 +40,7 @@ properties:
+ 
+   '#clock-cells':
+     const: 1
+-    description: |
 +    description:
-+      The clock consumer should specify the desired clock by having the clock
-+      ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mm-clock.h
-+      for the full list of i.MX8M Mini clock IDs.
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - '#clock-cells'
-+
-+examples:
-+  # Clock Control Module node:
-+  - |
-+    clk: clock-controller@30380000 {
-+        compatible = "fsl,imx8mm-ccm";
+       The clock consumer should specify the desired clock by having the clock
+       ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mn-clock.h
+       for the full list of i.MX8M Nano clock IDs.
+@@ -57,7 +57,7 @@ examples:
+   - |
+     clk: clock-controller@30380000 {
+         compatible = "fsl,imx8mn-ccm";
+-        reg = <0x0 0x30380000 0x0 0x10000>;
 +        reg = <0x30380000 0x10000>;
-+        #clock-cells = <1>;
-+        clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>, <&clk_ext2>,
-+                 <&clk_ext3>, <&clk_ext4>;
-+        clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
-+                      "clk_ext3", "clk_ext4";
-+    };
-+
-+...
+         #clock-cells = <1>;
+         clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
+                  <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
+@@ -65,48 +65,4 @@ examples:
+                       "clk_ext2", "clk_ext3", "clk_ext4";
+     };
+ 
+-  # Required external clocks for Clock Control Module node:
+-  - |
+-    osc_32k: clock-osc-32k {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency = <32768>;
+-        clock-output-names = "osc_32k";
+-    };
+-
+-    osc_24m: clock-osc-24m {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency = <24000000>;
+-        clock-output-names = "osc_24m";
+-    };
+-
+-    clk_ext1: clock-ext1 {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency = <133000000>;
+-        clock-output-names = "clk_ext1";
+-    };
+-
+-    clk_ext2: clock-ext2 {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency = <133000000>;
+-        clock-output-names = "clk_ext2";
+-    };
+-
+-    clk_ext3: clock-ext3 {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency = <133000000>;
+-        clock-output-names = "clk_ext3";
+-    };
+-
+-    clk_ext4: clock-ext4 {
+-        compatible = "fixed-clock";
+-        #clock-cells = <0>;
+-        clock-frequency= <133000000>;
+-        clock-output-names = "clk_ext4";
+-    };
+-
+ ...
 -- 
 2.7.4
 
