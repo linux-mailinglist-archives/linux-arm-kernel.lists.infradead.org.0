@@ -2,101 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 671C013A0B8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 06:39:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F5213A115
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 07:42:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qUNbrDl9PA0/qdCT5LvDnngjW0kuHa+/u8PFyVFWYgg=; b=VoBedqdyA9cMY1
-	484kH3piO0AboC5pMrPlhfstvakdj1BNa4f3JdPA/HM8pHQCzWsjuCUYMAiYZVr1aMCBPQsLxpn2f
-	Rfz/u1GrmQO5b0gDWXwIKcQdpCU02zPmClPuC5ZP5+QbZxm46klbs5ClCKUWxbHeO65OuyL2pAju0
-	+1qKAgBmUvylZMaYCXOQyhC0DcsdeB0qLdlKAHFjv0Xh1+/05kkBlJE3WxsJNeNYbhGhYi/9XzsUu
-	P455m4a3cbEZwnpN8Eamkv+i5K+4xdXYXFy8hnsNlYan9zfyDGHzho3L11wyPxQbKhG2IA5Wm9Egl
-	EEUWs1aW2QiqTx41yL1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yzgL5CcBeQN7c5nBxZ0eHa15rHo1PRH84n3NvyXvtdE=; b=U9JaBgWvdftcbP
+	v7qeEnU/PAG4pkdYl5hgixRLi8mlbjdTqzEdONJsvBZsItb1y/bi6QWoyHVUV02wpexDif5NT4iBs
+	cUaFMd3/mJdcjUH8rOx9INJS2pP7fZO3Qyr0Wj1H0h/eTmfy7NzcqlT/NIOFXbUUhp2F0FdKr3VF/
+	cSAMqSDQwnJ7yqwJAa2k8QckbDWrsKhep9HYB403kfFIfJoZEHqqF2e+HxKhFqEF/EHE1ctMGB7Kz
+	um7epMlo8bwA4QXOWKpLRMUbb/J65J/ZakMRjMAD9l+Cov/blSxnSllUrHC7D0LaHXb1kZHM807Cc
+	Yrnxf39Fg/Fh90HF/kmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irEv1-0005Bh-IL; Tue, 14 Jan 2020 05:39:11 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1irFts-00009Z-M8; Tue, 14 Jan 2020 06:42:04 +0000
+Received: from mail-eopbgr130048.outbound.protection.outlook.com
+ ([40.107.13.48] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irEut-0005As-Nq
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 05:39:05 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i23so6030369pfo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 21:39:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=b7n7f6CO+MVHSnzRHpdk3x7t2oPCQj5a+pENYzfOC30=;
- b=YJPiX4Ge01qi2cDTShLqn/kh8bn3kNpTe5wc6z/fyvCC9EDLk8Rmj0/aHpYr/8VEnV
- YgRfBvDscL6BZ77SuTmaBS/tzT4b3aYb/dPDxvP1bIOoqHvbAwBa7c/JN/2A7YFYN1xl
- wDdCTjGzHguRdQQvj6H5wwLErsVRa8E1qKtUw+g8/hmPUWofSJdFNSfZrSVVo3OiQuHG
- 8GO31cKYHdcndYcuBoGB1dfAgfV52zThePZTYGmm5TPq1Ikq/t3J0NPSQ7DxMHrtyzpN
- /z9qoQ+GcscNZOsihnHhrxHfIFF9Y5j74lHiAx7Ng2p2+Yb/gCNsfgdJQb0+vf4wfy7w
- Z61g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=b7n7f6CO+MVHSnzRHpdk3x7t2oPCQj5a+pENYzfOC30=;
- b=II42PHxfzMcN6XOha+4tDlS5U0sBqsz87Wj9W0QhAZO5Jkl2aFWvUv1p47YdCuF5Dc
- G2EZSIdYNS1fMmKr32tbEUtHTe3oW+L4M3JJmvuWJOh6mTco9gr4KCYSaFtWrEUtrUjO
- VohUZul4y/e+ZBLCNBIhsFLkWTGq+IgyDSf+z5+9wU8dyky5p+2fTaX3q619B8ylw02O
- YbM6xKhZVzOFuC1ndqrNw2rIhA7rAz+hjmVac4zBuQU2qZlgmtDxdHHip0Ybw8UqM8ud
- 2ZSeqPFj8eZqoK8GdqSShL6P1sxrFMq8WjsLujIieSZ9rIrD3XvZyELYiS1Hco07I9L0
- c6mw==
-X-Gm-Message-State: APjAAAX3P9PHmzQ7sYGR9p8z9RxiOcgqXbGHLV/iH5sgRBKtqQItzU0f
- EF5eDO0ZqZWaXIu5ra4IyfUrFw==
-X-Google-Smtp-Source: APXvYqzdkeUzjHA8klmXiM9MmZ8IBJ7Myn8KLjVg80cTCkgU0kSt6TFpBU5rwYA56+DKgb5tSJo/vw==
-X-Received: by 2002:a62:be12:: with SMTP id l18mr24082217pff.226.1578980342200; 
- Mon, 13 Jan 2020 21:39:02 -0800 (PST)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id y5sm5803030pfn.185.2020.01.13.21.38.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 Jan 2020 21:39:01 -0800 (PST)
-Date: Tue, 14 Jan 2020 14:38:26 +0900
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
-Message-ID: <20200114053825.GC28530@linaro.org>
-Mail-Followup-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Will Deacon <will@kernel.org>,
- Pavel Tatashin <pasha.tatashin@soleen.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, robh+dt@kernel.org,
- frowand.list@gmail.com, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
- <20191216021247.24950-3-takahiro.akashi@linaro.org>
- <20200108174839.GB21242@willie-the-truck>
- <20200109004654.GA28530@linaro.org>
- <20200109083254.GA7280@willie-the-truck>
- <20200110160549.GA25437@willie-the-truck>
- <CA+CK2bAy-vfoz3kgUjZB74Hrobgu-a8H4pv6RbA_tbq++NWz5g@mail.gmail.com>
- <20200113112105.GB2337@willie-the-truck>
+ id 1irFtj-00008r-Ch
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 06:41:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S7YpMePCQQCGnAZC0pMT9Rrt9SQ8rOtNcnZoEYw46ds4Yxpzk/spjH9/yUdtk0PbQkq3HfOG8B3nSG4tJot4n00rqVYNpsPxhmaRlEtxCiQbk1M45IWxAXLKtVI5iu8cM7v4KP8XmfBTWMaKt2+PlQRwQ4wDbU0BlxkwYAPOs47rmc6fuULtjJrLt10/utv46dvh9GUbloZOjBR/2YbCVJZARRYf6Egx+W/d47GZtY1Y0P97JXFVuPuCOfqXZ2OnHEZCypf/YxBY2LEew6UqmFFRzb85+5Ei+SmaGJ+0t6GRH6gGsoaY4XTeFO/repHg2jl5QSCoKhVgzt/wkI6GSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lVjCQmZghlZKNk2xiESWeIe9k1jk7X3jcT/AWY2e7js=;
+ b=R8pBFdlm6T9HBH4X1zr3drAtHDjJ3Nk/f39uUlBVNRXGCpTAx+ydUT16LxKXBNKsru36Pr8OijjGl7HLC5H7zqzOALiy+D4iYbnZM913+SazLTg6L/DSK9saTAcWcLTevOaHVlfG22IExXDsVV0Ety/zNyFyOaBmIhRx+qCTm4qstOXnHH23I/Q2DAM+qdCAZF8JRm6CwBcdhrrmxnb+a9VKJQhlfCixMMjYm+UHEXvV0LGQsQlicwk+tEY81dvxnYMDEkdVdSDUmPPCqwQMGaFY7/Os8R5zvFNkh29KCdgw46XVJiPWPmJdKJYlRwD0WDns0MXwdadM5+lF5cyIgg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lVjCQmZghlZKNk2xiESWeIe9k1jk7X3jcT/AWY2e7js=;
+ b=CTycFTIkzAXA/vugLd6ilL3EEH0TRmIfPNXEPTxKhhZUXLjgV0A+W/jlhnPhenPecDawccur+SefOsUPTa9kFVgS1LZMGWW+AZpU5x5q56VGOTaLvZqcuVAeZsAxn5+cgQOOA7Mzpit7kfYItTakWD7jkEwr/xkXTSadC/yKFgo=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4404.eurprd04.prod.outlook.com (52.135.149.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.13; Tue, 14 Jan 2020 06:41:49 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.015; Tue, 14 Jan 2020
+ 06:41:49 +0000
+Received: from localhost.localdomain (119.31.174.66) by
+ HK2PR02CA0140.apcprd02.prod.outlook.com (2603:1096:202:16::24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2623.10 via Frontend Transport; Tue, 14 Jan 2020 06:41:46 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>
+Subject: [PATCH] dt-bindings: arm-boards: typo fix
+Thread-Topic: [PATCH] dt-bindings: arm-boards: typo fix
+Thread-Index: AQHVyqWyFUR1J0wI/kyxNhwHRPBOSA==
+Date: Tue, 14 Jan 2020 06:41:49 +0000
+Message-ID: <1578983860-23747-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR02CA0140.apcprd02.prod.outlook.com
+ (2603:1096:202:16::24) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 94598f12-5639-4005-3c00-08d798bcd4d1
+x-ms-traffictypediagnostic: AM0PR04MB4404:|AM0PR04MB4404:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB44042B159B41BE16E10E312388340@AM0PR04MB4404.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-forefront-prvs: 028256169F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(39860400002)(396003)(346002)(376002)(136003)(199004)(189003)(316002)(81156014)(478600001)(66946007)(52116002)(110136005)(54906003)(4744005)(81166006)(36756003)(6506007)(8676002)(8936002)(64756008)(66556008)(66476007)(44832011)(186003)(66446008)(71200400001)(5660300002)(16526019)(69590400006)(86362001)(2906002)(6512007)(956004)(6486002)(4326008)(26005)(2616005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4404;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: BN2zgY/qEzfMQFTaHAMPU9lmlDhr+C6Hty6jSzhapYCE9BtmlV9Ak1JIxljlAyJ9srbWsmiLLTE1mnBchjgzYhqgCfk2Nhs1jFiKDSMtF52dVtx2YuE2Gu14g3zUdLp6/m2LhgIqZUyjJ4JYdfxUmZ2eqYZtklDB01cCP78rvAjmo74sV6dVfkX1UW4BjxI7YJGCZnXDD0ju8MSrjwnghOF0zdsbD9UGRFkSfAhauJ4BN6jXlOs2dGVBt/SSBjSWB2nGq0fx5LTgcnUXXJ35k1glJVOly4nQ88nP7fg2jqmteDex8H/8bEB7p6Pww2zCNbMqCGZg4CdNOUrlHFcV3ntTRuYpeTD106VWmoIbjvIGDuaFc5vNjlo/5He6eBPXoVKm6vhaNNIK9VR9cbcmMZg5a/04itbzdmOCYaLBHVi4y0jm6ajCz1rESGKpsOtjpnWLcfx5CxhYBCcyJIHAeKFZq0C4QAl+kBFFlDJNESkATc2QCQjhkpyk6Q4X4Vvb
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200113112105.GB2337@willie-the-truck>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 94598f12-5639-4005-3c00-08d798bcd4d1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jan 2020 06:41:49.2307 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: kZPbzLFxdfQdGtdbK0JrvE7Ki8iEFB6kn6BoWoPQt3CTQkpIYqzVonl5rII6JY/FgOYLTQL8WkrXqV60B8UiXg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4404
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_213903_810699_614A0A78 
-X-CRM114-Status: GOOD (  26.10  )
+X-CRM114-CacheID: sfid-20200113_224155_507759_3BEFC1A5 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.13.48 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -115,107 +128,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pavel Tatashin <pasha.tatashin@soleen.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, robh+dt@kernel.org,
- James Morse <james.morse@arm.com>, frowand.list@gmail.com,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Will, Pavel,
+From: Peng Fan <peng.fan@nxp.com>
 
-On Mon, Jan 13, 2020 at 11:21:06AM +0000, Will Deacon wrote:
-> On Fri, Jan 10, 2020 at 11:19:16AM -0500, Pavel Tatashin wrote:
-> > On Fri, Jan 10, 2020 at 11:05 AM Will Deacon <will@kernel.org> wrote:
-> > >
-> > > On Thu, Jan 09, 2020 at 08:32:54AM +0000, Will Deacon wrote:
-> > > > On Thu, Jan 09, 2020 at 09:46:55AM +0900, AKASHI Takahiro wrote:
-> > > > > On Wed, Jan 08, 2020 at 05:48:39PM +0000, Will Deacon wrote:
-> > > > > > On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
-> > > > > > > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > > > > > > index 12a561a54128..d24b527e8c00 100644
-> > > > > > > --- a/arch/arm64/include/asm/kexec.h
-> > > > > > > +++ b/arch/arm64/include/asm/kexec.h
-> > > > > > > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
-> > > > > > >  struct kimage_arch {
-> > > > > > >         void *dtb;
-> > > > > > >         unsigned long dtb_mem;
-> > > > > > > +       /* Core ELF header buffer */
-> > > > > > > +       void *elf_headers;
-> > > > > > > +       unsigned long elf_headers_mem;
-> > > > > > > +       unsigned long elf_headers_sz;
-> > > > > > >  };
-> > > > > >
-> > > > > > This conflicts with the cleanup work from Pavel. Please can you check my
-> > > > > > resolution? [1]
-> > > > >
-> > > > > I don't know why we need to change a type of dtb_mem,
-> > > > > otherwise it looks good.
-> > > > >
-> > > > > (I also assume that you notice that kimage_arch is of no use for kexec.)
-> > > >
-> > > > Yes, that's why I'd like the resolution checked. If you reckon it's cleaner
-> > > > to drop Pavel's patch altogether in light of your changes, we can do that
-> > > > instead.
-> > > >
-> > > > Thoughts?
-> > >
-> > > Well, I've reverted the cleanup patch so please shout if you'd prefer
-> > > something else.
-> > 
-> > As I understand, the only concern was the type change for dtb_mem.
-> > This was one of the review comments for my patch
-> > https://lore.kernel.org/lkml/20191204155938.2279686-21-pasha.tatashin@soleen.com/
-> > 
-> > (I believe it was from Marc Zyngier), I add a number of new fields,
-> > and they all should be phys_addr_t, this is why I change dtb_mem to
-> > phys_addr_t to be consistent.
-> 
-> Sure, but I've only queued the first part of your series and that cleanup
-> patch doesn't make a lot of sense when applied against Akashi's work. I'm
-> happy to take stuff on top if you both agree to it, but having half of the
-> struct use unsigned long and the other half use phys_addr_t is messy.
+Typo fix, "withe" -> "with".
 
-Logically, whether dtb_mem is a "unsigned long" or phys_addr_t doesn't
-matter unless the kernel is compiled under LLP64.
-As far as the existing kexec code, either generic or arm64-specific,
-is concerned, however, "unsigned long is widely used as a physical address
-(For example, see kexec_buf definition) over the code.
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ Documentation/devicetree/bindings/arm/arm-boards | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-(Oops, reboot_code_buffer_phys is a phys_addr_t :)
+diff --git a/Documentation/devicetree/bindings/arm/arm-boards b/Documentation/devicetree/bindings/arm/arm-boards
+index b2a9f9f8430b..96b1dad58253 100644
+--- a/Documentation/devicetree/bindings/arm/arm-boards
++++ b/Documentation/devicetree/bindings/arm/arm-boards
+@@ -121,7 +121,7 @@ Required properties (in root node):
+ Required nodes:
+ 
+ - soc: some node of the RealView platforms must be the SoC
+-  node that contain the SoC-specific devices, withe the compatible
++  node that contain the SoC-specific devices, with the compatible
+   string set to one of these tuples:
+    "arm,realview-eb-soc", "simple-bus"
+    "arm,realview-pb1176-soc", "simple-bus"
+-- 
+2.16.4
 
-So as long as my kexec_file (and associated kdump) patch comes first
-before Pavel's, I'd like to keep using "unsigned long".
-Then, you can change "unsigned long" to phys_addr_t in your patch
-for whatever reason it is.
-
-Please note that, if you want to do that, it would be better to modify
-not only kimage_arch but also all the occurrences of "unsigned long"
-to phys_addr_t for maintaining the integrity.
-
-In addition, in my kexec_file kdump code, I still believe that
-"#ifdef CONFIG_KEXEC_FILE" should stay before the definition of
-kimage_arch as kimage_arch is of no use for normal kexec code.
-
-Again,
-"#ifdef" statement may be moved forward once additional fields be
-added later by Pavel's patch, say, "[PATCH v8 15/25] arm64: kexec:
-move relocation function setup" for any reason.
-
-I believe that this way gives us a logical and consistent view of
-history of changes.
-Make sense?
-
-Thanks,
--Takahiro Akashi
-
-
-> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
