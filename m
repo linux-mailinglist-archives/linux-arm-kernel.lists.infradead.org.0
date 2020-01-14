@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AACE13B116
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:37:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4EDE13B11C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 18:37:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dzTZ8yZjjExIYvU6+g1DQBCNVZ8jxGwBkHJRwB7+1ug=; b=ml8G0VvwfNjkwz
-	mrzxCjym/jtTSih9OttdYdG5gbHHS6aBfmkillAI9gMXqD34uppFCgdKEKmTaN/ILFZaC2sdfdpCL
-	siNDvzuVvGJW2U11y6FtbrGaxJxRv3y4Jy85B3IrIERt2lak1aXKQF8u5hs4OIPOuntvXHq8fYyIw
-	erYUQyOd1bKcdtGjdN0zVzxB3wf1yjIMTrlTD0SASk/Av/jdArNmp9wYsrxQiZjeWiFVnVSIltsA5
-	aIA852PE13xF43Gbdur2vNwc7tK6UCsZIbgjJf1XCl1xJxHiXpwgxoV04fOQbF4oKm75wY7lxx2i6
-	W57+pn73F9xAPdDbVMyA==;
+	List-Owner; bh=rDxABC/gj1IazqDON1tDAsok9mYRuUMXDUM4Hum4xF8=; b=nOmp/DCNTlkYIB
+	9GQaPnOw6eQSNooBPXWv1DEXi1pQsYIAMdIcvpR9faLsliX3zj4PNJuoDKpA3OoEu7dAAgahrPTMr
+	ETlyol+P4BNM1m1Td+8bMS6ZDptmLg3KZOauPCQou//ArDAs7h/NruAOQ83tbqd+IK3qwbxKgXi3a
+	VlFMW4efQKYlsw2eYMP4W+QCV9LSVDYN8d60w1q1Tps6QaLEYUCwECnhKJgMa4SlG6exc5E0ZrBrS
+	G4HLnXHesDSqRsWFnoIzT76A0kxaqT8jmrk9+yLBXIUEjJBk3g9JXjgXh6r804BR1q2dc5ucMr/3Z
+	B15CV1M4TDyTC+6D+Kzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irQ7w-0001Ur-AP; Tue, 14 Jan 2020 17:37:16 +0000
+	id 1irQ8M-0001mr-2a; Tue, 14 Jan 2020 17:37:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irQ7i-0001TO-95
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 17:37:07 +0000
+ id 1irQ7y-0001fZ-Jy
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 17:37:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5F011396;
- Tue, 14 Jan 2020 09:37:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 004CD1396;
+ Tue, 14 Jan 2020 09:37:18 -0800 (PST)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- DC5263F68E; Tue, 14 Jan 2020 09:36:58 -0800 (PST)
-Date: Tue, 14 Jan 2020 17:36:56 +0000
+ 41ABD3F68E; Tue, 14 Jan 2020 09:37:15 -0800 (PST)
+Date: Tue, 14 Jan 2020 17:37:13 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v4 11/12] KVM: arm64: BTI: Reset BTYPE when skipping
- emulated instructions
-Message-ID: <20200114173656.GN30444@arrakis.emea.arm.com>
+Subject: Re: [PATCH v4 12/12] arm64: mm: Display guarded pages in ptdump
+Message-ID: <20200114173712.GO30444@arrakis.emea.arm.com>
 References: <20191211154206.46260-1-broonie@kernel.org>
- <20191211154206.46260-12-broonie@kernel.org>
+ <20191211154206.46260-13-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191211154206.46260-12-broonie@kernel.org>
+In-Reply-To: <20191211154206.46260-13-broonie@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_093702_358121_ACF30DEC 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20200114_093718_710857_D60D3F13 
+X-CRM114-Status: UNSURE (   8.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,10 +69,9 @@ Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
  linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
  Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
+ "H.J. Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
  Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
  Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
  Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
@@ -83,17 +81,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 03:42:05PM +0000, Mark Brown wrote:
-> From: Dave Martin <Dave.Martin@arm.com>
+On Wed, Dec 11, 2019 at 03:42:06PM +0000, Mark Brown wrote:
+> v8.5-BTI introduces the GP field in stage 1 translation tables which
+> indicates that blocks and pages with it set are guarded pages for which
+> branch target identification checks should be performed. Decode this
+> when dumping the page tables to aid debugging.
 > 
-> Since normal execution of any non-branch instruction resets the
-> PSTATE BTYPE field to 0, so do the same thing when emulating a
-> trapped instruction.
-> 
-> Branches don't trap directly, so we should never need to assign a
-> non-zero value to BTYPE here.
-> 
-> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 > Signed-off-by: Mark Brown <broonie@kernel.org>
 
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
