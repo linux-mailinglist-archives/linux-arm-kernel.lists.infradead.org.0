@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A9E913A46C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:53:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F2A613A48D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 10:55:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qm0HgOMlHkn2ZhcmQc8HgO46Z8O5+tOkfj7vwSqemc4=; b=Gy1xDDnGfPUJTi
-	ifmQEODGOrGTyO5QRRaUH43BOH9jP+qzqVpUpI79Rxd8uPmO0x5kWoFS9kzEmeNZqHZJFxFzLHqL8
-	mX/xCkDj2nkjNN27YG0wEkbRXtMpeEH2cmuDGNqlkb4LChbXymDLdEvyWehRC2w/LYu6Ar+FlmpyB
-	iUE8r3G6MsVBPyimA5OsVl1+rWyFK3Rm0MzXMoKp5l+bmPXcXPD98RFXOMLY1q8blSLzc4R4N+Pw2
-	Rpw7JyWwuUxd5bEfNhBiHJTs5m+n3+hNEfAp7uyjlekPG3Uob+onxmWuysL12jA4KnvS7hoSay7Ve
-	bW7WKXLgboA+GeInfrIg==;
+	List-Owner; bh=fhoKhQCJXH3uFX/io3P3vmSxxQ+EkUrg3fxG2EgT+VE=; b=Mpk4UhXdARiKWK
+	O/gVLLTn4JADujfaaQycR5mcrCRdT3XzoSzF+NZc2+BRNT5jICmiQI9pP7zb7glt+qJKK++SEDYcA
+	qP+L71gTnNTh7QbCgufZN2gLCfiIk6xin5tSgH0R5kLTlTeKbm2/mh68ZoGtekziNBfJO8jNXxCCP
+	BwF2/n1m1+2+z7tnyIGRrBrFDNc9KX3G7zsLIvOpBAo2QTye94s5DfpVtOEocxbQZAiC+voToNCyK
+	UwGeCWMdC4WjDWVwrMYzzaZpbBZWkXJjv+yx3Nyp6B+6VhYvYUN3M5cEuAnTSbwlpPmqXRKEfJgYC
+	2ePXrFILQJwqBKK0HSbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irIsv-0004cI-C4; Tue, 14 Jan 2020 09:53:17 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1irIuS-000662-IV; Tue, 14 Jan 2020 09:54:52 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIse-0004Pu-UP; Tue, 14 Jan 2020 09:53:03 +0000
+ id 1irItg-0005gc-79; Tue, 14 Jan 2020 09:54:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Fr/tL1N9zJcY69dJUGwg8on8z8D7PvqK10GbRlVYjgg=; b=WCAVFWr7eftgxjj2BhhxPUxem
- qeHxJHUBxu/QGwS1c2SGZXn1kA+84C3sOOA8/4hGRwC4IA8WJPUJXos62aHbrbt13PcGQWkqE0v6n
- GcmdFjAv/PGHSqznR/FzeSXx8tiDyODXrVr9zAGdkrjO9955Fg0ED32AvvCR/kUox51SB/c9K3CQM
- lunS9zUQB6cWSSMpSRNhXoczPJ9WbapACRBBfWQzv7+6DJINTzkFQXweclJMeM77XDcpMgHcje9rY
- zYtCzQiGS/7/KjSRWjxB9/oseb08Dzb8/jTA4ASqIT0tVTNLyWb6LDdzIDlGApsnLHBktTl37c8Jz
- TT2YNyDow==;
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irIsY-0006fx-Fl; Tue, 14 Jan 2020 09:52:59 +0000
+ bh=Pk/PiezUZIuYIE6cHFIFXJrI8qZxFepgsS2M0P93iYY=; b=wOnVUBNr3piZipq6fQb0jGTOo
+ J0vu/ap1CmpN1xay2rTgVdZiQkUuGD97Gg5Ut/V3N1k0ydFn7jrBLUG3im4vUDWoSlrTrPEOFYYR6
+ TLkE3MXTk4k62LMhYo6gMZekkHTgyTnw1gwePZOYRKHt61t+UV5Lb2AHSAoktKt2nmhHlUFA7pii+
+ v7UOmWttMe8dUth13EMvMUuxFJ6H0g+KXSm1OgkahPdBTzYpf7xbfjmolQVKnuxPFqFBjti1hzFUK
+ eV1PHw+OpW6cy8o7hpTN1EAnXAFCikda5/8TdP+5iAIGyGYYRaRFEGd5uQ5mqukEmM+L57DMdeiwO
+ jyRDmUkcg==;
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irIu0-0006j2-1T; Tue, 14 Jan 2020 09:54:28 +0000
 X-Originating-IP: 90.65.102.129
 Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
  [90.65.102.129])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 70EBB240006;
- Tue, 14 Jan 2020 09:52:18 +0000 (UTC)
-Date: Tue, 14 Jan 2020 10:52:18 +0100
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AB574E0008;
+ Tue, 14 Jan 2020 09:53:15 +0000 (UTC)
+Date: Tue, 14 Jan 2020 10:53:15 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 06/17] dt-bindings: at91-sama5d2_adc: add
- microchip,sam9x60-adc
-Message-ID: <20200114095218.GF3137@piout.net>
+Subject: Re: [PATCH v2 07/17] dt-bindings: atmel-matrix: add
+ microchip,sam9x60-matrix
+Message-ID: <20200114095315.GG3137@piout.net>
 References: <1578673089-3484-1-git-send-email-claudiu.beznea@microchip.com>
- <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
+ <1578673089-3484-8-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578673089-3484-7-git-send-email-claudiu.beznea@microchip.com>
-X-Spam-Note: CRM114 invocation failed
+In-Reply-To: <1578673089-3484-8-git-send-email-claudiu.beznea@microchip.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200114_095424_094260_CC14F9A0 
+X-CRM114-Status: UNSURE (   6.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,13 +97,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/01/2020 18:17:58+0200, Claudiu Beznea wrote:
-> Add microchip,sam9x60-adc to DT bindings documentation.
+On 10/01/2020 18:17:59+0200, Claudiu Beznea wrote:
+> Add microchip,sam9x60-matrix to DT bindings documentation.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  Documentation/devicetree/bindings/iio/adc/at91-sama5d2_adc.txt | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/mfd/atmel-matrix.txt | 1 +
+>  1 file changed, 1 insertion(+)
 Applied, thanks.
 
 -- 
