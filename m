@@ -2,56 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70F7613B1FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:24:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E52313B20B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 19:25:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oh1QMbqa05XRezWHrAFqyijvvLrAK472Zkg3UD1K20w=; b=uyOgA2ohNbtegS
-	jIvOw7V3KqZGwtCLm66kUTwjEaty5ulplVjj9yBkMCVCmZaMiIUfnmS5V6ABP91YPObsBW7B4w+xj
-	19iGsUGO6iT15icLhEtWNKaBMysnK0/Ies2hQo2MpTCW6FBqLfF4bFGVJbaDOIqz7IWFXgJ2hNNak
-	UArQaXXG0o7hNo5x6n+c93rriGxIlKm8EzBxKMqst3kHAOJVu10I54mNI4S5LcA+rTgX/FmRPtKR5
-	QICEbw9RMJ1yLa9PlIt+L3Qm3mV6uq4Xr7HjwTCyuDSodKNOPoiVYa0HeiTyt6HMCcjfXO8LQUqYZ
-	yUfSmQ1xZwxJ6hbr5xmw==;
+	List-Owner; bh=qs5Gx+SjPeEx8e1m5K41mOnE0l1NJ/g4ZoWJcuo5UR4=; b=p9WwfLisPT+U0I
+	EareFq7KxK/qz3Z9IcS+HyVlut8OM2mg62rFacQX0rExxzyOe353d1iEfzytK+GDnnBSFF6NgRdnm
+	jEAN+peoGldF+tqi1UmmlZWgMJmaWw5kFP1D26Ap0tjhTd87qmxcgjn5u28UCHKVdA42pZEzVmg2B
+	GMdy9CPHh41KnCwrF8zvkDE4C6zcEeqK0Q6cIqsEp2PaV7+KP1oYi50xNe16GLfXG22SN1Rlllqkk
+	8EB3sJYAGjeDNEb/k6jLOI+tyZzYKV5DrsUaYJuzCfVv5KWGx4+XPT02VJCvsswgv7zfv3prLIvBJ
+	GtA5Mhd35HfUUK9NMaBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irQrv-0005VO-6d; Tue, 14 Jan 2020 18:24:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irQrj-0005Ux-AR
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 18:24:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6224B1396;
- Tue, 14 Jan 2020 10:24:29 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D11D23F68E;
- Tue, 14 Jan 2020 10:24:27 -0800 (PST)
-Date: Tue, 14 Jan 2020 18:24:22 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 05/17] arm64: entry: add a call_on_stack helper
-Message-ID: <20200114182422.GA27165@lakrids.cambridge.arm.com>
-References: <20200108185634.1163-1-mark.rutland@arm.com>
- <20200108185634.1163-6-mark.rutland@arm.com>
- <98534fbd-5600-5ae2-a117-3bad76ddbe04@arm.com>
+	id 1irQsT-00072r-RG; Tue, 14 Jan 2020 18:25:21 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irQsF-0006ag-Ve
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 18:25:14 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Jan 2020 10:25:07 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,319,1574150400"; d="scan'208";a="225636474"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by orsmga006.jf.intel.com with ESMTP; 14 Jan 2020 10:25:07 -0800
+Date: Tue, 14 Jan 2020 10:25:07 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Peter Xu <peterx@redhat.com>
+Subject: Re: [PATCH v4 16/19] KVM: Ensure validity of memslot with respect to
+ kvm_get_dirty_log()
+Message-ID: <20200114182506.GF16784@linux.intel.com>
+References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
+ <20191217204041.10815-17-sean.j.christopherson@intel.com>
+ <20191224181930.GC17176@xz-x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <98534fbd-5600-5ae2-a117-3bad76ddbe04@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20191224181930.GC17176@xz-x1>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_102435_407172_ECE8CF78 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200114_102508_071742_13E4C6C5 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,99 +70,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, maz@kernel.org, robin.murphy@arm.com,
- broonie@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- catalin.marinas@arm.com, labbott@redhat.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, alex.popov@linux.com
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
+ Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>,
+ kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 01:30:02PM +0530, Anshuman Khandual wrote:
-> 
-> 
-> On 01/09/2020 12:26 AM, Mark Rutland wrote:
-> > In some cases, we want to call a function from C code, using an
-> > alternative stack. Add a helper that we can use in such cases.
-> > 
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > ---
-> >  arch/arm64/include/asm/exception.h |  2 ++
-> >  arch/arm64/kernel/entry.S          | 21 +++++++++++++++++++++
-> >  2 files changed, 23 insertions(+)
-> > 
-> > diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-> > index b87c6e276ab1..a49038fa4faf 100644
-> > --- a/arch/arm64/include/asm/exception.h
-> > +++ b/arch/arm64/include/asm/exception.h
-> > @@ -31,6 +31,8 @@ static inline u32 disr_to_esr(u64 disr)
-> >  	return esr;
-> >  }
+On Tue, Dec 24, 2019 at 01:19:30PM -0500, Peter Xu wrote:
+> On Tue, Dec 17, 2019 at 12:40:38PM -0800, Sean Christopherson wrote:
+> > +int kvm_get_dirty_log(struct kvm *kvm, struct kvm_dirty_log *log,
+> > +		      int *is_dirty, struct kvm_memory_slot **memslot)
+> >  {
+> >  	struct kvm_memslots *slots;
+> > -	struct kvm_memory_slot *memslot;
+> >  	int i, as_id, id;
+> >  	unsigned long n;
+> >  	unsigned long any = 0;
 > >  
-> > +asmlinkage void call_on_stack(struct pt_regs *, void (*)(struct pt_regs *),
-> > +			      unsigned long);
-> >  asmlinkage void enter_from_user_mode(void);
-> >  void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
-> >  void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
-> > diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> > index 53ce1877a4aa..184313c773ea 100644
-> > --- a/arch/arm64/kernel/entry.S
-> > +++ b/arch/arm64/kernel/entry.S
-> > @@ -901,6 +901,27 @@ ENTRY(ret_from_fork)
-> >  ENDPROC(ret_from_fork)
-> >  NOKPROBE(ret_from_fork)
+> > +	*memslot = NULL;
+> > +	*is_dirty = 0;
+> > +
+> >  	as_id = log->slot >> 16;
+> >  	id = (u16)log->slot;
+> >  	if (as_id >= KVM_ADDRESS_SPACE_NUM || id >= KVM_USER_MEM_SLOTS)
+> >  		return -EINVAL;
 > >  
-> > +/*
-> > + * x0 = argument to function
-> 
-> A small nit. Though the definition here itself does not limit the
-> argument type, it might worth to mention that to be struct pt_regs
-> per the previous declaration.
-> 
-
-True.
-
-To make this clearer, I've given the C prototype instead, as we do for the
-SMCCC wrappers:
-
-/*
- * void call_on_stack(struct pt_regs *regs,
- *                    void (*func)(struct pt_regs *),
- *                    unsigned long new_sp)
- *
- * Calls func(regs) using new_sp as the initial stack pointer.
- */
-
-> > +ENTRY(call_on_stack)
-> > +	/* Create a frame record to save our LR and SP (implicit in FP) */
-> > +	stp	x29, x30, [sp, #-16]!
-> > +	mov	x29, sp
-> > +
-> > +	/* Move to the new stack and call the function there */
-> > +	mov	sp, x2
-> > +	blr	x1
-> > +
-> > +	/* Restore SP from the FP, FP and LR from the record, and return */
-> > +	mov	sp, x29
-> > +	ldp	x29, x30, [sp], #16
-> > +	ret
-> > +ENDPROC(call_on_stack)
-> > +NOKPROBE(call_on_stack)
-> > +
-> >  #ifdef CONFIG_ARM_SDE_INTERFACE
+> >  	slots = __kvm_memslots(kvm, as_id);
+> > -	memslot = id_to_memslot(slots, id);
+> > -	if (!memslot->dirty_bitmap)
+> > +	*memslot = id_to_memslot(slots, id);
+> > +	if (!(*memslot)->dirty_bitmap)
+> >  		return -ENOENT;
 > >  
-> >  #include <asm/sdei.h>
-> > 
+> > -	n = kvm_dirty_bitmap_bytes(memslot);
+> > +	kvm_arch_sync_dirty_log(kvm, *memslot);
 > 
-> Reviewed-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Should this line belong to previous patch?
 
-Thanks!
+No.
 
-Mark.
+The previous patch, "KVM: Provide common implementation for generic dirty
+log functions", is consolidating the implementation of dirty log functions
+for architectures with CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y.
+
+This code is being moved from s390's kvm_vm_ioctl_get_dirty_log(), as s390
+doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.  It's functionally a nop
+as kvm_arch_sync_dirty_log() is empty for PowerPC, the only other arch that
+doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.
+
+Arguably, the call to kvm_arch_sync_dirty_log() should be moved in a
+separate prep patch.  It can't be a follow-on patch as that would swap the
+ordering of kvm_arch_sync_dirty_log() and kvm_dirty_bitmap_bytes(), etc...
+
+My reasoning for not splitting it to a separate patch is that prior to this
+patch, the common code and arch specific code are doing separate memslot
+lookups via id_to_memslot(), i.e. moving the kvm_arch_sync_dirty_log() call
+would operate on a "different" memslot.   It can't actually be a different
+memslot because slots_lock is held, it just felt weird.
+
+All that being said, I don't have a strong opinion on moving the call to
+kvm_arch_sync_dirty_log() in a separate patch; IIRC, I vascillated between
+the two options when writing the code.  If anyone wants it to be a separate
+patch I'll happily split it out.
+
+> 
+> > +
+> > +	n = kvm_dirty_bitmap_bytes(*memslot);
+> >  
+> >  	for (i = 0; !any && i < n/sizeof(long); ++i)
+> > -		any = memslot->dirty_bitmap[i];
+> > +		any = (*memslot)->dirty_bitmap[i];
+> >  
+> > -	if (copy_to_user(log->dirty_bitmap, memslot->dirty_bitmap, n))
+> > +	if (copy_to_user(log->dirty_bitmap, (*memslot)->dirty_bitmap, n))
+> >  		return -EFAULT;
+> >  
+> >  	if (any)
+> > -- 
+> > 2.24.1
+> 
+> -- 
+> Peter Xu
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
