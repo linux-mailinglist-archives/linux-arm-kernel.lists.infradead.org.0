@@ -2,69 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C09E913ADD7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 16:40:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C9A813ADE3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 16:43:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OtLKPNDuowzuoqf4DOD9RQ4lb2vZ9dpmVU9KhVQKfLg=; b=Wpr1pvH5SAreu6
-	A1imoF1hDd7Sg7OLCtR6DyOKizbZxefOjZK8V0rAtRoszjxTp7HzggsPFrwQqGUn7lPaxP4uYLmPv
-	yhb6lsdmAwVx7CjWbbgmIIn4lCsgciHiboFb9Ma4NDgLqT/0edAEjZreUkGvp0Azfq8hETb5WVHjd
-	/nNXcwEysiRvLDAzucxScoikzSJR59tXwrSYE8osHU6j96HWlRfuhc6CKKCaPJnJiqs4sX0WfzkeF
-	oP/ksKI29Fq/wxNZyIVGFxQHgLQYbJ/hNM/PmvowVHs0dvQyp9IqG5SRMxLiYxddNcX4Nhwq28mQO
-	gD1p2gJcWqoKJ0s9o8ug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yZxbq4LPtiXx0Rl6HYnt9WAXbQogVYG7VizLx81JQms=; b=umJJW1PcmiaWD+H4RrOJqjjrO
+	SNdUti3QyOXHkI75p7QocqKoFyMBmA6SAqKa+EKu+KSHmdi8maRl0R3/fC8AMubq6uyJO86yGB+uj
+	mLWN1rV3XWNqYtbb2iPsdXzTvoLJVnHnpZ/wjJFNTNPyYdDsyJF5w57eh2e+jDjfW4HR1knof+xyi
+	mrSfU7foqT8vKrqlbSP183FmSdOEz5hnQZzhJIvJrK+PpTcsKga+LF78qefQiXG/nWCfCY4cEtqgU
+	xi29cfZS4ht5OL4PJFUQGaoXm/b46tO7+mxzxqN18QXW5TngdocxmCtVrKQIcmS/yQ1uK9P5M2nKk
+	eKNuwRg2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irOIu-0004Oz-6N; Tue, 14 Jan 2020 15:40:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1irOLv-0004og-51; Tue, 14 Jan 2020 15:43:35 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irOIh-0004Np-OA
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 15:40:20 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0347B24672;
- Tue, 14 Jan 2020 15:40:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579016414;
- bh=Scmn4FCA0QfCQbkxnkpuG+cd4jIF88weR9x4vuOXxyY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gFNR/cA6IMsPOxcO2Es5EXCXzP/RoXRHPogu0/vZloph2th4hE/fDSssbR+DDMqFX
- FarFFXlJyEiW6iDxZ/CBxreszI3AyzmBT3DlXxlqs6qtCGkxpyfcRBSswoLsp0yaQq
- TeZJQV80X6NjbqmlAA/eCgQBDxHaMD0xYA+EiYNU=
-Date: Tue, 14 Jan 2020 15:40:07 +0000
-From: Will Deacon <will@kernel.org>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 00/13] iommu: Add PASID support to Arm SMMUv3
-Message-ID: <20200114154007.GC2579@willie-the-truck>
-References: <20191219163033.2608177-1-jean-philippe@linaro.org>
+ id 1irOLf-0004o9-No
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 15:43:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ZCTSH+k6xThdH79h0I5oh1zVw+T2m5gqrWX7QMFhKd4=; b=UpQ1WewlV5QqhtFdaZ8w6ORpF
+ 8M9iXrAUdbtW9g5RYjBjRrjEDY4WYvrb7K/SZOdWF5OskeoDuNHqszDZeK8AHaoLAH7unGua0Uiuf
+ Onsb4Voox3RhmYdBl7MgsARFkeAKvNV6JjYHwLu3CouBWfw4L+7XUAqTJXgQDH0Sexj5g=;
+Received: from fw-tnat-cam7.arm.com ([217.140.106.55]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1irOLa-0000KP-L6; Tue, 14 Jan 2020 15:43:14 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 2CE91D002CB; Tue, 14 Jan 2020 15:43:14 +0000 (GMT)
+Date: Tue, 14 Jan 2020 15:43:14 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Message-ID: <20200114154314.GZ3897@sirena.org.uk>
+References: <20191212161019.GF4310@sirena.org.uk>
+ <20191212162152.5uu3feacduetysq7@pengutronix.de>
+ <20191212165124.GJ4310@sirena.org.uk>
+ <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
+ <20191216114454.GB4161@sirena.org.uk>
+ <20191217073533.GC31182@pengutronix.de>
+ <20191217125832.GF4755@sirena.org.uk>
+ <20200107083654.atgbjhrnhyax2gqq@pengutronix.de>
+ <20200107130911.GD4877@sirena.org.uk>
+ <20200107133811.rua5i6lflzyzlh24@pengutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191219163033.2608177-1-jean-philippe@linaro.org>
+In-Reply-To: <20200107133811.rua5i6lflzyzlh24@pengutronix.de>
+X-Cookie: Programming is an unnatural act.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_074015_829309_DEDC022F 
-X-CRM114-Status: GOOD (  13.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200114_074319_779776_950945A0 
+X-CRM114-Status: GOOD (  15.20  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,77 +89,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- eric.auger@redhat.com, linux-pci@vger.kernel.org, joro@8bytes.org,
- sudeep.holla@arm.com, rjw@rjwysocki.net, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- jonathan.cameron@huawei.com, guohanjun@huawei.com, bhelgaas@google.com,
- zhangfei.gao@linaro.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============0908207313765864400=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 19, 2019 at 05:30:20PM +0100, Jean-Philippe Brucker wrote:
-> Add support for Substream ID and PASIDs to the SMMUv3 driver. Since v3
-> [1], I added review and tested tags where appropriate and applied the
-> suggested changes, shown in the diff below. Thanks all!
-> 
-> I'm testing using the zip accelerator on the Hisilicon KunPeng920 and
-> Zhangfei's uacce module [2]. The full SVA support, which I'll send out
-> early next year, is available on my branch sva/zip-devel at
-> https://jpbrucker.net/git/linux/
-> 
-> [1] https://lore.kernel.org/linux-iommu/20191209180514.272727-1-jean-philippe@linaro.org/
-> [2] https://lore.kernel.org/linux-iommu/1576465697-27946-1-git-send-email-zhangfei.gao@linaro.org/
-> 
-> Jean-Philippe Brucker (13):
->   iommu/arm-smmu-v3: Drop __GFP_ZERO flag from DMA allocation
->   dt-bindings: document PASID property for IOMMU masters
->   iommu/arm-smmu-v3: Parse PASID devicetree property of platform devices
->   ACPI/IORT: Parse SSID property of named component node
->   iommu/arm-smmu-v3: Prepare arm_smmu_s1_cfg for SSID support
->   iommu/arm-smmu-v3: Add context descriptor tables allocators
->   iommu/arm-smmu-v3: Add support for Substream IDs
->   iommu/arm-smmu-v3: Propagate ssid_bits
->   iommu/arm-smmu-v3: Prepare for handling arm_smmu_write_ctx_desc()
->     failure
->   iommu/arm-smmu-v3: Add second level of context descriptor table
->   iommu/arm-smmu-v3: Improve add_device() error handling
->   PCI/ATS: Add PASID stubs
->   iommu/arm-smmu-v3: Add support for PCI PASID
-> 
->  .../devicetree/bindings/iommu/iommu.txt       |   6 +
->  drivers/acpi/arm64/iort.c                     |  18 +
->  drivers/iommu/arm-smmu-v3.c                   | 467 +++++++++++++++---
->  drivers/iommu/of_iommu.c                      |   6 +-
->  include/linux/iommu.h                         |   2 +
->  include/linux/pci-ats.h                       |   3 +
->  6 files changed, 442 insertions(+), 60 deletions(-)
 
-This is close, and I've replied to all of the patches I have comments on.
-To summarise:
+--===============0908207313765864400==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="yhqQ34TVR4fE8mPU"
+Content-Disposition: inline
 
-  1-5	I could queue these now
-  6	I can make the small change we discussed
-  7	I can make the changes if you agree (but I'd prefer you to change to
-  	batch submission since I can't test this)
-  8	Good to go once above is solved
-  9	Need your opinion
-  10	Some refactoring needed (sorry)
-  11	Needs Robin's input
-  12	Good to go once above is solved
-  13	Need clarification on PCIe behaviour from you
 
-In other words, I could probably take the first 8 or 9 patches for 5.6 if
-you can resolve those issues asap.
+--yhqQ34TVR4fE8mPU
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Cheers,
+On Tue, Jan 07, 2020 at 02:38:11PM +0100, Marco Felsch wrote:
+> On 20-01-07 13:09, Mark Brown wrote:
+> > On Tue, Jan 07, 2020 at 09:36:54AM +0100, Marco Felsch wrote:
 
-Will
+> > > The input signal is routed trough the da9062 gpio block to the
+> > > regualtors. You can't set any voltage value using a gpio instead you
+> > > decide which voltage setting is applied. The voltage values for
+> > > runtime/suspend comes from the dt-data. No it's not just a fast
+> > > switching option imagine the system suspend case where the cpu and soc
+> > > voltage can be reduced to a very low value. Older soc's like the imx6
+> > > signaling this state by a hard wired gpio line because the soc and
+> > > cpu cores don't work properly on such low voltage values. This is
+> > > my use case and I can't use the sequencer.
+
+> > My point is that I can't tell any of this from the description.
+
+> Therefore I want to discuss the dt-binding documentation with you and
+> the others to get this done. Is the above description better to
+> understand the dt-binding?
+
+That text really doesn't feel like text that'd be idiomatic
+directly in a binding document but some of those ideas probably
+do need to be in the text I think.
+
+--yhqQ34TVR4fE8mPU
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4d4ZEACgkQJNaLcl1U
+h9CJjAf+Lyl6pKu3ywfkP8t2CeYxi0Fz9ndEKvYqp7nK6CZxn8OgX9Jjem3iwm4w
+vhgB2B06edcnP8wIDEgk8YUMirzG0/Rc475SlTvVg/1BYOaGftqksTiEZfHJf0qt
+4mcWgT+Agw3YzPMkM6kahAu243KxKHAwojM3iVV7gb9PX/rOVtInStggPxzdcxtk
+jQQo2RvYBo2mEBArehWE+PGGT2/JElQGTLyhRVx3BrhuAXXoNKuwkS9fUrVAnyk5
+m5kKBygRDyY4MdZ/a53/E8URMDJbctEtveN03mzI+QQ//PMDTufBPqSmURaODb5c
+PAal49kxIE8ZAfvvCgimhdhS3yzmTg==
+=m6uy
+-----END PGP SIGNATURE-----
+
+--yhqQ34TVR4fE8mPU--
+
+
+--===============0908207313765864400==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0908207313765864400==--
+
