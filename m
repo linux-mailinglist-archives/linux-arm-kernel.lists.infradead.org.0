@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73FB413A678
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:24:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D1ED13A6D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:25:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=boNZQjohTEoTvrumXmu383Hcf5bYncHlauVAhIRLHks=; b=EYPrQGsVmWLIsY
-	g9pGoWhx1k5MhmGQ7ciZLu4BxZ0Ke28u95/XCZ0M3+L+3h1ap+oDqPxxd24CTlwzM32UOXILTbXXe
-	hVNOJdDCWmuka0HH5THQqym3xCMhGdA18ySFAuX6bXt8zacRJGNLMU8kU8CnXbmKCVl3GOj686H/J
-	1CK1hJeOwzet1xgR1ihDUT6cnZljoXKHT7dE86BF13FoCnC3+eTz5CpU/PRDV40YvvJdoHAB8DUOz
-	quDtZOzJ3bB/3BS/QNzsnHEaL9s/hgRlmhYxEdHKbDw6F3rh+6ghv8M+/UeXiyPr+gveBSfDXW+20
-	B2Wz9GcdwlTyIXdcTKgw==;
+	List-Owner; bh=nsAxWjkgfiJPw/kWEe5IZc8fujtISJFmDZBDi26AfCM=; b=A9JXTNuQGENpU/
+	rdUKVP1D/LUlKwdu9krDHchuu31BLoYJM+mbWUbmh4YxTF0Csl62auPneTfr8pd0sz2dKQea1R9db
+	7yqRLKocFGfcUDGglji50hFZlDqfibAnisPnYi1ol67hn0xJpZ0myM+THuu+uu8S3KteKK6viBCOt
+	FQYfSawCn20WWI56wPHMTE3A53xRhmh+nofQ2Y89wnAmioGFA9LkZacfbJ1rbyXySy0SP17LRoPql
+	DWNmr+OYxiyE0ezrfMgDJH2u0P0UvKgLnVwb/pfpi7RIhqP5wG3ZAa1AP8BYHjU1drle1SgSsrv2F
+	yofBm8kAUzN+CsjBwoQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irJNU-0005kd-Jb; Tue, 14 Jan 2020 10:24:52 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1irJO4-00066V-G9; Tue, 14 Jan 2020 10:25:28 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irJMM-00051s-CP
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 10:23:47 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ id 1irJMS-00056W-DE
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 10:23:53 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,58 +34,57 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa3.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: UPBRsxwdg7cVboIF7Xz5TfzLjGwahOYqBxXCYicHf/tctOE84wQwVAe/7pUQOKCxh1krbuEtXi
- l43ufSX010+iVkt8/hlTu0QUrf8X6gfnGVbZ06iFzL1gIzFpbTTvNxV5M8CNa/Mjo4PeHEDqNv
- ZJVHQ7yTqxe1paB2i6RvQxs+Cna1kn8VNMtdhD59g0J/cH0jDtgjCGijzwaPcWOzjISCdsih2X
- kTuQoeZMjCX/7PLmk0Q9DdY19xUExdgDr5jNu6jfuF1Xh7YsAv90g+epKBDP5tqibQGxabXJNp
- T44=
-X-IronPort-AV: E=Sophos;i="5.69,432,1571727600"; d="scan'208";a="61849239"
+IronPort-SDR: 34dx4oSArQ3qlA7iJyTgcN2Rk1/iBluNwjwT5kcD8jiVXhzrLS+RimwGsCLZClo7pd+AqbwhxM
+ nHn20VVVEtQC6Vb/+vrWW5rLyzGWIGGF6ttSEGkLlw/o18ogjPcKm/FNuK0+BLw0qYI2cCHRAG
+ HjZgg+twQhlFlpcciWDULVzIS8dsn5BLobenkTYEUnDfGW6CsyDhj3SAciRpnJ1H80hK08CwFM
+ 3zd6KEC+ep7eqIEghDf0i5fZBrLbFmtJbmXOVfMbbEa9t2jhHGK74+J/5GrjgFiFWl99g6IOSw
+ VF4=
+X-IronPort-AV: E=Sophos;i="5.69,432,1571727600"; d="scan'208";a="63175825"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 14 Jan 2020 03:23:42 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 14 Jan 2020 03:23:45 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 14 Jan 2020 03:23:41 -0700
+ 15.1.1713.5; Tue, 14 Jan 2020 03:23:45 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 14 Jan 2020 03:23:37 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 14 Jan 2020 03:23:41 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <robh+dt@kernel.org>, <lee.jones@linaro.org>, <mark.rutland@arm.com>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <ludovic.desroches@microchip.com>, <radu_nicolae.pirea@upb.ro>,
  <richard.genoud@gmail.com>, <a.zummo@towertech.it>
-Subject: [PATCH v3 3/7] dt-bindings: atmel, at91rm9200-rtc: add microchip,
- sam9x60-rtc
-Date: Tue, 14 Jan 2020 12:23:13 +0200
-Message-ID: <1578997397-23165-4-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v3 4/7] dt-bindings: atmel-usart: remove wildcard
+Date: Tue, 14 Jan 2020 12:23:14 +0200
+Message-ID: <1578997397-23165-5-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_022342_464482_5CA56023 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20200114_022348_480858_0B82AABA 
+X-CRM114-Status: UNSURE (   8.52  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,39 +107,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add microchip,sam9x60-rtc to DT bindings documentation.
+Remove chip whildcard and introduce the list of compatibles instead.
 
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
+ Documentation/devicetree/bindings/mfd/atmel-usart.txt | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-Hi Alexandre,
-
-I kept this patch as in v1 (same for patch
-"dt-bindings: atmel-tcb: add microchip,sam9x60-tcb").
-I'm waiting your response to this version and take an action aftewards.
-
-Thank you,
-Claudiu Beznea
-
- Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt b/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-index 5d3791e789c6..35eab9138d0b 100644
---- a/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-+++ b/Documentation/devicetree/bindings/rtc/atmel,at91rm9200-rtc.txt
-@@ -1,7 +1,8 @@
- Atmel AT91RM9200 Real Time Clock
+diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+index 699fd3c9ace8..778e8310606a 100644
+--- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
++++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+@@ -1,10 +1,9 @@
+ * Atmel Universal Synchronous Asynchronous Receiver/Transmitter (USART)
  
- Required properties:
--- compatible: should be: "atmel,at91rm9200-rtc" or "atmel,at91sam9x5-rtc"
-+- compatible: should be: "atmel,at91rm9200-rtc", "atmel,at91sam9x5-rtc" or
-+  "microchip,sam9x60-rtc"
- - reg: physical base address of the controller and length of memory mapped
-   region.
- - interrupts: rtc alarm/event interrupt
+ Required properties for USART:
+-- compatible: Should be "atmel,<chip>-usart" or "atmel,<chip>-dbgu"
+-  The compatible <chip> indicated will be the first SoC to support an
+-  additional mode or an USART new feature.
+-  For the dbgu UART, use "atmel,<chip>-dbgu", "atmel,<chip>-usart"
++- compatible: Should be one of the following:
++	- "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
++	- "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
+ - reg: Should contain registers location and length
+ - interrupts: Should contain interrupt
+ - clock-names: tuple listing input clock names.
 -- 
 2.7.4
 
