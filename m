@@ -2,66 +2,151 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D16E13ACA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:53:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02DF313ACCC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:58:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DinM5v0UXfrFYHNXHZOC9990Gfu16QqUlWsdMyK5IWI=; b=TJ9tPRkhW/9Yq9
-	FaGXgipOGtEhMsYoSg/t5ZJI9UL0FbvEQ4xn38FI/OcA8ifr+/vL/Y3AAQtovyK4Q1b7VZUNxBPBL
-	iVLhwzGOIwOFnBpapHtlIZYv2iMD5bBrEr/6HIav3nruHKyei4nPBiaeyFTnY90qPtW8acGoLPBKc
-	pLd1zrvEMh1rBZvBdEovJWudEEPN81mZ6/J52ZMQjqciLWQTYvWGJz0wk24pRCHRG+qiBrcMXPl0I
-	X7J7IjlNVUtxxmTmAlgFvYE0aXbMCmrwJAkKSi6MS7r3fuJziuPISVvhbeABKN9JzstivLaeLwQ1+
-	aA8NV6MXWgKvDopx8ilw==;
+	List-Owner; bh=3YQkrBK3QMJi0siF6Jxlhn9u2SEZaZhUHSaeI+Vayvo=; b=ScLPryofP26c2t
+	vwgMhVZ5acWYjaqd8TYQL2WLNmVkIuy3//ENAkK60LvVrz8pKqwvh+K8KtRx0ak09omkq4anxTCPC
+	4qFH3xeUo28/AwwnprL5+qi0V/CFkk2AxYbCtEhjE1USGoHlbW5zt821cXj4Jo2ENYf40olRKXjbw
+	WPGs3OIHbUqpcF8pBlucbNiNg4xeNMKsDCfizTJYmtpBeqJfXlV8A1UD5bO/CV3H/z6Bzdm1OtqAo
+	gOVAGm48cAETckmB9S4dJXWrYY+NHBW8fSY381duscPQ0/IZaGXFOPl6wvUCskXHn84Xj0PPMG0yO
+	yj+pNAKLKiKubDhv5qjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irNZC-0008G2-RS; Tue, 14 Jan 2020 14:53:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1irNeR-0001VR-NS; Tue, 14 Jan 2020 14:58:39 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irNYy-0008Eo-FE
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 14:53:04 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6F20E222C4;
- Tue, 14 Jan 2020 14:52:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579013580;
- bh=aBwCATTPKFe/W1W+MZmlLlTUVtfHiH2bcEpzaDeGebk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ve+8LSWqX6+UXlfpssyFPuqMqnaH+f60E06Qrm6cAwDhU4x7oAj4p18gkRXjGTaHz
- OlQk82Lbz9vis47uXDxqkIgV2BTI9HVbehOtu6Y7iCYx/38oecVujQZOuML50TSXZ/
- OTdJ3FRo0VL2CARawgAh1/e5Irl21k+QrtO1ZJdo=
-Date: Tue, 14 Jan 2020 15:52:57 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Jolly Shah <jolly.shah@xilinx.com>
-Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
-Message-ID: <20200114145257.GA1910108@kroah.com>
-References: <1578527663-10243-1-git-send-email-jolly.shah@xilinx.com>
- <1578527663-10243-2-git-send-email-jolly.shah@xilinx.com>
+ id 1irNeF-0001Ud-QE
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 14:58:32 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: +4kfcO9oC7v5//xZeoPyzvDMthpLXL+UuT3qGkyYW7uU4QdKrkbSMmeF1oeArLRE6EMYroRBTb
+ K2Egt52gPU5Uac04RWTmu10kIZQHb5cI9Hc193weMDLQjOFCR0CI4YWTJgV2gwRXYulE+shig9
+ Wj/ZPENQgSt5Atr8ZhGiUeCGnn2fmJWRj5k5ZfElxK693fwOM/MWi1i/HntX6FqW/0GIfhczk9
+ +MPwhvkkaLFb3OwZxBJubAhFWS8nq1soxX7cwKUQv4gIQz2uXZ4aUIgirczI+yrZ7k/1FlZW2J
+ Coc=
+X-IronPort-AV: E=Sophos;i="5.69,433,1571727600"; d="scan'208";a="62573383"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 14 Jan 2020 07:58:25 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 14 Jan 2020 07:58:24 -0700
+Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 14 Jan 2020 07:58:24 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=geizsOP3SKgCwExC4ZLHrzvPMnkB2fy0rMg5+azzA071L9cA9BDpuQXxvBZoaC0DaR/WUsoMnU9DQnnP8L2mhmOon6AEsgp8gFyhUC4VE6o3hbaOWwQexGEh67y3wVGfNmKokpI6ksOtX8OUOOjdVQPHMp0xbO0Kqz0SL/LEZuVNpDA7TOGHyHoijxYXujEQ8DyAVZGFruinrb8TKapanNntwWXDWeWg0K81JL2W/+vh4w0LWcZKXj3+cg++Ct0JIT829zbUE+nUG3IDxGiuU+obcwtRRUEqsxPob+oG4dElE7/azQdRUjrDOFbeeKuq5BKes0f4igUAP2Uxp9W6CA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iwPDBA/JXrHpHd10XJ1yOZszLgTAO4rKFP8Z67jaYWo=;
+ b=Ua7d1gs610VIiZVkDa49EyN6cH5flWx0/MOBDKS5Aw+LumfqKNnZPlnCSoNaV9tAz9XIqA6YQWuaul4t8fxwUGwyNaZ++1Whu3lRDKkdnoLSKqVx0dAKo0TJWkKlCC/cAYhyD0xU6Hpo8V6K0w9HJmDmCWOcM+VZm4auBNl60k37TfzmfRuPR/HQw7Tikn04UTfs06GkNnJqiGUjcrvrJBVfAi625RruWoHM3xWnPQT3UxqeJPa5N1wPAmO24nY1sKySDdLla33qHQDzvBEr+NxFClf42hfRV0WbMpWyNqzg8NRIFewuQ1aTZVuSaH0F6IW+90i9voH/ttl9QyN5ng==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iwPDBA/JXrHpHd10XJ1yOZszLgTAO4rKFP8Z67jaYWo=;
+ b=YjiMCMzPFRSfj79C2ME9cAe01pTckqiclmk8MGkaB3YEIR07R6KS1OQYwfMF5f/ThLvOzgmCvP0fRP0/VMW+HvIL6Pizpkjzl1d/TEHvyw0MFzzSsUXsQcQWvnmTyX+d9pKkZaCRQVbmqTmtUQtHztWhfDMmNCyKrUzSt2pVV+E=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
+ DM6PR11MB3228.namprd11.prod.outlook.com (20.176.120.157) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.9; Tue, 14 Jan 2020 14:58:23 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2623.015; Tue, 14 Jan 2020
+ 14:58:23 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v3 4/7] dt-bindings: atmel-usart: remove wildcard
+Thread-Topic: [PATCH v3 4/7] dt-bindings: atmel-usart: remove wildcard
+Thread-Index: AQHVyssxad36L/lyDU2/n1XqgFNXSA==
+Date: Tue, 14 Jan 2020 14:58:23 +0000
+Message-ID: <a7f9f8c6-7636-6c1d-ecd8-39e5a956b85a@microchip.com>
+References: <1578997397-23165-1-git-send-email-claudiu.beznea@microchip.com>
+ <1578997397-23165-5-git-send-email-claudiu.beznea@microchip.com>
+ <20200114104237.GM3137@piout.net>
+ <f3c4d460-cff6-2e14-428a-a732a6bffe38@microchip.com>
+ <20200114111704.GN3137@piout.net>
+In-Reply-To: <20200114111704.GN3137@piout.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e4d740b6-67a8-472e-5080-08d7990233ea
+x-ms-traffictypediagnostic: DM6PR11MB3228:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB3228F3B9868F7DBA8D17887587340@DM6PR11MB3228.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 028256169F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(136003)(366004)(346002)(376002)(39860400002)(199004)(189003)(66946007)(76116006)(31686004)(66446008)(6506007)(53546011)(26005)(186003)(64756008)(66556008)(86362001)(91956017)(54906003)(66476007)(71200400001)(316002)(6512007)(4326008)(6916009)(2616005)(2906002)(6486002)(36756003)(81156014)(7416002)(966005)(31696002)(5660300002)(478600001)(8676002)(81166006)(8936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3228;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 1Pd87UK+T6wnlaiwJ/HnFQT+JfV6ynzpebDEllz7/8QtBGuipRl3UyWG1voWvRtBXxVK2VRDim8XJh4nqJfRrdt/5T4SmJMvuuW7rbFGUokiPSaGWu7lcOVnye7lemhgpAFbu/hp/vMRQ5Lrrz50M8JesS7yENrENNRRqKEa0Whl3VaOsbsoO3qAALGvUOrnT/QpgKo0veRSCWcaf1ngQOnzkOQZ6rBPlwQ7TfE6OZqgNZaS9m3Ab1tiKajV2IDNfZI9y8lpV/2VXi7ZsCUxpsIIJzUqEaetB7xzxscEPtml+CMSXhohN+kMuMZSVJszn6UicnYkE5PYQDt8aXVWOj3Ig8u8I0+fJPsRUiR6E6oFuyVolLNzub7IewBMtDLc2r9mriqdYZEtawqONebTCMy8HsXTvEp3rAUM3elcqmBOvEPu7xaeYQo7z9IN838UZVrIJQtzBWeVJp+rAQpcEno7IK8k8F/Ovz14RE4XVfAftMCHEP+uQR/Eh6AQD3k6+lKiruos+/Jihp0RKNTN9A==
+Content-ID: <CD33279CEB73A84684BB56835DC9D6F8@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578527663-10243-2-git-send-email-jolly.shah@xilinx.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: e4d740b6-67a8-472e-5080-08d7990233ea
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jan 2020 14:58:23.2235 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Egllc5yUKitD0Pe697cx4bgy3xmrLoP9lwUdrdQ4j3VUsh3hdMnj23vdasFWechuQqc5lUjS4ME5lrsuCHxth0I4U3Umh+puTTrfv0/rwxs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3228
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_065300_556686_5EA50B4D 
-X-CRM114-Status: GOOD (  28.25  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200114_065828_020846_F0750E1D 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,482 +158,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, Rajan Vaja <rajan.vaja@xilinx.com>,
- ard.biesheuvel@linaro.org, matt@codeblueprint.co.uk, dmitry.torokhov@gmail.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- Jolly Shah <jollys@xilinx.com>, rajanv@xilinx.com, sudeep.holla@arm.com,
- mingo@kernel.org, linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, devicetree@vger.kernel.org,
+ richard.genoud@gmail.com, radu_nicolae.pirea@upb.ro,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ robh+dt@kernel.org, linux-spi@vger.kernel.org, lee.jones@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 08, 2020 at 03:54:20PM -0800, Jolly Shah wrote:
-> From: Rajan Vaja <rajan.vaja@xilinx.com>
+
+
+On 14.01.2020 13:17, Alexandre Belloni wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 > 
-> Add Firmware-ggs sysfs interface which provides read/write
-> interface to global storage registers.
+> On 14/01/2020 11:10:14+0000, Claudiu.Beznea@microchip.com wrote:
+>>
+>>
+>> On 14.01.2020 12:42, Alexandre Belloni wrote:
+>>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>>>
+>>> On 14/01/2020 12:23:14+0200, Claudiu Beznea wrote:
+>>>> Remove chip whildcard and introduce the list of compatibles instead.
+>>>>
+>>>> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+>>>> ---
+>>>>  Documentation/devicetree/bindings/mfd/atmel-usart.txt | 7 +++----
+>>>>  1 file changed, 3 insertions(+), 4 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>>>> index 699fd3c9ace8..778e8310606a 100644
+>>>> --- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>>>> +++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
+>>>> @@ -1,10 +1,9 @@
+>>>>  * Atmel Universal Synchronous Asynchronous Receiver/Transmitter (USART)
+>>>>
+>>>>  Required properties for USART:
+>>>> -- compatible: Should be "atmel,<chip>-usart" or "atmel,<chip>-dbgu"
+>>>> -  The compatible <chip> indicated will be the first SoC to support an
+>>>> -  additional mode or an USART new feature.
+>>>> -  For the dbgu UART, use "atmel,<chip>-dbgu", "atmel,<chip>-usart"
+>>>> +- compatible: Should be one of the following:
+>>>> +     - "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
+>>>> +     - "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
+>>>
+>>> All the uarts are not dbgus, so this need to be:
+>>>
+>>>  - "atmel,at91rm9200-usart"
+>>>  - "atmel,at91sam9260-usart"
+>>>  - "atmel,at91rm9200-dbgu", "atmel,at91rm9200-usart"
+>>>  - "atmel,at91sam9260-dbgu", "atmel,at91sam9260-usart"
+>>
+>> Ok!
+>>
+>>>
+>>> Also, you need to update drivers/soc/atmel/soc.c
+>>
+>> OK. Did you refer to CIDR, EXID registers? They are at the same offsets as
+>> for the old products. So we can rely on old compatible for them. Is this OK?
+>>
 > 
-> Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> Signed-off-by: Jolly Shah <jollys@xilinx.com>
-> ---
-> Changes in v2:
->  - Updated Linux kernel version in documentation.
->  - Used DEVICE_ATTR_* and ATTRIBUTE_GROUPS macros.
->  - Free Kobject structure in case of error.
->  - Resolved smatch errors.
->  - Updated Signed-off-by sequence.
-> ---
->  Documentation/ABI/stable/sysfs-firmware-zynqmp |  50 +++++
->  drivers/firmware/xilinx/Makefile               |   2 +-
->  drivers/firmware/xilinx/zynqmp-ggs.c           | 284 +++++++++++++++++++++++++
->  drivers/firmware/xilinx/zynqmp.c               |  32 +++
->  include/linux/firmware/xlnx-zynqmp.h           |  10 +
->  5 files changed, 377 insertions(+), 1 deletion(-)
->  create mode 100644 Documentation/ABI/stable/sysfs-firmware-zynqmp
->  create mode 100644 drivers/firmware/xilinx/zynqmp-ggs.c
+> Then, what is the point of adding microchip,sam9x60-dbgu ?
+
+Different meaning for CIDR register bits. Version is kept on bits 4 to 0
+but not documented in public datasheet, so version displayed by
+drivers/soc/atmel/soc.c should work.
+
+Thank you,
+Claudiu Beznea
+
 > 
-> diff --git a/Documentation/ABI/stable/sysfs-firmware-zynqmp b/Documentation/ABI/stable/sysfs-firmware-zynqmp
-> new file mode 100644
-> index 0000000..cffa2fc
-> --- /dev/null
-> +++ b/Documentation/ABI/stable/sysfs-firmware-zynqmp
-> @@ -0,0 +1,50 @@
-> +What:		/sys/firmware/zynqmp/ggs*
-
-Why are these attributes just not hanging off of the platform device for
-the firmware controller?  Why do you need a new subdir under "firmware"?
-
-> +Date:		January 2018
-> +KernelVersion:	5.5
-
-5.6?  :)
-
-> +Contact:	"Jolly Shah" <jollys@xilinx.com>
-> +Description:
-> +		Read/Write PMU global general storage register value,
-> +		GLOBAL_GEN_STORAGE{0:3}.
-> +		Global general storage register that can be used
-> +		by system to pass information between masters.
-> +
-> +		The register is reset during system or power-on
-> +		resets. Three registers are used by the FSBL and
-> +		other Xilinx software products: GLOBAL_GEN_STORAGE{4:6}.
-> +
-> +		Usage:
-> +		# cat /sys/firmware/zynqmp/ggs0
-> +		# echo <mask> <value> > /sys/firmware/zynqmp/ggs0
-> +
-> +		Example:
-> +		# cat /sys/firmware/zynqmp/ggs0
-> +		# echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/ggs0
-> +
-> +Users:		Xilinx
-> +
-> +What:		/sys/firmware/zynqmp/pggs*
-> +Date:		January 2018
-> +KernelVersion:	5.5
-> +Contact:	"Jolly Shah" <jollys@xilinx.com>
-> +Description:
-> +		Read/Write PMU persistent global general storage register
-> +		value, PERS_GLOB_GEN_STORAGE{0:3}.
-> +		Persistent global general storage register that
-> +		can be used by system to pass information between
-> +		masters.
-> +
-> +		This register is only reset by the power-on reset
-> +		and maintains its value through a system reset.
-> +		Four registers are used by the FSBL and other Xilinx
-> +		software products: PERS_GLOB_GEN_STORAGE{4:7}.
-> +		Register is reset only by a POR reset.
-> +
-> +		Usage:
-> +		# cat /sys/firmware/zynqmp/pggs0
-> +		# echo <mask> <value> > /sys/firmware/zynqmp/pggs0
-> +
-> +		Example:
-> +		# cat /sys/firmware/zynqmp/pggs0
-> +		# echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/pggs0
-> +
-> +Users:		Xilinx
-> diff --git a/drivers/firmware/xilinx/Makefile b/drivers/firmware/xilinx/Makefile
-> index 875a537..1e8643c 100644
-> --- a/drivers/firmware/xilinx/Makefile
-> +++ b/drivers/firmware/xilinx/Makefile
-> @@ -1,5 +1,5 @@
->  # SPDX-License-Identifier: GPL-2.0
->  # Makefile for Xilinx firmwares
->  
-> -obj-$(CONFIG_ZYNQMP_FIRMWARE) += zynqmp.o
-> +obj-$(CONFIG_ZYNQMP_FIRMWARE) += zynqmp.o zynqmp-ggs.o
->  obj-$(CONFIG_ZYNQMP_FIRMWARE_DEBUG) += zynqmp-debug.o
-> diff --git a/drivers/firmware/xilinx/zynqmp-ggs.c b/drivers/firmware/xilinx/zynqmp-ggs.c
-> new file mode 100644
-> index 0000000..e2a6700
-> --- /dev/null
-> +++ b/drivers/firmware/xilinx/zynqmp-ggs.c
-> @@ -0,0 +1,284 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Xilinx Zynq MPSoC Firmware layer
-> + *
-> + *  Copyright (C) 2014-2018 Xilinx, Inc.
-> + *
-> + *  Jolly Shah <jollys@xilinx.com>
-> + *  Rajan Vaja <rajanv@xilinx.com>
-> + */
-> +
-> +#include <linux/compiler.h>
-> +#include <linux/of.h>
-> +#include <linux/init.h>
-> +#include <linux/module.h>
-> +#include <linux/uaccess.h>
-> +#include <linux/slab.h>
-> +#include <linux/firmware/xlnx-zynqmp.h>
-> +
-> +static ssize_t read_register(char *buf, u32 ioctl_id, u32 reg)
-> +{
-> +	int ret;
-> +	u32 ret_payload[PAYLOAD_ARG_CNT];
-> +	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
-> +
-> +	if (IS_ERR(eemi_ops) || !eemi_ops->ioctl)
-> +		return -EFAULT;
-> +
-> +	ret = eemi_ops->ioctl(0, ioctl_id, reg, 0, ret_payload);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return sprintf(buf, "0x%x\n", ret_payload[1]);
-> +}
-> +
-> +static ssize_t write_register(const char *buf, size_t count, u32 read_ioctl,
-> +			      u32 write_ioctl, u32 reg)
-> +{
-> +	char *kern_buff, *inbuf, *tok;
-> +	long mask, value;
-> +	int ret;
-> +	u32 ret_payload[PAYLOAD_ARG_CNT];
-> +	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
-> +
-> +	if (IS_ERR(eemi_ops) || !eemi_ops->ioctl)
-> +		return -EFAULT;
-> +
-> +	kern_buff = kzalloc(count, GFP_KERNEL);
-> +	if (!kern_buff)
-> +		return -ENOMEM;
-> +
-> +	ret = strlcpy(kern_buff, buf, count);
-> +	if (ret < 0) {
-> +		ret = -EFAULT;
-> +		goto err;
-> +	}
-> +
-> +	inbuf = kern_buff;
-> +
-> +	/* Read the write mask */
-> +	tok = strsep(&inbuf, " ");
-> +	if (!tok) {
-> +		ret = -EFAULT;
-
-If you just set count to the error value, no need to test the value of
-ret when you exit.  Not a big deal...
-
-> +		goto err;
-> +	}
-> +
-> +	ret = kstrtol(tok, 16, &mask);
-> +	if (ret) {
-> +		ret = -EFAULT;
-> +		goto err;
-> +	}
-> +
-> +	/* Read the write value */
-> +	tok = strsep(&inbuf, " ");
-> +	if (!tok) {
-> +		ret = -EFAULT;
-> +		goto err;
-> +	}
-> +
-> +	ret = kstrtol(tok, 16, &value);
-> +	if (ret) {
-> +		ret = -EFAULT;
-> +		goto err;
-> +	}
-> +
-> +	ret = eemi_ops->ioctl(0, read_ioctl, reg, 0, ret_payload);
-
-This feels "tricky", if you tie this to the device you have your driver
-bound to, will this make it easier instead of having to go through the
-ioctl callback?
-
-
-> +	if (ret) {
-> +		ret = -EFAULT;
-> +		goto err;
-> +	}
-> +	ret_payload[1] &= ~mask;
-> +	value &= mask;
-> +	value |= ret_payload[1];
-> +
-> +	ret = eemi_ops->ioctl(0, write_ioctl, reg, value, NULL);
-> +	if (ret)
-> +		ret = -EFAULT;
-> +
-> +err:
-> +	kfree(kern_buff);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return count;
-> +}
-> +
-> +/**
-> + * ggs_show - Show global general storage (ggs) sysfs attribute
-> + * @device: Device structure
-> + * @attr: Device attribute structure
-> + * @buf: Requested available shutdown_scope attributes string
-> + * @reg: Register number
-> + *
-> + * Return:Number of bytes printed into the buffer.
-> + *
-> + * Helper function for viewing a ggs register value.
-> + *
-> + * User-space interface for viewing the content of the ggs0 register.
-> + * cat /sys/firmware/zynqmp/ggs0
-> + */
-> +static ssize_t ggs_show(struct device *device,
-> +			struct device_attribute *attr,
-> +			char *buf,
-> +			u32 reg)
-> +{
-> +	return read_register(buf, IOCTL_READ_GGS, reg);
-> +}
-> +
-> +/**
-> + * ggs_store - Store global general storage (ggs) sysfs attribute
-> + * @device: Device structure
-> + * @attr: Device attribute structure
-> + * @buf: User entered shutdown_scope attribute string
-> + * @count: Size of buf
-> + * @reg: Register number
-> + *
-> + * Return: count argument if request succeeds, the corresponding
-> + * error code otherwise
-> + *
-> + * Helper function for storing a ggs register value.
-> + *
-> + * For example, the user-space interface for storing a value to the
-> + * ggs0 register:
-> + * echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/ggs0
-> + */
-> +static ssize_t ggs_store(struct device *device,
-> +			 struct device_attribute *attr,
-> +			 const char *buf, size_t count,
-> +			 u32 reg)
-> +{
-> +	if (!device || !attr || !buf || !count || reg >= GSS_NUM_REGS)
-> +		return -EINVAL;
-> +
-> +	return write_register(buf, count, IOCTL_READ_GGS, IOCTL_WRITE_GGS, reg);
-> +}
-> +
-> +/* GGS register show functions */
-> +#define GGS0_SHOW(N)						\
-> +	ssize_t ggs##N##_show(struct device *device,		\
-> +			      struct device_attribute *attr,	\
-> +			      char *buf)			\
-> +	{							\
-> +		return ggs_show(device, attr, buf, N);		\
-> +	}
-> +
-> +static GGS0_SHOW(0);
-> +static GGS0_SHOW(1);
-> +static GGS0_SHOW(2);
-> +static GGS0_SHOW(3);
-> +
-> +/* GGS register store function */
-> +#define GGS0_STORE(N)						\
-> +	ssize_t ggs##N##_store(struct device *device,		\
-> +			       struct device_attribute *attr,	\
-> +			       const char *buf,			\
-> +			       size_t count)			\
-> +	{							\
-> +		return ggs_store(device, attr, buf, count, N);	\
-> +	}
-> +
-> +static GGS0_STORE(0);
-> +static GGS0_STORE(1);
-> +static GGS0_STORE(2);
-> +static GGS0_STORE(3);
-> +
-> +/**
-> + * pggs_show - Show persistent global general storage (pggs) sysfs attribute
-> + * @device: Device structure
-> + * @attr: Device attribute structure
-> + * @buf: Requested available shutdown_scope attributes string
-> + * @reg: Register number
-> + *
-> + * Return:Number of bytes printed into the buffer.
-> + *
-> + * Helper function for viewing a pggs register value.
-> + */
-> +static ssize_t pggs_show(struct device *device,
-> +			 struct device_attribute *attr,
-> +			 char *buf,
-> +			 u32 reg)
-> +{
-> +	return read_register(buf, IOCTL_READ_PGGS, reg);
-> +}
-> +
-> +/**
-> + * pggs_store - Store persistent global general storage (pggs) sysfs attribute
-> + * @device: Device structure
-> + * @attr: Device attribute structure
-> + * @buf: User entered shutdown_scope attribute string
-> + * @count: Size of buf
-> + * @reg: Register number
-> + *
-> + * Return: count argument if request succeeds, the corresponding
-> + * error code otherwise
-> + *
-> + * Helper function for storing a pggs register value.
-> + */
-> +static ssize_t pggs_store(struct device *device,
-> +			  struct device_attribute *attr,
-> +			  const char *buf, size_t count,
-> +			  u32 reg)
-> +{
-> +	return write_register(buf, count, IOCTL_READ_PGGS,
-> +			      IOCTL_WRITE_PGGS, reg);
-> +}
-> +
-> +#define PGGS0_SHOW(N)						\
-> +	ssize_t pggs##N##_show(struct device *device,		\
-> +			       struct device_attribute *attr,	\
-> +			       char *buf)			\
-> +	{							\
-> +		return pggs_show(device, attr, buf, N);		\
-> +	}
-> +
-> +#define PGGS0_STORE(N)						\
-> +	ssize_t pggs##N##_store(struct device *device,		\
-> +				struct device_attribute *attr,	\
-> +				const char *buf,		\
-> +				size_t count)			\
-> +	{							\
-> +		return pggs_store(device, attr, buf, count, N);	\
-> +	}
-> +
-> +/* PGGS register show functions */
-> +static PGGS0_SHOW(0);
-> +static PGGS0_SHOW(1);
-> +static PGGS0_SHOW(2);
-> +static PGGS0_SHOW(3);
-> +
-> +/* PGGS register store functions */
-> +static PGGS0_STORE(0);
-> +static PGGS0_STORE(1);
-> +static PGGS0_STORE(2);
-> +static PGGS0_STORE(3);
-> +
-> +/* GGS register attributes */
-> +static DEVICE_ATTR_RW(ggs0);
-> +static DEVICE_ATTR_RW(ggs1);
-> +static DEVICE_ATTR_RW(ggs2);
-> +static DEVICE_ATTR_RW(ggs3);
-> +
-> +/* PGGS register attributes */
-> +static DEVICE_ATTR_RW(pggs0);
-> +static DEVICE_ATTR_RW(pggs1);
-> +static DEVICE_ATTR_RW(pggs2);
-> +static DEVICE_ATTR_RW(pggs3);
-> +
-> +static struct attribute *zynqmp_ggs_attrs[] = {
-> +	&dev_attr_ggs0.attr,
-> +	&dev_attr_ggs1.attr,
-> +	&dev_attr_ggs2.attr,
-> +	&dev_attr_ggs3.attr,
-> +	&dev_attr_pggs0.attr,
-> +	&dev_attr_pggs1.attr,
-> +	&dev_attr_pggs2.attr,
-> +	&dev_attr_pggs3.attr,
-> +	NULL,
-> +};
-> +
-> +ATTRIBUTE_GROUPS(zynqmp_ggs);
-> +
-> +int zynqmp_pm_ggs_init(struct kobject *parent_kobj)
-> +{
-> +	return sysfs_create_group(parent_kobj, zynqmp_ggs_groups[0]);
-
-You might be racing userspace here and loosing :(
-
-> +}
-> diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-> index 75bdfaa..4c1117d 100644
-> --- a/drivers/firmware/xilinx/zynqmp.c
-> +++ b/drivers/firmware/xilinx/zynqmp.c
-> @@ -473,6 +473,10 @@ static inline int zynqmp_is_valid_ioctl(u32 ioctl_id)
->  	case IOCTL_GET_PLL_FRAC_MODE:
->  	case IOCTL_SET_PLL_FRAC_DATA:
->  	case IOCTL_GET_PLL_FRAC_DATA:
-> +	case IOCTL_WRITE_GGS:
-> +	case IOCTL_READ_GGS:
-> +	case IOCTL_WRITE_PGGS:
-> +	case IOCTL_READ_PGGS:
-
-Huh???
-
->  		return 1;
->  	default:
->  		return 0;
-> @@ -704,6 +708,28 @@ const struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void)
->  }
->  EXPORT_SYMBOL_GPL(zynqmp_pm_get_eemi_ops);
->  
-> +static int zynqmp_pm_sysfs_init(void)
-> +{
-> +	struct kobject *zynqmp_kobj;
-> +	int ret;
-> +
-> +	zynqmp_kobj = kobject_create_and_add("zynqmp", firmware_kobj);
-> +	if (!zynqmp_kobj) {
-> +		pr_err("zynqmp: Firmware kobj add failed.\n");
-> +		return -ENOMEM;
-> +	}
-> +
-> +	ret = zynqmp_pm_ggs_init(zynqmp_kobj);
-> +	if (ret) {
-> +		kobject_put(zynqmp_kobj);
-> +		pr_err("%s() GGS init fail with error %d\n",
-> +		       __func__, ret);
-> +		goto err;
-> +	}
-> +err:
-> +	return ret;
-> +}
-> +
->  static int zynqmp_firmware_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -751,6 +777,12 @@ static int zynqmp_firmware_probe(struct platform_device *pdev)
->  	/* Assign eemi_ops_table */
->  	eemi_ops_tbl = &eemi_ops;
->  
-> +	ret = zynqmp_pm_sysfs_init();
-
-See, you have a platform device, hang the attributes off of that instead
-of making a kobject and detatching yourself from the global device tree!
-
-Please redo this, I think it will make it a lot simpler and more
-obvious.
-
-thanks,
-
-greg k-h
-
+> 
+> --
+> Alexandre Belloni, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
