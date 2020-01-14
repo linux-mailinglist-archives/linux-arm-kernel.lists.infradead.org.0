@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0856F13ABCE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:03:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91AD313ABD1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 15:03:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0NpxaHI44UQXcd+45klXaTZg33+WnvKWXI05BDk6yHQ=; b=Gh0W8BHhWOXS2U
-	AdA/EMxs0H/i07xy85aSUPQVEZXAuUbn6Y5B9tpOKHC6fInxtRRjnmiwyCCgWqfjbF8Tu2WMcog7G
-	KOvf3Konb4UKezitcBizVBbzML0sfQrRExdEDPIQAY7LOoKQXu/l7jWwqymkR4cjT6xNgtSKMD9I4
-	+ZuMyYrA+PXOq8JzGNVVI8FkP7r5zwrerKQFA9HvaAfRfsDNb6OS0WcRjzx5Fqh2c2ZaetD3F7bqx
-	YJSBnArNzxstLQKLgNRY44pzw2PGpcUktu4X+pIwScvCnNarAAbEE5Ye+98iSuzcOQ4PlMnmU8U/q
-	OST3ojydBYa/ZuVOJkpQ==;
+	List-Owner; bh=jeiWGpblCjI8y2Kco6Qo0LguiF83dVdlaB2NTK5eEgo=; b=kdvCMDpSEPfk4E
+	FtvxCCi5HRvJjDC5hJ+FSvznJnHm+S3oEPmRSIa2knslQNJ59gzk71/lVLxNUVToAfIa+rprbCQcd
+	zSIOKG7t6G9YEt6JVtPSLrnAqe//1816LJJxHE4NF3mf+EvVC6xo19MuRc6/8JEJmszebRjvGtsT/
+	qrJENWuEMKY7e8BBjdAF9g6Wi6a604ig6bf+zz0NfiJqCYZdm1v5qu8j6UiE8PR2DzqE/pWfiJ9We
+	uk0wm9pf9C2ptu7PBg6P0cbY7iNyXdp9OsfKgYDdJa+LO0tsxum9Kb8mBQysVsaoIJAAxUmY5slSz
+	63O+n5M4KZEcJWtqvMCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irMmO-0002k0-Jb; Tue, 14 Jan 2020 14:02:48 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1irMme-0002wt-U6; Tue, 14 Jan 2020 14:03:05 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irMjm-00080h-V8
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 14:00:12 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so12296714wrr.1
+ id 1irMjn-00088f-IY
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 14:00:14 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p17so13872681wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 06:00:05 -0800 (PST)
+ Tue, 14 Jan 2020 06:00:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Lxb7PN4lvjObtQ59KMU2hHjHYfZBsU9IrbvtHskV7n0=;
- b=CMlWfiRvaRRJU+hOQ4WPokjIT8GHSX3vkbMyfsBc8DCF2hmxmKbLRl3XuVhkhou0oY
- 8ildadcB1t+iC3etvIdUbg1E1UntznuFyodZFJWT/fKIama5xaeApXEASHJT7JgN2ozv
- QCnT8RndunnruzJfnh/71PB8HtxvyO7XJKZnUF7uB+UEQl7A2erDumW8cUH7LVKRRVSc
- clHmeeo+WxvTbERdluTb53uZ8A62/xxsCsI0ksjNmkSLPYzaqbl3ZsQ8rb2gQr+2OhwQ
- umwgvNEbrkvZ6ozlVfbhYTa8lSeqFFXS2E6ACT6PSnFlW92eK2gHkYubDtNs9tVVSPeA
- TMUw==
+ bh=mmCo0cmcYxTYUl0HTh9b5uPHQjBF+Ornrl4fpC6nIuw=;
+ b=YwKwklKFwVrhQTbq9+emPqf95apR1314k05ofi1R4X4ecmLMYVeTbhUyQp8rc6JOOE
+ 1OtSdz22N7qTe1XPnouOPYwL70jWyR9WzmlK2ZXg2p4vGpwHbn4BMRc+jo0MBgwO6T0l
+ kwj1Qo0YWV0mSI6WuIA9JmgmgulgXFJC/X0mzv2VstuVM/XkmTbkjnaL13iIDmY92It8
+ 5oNt9CMr3GzgOVZqxWqargG03QKjOuUSUMJbmcmPXGbcmT0gddtiaVxm7R4gWVDD353H
+ OJ5ZNctjqERrdhzXqK1zFZdA3CDKpvZ79XSCt2HQ6upbF63gIHwk+/f4B7j0TroYbesC
+ L5Gg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Lxb7PN4lvjObtQ59KMU2hHjHYfZBsU9IrbvtHskV7n0=;
- b=ed2HazuTRdGUcwJBraR8ATv8huPTmMgmQU6di6FCVCkbeant4ke14rqTlfSy3mlJAC
- BIruc9XzQx9PT2RGTCQPZcbYGjn2HTU9T8s1OT6WNnbrIy1bYcMyHitFnC397LLBL49F
- hNveIsgPIRceAOKPDmzQczoVLrerLKaFqB4eZwAUJDJoNC7UeC3KDD+hlLLS+EZgc6fI
- yfnnswE6MrebmKdTHn4u/X1E5lsyC2XW4hc7WrXLVhQCUEbw3bMZuqviWV9uTg8dzLL3
- lx2bk3QmgjW5saPbvdfeHIwu+EftMoD8KMjb5YhLmZL0K/hm5UfE5g05arsVAlkIZa6j
- cEuA==
-X-Gm-Message-State: APjAAAWW7xDd/bYEbGCcHcxpiynDW+nzpQmnpfC6TE/w+qxC9Z83sflh
- isqI84uVHKjbP49UDFk1L/Q=
-X-Google-Smtp-Source: APXvYqxq5XivXy1rjI7OaJJ+olOKx4Pgt9tO+9ND8MTyENMvSQ3szmCgKQXFPKTU/w3I7VW7kOqisA==
-X-Received: by 2002:a5d:4651:: with SMTP id j17mr26245596wrs.237.1579010403794; 
- Tue, 14 Jan 2020 06:00:03 -0800 (PST)
+ bh=mmCo0cmcYxTYUl0HTh9b5uPHQjBF+Ornrl4fpC6nIuw=;
+ b=mBgCY7BR+HKdwv+edOCQQJIKCa44uAXmF7lOcCBdDBsmEjfDobU4zlcIcjuYWpNYmt
+ VgIFMkxR6PfbdXrAVM28Uqsy5ONR0OXuPPnyPBadIqaIaeH1WqgXljhbPCNGMw8hxlA8
+ ldFwdXneW4SWNaawqz/gdOvkX54ZohJzObKK1Vsa0StvU48eKyBgLabZpMjcevOrWSrk
+ IwDMRusNQREYL2wKombj2HAEdB+MU+wlZLZsU4EkQHbf5yUcQovnORVcKiAk4H9a7GVJ
+ j8da4gyfFk1saRKQk6jsUISMhiJH0QJJ9UcNRw2sjn/ijnDcGvuihrzh0Mzych55oXLN
+ bVug==
+X-Gm-Message-State: APjAAAX1PKUi+0kJRhUR1BJTxut1FGZtw5euahiBwjypQCyIXkQ+t3TC
+ fL6AeYRMZYjY1kGKPreubB4=
+X-Google-Smtp-Source: APXvYqxIi99Bpxvcwct69pL122PlCYsc6pFqFmQLsPv1kKKkDRC+0KM4vq6kSF3tJBiUx5oECNcNKw==
+X-Received: by 2002:a7b:c389:: with SMTP id s9mr27249334wmj.7.1579010405396;
+ Tue, 14 Jan 2020 06:00:05 -0800 (PST)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id 4sm17854448wmg.22.2020.01.14.06.00.02
+ by smtp.googlemail.com with ESMTPSA id 4sm17854448wmg.22.2020.01.14.06.00.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 06:00:03 -0800 (PST)
+ Tue, 14 Jan 2020 06:00:04 -0800 (PST)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: alexandre.torgue@st.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  mcoquelin.stm32@gmail.com, mripard@kernel.org, wens@csie.org,
  iuliana.prodan@nxp.com, horia.geanta@nxp.com, aymen.sghaier@nxp.com
-Subject: [PATCH RFC 09/10] crypto: engine: permit to batch requests
-Date: Tue, 14 Jan 2020 14:59:35 +0100
-Message-Id: <20200114135936.32422-10-clabbe.montjoie@gmail.com>
+Subject: [PATCH RFC 10/10] crypto: sun8i-ce: use the new batch mechanism
+Date: Tue, 14 Jan 2020 14:59:36 +0100
+Message-Id: <20200114135936.32422-11-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
 References: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_060007_028901_FC92AF39 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20200114_060007_862213_48B31613 
+X-CRM114-Status: GOOD (  14.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,110 +108,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now everything is ready, this patch permits to choose the number of
-request to batch.
+Now all infrastructure to batch request are in place, it is time to use
+it.
+Introduce some debug for it also.
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- crypto/crypto_engine.c  | 32 +++++++++++++++++++++++++++-----
- include/crypto/engine.h |  2 ++
- 2 files changed, 29 insertions(+), 5 deletions(-)
+ .../crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c    | 14 ++++++++------
+ drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c  |  9 ++++++---
+ drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h       |  2 ++
+ 3 files changed, 16 insertions(+), 9 deletions(-)
 
-diff --git a/crypto/crypto_engine.c b/crypto/crypto_engine.c
-index e23a398ba330..e9cd9ec9a732 100644
---- a/crypto/crypto_engine.c
-+++ b/crypto/crypto_engine.c
-@@ -114,6 +114,7 @@ static void crypto_pump_requests(struct crypto_engine *engine,
- 	}
+diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
+index 41d18c18d1d1..fe5374788304 100644
+--- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
++++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
+@@ -103,20 +103,22 @@ static int sun8i_ce_cipher_prepare(struct crypto_engine *engine, void *async_req
  
- 	engine->ct = 0;
-+retry:
- 	/* Get the fist request from the engine queue to handle */
- 	backlog = crypto_get_backlog(&engine->queue);
- 	async_req = crypto_dequeue_request(&engine->queue);
-@@ -151,7 +152,10 @@ static void crypto_pump_requests(struct crypto_engine *engine,
- 		}
- 		engine->cur_reqs[engine->ct].prepared = true;
- 	}
--	engine->ct++;
-+	if (++engine->ct < engine->rmax && engine->queue.qlen > 0) {
-+		spin_lock_irqsave(&engine->queue_lock, flags);
-+		goto retry;
-+	}
- 	if (!enginectx->op.do_one_request) {
- 		dev_err(engine->dev, "failed to do request\n");
- 		ret = -EINVAL;
-@@ -393,15 +397,18 @@ int crypto_engine_stop(struct crypto_engine *engine)
- EXPORT_SYMBOL_GPL(crypto_engine_stop);
+ 	algt = container_of(alg, struct sun8i_ce_alg_template, alg.skcipher);
  
- /**
-- * crypto_engine_alloc_init - allocate crypto hardware engine structure and
-+ * crypto_engine_alloc_init2 - allocate crypto hardware engine structure and
-  * initialize it.
-  * @dev: the device attached with one hardware engine
-  * @rt: whether this queue is set to run as a realtime task
-+ * @rmax: The number of request that the engine can batch in one
-+ * @qlen: The size of the crypto queue
-  *
-  * This must be called from context that can sleep.
-  * Return: the crypto engine structure on success, else NULL.
-  */
--struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
-+struct crypto_engine *crypto_engine_alloc_init2(struct device *dev, bool rt,
-+						int rmax, int qlen)
- {
- 	struct sched_param param = { .sched_priority = MAX_RT_PRIO / 2 };
- 	struct crypto_engine *engine;
-@@ -421,12 +428,12 @@ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
- 	engine->priv_data = dev;
- 	snprintf(engine->name, sizeof(engine->name),
- 		 "%s-engine", dev_name(dev));
--	engine->rmax = 1;
-+	engine->rmax = rmax;
- 	engine->cur_reqs = devm_kzalloc(dev, sizeof(struct cur_req) * engine->rmax, GFP_KERNEL);
- 	if (!engine->cur_reqs)
- 		return NULL;
+-	dev_dbg(ce->dev, "%s %s %u %x IV(%p %u) key=%u\n", __func__,
++	dev_dbg(ce->dev, "%s %s %u %x IV(%p %u) key=%u slot=%d\n", __func__,
+ 		crypto_tfm_alg_name(areq->base.tfm),
+ 		areq->cryptlen,
+ 		rctx->op_dir, areq->iv, crypto_skcipher_ivsize(tfm),
+-		op->keylen);
+-
+-#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
+-	algt->stat_req++;
+-#endif
++		op->keylen, slot);
  
--	crypto_init_queue(&engine->queue, CRYPTO_ENGINE_MAX_QLEN);
-+	crypto_init_queue(&engine->queue, qlen);
- 	spin_lock_init(&engine->queue_lock);
+ 	flow = rctx->flow;
  
- 	engine->kworker = kthread_create_worker(0, "%s", engine->name);
-@@ -443,6 +450,21 @@ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
+ 	chan = &ce->chanlist[flow];
  
- 	return engine;
- }
-+EXPORT_SYMBOL_GPL(crypto_engine_alloc_init2);
++#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
++	algt->stat_req++;
++	if (chan->engine->ct + 1 > chan->tmax)
++		chan->tmax = chan->engine->ct + 1;
++#endif
 +
-+/**
-+ * crypto_engine_alloc_init - allocate crypto hardware engine structure and
-+ * initialize it.
-+ * @dev: the device attached with one hardware engine
-+ * @rt: whether this queue is set to run as a realtime task
-+ *
-+ * This must be called from context that can sleep.
-+ * Return: the crypto engine structure on success, else NULL.
-+ */
-+struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
-+{
-+	return crypto_engine_alloc_init2(dev, rt, 1, CRYPTO_ENGINE_MAX_QLEN);
-+}
- EXPORT_SYMBOL_GPL(crypto_engine_alloc_init);
+ 	cet = &chan->tl[slot];
+ 	memset(cet, 0, sizeof(struct ce_task));
  
- /**
-diff --git a/include/crypto/engine.h b/include/crypto/engine.h
-index 55d3dbc2498c..fe0dfea8bf07 100644
---- a/include/crypto/engine.h
-+++ b/include/crypto/engine.h
-@@ -115,6 +115,8 @@ void crypto_finalize_skcipher_request(struct crypto_engine *engine,
- int crypto_engine_start(struct crypto_engine *engine);
- int crypto_engine_stop(struct crypto_engine *engine);
- struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt);
-+struct crypto_engine *crypto_engine_alloc_init2(struct device *dev, bool rt,
-+						int rmax, int qlen);
- int crypto_engine_exit(struct crypto_engine *engine);
+diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
+index 39bf684c0ff5..7cd98c227357 100644
+--- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
++++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
+@@ -104,7 +104,7 @@ int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow, const char *name)
+ 	int err = 0;
  
- #endif /* _CRYPTO_ENGINE_H */
+ #ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
+-	ce->chanlist[flow].stat_req++;
++	ce->chanlist[flow].stat_req += ce->chanlist[flow].engine->ct;
+ #endif
+ 	/* mark last one */
+ 	ce->chanlist[flow].tl[ce->chanlist[flow].engine->ct - 1].t_common_ctl |= cpu_to_le32(CE_COMM_INT);
+@@ -287,7 +287,10 @@ static int sun8i_ce_dbgfs_read(struct seq_file *seq, void *v)
+ 	int i;
+ 
+ 	for (i = 0; i < MAXFLOW; i++)
+-		seq_printf(seq, "Channel %d: nreq %lu\n", i, ce->chanlist[i].stat_req);
++		seq_printf(seq, "Channel %d: nreq %lu tmax %d eqlen=%d/%d\n", i,
++			   ce->chanlist[i].stat_req, ce->chanlist[i].tmax,
++			   ce->chanlist[i].engine->queue.qlen,
++			   ce->chanlist[i].engine->queue.max_qlen);
+ 
+ 	for (i = 0; i < ARRAY_SIZE(ce_algs); i++) {
+ 		if (!ce_algs[i].ce)
+@@ -345,7 +348,7 @@ static int sun8i_ce_allocate_chanlist(struct sun8i_ce_dev *ce)
+ 	for (i = 0; i < MAXFLOW; i++) {
+ 		init_completion(&ce->chanlist[i].complete);
+ 
+-		ce->chanlist[i].engine = crypto_engine_alloc_init(ce->dev, true);
++		ce->chanlist[i].engine = crypto_engine_alloc_init2(ce->dev, true, MAXTASK, MAXTASK * 2);
+ 		if (!ce->chanlist[i].engine) {
+ 			dev_err(ce->dev, "Cannot allocate engine\n");
+ 			i--;
+diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
+index 2d3325a13bf1..22bb15fea476 100644
+--- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
++++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
+@@ -135,6 +135,7 @@ struct ce_task {
+  * @t_phy:	Physical address of task
+  * @tl:		pointer to the current ce_task for this flow
+  * @stat_req:	number of request done by this flow
++ * @tmax:	The maximum number of tasks done in one batch
+  */
+ struct sun8i_ce_flow {
+ 	struct crypto_engine *engine;
+@@ -145,6 +146,7 @@ struct sun8i_ce_flow {
+ 	struct ce_task *tl;
+ #ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
+ 	unsigned long stat_req;
++	int tmax;
+ #endif
+ };
+ 
 -- 
 2.24.1
 
