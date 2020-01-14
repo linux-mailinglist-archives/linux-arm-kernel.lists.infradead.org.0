@@ -2,62 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12EDC13A7F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:08:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 484DE13A802
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 12:10:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WiHMz4Nf8mKJHfjNdwnIp8/DrDhmwAnKh/rNyWak5+E=; b=WkCqZxodIJEkdE
-	fFg5psGoW2x+i7/x5w0nRPXs41HXyzsGsw5nwFheJ+15Lv6a0uNTGoTthBxSdcog6bTtV6skHbl3f
-	Zw0YagKejWWbrTL4CK6fwQB+8fzuNjQrPAjzNIDUvOvWm4/kgZcjWeQ+jUYZLbVpPxNo8UJcwC1yM
-	YDITg8ktgHhvn5fG4npBBju65plE6/Fka5rl/0BtzWOKBpkkQd8Vb2s9PyCzlefG/EZa+f/YZ2jE5
-	w392/dyxxU2c0yysU79FMn04yCQYgg8dimjlG2quDTYoQzqknu2Z34CnS3GnXmFoRjdDfjDCEjhmT
-	4EzmEgpJmllNm/6H/MWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sNeq0D2GK2xm2Q1Y4I3ZoUL7N83y8DOK6dU6cZxxY4k=; b=L4+3wjAxXCKADG
+	pmxeJU6/jFIU2qkJ2sOJj8kXUMfRFjdh7GhOdG6m1oczyWi0MGyLgALFWhACARLWF3quDfCxqTerG
+	Zj1IpBnyaCGySQXx9JlhHBKjPv2O/DWGyioxOmnuQlatVxiMuMvMlglSWp1Wu8fQAXwkHzDg2l+Yw
+	NQ/YkiP+STejJxSltlvyBXlCSg2Y/7cf4O2oXc4VtvqqMBBHbOmVmZNgxE+Zz8JbJnzD/fPFgL2/O
+	0FzBE0XpJM1Nvn/Y0KG8IZC3go2nkm300ol1RcrFnSOv6mECBBmmlg1M2RpAOkt/5b+gm3T5nHGk3
+	Rtczs+FJZQysjj3E4qiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irK3K-00070P-9D; Tue, 14 Jan 2020 11:08:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irK38-0006wq-PE
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:07:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46832142F;
- Tue, 14 Jan 2020 03:07:52 -0800 (PST)
-Received: from [10.163.1.192] (unknown [10.163.1.192])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E61483F6C4;
- Tue, 14 Jan 2020 03:07:45 -0800 (PST)
-Subject: Re: [PATCH V11 1/5] mm/hotplug: Introduce arch callback validating
- the hot remove range
-To: David Hildenbrand <david@redhat.com>,
- David Hildenbrand <dhildenb@redhat.com>
-References: <6f0efddc-f124-58ca-28b6-4632469cf992@arm.com>
- <3C3BE5FA-0CFC-4C90-8657-63EF5B680B0B@redhat.com>
- <6b8fb779-31e8-1b63-85a8-9f6c93a04494@arm.com>
- <19194427-1295-3596-2c2c-463c4adf4f35@redhat.com>
- <78f04711-2ca6-280c-d0c2-ab9eea866e59@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <2c4b04d6-6d86-e87a-9b09-b931133a0d9c@arm.com>
-Date: Tue, 14 Jan 2020 16:39:04 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <78f04711-2ca6-280c-d0c2-ab9eea866e59@arm.com>
+	id 1irK5Y-00007S-5T; Tue, 14 Jan 2020 11:10:24 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irK5M-0008OT-TB
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 11:10:17 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00EB2U77011423; Tue, 14 Jan 2020 12:09:44 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=ucZAM2cIKc0/MATE5BBAxoNnJTwj27q1VBl4Ts+mzvc=;
+ b=eJ81EjPZAocn5iYHcW6pxX5VHrbvdMOEDeFGkGeo2l6e0tjlPGUhmejDhECaqr9BricK
+ 0shj0Uts6xH7ImYjbaMtLbGzrGXUco5T6solJu/yyuw4Qv55dyJWdFlIwnWaPmzY76Cs
+ /XrVCF7jLRoo2Xazxkn8VobFznhPGd69qNDRL9C2NtaG2QimOxgSpmIFWLF60JtDB8q0
+ sNH2ndKZGuWDbeUOwRmXMATxkcHmwEEA+XYG5DCUlG+GQAMmpgDPsoCzBbbnZ52aX3zb
+ sexTBUGCFhD9Jmi2p7X/6jZ+NjNI3Nii7d2scHUEU4+8PYcseyCFDFTcXwC/iHO+loeV kg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xf7jpd28c-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 14 Jan 2020 12:09:44 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6679510003A;
+ Tue, 14 Jan 2020 12:09:37 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4B9FC2A9004;
+ Tue, 14 Jan 2020 12:09:37 +0100 (CET)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 14 Jan
+ 2020 12:09:36 +0100
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1473.003; Tue, 14 Jan 2020 12:09:36 +0100
+From: Christophe ROULLIER <christophe.roullier@st.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
+ schema
+Thread-Topic: [PATCH 2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
+ schema
+Thread-Index: AQHVyssbd0SA+ach30uRoVqg2DKqZg==
+Date: Tue, 14 Jan 2020 11:09:36 +0000
+Message-ID: <deb077f1-44f7-d2ad-73ea-9ada9704da72@st.com>
+References: <20191108103526.22254-1-christophe.roullier@st.com>
+ <20191108103526.22254-3-christophe.roullier@st.com>
+ <20191114182214.GA22693@bogus>
+In-Reply-To: <20191114182214.GA22693@bogus>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.51]
+Content-ID: <5C7EE8151C4CA64FB52AC56F9D52B939@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-14_03:2020-01-13,
+ 2020-01-14 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_030754_907049_B22F2B24 
-X-CRM114-Status: GOOD (  23.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200114_031013_393311_ABFE0FB7 
+X-CRM114-Status: GOOD (  24.76  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,125 +110,295 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
- arunks@codeaurora.org, cpandya@codeaurora.org, ira.weiny@intel.com,
- will@kernel.org, steven.price@arm.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, robin.murphy@arm.com, broonie@kernel.org, cai@lca.pw,
- ard.biesheuvel@arm.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de, steve.capper@arm.com,
- logang@deltatee.com, linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
- mgorman@techsingularity.net
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "martin.blumenstingl@googlemail.com" <martin.blumenstingl@googlemail.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "alexandru.ardelean@analog.com" <alexandru.ardelean@analog.com>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAwMS8xNC8yMDIwIDA3OjQzIEFNLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90ZToKPiAKPiAK
-PiBPbiAwMS8xMy8yMDIwIDA0OjA3IFBNLCBEYXZpZCBIaWxkZW5icmFuZCB3cm90ZToKPj4gT24g
-MTMuMDEuMjAgMTA6NTAsIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+Pj4KPj4+Cj4+PiBPbiAw
-MS8xMy8yMDIwIDAyOjQ0IFBNLCBEYXZpZCBIaWxkZW5icmFuZCB3cm90ZToKPj4+Pgo+Pj4+Cj4+
-Pj4+IEFtIDEzLjAxLjIwMjAgdW0gMTA6MTAgc2NocmllYiBBbnNodW1hbiBLaGFuZHVhbCA8YW5z
-aHVtYW4ua2hhbmR1YWxAYXJtLmNvbT46Cj4+Pj4+Cj4+Pj4+IO+7vwo+Pj4+Pgo+Pj4+Pj4gT24g
-MDEvMTAvMjAyMCAwMjoxMiBQTSwgRGF2aWQgSGlsZGVuYnJhbmQgd3JvdGU6Cj4+Pj4+Pj4gT24g
-MTAuMDEuMjAgMDQ6MDksIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+Pj4+Pj4+IEN1cnJlbnRs
-eSB0aGVyZSBhcmUgdHdvIGludGVyZmFjZXMgdG8gaW5pdGlhdGUgbWVtb3J5IHJhbmdlIGhvdCBy
-ZW1vdmFsIGkuZQo+Pj4+Pj4+IHJlbW92ZV9tZW1vcnkoKSBhbmQgX19yZW1vdmVfbWVtb3J5KCkg
-d2hpY2ggdGhlbiBjYWxscyB0cnlfcmVtb3ZlX21lbW9yeSgpLgo+Pj4+Pj4+IFBsYXRmb3JtIGdl
-dHMgY2FsbGVkIHdpdGggYXJjaF9yZW1vdmVfbWVtb3J5KCkgdG8gdGVhciBkb3duIHJlcXVpcmVk
-IGtlcm5lbAo+Pj4+Pj4+IHBhZ2UgdGFibGVzIGFuZCBvdGhlciBhcmNoIHNwZWNpZmljIHByb2Nl
-ZHVyZXMuIEJ1dCB0aGVyZSBhcmUgcGxhdGZvcm1zCj4+Pj4+Pj4gbGlrZSBhcm02NCB3aGljaCBt
-aWdodCB3YW50IHRvIHByZXZlbnQgcmVtb3ZhbCBvZiBjZXJ0YWluIHNwZWNpZmljIG1lbW9yeQo+
-Pj4+Pj4+IHJhbmdlcyBpcnJlc3BlY3RpdmUgb2YgdGhlaXIgcHJlc2VudCB1c2FnZSBvciBtb3Zh
-YmlsaXR5IHByb3BlcnRpZXMuCj4+Pj4+Pgo+Pj4+Pj4gV2h5PyBJcyB0aGlzIG9ubHkgcmVsZXZh
-bnQgZm9yIGJvb3QgbWVtb3J5PyBJIGhvcGUgc28sIG90aGVyd2lzZSB0aGUKPj4+Pj4+IGFyY2gg
-Y29kZSBuZWVkcyBmaXhpbmcgSU1ITy4KPj4+Pj4KPj4+Pj4gUmlnaHQsIGl0IGlzIHJlbGV2YW50
-IG9ubHkgZm9yIHRoZSBib290IG1lbW9yeSBvbiBhcm02NCBwbGF0Zm9ybS4gQnV0IHRoaXMKPj4+
-Pj4gbmV3IGFyY2ggY2FsbGJhY2sgbWFrZXMgaXQgZmxleGlibGUgdG8gcmVqZWN0IGFueSBnaXZl
-biBtZW1vcnkgcmFuZ2UuCj4+Pj4+Cj4+Pj4+Pgo+Pj4+Pj4gSWYgaXQncyBvbmx5IGJvb3QgbWVt
-b3J5LCB3ZSBzaG91bGQgZGlzYWxsb3cgb2ZmbGluaW5nIGluc3RlYWQgdmlhIGEKPj4+Pj4+IG1l
-bW9yeSBub3RpZmllciAtIG11Y2ggY2xlYW5lci4KPj4+Pj4KPj4+Pj4gRG9udCBoYXZlIG11Y2gg
-ZGV0YWlsIHVuZGVyc3RhbmRpbmcgb2YgTU1VIG5vdGlmaWVyIG1lY2hhbmlzbSBidXQgZnJvbSBz
-b21lCj4+Pj4+IGluaXRpYWwgcmVhZGluZywgaXQgc2VlbXMgbGlrZSB3ZSBuZWVkIHRvIGhhdmUg
-YSBtbV9zdHJ1Y3QgZm9yIGEgbm90aWZpZXIKPj4+Pj4gdG8gbW9uaXRvciB2YXJpb3VzIGV2ZW50
-cyBvbiB0aGUgcGFnZSB0YWJsZS4gSnVzdCB3b25kZXJpbmcgaG93IGEgcGh5c2ljYWwKPj4+Pj4g
-bWVtb3J5IHJhbmdlIGxpa2UgYm9vdCBtZW1vcnkgY2FuIGJlIG1vbml0b3JlZCBiZWNhdXNlIGl0
-IGNhbiBiZSB1c2VkIGJvdGgKPj4+Pj4gZm9yIGZvciBrZXJuZWwgKGluaXRfbW0pIG9yIHVzZXIg
-c3BhY2UgcHJvY2VzcyBhdCBzYW1lIHRpbWUuIElzIHRoZXJlIHNvbWUKPj4+Pj4gbWVjaGFuaXNt
-IHdlIGNvdWxkIGRvIHRoaXMgPwo+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+Pgo+Pj4+Pj4+IEN1cnJlbnQg
-YXJjaCBjYWxsIGJhY2sgYXJjaF9yZW1vdmVfbWVtb3J5KCkgaXMgdG9vIGxhdGUgaW4gdGhlIHBy
-b2Nlc3MgdG8KPj4+Pj4+PiBhYm9ydCBtZW1vcnkgaG90IHJlbW92YWwgYXMgbWVtb3J5IGJsb2Nr
-IGRldmljZXMgYW5kIGZpcm13YXJlIG1lbW9yeSBtYXAKPj4+Pj4+PiBlbnRyaWVzIHdvdWxkIGhh
-dmUgYWxyZWFkeSBiZWVuIHJlbW92ZWQuIFBsYXRmb3JtcyBzaG91bGQgYmUgYWJsZSB0byBhYm9y
-dAo+Pj4+Pj4+IHRoZSBwcm9jZXNzIGJlZm9yZSB0YWtpbmcgdGhlIG1lbV9ob3RwbHVnX2xvY2sg
-d2l0aCBtZW1faG90cGx1Z19iZWdpbigpLgo+Pj4+Pj4+IFRoaXMgZXNzZW50aWFsbHkgcmVxdWly
-ZXMgYSBuZXcgYXJjaCBjYWxsYmFjayBmb3IgbWVtb3J5IHJhbmdlIHZhbGlkYXRpb24uCj4+Pj4+
-Pgo+Pj4+Pj4gSSBzb21ld2hhdCBkaXNsaWtlIHRoaXMgdmVyeSBtdWNoLiBNZW1vcnkgcmVtb3Zh
-bCBzaG91bGQgbmV2ZXIgZmFpbCBpZgo+Pj4+Pj4gdXNlZCBzYW5lbHkuIFNlZSBlLmcuLCBfX3Jl
-bW92ZV9tZW1vcnkoKSwgaXQgd2lsbCBCVUcoKSB3aGVuZXZlcgo+Pj4+Pj4gc29tZXRoaW5nIGxp
-a2UgdGhhdCB3b3VsZCBzdHJpa2UuCj4+Pj4+Pgo+Pj4+Pj4+Cj4+Pj4+Pj4gVGhpcyBkaWZmZXJl
-bnRpYXRlcyBtZW1vcnkgcmFuZ2UgdmFsaWRhdGlvbiBiZXR3ZWVuIG1lbW9yeSBob3QgYWRkIGFu
-ZCBob3QKPj4+Pj4+PiByZW1vdmUgcGF0aHMgYmVmb3JlIGNhcnZpbmcgb3V0IGEgbmV3IGhlbHBl
-ciBjaGVja19ob3RyZW1vdmVfbWVtb3J5X3JhbmdlKCkKPj4+Pj4+PiB3aGljaCBpbmNvcnBvcmF0
-ZXMgYSBuZXcgYXJjaCBjYWxsYmFjay4gVGhpcyBjYWxsIGJhY2sgcHJvdmlkZXMgcGxhdGZvcm1z
-Cj4+Pj4+Pj4gYW4gb3Bwb3J0dW5pdHkgdG8gcmVmdXNlIG1lbW9yeSByZW1vdmFsIGF0IHRoZSB2
-ZXJ5IG9uc2V0LiBJbiBmdXR1cmUgdGhlCj4+Pj4+Pj4gc2FtZSBwcmluY2lwbGUgY2FuIGJlIGV4
-dGVuZGVkIGZvciBtZW1vcnkgaG90IGFkZCBwYXRoIGlmIHJlcXVpcmVkLgo+Pj4+Pj4+Cj4+Pj4+
-Pj4gUGxhdGZvcm1zIGNhbiBjaG9vc2UgdG8gb3ZlcnJpZGUgdGhpcyBjYWxsYmFjayBpbiBvcmRl
-ciB0byByZWplY3Qgc3BlY2lmaWMKPj4+Pj4+PiBtZW1vcnkgcmFuZ2VzIGZyb20gcmVtb3ZhbCBv
-ciBjYW4ganVzdCBmYWxsYmFjayB0byBhIGRlZmF1bHQgaW1wbGVtZW50YXRpb24KPj4+Pj4+PiB3
-aGljaCBhbGxvd3MgcmVtb3ZhbCBvZiBhbGwgbWVtb3J5IHJhbmdlcy4KPj4+Pj4+Cj4+Pj4+PiBJ
-IHN1c3BlY3Qgd2Ugd2FudCByZWFsbHkgd2FudCB0byBkaXNhbGxvdyBvZmZsaW5pbmcgaW5zdGVh
-ZC4gRS5nLiwgSQo+Pj4+Pgo+Pj4+PiBJZiBib290IG1lbW9yeSBwYWdlcyBjYW4gYmUgcHJldmVu
-dGVkIGZyb20gYmVpbmcgb2ZmbGluZWQgZm9yIHN1cmUsIHRoZW4gaXQKPj4+Pj4gd291bGQgaW5k
-aXJlY3RseSBkZWZpbml0ZWx5IHByZXZlbnQgaG90IHJlbW92ZSBwcm9jZXNzIGFzIHdlbGwuCj4+
-Pj4+Cj4+Pj4+PiByZW1lbWJlciBzMzkweCBkb2VzIHRoYXQgd2l0aCBjZXJ0YWluIGFyZWFzIG5l
-ZWRlZCBmb3IgZHVtcGluZy9rZXhlYy4KPj4+Pj4KPj4+Pj4gQ291bGQgbm90IGZpbmQgYW55IHJl
-ZmVyZW5jZXMgdG8gbW11X25vdGlmaWVyIGluIGFyY2gvczM5MCBvciBhbnkgb3RoZXIgYXJjaAo+
-Pj4+PiBmb3IgdGhhdCBtYXR0ZXIgYXBhcnQgZnJvbSBLVk0gKHdoaWNoIGhhcyBhbiB1c2VyIHNw
-YWNlIGNvbXBvbmVudCksIGNvdWxkIHlvdQo+Pj4+PiBwbGVhc2UgZ2l2ZSBzb21lIHBvaW50ZXJz
-ID8KPj4+Pgo+Pj4+IE1lbW9yeSAoaG90cGx1Zykgbm90aWZpZXIsIG5vdCBNTVUgbm90aWZpZXIg
-OikKPj4+Cj4+PiBUaGV5IGFyZSBzbyBzaW1pbGFybHkgbmFtZWQgOikKPj4+Cj4+Pj4KPj4+PiBO
-b3Qgb24gbXkgbm90ZWJvb2sgcmlnaHQgbm93LCBncmVwIGZvciBNRU1fR09JTkdfT0ZGTElORSwg
-dGhhdCBzaG91bGQgYmUgaXQuCj4+Pj4KPj4+Cj4+PiBHb3QgaXQsIHRoYW5rcyAhIEJ1dCB3ZSB3
-aWxsIHN0aWxsIG5lZWQgYm9vdCBtZW1vcnkgZW51bWVyYXRpb24gdmlhIE1FTUJMT0NLX0JPT1QK
-Pj4+IHRvIHJlamVjdCBhZmZlY3RlZCBvZmZsaW5lIHJlcXVlc3RzIGluIHRoZSBjYWxsYmFjay4K
-Pj4KPj4gRG8geW91IHJlYWxseSBuZWVkIHRoYXQ/Cj4+Cj4+IFdlIGhhdmUgU0VDVElPTl9JU19F
-QVJMWS4gWW91IGNvdWxkIGl0ZXJhdGUgYWxsIGludm9sdmVkIHNlY3Rpb25zIChmb3IKPj4gd2hp
-Y2ggeW91IGFyZSBnZXR0aW5nIG5vdGlmaWVkKSBhbmQgY2hlY2sgaWYgYW55IG9uZSBvZiB0aGVz
-ZSBpcyBtYXJrZWQKPj4gU0VDVElPTl9JU19FQVJMWS4gdGhlbiwgaXQgd2FzIGFkZGVkIGR1cmlu
-ZyBib290IGFuZCBub3QgdmlhIGFkZF9tZW1vcnkoKS4KPiAKPiBTZWVtcyB0byBiZSBhIGJldHRl
-ciBhcHByb2FjaCB0aGFuIGFkZGluZyBhIG5ldyBtZW1ibG9jayBmbGFnLgoKVGhlc2UgYWRkaXRp
-b25hbCBjaGFuZ2VzIGRvIHRoZSB0cmljayBhbmQgcHJldmVudCBib290IG1lbW9yeSByZW1vdmFs
-LgpIb3BlIHRoaXMgaXMgaW4gbGluZSB3aXRoIHlvdXIgZWFybGllciBzdWdnZXN0aW9uLgoKZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtNjQvbW0vbW11LmMgYi9hcmNoL2FybTY0L21tL21tdS5jCmluZGV4
-IDAwZjNlMTgzNjU1OC4uM2I1OWU2YTI5ZGVhIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L21tL21t
-dS5jCisrKyBiL2FyY2gvYXJtNjQvbW0vbW11LmMKQEAgLTE3LDYgKzE3LDcgQEAKKysrIGIvYXJj
-aC9hcm02NC9tbS9tbXUuYwpAQCAtMTcsNiArMTcsNyBAQAogI2luY2x1ZGUgPGxpbnV4L21tYW4u
-aD4KICNpbmNsdWRlIDxsaW51eC9ub2RlbWFzay5oPgogI2luY2x1ZGUgPGxpbnV4L21lbWJsb2Nr
-Lmg+CisjaW5jbHVkZSA8bGludXgvbWVtb3J5Lmg+CiAjaW5jbHVkZSA8bGludXgvZnMuaD4KICNp
-bmNsdWRlIDxsaW51eC9pby5oPgogI2luY2x1ZGUgPGxpbnV4L21tLmg+CkBAIC0xMzY1LDQgKzEz
-NjYsMzcgQEAgdm9pZCBhcmNoX3JlbW92ZV9tZW1vcnkoaW50IG5pZCwgdTY0IHN0YXJ0LCB1NjQg
-c2l6ZSwKICAgICAgICBfX3JlbW92ZV9wYWdlcyhzdGFydF9wZm4sIG5yX3BhZ2VzLCBhbHRtYXAp
-OwogICAgICAgIF9fcmVtb3ZlX3BnZF9tYXBwaW5nKHN3YXBwZXJfcGdfZGlyLCBfX3BoeXNfdG9f
-dmlydChzdGFydCksIHNpemUpOwogfQorCitzdGF0aWMgaW50IGJvb3RfbWVtX3JlbW92ZV9ub3Rp
-ZmllcihzdHJ1Y3Qgbm90aWZpZXJfYmxvY2sgKm5iLAorICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICB1bnNpZ25lZCBsb25nIGFjdGlvbiwgdm9pZCAqZGF0YSkKK3sKKyAgICAgICB1
-bnNpZ25lZCBsb25nIHN0YXJ0X3BmbiwgZW5kX3BmbiwgcGZuLCBzZWN0aW9uX25yOworICAgICAg
-IHN0cnVjdCBtZW1fc2VjdGlvbiAqbXM7CisgICAgICAgc3RydWN0IG1lbW9yeV9ub3RpZnkgKmFy
-ZyA9IGRhdGE7CisKKyAgICAgICBzdGFydF9wZm4gPSBhcmctPnN0YXJ0X3BmbjsKKyAgICAgICBl
-bmRfcGZuID0gc3RhcnRfcGZuICsgYXJnLT5ucl9wYWdlczsKKworICAgICAgIGlmIChhY3Rpb24g
-IT0gTUVNX0dPSU5HX09GRkxJTkUpCisgICAgICAgICAgICAgICByZXR1cm4gTk9USUZZX09LOwor
-CisgICAgICAgZm9yIChwZm4gPSBzdGFydF9wZm47IHBmbiA8IGVuZF9wZm47IHBmbiArPSBQQUdF
-U19QRVJfU0VDVElPTikgeworICAgICAgICAgICAgICAgc2VjdGlvbl9uciA9IHBmbl90b19zZWN0
-aW9uX25yKHBmbik7CisgICAgICAgICAgICAgICBtcyA9IF9fbnJfdG9fc2VjdGlvbihzZWN0aW9u
-X25yKTsKKworICAgICAgICAgICAgICAgaWYgKGVhcmx5X3NlY3Rpb24obXMpKQorICAgICAgICAg
-ICAgICAgICAgICAgICByZXR1cm4gTk9USUZZX0JBRDsKKyAgICAgICB9CisgICAgICAgcmV0dXJu
-IE5PVElGWV9PSzsKK30KKworc3RhdGljIHN0cnVjdCBub3RpZmllcl9ibG9jayBib290X21lbV9y
-ZW1vdmVfbmIgPSB7CisgICAgICAgLm5vdGlmaWVyX2NhbGwgPSBib290X21lbV9yZW1vdmVfbm90
-aWZpZXIsCit9OworCitzdGF0aWMgaW50IF9faW5pdCBib290X21lbV9yZW1vdmVfaW5pdCh2b2lk
-KQoreworICAgICAgIHJldHVybiByZWdpc3Rlcl9tZW1vcnlfbm90aWZpZXIoJmJvb3RfbWVtX3Jl
-bW92ZV9uYik7Cit9CitkZXZpY2VfaW5pdGNhbGwoYm9vdF9tZW1fcmVtb3ZlX2luaXQpOwogI2Vu
-ZGlmCgo+IAo+Pgo+Pgo+IAo+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Rob, all,
+
+On 11/14/19 7:22 PM, Rob Herring wrote:
+> On Fri, Nov 08, 2019 at 11:35:26AM +0100, Christophe Roullier wrote:
+>> Convert stm32 dwmac to DT schema.
+> Lots of checkpatch errors with trailing WS.
+ok, sorry I forgot to execute checkpatch before upstream.
+>> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+>> ---
+>>   .../devicetree/bindings/net/stm32-dwmac.txt   |  44 -----
+>>   .../devicetree/bindings/net/stm32-dwmac.yaml  | 161 ++++++++++++++++++
+>>   2 files changed, 161 insertions(+), 44 deletions(-)
+>>   delete mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.txt
+>>   create mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.txt b/Documentation/devicetree/bindings/net/stm32-dwmac.txt
+>> deleted file mode 100644
+>> index a90eef11dc46..000000000000
+>> --- a/Documentation/devicetree/bindings/net/stm32-dwmac.txt
+>> +++ /dev/null
+>> @@ -1,44 +0,0 @@
+>> -STMicroelectronics STM32 / MCU DWMAC glue layer controller
+>> -
+>> -This file documents platform glue layer for stmmac.
+>> -Please see stmmac.txt for the other unchanged properties.
+>> -
+>> -The device node has following properties.
+>> -
+>> -Required properties:
+>> -- compatible:  For MCU family should be "st,stm32-dwmac" to select glue, and
+>> -	       "snps,dwmac-3.50a" to select IP version.
+>> -	       For MPU family should be "st,stm32mp1-dwmac" to select
+>> -	       glue, and "snps,dwmac-4.20a" to select IP version.
+>> -- clocks: Must contain a phandle for each entry in clock-names.
+>> -- clock-names: Should be "stmmaceth" for the host clock.
+>> -	       Should be "mac-clk-tx" for the MAC TX clock.
+>> -	       Should be "mac-clk-rx" for the MAC RX clock.
+>> -	       For MPU family need to add also "ethstp" for power mode clock
+>> -- interrupt-names: Should contain a list of interrupt names corresponding to
+>> -           the interrupts in the interrupts property, if available.
+>> -		   Should be "macirq" for the main MAC IRQ
+>> -		   Should be "eth_wake_irq" for the IT which wake up system
+>> -- st,syscon : Should be phandle/offset pair. The phandle to the syscon node which
+>> -	       encompases the glue register, and the offset of the control register.
+>> -
+>> -Optional properties:
+>> -- clock-names:     For MPU family "eth-ck" for PHY without quartz
+>> -- st,eth-clk-sel (boolean) : set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
+>> -- st,eth-ref-clk-sel (boolean) :  set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
+>> -
+>> -Example:
+>> -
+>> -	ethernet@40028000 {
+>> -		compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
+>> -		reg = <0x40028000 0x8000>;
+>> -		reg-names = "stmmaceth";
+>> -		interrupts = <0 61 0>, <0 62 0>;
+>> -		interrupt-names = "macirq", "eth_wake_irq";
+>> -		clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+>> -		clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
+>> -		st,syscon = <&syscfg 0x4>;
+>> -		snps,pbl = <8>;
+>> -		snps,mixed-burst;
+>> -		dma-ranges;
+>> -	};
+>> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.yaml b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+>> new file mode 100644
+>> index 000000000000..eb0fd831f59d
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+>> @@ -0,0 +1,161 @@
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +# Copyright 2019 BayLibre, SAS
+>> +%YAML 1.2
+>> +---
+>> +$id: "http://devicetree.org/schemas/net/stm32-dwmac.yaml#"
+>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+>> +
+>> +title: STMicroelectronics STM32 / MCU DWMAC glue layer controller
+>> +
+>> +maintainers:
+>> +  - Alexandre Torgue <alexandre.torgue@st.com>
+>> +  - Christophe Roullier <christophe.roullier@st.com>
+>> +
+>> +description:
+>> +  This file documents platform glue layer for stmmac.
+>> +
+>> +# We need a select here so we don't match all nodes with 'snps,dwmac'
+>> +select:
+>> +  properties:
+>> +    compatible:
+>> +      contains:
+>> +        enum:
+>> +          - st,stm32-dwmac
+>> +          - st,stm32mp1-dwmac
+>> +  required:
+>> +    - compatible
+>> +
+>> +allOf:
+>> +  - $ref: "snps,dwmac.yaml#"
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - st,stm32-dwmac
+>> +              - st,stm32mp1-dwmac
+>> +    then:
+>> +      properties:
+>> +       clocks:
+>> +         minItems: 3
+>> +         maxItems: 5
+>> +         items:
+>> +          - description: GMAC main clock
+>> +          - description: MAC TX clock
+>> +          - description: MAC RX clock
+>> +          - description: For MPU family, used for power mode
+> What does 'power mode' mean? IIRC, some DW MACs have a clock for WoL
+> called LPI or something. Are you sure this is ST specific and not DW
+> config or version specific?
+
+Yes that right, it is clock used to manage WoL during suspend.
+
+My problem it is may be to manage MCU and MPU family in same yaml file
+
+Because in MCU family only 3 clocks used (GMAC main clock, MAC TX clock 
+and MAC RX clock)
+
+In MPU family it is same clocks + clock to manage WoL and clock to 
+manage PHY without Cristal
+
+>> +          - description: For MPU family, used for PHY without quartz
+> It would be cleaner to define the clock always present and use a
+> fixed-clock when you have an external quartz.
+
+You are right, I will define clocks always present and manage them in my 
+driver (enable or disable it in function of phy mode, if with or without 
+quartz in PHY etc..)
+
+So for MCU (st,stm32-dwmac) I need 3 clocks and for MPU 
+(st,stm32mp1-dwmac) 5 clocks
+
+How to manage this in yaml ? 2 differents files ?
+
+>> +
+>> +       clock-names:
+>> +         minItems: 3
+>> +         maxItems: 5
+>> +         contains:
+>> +          enum:
+>> +            - stmmaceth
+>> +            - mac-clk-tx
+>> +            - mac-clk-rx
+>> +            - ethstp
+>> +            - eth-ck
+>> +
+>> +properties:
+>> +  compatible:
+>> +    oneOf:
+>> +      - items:
+>> +          - enum:
+>> +              - st,stm32mp1-dwmac
+>> +          - const: snps,dwmac-4.20a
+>> +      - items:
+>> +          - enum:
+>> +              - st,stm32-dwmac
+>> +          - const: snps,dwmac-4.10a
+>> +      - items:
+>> +          - enum:
+>> +              - st,stm32-dwmac
+>> +          - const: snps,dwmac-3.50a
+>> +
+>> +  st,syscon:
+>> +    allOf:
+>> +      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
+>> +    description:
+>> +      Should be phandle/offset pair. The phandle to the syscon node which
+>> +      encompases the glue register, and the offset of the control register
+>> +
+>> +  st,eth-clk-sel:
+>> +    description:
+>> +      set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
+>> +    type: boolean
+>> +
+>> +  st,eth-ref-clk-sel:
+>> +    description:
+>> +      set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
+> Wrap lines.
+ok
+>> +    type: boolean
+>> +
+>> +required:
+>> +  - compatible
+>> +  - clocks
+>> +  - clock-names
+>> +  - st,syscon
+>> +
+>> +examples:
+>> + - |
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+>> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+>> +    #include <dt-bindings/mfd/stm32h7-rcc.h>
+>> +    //Example 1
+>> +     ethernet0: ethernet@5800a000 {
+>> +       compatible = "st,stm32mp1-dwmac", "snps,dwmac-4.20a";
+>> +       reg = <0x5800a000 0x2000>;
+>> +       reg-names = "stmmaceth";
+>> +       interrupts = <&intc GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
+>> +       interrupt-names = "macirq";
+>> +       clock-names = "stmmaceth",
+>> +                     "mac-clk-tx",
+>> +                     "mac-clk-rx",
+>> +                     "ethstp",
+>> +                     "eth-ck";				
+>> +       clocks = <&rcc ETHMAC>,
+>> +                <&rcc ETHTX>,
+>> +                <&rcc ETHRX>,
+>> +                <&rcc ETHSTP>,
+>> +                <&rcc ETHCK_K>;	
+>> +       st,syscon = <&syscfg 0x4>;
+>> +       snps,pbl = <2>;
+>> +       snps,axi-config = <&stmmac_axi_config_0>;
+>> +       snps,tso;
+>> +       status = "disabled";
+>> +       phy-mode = "rgmii";
+>> +       };
+>> +
+>> +    //Example 1 (MCU example)
+> 2 Example 1's?
+>
+exact, I will rename it
+
+Thanks Rob
+
+>> +     ethernet1: ethernet@40028000 {
+>> +       compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
+>> +       reg = <0x40028000 0x8000>;
+>> +       reg-names = "stmmaceth";
+>> +       interrupts = <0 61 0>, <0 62 0>;
+>> +       interrupt-names = "macirq", "eth_wake_irq";
+>> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+>> +       clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
+>> +       st,syscon = <&syscfg 0x4>;
+>> +       snps,pbl = <8>;
+>> +       snps,mixed-burst;
+>> +       dma-ranges;
+>> +       phy-mode = "mii";
+>> +       };
+>> +
+>> +    //Example 2
+>> +     ethernet2: ethernet@40027000 {
+>> +       compatible = "st,stm32-dwmac", "snps,dwmac-4.10a";
+>> +       reg = <0x40028000 0x8000>;
+>> +       reg-names = "stmmaceth";
+>> +       interrupts = <61>;
+>> +       interrupt-names = "macirq";
+>> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+>> +       clocks = <&rcc 62>, <&rcc 61>, <&rcc 60>;
+>> +       st,syscon = <&syscfg 0x4>;
+>> +       snps,pbl = <8>;
+>> +       status = "disabled";
+>> +       phy-mode = "mii";
+>> +       };
+>> +
+>> +
+>> -- 
+>> 2.17.1
+>>
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
