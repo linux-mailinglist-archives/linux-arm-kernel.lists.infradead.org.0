@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03C2F13AE44
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 17:02:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B789713AEA9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 17:11:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6yAaNwlwtWAnx/6Ez/a6mj5M7NTF3M7rItLAlmM/JxA=; b=tJnk8NpO+DplDd
-	MLm3lrHqTf0O5b/p7Kve1phnHLIefp5KehkDAvpRbNUZHViEBuYRPW+Sa9aDb+Lo0x/8q7LF7U27g
-	syIY8YAFYPzrC+H/qlNGoBLScrX0BahIuQ2+AgGBmLvyNwsjtHMNUHUVvYIVXJbLyZeDuaFcxdv5A
-	vvd4hX95MLKR9KMHD2Pv3kN4cND9Nh+mn8Je93OTOLOy4i6eriiKpxN/HER1lpfpKMkcjMzk0+cWl
-	UbOhcPb94vN5m0AAe1pvcOSfDi8LwJRaukQx6qdRlbyQ3K9Sk/DRPSpLdIipj0vOG3RJEcDnOLEf/
-	WRICxYinW81ZaczErEXQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=djbm4AhbIajt2G1/mGI+W7m6eBYT+zuvuJ2ztFAe2MA=; b=SnV
+	0Z6LlAY+Rh2cjJ9yAPalhtH5t7+OOfGs7eWDl+IGH1kRWbVVLCKEsvJnKtBlUuujDSL8p7784mPig
+	/DWq3H7E2xhVdDih6BAqM2EAAG8tsGWR/PNFQ/aKcSrYtQ6dGrcqM2Efs6RrllGN8Nxl6NNWao/wn
+	w1s798n+Er0mm5Zis4pPohU7OnVH4mX76SnDVWG+bm1AvupdXGjVGNFeLALbSKG2nIR6Lm7TVfUW1
+	VQ/1hm6rSSDK2u8rqe7AJA3QP4jvyA+GHSMUfkCUD48j/QJJ1v4b/+BCDpYc8EQbpJwHl2xA1gCC0
+	++me3rSmZZWcuxACrnvuuq1N+88uokQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irOe2-00030o-JW; Tue, 14 Jan 2020 16:02:18 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1irOmP-0007qi-9Y; Tue, 14 Jan 2020 16:10:57 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irOds-0002zT-9P
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 16:02:13 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00EFqmCb023389; Tue, 14 Jan 2020 17:01:55 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=iqcbAO7gn5oc2a+bEcf0WOjlJoRulApDnHTG5smDQ34=;
- b=DWk0khVZQxpCW7NxPaFvTtniHCfvkDLVAsv5oVI0FSt7q8G4/RtcRqOT+KOIsoNbTRSc
- l1VmZtujDMkOFgjxAaqefoqNxQb9G8WKVqcOBL1Ir+u6SW4NfagLfjZ0FQLwK9IC6oym
- YaCXXUL+ZJBODdlCll1CNR935UKHZmdOZKzFyhWSF8mTA1cTQl/r25KU1ZLcd44hQ2Tl
- TApcE4LAReDFVWKGkv+z0mr02RMokcLgCf4KhvfBKehWZxlJVMaJQSuUHdHtKRGo2lu6
- uRQvl5itEy/A7DfyZYMFJHfZmyx1HICO4oezIsP1KmppLA/qokU4li0N6II4gC9fy+Tw 7w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7jpebd8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 14 Jan 2020 17:01:55 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A2FB1100044;
- Tue, 14 Jan 2020 17:01:54 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6AC7A2C38A2;
- Tue, 14 Jan 2020 17:01:54 +0100 (CET)
-Received: from [10.48.0.71] (10.75.127.46) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 14 Jan
- 2020 17:01:53 +0100
-Subject: Re: [PATCH v2] dt-bindings: iio: adc: stm32-adc: convert bindings to
- json-schema
-To: Rob Herring <robh@kernel.org>
-References: <1575649028-10909-1-git-send-email-fabrice.gasnier@st.com>
- <20191217234345.GA7738@bogus>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <cadc76a7-7e9d-1f0a-21fd-2d7942dbe5c9@st.com>
-Date: Tue, 14 Jan 2020 17:01:53 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191217234345.GA7738@bogus>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-14_04:2020-01-14,
- 2020-01-14 signatures=0
+ id 1irOlA-0005ub-Ir; Tue, 14 Jan 2020 16:09:48 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 8B4D0C0620;
+ Tue, 14 Jan 2020 16:09:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1579018177; bh=lMsPxq+6nqsKDOeBMq7JTDZwDRAvL67CUWdXLkXkMqk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=iffSGqxx8OFb+Pmq5zvInZjDB2S3nvyAmHaayuDazU2IvKr/ANqsV+5cZMMo8mEA7
+ D/qW49WaOk4HilFsZS4A6AtLQpWaLJHDroppQP33m0JNSFWe0yPFn0Anbbg8bTjS9+
+ NC5VtqbX5LZ3aE5VqaUl+HbTu18GVXyBoUFKuDW4bBBFWCjHssPmMRURjNyldKlSTd
+ jOZVxY2F2e5aMUW8ntYKkUK21GyFdSAxBUD4StzGG/z/L8ThH3c4OIuxFdChJUTV0J
+ /CyV16jzSwo0YukQ+a8zJk4cwoeD+HK9N3ktwFJPa3+MsS7cwCl8d4h6SGO0uaqTgz
+ J/sl3s3Q7dV3A==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 221CDA005B;
+ Tue, 14 Jan 2020 16:09:34 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net 0/4] net: stmmac: Fix selftests in Synopsys AXS101 board
+Date: Tue, 14 Jan 2020 17:09:20 +0100
+Message-Id: <cover.1579017787.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_080208_616004_25BD4102 
-X-CRM114-Status: GOOD (  21.99  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200114_080940_753407_078E127C 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,258 +77,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com, jic23@kernel.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-snps-arc@lists.infradead.org, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/18/19 12:43 AM, Rob Herring wrote:
-> On Fri, Dec 06, 2019 at 05:17:08PM +0100, Fabrice Gasnier wrote:
->> Convert the STM32 ADC binding to DT schema format using json-schema
->>
->> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
->> ---
->> Note: this applies on top of IIO tree currently (iio-for-5.5c).
->>
->> Changes in V2:
->> - Take almost all of Rob suggestions (removed reg generic description,
->>   added minItems, maxItems, st,max-clk-rate-hz range, drop some pipes,
->>   simplify clock-names, remove unneeded allOfs)
->> - For now, keep all in one file despite there are lots of if/thens in the
->>   bindings
->> ---
->>  .../devicetree/bindings/iio/adc/st,stm32-adc.txt   | 149 -------
->>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 454 +++++++++++++++++++++
->>  2 files changed, 454 insertions(+), 149 deletions(-)
->>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
->>  create mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-> 
-> 
+Set of fixes for sefltests so that they work in Synopsys AXS101 board.
 
+Final output:
 
-[snip]
+$ ethtool -t eth0
+The test result is PASS
+The test extra info:
+ 1. MAC Loopback                 0
+ 2. PHY Loopback                 -95
+ 3. MMC Counters                 0
+ 4. EEE                          -95
+ 5. Hash Filter MC               0
+ 6. Perfect Filter UC            0
+ 7. MC Filter                    0
+ 8. UC Filter                    0
+ 9. Flow Control                 -95
+10. RSS                          -95
+11. VLAN Filtering               -95
+12. VLAN Filtering (perf)        -95
+13. Double VLAN Filter           -95
+14. Double VLAN Filter (perf)    -95
+15. Flexible RX Parser           -95
+16. SA Insertion (desc)          -95
+17. SA Replacement (desc)        -95
+18. SA Insertion (reg)           -95
+19. SA Replacement (reg)         -95
+20. VLAN TX Insertion            -95
+21. SVLAN TX Insertion           -95
+22. L3 DA Filtering              -95
+23. L3 SA Filtering              -95
+24. L4 DA TCP Filtering          -95
+25. L4 SA TCP Filtering          -95
+26. L4 DA UDP Filtering          -95
+27. L4 SA UDP Filtering          -95
+28. ARP Offload                  -95
+29. Jumbo Frame                  0
+30. Multichannel Jumbo           -95
+31. Split Header                 -95
 
->> +
->> +      st,adc-channels:
->> +        description: |
->> +          List of single-ended channels muxed for this ADC. It can have up to:
->> +            - 16 channels, numbered from 0 to 15 (for in0..in15) on stm32f4
->> +            - 20 channels, numbered from 0 to 19 (for in0..in19) on stm32h7 and
->> +              stm32mp1.
->> +        allOf:
->> +          - $ref: /schemas/types.yaml#/definitions/uint32-array
->> +
+Description:
 
-[snip]
+1) Fixes the unaligned accesses that caused CPU halt in Synopsys AXS101
+boards.
 
->> +
->> +    allOf:
->> +      - if:
->> +          properties:
->> +            compatible:
->> +              contains:
->> +                const: st,stm32f4-adc
->> +
->> +        then:
->> +          properties:
->> +            reg:
->> +              enum:
->> +                - 0x0
->> +                - 0x100
->> +                - 0x200
->> +
->> +            interrupts:
->> +              minimum: 0
->> +              maximum: 2
->> +
->> +            assigned-resolution-bits:
->> +              enum: [6, 8, 10, 12]
->> +              default: 12
->> +
->> +            st,adc-channels:
->> +              minItems: 1
->> +              maxItems: 16
->> +              minimum: 0
->> +              maximum: 15
-> 
-> You are mixing array and scalar constraints here. You need:
-> 
-> minItems: 1
-> maxItems:16
-> items:
->   minimum: 0
->   maximum: 15
-> 
-> Update dtschema. It will now catch this. There's a few others too.
+2) Fixes the VLAN tests when filtering failed to work.
 
-Hi Rob,
+3) Fixes the VLAN Perfect tests when filtering is not available in HW.
 
-Sorry for the late reply. I updated dtschema. Now it catches it.
+4) Fixes the Ethernet DT bindings for AXS101 board.
 
-I've tried your suggestion, but when I test it, I don't get any error on
-maxItems.
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Alexey Brodkin <abrodkin@synopsys.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: linux-snps-arc@lists.infradead.org
+---
 
-In the example: "st,adc-channels = <0>, <1>, ... more than 16 items;"
+Jose Abreu (4):
+  net: stmmac: selftests: Make it work in Synopsys AXS101 boards
+  net: stmmac: selftests: Mark as fail when received VLAN ID != expected
+  net: stmmac: selftests: Guard VLAN Perfect test against non supported
+    HW
+  ARC: [plat-axs10x]: Add missing multicast filter number to GMAC node
 
-Is it possible I face some other issue with dtschema ?
+ arch/arc/boot/dts/axs10x_mb.dtsi                   |  1 +
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 32 +++++++++++++++-------
+ 2 files changed, 23 insertions(+), 10 deletions(-)
 
-I tried another way below... Not sure that's correct. But it catches
-errors on maxItems:
+-- 
+2.7.4
 
-            st,adc-channels:
-              allOf:
-                - minItems: 1
-                  maxItems: 16
-              items:
-                minimum: 0
-                maximum: 15
-
-Error message is ... "is too long" with bad example above.
-
-Please advise,
-Regards,
-Fabrice
-
-> 
-> 
->> +
->> +            st,adc-diff-channels: false
->> +
->> +            st,min-sample-time-nsecs:
->> +              minItems: 1
->> +              maxItems: 16
->> +              minimum: 80
->> +
->> +          required:
->> +            - clocks
->> +
->> +      - if:
->> +          properties:
->> +            compatible:
->> +              contains:
->> +                enum:
->> +                  - st,stm32h7-adc
->> +                  - st,stm32mp1-adc
->> +
->> +        then:
->> +          properties:
->> +            reg:
->> +              enum:
->> +                - 0x0
->> +                - 0x100
->> +
->> +            interrupts:
->> +              minimum: 0
->> +              maximum: 1
->> +
->> +            assigned-resolution-bits:
->> +              enum: [8, 10, 12, 14, 16]
->> +              default: 16
->> +
->> +            st,adc-channels:
->> +              minItems: 1
->> +              maxItems: 20
->> +              minimum: 0
->> +              maximum: 19
->> +
->> +            st,min-sample-time-nsecs:
->> +              minItems: 1
->> +              maxItems: 20
->> +              minimum: 40
->> +
->> +    additionalProperties: false
->> +
->> +    anyOf:
->> +      - required:
->> +          - st,adc-channels
->> +      - required:
->> +          - st,adc-diff-channels
->> +
->> +    required:
->> +      - compatible
->> +      - reg
->> +      - interrupts
->> +      - '#io-channel-cells'
->> +
->> +examples:
->> +  - |
->> +    // Example 1: with stm32f429
->> +      adc123: adc@40012000 {
->> +        compatible = "st,stm32f4-adc-core";
->> +        reg = <0x40012000 0x400>;
->> +        interrupts = <18>;
->> +        clocks = <&rcc 0 168>;
->> +        clock-names = "adc";
->> +        st,max-clk-rate-hz = <36000000>;
->> +        vdda-supply = <&vdda>;
->> +        vref-supply = <&vref>;
->> +        interrupt-controller;
->> +        #interrupt-cells = <1>;
->> +        #address-cells = <1>;
->> +        #size-cells = <0>;
->> +        adc@0 {
->> +          compatible = "st,stm32f4-adc";
->> +          #io-channel-cells = <1>;
->> +          reg = <0x0>;
->> +          clocks = <&rcc 0 168>;
->> +          interrupt-parent = <&adc123>;
->> +          interrupts = <0>;
->> +          st,adc-channels = <8>;
->> +          dmas = <&dma2 0 0 0x400 0x0>;
->> +          dma-names = "rx";
->> +          assigned-resolution-bits = <8>;
->> +        };
->> +        // ...
->> +        // other adc child nodes follow...
->> +      };
->> +
->> +  - |
->> +    // Example 2: with stm32mp157c to setup ADC1 with:
->> +    // - channel 1 as single-ended
->> +    // - channels 2 & 3 as differential (with resp. 6 & 7 negative inputs)
->> +      #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +      #include <dt-bindings/clock/stm32mp1-clks.h>
->> +      adc12: adc@48003000 {
->> +        compatible = "st,stm32mp1-adc-core";
->> +        reg = <0x48003000 0x400>;
->> +        interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
->> +                     <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
->> +        clocks = <&rcc ADC12>, <&rcc ADC12_K>;
->> +        clock-names = "bus", "adc";
->> +        booster-supply = <&booster>;
->> +        vdd-supply = <&vdd>;
->> +        vdda-supply = <&vdda>;
->> +        vref-supply = <&vref>;
->> +        st,syscfg = <&syscfg>;
->> +        interrupt-controller;
->> +        #interrupt-cells = <1>;
->> +        #address-cells = <1>;
->> +        #size-cells = <0>;
->> +        adc@0 {
->> +          compatible = "st,stm32mp1-adc";
->> +          #io-channel-cells = <1>;
->> +          reg = <0x0>;
->> +          interrupt-parent = <&adc12>;
->> +          interrupts = <0>;
->> +          st,adc-channels = <1>;
->> +          st,adc-diff-channels = <2 6>, <3 7>;
->> +          st,min-sample-time-nsecs = <5000>;
->> +          dmas = <&dmamux1 9 0x400 0x05>;
->> +          dma-names = "rx";
->> +        };
->> +        // ...
->> +        // other adc child node follow...
->> +      };
->> +
->> +...
->> -- 
->> 2.7.4
->>
 
 _______________________________________________
 linux-arm-kernel mailing list
