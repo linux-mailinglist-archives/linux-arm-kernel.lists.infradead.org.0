@@ -2,93 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D41B13A269
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 08:58:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CCC813A275
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 09:04:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rYdm5/AzERrHzzRrLjG1p27bZtztEDMyn2KnAPF2WSs=; b=CTQllznTuMPVmN
-	MIvNOgl9+2WY+JgwLVbkHrufws/Q/7tf845yDeBkOUoZqg8+R28qETWOnuDriDmwDGaRscpjAS5Pi
-	EttTWy1ajIuBhoJkI06MgOOhu/lqV/QR9JDiRkyLuKx0CB/HHnwhP3PRvFkLqRtmWcNv/MQiA6D1D
-	c0XZR3fwfifS7126VcvvdRhj90DW+y3sfGE5EO7U7jlrSrCb7yWmcuICCAsljqBhsym+oWNEotFwE
-	0UOIx1AxQEj+stkGXHwtLbQGtfdu7u+zB/1w44HjOivnNKUGss14r2BENxwgO18D9krJS0+ASY4dl
-	aw9BcvwYHevDCR+Ywu3Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OzcNwbi+weg7HD5DpgcEstZRxYemFS5Yozt2vkX5gVw=; b=fRuciApXh6ZURR
+	n//xtWdT6tO4XS5WCOg48+Tx1YimC7+EgJxZuolH6q+ZxI6fgZPHzE91vvC6l82eHZeTD3ipQ0miQ
+	I4F+/Dl1Rq9puh7Se5sJxjCC5bURSkqB8+T7HQAGYkndS8OrqenCDukWiCPNrhUJ16EzIPuFRSkqS
+	8inKzhAM+qJNr/NcrWCnJcxw+CVwx32LDCkJy8s+p1eqn8LE0vfKEX/LwBTTq4Q8g5ixHKe2vuVgR
+	duZ2O5A9UAxP270VaK2RLTiG+30nbRmnUpghlGc+/z/CsGUBygfqdcTrtQy3Ja7sb/TGHXFiTrklJ
+	ERrBgPiNnP4WjqistFrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irH64-0007SU-NF; Tue, 14 Jan 2020 07:58:44 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1irHBp-0000uP-OI; Tue, 14 Jan 2020 08:04:41 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irH5x-0007R9-4a
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 07:58:38 +0000
-Received: by mail-wm1-x341.google.com with SMTP id b19so12570719wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Jan 2020 23:58:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=2tqeA9SVRpbYOWNEv52NfjSgUYnaSyLjZ8VbKBWvkB8=;
- b=nj+SbZ34MQo3ObpLHJ81f1fsqNyqoIbFh9D59Ut6hwJJqqviusHEBofnbn9WEMHTkH
- BowT+qANUEoaF7Ya4KZP1bSuMDzr3BrfBc4qXVeGmkv+W2YkD64gZdlGT1o3hIs69C+R
- Frm7G0TnEgQN+CcgJpGTHzupvS2axENPUO9tDbkad1jsACJb/T7vVOMZjXrau9B0y1xP
- Nivrll2vslPIaal6ObHQgNrwwh1/ns4IANfiXYseBn8G6sPo2cLt3Q1oVOcocUcMuoWB
- jAj8yw5pFR5ln7Zr+jVforKxx/vd60vD57WvedRNYlKMdSDCMYBSbGYeBhIY1f5KuAo0
- 4RCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=2tqeA9SVRpbYOWNEv52NfjSgUYnaSyLjZ8VbKBWvkB8=;
- b=QTM6lFSsAtsVW+E5KIkwMaEQAT10oJXUlXAkE2i5TEoqK0gZodOOa6X44LUuRGjT0T
- t4aYKrMuLnvBIidADte+7Bdls+XtHPzJf3X9Rlyd4s53VL9mWiqzG9Icjw5Y57a5f5/v
- Y8jvzlPP2l18Odamk6qaanBnWsSS5RQEws+sA4+9vza9eo8y3DMWPTczLktCtmw+4uUN
- Kf7fHmw6RxgQEiN+ZV3TQTnYpYEvjNE++eiiYLYFwhnZPZkmf92sjx1JB+MFgIKUpNH7
- sLPo+eA883pEPXkpGbcDHLs6cguwmlVZKeuOVFi6R0aeTtrJMlYzjAzpVQNmYGufgVts
- Og5g==
-X-Gm-Message-State: APjAAAXOAkBsP9zrYcajFONyhDNHrZi0jb5fI+isAg0vYhXD27fuot0a
- 0q77TTexn0eK340xaBNxMRhhSw==
-X-Google-Smtp-Source: APXvYqxpPA4KEPMdkCalFXAmGAvGmPtnz+o0nFOyZiKWNQHG3sc/7GlSmvHxayF93Mper9G7Nk467g==
-X-Received: by 2002:a7b:c85a:: with SMTP id c26mr25125804wml.107.1578988714621; 
- Mon, 13 Jan 2020 23:58:34 -0800 (PST)
-Received: from dell ([95.147.198.95])
- by smtp.gmail.com with ESMTPSA id k16sm18893042wru.0.2020.01.13.23.58.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 23:58:34 -0800 (PST)
-Date: Tue, 14 Jan 2020 07:58:55 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: Wen Su <Wen.Su@mediatek.com>
-Subject: Re: [PATCH 3/4] regulator: mt6359: Add support for MT6359 regulator
-Message-ID: <20200114075855.GA325@dell>
-References: <1571218786-15073-1-git-send-email-Wen.Su@mediatek.com>
- <1571218786-15073-4-git-send-email-Wen.Su@mediatek.com>
- <1578969594.4495.3.camel@mtkswgap22>
+ id 1irHBb-0000u3-V0
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 08:04:29 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00E84Nnt023901;
+ Tue, 14 Jan 2020 02:04:23 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578989063;
+ bh=cbHr/XtYl1ScNrcV2l/fytPkg8e7XLp+hKaJC5xcA5M=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Qpn+Nc+hZAYmCuYJmhvuT3utn0oZSLH5/pT4T5QQK5Ayyz7T6IG9dp6ab1FPifyMI
+ ixt3kOM9ESJNfQNxUskldwRJnaEK5yb2UhAofqAE5qW4UHGJHMZKCs9T486LB4PUOc
+ qyjHJRdvdVB44GMF7i9b51YzGkKLKVaSHNgg5CqQ=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00E84Nmo048181
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 14 Jan 2020 02:04:23 -0600
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 14
+ Jan 2020 02:04:23 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Tue, 14 Jan 2020 02:04:23 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00E84JKi050975;
+ Tue, 14 Jan 2020 02:04:21 -0600
+Subject: Re: [PATCH v5 13/14] dt-bindings: phy: Document WIZ (SERDES wrapper)
+ bindings
+To: Rob Herring <robh+dt@kernel.org>
+References: <20191216095712.13266-14-kishon@ti.com>
+ <20200102095631.1165-1-kishon@ti.com>
+ <CAL_JsqJVmyXirczaWJb4hCsnVjXYt6ki22sBLe5D0240x4Xtzw@mail.gmail.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <41a76196-827b-52dc-5d72-46b8e21f2107@ti.com>
+Date: Tue, 14 Jan 2020 13:36:30 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578969594.4495.3.camel@mtkswgap22>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAL_JsqJVmyXirczaWJb4hCsnVjXYt6ki22sBLe5D0240x4Xtzw@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_235837_174312_1F9742A3 
-X-CRM114-Status: GOOD (  15.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200114_000428_099850_3F5CD1EE 
+X-CRM114-Status: GOOD (  20.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,42 +94,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- wsd_upstream <wsd_upstream@mediatek.com>,
+Cc: devicetree@vger.kernel.org,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Jyri Sarha <jsarha@ti.com>, Swapnil Kashinath Jakhade <sjakhade@cadence.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAxNCBKYW4gMjAyMCwgV2VuIFN1IHdyb3RlOgoKPiBEZWFyIHJldmlld2VycywgCj4g
-Cj4gCUdlbnRsZSBwaW5nIGZvciB0aGlzIHBhdGNoIHNldC4KCk5vdCBhIGdvb2QgaWRlYS4KCklm
-IHlvdSB0aGluayBhIHBhdGNoIGhhcyBzbGlwcGVkIHRocm91Z2ggdGhlIG5ldCwgcGxlYXNlIGFw
-cGx5IGFsbAp5b3VyIHJlY2VpdmVkICotYnkgdGFncyBhbmQgcmVzdWJtaXQgdGhlIHNldCwgY2hh
-bmdpbmcgIlBBVENIIiB0bwoiUkVTRU5EIiBpbiB0aGUgc3ViamVjdCBsaW5lLgoKPiBPbiBXZWQs
-IDIwMTktMTAtMTYgYXQgMTc6MzkgKzA4MDAsIFdlbiBTdSB3cm90ZToKPiA+IEZyb206ICJ3ZW4u
-c3UiIDx3ZW4uc3VAbWVkaWF0ZWsuY29tPgo+ID4gCj4gPiBUaGUgTVQ2MzU5IGlzIGEgcmVndWxh
-dG9yIGZvdW5kIG9uIGJvYXJkcyBiYXNlZCBvbiBNZWRpYVRlayBNVDY3NzkgYW5kCj4gPiBwcm9i
-YWJseSBvdGhlciBTb0NzLiBJdCBpcyBhIHNvIGNhbGxlZCBwbWljIGFuZCBjb25uZWN0cyBhcyBh
-IHNsYXZlIHRvCj4gPiBTb0MgdXNpbmcgU1BJLCB3cmFwcGVkIGluc2lkZSB0aGUgcG1pYy13cmFw
-cGVyLgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiB3ZW4uc3UgPHdlbi5zdUBtZWRpYXRlay5jb20+
-Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL3JlZ3VsYXRvci9LY29uZmlnICAgICAgICAgICAgICAgICAg
-fCAgIDkgKwo+ID4gIGRyaXZlcnMvcmVndWxhdG9yL01ha2VmaWxlICAgICAgICAgICAgICAgICB8
-ICAgMSArCj4gPiAgZHJpdmVycy9yZWd1bGF0b3IvbXQ2MzU5LXJlZ3VsYXRvci5jICAgICAgIHwg
-ODU5ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gPiAgaW5jbHVkZS9saW51eC9yZWd1
-bGF0b3IvbXQ2MzU5LXJlZ3VsYXRvci5oIHwgIDU4ICsrCj4gPiAgNCBmaWxlcyBjaGFuZ2VkLCA5
-MjcgaW5zZXJ0aW9ucygrKQo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3JlZ3VsYXRv
-ci9tdDYzNTktcmVndWxhdG9yLmMKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9saW51
-eC9yZWd1bGF0b3IvbXQ2MzU5LXJlZ3VsYXRvci5oCgpbLi4uXQoKLS0gCkxlZSBKb25lcyBb5p2O
-55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3Bl
-biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwg
-VHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Rob,
+
+On 13/01/20 11:29 PM, Rob Herring wrote:
+> On Thu, Jan 2, 2020 at 3:54 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+>>
+>> Add DT binding documentation for WIZ (SERDES wrapper). WIZ is *NOT* a
+>> PHY but a wrapper used to configure some of the input signals to the
+>> SERDES. It is used with both Sierra(16G) and Torrent(10G) serdes.
+>>
+>> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+>> [jsarha@ti.com: Add separate compatible for Sierra(16G) and Torrent(10G)
+>>  SERDES]
+>> Signed-off-by: Jyri Sarha <jsarha@ti.com>
+>> ---
+>> Changes from v4:
+>> *) Fixed the indentation as suggested by Rob v4
+>>
+>>  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 204 ++++++++++++++++++
+>>  1 file changed, 204 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+>> new file mode 100644
+>> index 000000000000..e010ea46b88d
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+>> @@ -0,0 +1,204 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +# Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+>> +%YAML 1.2
+>> +---
+>> +$id: "http://devicetree.org/schemas/phy/ti,phy-j721e-wiz.yaml#"
+>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+>> +
+>> +title: TI J721E WIZ (SERDES Wrapper)
+>> +
+>> +maintainers:
+>> +  - Kishon Vijay Abraham I <kishon@ti.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - ti,j721e-wiz-16g
+>> +      - ti,j721e-wiz-10g
+>> +
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 3
+>> +    description: clock-specifier to represent input to the WIZ
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: fck
+>> +      - const: core_ref_clk
+>> +      - const: ext_ref_clk
+>> +
+>> +  num-lanes:
+>> +    minimum: 1
+>> +    maximum: 4
+>> +
+>> +  "#address-cells":
+>> +    const: 1
+>> +
+>> +  "#size-cells":
+>> +    const: 1
+>> +
+>> +  "#reset-cells":
+>> +    const: 1
+>> +
+>> +  ranges: true
+>> +
+>> +  assigned-clocks:
+>> +    maxItems: 2
+>> +
+>> +  assigned-clock-parents:
+>> +    maxItems: 2
+>> +
+>> +patternProperties:
+>> +  "^pll[0|1]-refclk$":
+>> +    type: object
+>> +    description: |
+>> +      WIZ node should have subnodes for each of the PLLs present in
+>> +      the SERDES.
+>> +    properties:
+>> +      clocks:
+>> +        maxItems: 2
+>> +        description: Phandle to clock nodes representing the two inputs to PLL.
+>> +
+>> +      "#clock-cells":
+>> +        const: 0
+>> +
+>> +      assigned-clocks:
+>> +        maxItems: 1
+>> +
+>> +      assigned-clock-parents:
+>> +        maxItems: 1
+>> +
+>> +    required:
+>> +      - clocks
+>> +      - "#clock-cells"
+>> +      - assigned-clocks
+>> +      - assigned-clock-parents
+>> +
+>> +  "^cmn-refclk1?-dig-div$":
+>> +    type: object
+>> +    description:
+>> +      WIZ node should have subnodes for each of the PMA common refclock
+>> +      provided by the SERDES.
+>> +    properties:
+>> +      clocks:
+>> +        maxItems: 1
+>> +        description: Phandle to the clock node representing the input to the
+>> +          divider clock.
+>> +
+>> +      "#clock-cells":
+>> +        const: 0
+>> +
+>> +    required:
+>> +      - clocks
+>> +      - "#clock-cells"
+>> +
+>> +  "^refclk-dig$":
+>> +    type: object
+>> +    description: |
+>> +      WIZ node should have subnode for refclk_dig to select the reference
+>> +      clock source for the reference clock used in the PHY and PMA digital
+>> +      logic.
+>> +    properties:
+>> +      clocks:
+>> +        maxItems: 4
+>> +        description: Phandle to four clock nodes representing the inputs to
+>> +          refclk_dig
+>> +
+>> +      "#clock-cells":
+>> +        const: 0
+>> +
+>> +      assigned-clocks:
+>> +        maxItems: 1
+>> +
+>> +      assigned-clock-parents:
+>> +        maxItems: 1
+>> +
+>> +    required:
+>> +      - clocks
+>> +      - "#clock-cells"
+>> +      - assigned-clocks
+>> +      - assigned-clock-parents
+>> +
+>> +  "^serdes@[0-9a-f]+$":
+>> +    type: object
+>> +    description: |
+>> +      WIZ node should have '1' subnode for the SERDES. It could be either
+>> +      Sierra SERDES or Torrent SERDES. Sierra SERDES should follow the
+>> +      bindings specified in
+>> +      Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
+>> +      Torrent SERDES should follow the bindings specified in
+>> +      Documentation/devicetree/bindings/phy/phy-cadence-dp.txt
+>> +
+>> +required:
+>> +  - compatible
+>> +  - power-domains
+>> +  - clocks
+>> +  - clock-names
+>> +  - num-lanes
+>> +  - "#address-cells"
+>> +  - "#size-cells"
+>> +  - "#reset-cells"
+>> +  - ranges
+>> +
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
+>> +
+>> +    wiz@5000000 {
+>> +           compatible = "ti,j721e-wiz-16g";
+>> +           #address-cells = <1>;
+>> +           #size-cells = <1>;
+>> +           power-domains = <&k3_pds 292 TI_SCI_PD_EXCLUSIVE>;
+>> +           clocks = <&k3_clks 292 5>, <&k3_clks 292 11>, <&dummy_cmn_refclk>;
+>> +           clock-names = "fck", "core_ref_clk", "ext_ref_clk";
+>> +           assigned-clocks = <&k3_clks 292 11>, <&k3_clks 292 0>;
+>> +           assigned-clock-parents = <&k3_clks 292 15>, <&k3_clks 292 4>;
+>> +           num-lanes = <2>;
+>> +           #reset-cells = <1>;
+>> +           ranges = <0x5000000 0x0 0x5000000 0x10000>;
+> 
+> This fails in linux-next:
+> 
+> Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.example.dts:30.16-59:
+> Warning (ranges_format): /example-0/wiz@50
+> 00000:ranges: "ranges" property has invalid length (16 bytes) (parent
+> #address-cells == 1, child #address-cells == 1, #
+> size-cells == 1)
+> 
+> Please fix.
+
+Fixed and pushed.
+
+Thanks
+Kishon
+> 
+> Rob
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
