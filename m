@@ -2,80 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D8EF13A5A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:11:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A83F513A5AB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 11:13:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Q/0qML/gS1LO/2iwOC1oN7Cxp1QFFSHj7swT+PXcByg=; b=KpgQGZtG3rP6Sn
-	RlM3RJc32s5S941oS00QoBVtZVnLBkVfUZ+OyOu2DS0UJpZXLh0YeiEeFrCd5grZ7bivU9xG7G/ao
-	oVamnzb9fR6cKRAVpcWNNo8bV3nOeWxY/fnWXhWOvtU20qmH8hi6Y70nNizEbq+4WnCW1gXMRnAOe
-	x0tc1xJIAVjETjZutWGVj8+e+naLmBe/trcCSzUUIv7jmbsdMNZjLW1NsVpScdsA2HosoqvybHb29
-	hQYoQsf0+Osd/zVRm88yEEuYIOcdizbUYUIjyZEuVmZsITzSqGFrqyVHumrgU8aATBU7ahsNcNTH3
-	0sPHx+9nJzmx310UmJmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YKccFlKhocEijetbhHUJ6VbvtOYUgV0/MnHa2uBiYBU=; b=dWVSCskHttOqzV
+	wh1DgyfJ2w8l/mO5Ld0haGSJ2GimCZoiwYsQlCNBsgX38rOLDHWF7aVpCYovFjLapUBJmJIF9HqW5
+	C+fg9K/z+2q+0Xgetz4JNq5XeP0sQV/iGPyd5g5z3XoYs57d7YoVZN2bKwZ01/iRDJIXc8LM+4hkm
+	6NSS+OBADKw9a9/mMWvxuK8FYhfV7DMIXB4KlXxLxWhiEom63Y0Bygmp0VpYWoodSxOg/qp6b4SWc
+	QC2LyvvWBwqEyHZMRbF3tKTJ46XjqLUoxF7hkIoRZDYPUExABo3p/Psa91GwGfgjpeW4AJm8kZ4aw
+	xQi+oW5lYs2v5b4wJomQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irJAi-0008Sh-Lc; Tue, 14 Jan 2020 10:11:40 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1irJCC-0000Te-KZ; Tue, 14 Jan 2020 10:13:12 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irJAY-0008Ra-8S; Tue, 14 Jan 2020 10:11:34 +0000
-X-UUID: ed66a9d1d0654024bb6907518e190722-20200114
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=qoaZJusf4At6LIpWx4whGG9gLSgykifupaNe4/abaOs=; 
- b=DV6ztj33KRVRzI88b2CxDhD8rEy5gaUf3Yejw7kSIjzMovSxT8dlZBtUPW0RDrN67GnXLcN3M9U1fuU3zMJfdbpjjG6tQXfUzj8v7DLxGo6EMQV5GuhOvCphPAYdlLgoQKIbsNtV7IwRJY0ceEYzhjxkE/c6rML00UCdDPQJmcY=;
-X-UUID: ed66a9d1d0654024bb6907518e190722-20200114
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jamesjj.liao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1187010828; Tue, 14 Jan 2020 02:11:25 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 14 Jan 2020 02:12:09 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 14 Jan 2020 18:10:19 +0800
-Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 14 Jan 2020 18:12:00 +0800
-From: James Liao <jamesjj.liao@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v2] arm64: dts: mt8183: Enable CPU idle-states
-Date: Tue, 14 Jan 2020 18:11:13 +0800
-Message-ID: <1578996673-8140-1-git-send-email-jamesjj.liao@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 1B578A9546F8FDF9209DBB42AA7F3474A4986FEA89B320FDFD34373CBA93BD7F2000:8
-X-MTK: N
+ id 1irJBx-0000S2-Ed
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 10:13:03 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 80D61ADEB;
+ Tue, 14 Jan 2020 10:12:54 +0000 (UTC)
+Date: Tue, 14 Jan 2020 11:12:53 +0100
+Message-ID: <s5hwo9uqrbu.wl-tiwai@suse.de>
+From: Takashi Iwai <tiwai@suse.de>
+To: jeff_chang(=?UTF-8?B?5by15LiW5L2z?=) <jeff_chang@richtek.com>
+Subject: Re: [PATCH v6] ASoC: Add MediaTek MT6660 Speaker Amp Driver
+In-Reply-To: <36357249c6ed4a989cd11535fdefef6e@ex1.rt.l>
+References: <1578968526-13191-1-git-send-email-richtek.jeff.chang@gmail.com>
+ <s5htv4yfpnt.wl-tiwai@suse.de>
+ <36357249c6ed4a989cd11535fdefef6e@ex1.rt.l>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI/1.14.6 (Maruoka)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 Emacs/25.3
+ (x86_64-suse-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI 1.14.6 - "Maruoka")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_021130_304848_5BAA4727 
-X-CRM114-Status: UNSURE (   7.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200114_021257_640991_A99BAF9B 
+X-CRM114-Status: GOOD (  13.70  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,116 +66,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- James Liao <jamesjj.liao@mediatek.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "tiwai@suse.com" <tiwai@suse.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ Jeff Chang <richtek.jeff.chang@gmail.com>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "perex@perex.cz" <perex@perex.cz>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable mcdi-cpu and mcdi-cluster on MT8183 CPUs.
-
-Signed-off-by: James Liao <jamesjj.liao@mediatek.com>
----
-This patch bases on v5.5-rc6, adds idle-states for MT8183 CPUs.
-
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 30 ++++++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 10b3247..a022325 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -73,6 +73,7 @@
- 			reg = <0x000>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <741>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu1: cpu@1 {
-@@ -81,6 +82,7 @@
- 			reg = <0x001>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <741>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu2: cpu@2 {
-@@ -89,6 +91,7 @@
- 			reg = <0x002>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <741>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu3: cpu@3 {
-@@ -97,6 +100,7 @@
- 			reg = <0x003>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <741>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu4: cpu@100 {
-@@ -105,6 +109,7 @@
- 			reg = <0x100>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <1024>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu5: cpu@101 {
-@@ -113,6 +118,7 @@
- 			reg = <0x101>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <1024>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu6: cpu@102 {
-@@ -121,6 +127,7 @@
- 			reg = <0x102>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <1024>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
- 		};
- 
- 		cpu7: cpu@103 {
-@@ -129,6 +136,29 @@
- 			reg = <0x103>;
- 			enable-method = "psci";
- 			capacity-dmips-mhz = <1024>;
-+			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER>;
-+		};
-+
-+		idle-states {
-+			entry-method = "arm,psci";
-+
-+			MCDI_CPU: mcdi-cpu {
-+				compatible = "arm,idle-state";
-+				local-timer-stop;
-+				arm,psci-suspend-param = <0x00010001>;
-+				entry-latency-us = <200>;
-+				exit-latency-us = <200>;
-+				min-residency-us = <800>;
-+			};
-+
-+			MCDI_CLUSTER: mcdi-cluster {
-+				compatible = "arm,idle-state";
-+				local-timer-stop;
-+				arm,psci-suspend-param = <0x01010001>;
-+				entry-latency-us = <250>;
-+				exit-latency-us = <400>;
-+				min-residency-us = <1300>;
-+			};
- 		};
- 	};
- 
--- 
-1.9.1
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAxNCBKYW4gMjAyMCAxMDo0ODoyNCArMDEwMCwKamVmZl9jaGFuZyjlvLXkuJbkvbMp
+IHdyb3RlOgo+IAo+IERlYXIgVGFrYXNoaToKPiAKPiBUaGFuayBmb3IgeW91ciByZXBseWluZy4K
+PiAKPiAxLj4gK3N0YXRpYyBpbnQgbXQ2NjYwX2NvbXBvbmVudF9nZXRfdm9sc3coc3RydWN0IHNu
+ZF9rY29udHJvbCAqa2NvbnRyb2wsCj4gPiArICBzdHJ1Y3Qgc25kX2N0bF9lbGVtX3ZhbHVlICp1
+Y29udHJvbCkgewo+ID4gK3N0cnVjdCBzbmRfc29jX2NvbXBvbmVudCAqY29tcG9uZW50ID0KPiA+
+ICtzbmRfc29jX2tjb250cm9sX2NvbXBvbmVudChrY29udHJvbCk7Cj4gPiArc3RydWN0IG10NjY2
+MF9jaGlwICpjaGlwID0gKHN0cnVjdCBtdDY2NjBfY2hpcCAqKQo+ID4gK3NuZF9zb2NfY29tcG9u
+ZW50X2dldF9kcnZkYXRhKGNvbXBvbmVudCk7Cj4gPiAraW50IHJldCA9IC1FSU5WQUw7Cj4gPiAr
+Cj4gPiAraWYgKCFzdHJjbXAoa2NvbnRyb2wtPmlkLm5hbWUsICJDaGlwIFJldiIpKSB7Cj4gPiAr
+dWNvbnRyb2wtPnZhbHVlLmludGVnZXIudmFsdWVbMF0gPSBjaGlwLT5jaGlwX3JldiAmIDB4MGY7
+Cj4gPiArcmV0ID0gMDsKPiA+ICt9Cj4gPiArcmV0dXJuIHJldDsKPiAKPiBTbywgIlQwIFNFTCIg
+Y29udHJvbCBnZXRzIGFsd2F5cyBhbiBlcnJvciB3aGVuIHJlYWRpbmc/Cj4gVGhlbiBjYW4ndCB3
+ZSBwYXNzIHNpbXBseSBOVUxMIGZvciBnZXQgb3BzIGluc3RlYWQ/Cj4gCj4gSmVmZiA6IFQwIFNF
+TCB1c2Ugc25kX3NvY19nZXRfdm9sc3csIGl0IHdpbGwgbm90IHVzZSB0aGlzIGZ1bmN0aW9uLgoK
+VGhlbiB3aGF0J3MgdGhlIHJlYXNvbiBvZiB0aGlzIGhhY2tpc2ggY2hlY2s/CgoKPiAyLiBTbyBo
+ZXJlIGJvdGggMjQgYW5kIDMyIGJpdHMgZGF0YSBhcmUgaGFuZGxlZCBlcXVhbGx5LCBhbmQuLi4K
+PiAKPiAuLi4uCj4gPiArcmV0ID0gc25kX3NvY19jb21wb25lbnRfdXBkYXRlX2JpdHMoZGFpLT5j
+b21wb25lbnQsCj4gPiArTVQ2NjYwX1JFR19URE1fQ0ZHMywgMHgzZjAsIHdvcmRfbGVuIDw8IDQp
+Owo+IAo+IC4uLiB3b3JkX2xlbiBpcyBzYW1lIGZvciBib3RoIFMzMiBhbmQgUzI0IGZvcm1hdHMs
+IHNvIHRoZXJlIGNhbiBiZSBubyBkaWZmZXJlbmNlIGJldHdlZW4gUzI0IGFuZCBTMzIgZm9ybWF0
+IGhhbmRsaW5nIGluIHRoZSBjb2RlLgo+IE1lYW53aGlsZSwgdGhlIHN1cHBvcnRlZCBmb3JtYXRz
+IGFyZToKPiAKPiA+ICsjZGVmaW5lIFNUVUJfRk9STUFUUyhTTkRSVl9QQ01fRk1UQklUX1MxNl9M
+RSB8IFwKPiA+ICtTTkRSVl9QQ01fRk1UQklUX1UxNl9MRSB8IFwKPiA+ICtTTkRSVl9QQ01fRk1U
+QklUX1MyNF9MRSB8IFwKPiA+ICtTTkRSVl9QQ01fRk1UQklUX1UyNF9MRSB8IFwKPiA+ICtTTkRS
+Vl9QQ01fRk1UQklUX1MzMl9MRSB8IFwKPiA+ICtTTkRSVl9QQ01fRk1UQklUX1UzMl9MRSkKPiAK
+PiBBcmUgeW91IHN1cmUgdGhhdCBTMjRfKiBmb3JtYXRzIHJlYWxseSB3b3JrIHByb3Blcmx5Pwo+
+IAo+IEFsc28sIHRoZSBjb2RlIGhhcyBubyBjaGVjayAvIHNldHVwIG9mIHRoZSBmb3JtYXQgc2ln
+bmVkbmVzcy4KPiBEbyB1bnNpZ25lZCBmb3JtYXRzIChVMTYsIFUyNCwgZXRjKSByZWFsbHkgd29y
+ayBhcyBleHBlY3RlZCwgdG9vPwo+IAo+IAo+IEplZmYgOiAgWWVzLCBpdCB3b3Jrcy4KClNvLCBm
+b3IgdGhlIGNvZGVjLCBpdCBkb2Vzbid0IG1hdHRlciBhdCBhbGwgYWJvdXQgdGhlIHNpZ25lZG5l
+c3MgYW5kCnRoZSBhbGluZ21lbnQgb2YgMzJiaXQgLyAyNGJpdCBvZiB0aGUgaW5jb21pbmcgc2ln
+bmFscywgYnV0IG1hZ2ljYWxseQpoYW5kbGVkIGFzIGlzPyAgSW50ZXJlc3RpbmcuLi4KCgp0aGFu
+a3MsCgpUYWthc2hpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
