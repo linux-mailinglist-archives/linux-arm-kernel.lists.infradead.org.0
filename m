@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 921BA13B534
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 23:22:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2C7013B537
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Jan 2020 23:22:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w7d/G9XlK/QyuHPlYNEvIS87ttMQwYJuJL2OC2OngzY=; b=jr7/07uNIUGY//
-	SHXaUvE6CqU6PJfaWYI0aOctBwvwm2XIL83FEsnRAQ3BW6+GjFWq/P41WScRkJ+mE/gHbMOFJDnym
-	psfrWOjtrGHmp+dZGUaSTCYseAXxAXi9mZcHCcMnpHQa+97xNQ1wk+w856bX5BwfTM52sfM1sMWv9
-	nkx7oZ2eK/SqVGn3ldGAgtVHjtNFXKpiSjhkNtrCcKhzvX8sTLuTEoyRsVQ98AF/YH+F9j49L8Rn0
-	ByyL/UXGQJaqUdws3sQ7RQgnRWhZmUFtaxMoYVKLFpYqWBG9rtsnGVuGI2MXjhZsbPPVNJRLcdwIz
-	pc20ilxNFARrElL5TTYg==;
+	List-Owner; bh=AwCsEwSh8SGOVb43ItfKfXjFl5e1DSuvVBtKFISqulI=; b=aLZItPzjBCSzrM
+	xeXyNlxPfoOEjMRexm8Y+EGsnnqmljUI3ow6LfHbfRQK4OKhTTNch1DdFWWtFGbGJ45RE+oDQiuOs
+	ElNe0ZANudmU3Gy6TCm1EuumpQL27dQ5wGPUK4IonG5Z+HHZ3SQvG08d8JGzhPL2eFfJA5Xa7NZ97
+	v7w7rng3JpJAUXhxTlz0/xz8yidKf8wPNBgtifroz4x2h7xUOs3OYGlIJIv3YvUhI3Mw5YsdXnusF
+	bzL3OyBig6CapzLFgowqVr5Nl9Ix56YA9MMiU3vJd1t/d+eR2Kgxb3/YpD1qy/B8MfP/SNF8gfNWx
+	BEl/Qj0WZ7gtun4sMJ9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irUZQ-0003aA-Aa; Tue, 14 Jan 2020 22:21:56 +0000
+	id 1irUa2-0003pg-Ro; Tue, 14 Jan 2020 22:22:34 +0000
 Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irUZG-0003Zk-UC
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 22:21:48 +0000
-Received: by mail-ot1-f67.google.com with SMTP id 66so14253232otd.9
+ id 1irUZt-0003oJ-7J
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Jan 2020 22:22:26 +0000
+Received: by mail-ot1-f67.google.com with SMTP id w21so14248818otj.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 14:21:43 -0800 (PST)
+ Tue, 14 Jan 2020 14:22:25 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WS8NlkYRgt1yxklwHlCzn8AYd/wck8523N3nH8IJHG4=;
- b=iIQmhWNWzEuPZpe7Rw/FdxnEbNYwSjF23+2MACPK5h47Xg3I43UoeJDvbFZldPH66D
- sl5T7h+hYdUEFowuT5L0+G1MvtfUIIYcvJ6bqn1RVhj86nBoGNhBh1WqxgujNn4orToW
- lQ6+hyAHaCWTeCCY7y4YAE9Kqjkc7LQ6fXBVJU19Rq0rmhWzSYuIPucZSkGH2ceJ0Z3i
- erlRsrrNYfq/fIQbefARo/OB60skVqLbpYWF7P23gT44fxTW5YQ8hyuLobhJlVyu30SJ
- NLqaYSaV2hu5aWE7xf2zmWlj0xZexjpJ/Z81Yb5Bd9C0U+yGowYv+SVMht9J95CnGMuP
- 9E0g==
-X-Gm-Message-State: APjAAAXug9woilBJJjZSpNGfNLhaiV+9+BQXH5ICC5xVNXPY9xpW+jTr
- SvoKwXBkMXzOyC21EmPyOdO098Q=
-X-Google-Smtp-Source: APXvYqzpcZYgwfG0VLSvGPUOSILx5VaA584xjQBBWSdx2yDGjellR6nH78yEU4EEl1idDd+fbm+O8g==
-X-Received: by 2002:a9d:2c68:: with SMTP id f95mr475659otb.33.1579040502920;
- Tue, 14 Jan 2020 14:21:42 -0800 (PST)
+ bh=Yb6xHORuBeJhfPujkVSQ5MYYi1HxS0bOoVjowX+c/ks=;
+ b=QmaTu9/EUn1vC4CntEi+KafhdedV2rWDYpQyc99ikEgej44iyfVETcQtl98jjr+VXp
+ sUmAjWFta/5CypaWq4Latj419lt1HZ6kaJSpsovGC3PExQ9Z3d3rA3/S7HjKVcOXMszW
+ tJhaK7RxV9toqhz1ahEPQ3CJxuqmJjr0B7b3m5EDDOBxOiq51ZGFojZEPG3LJH2hGSOT
+ QKMRgO23+7kepAOZxqRygEG0b4s1KySopAv7yeoHnXVuKR6LdlxDS9q4WeaonfnGcJcD
+ qEjrVWzWcSn3mhYhASTGJELRWMYZ/WQmu7Bgob5c0V6wZSdg/XHL1eX4p7ihGeKJq/Jf
+ 4bOA==
+X-Gm-Message-State: APjAAAXkdfMe81RyssLXS14NIQKMMbspyvpxPMi6FBjKrd+GX0pl3iMA
+ gXDGyS9mO62W/Myz+wTORI2cEek=
+X-Google-Smtp-Source: APXvYqy/Zk9OpMdo75sJGTgm/ApZvGzBwmwYVcHKmaN6MrKw6oNpFf6McMebu/7bKxJpYsR5v10Z/g==
+X-Received: by 2002:a9d:6b91:: with SMTP id b17mr472176otq.321.1579040544273; 
+ Tue, 14 Jan 2020 14:22:24 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e21sm5029774oib.16.2020.01.14.14.21.40
+ by smtp.gmail.com with ESMTPSA id h9sm5000207oie.53.2020.01.14.14.22.23
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 14:21:41 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2209ae
+ Tue, 14 Jan 2020 14:22:23 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 221a3a
  by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Tue, 14 Jan 2020 16:21:40 -0600
-Date: Tue, 14 Jan 2020 16:21:40 -0600
+ Tue, 14 Jan 2020 16:22:22 -0600
+Date: Tue, 14 Jan 2020 16:22:22 -0600
 From: Rob Herring <robh@kernel.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v8 05/15] dt-bindings: arm: Adds CoreSight CTI hardware
- definitions.
-Message-ID: <20200114222140.GA20488@bogus>
-References: <20200113213149.25599-1-mike.leach@linaro.org>
- <20200113213149.25599-6-mike.leach@linaro.org>
+To: Xingyu Chen <xingyu.chen@amlogic.com>
+Subject: Re: [PATCH v6 3/5] dt-bindings: watchdog: add new binding for meson
+ secure watchdog
+Message-ID: <20200114222222.GA21654@bogus>
+References: <1578973527-4759-1-git-send-email-xingyu.chen@amlogic.com>
+ <1578973527-4759-4-git-send-email-xingyu.chen@amlogic.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200113213149.25599-6-mike.leach@linaro.org>
+In-Reply-To: <1578973527-4759-4-git-send-email-xingyu.chen@amlogic.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_142146_973854_195DF291 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20200114_142225_257759_CDC61C96 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.210.67 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -81,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
@@ -98,35 +99,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mathieu.poirier@linaro.org, linux-doc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, coresight@lists.linaro.org,
- suzuki.poulose@arm.com, liviu.dudau@arm.com, agross@kernel.org,
- robh+dt@kernel.org, maxime@cerno.tech, sudeep.holla@arm.com, corbet@lwn.net,
- linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
+Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-watchdog@vger.kernel.org,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Jian Hu <jian.hu@amlogic.com>, Guenter Roeck <linux@roeck-us.net>,
+ linux-amlogic@lists.infradead.org, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 13 Jan 2020 21:31:39 +0000, Mike Leach wrote:
-> Adds new coresight-cti.yaml file describing the bindings required to define
-> CTI in the device trees.
+On Tue, 14 Jan 2020 11:45:25 +0800, Xingyu Chen wrote:
+> The binding targets the Meson-A/C series compatible SoCs, in which the
+> watchdog registers are in secure world.
 > 
-> Adds an include file to dt-bindings/arm to define constants describing
-> common signal functionality used in CoreSight and generic usage.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
 > ---
->  .../bindings/arm/coresight-cti.yaml           | 336 ++++++++++++++++++
->  .../devicetree/bindings/arm/coresight.txt     |   7 +
->  MAINTAINERS                                   |   2 +
->  include/dt-bindings/arm/coresight-cti-dt.h    |  37 ++
->  4 files changed, 382 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
->  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
+>  .../bindings/watchdog/amlogic,meson-sec-wdt.yaml   | 40 ++++++++++++++++++++++
+>  1 file changed, 40 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/watchdog/amlogic,meson-sec-wdt.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
