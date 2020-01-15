@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E903E13B673
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 01:12:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D1F713B67A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 01:14:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a4jr1iVwljnpoNGDOO6ikVYXpXWertFIfuynHpz7efQ=; b=nOQHjIYAhZzomz
-	Xr2GTmUjoGbjJ9al16bi4a51y42lvpKy8YVs83mbmZ+S+nPIP9OxWU7fnaupGbTkj8CfoPgo429f2
-	MHUPT/1rSIA/b5bONVFNpb4KpvG4ka447PSNYgJTfLWGwwK0fBBiYHNsIoZvX3ypnh7pJkN8wZoQ8
-	TMZNur0e57tQNa/KOmEdZxPKsRFZSYcfxQgq1QyrXGVKge0W7kPPDqChgyzwxP9dfe3lyoHPzUFFr
-	DKGhPFgsTk+lDu9urb5QjzPz0IJ9rCVAAkBbFMFDZOkLd53zZ/bbBVfuCdQSkPZoHRrBj8kr/HqUN
-	T6Up2voSU3ouNjJyiD6A==;
+	List-Owner; bh=VcmDJyRy8rJ6YVy2cEhJ6oQstouBkSASEhnPDbcKEsM=; b=JPy80c8OV2mM1T
+	mlCn3+APFangYbHTcEMMxExsgqa3RxpgbJ9USuSpwrUtZ9tkQiFatbJl1KIcj4SO5XIQvRMfubv7N
+	2YYZGyy++lt4IbDS7JpFL4eQ/HspTZ5YQt74FyJs723sflYQvIwepKcxv+c6zzfJsiOP4Bj6Sk5m8
+	UG2WDLnmfPJgUscxLDewRjm6XjUvT5PfI8AGIrEHx0UTLgjovXxuUJd8dSQ9vaKXY6abyecfVpMPB
+	xja4eg9SJrtzcLyAkd3DGfdhsdaNTAq+1mV1rqwO3vIE82nM2gFddNHzkxp3Dwyy15lHo5m3KEZzW
+	J5PX6UUs8P8u4dOZp7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irWI3-0006ke-2m; Wed, 15 Jan 2020 00:12:07 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1irWK0-00070s-QV; Wed, 15 Jan 2020 00:14:08 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irWHs-0006kK-Nr
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 00:11:58 +0000
-Received: by mail-ot1-f68.google.com with SMTP id 59so14485079otp.12
+ id 1irWJr-00070W-VO
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 00:14:01 +0000
+Received: by mail-ot1-f66.google.com with SMTP id m2so9665403otq.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 16:11:56 -0800 (PST)
+ Tue, 14 Jan 2020 16:13:59 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rqYwFYlybDxb7rHCNCkg0gK4e3FUvJBmLmo+IxQN78U=;
- b=qWUqc6Tp5LCSYqZSflxELIfiBMydrBMtC9n/Zft4n7MyqOzbR/y0nk/ZBjvKLX1uiR
- uIjcutxql85xxKTpoS0+xLtJXC6+h5h2wqMIJxt0v3lcDe2quoT/qGsQXiDsOn02M6GD
- 31XC91FQk5qTbwHMPXvN5/OS3RK473xuQRxKqAr1RV9JV4V9J4vzbumyhS0fadb9DFeK
- 0EQj3mXX5hzKapUGWH+R61rJXlcsJCV0T/lr5hsCerRDk+WOitFMMbWqwkApcfNaF5kg
- zLfMi3fjU82+/wQI3xe6ZIreGH46IxiRMfNxJU4z3zQezhlHt1fpopcDcb3S3zotiYZN
- Je9A==
-X-Gm-Message-State: APjAAAXGEWErbCQlgZJKVBl67xjn8ZoEtawRxBTQ8pwjg62ebOeYNOdF
- BCJAnnoPzpdOzpRBbidK8voEmB0=
-X-Google-Smtp-Source: APXvYqzA5l3XkRwvWoHuwi1XYOc0w0Wyy+3kXAIVYfSLaHjDdOsf4v3px8Dk50JXBO/e2XgbaHtXzA==
-X-Received: by 2002:a05:6830:1199:: with SMTP id
- u25mr760164otq.344.1579047115455; 
- Tue, 14 Jan 2020 16:11:55 -0800 (PST)
+ bh=Vm6D/kKtAQPyA/3q2QOxNghbHuIfBqj+2jZduMBeUh4=;
+ b=aHJ4GKhBep7xHcOQkgCfBBLYMhP/VmZhX0PaBrjDjv4gCYnc7eYY4V0O+xRFF7yITh
+ ooVkkyJzq+IR2NtKJcCvb4d1I152aehWs7PipINlGwwbtTip5lnSDgj4OPalxjJ4QW9T
+ uD2IMDWx28rjguKJzPY5oMTm+/hHTqL72AYxbCTT+LKwfvynkE5IHkwFmpNGdbFJ3YBT
+ +xWZu8zVLIDvL5TLom/3GgLot+US+0fYnEBP511G9C1SQmr5de+DSAbmXOfSplbeKs2m
+ EngAm2rxZ2Q5BVnVd8aAlixwCBV88FDs7TfKI1LCmeO7s+tUsJb8R2rod7rR1YyNpWe5
+ rFag==
+X-Gm-Message-State: APjAAAUCgcm6MRtL8PS2YovCZrzL4697RrQ97Wt+hfLoz+6HcBX1Plpu
+ 1cb1DWhSvrPWmEDZDazvQT9P8a8=
+X-Google-Smtp-Source: APXvYqzQE4KTT+TdZM8NApSqSpVjXYRiDcbXYgobC8ZopdnjRliuMywALcc1mVYPgTiQrhK+5tOw8g==
+X-Received: by 2002:a9d:590d:: with SMTP id t13mr830740oth.290.1579047238577; 
+ Tue, 14 Jan 2020 16:13:58 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s6sm167667otd.72.2020.01.14.16.11.53
+ by smtp.gmail.com with ESMTPSA id q13sm5938970otc.5.2020.01.14.16.13.57
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 16:11:54 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2209ae
+ Tue, 14 Jan 2020 16:13:58 -0800 (PST)
+Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 220a2e
  by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Tue, 14 Jan 2020 18:11:52 -0600
-Date: Tue, 14 Jan 2020 18:11:52 -0600
+ Tue, 14 Jan 2020 18:13:57 -0600
+Date: Tue, 14 Jan 2020 18:13:57 -0600
 From: Rob Herring <robh@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2 2/3] dt-bindings: pinctrl: Convert i.MX8MM to
+Subject: Re: [PATCH V2 1/3] dt-bindings: pinctrl: Convert i.MX8MQ to
  json-schema
-Message-ID: <20200115001152.GA12156@bogus>
+Message-ID: <20200115001357.GA16961@bogus>
 References: <1578629120-25793-1-git-send-email-Anson.Huang@nxp.com>
- <1578629120-25793-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578629120-25793-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1578629120-25793-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_161156_778129_BF6F4BA5 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20200114_161400_010304_FE1C4D71 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -83,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
@@ -109,80 +107,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 10, 2020 at 12:05:19PM +0800, Anson Huang wrote:
-> Convert the i.MX8MM pinctrl binding to DT schema format using json-schema
+On Fri, Jan 10, 2020 at 12:05:18PM +0800, Anson Huang wrote:
+> Convert the i.MX8MQ pinctrl binding to DT schema format using json-schema
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
 > Changes since V1:
->         - use "grp$" instead of "-grp$";
->         - use space instead of tab for "ref$";
+> 	- use "grp$" instead of "-grp$";
+> 	- use space instead of tab for "ref$";
 > 	- add missed "reg" property;
->         - remove the "maxItem" for "fsl,pins" to avoid build warning, as the item number is changable.
+> 	- remove the "maxItem" for "fsl,pins" to avoid build warning, as the item number is changable.
 > ---
->  .../bindings/pinctrl/fsl,imx8mm-pinctrl.txt        | 36 -----------
->  .../bindings/pinctrl/fsl,imx8mm-pinctrl.yaml       | 69 ++++++++++++++++++++++
+>  .../bindings/pinctrl/fsl,imx8mq-pinctrl.txt        | 36 -----------
+>  .../bindings/pinctrl/fsl,imx8mq-pinctrl.yaml       | 69 ++++++++++++++++++++++
 >  2 files changed, 69 insertions(+), 36 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
->  create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
-> deleted file mode 100644
-> index e4e01c0..0000000
-> --- a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.txt
-> +++ /dev/null
-> @@ -1,36 +0,0 @@
-> -* Freescale IMX8MM IOMUX Controller
-> -
-> -Please refer to fsl,imx-pinctrl.txt and pinctrl-bindings.txt in this directory
-> -for common binding part and usage.
-> -
-> -Required properties:
-> -- compatible: "fsl,imx8mm-iomuxc"
-> -- reg: should contain the base physical address and size of the iomuxc
-> -  registers.
-> -
-> -Required properties in sub-nodes:
-> -- fsl,pins: each entry consists of 6 integers and represents the mux and config
-> -  setting for one pin.  The first 5 integers <mux_reg conf_reg input_reg mux_val
-> -  input_val> are specified using a PIN_FUNC_ID macro, which can be found in
-> -  <arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h>. The last integer CONFIG is
-> -  the pad setting value like pull-up on this pin.  Please refer to i.MX8M Mini
-> -  Reference Manual for detailed CONFIG settings.
-> -
-> -Examples:
-> -
-> -&uart1 {
-> -       pinctrl-names = "default";
-> -       pinctrl-0 = <&pinctrl_uart1>;
-> -};
-> -
-> -iomuxc: pinctrl@30330000 {
-> -        compatible = "fsl,imx8mm-iomuxc";
-> -        reg = <0x0 0x30330000 0x0 0x10000>;
-> -
-> -        pinctrl_uart1: uart1grp {
-> -                fsl,pins = <
-> -                        MX8MM_IOMUXC_UART1_RXD_UART1_DCE_RX             0x140
-> -                        MX8MM_IOMUXC_UART1_TXD_UART1_DCE_TX             0x140
-> -                >;
-> -        };
-> -};
-> diff --git a/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
-> new file mode 100644
-> index 0000000..a3c4275
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pinctrl/fsl,imx8mm-pinctrl.yaml
-> @@ -0,0 +1,69 @@
-> +# SPDX-License-Identifier: GPL-2.0-or-later
+>  delete mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mq-pinctrl.txt
+>  create mode 100644 Documentation/devicetree/bindings/pinctrl/fsl,imx8mq-pinctrl.yaml
 
-Sorry, one other thing.
-
-You're good with GPLv9? Plus this is a license change. Do you have 
-rights to do so as some of this comes from the old binding doc? If you 
-do, then make it:
-
-(GPL-2.0-only OR BSD-2-Clause)
+Actually, it looks like you can combine all 3 into a single schema. The 
+only diff is the compatible string.
 
 Rob
 
