@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEB0513C911
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:18:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7228713C91A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:19:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5RuRJZo4YtEb9J7x29OfiUxGHsQxzQ9GvOKAZ0gC2Q=; b=um+Inyn47av/LY
-	loN72aSJbgNr0k4ylBdPT5afQx6pZqhkJp2qaMgjdDFH21MlUCUU1bk/tatzsvIoGUojbVqRp38uE
-	37bMWLMH56JCyihjzEI02C5113TlKwmMjv1CpxDSGdrMe6a/IrPG9wf7CUfIEAxFV4IBXz/YnUHLU
-	+sRDBFjHAXSoPY0ByxjEoThDFiDCuMITjJNrZtjjlKfU2QWCBifgmz/f48O9O7YzYCbpbFQGq4mm/
-	dI5ylS45Pi5ydGuKOl7ZWt0pY/jK38lHqOCEFTS8xhmuGsIOf7a2/OLEPeF4uxH89VH0xsWwCKitP
-	mN+iLs6MDryHTBzeefKA==;
+	List-Owner; bh=QjY+iAtHyIXSJ0MevXdifszv1EpwuFbbpAHOhxsvFoU=; b=Sgy6gZt7QMZrs0
+	YG+2fXfTqfIYdrDHcbxbAW0ZalatkzOTWBATNDE3CU2Bza1yO1gd6Uq4cDRbcOP23ZQQ4nV7SoBvv
+	+NsnGp0BNpIUVWLU+tyTtb+p6u8MwdjqkyYgohny59uKpltdVmvJBumT4TextZ6cT3WFdyk2BT357
+	hF7tDNQqEKC3kMiA1x6ptjW2ixc8VxZF5gjezloFV/7MmubUB6Eu0fq+vd3a3hLNprFkAqW1U/ElF
+	BD1etLLxB4RfbnGh2o50w8CJYUSFS+lX5J7pmSpma8kAhEJkx0Am8iDj1uMVADbRUJdQlByoS5DlH
+	Pu64skftKQO3bJL5kCZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irlNW-0000ON-UR; Wed, 15 Jan 2020 16:18:46 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1irlNw-0000gC-2e; Wed, 15 Jan 2020 16:19:12 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irlNK-0000Mc-JR; Wed, 15 Jan 2020 16:18:38 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id n96so142001pjc.3;
- Wed, 15 Jan 2020 08:18:34 -0800 (PST)
+ id 1irlNX-0000Wo-FT; Wed, 15 Jan 2020 16:18:51 +0000
+Received: by mail-pg1-x542.google.com with SMTP id r11so8443091pgf.1;
+ Wed, 15 Jan 2020 08:18:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Tst3+NoZOjPeKK6GzMhIojQUUKbJbvQl9ky5BOz8lmQ=;
- b=PxKWiwhBEkmErHxzMfn5QDi+04Ren62xykXbNVEqezNIyRmF44/6vjMdlrUm0hjuWt
- QYGyNbNQ2+T8UlE9gP00GXK1MLdbJm+nZzBQG8O9mPkXWPDSWiE+BH6wPSMJnxOLjOTW
- koPxecIFE7P0shjSVJFwAs/YK+RNGEhPgtf+zq2t7JtsZuTcvfFyPfNIotTJWFIGD48N
- 1/YB/fRjrQsPLxDBfPWi9KDl1dkWDvvn0fTNuxrhl5TdSB6edKoCOVCpHcqgsZB82J0J
- 6GSSP7d2pldNkavRcKb1rX1Dt5axjCXzY8RlUUqHk4L+iUQ/HMVyNnd186K37TBLJX4i
- orpw==
+ bh=kFZXMHBry+L47F+qM+tBs/CLu4eTyxiD1l9sMPZiabg=;
+ b=Iv3d2Ny2zXWbM48eUhUk9dHw9fNN1BcoCyW/u65PYOuMwrAkjU2P+BGI0tngaLBpto
+ huTFtiCH4La8U2zXlXyDNMmaMziDo8X5HU/+ZtQ+y0C4wBgHF8jH1BXCrh/SyLmbfl2x
+ rDtq4s4iAV+n4MruclgcbNUN7r7MjpeKKn0UIuWS51B48+1kk5nKkDoQ5jjBsYVbrisk
+ hfc38kUyWjMaKdZD16BWMWjTVfqqDcQlPn4rS70dfPtDrBmDyKILDVqz6ZYgDIl/H266
+ LXWbxCF5O49sLI22T5xVfuEOc0UefKb+aTLfH7MiSL+szmBlEsbvLsehJuuvtFxL2dyP
+ ee5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Tst3+NoZOjPeKK6GzMhIojQUUKbJbvQl9ky5BOz8lmQ=;
- b=UPn7WoUWrBIVncZKcjQi2Mmow2+USo5olm5X2XijnCGm/VNpBTnXtZ7VLOCDIzSlML
- l+gY73ciWmwG3XFoOOVJJFxFXXrVaUz4fmei/0U5lmRSjleDQrvozN5oiBlCmzV/al+K
- BVgMTbileCpmKy+Re46ZZVbZUhAdaOQKkQ+TXPzdUGkiB6Pd23h/QsFB/eiJAD54YVAC
- QxjUVnXGHwb0jDdjp0qF73tDZzpnEPsHx2NUU64hmClDVc0GX6J+CWhbFDX+D8y6g2+h
- DfzvfESb97Hj8phBpT1J0zYczYf07UORx+duKon8DzHb1BOZ3CBWlUsuc1BrYNYN98a7
- /o5A==
-X-Gm-Message-State: APjAAAVNWvpftWhPKwMAq616MfDxeYHNoAkPLqyXXXHkZY9HIWn6zh7a
- U6hniD1tX6fBEE7KEdzKCqw=
-X-Google-Smtp-Source: APXvYqxScsQiAjrT+Kq2OwO6meR2sTHwdcGBQVYINaiuAq+tmhQ0p6Tj/psLT4U/+RBhgHMyefQd/g==
-X-Received: by 2002:a17:902:5ac9:: with SMTP id
- g9mr26000048plm.69.1579105113906; 
- Wed, 15 Jan 2020 08:18:33 -0800 (PST)
+ bh=kFZXMHBry+L47F+qM+tBs/CLu4eTyxiD1l9sMPZiabg=;
+ b=tA/sN5y+itsYS/V+nPr1m4ITyAoz8QF2NcCrjnxazVJ7tqcn5B55xK0VvIy0PqEbsb
+ 6h100L6JIBmeVSu0IR9OMeJ7ISxmp5UUqks1IloTvtNKiRvkCR54RzowmEf7qkOWzt+J
+ QDYbPHbqiANtKrJD6R7fr6v+jtvpJifrYcLZCPLQ0GccZtsMSUqxXpRHxxwOIuci0Quy
+ PjeKqjjbyKbN3f98RUtqkGiLz9q/ySAjeGW7Sg3e9fTnRRh0wd2hTLwRmf8aLB8/XbtN
+ GwWMGalbssTqsaftucJVKPrAFIR6jCM6y4rd0kJ91sCm0Rzs0uclYjRFtg0q0KwnBXd/
+ gisA==
+X-Gm-Message-State: APjAAAXN+p877G8eUy7gTtzMPCosLZgg0wUD8kkqe1stpzzvmDSKYsrr
+ hTU4Ay7nNLFcqMmclX2QAzw=
+X-Google-Smtp-Source: APXvYqyAzKfeOQN1KEqcuJJsYULzFNW7nRQf0FhEjcUHl8gG0GpWS07Xin657lcnmljGgLIQkCfndA==
+X-Received: by 2002:aa7:824d:: with SMTP id e13mr32114420pfn.247.1579105126655; 
+ Wed, 15 Jan 2020 08:18:46 -0800 (PST)
 Received: from ziggy.stardust ([37.223.145.31])
- by smtp.gmail.com with ESMTPSA id e6sm22962452pfh.32.2020.01.15.08.18.30
+ by smtp.gmail.com with ESMTPSA id t63sm22592758pfb.70.2020.01.15.08.18.43
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Jan 2020 08:18:33 -0800 (PST)
-Subject: Re: [PATCH v12 3/4] watchdog: mtk_wdt: mt8183: Add reset controller
+ Wed, 15 Jan 2020 08:18:45 -0800 (PST)
+Subject: Re: [PATCH v12 4/4] watchdog: mtk_wdt: mt2712: Add reset controller
 To: Yong Liang <yong.liang@mediatek.com>, wim@linux-watchdog.org,
  linux@roeck-us.net, p.zabel@pengutronix.de, linux-watchdog@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
  chang-an.chen@mediatek.com, freddy.hsin@mediatek.com, jiaxin.yu@mediatek.com
 References: <20200115085828.27791-1-yong.liang@mediatek.com>
- <20200115085828.27791-4-yong.liang@mediatek.com>
+ <20200115085828.27791-5-yong.liang@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -139,21 +138,24 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <372a4c8e-2ff1-3424-069c-7d359e1f16f1@gmail.com>
-Date: Wed, 15 Jan 2020 17:18:26 +0100
+Message-ID: <987a7ccf-3d1b-9d4b-d766-63925268c21e@gmail.com>
+Date: Wed, 15 Jan 2020 17:18:41 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <20200115085828.27791-4-yong.liang@mediatek.com>
+In-Reply-To: <20200115085828.27791-5-yong.liang@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_081834_644265_61BB3858 
-X-CRM114-Status: GOOD (  20.60  )
+X-CRM114-CacheID: sfid-20200115_081847_552473_D6A9EB1A 
+X-CRM114-Status: GOOD (  17.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -187,7 +189,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 15/01/2020 09:58, Yong Liang wrote:
 > From: "yong.liang" <yong.liang@mediatek.com>
 > 
-> Add reset controller API in watchdog driver.
+> Add reset controller for 2712.
 > Besides watchdog, MTK toprgu module alsa provide sub-system (eg, audio,
 > camera, codec and connectivity) software reset functionality.
 > 
@@ -199,166 +201,40 @@ On 15/01/2020 09:58, Yong Liang wrote:
 Acked-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 > ---
->  drivers/watchdog/mtk_wdt.c | 99 +++++++++++++++++++++++++++++++++++++-
->  1 file changed, 98 insertions(+), 1 deletion(-)
+>  drivers/watchdog/mtk_wdt.c | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
 > diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
-> index 9c3d0033260d..e88aacb0404d 100644
+> index e88aacb0404d..d6a6393f609d 100644
 > --- a/drivers/watchdog/mtk_wdt.c
 > +++ b/drivers/watchdog/mtk_wdt.c
-> @@ -9,6 +9,8 @@
+> @@ -9,6 +9,7 @@
 >   * Based on sunxi_wdt.c
 >   */
 >  
-> +#include <dt-bindings/reset-controller/mt8183-resets.h>
-> +#include <linux/delay.h>
+> +#include <dt-bindings/reset-controller/mt2712-resets.h>
+>  #include <dt-bindings/reset-controller/mt8183-resets.h>
+>  #include <linux/delay.h>
 >  #include <linux/err.h>
->  #include <linux/init.h>
->  #include <linux/io.h>
-> @@ -16,10 +18,11 @@
->  #include <linux/module.h>
->  #include <linux/moduleparam.h>
->  #include <linux/of.h>
-> +#include <linux/of_device.h>
->  #include <linux/platform_device.h>
-> +#include <linux/reset-controller.h>
->  #include <linux/types.h>
->  #include <linux/watchdog.h>
-> -#include <linux/delay.h>
->  
->  #define WDT_MAX_TIMEOUT		31
->  #define WDT_MIN_TIMEOUT		1
-> @@ -44,6 +47,9 @@
->  #define WDT_SWRST		0x14
->  #define WDT_SWRST_KEY		0x1209
->  
-> +#define WDT_SWSYSRST		0x18U
-> +#define WDT_SWSYS_RST_KEY	0x88000000
-> +
->  #define DRV_NAME		"mtk-wdt"
->  #define DRV_VERSION		"1.0"
->  
-> @@ -53,8 +59,90 @@ static unsigned int timeout;
->  struct mtk_wdt_dev {
->  	struct watchdog_device wdt_dev;
->  	void __iomem *wdt_base;
-> +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
-> +	struct reset_controller_dev rcdev;
-> +};
-> +
-> +struct mtk_wdt_data {
-> +	int toprgu_sw_rst_num;
+> @@ -67,6 +68,10 @@ struct mtk_wdt_data {
+>  	int toprgu_sw_rst_num;
 >  };
 >  
-> +static const struct mtk_wdt_data mt8183_data = {
-> +	.toprgu_sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
+> +static const struct mtk_wdt_data mt2712_data = {
+> +	.toprgu_sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
 > +};
 > +
-> +static int toprgu_reset_update(struct reset_controller_dev *rcdev,
-> +			       unsigned long id, bool assert)
-> +{
-> +	unsigned int tmp;
-> +	unsigned long flags;
-> +	struct mtk_wdt_dev *data =
-> +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
-> +
-> +	spin_lock_irqsave(&data->lock, flags);
-> +
-> +	tmp = readl(data->wdt_base + WDT_SWSYSRST);
-> +	if (assert)
-> +		tmp |= BIT(id);
-> +	else
-> +		tmp &= ~BIT(id);
-> +	tmp |= WDT_SWSYS_RST_KEY;
-> +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
-> +
-> +	spin_unlock_irqrestore(&data->lock, flags);
-> +
-> +	return 0;
-> +}
-> +
-> +static int toprgu_reset_assert(struct reset_controller_dev *rcdev,
-> +			       unsigned long id)
-> +{
-> +	return toprgu_reset_update(rcdev, id, true);
-> +}
-> +
-> +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
-> +				 unsigned long id)
-> +{
-> +	return toprgu_reset_update(rcdev, id, false);
-> +}
-> +
-> +static int toprgu_reset(struct reset_controller_dev *rcdev,
-> +			unsigned long id)
-> +{
-> +	int ret;
-> +
-> +	ret = toprgu_reset_assert(rcdev, id);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return toprgu_reset_deassert(rcdev, id);
-> +}
-> +
-> +static const struct reset_control_ops toprgu_reset_ops = {
-> +	.assert = toprgu_reset_assert,
-> +	.deassert = toprgu_reset_deassert,
-> +	.reset = toprgu_reset,
-> +};
-> +
-> +static int toprgu_register_reset_controller(struct platform_device *pdev,
-> +					    int rst_num)
-> +{
-> +	int ret;
-> +	struct mtk_wdt_dev *mtk_wdt = platform_get_drvdata(pdev);
-> +
-> +	spin_lock_init(&mtk_wdt->lock);
-> +
-> +	mtk_wdt->rcdev.owner = THIS_MODULE;
-> +	mtk_wdt->rcdev.nr_resets = rst_num;
-> +	mtk_wdt->rcdev.ops = &toprgu_reset_ops;
-> +	mtk_wdt->rcdev.of_node = pdev->dev.of_node;
-> +	ret = devm_reset_controller_register(&pdev->dev, &mtk_wdt->rcdev);
-> +	if (ret != 0)
-> +		dev_err(&pdev->dev,
-> +			"couldn't register wdt reset controller: %d\n", ret);
-> +	return ret;
-> +}
-> +
->  static int mtk_wdt_restart(struct watchdog_device *wdt_dev,
->  			   unsigned long action, void *data)
->  {
-> @@ -155,6 +243,7 @@ static int mtk_wdt_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
->  	struct mtk_wdt_dev *mtk_wdt;
-> +	const struct mtk_wdt_data *wdt_data;
->  	int err;
->  
->  	mtk_wdt = devm_kzalloc(dev, sizeof(*mtk_wdt), GFP_KERNEL);
-> @@ -190,6 +279,13 @@ static int mtk_wdt_probe(struct platform_device *pdev)
->  	dev_info(dev, "Watchdog enabled (timeout=%d sec, nowayout=%d)\n",
->  		 mtk_wdt->wdt_dev.timeout, nowayout);
->  
-> +	wdt_data = of_device_get_match_data(dev);
-> +	if (wdt_data) {
-> +		err = toprgu_register_reset_controller(pdev,
-> +						       wdt_data->toprgu_sw_rst_num);
-> +		if (err)
-> +			return err;
-> +	}
->  	return 0;
->  }
->  
-> @@ -219,6 +315,7 @@ static int mtk_wdt_resume(struct device *dev)
+>  static const struct mtk_wdt_data mt8183_data = {
+>  	.toprgu_sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
+>  };
+> @@ -314,6 +319,7 @@ static int mtk_wdt_resume(struct device *dev)
+>  #endif
 >  
 >  static const struct of_device_id mtk_wdt_dt_ids[] = {
+> +	{ .compatible = "mediatek,mt2712-wdt", .data = &mt2712_data },
 >  	{ .compatible = "mediatek,mt6589-wdt" },
-> +	{ .compatible = "mediatek,mt8183-wdt", .data = &mt8183_data },
+>  	{ .compatible = "mediatek,mt8183-wdt", .data = &mt8183_data },
 >  	{ /* sentinel */ }
->  };
->  MODULE_DEVICE_TABLE(of, mtk_wdt_dt_ids);
 > 
 
 _______________________________________________
