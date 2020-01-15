@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6488E13BAAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:03:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77CDD13BABB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:13:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dPCPzWlQMHP4k1RoX8ViEbeuwyRDdRvoWpUOCM48VqY=; b=kFqCxq5Sl8qzjO
-	9vqQ+0EQ5sX9kiRTf6zTHnU01RUf8wqjLv8raxLxGPYx3u8G3cJMPr4HflUv33Lk/dj4EvlDHatfz
-	3zpxXQFWJYhVgUf+7rTXvFg88+6+dMI5iD2uaFwN60ngCfB9Ol3zv/uRetiaj+vuDw80K5hGn2btV
-	FXpRVcDXMMJSE4Kz7lq8w5iL1tCsWLlFkM3HI9UiZToMYd76AOEiQBhyqMs48LRVpOiFnoHKOh3Yp
-	NSGhRlbHMSJFCZsZ5L9jz9lU2wAns9nLc5isOQSyxK0nhDEb6RyWC5sICMdrXzSzGqIw+5fUEOSzr
-	bpRf0ysSXZXieFJUQtjw==;
+	List-Owner; bh=MarYyctDB7lbt+iLfJx0g7xnuZN9K4vqQbrD1CGv+Ao=; b=mv5NH8JRI9O6bW
+	LIYas98g/+m4stJA/c+BynAbjw11jTtE/zJ6nECNQtscMrY+gZm108tib49ntn1JJ5ZdPRmjnCSP4
+	oJ0VZnKCttb2xMaegC2zlHCmq5IA5/4+ci1EUY8l/Sp5n+V0OUiQ01VV9DbackxqarDvqXMcF8TXH
+	mwgyiaMDbZ+P9Ucwo6tfCoHecINEE2kwNOSpiqbLUOmEJ5iZS/VqqBw865u45sMy3y4yYBX/T/k6i
+	v1H2rFfPgT039CEY7XXSC+vUXcpN9b+zPddo4fVItMCk8LPOtSow9Ly3wbJKEEba/eJc8Uq2iRxWI
+	lik5YRSALALGlblQsUZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irde8-0002Wo-S5; Wed, 15 Jan 2020 08:03:24 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irdds-0002W8-Nr
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:03:13 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1irddj-0000Js-MF; Wed, 15 Jan 2020 09:02:59 +0100
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1irddh-0008IE-N7; Wed, 15 Jan 2020 09:02:57 +0100
-Date: Wed, 15 Jan 2020 09:02:57 +0100
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Han Xu <han.xu@nxp.com>
-Subject: Re: [PATCH 3/6] dmaengine: mxs: add the power management functions
-Message-ID: <20200115080257.dtd4vss4uhopbvn2@pengutronix.de>
-References: <1579038243-28550-1-git-send-email-han.xu@nxp.com>
- <1579038243-28550-4-git-send-email-han.xu@nxp.com>
+	id 1irdnz-00079Q-QZ; Wed, 15 Jan 2020 08:13:35 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1irdno-00078V-Ab; Wed, 15 Jan 2020 08:13:28 +0000
+Authenticated-By: 
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 00F8D6kv026743,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (RTITCASV01.realtek.com.tw[172.21.6.18])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 00F8D6kv026743
+ (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 15 Jan 2020 16:13:06 +0800
+Received: from RTEXMB04.realtek.com.tw (172.21.6.97) by
+ RTITCASV01.realtek.com.tw (172.21.6.18) with Microsoft SMTP Server (TLS) id
+ 14.3.468.0; Wed, 15 Jan 2020 16:13:05 +0800
+Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
+ RTEXMB04.realtek.com.tw (172.21.6.97) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Wed, 15 Jan 2020 16:13:05 +0800
+Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
+ RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
+ 15.01.1779.005; Wed, 15 Jan 2020 16:13:05 +0800
+From: James Tai <james.tai@realtek.com>
+To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
+Subject: RE: [PATCH] arm64: dts: realtek: rtd16xx: Add memory reservations
+Thread-Topic: [PATCH] arm64: dts: realtek: rtd16xx: Add memory reservations
+Thread-Index: AQHVwfu36TqhHnURlUOpX7OuLPDS7qfrcuCg
+Date: Wed, 15 Jan 2020 08:13:05 +0000
+Message-ID: <51cf409ed1a44f038a5f1df133986063@realtek.com>
+References: <20200103060441.1109-1-afaerber@suse.de>
+In-Reply-To: <20200103060441.1109-1-afaerber@suse.de>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.21.190.154]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1579038243-28550-4-git-send-email-han.xu@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:51:32 up 191 days, 14:01, 85 users,  load average: 0.23, 0.25,
- 0.25
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_000308_770806_39994D09 
-X-CRM114-Status: GOOD (  17.94  )
+X-CRM114-CacheID: sfid-20200115_001324_505131_C1E8A39A 
+X-CRM114-Status: GOOD (  12.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.75.126.72 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,89 +79,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vigneshr@ti.com, richard@nod.at, esben@geanix.com,
- linux-kernel@vger.kernel.org, vkoul@kernel.org, boris.brezillon@collabora.com,
- linux-mtd@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
- miquel.raynal@bootlin.com, dmaengine@vger.kernel.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 05:44:00AM +0800, Han Xu wrote:
-> add the power management functions and leverage the runtime pm for
-> system suspend/resume
-> 
-> Signed-off-by: Han Xu <han.xu@nxp.com>
-> ---
->  drivers/dma/mxs-dma.c | 97 +++++++++++++++++++++++++++++++++++++++----
->  1 file changed, 90 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/dma/mxs-dma.c b/drivers/dma/mxs-dma.c
-> index b458f06f9067..251492c5ea58 100644
-> --- a/drivers/dma/mxs-dma.c
-> +++ b/drivers/dma/mxs-dma.c
-> @@ -25,6 +25,7 @@
->  #include <linux/of_dma.h>
->  #include <linux/list.h>
->  #include <linux/dma/mxs-dma.h>
-> +#include <linux/pm_runtime.h>
->  
->  #include <asm/irq.h>
->  
-> @@ -39,6 +40,8 @@
->  #define dma_is_apbh(mxs_dma)	((mxs_dma)->type == MXS_DMA_APBH)
->  #define apbh_is_old(mxs_dma)	((mxs_dma)->dev_id == IMX23_DMA)
->  
-> +#define MXS_DMA_RPM_TIMEOUT 50 /* ms */
-> +
->  #define HW_APBHX_CTRL0				0x000
->  #define BM_APBH_CTRL0_APB_BURST8_EN		(1 << 29)
->  #define BM_APBH_CTRL0_APB_BURST_EN		(1 << 28)
-> @@ -416,6 +419,7 @@ static int mxs_dma_alloc_chan_resources(struct dma_chan *chan)
->  {
->  	struct mxs_dma_chan *mxs_chan = to_mxs_dma_chan(chan);
->  	struct mxs_dma_engine *mxs_dma = mxs_chan->mxs_dma;
-> +	struct device *dev = &mxs_dma->pdev->dev;
->  	int ret;
->  
->  	mxs_chan->ccw = dma_alloc_coherent(mxs_dma->dma_device.dev,
-> @@ -431,9 +435,11 @@ static int mxs_dma_alloc_chan_resources(struct dma_chan *chan)
->  	if (ret)
->  		goto err_irq;
->  
-> -	ret = clk_prepare_enable(mxs_dma->clk);
-> -	if (ret)
-> +	ret = pm_runtime_get_sync(dev);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Failed to enable clock\n");
->  		goto err_clk;
-
-From looking at other DMA drivers I know we are in good company here,
-but I think this is wrong. Doing pm_runtime_get_sync() in
-alloc_chan_resources() and going to autosuspend in free_chan_resources()
-effectively disables runtime_pm as clients normally acquire their
-channels during driver probe and release them only in driver remove.
-
-In the next patch you release the DMA channels in the GPMI nand drivers
-runtime_suspend hook just to somehow trigger the runtime_suspend of the
-DMA driver.
-
-What you should do instead is to make sure the hook runtime_pm to the
-DMA drivers activity phases, like for example the pl330 driver does.
-Then you wouldn't have to care about manually putting the DMA driver into
-suspend from the GPMI NAND driver.
-
-Sascha
-
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBSZXNlcnZlIG1lbW9yeSByZWdpb25zIGZvciBSUEMgYW5kIFRFRS4NCj4gDQo+IEZpeGVzOiBl
+NWE5ZTIzNzYwOGQgKCJhcm02NDogZHRzOiByZWFsdGVrOiBBZGQgUlREMTYxOSBTb0MgYW5kIFJl
+YWx0ZWsNCj4gTWpvbG5pciBFVkIiKQ0KPiBDYzogSmFtZXMgVGFpIDxqYW1lcy50YWlAcmVhbHRl
+ay5jb20+DQo+IFNpZ25lZC1vZmYtYnk6IEFuZHJlYXMgRsOkcmJlciA8YWZhZXJiZXJAc3VzZS5k
+ZT4NCj4gLS0tDQo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTZ4eC5kdHNpIHwg
+MTkgKysrKysrKysrKysrKysrKysrKw0KPiAgMSBmaWxlIGNoYW5nZWQsIDE5IGluc2VydGlvbnMo
+KykNCj4gDQo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTZ4
+eC5kdHNpDQo+IGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDE2eHguZHRzaQ0KPiBp
+bmRleCAzYzcwYTBkYTMyOWUuLjRkYzZjOWYxM2M0MyAxMDA2NDQNCj4gLS0tIGEvYXJjaC9hcm02
+NC9ib290L2R0cy9yZWFsdGVrL3J0ZDE2eHguZHRzaQ0KPiArKysgYi9hcmNoL2FybTY0L2Jvb3Qv
+ZHRzL3JlYWx0ZWsvcnRkMTZ4eC5kdHNpDQo+IEBAIC0xNCw2ICsxNCwyNSBAQA0KPiAgCSNhZGRy
+ZXNzLWNlbGxzID0gPDE+Ow0KPiAgCSNzaXplLWNlbGxzID0gPDE+Ow0KPiANCj4gKwlyZXNlcnZl
+ZC1tZW1vcnkgew0KPiArCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsNCj4gKwkJI3NpemUtY2VsbHMg
+PSA8MT47DQo+ICsJCXJhbmdlczsNCj4gKw0KPiArCQlycGNfY29tbTogcnBjQDJmMDAwIHsNCj4g
+KwkJCXJlZyA9IDwweDJmMDAwIDB4MTAwMD47DQo+ICsJCX07DQo+ICsNCj4gKwkJcnBjX3Jpbmdi
+dWY6IHJwY0AxZmZlMDAwIHsNCj4gKwkJCXJlZyA9IDwweDFmZmUwMDAgMHg0MDAwPjsNCj4gKwkJ
+fTsNCj4gKw0KPiArCQl0ZWU6IHRlZUAxMDEwMDAwMCB7DQo+ICsJCQlyZWcgPSA8MHgxMDEwMDAw
+MCAweGYwMDAwMD47DQo+ICsJCQluby1tYXA7DQo+ICsJCX07DQo+ICsJfTsNCj4gKw0KPiAgCWNw
+dXMgew0KPiAgCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsNCj4gIAkJI3NpemUtY2VsbHMgPSA8MD47
+DQo+IC0tDQo+IDIuMTYuNA0KPiANCj4gDQpBY2tlZC1ieTogSmFtZXMgVGFpIDxqYW1lcy50YWlA
+cmVhbHRlay5jb20+DQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
