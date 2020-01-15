@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86A0A13C34C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:35:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B6EA13C34F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:37:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Kh0xqNkRvx2scatzn+Nmpn0OAx/aKmCerB48YHeJc2U=; b=IO6oEmaK+Vxy+dy/O0XJvtiJZ
-	c0MUkrFUaA3FFsuGZXpfHhKFatt3jT/RLzcjtEbHN1FYO5s8dfCucPTwrpaAIcgP/uawcBSBABOW3
-	gc8+03VkrGa0ZdHrS3UEB+WQtiSAhSNs3UThsoW+EbgAyUq1P0RWYq3SKoj1zaHm5/ailgblC6pq5
-	2fJ6qZYF6UsDDAxj0AJNJLXpHTytVpznljVZae//l91fxcWWM6nnyfcswcWGXbIkXmAf4pFoHFAXZ
-	lpsYYL2rZCJ6E6HoeqMpNXWWlMq1G7h7p7/cpmK5dsOv0Elia76hHxXMNzXPW9m9szArU45JBlPoF
-	FdV5EXD5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dQ2dm5qPxyCTkmLufzDZvE0qKIc6cQnnBRi0fHMZW9I=; b=mb00AJ1Vfo/P61
+	qQCKSsZhRAMX+6rPMuF3vSZaxykRW6q6Ktp5y9uN0hDEOoXGIWALD9iubOGtqYz4WuEm544iagnDt
+	ej0SpNrxFhuTXL9+5eZt9WBLAB1syJhzIMAiv2m7BSsT3wlx7uEBez4f/1d95pF/dAOaLrxqD2vv0
+	KGT3M8CVjQe40hMbJrq9ErsJqjs8ekh8RVStqpapoZ75kolj3RH3qpQ/08O8xTPG18XqW6uIYghXK
+	sTkQKiVyDNs7tWb64yg7Qcw0PwYJqMAxNBk1e1S5l1xJyMxi4E226qMHbxzD02mbPPy8CdffbIO7I
+	M98rDYAv5VmnSL1y9rnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriop-0008MG-7Z; Wed, 15 Jan 2020 13:34:47 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1iriqy-0001XP-4A; Wed, 15 Jan 2020 13:37:00 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irioR-0008B6-Qb; Wed, 15 Jan 2020 13:34:29 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 974A7ABE7;
- Wed, 15 Jan 2020 13:34:21 +0000 (UTC)
-Subject: Re: [RFC 00/25] arm64: realtek: Add Xnano X5 and implement
- TM1628/FD628/AiP1618 LED controllers
-To: linux-realtek-soc@lists.infradead.org, Rob Herring <robh+dt@kernel.org>
-References: <20191212033952.5967-1-afaerber@suse.de>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <eb075a5d-0db6-333b-cf26-64c9f7f1751e@suse.de>
-Date: Wed, 15 Jan 2020 14:34:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1iriqj-0001X1-3Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:36:49 +0000
+Received: by mail-wr1-x441.google.com with SMTP id d16so15767645wre.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Jan 2020 05:36:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5+kwC8uObQ/HWjxvZd0dHpS/CMRU4SiA0lJfkAcxrF0=;
+ b=or7s/TkMbxvkDXyrwtgMcXEAx+AnmSMP2dgg0uinLijJnJojzAvwTogOc0qzxEIDof
+ vVwaqGKQkBLPn7Lj2czx9EOfAqh7mPeaXhfCg2yOKAW001JDIqV9QNWhTrIqsdzbmUZA
+ Pvv6jXjaMRZqvlIWTCKa7Q/w15eAWWSNMD1FhiFa/U+vDvjOdNjGmAtvMNDr0iDz2/ei
+ GLaZ/PrjCFJ9TZwzJDQZyRXpLVAvJKOQ0321pHiZkUzSQZ/dG2Co8dvCFqkZ7aztlxfa
+ 8J1c5O43inL+WUBK+h3PurkAvHSuTmOIAnPG+N5s8QZVa3y1/x2nyaEdnxe1kHeBCB2W
+ RthQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5+kwC8uObQ/HWjxvZd0dHpS/CMRU4SiA0lJfkAcxrF0=;
+ b=A1ERIO9+eb2Zv5wS/OgeLlTvJM7dDCC2tj4pAgnkMicGvrLDbg1EbLksrvaavaqw4U
+ /ekaqjVuSDtjiKRPUG7EVhBWR4dZ5umMt+H71ki9iF2cp2Iwfu9Cc+PtS9MuDd/b0PQ9
+ lFqjBwjJQ70XAzKH6Fss2mBnVXdb3THPlDkQOU6yuCTS4OTh/kGGBM1GNQ15uPoaGXTf
+ 5XN/qULSruRgy+PINaXCBrN1Y+YwIKK4B70V0hySi31GaHtQRyqDPpfvLhOGSlTB+rvN
+ Uiklpsc4g2a9Sty4+R/hRgeC0q2qdh3yYSHNJmrNQIZ/mqokNgBt/2lmCGSr1/WHXpzE
+ zpGg==
+X-Gm-Message-State: APjAAAV6ym7baihmrcEgWVcjyZE9D771D6b8WTaa17okJeKq3DH5vXSC
+ owIkwffniY8ED+vy5C6mwvlTPeQLC4gf0h3Vm9F+mA==
+X-Google-Smtp-Source: APXvYqy13bQpcmkOHfPGnW7xeouGxykwzLlxjVdyq09mz56MdK96iTmat5FtwTdTBZT6ihkG0hMxNFa2z4erVLL89ts=
+X-Received: by 2002:adf:cf0a:: with SMTP id o10mr30195070wrj.325.1579095403586; 
+ Wed, 15 Jan 2020 05:36:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191212033952.5967-1-afaerber@suse.de>
-Content-Language: en-US
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-3-broonie@kernel.org>
+ <CAKv+Gu8He-SmqH3cTOCReOntFaOWvdKmEAfxxAy7QW6GzHd=Pg@mail.gmail.com>
+ <20200115091615.GA21692@willie-the-truck>
+ <20200115120703.GH3897@sirena.org.uk>
+ <20200115124238.GF21692@willie-the-truck>
+In-Reply-To: <20200115124238.GF21692@willie-the-truck>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 15 Jan 2020 14:36:32 +0100
+Message-ID: <CAKv+Gu-eUkAtft9d+=zvnHiqQUBRGSJX9M03zF1i9Ms+oMstAA@mail.gmail.com>
+Subject: Re: [PATCH v10 2/3] arm64: random: Add data to pool from setup_arch()
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_053424_003044_FF84B409 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200115_053645_154854_6CA49139 
+X-CRM114-Status: GOOD (  34.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,29 +95,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, Dan Murphy <dmurphy@ti.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
- linux-amlogic@lists.infradead.org, linux-leds@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMTIuMTIuMTkgdW0gMDQ6Mzkgc2NocmllYiBBbmRyZWFzIEbDpHJiZXI6Cj4gUHJlcGVuZGVk
-IGlzIGEgbmV3IERUIGZvciBYbmFubyBYNSBPVFQgVFYgQm94LCBmZWF0dXJpbmcgYW4gRkQ2Mjgg
-ZGlzcGxheS4KWy4uLl0KPiBBbmRyZWFzIEbDpHJiZXIgKDI1KToKPiAgICBkdC1iaW5kaW5nczog
-dmVuZG9yLXByZWZpeGVzOiBBZGQgWG5hbm8KPiAgICBkdC1iaW5kaW5nczogYXJtOiByZWFsdGVr
-OiBBZGQgWG5hbm8gWDUKPiAgICBhcm02NDogZHRzOiByZWFsdGVrOiBydGQxMjk1OiBBZGQgWG5h
-bm8gWDUKW3NuaXBdCgpBcHBsaWVkIHRoZXNlIHRocmVlIHRvIGxpbnV4LXJlYWx0ZWsuZ2l0IHY1
-LjYvZHQ6CgpodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9h
-ZmFlcmJlci9saW51eC1yZWFsdGVrLmdpdC9sb2cvP2g9djUuNi9kdAoKVGhhbmtzLApBbmRyZWFz
-CgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUs
-IDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgw
-OSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, 15 Jan 2020 at 13:42, Will Deacon <will@kernel.org> wrote:
+>
+> On Wed, Jan 15, 2020 at 12:07:03PM +0000, Mark Brown wrote:
+> > On Wed, Jan 15, 2020 at 09:16:16AM +0000, Will Deacon wrote:
+> > > On Wed, Jan 15, 2020 at 08:48:46AM +0100, Ard Biesheuvel wrote:
+> >
+> > > > > Note that we are only adding data here, it will be mixed into the pool
+> > > > > but won't be credited as entropy. There are currently no suitable
+> > > > > interfaces for that at present - extending the random code to provide
+> >
+> > > > This is slightly unfortunate, as this way, we lose the ability to use
+> > > > random.trust_cpu=1 to get the entropy credited and initialize CRNG
+> > > > early.
+> >
+> > Right.  OTOH that's a bit of a mess to do, I do have some
+> > thoughts but it's a bit of a mess trying to do it tastefully,
+> > especially when considering that you probably don't want an
+> > interface that it's easy for something to misuse.  The effort
+> > involved certainly seems large enough to handle separately.
+>
+> Maybe, but see below...
+>
+> > > Agreed. Do you think we should wait for that support before merging the
+> > > series? Given that I don't know of any CPUs implementing this extension,
+> > > we can probably afford not to rush this in.
+> >
+> > It's implemented in at least the fast models already, not checked
+> > any of the other emulators, so there's some possibility of people
+> > using it while developing other things and hopefully at least
+> > some of the various CI systems will be including emulated
+> > platforms with newer extensions in their coverage so might gain
+> > some benefit from it.  Frankly the only reason I'm looking at
+> > this at all is that I'd written patch 3 because I was getting fed
+> > up with KASLR initialization being easily disabled when I was
+> > trying to test E0PD on the models (especially before I added the
+> > status print at boot to KASLR so this happened silently), having
+> > this in mainline would've helped considerably when working on
+> > that.
+>
+> I was thinking specifically about users on silicon rather than developers
+> on simulators. (I could stick this on a branch for developers if necessary).
+>
+> > I don't see any downside to having the code in mainline as is,
+> > even though it's not ideal it does make things better since if
+> > for some reason anyone does end up running this code on a system
+> > that has the feature they'll get at least some benefit from it
+> > even if nothing else happens.  The bulk of the code isn't going
+> > to change when the early init stuff gets improved and includes
+> > tables like cpufeature.h that make it annoying to hold out of
+> > tree, the bits that are going to change can just as well be
+> > worked on incrementally as held out of tree entirely and having
+> > the rest in means there's less friction doing that.
+>
+> The usual downside that comes from merging patches with promises of fixing
+> them up later is that the motivating task gets marked as "done" somewhere,
+> the developer gets given something else to do and the updates never
+> materialise. That's not a dig at you; it's just the way these things tend
+> to work (I've certainly been on both sides of that coin).
+>
+> If there was an urgency to this, I'd suggest merging a form of Richard's
+> code, as it appears to solve the technical issue of credited entropy whilst
+> leaving some room for subsequent cleanup. However, I think that makes it
+> even less likely that anybody will come back to do the cleanup because the
+> code will be perfectly functional, so I'd prefer to wait for a complete
+> solution unless you think it's not achievable for 5.7.
+>
+> I'd also really like Ard's ack on anything relating to RNGs.
+>
+
+Patches #1 and #3 are fine with me, modulo the HWCAP bit which I don't
+deeply care about.
+
+But the way this patch works around our workaround for mismatched RNG
+caps between cores doesn't make sense to me.
+arch_get_random_seed_long() should just have some out of line __init
+path that gets invoked only during early boot, exactly how we are
+using it in patch #3 to seed KASLR, where we don't care about whether
+or not other CPUs have the extension. (Note that rand_initialize() is
+called very early, way before the point where we have to care about
+being scheduled from a CPU with RNG to one without)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
