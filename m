@@ -2,77 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C5013BA69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:40:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 005E713BA6C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:41:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rSrcOmnqgtEiNbOv6kw4qLLxgM6cOuYI9WHtDiGI/50=; b=TcAOsgcgzFQ+XD
-	Iv+jne4PpeYJ/E5IjqoEtx3GxhxMK1etNY40/Bsaka6zdhIBqmu+r2xFmXvAhUH6bkWWleM8sTZVm
-	nAylSo8LSUD1ADTGG24q4+yjwylsP5r+uO++Hr14wPnFpl4tJPp96dIcJRqNwSap9u/LOCzoZT6zl
-	9HYx3c0UaWDOs7ziJgiA7VdFiH47xil5AS1PvKN3f5yNJIUWJnjP67XFQfIyUKkObNXYN+S3gzSaE
-	2DFfI9iUDec1KsRxjD2K/UYHFulGBgrqCVszXEeXFklZhtmStN8JspLxYI039KUSuRT5vYucWTwBj
-	Q8henTo6JO0+pVO9Wy3A==;
+	List-Owner; bh=AjxfbXXVMduhpnDBvcqPSwnn3ZHnAnskhaaVP90qRYo=; b=I/gtfHsUrWGb+r
+	ErLxk9WiVko8Y1/8YQEZX8R5LW83PLDVKxM7JgNH89dyEpKMlBVgiqa84wPdA+hwaXmqDbEtkToOy
+	A2KV1NROwsiANmgpYi5/phw+vfGnMmOrc9VxZx3APrgdDubUEEXgI2M8m62cE814FwgrmrLuWADOR
+	vuAfPjBl9Et52V2mSv4R2jHPG9zMGYg48vQsL4n02Dk9E5uVx2sChlmmrZ4+mMNhDFfPo8ogMMm4U
+	+0OA6M+74/W4ipIII1tp4KH2a7IAC0YIU3evevW81gYLEmF+rZOVghMEv3AvgEJN3qyE9mFeTRnvJ
+	WI25KLsBmoLlnd4RIdjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irdHO-0008LS-EA; Wed, 15 Jan 2020 07:39:54 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1irdId-0001OA-R7; Wed, 15 Jan 2020 07:41:11 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irdHE-0008Kz-Qg
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:39:46 +0000
-Received: by mail-oi1-f194.google.com with SMTP id a67so14516366oib.6
+ id 1irdIS-0001Ni-JO
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:41:05 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u2so16591840wmc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 23:39:42 -0800 (PST)
+ Tue, 14 Jan 2020 23:40:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Br+eku/wpkIoP2nzQJSV3xybmY5NP9A44mET6BqLXXA=;
+ b=oP5pd0obGELz110WIWUywk5xAuTtdelOC6qhULjwe4kzCW8oIvj4Ve52+NPgaG5AFt
+ A1EBb2F3VUNUk+Qpf9PBzPea+PIA2/0vbKMYrU8vIk6KV+fRhBUYsTHjzhcQ6KljjUNS
+ 9ANaOGNN36+diGFDdrNJ9TMh2wjuJ1f4OOKpQ3tx6l0T+XTXbVp5Vg73D11e2HnSftee
+ PG2TCw2VT/f9x+JpPl1MCuZNWOggHqfM8R7j5iKEoHgkZlpGlFVIsrfKs6UXvc+ThyaP
+ GZK4qsFliBy44vOVdjbvastkoKvtm0Nb1slRdxDIA2zpeQSPFbcDmTIE1DATsKIdKOg6
+ Zguw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gQgiagsJrBpivSRO3cNNnJuZ6cplPqbaBlhKLaSf2rI=;
- b=fU19l1K4T2Xx/iMmUSL37btNfSFmdDbk50FoUaMtLwqxbzpTaYX/M71pjiyk2cWxuD
- YAg8Kvx6j/UFvTc9Lmd5wCzJrJu6qFMDs/e0gtWG31rQlrypncij3s8RoGFDyazComUV
- 5intmue925NN7lnM+5ms97W7wnbps/f/ChIBHFtxuyUweYVQbEuXifCREHTjKVWLDbmP
- zDh0cmpuvnRYzSBgwdQ9/S61tUFE93UuEqqqyz0kadlNW6e5Ia54H3KHxLjdHQIEBjSa
- tD44OeiLX4Tgs70XGUp2sbNXU5oi5q2YJu9/imeaN64eGeQD1N1FO1U/pHIQm5SDe0qY
- uCsg==
-X-Gm-Message-State: APjAAAWpnUwTbw3BZ3J61a5AZIfHs5IeFFn7aEUZagk+XJt6z4KMqiSH
- 4nOfJnfM2rmsuL5IwtiKMNCsEc7AydxiwRPIiSA=
-X-Google-Smtp-Source: APXvYqzRuT0HM8yM1bFV+Vr8H4zqFzNs++p+wxD1vyFZGkDfxnAXEJURgsGyPxDgTZ0m05wbjHNslRBWSQG6enCwcYI=
-X-Received: by 2002:aca:5905:: with SMTP id n5mr20532365oib.54.1579073981787; 
- Tue, 14 Jan 2020 23:39:41 -0800 (PST)
+ bh=Br+eku/wpkIoP2nzQJSV3xybmY5NP9A44mET6BqLXXA=;
+ b=r4Nez/yRBedkNcvnPNemxd2XXNNRJjgjUkmyGnOyDGuROrnMDRtY6AkIGBZvXQ8dm1
+ QvRSVomEXrs37iMrGpTXPBu7PX9cXOMMOhbGZnf3IOTAzbwV4UuTHvzdH3m14annVIHq
+ ifuPr+gO+itcb4WknjVjJTiDWwwBteWKJWzyKFvdgk6/GEMjElKYBiKFOADleDP/Z1Yg
+ VbyOgrCy9PNQL58G9bWg2j2Y0kQ7SlG9lczM4WBp/Rg87fcGAU5er85y8JC4Oc615Uz1
+ j2JaqDG6qH88nzI6CEQZniYqax2FnFWj3DOVFhq8TYD8H51y+5hUUb60SBN/UFkBj+Ma
+ 5urQ==
+X-Gm-Message-State: APjAAAW0owMxe9BFA+lI2onwXCJjYPAQtfgWh2DSudVMZUdwhmSSXzdq
+ OBfx7mO3o3r9kXeFNzvwgYjGmDQJRVaORckUABiopg==
+X-Google-Smtp-Source: APXvYqx8sSaVLM2nTdpw1kDaD7H/K4VrWc33h4wJmq6CExmnkilGqmMWI+eunnORN41z/Ae8o0PoQOqIyEY5nf5j0Jw=
+X-Received: by 2002:a1c:7205:: with SMTP id n5mr32844152wmc.9.1579074057402;
+ Tue, 14 Jan 2020 23:40:57 -0800 (PST)
 MIME-Version: 1.0
-References: <20200112191315.118831-1-marek.vasut@gmail.com>
- <CAMuHMdWc97=-9yBF0CJDZpWH9ZGX9uoDY_t6E6TQNc4MO93W_w@mail.gmail.com>
- <cfb752e0-46b5-1936-c3f1-8c6d781bebb5@gmail.com>
-In-Reply-To: <cfb752e0-46b5-1936-c3f1-8c6d781bebb5@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 15 Jan 2020 08:39:30 +0100
-Message-ID: <CAMuHMdWeo3awiD7iAfWFXc01isnmsBc6CuQ6X4s3CO7pNXjfJA@mail.gmail.com>
-Subject: Re: [RFC][PATCH] ARM: dts: renesas: Add missing ethernet PHY reset
- GPIO on Gen2 reference boards
-To: Marek Vasut <marek.vasut@gmail.com>
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-2-broonie@kernel.org>
+ <20200114174432.GG2579@willie-the-truck>
+In-Reply-To: <20200114174432.GG2579@willie-the-truck>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 15 Jan 2020 08:40:46 +0100
+Message-ID: <CAKv+Gu9pVZZm_gvsKfrCG_cM=1TmAAH+sj06GzT+Ag9Ej7__fg@mail.gmail.com>
+Subject: Re: [PATCH v10 1/3] arm64: Implement archrandom.h for ARMv8.5-RNG
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_233944_859184_6D586FBA 
-X-CRM114-Status: GOOD (  12.02  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200114_234100_849613_C16C3B3B 
+X-CRM114-Status: GOOD (  17.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,47 +92,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek,
-
-On Wed, Jan 15, 2020 at 6:14 AM Marek Vasut <marek.vasut@gmail.com> wrote:
-> On 1/13/20 9:58 AM, Geert Uytterhoeven wrote:
-> >>  arch/arm/boot/dts/r8a7790-lager.dts   | 1 +
-> >>  arch/arm/boot/dts/r8a7790-stout.dts   | 1 +
-> >>  arch/arm/boot/dts/r8a7791-koelsch.dts | 1 +
-> >>  arch/arm/boot/dts/r8a7791-porter.dts  | 1 +
-> >>  arch/arm/boot/dts/r8a7793-gose.dts    | 1 +
-> >>  arch/arm/boot/dts/r8a7794-alt.dts     | 1 +
-> >>  arch/arm/boot/dts/r8a7794-silk.dts    | 1 +
-> >
-> > I believe all of the above (except for stout) are available in Magnus' farm...
-> >
-> > r8a7743-sk-rzg1m.dts and r8a7745-sk-rzg1e.dts need similar changes as
-> > r8a7791-porter.dts resp. r8a7794-silk.dts.
+On Tue, 14 Jan 2020 at 18:44, Will Deacon <will@kernel.org> wrote:
 >
-> Do you have those two boards / can you prepare and test a patch ?
+> On Fri, Jan 10, 2020 at 12:23:39PM +0000, Mark Brown wrote:
+> > From: Richard Henderson <richard.henderson@linaro.org>
+> >
+> > Expose the ID_AA64ISAR0.RNDR field to userspace, as the RNG system
+> > registers are always available at EL0.
+> >
+> > Implement arch_get_random_seed_long using RNDR.  Given that the
+> > TRNG is likely to be a shared resource between cores, and VMs,
+> > do not explicitly force re-seeding with RNDRRS.  In order to avoid
+> > code complexity and potential issues with hetrogenous systems only
+> > provide values after cpufeature has finalized the system capabilities.
+> >
+> > Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
+> > [Modified to only function after cpufeature has finalized the system
+> > capabilities and move all the code into the header -- broonie]
+> > Signed-off-by: Mark Brown <broonie@kernel.org>
+> > Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+> > ---
+> >  Documentation/arm64/cpu-feature-registers.rst |  2 +
+> >  arch/arm64/Kconfig                            | 12 ++++
+> >  arch/arm64/include/asm/archrandom.h           | 67 +++++++++++++++++++
+> >  arch/arm64/include/asm/cpucaps.h              |  3 +-
+> >  arch/arm64/include/asm/sysreg.h               |  4 ++
+> >  arch/arm64/kernel/cpufeature.c                | 13 ++++
+> >  6 files changed, 100 insertions(+), 1 deletion(-)
+> >  create mode 100644 arch/arm64/include/asm/archrandom.h
+>
+> In which case, should we also add an HWCAP for this?
+>
 
-I don't have those boards, and thus can't test them.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Isn't this covered by the 'cpuid' HWCAP? We can't prevent EL0 from
+accessing these system registers anyway, even if we wanted to.
 
 _______________________________________________
 linux-arm-kernel mailing list
