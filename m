@@ -2,83 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CCDD13B8DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:13:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C897D13B8E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:23:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=veGnt7uISljEDEFzDJaL3N49zqJ+yxLSK4gjgl8omCU=; b=Deh+kLsTnMMw1D
-	FBTiDodlDM3xewblkI9gAuxZ980zCvbH6CB9vv+fmuReMHBt2L0/IcHHCCCSUR/ykdxb3cANgfemw
-	xRxh0GlJbiaXvvHDPqHgeaoUDJ3MyBOlGrPxYfj0/hGIvP2sUIDRDONJo5OsL81S32gc7FPdan8gt
-	3mfSvKJlcDY+irky9mrdKCI+1bNZNMq1NrphRe56GLjgrfVEOMxvOWZKBEJDCfBpZKZ04cW1ebFJI
-	dezew8LhtsD6hecWP3lnHtMMn4CWoLFh6PLcagYmbhrAM7FNzM2EmrPaWIRByvrzlFqnNV9dXUjex
-	MwCBEDTRNIyqAoOOZB8A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=69Eck/qFoJFsFweDiEG1dX0intbApbVQCVkkwZJJ29A=; b=przxhh1CTUpdWx
+	bdHYiWgp0UMfOfrUFksPgzeyJM8KIeh7vr+JyEtyGQc2d1hy+Q634bvdtzxQ9O/e5v8ZstoCIxhks
+	DJV7AZ35Vo39q32ffZVKxykUuorIRGxOrkeMPhXkIHFL4gzyFvsqvfsxlSLeFZyEq5f3kWol+RDQn
+	WG9VVYXy2MYhdoHPM0xta1pePBHx1QFglDbMR+Y9nJG6ilBdQLZf6S+BsN3MbIo7U3QZda9FW35t2
+	OgPmBGqgR9iE5BpQwuXYA32o7uVMcJvSZskaKD2lcV0pZSKEwOpEeB6s3wOXSgNIxXN+ho4K0nSMy
+	IebPiFEwou9SwHRm226Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irazN-0002UQ-2o; Wed, 15 Jan 2020 05:13:09 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1irb8o-0006JY-Fx; Wed, 15 Jan 2020 05:22:54 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irazC-0002T2-D6
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:12:59 +0000
-Received: by mail-wm1-x343.google.com with SMTP id d73so16382907wmd.1
+ id 1irb8d-0006HY-BN
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:22:45 +0000
+Received: by mail-ot1-x341.google.com with SMTP id a15so15058426otf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 21:12:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=n9NxWPcK/0Wvk5uOpnOHlNKUqHS48KY4vv65Up++8+w=;
- b=jsPbn0xE25CsviiaMCSLAgAvAN8wnluckOKmIIj5WK7PxnLBmR5FnoWrBi0jA8zQdI
- tP/++VyFja/lsKuYdRoK6So5Xf9jDd+Q7tbm/kK1IqM2nvRQCjIcbKB/5Kv6IXGNuG17
- jq+n/XlWsyB8Q5R1gmIpLAhHMwd3bRN8Mu5k817AoFKjwNjBKsAY/BWiYPyZ7fz0PxQA
- SR4+mshu8q8B9CJcOhHWo8oo2o1Wevdb3y27cgGgWXeE6ivXnPTVyozgv3XFcm1kRlPv
- SvxPZlJFzczo5oD9wlQiqm7iOJiFiRVpoK4VGrWBE2aOvrBvT3x90fLXfy4wuU1u+CnM
- r+5A==
+ Tue, 14 Jan 2020 21:22:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1V7MW/ylG5HH52qKYnJfjENVm5zMbyLo/1xAyipVPNU=;
+ b=Toqv6jeGfvvxWRkr5nvZFkzGlWyXW0qh9bEcuwG/GucvkAKkjZSDtLzEWNyuJz0kAn
+ 3LFtDjFZjvJ7Cjg7QuoSNUcSCrCzCprhHwc/fgBE3nhH6SR9YUsAAdK89gezNLJwSh+u
+ U2JRzqaD9IF3wcMHh/XVE6mg6as3ybZqHT9UQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=n9NxWPcK/0Wvk5uOpnOHlNKUqHS48KY4vv65Up++8+w=;
- b=XYqxCBXBMQRMZfqzrPaM3Ed1w8F1GXRUBZU0fLsqfedu0lgvkCXAe0ATmXQpGxLwLW
- hMdfPRDvns0PjllazBM8hinr0vT4D+85wmw3ZDW6qx/VxLU5BS6paYuhnYa5U64LTvdv
- GDmOzQOcGkL65ATFSKE3eDa6b8x7aIuWX2VBPuQUI0ncMWW6GqvYrWjYN7sJXfmnWD39
- E4fgmPB+0x2TAaj6jXm1nW7GLMv48UTpG/WwwrnJ4sEJUdDVoXi92bRXlJWb7WVd9z/Q
- etV2GpWUMwfUOWHq3BKuvrlPTVWEFkk288tpElKBH4rPRH5gOuhsC9E+vaF32a+1g7Cj
- ZcNQ==
-X-Gm-Message-State: APjAAAUfgNvrVCc5E6zYBxAqU9zOHjzzs7VHciyMgEehqcP+p21yZG18
- yfPx1XbcbIaLfZ8eAbx5lza0GGkJBlQ=
-X-Google-Smtp-Source: APXvYqxJwlTO95a0xARemiZJfDEj7XUZHZ68oYbHN+nMliDW8E8V2Xh+D42Qv4MEEPlT3mowYT7Ipg==
-X-Received: by 2002:a7b:c444:: with SMTP id l4mr30092745wmi.178.1579065175436; 
- Tue, 14 Jan 2020 21:12:55 -0800 (PST)
-Received: from chi.lan (cst-prg-10-109.cust.vodafone.cz. [46.135.10.109])
- by smtp.gmail.com with ESMTPSA id z21sm20942156wml.5.2020.01.14.21.12.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 21:12:54 -0800 (PST)
-From: marek.vasut@gmail.com
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2] ARM: dts: renesas: Add missing ethernet PHY reset GPIO on
- Gen2 reference boards
-Date: Wed, 15 Jan 2020 06:12:25 +0100
-Message-Id: <20200115051225.7346-1-marek.vasut@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1V7MW/ylG5HH52qKYnJfjENVm5zMbyLo/1xAyipVPNU=;
+ b=jnD8BzwCvxI2g9phPxR0i5A0i90raaS/dviapCvxg+NOa2HQig3Q+mZZmIh6OBUbd5
+ Wtcdup/dgMcYb1fjfVw3/7VySarbzkaAKPUVWzp7RSpJrP3pDtMeJ9GNAS3sWrNCs8hQ
+ aMLSrD8dpEDRLxY9IQgxQBSSeen21V7N/hIfax2BwN6pHgqSLcTVWc9k5l0iy/ZOXx7I
+ e24B4IT7lKMHz8ck47wfeTAHkBQ9b+WK+7altGIWR3LJmIY1pyFjgzpz9KjQ5nt5ZhKv
+ WDZjZBHNWzuFBnyAiECg/5M0tw1VT954bKLZR41eOV9nW1fPqBeP+leZw6Lw0rKvd4ZQ
+ Ng7Q==
+X-Gm-Message-State: APjAAAW/yr4/C1edu3lJB5OawEgnyBfaIeoUS8vFj7MIedH7jT13KFGd
+ 1nYU548NEpOvinw9xgx7Ipwi2GGj288FCA==
+X-Google-Smtp-Source: APXvYqwBgB43EjNFvp+2foW+RE96sJGTlKM8DAUOscc9MeVFGSE/rOGvTYTrAAllvb9TVObUZ2lnKQ==
+X-Received: by 2002:a05:6830:2057:: with SMTP id
+ f23mr1583983otp.110.1579065761626; 
+ Tue, 14 Jan 2020 21:22:41 -0800 (PST)
+Received: from mail-oi1-f170.google.com (mail-oi1-f170.google.com.
+ [209.85.167.170])
+ by smtp.gmail.com with ESMTPSA id s83sm5355245oif.33.2020.01.14.21.22.41
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 14 Jan 2020 21:22:41 -0800 (PST)
+Received: by mail-oi1-f170.google.com with SMTP id l9so14253532oii.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Jan 2020 21:22:41 -0800 (PST)
+X-Received: by 2002:aca:d0b:: with SMTP id 11mr19753910oin.71.1579065262776;
+ Tue, 14 Jan 2020 21:14:22 -0800 (PST)
 MIME-Version: 1.0
+References: <20200114033226.16786-1-gtk_ruiwang@mediatek.com>
+ <CAPBb6MXhiNK84PuUy8=RUUeSh5j4VXw-Ar5SbZDHZAobp7xpEQ@mail.gmail.com>
+In-Reply-To: <CAPBb6MXhiNK84PuUy8=RUUeSh5j4VXw-Ar5SbZDHZAobp7xpEQ@mail.gmail.com>
+From: Alexandre Courbot <acourbot@chromium.org>
+Date: Wed, 15 Jan 2020 14:14:11 +0900
+X-Gmail-Original-Message-ID: <CAPBb6MXu9+9C7iUZST_OCwfren7kggFTG41DArF6yzRa_0hf4w@mail.gmail.com>
+Message-ID: <CAPBb6MXu9+9C7iUZST_OCwfren7kggFTG41DArF6yzRa_0hf4w@mail.gmail.com>
+Subject: Re: media: mtk-vcodec: reset segment data then trig decoder
+To: gtk_ruiwang <gtk_ruiwang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_211258_472118_661DE6C4 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20200114_212243_416252_6C50CEF4 
+X-CRM114-Status: GOOD (  23.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marek.vasut[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -86,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,85 +102,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- =?UTF-8?q?Niklas=20S=C3=B6derlund?= <niklas.soderlund+renesas@ragnatech.se>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Tiffany Lin <tiffany.lin@mediatek.com>, srv_heupstream@mediatek.com,
+ Yunfei Dong <yunfei.dong@mediatek.com>,
+ Longfei Wang <longfei.wang@mediatek.com>, LKML <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Maoguang Meng <maoguang.meng@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogTWFyZWsgVmFzdXQgPG1hcmVrLnZhc3V0K3JlbmVzYXNAZ21haWwuY29tPgoKVGhlIGV0
-aGVybmV0IFBIWSByZXNldCBHUElPIHdhcyBtaXNzaW5nIGFuZCB0aGUga2VybmVsIHdhcyBkZXBl
-bmRpbmcKc29sZWx5IG9uIHRoZSBib290bG9hZGVyIHRvIGJyaW5nIHRoZSBQSFkgb3V0IG9mIHJl
-c2V0LiBGaXggdGhpcyB0bwpnZXQgcmlkIG9mIHRoZSBkZXBlbmRlbmN5IG9uIGJvb3Rsb2FkZXIu
-CgpTaWduZWQtb2ZmLWJ5OiBNYXJlayBWYXN1dCA8bWFyZWsudmFzdXQrcmVuZXNhc0BnbWFpbC5j
-b20+CkNjOiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgpDYzog
-V29sZnJhbSBTYW5nIDx3c2ErcmVuZXNhc0BzYW5nLWVuZ2luZWVyaW5nLmNvbT4KQ2M6IGxpbnV4
-LXJlbmVzYXMtc29jQHZnZXIua2VybmVsLm9yZwpUbzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnClJldmlld2VkLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0K3JlbmVz
-YXNAZ2xpZGVyLmJlPgpUZXN0ZWQtYnk6IE5pa2xhcyBTw7ZkZXJsdW5kIDxuaWtsYXMuc29kZXJs
-dW5kK3JlbmVzYXNAcmFnbmF0ZWNoLnNlPgotLS0KVjI6IC0gTW92ZSB0aGUgcmVzZXQtZ3Bpb3Mg
-YXQgdGhlIGVuZCBvZiB0aGUgbGlzdCBvZiBub2RlcwogICAgLSBBZGQgVEIvUkIKLS0tCiBhcmNo
-L2FybS9ib290L2R0cy9yOGE3NzkwLWxhZ2VyLmR0cyAgIHwgMSArCiBhcmNoL2FybS9ib290L2R0
-cy9yOGE3NzkwLXN0b3V0LmR0cyAgIHwgMSArCiBhcmNoL2FybS9ib290L2R0cy9yOGE3NzkxLWtv
-ZWxzY2guZHRzIHwgMSArCiBhcmNoL2FybS9ib290L2R0cy9yOGE3NzkxLXBvcnRlci5kdHMgIHwg
-MSArCiBhcmNoL2FybS9ib290L2R0cy9yOGE3NzkzLWdvc2UuZHRzICAgIHwgMSArCiBhcmNoL2Fy
-bS9ib290L2R0cy9yOGE3Nzk0LWFsdC5kdHMgICAgIHwgMSArCiBhcmNoL2FybS9ib290L2R0cy9y
-OGE3Nzk0LXNpbGsuZHRzICAgIHwgMSArCiA3IGZpbGVzIGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygr
-KQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTAtbGFnZXIuZHRzIGIvYXJj
-aC9hcm0vYm9vdC9kdHMvcjhhNzc5MC1sYWdlci5kdHMKaW5kZXggMDk3ZmQ5MzE3YzZlLi42OTc0
-NWRlZjQ0ZDQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTAtbGFnZXIuZHRz
-CisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTAtbGFnZXIuZHRzCkBAIC02NzQsNiArNjc0
-LDcgQEAgcGh5MTogZXRoZXJuZXQtcGh5QDEgewogCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZpcnFj
-MD47CiAJCWludGVycnVwdHMgPSA8MCBJUlFfVFlQRV9MRVZFTF9MT1c+OwogCQltaWNyZWwsbGVk
-LW1vZGUgPSA8MT47CisJCXJlc2V0LWdwaW9zID0gPCZncGlvNSAzMSBHUElPX0FDVElWRV9MT1c+
-OwogCX07CiB9OwogCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yOGE3NzkwLXN0b3V0
-LmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTAtc3RvdXQuZHRzCmluZGV4IGEzMTViYTc0
-OWFhNC4uNDEzOGVmYjI3NjZkIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9yOGE3Nzkw
-LXN0b3V0LmR0cworKysgYi9hcmNoL2FybS9ib290L2R0cy9yOGE3NzkwLXN0b3V0LmR0cwpAQCAt
-MjAzLDYgKzIwMyw3IEBAIHBoeTE6IGV0aGVybmV0LXBoeUAxIHsKIAkJaW50ZXJydXB0LXBhcmVu
-dCA9IDwmaXJxYzA+OwogCQlpbnRlcnJ1cHRzID0gPDEgSVJRX1RZUEVfTEVWRUxfTE9XPjsKIAkJ
-bWljcmVsLGxlZC1tb2RlID0gPDE+OworCQlyZXNldC1ncGlvcyA9IDwmZ3BpbzMgMzEgR1BJT19B
-Q1RJVkVfTE9XPjsKIAl9OwogfTsKIApkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcjhh
-Nzc5MS1rb2Vsc2NoLmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTEta29lbHNjaC5kdHMK
-aW5kZXggMmIwOTZkNWUwNmZiLi42ODcxNjdiNzBjYjYgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jv
-b3QvZHRzL3I4YTc3OTEta29lbHNjaC5kdHMKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcjhhNzc5
-MS1rb2Vsc2NoLmR0cwpAQCAtNjMzLDYgKzYzMyw3IEBAIHBoeTE6IGV0aGVybmV0LXBoeUAxIHsK
-IAkJaW50ZXJydXB0LXBhcmVudCA9IDwmaXJxYzA+OwogCQlpbnRlcnJ1cHRzID0gPDAgSVJRX1RZ
-UEVfTEVWRUxfTE9XPjsKIAkJbWljcmVsLGxlZC1tb2RlID0gPDE+OworCQlyZXNldC1ncGlvcyA9
-IDwmZ3BpbzUgMjIgR1BJT19BQ1RJVkVfTE9XPjsKIAl9OwogfTsKIApkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm0vYm9vdC9kdHMvcjhhNzc5MS1wb3J0ZXIuZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvcjhh
-Nzc5MS1wb3J0ZXIuZHRzCmluZGV4IGY5ZWNlN2FiMjAxMC4uYThlMDMzNTE0OGE1IDEwMDY0NAot
-LS0gYS9hcmNoL2FybS9ib290L2R0cy9yOGE3NzkxLXBvcnRlci5kdHMKKysrIGIvYXJjaC9hcm0v
-Ym9vdC9kdHMvcjhhNzc5MS1wb3J0ZXIuZHRzCkBAIC0zMDcsNiArMzA3LDcgQEAgcGh5MTogZXRo
-ZXJuZXQtcGh5QDEgewogCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZpcnFjMD47CiAJCWludGVycnVw
-dHMgPSA8MCBJUlFfVFlQRV9MRVZFTF9MT1c+OwogCQltaWNyZWwsbGVkLW1vZGUgPSA8MT47CisJ
-CXJlc2V0LWdwaW9zID0gPCZncGlvNSAyMiBHUElPX0FDVElWRV9MT1c+OwogCX07CiB9OwogCmRp
-ZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yOGE3NzkzLWdvc2UuZHRzIGIvYXJjaC9hcm0v
-Ym9vdC9kdHMvcjhhNzc5My1nb3NlLmR0cwppbmRleCAyMmNhN2NkMWU3ZDIuLmNmZTA2YTc0Y2U4
-OSAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcjhhNzc5My1nb3NlLmR0cworKysgYi9h
-cmNoL2FybS9ib290L2R0cy9yOGE3NzkzLWdvc2UuZHRzCkBAIC01OTEsNiArNTkxLDcgQEAgcGh5
-MTogZXRoZXJuZXQtcGh5QDEgewogCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZpcnFjMD47CiAJCWlu
-dGVycnVwdHMgPSA8MCBJUlFfVFlQRV9MRVZFTF9MT1c+OwogCQltaWNyZWwsbGVkLW1vZGUgPSA8
-MT47CisJCXJlc2V0LWdwaW9zID0gPCZncGlvNSAyMiBHUElPX0FDVElWRV9MT1c+OwogCX07CiB9
-OwogCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yOGE3Nzk0LWFsdC5kdHMgYi9hcmNo
-L2FybS9ib290L2R0cy9yOGE3Nzk0LWFsdC5kdHMKaW5kZXggZjc5ZmNlNzRjZDljLi45MzU5MzVj
-MWRiYWMgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTQtYWx0LmR0cworKysg
-Yi9hcmNoL2FybS9ib290L2R0cy9yOGE3Nzk0LWFsdC5kdHMKQEAgLTM0Myw2ICszNDMsNyBAQCBw
-aHkxOiBldGhlcm5ldC1waHlAMSB7CiAJCWludGVycnVwdC1wYXJlbnQgPSA8JmlycWMwPjsKIAkJ
-aW50ZXJydXB0cyA9IDw4IElSUV9UWVBFX0xFVkVMX0xPVz47CiAJCW1pY3JlbCxsZWQtbW9kZSA9
-IDwxPjsKKwkJcmVzZXQtZ3Bpb3MgPSA8JmdwaW8xIDI0IEdQSU9fQUNUSVZFX0xPVz47CiAJfTsK
-IH07CiAKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTQtc2lsay5kdHMgYi9h
-cmNoL2FybS9ib290L2R0cy9yOGE3Nzk0LXNpbGsuZHRzCmluZGV4IDJjMTZhZDg1NDMwMC4uOWFh
-YTk2ZWE5OTQzIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9yOGE3Nzk0LXNpbGsuZHRz
-CisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTQtc2lsay5kdHMKQEAgLTM5NCw2ICszOTQs
-NyBAQCBwaHkxOiBldGhlcm5ldC1waHlAMSB7CiAJCWludGVycnVwdC1wYXJlbnQgPSA8JmlycWMw
-PjsKIAkJaW50ZXJydXB0cyA9IDw4IElSUV9UWVBFX0xFVkVMX0xPVz47CiAJCW1pY3JlbCxsZWQt
-bW9kZSA9IDwxPjsKKwkJcmVzZXQtZ3Bpb3MgPSA8JmdwaW8xIDI0IEdQSU9fQUNUSVZFX0xPVz47
-CiAJfTsKIH07CiAKLS0gCjIuMjQuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Jan 15, 2020 at 12:47 PM Alexandre Courbot
+<acourbot@chromium.org> wrote:
+>
+> On Tue, Jan 14, 2020 at 12:32 PM <gtk_ruiwang@mediatek.com> wrote:
+> >
+> > From: gtk_ruiwang <gtk_ruiwang@mediatek.com>
+> >
+> > VP9 bitstream specification indicate segment data should reset to
+> > default when meet key frames, intra only frames or enable error
+> > resilience mode. So memset segmentation map buffer before every
+> > decode process is not appropriate.
+> >
+> > Reset segment data only when needed, then trig decoder hardware
+> >
+> > Signed-off-by: Rui Wang <gtk_ruiwang@mediatek.com>
+> > ---
+> >  .../platform/mtk-vcodec/vdec/vdec_vp9_if.c    | 19 +++++++++++++++----
+> >  1 file changed, 15 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c b/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
+> > index 24c1f0bf2147..42c9c3c98076 100644
+> > --- a/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
+> > +++ b/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
+> > @@ -110,7 +110,9 @@ struct vp9_sf_ref_fb {
+> >   * @buf_len_sz_c : size used to store cbcr plane ufo info (AP-R, VPU-W)
+> >
+> >   * @profile : profile sparsed from vpu (AP-R, VPU-W)
+> > - * @show_frame : display this frame or not (AP-R, VPU-W)
+> > + * @show_frame : [BIT(0)] display this frame or not (AP-R, VPU-W)
+> > + *     [BIT(14)] reset segment data or not (AP-R, VPU-W)
+> > + *     [BIT(15)] trig decoder hardware or not (AP-R, VPU-W)
+> >   * @show_existing_frame : inform this frame is show existing frame
+> >   *     (AP-R, VPU-W)
+> >   * @frm_to_show_idx : index to show frame (AP-R, VPU-W)
+> > @@ -494,12 +496,12 @@ static void vp9_swap_frm_bufs(struct vdec_vp9_inst *inst)
+> >                                         frm_to_show->fb->base_y.size);
+> >                 }
+> >                 if (!vp9_is_sf_ref_fb(inst, inst->cur_fb)) {
+> > -                       if (vsi->show_frame)
+> > +                       if (vsi->show_frame & BIT(0))
+> >                                 vp9_add_to_fb_disp_list(inst, inst->cur_fb);
+> >                 }
+> >         } else {
+> >                 if (!vp9_is_sf_ref_fb(inst, inst->cur_fb)) {
+> > -                       if (vsi->show_frame)
+> > +                       if (vsi->show_frame & BIT(0))
+> >                                 vp9_add_to_fb_disp_list(inst, frm_to_show->fb);
+> >                 }
+> >         }
+> > @@ -870,13 +872,22 @@ static int vdec_vp9_decode(void *h_vdec, struct mtk_vcodec_mem *bs,
+> >                                         vsi->sf_frm_sz[idx]);
+> >                         }
+> >                 }
+> > -               memset(inst->seg_id_buf.va, 0, inst->seg_id_buf.size);
+> >                 ret = vpu_dec_start(&inst->vpu, data, 3);
+> >                 if (ret) {
+> >                         mtk_vcodec_err(inst, "vpu_dec_start failed");
+> >                         goto DECODE_ERROR;
+> >                 }
+> >
+> > +               if ((vsi->show_frame & BIT(15)) &&
+> > +                   (vsi->show_frame & BIT(14))) {
+>
+> Using the new bits in this manner means this patch is not compatible
+> with the older firmware.
+>
+> On an older firmware, these bits will be 0, which means the decoder
+> will never be started. To preserve compatibility, the behavior should
+> be reversed: *do not* reset and/or start the decoder if the bits are
+> set.
+>
+> Also both bits are only used together - we should either separate the
+> data segment reset and decoder start, or rely on only one bit for
+> this.
+
+Ah, looks like I missed the fact that the decoder is still started
+even when these bits are not set. So this indeed looks
+backward-compatible. Please ignore my comment.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
