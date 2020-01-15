@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 043C413BA32
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:11:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9767A13BA36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:12:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bt1bhm/qxy3a3BUrIsGdcy+sdTq9bpXfq3IsQXOOuqs=; b=ssVGqYZT+X5tWncUmGHpr5INoc
-	gPHIGZCycWLIvJ7+xrihdsL3XasQ2LlFFAxdRfxQNMN3MITMEjKvujswgRhhZUBNDvmmHPOnzXIsg
-	AWl7/etgBtc4+Sno2XIsNtmSASwaSqo1gnfRItw3BtPVEdE1CLPLX5sUJOy0eoqw/953SdKTi1p8/
-	wGq9SSHL+kMRF/oC1p8GD5FAOqluQQ+tUyce1hTLmvl73rXmzCGtafFAUdR8J2+FfFJ3Sb9Q+Uuu5
-	QLod5YiXawFh7xO5oN84IpqLyAC6YV4k2PHcuGxdYrJsA4zE+a6wTZFbCByJAcIcKz4e3nUBcEmsT
-	zbA0Ih2g==;
+	bh=X8ryZiO+oi+qf8dgOHtRiYPwIBYtxUkPzTqYereDL/I=; b=kr9x/T6T4LUkwGgEQDEEvcpZLb
+	GsqxhRVOqiOxWXCv9VFZ/fVtzRrW0cXKQF91XYfeFG85MGpiKCZVhDjUIXR9T9NFqNVQZGYGQg+PG
+	0xcQaDQOOwg5xGJeObo0g9C7ft+Hm+XX8hc+x9Eu+Uayx5XnTEBR5c9CJrHxRt0k/FdyoG1hp6dET
+	pOOlHluxjsZ7a3s+UKc30D9BOchscDRawz6zqiwwHA7WjErBK4HnCqzgqdd9M9+CyHeOzHOJJT0oT
+	7YaaMjUPya8ulazwopGBpCBLv9DX/kLGCtS3OjxjJHbOENRcZGJHynBHXYwysK6My2aM6STTUDDba
+	oUKpypBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ircpM-0005l0-3e; Wed, 15 Jan 2020 07:10:56 +0000
+	id 1ircqM-0006dy-5H; Wed, 15 Jan 2020 07:11:58 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ircp6-0005j9-Q2
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:10:45 +0000
+ id 1ircp9-0005k0-Mo
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:10:50 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga002.fm.intel.com ([10.253.24.26])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 14 Jan 2020 23:10:40 -0800
+ 14 Jan 2020 23:10:43 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643652"
+X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643663"
 Received: from bong5-hp-z440.png.intel.com ([10.221.118.136])
- by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:37 -0800
+ by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:40 -0800
 From: Ong Boon Leong <boon.leong.ong@intel.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 1/4] net: stmmac: Fix incorrect location to set
- real_num_rx|tx_queues
-Date: Wed, 15 Jan 2020 15:10:00 +0800
-Message-Id: <20200115071003.42820-2-boon.leong.ong@intel.com>
+Subject: [PATCH net v2 2/4] net: stmmac: fix incorrect GMAC_VLAN_TAG register
+ writting implementation
+Date: Wed, 15 Jan 2020 15:10:01 +0800
+Message-Id: <20200115071003.42820-3-boon.leong.ong@intel.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200115071003.42820-1-boon.leong.ong@intel.com>
 References: <20200115071003.42820-1-boon.leong.ong@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_231040_854734_7DDEF285 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20200114_231043_748066_11D2975E 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -79,46 +79,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Aashish Verma <aashishx.verma@intel.com>
+From: "Tan, Tee Min" <tee.min.tan@intel.com>
 
-netif_set_real_num_tx_queues() & netif_set_real_num_rx_queues() should be
-used to inform network stack about the real Tx & Rx queue (active) number
-in both stmmac_open() and stmmac_resume(), therefore, we move the code
-from stmmac_dvr_probe() to stmmac_hw_setup().
+It should always do a read of current value of GMAC_VLAN_TAG instead of
+directly overwriting the register value.
 
-Fixes: c02b7a914551 ("net: stmmac: use netif_set_real_num_{rx,tx}_queues")
-Signed-off-by: Aashish Verma <aashishx.verma@intel.com>
+Fixes: c1be0022df0d ("net: stmmac: Add VLAN HASH filtering support in GMAC4+")
+Signed-off-by: Tan, Tee Min <tee.min.tan@intel.com>
 Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 80d59b775907..0780e00580a2 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -2624,6 +2624,10 @@ static int stmmac_hw_setup(struct net_device *dev, bool init_ptp)
- 	if (priv->dma_cap.vlins)
- 		stmmac_enable_vlan(priv, priv->hw, STMMAC_VLAN_INSERT);
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 40ca00e596dd..6e3d0ab0ecd6 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -736,11 +736,14 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
+ 				    __le16 perfect_match, bool is_double)
+ {
+ 	void __iomem *ioaddr = hw->pcsr;
++	u32 value;
  
-+	/* Configure real RX and TX queues */
-+	netif_set_real_num_rx_queues(dev, priv->plat->rx_queues_to_use);
-+	netif_set_real_num_tx_queues(dev, priv->plat->tx_queues_to_use);
+ 	writel(hash, ioaddr + GMAC_VLAN_HASH_TABLE);
+ 
++	value = readl(ioaddr + GMAC_VLAN_TAG);
 +
- 	/* Start the ball rolling... */
- 	stmmac_start_all_dma(priv);
+ 	if (hash) {
+-		u32 value = GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
++		value |= GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
+ 		if (is_double) {
+ 			value |= GMAC_VLAN_EDVLP;
+ 			value |= GMAC_VLAN_ESVL;
+@@ -759,8 +762,6 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
  
-@@ -4622,10 +4626,6 @@ int stmmac_dvr_probe(struct device *device,
- 
- 	stmmac_check_ether_addr(priv);
- 
--	/* Configure real RX and TX queues */
--	netif_set_real_num_rx_queues(ndev, priv->plat->rx_queues_to_use);
--	netif_set_real_num_tx_queues(ndev, priv->plat->tx_queues_to_use);
+ 		writel(value | perfect_match, ioaddr + GMAC_VLAN_TAG);
+ 	} else {
+-		u32 value = readl(ioaddr + GMAC_VLAN_TAG);
 -
- 	ndev->netdev_ops = &stmmac_netdev_ops;
- 
- 	ndev->hw_features = NETIF_F_SG | NETIF_F_IP_CSUM | NETIF_F_IPV6_CSUM |
+ 		value &= ~(GMAC_VLAN_VTHM | GMAC_VLAN_ETV);
+ 		value &= ~(GMAC_VLAN_EDVLP | GMAC_VLAN_ESVL);
+ 		value &= ~GMAC_VLAN_DOVLTC;
 -- 
 2.17.1
 
