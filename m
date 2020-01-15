@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEB0413CD4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 20:43:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C1F213CD4B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 20:43:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NEsGAPFvotc43Af30IKI9LCiXbeDgmZHN+z6Z5p/vU8=; b=dw9f11wECxXorr
-	B1fc3hj1Y2RIzOFW+wYAhGFxXBgHznyXIGzfCVkYE4zameJDUT1UWHNwWjLKRQSuITfXz/6+GYc4+
-	913T3mjvR5GvpMEfJppYo8bz2as40NwhnfJmPz5ZAQyGE+tcJPt/40+sJ/S3fwgVszFzkuD9BMdUV
-	JMUjuX7vgFm42ux9PPD70/6OxJVqlMjtPYq5gZvckSQOHIvfj1mvmXmnhLJxQFt0do1EU1N+sWswu
-	ONRcXQ9H3UDBenrUW84D4jjshQlML9DjglidPBedER/MPu4cS+xn2MBpf0UNoi8r5ZYBNLVK79bcH
-	QJgo9GZR0AiZsAUwilzw==;
+	List-Owner; bh=haKT9c9W2H+XnOj8Q3Sh3lKN3aapahNx5HcPqy2mR6k=; b=OvRfLnqpq1+BDK
+	GmvU3DF7DRt8I+OrQFovzL/SJbrievwaa68JalQ2D4XTSRLPDcr/W1Kkq4e9xtSxoXqX1kcnYAnTQ
+	N4e/c71OiK157Gq3I3B/LmoeXeGpXf1/iLbOXErjvPRm/e24SGoZaIQ3j+EGbtonGkTkobiSrxPQE
+	sNkb4FTtHJrFxGiaaG/V5RQ8UwldzW0kqkxbjZoxcZqu89QFOpWqXh1zrn+HlF8TZPv50oKocviXG
+	FIF9Esyve2SVQSMhPFvS4AiLPjbC2k3MwSbuJ37eX9O8yAMzjFymYdaVmSwJ7KlKBhET/KJ5ScLhT
+	doSBC/jSYIg45u/27wgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iroZC-000646-R9; Wed, 15 Jan 2020 19:43:02 +0000
-Received: from mailoutvs35.siol.net ([185.57.226.226] helo=mail.siol.net)
+	id 1iroZQ-0006J3-7C; Wed, 15 Jan 2020 19:43:16 +0000
+Received: from mailoutvs10.siol.net ([185.57.226.201] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iroYh-0005nU-Dj
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 19:42:36 +0000
+ id 1iroYi-0005nc-HM
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 19:42:37 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 35DD652291C;
- Wed, 15 Jan 2020 20:42:28 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 890F35228C8;
+ Wed, 15 Jan 2020 20:42:30 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id gsgDiaGgE7Zw; Wed, 15 Jan 2020 20:42:28 +0100 (CET)
+ with ESMTP id XNy--GwjwwrJ; Wed, 15 Jan 2020 20:42:30 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id E985F522899;
- Wed, 15 Jan 2020 20:42:27 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 389D4522899;
+ Wed, 15 Jan 2020 20:42:30 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id A614152291C;
- Wed, 15 Jan 2020 20:42:25 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id EC5BF522934;
+ Wed, 15 Jan 2020 20:42:27 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 1/2] dt-bindings: arm: sunxi: add OrangePi 3 with eMMC
-Date: Wed, 15 Jan 2020 20:42:15 +0100
-Message-Id: <20200115194216.173117-2-jernej.skrabec@siol.net>
+Subject: [PATCH 2/2] arm64: dts: allwinner: h6: Introduce OrangePi 3 eMMC
+ variant
+Date: Wed, 15 Jan 2020 20:42:16 +0100
+Message-Id: <20200115194216.173117-3-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200115194216.173117-1-jernej.skrabec@siol.net>
 References: <20200115194216.173117-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_114231_619786_ECA93F5E 
-X-CRM114-Status: UNSURE (   8.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200115_114232_730870_DCBAC1EB 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.226 listed in list.dnswl.org]
+ low trust [185.57.226.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,29 +79,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OrangePi 3 can optionally have eMMC. Add a compatible for it.
+OrangePi 3 can optionally have 8 GiB eMMC (soldered on board). Add new
+DT file for it.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- Documentation/devicetree/bindings/arm/sunxi.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/boot/dts/allwinner/Makefile        |  1 +
+ .../allwinner/sun50i-h6-orangepi-3-emmc.dts   | 22 +++++++++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3-emmc.dts
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index 327ce6730823..c1e447915c59 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -763,6 +763,11 @@ properties:
-           - const: xunlong,orangepi-3
-           - const: allwinner,sun50i-h6
- 
-+      - description: Xunlong OrangePi 3 (with eMMC)
-+        items:
-+          - const: xunlong,orangepi-3-emmc
-+          - const: allwinner,sun50i-h6
+diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
+index cf4f78617c3f..5fe8db1290b6 100644
+--- a/arch/arm64/boot/dts/allwinner/Makefile
++++ b/arch/arm64/boot/dts/allwinner/Makefile
+@@ -25,6 +25,7 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-zero-plus.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-zero-plus2.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-beelink-gs1.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
++dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3-emmc.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-lite2.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-one-plus.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64.dtb
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3-emmc.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3-emmc.dts
+new file mode 100644
+index 000000000000..278f1b55935f
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3-emmc.dts
+@@ -0,0 +1,22 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (C) 2020 Jernej Skrabec <jernej.skrabec@siol.net>
 +
-       - description: Xunlong OrangePi Lite
-         items:
-           - const: xunlong,orangepi-lite
++#include "sun50i-h6-orangepi-3.dts"
++
++/ {
++	model = "OrangePi 3 eMMC";
++	compatible = "xunlong,orangepi-3-emmc", "allwinner,sun50i-h6";
++};
++
++&mmc2 {
++	vmmc-supply = <&reg_cldo1>;
++	vqmmc-supply = <&reg_bldo2>;
++	non-removable;
++	cap-mmc-hw-reset;
++	bus-width = <8>;
++	status = "okay";
++};
++
++&pio {
++	vcc-pc-supply = <&reg_bldo2>;
++};
 -- 
 2.24.1
 
