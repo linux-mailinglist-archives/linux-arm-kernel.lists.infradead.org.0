@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC2B613BCFC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 11:01:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E148413BD20
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 11:11:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wshriJO7EfvTTVh8jVrkYLiUU/o/6W4ARmTytcddwJA=; b=Nq1mdY8g/OQ59e
-	3p+mTfnn2eMNhj2pfUYzKMb3zdPHwmbz/fqj5CyGaFdpkUUjSSLYGI5NsUCfmr7fmddHr6WlYpC9g
-	JZAVSEuw194PVeieQOUxgxQV2KC7YgFEzCAV49ywwThKH7lIHE1wckCQgwOtfmiSHOYxzrhusEabZ
-	f2mesurxpG5FiKRBPEqKEAwSgbQ5h4A97LFxnenodYQ9sVBdZ8X/JP4pTIOgtD650e73Eo9jhYs3i
-	o1/ea4A4VSrXbhMJGjnUfTIjclg5uuAamsLkY149+bh7zssNshaGKtkHZ4bBrmM5cMcB5bB8oElfz
-	g5JvRWuw53NdU1eY9ZTw==;
+	List-Owner; bh=FsT9cOaGCLYUc0hOoF6NoCauAUbqnNK59gqgq5EvSXI=; b=OIUXT0MLqc6d6h
+	blfebtWTsAptjd0SLS4j8jWWSfqY/ZzrMBBoCNWPEKfGInfIAruXSuMfH2vQOUZX71sw9MhekOBxM
+	0BNM4W3Jxz6aXhzRYMdgyT95Qi7plWgZ5lq6EXqDcZT8+u+HYcehapSgOrQbEqEKZh0vIEgKAelll
+	gLSL+RgTJnnwI1Q3Jqx/Wlge4pwSrcMIpkM4gcz892Eo/HzXSWUoN/i51PKWVSk0NxMboj2/QCre1
+	xAdJz9e2Axe1/hcnEtOFCHs28F5yzagpLrNCbNnKQtyZ15d/e9v0CnwgeH3cCy1AegD9atY2JuzZc
+	EzwNZ9zVJTX9EL56cqEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irfU9-00043l-Kb; Wed, 15 Jan 2020 10:01:13 +0000
+	id 1irfeF-0007Xb-RH; Wed, 15 Jan 2020 10:11:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irfTy-00042j-VQ; Wed, 15 Jan 2020 10:01:07 +0000
+ id 1irfe2-0007Ww-7w
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 10:11:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E91F31B;
- Wed, 15 Jan 2020 02:01:02 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268343F6C4;
- Wed, 15 Jan 2020 02:01:00 -0800 (PST)
-Date: Wed, 15 Jan 2020 10:00:54 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v5 3/6] PCI: brcmstb: Add Broadcom STB PCIe host
- controller driver
-Message-ID: <20200115100054.GA2174@e121166-lin.cambridge.arm.com>
-References: <20191216110113.30436-1-nsaenzjulienne@suse.de>
- <20191216110113.30436-4-nsaenzjulienne@suse.de>
- <20200114171101.GA11177@e121166-lin.cambridge.arm.com>
- <8a7057fe1aaf415272d28f4e690313984c3a148d.camel@suse.de>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0DFB231B;
+ Wed, 15 Jan 2020 02:11:25 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27EE83F6C4;
+ Wed, 15 Jan 2020 02:11:24 -0800 (PST)
+Date: Wed, 15 Jan 2020 10:11:08 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v10 2/3] arm64: random: Add data to pool from setup_arch()
+Message-ID: <20200115101107.GA32549@lakrids.cambridge.arm.com>
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-3-broonie@kernel.org>
+ <CAKv+Gu8He-SmqH3cTOCReOntFaOWvdKmEAfxxAy7QW6GzHd=Pg@mail.gmail.com>
+ <20200115091615.GA21692@willie-the-truck>
+ <CAKv+Gu9=L6hPSHbvf1qHa7N9hyJ7m7KSYJHBf1em8E0Db_Lghw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8a7057fe1aaf415272d28f4e690313984c3a148d.camel@suse.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAKv+Gu9=L6hPSHbvf1qHa7N9hyJ7m7KSYJHBf1em8E0Db_Lghw@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_020103_059948_5BFDBBB4 
-X-CRM114-Status: GOOD (  20.73  )
+X-CRM114-CacheID: sfid-20200115_021126_322096_949C506F 
+X-CRM114-Status: GOOD (  24.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,80 +67,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org,
- phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- mbrugger@suse.com, bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
- james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, andrew.murray@arm.com,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 14, 2020 at 07:18:46PM +0100, Nicolas Saenz Julienne wrote:
-> Hi Lorenzo,
+On Wed, Jan 15, 2020 at 10:22:03AM +0100, Ard Biesheuvel wrote:
+> On Wed, 15 Jan 2020 at 10:16, Will Deacon <will@kernel.org> wrote:
+> >
+> > On Wed, Jan 15, 2020 at 08:48:46AM +0100, Ard Biesheuvel wrote:
+> > > On Fri, 10 Jan 2020 at 13:23, Mark Brown <broonie@kernel.org> wrote:
+> > > >
+> > > > Since the arm64 ARCH_RANDOM implementation is not available until
+> > > > cpufeature has determined the system capabilities it can't be used by
+> > > > the generic random code to initialize the entropy pool for early use.
+> > > > Instead explicitly add some data to the pool from setup_arch() if the
+> > > > boot CPU supports v8.5-RNG, this is the point recommended by the generic
+> > > > code.
+> > > >
+> > > > Note that we are only adding data here, it will be mixed into the pool
+> > > > but won't be credited as entropy. There are currently no suitable
+> > > > interfaces for that at present - extending the random code to provide
+> > > > those will be done as a future step. Providing data is better than not
+> > > > doing so as it will still provide an increase in variation in the output
+> > > > from the random code and there will be no impact on the rate at which
+> > > > entropy is credited compared to what we have without this patch.
+> > > >
+> > >
+> > > This is slightly unfortunate, as this way, we lose the ability to use
+> > > random.trust_cpu=1 to get the entropy credited and initialize CRNG
+> > > early.
+> >
+> > Agreed. Do you think we should wait for that support before merging the
+> > series? Given that I don't know of any CPUs implementing this extension,
+> > we can probably afford not to rush this in.
 > 
-> On Tue, 2020-01-14 at 17:11 +0000, Lorenzo Pieralisi wrote:
-> > On Mon, Dec 16, 2019 at 12:01:09PM +0100, Nicolas Saenz Julienne wrote:
-> > > From: Jim Quinlan <james.quinlan@broadcom.com>
-> > > 
-> > > This adds a basic driver for Broadcom's STB PCIe controller, for now
-> > > aimed at Raspberry Pi 4's SoC, bcm2711.
-> > > 
-> > > Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
-> > > Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > > Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-> > > Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
-> > > 
-> > > ---
-> > > 
-> > > Changes since v3:
-> > >   - Update commit message
-> > >   - rollback roundup_pow_two usage, it'll be updated later down the line
-> > >   - Remove comment in register definition
-> > > 
-> > > Changes since v2:
-> > >   - Correct rc_bar2_offset sign
-> > 
-> > In relation to this change.
-> > 
-> > [...]
-> > 
-> > > +static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie
-> > > *pcie,
-> > > +							u64 *rc_bar2_size,
-> > > +							u64 *rc_bar2_offset)
-> > > +{
-> > > +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
-> > > +	struct device *dev = pcie->dev;
-> > > +	struct resource_entry *entry;
-> > > +
-> > > +	entry = resource_list_first_type(&bridge->dma_ranges, IORESOURCE_MEM);
-> > > +	if (!entry)
-> > > +		return -ENODEV;
-> > > +
-> > > +	*rc_bar2_offset = -entry->offset;
-> > 
-> > I think this deserves a comment - I guess it has to do with how the
-> > controller expects CPU<->PCI offsets to be expressed compared to how it
-> > is computed in dma_ranges entries.
+> In a previous iteration, we did have a functional
+> arch_get_random_seed_long() early on, which would solve this issue
+> without even needing a patch like this.
 > 
-> You're right, OF code calculates it by doing:
-> 
-> 	offset = cpu_start_addr - pci_start_addr (see
-> devm_of_pci_get_host_bridge_resources())
-> 
-> While the RC_BAR2_CONFIG register expects the opposite subtraction.
-> I'll add a comment on the next revision.
+> Perhaps Mark (Rutland) can give a recap of his concerns at the time?
 
-There is no need for a new posting, either write that comment here
-and I update the code or inline the patch or just resend *this* updated
-patch to the list.
+It meant that the common runtime path had code that was only ever meant
+to run at boot time, and would also run on secondary CPUs until we
+finalized the caps, so they'd behave inconsistently across boot and
+hotplug paths. I was concerned that this was messy and would be painful
+to reason about and debug.
+
+My suggestion was that we either:
+
+(a) Had the arch code explicitly inject the entropy in the primary setup
+    path, as these patches do, or;
+
+(b) Had a new callback (e.g. __early_arch_get_random_seed_long()) that
+    the core random code only called during its initialization, separate
+    to the runtime paths.
 
 Thanks,
-Lorenzo
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
