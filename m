@@ -2,92 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C07DC13C344
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:34:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86A0A13C34C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:35:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+RyqHoBQhd/WbMj1XWWFWQO58wBtIyliyBf/2gEYKFo=; b=GiYv9QKlBw+kML
-	2MArE+TIObyztJPNLb0aze2LONnHIk71JDOGeEYnGlHEOp+lxnxstktlSasaVfiZocwjtuX9x/1T/
-	xTQLuLtr5qvUbXSqFYn/EHlmMfp24GtCAxlBNQM6AI23yVCieSfNIvRUPAAMUGT2QgZ958PLf5jAy
-	JYnGoG9dBk8J7A87jGZ5dANTwTSB9VhxR98DFOgJ4bkEOk1LGopxFtQT849e5ufzvoXK0HXtl5QmA
-	OoDWO8SlrceclNY0y8cSA3KI9EvpKtLVWMw/7HVrl6AJDOcyj7mLhNHILl9bZu/BYYBYMybqgWkft
-	pcZHTu3ooqNAHA4eCyiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Kh0xqNkRvx2scatzn+Nmpn0OAx/aKmCerB48YHeJc2U=; b=IO6oEmaK+Vxy+dy/O0XJvtiJZ
+	c0MUkrFUaA3FFsuGZXpfHhKFatt3jT/RLzcjtEbHN1FYO5s8dfCucPTwrpaAIcgP/uawcBSBABOW3
+	gc8+03VkrGa0ZdHrS3UEB+WQtiSAhSNs3UThsoW+EbgAyUq1P0RWYq3SKoj1zaHm5/ailgblC6pq5
+	2fJ6qZYF6UsDDAxj0AJNJLXpHTytVpznljVZae//l91fxcWWM6nnyfcswcWGXbIkXmAf4pFoHFAXZ
+	lpsYYL2rZCJ6E6HoeqMpNXWWlMq1G7h7p7/cpmK5dsOv0Elia76hHxXMNzXPW9m9szArU45JBlPoF
+	FdV5EXD5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriod-0008CM-7N; Wed, 15 Jan 2020 13:34:35 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iriop-0008MG-7Z; Wed, 15 Jan 2020 13:34:47 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irioR-0008Ax-4C
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:34:28 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00FDX6Ud010870; Wed, 15 Jan 2020 14:34:14 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=U+zx4gXScyllawgjqtzwHFpsgDj3TweStrajWX6U4lk=;
- b=FNDhIYJuuE0MxSyYk6SryKZVpGcOMC1NWoG+5BzIl3S9TSdO2528VA/8hyITvFNJDlbh
- l+rWOkFKVorzxRaEp70TzGUTuTLw/UKEFS8+OYAxkXQiuV55BSSFJ06og+nT6u7CFGPT
- C4ypYsNXRL5bzlAKN0cXoXBLcXpUUAld4M9FYf48BVJApS4anzsScdGaRQvTUs+SNGjY
- 8RMvy+K7UzRXhmgguBMhCxovYpk5wXdfV2e7yPQ65fWoVxW+5o4S0vCjoRwhwARtcpxk
- bXC9D/lGIS87QoJPd3faLQBiFhjB5ALRsF2Xd4QGwD8NBsTH26Az8dwTmIM+3x1mKmd7 7A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7fnuat1-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 15 Jan 2020 14:34:14 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AAEFA10002A;
- Wed, 15 Jan 2020 14:34:12 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8E66721ECEF;
- Wed, 15 Jan 2020 14:34:12 +0100 (CET)
-Received: from [10.48.0.71] (10.75.127.47) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 15 Jan
- 2020 14:34:11 +0100
-Subject: Re: [PATCH v2] dt-bindings: iio: adc: stm32-adc: convert bindings to
- json-schema
-To: Rob Herring <robh@kernel.org>
-References: <1575649028-10909-1-git-send-email-fabrice.gasnier@st.com>
- <20191217234345.GA7738@bogus> <cadc76a7-7e9d-1f0a-21fd-2d7942dbe5c9@st.com>
- <CAL_JsqJdw=WzMhp1d9E3131AuyO7in7bgR5X4NM1n7Ox4X0YXw@mail.gmail.com>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <acb1e853-c673-7b6d-3ceb-6e994ae06fe1@st.com>
-Date: Wed, 15 Jan 2020 14:34:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1irioR-0008B6-Qb; Wed, 15 Jan 2020 13:34:29 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 974A7ABE7;
+ Wed, 15 Jan 2020 13:34:21 +0000 (UTC)
+Subject: Re: [RFC 00/25] arm64: realtek: Add Xnano X5 and implement
+ TM1628/FD628/AiP1618 LED controllers
+To: linux-realtek-soc@lists.infradead.org, Rob Herring <robh+dt@kernel.org>
+References: <20191212033952.5967-1-afaerber@suse.de>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <eb075a5d-0db6-333b-cf26-64c9f7f1751e@suse.de>
+Date: Wed, 15 Jan 2020 14:34:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJdw=WzMhp1d9E3131AuyO7in7bgR5X4NM1n7Ox4X0YXw@mail.gmail.com>
+In-Reply-To: <20191212033952.5967-1-afaerber@suse.de>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-15_02:2020-01-15,
- 2020-01-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_053423_659838_15EB178C 
-X-CRM114-Status: GOOD (  23.03  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200115_053424_003044_FF84B409 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,138 +65,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lars-Peter Clausen <lars@metafoo.de>, olivier moysan <olivier.moysan@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "open list:IIO SUBSYSTEM AND DRIVERS" <linux-iio@vger.kernel.org>,
- Peter Meerwald <pmeerw@pmeerw.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX
- / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Hartmut Knaack <knaack.h@gmx.de>,
- linux-stm32@st-md-mailman.stormreply.com, Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, Dan Murphy <dmurphy@ti.com>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ linux-amlogic@lists.infradead.org, linux-leds@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/14/20 8:20 PM, Rob Herring wrote:
-> On Tue, Jan 14, 2020 at 10:02 AM Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
->>
->> On 12/18/19 12:43 AM, Rob Herring wrote:
->>> On Fri, Dec 06, 2019 at 05:17:08PM +0100, Fabrice Gasnier wrote:
->>>> Convert the STM32 ADC binding to DT schema format using json-schema
->>>>
->>>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
->>>> ---
->>>> Note: this applies on top of IIO tree currently (iio-for-5.5c).
->>>>
->>>> Changes in V2:
->>>> - Take almost all of Rob suggestions (removed reg generic description,
->>>>   added minItems, maxItems, st,max-clk-rate-hz range, drop some pipes,
->>>>   simplify clock-names, remove unneeded allOfs)
->>>> - For now, keep all in one file despite there are lots of if/thens in the
->>>>   bindings
->>>> ---
->>>>  .../devicetree/bindings/iio/adc/st,stm32-adc.txt   | 149 -------
->>>>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 454 +++++++++++++++++++++
->>>>  2 files changed, 454 insertions(+), 149 deletions(-)
->>>>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
->>>>  create mode 100644 Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
->>>
->>>
->>
->>
->> [snip]
->>
->>>> +
->>>> +      st,adc-channels:
->>>> +        description: |
->>>> +          List of single-ended channels muxed for this ADC. It can have up to:
->>>> +            - 16 channels, numbered from 0 to 15 (for in0..in15) on stm32f4
->>>> +            - 20 channels, numbered from 0 to 19 (for in0..in19) on stm32h7 and
->>>> +              stm32mp1.
->>>> +        allOf:
->>>> +          - $ref: /schemas/types.yaml#/definitions/uint32-array
->>>> +
->>
->> [snip]
->>
->>>> +
->>>> +    allOf:
->>>> +      - if:
->>>> +          properties:
->>>> +            compatible:
->>>> +              contains:
->>>> +                const: st,stm32f4-adc
->>>> +
->>>> +        then:
->>>> +          properties:
->>>> +            reg:
->>>> +              enum:
->>>> +                - 0x0
->>>> +                - 0x100
->>>> +                - 0x200
->>>> +
->>>> +            interrupts:
->>>> +              minimum: 0
->>>> +              maximum: 2
->>>> +
->>>> +            assigned-resolution-bits:
->>>> +              enum: [6, 8, 10, 12]
->>>> +              default: 12
->>>> +
->>>> +            st,adc-channels:
->>>> +              minItems: 1
->>>> +              maxItems: 16
->>>> +              minimum: 0
->>>> +              maximum: 15
->>>
->>> You are mixing array and scalar constraints here. You need:
->>>
->>> minItems: 1
->>> maxItems:16
->>> items:
->>>   minimum: 0
->>>   maximum: 15
->>>
->>> Update dtschema. It will now catch this. There's a few others too.
->>
->> Hi Rob,
->>
->> Sorry for the late reply. I updated dtschema. Now it catches it.
->>
->> I've tried your suggestion, but when I test it, I don't get any error on
->> maxItems.
->>
->> In the example: "st,adc-channels = <0>, <1>, ... more than 16 items;"
->>
->> Is it possible I face some other issue with dtschema ?
-> 
-> The problem is how "<0>, <1>" vs. "<0 1>" gets encoded. While those
-> are the same in the dtb, in yaml we have "[[0], [1]]" vs. "[[0, 1]]".
-> Making the brackets significant is helpful for some things like
-> phandle+args and 'reg' where we have a matrix of values, but for
-> arrays it just gets in the way. I think as I suggested is the right
-> form for the binding schema, and we need to either decide what's the
-> correct way for brackets or improve the tool to accept both ways.
-
-Hi Rob,
-
-Thanks for the quick answer and clarification.
-
-I'll adopt the way you suggest in V3 (the dts files already use <0 1...>
-syntax). I'll also update the example in the bindings to use it, to
-point the right form.
-
-Thanks,
-Fabrice
-
-> 
-> Rob
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gMTIuMTIuMTkgdW0gMDQ6Mzkgc2NocmllYiBBbmRyZWFzIEbDpHJiZXI6Cj4gUHJlcGVuZGVk
+IGlzIGEgbmV3IERUIGZvciBYbmFubyBYNSBPVFQgVFYgQm94LCBmZWF0dXJpbmcgYW4gRkQ2Mjgg
+ZGlzcGxheS4KWy4uLl0KPiBBbmRyZWFzIEbDpHJiZXIgKDI1KToKPiAgICBkdC1iaW5kaW5nczog
+dmVuZG9yLXByZWZpeGVzOiBBZGQgWG5hbm8KPiAgICBkdC1iaW5kaW5nczogYXJtOiByZWFsdGVr
+OiBBZGQgWG5hbm8gWDUKPiAgICBhcm02NDogZHRzOiByZWFsdGVrOiBydGQxMjk1OiBBZGQgWG5h
+bm8gWDUKW3NuaXBdCgpBcHBsaWVkIHRoZXNlIHRocmVlIHRvIGxpbnV4LXJlYWx0ZWsuZ2l0IHY1
+LjYvZHQ6CgpodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9h
+ZmFlcmJlci9saW51eC1yZWFsdGVrLmdpdC9sb2cvP2g9djUuNi9kdAoKVGhhbmtzLApBbmRyZWFz
+CgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUs
+IDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgw
+OSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
