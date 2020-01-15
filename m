@@ -2,91 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A1B713CDFA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 21:18:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 869CA13CE35
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 21:48:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1pTyrexzvjxmYpoY+qgNfobCawoKK/EnwHyC4C+KvWA=; b=WwYVapVm/XREje
-	2E6POOtv7TyanBgyIxU7Lb/2cjMjJfcyjCvvBC0KmR46yT3CMlnrb1DizKjZWLKTGFife6lusRu29
-	VnQ+yqM676EnKuvX0tpwIW5MYJHJUPa5jS1TeKOh4/DEWo+Gi/AMA9ZNJLajRbcX9y0aYtEuLC/Yo
-	/jUc1XHYSgf5dn+wntV7XqpIZrkPyKCWD2hxa1I3ET8IHclxzwNtjzLrLzUmhPLz2CZdPWV0aU1l5
-	9HxVA9LxQLSEc2lAhfBX9BmtEyFiFNwNY81Mb5eP98XTXnEu/cfFfelfGfk55Wd3hY2sNXRjm24Ue
-	aSQXtbvlZdtRMf7GcTOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KlninYoRCj8mmqsyI58zoJlHLvr7sj/+1tQwjEhf3a8=; b=bfhxNuY7UVi1FHBybGE3k7r2k
+	Wpt1eLgB8bNVBOmJ+hu2XPurekvyWoaMj7PNtOMOK3gd0aDugEx8sD0tUY6Tr0eKAinO4FrVVTVMA
+	ZSoMD0kzqV586zu7mekpb/HTZ0+fOtQNpke7RLRKQK0aVmjmi7xXdDx6i//Ynr7huNJfoa79h97ue
+	6VfiVeUlhFdhBHH8Pj+Va/Soo9gPSGC7/TgiuMlE8GnqDX0REM7o5NNX7M0a3YQiuiY1rI9gLfOgv
+	PAIICamYU1tYRGDvR4Lba8i3J/FWL+5QY2OoPaPuU9L6al6UEsI1znY2bT3vEdKfOJ3G8Wh3YAZxS
+	FdK//ubVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irp7b-0005OH-Vj; Wed, 15 Jan 2020 20:18:35 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1irpaf-0000eR-8K; Wed, 15 Jan 2020 20:48:37 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irp7L-0005KS-No
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 20:18:23 +0000
-Received: by mail-oi1-f195.google.com with SMTP id k4so16727951oik.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 12:18:18 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=15O0u5i/rLLeI7Psjs2fWQ8eJ8azzo914oeadZHzrto=;
- b=Am/5iKK1Zk0z0O1Y/J4P0CVJqnQeGi2m/m0uNiJT3DNr9lhGScpk4lHHy0v+RyKA9v
- W4S40CXKPpGulc2Q8NjPEQUKJSgo93vZX6qBuoDknG0FFj/UGp1J3blO0ya+K98lUc0y
- 4s1LWzm9VMdl0rnST1cp69mB1rgMutV5Mh5ZVXsQkYTIY8AlwstnEPG+FPjEzi87iRGp
- ZZVCjbQ/XIxAMQf376zgsBVpicMwwdwwqAsFky+lxWIGeoD88uM3mpq/Vr0koccDwtWk
- xsobWNSEm6Pt3bKFllOVhtnJX8JJRZv8iOVB2TklT3NxfSG/90b9nQ9Q0IVs/eja8q0F
- OoOw==
-X-Gm-Message-State: APjAAAXWoXYo6Hfqf4NqUCQnBgc3A2l442c7jF+dNdRnblti1B8Uv4og
- yZ/1ik9QK1+YsbZJj0g+5gdLn7w=
-X-Google-Smtp-Source: APXvYqyz0umVesroQAgF/4INjcGQBKaGwQH5vgtQnRDFgFTQSFtUxa4T2pcxZkd0BItxaqiP6gXaUQ==
-X-Received: by 2002:aca:b7c5:: with SMTP id h188mr1311726oif.100.1579119497263; 
- Wed, 15 Jan 2020 12:18:17 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n16sm6857559otk.25.2020.01.15.12.18.15
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Jan 2020 12:18:16 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 22061a
- by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Wed, 15 Jan 2020 14:18:14 -0600
-Date: Wed, 15 Jan 2020 14:18:14 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jianxin Pan <jianxin.pan@amlogic.com>
-Subject: Re: [PATCH v6 2/4] dt-bindings: power: add Amlogic secure power
- domains bindings
-Message-ID: <20200115201814.GA28654@bogus>
-References: <1579087831-94965-1-git-send-email-jianxin.pan@amlogic.com>
- <1579087831-94965-3-git-send-email-jianxin.pan@amlogic.com>
+ id 1irpaV-0000ch-Vz
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 20:48:29 +0000
+X-Originating-IP: 79.86.19.127
+Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
+ (Authenticated sender: alexandre@ghiti.fr)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 161D1240002;
+ Wed, 15 Jan 2020 20:48:18 +0000 (UTC)
+From: Alexandre Ghiti <alexandre@ghiti.fr>
+Subject: Re: linux-next: build warning after merge of the bpf-next tree
+To: Alexei Starovoitov <alexei.starovoitov@gmail.com>,
+ Zong Li <zong.li@sifive.com>
+References: <a367af4d-7267-2e94-74dc-2a2aac204080@ghiti.fr>
+ <20191018105657.4584ec67@canb.auug.org.au>
+ <20191028110257.6d6dba6e@canb.auug.org.au>
+ <mhng-0daa1a90-2bed-4b2e-833e-02cd9c0aa73f@palmerdabbelt-glaptop>
+ <d5d59f54-e391-3659-d4c0-eada50f88187@ghiti.fr>
+ <CANXhq0pn+Nq6T5dNyJiB6xvmqTnPSzo8sVfqHhGyWUURY+1ydg@mail.gmail.com>
+ <CAADnVQ+kbxpw7fxRZodTtE7AmEmRDgO9fcmMD8kKRssS8WJizA@mail.gmail.com>
+Message-ID: <6c03d212-775c-cddb-b0d0-d7b00571694b@ghiti.fr>
+Date: Wed, 15 Jan 2020 15:48:18 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1579087831-94965-3-git-send-email-jianxin.pan@amlogic.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAADnVQ+kbxpw7fxRZodTtE7AmEmRDgO9fcmMD8kKRssS8WJizA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_121819_775909_BCE7C63B 
-X-CRM114-Status: GOOD (  10.17  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200115_124828_170511_CB2517CD 
+X-CRM114-Status: GOOD (  12.31  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,36 +72,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ Daniel Borkmann <daniel@iogearbox.net>,
+ Network Development <netdev@vger.kernel.org>,
+ Palmer Dabbelt <palmerdabbelt@google.com>, Alexei Starovoitov <ast@kernel.org>,
+ "linux-kernel@vger.kernel.org List" <linux-kernel@vger.kernel.org>,
+ Linux-Next Mailing List <linux-next@vger.kernel.org>,
+ ppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Jan 2020 19:30:29 +0800, Jianxin Pan wrote:
-> Add the bindings for the Amlogic Secure power domains, controlling the
-> secure power domains.
-> 
-> The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
-> power domain registers are in secure world.
-> 
-> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
-> ---
->  .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 40 ++++++++++++++++++++++
->  include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++
->  2 files changed, 72 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->  create mode 100644 include/dt-bindings/power/meson-a1-power.h
-> 
+On 1/14/20 6:23 AM, Alexei Starovoitov wrote:
+> On Sun, Jan 12, 2020 at 8:33 PM Zong Li<zong.li@sifive.com>  wrote:
+>> I'm not quite familiar with btf, so I have no idea why there are two
+>> weak symbols be added in 8580ac9404f6 ("bpf: Process in-kernel BTF")
+> I can explain what these weak symbols are for, but that won't change
+> the fact that compiler or linker are buggy. The weak symbols should work
+> in all cases and compiler should pick correct relocation.
+> In this case it sounds that compiler picked relative relocation and failed
+> to reach zero from that address.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Sorry for the response delay: I now agree that there is nothing weird 
+about those
+relocations. All compiler/linker I took a look at (arm64, ppc64 and 
+riscv64) correctly
+emit an absolute relocation to the address 0 in case of a weak 
+unresolved symbol,
+so there's no buggy compiler/linker.
+
+And regarding ppc warning, the kernel being compiled as -pie, the 
+scripts looks
+for absolute relocations which it considers as "bad", except for one 
+that is known
+to be weak and that is ignored: I have just sent a patch to fix this 
+script so that weak
+undefined symbol relocations are not considered as bad.
+
+Thanks,
+
+Alex
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
