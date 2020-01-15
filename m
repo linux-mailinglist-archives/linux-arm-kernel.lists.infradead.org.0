@@ -2,93 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63B6C13C858
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 16:50:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5157A13C844
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 16:45:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bb75PNpeTis9DkcppKgiUokAo8mui1TDQjQ9n3Xy0Hk=; b=YK4j2yHoqJUI22
-	2ibmDqyDAkxU9W7T2gP9BwbwW802cbtpdg21HJ01rVr4cRC7EeXJdnTSRa1VFK3adJ8UeN97gOWSk
-	yyG5cZTbwav816uFiewKfB+u+QDnI50NLeNyMS95WraahAL0dHaaVjir4dTTR2BygwOTDIwS/WEXw
-	lzebMJf98P4jHKdAh20By7eq12uFHvqdTKmn1fmyhTqW/C1PoIIenNtUMFMIvvwf+a1DJrHdxFS5B
-	g9B0j4TRRx0NvwxtqbAmTTxY/MQEAP6fwRiiT2KWeCNTzFKBNDu0EJdi8egjpNEYsdVJUkfSxh/Ld
-	s7QYjDN8zte3hYhLyHlA==;
+	List-Owner; bh=wq+TibU5d1hTcaTRyqc70oH0EqQUf5kCxOFkYg8wVRE=; b=VJwAfHZcdXpAJO
+	sds4cKtoJKv2gSTJeVrqYBVQC/XatUAUxOyE6cJui/7Rbl8lhhMRlLtOuAxCprE/TEHgJfxth54lG
+	fDlaldjYF8n55r6brJZgDO5WMeDwIcGMS8ZbMhBZSX1SD4zpHLqpJJjssPJYGvKeI8ZXKHFeKA8kG
+	Naki+vBVT8c6R9nq3a8bGTiyHIZpasRAOEoH5N72djEvE2QqdjuBQvTkewM0pbouRGVRyU6YzC4CO
+	XvKCq+g9TLPLTm5wkg6Nz7DosFDJ3l4vqnO/JoE/qL5r/7Gc9sKjUTDvoX/25OilLyh16VBtgq+Zj
+	MhOIDv6IRl2bYsbpNgMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irkvx-0003lY-8P; Wed, 15 Jan 2020 15:50:17 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1irkr0-0000iC-Es; Wed, 15 Jan 2020 15:45:10 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irkvk-0002uF-G3
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 15:50:09 +0000
-Received: by mail-ot1-f66.google.com with SMTP id k14so16519275otn.4
+ id 1irkqg-0000gx-Dr
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 15:44:56 +0000
+Received: by mail-lj1-x242.google.com with SMTP id l2so19045235lja.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 07:50:04 -0800 (PST)
+ Wed, 15 Jan 2020 07:44:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=j6qO9VzKyk7Z93B4IKp3Dn6tsqDnHK6bXBO21eqtHYE=;
+ b=n+Pzcz1+IOcutRo3c4azf501upOdSlYmce/1ymEaSU6taxHi624WfiWl9E/PkPeU+W
+ zmoCV4mhSe/ekbBTOH9rK0ZM6b9XJX3eVDFdg+Ib26+TKokfrxEk7nwKpqs1Vh/p9lV2
+ zkfUyZfCadMpObcqAzsGxLv5D6KHqplT+ajemtqeJm0NFLAKjAsOfBTna07EQGagbaks
+ 7k7sN0jXSpeS6WXYZ+hSlGl4ZcnQ8+cJRknLwrE/fUyhbFZuNRTlfYkRlC26VFWGooM7
+ yO/2VPpkq7lN9T6KED6EN9smTRVKCdSFW9sGphDnN4R8oSFXQS5n7Ljxist1ok/Lzam7
+ kQ8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=B7DX59sNSuvGuHSzjzaWJDesXQ6glcdz/pP97LB2HkM=;
- b=uHzxfbWEGZTerI26RKpGT0p0fWdybw35j+d7EGMnLM+MDBwZKm4vx+7SZOMiqYaltE
- G27GpfiEJVL23hQtr3sRr48xwjM8Trqu9HlJYQ/F9dBhvH1ulE5A5HeXAZHwDBV/B9L4
- ZfCMy9QCBscjSFrjApoYw4gnF7BH37VvL3dE7/B6j2BvEL2Lv3TEqg2WFwN82UlOj/Ou
- xBuYiUtA07YMN4dNBACwRp3EDtU9Iq//hYmeTCq6FDHq5XkGa0Wiwc9RgRd3AQD3PshK
- fGZhL/UDd4rJX5PQAZqYcKHtJeYdFoKkgbeEno9IEoKpFARbmCKOUrVm7+XSJ5eY3QAw
- DUOQ==
-X-Gm-Message-State: APjAAAVqPgrVG9zR5zDy2cPZ6usSjmvzfMvNj01vAVId+ascKsWqRjYd
- V3Ysg6qdjHpHPx9XrIUFjenkiQ4=
-X-Google-Smtp-Source: APXvYqxgmXyMJX/KNvymK/ouDHfr+WKg06Y5JLXqsLzIYCQbvnYRUwQHvnfHhYYkYByq7Gbz7vUJZQ==
-X-Received: by 2002:a05:6830:1515:: with SMTP id
- k21mr3029382otp.177.1579103403442; 
- Wed, 15 Jan 2020 07:50:03 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a65sm6655061otb.68.2020.01.15.07.50.02
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Jan 2020 07:50:02 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 22040c
- by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Wed, 15 Jan 2020 09:43:35 -0600
-Date: Wed, 15 Jan 2020 09:43:35 -0600
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2 4/7] dt-bindings: spi: imx: Add
- i.MX8MM/i.MX8MN/i.MX8MP compatible
-Message-ID: <20200115154335.GA15650@bogus>
-References: <1578893602-14395-1-git-send-email-Anson.Huang@nxp.com>
- <1578893602-14395-4-git-send-email-Anson.Huang@nxp.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=j6qO9VzKyk7Z93B4IKp3Dn6tsqDnHK6bXBO21eqtHYE=;
+ b=SpgRMovt0bPDaRd5ao5ChxIAh5wYCxMrl1F4HqoZ/OiSROtypsqqtMjsR4dsaJdVOI
+ lbG8DgQLwyo7MHlk7V9aMieZEqfMx/uLxu6TjtQhGiVzfN/GpUN3AV4FLz3UPfUisTni
+ zvWMcfJeDreuZuZ34HoWwc2HUCjXUt4m2yZMso7aYOcC4h+w0lWn8e6JVnsOHYso8hDq
+ REbGfXXtnGylliHnzv2hK8L97adebJ9smJ8Jhnj+MtuTXnudl8n5G0skuuOXCCHYVQfm
+ D42UsGuz4CWx18StZdcnYjrTqJB7lWKLmRsbG48CIcuXuOrFpXL4UOP7qhX9vWD5YWlq
+ /M5g==
+X-Gm-Message-State: APjAAAWktxmz6d8NaH6ECu4obuGv7p5thI2kZb3HPhYdOqe3BpEoL5Vm
+ TKKTyEFXhKtfwUD2lAohrU4rtiyWIG+osatoOE4=
+X-Google-Smtp-Source: APXvYqySLu2yqOOpQ0eFNaIf6kY20xHX68+A3EN+yMINPWehdz7Nm1bbK7aAWTU/lZY/OfC9pZD+rINYCV6EB0c4GDk=
+X-Received: by 2002:a2e:8197:: with SMTP id e23mr2177769ljg.250.1579103088404; 
+ Wed, 15 Jan 2020 07:44:48 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578893602-14395-4-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1579052348-32167-1-git-send-email-Anson.Huang@nxp.com>
+ <1579052348-32167-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1579052348-32167-2-git-send-email-Anson.Huang@nxp.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 15 Jan 2020 12:44:35 -0300
+Message-ID: <CAOMZO5C7wKF8ojMBPuQZYtBK8W+vwXe8PaL5n-Mo74gF1HD6Tg@mail.gmail.com>
+Subject: Re: [PATCH V9 2/3] pinctrl: freescale: Add i.MX8MP pinctrl driver
+ support
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_075004_554991_8A6C7ECE 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200115_074450_468364_8EB6A9DB 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,58 +95,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ulf.hansson@linaro.org, marcel.ziswiler@toradex.com,
- angus@akkea.ca, srinivas.kandagatla@linaro.org,
- manivannan.sadhasivam@linaro.org, leonard.crestez@nxp.com, festevam@gmail.com,
- richard.hu@technexion.com, andrew.smirnov@gmail.com, rabeeh@solid-run.com,
- Linux-imx@nxp.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- broonie@kernel.org, daniel.baluta@nxp.com,
- linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
- rjones@gateworks.com, cosmin.stoica@nxp.com, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org, vkoul@kernel.org,
- kernel@pengutronix.de, dmaengine@vger.kernel.org, jun.li@nxp.com,
- shawnguo@kernel.org, l.stach@pengutronix.de
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, marcin.juszkiewicz@linaro.org,
+ NXP Linux Team <Linux-imx@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, maxime@cerno.tech,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Dong Aisheng <aisheng.dong@nxp.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Dinh Nguyen <dinguyen@kernel.org>,
+ Sascha Hauer <kernel@pengutronix.de>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 01:33:19PM +0800, Anson Huang wrote:
-> Add compatbile for imx8mm/imx8mn/imx8mp.
-
-checkpatch reports a typo.
-
-Otherwise,
-
-Acked-by: Rob Herring <robh@kernel.org>
-
-> 
+On Tue, Jan 14, 2020 at 10:43 PM Anson Huang <Anson.Huang@nxp.com> wrote:
+>
+> Add the pinctrl driver support for i.MX8MP.
+>
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> New patch
-> ---
->  Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> index 2d32641..33bc58f 100644
-> --- a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> +++ b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> @@ -10,7 +10,10 @@ Required properties:
->    - "fsl,imx35-cspi" for SPI compatible with the one integrated on i.MX35
->    - "fsl,imx51-ecspi" for SPI compatible with the one integrated on i.MX51
->    - "fsl,imx53-ecspi" for SPI compatible with the one integrated on i.MX53 and later Soc
-> -  - "fsl,imx8mq-ecspi" for SPI compatible with the one integrated on i.MX8M
-> +  - "fsl,imx8mq-ecspi" for SPI compatible with the one integrated on i.MX8MQ
-> +  - "fsl,imx8mm-ecspi" for SPI compatible with the one integrated on i.MX8MM
-> +  - "fsl,imx8mn-ecspi" for SPI compatible with the one integrated on i.MX8MN
-> +  - "fsl,imx8mp-ecspi" for SPI compatible with the one integrated on i.MX8MP
->  - reg : Offset and length of the register set for the device
->  - interrupts : Should contain CSPI/eCSPI interrupt
->  - clocks : Clock specifiers for both ipg and per clocks.
-> -- 
-> 2.7.4
-> 
+> Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
