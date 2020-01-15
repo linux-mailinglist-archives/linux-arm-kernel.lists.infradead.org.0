@@ -2,84 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E8513B965
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 07:16:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2843913B9A9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 07:35:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dJTxt1mvfgMa2lzzAUawasKfpeKrcLVMg+yZ2rlTT3M=; b=I7+y/AzunFRDPod+OptbMTbNl
-	xTRMijPKRiN195PV2jATOlcTJA7FE9tcSDl0NGa2YyELUCBjhBOdutjGpjvpXbDE8ZqV4W2mwV5vO
-	NPD5n/PQgF7g+kgy6QiRCzThmot3yovDrpIiTJgKOGfZeRbtbvU867hL53Y30pbEN3GMmkk3Tlje+
-	aK7tjVpGiAlDM55ujIIISlCYFKGHVmVZ4DZ8mzaVBaPbRWdRmf2+6ZjGe/ocdUPO5EQC3TtAdZGUa
-	BKkXxq2w47nvsDP2hAj3a8B03SCKquCDfFbopl03UCFMvff3a/IBiScbf8L/2c+TfJrtSjiRlMwEW
-	ofPJI1DPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nr5PUSorSL4LDqxYMAPiaW9HKiBFsTdG2QvC9iYDOK0=; b=eGpeM+C6hUTuJm
+	xHuVg45l/bOxYWa7uujSDISdLPTRM7k+HzFg4KUN5xPxcwXmLW35orLZArCXWadNGYXHFX5H5bLDk
+	Bn89Vg6TE0hdcOu4iZzdFQyTyo3mBKRnvoE3sWFtPbNuP4CL03UuHO+p67vv+Ac6Ar6JbZ7JZnSO4
+	xGlwWIGKOVUOeZZfzAGpd13RKiyevFNynxnX+hzpmr2YcAUhjKdUvtjJvzhP/pVTyOEcnBalp0z0C
+	8x1UC8REit4xeskYXzLnzKsyzpIPaW9vZideior68QldlyRSkIC0Ee/zUPdrzFun6nfY3h6sFTvrb
+	jxKlSTh5gfC0GqoG5iIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irbyK-0002eE-MK; Wed, 15 Jan 2020 06:16:08 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1ircGq-0008Hz-I7; Wed, 15 Jan 2020 06:35:16 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irbyB-0002d5-OJ
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 06:16:02 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 47yHBT0bNKz9v9Dm;
- Wed, 15 Jan 2020 07:15:45 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=UntR+ovd; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id uRhu0hEJc6dc; Wed, 15 Jan 2020 07:15:45 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 47yHBS5m1Pz9v9Dk;
- Wed, 15 Jan 2020 07:15:44 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1579068944; bh=dLb+n74DT6jZUD4ec0gfhmKuZ7wdMUymXTZD+f3ESjs=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=UntR+ovdUgNuiOCdaG492qpGkB1inQlUzwXmUjovM/oqM/Vp3a/K3ppEYvczfO2ls
- w8S4Mabi06ZQ75T5HTmKpob6aRUwzfUY5vsQRUL7Zw5MJvFZAX1RNry5Mv2FWFVr5b
- rxL2XadbeDGNcEyFm+pdcDnM/FQoG26VHqpC1L64=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 9A0E88B77E;
- Wed, 15 Jan 2020 07:15:45 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id 3sLM6Sb2GP2Q; Wed, 15 Jan 2020 07:15:45 +0100 (CET)
-Received: from [172.25.230.100] (po15451.idsi0.si.c-s.fr [172.25.230.100])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 6976D8B774;
- Wed, 15 Jan 2020 07:15:45 +0100 (CET)
-Subject: Re: [RFC PATCH v3 08/12] lib: vdso: allow arches to provide vdso data
- pointer
-To: Thomas Gleixner <tglx@linutronix.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
- arnd@arndb.de, vincenzo.frascino@arm.com, luto@kernel.org
-References: <cover.1578934751.git.christophe.leroy@c-s.fr>
- <381e547dbb3c48fd39d6cf208033bba38ad048fb.1578934751.git.christophe.leroy@c-s.fr>
- <87ftghbpuu.fsf@nanos.tec.linutronix.de>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <d2de3211-9d7c-513e-fe0f-8bdce623fb65@c-s.fr>
-Date: Wed, 15 Jan 2020 07:15:44 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ircGY-0008DE-V4
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 06:35:01 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id l35so7225093pje.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Jan 2020 22:34:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D5GhYRvIOMA2/+JR2nlwsRzLbhoIpTMGVMbFCi3UIBs=;
+ b=dp7vX0gOdOjgraCjH15ptRBASWxHx8vH5UM+gs/puGayIsIclEQNcCpMBvIghfJC6n
+ qH1U/GTtuBRvX+dqpoA19+aZ/BbAln47bDfj6kMogmJiYGZh18zbm0NTVrR1a/3lL/yu
+ Q3c+s0w6F9c8trBg4NeJOfLvHwQKeYx3uet9k=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D5GhYRvIOMA2/+JR2nlwsRzLbhoIpTMGVMbFCi3UIBs=;
+ b=qqFu/inJPQgm0Dt6V3MRbTSdtu5vnvvjDRb/47U1jhG8n0LWdl8Y1pjGsA0fzVcPP8
+ zKG6VYnf9LLeoCq91mjgs4B+o3tNDA+zv+BwVvXZ50smPQtvef4KNJStI4QhPScitjIZ
+ aQ8DtLxFxDtFUnNpQDVydbyY0WWZ61Ug4v/Uhc9GhmMkT/7KZH1tGMR2qbg+iWJCJxO+
+ cb8b5V7U1bZbqiEZh1FVO/E85XpmQxTb7Hdg6gpG30awRmDLcdifpij7BPCfLxZrHuPm
+ 5es0/JRL0ucrYuq07WI7+LwQuycn7eSt9ZCq4eyqecq1IW1/DuA2QHThuVgRprJ/MahY
+ Ar7w==
+X-Gm-Message-State: APjAAAWDYNYoyQks4yQOkq1EepIWILMsha/s42G0AM3rgwX+NRedPufp
+ wNosBziCzo9JSnBQlfTTwjtXcg==
+X-Google-Smtp-Source: APXvYqwKI/7dzhC8e0EuYYRYvjO/GqzP0ubI3Fm+dXZK9GjZqUdAHWerWKeczCJxHqoop4QP9ulajw==
+X-Received: by 2002:a17:902:7d95:: with SMTP id
+ a21mr24721972plm.198.1579070097312; 
+ Tue, 14 Jan 2020 22:34:57 -0800 (PST)
+Received: from hsinyi-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:b852:bd51:9305:4261])
+ by smtp.gmail.com with ESMTPSA id v15sm4848146pju.15.2020.01.14.22.34.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Jan 2020 22:34:56 -0800 (PST)
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH v5] reboot: support offline CPUs before reboot
+Date: Wed, 15 Jan 2020 14:34:10 +0800
+Message-Id: <20200115063410.131692-1-hsinyi@chromium.org>
+X-Mailer: git-send-email 2.25.0.rc1.283.g88dfdc4193-goog
 MIME-Version: 1.0
-In-Reply-To: <87ftghbpuu.fsf@nanos.tec.linutronix.de>
-Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_221600_084173_F48D9E0A 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20200114_223459_034399_A2890098 
+X-CRM114-Status: GOOD (  19.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,45 +91,373 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ sparclinux@vger.kernel.org, Guenter Roeck <groeck@chromium.org>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ linux-s390@vger.kernel.org, linux-csky@vger.kernel.org,
+ Aaro Koskinen <aaro.koskinen@nokia.com>, Fenghua Yu <fenghua.yu@intel.com>,
+ linux-pm@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Stephen Boyd <swboyd@chromium.org>, Josh Poimboeuf <jpoimboe@redhat.com>,
+ Pavankumar Kondeti <pkondeti@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Jiri Kosina <jkosina@suse.cz>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAxNS8wMS8yMDIwIMOgIDAwOjA2LCBUaG9tYXMgR2xlaXhuZXIgYSDDqWNyaXTCoDoKPiBD
-aHJpc3RvcGhlIExlcm95IDxjaHJpc3RvcGhlLmxlcm95QGMtcy5mcj4gd3JpdGVzOgo+PiAgIAo+
-PiAgIHN0YXRpYyBfX21heWJlX3VudXNlZCBpbnQKPj4gKyNpZmRlZiBWRFNPX0dFVFNfVkRfUFRS
-X0ZST01fQVJDSAo+PiArX19jdmRzb19jbG9ja19nZXR0aW1lX2NvbW1vbihjb25zdCBzdHJ1Y3Qg
-dmRzb19kYXRhICp2ZCwgY2xvY2tpZF90IGNsb2NrLAo+PiArCQkgICAgICBzdHJ1Y3QgX19rZXJu
-ZWxfdGltZXNwZWMgKnRzKQo+PiArewo+PiArI2Vsc2UKPj4gICBfX2N2ZHNvX2Nsb2NrX2dldHRp
-bWVfY29tbW9uKGNsb2NraWRfdCBjbG9jaywgc3RydWN0IF9fa2VybmVsX3RpbWVzcGVjICp0cykK
-Pj4gICB7Cj4+ICAgCWNvbnN0IHN0cnVjdCB2ZHNvX2RhdGEgKnZkID0gX19hcmNoX2dldF92ZHNv
-X2RhdGEoKTsKPj4gKyNlbmRpZgo+PiAgIAl1MzIgbXNrOwo+IAo+IElmIHdlIGRvIHRoYXQsIHRo
-ZW4gdGhlcmUgaXMgbm8gcG9pbnQgaW4gcHJvcGFnYXRpbmcgdGhpcyB0byB0aGUgaW5uZXIKPiBm
-dW5jdGlvbnMuIEl0J3MgcGVyZmVjdGx5IGZpbmUgdG8gaGF2ZSB0aGlzIGRpc3RpbmN0aW9uIGF0
-IHRoZSBvdXRlcm1vc3QKPiBsZXZlbC4KCkluIHYyLCBJIGRpZCBpdCBhdCB0aGUgYXJjaCBsZXZl
-bCAoc2VlIApodHRwczovL3BhdGNod29yay5vemxhYnMub3JnL3BhdGNoLzEyMTQ5ODMvKS4gQW5k
-eSB3YXMgY29uY2VybmVkIGFib3V0IAppdCBiZWluZyBzdWJvcHRpbWFsIGZvciBhcmNoZXMgd2hp
-Y2ggKHVubGlrZSBwb3dlcnBjKSBoYXZlIFBDIHJlbGF0ZWQgCmRhdGEgYWRkcmVzc2luZyBtb2Rl
-LgoKV291bGRuJ3QgaXQgYmUgdGhlIHNhbWUgaXNzdWUgaWYgZG9pbmcgaXQgYXQgdGhlIG91dGVy
-bW9zdCBsZXZlbCBvZiAKZ2VuZXJpYyBWRFNPID8KCj4gCj4gQXMgYSByZWxhdGVkIHF1ZXN0aW9u
-LCBJIG5vdGljZWQgdGhhdCB5b3Uga2VlcCBhbGwgdGhhdCBBU00gdm9vZG9vIGluCj4gdGhlIFBQ
-QyBzcGVjaWZpYyBjb2RlIHdoaWNoIHByb3ZpZGVzIHRoZSBhY3R1YWwgZW50cnkgcG9pbnRzLiBJ
-cyB0aGF0Cj4gQVNNIGNvZGUgcmVhbGx5IHN0aWxsIG5lY2Vzc2FyeT8gQWxsIGN1cnJlbnQgdXNl
-cnMgb2YgdGhlIGdlbmVyaWMgVkRTTwo+IGp1c3QgZG8gc29tZXRoaW5nIGxpa2U6Cj4gCj4gaW50
-IF9fdmRzb19jbG9ja19nZXR0aW1lKGNsb2NraWRfdCBjbG9jaywgc3RydWN0IF9fa2VybmVsX3Rp
-bWVzcGVjICp0cykKPiB7Cj4gICAgICAgICAgcmV0dXJuIF9fY3Zkc29fY2xvY2tfZ2V0dGltZShj
-bG9jaywgdHMpOwo+IH0KPiAKPiBpbiB0aGUgYXJjaGl0ZWN0dXJlIGNvZGUuIElzIHRoZXJlIGEg
-cmVhc29uIHdoeSB0aGlzIGNhbid0IHdvcmsgb24gUFBDPwoKVGhlIHByb2JsZW0gd2l0aCBwb3dl
-cnBjIGlzIHRoYXQgVkRTTyBmdW5jdGlvbnMgaGF2ZSB0byAoanVzdCBsaWtlIApzeXN0ZW0gY2Fs
-bHMpIHNldCB0aGUgU08gYml0IGluIENSIHJlZ2lzdGVyIGluIGNhc2Ugb2YgZXJyb3IsIG9yIGNs
-ZWFyIAppdCBpZiBubyBlcnJvci4gVGhlcmUgaXMgbm8gd2F5IHRvIGRvIHRoYXQgZnJvbSB0aGUg
-QyBmdW5jdGlvbiwgYmVjYXVzZSAKdGhlcmUgaXMgbm8gd2F5IHRvIHRlbGwgR0NDIHRvIG5vdCBw
-bGF5IHVwIHdpdGggQ1IgcmVnaXN0ZXIgb24gZnVuY3Rpb24gCnJldHVybi4KClJlZmVyIGRpc2N1
-c3Npb24gYXQgaHR0cHM6Ly9nY2MuZ251Lm9yZy9idWd6aWxsYS9zaG93X2J1Zy5jZ2k/aWQ9OTI3
-NjkKCkNocmlzdG9waGUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Currently system reboots uses architecture specific codes (smp_send_stop)
+to offline non reboot CPUs. Most architecture's implementation is looping
+through all non reboot online CPUs and call ipi function to each of them. Some
+architecture like arm64, arm, and x86... would set offline masks to cpu without
+really offline them. This causes some race condition and kernel warning comes
+out sometimes when system reboots.
+
+This patch adds a config ARCH_OFFLINE_CPUS_ON_REBOOT, which would offline cpus in
+migrate_to_reboot_cpu(). If non reboot cpus are all offlined here, the loop for
+checking online cpus would be an empty loop. If architecture don't enable this
+config, or some cpus somehow fails to offline, it would fallback to ipi
+function.
+
+Opt in this config for architectures that support CONFIG_HOTPLUG_CPU.
+
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+---
+Change from v4:
+* fix a few nits: naming, comments, remove Kconfig text...
+
+Change from v3:
+* Opt in config for architectures that support CONFIG_HOTPLUG_CPU
+* Merge function offline_secondary_cpus() and freeze_secondary_cpus()
+  with an additional flag.
+
+Change from v2:
+* Add another config instead of configed by CONFIG_HOTPLUG_CPU
+
+Previous related discussion on list:
+https://lore.kernel.org/lkml/20190727164450.GA11726@roeck-us.net/
+https://lore.kernel.org/patchwork/patch/1117201/
+---
+ arch/Kconfig                          |  5 +++++
+ arch/arm/Kconfig                      |  1 +
+ arch/arm64/Kconfig                    |  1 +
+ arch/arm64/kernel/hibernate.c         |  2 +-
+ arch/csky/Kconfig                     |  1 +
+ arch/ia64/Kconfig                     |  1 +
+ arch/mips/Kconfig                     |  1 +
+ arch/parisc/Kconfig                   |  1 +
+ arch/powerpc/Kconfig                  |  1 +
+ arch/s390/Kconfig                     |  1 +
+ arch/sh/Kconfig                       |  1 +
+ arch/sparc/Kconfig                    |  1 +
+ arch/x86/Kconfig                      |  1 +
+ arch/xtensa/Kconfig                   |  1 +
+ drivers/power/reset/sc27xx-poweroff.c |  2 +-
+ include/linux/cpu.h                   |  9 ++++++---
+ kernel/cpu.c                          | 12 ++++++++----
+ kernel/reboot.c                       |  8 ++++++++
+ 18 files changed, 41 insertions(+), 9 deletions(-)
+
+diff --git a/arch/Kconfig b/arch/Kconfig
+index 48b5e103bdb0..a8db7999cd4c 100644
+--- a/arch/Kconfig
++++ b/arch/Kconfig
+@@ -255,6 +255,11 @@ config ARCH_HAS_UNCACHED_SEGMENT
+ 	select ARCH_HAS_DMA_PREP_COHERENT
+ 	bool
+ 
++# Select to do a full offline on secondary CPUs before reboot.
++config ARCH_OFFLINE_CPUS_ON_REBOOT
++	bool
++	depends on HOTPLUG_CPU
++
+ # Select if arch init_task must go in the __init_task_data section
+ config ARCH_TASK_STRUCT_ON_STACK
+ 	bool
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 69950fb5be64..d53cc8cb47e3 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -28,6 +28,7 @@ config ARM
+ 	select ARCH_KEEP_MEMBLOCK if HAVE_ARCH_PFN_VALID || KEXEC
+ 	select ARCH_MIGHT_HAVE_PC_PARPORT
+ 	select ARCH_NO_SG_CHAIN if !ARM_HAS_SG_CHAIN
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_OPTIONAL_KERNEL_RWX if ARCH_HAS_STRICT_KERNEL_RWX
+ 	select ARCH_OPTIONAL_KERNEL_RWX_DEFAULT if CPU_V7
+ 	select ARCH_SUPPORTS_ATOMIC_RMW
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 9af26ac75d19..9f913bc5c1f6 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -61,6 +61,7 @@ config ARM64
+ 	select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPTION
+ 	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
+ 	select ARCH_KEEP_MEMBLOCK
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_USE_CMPXCHG_LOCKREF
+ 	select ARCH_USE_QUEUED_RWLOCKS
+ 	select ARCH_USE_QUEUED_SPINLOCKS
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index 590963c9c609..f7245dfa09d9 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -581,5 +581,5 @@ int hibernate_resume_nonboot_cpu_disable(void)
+ 		return -ENODEV;
+ 	}
+ 
+-	return freeze_secondary_cpus(sleep_cpu);
++	return freeze_secondary_cpus(sleep_cpu, false);
+ }
+diff --git a/arch/csky/Kconfig b/arch/csky/Kconfig
+index 4acef4088de7..0f03e5c3f2fc 100644
+--- a/arch/csky/Kconfig
++++ b/arch/csky/Kconfig
+@@ -5,6 +5,7 @@ config CSKY
+ 	select ARCH_HAS_DMA_PREP_COHERENT
+ 	select ARCH_HAS_SYNC_DMA_FOR_CPU
+ 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_USE_BUILTIN_BSWAP
+ 	select ARCH_USE_QUEUED_RWLOCKS if NR_CPUS>2
+ 	select COMMON_CLK
+diff --git a/arch/ia64/Kconfig b/arch/ia64/Kconfig
+index bab7cd878464..f12b4b11ee98 100644
+--- a/arch/ia64/Kconfig
++++ b/arch/ia64/Kconfig
+@@ -10,6 +10,7 @@ config IA64
+ 	bool
+ 	select ARCH_MIGHT_HAVE_PC_PARPORT
+ 	select ARCH_MIGHT_HAVE_PC_SERIO
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ACPI
+ 	select ACPI_NUMA if NUMA
+ 	select ARCH_SUPPORTS_ACPI
+diff --git a/arch/mips/Kconfig b/arch/mips/Kconfig
+index b6b5f83af169..9bb2556d21fc 100644
+--- a/arch/mips/Kconfig
++++ b/arch/mips/Kconfig
+@@ -8,6 +8,7 @@ config MIPS
+ 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
+ 	select ARCH_HAS_UBSAN_SANITIZE_ALL
+ 	select ARCH_HAS_FORTIFY_SOURCE
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_SUPPORTS_UPROBES
+ 	select ARCH_USE_BUILTIN_BSWAP
+ 	select ARCH_USE_CMPXCHG_LOCKREF if 64BIT
+diff --git a/arch/parisc/Kconfig b/arch/parisc/Kconfig
+index 71034b54d74e..41609f00b057 100644
+--- a/arch/parisc/Kconfig
++++ b/arch/parisc/Kconfig
+@@ -13,6 +13,7 @@ config PARISC
+ 	select ARCH_HAS_STRICT_KERNEL_RWX
+ 	select ARCH_HAS_UBSAN_SANITIZE_ALL
+ 	select ARCH_NO_SG_CHAIN
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_SUPPORTS_MEMORY_FAILURE
+ 	select RTC_CLASS
+ 	select RTC_DRV_GENERIC
+diff --git a/arch/powerpc/Kconfig b/arch/powerpc/Kconfig
+index 658e0324d256..a6b76dd82a2d 100644
+--- a/arch/powerpc/Kconfig
++++ b/arch/powerpc/Kconfig
+@@ -142,6 +142,7 @@ config PPC
+ 	select ARCH_KEEP_MEMBLOCK
+ 	select ARCH_MIGHT_HAVE_PC_PARPORT
+ 	select ARCH_MIGHT_HAVE_PC_SERIO
++	select ARCH_OFFLINE_CPUS_ON_REBOOT	if HOTPLUG_CPU
+ 	select ARCH_OPTIONAL_KERNEL_RWX		if ARCH_HAS_STRICT_KERNEL_RWX
+ 	select ARCH_SUPPORTS_ATOMIC_RMW
+ 	select ARCH_USE_BUILTIN_BSWAP
+diff --git a/arch/s390/Kconfig b/arch/s390/Kconfig
+index 287714d51b47..19eec37b1682 100644
+--- a/arch/s390/Kconfig
++++ b/arch/s390/Kconfig
+@@ -102,6 +102,7 @@ config S390
+ 	select ARCH_INLINE_WRITE_UNLOCK_IRQ
+ 	select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE
+ 	select ARCH_KEEP_MEMBLOCK
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_SAVE_PAGE_KEYS if HIBERNATION
+ 	select ARCH_STACKWALK
+ 	select ARCH_SUPPORTS_ATOMIC_RMW
+diff --git a/arch/sh/Kconfig b/arch/sh/Kconfig
+index 9ece111b0254..4ed1e0ca83a2 100644
+--- a/arch/sh/Kconfig
++++ b/arch/sh/Kconfig
+@@ -18,6 +18,7 @@ config SUPERH
+ 	select ARCH_HAVE_CUSTOM_GPIO_H
+ 	select ARCH_HAVE_NMI_SAFE_CMPXCHG if (GUSA_RB || CPU_SH4A)
+ 	select ARCH_HAS_GCOV_PROFILE_ALL
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select PERF_USE_VMALLOC
+ 	select HAVE_DEBUG_KMEMLEAK
+ 	select HAVE_KERNEL_GZIP
+diff --git a/arch/sparc/Kconfig b/arch/sparc/Kconfig
+index e8c3ea01c12f..f31700309621 100644
+--- a/arch/sparc/Kconfig
++++ b/arch/sparc/Kconfig
+@@ -30,6 +30,7 @@ config SPARC
+ 	select RTC_SYSTOHC
+ 	select HAVE_ARCH_JUMP_LABEL if SPARC64
+ 	select GENERIC_IRQ_SHOW
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_WANT_IPC_PARSE_VERSION
+ 	select GENERIC_PCI_IOMAP
+ 	select HAVE_NMI_WATCHDOG if SPARC64
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index b595ecb21a0f..e8edab974f67 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -85,6 +85,7 @@ config X86
+ 	select ARCH_MIGHT_HAVE_ACPI_PDC		if ACPI
+ 	select ARCH_MIGHT_HAVE_PC_PARPORT
+ 	select ARCH_MIGHT_HAVE_PC_SERIO
++	select ARCH_OFFLINE_CPUS_ON_REBOOT	if HOTPLUG_CPU
+ 	select ARCH_STACKWALK
+ 	select ARCH_SUPPORTS_ACPI
+ 	select ARCH_SUPPORTS_ATOMIC_RMW
+diff --git a/arch/xtensa/Kconfig b/arch/xtensa/Kconfig
+index 1c645172b4b5..c862dfa69ed9 100644
+--- a/arch/xtensa/Kconfig
++++ b/arch/xtensa/Kconfig
+@@ -7,6 +7,7 @@ config XTENSA
+ 	select ARCH_HAS_SYNC_DMA_FOR_CPU if MMU
+ 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE if MMU
+ 	select ARCH_HAS_UNCACHED_SEGMENT if MMU
++	select ARCH_OFFLINE_CPUS_ON_REBOOT if HOTPLUG_CPU
+ 	select ARCH_USE_QUEUED_RWLOCKS
+ 	select ARCH_USE_QUEUED_SPINLOCKS
+ 	select ARCH_WANT_FRAME_POINTERS
+diff --git a/drivers/power/reset/sc27xx-poweroff.c b/drivers/power/reset/sc27xx-poweroff.c
+index 29fb08b8faa0..d6cdf837235c 100644
+--- a/drivers/power/reset/sc27xx-poweroff.c
++++ b/drivers/power/reset/sc27xx-poweroff.c
+@@ -30,7 +30,7 @@ static void sc27xx_poweroff_shutdown(void)
+ #ifdef CONFIG_PM_SLEEP_SMP
+ 	int cpu = smp_processor_id();
+ 
+-	freeze_secondary_cpus(cpu);
++	freeze_secondary_cpus(cpu, false);
+ #endif
+ }
+ 
+diff --git a/include/linux/cpu.h b/include/linux/cpu.h
+index 1ca2baf817ed..9c62274a4db9 100644
+--- a/include/linux/cpu.h
++++ b/include/linux/cpu.h
+@@ -137,11 +137,14 @@ static inline void cpu_hotplug_done(void) { cpus_write_unlock(); }
+ static inline void get_online_cpus(void) { cpus_read_lock(); }
+ static inline void put_online_cpus(void) { cpus_read_unlock(); }
+ 
++#if defined(CONFIG_PM_SLEEP_SMP) || defined(CONFIG_ARCH_OFFLINE_CPUS_ON_REBOOT)
++extern int freeze_secondary_cpus(int primary, bool reboot);
++#endif
++
+ #ifdef CONFIG_PM_SLEEP_SMP
+-extern int freeze_secondary_cpus(int primary);
+ static inline int disable_nonboot_cpus(void)
+ {
+-	return freeze_secondary_cpus(0);
++	return freeze_secondary_cpus(0, false);
+ }
+ extern void enable_nonboot_cpus(void);
+ 
+@@ -152,7 +155,7 @@ static inline int suspend_disable_secondary_cpus(void)
+ 	if (IS_ENABLED(CONFIG_PM_SLEEP_SMP_NONZERO_CPU))
+ 		cpu = -1;
+ 
+-	return freeze_secondary_cpus(cpu);
++	return freeze_secondary_cpus(cpu, false);
+ }
+ static inline void suspend_enable_secondary_cpus(void)
+ {
+diff --git a/kernel/cpu.c b/kernel/cpu.c
+index 9c706af713fb..52d04e4e1aab 100644
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -1209,10 +1209,10 @@ int cpu_up(unsigned int cpu)
+ }
+ EXPORT_SYMBOL_GPL(cpu_up);
+ 
+-#ifdef CONFIG_PM_SLEEP_SMP
++#if defined(CONFIG_PM_SLEEP_SMP) || defined(CONFIG_ARCH_OFFLINE_CPUS_ON_REBOOT)
+ static cpumask_var_t frozen_cpus;
+ 
+-int freeze_secondary_cpus(int primary)
++int freeze_secondary_cpus(int primary, bool reboot)
+ {
+ 	int cpu, error = 0;
+ 
+@@ -1237,11 +1237,13 @@ int freeze_secondary_cpus(int primary)
+ 		if (cpu == primary)
+ 			continue;
+ 
+-		if (pm_wakeup_pending()) {
++#ifdef CONFIG_PM_SLEEP
++		if (!reboot && pm_wakeup_pending()) {
+ 			pr_info("Wakeup pending. Abort CPU freeze\n");
+ 			error = -EBUSY;
+ 			break;
+ 		}
++#endif
+ 
+ 		trace_suspend_resume(TPS("CPU_OFF"), cpu, true);
+ 		error = _cpu_down(cpu, 1, CPUHP_OFFLINE);
+@@ -1250,7 +1252,9 @@ int freeze_secondary_cpus(int primary)
+ 			cpumask_set_cpu(cpu, frozen_cpus);
+ 		else {
+ 			pr_err("Error taking CPU%d down: %d\n", cpu, error);
+-			break;
++			/* When rebooting, offline as many CPUs as possible. */
++			if (!reboot)
++				break;
+ 		}
+ 	}
+ 
+diff --git a/kernel/reboot.c b/kernel/reboot.c
+index c4d472b7f1b4..12f643b66e57 100644
+--- a/kernel/reboot.c
++++ b/kernel/reboot.c
+@@ -7,6 +7,7 @@
+ 
+ #define pr_fmt(fmt)	"reboot: " fmt
+ 
++#include <linux/cpu.h>
+ #include <linux/ctype.h>
+ #include <linux/export.h>
+ #include <linux/kexec.h>
+@@ -220,7 +221,9 @@ void migrate_to_reboot_cpu(void)
+ 	/* The boot cpu is always logical cpu 0 */
+ 	int cpu = reboot_cpu;
+ 
++#if !IS_ENABLED(CONFIG_ARCH_OFFLINE_CPUS_ON_REBOOT)
+ 	cpu_hotplug_disable();
++#endif
+ 
+ 	/* Make certain the cpu I'm about to reboot on is online */
+ 	if (!cpu_online(cpu))
+@@ -231,6 +234,11 @@ void migrate_to_reboot_cpu(void)
+ 
+ 	/* Make certain I only run on the appropriate processor */
+ 	set_cpus_allowed_ptr(current, cpumask_of(cpu));
++
++#if IS_ENABLED(CONFIG_ARCH_OFFLINE_CPUS_ON_REBOOT)
++	/* Offline other cpus if possible */
++	freeze_secondary_cpus(cpu, true);
++#endif
+ }
+ 
+ /**
+-- 
+2.25.0.rc1.283.g88dfdc4193-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
