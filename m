@@ -2,60 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1691A13BCE4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 10:55:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48E0E13BCF4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 10:58:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b1K3eKZ8aSwaoRFogZoK8auftxpd8bFxoWWSEsrWd8Q=; b=eVX8S8+R+wnNnhQoqUyhxutff
-	jtzP9zGxk1twT6DAD0RzsE6Qu8Zw3syJ3ih94BClDFrOqZ5q9emIj9HfcaYO8fGBgU14MlF3vmGO0
-	3dudiXbMzC7w8iM/IGrcKBoVsdxpPtts1AC+ZFfKDQ5vPIuPi+z1mUuJOVCSHP1M4+prUqahSIeWZ
-	6B+0WIGOM7JYRNMBC/6N7QSkM6tGmKJP6dGT10SuqikCSsfwQOyBJfoa2fwkAm0+yX1NtinRlmEDX
-	bI5ZzI4nSpdExHZmDS8bp8b75pdV+xhC9XYEOFNmuToTNHsw/YRR/bM8gjjOxLVDjrwBOOE1jHxzV
-	QU3Ki3few==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2yI0aX5W5PcgdzcsVnCUyehzRxDRoerfuHub9EnCdn0=; b=md5jItSXPLqPwz
+	2d5Sh/uLzfKaJr3crOGGdZHXNK2kmxWE67R0vux7ZXl4Vtt5gl5OprziGp8+RWOdP+zFWeNgs5m7B
+	rzdpPRwoB8LDdlwUWcvtUOHxvZJek7xk+v8+BSBEkUAONI3WYipQFJIrFw8RwyLVepyY4VQrzlirQ
+	oUfu6mCtAgHpeIReBjH1h+A9OaTR/C4FOUCuYmEjQI9HiWzCR95SzlKhuyCVeuzBwXK7mztJyaoA2
+	LqQAP//+weUfFhK/uYOS1fnlN+yo4FKekQSj+WOCyj7GEsouZQ5Pnpm/xR/RMP4MZGp2q1qLxwT6+
+	5AZepwU16vm2TqTRgWDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irfOk-0001pF-Js; Wed, 15 Jan 2020 09:55:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irfOZ-0001nf-Qf
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 09:55:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CCA031B;
- Wed, 15 Jan 2020 01:55:26 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB2FB3F6C4;
- Wed, 15 Jan 2020 01:55:24 -0800 (PST)
-Subject: Re: [PATCH v8 07/15] coresight: cti: Add device tree support for
- custom CTI.
-To: Mike Leach <mike.leach@linaro.org>, linux-arm-kernel@lists.infradead.org, 
- devicetree@vger.kernel.org, coresight@lists.linaro.org,
- linux-doc@vger.kernel.org
-References: <20200113213149.25599-1-mike.leach@linaro.org>
- <20200113213149.25599-8-mike.leach@linaro.org>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <a1883b7f-159b-f52c-c27b-dd6c9953bba3@arm.com>
-Date: Wed, 15 Jan 2020 09:55:23 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1irfRS-0002Vc-DA; Wed, 15 Jan 2020 09:58:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irfRH-0002Up-Ma
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 09:58:20 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 49A2E207FF;
+ Wed, 15 Jan 2020 09:58:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579082295;
+ bh=h6zCE0q6DO1rnPqpR4VKOLirQ6rXBOlucf/Pdr3iGhc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ntVKidoCwc/REx7d3xtVRIRcqEeC/ILpT+VwTyu9Dp+vdEim3PyRmPMGeJExhqrF8
+ bqheIe6iQZhB6aqNjJQcx6HAxgSbtukgRpYETrbkUd1F89UVd/Sp1KwLdVYhHnspyU
+ 4eH3BWkBkVllZhy41HNEXokIiWie35dUrJFa+zVE=
+Date: Wed, 15 Jan 2020 09:58:11 +0000
+From: Will Deacon <will@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v2] arm64: cpufeature: Export matrix and other features
+ to userspace
+Message-ID: <20200115095810.GD21692@willie-the-truck>
+References: <20191216113337.13882-1-steven.price@arm.com>
+ <20200115094916.GC21692@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200113213149.25599-8-mike.leach@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200115094916.GC21692@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_015527_913997_82A0834D 
-X-CRM114-Status: GOOD (  11.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200115_015815_779598_6DDA7737 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,26 +78,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, mathieu.poirier@linaro.org, corbet@lwn.net,
- linux-arm-msm@vger.kernel.org, liviu.dudau@arm.com, agross@kernel.org,
- robh+dt@kernel.org, maxime@cerno.tech, sudeep.holla@arm.com
+Cc: Catalin Marinas <catalin.marinas@arm.com>, julien@xen.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/01/2020 21:31, Mike Leach wrote:
-> Adds support for CTIs whose connections are implementation defined at
-> hardware design time, and not constrained by v8 architecture.
-> 
-> These CTIs have no standard connection setup, all the settings have to
-> be defined in the device tree files. The patch creates a set of connections
-> and trigger signals based on the information provided.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
+On Wed, Jan 15, 2020 at 09:49:17AM +0000, Will Deacon wrote:
+> In other words, I'll drop the SPECRES parts from this patch. Sound ok?
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Diff below.
+
+Will
+
+--->8
+
+diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+index 5382981533f8..27877d25dd9b 100644
+--- a/Documentation/arm64/cpu-feature-registers.rst
++++ b/Documentation/arm64/cpu-feature-registers.rst
+@@ -206,8 +206,6 @@ infrastructure:
+      +------------------------------+---------+---------+
+      | BF16                         | [47-44] |    y    |
+      +------------------------------+---------+---------+
+-     | SPECRES                      | [43-40] |    y    |
+-     +------------------------------+---------+---------+
+      | SB                           | [39-36] |    y    |
+      +------------------------------+---------+---------+
+      | FRINTTS                      | [35-32] |    y    |
+diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
+index 183ba86ad46e..4fafc57d8e73 100644
+--- a/Documentation/arm64/elf_hwcaps.rst
++++ b/Documentation/arm64/elf_hwcaps.rst
+@@ -232,10 +232,6 @@ HWCAP2_DGH
+ 
+     Functionality implied by ID_AA64ISAR1_EL1.DGH == 0b0001.
+ 
+-HWCAP2_SPECRES
+-
+-    Functionality implied by ID_AA64ISAR1_EL1.SPECRES == 0b0001.
+-
+ 4. Unused AT_HWCAP bits
+ -----------------------
+ 
+diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
+index ac7180b2c20b..fcb390ea29ea 100644
+--- a/arch/arm64/include/asm/hwcap.h
++++ b/arch/arm64/include/asm/hwcap.h
+@@ -93,7 +93,6 @@
+ #define KERNEL_HWCAP_I8MM		__khwcap2_feature(I8MM)
+ #define KERNEL_HWCAP_DGH		__khwcap2_feature(DGH)
+ #define KERNEL_HWCAP_BF16		__khwcap2_feature(BF16)
+-#define KERNEL_HWCAP_SPECRES		__khwcap2_feature(SPECRES)
+ 
+ /*
+  * This yields a mask that user programs can use to figure out what
+diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
+index 8f3f1b66f7b2..e6dad5924703 100644
+--- a/arch/arm64/include/uapi/asm/hwcap.h
++++ b/arch/arm64/include/uapi/asm/hwcap.h
+@@ -72,6 +72,5 @@
+ #define HWCAP2_I8MM		(1 << 13)
+ #define HWCAP2_BF16		(1 << 14)
+ #define HWCAP2_DGH		(1 << 15)
+-#define HWCAP2_SPECRES		(1 << 16)
+ 
+ #endif /* _UAPI__ASM_HWCAP_H */
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9164ee5351a4..c88f8fb80e2e 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -138,7 +138,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_I8MM_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DGH_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_BF16_SHIFT, 4, 0),
+-	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SB_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FRINTTS_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+@@ -1678,7 +1678,6 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_LRCPC_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ILRCPC),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_FRINTTS_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_FRINT),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SB_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SB),
+-	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SPECRES_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SPECRES),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_BF16_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_BF16),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_DGH_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_DGH),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_I8MM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_I8MM),
+diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
+index c689e26889c7..9013b224591a 100644
+--- a/arch/arm64/kernel/cpuinfo.c
++++ b/arch/arm64/kernel/cpuinfo.c
+@@ -91,7 +91,6 @@ static const char *const hwcap_str[] = {
+ 	"i8mm",
+ 	"bf16",
+ 	"dgh",
+-	"specres",
+ 	NULL
+ };
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
