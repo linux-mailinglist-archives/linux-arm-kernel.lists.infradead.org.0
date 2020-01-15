@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4387113BDDF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 11:59:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B38B13BDE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 11:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0qQNnyKfBBr70pQ1hy8QJx2yo224WrZ3VV0GK8eD3pE=; b=nYX+OkuKwngQFp
-	VZaYfcc+ErRb0uaNarKUeKlXS4W5QgiBZFJXW3Qlc7Vhia+c+gTLomfZTqCKGGm1HQ0FVhpL/T1fV
-	0TcLkrcNclUl09lfvZ1fpECT5xVeV6fs5f4UDAoPWgBfhzLgOxPT/VidLZrgWOxuL6FZpfC7yA4mm
-	FJPJ0v5S10fWHBT1AuvoF3hXEtTUr55zjaehbjg17t+wvkgixiTx72LyZ8YQJKfpBGDq5NpniMOAA
-	gb2JWMXdrhRgjZdxjZQLo3qfYEhjUVfznOZUA7IpXfVemf7TF7pibk8zpB+HXNK7pURWWuyPsTRtb
-	8sp4mpaxmN7W3rE+by4w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M1gUFgb7aXQbtDZOXOCCa5ZRRA3joOvVXNQdL4Rtxo0=; b=r47qA2nvjVsoPV
+	P9chOxSOXnohBSyLaQ8n/7/ba2BtNYGA1yfFSwmt/w0oBpd0LiZhulWMHeb74dZSOg2766yH0PfPu
+	q0Wf8Q1cSFGTF64lTzkC3f1hsFuXqbVEwAbCa4Bzh1MT6C88Z63KTB4y2OvpC8aXTTKiS5g+DP9B5
+	PUICUKGzbqNB1Kixg3+OzbQWrLiX7TZ4TxKDSiQUp8jXQOFWFzVannalYWaCQclCLtd4snK3r0J2o
+	dJuk4J5V/Z/WiUw8CbTQ1+1uff+VS08gkhE5SImZxZny0Es/pkP4lbRYT8nk1aePJWMEk0DAmLyph
+	V45dC+HpyTTwaLuEmitw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irgOX-0002Da-PK; Wed, 15 Jan 2020 10:59:29 +0000
+	id 1irgOi-0002Jg-JS; Wed, 15 Jan 2020 10:59:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irgON-0002Bp-M0
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 10:59:23 +0000
+ id 1irgOQ-0002Cc-0r
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 10:59:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7858131B;
- Wed, 15 Jan 2020 02:59:16 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58AA51007;
+ Wed, 15 Jan 2020 02:59:21 -0800 (PST)
 Received: from e112479-lin.warwick.arm.com (e112479-lin.warwick.arm.com
  [10.32.36.146])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 308D83F6C4;
- Wed, 15 Jan 2020 02:59:13 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34A4C3F6C4;
+ Wed, 15 Jan 2020 02:59:18 -0800 (PST)
 From: James Clark <james.clark@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/1] Return EINVAL when precise_ip perf events are requested
+Subject: [PATCH 1/1] Return EINVAL when precise_ip perf events are requested
  on Arm
-Date: Wed, 15 Jan 2020 10:58:54 +0000
-Message-Id: <20200115105855.13395-1-james.clark@arm.com>
+Date: Wed, 15 Jan 2020 10:58:55 +0000
+Message-Id: <20200115105855.13395-2-james.clark@arm.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20200115105855.13395-1-james.clark@arm.com>
+References: <20200115105855.13395-1-james.clark@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_025919_764044_2F6E8C27 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20200115_025922_108841_5F9BBF34 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,35 +75,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+ARM PMU events can be delivered with arbitrary skid, and there's
+nothing the kernel can do to prevent this. Given that, the PMU
+cannot support precise_ip != 0.
 
-Since we're adding support for SPE in user space Perf, we've encountered an issue
-where we would like some more feedback if SPE isn't available for an event.
+Also update comment to state that attr.config field is used to
+set the event type rather than event_id which doesn't exist.
 
-At the moment there is a patch for perf where you can enable SPE by doing this:
-
-    perf record -r branch-misses:p ...
-
-Perf will have a hard coded list of events that can use SPE when ":p" is specified
-and open the SPE PMU instead of the specified one. But if the event isn't in that
-list, then Perf will attempt to open the normal event with precise_ip = 1.
-That will succeed at the moment, but we'd like the kernel to say it's not supported
-so there is a chance of showing a warning to the user.
-
-This isn't just relevant to Perf though, there may be other tools that are already
-setting this.
-
-Therefore I'm looking for feedback on whether this would break backwards
-compatibility with user space tools that are already setting precise_ip and
-expecting it to not error out on Arm.
-
-This change would also be beneficial for the case where if in the (distant) future
-we do add some kind of precise support, there will be a chance of userspace
-determining what is supported and what isn't.
-
-Thanks
-James
-
+Signed-off-by: James Clark <james.clark@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Peter Zijlstra <peterz@infradead.org>
@@ -114,14 +95,40 @@ Cc: Al Grant <al.grant@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
-
-James Clark (1):
-  Return EINVAL when precise_ip perf events are requested on Arm
-
+---
  drivers/perf/arm_pmu.c          | 3 +++
  include/uapi/linux/perf_event.h | 4 ++--
  2 files changed, 5 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+index df352b334ea7..4ddbdb93b3b6 100644
+--- a/drivers/perf/arm_pmu.c
++++ b/drivers/perf/arm_pmu.c
+@@ -102,6 +102,9 @@ armpmu_map_event(struct perf_event *event,
+ 	u64 config = event->attr.config;
+ 	int type = event->attr.type;
+ 
++	if (event->attr.precise)
++		return -EINVAL;
++
+ 	if (type == event->pmu->type)
+ 		return armpmu_map_raw_event(raw_event_mask, config);
+ 
+diff --git a/include/uapi/linux/perf_event.h b/include/uapi/linux/perf_event.h
+index 377d794d3105..3501b2eb168a 100644
+--- a/include/uapi/linux/perf_event.h
++++ b/include/uapi/linux/perf_event.h
+@@ -38,8 +38,8 @@ enum perf_type_id {
+ };
+ 
+ /*
+- * Generalized performance event event_id types, used by the
+- * attr.event_id parameter of the sys_perf_event_open()
++ * Generalized hardware performance event types, used by the
++ * attr.config parameter of the sys_perf_event_open()
+  * syscall:
+  */
+ enum perf_hw_id {
 -- 
 2.24.0
 
