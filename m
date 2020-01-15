@@ -2,77 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 942C513BE2A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 12:07:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F54013BE32
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 12:11:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0xXAstHCSxaN2Fj/ilgNP66RB5xRUeDhuS7j1zbeYnw=; b=jw4qdzDGHZkmxoypJxzxwDCot
-	ZuZZJAiw42HQtxWajXi6faEcSCCp2rtir57r/bdJaFEdvnp7TW1Ua5qyrRWAr/wbF/LbJkZet1Ftg
-	pyXMs5JOufmBA4AzRXlcDIowEQOFJsnuu63t9XgzU/cx8xMOUvcANwKGoB1L6qY/cLLy5OQhF666H
-	eCdDDPyJRRn0ZKE/8331wvSNDsFuq0v9wFrCptJP86NOwe+fO9TVcwopbVJy7X/gzk2SugevX/vOo
-	nOqw2oZO3HBjUdZGyKYmHmzI3hn68wPPBETLb/T1FikZSktu2uBjSw4k2i5vgt/tO8l/kURmGABQ+
-	jo70dM+eA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0QhugcbdZc5VQNRX8UdBtwQYSfLYmEWc3h5fanEQ0t0=; b=BGYgCFNpRQ4yMW
+	k73BM6jvCEXrPiKoKk32FfwYyRLEqV1W3dP7iFtpfdNecz54Lx57kAP73brBB0/d3bCiWyWv/Gbj3
+	p8iaqnqxtYFZxt8/9hNBW9Bl5dpXsXQJuN8spHZl11Q5Pd3sF9LuTsd7A9HGPlBmyV1OHU2HtHOU9
+	/G+N7F2ulDDe432NIkNDE7bvY5M5Xf2BTHjCPk7rRcOMwN+Bxw8tWZiu2Rui+EhLFTXAKJa7KxsgM
+	4jT/E3RtMxLK/hoPBDxxDSgyFj4wVqUmTy/YGaTw+YiXALveEXlfXbB/sa6E1WRk3QUFFjcgAFpGC
+	CBcbQB7PFNZsdV7GAtTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irgWQ-0007az-5e; Wed, 15 Jan 2020 11:07:38 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1irgZc-0001M0-H3; Wed, 15 Jan 2020 11:10:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irgWE-0007aC-44
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 11:07:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9z3LD0pDCQaTTaSWb2fcn83rz3eocg+R4qFhRJI4yoo=; b=mRoBJv4G+N5T7gmwinoS7J0IW
- CvLRwJe9hIzWbLUTOxK32NgYbSgARKm6yqPv9Bm2B8qdT3UNNsMSWVxQ/4aYPtqEW/uyIP1wp5B49
- 0sloxalXIO4f6diW377R3aibVtzlllJwKUFSc/natrVVnXdhwPmkSfEd8XeDVckfC09jM=;
-Received: from fw-tnat-cam3.arm.com ([217.140.106.51]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1irgW9-0005Md-9k; Wed, 15 Jan 2020 11:07:21 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id CF59DD01965; Wed, 15 Jan 2020 11:07:20 +0000 (GMT)
-Date: Wed, 15 Jan 2020 11:07:20 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v10 1/3] arm64: Implement archrandom.h for ARMv8.5-RNG
-Message-ID: <20200115110720.GG3897@sirena.org.uk>
-References: <20200110122341.8445-1-broonie@kernel.org>
- <20200110122341.8445-2-broonie@kernel.org>
- <20200114174432.GG2579@willie-the-truck>
- <CAKv+Gu9pVZZm_gvsKfrCG_cM=1TmAAH+sj06GzT+Ag9Ej7__fg@mail.gmail.com>
- <20200115091651.GB21692@willie-the-truck>
- <CAKv+Gu-NZBo2q4_Yh068UENun0mkLitN473D-w7KBFXVpfdKqA@mail.gmail.com>
+ id 1irgZO-0001LG-Jg
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 11:10:46 +0000
+Received: from T480 (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7BCED222C3;
+ Wed, 15 Jan 2020 11:10:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579086641;
+ bh=xTHrg5/F20scBUneFWL35xeEaTnP5zm0fgHuucG+X4g=;
+ h=Date:From:To:Cc:Subject:From;
+ b=Snn9dHj3tFhbOAT+/D0e9lgk0lt+M2zaNTptlj4v03Xkhh9MPme/xrq4VfEnWD/FR
+ DiUzZpDsRWG7G7TAls7hX+ObpEr6bU8RJPruLtzkgGvzaWHdOOR04JsR5fafMUk0ss
+ 2DGPyIi6QA6RbDbPOPxc9i3rjZH1ePHWyvp61PLk=
+Date: Wed, 15 Jan 2020 19:10:32 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: [GIT PULL v2] i.MX clock changes for 5.6
+Message-ID: <20200115111030.GA29329@T480>
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu-NZBo2q4_Yh068UENun0mkLitN473D-w7KBFXVpfdKqA@mail.gmail.com>
-X-Cookie: Programming is an unnatural act.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_030726_235202_F288D063 
-X-CRM114-Status: GOOD (  12.11  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200115_031042_684999_5F155FD9 
+X-CRM114-Status: GOOD (  15.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,70 +74,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1595667912506357699=="
+Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Changes for v2:
+ - Drop imx8m_clk_hw_composite_core() change set, which breaks some
+   existing DTB right away.
 
---===============1595667912506357699==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="2nmUZS6EBFTGcnEV"
-Content-Disposition: inline
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
---2nmUZS6EBFTGcnEV
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+are available in the Git repository at:
 
-On Wed, Jan 15, 2020 at 10:24:21AM +0100, Ard Biesheuvel wrote:
-> On Wed, 15 Jan 2020 at 10:16, Will Deacon <will@kernel.org> wrote:
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-5.6
 
-> > I see your argument, but I was just going on the side of consistency because
-> > we're continuing to expose other features as HWCAPs when the capability is
-> > just a proxy for the cpuid field. I was in favour of stopping the addition
-> > of such HWCAPs years ago, but I couldn't convince Catalin ;)
+for you to fetch changes up to 9c140d9926761b0f5d329ff6c09a1540f3d5e1d3:
 
-> > The way I see it, we'll soon run out of HWCAP2 bits and then we'll have
-> > our hand forced.
+  clk: imx: Add support for i.MX8MP clock driver (2020-01-12 14:07:36 +0800)
 
-> I don't have a strong opinion either way.
+----------------------------------------------------------------
+i.MX clock changes for 5.6:
 
-Me either, or at least not enough to object to doing it - Will?
-Catalin?
+ - A series from Abel Vesa to do some trivial cleanups which will be
+   helpful for i.MX clock driver switching to clk_hw based API.
+ - A series from Anson Huang to add i.MX8MP clock driver support.
+ - Disable non-functional divider between pll4_audio_div and
+   pll4_post_div on imx6q.
+ - Fix watchdog2 clock name typo in imx7ulp clock driver.
+ - A couple of patches from Leonard Crestez to set CLK_GET_RATE_NOCACHE
+   flag for DRAM related clocks on i.MX8M SoCs.
+ - Suppress bind attrs for i.MX8M clock driver to avoid the possibility
+   of reloading the driver at runtime.
+ - Add a big comment in imx8qxp-lpcg driver to tell why
+   devm_platform_ioremap_resource() shouldn't be used for the driver.
+ - A correction on i.MX8MN usb1_ctrl parent clock setting.
+ - A couple of trivial cleanup on clk-divider-gate driver.
+ - A series from Peng Fan to convert i.MX8M clock drivers to clk_hw
+   based API.
 
---2nmUZS6EBFTGcnEV
-Content-Type: application/pgp-signature; name="signature.asc"
+----------------------------------------------------------------
+Abel Vesa (11):
+      clk: imx: Add correct failure handling for clk based helpers
+      clk: imx: Rename the SCCG to SSCG
+      clk: imx: Replace all the clk based helpers with macros
+      clk: imx: pllv1: Switch to clk_hw based API
+      clk: imx: pllv2: Switch to clk_hw based API
+      clk: imx: imx7ulp composite: Rename to show is clk_hw based
+      clk: imx: Rename sccg and frac pll register to suggest clk_hw
+      clk: imx: Rename the imx_clk_pllv4 to imply it's clk_hw based
+      clk: imx: Rename the imx_clk_pfdv2 to imply it's clk_hw based
+      clk: imx: Rename the imx_clk_divider_gate to imply it's clk_hw based
+      clk: imx7up: Rename the clks to hws
 
------BEGIN PGP SIGNATURE-----
+Anson Huang (3):
+      clk: imx: gate4: Switch imx_clk_gate4_flags() to clk_hw based API
+      dt-bindings: imx: Add clock binding doc for i.MX8MP
+      clk: imx: Add support for i.MX8MP clock driver
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4e8mQACgkQJNaLcl1U
-h9D6yAf+Pw/Wax4GK276QhtRUBwcwALUzYRzgGh2QA420SndX5Qe6mvsu33tjyvr
-TqR/36cKFrk6IEK37jRMnmwFS19sMYwIsbXVFuI2NFadH9vKkbrHeJt7hJnxZiE1
-23j7dYKgoQby9+sznIJpEJKaywFRh/4g+jOW7K9SuHb84Tk7J+MCRlCtHPshvMSQ
-kqRl254FphzvDf+M8iHrw+U/bYLRPCarFszmdW0jWXwLpYNWFmN1Tj2J91YNT2mW
-qZHrvpjipi/FssNJm309WrRI2GxQNxfU90ZuDqqFwoxjVtao7hQQ/gWTjdFr+wWU
-8cGWfjqhVFRkhP9/YkH4992RBpCu2Q==
-=wTAl
------END PGP SIGNATURE-----
+Fabio Estevam (1):
+      clk: imx7ulp: Fix watchdog2 clock name typo
 
---2nmUZS6EBFTGcnEV--
+Jan Remmet (1):
+      clk: imx6q: disable non functional divider
 
+Leonard Crestez (4):
+      clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram clocks
+      clk: imx: Mark dram pll on 8mm and 8mn with CLK_GET_RATE_NOCACHE
+      clk: imx8m: Suppress bind attrs
+      clk: imx8qxp-lpcg: Warn against devm_platform_ioremap_resource
 
---===============1595667912506357699==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Li Jun (1):
+      clk: imx8mn: correct the usb1_ctrl parent to be usb_bus
+
+Peng Fan (11):
+      clk: imx: clk-divider-gate: fix a typo in comment
+      clk: imx: clk-divider-gate: drop redundant initialization
+      clk: imx: clk-pll14xx: Switch to clk_hw based API
+      clk: imx: clk-composite-8m: Switch to clk_hw based API
+      clk: imx: add imx_unregister_hw_clocks
+      clk: imx: add hw API imx_clk_hw_mux2_flags
+      clk: imx: gate3: Switch to clk_hw based API
+      clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
+      clk: imx: imx8mn: Switch to clk_hw based API
+      clk: imx: imx8mm: Switch to clk_hw based API
+      clk: imx: imx8mq: Switch to clk_hw based API
+
+ .../devicetree/bindings/clock/imx8mp-clock.yaml    |  68 ++
+ drivers/clk/imx/Kconfig                            |   6 +
+ drivers/clk/imx/Makefile                           |   3 +-
+ drivers/clk/imx/clk-composite-7ulp.c               |   2 +-
+ drivers/clk/imx/clk-composite-8m.c                 |   4 +-
+ drivers/clk/imx/clk-divider-gate.c                 |  12 +-
+ drivers/clk/imx/clk-frac-pll.c                     |   7 +-
+ drivers/clk/imx/clk-imx6q.c                        |   5 +-
+ drivers/clk/imx/clk-imx7ulp.c                      | 182 ++---
+ drivers/clk/imx/clk-imx8mm.c                       | 565 +++++++--------
+ drivers/clk/imx/clk-imx8mn.c                       | 498 +++++++-------
+ drivers/clk/imx/clk-imx8mp.c                       | 764 +++++++++++++++++++++
+ drivers/clk/imx/clk-imx8mq.c                       | 584 ++++++++--------
+ drivers/clk/imx/clk-imx8qxp-lpcg.c                 |  11 +
+ drivers/clk/imx/clk-pfdv2.c                        |   2 +-
+ drivers/clk/imx/clk-pll14xx.c                      |  29 +-
+ drivers/clk/imx/clk-pllv1.c                        |  14 +-
+ drivers/clk/imx/clk-pllv2.c                        |  14 +-
+ drivers/clk/imx/clk-pllv4.c                        |   2 +-
+ drivers/clk/imx/{clk-sccg-pll.c => clk-sscg-pll.c} | 152 ++--
+ drivers/clk/imx/clk.c                              |  12 +-
+ drivers/clk/imx/clk.h                              | 162 +++--
+ include/dt-bindings/clock/imx8mp-clock.h           | 300 ++++++++
+ 23 files changed, 2346 insertions(+), 1052 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/imx8mp-clock.yaml
+ create mode 100644 drivers/clk/imx/clk-imx8mp.c
+ rename drivers/clk/imx/{clk-sccg-pll.c => clk-sscg-pll.c} (70%)
+ create mode 100644 include/dt-bindings/clock/imx8mp-clock.h
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1595667912506357699==--
-
