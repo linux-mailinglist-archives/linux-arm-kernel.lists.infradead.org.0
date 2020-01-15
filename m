@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B72313B94A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:58:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D28A013B950
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:59:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bgQeYxWcSQLOrQgZY3W0+5ceEE1njcAVyriHXROJQBw=; b=MXKha1ywTxTRaO
-	/facvO0wNRuSsO5DgyVUHzW3FRTTqMsCuQHNVyKlymUQ17d9JCDSZap202ewzg+h61egoB57xeT8m
-	i8ryza21rnjgWM6Hb0+BwcvYy/KmcrPl4OIomFYsDFC/Ptxvc7TMeEw1JzmWUyfB4xgJpDCP38rXL
-	sEu27zfAGKAb5vPnhjP6dha7mVY7NQ49jCeFGT5Z+bXbvTFoHtefQExjjfziALbr4zzOVFbMqGBtB
-	BGi2Ve1RcXgWaF6wNO/UMRstSOuzoUD20wBnkOlyOxBTSh9DqShnRGMcyKdToyYIw3a5rh+j5vkm/
-	xvunRe1e6aItf6jve10Q==;
+	List-Owner; bh=6qAhOkwXjJJ+5HYWgYGwTgWD7OMUQvOpudw8B3JaeeM=; b=Yh72UFWTEoe3T3
+	FWenQ457Oi+wmQMg8Bc8Crz889VvwpcdUlz5O+0cYjdKNy9mvQTDwSrc6rOFsazoUF7DMAcy04Jbb
+	9oPZyjBDapx/GNpwuN4PvauzuxP49+iTP7LUaqydTa25iX/6Y87Mw6qSmwW/mcv3rXb239GukLaD1
+	hFm70W8iFx/OEwNA0kUym9veuCX69EgCbvNN+KaYbRvrmVQ/YrBSbkrNF+3HsrpFGCPHQpen1VNhw
+	f0AqC9TbdfZ4e1potUG82Y/R0VXpPolKFgvLpo5mYo8qSHIGKtxeowzCxk94xB+j8x7Oc4LWIp4Pr
+	bf9L1ERoon3EUHfMPSww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irbh7-0003kH-Ba; Wed, 15 Jan 2020 05:58:21 +0000
+	id 1irbiK-00044T-Ux; Wed, 15 Jan 2020 05:59:36 +0000
 Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irbh0-0003jm-Ro
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:58:16 +0000
-Received: by mail-ua1-x942.google.com with SMTP id c7so5797304uaf.5
+ id 1irbiC-00043u-Gw
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:59:30 +0000
+Received: by mail-ua1-x942.google.com with SMTP id f7so5795871uaa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 21:58:13 -0800 (PST)
+ Tue, 14 Jan 2020 21:59:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=verdurent-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=e5xJRkqeZeVuqWjzuTjcTAvJI4fzZrcr+Isw3uqYLKg=;
- b=o+vsV3oMBFRJ1mv7DjQiU8XPXWxqrhMJgML2HsKufa6V56I+MLrFTdPDjwZPSsgTGb
- RPljyQh7++xAIXl+sjGHAcqYF7B8DzcB6Oo1DobaDz5W3DISZkeQpCFAmjS/FVTzaYfX
- Lv4sSGxgPS+oxOZUR98FZokoBK0xXYuvPjAG/rV/Q+TOE5lOD9un0NuMfpcsCn3ySND0
- AihW5IkU4QPEm66XCcNbaNWP82U5XaVpK/uGPVa4LI14xAFQVafishSL6JyPxtozxAgL
- 5lw5wlrwYUp0QXBNutVanw8TNPbMb5mYYPFGp1yOm9cZ2Inl7eOyR6eD7frdc9XswOGW
- sY4g==
+ :cc; bh=VZcDlJEAOYiI5/opaWlacx6hWbE1fdXB+V/M4pJOPMc=;
+ b=zSa2dpRrl8+iQbXBw9A8TC1verWOwJvEQxC/qYk2hCEWe8mNucn6K4UYbGqbj2gFzt
+ UgFAsoCPK01qBZN5+0Fd7muGysK7LXkmZcgL2welcWciUOc6mJIun5PUteOcGPJqQrTr
+ p5WoJ2HytVTzQXjI7tQIa7DHgVZWB2TkZjqG0YMunupdUpV6OFWSzJT/QjQSNZ/0DAxt
+ F/9zVD5ZRiSt6edk3TXPp1PXvBUiIAoYiFgKVJJKQAVZDoZ2suSupcgwTDudBBarv04q
+ T90jhY/8r/1ol343WfA3oEm7UeWcg5ld2VB7h40GHzou0GxSuOc1zF1nXu7r14WEOKi5
+ Xqpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=e5xJRkqeZeVuqWjzuTjcTAvJI4fzZrcr+Isw3uqYLKg=;
- b=gQLEy+y4fjRc2/HWQALgM1Srbu4XcSv+dhFl6jJCpr7RkRVXE4MReNEIyJ0XXJM42y
- 5FGhrsecxN7Hji2XJkGaHncpJBNvuZJfWa3dnPBNE3D37KQ41oceSYSZLRIRyrYS4wHF
- atzBUnaxnoRga2mLMJiADOPOL9EgIUueA2q274YFS+8vNoI9EtvZMDy9qHxKfRTbXXhB
- /4RexKxMCuCtQXitFuY7CVdSMg9wiqSYKgAiiwzglX/0Ii5QDdVfsuJ3UDNpK0WyTHxR
- nOr+2Ckaen9eIpcjxZ8wYJ87wypm5ThFxuUmb2O2f1nkZ6N+B1IB6RSj8Do+fEURHz2H
- c64Q==
-X-Gm-Message-State: APjAAAVHZdZxSiHlLgBfVJQJ+/+dPFk1xbsEKN4MfPrXB/CF+uH3Pg+H
- lIb1fXv1rhetY0HwlX+1UfGbIKyslAmvNNeLf2Ingw==
-X-Google-Smtp-Source: APXvYqyHRDquLaL0bEm7oQ9JtTMteQmR4X4JG9yvX/H3A2qtA1O/wnBD9raOEACyIMcJLv3MZehD7pa6uUYuo68Tdw4=
-X-Received: by 2002:ab0:2252:: with SMTP id z18mr12952463uan.60.1579067893051; 
- Tue, 14 Jan 2020 21:58:13 -0800 (PST)
+ bh=VZcDlJEAOYiI5/opaWlacx6hWbE1fdXB+V/M4pJOPMc=;
+ b=TcYOqz7Zz8tTW7JXv4WmQlcocAjoC2YBn/aeNSEPPsyrCZXom9PHyp9pNBZ5m0YAnh
+ yxzTjfZy2XeSEL2V5mbP0fN3JAZQqGNzA0dKresGz2g7SYVaW4CBH0w2KxNsRjPNCEdg
+ ZA7V6XLFNsQ27PWyK3cqdwtIzrRIyL0TykAb44T+rGKOy+joaLxA9g1wbHSmoD1iCyXe
+ nY1zccLiN+ofLHNhKD5oNeYCDxz4uHHBnzDi8BaarkUvVSfWWXvd61+yhZPJYESl/ssn
+ OQbRqe878JvukL2LHWU+fNCPpy3MZl40trnLIo2l9HqyGVVcBEMsocmnsDaOsOlOeoj2
+ tAKA==
+X-Gm-Message-State: APjAAAVqYnpRneQvAXpzIm+O1XXD8+TEsP99rAHuJGp+4Hk8n3zf/Kii
+ gS3V+F5wiTB+9cm2nNG3JkBdcACqVkpIfKpNmtPkbg==
+X-Google-Smtp-Source: APXvYqyOIjenI/978z/kS0ltOPfPgmya2cYrAirQMUXBzHTiFXFhrlDQNvKCTNcbmqjpEUJxYANlmAdPBb9axYlM4oo=
+X-Received: by 2002:ab0:634c:: with SMTP id f12mr13371489uap.48.1579067967624; 
+ Tue, 14 Jan 2020 21:59:27 -0800 (PST)
 MIME-Version: 1.0
 References: <20200114190607.29339-1-f.fainelli@gmail.com>
- <20200114190607.29339-2-f.fainelli@gmail.com>
-In-Reply-To: <20200114190607.29339-2-f.fainelli@gmail.com>
+ <20200114190607.29339-3-f.fainelli@gmail.com>
+In-Reply-To: <20200114190607.29339-3-f.fainelli@gmail.com>
 From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Wed, 15 Jan 2020 11:28:02 +0530
-Message-ID: <CAHLCerO1OARY9OMDpGudSfBdmtRfeP_pYaE9=-Sn-10ZVjgXKA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/6] thermal: brcmstb_thermal: Do not use DT
- coefficients
+Date: Wed, 15 Jan 2020 11:29:16 +0530
+Message-ID: <CAHLCerOsLA-9+M_2+hxU8BCieGiaeqPh10Ni-jEmW32n7-kqGw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/6] thermal: brcmstb_thermal: Prepare to support a
+ different process
 To: Florian Fainelli <f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_215815_040292_0D31D995 
-X-CRM114-Status: GOOD (  24.63  )
+X-CRM114-CacheID: sfid-20200114_215928_623206_2F2C0EEE 
+X-CRM114-Status: GOOD (  22.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -107,97 +107,145 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Jan 15, 2020 at 12:36 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
 >
-> At the time the brcmstb_thermal driver and its binding were merged, the
-> DT binding did not make the coefficients properties a mandatory one,
-> therefore all users of the brcmstb_thermal driver out there have a non
-> functional implementation with zero coefficients. Even if these
-> properties were provided, the formula used for computation is incorrect.
+> The driver is currently assuming that it is operating with a 28nm
+> process chip, which has a specific formula to convert temperature to a
+> code and vice versa. Update the code to support providing two key
+> values: offset and multiplier to derive the correct formulas.
 >
-> The coefficients are entirely process specific (right now, only 28nm is
-> supported) and not board or SoC specific, it is therefore appropriate to
-> hard code them in the driver given the compatibility string we are
-> probed with which has to be updated whenever a new process is
-> introduced.
->
-> We remove the existing coefficients definition since subsequent patches
-> are going to add support for a new process and will introduce new
-> coefficients as well.
->
-> Fixes: 9e03cf1b2dd5 ("thermal: add brcmstb AVS TMON driver")
 > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
 Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
 
 > ---
->  drivers/thermal/broadcom/brcmstb_thermal.c | 31 +++++++---------------
->  1 file changed, 9 insertions(+), 22 deletions(-)
+>  drivers/thermal/broadcom/brcmstb_thermal.c | 47 +++++++++++++++-------
+>  1 file changed, 33 insertions(+), 14 deletions(-)
 >
 > diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
-> index 5825ac581f56..680f1a070606 100644
+> index 680f1a070606..2d555e7b884a 100644
 > --- a/drivers/thermal/broadcom/brcmstb_thermal.c
 > +++ b/drivers/thermal/broadcom/brcmstb_thermal.c
-> @@ -49,7 +49,7 @@
->  #define AVS_TMON_TP_TEST_ENABLE                0x20
->
->  /* Default coefficients */
-> -#define AVS_TMON_TEMP_SLOPE            -487
-> +#define AVS_TMON_TEMP_SLOPE            487
->  #define AVS_TMON_TEMP_OFFSET           410040
->
->  /* HW related temperature constants */
-> @@ -108,23 +108,12 @@ struct brcmstb_thermal_priv {
->         struct thermal_zone_device *thermal;
+> @@ -102,18 +102,27 @@ static struct avs_tmon_trip avs_tmon_trips[] = {
+>         },
 >  };
 >
-> -static void avs_tmon_get_coeffs(struct thermal_zone_device *tz, int *slope,
-> -                               int *offset)
-> -{
-> -       *slope = thermal_zone_get_slope(tz);
-> -       *offset = thermal_zone_get_offset(tz);
-> -}
-> -
+> +struct brcmstb_thermal_params {
+> +       unsigned int offset;
+> +       unsigned int mult;
+> +};
+> +
+>  struct brcmstb_thermal_priv {
+>         void __iomem *tmon_base;
+>         struct device *dev;
+>         struct thermal_zone_device *thermal;
+> +       /* Process specific thermal parameters used for calculations */
+> +       const struct brcmstb_thermal_params *temp_params;
+>  };
+>
 >  /* Convert a HW code to a temperature reading (millidegree celsius) */
->  static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
+> -static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
+> +static inline int avs_tmon_code_to_temp(struct brcmstb_thermal_priv *priv,
 >                                         u32 code)
 >  {
-> -       const int val = code & AVS_TMON_TEMP_MASK;
-> -       int slope, offset;
-> -
-> -       avs_tmon_get_coeffs(tz, &slope, &offset);
-> -
-> -       return slope * val + offset;
-> +       return (AVS_TMON_TEMP_OFFSET -
-> +               (int)((code & AVS_TMON_TEMP_MAX) * AVS_TMON_TEMP_SLOPE));
+> -       return (AVS_TMON_TEMP_OFFSET -
+> -               (int)((code & AVS_TMON_TEMP_MAX) * AVS_TMON_TEMP_SLOPE));
+> +       int offset = priv->temp_params->offset;
+> +       int mult = priv->temp_params->mult;
+> +
+> +       return (offset - (int)((code & AVS_TMON_TEMP_MASK) * mult));
 >  }
 >
 >  /*
-> @@ -136,20 +125,18 @@ static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
->  static inline u32 avs_tmon_temp_to_code(struct thermal_zone_device *tz,
+> @@ -122,21 +131,22 @@ static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
+>   * @temp: temperature to convert
+>   * @low: if true, round toward the low side
+>   */
+> -static inline u32 avs_tmon_temp_to_code(struct thermal_zone_device *tz,
+> +static inline u32 avs_tmon_temp_to_code(struct brcmstb_thermal_priv *priv,
 >                                         int temp, bool low)
 >  {
-> -       int slope, offset;
-> -
+> +       int offset = priv->temp_params->offset;
+> +       int mult = priv->temp_params->mult;
+> +
 >         if (temp < AVS_TMON_TEMP_MIN)
-> -               return AVS_TMON_TEMP_MAX; /* Maximum code value */
-> -
-> -       avs_tmon_get_coeffs(tz, &slope, &offset);
-> +               return AVS_TMON_TEMP_MAX;       /* Maximum code value */
+>                 return AVS_TMON_TEMP_MAX;       /* Maximum code value */
 >
-> -       if (temp >= offset)
-> +       if (temp >= AVS_TMON_TEMP_OFFSET)
+> -       if (temp >= AVS_TMON_TEMP_OFFSET)
+> +       if (temp >= offset)
 >                 return 0;       /* Minimum code value */
 >
 >         if (low)
-> -               return (u32)(DIV_ROUND_UP(offset - temp, abs(slope)));
-> +               return (u32)(DIV_ROUND_UP(AVS_TMON_TEMP_OFFSET - temp,
-> +                                         AVS_TMON_TEMP_SLOPE));
+> -               return (u32)(DIV_ROUND_UP(AVS_TMON_TEMP_OFFSET - temp,
+> -                                         AVS_TMON_TEMP_SLOPE));
+> +               return (u32)(DIV_ROUND_UP(offset - temp, mult));
 >         else
-> -               return (u32)((offset - temp) / abs(slope));
-> +               return (u32)((AVS_TMON_TEMP_OFFSET - temp) /
-> +                             AVS_TMON_TEMP_SLOPE);
+> -               return (u32)((AVS_TMON_TEMP_OFFSET - temp) /
+> -                             AVS_TMON_TEMP_SLOPE);
+> +               return (u32)((offset - temp) / mult);
 >  }
 >
 >  static int brcmstb_get_temp(void *data, int *temp)
+> @@ -154,7 +164,7 @@ static int brcmstb_get_temp(void *data, int *temp)
+>
+>         val = (val & AVS_TMON_STATUS_data_msk) >> AVS_TMON_STATUS_data_shift;
+>
+> -       t = avs_tmon_code_to_temp(priv->thermal, val);
+> +       t = avs_tmon_code_to_temp(priv, val);
+>         if (t < 0)
+>                 *temp = 0;
+>         else
+> @@ -188,7 +198,7 @@ static int avs_tmon_get_trip_temp(struct brcmstb_thermal_priv *priv,
+>         val &= trip->reg_msk;
+>         val >>= trip->reg_shift;
+>
+> -       return avs_tmon_code_to_temp(priv->thermal, val);
+> +       return avs_tmon_code_to_temp(priv, val);
+>  }
+>
+>  static void avs_tmon_set_trip_temp(struct brcmstb_thermal_priv *priv,
+> @@ -201,7 +211,7 @@ static void avs_tmon_set_trip_temp(struct brcmstb_thermal_priv *priv,
+>         dev_dbg(priv->dev, "set temp %d to %d\n", type, temp);
+>
+>         /* round toward low temp for the low interrupt */
+> -       val = avs_tmon_temp_to_code(priv->thermal, temp,
+> +       val = avs_tmon_temp_to_code(priv, temp,
+>                                     type == TMON_TRIP_TYPE_LOW);
+>
+>         val <<= trip->reg_shift;
+> @@ -218,7 +228,7 @@ static int avs_tmon_get_intr_temp(struct brcmstb_thermal_priv *priv)
+>         u32 val;
+>
+>         val = __raw_readl(priv->tmon_base + AVS_TMON_TEMP_INT_CODE);
+> -       return avs_tmon_code_to_temp(priv->thermal, val);
+> +       return avs_tmon_code_to_temp(priv, val);
+>  }
+>
+>  static irqreturn_t brcmstb_tmon_irq_thread(int irq, void *data)
+> @@ -282,8 +292,13 @@ static const struct thermal_zone_of_device_ops of_ops = {
+>         .set_trips      = brcmstb_set_trips,
+>  };
+>
+> +static const struct brcmstb_thermal_params brcmstb_28nm_params = {
+> +       .offset = 410040,
+> +       .mult   = 487,
+> +};
+> +
+>  static const struct of_device_id brcmstb_thermal_id_table[] = {
+> -       { .compatible = "brcm,avs-tmon" },
+> +       { .compatible = "brcm,avs-tmon", .data = &brcmstb_28nm_params },
+>         {},
+>  };
+>  MODULE_DEVICE_TABLE(of, brcmstb_thermal_id_table);
+> @@ -299,6 +314,10 @@ static int brcmstb_thermal_probe(struct platform_device *pdev)
+>         if (!priv)
+>                 return -ENOMEM;
+>
+> +       priv->temp_params = of_device_get_match_data(&pdev->dev);
+> +       if (!priv->temp_params)
+> +               return -EINVAL;
+> +
+>         res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>         priv->tmon_base = devm_ioremap_resource(&pdev->dev, res);
+>         if (IS_ERR(priv->tmon_base))
 > --
 > 2.17.1
 >
