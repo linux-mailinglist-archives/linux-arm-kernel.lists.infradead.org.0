@@ -2,53 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 415E513CD8D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 20:57:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E4DF13CDA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 21:03:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9I1WHkkxbIwPoCzfn7r7QPiGjs2bPZi9W8FP9qntnIs=; b=cG3TFP8tUpCXLXaUIZQoTFp+e
-	ZAdJhoevhpSw4f4VMUi24fMSH0GJBuuaSwYEPuGrU4pPcSQaPfHhYhi7ssKK5fckS8kPCWDKfR99e
-	T3aNNr9TjJ9CMGAMssKOoG6CmsQZ1pUwB/z/m2LmOg12fLpRJMVV42htVXIIb2lHNMCID3O0Ce7qX
-	2/5A+K9gAA9xJVpipFvVwk3D63kbwiQXICSxDOnYd/UoxgvmftFnAGJs+C38vrViAS59Q4HyJ5DT6
-	KumRP626VblRXwG0woph6Q5iVIZjziBsnbDm55dw9QlGOz17zFEbHXN89vuszLOXNrZWVMcv4GQjD
-	4sNNcCldg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sFnBM+n9jkuFt8b9bpkXNeheS159h/a4wU7p2Yy5XmU=; b=ea/j9QUS4LDafG
+	P4OFz2wjQRIjMuqf3q+b37WVjxin2WAdk0T2/ksrxJKnP6RgUgf0GQ0hsr9cwXXvborWO/b0aNbyf
+	NmrSh5JSfbWI057qOeq8DZ2wFgCRcfiFbd13NtTvXSyrql+rKUVKW8UwJBBOhGVD1UZ19HGGJKnRp
+	/8yF+TRBiDG4tqaB9205odEPOcGWrqZR+/zC1nQ6uV/kADhHrNmSfb/pDOzQycGg8cGreulvqKPCU
+	6SGDzihG5hAmjhTrCOssGFtvPbwT6iCeLzXIztJhvXiGqYvrorBDOgXMSBiMREdN7lN3UYk56xqVL
+	zMPeXRt/OKiWvyZ4+wFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iron2-0003O4-EN; Wed, 15 Jan 2020 19:57:20 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iromo-0003N8-BH
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 19:57:10 +0000
-Received: from localhost (p54B33239.dip0.t-ipconnect.de [84.179.50.57])
- by pokefinder.org (Postfix) with ESMTPSA id 467852C0742;
- Wed, 15 Jan 2020 20:57:05 +0100 (CET)
-Date: Wed, 15 Jan 2020 20:57:05 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Subject: Re: [PATCH 00/12] i2c: convert subsystem to use
- i2c_new_client_device()
-Message-ID: <20200115195704.GC23789@ninjato>
-References: <20200107174748.9616-1-wsa+renesas@sang-engineering.com>
+	id 1irosq-0006XU-EX; Wed, 15 Jan 2020 20:03:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irosb-0006Qp-Do
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 20:03:11 +0000
+Received: from localhost.localdomain (unknown [194.230.155.229])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 58CF7222C3;
+ Wed, 15 Jan 2020 20:02:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579118581;
+ bh=Fjhdo6tlNS+TM3exEZ1PBARDjQL/dzKue6ba+z8ZYOo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=OFIW95j6vpOtPHUV4Da+AM9JfDfFmXyWSd8Qe0zAg1LJJ1e9I9p0o6FKptZng7Ttt
+ 0z7cwdG3fmmy+KXQK7b2z59qzrmycXk0oS4ThcYm18a2z4TBN4kTeCmNreuOLYuo8A
+ 3KVwtJg+jgMx3U7faNDRY/x3uX7pgOSRvjQJwDX4=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: [PATCH v3 1/3] i2c: pmcmsp: Use proper printk format for
+ resource_size_t
+Date: Wed, 15 Jan 2020 21:02:48 +0100
+Message-Id: <20200115200250.10849-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20200107174748.9616-1-wsa+renesas@sang-engineering.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_115706_537671_4CA27D60 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20200115_120305_500154_9A55A623 
+X-CRM114-Status: GOOD (  12.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,80 +74,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-acpi@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4255428762201271709=="
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.de>, Vladimir Zapolskiy <vz@mleia.com>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, linux-i2c@vger.kernel.org,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============4255428762201271709==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="oTHb8nViIGeoXxdp"
-Content-Disposition: inline
-
-
---oTHb8nViIGeoXxdp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Jan 07, 2020 at 06:47:34PM +0100, Wolfram Sang wrote:
-> This patch series converts the I2C subsystem to use the new API. Drivers
-> have been build tested. There is one user left in the SMBus part of the
-> core which will need a seperate series because all users of this
-> function need to be checked/converted, too.
->=20
-> Except for documentation patches, the conversion has been done with a
-> coccinelle script and further simplification have been applied when
-> proofreading the patches.
->=20
-> A branch is here:
->=20
-> git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/i2c/n=
-ew_client_device
->=20
-> Looking forward to comments...
-
-Thanks for all the quick reviews and tests \o/
-
-Series applied to for-next, thanks!
-
-
---oTHb8nViIGeoXxdp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4fbpAACgkQFA3kzBSg
-KbZsuxAAlGN3Qw/NoGCVgmD5F27FU32w32SIt3btqM+Smwb8h/YywvrdIxuaElC4
-U0FVB9Nt21/V6whDPbpRqNwtf3Wld5jgpFt3GinATmO0LBrYZM0qsrAWaf9Mnnaw
-KgDuO5MOsyLhxxgsT7ak2ASe6o+QzDUOxtGJJLgjEUxAcdF7MEVinFLPA1qOgGlu
-qTPNb+z3htcdaoLIVBvUBzS6xIt8HyD2XB71db4C1TqBfdoWI/kRIWn5Fd0Bjiv4
-EmUag6Gy7G0CTw0lzmYne+gSB/U8ugzpNDTWEyns4bxTVUGgyuAdWcPomJ9Duieq
-zA2yUvTbIX/L/smIXiJcXUOwgWiozVsY+oFpDp0lpg7ZaULiuCZbmcdbil6GRfqB
-qVfn8F94w1GRCQ5lNzMTuUbTIo/4w5HFMKQY23lJ8BMI26nVQ4+6YyUoZstLLyMA
-Np0s2EAUUGGO9IdMigfaJrVW7m0ukj1Je4S9a8OAE4eVuV89o1UjNdx0O7kV4BPI
-K0YpHnEvGaEiQB3MonKIE0jUL6WA1eXUUxsgQCBoXyPx9nmz5QzANoenIPmN8PBw
-sf8NAgK8ppLrkWjmbydI2GWMFFhp4gXdGFzvrjLahMNXZsHGLyK/ad9XS6+E54RD
-GynwEX6zU+0Znoa+3I2Po2bbPBRvuHSZqES3obLnS7x/VQ8Xz1w=
-=uUCI
------END PGP SIGNATURE-----
-
---oTHb8nViIGeoXxdp--
-
-
---===============4255428762201271709==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4255428762201271709==--
-
+cmVzb3VyY2Vfc2l6ZV90IHNob3VsZCBiZSBwcmludGVkIHdpdGggaXRzIG93biBzaXplLWluZGVw
+ZW5kZW50IGZvcm1hdAp0byBmaXggd2FybmluZ3Mgd2hlbiBjb21waWxpbmcgb24gNjQtYml0IHBs
+YXRmb3JtIChlLmcuIHdpdGgKQ09NUElMRV9URVNUKToKCiAgICBkcml2ZXJzL2kyYy9idXNzZXMv
+aTJjLXBtY21zcC5jOiBJbiBmdW5jdGlvbiDigJhwbWNtc3B0d2lfcHJvYmXigJk6CiAgICBkcml2
+ZXJzL2kyYy9idXNzZXMvaTJjLXBtY21zcC5jOjI3NjoyNTogd2FybmluZzoKICAgICAgICBmb3Jt
+YXQg4oCYJXjigJkgZXhwZWN0cyBhcmd1bWVudCBvZiB0eXBlIOKAmHVuc2lnbmVkIGludOKAmSwK
+ICAgICAgICBidXQgYXJndW1lbnQgMyBoYXMgdHlwZSDigJhyZXNvdXJjZV9zaXplX3Qge2FrYSBs
+b25nIGxvbmcgdW5zaWduZWQgaW50feKAmSBbLVdmb3JtYXQ9XQoKU2lnbmVkLW9mZi1ieTogS3J6
+eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgoKLS0tCgpDaGFuZ2VzIHNpbmNlIHYy
+OgoxLiBSZW1vdmUgcGFyZW50aGVzZXMgYXJvdW5kIHJlcy0+c3RhcnQuCgpDaGFuZ2VzIHNpbmNl
+IHYxOgoxLiBVc2UgJXBhcCwgbm90ICVwYVtwXS4KLS0tCiBkcml2ZXJzL2kyYy9idXNzZXMvaTJj
+LXBtY21zcC5jIHwgNiArKystLS0KIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDMg
+ZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1wbWNtc3Au
+YyBiL2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtcG1jbXNwLmMKaW5kZXggNGZkZTc0ZWIzNGE3Li41
+ZDg5YzdjMWIzYTggMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtcG1jbXNwLmMK
+KysrIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1wbWNtc3AuYwpAQCAtMjc0LDggKzI3NCw4IEBA
+IHN0YXRpYyBpbnQgcG1jbXNwdHdpX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBsZGV2
+KQogCWlmICghcmVxdWVzdF9tZW1fcmVnaW9uKHJlcy0+c3RhcnQsIHJlc291cmNlX3NpemUocmVz
+KSwKIAkJCQlwbGRldi0+bmFtZSkpIHsKIAkJZGV2X2VycigmcGxkZXYtPmRldiwKLQkJCSJVbmFi
+bGUgdG8gZ2V0IG1lbW9yeS9pbyBhZGRyZXNzIHJlZ2lvbiAweCUwOHhcbiIsCi0JCQlyZXMtPnN0
+YXJ0KTsKKwkJCSJVbmFibGUgdG8gZ2V0IG1lbW9yeS9pbyBhZGRyZXNzIHJlZ2lvbiAlcGFwXG4i
+LAorCQkJJnJlcy0+c3RhcnQpOwogCQlyYyA9IC1FQlVTWTsKIAkJZ290byByZXRfZXJyOwogCX0K
+QEAgLTI4NSw3ICsyODUsNyBAQCBzdGF0aWMgaW50IHBtY21zcHR3aV9wcm9iZShzdHJ1Y3QgcGxh
+dGZvcm1fZGV2aWNlICpwbGRldikKIAkJCQkJCXJlc291cmNlX3NpemUocmVzKSk7CiAJaWYgKCFw
+bWNtc3B0d2lfZGF0YS5pb2Jhc2UpIHsKIAkJZGV2X2VycigmcGxkZXYtPmRldiwKLQkJCSJVbmFi
+bGUgdG8gaW9yZW1hcCBhZGRyZXNzIDB4JTA4eFxuIiwgcmVzLT5zdGFydCk7CisJCQkiVW5hYmxl
+IHRvIGlvcmVtYXAgYWRkcmVzcyAlcGFwXG4iLCAmcmVzLT5zdGFydCk7CiAJCXJjID0gLUVJTzsK
+IAkJZ290byByZXRfdW5yZXNlcnZlOwogCX0KLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
