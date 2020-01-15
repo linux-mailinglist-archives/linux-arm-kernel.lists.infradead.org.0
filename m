@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF55313BAA4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:01:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C25B13BAA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:02:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NunyfUaeRmAnRW/z5ZsJme7CcmR2kRVUUNAEzF9VaA=; b=QQCn5nHKEQgpsv
-	Bi72IrCuqvW7IYqBY3hLUO7nFJJfqmtZ9tXnOj2TyeVmYDO7M1CVBP4ruuyPmeQfOroyIFYSzUvkl
-	hHerFEvA3lQ0wqG24PgDd4GgrbaAfXhsOi6iZwsQGyCgTnBkiEUXTWyK8bQDQI8cBLPYwtVnkN8b+
-	puG1+rYTTnsfSMR5ApQ6UQOLN58c+XNBYNwsTSPhxBySsNg92Q2BwqBtAm8YpNM9K54hFIg8YNZv8
-	rXFXny7Ac7SLb961Zx7+MWvryxObKgT03PAcgz5oi/4stCUxeiQNmzWf6eXRJC/Gc4tgF+354DJ+1
-	TsYigA+4nQSHYAfrLHYg==;
+	List-Owner; bh=6ek07O8wJXN1DRHhmHnd2sFpJS4JwnSHM1/46hUchak=; b=AmTOHoHGVAoIXo
+	iIpjKh/s2x5V1acYmypYz8+GFR1x91cWR/55XfCwCdjZQlTqkENXa/xv6COhvN7NKfg4QeCbk06b5
+	oHcGvfPisfd2kDXzRSYnJOwr4+IepB76V5UgUv/c9AJimAh8lTrEoER1VIIDXzxnZZ9IQO4Qwymzt
+	J7e44ECqgnOPgO3GTZYC5asoCsyR1LVEtU2EUPSp6uQPIs/Gng8p9STSciqYwOPVNYo6LSIZH6Lzz
+	Rtf4PsKY2Cc4uQggdoxokH/4+SORbcgXlOufeN1keDhW8tPRbVi1j5P42Lou1hpbf65HHOlrEZV5L
+	hhJrUDztFk/BrIDJWyCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irdcM-0001qv-AW; Wed, 15 Jan 2020 08:01:34 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1irdcp-00029I-Me; Wed, 15 Jan 2020 08:02:03 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irdc7-0001nK-CJ
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:01:23 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p9so16756264wmc.2
+ id 1irdcb-00028F-9n
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:01:53 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p17so16701251wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 00:01:18 -0800 (PST)
+ Wed, 15 Jan 2020 00:01:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:autocrypt:organization:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=HlYETr3hYYfMZTjHv9k9jFmQVJRUe5aAtS1Qh6QunU8=;
- b=sY7eFdomkzXofgSu0Xoxy15GUXeQh3P5d+4JytVWco1rKk1OQfhw4nXtpnZnA3VBy7
- ebXhKo5WBXmFiIlnb5pasCEsIR68fEHNhJc0u5/b0qmc7WUCQOwzLsThbDoK6Vy4SLEQ
- TkeIkhaeDeY//KTOvvcH7o5tnhJK+Z5RDDAuELiFpC3EiEFY/3gm3AKNaxVucX5uoI7e
- Arnbz7MLUCmUgzQDQS68I6TowOcXbTQjfXJYTv2AZv+SnoOOi3+xDPZ0LpY91q28DloS
- 42gnVmXhDgsrb8Y7DLHJrMa4tvYFQaFg9WOzVh/Pie8cmsoEwpzDRqSIy0FRK7Z0kA6K
- CNJw==
+ bh=LqGaezBmjqo1I3iqgzWcout33RhA0cLHgVioPXtlKd4=;
+ b=TvDS04c4VdOECsl00gF0Bv6+U2ZHSIdozA3JRwRtpSqC/bv+uM9qW7Wuhgj5dV6yR+
+ KNUQ9gSe0rLjDk64dpSUp37KeTF5AuFk4t7gK63EJN01UDgt1fE3685VFSmQm5kaGhv1
+ XMNAj7GHBTp1bGJ1vpL41X10pmmq1xv09rFI0fKXq7IeLvvjG0pTg1shWmS/6r3Rm5Cx
+ RKdUJLXJr2MAkBI5OAjmqx+uSxv+A48RV4oXWW9oOhL5+ffNaBzZA7f/Y0j3LNs3GL19
+ ThWZtIX1dhDA18wjoUc8x/8iAFmAITtr91SWB2AQIm9IWJEr9USk81M1qK5vx67Oh4rZ
+ JW6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=HlYETr3hYYfMZTjHv9k9jFmQVJRUe5aAtS1Qh6QunU8=;
- b=NjF9743NmHnqmTxnij/SoTvv9LX6gDkrBRpdoKFQeeJ19eK56UsEi3v5eeEI4Th1jB
- /mrI3PkyZNba+LnTxLgrsghXdEAadruWX/ctqZXuYljQGpzyUatZa3Jmnzr5GCiuWGBB
- EyBGwyPcWRqUv/MoJvyzAQcPo68DFkQp8LMAe7czZKJ/ZNXCpF18ysaPSieB+eYY4wuH
- gZoBl4qlzmtj1Ict3+yx7IveWB+9ONU3AG21mIkz4aRxHrA2B4jHxtcd7DItdKGCbvyO
- 5L4JxfyM5lL/Ir/utXTk71afERq5XChshSYC3VtEUPPlzGs150U5gmRzfR7x9bjI+rPT
- foNw==
-X-Gm-Message-State: APjAAAXwIRC1k7usigJAw0TBSZFjx3yh3itACu8FBPgEM5pa73OmMB3W
- MKZlfA5Gh7pxRd19Cf+a7RquoA==
-X-Google-Smtp-Source: APXvYqyhieFsz5wMjeicHq+9ou/kke3EeuKAmXF8aazAuSz8X8vL3fQ1VY4kEYthC9Q3kh+7nr/G/g==
-X-Received: by 2002:a05:600c:d5:: with SMTP id
- u21mr31050720wmm.85.1579075277047; 
- Wed, 15 Jan 2020 00:01:17 -0800 (PST)
+ bh=LqGaezBmjqo1I3iqgzWcout33RhA0cLHgVioPXtlKd4=;
+ b=sPtA3BbwW5lj+3wzzppmTb3Ad0dYHeGM00xjgEgsltvc6rEXCWoh7/f593rUAWLy8a
+ rwnXSd7/jcrwXvJjPc2BrEBEfJr4eGOk6kJxA8W5ad+LdMYq8n4Rcseceo9LckPYT7G1
+ hngW5nLgvjFRR1fYgh1skVjqonvmYsHDz9rkKpZ4UJnAFW8oBRaQF1QdE4MPyZXjeeL6
+ lQ1nBVprTSCOs5cRKY4GX4ZrUrmyN5YL6mgDBLgimUt/tD6T5OeUX2qzTqvKxASOFcty
+ y1jFqqgLP4Iq8QDsWmo/qCyIR48QkFhkxT9FLKXcJS0MRLujpmh0jUyiHroE3JVStNtW
+ PyAw==
+X-Gm-Message-State: APjAAAU907M8lS86uuXhg32NrNRAY9cVzi464e2KRe0QOnD91F+GBJVj
+ YAmrKtLyufm35YSCg7AANbpRYQ==
+X-Google-Smtp-Source: APXvYqzrj/IVZkkvSCDE8i0Wj87kZF8tJojhg+NQAlJXlmypQIV1dS8AgnJnYPXM91mw9maNWCqeSA==
+X-Received: by 2002:a1c:541b:: with SMTP id i27mr33322177wmb.137.1579075307994; 
+ Wed, 15 Jan 2020 00:01:47 -0800 (PST)
 Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id n187sm22514300wme.28.2020.01.15.00.01.15
+ by smtp.gmail.com with ESMTPSA id r15sm22123624wmh.21.2020.01.15.00.01.46
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Jan 2020 00:01:16 -0800 (PST)
-Subject: Re: [PATCH v5 4/6] usb: dwc3: Add Amlogic A1 DWC3 glue
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Hanjie Lin <hanjie.lin@amlogic.com>
+ Wed, 15 Jan 2020 00:01:47 -0800 (PST)
+Subject: Re: [PATCH v5 3/6] phy: amlogic: Add Amlogic A1 USB2 PHY Driver
+To: Hanjie Lin <hanjie.lin@amlogic.com>, Jerome Brunet
+ <jbrunet@baylibre.com>, Rob Herring <robh@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kevin Hilman <khilman@baylibre.com>
 References: <1578634957-54826-1-git-send-email-hanjie.lin@amlogic.com>
- <1578634957-54826-5-git-send-email-hanjie.lin@amlogic.com>
- <CAFBinCCFUDst_-QtSuNioAa3ckt5GzTFDAhZWh3zu42VRByPpw@mail.gmail.com>
+ <1578634957-54826-4-git-send-email-hanjie.lin@amlogic.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -118,23 +118,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <40e5b638-0606-70e2-3bdf-cc4619726196@baylibre.com>
-Date: Wed, 15 Jan 2020 09:01:15 +0100
+Message-ID: <69cb2df5-92d0-03a8-aaa8-d9c98909a11e@baylibre.com>
+Date: Wed, 15 Jan 2020 09:01:46 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCCFUDst_-QtSuNioAa3ckt5GzTFDAhZWh3zu42VRByPpw@mail.gmail.com>
+In-Reply-To: <1578634957-54826-4-git-send-email-hanjie.lin@amlogic.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_000119_502265_A4537BDA 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20200115_000149_361539_0828BFD2 
+X-CRM114-Status: GOOD (  21.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -152,64 +152,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+Cc: devicetree@vger.kernel.org, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
- Yue Wang <yue.wang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Liang Yang <liang.yang@amlogic.com>, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+ Yue Wang <yue.wang@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jian Hu <jian.hu@amlogic.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/01/2020 21:45, Martin Blumenstingl wrote:
-> Hi Hanjie,
+On 10/01/2020 06:42, Hanjie Lin wrote:
+> This adds support for the USB2 PHY found in the Amlogic A1 SoC Family.
 > 
-> On Fri, Jan 10, 2020 at 6:43 AM Hanjie Lin <hanjie.lin@amlogic.com> wrote:
-> [...]
->> -       devm_add_action_or_reset(dev,
->> -                                (void(*)(void *))clk_disable_unprepare,
->> -                                priv->clk);
->> +       ret = clk_bulk_prepare_enable(priv->drvdata->num_clks,
->> +                                     priv->drvdata->clks);
-> I don't see clk_bulk_disable_unprepare in dwc3_meson_g12a_remove()
-> please test that the clocks are all disabled (see
-> /sys/kernel/debug/clk/clk_summary for example) when unloading all USB
-> related kernel modules
+> It supports host mode only.
 > 
->> +
->> +       if (!priv->drvdata->otg_switch_supported)
->> +               goto setup_pm_runtime;
-> my brain doesn't like the goto in this place because this is not an
-> error condition. I was about to write that
-> usb_role_switch_unregister() is now skipped even though we're calling
-> usb_role_switch_register().
+> Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
+> Signed-off-by: Yue Wang <yue.wang@amlogic.com>
+> ---
+>  drivers/phy/amlogic/phy-meson-g12a-usb2.c | 85 +++++++++++++++++++++----------
+>  1 file changed, 59 insertions(+), 26 deletions(-)
 > 
-> I want to hear Neil's opinion on this because I got confused while
-> reading the code again.
-> my proposal is to move all of this OTG related code from
-> dwc3_meson_g12a_probe() into a new function, for example called
-> dwc3_meson_g12a_otg_init()
-> then only call that function when OTG switching is supported
+> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
+> index 9065ffc..33296f8 100644
+> --- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
+> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
+> @@ -146,11 +146,17 @@
+>  #define RESET_COMPLETE_TIME					1000
+>  #define PLL_RESET_COMPLETE_TIME					100
+>  
+> +enum meson_soc_id {
+> +	MESON_SOC_G12A  = 0,
+> +	MESON_SOC_A1,
+> +};
+> +
+>  struct phy_meson_g12a_usb2_priv {
+>  	struct device		*dev;
+>  	struct regmap		*regmap;
+>  	struct clk		*clk;
+>  	struct reset_control	*reset;
+> +	int                     soc_id;
+>  };
+>  
+>  static const struct regmap_config phy_meson_g12a_usb2_regmap_conf = {
+> @@ -164,6 +170,7 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
+>  {
+>  	struct phy_meson_g12a_usb2_priv *priv = phy_get_drvdata(phy);
+>  	int ret;
+> +	unsigned int value;
+>  
+>  	ret = reset_control_reset(priv->reset);
+>  	if (ret)
+> @@ -192,18 +199,22 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
+>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT2, 2) |
+>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT1, 9));
+>  
+> -	regmap_write(priv->regmap, PHY_CTRL_R18,
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
+> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
+> -		     PHY_CTRL_R18_MPLL_ACG_RANGE);
+> +	value = FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
+> +		FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
+> +		PHY_CTRL_R18_MPLL_ACG_RANGE;
+> +
+> +	if (priv->soc_id == MESON_SOC_A1)
+> +		value |= PHY_CTRL_R18_MPLL_DCO_CLK_SEL;
+> +
+> +	regmap_write(priv->regmap, PHY_CTRL_R18, value);
+>  
+>  	udelay(PLL_RESET_COMPLETE_TIME);
+>  
+> @@ -227,13 +238,24 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
+>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_VREF_4_0, 0) |
+>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_DBG_1_0, 0));
+>  
+> -	regmap_write(priv->regmap, PHY_CTRL_R4,
+> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
+> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
+> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
+> -		     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
+> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
+> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
+> +	if (priv->soc_id == MESON_SOC_G12A)
+> +		regmap_write(priv->regmap, PHY_CTRL_R4,
+> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
+> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
+> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
+> +			     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
+> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
+> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
+> +	else if (priv->soc_id == MESON_SOC_A1) {
+> +		regmap_write(priv->regmap, PHY_CTRL_R21,
+> +			     PHY_CTRL_R21_USB2_CAL_ACK_EN |
+> +			     PHY_CTRL_R21_USB2_TX_STRG_PD |
+> +			     FIELD_PREP(PHY_CTRL_R21_USB2_OTG_ACA_TRIM_1_0, 2));
+> +
+> +		/* Analog Settings */
+> +		regmap_write(priv->regmap, PHY_CTRL_R13,
+> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
+> +	}
+>  
+>  	/* Tuning Disconnect Threshold */
+>  	regmap_write(priv->regmap, PHY_CTRL_R3,
+> @@ -241,11 +263,13 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
+>  		     FIELD_PREP(PHY_CTRL_R3_HSDIC_REF, 1) |
+>  		     FIELD_PREP(PHY_CTRL_R3_DISC_THRESH, 3));
+>  
+> -	/* Analog Settings */
+> -	regmap_write(priv->regmap, PHY_CTRL_R14, 0);
+> -	regmap_write(priv->regmap, PHY_CTRL_R13,
+> -		     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
+> -		     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
+> +	if (priv->soc_id == MESON_SOC_G12A) {
+> +		/* Analog Settings */
+> +		regmap_write(priv->regmap, PHY_CTRL_R14, 0);
+> +		regmap_write(priv->regmap, PHY_CTRL_R13,
+> +			     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
+> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
+> +	}
+>  
+>  	return 0;
+>  }
+> @@ -286,6 +310,8 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
+>  	if (IS_ERR(base))
+>  		return PTR_ERR(base);
+>  
+> +	priv->soc_id = (enum meson_soc_id)of_device_get_match_data(&pdev->dev);
+> +
+>  	priv->regmap = devm_regmap_init_mmio(dev, base,
+>  					     &phy_meson_g12a_usb2_regmap_conf);
+>  	if (IS_ERR(priv->regmap))
+> @@ -321,8 +347,15 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
+>  }
+>  
+>  static const struct of_device_id phy_meson_g12a_usb2_of_match[] = {
+> -	{ .compatible = "amlogic,g12a-usb2-phy", },
+> -	{ },
+> +	{
+> +		.compatible = "amlogic,g12a-usb2-phy",
+> +		.data = (void *)MESON_SOC_G12A,
+> +	},
+> +	{
+> +		.compatible = "amlogic,a1-usb2-phy",
+> +		.data = (void *)MESON_SOC_A1,
+> +	},
+> +	{ /* Sentinel */ }
+>  };
+>  MODULE_DEVICE_TABLE(of, phy_meson_g12a_usb2_of_match);
+>  
+> 
 
-Indeed it's not cleanest way to do that, if you respin a v6, put all the OTG
-setup and role switch register in a separate function.
-
-with that and :clk_bulk_disable_unprepare() in remove:
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-
-Neil
-
-> 
-> 
-> Martin
-> 
-
 
 _______________________________________________
 linux-arm-kernel mailing list
