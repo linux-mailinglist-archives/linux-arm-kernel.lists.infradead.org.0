@@ -2,79 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E16213CBC8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 19:13:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C9D313CC10
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 19:27:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MV4+Q5XOv/8XsOpRdd9W9Rw0hJo7JF4glwUX2/vsDtM=; b=KNYjPB2SnVhP9dh5jwlZGXQQV
-	DEuLwA+RpW4ZdnR8uk8Wk6Jy9R3Aw8+0C7FBiGROmMCmUFVVgU86BPPwcKviy0tAvNS/O2AK0+dHo
-	GDsA7MS+i2WrsBqXocYPfmf/3sg4byq9SPAHBomzNB7ez1lNTbGv1Hh+RcyR43g6edFLiUP6qqMg5
-	rZUKKjipE4gqnCY74NOs/k1ONJJBL75GnOZYwilNYi/EK8OHeBhYaKQVNM/V7xXxeROLhBl2EbJ04
-	7r1XFv/b/BYP3FJ5OMKhPGSmgnLLuyV04LxcG1tdK5QISu7fbApOt5QpEfLd9jLWX2l/jxeJJEfcU
-	KclpMQ3Ew==;
+	 bh=hVGAdczUga0u0hQHMQS2XeylWrCxKk8FdT0QU96h3BA=; b=YOMDdiwKg/4MHtfkMQX+LN6Hu
+	XtVXCRZ6ama3NiNr8T9HGdqcgu6PnEtfdro/4emiBksVJHfZYT6m3IfAMdD4XYyOqTHkn2jSEHnvH
+	ZbDmFBVvM/SPqRUWVxmWLGGcoHZNHu6AzhluKHPol4hoLDmAAoNLOJ7y1fG6j0S/u1kNcTjxKnEam
+	YRa2ebyKFgpE4bF3zhEXxPDH9ksZzHN2NOjLDGR+BAPy9/fA7OFTpvVsKzRfcbytu+4G/IUjC+1dD
+	5/x4umYxSMWclliRl0cWPnKy+i3lFUPCr9NdQkD23Wd/k/B9g/++LFq8UeXuKvilvUn5H/93VYJud
+	ezQxpKwNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irnAI-00005W-Bg; Wed, 15 Jan 2020 18:13:14 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1irnNe-00058u-B1; Wed, 15 Jan 2020 18:27:02 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irnA7-0008WH-IP
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 18:13:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579111981;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=sHDPRsAgKSFMODtH3BOJDkPbUo+RQoM1fZTq0zNz7pQ=;
- b=KvCgI8/EE/F6cx31LSvJ7QAOVJ4ZObqu3D8SEDGPN5e/Bm5S7sZp0QEWoTGDFWgyqp9yJv
- S0Yfcohgtyc4TSPRy+4AdfcvgdaK829OOIDHTwF1uSivwaLokHuiFbMHIxgkgLvWZG3RpX
- gpFTRYt1jXDw8KYI1JXB65pcDzDSWVI=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-182-YnEgEZnTOJ6Kp3DRcRtWEQ-1; Wed, 15 Jan 2020 13:11:12 -0500
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 06A751092463;
- Wed, 15 Jan 2020 18:11:11 +0000 (UTC)
-Received: from localhost.localdomain (ovpn-120-211.rdu2.redhat.com
- [10.10.120.211])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CC4B480F68;
- Wed, 15 Jan 2020 18:11:07 +0000 (UTC)
-Subject: =?UTF-8?Q?Re=3a_=e2=9d=8c_FAIL=3a_Test_report_for_kernel_5=2e5=2e0-?=
- =?UTF-8?Q?rc6-e31626d=2ecki_=28arm-next=29?=
-To: Will Deacon <will@kernel.org>, CKI Project <cki-project@redhat.com>
-References: <cki.8C73ABC341.AD9Q7PNV7C@redhat.com>
- <20200115175414.GB31673@willie-the-truck>
-From: Rachel Sibley <rasibley@redhat.com>
-Message-ID: <5d991a60-f98e-cc47-7188-d996d0832bb3@redhat.com>
-Date: Wed, 15 Jan 2020 13:11:04 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1irnNU-00057s-5T
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 18:26:55 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00FIN5FU121958;
+ Wed, 15 Jan 2020 18:26:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=F6SQaCFi8PmmmsQylROI5thWFZ79H1A5nXmOx7Fhsqw=;
+ b=eq16sBhr1nm2LAd1UoC2Ko1hyhCVTxJGFyyrkdx0g2/3AniqAFOfA2xaW5JZJa7GhOlL
+ SjgttsTM7rmQSvWPBch+qegcifOmi15P72fO5zXBuBK3k3i98/fP/S3MLXnM5w1nlamd
+ F8GApoOouXEsp1QpiCPTlR7Mxz8Y3BMcYOT+PbfpTI/FwwIM22gvZytazeDIxh8Hf3dG
+ a+rUMGoA/TCEbbuG509sLVCn9Dc+8TNwlB5aNI8nAJOVOLR+C+7hBfUH6lbwYZvJ1YPD
+ eDWNzm3y8OBkzUG3At4MoHzorh+zc1jWnuFwEO22dqOBGOnen/aMYbul4b0/gDLIqu9B oA== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2xf74sdw4p-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 15 Jan 2020 18:26:42 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00FIOOOi072681;
+ Wed, 15 Jan 2020 18:26:41 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3020.oracle.com with ESMTP id 2xj1aq9drw-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 15 Jan 2020 18:26:41 +0000
+Received: from abhmp0013.oracle.com (abhmp0013.oracle.com [141.146.116.19])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 00FIQdkm008377;
+ Wed, 15 Jan 2020 18:26:39 GMT
+Received: from dhcp-10-159-239-64.vpn.oracle.com (/10.159.239.64)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 15 Jan 2020 10:26:38 -0800
+Subject: Re: [PATCH v8 02/18] soc: ti: k3: add navss ringacc driver
+To: Vinod Koul <vkoul@kernel.org>
+References: <20191223110458.30766-1-peter.ujfalusi@ti.com>
+ <20191223110458.30766-3-peter.ujfalusi@ti.com>
+ <6d70686b-a94e-18d1-7b33-ff9df7176089@ti.com>
+ <900c2f21-22bf-47f9-5c3c-0a3d95a5d645@oracle.com>
+ <ea6a87ae-b978-a786-27eb-db99483a82d9@ti.com>
+ <f0230e88-bd9b-cd6d-433d-06d507cafcbd@ti.com>
+ <9177657a-71c7-7bd0-a981-3ef1f736d4dc@oracle.com>
+ <2c933a6c-37c6-3ef6-7c37-ae36e8c49bf7@ti.com>
+ <20200115122440.GI2818@vkoul-mobl>
+From: "santosh.shilimkar@oracle.com" <santosh.shilimkar@oracle.com>
+Organization: Oracle Corporation
+Message-ID: <b1dba0ad-f7d6-607b-87f7-d3ca746d19ea@oracle.com>
+Date: Wed, 15 Jan 2020 10:26:36 -0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200115175414.GB31673@willie-the-truck>
+In-Reply-To: <20200115122440.GI2818@vkoul-mobl>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-MC-Unique: YnEgEZnTOJ6Kp3DRcRtWEQ-1
-X-Mimecast-Spam-Score: 0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=4
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001150141
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=4 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001150141
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_101303_676160_5BEFE4B7 
-X-CRM114-Status: GOOD (  13.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_102652_297250_15438B8A 
+X-CRM114-Status: GOOD (  21.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,6 +107,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,44 +121,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jianlin Shi <jishi@redhat.com>, catalin.marinas@arm.com,
- Jianwen Ji <jiji@redhat.com>, Hangbin Liu <haliu@redhat.com>,
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ vigneshr@ti.com, lokeshvutla@ti.com, t-kristo@ti.com,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, tony@atomide.com, robh+dt@kernel.org,
+ j-keerthy@ti.com, ssantosh@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, frowand.list@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxLzE1LzIwIDEyOjU0IFBNLCBXaWxsIERlYWNvbiB3cm90ZToKPiBIaSwKPiAKPiBPbiBX
-ZWQsIEphbiAxNSwgMjAyMCBhdCAwNTozODoyNlBNIC0wMDAwLCBDS0kgUHJvamVjdCB3cm90ZToK
-Pj4gV2UgcmFuIGF1dG9tYXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0aGlzIGtl
-cm5lbCB0cmVlOgo+Pgo+PiAgICAgICAgIEtlcm5lbCByZXBvOiBnaXQ6Ly9naXQua2VybmVsLm9y
-Zy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJtNjQvbGludXguZ2l0Cj4+ICAgICAgICAgICAg
-ICBDb21taXQ6IGUzMTYyNmQ0NDNkYiAtIE1lcmdlIGJyYW5jaGVzICdmb3ItbmV4dC9hc20tYW5u
-b3RhdGlvbnMnLCAnZm9yLW5leHQvY3B1ZmVhdHVyZXMnLCAnZm9yLW5leHQvZTBwZCcsICdmb3It
-bmV4dC9rZXhlYy9jbGVhbnVwJywgJ2Zvci1uZXh0L2tleGVjL2ZpbGUta2R1bXAnLCAnZm9yLW5l
-eHQvbWlzYycsICdmb3ItbmV4dC9ub2Zwc2ltZCcgYW5kICdmb3ItbmV4dC9wZXJmJyBpbnRvIGZv
-ci1rZXJuZWxjaQo+Pgo+PiBUaGUgcmVzdWx0cyBvZiB0aGVzZSBhdXRvbWF0ZWQgdGVzdHMgYXJl
-IHByb3ZpZGVkIGJlbG93Lgo+Pgo+PiAgICAgIE92ZXJhbGwgcmVzdWx0OiBGQUlMRUQgKHNlZSBk
-ZXRhaWxzIGJlbG93KQo+PiAgICAgICAgICAgICAgIE1lcmdlOiBPSwo+PiAgICAgICAgICAgICBD
-b21waWxlOiBPSwo+PiAgICAgICAgICAgICAgIFRlc3RzOiBGQUlMRUQKPj4KPj4gQWxsIGtlcm5l
-bCBiaW5hcmllcywgY29uZmlnIGZpbGVzLCBhbmQgbG9ncyBhcmUgYXZhaWxhYmxlIGZvciBkb3du
-bG9hZCBoZXJlOgo+Pgo+PiAgICBodHRwczovL2FydGlmYWN0cy5ja2ktcHJvamVjdC5vcmcvcGlw
-ZWxpbmVzLzM4Mzc4Nwo+Pgo+PiBPbmUgb3IgbW9yZSBrZXJuZWwgdGVzdHMgZmFpbGVkOgo+Pgo+
-PiAgICAgIGFhcmNoNjQ6Cj4+ICAgICAgIOKdjCBOZXR3b3JraW5nIHR1bm5lbDogZ2VuZXZlIGJh
-c2ljIHRlc3QKPj4gICAgICAg4p2MIE5ldHdvcmtpbmcgdHVubmVsOiBncmUgYmFzaWMKPiAKPiAK
-PiBIbW0uIElmIEkgbG9vayBhdCB0aGUgZmlsZXMgY29ycmVzcG9uZGluZyB0byB0aG9zZSB0ZXN0
-cyBpbiB0aGUgbG9ncyBsaW5rZWQKPiB0byBhYm92ZSwgdGhleSBhbGwgc2VlbSB0byBoYXZlIHBh
-c3NlZC4gRm9yIGV4YW1wbGU6Cj4gCj4gaHR0cHM6Ly9hcnRpZmFjdHMuY2tpLXByb2plY3Qub3Jn
-L3BpcGVsaW5lcy8zODM3ODcvbG9ncy9hYXJjaDY0X2hvc3RfMV9OZXR3b3JraW5nX3R1bm5lbF9f
-Z3JlX2Jhc2ljX3Jlc3VsdG91dHB1dGZpbGUubG9nCj4gCj4gQW0gSSBtaXNzaW5nIHNvbWV0aGlu
-Zz8KCkhpIFdpbGwsCgpUaGlzIGlzIGFuIGluZnJhc3RydWN0dXJlIHByb2JsZW0gd2l0aCByZXN0
-cmFpbnQgaGFybmVzcywgaXQncyB0YWtpbmcgdG9vIGxvbmcgZXh0cmFjdGluZyB0aGUgdGVzdHMt
-YmVha2VyCnJlcG8gd2hlcmUgb3VyIHRlc3RzIGxpdmUgYW5kIHdhdGNoZG9nIGlzIGFib3J0aW5n
-IHRoZSB0ZXN0cyBkdXJpbmcgc2V0dXAgcGhhc2UuIFdlIGFyZSBhY3RpdmVseSBkZWJ1Z2dpbmcK
-dGhpcyBwcm9ibGVtLiBGZWVsIGZyZWUgdG8gaWdub3JlIHRoZXNlIGZhaWx1cmVzLCBzb3JyeSBm
-b3IgdGhlIG5vaXNlIQoKLVJhY2hlbAoKPiAKPiBDaGVlcnMsCj4gCj4gV2lsbAo+IAo+IAoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+Hi Vinod,
+
+On 1/15/20 4:24 AM, Vinod Koul wrote:
+> On 15-01-20, 11:44, Peter Ujfalusi wrote:
+>>
+
+>>> I would prefer driver patches to go via driver tree.
+>>
+>> Not sure what you mean by 'driver patches'...
+>> The series to enable DMA support on TI's K3 platform consists:
+>> Patch 1-2: Ring Accelerator _driver_ (drivers/soc/ti/)
+>> Patch 3-6: DMAengine core patches to add new features needed for k3-udma
+>> Patch 7-11: DMA _driver_ patches for K3 (drivers/dma/ti/)
+>>
+>> Patch 10 depends on the ringacc and the DMAengine core patches
+>> Patch 11 depends on patch 10
+>>
+>> I kept it as a single series in hope that they will go via one subsystem
+>> tree to avoid build dependency issues and will have a good amount of
+>> time in linux-next for testing.
+>>
+>>>> Vinod could also perhaps setup an immutable branch based on v5.5-rc1
+>>>> with just the drivers/soc/ti parts applied so you can merge that branch
+>>>> in case you end up having to send up anything that conflicts.
+>>>>
+>>> As suggested on other email to Peter, these DMA engine related patches
+>>> should be queued up since they don't have any dependency. Based on
+>>> the status of that patchset, will take care of pulling in the driver
+>>> patches either for this merge window or early part of next merge window.
+>>
+>> OK, I'll send the two patch for ringacc as a separate series.
+>>
+>> Vinod: Would it be possible for you to pick up the DMAengine core
+>> patches (patch 3-6)?
+>> The UDMA driver patches have hard dependency on DMAengine core and
+>> ringacc, not sure how they are going to go in...
+> 
+> Since they have build dependency, the usual method for this is:
+> 
+[...]
+> 
+> 2. Santosh picks up ring driver patches, provides a signed immutable tag
+> which I will pull in and apply the rest, i.e., dmaengine updates and new
+> dmaengine driver
+> 
+I have pushed the ring driver changes with an immutable tag and also 
+pushed out to next. I will know if it breaks anything in a day.
+If all good, will send out the pull request to ARM soc folks.
+Since its already late, its not guaranteed that driver will get
+picked up for 5.6 but will request and copy you on pull request. Based
+on the state of the pull request, I suggest you decide to
+pull my tag and rest of the dma patches to your tree so that we
+can avoid any breakage in linus's tree. Feel free to add my ack
+for rest of the DMA patchset.
+
+git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git 
+tags/drivers_soc_for_5.6
+
+Let me know if you have any concerns/questions.
+
+Regards,
+Santosh
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
