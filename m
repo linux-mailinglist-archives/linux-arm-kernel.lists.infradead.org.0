@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6719E13C211
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:56:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4D2213C219
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:57:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=leRGPUx0KlwD3k2/ay5JPkMQvg6il1ZehYd0NtmclvY=; b=mCmhnMnupfBa+w
-	NhzBqkVQdVgPNo57ZvntmKyB70tFrqXlsO+GIhTfS4BZjGVrM/vSIMLL+vEtrROQ+tdGliYPPLcqC
-	sW/CnSnHcBay+/r4lSjIdlpzm/zkYBghDxBNTqThaHLWJf4ZT4MpaXONjy3e44t51giCu3xAJOZYH
-	MuxXQGvMAAhZWkg1ZLIKAtIfWvPP7JLsXLHWfavHKWVx1zfctAPdzDDHxmp3el6pVq7fL2SXonyoD
-	zNfjqfmrT4YZO7BshREDui1fdf78QzD1+3COl2Fgwf6ajqVIrH8UPHPewHCLPXK0siWXOjp0A4ID0
-	IUBGpLO2eaJ7cgYwCvkA==;
+	List-Owner; bh=XqAv5zxkGOxjPBELAMDniAZGWhM6dt00RgdP2urdc0I=; b=QeKtDxoJEPk7rA
+	C6RWZdJdAFLCWbBsQW/tJeUI3xuE8dhtSnZT5G7DoeEZV6eKPJbkyC4Nj+Vt5SH8AaXz4c0/iyRNO
+	XdneAMB45TlQNf2hCjZFE5G+gDHuaMQ7GvGG3yHcoUcRJhC+EjXnFIq05foTHAFvhydnbkpl8ulbx
+	xms5dtq4gkz3QBEHJ+mYyVSBT2gJV4FuSnyP97jF1qqeL9YF5duYkUSpfXePrOgtiOy0zDuv3egvu
+	tBN5hz+gle5lZTw3x0Usb0ryxOSruSE0+3+5V/K+E4S/rlAV7fgSpjlOhK3cGnVJz1/UaJ66dJmw1
+	sOH2tXVzSkIvn2/Ym92w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriDw-0000kz-QK; Wed, 15 Jan 2020 12:56:40 +0000
+	id 1iriEj-0001Qi-6E; Wed, 15 Jan 2020 12:57:29 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iriB4-0005im-LZ
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:44 +0000
-Received: by mail-wm1-x341.google.com with SMTP id d139so4707758wmd.0
+ id 1iriB5-0005k9-NE
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:45 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d73so17741225wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 04:53:42 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=k0PTgEa8Z2EtxKNp+bXlU3gMIeIQMMd4dvAJJmx7ucE=;
- b=dHOXOKHoTxItty8Q5696Mr+qbLuMsFa+MTSqKPLipIvl2oTCGz6ML1mpeZ/hKlDF/w
- 0zv4zm331wgT2+KoHIxNr0EbnRGGQsLvPJyytnYPhCnUUDZJbkaemFEkNnu+UetF8/hv
- V63rc3osvZrEsMSG1CYkzOLHHYC2msMAlTjspE9QoVjnwGTB+KftSreLBNSx3XxcNWWz
- 7qWRy0hn5i3tRV6yEIj4f9s5mv4xFHEO4sLGFIYhAVyLWiQK84QoCPspbr09hIqHacJb
- keyJbpDsHaUOhTQQceVDxe4Do+EaZFZskEG7KV/7urpQlMM39SamhpMjxm3wKwlF46iZ
- BDDA==
+ bh=63OK7+WV2oSpfMtMv7dHdZjSmylnl4RI0WBIjRtCjGI=;
+ b=rcRSOzLbYMD9O+ISAliDx8MfCABkYI5R5TCmbME5A+HMyM0rj9pis2bt5k2K31Ush7
+ XTRWm+dGRYhisp4xEjHWBRvFocNJu2ERqbdgcL9Rvz+8hIXGrjQMHPwqrEd7BOsWRCfC
+ YLHxO7YHfZs/g0ogm/bk3CFCwm6vV2ACaeGUst6R0+FEeGaYnJ7e5fAqOa0T6GfnVINr
+ A3nev+evbG74sdaffLcpUhvBbE+hxMO4/bKLh6V2wkKSJQhYHzm9aZ+kcTtN0SuETkh5
+ ZaL3HLW68OJmCuxaDSRiCB07t6VeEz+2Nm70rAHxzRxaiEkjv5S9oIwct+NKKTfgdEgX
+ 40uQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=k0PTgEa8Z2EtxKNp+bXlU3gMIeIQMMd4dvAJJmx7ucE=;
- b=jSpcoASmJuPWSlcVD+nPBGcYujM3h3yBxkpDeM/UR6/jV8kQ1kFUefpjUnuspQ1/m8
- zJNXXKrBZ64BPXAEghTop9nIFumwG7tcMeJuKKXprfukH+24LRrCA6JAbeRN1F8Zkgk5
- Drx4tSc3b7UBHtU4TA2UJzg20Aq6vBLsTTHi1Tk93HXHlKf2i7DwQM/O61v03BnekZ08
- 8AcSSS2GFkRqpoPH+h6/1FSa0gvOnRa9yOHRSAdsaRVzg8M9cED6+151T6i0NM1dLVUO
- /67YNuL8pD2e0T8eiJMxh9YBvf2PzfsI/j8OvU4cVeRbYY7BWdscdGEQDEEZjwTqkszv
- Ienw==
-X-Gm-Message-State: APjAAAWy8He7phV1RU9enyUwp2e53kHv9Wm3EMOCzShhHin4b9fqCjlS
- i2LZ46EryiHlovi7+3u3XOzmHQ==
-X-Google-Smtp-Source: APXvYqw9Mt6OhEbO1QMqXTowh5t7SCfN3PgnBvH6KOJ1spMG2hboA0nCSsAfuEDMtgnKjfCtqj0iOg==
-X-Received: by 2002:a7b:c3d7:: with SMTP id t23mr34564949wmj.33.1579092821258; 
- Wed, 15 Jan 2020 04:53:41 -0800 (PST)
+ bh=63OK7+WV2oSpfMtMv7dHdZjSmylnl4RI0WBIjRtCjGI=;
+ b=MQGwFry7pcRYX2Iqqvf5GcEwRv/H34pKvPwNjADXAZUiBkf4SxvbrNvpv/Kw60oMAH
+ gou52psHoY5rpxEgA0EO1Qzo04/qqPhf5CtV7f07hU7ape+pCsnBGlBiz8vILfz9RRzp
+ iynZ0fRubhrv0JGDnB3C80ydsAl7PBVgc2/AaJ3nWLJDDwf9A9S8IrdGPTcx1q/lICVb
+ OuU4+DfTRrH9UqxvoXtKQ7zz8VhZh87EfzhR7owPLDPrcSM1EmZcdFcQB5vIEG8UkTYQ
+ Iihjz5zSrQy1mUI82x1YQzZWcedZAaKRW9XIwh1Tin/VBDZv2Q/t5Hi5jC1mvTD7byG+
+ TeeA==
+X-Gm-Message-State: APjAAAWALvTuTm0fpcbIy8vfyNW0lnWac8F6wTOhKYHVNdf+25qRrsXJ
+ qGqcDL0FM6/qDI9mZUIy+U6H9Q==
+X-Google-Smtp-Source: APXvYqy211rlSGA/7f48UPTxt4qHpuBdCqMG+TrJdyDkgkot1NRkPQy8mZvmt/WlxkEIur07ZirjyA==
+X-Received: by 2002:a7b:c151:: with SMTP id z17mr33478170wmi.137.1579092822380; 
+ Wed, 15 Jan 2020 04:53:42 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:2266:ba60:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.40
+ by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Jan 2020 04:53:40 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:41 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
  iommu@lists.linux-foundation.org, will@kernel.org
-Subject: [PATCH v5 12/13] PCI/ATS: Add PASID stubs
-Date: Wed, 15 Jan 2020 13:52:38 +0100
-Message-Id: <20200115125239.136759-13-jean-philippe@linaro.org>
+Subject: [PATCH v5 13/13] iommu/arm-smmu-v3: Add support for PCI PASID
+Date: Wed, 15 Jan 2020 13:52:39 +0100
+Message-Id: <20200115125239.136759-14-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200115125239.136759-1-jean-philippe@linaro.org>
 References: <20200115125239.136759-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_045342_745537_2536BB8C 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200115_045343_808445_C36EBDB3 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,33 +109,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SMMUv3 driver, which may be built without CONFIG_PCI, will soon gain
-PASID support.  Partially revert commit c6e9aefbf9db ("PCI/ATS: Remove
-unused PRI and PASID stubs") to re-introduce the PASID stubs, and avoid
-adding more #ifdefs to the SMMU driver.
+Enable PASID for PCI devices that support it. Initialize PASID early in
+add_device() because it must be enabled before ATS.
 
-Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Tested-by: Zhangfei Gao <zhangfei.gao@linaro.org>
 Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- include/linux/pci-ats.h | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/iommu/arm-smmu-v3.c | 62 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 61 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
-index 5d62e78946a3..d08f0869f121 100644
---- a/include/linux/pci-ats.h
-+++ b/include/linux/pci-ats.h
-@@ -33,6 +33,9 @@ void pci_disable_pasid(struct pci_dev *pdev);
- int pci_pasid_features(struct pci_dev *pdev);
- int pci_max_pasids(struct pci_dev *pdev);
- #else /* CONFIG_PCI_PASID */
-+static inline int pci_enable_pasid(struct pci_dev *pdev, int features)
-+{ return -EINVAL; }
-+static inline void pci_disable_pasid(struct pci_dev *pdev) { }
- static inline int pci_pasid_features(struct pci_dev *pdev)
- { return -EINVAL; }
- static inline int pci_max_pasids(struct pci_dev *pdev)
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index b2b7ba9c4e32..f42454512e87 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -2634,6 +2634,53 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+ 	atomic_dec(&smmu_domain->nr_ats_masters);
+ }
+ 
++static int arm_smmu_enable_pasid(struct arm_smmu_master *master)
++{
++	int ret;
++	int features;
++	int num_pasids;
++	struct pci_dev *pdev;
++
++	if (!dev_is_pci(master->dev))
++		return -ENODEV;
++
++	pdev = to_pci_dev(master->dev);
++
++	features = pci_pasid_features(pdev);
++	if (features < 0)
++		return features;
++
++	num_pasids = pci_max_pasids(pdev);
++	if (num_pasids <= 0)
++		return num_pasids;
++
++	ret = pci_enable_pasid(pdev, features);
++	if (ret) {
++		dev_err(&pdev->dev, "Failed to enable PASID\n");
++		return ret;
++	}
++
++	master->ssid_bits = min_t(u8, ilog2(num_pasids),
++				  master->smmu->ssid_bits);
++	return 0;
++}
++
++static void arm_smmu_disable_pasid(struct arm_smmu_master *master)
++{
++	struct pci_dev *pdev;
++
++	if (!dev_is_pci(master->dev))
++		return;
++
++	pdev = to_pci_dev(master->dev);
++
++	if (!pdev->pasid_enabled)
++		return;
++
++	master->ssid_bits = 0;
++	pci_disable_pasid(pdev);
++}
++
+ static void arm_smmu_detach_dev(struct arm_smmu_master *master)
+ {
+ 	unsigned long flags;
+@@ -2842,13 +2889,23 @@ static int arm_smmu_add_device(struct device *dev)
+ 
+ 	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
+ 
++	/*
++	 * Note that PASID must be enabled before, and disabled after ATS:
++	 * PCI Express Base 4.0r1.0 - 10.5.1.3 ATS Control Register
++	 *
++	 *   Behavior is undefined if this bit is Set and the value of the PASID
++	 *   Enable, Execute Requested Enable, or Privileged Mode Requested bits
++	 *   are changed.
++	 */
++	arm_smmu_enable_pasid(master);
++
+ 	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
+ 		master->ssid_bits = min_t(u8, master->ssid_bits,
+ 					  CTXDESC_LINEAR_CDMAX);
+ 
+ 	ret = iommu_device_link(&smmu->iommu, dev);
+ 	if (ret)
+-		goto err_free_master;
++		goto err_disable_pasid;
+ 
+ 	group = iommu_group_get_for_dev(dev);
+ 	if (IS_ERR(group)) {
+@@ -2861,6 +2918,8 @@ static int arm_smmu_add_device(struct device *dev)
+ 
+ err_unlink:
+ 	iommu_device_unlink(&smmu->iommu, dev);
++err_disable_pasid:
++	arm_smmu_disable_pasid(master);
+ err_free_master:
+ 	kfree(master);
+ 	fwspec->iommu_priv = NULL;
+@@ -2881,6 +2940,7 @@ static void arm_smmu_remove_device(struct device *dev)
+ 	arm_smmu_detach_dev(master);
+ 	iommu_group_remove_device(dev);
+ 	iommu_device_unlink(&smmu->iommu, dev);
++	arm_smmu_disable_pasid(master);
+ 	kfree(master);
+ 	iommu_fwspec_free(dev);
+ }
 -- 
 2.24.1
 
