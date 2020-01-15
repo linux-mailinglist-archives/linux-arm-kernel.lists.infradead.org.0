@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E52F13C645
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:37:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB54613C658
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:42:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yJEjBiPKP4rljJ+U8XSoT5fkN21HP1mapLISRiOIhI0=; b=I9klTisvfHer8B
-	Xoj+oWUWrGeTgkP8xovhsAX7h+mQIjX03ho6hAamQTxgwyGknIVTyuzMrp8j6fpP6FUoNFKwx1NGv
-	erRcDAOh0tI40qce+FY74Mhyp+V2xivNVa+HSVCLv55ek9M18uikxm1Y1k1XnjcfxPc3sv0/hZMHX
-	3AK8aXBYov/R691F/QwFOWKaw60613a/AATaNgjid8kRgl3DYsnogQIgBbCKrUd37fPmLzqnxzHfa
-	X/RzF4g0OT1fKfwLT3erK+gCQIaYUFnAt9aZZtMTTUfcCD97SEDlgVr03Fh6N0A2/zBsBHnu/RgWy
-	80GHRTx4+JjY2oIjzJrA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5Bd7tUV4jRRMP8f/A6kcmj6eYEw9Zv/3gRZDAFxysc8=; b=qGJ/Xo51wzPGB/
+	8irLMDFko0KFc4FF9imZokTYc1zAlIg8CSxnfAoKeKwOT/fp13c6iBEuLkk9gJO+qjZWhfDUapZZb
+	KS25tHKyMxpf580RSvYSjQ7XPWBSSKwt1bTl69ttiKAWEAFfNrN/vmfqL5fqvXlqg+MZyyTmZd3eR
+	kkzPUoudUQ5d7+9nv8U2Wa7Nb8NEKCMGHJoE3zc9puCL+l+DVVEXHsxzpFLYH7/q+FBMvlHYBW2SB
+	KOlqKs2tCr71pFaoLBE4EMulrjg3hlVAEGl6QssaSqFbzN7xioPzEw2WSbmUwpnhJ36gJKH3YZ9/w
+	PuDqfGg5ZG/mkKV7UK+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irjms-0004J3-89; Wed, 15 Jan 2020 14:36:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irjmZ-0004H3-MS; Wed, 15 Jan 2020 14:36:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11C2931B;
- Wed, 15 Jan 2020 06:36:31 -0800 (PST)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D2FBC3F68E;
- Wed, 15 Jan 2020 06:36:28 -0800 (PST)
-Subject: Re: [PATCH v8 00/25] arm64: MMU enabled kexec relocation
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
- <20200108173225.GA21242@willie-the-truck>
- <CA+CK2bBDhF4YuFOeagzZ48-BigDmOVuBKZTAC8fd6tojcJN-0g@mail.gmail.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <033681cb-9fd2-673d-d282-e7c0973e4523@arm.com>
-Date: Wed, 15 Jan 2020 14:36:27 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1irjsQ-0006en-4X; Wed, 15 Jan 2020 14:42:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irjsD-0006eI-97
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:42:26 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5850D2075B;
+ Wed, 15 Jan 2020 14:42:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579099340;
+ bh=rhAo0e1CjOR2QBmI8FiiF6Camf/H/qwsu8G4O/2US/Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vIwxg9Ma0qXCH/qJ7nVHXmwsTMbjmeOQaIHxmNvRcl8bkvBiZzwFzOLPQCE1uDlUl
+ EpasDvhKOCGyDqtmKNRl6mP+BjtDavZpjz5bs9QjBOQBK57x04DIAGjOQNsvzE1xO8
+ 98iFEvj5q7L1qBS8ELlGGKdqTyXccXHgnCvx4BvE=
+Date: Wed, 15 Jan 2020 14:42:17 +0000
+From: Will Deacon <will@kernel.org>
+To: Vladimir Murzin <vladimir.murzin@arm.com>
+Subject: Re: [PATCH] arm64: Turn "broken gas inst" into real config option
+Message-ID: <20200115144216.GA29230@willie-the-truck>
+References: <1579097905-128661-1-git-send-email-vladimir.murzin@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+CK2bBDhF4YuFOeagzZ48-BigDmOVuBKZTAC8fd6tojcJN-0g@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1579097905-128661-1-git-send-email-vladimir.murzin@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_063631_778296_4D756234 
-X-CRM114-Status: GOOD (  10.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200115_064221_342447_E4EB57CC 
+X-CRM114-Status: GOOD (  14.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,43 +76,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, steve.capper@arm.com,
- kexec mailing list <kexec@lists.infradead.org>,
- James Morris <jmorris@namei.org>, LKML <linux-kernel@vger.kernel.org>,
- linux-mm <linux-mm@kvack.org>, rfontana@redhat.com,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
+On Wed, Jan 15, 2020 at 02:18:25PM +0000, Vladimir Murzin wrote:
+> So it is available everywhere and there is no need to keep
+> CONFIG_ARM64 workaround.
+> 
+> Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> ---
+>  arch/arm64/Kconfig  |  3 +++
+>  arch/arm64/Makefile | 10 +++-------
+>  2 files changed, 6 insertions(+), 7 deletions(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 63c19ef..4139c927 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -303,6 +303,9 @@ config ARCH_SUPPORTS_UPROBES
+>  config ARCH_PROC_KCORE_TEXT
+>  	def_bool y
+>  
+> +config BROKEN_GAS_INST
+> +	def_bool y if !$(as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n)
 
-On 08/01/2020 17:59, Pavel Tatashin wrote:
-> On Wed, Jan 8, 2020 at 12:32 PM Will Deacon <will@kernel.org> wrote:
->> On Wed, Dec 04, 2019 at 10:59:13AM -0500, Pavel Tatashin wrote:
->>> Many changes compared to version 6, so I decided to send it out now.
->>> James Morse raised an important issue to which I do not have a solution
->>> yet. But would like to discuss it.
+Guessing you can drop the 'y if' part here?
 
-(Christmas was badly timed relative to my holiday, so its taken a while for me to catch up)
+No need to resend just for that, but would be nice to know that it works.
 
-The memory out of range of the idmap?
-I've posted an RFC here[0] that makes hibernate idmap is ttbr0 page. This should let you
-reuse that code and test it without a machine with a funny memory layout.
-
-
-Thanks,
-
-James
-
-[0] https://lore.kernel.org/linux-arm-kernel/20200115143322.214247-1-james.morse@arm.com/
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
