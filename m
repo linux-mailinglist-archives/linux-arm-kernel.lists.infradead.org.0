@@ -2,74 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7272313BA7A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:49:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F32413BA84
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:55:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=th8XYAPl4wGyrf2og/vdqnWKU2qLHxp2D+NV7AG//dQ=; b=Xvp2A0pY2gmBst
-	SFoQADaBQEbwKW1ayJxsvwzkIZiwdvXLfD9N5qSkT64UJRos2iBlIkmuIlmTsC1XEqmTkXnSW6tBF
-	zD4EFtTOJMto2xOIDkhvWQKM/jU93c9Oc27e3kkVpTAUsKdmtzMdAEyYIXOAOIqEJsgRmGzQ5cKUC
-	Fj8qRHLnGZ61dIpk8xB9dJkAX1IPXtcjYvn2iGfZF0pO5+X85L2kx6KXSnzHMFWnlFWZqvRhXQgEZ
-	JEPdCD+9yWbK21q0M+kEXnlMvGE+3fY51J5VR44EiUhoI0icCkevovSE5MNq0C5mFKFV+iFLgu/lV
-	QHnjqlPXqZv7N7UlI91A==;
+	List-Owner; bh=Hl+P7bIo9kDiu5OM0jONATEFjBsXbPZRn4mAv5D8kJ4=; b=eRsalkY0gy9hbf
+	u6sYa7qGdr1dRddMvtrcdLmNj3t9A9V8POjn+B27+eQMQ1nlAOG4JJllM5b1ivmB/AsrWVjRjCoxZ
+	kPm08d/yQPkiTuOaKdWRH/dEMreMQw5WJYe3V12IHhKvSZLQSAggNSgPX8gPULNUjLdGKLEb9dIR1
+	QygcAdm6rsPHjg9hN4VehsqR7s9w/8Niq9QaTybbWdUIfFkJmK6mdIadBU3zjCQtR7EMOMh73kAfx
+	fajEzd/o6YtKsAV0hwz5vCV2DS9LCUguCKbLuL9GoLrAxzTbEYI8MboSGVLvHblt5oyE/TOzdpE6H
+	qPsSYHNKKr5T8vFY3olA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irdQN-0003QU-FO; Wed, 15 Jan 2020 07:49:11 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1irdWG-0005Sb-VN; Wed, 15 Jan 2020 07:55:16 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irdQB-0003Q2-B0
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:49:03 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so14731836wrr.1
+ id 1irdVu-0005Qs-Ei
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:54:58 +0000
+Received: by mail-wr1-x443.google.com with SMTP id q6so14660731wro.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 23:48:59 -0800 (PST)
+ Tue, 14 Jan 2020 23:54:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=N9B/yQ734wXw4JHujFZHLoMyTjSje6cpToU6kQfhEy0=;
- b=R/JqNICX2aHUnmkVpLFK1QtrllKnq6I3u4QrhLZopsd4dQwMIn03QcDZjrDGvf1D0C
- AIS4blTrKdLp3/bxIAcDy8IuIdCKQ0oR47zPk2r4g9v1aFFndgp3X4d3GVSxhzbH8tXJ
- JmJ2RTujhGYS0DoIJMQvn/TluNmLxpmA3n1RF2dFOjZJUKs6AGkhmyGR1L4H03iyl5GV
- 6Oqv5uUmXjYCxbBTJtziirgLMcH2HoK8x4XMN8O3HTQJIK21Co9sT4dI35V1alteHcYd
- bHdo2mJ4I1mA6xDOOwh1Zl3r56Q7NyxUDEOfiX1/U2l3/UA6qAcwsNHRGfidLZ4FBTbt
- tRmA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=15L7jlFqNO2Bso518qKUnevC0GsYD/ESd/nGLMhwY18=;
+ b=YvUkGk7+bHFbBiHvppN2kI5YCnCNxnXe3u7oi6v/yBKhT0qQ/TUefkDTiAscRl6mJU
+ 9+PNZhlEvHQKdI9U3T9G+drI9Bu1AAsx4FOTyEjfy3XUi9Bn4Zl1qnfj/g6L8y2/2sMQ
+ NtWrWvvsc6KubXhZu5tA4a15M9I3G6heuTACJ///AKb339G4xRF1OUQDwuls0BNHj6Dd
+ L+Ao+9F6DyIGDmlExl1k6P91ReYIN3xWIVpMaL/vUlNo5n0UkHMmtI+SU+9i6s4wQefw
+ cAa2en57TyecoCFj7V2uTmp3Sdl6biCxiHChJnF7z9QB2zNP10RiP0Dz/4UHcPuNjkvP
+ /aSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=N9B/yQ734wXw4JHujFZHLoMyTjSje6cpToU6kQfhEy0=;
- b=s2T/lJZ5ufn7vR0uqpOOt/XlaxD2miq0eA5NpNeiOl9hQkDbRYlmew8l9xh5Y0aEB6
- Af0MJwyVIYhHMqlwfV0tKQSCnLGqLQDce7i25RWxe7fQQzs2RQyE3rhmVbZNfOCiE5ie
- lPCzWB3hfn1m9o6tIyp5ZQ7k15jqE6TrzBS+CJt4JO5iCkHliszYEWiIqHq8ETRcXbOl
- C87N/62KLPLCS1dY6VRVmbz+2QJJEjexbMT+eu56tCHG2udnoPn3IALBnuheFlE+LNgm
- /xCgfD1RoJBARl85QwCV7ngQLe8suUWchqhMbYjTuTQZ171hDRpC1BfKHSdcG/rD3UTG
- 5Wfg==
-X-Gm-Message-State: APjAAAUtycmqVzhnSmTMjAGsqn54Zl5VRNP9TIifbvai3QbwbX4LyD89
- j1aWy9mlWRLOtkr+7rdvOtGi9SdoRiVH34PWkdTVlQ==
-X-Google-Smtp-Source: APXvYqwLHbaV+MVn8ADEG5rsC9AHTUzsGTp3uPaj0H+oC9bba1O2VFWMAaXilcfyk30hLOHCYLEH1lfoUfgDeNjqFd8=
-X-Received: by 2002:a5d:6652:: with SMTP id f18mr12942941wrw.246.1579074537570; 
- Tue, 14 Jan 2020 23:48:57 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=15L7jlFqNO2Bso518qKUnevC0GsYD/ESd/nGLMhwY18=;
+ b=d/UigKGftu+8S/yGXNhZf9eYugPA1XieZ21GKEwPXX13UMv+75dr14FD9Nb0M45yxs
+ 2bYQ6W1CiyeS6wQdB9nn6Esdy6Xzv9KZhFpe/FkEXNDeHyK6xqYhgnVSrI3VPu8QYt7/
+ YeX/PPVt1F8Gm+JzT1SMB1k7QtOWB8k22TenB/vkVROrn6bTmsjogMjwd80ehrfvdCVO
+ F7mRHT/wnTiw3EEm8unz/F4x24KxHi1ogDPe6FqFFqSEDTdqlvbgz6tgehaClJS3oYnp
+ y/H8Hk4jjEULRg/A5HT7w72M+itepyb1qqw6T4/XTTtZForsng/W31tZqbLcCS4WakyY
+ 4ZJw==
+X-Gm-Message-State: APjAAAVfKxc16Nz4ILqGNzhzJc3TDFLsT7QXeG4h9De/hZJmJJIVwC7R
+ 0f3Upc0FAjyIrXmoqLoD/FIFYQ==
+X-Google-Smtp-Source: APXvYqyGZdgYfY2VItz4h8XSNP932dhDZZ7eluAWOElft/WQQOcEsxckB+CTyI0jPiwls4B9Ze0uDw==
+X-Received: by 2002:a5d:49cc:: with SMTP id t12mr28623351wrs.363.1579074892536; 
+ Tue, 14 Jan 2020 23:54:52 -0800 (PST)
+Received: from dell ([2.27.35.221])
+ by smtp.gmail.com with ESMTPSA id o4sm22723616wrx.25.2020.01.14.23.54.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Jan 2020 23:54:51 -0800 (PST)
+Date: Wed, 15 Jan 2020 07:55:11 +0000
+From: Lee Jones <lee.jones@linaro.org>
+To: Gene Chen <gene.chen.richtek@gmail.com>
+Subject: Re: [PATCH v7] mfd: mt6360: add pmic mt6360 driver
+Message-ID: <20200115075511.GB325@dell>
+References: <20200107153314.21486-1-gene.chen.richtek@gmail.com>
+ <CAE+NS34ULhk=CLo+e6gAO3SF9NW1cTAZcpMvX1yLfChNCJTpRA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200110122341.8445-1-broonie@kernel.org>
- <20200110122341.8445-3-broonie@kernel.org>
-In-Reply-To: <20200110122341.8445-3-broonie@kernel.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 15 Jan 2020 08:48:46 +0100
-Message-ID: <CAKv+Gu8He-SmqH3cTOCReOntFaOWvdKmEAfxxAy7QW6GzHd=Pg@mail.gmail.com>
-Subject: Re: [PATCH v10 2/3] arm64: random: Add data to pool from setup_arch()
-To: Mark Brown <broonie@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <CAE+NS34ULhk=CLo+e6gAO3SF9NW1cTAZcpMvX1yLfChNCJTpRA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_234859_382048_0816E5B4 
-X-CRM114-Status: GOOD (  26.71  )
+X-CRM114-CacheID: sfid-20200114_235454_789143_EF428CE6 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,109 +99,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ shufan_lee@richtek.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 at 13:23, Mark Brown <broonie@kernel.org> wrote:
->
-> Since the arm64 ARCH_RANDOM implementation is not available until
-> cpufeature has determined the system capabilities it can't be used by
-> the generic random code to initialize the entropy pool for early use.
-> Instead explicitly add some data to the pool from setup_arch() if the
-> boot CPU supports v8.5-RNG, this is the point recommended by the generic
-> code.
->
-> Note that we are only adding data here, it will be mixed into the pool
-> but won't be credited as entropy. There are currently no suitable
-> interfaces for that at present - extending the random code to provide
-> those will be done as a future step. Providing data is better than not
-> doing so as it will still provide an increase in variation in the output
-> from the random code and there will be no impact on the rate at which
-> entropy is credited compared to what we have without this patch.
->
-
-This is slightly unfortunate, as this way, we lose the ability to use
-random.trust_cpu=1 to get the entropy credited and initialize CRNG
-early.
-
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> ---
->  arch/arm64/include/asm/archrandom.h | 30 +++++++++++++++++++++++++++++
->  arch/arm64/kernel/setup.c           |  2 ++
->  2 files changed, 32 insertions(+)
->
-> diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
-> index 5ea5a1ce5a5f..2eb1db1f0bdf 100644
-> --- a/arch/arm64/include/asm/archrandom.h
-> +++ b/arch/arm64/include/asm/archrandom.h
-> @@ -59,9 +59,39 @@ static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
->         return ok;
->  }
->
-> +static inline bool __init __early_cpu_has_rndr(void)
-> +{
-> +       /* Open code as we run prior to the first call to cpufeature. */
-> +       unsigned long ftr = read_sysreg_s(SYS_ID_AA64ISAR0_EL1);
-> +       return (ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf;
-> +}
-> +
-> +/*
-> + * Our ARCH_RANDOM implementation does not function until relatively
-> + * late in the boot when cpufeature has detertmined system
-
-determined
-
-> + * capabilities so the core code can't use arch_get_random*() to
-> + * initialize, instead we call this function to inject data from
-> + * setup_arch() if the boot CPU supports v8.5-RNG.
-> + */
-> +static inline void __init arm64_add_early_rndr_entropy(void)
-> +{
-> +       unsigned long val;
-> +       int i;
-> +
-> +       if (!__early_cpu_has_rndr())
-> +               return;
-> +
-> +       /* Add multiple values to mirror the generic code. */
-> +       for (i = 0; i < 16; i++)
-> +               if (__arm64_rndr(&val))
-> +                       add_device_randomness(&val, sizeof(val));
-> +}
-> +
->  #else
->
->  static inline bool __arm64_rndr(unsigned long *v) { return false; }
-> +static inline bool __init __early_cpu_has_rndr(void) { return false; }
-> +static inline void __init arm64_add_early_rndr_entropy(void) { }
->
->  #endif /* CONFIG_ARCH_RANDOM */
->  #endif /* _ASM_ARCHRANDOM_H */
-> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> index 56f664561754..170842965a32 100644
-> --- a/arch/arm64/kernel/setup.c
-> +++ b/arch/arm64/kernel/setup.c
-> @@ -344,6 +344,8 @@ void __init setup_arch(char **cmdline_p)
->         /* Init percpu seeds for random tags after cpus are set up. */
->         kasan_init_tags();
->
-> +       arm64_add_early_rndr_entropy();
-> +
->  #ifdef CONFIG_ARM64_SW_TTBR0_PAN
->         /*
->          * Make sure init_thread_info.ttbr0 always generates translation
-> --
-> 2.20.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAxNSBKYW4gMjAyMCwgR2VuZSBDaGVuIHdyb3RlOgoKPiBIaSBMZWUvTWF0dGhpYXMs
+Cj4gCj4gICAgIENvdWxkIHlvdSBwbGVhc2UgaGVscCB0byByZXZpZXcgbmV3IGZpeCBjaGFuZ2Us
+IHRoYW5rcwoKYSkgSWYgeW91IHRoaW5rIGEgc3VibWlzc2lvbiBoYXMgYmVlbiBhY2NpZGVudGFs
+bHkgZHJvcHBlZCwgeW91IHNob3VsZAogICByZXN1Ym1pdCBpdCBhcyBhICJSRVNFTkQiLiAgUGxl
+YXNlIGRvIG5vdCBzZW5kIGNvbnRlbnRsZXNzIHBpbmdzLgoKYikgSXQgbG9va3MgbGlrZSB5b3Ug
+aGF2ZSBjb21wbGFpbnMgZnJvbSB0aGUgJ2J1aWxkIHRlc3Qgcm9ib3QnLiAgWW91CiAgIG5lZWQg
+dG8gYWRkcmVzcyB0aGVtIGZpcnN0LCBiZWZvcmUgcmV2aWV3LiAgT3IgYXQgbGVhc3QganVzdGlm
+eQogICB0aGVtLgoKPiBHZW5lIENoZW4gPGdlbmUuY2hlbi5yaWNodGVrQGdtYWlsLmNvbT4g5pa8
+IDIwMjDlubQx5pyIN+aXpSDpgLHkuowg5LiL5Y2IMTE6MzPlr6vpgZPvvJoKPiA+Cj4gPiBGcm9t
+OiBHZW5lIENoZW4gPGdlbmVfY2hlbkByaWNodGVrLmNvbT4KPiA+Cj4gPiBBZGQgbWZkIGRyaXZl
+ciBmb3IgbXQ2MzYwIHBtaWMgY2hpcCBpbmNsdWRlCj4gPiBCYXR0ZXJ5IENoYXJnZXIvVVNCX1BE
+L0ZsYXNoIExFRC9SR0IgTEVEL0xETy9CdWNrCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogR2VuZSBD
+aGVuIDxnZW5lX2NoZW5AcmljaHRlay5jb20KPiA+IC0tLQo+ID4gIGRyaXZlcnMvbWZkL0tjb25m
+aWcgICAgICAgIHwgIDEyICsrCj4gPiAgZHJpdmVycy9tZmQvTWFrZWZpbGUgICAgICAgfCAgIDEg
+Kwo+ID4gIGRyaXZlcnMvbWZkL210NjM2MC1jb3JlLmMgIHwgNDI0ICsrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysKPiA+ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAuaCB8IDI0
+MCArKysrKysrKysrKysrKysrKysrKysKPiA+ICA0IGZpbGVzIGNoYW5nZWQsIDY3NyBpbnNlcnRp
+b25zKCspCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvbWZkL210NjM2MC1jb3JlLmMK
+PiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9saW51eC9tZmQvbXQ2MzYwLmgKCi0tIApM
+ZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFy
+by5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJv
+OiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
+cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
