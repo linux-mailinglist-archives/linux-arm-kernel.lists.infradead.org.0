@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 014C313C21A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:57:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6719E13C211
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:56:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hlu09oPPGblN8oV0ffaPxZrOdHJ1Jy7/ipVrFQwXa/A=; b=A/5GJHsnBFkzbB
-	gW/IE+apdlxvMyzgllZuWGFmjV7CjOR2Om5byBoL22j5ot5uNh+sgVO2C3Afoae5IMo7sLKryk2G/
-	JhAwBNSvUyNHKGxQG9DPV9tZ6B53V6zj5eLH0rHIMJKOnVLaE4bf7Fr0GaksL41nthrZx/hjm6z6l
-	Lm2JOtsxATQQXDylkoNoL0uT8uZsrgFiR8BPaALA4iVC4aEnKWfuB/3BNcJ49V8PrAT9295w/srsJ
-	RZqaAZr0OhJ+/c99QKfy8yz1lpu138yH2O/9sc8FIKMR02iGUZuXtt7eaJD0+J4340ipf9u01739/
-	SijcQyux65tP/tFVPj+Q==;
+	List-Owner; bh=leRGPUx0KlwD3k2/ay5JPkMQvg6il1ZehYd0NtmclvY=; b=mCmhnMnupfBa+w
+	NhzBqkVQdVgPNo57ZvntmKyB70tFrqXlsO+GIhTfS4BZjGVrM/vSIMLL+vEtrROQ+tdGliYPPLcqC
+	sW/CnSnHcBay+/r4lSjIdlpzm/zkYBghDxBNTqThaHLWJf4ZT4MpaXONjy3e44t51giCu3xAJOZYH
+	MuxXQGvMAAhZWkg1ZLIKAtIfWvPP7JLsXLHWfavHKWVx1zfctAPdzDDHxmp3el6pVq7fL2SXonyoD
+	zNfjqfmrT4YZO7BshREDui1fdf78QzD1+3COl2Fgwf6ajqVIrH8UPHPewHCLPXK0siWXOjp0A4ID0
+	IUBGpLO2eaJ7cgYwCvkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriEq-0001gV-2q; Wed, 15 Jan 2020 12:57:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iriDw-0000kz-QK; Wed, 15 Jan 2020 12:56:40 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iriB4-0005ha-9j
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:43 +0000
-Received: by mail-wr1-x441.google.com with SMTP id b6so15661924wrq.0
+ id 1iriB4-0005im-LZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:44 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d139so4707758wmd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 04:53:41 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=C3g2nYTO2xQzb0GJuxY8N32scuZW4mZloVEmHa7VH1s=;
- b=GizgJV+NAlkwmPStOaKeLJGVjuw+mNcVnRBGC3KOsPI8Ckz3NtzP81ZW0FXqyGTgmo
- CQSBQ1i/367JhF2Hr9aOyBH7HhwOtRQxxhF1ER/yFhgBYGARKyuYZwnyUOM16f9ZkoHz
- 932OC6jTw3G1Yo73aVV7ol9jYuBydFvGU5nbMGRb8wnB/wZMPE3SbC9TXmYjWfC0Hj8w
- toP68qIugnKqfeVmyqApFpJyXHnxypMTrAs0iJBxdz+LQ8B8jT0dBRDD7X39lECHCK9Y
- lz9qLSHufNXYhKd+fOGRYzHa41Bh2IjLy2+y4DlRmvQ2I5XcgoOrSTzHbGvUrovuTt/X
- 3gmw==
+ bh=k0PTgEa8Z2EtxKNp+bXlU3gMIeIQMMd4dvAJJmx7ucE=;
+ b=dHOXOKHoTxItty8Q5696Mr+qbLuMsFa+MTSqKPLipIvl2oTCGz6ML1mpeZ/hKlDF/w
+ 0zv4zm331wgT2+KoHIxNr0EbnRGGQsLvPJyytnYPhCnUUDZJbkaemFEkNnu+UetF8/hv
+ V63rc3osvZrEsMSG1CYkzOLHHYC2msMAlTjspE9QoVjnwGTB+KftSreLBNSx3XxcNWWz
+ 7qWRy0hn5i3tRV6yEIj4f9s5mv4xFHEO4sLGFIYhAVyLWiQK84QoCPspbr09hIqHacJb
+ keyJbpDsHaUOhTQQceVDxe4Do+EaZFZskEG7KV/7urpQlMM39SamhpMjxm3wKwlF46iZ
+ BDDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=C3g2nYTO2xQzb0GJuxY8N32scuZW4mZloVEmHa7VH1s=;
- b=DEsSLU5nSce8acZD/+5IR4zvY2skiYYjY9yBP3PxJFaxg44SjAhfTWEOLKI8oRuTnr
- +WVk6vIvJYMC3IdwGB8dQUbZcH26SDKjG55E3xKegVosBCNcorL6KYUN94tRDioWtyFG
- Z+xEIaASooln1hvD1+VKUaCKu7xIIrN1n8ouWOEY06ZJP7NrVpxG753SzAsdofOIq2ap
- Urns9xzxprRE8CY1GKLWh8Tu4+HmsjJcUfDOzl4dXqvYsE1jFEvwRTuJnbpZv95XGK9X
- JB5QD9KIoqUH945rYzlwStxItfwku5wKxUa3i6MxI+ai2wpyOHyzn0xhb7B6EA0+nizV
- 0kzA==
-X-Gm-Message-State: APjAAAW2VDYxTfJnW1JmxAr8fb4eLStFB0VCNc91Op5E13MfZGnJgJjQ
- 4kCCfBbVwd1t4AWuJm2peJpnUQ==
-X-Google-Smtp-Source: APXvYqwSGcbdAtd5+ica/pXHhp8VLPeN94EbbtkoRsRsPY47afNQboGMHUBtV30+2XDoEbdnJ8V8Ug==
-X-Received: by 2002:adf:e5cf:: with SMTP id a15mr11624781wrn.140.1579092820130; 
- Wed, 15 Jan 2020 04:53:40 -0800 (PST)
+ bh=k0PTgEa8Z2EtxKNp+bXlU3gMIeIQMMd4dvAJJmx7ucE=;
+ b=jSpcoASmJuPWSlcVD+nPBGcYujM3h3yBxkpDeM/UR6/jV8kQ1kFUefpjUnuspQ1/m8
+ zJNXXKrBZ64BPXAEghTop9nIFumwG7tcMeJuKKXprfukH+24LRrCA6JAbeRN1F8Zkgk5
+ Drx4tSc3b7UBHtU4TA2UJzg20Aq6vBLsTTHi1Tk93HXHlKf2i7DwQM/O61v03BnekZ08
+ 8AcSSS2GFkRqpoPH+h6/1FSa0gvOnRa9yOHRSAdsaRVzg8M9cED6+151T6i0NM1dLVUO
+ /67YNuL8pD2e0T8eiJMxh9YBvf2PzfsI/j8OvU4cVeRbYY7BWdscdGEQDEEZjwTqkszv
+ Ienw==
+X-Gm-Message-State: APjAAAWy8He7phV1RU9enyUwp2e53kHv9Wm3EMOCzShhHin4b9fqCjlS
+ i2LZ46EryiHlovi7+3u3XOzmHQ==
+X-Google-Smtp-Source: APXvYqw9Mt6OhEbO1QMqXTowh5t7SCfN3PgnBvH6KOJ1spMG2hboA0nCSsAfuEDMtgnKjfCtqj0iOg==
+X-Received: by 2002:a7b:c3d7:: with SMTP id t23mr34564949wmj.33.1579092821258; 
+ Wed, 15 Jan 2020 04:53:41 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:2266:ba60:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.39
+ by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Jan 2020 04:53:39 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:40 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
  iommu@lists.linux-foundation.org, will@kernel.org
-Subject: [PATCH v5 11/13] iommu/arm-smmu-v3: Improve add_device() error
- handling
-Date: Wed, 15 Jan 2020 13:52:37 +0100
-Message-Id: <20200115125239.136759-12-jean-philippe@linaro.org>
+Subject: [PATCH v5 12/13] PCI/ATS: Add PASID stubs
+Date: Wed, 15 Jan 2020 13:52:38 +0100
+Message-Id: <20200115125239.136759-13-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200115125239.136759-1-jean-philippe@linaro.org>
 References: <20200115125239.136759-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_045342_446981_1ECB2A81 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20200115_045342_745537_2536BB8C 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,75 +110,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let add_device() clean up after itself. The iommu_bus_init() function
-does call remove_device() on error, but other sites (e.g. of_iommu) do
-not.
+The SMMUv3 driver, which may be built without CONFIG_PCI, will soon gain
+PASID support.  Partially revert commit c6e9aefbf9db ("PCI/ATS: Remove
+unused PRI and PASID stubs") to re-introduce the PASID stubs, and avoid
+adding more #ifdefs to the SMMU driver.
 
-Don't free level-2 stream tables because we'd have to track if we
-allocated each of them or if they are used by other endpoints. It's not
-worth the hassle since they are managed resources.
-
+Acked-by: Bjorn Helgaas <bhelgaas@google.com>
 Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 28 +++++++++++++++++++++-------
- 1 file changed, 21 insertions(+), 7 deletions(-)
+ include/linux/pci-ats.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 04144b39c4ce..b2b7ba9c4e32 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2827,14 +2827,16 @@ static int arm_smmu_add_device(struct device *dev)
- 	for (i = 0; i < master->num_sids; i++) {
- 		u32 sid = master->sids[i];
- 
--		if (!arm_smmu_sid_in_range(smmu, sid))
--			return -ERANGE;
-+		if (!arm_smmu_sid_in_range(smmu, sid)) {
-+			ret = -ERANGE;
-+			goto err_free_master;
-+		}
- 
- 		/* Ensure l2 strtab is initialised */
- 		if (smmu->features & ARM_SMMU_FEAT_2_LVL_STRTAB) {
- 			ret = arm_smmu_init_l2_strtab(smmu, sid);
- 			if (ret)
--				return ret;
-+				goto err_free_master;
- 		}
- 	}
- 
-@@ -2844,13 +2846,25 @@ static int arm_smmu_add_device(struct device *dev)
- 		master->ssid_bits = min_t(u8, master->ssid_bits,
- 					  CTXDESC_LINEAR_CDMAX);
- 
-+	ret = iommu_device_link(&smmu->iommu, dev);
-+	if (ret)
-+		goto err_free_master;
-+
- 	group = iommu_group_get_for_dev(dev);
--	if (!IS_ERR(group)) {
--		iommu_group_put(group);
--		iommu_device_link(&smmu->iommu, dev);
-+	if (IS_ERR(group)) {
-+		ret = PTR_ERR(group);
-+		goto err_unlink;
- 	}
- 
--	return PTR_ERR_OR_ZERO(group);
-+	iommu_group_put(group);
-+	return 0;
-+
-+err_unlink:
-+	iommu_device_unlink(&smmu->iommu, dev);
-+err_free_master:
-+	kfree(master);
-+	fwspec->iommu_priv = NULL;
-+	return ret;
- }
- 
- static void arm_smmu_remove_device(struct device *dev)
+diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
+index 5d62e78946a3..d08f0869f121 100644
+--- a/include/linux/pci-ats.h
++++ b/include/linux/pci-ats.h
+@@ -33,6 +33,9 @@ void pci_disable_pasid(struct pci_dev *pdev);
+ int pci_pasid_features(struct pci_dev *pdev);
+ int pci_max_pasids(struct pci_dev *pdev);
+ #else /* CONFIG_PCI_PASID */
++static inline int pci_enable_pasid(struct pci_dev *pdev, int features)
++{ return -EINVAL; }
++static inline void pci_disable_pasid(struct pci_dev *pdev) { }
+ static inline int pci_pasid_features(struct pci_dev *pdev)
+ { return -EINVAL; }
+ static inline int pci_max_pasids(struct pci_dev *pdev)
 -- 
 2.24.1
 
