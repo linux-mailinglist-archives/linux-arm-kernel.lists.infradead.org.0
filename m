@@ -2,86 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 955C113B918
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:37:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 161BE13B920
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 06:42:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ULQJj7tgIfXhGN3Nk5kwA8P+r3Enhg1mx41S0du1nSQ=; b=uTuysVWQDL7uee
-	yMjjAk5qsyO+P0WhiiiUpMHD+BcSNNHfkQ91GQulQ3kTPF1IBbeiosqwFJhh7Yp7WzX54HkAeS4Su
-	5d30kiRK9bZz6vvcuT4r9QCdGj8BXxbG+VgYDqGgtBHxuvtJPMQh4gKmNVKdD9raUibZVrnVRr52F
-	sUKW92Y7cr1pZqZf8D1LkVeg/KB0v7Gp38qiwDYgnNG4OXIm4hCqW8BfAEC+0vab30pMKf1AQtRMb
-	IbDyjVSnP8Ng33NPLOyLburG3DMUYx4L795id47D3vObKlQZJf7ddz3UVjEgECU3rmJHfArLWPuoO
-	dcIlyFHEIL/3pt2fzInA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HYG2mDzVLRpFUAR+Im39yZMmeQGPnUdQe2zMYByo8lY=; b=VZfeqU+/2TJKBJ
+	niJ5wr8EKsiZQm/+nStkKbrAFmVqCJKYlRhDBrYi5QkWIGK5A7RiKZ41WkeZnnbfv/HE1tlQHQ1cL
+	PJ2JHt95vsLmkHNwkpI5tXbNtAE039C+XkB+EqIO3tE6tsIctVCvVqmDsJx6Qsc4VdWsPQMulDuFV
+	2hNaRiOLMf2pPF0vlIM+OAOPgQHJjlRD/IM4j53VF7rln2TEehU9yhJHiduqsNK5t1Fm7yo4+T8Yg
+	Mjo6nihGQ4qNAQ8Bd4eBPmGdtHQtSyJ2MFPQM1UXDWlpXPP1P0ap/aLc9qxKwJqgG1Ubna6VlPbMB
+	XYTQDn58F3esY4BflGug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irbMl-0003gO-Oe; Wed, 15 Jan 2020 05:37:19 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1irbRT-0005nL-54; Wed, 15 Jan 2020 05:42:11 +0000
+Received: from mail-eopbgr770045.outbound.protection.outlook.com
+ ([40.107.77.45] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irbMO-0003UD-Pw
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:36:58 +0000
-Received: by mail-wr1-x429.google.com with SMTP id d16so14464538wre.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Jan 2020 21:36:56 -0800 (PST)
+ id 1irbRJ-0005mr-RI
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 05:42:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RsQNvglnRtat2vJQ9k5NrVT4spsgNGFaD7e1CD8qt3fF1LAj/pxrNBI3O26aWmpGV/f+//Y1DY187E/DmkGj6DNFn5cynJWgLGHqyPDADMkwQiRiVjnTEMO6T1Hg4hCVTTiky3OM1kIMq/6hlQvzzYBdZrqu90PqwkjL2BhdHdsMFrGxgDI2XBWcy6UzKOdblx2L5EQOAfbbqU7Nf8J6kax1ujDTmw8xiVa8MzTOuhuzajJvJ9AZrVcQ/7Wc+1HitzBWGpdoJRhLnR7e+Ljc83GHV0pAAVURvNqV7qsEqa9KMUTpiEmgpvoNOCswn0b+p/jN0qvjKCJUiRtegem0oA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fRV1W+jiZ4ZyzAL3/jG1CIKfWeFMg4YBzIk2tPxU0VY=;
+ b=mUDMqid61L3EzhWmB3sVJNg+NNNM8L0d9VTUvFU1iVMWJbWmidhMTxJFXjrmMNrQXehamBBxGz+lmtZMjQqH5ev2QTg6V8XTUVZcxoilC+hynF6uC2J53y2SA0cM4P1fyaX61S/fVRLuWmicORKo3y8jFAV6rOh2BSvhIJrvYyJLxj2X8/13UlgizFyb3zH0ET2VLhEE2EjVx1RYgsi3GKeAl39755BasjuF+J0GAxxeURO9S+HIqOq8LBi3PQKdWJrPMxDvif1ZXCB3Sw9N/nuAp0ZwjxZRpTAXhWsfW7CY/HBsb6XYBs6ucmiBxI9X/CuYNEraglHaxa7nSh2tlA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=LjeUzNp5E+Qoo0VYKMK9oiAKr2hyerXcmR+HBzD8cMM=;
- b=UprzhXALmtG3INTgz0SCkEHvmS5XxEvOzMGO+ca66VW+KkZTNB4pyofzD4epGsEsHh
- 1yZmywQWLk6QrvBBXEUWf42H30hQwSON2zVTeKT2LiCP5Ufzmzxd8CucSLtqcqFjfPc6
- 9Gg6pwVDsZU22LyRlbXelztPXuw4e+C957GJTbbOyEfs/iJP6rI4M4y1VhfXTM9jGn9z
- QpFOwPTB+H0OjavFDquDGcDTyhMNjf5h0kXpQweCTESSltZZP8JD8WRMtLQ6XDIRG9Sf
- sIr/godYBiFnv4SQGPzDtV8LFAc1HXBURodlOjsRIM42ChGyvzSKI6se70+j/NTJblWw
- pj6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=LjeUzNp5E+Qoo0VYKMK9oiAKr2hyerXcmR+HBzD8cMM=;
- b=A5E73NhuJOWvbpZcA4ALOfUBRx4B5pSAvGqKwXe2C6KDxXw+Usn09jQF4cEGgyLM8H
- N44NpjOTTkqViiRRWACA7kaBaASV/rajw67/K9LAgWlm8/wKMgC/hSDWc0wbLjXTpA8d
- 9jWKTlhLwiGgV6FtRx3CQD0dG24vDYqKZf0mF0D7C0HdC9gHW8ljCNgX4bxI5z+8zHyc
- M1Nm83nWEOBiKClASgNUp/p2Tqoj4avXswf62tVKHp8ayPJgMv1/lJXfUjx5qUjlOi3U
- NLNJQ1ZyUc/RvBuNv4PIzYB/pa1nCAY49vEfh49LkpBBmpLd1hQYy2lgGT84PsFgLiF8
- gVqA==
-X-Gm-Message-State: APjAAAWOH+FSRap+caNJ1f/2UQKVMK7YUGJXPjdZOz27ifCrHvpSJpRc
- SN+XsqcGShynmo1KrVQcJogfow==
-X-Google-Smtp-Source: APXvYqwv+KJBgtwamuu7osbAI+irvB7F7fN8Ek7tX8ZGRnqf9t6qG+GbafL3aKFVOw7r5VA3Aydq5w==
-X-Received: by 2002:adf:b605:: with SMTP id f5mr28456655wre.383.1579066615157; 
- Tue, 14 Jan 2020 21:36:55 -0800 (PST)
-Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id f207sm23756782wme.9.2020.01.14.21.36.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Jan 2020 21:36:54 -0800 (PST)
-Message-ID: <5e1ea4f6.1c69fb81.14abf.35e7@mx.google.com>
-Date: Tue, 14 Jan 2020 21:36:54 -0800 (PST)
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fRV1W+jiZ4ZyzAL3/jG1CIKfWeFMg4YBzIk2tPxU0VY=;
+ b=hAP/FApO3elECF2D+2/5vT+9RNQwgj7QwucwoEHMlFjd6pLG4K8NQ/EchE8fSleVFzcdgO2sD/Vq+UuvzarKzDeXqa8Nl4lCXAUFUo8sAUrZ7xAQ14A6YZBJq7q+GezJvxE8zJ5BvRtDNt05dDaI/VsaBDhjxoCRY6eptpfAAmY=
+Received: from BN7PR02MB5121.namprd02.prod.outlook.com (20.176.178.80) by
+ BN7PR02MB4034.namprd02.prod.outlook.com (52.132.223.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.13; Wed, 15 Jan 2020 05:41:59 +0000
+Received: from BN7PR02MB5121.namprd02.prod.outlook.com
+ ([fe80::ac81:30a6:e1df:fda7]) by BN7PR02MB5121.namprd02.prod.outlook.com
+ ([fe80::ac81:30a6:e1df:fda7%7]) with mapi id 15.20.2623.017; Wed, 15 Jan 2020
+ 05:41:59 +0000
+From: Harini Katakam <harinik@xilinx.com>
+To: Michal Simek <michals@xilinx.com>, Matthias Fend
+ <matthias.fend@wolfvision.net>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] dmaengine: zynqmp_dma: fix burst length configuration
+Thread-Topic: [PATCH] dmaengine: zynqmp_dma: fix burst length configuration
+Thread-Index: AQHVx5K2bU2wqJwJJU+7xM+Dn7mi2KfrPF6g
+Date: Wed, 15 Jan 2020 05:41:58 +0000
+Message-ID: <BN7PR02MB5121D2FEF76CF4A69BDEA7FFC9370@BN7PR02MB5121.namprd02.prod.outlook.com>
+References: <20200110082607.25353-1-matthias.fend@wolfvision.net>
+ <137545d8-466d-e2f6-1e3e-8879dcee423d@xilinx.com>
+In-Reply-To: <137545d8-466d-e2f6-1e3e-8879dcee423d@xilinx.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=harinik@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 24d1e420-62af-4944-e0d6-08d7997da38c
+x-ms-traffictypediagnostic: BN7PR02MB4034:|BN7PR02MB4034:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BN7PR02MB4034568E1544722E22A2B48BC9370@BN7PR02MB4034.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02830F0362
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(366004)(136003)(396003)(346002)(199004)(189003)(71200400001)(66946007)(52536014)(76116006)(2906002)(5660300002)(86362001)(53546011)(66476007)(110136005)(8936002)(6506007)(54906003)(81156014)(81166006)(478600001)(66556008)(186003)(8676002)(26005)(316002)(7696005)(64756008)(33656002)(66446008)(107886003)(55016002)(9686003)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR02MB4034;
+ H:BN7PR02MB5121.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: HOiCvfd9gkFZKUdenXmojHgT9RSUzlxuXwXKtifUsRffQ6TIbNZeb8BHW5WAswI4AdZsrgJ9XVwlG1PvvcDwPu3CPsjHjz0bTlniM7zwlrLDh38VblYKTGXIC9QRZ2jCTnQyPwdOAMXn3tL15dUVE/iovcYvrQRTs1XipmMmQPByfxwE8GxQAptuLkyQ9/JpK2GQIfcxKcgYgzQ2rveOfOVXK0oHKO0VBpcAs4O3lcG0AqZkOSQmWP1lOEUMY3JnNKsE305cNYW34Yj17qiinBZCXvjAAvKYVBo7T5WgQR/KWZNuPSzUC7YqnDcTQVk2vet32xXGZm8pPT0YxQ8VD9YWU852KUuREDZK+j8hqFzP+KywqkrD6RD9lD3J1agIpc5xbiIrWbzqmDelFBBBaWFDmBgkiDNZBIbpgpQbHvYhJb+uPNr2JDguyTNUyznY
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Report-Type: test
-X-Kernelci-Kernel: v5.5-rc6-40-ge31626d443db
-Subject: arm64/for-kernelci baseline: 26 runs,
- 0 regressions (v5.5-rc6-40-ge31626d443db)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 24d1e420-62af-4944-e0d6-08d7997da38c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jan 2020 05:41:58.9165 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: JVyVzXXgXv94w2+78wLWSJKDG41pcQ9qwYCDHlp+sOGFxzgGEV7mIQ5oTECE3fNkZZ8mKevo6gidNwfTXclKyw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB4034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_213656_843446_661BC292 
-X-CRM114-Status: UNSURE (   5.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200114_214201_886530_E22BA3B8 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:429 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [40.107.77.45 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.77.45 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,98 +122,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Radhey Shyam Pandey <radheys@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64/for-kernelci baseline: 26 runs, 0 regressions (v5.5-rc6-40-ge31626d443db)
+Hi Matthias,
 
-Test results summary
---------------------
+> -----Original Message-----
+> From: Michal Simek [mailto:michal.simek@xilinx.com]
+> Sent: Friday, January 10, 2020 2:18 PM
+> To: Matthias Fend <matthias.fend@wolfvision.net>; linux-arm-
+> kernel@lists.infradead.org
+> Cc: dmaengine@vger.kernel.org; Michal Simek <michals@xilinx.com>;
+> vkoul@kernel.org; Radhey Shyam Pandey <radheys@xilinx.com>; Harini
+> Katakam <harinik@xilinx.com>
+> Subject: Re: [PATCH] dmaengine: zynqmp_dma: fix burst length configuration
+> 
+> +Radhey and Harini
+> 
+> On 10. 01. 20 9:26, Matthias Fend wrote:
+> > Since the dma engine expects the burst length register content as
+> > power of 2 value, the burst length needs to be converted first.
+> > Additionally add a burst length range check to avoid corrupting
+> > unrelated register bits.
+> >
+> > Signed-off-by: Matthias Fend <matthias.fend@wolfvision.net>
+> > ---
+> >  drivers/dma/xilinx/zynqmp_dma.c | 24 +++++++++++++++---------
+> >  1 file changed, 15 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/drivers/dma/xilinx/zynqmp_dma.c
+> > b/drivers/dma/xilinx/zynqmp_dma.c index 9c845c07b107..aa4de6c6688a
+> > 100644
+> > --- a/drivers/dma/xilinx/zynqmp_dma.c
+> > +++ b/drivers/dma/xilinx/zynqmp_dma.c
+> > @@ -123,10 +123,12 @@
+> >  /* Max transfer size per descriptor */
+> >  #define ZYNQMP_DMA_MAX_TRANS_LEN	0x40000000
+> >
+> > +/* Max burst lengths */
+> > +#define ZYNQMP_DMA_MAX_DST_BURST_LEN    16
+> > +#define ZYNQMP_DMA_MAX_SRC_BURST_LEN    16
+> > +
+> >  /* Reset values for data attributes */
+> >  #define ZYNQMP_DMA_AXCACHE_VAL		0xF
+> > -#define ZYNQMP_DMA_ARLEN_RST_VAL	0xF
+> > -#define ZYNQMP_DMA_AWLEN_RST_VAL	0xF
+<snip>
+> > @@ -887,8 +893,8 @@ static int zynqmp_dma_chan_probe(struct
+> zynqmp_dma_device *zdev,
+> >  		return PTR_ERR(chan->regs);
+> >
+> >  	chan->bus_width = ZYNQMP_DMA_BUS_WIDTH_64;
+> > -	chan->dst_burst_len = ZYNQMP_DMA_AWLEN_RST_VAL;
+> > -	chan->src_burst_len = ZYNQMP_DMA_ARLEN_RST_VAL;
+> > +	chan->dst_burst_len = ZYNQMP_DMA_MAX_DST_BURST_LEN;
+> > +	chan->src_burst_len = ZYNQMP_DMA_MAX_SRC_BURST_LEN;
+> >  	err = of_property_read_u32(node, "xlnx,bus-width", &chan-
+> >bus_width);
 
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-1   | bcm2837-rpi-3-b              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
-3   | imx8mn-ddr4-evk              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-4   | meson-g12a-sei510            | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-5   | meson-g12a-x96-max           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-6   | meson-g12b-a311d-khadas-vim3 | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-7   | meson-gxbb-p200              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-8   | meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-9   | meson-gxl-s805x-p241         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-10  | meson-gxl-s905d-p230         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-11  | meson-gxl-s905x-khadas-vim   | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-12  | meson-gxl-s905x-libretech-cc | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-13  | meson-gxm-khadas-vim2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-14  | meson-gxm-q200               | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-15  | meson-sm1-sei610             | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-16  | qemu_arm64-virt-gicv2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-17  | qemu_arm64-virt-gicv2        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-18  | qemu_arm64-virt-gicv3        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-19  | qemu_arm64-virt-gicv3        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-20  | r8a7795-salvator-x           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-21  | r8a7796-m3ulcb               | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-22  | r8a7796-m3ulcb               | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-23  | rk3399-gru-kevin             | arm64 | lab-collabora | gcc-8    | defconfig | 79/82  
-24  | sun50i-a64-pine64-plus       | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-25  | sun50i-h5-lib...ch-all-h3-cc | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-26  | sun50i-h6-pine-h64           | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
+Just a note that this changes the reset value of this field  from 0xF (acc to the spec) to 0x4.
+It may need to be updated for future IP versions, if any, but I think it makes sense for now.
+Thanks.
+Reviewed-by: Harini Katakam <harini.katakam@xilinx.com>
 
-
-  Test:     baseline
-  Tree:     arm64
-  Branch:   for-kernelci
-  Describe: v5.5-rc6-40-ge31626d443db
-  URL:      git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-  SHA:      e31626d443db6933723cf756816cd0af6c9b8d89 
-
-
-Test Failures
--------------
-     
-
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
-
-  Results:     3 PASS, 2 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-40-ge31626d443db/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-40-ge31626d443db/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.html
-  Rootfs:      https://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/baseline/rootfs.cpio.gz     
-
-  dmesg - 3 tests: 1  PASS, 2 FAIL, 0 SKIP
-    * alert:
-        never passed
-        11 lines
-    * emerg:
-        never passed
-        2 lines    
-                                                                  
-
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-23  | rk3399-gru-kevin             | arm64 | lab-collabora | gcc-8    | defconfig | 79/82  
-
-  Results:     79 PASS, 3 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-40-ge31626d443db/arm64/defconfig/gcc-8/lab-collabora/baseline-rk3399-gru-kevin.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-40-ge31626d443db/arm64/defconfig/gcc-8/lab-collabora/baseline-rk3399-gru-kevin.html
-  Rootfs:      https://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/baseline/rootfs.cpio.gz       
-
-  bootrr - 78 tests: 75  PASS, 3 FAIL, 0 SKIP
-    * cros-ec-sensors-accel0-probed:
-        never passed
-    * cros-ec-sensors-accel1-probed:
-        never passed
-    * cros-ec-sensors-gyro0-probed:
-        never passed  
-               
-
+Regards,
+Harini
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
