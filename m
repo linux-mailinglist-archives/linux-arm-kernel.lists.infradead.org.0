@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9767A13BA36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:12:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71FD613BA34
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:11:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=X8ryZiO+oi+qf8dgOHtRiYPwIBYtxUkPzTqYereDL/I=; b=kr9x/T6T4LUkwGgEQDEEvcpZLb
-	GsqxhRVOqiOxWXCv9VFZ/fVtzRrW0cXKQF91XYfeFG85MGpiKCZVhDjUIXR9T9NFqNVQZGYGQg+PG
-	0xcQaDQOOwg5xGJeObo0g9C7ft+Hm+XX8hc+x9Eu+Uayx5XnTEBR5c9CJrHxRt0k/FdyoG1hp6dET
-	pOOlHluxjsZ7a3s+UKc30D9BOchscDRawz6zqiwwHA7WjErBK4HnCqzgqdd9M9+CyHeOzHOJJT0oT
-	7YaaMjUPya8ulazwopGBpCBLv9DX/kLGCtS3OjxjJHbOENRcZGJHynBHXYwysK6My2aM6STTUDDba
-	oUKpypBw==;
+	bh=9Qyld1PHo6XyRDA+wJx4DTLRHvCqtfp+SJi6vKGur2o=; b=M8rf00bjzd/ol3F/GC3O0QFLsp
+	peEbDSrFUA9NK1n66UysTIzcZCMiYxoERLjQVg8x0zahwGI3WtS0kLCUZcB6dNvUNpWSzkV1jMgw3
+	8s0FcEOXUxFrq+z6FGJCNQ9jx8keA2QYQGo97+BSlj8m+0sgB2Q/3vZ38I3iF7J9/inr2bZ1JEQ1N
+	+qv9bSjGV71jXH15W9/SARKTcWCKAcQdnRk9YY2FsBppeSHIRWKwzCSUNlmUu16+7pzNvrFSjyjmX
+	T3Zv3atikEXUhyZrEwic2i/eYXDF1XjZIJLJnEYJosYdMPPChAOYe7TQOVLukxP+DLek5bKyuL7yU
+	7dv444Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ircqM-0006dy-5H; Wed, 15 Jan 2020 07:11:58 +0000
+	id 1ircpp-00068W-NB; Wed, 15 Jan 2020 07:11:25 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ircp9-0005k0-Mo
+ id 1ircpC-0005j9-Qi
  for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:10:50 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga002.fm.intel.com ([10.253.24.26])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 14 Jan 2020 23:10:43 -0800
+ 14 Jan 2020 23:10:46 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643663"
+X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643673"
 Received: from bong5-hp-z440.png.intel.com ([10.221.118.136])
- by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:40 -0800
+ by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:43 -0800
 From: Ong Boon Leong <boon.leong.ong@intel.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 2/4] net: stmmac: fix incorrect GMAC_VLAN_TAG register
- writting implementation
-Date: Wed, 15 Jan 2020 15:10:01 +0800
-Message-Id: <20200115071003.42820-3-boon.leong.ong@intel.com>
+Subject: [PATCH net v2 3/4] net: stmmac: fix missing IFF_MULTICAST check in
+ dwmac4_set_filter
+Date: Wed, 15 Jan 2020 15:10:02 +0800
+Message-Id: <20200115071003.42820-4-boon.leong.ong@intel.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200115071003.42820-1-boon.leong.ong@intel.com>
 References: <20200115071003.42820-1-boon.leong.ong@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_231043_748066_11D2975E 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20200114_231046_919682_3DE3F256 
+X-CRM114-Status: GOOD (  12.67  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -79,47 +79,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tan, Tee Min" <tee.min.tan@intel.com>
+From: "Verma, Aashish" <aashishx.verma@intel.com>
 
-It should always do a read of current value of GMAC_VLAN_TAG instead of
-directly overwriting the register value.
+Without checking for IFF_MULTICAST flag, it is wrong to assume multicast
+filtering is always enabled. By checking against IFF_MULTICAST, now
+the driver behaves correctly when the multicast support is toggled by below
+command:-
 
-Fixes: c1be0022df0d ("net: stmmac: Add VLAN HASH filtering support in GMAC4+")
-Signed-off-by: Tan, Tee Min <tee.min.tan@intel.com>
+  ip link set <devname> multicast off|on
+
+Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
+Signed-off-by: Verma, Aashish <aashishx.verma@intel.com>
 Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 40ca00e596dd..6e3d0ab0ecd6 100644
+index 6e3d0ab0ecd6..53be936137d0 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -736,11 +736,14 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
- 				    __le16 perfect_match, bool is_double)
- {
- 	void __iomem *ioaddr = hw->pcsr;
-+	u32 value;
+@@ -420,7 +420,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
+ 		value |= GMAC_PACKET_FILTER_PM;
+ 		/* Set all the bits of the HASH tab */
+ 		memset(mc_filter, 0xff, sizeof(mc_filter));
+-	} else if (!netdev_mc_empty(dev)) {
++	} else if (!netdev_mc_empty(dev) && (dev->flags & IFF_MULTICAST)) {
+ 		struct netdev_hw_addr *ha;
  
- 	writel(hash, ioaddr + GMAC_VLAN_HASH_TABLE);
- 
-+	value = readl(ioaddr + GMAC_VLAN_TAG);
-+
- 	if (hash) {
--		u32 value = GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
-+		value |= GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
- 		if (is_double) {
- 			value |= GMAC_VLAN_EDVLP;
- 			value |= GMAC_VLAN_ESVL;
-@@ -759,8 +762,6 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
- 
- 		writel(value | perfect_match, ioaddr + GMAC_VLAN_TAG);
- 	} else {
--		u32 value = readl(ioaddr + GMAC_VLAN_TAG);
--
- 		value &= ~(GMAC_VLAN_VTHM | GMAC_VLAN_ETV);
- 		value &= ~(GMAC_VLAN_EDVLP | GMAC_VLAN_ESVL);
- 		value &= ~GMAC_VLAN_DOVLTC;
+ 		/* Hash filter for multicast */
 -- 
 2.17.1
 
