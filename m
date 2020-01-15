@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55F6513CC82
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 19:48:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2528213CC8B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 19:49:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EnsS5g0L/1K7VpACsNKeAOCUqfxCqf4A3s3GCNhYHyU=; b=g49zz4TW8Brgok
-	cBZ0iMXLalZIqnNyaeHt7FrUWkRxAR60+/Kuc9tqKLuluMkjovqMchFpZFFmKlm6pPJ3Ss4vM8cv0
-	mwpQMEU5GKGgNJhnkROl2zKJUsCU0prsj0M6++oVF1+Rr+nBMZEqAtRSeB9jnkdNVnwhAzFVwylor
-	kxF1G28iWABgMM843OoQ60Leomq5Nu7chCoX0Ou/eDd4rY612YNPVckb8L0xu3DFWTZxvRMY068aU
-	VivN5ieJUTy5NASAxqwx5o2EQ+6YBvnYg9Z58h+BC3A23OdaPI/o0qU6uvEi3/elKJpcOLEBxU50/
-	m11KpJ8OCMWdywdHo11g==;
+	List-Owner; bh=vrxJlvLLWRfYCTkL/0lGLfZAcgD/rKbicRQALk8Nxh0=; b=VJ+g49xxSkKaVH
+	XXXqnzZzunVnAyapQOrsd8hmSqUauC+3LrK4zXiXp5yFNMKy3qYpnF07M3ceIMLaWs6aaSo13T6bc
+	+XGYVJQVoq68Jzt8HaMY0FIp6v3JSBzf5u7UjzB8h9De0sbUeK0ixYxtN3YMu6D8Q/743arXQ02lU
+	2Pfq+kjkL4HihevwAwtgIlBGaewSxJpFV+aXAa0NgsBINtltlETWnOhJ8ebpAZUthEpy9iUZgdkKx
+	vijmFfd6s/kXTVvwjd+shU2NIBXwIFQRK3L01q65AM45fpcG0o9nITUhIX3IoXAM+/dLgI/vjpbz/
+	/2uwefuSnbPgC5bsMdOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irniF-0005XW-MN; Wed, 15 Jan 2020 18:48:19 +0000
+	id 1irnjF-0005v8-VQ; Wed, 15 Jan 2020 18:49:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irni4-0005WC-9p
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 18:48:12 +0000
+ id 1irnj1-0005tj-6O
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 18:49:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F30C328;
- Wed, 15 Jan 2020 10:48:05 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 69A3A328;
+ Wed, 15 Jan 2020 10:49:06 -0800 (PST)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A8D03F6C4;
- Wed, 15 Jan 2020 10:48:02 -0800 (PST)
-Subject: Re: [PATCH 1/2] dt-bindings: edac: Add DT bindings for Kryo EDAC
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD82A3F6C4;
+ Wed, 15 Jan 2020 10:49:03 -0800 (PST)
+Subject: Re: [PATCH 2/2] drivers: edac: Add EDAC support for Kryo CPU caches
 To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 References: <cover.1575529553.git.saiprakash.ranjan@codeaurora.org>
- <0101016ed57a3259-eee09e9e-e99a-40f1-ab1c-63e58a42615c-000000@us-west-2.amazonses.com>
+ <0101016ed57a6559-46c6c649-db28-4945-a11c-7441b8e9ac5b-000000@us-west-2.amazonses.com>
+ <20191230115030.GA30767@zn.tnic>
+ <585db411bc542bf3f326627b7390e0ca@codeaurora.org>
 From: James Morse <james.morse@arm.com>
-Message-ID: <312fc8b8-7019-0c74-6a92-c6740cab5dad@arm.com>
-Date: Wed, 15 Jan 2020 18:48:01 +0000
+Message-ID: <04481690-028d-eb74-081d-aebb3ca9b037@arm.com>
+Date: Wed, 15 Jan 2020 18:49:02 +0000
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <0101016ed57a3259-eee09e9e-e99a-40f1-ab1c-63e58a42615c-000000@us-west-2.amazonses.com>
+In-Reply-To: <585db411bc542bf3f326627b7390e0ca@codeaurora.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_104808_424674_7A75633D 
-X-CRM114-Status: GOOD (  20.39  )
+X-CRM114-CacheID: sfid-20200115_104907_324744_1AD0ED50 
+X-CRM114-Status: GOOD (  27.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,91 +75,140 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Evan Green <evgreen@chromium.org>, Robert Richter <rrichter@marvell.com>,
  baicar@os.amperecomputing.com, Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sai,
-
-(CC: +Tyler)
-
-On 05/12/2019 09:53, Sai Prakash Ranjan wrote:
-> This adds DT bindings for Kryo EDAC implemented with RAS
-> extensions on KRYO{3,4}XX CPU cores for reporting of cache
-> errors.
-
-KRYO{3,4}XX isn't the only SoC with the RAS extensions. The DT needs to convey the range
-of ways this armv8 RAS extensions stuff can be wired up.
-
-The folk who look after the ACPI specs have made a start:
-https://static.docs.arm.com/den0085/a/DEN0085_RAS_ACPI_1.0_BETA_1.pdf
-
-(I suspect that isn't the latest version, I'll try and find out)
-
-I'd like the ACPI table and DT to convey the same information so that we don't need to
-convert or infer things in the driver. If something is missing, we should get it added!
-
-
-> diff --git a/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml b/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml
-> new file mode 100644
-> index 000000000000..1a39429a73b4
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml
-> @@ -0,0 +1,67 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/edac/qcom-kryo-edac.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Kryo Error Detection and Correction(EDAC)
-> +
-> +maintainers:
-> +  - Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> +
-> +description: |
-> +  Kryo EDAC is defined to describe on-chip error detection and correction
-> +  for the Kryo CPU cores which implement RAS extensions.
-
-Please don't make this Kryo specific, otherwise this binding becomes an extra thing we
-need to support with a 'v8.2 RAS' driver.
-
-What I'd like is a single 'armv82_ras' edac driver that handles faults and errors reported
-by interrupts, and interacts with the arch code's handling of 'external aborts'. This
-should work for all platforms using v8.2 RAS and later.
-
-
-> +  It will report
-> +  all Single Bit Errors and Double Bit Errors found in L1/L2 caches in
-> +  in two registers ERXSTATUS_EL1 and ERXMISC0_EL1. L3-SCU cache errors
-> +  are reported in ERR1STATUS and ERR1MISC0 registers.
-> +    ERXSTATUS_EL1 - Selected Error Record Primary Status Register, EL1
-> +    ERXMISC0_EL1 - Selected Error Record Miscellaneous Register 0, EL1
-> +    ERR1STATUS - Error Record Primary Status Register
-> +    ERR1MISC0 - Error Record Miscellaneous Register 0
-> +  Current implementation of Kryo ECC(Error Correcting Code) mechanism is
-> +  based on interrupts.
-
-Your SoC picked the system registers as the interface to these component's registers.
-The binding would need to specify which index the 'l1-l2' records start at, and how many
-there are. The same for the 'l3-scu'. You can't hard code these, they are different on
-other platforms.
-
-There is also an MMIO interface which needs a base address, along with the index and
-ranges. (which may be different). The same component may use both the system register and
-the MMIO interface.
-
-This stuff is likely to vary on big/little systems, so you need a way of describing which
-CPUs the settings refer to. This probably isn't something the ACPI tables capture as ACPI
-machines are typically homogenous.
-
-
-Thanks,
-
-James
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgZ3V5cywKCihDQzogK1R5bGVyKQoKT24gMTMvMDEvMjAyMCAwNTo0NCwgU2FpIFByYWthc2gg
+UmFuamFuIHdyb3RlOgo+IE9uIDIwMTktMTItMzAgMTc6MjAsIEJvcmlzbGF2IFBldGtvdiB3cm90
+ZToKPj4gT24gVGh1LCBEZWMgMDUsIDIwMTkgYXQgMDk6NTM6MThBTSArMDAwMCwgU2FpIFByYWth
+c2ggUmFuamFuIHdyb3RlOgo+Pj4gS3J5b3szLDR9WFggQ1BVIGNvcmVzIGltcGxlbWVudCBSQVMg
+ZXh0ZW5zaW9ucyB0byBzdXBwb3J0Cj4+PiBFcnJvciBDb3JyZWN0aW5nIENvZGUoRUNDKS4gQ3Vy
+cmVudGx5IGFsbCBLcnlvezMsNH1YWCBDUFUKPj4+IGNvcmVzIChnb2xkL3NpbHZlciBhLmsuYSBi
+aWcvTElUVExFKSBzdXBwb3J0IEVDQyB2aWEgUkFTLgo+Pgo+PiB2aWEgUkFTIHdoYXQ/IEFSTTY0
+X1JBU19FWFROPwo+Pgo+PiBJbiBhbnkgY2FzZSwgdGhpcyBuZWVkcyBKYW1lcyB0byBsb29rIGF0
+IGFuZCBlc3BlY2lhbGx5IGlmIHRoZXJlJ3Mgc29tZQo+PiBBUk0tZ2VuZXJpYyBmdW5jdGlvbmFs
+aXR5IGluIHRoZXJlIHdoaWNoIHNob3VsZCBiZSBzaGFyZWQsIG9mIGNvdXJzZS4KCj4gWWVzIGl0
+IGlzIEFSTTY0X1JBU19FWFROIGFuZCBJIGhhdmUgYmVlbiBob3BpbmcgaWYgSmFtZXMgY2FuIHBy
+b3ZpZGUgdGhlIGZlZWRiYWNrLAo+IGl0IGhhcyBiZWVuIHNvbWUgdGltZSBub3cgc2luY2UgSSBw
+b3N0ZWQgdGhpcyBvdXQuCgpTb3JyeSwgSSB3YXMgb3V0IG9mIHRoZSBvZmZpY2UgZm9yIG1vc3Qg
+b2YgTm92ZW1iZXIvRGVjZW1iZXIsIGFuZCBJJ20gc2xvd2x5IGNhdGNoaW5nIHVwLi4uCgoKPj4+
+ICsKPj4+ICtjb25maWcgRURBQ19RQ09NX0tSWU9fUE9MTAo+Pj4gK8KgwqDCoCBkZXBlbmRzIG9u
+IEVEQUNfUUNPTV9LUllPCj4+PiArwqDCoMKgIGJvb2wgIlBvbGwgb24gS3J5byBFQ0MgcmVnaXN0
+ZXJzIgo+Pj4gK8KgwqDCoCBoZWxwCj4+PiArwqDCoMKgwqDCoCBUaGlzIG9wdGlvbiBjaG9vc2Vz
+IHdoZXRoZXIgb3Igbm90IHlvdSB3YW50IHRvIHBvbGwgb24gdGhlIEtyeW8gRUNDCj4+PiArwqDC
+oMKgwqDCoCByZWdpc3RlcnMuIFdoZW4gdGhpcyBpcyBlbmFibGVkLCB0aGUgcG9sbGluZyByYXRl
+IGNhbiBiZSBzZXQgYXMgYQo+Pj4gK8KgwqDCoMKgwqAgbW9kdWxlIHBhcmFtZXRlci4gQnkgZGVm
+YXVsdCwgaXQgd2lsbCBjYWxsIHRoZSBwb2xsaW5nIGZ1bmN0aW9uIGV2ZXJ5Cj4+PiArwqDCoMKg
+wqDCoCBzZWNvbmQuCj4+Cj4+IFdoeSBpcyB0aGlzIGEgc2VwYXJhdGUgb3B0aW9uIGFuZCB3aHkg
+c2hvdWxkIHBlb3BsZSB1c2UgdGhhdD8KPj4KPj4gQ2FuIHRoZSBwb2xsaW5nL2lycSBiZSBzd2l0
+Y2hlZCBhdXRvbWF0aWNhbGx5PwoKPiBObyBpdCBjYW5ub3QgYmUgc3dpdGNoZWQgYXV0b21hdGlj
+YWxseS4gSXQgaXMgdXNlZCBpbiBjYXNlIHNvbWUgU29DcyBkbyBub3Qgc3VwcG9ydCBhbiBpcnEK
+PiBiYXNlZCBtZWNoYW5pc20gZm9yIEVEQUMuCj4gQnV0IEkgYW0gY29udHJhZGljdGluZyBteXNl
+bGYgYmVjYXVzZSBJIGFtIHRlbGxpbmcgdGhhdCBhdGxlYXN0IG9uZSBpbnRlcnJ1cHQgc2hvdWxk
+IGJlCj4gc3BlY2lmaWVkIGluIGJpbmRpbmdzLAo+IHNvIGl0IGlzIGJlc3QgaWYgSSBkcm9wIHRo
+aXMgcG9sbGluZyBvcHRpb24gZm9yIG5vdy4KCkZvciBub3csIHN1cmUuIEJ1dCBJIHRoaW5rIHRo
+aXMgd2lsbCBjb21lIGJhY2sgZm9yIHN5c3RlbXMgd2l0aCBlbWJhcnJhc3NpbmcgYW1vdW50cyBv
+ZgpSQU0gdGhhdCB3b3VsZCByYXRoZXIgc2NydWIgdGhlIGVycm9ycyB0aGFuIHRha2UgYSBmbG9v
+ZCBvZiBJUlFzLiBJJ2QgbGlrZSB0aGlzIHRvIGJlCmNvbnRyb2xsYWJsZSBmcm9tIHVzZXItc3Bh
+Y2UuCgoKPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2VkYWMvTWFrZWZpbGUgYi9kcml2ZXJzL2Vk
+YWMvTWFrZWZpbGUKPj4+IGluZGV4IGQ3NzIwMGM5NjgwYi4uMjllZGNmYTZlYzBlIDEwMDY0NAo+
+Pj4gLS0tIGEvZHJpdmVycy9lZGFjL01ha2VmaWxlCj4+PiArKysgYi9kcml2ZXJzL2VkYWMvTWFr
+ZWZpbGUKPj4+IEBAIC04NSw1ICs4NSw2IEBAIG9iai0kKENPTkZJR19FREFDX1NZTk9QU1lTKcKg
+wqDCoMKgwqDCoMKgICs9IHN5bm9wc3lzX2VkYWMubwo+Pj4gwqBvYmotJChDT05GSUdfRURBQ19Y
+R0VORSnCoMKgwqDCoMKgwqDCoCArPSB4Z2VuZV9lZGFjLm8KPj4+IMKgb2JqLSQoQ09ORklHX0VE
+QUNfVEkpwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCArPSB0aV9lZGFjLm8KPj4+IMKgb2JqLSQoQ09O
+RklHX0VEQUNfUUNPTSnCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICs9IHFjb21fZWRhYy5vCj4+PiAr
+b2JqLSQoQ09ORklHX0VEQUNfUUNPTV9LUllPKcKgwqDCoMKgwqDCoMKgICs9IHFjb21fa3J5b19l
+ZGFjLm8KPj4KPj4gV2hhdCBpcyB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIHRoaXMgbmV3IGRyaXZl
+ciBhbmQgdGhlIHFjb21fZWRhYyBvbmU/IENhbgo+PiBmdW5jdGlvbmFsaXR5IGJlIHNoYXJlZD8K
+CkhpZ2gtbGV2ZWwgc3RvcnkgdGltZToKVW50aWwgdGhlICd2OC4yJyByZXZpc2lvbiBvZiB0aGUg
+J3Y4JyBBcm0tYXJjaGl0ZWN0dXJlICh0aGUgNjRiaXQgb25lKSwgYXJtIGRpZG4ndApkZXNjcmli
+ZSBob3cgUkFTIHNob3VsZCB3b3JrLiBQYXJ0bmVycyBpbXBsZW1lbnRlZCB3aGF0IHRoZXkgbmVl
+ZGVkLCBhbmQgd2UgZW5kZWQgdXAgd2l0aAp0aGlzIGNvbGxlY3Rpb24gb2YgZHJpdmVycyBiZWNh
+dXNlIHRoZXkgd2VyZSBhbGwgZGlmZmVyZW50LgoKdjguMiBmaXhlZCBhbGwgdGhpcywgdGhlIGdv
+b2QgbmV3cyBpcyBvbmNlIGl0cyBkb25lLCB3ZSBzaG91bGQgbmV2ZXIgbmVlZCBhbm90aGVyIGVk
+YWMKZHJpdmVyLiAoYXQgbGVhc3QsIG5vdCBmb3IgU29DcyBidWlsdCBmb3IgdjguMikuIFRoZSBk
+b3duc2lkZSBpcyB0aGVyZSBpcyBxdWl0ZSBhIGxvdCBpbgp0aGVyZSwgYW5kIHdlIG5lZWQgdG8g
+Y292ZXIgQUNQSSBtYWNoaW5lcyBhcyB3ZWxsIGFzIERULgoKPiBxY29tX2VkYWMgZHJpdmVyIGlz
+IGZvciBRQ09NIHN5c3RlbSBjYWNoZShsYXN0IGxldmVsIGNhY2hlKSwgaXQgc2hvdWxkIGJlIHJl
+bmFtZWQgdG8KPiBxY29tX2xsY2NfZWRhYy5jLgo+IFRoaXMgbmV3IGRyaXZlciBpcyBmb3IgUUNP
+TSBLcnlvIENQVSBjb3JlIGNhY2hlcyhMMSxMMixMMykuCj4KPiBGdW5jdGlvbmFsaXR5IGNhbm5v
+dCBiZSBzaGFyZWQgYXMgdGhlc2UgdHdvIGFyZSBkaWZmZXJlbnQgSVAgYmxvY2tzIGFuZCBiZXN0
+IGtlcHQgc2VwYXJhdGUuCgpUaGUgcWNvbV9lZGFjIHdpbGwgYmUgUXVhbGNvbW0ncyBwcmUtdjgu
+MiBzdXBwb3J0LgpUaGlzIHNlcmllcyBpcyBhYm91dCB0aGUgdjguMiBzdXBwb3J0IHdoaWNoIGFs
+bCBsb29rcyB0b3RhbGx5IGRpZmZlcmVudCB0byBMaW51eC4KCgo+Pj4gKyAqIEFSTSBDb3J0ZXgt
+QTU1LCBDb3J0ZXgtQTc1LCBDb3J0ZXgtQTc2IFRSTSBDaGFwdGVyIEIzLjMKPj4KPj4gQ2hhcHRl
+cj8gV2hlcmU/IFVSTD8KPj4KPiAKPiBJIGNob3NlIHRoaXMgYmVjYXVzZSB0aGVzZSBUUk1zIGFy
+ZSBvcGVubHkgYXZhaWxhYmxlIGFuZCBpZiB5b3Ugc2VhcmNoIGZvciB0aGVzZSBhYm92ZQo+IHRl
+cm1zIGxpa2UKPiAiQ29ydGV4LUE3NiBUUk0gQ2hhcHRlciBCMy4zIiBpbiBnb29nbGUsIHRoZW4g
+dGhlIGZpcnN0IHNlYXJjaCByZXN1bHQgd2lsbCBiZSB0aGUgVFJNIHBkZiwKPiBvdGhlcndpc2UK
+PiBJIHdvdWxkIGhhdmUgdG8gc3BlY2lmeSB0aGUgbG9uZyBVUkwgZm9yIHRoZSBwZGYgYW5kIHdl
+IGRvIG5vdCBrbm93IGhvdyBsb25nIHRoYXQgVVJMIGxpbmsKPiB3aWxsIGJlIGFjdGl2ZS4KClRo
+ZXNlIGFyZSBTb0MvQ1BVIHNwZWNpZmljLiBVc2luZyB0aGVzZSB3ZSBjYW4ndCBzb2x2ZSB0aGUg
+d2hvbGUgcHJvYmxlbS4KClRoZSBhcmNoaXRlY3R1cmUgYWxsIHRob3NlIHNob3VsZCBmaXQgaW50
+byBpcyBoZXJlOgpodHRwczovL3N0YXRpYy5kb2NzLmFybS5jb20vZGRpMDU4Ny9jYi8yMDE5XzA3
+XzA1X0REXzA1ODdfQ19iLnBkZgoob3IgaHR0cHM6Ly9kZXZlbG9wZXIuYXJtLmNvbS9kb2NzLyBh
+bmQgbG9vayBmb3IgJ1JBUycpCgouLi4gYW5kIHRoZSBhcm0tYXJtLgoKCj4+PiArc3RhdGljIHZv
+aWQgZHVtcF9zeW5kcm9tZV9yZWcoaW50IGVycm9yX3R5cGUsIGludCBsZXZlbCwKPj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHU2NCBlcnJ4c3RhdHVzLCB1NjQgZXJyeG1p
+c2MsCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgZWRhY19k
+ZXZpY2VfY3RsX2luZm8gKmVkZXZfY3RsKQo+Pj4gK3sKPj4+ICvCoMKgwqAgY2hhciBtc2dbS1JZ
+T19FREFDX01TR19NQVhdOwo+Pj4gK8KgwqDCoCBjb25zdCBjaGFyICplcnJvcl9tc2c7Cj4+PiAr
+wqDCoMKgIGludCBjcHU7Cj4+PiArCj4+PiArwqDCoMKgIGNwdSA9IHJhd19zbXBfcHJvY2Vzc29y
+X2lkKCk7Cj4+Cj4+IFdoeSByYXdfPwo+Pgo+IAo+IEJlY2F1c2Ugd2Ugd2lsbCBiZSBjYWxsaW5n
+IHNtcF9wcm9jZXNzb3JfaWQgaW4gcHJlZW1wdGlibGUgY29udGV4dCBhbmQgaWYgd2UgZW5hYmxl
+Cj4gQ09ORklHX0RFQlVHX1BSRUVNUFQsCj4gd2Ugd291bGQgZ2V0IGEgbmljZSBiYWNrdHJhY2Uu
+Cj4gCj4gW8KgwqDCoCAzLjc0NzQ2OF0gQlVHOiB1c2luZyBzbXBfcHJvY2Vzc29yX2lkKCkgaW4g
+cHJlZW1wdGlibGUgWzAwMDAwMDAwXSBjb2RlOiBzd2FwcGVyLzAvMQo+IFvCoMKgwqAgMy43NTU1
+MjddIGNhbGxlciBpcyBxY29tX2tyeW9fZWRhY19wcm9iZSsweDEzOC8weDJiOAo+IFvCoMKgwqAg
+My43NjA4MTldIENQVTogMiBQSUQ6IDEgQ29tbTogc3dhcHBlci8wIFRhaW50ZWQ6IEcgU8KgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoAo+IDUuNC4wLXJjNy1uZXh0LTIwMTkxMTEzLTAwMDA5
+LWc4NjY2ODU1ZDZhNWItZGlydHkgIzEwNwo+IFvCoMKgwqAgMy43NzIzMjNdIEhhcmR3YXJlIG5h
+bWU6IFF1YWxjb21tIFRlY2hub2xvZ2llcywgSW5jLiBTTTgxNTAgTVRQIChEVCkKPiBbwqDCoMKg
+IDMuNzc5MDMwXSBDYWxsIHRyYWNlOgo+IFvCoMKgwqAgMy43ODE1NTZdwqAgZHVtcF9iYWNrdHJh
+Y2UrMHgwLzB4MTU4Cj4gW8KgwqDCoCAzLjc4NTMzMV3CoCBzaG93X3N0YWNrKzB4MTQvMHgyMAo+
+IFvCoMKgwqAgMy43ODg3NDFdwqAgZHVtcF9zdGFjaysweGIwLzB4ZjQKPiBbwqDCoMKgIDMuNzky
+MTY0XcKgIGRlYnVnX3NtcF9wcm9jZXNzb3JfaWQrMHhkOC8weGUwCj4gW8KgwqDCoCAzLjc5NjYz
+OV3CoCBxY29tX2tyeW9fZWRhY19wcm9iZSsweDEzOC8weDJiOAo+IFvCoMKgwqAgMy44MDExMTZd
+wqAgcGxhdGZvcm1fZHJ2X3Byb2JlKzB4NTAvMHhhOAo+IFvCoMKgwqAgMy44MDUyMzZdwqAgcmVh
+bGx5X3Byb2JlKzB4MTA4LzB4MzYwCj4gW8KgwqDCoCAzLjgwODk5OV3CoCBkcml2ZXJfcHJvYmVf
+ZGV2aWNlKzB4NTgvMHgxMDAKPiBbwqDCoMKgIDMuODEzMzA0XcKgIGRldmljZV9kcml2ZXJfYXR0
+YWNoKzB4NmMvMHg3OAo+IFvCoMKgwqAgMy44MTc2MDZdwqAgX19kcml2ZXJfYXR0YWNoKzB4YjAv
+MHhmMAo+IFvCoMKgwqAgMy44MjE0NTldwqAgYnVzX2Zvcl9lYWNoX2RldisweDY4LzB4YzgKPiBb
+wqDCoMKgIDMuODI1NDA3XcKgIGRyaXZlcl9hdHRhY2grMHgyMC8weDI4Cj4gW8KgwqDCoCAzLjgy
+OTA4M13CoCBidXNfYWRkX2RyaXZlcisweDE2MC8weDFmMAo+IFvCoMKgwqAgMy44MzMwMzBdwqAg
+ZHJpdmVyX3JlZ2lzdGVyKzB4NjAvMHgxMTAKPiBbwqDCoMKgIDMuODM2OTc2XcKgIF9fcGxhdGZv
+cm1fZHJpdmVyX3JlZ2lzdGVyKzB4NDAvMHg0OAo+IFvCoMKgwqAgMy44NDE4MTNdwqAgcWNvbV9r
+cnlvX2VkYWNfZHJpdmVyX2luaXQrMHgxOC8weDIwCj4gW8KgwqDCoCAzLjg0NjY0NV3CoCBkb19v
+bmVfaW5pdGNhbGwrMHg1OC8weDFhMAo+IFvCoMKgwqAgMy44NTA1OTZdwqAga2VybmVsX2luaXRf
+ZnJlZWFibGUrMHgxOWMvMHgyNDAKPiBbwqDCoMKgIDMuODU1MDc1XcKgIGtlcm5lbF9pbml0KzB4
+MTAvMHgxMDgKPiBbwqDCoMKgIDMuODU4NjY1XcKgIHJldF9mcm9tX2ZvcmsrMHgxMC8weDFjCgph
+bmQgcmF3XyBzdG9wcyB0aGUgYmFja3RyYWNlPyBZb3UgYXJlIHN0aWxsIHByZWVtcHRpYmxlLiBU
+aGUgcHJvYmxlbSBzdGlsbCBleGlzdHMsIHlvdSd2ZQpqdXN0IHN1cHByZXNzZWQgdGhlIHdhcm5p
+bmcuCgpBdCBhbnkgdGltZSBpbiBkdW1wX3N5bmRyb21lX3JlZygpLCB5b3UgY291bGQgZ2V0IGFu
+IGludGVycnVwdCBhbmQgYW5vdGhlciB0YXNrIGdldHMKc2NoZWR1bGVkLiBMYXRlciB5b3VyIHRo
+cmVhZCBpcyBzdGFydGVkIG9uIGFub3RoZXIgY3B1Li4uIGJ1dCBub3QgdGhlIG9uZSB3aG9zZSBj
+cHUgbnVtYmVyCnlvdSByZWFkIGZyb20gc21wX3Byb2Nlc3Nvcl9pZCgpLiBXaGF0ZXZlciB5b3Ug
+bmVlZGVkIGl0IGZvciwgbWlnaHQgaGF2ZSB0aGUgd3JvbmcgdmFsdWUuCgoKPj4+ICtzdGF0aWMg
+aW50IGtyeW9fbDFfbDJfc2V0dXBfaXJxKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsCj4+
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBlZGFjX2RldmljZV9jdGxf
+aW5mbyAqZWRldl9jdGwpCj4+PiArewo+Pj4gK8KgwqDCoCBpbnQgY3B1LCBlcnJpcnEsIGZhdWx0
+aXJxLCByZXQ7Cj4+PiArCj4+PiArwqDCoMKgIGVkYWNfZGV2ID0gZGV2bV9hbGxvY19wZXJjcHUo
+JnBkZXYtPmRldiwgKmVkYWNfZGV2KTsKPj4+ICvCoMKgwqAgaWYgKCFlZGFjX2RldikKPj4+ICvC
+oMKgwqDCoMKgwqDCoCByZXR1cm4gLUVOT01FTTsKPj4+ICsKPj4+ICvCoMKgwqAgZm9yX2VhY2hf
+cG9zc2libGVfY3B1KGNwdSkgewo+Pj4gK8KgwqDCoMKgwqDCoMKgIHByZWVtcHRfZGlzYWJsZSgp
+Owo+Pj4gK8KgwqDCoMKgwqDCoMKgIHBlcl9jcHUoZWRhY19kZXYsIGNwdSkgPSBlZGV2X2N0bDsK
+Pj4+ICvCoMKgwqDCoMKgwqDCoCBwcmVlbXB0X2VuYWJsZSgpOwo+Pj4gK8KgwqDCoCB9Cj4+Cj4+
+IFRoYXQgc2lsbHluZXNzIGRvZXNuJ3QgYmVsb25nIGhlcmUsIGlmIGF0IGFsbC4KCj4gU29ycnkg
+YnV0IEkgZG8gbm90IHVuZGVyc3RhbmQgdGhlIHNpbGx5bmVzcyBoZXJlLiBDb3VsZCB5b3UgcGxl
+YXNlIGV4cGxhaW4/CgpwcmVlbXB0X2Rpc2FibGUoKSBwcmV2ZW50cyBhbm90aGVyIHRhc2sgYmVp
+bmcgc2NoZWR1bGVkIGluc3RlYWQgb2YgeW91LCBhdm9pZGluZyB0aGUgcmlzawp0aGF0IHlvdSBn
+ZXQgc2NoZWR1bGVkIG9uIGFub3RoZXIgY3B1LiBJbiB0aGlzIGNhc2UgaXQgZG9lc24ndCBtYXR0
+ZXIgd2hpY2ggY3B1IHlvdSBhcmUKcnVubmluZyBvbiBhcyB5b3UgYXJlbid0IGFjY2Vzc2luZyBf
+dGhpc18gY3B1J3MgZWRhY19kZXYsIHlvdSBhcmUgYWNjZXNzaW5nIGVhY2ggb25lIGluIGEKbG9v
+cC4KCgpUaGFua3MsCgpKYW1lcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
