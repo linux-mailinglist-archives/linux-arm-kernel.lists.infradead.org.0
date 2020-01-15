@@ -2,60 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C75C13BE43
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 12:15:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED4FC13BE48
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 12:17:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BwsHfNIlPxbTAfLBoY7UaZhpk98S2bC4o3N9mwi3J0o=; b=qvXAs70Ru21IwRHH6lqstcHnn
-	vThJ4QO4ku3h68WyqEt4og7gH63p/qrWse4iXTEkpbFgMz1OeuAQqYf9UpJoHPAUJUyPTtaWs0CLo
-	hbk5m9MEeWLQyqBXsPmAo/gKzwzg6WXOr2tpxtvbYk8krmdxxUrzjdNIJ2iD1St2SxO36QVUbVOcP
-	7Te8obmhqQb+HqMtMFpcotSzVt0dxfNCZHMsAjkSLe7x6SnOnWlEU/ZhRpjE7kfygCKpcaAkGPIvG
-	rHp8CwxnOSsTTYrVSHCAmu4cO99z+qgpYneyL4HZexUABXhsDKuYoC21zn/EyuUgU+97VMZpiIhcf
-	Tl3V8Aa+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jKWTxkwLePayNib0A6Y481+GXpvkzxTvYBmDPkc2tXg=; b=KQVlu21EjIQF1O
+	CMpAj0FnL5NfSGXSI9otveHWbAdnxX348XgNrM0XCWsuJCH0WWEr84xNqltJUZxTArH6vVf65/oza
+	MqbPMuvgtw/MH66ezqAnJR676fwRaF51TZl4QbUE3rx8JniYz99fu++LOGP4FOWvN7WIYdAskfL/y
+	LsABOdq3j47/hKdgOmPpXUezyBW0u5AzmGLbtnItmtNDIBrOh2KbNdbEnGnsRecIn5dGFNCmIY89E
+	ZmIkTJQpaCx4T8Fl6FgiW1E2TfHgovuEBkyCoHDVuF+Rala4XVd8rxGrzBSggb74GT/7ts3SplzFA
+	C5aTVHc8XPtc6o65RnzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irgdY-0002Gd-VR; Wed, 15 Jan 2020 11:15:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irgdH-0002Ds-LG
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 11:14:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B04FD31B;
- Wed, 15 Jan 2020 03:14:42 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D2F83F6C4;
- Wed, 15 Jan 2020 03:14:40 -0800 (PST)
-Subject: Re: [PATCH v8 08/15] coresight: cti: Enable CTI associated with
- devices.
-To: Mike Leach <mike.leach@linaro.org>, linux-arm-kernel@lists.infradead.org, 
- devicetree@vger.kernel.org, coresight@lists.linaro.org,
- linux-doc@vger.kernel.org
-References: <20200113213149.25599-1-mike.leach@linaro.org>
- <20200113213149.25599-9-mike.leach@linaro.org>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <396fc3a2-083b-29ef-2bb6-2fca066ea0ef@arm.com>
-Date: Wed, 15 Jan 2020 11:14:39 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1irgfb-0003t7-Oe; Wed, 15 Jan 2020 11:17:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irgfQ-0003sJ-Nm
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 11:17:02 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5465B2187F;
+ Wed, 15 Jan 2020 11:16:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579087016;
+ bh=Y1xXj9ILsoE37rRr+v9R8IGf4VVprVtBcflp3G8QO38=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=B1zw50IwKGR5nw2aUVUeXlhcyigUs0zq6uOrG6JH9dh9S86Ixm+HoaFw3S5KnXvZA
+ wq83b6FDzZOf5mf90Ri0Im780cjoQEexvO8uXxweqCzlJqcVDAHtJUWP3xenweCiuj
+ 1R+mgyZnDFDSV+G9JeL+rHC9Yj/7xUdhxsHZdNTY=
+Date: Wed, 15 Jan 2020 11:16:51 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v10 1/3] arm64: Implement archrandom.h for ARMv8.5-RNG
+Message-ID: <20200115111651.GE21692@willie-the-truck>
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-2-broonie@kernel.org>
+ <20200114174432.GG2579@willie-the-truck>
+ <CAKv+Gu9pVZZm_gvsKfrCG_cM=1TmAAH+sj06GzT+Ag9Ej7__fg@mail.gmail.com>
+ <20200115091651.GB21692@willie-the-truck>
+ <CAKv+Gu-NZBo2q4_Yh068UENun0mkLitN473D-w7KBFXVpfdKqA@mail.gmail.com>
+ <20200115110720.GG3897@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200113213149.25599-9-mike.leach@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200115110720.GG3897@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_031443_798047_01253E7E 
-X-CRM114-Status: GOOD (  28.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200115_031656_791540_36656E89 
+X-CRM114-Status: GOOD (  14.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,167 +82,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, mathieu.poirier@linaro.org, corbet@lwn.net,
- linux-arm-msm@vger.kernel.org, liviu.dudau@arm.com, agross@kernel.org,
- robh+dt@kernel.org, maxime@cerno.tech, sudeep.holla@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/01/2020 21:31, Mike Leach wrote:
-> The CoreSight subsystem enables a path of devices from source to sink.
-> Any CTI devices associated with the path devices must be enabled at the
-> same time.
+On Wed, Jan 15, 2020 at 11:07:20AM +0000, Mark Brown wrote:
+> On Wed, Jan 15, 2020 at 10:24:21AM +0100, Ard Biesheuvel wrote:
+> > On Wed, 15 Jan 2020 at 10:16, Will Deacon <will@kernel.org> wrote:
 > 
-> This patch adds an associated coresight_device element to the main
-> coresight device structure, and uses this to create associations between
-> the CTI and other devices based on the device tree data. The associated
-> device element is used to enable CTI in conjunction with the path elements.
+> > > I see your argument, but I was just going on the side of consistency because
+> > > we're continuing to expose other features as HWCAPs when the capability is
+> > > just a proxy for the cpuid field. I was in favour of stopping the addition
+> > > of such HWCAPs years ago, but I couldn't convince Catalin ;)
 > 
-> CTI devices are reference counted so where a single CTI is associated with
-> multiple elements on the path, it will be enabled on the first associated
-> device enable, and disabled with the last associated device disable.
+> > > The way I see it, we'll soon run out of HWCAP2 bits and then we'll have
+> > > our hand forced.
 > 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->   drivers/hwtracing/coresight/coresight-cti.c   | 129 ++++++++++++++++++
->   drivers/hwtracing/coresight/coresight-cti.h   |   1 +
->   .../hwtracing/coresight/coresight-platform.c  |   1 +
->   drivers/hwtracing/coresight/coresight-priv.h  |  12 ++
->   drivers/hwtracing/coresight/coresight.c       |  71 +++++++++-
->   include/linux/coresight.h                     |   4 +
->   6 files changed, 213 insertions(+), 5 deletions(-)
+> > I don't have a strong opinion either way.
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> index 77c2af247917..2be1b310e854 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> @@ -4,6 +4,7 @@
->    * Author: Mike Leach <mike.leach@linaro.org>
->    */
->   
-> +#include <linux/property.h>
->   #include "coresight-cti.h"
->   
->   /**
-> @@ -440,6 +441,131 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
->   	return err;
->   }
->   
-> +/*
-> + * Look for a matching connection device name in the list of connections.
-> + * If found then swap in the csdev name, set trig con association pointer
-> + * and return found.
-> + */
-> +static bool
-> +cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
-> +		      struct coresight_device *csdev)
-> +{
-> +	struct cti_trig_con *trig_con;
+> Me either, or at least not enough to object to doing it - Will?
+> Catalin?
 
-super minor nit: Please use "struct cti_trig_con *tc;" consistent with
-the naming everywhere else. Helps a lot in reading the code, especially
-which has a lot of different structures.
+Unless we all agree to stop adding new HWCAPs, then I think you may as well
+add a new one here (i.e. I don't think this discussion should derail your
+work).
 
-> +	const char *csdev_name;
-> +
-> +	list_for_each_entry(trig_con, &ctidev->trig_cons, node) {
-> +		if (trig_con->con_dev_name) {
-
-This was allocated via devm_* and ...
-
-> +			if (!strcmp(node_name, trig_con->con_dev_name)) {
-> +				/* match: so swap in csdev name & dev */
-> +				kfree(trig_con->con_dev_name);
-
-... we free it here using kfree() without devm_ being aware. This could
-cause double-free when the device is removed. This should either be
-devm_kfree() or simply overwritten with the new string and leave
-the device cleanup to free it.
-
-> +				csdev_name = dev_name(&csdev->dev);
-> +				trig_con->con_dev_name =
-> +					kstrdup(csdev_name, GFP_KERNEL);
-
-Please use devm_kstrdup() here on the CTI device to have a consistent
-allocation.
-
-
-> +				trig_con->con_dev = csdev;
-> +				return true;
-> +			}
-> +		}
-> +	}
-> +	return false;
-> +}
-> 
-
-
-> +/*
-> + * Removing the associated devices is easier.
-> + * A CTI will not have a value for csdev->ect_dev.
-> + */
-> +void cti_remove_assoc_from_csdev(struct coresight_device *csdev)
-> +{
-> +	struct cti_drvdata *ctidrv;
-> +	struct cti_trig_con *tc;
-> +	struct cti_device *ctidev;
-> +
-> +	mutex_lock(&ect_mutex);
-> +	if (csdev->ect_dev) {
-> +		ctidrv = csdev_to_cti_drvdata(csdev->ect_dev);
-> +		ctidev = &ctidrv->ctidev;
-> +		list_for_each_entry(tc, &ctidev->trig_cons, node) {
-> +			if (tc->con_dev == csdev->ect_dev) {
-> +				tc->con_dev = NULL;
-
-Should we clear/free the name too ?
-
-> +				break;
-> +			}
-> +		}
-> +		csdev->ect_dev = NULL;
-> +	}
-> +	mutex_unlock(&ect_mutex);
-> +}
-> +EXPORT_SYMBOL_GPL(cti_remove_assoc_from_csdev);
-> +
-
-...
-
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
-> index 469a06a1bb78..578d7e9ac67e 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.h
-> +++ b/drivers/hwtracing/coresight/coresight-cti.h
-> @@ -216,6 +216,7 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
->   		      u32 channel_idx);
->   struct coresight_platform_data *
->   coresight_cti_get_platform_data(struct device *dev);
-> +const char *cti_plat_get_node_name(struct fwnode_handle *fwnode);
->   
->   /* cti powered and enabled */
->   static inline bool cti_active(struct cti_config *cfg)
-> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-> index 43418a2126ff..421d4fc95f41 100644
-> --- a/drivers/hwtracing/coresight/coresight-platform.c
-> +++ b/drivers/hwtracing/coresight/coresight-platform.c
-> @@ -313,6 +313,7 @@ static int of_get_coresight_platform_data(struct device *dev,
->   
->   	return 0;
->   }
-> +
-
-nit : spurious hunk ?
-
->   #else
->   static inline int
->   of_get_coresight_platform_data(struct device *dev,
-
-Otherwise looks good to me
-
-Suzuki
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
