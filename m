@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95F2213C200
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:54:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1332313C204
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 13:55:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RWdn2T3m1sw+XXCuja37RRC6dIJOtZ87d8V5Ic3fzdM=; b=F8A3YKXh1RI6DP
-	2z6rf71h+h2RdLYl5IWdmI5t0KIN7FFFNkRFqpqAFL+ItD/pB/zg0dlmIATqJ/k35BZLX/tgicXZH
-	B9ui1RzsTG7fY0B0UqhDc3jefh++sul0WPV2jSYvOIqnOrrZgEMUN7LtZh/kIHxzU82+IEYUZn0Oj
-	vKO18oY9nMIXTQRjtCCqlSfBtdYkebvOynD8v/JYB3Tg+DFFjYUjNNU7MsuianIw2WmcrsC2psCmq
-	n0DlepEjSHrz0rVSSIkbS6AGTTzMpVCRMiBLZJZliyTuQzFtj11cc3DsXT6O5Jg3/PNdrUXGmit1p
-	cgygSvD1aRA1ZQ3zYJgQ==;
+	List-Owner; bh=Hw2C7oicFDsx/r91axA2+qxdFePC9AQ4CIYjLaADfI4=; b=SherNV9lC7t3pD
+	Q2Ddyd1tSjHafspXXfbP0WRPbMuu++q71jrqhoiPrRx3IlRg9pG9VX+Fu580um03fd3+ew4EN/zbJ
+	TuY9ETqG68QuzGroCI00+IkbpMhERVIgpOJmVr4+DYIpONGVHqeMX0kc8vMcl8nVk6emf4pSy+K3z
+	Dd0RIH7npWwRm+BzINu+1uNSb5T6aFOvnjTlPYz88pjIT2Mxf4BqlezT+I/Blh5fQOkZd9xUuPL02
+	gu2vkP9FqJFkKEz2+k2EaMwu19xhMZnjev2o0X9ZoruP2NPEMQa0ezMJQR0l7j3zqnlNKCGeuBDET
+	DWTjTd+xUMVvoiyCQIUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriBw-0006Eq-Lc; Wed, 15 Jan 2020 12:54:36 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iriCb-0006hb-Up; Wed, 15 Jan 2020 12:55:17 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iriAu-0005a1-Cz
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:35 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q10so15622998wrm.11
+ id 1iriAv-0005aO-RZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 12:53:38 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d139so4707439wmd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 04:53:32 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Q4JsCWxXHC8YjpStG5e1vl4meeR6Q/c6EwcKRZXnP4g=;
- b=aXJPmp/sKIZ5yC9KBcjnGQmv1XjAweQHEtcUgTg2t1f4RaKASZpxE0QgHtFcPpXhtr
- zuRxyd6cxN1TQxoh4rbqDR7WBcRd4tEgKHx8rO2EA4sizmz9+u3Jj9j0scxlL4EJk++O
- cTJCK10bVQ46L1ggzNaZc0nCeNdENkaupJUJ/N3yZrK+35GOcSbGhtTs+PbglqRBlwFn
- GehwR0sBGV4BJqBQF75lMXIgDMtRlFjtv0+5Um4sxb6fiupoh60wvhmDsM2kHUjL8Ltd
- DOh6y87UY2NRSaT4pkknohlksIkCfsd4uhpTxZtTfBZrs1PZcGZGXmkGLcie4afvrR7G
- 8KYg==
+ bh=SVox6K0aClSgQAj4ZePzlVYlKOAA5RM1JxWE0eeJ+CM=;
+ b=d82j4vm1o3BcAiDmH8LgzA/3vpHR0J1gWTn3QQfboZjYwEHmLjWkVdv0rRYfw8tFQD
+ ZuKg7Rqy6hIQuC+dEDXPSLfFBVh4xfBVaqbdgIL1DjHmr5YQ0g8aBzYy3Kb+GHOJFU4L
+ g6e/Md8hX8aJLbt7iWz2wb0JfPk+FA+VwfPFj8ARFZ/hHFjSIIJjUKBrW0X8Uw65/GFN
+ pCj8ovv/3UsaefxbgelPQ8wVEKeHfYhcTtN2E+f84GERI489oXoalINk//Ix2yee5SSF
+ +wfxiIYEG3WEI0GqJI+KNZVEJCgdOf8YjqzueruUlJfwuRyTHAExiMrKEJFJQ/Z+jnHY
+ DS1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Q4JsCWxXHC8YjpStG5e1vl4meeR6Q/c6EwcKRZXnP4g=;
- b=GnSGAco7IIFOUB/HdaG8TBczMPpcGQ0XfSw7r8Hs3lYwBFU23eOon7/Od1ywsRpxro
- /WOCNGKdZFnFimc0wiMgaooLaGO+r4ZBn6mKcLoa8PDHcp3PD0rwjsBW1FGaCRpGanIT
- d2w/WU/F1KluxO6b/gZNIUt9iF3BpLkhVFMv6dmXHPcjD9pjqa+Cegn0bTSIZUIQHIg/
- 8N0ZWBKKpkbblK+7TwKs+RnpQpB1cjfqVhQ8VizV0FEwQia/rGW2HT4bN+QSkZvbCQxP
- TpiWWnk8jB70fqwvjgupVy678rOv+yJNEzncomXKzY96vdXKSjHtBDydqXt+ewe9X+Fc
- YzYQ==
-X-Gm-Message-State: APjAAAVn+BXEQLmMIZ///foABzMLeU5pdSc8h6NeKwSHig5CX6ju/zun
- o4SDhxiaYKqf8PZ51P8ja/By1Q==
-X-Google-Smtp-Source: APXvYqwyWdcuVyXOArs9ruSvzlL64ZWCgE+mSWyIpxT1nfnA2LYFgbtI4Sv85S0HrzG+WGrNdd51xA==
-X-Received: by 2002:a5d:6206:: with SMTP id y6mr30259146wru.130.1579092810915; 
- Wed, 15 Jan 2020 04:53:30 -0800 (PST)
+ bh=SVox6K0aClSgQAj4ZePzlVYlKOAA5RM1JxWE0eeJ+CM=;
+ b=ObrIj4gOhybIpTYguilATbBJBALRAXu+NO9Ebq+WZta8/R4WMHZKrRaxgPYTf4RgGW
+ kmR7a9WtZVbxDOI+QfpEZgjc1NkuPyovH9Fpnzv2aMxADmatxaHPq060AdX9moxDl5tb
+ ceC75x99wUAO2iVtuMKtnQmrzPvHHLwTulGIV/fE3OyWEqfW2fsINtUsOBTc1ELUuxHi
+ tIN0hg/JR3xuIIIoIKq1OpQ1YdqKjUdM9cij0TPE2qBg8BkEPxz5oIvdq41HF5QdWDS4
+ lbjRDkSg+7ZIdGNMPiHvtgU6uNcoKJVukxuO1dNC22qPO7Ps3+nS0vZH6k+bWSMJ6QGv
+ rPUA==
+X-Gm-Message-State: APjAAAWnk5s6xgGa/PQmqn00HSzza7kWjiF6gMEuh8QWw49zo946NJN4
+ 7OUzoksPRgrGLTlXsZDuIO0sLg==
+X-Google-Smtp-Source: APXvYqzv6wpZNhXp0mYEPij61j3ANQSOgHf/a/RB8gE84eHpEFNB/mfELJUcr+OpmYAPFC/lrGboWA==
+X-Received: by 2002:a1c:3187:: with SMTP id x129mr33613992wmx.91.1579092812076; 
+ Wed, 15 Jan 2020 04:53:32 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:2266:ba60:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.29
+ by smtp.gmail.com with ESMTPSA id d12sm25196171wrp.62.2020.01.15.04.53.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Jan 2020 04:53:30 -0800 (PST)
+ Wed, 15 Jan 2020 04:53:31 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
  iommu@lists.linux-foundation.org, will@kernel.org
-Subject: [PATCH v5 03/13] iommu/arm-smmu-v3: Parse PASID devicetree property
- of platform devices
-Date: Wed, 15 Jan 2020 13:52:29 +0100
-Message-Id: <20200115125239.136759-4-jean-philippe@linaro.org>
+Subject: [PATCH v5 04/13] ACPI/IORT: Parse SSID property of named component
+ node
+Date: Wed, 15 Jan 2020 13:52:30 +0100
+Message-Id: <20200115125239.136759-5-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200115125239.136759-1-jean-philippe@linaro.org>
 References: <20200115125239.136759-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_045332_438642_2C9E70F3 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20200115_045333_892665_1EDEFC7F 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,96 +110,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For platform devices that support SubstreamID (SSID), firmware provides
-the number of supported SSID bits. Restrict it to what the SMMU supports
-and cache it into master->ssid_bits, which will also be used for PCI
-PASID.
+Named component nodes in the IORT tables describe the number of
+Substream ID bits (aka. PASID) supported by the device. Propagate this
+value to the fwspec structure in order to enable PASID for platform
+devices.
 
+Acked-by: Hanjun Guo <guohanjun@huawei.com>
 Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 13 +++++++++++++
- drivers/iommu/of_iommu.c    |  6 +++++-
- include/linux/iommu.h       |  2 ++
- 3 files changed, 20 insertions(+), 1 deletion(-)
+ drivers/acpi/arm64/iort.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index d4e8b7f8d9f4..837b4283b4dc 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -292,6 +292,12 @@
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 33f71983e001..39f389214ecf 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -11,6 +11,7 @@
+ #define pr_fmt(fmt)	"ACPI: IORT: " fmt
  
- #define CTXDESC_CD_1_TTB0_MASK		GENMASK_ULL(51, 4)
+ #include <linux/acpi_iort.h>
++#include <linux/bitfield.h>
+ #include <linux/iommu.h>
+ #include <linux/kernel.h>
+ #include <linux/list.h>
+@@ -924,6 +925,20 @@ static int iort_pci_iommu_init(struct pci_dev *pdev, u16 alias, void *data)
+ 	return iort_iommu_xlate(info->dev, parent, streamid);
+ }
  
-+/*
-+ * When the SMMU only supports linear context descriptor tables, pick a
-+ * reasonable size limit (64kB).
-+ */
-+#define CTXDESC_LINEAR_CDMAX		ilog2(SZ_64K / (CTXDESC_CD_DWORDS << 3))
++static void iort_named_component_init(struct device *dev,
++				      struct acpi_iort_node *node)
++{
++	struct acpi_iort_named_component *nc;
++	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
 +
- /* Convert between AArch64 (CPU) TCR format and SMMU CD format */
- #define ARM_SMMU_TCR2CD(tcr, fld)	FIELD_PREP(CTXDESC_CD_0_TCR_##fld, \
- 					FIELD_GET(ARM64_TCR_##fld, tcr))
-@@ -638,6 +644,7 @@ struct arm_smmu_master {
- 	u32				*sids;
- 	unsigned int			num_sids;
- 	bool				ats_enabled;
-+	unsigned int			ssid_bits;
- };
- 
- /* SMMU private data for an IOMMU domain */
-@@ -2571,6 +2578,12 @@ static int arm_smmu_add_device(struct device *dev)
- 		}
++	if (!fwspec)
++		return;
++
++	nc = (struct acpi_iort_named_component *)node->node_data;
++	fwspec->num_pasid_bits = FIELD_GET(ACPI_IORT_NC_PASID_BITS,
++					   nc->node_flags);
++}
++
+ /**
+  * iort_iommu_configure - Set-up IOMMU configuration for a device.
+  *
+@@ -978,6 +993,9 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
+ 			if (parent)
+ 				err = iort_iommu_xlate(dev, parent, streamid);
+ 		} while (parent && !err);
++
++		if (!err)
++			iort_named_component_init(dev, node);
  	}
  
-+	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
-+
-+	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
-+		master->ssid_bits = min_t(u8, master->ssid_bits,
-+					  CTXDESC_LINEAR_CDMAX);
-+
- 	group = iommu_group_get_for_dev(dev);
- 	if (!IS_ERR(group)) {
- 		iommu_group_put(group);
-diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-index 026ad2b29dcd..b3ccb2f7f1c7 100644
---- a/drivers/iommu/of_iommu.c
-+++ b/drivers/iommu/of_iommu.c
-@@ -196,8 +196,12 @@ const struct iommu_ops *of_iommu_configure(struct device *dev,
- 			if (err)
- 				break;
- 		}
--	}
- 
-+		fwspec = dev_iommu_fwspec_get(dev);
-+		if (!err && fwspec)
-+			of_property_read_u32(master_np, "pasid-num-bits",
-+					     &fwspec->num_pasid_bits);
-+	}
- 
  	/*
- 	 * Two success conditions can be represented by non-negative err here:
-diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index f2223cbb5fd5..956031eab3ef 100644
---- a/include/linux/iommu.h
-+++ b/include/linux/iommu.h
-@@ -570,6 +570,7 @@ struct iommu_group *fsl_mc_device_group(struct device *dev);
-  * @ops: ops for this device's IOMMU
-  * @iommu_fwnode: firmware handle for this device's IOMMU
-  * @iommu_priv: IOMMU driver private data for this device
-+ * @num_pasid_bits: number of PASID bits supported by this device
-  * @num_ids: number of associated device IDs
-  * @ids: IDs which this device may present to the IOMMU
-  */
-@@ -578,6 +579,7 @@ struct iommu_fwspec {
- 	struct fwnode_handle	*iommu_fwnode;
- 	void			*iommu_priv;
- 	u32			flags;
-+	u32			num_pasid_bits;
- 	unsigned int		num_ids;
- 	u32			ids[1];
- };
 -- 
 2.24.1
 
