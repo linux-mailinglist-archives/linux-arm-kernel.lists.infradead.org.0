@@ -2,60 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51AC713C9E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:44:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9FC113C9E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:46:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0dkDUjh1ZisYYdRDcV6D3ZUs9gFILOXvSo+3mPJIQ8c=; b=bzU8pSQOAYxo/DtQtUV4npFxn
-	wEtFKs/z0hLCCA5SyvwlpyuO4EF01phGqHqH0t9m801mcatAE9f5AeRNF0zE0zJ+o27zdvkswQ1al
-	z0EoV078Q9zUZtjcZrjv0glkPasmKfU69mHMj4eXFxg9fApSRbuGccrOshjwj7OglOEoB4FQl+h5g
-	yn5+ldSmlObTyGB2QUtR8kTSdLkSbXHjz7qBf9cP37vg1+rx/qfyTHfK1do5Ubp7NbKrPJ9So/P1u
-	kj0wuBiGMUPDHZRRLc+ieOBXnOmDAZgS9uqcYhoiWQ1dI3z1UjDndA+kGWxET/5qtJtPKFFtdVdNv
-	OpLfBcIgg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K9qKmKzLPRapDr4I/OXzNiYQ8zcExHxuTvSN6Oe+bAc=; b=F6Tau7Tl/KyKUI
+	fydWPTqF5ciJmh+3EZXDDc0bdpMNe64nwAG/6Oa7jHOp8lTw3HEQ98aQhyQbEGpcWQrvoShZmAMXW
+	t5fXVxBqEM7sBI6J+Qpjc09igd3+n2pI1xyrNEUZIiMsTcxuTsXt6PziIlacEYPMBqptgSfz2pwye
+	w3TXM4bGG8NHOY1ChsYshgxVZ3JMP2IvFeMAwQUOvAu8+5KZmgrgn4TDWjTAYzdFXZpY4KPyDm0mC
+	dqK7CvnMY81R56sdFCmv0N5pau2m0xEqxNk2ka15WfWnl/zt4mPzkXwQ9coYzLG4301bsN35uZut7
+	Jz4ghD3zR8BX++/tERRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irlmc-0003f6-SZ; Wed, 15 Jan 2020 16:44:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irlmR-0003eX-KI
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 16:44:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9EB6328;
- Wed, 15 Jan 2020 08:44:30 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B5AC3F718;
- Wed, 15 Jan 2020 08:44:30 -0800 (PST)
-Subject: Re: [stable] [PATCH 1/2] coresight: etb10: Do not call
- smp_processor_id from preemptible
-To: Greg KH <gregkh@linuxfoundation.org>
-References: <20200108110541.318672-1-suzuki.poulose@arm.com>
- <20200109143537.GE1706@sasha-vm>
- <a183da32-b933-6ed0-f8b8-703e27d3f15e@arm.com>
- <20200115151118.GC3740793@kroah.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <d3cd59e0-8fa2-9e69-534f-15f13cb14897@arm.com>
-Date: Wed, 15 Jan 2020 16:44:29 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
-MIME-Version: 1.0
-In-Reply-To: <20200115151118.GC3740793@kroah.com>
+	id 1irlnp-0005Ar-12; Wed, 15 Jan 2020 16:45:57 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irlnd-0005AN-3q
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 16:45:49 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00FGMsoa023045; Wed, 15 Jan 2020 17:45:39 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=8feCXWODigq24yt5fsOi6kLQpPI2lmoDfYZvUUn8rxM=;
+ b=GBj9ZzrpMtRXTlSf+R/Gy9fX0CwGP7GLBOeL322sLPdFHCKmIzoAI5/QDH593nOrbbFr
+ lMhb478XtrzeURWg12fpjjfN2DIGHtsf9eSqRb4T9XYrhtJNnJwdLzA5CAPH0HhbKX6O
+ qKR6H0052U6x6puCCYnfh/zgweJ7bQYwzQj71dW+TdsoqXZeseaPn7rUgHuZqNA4eDxg
+ 6JOLU/ifbL7NslszSdnMwAt9DYrmkld7ipN/IC0f1PkNBhlXW8QVXEKw9vB5eBY7jtxD
+ kAj6E0ay5IGMWBu6VVXrZbyaQqO3sIy8k7o9nOZAhyusFnhfvZU4e/r5ynDkAWVgWbEG Pg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xf7jpmcm7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 15 Jan 2020 17:45:39 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AF762100034;
+ Wed, 15 Jan 2020 17:45:38 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9A24B2BF9BF;
+ Wed, 15 Jan 2020 17:45:38 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 15 Jan
+ 2020 17:45:38 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Wed, 15 Jan 2020 17:45:38 +0100
+From: Patrick DELAUNAY <patrick.delaunay@st.com>
+To: Marek Vasut <marex@denx.de>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "mcoquelin.stm32@gmail.com"
+ <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>
+Subject: RE: [PATCH] ARM: dts: stm32: Add missing ETHCK clock to ethernet node
+Thread-Topic: [PATCH] ARM: dts: stm32: Add missing ETHCK clock to ethernet node
+Thread-Index: AQHVy4iipc/ErGptfk6i556Of7H6oqfr7lxg
+Date: Wed, 15 Jan 2020 16:45:37 +0000
+Message-ID: <521254538ec74534a533b8ca4448855e@SFHDAG6NODE3.st.com>
+References: <20200115094608.154386-1-marex@denx.de>
+In-Reply-To: <20200115094608.154386-1-marex@denx.de>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-15_02:2020-01-15,
+ 2020-01-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_084431_705474_A7BDF4AA 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200115_084545_514908_642A7089 
+X-CRM114-Status: GOOD (  15.37  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,61 +104,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, mathieu.poirier@linaro.org,
- linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Cc: "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Christophe ROULLIER <christophe.roullier@st.com>,
+ Patrice CHOTARD <patrice.chotard@st.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marek;
 
-Hi Greg,
+Add the Linux Maintainers for STM32M linux patch:
 
-On 15/01/2020 15:11, Greg KH wrote:
-> On Thu, Jan 09, 2020 at 02:36:17PM +0000, Suzuki Kuruppassery Poulose wrote:
->> On 09/01/2020 14:35, Sasha Levin wrote:
->>> On Wed, Jan 08, 2020 at 11:05:40AM +0000, Suzuki K Poulose wrote:
->>>> [ Upstream commit 730766bae3280a25d40ea76a53dc6342e84e6513 ]
->>>>
->>>> During a perf session we try to allocate buffers on the "node" associated
->>>> with the CPU the event is bound to. If it is not bound to a CPU, we
->>>> use the current CPU node, using smp_processor_id(). However this is
->>>> unsafe
->>>> in a pre-emptible context and could generate the splats as below :
->>>>
->>>> BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
->>>>
->>>> Use NUMA_NO_NODE hint instead of using the current node for events
->>>> not bound to CPUs.
->>>>
->>>> Fixes: 2997aa4063d97fdb39 ("coresight: etb10: implementing AUX API")
->>>> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
->>>> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->>>> Cc: stable <stable@vger.kernel.org> # v4.9 to v4.19
->>>> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->>>> Link: https://lore.kernel.org/r/20190620221237.3536-5-mathieu.poirier@linaro.org
->>>>
->>>
->>> I've queued this for 4.9-4.19. There was a simple conflict on 4.9 which
->>> also had to be resolved.
->>>
->>
->>
->> Thanks Sasha !
+M:	Maxime Coquelin <mcoquelin.stm32@gmail.com>
+M:	Alexandre Torgue <alexandre.torgue@st.com>
+L:	linux-stm32@st-md-mailman.stormreply.com (moderated for non-subscribers)
+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+
+
+Hi Alexandre,
+
+Can you review this patch.
+
+Regards
+
+Patrick
+
+> From: Marek Vasut <marex@denx.de>
+> Sent: mercredi 15 janvier 2020 10:46
 > 
-> Note, these had to all be dropped as they broke the build :(
+> Add missing 'eth-ck' clock to the ethernet node. These clock are used to generate
+> external clock signal for the PHY in case 'st,eth_ref_clk_sel'
+> is specified.
 > 
-> So can you please send us patches that at least build?  :)
+> Signed-off-by: Marek Vasut <marex@denx.de>
+> Cc: Christophe ROULLIER <christophe.roullier@st.com>
+> Cc: Patrice Chotard <patrice.chotard@st.com>
+> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+> ---
+>  arch/arm/boot/dts/stm32mp151.dtsi | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
+> diff --git a/arch/arm/boot/dts/stm32mp151.dtsi
+> b/arch/arm/boot/dts/stm32mp151.dtsi
+> index fb41d0778b00..e0ecc5ee7d83 100644
+> --- a/arch/arm/boot/dts/stm32mp151.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp151.dtsi
+> @@ -1369,10 +1369,12 @@ ethernet0: ethernet@5800a000 {
+>  			clock-names = "stmmaceth",
+>  				      "mac-clk-tx",
+>  				      "mac-clk-rx",
+> +				      "eth-ck",
+>  				      "ethstp";
+>  			clocks = <&rcc ETHMAC>,
+>  				 <&rcc ETHTX>,
+>  				 <&rcc ETHRX>,
+> +				 <&rcc ETHCK_K>,
+>  				 <&rcc ETHSTP>;
+>  			st,syscon = <&syscfg 0x4>;
+>  			snps,mixed-burst;
+> --
+> 2.24.1
 
-Do you have a build failure log ? I did build test it before sending it 
-over. I tried it again on 4.9, 4.14 and 4.19. I don't hit any build
-failures here.
-
-Please could you share the log if you have it handy ?
-
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
