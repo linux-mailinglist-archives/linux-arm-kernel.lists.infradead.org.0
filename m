@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3983913C5FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:29:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AF4613C600
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:29:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GdM63AP7iDQE1i1pIJMSQQjxEvei/PdtbwSZI+UXSZk=; b=ZODIEtFa5F+0Em
-	oXb3DTLGFjytfQx93fABwYqk4Cz93HiKRIH6F4B9CPuQAvxN0HJaRocwiVGMpxykL9nqSwrQpDC91
-	WL3qHgBB2+BbcDmdZUvX58VCxCAXbN6fXUQ0yOi8SKWaVYmDjbZStZfeaFUEdQdZwAGghfxFwH94l
-	pM3QUGFZq5h86jMlKJwjhb/4UVmIEf4RQNldoEz/lqkkeGnyu66F3u08AZ3gsWv+HfnmrPBCJwZOy
-	8MMB3S0qH38bqFceB7YIpbZD6tEG7WGCBjoCIQMZ0skvQK2YBJVRWPZyA8J85hB8WZ70XWE9Q3XJO
-	+bGbXJOp+F9xqV8+xcqw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ty1f0x+69WCZVuQs0S6xHvbZGXWcxBP003NkyU1C4Wo=; b=q4/siAbTGgrATp
+	KDDvCnwC/pjEjsuuCovWyaDyJuMyPUCFdyD4juzwYKR4LoMtX7zAkDU6/rTrVfuk3qV/RmgX1U4XT
+	GbjfxUu+0h9IxgGbWP/BeOgsih25/CGgT6KoDXJm9prTrBpxZobUjBD342UgvNKPzNN3pWPwyaKog
+	a+HnZGD5V7uFivd98NyjsZZ2bAOId3ayKqc/ecFY0cKVeVBOBvfHNXDNsexBCUUB8iKmnvX/hujKS
+	5NFwwMu8z/YxzVwZDOXyc75Rp5ikB87op/AItztBwj8c3EvbglRbrlL8/NZ974I/oeEbTf6VbUDOs
+	fqCwYWoPLmFF1DcwECUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irjfe-0007Y4-37; Wed, 15 Jan 2020 14:29:22 +0000
+	id 1irjfq-0007hw-H5; Wed, 15 Jan 2020 14:29:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irjfP-0007X1-TA
+ id 1irjfR-0007XH-94
  for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:29:10 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 18F302073A;
- Wed, 15 Jan 2020 14:29:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BC3822467A;
+ Wed, 15 Jan 2020 14:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579098547;
- bh=Hv+akzynYYjXAjpTmIgZOtomlLCLx3UqVKzVrZIUuzY=;
- h=From:To:Cc:Subject:Date:From;
- b=lfcS5WmT/wcXX/3llrbC04k9gvRw3g/Aqui84iscxn//zxZfnDiEgdK0r6a27+VPj
- J21hzli8F3s7Aj9jevPM49XPbSejPWnGd1n8y9wICq22SI1yTOgejQa15GjcxYkRIy
- vHGd0M/xYymmB2Ylpt324BElygQfO8dkeHSjLA70=
+ s=default; t=1579098549;
+ bh=NS+WkmkBqm1jKci5W7p0yqlGhR7MP0lFDwITqyj1vGg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=O8eX09fyKL8fleo5NiMVXHEfcQF5aMiCXeyoO71YuRAuiJoA6DVIVyyWTI0VIXOw4
+ B3PRt0nuNOU/W7xj9saE7uzwi08pgAT7qV05zebkihfwdf0uWnn0x0qePLViBSpMm5
+ RosTy+zhIpaDyQzXhrVNofOKm2YlwrkfnlxbW0VQ=
 From: Will Deacon <will@kernel.org>
 To: broonie@kernel.org
-Subject: [PATCH 0/2] A couple of cleanups on top of for-next/e0pd
-Date: Wed, 15 Jan 2020 14:28:58 +0000
-Message-Id: <20200115142900.28976-1-will@kernel.org>
+Subject: [PATCH 1/2] arm64: Simplify early check for broken TX1 when KASLR is
+ enabled
+Date: Wed, 15 Jan 2020 14:28:59 +0000
+Message-Id: <20200115142900.28976-2-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200115142900.28976-1-will@kernel.org>
+References: <20200115142900.28976-1-will@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_062907_961610_524E4455 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20200115_062909_333890_5D431DCA 
+X-CRM114-Status: GOOD (  13.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,32 +85,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+Now that the decision to use non-global mappings is stored in a variable,
+the check to avoid enabling them for the terminally broken ThunderX1
+platform can be simplified so that it is only keyed off the MIDR value.
 
-I've queued the E0PD patches for 5.6 (thanks!), but in reading them a
-final time I noticed a couple of cleanups that I think we can make to
-kaslr_requires_kpti(). I don't have a TX1 to test them on, but I think
-the logic is sound.
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/cpufeature.c | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
 
-Please take a look, as I'd like to queue these on top.
-
-Thanks.
-
-Will
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Marc Zyngier <maz@kernel.org>
-
---->8
-
-Will Deacon (2):
-  arm64: Simplify early check for broken TX1 when KASLR is enabled
-  arm64: Use register field helper in kaslr_requires_kpti()
-
- arch/arm64/kernel/cpufeature.c | 21 +++++++--------------
- 1 file changed, 7 insertions(+), 14 deletions(-)
-
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 4a031111ceb5..d5242b44dc5a 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -980,9 +980,7 @@ has_useable_cnp(const struct arm64_cpu_capabilities *entry, int scope)
+  */
+ bool kaslr_requires_kpti(void)
+ {
+-	bool tx1_bug;
+ 	u64 ftr;
+-
+ 	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
+ 		return false;
+ 
+@@ -1000,18 +998,13 @@ bool kaslr_requires_kpti(void)
+ 	 * Systems affected by Cavium erratum 24756 are incompatible
+ 	 * with KPTI.
+ 	 */
+-	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
+-		tx1_bug = false;
+-	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
++	if (IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
+ 		extern const struct midr_range cavium_erratum_27456_cpus[];
+ 
+-		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
+-						cavium_erratum_27456_cpus);
+-	} else {
+-		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
++		if (is_midr_in_range_list(read_cpuid_id(),
++					  cavium_erratum_27456_cpus))
++			return false;
+ 	}
+-	if (tx1_bug)
+-		return false;
+ 
+ 	return kaslr_offset() > 0;
+ }
 -- 
 2.25.0.rc1.283.g88dfdc4193-goog
 
