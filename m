@@ -2,43 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B26013C5C1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:19:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DC1D13C5EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:26:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9spVmclD3FqyJJTL2dtIDU8Wk5DnGwM/l8qIkFRSmD4=; b=B5H
-	M3FfAKFPFpDhAtb9fAsDOFq77mK7v29CRGAQQB82WWydjOHRL84lHnQqw2GnwZzkVDnAQ7RQc3tv0
-	/P7xw92OG/1LZjXfbjS7MkYlJkEdwaLzwwVUay3IAOpgsrjpVXeg5gpCWUxiJl+rggr/cD+ZZeOBS
-	hvt6LLZ9KFtveotRDrXO+/QogbfXFgNeiWz+xmREJssy+rBKxxozO+lWtIkvmdAL4v0SVE0bcK+dC
-	AycVib3ycOWTJ/S+6ZaueTrD/950c4yq1XvR1N/GhFUM2Tdq+/gqw8w3JRvehnJPMEv9bu6XRXOi/
-	OKETaqQZwSDK89Wmhz1hFReFvJXR0rg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vggdwZzMEMjE7skkr64rvQrH3vam8i115K5xsl2xEUo=; b=R6zA96YGQ6vsC6
+	uEFCv6UFGx8WjQSAqtYngssCjhvFTRu/rWRiPmTsWUT4EUtiRePqHcNVd8g/CuB0+cTMOv2c6BbcC
+	kY4Orq9ySuWPKlm2F+5zQvHME13rdNOhSsxvyECDIvFxeETYehtTLlc3r2hSlC3nyBYHcLmOydI2h
+	ByBMc4gc17oS82NRUXRdK4oVEa2gnYapBKoF/l08DVgryuBrn9aSr6B73EiaRnfdpiPxD3lnFI6P0
+	0psKFOIkAEPkajTJT+vrhj6VfCITQ/wUmMZub4eHpZGum2NdD7CfSGGZ+B3+2r4VC3Drb2emBbmXe
+	VFfzVSZpBrBW64Ij4hPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irjVV-0003RT-56; Wed, 15 Jan 2020 14:18:53 +0000
+	id 1irjcr-0006nS-GK; Wed, 15 Jan 2020 14:26:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irjVJ-0003Qs-3V
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:18:46 +0000
+ id 1irjce-0006mU-UM
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:26:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5221E31B;
- Wed, 15 Jan 2020 06:18:40 -0800 (PST)
-Received: from login2.euhpc.arm.com (login2.euhpc.arm.com [10.6.27.34])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CE9993F68E;
- Wed, 15 Jan 2020 06:18:39 -0800 (PST)
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Turn "broken gas inst" into real config option
-Date: Wed, 15 Jan 2020 14:18:25 +0000
-Message-Id: <1579097905-128661-1-git-send-email-vladimir.murzin@arm.com>
-X-Mailer: git-send-email 2.0.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8ED4A31B;
+ Wed, 15 Jan 2020 06:26:14 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 976B73F68E; Wed, 15 Jan 2020 06:26:13 -0800 (PST)
+Date: Wed, 15 Jan 2020 14:26:11 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v10 1/3] arm64: Implement archrandom.h for ARMv8.5-RNG
+Message-ID: <20200115142611.GC3429@arrakis.emea.arm.com>
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-2-broonie@kernel.org>
+ <20200114174432.GG2579@willie-the-truck>
+ <CAKv+Gu9pVZZm_gvsKfrCG_cM=1TmAAH+sj06GzT+Ag9Ej7__fg@mail.gmail.com>
+ <20200115091651.GB21692@willie-the-truck>
+ <CAKv+Gu-NZBo2q4_Yh068UENun0mkLitN473D-w7KBFXVpfdKqA@mail.gmail.com>
+ <20200115110720.GG3897@sirena.org.uk>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200115110720.GG3897@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_061841_183553_5001F59C 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200115_062617_018620_9EE61AD7 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,66 +68,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-So it is available everywhere and there is no need to keep
-CONFIG_ARM64 workaround.
+On Wed, Jan 15, 2020 at 11:07:20AM +0000, Mark Brown wrote:
+> On Wed, Jan 15, 2020 at 10:24:21AM +0100, Ard Biesheuvel wrote:
+> > On Wed, 15 Jan 2020 at 10:16, Will Deacon <will@kernel.org> wrote:
+> 
+> > > I see your argument, but I was just going on the side of consistency because
+> > > we're continuing to expose other features as HWCAPs when the capability is
+> > > just a proxy for the cpuid field. I was in favour of stopping the addition
+> > > of such HWCAPs years ago, but I couldn't convince Catalin ;)
+> 
+> > > The way I see it, we'll soon run out of HWCAP2 bits and then we'll have
+> > > our hand forced.
+> 
+> > I don't have a strong opinion either way.
+> 
+> Me either, or at least not enough to object to doing it - Will?
+> Catalin?
 
-Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
----
- arch/arm64/Kconfig  |  3 +++
- arch/arm64/Makefile | 10 +++-------
- 2 files changed, 6 insertions(+), 7 deletions(-)
+Until the ifunc resolver can work with CPUID, I think we should keep
+adding HWCAPn bits. We can revisit this with the toolchain people before
+introducing HWCAP3.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 63c19ef..4139c927 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -303,6 +303,9 @@ config ARCH_SUPPORTS_UPROBES
- config ARCH_PROC_KCORE_TEXT
- 	def_bool y
- 
-+config BROKEN_GAS_INST
-+	def_bool y if !$(as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n)
-+
- config KASAN_SHADOW_OFFSET
- 	hex
- 	depends on KASAN
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 6dd8eca..dca1a97 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -42,19 +42,15 @@ cc_has_k_constraint := $(call try-run,echo				\
- 		return 0;						\
- 	}' | $(CC) -S -x c -o "$$TMP" -,,-DCONFIG_CC_HAS_K_CONSTRAINT=1)
- 
--ifeq ($(CONFIG_ARM64), y)
--brokengasinst := $(call as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n,,-DCONFIG_BROKEN_GAS_INST=1)
--
--  ifneq ($(brokengasinst),)
-+ifeq ($(CONFIG_BROKEN_GAS_INST),y)
- $(warning Detected assembler with broken .inst; disassembly will be unreliable)
--  endif
- endif
- 
--KBUILD_CFLAGS	+= -mgeneral-regs-only $(brokengasinst)	\
-+KBUILD_CFLAGS	+= -mgeneral-regs-only	\
- 		   $(compat_vdso) $(cc_has_k_constraint)
- KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
- KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
--KBUILD_AFLAGS	+= $(brokengasinst) $(compat_vdso)
-+KBUILD_AFLAGS	+= $(compat_vdso)
- 
- KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
- KBUILD_AFLAGS	+= $(call cc-option,-mabi=lp64)
 -- 
-2.7.4
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
