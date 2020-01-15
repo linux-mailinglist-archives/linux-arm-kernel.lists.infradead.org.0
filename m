@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71FD613BA34
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:11:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14A5C13BA37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 08:12:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9Qyld1PHo6XyRDA+wJx4DTLRHvCqtfp+SJi6vKGur2o=; b=M8rf00bjzd/ol3F/GC3O0QFLsp
-	peEbDSrFUA9NK1n66UysTIzcZCMiYxoERLjQVg8x0zahwGI3WtS0kLCUZcB6dNvUNpWSzkV1jMgw3
-	8s0FcEOXUxFrq+z6FGJCNQ9jx8keA2QYQGo97+BSlj8m+0sgB2Q/3vZ38I3iF7J9/inr2bZ1JEQ1N
-	+qv9bSjGV71jXH15W9/SARKTcWCKAcQdnRk9YY2FsBppeSHIRWKwzCSUNlmUu16+7pzNvrFSjyjmX
-	T3Zv3atikEXUhyZrEwic2i/eYXDF1XjZIJLJnEYJosYdMPPChAOYe7TQOVLukxP+DLek5bKyuL7yU
-	7dv444Hg==;
+	bh=RJrjKKccr5lhex8Em9zPLt4AHrNhlcTZlyhC/4CIlBM=; b=jPSedhcwIGOGxxeiuWz4EoNNOG
+	Q++JmNy5sagwHVv05dKdY/v3NRU6LUS4yPgLHtzy0dc3aVLZz8m4czHSi/+3jPPh25pRIGElS7ep+
+	PeNFCbPOw2T7oPOvMHu+1lLgKeVKbWhCZ3EhLmh87e/A0FR4vE5xaZ7u5Rp6ONQvULKwIwQCBhXR3
+	9apnRBOC5/MO+dlbiN7P7M+Lotw1Ub6y9q8ByVgILRxd5Do5eYxqFhoSq5NykoCMK/jlBTSy3wMk3
+	I0t0XENMIeRtbtjYkRmYpRIGt/cjlymQmyEoaCoq0MVunZrt82/TYgmGRo/yOwQ1Yq/6+crD+Ve+4
+	p31Nh6Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ircpp-00068W-NB; Wed, 15 Jan 2020 07:11:25 +0000
+	id 1ircqV-0006so-HY; Wed, 15 Jan 2020 07:12:07 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ircpC-0005j9-Qi
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:10:50 +0000
+ id 1ircpG-0005im-Pg
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 07:10:52 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga002.fm.intel.com ([10.253.24.26])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 14 Jan 2020 23:10:46 -0800
+ 14 Jan 2020 23:10:50 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643673"
+X-IronPort-AV: E=Sophos;i="5.70,321,1574150400"; d="scan'208";a="256643684"
 Received: from bong5-hp-z440.png.intel.com ([10.221.118.136])
- by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:43 -0800
+ by fmsmga002.fm.intel.com with ESMTP; 14 Jan 2020 23:10:46 -0800
 From: Ong Boon Leong <boon.leong.ong@intel.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 3/4] net: stmmac: fix missing IFF_MULTICAST check in
- dwmac4_set_filter
-Date: Wed, 15 Jan 2020 15:10:02 +0800
-Message-Id: <20200115071003.42820-4-boon.leong.ong@intel.com>
+Subject: [PATCH net v2 4/4] net: stmmac: update pci platform data to use
+ phy_interface
+Date: Wed, 15 Jan 2020 15:10:03 +0800
+Message-Id: <20200115071003.42820-5-boon.leong.ong@intel.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200115071003.42820-1-boon.leong.ong@intel.com>
 References: <20200115071003.42820-1-boon.leong.ong@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_231046_919682_3DE3F256 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20200114_231050_913213_B937C00D 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -79,35 +79,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Verma, Aashish" <aashishx.verma@intel.com>
+From: Voon Weifeng <weifeng.voon@intel.com>
 
-Without checking for IFF_MULTICAST flag, it is wrong to assume multicast
-filtering is always enabled. By checking against IFF_MULTICAST, now
-the driver behaves correctly when the multicast support is toggled by below
-command:-
+The recent patch to support passive mode converter did not take care the
+phy interface configuration in PCI platform data. Hence, converting all
+the PCI platform data from plat->interface to plat->phy_interface as the
+default mode is meant for PHY.
 
-  ip link set <devname> multicast off|on
-
-Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
-Signed-off-by: Verma, Aashish <aashishx.verma@intel.com>
-Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
+Fixes: 0060c8783330 ("net: stmmac: implement support for passive mode converters via dt")
+Signed-off-by: Voon Weifeng <weifeng.voon@intel.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 6e3d0ab0ecd6..53be936137d0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -420,7 +420,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 		value |= GMAC_PACKET_FILTER_PM;
- 		/* Set all the bits of the HASH tab */
- 		memset(mc_filter, 0xff, sizeof(mc_filter));
--	} else if (!netdev_mc_empty(dev)) {
-+	} else if (!netdev_mc_empty(dev) && (dev->flags & IFF_MULTICAST)) {
- 		struct netdev_hw_addr *ha;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+index 8237dbc3e991..d2bc04dedd7c 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+@@ -96,7 +96,7 @@ static int stmmac_default_data(struct pci_dev *pdev,
  
- 		/* Hash filter for multicast */
+ 	plat->bus_id = 1;
+ 	plat->phy_addr = 0;
+-	plat->interface = PHY_INTERFACE_MODE_GMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_GMII;
+ 
+ 	plat->dma_cfg->pbl = 32;
+ 	plat->dma_cfg->pblx8 = true;
+@@ -220,7 +220,8 @@ static int ehl_sgmii_data(struct pci_dev *pdev,
+ {
+ 	plat->bus_id = 1;
+ 	plat->phy_addr = 0;
+-	plat->interface = PHY_INTERFACE_MODE_SGMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_SGMII;
++
+ 	return ehl_common_data(pdev, plat);
+ }
+ 
+@@ -233,7 +234,8 @@ static int ehl_rgmii_data(struct pci_dev *pdev,
+ {
+ 	plat->bus_id = 1;
+ 	plat->phy_addr = 0;
+-	plat->interface = PHY_INTERFACE_MODE_RGMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_RGMII;
++
+ 	return ehl_common_data(pdev, plat);
+ }
+ 
+@@ -261,7 +263,7 @@ static int tgl_sgmii_data(struct pci_dev *pdev,
+ {
+ 	plat->bus_id = 1;
+ 	plat->phy_addr = 0;
+-	plat->interface = PHY_INTERFACE_MODE_SGMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_SGMII;
+ 	return tgl_common_data(pdev, plat);
+ }
+ 
+@@ -361,7 +363,7 @@ static int quark_default_data(struct pci_dev *pdev,
+ 
+ 	plat->bus_id = pci_dev_id(pdev);
+ 	plat->phy_addr = ret;
+-	plat->interface = PHY_INTERFACE_MODE_RMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_RMII;
+ 
+ 	plat->dma_cfg->pbl = 16;
+ 	plat->dma_cfg->pblx8 = true;
+@@ -418,7 +420,7 @@ static int snps_gmac5_default_data(struct pci_dev *pdev,
+ 
+ 	plat->bus_id = 1;
+ 	plat->phy_addr = -1;
+-	plat->interface = PHY_INTERFACE_MODE_GMII;
++	plat->phy_interface = PHY_INTERFACE_MODE_GMII;
+ 
+ 	plat->dma_cfg->pbl = 32;
+ 	plat->dma_cfg->pblx8 = true;
 -- 
 2.17.1
 
