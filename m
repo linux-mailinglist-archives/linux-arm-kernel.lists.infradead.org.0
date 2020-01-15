@@ -2,69 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A26D13C9DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:43:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51AC713C9E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 17:44:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RZ/fA0dzhfsl7L+U5K0VdYVIQYjeSDNfFAuIHRWsPqw=; b=N0dT8hBgDwkZvI
-	g5YSAj6tajQk2wlkByMMF4k2bArXCXneBxNdfkBi5dqCZLSU5qL+B2iW3TELg5YnRkxS9myPJhYkJ
-	OXuTBPoPNbufY7Vg6KbGZ9LDUrZ5ZlCWt2Du6Yh2Bz30v3OSMCgoQiHRVsImDhcK51gJaEuIGjrRV
-	yowrEUTJarbzUlaO/ThxgMztj8GPqHXCKAbi0X3KCbtK43wu+/XB4KIPpYXPBKVa4+GVYCIcDuS8T
-	UMevlBw8V/s4PrEZAzzdjExPDrmeVFzMv0PfdNVyR9DVInP/v651h6xwJ2dgpJYKF4CRc1GMC8Hai
-	jxj84L/YKOh8NF5TFX5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0dkDUjh1ZisYYdRDcV6D3ZUs9gFILOXvSo+3mPJIQ8c=; b=bzU8pSQOAYxo/DtQtUV4npFxn
+	wEtFKs/z0hLCCA5SyvwlpyuO4EF01phGqHqH0t9m801mcatAE9f5AeRNF0zE0zJ+o27zdvkswQ1al
+	z0EoV078Q9zUZtjcZrjv0glkPasmKfU69mHMj4eXFxg9fApSRbuGccrOshjwj7OglOEoB4FQl+h5g
+	yn5+ldSmlObTyGB2QUtR8kTSdLkSbXHjz7qBf9cP37vg1+rx/qfyTHfK1do5Ubp7NbKrPJ9So/P1u
+	kj0wuBiGMUPDHZRRLc+ieOBXnOmDAZgS9uqcYhoiWQ1dI3z1UjDndA+kGWxET/5qtJtPKFFtdVdNv
+	OpLfBcIgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irllH-0003NQ-CZ; Wed, 15 Jan 2020 16:43:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irll0-0003Hk-Ln
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 16:43:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 21A152081E;
- Wed, 15 Jan 2020 16:42:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579106582;
- bh=fJApyuntPyejoeMn12vz+APsEX7vQKt1nCchJ8JsFZM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fYFmh46g2DI//JufPVgq0BeHAGjhlNgl4fsN9XiOgjIAh5C+ueN3A2T8ZbKmWXxb6
- l2TMNhiqS5KrRTt2RqVVniFLr8drjLE29SSrEBJiR0g/pcNzx3Efig1LeBT5aaumqT
- 4V+EC1XPv3qVsagsI/6A7sLA+1pd/hMbsNrLUlY8=
-Date: Wed, 15 Jan 2020 16:42:56 +0000
-From: Will Deacon <will@kernel.org>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v5 00/13] iommu: Add PASID support to Arm SMMUv3
-Message-ID: <20200115164255.GB30746@willie-the-truck>
-References: <20200115125239.136759-1-jean-philippe@linaro.org>
+	id 1irlmc-0003f6-SZ; Wed, 15 Jan 2020 16:44:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irlmR-0003eX-KI
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 16:44:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9EB6328;
+ Wed, 15 Jan 2020 08:44:30 -0800 (PST)
+Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B5AC3F718;
+ Wed, 15 Jan 2020 08:44:30 -0800 (PST)
+Subject: Re: [stable] [PATCH 1/2] coresight: etb10: Do not call
+ smp_processor_id from preemptible
+To: Greg KH <gregkh@linuxfoundation.org>
+References: <20200108110541.318672-1-suzuki.poulose@arm.com>
+ <20200109143537.GE1706@sasha-vm>
+ <a183da32-b933-6ed0-f8b8-703e27d3f15e@arm.com>
+ <20200115151118.GC3740793@kroah.com>
+From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Message-ID: <d3cd59e0-8fa2-9e69-534f-15f13cb14897@arm.com>
+Date: Wed, 15 Jan 2020 16:44:29 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200115125239.136759-1-jean-philippe@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200115151118.GC3740793@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_084302_740745_58F701D6 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200115_084431_705474_A7BDF4AA 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,45 +67,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- eric.auger@redhat.com, linux-pci@vger.kernel.org, joro@8bytes.org,
- sudeep.holla@arm.com, rjw@rjwysocki.net, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- jonathan.cameron@huawei.com, guohanjun@huawei.com, bhelgaas@google.com,
- zhangfei.gao@linaro.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Sasha Levin <sashal@kernel.org>, mathieu.poirier@linaro.org,
+ linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 01:52:26PM +0100, Jean-Philippe Brucker wrote:
-> Since v4 [1] I addressed some of Will's comment.
 
-Thanks! I've tentatively managed to queue all of this apart from the last
-patch, since that relies on some pasid symbols being exported from the PCI
-core when building the driver as a module with PCI_PASID=y.
+Hi Greg,
 
-Please can you look at the rest of things here?:
+On 15/01/2020 15:11, Greg KH wrote:
+> On Thu, Jan 09, 2020 at 02:36:17PM +0000, Suzuki Kuruppassery Poulose wrote:
+>> On 09/01/2020 14:35, Sasha Levin wrote:
+>>> On Wed, Jan 08, 2020 at 11:05:40AM +0000, Suzuki K Poulose wrote:
+>>>> [ Upstream commit 730766bae3280a25d40ea76a53dc6342e84e6513 ]
+>>>>
+>>>> During a perf session we try to allocate buffers on the "node" associated
+>>>> with the CPU the event is bound to. If it is not bound to a CPU, we
+>>>> use the current CPU node, using smp_processor_id(). However this is
+>>>> unsafe
+>>>> in a pre-emptible context and could generate the splats as below :
+>>>>
+>>>> BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
+>>>>
+>>>> Use NUMA_NO_NODE hint instead of using the current node for events
+>>>> not bound to CPUs.
+>>>>
+>>>> Fixes: 2997aa4063d97fdb39 ("coresight: etb10: implementing AUX API")
+>>>> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+>>>> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>>>> Cc: stable <stable@vger.kernel.org> # v4.9 to v4.19
+>>>> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>>>> Link: https://lore.kernel.org/r/20190620221237.3536-5-mathieu.poirier@linaro.org
+>>>>
+>>>
+>>> I've queued this for 4.9-4.19. There was a simple conflict on 4.9 which
+>>> also had to be resolved.
+>>>
+>>
+>>
+>> Thanks Sasha !
+> 
+> Note, these had to all be dropped as they broke the build :(
+> 
+> So can you please send us patches that at least build?  :)
+> 
 
-https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-joerg/arm-smmu/updates
+Do you have a build failure log ? I did build test it before sending it 
+over. I tried it again on 4.9, 4.14 and 4.19. I don't hit any build
+failures here.
 
-> Still missing and will be submitted as follow-up patches:
-> * write STE.V with WRITE_ONCE() (patch 7)
+Please could you share the log if you have it handy ?
 
-I've hacked that one up myself.
-
-> * batch submission of CD invalidation (patch 7)
-
-That can be 5.7 material.
-
-> * Remove WARN_ON_ONCE() in add_device() (patch 13)
->   Pending Robin's input.
-
-I've written that one too, but we'll see what Robin says. The question now
-is which commit do I tag in the branch above :)
-
-Will
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
