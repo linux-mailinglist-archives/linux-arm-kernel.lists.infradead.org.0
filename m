@@ -2,62 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73B6213C4D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:02:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0359E13C4D7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 15:03:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWThHbX9F1jgoLQCh85aoZs0qdtv3eA2/uhFJHuCXkE=; b=h8I6VzLcIJ9/1s
-	1/hORhJpkidiEXr+2OuuRBo5GNWiFvWk43DPNqS4mhgOF9gShbUlL57jTanCNTsV1CALnjEZKHNqW
-	mfXi7TS2aUhOTYz2lR5JCbTVv/5Pzt7sahDwDRUxqgFox7Umyi+Au2+3wZry4ktycRh4s/LiQOuXH
-	23QsjS1P9RTdKaQimmjq5VGYI14pimv0dShcgdUIyIJZ8tznqtRdqqa0TpZVVUraJJBxLg7D9tt9B
-	lAiR07GRqQ96Jl9g5cTIyvJ8PXlkYiLvBHS9GCP8dX5MCWiuJhn3HOlVC/95terJ+bYM2Fk4sJfbn
-	GN6Dp4qmgXc5LjcOMn5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JOgmWnNoOLdHKCb3UuQbpDRfqCTYhttIBxg93bVXnNA=; b=Hjwa/ksqahAHzmuXksoCWXnUd
+	w+1xBlLH2j7CRv+LQyXwRnBeZjM5BO1Tml8/JMvErHPEEjBFWq9XZLx42jX7Fer+0xKyPJ7c5iRPi
+	MwP2MQEsKgLrNbZAfk+HZgGQtrYcojPJJNvqaTIkyQvJ/uR/iEdQtGNtQA+CRleqOLGprVJJGGTrl
+	y7LADzPvO9FO6gjG5YTRtVPUlJCAg+myMZZiAV017kPyVjIMkxLo+CiN+gUCLGfNkk3VE7Y0LAqCd
+	bn7SF4jMjqT4zmdCFUVnM9/2M6mK7fObrRJKSl3hCl7jW7N+93sQDxBYDJwzlrsFsT8abmm8b09CY
+	9Ibic5P2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irjFu-0004ZK-P9; Wed, 15 Jan 2020 14:02:46 +0000
+	id 1irjGo-0004v6-75; Wed, 15 Jan 2020 14:03:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irjFj-0004YS-08
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:02:38 +0000
-Received: from mail-qv1-f54.google.com (mail-qv1-f54.google.com
- [209.85.219.54])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1irjGZ-0004u0-5S
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 14:03:31 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 145F72467D
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 14:02:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B82C5222C3;
+ Wed, 15 Jan 2020 14:03:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579096954;
- bh=IaBwdiDgwCIx5BuPQB2+IqtMn+SaycRtfHqCIpsVFb0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=htoTppDa67SpEBkWpOJkMNyOkvAIkppVDquQhnGk5qkzQDBEhzQannWa5D9eguHhH
- 1a5n8eJPWHJ7A7dYL8H2DZ31QHZk4bziE7YPDk0gfmU1gr4l/xHd6sS47Kd4RD75p7
- sr/dwsN4i7Dc58ySFewX2+wJSdcYrXmETW1h8m3U=
-Received: by mail-qv1-f54.google.com with SMTP id f16so7373002qvi.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 06:02:34 -0800 (PST)
-X-Gm-Message-State: APjAAAX+87YqecAd3Mk4sGJ3rQouG7YVkkGwJcWVUoW9NOG0jQvaFtG2
- YDGocy7t+1nEO5eOG3yfr/k9arPznrNvRqgZ8w==
-X-Google-Smtp-Source: APXvYqyTO5ScFKQX7y6OlWvH+iZhwV9J4A3B9PFR1YHjDWpvx4cGMN9sSfATF4v/fRml/9x75CiZVoWPo/lcDZgSL34=
-X-Received: by 2002:ad4:450a:: with SMTP id k10mr24687823qvu.136.1579096953208; 
- Wed, 15 Jan 2020 06:02:33 -0800 (PST)
+ s=default; t=1579097006;
+ bh=JirmHW6SrM9Hhd8eR0okNq08LwBENG1og0f1buqr/1Y=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=fQaWytZ7KsNB89iwcVBDmdEt+rfMqlGGqtUg+R8Ieh2y8PCK5qUynF6pqnwoxIMbT
+ kLYBAQ7i9EurH/JL1cvPviuEvCTxl9ZCL9wzODI8sLMvDUbVqUrdV4T4MV9MbsmmmR
+ 9e1OyDH3nKRPFogqMEy0l+gAhzniSWMYDe4q+wQ0=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1irjGW-0000US-UF; Wed, 15 Jan 2020 14:03:25 +0000
 MIME-Version: 1.0
-References: <20200113143924.11576-1-robh@kernel.org>
- <2ee87a12-1a0e-bd48-0209-b5e205342d44@redhat.com>
-In-Reply-To: <2ee87a12-1a0e-bd48-0209-b5e205342d44@redhat.com>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 15 Jan 2020 08:02:22 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKrh0nLuoRgi1-bKyEErwCFpWPRPNVDuoeJrbFMCz60KQ@mail.gmail.com>
-Message-ID: <CAL_JsqKrh0nLuoRgi1-bKyEErwCFpWPRPNVDuoeJrbFMCz60KQ@mail.gmail.com>
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation support
-To: Auger Eric <eric.auger@redhat.com>
+Date: Wed, 15 Jan 2020 14:03:24 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2 10/18] arm64: KVM/debug: use EL1&0 stage 1 translation
+ regime
+In-Reply-To: <20200113163138.GP42593@e119886-lin.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-11-andrew.murray@arm.com>
+ <86d0cgir74.wl-maz@kernel.org>
+ <20200113163138.GP42593@e119886-lin.cambridge.arm.com>
+Message-ID: <5f141f153ceec55b4428d9c2d2dd9064@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: andrew.murray@arm.com, catalin.marinas@arm.com,
+ will@kernel.org, kvm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ sudeep.holla@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_060235_078611_639B6666 
-X-CRM114-Status: GOOD (  25.93  )
+X-CRM114-CacheID: sfid-20200115_060327_243516_9D97584D 
+X-CRM114-Status: GOOD (  18.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,155 +94,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 3:21 AM Auger Eric <eric.auger@redhat.com> wrote:
->
-> Hi Rob,
->
-> On 1/13/20 3:39 PM, Rob Herring wrote:
-> > Arm SMMUv3.2 adds support for TLB range invalidate operations.
-> > Support for range invalidate is determined by the RIL bit in the IDR3
-> > register.
-> >
-> > The range invalidate is in units of the leaf page size and operates on
-> > 1-32 chunks of a power of 2 multiple pages. First we determine from the
-> > size what power of 2 multiple we can use and then adjust the granule to
-> > 32x that size.
-> >
-> > Cc: Eric Auger <eric.auger@redhat.com>
-> > Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > Cc: Joerg Roedel <joro@8bytes.org>
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> >  drivers/iommu/arm-smmu-v3.c | 53 +++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 53 insertions(+)
-> >
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index e91b4a098215..8b6b3e2aa383 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -70,6 +70,9 @@
-> >  #define IDR1_SSIDSIZE                        GENMASK(10, 6)
-> >  #define IDR1_SIDSIZE                 GENMASK(5, 0)
-> >
-> > +#define ARM_SMMU_IDR3                        0xc
-> > +#define IDR3_RIL                     (1 << 10)
-> > +
-> >  #define ARM_SMMU_IDR5                        0x14
-> >  #define IDR5_STALL_MAX                       GENMASK(31, 16)
-> >  #define IDR5_GRAN64K                 (1 << 6)
-> > @@ -327,9 +330,14 @@
-> >  #define CMDQ_CFGI_1_LEAF             (1UL << 0)
-> >  #define CMDQ_CFGI_1_RANGE            GENMASK_ULL(4, 0)
-> >
-> > +#define CMDQ_TLBI_0_NUM                      GENMASK_ULL(16, 12)
-> > +#define CMDQ_TLBI_RANGE_NUM_MAX              32
-> > +#define CMDQ_TLBI_0_SCALE            GENMASK_ULL(24, 20)
-> >  #define CMDQ_TLBI_0_VMID             GENMASK_ULL(47, 32)
-> >  #define CMDQ_TLBI_0_ASID             GENMASK_ULL(63, 48)
-> >  #define CMDQ_TLBI_1_LEAF             (1UL << 0)
-> > +#define CMDQ_TLBI_1_TTL                      GENMASK_ULL(9, 8)
-> > +#define CMDQ_TLBI_1_TG                       GENMASK_ULL(11, 10)
-> >  #define CMDQ_TLBI_1_VA_MASK          GENMASK_ULL(63, 12)
-> >  #define CMDQ_TLBI_1_IPA_MASK         GENMASK_ULL(51, 12)
-> >
-> > @@ -455,9 +463,13 @@ struct arm_smmu_cmdq_ent {
-> >               #define CMDQ_OP_TLBI_S2_IPA     0x2a
-> >               #define CMDQ_OP_TLBI_NSNH_ALL   0x30
-> >               struct {
-> > +                     u8                      num;
-> > +                     u8                      scale;
-> >                       u16                     asid;
-> >                       u16                     vmid;
-> >                       bool                    leaf;
-> > +                     u8                      ttl;
-> > +                     u8                      tg;
-> >                       u64                     addr;
-> >               } tlbi;
-> >
-> > @@ -595,6 +607,7 @@ struct arm_smmu_device {
-> >  #define ARM_SMMU_FEAT_HYP            (1 << 12)
-> >  #define ARM_SMMU_FEAT_STALL_FORCE    (1 << 13)
-> >  #define ARM_SMMU_FEAT_VAX            (1 << 14)
-> > +#define ARM_SMMU_FEAT_RANGE_INV              (1 << 15)
-> >       u32                             features;
-> >
-> >  #define ARM_SMMU_OPT_SKIP_PREFETCH   (1 << 0)
-> > @@ -856,13 +869,21 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
-> >               cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
-> >               break;
-> >       case CMDQ_OP_TLBI_NH_VA:
-> > +             cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_NUM, ent->tlbi.num);
-> > +             cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_SCALE, ent->tlbi.scale);
-> >               cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
-> >               cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
-> > +             cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TTL, ent->tlbi.ttl);
-> > +             cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TG, ent->tlbi.tg);
-> >               cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
-> >               break;
-> >       case CMDQ_OP_TLBI_S2_IPA:
-> > +             cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_NUM, ent->tlbi.num);
-> > +             cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_SCALE, ent->tlbi.scale);
-> >               cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
-> >               cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
-> > +             cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TTL, ent->tlbi.ttl);
-> > +             cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TG, ent->tlbi.tg);
-> >               cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_IPA_MASK;
-> >               break;
-> >       case CMDQ_OP_TLBI_NH_ASID:
-> > @@ -2022,12 +2043,39 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
-> >               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
-> >       }
-> >
-> > +     if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-> > +             unsigned long tg, scale;
-> > +
-> > +             /* Get the leaf page size */
-> > +             tg = __ffs(smmu_domain->domain.pgsize_bitmap);
-> it is unclear to me why you can't set tg with the granule parameter.
+On 2020-01-13 16:31, Andrew Murray wrote:
+> On Sun, Dec 22, 2019 at 10:34:55AM +0000, Marc Zyngier wrote:
+>> On Fri, 20 Dec 2019 14:30:17 +0000,
+>> Andrew Murray <andrew.murray@arm.com> wrote:
+>> >
+>> > From: Sudeep Holla <sudeep.holla@arm.com>
+>> >
+>> > Now that we have all the save/restore mechanism in place, lets enable
+>> > the translation regime used by buffer from EL2 stage 1 to EL1 stage 1
+>> > on VHE systems.
+>> >
+>> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+>> > [ Reword commit, don't trap to EL2 ]
+>> 
+>> Not trapping to EL2 for the case where we don't allow SPE in the
+>> guest is not acceptable.
+>> 
+>> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+>> > ---
+>> >  arch/arm64/kvm/hyp/switch.c | 2 ++
+>> >  1 file changed, 2 insertions(+)
+>> >
+>> > diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+>> > index 67b7c160f65b..6c153b79829b 100644
+>> > --- a/arch/arm64/kvm/hyp/switch.c
+>> > +++ b/arch/arm64/kvm/hyp/switch.c
+>> > @@ -100,6 +100,7 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
+>> >
+>> >  	write_sysreg(val, cpacr_el1);
+>> >
+>> > +	write_sysreg(vcpu->arch.mdcr_el2 | 3 << MDCR_EL2_E2PB_SHIFT, mdcr_el2);
+>> >  	write_sysreg(kvm_get_hyp_vector(), vbar_el1);
+>> >  }
+>> >  NOKPROBE_SYMBOL(activate_traps_vhe);
+>> > @@ -117,6 +118,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
+>> >  		__activate_traps_fpsimd32(vcpu);
+>> >  	}
+>> >
+>> > +	write_sysreg(vcpu->arch.mdcr_el2 | 3 << MDCR_EL2_E2PB_SHIFT, mdcr_el2);
+>> 
+>> There is a _MASK macro that can replace this '3', and is in keeping
+>> with the rest of the code.
+>> 
+>> It still remains that it looks like the wrong place to do this, and
+>> vcpu_load seems much better. Why should you write to mdcr_el2 on each
+>> entry to the guest, since you know whether it has SPE enabled at the
+>> point where it gets scheduled?
+> 
+> For nVHE, the only reason we'd want to change E2PB on entry/exit of 
+> guest
+> would be if the host is also using SPE. If the host is using SPE whilst
+> the vcpu is 'loaded' but we're not in the guest, then host SPE could 
+> raise
+> an interrupt - we need the E2PB bits to allow access from EL1 (host).
 
-granule could be 2MB sections if THP is enabled, right?
+My comment was of course for VHE. nVHE hardly makes use of load/put at 
+all,
+for obvious reasons.
 
-> > +
-> > +             /* Determine the power of 2 multiple number of pages */
-> > +             scale = __ffs(size / (1UL << tg));
-> > +             cmd.tlbi.scale = scale;
-> > +
-> > +             cmd.tlbi.num = CMDQ_TLBI_RANGE_NUM_MAX - 1;
-> Also could you explain why you use CMDQ_TLBI_RANGE_NUM_MAX.
-
-How's this:
-/* The invalidation loop defaults to the maximum range */
-
-And perhaps I'll move it next to setting granule.
-
-> > +
-> > +             /* Convert page size of 12,14,16 (log2) to 1,2,3 */
-> > +             cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
-> > +
-> > +             /* Determine what level the granule is at */
-> > +             cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
-> > +
-> > +             /* Adjust granule to the maximum range */
-> > +             granule = CMDQ_TLBI_RANGE_NUM_MAX * (1 << scale) * (1UL << tg);
-> spec says
-> Range = ((NUM+1)*2 ^ SCALE )*Translation_Granule_Size
-
-(NUM+1) can be 1-32. I went with the logical max for
-CMDQ_TLBI_RANGE_NUM_MAX rather than the NUM field value max.
-
-Rob
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
