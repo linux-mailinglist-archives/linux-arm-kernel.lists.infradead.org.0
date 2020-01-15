@@ -2,115 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CC2013BAD3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:27:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6930F13BB22
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:33:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LJq4HMKpyJIEm1IRUomzWDyHoSAOrOdLaU7z/DE1ffI=; b=QUC8lczJFrY0lj
-	PoEB98BRi1mAMnNttUW1bbbi5wLg07PGm5lgEG8I68IQPTlj/XBFkAIBU8JzQJt323bIpeBAtCDKn
-	Su7Bh/FBxuW5GQwUD1H19Smzq/JEW+tw2Cr9RtwnNUq/XCq8udpcGsxOkwtCjgfyzJ+ymN1gcJHyb
-	j9UUY5igMcMU3corXE8f+22UsLYg+9pQJXEeJ9mtsCMDvec9xEG+g7imXojaNB62++FnMw/P/tRc3
-	0JMUwbNvOhuitsT3+SbPhfQdGyGjdOozm6t59xd8n4GzVvcYgkG4JWbrZKA7bb167SSlqwvId3gZK
-	7JzFsu6Y66LKnl5PwpcQ==;
+	List-Owner; bh=HogH9J2998GRWDm7794ly0+vrQb76YMnxZT0OpnZbBU=; b=ns6Qe7Rb6ddOzk
+	4fyOPpu3Fth4zNwf1mUgG4exbcc1tL+vx9ik/0cq0XEZM4M9uF2y6002o1/wkMgpmPfMwSOfT8SGP
+	qvzrI81fIBuTw6MucVhX0XW0rg2VLX9YbuvGpGnpoaE5rehrvE2DqqzW3cs3n+LuqF/itwfEyU2sZ
+	60R2yAoVm2Vi2139iw4ExAKAVQ9gaeJr8jJz3/otU0jqvwCZ1+/Sz+Xz+UqlX7LYQHIbc0skx7iTf
+	MF919r1cb40nD3/HYF/ObTjn4Ys+cL9yQWQSGzwG5shZsCrmZfFl0hqkxhzBbP/5vbJQHRisD+wJ8
+	vv+/T0CZAzt10hH4sJIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ire1D-0005Bf-Et; Wed, 15 Jan 2020 08:27:15 +0000
-Received: from mail-eopbgr1410138.outbound.protection.outlook.com
- ([40.107.141.138] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1ire72-0007Cd-6k; Wed, 15 Jan 2020 08:33:16 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ire12-0005B9-59
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:27:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UvLwt2ZDv5fryoPIxzdnC2n4g/Kq5a9G75oCKimgwjrAhvO6Fx23sVl1liyEM0LEhWCXCxVAuo7666K0q3cCFCIn2WiQjLupfMIV6nOe7l+wnRVC2qzAKTA13yufy9ZzvzspjDCNkmHPv4bVkjKJgqxLF3EGEgOxAloUAXto6LR8CwExXD7fT7Ep3FP5qLZ72XlTLJNIhfDUJuAh0A0oJGEb37qohbPQqIN0YEyzWmrIx7uqbavKlrB4dc5p6+LXSn20lXSOKkZKLzkZX6Ww+RV/4g1jIV9tK8BDO+HwbwXSAW32CfmzK3eXADGDjLbAZOfvt+55jIBY3vnXoPLdUg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F4ggkxuH90BH7ernD9UTNrOxT5gpeUaiM/XB16t/iws=;
- b=WRSU34bexFfc+Zcs2h+KmXwi0uKQOGb+h3Fx9oXVpE/DbHMmbUjOKSJ+TGMYvG2no2p3t4sZOuqvnGRNLTk71Hj5SAHlQIRtbQCWEi1HWu3kPCKJz0RpP2QRc5o8wVWG39d7NIwkD2r7oM6uPjyS7ttWsnQemdMBeHpURpPqwUr96juUIUrlZnWHFIg+8X0Tdqhjl14ezCpopMJe91KhDmKeBhvDdUqFwZ86fgEE3HxS5Hkw0pyhkYvDYGihec1655w/D6EvyFR9mci7USr5xVS2qLgYZiXpl0H+L1TGND34fbxVh4CjfdbwFVqLqq1J0bfyiHeMWS3HKs7jamGrRA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F4ggkxuH90BH7ernD9UTNrOxT5gpeUaiM/XB16t/iws=;
- b=irL+GeVF75glpZ8GPg8Qkos10QDNf5blglKIFa9kXeQ2RFne7nCw2KOg2/YBXgHpbQoGqqi+dMGMb9RmE45Q8RNu5EEaZSJ7prPoPRcsrO+SPzfDRmYPvODaAZznF6HOAIijBmabOYSmecVMXG1BK4to5l4z6Jp1xVPLegzBXfU=
-Received: from TYAPR01MB2285.jpnprd01.prod.outlook.com (52.133.177.145) by
- TYAPR01MB4608.jpnprd01.prod.outlook.com (20.179.174.202) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.12; Wed, 15 Jan 2020 08:26:58 +0000
-Received: from TYAPR01MB2285.jpnprd01.prod.outlook.com
- ([fe80::1045:4879:77ed:8a70]) by TYAPR01MB2285.jpnprd01.prod.outlook.com
- ([fe80::1045:4879:77ed:8a70%7]) with mapi id 15.20.2644.015; Wed, 15 Jan 2020
- 08:26:58 +0000
-From: Chris Paterson <Chris.Paterson2@renesas.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>, Marek Vasut
- <marek.vasut@gmail.com>, Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Subject: RE: [RFC][PATCH] ARM: dts: renesas: Add missing ethernet PHY reset
- GPIO on Gen2 reference boards
-Thread-Topic: [RFC][PATCH] ARM: dts: renesas: Add missing ethernet PHY reset
- GPIO on Gen2 reference boards
-Thread-Index: AQHVyXxkFFYTNkuPVU6v1pLjBoMSJqfoTD+AgALmFQCAACiKAIAADCNw
-Date: Wed, 15 Jan 2020 08:26:58 +0000
-Message-ID: <TYAPR01MB228521B36B1B1DC67F187663B7370@TYAPR01MB2285.jpnprd01.prod.outlook.com>
-References: <20200112191315.118831-1-marek.vasut@gmail.com>
- <CAMuHMdWc97=-9yBF0CJDZpWH9ZGX9uoDY_t6E6TQNc4MO93W_w@mail.gmail.com>
- <cfb752e0-46b5-1936-c3f1-8c6d781bebb5@gmail.com>
- <CAMuHMdWeo3awiD7iAfWFXc01isnmsBc6CuQ6X4s3CO7pNXjfJA@mail.gmail.com>
-In-Reply-To: <CAMuHMdWeo3awiD7iAfWFXc01isnmsBc6CuQ6X4s3CO7pNXjfJA@mail.gmail.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Chris.Paterson2@renesas.com; 
-x-originating-ip: [193.141.220.21]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 4a9853ed-8531-45da-67fe-08d79994b024
-x-ms-traffictypediagnostic: TYAPR01MB4608:
-x-microsoft-antispam-prvs: <TYAPR01MB4608943D6EC037396980AF00B7370@TYAPR01MB4608.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:949;
-x-forefront-prvs: 02830F0362
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(346002)(366004)(39860400002)(136003)(396003)(376002)(189003)(199004)(53546011)(66476007)(2906002)(186003)(54906003)(71200400001)(7696005)(316002)(86362001)(110136005)(26005)(6506007)(8936002)(55016002)(4326008)(8676002)(81156014)(9686003)(81166006)(33656002)(64756008)(76116006)(5660300002)(66946007)(66556008)(52536014)(478600001)(66446008);
- DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB4608;
- H:TYAPR01MB2285.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IdaB9o2ruqjcvCokJ8GhgwIAurg3SPwF6PPzxml8eYghGoPcEkm11wT7gAA5lOfeAsfXJLAoz5gwDY76eLgKLGATYFI/WIAqrYxAu4zuL60gqpWx+/U/FtAudo2wpQjKxS+ZNItG0L9jlubdDSGi2Ivw4ThUGCU8mp7KctTJmKwocvyK1+aFL0Z4tmhPi434eJ9InrwdKQ5tLGV1Y4JJlEugpQPOdQXiN6bh/Ubf3+Tdwh+CP/2+xhgus+ZzjSK4DY9U5fpLtwINECx0pTl72OF+fm3hWebM7ClWViGv9UKOhmK3L2MF/JhC4+lhELe67Vxv2+20ZBSaF3ET7Wk0c8a6gvZA9IkX9g0JJ2Pfuh8dSjvdYVZL9Whq7Q2Q/BXZsYqshFxZprdbe7xfaKWBVtY5RVd/+ta63vUkvwfEV2cLTwhzZGtGsVVtw4R0xm/2
-x-ms-exchange-transport-forked: True
+ id 1ire6R-0006z6-5H
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:32:43 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1ire6G-0003Op-LB; Wed, 15 Jan 2020 09:32:28 +0100
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1ire6E-0001jx-6Z; Wed, 15 Jan 2020 09:32:26 +0100
+Date: Wed, 15 Jan 2020 09:32:26 +0100
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Han Xu <han.xu@nxp.com>
+Subject: Re: [PATCH 5/6] mtd: rawnand: gpmi: refine the runtime pm ops
+Message-ID: <20200115083226.lbwtfvoevp3k33qt@pengutronix.de>
+References: <1579038243-28550-1-git-send-email-han.xu@nxp.com>
+ <1579038243-28550-6-git-send-email-han.xu@nxp.com>
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4a9853ed-8531-45da-67fe-08d79994b024
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jan 2020 08:26:58.3950 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: B029531AnpcxvB7IM51x1nQPoBElwxR/+UL9IREDUnb5tCnGv1MxxU4OLLRdc3RbnQntLIRLlJz8aZDIzrR6qfCPRtkKlaaFXB36dEBFKh0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB4608
+Content-Disposition: inline
+In-Reply-To: <1579038243-28550-6-git-send-email-han.xu@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:17:31 up 191 days, 14:27, 88 users,  load average: 0.39, 0.32,
+ 0.30
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_002704_225845_3C6668B5 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200115_003239_198899_B4B3484D 
+X-CRM114-Status: GOOD (  25.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.138 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,40 +75,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: vigneshr@ti.com, richard@nod.at, esben@geanix.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, boris.brezillon@collabora.com,
+ linux-mtd@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
+ miquel.raynal@bootlin.com, dmaengine@vger.kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiBGcm9tOiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0QGxpbnV4LW02OGsub3JnPg0KPiBTZW50
-OiAxNSBKYW51YXJ5IDIwMjAgMDc6NDANCj4gDQo+IEhpIE1hcmVrLA0KPiANCj4gT24gV2VkLCBK
-YW4gMTUsIDIwMjAgYXQgNjoxNCBBTSBNYXJlayBWYXN1dCA8bWFyZWsudmFzdXRAZ21haWwuY29t
-Pg0KPiB3cm90ZToNCj4gPiBPbiAxLzEzLzIwIDk6NTggQU0sIEdlZXJ0IFV5dHRlcmhvZXZlbiB3
-cm90ZToNCj4gPiA+PiAgYXJjaC9hcm0vYm9vdC9kdHMvcjhhNzc5MC1sYWdlci5kdHMgICB8IDEg
-Kw0KPiA+ID4+ICBhcmNoL2FybS9ib290L2R0cy9yOGE3NzkwLXN0b3V0LmR0cyAgIHwgMSArDQo+
-ID4gPj4gIGFyY2gvYXJtL2Jvb3QvZHRzL3I4YTc3OTEta29lbHNjaC5kdHMgfCAxICsNCj4gPiA+
-PiAgYXJjaC9hcm0vYm9vdC9kdHMvcjhhNzc5MS1wb3J0ZXIuZHRzICB8IDEgKw0KPiA+ID4+ICBh
-cmNoL2FybS9ib290L2R0cy9yOGE3NzkzLWdvc2UuZHRzICAgIHwgMSArDQo+ID4gPj4gIGFyY2gv
-YXJtL2Jvb3QvZHRzL3I4YTc3OTQtYWx0LmR0cyAgICAgfCAxICsNCj4gPiA+PiAgYXJjaC9hcm0v
-Ym9vdC9kdHMvcjhhNzc5NC1zaWxrLmR0cyAgICB8IDEgKw0KPiA+ID4NCj4gPiA+IEkgYmVsaWV2
-ZSBhbGwgb2YgdGhlIGFib3ZlIChleGNlcHQgZm9yIHN0b3V0KSBhcmUgYXZhaWxhYmxlIGluIE1h
-Z251cycgZmFybS4uLg0KPiA+ID4NCj4gPiA+IHI4YTc3NDMtc2stcnpnMW0uZHRzIGFuZCByOGE3
-NzQ1LXNrLXJ6ZzFlLmR0cyBuZWVkIHNpbWlsYXIgY2hhbmdlcyBhcw0KPiA+ID4gcjhhNzc5MS1w
-b3J0ZXIuZHRzIHJlc3AuIHI4YTc3OTQtc2lsay5kdHMuDQo+ID4NCj4gPiBEbyB5b3UgaGF2ZSB0
-aG9zZSB0d28gYm9hcmRzIC8gY2FuIHlvdSBwcmVwYXJlIGFuZCB0ZXN0IGEgcGF0Y2ggPw0KPiAN
-Cj4gSSBkb24ndCBoYXZlIHRob3NlIGJvYXJkcywgYW5kIHRodXMgY2FuJ3QgdGVzdCB0aGVtLg0K
-DQpTb3JyeSwgSSBkb27igJl0IGVpdGhlci4gUGVyaGFwcyBTZXJnZWk/DQoNCkNocmlzDQoNCj4g
-DQo+IEdye29ldGplLGVldGluZ31zLA0KPiANCj4gICAgICAgICAgICAgICAgICAgICAgICAgR2Vl
-cnQNCj4gDQo+IC0tDQo+IEdlZXJ0IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGlu
-dXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtDQo+IG02OGsub3JnDQo+IA0KPiBJbiBwZXJz
-b25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBlb3BsZSwgSSBjYWxsIG15c2VsZiBh
-IGhhY2tlci4gQnV0DQo+IHdoZW4gSSdtIHRhbGtpbmcgdG8gam91cm5hbGlzdHMgSSBqdXN0IHNh
-eSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4NCj4gICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcw0KX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jan 15, 2020 at 05:44:02AM +0800, Han Xu wrote:
+> several changes for runtime code in gpmi-nand driver
+> 
+> - Always invoke runtime get/put in same function to balance the usage
+> counter.
+> 
+> - leverage the runtime pm for system pm, move acquire dma to runtime pm
+> to acquire dma only when needed.
+> 
+> - add pm_runtime_dont_use_autosuspend in err path. If driver failed to
+> probe before runtime pm timeout, such as NAND not mounted in socket,
+> runtime suspend won't be called without the change.
+
+Using a bullet list in a commit message is often a sign that the patch
+should be split into multiple patches...
+
+> 
+> Signed-off-by: Han Xu <han.xu@nxp.com>
+> ---
+>  drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c | 56 +++++++++++-----------
+>  1 file changed, 29 insertions(+), 27 deletions(-)
+> 
+> diff --git a/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c b/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
+> index fcc7325f2a10..73644c96fa9b 100644
+> --- a/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
+> +++ b/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
+> @@ -183,7 +183,6 @@ static int gpmi_init(struct gpmi_nand_data *this)
+>  	 */
+>  	writel(BM_GPMI_CTRL1_DECOUPLE_CS, r->gpmi_regs + HW_GPMI_CTRL1_SET);
+>  
+> -	return 0;
+>  err_out:
+>  	pm_runtime_mark_last_busy(this->dev);
+>  	pm_runtime_put_autosuspend(this->dev);
+> @@ -556,7 +555,6 @@ static int bch_set_geometry(struct gpmi_nand_data *this)
+>  	/* Set *all* chip selects to use layout 0. */
+>  	writel(0, r->bch_regs + HW_BCH_LAYOUTSELECT);
+>  
+> -	ret = 0;
+>  err_out:
+>  	pm_runtime_mark_last_busy(this->dev);
+>  	pm_runtime_put_autosuspend(this->dev);
+
+While I agree that this "ret = 0" is unnecessary because 'ret' holds the
+successful return value of the last function called, I still think it's
+nice to make it explicit that this is the success path of this function.
+
+If you disagree please at least make this a separate patch.
+
+> @@ -1213,10 +1211,6 @@ static int acquire_resources(struct gpmi_nand_data *this)
+>  	if (ret)
+>  		goto exit_regs;
+>  
+> -	ret = acquire_dma_channels(this);
+> -	if (ret)
+> -		goto exit_regs;
+> -
+>  	ret = gpmi_get_clks(this);
+>  	if (ret)
+>  		goto exit_clock;
+> @@ -2656,15 +2650,9 @@ static int gpmi_nand_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto exit_acquire_resources;
+>  
+> -	ret = __gpmi_enable_clk(this, true);
+> -	if (ret)
+> -		goto exit_nfc_init;
+> -
+> +	pm_runtime_enable(&pdev->dev);
+>  	pm_runtime_set_autosuspend_delay(&pdev->dev, 500);
+>  	pm_runtime_use_autosuspend(&pdev->dev);
+> -	pm_runtime_set_active(&pdev->dev);
+> -	pm_runtime_enable(&pdev->dev);
+> -	pm_runtime_get_sync(&pdev->dev);
+>  
+>  	ret = gpmi_init(this);
+>  	if (ret)
+> @@ -2674,15 +2662,12 @@ static int gpmi_nand_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto exit_nfc_init;
+>  
+> -	pm_runtime_mark_last_busy(&pdev->dev);
+> -	pm_runtime_put_autosuspend(&pdev->dev);
+> -
+>  	dev_info(this->dev, "driver registered.\n");
+>  
+>  	return 0;
+>  
+>  exit_nfc_init:
+> -	pm_runtime_put(&pdev->dev);
+> +	pm_runtime_dont_use_autosuspend(&pdev->dev);
+>  	pm_runtime_disable(&pdev->dev);
+>  	release_resources(this);
+>  exit_acquire_resources:
+> @@ -2694,7 +2679,6 @@ static int gpmi_nand_remove(struct platform_device *pdev)
+>  {
+>  	struct gpmi_nand_data *this = platform_get_drvdata(pdev);
+>  
+> -	pm_runtime_put_sync(&pdev->dev);
+>  	pm_runtime_disable(&pdev->dev);
+>  
+>  	nand_release(&this->nand);
+> @@ -2706,10 +2690,11 @@ static int gpmi_nand_remove(struct platform_device *pdev)
+>  #ifdef CONFIG_PM_SLEEP
+>  static int gpmi_pm_suspend(struct device *dev)
+>  {
+> -	struct gpmi_nand_data *this = dev_get_drvdata(dev);
+> +	int ret;
+>  
+> -	release_dma_channels(this);
+> -	return 0;
+> +	ret = pm_runtime_force_suspend(dev);
+> +
+> +	return ret;
+>  }
+>  
+>  static int gpmi_pm_resume(struct device *dev)
+> @@ -2717,9 +2702,11 @@ static int gpmi_pm_resume(struct device *dev)
+>  	struct gpmi_nand_data *this = dev_get_drvdata(dev);
+>  	int ret;
+>  
+> -	ret = acquire_dma_channels(this);
+> -	if (ret < 0)
+> +	ret = pm_runtime_force_resume(dev);
+> +	if (ret) {
+> +		dev_err(this->dev, "Error in resume %d\n", ret);
+>  		return ret;
+> +	}
+>  
+>  	/* re-init the GPMI registers */
+>  	ret = gpmi_init(this);
+> @@ -2743,18 +2730,33 @@ static int gpmi_pm_resume(struct device *dev)
+>  }
+>  #endif /* CONFIG_PM_SLEEP */
+>  
+> -static int __maybe_unused gpmi_runtime_suspend(struct device *dev)
+> +#define gpmi_enable_clk(x)	__gpmi_enable_clk(x, true)
+> +#define gpmi_disable_clk(x)	__gpmi_enable_clk(x, false)
+
+These defines do not add any value.
+
+Sascha
+
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
