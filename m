@@ -2,94 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3071A13D048
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 23:44:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43D5613D07D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 00:03:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pajgNePgkLRED11ennfRD8fGtjWYAxrLaSmebW/lZH0=; b=GKK0yuCRkoZ6iP
-	IQzg9T5BvUEcUY5gFN67cMjuv9XVvM+pVgFElyX9Tkqh2J7zLXkov9j/PlBo8ip0FeZ4er8zQb/+5
-	MJRbrEishrinoax/M478OYxFrkgpKGPZnxcO3M0uXQnFJqUtAr7koS7YFeH31KG00NhLoUBxycSGf
-	JuIFuoKHAVqURJcYWVpTaJ3pK/qiA5UHVIQT0mSpnXGOyxjnrcrLGhqZ7ry35BM+NHObC8UNikzQD
-	U2nFoTO2CuoxmEz9ylotp5gCiGgo5cXH7IGRKIWZAYEPOBF2ySR7P0Fz18nIV58Go+t1QJqGDKWnv
-	Ws2hOutQwhbulxPT6alg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LNavEzrzgtwt3uv7/0HSI1kybWOaLQhUJECftCmTsvY=; b=nLgwKfb2nSxD7I
+	0rkFwT4Fq11NpOT7ixU1os9NPq2aoJlzu2JYVyrtrnMAv0tSBIABoFZlz6/g06sSXm+Gr4ZPS40pi
+	r7FBl3DfF908cqKXKiv7DwzH5fEeLyYkniKwXx4YJhh3l7DI3RkeqcWZKEiDoAfqjyrrEmDQSzzbg
+	yaw/J8BHrey4fIMS/QAXME7LVcMK2R7fc4d1MCoj6e2pHocc9pf3n1JnT5UeRB12QLLhTxoV64qKu
+	HlUHmn5auVrLfeu6p/o2kGvqAONt4DeAUhDDrz9JBfANHYua74Vp/il9+sgBU6ile2xRrpPGzBtB7
+	FkEfiC42CY++ATkFwSyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irrOd-0001ib-N1; Wed, 15 Jan 2020 22:44:19 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1irrh7-0001FD-Lo; Wed, 15 Jan 2020 23:03:25 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irrOU-0001hy-Fi
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 22:44:11 +0000
-Received: by mail-ua1-x943.google.com with SMTP id u17so6942401uap.9
+ id 1irrgx-0001Em-7z
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 23:03:19 +0000
+Received: by mail-wm1-x335.google.com with SMTP id u2so1793906wmc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 14:44:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EbsE7yB3eGOjL7w6M5aCw+NaQ3bQ1Ie1J3/rIfgrCSM=;
- b=EXJ9JpxfQFkpbNO5ovU9r+uWdsKb6mmP3FVs0MzgAX1M0W5ezFJiXtx8rkazXI2s1M
- +fUMgeM4ULCcj/ldqsgpEm3+8rYCC0mLe1fn9fAoRPYgkZL+X4xaIE0elUZk9iBF++/y
- oNXg8Luw40ipFqpEBdGl33Y8JFZRautwdT438=
+ Wed, 15 Jan 2020 15:03:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=rcHY8ZGHTszi3A4Ocx1pKw2pFpYP0qQs/SrDLYbZ67g=;
+ b=fRqR1xSE624Ej7MREmbyCzxsCcz6rsglJEjWKU2LgzEZ8+fpqJJNqKR0y8UM64YhhI
+ pjVS+3vHJlgcBpBQg9XrTgNde7YTOaw/32wXk3g8tvCA7rH3U2cipnkSfK+JhJKjVnL6
+ izEG6PMgqzrdn8i19910R6tORhufl54X9eCvDRKNb9+Zvy8pGnOQBAT1W3czU2OPaJZT
+ 6TBQjM23Nz2KVXIe4/wbv9u5KJdgtB77M19936Z24PiT4Li79QzTOaFIwFWeLU8tuNWS
+ uMxF/BfMb1x9xHyhtxlJM2Fdkv5OI8OMZOydrZwEbjQ7V9ha3DmqdYM5dr0dKbS/j97f
+ rjNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EbsE7yB3eGOjL7w6M5aCw+NaQ3bQ1Ie1J3/rIfgrCSM=;
- b=qKmVcxr6/ewBzLnoN1wVE37Co/45HsKRXAMjinYe0A5PQVubcHyWvxdKFomiP2TuR7
- 4dFWEArvjhC1MpFE1soSHkOc6ssmn9ZnfT8rCLvGoLfqfCCSLEEQCeOREOI7nZ7wcBg6
- BRZQ3V7YjldveHq77gqBEqmtHvPa2pi+f1SLxitvm342EekJwjxG1ChZeeQqF78Kfpfd
- WeJxebCUcwQESIEDjejfsbNCt8KliSmfuO/bBSz1KWEFhrFsYdB2pbbl7uWa/4pAZ9an
- S/+FA0iRdgmvPj3sKvr/3FHX3QZ+Vp/FdIyPZGdRDQcpRoxin5NAdI7QCnsLirwwOFK0
- +ROQ==
-X-Gm-Message-State: APjAAAUTmUz2q02i7hF30PoFhTWcRw3aSs93a7ztnaFASLPkJ0Q5Vvcx
- VZ9Qs6B9riZa2TAP1AkW+MsPAtZg/G4=
-X-Google-Smtp-Source: APXvYqwqbQpAUseGDKfXeIb2tpOrA6+F+D6VdqJiVivxzi3ER6Vy33xURpngP/1eFtLBE57kZaPO0g==
-X-Received: by 2002:ab0:728b:: with SMTP id w11mr15933402uao.1.1579128247989; 
- Wed, 15 Jan 2020 14:44:07 -0800 (PST)
-Received: from mail-ua1-f45.google.com (mail-ua1-f45.google.com.
- [209.85.222.45])
- by smtp.gmail.com with ESMTPSA id w125sm5903848vkh.50.2020.01.15.14.44.06
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Jan 2020 14:44:07 -0800 (PST)
-Received: by mail-ua1-f45.google.com with SMTP id o42so6913995uad.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 14:44:06 -0800 (PST)
-X-Received: by 2002:ab0:2006:: with SMTP id v6mr17735083uak.22.1579128246442; 
- Wed, 15 Jan 2020 14:44:06 -0800 (PST)
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=rcHY8ZGHTszi3A4Ocx1pKw2pFpYP0qQs/SrDLYbZ67g=;
+ b=XsOM7uA9m2f478YJQHMpL3hSi68RHJUEiAkBtaPH2LkNbD57orOhj0khB9Qop6B7i4
+ 0W7VS1JBpeKfzyY4rtnvimTFocjtruSvl4vwXOLSGGL102XYqeb2HB8ywjQWlVd/CXlw
+ wils2kGR8rwvUdQBfofumz/eRuYBvPJIHOIkuk7WlNtWMtpbxGLAF0GaB6wJ01ritl57
+ iICGxqlDb9YO9ttjK5tH7RW7CzIAozGkw90VBJcWZq2eY7D0MpUekUYRESbGXV6aqPQN
+ ZcALJls3/6nxGcLFcaqJkERmzHEsGjBII7LaBIEBTsIiKGw2UmTY/c2pVsxFIKBCmWov
+ aiRQ==
+X-Gm-Message-State: APjAAAXp4sq2YH/FcPF2k0q8RQI+OGfGM1Aa4G4hEtTvfslBUrUO4fF2
+ 2V6c87iQMEmP3289f+oFxcuEAg==
+X-Google-Smtp-Source: APXvYqxGgZUxfV4rtpoJE3C+NQX/uBOpMgMnJOceeBHt/7XTH68XmxoMTlq6RhRrTYsNwVU28O4lpA==
+X-Received: by 2002:a7b:c765:: with SMTP id x5mr2400547wmk.129.1579129393208; 
+ Wed, 15 Jan 2020 15:03:13 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id g9sm26668438wro.67.2020.01.15.15.03.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Jan 2020 15:03:12 -0800 (PST)
+Message-ID: <5e1f9a30.1c69fb81.9d7c0.069e@mx.google.com>
+Date: Wed, 15 Jan 2020 15:03:12 -0800 (PST)
 MIME-Version: 1.0
-References: <20200110101802.4491-1-saiprakash.ranjan@codeaurora.org>
-In-Reply-To: <20200110101802.4491-1-saiprakash.ranjan@codeaurora.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 15 Jan 2020 14:43:55 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=Voec=RNabf7eqMDd68J7KCgVpNwvUxaz6SVwGMnrCppQ@mail.gmail.com>
-Message-ID: <CAD=FV=Voec=RNabf7eqMDd68J7KCgVpNwvUxaz6SVwGMnrCppQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: qcom: sc7180: Add iommus property to QUP0 and
- QUP1
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Report-Type: build
+X-Kernelci-Kernel: v5.5-rc6-47-g40f39e8372fe
+Subject: arm64/for-kernelci build: 3 builds: 0 failed,
+ 3 passed (v5.5-rc6-47-g40f39e8372fe)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_144410_547096_C51A53BB 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_150315_380257_19B37260 
+X-CRM114-Status: UNSURE (   3.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:335 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,45 +96,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Fri, Jan 10, 2020 at 2:18 AM Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> Define iommus property for QUP0 and QUP1 with the proper SID
-> and mask. Below SMMU global faults are seen without this during
-> boot and when using i2c touchscreen.
->
-> QUP0:
-> arm-smmu 15000000.iommu: Unexpected global fault, this could be serious
-> arm-smmu 15000000.iommu: GFSR 0x00000002, GFSYNR0 0x00000002, GFSYNR1 0x00000043, GFSYNR2 0x00000000
->
-> QUP1:
-> arm-smmu 15000000.iommu: Unexpected global fault, this could be serious
-> arm-smmu 15000000.iommu: GFSR 0x00000002, GFSYNR0 0x00000002, GFSYNR1 0x000004c3, GFSYNR2 0x00000000
->
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> ---
->  arch/arm64/boot/dts/qcom/sc7180.dtsi | 2 ++
->  1 file changed, 2 insertions(+)
-
-Fixes: ba3fc6496366 ("arm64: dts: sc7180: Add qupv3_0 and qupv3_1")
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
-Tested-by: Douglas Anderson <dianders@chromium.org>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
+NS41LXJjNi00Ny1nNDBmMzllODM3MmZlKQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
+cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS41LXJj
+Ni00Ny1nNDBmMzllODM3MmZlLwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
+IERlc2NyaWJlOiB2NS41LXJjNi00Ny1nNDBmMzllODM3MmZlCkdpdCBDb21taXQ6IDQwZjM5ZTgz
+NzJmZTBhZTJlMDYxZDI2MDc1YTQ5YjJmNDc1MTVjOGQKR2l0IFVSTDogZ2l0Oi8vZ2l0Lmtlcm5l
+bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4LmdpdApCdWlsdDogMSB1
+bmlxdWUgYXJjaGl0ZWN0dXJlCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKRGV0YWlsZWQgcGVy
+LWRlZmNvbmZpZyBidWlsZCByZXBvcnRzOgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbW9k
+Y29uZmlnIChhcm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBz
+ZWN0aW9uIG1pc21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmFsbG5vY29uZmlnIChh
+cm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1p
+c21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmRlZmNvbmZpZyAoYXJtNjQsIGdjYy04
+KSDigJQgUEFTUywgMCBlcnJvcnMsIDAgd2FybmluZ3MsIDAgc2VjdGlvbiBtaXNtYXRjaGVzCgot
+LS0KRm9yIG1vcmUgaW5mbyB3cml0ZSB0byA8aW5mb0BrZXJuZWxjaS5vcmc+CgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
