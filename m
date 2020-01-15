@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4939913C291
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:23:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 581EE13C294
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:24:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzicmpaRN23olSSo079f5zIupWDn3Ud465Nif8RYaLU=; b=fLwtsT7S8oTtmR
-	5nOWtYRrrS2ESTdxok3bDkv4ggO8VYUwapEXAgqaSztTnUU+KO2sUxOyVYwSwdqCHkOhR3Ao3iR5H
-	2e4B2io4mC25QeYsDxmiqWhbAdMsldcX0G+920c0dq2liJO88r2aKrsYhP4Lw2SKF6oMYZQfI7/vF
-	rVtPznd6n/8hzy81ksmKwa3vMhd+Q5r7V6Fv5NoSY6uriXZdcp2vsLu9J76iBeIYHqqe0OBcYy2oY
-	tp6TDHGeLBMUWoLF0l1PrsKKD4l3CB/p2HUhPfZDfYMYgyGgjTzmCMXDnBsPjhESBexDgIuY6tr7E
-	LdR7qAiydLSu5lAXaU7Q==;
+	List-Owner; bh=AeDiwe23d66J9jia+caB4zcsfJuPxD2Tc06ocUaursU=; b=uF/OEW08U0UEMB
+	YuCNraqyNM21/RCl2hDFlKcRb2Q5sLCT+yAMtPeB50IRQnLkeXQwQnI4i7axG3o+6rVVAGRRe9XUh
+	BzF37H5JW1ip6eQA81/gF//KFSeksvuq9DEu8H0MguQ3aBW3j+P+lS9N14t8AdomIzRIjZxaS6dSs
+	uPE2UqI18sNg6Vzn7ZJX7gXPFlsYrMzCO5J7woEUL8nw3sJgZ6vt1HTPk1664KUpilpyJNVCH4nvg
+	nTU5ZKTgQ3lLTTNU0y5jJ+ZRUbGvvPosnBd/h5fDn6VmvMZ/3vOakgltERrihPrHOSpP6jGbjrO4D
+	WQElbRNhr423/y8I1ufg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irieB-0003j3-07; Wed, 15 Jan 2020 13:23:47 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iriel-00044x-GW; Wed, 15 Jan 2020 13:24:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iridz-0003h3-SI
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:23:40 +0000
-Received: by mail-lj1-x241.google.com with SMTP id y6so18588696lji.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 05:23:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cvu9eNQm8Fqp7yqoiO0Eg3cYEaQpDgDeASdv6EDKHDk=;
- b=FeBXywdclmpumyiY8AaSvPG2sflC5GIFQPGxS0tclLyaRoR7MtRrr77mv97btXlf6K
- i9ucWvcyKqSdsfiK1G/o834+A8xIg9OgyXmVlYZgjwuv5nuEujiGrtXmTR5t6hkfVVfW
- 8aWMSIwDMPDtPmG1soj1ne3UGKydg5wQRpexej3uTo/LlFPvsxbHtxyMv/BzgiGwuxjS
- 84gUSp5izBj4xspxwK2+67+2spA8127WmW7SFzx4BWRf6MAgfdmV4Wo5OEn1YzQcQKfS
- rY6+3eoh2KNA2mg2aOpRv7w2sNxFtFQxE9PcC5+I8EY0PNe9p287+uUOrncWHaF/BajF
- ndqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cvu9eNQm8Fqp7yqoiO0Eg3cYEaQpDgDeASdv6EDKHDk=;
- b=jeFtCigwf85XSlzY79rAZuktEUXUMfVhIoKHnfSmGacTuce/pviRurtsW+ld/Ecco2
- +ny0zwoSX/QSp/qibvQAdoIlptQPX5e2pPLBsLPMWtKRx/vC6FDdme6h4KpDjrs0ugJb
- +OM1nBGZtNKuqACikVMDReifNDJXngMUP2Ird/Cv0gHOPdLsIvtOSo6ZMFWpKa1xvrX1
- FX9LYq+M+Ol1F9DbBUlH73s7UJ8Nvr98o/586xPgCTS6a3URCmr3651I7ClZAosGQ4Mm
- s0wskiKZMXwLOgkhRICxPIR9qXf3OEKJK9LdTXFuhCseHFhNlt3QtPRiinmMgBKS8xMq
- Ix9A==
-X-Gm-Message-State: APjAAAXc049enCiQ+IquGtCb9sr3+t0jfuawuG6GLz08MVtUbe3aGlCr
- 8QeZC9vqPJ5i00RjyIIqD/LBdrQFJwvQURwYVLFw2g==
-X-Google-Smtp-Source: APXvYqzU8Jv6fm21Tu9Rpsr7UPGXoPRMVTBScqqJAJfziGSJNsqhmRW3iBPEyc5EmHD9qO4S8yzzNBA7PCNgR4QemhA=
-X-Received: by 2002:a2e:3609:: with SMTP id d9mr1641890lja.188.1579094613876; 
- Wed, 15 Jan 2020 05:23:33 -0800 (PST)
+ id 1iriec-00044J-Mo
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:24:17 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2B6920728;
+ Wed, 15 Jan 2020 13:24:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579094654;
+ bh=kKbArU8xxPgCdcdhxsTWTnHiYirl+YRo1E9IJdr/ufU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Gwt7JxznjfX9zEMi2yEdrTGG5KtIT8fFdodL/oaYC071ssJ9Gx6p9qvSo+y+is44F
+ ZlWB4C4lp1I7YaPOGP7n2mtSyByrFRxztF9vyW1/g5Cchzq3tZH1TlTwtNWzk0fdi/
+ WI2L3V7VAuk94VzgV4na2gkPjkkz9m2K+Wkpdg5g=
+Date: Wed, 15 Jan 2020 13:24:10 +0000
+From: Will Deacon <will@kernel.org>
+To: Vladimir Murzin <vladimir.murzin@arm.com>
+Subject: Re: [PATCH v2 0/2] arm64: Simplify gas LSE support detection
+Message-ID: <20200115132410.GA27473@willie-the-truck>
+References: <20200115113008.3334-1-catalin.marinas@arm.com>
+ <df4eda09-3234-8e32-6ea3-6fc6628cae05@arm.com>
+ <20200115125109.GH21692@willie-the-truck>
+ <eceaaf63-1e05-7963-2b76-303bb909e9af@arm.com>
 MIME-Version: 1.0
-References: <1579052348-32167-1-git-send-email-Anson.Huang@nxp.com>
- <1579052348-32167-2-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1579052348-32167-2-git-send-email-Anson.Huang@nxp.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 15 Jan 2020 14:23:22 +0100
-Message-ID: <CACRpkdYakDK0Zp_StJ+J5UV7PRjHEnWPmZGpGpeXMZyPtUmv1g@mail.gmail.com>
-Subject: Re: [PATCH V9 2/3] pinctrl: freescale: Add i.MX8MP pinctrl driver
- support
-To: Anson Huang <Anson.Huang@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <eceaaf63-1e05-7963-2b76-303bb909e9af@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_052335_917797_E5D28531 
-X-CRM114-Status: GOOD (  10.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_052414_763687_676CFAD2 
+X-CRM114-Status: GOOD (  16.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,45 +79,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- NXP Linux Team <Linux-imx@nxp.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, maxime@cerno.tech,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Dong Aisheng <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anson,
+On Wed, Jan 15, 2020 at 12:59:00PM +0000, Vladimir Murzin wrote:
+> On 1/15/20 12:51 PM, Will Deacon wrote:
+> > On Wed, Jan 15, 2020 at 12:49:17PM +0000, Vladimir Murzin wrote:
+> >> On 1/15/20 11:30 AM, Catalin Marinas wrote:
+> >>> Version two of the patch series moving the LSE assembler support
+> >>> detection from Makefile to Kconfig.
+> >>>
+> >>> Changes since v1 [1]:
+> >>>
+> >>> - Re-introduce the Makefile warning if the .config contains
+> >>>   CONFIG_ARM64_USE_LSE_ATOMICS but the assembler does not support the
+> >>>   feature, disabling CONFIG_ARM64_LSE_ATOMICS.
+> >>>
+> >>> [1] http://lkml.kernel.org/r/20200109174948.48211-1-catalin.marinas@arm.com
+> >>>
+> >>> Catalin Marinas (2):
+> >>>   kbuild: Add support for 'as-instr' to be used in Kconfig files
+> >>>   arm64: Move the LSE gas support detection to Kconfig
+> >>>
+> >>>  arch/arm64/Kconfig                    |  5 +++++
+> >>>  arch/arm64/Makefile                   | 11 ++++-------
+> >>>  arch/arm64/include/asm/atomic_ll_sc.h |  2 +-
+> >>>  arch/arm64/include/asm/lse.h          |  6 +++---
+> >>>  arch/arm64/kernel/cpufeature.c        |  4 ++--
+> >>>  scripts/Kconfig.include               |  4 ++++
+> >>>  6 files changed, 19 insertions(+), 13 deletions(-)
+> >>>
+> >>>
+> >>
+> >> with
+> >>
+> >> aarch64-linux-gnu-gcc (crosstool-NG linaro-1.13.1-4.9-2014.09 - Linaro GCC 4.9-2014.09) 4.9.2 20140904 (prerelease)
+> >>
+> >> I see (among other warnings)
+> >>
+> >>     arch/arm64/Makefile:35: LSE atomics not supported by binutils
+> >>
+> >> while with
+> >>
+> >> aarch64-none-linux-gnu-gcc (GNU Toolchain for the A-profile Architecture 9.2-2019.12 (arm-9.10)) 9.2.1 20191025
+> >>
+> >> warning disappears.
+> >>
+> >>
+> >> FWIW:
+> >>
+> >> Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> >> Tested-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> > 
+> > Cheers, I've queued the patches with your tags.
+> 
+> Would you mind if I send follow-up patch for BROKEN_GAS_INST conversion
+> (it depends on as-inst)?
 
-On Wed, Jan 15, 2020 at 2:43 AM Anson Huang <Anson.Huang@nxp.com> wrote:
->
-> Add the pinctrl driver support for i.MX8MP.
->
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
-> ---
-> No change.
+Sure, you can send whatever you like!
 
-Can this patch be applied independently of the rest of the patches?
-
-In that case I am just waiting for a review from one of the Freescale
-pin control maintainers then I can merge this.
-
-Yours,
-Linus Walleij
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
