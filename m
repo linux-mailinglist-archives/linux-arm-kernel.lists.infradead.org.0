@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B26613BB6A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:44:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9BFC13BB67
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 09:43:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YER1DZduNXN3T354YaEhdQgyMKFjhZMEigpb7QcixwY=; b=TjPHoF3fuea0Pq
-	Cmddbx6WduNLce+4U7ctFnoeJsjI3gDJHF23Skodmnhr1ud+zTbxXSAV9bRjjaArKQar43w4F22d5
-	VWQ0aKac6Z2HnbQsjiM2sGJX2HuduS5x2mHaVZ5CCbW6zpQWcMsvA5xdu4H5Z/t4nlbYaBgu2yzoW
-	PzatEGCAsokD3UTptoNd5vEZl+YC1AQ1VGlRQTm9UeZzzQgZa8sa39Fp3/Q02x3cAPgk4akw/xVay
-	jD5wAtS/FWO6dBdyg6FdCG1tdEOSdh4geAz1f2rm+bTxSlJtEh3HVgUQCxb5mFhvODUJNCxEnEuFi
-	RNZ5KVGniiTzcTYbwyoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ogyK6fWQVW+aPbivJsRSzpIOu9XSpUPzLfcMKsZEhTI=; b=pusWDp47m/6usG
+	m3nuXJzcWN/8ZVqaEfpNeFd4qZ3oaoGQbMFKUZ7LQKDAVkvoyCRmC6WmMuRJeSaXFuxHmJOAgFP0d
+	CLfVY2ujThkWyKUsRSWBrFBgOY3kqd6SytotDnQWoOITpN4d8quIVO+7rjL4lSI7VSgJ6KhbeSY7j
+	d6OldFqxHONguo91eF41/Vy8hDRjfCfNr2gY0mrJHW1TWJ/rTMNSEnxGMmGzkMNvTaEmgSbCZtAfO
+	JUkWZ9iP9Fv9YumeD6rv/rENe1Au1HiPRgKvUQKdC1gMvgb4Lb2Ytqrs9S0iLxtNG3i4XEEpyl0so
+	7F42jSRK7i0kpmdJ69+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ireHU-0003Nt-Pz; Wed, 15 Jan 2020 08:44:04 +0000
+	id 1ireGg-0002li-O7; Wed, 15 Jan 2020 08:43:14 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ireGO-0002kW-B3
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:43:03 +0000
+ id 1ireGL-0002jn-Tp
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 08:42:58 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F21961A05A6;
- Wed, 15 Jan 2020 09:42:47 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B4FE61A05BB;
+ Wed, 15 Jan 2020 09:42:48 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E36091A0212;
- Wed, 15 Jan 2020 09:42:47 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A7BD81A0028;
+ Wed, 15 Jan 2020 09:42:48 +0100 (CET)
 Received: from fsr-ub1864-014.ea.freescale.net
  (fsr-ub1864-014.ea.freescale.net [10.171.95.219])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0233920340;
- Wed, 15 Jan 2020 09:42:46 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0757220340;
+ Wed, 15 Jan 2020 09:42:47 +0100 (CET)
 From: =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 0/3] clk: imx8mn: add snvs clock
-Date: Wed, 15 Jan 2020 10:42:22 +0200
-Message-Id: <20200115084225.30464-1-horia.geanta@nxp.com>
+Subject: [PATCH 1/3] dt-bindings: clock: imx8mn: add SNVS clock
+Date: Wed, 15 Jan 2020 10:42:23 +0200
+Message-Id: <20200115084225.30464-2-horia.geanta@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200115084225.30464-1-horia.geanta@nxp.com>
+References: <20200115084225.30464-1-horia.geanta@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_004256_513515_B1ACF8A1 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20200115_004254_097147_A16E9A73 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,16 +82,17 @@ Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhpcyBwYXRjaCBzZXQgYWRkcyB0aGUgY2xvY2sgZm9yIHNudnMgbW9kdWxlIG9uIGlteDhtbi4K
-RFQgYmluZGluZ3MsIGNsayBkcml2ZXIgYXJlIHVwZGF0ZWQgYWNjb3JkaW5nbHkuCkRUIGZvciBp
-bXg4bW4gKHNudnMtcnRjLWxwIG5vZGUpIGlzIGFsc28gdXBkYXRlZC4KCkhvcmlhIEdlYW50xIMg
-KDMpOgogIGR0LWJpbmRpbmdzOiBjbG9jazogaW14OG1uOiBhZGQgU05WUyBjbG9jawogIGNsazog
-aW14OG1uOiBhZGQgU05WUyBjbG9jayB0byBjbG9jayB0cmVlCiAgYXJtNjQ6IGR0czogaW14OG1u
-OiBhZGQgY2xvY2sgZm9yIHNudnMgcnRjIG5vZGUKCiBhcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVz
-Y2FsZS9pbXg4bW4uZHRzaSB8IDEgKwogZHJpdmVycy9jbGsvaW14L2Nsay1pbXg4bW4uYyAgICAg
-ICAgICAgICAgfCAxICsKIGluY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svaW14OG1uLWNsb2NrLmgg
-IHwgNCArKystCiAzIGZpbGVzIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigt
-KQoKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+U2lnbmVkLW9mZi1ieTogSG9yaWEgR2VhbnTEgyA8aG9yaWEuZ2VhbnRhQG54cC5jb20+Ci0tLQog
+aW5jbHVkZS9kdC1iaW5kaW5ncy9jbG9jay9pbXg4bW4tY2xvY2suaCB8IDQgKysrLQogMSBmaWxl
+IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2lu
+Y2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svaW14OG1uLWNsb2NrLmggYi9pbmNsdWRlL2R0LWJpbmRp
+bmdzL2Nsb2NrL2lteDhtbi1jbG9jay5oCmluZGV4IDBmMmI4NDIzY2UxZC4uNDM4ODNmZTY1ZGI1
+IDEwMDY0NAotLS0gYS9pbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL2lteDhtbi1jbG9jay5oCisr
+KyBiL2luY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svaW14OG1uLWNsb2NrLmgKQEAgLTIyOCw2ICsy
+MjgsOCBAQAogI2RlZmluZSBJTVg4TU5fU1lTX1BMTDJfMzMzTV9DRwkJCTIwOQogI2RlZmluZSBJ
+TVg4TU5fU1lTX1BMTDJfNTAwTV9DRwkJCTIxMAogCi0jZGVmaW5lIElNWDhNTl9DTEtfRU5ECQkJ
+CTIxMQorI2RlZmluZSBJTVg4TU5fQ0xLX1NOVlNfUk9PVAkJCTIxMQorCisjZGVmaW5lIElNWDhN
+Tl9DTEtfRU5ECQkJCTIxMgogCiAjZW5kaWYKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
