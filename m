@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5FB413C3C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:54:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2624A13C46A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Jan 2020 14:59:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tQoum1KHDUncjmy7eSrsY4TuZXSn3J8dKifgdZgzDfs=; b=ZbCPXOIENUzTWT
-	IVLEYte+u1PX23Fu78Zo0KWhrUFhJ9ZLVQt5Pj+iCl0kmN0uYn3RnwCZXMurPKhvlt7efX9WjFRjZ
-	V4JDjPr3zLG0D2PRoJp2EB1z+qizYN4C+gskniku1LKfYRC5kfz2azrJEm/X1PlTuoj6Vo2eNMVb3
-	USIpBjZivkhpZtES/+s8MlKB/SbVqpatjhdHxD/kr9mfudr7ijliF7WIcosIz+gXqSaQF6G5/DyQs
-	wLZr8QNd1w956txgdovChf2b/ZyXgTNmEs5QOAxcQk9rKDwTAHd/KAWfHAT/UJiGWmR679B/uWcX2
-	0TLhAKdJrQjeNOil3E1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oPyQQ54DuJdg+Kb0IuFA+2wQKhXeDqzXmAA1ZXoDHVI=; b=fe3L2BrAC74Zix+MksPOU2NOu
+	VMeaXeyPvIgYc2PNz5gA72v6kYoJXmGM2mXaDE7vjLYQbuThsMn8IpAbhWI3RZFmvc8buFG2K+4y1
+	H4b84OvcIGMkMd66hgeVm7Mi8t1Dbc65TTz9F0+W+NvbtrExrHXhALDtOOdpSLKc29g+R38DEpHp3
+	GIl9SeTq8DB1SdPMOykNrw50DHGXnw1MAF/qZJpcHHqZ4vtleRcLAbkxNpBrTF+P4tGcWztTpn1SY
+	yLW1SflzyUxEWo2jCVQNJyJyJ6CqLBz8ZaaZ/JDRV6YK8znSl1G1A/KYF/ittOoXcm5Hg0gnkllK4
+	edBPS1jjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irj89-0008Io-54; Wed, 15 Jan 2020 13:54:45 +0000
+	id 1irjCP-0002Ew-6k; Wed, 15 Jan 2020 13:59:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irj7v-0008Fu-D7
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:54:36 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47B102187F;
- Wed, 15 Jan 2020 13:54:30 +0000 (UTC)
+ id 1irjCE-0002DE-HP
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Jan 2020 13:58:59 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EF70222C3;
+ Wed, 15 Jan 2020 13:58:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579096471;
- bh=VBir6e3nrOgRiXq6cS5RpCHgNPjVq6Oy5cHdcdKixoQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z4KWrxMO3THFb8sedrmSPG7Ms2PTe5VzuQtfQAL5PC4EvlKtZuI6w/2MSvjxOb0Ze
- bbDP+adlVv5f5C1SMRRhVhBOXfFsA8cm9q9YiYWsSFHK8+80TzBt2XwVO3zOC+cojT
- pS4vxmuUe2wJ50t1vsA4yKOX483YtEmegRhwcQCs=
-Date: Wed, 15 Jan 2020 13:54:27 +0000
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v9 1/4] arm64: Add initial support for E0PD
-Message-ID: <20200115135426.GB27473@willie-the-truck>
-References: <20191111185243.42638-1-broonie@kernel.org>
- <20191111185243.42638-2-broonie@kernel.org>
+ s=default; t=1579096738;
+ bh=/G/weRCXbYPuSwrN2fOcmc9IMAtSW0V+wjMZcxSDxn8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ytuEmCKm0MYbr4DkGoe+3o7uNRCJlGbBzyN9FYICsCn4CppE/loxARmvmoz3h42Zd
+ eH2gDh7+8+YPfaMiBYxAqP1E00+AMdDHCoZK7X6psiKuA0FLaczA+NAMD1rlE7dpjT
+ O23E6godf3BYjzVUVq+n0cB/xaE4WRfxm0dcYl64=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1irjCC-0000PM-CF; Wed, 15 Jan 2020 13:58:56 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191111185243.42638-2-broonie@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 15 Jan 2020 13:58:56 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linmiaohe <linmiaohe@huawei.com>
+Subject: Re: [PATCH] KVM: arm64: get rid of var ret and out jump label in
+ kvm_arch_vcpu_ioctl_set_guest_debug()
+In-Reply-To: <ab61de3a04a74f74866683b062d0bab2@huawei.com>
+References: <ab61de3a04a74f74866683b062d0bab2@huawei.com>
+Message-ID: <728a5ea123bf6f55b1653e4ccac76175@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: linmiaohe@huawei.com, pbonzini@redhat.com,
+ rkrcmar@redhat.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, christoffer.dall@arm.com, catalin.marinas@arm.com,
+ eric.auger@redhat.com, gregkh@linuxfoundation.org, will@kernel.org,
+ andre.przywara@arm.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org, kvm@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_055431_479981_15054145 
-X-CRM114-Status: GOOD (  23.70  )
+X-CRM114-CacheID: sfid-20200115_055858_620040_98079CF6 
+X-CRM114-Status: GOOD (  12.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,87 +94,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: kvm@vger.kernel.org, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ rkrcmar@redhat.com, christoffer.dall@arm.com, linux-kernel@vger.kernel.org,
+ eric.auger@redhat.com, andre.przywara@arm.com, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org, gregkh@linuxfoundation.org,
+ pbonzini@redhat.com, tglx@linutronix.de, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 06:52:40PM +0000, Mark Brown wrote:
-> Kernel Page Table Isolation (KPTI) is used to mitigate some speculation
-> based security issues by ensuring that the kernel is not mapped when
-> userspace is running but this approach is expensive and is incompatible
-> with SPE.  E0PD, introduced in the ARMv8.5 extensions, provides an
-> alternative to this which ensures that accesses from userspace to the
-> kernel's half of the memory map to always fault with constant time,
-> preventing timing attacks without requiring constant unmapping and
-> remapping or preventing legitimate accesses.
-> 
-> Currently this feature will only be enabled if all CPUs in the system
-> support E0PD, if some CPUs do not support the feature at boot time then
-> the feature will not be enabled and in the unlikely event that a late
-> CPU is the first CPU to lack the feature then we will reject that CPU.
-> 
-> This initial patch does not yet integrate with KPTI, this will be dealt
-> with in followup patches.  Ideally we could ensure that by default we
-> don't use KPTI on CPUs where E0PD is present.
-> 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->  arch/arm64/Kconfig                     | 15 ++++++++++++++
->  arch/arm64/include/asm/cpucaps.h       |  3 ++-
->  arch/arm64/include/asm/pgtable-hwdef.h |  2 ++
->  arch/arm64/include/asm/sysreg.h        |  1 +
->  arch/arm64/kernel/cpufeature.c         | 27 ++++++++++++++++++++++++++
->  5 files changed, 47 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 950a56b71ff0..9f881acb7acf 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1421,6 +1421,21 @@ config ARM64_PTR_AUTH
->  
->  endmenu
->  
-> +menu "ARMv8.5 architectural features"
-> +
-> +config ARM64_E0PD
-> +	bool "Enable support for E0PD"
-> +	default y
-> +	help
-> +	   E0PD (part of the ARMv8.5 extensions) allows us to ensure
-> +	   that EL0 accesses made via TTBR1 always fault in constant time,
-> +	   providing benefits to KPTI with lower overhead and without
-> +	   disrupting legitimate access to kernel memory such as SPE.
+On 2020-01-14 02:20, linmiaohe wrote:
+> Friendly ping :)
 
-This doesn't quite make sense to me, since E0PD doesn't really benefit
-KPTI. Mind if I fold in the diff below?
+Friendly reply:
 
-Cheers,
+>> From: Miaohe Lin <linmiaohe@huawei.com>
+>> 
+>> The var ret and out jump label is not really needed. Clean them up.
+>> Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+>> ---
+>>  arch/arm64/kvm/guest.c | 11 +++--------
+>>  1 file changed, 3 insertions(+), 8 deletions(-)
+>> 
+>> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c index 
+>> 2fff06114a8f..3b836c91609e 100644
+>> --- a/arch/arm64/kvm/guest.c
+>> +++ b/arch/arm64/kvm/guest.c
+>> @@ -834,14 +834,10 @@ int kvm_arch_vcpu_ioctl_translate(struct 
+>> kvm_vcpu *vcpu,  int kvm_arch_vcpu_ioctl_set_guest_debug(struct 
+>> kvm_vcpu *vcpu,
+>>  					struct kvm_guest_debug *dbg)
+>>  {
+>> -	int ret = 0;
+>> -
+>>  	trace_kvm_set_guest_debug(vcpu, dbg->control);
+>> 
+>> -	if (dbg->control & ~KVM_GUESTDBG_VALID_MASK) {
+>> -		ret = -EINVAL;
+>> -		goto out;
+>> -	}
+>> +	if (dbg->control & ~KVM_GUESTDBG_VALID_MASK)
+>> +		return -EINVAL;
+>> 
+>>  	if (dbg->control & KVM_GUESTDBG_ENABLE) {
+>>  		vcpu->guest_debug = dbg->control;
+>> @@ -856,8 +852,7 @@ int kvm_arch_vcpu_ioctl_set_guest_debug(struct 
+>> kvm_vcpu *vcpu,
+>>  		vcpu->guest_debug = 0;
+>>  	}
+>> 
+>> -out:
+>> -	return ret;
+>> +	return 0;
 
-Will
+I don't think there is anything wrong with the existing code.
+It may not be to your own taste, but is in keeping with a lot
+of the KVM code.
 
---->8
+If you were making changes to this code, I wouldn't object.
+But on its own, this is just churn.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index e4c3ed4e69c3..9cee2008ea9e 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1492,8 +1492,9 @@ config ARM64_E0PD
- 	help
- 	   E0PD (part of the ARMv8.5 extensions) allows us to ensure
- 	   that EL0 accesses made via TTBR1 always fault in constant time,
--	   providing benefits to KPTI with lower overhead and without
--	   disrupting legitimate access to kernel memory such as SPE.
-+	   providing similar benefits to KASLR as those provided by KPTI, but
-+	   with lower overhead and without disrupting legitimate access to
-+	   kernel memory such as SPE.
- 
- 	   This option enables E0PD for TTBR1 where available.
- 
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
