@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B916C13E334
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:00:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB7C113E340
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:01:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HCcYXuxlyRcCgVp2XFsLjfjb9VQTgwQM1LC01QVHSao=; b=exz6q55WiydY75
-	Qj6oiedyVazmz+P/H1U7w3MbSFQJkQFGsQiwOQpmQzPLt0MHSo50FGh8NqoVLb5HCfh8CC6J3xT12
-	/hXahzW4jaHaiLFZ5wOlOd/bh+ZzjGdazXZ/rZCSxcZTrcFci+WiYbIS9z7enLqb67JtDQMtkC4SY
-	I7NIyUDPgIocWMlpyIh0NssgI7xllJVAuf8Sf8KRj4yzlYfzuGsBGsQ4BQv6RyyZ97FQrbPgiZaF+
-	FsNvLmoU90pShJZNZuwuNyZfV5zEc4LVMDMpKWa0sdFik16DcApxerIMkIuOjz5XTq8KyoImUpAlo
-	QNu7DOfSNIUPJOf0zQ4A==;
+	List-Owner; bh=CmLrjajahfsM5kWzNg7hP+MsZH/m6+ckjBE0p0UGe4w=; b=pmCojOBwTqasSw
+	lCpfI7GNPgloxfmHjrvr3MGQZlpROFy5zYkT+OP8pDDFuF0wKn0OflctNEPkZliESj1jOm1/rmbay
+	6UKhg+HmFek9l9BPOLrj87WcAAPqQHXPipk1NiBlrazEnazsHI1Z6odwCkUKvjnPsnPBWO1mRrsC/
+	WwoUqOsccxj/n3ZwYqhzTjVfChCW4Dl+EAsVjxzTwz8d4p8y4g5ZYwlDwEm0L7fnvxnwhPFe3DMsb
+	SDmNHKl42x5Vf7jwUHFKVpfCCnUBfYTH3gYRTlDQT6/nHQwbVkAmMXbRNRZT+eA0cEyrLbFCPLxpz
+	o8qqxJK2RkysO1e9pO4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8VY-0000cp-Oe; Thu, 16 Jan 2020 17:00:36 +0000
+	id 1is8Vu-0000tw-RT; Thu, 16 Jan 2020 17:00:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8QN-0002vq-DX
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:19 +0000
+ id 1is8QQ-00030q-4L
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B53A2467A;
- Thu, 16 Jan 2020 16:55:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A59D422522;
+ Thu, 16 Jan 2020 16:55:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193714;
- bh=klIKoTMA6lF5peF5ulNsoGKugOg5LPRiZi3nziNWFJk=;
+ s=default; t=1579193717;
+ bh=r1TXOJ5+im7ZtJxcLkK9fAtqlGOUDTNxoiKn4bdGoiE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QX7HSAm21TH7/fKsGEiXztMOGuVMkSlZL4knblr1NL+TptW4vQWoEDRBWHNBRG5v9
- A3LfW1RFuGslOafPPsA933Wctk6MtHHWq3S7OzXGRKJFAkj2PdJYCENb6aQO4mD8Vz
- UshUBePUqlBJIOfDUh5hvToTkcIZMefPh8zb9rKg=
+ b=iAvlw/yfBXArpMHce8av4YhNQXGC7Biqy5lRJtvEqoRzZ4GsEbbnRZNQw0K4Xk11Q
+ lsBjWr9A4J8f0yNsjJZcUSoo3xdORzZMlpYb8QaGKJegcR3UhSkBccQr4Yqs03Gq/i
+ 55RYxprIwZnZ53sZtxcAg18O6cuPNGhHUcrD1jKo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 010/671] ARM: qcom_defconfig: Enable MAILBOX
-Date: Thu, 16 Jan 2020 11:44:01 -0500
-Message-Id: <20200116165502.8838-10-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 012/671] PCI: iproc: Remove PAXC slot check to
+ allow VF support
+Date: Thu, 16 Jan 2020 11:44:03 -0500
+Message-Id: <20200116165502.8838-12-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085515_523167_80285416 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_085518_227340_C2590A59 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +80,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Gross <andy.gross@linaro.org>, Sasha Levin <sashal@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Frank Rowand <frank.rowand@sony.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ Jitendra Bhivare <jitendra.bhivare@broadcom.com>,
+ Ray Jui <ray.jui@broadcom.com>, Andy Gospodarek <gospo@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Frank Rowand <frank.rowand@sony.com>
+From: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
 
-[ Upstream commit 54c2678cd198f61555796bbda5e1727e6e1858f1 ]
+[ Upstream commit 4da6b4480766e5bc9c4d7bc14bf1d0939a1a5fa7 ]
 
-Problem:
-ab460a2e72da ("rpmsg: qcom_smd: Access APCS through mailbox framework"
-added a "depends on MAILBOX") to RPMSG_QCOM_SMD, thus RPMSG_QCOM_SMD
-becomes unset since MAILBOX was not enabled in qcom_defconfig and is
-not otherwise selected for the dragonboard.  When the resulting
-kernel is booted the mmc device which contains the root file system
-is not available.
+Fix previous incorrect logic that limits PAXC slot number to zero only.
+In order for SRIOV/VF to work, we need to allow the slot number to be
+greater than zero.
 
-Fix:
-add CONFIG_MAILBOX to qcom_defconfig
-
-Fixes: ab460a2e72da ("rpmsg: qcom_smd: Access APCS through mailbox framework"
-added a "depends on MAILBOX")
-
-Signed-off-by: Frank Rowand <frank.rowand@sony.com>
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Signed-off-by: Andy Gross <andy.gross@linaro.org>
+Fixes: 46560388c476c ("PCI: iproc: Allow multiple devices except on PAXC")
+Signed-off-by: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
+Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Reviewed-by: Andy Gospodarek <gospo@broadcom.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/configs/qcom_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/pci/controller/pcie-iproc.c | 8 --------
+ 1 file changed, 8 deletions(-)
 
-diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-index 6aa7046fb91f..bd6440f23493 100644
---- a/arch/arm/configs/qcom_defconfig
-+++ b/arch/arm/configs/qcom_defconfig
-@@ -207,6 +207,7 @@ CONFIG_MSM_MMCC_8974=y
- CONFIG_MSM_IOMMU=y
- CONFIG_HWSPINLOCK=y
- CONFIG_HWSPINLOCK_QCOM=y
-+CONFIG_MAILBOX=y
- CONFIG_REMOTEPROC=y
- CONFIG_QCOM_ADSP_PIL=y
- CONFIG_QCOM_Q6V5_PIL=y
+diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+index 3160e9342a2f..c20fd6bd68fd 100644
+--- a/drivers/pci/controller/pcie-iproc.c
++++ b/drivers/pci/controller/pcie-iproc.c
+@@ -630,14 +630,6 @@ static void __iomem *iproc_pcie_map_cfg_bus(struct iproc_pcie *pcie,
+ 			return (pcie->base + offset);
+ 	}
+ 
+-	/*
+-	 * PAXC is connected to an internally emulated EP within the SoC.  It
+-	 * allows only one device.
+-	 */
+-	if (pcie->ep_is_internal)
+-		if (slot > 0)
+-			return NULL;
+-
+ 	return iproc_pcie_map_ep_cfg_reg(pcie, busno, slot, fn, where);
+ }
+ 
 -- 
 2.20.1
 
