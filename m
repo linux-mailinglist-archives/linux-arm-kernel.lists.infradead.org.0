@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0586F13D666
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 10:07:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9B9513D67E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 10:13:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/gj4QQp8Yd34QjsH0eSmCMyhgxWkTntinJebQ4FF6G0=; b=KDO1PXvlzvwbxd
-	JI0rRxI3+K90IsiTEu4P+SdtYRQbVowreOTHBZn5WIA+fAgrzs1uwrzconToz4lI3zXxiKdqPUq/S
-	hT6z2kIURckt6KFMRiRszlruaWXrQ8mjLLjNriOYKGlIL2d84zNfC+Fhby75GOT8baKQ1tXQQDENP
-	D0kYe++2nbMl7j/Q2g+Nz+uzC+bk4aufeQBUsjqTkygf369jU+J+86/foDorTHACOPhZ32A5W1Grj
-	QyBG1G+ajFnokBz1eUAIzPYsAy5jQep97MCaG8bU6FmeIVRoYw8txFouol58bl5XBXKbOrZ4HjNTP
-	2pVID9RwpSVb75dpaFtA==;
+	List-Owner; bh=wrffEJzo6xwmvIihiHWkRXfqX1XVFik8EAbTXikBGG8=; b=WVwJ0T5EoKgXuI
+	kMIVVn50+6mgogPHObyoNEtb8WUnlm8IhWd+MtopulYJLKmvBd+2QufIW+Xg1+ofNZnyq8qBw0iaC
+	NkVUpMhO0CyuAwrk5KPAXzQD2gQq4oVo6naN9K2TA08Nq0XOuUDuQBdiyg5XSzk9LAmGLt/3Nnmjb
+	y0fGjL3tkE8huue5S/KpXUkPkqZmJwa41AUIi2d5xgpywKbzqGIDMrF/bcMSzqiklodSOZLGxzMXx
+	ZnvKaYxmFMiqqXTo4fWmrzmVGBEkJq0qW7epO6Q/Duc1wWBLoEW2TftbNrShQlTJ+Kmuxcv/W4k6F
+	yvz6CAFDPztyn+NMWn9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is17J-0006In-3b; Thu, 16 Jan 2020 09:07:05 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1is1DK-0000BB-2H; Thu, 16 Jan 2020 09:13:18 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is177-0006I5-JR
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 09:06:57 +0000
-Received: by mail-lj1-x243.google.com with SMTP id a13so21742653ljm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 01:06:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YX3/Ti4rNNr6UCshG9bZTqGTKsmc/hxmzqtnVPBHDm8=;
- b=MGfwKQoKAqc3fScLEHCq7ywLuKCcvWPmQ9A7lwyExcP8OV3fnyDUQ4mQEIZsH51+oJ
- 0kNXekwRVSQafelLavUheZa9llfrrDBxGeJJtIf2c5aYnACbp3ferLP/cK1w4LwfX0F3
- 6Y7NAppxwKV8qjOAUP4jQl6u1uUyfEKMd0lLnEwFErxZTg7GvpGuBiAIDoD22b5Qu04x
- FmzKSj5FCFYAwffwgIp3VN72A7V4dI1YvvpN/tGlg9y7nXiewtk9bT33IzGyPGzNU5+w
- 7RvD5HjpxlCMTAYkHfR4pIC5wzIa0hnrVGufZMvfS0btIgdaMkCANDqJNtjHbDC/IHe9
- 87uA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YX3/Ti4rNNr6UCshG9bZTqGTKsmc/hxmzqtnVPBHDm8=;
- b=STuSHfrLkpwqjmiXfhDIK/CnYvTztnHkzSPaQWj29q4URpZBN98CJmTi23kwmhMyXQ
- cnPHiNgClSNI8cbLKQINCWUsNqPpU8AJVbKl/oEgKJDNCLOR9LmhqFVOT5ssQ3rzOYvJ
- aIHMUENdmzqVmccToYv/BnP717jkAcfi4vrFlcV9dyY6YuCJ5xot7m+hwU0+mBd0ITuw
- yia4HKtZZzVPqLZ53T3h17G24yaWK2/Y0BGW4db/tQ7OrGbR/U8ds5iYRVNmVuF7UhZ5
- Tt8NmLLhKCbEEv/f8yZkH8cW7QF72+BuczNnceTkUZ8wi6dcrGHL0+Z3rl7y2+AIXKcM
- w+Ig==
-X-Gm-Message-State: APjAAAXTq7UvRyBw2VnNYS1Pn5i/I+AaCJ0dKuXbGpVoeEG0kU5olRZ6
- xhgWZiGEDH93zZWLnVfIAI2pjSDYKHQ3JPG3UZRGUA==
-X-Google-Smtp-Source: APXvYqz1bWJIuOjw+BT1TEwOPq4JBdgdI/skG6NXF/N1KsERHNA6I+CpAf4tjtbyYYrx3gjxL2aY1jk3BlxmtyTmf9w=
-X-Received: by 2002:a2e:960f:: with SMTP id v15mr1685441ljh.265.1579165611849; 
- Thu, 16 Jan 2020 01:06:51 -0800 (PST)
+ id 1is1D1-0008SK-V1; Thu, 16 Jan 2020 09:13:03 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id B17B52938DB;
+ Thu, 16 Jan 2020 09:12:51 +0000 (GMT)
+Date: Thu, 16 Jan 2020 10:12:49 +0100
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v3 12/40] mtd: nand: Rename a core structure
+Message-ID: <20200116101249.08f0da5e@collabora.com>
+In-Reply-To: <20200116095301.14c191ac@xps13>
+References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
+ <20190919193141.7865-13-miquel.raynal@bootlin.com>
+ <20191012113530.6fe78c71@dhcp-172-31-174-146.wireless.concordia.ca>
+ <20200116095301.14c191ac@xps13>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <20200109145333.12260-1-benjamin.gaignard@st.com>
- <20200109145333.12260-3-benjamin.gaignard@st.com>
-In-Reply-To: <20200109145333.12260-3-benjamin.gaignard@st.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Jan 2020 10:06:40 +0100
-Message-ID: <CACRpkdaK+kQZH_Txu-r4DY_m6muh26aCWcGOkxbi8hbCgww28A@mail.gmail.com>
-Subject: Re: [PATCH 2/3] clocksource: Add Low Power STM32 timers driver
-To: Benjamin Gaignard <benjamin.gaignard@st.com>,
- Baolin Wang <baolin.wang7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_010653_670033_3B1F06EE 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_011300_136776_83B400F7 
+X-CRM114-Status: GOOD (  20.42  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,41 +62,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Pascal PAILLET-LME <p.paillet@st.com>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Paul Cercueil <paul@crapouillou.net>, Marek Vasut <marek.vasut@gmail.com>,
+ linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 9, 2020 at 3:54 PM Benjamin Gaignard
-<benjamin.gaignard@st.com> wrote:
+On Thu, 16 Jan 2020 09:53:01 +0100
+Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 
-> Implement clock event driver using low power STM32 timers.
-> Low power timers counter s running even in when CPU is in stop mode.
-> It could be used as clock event broadcaster to wake up CPUs but not like
-> a clocksource because each it rise an interrupt the counter restart from 0.
->
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> Signed-off-by: Pascal Paillet <p.paillet@st.com>
+> Hi Boris,
+> 
+> Boris Brezillon <boris.brezillon@collabora.com> wrote on Sat, 12 Oct
+> 2019 11:35:30 +0200:
+> 
+> > On Thu, 19 Sep 2019 21:31:12 +0200
+> > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+> >   
+> > > Prepare the migration to a generic ECC engine by renaming the
+> > > nand_ecc_req structure into nand_ecc_props. This structure will be the
+> > > base of a wider 'nand_ecc' structure.
+> > > 
+> > > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> > > ---
+> > >  include/linux/mtd/nand.h    | 8 ++++----
+> > >  include/linux/mtd/spinand.h | 2 +-
+> > >  2 files changed, 5 insertions(+), 5 deletions(-)
+> > > 
+> > > diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
+> > > index 531c1799bf2c..7072f14239e5 100644
+> > > --- a/include/linux/mtd/nand.h
+> > > +++ b/include/linux/mtd/nand.h
+> > > @@ -128,11 +128,11 @@ struct nand_page_io_req {
+> > >  };
+> > >  
+> > >  /**
+> > > - * struct nand_ecc_req - NAND ECC requirements
+> > > + * struct nand_ecc_props - NAND ECC properties
+> > >   * @strength: ECC strength
+> > > - * @step_size: ECC step/block size
+> > > + * @step_size: Number of bytes per step
+> > >   */
+> > > -struct nand_ecc_req {
+> > > +struct nand_ecc_props {
+> > >  	unsigned int strength;
+> > >  	unsigned int step_size;
+> > >  };
+> > > @@ -191,7 +191,7 @@ struct nand_ops {
+> > >  struct nand_device {
+> > >  	struct mtd_info mtd;
+> > >  	struct nand_memory_organization memorg;
+> > > -	struct nand_ecc_req eccreq;
+> > > +	struct nand_ecc_props eccreq;    
+> > 
+> > Let's rename this field too: s/eccreq/eccprops/  
+> 
+> This is just a transition step, this field is being replaced by a much
+> wider structure two patches later. The impact of renaming this field is
+> huge compared to its interest so I'd prefer not to do it.
 
-Looks good to me:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-
-If you have a spare always-on timer (and it looks like you have) which
-you can set as free-running, you could register it with
-CLOCK_SOURCE_SUSPEND_NONSTOP so it
-keeps the system clock ticking also during suspend as
-alternative clock source.
-
-Yours,
-Linus Walleij
+Fair enough. I guess it's no longer named eccreq after the transition.
 
 _______________________________________________
 linux-arm-kernel mailing list
