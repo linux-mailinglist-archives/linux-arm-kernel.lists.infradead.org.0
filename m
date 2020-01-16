@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E0C213F215
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:33:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC5F113F28B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:36:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gA7q8oWAWcFVXcSEpZuR2shYusUsHAdCTYgtNgdhTuo=; b=ZdvlUzRazBpE6P
-	MY3Y21cvvMuY99nGLQO0TfH5EJiDXoGyY38suzNcu3YllBCLYDJ/F2jpYU8kuXzVtgBscBfuI0nsw
-	I74zha5+OKlePfqN6pKP1Q6hM3JENwEP0Xl2GdfybJlkBusLdt7YkhwzAHt/gqrK1RM2df82SCxoP
-	K1RAj9WjoJfu04ePslpO6iGbmDaE3AcV7gjn3d8d8Q+hvURPSQxIrnIe8JnCJAPG0pai2xZHR0SXz
-	I3dEOPWtvAK4ghWfOL0dylYgXDls0Ke28b7UO8NwWS1H1+Z+HiBl+XyIZJlAzppuXKNAuo9jJqhq2
-	BZvAcx+9Yv2x8Fv66cjQ==;
+	List-Owner; bh=OIlHIhOqzwZAQ7s68NzHGzv1hFJHgx4pTYZvdNdXuW8=; b=XVGIZW7+e9WcUs
+	IMXQqz4oTPxFbdMtG7SFvgzBiftwqwrhTfv1Ftk2o3wHnh3ubL2uG/rJR+Pg/pz4FoTEwKoIoP7Sn
+	xDW5nyyz2eFdSGMEsWSzouELi+ThpL15YVa8IAXamRfAB6h+d0ewK/MXT2R4DXIorDcUUuxBf3KiT
+	WmxQgG8e4lshiFpIwXkk4B0fnxslfYFxNc6WaaVG1CWhbQvj/Q6oTODwuN11i586EDh4B8uvRUziB
+	Gj5ypKuqTex+Uj/jtSSxbVvqSakphGAN54s7V+itGBW58dvJcI7UcK68FOqahwleeiQT60plxDVRy
+	1ofCAviMp/P/KE3R7p9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9x7-000231-1j; Thu, 16 Jan 2020 18:33:09 +0000
+	id 1isA01-0005ld-Ty; Thu, 16 Jan 2020 18:36:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9CT-0004np-VE
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:45:01 +0000
+ id 1is9EN-00076K-WA
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:59 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D46112477B;
- Thu, 16 Jan 2020 17:44:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4F022246E1;
+ Thu, 16 Jan 2020 17:46:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196697;
- bh=eZc1L4+pca2HQRZ4NlFHXHq40yJapRdOmzlFzQ/cknQ=;
+ s=default; t=1579196815;
+ bh=g9FrjlnHZx2YHv0E1GAai0ePZg5VSIR3e6f0Xo8Hfx8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zlHbDbVJTAEzMxf/SUtdxJAXgWWsPwuJLkj5y/dsFpdWk6r25yTkB4U8bYfo9zX64
- 84fLlEQVbP4jGLbiOgOA8O5xtVXhKMTROUWezOITnG+sEvonw9zZ2G1XCxQxKBbcNo
- IIkiMjs9fllhsIEfoPhk17Sc1+ru8i2vFwMMaDwY=
-Date: Thu, 16 Jan 2020 17:44:51 +0000
+ b=QRF4GWYwu4KTn0wK6JqSUYnpny+8KzACx6jIDJ17e1cg0wXkOsa42jn5t85QAZqih
+ A3g4GB7bOEbx2Pvnmc0VKCx7ssyg6vsPowSMuj3C1wVOP3lttu8Je0Pq7Z6LMwGBeV
+ UrfEmujro2DbMUdZu4/vFQ/0C+J7D7cx6Ay07dyA=
+Date: Thu, 16 Jan 2020 17:46:49 +0000
 From: Will Deacon <will@kernel.org>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v6 11/15] arm64: efi: restore x18 if it was corrupted
-Message-ID: <20200116174450.GD21396@willie-the-truck>
+Subject: Re: [PATCH v6 12/15] arm64: vdso: disable Shadow Call Stack
+Message-ID: <20200116174648.GE21396@willie-the-truck>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-12-samitolvanen@google.com>
+ <20191206221351.38241-13-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191206221351.38241-12-samitolvanen@google.com>
+In-Reply-To: <20191206221351.38241-13-samitolvanen@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094458_032880_A2364D8C 
-X-CRM114-Status: GOOD (  16.08  )
+X-CRM114-CacheID: sfid-20200116_094656_233596_8098916E 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,38 +94,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 02:13:47PM -0800, Sami Tolvanen wrote:
-> If we detect a corrupted x18 and SCS is enabled, restore the register
-> before jumping back to instrumented code. This is safe, because the
-> wrapper is called with preemption disabled and a separate shadow stack
-> is used for interrupt handling.
+On Fri, Dec 06, 2019 at 02:13:48PM -0800, Sami Tolvanen wrote:
+> Shadow stacks are only available in the kernel, so disable SCS
+> instrumentation for the vDSO.
 > 
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 > Reviewed-by: Kees Cook <keescook@chromium.org>
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 > ---
->  arch/arm64/kernel/efi-rt-wrapper.S | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
+>  arch/arm64/kernel/vdso/Makefile | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
-> index 3fc71106cb2b..62f0260f5c17 100644
-> --- a/arch/arm64/kernel/efi-rt-wrapper.S
-> +++ b/arch/arm64/kernel/efi-rt-wrapper.S
-> @@ -34,5 +34,14 @@ ENTRY(__efi_rt_asm_wrapper)
->  	ldp	x29, x30, [sp], #32
->  	b.ne	0f
->  	ret
-> -0:	b	efi_handle_corrupted_x18	// tail call
-> +0:
-> +#ifdef CONFIG_SHADOW_CALL_STACK
-> +	/*
-> +	 * Restore x18 before returning to instrumented code. This is
-> +	 * safe because the wrapper is called with preemption disabled and
-> +	 * a separate shadow stack is used for interrupts.
-> +	 */
-> +	mov	x18, x2
-> +#endif
+> diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+> index dd2514bb1511..a87a4f11724e 100644
+> --- a/arch/arm64/kernel/vdso/Makefile
+> +++ b/arch/arm64/kernel/vdso/Makefile
+> @@ -25,7 +25,7 @@ ccflags-y += -DDISABLE_BRANCH_PROFILING
+>  
+>  VDSO_LDFLAGS := -Bsymbolic
+>  
+> -CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
+> +CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
 
-Why not restore it regardless of CONFIG_SHADOW_CALL_STACK?
+Should we be removing -ffixed-x18 too, or does that not propagate here
+anyway?
 
 Will
 
