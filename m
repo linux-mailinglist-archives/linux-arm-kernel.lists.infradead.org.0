@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 402CE13E615
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:18:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 923C613E624
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:19:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vTaCM0knqdJnNqfFpz+087ypxxLusqMz4jZbnNPvdtM=; b=TJX3Eu8pbtLeJ0
-	oSgBzaBwDSFQXX34ZFPNHKPU2t/iylHbqXtFJYxHW+a14/sbh4dWuT8IQTe8CrPRwY2anlDfLHd+o
-	/Ey43zzKdtEn7kaEDVbG5jS2iLIQG/YzOQnaKLnIfKoI8zNOS3VMEJNKfeiNhDdNmrxtdYYei0n9Y
-	K74x8OMzOGI98X81YZKL+d2q2XJDVC4jPFyeNLNOiK6Z77K1YYid4pcwM0L5ojPs0t2RQDgIx76Fo
-	INdc77TtuaXw3kryFVTBGLGVbCY/ZwwvM4vDsBEYIHI0MkR7bFXh10nUJ18OYtGXRJCSTEBSl9I1o
-	is1N6FqDtgKZqC4z7CZA==;
+	List-Owner; bh=T1LxMI+BwdUuJi4WGMf4K6DNP5ydxCKfrMEWO/dbavg=; b=oZ6IM0uDGc0wy8
+	RbuybGl9YIQXasDNoLLUJHYEJ1g8513wXhCDdMuIXeHX3iUa61kqcDc+CtdF/aInh4dsyRDY2/lsM
+	9M4nXUZFEfkb2eNCQGiE2mDWXmvyqcEk2i/HKXJf/jZ4q4pGfEVX4YfrGv2Cj9d7azjBqEF0wq9al
+	EvTirVLqTtxOUNg7lGBvRXTHeiHNahnuoZv0YIo8vlv2pn6U/nOqBV4pFyo4ZNgFvGkY8iSl5XnHP
+	S6x7zQ8fkQURwylMGzQHkipWiL09Mlqc7kxrqssOQiyfFc/QWCHr7/Yr1ehNDi2Tj4o3NHZf+vDwV
+	HiT06kkT4sQ1nI3jjvRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8n2-0003Vy-JH; Thu, 16 Jan 2020 17:18:40 +0000
+	id 1is8nT-0003q0-6S; Thu, 16 Jan 2020 17:19:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8aH-0007HI-W6
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:36 +0000
+ id 1is8aL-0007KW-2Q; Thu, 16 Jan 2020 17:05:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A03E72077B;
- Thu, 16 Jan 2020 17:05:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4079A24684;
+ Thu, 16 Jan 2020 17:05:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194328;
- bh=A6Z7jOfd+OQTDKe1kq58OeNgsQqWUkVXWSp8srLhlIk=;
+ s=default; t=1579194331;
+ bh=Hv37BfS55KKDAbh7Qq/n5MYz80MnjEqtZFsgK6Mdv/o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PzlqwGPB7jsNwvb30iPS+PEdmVSY0tLg/JxV9pvMNgpx6XGtj3oghgDvRhWfrNjM5
- Auxk6GyzZ9E9+KTK0in3e3IhMghzUv3NKXEVqfzaWIEfVeoxOKT1ctIMNqkUubWl41
- FeUX6Cox+5sET37hnvmBFRppgQh2NUSQJxR+RMRA=
+ b=AQ/uDMdir2IB3IrBlV2W3YTW8sv0wY7TTiSHV3sflENNBUKSmnS7P1pyACU8+cnJS
+ sUME1CAOQWUPYx/Veep3HNMjzg6eyPrnsBUnKAemLUQ6kh7KnFT0yYKwcQScsVmLC2
+ sm5wloc9N4aqok52LqwZSQWVTYNTj32bMD1aYgMI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 276/671] arm64/vdso: don't leak kernel addresses
-Date: Thu, 16 Jan 2020 11:58:34 -0500
-Message-Id: <20200116170509.12787-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 278/671] rtc: mt6397: Don't call
+ irq_dispose_mapping.
+Date: Thu, 16 Jan 2020 11:58:36 -0500
+Message-Id: <20200116170509.12787-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090530_084629_B98505B9 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20200116_090533_220223_736C6A18 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,47 +79,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
- Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org,
- Matteo Croce <mcroce@redhat.com>
+Cc: Sasha Levin <sashal@kernel.org>, linux-rtc@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-mediatek@lists.infradead.org, Pi-Hsun Shih <pihsun@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matteo Croce <mcroce@redhat.com>
+From: Pi-Hsun Shih <pihsun@chromium.org>
 
-[ Upstream commit 0f1bf7e39822476b2f921435cf990f67a61f5f92 ]
+[ Upstream commit 24db953e942bd7a983e97892bdaddf69d00b1199 ]
 
-Since commit ad67b74d2469d9b8 ("printk: hash addresses printed with %p"),
-two obfuscated kernel pointer are printed at every boot:
+The IRQ mapping was changed to not being created in the rtc-mt6397
+driver, so the irq_dispose_mapping is no longer needed.
+Also the dev_id passed to free_irq should be the same as the last
+argument passed to request_threaded_irq.
+This prevents a "Trying to free already-free IRQ 274" warning when
+unbinding the driver.
 
-    vdso: 2 pages (1 code @ (____ptrval____), 1 data @ (____ptrval____))
-
-Remove the the print completely, as it's useless without the addresses.
-
-Fixes: ad67b74d2469d9b8 ("printk: hash addresses printed with %p")
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Matteo Croce <mcroce@redhat.com>
-Signed-off-by: Will Deacon <will.deacon@arm.com>
+Fixes: e695d3a0b3b3 ("mfd: mt6397: Create irq mappings in mfd core driver")
+Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/vdso.c | 2 --
- 1 file changed, 2 deletions(-)
+ drivers/rtc/rtc-mt6397.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index ec0bb588d755..42b7082029e1 100644
---- a/arch/arm64/kernel/vdso.c
-+++ b/arch/arm64/kernel/vdso.c
-@@ -146,8 +146,6 @@ static int __init vdso_init(void)
+diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+index e9a25ec4d434..c06cf5202e02 100644
+--- a/drivers/rtc/rtc-mt6397.c
++++ b/drivers/rtc/rtc-mt6397.c
+@@ -343,7 +343,7 @@ static int mtk_rtc_probe(struct platform_device *pdev)
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Failed to request alarm IRQ: %d: %d\n",
+ 			rtc->irq, ret);
+-		goto out_dispose_irq;
++		return ret;
  	}
  
- 	vdso_pages = (vdso_end - vdso_start) >> PAGE_SHIFT;
--	pr_info("vdso: %ld pages (%ld code @ %p, %ld data @ %p)\n",
--		vdso_pages + 1, vdso_pages, vdso_start, 1L, vdso_data);
+ 	device_init_wakeup(&pdev->dev, 1);
+@@ -359,9 +359,7 @@ static int mtk_rtc_probe(struct platform_device *pdev)
+ 	return 0;
  
- 	/* Allocate the vDSO pagelist, plus a page for the data. */
- 	vdso_pagelist = kcalloc(vdso_pages + 1, sizeof(struct page *),
+ out_free_irq:
+-	free_irq(rtc->irq, rtc->rtc_dev);
+-out_dispose_irq:
+-	irq_dispose_mapping(rtc->irq);
++	free_irq(rtc->irq, rtc);
+ 	return ret;
+ }
+ 
+@@ -369,8 +367,7 @@ static int mtk_rtc_remove(struct platform_device *pdev)
+ {
+ 	struct mt6397_rtc *rtc = platform_get_drvdata(pdev);
+ 
+-	free_irq(rtc->irq, rtc->rtc_dev);
+-	irq_dispose_mapping(rtc->irq);
++	free_irq(rtc->irq, rtc);
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
