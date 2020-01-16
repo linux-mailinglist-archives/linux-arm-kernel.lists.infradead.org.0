@@ -2,95 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB00D13DF25
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:48:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E532E13DF4B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:53:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2oSUdqb5CT3FU+1uUDvU2JxtGW/s4DKLUb/OZ2iBR9U=; b=rikpG25cZ6esMQ
-	s2rfjEBX7idWsxE6VgFh1U9xM4hh1PWQT12weHapk+fPOHtfnZiO7+Cb+x0XzRisR6gk5bnm+z+qs
-	te0owv+CcB32QSUc89G+Zouzy+rOJqIcQnAHGkcXLVmYEIPQzuj2hmmjusUGQ+8okR2YJkOSyWetQ
-	nFlwOMxHT1Jtm9MKpNSigEKp37eu5iR0Yix1WlOrhdZh7EVCOoLAxQII8Xw/DNxCJoDDiTXx4DmdO
-	A9vRe+pktW6/hFeqK9xNxeok6qNwLfcJOzHJRZTzHJdbKyYslufzdlREwohicHoWzMAzs9l2ucv86
-	avuHxKkMc9OOIX8aLDrg==;
+	List-Owner; bh=jXIK6Y1Yab1Y0VlXf+Q3OacvUiXatbfZjssUCLOujPg=; b=dGZuHTwRlb76u+
+	mzXkZJTiTC70z72DNVDrHUnxw48fooU3wv0pPnbUy9ymfQMtLaE/xcvGpflUVxGC2vq0biLQIM4Rj
+	hFNkCUpwFP2jhCifv/NTnDqoZJtSc6OaXIq4M4cdxkKWWWxjpR64y0O7hVbbgfNmwXCTtDE9CGC/G
+	QEPzsxWUtBW8n/Ge74Pt83GOsBgNE8HDa03XwRjtrshkXaQD9kRIoTQYLC2kSZZJqFxPurNNG1LS5
+	BykosB8rkVnAvW6+qyIeK+osEI0hCtcgKtpdK+wCnbKW54cA8Y7RD3stN12gg+PW9HfDKr0rSHzIo
+	MwUTUkQyAZu8bbvuugCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is7Nm-0005jG-HA; Thu, 16 Jan 2020 15:48:30 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1is7Sq-0000k0-1w; Thu, 16 Jan 2020 15:53:44 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is7Nb-0005iI-TI
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:48:24 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id d5so1694478pjz.5
+ id 1is7Sc-0000a3-FL
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:53:35 +0000
+Received: by mail-lf1-x144.google.com with SMTP id l18so15870606lfc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 07:48:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=huTcCeKRdO6T2NesAaGqeynPCc8WvA8tugh/WJ8Dtbc=;
- b=G0x92qOpFp0qKI6nZ7kGQOhD71Zn/VDKWFJJCIrflldCLCzZXOHAORHnXkmDRhvFfy
- 5zUGA5yj0/lLifVw4OCSmPfgq29wdN92rwS5addh6NEsEpUCmxii5jch9eJdJuEKH2oD
- CKSWUCQbU1UozBSDGofweLzCC/1HV5/Q1PI6gw4wBFCtwm5HQPV5Y56GaBXgnfcH5ZQj
- 2414/2w2MxK10PI3mHJS3cybbwxRPMQVLKh/VjbaMK/B3E3x0RJZ7WrXE2piq3FvhuTr
- 20ls3AX5kjhhCCOKeRzNx7oKXw9v3oSQtvs+QHjUrcYBdpFFvCTmmygweiAqCD1T5G8M
- pbXg==
+ Thu, 16 Jan 2020 07:53:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=3b7/rLBHWWHHYbKlS/39gt431nhXhJtYjpUHbaLNr48=;
+ b=wAHw/S9tpiW6/rLfiflhLgJlKqcbwOlb9ikkhtYxRh+yigmPtz5rZmKdABwJ4ic8Ha
+ M33iKs5jTU9sjzj0Eg3/LMkbs+ACuxkZcRsDB5bBK2Nhn6okMoqHcbOjlFADq9X53JDe
+ WwvMyTDS3hZNvTK3oPxFD5bKFTbSoHfhCH8TWJP6Ljwhm99W4tZs16FU3BVitlpVZCV8
+ ZiR6//F8cJ2yQdb8zaM3x4qL9zhSFHvb93qBrCVWgj3HF0VyLL2e/l9Pnvv/b6YbW417
+ HnmyX3PEJs1Wmye0ZZyU5AOpQmwI3cskyx5jY4h8kVoZU+jQTBRuoyPyMF3pqGgMRAZc
+ TMcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=huTcCeKRdO6T2NesAaGqeynPCc8WvA8tugh/WJ8Dtbc=;
- b=PpQ/+i/G9yfaMg3quOtjDAXFN60qGxGH2RyJ9TC6ribhrMYeCDspy6AOhQOqMHJubx
- HFpHMrwG3O8MCcYRjsj6Ti1WqFIX4vFd5KSqxf9vcwWOEnHbmI65w+HnMvaT3kKqKoYw
- 7alNrhBUGcM3zTfUJwwtJI6See0Lq/BTQ2hSTAFTyNwb+mQGC8HSueZ81m1gHM21vpVD
- HbSaebqti2vDBnk+ded9kg/6AleZRUBJKiQzTJeGuNbgGZgXeXAE8CouHHB1ztVt/HDf
- /UEfEIOSlAMTvz1zJJbAd8EvteDjWlHlfYcR05+7uwyBykhfqyXRLfyCI5K+Dwrg3dU0
- 3peQ==
-X-Gm-Message-State: APjAAAVWO02Cmv3GbYvXmmPrdfxrDJThsydA3Ktk4AYDIcV+M3yMSRns
- 39oXjqbPX7IcE6GPvUoC8Ms=
-X-Google-Smtp-Source: APXvYqyf1XdfYZahE1H4voslQkQxT590gcKa4OeO8qRpdhQpm30jdS2BgPlQ4bM5jJxEU4tr8jUqLg==
-X-Received: by 2002:a17:90a:246c:: with SMTP id
- h99mr7613283pje.134.1579189697928; 
- Thu, 16 Jan 2020 07:48:17 -0800 (PST)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id s13sm8048976pjp.1.2020.01.16.07.48.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 16 Jan 2020 07:48:17 -0800 (PST)
-Date: Thu, 16 Jan 2020 07:48:15 -0800
-From: Guenter Roeck <linux@roeck-us.net>
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>
-Subject: Re: [PATCH 1/9] watchdog: of_xilinx_wdt: Add comment to spinlock
-Message-ID: <20200116154815.GA23637@roeck-us.net>
-References: <1579181217-31127-1-git-send-email-srinivas.neeli@xilinx.com>
- <1579181217-31127-2-git-send-email-srinivas.neeli@xilinx.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=3b7/rLBHWWHHYbKlS/39gt431nhXhJtYjpUHbaLNr48=;
+ b=PBVI9D1iSt/cl08zgzD+XkEAsMtDKAQRl+5uzLlwrFxvFWaozkR2iHWAICOx8ZJLVK
+ BHUoXzW81wq1IMZxZ4KDXahRHZ3MZTcN8VRWeMrXkdHRx7H288XfxzEmCfeAbxACCWS4
+ QrOxoLj8EaPzJ4NzGOUXmlpStn2R5/Qh6+8QBsxrfmHth2EQHeTRPsz++2NzSGRlDxTT
+ MavWdmN94lDO8g6yaoDGur/Lt+599Hgp8upIW6qs8Zes4Bwhqscdq+hfvCE21hOqNhN8
+ MaIeSbacb9nP/UTgl1gMvRd8RAMA3/1X5l1rhQuLtv24sEC74rT41es/KFqpltnmW8Ax
+ uPig==
+X-Gm-Message-State: APjAAAXo9oNeKAxAR32/deIJe94SGXB2KhtZEP80fTzcYQvk5nawb8EV
+ Su5x0lyY1MmhkuxziAorzmKGvym+elmhTkPtSDGZ+Q==
+X-Google-Smtp-Source: APXvYqyaY1zsZac6xIg1geYp8/1vn1UDTyxas3KGQkY/prQkzpWCL0jDomBKohuCGrAyS4OUIUVVdQm7OlnHV7LpPR0=
+X-Received: by 2002:ac2:5dc8:: with SMTP id x8mr319519lfq.217.1579190008179;
+ Thu, 16 Jan 2020 07:53:28 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1579181217-31127-2-git-send-email-srinivas.neeli@xilinx.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200109145333.12260-1-benjamin.gaignard@st.com>
+ <20200109145333.12260-3-benjamin.gaignard@st.com>
+ <CACRpkdaK+kQZH_Txu-r4DY_m6muh26aCWcGOkxbi8hbCgww28A@mail.gmail.com>
+ <CA+M3ks7s_KOhXciJPZc3N4z9GNkiKa=fWdQ3hC_HTtrWMWYHtQ@mail.gmail.com>
+In-Reply-To: <CA+M3ks7s_KOhXciJPZc3N4z9GNkiKa=fWdQ3hC_HTtrWMWYHtQ@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 16 Jan 2020 16:53:17 +0100
+Message-ID: <CACRpkdZzL_rBs61s+4k6-QNkB4WzjV1hTy90_St-zsAO=ZyQfA@mail.gmail.com>
+Subject: Re: [PATCH 2/3] clocksource: Add Low Power STM32 timers driver
+To: Benjamin Gaignard <benjamin.gaignard@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_074819_945255_3A9BDFDC 
-X-CRM114-Status: GOOD (  17.12  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200116_075330_520263_B3B9A4C2 
+X-CRM114-Status: GOOD (  12.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,60 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, sgoud@xilinx.com,
- shubhrajyoti.datta@xilinx.com, michal.simek@xilinx.com,
- linux-kernel@vger.kernel.org, git@xilinx.com, wim@linux-watchdog.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Pascal PAILLET-LME <p.paillet@st.com>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Baolin Wang <baolin.wang7@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 06:56:49PM +0530, Srinivas Neeli wrote:
-> From: Srinivas Goud <srinivas.goud@xilinx.com>
-> 
-> Based on checkpatch every spinlock should be documented.
-> The patch is fixing this issue:
-> ./scripts/checkpatch.pl --strict -f drivers/watchdog/of_xilinx_wdt.c
-> CHECK: spinlock_t definition without comment
-> +	spinlock_t spinlock;
-
-One of the most useless feedback messages from checkpatch.
-
-> 
-> Signed-off-by: Srinivas Goud <srinivas.goud@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
->  drivers/watchdog/of_xilinx_wdt.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/watchdog/of_xilinx_wdt.c b/drivers/watchdog/of_xilinx_wdt.c
-> index 7fe4f7c3f7ce..00549164b3d7 100644
-> --- a/drivers/watchdog/of_xilinx_wdt.c
-> +++ b/drivers/watchdog/of_xilinx_wdt.c
-> @@ -40,7 +40,7 @@
->  struct xwdt_device {
->  	void __iomem *base;
->  	u32 wdt_interval;
-> -	spinlock_t spinlock;
-> +	spinlock_t spinlock; /* spinlock for register handling */
-
-I don't see the added value here. Besides, what does the lock actually do ?
-Watchdog drivers are single-open, so it seems quite difficult for any
-of the protected functions to be called multiple times. The spinlock doesn't
-disable interrupts, so register accesses by other drivers are still possible.
-What am I missing ?
-
-Guenter
-
->  	struct watchdog_device xilinx_wdt_wdd;
->  	struct clk		*clk;
->  };
-> -- 
-> 2.7.4
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBKYW4gMTYsIDIwMjAgYXQgNDo0NCBQTSBCZW5qYW1pbiBHYWlnbmFyZAo8YmVuamFt
+aW4uZ2FpZ25hcmRAbGluYXJvLm9yZz4gd3JvdGU6Cj4gTGUgamV1LiAxNiBqYW52LiAyMDIwIMOg
+IDEwOjA3LCBMaW51cyBXYWxsZWlqCj4gPGxpbnVzLndhbGxlaWpAbGluYXJvLm9yZz4gYSDDqWNy
+aXQgOgoKPiA+IElmIHlvdSBoYXZlIGEgc3BhcmUgYWx3YXlzLW9uIHRpbWVyIChhbmQgaXQgbG9v
+a3MgbGlrZSB5b3UgaGF2ZSkgd2hpY2gKPiA+IHlvdSBjYW4gc2V0IGFzIGZyZWUtcnVubmluZywg
+eW91IGNvdWxkIHJlZ2lzdGVyIGl0IHdpdGgKPiA+IENMT0NLX1NPVVJDRV9TVVNQRU5EX05PTlNU
+T1Agc28gaXQKPgo+IFRoZSBkcml2ZXIgb25seSBpbXBsZW1lbnQgY2xvY2sgZXZlbnQgZmVhdHVy
+ZSBzbyBJIGRvbid0IHRoaW5rIHRoYXQgaXMKPiBmbGFnIGlzIGFwcGxpY2FibGUuCgpJIGtub3cs
+IGl0IHdhcyBhIHN1Z2dlc3RlZCBmdXR1cmUgZmVhdHVyZSwgaWYgeW91IGhhdmUgYSBzcGFyZQp0
+aW1lci4KClRoYW5rcywKTGludXMgV2FsbGVpagoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
