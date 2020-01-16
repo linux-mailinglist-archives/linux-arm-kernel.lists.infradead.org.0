@@ -2,68 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C03013DA9E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:51:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8820E13DAA1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:52:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=X0MqBUh9rADJ6yX05zD613EtdIcSQK/M7dsnKll0YFg=; b=uK79DECO3aXIaEWrkvM+O9Dgao
-	Fy4zqwKk8eyvcskb3mVp/FjLdpO3jjX2+8IWrpgF3vzhuYZB2Ncfy7KESXPQ3DHRaWFt19SyAKygz
-	+GDD0oKkoW75zlwVjP1syiEg5wHStpa8t7RZEgemIN/dPpz5GYBkRqwWTmnOgtzykUMsei0UIWHa8
-	CF1w4M5UrvrhwXIYz2/22GS5jEzhApKwb6+pgNdW/XKyg14WygMqYYJpakYR+WIhfocBKhAS5b28r
-	Eyvbb7Op43F9UJLbQVhW2UH6p6mFY0OMqMQFTKuDZCC/4Nbhz5KAg2moX3rgUGQZGzMR4NqX2TbAy
-	78EAUOAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=shU3buroL+izTOfysDei5zgKaQ6xwUytD7ZedaSiTRo=; b=L5aK80iWNFg79mlxfpoMdYf1w
+	CPF5S9pbrbV3GTJ4NPTAYvYKMwSIsGu/8Tps4CjaZW6t7Z/ZrfHI8jtOCoqMLAFevOnGRBmrHvvPy
+	efd604IUjhnGnpC+plQpxoqJrwEP7U5T/1YGhMO7CB+c3DtsFMPi+a5Zh9otF6CiWGmYpeOfQpSQW
+	jcSGbQksuGGm9HpKgebLG85+/qUZMCt4cQqn1s0JvqckEbam6LdAra50vraU9DTTcbMyWGCZKGKZH
+	+Su88e392Bo7iJ1POeyNUYynoAkdPij+F1UhW15nzgYBMDR7ctgJr1kM8RaKhPe9k0lEEOxDbQ7uC
+	mNZMH8vtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is4ci-0000iy-Dg; Thu, 16 Jan 2020 12:51:44 +0000
-Received: from conuserg-11.nifty.com ([210.131.2.78])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is4cV-0000hy-Qz
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:51:36 +0000
-Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
- [153.142.97.92]) (authenticated)
- by conuserg-11.nifty.com with ESMTP id 00GCp0LN004484;
- Thu, 16 Jan 2020 21:51:01 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com 00GCp0LN004484
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579179062;
- bh=KmqleiAw0MVSjh4HEf5T+ImDC/VDq4dszju/GsZ7wC0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FBL346imjwYWy9xiVxhENfVVWXygIiVFIdVxSwSDCULelopHtV1UMIJbA4nzIcwv5
- 81WTYEh3s/NKoi7hnQjCKpogpRoZGPQS0jT8LROSuWYVvK289EXjXdysnhyEnSTj6s
- 6zoubgPv6J32r8ptB4y6W0FIMI5NUhgQziGc5TMezy11ZgHKyRYINP9hHa7lyytlgv
- Zk+6Uzkx6SQrcBVBwKCb4zarPV4yVKf2C/uWiCwwf/242u04mapoVNZ57DBUA2oVEP
- AZkIMQpaEXgJTUDDWwVqEFXR4f37a9wJUGxRUlrhrV7nqFi6p/mC5rErPtx7rPnZvk
- tKoLkL3SWr3EQ==
-X-Nifty-SrcIP: [153.142.97.92]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] arm64: dts: uniphier: add reset-names to NAND controller
- node
-Date: Thu, 16 Jan 2020 21:50:45 +0900
-Message-Id: <20200116125045.17581-2-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200116125045.17581-1-yamada.masahiro@socionext.com>
-References: <20200116125045.17581-1-yamada.masahiro@socionext.com>
+	id 1is4dW-0001FN-7u; Thu, 16 Jan 2020 12:52:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is4dK-0001EP-SG
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:52:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 632251396;
+ Thu, 16 Jan 2020 04:52:20 -0800 (PST)
+Received: from [10.37.9.112] (unknown [10.37.9.112])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 020443F6C4;
+ Thu, 16 Jan 2020 04:52:18 -0800 (PST)
+Subject: Re: [PATCH v2] arm64: cpufeature: Export matrix and other features to
+ userspace
+To: Will Deacon <will@kernel.org>
+References: <20191216113337.13882-1-steven.price@arm.com>
+ <20200115094916.GC21692@willie-the-truck>
+ <20200115095810.GD21692@willie-the-truck>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <87d09890-146c-a9ce-a8d9-13baaa30068d@arm.com>
+Date: Thu, 16 Jan 2020 12:52:16 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <20200115095810.GD21692@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_045132_222046_7072C33D 
-X-CRM114-Status: GOOD (  10.10  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200116_045223_003590_9DEBD783 
+X-CRM114-Status: GOOD (  15.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.78 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,74 +66,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>, julien@xen.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Denali NAND controller IP has separate reset control for the
-controller core and registers.
+On 15/01/2020 09:58, Will Deacon wrote:
+> On Wed, Jan 15, 2020 at 09:49:17AM +0000, Will Deacon wrote:
+>> In other words, I'll drop the SPECRES parts from this patch. Sound ok?
 
-Add the reset-names, and one more phandle accordingly. This is the
-approved DT-binding.
+Yes, sounds like a good idea based on what Mark linked to. The diff 
+below looks right to me.
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
+Thanks,
 
- arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 3 ++-
- arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 3 ++-
- arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 3 ++-
- 3 files changed, 6 insertions(+), 3 deletions(-)
+Steve
 
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-index 8ec40a0b8b1e..5b18bda9c5a6 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-@@ -633,7 +633,8 @@
- 			pinctrl-0 = <&pinctrl_nand>;
- 			clock-names = "nand", "nand_x", "ecc";
- 			clocks = <&sys_clk 2>, <&sys_clk 3>, <&sys_clk 3>;
--			resets = <&sys_rst 2>;
-+			reset-names = "nand", "reg";
-+			resets = <&sys_rst 2>, <&sys_rst 2>;
- 		};
- 	};
- };
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-index b658f2b641e2..f2dc5f695020 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-@@ -937,7 +937,8 @@
- 			pinctrl-0 = <&pinctrl_nand>;
- 			clock-names = "nand", "nand_x", "ecc";
- 			clocks = <&sys_clk 2>, <&sys_clk 3>, <&sys_clk 3>;
--			resets = <&sys_rst 2>;
-+			reset-names = "nand", "reg";
-+			resets = <&sys_rst 2>, <&sys_rst 2>;
- 		};
- 	};
- };
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-index d6f6cee4d549..73e7e1203b09 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-@@ -795,7 +795,8 @@
- 			pinctrl-0 = <&pinctrl_nand>;
- 			clock-names = "nand", "nand_x", "ecc";
- 			clocks = <&sys_clk 2>, <&sys_clk 3>, <&sys_clk 3>;
--			resets = <&sys_rst 2>;
-+			reset-names = "nand", "reg";
-+			resets = <&sys_rst 2>, <&sys_rst 2>;
- 		};
- 	};
- };
--- 
-2.17.1
+> 
+> Diff below.
+> 
+> Will
+> 
+> --->8
+> 
+> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+> index 5382981533f8..27877d25dd9b 100644
+> --- a/Documentation/arm64/cpu-feature-registers.rst
+> +++ b/Documentation/arm64/cpu-feature-registers.rst
+> @@ -206,8 +206,6 @@ infrastructure:
+>        +------------------------------+---------+---------+
+>        | BF16                         | [47-44] |    y    |
+>        +------------------------------+---------+---------+
+> -     | SPECRES                      | [43-40] |    y    |
+> -     +------------------------------+---------+---------+
+>        | SB                           | [39-36] |    y    |
+>        +------------------------------+---------+---------+
+>        | FRINTTS                      | [35-32] |    y    |
+> diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
+> index 183ba86ad46e..4fafc57d8e73 100644
+> --- a/Documentation/arm64/elf_hwcaps.rst
+> +++ b/Documentation/arm64/elf_hwcaps.rst
+> @@ -232,10 +232,6 @@ HWCAP2_DGH
+>   
+>       Functionality implied by ID_AA64ISAR1_EL1.DGH == 0b0001.
+>   
+> -HWCAP2_SPECRES
+> -
+> -    Functionality implied by ID_AA64ISAR1_EL1.SPECRES == 0b0001.
+> -
+>   4. Unused AT_HWCAP bits
+>   -----------------------
+>   
+> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
+> index ac7180b2c20b..fcb390ea29ea 100644
+> --- a/arch/arm64/include/asm/hwcap.h
+> +++ b/arch/arm64/include/asm/hwcap.h
+> @@ -93,7 +93,6 @@
+>   #define KERNEL_HWCAP_I8MM		__khwcap2_feature(I8MM)
+>   #define KERNEL_HWCAP_DGH		__khwcap2_feature(DGH)
+>   #define KERNEL_HWCAP_BF16		__khwcap2_feature(BF16)
+> -#define KERNEL_HWCAP_SPECRES		__khwcap2_feature(SPECRES)
+>   
+>   /*
+>    * This yields a mask that user programs can use to figure out what
+> diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
+> index 8f3f1b66f7b2..e6dad5924703 100644
+> --- a/arch/arm64/include/uapi/asm/hwcap.h
+> +++ b/arch/arm64/include/uapi/asm/hwcap.h
+> @@ -72,6 +72,5 @@
+>   #define HWCAP2_I8MM		(1 << 13)
+>   #define HWCAP2_BF16		(1 << 14)
+>   #define HWCAP2_DGH		(1 << 15)
+> -#define HWCAP2_SPECRES		(1 << 16)
+>   
+>   #endif /* _UAPI__ASM_HWCAP_H */
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 9164ee5351a4..c88f8fb80e2e 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -138,7 +138,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_I8MM_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DGH_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_BF16_SHIFT, 4, 0),
+> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
+> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SB_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FRINTTS_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+> @@ -1678,7 +1678,6 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_LRCPC_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ILRCPC),
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_FRINTTS_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_FRINT),
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SB_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SB),
+> -	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SPECRES_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SPECRES),
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_BF16_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_BF16),
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_DGH_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_DGH),
+>   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_I8MM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_I8MM),
+> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
+> index c689e26889c7..9013b224591a 100644
+> --- a/arch/arm64/kernel/cpuinfo.c
+> +++ b/arch/arm64/kernel/cpuinfo.c
+> @@ -91,7 +91,6 @@ static const char *const hwcap_str[] = {
+>   	"i8mm",
+>   	"bf16",
+>   	"dgh",
+> -	"specres",
+>   	NULL
+>   };
+>   
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 
 _______________________________________________
