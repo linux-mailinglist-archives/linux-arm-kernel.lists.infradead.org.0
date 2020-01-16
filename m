@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB06E13EB48
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:49:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 161C913EB2B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:48:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=abQi8d8e3Y5cngImLc3lIcijZSeSBnIMwLTI2M4IjOU=; b=TUvx9EeFkVZG25
-	zbWXHpkNz9i0oUVGCdkAL0qZC3OuQeJPVqHADbf2FE/TnTAw1yKrOroBhCcBgEkNyhO5RoRn/yDMt
-	X33zuisnebmiGnDC/v+fKYQt86H+LnIRHU4BvQ6XBCOPvO6rChIWeZI9KWW9N4wfikdRgGuyfteq8
-	zbNk/taTp5qKX/xu9N+4PL+YlKbuwFfg1hL+t2V1bhAjdyeQBmp/M1mP3ZACS49R8NLUC45tT0/Z4
-	Xze1rjsdew8lpbc05tuqNF0Sjg2+JUpKkHFiHsCEXq6Wtg/FckFNBtZDheB60/NVQTuuV904TZUSt
-	c9Yd9lOYH7PzWfESzNzQ==;
+	List-Owner; bh=WpCE0+zQY22z7Ckq8WrhkV5DiRkoFsVPIy1YTACCBPY=; b=iRNC5x5rF2rYIR
+	9RD+9aurDaHAwWcjsPepgD0orn7v5oAOJDwA1Ttp2PJqQ93mu8CP99q7CNgv5m4W2dUyWWLz1B9zt
+	Evbzr0TSCaG6VCnJ2SODDxjyyd3VaTByZUahU/jS14zBt9zT9GdS00ansxfb0lGpXOX+tSOKKleSi
+	9EVyFhSTOtPuRu1vUCPQogAA8EEpqerJmip02sCbgBNpraBmTW3ZgVeNnBF+M67PyRkRztTvammZr
+	4kCYQuXnjodZoxLGZhMArKD29I4yQ/9RCO+lJuhgR2HXrnbaSs3v9YDW+E4Twb3QAOq38DgxpvdAr
+	gAPQtlc4wF3Ubwq9T8Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9GW-0008Ai-F7; Thu, 16 Jan 2020 17:49:08 +0000
+	id 1is9Fw-0007lU-Qt; Thu, 16 Jan 2020 17:48:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8iy-0007tX-B9
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:32 +0000
+ id 1is8j2-0007xu-No
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1787D246B2;
- Thu, 16 Jan 2020 17:14:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E6A7D246A3;
+ Thu, 16 Jan 2020 17:14:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194866;
- bh=IsIQlCAKLjxmjSdijTYiULQA7efHkUvHXQUo4paPNIs=;
+ s=default; t=1579194872;
+ bh=WUgtQX2ICeVXTVXxnODFc/ph/ERGo6v9PHgcy5ZwXTw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=APcXt/Ybt9vx0AZ6GR+pcLWY9EmHXEq7Cg0fUjrsMCdPqI0hphTUubhMr+ypS9j+V
- S6N3gIk04wlHzKBfwWtLqWa1BGJdIocPU1alZSaZv51GyQalwqGOBGs5XF4A46uFBH
- tnYHSD8XIeW75onmiiFZ0I2RCqcnMJr4uKZfh+5I=
+ b=ve6FsfyKQu5m+d1cYD4duYi/bolo2w3YRD2PiCyNgUDPWe3NplAobtwazUHezV1E8
+ +jhacxKKQe0nbN5S/Xl05t84kMIVhHVATZR3D2W4fJm9zV+1+kdqjAimgtZQ4B9Qq+
+ ah/fLQDt2ulaUxN8khnb/VCnP5XOwbrUKw3aZvTg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 660/671] arm64: dts: juno: Fix UART frequency
-Date: Thu, 16 Jan 2020 12:04:58 -0500
-Message-Id: <20200116170509.12787-397-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 663/671] Revert "arm64: dts: juno: add dma-ranges
+ property"
+Date: Thu, 16 Jan 2020 12:05:01 -0500
+Message-Id: <20200116170509.12787-400-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091428_442073_9D7469AC 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20200116_091432_824217_11BAB63B 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +81,68 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Andre Przywara <andre.przywara@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Przywara <andre.przywara@arm.com>
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-[ Upstream commit 39a1a8941b27c37f79508426e27a2ec29829d66c ]
+[ Upstream commit 54fb3fe0f211d4729a2551cf9497bd612189af9d ]
 
-Older versions of the Juno *SoC* TRM [1] recommended that the UART clock
-source should be 7.2738 MHz, whereas the *system* TRM [2] stated a more
-correct value of 7.3728 MHz. Somehow the wrong value managed to end up in
-our DT.
+This reverts commit 193d00a2b35ee3353813b4006a18131122087205.
 
-Doing a prime factorisation, a modulo divide by 115200 and trying
-to buy a 7.2738 MHz crystal at your favourite electronics dealer suggest
-that the old value was actually a typo. The actual UART clock is driven
-by a PLL, configured via a parameter in some board.txt file in the
-firmware, which reads 7.37 MHz (sic!).
+Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
+reworked the logic such that of_dma_get_range() works correctly
+starting from a bus node containing "dma-ranges".
 
-Fix this to correct the baud rate divisor calculation on the Juno board.
+Since on Juno we don't have a SoC level bus node and "dma-ranges" is
+present only in the root node, we get the following error:
 
-[1] http://infocenter.arm.com/help/topic/com.arm.doc.ddi0515b.b/DDI0515B_b_juno_arm_development_platform_soc_trm.pdf
-[2] http://infocenter.arm.com/help/topic/com.arm.doc.100113_0000_07_en/arm_versatile_express_juno_development_platform_(v2m_juno)_technical_reference_manual_100113_0000_07_en.pdf
+OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
+OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
+...
+OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
 
-Fixes: 71f867ec130e ("arm64: Add Juno board device tree.")
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Acked-by: Liviu Dudau <liviu.dudau@arm.com>
+So let's fix it by dropping the "dma-ranges" property for now. This
+should be fine since it doesn't represent any kind of device-visible
+restriction; it was only there for completeness, and we've since given
+in to the assumption that missing "dma-ranges" implies a 1:1 mapping
+anyway.
+
+We can add it later with a proper SoC bus node and moving all the
+devices that belong there along with the "dma-ranges" if required.
+
+Fixes: 193d00a2b35e ("arm64: dts: juno: add dma-ranges property")
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Liviu Dudau <liviu.dudau@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/arm/juno-clocks.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/arm/juno-base.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-index e5e265dfa902..2870b5eeb198 100644
---- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-@@ -8,10 +8,10 @@
-  */
- / {
- 	/* SoC fixed clocks */
--	soc_uartclk: refclk7273800hz {
-+	soc_uartclk: refclk7372800hz {
- 		compatible = "fixed-clock";
- 		#clock-cells = <0>;
--		clock-frequency = <7273800>;
-+		clock-frequency = <7372800>;
- 		clock-output-names = "juno:uartclk";
- 	};
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index ce56a4acda4f..b6f486737589 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -6,7 +6,6 @@
+ 	/*
+ 	 *  Devices shared by all Juno boards
+ 	 */
+-	dma-ranges = <0 0 0 0 0x100 0>;
  
+ 	memtimer: timer@2a810000 {
+ 		compatible = "arm,armv7-timer-mem";
 -- 
 2.20.1
 
