@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F00C13DF0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:43:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AAED13DF17
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:45:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=reIx70z5XLtC7wZ9ZSzQNwgXZn9Y20vPge84fenU3no=; b=Qb+p0Qb2WvpwcYI+AOQj/tTT6
-	egj/DRsUZ0/JiJBWsL/avIFUPycJNh6MduhjhE5WhX7S6WMhvcuIqswPQi7X+rYenQhEg7LLc2kfa
-	6nmiBlncRqhAtgRlK0Mi0NsYG/ZbXqo018lodbaEMHZLhV4/fh4ygna91qNpALD3tVNYu2sbJOenO
-	B5kRugyegwmrXWXcQf//m/XZb8ZdMBqsX3rJMrshne7CrxGpDAIVOZbxZhD9vZQCd00D971Qm0j69
-	5CriJBcefdxjZWnpvUWVh28KYqKOmlDxMQaG0RcGSY1rfxDJbJqKUqTHtKadVeZ/SGLyUi4dY6BNS
-	0tjp6r3Jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dVz/qBjFHeRDs6vfCyXgXnO2kpAFQqCgpblHUM8UGlY=; b=qTFcJrlJFVaGdj
+	LHL4er54Q0k+X23o401P9m/ef+OK4stzlyQ9g+FouSMv8uPwUcZ/15Aw2w3xf0TE+7ehf2DVuCgfm
+	5aMXa1/Oh49rbdquLKU+0RP67ClrKMXZ6FnjqKthbM+os+Inl8MQuqH6x4NxIMPrfMcr0CqoVASdc
+	kZ15V0SN9+++dzLYsfMaP9ATgYf6hYMj+16iMRIRw5Bk6xODZzeTJz0YHGwAlev3VpTm2ssgyuxCe
+	FAuWvJK9hqp+CzkMHWWuvN0EfnURa5AkYqM8vVwSpcMC/Sbnq0FwpT56vwU2deb3CiOUk63tEPUES
+	Ggthj3NaGpvc1vZsv79Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is7II-0003Ok-BJ; Thu, 16 Jan 2020 15:42:50 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1is7KH-0003yQ-J6; Thu, 16 Jan 2020 15:44:53 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is7Ht-0003Bg-FU
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:42:31 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1579189346; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=JgjO9etRO5bzp4rzctb3Qc1UWAXZkGva4pS9KoszKJQ=;
- b=vdKG0hE9WKtWP6dyzu2TJEnAO46DKGlzBdZKnndQYZuzUuHSbNwB5dv5pRqsAJh1KK156CCG
- eXo3txw5terI+GxqlLAWjlwNGxc/Ko8tfWptei75f3BIdIMZFqf8MuZw53A5ZtgPFPWZJdQ3
- m+CUF/n137xrEUSRCpvrC64xMrE=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e20845c.7f760d9d4df8-smtp-out-n03;
- Thu, 16 Jan 2020 15:42:20 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id AC452C43383; Thu, 16 Jan 2020 15:42:20 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.226.58.28] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jhugo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id EFA24C433CB;
- Thu, 16 Jan 2020 15:42:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org EFA24C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jhugo@codeaurora.org
-Subject: Re: [PATCH] arm64: Add KRYO{3,4}XX CPU cores to spectre-v2 safe list
-To: Will Deacon <will@kernel.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-References: <20200116141912.15465-1-saiprakash.ranjan@codeaurora.org>
- <20200116153235.GA18909@willie-the-truck>
-From: Jeffrey Hugo <jhugo@codeaurora.org>
-Message-ID: <1a114449-8026-b99d-a4ce-93aac2ffdcb3@codeaurora.org>
-Date: Thu, 16 Jan 2020 08:42:16 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1is7K3-0003xn-2K
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:44:43 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 5so19220188qtz.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 07:44:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=gS/fHlu1Oq+hOaHui9eyrfBYKZOt+Ph3ppYSp+KEj84=;
+ b=TuZrRDRrFT+WCptl4jtudlerse96sZuVq1zCdH/vK0dfPQ5xrQ8yUIzMfOapTXR9y4
+ 2ibPZdeO3cq4uS1KiYsYbV9RRHau1FtdADF2iknc6ur7M5Hbe02w+NYCZSev5tkOuh9y
+ ePPUYQ5Bh8gV7wWIJjAdFBo2Fr7l9sacP/LpMALL0xuGORiaeTm3/ovoKyoLmwkFKklD
+ 6sSWGaW4m6iXLGFz46GxeiCxLNa8KvJnVQcgvCjOULKu8FKZMzC5iRUJ3iQ4JETxnPHt
+ 2cnmYanX1iTd7BIvnEBMBduu9aAm6DnKlJHyGdk6ZlhC2lQ9nUkBPOSsLwHSjr/FwcCE
+ zFPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=gS/fHlu1Oq+hOaHui9eyrfBYKZOt+Ph3ppYSp+KEj84=;
+ b=KSzM+rGUe3CsVetdSntkOrtjh401W16q1EzsGUQVTi7E+C6qtafQ/c2+krhYdLjNsL
+ BOiJZhk0awN9zfj+6mgpvFz6p7isnw4mJj9UZkdQ2XdkeqQtdlaFni6ebS+bVARH4oOL
+ a4Rgftj5iDMaICTMEtrBi262iR9kvCDiVMiKhbKmKF4FdZdrwB+RkFEOEzSv+OEKlCpp
+ 5bQR7hZ7YgRIxr6A50z/vKt5PRjjee9L4k/yukUN586GzTLjPxDiXHsZUzjWBzD6Lgmv
+ c8Xybs8a9LDtl/ns+opkpAS6Yk9ToIEmpk+vuafY386+JnWUvhdupuy9tf6q4rRLu2Cy
+ eZAw==
+X-Gm-Message-State: APjAAAW6UAPQUsLK6ziCwyh90RFmweE7I5AvXB6pY6VLHbtIducwS79y
+ lAKvC/p7ncQnTlMkC7WT5Svj8Er1MFOWUaD3IOfWGQ==
+X-Google-Smtp-Source: APXvYqxNeltlsFc5Dxrse9Z755UY41N7ksUFlORuO7LHPKeYC0Mo2wcnrf5mqiMyXQzUM4vECUHukncA86I8+8DwzWQ=
+X-Received: by 2002:aed:2d01:: with SMTP id h1mr2976756qtd.239.1579189477572; 
+ Thu, 16 Jan 2020 07:44:37 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200116153235.GA18909@willie-the-truck>
-Content-Language: en-US
+References: <20200109145333.12260-1-benjamin.gaignard@st.com>
+ <20200109145333.12260-3-benjamin.gaignard@st.com>
+ <CACRpkdaK+kQZH_Txu-r4DY_m6muh26aCWcGOkxbi8hbCgww28A@mail.gmail.com>
+In-Reply-To: <CACRpkdaK+kQZH_Txu-r4DY_m6muh26aCWcGOkxbi8hbCgww28A@mail.gmail.com>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Thu, 16 Jan 2020 16:44:26 +0100
+Message-ID: <CA+M3ks7s_KOhXciJPZc3N4z9GNkiKa=fWdQ3hC_HTtrWMWYHtQ@mail.gmail.com>
+Subject: Re: [PATCH 2/3] clocksource: Add Low Power STM32 timers driver
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_074227_058391_EBFD6080 
-X-CRM114-Status: GOOD (  21.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_074439_166132_77C492F0 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,73 +94,45 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Douglas Anderson <dianders@chromium.org>,
- linux-kernel@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- Matthias Kaehlcke <mka@chromium.org>, James Morse <james.morse@arm.com>,
- linux-arm-msm@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Pascal PAILLET-LME <p.paillet@st.com>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Baolin Wang <baolin.wang7@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/16/2020 8:32 AM, Will Deacon wrote:
-> [+Jeffrey]
-> 
-> On Thu, Jan 16, 2020 at 07:49:12PM +0530, Sai Prakash Ranjan wrote:
->> KRYO3XX silver CPU cores and KRYO4XX silver, gold CPU cores
->> are not affected by Spectre variant 2. Add them to spectre_v2
->> safe list to correct ARM_SMCCC_ARCH_WORKAROUND_1 warning and
->> vulnerability sysfs value.
->>
->> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> ---
->>   arch/arm64/include/asm/cputype.h | 6 ++++++
->>   arch/arm64/kernel/cpu_errata.c   | 3 +++
->>   2 files changed, 9 insertions(+)
->>
->> diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
->> index aca07c2f6e6e..7219cddeba66 100644
->> --- a/arch/arm64/include/asm/cputype.h
->> +++ b/arch/arm64/include/asm/cputype.h
->> @@ -85,6 +85,9 @@
->>   #define QCOM_CPU_PART_FALKOR_V1		0x800
->>   #define QCOM_CPU_PART_FALKOR		0xC00
->>   #define QCOM_CPU_PART_KRYO		0x200
->> +#define QCOM_CPU_PART_KRYO_3XX_SILVER	0x803
->> +#define QCOM_CPU_PART_KRYO_4XX_GOLD	0x804
->> +#define QCOM_CPU_PART_KRYO_4XX_SILVER	0x805
-> 
-> Jeffrey is the only person I know who understands the CPU naming here, so
-> I've added him in case this needs either renaming or extending to cover
-> other CPUs. I wouldn't be at all surprised if we need a function call
-> rather than a bunch of table entries...
-
-The added lines look sane to me, from a naming and MIDR perspective.  I 
-don't know off hand if these CPUs are really fixed or not.
-
-I wonder why a "KRYO_3XX_GOLD  0x802" line is not being added.  Sai?
-
-> 
-> That said, the internet claims that KRYO4XX gold is based on Cortex-A76,
-> and so CSV2 should be set...
-> 
-> Will
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
-
--- 
-Jeffrey Hugo
-Qualcomm Technologies, Inc. is a member of the
-Code Aurora Forum, a Linux Foundation Collaborative Project.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgamV1LiAxNiBqYW52LiAyMDIwIMOgIDEwOjA3LCBMaW51cyBXYWxsZWlqCjxsaW51cy53YWxs
+ZWlqQGxpbmFyby5vcmc+IGEgw6ljcml0IDoKPgo+IE9uIFRodSwgSmFuIDksIDIwMjAgYXQgMzo1
+NCBQTSBCZW5qYW1pbiBHYWlnbmFyZAo+IDxiZW5qYW1pbi5nYWlnbmFyZEBzdC5jb20+IHdyb3Rl
+Ogo+Cj4gPiBJbXBsZW1lbnQgY2xvY2sgZXZlbnQgZHJpdmVyIHVzaW5nIGxvdyBwb3dlciBTVE0z
+MiB0aW1lcnMuCj4gPiBMb3cgcG93ZXIgdGltZXJzIGNvdW50ZXIgcyBydW5uaW5nIGV2ZW4gaW4g
+d2hlbiBDUFUgaXMgaW4gc3RvcCBtb2RlLgo+ID4gSXQgY291bGQgYmUgdXNlZCBhcyBjbG9jayBl
+dmVudCBicm9hZGNhc3RlciB0byB3YWtlIHVwIENQVXMgYnV0IG5vdCBsaWtlCj4gPiBhIGNsb2Nr
+c291cmNlIGJlY2F1c2UgZWFjaCBpdCByaXNlIGFuIGludGVycnVwdCB0aGUgY291bnRlciByZXN0
+YXJ0IGZyb20gMC4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBCZW5qYW1pbiBHYWlnbmFyZCA8YmVu
+amFtaW4uZ2FpZ25hcmRAc3QuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTogUGFzY2FsIFBhaWxsZXQg
+PHAucGFpbGxldEBzdC5jb20+Cj4KPiBMb29rcyBnb29kIHRvIG1lOgo+IFJldmlld2VkLWJ5OiBM
+aW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+CgpIaSBMaW51cywKClRoYW5r
+cyBmb3IgeW91ciByZXZpZXcuIEkgaGFkIHRvIHJld29yayBhIGJpdCB0aGUgZHJpdmVyIHRvIHNv
+bHZlIHRoZQpiaW5kaW5ncyBpc3N1ZXMKc28gSSBoYXZlbid0IHB1dCB5b3VyIFJCIG9uIHZlcnNp
+b24gMi4KCj4KPiBJZiB5b3UgaGF2ZSBhIHNwYXJlIGFsd2F5cy1vbiB0aW1lciAoYW5kIGl0IGxv
+b2tzIGxpa2UgeW91IGhhdmUpIHdoaWNoCj4geW91IGNhbiBzZXQgYXMgZnJlZS1ydW5uaW5nLCB5
+b3UgY291bGQgcmVnaXN0ZXIgaXQgd2l0aAo+IENMT0NLX1NPVVJDRV9TVVNQRU5EX05PTlNUT1Ag
+c28gaXQKClRoZSBkcml2ZXIgb25seSBpbXBsZW1lbnQgY2xvY2sgZXZlbnQgZmVhdHVyZSBzbyBJ
+IGRvbid0IHRoaW5rIHRoYXQgaXMKZmxhZyBpcyBhcHBsaWNhYmxlLgoKUmVnYXJkcywKQmVuamFt
+aW4KPiBrZWVwcyB0aGUgc3lzdGVtIGNsb2NrIHRpY2tpbmcgYWxzbyBkdXJpbmcgc3VzcGVuZCBh
+cwo+IGFsdGVybmF0aXZlIGNsb2NrIHNvdXJjZS4KPgo+IFlvdXJzLAo+IExpbnVzIFdhbGxlaWoK
+Pgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
