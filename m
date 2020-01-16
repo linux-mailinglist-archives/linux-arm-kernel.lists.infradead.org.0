@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAE3913F48B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:50:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED68613F496
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:51:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ff8oeFIlrLVhF7Wzn4N2dia9/Elu0TlwrvpFXYN/YvE=; b=gk2
-	TzZnsOWXOZkLRgS6JKudECEd9yP9YaGGETVgmn8/I4gPnneqdYZJ7Sstm1rEK28XnpGaE+APVb332
-	lKEi/EBUVZLLQyA5AdTE7iy56rHabq4IVCwlVR/z+lJCtPboFyCYB4o7oPR5YKKIG7giZ9zVqZR5r
-	KjSz1XEj+YkK3f6hylk8qGZO2wS4GT4KEj51eXU4BKu8mKWCSXIQVvbURHI/iiLIthsrm0UMyp1nt
-	puMnJ/CtPab8JTgbPhlu5lA5acl2zZjSLBX20/OCEwed6o2TWfosCL1hNSQ9IEWI6dT0ywHBIqM6K
-	x/RgpbC3K+u5edrz+uDhrFkwHuMU7Eg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=97YKAfcBb0XHiWT836WVmx7phhQGr6jCNmxzPeE3Pf0=; b=Zak/tXvzErMdqpiZrsHVQxW/lI
+	kTVqSJCKE7vqi3/aC+gVodP4wWP/sh7f4rmLiQY2iwF7Ymuv4MuGB2Rh1J04qVnhSllPviIZCgdZ3
+	9gphZSNVW3wBC4uz+AaeDUGSW7R2Vn6SfXL+TUow8s1r50OFdNKp17c7Qvynqa0ECbFDUP7fCLvw3
+	yKQ11DAreKJCE+cZ4+/aEysJzi6MYghBPwtpjZfUjAq6N/zoBs6OvCyuxoqF06oZil0lVyvajelNu
+	KEMueMLyyeAnlOtX4AkRM5N94Hfa1Uw2WZdlCh2AjFoKbWoLWy2bmIJHdDohpcmoik//r41ShRgyR
+	jkegBbgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isADv-0005q8-KY; Thu, 16 Jan 2020 18:50:31 +0000
+	id 1isAEd-0007dG-6E; Thu, 16 Jan 2020 18:51:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9zo-0005p4-Rs
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:36:04 +0000
+ id 1is9zw-0005qd-3d
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:36:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4F7931B;
- Thu, 16 Jan 2020 10:35:53 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64D22139F;
+ Thu, 16 Jan 2020 10:35:55 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DF9B13F534;
- Thu, 16 Jan 2020 10:35:52 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 77A7C3F534;
+ Thu, 16 Jan 2020 10:35:54 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, will@kernel.org,
  catalin.marinas@arm.com
-Subject: [PATCH 0/5] arm64: entry: preparatory cleanup
-Date: Thu, 16 Jan 2020 18:35:43 +0000
-Message-Id: <20200116183548.39411-1-mark.rutland@arm.com>
+Subject: [PATCH 1/5] arm64: assembler: remove inherit_daif macro
+Date: Thu, 16 Jan 2020 18:35:44 +0000
+Message-Id: <20200116183548.39411-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200116183548.39411-1-mark.rutland@arm.com>
+References: <20200116183548.39411-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_103556_978448_7A287635 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20200116_103604_243414_4B2045C2 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,39 +71,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+We haven't needed the inherit_daif macro since commit:
 
-While reworking my entry deasmification patches [1], I realised that
-there are few bits I'm not quite comfortable with and will require a
-little bit more time to make robust. Mostly that has to do with
-manipulation of DAIF, irq flags, and the GIC PMR. I'm hoping that I can
-have the reworked patches ready around v5.6-rc1.
+  ed3768db588291dd ("arm64: entry: convert el1_sync to C")
 
-In the mean time, I've split out these preparatory patches in the hope
-that they can be queued now. These are based on v5.5-rc3, and I've
-pushed them to my arm64/entry-deasm-prep branch [2,3].
+... which converted all callers to C and the local_daif_inherit
+function.
 
-Thanks,
-Mark.
+Remove the unused macro.
 
-[1] https://lore.kernel.org/r/20200108185634.1163-1-mark.rutland@arm.com
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/entry-deasm-prep
-[3] git://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git arm64/entry-deasm-prep
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/assembler.h | 6 ------
+ 1 file changed, 6 deletions(-)
 
-Mark Rutland (5):
-  arm64: assembler: remove inherit_daif macro
-  arm64: assembler: remove smp_dmb macro
-  arm64: entry: mark all entry code as notrace
-  arm64: entry: cleanup el0 svc handler naming
-  arm64: entry: cleanup sp_el0 manipulation
-
- arch/arm64/include/asm/assembler.h | 13 -------------
- arch/arm64/include/asm/exception.h |  4 ++--
- arch/arm64/kernel/entry-common.c   |  8 ++++----
- arch/arm64/kernel/entry.S          | 17 +++++++----------
- arch/arm64/kernel/syscall.c        |  4 ++--
- 5 files changed, 15 insertions(+), 31 deletions(-)
-
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index b8cf7c85ffa2..5f8a2772baeb 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -40,12 +40,6 @@
+ 	msr	daif, \flags
+ 	.endm
+ 
+-	/* Only on aarch64 pstate, PSR_D_BIT is different for aarch32 */
+-	.macro	inherit_daif, pstate:req, tmp:req
+-	and	\tmp, \pstate, #(PSR_D_BIT | PSR_A_BIT | PSR_I_BIT | PSR_F_BIT)
+-	msr	daif, \tmp
+-	.endm
+-
+ 	/* IRQ is the lowest priority flag, unconditionally unmask the rest. */
+ 	.macro enable_da_f
+ 	msr	daifclr, #(8 | 4 | 1)
 -- 
 2.11.0
 
