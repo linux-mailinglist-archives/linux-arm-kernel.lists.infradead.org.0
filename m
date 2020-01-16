@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2468213E141
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:49:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 921D113E171
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:49:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nd229rqAvJCZTPtpyOUH9jbw5S/0z6MP6aimdsoiGDA=; b=iPEgTk9wz3UvuT
-	jL7eT2Ccnba7h1ARwM5niMM9AB3I6tkJJb/TLdDDEM0BnbZAwDNDvgCd1uU99mjIDeYqvjMqQdZ2X
-	xhxvC4sLqSLh8FrX9xMrS/kWSZLtEYDTu3bEa8YsQj8ocxM3AXky1Pbp+7P4EEp/7M9A61Wehislb
-	bvjj8BxvJMhuDWBIe4yw4dnXD/VNwR0gQf1Vfc5FYkwl08N0dDjwBRrVm44pI6nB8EPf8a/2I49xY
-	MigOI/QywpdJ4NZRr9m0EQ0sumnQZMmK1UBV3E0u5DzAy6lVeH9RS45JlUR57k6RGaq32VtsKzuVU
-	RrJUs3LogKwT2jtSbACw==;
+	List-Owner; bh=uK2nxdKZa6AGHVLYrT1wrVLMw/qRCazIaIQMC/Ibk+I=; b=YpqPeR7ZvgvqiX
+	G2GfdU2piQ0M5+WNV6AtBB4W3LKZPDHK+R5q+nBsYLvCa6jxgvr6NZ3q7qQMcTrCeaF9R3Fw25d3G
+	KSQcaVoKFvs+8mmD3w5YOzOEk22JrF2JW4aKfpj13lsM3FwvCM9AMDZbMPgYXcnC/hjnHaV5HieBp
+	isutYPx+1rv8ikZaS7tQRKFIj2YOP4ITOheZHjNzVYa0d8UOQ46T8xG8sd21v8LycvNvjhoUNRgPa
+	Nr3LbNvfB4y3qs4OBw2AJw70+4Be3vdkxN2z/u5iygGH4QRFdqnJQ+7/Z+qwqYtNi+NzESOda//82
+	FSzBqfd0LXLPsF105RYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8KN-0003ID-39; Thu, 16 Jan 2020 16:49:03 +0000
+	id 1is8Ku-0003nY-7r; Thu, 16 Jan 2020 16:49:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Ic-0001zb-Ro
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:47:18 +0000
+ id 1is8Ih-00024Q-Q1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:47:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA502207FF;
- Thu, 16 Jan 2020 16:47:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1045C20663;
+ Thu, 16 Jan 2020 16:47:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193234;
- bh=9vrH7eGOuyb/R/jiwPq/xiEbrRzRYIOG8/WpfWE1YTs=;
+ s=default; t=1579193239;
+ bh=rcYIMCE5yV481ejhTQhSw3zfGdUsTqdOppxNsySLqak=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yDP/cl00kURY0MmPHmozWNhpgdoRvQIJ9I5ayn6Tr2VO0BtNTpVUhLDGlh7WuAL5q
- 6x9jVc/mDGKRVQ5gcIurimJsMUJM87g7mGmBR0BQbTC+P5RAKzS+kqU+9e7JGkVmfn
- GeTWaR7aCrv0V94OaQR6nLN2G4vL2pFIfAr3ix20=
+ b=S4xjjtzTydL+ELTHZtFGtWWKZ3OeLcInKwivNY5eBiER/JUHsBa8wpZwz2c4X5wYg
+ HUZT1bvJnxv2L3okb5ZYmoFEZWNvQ3JCnvOHm/qut4Cyj0CEzz8wQSUM9kLjiOxvDS
+ 6UPvRZub2SSbbTueahgUeEIku6gJxWFRQmn9VqTk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 051/205] spi: pxa2xx: Set
- controller->max_transfer_size in dma mode
-Date: Thu, 16 Jan 2020 11:40:26 -0500
-Message-Id: <20200116164300.6705-51-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 052/205] spi: atmel: fix handling of cs_change set
+ on non-last xfer
+Date: Thu, 16 Jan 2020 11:40:27 -0500
+Message-Id: <20200116164300.6705-52-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_084715_114293_1657108E 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20200116_084719_903996_DFAA07CD 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,64 +80,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Sasha Levin <sashal@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@intel.com>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
- =?UTF-8?q?Noralf=20Tr=C3=B8nnes?= <noralf@tronnes.org>,
- Mark Brown <broonie@kernel.org>, Sam Ravnborg <sam@ravnborg.org>,
- Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Mans Rullgard <mans@mansr.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Nicolas Ferre <nicolas.ferre@atmel.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogRGFuaWVsIFZldHRlciA8ZGFuaWVsLnZldHRlckBmZndsbC5jaD4KClsgVXBzdHJlYW0g
-Y29tbWl0IGIyNjYyYTE2NGY5ZGM0OGRhODgyMmU1NjYwMDY4NmQ2MzkwNTYyODIgXQoKSW4gRE1B
-IG1vZGUgd2UgaGF2ZSBhIG1heGltdW0gdHJhbnNmZXIgc2l6ZSwgcGFzdCB0aGF0IHRoZSBkcml2
-ZXIKZmFsbHMgYmFjayB0byBQSU8gKHNlZSB0aGUgY2hlY2sgYXQgdGhlIHRvcCBvZiBweGEyeHhf
-c3BpX3RyYW5zZmVyX29uZSkuCkZhbGxpbmcgYmFjayB0byBQSU8gZm9yIGJpZyB0cmFuc2ZlcnMg
-ZGVmZWF0cyB0aGUgcG9pbnQgb2YgYSBkbWEgZW5naW5lLApoZW5jZSBzZXQgdGhlIG1heCB0cmFu
-c2ZlciBzaXplIHRvIGluZm9ybSBzcGkgY2xpZW50cyB0aGF0IHRoZXkgbmVlZAp0byBkbyBzb21l
-dGhpbmcgc21hcnRlci4KClRoaXMgd2FzIHVuY292ZXJlZCBieSB0aGUgZHJtX21pcGlfZGJpIHNw
-aSBwYW5lbCBjb2RlLCB3aGljaCBkb2VzCmxhcmdlIHNwaSB0cmFuc2ZlcnMsIGJ1dCBzdG9wcGVk
-IHNwbGl0dGluZyB0aGVtIGFmdGVyOgoKY29tbWl0IGUxNDMzNjRiNGMxNzc0ZjY4ZTkyM2E1YTBi
-YjBmY2EyOGFjMjU4ODgKQXV0aG9yOiBOb3JhbGYgVHLDuG5uZXMgPG5vcmFsZkB0cm9ubmVzLm9y
-Zz4KRGF0ZTogICBGcmkgSnVsIDE5IDE3OjU5OjEwIDIwMTkgKzAyMDAKCiAgICBkcm0vdGlueWRy
-bTogUmVtb3ZlIHRpbnlkcm1fc3BpX21heF90cmFuc2Zlcl9zaXplKCkKCkFmdGVyIHRoaXMgY29t
-bWl0IHRoZSBjb2RlIHJlbGllZCBvbiB0aGUgc3BpIGNvcmUgdG8gc3BsaXQgdHJhbnNmZXJzCmlu
-dG8gbWF4IGRtYS1hYmxlIGJsb2Nrcywgd2hpY2ggYWxzbyBwYXBlcmVkIG92ZXIgdGhlIFBJTyBm
-YWxsYmFjayBpc3N1ZS4KCkZpeCB0aGlzIGJ5IHNldHRpbmcgdGhlIG92ZXJhbGwgbWF4IHRyYW5z
-ZmVyIHNpemUgdG8gdGhlIERNQSBsaW1pdCwKYnV0IG9ubHkgd2hlbiB0aGUgY29udHJvbGxlciBy
-dW5zIGluIERNQSBtb2RlLgoKRml4ZXM6IGUxNDMzNjRiNGMxNyAoImRybS90aW55ZHJtOiBSZW1v
-dmUgdGlueWRybV9zcGlfbWF4X3RyYW5zZmVyX3NpemUoKSIpCkNjOiBTYW0gUmF2bmJvcmcgPHNh
-bUByYXZuYm9yZy5vcmc+CkNjOiBOb3JhbGYgVHLDuG5uZXMgPG5vcmFsZkB0cm9ubmVzLm9yZz4K
-Q2M6IEFuZHkgU2hldmNoZW5rbyA8YW5kcml5LnNoZXZjaGVua29AaW50ZWwuY29tPgpSZXBvcnRl
-ZC1hbmQtdGVzdGVkLWJ5OiBBbmR5IFNoZXZjaGVua28gPGFuZHJpeS5zaGV2Y2hlbmtvQGludGVs
-LmNvbT4KQ2M6IERhbmllbCBNYWNrIDxkYW5pZWxAem9ucXVlLm9yZz4KQ2M6IEhhb2ppYW4gWmh1
-YW5nIDxoYW9qaWFuLnpodWFuZ0BnbWFpbC5jb20+CkNjOiBSb2JlcnQgSmFyem1payA8cm9iZXJ0
-LmphcnptaWtAZnJlZS5mcj4KQ2M6IE1hcmsgQnJvd24gPGJyb29uaWVAa2VybmVsLm9yZz4KQ2M6
-IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpDYzogbGludXgtc3BpQHZnZXIu
-a2VybmVsLm9yZwpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgVmV0dGVyIDxkYW5pZWwudmV0dGVyQGZm
-d2xsLmNoPgpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMTkxMDE3MDY0NDI2LjMw
-ODE0LTEtZGFuaWVsLnZldHRlckBmZndsbC5jaApTaWduZWQtb2ZmLWJ5OiBNYXJrIEJyb3duIDxi
-cm9vbmllQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2Vy
-bmVsLm9yZz4KLS0tCiBkcml2ZXJzL3NwaS9zcGktcHhhMnh4LmMgfCA3ICsrKysrKysKIDEgZmls
-ZSBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3NwaS9zcGkt
-cHhhMnh4LmMgYi9kcml2ZXJzL3NwaS9zcGktcHhhMnh4LmMKaW5kZXggYWU5NWVjMGJjOTY0Li45
-ZjkyMTY1ZmUwOWYgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvc3BpL3NwaS1weGEyeHguYworKysgYi9k
-cml2ZXJzL3NwaS9zcGktcHhhMnh4LmMKQEAgLTE2MTIsNiArMTYxMiwxMSBAQCBzdGF0aWMgaW50
-IHB4YTJ4eF9zcGlfZndfdHJhbnNsYXRlX2NzKHN0cnVjdCBzcGlfY29udHJvbGxlciAqY29udHJv
-bGxlciwKIAlyZXR1cm4gY3M7CiB9CiAKK3N0YXRpYyBzaXplX3QgcHhhMnh4X3NwaV9tYXhfZG1h
-X3RyYW5zZmVyX3NpemUoc3RydWN0IHNwaV9kZXZpY2UgKnNwaSkKK3sKKwlyZXR1cm4gTUFYX0RN
-QV9MRU47Cit9CisKIHN0YXRpYyBpbnQgcHhhMnh4X3NwaV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1f
-ZGV2aWNlICpwZGV2KQogewogCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7CkBAIC0x
-NzE3LDYgKzE3MjIsOCBAQCBzdGF0aWMgaW50IHB4YTJ4eF9zcGlfcHJvYmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKIAkJfSBlbHNlIHsKIAkJCWNvbnRyb2xsZXItPmNhbl9kbWEgPSBw
-eGEyeHhfc3BpX2Nhbl9kbWE7CiAJCQljb250cm9sbGVyLT5tYXhfZG1hX2xlbiA9IE1BWF9ETUFf
-TEVOOworCQkJY29udHJvbGxlci0+bWF4X3RyYW5zZmVyX3NpemUgPQorCQkJCXB4YTJ4eF9zcGlf
-bWF4X2RtYV90cmFuc2Zlcl9zaXplOwogCQl9CiAJfQogCi0tIAoyLjIwLjEKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Mans Rullgard <mans@mansr.com>
+
+[ Upstream commit fed8d8c7a6dc2a76d7764842853d81c770b0788e ]
+
+The driver does the wrong thing when cs_change is set on a non-last
+xfer in a message.  When cs_change is set, the driver deactivates the
+CS and leaves it off until a later xfer again has cs_change set whereas
+it should be briefly toggling CS off and on again.
+
+This patch brings the behaviour of the driver back in line with the
+documentation and common sense.  The delay of 10 us is the same as is
+used by the default spi_transfer_one_message() function in spi.c.
+[gregory: rebased on for-5.5 from spi tree]
+Fixes: 8090d6d1a415 ("spi: atmel: Refactor spi-atmel to use SPI framework queue")
+Signed-off-by: Mans Rullgard <mans@mansr.com>
+Acked-by: Nicolas Ferre <nicolas.ferre@atmel.com>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Link: https://lore.kernel.org/r/20191018153504.4249-1-gregory.clement@bootlin.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/spi/spi-atmel.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index ba8eff41b746..abbc1582f457 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -302,7 +302,6 @@ struct atmel_spi {
+ 	bool			use_cs_gpios;
+ 
+ 	bool			keep_cs;
+-	bool			cs_active;
+ 
+ 	u32			fifo_size;
+ };
+@@ -1374,11 +1373,9 @@ static int atmel_spi_one_transfer(struct spi_master *master,
+ 				 &msg->transfers)) {
+ 			as->keep_cs = true;
+ 		} else {
+-			as->cs_active = !as->cs_active;
+-			if (as->cs_active)
+-				cs_activate(as, msg->spi);
+-			else
+-				cs_deactivate(as, msg->spi);
++			cs_deactivate(as, msg->spi);
++			udelay(10);
++			cs_activate(as, msg->spi);
+ 		}
+ 	}
+ 
+@@ -1401,7 +1398,6 @@ static int atmel_spi_transfer_one_message(struct spi_master *master,
+ 	atmel_spi_lock(as);
+ 	cs_activate(as, spi);
+ 
+-	as->cs_active = true;
+ 	as->keep_cs = false;
+ 
+ 	msg->status = 0;
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
