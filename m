@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E7D213F3F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:46:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 733B313F3F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:46:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4XGe1stAZ9fsl96HXEJOkoS5GmLeYed6TA23/LFmi0E=; b=iv9FP7wTaDVTLUf6UYMnQ715+h
-	O4C9P2YilE2AleXm4T0bo5kvZV+Vdqv3MQrRJj90DXvvD+R9lvHwhCXBKyYNJpOliV5DPlKRGydHq
-	cZA8lCCBXIFlbWxd8AEvicJ6VEmtm44w7oKnzvPssEOvfYYoTnCiGethQgpMYo5ppzHjaZUIam3P3
-	ItQmiB1D7Z6aYCq5eEQPZjOPIqgepfx8C02GDvAq4qmGgJXFXtBX4DjTT2J3HxTDOv2nIgzBGN7pB
-	PU2sg42S6nSVUKBOJke/UB3dQ2J2A46OWkZDGmJ4KrN/4yOlFR4EwSJ88vqw8yQ1Q7JUHjwrfBGyk
-	hUaijELw==;
+	bh=IhDWHJ4C4deanTbTxsYs6xxTgHYjEaUkzU+BfaMTXMI=; b=HyyHBWctfzjtqKD2bpXV9CjUHc
+	W3QOE40om+aU0XQ04UcG2ZMTVlY47N6N3OR5R2vA+mPhmXfoD8dsuYfe3Q0is9xfTn5tpvLL5+bjK
+	SuRMvz6KCpYMPDFHeKQDfNRrETfTrxqQo4zvIrpijmUXqoHaG0/lo73M3OxgSv4MQzHLaJnL9c7m1
+	2H99Jib7pIitblDnLA1X3ueZ+Hw5480zt+vAMWC9TkVSQgZ6Ah6XBCOMOgD/xFzvkgKWa/p2lZajj
+	nssm3m/7OWLhyKxFcowbSSLkwGXtdTo5pXMDPw9XTrmlIeNL+9SphDZ6BQlHxCVzs8bNvku2dJeup
+	Ds01jpCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isAA5-0000mi-JX; Thu, 16 Jan 2020 18:46:33 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1isAAE-0001CE-SM; Thu, 16 Jan 2020 18:46:42 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9np-0000AN-G5
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:23:36 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m24so4796976wmc.3
+ id 1is9nr-0000CE-QW
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:23:38 +0000
+Received: by mail-wr1-x442.google.com with SMTP id z7so20132016wrl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 10:23:33 -0800 (PST)
+ Thu, 16 Jan 2020 10:23:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=XCi3giR9VTe0RVdSxNrJbzA2jQPkRo5HAD6T0ea6ezU=;
- b=NK+qvfDtbcETsJbAUVtyYTvabKJ7laoZoo3Pi72AybzAYgicukjcCrWLCLPsmdQPQj
- C0UI1PjWGa06gE5PQhLy87feylKf6CPXf2dkpMFywDgcIsqCO4MDp4VSmSdRlW2LEmCy
- xI9fnWtM1bQBiAbH/XuAamzKVB7uJLB6NaQoVfy/p/KF6ia3cjsEr856YXyoF/ZKkohp
- p/UrPuAqIKV6lDpaSd9WB6EXh8To64A5Qm2MDTJsX3vVT1od0n0ghNHpDw1sSY3G/L/x
- SDy55Mxs4F2j+3td7ZJJZ9sle90kNaTdZ8yFYvEIbn5OpmNYMYSDRnLLOSyqpYC5aw+l
- Qccg==
+ bh=cov12SfkIh+oexBgHBZ+gRTZEIqEjsP9GuoevKtumE8=;
+ b=IfE/AcGIBZtMogp4pJ1vnzNDiMAS/TQbIr4SdqcNp2CaG0nWlzRycN3Mpymhncv+NU
+ pjkD8vNSb7Okazn9lRdv0n0SsTUVFq0pygs/44pOUz9Pu+GfBjQqne+pnLnCkFW0vRd/
+ V00UfH2aCwQqKH2F1ANxuCFt3IsJr/sF+0inGS7HS6655If5kmngNKDxcK6E5im1PFis
+ klHa2GuK/o+TeaMb9gCBWIGjL5Nd9oxEn+e1VpjpVoR6lxrvhmu0iIWabBKL9yENaEg6
+ AUfRGaW4cI9RdSxXcvSki0QEHSgoATdNBdwV3uYVVXSfiqil/nszFaoJnHPDoMu06uTN
+ Y2cQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=XCi3giR9VTe0RVdSxNrJbzA2jQPkRo5HAD6T0ea6ezU=;
- b=QeqfsVzZwq9Ne7DtwUBwFgwcmYG4Z+vPZx3mka6KHf0h86r8huHMBKIDIiSZQYPaIX
- pU1iI0pbIS9PDNu71Z2F/6j1MqAkPPX+pEKjco+xy6yLBr6brI22nhZoGGof1YjQ7RmL
- /T5NdhdMSnVyWBVXffhbcp48s4MWjDPRGULFVRLHNhZFB+YDd6mR3rhVFtX0I5BJ7+le
- vYVHcQxjvDa55wa4ltE5hkOf1lJtUqL+Jy3IrUzrzKHbfU6u3xvUPK5VPkRtOTOBsK6J
- wzAwlBtEcWEMm+HFziUt24+8yg2AKCUDTVY4CbOcNw0UgmeqmlNJqpRhL3KOPum0gF86
- xUBw==
-X-Gm-Message-State: APjAAAXHBJKzmo7V4ouwum9vyyEo2lcX2o1hEzmDVItmOVi5eDmNWnbH
- MpUlANFAMzTfGtxMiZpQg5Rm5Q==
-X-Google-Smtp-Source: APXvYqzzk/u9wMQmxsWFQjXXqLpW96/Wotc9bX/2MlWh/iCgtJD6BoISx1/3AIymdgPTxC0p+Kg8UQ==
-X-Received: by 2002:a1c:6707:: with SMTP id b7mr365782wmc.54.1579199011774;
- Thu, 16 Jan 2020 10:23:31 -0800 (PST)
+ bh=cov12SfkIh+oexBgHBZ+gRTZEIqEjsP9GuoevKtumE8=;
+ b=MHkCyY68lKgojc54GX07s50RsvH5OYk9Fytiv2YiRUfepoqH1XwHF0j5a7i260QO2F
+ VLQvb230UU+1JF15MBS7gnQCTnBgGl/UxHxwmdifn/TBgfW76IF8KiTQscThAvCNoaaU
+ W/kI6Oj/oueD5sg84+pdF20eVOSxvsJyeV111tgUPo13wAyEZI3/6Va9qPJek1b6/xkb
+ jahma74H5tVSUvchNl4BKazn7/qQH6B2IedosrMnHrOSTkwPszOvV7X4q0t67OTmc+jb
+ geQmTZVmscfUBM5n9Z2BHrMkJwl9NL2lc0DamO+tRjJZQgnnC0hznFwnDQMZg1YhSHd4
+ wFzQ==
+X-Gm-Message-State: APjAAAXl/vZsUtw97Jn1JH5awsMywkz0ICmKn+FnJoX2JZEk4j2soqwM
+ ePJDEcT5nORyJnK/kxs66S5Qsm3Ol2KAXQ==
+X-Google-Smtp-Source: APXvYqxWIejb0YpykDsuwCHNVjnl5GGEaOIWj+UApHCuOGElJG5HBES8xZ+lFCS57N2XCFS879y6GQ==
+X-Received: by 2002:adf:f8c8:: with SMTP id f8mr4532434wrq.331.1579199013608; 
+ Thu, 16 Jan 2020 10:23:33 -0800 (PST)
 Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:6c63:1b50:1156:7f0f])
- by smtp.gmail.com with ESMTPSA id b137sm1087920wme.26.2020.01.16.10.23.29
+ by smtp.gmail.com with ESMTPSA id b137sm1087920wme.26.2020.01.16.10.23.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Jan 2020 10:23:30 -0800 (PST)
+ Thu, 16 Jan 2020 10:23:33 -0800 (PST)
 From: Daniel Lezcano <daniel.lezcano@linaro.org>
 To: tglx@linutronix.de
-Subject: [PATCH 07/17] clocksource/drivers/cadence-ttc: Use ttc driver as
- platform driver
-Date: Thu, 16 Jan 2020 19:22:54 +0100
-Message-Id: <20200116182304.4926-7-daniel.lezcano@linaro.org>
+Subject: [PATCH 08/17] clocksource/drivers/bcm2835_timer: Fix memory leak of
+ timer
+Date: Thu, 16 Jan 2020 19:22:55 +0100
+Message-Id: <20200116182304.4926-8-daniel.lezcano@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200116182304.4926-1-daniel.lezcano@linaro.org>
 References: <74bf7170-401f-2962-ea5a-1e21431a9349@linaro.org>
  <20200116182304.4926-1-daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_102333_556632_CA770BDB 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20200116_102335_863917_80AD9041 
+X-CRM114-Status: GOOD (  13.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,89 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/ZYNQ ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-kernel@vger.kernel.org,
- Rajan Vaja <rajan.vaja@xilinx.com>, Michal Simek <michal.simek@xilinx.com>
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Colin Ian King <colin.king@canonical.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rajan Vaja <rajan.vaja@xilinx.com>
+From: Colin Ian King <colin.king@canonical.com>
 
-Currently TTC driver is TIMER_OF_DECLARE type driver. Because of
-that, TTC driver may be initialized before other clock drivers. If
-TTC driver is dependent on that clock driver then initialization of
-TTC driver will failed.
+Currently when setup_irq fails the error exit path will leak the
+recently allocated timer structure.  Originally the code would
+throw a panic but a later commit changed the behaviour to return
+via the err_iounmap path and hence we now have a memory leak. Fix
+this by adding a err_timer_free error path that kfree's timer.
 
-So use TTC driver as platform driver instead of using
-TIMER_OF_DECLARE.
-
-Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-Tested-by: Michal Simek <michal.simek@xilinx.com>
-Acked-by: Michal Simek <michal.simek@xilinx.com>
+Addresses-Coverity: ("Resource Leak")
+Fixes: 524a7f08983d ("clocksource/drivers/bcm2835_timer: Convert init function to return error")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
 Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-Link: https://lore.kernel.org/r/1573122988-18399-1-git-send-email-rajan.vaja@xilinx.com
+Link: https://lore.kernel.org/r/20191219213246.34437-1-colin.king@canonical.com
 ---
- drivers/clocksource/timer-cadence-ttc.c | 26 +++++++++++++++++--------
- 1 file changed, 18 insertions(+), 8 deletions(-)
+ drivers/clocksource/bcm2835_timer.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-cadence-ttc.c
-index 88fe2e9ba9a3..38858e141731 100644
---- a/drivers/clocksource/timer-cadence-ttc.c
-+++ b/drivers/clocksource/timer-cadence-ttc.c
-@@ -15,6 +15,8 @@
- #include <linux/of_irq.h>
- #include <linux/slab.h>
- #include <linux/sched_clock.h>
-+#include <linux/module.h>
-+#include <linux/of_platform.h>
+diff --git a/drivers/clocksource/bcm2835_timer.c b/drivers/clocksource/bcm2835_timer.c
+index 2b196cbfadb6..b235f446ee50 100644
+--- a/drivers/clocksource/bcm2835_timer.c
++++ b/drivers/clocksource/bcm2835_timer.c
+@@ -121,7 +121,7 @@ static int __init bcm2835_timer_init(struct device_node *node)
+ 	ret = setup_irq(irq, &timer->act);
+ 	if (ret) {
+ 		pr_err("Can't set up timer IRQ\n");
+-		goto err_iounmap;
++		goto err_timer_free;
+ 	}
  
- /*
-  * This driver configures the 2 16/32-bit count-up timers as follows:
-@@ -464,13 +466,7 @@ static int __init ttc_setup_clockevent(struct clk *clk,
+ 	clockevents_config_and_register(&timer->evt, freq, 0xf, 0xffffffff);
+@@ -130,6 +130,9 @@ static int __init bcm2835_timer_init(struct device_node *node)
+ 
  	return 0;
- }
  
--/**
-- * ttc_timer_init - Initialize the timer
-- *
-- * Initializes the timer hardware and register the clock source and clock event
-- * timers with Linux kernal timer framework
-- */
--static int __init ttc_timer_init(struct device_node *timer)
-+static int __init ttc_timer_probe(struct platform_device *pdev)
- {
- 	unsigned int irq;
- 	void __iomem *timer_baseaddr;
-@@ -478,6 +474,7 @@ static int __init ttc_timer_init(struct device_node *timer)
- 	static int initialized;
- 	int clksel, ret;
- 	u32 timer_width = 16;
-+	struct device_node *timer = pdev->dev.of_node;
- 
- 	if (initialized)
- 		return 0;
-@@ -532,4 +529,17 @@ static int __init ttc_timer_init(struct device_node *timer)
- 	return 0;
- }
- 
--TIMER_OF_DECLARE(ttc, "cdns,ttc", ttc_timer_init);
-+static const struct of_device_id ttc_timer_of_match[] = {
-+	{.compatible = "cdns,ttc"},
-+	{},
-+};
++err_timer_free:
++	kfree(timer);
 +
-+MODULE_DEVICE_TABLE(of, ttc_timer_of_match);
-+
-+static struct platform_driver ttc_timer_driver = {
-+	.driver = {
-+		.name	= "cdns_ttc_timer",
-+		.of_match_table = ttc_timer_of_match,
-+	},
-+};
-+builtin_platform_driver_probe(ttc_timer_driver, ttc_timer_probe);
+ err_iounmap:
+ 	iounmap(base);
+ 	return ret;
 -- 
 2.17.1
 
