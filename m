@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E220B13E1D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:53:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0239B13E1D6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:53:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aMDO4OURabxjqabetC3rVY5xDa4k9Kc3BGgz/7hdRAM=; b=Kl+wuGXGWNe+ot
-	ogCtuGBJID/OrN9gLp9dcx2B1EJIH82AbjmJVNZzojozuv7rV511k+Y37DBlAvdpIGBSF2BgGsq7t
-	sX0XL/ilxG/GZ6ZqFruOTd2aLvMLsElgIUHKrzeGeWBY78bxUWRJnia/vQ5OR3ICb5ZwJRDuGvLJt
-	PRHg5KkIC20AwW0LZLosRFq+1HN7t9gYBCI9E4kANjc7sjknEEDEdZd9yixZYUwcMT7FlrrAgHmVu
-	/q70aSrktRr1rxWilPPU8A8+jfZGNjoMDRh82Kwwe5qIJE7DD8xDDyCejwVrjKYrhfyxIjge1zoOV
-	gKkMDyACsNbhMVxOLDNA==;
+	List-Owner; bh=uXo8szRsFB9WZMXgu8dFBEk3Fl0lTGI21jWC2gMfvuo=; b=dyCf5r1/6gPcq8
+	NHQRf26rAVT664dtRDxeJXb3aKURti2w8MGtZ/9s7jkNS4OuOTiRoQcfgZ0M3vWokgYqItmjNuBCb
+	Fev8VqN6tgR+Zd0fIl5BUMr0ZkGg7mgteU/6KXVq316rV9ZVSPGL8L4IbpHO0V/8Zrx/zR8KbmAAD
+	RkpouhN3XCegPpRBtsxPrDXxVONxsYllAXkdIicbrIm5Jz+unmiLN6FFxe5xWeEB+R2B1pLIZWLOm
+	6Q9hOT0TJeJ3GRbTYWkGcFY/E9v6r1EPXVy9ixW6x/HEj1iP4Srv3qWk4czUsVGOhzZXrNTSwarHp
+	ea1aXqmT308oTRDHErlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8OI-0007yL-EU; Thu, 16 Jan 2020 16:53:06 +0000
+	id 1is8Ol-0008Ks-Hs; Thu, 16 Jan 2020 16:53:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Nq-0007ql-Cf
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:52:42 +0000
+ id 1is8Nx-0007xU-B3
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:52:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 20D7E2073A;
- Thu, 16 Jan 2020 16:52:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 399992073A;
+ Thu, 16 Jan 2020 16:52:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193557;
- bh=ih2gnmgItQFLMhY5RSN4tZvX7fs5Sa/mH/Wd0Wfpllc=;
+ s=default; t=1579193565;
+ bh=zpzci73/WOYggS/ZHbcKp5B5Qj5/qqYf8+daUsf7X+Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nB22gdPyqHxHYRqkwwRIuOmfi9ATMWO0XJZ4d2KcQI+tDdXkO2CmRGlO46ZllRY0W
- bsUPGuFc16YKEBUIXxMiaKf0sLiQpvAjh9GhBVRIhkR9Ig5Irhi1EDE+lx/eibMmZg
- eGuYVCt52363fRo9bkJ95xPzkVUIjOhANCvLuFaw=
+ b=1oJYVDzJOyuKZVvho3neOYFgWmjuZTt0Lxr+Dtx9U1HGpQo3RcGsTnAud6gnXlMZi
+ F4bEvpa5nKs+aQQq5zmygQi5w7yKuq8RNFqpS1diGBWexRjIe5IR6iBQ7cCkLp+HqR
+ 24iOCpfwgB2b7wEGV9B9tbl8hJU1fEL54iD9ULU0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 103/205] arm64: dts: allwinner: a64: Re-add PMU
- node
-Date: Thu, 16 Jan 2020 11:41:18 -0500
-Message-Id: <20200116164300.6705-103-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 109/205] net: axienet: Fix error return code in
+ axienet_probe()
+Date: Thu, 16 Jan 2020 11:41:24 -0500
+Message-Id: <20200116164300.6705-109-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085238_499244_ECAAF1B0 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200116_085245_415251_EF8C1D6C 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,67 +81,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Wei Yongjun <weiyongjun1@huawei.com>, "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Przywara <andre.przywara@arm.com>
+From: Wei Yongjun <weiyongjun1@huawei.com>
 
-[ Upstream commit 6b832a148717f1718f57805a9a4aa7f092582d15 ]
+[ Upstream commit eb34e98baf4ce269423948dacefea6747e963b48 ]
 
-As it was found recently, the Performance Monitoring Unit (PMU) on the
-Allwinner A64 SoC was not generating (the right) interrupts. With the
-SPI numbers from the manual the kernel did not receive any overflow
-interrupts, so perf was not happy at all.
-It turns out that the numbers were just off by 4, so the PMU interrupts
-are from 148 to 151, not from 152 to 155 as the manual describes.
+In the DMA memory resource get failed case, the error is not
+set and 0 will be returned. Fix it by removing redundant check
+since devm_ioremap_resource() will handle it.
 
-This was found by playing around with U-Boot, which typically does not
-use interrupts, so the GIC is fully available for experimentation:
-With *every* PPI and SPI enabled, an overflowing PMU cycle counter was
-found to set a bit in one of the GICD_ISPENDR registers, with careful
-counting this was determined to be number 148.
-
-Tested with perf record and perf top on a Pine64-LTS. Also tested with
-tasksetting to every core to confirm the assignment between IRQs and
-cores.
-
-This somewhat "revert-fixes" commit ed3e9406bcbc ("arm64: dts: allwinner:
-a64: Drop PMU node").
-
-Fixes: 34a97fcc71c2 ("arm64: dts: allwinner: a64: Add PMU node")
-Fixes: ed3e9406bcbc ("arm64: dts: allwinner: a64: Drop PMU node")
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Fixes: 28ef9ebdb64c ("net: axienet: make use of axistream-connected attribute optional")
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 70f4cce6be43..ba41c1b85887 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -142,6 +142,15 @@
- 		clock-output-names = "ext-osc32k";
- 	};
- 
-+	pmu {
-+		compatible = "arm,cortex-a53-pmu";
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
-+	};
-+
- 	psci {
- 		compatible = "arm,psci-0.2";
- 		method = "smc";
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+index 676006f32f91..479325eeaf8a 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+@@ -1790,10 +1790,6 @@ static int axienet_probe(struct platform_device *pdev)
+ 		/* Check for these resources directly on the Ethernet node. */
+ 		struct resource *res = platform_get_resource(pdev,
+ 							     IORESOURCE_MEM, 1);
+-		if (!res) {
+-			dev_err(&pdev->dev, "unable to get DMA memory resource\n");
+-			goto free_netdev;
+-		}
+ 		lp->dma_regs = devm_ioremap_resource(&pdev->dev, res);
+ 		lp->rx_irq = platform_get_irq(pdev, 1);
+ 		lp->tx_irq = platform_get_irq(pdev, 0);
 -- 
 2.20.1
 
