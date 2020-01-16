@@ -2,99 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57BEC13FA2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:08:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D1FE13FA49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:14:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=b1JLokCcBx77/tnPA0+pRJ7zlQhBDOuN3oiUqBoKPI4=; b=Nr7
-	keG+k6+q6zB0QoS8sdt5pAf43Ujw7QMQVdHtPKXms1O5Z2E6TClJ/ZW8oS4NXzUzviRXkQ4tMz9aO
-	1IvYz9T74Pdj85rzKRvLTLZSzBsmxnRFkM+xX9agPhV71AE8T3TWh+zWXLKeK4dQOMKYw6H+iDaSV
-	km2cI4r+2pMQ9oYMeLcxB+A8J+sK6dtqxrj5alcGCw1n6/Ar9uV+Rd8lujWBa4q1yDZNQVkT85w5z
-	bP8tlCAphhD9CPJBkL2AlaNsFxuQUgbuNRooNYmU/9pc963aLeNPvd8paP/tGIXVVw5TnR2fb473q
-	7yJSLXz6IYv8qLKMSvUept6rkHsiVrA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nhx4PUKVD5t/HcViRvn3pk5DoJkO7NfwyXX2zw9FyOM=; b=ql1G0K6hsx2QzD
+	5dwJMiq6GpKhdGmUyKVLVQ+FcztI1EX0PQzqOQKkHwO6vLmKrCE4HPuCEgkseOK5vZVObtc0/h4Kp
+	3ZIn6bOX2a6zHZlPiS6aS7Bjm9gqQyGd2VDNsz4tlsYY3hwqWZ4s7zgs+uMdE97Q+qRWuxoJEa1s1
+	VGNYCivlx9mVllNcfswxVvGic8BMkWuFIDcEsGeVz0b1mA/tO/pwnbBYfOl/TOZUTymLJ0SZtF5Q1
+	O9NynLNGDfDe/entNjeRFxUJM9GPxjh/IrKck9clUaaRojuf4pUV6esn2dlAyDopqCvrGZw/uOVlS
+	bIItEgiLN/xfDCOawU9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isBRS-0001SI-8G; Thu, 16 Jan 2020 20:08:34 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1isBWs-00055G-2y; Thu, 16 Jan 2020 20:14:10 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isBRG-0001PR-Hu
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:08:27 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00GK368V132707;
- Thu, 16 Jan 2020 20:07:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id; s=corp-2019-08-05;
- bh=VXKP063RLeaEtvwZyxBIApAY7BlmugdZZoADPBt2YAg=;
- b=Q7wnOTFYlvOxiPoKMEqnlqRwvviOsCfv6eCIMDbOBNmD3T5Hyi6Z8ku4oy52bDgGr/Ls
- 3euJmiXxZCmpVtlHKqb/TH4X19wd33S7+N9MN3T81wsn/xfL0ANlnJtUKJz0c/hMCtjh
- oCwuXlcYqrKqsrl/Mume1bsu8hKFpqOwfm22a6MD3T42DrxkHscIVxNGa54hrz3Gvu0E
- /ijxtHZeK011ndqjila2pTiVp8x8n502gLOQgLLfwhiVRgXmGMNiUxFn7WW23BQfTGbY
- b9VOJoX/f9548CXyKyZOiNelfyAum0DBOVDurNpd4P8YwIsQEsRu38iG6a/bkIgfAQ/I EA== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 2xf73yvu5p-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 16 Jan 2020 20:07:56 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00GK3mcQ042328;
- Thu, 16 Jan 2020 20:07:56 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 2xj1ptpydj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 16 Jan 2020 20:07:55 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 00GK7q6v014129;
- Thu, 16 Jan 2020 20:07:52 GMT
-Received: from localhost.localdomain (/10.159.157.9)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 16 Jan 2020 12:07:52 -0800
-From: Santosh Shilimkar <santosh.shilimkar@oracle.com>
-To: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [GIT_PULL] SOC: TI Keystone Ring Accelerator driver for v5.6
-Date: Thu, 16 Jan 2020 12:07:39 -0800
-Message-Id: <1579205259-4845-1-git-send-email-santosh.shilimkar@oracle.com>
-X-Mailer: git-send-email 1.9.1
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9502
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=749
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001160161
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9502
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=824 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001160161
+ id 1isBWk-00054n-09
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:14:03 +0000
+Received: from p5b06da22.dip0.t-ipconnect.de ([91.6.218.34]
+ helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1isBWc-0000Wb-NU; Thu, 16 Jan 2020 21:13:54 +0100
+Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
+ id F20D7101226; Thu, 16 Jan 2020 21:13:53 +0100 (CET)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ nathanl@linux.ibm.com, arnd@arndb.de, vincenzo.frascino@arm.com,
+ luto@kernel.org
+Subject: Re: [RFC PATCH v4 08/11] lib: vdso: allow fixed clock mode
+In-Reply-To: <1b278bc1f6859d4df734fb2cde61cf298e6e07fd.1579196675.git.christophe.leroy@c-s.fr>
+References: <cover.1579196675.git.christophe.leroy@c-s.fr>
+ <1b278bc1f6859d4df734fb2cde61cf298e6e07fd.1579196675.git.christophe.leroy@c-s.fr>
+Date: Thu, 16 Jan 2020 21:13:53 +0100
+Message-ID: <874kwvf9by.fsf@nanos.tec.linutronix.de>
+MIME-Version: 1.0
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_120822_676858_0176A1E2 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200116_121402_184485_CA7B320E 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,50 +71,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, khilman@kernel.org, santosh.shilimkar@oracle.com,
- linux-kernel@vger.kernel.org, vkoul@kernel.org, olof@lixom.net
-MIME-Version: 1.0
+Cc: x86@kernel.org, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Its bit late for pull request, but if possible, please pull it to
-soc drivers tree.
+Christophe Leroy <christophe.leroy@c-s.fr> writes:
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+Can you please adjust the prefix for future patches to lib/vdso: and
+start the sentence after the colon with an uppercase letter?
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+> On arches like POWERPC, the clock is always the timebase, it
 
-are available in the git repository at:
+Please spell out architectures. Changelogs are not space constraint.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.6
+> cannot be changed on the fly and it is always VDSO capable.
 
-for you to fetch changes up to 3277e8aa2504d97e022ecb9777d784ac1a439d36:
+Also this sentence does not make sense as it might suggests that
+architectures with a fixed compile time known clocksource have something
+named timebase. Something like this is more clear:
 
-  soc: ti: k3: add navss ringacc driver (2020-01-15 10:07:27 -0800)
+Some architectures have a fixed clocksource which is known at compile
+time and cannot be replaced or disabled at runtime, e.g. timebase on
+PowerPC. For such cases the clock mode check in the VDSO code is
+pointless.
 
-----------------------------------------------------------------
-SOC: TI Keystone Ring Accelerator driver
+Hmm?
 
-The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
-enable straightforward passing of work between a producer and a consumer.
-There is one RINGACC module per NAVSS on TI AM65x SoCs.
+Thanks,
 
-----------------------------------------------------------------
-Grygorii Strashko (2):
-      bindings: soc: ti: add documentation for k3 ringacc
-      soc: ti: k3: add navss ringacc driver
-
- .../devicetree/bindings/soc/ti/k3-ringacc.txt      |   59 +
- drivers/soc/ti/Kconfig                             |   11 +
- drivers/soc/ti/Makefile                            |    1 +
- drivers/soc/ti/k3-ringacc.c                        | 1157 ++++++++++++++++++++
- include/linux/soc/ti/k3-ringacc.h                  |  244 +++++
- 5 files changed, 1472 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
- create mode 100644 drivers/soc/ti/k3-ringacc.c
- create mode 100644 include/linux/soc/ti/k3-ringacc.h
+        tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
