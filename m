@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C586513EA1B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:42:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4854713EA1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:42:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kie8h3X8d+SaaDdrJGc5O5x4bmxVhNGP8cCVk3HwJM0=; b=QoUfLiX6LU8Cxj
-	HKGYTOqTycRwQAQ5fb2mUfPyysYp2wchjSuhU/o4uONJUDTLf4NxPjMvQpkixz6oi9cuTUYHKgAB5
-	XD/S0Y2UNNxZrxOzfTC5DaECIG+1PP6ksg1KO/XYRBbiXB85J2wq7fD/rSUA/rhkm02Z14V5hjFFJ
-	Yef1S/H9zI1Ms75K6cFVcxXlPfdSXg/rzn4CH0dqpMBFr0vWPk1Z0aBNaxg8/F93Rpfmmzuzc3Exh
-	7PREjNJsS9u9LSBdC0qdnWrWyA2W70zzgQQu3l10tbcoYZQfANJ9W4mdxEMoKgDK/mq39Bg6u0rFY
-	6pNnICnXUllsKBLhjnYw==;
+	List-Owner; bh=/Qxh6DzilrBkaO91LgYp3IS8QuKXwa40pWjqLK9drHU=; b=a+VByHhh9lMyD1
+	r+ayLy1rt3c17QehX6dabDvMkjDPW+10O2BmPtvJ/4I0iQ8bbiKizCxGgKd5LJd6GfQym0yaHLbYJ
+	IFl0/1L9fmxic5NQA87VlqC6hQhlr2bGA6GD0yJim9+DALogxICNknBcjU1I1TCeT5Cq9GWdFnOuh
+	0CgVvrJSvjnHYOfAKXn2Yi+ng7UARaKkZx2jbGfhEEhVoUeJ37G9CmVhqLEnDIBa3SnG9+C86NFAt
+	K5wGzaJxm6VUplQeriTCEhzwGnbwqncNY6fyqgXxGiBybxzj22CRnXQ10DPWVzLPKZsVqE0gmOxDt
+	iRF82+InGQ5E0oi97eyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is99w-0002U7-PE; Thu, 16 Jan 2020 17:42:20 +0000
+	id 1is9AL-0002lg-08; Thu, 16 Jan 2020 17:42:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8hH-0006Bo-O0
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:12:48 +0000
+ id 1is8ha-0006TV-MB
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:13:09 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 35A102469B;
- Thu, 16 Jan 2020 17:12:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F3BF24690;
+ Thu, 16 Jan 2020 17:13:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194763;
- bh=+LjzRZhG/asUPV6mXmu3rlMw0EJxr7fb6ki0KxCziZQ=;
+ s=default; t=1579194781;
+ bh=X71KVo4xG0cjqx0gcs9hfFfsMPtQ4qoxi0HywtBXbOE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=haCFxe/sDJyXUtzlFTQ3G1tZqAbmtIZ09mCv4K+MQorLEMCkj1o9I0avcbn1adcGl
- 0dRFuZXF6S/txlcsn/YHSAVZE1cwj8nVJa/UE+wAbtX3nF3BUgDLt9Ghf8q1OF1LXI
- Ru+d9r8MFRsbZvHFbXr63Vfz88v7gWIHCz1new6M=
+ b=ZC+BGZ0iiiA1tSaElD3iPhuz1NR0W2+Xizz3BLsQ0qotj6Cdc8aGZ1iOPny0/WPpm
+ cqgt1ZqfcKeyMNJyw5MYdlEuXWqOe4Ts2nxYKxu0BozXHhT4P4SZWPYrp/MT53/92i
+ pmJzfKwe5SUc35jZ5MrgjAPGHQt9H6HOCi9F00sM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 584/671] net: stmmac: fix disabling flexible PPS
- output
-Date: Thu, 16 Jan 2020 12:03:42 -0500
-Message-Id: <20200116170509.12787-321-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 597/671] dmaengine: imx-sdma: fix size check for
+ sdma script_number
+Date: Thu, 16 Jan 2020 12:03:55 -0500
+Message-Id: <20200116170509.12787-334-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091243_826846_05D021AC 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200116_091302_987616_089A9256 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,54 +80,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Antonio Borneo <antonio.borneo@st.com>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Jurgen Lambrecht <J.Lambrecht@TELEVIC.com>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org, stable@vger.kernel,
+ Robin Gong <yibin.gong@nxp.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Antonio Borneo <antonio.borneo@st.com>
+From: Robin Gong <yibin.gong@nxp.com>
 
-[ Upstream commit 520cf6002147281d1e7b522bb338416b623dcb93 ]
+[ Upstream commit bd73dfabdda280fc5f05bdec79b6721b4b2f035f ]
 
-Accordingly to Synopsys documentation [1] and [2], when bit PPSEN0
-in register MAC_PPS_CONTROL is set it selects the functionality
-command in the same register, otherwise selects the functionality
-control.
-Command functionality is required to either enable (command 0x2)
-and disable (command 0x5) the flexible PPS output, but the bit
-PPSEN0 is currently set only for enabling.
+Illegal memory will be touch if SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
+(41) exceed the size of structure sdma_script_start_addrs(40),
+thus cause memory corrupt such as slob block header so that kernel
+trap into while() loop forever in slob_free(). Please refer to below
+code piece in imx-sdma.c:
+for (i = 0; i < sdma->script_number; i++)
+	if (addr_arr[i] > 0)
+		saddr_arr[i] = addr_arr[i]; /* memory corrupt here */
+That issue was brought by commit a572460be9cf ("dmaengine: imx-sdma: Add
+support for version 3 firmware") because SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
+(38->41 3 scripts added) not align with script number added in
+sdma_script_start_addrs(2 scripts).
 
-Set the bit PPSEN0 to properly disable flexible PPS output.
-
-Tested on STM32MP15x, based on dwmac 4.10a.
-
-[1] DWC Ethernet QoS Databook 4.10a October 2014
-[2] DWC Ethernet QoS Databook 5.00a September 2017
-
-Signed-off-by: Antonio Borneo <antonio.borneo@st.com>
-Fixes: 9a8a02c9d46d ("net: stmmac: Add Flexible PPS support")
-Signed-off-by: Jakub Kicinski <jakub.kicinski@netronome.com>
+Fixes: a572460be9cf ("dmaengine: imx-sdma: Add support for version 3 firmware")
+Cc: stable@vger.kernel
+Link: https://www.spinics.net/lists/arm-kernel/msg754895.html
+Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+Reported-by: Jurgen Lambrecht <J.Lambrecht@TELEVIC.com>
+Link: https://lore.kernel.org/r/1569347584-3478-1-git-send-email-yibin.gong@nxp.com
+[vkoul: update the patch title]
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac5.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/dma/imx-sdma.c                     | 8 ++++++++
+ include/linux/platform_data/dma-imx-sdma.h | 3 +++
+ 2 files changed, 11 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
-index 3f4f3132e16b..e436fa160c7d 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
-@@ -515,6 +515,7 @@ int dwmac5_flex_pps_config(void __iomem *ioaddr, int index,
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index 3f5a01cb4ab4..ceb82e74f5b4 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -1662,6 +1662,14 @@ static void sdma_add_scripts(struct sdma_engine *sdma,
+ 	if (!sdma->script_number)
+ 		sdma->script_number = SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V1;
  
- 	if (!enable) {
- 		val |= PPSCMDx(index, 0x5);
-+		val |= PPSEN0;
- 		writel(val, ioaddr + MAC_PPS_CONTROL);
- 		return 0;
- 	}
++	if (sdma->script_number > sizeof(struct sdma_script_start_addrs)
++				  / sizeof(s32)) {
++		dev_err(sdma->dev,
++			"SDMA script number %d not match with firmware.\n",
++			sdma->script_number);
++		return;
++	}
++
+ 	for (i = 0; i < sdma->script_number; i++)
+ 		if (addr_arr[i] > 0)
+ 			saddr_arr[i] = addr_arr[i];
+diff --git a/include/linux/platform_data/dma-imx-sdma.h b/include/linux/platform_data/dma-imx-sdma.h
+index 6eaa53cef0bd..30e676b36b24 100644
+--- a/include/linux/platform_data/dma-imx-sdma.h
++++ b/include/linux/platform_data/dma-imx-sdma.h
+@@ -51,7 +51,10 @@ struct sdma_script_start_addrs {
+ 	/* End of v2 array */
+ 	s32 zcanfd_2_mcu_addr;
+ 	s32 zqspi_2_mcu_addr;
++	s32 mcu_2_ecspi_addr;
+ 	/* End of v3 array */
++	s32 mcu_2_zqspi_addr;
++	/* End of v4 array */
+ };
+ 
+ /**
 -- 
 2.20.1
 
