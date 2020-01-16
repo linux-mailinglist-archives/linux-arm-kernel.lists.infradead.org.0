@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4943F13F1DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:31:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1D3E13F1DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LiVkyC3JAkfJUlf3iQYEfvZayECJYrBnTIxz+pI0nlQ=; b=p7QaXWoqbAvkHE
-	Unp+SJXpWfmwXW9faGVrk1ozmQ0VAPysTnspmSyumfrLZLDjYGQyihv33YrQP6CSnloWLqdYltOyh
-	UGJVo7xtlMKEEU74GvKKdRoYA1+B9ge18/RebY9Aa+D5xO6wflZyAuShe1Ikdvcqhh/Q4XdsmY4AJ
-	ulayi1DNn60YBhJ1v3mOYYXPw5IlmIc6nKxqc0GZ54kPkZtCR+/N8LA/0YOJlouHYSiqTyMaChYIA
-	G/7CHtwjAMII3cokQ2Qx+Qg/evZrqQCjTkmIbxRAHRS5FktDnArTfhohYBRUj+DfQEBHXqil/aYua
-	dYI2S3mrMr8lWF7IAp7A==;
+	List-Owner; bh=SgY6d3UqR7LGomWnA7dHaFFiyrl2g1dUv8GMMGrsbVQ=; b=Us3X7nhjFsGdbC
+	L74rQ2Rk1fy3Ndlhszts/vJbVfexkLkzrtYoqcUpZydmPY0Qn2Hbewckm9KMHKnr34sr7uB+3a7az
+	8TrX0YgbXow5Y9BZgxjaGh4JpkTT9Y+fSXoZLVlgxPU/tXOeqUIZO7VsUd6+tmMxrgNyRMWCkacCC
+	JoKyPnXuRmoe6R65Ed/EfxXlnXWbtT+nB4HNet6q0bh9hpcPIUbPSOvEiGH8U8siwCKcSbWBplwAi
+	K3rJm1WIWO+A1q1KZG0PJFeZoKk89X9u7K3lI1qQUvlZjxsPj1O8FackeghsyVurJxXwOMNCY3MHX
+	HghvFpBhUgA3tyOq7hcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9vb-0000NN-DG; Thu, 16 Jan 2020 18:31:35 +0000
+	id 1is9vq-0000el-IJ; Thu, 16 Jan 2020 18:31:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9Ba-00048z-Ce
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:06 +0000
+ id 1is9Bb-0004A6-26
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:08 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7686E24741;
- Thu, 16 Jan 2020 17:43:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF5CC24744;
+ Thu, 16 Jan 2020 17:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196640;
- bh=iIaMfE0eCNktgZoozG23i7g4jsF5SYY3Xf5XpHger3w=;
+ s=default; t=1579196642;
+ bh=7Ib8Ng+ghXxuvkABsdz66tKXJ5t4d1VzFvS70GhBrfI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XKxNNt5PL4JGnR2EcBs73IVTlp3TeDf3v6sNBdvrf0b6Tlvw8nW9TtSq4mSoO3YSc
- 3peb1LCkSA4M30qcFJ7ToN9T2yfGOCX6jE07P/Xo7TQ+e5u4eRObYu1W42qj7FFVMN
- NfN1kZK8bSEd4z6mk/24NDLlYhaeV2nnrV8MhfKE=
+ b=1NuWSwpdeOShvs5QGtSSvgL4P4XL0GLnRdX1u/p3Ith6TU4VaKZUlwwyltTzyfkJj
+ bhqCyUVOWGYJQHejbQzs1QkIKUvGCQGoE48bxLoX+kU/1vHaiUgi7NrCLbfmZM//LJ
+ 27fD96f5Q9wsmD5u2i4J6WPhp6/6k/S1uApVu7Mo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 052/174] clocksource/drivers/sun5i: Fail
- gracefully when clock rate is unavailable
-Date: Thu, 16 Jan 2020 12:40:49 -0500
-Message-Id: <20200116174251.24326-52-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 053/174] ARM: 8847/1: pm: fix HYP/SVC mode
+ mismatch when MCPM is used
+Date: Thu, 16 Jan 2020 12:40:50 -0500
+Message-Id: <20200116174251.24326-53-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094402_499363_B96B29FE 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20200116_094403_203795_50828F6F 
+X-CRM114-Status: GOOD (  13.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,63 +80,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Nicolas Pitre <nico@linaro.org>,
+ linux-pm@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit e7e7e0d7beafebd11b0c065cd5fbc1e5759c5aab ]
+[ Upstream commit ca70ea43f80c98582f5ffbbd1e6f4da2742da0c4 ]
 
-If the clock tree is not fully populated when the timer-sun5i init code
-is called, attempts to get the clock rate for the timer would fail and
-return 0.
+MCPM does a soft reset of the CPUs and uses common cpu_resume() routine to
+perform low-level platform initialization. This results in a try to install
+HYP stubs for the second time for each CPU and results in false HYP/SVC
+mode mismatch detection. The HYP stubs are already installed at the
+beginning of the kernel initialization on the boot CPU (head.S) or in the
+secondary_startup() for other CPUs. To fix this issue MCPM code should use
+a cpu_resume() routine without HYP stubs installation.
 
-Make the init code for both clock events and clocksource check the
-returned clock rate and fail gracefully if the result is 0, instead of
-causing a divide by 0 exception later on.
+This change fixes HYP/SVC mode mismatch on Samsung Exynos5422-based Odroid
+XU3/XU4/HC1 boards.
 
-Fixes: 4a59058f0b09 ("clocksource/drivers/sun5i: Refactor the current code")
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Fixes: 3721924c8154 ("ARM: 8081/1: MCPM: provide infrastructure to allow for MCPM loopback")
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Acked-by: Nicolas Pitre <nico@linaro.org>
+Tested-by: Anand Moon <linux.amoon@gmail.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clocksource/timer-sun5i.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm/common/mcpm_entry.c   |  2 +-
+ arch/arm/include/asm/suspend.h |  1 +
+ arch/arm/kernel/sleep.S        | 12 ++++++++++++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/clocksource/timer-sun5i.c b/drivers/clocksource/timer-sun5i.c
-index bca9573e036a..32b2dab69fd7 100644
---- a/drivers/clocksource/timer-sun5i.c
-+++ b/drivers/clocksource/timer-sun5i.c
-@@ -201,6 +201,11 @@ static int __init sun5i_setup_clocksource(struct device_node *node,
- 	}
+diff --git a/arch/arm/common/mcpm_entry.c b/arch/arm/common/mcpm_entry.c
+index a923524d1040..8617323eb273 100644
+--- a/arch/arm/common/mcpm_entry.c
++++ b/arch/arm/common/mcpm_entry.c
+@@ -379,7 +379,7 @@ static int __init nocache_trampoline(unsigned long _arg)
+ 	unsigned int cluster = MPIDR_AFFINITY_LEVEL(mpidr, 1);
+ 	phys_reset_t phys_reset;
  
- 	rate = clk_get_rate(clk);
-+	if (!rate) {
-+		pr_err("Couldn't get parent clock rate\n");
-+		ret = -EINVAL;
-+		goto err_disable_clk;
-+	}
+-	mcpm_set_entry_vector(cpu, cluster, cpu_resume);
++	mcpm_set_entry_vector(cpu, cluster, cpu_resume_no_hyp);
+ 	setup_mm_for_reboot();
  
- 	cs->timer.base = base;
- 	cs->timer.clk = clk;
-@@ -274,6 +279,11 @@ static int __init sun5i_setup_clockevent(struct device_node *node, void __iomem
- 	}
+ 	__mcpm_cpu_going_down(cpu, cluster);
+diff --git a/arch/arm/include/asm/suspend.h b/arch/arm/include/asm/suspend.h
+index 6c7182f32cef..e6c2f426f8c8 100644
+--- a/arch/arm/include/asm/suspend.h
++++ b/arch/arm/include/asm/suspend.h
+@@ -7,6 +7,7 @@ struct sleep_save_sp {
+ };
  
- 	rate = clk_get_rate(clk);
-+	if (!rate) {
-+		pr_err("Couldn't get parent clock rate\n");
-+		ret = -EINVAL;
-+		goto err_disable_clk;
-+	}
+ extern void cpu_resume(void);
++extern void cpu_resume_no_hyp(void);
+ extern void cpu_resume_arm(void);
+ extern int cpu_suspend(unsigned long, int (*)(unsigned long));
  
- 	ce->timer.base = base;
- 	ce->timer.ticks_per_jiffy = DIV_ROUND_UP(rate, HZ);
+diff --git a/arch/arm/kernel/sleep.S b/arch/arm/kernel/sleep.S
+index 0f6c1000582c..c8569390e7e7 100644
+--- a/arch/arm/kernel/sleep.S
++++ b/arch/arm/kernel/sleep.S
+@@ -119,6 +119,14 @@ ENDPROC(cpu_resume_after_mmu)
+ 	.text
+ 	.align
+ 
++#ifdef CONFIG_MCPM
++	.arm
++THUMB(	.thumb			)
++ENTRY(cpu_resume_no_hyp)
++ARM_BE8(setend be)			@ ensure we are in BE mode
++	b	no_hyp
++#endif
++
+ #ifdef CONFIG_MMU
+ 	.arm
+ ENTRY(cpu_resume_arm)
+@@ -134,6 +142,7 @@ ARM_BE8(setend be)			@ ensure we are in BE mode
+ 	bl	__hyp_stub_install_secondary
+ #endif
+ 	safe_svcmode_maskall r1
++no_hyp:
+ 	mov	r1, #0
+ 	ALT_SMP(mrc p15, 0, r0, c0, c0, 5)
+ 	ALT_UP_B(1f)
+@@ -162,6 +171,9 @@ ENDPROC(cpu_resume)
+ 
+ #ifdef CONFIG_MMU
+ ENDPROC(cpu_resume_arm)
++#endif
++#ifdef CONFIG_MCPM
++ENDPROC(cpu_resume_no_hyp)
+ #endif
+ 
+ 	.align 2
 -- 
 2.20.1
 
