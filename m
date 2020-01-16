@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF0A413E707
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:23:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68BF113E732
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:24:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FmiCYFdk+3p93+gjZaDNQiLkL4glxYbK1tZ9wmLij40=; b=P7cYPxQd1pvo7M
-	33Tpv2i4EcYlBdYxfzgUBbPdChfIg0ud7tHJJ7Ev8kBcu/ci9oVNXDLb57WQjYwlZrGwHpygEXFfj
-	RYjScCrG574qDm57wfDVsTvIcXqm7ZVoiEUDySBMT930iy9x94EQRo2kWp4Vf1QPL9AICEwHegSbA
-	ymRZ9eLwWP/BZ3kjMFTW683Fat00YyCUU/Zvgpi2PQzL4C21r6hr8ABl/22qmHWq44N3J0abKTWz7
-	soKgaG+9x38wc6jFkK388rCEIJnrn4s9TBh1063sdS7y/k3X5oRrRBMeY3mQXLZWWGHpXxyFn4/mH
-	BZyygQO72nqtIDvpqcew==;
+	List-Owner; bh=CF+lHfqi/SBNNJnMi9jItPHeB3Yszmv0XbWhN2k/0DY=; b=mHljFurWMKdU8n
+	3JraKwHa1abGjH5oDP08MYWDw5PDIcBhVNh3fwkh8hx0B5Do7dlQ3HfnNH6kNkjYV8lmJ3z5thOAt
+	2oqQEyvpRAFl6sgiMPSdmJS3EFKLk1Clgq8JUFd2aFINTIN20yvuH4Rv9HALIGZ+ES1IEXM+BMr64
+	P0wB2236Pz12m96LyBMD1rx2ZfpLNrMGHUBKctEhiPxHUVFDbyLkVqv/P+qPHtF59R53NvF/o+sX0
+	QidXxB7QaAjITjNVu/QUAxwoOsWUBXVGseMaeZxE7U4xk0SBW8cNwnjdFaiDDnnsb7R3AeG3jI3Gx
+	f+FF6rUyRpKRFHe2HQ9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8rf-0000eO-7c; Thu, 16 Jan 2020 17:23:27 +0000
+	id 1is8sE-000108-MP; Thu, 16 Jan 2020 17:24:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cN-0000gl-7D; Thu, 16 Jan 2020 17:07:42 +0000
+ id 1is8cN-0000gm-9K; Thu, 16 Jan 2020 17:07:45 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C6D42205F4;
- Thu, 16 Jan 2020 17:07:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7FD672192A;
+ Thu, 16 Jan 2020 17:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194455;
- bh=qvLxjJ+7RTcPVWEj5B8DKfhGrxf4MZTY7DMCPPaYJJE=;
+ s=default; t=1579194457;
+ bh=Oy9+H6puvy3Hl0TrNbMsCtOCK+VFOA3wTa72gzc+lvY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dHs/GFf0B7v90zh6Q1KzycrdrvIkQaAPnMWRa44V49qKRp6QHahPXsUdU8iTXZrEQ
- GHkWS8rUk9NqLTR3EhT4J+wG7sFMd/bQL5XFIsOPX2tNJM6Y/TIN1z6DfUX0dqDVoK
- l+qrQl3mSXpr6laMgkw5TXOqBhyS+VBXOrten8vE=
+ b=wQuX150EsgT8Hj3fC2kfGvRwodXSx7KE4+9Ss0Rya+TQRLvUmz3y4TGx8P62erIxB
+ 3bK9hh0DA0GwZFeRNCorXoV78JR+81vEn340J/JUoocbA9S0VM7lBf4QXrI6A0USL9
+ +VY8xVOiK70r5VtU+m7wav0yxGGfHz0cRYP92V2U=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 365/671] clk: meson: gxbb: no spread spectrum on
- mpll0
-Date: Thu, 16 Jan 2020 12:00:03 -0500
-Message-Id: <20200116170509.12787-102-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 366/671] clk: meson: axg: spread spectrum is on
+ mpll2
+Date: Thu, 16 Jan 2020 12:00:04 -0500
+Message-Id: <20200116170509.12787-103-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090739_521486_7929B78D 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_090739_583790_29A68CD1 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,26 +89,23 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jerome Brunet <jbrunet@baylibre.com>
 
-[ Upstream commit 8925dbd03bb29b1b0de30ac4e02c18faf8ddc9db ]
+[ Upstream commit dc4e62d373f881cbf51513296a6db7806516a01a ]
 
-The documentation says there is an SSEN bit on mpll0 but, after testing
-it, no spread spectrum function appears to be enabled by this bit on any
-of the MPLLs.
+After testing, it appears that the SSEN bit controls the spread
+spectrum function on MPLL2, not MPLL0.
 
-Let's remove it until we know more
-
-Fixes: 1f737ffa13ef ("clk: meson: mpll: fix mpll0 fractional part ignored")
+Fixes: 78b4af312f91 ("clk: meson-axg: add clock controller drivers")
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/meson/gxbb.c | 5 -----
- 1 file changed, 5 deletions(-)
+ drivers/clk/meson/axg.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/meson/gxbb.c b/drivers/clk/meson/gxbb.c
-index b039909e03cf..38ffa51a5bad 100644
---- a/drivers/clk/meson/gxbb.c
-+++ b/drivers/clk/meson/gxbb.c
-@@ -650,11 +650,6 @@ static struct clk_regmap gxbb_mpll0_div = {
+diff --git a/drivers/clk/meson/axg.c b/drivers/clk/meson/axg.c
+index 02229d051d77..4e7dac24948b 100644
+--- a/drivers/clk/meson/axg.c
++++ b/drivers/clk/meson/axg.c
+@@ -461,11 +461,6 @@ static struct clk_regmap axg_mpll0_div = {
  			.shift   = 16,
  			.width   = 9,
  		},
@@ -118,9 +114,21 @@ index b039909e03cf..38ffa51a5bad 100644
 -			.shift   = 25,
 -			.width	 = 1,
 -		},
- 		.lock = &meson_clk_lock,
- 	},
- 	.hw.init = &(struct clk_init_data){
+ 		.misc = {
+ 			.reg_off = HHI_PLL_TOP_MISC,
+ 			.shift   = 0,
+@@ -560,6 +555,11 @@ static struct clk_regmap axg_mpll2_div = {
+ 			.shift   = 16,
+ 			.width   = 9,
+ 		},
++		.ssen = {
++			.reg_off = HHI_MPLL_CNTL,
++			.shift   = 25,
++			.width	 = 1,
++		},
+ 		.misc = {
+ 			.reg_off = HHI_PLL_TOP_MISC,
+ 			.shift   = 2,
 -- 
 2.20.1
 
