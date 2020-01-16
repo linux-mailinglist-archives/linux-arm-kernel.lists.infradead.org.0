@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 923C613E624
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:19:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 606EE13E632
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:19:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T1LxMI+BwdUuJi4WGMf4K6DNP5ydxCKfrMEWO/dbavg=; b=oZ6IM0uDGc0wy8
-	RbuybGl9YIQXasDNoLLUJHYEJ1g8513wXhCDdMuIXeHX3iUa61kqcDc+CtdF/aInh4dsyRDY2/lsM
-	9M4nXUZFEfkb2eNCQGiE2mDWXmvyqcEk2i/HKXJf/jZ4q4pGfEVX4YfrGv2Cj9d7azjBqEF0wq9al
-	EvTirVLqTtxOUNg7lGBvRXTHeiHNahnuoZv0YIo8vlv2pn6U/nOqBV4pFyo4ZNgFvGkY8iSl5XnHP
-	S6x7zQ8fkQURwylMGzQHkipWiL09Mlqc7kxrqssOQiyfFc/QWCHr7/Yr1ehNDi2Tj4o3NHZf+vDwV
-	HiT06kkT4sQ1nI3jjvRA==;
+	List-Owner; bh=yEvW6GFxRBbPmBYUpBnCK6L0tCGsgHpHpS+OV9oW/kQ=; b=QjyEUqgZodt3Fn
+	SeJrBwZxvb6rWl6zz5lr2MjxXUXlm5jbnVuQKyelWhPJH9Evn/3xEAoVhghbuE9CVNrc4R19PoenH
+	7ZgSsBFQ0mzySjsQCirNufqFzILQcaPtj1QWoiTLvnBqlSBhOedNMOuEHRPQx7l9s+onpq0Tl1wTZ
+	ul1NFfxCkoe2S+cQUzUve5l1QpRHcBxLd39uCGPOl3om8OKn7w+YoUgO6DdCxOOxSVaIRw/yqT8H5
+	c2B3rvwwqGqEE/a3HpVTN/DMRQLA0fdUr183YX/pW/wCqFz+7md5Sdb3G3ngCAMmuxkXu1gOvW7SY
+	2NhOD1ZKU/ZK5PIU7VVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8nT-0003q0-6S; Thu, 16 Jan 2020 17:19:07 +0000
+	id 1is8nn-00049J-9M; Thu, 16 Jan 2020 17:19:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8aL-0007KW-2Q; Thu, 16 Jan 2020 17:05:37 +0000
+ id 1is8aY-0007UX-CT
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:51 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4079A24684;
- Thu, 16 Jan 2020 17:05:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F0D612051A;
+ Thu, 16 Jan 2020 17:05:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194331;
- bh=Hv37BfS55KKDAbh7Qq/n5MYz80MnjEqtZFsgK6Mdv/o=;
+ s=default; t=1579194345;
+ bh=IRmLSqE83uCsKnjCWPMxfFgshRxKOTa8eJMPacvSZ0g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AQ/uDMdir2IB3IrBlV2W3YTW8sv0wY7TTiSHV3sflENNBUKSmnS7P1pyACU8+cnJS
- sUME1CAOQWUPYx/Veep3HNMjzg6eyPrnsBUnKAemLUQ6kh7KnFT0yYKwcQScsVmLC2
- sm5wloc9N4aqok52LqwZSQWVTYNTj32bMD1aYgMI=
+ b=xRyE3qE9XkPxfH2+JyxOs2H2/N76aN3XOgSIi0EkJrgm99r1hIb+DmswKB8rjJ1yG
+ GZ9JA6u52W8Wbtwln2NB70OXXycuIj3fQFlvKEuiU8nD4XsWhUjNcdMe1GUk8u7Kxy
+ nK0CBxwg507SCqC0VUh9EZiaFL9Ra1fzH+M9cizk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 278/671] rtc: mt6397: Don't call
- irq_dispose_mapping.
-Date: Thu, 16 Jan 2020 11:58:36 -0500
-Message-Id: <20200116170509.12787-15-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 287/671] firmware: arm_scmi: fix of_node leak in
+ scmi_mailbox_check
+Date: Thu, 16 Jan 2020 11:58:45 -0500
+Message-Id: <20200116170509.12787-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090533_220223_736C6A18 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20200116_090546_496076_5339EC91 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,68 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-rtc@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-mediatek@lists.infradead.org, Pi-Hsun Shih <pihsun@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Steven Price <steven.price@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Pi-Hsun Shih <pihsun@chromium.org>
+From: Steven Price <steven.price@arm.com>
 
-[ Upstream commit 24db953e942bd7a983e97892bdaddf69d00b1199 ]
+[ Upstream commit fa7fe29a645b4da08efe8ff2392898b88f9ded9f ]
 
-The IRQ mapping was changed to not being created in the rtc-mt6397
-driver, so the irq_dispose_mapping is no longer needed.
-Also the dev_id passed to free_irq should be the same as the last
-argument passed to request_threaded_irq.
-This prevents a "Trying to free already-free IRQ 274" warning when
-unbinding the driver.
+of_parse_phandle_with_args() requires the caller to call of_node_put() on
+the returned args->np pointer. Otherwise the reference count will remain
+incremented.
 
-Fixes: e695d3a0b3b3 ("mfd: mt6397: Create irq mappings in mfd core driver")
-Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+However, in this case, since we don't actually use the returned pointer,
+we can simply pass in NULL.
+
+Fixes: aa4f886f3893f ("firmware: arm_scmi: add basic driver infrastructure for SCMI")
+Signed-off-by: Steven Price <steven.price@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/rtc/rtc-mt6397.c | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
-index e9a25ec4d434..c06cf5202e02 100644
---- a/drivers/rtc/rtc-mt6397.c
-+++ b/drivers/rtc/rtc-mt6397.c
-@@ -343,7 +343,7 @@ static int mtk_rtc_probe(struct platform_device *pdev)
- 	if (ret) {
- 		dev_err(&pdev->dev, "Failed to request alarm IRQ: %d: %d\n",
- 			rtc->irq, ret);
--		goto out_dispose_irq;
-+		return ret;
- 	}
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index 09119e3f5c01..effc4c17e0fb 100644
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -662,9 +662,7 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
  
- 	device_init_wakeup(&pdev->dev, 1);
-@@ -359,9 +359,7 @@ static int mtk_rtc_probe(struct platform_device *pdev)
- 	return 0;
- 
- out_free_irq:
--	free_irq(rtc->irq, rtc->rtc_dev);
--out_dispose_irq:
--	irq_dispose_mapping(rtc->irq);
-+	free_irq(rtc->irq, rtc);
- 	return ret;
- }
- 
-@@ -369,8 +367,7 @@ static int mtk_rtc_remove(struct platform_device *pdev)
+ static int scmi_mailbox_check(struct device_node *np)
  {
- 	struct mt6397_rtc *rtc = platform_get_drvdata(pdev);
- 
--	free_irq(rtc->irq, rtc->rtc_dev);
--	irq_dispose_mapping(rtc->irq);
-+	free_irq(rtc->irq, rtc);
- 
- 	return 0;
+-	struct of_phandle_args arg;
+-
+-	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, &arg);
++	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, NULL);
  }
+ 
+ static int scmi_mbox_free_channel(int id, void *p, void *data)
 -- 
 2.20.1
 
