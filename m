@@ -2,92 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 226BD13FBAE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 22:45:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43AD713FBAF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 22:46:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tp3XFFGxACIGwuih0lrzPCG5JCDhPxlSE8hZCv2UoJE=; b=lEhRRTGlDJ3hor
-	7HDkQQflQpkx70aBW8DAQBgaj4QtYxrH1AXs8rZQGYF5oZgjr+ul7/V5TNDAU+KbcZLXAIljLKpdZ
-	SxZN2FrmrKuRKBF5v3W232NMh4Ai/dyJ/dxipVrvUu29pe2s02aGRIlWbbA+ukTHZ0u2L4glmxz3G
-	XM6ZMrgHDLPa3127ZjcZN4cZ6zUn6XMf6g/lFw0EY3mH9xDJT7u5Skf8aU3Y6MP9TiK76olyUz+eI
-	lX1XzVLjJUmiCQ3tdBK5wzGSjAFdwE+vPIwt2b3nSX2aZsfU+AmwLSJUWZBq75tGnGG3+lZzgBJty
-	jZ/H8bZpclChkBuWz20A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9RvjuZfU+6aOFE0E2Bbw2TErOBeY8vV+DUMGPGlwYLU=; b=bU6+ByQwItNGsi
+	SivYMzePXu9GatB9DilfVvlcXXOCoGuACsIPbkZEE03WgDs1nqJ/NXj3SlSLzZ8m2Q7+Our6sPPDP
+	Zw0qd2M7B10/SIc+yxnGY1kUEmJMAhx6JtJ3w9N9KulLw69ioxbrXLXryFCaz1rDlVvfLa2/7a73X
+	1sQTwDAeYM+WA8pEadSHiC+MjosOLJaIkJUINyHTJRI6NgwjvujVWblOI13TK/E1UonfdSQHBaLda
+	pM17mTBrpJrC+WTLMpltMr2O9sqcbK3eLtC6pFR5dYb3ulWKXaTQq+tDUwgaNn9YxnXrA06aJAiDN
+	y0etmE9yxXUt9Hx4cSMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isCxI-0000G7-HC; Thu, 16 Jan 2020 21:45:32 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+	id 1isCxm-0000Wd-HO; Thu, 16 Jan 2020 21:46:02 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isCx8-0000FD-Jh
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 21:45:25 +0000
-Received: by mail-ua1-x941.google.com with SMTP id f7so8209911uaa.8
+ id 1isCxa-0000VV-TS
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 21:45:55 +0000
+Received: by mail-wm1-x336.google.com with SMTP id p17so5424424wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 13:45:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tkSAt1Pw50rKdG/hn5morljVtZomrkNl/2z5xne6PRw=;
- b=tYITaZrsivqfC+GdC03l8Z8h3bZpMk/AxRJZ5m3Cq3lP1GhjDNlzuzFHH0Pn2+w9Bp
- 7hq+CoXS8VEDdhnMjKVZPNodzvjOUAaKuYJ/ddFf8vOlsJnqSle+AlNiaLEcRnwKSGTP
- 5gI69wlRAJP+9qKZcEhtfjYhon9km/BJzdEnZr70+1XtamA4m5kF7Ynuucv4V82zyCFO
- H2TlLCrfyCjDGPgKEI6sEsRnApccctQO8D2j+8EC7xolfZWg7J4pQivRrN9lRA6P8BUk
- bMbwCjGUJxwYv2NA596Hgs8T4QOpc3vlL/TpIEXN+OH+nuTnqjTX9Bzg6hCJI8tqaUMO
- EkDg==
+ Thu, 16 Jan 2020 13:45:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=WS969c/rsALuQJODK47w1gX7qE+na697L64P+I/p0U4=;
+ b=J/0GhKK5Lg+qBn7LLqJOo/IcaKa6mUdfnbTA6TXH92CyoTsQC477fm4AcNq27/VBDU
+ WbfciZFw+8WxE4f39YsnGZ9TLQ5tfWxn5Nm9h6wGKKZS5Md/BeQuOZYm6rimz5zY6lnC
+ eCxDV2uiTqrj1iXEXyhL29bFIxMNfS7POxeGMkpnAKxsFQnb5WkJAFj9ETysRsPtjikX
+ xiZTTEV0FQSG9Yk/YfhAyh1NqGMzB0m05pXAGZ3YFzz7lq24hR9CcJfJL0dUEhki3+EG
+ aPfGdqClYy7hhTmc6wlHN1l9EOA1LDRBsdPG8SeSWE4ZoFEkXb5oMQPGXWcbzRQMkf33
+ rGkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tkSAt1Pw50rKdG/hn5morljVtZomrkNl/2z5xne6PRw=;
- b=cMma2AasoRrghFn8Gfpn4MmhgL+XwyRq92XrqwJ80PU9pJXy+LeEeiZowoMROFsZ5F
- 8XcvFQ9/BYmgpYtMpxxLmKQe/D4mjwUghGJ6SM9ku2ho00rH2L0370AUEINuJJYIDvwj
- hoIye42X2aN/O2RinADzN+ZJ99OMR/IazABKdJ97kn8FlGZC7kvQMHC26dzj92SyOR88
- b+u+wXVuC8TgwOsLuNigU793JayRwg0BOsn6+VvenwTecoHms0pTloXg8MFAmLN+1so6
- sBKz3yK6TCa0AzsRHblDj1lxyamjmWUWvejfPJWL2XIPWrRdn4A7SnhRgh4ElxC1uA8N
- Y0Ag==
-X-Gm-Message-State: APjAAAW/NI8OuK5YeheIKeHR6MMU9HuMuUwGgmyEhTYXHuMxzhfaOpcx
- 0pO1Md5HC1DfT9Ti75refAg+HVhe9dddK02EosPDaw==
-X-Google-Smtp-Source: APXvYqx9xgh+f+ErpWs3BksSZ71jt7xPPMU4gWghLYUHcYc41EpoUSU/qL8aa7KJUXqJ40wX1Da/EhNZbQRobWoILhU=
-X-Received: by 2002:ab0:618a:: with SMTP id h10mr19510791uan.53.1579211120670; 
- Thu, 16 Jan 2020 13:45:20 -0800 (PST)
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=WS969c/rsALuQJODK47w1gX7qE+na697L64P+I/p0U4=;
+ b=gKjfzvTDmLIR89sJNdQwEaTbLRltY4TKUjQNXPaEX3/ATbbTKtmjh85B6VgsPHrsxF
+ z/mYnEogBBmwtTwmh5ITFpwdGX8faWyIGpHNbq3BgtqL3jgqHdYw19AYRchm4NBejsjq
+ WUuJBE0dc7/lr0NgtcoagsmDhdz6FrbmnCg/cajaE0fLsZELeViJxK4QP8Cb78KFIDVB
+ Kx2W/tK1t8ou0GywjyPnLAEhggauY2SNW2fzfBuQZJoMKd44qXUQ7Vrb1SGVDr9RjFml
+ K1wc7oxsVxpgxKcg32iw70pPr7B7b9cc4waNHtUgqwalkuvDrkCKOG46Gf9dRmPMVm8F
+ CWtg==
+X-Gm-Message-State: APjAAAUC4SwOM3gRMyFYYL9vh5ZXSi1Nky7LRBncusd9LSsHVlM+QS6m
+ 67iq4VoCowd6IoS9gdVYTRHMWw==
+X-Google-Smtp-Source: APXvYqyGbnE8fsKqfLlQ+q8rfsmtuNBAB5M9EuRKTCMTx6YLa/BgXRMGU5+tO7FvvmDv+0sK/svavA==
+X-Received: by 2002:a05:600c:34c:: with SMTP id
+ u12mr1028276wmd.187.1579211148942; 
+ Thu, 16 Jan 2020 13:45:48 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id e8sm30956105wrt.7.2020.01.16.13.45.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Jan 2020 13:45:48 -0800 (PST)
+Message-ID: <5e20d98c.1c69fb81.d86b0.150c@mx.google.com>
+Date: Thu, 16 Jan 2020 13:45:48 -0800 (PST)
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-9-samitolvanen@google.com>
- <20200116173950.GB21396@willie-the-truck>
-In-Reply-To: <20200116173950.GB21396@willie-the-truck>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Thu, 16 Jan 2020 13:45:09 -0800
-Message-ID: <CABCJKuduRyBBr1qZQj35nMCOLv3my22wRQXb4-i39n07qdL4Yg@mail.gmail.com>
-Subject: Re: [PATCH v6 08/15] arm64: disable function graph tracing with SCS
-To: Will Deacon <will@kernel.org>
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Report-Type: build
+X-Kernelci-Kernel: v5.5-rc6-60-gb260f5eb4e57
+Subject: arm64/for-kernelci build: 3 builds: 0 failed,
+ 3 passed (v5.5-rc6-60-gb260f5eb4e57)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_134522_674421_645FFCF1 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200116_134550_973942_55C938E7 
+X-CRM114-Status: UNSURE (   3.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:336 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,49 +97,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 9:39 AM Will Deacon <will@kernel.org> wrote:
->
-> On Fri, Dec 06, 2019 at 02:13:44PM -0800, Sami Tolvanen wrote:
-> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> > index b1b4476ddb83..49e5f94ff4af 100644
-> > --- a/arch/arm64/Kconfig
-> > +++ b/arch/arm64/Kconfig
-> > @@ -149,7 +149,7 @@ config ARM64
-> >       select HAVE_FTRACE_MCOUNT_RECORD
-> >       select HAVE_FUNCTION_TRACER
-> >       select HAVE_FUNCTION_ERROR_INJECTION
-> > -     select HAVE_FUNCTION_GRAPH_TRACER
-> > +     select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
-> >       select HAVE_GCC_PLUGINS
-> >       select HAVE_HW_BREAKPOINT if PERF_EVENTS
-> >       select HAVE_IRQ_TIME_ACCOUNTING
->
-> I think this is the wrong way around, as we support the graph tracer
-> today and so I think SHADOW_CALL_STACK should depend on !GRAPH_TRACER
-> and possibly even EXPERT until this is resolved.
-
-Sure, sounds reasonable. I'll change this in the next version.
-
-Sami
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
+NS41LXJjNi02MC1nYjI2MGY1ZWI0ZTU3KQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
+cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS41LXJj
+Ni02MC1nYjI2MGY1ZWI0ZTU3LwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
+IERlc2NyaWJlOiB2NS41LXJjNi02MC1nYjI2MGY1ZWI0ZTU3CkdpdCBDb21taXQ6IGIyNjBmNWVi
+NGU1NzE1NDlmNDc5MDYyNzNlN2I1M2FkOGMwMDg3YzQKR2l0IFVSTDogZ2l0Oi8vZ2l0Lmtlcm5l
+bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4LmdpdApCdWlsdDogMSB1
+bmlxdWUgYXJjaGl0ZWN0dXJlCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKRGV0YWlsZWQgcGVy
+LWRlZmNvbmZpZyBidWlsZCByZXBvcnRzOgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbW9k
+Y29uZmlnIChhcm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBz
+ZWN0aW9uIG1pc21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmFsbG5vY29uZmlnIChh
+cm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1p
+c21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmRlZmNvbmZpZyAoYXJtNjQsIGdjYy04
+KSDigJQgUEFTUywgMCBlcnJvcnMsIDAgd2FybmluZ3MsIDAgc2VjdGlvbiBtaXNtYXRjaGVzCgot
+LS0KRm9yIG1vcmUgaW5mbyB3cml0ZSB0byA8aW5mb0BrZXJuZWxjaS5vcmc+CgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
