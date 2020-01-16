@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A192813E803
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:29:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA05913E7F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:29:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cH6ttXJEFW9E1QuBghdY1vcbsW4HDI0FMOCWT5HanPU=; b=Z31iZyd1SMOE9m
-	/K1V10M0ewZY3oVITb6TeWHvPMyZKQPgWO9b8bAaj6Mv1WikcHZ4vwQkXA5kvctPxd5+IP/Qb1FVx
-	TPsT+PrzAf9Q3VgPscYrMIsa7ITKo9LCLkguRrBLFYcK8kDCH68a9DtZkd2nr7gdo8AZ0GAHvOsGa
-	lxTWVKZYoLn96S3H83NwH0QyJkVolrX5T12P8qw9M6BCZPcwhBBswPFNRXedfPSbRdZ/U5MuVc9My
-	341Dtx7PaVZ4ZqxvGEZioaCHB4RYaKZ1tsrX+g4RG0VuuhlLnarqrwz699VANDyRi4rI09J6p74aP
-	1Wi5KXxnAOD1E3e3CBig==;
+	List-Owner; bh=/eL9Owv+c1qv0tIjLhvAJISYqqwFkxIr4HbuPEgedsg=; b=bGyZn84r/OLUAv
+	zrAjbz7W2PTUIc/el7vBEWnoNWM77/UXFOItfyE+hlcQ+inqZXlrkEtK/vnYKZptegqWh5dm6mDvY
+	WXfP7XtheFTRszrGayTXn7/2CDil88zRsfbgV7wiXsWyOntPVJpKLlw84tXxKn3nqAHnsDPOzEXe1
+	slx/tNGaLG+jMVECy1UG7L37z25zd5srpoQLqi2tAK5buWQgwlwkRbK50GWFqPUm1F4s2CfRlnJ/8
+	gCVf/PMUASYSxz/QhxynTtTXZDzoiV+NSUlvdMi8Z3xkK0YSnSiJXbBmPzYS1ukSEzM+R9vknxUkC
+	9f5huhwmr0x54SPZnsOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8xh-0006cz-KP; Thu, 16 Jan 2020 17:29:41 +0000
+	id 1is8xL-0006IO-3z; Thu, 16 Jan 2020 17:29:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8dB-0001Qr-Rc; Thu, 16 Jan 2020 17:08:35 +0000
+ id 1is8dG-0001U2-OY
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:08:41 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 79DA6217F4;
- Thu, 16 Jan 2020 17:08:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0676E2467C;
+ Thu, 16 Jan 2020 17:08:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194508;
- bh=bT2x6OCeUenHIkUtd4svhUWmcGCenjYn9mnruQlTmak=;
+ s=default; t=1579194513;
+ bh=QOXJQFLhX9thyDPeqKCT78Ibo5JZTuoneB29aF9mx6I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QXUT9fN9EmIm3S5PsC4Dq61CNjYPIWUY0Fc+vtacAsMcTUxYfOSgDKqgmXF7xb+aQ
- PMscmgK6qlHIJDOD+e3ZIPy8GxL73jqTjWkuQvaE+r9pFk39JYzuF0QX9rrCJBmsty
- QyPvQdhWKx7bWaQYGc+mL9nHwhLdxSRWFKcNVhSA=
+ b=EFSFpqpQ/4gsggMeQ/YXbl/wWQFGYDbW94BbMNtGYkqA/Umb8VHA997P6DfoSPSuD
+ IuGk2c3UtpMbBWrmj0HvJ7pcYKxeR5rxDAM4fjBVXl64mXXowlZ9/uqT/BYXkSXXeV
+ lcAUsr7I3nGy1iAf99B5pJxOL8RcUDUlnW1r/ZRE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 403/671] arm64: dts: meson-gxm-khadas-vim2: fix
- gpio-keys-polled node
-Date: Thu, 16 Jan 2020 12:00:41 -0500
-Message-Id: <20200116170509.12787-140-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 407/671] firmware: arm_scmi: fix bitfield
+ definitions for SENSOR_DESC attributes
+Date: Thu, 16 Jan 2020 12:00:45 -0500
+Message-Id: <20200116170509.12787-144-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090829_979948_C7BF4C60 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_090834_832784_BCA15A15 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,55 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christian Hewitt <christianshewitt@gmail.com>
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-[ Upstream commit 0afd24c2fb61bd5163bab08ea1ee54d60d3ea37e ]
+[ Upstream commit 430daaf96ad133be5ce7c3a5c60e94247f7c6f71 ]
 
-Fix DTC warnings:
+As per the SCMI specification the bitfields for SENSOR_DESC attributes
+are as follows:
+attributes_low 	[7:0] 	Number of trip points supported
+attributes_high	[15:11]	The power-of-10 multiplier in 2's-complement
+			format that is applied to the sensor units
 
-meson-gxm-khadas-vim2.dtb: Warning (avoid_unnecessary_addr_size):
-   /gpio-keys-polled: unnecessary #address-cells/#size-cells
-	without "ranges" or child "reg" property
+Looks like the code developed during the draft versions of the
+specification slipped through and are wrong with respect to final
+released version. Fix them by adjusting the bitfields appropriately.
 
-Fixes: b8b74dda3908 ("ARM64: dts: meson-gxm: Add support for Khadas VIM2")
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Tested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Fixes: 5179c523c1ea ("firmware: arm_scmi: add initial support for sensor protocol")
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/firmware/arm_scmi/sensors.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-index 782e9edac805..bfd3a510ff16 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-@@ -63,11 +63,9 @@
- 
- 	gpio-keys-polled {
- 		compatible = "gpio-keys-polled";
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		poll-interval = <100>;
- 
--		button@0 {
-+		power-button {
- 			label = "power";
- 			linux,code = <KEY_POWER>;
- 			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_LOW>;
+diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
+index b53d5cc9c9f6..c00287b5f2c2 100644
+--- a/drivers/firmware/arm_scmi/sensors.c
++++ b/drivers/firmware/arm_scmi/sensors.c
+@@ -30,10 +30,10 @@ struct scmi_msg_resp_sensor_description {
+ 		__le32 id;
+ 		__le32 attributes_low;
+ #define SUPPORTS_ASYNC_READ(x)	((x) & BIT(31))
+-#define NUM_TRIP_POINTS(x)	(((x) >> 4) & 0xff)
++#define NUM_TRIP_POINTS(x)	((x) & 0xff)
+ 		__le32 attributes_high;
+ #define SENSOR_TYPE(x)		((x) & 0xff)
+-#define SENSOR_SCALE(x)		(((x) >> 11) & 0x3f)
++#define SENSOR_SCALE(x)		(((x) >> 11) & 0x1f)
+ #define SENSOR_UPDATE_SCALE(x)	(((x) >> 22) & 0x1f)
+ #define SENSOR_UPDATE_BASE(x)	(((x) >> 27) & 0x1f)
+ 		    u8 name[SCMI_MAX_STR_SIZE];
 -- 
 2.20.1
 
