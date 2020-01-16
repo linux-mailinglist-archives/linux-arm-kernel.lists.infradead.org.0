@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85EBF13F278
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:35:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D34F013F29D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:36:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nA4nyCmcTm93C9IRyZpflEeyLvLXh+aodndN8CmyCrc=; b=dBWD2kmMoYgkWt
-	iECsaqtf89cWyBR5+zFMxqOl76hDFLMmcLOSPoGnZl31qddzEbMNGMtnQdtMFuLyodPMfSTIfUlPH
-	LNi/t03ZHnnhg9hUlazet8E7MC/UTCKA9fx/MI0OAQikyhNHKyYMpYjk/q8LG315T1bSGeERcOoIi
-	LOtHbkG5rkRXXHlq9T9uDcWfqTGrHlF/DrRDn7OoQ2O/crEV+p9+Sblo/V1PexoI2XBDS97jsv0kd
-	gU1wi27yLnc7rpkHqqjHhg2Anybi7I69T0bE6WJ3+qv8R+zeaPpI5D+roTsGwZmwtmHUHOOrWJ8K4
-	aMPRTJQDUUAiq7zHoiFQ==;
+	List-Owner; bh=VviVD0sJbwP9KN1HPpErHvOJ0KBNFpg91f9ctjIgZv8=; b=T4VtUH1KJgC/p2
+	hEnmlG0Qm/GWhaFTUAqT2b5VoLy5I8u0vddrD3mey/m2IGW8lT/690UlIwFVp0on2tHVI437x0OBo
+	mJjWIdJ3yOGy5Y4SQG5R/SkADpageqlkvKt1UuGmabW5XnxEvCtj7i3ihM8kVDjZoclutLLxeu0yX
+	uW+rwQp9fJysGRIx0/Vg9k/gs9nGPpRC0R8Krp/l0sjb2BPfkEOw0V1NFpNySUvfswjRe2h3fXaCr
+	XLDb1QBG5xLhm+bepm7A9zG63LDNtnIkl/0ZT+1iJus3oA+QYy7QNwBAeeqRwbP1R8G4OinZJxBxs
+	koiiUeDbiIYs2fXkOS1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9zc-0005Qq-6L; Thu, 16 Jan 2020 18:35:44 +0000
+	id 1isA0Q-00063V-HQ; Thu, 16 Jan 2020 18:36:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9EH-00072e-By
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:54 +0000
+ id 1is9EQ-00078Q-Mj
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:47:02 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A3D4E246D3;
- Thu, 16 Jan 2020 17:46:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 199C4246B4;
+ Thu, 16 Jan 2020 17:46:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196807;
- bh=r2LL/2/2lUsullAeDJ8187zMNzBeZGcVFifgpmuK+S8=;
+ s=default; t=1579196818;
+ bh=sgOoolRsRLW4pkiLoqF6nOV5AmgG6FrkopMUr9rx9Co=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WmIlgMsN2+cAKHzFPeKG6Opk8RHvQ3k18dVHxFNGVUAESBRqtIMvauWm+8L/bVuZ5
- qd19DPnA8WKMVbjQyIhb6ji2gV+PAGsDiWeWbkRHGuc4OHYooZ/MBr1T/RbUXhJZlw
- rGlAC9LNGfnSzBAmoE0msozW73Z66AUUHUc7CWR0=
+ b=w4VxprzXG/WNk5RZUe3kH+jrFaf8PC3DF/4xhUebXipGKO9a0etkRf7XVmj0FCFr3
+ NcJTJ3/bP03e71RWNYl1O7+0tCgZTHAoNjwlsyaL4uq14tWgPFIALb75SvjQi2MvFJ
+ qilX860Bpzotg6M1pi44nAb1hc+8DdDn9erDbiqw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 165/174] tty: serial: imx: use the sg count from
- dma_map_sg
-Date: Thu, 16 Jan 2020 12:42:42 -0500
-Message-Id: <20200116174251.24326-165-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 173/174] arm64: dts: juno: Fix UART frequency
+Date: Thu, 16 Jan 2020 12:42:50 -0500
+Message-Id: <20200116174251.24326-173-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094649_567909_0463C015 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20200116_094658_792270_D39CF8C3 
+X-CRM114-Status: GOOD (  12.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peng Fan <peng.fan@nxp.com>,
- linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Andre Przywara <andre.przywara@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+From: Andre Przywara <andre.przywara@arm.com>
 
-[ Upstream commit 596fd8dffb745afcebc0ec6968e17fe29f02044c ]
+[ Upstream commit 39a1a8941b27c37f79508426e27a2ec29829d66c ]
 
-The dmaengine_prep_slave_sg needs to use sg count returned
-by dma_map_sg, not use sport->dma_tx_nents, because the return
-value of dma_map_sg is not always same with "nents".
+Older versions of the Juno *SoC* TRM [1] recommended that the UART clock
+source should be 7.2738 MHz, whereas the *system* TRM [2] stated a more
+correct value of 7.3728 MHz. Somehow the wrong value managed to end up in
+our DT.
 
-Fixes: b4cdc8f61beb ("serial: imx: add DMA support for imx6q")
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
-Link: https://lore.kernel.org/r/1573108875-26530-1-git-send-email-peng.fan@nxp.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Doing a prime factorisation, a modulo divide by 115200 and trying
+to buy a 7.2738 MHz crystal at your favourite electronics dealer suggest
+that the old value was actually a typo. The actual UART clock is driven
+by a PLL, configured via a parameter in some board.txt file in the
+firmware, which reads 7.37 MHz (sic!).
+
+Fix this to correct the baud rate divisor calculation on the Juno board.
+
+[1] http://infocenter.arm.com/help/topic/com.arm.doc.ddi0515b.b/DDI0515B_b_juno_arm_development_platform_soc_trm.pdf
+[2] http://infocenter.arm.com/help/topic/com.arm.doc.100113_0000_07_en/arm_versatile_express_juno_development_platform_(v2m_juno)_technical_reference_manual_100113_0000_07_en.pdf
+
+Fixes: 71f867ec130e ("arm64: Add Juno board device tree.")
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Acked-by: Liviu Dudau <liviu.dudau@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/imx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/arm/juno-clocks.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index d607cb2eb64e..b59d0dafefab 100644
---- a/drivers/tty/serial/imx.c
-+++ b/drivers/tty/serial/imx.c
-@@ -545,7 +545,7 @@ static void imx_dma_tx(struct imx_port *sport)
- 		dev_err(dev, "DMA mapping error for TX.\n");
- 		return;
- 	}
--	desc = dmaengine_prep_slave_sg(chan, sgl, sport->dma_tx_nents,
-+	desc = dmaengine_prep_slave_sg(chan, sgl, ret,
- 					DMA_MEM_TO_DEV, DMA_PREP_INTERRUPT);
- 	if (!desc) {
- 		dma_unmap_sg(dev, sgl, sport->dma_tx_nents,
+diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+index 25352ed943e6..00bcbf7688c7 100644
+--- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+@@ -8,10 +8,10 @@
+  */
+ 
+ 	/* SoC fixed clocks */
+-	soc_uartclk: refclk7273800hz {
++	soc_uartclk: refclk7372800hz {
+ 		compatible = "fixed-clock";
+ 		#clock-cells = <0>;
+-		clock-frequency = <7273800>;
++		clock-frequency = <7372800>;
+ 		clock-output-names = "juno:uartclk";
+ 	};
+ 
 -- 
 2.20.1
 
