@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BFC413F183
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:29:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC4513F182
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:29:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UYX30C0IgI+/tcwc9oETL8H/ph0pd6ivv5OYsKDjbE4=; b=oauzNgBTZKfn7+
-	zAynXgnUSkBYkFJIf3PehpqmFeblIgspsSdu/No4OEGGORZbYY8DRRdgkfPHW3y36EPuT+AYKi8LC
-	Il1/33djK2hEIGIaePGArAYU2NqiGbPk17R95su5CSC/TlOFVOsYHRPkaiePaVv6MI8AGKCGoX6oa
-	Rk7SjqtiScUupVAZZFplVJN9hP16nQQzfyYrX8kqWu50awXI5+gBmOdbZnJXMkQfqnkykA14NJHzw
-	HhIYfR2vgwUL7u1Iae4RBBu6WHeDw/cfCZBcS27nnQc0cUIJehWSV5UyyQFT+HyTbzm4oqoPrrGO4
-	j9rSCq2EoJgxfKM+qOvw==;
+	List-Owner; bh=bjIABFzcx3tPyFJfrYWpW1OhLd8Y3YEWTSPE2lfuplo=; b=iPyVs09m3W2nvS
+	A9lFPbswQNkVJVchMAjPDst0WDj1dREMI1+9DjKSmMe2lqUzmyL7QQRpdrtbzjNdkwDP4tUtuAvV/
+	GMe0MtdWLE2huPpOHmlPnLG00iuva8UJd4rMnAi2DNbQ65X0RxEhFfKqMPNa15rMmvxwNse5i5wBX
+	QhwiycLJ+0tcq6j0h9SDVfa7NTcQpd5jYigV9ooJ72AW9y1MtI962P4Vzjuy/I13tCdXOJd8zRFam
+	1v7ytqVHPtimcH1unll0tgKOkhULrcBwx0iTS2mnJ2M1ZCWRjGk2oeXpbazu5RNn3b/rNOgM+7Giy
+	5P+x5eKQBI8ApdFD6EJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9tj-0006Ax-OE; Thu, 16 Jan 2020 18:29:39 +0000
+	id 1is9tQ-0005zP-6b; Thu, 16 Jan 2020 18:29:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9Aw-0003al-FX
+ id 1is9Ay-0003c3-4w
  for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:43:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 27EBD24718;
- Thu, 16 Jan 2020 17:43:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 706BE24732;
+ Thu, 16 Jan 2020 17:43:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196601;
- bh=SNIUiTLu8bqf8c55iSNESq7sZ9yGi4zsvWP3lxc+q30=;
+ s=default; t=1579196603;
+ bh=pF1tzWeveWpjF/FhMrgqWsyny9+razZTcxf5uSrOWdU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FLINbtoZRAqdVwM0kV/yZz6XS04Uy+MnkYwUa8pNUlDXx8i8Mq0lGVzsDtBO8gxc3
- SM6CMIwvan1EmeISB7HKQBeRnThXW//l27AOQbdAjdzx3lZieVCWhtcTLjGVCrC41C
- +n5b44yNTaYXXBstVmcN2Jo93UrcYBv20w3hcRVQ=
+ b=GBiXxRzwkPvifE7TJxqyWpjXCg713DTgrICBo1grlnkJAN+GZRFnp88xa3x+iLLiW
+ 2SbjJuR9nEWH5Wp9AVHTwNXBZHDwQwSor3NLWfvJGcN/WP7T6JfucdcetA3B+0TVPe
+ xlHKzilwmpBHGkSfNT0q9njRhYd8j3JAcNNdnVNk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 023/174] clk: imx6q: fix refcount leak in
- imx6q_clocks_init()
-Date: Thu, 16 Jan 2020 12:40:20 -0500
-Message-Id: <20200116174251.24326-23-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 024/174] clk: imx6sx: fix refcount leak in
+ imx6sx_clocks_init()
+Date: Thu, 16 Jan 2020 12:40:21 -0500
+Message-Id: <20200116174251.24326-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094322_571139_BD6817F8 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200116_094324_327212_E1500E91 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,32 +90,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yangtao Li <tiny.windzz@gmail.com>
 
-[ Upstream commit c9ec1d8fef31b5fc9e90e99f9bd685db5caa7c5e ]
+[ Upstream commit 1731e14fb30212dd8c1e9f8fc1af061e56498c55 ]
 
 The of_find_compatible_node() returns a node pointer with refcount
 incremented, but there is the lack of use of the of_node_put() when
 done. Add the missing of_node_put() to release the refcount.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-Fixes: 2acd1b6f889c ("ARM: i.MX6: implement clocks using common clock framework")
+Fixes: d55135689019 ("ARM: imx: add clock driver for imx6sx")
 Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/imx/clk-imx6q.c | 1 +
+ drivers/clk/imx/clk-imx6sx.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
-index 46c05c9a9354..39ea50102d52 100644
---- a/drivers/clk/imx/clk-imx6q.c
-+++ b/drivers/clk/imx/clk-imx6q.c
-@@ -155,6 +155,7 @@ static void __init imx6q_clocks_init(struct device_node *ccm_node)
- 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6q-anatop");
+diff --git a/drivers/clk/imx/clk-imx6sx.c b/drivers/clk/imx/clk-imx6sx.c
+index fea125eb4330..8f2958ac04e8 100644
+--- a/drivers/clk/imx/clk-imx6sx.c
++++ b/drivers/clk/imx/clk-imx6sx.c
+@@ -162,6 +162,7 @@ static void __init imx6sx_clocks_init(struct device_node *ccm_node)
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6sx-anatop");
  	base = of_iomap(np, 0);
  	WARN_ON(!base);
 +	of_node_put(np);
  
- 	/* Audio/video PLL post dividers do not work on i.MX6q revision 1.0 */
- 	if (clk_on_imx6q() && imx_get_soc_revision() == IMX_CHIP_REVISION_1_0) {
+ 	clks[IMX6SX_PLL1_BYPASS_SRC] = imx_clk_mux("pll1_bypass_src", base + 0x00, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
+ 	clks[IMX6SX_PLL2_BYPASS_SRC] = imx_clk_mux("pll2_bypass_src", base + 0x30, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
 -- 
 2.20.1
 
