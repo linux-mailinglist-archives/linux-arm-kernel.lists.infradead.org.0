@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB7C113E340
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:01:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0710513E356
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:01:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CmLrjajahfsM5kWzNg7hP+MsZH/m6+ckjBE0p0UGe4w=; b=pmCojOBwTqasSw
-	lCpfI7GNPgloxfmHjrvr3MGQZlpROFy5zYkT+OP8pDDFuF0wKn0OflctNEPkZliESj1jOm1/rmbay
-	6UKhg+HmFek9l9BPOLrj87WcAAPqQHXPipk1NiBlrazEnazsHI1Z6odwCkUKvjnPsnPBWO1mRrsC/
-	WwoUqOsccxj/n3ZwYqhzTjVfChCW4Dl+EAsVjxzTwz8d4p8y4g5ZYwlDwEm0L7fnvxnwhPFe3DMsb
-	SDmNHKl42x5Vf7jwUHFKVpfCCnUBfYTH3gYRTlDQT6/nHQwbVkAmMXbRNRZT+eA0cEyrLbFCPLxpz
-	o8qqxJK2RkysO1e9pO4g==;
+	List-Owner; bh=60kXAggUispsN5FbBm9j/i5QhOqrGWWWav9HKWW1u2M=; b=HLWoauOg+QO6ig
+	Ea7AHnRY+qTjqD45Bjj+6p4xSQNffHc6doXNrBOk4VpYnLmIlpJVmHHqiH5oCM/X5jL5hj3+0pqUr
+	bdnriJMTjBfsTJ0OIp63My01CknKgwHJ8c4+ewD/qvrIQBQ0t7gAAwuIow5XVkmZFDVqYSSbDlRfW
+	+xlziyJEwKl2M592DO5oUgrJjQSWHohacZWFZAL9R/1js0Tbrdelh5K43Nu9U1cRbshGz3XbkPSs/
+	0bYdzWpldZ4L9OAF8GCxGjDXqrl+16zHw5yc4d/PHVKqpJAsV4MdrZw3/HXf0zEPFhq+FvzhKwlIz
+	FNnT+qB+8o2NtzGKUbbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Vu-0000tw-RT; Thu, 16 Jan 2020 17:00:59 +0000
+	id 1is8WW-0001P4-0e; Thu, 16 Jan 2020 17:01:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8QQ-00030q-4L
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:22 +0000
+ id 1is8QX-00038f-B8; Thu, 16 Jan 2020 16:55:30 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A59D422522;
- Thu, 16 Jan 2020 16:55:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AFC6122522;
+ Thu, 16 Jan 2020 16:55:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193717;
- bh=r1TXOJ5+im7ZtJxcLkK9fAtqlGOUDTNxoiKn4bdGoiE=;
+ s=default; t=1579193724;
+ bh=bbNkedQdnDzdtuUlAZ2NagqN5EXVfxVOs37adHQ4BEM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iAvlw/yfBXArpMHce8av4YhNQXGC7Biqy5lRJtvEqoRzZ4GsEbbnRZNQw0K4Xk11Q
- lsBjWr9A4J8f0yNsjJZcUSoo3xdORzZMlpYb8QaGKJegcR3UhSkBccQr4Yqs03Gq/i
- 55RYxprIwZnZ53sZtxcAg18O6cuPNGhHUcrD1jKo=
+ b=nZJzo/G2HLWjfXwgiP9E493ETgx21Y3sJQQMlGULYOk0ku3sqXHLc1FULYRJhaSOk
+ GvpzDlidoGbFLCvofUxpRZsOyG8XwBh8wezrnGs4bGbAbH3dgvdo45cwofUSGJ8QDE
+ 41KE4O0128ytpB0k4MmpZzNTig7sTOznomoVaOVc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 012/671] PCI: iproc: Remove PAXC slot check to
- allow VF support
-Date: Thu, 16 Jan 2020 11:44:03 -0500
-Message-Id: <20200116165502.8838-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 018/671] mailbox: mediatek: Add check for
+ possible failure of kzalloc
+Date: Thu, 16 Jan 2020 11:44:09 -0500
+Message-Id: <20200116165502.8838-18-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085518_227340_C2590A59 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200116_085525_436513_5E5B1797 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,53 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- Jitendra Bhivare <jitendra.bhivare@broadcom.com>,
- Ray Jui <ray.jui@broadcom.com>, Andy Gospodarek <gospo@broadcom.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Houlong Wei <houlong.wei@mediatek.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-mediatek@lists.infradead.org,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
+From: Houlong Wei <houlong.wei@mediatek.com>
 
-[ Upstream commit 4da6b4480766e5bc9c4d7bc14bf1d0939a1a5fa7 ]
+[ Upstream commit 9f0a0a381c5db56e7922dbeea6831f27db58372f ]
 
-Fix previous incorrect logic that limits PAXC slot number to zero only.
-In order for SRIOV/VF to work, we need to allow the slot number to be
-greater than zero.
+The patch 623a6143a845("mailbox: mediatek: Add Mediatek CMDQ driver")
+introduce the following static checker warning:
+  drivers/mailbox/mtk-cmdq-mailbox.c:366 cmdq_mbox_send_data()
+  error: potential null dereference 'task'.  (kzalloc returns null)
 
-Fixes: 46560388c476c ("PCI: iproc: Allow multiple devices except on PAXC")
-Signed-off-by: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
-Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Reviewed-by: Andy Gospodarek <gospo@broadcom.com>
+Fixes: 623a6143a845 ("mailbox: mediatek: Add Mediatek CMDQ driver")
+Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Houlong Wei <houlong.wei@mediatek.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+Signed-off-by: Jassi Brar <jaswinder.singh@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pci/controller/pcie-iproc.c | 8 --------
- 1 file changed, 8 deletions(-)
+ drivers/mailbox/mtk-cmdq-mailbox.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-index 3160e9342a2f..c20fd6bd68fd 100644
---- a/drivers/pci/controller/pcie-iproc.c
-+++ b/drivers/pci/controller/pcie-iproc.c
-@@ -630,14 +630,6 @@ static void __iomem *iproc_pcie_map_cfg_bus(struct iproc_pcie *pcie,
- 			return (pcie->base + offset);
- 	}
+diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+index aec46d5d3506..f7cc29c00302 100644
+--- a/drivers/mailbox/mtk-cmdq-mailbox.c
++++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+@@ -363,6 +363,9 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+ 	WARN_ON(cmdq->suspended);
  
--	/*
--	 * PAXC is connected to an internally emulated EP within the SoC.  It
--	 * allows only one device.
--	 */
--	if (pcie->ep_is_internal)
--		if (slot > 0)
--			return NULL;
--
- 	return iproc_pcie_map_ep_cfg_reg(pcie, busno, slot, fn, where);
- }
- 
+ 	task = kzalloc(sizeof(*task), GFP_ATOMIC);
++	if (!task)
++		return -ENOMEM;
++
+ 	task->cmdq = cmdq;
+ 	INIT_LIST_HEAD(&task->list_entry);
+ 	task->pa_base = pkt->pa_base;
 -- 
 2.20.1
 
