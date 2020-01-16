@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 816BC13EEF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:12:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9327613EF2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:14:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZuHN9HNqBIdWFG45Ece9YbVfBaphRZc/2RH0vgcOs8=; b=UOBTOqTeCL4fwb
-	NaQ8YJe7a1JfYydxCW/FniZ1nTdfx5cQSVqPi4rF61QuXgj8En6dG88Kys3IB+oFgh4nzXuAHnVIu
-	mgebVnj4VNBbgutaGSkPw1rGWOfn8KIagb+ofh22tM0Etv48QdoyKjQiyPveUsDompzKkZirUO1Fq
-	qVgR80OLnMhrsk6SH418qc2eEkWOhvQleF/z4u8J9nnhidZsF3K9rTb0oy+K3LTDHjkeEojSBYIoB
-	9EmbQ7KPeKKlhgI1x1pVrae0IYTzKFtg80nG0k/pOGddNqf+Ua1RMidLd1dNkXzUa3IcHQ5KY+tHl
-	huy6axRPWZiuNEtlIVlw==;
+	List-Owner; bh=dryzUwwz9YErPW03YWrtVt9rvMEcow0Oo9mdMQms9kw=; b=HSkvAroNll6cek
+	cWYRtimyNvv0B6Wt2kmbHsObNy996n4mqyrFLjIEqcpnAzSsJ5ilUvrzehnzNNq16x/asZRnL3fqU
+	VMbRMnbJ4m4/KZUw89+MjJ3Qc8vcsmtpGBExdoNgw0xtQ5x7RtHxDoY3phgm6JfmeBhqein4AfS0I
+	GmD8cXLwQ44KvBcVobRtz8ukSBV0H1SMpEtGVDw/nrbsZk45tIybvoUmFRo1NBkOzupwnUmpBwQD1
+	3Sdme0kghyH45FcFVkhCBFCrsHh7QWrzsS+d+oA5hS+bWhcr1P8xtvri2DVeT4v+DkIo8AQIad1UH
+	R7a4OcTzS/S3FAioI3gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9cu-00031X-ET; Thu, 16 Jan 2020 18:12:16 +0000
+	id 1is9f5-0005Pb-Fr; Thu, 16 Jan 2020 18:14:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8zH-0000yJ-3R
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:31:23 +0000
+ id 1is93C-0005XE-AV
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:35:29 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C64FC246CC;
- Thu, 16 Jan 2020 17:31:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A0D93246A9;
+ Thu, 16 Jan 2020 17:35:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195878;
- bh=rNEdYtx4AyblOlb0zrQkR8wIdxh7NLZf6zh2ptUtJ2E=;
+ s=default; t=1579196120;
+ bh=y1elH+2JG+MYZjSMuDb+RqH4+qmJ1Qal4Hoo1MjNufQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xsW8TlTIiezsK3Zkn0iXsaLfL4kOnc7io+STR0hFNuU3JWwPEjWyB6hqSxCmsxmuC
- +BDHtiuuNvUglHOp0oNAOlASL5g4KvKyJIG0Lf8BFv3zoS3gvCOk+yTnvDPW9zKoAk
- vW9RXcizy7lm46ydgFwdenp4kEMepYiAWU0Fv0Mc=
+ b=c9SMpoDXAXvMSfFCR5rO8qx3+q6Hqk78bN7ir8ESOC9ggX+xu24y5OhfmOZDpli15
+ lK3yBPx3SkQfzHaQuYvR/g82tByMnsNcNHX8peYj1UW8KNisDLfVSwtBHieroRJuKa
+ LBfwos8wqVVgdsKvgYXplAbD7aSRxXCOXjmpDi4s=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 371/371] serial: stm32: fix clearing interrupt
- error flags
-Date: Thu, 16 Jan 2020 12:24:03 -0500
-Message-Id: <20200116172403.18149-314-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 027/251] clk: samsung: exynos4: fix refcount leak
+ in exynos4_get_xom()
+Date: Thu, 16 Jan 2020 12:31:01 -0500
+Message-Id: <20200116173445.21385-27-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
-References: <20200116172403.18149-1-sashal@kernel.org>
+In-Reply-To: <20200116173445.21385-1-sashal@kernel.org>
+References: <20200116173445.21385-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093119_174077_4C10AB80 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20200116_093522_488035_5360DC2C 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +81,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-serial@vger.kernel.org,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
+From: Yangtao Li <tiny.windzz@gmail.com>
 
-[ Upstream commit 1250ed7114a977cdc2a67a0c09d6cdda63970eb9 ]
+[ Upstream commit cee82eb9532090cd1dc953e845d71f9b1445c84e ]
 
-The interrupt clear flag register is a "write 1 to clear" register.
-So, only writing ones allows to clear flags:
-- Replace buggy stm32_clr_bits() by a simple write to clear error flags
-- Replace useless read/modify/write stm32_set_bits() routine by a
-  simple write to clear TC (transfer complete) flag.
+The of_find_compatible_node() returns a node pointer with refcount
+incremented, but there is the lack of use of the of_node_put() when
+done. Add the missing of_node_put() to release the refcount.
 
-Fixes: 4f01d833fdcd ("serial: stm32: fix rx error handling")
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-Cc: stable <stable@vger.kernel.org>
-Link: https://lore.kernel.org/r/1574323849-1909-1-git-send-email-fabrice.gasnier@st.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+Fixes: e062b571777f ("clk: exynos4: register clocks using common clock framework")
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/stm32-usart.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/clk/samsung/clk-exynos4.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index f8f3f8fafd9f..1e854e1851fb 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -132,8 +132,8 @@ static void stm32_receive_chars(struct uart_port *port, bool threaded)
- 		 * cleared by the sequence [read SR - read DR].
- 		 */
- 		if ((sr & USART_SR_ERR_MASK) && ofs->icr != UNDEF_REG)
--			stm32_clr_bits(port, ofs->icr, USART_ICR_ORECF |
--				       USART_ICR_PECF | USART_ICR_FECF);
-+			writel_relaxed(sr & USART_SR_ERR_MASK,
-+				       port->membase + ofs->icr);
+diff --git a/drivers/clk/samsung/clk-exynos4.c b/drivers/clk/samsung/clk-exynos4.c
+index faab9b31baf5..91f9b79e3941 100644
+--- a/drivers/clk/samsung/clk-exynos4.c
++++ b/drivers/clk/samsung/clk-exynos4.c
+@@ -1225,6 +1225,7 @@ static unsigned long __init exynos4_get_xom(void)
+ 			xom = readl(chipid_base + 8);
  
- 		c = stm32_get_char(port, &sr, &stm32_port->last_res);
- 		port->icount.rx++;
-@@ -302,7 +302,7 @@ static void stm32_transmit_chars(struct uart_port *port)
- 	if (ofs->icr == UNDEF_REG)
- 		stm32_clr_bits(port, ofs->isr, USART_SR_TC);
- 	else
--		stm32_set_bits(port, ofs->icr, USART_ICR_TCCF);
-+		writel_relaxed(USART_ICR_TCCF, port->membase + ofs->icr);
+ 		iounmap(chipid_base);
++		of_node_put(np);
+ 	}
  
- 	if (stm32_port->tx_ch)
- 		stm32_transmit_chars_dma(port);
+ 	return xom;
 -- 
 2.20.1
 
