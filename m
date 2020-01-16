@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 843A513E39D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:03:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F072113E3B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:03:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dsC8hQDS+VC01TLmsR22K5gWbexsqymqyKzrPntTfrM=; b=mNwYjPA37qoydh
-	Sazyt9bBo1TJWACAi+gncUPYhTrsANudpL5OWwHwRy+d8KFU24rVeB6/LWb6IhbNIzlLeyQvclW/t
-	cHksFfXDUl5kVI1/HwNgQkfeiiNnHwiSHv8Q9TJQx9WLy2TQzsBVfReW0iXR7tv2RxIhAmI4MUgaY
-	J2Lv4kTmdMRyCkoiAlWSpt3rQFM+Bg2hqheSaZLa4Y6uNAiLyk7wv2CY4shNBhLyAMTHFW2q05+S8
-	9sWDGTKHJvADE0RxHUgsEJyoVevjVdXMq/7FzNG/G2bOmT95UoNjM9t5mIEEN8b+nTgqLQP6lvh+A
-	YRkbKyc87Ed2hIBbw6+w==;
+	List-Owner; bh=4X7u2opvqwuWFXueY/uQsNvyrX7KpYYUPwRhjlBlF8Q=; b=pFPQklrz81+TKk
+	LKPosox4trwOjBTNXLLvYT2PGyb5IkqSKHunqHX2OOkEnb4QjGfpkZL/uWEQjY+8Wj3w7wC4JBKjt
+	Na3fAczDVccbVkTI6vFK2tSzsWb+tO9FayHeLqTiS/HHZYS2pkhC/S4Y5UIXd09oTg9f1jlERJiqf
+	gfApoBqa4LjBhCTQR8nONtnjRgwLCp+DkTJj9dEZTplFI/1pcGFK2oaimgJaum9PVagm6FQisLZug
+	Wk0gmbd+6dGfZUmmzp/R7wkCwKGyzQXaKs3MvoBrbzo4w2Z5eu/oJPFLKO7tXEC8I1zXFMYz2rNGN
+	Pj5lu8uHocRiPBNrqomQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Y1-0002fy-3x; Thu, 16 Jan 2020 17:03:09 +0000
+	id 1is8YM-0002zV-Qv; Thu, 16 Jan 2020 17:03:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8RB-0003tl-IL; Thu, 16 Jan 2020 16:56:10 +0000
+ id 1is8RM-00044l-JH; Thu, 16 Jan 2020 16:56:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E2B9324656;
- Thu, 16 Jan 2020 16:56:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 85D952467C;
+ Thu, 16 Jan 2020 16:56:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193765;
- bh=c2hNHnL4TNS07Aetuk3vCqWMT2ZbIifbwtjjzl9FM2c=;
+ s=default; t=1579193775;
+ bh=HImsYo00iEBDH0Z+BM6tQN60avxaq86ypvUaQwkal7U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1C8lG9D62BdViRON1E6J6XNHGF7VYJwOQ7Do9kbTUu/fSpkY6E2IzaOdgJJ2vGLyn
- BNllSazXEy77aYWt3SMEXCnvV/5pH9KMotgsepQF+SKYfu6DPJevoGBZ2kgcee3w6W
- aGYf5JA0qTJRCoI5xz4dFPbA/1XrSXjCm2bzytFo=
+ b=fUp/cW2nru3pjOEz6cIUp2Ly5GuovPg8x+f9UX3OMW8rcNyknOtwzdrNguR0RH5pn
+ eUkK/GLN3/prpVe2RHdXv4EBDa4NhO9nbcU9a70+d3LIQD41qqanKcHBGUOTWkoRyL
+ 5xffejyinPaD12KA4tZeUMz5PS8ReCMBw549sbC4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 050/671] pinctrl: meson-gxl: remove invalid GPIOX
- tsin_a pins
-Date: Thu, 16 Jan 2020 11:44:41 -0500
-Message-Id: <20200116165502.8838-50-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 057/671] arm64: dts: meson-gx: Add hdmi_5v
+ regulator as hdmi tx supply
+Date: Thu, 16 Jan 2020 11:44:48 -0500
+Message-Id: <20200116165502.8838-57-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085605_660596_70EB4B6D 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20200116_085617_250621_3096C283 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,8 +80,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
  linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -89,60 +90,83 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit d801064cb871806e6843738ecad38993646f53f7 ]
+[ Upstream commit e1f2163deac059ad39f07aba9e314ebe605d5a7a ]
 
-The GPIOX tsin_a pins wrongly uses the SDCard pinctrl bits, this
-patch completely removes these pins entries until we find out what
-are the correct bits and registers to be used instead.
+The hdmi_5v regulator must be enabled to provide power to the physical HDMI
+PHY and enables the HDMI 5V presence loopback for the monitor.
 
-Fixes: 5a6ae9b80139 ("pinctrl: meson-gxl: add tsin_a pins")
+Fixes: b409f625a6d5 ("ARM64: dts: meson-gx: Add HDMI_5V regulator on selected boards")
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/meson/pinctrl-meson-gxl.c | 12 ++----------
- 1 file changed, 2 insertions(+), 10 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi          | 1 +
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts   | 1 +
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts | 1 +
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts         | 1 +
+ arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts        | 1 +
+ 5 files changed, 5 insertions(+)
 
-diff --git a/drivers/pinctrl/meson/pinctrl-meson-gxl.c b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-index 158f618f1695..0c0a5018102b 100644
---- a/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-+++ b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-@@ -239,13 +239,9 @@ static const unsigned int eth_link_led_pins[]	= { GPIOZ_14 };
- static const unsigned int eth_act_led_pins[]	= { GPIOZ_15 };
- 
- static const unsigned int tsin_a_d0_pins[]	= { GPIODV_0 };
--static const unsigned int tsin_a_d0_x_pins[]	= { GPIOX_10 };
- static const unsigned int tsin_a_clk_pins[]	= { GPIODV_8 };
--static const unsigned int tsin_a_clk_x_pins[]	= { GPIOX_11 };
- static const unsigned int tsin_a_sop_pins[]	= { GPIODV_9 };
--static const unsigned int tsin_a_sop_x_pins[]	= { GPIOX_8 };
- static const unsigned int tsin_a_d_valid_pins[] = { GPIODV_10 };
--static const unsigned int tsin_a_d_valid_x_pins[] = { GPIOX_9 };
- static const unsigned int tsin_a_fail_pins[]	= { GPIODV_11 };
- static const unsigned int tsin_a_dp_pins[] = {
- 	GPIODV_1, GPIODV_2, GPIODV_3, GPIODV_4, GPIODV_5, GPIODV_6, GPIODV_7,
-@@ -432,10 +428,6 @@ static struct meson_pmx_group meson_gxl_periphs_groups[] = {
- 	GROUP(spi_miso,		5,	2),
- 	GROUP(spi_ss0,		5,	1),
- 	GROUP(spi_sclk,		5,	0),
--	GROUP(tsin_a_sop_x,	6,	3),
--	GROUP(tsin_a_d_valid_x,	6,	2),
--	GROUP(tsin_a_d0_x,	6,	1),
--	GROUP(tsin_a_clk_x,	6,	0),
- 
- 	/* Bank Z */
- 	GROUP(eth_mdio,		4,	23),
-@@ -698,8 +690,8 @@ static const char * const eth_led_groups[] = {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
+index 765247bc4f24..e14e0ce7e89f 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
+@@ -125,6 +125,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+ 	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
  };
  
- static const char * const tsin_a_groups[] = {
--	"tsin_a_clk", "tsin_a_clk_x", "tsin_a_sop", "tsin_a_sop_x",
--	"tsin_a_d_valid", "tsin_a_d_valid_x", "tsin_a_d0", "tsin_a_d0_x",
-+	"tsin_a_clk", "tsin_a_sop",
-+	"tsin_a_d_valid", "tsin_a_d0",
- 	"tsin_a_dp", "tsin_a_fail",
+ &hdmi_tx_tmds_port {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+index 864ef0111b01..a589547fc6e3 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+@@ -78,6 +78,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+ 	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
  };
  
+ &hdmi_tx_tmds_port {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
+index b4dfb9afdef8..db293440e4ca 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
+@@ -155,6 +155,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+ 	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
+ };
+ 
+ &hdmi_tx_tmds_port {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
+index 5896e8a5d86b..2602940c2077 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
+@@ -51,6 +51,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+ 	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
+ };
+ 
+ &hdmi_tx_tmds_port {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+index 313f88f8759e..782e9edac805 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+@@ -271,6 +271,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+ 	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
+ };
+ 
+ &hdmi_tx_tmds_port {
 -- 
 2.20.1
 
