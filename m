@@ -2,80 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8664713DFB0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:12:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C39213DFB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:12:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pnaMw3dOt56KWC1s2FTXJDynMuaZGvO38xAC4sQhLWk=; b=MtRi7BIsFZIH60O9DtTaU0kIH
-	dR+NNlwXzbb3V4PQRTWTg236RZ0cg8et1kfl/7FUJcztGqUg46Kd7ivAHL3JtvjbM6d4jyzMjk3TV
-	AxoGZQ8HTnril/3TgzjunrCSR3GMU6uNLe1g5c16/U/ufiN5JWFFJA483dZ8AP2A4flLLKJXDPCzf
-	tn4IcX8EtxmqmFdOrEUeNOnKA8lKdTGk5CZER6SOrf4ICeTkfVgC3/vg5tvgWhtnKs7RYSd/i9V3W
-	9Kd/TY24IuWXeH+aTAOgh4a1afiZKUcl4AYn32C9l4y07LQ0kwmORydKVZNJgq72i/a6lLM8U8qgT
-	O+a0HldBw==;
+	 bh=Cd87r8ZL4DuCR9arOTWr1L/Z/eRJA7RG6qORmhEf/SQ=; b=katOXEc/VVz8OCfOOxrhY1hom
+	xBbwjdkrmHjvZ/NIAYi4USJ0TnNc3McoG81XZ+kMtNoeEU+4Y5MYy6t4sTvOoUutVdweK3rihI+zo
+	4jxkA+pAMsQlpl/W7Cq7dh7Sx/GR6m3Xi7sYTK4zwwb0kwXXu8baC/xFFzlit9UwJDBOLp79V+VC5
+	cOlXPRy7b0gRkwW+2NaTLYi0o1l5UqGRLqeGOyCaH94lRUur9vxUWf7FKcKOW3Ks9MyKcGMNmmAbX
+	NY4JFD9vWOiUdG67vBoShBtQrLYez8Qwrxn6zOtL36vACIJPEQzuA50Hu8hYgv6L9kYhLfxkmBAvf
+	3dyvmoeQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is7km-0000Tx-Jp; Thu, 16 Jan 2020 16:12:16 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1is7l1-0000fZ-VV; Thu, 16 Jan 2020 16:12:31 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is7kT-0000RM-7u
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:12:02 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1579191118; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=XW8XoFw5PNL4iewPQecr5FNhrMV0FYDDvOpMYIAPAHQ=;
- b=RX8AB+TYstNq72q5FsyTjUJccoFcjdPCDz84A0xqprveAjZ722Add0abOWylwTs9zQ3Pke3h
- PfRcQMQ49yFZ1XlTXxiJkWIAPiKYw+lKsGND/M6U+dsLYbisS/H4oLIvtEkROyJT4YbcByBu
- mv1gNvatM9k9tW9v5Lduda30TE8=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e208b47.7fc6f222d308-smtp-out-n01;
- Thu, 16 Jan 2020 16:11:51 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 0A1DAC447A2; Thu, 16 Jan 2020 16:11:50 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 4346EC43383;
- Thu, 16 Jan 2020 16:11:50 +0000 (UTC)
+ id 1is7kV-0000Rq-H0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:12:05 +0000
+Received: by mail-wm1-x341.google.com with SMTP id m24so4343028wmc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 08:11:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=wq116TZAe0p40heVVDfMLRBuWEj6xKtwx1Np2GXHzlk=;
+ b=qdQEY1n8v+dLZaHvHfDyqgC04UQvFEYkL0iVEjWLFmsSkU3RdqM+lv6eJPlKsfZZJo
+ V2U5I8ZZfySoMK28rBSpL6Qi9hZ1hBksNdUKrrlpCgVLxMi5EXSi5jSaVoIKprkgosd5
+ tsDC/ZoH/IOGHUHa5cOqrpght5pR8sZ8tAU7KkBzmrV/NVIcLC4BYWkLn3qFk7vMY0dG
+ 3cUuGjOTM7lrJfGCwT9DuQ2es9Hy/CCF+RThAtg047ML104Uh1CTu5cc9rYcPLtsT3GC
+ B/ZdafPWXHclyQ++k9xdn+0fxAl7T0KV1vSnNRH8BNknm6iXsf0sfW0O3mzquuFtLaDf
+ naeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=wq116TZAe0p40heVVDfMLRBuWEj6xKtwx1Np2GXHzlk=;
+ b=i2hwPcTzsnw2hR5/P24AZKo4/+dr2og4z8hMpvcSKVPu0iBa3A4osbpY+kryYiYLcu
+ lxUznb128Cm/3pAxAcFJeCySs3QXun0ecTn1OHCreRItqngn8mCA65+cpAryMq1rjf6R
+ 5hz1UIxynLe9r9wEMCaRLISr/tqCjsQqtLDQDqGUkWIGtr9Q7JolLam202fHM9RTAiwj
+ bLS+tedCVDsoo4ZST2dVBTT3XHUPlVZ2nzC2xVVa26ewCmSgm7Ll0Txj7cTxNsrwutuj
+ 1jepwaxykujEXCDu21BGutoQt/XZALz90kuDwKsbly81UNFwhRonn3B+2802Rpk8XWMt
+ t9Yw==
+X-Gm-Message-State: APjAAAWsmOGvMEnwntq1mAJ8bmeLanydv34pnBF5qK8jydt+G1B/a4Dc
+ uyIvWOFKVwJCa1LkeUD6CdEdhy7EhmI=
+X-Google-Smtp-Source: APXvYqxia/hYDamKXklRlZ4uVwwfWKaRzmR3+FORgkBCwOjEeD6jP03Gwc0fSu+Qsj8bDjor8a5sTA==
+X-Received: by 2002:a1c:a982:: with SMTP id s124mr6705085wme.132.1579191117317; 
+ Thu, 16 Jan 2020 08:11:57 -0800 (PST)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id i5sm30424978wrv.34.2020.01.16.08.11.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 Jan 2020 08:11:55 -0800 (PST)
+Subject: Re: [PATCH V2 3/7] dt-bindings: imx-ocotp: Add i.MX8MP compatible
+To: Anson Huang <Anson.Huang@nxp.com>, robh+dt@kernel.org,
+ mark.rutland@arm.com, vkoul@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ ulf.hansson@linaro.org, broonie@kernel.org,
+ manivannan.sadhasivam@linaro.org, andrew.smirnov@gmail.com,
+ rjones@gateworks.com, marcel.ziswiler@toradex.com,
+ sebastien.szymanski@armadeus.com, aisheng.dong@nxp.com,
+ richard.hu@technexion.com, angus@akkea.ca, cosmin.stoica@nxp.com,
+ l.stach@pengutronix.de, rabeeh@solid-run.com, leonard.crestez@nxp.com,
+ daniel.baluta@nxp.com, jun.li@nxp.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dmaengine@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mmc@vger.kernel.org,
+ linux-spi@vger.kernel.org
+References: <1578893602-14395-1-git-send-email-Anson.Huang@nxp.com>
+ <1578893602-14395-3-git-send-email-Anson.Huang@nxp.com>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <c2c3d925-a69a-d7f8-a58a-5f4abe46960b@linaro.org>
+Date: Thu, 16 Jan 2020 16:11:54 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Date: Thu, 16 Jan 2020 21:41:50 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: Add KRYO{3,4}XX CPU cores to spectre-v2 safe list
-In-Reply-To: <20200116153235.GA18909@willie-the-truck>
-References: <20200116141912.15465-1-saiprakash.ranjan@codeaurora.org>
- <20200116153235.GA18909@willie-the-truck>
-Message-ID: <1a3f9557fa52ce2528630434e9a49d98@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <1578893602-14395-3-git-send-email-Anson.Huang@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_081158_606871_1D7140C8 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_081159_558156_DB04C4E2 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,69 +114,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
- jhugo@codeaurora.org, Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Andre Przywara <andre.przywara@arm.com>, James Morse <james.morse@arm.com>,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
 
-On 2020-01-16 21:02, Will Deacon wrote:
-> [+Jeffrey]
-> 
-> On Thu, Jan 16, 2020 at 07:49:12PM +0530, Sai Prakash Ranjan wrote:
->> KRYO3XX silver CPU cores and KRYO4XX silver, gold CPU cores
->> are not affected by Spectre variant 2. Add them to spectre_v2
->> safe list to correct ARM_SMCCC_ARCH_WORKAROUND_1 warning and
->> vulnerability sysfs value.
->> 
->> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> ---
->>  arch/arm64/include/asm/cputype.h | 6 ++++++
->>  arch/arm64/kernel/cpu_errata.c   | 3 +++
->>  2 files changed, 9 insertions(+)
->> 
->> diff --git a/arch/arm64/include/asm/cputype.h 
->> b/arch/arm64/include/asm/cputype.h
->> index aca07c2f6e6e..7219cddeba66 100644
->> --- a/arch/arm64/include/asm/cputype.h
->> +++ b/arch/arm64/include/asm/cputype.h
->> @@ -85,6 +85,9 @@
->>  #define QCOM_CPU_PART_FALKOR_V1		0x800
->>  #define QCOM_CPU_PART_FALKOR		0xC00
->>  #define QCOM_CPU_PART_KRYO		0x200
->> +#define QCOM_CPU_PART_KRYO_3XX_SILVER	0x803
->> +#define QCOM_CPU_PART_KRYO_4XX_GOLD	0x804
->> +#define QCOM_CPU_PART_KRYO_4XX_SILVER	0x805
-> 
-> Jeffrey is the only person I know who understands the CPU naming here, 
-> so
-> I've added him in case this needs either renaming or extending to cover
-> other CPUs. I wouldn't be at all surprised if we need a function call
-> rather than a bunch of table entries...
-> 
-> That said, the internet claims that KRYO4XX gold is based on 
-> Cortex-A76,
-> and so CSV2 should be set...
-> 
 
-Yes the internet claims are true and CSV2 is set. SANITY check logs in 
-here show ID_PFR0_EL1 - https://lore.kernel.org/patchwork/patch/1138457/
+On 13/01/2020 05:33, Anson Huang wrote:
+> Add compatible and description for i.MX8MP.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Thanks,
-Sai
+Applied Thanks,
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+--srini
 
 _______________________________________________
 linux-arm-kernel mailing list
