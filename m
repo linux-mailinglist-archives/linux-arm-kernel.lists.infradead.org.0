@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD7F413F47C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:50:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A76B213F499
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:52:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QDd/Nn2cpn6/IqqfoZp5EzOguq2DofSJrgyAcekqauk=; b=qgMm1vxp/1FyO+mPuNxtepxBSI
-	ORfKdbkI3U9i6/jyV1HPtSMuw+dKxeVoau5Pf0EZLWAwwfvNZzLcNxzTjcC7tq/SfCmVlFeqnJrXn
-	rnNdbFv+EUYr9JbFAVvOjS3BiAUi/it6u8lDb3g2fw7HpuZKr9Y6GG/3Xb7lZWcF4sNKQUC2gvWFE
-	VDQpCiaSxaTNZ9sUy7F2eAGXwba5onmA1Ar+sT7keXhoZ6SqcLX3v43+J70lI8J/RBgruTi6j4PQo
-	/D47ELIP75g5tVCcw2/2RaLZuzVb2Mw1ZuP4G+PCtm8f7QI9gMECQ0PiJBts9N3LaC+iGjLUQXFd0
-	QDDrMsgA==;
+	bh=8LXnBZI/bi0oyvcalCnvyUuRDRiV10COjjVLVaydR5w=; b=FfYMR/HD7t9xJVz1oHfBOc9CP1
+	08H5PVImb8LL/qBo4xSJyZO5qKIVmxdwh4L3zFyvMJa0zc2nh1eOcIPSXVO8FfqWeShr/zWEpjf+Q
+	IUJHtCTwfjn6HEO4xdwIwtqFpPkTOHmyn4B0zvo7o8oxipXZr/vH74aWKPzIHEF+RPqp25Y5wLLQH
+	l9r313rm69hksPd6FcWgQ78eKwZ0E5Pi+xqf9NI7g2mJHjqbLz2B2VXw7Y5zX8ml/DG+VglxbAh7T
+	xeSe5vpyJRCCcm2YrCtDXffv+mqtJ+ml+AaT93ypIRASPnWoYgNDW4NRa9Mx9saW7+Wsd2icky1ep
+	qm64Cqbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isADT-0005V5-IT; Thu, 16 Jan 2020 18:50:03 +0000
+	id 1isAFD-0008Nw-En; Thu, 16 Jan 2020 18:51:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9zp-0005s5-Py
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:36:03 +0000
+ id 1is9zr-0005tG-Dj
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:36:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB7CF13A1;
- Thu, 16 Jan 2020 10:35:56 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 69C0913D5;
+ Thu, 16 Jan 2020 10:35:58 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0A4503F534;
- Thu, 16 Jan 2020 10:35:55 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 854E33F534;
+ Thu, 16 Jan 2020 10:35:57 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org, will@kernel.org,
  catalin.marinas@arm.com
-Subject: [PATCH 2/5] arm64: assembler: remove smp_dmb macro
-Date: Thu, 16 Jan 2020 18:35:45 +0000
-Message-Id: <20200116183548.39411-3-mark.rutland@arm.com>
+Subject: [PATCH 3/5] arm64: entry: mark all entry code as notrace
+Date: Thu, 16 Jan 2020 18:35:46 +0000
+Message-Id: <20200116183548.39411-4-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200116183548.39411-1-mark.rutland@arm.com>
 References: <20200116183548.39411-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_103557_917867_0F476B5D 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_103559_528782_E0712DE6 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,36 +70,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These days arm64 kernels are always SMP, and thus smp_dmb is an
-overly-long way of writing dmb. Naturally, no-one uses it.
+Almost all functions in entry-common.c are marked notrace, with
+el1_undef and el1_inv being the only exceptions. We appear to have done
+this on the assumption that there were no exception registers that we
+needed to snapshot, and thus it was safe to run trace code that might
+result in further exceptions and clobber those registers.
 
-Remove the unused macro.
+However, until we inherit the DAIF flags, our irq flag tracing is stale,
+and this discrepancy could set off warnings in some configurations. For
+example if CONFIG_DEBUG_LOCKDEP is selected and a trace function calls
+into any flag-checking locking routines. Given we don't expect to
+trigger el1_undef or el1_inv unless something is already wrong, any
+irqflag warnigns are liable to mask the information we'd actually care
+about.
+
+Let's keep things simple and mark el1_undef and el1_inv as notrace.
+Developers can trace do_undefinstr and bad_mode if they really want to
+monitor these cases.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/assembler.h | 7 -------
- 1 file changed, 7 deletions(-)
+ arch/arm64/kernel/entry-common.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 5f8a2772baeb..995362adaac0 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -80,13 +80,6 @@
- 	.endm
+diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+index 5dce5e56995a..67198142a0fc 100644
+--- a/arch/arm64/kernel/entry-common.c
++++ b/arch/arm64/kernel/entry-common.c
+@@ -36,14 +36,14 @@ static void notrace el1_pc(struct pt_regs *regs, unsigned long esr)
+ }
+ NOKPROBE_SYMBOL(el1_pc);
  
- /*
-- * SMP data memory barrier
-- */
--	.macro	smp_dmb, opt
--	dmb	\opt
--	.endm
--
--/*
-  * RAS Error Synchronization barrier
-  */
- 	.macro  esb
+-static void el1_undef(struct pt_regs *regs)
++static void notrace el1_undef(struct pt_regs *regs)
+ {
+ 	local_daif_inherit(regs);
+ 	do_undefinstr(regs);
+ }
+ NOKPROBE_SYMBOL(el1_undef);
+ 
+-static void el1_inv(struct pt_regs *regs, unsigned long esr)
++static void notrace el1_inv(struct pt_regs *regs, unsigned long esr)
+ {
+ 	local_daif_inherit(regs);
+ 	bad_mode(regs, 0, esr);
 -- 
 2.11.0
 
