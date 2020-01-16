@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F8B13F388
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:44:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EC6413F36A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:44:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uZPhDhAGiXyfPuDVRMils+aoMBOKMdQCadoQmbK7UfY=; b=acda77ZLmIuo/c
-	bYJsef98kB5DORd05Yy5p40qjZC5G9QMX59uzQbpL6XI1DKwklQ752cIcs8sOGZ3JjgZU82xbIAGC
-	KP0vVIvCIFlB2kvHrrI76GLpZpAylEL290CDpxt8v2psxHOMNqa0ydLyGmrCiC/36joQio2HSomJd
-	kcKmPRMZ7s8POOBfhx0DsZtXKKCNMFTsi9hZYmBqn+2cUO4MnuGwtFO6SM3wrHUItbo/xXowdDJ31
-	JtcGI3F9Wm8eFbazpz+G6UpQhKkK2nzycs2TRr3tLG/8ANpN958CfTMNkKMQEOeOjFXMye3VgZzPA
-	UFSeYXLHqtJPKH7ZfF9A==;
+	List-Owner; bh=HM4LTBO//vCJ5D3atSwmu1omgH/q1b4ckHhWKRGRpw4=; b=BAnSnkKl5JF1F3
+	uhhvvogE8gkaNOGfODkdI9bRFu7ANUE8c78JEXOPE5UQEu4PrB3igMsMAYHVvzfP3AlZ3cD9AOIUl
+	Fchz4iusk83Wgfcfe235hjVDKq2Vi12tuk2Y+o11h6QiEztb2k1Hs2hsAM+TXhqvCHbOqWeDKmBc0
+	jXriDRXTtJ4YSjV2gYQrde6RDXhLHcmqcHBi7470HxSt+dfH9pH/+RMf02WrsDgcOtoDkH30n4H3A
+	XVWk0rwlLjOmfIceqcK80+bEO8IopTWLVAhD+eXQKDeGDy7xFh+J/t4Eg+jL+1WyHfde3LkgWERzg
+	xmOCksAjxNpe0qQx6a3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isA8M-0007FQ-MO; Thu, 16 Jan 2020 18:44:46 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1isA88-0006wf-EZ; Thu, 16 Jan 2020 18:44:32 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9fn-00076S-Iv
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:15:29 +0000
+ id 1is9fm-0006yh-R0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:15:25 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 16 Jan 2020 10:15:14 -0800
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 16 Jan 2020 10:15:13 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,327,1574150400"; d="scan'208";a="226059451"
+X-IronPort-AV: E=Sophos;i="5.70,327,1574150400"; d="scan'208";a="424143460"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga003.jf.intel.com with ESMTP; 16 Jan 2020 10:15:13 -0800
+ by fmsmga005.fm.intel.com with ESMTP; 16 Jan 2020 10:15:12 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1is9fl-0003qH-2R; Fri, 17 Jan 2020 02:15:13 +0800
-Date: Fri, 17 Jan 2020 02:13:56 +0800
+ id 1is9fj-0003hu-Mu; Fri, 17 Jan 2020 02:15:11 +0800
+Date: Fri, 17 Jan 2020 02:13:57 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
-Subject: [keystone:next] BUILD SUCCESS a1766a49fc90df3ac1ab3004dd3d4a80480c1a31
-Message-ID: <5e20a7e4.FxyLYI5zqtgQNQv4%lkp@intel.com>
+Subject: [keystone:for_5.6/driver-soc] BUILD SUCCESS
+ 3277e8aa2504d97e022ecb9777d784ac1a439d36
+Message-ID: <5e20a7e5.4Az5WuEnoQBdAKvD%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_101515_706234_8758E04F 
-X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-CacheID: sfid-20200116_101514_928754_9618424B 
+X-CRM114-Status: UNSURE (   9.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -52,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
@@ -73,8 +74,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git  next
-branch HEAD: a1766a49fc90df3ac1ab3004dd3d4a80480c1a31  Merge tag 'drivers_soc_for_5.6' into next
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git  for_5.6/driver-soc
+branch HEAD: 3277e8aa2504d97e022ecb9777d784ac1a439d36  soc: ti: k3: add navss ringacc driver
 
 elapsed time: 806m
 
