@@ -2,59 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8820E13DAA1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:52:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A3B13DB45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 14:16:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=shU3buroL+izTOfysDei5zgKaQ6xwUytD7ZedaSiTRo=; b=L5aK80iWNFg79mlxfpoMdYf1w
-	CPF5S9pbrbV3GTJ4NPTAYvYKMwSIsGu/8Tps4CjaZW6t7Z/ZrfHI8jtOCoqMLAFevOnGRBmrHvvPy
-	efd604IUjhnGnpC+plQpxoqJrwEP7U5T/1YGhMO7CB+c3DtsFMPi+a5Zh9otF6CiWGmYpeOfQpSQW
-	jcSGbQksuGGm9HpKgebLG85+/qUZMCt4cQqn1s0JvqckEbam6LdAra50vraU9DTTcbMyWGCZKGKZH
-	+Su88e392Bo7iJ1POeyNUYynoAkdPij+F1UhW15nzgYBMDR7ctgJr1kM8RaKhPe9k0lEEOxDbQ7uC
-	mNZMH8vtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9uMtuBShPx/KeDcQA3Hg6QvBOEPCy83RioTbWi+xMKY=; b=l/hhaolnJcZw2/
+	nNxGCSMtWDtt2uae0lnt73RIgrjIVf8FQwT88c+GRcXuCbKwWUaqWbJMWERKFoJcYLGsAppABTlcV
+	9bGx7kSqziIUVttKMhy2PtDEY1M6m312f03rqi+LvwAOGvKbDLq3kkeVqzVhr3T+Is1g/DS9H4b8g
+	Y/bnDl9KyB1RGGZJyUYQp4/nLc+fqDlspx818iI3vALz/baNr7fakEFucn9UMm0pVA8nQEuWPjhJt
+	9OQedN8vZjOfDnacz8ZneOkUxlcuxdNxxWsxIDDIJyU7CH6PTsc2wTmmSMmyNkfZULy03GSjXzC2n
+	jPodGkQZK7fiZcxVzyZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is4dW-0001FN-7u; Thu, 16 Jan 2020 12:52:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is4dK-0001EP-SG
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:52:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 632251396;
- Thu, 16 Jan 2020 04:52:20 -0800 (PST)
-Received: from [10.37.9.112] (unknown [10.37.9.112])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 020443F6C4;
- Thu, 16 Jan 2020 04:52:18 -0800 (PST)
-Subject: Re: [PATCH v2] arm64: cpufeature: Export matrix and other features to
- userspace
-To: Will Deacon <will@kernel.org>
-References: <20191216113337.13882-1-steven.price@arm.com>
- <20200115094916.GC21692@willie-the-truck>
- <20200115095810.GD21692@willie-the-truck>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <87d09890-146c-a9ce-a8d9-13baaa30068d@arm.com>
-Date: Thu, 16 Jan 2020 12:52:16 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1is50e-0002jt-La; Thu, 16 Jan 2020 13:16:28 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is50K-0002iU-Ku
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 13:16:14 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d139so7163086wmd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 05:16:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=2fUXK8SpQFeNUTHHjq17WKEa2HX3RjBEp1dlf1605d8=;
+ b=QctqX+SABPym4k6LOX1hzx5gGwkEvbayU2AwkCvhTMCpEs7ix0z3Y9lzgR8BIzExGs
+ 7Nmlqo7vmRyMi5++i7LRdKtmyQT8h2AfO8p5VVGLeEuuRSByY4ji0ucCpYlyiAntiLhu
+ VsZz2FGp/upKFVJQvg0CGbvNSY1KlWk+pFvE8a8aihQPntSsMDotWqDTQIiPgwfSrpeP
+ kj7Hfcr35pFToHNz5/Ub5rPit4WdGxYOcZuxPMdDsVrPknOEcggUKzQu2umL1Fkw76g8
+ oiToDbmSTMNxl31Lfusng0BIhaz9f+r7aGAksBjS7megI67hE+Gmn+5o41tNxzsfXU5V
+ +X6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2fUXK8SpQFeNUTHHjq17WKEa2HX3RjBEp1dlf1605d8=;
+ b=I9DCPYM/O9USzf2jTfnnXQ4ZvNKYKO0f2XZaiDBQqIh1fYwBk7EMLoAvPDb3zCVdlV
+ agf3FJ3SUC8HtJ6AqonmnaI4VmtZOpa5RMIFdzv/SPGL6MJt51b8cdsky5ftWkha0/s0
+ WgBhc2Ib+O0UYNDOsC4Ebb5FvI/3S+eXMAr435YZPt5rhcQxpgsYixYtx7DvtmOUysta
+ b3onzENJT/LpCbZKn6lYpowdYPOKFu7U7xkgGruVSVvk+2AGUBykm1jSrBJFMJJF2i/E
+ evICKzT/2qPUmqfpQKxVvnmkPbUO0OHvdCrfyLumXyzw5sOlN563UuisA+P3R5mRj8e+
+ NxpQ==
+X-Gm-Message-State: APjAAAX5fPf5G7QrpUtkPyQhc+H0XP62HJnaFstRe0Hly6h5XzEAVJ3s
+ GfWFQHjFio0IibngP5Ak1ks=
+X-Google-Smtp-Source: APXvYqy+KZj1RE5Da5UJUk8yDqkXjQ9G20krvYN+N07Q3VSfPwOBls/Wn9bvazOAR6xdN4I5BNBNVg==
+X-Received: by 2002:a05:600c:224d:: with SMTP id
+ a13mr6139437wmm.70.1579180566478; 
+ Thu, 16 Jan 2020 05:16:06 -0800 (PST)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id y139sm3415692wmd.24.2020.01.16.05.16.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Jan 2020 05:16:05 -0800 (PST)
+Date: Thu, 16 Jan 2020 14:16:03 +0100
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Iuliana Prodan <iuliana.prodan@nxp.com>
+Subject: Re: [PATCH RFC 00/10] crypto: engine: permit to batch requests
+Message-ID: <20200116131603.GA26487@Red>
+References: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
+ <VI1PR04MB444530675D82743E8AFFD8FE8C360@VI1PR04MB4445.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20200115095810.GD21692@willie-the-truck>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <VI1PR04MB444530675D82743E8AFFD8FE8C360@VI1PR04MB4445.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_045223_003590_9DEBD783 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_051608_709675_E0D05AD7 
+X-CRM114-Status: GOOD (  20.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,123 +101,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, julien@xen.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Aymen Sghaier <aymen.sghaier@nxp.com>,
+ "herbert@gondor.apana.org.au" <herbert@gondor.apana.org.au>,
+ Horia Geanta <horia.geanta@nxp.com>,
+ "linux-sunxi@googlegroups.com" <linux-sunxi@googlegroups.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, "wens@csie.org" <wens@csie.org>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/01/2020 09:58, Will Deacon wrote:
-> On Wed, Jan 15, 2020 at 09:49:17AM +0000, Will Deacon wrote:
->> In other words, I'll drop the SPECRES parts from this patch. Sound ok?
+On Thu, Jan 16, 2020 at 11:33:24AM +0000, Iuliana Prodan wrote:
+> On 1/14/2020 3:59 PM, Corentin Labbe wrote:
+> > Hello
+> > 
+> > The sun8i-ce hardware can work on multiple requests in one batch.
+> > For this it use a task descriptor, and chain them.
+> > For the moment, the driver does not use this mechanism and do requests
+> > one at a time and issue an irq for each.
+> > 
+> > Using the chaning will permit to issue less interrupts, and increase
+> > thoughput.
+> > 
+> > But the crypto/engine can enqueue lots of requests but can ran them only
+> > one by one.
+> > 
+> > This serie introduce a way to batch requests in crypto/engine by
+> > - setting a batch limit (1 by default)
+> > - refactor the prepare/unprepare code to permit to have x requests
+> >    prepared/unprepared at the same time.
+> > 
+> > For testing the serie, the selftest are not enough, since it issue
+> > request one at a time.
+> > I have used LUKS for testing it.
+> > 
+> > Please give me what you think about this serie, specially maintainers
+> > which have hardware with the same kind of capability.
+> > 
+> Hi,
+> 
+> I'm working on CAAM, on adding support for crypto-engine.
+> These modifications are not working on CAAM.
+> They seem to be specific to requests that are linked. CAAM can work on 
+> multiple request, at the same time, but they are processed independently.
+> So, I believe the parallelization is a good idea, but the requests still 
+> need to be independent.
+> I'll follow up with comments on each patch.
 
-Yes, sounds like a good idea based on what Mark linked to. The diff 
-below looks right to me.
+Hello
 
-Thanks,
+Thanks for the review.
+Yes my serie is for doing "linked" request.
+For the CAAM, if you can do multiple request independently, why not having x crypto engine ? (like sun8i-ce/sun8i-ss/amlogic)
 
-Steve
+> 
+> Also, IMO you should send the patches for crypto-engine improvements in 
+> a separate series from the one for allwinner driver.
 
-> 
-> Diff below.
-> 
-> Will
-> 
-> --->8
-> 
-> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> index 5382981533f8..27877d25dd9b 100644
-> --- a/Documentation/arm64/cpu-feature-registers.rst
-> +++ b/Documentation/arm64/cpu-feature-registers.rst
-> @@ -206,8 +206,6 @@ infrastructure:
->        +------------------------------+---------+---------+
->        | BF16                         | [47-44] |    y    |
->        +------------------------------+---------+---------+
-> -     | SPECRES                      | [43-40] |    y    |
-> -     +------------------------------+---------+---------+
->        | SB                           | [39-36] |    y    |
->        +------------------------------+---------+---------+
->        | FRINTTS                      | [35-32] |    y    |
-> diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
-> index 183ba86ad46e..4fafc57d8e73 100644
-> --- a/Documentation/arm64/elf_hwcaps.rst
-> +++ b/Documentation/arm64/elf_hwcaps.rst
-> @@ -232,10 +232,6 @@ HWCAP2_DGH
->   
->       Functionality implied by ID_AA64ISAR1_EL1.DGH == 0b0001.
->   
-> -HWCAP2_SPECRES
-> -
-> -    Functionality implied by ID_AA64ISAR1_EL1.SPECRES == 0b0001.
-> -
->   4. Unused AT_HWCAP bits
->   -----------------------
->   
-> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-> index ac7180b2c20b..fcb390ea29ea 100644
-> --- a/arch/arm64/include/asm/hwcap.h
-> +++ b/arch/arm64/include/asm/hwcap.h
-> @@ -93,7 +93,6 @@
->   #define KERNEL_HWCAP_I8MM		__khwcap2_feature(I8MM)
->   #define KERNEL_HWCAP_DGH		__khwcap2_feature(DGH)
->   #define KERNEL_HWCAP_BF16		__khwcap2_feature(BF16)
-> -#define KERNEL_HWCAP_SPECRES		__khwcap2_feature(SPECRES)
->   
->   /*
->    * This yields a mask that user programs can use to figure out what
-> diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
-> index 8f3f1b66f7b2..e6dad5924703 100644
-> --- a/arch/arm64/include/uapi/asm/hwcap.h
-> +++ b/arch/arm64/include/uapi/asm/hwcap.h
-> @@ -72,6 +72,5 @@
->   #define HWCAP2_I8MM		(1 << 13)
->   #define HWCAP2_BF16		(1 << 14)
->   #define HWCAP2_DGH		(1 << 15)
-> -#define HWCAP2_SPECRES		(1 << 16)
->   
->   #endif /* _UAPI__ASM_HWCAP_H */
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 9164ee5351a4..c88f8fb80e2e 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -138,7 +138,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_I8MM_SHIFT, 4, 0),
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DGH_SHIFT, 4, 0),
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_BF16_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SB_SHIFT, 4, 0),
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FRINTTS_SHIFT, 4, 0),
->   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> @@ -1678,7 +1678,6 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_LRCPC_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ILRCPC),
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_FRINTTS_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_FRINT),
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SB_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SB),
-> -	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SPECRES_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SPECRES),
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_BF16_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_BF16),
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_DGH_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_DGH),
->   	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_I8MM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_I8MM),
-> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-> index c689e26889c7..9013b224591a 100644
-> --- a/arch/arm64/kernel/cpuinfo.c
-> +++ b/arch/arm64/kernel/cpuinfo.c
-> @@ -91,7 +91,6 @@ static const char *const hwcap_str[] = {
->   	"i8mm",
->   	"bf16",
->   	"dgh",
-> -	"specres",
->   	NULL
->   };
->   
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+For this RFC serie, I tried to do real atomic patch, for let people see the whole process.
 
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
