@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D272E13F0B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:23:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E41E13F185
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:30:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C5vYxwsyM3NBdqNpThTluwOLWnSg6J3WHNaBDhZ/Daw=; b=uFSZmP5pnxB1O2
-	cW65J1e4op/64kSHwc95amYSaYXD24aS9Bwvji7Lv2VZKlZ0KX5yp1wmpRodhLw+xax3zJiInMi9n
-	14dPqMv3D97QeHTYLOl0ZzVj5uvhQrQXZQjyejI3wlXVf7sQrG5gYnCf/VTkywFGkhWrqqg5aR/6N
-	geW1krAB2zpLLGHiFqQ++HZTz5MAX5DWrOYe/BIpJARSJ4cg4N5wLrfREW8/OkpqQ2tXXhu53d1O2
-	34rc264tjiaFaQJ8TAaGm8UBzr0PkFR8AEy4Kzh4W42f+hhhTYGnG1huArLWlsKDDQR41HyQY9Cm2
-	L7wCAQ0N4Q7moXkdZk2w==;
+	List-Owner; bh=q5juh1zr65XpFhvU0612+8PMif5DtZ4Tux7kEBroHh0=; b=LBkMzMmLjCsUeL
+	a8//Tully8+/ps5uIfsDh9IwVoQ7fu4ss78wc/E1X+TFDWnHdqbc0Lv2UM5A82m2W2Brj0hhFbb3f
+	WV1nhrilRW3RWWAHRmRuY0aJ9ZEH6ra2i95UKRwGAcijduBIpXsI9znsJ08tTvDMelhuKYMHV+UOJ
+	wHGRoQj3UtNmLOPewtjcCGWLj9FLcU4lH6lm71Orp+81F+QqKQv2JArG/7zEdRXo3MzEi5EEWuBiy
+	tKkoQC1hhzCdkmVeVqghC08wLR22h+Qmr+qIUiM2l9LeoRcgQdqHB3T+GDPxAYom5Npqv4G+DUzN4
+	CIyJWxo96BrvxhjFnuzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9nx-0008Rl-F0; Thu, 16 Jan 2020 18:23:41 +0000
+	id 1is9u2-0006R4-Fc; Thu, 16 Jan 2020 18:29:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is97d-0008DB-E1
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:40:05 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3458E24706;
- Thu, 16 Jan 2020 17:39:54 +0000 (UTC)
+ id 1is9Av-0003Zt-A7
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:43:27 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C11672469C;
+ Thu, 16 Jan 2020 17:43:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196397;
- bh=euJA6zdxXJ1OpER7tf/R3kpDg450PVX85nEcb4d8ZzQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PjGV/BPsPkpco5bu27nYxZQvO9xiW4VIFDMeF0zaF5C0Ti5cMJbhN/BTuggIf3g7w
- EEeKCYCLG7UMT6aIKCgfFWTnFzTEO8Y+4Khh0O0kVq3zDlFsMTEKLuH1/6fKcakRWh
- 7bY4ukqYCxg396Yb9t9aBgkzy6GJ2+SaCj5w+8KE=
-Date: Thu, 16 Jan 2020 17:39:51 +0000
-From: Will Deacon <will@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v6 08/15] arm64: disable function graph tracing with SCS
-Message-ID: <20200116173950.GB21396@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-9-samitolvanen@google.com>
+ s=default; t=1579196600;
+ bh=/bCCfSmxJZv3TMBHVGhlziVPqCKsegMIwgEErJMuXQ0=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=d7T39uP/7UsD8UyZg5gB124o4xBdlfknCBszknm0YPB2+7M0znqGWhNclq4Bc2PmZ
+ jdtdnraGZ97r9fg1c1N5uZv9OhRVsDXHn21oE+I7/Abxmz7wKps2HQl4hy3DDUDw8A
+ 6Z2RLcwFVHke6AEt45VnPpD6XaYHAff10heaRaTM=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.4 022/174] clk: samsung: exynos4: fix refcount leak
+ in exynos4_get_xom()
+Date: Thu, 16 Jan 2020 12:40:19 -0500
+Message-Id: <20200116174251.24326-22-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
+References: <20200116174251.24326-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191206221351.38241-9-samitolvanen@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093957_532206_E198E4A0 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20200116_094321_467361_9C94A53A 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,57 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 02:13:44PM -0800, Sami Tolvanen wrote:
-> The graph tracer hooks returns by modifying frame records on the
-> (regular) stack, but with SCS the return address is taken from the
-> shadow stack, and the value in the frame record has no effect. As we
-> don't currently have a mechanism to determine the corresponding slot
-> on the shadow stack (and to pass this through the ftrace
-> infrastructure), for now let's disable the graph tracer when SCS is
-> enabled.
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> ---
->  arch/arm64/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index b1b4476ddb83..49e5f94ff4af 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -149,7 +149,7 @@ config ARM64
->  	select HAVE_FTRACE_MCOUNT_RECORD
->  	select HAVE_FUNCTION_TRACER
->  	select HAVE_FUNCTION_ERROR_INJECTION
-> -	select HAVE_FUNCTION_GRAPH_TRACER
-> +	select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
->  	select HAVE_GCC_PLUGINS
->  	select HAVE_HW_BREAKPOINT if PERF_EVENTS
->  	select HAVE_IRQ_TIME_ACCOUNTING
+From: Yangtao Li <tiny.windzz@gmail.com>
 
-I think this is the wrong way around, as we support the graph tracer
-today and so I think SHADOW_CALL_STACK should depend on !GRAPH_TRACER
-and possibly even EXPERT until this is resolved.
+[ Upstream commit cee82eb9532090cd1dc953e845d71f9b1445c84e ]
 
-Will
+The of_find_compatible_node() returns a node pointer with refcount
+incremented, but there is the lack of use of the of_node_put() when
+done. Add the missing of_node_put() to release the refcount.
+
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+Fixes: e062b571777f ("clk: exynos4: register clocks using common clock framework")
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clk/samsung/clk-exynos4.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/clk/samsung/clk-exynos4.c b/drivers/clk/samsung/clk-exynos4.c
+index 7f370d3e0983..6c8e45e007c8 100644
+--- a/drivers/clk/samsung/clk-exynos4.c
++++ b/drivers/clk/samsung/clk-exynos4.c
+@@ -1224,6 +1224,7 @@ static unsigned long exynos4_get_xom(void)
+ 			xom = readl(chipid_base + 8);
+ 
+ 		iounmap(chipid_base);
++		of_node_put(np);
+ 	}
+ 
+ 	return xom;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
