@@ -2,123 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58D7113D427
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 07:12:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1979713D437
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 07:19:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NvSXXNUlR741YXmPxgheGZJzu7/SnAbgHFiAFU+f4C0=; b=s/1A3Kytzrc/oJ
-	25JNcaHyqbCne8UjxQYSzd9GKWkz0VdqFCLhQPD8cI4PvS1g6NvkrTunN68E3VRqTvMzlLYF1zWMh
-	2dGTV8msp/uJHCNApfVNExuz0bc6pZkU9kwghmx5W5JKksCaj5j1waDTTvDJpnMFLLWYKYbe9bMqs
-	XPtzsVa/jAEwX6Ch8MAlNLYEAdI9AT4a6pK/NenjuLXdv22hoggR7M03Rns05lTVe5/SgrqJZsS3o
-	LZ97cc34quCtBOaWWBgRGBL/DYcSqqCRwDx4A3LxGba6vnCezLZ1d97BtAe9FPjWvqEaBsszetbDq
-	S3J3MmtJPDrab+E3x20A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=X5HPt2atm0qY3dcQILbTtev41h64E20zuLYYxk3Dosw=; b=dFcg8krS/gcSKOmKN4OeSmVz2
+	vW8LhdLU8fUORwKIlpigvS8593/VO31UtoRRxTRyubAzWwH2dAInbgkqLFau5ZvmF4kTUHKS+zyxY
+	av87BBUKT6vD0mX6IV8JnSruFRU9MdAso2XjSIDPn0n2KJu93yrxICXw+tCASFhPK4H2KqsW89Kah
+	QdchFMgcsGnrrNxtMN268R3gwdgntt6vS6H7KT8ppCOOZiiK/BxSGGDU0jfBOhIIrzxSoKlq+NGVc
+	851BXJ+RJ5Z76otAnVH2+PBhbponCjSdi2ggV6o9UgN9CmgfyqRcsggtUp5WPUGMaTrIpmHN0Chpo
+	aG7L6vZ7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iryOI-0002hf-Di; Thu, 16 Jan 2020 06:12:26 +0000
-Received: from mail-vi1eur05on2041.outbound.protection.outlook.com
- ([40.107.21.41] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1iryUh-0005Jg-0s; Thu, 16 Jan 2020 06:19:03 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iryO7-0002gs-UZ
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 06:12:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jcxusYsRAN1PDo/+TuoOXFueOLDQW7jmnC787cramEudJ2qt3HhOdD01eDPorKIudWZYCMXkBMCq2ArAdAiLwyXUkjposdJJ7IACU2cSCWvOQa/FqXWwESrS1MPt9ZtXU9WhtiYSlkHwkz4W159GG4KjDjyTIb2wBk/AH4/9FvesyYppvKVVi4VKcXD0C2kQl/Zr5YRL3hjDTgVO4XMovzVyqfFZfY3yulpTupnJCG3j9FGdYTNJ718rwFlCD/dMwAwAYF64VuCGvygSJn5WCC+RgoOwsRY0hba5QJ/G5V1wIrZ3vTlJoiyowqJ7ha6Yp2tzREr7giRU1WPjHB0c7g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nZlp0hn5anwYHIFLGRSoB3cLtm5DuSiKODBoQcHQi3k=;
- b=LC7IrrEBNhO2UgUGsH23+o6wheKflkgrWHfNOwqRsosvYeKB+8jUvQDqQFNM+gXW43Xj4Zcuq5B3kjGnZyXdbOAmS22coT8pTA9Skbgyik17hbveBV/3XIxGoM9yf5roQiSxr7On1CpsGW2+RH8Ual6pzbEm8ez1Nu1gexg5LfvHSfZjzpWZ/El9CO1hbimhB2nuK2vap5ClJDe39ZygQcBcMvSe2KYaZWEsN/DUPSK91Nep/pYy0m6IESJYbSfQHz74JzTSlouSo5k/Nwdu3luulp0fHjSoHkhzc/vlVSr9cwaiRbdp1WoH1oDmLVTqaFp4AJi1uC7TbE6kRFyEmA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nZlp0hn5anwYHIFLGRSoB3cLtm5DuSiKODBoQcHQi3k=;
- b=VBfaiAUgH9czQ7LI+8ZLfdvIguHNTz9h2XD3wsTtePtoV6LB4svO52DDDU3vzeYTuCuD+QzuU0PGdNezzvLK/OuZtNjqKlERQyvZzz/RqTlWjNSfLgoi7Gh7FCXZiQXv7DoYbGR6hafrgNIBGX1DZJJBR8kaaQml1VVdR13CQcU=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5108.eurprd04.prod.outlook.com (20.176.214.202) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.20; Thu, 16 Jan 2020 06:12:13 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
- 06:12:13 +0000
-Received: from localhost.localdomain (119.31.174.66) by
- HK0PR03CA0117.apcprd03.prod.outlook.com (2603:1096:203:b0::33) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2644.20 via Frontend Transport; Thu, 16 Jan 2020 06:12:08 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: [PATCH] dt-bindings: soc: imx: add binding doc for aips bus
-Thread-Topic: [PATCH] dt-bindings: soc: imx: add binding doc for aips bus
-Thread-Index: AQHVzDPkXhRChugwfUOXOWtxuk1SeA==
-Date: Thu, 16 Jan 2020 06:12:12 +0000
-Message-ID: <1579154877-13210-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR03CA0117.apcprd03.prod.outlook.com
- (2603:1096:203:b0::33) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: b13c75f0-d8fc-4049-72a9-08d79a4b0702
-x-ms-traffictypediagnostic: AM0PR04MB5108:|AM0PR04MB5108:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB51085722F26664CFB4C9BDEA88360@AM0PR04MB5108.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3276;
-x-forefront-prvs: 02843AA9E0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(136003)(396003)(39860400002)(376002)(189003)(199004)(66556008)(8936002)(71200400001)(86362001)(81166006)(2906002)(81156014)(8676002)(36756003)(44832011)(5660300002)(66476007)(186003)(26005)(66946007)(66446008)(478600001)(64756008)(16526019)(69590400006)(316002)(54906003)(6506007)(6486002)(6512007)(2616005)(6666004)(966005)(956004)(110136005)(4326008)(52116002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5108;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: RhZIswzk02VpnWTg7hvuDaE6xUGNl6wTJAwdM3hntt+pKy43TgKEaUnI/Io4DxZ2q8p2HxSB8V36LEIk0uOS4EUKVmNfakwMVRq3/5y/tNv3/mTI/ZEbg8+2ZlRjHFfk+878asTkIC+RZNHrpgj1Sq7DuGjsEQTszDawfZpyiXNuxvLfVVSD9TvroCbF323tGFv46JxviKFxbFFMTNLOpeH29Qui2EyVE424NL7zQ1gJlJSc1JrkugFSSfk1EC1E2x2SoDvtTjRgf4DPqaGMKOYoPBXkklXsg/+2+Xz7fcfRE7m5aD1PeSZozUnyworx930/jL+ftH9S6PeIoaOWpoXVO3jhU7HV6QcV5kRC8DetlYK8nGZSK8islS+i4NPETRDrMS37JXkYk1qKp6uWROEMEPpovngL/7e0KbRQJNk7M3+Nez0Ms9JPkijdE5+qjZrP2CgJqLbTVSPzGbRMe+pG9mSYaTAF/jyL/K/GDjS1H+DUdpgzqeSsQCKsAkk29XPobyeHthnN2N3zRkoHW45VQTT2CP+QmtaI4VlYSdc=
+ id 1iryUU-0005IG-TY; Thu, 16 Jan 2020 06:18:54 +0000
+Received: from [10.28.39.79] (10.28.39.79) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 16 Jan
+ 2020 14:19:17 +0800
+Subject: Re: [PATCH v5 4/5] dt-bindings: clock: meson: add A1 peripheral clock
+ controller bindings
+To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
+ <narmstrong@baylibre.com>
+References: <20191227094606.143637-1-jian.hu@amlogic.com>
+ <20191227094606.143637-5-jian.hu@amlogic.com>
+ <1jeew7z5hv.fsf@starbuckisacylon.baylibre.com>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <6a42d334-33ec-d0de-f490-df9141b0dec4@amlogic.com>
+Date: Thu, 16 Jan 2020 14:19:17 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b13c75f0-d8fc-4049-72a9-08d79a4b0702
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 06:12:13.0038 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: B4kTMtZ0p4IKcpsgXWJyntYdMeU3tkCO1COaollfvejAQuJe2h1qKZwtg+UUp/mIzFWYML4PKhCU4VitsC04cw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5108
+In-Reply-To: <1jeew7z5hv.fsf@starbuckisacylon.baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.28.39.79]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_221216_056023_58A83EBA 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_221850_959025_4BCC3C78 
+X-CRM114-Status: GOOD (  12.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.41 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.41 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,75 +65,224 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
 
-Add binding doc for fsl,aips-bus
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- .../devicetree/bindings/soc/imx/fsl,aips-bus.yaml  | 38 ++++++++++++++++++++++
- 1 file changed, 38 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
-
-diff --git a/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml b/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
-new file mode 100644
-index 000000000000..73ce1b7fc306
---- /dev/null
-+++ b/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
-@@ -0,0 +1,38 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/soc/imx/fsl,aips-bus.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: i.MX AHB to IP Bridge
-+
-+maintainers:
-+  - Peng Fan <peng.fan@nxp.com>
-+
-+description: |
-+  This particular peripheral is designed as the bridge between
-+  AHB bus and peripherals with the lower bandwidth IP Slave (IPS)
-+  buses.
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: fsl,aips-bus
-+
-+  reg:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+
-+examples:
-+  - |
-+    bus@30000000 {
-+      compatible = "fsl,aips-bus", "simple-bus";
-+      reg = <0x30000000 0x400000>;
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      ranges;
-+    };
-+...
--- 
-2.16.4
-
+On 2020/1/10 23:38, Jerome Brunet wrote:
+> 
+> On Fri 27 Dec 2019 at 10:46, Jian Hu <jian.hu@amlogic.com> wrote:
+> 
+>> Add the documentation to support Amlogic A1 peripheral clock driver,
+>> and add A1 peripheral clock controller bindings.
+>>
+>> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+>> ---
+>>   .../bindings/clock/amlogic,a1-clkc.yaml       | 67 +++++++++++++
+>>   include/dt-bindings/clock/a1-clkc.h           | 98 +++++++++++++++++++
+>>   2 files changed, 165 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+>>   create mode 100644 include/dt-bindings/clock/a1-clkc.h
+>>
+>> diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+>> new file mode 100644
+>> index 000000000000..a708e0e016d9
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+>> @@ -0,0 +1,67 @@
+>> +/* SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) */
+>> +/*
+>> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+>> + */
+> 
+> Same here ... read the doc and run the tests please.
+> 
+OK, I will verify it.
+>> +%YAML 1.2
+>> +---
+>> +$id: "http://devicetree.org/schemas/clock/amlogic,a1-clkc.yaml#"
+>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+>> +
+>> +title: Amlogic Meson A/C serials Peripheral Clock Control Unit Device Tree Bindings
+>> +
+>> +maintainers:
+>> +  - Neil Armstrong <narmstrong@baylibre.com>
+>> +  - Jerome Brunet <jbrunet@baylibre.com>
+>> +  - Jian Hu <jian.hu@jian.hu.com>
+>> +
+>> +properties:
+>> +  "#clock-cells":
+>> +    const: 1
+>> +  compatible:
+>> +    const: amlogic,a1-periphs-clkc
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 6
+>> +    items:
+>> +      - description: Input fixed pll div2
+>> +      - description: Input fixed pll div3
+>> +      - description: Input fixed pll div5
+>> +      - description: Input fixed pll div7
+>> +      - description: HIFI PLL
+> 
+> Why is this all caps when the rest is not ?
+OK, I will keep lower case.
+> 
+>> +      - description: Input Oscillator (usually at 24MHz)
+>> +
+>> +  clock-names:
+>> +    maxItems: 6
+>> +    items:
+>> +      - const: fclk_div2
+>> +      - const: fclk_div3
+>> +      - const: fclk_div5
+>> +      - const: fclk_div7
+>> +      - const: hifi_pll
+>> +      - const: xtal
+>> +
+>> +required:
+>> +  - "#clock-cells"
+>> +  - compatible
+>> +  - reg
+>> +  - clocks
+>> +  - clock-names
+>> +
+>> +examples:
+>> +  - |
+>> +    clkc_periphs: periphs-clock-controller {
+>> +        compatible = "amlogic,a1-periphs-clkc";
+>> +        reg = <0 0x800 0 0x104>;
+>> +        #clock-cells = <1>;
+>> +        clocks = <&clkc_pll CLKID_FCLK_DIV2>,
+>> +                <&clkc_pll CLKID_FCLK_DIV3>,
+>> +                <&clkc_pll CLKID_FCLK_DIV5>,
+>> +                <&clkc_pll CLKID_FCLK_DIV7>,
+>> +                <&clkc_pll CLKID_HIFI_PLL>,
+>> +                <&xtal>;
+>> +        clock-names = "fclk_div2", "fclk_div3", "fclk_div5",
+>> +                      "fclk_div7", "hifi_pll", "xtal";
+>> +   };
+>> diff --git a/include/dt-bindings/clock/a1-clkc.h b/include/dt-bindings/clock/a1-clkc.h
+>> new file mode 100644
+>> index 000000000000..9bb36fca86dd
+>> --- /dev/null
+>> +++ b/include/dt-bindings/clock/a1-clkc.h
+>> @@ -0,0 +1,98 @@
+>> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+>> +/*
+>> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+>> + */
+>> +
+>> +#ifndef __A1_CLKC_H
+>> +#define __A1_CLKC_H
+>> +
+>> +#define CLKID_XTAL_FIXPLL			1
+>> +#define CLKID_XTAL_USB_PHY			2
+>> +#define CLKID_XTAL_USB_CTRL			3
+>> +#define CLKID_XTAL_HIFIPLL			4
+>> +#define CLKID_XTAL_SYSPLL			5
+>> +#define CLKID_XTAL_DDS				6
+>> +#define CLKID_SYS_CLK				7
+>> +#define CLKID_CLKTREE				8
+>> +#define CLKID_RESET_CTRL			9
+>> +#define CLKID_ANALOG_CTRL			10
+>> +#define CLKID_PWR_CTRL				11
+>> +#define CLKID_PAD_CTRL				12
+>> +#define CLKID_SYS_CTRL				13
+>> +#define CLKID_TEMP_SENSOR			14
+>> +#define CLKID_AM2AXI_DIV			15
+>> +#define CLKID_SPICC_B				16
+>> +#define CLKID_SPICC_A				17
+>> +#define CLKID_CLK_MSR				18
+>> +#define CLKID_AUDIO				19
+>> +#define CLKID_JTAG_CTRL				20
+>> +#define CLKID_SARADC				21
+>> +#define CLKID_PWM_EF				22
+>> +#define CLKID_PWM_CD				23
+>> +#define CLKID_PWM_AB				24
+>> +#define CLKID_CEC				25
+>> +#define CLKID_I2C_S				26
+>> +#define CLKID_IR_CTRL				27
+>> +#define CLKID_I2C_M_D				28
+>> +#define CLKID_I2C_M_C				29
+>> +#define CLKID_I2C_M_B				30
+>> +#define CLKID_I2C_M_A				31
+>> +#define CLKID_ACODEC				32
+>> +#define CLKID_OTP				33
+>> +#define CLKID_SD_EMMC_A				34
+>> +#define CLKID_USB_PHY				35
+>> +#define CLKID_USB_CTRL				36
+>> +#define CLKID_SYS_DSPB				37
+>> +#define CLKID_SYS_DSPA				38
+>> +#define CLKID_DMA				39
+>> +#define CLKID_IRQ_CTRL				40
+>> +#define CLKID_NIC				41
+>> +#define CLKID_GIC				42
+>> +#define CLKID_UART_C				43
+>> +#define CLKID_UART_B				44
+>> +#define CLKID_UART_A				45
+>> +#define CLKID_SYS_PSRAM				46
+>> +#define CLKID_RSA				47
+>> +#define CLKID_CORESIGHT				48
+>> +#define CLKID_AM2AXI_VAD			49
+>> +#define CLKID_AUDIO_VAD				50
+>> +#define CLKID_AXI_DMC				51
+>> +#define CLKID_AXI_PSRAM				52
+>> +#define CLKID_RAMB				53
+>> +#define CLKID_RAMA				54
+>> +#define CLKID_AXI_SPIFC				55
+>> +#define CLKID_AXI_NIC				56
+>> +#define CLKID_AXI_DMA				57
+>> +#define CLKID_CPU_CTRL				58
+>> +#define CLKID_ROM				59
+>> +#define CLKID_PROC_I2C				60
+>> +#define CLKID_DSPA_SEL				61
+>> +#define CLKID_DSPB_SEL				62
+>> +#define CLKID_DSPA_EN				63
+>> +#define CLKID_DSPA_EN_NIC			64
+>> +#define CLKID_DSPB_EN				65
+>> +#define CLKID_DSPB_EN_NIC			66
+>> +#define CLKID_RTC_CLK				67
+>> +#define CLKID_CECA_32K				68
+>> +#define CLKID_CECB_32K				69
+>> +#define CLKID_24M				70
+>> +#define CLKID_12M				71
+>> +#define CLKID_FCLK_DIV2_DIVN			72
+>> +#define CLKID_GEN				73
+>> +#define CLKID_SARADC_SEL			74
+>> +#define CLKID_SARADC_CLK			75
+>> +#define CLKID_PWM_A				76
+>> +#define CLKID_PWM_B				77
+>> +#define CLKID_PWM_C				78
+>> +#define CLKID_PWM_D				79
+>> +#define CLKID_PWM_E				80
+>> +#define CLKID_PWM_F				81
+>> +#define CLKID_SPICC				82
+>> +#define CLKID_TS				83
+>> +#define CLKID_SPIFC				84
+>> +#define CLKID_USB_BUS				85
+>> +#define CLKID_SD_EMMC				86
+>> +#define CLKID_PSRAM				87
+>> +#define CLKID_DMC				88
+>> +
+>> +#endif /* __A1_CLKC_H */
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
