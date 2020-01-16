@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEBFE13F1DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23B0213F1E2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qezLyIx0CK3iTT3zvJFn3XLldcxvBf3bS5jD1oLZWJs=; b=cv6pQRzSl4SA7x
-	tqcfMJiF6V6YYHSuHCPD+4d3a3CTVRblASO2XhRHQ9fwvJ/cyTjBXaVfD33Hz/b01rFd1Kbe6kPJB
-	q3ZVOAV0+GjtcyLSVTGSj4HGFxIb5M/j/dzbPhyAuWXPwpxndbxo972gFaaePKt3KalSRPaE5AroW
-	bBDWMSUVVNe6Il/4bqhwkth3cCsD6FVyOxROGmgqPWmsHbdp1E7r/VxKU5TJO7raYBMuON/m6yFWT
-	ZSviDiM60YpfabWmNgsH8vbJrM5FjMJ2dcKEFM/GtR92JgOp4UBm+VIsLvfhNs9nm6kAE2hmXwEo4
-	wStLR6irGu6FwEvrN7AQ==;
+	List-Owner; bh=vt9pn191q1P5xxJdpb8xVNWLoSNPDDf4ZHtwFXRa4iM=; b=NlHl2zwN26hOdq
+	7fWlXSDjxRTj7kVSSIoJmcD0C/tLKwgtLECvLtzUx6Nphj3oqdHpggXSF+sck8shmmAmFSdRHnUHl
+	cMG+TcCDzmJsJUOfpB12fCQccMRjrfIJ5DjW7YBpR+R/AyCR1SVG8feEC/6EqKCuWqMU0+8SK+HBX
+	eYIwI8oajmdERgpm7ErQ4MrU08hET2QTHnDzjuJXsv117vDGM0sEU7FDVMbPzKLo512nt6F3tyS0O
+	yA/SVBpLHcdKtBZRHhVUuFJEziu6EXg3f7KnWVbmJOqylwKHZLXZHfj7mJqD/WmAjSU0bHy4cGR8M
+	WAD0ClPdBqcSmMSFOiAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9wI-0001EC-KG; Thu, 16 Jan 2020 18:32:18 +0000
+	id 1is9wY-0001UF-0p; Thu, 16 Jan 2020 18:32:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9C3-0004Uc-8H; Thu, 16 Jan 2020 17:44:34 +0000
+ id 1is9C7-0004Wy-AG
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86B8324748;
- Thu, 16 Jan 2020 17:44:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D69AE24763;
+ Thu, 16 Jan 2020 17:44:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196670;
- bh=JjKzewG3WJ8YyYk2XXWWjPF7f9+Ifwp2QYTgE0cFhk4=;
+ s=default; t=1579196674;
+ bh=lk3FVBU4uC8MX9Fd58BWPUzIhSu9tVPZz+az2+3aBhc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ELPkryr8XSZsHWx0EkxisEGKvWIspNl2fEr6H5nTGcLgY0hHECqFlLIuPiVhKSxBd
- c4eTCwRAqsykijife9Srcgr3wLRJ19akgjRV1kWnnPp0ea/nUn5feK3N+LKxWQZjzc
- KpndDoIs19llyYxKAf15aJRa8xuWBvyj/0h4Ge+g=
+ b=SNGHNvAZzXiYiQTu0XHt6WLHuaUKY/i6yLprVI6mdYfJ83wIChteP/EazPOl10+jm
+ oeEU3Ll9ovkV4kRKLdH+1GlEJSjWHFTvQAMiuDv9KqdV+gbTWIl9jF7mzUJ3M0iWJr
+ lKm5dZkt+D5RZRZj12uLey8lPED/Ed5963RIzBIw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 071/174] spi: bcm2835aux: fix driver to not allow
- 65535 (=-1) cs-gpios
-Date: Thu, 16 Jan 2020 12:41:08 -0500
-Message-Id: <20200116174251.24326-71-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 074/174] ARM: pxa: ssp: Fix "WARNING: invalid free
+ of devm_ allocated data"
+Date: Thu, 16 Jan 2020 12:41:11 -0500
+Message-Id: <20200116174251.24326-74-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094432_473316_E5928BD7 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20200116_094435_515599_4F07F0B6 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,68 +81,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>, Sasha Levin <sashal@kernel.org>,
- linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Martin Sperl <kernel@martin.sperl.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
+ YueHaibing <yuehaibing@huawei.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Sperl <kernel@martin.sperl.org>
+From: YueHaibing <yuehaibing@huawei.com>
 
-[ Upstream commit 509c583620e9053e43d611bf1614fc3d3abafa96 ]
+[ Upstream commit 9ee8578d953023cc57e7e736ae48502c707c0210 ]
 
-The original driver by default defines num_chipselects as -1.
-This actually allicates an array of 65535 entries in
-of_spi_register_master.
+Since commit 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
+kfree, iounmap, clk_put etc are not needed anymore in remove path.
 
-There is a side-effect for buggy device trees that (contrary to
-dt-binding documentation) have no cs-gpio defined.
-
-This mode was never supported by the driver due to limitations
-of native cs and additional code complexity and is explicitly
-not stated to be implemented.
-
-To keep backwards compatibility with such buggy DTs we limit
-the number of chip_selects to 1, as for all practical purposes
-it is only ever realistic to use a single chip select in
-native cs mode without negative side-effects.
-
-Fixes: 1ea29b39f4c812ec ("spi: bcm2835aux: add bcm2835 auxiliary spi device...")
-Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
-Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Fixes: 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+[ commit message spelling fix ]
+Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-bcm2835aux.c | 13 ++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
+ arch/arm/plat-pxa/ssp.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-diff --git a/drivers/spi/spi-bcm2835aux.c b/drivers/spi/spi-bcm2835aux.c
-index ca655593c5e0..1cedd640705f 100644
---- a/drivers/spi/spi-bcm2835aux.c
-+++ b/drivers/spi/spi-bcm2835aux.c
-@@ -390,7 +390,18 @@ static int bcm2835aux_spi_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, master);
- 	master->mode_bits = BCM2835_AUX_SPI_MODE_BITS;
- 	master->bits_per_word_mask = SPI_BPW_MASK(8);
--	master->num_chipselect = -1;
-+	/* even though the driver never officially supported native CS
-+	 * allow a single native CS for legacy DT support purposes when
-+	 * no cs-gpio is configured.
-+	 * Known limitations for native cs are:
-+	 * * multiple chip-selects: cs0-cs2 are all simultaniously asserted
-+	 *     whenever there is a transfer -  this even includes SPI_NO_CS
-+	 * * SPI_CS_HIGH: is ignores - cs are always asserted low
-+	 * * cs_change: cs is deasserted after each spi_transfer
-+	 * * cs_delay_usec: cs is always deasserted one SCK cycle after
-+	 *     a spi_transfer
-+	 */
-+	master->num_chipselect = 1;
- 	master->transfer_one = bcm2835aux_spi_transfer_one;
- 	master->handle_err = bcm2835aux_spi_handle_err;
- 	master->dev.of_node = pdev->dev.of_node;
+diff --git a/arch/arm/plat-pxa/ssp.c b/arch/arm/plat-pxa/ssp.c
+index 6748827c2ec8..b6b0979e3cf9 100644
+--- a/arch/arm/plat-pxa/ssp.c
++++ b/arch/arm/plat-pxa/ssp.c
+@@ -231,18 +231,12 @@ static int pxa_ssp_probe(struct platform_device *pdev)
+ 
+ static int pxa_ssp_remove(struct platform_device *pdev)
+ {
+-	struct resource *res;
+ 	struct ssp_device *ssp;
+ 
+ 	ssp = platform_get_drvdata(pdev);
+ 	if (ssp == NULL)
+ 		return -ENODEV;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	release_mem_region(res->start, resource_size(res));
+-
+-	clk_put(ssp->clk);
+-
+ 	mutex_lock(&ssp_lock);
+ 	list_del(&ssp->node);
+ 	mutex_unlock(&ssp_lock);
 -- 
 2.20.1
 
