@@ -2,89 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FAD813FC33
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 23:30:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4880913FC7E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 23:57:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1pQ7gdPQ6vbr5kHFd1usiGZYLW+bohHrqdY99ST+ITs=; b=hjWcKc6Oh5Xcxb
-	WTQ3UwLONYGQ73+Uxko267qtB7GABKPiYmopkiuKohrX17OD9LD+aqv+eEy55wjyw3cJuiCM9v8AK
-	8yYINp6JgJQrDDoTUo/UIWu+TPQMh9v6UbCrHfbiyhAzk5oLL2bAT8qifBBZg3tMduXtO7dtV9CkP
-	7nx2mSK/IEAe57vqf3YKxG+yX0W48CPVLH7uPMYPFUAEvTTw7dZTkA6gO1mREqX94+CqhYKPbpaTR
-	mQSOt/+JDoX9RmKDJxuqZrpd+VAR6BsJcgA5JznHWQmI2H5+fOyE+8xPFD22rxcnY/P4oAkP7Zeuo
-	h8jtvSmlszDpn9QJlbDQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ey6fZSIKSgQ+Ik7RCrmWaEh6bjELbgRgJBNx+w9fMbc=; b=YwoBobMw7Q1qvF
+	XvCh5bosccaK/VyBdYMYzxgTY5KfyBIWhtz/fQAUK2VKGDDVPSHeo2+fVwfkh+zI6lou8CW6irK1P
+	+RFa0ovVwKe0yYBmLMrDAgcEVrfdfHT1KhUjTrSfDUEpPhyWeqEg0QuZCjjX5GTbctFbMrpq4wj5z
+	ZF7oJfBArJwSSjqqRYS9wNbWtmNZNsou+JrV1Rs78aA7G8Rv00XXoAHioV4FFnHCqqT2YNqrc/AFk
+	SgiAwgj7NUZRcU4xmDpKW5o0+RYb9WNo1EI3cXkZ8TMN8s6maqghE9Z4ucLxFU97BQS+hRT4iXxzV
+	PzVa/SsH5y/bBh6++dPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isDee-0000Os-Ck; Thu, 16 Jan 2020 22:30:20 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1isE4K-0004me-J4; Thu, 16 Jan 2020 22:56:52 +0000
+Received: from mx2.freebsd.org ([2610:1c1:1:606c::19:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isDeA-0000H2-DX
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 22:29:52 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id g17so20770555wro.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 14:29:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=9EyDtiOVShLoEvNh2gjvL9JiKyqlF/lZ2sf0W/nhNwo=;
- b=HFVZghugeIX2jjrLzEVr/kxtByecZ3IXYJ4ZIDOTIqQpuyjkbGhBh4hxpAUYYSF0B+
- fI52liua4P3Oyfpwta3Uiig1OGIGZ2qBbBlKzdLp0MCUIQrcgs3gc2C1bWWjGINPtGoD
- 7UygKBsx+FGp6tEJLydzGdCfGVF5H3nVMg52DutxJlLtBwCi6+XhILeaELisJMlUFyR5
- r9VCmi0TdwAdZU1ST7gH8JMVLhEauqYPqAka3bPoyG4U0dZYomJZqS2dsRYXjpqTrRJN
- FWaWJQa//s4shn9U618VkWP6fkYTDmJ2/boDqfbGg7rJqdnvWS4HEM/J2pxczocFlNco
- fmOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=9EyDtiOVShLoEvNh2gjvL9JiKyqlF/lZ2sf0W/nhNwo=;
- b=BgyJ7LdpSgQw+wUaWqzfm5KLfzn2av68UDzWWCEZcH7AF9ki0HhCgDAAalKbHDo1qX
- Kbk7/IihjQFxoHX1grfaTTZuCxg4VqVGUWVw6jaIFbRktLs7A7P41BQdzZz99k7UkVwa
- 8fKrrP3NkXIWVzRvoZr2Eq3iLwakX2ALHFOwicUyQmNXHTRixn2QjzvYUiLPtC3+1QS1
- J0eBmz+HUt7UrMaDAh2roj2D29EM3F2X6yMkSgsl7t5v9YvSkUHOK5wQZ+MJld2MCufv
- vxkJqCujKhS5hRevgkDUYBb5xT6CdKiCXMlSZeKtVc9ehAc4oe7zUnU9m1qkFzi5pAzi
- RKRg==
-X-Gm-Message-State: APjAAAV2TutFS4q/THQJzErpAWkTO91vAyyzEtDcrhDgpXKpG4e7LIoR
- xCsJHDpatCioorb8YGsVu2Eqmw==
-X-Google-Smtp-Source: APXvYqwsl1FQNUhPvxzaveSyXXHfBNmzPBG+ilT9vXXBE8+8vMp6S1nYBxowQbj2icBBP0OX6GZGPw==
-X-Received: by 2002:adf:cd03:: with SMTP id w3mr5520598wrm.191.1579213785316; 
- Thu, 16 Jan 2020 14:29:45 -0800 (PST)
-Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id x14sm1989666wmj.42.2020.01.16.14.29.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Jan 2020 14:29:44 -0800 (PST)
-Message-ID: <5e20e3d8.1c69fb81.c4a41.946c@mx.google.com>
-Date: Thu, 16 Jan 2020 14:29:44 -0800 (PST)
+ id 1isE45-0004ZX-VK; Thu, 16 Jan 2020 22:56:39 +0000
+Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2610:1c1:1:606c::19:1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (Client CN "mx1.freebsd.org",
+ Issuer "Let's Encrypt Authority X3" (verified OK))
+ by mx2.freebsd.org (Postfix) with ESMTPS id 4A9B28813E;
+ Thu, 16 Jan 2020 22:56:34 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+Received: from smtp.freebsd.org (smtp.freebsd.org
+ [IPv6:2610:1c1:1:606c::24b:4])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "smtp.freebsd.org",
+ Issuer "Let's Encrypt Authority X3" (verified OK))
+ by mx1.freebsd.org (Postfix) with ESMTPS id 47zKLp0HJkz3Fx2;
+ Thu, 16 Jan 2020 22:56:34 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+Received: from localhost.localdomain
+ (lfbn-idf2-1-1164-130.w90-92.abo.wanadoo.fr [90.92.223.130])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (Client did not present a certificate) (Authenticated sender: manu)
+ by smtp.freebsd.org (Postfix) with ESMTPSA id 2C9476056;
+ Thu, 16 Jan 2020 22:56:32 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+From: Emmanuel Vadot <manu@freebsd.org>
+To: robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
+ dianders@chromium.org, andy.yan@rock-chips.com, robin.murphy@arm.com,
+ mka@chromium.org, jagan@amarulasolutions.com, nick@khadas.com,
+ kever.yang@rock-chips.com, m.reichl@fivetechno.de, aballier@gentoo.org,
+ pbrobinson@gmail.com, vicencb@gmail.com
+Subject: [PATCH 1/2] dt-bindings: Add doc for Pine64 Pinebook Pro
+Date: Thu, 16 Jan 2020 23:56:16 +0100
+Message-Id: <20200116225617.6318-1-manu@freebsd.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Report-Type: test
-X-Kernelci-Kernel: v5.5-rc6-60-gb260f5eb4e57
-Subject: arm64/for-kernelci baseline: 23 runs,
- 0 regressions (v5.5-rc6-60-gb260f5eb4e57)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_142950_475305_857CAD06 
-X-CRM114-Status: UNSURE (   4.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_145638_078827_DD40FB1F 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42d listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2610:1c1:1:606c:0:0:19:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,94 +80,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Emmanuel Vadot <manu@freebsd.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64/for-kernelci baseline: 23 runs, 0 regressions (v5.5-rc6-60-gb260f5eb4e57)
+Add a compatible for Pine64 Pinebook Pro
 
-Test results summary
---------------------
+Signed-off-by: Emmanuel Vadot <manu@freebsd.org>
+---
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-1   | bcm2837-rpi-3-b              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
-3   | meson-g12a-sei510            | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-4   | meson-g12a-x96-max           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-5   | meson-g12b-a311d-khadas-vim3 | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-6   | meson-g12b-odroid-n2         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-7   | meson-gxbb-p200              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-8   | meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-9   | meson-gxl-s805x-p241         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-10  | meson-gxl-s905x-khadas-vim   | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-11  | meson-gxl-s905x-libretech-cc | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-12  | meson-gxm-khadas-vim2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-13  | meson-sm1-sei610             | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-14  | qemu_arm64-virt-gicv2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-15  | qemu_arm64-virt-gicv2        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-16  | qemu_arm64-virt-gicv3        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-17  | qemu_arm64-virt-gicv3        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-18  | r8a7795-salvator-x           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-19  | r8a7796-m3ulcb               | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-20  | r8a7796-m3ulcb               | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-21  | rk3399-gru-kevin             | arm64 | lab-collabora | gcc-8    | defconfig | 79/82  
-22  | sun50i-a64-pine64-plus       | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-23  | sun50i-h6-pine-h64           | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index d9847b306b83..2f6b72b084a4 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -412,6 +412,11 @@ properties:
+           - const: pine64,rockpro64
+           - const: rockchip,rk3399
+ 
++      - description: Pine64 PinebookPro
++        items:
++          - const: pine64,pinebook-pro
++          - const: rockchip,rk3399
++
+       - description: Radxa Rock
+         items:
+           - const: radxa,rock
+-- 
+2.24.1
 
-
-  Test:     baseline
-  Tree:     arm64
-  Branch:   for-kernelci
-  Describe: v5.5-rc6-60-gb260f5eb4e57
-  URL:      git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-  SHA:      b260f5eb4e571549f47906273e7b53ad8c0087c4 
-
-
-Test Failures
--------------
-     
-
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
-
-  Results:     3 PASS, 2 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-60-gb260f5eb4e57/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-60-gb260f5eb4e57/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.html
-  Rootfs:      https://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/baseline/rootfs.cpio.gz     
-
-  dmesg - 3 tests: 1  PASS, 2 FAIL, 0 SKIP
-    * alert:
-        never passed
-        11 lines
-    * emerg:
-        never passed
-        2 lines    
-                                                            
-
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-21  | rk3399-gru-kevin             | arm64 | lab-collabora | gcc-8    | defconfig | 79/82  
-
-  Results:     79 PASS, 3 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-60-gb260f5eb4e57/arm64/defconfig/gcc-8/lab-collabora/baseline-rk3399-gru-kevin.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.5-rc6-60-gb260f5eb4e57/arm64/defconfig/gcc-8/lab-collabora/baseline-rk3399-gru-kevin.html
-  Rootfs:      https://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/baseline/rootfs.cpio.gz       
-
-  bootrr - 78 tests: 75  PASS, 3 FAIL, 0 SKIP
-    * cros-ec-sensors-accel0-probed:
-        never passed
-    * cros-ec-sensors-accel1-probed:
-        never passed
-    * cros-ec-sensors-gyro0-probed:
-        never passed  
-            
 
 _______________________________________________
 linux-arm-kernel mailing list
