@@ -2,41 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31F4813DA95
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:49:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E79B13DA6A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:47:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z3G7h5j9BmbQbtDdWfcIwsc3M1yiUDTEFKbdCgfqM04=; b=g2KQ3vQm3TpvGY
-	RNLTDDV8HIfs/LqJy2CU5IkVAsB7/+IdyNh6kjRP4K/rV3v4Q+n2y7KdxOnhCoUYlYsZNC+diLGjJ
-	EyrShRUrYDBUMTzPgCX/I/aejLjqke9te3iXPSobQudF/JB/7HD8ewoNeqWtczR5qhvzYbxNHV5J8
-	kcinZEQAeJ1UZ8BPWDE4CoHcmoky7iStf+iXTczyXw5r1hrlG71y8p7JNcV2h9ZX8LPTblQb8Ooft
-	zBAknaQrdAEsoRwDuEAvbqnc+sO9d1jShoDU1cmM4WmURw4M0yo8VD/2aJcvdDIu2n53sDj5BSACW
-	BRMjxawUIQqoxcmBzy7Q==;
+	List-Owner; bh=e9JPj2k5o8DwLN9f9OuWGfqzT7m2mCo5L9CAocMq6aE=; b=gGXxclR6JktDBj
+	8+20MkZ61BN9/72wKYlVVZ2Y+i0TLO8bO5sJUgU0gyIZ2+7aQL4PkgczXhguslTVskcY7gYJboA1x
+	EFClWZc0qJTPPhAXeHKiRIRhCKTwNqP0S11Ntp3dgIO72uzQpnNxhKYGnNUDQMNCz6Ozmv1qcpzsy
+	yLcC0rUfnnAfDBV8hVJVcpF/TCg5hI9nv7QO10H6JeYALumvW+uzUEvHM4g4Jixk4Ysw+OQ8YgNOX
+	39b+DPurfXbzZqzoXas5NS9+HJVf63rgKEJqkJMyxB+M2Yy3TA3vkJQegMDhOTlxbe0Hn449ZzhFK
+	7KZ5+DCb8caYTHJ5BGtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is4aP-0007E3-Ee; Thu, 16 Jan 2020 12:49:21 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1is4YS-0005RK-Rq; Thu, 16 Jan 2020 12:47:20 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is4YG-0005MD-BB
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:47:18 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id C0D6D10B7A71FDDEFD05;
+ id 1is4YB-0005MB-L0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:47:08 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id A6F3513CA90D6CF3A638;
  Thu, 16 Jan 2020 20:46:54 +0800 (CST)
 Received: from DESKTOP-1NISPDV.china.huawei.com (10.173.221.248) by
  DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
- 14.3.439.0; Thu, 16 Jan 2020 20:46:46 +0800
+ 14.3.439.0; Thu, 16 Jan 2020 20:46:47 +0800
 From: Zengruan Ye <yezengruan@huawei.com>
 To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
  <linux-doc@vger.kernel.org>, <virtualization@lists.linux-foundation.org>
-Subject: [PATCH v3 2/8] arm64: Probe for the presence of KVM hypervisor
- services during boot
-Date: Thu, 16 Jan 2020 20:46:20 +0800
-Message-ID: <20200116124626.1155-3-yezengruan@huawei.com>
+Subject: [PATCH v3 3/8] arm/arm64: KVM: Advertise KVM UID to guests via SMCCC
+Date: Thu, 16 Jan 2020 20:46:21 +0800
+Message-ID: <20200116124626.1155-4-yezengruan@huawei.com>
 X-Mailer: git-send-email 2.23.0.windows.1
 In-Reply-To: <20200116124626.1155-1-yezengruan@huawei.com>
 References: <20200116124626.1155-1-yezengruan@huawei.com>
@@ -44,15 +43,16 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.221.248]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_044708_979501_4465FD95 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20200116_044703_860564_3C9B8AB0 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,156 +78,102 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Will Deacon <will@kernel.org>
 
-Although the SMCCC specification provides some limited functionality for
-describing the presence of hypervisor and firmware services, this is
-generally applicable only to functions designated as "Arm Architecture
-Service Functions" and no portable discovery mechanism is provided for
-standard hypervisor services, despite having a designated range of
-function identifiers reserved by the specification.
-
-In an attempt to avoid the need for additional firmware changes every
-time a new function is added, introduce a UID to identify the service
-provider as being compatible with KVM. Once this has been established,
-additional services can be discovered via a feature bitmap.
+We can advertise ourselves to guests as KVM and provide a basic features
+bitmap for discoverability of future hypervisor services.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 [yezengruan@huawei.com: rebased]
 ---
- arch/arm64/include/asm/hypervisor.h | 11 +++++++++
- arch/arm64/kernel/setup.c           | 35 +++++++++++++++++++++++++++++
- include/linux/arm-smccc.h           | 26 +++++++++++++++++++++
- 3 files changed, 72 insertions(+)
+ virt/kvm/arm/hypercalls.c | 37 ++++++++++++++++++++++++-------------
+ 1 file changed, 24 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/include/asm/hypervisor.h b/arch/arm64/include/asm/hypervisor.h
-index f9cc1d021791..91e4bd890819 100644
---- a/arch/arm64/include/asm/hypervisor.h
-+++ b/arch/arm64/include/asm/hypervisor.h
-@@ -2,6 +2,17 @@
- #ifndef _ASM_ARM64_HYPERVISOR_H
- #define _ASM_ARM64_HYPERVISOR_H
- 
-+#include <linux/arm-smccc.h>
- #include <asm/xen/hypervisor.h>
- 
-+static inline bool kvm_arm_hyp_service_available(u32 func_id)
-+{
-+	extern DECLARE_BITMAP(__kvm_arm_hyp_services, ARM_SMCCC_KVM_NUM_FUNCS);
-+
-+	if (func_id >= ARM_SMCCC_KVM_NUM_FUNCS)
-+		return -EINVAL;
-+
-+	return test_bit(func_id, __kvm_arm_hyp_services);
-+}
-+
- #endif
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 56f664561754..ad595c30ded0 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -7,6 +7,7 @@
-  */
- 
- #include <linux/acpi.h>
-+#include <linux/arm-smccc.h>
- #include <linux/export.h>
- #include <linux/kernel.h>
- #include <linux/stddef.h>
-@@ -275,6 +276,39 @@ static int __init reserve_memblock_reserved_regions(void)
- arch_initcall(reserve_memblock_reserved_regions);
- 
- u64 __cpu_logical_map[NR_CPUS] = { [0 ... NR_CPUS-1] = INVALID_HWID };
-+DECLARE_BITMAP(__kvm_arm_hyp_services, ARM_SMCCC_KVM_NUM_FUNCS) = { };
-+
-+static void __init kvm_init_hyp_services(void)
-+{
-+	int i;
-+	struct arm_smccc_res res;
-+
-+	if (psci_ops.smccc_version == SMCCC_VERSION_1_0)
-+		return;
-+
-+	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_CALL_UID_FUNC_ID, &res);
-+	if (res.a0 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_0 ||
-+	    res.a1 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_1 ||
-+	    res.a2 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_2 ||
-+	    res.a3 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_3)
-+		return;
-+
-+	memset(&res, 0, sizeof(res));
-+	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID, &res);
-+	for (i = 0; i < 32; ++i) {
-+		if (res.a0 & (i))
-+			set_bit(i + (32 * 0), __kvm_arm_hyp_services);
-+		if (res.a1 & (i))
-+			set_bit(i + (32 * 1), __kvm_arm_hyp_services);
-+		if (res.a2 & (i))
-+			set_bit(i + (32 * 2), __kvm_arm_hyp_services);
-+		if (res.a3 & (i))
-+			set_bit(i + (32 * 3), __kvm_arm_hyp_services);
-+	}
-+
-+	pr_info("KVM hypervisor services detected (0x%08lx 0x%08lx 0x%08lx 0x%08lx)\n",
-+		res.a3, res.a2, res.a1, res.a0);
-+}
- 
- void __init setup_arch(char **cmdline_p)
+diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+index 550dfa3e53cd..bdbab9ef6d2d 100644
+--- a/virt/kvm/arm/hypercalls.c
++++ b/virt/kvm/arm/hypercalls.c
+@@ -12,26 +12,28 @@
+ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
  {
-@@ -337,6 +371,7 @@ void __init setup_arch(char **cmdline_p)
- 	else
- 		psci_acpi_init();
+ 	u32 func_id = smccc_get_function(vcpu);
+-	long val = SMCCC_RET_NOT_SUPPORTED;
+-	u32 feature;
++	long val[4] = {};
++	u32 option;
+ 	gpa_t gpa;
  
-+	kvm_init_hyp_services();
- 	cpu_read_bootcpu_ops();
- 	smp_init_cpus();
- 	smp_build_mpidr_hash();
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index 59494df0f55b..2b2c295c9109 100644
---- a/include/linux/arm-smccc.h
-+++ b/include/linux/arm-smccc.h
-@@ -46,11 +46,14 @@
- #define ARM_SMCCC_OWNER_OEM		3
- #define ARM_SMCCC_OWNER_STANDARD	4
- #define ARM_SMCCC_OWNER_STANDARD_HYP	5
-+#define ARM_SMCCC_OWNER_VENDOR_HYP	6
- #define ARM_SMCCC_OWNER_TRUSTED_APP	48
- #define ARM_SMCCC_OWNER_TRUSTED_APP_END	49
- #define ARM_SMCCC_OWNER_TRUSTED_OS	50
- #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
++	val[0] = SMCCC_RET_NOT_SUPPORTED;
++
+ 	switch (func_id) {
+ 	case ARM_SMCCC_VERSION_FUNC_ID:
+-		val = ARM_SMCCC_VERSION_1_1;
++		val[0] = ARM_SMCCC_VERSION_1_1;
+ 		break;
+ 	case ARM_SMCCC_ARCH_FEATURES_FUNC_ID:
+-		feature = smccc_get_arg1(vcpu);
+-		switch (feature) {
++		option = smccc_get_arg1(vcpu);
++		switch (option) {
+ 		case ARM_SMCCC_ARCH_WORKAROUND_1:
+ 			switch (kvm_arm_harden_branch_predictor()) {
+ 			case KVM_BP_HARDEN_UNKNOWN:
+ 				break;
+ 			case KVM_BP_HARDEN_WA_NEEDED:
+-				val = SMCCC_RET_SUCCESS;
++				val[0] = SMCCC_RET_SUCCESS;
+ 				break;
+ 			case KVM_BP_HARDEN_NOT_REQUIRED:
+-				val = SMCCC_RET_NOT_REQUIRED;
++				val[0] = SMCCC_RET_NOT_REQUIRED;
+ 				break;
+ 			}
+ 			break;
+@@ -41,31 +43,40 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+ 			case KVM_SSBD_UNKNOWN:
+ 				break;
+ 			case KVM_SSBD_KERNEL:
+-				val = SMCCC_RET_SUCCESS;
++				val[0] = SMCCC_RET_SUCCESS;
+ 				break;
+ 			case KVM_SSBD_FORCE_ENABLE:
+ 			case KVM_SSBD_MITIGATED:
+-				val = SMCCC_RET_NOT_REQUIRED;
++				val[0] = SMCCC_RET_NOT_REQUIRED;
+ 				break;
+ 			}
+ 			break;
+ 		case ARM_SMCCC_HV_PV_TIME_FEATURES:
+-			val = SMCCC_RET_SUCCESS;
++			val[0] = SMCCC_RET_SUCCESS;
+ 			break;
+ 		}
+ 		break;
+ 	case ARM_SMCCC_HV_PV_TIME_FEATURES:
+-		val = kvm_hypercall_pv_features(vcpu);
++		val[0] = kvm_hypercall_pv_features(vcpu);
+ 		break;
+ 	case ARM_SMCCC_HV_PV_TIME_ST:
+ 		gpa = kvm_init_stolen_time(vcpu);
+ 		if (gpa != GPA_INVALID)
+-			val = gpa;
++			val[0] = gpa;
++		break;
++	case ARM_SMCCC_VENDOR_HYP_CALL_UID_FUNC_ID:
++		val[0] = ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_0;
++		val[1] = ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_1;
++		val[2] = ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_2;
++		val[3] = ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_3;
++		break;
++	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
++		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
+ 		break;
+ 	default:
+ 		return kvm_psci_call(vcpu);
+ 	}
  
-+#define ARM_SMCCC_FUNC_QUERY_CALL_UID	0xff01
-+
- #define ARM_SMCCC_QUIRK_NONE		0
- #define ARM_SMCCC_QUIRK_QCOM_A6		1 /* Save/restore register a6 */
- 
-@@ -377,5 +380,28 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
- 			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
- 			   0x21)
- 
-+#define ARM_SMCCC_VENDOR_HYP_CALL_UID_FUNC_ID				\
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-+			   ARM_SMCCC_SMC_32,				\
-+			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
-+			   ARM_SMCCC_FUNC_QUERY_CALL_UID)
-+
-+/* KVM UID value: 28b46fb6-2ec5-11e9-a9ca-4b564d003a74 */
-+#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_0	0xb66fb428U
-+#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_1	0xe911c52eU
-+#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_2	0x564bcaa9U
-+#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_3	0x743a004dU
-+
-+/* KVM "vendor specific" services */
-+#define ARM_SMCCC_KVM_FUNC_FEATURES		0
-+#define ARM_SMCCC_KVM_FUNC_FEATURES_2		127
-+#define ARM_SMCCC_KVM_NUM_FUNCS			128
-+
-+#define ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID			\
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-+			   ARM_SMCCC_SMC_32,				\
-+			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
-+			   ARM_SMCCC_KVM_FUNC_FEATURES)
-+
- #endif /*__ASSEMBLY__*/
- #endif /*__LINUX_ARM_SMCCC_H*/
+-	smccc_set_retval(vcpu, val, 0, 0, 0);
++	smccc_set_retval(vcpu, val[0], val[1], val[2], val[3]);
+ 	return 1;
+ }
 -- 
 2.19.1
 
