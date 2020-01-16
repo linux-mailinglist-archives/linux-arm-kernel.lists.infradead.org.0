@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DF5D13E485
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:09:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7C2F13E4A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:09:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wjrJuav98CEiy053WTLkjwceGZ5Uw/CU490oxMP99k0=; b=lYGD16KntBn/km
-	GzaG0b5k0g7pmhEpGNOpWB/FZJw+uoLxVHeVRpf4q9y7Lfq/ODWOXCS4ZFR1PpEg96p8COdCggPie
-	MmlaXPFEz44gaEEVGvu8Q/J80fRX9Co3BmJzCmp9GOQlkuRJnL2OCH6PXPWr+JhM5wQCXenwPW56Q
-	xVRn7CNaZ9JLABpOJedgxEc4EZgcAhvgry6PmLaqq51R7KFyUjnZAUhhIRhBnuHFP6veRJn3t5RZ0
-	kokqqqzRBJmWeU4CvrKvidcpN1zxuDCIEPHyY3LxeChWRmmq/4auC9TQA2ZYEPd80/43yUZfjY3eW
-	VcUSj1MbA6PPh7uTLjNg==;
+	List-Owner; bh=mWzidY3cl1vQSVGfChWhev5hCvtfMw+KXArU4+oMJ+c=; b=WQ7EouNrBSk+EB
+	q64RrmInajMjG1v58WB3lsq7RUMtjikTy448ejzmOhXvuIGmNuKoxYknpXG0UONza+hYWt7dR+vfZ
+	QMp3FO6+no4AMaxRLiIpbLl6+LwrTM86AMM5Xkc4rxMQn9f1vp8koJcan9BMRc/7vdywWXWayH/SD
+	zTjek0tcnT4cjpN2XPht5IF7ftwJUnQFU90tW67qgMcPuewhUsC/LO8DZv/rDgFiIqd+/OjDRtD18
+	IT2R6X3LDWKv9/1OjY3reQid9C1IH0SIuKmBg2EZPg6dJJWi9rw30/31GP4Z66xtE6lFlk4P+kUib
+	u8n6TEAU+cUhDrJ3cthA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8dk-0001P7-Dk; Thu, 16 Jan 2020 17:09:04 +0000
+	id 1is8eK-0001pU-SV; Thu, 16 Jan 2020 17:09:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8V4-0007wg-RT
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:00:14 +0000
+ id 1is8V9-0008V2-Vv
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:00:15 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5605F2467C;
- Thu, 16 Jan 2020 17:00:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 767A820728;
+ Thu, 16 Jan 2020 17:00:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194005;
- bh=pIk3itN6SGLX9r+2vgQu8eYemBT/0ZRS1G62zBb6kZE=;
+ s=default; t=1579194011;
+ bh=NQPAdyaAP2EytZnPVR+ZjNCeYN6ANWeK/buvrcz58cM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sq1HwvwJjd62VyOy8XCLqsdLcf+yYuLARkGkQqEGtyfaw9y2QQMzzZVcBRrKWKlm3
- ioy4sh6Hxl0CtqjTW4Wc8mGYKQFZ8O2G1HstPvMQQaePHbgwIsHrpzgClf/XVLHddK
- 6JHHyjZqJFcnMWyAK36tJNu2UHGtk3Mgi5UTwXRw=
+ b=Id8BH3CTEFKri0EuSVhaY1q9FdPfmqfWpO3NgyOexQ6P2WAncm+HMA5ghb638hIMr
+ /emxQpeUqNA6R/EsZdZFgGb2dt/+pTZi2BVD5ABGoe5myiOwH3Rly98s25k0AjYK9Q
+ aKDkwgNJM+44uhoSkX+ncGtDiAqHHNK3Rsyqonro=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 131/671] clk: sunxi-ng: sun8i-a23: Enable
- PLL-MIPI LDOs when ungating it
-Date: Thu, 16 Jan 2020 11:50:40 -0500
-Message-Id: <20200116165940.10720-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 135/671] arm64: dts: allwinner: h6: Move GIC
+ device node fix base address ordering
+Date: Thu, 16 Jan 2020 11:50:44 -0500
+Message-Id: <20200116165940.10720-18-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165940.10720-1-sashal@kernel.org>
 References: <20200116165940.10720-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090006_963019_037A1BB5 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20200116_090012_135182_DB0D1CE2 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,8 +81,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -90,35 +90,60 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-[ Upstream commit 108a459ef4cd17a28711d81092044e597b5c7618 ]
+[ Upstream commit 52d9bcb3d0de3fa1e07aff3800f857836d30410d ]
 
-The PLL-MIPI clock is somewhat special as it has its own LDOs which
-need to be turned on for this PLL to actually work and output a clock
-signal.
+The GIC device node was placed out of order in the initial device tree
+submission. Move it so the nodes are correctly sorted by base address
+again.
 
-Add the 2 LDO enable bits to the gate bits.
-
-Fixes: 5690879d93e8 ("clk: sunxi-ng: Add A23 CCU")
+Fixes: e54be32d0273 ("arm64: allwinner: h6: add the basical Allwinner H6 DTSI file")
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-a23.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 22 ++++++++++----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-index a4fa2945f230..4b5f8f4e4ab8 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-@@ -144,7 +144,7 @@ static SUNXI_CCU_NKM_WITH_GATE_LOCK(pll_mipi_clk, "pll-mipi",
- 				    8, 4,		/* N */
- 				    4, 2,		/* K */
- 				    0, 4,		/* M */
--				    BIT(31),		/* gate */
-+				    BIT(31) | BIT(23) | BIT(22), /* gate */
- 				    BIT(28),		/* lock */
- 				    CLK_SET_RATE_UNGATE);
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+index cfa5fffcf62b..72813e7aefb8 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+@@ -101,17 +101,6 @@
+ 			#reset-cells = <1>;
+ 		};
  
+-		gic: interrupt-controller@3021000 {
+-			compatible = "arm,gic-400";
+-			reg = <0x03021000 0x1000>,
+-			      <0x03022000 0x2000>,
+-			      <0x03024000 0x2000>,
+-			      <0x03026000 0x2000>;
+-			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+-			interrupt-controller;
+-			#interrupt-cells = <3>;
+-		};
+-
+ 		pio: pinctrl@300b000 {
+ 			compatible = "allwinner,sun50i-h6-pinctrl";
+ 			reg = <0x0300b000 0x400>;
+@@ -149,6 +138,17 @@
+ 			};
+ 		};
+ 
++		gic: interrupt-controller@3021000 {
++			compatible = "arm,gic-400";
++			reg = <0x03021000 0x1000>,
++			      <0x03022000 0x2000>,
++			      <0x03024000 0x2000>,
++			      <0x03026000 0x2000>;
++			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
++			interrupt-controller;
++			#interrupt-cells = <3>;
++		};
++
+ 		mmc0: mmc@4020000 {
+ 			compatible = "allwinner,sun50i-h6-mmc",
+ 				     "allwinner,sun50i-a64-mmc";
 -- 
 2.20.1
 
