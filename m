@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC6113F1C3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:31:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4943F13F1DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:31:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hUd4zXdLhZeAzCWNVuZCxvYTi59CkAkRu4kTTtUDmvc=; b=VMLzljJXdl7hZn
-	/XtT7uRAruSEoUpaWDd3MQ0fN4cx//QSlJ08KxDhUTuJgTQel7wa6Mr3YJY/WYGe7aBvTOdtsvfqK
-	ZHmN20hdKfYDCqBNIxmpJlaQBgx/c6LybNfK16UokkkUbQV9pcZeTcDdc0evcgyTSOhsKhmEFJb5T
-	F7sT6P1Wkj8IYaaFIXNpv32bIy/6o5gGg/HYjx81VvUXf8jkH0MAysyp2bDGyO+TRuIbu0hNgdP8Y
-	PXppS8rHGKuY7IbjjTA7KSHPLl/wRTH6QN6OtleHu5y/fTRuSskWNc1PCK0qiI3Clql6S03QVr5ip
-	QHPl0N4cSGLZgkAb/21Q==;
+	List-Owner; bh=LiVkyC3JAkfJUlf3iQYEfvZayECJYrBnTIxz+pI0nlQ=; b=p7QaXWoqbAvkHE
+	Unp+SJXpWfmwXW9faGVrk1ozmQ0VAPysTnspmSyumfrLZLDjYGQyihv33YrQP6CSnloWLqdYltOyh
+	UGJVo7xtlMKEEU74GvKKdRoYA1+B9ge18/RebY9Aa+D5xO6wflZyAuShe1Ikdvcqhh/Q4XdsmY4AJ
+	ulayi1DNn60YBhJ1v3mOYYXPw5IlmIc6nKxqc0GZ54kPkZtCR+/N8LA/0YOJlouHYSiqTyMaChYIA
+	G/7CHtwjAMII3cokQ2Qx+Qg/evZrqQCjTkmIbxRAHRS5FktDnArTfhohYBRUj+DfQEBHXqil/aYua
+	dYI2S3mrMr8lWF7IAp7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9vF-00005j-AB; Thu, 16 Jan 2020 18:31:13 +0000
+	id 1is9vb-0000NN-DG; Thu, 16 Jan 2020 18:31:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9BB-0003n7-GH
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:43:41 +0000
+ id 1is9Ba-00048z-Ce
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D22BA246B6;
- Thu, 16 Jan 2020 17:43:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7686E24741;
+ Thu, 16 Jan 2020 17:43:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196617;
- bh=tdBSwxxCeitoPSZ6ScJGChgxmx8QvubbLNKi1Z1+VLQ=;
+ s=default; t=1579196640;
+ bh=iIaMfE0eCNktgZoozG23i7g4jsF5SYY3Xf5XpHger3w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=p+Z0oPUhZ5JVgelWW7wu+uAPuik7eljPUrHZIzDmQtexCKalAfHVNYKjNxnZ+dtry
- TM/2JVsKQs0+WibkrrTzHJg/Uo5z93ebERPr8c30vifbT9xLAyoyc/Ri9/Hh0msYCA
- fAZgivf3PhhobRhlZOIrQ7in/7PJeR8hK8qRe8d8=
+ b=XKxNNt5PL4JGnR2EcBs73IVTlp3TeDf3v6sNBdvrf0b6Tlvw8nW9TtSq4mSoO3YSc
+ 3peb1LCkSA4M30qcFJ7ToN9T2yfGOCX6jE07P/Xo7TQ+e5u4eRObYu1W42qj7FFVMN
+ NfN1kZK8bSEd4z6mk/24NDLlYhaeV2nnrV8MhfKE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 034/174] ASoC: imx-sgtl5000: put of nodes if
- finding codec fails
-Date: Thu, 16 Jan 2020 12:40:31 -0500
-Message-Id: <20200116174251.24326-34-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 052/174] clocksource/drivers/sun5i: Fail
+ gracefully when clock rate is unavailable
+Date: Thu, 16 Jan 2020 12:40:49 -0500
+Message-Id: <20200116174251.24326-52-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094337_636501_B6F28F40 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20200116_094402_499363_B96B29FE 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,48 +80,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Daniel Baluta <daniel.baluta@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- Stefan Agner <stefan@agner.ch>, Nicolin Chen <nicoleotsuka@gmail.com>,
- Mark Brown <broonie@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Agner <stefan@agner.ch>
+From: Chen-Yu Tsai <wens@csie.org>
 
-[ Upstream commit d9866572486802bc598a3e8576a5231378d190de ]
+[ Upstream commit e7e7e0d7beafebd11b0c065cd5fbc1e5759c5aab ]
 
-Make sure to properly put the of node in case finding the codec
-fails.
+If the clock tree is not fully populated when the timer-sun5i init code
+is called, attempts to get the clock rate for the timer would fail and
+return 0.
 
-Fixes: 81e8e4926167 ("ASoC: fsl: add sgtl5000 clock support for imx-sgtl5000")
-Signed-off-by: Stefan Agner <stefan@agner.ch>
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
-Acked-by: Nicolin Chen <nicoleotsuka@gmail.com>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Make the init code for both clock events and clocksource check the
+returned clock rate and fail gracefully if the result is 0, instead of
+causing a divide by 0 exception later on.
+
+Fixes: 4a59058f0b09 ("clocksource/drivers/sun5i: Refactor the current code")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/fsl/imx-sgtl5000.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/clocksource/timer-sun5i.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/sound/soc/fsl/imx-sgtl5000.c b/sound/soc/fsl/imx-sgtl5000.c
-index 8e525f7ac08d..3d99a8579c99 100644
---- a/sound/soc/fsl/imx-sgtl5000.c
-+++ b/sound/soc/fsl/imx-sgtl5000.c
-@@ -119,7 +119,8 @@ static int imx_sgtl5000_probe(struct platform_device *pdev)
- 	codec_dev = of_find_i2c_device_by_node(codec_np);
- 	if (!codec_dev) {
- 		dev_err(&pdev->dev, "failed to find codec platform device\n");
--		return -EPROBE_DEFER;
-+		ret = -EPROBE_DEFER;
-+		goto fail;
+diff --git a/drivers/clocksource/timer-sun5i.c b/drivers/clocksource/timer-sun5i.c
+index bca9573e036a..32b2dab69fd7 100644
+--- a/drivers/clocksource/timer-sun5i.c
++++ b/drivers/clocksource/timer-sun5i.c
+@@ -201,6 +201,11 @@ static int __init sun5i_setup_clocksource(struct device_node *node,
  	}
  
- 	data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
+ 	rate = clk_get_rate(clk);
++	if (!rate) {
++		pr_err("Couldn't get parent clock rate\n");
++		ret = -EINVAL;
++		goto err_disable_clk;
++	}
+ 
+ 	cs->timer.base = base;
+ 	cs->timer.clk = clk;
+@@ -274,6 +279,11 @@ static int __init sun5i_setup_clockevent(struct device_node *node, void __iomem
+ 	}
+ 
+ 	rate = clk_get_rate(clk);
++	if (!rate) {
++		pr_err("Couldn't get parent clock rate\n");
++		ret = -EINVAL;
++		goto err_disable_clk;
++	}
+ 
+ 	ce->timer.base = base;
+ 	ce->timer.ticks_per_jiffy = DIV_ROUND_UP(rate, HZ);
 -- 
 2.20.1
 
