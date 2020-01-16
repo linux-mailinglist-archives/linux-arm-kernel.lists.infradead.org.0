@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4CD613E326
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:00:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B916C13E334
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:00:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wc22zf2EK+AywTBzHRpGSQ/o4LxAXxXgi5P9xjjQxZY=; b=F/b6gwbyU+hir4
-	70FdHjuUH9wWlQEvihWIFTo47DSvFpKK75OuEwKOgSAhejD20KP+p8dSUqVubhfVEdFrK101uBvk0
-	uArJhMqr+kDPvPBxuzKcVSAqfp5LK4QvkdrGqz/RvuszKBzNjkFeiOH4wf7MxuJsb0xO8d6kBeW5L
-	FUOMk2ErHFPW1jeWqHNTz2ksV1CNLb5ugyRnvkIQGn1HR9dLqjwILoQ1lxJX/9IVkhLUCme/oUn6w
-	X/2PZDbOl731TBZ79rtavVvGJo03AUpHWzekUJIKCHlk76/1Ah169phAG1c0LfSpCPH9/JzkaSGVV
-	9H7sDpMzvqGZszHHosPw==;
+	List-Owner; bh=HCcYXuxlyRcCgVp2XFsLjfjb9VQTgwQM1LC01QVHSao=; b=exz6q55WiydY75
+	Qj6oiedyVazmz+P/H1U7w3MbSFQJkQFGsQiwOQpmQzPLt0MHSo50FGh8NqoVLb5HCfh8CC6J3xT12
+	/hXahzW4jaHaiLFZ5wOlOd/bh+ZzjGdazXZ/rZCSxcZTrcFci+WiYbIS9z7enLqb67JtDQMtkC4SY
+	I7NIyUDPgIocWMlpyIh0NssgI7xllJVAuf8Sf8KRj4yzlYfzuGsBGsQ4BQv6RyyZ97FQrbPgiZaF+
+	FsNvLmoU90pShJZNZuwuNyZfV5zEc4LVMDMpKWa0sdFik16DcApxerIMkIuOjz5XTq8KyoImUpAlo
+	QNu7DOfSNIUPJOf0zQ4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8VH-0007XB-RY; Thu, 16 Jan 2020 17:00:19 +0000
+	id 1is8VY-0000cp-Oe; Thu, 16 Jan 2020 17:00:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8QG-0001zd-0b
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:16 +0000
+ id 1is8QN-0002vq-DX
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 30EAD22522;
- Thu, 16 Jan 2020 16:55:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1B53A2467A;
+ Thu, 16 Jan 2020 16:55:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193705;
- bh=qOQzyhtcbChDzzbv1LEMKJgJf4TpU+N7xoKSA4d6j2I=;
+ s=default; t=1579193714;
+ bh=klIKoTMA6lF5peF5ulNsoGKugOg5LPRiZi3nziNWFJk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ssqj/+C3XsCKeXSJZFL5dZCVRxBl4O002yKwMlyPAGE2JcnLwz29beJLf0jl1BG1r
- hTWYoU43jSzS+nIhne2s3SpCIBrfvwpPCZlbtdtjUeu8uI4v72+rV3M6rZMdev5CiH
- vLijMY7x/JluTOhr/wdEqP2fFT7U553KoJyi8160=
+ b=QX7HSAm21TH7/fKsGEiXztMOGuVMkSlZL4knblr1NL+TptW4vQWoEDRBWHNBRG5v9
+ A3LfW1RFuGslOafPPsA933Wctk6MtHHWq3S7OzXGRKJFAkj2PdJYCENb6aQO4mD8Vz
+ UshUBePUqlBJIOfDUh5hvToTkcIZMefPh8zb9rKg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 002/671] ARM: dts: at91: nattis: set the PRLUD
- and HIPOW signals low
-Date: Thu, 16 Jan 2020 11:43:53 -0500
-Message-Id: <20200116165502.8838-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 010/671] ARM: qcom_defconfig: Enable MAILBOX
+Date: Thu, 16 Jan 2020 11:44:01 -0500
+Message-Id: <20200116165502.8838-10-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085508_444542_B722062D 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20200116_085515_523167_80285416 
+X-CRM114-Status: UNSURE (   9.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,52 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Peter Rosin <peda@axentia.se>, linux-arm-kernel@lists.infradead.org
+Cc: Andy Gross <andy.gross@linaro.org>, Sasha Levin <sashal@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Frank Rowand <frank.rowand@sony.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peter Rosin <peda@axentia.se>
+From: Frank Rowand <frank.rowand@sony.com>
 
-[ Upstream commit 29feb2c960ab32fc24249443d4434194ce96f083 ]
+[ Upstream commit 54c2678cd198f61555796bbda5e1727e6e1858f1 ]
 
-AT91_PINCTRL_OUTPUT_VAL(0) without AT91_PINCTRL_OUTPUT is a no-op, so
-make sure the pins really output a zero.
+Problem:
+ab460a2e72da ("rpmsg: qcom_smd: Access APCS through mailbox framework"
+added a "depends on MAILBOX") to RPMSG_QCOM_SMD, thus RPMSG_QCOM_SMD
+becomes unset since MAILBOX was not enabled in qcom_defconfig and is
+not otherwise selected for the dragonboard.  When the resulting
+kernel is booted the mmc device which contains the root file system
+is not available.
 
-Fixes: 0e4323899973 ("ARM: dts: at91: add devicetree for the Axentia Nattis with Natte power")
-Signed-off-by: Peter Rosin <peda@axentia.se>
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Fix:
+add CONFIG_MAILBOX to qcom_defconfig
+
+Fixes: ab460a2e72da ("rpmsg: qcom_smd: Access APCS through mailbox framework"
+added a "depends on MAILBOX")
+
+Signed-off-by: Frank Rowand <frank.rowand@sony.com>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Signed-off-by: Andy Gross <andy.gross@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/at91-nattis-2-natte-2.dts | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ arch/arm/configs/qcom_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/at91-nattis-2-natte-2.dts b/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-index af9f38456d04..bfa5815a0721 100644
---- a/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-+++ b/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-@@ -38,14 +38,16 @@
- 						atmel,pins =
- 							<AT91_PIOA 21
- 							 AT91_PERIPH_GPIO
--							 AT91_PINCTRL_OUTPUT_VAL(0)>;
-+							 (AT91_PINCTRL_OUTPUT |
-+							  AT91_PINCTRL_OUTPUT_VAL(0))>;
- 					};
- 
- 					pinctrl_lcd_hipow0: lcd_hipow0 {
- 						atmel,pins =
- 							<AT91_PIOA 23
- 							 AT91_PERIPH_GPIO
--							 AT91_PINCTRL_OUTPUT_VAL(0)>;
-+							 (AT91_PINCTRL_OUTPUT |
-+							  AT91_PINCTRL_OUTPUT_VAL(0))>;
- 					};
- 				};
- 			};
+diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
+index 6aa7046fb91f..bd6440f23493 100644
+--- a/arch/arm/configs/qcom_defconfig
++++ b/arch/arm/configs/qcom_defconfig
+@@ -207,6 +207,7 @@ CONFIG_MSM_MMCC_8974=y
+ CONFIG_MSM_IOMMU=y
+ CONFIG_HWSPINLOCK=y
+ CONFIG_HWSPINLOCK_QCOM=y
++CONFIG_MAILBOX=y
+ CONFIG_REMOTEPROC=y
+ CONFIG_QCOM_ADSP_PIL=y
+ CONFIG_QCOM_Q6V5_PIL=y
 -- 
 2.20.1
 
