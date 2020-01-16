@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42CAD13E4F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:11:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 714D513E50D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:12:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4255WPtMaGK824WN9qCXMk9aal72FWuWb0inGhgm+AQ=; b=dzmVQortVoivQy
-	83402Q9jzEMqof0OYx9fqJFbzgRjXAWYGt5yUB7LzoL9wHUq1UQn8YMK0B3uS+5ieOc/nhlykQSqg
-	3gvR1oCFKw7aSB/Ft9jXU+LgL7nmWODkerrbo0uPMEBXpFkTcOF5O+7R+6xnjmAiZIeJ5f4Vz6IWE
-	Flb1qIh2xttGjrVvHYtQDF8XjryUNDak7yyfJcy8iV5Mk07QXBaQwE5HlZTR6MZeYC82ctZ13NqVA
-	WQNkRTQuhk08DQuO+olEtSDnyac5+4OW5jk80EA4frw2+BxOrbyc++1+vy0v20O2RzhbQaQURoEkf
-	s3YHx108FJmeK30CVTEQ==;
+	List-Owner; bh=KImayx4y6BwOjGtKiWVeN/6pXxIRNuGVhYS6vFsK1yg=; b=eRg5N23ZrqbR9z
+	ESUsuURSc9xmzirgHs+tYLWcnBKMYjj9nRQhONRnipX7tPzN305NPLD/JiPifUs3hMXfUCCpD5HC4
+	W+u3vQk5z79SRi/66rhodJvwYInnrLcpBzJf+lakdbnVYzOcRSOVPepkXpdmHRyJlD963fvFjDwN0
+	hGdcuN/kFfPzGnAHnzpoFshUhRs1oc8Y/hKHQo9RL0J2scn6mbH4nejGRoSRRyyf4C3chOvJfTdlP
+	+P1ATCKHmRVbuQs3ME0zpmhK566FLE8KYphiXCKTGHT6+vPgnwAw/z0MtgwB0xm6blHs+zLzaWFrb
+	XQirk7+it6Yt8g8lIelA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8gL-00057s-Rs; Thu, 16 Jan 2020 17:11:45 +0000
+	id 1is8gr-0005XN-C0; Thu, 16 Jan 2020 17:12:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Vd-0000wC-1W; Thu, 16 Jan 2020 17:00:45 +0000
+ id 1is8WI-0001X7-Tf; Thu, 16 Jan 2020 17:01:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 579E920728;
- Thu, 16 Jan 2020 17:00:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 35AE520730;
+ Thu, 16 Jan 2020 17:01:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194040;
- bh=v6tS4y1asMskCCD9nEZM8dcf/I4zDbuioUqkT4qp+jY=;
+ s=default; t=1579194082;
+ bh=hyqnidKUhr5IO7828ua1HHV6ukySUvw9Gad4wTAK1DE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kMPHkwv1g+xu+p1DDf8uBse4uV9TYqm+tb7z4D6mQf6DZAieb6SGIvP9uCchjRQKH
- 7EESZNRWZdkUKjfjs/sJjANij8duyVvzz7iA5aDzxEu8GPPm9w/FHeq00W3sLwvc4R
- 1kNrvGkU8fMuTmtTlX4Zmi7XLfkgo1k6+ggGLnHg=
+ b=zggOnGeCZI/EA26jG4oEv6sh3FOEnUmDJdbScRBHtN81CbU0F7jAhANQARL5d0hSU
+ +ZJC6X6/o00Eu/RuspxeEGruweQl0VKLA+mkCA1DzmI27VpDhNI28YFv7XCBsyH/vp
+ 6C1oqoQU9pH/YW2cVmemwzQ6BGPk7wNsKLKCFJa0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 157/671] thermal: mediatek: fix register index
- error
-Date: Thu, 16 Jan 2020 11:51:06 -0500
-Message-Id: <20200116165940.10720-40-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 187/671] mt76: usb: fix possible memory leak in
+ mt76u_buf_free
+Date: Thu, 16 Jan 2020 11:51:36 -0500
+Message-Id: <20200116165940.10720-70-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165940.10720-1-sashal@kernel.org>
 References: <20200116165940.10720-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090041_156464_BFB3651A 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200116_090123_020420_1A0399C9 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,53 +79,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-pm@vger.kernel.org,
- Michael Kao <michael.kao@mediatek.com>, Eduardo Valentin <edubezval@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Lorenzo Bianconi <lorenzo.bianconi@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Michael Kao <michael.kao@mediatek.com>
+From: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>
 
-[ Upstream commit eb9aecd90d1a39601e91cd08b90d5fee51d321a6 ]
+[ Upstream commit cb83585e1121bd6d6c039cf09fa32380bf8b6258 ]
 
-The index of msr and adcpnp should match the sensor
-which belongs to the selected bank in the for loop.
+Move q->ndesc initialization before the for loop in mt76u_alloc_rx
+since otherwise allocated urbs will not be freed in mt76u_buf_free
+Double-check scatterlist pointer in mt76u_buf_free
 
-Fixes: b7cf0053738c ("thermal: Add Mediatek thermal driver for mt2701.")
-Signed-off-by: Michael Kao <michael.kao@mediatek.com>
-Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+Fixes: b40b15e1521f ("mt76: add usb support to mt76 layer")
+Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/thermal/mtk_thermal.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/usb.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-index 0691f260f6ea..f64643629d8b 100644
---- a/drivers/thermal/mtk_thermal.c
-+++ b/drivers/thermal/mtk_thermal.c
-@@ -431,7 +431,8 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
- 	u32 raw;
+diff --git a/drivers/net/wireless/mediatek/mt76/usb.c b/drivers/net/wireless/mediatek/mt76/usb.c
+index 8d40e92fb6f2..dcf927de65f3 100644
+--- a/drivers/net/wireless/mediatek/mt76/usb.c
++++ b/drivers/net/wireless/mediatek/mt76/usb.c
+@@ -273,10 +273,16 @@ EXPORT_SYMBOL_GPL(mt76u_buf_alloc);
+ void mt76u_buf_free(struct mt76u_buf *buf)
+ {
+ 	struct urb *urb = buf->urb;
++	struct scatterlist *sg;
+ 	int i;
  
- 	for (i = 0; i < conf->bank_data[bank->id].num_sensors; i++) {
--		raw = readl(mt->thermal_base + conf->msr[i]);
-+		raw = readl(mt->thermal_base +
-+			    conf->msr[conf->bank_data[bank->id].sensors[i]]);
+-	for (i = 0; i < urb->num_sgs; i++)
+-		skb_free_frag(sg_virt(&urb->sg[i]));
++	for (i = 0; i < urb->num_sgs; i++) {
++		sg = &urb->sg[i];
++		if (!sg)
++			continue;
++
++		skb_free_frag(sg_virt(sg));
++	}
+ 	usb_free_urb(buf->urb);
+ }
+ EXPORT_SYMBOL_GPL(mt76u_buf_free);
+@@ -478,7 +484,8 @@ static int mt76u_alloc_rx(struct mt76_dev *dev)
+ 		nsgs = 1;
+ 	}
  
- 		temp = raw_to_mcelsius(mt,
- 				       conf->bank_data[bank->id].sensors[i],
-@@ -568,7 +569,8 @@ static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
+-	for (i = 0; i < MT_NUM_RX_ENTRIES; i++) {
++	q->ndesc = MT_NUM_RX_ENTRIES;
++	for (i = 0; i < q->ndesc; i++) {
+ 		err = mt76u_buf_alloc(dev, &q->entry[i].ubuf,
+ 				      nsgs, q->buf_size,
+ 				      SKB_WITH_OVERHEAD(q->buf_size),
+@@ -486,7 +493,6 @@ static int mt76u_alloc_rx(struct mt76_dev *dev)
+ 		if (err < 0)
+ 			return err;
+ 	}
+-	q->ndesc = MT_NUM_RX_ENTRIES;
  
- 	for (i = 0; i < conf->bank_data[num].num_sensors; i++)
- 		writel(conf->sensor_mux_values[conf->bank_data[num].sensors[i]],
--		       mt->thermal_base + conf->adcpnp[i]);
-+		       mt->thermal_base +
-+		       conf->adcpnp[conf->bank_data[num].sensors[i]]);
- 
- 	writel((1 << conf->bank_data[num].num_sensors) - 1,
- 	       mt->thermal_base + TEMP_MONCTL0);
+ 	return mt76u_submit_rx_buffers(dev);
+ }
 -- 
 2.20.1
 
