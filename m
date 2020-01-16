@@ -2,63 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 933DB13EF07
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:12:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47E3913F005
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:19:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44DhS6xIXIfbzHPS5zNhW/s2ebAGE4SFP5w1B0Wo9kk=; b=Z1KC8v+DTJAJyh
-	Qc0+uSU3f+QuvfNusEKXWucVNzMmTGohcE8VDed8z/UfHa7qcnJq3n22Q53yDBmBQ4u1EnJuV5W/n
-	97N0fqzol5S4e0CPp1nU/CaNywzPeRgFN2N5d0B8rsqCwYoqPuTxPaad2bs95He9no1oQ+IUNMirI
-	Dh6fMnqoBv+W5174qvRBGNpB3gjKX6J8CXmpn1MKPO7uQWXO5+LgG57q7qVjVr9jociVQCzWaXeiA
-	PQ4hCxOQJFcia4gf7r8XPjpp/XsH8WpDl9cCVUPSjmrzdi0609RIThZmt3qSlFXoyiJuXVbQ//xNs
-	7aQd3N8fFnwNBb76qL0g==;
+	List-Owner; bh=jLh3mDQXEHg6CeeVLIl0mdCAnSodFMTxxcz4HFZbqhI=; b=DBeekt/oafLWbM
+	Vgcrm05/jPtU1JqV7C76Cv7RdCIWqDR+2CDEfLY60SUKapLUOJiDzx/PNKCXsSXWhB3/NK0c/UJwa
+	/S77SfEIlFPuDmnhiu1LyNYezvqwUJfeC8tGcLr0g7Ny1sTYcDTfZy2S4BJrp3AfXw0+6tk1+Nima
+	U8Usf7z1Y47JCasLXJHy7fmSPX2Ro5rDsl1PER6bw86T+2giu2VbD0Wxfp3ypWWmhv9ydtAXMqBWi
+	YSBb/4747RxmkWv6fM2kt/at7q4v2e/bQ3utYrw9IYs/ULedGAZzJ8WTNDxpJW3Qo08a7kW+3uhRR
+	37dpjWz80dZ5f3AM5++A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9dQ-0003Uo-B0; Thu, 16 Jan 2020 18:12:48 +0000
+	id 1is9jZ-0002fI-BN; Thu, 16 Jan 2020 18:19:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is91Z-00035K-AC
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:33:47 +0000
-Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
- [209.85.222.171])
+ id 1is95R-0006yR-5q
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:37:57 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3D251246CC
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 17:33:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 83232207FF;
+ Thu, 16 Jan 2020 17:37:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196020;
- bh=2G0Ng8OaQXY0myuwsXjYgysTnAkfNx4yCUXz8txEl2Y=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=vd/D2dqhVkk/59pyEhm3YzDslAjdxWxnY8HVcflYPu9BYi5M2fluN/7qGED+/2x3q
- FEqZtepLYPcur1TFx9cTTrpOQa+XAOiY74agLTBgaVPlHxKEc6VLGwSnfUWyzBngsS
- F0k9PXMbe2fYpxERpAz/dVRnYfE/ibbxVX1YntZ8=
-Received: by mail-qk1-f171.google.com with SMTP id 21so19913568qky.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 09:33:40 -0800 (PST)
-X-Gm-Message-State: APjAAAUUaCtjk7XpkNOe7J1oMpZsL5rHv4yb8I/d/52wquutCT5pIHVv
- nMhzlV+KueK0lKg5x7JtYqdDUnEwAqWF0dBWDQ==
-X-Google-Smtp-Source: APXvYqzp8zTCERQIV+x1zdU2FH8qa9LdLhrgMgX7M1lyS8XHlvveUMh4kI3m0RFeC5HMz+WfbUraLiUXsMQZdBiBvTg=
-X-Received: by 2002:a05:620a:135b:: with SMTP id
- c27mr31335279qkl.119.1579196019371; 
- Thu, 16 Jan 2020 09:33:39 -0800 (PST)
+ s=default; t=1579196260;
+ bh=E1kIdxwQ9tvKVB82zvpt+3f0RLC2wtqLWGKMLnStV5A=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ruKwXRYZDjGISqeh8XUvQ8OhAzHXDH6XBo5FJciRv1iHuPZke9FUa7yNV8mYud+qD
+ hMya0dZ/ZGE7Ai66acc5brKwhvnNSwAyXemjp9iSQ14a+zA/oUkYLF0I4iDIN/o0vM
+ eQpG7Tgk3zKai27AocCW+4r9/JqVmjIKqJxNND+c=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.9 085/251] clocksource/drivers/sun5i: Fail
+ gracefully when clock rate is unavailable
+Date: Thu, 16 Jan 2020 12:33:54 -0500
+Message-Id: <20200116173641.22137-45-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
+References: <20200116173641.22137-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
- <1578941778-23321-2-git-send-email-stefan.wahren@i2se.com>
-In-Reply-To: <1578941778-23321-2-git-send-email-stefan.wahren@i2se.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 16 Jan 2020 11:33:27 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+w0KGE-=XkAwpdqh67pH=V34ETCy8X92L_u1=_8xuKCg@mail.gmail.com>
-Message-ID: <CAL_Jsq+w0KGE-=XkAwpdqh67pH=V34ETCy8X92L_u1=_8xuKCg@mail.gmail.com>
-Subject: Re: [PATCH V5 1/4] dt-bindings: Add Broadcom AVS RO thermal
-To: Stefan Wahren <stefan.wahren@i2se.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093341_461612_BFB49A68 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20200116_093741_304330_BC9E533E 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,94 +80,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Zhang Rui <rui.zhang@intel.com>,
- Will Deacon <will@kernel.org>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 12:56 PM Stefan Wahren <stefan.wahren@i2se.com> wrote:
->
-> Since the BCM2711 doesn't have a AVS TMON block, the thermal information
-> must be retrieved from the AVS ring oscillator block. This block is part
-> of the AVS monitor which contains a bunch of raw sensors.
->
-> Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  .../bindings/thermal/brcm,avs-ro-thermal.yaml      | 45 ++++++++++++++++++++++
->  1 file changed, 45 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+From: Chen-Yu Tsai <wens@csie.org>
 
-The example fails 'make dt_binding_check':
+[ Upstream commit e7e7e0d7beafebd11b0c065cd5fbc1e5759c5aab ]
 
-/builds/robherring/linux-dt-bindings/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.example.dt.yaml:
-thermal: 'reg' is a required property
+If the clock tree is not fully populated when the timer-sun5i init code
+is called, attempts to get the clock rate for the timer would fail and
+return 0.
 
-> diff --git a/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
-> new file mode 100644
-> index 0000000..98e7b57
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
-> @@ -0,0 +1,45 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/thermal/brcm,avs-ro-thermal.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Broadcom AVS ring oscillator thermal
-> +
-> +maintainers:
-> +  - Stefan Wahren <wahrenst@gmx.net>
-> +
-> +description: |+
-> +  The thermal node should be the child of a syscon node with the
-> +  required property:
-> +
-> +  - compatible: Should be one of the following:
-> +                "brcm,bcm2711-avs-monitor", "syscon", "simple-mfd"
-> +
-> +  Refer to the the bindings described in
-> +  Documentation/devicetree/bindings/mfd/syscon.txt
-> +
-> +properties:
-> +  compatible:
-> +    const: brcm,bcm2711-thermal
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +
-> +examples:
-> +  - |
-> +        avs-monitor@7d5d2000 {
-> +                compatible = "brcm,bcm2711-avs-monitor",
-> +                             "syscon", "simple-mfd";
-> +                reg = <0x7d5d2000 0xf00>;
-> +
-> +                thermal: thermal {
-> +                        compatible = "brcm,bcm2711-thermal";
-> +                        #thermal-sensor-cells = <0>;
+Make the init code for both clock events and clocksource check the
+returned clock rate and fail gracefully if the result is 0, instead of
+causing a divide by 0 exception later on.
 
-Also this is not documented. That's not caught because
-'additionalProperties: false' is also needed.
+Fixes: 4a59058f0b09 ("clocksource/drivers/sun5i: Refactor the current code")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clocksource/timer-sun5i.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Rob
+diff --git a/drivers/clocksource/timer-sun5i.c b/drivers/clocksource/timer-sun5i.c
+index 4f87f3e76d83..c3e96de525a2 100644
+--- a/drivers/clocksource/timer-sun5i.c
++++ b/drivers/clocksource/timer-sun5i.c
+@@ -201,6 +201,11 @@ static int __init sun5i_setup_clocksource(struct device_node *node,
+ 	}
+ 
+ 	rate = clk_get_rate(clk);
++	if (!rate) {
++		pr_err("Couldn't get parent clock rate\n");
++		ret = -EINVAL;
++		goto err_disable_clk;
++	}
+ 
+ 	cs->timer.base = base;
+ 	cs->timer.clk = clk;
+@@ -274,6 +279,11 @@ static int __init sun5i_setup_clockevent(struct device_node *node, void __iomem
+ 	}
+ 
+ 	rate = clk_get_rate(clk);
++	if (!rate) {
++		pr_err("Couldn't get parent clock rate\n");
++		ret = -EINVAL;
++		goto err_disable_clk;
++	}
+ 
+ 	ce->timer.base = base;
+ 	ce->timer.ticks_per_jiffy = DIV_ROUND_UP(rate, HZ);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
