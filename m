@@ -2,66 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1836A13FA29
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:05:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BEC13FA2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:08:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+W3h4AndFBqjRTxy5EnqZKC15aAVQtcLT6KmdiBKrUA=; b=XnnE5K4kGPeGtx
-	5PRn9Bbg7LMO8nLGqthJNNJL64ajFyJEEFIWdGiaL3PhAMoroJ4OIPzwTIsp1SGmpU/kElAO3ImGZ
-	2T8nZ6olm3D9NEKCccpioniYesjWc8wfR+GJgO27vKkiVooktDDgmRC996dhkMME5rYoiBQqU2X48
-	eERuinbVEJPKUE5ExXhccdKm/g7ydNFeVKO8z+f6fCKiE3P/oNxWLr/ySDenUGj0vMs0FP51CFccG
-	uoTQd0wOPh3HWA66ypgPmgluX2EJg/XLbg72XJGjw2unihoAs4wn1gFpFfTXgb+/brFjn/mBVpsY0
-	Mo2OILW5vwR03fZILm8Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=b1JLokCcBx77/tnPA0+pRJ7zlQhBDOuN3oiUqBoKPI4=; b=Nr7
+	keG+k6+q6zB0QoS8sdt5pAf43Ujw7QMQVdHtPKXms1O5Z2E6TClJ/ZW8oS4NXzUzviRXkQ4tMz9aO
+	1IvYz9T74Pdj85rzKRvLTLZSzBsmxnRFkM+xX9agPhV71AE8T3TWh+zWXLKeK4dQOMKYw6H+iDaSV
+	km2cI4r+2pMQ9oYMeLcxB+A8J+sK6dtqxrj5alcGCw1n6/Ar9uV+Rd8lujWBa4q1yDZNQVkT85w5z
+	bP8tlCAphhD9CPJBkL2AlaNsFxuQUgbuNRooNYmU/9pc963aLeNPvd8paP/tGIXVVw5TnR2fb473q
+	7yJSLXz6IYv8qLKMSvUept6rkHsiVrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isBOZ-00016j-Ew; Thu, 16 Jan 2020 20:05:35 +0000
-Received: from mailoutvs11.siol.net ([185.57.226.202] helo=mail.siol.net)
+	id 1isBRS-0001SI-8G; Thu, 16 Jan 2020 20:08:34 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isBON-000153-CN
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:05:28 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id A5E355243C8;
- Thu, 16 Jan 2020 21:05:20 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id pO70ArcDTR1J; Thu, 16 Jan 2020 21:05:20 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 3912A5243C0;
- Thu, 16 Jan 2020 21:05:20 +0100 (CET)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id A29E85243C8;
- Thu, 16 Jan 2020 21:05:19 +0100 (CET)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: mripard@kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- roman.stratiienko@globallogic.com
-Subject: Re: [PATCH v3 2/2] drm/sun4i: Add alpha property for sun8i and sun50i
- VI layer
-Date: Thu, 16 Jan 2020 21:05:19 +0100
-Message-ID: <2397109.Lt9SDvczpP@jernej-laptop>
-In-Reply-To: <20200103211901.44201-2-roman.stratiienko@globallogic.com>
-References: <20200103211901.44201-1-roman.stratiienko@globallogic.com>
- <20200103211901.44201-2-roman.stratiienko@globallogic.com>
-MIME-Version: 1.0
+ id 1isBRG-0001PR-Hu
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:08:27 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00GK368V132707;
+ Thu, 16 Jan 2020 20:07:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id; s=corp-2019-08-05;
+ bh=VXKP063RLeaEtvwZyxBIApAY7BlmugdZZoADPBt2YAg=;
+ b=Q7wnOTFYlvOxiPoKMEqnlqRwvviOsCfv6eCIMDbOBNmD3T5Hyi6Z8ku4oy52bDgGr/Ls
+ 3euJmiXxZCmpVtlHKqb/TH4X19wd33S7+N9MN3T81wsn/xfL0ANlnJtUKJz0c/hMCtjh
+ oCwuXlcYqrKqsrl/Mume1bsu8hKFpqOwfm22a6MD3T42DrxkHscIVxNGa54hrz3Gvu0E
+ /ijxtHZeK011ndqjila2pTiVp8x8n502gLOQgLLfwhiVRgXmGMNiUxFn7WW23BQfTGbY
+ b9VOJoX/f9548CXyKyZOiNelfyAum0DBOVDurNpd4P8YwIsQEsRu38iG6a/bkIgfAQ/I EA== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2xf73yvu5p-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Jan 2020 20:07:56 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00GK3mcQ042328;
+ Thu, 16 Jan 2020 20:07:56 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2xj1ptpydj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Jan 2020 20:07:55 +0000
+Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 00GK7q6v014129;
+ Thu, 16 Jan 2020 20:07:52 GMT
+Received: from localhost.localdomain (/10.159.157.9)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 16 Jan 2020 12:07:52 -0800
+From: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+To: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [GIT_PULL] SOC: TI Keystone Ring Accelerator driver for v5.6
+Date: Thu, 16 Jan 2020 12:07:39 -0800
+Message-Id: <1579205259-4845-1-git-send-email-santosh.shilimkar@oracle.com>
+X-Mailer: git-send-email 1.9.1
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9502
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=749
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001160161
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9502
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=824 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001160161
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_120523_734159_24A34989 
-X-CRM114-Status: GOOD (  17.10  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200116_120822_676858_0176A1E2 
+X-CRM114-Status: GOOD (  17.11  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.202 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,180 +106,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roman Stratiienko <roman.stratiienko@globallogic.com>
+Cc: arnd@arndb.de, khilman@kernel.org, santosh.shilimkar@oracle.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, olof@lixom.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+Its bit late for pull request, but if possible, please pull it to
+soc drivers tree.
 
-Sorry for late reply.
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
-Dne petek, 03. januar 2020 ob 22:19:01 CET je 
-roman.stratiienko@globallogic.com napisal(a):
-> From: Roman Stratiienko <roman.stratiienko@globallogic.com>
-> 
-> DE3.0 VI layers supports plane-global alpha channel.
-> DE2.0 FCC block have GLOBAL_ALPHA register that can be used as alpha source
-> for blender.
-> 
-> Add alpha property to the DRM plane and connect it to the
-> corresponding registers in the mixer.
-> 
-> Do not add alpha property for systems with DE2.0 and more than 1 VI planes.
-> 
-> Signed-off-by: Roman Stratiienko <roman.stratiienko@globallogic.com>
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-This looks fine to me.
-Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
+are available in the git repository at:
 
-Best regards,
-Jernej
+  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.6
 
-> ---
-> v2: Initial version by mistake
-> v3:
-> - Skip adding & applying alpha property if VI count > 1
-> ---
->  drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 48 +++++++++++++++++++++-----
->  drivers/gpu/drm/sun4i/sun8i_vi_layer.h | 11 ++++++
->  2 files changed, 51 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-> b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c index 42d445d23773..e61aec7d6d07
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-> +++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-> @@ -65,6 +65,36 @@ static void sun8i_vi_layer_enable(struct sun8i_mixer
-> *mixer, int channel, }
->  }
-> 
-> +static void sun8i_vi_layer_update_alpha(struct sun8i_mixer *mixer, int
-> channel, +					int overlay, struct 
-drm_plane *plane)
-> +{
-> +	u32 mask, val, ch_base;
-> +
-> +	ch_base = sun8i_channel_base(mixer, channel);
-> +
-> +	if (mixer->cfg->is_de3) {
-> +		mask = SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MASK |
-> +		       SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_MASK;
-> +		val = SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA
-> +			(plane->state->alpha >> 8);
-> +
-> +		val |= (plane->state->alpha == DRM_BLEND_ALPHA_OPAQUE) ?
-> +			
-SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_PIXEL :
-> +			
-SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_COMBINED;
-> +
-> +		regmap_update_bits(mixer->engine.regs,
-> +				   
-SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base,
-> +								
-  overlay),
-> +				   mask, val);
-> +	} else if (mixer->cfg->vi_num == 1) {
-> +		regmap_update_bits(mixer->engine.regs,
-> +				   
-SUN8I_MIXER_FCC_GLOBAL_ALPHA_REG,
-> +				   
-SUN8I_MIXER_FCC_GLOBAL_ALPHA_MASK,
-> +				   SUN8I_MIXER_FCC_GLOBAL_ALPHA
-> +					(plane->state->alpha >> 
-8));
-> +	}
-> +}
-> +
->  static int sun8i_vi_layer_update_coord(struct sun8i_mixer *mixer, int
-> channel, int overlay, struct drm_plane *plane,
->  				       unsigned int zpos)
-> @@ -248,14 +278,6 @@ static int sun8i_vi_layer_update_formats(struct
-> sun8i_mixer *mixer, int channel, SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base,
-> overlay),
->  			   SUN8I_MIXER_CHAN_VI_LAYER_ATTR_RGB_MODE, 
-val);
-> 
-> -	/* It seems that YUV formats use global alpha setting. */
-> -	if (mixer->cfg->is_de3)
-> -		regmap_update_bits(mixer->engine.regs,
-> -				   
-SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base,
-> -								
-  overlay),
-> -				   
-SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MASK,
-> -				   
-SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA(0xff));
-> -
->  	return 0;
->  }
-> 
-> @@ -373,6 +395,8 @@ static void sun8i_vi_layer_atomic_update(struct
-> drm_plane *plane,
-> 
->  	sun8i_vi_layer_update_coord(mixer, layer->channel,
->  				    layer->overlay, plane, zpos);
-> +	sun8i_vi_layer_update_alpha(mixer, layer->channel,
-> +				    layer->overlay, plane);
->  	sun8i_vi_layer_update_formats(mixer, layer->channel,
->  				      layer->overlay, plane);
->  	sun8i_vi_layer_update_buffer(mixer, layer->channel,
-> @@ -464,6 +488,14 @@ struct sun8i_vi_layer *sun8i_vi_layer_init_one(struct
-> drm_device *drm,
-> 
->  	plane_cnt = mixer->cfg->ui_num + mixer->cfg->vi_num;
-> 
-> +	if (mixer->cfg->vi_num == 1 || mixer->cfg->is_de3) {
-> +		ret = drm_plane_create_alpha_property(&layer->plane);
-> +		if (ret) {
-> +			dev_err(drm->dev, "Couldn't add alpha 
-property\n");
-> +			return ERR_PTR(ret);
-> +		}
-> +	}
-> +
->  	ret = drm_plane_create_zpos_property(&layer->plane, index,
->  					     0, plane_cnt - 
-1);
->  	if (ret) {
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.h
-> b/drivers/gpu/drm/sun4i/sun8i_vi_layer.h index eaa6076f5dbc..48c399e1c86d
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.h
-> +++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.h
-> @@ -29,14 +29,25 @@
->  #define SUN8I_MIXER_CHAN_VI_VDS_UV(base) \
->  		((base) + 0xfc)
-> 
-> +#define SUN8I_MIXER_FCC_GLOBAL_ALPHA_REG \
-> +		(0xAA000 + 0x90)
-> +
-> +#define SUN8I_MIXER_FCC_GLOBAL_ALPHA(x)			((x) << 24)
-> +#define SUN8I_MIXER_FCC_GLOBAL_ALPHA_MASK		GENMASK(31, 
-24)
-> +
->  #define SUN8I_MIXER_CHAN_VI_LAYER_ATTR_EN		BIT(0)
->  /* RGB mode should be set for RGB formats and cleared for YCbCr */
->  #define SUN8I_MIXER_CHAN_VI_LAYER_ATTR_RGB_MODE		BIT(15)
->  #define SUN8I_MIXER_CHAN_VI_LAYER_ATTR_FBFMT_OFFSET	8
->  #define SUN8I_MIXER_CHAN_VI_LAYER_ATTR_FBFMT_MASK	GENMASK(12, 8)
-> +#define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_MASK	GENMASK(2, 1)
->  #define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MASK	GENMASK(31, 24)
->  #define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA(x)	((x) << 24)
-> 
-> +#define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_PIXEL	((0) << 1)
-> +#define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_LAYER	((1) << 1)
-> +#define SUN50I_MIXER_CHAN_VI_LAYER_ATTR_ALPHA_MODE_COMBINED	((2) << 1)
-> +
->  #define SUN8I_MIXER_CHAN_VI_DS_N(x)			((x) << 16)
->  #define SUN8I_MIXER_CHAN_VI_DS_M(x)			((x) << 0)
+for you to fetch changes up to 3277e8aa2504d97e022ecb9777d784ac1a439d36:
 
+  soc: ti: k3: add navss ringacc driver (2020-01-15 10:07:27 -0800)
 
+----------------------------------------------------------------
+SOC: TI Keystone Ring Accelerator driver
 
+The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
+enable straightforward passing of work between a producer and a consumer.
+There is one RINGACC module per NAVSS on TI AM65x SoCs.
 
+----------------------------------------------------------------
+Grygorii Strashko (2):
+      bindings: soc: ti: add documentation for k3 ringacc
+      soc: ti: k3: add navss ringacc driver
+
+ .../devicetree/bindings/soc/ti/k3-ringacc.txt      |   59 +
+ drivers/soc/ti/Kconfig                             |   11 +
+ drivers/soc/ti/Makefile                            |    1 +
+ drivers/soc/ti/k3-ringacc.c                        | 1157 ++++++++++++++++++++
+ include/linux/soc/ti/k3-ringacc.h                  |  244 +++++
+ 5 files changed, 1472 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
+ create mode 100644 drivers/soc/ti/k3-ringacc.c
+ create mode 100644 include/linux/soc/ti/k3-ringacc.h
 
 _______________________________________________
 linux-arm-kernel mailing list
