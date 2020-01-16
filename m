@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A3713F0A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:23:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 793DF13F0A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:23:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ek/KFqbfYHy6funfqqYYfXyhxETFhIUzCSYVk9419bc=; b=t9gbv2TDHYNEMD
-	80p0Mb94yiNm/fVZJ0vtS2K/J7fOj8w/KjMqXZk0XgF27eKvYlWUsmz3XyaN+Duxv5zUK/7DkAydU
-	/oUdRUrQVzi4+i+cdP9Y6LLPLyqohakARAKi06iJNO/89XKZsQ/rol9aZma7gCxtoSPd/X4sSGFOG
-	6ozhM86a0GqpxzAF2wjJIDxtWLBzEKn3hvDZ81ax/RTk3wIY+z32M7K/YLJ3q7n3rwQa9V7t3a82M
-	BBGaYZKTn+aEyjQCj0E67nPuarCNHEP5SZywkxgkjG6FaHklx9DwRvfjYMAVPry/rd3nYr1e2t6Nh
-	qD5sJnEorNKMqlPRfFbg==;
+	List-Owner; bh=Bi/9/zyD3rPiY/ss2TIMya/hWnO/WPCUiTsRvIAiTBA=; b=XT9D0W9li9lEoZ
+	a+azO53rA7egtXL06fpJ41K11pYJymkheKrJAYmKZ6y6JXXY40KdyI533+jea/XUY6a3T6epLufWM
+	SqSwXo3jHzkhmYfnfyiFlrsrWSlED7XwHOSyQMqyrMuGfEdQ0qu2h+ljN+sjJmJV++3oKqt3KX43P
+	fCNumhc/0EH3KJMi5FBmDLUQrTuNcIfGiJsUdcJG82dORXPebpK36Ka6N3/N/xtKCimjb3mon4hIm
+	S/VE+GFiVAqF0YwbBDPyJC9fP3lzm1gWxlF73NVzIO6TMdS9bNT2YAT4I1nRx/mDsysKRyuIKCz8Q
+	kc4UPzrTS6b4th+bvR6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9nL-0007pV-P0; Thu, 16 Jan 2020 18:23:03 +0000
+	id 1is9n6-0007Uy-5c; Thu, 16 Jan 2020 18:22:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is96k-0007kv-Ha; Thu, 16 Jan 2020 17:39:15 +0000
+ id 1is96l-0007lZ-PX
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:39:17 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5ACEC246D3;
- Thu, 16 Jan 2020 17:39:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C82D246EC;
+ Thu, 16 Jan 2020 17:39:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196341;
- bh=o3C1UqRWBfZVIx0bzO1LlqfFxxEUFh+GSgJl8fNvMHs=;
+ s=default; t=1579196342;
+ bh=SdRVim0Vj/KNpASzwZRjnWoFpu17oNX69dqvLIkzFMs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fZm6Szib2cphewupuzqjmmVY6NbK5TKE2x12bp5cGAtlZTTVwBnP60a/foaoT9Nx1
- YYuRY5c9ZAtKMl7/j4CAHW0qfzAfCn3MKhM4rhut0wcEoszE0iNtWMsCbkutl6bdhp
- CIbW7Mp7Rk7AGaj8juApiT1HnzmI+H2uofL1QkLc=
+ b=da5zVZmroXY92uQQewNVCb8EsnHnKQl2fljPFba69SzYPhElHGvH9fj99LRhnN77A
+ On+wBRioftaM1WjZ+ifR+fHbJU8SLsmGzTko3KhM/x1ss1XjwrwkT3Og7pgUyxqbXY
+ J0Ov7jKpsjyCxBTpEedVDcz9aeFZYwyE/yo+0aaQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 138/251] pwm: meson: Don't disable PWM when
- setting duty repeatedly
-Date: Thu, 16 Jan 2020 12:34:47 -0500
-Message-Id: <20200116173641.22137-98-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 139/251] ARM: riscpc: fix lack of keyboard
+ interrupts after irq conversion
+Date: Thu, 16 Jan 2020 12:34:48 -0500
+Message-Id: <20200116173641.22137-99-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093902_694049_75F3EEC5 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_093904_087150_30868730 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Bichao Zheng <bichao.zheng@amlogic.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-amlogic@lists.infradead.org,
+Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bichao Zheng <bichao.zheng@amlogic.com>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 
-[ Upstream commit a279345807e1e0ae79567a52cfdd9d30c9174a3c ]
+[ Upstream commit 63a0666bca9311f35017be454587f3ba903644b8 ]
 
-There is an abnormally low about 20ms,when setting duty repeatedly.
-Because setting the duty will disable PWM and then enable. Delete
-this operation now.
+Fix lack of keyboard interrupts for RiscPC due to incorrect conversion.
 
-Fixes: 211ed630753d2f ("pwm: Add support for Meson PWM Controller")
-Signed-off-by: Bichao Zheng <bichao.zheng@amlogic.com>
-[ Dropped code instead of hiding it behind a comment ]
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
+Fixes: e8d36d5dbb6a ("ARM: kill off set_irq_flags usage")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pwm/pwm-meson.c | 5 -----
- 1 file changed, 5 deletions(-)
+ arch/arm/mach-rpc/irq.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-index f58a4867b519..a196439ee14c 100644
---- a/drivers/pwm/pwm-meson.c
-+++ b/drivers/pwm/pwm-meson.c
-@@ -320,11 +320,6 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
- 	if (state->period != channel->state.period ||
- 	    state->duty_cycle != channel->state.duty_cycle ||
- 	    state->polarity != channel->state.polarity) {
--		if (channel->state.enabled) {
--			meson_pwm_disable(meson, pwm->hwpwm);
--			channel->state.enabled = false;
--		}
--
- 		if (state->polarity != channel->state.polarity) {
- 			if (state->polarity == PWM_POLARITY_NORMAL)
- 				meson->inverter_mask |= BIT(pwm->hwpwm);
+diff --git a/arch/arm/mach-rpc/irq.c b/arch/arm/mach-rpc/irq.c
+index 66502e6207fe..fce7fecbd8fa 100644
+--- a/arch/arm/mach-rpc/irq.c
++++ b/arch/arm/mach-rpc/irq.c
+@@ -117,7 +117,7 @@ extern unsigned char rpc_default_fiq_start, rpc_default_fiq_end;
+ 
+ void __init rpc_init_irq(void)
+ {
+-	unsigned int irq, clr, set = 0;
++	unsigned int irq, clr, set;
+ 
+ 	iomd_writeb(0, IOMD_IRQMASKA);
+ 	iomd_writeb(0, IOMD_IRQMASKB);
+@@ -129,6 +129,7 @@ void __init rpc_init_irq(void)
+ 
+ 	for (irq = 0; irq < NR_IRQS; irq++) {
+ 		clr = IRQ_NOREQUEST;
++		set = 0;
+ 
+ 		if (irq <= 6 || (irq >= 9 && irq <= 15))
+ 			clr |= IRQ_NOPROBE;
 -- 
 2.20.1
 
