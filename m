@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEA2E13E7E3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:28:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A192813E803
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:29:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qeEu1gd6/5RSVnOKQaROScichxNqVMjPmTprm5RRnsA=; b=oJyLzS/2c9GNQ3
-	fqXNISs5TlRnHAQGpDC0UljRy4II2v9IwmUeR10n8p2msiuEibjNSEWVGS9uti+9XX12waVeTxBce
-	ZIbKAtsNluTNsurLj35TqPYSEU7384CMIoavx8+hirL5W3inSrXavyVUFlKEig4Du+EDayqahxWWr
-	jw7FnVVjdtgHt+NsPBrEYnAnBIANLvJXh4/of1tCPbtT3eF12rRU9VsGEbOb2lFDYpkgAbPpC4xMK
-	j/9ri/ffeZC2zDbhpjQSOhwtZmZ9I3M/10R2PDQc5/6OTrJREljRWVbUCCIuLgphzBWTFEKPbpDGF
-	x3SFrsjlC7KpJOVqD0Rg==;
+	List-Owner; bh=cH6ttXJEFW9E1QuBghdY1vcbsW4HDI0FMOCWT5HanPU=; b=Z31iZyd1SMOE9m
+	/K1V10M0ewZY3oVITb6TeWHvPMyZKQPgWO9b8bAaj6Mv1WikcHZ4vwQkXA5kvctPxd5+IP/Qb1FVx
+	TPsT+PrzAf9Q3VgPscYrMIsa7ITKo9LCLkguRrBLFYcK8kDCH68a9DtZkd2nr7gdo8AZ0GAHvOsGa
+	lxTWVKZYoLn96S3H83NwH0QyJkVolrX5T12P8qw9M6BCZPcwhBBswPFNRXedfPSbRdZ/U5MuVc9My
+	341Dtx7PaVZ4ZqxvGEZioaCHB4RYaKZ1tsrX+g4RG0VuuhlLnarqrwz699VANDyRi4rI09J6p74aP
+	1Wi5KXxnAOD1E3e3CBig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8wq-0005s6-LF; Thu, 16 Jan 2020 17:28:48 +0000
+	id 1is8xh-0006cz-KP; Thu, 16 Jan 2020 17:29:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8dA-0001PL-23
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:08:30 +0000
+ id 1is8dB-0001Qr-Rc; Thu, 16 Jan 2020 17:08:35 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3629C206D9;
- Thu, 16 Jan 2020 17:08:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 79DA6217F4;
+ Thu, 16 Jan 2020 17:08:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194507;
- bh=FD8ZedaDnpHepCcE3/KmJTfI3S/G7ueYrQti2ixlsvw=;
+ s=default; t=1579194508;
+ bh=bT2x6OCeUenHIkUtd4svhUWmcGCenjYn9mnruQlTmak=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LcsTXLbvAAnLNTVe6sXeVOOAM1U72oE23z5jLm+ewsuT6ilf4tP3FtJmIV699ZJyK
- acHVuK2KUaRbQCkwGdZO/OAfZ2Kg186h+e1ikvuQJwIcbViZzs1l9QZp8BaHhJgIG0
- MPQDCjUoC156p0Rk2LgnNKL7H929CFX18xGs6glU=
+ b=QXUT9fN9EmIm3S5PsC4Dq61CNjYPIWUY0Fc+vtacAsMcTUxYfOSgDKqgmXF7xb+aQ
+ PMscmgK6qlHIJDOD+e3ZIPy8GxL73jqTjWkuQvaE+r9pFk39JYzuF0QX9rrCJBmsty
+ QyPvQdhWKx7bWaQYGc+mL9nHwhLdxSRWFKcNVhSA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 402/671] serial: stm32: fix a recursive locking
- in stm32_config_rs485
-Date: Thu, 16 Jan 2020 12:00:40 -0500
-Message-Id: <20200116170509.12787-139-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 403/671] arm64: dts: meson-gxm-khadas-vim2: fix
+ gpio-keys-polled node
+Date: Thu, 16 Jan 2020 12:00:41 -0500
+Message-Id: <20200116170509.12787-140-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090828_210754_66CA5677 
-X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-CacheID: sfid-20200116_090829_979948_C7BF4C60 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,52 +80,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Borut Seljak <borut.seljak@t-2.net>, linux-serial@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Borut Seljak <borut.seljak@t-2.net>
+From: Christian Hewitt <christianshewitt@gmail.com>
 
-[ Upstream commit 707aeea13a9c85520262e11899d86df3c4b48262 ]
+[ Upstream commit 0afd24c2fb61bd5163bab08ea1ee54d60d3ea37e ]
 
-Remove spin_lock_irqsave in stm32_config_rs485, it cause recursive locking.
-Already locked in uart_set_rs485_config.
+Fix DTC warnings:
 
-Fixes: 1bcda09d291081 ("serial: stm32: add support for RS485 hardware control mode")
-Signed-off-by: Borut Seljak <borut.seljak@t-2.net>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+meson-gxm-khadas-vim2.dtb: Warning (avoid_unnecessary_addr_size):
+   /gpio-keys-polled: unnecessary #address-cells/#size-cells
+	without "ranges" or child "reg" property
+
+Fixes: b8b74dda3908 ("ARM64: dts: meson-gxm: Add support for Khadas VIM2")
+Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Tested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/stm32-usart.c | 3 ---
- 1 file changed, 3 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 1334e4293977..d096e552176c 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -105,9 +105,7 @@ static int stm32_config_rs485(struct uart_port *port,
- 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
- 	u32 usartdiv, baud, cr1, cr3;
- 	bool over8;
--	unsigned long flags;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+index 782e9edac805..bfd3a510ff16 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+@@ -63,11 +63,9 @@
  
--	spin_lock_irqsave(&port->lock, flags);
- 	stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
+ 	gpio-keys-polled {
+ 		compatible = "gpio-keys-polled";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+ 		poll-interval = <100>;
  
- 	port->rs485 = *rs485conf;
-@@ -147,7 +145,6 @@ static int stm32_config_rs485(struct uart_port *port,
- 	}
- 
- 	stm32_set_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
--	spin_unlock_irqrestore(&port->lock, flags);
- 
- 	return 0;
- }
+-		button@0 {
++		power-button {
+ 			label = "power";
+ 			linux,code = <KEY_POWER>;
+ 			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_LOW>;
 -- 
 2.20.1
 
