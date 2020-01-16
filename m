@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC5F113F28B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:36:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D474213F2A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:37:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OIlHIhOqzwZAQ7s68NzHGzv1hFJHgx4pTYZvdNdXuW8=; b=XVGIZW7+e9WcUs
-	IMXQqz4oTPxFbdMtG7SFvgzBiftwqwrhTfv1Ftk2o3wHnh3ubL2uG/rJR+Pg/pz4FoTEwKoIoP7Sn
-	xDW5nyyz2eFdSGMEsWSzouELi+ThpL15YVa8IAXamRfAB6h+d0ewK/MXT2R4DXIorDcUUuxBf3KiT
-	WmxQgG8e4lshiFpIwXkk4B0fnxslfYFxNc6WaaVG1CWhbQvj/Q6oTODwuN11i586EDh4B8uvRUziB
-	Gj5ypKuqTex+Uj/jtSSxbVvqSakphGAN54s7V+itGBW58dvJcI7UcK68FOqahwleeiQT60plxDVRy
-	1ofCAviMp/P/KE3R7p9Q==;
+	List-Owner; bh=AWYRbLeM78JX00WqJltdtEuC4B8QA38rmoTPFyXAwfw=; b=Hq1KkdK7VvGxoH
+	57rRtYd4eMzbogRbhD4UD7Yb7ym6FIYkTWOfwS4u5IJrdKWoWNHj0EWrwtVPuJHIFr0BPfK4t5SQB
+	uTZ/2bKXt4n/5msLkm6mGkJ/EsSVPOmS7rDYwGiL5u9sTBnJZ7bLeS8F6aeuR58lQeUPTG8bF6JWa
+	BTZl3P+WbOa7QiNRCn+HWDJD/DWvsvQGWUm/w/R+CO2tshR/DII+PzhrBSweHnZJxBpiX1L5r+iOX
+	nUOBtsp9JJ3ynd6PWQ4kk4LOwWOUPsUZPsbO+Ct+JURPfDpyKnyDJJSLwIAGsCGtb1gzCY/X0aJOK
+	4fHhegFPzBdMHSgz6pAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isA01-0005ld-Ty; Thu, 16 Jan 2020 18:36:09 +0000
+	id 1isA0k-0006K6-8a; Thu, 16 Jan 2020 18:36:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9EN-00076K-WA
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:59 +0000
+ id 1is9FF-0007am-J8
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:47:55 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F022246E1;
- Thu, 16 Jan 2020 17:46:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E01792468D;
+ Thu, 16 Jan 2020 17:47:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196815;
- bh=g9FrjlnHZx2YHv0E1GAai0ePZg5VSIR3e6f0Xo8Hfx8=;
+ s=default; t=1579196868;
+ bh=qgwuVNNpFdCc0+ZOl5qpDoUQmhiEEmnb/2EBaZ+Or9Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QRF4GWYwu4KTn0wK6JqSUYnpny+8KzACx6jIDJ17e1cg0wXkOsa42jn5t85QAZqih
- A3g4GB7bOEbx2Pvnmc0VKCx7ssyg6vsPowSMuj3C1wVOP3lttu8Je0Pq7Z6LMwGBeV
- UrfEmujro2DbMUdZu4/vFQ/0C+J7D7cx6Ay07dyA=
-Date: Thu, 16 Jan 2020 17:46:49 +0000
+ b=zhPIL1EXrxLJ9zQQ7bEFkZWA7AWqtAjYqdQSmnvfZjye2DRhfSFwsSLLTYMu9V0Mg
+ eQ/3fUbX8BTSoHXiW8WhIQt+1erUB/4740KmjBBJkoodYcsgRVRzY54PCjVGThuSlb
+ cpFRRfHtCiwi8f5mqkZlFMK+vFG/zTgB9EQpSWx0=
+Date: Thu, 16 Jan 2020 17:47:43 +0000
 From: Will Deacon <will@kernel.org>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v6 12/15] arm64: vdso: disable Shadow Call Stack
-Message-ID: <20200116174648.GE21396@willie-the-truck>
+Subject: Re: [PATCH v6 13/15] arm64: disable SCS for hypervisor code
+Message-ID: <20200116174742.GF21396@willie-the-truck>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-13-samitolvanen@google.com>
+ <20191206221351.38241-14-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191206221351.38241-13-samitolvanen@google.com>
+In-Reply-To: <20191206221351.38241-14-samitolvanen@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094656_233596_8098916E 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20200116_094749_751683_9425B5E2 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,31 +94,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 02:13:48PM -0800, Sami Tolvanen wrote:
-> Shadow stacks are only available in the kernel, so disable SCS
-> instrumentation for the vDSO.
+On Fri, Dec 06, 2019 at 02:13:49PM -0800, Sami Tolvanen wrote:
+> Filter out CC_FLAGS_SCS for code that runs at a different exception
+> level.
 > 
+> Suggested-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 > Reviewed-by: Kees Cook <keescook@chromium.org>
 > Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 > ---
->  arch/arm64/kernel/vdso/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  arch/arm64/kvm/hyp/Makefile | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-> index dd2514bb1511..a87a4f11724e 100644
-> --- a/arch/arm64/kernel/vdso/Makefile
-> +++ b/arch/arm64/kernel/vdso/Makefile
-> @@ -25,7 +25,7 @@ ccflags-y += -DDISABLE_BRANCH_PROFILING
->  
->  VDSO_LDFLAGS := -Bsymbolic
->  
-> -CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
-> +CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
+> diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+> index ea710f674cb6..17ea3da325e9 100644
+> --- a/arch/arm64/kvm/hyp/Makefile
+> +++ b/arch/arm64/kvm/hyp/Makefile
+> @@ -28,3 +28,6 @@ GCOV_PROFILE	:= n
+>  KASAN_SANITIZE	:= n
+>  UBSAN_SANITIZE	:= n
+>  KCOV_INSTRUMENT	:= n
+> +
+> +# remove the SCS flags from all objects in this directory
+> +KBUILD_CFLAGS := $(filter-out $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
 
-Should we be removing -ffixed-x18 too, or does that not propagate here
-anyway?
+Same comment as for the vDSO; can we remove the -ffixed-x18 as well?
 
 Will
 
