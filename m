@@ -2,64 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0EEC13E433
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:07:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 644A513E5D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:17:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fnGivzXXngHi3hqnJBvHSicOJD3ApU7RS99/g5gh6uk=; b=Rv8PVgXMs0xKUP
-	X9/0nKLF+aezI5vg/N3rj8weesbWOhdgYCHDsYdadA2IZF8bSqn0ygX7dGjAj0M2N3rN+9yBNX68l
-	/wGTUmqF9UrVxmC1BTeWp6RLFa1C49TmRjpJg72zlJEYCmC0Z21wO8tM5jgitAnID+4BrlCAgtVEe
-	9r/PvsKYzWVxEMAefxayU41thht6c7/1/YR5X/7pSobq7bcuKxl7e3m+Sg+xIDO27WCUlyTHQtyFk
-	H/gp9MkyIetVuVtZmTMXQQKSfLzvZBdxIEQvrXIFGm5LAWfl6lOOETDasNtr2Bkhw8BXxxdq5T7d2
-	5nN2cP2eVXqTeOYB1SDQ==;
+	List-Owner; bh=PUlnDQSCnfDKE+tw3gOIHOOwfV2CApIJ/vNe0/dx33U=; b=BMagxHjocKC1Yx
+	MPdBp4sOcZfCN4si2KnITu/0FrWVAOvo90j9AB0Vck5shfuCAn9YORIuFdYQwmVRijXRtjnE7h3N0
+	y1qkK6jsSqBZmXrwrm+/l0LlQ1Ygqc4IgUCIFagPdJ216Mo68Gbsu3xiYmX8RV//Zuz6D5Q1DK6+p
+	WuKM3vJR8ozxort/feOa58Jmn+DAKxt1Zn5DRnGjUsp7WMJbh+HkSNQMd/cXfAPmRXcG7daGjOngn
+	enKFuJAndldX6pV2DqWB+cU1nj6MLeH17lHueC5c/RaiyCHKyDMeldcIz+EWYrbxiIGtJ3BcsG7+h
+	YgSlPgmoopYqCpiWf5Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8bv-0008Sh-MJ; Thu, 16 Jan 2020 17:07:11 +0000
+	id 1is8mE-0002td-Ob; Thu, 16 Jan 2020 17:17:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8T8-0005q6-1w
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:58:11 +0000
-Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
- [209.85.222.182])
+ id 1is8aE-0007D7-NU
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:31 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 82B5024684
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 16:58:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CA9AC20730;
+ Thu, 16 Jan 2020 17:05:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193885;
- bh=mUweAMVypJo+2Qt6WzkOfVhn+oq0IArKgBNTZFBnqkw=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=2wFjXT0Pq2EuJbk/P05xl4xR6gMDkwetatXvt108733az1DkBT6mRri7R5tSXnjN6
- KIwqvK9AXNzsrevu+yjMRgl788Z5wWbDfg+e9+AQYPeS46/GFDATEIJ6bQk6BHqAVq
- tnrOGxLwC6r2xw+HxyIbry34FiI1M7nFgNul8QaM=
-Received: by mail-qk1-f182.google.com with SMTP id 21so19789939qky.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 08:58:05 -0800 (PST)
-X-Gm-Message-State: APjAAAVxYc+7rPWhzNyTaOJC8femh1eV7R2YZSitkbSBJ3wNUgXAG9r3
- 690eTcnMIz8WfMpnm/s1opHRp8yodQWuYASqzw==
-X-Google-Smtp-Source: APXvYqwC+x9ZFUTuJ8IAtD0zmHx0Fa92Ih8jDQln7Ixg74RvyqEOjCxQDJ3uuqLRitWcoYQQlsfdpB8P/fJ9kfJ8T/w=
-X-Received: by 2002:a37:a70b:: with SMTP id q11mr28679213qke.393.1579193884407; 
- Thu, 16 Jan 2020 08:58:04 -0800 (PST)
+ s=default; t=1579194324;
+ bh=9Rn4GRxm6QBiuv9AcsOIb6ehnEHzVQPYhQyM2Vj24mQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=x1rUvPM7F7zTHEUjFprHnEUz+CEpcrsu0TvVtab3+Bi1EO0j5+/VtVE0kAFw2QSHJ
+ ph7Q9WUeZyJHELT3a1j1du7dJHdp9TeFNHfNc0GsHb41JY99FCLUasd8J9teaY/0n5
+ BdZqwqDkjCHfasLBNkz86/YeQnVtMejeT/IzIHsM=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.19 273/671] soc/fsl/qe: Fix an error code in
+ qe_pin_request()
+Date: Thu, 16 Jan 2020 11:58:31 -0500
+Message-Id: <20200116170509.12787-10-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
+References: <20200116170509.12787-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20200113143924.11576-1-robh@kernel.org>
- <2ee87a12-1a0e-bd48-0209-b5e205342d44@redhat.com>
- <CAL_JsqKrh0nLuoRgi1-bKyEErwCFpWPRPNVDuoeJrbFMCz60KQ@mail.gmail.com>
- <bc72f4c5-de47-8684-c7d5-0e60a4a78ee2@redhat.com>
-In-Reply-To: <bc72f4c5-de47-8684-c7d5-0e60a4a78ee2@redhat.com>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 16 Jan 2020 10:57:52 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+fwdLfxgW=aoMNySrKunSgtC+i5ttsn1vCdR2p4BMPfA@mail.gmail.com>
-Message-ID: <CAL_Jsq+fwdLfxgW=aoMNySrKunSgtC+i5ttsn1vCdR2p4BMPfA@mail.gmail.com>
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation support
-To: Auger Eric <eric.auger@redhat.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085806_157459_7D717BE0 
-X-CRM114-Status: GOOD (  23.89  )
+X-CRM114-CacheID: sfid-20200116_090526_948058_4A65B7F7 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,79 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, Dan Carpenter <dan.carpenter@oracle.com>,
+ Li Yang <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 10:33 AM Auger Eric <eric.auger@redhat.com> wrote:
->
-> Hi Rob,
->
-> On 1/15/20 3:02 PM, Rob Herring wrote:
-> > On Wed, Jan 15, 2020 at 3:21 AM Auger Eric <eric.auger@redhat.com> wrote:
-> >>
-> >> Hi Rob,
-> >>
-> >> On 1/13/20 3:39 PM, Rob Herring wrote:
-> >>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
-> >>> Support for range invalidate is determined by the RIL bit in the IDR3
-> >>> register.
-> >>>
-> >>> The range invalidate is in units of the leaf page size and operates on
-> >>> 1-32 chunks of a power of 2 multiple pages. First we determine from the
-> >>> size what power of 2 multiple we can use and then adjust the granule to
-> >>> 32x that size.
+From: Dan Carpenter <dan.carpenter@oracle.com>
 
-> >>> @@ -2022,12 +2043,39 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
-> >>>               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
-> >>>       }
-> >>>
-> >>> +     if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-> >>> +             unsigned long tg, scale;
-> >>> +
-> >>> +             /* Get the leaf page size */
-> >>> +             tg = __ffs(smmu_domain->domain.pgsize_bitmap);
-> >> it is unclear to me why you can't set tg with the granule parameter.
-> >
-> > granule could be 2MB sections if THP is enabled, right?
->
-> Ah OK I thought it was a page size and not a block size.
->
-> I requested this feature a long time ago for virtual SMMUv3. With
-> DPDK/VFIO the guest was sending page TLB invalidation for each page
-> (granule=4K or 64K) part of the hugepage buffer and those were trapped
-> by the VMM. This stalled qemu.
+[ Upstream commit 5674a92ca4b7e5a6a19231edd10298d30324cd27 ]
 
-I did some more testing to make sure THP is enabled, but haven't been
-able to get granule to be anything but 4K. I only have the Fast Model
-with AHCI on PCI to test this with. Maybe I'm hitting some place where
-THPs aren't supported yet.
+We forgot to set "err" on this error path.
 
-> >>> +             /* Determine the power of 2 multiple number of pages */
-> >>> +             scale = __ffs(size / (1UL << tg));
-> >>> +             cmd.tlbi.scale = scale;
-> >>> +
-> >>> +             cmd.tlbi.num = CMDQ_TLBI_RANGE_NUM_MAX - 1;
-> >> Also could you explain why you use CMDQ_TLBI_RANGE_NUM_MAX.
-> >
-> > How's this:
-> > /* The invalidation loop defaults to the maximum range */
-> I would have expected num=0 directly. Don't we invalidate the &size in
-> one shot as 2^scale * pages of granularity @tg? I fail to understand
-> when NUM > 0.
+Fixes: 1a2d397a6eb5 ("gpio/powerpc: Eliminate duplication of of_get_named_gpio_flags()")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Li Yang <leoyang.li@nxp.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/soc/fsl/qe/gpio.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-NUM is > 0 anytime size is not a power of 2. For example, if size is
-33 pages, then it takes 2 loops doing 32 pages and then 1 page. If
-size is 34 pages, then NUM is (17-1) and SCALE is 1.
+diff --git a/drivers/soc/fsl/qe/gpio.c b/drivers/soc/fsl/qe/gpio.c
+index 819bed0f5667..51b3a47b5a55 100644
+--- a/drivers/soc/fsl/qe/gpio.c
++++ b/drivers/soc/fsl/qe/gpio.c
+@@ -179,8 +179,10 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
+ 	if (err < 0)
+ 		goto err0;
+ 	gc = gpio_to_chip(err);
+-	if (WARN_ON(!gc))
++	if (WARN_ON(!gc)) {
++		err = -ENODEV;
+ 		goto err0;
++	}
+ 
+ 	if (!of_device_is_compatible(gc->of_node, "fsl,mpc8323-qe-pario-bank")) {
+ 		pr_debug("%s: tried to get a non-qe pin\n", __func__);
+-- 
+2.20.1
 
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
