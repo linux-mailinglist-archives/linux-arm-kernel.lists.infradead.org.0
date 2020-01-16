@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B281F13E36A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:02:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7852D13E37F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:02:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kQ6H0WNmnP2TMa5ENVDeDap66tlPnQnbrUjpSryJ6bM=; b=qzVoE46eMyU9E0
-	MrZ0CGKZ4yusg1wpXQPZeW3VXBj55X2les+K+K2usXSeJsSpaadWFp1f/bdYmnbPHndyY0SopfdcN
-	D67dC5UMrb2LVGkIdBbqfEtZNNnE06c5UAUtjassg+LqX8cjTYTdIgVz95L4uHVnwxg8j9eogTgY+
-	A0IsCuZjW+0Xap4lUlAxo6l3iyN1MP41hGHFjes0zl4HHxfwP6C22jhyZWPcQcCTosNU1pZAAnBCr
-	skRdyESZwF6bXimafGOxVjEgJeT+5gjW23eT2WuJUjgI8DljYyHSdH3kGNQo+f2+iEA/54VPrYlQY
-	gNP6gmiAst2tjWslVp+g==;
+	List-Owner; bh=Y0poNOGgSa4p3Eu4S67dp7IdlbCiDDBGXN/oyU1uz1w=; b=d53ollXHI1qdUo
+	RR5tB4/oGRGMcO8YMbgVkNByCHnCd5nbJFN0WpYcSGUU5m1RfY3IzGaglNSzldl9JdfKx7U3nsQP3
+	Qe89GkgIoLa9CA+9jL67hsQhZNC+Cdhnk7d4lYaUKXtTHDXF73DsS2laPR/EqJPfjYF318htD+Jl8
+	rg8ik3SGh9EmfZ4HetEoq9DBU6TLP4wQ3miy55+rYAA+jV4BodJ6p5pORoWXwO9TBiP/wwuB/n8X6
+	2tgI9+9o+l72IcIeDzHvunRelr1yq50Wa2NvKXVDUvwxoSKWILZ44ncGjqTynqj3nxZBWg9njXogE
+	t/S4TOpqDPi9wMPKmaDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Wq-0001lX-24; Thu, 16 Jan 2020 17:01:56 +0000
+	id 1is8XC-00020i-GH; Thu, 16 Jan 2020 17:02:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Qy-0003dv-Re
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:55:56 +0000
+ id 1is8R6-0003pR-TF; Thu, 16 Jan 2020 16:56:03 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6AA70205F4;
- Thu, 16 Jan 2020 16:55:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E47024686;
+ Thu, 16 Jan 2020 16:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193752;
- bh=iTZ3/mJbUdvgbPjh50KeuMkSDpA6gvzu10MlVUhBkFU=;
+ s=default; t=1579193760;
+ bh=XoiEwqxvpeLhk9E4C1EKhmXW0UDLXNfpdqqjLrAjmdE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fY9OI06C20zNRd6kpxMKAzgl4ydmIe71Hd05zn80cwe1PczRrN03cFV7bSu8uFlz/
- T1SIfPnPYyglFFLxuY47Hq4E3LP9A4eOOPOMrvZRu4102RcMu2rtL0T9lGfrd2Hixl
- npwFyfOVagYsYciLNZjR/ciXRXDnWZaiBVxFEpLY=
+ b=ejLHpXwp46YTrKpYv/kYM6YxKZ2l725kFcD6gJMLEba3p2P4FK7dJBZzpCCr0gVN9
+ pf4o+uv6MnCERgAEeJqPBuqGzy6tRAkE/K/mPvw3y71LjgHElAKgROMwEs4RP5m8Ln
+ ObGPGHVwXWrjK+djzAHqjK7531B9rQRSixPw+XEk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 041/671] drm/sun4i: hdmi: Fix double flag
- assignation
-Date: Thu, 16 Jan 2020 11:44:32 -0500
-Message-Id: <20200116165502.8838-41-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 047/671] ARM: dts: bcm283x: Correct mailbox
+ register sizes
+Date: Thu, 16 Jan 2020 11:44:38 -0500
+Message-Id: <20200116165502.8838-47-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085552_919288_9849DB44 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200116_085601_028390_6C9DAA9D 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,49 +79,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- Giulio Benetti <giulio.benetti@micronovasrl.com>,
- Dan Carpenter <dan.carpenter@oracle.com>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, Sasha Levin <sashal@kernel.org>,
+ devicetree@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
+From: Phil Elwell <phil@raspberrypi.org>
 
-[ Upstream commit 1e0ff648940e603cab6c52cf3723017d30d78f30 ]
+[ Upstream commit 227fa865061470a568858baa404a508f6c030fe4 ]
 
-The is_double flag is a boolean currently assigned to the value of the d
-variable, that is either 1 or 2. It means that this is_double variable is
-always set to true, even though the initial intent was to have it set to
-true when d is 2.
+The size field in a Device Tree "reg" property is encoded in bytes, not
+words.
 
-Fix this.
-
-Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
-Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Reviewed-by: Giulio Benetti <giulio.benetti@micronovasrl.com>
-Link: https://patchwork.freedesktop.org/patch/msgid/20181021163446.29135-2-maxime.ripard@bootlin.com
+Fixes: 614fa22119d6 ("ARM: dts: bcm2835: Add VCHIQ node to the Raspberry Pi boards. (v3)")
+Signed-off-by: Phil Elwell <phil@raspberrypi.org>
+Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
+Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c | 2 +-
+ arch/arm/boot/dts/bcm2835-rpi.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
-index 3ecffa52c814..a74adec6c5dc 100644
---- a/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
-@@ -52,7 +52,7 @@ static unsigned long sun4i_tmds_calc_divider(unsigned long rate,
- 			    (rate - tmp_rate) < (rate - best_rate)) {
- 				best_rate = tmp_rate;
- 				best_m = m;
--				is_double = d;
-+				is_double = (d == 2) ? true : false;
- 			}
- 		}
- 	}
+diff --git a/arch/arm/boot/dts/bcm2835-rpi.dtsi b/arch/arm/boot/dts/bcm2835-rpi.dtsi
+index cb2d6d78a7fb..c481eab1bd7c 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi.dtsi
++++ b/arch/arm/boot/dts/bcm2835-rpi.dtsi
+@@ -32,7 +32,7 @@
+ 
+ 		mailbox@7e00b840 {
+ 			compatible = "brcm,bcm2835-vchiq";
+-			reg = <0x7e00b840 0xf>;
++			reg = <0x7e00b840 0x3c>;
+ 			interrupts = <0 2>;
+ 		};
+ 	};
 -- 
 2.20.1
 
