@@ -2,150 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE4E113EC05
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:54:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AE8113EC17
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:55:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OORrJKoK5PMNZolPQqgZh3ylIRnWigjFqCoOZPPGMoo=; b=IVBN7DZ96s3qWK
-	1bEnnWyfLqoVNrdPS+CgnyQPVNhBAPQCv+Qv2r6TZ4kaGxwM9paZ9f6FchpB1R2VMY/j+95A8izc/
-	RvRIATUzmh4eFExfdp5HCkI6twqqrNQOMTlXvEZl9QpNyP4pT/1m9e03gQQlsHsmg0ti2BVpXah88
-	pIoHWriaYCZnaYj/Ff1WJd78BFJqmnPK+kHi6awyjQ/7TpbgvyO2Uzaf8P/OGMiYuStjUaXBmI3sW
-	KZIJo5jCMFeB9NP6QsSEEu/fkZOI8SUawDCF7RNL/xU3gU3p0ArcO88jW5ziqbQcG46TXa0EL5RNU
-	1BPgCPYvPWG8425H4A9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Nk+CBoFrpD09BY6R2FFIUoEFPZ2DbmXQs7UmhLPo00Y=; b=NyU2bvwAjtJ9Eg
+	Asc8wGOgMYQLK4KLrII/zSyHrttamQgaroqOfuxkedqTfzjvAwjc54F9hAt4ru9DbOK3yHxHrnGiU
+	xOMUhdmuZ527BC2WDO0fxJcgpOKOYaTpJbC9J5k0S2tL4kC0xvbvZgMdzPJsZ/q26pQrIQvgPfa3N
+	fwwu0KmmfPe4D6W88G2g6wm6YRvFbpULKbwPQY3Ze6oamGMIwYOV9JlmcuowjoEf1Ym1Hb9ciw3q1
+	C9vaHpYsKg775VOgnwKk3O7OsYwFjyZeMilb82o6nSBqsExv1ga9Y6YUcWtkbMZVEUCMbCkdCXP/2
+	rd9FtrM3fB40+S/kVf8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Lh-0005GG-HP; Thu, 16 Jan 2020 17:54:29 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1is9M0-0005Y4-MI; Thu, 16 Jan 2020 17:54:48 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8pd-0007C8-HS; Thu, 16 Jan 2020 17:21:26 +0000
-Received: by mail-ed1-x541.google.com with SMTP id e10so19618741edv.9;
- Thu, 16 Jan 2020 09:21:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Tw8NsnmR4kcw+hP98W/Jy0O0uiiC3aWlNGFN70XyALg=;
- b=UVNx+tOviuEbk2SCcXlYPYMzQ64BG8RTzCKI95dVFIp2TlgU/lOAc5I2cLZrup5Ib0
- DbZz6g8sH6J7+6CW+X/WxETb6goFBorDosDy7hjRIqJ77oCAYCvBYi0bWdPLy4RIIZoz
- t2vGulvy0/zY965iBVSdXIf4ctgXzSWRsXGfx6jJHjv1XbgNrdkRlAKCdvnuPDTojCRg
- hpUAVgtBkxocx+l+1mdIW2CNLRTR8pvDLP8soc4sftwC9kDyT1Z5/43JUPRPPp8h6JD/
- XRuOu4YxBGZkxhwx+xEW9sh4QCsdW6pP3ZvzswNaJeeEiqksrmMiwvLl510570RarEJg
- IKqQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Tw8NsnmR4kcw+hP98W/Jy0O0uiiC3aWlNGFN70XyALg=;
- b=SFAbcwNvePvq5KWwxR1VgJBjTVPpc9XjKBFyEvC9mxOMq0eDhRA0CvBUuI5zjYYB3P
- 0ltwlCVuhJTqzz99ZmyqfbFMDRkK/n/m9ZFPPDhrsA3bUu1vXAqdDCD+nTIB9sy1AubP
- ae760hjIcCHBeM6Ysy+kRK9x1mITjaMXHMAn8Wq/DHgJY1BxkVbcTsoewZzh22k/IUy0
- 1bf41i9YEQrXUutLsyrqWq+JLGOwDcb5hmFL134PsIJIM14/8Suuwh1jqUxSaRhrMemQ
- c1UrxNa7WTCxU+7p+ZHF64m5xgkfAwWQ1XueWMggX1uW8xRQQw9HKbVKl8zy0r4uYAcE
- sRiQ==
-X-Gm-Message-State: APjAAAXvKF8h3qBk5tsJRMnbWdXz3yNM06X3x5YfpYwdv8igfmuMKsw7
- xfzuJcD2QoXuiodVi8NeLijjpMCy
-X-Google-Smtp-Source: APXvYqx93w6Uji0Sbym+Yi7GJyGPKQfrcK3/1/XdOQfTpcBniz3nafVrrvHrxlNGPEVfW/I/erMumg==
-X-Received: by 2002:aa7:df93:: with SMTP id b19mr32256568edy.349.1579195279390; 
- Thu, 16 Jan 2020 09:21:19 -0800 (PST)
-Received: from [10.67.50.41] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id r9sm824749ejx.31.2020.01.16.09.21.15
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Jan 2020 09:21:18 -0800 (PST)
-Subject: Re: [PATCH v5 6/6] arm64: defconfig: Enable Broadcom's STB PCIe
- controller
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, andrew.murray@arm.com,
- maz@kernel.org, linux-kernel@vger.kernel.org
-References: <20191216110113.30436-1-nsaenzjulienne@suse.de>
- <20191216110113.30436-7-nsaenzjulienne@suse.de>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <5375fb88-24dc-24eb-f08e-6ed9a3732040@gmail.com>
-Date: Thu, 16 Jan 2020 09:21:14 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1is8rj-0000uz-OI
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:23:37 +0000
+X-Originating-IP: 90.65.102.129
+Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 92428E0006;
+ Thu, 16 Jan 2020 17:23:20 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH] clk: at91: add at91sam9n12 pmc driver
+Date: Thu, 16 Jan 2020 18:23:16 +0100
+Message-Id: <20200116172316.426703-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <20191216110113.30436-7-nsaenzjulienne@suse.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092121_612156_7E7706F3 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_092332_110211_EF7C17BD 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,23 +62,285 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mbrugger@suse.com, linux-pci@vger.kernel.org, phil@raspberrypi.org,
- jeremy.linton@arm.com, wahrenst@gmx.net, james.quinlan@broadcom.com,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ =?UTF-8?q?Karl=20Rudb=C3=A6k=20Olsen?= <karl@micro-technic.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/16/19 3:01 AM, Nicolas Saenz Julienne wrote:
-> For now mainly used in the Raspberry Pi 4.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Add a driver for the PMC clocks of the at91sam9n12 family.
 
-Applied to defconfig-arm64/next, thanks!
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
+ drivers/clk/at91/Makefile      |   3 +-
+ drivers/clk/at91/at91sam9n12.c | 238 +++++++++++++++++++++++++++++++++
+ 2 files changed, 240 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/clk/at91/at91sam9n12.c
+
+diff --git a/drivers/clk/at91/Makefile b/drivers/clk/at91/Makefile
+index 3732241352ce..d467c6f8650a 100644
+--- a/drivers/clk/at91/Makefile
++++ b/drivers/clk/at91/Makefile
+@@ -15,7 +15,8 @@ obj-$(CONFIG_HAVE_AT91_H32MX)		+= clk-h32mx.o
+ obj-$(CONFIG_HAVE_AT91_GENERATED_CLK)	+= clk-generated.o
+ obj-$(CONFIG_HAVE_AT91_I2S_MUX_CLK)	+= clk-i2s-mux.o
+ obj-$(CONFIG_HAVE_AT91_SAM9X60_PLL)	+= clk-sam9x60-pll.o
+-obj-$(CONFIG_SOC_AT91SAM9) += at91sam9260.o at91sam9rl.o at91sam9x5.o
++obj-$(CONFIG_SOC_AT91SAM9) += at91sam9260.o at91sam9rl.o
++obj-$(CONFIG_SOC_AT91SAM9) += at91sam9n12.o at91sam9x5.o
+ obj-$(CONFIG_SOC_SAM9X60) += sam9x60.o
+ obj-$(CONFIG_SOC_SAMA5D4) += sama5d4.o
+ obj-$(CONFIG_SOC_SAMA5D2) += sama5d2.o
+diff --git a/drivers/clk/at91/at91sam9n12.c b/drivers/clk/at91/at91sam9n12.c
+new file mode 100644
+index 000000000000..8bb39d2ba84b
+--- /dev/null
++++ b/drivers/clk/at91/at91sam9n12.c
+@@ -0,0 +1,238 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <linux/clk-provider.h>
++#include <linux/mfd/syscon.h>
++#include <linux/slab.h>
++
++#include <dt-bindings/clock/at91.h>
++
++#include "pmc.h"
++
++static const struct clk_master_characteristics mck_characteristics = {
++	.output = { .min = 0, .max = 133333333 },
++	.divisors = { 1, 2, 4, 3 },
++	.have_div3_pres = 1,
++};
++
++static u8 plla_out[] = { 0, 1, 2, 3, 0, 1, 2, 3 };
++
++static u16 plla_icpll[] = { 0, 0, 0, 0, 1, 1, 1, 1 };
++
++static const struct clk_range plla_outputs[] = {
++	{ .min = 745000000, .max = 800000000 },
++	{ .min = 695000000, .max = 750000000 },
++	{ .min = 645000000, .max = 700000000 },
++	{ .min = 595000000, .max = 650000000 },
++	{ .min = 545000000, .max = 600000000 },
++	{ .min = 495000000, .max = 555000000 },
++	{ .min = 445000000, .max = 500000000 },
++	{ .min = 400000000, .max = 450000000 },
++};
++
++static const struct clk_pll_characteristics plla_characteristics = {
++	.input = { .min = 2000000, .max = 32000000 },
++	.num_output = ARRAY_SIZE(plla_outputs),
++	.output = plla_outputs,
++	.icpll = plla_icpll,
++	.out = plla_out,
++};
++
++static u8 pllb_out[] = { 0 };
++
++static const struct clk_range pllb_outputs[] = {
++	{ .min = 30000000, .max = 100000000 },
++};
++
++static const struct clk_pll_characteristics pllb_characteristics = {
++	.input = { .min = 2000000, .max = 32000000 },
++	.num_output = ARRAY_SIZE(pllb_outputs),
++	.output = pllb_outputs,
++	.out = pllb_out,
++};
++
++static const struct {
++	char *n;
++	char *p;
++	u8 id;
++} at91sam9n12_systemck[] = {
++	{ .n = "ddrck", .p = "masterck", .id = 2 },
++	{ .n = "lcdck", .p = "masterck", .id = 3 },
++	{ .n = "uhpck", .p = "usbck",    .id = 6 },
++	{ .n = "udpck", .p = "usbck",    .id = 7 },
++	{ .n = "pck0",  .p = "prog0",    .id = 8 },
++	{ .n = "pck1",  .p = "prog1",    .id = 9 },
++};
++
++static const struct clk_pcr_layout at91sam9n12_pcr_layout = {
++	.offset = 0x10c,
++	.cmd = BIT(12),
++	.pid_mask = GENMASK(5, 0),
++	.div_mask = GENMASK(17, 16),
++};
++
++struct pck {
++	char *n;
++	u8 id;
++};
++
++static const struct pck at91sam9n12_periphck[] = {
++	{ .n = "pioAB_clk",  .id = 2, },
++	{ .n = "pioCD_clk",  .id = 3, },
++	{ .n = "fuse_clk",   .id = 4, },
++	{ .n = "usart0_clk", .id = 5, },
++	{ .n = "usart1_clk", .id = 6, },
++	{ .n = "usart2_clk", .id = 7, },
++	{ .n = "usart3_clk", .id = 8, },
++	{ .n = "twi0_clk",   .id = 9, },
++	{ .n = "twi1_clk",   .id = 10, },
++	{ .n = "mci0_clk",   .id = 12, },
++	{ .n = "spi0_clk",   .id = 13, },
++	{ .n = "spi1_clk",   .id = 14, },
++	{ .n = "uart0_clk",  .id = 15, },
++	{ .n = "uart1_clk",  .id = 16, },
++	{ .n = "tcb_clk",    .id = 17, },
++	{ .n = "pwm_clk",    .id = 18, },
++	{ .n = "adc_clk",    .id = 19, },
++	{ .n = "dma0_clk",   .id = 20, },
++	{ .n = "uhphs_clk",  .id = 22, },
++	{ .n = "udphs_clk",  .id = 23, },
++	{ .n = "lcdc_clk",   .id = 25, },
++	{ .n = "sha_clk",    .id = 27, },
++	{ .n = "ssc0_clk",   .id = 28, },
++	{ .n = "aes_clk",    .id = 29, },
++	{ .n = "trng_clk",   .id = 30, },
++};
++
++static void __init at91sam9n12_pmc_setup(struct device_node *np)
++{
++	struct clk_range range = CLK_RANGE(0, 0);
++	const char *slck_name, *mainxtal_name;
++	struct pmc_data *at91sam9n12_pmc;
++	const char *parent_names[6];
++	struct regmap *regmap;
++	struct clk_hw *hw;
++	int i;
++	bool bypass;
++
++	i = of_property_match_string(np, "clock-names", "slow_clk");
++	if (i < 0)
++		return;
++
++	slck_name = of_clk_get_parent_name(np, i);
++
++	i = of_property_match_string(np, "clock-names", "main_xtal");
++	if (i < 0)
++		return;
++	mainxtal_name = of_clk_get_parent_name(np, i);
++
++	regmap = syscon_node_to_regmap(np);
++	if (IS_ERR(regmap))
++		return;
++
++	at91sam9n12_pmc = pmc_data_allocate(PMC_MAIN + 1,
++					   nck(at91sam9n12_systemck), 31, 0);
++	if (!at91sam9n12_pmc)
++		return;
++
++	hw = at91_clk_register_main_rc_osc(regmap, "main_rc_osc", 12000000,
++					   50000000);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	bypass = of_property_read_bool(np, "atmel,osc-bypass");
++
++	hw = at91_clk_register_main_osc(regmap, "main_osc", mainxtal_name,
++					bypass);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = "main_rc_osc";
++	parent_names[1] = "main_osc";
++	hw = at91_clk_register_sam9x5_main(regmap, "mainck", parent_names, 2);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	at91sam9n12_pmc->chws[PMC_MAIN] = hw;
++
++	hw = at91_clk_register_pll(regmap, "pllack", "mainck", 0,
++				   &at91rm9200_pll_layout, &plla_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	hw = at91_clk_register_plldiv(regmap, "plladivck", "pllack");
++	if (IS_ERR(hw))
++		goto err_free;
++
++	hw = at91_clk_register_pll(regmap, "pllbck", "mainck", 1,
++				   &at91rm9200_pll_layout, &pllb_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = slck_name;
++	parent_names[1] = "mainck";
++	parent_names[2] = "plladivck";
++	parent_names[3] = "pllbck";
++	hw = at91_clk_register_master(regmap, "masterck", 4, parent_names,
++				      &at91sam9x5_master_layout,
++				      &mck_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	at91sam9n12_pmc->chws[PMC_MCK] = hw;
++
++	hw = at91sam9n12_clk_register_usb(regmap, "usbck", "pllbck");
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = slck_name;
++	parent_names[1] = "mainck";
++	parent_names[2] = "plladivck";
++	parent_names[3] = "pllbck";
++	parent_names[4] = "masterck";
++	for (i = 0; i < 2; i++) {
++		char name[6];
++
++		snprintf(name, sizeof(name), "prog%d", i);
++
++		hw = at91_clk_register_programmable(regmap, name,
++						    parent_names, 5, i,
++						    &at91sam9x5_programmable_layout);
++		if (IS_ERR(hw))
++			goto err_free;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(at91sam9n12_systemck); i++) {
++		hw = at91_clk_register_system(regmap, at91sam9n12_systemck[i].n,
++					      at91sam9n12_systemck[i].p,
++					      at91sam9n12_systemck[i].id);
++		if (IS_ERR(hw))
++			goto err_free;
++
++		at91sam9n12_pmc->shws[at91sam9n12_systemck[i].id] = hw;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(at91sam9n12_periphck); i++) {
++		hw = at91_clk_register_sam9x5_peripheral(regmap, &pmc_pcr_lock,
++							 &at91sam9n12_pcr_layout,
++							 at91sam9n12_periphck[i].n,
++							 "masterck",
++							 at91sam9n12_periphck[i].id,
++							 &range);
++		if (IS_ERR(hw))
++			goto err_free;
++
++		at91sam9n12_pmc->phws[at91sam9n12_periphck[i].id] = hw;
++	}
++
++	of_clk_add_hw_provider(np, of_clk_hw_pmc_get, at91sam9n12_pmc);
++
++	return;
++
++err_free:
++	pmc_data_free(at91sam9n12_pmc);
++}
++/*
++ * The TCB is used as the clocksource so its clock is needed early. This means
++ * this can't be a platform driver.
++ */
++CLK_OF_DECLARE_DRIVER(at91sam9n12_pmc, "atmel,at91sam9n12-pmc",
++		      at91sam9n12_pmc_setup);
 -- 
-Florian
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
