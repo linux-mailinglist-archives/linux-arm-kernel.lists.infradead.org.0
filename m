@@ -2,76 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2888113D904
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:29:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA18E13D90C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:33:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HUQJPD3GuiWxhxbDPg1QQ0U9Rq4u0qHJ8vOnTg7lDiI=; b=E9vLD0TqV3Oz/q
-	vhLUS4bFUySZEgRzsZKJA4pTN643Ya1wYAysbhb3gaCIuz6TmUsooYQRvcQ81pkENakOUXme8lSeV
-	n/lVe3GA7wnbwTgBOkmtmH2pG1zzxnZ14xQhQFyxQ3A14W/xjy3JanKmKB/H2A40ZnqhfcP0VT3XT
-	V4Ewi0pkBXkBeaoX2Toqem8ZfO60i4pCBWFDSDYFxXPNWLlRsucl6ya9ygv595DS1He2jFvHRYjnS
-	5S2bMeBbyhPePMI11d8bgn+vUTIsAnpebpJLkBbDn/Y8HDBKXNUxvHxc63UdnPaXR8LP0r913EUSc
-	JtRRvvXklNAu4k7F8zjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fE+l9NROKmTxu5/5FDqV2uWud0WaIo+3lBvUNYTC2xw=; b=MejkneMtYzvmdL
+	D03Gl/KeCVQurbGM0xDUAcZptQTyQUyuhyIXPrHvxBcZsTc/xoIOiXPQrJd+QYmE5JRT5FKVRpWxh
+	vqP8X4q7309XY80/37LBB80SxgInsdkDf/tbkTsACuVvgZIjRlhEPka1gtHP60M0WDO5uE46bmmIg
+	PjWINiHScFZlWtPoGLH/RFw2LYEIo1LzvtwxymXLMp1GfrPM2WHv9actGaTUSsoPSCmSk8qGspv26
+	Z9OBtPnyyyK7ekKOIoK6tHq15ei0ioGAK1dWbhqbzVXYp8EYuPRFlJx+suSS+irNaWmpwJyXPnwyR
+	Mb0jK9T8QWrY13v0GsYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3LL-0004oq-U5; Thu, 16 Jan 2020 11:29:43 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1is3P2-000788-HV; Thu, 16 Jan 2020 11:33:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3L7-0004nt-S3
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:29:33 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00GBTLp4025258;
- Thu, 16 Jan 2020 05:29:21 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579174161;
- bh=HoTADZtgqSuVtIDvlRPiDukZa+j2J/mrL6Wj0SyC6jI=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=xC9TEoestm/zX+cXsk+U5M1RVszaN7BgXWgTmSPvKSpo7BtHTndJk7VL/4D+xlgpd
- kb5PrdJaCuRZ/DHlnUaHNqePrEvTUmupxh74nB0MstnmXKgH0Jh7icksY4vEhSnbw7
- KMLBW1mjSIcZuHBsNe0kVVfLqQnJNqxDDoLQUHSY=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00GBTLbQ007664;
- Thu, 16 Jan 2020 05:29:21 -0600
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 16
- Jan 2020 05:29:21 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 16 Jan 2020 05:29:21 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00GBTGoa010158;
- Thu, 16 Jan 2020 05:29:19 -0600
-Subject: Re: [PATCH v2 01/14] dt-bindings: PCI: cadence: Add PCIe RC/EP DT
- schema for Cadence PCIe
-From: Kishon Vijay Abraham I <kishon@ti.com>
-To: Rob Herring <robh@kernel.org>
-References: <20200106102058.19183-1-kishon@ti.com>
- <20200106102058.19183-2-kishon@ti.com> <20200108034314.GA5412@bogus>
- <3e2bfa1b-ff9e-93a0-a6b9-7985e0a76bf0@ti.com>
-Message-ID: <025cc5cd-87a5-da64-9edd-536f7f7dac67@ti.com>
-Date: Thu, 16 Jan 2020 17:01:29 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1is3Oo-00077a-Dr
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:33:24 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6A8972073A;
+ Thu, 16 Jan 2020 11:33:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579174397;
+ bh=IlHhfu7+wBiA/4o45jiNknVmWVgInlmzqIT0tYxSLP4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MooqElTPqG2+0jdVGgSMXJmfbEFdpgJi1L3SP7SUpnyuhoUEKFwV0XcG346ZRsTN5
+ GUb/f1tp+jhxxIEOoG5D9Q9V7NZxLksBlPnm6FLXxZijwRfWEt1V7QF0DvnKlA9bun
+ qBeny/AOkzfqh+Mw77Fqkvo4Lrttp+/ja9hoooi4=
+Date: Thu, 16 Jan 2020 11:33:13 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v10 2/3] arm64: random: Add data to pool from setup_arch()
+Message-ID: <20200116113312.GB16345@willie-the-truck>
+References: <20200110122341.8445-1-broonie@kernel.org>
+ <20200110122341.8445-3-broonie@kernel.org>
+ <CAKv+Gu8He-SmqH3cTOCReOntFaOWvdKmEAfxxAy7QW6GzHd=Pg@mail.gmail.com>
+ <20200115091615.GA21692@willie-the-truck>
+ <20200115120703.GH3897@sirena.org.uk>
+ <20200115124238.GF21692@willie-the-truck>
+ <CAKv+Gu-eUkAtft9d+=zvnHiqQUBRGSJX9M03zF1i9Ms+oMstAA@mail.gmail.com>
+ <20200115170459.GM3897@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <3e2bfa1b-ff9e-93a0-a6b9-7985e0a76bf0@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200115170459.GM3897@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_032929_987381_EDDF1233 
-X-CRM114-Status: GOOD (  22.40  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200116_033318_488088_14F453C3 
+X-CRM114-Status: GOOD (  13.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,173 +83,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-hi Rob,
+On Wed, Jan 15, 2020 at 05:04:59PM +0000, Mark Brown wrote:
+> On Wed, Jan 15, 2020 at 02:36:32PM +0100, Ard Biesheuvel wrote:
+> > On Wed, 15 Jan 2020 at 13:42, Will Deacon <will@kernel.org> wrote:
+> 
+> > > I'd also really like Ard's ack on anything relating to RNGs.
+> 
+> > Patches #1 and #3 are fine with me, modulo the HWCAP bit which I don't
+> > deeply care about.
+> 
+> > But the way this patch works around our workaround for mismatched RNG
+> > caps between cores doesn't make sense to me.
+> 
+> I'd be totally happy to drop patch 2 entirely, it's a *bit*
+> marginal if it's useful - I mainly wrote it because it's so
+> trivial to do not because I think it's a wonderful idea.
 
-On 08/01/20 11:05 AM, Kishon Vijay Abraham I wrote:
-> Hi Rob,
-> 
-> On 08/01/20 9:13 AM, Rob Herring wrote:
->> On Mon, Jan 06, 2020 at 03:50:45PM +0530, Kishon Vijay Abraham I wrote:
->>> Add PCIe Host (RC) and Endpoint (EP) device tree schema for Cadence
->>> PCIe core library. Platforms using Cadence PCIe core can include the
->>> schemas added here in the platform specific schemas.
->>>
->>> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
->>> ---
->>>  .../devicetree/bindings/pci/cdns-pcie-ep.yaml | 20 ++++++++++++
->>>  .../bindings/pci/cdns-pcie-host.yaml          | 30 +++++++++++++++++
->>>  .../devicetree/bindings/pci/cdns-pcie.yaml    | 32 +++++++++++++++++++
->>>  3 files changed, 82 insertions(+)
->>>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
->>>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
->>>  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie.yaml
->>
->> Need to remove the old files.
->>
->> Note that I posted a conversion of Cadence host[1]. Yours goes further, 
->> but please compare and add anything mine has that yours doesn't.
->>
->> [1] https://lore.kernel.org/linux-pci/20191231193903.15929-2-robh@kernel.org/
-> 
-> Sure, I'll look at this.
-> 
-> Recently we converted Cadence driver to a library since the same Cadence
-> core can be used by multiple vendors. Here I'm trying to add the
-> bindings for Cadence core which can be included in the platform specific
-> schema.
-> 
-> So the existing cdns,cdns-pcie-host.yaml which is a Cadence platform
-> using Cadence core should include cdns-pcie-host.yaml.
-> 
-> "[PATCH v2 10/14] dt-bindings: PCI: Add host mode dt-bindings for TI's
-> J721E SoC" in this series includes "cdns-pcie-host.yaml" for TI platform
-> using Cadence core.
-> 
-> That's why in the schema added here you don't see the compatible since
-> that will be added in platform specific schema.
+OK, tell you what -- please resend just 1 and 3, with the HWCAP addition
+(because we're not going to resolve that in time for 5.6) and I'll queue
+them up.
 
-Does this approach look fine to you?
-
-Thanks
-Kishon
-
->>
->>>
->>> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
->>> new file mode 100644
->>> index 000000000000..36aaae5931c3
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
->>> @@ -0,0 +1,20 @@
->>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
->>> +%YAML 1.2
->>> +--
->>> +$id: "http://devicetree.org/schemas/pci/cdns-pcie-ep.yaml#"
->>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->>> +
->>> +title: Cadence PCIe Endpoint
->>> +
->>> +maintainers:
->>> +  - Tom Joseph <tjoseph@cadence.com>
->>> +
->>> +allOf:
->>> +  - $ref: "cdns-pcie.yaml#"
->>> +
->>> +properties:
->>> +  max-functions:
->>> +    description: Maximum number of functions that can be configured (default 1)
->>> +    allOf:
->>> +      - $ref: /schemas/types.yaml#/definitions/uint8
->>> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
->>> new file mode 100644
->>> index 000000000000..78261bc4f0c5
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
->>> @@ -0,0 +1,30 @@
->>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
->>> +%YAML 1.2
->>> +---
->>> +$id: "http://devicetree.org/schemas/pci/cdns-pcie-host.yaml#"
->>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->>> +
->>> +title: Cadence PCIe Host
->>> +
->>> +maintainers:
->>> +  - Tom Joseph <tjoseph@cadence.com>
->>> +
->>> +allOf:
->>> +  - $ref: "/schemas/pci/pci-bus.yaml#"
->>> +  - $ref: "cdns-pcie.yaml#"
->>> +
->>> +properties:
->>> +  vendor-id:
->>> +    description: The PCI vendor ID (16 bits, default is design dependent)
->>> +
->>> +  device-id:
->>> +    description: The PCI device ID (16 bits, default is design dependent)
->>
->> While these got defined here as 16-bits, these should be fixed to 32-bit 
->> because they are established properties for a long time.
->>
->>> +
->>> +  cdns,no-bar-match-nbits:
->>> +    description: Set into the no BAR match register to configure the number
->>> +      of least significant bits kept during inbound (PCIe -> AXI) address
->>> +      translations (default 32)
->>> +    allOf:
->>> +      - $ref: /schemas/types.yaml#/definitions/uint32
->>
->> What about compatible?
->>
->>> +
->>> diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
->>> new file mode 100644
->>> index 000000000000..497d3dc2e6f2
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
->>> @@ -0,0 +1,32 @@
->>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>> +# Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
->>> +%YAML 1.2
->>> +---
->>> +$id: "http://devicetree.org/schemas/pci/cdns-pcie.yaml#"
->>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->>> +
->>> +title: Cadence PCIe Core
->>> +
->>> +maintainers:
->>> +  - Tom Joseph <tjoseph@cadence.com>
->>> +
->>> +properties:
->>> +  max-link-speed:
->>> +    minimum: 1
->>> +    maximum: 3
->>> +
->>> +  num-lanes:
->>> +    minimum: 1
->>> +    maximum: 2
->>
->> Needs a type.
->>
->> The Cadence IP can't support x4, x8, or x16?
-> 
-> I'll fix this. I assume these can be overwritten in platform specific
-> schema files?
-> 
-> Thanks
-> Kishon
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
