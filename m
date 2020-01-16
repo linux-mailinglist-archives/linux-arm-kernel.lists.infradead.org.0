@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F22113F248
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:34:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B77713F255
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:34:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fgcXSBRd5Qax0ypZRWWtIRk6ocvrUrwUDPmbUHPcm4M=; b=D9tcQX5yKgxMIj
-	wGGnmQ19fr4d2x5wP3yopUf9FVCodyayE+KCbqRHj6Lt0wD9TPYrTaTQ2otp92ptDRCl7saROTHGC
-	Mo5gFGW9Knfbx6OgNOeU5ZqERL1WgIJph55km2Wika6ZUhjFRh4EjkmPRTrn/zGTjjrSJRSzGaQiI
-	Uikr7Ngc0jLENJukb22XVa2fVwTH/0KJDRNTiRL3V66gCZC/zT49BAdYiVdbFJFkmAqKhX1uwH0/Y
-	hx5r+7lllMFqZ3k2M/nDqGHOCH/YdpFMdOi7RammveQARsKSrEiVJErvuKOrRniXy6tmahRKh//jf
-	rhwcGkwxnvmqQBvqJP9Q==;
+	List-Owner; bh=QVC3stmierZKVItj/3EleLED2j6ChJKGGl8g1D6I2g4=; b=f2lRBa9BZnbNJQ
+	pgZgjdlQ64uisszDAqKH4ZFn3vMVb+gU1UtyVJZVfX2sA3pchuelzwHArpa1PhlNbeQASNXrm0/H1
+	pfauR5hj0bl8kwfhsnxDBIl/7Jx8YIkGK8spfpiJ+qGqJNz4piqxVfj9KG6q/15HBwvQYFmRi30en
+	qUKIZwlfvXmCNYKueQGV9Tg2kJrptj7ns9VdqRvnuSoqosqrrttKPuGfDdBGtZNNocX3Jhg0ZOGtJ
+	jnr18z1VeTOriBofEvZoC5XIzUHpVPQoIGpaYz8dL+lBpphhJ5IlkOrwMQ22Z6NpNQ02e1bflyqJv
+	3GRWKxOCoADaYoWv4R1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9yH-000333-Jf; Thu, 16 Jan 2020 18:34:21 +0000
+	id 1is9ya-0003MA-HM; Thu, 16 Jan 2020 18:34:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9Dx-0006sx-Kw; Thu, 16 Jan 2020 17:46:38 +0000
+ id 1is9E4-0006wY-CJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:41 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 41340246EA;
- Thu, 16 Jan 2020 17:46:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5ECD1246B8;
+ Thu, 16 Jan 2020 17:46:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196788;
- bh=Vl0mUl3nyA3+imvByviOLU+uQpGETegssy81vreRVno=;
+ s=default; t=1579196795;
+ bh=fPlNpHQvfkloCcuCGF/dUff98NWTDSU1o9YkuNNxshY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=uOuj/myyekutclpFsBSSmvIfJ7KoYiWS5RXXje10aObPDmj5jA8Rlj/upN5sOhqk9
- PJWn3g8Os2RErZWxc8lwKikXJng1cPNdu0ZAyGgd/YxYw72N0veLYjW4CI63vV92+v
- KvN2WNtY/4VTPtspLAV6jDumkkARqDGR03sSmRKE=
+ b=hrnrYqVxzoEQlRmwjaDpfx3pt/mIJ1WJuSJFFjPdrwAk0fwLNES0GRH2Kh6jdLNjN
+ vOXZdkwGuF9G+iGTKHnuXT+Bp477OUwV+p3tOzp3G8i/LTY34ve/7dGeArcXP6Gltr
+ ATiEZZYUOoAcCQ7eYy710psBVjduG3WavhVuOVBc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 151/174] mt7601u: fix bbp version check in
- mt7601u_wait_bbp_ready
-Date: Thu, 16 Jan 2020 12:42:28 -0500
-Message-Id: <20200116174251.24326-151-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 156/174] spi: atmel: fix handling of cs_change set
+ on non-last xfer
+Date: Thu, 16 Jan 2020 12:42:33 -0500
+Message-Id: <20200116174251.24326-156-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094629_865573_6E850693 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20200116_094636_790600_237BEA1A 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,49 +80,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jakub Kicinski <kubakici@wp.pl>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Lorenzo Bianconi <lorenzo@kernel.org>, Kalle Valo <kvalo@codeaurora.org>
+Cc: Sasha Levin <sashal@kernel.org>, Mans Rullgard <mans@mansr.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Nicolas Ferre <nicolas.ferre@atmel.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Mans Rullgard <mans@mansr.com>
 
-[ Upstream commit 15e14f76f85f4f0eab3b8146e1cd3c58ce272823 ]
+[ Upstream commit fed8d8c7a6dc2a76d7764842853d81c770b0788e ]
 
-Fix bbp ready check in mt7601u_wait_bbp_ready. The issue is reported by
-coverity with the following error:
+The driver does the wrong thing when cs_change is set on a non-last
+xfer in a message.  When cs_change is set, the driver deactivates the
+CS and leaves it off until a later xfer again has cs_change set whereas
+it should be briefly toggling CS off and on again.
 
-Logical vs. bitwise operator
-The expression's value does not depend on the operands; inadvertent use
-of the wrong operator is a likely logic error.
-
-Addresses-Coverity-ID: 1309441 ("Logical vs. bitwise operator")
-Fixes: c869f77d6abb ("add mt7601u driver")
-Acked-by: Jakub Kicinski <kubakici@wp.pl>
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+This patch brings the behaviour of the driver back in line with the
+documentation and common sense.  The delay of 10 us is the same as is
+used by the default spi_transfer_one_message() function in spi.c.
+[gregory: rebased on for-5.5 from spi tree]
+Fixes: 8090d6d1a415 ("spi: atmel: Refactor spi-atmel to use SPI framework queue")
+Signed-off-by: Mans Rullgard <mans@mansr.com>
+Acked-by: Nicolas Ferre <nicolas.ferre@atmel.com>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Link: https://lore.kernel.org/r/20191018153504.4249-1-gregory.clement@bootlin.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt7601u/phy.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/spi/spi-atmel.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wireless/mediatek/mt7601u/phy.c
-index 1908af6add87..59ed073a8572 100644
---- a/drivers/net/wireless/mediatek/mt7601u/phy.c
-+++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
-@@ -219,7 +219,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index 691c04b3e5b6..938840af9c50 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -315,7 +315,6 @@ struct atmel_spi {
+ 	struct atmel_spi_dma	dma;
  
- 	do {
- 		val = mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
--		if (val && ~val)
-+		if (val && val != 0xff)
- 			break;
- 	} while (--i);
+ 	bool			keep_cs;
+-	bool			cs_active;
  
+ 	u32			fifo_size;
+ };
+@@ -1404,11 +1403,9 @@ static int atmel_spi_one_transfer(struct spi_master *master,
+ 				 &msg->transfers)) {
+ 			as->keep_cs = true;
+ 		} else {
+-			as->cs_active = !as->cs_active;
+-			if (as->cs_active)
+-				cs_activate(as, msg->spi);
+-			else
+-				cs_deactivate(as, msg->spi);
++			cs_deactivate(as, msg->spi);
++			udelay(10);
++			cs_activate(as, msg->spi);
+ 		}
+ 	}
+ 
+@@ -1431,7 +1428,6 @@ static int atmel_spi_transfer_one_message(struct spi_master *master,
+ 	atmel_spi_lock(as);
+ 	cs_activate(as, spi);
+ 
+-	as->cs_active = true;
+ 	as->keep_cs = false;
+ 
+ 	msg->status = 0;
 -- 
 2.20.1
 
