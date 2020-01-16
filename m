@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93E4013E77E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:26:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2394713E789
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:27:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EOrrmvTEEcNKhqQOqbxunrfrsr4thUhjLWWAOFNiOOA=; b=XCVipZ8IEQ/5z6
-	Sse/raX0MH6j/PxzeN6zb1nsRupVPq0lBB+T+vkL+6PrF0yUu9E46RmS9MgW6ABez6B3WRRR+9/3/
-	racZYyGaWBM113gB8lL7Lf2LakdTPXMe4RybX0FaGEf8wG2WzfegMTabexOfweix6BdsakDbHpc1a
-	RNTlbyA7UuXDWxvYKX4qyS3PiJHFwyuUH9KkrO+iDrKRFIhzt//W4vlnK7deYjMseeioW9RJlUCz5
-	bJ1WhakAIGwHSGMsCmMneklxiedfVq55NF3Bw4w0th0m2IIub9bdrbYFZBMQ7Pv+koaXyNyh4Ezbm
-	LoaO3AUS5EeA9o130o4A==;
+	List-Owner; bh=iWFjurzD5jbtVEvrtjgxGZ5jqwLjK6FExXHgyX6727o=; b=gqkh+W/XdAwOmK
+	ZndbCKVx/SdcueuV+K07jIai6m/FHo+bn9+YcSklVse062yn1yRgXxUI1nRcR47If7dfCp0J3YSM5
+	PvD+kd6PoGQrEVMFl3abUeHtn0dnxgmGkMMBEIeom4ymq5DouUWtZMLfcjjhMsICsuLTc8NiWBASE
+	DwcKYHKFCzb/opFMz5KeMYCvLtlceL+nrDLvoFVkmA9BrDzGKrAuKY21jYO28SQSz3FooDK7Z8Qwb
+	KNJ61NE77Iko6+alsJt6kzDNT68CgSjOFTBR7z96tPMpRZ++5dGwkA5A1mjmI+fxy+d7SqmA/YMdJ
+	KuLqyEQTAreOeTqSX29Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8uT-0003o7-Uc; Thu, 16 Jan 2020 17:26:21 +0000
+	id 1is8v7-0004Px-VI; Thu, 16 Jan 2020 17:27:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cb-0000sR-QP
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:56 +0000
+ id 1is8cd-0000uH-Co
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:59 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EA41F21582;
- Thu, 16 Jan 2020 17:07:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D4902192A;
+ Thu, 16 Jan 2020 17:07:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194472;
- bh=UdImy3XGbb6aCS0QH1nljG7T3sP7qCMYcI6nIQMmEeo=;
+ s=default; t=1579194474;
+ bh=6DykuS+E/gsEt17/JpJdhwrQdx1rMNpo7tD7t0Zm/vM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=e/psCt5JXj9N7Pmyczt3NWfSuaFqzzlvEk6v/L8RhP1SG8jj+FS9DMqMZhpmFzk9B
- +UW7TjGvrqzFM0hZ6mA4LGpfejUtqbBYsDSPGTsroNXpY10Vf74fMiGGvshWMvshJ1
- G4GE9j71ETPqEkJmWQnHepQe6cNg2YvtguKasmEc=
+ b=LICc59bFl+fZKWyh4FsirGzsaPu3GcJdYA6ofQac/sORP6j26HMSn1bARToe2lC/S
+ ij0qyuCwoLMZ0RGVGily/3Ihy9YB0OHIdoz84ERoYTUVjUtfMbN74B7PF1Uey7mFdq
+ vJ8j/g5LcEWxYMo4yN3mBWL+sxrs1ERyqCI3G/sI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 377/671] serial: stm32: Add support of TC bit
- status check
-Date: Thu, 16 Jan 2020 12:00:15 -0500
-Message-Id: <20200116170509.12787-114-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 378/671] serial: stm32: fix wakeup source
+ initialization
+Date: Thu, 16 Jan 2020 12:00:16 -0500
+Message-Id: <20200116170509.12787-115-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090754_033472_96668B0A 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20200116_090755_520153_3F6CCC6D 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,93 +91,98 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Erwan Le Ray <erwan.leray@st.com>
 
-[ Upstream commit 64c32eab660386f9904bb295a104c9c425e9f8b2 ]
+[ Upstream commit 5297f274e8b61ceb9676cba6649d3de9d03387ad ]
 
-Adds a check on the Transmission Complete bit status before closing the
-com port. Prevents the port closure before the end of the transmission.
-TC poll loop is moved from stm32_tx_dma_complete to stm32_shutdown
-routine, in order to check TC before shutdown in both dma and
-PIO tx modes.
-TC clear is added in stm32_transmit_char routine, in order to be cleared
-before transmitting in both dma and PIO tx modes.
+Fixes dedicated_irq_wakeup issue and deactivated uart as wakeup source by
+default.
 
-Fixes: 3489187204eb ("serial: stm32: adding dma support")
+Fixes: 270e5a74fe4c ("serial: stm32: add wakeup mechanism")
 Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/stm32-usart.c | 32 +++++++++++++++-----------------
- 1 file changed, 15 insertions(+), 17 deletions(-)
+ drivers/tty/serial/stm32-usart.c | 28 +++++++++++++++-------------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 2e7757d5e5d8..d603be9669a9 100644
+index d603be9669a9..1334e4293977 100644
 --- a/drivers/tty/serial/stm32-usart.c
 +++ b/drivers/tty/serial/stm32-usart.c
-@@ -290,21 +290,6 @@ static void stm32_tx_dma_complete(void *arg)
- 	struct uart_port *port = arg;
- 	struct stm32_port *stm32port = to_stm32_port(port);
- 	struct stm32_usart_offsets *ofs = &stm32port->info->ofs;
--	unsigned int isr;
--	int ret;
--
--	ret = readl_relaxed_poll_timeout_atomic(port->membase + ofs->isr,
--						isr,
--						(isr & USART_SR_TC),
--						10, 100000);
--
--	if (ret)
--		dev_err(port->dev, "terminal count not set\n");
--
--	if (ofs->icr == UNDEF_REG)
--		stm32_clr_bits(port, ofs->isr, USART_SR_TC);
--	else
--		stm32_set_bits(port, ofs->icr, USART_CR_TC);
- 
- 	stm32_clr_bits(port, ofs->cr3, USART_CR3_DMAT);
- 	stm32port->tx_dma_busy = false;
-@@ -396,7 +381,6 @@ static void stm32_transmit_chars_dma(struct uart_port *port)
- 	/* Issue pending DMA TX requests */
- 	dma_async_issue_pending(stm32port->tx_ch);
- 
--	stm32_clr_bits(port, ofs->isr, USART_SR_TC);
- 	stm32_set_bits(port, ofs->cr3, USART_CR3_DMAT);
- 
- 	xmit->tail = (xmit->tail + count) & (UART_XMIT_SIZE - 1);
-@@ -425,6 +409,11 @@ static void stm32_transmit_chars(struct uart_port *port)
- 		return;
- 	}
- 
-+	if (ofs->icr == UNDEF_REG)
-+		stm32_clr_bits(port, ofs->isr, USART_SR_TC);
-+	else
-+		stm32_set_bits(port, ofs->icr, USART_ICR_TCCF);
-+
- 	if (stm32_port->tx_ch)
- 		stm32_transmit_chars_dma(port);
- 	else
-@@ -601,12 +590,21 @@ static void stm32_shutdown(struct uart_port *port)
+@@ -557,7 +557,6 @@ static int stm32_startup(struct uart_port *port)
+ {
  	struct stm32_port *stm32_port = to_stm32_port(port);
  	struct stm32_usart_offsets *ofs = &stm32_port->info->ofs;
- 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
--	u32 val;
-+	u32 val, isr;
-+	int ret;
+-	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
+ 	const char *name = to_platform_device(port->dev)->name;
+ 	u32 val;
+ 	int ret;
+@@ -568,15 +567,6 @@ static int stm32_startup(struct uart_port *port)
+ 	if (ret)
+ 		return ret;
  
- 	val = USART_CR1_TXEIE | USART_CR1_RXNEIE | USART_CR1_TE | USART_CR1_RE;
- 	val |= BIT(cfg->uart_enable_bit);
+-	if (cfg->has_wakeup && stm32_port->wakeirq >= 0) {
+-		ret = dev_pm_set_dedicated_wake_irq(port->dev,
+-						    stm32_port->wakeirq);
+-		if (ret) {
+-			free_irq(port->irq, port);
+-			return ret;
+-		}
+-	}
+-
+ 	val = USART_CR1_RXNEIE | USART_CR1_TE | USART_CR1_RE;
  	if (stm32_port->fifoen)
  		val |= USART_CR1_FIFOEN;
-+
-+	ret = readl_relaxed_poll_timeout(port->membase + ofs->isr,
-+					 isr, (isr & USART_SR_TC),
-+					 10, 100000);
-+
-+	if (ret)
-+		dev_err(port->dev, "transmission complete not set\n");
-+
+@@ -607,7 +597,6 @@ static void stm32_shutdown(struct uart_port *port)
+ 
  	stm32_clr_bits(port, ofs->cr1, val);
  
- 	dev_pm_clear_wake_irq(port->dev);
+-	dev_pm_clear_wake_irq(port->dev);
+ 	free_irq(port->irq, port);
+ }
+ 
+@@ -1079,11 +1068,18 @@ static int stm32_serial_probe(struct platform_device *pdev)
+ 		ret = device_init_wakeup(&pdev->dev, true);
+ 		if (ret)
+ 			goto err_uninit;
++
++		ret = dev_pm_set_dedicated_wake_irq(&pdev->dev,
++						    stm32port->wakeirq);
++		if (ret)
++			goto err_nowup;
++
++		device_set_wakeup_enable(&pdev->dev, false);
+ 	}
+ 
+ 	ret = uart_add_one_port(&stm32_usart_driver, &stm32port->port);
+ 	if (ret)
+-		goto err_nowup;
++		goto err_wirq;
+ 
+ 	ret = stm32_of_dma_rx_probe(stm32port, pdev);
+ 	if (ret)
+@@ -1097,6 +1093,10 @@ static int stm32_serial_probe(struct platform_device *pdev)
+ 
+ 	return 0;
+ 
++err_wirq:
++	if (stm32port->info->cfg.has_wakeup && stm32port->wakeirq >= 0)
++		dev_pm_clear_wake_irq(&pdev->dev);
++
+ err_nowup:
+ 	if (stm32port->info->cfg.has_wakeup && stm32port->wakeirq >= 0)
+ 		device_init_wakeup(&pdev->dev, false);
+@@ -1134,8 +1134,10 @@ static int stm32_serial_remove(struct platform_device *pdev)
+ 				  TX_BUF_L, stm32_port->tx_buf,
+ 				  stm32_port->tx_dma_buf);
+ 
+-	if (cfg->has_wakeup && stm32_port->wakeirq >= 0)
++	if (cfg->has_wakeup && stm32_port->wakeirq >= 0) {
++		dev_pm_clear_wake_irq(&pdev->dev);
+ 		device_init_wakeup(&pdev->dev, false);
++	}
+ 
+ 	clk_disable_unprepare(stm32_port->clk);
+ 
 -- 
 2.20.1
 
