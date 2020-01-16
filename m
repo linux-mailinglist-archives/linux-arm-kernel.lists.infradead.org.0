@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D828613EB8E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:50:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D74BA13EB9B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:51:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XYyejgwGOEe5F3J4+9CL7Rr/jJqKblG1Y4OyDDdq68A=; b=ZR7SXR+olOY/2S
-	hkQ3jAllxi2GJdwyDA7N5Mcj5LL1oj6PLAgA71fyTXFJNmt79hi+BgAy2BAqI317D7BzpNgeTrRgD
-	egjaLCkaEWtLisoe7ZR5A4ml+QdVOiKW/OAb8fR9A3bLHBqmGXAOODxCFMlf7E6Ah1wOYMcH6k76W
-	+BQQnd+CtwCOaYTJSjvX8Y09itineohiblbL6S/oEHFIuikTs1Nt8z3dvU9m9cGdz2Z7IcRK4mRQI
-	jO4O6S8GOr1MqqxqA5pYkP7sLARrKt+cBZ2ZCdtK7yOz88WiBTFLgmtWReaE064f9wvu33wVGRw7N
-	OX91fdncvDo20JglDKWg==;
+	List-Owner; bh=8PI/yEtyL0dYrFTz5SObgTfcR8kZEZV++RuRa/g8B3E=; b=l6BI2W0Uq227oK
+	6SPZeYBh1lTWdZsp+rAJYCwt3EASaxxCOSv09fHZRCRGxQcZqGQmsmjjPNX7mouuJ5lsnBSJcWJTy
+	h6UZ9TI1SyieTbq0sSDq/zZZVuh0bafaDaoSmZYcpTuqQEAIGoblwUvwXKy7+zhky61/M54Ih8I3w
+	LR3H93ROKf9wk74HWxlNB2bQF95VdBv75l3GCoUPlaeYClDdr2BXwjmwax1VcIb3gjTuu8ndLcYWJ
+	EhEcAnBlf8vtdps6fd1DTfmmpEc8H1hIwymqrwm5h/r3hdQvJK/qrBNg6nFw09RWypqz3Q5xz18mt
+	iW3mIbgwuM5h+MF7LgXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9I8-00016D-HB; Thu, 16 Jan 2020 17:50:48 +0000
+	id 1is9IY-0002f9-M7; Thu, 16 Jan 2020 17:51:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8lr-0002jb-Ag
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:17:31 +0000
+ id 1is8m3-0002vN-BV
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:17:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D76EC20730;
- Thu, 16 Jan 2020 17:17:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 79AB92087E;
+ Thu, 16 Jan 2020 17:17:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195046;
- bh=eCsheN5nJfhPWN/zVSO0BJvoRocn6ZHygXATnnbqHTk=;
+ s=default; t=1579195058;
+ bh=GNZp0UeonDfLmB9+iQmd4E5uDQXciC8j7pjaO1xySas=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cpDI7WqCM3WwGcXzA6HnGt+Rz2xuCmpz33NCOijxGirWt/lnK38fz+Cps93f+wMjh
- 1ksDZNxZOoh5HbyfpVKFVwRBrpiVzRJhlvEzIK/q5mz2pHmdc28FfxhYk6WZbXi1Fk
- U0+sTfj60bq/o4iTS2NNtqIFHE+aE/F0UIPw5MOQ=
+ b=udtg47BXvtViavBBOQy4uzZkOc/y8vK/EcCoMmP9Si3Tul8SGtBduSTxshYhMRYc+
+ IbHiIhvZCPSgEOskbEXReYFJWgNMBVRxCFD/qdgP4Jpbml4ettlz8BGqNe5ud3kwbn
+ E3sQgZUGia9WvsfLPbPHOx3q4/McpqYgnBAu9A8k=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 005/371] PCI: iproc: Remove PAXC slot check to
- allow VF support
-Date: Thu, 16 Jan 2020 12:11:13 -0500
-Message-Id: <20200116171719.16965-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 014/371] drm/sun4i: hdmi: Fix double flag
+ assignation
+Date: Thu, 16 Jan 2020 12:11:22 -0500
+Message-Id: <20200116171719.16965-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116171719.16965-1-sashal@kernel.org>
 References: <20200116171719.16965-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091727_415114_73EA06C6 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200116_091739_830323_43C1B5FB 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,53 +80,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- Jitendra Bhivare <jitendra.bhivare@broadcom.com>,
- Ray Jui <ray.jui@broadcom.com>, Andy Gospodarek <gospo@broadcom.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ Giulio Benetti <giulio.benetti@micronovasrl.com>,
+ Dan Carpenter <dan.carpenter@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
+From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-[ Upstream commit 4da6b4480766e5bc9c4d7bc14bf1d0939a1a5fa7 ]
+[ Upstream commit 1e0ff648940e603cab6c52cf3723017d30d78f30 ]
 
-Fix previous incorrect logic that limits PAXC slot number to zero only.
-In order for SRIOV/VF to work, we need to allow the slot number to be
-greater than zero.
+The is_double flag is a boolean currently assigned to the value of the d
+variable, that is either 1 or 2. It means that this is_double variable is
+always set to true, even though the initial intent was to have it set to
+true when d is 2.
 
-Fixes: 46560388c476c ("PCI: iproc: Allow multiple devices except on PAXC")
-Signed-off-by: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
-Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Reviewed-by: Andy Gospodarek <gospo@broadcom.com>
+Fix this.
+
+Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
+Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Reviewed-by: Giulio Benetti <giulio.benetti@micronovasrl.com>
+Link: https://patchwork.freedesktop.org/patch/msgid/20181021163446.29135-2-maxime.ripard@bootlin.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pci/host/pcie-iproc.c | 8 --------
- 1 file changed, 8 deletions(-)
+ drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/pci/host/pcie-iproc.c b/drivers/pci/host/pcie-iproc.c
-index c0ecc9f35667..8f8dac0155d6 100644
---- a/drivers/pci/host/pcie-iproc.c
-+++ b/drivers/pci/host/pcie-iproc.c
-@@ -573,14 +573,6 @@ static void __iomem *iproc_pcie_map_cfg_bus(struct iproc_pcie *pcie,
- 			return (pcie->base + offset);
+diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
+index 5cf2527bffc8..d7a8fea94557 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
++++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
+@@ -50,7 +50,7 @@ static unsigned long sun4i_tmds_calc_divider(unsigned long rate,
+ 			    (rate - tmp_rate) < (rate - best_rate)) {
+ 				best_rate = tmp_rate;
+ 				best_m = m;
+-				is_double = d;
++				is_double = (d == 2) ? true : false;
+ 			}
+ 		}
  	}
- 
--	/*
--	 * PAXC is connected to an internally emulated EP within the SoC.  It
--	 * allows only one device.
--	 */
--	if (pcie->ep_is_internal)
--		if (slot > 0)
--			return NULL;
--
- 	return iproc_pcie_map_ep_cfg_reg(pcie, busno, slot, fn, where);
- }
- 
 -- 
 2.20.1
 
