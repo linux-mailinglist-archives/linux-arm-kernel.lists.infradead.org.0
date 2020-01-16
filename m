@@ -2,74 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2021413D6D9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 10:26:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B34E213D741
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 10:52:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8UiW4QeqISnOOcaClZIRMmfdUaKR72nXRz21OcSSHUc=; b=evU3paJ62a5ZQK
-	JcQHB9l5/FJg9xtp8PQN2kEprQI1sCWJwW5yckAgDpiij0txwZCQvXw083aGwrqKkYROGzDVF9tsf
-	jtphSMBunGTcwG5q9tY3kB96p6Wy+iQG89sVlpeySiNOmZt82GfJBIdfrtlvTWYAFlpR4Smqu7eIn
-	lPzPMytTE3vkNyZyEyspR127yXG36It9qmMl8zgjAuLIJf27z56gHp5z/yeX0l8XRyKAyGcbsfbQl
-	vaVpquJQPDq6zdmvQp8lrH5/1YPu8JAOZUe02YPr6r3hXmmbBU1+e8Pj+pCI8d5x0yG12Kcjz4UH3
-	TvuAL/tqn6tAw8LI+XWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0NkgxG+ZvmPSgjWEscMaig2TBR2QX3X+BG9csZxxsVs=; b=qHFFcbtYd1uwZE
+	xPG3zbT2cvtls5YBQ4cqsM7JHRvtqc4KyclSHWuwCq1OGvyNdmy5PFR5WEJmZLxmqLOqe8D62os/Y
+	iRZctR+gGzRQdNK86OhqrRim+riWgUWRfTNGn7b8hIHsFZgiWtlE0TFwP71Ftk7FXiAZcMKfBk0/F
+	e0EvPg25u33DX/tYdAnFSS9Q8i2HDx0SfTewdo3Obj+ynHtRBlrwBnjFFniX7TYHF0gansml+ggT/
+	G3noHq0PE8aAwet/IF8m1Ay6P9ZSw/dU5Th/8fqEQvtAiHTvcE2sZx+B8KmDXdrbrXkMhNBcW++IX
+	RA++jqX2cnGYCojFOSXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is1Px-0007pQ-D4; Thu, 16 Jan 2020 09:26:21 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1is1oe-0001So-Cl; Thu, 16 Jan 2020 09:51:52 +0000
+Received: from mail-eopbgr50046.outbound.protection.outlook.com ([40.107.5.46]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is1Pm-0007oO-Fn
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 09:26:14 +0000
-Received: by mail-il1-x143.google.com with SMTP id c4so17549902ilo.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 01:26:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5+T2+f3YUqy/mz/g0zqdHuyixNv3uIRSRLqHpYCvIA8=;
- b=YNsZvqMC3qBwhA390kR+0O1+Z775NXpgorZ1Uj0LTNfhunlCVnboeL+hdbdTD7zPyj
- cO4YdefQbXLyr/t0viYTQNIs2/R9znJRs+JPdwF+zlywPmjg5MJOT97iGih9buKS3tvr
- detFCcSpM8To0oU1Jp0ON3jtZma7mcyCUwQck=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5+T2+f3YUqy/mz/g0zqdHuyixNv3uIRSRLqHpYCvIA8=;
- b=pPPsAGK4cKKXMinIWNFFxswRyTv3VyflcYkcGA0yr90cdf2Ac1XFsLHrWe38GTiHn4
- sUGBkiNxBYcqGp85R3tpqclZjgrpwyra8kMR0ASH3X05atD9DoZ+6EvvUjAsCDdoes4o
- 1rBpQWkU5xtXQAYDpFGzTjmulD4kmGa87bzSy+4oFTb6PbPpjh0ntAt2cngaSILcRQOD
- 35lAuJt9Z4v+QfTECc39wYBKQZUz/kQedeppG8SniApv4ZYl4cWCnD5mk0VI4pI3P4nn
- xRGRdenCPllFD4X14YC+iocL0E1nP08x57k7LZuZP0KQYr7z5jFB4wDDwNkyZhV+R9ET
- WVvQ==
-X-Gm-Message-State: APjAAAUMyP7XOrubkK9iIHaI73OBk5GF33XoJSITxROmpV1hsolp4RqL
- 2QEaxqrhT1IcHTYO48soIlp+VGgHh5ukZPWCv7LtGg==
-X-Google-Smtp-Source: APXvYqzcJuvwLp0x5+fMsP13ADUUEVQCs/aLETOB1GPnAQGr8kZxelM+YUGAkJZnZhbBbnQ8HdB5j4UwUbclM7dRrHw=
-X-Received: by 2002:a92:8851:: with SMTP id h78mr2599028ild.308.1579166769584; 
- Thu, 16 Jan 2020 01:26:09 -0800 (PST)
+ id 1is1oO-0001R0-Jt
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 09:51:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FDt7Ephiy8QOYZtDn/jWFzOoE+yYjzcEm6mLmsJbAKpTq709JADVPbYEIdR62s8Xlpu8AJvFlM5vwPXvsepXtzAxTSm/vAMfpdcgzNc+/gbR6JpneMLa+cflg57HPhPbmTVrK2jKQdvWBhYN3nKPmla4Apc7kwzEzXHESeUM5puI/85Did1n7FfY0RsZKgY64Su9I5EwhN38cgh0odPlVvELzoU0ilDkYoKaIwWpM9cuuwSM20Ka/stfSJMP2Q7FLU2Agu/YlQEFSp5QdF5GT9VAYLvTH5QpmGBdbaRmLIw5fxMWXy0nIXUXtvC3eCboyDBs4bnoqp26yjY1gR55Wg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vT4MDkCzU4NJ0bMXmF2fkl1mvzTyRAOOHOii8lGrM3g=;
+ b=UMrk0ok2xitc3tUoZzr46VO0PAbSrqHHJZiO/EiuFXV/VsgsQRDotFNkuj7wTR6YrKv5ypd4yRnRceYcknDQqdxwXFtWymSe2Rk41iDvq+4DDQJHTE2PWVcVRKaPeJibaw3zJDFpWyU4GogxA2+IM7O8ZdS1eXqjnTdFxarWmRfGVrzTDCeRSVRK/7RJAAJvfkVqSj1CoimwDvv/TyuORDE+QlIQ8diQ9ngRhc43q1uKs9TrcxWAhnfFTKZGS8YS6EkiGnXRZslMYoj1snXIoSumX7efX3rsV826il0Sl/iTHrW4l3gMmffhCtGLgM2fvB9obwkDYOY+eF+wemtgXQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vT4MDkCzU4NJ0bMXmF2fkl1mvzTyRAOOHOii8lGrM3g=;
+ b=WxsMaUPQ6LH3VBILqphN2/lp8PIVHUXe69AGNTlF9lBfOb/CRJXnSSbbXq/FPrI2yMlUwSsz04GsZR/E0r0RDbRYXtxRtmYZn6nP+Wr/54NAhwX+jgungB00IC5wZ0NprjsBEhkfqp2ynxYv0dU+oVGesLc3bLycdlRy21Bn4dg=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4337.eurprd04.prod.outlook.com (52.134.124.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.10; Thu, 16 Jan 2020 09:36:43 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
+ 09:36:43 +0000
+Received: from localhost.localdomain (119.31.174.66) by
+ HK2PR0302CA0022.apcprd03.prod.outlook.com (2603:1096:202::32) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2644.6 via Frontend Transport; Thu, 16 Jan 2020 09:36:39 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>
+Subject: [RFC 0/4] ARM: imx: move cpu code to drivers/soc/imx
+Thread-Topic: [RFC 0/4] ARM: imx: move cpu code to drivers/soc/imx
+Thread-Index: AQHVzFB28inl/b14XEmQISgKukQ5pA==
+Date: Thu, 16 Jan 2020 09:36:43 +0000
+Message-ID: <1579167145-1480-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR0302CA0022.apcprd03.prod.outlook.com
+ (2603:1096:202::32) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 20ca5246-c663-4e5c-3495-08d79a6798ce
+x-ms-traffictypediagnostic: AM0PR04MB4337:|AM0PR04MB4337:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB4337EAEE51E1D018258EB00C88360@AM0PR04MB4337.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
+x-forefront-prvs: 02843AA9E0
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(396003)(39860400002)(136003)(366004)(199004)(189003)(8936002)(86362001)(69590400006)(71200400001)(6512007)(186003)(16526019)(52116002)(956004)(44832011)(2616005)(6486002)(26005)(6506007)(478600001)(6666004)(4326008)(7416002)(2906002)(81166006)(66556008)(81156014)(66476007)(66446008)(8676002)(110136005)(316002)(54906003)(5660300002)(36756003)(66946007)(64756008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4337;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: roH6XQYLimWGYZocYjrvI3qpNsbNXURSl45uGbzp/IWanr5s0FwlvYfIwvA4YNjfNIpo8Wao6AQk0rAmTTD6HNKyfVVYosOH4S6VWNOUPC50Okqnn1jboLMMbhCf0kYM7j1R/fzo+bMPRUEJ/J5JT4DXydPjEIRtCT4f4uoaFbcXuGtUNQSh5T4vfwOFP+Ot/P0W/V0fcgaoBXt6Bvl3U8bsOKfCl3PIwWkz+K742tlwbMKaB92LQmKxAMtCDPTRPUgI9z5x7Kq64SLy6zfrSCxJNIxkBZMUQn2Zf/Fuveywu40Ve5p86EVW0MbXeBPfg8lzXvFmkrmhr5xSTi41Et8mVKyLojsDH9kdjYMGRTY23NTbiWZHoEwJAuj/J7RhY/WyWWbdjrlnN3ccjz04xPMrppRPof4gJ2BQjFwqRBeS+OAQ6KmNF3jS3L3ByJNCQb0LDzJ2z56KyXI2qMFLOQ9yIa+CnLXdZXOFO+/xFOK5vKY8WO6rFcsmM9Jl0ecb
 MIME-Version: 1.0
-References: <20200115063410.131692-1-hsinyi@chromium.org>
- <20200115114112.GA3663@bogus>
-In-Reply-To: <20200115114112.GA3663@bogus>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Thu, 16 Jan 2020 17:25:43 +0800
-Message-ID: <CAJMQK-ip7C71=K+CViEKcc3ed4GPY_Uknm5uNgLJTzZb2aQOcA@mail.gmail.com>
-Subject: Re: [PATCH v5] reboot: support offline CPUs before reboot
-To: Sudeep Holla <sudeep.holla@arm.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20ca5246-c663-4e5c-3495-08d79a6798ce
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 09:36:43.3773 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: oI0ELJgBIvEitywbhU953rauL8lzqXtnzPacdYWE7SJqSfazBjGKSnZ5pnzH0+59JFUOU+xxzT2bXS3w4+sOZQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4337
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_012610_551715_CC3A0166 
-X-CRM114-Status: GOOD (  15.31  )
+X-CRM114-CacheID: sfid-20200116_015136_653383_FA272918 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [40.107.5.46 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,7 +116,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,60 +127,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- lkml <linux-kernel@vger.kernel.org>, sparclinux@vger.kernel.org,
- Guenter Roeck <groeck@chromium.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
- linux-csky@vger.kernel.org, Aaro Koskinen <aaro.koskinen@nokia.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Linux PM <linux-pm@vger.kernel.org>,
- linux-xtensa@linux-xtensa.org, Stephen Boyd <swboyd@chromium.org>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Pavankumar Kondeti <pkondeti@codeaurora.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-parisc@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- James Morse <james.morse@arm.com>, Jiri Kosina <jkosina@suse.cz>,
- Vitaly Kuznetsov <vkuznets@redhat.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Peng Fan <peng.fan@nxp.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "git@andred.net" <git@andred.net>, Leonard Crestez <leonard.crestez@nxp.com>,
+ "info@metux.net" <info@metux.net>, "allison@lohutok.net" <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 7:41 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Wed, Jan 15, 2020 at 02:34:10PM +0800, Hsin-Yi Wang wrote:
-> > Currently system reboots uses architecture specific codes (smp_send_stop)
-> > to offline non reboot CPUs. Most architecture's implementation is looping
-> > through all non reboot online CPUs and call ipi function to each of them. Some
-> > architecture like arm64, arm, and x86... would set offline masks to cpu without
-> > really offline them. This causes some race condition and kernel warning comes
-> > out sometimes when system reboots.
-> >
-> > This patch adds a config ARCH_OFFLINE_CPUS_ON_REBOOT, which would offline cpus in
-> > migrate_to_reboot_cpu(). If non reboot cpus are all offlined here, the loop for
-> > checking online cpus would be an empty loop. If architecture don't enable this
-> > config, or some cpus somehow fails to offline, it would fallback to ipi
-> > function.
-> >
->
-> What's the timing impact on systems with large number of CPUs(say 256 or
-> more) ? I remember we added some change to reduce the wait times for
-> offlining CPUs in system suspend path on arm64, still not negligible.
->
+From: Peng Fan <peng.fan@nxp.com>
 
-This is not the final solution, but I would still provided some data
-points here:
+Follow i.MX8, move the soc device register code to drivers/soc/imx
+to simplify arch/arm/mach-imx/cpu.c
 
-Tested on my arm64 with 4 cpu: 2 a53 and 2 a72.
-Offlining 3 cpu takes about 60~65 ms
-Offlining 2 cpu(a53+a72 or a72+a72) takes about 42~47 ms
-Offlining 1 cpu(a53 or a72) takes about 23~25 ms.
+I planned to use similar logic as soc-imx8.c to restructure soc-imx.c
+and merged the two files into one. But not sure, so still keep
+the logic in cpu.c.
 
-It would take longer time for systems with large number of CPUs.
+There is one change is the platform devices are not under
+/sys/devices/soc0 after patch 1/4. Actually ARM64 platform
+devices are not under /sys/devices/soc0, such as i.MX8/8M.
+So it should not hurt to let the platform devices under platform dir.
+
+Peng Fan (4):
+  ARM: imx: use device_initcall for imx_soc_device_init
+  ARM: imx: cpu: drop dead code
+  ARM: imx: move cpu definitions into a header
+  soc: imx: move cpu code to drivers/soc/imx
+
+ arch/arm/mach-imx/common.h       |   1 -
+ arch/arm/mach-imx/cpu.c          | 159 ---------------------------------------
+ arch/arm/mach-imx/mach-imx6q.c   |   8 +-
+ arch/arm/mach-imx/mach-imx6sl.c  |   8 +-
+ arch/arm/mach-imx/mach-imx6sx.c  |   8 +-
+ arch/arm/mach-imx/mach-imx6ul.c  |   8 +-
+ arch/arm/mach-imx/mach-imx7d.c   |   6 --
+ arch/arm/mach-imx/mach-imx7ulp.c |   2 +-
+ arch/arm/mach-imx/mxc.h          |  22 +-----
+ drivers/soc/imx/Makefile         |   3 +
+ drivers/soc/imx/soc-imx.c        | 146 +++++++++++++++++++++++++++++++++++
+ include/soc/imx/cpu.h            |  30 ++++++++
+ 12 files changed, 185 insertions(+), 216 deletions(-)
+ create mode 100644 drivers/soc/imx/soc-imx.c
+ create mode 100644 include/soc/imx/cpu.h
+
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
