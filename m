@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42C5213ED5C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:02:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF20113ED65
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:02:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hsTSkq39vJWEHYC6wA/pCJKw8a8s2+rQcWnhL+XGFjY=; b=ks4aDAh5l29PGr
-	GahwQyty9/7wodNo+exDmHns3fu540ofKx8AhFL3BGDzL2SYEUnecsuG8kpP36k63WtIFW6Sp/lnw
-	aXvsXkYQMhIoCJ5eDN7yQj5VRBPoIZlRiDOId9XDq/st+UCzsFfv2lYjTilgIVJPMc8Yn0r0prUYL
-	NhAWocyokPoX4RTRJ6Y2JC1yTXqA6PaCcXpVUSRcwzvayaU5eoHWyF0UgLpQSMDR8izGD6K+DhMKV
-	3l4NBcgZ5vDn/UUoVynUj1nZMn8uN4IfRxevDECJ68983ddImI7NIaVnKLDYeGg3bp3YiGcwf7on6
-	sG7LkexU3yHMregDC9WA==;
+	List-Owner; bh=u1bB8jD8KCaclV3KsDYQsrs1/Y5Cd09OH3ugWDI5xqc=; b=tALPVC+hJ8nhTP
+	LFKyJ43eXyoid7/rt5XZLpD8CRlImG9wyZLd+b4IDSWAfPyRDBwFDsvD/YAkH7f86VEGSc/72OyrV
+	7lfQ2wXObnLnI3LuaPWP/z2m3WVKSX8Mht6rl8RySJOSngTFQ5WSb9k7Rgkvq2H6QCloHZaCQ+LvQ
+	oFnBGczuAR67Rs8cRRQjcV2hGomlbrW6E1U724gEC/ksxGVOwDVRJ7T0GJ1DWKC2+YOiu5txrx/aY
+	SYh1aPJ2ddRZ6jECY/zZQ3+2mqFieLoBo4pYNyc6sK3jTFTiethaJ5byNWzfozphfUjuqWBS2W/1S
+	P8KWBTtuBGluHUIlh3hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9TJ-0007Th-L1; Thu, 16 Jan 2020 18:02:21 +0000
+	id 1is9TY-0007h4-By; Thu, 16 Jan 2020 18:02:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8vH-0004pJ-61; Thu, 16 Jan 2020 17:27:15 +0000
+ id 1is8vI-0004rO-Rp; Thu, 16 Jan 2020 17:27:17 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 14059246D3;
- Thu, 16 Jan 2020 17:27:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C8E5B246BE;
+ Thu, 16 Jan 2020 17:27:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195630;
- bh=PFQWB6yhTiykWY+nO5wBabV+FH2+zy+I/JKuaKCtjec=;
+ s=default; t=1579195632;
+ bh=wRrTgLn1QD3Wghts6cEtMLEXaI0YQwcMzQY6pPr5mLw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=U0YzvyhaJFjLqtLm8YZrzczSOtjXijCMiyt/9T61eo0k39YLGB1YGOh7MVSru++Sw
- KsqW9SvIFVFoeotndmgtxdzodiTvqAHt9PtlOJSs2tHhRdQssT+VnFLSMEdvrcZHO/
- lBH+9+5CYmm+IxK+1wwy7Td7BrH5WEnMJRzbLi00=
+ b=2BQEPyIEocyDbie/W5xVKvVslVWKFlcQ0kbIibvfF2jQ0+dE1ZLEWbsDIN+z61Wwf
+ uMH8HTzjEvRPaKjU7KN5l8zRV843HRNBeCqCJP6GmQ8DzqB+U32TLDblAKOD/533BZ
+ 66DAlJbHh/MeVUqmWLow8T0P0MFTS7flKJTbgaV4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 198/371] pwm: meson: Consider 128 a valid
- pre-divider
-Date: Thu, 16 Jan 2020 12:21:10 -0500
-Message-Id: <20200116172403.18149-141-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 199/371] pwm: meson: Don't disable PWM when
+ setting duty repeatedly
+Date: Thu, 16 Jan 2020 12:21:11 -0500
+Message-Id: <20200116172403.18149-142-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092711_291836_E529DF30 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20200116_092712_978708_1DD524E9 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,45 +83,54 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
  Neil Armstrong <narmstrong@baylibre.com>,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Bichao Zheng <bichao.zheng@amlogic.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogTWFydGluIEJsdW1lbnN0aW5nbCA8bWFydGluLmJsdW1lbnN0aW5nbEBnb29nbGVtYWls
-LmNvbT4KClsgVXBzdHJlYW0gY29tbWl0IDUxNDk2ZTQ0NDY4NzU3MjZkNTBhNTYxN2E2ZTBlMGRh
-YmJjMmU2ZGEgXQoKVGhlIHByZS1kaXZpZGVyIGFsbG93cyBjb25maWd1cmluZyBsb25nZXIgUFdN
-IHBlcmlvZHMgY29tcGFyZWQgdG8gdXNpbmcKdGhlIGlucHV0IGNsb2NrIGRpcmVjdGx5LiBUaGUg
-cHJlLWRpdmlkZXIgaXMgNyBiaXQgd2lkZSwgbWVhbmluZyBpdCdzCm1heGltdW0gdmFsdWUgaXMg
-MTI4ICh0aGUgcmVnaXN0ZXIgdmFsdWUgaXMgb2ZmLWJ5LW9uZTogMHg3ZiBvciAxMjcpLgoKQ2hh
-bmdlIHRoZSBsb29wIHRvIGFsc28gYWxsb3cgZm9yIHRoZSBtYXhpbXVtIHBvc3NpYmxlIHZhbHVl
-IHRvIGJlCmNvbnNpZGVyZWQgdmFsaWQuCgpGaXhlczogMjExZWQ2MzA3NTNkMmYgKCJwd206IEFk
-ZCBzdXBwb3J0IGZvciBNZXNvbiBQV00gQ29udHJvbGxlciIpClNpZ25lZC1vZmYtYnk6IE1hcnRp
-biBCbHVtZW5zdGluZ2wgPG1hcnRpbi5ibHVtZW5zdGluZ2xAZ29vZ2xlbWFpbC5jb20+CkFja2Vk
-LWJ5OiBVd2UgS2xlaW5lLUvDtm5pZyA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPgpS
-ZXZpZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgpTaWdu
-ZWQtb2ZmLWJ5OiBUaGllcnJ5IFJlZGluZyA8dGhpZXJyeS5yZWRpbmdAZ21haWwuY29tPgpTaWdu
-ZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+Ci0tLQogZHJpdmVycy9w
-d20vcHdtLW1lc29uLmMgfCA0ICsrLS0KIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyks
-IDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9wd20vcHdtLW1lc29uLmMgYi9k
-cml2ZXJzL3B3bS9wd20tbWVzb24uYwppbmRleCA5Yjc5Y2JjN2E3MTUuLjk1NTFmODk2ZGQ2ZiAx
-MDA2NDQKLS0tIGEvZHJpdmVycy9wd20vcHdtLW1lc29uLmMKKysrIGIvZHJpdmVycy9wd20vcHdt
-LW1lc29uLmMKQEAgLTE4OCw3ICsxODgsNyBAQCBzdGF0aWMgaW50IG1lc29uX3B3bV9jYWxjKHN0
-cnVjdCBtZXNvbl9wd20gKm1lc29uLAogCWRvX2RpdihmaW5fcHMsIGZpbl9mcmVxKTsKIAogCS8q
-IENhbGMgcHJlX2RpdiB3aXRoIHRoZSBwZXJpb2QgKi8KLQlmb3IgKHByZV9kaXYgPSAwOyBwcmVf
-ZGl2IDwgTUlTQ19DTEtfRElWX01BU0s7IHByZV9kaXYrKykgeworCWZvciAocHJlX2RpdiA9IDA7
-IHByZV9kaXYgPD0gTUlTQ19DTEtfRElWX01BU0s7IHByZV9kaXYrKykgewogCQljbnQgPSBESVZf
-Uk9VTkRfQ0xPU0VTVF9VTEwoKHU2NClwZXJpb2QgKiAxMDAwLAogCQkJCQkgICAgZmluX3BzICog
-KHByZV9kaXYgKyAxKSk7CiAJCWRldl9kYmcobWVzb24tPmNoaXAuZGV2LCAiZmluX3BzPSVsbHUg
-cHJlX2Rpdj0ldSBjbnQ9JXVcbiIsCkBAIC0xOTcsNyArMTk3LDcgQEAgc3RhdGljIGludCBtZXNv
-bl9wd21fY2FsYyhzdHJ1Y3QgbWVzb25fcHdtICptZXNvbiwKIAkJCWJyZWFrOwogCX0KIAotCWlm
-IChwcmVfZGl2ID09IE1JU0NfQ0xLX0RJVl9NQVNLKSB7CisJaWYgKHByZV9kaXYgPiBNSVNDX0NM
-S19ESVZfTUFTSykgewogCQlkZXZfZXJyKG1lc29uLT5jaGlwLmRldiwgInVuYWJsZSB0byBnZXQg
-cGVyaW9kIHByZV9kaXZcbiIpOwogCQlyZXR1cm4gLUVJTlZBTDsKIAl9Ci0tIAoyLjIwLjEKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+From: Bichao Zheng <bichao.zheng@amlogic.com>
+
+[ Upstream commit a279345807e1e0ae79567a52cfdd9d30c9174a3c ]
+
+There is an abnormally low about 20ms,when setting duty repeatedly.
+Because setting the duty will disable PWM and then enable. Delete
+this operation now.
+
+Fixes: 211ed630753d2f ("pwm: Add support for Meson PWM Controller")
+Signed-off-by: Bichao Zheng <bichao.zheng@amlogic.com>
+[ Dropped code instead of hiding it behind a comment ]
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/pwm/pwm-meson.c | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
+index 9551f896dd6f..3d2c36963a4f 100644
+--- a/drivers/pwm/pwm-meson.c
++++ b/drivers/pwm/pwm-meson.c
+@@ -325,11 +325,6 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 	if (state->period != channel->state.period ||
+ 	    state->duty_cycle != channel->state.duty_cycle ||
+ 	    state->polarity != channel->state.polarity) {
+-		if (channel->state.enabled) {
+-			meson_pwm_disable(meson, pwm->hwpwm);
+-			channel->state.enabled = false;
+-		}
+-
+ 		if (state->polarity != channel->state.polarity) {
+ 			if (state->polarity == PWM_POLARITY_NORMAL)
+ 				meson->inverter_mask |= BIT(pwm->hwpwm);
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
