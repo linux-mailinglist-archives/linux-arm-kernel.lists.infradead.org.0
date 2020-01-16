@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8DEA13DCCA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:00:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30F5313DCDA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:01:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ruw66THGCg6QhzXSfemxd1HOMrA/RFlBtRr+mMxvSUo=; b=c8+gTmqKw0zFe8
-	fU8r7npFe+SfERe8j5DknNErTfYAji9KTIE8Ww7FcCZ2SJaDs3m2EYKFN+F8LqLHHoIr5PxtCGX2C
-	0FznuQyD5qxyGzX6mFumTg106DCVUKAzZGf6snQnPhE7PRHn/RI7zYWQx/cXAcNAdlhhuCSCivMAu
-	X6LCwKdYfQwlsY8DVS+ZOvgO4ZCMc1TE+qpynObkWqt0lKhW+BnoYiGR4RIvFgbTjVg7SNnWdE6gY
-	iSMmXUQ8bJ3lA6Zbj/7/tRSjpPpj0vVdGHinM7QBDkDtxRM4Ia4m20VlOTj2yeZxBznXin1/e9RjS
-	id/mFQj+xKP2QMND1QHQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K+XX/SEc8opKAXzjU/k79G4Agb3DpeTQwHq1Bl/mECs=; b=i+vaWIN2Qf0k+M
+	GPTWhm+Ju7nDqkw4bPhBZKt696f0Amjh1pTd7R6pROn9gXPjlTaP6mGqzc88hZVG6GUQEnS2p7wGS
+	9ot5hBkduAivcBNRnL0OlLOMQR6KNenAHyoKj/qNON36IXG19r8/zL/t1ApdDf565qX/SNAQlMim+
+	EFzAwJx2hh2z9OccOxP7YTaIbzgyNx0H9A3p4IXSwLFCx3ujbXIEdrimjmpQ755DW9BbJzM1ilDm3
+	1M74gLLcl9iyGYs/7loFSj74T72zNtPCG33xJfV1CE5VA0a4v5f8e6BepLfcgeuGhQy+b4iaxf5B2
+	J3+2ZdXA5OxWi7ibTrqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is5go-0004S0-Rr; Thu, 16 Jan 2020 14:00:02 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1is5iW-0006ak-Pi; Thu, 16 Jan 2020 14:01:48 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is5gT-0004Eu-BR
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 13:59:45 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 3E74999BCA8C9E8F7944;
- Thu, 16 Jan 2020 21:59:36 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Thu, 16 Jan 2020
- 21:59:30 +0800
-Subject: Re: [PATCH v5] arm64: Implement optimised checksum routine
-To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>
-References: <44e00660247f8f39354ba8918071d6cff0d90612.1579106209.git.robin.murphy@arm.com>
- <20200116105534.GC14761@willie-the-truck>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <78c68b7c-e115-8c90-0ef7-4436cad142bc@hisilicon.com>
-Date: Thu, 16 Jan 2020 21:59:30 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1is5i4-0006LS-65
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 14:01:28 +0000
+Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
+ helo=dude02.lab.pengutronix.de)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1is5hx-00075c-Es; Thu, 16 Jan 2020 15:01:13 +0100
+Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1is5hw-0002UC-2t; Thu, 16 Jan 2020 15:01:12 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: robh+dt@kernel.org, shawnguo@kernel.org, festevam@gmail.com,
+ linux-imx@nxp.com, c.hemp@phytec.de, s.christ@phytec.de,
+ chf.fritz@googlemail.com, s.riedmueller@phytec.de
+Subject: [PATCH v3 1/2] ARM: dts: imx6: phycore-som: fix arm and soc minimum
+ voltage
+Date: Thu, 16 Jan 2020 15:01:07 +0100
+Message-Id: <20200116140108.6069-1-m.felsch@pengutronix.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200116105534.GC14761@willie-the-truck>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_055941_559752_257CADF2 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200116_060120_219699_030E6A58 
+X-CRM114-Status: GOOD (  11.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,70 +68,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, ard.biesheuvel@linaro.org, zhaoyuke@huawei.com,
- linux-arm-kernel@lists.infradead.org, huanglingyan2@huawei.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-On 2020/1/16 18:55, Will Deacon wrote:
-> On Wed, Jan 15, 2020 at 04:42:39PM +0000, Robin Murphy wrote:
->> Apparently there exist certain workloads which rely heavily on software
->> checksumming, for which the generic do_csum() implementation becomes a
->> significant bottleneck. Therefore let's give arm64 its own optimised
->> version - for ease of maintenance this foregoes assembly or intrisics,
->> and is thus not actually arm64-specific, but does rely heavily on C
->> idioms that translate well to the A64 ISA and the typical load/store
->> capabilities of most ARMv8 CPU cores.
->>
->> The resulting increase in checksum throughput scales nicely with buffer
->> size, tending towards 4x for a small in-order core (Cortex-A53), and up
->> to 6x or more for an aggressive big core (Ampere eMAG).
->>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->>
->> ---
->>
->> I rigged up a simple userspace test to run the generic and new code for
->> various buffer lengths at aligned and unaligned offsets; data is average
->> runtime in nanoseconds.
-> 
-> Shaokun, Yuke -- please can you give this a spin and let us know how it
-> works for you? If it looks good, then I can queue it up today/tomorrow.
-> 
-
-Lingyan has tested this patch, the result is as follow:
-1000loop  general(ns)     csum_hly_128B.c(ns) csum_robin_v5.s(ns)
-   64B:      48510               40730          37440
-  256B:     104180               59330          50210
- 1023B:     328580              124600          89960
- 1024B:     327880              125300          88520
- 1500B:     466440              165090         113560
- 2048B:     632060              212470         158320
- 4095B:    1219850              393080         263940
- 4096B:    1222740              399200         262550
-
-It's better than Lingyan's patch v4, Thanks for Robin's work.
-
-If you are happy, please feel free to add:
-Reported-by: Lingyan Huang <huanglingyan2@huawei.com>
-Tested-by: Lingyan Huang <huanglingyan2@huawei.com>
-
-Thanks,
-Shaokun
-
-> Thanks,
-> 
-> Will
-> 
-> .
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGN1cnJlbnQgc2V0IG1pbmltdW0gdm9sdGFnZSBvZiA3MzAwMDDCtVYgc2VlbXMgdG8gYmUg
+d3JvbmcuIEkgZG9uJ3QKa25vdyB0aGUgZG9jdW1lbnQgd2hpY2ggc3BlY2lmaWVzIHRoYXQgYnV0
+IHRoZSBpbXg2cWRsIGRhdGFzaGVldHMgc2F5cwp0aGF0IHRoZSBtaW5pbXVtIHZvbHRhZ2Ugc2hv
+dWxkIGJlIDAuOTI1ViBmb3IgVkREX0FSTSAoTERPIGJ5cGFzc2VkLApsb3dlc3Qgb3BwKSBhbmQg
+MS4xNVYgZm9yIFZERF9TT0MgKExETyBieXBhc3NlZCwgbG93ZXN0IG9wcCkuCgpGaXhlczogZGRl
+YzVkMWMwMDQ3ICgiQVJNOiBkdHM6IGlteDY6IEFkZCBpbml0aWFsIHN1cHBvcnQgZm9yIHBoeUNP
+UkUtaS5NWCA2IFNPTSIpClNpZ25lZC1vZmYtYnk6IE1hcmNvIEZlbHNjaCA8bS5mZWxzY2hAcGVu
+Z3V0cm9uaXguZGU+Ci0tLQp2MzoKLSBmaXggY29tbWl0IG1lc3NhZ2UKdjI6Ci0gdXNlIGxkbyBi
+eXBhc3NlZCB2YWx1ZXMKLS0tCiBhcmNoL2FybS9ib290L2R0cy9pbXg2cWRsLXBoeXRlYy1waHlj
+b3JlLXNvbS5kdHNpIHwgNCArKy0tCiAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCAy
+IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDZxZGwtcGh5
+dGVjLXBoeWNvcmUtc29tLmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9pbXg2cWRsLXBoeXRlYy1w
+aHljb3JlLXNvbS5kdHNpCmluZGV4IGExZTJjNTA5NGQ1OC4uNTFhNDdhMjQyNzgzIDEwMDY0NAot
+LS0gYS9hcmNoL2FybS9ib290L2R0cy9pbXg2cWRsLXBoeXRlYy1waHljb3JlLXNvbS5kdHNpCisr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDZxZGwtcGh5dGVjLXBoeWNvcmUtc29tLmR0c2kKQEAg
+LTExMSwxNCArMTExLDE0IEBACiAJCXJlZ3VsYXRvcnMgewogCQkJdmRkX2FybTogYnVjazEgewog
+CQkJCXJlZ3VsYXRvci1uYW1lID0gInZkZF9hcm0iOwotCQkJCXJlZ3VsYXRvci1taW4tbWljcm92
+b2x0ID0gPDczMDAwMD47CisJCQkJcmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8OTI1MDAwPjsK
+IAkJCQlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxMzgwMDAwPjsKIAkJCQlyZWd1bGF0b3It
+YWx3YXlzLW9uOwogCQkJfTsKIAogCQkJdmRkX3NvYzogYnVjazIgewogCQkJCXJlZ3VsYXRvci1u
+YW1lID0gInZkZF9zb2MiOwotCQkJCXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDczMDAwMD47
+CisJCQkJcmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8MTE1MDAwMD47CiAJCQkJcmVndWxhdG9y
+LW1heC1taWNyb3ZvbHQgPSA8MTM4MDAwMD47CiAJCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKIAkJ
+CX07Ci0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
