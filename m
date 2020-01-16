@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 916AC13EAC7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:46:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A248513EAE2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:47:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jYUI8PyBAUm7vbAL/Ptz44q1GDYhJs+VR990oXUaWLI=; b=lSynHBXNM8T1Uf
-	nNkEETrx9ZWwsR6HCNXAy5sS3hZgfEgutNaP8U5dvAmsQDH+yyCUnNqtJy2WsVYXf1m7f6dRNlx2f
-	HS4g9j3UREXdaZXGsvgMQbj6hy7ZfP46wt0WM+Gt/hB1zbgUMI3o3nB/e1h9yXzRq/9FEXlIyfFzd
-	FwZMpkY2lNMLtTM876M3vXFQWDe5PS3+w6nwtiWMtNM16v7aSkK6rZNXoAhLeGC9qJXhbLzbOLvXP
-	IibyzPA9zGaVjRuaL6lVHBOWTNcaknrE6YfqSyF8W0XIusHxILF8aK0w5ERl2OwiD4g+kOidmZ03j
-	ARbCv9UF1E2T3UlH4PAg==;
+	List-Owner; bh=/mpfKz/HQXZxIbZNCwmAIyflbsQx9pd23w4ff9p9jc4=; b=qtnM4OL4JQ8BMy
+	hFIIR2gjIpoPIpKCAw1L/bVoG6i9D8bxtTWgKoGF0ASY28zYtrF5NO/s2g/eLbBbsJkJNNeud6Ll0
+	yvXTomudINNLekwLZR05dv+79Z61h7J5IDNVCh5ROUZgeLJWGYh6BbsuMqTL2l5QDOrdBg+S2CNMo
+	5tcpU6fOzS5wEJ3Swxq3x12javTiqWdy+ALZygP4oXB1c1JG9g5xXmWVTaIIJ7cW3ad03yGyBAYf+
+	3v3ACJa4DmCUtK3cwzGTomU1yLu1vGuFCjzXKQnkhPH7Rnc04d8l+5AqwK3JoyAJwxVzi78EG0Fmr
+	94TG7neDsrWlrS+VvNdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Dk-0006VT-SY; Thu, 16 Jan 2020 17:46:16 +0000
+	id 1is9ES-0006nE-GD; Thu, 16 Jan 2020 17:47:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8iQ-0007Rj-M5
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:13:56 +0000
+ id 1is8iX-0007Xi-Te
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86E5E246A7;
- Thu, 16 Jan 2020 17:13:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F1522469F;
+ Thu, 16 Jan 2020 17:14:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194833;
- bh=t3NzLjqky/Ad3i0HuvmURg01ba2B4dUEqMwPsFzQWqo=;
+ s=default; t=1579194841;
+ bh=QFwPIGYW7jqbTdUHd0X1/G46FyHGNJE8eX12vRwYplU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NUCjHXK64dpBBkIuul/oisKrmjMyYgc/IxOag+nDIo6hMmHZJd2RWhqVivQisyBkn
- K0qNSRiwfLivIfJQ2WYmEkHNTiHlHXk9pNdqwL3h5Zyw7VK9j60XNLvT2zZJW+o7Dd
- 0PBr1pi+RUU1ypIYMkHmkMN1sR+s23jYxFe9WaX4=
+ b=lMxqmjVU/4EW5t0dMOS2Vs5ovOoFPMKs93vNP7afFqQ8gziQvn7oT84Xz9o/pww+t
+ WbmuQobw+zxTlusflu7ZkIET7aDqh2MQiQPUZ9TH+JAq+GXCOkfwW0G5Pojr76/LSI
+ u1RZ0I6TcdlZSKmiBKQ69Rwi6eYXWjV29PPHuYFg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 634/671] media: exynos4-is: Fix recursive locking
- in isp_video_release()
-Date: Thu, 16 Jan 2020 12:04:32 -0500
-Message-Id: <20200116170509.12787-371-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 640/671] rtc: brcmstb-waketimer: add missed
+ clk_disable_unprepare
+Date: Thu, 16 Jan 2020 12:04:38 -0500
+Message-Id: <20200116170509.12787-377-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091354_771583_08B2BB19 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20200116_091402_038992_3B6D7A6F 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,49 +80,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-rtc@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Chuhong Yuan <hslester96@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Seung-Woo Kim <sw0312.kim@samsung.com>
+From: Chuhong Yuan <hslester96@gmail.com>
 
-[ Upstream commit 704c6c80fb471d1bb0ef0d61a94617d1d55743cd ]
+[ Upstream commit 94303f8930ed78aea0f189b703c9d79fff9555d7 ]
 
->From isp_video_release(), &isp->video_lock is held and subsequent
-vb2_fop_release() tries to lock vdev->lock which is same with the
-previous one. Replace vb2_fop_release() with _vb2_fop_release() to
-fix the recursive locking.
+This driver forgets to disable and unprepare clock when remove.
+Add a call to clk_disable_unprepare to fix it.
 
-Fixes: 1380f5754cb0 ("[media] videobuf2: Add missing lock held on vb2_fop_release")
-Signed-off-by: Seung-Woo Kim <sw0312.kim@samsung.com>
-Reviewed-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab@kernel.org>
+Fixes: c4f07ecee22e ("rtc: brcmstb-waketimer: Add Broadcom STB wake-timer")
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Link: https://lore.kernel.org/r/20191105160043.20018-1-hslester96@gmail.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/media/platform/exynos4-is/fimc-isp-video.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/rtc/rtc-brcmstb-waketimer.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/media/platform/exynos4-is/fimc-isp-video.c b/drivers/media/platform/exynos4-is/fimc-isp-video.c
-index a920164f53f1..39340abefd14 100644
---- a/drivers/media/platform/exynos4-is/fimc-isp-video.c
-+++ b/drivers/media/platform/exynos4-is/fimc-isp-video.c
-@@ -316,7 +316,7 @@ static int isp_video_release(struct file *file)
- 		ivc->streaming = 0;
- 	}
+diff --git a/drivers/rtc/rtc-brcmstb-waketimer.c b/drivers/rtc/rtc-brcmstb-waketimer.c
+index f4010a75f2be..1abc8397850a 100644
+--- a/drivers/rtc/rtc-brcmstb-waketimer.c
++++ b/drivers/rtc/rtc-brcmstb-waketimer.c
+@@ -287,6 +287,7 @@ static int brcmstb_waketmr_remove(struct platform_device *pdev)
+ 	struct brcmstb_waketmr *timer = dev_get_drvdata(&pdev->dev);
  
--	vb2_fop_release(file);
-+	_vb2_fop_release(file, NULL);
+ 	unregister_reboot_notifier(&timer->reboot_notifier);
++	clk_disable_unprepare(timer->clk);
  
- 	if (v4l2_fh_is_singular_file(file)) {
- 		fimc_pipeline_call(&ivc->ve, close);
+ 	return 0;
+ }
 -- 
 2.20.1
 
