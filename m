@@ -2,49 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D47C13F354
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:42:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAFFF13F355
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:42:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Re8XopAuDTUvp8ZeJR7ut/ciRBY/SAsAfPm4SeGRRfI=; b=JAB3qifkUd4Unr
-	8etbu6tK0Q9F5dWXvZF4Y87GohvPG4WlWFw2hkGs8uvMrSQ72VutyeMTFli1wrDEnUNmFqZpwXDBE
-	rt0tchl/cn9NQwKcDy2x5jL4Ri6xYNdIc3GO3x2gO6PlI975X/H8QQi8HK6NIsSeg1Wy6fXUetOaA
-	HMXdqeKLjl8f4O2y24UqwRgxIoiIDlBSfmfW3trfulQKlVVffTbKB0K5CHcFA/Eqjr+Rj4RONaDPi
-	/C4sq8HRibZAjwKz4PVhwltRi7B3WsCftomz7ynwr6lNWy9KRejhIwSqGkNSbxLRTvSQ7RnCbbOaN
-	xfcov7kcpopGiHKGKy/w==;
+	List-Owner; bh=qRKDCsbGH/Ta+eDBq1ATsXgpSfBmW8owy2HlC7HV9C4=; b=tuaF58esvkkHyW
+	+o+NvHpvggt0wflPleUtrOVMzmJye8K++h/OweWYtUEpdV37/igkm/6i3ezgCJFlmxTc+wyjbri3/
+	9S5x4EZG3RSTPXfG8bT6pPK4wb8aN/6l85Bkokz03xtDDeP6qp1LkS4DIGSKkJqH4OvOWcJvkNgzL
+	f9FhDu8PorrmCCz5KMWjRQpVyDPP0YohdCcim9gCpNwf7FEAYWDi+jJueblaK/UfA6W4t8YQwnloE
+	ymmPGk/zlH+9yHV6gwY58G/hKhTZK2CxLenl+255bKTfJSiNwPkVzY03hc8cemk9b7veOJhkZnNhJ
+	HTCG7YvMaiXc6JC8vapA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isA5o-0004Sa-LE; Thu, 16 Jan 2020 18:42:08 +0000
+	id 1isA69-0004tA-E2; Thu, 16 Jan 2020 18:42:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9QV-0003Tj-Cn
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:59:32 +0000
+ id 1is9Rq-000650-J1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:00:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A2A5C31B;
- Thu, 16 Jan 2020 09:59:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA1BB31B;
+ Thu, 16 Jan 2020 10:00:49 -0800 (PST)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- DB7FA3F534; Thu, 16 Jan 2020 09:59:22 -0800 (PST)
-Date: Thu, 16 Jan 2020 17:59:20 +0000
+ 121763F534; Thu, 16 Jan 2020 10:00:47 -0800 (PST)
+Date: Thu, 16 Jan 2020 18:00:46 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v3 08/16] arm64: initialize ptrauth keys for kernel
- booting task
-Message-ID: <20200116175920.GH10277@arrakis.emea.arm.com>
+Subject: Re: [PATCH v3 07/16] arm64: initialize and switch ptrauth kernel keys
+Message-ID: <20200116180045.GI10277@arrakis.emea.arm.com>
 References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
- <1576486038-9899-9-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-8-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1576486038-9899-9-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <1576486038-9899-8-git-send-email-amit.kachhap@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_095927_516240_5D85A998 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_100050_736966_BA93A3A8 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,21 +78,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 02:17:10PM +0530, Amit Daniel Kachhap wrote:
-> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-> index aa956ca..0f89f59 100644
-> --- a/arch/arm64/include/asm/pointer_auth.h
-> +++ b/arch/arm64/include/asm/pointer_auth.h
-> @@ -60,6 +60,12 @@ static inline void ptrauth_keys_init_kernel(struct ptrauth_keys_kernel *keys)
->  		get_random_bytes(&keys->apia, sizeof(keys->apia));
->  }
->  
-> +static inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kernel *keys)
-
-I think we should use __always_inline here, just in case the compiler
-ignores the hint.
-
-Otherwise:
+On Mon, Dec 16, 2019 at 02:17:09PM +0530, Amit Daniel Kachhap wrote:
+> From: Kristina Martsenko <kristina.martsenko@arm.com>
+> 
+> Set up keys to use pointer authentication within the kernel. The kernel
+> will be compiled with APIAKey instructions, the other keys are currently
+> unused. Each task is given its own APIAKey, which is initialized during
+> fork. The key is changed during context switch and on kernel entry from
+> EL0.
+> 
+> The keys for idle threads need to be set before calling any C functions,
+> because it is not possible to enter and exit a function with different
+> keys.
+> 
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+> [Amit: Modified secondary cores key structure, comments]
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
