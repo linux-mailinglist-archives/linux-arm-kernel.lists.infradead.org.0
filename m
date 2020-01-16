@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42AE613EC1C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:55:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B4AA13EC32
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:56:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hUd4zXdLhZeAzCWNVuZCxvYTi59CkAkRu4kTTtUDmvc=; b=edNslIOpc8cyBS
-	qBTYhYi+/VsjDTxPhRF6D/+KdQhpiLNt8nicM5m9rFeC5qOFE03oPD9iSQrkJIulexxAxq5KdvHdi
-	SuE9Vnh54FR+9c2oAaHPzLJS/3Hylrp3kIc/9rtocpetMV7fqFUj1zEEsgJ8s9Fx6lzfU1qslXXC8
-	tJq8ghKQqUcKnt3WNaaD5a9oVH5vL3tlo7C5BlfjcuPL9k+qZfX3IWvbTEysAxfVmmi/KOOOJOzg7
-	5j2VY9yvVPpof2kl+cUACLMxMZtAkSRDiDJCTGY+7wkf9CljBGCA3uPBLLMAbg2Pdah5JqQy5ATIE
-	pNlCdPgQEQCztDF65JjA==;
+	List-Owner; bh=96ZcnL9Eh13bfFADrEIZ70b3i4W13GYOK3g6Xj4uRGE=; b=fHJJjOzIzXZ3WH
+	MaSNwl6kDj23+S4A/IeeAgmuGD9K9tsv2j5MwGKLI4foknkPypD830PHqvd1ITLB6nocBjdQXAEOy
+	P1jafbEwZoniaiWknApKENWj3/2GfPL/ls3ISHOmPxrMk6xssoAZsoH4x95sTfkH9SEgYHtU7J7qL
+	by9vq7qq4BA7WlW+IFKG90BoUqwhs0E8YE8K8jdCOKqfRyKWkFRWcyAPYXaKH7qmfc2wI+TLDG7KB
+	fu/lzahy5QW6EKjenaBoFqgNmQ6viNvyVgutkTQFuyKRouf8qNmDh0r0xhv/9e4QJ2jxsydW0fxEt
+	7dXnxBOshdSap3zmQK5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Mv-0007PD-1f; Thu, 16 Jan 2020 17:55:45 +0000
+	id 1is9NC-0007ia-Md; Thu, 16 Jan 2020 17:56:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8sO-0001Mv-My
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:24:26 +0000
+ id 1is8sT-0001RN-Nj
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:24:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A2FD72468D;
- Thu, 16 Jan 2020 17:24:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4A2B72468C;
+ Thu, 16 Jan 2020 17:24:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195452;
- bh=tdBSwxxCeitoPSZ6ScJGChgxmx8QvubbLNKi1Z1+VLQ=;
+ s=default; t=1579195457;
+ bh=VBidqZZy8EOM3EeYF2d/6iwoZ/CfMT1JUE7+LAaz+oI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ofdXbKysNZByOAQiJXWp7OpkNnWXMu018Xr7wUYLx9ItIzCuv2/FjaHnW9NFXnUvz
- 6yr+BOTZM11wBt48XPQvkxJv7qgi+3xJLSRv//JW6sQQ+leZ4YNC3tqJeOn9SjdOZh
- LZafTS2dYYbhvO01j5vnDRZP1gQ9Se2lYvdwuzr4=
+ b=Z1vDNqL9QC17BE5R0hdo3QYIt6qunOPlIrAO6ijpW1BCPhVbFulAWldZ2FAEYl4/N
+ aciZ5s1rBC2QPKunOXDrAo7EG+vfYA+adBxDRGBw/dLQrZAozdKTJPCtsdzTkgtnF7
+ DPN5WyjEo1qKoj+3dtLuUldo7jFTKJnOZTefZM+g=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 062/371] ASoC: imx-sgtl5000: put of nodes if
- finding codec fails
-Date: Thu, 16 Jan 2020 12:18:54 -0500
-Message-Id: <20200116172403.18149-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 066/371] clk: sunxi-ng: sun8i-a23: Enable
+ PLL-MIPI LDOs when ungating it
+Date: Thu, 16 Jan 2020 12:18:58 -0500
+Message-Id: <20200116172403.18149-9-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092412_828053_A1CAAD40 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200116_092417_841129_FBDC9091 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,48 +80,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Daniel Baluta <daniel.baluta@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- Stefan Agner <stefan@agner.ch>, Nicolin Chen <nicoleotsuka@gmail.com>,
- Mark Brown <broonie@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Agner <stefan@agner.ch>
+From: Chen-Yu Tsai <wens@csie.org>
 
-[ Upstream commit d9866572486802bc598a3e8576a5231378d190de ]
+[ Upstream commit 108a459ef4cd17a28711d81092044e597b5c7618 ]
 
-Make sure to properly put the of node in case finding the codec
-fails.
+The PLL-MIPI clock is somewhat special as it has its own LDOs which
+need to be turned on for this PLL to actually work and output a clock
+signal.
 
-Fixes: 81e8e4926167 ("ASoC: fsl: add sgtl5000 clock support for imx-sgtl5000")
-Signed-off-by: Stefan Agner <stefan@agner.ch>
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
-Acked-by: Nicolin Chen <nicoleotsuka@gmail.com>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Add the 2 LDO enable bits to the gate bits.
+
+Fixes: 5690879d93e8 ("clk: sunxi-ng: Add A23 CCU")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/fsl/imx-sgtl5000.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/clk/sunxi-ng/ccu-sun8i-a23.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/sound/soc/fsl/imx-sgtl5000.c b/sound/soc/fsl/imx-sgtl5000.c
-index 8e525f7ac08d..3d99a8579c99 100644
---- a/sound/soc/fsl/imx-sgtl5000.c
-+++ b/sound/soc/fsl/imx-sgtl5000.c
-@@ -119,7 +119,8 @@ static int imx_sgtl5000_probe(struct platform_device *pdev)
- 	codec_dev = of_find_i2c_device_by_node(codec_np);
- 	if (!codec_dev) {
- 		dev_err(&pdev->dev, "failed to find codec platform device\n");
--		return -EPROBE_DEFER;
-+		ret = -EPROBE_DEFER;
-+		goto fail;
- 	}
+diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
+index d93b452f0df9..1cef040ebe82 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
++++ b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
+@@ -132,7 +132,7 @@ static SUNXI_CCU_NKM_WITH_GATE_LOCK(pll_mipi_clk, "pll-mipi",
+ 				    8, 4,		/* N */
+ 				    4, 2,		/* K */
+ 				    0, 4,		/* M */
+-				    BIT(31),		/* gate */
++				    BIT(31) | BIT(23) | BIT(22), /* gate */
+ 				    BIT(28),		/* lock */
+ 				    CLK_SET_RATE_UNGATE);
  
- 	data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
 -- 
 2.20.1
 
