@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9327613EF2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:14:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CE4813EF5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:15:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dryzUwwz9YErPW03YWrtVt9rvMEcow0Oo9mdMQms9kw=; b=HSkvAroNll6cek
-	cWYRtimyNvv0B6Wt2kmbHsObNy996n4mqyrFLjIEqcpnAzSsJ5ilUvrzehnzNNq16x/asZRnL3fqU
-	VMbRMnbJ4m4/KZUw89+MjJ3Qc8vcsmtpGBExdoNgw0xtQ5x7RtHxDoY3phgm6JfmeBhqein4AfS0I
-	GmD8cXLwQ44KvBcVobRtz8ukSBV0H1SMpEtGVDw/nrbsZk45tIybvoUmFRo1NBkOzupwnUmpBwQD1
-	3Sdme0kghyH45FcFVkhCBFCrsHh7QWrzsS+d+oA5hS+bWhcr1P8xtvri2DVeT4v+DkIo8AQIad1UH
-	R7a4OcTzS/S3FAioI3gw==;
+	List-Owner; bh=P8SZmC5E/YBelYcLU7oSKaqVFENrkOoFxmVkHcrMqqM=; b=hZaBcOoj/VtdMJ
+	naOdjBsFwna1tjRsx96aYIq+7d0GmxBG1lj3njM1EMBIbO9/MBslZBYP13Lqo0y6EfHKS/xp5FLWI
+	96v/I4JgE3Fol0jcbcQwCkPlt0k3VxL4T0YyK9DIjnLUv9nUnc5KZ0euiari0pWO1U9dw08jFKtzh
+	mapFr5PsxcYVc1L6J9s0T32eIAeiW3/KFugWHvPyUAsF1kIwd5ynuTQ40IkrDq5CSsSwgwC/GNnzX
+	aRpdEV0RT29HyYqFbRr1t4/jhgRQr4zu6SC2WZy0PV3TlU+aowA9Mkso/9pB+72IzaT65fxvLAEVA
+	nll4LOulfp46fDS4PPaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9f5-0005Pb-Fr; Thu, 16 Jan 2020 18:14:31 +0000
+	id 1is9fL-0005iU-5u; Thu, 16 Jan 2020 18:14:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is93C-0005XE-AV
+ id 1is93E-0005YM-9H
  for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:35:29 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0D93246A9;
- Thu, 16 Jan 2020 17:35:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E4408246CC;
+ Thu, 16 Jan 2020 17:35:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196120;
- bh=y1elH+2JG+MYZjSMuDb+RqH4+qmJ1Qal4Hoo1MjNufQ=;
+ s=default; t=1579196122;
+ bh=5NvvSNPqk9PRM4zMOWhCMNXvavInHLXwanl5D6VyJ3U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=c9SMpoDXAXvMSfFCR5rO8qx3+q6Hqk78bN7ir8ESOC9ggX+xu24y5OhfmOZDpli15
- lK3yBPx3SkQfzHaQuYvR/g82tByMnsNcNHX8peYj1UW8KNisDLfVSwtBHieroRJuKa
- LBfwos8wqVVgdsKvgYXplAbD7aSRxXCOXjmpDi4s=
+ b=YJ3D5bQOZ3vtU3Belb4QJns/YcLnfCPGucHO0h9nvTzJKoT/FglvRTYPNphqU+QpU
+ Auj1rQSg3/X2pdEzS/j3DXevhFZO45vsENXQJUq54X42ANJJRTEB6oHSrPo4gUQXdl
+ dXtE1P3fPG2gGXDxX015BfZ1KhqvnDGsvL1ubSQY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 027/251] clk: samsung: exynos4: fix refcount leak
- in exynos4_get_xom()
-Date: Thu, 16 Jan 2020 12:31:01 -0500
-Message-Id: <20200116173445.21385-27-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 028/251] clk: imx6q: fix refcount leak in
+ imx6q_clocks_init()
+Date: Thu, 16 Jan 2020 12:31:02 -0500
+Message-Id: <20200116173445.21385-28-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173445.21385-1-sashal@kernel.org>
 References: <20200116173445.21385-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093522_488035_5360DC2C 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_093524_367774_E398AFA3 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,9 +80,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -91,32 +90,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yangtao Li <tiny.windzz@gmail.com>
 
-[ Upstream commit cee82eb9532090cd1dc953e845d71f9b1445c84e ]
+[ Upstream commit c9ec1d8fef31b5fc9e90e99f9bd685db5caa7c5e ]
 
 The of_find_compatible_node() returns a node pointer with refcount
 incremented, but there is the lack of use of the of_node_put() when
 done. Add the missing of_node_put() to release the refcount.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-Fixes: e062b571777f ("clk: exynos4: register clocks using common clock framework")
+Fixes: 2acd1b6f889c ("ARM: i.MX6: implement clocks using common clock framework")
 Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/samsung/clk-exynos4.c | 1 +
+ drivers/clk/imx/clk-imx6q.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/samsung/clk-exynos4.c b/drivers/clk/samsung/clk-exynos4.c
-index faab9b31baf5..91f9b79e3941 100644
---- a/drivers/clk/samsung/clk-exynos4.c
-+++ b/drivers/clk/samsung/clk-exynos4.c
-@@ -1225,6 +1225,7 @@ static unsigned long __init exynos4_get_xom(void)
- 			xom = readl(chipid_base + 8);
+diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
+index 14682df5d312..d83f6221f1b0 100644
+--- a/drivers/clk/imx/clk-imx6q.c
++++ b/drivers/clk/imx/clk-imx6q.c
+@@ -174,6 +174,7 @@ static void __init imx6q_clocks_init(struct device_node *ccm_node)
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6q-anatop");
+ 	base = of_iomap(np, 0);
+ 	WARN_ON(!base);
++	of_node_put(np);
  
- 		iounmap(chipid_base);
-+		of_node_put(np);
- 	}
- 
- 	return xom;
+ 	/* Audio/video PLL post dividers do not work on i.MX6q revision 1.0 */
+ 	if (clk_on_imx6q() && imx_get_soc_revision() == IMX_CHIP_REVISION_1_0) {
 -- 
 2.20.1
 
