@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D1EB13ED9C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:04:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DCCE13ED88
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:03:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kK3eMV1FzX2R/gsSqO2b2Sv11a05zyWplM1DPIkqw/E=; b=u8QiZqBettCxJg
-	+8DmDXl8UuYWQ1qmWR+I32+koPDdmUbkw/aM2s6+uiJcVx1TmAacPUq1hIu/i2vhTpxtbpQdo7AYi
-	/e6YIqAZn3vHcNGXVHFnO+oWoND9GAyd/cVSO1SYFhalOqN0aSRAiSKBEFMBA9S/0RYq/eqQm6/Bu
-	/6ExtqoFSkBFsNfGJ138AUL5BbPihn0qiRxapsfQaKsLiW1R5Uo7Dm/9U6MJmX9H31t9VDr/Y+xzB
-	PGifIM6FnwhnHAhBcDZsBRd4HLCnKVML+xprWS9znlOQRCm9onFaaa7C2tF/BYUkzWXJ0xh0jlxGn
-	z836pKXoueZOKGv96eBA==;
+	List-Owner; bh=7S35lULo5e+2eaTdOV6f80ZGrohMP/dwqAvaWb2qkAQ=; b=RWk3ELM11ngQfj
+	ur+RZotmgRqsKuo04jLi816Th4Ieh4HsGIAT7s99zSq8sxHeTC9pV6KD9xyug1ZBYYZuK/XD/okQU
+	q1qUpEmmUC58f/nb5h5+MuvrtE7cUtfQqVKcala+XI9wsSY33v8ab4sDZwYRW/3+Ec7onueS8xsin
+	/Izk1OVh3mldTkoErlcacdW8uo/vAN8AM3clxE8i9hQ9V7F86ZehdZ8lqyayueHi6fgOzXjJ3r2/N
+	DDafza0zhLo2wQN3W1FRCcfTZpGchibTo7DI8XZjQJitirQ8pvPOhdTrMDt7qtrHf4e7iJ+39U51c
+	JpQvmqU+WKxrsBJ+8UJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9V5-0000rS-9e; Thu, 16 Jan 2020 18:04:11 +0000
+	id 1is9UU-0000Hz-Ik; Thu, 16 Jan 2020 18:03:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8vU-00054s-I0; Thu, 16 Jan 2020 17:27:32 +0000
+ id 1is8va-00058v-7D
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:27:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 84399246D7;
- Thu, 16 Jan 2020 17:27:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F3C0246D3;
+ Thu, 16 Jan 2020 17:27:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195643;
- bh=Hdh8DO5a63wF12YPbp0gG1po4zpP5uaPpT11980aqVQ=;
+ s=default; t=1579195649;
+ bh=LV/BZbBT0dIxJVUKESzPV9/ZnvEA6aMRs4D8sEBcqr0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EOJnMFrDMLHRXnSU7lDRClOfdPnXF/3vN2YYYXgmqhyYrThu16yJq/OfEb6+Foa8g
- jU4NJdXWzOzSQN7iWfMiy3pX2xGmgcO13QwRJAlamcPVlWjNgijVHQUORjOVTqG4V7
- 3YXWSiO8UF1GL7aA7+zSnpPPV+Jt3cejJwtBpZOY=
+ b=YV4nWlLyVLzpCnpedVgmSnQaXe4ruXm1d0sFMPBQCdAWIsvf90Z4K6AzfKRuxysd1
+ a1gpo9y6vK/Q9vW+v7PZ19VjaQh8yTWVCKqBCobK3GfLaAMiR+PZd0X0/KG4IvVTSH
+ XacaDySIdQIjqDVbXl4t/3f5zepj9vrxbFGMF5j0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 207/371] arm64: dts: meson: libretech-cc: set
- eMMC as removable
-Date: Thu, 16 Jan 2020 12:21:19 -0500
-Message-Id: <20200116172403.18149-150-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 212/371] serial: stm32: fix rx error handling
+Date: Thu, 16 Jan 2020 12:21:24 -0500
+Message-Id: <20200116172403.18149-155-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092724_990331_E3C24112 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_092730_422327_51248BD0 
+X-CRM114-Status: GOOD (  17.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +79,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Erwan Le Ray <erwan.leray@st.com>, linux-serial@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jerome Brunet <jbrunet@baylibre.com>
+From: Erwan Le Ray <erwan.leray@st.com>
 
-[ Upstream commit 9f72e321d5506fe3e162a6308a4a295d7f10bb5d ]
+[ Upstream commit 4f01d833fdcdd6f9b85d9e5d5d7568eb683626a7 ]
 
-The eMMC on this board is add-on module which is not mandatory. Removing
-'non-removable' property should prevent some errors when booting a board
-w/o an eMMC module present.
+- Fixes parity and framing error bit by clearing parity and framing error
+  flag. The current implementation doesn't clear the error bits when an
+  error is detected.
+- Fixes the incorrect name of framing error clearing flag in header file.
+- Fixes misalignement between data frame and errors status. The status
+  read for "n" frame was the status of "n+1" frame".
+- Fixes break detection was not triggered by the expected register.
 
-Fixes: 72fb2c852188 ("ARM64: dts: meson-gxl-s905x-libretech-cc: fixup board definition")
-Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-Reviewed-by: Martin Blumenstingl<martin.blumenstingl@googlemail.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Fixes: 48a6092fb41f ("serial: stm32-usart: Add STM32 USART Driver")
+Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/tty/serial/stm32-usart.c | 54 +++++++++++++++++++++-----------
+ drivers/tty/serial/stm32-usart.h | 10 ++----
+ 2 files changed, 37 insertions(+), 27 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-index e2c71753e327..407d32f4fe73 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-@@ -226,7 +226,6 @@
- 	cap-mmc-highspeed;
- 	mmc-ddr-3_3v;
- 	max-frequency = <50000000>;
--	non-removable;
- 	disable-wp;
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index 03a583264d9e..c43590077372 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -118,35 +118,51 @@ static void stm32_receive_chars(struct uart_port *port, bool threaded)
  
- 	mmc-pwrseq = <&emmc_pwrseq>;
+ 	while (stm32_pending_rx(port, &sr, &stm32_port->last_res, threaded)) {
+ 		sr |= USART_SR_DUMMY_RX;
+-		c = stm32_get_char(port, &sr, &stm32_port->last_res);
+ 		flag = TTY_NORMAL;
+-		port->icount.rx++;
+ 
++		/*
++		 * Status bits has to be cleared before reading the RDR:
++		 * In FIFO mode, reading the RDR will pop the next data
++		 * (if any) along with its status bits into the SR.
++		 * Not doing so leads to misalignement between RDR and SR,
++		 * and clear status bits of the next rx data.
++		 *
++		 * Clear errors flags for stm32f7 and stm32h7 compatible
++		 * devices. On stm32f4 compatible devices, the error bit is
++		 * cleared by the sequence [read SR - read DR].
++		 */
++		if ((sr & USART_SR_ERR_MASK) && ofs->icr != UNDEF_REG)
++			stm32_clr_bits(port, ofs->icr, USART_ICR_ORECF |
++				       USART_ICR_PECF | USART_ICR_FECF);
++
++		c = stm32_get_char(port, &sr, &stm32_port->last_res);
++		port->icount.rx++;
+ 		if (sr & USART_SR_ERR_MASK) {
+-			if (sr & USART_SR_LBD) {
+-				port->icount.brk++;
+-				if (uart_handle_break(port))
+-					continue;
+-			} else if (sr & USART_SR_ORE) {
+-				if (ofs->icr != UNDEF_REG)
+-					writel_relaxed(USART_ICR_ORECF,
+-						       port->membase +
+-						       ofs->icr);
++			if (sr & USART_SR_ORE) {
+ 				port->icount.overrun++;
+ 			} else if (sr & USART_SR_PE) {
+ 				port->icount.parity++;
+ 			} else if (sr & USART_SR_FE) {
+-				port->icount.frame++;
++				/* Break detection if character is null */
++				if (!c) {
++					port->icount.brk++;
++					if (uart_handle_break(port))
++						continue;
++				} else {
++					port->icount.frame++;
++				}
+ 			}
+ 
+ 			sr &= port->read_status_mask;
+ 
+-			if (sr & USART_SR_LBD)
+-				flag = TTY_BREAK;
+-			else if (sr & USART_SR_PE)
++			if (sr & USART_SR_PE) {
+ 				flag = TTY_PARITY;
+-			else if (sr & USART_SR_FE)
+-				flag = TTY_FRAME;
++			} else if (sr & USART_SR_FE) {
++				if (!c)
++					flag = TTY_BREAK;
++				else
++					flag = TTY_FRAME;
++			}
+ 		}
+ 
+ 		if (uart_handle_sysrq_char(port, c))
+@@ -569,14 +585,14 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
+ 	if (termios->c_iflag & INPCK)
+ 		port->read_status_mask |= USART_SR_PE | USART_SR_FE;
+ 	if (termios->c_iflag & (IGNBRK | BRKINT | PARMRK))
+-		port->read_status_mask |= USART_SR_LBD;
++		port->read_status_mask |= USART_SR_FE;
+ 
+ 	/* Characters to ignore */
+ 	port->ignore_status_mask = 0;
+ 	if (termios->c_iflag & IGNPAR)
+ 		port->ignore_status_mask = USART_SR_PE | USART_SR_FE;
+ 	if (termios->c_iflag & IGNBRK) {
+-		port->ignore_status_mask |= USART_SR_LBD;
++		port->ignore_status_mask |= USART_SR_FE;
+ 		/*
+ 		 * If we're ignoring parity and break indicators,
+ 		 * ignore overruns too (for real raw support).
+diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
+index ffc0c5285e51..9d087881913a 100644
+--- a/drivers/tty/serial/stm32-usart.h
++++ b/drivers/tty/serial/stm32-usart.h
+@@ -108,7 +108,6 @@ struct stm32_usart_info stm32h7_info = {
+ #define USART_SR_RXNE		BIT(5)
+ #define USART_SR_TC		BIT(6)
+ #define USART_SR_TXE		BIT(7)
+-#define USART_SR_LBD		BIT(8)
+ #define USART_SR_CTSIF		BIT(9)
+ #define USART_SR_CTS		BIT(10)		/* F7 */
+ #define USART_SR_RTOF		BIT(11)		/* F7 */
+@@ -120,8 +119,7 @@ struct stm32_usart_info stm32h7_info = {
+ #define USART_SR_SBKF		BIT(18)		/* F7 */
+ #define USART_SR_WUF		BIT(20)		/* H7 */
+ #define USART_SR_TEACK		BIT(21)		/* F7 */
+-#define USART_SR_ERR_MASK	(USART_SR_LBD | USART_SR_ORE | \
+-				 USART_SR_FE | USART_SR_PE)
++#define USART_SR_ERR_MASK	(USART_SR_ORE | USART_SR_FE | USART_SR_PE)
+ /* Dummy bits */
+ #define USART_SR_DUMMY_RX	BIT(16)
+ 
+@@ -166,8 +164,6 @@ struct stm32_usart_info stm32h7_info = {
+ /* USART_CR2 */
+ #define USART_CR2_ADD_MASK	GENMASK(3, 0)	/* F4 */
+ #define USART_CR2_ADDM7		BIT(4)		/* F7 */
+-#define USART_CR2_LBDL		BIT(5)
+-#define USART_CR2_LBDIE		BIT(6)
+ #define USART_CR2_LBCL		BIT(8)
+ #define USART_CR2_CPHA		BIT(9)
+ #define USART_CR2_CPOL		BIT(10)
+@@ -224,12 +220,10 @@ struct stm32_usart_info stm32h7_info = {
+ 
+ /* USART_ICR */
+ #define USART_ICR_PECF		BIT(0)		/* F7 */
+-#define USART_ICR_FFECF		BIT(1)		/* F7 */
+-#define USART_ICR_NCF		BIT(2)		/* F7 */
++#define USART_ICR_FECF		BIT(1)		/* F7 */
+ #define USART_ICR_ORECF		BIT(3)		/* F7 */
+ #define USART_ICR_IDLECF	BIT(4)		/* F7 */
+ #define USART_ICR_TCCF		BIT(6)		/* F7 */
+-#define USART_ICR_LBDCF		BIT(8)		/* F7 */
+ #define USART_ICR_CTSCF		BIT(9)		/* F7 */
+ #define USART_ICR_RTOCF		BIT(11)		/* F7 */
+ #define USART_ICR_EOBCF		BIT(12)		/* F7 */
 -- 
 2.20.1
 
