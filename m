@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98B6B13EB5D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:49:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4400813EB6D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:50:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNpBOAS0dVFVA58x78nlH62VbekiJg15o3ri3VgYm44=; b=HgAvp08yarYnNY
-	wGI+qdRbMqZFJFIefQPO8xBOhZw9kXdj5A3LAG1MdGw5uN7aTCMYLF3WPJ3kKVO5Mt8xsoLQvBkMy
-	PNmv/hoFu31V7YU2YXiX7NAepBnok9zYNtA2+kkrufVqN1HQ7oK5qQKH00iQqceME2E1+x1ugz+QS
-	cCA8Bxtcww+Q0HiMJKz2k/Gdi5YEX3tqWN9DlcAOyNlnZyo9ZaD3RPdeFl8v+/sGXKu8zjlzeR4dp
-	tcgi8KFmHjFlU0cAgCBH9ksxhKDHPlar2wtNTfaFXDP/CwBE0c/Qfxf52K+VM2/a7JB/Z9jDyd/qI
-	M0poMWXlv1p4eFmZDyyA==;
+	List-Owner; bh=nL/hdKV2CeniOeeO3CqN7R7IcbGi5MGt7VLXeA7gAYU=; b=dcGYH243q9O1mL
+	zQcuuXg/BflK+VA2qPTikauS2xD/T9mfUnAS4m2XBHPnLaLpzSIR7D8rSro4UZqB9xtcO7yny7dwa
+	RCWuGyT/uw2L+iH9YPPhDW8gexIRbRZRcfXy/y+GVfy/bpcmKwSm/W/0PV4RlzcCFDBVJhHHxtWU1
+	4pWpFGbj8O9NPMkSLYmQCn+1tpIssF3F4VYtCqSvoQ/ho9ueigDQvr8HXJBRrInaZMS2zwZ7PWhzX
+	Z1HygQTB2w72Ax04TClljVLzMYmiiZZ9+vKcmQ8SQqBjk02xlsnbL28tahV2xJfVGmhaUpwUvBRI4
+	wJvXoFgKrKtZBHyPUDNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Gy-000085-He; Thu, 16 Jan 2020 17:49:36 +0000
+	id 1is9HJ-0000RQ-RS; Thu, 16 Jan 2020 17:49:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8j8-00082k-VQ
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:43 +0000
+ id 1is8jC-00084m-BQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:47 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CFB28246A0;
- Thu, 16 Jan 2020 17:14:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E58BA24690;
+ Thu, 16 Jan 2020 17:14:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194878;
- bh=P4JS33lPfd5CksSa+DV0l9XssAnGxxCSrEewU7X7u24=;
+ s=default; t=1579194881;
+ bh=rrhEdS2kNqQJmlV3Thq14xN8wxbM2iGtBl9NJUCf7u4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zvOCsLo0W1tG7EA5E9DeS4bKV1Xh3i2RwDQjV4HEOfaE3zuGOw6J/D/tcB/9v/H9B
- MtsQ9eENvmTR0hDySd6+3vODzO/nTkQYjEYGcf7S9uzQYvXBqwSJEIKpZoX8bIIPes
- bcmn77XRd/kfwEVztUin1Qy9OXTWOf2naH6YpkwY=
+ b=h0zos+81pQSw5ZbCtZwpHeusU6qIwyRJLsNImJLc70bLNQoZV209RcQHhpOMU5PXi
+ paeIGCYrgbsfAaZU0tHjoATPFmcsZ9cxno08b25PeuieE6DHxDUay1WnZvlqz2Dugs
+ /VGSlzQg7qb7yMvRXVtg53UHlZBHN93Op2k/CEDg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 667/671] soc: aspeed: Fix snoop_file_poll()'s
- return type
-Date: Thu, 16 Jan 2020 12:05:05 -0500
-Message-Id: <20200116170509.12787-404-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 670/671] serial: stm32: fix clearing interrupt
+ error flags
+Date: Thu, 16 Jan 2020 12:05:08 -0500
+Message-Id: <20200116170509.12787-407-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091439_091538_385A716B 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200116_091442_626857_A1518883 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,58 +80,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, Joel Stanley <joel@jms.id.au>,
- Olof Johansson <olof@lixom.net>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-serial@vger.kernel.org,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
 
-[ Upstream commit a4e55ccd4392e70f296d12e81b93c6ca96ee21d5 ]
+[ Upstream commit 1250ed7114a977cdc2a67a0c09d6cdda63970eb9 ]
 
-snoop_file_poll() is defined as returning 'unsigned int' but the
-.poll method is declared as returning '__poll_t', a bitwise type.
+The interrupt clear flag register is a "write 1 to clear" register.
+So, only writing ones allows to clear flags:
+- Replace buggy stm32_clr_bits() by a simple write to clear error flags
+- Replace useless read/modify/write stm32_set_bits() routine by a
+  simple write to clear TC (transfer complete) flag.
 
-Fix this by using the proper return type and using the EPOLL
-constants instead of the POLL ones, as required for __poll_t.
-
-Link: https://lore.kernel.org/r/20191121051851.268726-1-joel@jms.id.au
-Fixes: 3772e5da4454 ("drivers/misc: Aspeed LPC snoop output using misc chardev")
-Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Reviewed-by: Joel Stanley <joel@jms.id.au>
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-Signed-off-by: Joel Stanley <joel@jms.id.au>
-Signed-off-by: Olof Johansson <olof@lixom.net>
+Fixes: 4f01d833fdcd ("serial: stm32: fix rx error handling")
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+Cc: stable <stable@vger.kernel.org>
+Link: https://lore.kernel.org/r/1574323849-1909-1-git-send-email-fabrice.gasnier@st.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/misc/aspeed-lpc-snoop.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/tty/serial/stm32-usart.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/misc/aspeed-lpc-snoop.c b/drivers/misc/aspeed-lpc-snoop.c
-index 2feb4347d67f..c10be21a1663 100644
---- a/drivers/misc/aspeed-lpc-snoop.c
-+++ b/drivers/misc/aspeed-lpc-snoop.c
-@@ -101,13 +101,13 @@ static ssize_t snoop_file_read(struct file *file, char __user *buffer,
- 	return ret ? ret : copied;
- }
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index d096e552176c..bce4ac1787ad 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -239,8 +239,8 @@ static void stm32_receive_chars(struct uart_port *port, bool threaded)
+ 		 * cleared by the sequence [read SR - read DR].
+ 		 */
+ 		if ((sr & USART_SR_ERR_MASK) && ofs->icr != UNDEF_REG)
+-			stm32_clr_bits(port, ofs->icr, USART_ICR_ORECF |
+-				       USART_ICR_PECF | USART_ICR_FECF);
++			writel_relaxed(sr & USART_SR_ERR_MASK,
++				       port->membase + ofs->icr);
  
--static unsigned int snoop_file_poll(struct file *file,
-+static __poll_t snoop_file_poll(struct file *file,
- 				    struct poll_table_struct *pt)
- {
- 	struct aspeed_lpc_snoop_channel *chan = snoop_file_to_chan(file);
+ 		c = stm32_get_char(port, &sr, &stm32_port->last_res);
+ 		port->icount.rx++;
+@@ -409,7 +409,7 @@ static void stm32_transmit_chars(struct uart_port *port)
+ 	if (ofs->icr == UNDEF_REG)
+ 		stm32_clr_bits(port, ofs->isr, USART_SR_TC);
+ 	else
+-		stm32_set_bits(port, ofs->icr, USART_ICR_TCCF);
++		writel_relaxed(USART_ICR_TCCF, port->membase + ofs->icr);
  
- 	poll_wait(file, &chan->wq, pt);
--	return !kfifo_is_empty(&chan->fifo) ? POLLIN : 0;
-+	return !kfifo_is_empty(&chan->fifo) ? EPOLLIN : 0;
- }
- 
- static const struct file_operations snoop_fops = {
+ 	if (stm32_port->tx_ch)
+ 		stm32_transmit_chars_dma(port);
 -- 
 2.20.1
 
