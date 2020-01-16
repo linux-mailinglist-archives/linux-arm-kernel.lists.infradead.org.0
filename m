@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61FE713EC1A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:55:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42AE613EC1C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:55:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WnEEVJSWUXHKU2LxprGUaJvtz/udkH79vz3CvCbmz6Y=; b=tLGYKqmxmX9zZ3
-	+KwXoAXTyqUEtJqudxhQkohRjdYz0QgBVGzPKaJLqXhp406c8aOTRkO8s5tNv86vIO2sbT8sNnn9s
-	Ir5MSSJgljVdw/tj+QzOqSxlXovfuy0WhpeQ+0SglpmnpAvRy2LWJCd2IQFs2UQ4bCw34eVwCvIRn
-	Mi/XeTaXPYG8hgIqS5prFrMfXYInfvIOPhrVzdtUfElVMtCEdiH3LKIFfdqbZ19BDe/Jc+khOWD0e
-	OauFZQmpBHXsXIedf3R67VXDTxot6b2KQxKM2Y8jtoytxLV6KSrDP59rzF32L8kqKnKFiIEUFgIlt
-	HXf574zJ1JVTEOzdJhuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hUd4zXdLhZeAzCWNVuZCxvYTi59CkAkRu4kTTtUDmvc=; b=edNslIOpc8cyBS
+	qBTYhYi+/VsjDTxPhRF6D/+KdQhpiLNt8nicM5m9rFeC5qOFE03oPD9iSQrkJIulexxAxq5KdvHdi
+	SuE9Vnh54FR+9c2oAaHPzLJS/3Hylrp3kIc/9rtocpetMV7fqFUj1zEEsgJ8s9Fx6lzfU1qslXXC8
+	tJq8ghKQqUcKnt3WNaaD5a9oVH5vL3tlo7C5BlfjcuPL9k+qZfX3IWvbTEysAxfVmmi/KOOOJOzg7
+	5j2VY9yvVPpof2kl+cUACLMxMZtAkSRDiDJCTGY+7wkf9CljBGCA3uPBLLMAbg2Pdah5JqQy5ATIE
+	pNlCdPgQEQCztDF65JjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9MO-0005nN-MQ; Thu, 16 Jan 2020 17:55:12 +0000
+	id 1is9Mv-0007PD-1f; Thu, 16 Jan 2020 17:55:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8sI-0001IP-Ib
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:24:15 +0000
+ id 1is8sO-0001Mv-My
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:24:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E86E92467E;
- Thu, 16 Jan 2020 17:24:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2FD72468D;
+ Thu, 16 Jan 2020 17:24:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195446;
- bh=H1T6LjV2D4eXJEq/ijMOoL4ohIrsq8dhmZAkozEToKc=;
- h=From:To:Cc:Subject:Date:From;
- b=yJn33VrFJLtWXothSygmNxHi7B+H+HGp+C0sHXMz3/HCe77KS1v2HgCQt89zlDtSt
- /+w+/xDf6z40ouQdGcy5R6bM5LcZcR1ZWyFuQGHkMX+OA6LM3P2t2AUoEimupwgc/Q
- WbFZjP1HxBM2KVMhaStOkyMJtRmXVvjlzQbXqA1A=
+ s=default; t=1579195452;
+ bh=tdBSwxxCeitoPSZ6ScJGChgxmx8QvubbLNKi1Z1+VLQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ofdXbKysNZByOAQiJXWp7OpkNnWXMu018Xr7wUYLx9ItIzCuv2/FjaHnW9NFXnUvz
+ 6yr+BOTZM11wBt48XPQvkxJv7qgi+3xJLSRv//JW6sQQ+leZ4YNC3tqJeOn9SjdOZh
+ LZafTS2dYYbhvO01j5vnDRZP1gQ9Se2lYvdwuzr4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 058/371] media: s5p-jpeg: Correct step and max
- values for V4L2_CID_JPEG_RESTART_INTERVAL
-Date: Thu, 16 Jan 2020 12:18:50 -0500
-Message-Id: <20200116172403.18149-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 062/371] ASoC: imx-sgtl5000: put of nodes if
+ finding codec fails
+Date: Thu, 16 Jan 2020 12:18:54 -0500
+Message-Id: <20200116172403.18149-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
+References: <20200116172403.18149-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092406_754739_6DF4C6C3 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20200116_092412_828053_A1CAAD40 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,54 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-media@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Pawe? Chmiel <pawel.mikolaj.chmiel@gmail.com>
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ Daniel Baluta <daniel.baluta@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+ Stefan Agner <stefan@agner.ch>, Nicolin Chen <nicoleotsuka@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Pawe? Chmiel <pawel.mikolaj.chmiel@gmail.com>
+From: Stefan Agner <stefan@agner.ch>
 
-[ Upstream commit 19c624c6b29e244c418f8b44a711cbf5e82e3cd4 ]
+[ Upstream commit d9866572486802bc598a3e8576a5231378d190de ]
 
-This commit corrects max and step values for v4l2 control for
-V4L2_CID_JPEG_RESTART_INTERVAL. Max should be 0xffff and step should be 1.
-It was found by using v4l2-compliance tool and checking result of
-VIDIOC_QUERY_EXT_CTRL/QUERYMENU test.
-Previously it was complaining that step was bigger than difference
-between max and min.
+Make sure to properly put the of node in case finding the codec
+fails.
 
-Fixes: 15f4bc3b1f42 ("[media] s5p-jpeg: Add JPEG controls support")
-
-Signed-off-by: Pawe? Chmiel <pawel.mikolaj.chmiel@gmail.com>
-Reviewed-by: Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Reviewed-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Fixes: 81e8e4926167 ("ASoC: fsl: add sgtl5000 clock support for imx-sgtl5000")
+Signed-off-by: Stefan Agner <stefan@agner.ch>
+Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+Acked-by: Nicolin Chen <nicoleotsuka@gmail.com>
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/media/platform/s5p-jpeg/jpeg-core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/fsl/imx-sgtl5000.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/platform/s5p-jpeg/jpeg-core.c b/drivers/media/platform/s5p-jpeg/jpeg-core.c
-index 4568e68e15fa..85a5e33600c0 100644
---- a/drivers/media/platform/s5p-jpeg/jpeg-core.c
-+++ b/drivers/media/platform/s5p-jpeg/jpeg-core.c
-@@ -2005,7 +2005,7 @@ static int s5p_jpeg_controls_create(struct s5p_jpeg_ctx *ctx)
- 
- 		v4l2_ctrl_new_std(&ctx->ctrl_handler, &s5p_jpeg_ctrl_ops,
- 				  V4L2_CID_JPEG_RESTART_INTERVAL,
--				  0, 3, 0xffff, 0);
-+				  0, 0xffff, 1, 0);
- 		if (ctx->jpeg->variant->version == SJPEG_S5P)
- 			mask = ~0x06; /* 422, 420 */
+diff --git a/sound/soc/fsl/imx-sgtl5000.c b/sound/soc/fsl/imx-sgtl5000.c
+index 8e525f7ac08d..3d99a8579c99 100644
+--- a/sound/soc/fsl/imx-sgtl5000.c
++++ b/sound/soc/fsl/imx-sgtl5000.c
+@@ -119,7 +119,8 @@ static int imx_sgtl5000_probe(struct platform_device *pdev)
+ 	codec_dev = of_find_i2c_device_by_node(codec_np);
+ 	if (!codec_dev) {
+ 		dev_err(&pdev->dev, "failed to find codec platform device\n");
+-		return -EPROBE_DEFER;
++		ret = -EPROBE_DEFER;
++		goto fail;
  	}
+ 
+ 	data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
 -- 
 2.20.1
 
