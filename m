@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9830713EF28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:13:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3A3713F0A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:23:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GvJbsDUgUWtiebxW70RGbFZeQ/J2rOwjljyICFPB440=; b=A3cxGSGuWBv0pXDKKUlaRMFg58
-	FeNKZRRdRylQRiwDIhgpc6rfgsloehQMFhAMyC1f74jk338zqDVfVnXleY2wgmXXUv08F2nh2p2XH
-	EX6EuQhv2hsps7EDWt+R6BBwi938lApeuZ6hkxKjlIBuTaxpt2oYJwsHIobpYL1CTB9NTODlA3HOB
-	gYvpz6IDdYrduAmOtj9QBdZuGlLTXYxo7bPM9LM0kCczGPJX++mS3dWWURZwekTa2DOb7vmOQpDYD
-	7bSYQFuIxTqpFvAnGdDyspxnCDNoxySf/sHhVDrZrW2JsQUPwV0aTavQgF6LcXeq0Tg1V0zitBkma
-	5FvHM92g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ek/KFqbfYHy6funfqqYYfXyhxETFhIUzCSYVk9419bc=; b=t9gbv2TDHYNEMD
+	80p0Mb94yiNm/fVZJ0vtS2K/J7fOj8w/KjMqXZk0XgF27eKvYlWUsmz3XyaN+Duxv5zUK/7DkAydU
+	/oUdRUrQVzi4+i+cdP9Y6LLPLyqohakARAKi06iJNO/89XKZsQ/rol9aZma7gCxtoSPd/X4sSGFOG
+	6ozhM86a0GqpxzAF2wjJIDxtWLBzEKn3hvDZ81ax/RTk3wIY+z32M7K/YLJ3q7n3rwQa9V7t3a82M
+	BBGaYZKTn+aEyjQCj0E67nPuarCNHEP5SZywkxgkjG6FaHklx9DwRvfjYMAVPry/rd3nYr1e2t6Nh
+	qD5sJnEorNKMqlPRfFbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9eC-0004Pl-Nq; Thu, 16 Jan 2020 18:13:36 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1is9nL-0007pV-P0; Thu, 16 Jan 2020 18:23:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is92o-00042L-Jc
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:35:01 +0000
-Received: by mail-wm1-x341.google.com with SMTP id d139so7666817wmd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 09:34:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=NVh8Tpd+VJ2sJprbYPiHP3uUQ9hn8hf57WrptUKZ/aE=;
- b=bKpoGQF3WyZUNO3ki03g/km5FZI9Q23kh84JDIdiI0rLZv9DIHP7w/Vc6nTjqINn7I
- 03EO+mrJxDaA74eQBcLCbYlwqTk39iG/RmQsUU6qBDbWMzGVbV8wyXcaw5yKDjjTsNag
- TWUjHjrlOvfpRVUmF+OtdG4RJSPOva4r0Dc1oiG9uZlHLHCjBQYJPiGzo7VSkj0/joRq
- k1QLSyqlcC6faUWwMhhUlI1q516jlS5YnPV9Lw6BGpkYVCKQHiu54yfkZd+3Kv3Ssoo7
- tU30TKMPNc6dyiYgR/WZvZS6uIQtodvQYx/R2xsPbB8C9dLrcPuXxKPlsT4o0JE1SD3N
- w+Cw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=NVh8Tpd+VJ2sJprbYPiHP3uUQ9hn8hf57WrptUKZ/aE=;
- b=MIsK25kOCraAr97ICqIQQ2c8va9hCJGcLhS179sGX5zfJRpLlzbBPIKcxqdgdf1ugR
- oRT3pEBszlH1G37KybbYd/YH01rGX1vmNovPIgSP5Nj2UT4K78uJcmuCICEITb+BL/Ua
- mM3H6AQcR7B/xIxCY4QFPXbvM2g9AOiu79i3GsqVjbb5UDq01U3ma+zUHfKUqD1cRsrQ
- IcNCiQUrSAdDeA8qh5KYSojFe99PvTnu5JxmFOgh6H4r8jhFh2Pw9CPR3r7WJSnWZ0GK
- 56k0Vi70xrUIPvBkdJrJKt2p7UuRT+O6ZyPrVFflpObxh01L3FpPoeHvwElKX2INXWFy
- eubg==
-X-Gm-Message-State: APjAAAWO7WxEzHXePwCo7QoF0hr5rQu8SIp+cOvUsh3xRheT2KBqgz32
- pQ3/Ko+KhDPoSX4VV0VdqRV+/8so
-X-Google-Smtp-Source: APXvYqyBSCYGKpq+h9w4P8R0918Y74Mbs+RQAUDcfXpQyRhmlyEGaT81Hs5sMP6P7JLXTHo9ieff7w==
-X-Received: by 2002:a1c:a9c6:: with SMTP id s189mr117723wme.151.1579196097226; 
- Thu, 16 Jan 2020 09:34:57 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id x11sm30823040wre.68.2020.01.16.09.34.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Jan 2020 09:34:56 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: soc@kernel.org
-Subject: [GIT PULL 3/3 part 2] Broadcom maintainers changes for 5.6
-Date: Thu, 16 Jan 2020 09:34:40 -0800
-Message-Id: <20200116173440.10886-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200116173440.10886-1-f.fainelli@gmail.com>
-References: <20200116173440.10886-1-f.fainelli@gmail.com>
+ id 1is96k-0007kv-Ha; Thu, 16 Jan 2020 17:39:15 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5ACEC246D3;
+ Thu, 16 Jan 2020 17:39:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579196341;
+ bh=o3C1UqRWBfZVIx0bzO1LlqfFxxEUFh+GSgJl8fNvMHs=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=fZm6Szib2cphewupuzqjmmVY6NbK5TKE2x12bp5cGAtlZTTVwBnP60a/foaoT9Nx1
+ YYuRY5c9ZAtKMl7/j4CAHW0qfzAfCn3MKhM4rhut0wcEoszE0iNtWMsCbkutl6bdhp
+ CIbW7Mp7Rk7AGaj8juApiT1HnzmI+H2uofL1QkLc=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.9 138/251] pwm: meson: Don't disable PWM when
+ setting duty repeatedly
+Date: Thu, 16 Jan 2020 12:34:47 -0500
+Message-Id: <20200116173641.22137-98-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
+References: <20200116173641.22137-1-sashal@kernel.org>
+MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093458_757458_F11D1D6A 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20200116_093902_694049_75F3EEC5 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,40 +80,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, khilman@kernel.org, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, olof@lixom.net,
+Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Bichao Zheng <bichao.zheng@amlogic.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-amlogic@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+From: Bichao Zheng <bichao.zheng@amlogic.com>
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+[ Upstream commit a279345807e1e0ae79567a52cfdd9d30c9174a3c ]
 
-are available in the Git repository at:
+There is an abnormally low about 20ms,when setting duty repeatedly.
+Because setting the duty will disable PWM and then enable. Delete
+this operation now.
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.6/maintainers
+Fixes: 211ed630753d2f ("pwm: Add support for Meson PWM Controller")
+Signed-off-by: Bichao Zheng <bichao.zheng@amlogic.com>
+[ Dropped code instead of hiding it behind a comment ]
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/pwm/pwm-meson.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-for you to fetch changes up to 7f4d4e232f3789bb4bd418d01cf97f195a76b2de:
+diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
+index f58a4867b519..a196439ee14c 100644
+--- a/drivers/pwm/pwm-meson.c
++++ b/drivers/pwm/pwm-meson.c
+@@ -320,11 +320,6 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 	if (state->period != channel->state.period ||
+ 	    state->duty_cycle != channel->state.duty_cycle ||
+ 	    state->polarity != channel->state.polarity) {
+-		if (channel->state.enabled) {
+-			meson_pwm_disable(meson, pwm->hwpwm);
+-			channel->state.enabled = false;
+-		}
+-
+ 		if (state->polarity != channel->state.polarity) {
+ 			if (state->polarity == PWM_POLARITY_NORMAL)
+ 				meson->inverter_mask |= BIT(pwm->hwpwm);
+-- 
+2.20.1
 
-  MAINTAINERS: Add brcmstb PCIe controller (2020-01-15 15:39:48 -0800)
-
-----------------------------------------------------------------
-This pull request contains Broadcom SoCs MAINTAINERS file updates for
-5.6, please pull the following:
-
-- Nicolas adds an entry for the Broadcom STB PCIe Root Complex files for
-  both BCM7xxx (actual STB SoCs) and BCM2711 (Raspberry Pi 4).
-
-----------------------------------------------------------------
-Nicolas Saenz Julienne (1):
-      MAINTAINERS: Add brcmstb PCIe controller
-
- MAINTAINERS | 4 ++++
- 1 file changed, 4 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
