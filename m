@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C049413ED10
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:00:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95DDB13ED28
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:01:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VV3FxqC+TxNtIR2NccPmsRu4cgIJqXpbFxCCugHIxt4=; b=BBPibHJtp7Aurb
-	QxLxybJFLC9Z5yOkvnGFPo1GALOFZYcPTT7rDrZDQWqQO28Dsji5R+6nADlLooXV4GfV+JIe5STel
-	I+VVXorz/pQ2dVOgyviW+d7Psz1CL3roQjnGfsFZgjl18EPIgeRIJdHWWPaWj//V+ZUUTuYjP9mvs
-	tAglO/YnW3ldm6krIm2ULKD4xPQqfUftwgUelFTkHOJAgkgT/IxozOF76+wEX7ShOEkFg7IFXj5v/
-	vr0NXldYzOk1vQAcasBpROSXbBPGOCnBkfwTh2u0M9HUWdvO9lm0fBYiiq83F5DwS/6sFRd2QR4+M
-	iNwhz53TGiPGVUYZocOg==;
+	List-Owner; bh=qUZ/Rv0H7o9V8TS6+l71Mi18nxhmZGTr/nbVs9ZYj7c=; b=SA1uQ04ww0ugQq
+	0dvMHlzA9DLpRPdUrpfYYMMMjgWsWH01tBoEvig+ai9VUepCrbuuzS0Os1N3GSDXi0H5mDxIDvUwG
+	5/LPUdVdmLwJ4yfse8U3iM9Q1CmQcjX9CwbnukkScxrxDse1L3BHKN/K50BeYmwtMd9E8tcvK51+z
+	B0UcLpinL1ms8eXR5uwlWFgTWAMEOAu/09ZbvfBa/uHlM2FvdoBCpCx31oaZa+HyEI0srsjRrayV1
+	TWAEn7nox1z0TqG69LIWWBbZ1bAULueeLtO+2viX7g1Z+TxHJDQgkDi6XpvnfkfeAWHmzcPdyIXxq
+	ur8nbt3hy53k9EkZthxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Rl-0005m0-SJ; Thu, 16 Jan 2020 18:00:45 +0000
+	id 1is9ST-0006L1-3G; Thu, 16 Jan 2020 18:01:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8u6-0003le-Tr
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:26:23 +0000
+ id 1is8uJ-0003vR-RG
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:26:28 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A6DA246B7;
- Thu, 16 Jan 2020 17:25:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 53CBC246BC;
+ Thu, 16 Jan 2020 17:26:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195558;
- bh=mDixHwjOcnHctxECXlLRlUp6kSHl43tYYgYvP77bG6U=;
+ s=default; t=1579195571;
+ bh=U0GllvyW/qZsgF/6DHdzP2hLFDdGfz0JdUTJSWqaqSY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZJkooszGgyC2Lb7h9UAHrPcBC9yD6O9vt/leRjx475ZxMPeHr/fO8a78sTXtM6R8i
- OgArWwzvtCr9qmZgpQuDiz0srQ3kl9I1XLWeAPKMEHngwkR34buus9Jdy8aYsB5HBP
- dxSFmIJLkFL6ZaaXsObUlNW6JSX4X27qHSe9GSTY=
+ b=Fs7Ph4/L1KtnOT0ns9c0DZ76dPKTrJc45BdHBR9q7z0C626Y2udrTJtDi8fgDz4vA
+ 3PbNM6Twvyd5pz7qLvDjd/XbezdXaZv+mIjzbwDjRzkqhhwEpgBAl9cYT0rtfjDhSI
+ iq9rNo9uQq/0LOPw7QXP/UX8rAI2YPU2g4LoBmwY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 146/371] ARM: OMAP2+: Fix potentially
- uninitialized return value for _setup_reset()
-Date: Thu, 16 Jan 2020 12:20:18 -0500
-Message-Id: <20200116172403.18149-89-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 155/371] soc/fsl/qe: Fix an error code in
+ qe_pin_request()
+Date: Thu, 16 Jan 2020 12:20:27 -0500
+Message-Id: <20200116172403.18149-98-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092559_049263_0C658F90 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20200116_092611_944029_4042C3F8 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,49 +80,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, Dan Carpenter <dan.carpenter@oracle.com>,
+ Li Yang <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tony Lindgren <tony@atomide.com>
+From: Dan Carpenter <dan.carpenter@oracle.com>
 
-[ Upstream commit 7f0d078667a494466991aa7133f49594f32ff6a2 ]
+[ Upstream commit 5674a92ca4b7e5a6a19231edd10298d30324cd27 ]
 
-Commit 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior") made
-the call to _enable() conditional based on no oh->rst_lines_cnt. This
-caused the return value to be potentially uninitialized. Curiously we see
-no compiler warnings for this, probably as this gets inlined.
+We forgot to set "err" on this error path.
 
-We call _setup_reset() from _setup() and only _setup_postsetup() if the
-return value is zero. Currently the return value can be uninitialized for
-cases where oh->rst_lines_cnt is set and HWMOD_INIT_NO_RESET is not set.
-
-Fixes: 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior")
-Cc: Paul Walmsley <paul@pwsan.com>
-Cc: Tero Kristo <t-kristo@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Fixes: 1a2d397a6eb5 ("gpio/powerpc: Eliminate duplication of of_get_named_gpio_flags()")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Li Yang <leoyang.li@nxp.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-omap2/omap_hwmod.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/soc/fsl/qe/gpio.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/mach-omap2/omap_hwmod.c b/arch/arm/mach-omap2/omap_hwmod.c
-index 45c8f2ef4e23..9274a484c6a3 100644
---- a/arch/arm/mach-omap2/omap_hwmod.c
-+++ b/arch/arm/mach-omap2/omap_hwmod.c
-@@ -2530,7 +2530,7 @@ static void _setup_iclk_autoidle(struct omap_hwmod *oh)
-  */
- static int _setup_reset(struct omap_hwmod *oh)
- {
--	int r;
-+	int r = 0;
+diff --git a/drivers/soc/fsl/qe/gpio.c b/drivers/soc/fsl/qe/gpio.c
+index 3b27075c21a7..5cbc5ce5ac15 100644
+--- a/drivers/soc/fsl/qe/gpio.c
++++ b/drivers/soc/fsl/qe/gpio.c
+@@ -152,8 +152,10 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
+ 	if (err < 0)
+ 		goto err0;
+ 	gc = gpio_to_chip(err);
+-	if (WARN_ON(!gc))
++	if (WARN_ON(!gc)) {
++		err = -ENODEV;
+ 		goto err0;
++	}
  
- 	if (oh->_state != _HWMOD_STATE_INITIALIZED)
- 		return -EINVAL;
+ 	if (!of_device_is_compatible(gc->of_node, "fsl,mpc8323-qe-pario-bank")) {
+ 		pr_debug("%s: tried to get a non-qe pin\n", __func__);
 -- 
 2.20.1
 
