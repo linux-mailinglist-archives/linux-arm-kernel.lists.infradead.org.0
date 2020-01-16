@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17EAF13EE50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:09:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C669213EE67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:09:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dm28BiWsTL/wXcNMk7ZcjoYdaNQxu1B+VhStOwHefxo=; b=OJ4MgFO3wfWWxM
-	Wkf2oW1sZlS233iIhirbwvT42nrF5ZSxRLhhVURDpl91bovVhs3+0yUkbNemZlUDf55ItAoVlJ885
-	bj3PzdAPFL7eUvnoDlQiTTZjyNg063R8LFTsP+r+VqomFqQ3tngwjf07l/w+ozsihF33FtgfHZdai
-	io0aOJjyvjx49TA0Xy6ZuBJzLtGyq6PIsXNA+HDtCJE+OWraDFjw6nK4jUfghPouE/5uUAKqG3uxp
-	cP8JPbf53JFYXkD00rfA3QoRIE+BJ4iKytZjFEKudE5Gf1GfUBclRAjrWJw2BbrUmnlz0nxEaOSC0
-	J7Ur/Odv5TA0dXgOYX7g==;
+	List-Owner; bh=lW2zuAdY0LSUltXCHnxHQ1zz6qX58U6RTkVOPCHDuoQ=; b=N0g/OBZJmBqgql
+	Tey8wXseNBZI7ioez0vrdnkMohRpPk8UZu4cQUR3TziaFHruzlmd1B6tzupacEk5mEWlNNQvhEZaH
+	u5uGrz9RSA9f2jDJb83RniLYruMfub34MYdW3EnJym2UHev0ob1h8SRJa4JR+t4azw33pF5HQwHz6
+	v5U+BjGj6Yyf+GIvVuVk3B8JBErgE3WeWSoHNNs3i79LLGKeK8owXGukd1bS4BTyuVv62EZ+aj7a1
+	XhIicSgINm1oWKYJxu4PvwEbPn0eZfF5bEsj3xyZDhococUymgQJ+4SLpZCWSb8vii9hDv5MoM/P5
+	AYQiY6NWUZzHSCiOYNEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9ZZ-0006pp-SM; Thu, 16 Jan 2020 18:08:49 +0000
+	id 1is9Zn-000787-8j; Thu, 16 Jan 2020 18:09:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8xr-00075Z-1l
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:29:55 +0000
+ id 1is8y1-0007FQ-QX
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:30:10 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A21052470B;
- Thu, 16 Jan 2020 17:29:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6FC6724715;
+ Thu, 16 Jan 2020 17:30:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195790;
- bh=YZdU21mzDaK+WJI/FwgjdUyTuis6x0cCU2ExMEgpyCM=;
+ s=default; t=1579195801;
+ bh=+R0bIKk6cHujaaucd3ZQ55+sch9kQbp2rR6EJMfpN54=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fO27mGH5sjHcc1L4zQf4ptmLmP1XBloOGniICEODX9J+57aouWNz45fu8lkYBNr3U
- fN7ykm4Gs8qv03othhtPAvkfuxSxPxTexl1uGqOZvL6kCu2fX17b4RNiJ5OLS8OIMl
- jill8wMr3Kag7kaDR3Yg2CRTLH6+Vy3PVS/dP/m4=
+ b=AErVBMhOse48gwot0UmKs4YFzTRyLQI1rrTa1ySyhsUb6mP2YbbYF/XN5Ky2MI2mh
+ J/6v5G5hbkOtDaYsPYUsJCK1x8Fz31vOyBZ4tWfGonfSOd1O7jJLztuB5gUIty6t14
+ y4PGT+p/r568M4VcXqNsbGPoa1ZdgMu5uZrdj8UU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 312/371] net: stmmac: gmac4+: Not all Unicast
- addresses may be available
-Date: Thu, 16 Jan 2020 12:23:04 -0500
-Message-Id: <20200116172403.18149-255-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 316/371] net: stmmac: fix length of PTP clock's
+ name string
+Date: Thu, 16 Jan 2020 12:23:08 -0500
+Message-Id: <20200116172403.18149-259-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092951_194875_010CC956 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20200116_093001_914702_8801C7E4 
+X-CRM114-Status: GOOD (  13.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,42 +80,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Sasha Levin <sashal@kernel.org>,
- netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ Antonio Borneo <antonio.borneo@st.com>, netdev@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
+From: Antonio Borneo <antonio.borneo@st.com>
 
-[ Upstream commit 25683bab09a70542b9f8e3e28f79b3369e56701f ]
+[ Upstream commit 5da202c88f8c355ad79bc2e8eb582e6d433060e7 ]
 
-Some setups may not have all Unicast addresses filters available. Check
-the number of available filters before trying to setup it.
+The field "name" in struct ptp_clock_info has a fixed size of 16
+chars and is used as zero terminated string by clock_name_show()
+in drivers/ptp/ptp_sysfs.c
+The current initialization value requires 17 chars to fit also the
+null termination, and this causes overflow to the next bytes in
+the struct when the string is read as null terminated:
+	hexdump -C /sys/class/ptp/ptp0/clock_name
+	00000000  73 74 6d 6d 61 63 5f 70  74 70 5f 63 6c 6f 63 6b  |stmmac_ptp_clock|
+	00000010  a0 ac b9 03 0a                                    |.....|
+where the extra 4 bytes (excluding the newline) after the string
+represent the integer 0x03b9aca0 = 62500000 assigned to the field
+"max_adj" that follows "name" in the same struct.
 
-Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+There is no strict requirement for the "name" content and in the
+comment in ptp_clock_kernel.h it's reported it should just be 'A
+short "friendly name" to identify the clock'.
+Replace it with "stmmac ptp".
+
+Signed-off-by: Antonio Borneo <antonio.borneo@st.com>
+Fixes: 92ba6888510c ("stmmac: add the support for PTP hw clock driver")
+Signed-off-by: Jakub Kicinski <jakub.kicinski@netronome.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_ptp.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 8445af580cb6..e5566c121525 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -438,7 +438,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 	}
- 
- 	/* Handle multiple unicast addresses */
--	if (netdev_uc_count(dev) > GMAC_MAX_PERFECT_ADDRESSES) {
-+	if (netdev_uc_count(dev) > hw->unicast_filter_entries) {
- 		/* Switch to promiscuous mode if more than 128 addrs
- 		 * are required
- 		 */
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_ptp.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_ptp.c
+index e471a903c654..1c1d6a942822 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_ptp.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_ptp.c
+@@ -154,7 +154,7 @@ static int stmmac_enable(struct ptp_clock_info *ptp,
+ /* structure describing a PTP hardware clock */
+ static const struct ptp_clock_info stmmac_ptp_clock_ops = {
+ 	.owner = THIS_MODULE,
+-	.name = "stmmac_ptp_clock",
++	.name = "stmmac ptp",
+ 	.max_adj = 62500000,
+ 	.n_alarm = 0,
+ 	.n_ext_ts = 0,
 -- 
 2.20.1
 
