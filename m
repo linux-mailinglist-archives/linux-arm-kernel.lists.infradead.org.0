@@ -2,90 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 801EA13F40D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:47:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389EF13F3FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:47:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=NZiGGhNYwS4CwOvKGU9khK9c0cf4gzdmSc34eOPZGLM=; b=dL2WzAHk+vKwaPeM2jYxXUyf0Q
-	vAy2feZUWWClfa8UoJn1I69CckDvuIws0i5li/ue4SUbPzOBnlCMnSK/CaMg99O7cn6/MLzogxCsE
-	NhGQ/RFmJ7j1dFbDeF0AwALHzAYAU76+i+8zVTedcACcVd48VKJu7QAnofAtr11Da2ZE3UceAYl5x
-	xYS8G2lYpV6HaG5eCdhQIUcQgTfjdU90UuhjxZcd3nip/p8WEcIr2jTcEbu5e+FvqH+k8phVY3H9x
-	4XIFo6xELyemcMDdHXg+MGSP2PDDyC+QKShwWe/9jyE4vsxHbNf6gcQ5c7nIQnmlmSoKNrfVCIWzM
-	dKvFW+2Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jXWBRVU06kVIfeFcwmfpI/Cxb4GtJUhSPLLXCTfuLqU=; b=fxdJAoNRrBxST1
+	9b42qIdVhtYw1f1rZSNzB11MF87joB2s9DPLE42UMHbsSqmKWB60TIu7+7UNMFHomAJO9S2u1/ZWx
+	WT6PqoCmDNp0xUoV37zm9TqeHXfb1uzIohZ9UAv2/lkmhu4AUMR9PBncAH84m41D5Q6yJYquywWo9
+	C7FZEsnv1GjsgmAu01peaOiKhvUSUeZI4fcr4jMYhZYt4pwe26pctDA2/7A4+1qxMp28nD05zFMpM
+	Ir38HP2YugX5v3YpEX33oYtRUPH38/enWPeoVP7cA1KnM3hR1DDnxJmd9JxBl/HfiacwOICTwkCcN
+	TwR8zomK7MbNb1UAeo3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isAAm-0001pz-Rh; Thu, 16 Jan 2020 18:47:16 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1isAAT-0001QP-Ov; Thu, 16 Jan 2020 18:46:57 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9nz-0000Kx-O9
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:23:51 +0000
-Received: by mail-wr1-x444.google.com with SMTP id z3so20193123wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 10:23:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=jVFQAPxxxKh7BrL4PuCJstmTo/0eDvZwSXWF/c8o6TQ=;
- b=kZSr6tlxSDSMnhpEyb/7zL0zkHF/eQHJsSEZIjt4kMNTn7yeMUkfCQpBlCmhqiVs0L
- kaQsclQziov1CuI4PtdACm3Stz1bhl1yRQ9gXYmGBaTuV3kAw3+mqueisvUv5m6jYlRM
- TOznzUPgDAw/04lwlnAJ8Un+fydTco+kDdceRwDBWYW/kfHaJzDRyHAaRE8hPZUg/aWv
- Abj21FQ1ZpKllu317NhyxkQ124z8T0IygtlzAfjl8QEhVndCYngUlMc06TDR38ePDr1y
- rg9o7NOx8WEKf247RbRlmP/oskQ5yjD8QEy82KwbWIDJldVzkKQ1wPXiZL477W9kNEdh
- TLYA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=jVFQAPxxxKh7BrL4PuCJstmTo/0eDvZwSXWF/c8o6TQ=;
- b=WiI7bE583uYixjFGeNYbJhUKhvfsQIKaVklpjOLBy4X7yOMiTuRTQ1AYBI2rYELUIk
- Ex8z6BhHeMcwdbo/wbrDROxm01QZHOyLisWQrxXEKK1Fl3GO1fWx+ddr9Llt7OHguXXq
- ZpgkJBMzrH0cDn4kD/xnc1WGEJEsAc74YkLjb0OSou0xGbsHx1kdneicYjGOH9pI6zF9
- +zotVLJl0mhbb09zeOjCEbioeGspl8ZFEvetSKKeaWeKlNqtXZHQBGl1Kl9oSfurTfpq
- L3WvsYcLPGXqgJ5DYxh/JIxzD5AKmJ5ZjHt0Q7+r7dNaOjJDiUH/mmOekvB4+Zk34LCn
- i0iA==
-X-Gm-Message-State: APjAAAUTv0NLftzdOiKHfmKknV7EWsikuk2rK3DIZasO2hAQEYhM//GE
- 5JR8IJxgl35e5uw7DjWYpB4tfg==
-X-Google-Smtp-Source: APXvYqxYBVzqX3/EddcHNcmwFI/IL+L51NjyXmq8HQM5xvfKCgh/wFpBEMU1Qnog3sNzqLpphKL6Lw==
-X-Received: by 2002:adf:ef0b:: with SMTP id e11mr4719536wro.128.1579199022086; 
- Thu, 16 Jan 2020 10:23:42 -0800 (PST)
-Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:6c63:1b50:1156:7f0f])
- by smtp.gmail.com with ESMTPSA id b137sm1087920wme.26.2020.01.16.10.23.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Jan 2020 10:23:41 -0800 (PST)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: tglx@linutronix.de
-Subject: [PATCH 14/17] clocksource/drivers/exynos_mct: Rename Exynos to
- lowercase
-Date: Thu, 16 Jan 2020 19:23:01 +0100
-Message-Id: <20200116182304.4926-14-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200116182304.4926-1-daniel.lezcano@linaro.org>
-References: <74bf7170-401f-2962-ea5a-1e21431a9349@linaro.org>
- <20200116182304.4926-1-daniel.lezcano@linaro.org>
+ id 1is9nt-0000BM-Bk
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:23:40 +0000
+Received: from [192.168.1.176] ([37.4.249.101]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1N5G1T-1jbQrp2DRt-011Arw; Thu, 16 Jan 2020 19:23:24 +0100
+Subject: Re: [PATCH V5 1/4] dt-bindings: Add Broadcom AVS RO thermal
+To: Rob Herring <robh+dt@kernel.org>
+References: <1578941778-23321-1-git-send-email-stefan.wahren@i2se.com>
+ <1578941778-23321-2-git-send-email-stefan.wahren@i2se.com>
+ <CAL_Jsq+w0KGE-=XkAwpdqh67pH=V34ETCy8X92L_u1=_8xuKCg@mail.gmail.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <ca02714a-538e-3057-3fc6-70fb453b411c@i2se.com>
+Date: Thu, 16 Jan 2020 19:23:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <CAL_Jsq+w0KGE-=XkAwpdqh67pH=V34ETCy8X92L_u1=_8xuKCg@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:9Vjz6FFurzI9PFAe4jG8EbOWh/kFLMdLh4diVZ9YcuDZWiR/lQp
+ cLeVq5Kw9rn6HSENvz62R+cKi9K5rRo7dXKY0PvBHlUmO+mKa6MJDrHIWiMZo9xeyDtY815
+ ueHWz9DCmP2Plt4VQLBgrC2cbwVVljKvh2fmb0jlfnMgw6Brsv4jlyUrtfU4IvuIwYjE1YL
+ sW6FtJXPQ0XPg2jcfXtUw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:J4hVp3gooWA=:/holuA9SH0TcrEUOsjYe3v
+ CI7/F7YCDkSMr1MiM81G0o6cxfw47kfS/wGz2if3jyPMVaNggWpwZWSPiLSnqK5pTE04tEqXK
+ 0dTwHMll3onWKw6yPl/5nXMre5ailVWjKOR/uNPTTXB+hWa8H3ocMUUpuMSAa2Vd8h/0rkdb9
+ ohLtdvsOulDSYS+VQV+aOFb7UDTPxa2uGvu7110lWkGuEaiIjjZ3Dtq5NJf35Jal76pO32L5y
+ 0wWtjKvrgReeJtj1cFol25prc07OJ02BPfW1lHLkut4TwD3hNdG2XAqbHwJgcl3aBtrJ3vDxE
+ 91lg44nZcGAtTIIUIbpi+QUCiwE8JhZxPpwrUZqh+KMjj79qurW4/FgaBdpXkVQcZQsRDTAyi
+ iZ3FZL2XIP9T3+hMCq7bFNWaB3DM3stLeerT9ruFdVzNddMaT4U59gltFo6Nfd2lVz+S3Z8bn
+ vg3VP03OzpYHTBaTdba1DsLRmu/2CxSNaZba23DgWU0xPYAgIvPHQE/oxPy7D3zn1n03oBJdv
+ 9VLeKiF77PYiGs/J+8xZxFrBYQWmbFCWJZx2jbOeS8TsXC5YWuZAc1IpExiClNBN3yHeRfNnB
+ 5rkTAmUu+mGKNeyyewXszQjZC6zzq3QZ2w6hyM+pru1g1OECtbMCOEsVnGFsi0Qd6GPPAbwlQ
+ NXg/BXpaGCLrk9vNWfIdniCTS+n+eBxTbgIsuuP2EIPkGRFwbw89mBwuozkoJEkRQkV2xezYk
+ RwG6Ji54AbpdR8NnhnwDgRV7jTofv1qLGtPJJJDsa10+eaJAipaAooFYU/AjDVvIJPcw+eFe3
+ +PD+rZM/YX2XjwkQpSp1N14zAJ9j+ILHvGrgj++m4r4rUUIi1dUQmZUyCWq/iUnM2K0hn3573
+ oAbeV7iBgEc4hc8n1y+BYqzY9pFzCcyhEInfdQbf8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_102343_812115_4F3EED2A 
-X-CRM114-Status: GOOD (  12.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_102337_742331_3C5C0CE3 
+X-CRM114-Status: GOOD (  19.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,52 +124,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-arm-kernel@lists.infradead.org>,
- "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-samsung-soc@vger.kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Zhang Rui <rui.zhang@intel.com>,
+ Will Deacon <will@kernel.org>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Hi Rob,
 
-Fix up inconsistent usage of upper and lowercase letters in "Exynos"
-name.
+Am 16.01.20 um 18:33 schrieb Rob Herring:
+> On Mon, Jan 13, 2020 at 12:56 PM Stefan Wahren <stefan.wahren@i2se.com> wrote:
+>> Since the BCM2711 doesn't have a AVS TMON block, the thermal information
+>> must be retrieved from the AVS ring oscillator block. This block is part
+>> of the AVS monitor which contains a bunch of raw sensors.
+>>
+>> Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
+>> Reviewed-by: Rob Herring <robh@kernel.org>
+>> Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>> ---
+>>  .../bindings/thermal/brcm,avs-ro-thermal.yaml      | 45 ++++++++++++++++++++++
+>>  1 file changed, 45 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+> The example fails 'make dt_binding_check':
+>
+> /builds/robherring/linux-dt-bindings/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.example.dt.yaml:
+> thermal: 'reg' is a required property
 
-"EXYNOS" is not an abbreviation but a regular trademarked name.
-Therefore it should be written with lowercase letters starting with
-capital letter.
+can you please explain what is the reason for this? The example below
+has a reg property. I'm confused.
 
-The lowercase "Exynos" name is promoted by its manufacturer Samsung
-Electronics Co., Ltd., in advertisement materials and on website.
+Best regards
+Stefan
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-Link: https://lore.kernel.org/r/20200104152107.11407-12-krzk@kernel.org
----
- drivers/clocksource/exynos_mct.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/clocksource/exynos_mct.c b/drivers/clocksource/exynos_mct.c
-index 74cb299f5089..a267fe31ef13 100644
---- a/drivers/clocksource/exynos_mct.c
-+++ b/drivers/clocksource/exynos_mct.c
-@@ -4,7 +4,7 @@
-  * Copyright (c) 2011 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * EXYNOS4 MCT(Multi-Core Timer) support
-+ * Exynos4 MCT(Multi-Core Timer) support
- */
- 
- #include <linux/interrupt.h>
--- 
-2.17.1
-
+>
+>> diff --git a/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+>> new file mode 100644
+>> index 0000000..98e7b57
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml
+>> @@ -0,0 +1,45 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/thermal/brcm,avs-ro-thermal.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Broadcom AVS ring oscillator thermal
+>> +
+>> +maintainers:
+>> +  - Stefan Wahren <wahrenst@gmx.net>
+>> +
+>> +description: |+
+>> +  The thermal node should be the child of a syscon node with the
+>> +  required property:
+>> +
+>> +  - compatible: Should be one of the following:
+>> +                "brcm,bcm2711-avs-monitor", "syscon", "simple-mfd"
+>> +
+>> +  Refer to the the bindings described in
+>> +  Documentation/devicetree/bindings/mfd/syscon.txt
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: brcm,bcm2711-thermal
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +
+>> +examples:
+>> +  - |
+>> +        avs-monitor@7d5d2000 {
+>> +                compatible = "brcm,bcm2711-avs-monitor",
+>> +                             "syscon", "simple-mfd";
+>> +                reg = <0x7d5d2000 0xf00>;
+>> +
+>> +                thermal: thermal {
+>> +                        compatible = "brcm,bcm2711-thermal";
+>> +                        #thermal-sensor-cells = <0>;
+> Also this is not documented. That's not caught because
+> 'additionalProperties: false' is also needed.
+>
+> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
