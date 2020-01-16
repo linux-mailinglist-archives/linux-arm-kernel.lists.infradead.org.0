@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23B0213F1E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFDC013F202
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:33:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vt9pn191q1P5xxJdpb8xVNWLoSNPDDf4ZHtwFXRa4iM=; b=NlHl2zwN26hOdq
-	7fWlXSDjxRTj7kVSSIoJmcD0C/tLKwgtLECvLtzUx6Nphj3oqdHpggXSF+sck8shmmAmFSdRHnUHl
-	cMG+TcCDzmJsJUOfpB12fCQccMRjrfIJ5DjW7YBpR+R/AyCR1SVG8feEC/6EqKCuWqMU0+8SK+HBX
-	eYIwI8oajmdERgpm7ErQ4MrU08hET2QTHnDzjuJXsv117vDGM0sEU7FDVMbPzKLo512nt6F3tyS0O
-	yA/SVBpLHcdKtBZRHhVUuFJEziu6EXg3f7KnWVbmJOqylwKHZLXZHfj7mJqD/WmAjSU0bHy4cGR8M
-	WAD0ClPdBqcSmMSFOiAQ==;
+	List-Owner; bh=Bi/9/zyD3rPiY/ss2TIMya/hWnO/WPCUiTsRvIAiTBA=; b=PEk8BHUliI4eIh
+	3rwmYXsox+x1/5KIElo073jY1vVLrM8wBbxHcam03cG0qj9qGpmJ4sGFbDNebegDDSG08kdBc+vHU
+	Z774dqtxRClK12axb43NOU8xgEvD3HynhCj1R0OnDZW8QIromgtDAEAOC1vlS1OpOH99aKMhkF2KR
+	f0E6Xty1JU+EwXlZ2RAX3330Q4M0cbiCC1NWvaBD1YeAOYQwqd7tZm7VlDa+RAAV+8h7xvVX2fV2p
+	Jvaj9gFdMxqW9NU11XrsWLGrE3lv3KEYfyBS9Vhs77zu3KixMF+x1TjYbmT+nmIn6t/p3awgulCFA
+	Ig+iBcy2QwqLLD1rnhZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9wY-0001UF-0p; Thu, 16 Jan 2020 18:32:34 +0000
+	id 1is9wm-0001ju-1u; Thu, 16 Jan 2020 18:32:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9C7-0004Wy-AG
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:40 +0000
+ id 1is9CS-0004mY-Ux
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:45:01 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D69AE24763;
- Thu, 16 Jan 2020 17:44:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A90D42476A;
+ Thu, 16 Jan 2020 17:44:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196674;
- bh=lk3FVBU4uC8MX9Fd58BWPUzIhSu9tVPZz+az2+3aBhc=;
+ s=default; t=1579196696;
+ bh=SdRVim0Vj/KNpASzwZRjnWoFpu17oNX69dqvLIkzFMs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=SNGHNvAZzXiYiQTu0XHt6WLHuaUKY/i6yLprVI6mdYfJ83wIChteP/EazPOl10+jm
- oeEU3Ll9ovkV4kRKLdH+1GlEJSjWHFTvQAMiuDv9KqdV+gbTWIl9jF7mzUJ3M0iWJr
- lKm5dZkt+D5RZRZj12uLey8lPED/Ed5963RIzBIw=
+ b=L2GI+muUGD5xFwZzSzXSqOBkwA+PjwU+H9V3xopMbLf8FW55rs/9Dyoh3BmLLUoVY
+ hHKcFIasQArhG+drnLb4n2Zp8Ihxefspe/hdoUyS0xIv+l/fGB+FlzzrVU8jZMRhMG
+ 2Y3jQIR50HdOalNWjxI2Jt0e8LDXEFbbWMPhq4p0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 074/174] ARM: pxa: ssp: Fix "WARNING: invalid free
- of devm_ allocated data"
-Date: Thu, 16 Jan 2020 12:41:11 -0500
-Message-Id: <20200116174251.24326-74-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 090/174] ARM: riscpc: fix lack of keyboard
+ interrupts after irq conversion
+Date: Thu, 16 Jan 2020 12:41:27 -0500
+Message-Id: <20200116174251.24326-90-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094435_515599_4F07F0B6 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_094457_126439_79163CDA 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,52 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
- YueHaibing <yuehaibing@huawei.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: YueHaibing <yuehaibing@huawei.com>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 
-[ Upstream commit 9ee8578d953023cc57e7e736ae48502c707c0210 ]
+[ Upstream commit 63a0666bca9311f35017be454587f3ba903644b8 ]
 
-Since commit 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
-kfree, iounmap, clk_put etc are not needed anymore in remove path.
+Fix lack of keyboard interrupts for RiscPC due to incorrect conversion.
 
-Fixes: 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-[ commit message spelling fix ]
-Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
+Fixes: e8d36d5dbb6a ("ARM: kill off set_irq_flags usage")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/plat-pxa/ssp.c | 6 ------
- 1 file changed, 6 deletions(-)
+ arch/arm/mach-rpc/irq.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/plat-pxa/ssp.c b/arch/arm/plat-pxa/ssp.c
-index 6748827c2ec8..b6b0979e3cf9 100644
---- a/arch/arm/plat-pxa/ssp.c
-+++ b/arch/arm/plat-pxa/ssp.c
-@@ -231,18 +231,12 @@ static int pxa_ssp_probe(struct platform_device *pdev)
+diff --git a/arch/arm/mach-rpc/irq.c b/arch/arm/mach-rpc/irq.c
+index 66502e6207fe..fce7fecbd8fa 100644
+--- a/arch/arm/mach-rpc/irq.c
++++ b/arch/arm/mach-rpc/irq.c
+@@ -117,7 +117,7 @@ extern unsigned char rpc_default_fiq_start, rpc_default_fiq_end;
  
- static int pxa_ssp_remove(struct platform_device *pdev)
+ void __init rpc_init_irq(void)
  {
--	struct resource *res;
- 	struct ssp_device *ssp;
+-	unsigned int irq, clr, set = 0;
++	unsigned int irq, clr, set;
  
- 	ssp = platform_get_drvdata(pdev);
- 	if (ssp == NULL)
- 		return -ENODEV;
+ 	iomd_writeb(0, IOMD_IRQMASKA);
+ 	iomd_writeb(0, IOMD_IRQMASKB);
+@@ -129,6 +129,7 @@ void __init rpc_init_irq(void)
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	release_mem_region(res->start, resource_size(res));
--
--	clk_put(ssp->clk);
--
- 	mutex_lock(&ssp_lock);
- 	list_del(&ssp->node);
- 	mutex_unlock(&ssp_lock);
+ 	for (irq = 0; irq < NR_IRQS; irq++) {
+ 		clr = IRQ_NOREQUEST;
++		set = 0;
+ 
+ 		if (irq <= 6 || (irq >= 9 && irq <= 15))
+ 			clr |= IRQ_NOPROBE;
 -- 
 2.20.1
 
