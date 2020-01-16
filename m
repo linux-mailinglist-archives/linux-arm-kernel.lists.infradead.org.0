@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49C8313EFD8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:18:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B112813EFF4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:18:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DCHdyUYBs6wqYwVtqWpV62FUAjkYY0qYiuynfPt0uMM=; b=TVjKv9sBV8ctnL
-	m6AaegsEkj0/uJ2hLeHM11WFvfJxPyg9aduuJfcwXVBw0L9ADqkbQr2463NshKEQQ3e2ivhbHt6my
-	oOP78M7DXtDfMIDbnM7dzSQBASptJQRBNfiBqBY+QE/KIC+lR5uA5BxgyD4X2i5Wyrpxi9yotZ30c
-	i27BYJdkUuFXTnSCSD+fJl+sojVz1ZjzodeQQ9A0Js6TdhK/P3u4yzDD5asw4LnFpsqOmpgh+r91M
-	cDdid98vv8YqTL88uBGFGejCzXXAZegYZo0/rrCTvGjLgFvbfnx26TZs0U5rDxt6tUmWN4tVpG+ja
-	92pSLPFiPUGXRvyIdBqg==;
+	List-Owner; bh=tIKP1HMgioyjnj9MSzIzs1sz3EgAA7BANZ6E58C2RLo=; b=RRUAbl9lBMkSC2
+	B0W3FuVV5ZxYKnu4XOX1w7sTYJrT3sY3V5mayGMEWs5p61w5Jevvkf+FA5OWGKuw0w/nOmM3v0qoH
+	yxqAjwxyguf//mzFkZ7229q1LqXA4rX3uqiRl/oU3MT0SGAOXQaGWEzCKUbPUJbq1NQH4dgNl+8Ps
+	8A6gSp3fNHl8kSAMJR/E1MWJa40FPwibUQV1EsbyA26QHt5CXbKoxY8xl4tg/MotoXS7nTVLmaa9/
+	smTEtqA5DJeuqGbKeI6/TltWdmll/GB6faRX9uI/ezuCkpXE7xVepu1oiJGFchuacsEbF7zwOH0tm
+	tw1BEGO9HWhqdTFPfVpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9iz-00021k-FZ; Thu, 16 Jan 2020 18:18:33 +0000
+	id 1is9jH-0002J3-Ho; Thu, 16 Jan 2020 18:18:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is94t-0006ew-Cr
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:37:23 +0000
+ id 1is94t-0006ev-AO; Thu, 16 Jan 2020 17:37:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D0BD6246BA;
- Thu, 16 Jan 2020 17:36:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B046E246B1;
+ Thu, 16 Jan 2020 17:37:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196219;
- bh=UvvU2ACvuYDR0k0CFkDRQnXCIO/igM/KM/2IdQE1i8c=;
+ s=default; t=1579196225;
+ bh=SWROlE7V+AegruKAe7uxseBPi+wqjEPbe+ipJHpRFn4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ROBap01PvHQouCXsF0Wlabbi4pMK30Mqnqkzaqpm8jGwVJwLPQrSPbHa8W3kTz41t
- AmU2vegVAFTOd1E63N6YdGse6DeFrZsEmvgC1/L4x91Hg9bOLjnXvT8rOz/nAtrova
- BykAzUraE9HtM+4aeLiObJeJthZQ7zjeMetyXako=
+ b=Wu4ltGHwjAPvNfya3teGxRbeVkaeubH1UGQNZCSVybMmf61K8BiFkpnuPykUBtUxX
+ TrBKVKKcj9PyNl+OB70BQTVOeO/o8XDitkxwJyJU5lJOdbl97HrCKMI7oeaDtwTGQi
+ V+oxdJYld7gCMsa+z1Jwx7PbaW42iwUDd89rpeOY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 054/251] ARM: dts: lpc32xx: phy3250: fix SD card
- regulator voltage
-Date: Thu, 16 Jan 2020 12:33:23 -0500
-Message-Id: <20200116173641.22137-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 058/251] thermal: mediatek: fix register index
+ error
+Date: Thu, 16 Jan 2020 12:33:27 -0500
+Message-Id: <20200116173641.22137-18-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -50,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093707_506569_01F45191 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_093707_451912_C2B8CF1B 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,44 +79,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Vladimir Zapolskiy <vz@mleia.com>
+Cc: Sasha Levin <sashal@kernel.org>, linux-pm@vger.kernel.org,
+ Michael Kao <michael.kao@mediatek.com>, Eduardo Valentin <edubezval@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vladimir Zapolskiy <vz@mleia.com>
+From: Michael Kao <michael.kao@mediatek.com>
 
-[ Upstream commit dc141b99fc36cf910a1d8d5ee30f43f2442fd1bd ]
+[ Upstream commit eb9aecd90d1a39601e91cd08b90d5fee51d321a6 ]
 
-The fixed voltage regulator on Phytec phyCORE-LPC3250 board, which
-supplies SD/MMC card's power, has a constant output voltage level
-of either 3.15V or 3.3V, the actual value depends on JP4 position,
-the power rail is referenced as VCC_SDIO in the board hardware manual.
+The index of msr and adcpnp should match the sensor
+which belongs to the selected bank in the for loop.
 
-Fixes: d06670e96267 ("arm: dts: phy3250: add SD fixed regulator")
-Signed-off-by: Vladimir Zapolskiy <vz@mleia.com>
+Fixes: b7cf0053738c ("thermal: Add Mediatek thermal driver for mt2701.")
+Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/lpc3250-phy3250.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/thermal/mtk_thermal.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/lpc3250-phy3250.dts b/arch/arm/boot/dts/lpc3250-phy3250.dts
-index b7bd3a110a8d..dd0bdf765599 100644
---- a/arch/arm/boot/dts/lpc3250-phy3250.dts
-+++ b/arch/arm/boot/dts/lpc3250-phy3250.dts
-@@ -49,8 +49,8 @@
- 		sd_reg: regulator@2 {
- 			compatible = "regulator-fixed";
- 			regulator-name = "sd_reg";
--			regulator-min-microvolt = <1800000>;
--			regulator-max-microvolt = <1800000>;
-+			regulator-min-microvolt = <3300000>;
-+			regulator-max-microvolt = <3300000>;
- 			gpio = <&gpio 5 5 0>;
- 			enable-active-high;
- 		};
+diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
+index 34169c32d495..ea9558679634 100644
+--- a/drivers/thermal/mtk_thermal.c
++++ b/drivers/thermal/mtk_thermal.c
+@@ -348,7 +348,8 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
+ 	u32 raw;
+ 
+ 	for (i = 0; i < conf->bank_data[bank->id].num_sensors; i++) {
+-		raw = readl(mt->thermal_base + conf->msr[i]);
++		raw = readl(mt->thermal_base +
++			    conf->msr[conf->bank_data[bank->id].sensors[i]]);
+ 
+ 		temp = raw_to_mcelsius(mt,
+ 				       conf->bank_data[bank->id].sensors[i],
+@@ -485,7 +486,8 @@ static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
+ 
+ 	for (i = 0; i < conf->bank_data[num].num_sensors; i++)
+ 		writel(conf->sensor_mux_values[conf->bank_data[num].sensors[i]],
+-		       mt->thermal_base + conf->adcpnp[i]);
++		       mt->thermal_base +
++		       conf->adcpnp[conf->bank_data[num].sensors[i]]);
+ 
+ 	writel((1 << conf->bank_data[num].num_sensors) - 1,
+ 	       mt->thermal_base + TEMP_MONCTL0);
 -- 
 2.20.1
 
