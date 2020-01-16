@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEB8013EE78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:10:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D5DA13EE77
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:10:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x5Y5Z74/r87TOtT2BP4rVfdMtx7doL5OSzFyNyuyaFQ=; b=URGj/tQ+tI7zFJ
-	j5uq1Ib2Oy+upPLALY4Oinphj2tpRMMG/xuuOLgEARHYsi7lEAX9g6JH74F7PZmLipfZYccLv+v4S
-	5nOwtiWB4NU0NhcfGsbJe6zvHcoQmoHg5G20Mpinapcf28fHtRLZUKBkK9QN3TzDRT7PiNJOTjQEq
-	ac7nqAzsrQ8nzhQdN/s6IN4X4jy2mccFhFarJJx+r9/IR7bpls8yGwCOaAolrZtGBPUmOcuuBKXFv
-	xPWlxNuDm7ZpPysqQyC3D8b1D6ZnR2wz9Lp55A3TJ6nJqWYrURKouiqv6TJAEfDdDz9pahuWOW4sq
-	/4zEUgzRXRIGaR1AD7PQ==;
+	List-Owner; bh=hRH3Xjkk3K63UTo90wl/xdqaHMboP+vS+RBdCREFSAo=; b=O2wZg7b2vwmVhA
+	dp/KROAmBdDpZZuyJWo1sapAz1CpXk/OOSi9JSl5ln08PYn3Ppv7igoqiGvyCeF0o/SxHkhMSOclA
+	4+cj5ngqqULoBbv5V/Xh2c/bv3Cu7peXxdk8K2dqOFpVj3t6kXUaqboeJuZSOpiApKdwaSRwcdCnq
+	HIQgxpXIJHcIFO16kf7fSGS6Mw9NP30GAWq2YsBJljrHaviWWmvDgj1JwiCwpKWSUhxOGEBlUqXXA
+	POnB+dtmBzpOPzKNX1aNn3NaQdQcOmkd/434fOS4cYtU/wN8znZP+LuAsi4rARg780mqp/JdsmT38
+	cH43DeWtYOYYQ3d1ZoWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9bA-0001Cw-UA; Thu, 16 Jan 2020 18:10:28 +0000
+	id 1is9az-00089B-IV; Thu, 16 Jan 2020 18:10:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8yS-0000JK-Qd; Thu, 16 Jan 2020 17:30:35 +0000
+ id 1is8yW-0000ME-Ch
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:30:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 410E124731;
- Thu, 16 Jan 2020 17:30:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1981E24718;
+ Thu, 16 Jan 2020 17:30:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195828;
- bh=8Flq+0IPg2YLkKNvbKUs/GHrA0VMXFzGii5N095zoIc=;
+ s=default; t=1579195831;
+ bh=5ppPyUoZj93D1NH4PD1olqQR8A4S937YORs68MOu7eA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fu9MXidAD7N6NUyaU/AFMByMzDvJebnid4Lw3Jspjhs0VjrKl/7VFEZnU3iHFVJ4B
- B8vGnjNmu2PivP5CYQRUgXptuVIFD3el5ZEhQEoQ0CatsDMN3BluhczqEZPJxyT/hu
- zM4e0CNLrY/JKI3Osafb4lBUwyhsCaz2ra+vp1NE=
+ b=mMNhIcimMLVIy6x5FkIajRqogI9A+acay1MlPFyuX599chQnS4Fhg7KWzHw93VYtt
+ WKs9fR+9N8nwbLb6hhdYTzyA0BCeFnPlmisr1M3cx54dfFa8nXVUwM/O/t+VP7U9YN
+ Apkx5piVw0mb95rx7M3LDwANiAGa9yRwV6iXnZug=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 335/371] arm64: dts: meson-gxl-s905x-khadas-vim:
- fix gpio-keys-polled node
-Date: Thu, 16 Jan 2020 12:23:27 -0500
-Message-Id: <20200116172403.18149-278-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 337/371] spi: atmel: fix handling of cs_change
+ set on non-last xfer
+Date: Thu, 16 Jan 2020 12:23:29 -0500
+Message-Id: <20200116172403.18149-280-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093028_904446_B4A73E1B 
-X-CRM114-Status: UNSURE (   9.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_093032_657426_68C21BF8 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,51 +80,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Mans Rullgard <mans@mansr.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Nicolas Ferre <nicolas.ferre@atmel.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christian Hewitt <christianshewitt@gmail.com>
+From: Mans Rullgard <mans@mansr.com>
 
-[ Upstream commit d5f6fa904ecbadbb8e9fa6302b0fc165bec0559a ]
+[ Upstream commit fed8d8c7a6dc2a76d7764842853d81c770b0788e ]
 
-Fix DTC warnings:
+The driver does the wrong thing when cs_change is set on a non-last
+xfer in a message.  When cs_change is set, the driver deactivates the
+CS and leaves it off until a later xfer again has cs_change set whereas
+it should be briefly toggling CS off and on again.
 
-arch/arm/dts/meson-gxl-s905x-khadas-vim.dtb: Warning (avoid_unnecessary_addr_size):
-   /gpio-keys-polled: unnecessary #address-cells/#size-cells
-      without "ranges" or child "reg" property
-
-Fixes: e15d2774b8c0 ("ARM64: dts: meson-gxl: add support for the Khadas VIM board")
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+This patch brings the behaviour of the driver back in line with the
+documentation and common sense.  The delay of 10 us is the same as is
+used by the default spi_transfer_one_message() function in spi.c.
+[gregory: rebased on for-5.5 from spi tree]
+Fixes: 8090d6d1a415 ("spi: atmel: Refactor spi-atmel to use SPI framework queue")
+Signed-off-by: Mans Rullgard <mans@mansr.com>
+Acked-by: Nicolas Ferre <nicolas.ferre@atmel.com>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Link: https://lore.kernel.org/r/20191018153504.4249-1-gregory.clement@bootlin.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/spi/spi-atmel.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-index fb5db5f33e8c..ce4a116382bf 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-@@ -33,11 +33,9 @@
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index d19331b66222..7b739c449227 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -301,7 +301,6 @@ struct atmel_spi {
+ 	bool			use_cs_gpios;
  
- 	gpio-keys-polled {
- 		compatible = "gpio-keys-polled";
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		poll-interval = <100>;
+ 	bool			keep_cs;
+-	bool			cs_active;
  
--		button@0 {
-+		power-button {
- 			label = "power";
- 			linux,code = <KEY_POWER>;
- 			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_LOW>;
+ 	u32			fifo_size;
+ };
+@@ -1338,11 +1337,9 @@ static int atmel_spi_one_transfer(struct spi_master *master,
+ 				 &msg->transfers)) {
+ 			as->keep_cs = true;
+ 		} else {
+-			as->cs_active = !as->cs_active;
+-			if (as->cs_active)
+-				cs_activate(as, msg->spi);
+-			else
+-				cs_deactivate(as, msg->spi);
++			cs_deactivate(as, msg->spi);
++			udelay(10);
++			cs_activate(as, msg->spi);
+ 		}
+ 	}
+ 
+@@ -1365,7 +1362,6 @@ static int atmel_spi_transfer_one_message(struct spi_master *master,
+ 	atmel_spi_lock(as);
+ 	cs_activate(as, spi);
+ 
+-	as->cs_active = true;
+ 	as->keep_cs = false;
+ 
+ 	msg->status = 0;
 -- 
 2.20.1
 
