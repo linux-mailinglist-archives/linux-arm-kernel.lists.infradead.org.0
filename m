@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D298513E256
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:55:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27DE413E272
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:56:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4KTsO8RhB/5GT3qr44Epd9LekBYWBiRFM4Pu9j5VppA=; b=QV122QVMLMxi6X
-	/l3cyPjuXStT+4qym0HlnLmkS0utxHKIf/z9zwkKCNTtDep9RKG0Q5yqSFnV5HmCnRxroj3Xbdwv7
-	t6GGalhw6NKvZsO8PqvYjON4BwJR6Fut8ZkCRYVftxzfmRDJ/065HzW6XNUCA2sOjBp769B4CeiVc
-	GYbuFS4aCVtt3jgbr1Z6jD6TRcmQzBmCVRCsSmc8dsXL+7svpgwmDe2vFSGTCd1YFzuEYaf3zaoCe
-	JHUZ4aEzqIimV6NZO2jt3ePfwAUvABoba+v3DY+nFEDsuTIxCxkF22vENkIRQyhrIv3C7WS6CHWiV
-	iNcHG8/OgmUGQGace6HA==;
+	List-Owner; bh=SGGxZVfXTzMOcEBphyluV+y+0cN9axxHrlqMwSt5UJs=; b=qrmLl0BFS9s5Xi
+	3zN9cVPhSdYZI9w1knTyFhpB5O2iUmsK5x/h9VMLZkLyCzfw0VXtjKrUZL6ccDvGLd3owpddI9GVW
+	O/v2fStGJ77irnwr6xfr+CNNRn9+3cNHSqhpw+XHXD/I7mo5bI7BDcsXHxbdd9Lh/QSTFAbTgQ8NG
+	lFxx/jFKyp1Nv5WiHS5nQyyj7DHyxhc9BHtF8FliSL7ykckC+EzKGL5m8OEHyZZ2H8ZCl20t6N16W
+	rZc+YsNYkHcGmj/KDn/iWSya5qTL9x6RnTmjy5M5il7m/Ornlkm3KMrgMOAdufJhyB03sM24l7Ung
+	1F4JTCrqIvMLkW6KBm4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Qu-0003FH-Ac; Thu, 16 Jan 2020 16:55:48 +0000
+	id 1is8RD-0003er-F7; Thu, 16 Jan 2020 16:56:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8OL-0008KS-Oz
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:53:17 +0000
+ id 1is8OM-0008Lr-VK
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:53:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 34D792073A;
- Thu, 16 Jan 2020 16:53:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 824F0214AF;
+ Thu, 16 Jan 2020 16:53:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193589;
- bh=OEnWGrgvNT9GZVvzp8phpkWRl3yWQ6tbihlsEPw0Iro=;
+ s=default; t=1579193590;
+ bh=Z+ca/Va9xfC4txSFybMjsDEoHiJWx4ekssX8s8xihU4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wl77zXH6Rt0yOHyUvXXjRyPqln1kwY8Vrmkam4XPKHR9AbcFPMryWM9QkCZEhV0vf
- YL7gqy7ZPlncSb1u/fpIvW70GxahkQylu+7iEehoo4N7CoTFE+7PJoFR+zPhQ+gHk9
- m9d7HkzEKVXxAuj9nS6+O5N34nz0NJUwdyB7wc1g=
+ b=rU8d0fScclD6UQj6XCTtulu1s/iAKG03kZGgZIAoo+QVplfvqppIBbt4uBkTy92O+
+ YBhALFfFsFwgsZRpwb+rGIAywC+gJdPHmWbKWdQ4ppAvjUJvQvnGl9ggOFkcx1wKyV
+ JMy0aVxBStGx9Ovy4AuP9KeQQiLgB5xdluv3AXZg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 129/205] i2c: stm32f7: report dma error during
- probe
-Date: Thu, 16 Jan 2020 11:41:44 -0500
-Message-Id: <20200116164300.6705-129-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 130/205] ARM: OMAP2+: Add missing put_device()
+ call in omapdss_init_of()
+Date: Thu, 16 Jan 2020 11:41:45 -0500
+Message-Id: <20200116164300.6705-130-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085309_910085_A8AF0290 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20200116_085311_040822_D2418D8A 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,97 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Wolfram Sang <wsa@the-dreams.de>,
- Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
- Alain Volmat <alain.volmat@st.com>, linux-i2c@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Tony Lindgren <tony@atomide.com>, Sasha Levin <sashal@kernel.org>,
+ linux-omap@vger.kernel.org, Markus Elfring <elfring@users.sourceforge.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alain Volmat <alain.volmat@st.com>
+From: Markus Elfring <elfring@users.sourceforge.net>
 
-[ Upstream commit d77eceb2de99f5d7e0c645bad15511fe1af59e09 ]
+[ Upstream commit 0b491904f053e41685162af5c5411b85b18c97a7 ]
 
-Distinguish between the case where dma information is not provided
-within the DT and the case of an error during the dma init.
-Exit the probe with error in case of an error during dma init.
+A coccicheck run provided information like the following.
 
-Fixes: bb8822cbbc53 ("i2c: i2c-stm32: Add generic DMA API")
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
-Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
-Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
+arch/arm/mach-omap2/display.c:268:2-8: ERROR: missing put_device;
+call of_find_device_by_node on line 258, but without a corresponding
+object release within this function.
+
+Generated by: scripts/coccinelle/free/put_device.cocci
+
+Thus add the missed function call to fix the exception handling for
+this function implementation.
+
+Fixes: e0c827aca0730b51f38081aa4e8ecf0912aab55f ("drm/omap: Populate DSS children in omapdss driver")
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/i2c/busses/i2c-stm32.c   | 16 ++++++++--------
- drivers/i2c/busses/i2c-stm32f7.c |  9 +++++++++
- 2 files changed, 17 insertions(+), 8 deletions(-)
+ arch/arm/mach-omap2/display.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/i2c/busses/i2c-stm32.c b/drivers/i2c/busses/i2c-stm32.c
-index 07d5dfce68d4..1da347e6a358 100644
---- a/drivers/i2c/busses/i2c-stm32.c
-+++ b/drivers/i2c/busses/i2c-stm32.c
-@@ -20,13 +20,13 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 
- 	dma = devm_kzalloc(dev, sizeof(*dma), GFP_KERNEL);
- 	if (!dma)
--		return NULL;
-+		return ERR_PTR(-ENOMEM);
- 
- 	/* Request and configure I2C TX dma channel */
--	dma->chan_tx = dma_request_slave_channel(dev, "tx");
--	if (!dma->chan_tx) {
-+	dma->chan_tx = dma_request_chan(dev, "tx");
-+	if (IS_ERR(dma->chan_tx)) {
- 		dev_dbg(dev, "can't request DMA tx channel\n");
--		ret = -EINVAL;
-+		ret = PTR_ERR(dma->chan_tx);
- 		goto fail_al;
+diff --git a/arch/arm/mach-omap2/display.c b/arch/arm/mach-omap2/display.c
+index 439e143cad7b..46012ca812f4 100644
+--- a/arch/arm/mach-omap2/display.c
++++ b/arch/arm/mach-omap2/display.c
+@@ -265,6 +265,7 @@ static int __init omapdss_init_of(void)
+ 	r = of_platform_populate(node, NULL, NULL, &pdev->dev);
+ 	if (r) {
+ 		pr_err("Unable to populate DSS submodule devices\n");
++		put_device(&pdev->dev);
+ 		return r;
  	}
- 
-@@ -42,10 +42,10 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 	}
- 
- 	/* Request and configure I2C RX dma channel */
--	dma->chan_rx = dma_request_slave_channel(dev, "rx");
--	if (!dma->chan_rx) {
-+	dma->chan_rx = dma_request_chan(dev, "rx");
-+	if (IS_ERR(dma->chan_rx)) {
- 		dev_err(dev, "can't request DMA rx channel\n");
--		ret = -EINVAL;
-+		ret = PTR_ERR(dma->chan_rx);
- 		goto fail_tx;
- 	}
- 
-@@ -75,7 +75,7 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 	devm_kfree(dev, dma);
- 	dev_info(dev, "can't use DMA\n");
- 
--	return NULL;
-+	return ERR_PTR(ret);
- }
- 
- void stm32_i2c_dma_free(struct stm32_i2c_dma *dma)
-diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index 84cfed17ff4f..37a76516e203 100644
---- a/drivers/i2c/busses/i2c-stm32f7.c
-+++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -1955,6 +1955,15 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 	i2c_dev->dma = stm32_i2c_dma_request(i2c_dev->dev, phy_addr,
- 					     STM32F7_I2C_TXDR,
- 					     STM32F7_I2C_RXDR);
-+	if (PTR_ERR(i2c_dev->dma) == -ENODEV)
-+		i2c_dev->dma = NULL;
-+	else if (IS_ERR(i2c_dev->dma)) {
-+		ret = PTR_ERR(i2c_dev->dma);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev,
-+				"Failed to request dma error %i\n", ret);
-+		goto clk_free;
-+	}
- 
- 	platform_set_drvdata(pdev, i2c_dev);
  
 -- 
 2.20.1
