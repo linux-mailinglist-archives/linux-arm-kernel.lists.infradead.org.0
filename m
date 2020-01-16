@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E33613E73B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:24:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDF2213E754
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:25:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xHHs3yUlVina+e39psNjSm2zf2l9f6B4gRWJOLSiVJw=; b=R3+dQDcm+j8nFD
-	ZOtGAZFXsLJClRBoJOwur2mOLqPuNLagZQlteY9QNPcU11QnySUVlnEKscamcZyVsk1uGrzDcmWZR
-	zVgcO+7LlvdG5Dl61dQrHZhD7JGpG5BdYdoaNktX9QHs8OSelcT1bHTAsL/FtOrqvIlZNlRGffeRY
-	whidpG8gMNWSAgvPrWyWMtoEaZdxQotwGtjN/awudmgMTmkVzfxJtjNBkfBfYncA5UlRi8WeK5Ndx
-	v2AGOFdAdCUHFFzNcm2FT7ywVYiaPd/MqETJ+O1s8n8Ku4kS92rFoIoRHcVmn+n6IaY85l+hxrden
-	ri3reHcPXio0VeEfBJBw==;
+	List-Owner; bh=4+zqiPvWyfq78M2m2Jm78vvgR0nAb7BMzY3fUSxaeRM=; b=vB203mrivgS/9n
+	8Yo+kKLCI0ZwCqdSi5nyxWkG+aG0TY2tiEtmy3pGoje1zRTa3APNBIXssNDyGTodX3iuviWm4MH9b
+	cNe53C577EQxnuF+A/9/6z/EDbU7LFJS1ThJ/s4nnRquy4wImH181xDxwz8dCkWFmqWU2iQ+2Pmpu
+	qkgdFgLDDY468XQO93IyQFQSxkQd6HCbMpMrVQAyjygsDofqa78US4akUcnNkBApGkkSh9ILA4QGW
+	3BiiEa5xdgOYfw8LVI836JfjD0Rltj3fW7qR4BM5CuXRy2FYB67Uh411740w9TBi/+6x6y5cApyw1
+	Affx5DI65+jDUKn4sD0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8sc-0001H5-9D; Thu, 16 Jan 2020 17:24:26 +0000
+	id 1is8tB-0001aH-Jm; Thu, 16 Jan 2020 17:25:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cP-0000iF-Pm; Thu, 16 Jan 2020 17:07:47 +0000
+ id 1is8cW-0000nd-3E
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D95F520663;
- Thu, 16 Jan 2020 17:07:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8D849205F4;
+ Thu, 16 Jan 2020 17:07:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194460;
- bh=GASgO3943XMdqvSE6BOUqLZVlhdNiqCagP6RoEdfFtw=;
+ s=default; t=1579194467;
+ bh=6xiaWiqLBwxpR1apSPx73HdLXm/uolr0vKCvNKnnGE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cfw/UjWCiAxM/8s2XXp2h5j5zEiM4Wz4xwwuJWIOuzD+2uWjEFotfL9nGyi6964VT
- xARNbwnvPT7FWvQCL5D1tuFK6C60KakJEqrGPjzmtm/I3Xa93FLBPlvDqDFQwbWi9K
- i3cTZc97t2PFRBS7A+98n+Zj4Ug43yk9zR3b5cmk=
+ b=h0HmP5WYDbsHDmavUfPhMDti8HPpQmMhWPyzJWxvYQHzMVx/teQgbWN+E6GrkIhxE
+ nQPAXZ/vdPIwZG5RVOvrM6NHxnmFjT1IlPDcVcBsyzd2ZQYuvCWZYUsb3GZ/P+c+tA
+ uPiAacRmR1EOBSONCi+MY8tMpD4Nby7gDhBho/Ek=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 368/671] arm64: dts: meson: libretech-cc: set
- eMMC as removable
-Date: Thu, 16 Jan 2020 12:00:06 -0500
-Message-Id: <20200116170509.12787-105-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 373/671] serial: stm32: fix word length
+ configuration
+Date: Thu, 16 Jan 2020 12:00:11 -0500
+Message-Id: <20200116170509.12787-110-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090741_918541_E809EB27 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_090748_235605_B9DA802E 
+X-CRM114-Status: GOOD (  15.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +80,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Erwan Le Ray <erwan.leray@st.com>, linux-serial@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jerome Brunet <jbrunet@baylibre.com>
+From: Erwan Le Ray <erwan.leray@st.com>
 
-[ Upstream commit 9f72e321d5506fe3e162a6308a4a295d7f10bb5d ]
+[ Upstream commit c8a9d043947b4acb19a65f7fac2bd0893e581cd5 ]
 
-The eMMC on this board is add-on module which is not mandatory. Removing
-'non-removable' property should prevent some errors when booting a board
-w/o an eMMC module present.
+STM32 supports either:
+- 8 and 9 bits word length (including parity bit) for stm32f4 compatible
+  devices
+- 7, 8 and 9 bits word length (including parity bit) for stm32f7 and
+  stm32h7 compatible devices.
 
-Fixes: 72fb2c852188 ("ARM64: dts: meson-gxl-s905x-libretech-cc: fixup board definition")
-Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-Reviewed-by: Martin Blumenstingl<martin.blumenstingl@googlemail.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+As a consequence STM32 supports the following termios configurations:
+- CS7 with parity bit, and CS8 (with or without parity bit) for stm32f4
+  compatible devices.
+- CS6 with parity bit, CS7 and CS8 (with or without parity bit) for
+  stm32f7 and stm32h7 compatible devices.
+
+This patch is fixing word length by configuring correctly the SoC with
+supported configurations.
+
+Fixes: ada8618ff3bf ("serial: stm32: adding support for stm32f7")
+Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/tty/serial/stm32-usart.c | 56 ++++++++++++++++++++++++++++----
+ drivers/tty/serial/stm32-usart.h |  3 +-
+ 2 files changed, 50 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-index db293440e4ca..daad007fac1f 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-@@ -256,7 +256,6 @@
- 	cap-mmc-highspeed;
- 	mmc-ddr-3_3v;
- 	max-frequency = <50000000>;
--	non-removable;
- 	disable-wp;
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index e8d7a7bb4339..e8321850938a 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -599,6 +599,36 @@ static void stm32_shutdown(struct uart_port *port)
+ 	free_irq(port->irq, port);
+ }
  
- 	mmc-pwrseq = <&emmc_pwrseq>;
++unsigned int stm32_get_databits(struct ktermios *termios)
++{
++	unsigned int bits;
++
++	tcflag_t cflag = termios->c_cflag;
++
++	switch (cflag & CSIZE) {
++	/*
++	 * CSIZE settings are not necessarily supported in hardware.
++	 * CSIZE unsupported configurations are handled here to set word length
++	 * to 8 bits word as default configuration and to print debug message.
++	 */
++	case CS5:
++		bits = 5;
++		break;
++	case CS6:
++		bits = 6;
++		break;
++	case CS7:
++		bits = 7;
++		break;
++	/* default including CS8 */
++	default:
++		bits = 8;
++		break;
++	}
++
++	return bits;
++}
++
+ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			    struct ktermios *old)
+ {
+@@ -606,7 +636,7 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
+ 	struct stm32_usart_offsets *ofs = &stm32_port->info->ofs;
+ 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
+ 	struct serial_rs485 *rs485conf = &port->rs485;
+-	unsigned int baud;
++	unsigned int baud, bits;
+ 	u32 usartdiv, mantissa, fraction, oversampling;
+ 	tcflag_t cflag = termios->c_cflag;
+ 	u32 cr1, cr2, cr3;
+@@ -632,16 +662,28 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
+ 	if (cflag & CSTOPB)
+ 		cr2 |= USART_CR2_STOP_2B;
+ 
++	bits = stm32_get_databits(termios);
++
+ 	if (cflag & PARENB) {
++		bits++;
+ 		cr1 |= USART_CR1_PCE;
+-		if ((cflag & CSIZE) == CS8) {
+-			if (cfg->has_7bits_data)
+-				cr1 |= USART_CR1_M0;
+-			else
+-				cr1 |= USART_CR1_M;
+-		}
+ 	}
+ 
++	/*
++	 * Word length configuration:
++	 * CS8 + parity, 9 bits word aka [M1:M0] = 0b01
++	 * CS7 or (CS6 + parity), 7 bits word aka [M1:M0] = 0b10
++	 * CS8 or (CS7 + parity), 8 bits word aka [M1:M0] = 0b00
++	 * M0 and M1 already cleared by cr1 initialization.
++	 */
++	if (bits == 9)
++		cr1 |= USART_CR1_M0;
++	else if ((bits == 7) && cfg->has_7bits_data)
++		cr1 |= USART_CR1_M1;
++	else if (bits != 8)
++		dev_dbg(port->dev, "Unsupported data bits config: %u bits\n"
++			, bits);
++
+ 	if (cflag & PARODD)
+ 		cr1 |= USART_CR1_PS;
+ 
+diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
+index 6f294e280ea3..a70aa5006ab9 100644
+--- a/drivers/tty/serial/stm32-usart.h
++++ b/drivers/tty/serial/stm32-usart.h
+@@ -151,8 +151,7 @@ struct stm32_usart_info stm32h7_info = {
+ #define USART_CR1_PS		BIT(9)
+ #define USART_CR1_PCE		BIT(10)
+ #define USART_CR1_WAKE		BIT(11)
+-#define USART_CR1_M		BIT(12)
+-#define USART_CR1_M0		BIT(12)		/* F7 */
++#define USART_CR1_M0		BIT(12)		/* F7 (CR1_M for F4) */
+ #define USART_CR1_MME		BIT(13)		/* F7 */
+ #define USART_CR1_CMIE		BIT(14)		/* F7 */
+ #define USART_CR1_OVER8		BIT(15)
 -- 
 2.20.1
 
