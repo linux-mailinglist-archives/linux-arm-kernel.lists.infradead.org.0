@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 161C913EB2B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:48:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98B6B13EB5D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:49:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WpCE0+zQY22z7Ckq8WrhkV5DiRkoFsVPIy1YTACCBPY=; b=iRNC5x5rF2rYIR
-	9RD+9aurDaHAwWcjsPepgD0orn7v5oAOJDwA1Ttp2PJqQ93mu8CP99q7CNgv5m4W2dUyWWLz1B9zt
-	Evbzr0TSCaG6VCnJ2SODDxjyyd3VaTByZUahU/jS14zBt9zT9GdS00ansxfb0lGpXOX+tSOKKleSi
-	9EVyFhSTOtPuRu1vUCPQogAA8EEpqerJmip02sCbgBNpraBmTW3ZgVeNnBF+M67PyRkRztTvammZr
-	4kCYQuXnjodZoxLGZhMArKD29I4yQ/9RCO+lJuhgR2HXrnbaSs3v9YDW+E4Twb3QAOq38DgxpvdAr
-	gAPQtlc4wF3Ubwq9T8Ug==;
+	List-Owner; bh=wNpBOAS0dVFVA58x78nlH62VbekiJg15o3ri3VgYm44=; b=HgAvp08yarYnNY
+	wGI+qdRbMqZFJFIefQPO8xBOhZw9kXdj5A3LAG1MdGw5uN7aTCMYLF3WPJ3kKVO5Mt8xsoLQvBkMy
+	PNmv/hoFu31V7YU2YXiX7NAepBnok9zYNtA2+kkrufVqN1HQ7oK5qQKH00iQqceME2E1+x1ugz+QS
+	cCA8Bxtcww+Q0HiMJKz2k/Gdi5YEX3tqWN9DlcAOyNlnZyo9ZaD3RPdeFl8v+/sGXKu8zjlzeR4dp
+	tcgi8KFmHjFlU0cAgCBH9ksxhKDHPlar2wtNTfaFXDP/CwBE0c/Qfxf52K+VM2/a7JB/Z9jDyd/qI
+	M0poMWXlv1p4eFmZDyyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Fw-0007lU-Qt; Thu, 16 Jan 2020 17:48:32 +0000
+	id 1is9Gy-000085-He; Thu, 16 Jan 2020 17:49:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8j2-0007xu-No
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:34 +0000
+ id 1is8j8-00082k-VQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:14:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E6A7D246A3;
- Thu, 16 Jan 2020 17:14:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CFB28246A0;
+ Thu, 16 Jan 2020 17:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194872;
- bh=WUgtQX2ICeVXTVXxnODFc/ph/ERGo6v9PHgcy5ZwXTw=;
+ s=default; t=1579194878;
+ bh=P4JS33lPfd5CksSa+DV0l9XssAnGxxCSrEewU7X7u24=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ve6FsfyKQu5m+d1cYD4duYi/bolo2w3YRD2PiCyNgUDPWe3NplAobtwazUHezV1E8
- +jhacxKKQe0nbN5S/Xl05t84kMIVhHVATZR3D2W4fJm9zV+1+kdqjAimgtZQ4B9Qq+
- ah/fLQDt2ulaUxN8khnb/VCnP5XOwbrUKw3aZvTg=
+ b=zvOCsLo0W1tG7EA5E9DeS4bKV1Xh3i2RwDQjV4HEOfaE3zuGOw6J/D/tcB/9v/H9B
+ MtsQ9eENvmTR0hDySd6+3vODzO/nTkQYjEYGcf7S9uzQYvXBqwSJEIKpZoX8bIIPes
+ bcmn77XRd/kfwEVztUin1Qy9OXTWOf2naH6YpkwY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 663/671] Revert "arm64: dts: juno: add dma-ranges
- property"
-Date: Thu, 16 Jan 2020 12:05:01 -0500
-Message-Id: <20200116170509.12787-400-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 667/671] soc: aspeed: Fix snoop_file_poll()'s
+ return type
+Date: Thu, 16 Jan 2020 12:05:05 -0500
+Message-Id: <20200116170509.12787-404-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091432_824217_11BAB63B 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200116_091439_091538_385A716B 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,69 +80,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+Cc: Sasha Levin <sashal@kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, Joel Stanley <joel@jms.id.au>,
+ Olof Johansson <olof@lixom.net>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sudeep Holla <sudeep.holla@arm.com>
+From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 
-[ Upstream commit 54fb3fe0f211d4729a2551cf9497bd612189af9d ]
+[ Upstream commit a4e55ccd4392e70f296d12e81b93c6ca96ee21d5 ]
 
-This reverts commit 193d00a2b35ee3353813b4006a18131122087205.
+snoop_file_poll() is defined as returning 'unsigned int' but the
+.poll method is declared as returning '__poll_t', a bitwise type.
 
-Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
-reworked the logic such that of_dma_get_range() works correctly
-starting from a bus node containing "dma-ranges".
+Fix this by using the proper return type and using the EPOLL
+constants instead of the POLL ones, as required for __poll_t.
 
-Since on Juno we don't have a SoC level bus node and "dma-ranges" is
-present only in the root node, we get the following error:
-
-OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
-OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
-...
-OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-
-So let's fix it by dropping the "dma-ranges" property for now. This
-should be fine since it doesn't represent any kind of device-visible
-restriction; it was only there for completeness, and we've since given
-in to the assumption that missing "dma-ranges" implies a 1:1 mapping
-anyway.
-
-We can add it later with a proper SoC bus node and moving all the
-devices that belong there along with the "dma-ranges" if required.
-
-Fixes: 193d00a2b35e ("arm64: dts: juno: add dma-ranges property")
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Liviu Dudau <liviu.dudau@arm.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Acked-by: Robin Murphy <robin.murphy@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Link: https://lore.kernel.org/r/20191121051851.268726-1-joel@jms.id.au
+Fixes: 3772e5da4454 ("drivers/misc: Aspeed LPC snoop output using misc chardev")
+Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Reviewed-by: Joel Stanley <joel@jms.id.au>
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+Signed-off-by: Olof Johansson <olof@lixom.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/arm/juno-base.dtsi | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/misc/aspeed-lpc-snoop.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index ce56a4acda4f..b6f486737589 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -6,7 +6,6 @@
- 	/*
- 	 *  Devices shared by all Juno boards
- 	 */
--	dma-ranges = <0 0 0 0 0x100 0>;
+diff --git a/drivers/misc/aspeed-lpc-snoop.c b/drivers/misc/aspeed-lpc-snoop.c
+index 2feb4347d67f..c10be21a1663 100644
+--- a/drivers/misc/aspeed-lpc-snoop.c
++++ b/drivers/misc/aspeed-lpc-snoop.c
+@@ -101,13 +101,13 @@ static ssize_t snoop_file_read(struct file *file, char __user *buffer,
+ 	return ret ? ret : copied;
+ }
  
- 	memtimer: timer@2a810000 {
- 		compatible = "arm,armv7-timer-mem";
+-static unsigned int snoop_file_poll(struct file *file,
++static __poll_t snoop_file_poll(struct file *file,
+ 				    struct poll_table_struct *pt)
+ {
+ 	struct aspeed_lpc_snoop_channel *chan = snoop_file_to_chan(file);
+ 
+ 	poll_wait(file, &chan->wq, pt);
+-	return !kfifo_is_empty(&chan->fifo) ? POLLIN : 0;
++	return !kfifo_is_empty(&chan->fifo) ? EPOLLIN : 0;
+ }
+ 
+ static const struct file_operations snoop_fops = {
 -- 
 2.20.1
 
