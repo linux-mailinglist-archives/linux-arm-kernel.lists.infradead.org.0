@@ -2,126 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 736ED13D469
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 07:39:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB86413D480
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 07:44:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YjP1oKFzC3gtTMkhhc1jFUZD8TfJEclegmIClpDw+Ls=; b=HnqxFBt8jbIRX1
-	aKTtxb2Ut4eQZhJuKLSO1X3qVe1k+cHROHEKyL6DCyWgT2GcuHq8ITYIzAYdpUeb3TceoG+MgnT8n
-	T4dcDIjVk53BnWuzO3wM8CzNfBRLvlpIoJIRCFhvgBp/wvEFUCoKlOOu9btVS4ASpvGUdYyDUwou0
-	JYHK7L7rv5J4HKG/0S90to8Zm0eJYr2kAF9UmF8GrjcIdQs53GjBGQfSGDzcZ1sjMnXGHsJUtgDRg
-	J+E2/WjJ2yaQ//qTZll/Rgltuy71URnxcIIykBkeCcTCZl+2KdDAfFIBYKtAjGMutKeE4396hvjaa
-	IJNI+sFPjyBum/DM878w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7XUSoVSe+PozHhMzLd30WlBVdq7wG6znGfPlcwMo01Y=; b=uZr
+	L/7VmGXoOS5/dB+lS6nvNJhbGMJYY9hxtv/Rd6ZHP051vmNfhr0J4LOV9rOaKKCgTP5l5SFRZdEZZ
+	S95XGCiBf4KtxbcqTPDjk/B2BXUysb+N4qRA+23bS7G1JeIw+LqKqkR0ex4kM23IbwYstvHSL2iSB
+	ksn4KWdNRXR5Ou/TIWVMBqg2OMPi265zJeHEB5n6Q6hgR5xHeKDaF++yoOr4Aq9Px0SETc642/zmL
+	elDiuFa3NtSAPx2JtqxUZUKSeOwTLrhpp8SkS1apIrh6VpuiohgxuB1HZg3A6B56TME2Qtl6CmBMI
+	sCmklguppmuMdsitcR27i8qQ/a8uPxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irynu-0006Kf-Mv; Thu, 16 Jan 2020 06:38:54 +0000
-Received: from mail-he1eur02on062c.outbound.protection.outlook.com
- ([2a01:111:f400:fe05::62c]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iryn9-0005qq-NJ
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 06:38:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YyWEajqBr8/Hba48K2fmLWjeVBxXLPIC5DfxmF4pnlWyoUa6ujLjcbCBu/Dx+azCeY3ARoqRiNId88/ZjmWXkAwBq4W26/Qym5rOO8s3HVUjkga8oSzDjFJj1m+1okVlNttc2Mh1mmGZ1X0HobP/ZQeq6c3Ta6W0J4jVtMaB2q/iwga9VB23aklmgk7ESVOjm34AlpaWrmu05bx/bmKrXluU2Pv1ZqVXbZztLYW7mSs5iN0F+Q/kzoe2wRwxoGAfw7qGoTe8bkmVKIaCqK46jNO+dki4e3x2w/eqFFSO9dlqe54iUpTf8mLHlZduD5/w4meKyF5F1amIGgPJ/wVsOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kdclqX5IJWWP3MnKgWjzwYA4cg/eELb+VjV2JyPtfO4=;
- b=GcEfPmgRg/dOlsZflBp13ZlbfaHPaZwke4JPRXDpNyojB4nbkJSDTRH2SfFPtjZK8L900c3oX7lHHoJBllga5OoVPfgUMsd3/JGyeLVIN8jz2GZedHqJiBYPqxsyiDM5V4B4q7yrPuPXVCfNrWjvP+ALP5D20FNaczGhvypdB/mrA+H7nsADN7TdR9Z/PuTJIK1lyfHn3KSiLKXCqV3xnzbrACghVC5d4w51U+Vd7pUzKv3G4efQyS40SCTPqPDsii23c75aca7VZ8t+zuk4I5BXmVlDuKSEOpTmSKMxZxpWyyyWUo7LbsAdLtO/vhoGWmUebJBOvmhfg83G4v9t/A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kdclqX5IJWWP3MnKgWjzwYA4cg/eELb+VjV2JyPtfO4=;
- b=JydLF/BZc+/fyw/qvlHBUfFNBd9+cAO01I6dbO+z99jXWcIS4XLZGsH6bUko9wMkVU6m4ZIbmInVEDhMkvSFVnAJHMYA7PUTVCc6HUVOxzDB7Jf5O64CDuVfN4LOddIqqxgFFqm2reHIgeOmANGLsFPMDJz3U1qNBhDOdK9yyxY=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4370.eurprd04.prod.outlook.com (52.135.146.32) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.9; Thu, 16 Jan 2020 06:38:03 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
- 06:38:03 +0000
-Received: from localhost.localdomain (119.31.174.66) by
- HK2PR06CA0019.apcprd06.prod.outlook.com (2603:1096:202:2e::31) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2644.19 via Frontend Transport; Thu, 16 Jan 2020 06:37:58 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: [PATCH 2/2] arm64: dts: freescale: s32v234: use generic name bus
-Thread-Topic: [PATCH 2/2] arm64: dts: freescale: s32v234: use generic name bus
-Thread-Index: AQHVzDeAovkYo45XWU2J2Uelp2vE7g==
-Date: Thu, 16 Jan 2020 06:38:03 +0000
-Message-ID: <1579156408-23739-3-git-send-email-peng.fan@nxp.com>
-References: <1579156408-23739-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1579156408-23739-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR06CA0019.apcprd06.prod.outlook.com
- (2603:1096:202:2e::31) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ff6fbe4c-8975-49a0-cef9-08d79a4ea315
-x-ms-traffictypediagnostic: AM0PR04MB4370:|AM0PR04MB4370:|AM0PR04MB4370:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB437098F67DACE3F5993A019588360@AM0PR04MB4370.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:86;
-x-forefront-prvs: 02843AA9E0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(346002)(39860400002)(376002)(366004)(199004)(189003)(81156014)(36756003)(86362001)(81166006)(478600001)(8676002)(6666004)(4744005)(186003)(16526019)(6506007)(956004)(2616005)(26005)(5660300002)(8936002)(71200400001)(69590400006)(52116002)(4326008)(6486002)(66476007)(64756008)(66446008)(66556008)(6512007)(66946007)(316002)(54906003)(44832011)(110136005)(2906002)(41533002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4370;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 3t6LPctc7PRQigQ6CSblyxHVIWpgK62thOWJi9bXnpWfTw4ZlsHKdI1OVn2UKwb8nSYtkhTfC05jr98NwhpQby3aJBdEFAJx8C0tm9HDNU1MDQUUbUHpTDo/2fujgtGbbq4pUFWQ9ZyBMl+s8+T/oFTF25YITos+dpL1B5sap7/26mog2N1sWMY9t2G0A0E1rt6L3SEF33RfJo8wTu5Hy58Tg54tx1YghFNt+77z/C70WTF2Z6zr3r7oC4b3YVL8OcFFbAVjxy0TbcydwE+qkmV+q7P+e9EB0bV1pG5pcMQFQI7gqoUvnOv7CiUwyPsLw+1lys/wutObNhH/TEMN1TGGthwDFk+KkKLrysfeTGaRh7a9qQAGD97sqHwqqrlRU1Oow9z4UVxlsojIciVKV9kChgW0Ua5xWAqkv2ZdNoBsrapb/7d/E7NkZJT+wFVVfgPdj2eL5DncNEA9omwFcSiojEph6K3mIowLj59oTS10dgo9I4DUz6j2HHHZHgeWO7tRE051zERyltEAiIH0Cw==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ff6fbe4c-8975-49a0-cef9-08d79a4ea315
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 06:38:03.4124 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: iL0OWOZVLbRlffsnTgJlnrISMwsT2kSl/7PfoEFUhyx3BXAor+dTAna6JVaDdFRkWWSIxSbTw3tH6ER3v7/2jQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4370
+	id 1irytW-0003ps-DQ; Thu, 16 Jan 2020 06:44:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1irytI-0003p2-Dx
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 06:44:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 44F7E328;
+ Wed, 15 Jan 2020 22:44:25 -0800 (PST)
+Received: from p8cg001049571a15.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CFED83F6C4;
+ Wed, 15 Jan 2020 22:47:49 -0800 (PST)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
+ catalin.marinas@arm.com, will@kernel.org
+Subject: [PATCH V12 0/2] arm64/mm: Enable memory hot remove
+Date: Thu, 16 Jan 2020 12:15:33 +0530
+Message-Id: <1579157135-10360-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_223807_788270_AC75C50F 
-X-CRM114-Status: GOOD (  11.37  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200115_224428_563219_6CD4A6BF 
+X-CRM114-Status: GOOD (  19.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe05:0:0:0:62c listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.0 FORGED_SPF_HELO        No description available.
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -133,66 +60,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Phu Luu An <phu.luuan@nxp.com>,
- Dan Nica <dan.nica@nxp.com>, Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Mihaela Martinas <Mihaela.Martinas@freescale.com>
+Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
+ mgorman@techsingularity.net, steve.capper@arm.com, Robin.Murphy@arm.com,
+ steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
+ Anshuman Khandual <anshuman.khandual@arm.com>, logang@deltatee.com,
+ valentin.schneider@arm.com, suzuki.poulose@arm.com, osalvador@suse.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+This series enables memory hot remove functionality on arm64 platform. This
+is based on Linux 5.5-rc6 and particularly deals with a problem caused when
+boot memory is attempted to be removed.
 
-Per devicetree specification, generic names are recommended
-to be used, such as bus.
+On arm64 platform, it is essential to ensure that the boot time discovered
+memory couldn't be hot-removed so that,
 
-AIPS is a AHB - IP bridge bus, so we could use bus as node name.
+1. FW data structures used across kexec are idempotent
+   e.g. the EFI memory map.
 
-Script:
-sed -i "s/\<aips@/bus@/" arch/arm64/boot/dts/freescale/*.dtsi
-sed -i "s/\<aips-bus@/bus@/" arch/arm64/boot/freescale/*.dtsi
+2. linear map or vmemmap would not have to be dynamically split, and can
+   map boot memory at a large granularity
 
-Cc: Phu Luu An <phu.luuan@nxp.com>
-Cc: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
-Cc: Mihaela Martinas <Mihaela.Martinas@freescale.com>
-Cc: Dan Nica <dan.nica@nxp.com>
-Cc: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- arch/arm64/boot/dts/freescale/s32v234.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+3. Avoid penalizing paths that have to walk page tables, where we can be
+   certain that the memory is not hot-removable
 
-diff --git a/arch/arm64/boot/dts/freescale/s32v234.dtsi b/arch/arm64/boot/dts/freescale/s32v234.dtsi
-index e746b9c48f7a..ba0b5305d481 100644
---- a/arch/arm64/boot/dts/freescale/s32v234.dtsi
-+++ b/arch/arm64/boot/dts/freescale/s32v234.dtsi
-@@ -104,7 +104,7 @@
- 		interrupt-parent = <&gic>;
- 		ranges;
+This problem has been extensively discussed previously during V10 version
+which can be found here (https://lkml.org/lkml/2019/10/11/233). Never the
+less this series now adds memory hotplug notifier to prevent boot memory
+offlining and thus hot remove. It also fixes a potential race condition
+which might happen while trying to dump kernel page table entries along
+with a concurrent memory hot remove operation.
+
+Concurrent vmalloc() and hot-remove conflict:
+
+As pointed out earlier on the V5 thread [2] there can be potential conflict
+between concurrent vmalloc() and memory hot-remove operation. The problem here
+is caused by inadequate locking in vmalloc() which protects installation of a
+page table page but not the page table walk or the leaf entry modification.
+
+Now free_empty_tables() and it's children functions take into account a maximum
+possible range on which it operates as a floor-ceiling boundary. This makes sure
+that no page table page is freed unless its fully within the maximum possible
+range as decided by the caller.
+
+Testing:
+
+Memory hot remove has been tested on arm64 for 4K, 16K, 64K page config
+options with all possible CONFIG_ARM64_VA_BITS and CONFIG_PGTABLE_LEVELS
+combinations.
+
+Changes in V12:
+
+- Dropped all changes introduced earlier in V11
+- Added a memory hotplug notifier to prevent boot memory offlining per David
+
+Changes in V11: (https://lkml.org/lkml/2020/1/9/1159)
+
+- Bifurcated check_hotplug_memory_range() and carved out check_hotremove_memory_range()
+- Introduced arch_memory_removable() call back while validating hot remove range
+- Introduced memblock flag MEMBLOCK_BOOT in order to track boot memory at runtime
+- Marked all boot memory ranges on arm64 with MEMBLOCK_BOOT flag while processing FDT
+- Overridden arch_memory_removable() on arm64 to reject boot memory removal requests
+- Added an WARN_ON() in arch_remove_memory() when it receives boot memory removal request
+- Added arch_memory_removable() related updates in the commit message for core hot remove
+
+Changes in V10: (https://lkml.org/lkml/2019/10/11/233)
+
+- Perform just single TLBI invalidation for PMD or PUD block mappings per Catalin
+- Added comment in free_empty_pte_table() while validating PTE level clears per Catalin
+- Added comments in free_empty_pxx_table() while checking for non-clear entries per Catalin
+
+Changes in V9: (https://lkml.org/lkml/2019/10/9/131)
+
+- Dropped ACK tags from Steve and David as this series has changed since
+- Dropped WARN(!page) in free_hotplug_page_range() per Matthew Wilcox
+- Replaced pxx_page() with virt_to_page() in free_pxx_table() per Catalin
+- Dropped page and call virt_to_page() in free_hotplug_pgtable_page()
+- Replaced sparse_vmap with free_mapped per Catalin
+- Dropped ternary operators in all unmap_hotplug_pxx_range() per Catalin
+- Collapsed all free_pxx_table() into free_empty_pxx_table() per Catalin
+
+Changes in V8: (https://lkml.org/lkml/2019/9/23/22)
+
+- Dropped the first patch (memblock_[free|remove] reorder) from the series which
+  is no longer needed for arm64 hot-remove enablement and was posted separately
+  as (https://patchwork.kernel.org/patch/11146361/)
+- Dropped vmalloc-vmemmap detection and subsequent skipping of free_empty_tables()
+- Changed free_empty_[pxx]_tables() functions which now accepts a possible maximum
+  floor-ceiling address range on which it operates. Also changed free_pxx_table()
+  functions to check against required alignment as well as maximum floor-ceiling
+  range as another prerequisite before freeing the page table page.
+- Dropped remove_pagetable(), instead call it's constituent functions directly
+
+Changes in V7: (https://lkml.org/lkml/2019/9/3/326)
+
+- vmalloc_vmemmap_overlap gets evaluated early during boot for a given config
+- free_empty_tables() gets conditionally called based on vmalloc_vmemmap_overlap
+
+Changes in V6: (https://lkml.org/lkml/2019/7/15/36)
+
+- Implemented most of the suggestions from Mark Rutland
+- Added <linux/memory_hotplug.h> in ptdump
+- remove_pagetable() now has two distinct passes over the kernel page table
+- First pass unmap_hotplug_range() removes leaf level entries at all level
+- Second pass free_empty_tables() removes empty page table pages
+- Kernel page table lock has been dropped completely
+- vmemmap_free() does not call freee_empty_tables() to avoid conflict with vmalloc()
+- All address range scanning are converted to do {} while() loop
+- Added 'unsigned long end' in __remove_pgd_mapping()
+- Callers need not provide starting pointer argument to free_[pte|pmd|pud]_table() 
+- Drop the starting pointer argument from free_[pte|pmd|pud]_table() functions
+- Fetching pxxp[i] in free_[pte|pmd|pud]_table() is wrapped around in READ_ONCE()
+- free_[pte|pmd|pud]_table() now computes starting pointer inside the function
+- Fixed TLB handling while freeing huge page section mappings at PMD or PUD level
+- Added WARN_ON(!page) in free_hotplug_page_range()
+- Added WARN_ON(![pm|pud]_table(pud|pmd)) when there is no section mapping
+
+- [PATCH 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls in try_remove_memory()
+- Request earlier for separate merger (https://patchwork.kernel.org/patch/10986599/)
+- s/__remove_memory/try_remove_memory in the subject line
+- s/arch_remove_memory/memblock_[free|remove] in the subject line
+- A small change in the commit message as re-order happens now for memblock remove
+  functions not for arch_remove_memory()
+
+Changes in V5: (https://lkml.org/lkml/2019/5/29/218)
+
+- Have some agreement [1] over using memory_hotplug_lock for arm64 ptdump
+- Change 7ba36eccb3f8 ("arm64/mm: Inhibit huge-vmap with ptdump") already merged
+- Dropped the above patch from this series
+- Fixed indentation problem in arch_[add|remove]_memory() as per David
+- Collected all new Acked-by tags
  
--		aips0: aips-bus@40000000 {
-+		aips0: bus@40000000 {
- 			compatible = "simple-bus";
- 			#address-cells = <2>;
- 			#size-cells = <2>;
-@@ -120,7 +120,7 @@
- 			};
- 		};
+Changes in V4: (https://lkml.org/lkml/2019/5/20/19)
+
+- Implemented most of the suggestions from Mark Rutland
+- Interchanged patch [PATCH 2/4] <---> [PATCH 3/4] and updated commit message
+- Moved CONFIG_PGTABLE_LEVELS inside free_[pud|pmd]_table()
+- Used READ_ONCE() in missing instances while accessing page table entries
+- s/p???_present()/p???_none() for checking valid kernel page table entries
+- WARN_ON() when an entry is !p???_none() and !p???_present() at the same time
+- Updated memory hot-remove commit message with additional details as suggested
+- Rebased the series on 5.2-rc1 with hotplug changes from David and Michal Hocko
+- Collected all new Acked-by tags
+
+Changes in V3: (https://lkml.org/lkml/2019/5/14/197)
  
--		aips1: aips-bus@40080000 {
-+		aips1: bus@40080000 {
- 			compatible = "simple-bus";
- 			#address-cells = <2>;
- 			#size-cells = <2>;
+- Implemented most of the suggestions from Mark Rutland for remove_pagetable()
+- Fixed applicable PGTABLE_LEVEL wrappers around pgtable page freeing functions
+- Replaced 'direct' with 'sparse_vmap' in remove_pagetable() with inverted polarity
+- Changed pointer names ('p' at end) and removed tmp from iterations
+- Perform intermediate TLB invalidation while clearing pgtable entries
+- Dropped flush_tlb_kernel_range() in remove_pagetable()
+- Added flush_tlb_kernel_range() in remove_pte_table() instead
+- Renamed page freeing functions for pgtable page and mapped pages
+- Used page range size instead of order while freeing mapped or pgtable pages
+- Removed all PageReserved() handling while freeing mapped or pgtable pages
+- Replaced XXX_index() with XXX_offset() while walking the kernel page table
+- Used READ_ONCE() while fetching individual pgtable entries
+- Taken overall init_mm.page_table_lock instead of just while changing an entry
+- Dropped previously added [pmd|pud]_index() which are not required anymore
+- Added a new patch to protect kernel page table race condition for ptdump
+- Added a new patch from Mark Rutland to prevent huge-vmap with ptdump
+
+Changes in V2: (https://lkml.org/lkml/2019/4/14/5)
+
+- Added all received review and ack tags
+- Split the series from ZONE_DEVICE enablement for better review
+- Moved memblock re-order patch to the front as per Robin Murphy
+- Updated commit message on memblock re-order patch per Michal Hocko
+- Dropped [pmd|pud]_large() definitions
+- Used existing [pmd|pud]_sect() instead of earlier [pmd|pud]_large()
+- Removed __meminit and __ref tags as per Oscar Salvador
+- Dropped unnecessary 'ret' init in arch_add_memory() per Robin Murphy
+- Skipped calling into pgtable_page_dtor() for linear mapping page table
+  pages and updated all relevant functions
+
+Changes in V1: (https://lkml.org/lkml/2019/4/3/28)
+
+References:
+
+[1] https://lkml.org/lkml/2019/5/28/584
+[2] https://lkml.org/lkml/2019/6/11/709
+
+Anshuman Khandual (2):
+  arm64/mm: Hold memory hotplug lock while walking for kernel page table dump
+  arm64/mm: Enable memory hot remove
+
+ arch/arm64/Kconfig              |   3 +
+ arch/arm64/include/asm/memory.h |   1 +
+ arch/arm64/mm/mmu.c             | 342 ++++++++++++++++++++++++++++++++++++++--
+ arch/arm64/mm/ptdump_debugfs.c  |   4 +
+ 4 files changed, 341 insertions(+), 9 deletions(-)
+
 -- 
-2.16.4
+2.7.4
 
 
 _______________________________________________
