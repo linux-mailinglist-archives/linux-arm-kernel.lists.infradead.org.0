@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2516313E3BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:04:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 869E813E3DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:04:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PbhS/wCha1F07dA1oihWDCvUvU5gyrXVplHlFElZAVc=; b=HcIv0lQuErryW/
-	q4s1ybjLOzaYZiOAHUQtvTfJUSJzNGE+jsZO7fvtr3aPZV2dqRJEeHqee3xV1yhFosSkyjVxLfjSC
-	XUukDkpAL32Ul0gQchqr6Ryx9QEPOgmhiMCicfMAXWKjwrtmGu/AK0guClbvaQSIIbIm7D7ksMK3r
-	hWwD4wwnTGCAOKGDGMpoaz2Dqw+eyJq+PFYwAwtzXr6Y/SN9LiKfrjufsi65OXMbnGMUMHI1taXrc
-	R3rwXulmUL+lmCqKvrmRc+yhf6djN08Q3mQdvMAZvJmRn+WDCKgfYYxk+USgPBPLFDjgouKr7virI
-	baQevt/oZx7wyo32ZWgw==;
+	List-Owner; bh=9O5AvZo3pSNzQ78orbzd6mbzWlVZASRwz1umoNDDmhs=; b=aoLcWghXI7mgG3
+	FlFuo+WqJJL3iYG6uyJqZYcBtwGq7cNhe/hezKgXCaSTJGP5RZYU+nhzoBQA6X7xRXu1mLd6m1twd
+	VqzoN1/dSt3z1BZNXK/Ji65wTo67PBSd0CB3CiGY/1NKXEgcspn+9dyrAP43KPt0TUyzzsii5DxIc
+	JgRHEQJGMqyWN8rXo9HfOt4pTDGpcgx3CJHxd0MCKgF4lVuAbJR1ndbTQ53q0QLLl4EKKPPlk3OL0
+	WroM+EKUzFeLuE/RV2ttXw+6quQAvrjZc07v9W8gokzcZTV+q+vpjOCgHqQBccBDbi0mm883pLID0
+	kvaYtNcOayzsbQk74r3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Yv-0003ar-0J; Thu, 16 Jan 2020 17:04:05 +0000
+	id 1is8ZM-0003mm-En; Thu, 16 Jan 2020 17:04:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Rb-0004Gs-Ct; Thu, 16 Jan 2020 16:56:35 +0000
+ id 1is8Rf-0004Jw-1m; Thu, 16 Jan 2020 16:56:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBEB924656;
- Thu, 16 Jan 2020 16:56:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7330F21582;
+ Thu, 16 Jan 2020 16:56:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193790;
- bh=X3oYwDjKvNwVrRM4B8XctdNIotivuireamqVz40WsmI=;
+ s=default; t=1579193794;
+ bh=mmClsEUoJmFGhUgVgelqwouSevAanyCQLZZWcbL4ygk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mHe/lLL5g5dG7kGFT0DRCGEmA+Z7JqMKL3PBazpKt/ycwA1lUZrQWIH1tfRpqjbVM
- /XptFR+ywRxpu7yIJfLCSUSh7bLEKQdiPAFENECijyuxcxhRskDgGGg1Ubr68G3G+y
- nR4HjJb5jc6quuupKkjbOsto3glfBa1Y2KJjWpks=
+ b=00Y6Tyq+CIAvVZ9q9L00JygsOFebmDjiQloxPRqrLvI8lyrg6HQIY/czVl4QPR1xv
+ OLyeaXzis4CeDEErbbBydpD9wo/mq9lhHvqE5UXtHgAhb9WreJy+8bWjocpgM6FSRR
+ +7pULGU5Bodlru9uoe+xutJ2LwL7fzODhI6x01Z8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 064/671] staging: bcm2835-camera: Abort probe if
- there is no camera
-Date: Thu, 16 Jan 2020 11:44:55 -0500
-Message-Id: <20200116165502.8838-64-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 065/671] staging: bcm2835-camera: fix module
+ autoloading
+Date: Thu, 16 Jan 2020 11:44:56 -0500
+Message-Id: <20200116165502.8838-65-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085631_498850_7A19587A 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20200116_085635_375139_DC9C1890 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,49 +93,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Stefan Wahren <stefan.wahren@i2se.com>
 
-[ Upstream commit 7566f39dfdc11f8a97d5810c6e6295a88f97ef91 ]
+[ Upstream commit 3a2c20024a2b47adbf514e7f3ab79342739c3926 ]
 
-Abort the probing of the camera driver in case there isn't a camera
-actually connected to the Raspberry Pi. This solution also avoids a
-NULL ptr dereference of mmal instance on driver unload.
+In order to make the module bcm2835-camera load automatically, we need to
+add a module alias.
 
-Fixes: 7b3ad5abf027 ("staging: Import the BCM2835 MMAL-based V4L2 camera driver.")
+Fixes: 4bebb0312ea9 ("staging/bcm2835-camera: Set ourselves up as a platform driver.")
 Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Dan Carpenter <dan.carpenter@oracle.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- .../vc04_services/bcm2835-camera/bcm2835-camera.c        | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 455082867246..068e5b9ab232 100644
+index 068e5b9ab232..edf25922b12d 100644
 --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
 +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -1854,6 +1854,12 @@ static int bcm2835_mmal_probe(struct platform_device *pdev)
- 	num_cameras = get_num_cameras(instance,
- 				      resolutions,
- 				      MAX_BCM2835_CAMERAS);
-+
-+	if (num_cameras < 1) {
-+		ret = -ENODEV;
-+		goto cleanup_mmal;
-+	}
-+
- 	if (num_cameras > MAX_BCM2835_CAMERAS)
- 		num_cameras = MAX_BCM2835_CAMERAS;
+@@ -47,6 +47,7 @@ MODULE_DESCRIPTION("Broadcom 2835 MMAL video capture");
+ MODULE_AUTHOR("Vincent Sanders");
+ MODULE_LICENSE("GPL");
+ MODULE_VERSION(BM2835_MMAL_VERSION);
++MODULE_ALIAS("platform:bcm2835-camera");
  
-@@ -1953,6 +1959,9 @@ static int bcm2835_mmal_probe(struct platform_device *pdev)
- 	pr_info("%s: error %d while loading driver\n",
- 		BM2835_MMAL_MODULE_NAME, ret);
- 
-+cleanup_mmal:
-+	vchiq_mmal_finalise(instance);
-+
- 	return ret;
- }
- 
+ int bcm2835_v4l2_debug;
+ module_param_named(debug, bcm2835_v4l2_debug, int, 0644);
 -- 
 2.20.1
 
