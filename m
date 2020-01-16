@@ -2,86 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE2E913FCD6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 00:18:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB1E113FD52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 00:26:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9a4Vpab7Au1EkCX0rN8/2YAFNVTwRatl0TdwtSkw/Zk=; b=Jt6yEji69qsc6n
-	So10dljAVwe/NWz279omCD9XUO9IkJXPw9aiQi9RLL9kXjWescbfD/5UK46+TG6NqMbpXHm3tLn44
-	w0W6DJsqr32e7ELCj0QMbfP5RcJ2BjpIW/c2lzfvAF1x0NuE4z8bG99lbT8iG0ZGnJeoPVyuzDLqy
-	RoifOh2pR1c+sau2YXZPqQAsez3qFlAjixbLubcwJ0XHxdLyl5MVrhFseXXsMzVZzSQW8440dfY9O
-	hHZQUkmVicQjVvfucUn/67CzHgRKRjSxQACMYxrjNdkEqy971CjlcZSmY7YOME1VUJqn8Sn+X0CEU
-	dw3KQvM1lelXLtymnEMg==;
+	List-Owner; bh=kYkkUcc6UneIzXYFekjNfnG6FO/7kb4jQqDuxKmYmew=; b=omwyAhDA/UsqZq
+	cckCoH3l6G9ZIw4Mwxbyi02l85PlLSpweoALRyuZ6dfQIUlnlBlzmIc3TnTcMV8Q2euhhGw7biRVW
+	zTiaOMv/uox/7/ySLYhMOeFiPeVPvFW/CNaK43jiOrdjJoi40gDMlTLiXPq71aVawTjj5fpaeJVTe
+	tzT4heQbq0KwEDrnIYpO9+dqtIGc9kpK+v1lFuF85YzzqlF2bJcDKNQtOp04bg99ccO2wRmENbQJd
+	Z0649K/7+oQUKejYMuGn2uHXXzmBL7lXXPg3xURPDOydMsi2bMJTkxrAQTxdzTbh93e8T1TjlCa2I
+	nMnnVsIDcz0o6TMzxduQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isEP4-0004g8-R7; Thu, 16 Jan 2020 23:18:18 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1isEWX-0001U4-Rm; Thu, 16 Jan 2020 23:26:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isEOs-0004fK-6G
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 23:18:08 +0000
-Received: by mail-oi1-f194.google.com with SMTP id d62so20471326oia.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 15:18:03 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AxYTHo1xbvVXlE9BL422q+BMWDP33NtgDNx+D8mvMAI=;
- b=c0fWFbVNUllFgFDomjoARAasXULyMtorDuHo7LMjmiI2hhXJBDsdRPeYak69JAUwj0
- oeV6M7Y5nejYc9q9HPT0+2Aa3RS7sID9R0o5LFhitCBQIhMoX0+t0D9/Sy2UkfQVpBYy
- zpgDNFmVnXsNy/4m2NqxxBScRD5z7VkL3pgPGgNuyQVAjXNQBFqYqkGCWH/Jv1oVxxtS
- reyFxtBQbBBT8ru0Vv5gx3BaLqMJvjexxK8p3y9vg34ko6OWK8nw17cONtX+aAWE0t1s
- fSucxC9RluMPiuQVIWvpj0OA4m2Mj0dO5nT4ZLjTwf5VdPPO40a2VJ8HRAizIrDREsYV
- bF6w==
-X-Gm-Message-State: APjAAAWNDdTTFjYuXClAth5NTq8Qfk3EPa9MDsgStR/YpAwpARreFE7k
- VI4VOSYsF37Gv/yH5FeGkw==
-X-Google-Smtp-Source: APXvYqzZJygX0GSguvTQM81bKzfOop6LBjuapSvKPn1gt2ZgNjWt9VE/fJhIO05KbnfYneSZhP3g+A==
-X-Received: by 2002:aca:c386:: with SMTP id t128mr1347117oif.32.1579216683166; 
- Thu, 16 Jan 2020 15:18:03 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e21sm7211797oib.16.2020.01.16.15.18.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Jan 2020 15:18:02 -0800 (PST)
-Received: (nullmailer pid 30679 invoked by uid 1000);
- Thu, 16 Jan 2020 23:18:01 -0000
-Date: Thu, 16 Jan 2020 17:18:01 -0600
-From: Rob Herring <robh@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Re: [PATCH v2] ASoC: dt-bindings: stm32: convert spdfirx to
- json-schema
-Message-ID: <20200116231801.GA18958@bogus>
-References: <20200116105244.13485-1-olivier.moysan@st.com>
+ id 1isEWL-0001TD-U3
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 23:25:51 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D107B2072E;
+ Thu, 16 Jan 2020 23:25:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579217149;
+ bh=1RVsmw/AN+bMpGsTR/ZalrOfVHM0V8DoXXYrZD5lshs=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=uhl/oZSXzR9u+QDL0pzM0Crxo/vUuMN7Ra4lLJqDBkaK8pkGUMxunWoJ2i5taO3q8
+ dLJJ0COfH0keWkckhkwQJ2OGBcSQl7uqW2vm68rgvjbsSmy4a+tLbmiWsMokwukA65
+ Aoeh91GWxIyJ6V10OVgs/GWzkuR4zGbY5O+EVMiA=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 5.4 168/203] spi: pxa2xx: Set controller->max_transfer_size in
+ dma mode
+Date: Fri, 17 Jan 2020 00:18:05 +0100
+Message-Id: <20200116231759.290885917@linuxfoundation.org>
+X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200116231745.218684830@linuxfoundation.org>
+References: <20200116231745.218684830@linuxfoundation.org>
+User-Agent: quilt/0.66
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200116105244.13485-1-olivier.moysan@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_151806_233804_EE673C2F 
-X-CRM114-Status: GOOD (  20.07  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200116_152550_010720_230A4D87 
+X-CRM114-Status: GOOD (  10.21  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,200 +74,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, tiwai@suse.com, lgirdwood@gmail.com,
- broonie@kernel.org, mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org,
+ Andy Shevchenko <andriy.shevchenko@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, stable@vger.kernel.org,
+ linux-spi@vger.kernel.org,
+ =?UTF-8?q?Noralf=20Tr=C3=B8nnes?= <noralf@tronnes.org>,
+ Mark Brown <broonie@kernel.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
+ Daniel Mack <daniel@zonque.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 11:52:44AM +0100, Olivier Moysan wrote:
-> Convert the STM32 SPDIFRX bindings to DT schema format using json-schema.
-> 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> ---
-> Changes in v2:
-> - Add "additionalProperties: false"
-> - Also change minItems to 2 for dmas property, as both DMAs are required.
-> ---
->  .../bindings/sound/st,stm32-spdifrx.txt       | 56 -------------
->  .../bindings/sound/st,stm32-spdifrx.yaml      | 84 +++++++++++++++++++
->  2 files changed, 84 insertions(+), 56 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
->  create mode 100644 Documentation/devicetree/bindings/sound/st,stm32-spdifrx.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt b/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
-> deleted file mode 100644
-> index 33826f2459fa..000000000000
-> --- a/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
-> +++ /dev/null
-> @@ -1,56 +0,0 @@
-> -STMicroelectronics STM32 S/PDIF receiver (SPDIFRX).
-> -
-> -The SPDIFRX peripheral, is designed to receive an S/PDIF flow compliant with
-> -IEC-60958 and IEC-61937.
-> -
-> -Required properties:
-> -  - compatible: should be "st,stm32h7-spdifrx"
-> -  - reg: cpu DAI IP base address and size
-> -  - clocks: must contain an entry for kclk (used as S/PDIF signal reference)
-> -  - clock-names: must contain "kclk"
-> -  - interrupts: cpu DAI interrupt line
-> -  - dmas: DMA specifiers for audio data DMA and iec control flow DMA
-> -    See STM32 DMA bindings, Documentation/devicetree/bindings/dma/stm32-dma.txt
-> -  - dma-names: two dmas have to be defined, "rx" and "rx-ctrl"
-> -
-> -Optional properties:
-> -  - resets: Reference to a reset controller asserting the SPDIFRX
-> -
-> -The device node should contain one 'port' child node with one child 'endpoint'
-> -node, according to the bindings defined in Documentation/devicetree/bindings/
-> -graph.txt.
-> -
-> -Example:
-> -spdifrx: spdifrx@40004000 {
-> -	compatible = "st,stm32h7-spdifrx";
-> -	reg = <0x40004000 0x400>;
-> -	clocks = <&rcc SPDIFRX_CK>;
-> -	clock-names = "kclk";
-> -	interrupts = <97>;
-> -	dmas = <&dmamux1 2 93 0x400 0x0>,
-> -	       <&dmamux1 3 94 0x400 0x0>;
-> -	dma-names = "rx", "rx-ctrl";
-> -	pinctrl-0 = <&spdifrx_pins>;
-> -	pinctrl-names = "default";
-> -
-> -	spdifrx_port: port {
-> -		cpu_endpoint: endpoint {
-> -			remote-endpoint = <&codec_endpoint>;
-> -		};
-> -	};
-> -};
-> -
-> -spdif_in: spdif-in {
-> -	compatible = "linux,spdif-dir";
-> -
-> -	codec_port: port {
-> -		codec_endpoint: endpoint {
-> -			remote-endpoint = <&cpu_endpoint>;
-> -		};
-> -	};
-> -};
-> -
-> -soundcard {
-> -	compatible = "audio-graph-card";
-> -	dais = <&spdifrx_port>;
-> -};
-> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.yaml b/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.yaml
-> new file mode 100644
-> index 000000000000..e19313e7a552
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.yaml
-> @@ -0,0 +1,84 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/sound/st,stm32-spdifrx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32 S/PDIF receiver (SPDIFRX)
-> +
-> +maintainers:
-> +  - Olivier Moysan <olivier.moysan@st.com>
-> +
-> +description: |
-> +  The SPDIFRX peripheral, is designed to receive an S/PDIF flow compliant with
-> +  IEC-60958 and IEC-61937.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - st,stm32h7-spdifrx
-> +
-> +  "#sound-dai-cells":
-> +    const: 0
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: kclk
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  dmas:
-> +    description: |
-> +      Two DMA channel specifiers are requested:
-> +      - audio data capture DMA
-> +      - IEC status bits capture DMA
-> +      See STM32 DMA bindings /bindings/dma/stm32-dma.txt.
-> +    minItems: 2
-> +    maxItems: 2
-
-dmas:
-  items:
-    - description: audio data capture DMA
-    - description: IEC status bits capture DMA
-
-And minItems/maxItems aren't necessary.
-
-I'd probably just drop 'See STM32 DMA bindings 
-/bindings/dma/stm32-dma.txt' too, so we don't have to update this when 
-that file is converted to schema.
-
-> +
-> +  dma-names:
-> +    items:
-> +      - const: rx
-> +      - const: rx-ctrl
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - "#sound-dai-cells"
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - interrupts
-> +  - dmas
-> +  - dma-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    spdifrx: spdifrx@40004000 {
-> +        compatible = "st,stm32h7-spdifrx";
-> +        #sound-dai-cells = <0>;
-> +        reg = <0x40004000 0x400>;
-> +        clocks = <&rcc SPDIF_K>;
-> +        clock-names = "kclk";
-> +        interrupts = <GIC_SPI 97 IRQ_TYPE_LEVEL_HIGH>;
-> +        dmas = <&dmamux1 2 93 0x400 0x0>,
-> +               <&dmamux1 3 94 0x400 0x0>;
-> +        dma-names = "rx", "rx-ctrl";
-> +        pinctrl-0 = <&spdifrx_pins>;
-> +        pinctrl-names = "default";
-> +    };
-> +
-> +...
-> -- 
-> 2.17.1
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogRGFuaWVsIFZldHRlciA8ZGFuaWVsLnZldHRlckBmZndsbC5jaD4KCmNvbW1pdCBiMjY2
+MmExNjRmOWRjNDhkYTg4MjJlNTY2MDA2ODZkNjM5MDU2MjgyIHVwc3RyZWFtLgoKSW4gRE1BIG1v
+ZGUgd2UgaGF2ZSBhIG1heGltdW0gdHJhbnNmZXIgc2l6ZSwgcGFzdCB0aGF0IHRoZSBkcml2ZXIK
+ZmFsbHMgYmFjayB0byBQSU8gKHNlZSB0aGUgY2hlY2sgYXQgdGhlIHRvcCBvZiBweGEyeHhfc3Bp
+X3RyYW5zZmVyX29uZSkuCkZhbGxpbmcgYmFjayB0byBQSU8gZm9yIGJpZyB0cmFuc2ZlcnMgZGVm
+ZWF0cyB0aGUgcG9pbnQgb2YgYSBkbWEgZW5naW5lLApoZW5jZSBzZXQgdGhlIG1heCB0cmFuc2Zl
+ciBzaXplIHRvIGluZm9ybSBzcGkgY2xpZW50cyB0aGF0IHRoZXkgbmVlZAp0byBkbyBzb21ldGhp
+bmcgc21hcnRlci4KClRoaXMgd2FzIHVuY292ZXJlZCBieSB0aGUgZHJtX21pcGlfZGJpIHNwaSBw
+YW5lbCBjb2RlLCB3aGljaCBkb2VzCmxhcmdlIHNwaSB0cmFuc2ZlcnMsIGJ1dCBzdG9wcGVkIHNw
+bGl0dGluZyB0aGVtIGFmdGVyOgoKY29tbWl0IGUxNDMzNjRiNGMxNzc0ZjY4ZTkyM2E1YTBiYjBm
+Y2EyOGFjMjU4ODgKQXV0aG9yOiBOb3JhbGYgVHLDuG5uZXMgPG5vcmFsZkB0cm9ubmVzLm9yZz4K
+RGF0ZTogICBGcmkgSnVsIDE5IDE3OjU5OjEwIDIwMTkgKzAyMDAKCiAgICBkcm0vdGlueWRybTog
+UmVtb3ZlIHRpbnlkcm1fc3BpX21heF90cmFuc2Zlcl9zaXplKCkKCkFmdGVyIHRoaXMgY29tbWl0
+IHRoZSBjb2RlIHJlbGllZCBvbiB0aGUgc3BpIGNvcmUgdG8gc3BsaXQgdHJhbnNmZXJzCmludG8g
+bWF4IGRtYS1hYmxlIGJsb2Nrcywgd2hpY2ggYWxzbyBwYXBlcmVkIG92ZXIgdGhlIFBJTyBmYWxs
+YmFjayBpc3N1ZS4KCkZpeCB0aGlzIGJ5IHNldHRpbmcgdGhlIG92ZXJhbGwgbWF4IHRyYW5zZmVy
+IHNpemUgdG8gdGhlIERNQSBsaW1pdCwKYnV0IG9ubHkgd2hlbiB0aGUgY29udHJvbGxlciBydW5z
+IGluIERNQSBtb2RlLgoKRml4ZXM6IGUxNDMzNjRiNGMxNyAoImRybS90aW55ZHJtOiBSZW1vdmUg
+dGlueWRybV9zcGlfbWF4X3RyYW5zZmVyX3NpemUoKSIpCkNjOiBTYW0gUmF2bmJvcmcgPHNhbUBy
+YXZuYm9yZy5vcmc+CkNjOiBOb3JhbGYgVHLDuG5uZXMgPG5vcmFsZkB0cm9ubmVzLm9yZz4KQ2M6
+IEFuZHkgU2hldmNoZW5rbyA8YW5kcml5LnNoZXZjaGVua29AaW50ZWwuY29tPgpSZXBvcnRlZC1h
+bmQtdGVzdGVkLWJ5OiBBbmR5IFNoZXZjaGVua28gPGFuZHJpeS5zaGV2Y2hlbmtvQGludGVsLmNv
+bT4KQ2M6IERhbmllbCBNYWNrIDxkYW5pZWxAem9ucXVlLm9yZz4KQ2M6IEhhb2ppYW4gWmh1YW5n
+IDxoYW9qaWFuLnpodWFuZ0BnbWFpbC5jb20+CkNjOiBSb2JlcnQgSmFyem1payA8cm9iZXJ0Lmph
+cnptaWtAZnJlZS5mcj4KQ2M6IE1hcmsgQnJvd24gPGJyb29uaWVAa2VybmVsLm9yZz4KQ2M6IGxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpDYzogbGludXgtc3BpQHZnZXIua2Vy
+bmVsLm9yZwpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgVmV0dGVyIDxkYW5pZWwudmV0dGVyQGZmd2xs
+LmNoPgpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMTkxMDE3MDY0NDI2LjMwODE0
+LTEtZGFuaWVsLnZldHRlckBmZndsbC5jaApTaWduZWQtb2ZmLWJ5OiBNYXJrIEJyb3duIDxicm9v
+bmllQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IEdyZWcgS3JvYWgtSGFydG1hbiA8Z3JlZ2to
+QGxpbnV4Zm91bmRhdGlvbi5vcmc+CgotLS0KIGRyaXZlcnMvc3BpL3NwaS1weGEyeHguYyB8ICAg
+IDcgKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKQoKLS0tIGEvZHJpdmVy
+cy9zcGkvc3BpLXB4YTJ4eC5jCisrKyBiL2RyaXZlcnMvc3BpL3NwaS1weGEyeHguYwpAQCAtMTYx
+Miw2ICsxNjEyLDExIEBAIHN0YXRpYyBpbnQgcHhhMnh4X3NwaV9md190cmFuc2xhdGVfY3Moc3QK
+IAlyZXR1cm4gY3M7CiB9CiAKK3N0YXRpYyBzaXplX3QgcHhhMnh4X3NwaV9tYXhfZG1hX3RyYW5z
+ZmVyX3NpemUoc3RydWN0IHNwaV9kZXZpY2UgKnNwaSkKK3sKKwlyZXR1cm4gTUFYX0RNQV9MRU47
+Cit9CisKIHN0YXRpYyBpbnQgcHhhMnh4X3NwaV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
+ICpwZGV2KQogewogCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7CkBAIC0xNzE3LDYg
+KzE3MjIsOCBAQCBzdGF0aWMgaW50IHB4YTJ4eF9zcGlfcHJvYmUoc3RydWN0IHBsYXRmCiAJCX0g
+ZWxzZSB7CiAJCQljb250cm9sbGVyLT5jYW5fZG1hID0gcHhhMnh4X3NwaV9jYW5fZG1hOwogCQkJ
+Y29udHJvbGxlci0+bWF4X2RtYV9sZW4gPSBNQVhfRE1BX0xFTjsKKwkJCWNvbnRyb2xsZXItPm1h
+eF90cmFuc2Zlcl9zaXplID0KKwkJCQlweGEyeHhfc3BpX21heF9kbWFfdHJhbnNmZXJfc2l6ZTsK
+IAkJfQogCX0KIAoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
