@@ -2,71 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CB0313D9FE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:30:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D160313DA1D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:36:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Oirqb3JEg0d5V1SGQS6Yhmj8bqnUK0Q3xrqKGHkp6A8=; b=M8a7w0fh/1rdSzxXDega/fLAD
-	zO06O7lg6YsyePAo/RH1ozcX8VFWVePmh+akRWaYuNJbU9b16nvug9gkZ/F6wLqEUyZW0L0lQ/iAR
-	Evk10y3YK2lLy1QTRp1gUgZo4/EsTnbvY3oKAE5X6cRH8moeGkteuILDOuBWnGvwtD+oEuIPkTeT6
-	ixQCYzpmru0bCNipFOTwx720MP42A/SJQNYkR8DuShVLVsywYzcyHz0igh5QgLzr16SVqBxpS2z9M
-	eSmHU0jD6DrDnIWlIciLOq7TNU+IQnipMopKxpZegQzFLQRn2ZWiId0QoILJviShCnbFyLJ+2n1ab
-	DKFA43cGA==;
+	 bh=cSkcfXMaVCL5iXAtSEOarD7LYN23f114vh7HVOoXaKc=; b=ox6mANNwdwFcKKzpioAYmuZJN
+	HX508hxYfvJgVoy1q2GpZ3eRTOL0U0X5o9lOWyIIcs5SflArpwAihI0X8MdCwAi981Tz1ujlDocl1
+	lokTxs/88L6oI57Paykairk0UXgugKtzSn3dQaD2D+SPuRsb3xXbWG4ttST+Tbj92YlhDmqH2Rco+
+	jY1Sf227m//EffatM9vO6B2J7qEdIAgpT3d1NuHdX3gzILaRT8CjO0PA8qf1wv3BLYJXQdhB09uaA
+	a/0YU7TOttcFxMOBTBKKfOtA1wZvh1BVpI9wp5STXxdYPw4rdE3lKcBZm6zEXs5t2sdmQ9Q8djsSG
+	U1Oc2uHag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is4Hg-0006Kc-JI; Thu, 16 Jan 2020 12:30:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is4HS-0006Jm-Jo
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:29:51 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D28C920748;
- Thu, 16 Jan 2020 12:29:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579177786;
- bh=OQ4DvKQn6DjynjxFZnipVci0kmylwgCgywja2qyJZxw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ntTCbNMnfeBHi5RrLmh3GPZkvANG1wbsNq75B4fnIRDNgkfMySdY39omZChm7UVe0
- i6i5P58QzLTITyoQ5x9gkWNb6cSeyFp4PV8SOsE96Joou2XwMInUXCCOF1reMe4KnG
- UR1WqhPpp1J8bfFV7eWFUl4yAXHRQiozBinvApj0=
-Date: Thu, 16 Jan 2020 13:29:44 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/2] dt-bindings: arm: sunxi: add OrangePi 3 with eMMC
-Message-ID: <20200116122944.sgl2fgxf5mrg6i52@gilmour.lan>
-References: <20200115194216.173117-1-jernej.skrabec@siol.net>
- <20200115194216.173117-2-jernej.skrabec@siol.net>
- <CAL_JsqK-KBd9PF7nKK976vVYjRwfm-ZxJSnEbhiWC=X3AnvpeA@mail.gmail.com>
- <4200557.LvFx2qVVIh@jernej-laptop>
+	id 1is4NV-0001B1-0M; Thu, 16 Jan 2020 12:36:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is4NI-0001AT-03
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:35:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E47DA1396;
+ Thu, 16 Jan 2020 04:35:43 -0800 (PST)
+Received: from [10.162.16.56] (unknown [10.162.16.56])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 67D2A3F534;
+ Thu, 16 Jan 2020 04:35:40 -0800 (PST)
+Subject: Re: [PATCH v3 01/16] arm64: cpufeature: add pointer auth
+ meta-capabilities
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-2-git-send-email-amit.kachhap@arm.com>
+ <20200115122657.GB3429@arrakis.emea.arm.com>
+ <4aac989f-3d9e-53e0-e2c9-1aa163e6baa0@arm.com>
+ <20200115160154.GE3429@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <86c07ea3-3889-79e8-bc72-9a6fb64051a9@arm.com>
+Date: Thu, 16 Jan 2020 18:05:38 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <4200557.LvFx2qVVIh@jernej-laptop>
+In-Reply-To: <20200115160154.GE3429@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_042946_678395_A9BC1868 
-X-CRM114-Status: GOOD (  16.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200116_043548_127654_E6300B4F 
+X-CRM114-Status: GOOD (  22.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,85 +69,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7760447349125285675=="
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <Kristina.Martsenko@arm.com>,
+ James Morse <James.Morse@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave P Martin <Dave.Martin@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============7760447349125285675==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="z3e6p5ezhmthrhbl"
-Content-Disposition: inline
+On 1/15/20 9:31 PM, Catalin Marinas wrote:
+> On Wed, Jan 15, 2020 at 01:52:24PM +0000, Suzuki K Poulose wrote:
+>> On 15/01/2020 12:26, Catalin Marinas wrote:
+>>> On Mon, Dec 16, 2019 at 02:17:03PM +0530, Amit Daniel Kachhap wrote:
+>>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+>>>> index 04cf64e..cf42c46 100644
+>>>> --- a/arch/arm64/kernel/cpufeature.c
+>>>> +++ b/arch/arm64/kernel/cpufeature.c
+>>>> @@ -1249,6 +1249,20 @@ static void cpu_enable_address_auth(struct arm64_cpu_capabilities const *cap)
+>>>>    	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
+>>>>    				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+>>>>    }
+>>>> +
+>>>> +static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
+>>>> +			     int __unused)
+>>>> +{
+>>>> +	return cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
+>>>> +	       cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF);
+>>>> +}
+>>>> +
+>>>> +static bool has_generic_auth(const struct arm64_cpu_capabilities *entry,
+>>>> +			     int __unused)
+>>>> +{
+>>>> +	return cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
+>>>> +	       cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF);
+>>>> +}
+>>>
+>>> Do these rely on the order in which the entries are listed in the
+>>> arm64_features[] array? It looks like we do the same for PAN_NOT_UAO but
+>>> that's pretty fragile.
+>>
+>> Yes, it surely depends on the order in which they are listed.
+>>
+>>> I'd prefer if we invoked the
+>>> cpu_hwcaps_ptrs[ARM64_HAS_ADDRESS_AUTH]->matches() directly here, maybe
+>>
+>> Yes, calling the matches(cap, SYSTEM_SCOPE), that should work and is much
+>> better.
+>>
+>>> hidden behind a helper (I couldn't find one at a quick look).
+>>>
+>>
+>> There are no helpers for this operation to  do it on a SYSTEM_SCOPE
+>> and this is only needed for caps dependent on the other caps.
+>>
+>> May be we could hide the conversion of the number to "cap" as:
+>>
+>> static inline struct arm64_cpu_capabilities *cpu_cap_from_number(int n)
+>> {
+>> 	if (n < ARM64_NCAPS)
+>> 		return cpu_hwcaps_ptr[n];
+>> 	return NULL;
+>> }
+>>
+>> And use this for "this_cpu_has_cap()" too.
+> 
+> I'm not bothered about the cpu_cap_from_number() part. I was actually
+> thinking of something like the diff below:
+> 
+> -----------8<-------------------------
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 2595c2886d3f..2ea4c84fcc8a 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -2008,6 +2008,18 @@ bool this_cpu_has_cap(unsigned int n)
+>   	return false;
+>   }
+>   
+> +static bool system_has_cap(unsigned int n)
+> +{
+> +	if (n < ARM64_NCAPS) {
+> +		const struct arm64_cpu_capabilities *cap = cpu_hwcaps_ptrs[n];
+> +
+> +		if (cap)
+> +			return cap->matches(cap, SCOPE_SYSTEM);
+> +	}
+> +
+> +	return false;
+> +}
+> +
 
+This patch looks fine. ARM64_HAS_ADDRESS_AUTH_* cpufeature is moved to 
+SCOPE_BOOT in the subsequent patches. so instead of system_has_cap, 
+existing this_cpu_has_cap can be used. This new function can still be 
+used for the other system meta capability cpufeatures.
 
---z3e6p5ezhmthrhbl
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Jan 16, 2020 at 12:10:58AM +0100, Jernej =C5=A0krabec wrote:
-> Hi!
->
-> Dne sreda, 15. januar 2020 ob 22:57:31 CET je Rob Herring napisal(a):
-> > On Wed, Jan 15, 2020 at 1:42 PM Jernej Skrabec <jernej.skrabec@siol.net>
-> wrote:
-> > > OrangePi 3 can optionally have eMMC. Add a compatible for it.
-> >
-> > Is this just a population option or a different board layout? If the
-> > former, I don't think you need a new compatible, just add/enable a
-> > node for the eMMC.
->
-> I have only board with eMMC but I imagine it's the former. Even so, curre=
-nt
-> approach with Allwinner boards is to have two different board DT files, o=
-ne for
-> each variant. This can be seen from Documentation/devicetree/bindings/arm/
-> sunxi.yaml which has a lot of compatibles ending with "-emmc". I guess re=
-ason
-> for that is to avoid having MMC controller being powered on for no reason.
-
-The main reason for that is that those populating options can be
-conflicting. For example, last week we discussed an issue about the
-eMMC being on the same pin set than an SPI flash, both options being
-available.
-
-The solution Andre suggested then was to let the eMMC be disabled, and
-have the bootloader probe the emmc, and if found, enable
-it. Otherwise, it means that you have a SPI flash (and enable it).
-
-I guess a similar solution would apply here.
-
-Maxime
-
---z3e6p5ezhmthrhbl
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiBXNwAKCRDj7w1vZxhR
-xSiCAQC3vqoZktCtBHtvXsgBmpAOofLKQpEHTDgn3BB1dlUTvQD/SVxXyY+qZTZi
-JO/lb9XHuZfUdVTYe5uE19i8KbsfrQM=
-=/A2H
------END PGP SIGNATURE-----
-
---z3e6p5ezhmthrhbl--
-
-
---===============7760447349125285675==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>   void cpu_set_feature(unsigned int num)
+>   {
+>   	WARN_ON(num >= MAX_CPU_FEATURES);
+> @@ -2081,7 +2093,7 @@ void __init setup_cpu_features(void)
+>   static bool __maybe_unused
+>   cpufeature_pan_not_uao(const struct arm64_cpu_capabilities *entry, int __unused)
+>   {
+> -	return (cpus_have_const_cap(ARM64_HAS_PAN) && !cpus_have_const_cap(ARM64_HAS_UAO));
+> +	return system_has_cap(ARM64_HAS_PAN) && !system_has_cap(ARM64_HAS_UAO);
+>   }
+>   
+>   static void __maybe_unused cpu_enable_cnp(struct arm64_cpu_capabilities const *cap)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7760447349125285675==--
-
