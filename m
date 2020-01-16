@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18BD513D2B5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 04:29:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E8EF13D2B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 04:30:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=eUEnJ4gYBJecH3nhRkHLCVeXoq1of0BgAI9HA/qenKA=; b=oFlMH9NBet/6oMGxEU91mQMhDA
-	cZ8tXrjY7cJHuuanD8476ZpJjtdO94tgodR6zHouoLmRuAUu3jmmT+9iYOWxTUwcY0LYuh1rLxph8
-	bPRLIRbXCoGXGmgQr19cPTbdribj4hElbAFDa8eWMaef/iSx0IWt3mg+VrURRCOi8zXkwVRJ85MkY
-	qHbX+T9kiBdGxtndpyijZ9tDWxBzGCRG7gEKgvdFGM/Ia7Nxo9Vin0hZDj20kxN3cAn/bojwfKO28
-	WPrtpogcVAnnwb4dLqRyF49iLVteATA5CcdgajTEInHV/CJwyneS5qkaenLWxRP9lcRG59+OkVlQy
-	FaSKtlfw==;
+	bh=wbicUa+OObda+9SosLa22YriX3/FR0XQx9jruvoXopg=; b=fd42pzPJsplQWQU4wXOp0H/q0E
+	Dauhf9M2a7Ko6eQpsT7NPC/I/JzyEElMe/RlQKFPdFuYZcdi7iFPL6CDoi6uKWtQ1XwQKE4KQC1jz
+	WfAaw9VTOx1M3TwcDvKrcVIksNXGHdmoIgk3znzb4XQ2qPI9ZUtoVZ9I069Qtbl2W7IHVn2Oao6Ez
+	qjIoCofONpzEgusr8ZsF4bPVPVWdE9MHCM6dwI/wr6HYTznlc9RHEbn/hZO2sblvG2HqAYJ9YiHYB
+	lqBBMv7gRzhNLzPfa5/qz9EGg+hgpgCa7EAR9xCzMwC90EzfGLBRQzZDukr786764HhQGAl9DEbqB
+	09MMQWCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irvql-0007j5-Nh; Thu, 16 Jan 2020 03:29:39 +0000
+	id 1irvr4-00082h-LN; Thu, 16 Jan 2020 03:29:58 +0000
 Received: from out30-42.freemail.mail.aliyun.com ([115.124.30.42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irvqK-0006rW-5J
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 03:29:13 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R181e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07484;
+ id 1irvqR-0006yr-6C
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 03:29:20 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R131e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04397;
  MF=zhangliguang@linux.alibaba.com; NM=1; PH=DS; RN=3; SR=0;
- TI=SMTPD_---0TnrLKNv_1579145341; 
+ TI=SMTPD_---0TnrJrCt_1579145349; 
 Received: from localhost(mailfrom:zhangliguang@linux.alibaba.com
- fp:SMTPD_---0TnrLKNv_1579145341) by smtp.aliyun-inc.com(127.0.0.1);
- Thu, 16 Jan 2020 11:29:09 +0800
+ fp:SMTPD_---0TnrJrCt_1579145349) by smtp.aliyun-inc.com(127.0.0.1);
+ Thu, 16 Jan 2020 11:29:17 +0800
 From: luanshi <zhangliguang@linux.alibaba.com>
 To: james.morse@arm.com
-Subject: [V2 2/3] firmware: arm_sdei: Removed multiple white lines.
-Date: Thu, 16 Jan 2020 11:28:50 +0800
-Message-Id: <1579145331-78633-2-git-send-email-zhangliguang@linux.alibaba.com>
+Subject: [V2 3/3] firmware: arm_sdei: clean up sdei_event_create()
+Date: Thu, 16 Jan 2020 11:28:51 +0800
+Message-Id: <1579145331-78633-3-git-send-email-zhangliguang@linux.alibaba.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1579145331-78633-1-git-send-email-zhangliguang@linux.alibaba.com>
 References: <1579145331-78633-1-git-send-email-zhangliguang@linux.alibaba.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_192912_391535_888839D4 
-X-CRM114-Status: UNSURE (   6.31  )
+X-CRM114-CacheID: sfid-20200115_192919_499344_BB6A52C3 
+X-CRM114-Status: UNSURE (   8.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,25 +76,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove one unnecessary white line.
+Function sdei_event_find() is always called in sdei_event_create(), but
+it is already called in sdei_event_register(). So we should remove some
+needless sdei_event_find() calls.
 
 Signed-off-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
 ---
- drivers/firmware/arm_sdei.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/firmware/arm_sdei.c | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index 37e9bf0..f81c09e 100644
+index f81c09e..79ae07c 100644
 --- a/drivers/firmware/arm_sdei.c
 +++ b/drivers/firmware/arm_sdei.c
-@@ -599,7 +599,6 @@ static int _sdei_event_register(struct sdei_event *event)
- 					       event->registered,
- 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
+@@ -271,15 +271,9 @@ static struct sdei_event *sdei_event_create(u32 event_num,
+ 		event->private_registered = regs;
+ 	}
  
--
- 	err = sdei_do_cross_call(_local_event_register, event);
- 	if (err) {
- 		spin_lock(&event->sdei_event_lock);
+-	if (sdei_event_find(event_num)) {
+-		kfree(event->registered);
+-		kfree(event);
+-		event = ERR_PTR(-EBUSY);
+-	} else {
+-		spin_lock(&sdei_list_lock);
+-		list_add(&event->list, &sdei_list);
+-		spin_unlock(&sdei_list_lock);
+-	}
++	spin_lock(&sdei_list_lock);
++	list_add(&event->list, &sdei_list);
++	spin_unlock(&sdei_list_lock);
+ 
+ 	return event;
+ }
 -- 
 1.8.3.1
 
