@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E338C13EB6F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:50:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D828613EB8E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:50:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k8zwr8Kc7EsDuX/Mvkogc+YtyVFeWTqOvUCJPnMyLzk=; b=H8o5lglML3K8Ln
-	suBwN/WgVMxMCfHizR/ca9/k59pzInwcTM7Uk7zw5Cp5o3QMeMSNXnaiK78ghGvoJ82q7X7iWGZe6
-	rORPgClnlL5Blpigce+fBm2fyTfMYucxNMkMDveTde0BJimJjFw0yQI2zFgU+nEo+znsEWZ06677I
-	0USL3mXgh5aKx76WyZvJtO0+CAkMBunS9jDuv+IPJXFH4o4sb79VKuVN/KsCYF0Wh0raROtLWG08i
-	/agSxz5ehTxJE5jgd3MlrOqilojeq2/TvBZGqnfW8q6mkCr9QJ9dJaMt7qbMV2ro+z+RsrJIP82v+
-	EgErxuTmWc9/aRvrxwwA==;
+	List-Owner; bh=XYyejgwGOEe5F3J4+9CL7Rr/jJqKblG1Y4OyDDdq68A=; b=ZR7SXR+olOY/2S
+	hkQ3jAllxi2GJdwyDA7N5Mcj5LL1oj6PLAgA71fyTXFJNmt79hi+BgAy2BAqI317D7BzpNgeTrRgD
+	egjaLCkaEWtLisoe7ZR5A4ml+QdVOiKW/OAb8fR9A3bLHBqmGXAOODxCFMlf7E6Ah1wOYMcH6k76W
+	+BQQnd+CtwCOaYTJSjvX8Y09itineohiblbL6S/oEHFIuikTs1Nt8z3dvU9m9cGdz2Z7IcRK4mRQI
+	jO4O6S8GOr1MqqxqA5pYkP7sLARrKt+cBZ2ZCdtK7yOz88WiBTFLgmtWReaE064f9wvu33wVGRw7N
+	OX91fdncvDo20JglDKWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Hk-0000kc-BA; Thu, 16 Jan 2020 17:50:24 +0000
+	id 1is9I8-00016D-HB; Thu, 16 Jan 2020 17:50:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8jE-00085p-D3; Thu, 16 Jan 2020 17:14:49 +0000
+ id 1is8lr-0002jb-Ag
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:17:31 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 341F22469D;
- Thu, 16 Jan 2020 17:14:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D76EC20730;
+ Thu, 16 Jan 2020 17:17:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194883;
- bh=xHcOnfwwM0uHhVJFzTJSecvsmr1mhXGmkpIu8atzssE=;
+ s=default; t=1579195046;
+ bh=eCsheN5nJfhPWN/zVSO0BJvoRocn6ZHygXATnnbqHTk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EGW2+6BaTMt9whcz48HDii99ywcxvHt/xu5ciqQpnfeZx0rHKH9eRS0SxynaDzk1K
- WspeyjfQ2Mtq4DU/f56EYDhuPJHsXIpFM3xJFbH3FIP64qH17t9UesyJoZMprQihfd
- +rv3JDav/RkVHjqNF2tojTIyEzeRAWLdT011D/aE=
+ b=cpDI7WqCM3WwGcXzA6HnGt+Rz2xuCmpz33NCOijxGirWt/lnK38fz+Cps93f+wMjh
+ 1ksDZNxZOoh5HbyfpVKFVwRBrpiVzRJhlvEzIK/q5mz2pHmdc28FfxhYk6WZbXi1Fk
+ U0+sTfj60bq/o4iTS2NNtqIFHE+aE/F0UIPw5MOQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 671/671] arm64: dts: meson-gxm-khadas-vim2: fix
- uart_A bluetooth node
-Date: Thu, 16 Jan 2020 12:05:09 -0500
-Message-Id: <20200116170509.12787-408-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 005/371] PCI: iproc: Remove PAXC slot check to
+ allow VF support
+Date: Thu, 16 Jan 2020 12:11:13 -0500
+Message-Id: <20200116171719.16965-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
-References: <20200116170509.12787-1-sashal@kernel.org>
+In-Reply-To: <20200116171719.16965-1-sashal@kernel.org>
+References: <20200116171719.16965-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091444_815659_BF900F84 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_091727_415114_73EA06C6 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,41 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ Jitendra Bhivare <jitendra.bhivare@broadcom.com>,
+ Ray Jui <ray.jui@broadcom.com>, Andy Gospodarek <gospo@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christian Hewitt <christianshewitt@gmail.com>
+From: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
 
-[ Upstream commit 388a2772979b625042524d8b91280616ab4ff5ee ]
+[ Upstream commit 4da6b4480766e5bc9c4d7bc14bf1d0939a1a5fa7 ]
 
-Fixes: 33344e2111a3 ("arm64: dts: meson-gxm-khadas-vim2: fix Bluetooth support")
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Fix previous incorrect logic that limits PAXC slot number to zero only.
+In order for SRIOV/VF to work, we need to allow the slot number to be
+greater than zero.
+
+Fixes: 46560388c476c ("PCI: iproc: Allow multiple devices except on PAXC")
+Signed-off-by: Jitendra Bhivare <jitendra.bhivare@broadcom.com>
+Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Reviewed-by: Andy Gospodarek <gospo@broadcom.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/pci/host/pcie-iproc.c | 8 --------
+ 1 file changed, 8 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-index 785240733d94..bdf7c6c5983c 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-@@ -413,6 +413,9 @@
- 	bluetooth {
- 		compatible = "brcm,bcm43438-bt";
- 		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
-+		max-speed = <2000000>;
-+		clocks = <&wifi32k>;
-+		clock-names = "lpo";
- 	};
- };
+diff --git a/drivers/pci/host/pcie-iproc.c b/drivers/pci/host/pcie-iproc.c
+index c0ecc9f35667..8f8dac0155d6 100644
+--- a/drivers/pci/host/pcie-iproc.c
++++ b/drivers/pci/host/pcie-iproc.c
+@@ -573,14 +573,6 @@ static void __iomem *iproc_pcie_map_cfg_bus(struct iproc_pcie *pcie,
+ 			return (pcie->base + offset);
+ 	}
+ 
+-	/*
+-	 * PAXC is connected to an internally emulated EP within the SoC.  It
+-	 * allows only one device.
+-	 */
+-	if (pcie->ep_is_internal)
+-		if (slot > 0)
+-			return NULL;
+-
+ 	return iproc_pcie_map_ep_cfg_reg(pcie, busno, slot, fn, where);
+ }
  
 -- 
 2.20.1
