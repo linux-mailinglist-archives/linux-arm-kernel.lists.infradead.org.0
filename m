@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 606EE13E632
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:19:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4681D13E652
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yEvW6GFxRBbPmBYUpBnCK6L0tCGsgHpHpS+OV9oW/kQ=; b=QjyEUqgZodt3Fn
-	SeJrBwZxvb6rWl6zz5lr2MjxXUXlm5jbnVuQKyelWhPJH9Evn/3xEAoVhghbuE9CVNrc4R19PoenH
-	7ZgSsBFQ0mzySjsQCirNufqFzILQcaPtj1QWoiTLvnBqlSBhOedNMOuEHRPQx7l9s+onpq0Tl1wTZ
-	ul1NFfxCkoe2S+cQUzUve5l1QpRHcBxLd39uCGPOl3om8OKn7w+YoUgO6DdCxOOxSVaIRw/yqT8H5
-	c2B3rvwwqGqEE/a3HpVTN/DMRQLA0fdUr183YX/pW/wCqFz+7md5Sdb3G3ngCAMmuxkXu1gOvW7SY
-	2NhOD1ZKU/ZK5PIU7VVA==;
+	List-Owner; bh=DEdnHqqt6KtsJnF3kDi5dKCOQc64QdG5941Nedx+Rtg=; b=Y4v0abMZEIkP7c
+	TmvI3rR0/uMIrwliMD91mLopT0jkLN2QvsXZ/DAImeeGD9Wp9RwlYKqlHPGznUHz1FePhIKQS+UJ7
+	ukQYogQvUIAztGqHtQeM2cYk9tscFExOsU+DQ00MW34cZ9xOzKn+dRuhfhWUkPPhVSOGvs8+ouuS4
+	JraKKVvXJhvE2kRIUlY9OS1zJsrldA906qCuyL0M+jaSxf3uwM6ieZOLTgoNZN/IyLNVK9dTiLYYv
+	PNw5oMLM9ZMSrtxIZfJ4Tin7v/J79kL0QYX2eF7e7weRqgUNbF44GSvkGhKLaMv4Ry1j5W6liTcUl
+	Kah83HakiiTqzg60hJQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8nn-00049J-9M; Thu, 16 Jan 2020 17:19:27 +0000
+	id 1is8oD-0004NY-9P; Thu, 16 Jan 2020 17:19:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8aY-0007UX-CT
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:51 +0000
+ id 1is8ad-0007Z7-TU
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:56 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F0D612051A;
- Thu, 16 Jan 2020 17:05:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 822FD205F4;
+ Thu, 16 Jan 2020 17:05:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194345;
- bh=IRmLSqE83uCsKnjCWPMxfFgshRxKOTa8eJMPacvSZ0g=;
+ s=default; t=1579194351;
+ bh=fdm15sX+9H9IMbXrt7R2PnFJZIXmBkvKcjedf0dZ86A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xRyE3qE9XkPxfH2+JyxOs2H2/N76aN3XOgSIi0EkJrgm99r1hIb+DmswKB8rjJ1yG
- GZ9JA6u52W8Wbtwln2NB70OXXycuIj3fQFlvKEuiU8nD4XsWhUjNcdMe1GUk8u7Kxy
- nK0CBxwg507SCqC0VUh9EZiaFL9Ra1fzH+M9cizk=
+ b=j9T84+R3ZU5FqTRCHw9H7T68ttAcD/RUqIaXf4Eji0RoOYpVETyrv1pRMbjFXuPlN
+ OW9vCjiWqEAiXcbuVrranf1ieRe+kb72Sm9EHP7ntooVppx/c53/RhpBeyMbuvnEZe
+ qi5wz1k3e5EUASFI7ABDFqGXgIUeYwfVBnYGrQdw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 287/671] firmware: arm_scmi: fix of_node leak in
- scmi_mailbox_check
-Date: Thu, 16 Jan 2020 11:58:45 -0500
-Message-Id: <20200116170509.12787-24-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 291/671] ARM: pxa: ssp: Fix "WARNING: invalid
+ free of devm_ allocated data"
+Date: Thu, 16 Jan 2020 11:58:49 -0500
+Message-Id: <20200116170509.12787-28-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090546_496076_5339EC91 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20200116_090552_053439_A9C6EBD7 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +81,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Steven Price <steven.price@arm.com>
+Cc: Sasha Levin <sashal@kernel.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
+ YueHaibing <yuehaibing@huawei.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Steven Price <steven.price@arm.com>
+From: YueHaibing <yuehaibing@huawei.com>
 
-[ Upstream commit fa7fe29a645b4da08efe8ff2392898b88f9ded9f ]
+[ Upstream commit 9ee8578d953023cc57e7e736ae48502c707c0210 ]
 
-of_parse_phandle_with_args() requires the caller to call of_node_put() on
-the returned args->np pointer. Otherwise the reference count will remain
-incremented.
+Since commit 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
+kfree, iounmap, clk_put etc are not needed anymore in remove path.
 
-However, in this case, since we don't actually use the returned pointer,
-we can simply pass in NULL.
-
-Fixes: aa4f886f3893f ("firmware: arm_scmi: add basic driver infrastructure for SCMI")
-Signed-off-by: Steven Price <steven.price@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Fixes: 1c459de1e645 ("ARM: pxa: ssp: use devm_ functions")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+[ commit message spelling fix ]
+Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/firmware/arm_scmi/driver.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/arm/plat-pxa/ssp.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 09119e3f5c01..effc4c17e0fb 100644
---- a/drivers/firmware/arm_scmi/driver.c
-+++ b/drivers/firmware/arm_scmi/driver.c
-@@ -662,9 +662,7 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+diff --git a/arch/arm/plat-pxa/ssp.c b/arch/arm/plat-pxa/ssp.c
+index f51919974183..bf25f780c1c9 100644
+--- a/arch/arm/plat-pxa/ssp.c
++++ b/arch/arm/plat-pxa/ssp.c
+@@ -183,18 +183,12 @@ static int pxa_ssp_probe(struct platform_device *pdev)
  
- static int scmi_mailbox_check(struct device_node *np)
+ static int pxa_ssp_remove(struct platform_device *pdev)
  {
--	struct of_phandle_args arg;
--
--	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, &arg);
-+	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, NULL);
- }
+-	struct resource *res;
+ 	struct ssp_device *ssp;
  
- static int scmi_mbox_free_channel(int id, void *p, void *data)
+ 	ssp = platform_get_drvdata(pdev);
+ 	if (ssp == NULL)
+ 		return -ENODEV;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	release_mem_region(res->start, resource_size(res));
+-
+-	clk_put(ssp->clk);
+-
+ 	mutex_lock(&ssp_lock);
+ 	list_del(&ssp->node);
+ 	mutex_unlock(&ssp_lock);
 -- 
 2.20.1
 
