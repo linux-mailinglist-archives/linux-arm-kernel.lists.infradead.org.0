@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63A2613E1AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:51:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D19A13E1AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:51:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qj1bm2H8VtTFbrWjUBL6OHLC8WO4wqT3nEra6Cxw2+Y=; b=WkbzcmPgledDuE
-	BElZnaZ2Pg9blWiHcYcMCKxlnDUMJPuxuokNPcbOecvjaZEDb1pSdMWUNICTWPr9bUh/LVgBrTHHD
-	b8jOXeIYcIv8UAnR8MqUFTT7bjQ+cGbn1DMoATkiA8VIGn7foLYFgsL2rZ5dgxSSFeq1N3xPgTNPM
-	4Ttz2tE71DF2lJfUATgi34j2C53YnjKn8MHEWVJ+8w73iZZL1aMzZQyCJFA+nKP6lxU0ISIbZ4QCe
-	Rc05qv3J/pqPPsRAbCkZ++LIixs7bF4ccAETFfZCMGzN+ZMtjjDOQ9FISfKsuP1OOalR4MVw6ROLC
-	E5UFrG1x3fmEYIT0exgg==;
+	List-Owner; bh=JnMbVDd1vso+LhwTq2F1kDuons+ntiONEE7WsWhh6bg=; b=hDCfWMbaHiKwdO
+	gqYXm1qmKBdLvVI6HwCpntMOrtddJaus+7m6zSEvV5IiG0Bh9fMO2aCB4DhyNxcyrSuf1I+fhLlOX
+	CoKj4UdUri1J0WmnMSRs5EOGVeb8J9zsWV6kEToVL4Yw+Q2Z/d0eAR2nWsc4sxbDCkf0WdGywEb3p
+	ubmB3DWOcj3U9C71Zt6yIqDgNYK05Q/dl+0yLHYYk4Fl3lJSbJnVwZ/4TUZuRVey8+/vTDZhshnkX
+	XMssCl80jZoffftJdR2v+Pvrc8vlg1Y9m1m0FlWjyaCmjrFfsc/99Jyl7F1pkyNa7C0UZ8uO9QqAQ
+	tYBCgoDlribpsBU7gd3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8MP-0006Xq-4K; Thu, 16 Jan 2020 16:51:09 +0000
+	id 1is8Mb-0006oI-6g; Thu, 16 Jan 2020 16:51:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Jy-000396-13
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:48:42 +0000
+ id 1is8KM-0003V9-NI
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:49:08 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 18A3F2081E;
- Thu, 16 Jan 2020 16:48:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C9D982176D;
+ Thu, 16 Jan 2020 16:48:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193317;
- bh=cEW1tkWwCZjtFHFuLDAR/CAkbHVDx+5KeZ9SbT1N4Lo=;
+ s=default; t=1579193342;
+ bh=4vXEaNwOIWp1f5jkZrk0mdAQPGxxPiXZxkS7gxe856Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NrKM2Sqcs0wKI9HiP9vL4DTYjhO4dEBpj46MurcZPZQoTguxjw0QlMsKhOz7Q/9g1
- 5z+vzQVeGkW75kVIw7aWHPDE+dnMoMk4Vh9dj1w6otsN5HNH/UkZ7Bzy+thBum56Z8
- dWRbm6dWkGZ7f782+HX7qr3Hr1HUY+hgnK0b/TUY=
+ b=pL6UF5rupPzP1r12clp9YARXJG2QoMSL30KGHxX49EUvJ4UgXUdR+nitFvnEy2Wf1
+ 9YgYuim2d6O7mzKxxpnQy+kYpa44WwPKjnmu8gjB16QA2bBNTWFie/Vskwi5dA4Fji
+ 1+iEON41ZD/wp0mvnDhw5UfJ3oTIMbXx4R8QVBEI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 073/205] arm64: dts: imx8mm-evk: Assigned clocks
- for audio plls
-Date: Thu, 16 Jan 2020 11:40:48 -0500
-Message-Id: <20200116164300.6705-73-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 078/205] clk: samsung: exynos5420: Preserve CPU
+ clocks configuration during suspend/resume
+Date: Thu, 16 Jan 2020 11:40:53 -0500
+Message-Id: <20200116164300.6705-78-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_084838_249841_84BBC807 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20200116_084902_808544_76C4B813 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,72 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Marian Mihailescu <mihailescu2m@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "S.j. Wang" <shengjiu.wang@nxp.com>
+From: Marian Mihailescu <mihailescu2m@gmail.com>
 
-[ Upstream commit e8b395b23643ca26e62a3081130d895e198c6154 ]
+[ Upstream commit e21be0d1d7bd7f78a77613f6bcb6965e72b22fc1 ]
 
-Assign clocks and clock-rates for audio plls, that audio
-drivers can utilize them.
+Save and restore top PLL related configuration registers for big (APLL)
+and LITTLE (KPLL) cores during suspend/resume cycle. So far, CPU clocks
+were reset to default values after suspend/resume cycle and performance
+after system resume was affected when performance governor has been selected.
 
-Add dai-tdm-slot-num and dai-tdm-slot-width for sound-wm8524,
-that sai driver can generate correct bit clock.
-
-Fixes: 13f3b9fdef6c ("arm64: dts: imx8mm-evk: Enable audio codec wm8524")
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+Fixes: 773424326b51 ("clk: samsung: exynos5420: add more registers to restore list")
+Signed-off-by: Marian Mihailescu <mihailescu2m@gmail.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 2 ++
- arch/arm64/boot/dts/freescale/imx8mm.dtsi    | 8 ++++++--
- 2 files changed, 8 insertions(+), 2 deletions(-)
+ drivers/clk/samsung/clk-exynos5420.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index f7a15f3904c2..13137451b438 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -62,6 +62,8 @@
- 
- 		cpudai: simple-audio-card,cpu {
- 			sound-dai = <&sai3>;
-+			dai-tdm-slot-num = <2>;
-+			dai-tdm-slot-width = <32>;
- 		};
- 
- 		simple-audio-card,codec {
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 23c8fad7932b..0435c64c92c8 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -479,14 +479,18 @@
- 						<&clk IMX8MM_CLK_AUDIO_AHB>,
- 						<&clk IMX8MM_CLK_IPG_AUDIO_ROOT>,
- 						<&clk IMX8MM_SYS_PLL3>,
--						<&clk IMX8MM_VIDEO_PLL1>;
-+						<&clk IMX8MM_VIDEO_PLL1>,
-+						<&clk IMX8MM_AUDIO_PLL1>,
-+						<&clk IMX8MM_AUDIO_PLL2>;
- 				assigned-clock-parents = <&clk IMX8MM_SYS_PLL3_OUT>,
- 							 <&clk IMX8MM_SYS_PLL1_800M>;
- 				assigned-clock-rates = <0>,
- 							<400000000>,
- 							<400000000>,
- 							<750000000>,
--							<594000000>;
-+							<594000000>,
-+							<393216000>,
-+							<361267200>;
- 			};
- 
- 			src: reset-controller@30390000 {
+diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+index 31466cd1842f..3b7601647d7b 100644
+--- a/drivers/clk/samsung/clk-exynos5420.c
++++ b/drivers/clk/samsung/clk-exynos5420.c
+@@ -165,6 +165,8 @@ static const unsigned long exynos5x_clk_regs[] __initconst = {
+ 	GATE_BUS_CPU,
+ 	GATE_SCLK_CPU,
+ 	CLKOUT_CMU_CPU,
++	APLL_CON0,
++	KPLL_CON0,
+ 	CPLL_CON0,
+ 	DPLL_CON0,
+ 	EPLL_CON0,
 -- 
 2.20.1
 
