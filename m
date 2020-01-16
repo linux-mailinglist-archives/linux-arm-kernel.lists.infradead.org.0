@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B1C913EFC4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:18:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65AF113EFC3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:18:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZpiRAYB+Td2S1tbJW2KHirb6ee/h8SeQtCtKOLVmGjw=; b=u0ScuenI5Mj49d
-	vqneW6+GvHBjnNT19QE1AFtuJFphniw+T4jJaIU5wH+4bNl+raqpfhNmEizJmL77yj5aIvr5PEwzj
-	Pgt4DZyJkSTN2mztoGGGNjulhvE7BhoQcNCYvusufPVhOouNQAnkRHV87ApsIv3VczOiaZPQYmY3b
-	N4Bcbj5vkVdC59N/+l0UtDRZlk9uq6s9G+h6cgnR8rILtQYgVyKwaRqmjWGpEcq2W19UQCWu0rxX2
-	uYeyrHWgQXCtEd5RX61cOb6jHiq2MkEyg7bVOJ4AuKfQMKi3FDv1ofRce79evoG1u4acy4NWavNUB
-	kdjbA2K2L7aDWflg4DRA==;
+	List-Owner; bh=mU/OwHP2yW0o7/TjCsdhBxDmsc48qOBfJCJKZsGL5EE=; b=QMOOwSntw9A2Vt
+	Wp96kfoDPD3M07gjRUYfeW8NF4KH6Mpzn+5JaPpzKuF3cAlsycWVDv2xB2Myp8Y1+HutpPVQyR8/H
+	XoZOLTjIGM1Q22Zf/+zzEXlM7hzpzifmAVI1taFxR+uZRzEkHzAVQvbxWl4J9rRMYkHsBnHgcTR++
+	8HHM/zt/YM+yNxgeaIkRqr5wKGzhHqoMJC+RLR14oIhiVNDTX9hip6iHRiVXSYnjdpdCc1w+2034J
+	zETvoIAOA2gTHJ/hUWxvS6KMHXOi3adFWCejf9N1X/c76j4BiR1Q55UewqFF1vp3SC61jMy0EsDoh
+	c87ql6Rgv/EoWFejz0Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9im-0001l8-KI; Thu, 16 Jan 2020 18:18:20 +0000
+	id 1is9iZ-0001TH-3D; Thu, 16 Jan 2020 18:18:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is94o-0006bD-7j
+ id 1is94o-0006bC-7k
  for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:37:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B249F20730;
- Thu, 16 Jan 2020 17:36:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C0BB4246AD;
+ Thu, 16 Jan 2020 17:36:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196217;
- bh=9u0eXpBkwqV5PC/UoUroJZ4c7kC3ibEt3Lw5Fw1TC9M=;
+ s=default; t=1579196218;
+ bh=KaJf4hSD/y/mradPUnWk1oZqxpE7DMsG6WMlEJ0ObRg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ul2J8HR91p0EDOaxwLgT/pwMvCMAN0MmJlmTwMHoJVvuOlYTX2oiQWB076Zftdvxa
- dAqOX2Gn7Y/+M5JPYmn4DPrBDRZA9mKuRIWvarbGh+dr8mSsPSRyvTOk0ooeMbaKOX
- S0xg7s264t1/H3lH7ycKJRTjxLZu9jxtXXu+O+34=
+ b=KqxYV1wEtHhPOSJx+tXewUq3db3NszoExjb674yYuHW8RQyWvw9dQEiU9uEcT04Id
+ afL1q0dTRE6azBAuQOXOdKcFVgOV5N54SoRW7Xp013J/Ne0I7HXBeDRTo142cEqQ5u
+ PzjLgUM6hqHgNoSP+2TO04nHUwxjBQ084X+E6Lls=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 052/251] ARM: dts: lpc32xx: fix ARM PrimeCell LCD
- controller variant
-Date: Thu, 16 Jan 2020 12:33:21 -0500
-Message-Id: <20200116173641.22137-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 053/251] ARM: dts: lpc32xx: fix ARM PrimeCell LCD
+ controller clocks property
+Date: Thu, 16 Jan 2020 12:33:22 -0500
+Message-Id: <20200116173641.22137-13-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093702_321058_24EAAB69 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200116_093702_348387_56000929 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,32 +89,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Vladimir Zapolskiy <vz@mleia.com>
 
-[ Upstream commit 7a0790a4121cbcd111cc537cdc801c46ccb789ee ]
+[ Upstream commit 30fc01bae3cda747e7d9c352b1aa51ca113c8a9d ]
 
-ARM PrimeCell PL111 LCD controller is found on On NXP LPC3230
-and LPC3250 SoCs variants, the original reference in compatible
-property to an older one ARM PrimeCell PL110 is invalid.
+The originally added ARM PrimeCell PL111 clocks property misses
+the required "clcdclk" clock, which is the same as a clock to enable
+the LCD controller on NXP LPC3230 and NXP LPC3250 SoCs.
 
-Fixes: e04920d9efcb3 ("ARM: LPC32xx: DTS files for device tree conversion")
+Fixes: 93898eb775e5 ("arm: dts: lpc32xx: add clock properties to device nodes")
 Signed-off-by: Vladimir Zapolskiy <vz@mleia.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/lpc32xx.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/lpc32xx.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/boot/dts/lpc32xx.dtsi b/arch/arm/boot/dts/lpc32xx.dtsi
-index 6bd196457ccc..3adbbaff7971 100644
+index 3adbbaff7971..2802c9565b6c 100644
 --- a/arch/arm/boot/dts/lpc32xx.dtsi
 +++ b/arch/arm/boot/dts/lpc32xx.dtsi
-@@ -139,7 +139,7 @@
- 		};
- 
- 		clcd: clcd@31040000 {
--			compatible = "arm,pl110", "arm,primecell";
-+			compatible = "arm,pl111", "arm,primecell";
+@@ -142,8 +142,8 @@
+ 			compatible = "arm,pl111", "arm,primecell";
  			reg = <0x31040000 0x1000>;
  			interrupts = <14 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&clk LPC32XX_CLK_LCD>;
+-			clocks = <&clk LPC32XX_CLK_LCD>;
+-			clock-names = "apb_pclk";
++			clocks = <&clk LPC32XX_CLK_LCD>, <&clk LPC32XX_CLK_LCD>;
++			clock-names = "clcdclk", "apb_pclk";
+ 			status = "disabled";
+ 		};
+ 
 -- 
 2.20.1
 
