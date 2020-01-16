@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F12313D335
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 05:36:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA38813D34F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 05:56:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ji2IivpNs4RCE3n9272PO71CPaIWhATHIsRlG1art0w=; b=I4gKNCayiKnUmC
-	vkQrsE3t/LubjgNMfBONEzWgODX6D7RcpdCvDvuo/cLGkXqcSznGMvj3aXxwzsXBQepdpFdgryZun
-	ITygzfNHYhcaIP0jehLfDxlZLUHN0Gj+yac4saqq5uPhst3KwRpqR1DraVPm97ZN5ZC/zS6EF4veT
-	yipNXDqua03KGypLLGBu4+ymD2U3PXj/jn7kH6klkQ9WE5AoujBWkLv3d826rlgw29n6RKKsEWIKt
-	1hLehsi+vWxGJRfORoSMQpK7KnoD6EI4QxZ8rB04D2WiuC+HfA2yH6d9XelOJox0gy2v6GbYQYMIY
-	YCcHEpJJ9u3pOpJ8TvCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sne6vLOScT5x6RhMvWximJeN5kaCdXPvPRyK2lsGbO8=; b=BR2GWPDAu89efZ
+	cXUngQBmVQN9UwvoPDbMtIGoVh3O9ouz7jewyTgDYXQjieUYF4TEAv7FdcnzftMZwKQtr6eCJkhxt
+	ELkczB2MH6OauLTfQEFSMg3ZusDCdXv5i77N9Dh7gevEaFVjcAsd1u0Gs+jQyRxLA1Ick+Pghq7U8
+	ui79L0FjF2rQGimxl+yE2SQby0Na1fBwIusqMF0LJWAB6wPpmgA2TfS5chJX2U1IxP2bwFZm2R9a6
+	Z1QEgveXY6+edfMPo+tJI3RQDVM1xslvI1zk5xUFfxG30pAKnwhNBzmAT+oBsMEo5+zFRXCy2qOtd
+	RNADm+MpV90MH9wCcIpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irwtm-0000V7-EK; Thu, 16 Jan 2020 04:36:50 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1irxCJ-0007ix-Rk; Thu, 16 Jan 2020 04:55:59 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irwtI-0000Gf-Sr
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 04:36:22 +0000
-Received: by mail-pf1-x449.google.com with SMTP id h16so12298881pfn.23
+ id 1irxC8-0007iE-61
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 04:55:51 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x7so9255941pgl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 20:36:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=lOS4ewWznrG+/0jceSUIoLxZFs2qMA4l+9gH32rT8ZU=;
- b=WStbr0MJSOPJGqzN2iGhIkdauZViO9hiPHW8Uj0CQFi0U3cTaC+CtBLstGwqiu/okm
- HwJonDO4S20K4z1FseDh/ERI2uZPRo9aoKkZjNyJR4eLMsIuCWvGzCPrdTwlUbyFeq18
- 4aadRAQl8JLnnKuLbKXV8Kf5PuQGXgWmjRQGIXV6jLyRE55XPV46346RsbUI5pwP646F
- W7Zi4/hotQx4xNZHbfw2SyYexpMQ3MwhPt1at98Ah5V6RNdVvM3CwauYeM00GAr+WM2Y
- A8r1y2CyypILKIp6eJzku7HKEflikMjfc9K1prTtvGNz2mox+pXGPh+YGIgEKaDqqfYW
- KcnQ==
+ Wed, 15 Jan 2020 20:55:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=t8v+4DgG5fbcG655PWQyALbezwDT0tnYhquzZ6Aq2MQ=;
+ b=eFA6wLdiEyl3ZoRG7Sqd18ajRt2HOl+aeMKbdK4pAQPh+xanYAztfw5U5LK0gzJC6U
+ 4Ko/MudJrnmRZIdvZ7rUiUhrXfklOq+riOxXv5OrM+XaQFdaRaEZkL73OMTYNGhtf+A0
+ SSromzDHLBBuOP9xfqmg5KDVMnedlxikPtVONL9AM+5q1DeKkeAiuagJATY3XGidmeOp
+ uy6GUdr3rDdNyAABTH2PnWA1WwJiv9qUvpvugtoYYEWFg6WmpidBQgc9OMOLnsXXkgyr
+ O/0Q6KUrD+sOq3mYUobqdruGJEHQbuMY1Y98g0Iy+5/P33+4XoP9csFE6nS8ytsV9BWO
+ qRMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=lOS4ewWznrG+/0jceSUIoLxZFs2qMA4l+9gH32rT8ZU=;
- b=o1ruA6uhXenfNm3Z4WBMca+ZoulhX/FfRaJ5eTxfqVFdiSFYqVxP736r4OC/dMcDEa
- B1+XS0PCJA5/DJr5dDkgxGxMJexwdkrF463hx00te8HsaaVh/ZL45ua4KGLU9uAe71Ys
- oRAl6j4zMyg827b1ntMUoIdTBOqGeXb0bARHAjdEtoHunhR8WI9bvmdM8gMNpRc5Y1Ox
- cUteZvbIVRMRh9jYKBCFB/5zPv7qNUJa0a2PoUM8x+qW8HLUdh/WFrh0EUq4EGHGOcrG
- 97n+f+fsd48OI7rq0uHBN/88JWKtVXSnSFvFYGFlQ7aH1EUvsqheK80Vz5oDWwNk+oVt
- 8sTg==
-X-Gm-Message-State: APjAAAUVx4/gb3D5FJrtzXVjNmn0miKQjCNEbLmqtAe5Ql7ny54+aZkn
- pf9qN5sFchYsEemUjNQKPk9wleDMXXU=
-X-Google-Smtp-Source: APXvYqzbKGjnpLecCWg4B+/ttVo20VzbmxlVS+5fmmSGkVQcYwu4EGAJJ4ZismsmxqM/zsKwRtOeqsmsDUk=
-X-Received: by 2002:a63:1f21:: with SMTP id f33mr37413032pgf.91.1579149378890; 
- Wed, 15 Jan 2020 20:36:18 -0800 (PST)
-Date: Wed, 15 Jan 2020 20:36:12 -0800
-In-Reply-To: <20200116043612.52782-1-surenb@google.com>
-Message-Id: <20200116043612.52782-2-surenb@google.com>
-Mime-Version: 1.0
-References: <20200116043612.52782-1-surenb@google.com>
-X-Mailer: git-send-email 2.25.0.rc1.283.g88dfdc4193-goog
-Subject: [PATCH 2/2] kselftest/cgroup: add cgroup destruction test
-From: Suren Baghdasaryan <surenb@google.com>
-To: surenb@google.com
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=t8v+4DgG5fbcG655PWQyALbezwDT0tnYhquzZ6Aq2MQ=;
+ b=gwNJMitvHmwv5MEBiURS5BC7riknbppykiZW4I4JqZSPBlEdWm5Ua3ywvR5X2V0RuC
+ 69VLGTn+lJPeCqi7xf0q6Nl6u7lZdRqeSvG0mKhPYtGrMX+2fLIQC+KJq3ZNwAIMELEk
+ ZWm8S39bLmJRuScpTjIjaGYODOSJnbeb7PfArYgUhcDYCR8fvwcwahbZKugPlNge5jSK
+ r8G1h9sGT/ogGdQ8VP7OaXQdfrMhu9FmIr/QPjgMmmI3PSblGEf1E2630BBqOdjxMEsI
+ X2XBg1FkDCff2/4GDTlIhjaXI3ovRdbuLQudhibbGbgnZ8hDKKefWFePPllD5gZMDq5n
+ Mi7g==
+X-Gm-Message-State: APjAAAVAHLLd3N1qQKhND7qFENif8im6Yt9pRjXImryb0WqZS+Tl+5Cq
+ M1U0RejP4BUrgV/LJNaO+7o4WA==
+X-Google-Smtp-Source: APXvYqxnV6r1cSp8obgrdpEsHKaYRE3hpOyfzEi1lowGIpNqD6SK+1CizrnQ2nn9d21ZheCDgnO6MQ==
+X-Received: by 2002:a63:4d5e:: with SMTP id n30mr37091031pgl.275.1579150546866; 
+ Wed, 15 Jan 2020 20:55:46 -0800 (PST)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id c1sm24140468pfa.51.2020.01.15.20.55.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Jan 2020 20:55:46 -0800 (PST)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: [PATCH] arm64: defconfig: Enable Qualcomm SC7180 pinctrl and gcc
+Date: Wed, 15 Jan 2020 20:54:57 -0800
+Message-Id: <20200116045457.2489704-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.24.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_203620_950386_43EE8803 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200115_205549_671892_397D6D8A 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,168 +96,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mkoutny@suse.com, linger.lee@mediatek.com, kernel-team@android.com,
- linux-kernel@vger.kernel.org, tomcherry@google.com, matthias.bgg@gmail.com,
- lizefan@huawei.com, linux-mediatek@lists.infradead.org,
- linux-kselftest@vger.kernel.org, hannes@cmpxchg.org, tj@kernel.org,
- cgroups@vger.kernel.org, alex.shi@linux.alibaba.com, shuah@kernel.org,
- guro@fb.com, linux-arm-kernel@lists.infradead.org
+Cc: Anson Huang <Anson.Huang@nxp.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-msm@vger.kernel.org, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new test to verify that a cgroup with dead processes can be destroyed.
-The test spawns a child process which allocates and touches 100MB of RAM
-to ensure prolonged exit. Subsequently it kills the child, waits until
-the cgroup containing the child is empty and destroys the cgroup.
+Enable the Qualcomm SC7180 pinctrl and gcc driver, in order to allow the
+kernel to boot to console.
 
-Signed-off-by: Suren Baghdasaryan <surenb@google.com>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- tools/testing/selftests/cgroup/test_core.c | 113 +++++++++++++++++++++
- 1 file changed, 113 insertions(+)
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/tools/testing/selftests/cgroup/test_core.c b/tools/testing/selftests/cgroup/test_core.c
-index c5ca669feb2b..2a5242ec1a49 100644
---- a/tools/testing/selftests/cgroup/test_core.c
-+++ b/tools/testing/selftests/cgroup/test_core.c
-@@ -2,7 +2,10 @@
- 
- #include <linux/limits.h>
- #include <sys/types.h>
-+#include <sys/mman.h>
-+#include <sys/wait.h>
- #include <unistd.h>
-+#include <fcntl.h>
- #include <stdio.h>
- #include <errno.h>
- #include <signal.h>
-@@ -12,6 +15,115 @@
- #include "../kselftest.h"
- #include "cgroup_util.h"
- 
-+static int touch_anon(char *buf, size_t size)
-+{
-+	int fd;
-+	char *pos = buf;
-+
-+	fd = open("/dev/urandom", O_RDONLY);
-+	if (fd < 0)
-+		return -1;
-+
-+	while (size > 0) {
-+		ssize_t ret = read(fd, pos, size);
-+
-+		if (ret < 0) {
-+			if (errno != EINTR) {
-+				close(fd);
-+				return -1;
-+			}
-+		} else {
-+			pos += ret;
-+			size -= ret;
-+		}
-+	}
-+	close(fd);
-+
-+	return 0;
-+}
-+
-+static int alloc_and_touch_anon_noexit(const char *cgroup, void *arg)
-+{
-+	int ppid = getppid();
-+	size_t size = (size_t)arg;
-+	void *buf;
-+
-+	buf = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON,
-+		   0, 0);
-+	if (buf == MAP_FAILED)
-+		return -1;
-+
-+	if (touch_anon((char *)buf, size)) {
-+		munmap(buf, size);
-+		return -1;
-+	}
-+
-+	while (getppid() == ppid)
-+		sleep(1);
-+
-+	munmap(buf, size);
-+	return 0;
-+}
-+
-+/*
-+ * Create a child process that allocates and touches 100MB, then waits to be
-+ * killed. Wait until the child is attached to the cgroup, kill all processes
-+ * in that cgroup and wait until "cgroup.events" is empty. At this point try to
-+ * destroy the empty cgroup. The test helps detect race conditions between
-+ * dying processes leaving the cgroup and cgroup destruction path.
-+ */
-+static int test_cgcore_destroy(const char *root)
-+{
-+	int ret = KSFT_FAIL;
-+	char *cg_test = NULL;
-+	int child_pid;
-+	char buf[PAGE_SIZE];
-+
-+	cg_test = cg_name(root, "cg_test");
-+
-+	if (!cg_test)
-+		goto cleanup;
-+
-+	for (int i = 0; i < 10; i++) {
-+		if (cg_create(cg_test))
-+			goto cleanup;
-+
-+		child_pid = cg_run_nowait(cg_test, alloc_and_touch_anon_noexit,
-+					  (void *) MB(100));
-+
-+		if (child_pid < 0)
-+			goto cleanup;
-+
-+		/* wait for the child to enter cgroup */
-+		if (cg_wait_for_proc_count(cg_test, 1))
-+			goto cleanup;
-+
-+		if (cg_killall(cg_test))
-+			goto cleanup;
-+
-+		/* wait for cgroup to be empty */
-+		while (1) {
-+			if (cg_read(cg_test, "cgroup.procs", buf, sizeof(buf)))
-+				goto cleanup;
-+			if (buf[0] == '\0')
-+				break;
-+			usleep(1000);
-+		}
-+
-+		if (rmdir(cg_test))
-+			goto cleanup;
-+
-+		if (waitpid(child_pid, NULL, 0) < 0)
-+			goto cleanup;
-+	}
-+	ret = KSFT_PASS;
-+cleanup:
-+	if (cg_test)
-+		cg_destroy(cg_test);
-+	free(cg_test);
-+	return ret;
-+}
-+
- /*
-  * A(0) - B(0) - C(1)
-  *        \ D(0)
-@@ -512,6 +624,7 @@ struct corecg_test {
- 	T(test_cgcore_populated),
- 	T(test_cgcore_proc_migration),
- 	T(test_cgcore_thread_migration),
-+	T(test_cgcore_destroy),
- };
- #undef T
- 
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 8409aa80e30a..a1766c05cfe4 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -412,6 +412,7 @@ CONFIG_PINCTRL_MSM8998=y
+ CONFIG_PINCTRL_QCS404=y
+ CONFIG_PINCTRL_QDF2XXX=y
+ CONFIG_PINCTRL_QCOM_SPMI_PMIC=y
++CONFIG_PINCTRL_SC7180=y
+ CONFIG_PINCTRL_SDM845=y
+ CONFIG_PINCTRL_SM8150=y
+ CONFIG_GPIO_ALTERA=m
+@@ -722,6 +723,7 @@ CONFIG_MSM_GCC_8994=y
+ CONFIG_MSM_MMCC_8996=y
+ CONFIG_MSM_GCC_8998=y
+ CONFIG_QCS_GCC_404=y
++CONFIG_SC_GCC_7180=y
+ CONFIG_SDM_GCC_845=y
+ CONFIG_SM_GCC_8150=y
+ CONFIG_QCOM_HFPLL=y
 -- 
-2.25.0.rc1.283.g88dfdc4193-goog
+2.24.0
 
 
 _______________________________________________
