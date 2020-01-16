@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0EDB13F267
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:35:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFFAF13F276
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:35:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bUNOR7+2okT1Kxzui30aTyaRP/MiUwbVsGJH6HjpxT4=; b=eD09cTFr93MInX
-	SgdcJhzBQzCdPISLMXcYrnTHe++JFP3xcHs2q67eJMEtYpCDXSpu+T0k7HsziB+ydjrM0LNPdUwKv
-	d1V0GWtODaX7TkJsLUfy1xW8Ht68Z5oo/6hp+af1wnza3ndM6tvoQTgIfDq50mzmmrimwNOfvRpEy
-	/ck83qBDnzU4M6v91/zDqIQZ2Gt4huxGhlvlY0fShZyNRMflre/h6wOlH/Xhprp/LuxZGTm0WBVmx
-	Z7mrx7yZJxNJURnUtepNwOOBJzHUAy4ixCNmNJHy5JJ/y8ab0Ar0R6DvjKsuuqq5gc3cGwNwd80Qm
-	wX4hWpOCywUoxgJEa8xw==;
+	List-Owner; bh=PDCkKUpjMT07xWhTFh2cuHHm4DzKpwDM2KHFwcsPI5o=; b=MiT+u1agj2DWdc
+	hGiqaSqCruKKTovuh2xQJwFhF/t7TX+WMQC7cqbz+JJd577F6hAfETphb+jXF3SHU5rh7hHC1upns
+	xuY6ZX7m7bkkFI9P9M0NW4zw2tNNq4I7h6x9s+dqsccAkPQDvIF8VGb2sPwRetDxrCEBWLxK7Vo6K
+	lXXk7v8Hfh2rzAYoe6G+r+mlS/W9N+fu6hxfFh5q6hfzlWyLIRVvHFCJEduQXVsxTS3ggmiAUg1PF
+	itjDK9K+ogOgndbHlJx2XOiRveONkS0A5kzSxAshY2ymdW5exNYokJS/c3AobaNnKW4iwr+tJqvhu
+	tn0s3GadFrIH586jXcTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9z4-0003cK-Cl; Thu, 16 Jan 2020 18:35:10 +0000
+	id 1is9zN-0004dv-23; Thu, 16 Jan 2020 18:35:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9E7-0006yL-TF
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:44 +0000
+ id 1is9EB-000702-35
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:46:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B9E1246DE;
- Thu, 16 Jan 2020 17:46:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 44905246EE;
+ Thu, 16 Jan 2020 17:46:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196799;
- bh=tjezgqyB0lb6GvQGpNFUAhir6YPDZj0KFE56LLwsDVs=;
+ s=default; t=1579196802;
+ bh=LceMdP0lTz3aCuW0kPjDRp4oE/CQZJ5PTR4oo7v7fnA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mmR0MM0r7SDpzNzBbvY3PqCphAOfFOEiVp73TfZNdghLvEys3G9rOz3+WY2Bu6FZu
- +Fk4tZ4lxcPRRz1WpY0/46OGvL5cP/xkm+lGNqUl+6Ah0GagbtWLYMU68ZxyL+wKM3
- jSkJavCdjj6aaqTBw8lvMElyTueRT2L2u2N8Q+h4=
+ b=eELqZk3imwxVstkYhmxK/f7nB1bzHCVHP/zRLoaIZGr6pG21OZtlDmDat5uvDFh+O
+ SuxYalFcQ4V9D8WIl+ZkqgrGJ/dxOIIRS0TtBlgTpHgdJsSdzUW/dy3MhdJ0vBvh2C
+ nKFfwao8Ywi4xLuqBhcDs0FkiwfULAat0bUpGD1o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 159/174] clk: samsung: exynos5420: Preserve CPU
- clocks configuration during suspend/resume
-Date: Thu, 16 Jan 2020 12:42:36 -0500
-Message-Id: <20200116174251.24326-159-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 161/174] media: exynos4-is: Fix recursive locking
+ in isp_video_release()
+Date: Thu, 16 Jan 2020 12:42:38 -0500
+Message-Id: <20200116174251.24326-161-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094640_133764_3571E40F 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_094643_242387_1F0C2CEB 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,44 +81,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
  Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Marian Mihailescu <mihailescu2m@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marian Mihailescu <mihailescu2m@gmail.com>
+From: Seung-Woo Kim <sw0312.kim@samsung.com>
 
-[ Upstream commit e21be0d1d7bd7f78a77613f6bcb6965e72b22fc1 ]
+[ Upstream commit 704c6c80fb471d1bb0ef0d61a94617d1d55743cd ]
 
-Save and restore top PLL related configuration registers for big (APLL)
-and LITTLE (KPLL) cores during suspend/resume cycle. So far, CPU clocks
-were reset to default values after suspend/resume cycle and performance
-after system resume was affected when performance governor has been selected.
+>From isp_video_release(), &isp->video_lock is held and subsequent
+vb2_fop_release() tries to lock vdev->lock which is same with the
+previous one. Replace vb2_fop_release() with _vb2_fop_release() to
+fix the recursive locking.
 
-Fixes: 773424326b51 ("clk: samsung: exynos5420: add more registers to restore list")
-Signed-off-by: Marian Mihailescu <mihailescu2m@gmail.com>
-Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Fixes: 1380f5754cb0 ("[media] videobuf2: Add missing lock held on vb2_fop_release")
+Signed-off-by: Seung-Woo Kim <sw0312.kim@samsung.com>
+Reviewed-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <mchehab@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/samsung/clk-exynos5420.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/media/platform/exynos4-is/fimc-isp-video.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
-index c94de13ce362..21bfedf40478 100644
---- a/drivers/clk/samsung/clk-exynos5420.c
-+++ b/drivers/clk/samsung/clk-exynos5420.c
-@@ -166,6 +166,8 @@ static unsigned long exynos5x_clk_regs[] __initdata = {
- 	GATE_BUS_CPU,
- 	GATE_SCLK_CPU,
- 	CLKOUT_CMU_CPU,
-+	APLL_CON0,
-+	KPLL_CON0,
- 	CPLL_CON0,
- 	DPLL_CON0,
- 	EPLL_CON0,
+diff --git a/drivers/media/platform/exynos4-is/fimc-isp-video.c b/drivers/media/platform/exynos4-is/fimc-isp-video.c
+index 667d3720154a..4b7803cec37f 100644
+--- a/drivers/media/platform/exynos4-is/fimc-isp-video.c
++++ b/drivers/media/platform/exynos4-is/fimc-isp-video.c
+@@ -323,7 +323,7 @@ static int isp_video_release(struct file *file)
+ 		ivc->streaming = 0;
+ 	}
+ 
+-	vb2_fop_release(file);
++	_vb2_fop_release(file, NULL);
+ 
+ 	if (v4l2_fh_is_singular_file(file)) {
+ 		fimc_pipeline_call(&ivc->ve, close);
 -- 
 2.20.1
 
