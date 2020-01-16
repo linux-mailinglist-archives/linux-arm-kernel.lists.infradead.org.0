@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62B7713EEE4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:12:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 816BC13EEF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:12:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/2WxAfEEOcmXKEu8gcsyIFgjrD0PgBdfFRwgweKMXKA=; b=etj1du7YOw3GUg
-	TwG8984Fpqj9M7dK5yHTmt/W4KjdB8mF1wKibs1Y8H6BgMb6+/Gpo/iGYQWotIO5eQHmDoxJM8ZlQ
-	z+6Pl20KYlDymotICBnKrrY2qP5sfWgmoh8NwDWqLUYV4Ru8IScpRJHF1lT3A2fGMYTcmJQm8Xab9
-	PJKd80VMUoZ0eCVyn5Z3brp7TPNMAAb6qPaE8q2zuClbUKJCABMgw2FjMeFlbUNJIhee+m3RsvxFi
-	vFuH1FzJQAiR8dihAXPrFZTp0GZPUsBsA+4/SV6nQaugEP28y+GUz3AimWbUKsWLCBwDzpdwsOvkc
-	SH/YA7davqBqt5JSxs9g==;
+	List-Owner; bh=hZuHN9HNqBIdWFG45Ece9YbVfBaphRZc/2RH0vgcOs8=; b=UOBTOqTeCL4fwb
+	NaQ8YJe7a1JfYydxCW/FniZ1nTdfx5cQSVqPi4rF61QuXgj8En6dG88Kys3IB+oFgh4nzXuAHnVIu
+	mgebVnj4VNBbgutaGSkPw1rGWOfn8KIagb+ofh22tM0Etv48QdoyKjQiyPveUsDompzKkZirUO1Fq
+	qVgR80OLnMhrsk6SH418qc2eEkWOhvQleF/z4u8J9nnhidZsF3K9rTb0oy+K3LTDHjkeEojSBYIoB
+	9EmbQ7KPeKKlhgI1x1pVrae0IYTzKFtg80nG0k/pOGddNqf+Ua1RMidLd1dNkXzUa3IcHQ5KY+tHl
+	huy6axRPWZiuNEtlIVlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9cb-0002mi-2p; Thu, 16 Jan 2020 18:11:57 +0000
+	id 1is9cu-00031X-ET; Thu, 16 Jan 2020 18:12:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8zB-0000s2-Jj
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:31:20 +0000
+ id 1is8zH-0000yJ-3R
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:31:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 839C4246C0;
- Thu, 16 Jan 2020 17:31:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C64FC246CC;
+ Thu, 16 Jan 2020 17:31:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195872;
- bh=pMzsxZqL7mnzlJsR54Z8Dv3VsMGRuTgcj/xJQ/YELWk=;
+ s=default; t=1579195878;
+ bh=rNEdYtx4AyblOlb0zrQkR8wIdxh7NLZf6zh2ptUtJ2E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Sj2PiqCUnFAnaunOeAvrjdGOv/aNSN6N9Uy6Y0FHf542k3fAKAZKf+DQ8nAzTsyFl
- XlG3yf8s0v1D6VgWTPu/yd633jhCL7C9rUbQ2Gu4TShSDnS5OGkc/9fJNNH2WEOZbN
- p6s85df7rCTlmkMIefgC66SP5ayItDHrE9ckpQtI=
+ b=xsW8TlTIiezsK3Zkn0iXsaLfL4kOnc7io+STR0hFNuU3JWwPEjWyB6hqSxCmsxmuC
+ +BDHtiuuNvUglHOp0oNAOlASL5g4KvKyJIG0Lf8BFv3zoS3gvCOk+yTnvDPW9zKoAk
+ vW9RXcizy7lm46ydgFwdenp4kEMepYiAWU0Fv0Mc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 367/371] Revert "arm64: dts: juno: add dma-ranges
- property"
-Date: Thu, 16 Jan 2020 12:23:59 -0500
-Message-Id: <20200116172403.18149-310-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 371/371] serial: stm32: fix clearing interrupt
+ error flags
+Date: Thu, 16 Jan 2020 12:24:03 -0500
+Message-Id: <20200116172403.18149-314-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093113_693562_41A7CDD1 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200116_093119_174077_4C10AB80 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,69 +80,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-serial@vger.kernel.org,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sudeep Holla <sudeep.holla@arm.com>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
 
-[ Upstream commit 54fb3fe0f211d4729a2551cf9497bd612189af9d ]
+[ Upstream commit 1250ed7114a977cdc2a67a0c09d6cdda63970eb9 ]
 
-This reverts commit 193d00a2b35ee3353813b4006a18131122087205.
+The interrupt clear flag register is a "write 1 to clear" register.
+So, only writing ones allows to clear flags:
+- Replace buggy stm32_clr_bits() by a simple write to clear error flags
+- Replace useless read/modify/write stm32_set_bits() routine by a
+  simple write to clear TC (transfer complete) flag.
 
-Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
-reworked the logic such that of_dma_get_range() works correctly
-starting from a bus node containing "dma-ranges".
-
-Since on Juno we don't have a SoC level bus node and "dma-ranges" is
-present only in the root node, we get the following error:
-
-OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
-OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
-...
-OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-
-So let's fix it by dropping the "dma-ranges" property for now. This
-should be fine since it doesn't represent any kind of device-visible
-restriction; it was only there for completeness, and we've since given
-in to the assumption that missing "dma-ranges" implies a 1:1 mapping
-anyway.
-
-We can add it later with a proper SoC bus node and moving all the
-devices that belong there along with the "dma-ranges" if required.
-
-Fixes: 193d00a2b35e ("arm64: dts: juno: add dma-ranges property")
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Liviu Dudau <liviu.dudau@arm.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Acked-by: Robin Murphy <robin.murphy@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Fixes: 4f01d833fdcd ("serial: stm32: fix rx error handling")
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+Cc: stable <stable@vger.kernel.org>
+Link: https://lore.kernel.org/r/1574323849-1909-1-git-send-email-fabrice.gasnier@st.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/arm/juno-base.dtsi | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/tty/serial/stm32-usart.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index f165f04db0c9..13ee8ffa9bbf 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -5,7 +5,6 @@
- 	/*
- 	 *  Devices shared by all Juno boards
- 	 */
--	dma-ranges = <0 0 0 0 0x100 0>;
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index f8f3f8fafd9f..1e854e1851fb 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -132,8 +132,8 @@ static void stm32_receive_chars(struct uart_port *port, bool threaded)
+ 		 * cleared by the sequence [read SR - read DR].
+ 		 */
+ 		if ((sr & USART_SR_ERR_MASK) && ofs->icr != UNDEF_REG)
+-			stm32_clr_bits(port, ofs->icr, USART_ICR_ORECF |
+-				       USART_ICR_PECF | USART_ICR_FECF);
++			writel_relaxed(sr & USART_SR_ERR_MASK,
++				       port->membase + ofs->icr);
  
- 	memtimer: timer@2a810000 {
- 		compatible = "arm,armv7-timer-mem";
+ 		c = stm32_get_char(port, &sr, &stm32_port->last_res);
+ 		port->icount.rx++;
+@@ -302,7 +302,7 @@ static void stm32_transmit_chars(struct uart_port *port)
+ 	if (ofs->icr == UNDEF_REG)
+ 		stm32_clr_bits(port, ofs->isr, USART_SR_TC);
+ 	else
+-		stm32_set_bits(port, ofs->icr, USART_ICR_TCCF);
++		writel_relaxed(USART_ICR_TCCF, port->membase + ofs->icr);
+ 
+ 	if (stm32_port->tx_ch)
+ 		stm32_transmit_chars_dma(port);
 -- 
 2.20.1
 
