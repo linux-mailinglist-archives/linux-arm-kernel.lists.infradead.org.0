@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D69313E3F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:05:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19BA013E417
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:06:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yFqxwxMxJY75lHWXUzml1oqg2BNkEZbrYWC3rZ0tXAM=; b=Lq2cUN21BjkF/8
-	b/9mO0ilK7xrHXap353c6RxCGMdXzFkL7ucAYFjr4u/OC6ISxghooxHM5LzXlbejMcHPyrq3+GSWG
-	AWpGCXi6bUDL6pNlvWF3zxijLBQ8WMaRiTVvcEG0mF4Iek/U4s/pCUQb3Yxt6dA+Cgto0EtAg2Wfx
-	6qmuuC2v+ehOXbdEt6oxAZaOzKASe/vqT3BgNXlZ+5mXvfh4+KWbsgzSVGMpH1qzmH7Yrb7Cd3myx
-	iwmdFz7VbCVsLOJNIFb+ZslDgN0imnH5GwBSL7mzQqMhCy6+ha0Zj4L1TpJJ+Gyffqo+2KbhJLpP6
-	f8VmqKGNhJ+mYR8D601Q==;
+	List-Owner; bh=v5WfoS9RhPEOHwmWJIaYnB+VOU+vWubVtTv1FZGnZw8=; b=NqfuDZc2YXPI00
+	HkioQad033PnJtykygK8ARn6dTsLm8SW7cRkmFvmStPb11P8i1vIMpSOGYgY93sQXqxc3zhmmHF6I
+	H8aAP0zQK9yAvbOHPTIelMEiYD1sRpdj9/0nYypM8hTjLlvuO/eBzmNpa1xQtzSW4M7Xg7UWbLWIq
+	m/S9rBXYZAtuvI+hq61bfUyiPAkS8zt7XXsL/xeZN9Y+t0UmlspR18eq4izpIc6uY9tvpyVri1p3g
+	gRPsCnjVC7RSlpjlrH3PQ8PXox8Sf598geSUB7Va7W9sAF4mOS8YcLDsG+NVdz9l8xnDyzsP/Hwo7
+	73fA5S33Y7BesLeFCs2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8a4-0005cS-P5; Thu, 16 Jan 2020 17:05:16 +0000
+	id 1is8ag-0007JY-Lc; Thu, 16 Jan 2020 17:05:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8SH-00054M-9I
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:57:18 +0000
+ id 1is8SI-00055u-EF
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:57:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 21D2D21D56;
- Thu, 16 Jan 2020 16:57:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5273424656;
+ Thu, 16 Jan 2020 16:57:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193832;
- bh=6IKZmcbn0aY0zYcRkmYnfljl6rSXMsXt489XGbFz084=;
+ s=default; t=1579193834;
+ bh=oJ/J1nwHNaBUQwjmCIAEOfnpZdET2hlGzDmtrS2NE9s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KuFZA/PuPQUWPSre/Q+z1fVi9BpnJ+2mmrXimPwFPvYCoIJdty+WTpha2GZ9FVhJi
- 8U/CWOXPLXswieaa7AohLiq3obXTp5xZEHkkki8+5R1UCGKQ9oXwY7GslC6Gl7xSrE
- aIckVSwi+Yi+jqYGY6aeiRKT31UQOsFZ3RDLRmts=
+ b=y5xMA6VbtMnACaOgUklK6VUDphvLYhYeqb2hOY88VNN3uETfnIUKF9bhryg4pBHz3
+ +bwLoqCBB8vjwIFrkkQXwyShiQZ1LDTwxLgQ8znxiJc+cAXXyYPfw96Cb8Mx37sH22
+ VGySBNlamwC7nNlqvYD5FdPveOo1nn5eopAp0KJg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 089/671] clk: imx6q: fix refcount leak in
- imx6q_clocks_init()
-Date: Thu, 16 Jan 2020 11:45:20 -0500
-Message-Id: <20200116165502.8838-89-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 090/671] clk: imx6sx: fix refcount leak in
+ imx6sx_clocks_init()
+Date: Thu, 16 Jan 2020 11:45:21 -0500
+Message-Id: <20200116165502.8838-90-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085713_373262_D31DF847 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20200116_085714_514548_ABE658A7 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,32 +90,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yangtao Li <tiny.windzz@gmail.com>
 
-[ Upstream commit c9ec1d8fef31b5fc9e90e99f9bd685db5caa7c5e ]
+[ Upstream commit 1731e14fb30212dd8c1e9f8fc1af061e56498c55 ]
 
 The of_find_compatible_node() returns a node pointer with refcount
 incremented, but there is the lack of use of the of_node_put() when
 done. Add the missing of_node_put() to release the refcount.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-Fixes: 2acd1b6f889c ("ARM: i.MX6: implement clocks using common clock framework")
+Fixes: d55135689019 ("ARM: imx: add clock driver for imx6sx")
 Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/imx/clk-imx6q.c | 1 +
+ drivers/clk/imx/clk-imx6sx.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
-index c509324f6338..8ddf9b1f1677 100644
---- a/drivers/clk/imx/clk-imx6q.c
-+++ b/drivers/clk/imx/clk-imx6q.c
-@@ -424,6 +424,7 @@ static void __init imx6q_clocks_init(struct device_node *ccm_node)
- 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6q-anatop");
- 	anatop_base = base = of_iomap(np, 0);
+diff --git a/drivers/clk/imx/clk-imx6sx.c b/drivers/clk/imx/clk-imx6sx.c
+index d9f2890ffe62..57ab96a47775 100644
+--- a/drivers/clk/imx/clk-imx6sx.c
++++ b/drivers/clk/imx/clk-imx6sx.c
+@@ -151,6 +151,7 @@ static void __init imx6sx_clocks_init(struct device_node *ccm_node)
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6sx-anatop");
+ 	base = of_iomap(np, 0);
  	WARN_ON(!base);
 +	of_node_put(np);
  
- 	/* Audio/video PLL post dividers do not work on i.MX6q revision 1.0 */
- 	if (clk_on_imx6q() && imx_get_soc_revision() == IMX_CHIP_REVISION_1_0) {
+ 	clks[IMX6SX_PLL1_BYPASS_SRC] = imx_clk_mux("pll1_bypass_src", base + 0x00, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
+ 	clks[IMX6SX_PLL2_BYPASS_SRC] = imx_clk_mux("pll2_bypass_src", base + 0x30, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
 -- 
 2.20.1
 
