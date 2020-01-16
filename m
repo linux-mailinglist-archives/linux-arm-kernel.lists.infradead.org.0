@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 537F213E596
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:16:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE61113E5A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:16:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkfuNMn79l7OcLBr15WZN+gQH0ZocA53UHXptkgmvpw=; b=Tto1RcjV9bA61x
-	O6bXuVpMj1vRYfbnxBojOT3Eylo6lgwxUhujB3/UZmC7yL0uL/xNZGo6e01oz41KcuspS4AGsz8+S
-	8/443KadP5oppcbJEloTkhH4GS+LQ3YHeG1iMnsjT2OxuyxlJG55afooUNxfw2cy9gtEHUHDXUzbO
-	zLFr9EnwNuptyWA/WHdQvUdmTsNilIIINPq1JAwy7UXXfDciRF86dPIe6ByC3xeLpyP2O2RKDP32f
-	YOLaFNYWD8SNAE5E6V2MxGirLTDo1uMvkIfNhdUaAA+97+LeWHjyrMDNooKuax4em2ufYqyLzJaCJ
-	4CmW6yuVO3fCUXLl1OOA==;
+	List-Owner; bh=02YxarLxirq5EXcA/m609/WD4o5D2eqoNjXzXdkNAlQ=; b=oKozJLwnxVoHy0
+	l3tYeNP/FSqBielxFSjYXuYKmdNc4Ttvl2L5mlLZOw0rpxiMs6YAbeKKcsx5HrG4jucMWyYcG1Eyp
+	iL9nfTA18zbPaHF17vIrUVihnmYOB5p7MhAe6lUXYegb4u4ihmzw1cZQ401hnYBJmKV1uh7fI/S3U
+	iejFaUlWLZYWeNTyqo63D9R9GX1NzXrZwpVMFs6btx6j/6pR1z3h/kfpjBWg3jg6qtGdGaitn5n5T
+	llib7i+e1TDBm9liKvBAlQmITwalNx6x3YyOnVSZ0EXweWNvP1Am899YBT6B4Nz5+I9o0vfPJAbT0
+	xXQaaCTLE8NPTfKj5Vug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8kI-0001EV-Ol; Thu, 16 Jan 2020 17:15:50 +0000
+	id 1is8kf-0001bZ-4F; Thu, 16 Jan 2020 17:16:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8XH-0002Lt-3P; Thu, 16 Jan 2020 17:02:31 +0000
+ id 1is8Xg-0002dP-Fi; Thu, 16 Jan 2020 17:02:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9BAA720730;
- Thu, 16 Jan 2020 17:02:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 31988207FF;
+ Thu, 16 Jan 2020 17:02:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194141;
- bh=Arr1726Id5mEVcSp5PE/MtW4ooJu4KwJFMqCkc++vG4=;
+ s=default; t=1579194167;
+ bh=MQIb2TfQCnGj786/+uVtJLgMv3bGqm+yX2Xf8zS8jPE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TBA4yWuW2SPxELObiTIT9AOZ2+XzAAwuGz3AHJP7VVH9r2IwVDGFjzm9MkMUah01g
- CMFuI41pt4osmvHshFtv2C1aoyymgELT85AN7PQz8uFnVvkytQYwBfPdef1iUIxSn7
- r9dgI1qUR80yNRaFVo88iguEBxhXtmAbbQy8yju4=
+ b=2q1yay3IUFqpIo1JvkM6UInijVXHK09e4/BR8BY/P7TDuZh41HHuHoadmDMaMnX0z
+ tK1S+g+8dBC2OpBpCJHSi1NYGphkZ2T++tCYEx9iIp7wOZYkjpNLN41bisDQ2eQJdF
+ u50Q7oi0MQuPDMB7048czD6UtnfceZeR2gb0nAIw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 228/671] hwrng: bcm2835 - fix probe as platform
- device
-Date: Thu, 16 Jan 2020 11:52:17 -0500
-Message-Id: <20200116165940.10720-111-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 247/671] soc: amlogic: gx-socinfo: Add mask for
+ each SoC packages
+Date: Thu, 16 Jan 2020 11:52:36 -0500
+Message-Id: <20200116165940.10720-130-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165940.10720-1-sashal@kernel.org>
 References: <20200116165940.10720-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090223_430682_1BC3C2B7 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200116_090248_928748_D9ECB4B8 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,66 +79,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- bcm-kernel-feedback-list@broadcom.com, linux-crypto@vger.kernel.org,
- Jonas Gorski <jonas.gorski@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jonas Gorski <jonas.gorski@gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit 984798de671a927ac73da31096a150df42e6aaf3 ]
+[ Upstream commit dce47aed20c7de3ee2011b7a63e67f08e9dcfb5e ]
 
-BCM63XX (MIPS) does not use device tree, so there cannot be any
-of_device_id, causing the driver to fail on probe:
+When updated IDs on f842c41adc04 ("amlogic: meson-gx-socinfo: Update soc ids")
+we introduced packages ids using the full 8bit value, but in the function
+socinfo_to_package_id() the id was filtered with the 0xf0 mask.
 
-[    0.904564] bcm2835-rng: probe of bcm63xx-rng failed with error -22
+While the 0xf0 mask is valid for most board, it filters out the lower
+4 bits which encodes some characteristics of the chip.
 
-Fix this by checking for match data only if we are probing from device
-tree.
+This patch moves the mask into the meson_gx_package_id table to be applied
+on each package name independently and add the correct mask for some
+specific entries.
 
-Fixes: 8705f24f7b57 ("hwrng: bcm2835 - Enable BCM2835 RNG to work on BCM63xx platforms")
-Signed-off-by: Jonas Gorski <jonas.gorski@gmail.com>
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+An example is the S905, in the vendor code the S905 is package_id
+different from 0x20, and S905M is exactly 0x20.
+
+Another example are the The Wetek Hub & Play2 boards using a S905-H
+variant, which is the S905 SoC with some licence bits enabled.
+These licence bits are encoded in the lower 4bits, so to detect
+the -H variant, we must detect the id == 0x3 with the 0xf mask.
+
+Fixes: f842c41adc04 ("amlogic: meson-gx-socinfo: Update soc ids")
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/char/hw_random/bcm2835-rng.c | 18 ++++++++++--------
- 1 file changed, 10 insertions(+), 8 deletions(-)
+ drivers/soc/amlogic/meson-gx-socinfo.c | 32 ++++++++++++++------------
+ 1 file changed, 17 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/char/hw_random/bcm2835-rng.c b/drivers/char/hw_random/bcm2835-rng.c
-index 6767d965c36c..19bde680aee1 100644
---- a/drivers/char/hw_random/bcm2835-rng.c
-+++ b/drivers/char/hw_random/bcm2835-rng.c
-@@ -171,14 +171,16 @@ static int bcm2835_rng_probe(struct platform_device *pdev)
- 	priv->rng.read = bcm2835_rng_read;
- 	priv->rng.cleanup = bcm2835_rng_cleanup;
+diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
+index 37ea0a1c24c8..1ae339f5eadb 100644
+--- a/drivers/soc/amlogic/meson-gx-socinfo.c
++++ b/drivers/soc/amlogic/meson-gx-socinfo.c
+@@ -43,20 +43,21 @@ static const struct meson_gx_package_id {
+ 	const char *name;
+ 	unsigned int major_id;
+ 	unsigned int pack_id;
++	unsigned int pack_mask;
+ } soc_packages[] = {
+-	{ "S905", 0x1f, 0 },
+-	{ "S905H", 0x1f, 0x13 },
+-	{ "S905M", 0x1f, 0x20 },
+-	{ "S905D", 0x21, 0 },
+-	{ "S905X", 0x21, 0x80 },
+-	{ "S905W", 0x21, 0xa0 },
+-	{ "S905L", 0x21, 0xc0 },
+-	{ "S905M2", 0x21, 0xe0 },
+-	{ "S912", 0x22, 0 },
+-	{ "962X", 0x24, 0x10 },
+-	{ "962E", 0x24, 0x20 },
+-	{ "A113X", 0x25, 0x37 },
+-	{ "A113D", 0x25, 0x22 },
++	{ "S905", 0x1f, 0, 0x20 }, /* pack_id != 0x20 */
++	{ "S905H", 0x1f, 0x3, 0xf }, /* pack_id & 0xf == 0x3 */
++	{ "S905M", 0x1f, 0x20, 0xf0 }, /* pack_id == 0x20 */
++	{ "S905D", 0x21, 0, 0xf0 },
++	{ "S905X", 0x21, 0x80, 0xf0 },
++	{ "S905W", 0x21, 0xa0, 0xf0 },
++	{ "S905L", 0x21, 0xc0, 0xf0 },
++	{ "S905M2", 0x21, 0xe0, 0xf0 },
++	{ "S912", 0x22, 0, 0x0 }, /* Only S912 is known for GXM */
++	{ "962X", 0x24, 0x10, 0xf0 },
++	{ "962E", 0x24, 0x20, 0xf0 },
++	{ "A113X", 0x25, 0x37, 0xff },
++	{ "A113D", 0x25, 0x22, 0xff },
+ };
  
--	rng_id = of_match_node(bcm2835_rng_of_match, np);
--	if (!rng_id)
--		return -EINVAL;
--
--	/* Check for rng init function, execute it */
--	of_data = rng_id->data;
--	if (of_data)
--		priv->mask_interrupts = of_data->mask_interrupts;
-+	if (dev_of_node(dev)) {
-+		rng_id = of_match_node(bcm2835_rng_of_match, np);
-+		if (!rng_id)
-+			return -EINVAL;
-+
-+		/* Check for rng init function, execute it */
-+		of_data = rng_id->data;
-+		if (of_data)
-+			priv->mask_interrupts = of_data->mask_interrupts;
-+	}
+ static inline unsigned int socinfo_to_major(u32 socinfo)
+@@ -81,13 +82,14 @@ static inline unsigned int socinfo_to_misc(u32 socinfo)
  
- 	/* register driver */
- 	err = devm_hwrng_register(dev, &priv->rng);
+ static const char *socinfo_to_package_id(u32 socinfo)
+ {
+-	unsigned int pack = socinfo_to_pack(socinfo) & 0xf0;
++	unsigned int pack = socinfo_to_pack(socinfo);
+ 	unsigned int major = socinfo_to_major(socinfo);
+ 	int i;
+ 
+ 	for (i = 0 ; i < ARRAY_SIZE(soc_packages) ; ++i) {
+ 		if (soc_packages[i].major_id == major &&
+-		    soc_packages[i].pack_id == pack)
++		    soc_packages[i].pack_id ==
++				(pack & soc_packages[i].pack_mask))
+ 			return soc_packages[i].name;
+ 	}
+ 
 -- 
 2.20.1
 
