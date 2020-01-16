@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB6A713EE45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:08:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17EAF13EE50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:09:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UBNM5W0xOok6xPFJXzbtV0XDFMuJNoykGBM/VALtd2c=; b=hAJrD3lroL8wfi
-	A33i3wugmSEJCBe0fQkGwvoFHXViiH13Q5A2Eac8FiWC0bOvr5JkO4zqunABVecIEuzVL3ZwAbrwp
-	P8X8bK5zMcJBM0fIyHc9BlmF+8jlifPVV81nC/qhbBrhZDqYzGj7RJ5ETbUckU8izsZrLHoOhNWcY
-	ArjRC7+BDFG+y67ast/QIBRJc8ahLsHb5L8wcWraPWIknRf6Pd/y6bYbxpfMkAtrceko/OfGsNVhI
-	Ro4ybQ9080lu18rhSyd5Mk0wcpAtKckPXERhI74iYolJkHrnPrcWVvOcE46hpOCGLiwTOlD9vXV7Z
-	L0LA7A+pO6IKpLhMOSwA==;
+	List-Owner; bh=dm28BiWsTL/wXcNMk7ZcjoYdaNQxu1B+VhStOwHefxo=; b=OJ4MgFO3wfWWxM
+	Wkf2oW1sZlS233iIhirbwvT42nrF5ZSxRLhhVURDpl91bovVhs3+0yUkbNemZlUDf55ItAoVlJ885
+	bj3PzdAPFL7eUvnoDlQiTTZjyNg063R8LFTsP+r+VqomFqQ3tngwjf07l/w+ozsihF33FtgfHZdai
+	io0aOJjyvjx49TA0Xy6ZuBJzLtGyq6PIsXNA+HDtCJE+OWraDFjw6nK4jUfghPouE/5uUAKqG3uxp
+	cP8JPbf53JFYXkD00rfA3QoRIE+BJ4iKytZjFEKudE5Gf1GfUBclRAjrWJw2BbrUmnlz0nxEaOSC0
+	J7Ur/Odv5TA0dXgOYX7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Z8-0006Pq-Qo; Thu, 16 Jan 2020 18:08:22 +0000
+	id 1is9ZZ-0006pp-SM; Thu, 16 Jan 2020 18:08:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8xn-0006zz-8p
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:29:52 +0000
+ id 1is8xr-00075Z-1l
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:29:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D64CD24710;
- Thu, 16 Jan 2020 17:29:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A21052470B;
+ Thu, 16 Jan 2020 17:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195786;
- bh=sqN9Ia28wx00eEWZy/Rnbw2Pe3jh79jsaCmiTr1yRgg=;
+ s=default; t=1579195790;
+ bh=YZdU21mzDaK+WJI/FwgjdUyTuis6x0cCU2ExMEgpyCM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=b/nk//GGKvo8XhJ73vgX3NAFtyUnrHOTyRdJfF4wwCjZnZEXpRd+A/Gt3HP0F4NFy
- H5WMgXm8xY/kUhsWM4UPWY1hvxrQEhxojneZ2IMW6G6F3ENfA9SuRh0sWiWhjr66gc
- 3b9PDesfHXLO1uNpurSwh4vZ0mMDRWcJTUh6IdFg=
+ b=fO27mGH5sjHcc1L4zQf4ptmLmP1XBloOGniICEODX9J+57aouWNz45fu8lkYBNr3U
+ fN7ykm4Gs8qv03othhtPAvkfuxSxPxTexl1uGqOZvL6kCu2fX17b4RNiJ5OLS8OIMl
+ jill8wMr3Kag7kaDR3Yg2CRTLH6+Vy3PVS/dP/m4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 309/371] net: ethernet: stmmac: Fix signedness
- bug in ipq806x_gmac_of_parse()
-Date: Thu, 16 Jan 2020 12:23:01 -0500
-Message-Id: <20200116172403.18149-252-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 312/371] net: stmmac: gmac4+: Not all Unicast
+ addresses may be available
+Date: Thu, 16 Jan 2020 12:23:04 -0500
+Message-Id: <20200116172403.18149-255-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092947_347690_E37B0526 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20200116_092951_194875_010CC956 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Dan Carpenter <dan.carpenter@oracle.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Sasha Levin <sashal@kernel.org>,
+ netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dan Carpenter <dan.carpenter@oracle.com>
+From: Jose Abreu <Jose.Abreu@synopsys.com>
 
-[ Upstream commit 231042181dc9d6122c6faba64e99ccb25f13cc6c ]
+[ Upstream commit 25683bab09a70542b9f8e3e28f79b3369e56701f ]
 
-The "gmac->phy_mode" variable is an enum and in this context GCC will
-treat it as an unsigned int so the error handling will never be
-triggered.
+Some setups may not have all Unicast addresses filters available. Check
+the number of available filters before trying to setup it.
 
-Fixes: b1c17215d718 ("stmmac: add ipq806x glue layer")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
+Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-ipq806x.c | 2 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-ipq806x.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-ipq806x.c
-index 866444b6c82f..11a4a81b0397 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-ipq806x.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-ipq806x.c
-@@ -203,7 +203,7 @@ static int ipq806x_gmac_of_parse(struct ipq806x_gmac *gmac)
- 	struct device *dev = &gmac->pdev->dev;
- 
- 	gmac->phy_mode = of_get_phy_mode(dev->of_node);
--	if (gmac->phy_mode < 0) {
-+	if ((int)gmac->phy_mode < 0) {
- 		dev_err(dev, "missing phy mode property\n");
- 		return -EINVAL;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 8445af580cb6..e5566c121525 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -438,7 +438,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
  	}
+ 
+ 	/* Handle multiple unicast addresses */
+-	if (netdev_uc_count(dev) > GMAC_MAX_PERFECT_ADDRESSES) {
++	if (netdev_uc_count(dev) > hw->unicast_filter_entries) {
+ 		/* Switch to promiscuous mode if more than 128 addrs
+ 		 * are required
+ 		 */
 -- 
 2.20.1
 
