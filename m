@@ -2,105 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAAE013D2AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 04:24:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88FEA13D2B3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 04:29:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XpeSeSoijitbTCFkhGiKzNcDkMB+msTS2+swfhX82Hc=; b=Hm3VYidnVzeM88
-	RcfM3bcECxUmDFWyntw4H/ZDNlnUmWQgKVycCUVVClVobKp/hjjYlXfU2xHGLLoXbyPKk1kdWl6dX
-	0eaqRG10+hh6bsg3jCYpM/O8CK7l9ukflC5CbrEsM6FCqP8NNud/EauKWmBNAqXM0W90NuXwQnmu5
-	qPZer9f+uOZgaYadLu82oV+y4a3Kf6/kifOwTXbVkxQj2Sv0032qWe1kJuSDK0iQ9ARXYZS2HgKxM
-	uJyHegMG+ETzuvI2AAn4w9nrHeL5g0724EwI9Cr/ZIP9LvhtSb+xf6lBaOe/Ymt3TdPEyOk8yPKgL
-	y26+D10CU1ECf9gBkTdw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yStSyH6FAZRFzrId1ww4ZnshAavv7+enOldbQnt9Qc0=; b=scp
+	1CjL4F/QI2f5yn/4TWfkBbMv3JIbr5p3vYyU34CHKVowjH00bnHcR2CkLKfWvBTKgGSLy4vN+8vCV
+	90eZ6LxR24qKMuJC8qQPVZemp8YrrWKJEg8OGQit8uHhXsdQpoZtMHl3vcCBuHNvZHplIPIxLc+9X
+	gv6mYcq1mVApue/cDCKQFI65qWOUqWHhVW0qnpm3mQpUb5BkXodl8+9ZYJE46syMtM4oHchCbUnxJ
+	gAvll7tAy4zgdKbreFA5p17BM3l6KOtX7FX5J4WmLnirxAqrt+ILEJyMJ/8sP71sInGCXXsdon/3Q
+	OJ2S8VCiFU/j3WijbWXlf2YO//NOcew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irvlx-0004te-00; Thu, 16 Jan 2020 03:24:41 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1irvqQ-0006p0-Py; Thu, 16 Jan 2020 03:29:18 +0000
+Received: from out30-44.freemail.mail.aliyun.com ([115.124.30.44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irvll-0004sg-Ov; Thu, 16 Jan 2020 03:24:31 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00G3DudA080521;
- Thu, 16 Jan 2020 03:24:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=to : cc : subject :
- from : references : date : in-reply-to : message-id : mime-version :
- content-type; s=corp-2019-08-05;
- bh=QrxvPbffJUGUOyHbYVqA0XbXQBPLyN1MOfRE3ofpSqE=;
- b=YJBkhnuetFcADbYmdE9J+x0uM7uSbl//6PT2F6e0KpyTx1kTb6kTTgrzP8zHm8F+tp5L
- EOo48Ikj3bKoYdZcYptgABuv7EYKbeNDhg4C4fyDl2dcQC9avuySp436vxH0exWmuDLb
- pES/cURk+q8Tf0P28NIMZe+oYfxA2HMLyciEnEjDjDlavqwyYRr48fQ2VdNmXs4DgUR4
- eyuKEaJagrFpiqw3VOFlyMtAIUp4uTqy/O6eCZ0+qX06z7FxERUaF7ywjj/lt0SIyyQh
- pfpoeWnXyd2nhpy4MMDApmva/IlRYm4doL2/JZkmImYEPozukeLD2VslQsC3YvBj4Hxc 9g== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 2xf73tyvj8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 16 Jan 2020 03:24:12 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00G3EZ5G106041;
- Thu, 16 Jan 2020 03:24:12 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2xj61ktkmf-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 16 Jan 2020 03:24:12 +0000
-Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00G3OAK4024011;
- Thu, 16 Jan 2020 03:24:10 GMT
-Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 15 Jan 2020 19:24:10 -0800
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v3 0/2] scsi: ufs: pass device information to
- apply_dev_quirks
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
-References: <1578726707-6596-1-git-send-email-stanley.chu@mediatek.com>
-Date: Wed, 15 Jan 2020 22:24:06 -0500
-In-Reply-To: <1578726707-6596-1-git-send-email-stanley.chu@mediatek.com>
- (Stanley Chu's message of "Sat, 11 Jan 2020 15:11:45 +0800")
-Message-ID: <yq136cgozhl.fsf@oracle.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001160026
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001160026
+ id 1irvqC-0006oA-ED
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 03:29:05 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R121e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04452;
+ MF=zhangliguang@linux.alibaba.com; NM=1; PH=DS; RN=3; SR=0;
+ TI=SMTPD_---0TnrNuc._1579145331; 
+Received: from localhost(mailfrom:zhangliguang@linux.alibaba.com
+ fp:SMTPD_---0TnrNuc._1579145331) by smtp.aliyun-inc.com(127.0.0.1);
+ Thu, 16 Jan 2020 11:29:00 +0800
+From: luanshi <zhangliguang@linux.alibaba.com>
+To: james.morse@arm.com
+Subject: [V2 1/3] firmware: arm_sdei: fix possible deadlock
+Date: Thu, 16 Jan 2020 11:28:49 +0800
+Message-Id: <1579145331-78633-1-git-send-email-zhangliguang@linux.alibaba.com>
+X-Mailer: git-send-email 1.8.3.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_192429_897298_4EFACF6E 
-X-CRM114-Status: GOOD (  10.80  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200115_192904_667309_519B81E0 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [115.124.30.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,28 +66,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- cang@codeaurora.org, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
- asutoshd@codeaurora.org, bvanassche@acm.org,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+We call sdei_reregister_event() with sdei_list_lock held but
+_sdei_event_register() and sdei_event_destroy() also acquires
+sdei_list_lock thus creating A-A deadlock.
 
-Stanley,
+Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system
+power states")
 
-> Currently UFS driver has "global" device quirk scheme to allow driver
-> applying special handling for certain UFS devive models.
+Signed-off-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
+---
+ drivers/firmware/arm_sdei.c | 22 +++++++++++++---------
+ 1 file changed, 13 insertions(+), 9 deletions(-)
 
-Applied to 5.6/scsi-queue, thanks!
-
+diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
+index a479023..37e9bf0 100644
+--- a/drivers/firmware/arm_sdei.c
++++ b/drivers/firmware/arm_sdei.c
+@@ -45,8 +45,11 @@ static asmlinkage void (*sdei_firmware_call)(unsigned long function_id,
+ static unsigned long sdei_entry_point;
+ 
+ struct sdei_event {
+-	/* These three are protected by the sdei_list_lock */
++	/* protected by the sdei_list_lock */
+ 	struct list_head	list;
++
++	spinlock_t		sdei_event_lock;
++	/* These two are protected by the sdei_event_lock */
+ 	bool			reregister;
+ 	bool			reenable;
+ 
+@@ -214,6 +217,7 @@ static struct sdei_event *sdei_event_create(u32 event_num,
+ 		return ERR_PTR(-ENOMEM);
+ 
+ 	INIT_LIST_HEAD(&event->list);
++	spin_lock_init(&event->sdei_event_lock);
+ 	event->event_num = event_num;
+ 
+ 	err = sdei_api_event_get_info(event_num, SDEI_EVENT_INFO_EV_PRIORITY,
+@@ -412,9 +416,9 @@ int sdei_event_enable(u32 event_num)
+ 		return -ENOENT;
+ 	}
+ 
+-	spin_lock(&sdei_list_lock);
++	spin_lock(&event->sdei_event_lock);
+ 	event->reenable = true;
+-	spin_unlock(&sdei_list_lock);
++	spin_unlock(&event->sdei_event_lock);
+ 
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		err = sdei_api_event_enable(event->event_num);
+@@ -491,10 +495,10 @@ static int _sdei_event_unregister(struct sdei_event *event)
+ {
+ 	lockdep_assert_held(&sdei_events_lock);
+ 
+-	spin_lock(&sdei_list_lock);
++	spin_lock(&event->sdei_event_lock);
+ 	event->reregister = false;
+ 	event->reenable = false;
+-	spin_unlock(&sdei_list_lock);
++	spin_unlock(&event->sdei_event_lock);
+ 
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_unregister(event->event_num);
+@@ -585,9 +589,9 @@ static int _sdei_event_register(struct sdei_event *event)
+ 
+ 	lockdep_assert_held(&sdei_events_lock);
+ 
+-	spin_lock(&sdei_list_lock);
++	spin_lock(&event->sdei_event_lock);
+ 	event->reregister = true;
+-	spin_unlock(&sdei_list_lock);
++	spin_unlock(&event->sdei_event_lock);
+ 
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_register(event->event_num,
+@@ -598,10 +602,10 @@ static int _sdei_event_register(struct sdei_event *event)
+ 
+ 	err = sdei_do_cross_call(_local_event_register, event);
+ 	if (err) {
+-		spin_lock(&sdei_list_lock);
++		spin_lock(&event->sdei_event_lock);
+ 		event->reregister = false;
+ 		event->reenable = false;
+-		spin_unlock(&sdei_list_lock);
++		spin_unlock(&event->sdei_event_lock);
+ 
+ 		sdei_do_cross_call(_local_event_unregister, event);
+ 	}
 -- 
-Martin K. Petersen	Oracle Linux Engineering
+1.8.3.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
