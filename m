@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B49513E293
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:57:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB01913E2B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:57:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5oyJjrio0sB+LRpzoPjc4VRKZZrcfeioMcaZUaCHFxY=; b=Z7vcAEn2M55ruJ
-	DqTRdLMwl1/qI9Ak0TaE5WNxw0+FrHz0+joogCrfO7SUAB+Ze0AFRnnJkTWYakUd0+Q5Bx2USs1VQ
-	NuQrGhD7PjN0gfnMa1U5eWco8o3ZX8/bpvI75TYbOLXjOgi8p4QSvMlr9iae32cZi2o0EWEFNIWMt
-	n3c62lmGClbCpISHtNYloecnFIFAdHtw/MlWh9ft4CIMOrKYN5vXA3MK79YPVV1SnDBqNfjBmxNju
-	Y+XAJ0uWJjqvEHD792O4R52WD/XShnnohl3YhbjaCs/HIzqDIvCJSnTERXiG/e2WLXhRpheIM2l4D
-	lQCQFOOM0WDYShxQDhgg==;
+	List-Owner; bh=AznGJiBrjcnklNC3/U/nILRxNKDOmLOOwwbAytzzDxw=; b=iaX9+88LB17ZCY
+	QHaz0PkKJJKqiYgOIH5GvUpNzBLhpD+OxcB5MaP6aYk2zpHl7OMduOYA0BOo6IHv/TUTQj1cFEOPb
+	CYEfgiDWgFrLClXA8gVrI3S91k5ATcPbGJNwuSlgOxKg3duZDe3uJRWNFyqDdtIbqARrJTIJBkI+c
+	1gyTWcNPEwC2Fxd2jtEaUEV7cStoKVaLcRD2+7omyDcsNEnydAy29+avxJ+fQ9SzMZ1GaWYfaRZhL
+	OQ0o3O4Bo5tJmmym8lFByA2DMYgfuowOqJJgsZv3OZf5I1zO3/72CVAoIFOEKQMSUNSVSTDTV3k1N
+	FczleEt0cN04cW3rL9cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8S8-0004e2-QI; Thu, 16 Jan 2020 16:57:04 +0000
+	id 1is8Se-00056S-8t; Thu, 16 Jan 2020 16:57:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Ov-0000M6-Fi; Thu, 16 Jan 2020 16:53:50 +0000
+ id 1is8P6-0000W6-6v
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:54:01 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBCEB20730;
- Thu, 16 Jan 2020 16:53:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 72DA220730;
+ Thu, 16 Jan 2020 16:53:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193625;
- bh=YxgnhOYDbT7KSEZFo5YqdsGUEpgMB64qZI0ItoJFqAU=;
+ s=default; t=1579193635;
+ bh=KgWLpGmJabYFlPdaEcw9F4Ql3GDN+A68D5/eBZPRZNk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EqTd2bRLA5uYhIELYykjEdLBjucIndSVIo3vxcbhxHaitjisG9Rr3kYsSI3MKMTJA
- DIZMS+D9tNB2KIBEZ2sfjxkZfralqMzAN3SJlNPBszq7UpC2g1wJJwvZ87a7Fr07WR
- JrSWNADo4CRwDeQqHMW+kmMcFn1YTdxAxs955by0=
+ b=qndo76CEdaPTH6I9zBd2303VpKl6/ryXHtzKkdmJuH0HRt//TVSW1jV30q7aRPl70
+ PgM0g2vN/inAbFUTLrjfAliPe1ByoLjSH3Opl6/i4ghIxp2ZY1VoxP/XLtHO26T/DG
+ EmVn11W/Dd2clUhKzSBLULCt77lCbWvfqfh/hbbM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 159/205] mt76: mt76u: rely on usb_interface
- instead of usb_dev
-Date: Thu, 16 Jan 2020 11:42:14 -0500
-Message-Id: <20200116164300.6705-159-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 168/205] crypto: sun4i-ss - fix big endian issues
+Date: Thu, 16 Jan 2020 11:42:23 -0500
+Message-Id: <20200116164300.6705-168-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085345_681312_DBCAAE87 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200116_085356_328551_C9EAE7F5 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,126 +79,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Zero_Chaos <sidhayn@gmail.com>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Lorenzo Bianconi <lorenzo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
+Cc: Sasha Levin <sashal@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
 
-[ Upstream commit 80df01f4dc79abbed724bbe0851cab3fe8ad9d99 ]
+[ Upstream commit d1d787bcebfe122a5bd443ae565696661e2e9656 ]
 
-usb drivers are supposed to communicate using usb_interface instead
-mt76x{0,2}u is now registering through usb_device. Fix it by passing
-usb_intf device to mt76_alloc_device routine.
+When testing BigEndian kernel, the sun4i-ss was failling all crypto
+tests.
+This patch fix endian issues with it.
 
-Fixes: 112f980ac8926 ("mt76usb: use usb_dev private data")
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Tested-By: Zero_Chaos <sidhayn@gmail.com>
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+Fixes: 6298e948215f ("crypto: sunxi-ss - Add Allwinner Security System crypto accelerator")
+Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/mt76.h       |  3 ++-
- drivers/net/wireless/mediatek/mt76/mt76x0/usb.c |  2 +-
- drivers/net/wireless/mediatek/mt76/mt76x2/usb.c |  2 +-
- drivers/net/wireless/mediatek/mt76/usb.c        | 12 +++++++++---
- 4 files changed, 13 insertions(+), 6 deletions(-)
+ drivers/crypto/sunxi-ss/sun4i-ss-hash.c | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
-index 8aec7ccf2d79..e8605ae6f8a5 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-@@ -799,7 +799,8 @@ static inline int
- mt76u_bulk_msg(struct mt76_dev *dev, void *data, int len, int *actual_len,
- 	       int timeout)
- {
--	struct usb_device *udev = to_usb_device(dev->dev);
-+	struct usb_interface *uintf = to_usb_interface(dev->dev);
-+	struct usb_device *udev = interface_to_usbdev(uintf);
- 	struct mt76_usb *usb = &dev->usb;
- 	unsigned int pipe;
+diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
+index 1369c5fa3087..07df012893bb 100644
+--- a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
++++ b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
+@@ -175,7 +175,7 @@ static int sun4i_hash(struct ahash_request *areq)
+ 	 */
+ 	unsigned int i = 0, end, fill, min_fill, nwait, nbw = 0, j = 0, todo;
+ 	unsigned int in_i = 0;
+-	u32 spaces, rx_cnt = SS_RX_DEFAULT, bf[32] = {0}, wb = 0, v, ivmode = 0;
++	u32 spaces, rx_cnt = SS_RX_DEFAULT, bf[32] = {0}, v, ivmode = 0;
+ 	struct sun4i_req_ctx *op = ahash_request_ctx(areq);
+ 	struct crypto_ahash *tfm = crypto_ahash_reqtfm(areq);
+ 	struct sun4i_tfm_ctx *tfmctx = crypto_ahash_ctx(tfm);
+@@ -184,6 +184,7 @@ static int sun4i_hash(struct ahash_request *areq)
+ 	struct sg_mapping_iter mi;
+ 	int in_r, err = 0;
+ 	size_t copied = 0;
++	__le32 wb = 0;
  
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c b/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
-index 00a445d27599..65d404e61404 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
-@@ -226,7 +226,7 @@ static int mt76x0u_probe(struct usb_interface *usb_intf,
- 	u32 mac_rev;
- 	int ret;
+ 	dev_dbg(ss->dev, "%s %s bc=%llu len=%u mode=%x wl=%u h0=%0x",
+ 		__func__, crypto_tfm_alg_name(areq->base.tfm),
+@@ -395,7 +396,7 @@ static int sun4i_hash(struct ahash_request *areq)
  
--	mdev = mt76_alloc_device(&usb_dev->dev, sizeof(*dev), &mt76x0u_ops,
-+	mdev = mt76_alloc_device(&usb_intf->dev, sizeof(*dev), &mt76x0u_ops,
- 				 &drv_ops);
- 	if (!mdev)
- 		return -ENOMEM;
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c b/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
-index da5e0f9a8bae..8b26c6108186 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
-@@ -39,7 +39,7 @@ static int mt76x2u_probe(struct usb_interface *intf,
- 	struct mt76_dev *mdev;
- 	int err;
+ 		nbw = op->len - 4 * nwait;
+ 		if (nbw) {
+-			wb = *(u32 *)(op->buf + nwait * 4);
++			wb = cpu_to_le32(*(u32 *)(op->buf + nwait * 4));
+ 			wb &= GENMASK((nbw * 8) - 1, 0);
  
--	mdev = mt76_alloc_device(&udev->dev, sizeof(*dev), &mt76x2u_ops,
-+	mdev = mt76_alloc_device(&intf->dev, sizeof(*dev), &mt76x2u_ops,
- 				 &drv_ops);
- 	if (!mdev)
- 		return -ENOMEM;
-diff --git a/drivers/net/wireless/mediatek/mt76/usb.c b/drivers/net/wireless/mediatek/mt76/usb.c
-index 20c6fe510e9d..05aa42bd9808 100644
---- a/drivers/net/wireless/mediatek/mt76/usb.c
-+++ b/drivers/net/wireless/mediatek/mt76/usb.c
-@@ -20,7 +20,8 @@ static int __mt76u_vendor_request(struct mt76_dev *dev, u8 req,
- 				  u8 req_type, u16 val, u16 offset,
- 				  void *buf, size_t len)
- {
--	struct usb_device *udev = to_usb_device(dev->dev);
-+	struct usb_interface *uintf = to_usb_interface(dev->dev);
-+	struct usb_device *udev = interface_to_usbdev(uintf);
- 	unsigned int pipe;
- 	int i, ret;
+ 			op->byte_count += nbw;
+@@ -404,7 +405,7 @@ static int sun4i_hash(struct ahash_request *areq)
  
-@@ -235,7 +236,8 @@ mt76u_rd_rp(struct mt76_dev *dev, u32 base,
+ 	/* write the remaining bytes of the nbw buffer */
+ 	wb |= ((1 << 7) << (nbw * 8));
+-	bf[j++] = wb;
++	bf[j++] = le32_to_cpu(wb);
  
- static bool mt76u_check_sg(struct mt76_dev *dev)
- {
--	struct usb_device *udev = to_usb_device(dev->dev);
-+	struct usb_interface *uintf = to_usb_interface(dev->dev);
-+	struct usb_device *udev = interface_to_usbdev(uintf);
+ 	/*
+ 	 * number of space to pad to obtain 64o minus 8(size) minus 4 (final 1)
+@@ -423,13 +424,13 @@ static int sun4i_hash(struct ahash_request *areq)
  
- 	return (!disable_usb_sg && udev->bus->sg_tablesize > 0 &&
- 		(udev->bus->no_sg_constraint ||
-@@ -370,7 +372,8 @@ mt76u_fill_bulk_urb(struct mt76_dev *dev, int dir, int index,
- 		    struct urb *urb, usb_complete_t complete_fn,
- 		    void *context)
- {
--	struct usb_device *udev = to_usb_device(dev->dev);
-+	struct usb_interface *uintf = to_usb_interface(dev->dev);
-+	struct usb_device *udev = interface_to_usbdev(uintf);
- 	unsigned int pipe;
+ 	/* write the length of data */
+ 	if (op->mode == SS_OP_SHA1) {
+-		__be64 bits = cpu_to_be64(op->byte_count << 3);
+-		bf[j++] = lower_32_bits(bits);
+-		bf[j++] = upper_32_bits(bits);
++		__be64 *bits = (__be64 *)&bf[j];
++		*bits = cpu_to_be64(op->byte_count << 3);
++		j += 2;
+ 	} else {
+-		__le64 bits = op->byte_count << 3;
+-		bf[j++] = lower_32_bits(bits);
+-		bf[j++] = upper_32_bits(bits);
++		__le64 *bits = (__le64 *)&bf[j];
++		*bits = cpu_to_le64(op->byte_count << 3);
++		j += 2;
+ 	}
+ 	writesl(ss->base + SS_RXFIFO, bf, j);
  
- 	if (dir == USB_DIR_IN)
-@@ -952,6 +955,7 @@ int mt76u_init(struct mt76_dev *dev,
- 		.rd_rp = mt76u_rd_rp,
- 		.type = MT76_BUS_USB,
- 	};
-+	struct usb_device *udev = interface_to_usbdev(intf);
- 	struct mt76_usb *usb = &dev->usb;
- 
- 	tasklet_init(&usb->rx_tasklet, mt76u_rx_tasklet, (unsigned long)dev);
-@@ -965,6 +969,8 @@ int mt76u_init(struct mt76_dev *dev,
- 	dev->bus = &mt76u_ops;
- 	dev->queue_ops = &usb_queue_ops;
- 
-+	dev_set_drvdata(&udev->dev, dev);
-+
- 	usb->sg_en = mt76u_check_sg(dev);
- 
- 	return mt76u_set_endpoints(intf, usb);
+@@ -471,7 +472,7 @@ static int sun4i_hash(struct ahash_request *areq)
+ 		}
+ 	} else {
+ 		for (i = 0; i < 4; i++) {
+-			v = readl(ss->base + SS_MD0 + i * 4);
++			v = cpu_to_le32(readl(ss->base + SS_MD0 + i * 4));
+ 			memcpy(areq->result + i * 4, &v, 4);
+ 		}
+ 	}
 -- 
 2.20.1
 
