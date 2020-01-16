@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1D3E13F1DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D321D13F1DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:32:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SgY6d3UqR7LGomWnA7dHaFFiyrl2g1dUv8GMMGrsbVQ=; b=Us3X7nhjFsGdbC
-	L74rQ2Rk1fy3Ndlhszts/vJbVfexkLkzrtYoqcUpZydmPY0Qn2Hbewckm9KMHKnr34sr7uB+3a7az
-	8TrX0YgbXow5Y9BZgxjaGh4JpkTT9Y+fSXoZLVlgxPU/tXOeqUIZO7VsUd6+tmMxrgNyRMWCkacCC
-	JoKyPnXuRmoe6R65Ed/EfxXlnXWbtT+nB4HNet6q0bh9hpcPIUbPSOvEiGH8U8siwCKcSbWBplwAi
-	K3rJm1WIWO+A1q1KZG0PJFeZoKk89X9u7K3lI1qQUvlZjxsPj1O8FackeghsyVurJxXwOMNCY3MHX
-	HghvFpBhUgA3tyOq7hcA==;
+	List-Owner; bh=m1B81JVSg9o3gGC1kp4QyEkwo2QN0iCNHJ+LE6tv8iI=; b=gtgG3TzYfLldJW
+	CqeliVhvEdGHoHdBn6+ywd+dblOspfB9vaz87Wx8ksWzZFWk/eHjMz/qlvupcgxRjGnTWEoHifMNz
+	3Bh3hdBKmtUCUZ3djvyBqa0E3Nicl6TnCzeazcBRn1NqFuy4F335OYa/siLlDxf2tYkWV/20XJeLF
+	kww/bGlUp1arRFux0JfB6nqe+wCmJ8mKhzQ39o+TtnkAy1Gv4ToH6ebJLidKnPqagZ2QnuInxg7NW
+	eVnLqSc16JNyaLU1/qoOEdKkSA5o8YSpqfXjW7wxf2XBEVq0xIuTjzsAQMtFmOoqNwbtUAUhWja1D
+	ROwC0Z3loM9nO/Ai3HyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9vq-0000el-IJ; Thu, 16 Jan 2020 18:31:50 +0000
+	id 1is9w3-0000qp-VQ; Thu, 16 Jan 2020 18:32:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9Bb-0004A6-26
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:08 +0000
+ id 1is9Bu-0004NZ-29
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:44:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AF5CC24744;
- Thu, 16 Jan 2020 17:44:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 318102474F;
+ Thu, 16 Jan 2020 17:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196642;
- bh=7Ib8Ng+ghXxuvkABsdz66tKXJ5t4d1VzFvS70GhBrfI=;
+ s=default; t=1579196661;
+ bh=GQCU0no0l5BLWAsjMwoqXKZkwUcKNtpdr0nZvy6+HE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1NuWSwpdeOShvs5QGtSSvgL4P4XL0GLnRdX1u/p3Ith6TU4VaKZUlwwyltTzyfkJj
- bhqCyUVOWGYJQHejbQzs1QkIKUvGCQGoE48bxLoX+kU/1vHaiUgi7NrCLbfmZM//LJ
- 27fD96f5Q9wsmD5u2i4J6WPhp6/6k/S1uApVu7Mo=
+ b=Yu2U+IG9jmdquhqdRFquP14VNLRnSYWShFWNQsr713c0xH9YjzvlNYr+0GgFiHMxQ
+ K5XieArzjE5d1YFnERnCMieBtWhNuhtH2LS0yZSLVSPHDlcYhFueCtisGzbufxzIuT
+ cqbGVEDmMe5bjKZ4bh7leO4lyHPsBHX0C3phOzgk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 053/174] ARM: 8847/1: pm: fix HYP/SVC mode
- mismatch when MCPM is used
-Date: Thu, 16 Jan 2020 12:40:50 -0500
-Message-Id: <20200116174251.24326-53-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 065/174] ARM: OMAP2+: Fix potentially
+ uninitialized return value for _setup_reset()
+Date: Thu, 16 Jan 2020 12:41:02 -0500
+Message-Id: <20200116174251.24326-65-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
 References: <20200116174251.24326-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094403_203795_50828F6F 
-X-CRM114-Status: GOOD (  13.44  )
+X-CRM114-CacheID: sfid-20200116_094422_182013_0676E1E2 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,104 +80,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Nicolas Pitre <nico@linaro.org>,
- linux-pm@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Sasha Levin <sashal@kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Szyprowski <m.szyprowski@samsung.com>
+From: Tony Lindgren <tony@atomide.com>
 
-[ Upstream commit ca70ea43f80c98582f5ffbbd1e6f4da2742da0c4 ]
+[ Upstream commit 7f0d078667a494466991aa7133f49594f32ff6a2 ]
 
-MCPM does a soft reset of the CPUs and uses common cpu_resume() routine to
-perform low-level platform initialization. This results in a try to install
-HYP stubs for the second time for each CPU and results in false HYP/SVC
-mode mismatch detection. The HYP stubs are already installed at the
-beginning of the kernel initialization on the boot CPU (head.S) or in the
-secondary_startup() for other CPUs. To fix this issue MCPM code should use
-a cpu_resume() routine without HYP stubs installation.
+Commit 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior") made
+the call to _enable() conditional based on no oh->rst_lines_cnt. This
+caused the return value to be potentially uninitialized. Curiously we see
+no compiler warnings for this, probably as this gets inlined.
 
-This change fixes HYP/SVC mode mismatch on Samsung Exynos5422-based Odroid
-XU3/XU4/HC1 boards.
+We call _setup_reset() from _setup() and only _setup_postsetup() if the
+return value is zero. Currently the return value can be uninitialized for
+cases where oh->rst_lines_cnt is set and HWMOD_INIT_NO_RESET is not set.
 
-Fixes: 3721924c8154 ("ARM: 8081/1: MCPM: provide infrastructure to allow for MCPM loopback")
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Acked-by: Nicolas Pitre <nico@linaro.org>
-Tested-by: Anand Moon <linux.amoon@gmail.com>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Fixes: 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior")
+Cc: Paul Walmsley <paul@pwsan.com>
+Cc: Tero Kristo <t-kristo@ti.com>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/common/mcpm_entry.c   |  2 +-
- arch/arm/include/asm/suspend.h |  1 +
- arch/arm/kernel/sleep.S        | 12 ++++++++++++
- 3 files changed, 14 insertions(+), 1 deletion(-)
+ arch/arm/mach-omap2/omap_hwmod.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/common/mcpm_entry.c b/arch/arm/common/mcpm_entry.c
-index a923524d1040..8617323eb273 100644
---- a/arch/arm/common/mcpm_entry.c
-+++ b/arch/arm/common/mcpm_entry.c
-@@ -379,7 +379,7 @@ static int __init nocache_trampoline(unsigned long _arg)
- 	unsigned int cluster = MPIDR_AFFINITY_LEVEL(mpidr, 1);
- 	phys_reset_t phys_reset;
+diff --git a/arch/arm/mach-omap2/omap_hwmod.c b/arch/arm/mach-omap2/omap_hwmod.c
+index 36706d32d656..1bc87c29467b 100644
+--- a/arch/arm/mach-omap2/omap_hwmod.c
++++ b/arch/arm/mach-omap2/omap_hwmod.c
+@@ -2563,7 +2563,7 @@ static void _setup_iclk_autoidle(struct omap_hwmod *oh)
+  */
+ static int _setup_reset(struct omap_hwmod *oh)
+ {
+-	int r;
++	int r = 0;
  
--	mcpm_set_entry_vector(cpu, cluster, cpu_resume);
-+	mcpm_set_entry_vector(cpu, cluster, cpu_resume_no_hyp);
- 	setup_mm_for_reboot();
- 
- 	__mcpm_cpu_going_down(cpu, cluster);
-diff --git a/arch/arm/include/asm/suspend.h b/arch/arm/include/asm/suspend.h
-index 6c7182f32cef..e6c2f426f8c8 100644
---- a/arch/arm/include/asm/suspend.h
-+++ b/arch/arm/include/asm/suspend.h
-@@ -7,6 +7,7 @@ struct sleep_save_sp {
- };
- 
- extern void cpu_resume(void);
-+extern void cpu_resume_no_hyp(void);
- extern void cpu_resume_arm(void);
- extern int cpu_suspend(unsigned long, int (*)(unsigned long));
- 
-diff --git a/arch/arm/kernel/sleep.S b/arch/arm/kernel/sleep.S
-index 0f6c1000582c..c8569390e7e7 100644
---- a/arch/arm/kernel/sleep.S
-+++ b/arch/arm/kernel/sleep.S
-@@ -119,6 +119,14 @@ ENDPROC(cpu_resume_after_mmu)
- 	.text
- 	.align
- 
-+#ifdef CONFIG_MCPM
-+	.arm
-+THUMB(	.thumb			)
-+ENTRY(cpu_resume_no_hyp)
-+ARM_BE8(setend be)			@ ensure we are in BE mode
-+	b	no_hyp
-+#endif
-+
- #ifdef CONFIG_MMU
- 	.arm
- ENTRY(cpu_resume_arm)
-@@ -134,6 +142,7 @@ ARM_BE8(setend be)			@ ensure we are in BE mode
- 	bl	__hyp_stub_install_secondary
- #endif
- 	safe_svcmode_maskall r1
-+no_hyp:
- 	mov	r1, #0
- 	ALT_SMP(mrc p15, 0, r0, c0, c0, 5)
- 	ALT_UP_B(1f)
-@@ -162,6 +171,9 @@ ENDPROC(cpu_resume)
- 
- #ifdef CONFIG_MMU
- ENDPROC(cpu_resume_arm)
-+#endif
-+#ifdef CONFIG_MCPM
-+ENDPROC(cpu_resume_no_hyp)
- #endif
- 
- 	.align 2
+ 	if (oh->_state != _HWMOD_STATE_INITIALIZED)
+ 		return -EINVAL;
 -- 
 2.20.1
 
