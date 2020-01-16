@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B19713FA84
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:23:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F189A13FAB9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 21:36:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/QyfLs1wvPd2D9eOH2c3zORw2EKuEe9WrBHoWeCc8Fo=; b=pyUOCb9WQ1vOro
-	iivykJCXSWCA/lMbV3T11G77/S1DtpedXv1Jy3xV1wT3Agn0RTgJ3ZNblpXloAT5+zlRiKfoHGW62
-	8CxwAI8CJRlpmwIZ3QASf/y9SG76f54g3P4hFYDiOCObuxI5E65bFWh4Bs3lDkQicY5TcN+xElKQQ
-	TUQVM8T+F9u9ZPT/O52pqgXFdyrT+72e8HQxqUQ8FuMBYzzVTtMd5u1uJwMeB62a9Zde/6VpOsmJA
-	OtG4+RAdGt7k99MpBqmkBiqPUQQGhwhKE8AvpQiK0wKq8MFLH1GwdabDGDbW9YU1wj1g1lP8NPr4q
-	2mxtpVxJT/7h28aLxJtQ==;
+	List-Owner; bh=hebAaIR4CzOQHkxHgcRHSE9bEsId5I+TVoSjvViYhHM=; b=uSfrZk6cBP23r+
+	YLb2RVcpu+syrwm4bxofdpQimESWCYPQY7fvjQvKgSs8H4vw2gP5g82fZOvlXmgoIo/uL+Iy0mY9u
+	6/sW5w4gYSFPVgFxiz46DBXJVWlD1ZBrVDgANwtD6jP4qFYKJ8O1CqKZD4V19KT4kvi3R9TSD+MBR
+	kBjJY7I1vetS/1jD7I149UI7aqwLuKWblX9b7GQqskGN2aagzEZeftrnVOyUa2rj+e7BgeXiL6kYD
+	hJnX4ota0dR1rZTf4/xxHUS4qGihCcrO5Pppwnxq7JDHpDjelEquBjkIRCNGh+e8RzG2GjaB/qtPL
+	K4uVTaMV9YoMUSuSW+Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isBfc-0001f0-72; Thu, 16 Jan 2020 20:23:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1isBsO-00084t-VT; Thu, 16 Jan 2020 20:36:24 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isBfL-0001Zw-6h
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:22:58 +0000
-Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com
- [209.85.128.49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9A3A02073A
+ id 1isBsH-00083i-BT
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 20:36:18 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id d17so6045898vke.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 20:22:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579206174;
- bh=AWTq77yPH1eJXFHw5c/ihwZ/W+ttmiGY+qYVIL2DNXo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WjiY6Fz2v1BRFwTw8CEV+ZGeTVwybGg7qEvOG+e6kceB8oCBxevUtjC+sxHFejHAw
- +oKShNXbfNSUG124nEjNg9pxFVCYhjNP142xTdOd2FqkhnrKlA/xPHMGsS+TxqWkRE
- U5OV05EgZIcNAZu83S6Cza9kPCZDXt9/fFQCjNYE=
-Received: by mail-wm1-f49.google.com with SMTP id d73so5154681wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 12:22:54 -0800 (PST)
-X-Gm-Message-State: APjAAAVZ38jqlnA98wh4HS7DVcaB5ITFBS5s3HiLEYz93K/4dYz8yY7z
- IEA9y8ROXsfJ4amg6tzN1tN5jYP5uCbY2/sUaeJing==
-X-Google-Smtp-Source: APXvYqye2EDj0a90ApFnSVIDyfTmrBlVCmi50h4FuEffTXlFfhQYLFZAcgiL0SS3ilsUicD1HIv6uxzlc43xpc781uA=
-X-Received: by 2002:a05:600c:20c7:: with SMTP id
- y7mr802627wmm.21.1579206173156; 
- Thu, 16 Jan 2020 12:22:53 -0800 (PST)
+ Thu, 16 Jan 2020 12:36:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RV6fXTo3b3qoT7vSlLu9LZXPKWnKYVEBYLBa7aJ3coE=;
+ b=dryW2bgxQT3TcmKHyF7k3/UkFi2E2Qunh6WctF3kjeRnNJDiSxf7obYQetkLkkmU/f
+ rsRO4G1R9NHiQfiB7IbS/g3e201MDYpYRfm3I3lKZQuJ6YOovOwoFVhI0kbjkNwOxZtP
+ m0dEx+VXLI9Cl6w4dCABDOZNZ3pChr94FxH3Dz3EX4sWv6ulIjkhtRpxwc+9VzwfxebA
+ cjQgmaLfTXvQy+lU5KMD7jPpMrGjZ09Pd0UPfHvYS5HSHD7Naska9ofDRIcdvtGMBkNE
+ kQkpg/ELqolO16Xjr3izfosdUsgTcuHhXOL5clFLaqYqXnnDVzR4Q0VRcIwAYcdwoE7u
+ IvEA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RV6fXTo3b3qoT7vSlLu9LZXPKWnKYVEBYLBa7aJ3coE=;
+ b=aSV86yiQkdkEspi3yf8egyWMXGhPEKQQXU0JD7ZEGIcC3MJXhsbaxnJc6hRazQX0MR
+ Ma6F+qBEnE5tkQgAaNujjvexQH5SFYlaRLjcO4wpWZA9UeWuka2FrbY+gwKAMTBfDtH+
+ K2Ulh5XLKJu/v26p9L71mRRHvoLq61dP/NHgOQw7xMZ63ATPqnaru6gQN4QAk90d1j53
+ WdfAfC5NAW34s76tVGb74b/m8v00tyoh3QfT4wOW8N8bwH8UJbvIDqQBmqgRqKF9yNZp
+ 9k9jlHp7yjDmNE+bSk/tAmiDIbeeBzsmyM8srQWWxpqY/9giX77DA1MCXiohdhziVzhf
+ E3tA==
+X-Gm-Message-State: APjAAAXZZEWBlfrQZi1IuEKc2wjb49Gs72FC5f8s9NMSYZxhguG3Q9+O
+ UbD5W7TGdBKfCY0rOiwToUAL25gtPs1WAcPJeZ6Gqg==
+X-Google-Smtp-Source: APXvYqy3hookrrU/Buxl44KY5o3vqIMbrfDIWbbyEY39r9m+d/9XpIDAayToTJcBMK5GJtdqCaMmmDL594aQGbaPCAk=
+X-Received: by 2002:a1f:2910:: with SMTP id p16mr18939592vkp.71.1579206972944; 
+ Thu, 16 Jan 2020 12:36:12 -0800 (PST)
 MIME-Version: 1.0
-References: <cover.1578934751.git.christophe.leroy@c-s.fr>
- <381e547dbb3c48fd39d6cf208033bba38ad048fb.1578934751.git.christophe.leroy@c-s.fr>
- <87ftghbpuu.fsf@nanos.tec.linutronix.de>
- <d2de3211-9d7c-513e-fe0f-8bdce623fb65@c-s.fr>
- <b5fddcf8-99ff-fc0d-40c0-0eb81ad4e94a@c-s.fr>
- <87k15rwuxm.fsf@nanos.tec.linutronix.de>
-In-Reply-To: <87k15rwuxm.fsf@nanos.tec.linutronix.de>
-From: Andy Lutomirski <luto@kernel.org>
-Date: Thu, 16 Jan 2020 12:22:41 -0800
-X-Gmail-Original-Message-ID: <CALCETrWOENu2k3aGNO-oiY1Sj8=cG9mMZ8eOepHOzdu25vFVVA@mail.gmail.com>
-Message-ID: <CALCETrWOENu2k3aGNO-oiY1Sj8=cG9mMZ8eOepHOzdu25vFVVA@mail.gmail.com>
-Subject: Re: [RFC PATCH v3 08/12] lib: vdso: allow arches to provide vdso data
- pointer
-To: Thomas Gleixner <tglx@linutronix.de>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191206221351.38241-1-samitolvanen@google.com>
+ <20191206221351.38241-12-samitolvanen@google.com>
+ <20200116174450.GD21396@willie-the-truck>
+In-Reply-To: <20200116174450.GD21396@willie-the-truck>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Thu, 16 Jan 2020 12:36:01 -0800
+Message-ID: <CABCJKudsTFd22NzB9JdzrAo2UFzsfNVtB_zvdRiAEBXAC9t3=g@mail.gmail.com>
+Subject: Re: [PATCH v6 11/15] arm64: efi: restore x18 if it was corrupted
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_122255_270586_B58746C1 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200116_123617_416693_DE67BCC9 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -80,7 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,49 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>, Arnd Bergmann <arnd@arndb.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, X86 ML <x86@kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>, Andrew Lutomirski <luto@kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 2:35 AM Thomas Gleixner <tglx@linutronix.de> wrote:
+On Thu, Jan 16, 2020 at 9:45 AM Will Deacon <will@kernel.org> wrote:
 >
-> static __maybe_unused int
-> __cvdso_data_clock_gettime(clockid_t clock, struct __kernel_timespec *ts,
->                            const struct vdso_data *vd)
-> {
->         .....
-> }
+> On Fri, Dec 06, 2019 at 02:13:47PM -0800, Sami Tolvanen wrote:
+> > -0:   b       efi_handle_corrupted_x18        // tail call
+> > +0:
+> > +#ifdef CONFIG_SHADOW_CALL_STACK
+> > +     /*
+> > +      * Restore x18 before returning to instrumented code. This is
+> > +      * safe because the wrapper is called with preemption disabled and
+> > +      * a separate shadow stack is used for interrupts.
+> > +      */
+> > +     mov     x18, x2
+> > +#endif
 >
-> static __maybe_unused int
-> __cvdso_clock_gettime(clockid_t clock, struct __kernel_timespec *ts)
-> {
->         const struct vdso_data *vd = __arch_get_vdso_data();
->
->         return __cvdso_data_clock_gettime(clock, ts, vd);
-> }
->
-> and then use __cvdso_data_clock_gettime on PPC and let the other archs
-> unmodified.
->
->
+> Why not restore it regardless of CONFIG_SHADOW_CALL_STACK?
 
-FWIW, I did some experiments on x86 with gcc 9.2.  gcc 9.2 uses
-rip-relative accesses if I simplify the config enough and otherwise
-materializes the pointer.  Presumably it decides that the code size
-reduction is worth it if there are a lot of accesses.
+The ifdefs are here only because restoring the register without SCS
+isn't actually necessary, but I'm fine with dropping them (and editing
+the comment) in the next version if you prefer.
 
-I suspect that tglx's suggestion will be fine or at worst will add
-negligible overhead on x86_64.
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
