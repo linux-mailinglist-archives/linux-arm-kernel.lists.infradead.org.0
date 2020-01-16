@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 644A513E5D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:17:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1896D13E5D4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:18:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUlnDQSCnfDKE+tw3gOIHOOwfV2CApIJ/vNe0/dx33U=; b=BMagxHjocKC1Yx
-	MPdBp4sOcZfCN4si2KnITu/0FrWVAOvo90j9AB0Vck5shfuCAn9YORIuFdYQwmVRijXRtjnE7h3N0
-	y1qkK6jsSqBZmXrwrm+/l0LlQ1Ygqc4IgUCIFagPdJ216Mo68Gbsu3xiYmX8RV//Zuz6D5Q1DK6+p
-	WuKM3vJR8ozxort/feOa58Jmn+DAKxt1Zn5DRnGjUsp7WMJbh+HkSNQMd/cXfAPmRXcG7daGjOngn
-	enKFuJAndldX6pV2DqWB+cU1nj6MLeH17lHueC5c/RaiyCHKyDMeldcIz+EWYrbxiIGtJ3BcsG7+h
-	YgSlPgmoopYqCpiWf5Kg==;
+	List-Owner; bh=98zMXquNMIN1yVWsUW2GIcUrYssYGwaRu6rNydT6wKY=; b=Y/LLUrthmHSTLv
+	6ryjjYD+mt2gKyL+bo7wGktcXJ2j3DLR0tcbr9qwj2W02W+R1nvyEC3MeL6W0wFOibrEzDqj4tfNu
+	M2GMccE3GoyBGhg4r6XNPmJSNq1/Eze4xIJxPxvI3zYSgiUIog5Beo++AkSlZKS2BAeviPXaTA/2i
+	4nOhrF152q7RDpmKHpaPs24SHJSnYJI7FibVTfQiYfkhcRZ6No7+oPR3mr/p4rn/mkja7FL0yVFLs
+	o1g93WZVXUBOiT7sLUvKs5VCj8Rtfb4lxb3XrKqEB54k0G7SfqlHEZzwi4y5Cld4iTuhIu3cEuVAq
+	zjaGnaOhSgyq9h6TiLpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8mE-0002td-Ob; Thu, 16 Jan 2020 17:17:50 +0000
+	id 1is8mT-000376-AQ; Thu, 16 Jan 2020 17:18:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8aE-0007D7-NU
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:05:31 +0000
+ id 1is8aF-0007EU-9f; Thu, 16 Jan 2020 17:05:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA9AC20730;
- Thu, 16 Jan 2020 17:05:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CE0F20728;
+ Thu, 16 Jan 2020 17:05:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194324;
- bh=9Rn4GRxm6QBiuv9AcsOIb6ehnEHzVQPYhQyM2Vj24mQ=;
+ s=default; t=1579194326;
+ bh=jhZBndIEXfFfqNHQqvIk54IIrJOpLd4mLt31hke5ZfQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=x1rUvPM7F7zTHEUjFprHnEUz+CEpcrsu0TvVtab3+Bi1EO0j5+/VtVE0kAFw2QSHJ
- ph7Q9WUeZyJHELT3a1j1du7dJHdp9TeFNHfNc0GsHb41JY99FCLUasd8J9teaY/0n5
- BdZqwqDkjCHfasLBNkz86/YeQnVtMejeT/IzIHsM=
+ b=pQvC+2KN0yDUYgXDRpUSjUxHmSJAJQmVHpLgOrTu8AXQSjJ8/XlLlMJV46xeZo9Yb
+ yOolaBniftDebZvAI06AlLIQP7yzLK6qr9M6+Rroq64gBTXiZfuqERwNOYaG/ixG7N
+ 5j8Ej9hceVsoJrvvMY/CeTnqhV3Q4RLmFqBG6zgQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 273/671] soc/fsl/qe: Fix an error code in
- qe_pin_request()
-Date: Thu, 16 Jan 2020 11:58:31 -0500
-Message-Id: <20200116170509.12787-10-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 274/671] spi: bcm2835aux: fix driver to not allow
+ 65535 (=-1) cs-gpios
+Date: Thu, 16 Jan 2020 11:58:32 -0500
+Message-Id: <20200116170509.12787-11-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090526_948058_4A65B7F7 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200116_090527_510552_EFA25D23 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +79,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Dan Carpenter <dan.carpenter@oracle.com>,
- Li Yang <leoyang.li@nxp.com>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, Sasha Levin <sashal@kernel.org>,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Martin Sperl <kernel@martin.sperl.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dan Carpenter <dan.carpenter@oracle.com>
+From: Martin Sperl <kernel@martin.sperl.org>
 
-[ Upstream commit 5674a92ca4b7e5a6a19231edd10298d30324cd27 ]
+[ Upstream commit 509c583620e9053e43d611bf1614fc3d3abafa96 ]
 
-We forgot to set "err" on this error path.
+The original driver by default defines num_chipselects as -1.
+This actually allicates an array of 65535 entries in
+of_spi_register_master.
 
-Fixes: 1a2d397a6eb5 ("gpio/powerpc: Eliminate duplication of of_get_named_gpio_flags()")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
-Signed-off-by: Li Yang <leoyang.li@nxp.com>
+There is a side-effect for buggy device trees that (contrary to
+dt-binding documentation) have no cs-gpio defined.
+
+This mode was never supported by the driver due to limitations
+of native cs and additional code complexity and is explicitly
+not stated to be implemented.
+
+To keep backwards compatibility with such buggy DTs we limit
+the number of chip_selects to 1, as for all practical purposes
+it is only ever realistic to use a single chip select in
+native cs mode without negative side-effects.
+
+Fixes: 1ea29b39f4c812ec ("spi: bcm2835aux: add bcm2835 auxiliary spi device...")
+Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
+Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/fsl/qe/gpio.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/spi/spi-bcm2835aux.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/soc/fsl/qe/gpio.c b/drivers/soc/fsl/qe/gpio.c
-index 819bed0f5667..51b3a47b5a55 100644
---- a/drivers/soc/fsl/qe/gpio.c
-+++ b/drivers/soc/fsl/qe/gpio.c
-@@ -179,8 +179,10 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
- 	if (err < 0)
- 		goto err0;
- 	gc = gpio_to_chip(err);
--	if (WARN_ON(!gc))
-+	if (WARN_ON(!gc)) {
-+		err = -ENODEV;
- 		goto err0;
-+	}
- 
- 	if (!of_device_is_compatible(gc->of_node, "fsl,mpc8323-qe-pario-bank")) {
- 		pr_debug("%s: tried to get a non-qe pin\n", __func__);
+diff --git a/drivers/spi/spi-bcm2835aux.c b/drivers/spi/spi-bcm2835aux.c
+index 12c1fa5b06c5..c63ed402cf86 100644
+--- a/drivers/spi/spi-bcm2835aux.c
++++ b/drivers/spi/spi-bcm2835aux.c
+@@ -416,7 +416,18 @@ static int bcm2835aux_spi_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, master);
+ 	master->mode_bits = (SPI_CPOL | SPI_CS_HIGH | SPI_NO_CS);
+ 	master->bits_per_word_mask = SPI_BPW_MASK(8);
+-	master->num_chipselect = -1;
++	/* even though the driver never officially supported native CS
++	 * allow a single native CS for legacy DT support purposes when
++	 * no cs-gpio is configured.
++	 * Known limitations for native cs are:
++	 * * multiple chip-selects: cs0-cs2 are all simultaniously asserted
++	 *     whenever there is a transfer -  this even includes SPI_NO_CS
++	 * * SPI_CS_HIGH: is ignores - cs are always asserted low
++	 * * cs_change: cs is deasserted after each spi_transfer
++	 * * cs_delay_usec: cs is always deasserted one SCK cycle after
++	 *     a spi_transfer
++	 */
++	master->num_chipselect = 1;
+ 	master->transfer_one = bcm2835aux_spi_transfer_one;
+ 	master->handle_err = bcm2835aux_spi_handle_err;
+ 	master->prepare_message = bcm2835aux_spi_prepare_message;
 -- 
 2.20.1
 
