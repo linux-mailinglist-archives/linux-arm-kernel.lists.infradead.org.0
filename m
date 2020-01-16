@@ -2,72 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57EB013F3C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:45:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42E913F3E2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:46:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pxboOKbxvKO0tjIjocy7RWYfyYo9jRF5ew+XCa9NWZM=; b=blczgvVWKk2IKe
-	9ciDrgk5NxTtsgM8tBSwLKBsfKUfCrLbdsXtCXB2oAphrpYKxvOsc+JFyr95cowfLQKxLG8AD7lrd
-	nylOwZ0v9K0GfxBEXyWUa6pc7YcmehJQAmtA4onCSJUFpvTI51OypBl5PPfnY035pHhsIgTKE7hvs
-	hJHwml8jyNHQlTdlJ0kTItSX4xFtDUw20Y8eOvYTkQMBEyHZBkKkujlpoksdIwDJGEzL9C+V6pYNQ
-	x6yGAd+hN1qMgUWY+NDdwH29a79Cbo+qjUILR/HwyI9gz5VzjsX6R0kj4EPKS88/4Cvy9it+BB9SB
-	KPt8smhE8LerHpQiWRyQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UiCrwtV3mAFOX+rZZnn45fwsEFfOZ74v/q3XZrBe/NE=; b=Auc5ah1hlFU8P+Y3L5FY69Ob4N
+	1azdOkZ0iRk31zqh24J92mMPAdGqVlbEC2wIy1jt328/1gy0oOrt2ySBQqw8azpP1UN24qHhJw6as
+	/VQSp53imEVMUVLn/LLveLtUwZExTxNBKyLhy0lYOiLiS0eE37DPjDrmX0qd9VIOjqmt4zbQsx/u0
+	3mVeizi3fuwDivuL6i7WldfYC3pTk/3iaKUE1mZ4frjBFJ/hAz+tmU5GXYRRQyDgWtw458LAJl3Sg
+	JDvGDdJ5j9ZhVQVqMPpa0GFX/EXpQZKzp9Ls0tiy3D+JgUIlzzH6oiOqTHN3vFJb4PSRyypjySqyk
+	/MNDRuyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isA96-0008FJ-2s; Thu, 16 Jan 2020 18:45:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1isA9i-0000Ul-7s; Thu, 16 Jan 2020 18:46:10 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9k4-0003PZ-Gf
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:19:46 +0000
-Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
- [209.85.160.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7DFFD2192A
+ id 1is9nn-000081-JN
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:23:35 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p17so4870722wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 18:19:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579198779;
- bh=FbsZ0/SErF2ACVNYz0E0ittdmPkIEVqQMLPm/a1nnOs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=qRbfjgutZ+me9IhtL7pTaw6/Pkvpm8fZPk33PyLELtiIfXTnWLxkzgwT8N42MF75z
- JYk+3G2nW7URzZvnzziSNBju2wP4+teeyy7rpEnZpZtDPL9HuH+u2PNdr1A53HkACL
- y7xDrCnAUzuigR1/bGMhKY/e7CaGNLJSDCaGyE3Q=
-Received: by mail-qt1-f169.google.com with SMTP id i13so19671604qtr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 10:19:39 -0800 (PST)
-X-Gm-Message-State: APjAAAWKbhwutP2Reut3BJWf3MTxLaBERq66IVX1LofodXxysIcZTESR
- O386G78BG4gH8eqZhDGVIkWO30m6ff18LgpW5Q==
-X-Google-Smtp-Source: APXvYqxWNn7kYxyGzj+kt6DlR20uI18OuWT7JlUj/1abGnmEtEDhdDbV9AJ0rgV0W/pwGJ54BXmTkotnf+ixVRZyAzc=
-X-Received: by 2002:ac8:1415:: with SMTP id k21mr3734145qtj.300.1579198778476; 
- Thu, 16 Jan 2020 10:19:38 -0800 (PST)
-MIME-Version: 1.0
-References: <20191230144402.30195-1-ulf.hansson@linaro.org>
- <20191230144402.30195-3-ulf.hansson@linaro.org>
- <CAL_Jsq+cAKEGOMnBwwvLt03zx8Gcxh4ijziaBnnY5TPEG0Mekg@mail.gmail.com>
- <CAPDyKFr_7qmKjpWcFegVBsfKBJePtukuriwW-8KX6c2a24ojEA@mail.gmail.com>
-In-Reply-To: <CAPDyKFr_7qmKjpWcFegVBsfKBJePtukuriwW-8KX6c2a24ojEA@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 16 Jan 2020 12:19:27 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJN3UtM9T2D71j+2CORxWjL3s7cjkFX579p85WQuKgPNA@mail.gmail.com>
-Message-ID: <CAL_JsqJN3UtM9T2D71j+2CORxWjL3s7cjkFX579p85WQuKgPNA@mail.gmail.com>
-Subject: Re: [PATCH v5 02/15] dt: psci: Update DT bindings to support
- hierarchical PSCI states
-To: Ulf Hansson <ulf.hansson@linaro.org>
+ Thu, 16 Jan 2020 10:23:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=4ihrV30co6zVazCYWQvCe6nMsZS0PmEOQQviJxE2B6s=;
+ b=UJXZDAdkk+CHcFYWj2M6HXmPTbpmNwO6Q89KrfFQBJQd3KsYE5ORvC3KXxZS1HhbZ0
+ vcSoOL3I4c7E0d4rTXzCSPfz+danjc9k8Qj99dt12OziIltpHqCTXSZm9tcYilmbJdxK
+ TPyq9sDXxfpiRA8s/E6c7FFoqFMAgtrpFFwah+LX480H9GkovAcDm8RZ/nFM5fyTMTGy
+ VP6cBAWNzSGJgcEWRUbrAhfOOGoFA8ALo9MRTMSzuJlniwn5v0aT1Ri/3vsZh0/oqmAG
+ 9tpZyMoOKdeYwzIw8Us/71AFQLp0LrqNxh1f4PSvPgG4rzveFH6c5Aao8mg4Sz9pEjco
+ 284w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=4ihrV30co6zVazCYWQvCe6nMsZS0PmEOQQviJxE2B6s=;
+ b=bR0IrveRrUEOyDLfXnmt+bBIMrzvwqDKBSUGO24oe8/+d+0lIiGbOweMhWeHC6cQj4
+ LVhU70TdYrRNSepKk/8hT+rcVu2FS62sdAoDrZZl7wjdYs8OcgWiJTEO93QFUHMx4sCu
+ tyNRQjhZDFD4Nx+Lv6ITJO9qA1Bz3PJfLeT1dVfm3vU47Gkr1t2l6shPJgXwo4kgEZm2
+ xLCcWqfcJvTP/2XaYzE7DJS/XOQ8TDsT88torrla0K1LYyKFUtKNf9iihIOLgYXH28kP
+ lhaaYw2qdKugY8rPjvGq2P3XE9078J1t9yb51s3Og4xzlvGlqBK9jFO3mU0HTI3RXhKW
+ 95ow==
+X-Gm-Message-State: APjAAAUKeSsk8gH890Tm/6Zgq7wOKCD1IoMnEu3q4mSzubN84X6yu5Ej
+ wfTcGZFsb2alASi0xeUwyOrfvw==
+X-Google-Smtp-Source: APXvYqwUkeGpIvMBC5nS3MBq8Yb6/WbOBB+xERgB4QOz6VIiDXS8a40oNLUe0PIkvHdFAPaYyhNKFw==
+X-Received: by 2002:a1c:dc85:: with SMTP id t127mr398659wmg.16.1579199009027; 
+ Thu, 16 Jan 2020 10:23:29 -0800 (PST)
+Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:6c63:1b50:1156:7f0f])
+ by smtp.gmail.com with ESMTPSA id b137sm1087920wme.26.2020.01.16.10.23.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Jan 2020 10:23:28 -0800 (PST)
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+To: tglx@linutronix.de
+Subject: [PATCH 06/17] clocksource/drivers/timer-microchip-pit64b: Add
+ Microchip PIT64B support
+Date: Thu, 16 Jan 2020 19:22:53 +0100
+Message-Id: <20200116182304.4926-6-daniel.lezcano@linaro.org>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200116182304.4926-1-daniel.lezcano@linaro.org>
+References: <74bf7170-401f-2962-ea5a-1e21431a9349@linaro.org>
+ <20200116182304.4926-1-daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_101940_618203_AF560A34 
-X-CRM114-Status: GOOD (  36.45  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200116_102331_679603_1E014271 
+X-CRM114-Status: GOOD (  26.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,218 +98,549 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
- Lina Iyer <lina.iyer@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ "moderated list:ARM/Microchip AT91 SoC support"
  <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 14, 2020 at 11:55 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Mon, 13 Jan 2020 at 20:53, Rob Herring <robh+dt@kernel.org> wrote:
-> >
-> > On Mon, Dec 30, 2019 at 8:44 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > >
-> > > Update PSCI DT bindings to allow to represent idle states for CPUs and the
-> > > CPU topology, by using a hierarchical layout. Primarily this is done by
-> > > re-using the existing DT bindings for PM domains [1] and for PM domain idle
-> > > states [2].
-> > >
-> > > Let's also add an example into the document for the PSCI DT bindings, to
-> > > clearly show the new hierarchical based layout. The currently supported
-> > > flattened layout, is already described in the ARM idle states bindings [3],
-> > > so let's leave that as is.
-> > >
-> > > [1] Documentation/devicetree/bindings/power/power_domain.txt
-> > > [2] Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > [3] Documentation/devicetree/bindings/arm/idle-states.txt
-> > >
-> > > Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
-> > > Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
-> > > Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > ---
-> > >
-> > > Changes in v5:
-> > >         - None.
-> >
-> > First I'm seeing this as the DT list was not copied. The example has
-> > problems when running 'make dt_binding_check':
-> >
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
-> > compatible: Additional items are not allowed ('arm,armv8' was
-> > unexpected)
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
-> > compatible: ['arm,cortex-a53', 'arm,armv8'] is too long
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
-> > compatible: Additional items are not allowed ('arm,armv8' was
-> > unexpected)
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
-> > compatible: ['arm,cortex-a57', 'arm,armv8'] is too long
-> >
-> > 'arm,armv8' is only valid for s/w models.
->
-> Perhaps you have a different version of the tools than I have (I have
-> tried both on v.5.5-rc5 and todays linux-next), because I can't
-> reproduce these errors at my side when running "make
-> dt_binding_check".
->
-> Can you please check again?
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Are you setting DT_SCHEMA_FILES? If so, then arm/cpus.yaml (or any
-other schema) isn't loaded and used for validation. That schema is the
-source of this error.
+Add driver for Microchip PIT64B timer. Timer could be used in continuous
+mode or oneshot mode. The hardware has 2x32 bit registers for period
+emulating a 64 bit timer. The LSB_PR and MSB_PR registers are used to
+set the period value (compare value). TLSB and TMSB keeps the current
+value of the counter. After a compare the TLSB and TMSB register resets.
+The driver uses PIT64B timer for clocksource or clockevent. First
+requested timer would be registered as clockevent, second one would be
+registered as clocksource. Individual PIT64B hardware resources were
+used for clocksource and clockevent to be able to support high resolution
+timers with this hardware implementation.
 
-It is failing in my CI job:
-https://gitlab.com/robherring/linux-dt-bindings/-/jobs/405298185
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Link: https://lore.kernel.org/r/1576235962-30123-3-git-send-email-claudiu.beznea@microchip.com
+---
+ .../devicetree/bindings/arm/atmel-sysregs.txt |   6 +
+ drivers/clocksource/Kconfig                   |  10 +
+ drivers/clocksource/Makefile                  |   1 +
+ drivers/clocksource/timer-microchip-pit64b.c  | 449 ++++++++++++++++++
+ 4 files changed, 466 insertions(+)
+ create mode 100644 drivers/clocksource/timer-microchip-pit64b.c
 
-Is dt-schema up to date? Though I can't think of any recent changes
-that would impact this. This check has been there a while and I fixed
-all the dts files.
+diff --git a/Documentation/devicetree/bindings/arm/atmel-sysregs.txt b/Documentation/devicetree/bindings/arm/atmel-sysregs.txt
+index 9fbde401a090..e003a553b986 100644
+--- a/Documentation/devicetree/bindings/arm/atmel-sysregs.txt
++++ b/Documentation/devicetree/bindings/arm/atmel-sysregs.txt
+@@ -10,6 +10,12 @@ PIT Timer required properties:
+ - interrupts: Should contain interrupt for the PIT which is the IRQ line
+   shared across all System Controller members.
+ 
++PIT64B Timer required properties:
++- compatible: Should be "microchip,sam9x60-pit64b"
++- reg: Should contain registers location and length
++- interrupts: Should contain interrupt for PIT64B timer
++- clocks: Should contain the available clock sources for PIT64B timer.
++
+ System Timer (ST) required properties:
+ - compatible: Should be "atmel,at91rm9200-st", "syscon", "simple-mfd"
+ - reg: Should contain registers location and length
+diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
+index 94192fb0533e..cc909e465823 100644
+--- a/drivers/clocksource/Kconfig
++++ b/drivers/clocksource/Kconfig
+@@ -697,4 +697,14 @@ config INGENIC_TIMER
+ 	help
+ 	  Support for the timer/counter unit of the Ingenic JZ SoCs.
+ 
++config MICROCHIP_PIT64B
++	bool "Microchip PIT64B support"
++	depends on OF || COMPILE_TEST
++	select CLKSRC_MMIO
++	help
++	  This option enables Microchip PIT64B timer for Atmel
++	  based system. It supports the oneshot, the periodic
++	  modes and high resolution. It is used as a clocksource
++	  and a clockevent.
++
+ endmenu
+diff --git a/drivers/clocksource/Makefile b/drivers/clocksource/Makefile
+index 4dfe4225ece7..713686faa549 100644
+--- a/drivers/clocksource/Makefile
++++ b/drivers/clocksource/Makefile
+@@ -88,3 +88,4 @@ obj-$(CONFIG_RISCV_TIMER)		+= timer-riscv.o
+ obj-$(CONFIG_CSKY_MP_TIMER)		+= timer-mp-csky.o
+ obj-$(CONFIG_GX6605S_TIMER)		+= timer-gx6605s.o
+ obj-$(CONFIG_HYPERV_TIMER)		+= hyperv_timer.o
++obj-$(CONFIG_MICROCHIP_PIT64B)		+= timer-microchip-pit64b.o
+diff --git a/drivers/clocksource/timer-microchip-pit64b.c b/drivers/clocksource/timer-microchip-pit64b.c
+new file mode 100644
+index 000000000000..27a389a7e078
+--- /dev/null
++++ b/drivers/clocksource/timer-microchip-pit64b.c
+@@ -0,0 +1,449 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * 64-bit Periodic Interval Timer driver
++ *
++ * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
++ *
++ * Author: Claudiu Beznea <claudiu.beznea@microchip.com>
++ */
++
++#include <linux/clk.h>
++#include <linux/clockchips.h>
++#include <linux/interrupt.h>
++#include <linux/of_address.h>
++#include <linux/of_irq.h>
++#include <linux/sched_clock.h>
++#include <linux/slab.h>
++
++#define MCHP_PIT64B_CR			0x00	/* Control Register */
++#define MCHP_PIT64B_CR_START		BIT(0)
++#define MCHP_PIT64B_CR_SWRST		BIT(8)
++
++#define MCHP_PIT64B_MR			0x04	/* Mode Register */
++#define MCHP_PIT64B_MR_CONT		BIT(0)
++#define MCHP_PIT64B_MR_ONE_SHOT		(0)
++#define MCHP_PIT64B_MR_SGCLK		BIT(3)
++#define MCHP_PIT64B_MR_PRES		GENMASK(11, 8)
++
++#define MCHP_PIT64B_LSB_PR		0x08	/* LSB Period Register */
++
++#define MCHP_PIT64B_MSB_PR		0x0C	/* MSB Period Register */
++
++#define MCHP_PIT64B_IER			0x10	/* Interrupt Enable Register */
++#define MCHP_PIT64B_IER_PERIOD		BIT(0)
++
++#define MCHP_PIT64B_ISR			0x1C	/* Interrupt Status Register */
++
++#define MCHP_PIT64B_TLSBR		0x20	/* Timer LSB Register */
++
++#define MCHP_PIT64B_TMSBR		0x24	/* Timer MSB Register */
++
++#define MCHP_PIT64B_PRES_MAX		0x10
++#define MCHP_PIT64B_LSBMASK		GENMASK_ULL(31, 0)
++#define MCHP_PIT64B_PRES_TO_MODE(p)	(MCHP_PIT64B_MR_PRES & ((p) << 8))
++#define MCHP_PIT64B_MODE_TO_PRES(m)	((MCHP_PIT64B_MR_PRES & (m)) >> 8)
++#define MCHP_PIT64B_DEF_CS_FREQ		5000000UL	/* 5 MHz */
++#define MCHP_PIT64B_DEF_CE_FREQ		32768		/* 32 KHz */
++
++#define MCHP_PIT64B_NAME		"pit64b"
++
++/**
++ * struct mchp_pit64b_timer - PIT64B timer data structure
++ * @base: base address of PIT64B hardware block
++ * @pclk: PIT64B's peripheral clock
++ * @gclk: PIT64B's generic clock
++ * @mode: precomputed value for mode register
++ */
++struct mchp_pit64b_timer {
++	void __iomem	*base;
++	struct clk	*pclk;
++	struct clk	*gclk;
++	u32		mode;
++};
++
++/**
++ * mchp_pit64b_clkevt - PIT64B clockevent data structure
++ * @timer: PIT64B timer
++ * @clkevt: clockevent
++ */
++struct mchp_pit64b_clkevt {
++	struct mchp_pit64b_timer	timer;
++	struct clock_event_device	clkevt;
++};
++
++#define to_mchp_pit64b_timer(x) \
++	((struct mchp_pit64b_timer *)container_of(x,\
++		struct mchp_pit64b_clkevt, clkevt))
++
++/* Base address for clocksource timer. */
++static void __iomem *mchp_pit64b_cs_base;
++/* Default cycles for clockevent timer. */
++static u64 mchp_pit64b_ce_cycles;
++
++static inline u64 mchp_pit64b_cnt_read(void __iomem *base)
++{
++	unsigned long	flags;
++	u32		low, high;
++
++	raw_local_irq_save(flags);
++
++	/*
++	 * When using a 64 bit period TLSB must be read first, followed by the
++	 * read of TMSB. This sequence generates an atomic read of the 64 bit
++	 * timer value whatever the lapse of time between the accesses.
++	 */
++	low = readl_relaxed(base + MCHP_PIT64B_TLSBR);
++	high = readl_relaxed(base + MCHP_PIT64B_TMSBR);
++
++	raw_local_irq_restore(flags);
++
++	return (((u64)high << 32) | low);
++}
++
++static inline void mchp_pit64b_reset(struct mchp_pit64b_timer *timer,
++				     u64 cycles, u32 mode, u32 irqs)
++{
++	u32 low, high;
++
++	low = cycles & MCHP_PIT64B_LSBMASK;
++	high = cycles >> 32;
++
++	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
++	writel_relaxed(mode | timer->mode, timer->base + MCHP_PIT64B_MR);
++	writel_relaxed(high, timer->base + MCHP_PIT64B_MSB_PR);
++	writel_relaxed(low, timer->base + MCHP_PIT64B_LSB_PR);
++	writel_relaxed(irqs, timer->base + MCHP_PIT64B_IER);
++	writel_relaxed(MCHP_PIT64B_CR_START, timer->base + MCHP_PIT64B_CR);
++}
++
++static u64 mchp_pit64b_clksrc_read(struct clocksource *cs)
++{
++	return mchp_pit64b_cnt_read(mchp_pit64b_cs_base);
++}
++
++static u64 mchp_pit64b_sched_read_clk(void)
++{
++	return mchp_pit64b_cnt_read(mchp_pit64b_cs_base);
++}
++
++static int mchp_pit64b_clkevt_shutdown(struct clock_event_device *cedev)
++{
++	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
++
++	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
++
++	return 0;
++}
++
++static int mchp_pit64b_clkevt_set_periodic(struct clock_event_device *cedev)
++{
++	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
++
++	mchp_pit64b_reset(timer, mchp_pit64b_ce_cycles, MCHP_PIT64B_MR_CONT,
++			  MCHP_PIT64B_IER_PERIOD);
++
++	return 0;
++}
++
++static int mchp_pit64b_clkevt_set_next_event(unsigned long evt,
++					     struct clock_event_device *cedev)
++{
++	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
++
++	mchp_pit64b_reset(timer, evt, MCHP_PIT64B_MR_ONE_SHOT,
++			  MCHP_PIT64B_IER_PERIOD);
++
++	return 0;
++}
++
++static void mchp_pit64b_clkevt_suspend(struct clock_event_device *cedev)
++{
++	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
++
++	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
++	if (timer->mode & MCHP_PIT64B_MR_SGCLK)
++		clk_disable_unprepare(timer->gclk);
++	clk_disable_unprepare(timer->pclk);
++}
++
++static void mchp_pit64b_clkevt_resume(struct clock_event_device *cedev)
++{
++	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
++
++	clk_prepare_enable(timer->pclk);
++	if (timer->mode & MCHP_PIT64B_MR_SGCLK)
++		clk_prepare_enable(timer->gclk);
++}
++
++static irqreturn_t mchp_pit64b_interrupt(int irq, void *dev_id)
++{
++	struct mchp_pit64b_clkevt *irq_data = dev_id;
++
++	/* Need to clear the interrupt. */
++	readl_relaxed(irq_data->timer.base + MCHP_PIT64B_ISR);
++
++	irq_data->clkevt.event_handler(&irq_data->clkevt);
++
++	return IRQ_HANDLED;
++}
++
++static void __init mchp_pit64b_pres_compute(u32 *pres, u32 clk_rate,
++					    u32 max_rate)
++{
++	u32 tmp;
++
++	for (*pres = 0; *pres < MCHP_PIT64B_PRES_MAX; (*pres)++) {
++		tmp = clk_rate / (*pres + 1);
++		if (tmp <= max_rate)
++			break;
++	}
++
++	/* Use the bigest prescaler if we didn't match one. */
++	if (*pres == MCHP_PIT64B_PRES_MAX)
++		*pres = MCHP_PIT64B_PRES_MAX - 1;
++}
++
++/**
++ * mchp_pit64b_init_mode - prepare PIT64B mode register value to be used at
++ *			   runtime; this includes prescaler and SGCLK bit
++ *
++ * PIT64B timer may be fed by gclk or pclk. When gclk is used its rate has to
++ * be at least 3 times lower that pclk's rate. pclk rate is fixed, gclk rate
++ * could be changed via clock APIs. The chosen clock (pclk or gclk) could be
++ * divided by the internal PIT64B's divider.
++ *
++ * This function, first tries to use GCLK by requesting the desired rate from
++ * PMC and then using the internal PIT64B prescaler, if any, to reach the
++ * requested rate. If PCLK/GCLK < 3 (condition requested by PIT64B hardware)
++ * then the function falls back on using PCLK as clock source for PIT64B timer
++ * choosing the highest prescaler in case it doesn't locate one to match the
++ * requested frequency.
++ *
++ * Below is presented the PIT64B block in relation with PMC:
++ *
++ *                                PIT64B
++ *  PMC             +------------------------------------+
++ * +----+           |   +-----+                          |
++ * |    |-->gclk -->|-->|     |    +---------+  +-----+  |
++ * |    |           |   | MUX |--->| Divider |->|timer|  |
++ * |    |-->pclk -->|-->|     |    +---------+  +-----+  |
++ * +----+           |   +-----+                          |
++ *                  |      ^                             |
++ *                  |     sel                            |
++ *                  +------------------------------------+
++ *
++ * Where:
++ *	- gclk rate <= pclk rate/3
++ *	- gclk rate could be requested from PMC
++ *	- pclk rate is fixed (cannot be requested from PMC)
++ */
++static int __init mchp_pit64b_init_mode(struct mchp_pit64b_timer *timer,
++					unsigned long max_rate)
++{
++	unsigned long pclk_rate, diff = 0, best_diff = ULONG_MAX;
++	long gclk_round = 0;
++	u32 pres, best_pres = 0;
++
++	pclk_rate = clk_get_rate(timer->pclk);
++	if (!pclk_rate)
++		return -EINVAL;
++
++	/* Try using GCLK. */
++	gclk_round = clk_round_rate(timer->gclk, max_rate);
++	if (gclk_round < 0)
++		goto pclk;
++
++	if (pclk_rate / gclk_round < 3)
++		goto pclk;
++
++	mchp_pit64b_pres_compute(&pres, gclk_round, max_rate);
++	best_diff = abs(gclk_round / (pres + 1) - max_rate);
++	best_pres = pres;
++
++	if (!best_diff) {
++		timer->mode |= MCHP_PIT64B_MR_SGCLK;
++		goto done;
++	}
++
++pclk:
++	/* Check if requested rate could be obtained using PCLK. */
++	mchp_pit64b_pres_compute(&pres, pclk_rate, max_rate);
++	diff = abs(pclk_rate / (pres + 1) - max_rate);
++
++	if (best_diff > diff) {
++		/* Use PCLK. */
++		best_pres = pres;
++	} else {
++		/* Use GCLK. */
++		timer->mode |= MCHP_PIT64B_MR_SGCLK;
++		clk_set_rate(timer->gclk, gclk_round);
++	}
++
++done:
++	timer->mode |= MCHP_PIT64B_PRES_TO_MODE(best_pres);
++
++	pr_info("PIT64B: using clk=%s with prescaler %u, freq=%lu [Hz]\n",
++		timer->mode & MCHP_PIT64B_MR_SGCLK ? "gclk" : "pclk", best_pres,
++		timer->mode & MCHP_PIT64B_MR_SGCLK ?
++		gclk_round / (best_pres + 1) : pclk_rate / (best_pres + 1));
++
++	return 0;
++}
++
++static int __init mchp_pit64b_init_clksrc(struct mchp_pit64b_timer *timer,
++					  u32 clk_rate)
++{
++	int ret;
++
++	mchp_pit64b_reset(timer, ULLONG_MAX, MCHP_PIT64B_MR_CONT, 0);
++
++	mchp_pit64b_cs_base = timer->base;
++
++	ret = clocksource_mmio_init(timer->base, MCHP_PIT64B_NAME, clk_rate,
++				    210, 64, mchp_pit64b_clksrc_read);
++	if (ret) {
++		pr_debug("clksrc: Failed to register PIT64B clocksource!\n");
++
++		/* Stop timer. */
++		writel_relaxed(MCHP_PIT64B_CR_SWRST,
++			       timer->base + MCHP_PIT64B_CR);
++
++		return ret;
++	}
++
++	sched_clock_register(mchp_pit64b_sched_read_clk, 64, clk_rate);
++
++	return 0;
++}
++
++static int __init mchp_pit64b_init_clkevt(struct mchp_pit64b_timer *timer,
++					  u32 clk_rate, u32 irq)
++{
++	struct mchp_pit64b_clkevt *ce;
++	int ret;
++
++	ce = kzalloc(sizeof(*ce), GFP_KERNEL);
++	if (!ce)
++		return -ENOMEM;
++
++	mchp_pit64b_ce_cycles = DIV_ROUND_CLOSEST(clk_rate, HZ);
++
++	ce->timer.base = timer->base;
++	ce->timer.pclk = timer->pclk;
++	ce->timer.gclk = timer->gclk;
++	ce->timer.mode = timer->mode;
++	ce->clkevt.name = MCHP_PIT64B_NAME;
++	ce->clkevt.features = CLOCK_EVT_FEAT_ONESHOT | CLOCK_EVT_FEAT_PERIODIC;
++	ce->clkevt.rating = 150;
++	ce->clkevt.set_state_shutdown = mchp_pit64b_clkevt_shutdown;
++	ce->clkevt.set_state_periodic = mchp_pit64b_clkevt_set_periodic;
++	ce->clkevt.set_next_event = mchp_pit64b_clkevt_set_next_event;
++	ce->clkevt.suspend = mchp_pit64b_clkevt_suspend;
++	ce->clkevt.resume = mchp_pit64b_clkevt_resume;
++	ce->clkevt.cpumask = cpumask_of(0);
++	ce->clkevt.irq = irq;
++
++	ret = request_irq(irq, mchp_pit64b_interrupt, IRQF_TIMER,
++			  "pit64b_tick", ce);
++	if (ret) {
++		pr_debug("clkevt: Failed to setup PIT64B IRQ\n");
++		kfree(ce);
++		return ret;
++	}
++
++	clockevents_config_and_register(&ce->clkevt, clk_rate, 1, ULONG_MAX);
++
++	return 0;
++}
++
++static int __init mchp_pit64b_dt_init_timer(struct device_node *node,
++					    bool clkevt)
++{
++	u32 freq = clkevt ? MCHP_PIT64B_DEF_CE_FREQ : MCHP_PIT64B_DEF_CS_FREQ;
++	struct mchp_pit64b_timer timer = { 0 };
++	unsigned long clk_rate;
++	u32 irq = 0;
++	int ret;
++
++	/* Parse DT node. */
++	timer.pclk = of_clk_get_by_name(node, "pclk");
++	if (IS_ERR(timer.pclk))
++		return PTR_ERR(timer.pclk);
++
++	timer.gclk = of_clk_get_by_name(node, "gclk");
++	if (IS_ERR(timer.gclk))
++		return PTR_ERR(timer.gclk);
++
++	timer.base = of_iomap(node, 0);
++	if (!timer.base)
++		return -ENXIO;
++
++	if (clkevt) {
++		irq = irq_of_parse_and_map(node, 0);
++		if (!irq) {
++			ret = -ENODEV;
++			goto io_unmap;
++		}
++	}
++
++	/* Initialize mode (prescaler + SGCK bit). To be used at runtime. */
++	ret = mchp_pit64b_init_mode(&timer, freq);
++	if (ret)
++		goto irq_unmap;
++
++	ret = clk_prepare_enable(timer.pclk);
++	if (ret)
++		goto irq_unmap;
++
++	if (timer.mode & MCHP_PIT64B_MR_SGCLK) {
++		ret = clk_prepare_enable(timer.gclk);
++		if (ret)
++			goto pclk_unprepare;
++
++		clk_rate = clk_get_rate(timer.gclk);
++	} else {
++		clk_rate = clk_get_rate(timer.pclk);
++	}
++	clk_rate = clk_rate / (MCHP_PIT64B_MODE_TO_PRES(timer.mode) + 1);
++
++	if (clkevt)
++		ret = mchp_pit64b_init_clkevt(&timer, clk_rate, irq);
++	else
++		ret = mchp_pit64b_init_clksrc(&timer, clk_rate);
++
++	if (ret)
++		goto gclk_unprepare;
++
++	return 0;
++
++gclk_unprepare:
++	if (timer.mode & MCHP_PIT64B_MR_SGCLK)
++		clk_disable_unprepare(timer.gclk);
++pclk_unprepare:
++	clk_disable_unprepare(timer.pclk);
++irq_unmap:
++	irq_dispose_mapping(irq);
++io_unmap:
++	iounmap(timer.base);
++
++	return ret;
++}
++
++static int __init mchp_pit64b_dt_init(struct device_node *node)
++{
++	static int inits;
++
++	switch (inits++) {
++	case 0:
++		/* 1st request, register clockevent. */
++		return mchp_pit64b_dt_init_timer(node, true);
++	case 1:
++		/* 2nd request, register clocksource. */
++		return mchp_pit64b_dt_init_timer(node, false);
++	}
++
++	/* The rest, don't care. */
++	return -EINVAL;
++}
++
++TIMER_OF_DECLARE(mchp_pit64b, "microchip,sam9x60-pit64b", mchp_pit64b_dt_init);
+-- 
+2.17.1
 
-Do you see psci.example.dt.yaml getting built?
-
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
-> > idle-states: cluster-retention:compatible:0: 'arm,idle-state' was
-> > expected
-> > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
-> > idle-states: cluster-power-down:compatible:0: 'arm,idle-state' was
-> > expected
-> >
-> > The last 2 are due to my conversion of the idle-states binding which
-> > is in my tree now. Probably need to add 'domain-idle-state' as a
-> > compatible at a minimum. It looks like domain-idle-state.txt is pretty
-> > much the same as arm/idle-state.txt, so we should perhaps merge them.
->
-> Ahh, so maybe *all* of the above problems are caused by conflicts in
-> the arm-soc tree with changes from your tree!?
-
-Shouldn't be. arm/cpus.yaml has been in place for a few cycles now.
-
->
-> In regards to merging files, I am fine by that if that helps.
->
-> >
-> > There's some bigger issues though.
-> >
-> > > ---
-> > >  .../devicetree/bindings/arm/cpus.yaml         |  15 +++
-> > >  .../devicetree/bindings/arm/psci.yaml         | 104 ++++++++++++++++++
-> > >  2 files changed, 119 insertions(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > index c23c24ff7575..7a9c3ce2dbef 100644
-> > > --- a/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > @@ -242,6 +242,21 @@ properties:
-> > >
-> > >        where voltage is in V, frequency is in MHz.
-> > >
-> > > +  power-domains:
-> > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> > > +    description:
-> > > +      List of phandles and PM domain specifiers, as defined by bindings of the
-> > > +      PM domain provider (see also ../power_domain.txt).
-> > > +
-> > > +  power-domain-names:
-> > > +    $ref: '/schemas/types.yaml#/definitions/string-array'
-> > > +    description:
-> > > +      A list of power domain name strings sorted in the same order as the
-> > > +      power-domains property.
-> > > +
-> > > +      For PSCI based platforms, the name corresponding to the index of the PSCI
-> > > +      PM domain provider, must be "psci".
-> > > +
-> > >    qcom,saw:
-> > >      $ref: '/schemas/types.yaml#/definitions/phandle'
-> > >      description: |
-> > > diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > index 7abdf58b335e..8ef85420b2ab 100644
-> > > --- a/Documentation/devicetree/bindings/arm/psci.yaml
-> > > +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > @@ -102,6 +102,34 @@ properties:
-> > >        [1] Kernel documentation - ARM idle states bindings
-> > >          Documentation/devicetree/bindings/arm/idle-states.txt
-> > >
-> > > +  "#power-domain-cells":
-> >
-> > This is wrong because you are saying the /psci node should have these
-> > properties. You need to define the child nodes (at least a pattern you
-> > can match on) and put these properties there.
->
-> Right, good point.
->
-> I searched for some similar examples for how to encode this, but
-> couldn't really find something useful.
-
-You need something like:
-
-patternProperties:
-  '^(cluster|cpu)-pd[0-9a-f]+$':
-    type: object
-    properties:
-      ... and then the properties in the child nodes
-
-Note that its going to look weird for the 10th PD with 'cpu-pda'. So
-maybe add a '-'.
-
-> One more thing, it seems like
-> this change is also needed for the common power-domain bindings, as
-> that also specifies parent/childs domains.
-
-Normally, we'd have a $ref to power-domain.yaml, but for that to work
-here, you'll have to expand the node names ($nodename).
-
->
-> Anyway, I would really appreciate if you can suggest something more
-> detailed for you think this should be done!?
->
-> >
-> > > +    description:
-> > > +      The number of cells in a PM domain specifier as per binding in [3].
-> > > +      Must be 0 as to represent a single PM domain.
-> > > +
-> > > +      ARM systems can have multiple cores, sometimes in an hierarchical
-> > > +      arrangement. This often, but not always, maps directly to the processor
-> > > +      power topology of the system. Individual nodes in a topology have their
-> > > +      own specific power states and can be better represented hierarchically.
-> > > +
-> > > +      For these cases, the definitions of the idle states for the CPUs and the
-> > > +      CPU topology, must conform to the binding in [3]. The idle states
-> > > +      themselves must conform to the binding in [4] and must specify the
-> > > +      arm,psci-suspend-param property.
-> > > +
-> > > +      It should also be noted that, in PSCI firmware v1.0 the OS-Initiated
-> > > +      (OSI) CPU suspend mode is introduced. Using a hierarchical representation
-> > > +      helps to implement support for OSI mode and OS implementations may choose
-> > > +      to mandate it.
-> > > +
-> > > +      [3] Documentation/devicetree/bindings/power/power_domain.txt
-> > > +      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > +
-> > > +  power-domains:
-> > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> > > +    description:
-> > > +      List of phandles and PM domain specifiers, as defined by bindings of the
-> > > +      PM domain provider.
-> >
-> > A schema for 'domain-idle-states' property is missing.
->
-> Right, let's figure out the best way for how to add that.
-
-If power-domain.yaml is referenced, then don't need anything else
-unless you can define the number of phandles (looks like you can't?).
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
