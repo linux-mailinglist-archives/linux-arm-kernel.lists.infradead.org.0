@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 492CC13F013
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:21:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D272E13F0B6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:23:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MlDhQ2uCVSxxKw/VklfJMEfC8CPRZJNua2WhxUS43dg=; b=LBbvVYnObkqASk
-	7LABv2po0PTyWOKQekfNkULW9WWjqXhaC7+BUeiuTSVBtdI296Woivsxaan4IzXTT1+d/XH/ANIns
-	LiHQLeIqU9MsUiDaQ048J2aA7bTySSCPEtrYcInsjCrgMMFh0JGuyWBegCWqM4Q1MGJaclusCzDqA
-	99/Y6R/I7KXB6pS+7+Kt+NR6lmFQIy+DKfXLczp+c1qR2oQbK9GgnZOBU3Vk0owZ8TgboTMyKKctR
-	Lfenbqe/O3LEFK43v+tS+FhDqLl3fsMi6T3vTDgj4n0dTorGhG1JxwTx30T7/mM8/Uxve1FVEn/cG
-	5RH3FqMjLcpA6lXRA/DA==;
+	List-Owner; bh=C5vYxwsyM3NBdqNpThTluwOLWnSg6J3WHNaBDhZ/Daw=; b=uFSZmP5pnxB1O2
+	cW65J1e4op/64kSHwc95amYSaYXD24aS9Bwvji7Lv2VZKlZ0KX5yp1wmpRodhLw+xax3zJiInMi9n
+	14dPqMv3D97QeHTYLOl0ZzVj5uvhQrQXZQjyejI3wlXVf7sQrG5gYnCf/VTkywFGkhWrqqg5aR/6N
+	geW1krAB2zpLLGHiFqQ++HZTz5MAX5DWrOYe/BIpJARSJ4cg4N5wLrfREW8/OkpqQ2tXXhu53d1O2
+	34rc264tjiaFaQJ8TAaGm8UBzr0PkFR8AEy4Kzh4W42f+hhhTYGnG1huArLWlsKDDQR41HyQY9Cm2
+	L7wCAQ0N4Q7moXkdZk2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9lF-0005TF-Uc; Thu, 16 Jan 2020 18:20:53 +0000
+	id 1is9nx-0008Rl-F0; Thu, 16 Jan 2020 18:23:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is95i-00077y-Cj
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:38:23 +0000
+ id 1is97d-0008DB-E1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:40:05 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E60A246C6;
- Thu, 16 Jan 2020 17:37:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3458E24706;
+ Thu, 16 Jan 2020 17:39:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196266;
- bh=8SPtXhgDABdtkfo2azlbC9YC/FrYRauKdCnSEeS0iXM=;
+ s=default; t=1579196397;
+ bh=euJA6zdxXJ1OpER7tf/R3kpDg450PVX85nEcb4d8ZzQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aoQqHHUeXgvXc3azh487blarI0nv3o9hiUY19N5hBxZdSanJP57l8QoyH8C3FOFjC
- fLQ8JocSkcenfCgyEQRD2Ifv3ibu/nrKUInfNAWFxvAldWYgdgJIldKkvBmgdKx2w0
- hqYJXkIVAjhzdK2jGG3gP7p0i0lxRgVM6+nUpx58=
-Date: Thu, 16 Jan 2020 17:37:40 +0000
+ b=PjGV/BPsPkpco5bu27nYxZQvO9xiW4VIFDMeF0zaF5C0Ti5cMJbhN/BTuggIf3g7w
+ EEeKCYCLG7UMT6aIKCgfFWTnFzTEO8Y+4Khh0O0kVq3zDlFsMTEKLuH1/6fKcakRWh
+ 7bY4ukqYCxg396Yb9t9aBgkzy6GJ2+SaCj5w+8KE=
+Date: Thu, 16 Jan 2020 17:39:51 +0000
 From: Will Deacon <will@kernel.org>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v6 09/15] arm64: reserve x18 from general allocation with
- SCS
-Message-ID: <20200116173739.GA21396@willie-the-truck>
+Subject: Re: [PATCH v6 08/15] arm64: disable function graph tracing with SCS
+Message-ID: <20200116173950.GB21396@willie-the-truck>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-10-samitolvanen@google.com>
+ <20191206221351.38241-9-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191206221351.38241-10-samitolvanen@google.com>
+In-Reply-To: <20191206221351.38241-9-samitolvanen@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093758_535244_3573214E 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20200116_093957_532206_E198E4A0 
+X-CRM114-Status: GOOD (  18.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,20 +94,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 02:13:45PM -0800, Sami Tolvanen wrote:
-> Reserve the x18 register from general allocation when SCS is enabled,
-> because the compiler uses the register to store the current task's
-> shadow stack pointer. Note that all external kernel modules must also be
-> compiled with -ffixed-x18 if the kernel has SCS enabled.
+On Fri, Dec 06, 2019 at 02:13:44PM -0800, Sami Tolvanen wrote:
+> The graph tracer hooks returns by modifying frame records on the
+> (regular) stack, but with SCS the return address is taken from the
+> shadow stack, and the value in the frame record has no effect. As we
+> don't currently have a mechanism to determine the corresponding slot
+> on the shadow stack (and to pass this through the ftrace
+> infrastructure), for now let's disable the graph tracer when SCS is
+> enabled.
 > 
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 > Reviewed-by: Kees Cook <keescook@chromium.org>
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 > ---
->  arch/arm64/Makefile | 4 ++++
->  1 file changed, 4 insertions(+)
+>  arch/arm64/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index b1b4476ddb83..49e5f94ff4af 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -149,7 +149,7 @@ config ARM64
+>  	select HAVE_FTRACE_MCOUNT_RECORD
+>  	select HAVE_FUNCTION_TRACER
+>  	select HAVE_FUNCTION_ERROR_INJECTION
+> -	select HAVE_FUNCTION_GRAPH_TRACER
+> +	select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
+>  	select HAVE_GCC_PLUGINS
+>  	select HAVE_HW_BREAKPOINT if PERF_EVENTS
+>  	select HAVE_IRQ_TIME_ACCOUNTING
 
-Acked-by: Will Deacon <will@kernel.org>
+I think this is the wrong way around, as we support the graph tracer
+today and so I think SHADOW_CALL_STACK should depend on !GRAPH_TRACER
+and possibly even EXPERT until this is resolved.
 
 Will
 
