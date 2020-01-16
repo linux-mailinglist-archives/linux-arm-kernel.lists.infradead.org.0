@@ -2,107 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C39213DFB2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:12:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06AAC13E001
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:24:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cd87r8ZL4DuCR9arOTWr1L/Z/eRJA7RG6qORmhEf/SQ=; b=katOXEc/VVz8OCfOOxrhY1hom
-	xBbwjdkrmHjvZ/NIAYi4USJ0TnNc3McoG81XZ+kMtNoeEU+4Y5MYy6t4sTvOoUutVdweK3rihI+zo
-	4jxkA+pAMsQlpl/W7Cq7dh7Sx/GR6m3Xi7sYTK4zwwb0kwXXu8baC/xFFzlit9UwJDBOLp79V+VC5
-	cOlXPRy7b0gRkwW+2NaTLYi0o1l5UqGRLqeGOyCaH94lRUur9vxUWf7FKcKOW3Ks9MyKcGMNmmAbX
-	NY4JFD9vWOiUdG67vBoShBtQrLYez8Qwrxn6zOtL36vACIJPEQzuA50Hu8hYgv6L9kYhLfxkmBAvf
-	3dyvmoeQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nX3scKmnbUGCLTeQvYkrvGqA5ce6bwerWVnC8QT8DOE=; b=WU1YkD1rGgOq/Q
+	DK/36msCquLxolHEX1xdNURtxjlsNbC3rG0gJQq2IBc0fgzs20hNUi0CEltLI8+JVOscrzrgo6Zdm
+	mbjhKRK6pnZD8lUMaiz4g55k8ZABPbEvCH+7bagWoLu/TE0yYraRUPKz48+QUtpS/MmowbthZoePW
+	FktjhUpsveB50gt0UsS7E0KBq5EBxwcrvs2kpbix1yUdVkZNAJrhzB5u/82ASURbmHkPpPqJjOksO
+	bZlO81eblX0RX4uVKxJ7wEombMpQLrBsBQ6IF3hgby9oWtBixE/Zu0NsdXp5+0KN+AYfS9c5KSK+6
+	ke7Z3iDsdmFLS72WeVLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is7l1-0000fZ-VV; Thu, 16 Jan 2020 16:12:31 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is7kV-0000Rq-H0
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:12:05 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m24so4343028wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 08:11:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=wq116TZAe0p40heVVDfMLRBuWEj6xKtwx1Np2GXHzlk=;
- b=qdQEY1n8v+dLZaHvHfDyqgC04UQvFEYkL0iVEjWLFmsSkU3RdqM+lv6eJPlKsfZZJo
- V2U5I8ZZfySoMK28rBSpL6Qi9hZ1hBksNdUKrrlpCgVLxMi5EXSi5jSaVoIKprkgosd5
- tsDC/ZoH/IOGHUHa5cOqrpght5pR8sZ8tAU7KkBzmrV/NVIcLC4BYWkLn3qFk7vMY0dG
- 3cUuGjOTM7lrJfGCwT9DuQ2es9Hy/CCF+RThAtg047ML104Uh1CTu5cc9rYcPLtsT3GC
- B/ZdafPWXHclyQ++k9xdn+0fxAl7T0KV1vSnNRH8BNknm6iXsf0sfW0O3mzquuFtLaDf
- naeA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=wq116TZAe0p40heVVDfMLRBuWEj6xKtwx1Np2GXHzlk=;
- b=i2hwPcTzsnw2hR5/P24AZKo4/+dr2og4z8hMpvcSKVPu0iBa3A4osbpY+kryYiYLcu
- lxUznb128Cm/3pAxAcFJeCySs3QXun0ecTn1OHCreRItqngn8mCA65+cpAryMq1rjf6R
- 5hz1UIxynLe9r9wEMCaRLISr/tqCjsQqtLDQDqGUkWIGtr9Q7JolLam202fHM9RTAiwj
- bLS+tedCVDsoo4ZST2dVBTT3XHUPlVZ2nzC2xVVa26ewCmSgm7Ll0Txj7cTxNsrwutuj
- 1jepwaxykujEXCDu21BGutoQt/XZALz90kuDwKsbly81UNFwhRonn3B+2802Rpk8XWMt
- t9Yw==
-X-Gm-Message-State: APjAAAWsmOGvMEnwntq1mAJ8bmeLanydv34pnBF5qK8jydt+G1B/a4Dc
- uyIvWOFKVwJCa1LkeUD6CdEdhy7EhmI=
-X-Google-Smtp-Source: APXvYqxia/hYDamKXklRlZ4uVwwfWKaRzmR3+FORgkBCwOjEeD6jP03Gwc0fSu+Qsj8bDjor8a5sTA==
-X-Received: by 2002:a1c:a982:: with SMTP id s124mr6705085wme.132.1579191117317; 
- Thu, 16 Jan 2020 08:11:57 -0800 (PST)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id i5sm30424978wrv.34.2020.01.16.08.11.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 Jan 2020 08:11:55 -0800 (PST)
-Subject: Re: [PATCH V2 3/7] dt-bindings: imx-ocotp: Add i.MX8MP compatible
-To: Anson Huang <Anson.Huang@nxp.com>, robh+dt@kernel.org,
- mark.rutland@arm.com, vkoul@kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- ulf.hansson@linaro.org, broonie@kernel.org,
- manivannan.sadhasivam@linaro.org, andrew.smirnov@gmail.com,
- rjones@gateworks.com, marcel.ziswiler@toradex.com,
- sebastien.szymanski@armadeus.com, aisheng.dong@nxp.com,
- richard.hu@technexion.com, angus@akkea.ca, cosmin.stoica@nxp.com,
- l.stach@pengutronix.de, rabeeh@solid-run.com, leonard.crestez@nxp.com,
- daniel.baluta@nxp.com, jun.li@nxp.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, dmaengine@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mmc@vger.kernel.org,
- linux-spi@vger.kernel.org
-References: <1578893602-14395-1-git-send-email-Anson.Huang@nxp.com>
- <1578893602-14395-3-git-send-email-Anson.Huang@nxp.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <c2c3d925-a69a-d7f8-a58a-5f4abe46960b@linaro.org>
-Date: Thu, 16 Jan 2020 16:11:54 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1is7wl-0006go-Vg; Thu, 16 Jan 2020 16:24:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is7wZ-0006f6-Q4
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:24:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CB5C1396;
+ Thu, 16 Jan 2020 08:24:18 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D709D3F68E; Thu, 16 Jan 2020 08:24:16 -0800 (PST)
+Date: Thu, 16 Jan 2020 16:24:14 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v3 06/16] arm64: enable ptrauth earlier
+Message-ID: <20200116162414.GF10277@arrakis.emea.arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-7-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <1578893602-14395-3-git-send-email-Anson.Huang@nxp.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1576486038-9899-7-git-send-email-amit.kachhap@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_081159_558156_DB04C4E2 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_082427_891673_E071418C 
+X-CRM114-Status: GOOD (  11.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,22 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Dec 16, 2019 at 02:17:08PM +0530, Amit Daniel Kachhap wrote:
+> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+> index 5aaf1bb..c59c28f 100644
+> --- a/arch/arm64/kernel/head.S
+> +++ b/arch/arm64/kernel/head.S
+> @@ -13,6 +13,7 @@
+>  #include <linux/init.h>
+>  #include <linux/irqchip/arm-gic-v3.h>
+>  
+> +#include <asm/alternative.h>
+>  #include <asm/assembler.h>
+>  #include <asm/boot.h>
+>  #include <asm/ptrace.h>
+> @@ -713,6 +714,7 @@ secondary_startup:
+>  	 * Common entry point for secondary CPUs.
+>  	 */
+>  	bl	__cpu_secondary_check52bitva
+> +	bl	__cpu_secondary_checkptrauth
+>  	mov	x0, #ARM64_CPU_BOOT_LATE
+>  	bl	__cpu_setup			// initialise processor
+>  	adrp	x1, swapper_pg_dir
+> @@ -831,6 +833,24 @@ __no_granule_support:
+>  	early_park_cpu CPU_STUCK_REASON_NO_GRAN
+>  ENDPROC(__no_granule_support)
+>  
+> +ENTRY(__cpu_secondary_checkptrauth)
+> +#ifdef CONFIG_ARM64_PTR_AUTH
+> +	/* Check if the CPU supports ptrauth */
+> +	mrs	x2, id_aa64isar1_el1
+> +	ubfx	x2, x2, #ID_AA64ISAR1_APA_SHIFT, #8
+> +	cbnz	x2, 1f
+> +alternative_if ARM64_HAS_ADDRESS_AUTH
+> +	mov	x3, 1
+> +alternative_else
+> +	mov	x3, 0
+> +alternative_endif
+> +	cbz	x3, 1f
+> +	/* Park the mismatched secondary CPU */
+> +	early_park_cpu CPU_STUCK_REASON_NO_PTRAUTH
+> +#endif
+> +1:	ret
+> +ENDPROC(__cpu_secondary_checkptrauth)
 
+Do we actually need to park secondary CPUs early? Let's say a secondary
+CPU doesn't have PAC, __cpu_setup won't set the corresponding SCTLR_EL1
+bits and the instructions are NOPs. Wouldn't the cpufeature framework
+park it later anyway?
 
-On 13/01/2020 05:33, Anson Huang wrote:
-> Add compatible and description for i.MX8MP.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Applied Thanks,
-
---srini
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
