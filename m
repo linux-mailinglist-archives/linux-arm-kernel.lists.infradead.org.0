@@ -2,57 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD3F13DD47
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:19:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7BC913DD48
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:19:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/HPeb5zBeSDdt3rKGxNPrWFu9isENnU5wlxe/fhjNyY=; b=hV/GjHi+mZKFUW
-	BX5Iu9ooZepsIxThu2eD0kUcEToIFWc9P+0AHCy3VzZe/f0CLN954joFxaq9mdBLvFv/TnUEyqanK
-	qK3UpZdiuikenq6+h/Jn7T5gJ4iQ+3YR2ZmwbsGi5cHgnDwN/CZlkWgUeBhg1aW41S+3LkpheRY9K
-	isn+HVWupSPb99++18dmvDFx9OG5TH7CPtcyx8G1u41K+pb2R7bALMYkGHOlF5ji0+uZMtbkaDK+o
-	rUFI20FrDa8es5rvBr+CwotC6MdP0bhh2Sk0BuiW4WxTxf9t9IUSo3tvphtlkfdbOici3f2pwJu0w
-	PtninYvy9KnYc70ER+8g==;
+	List-Owner; bh=MeEg4r0afCv+d1W4kk2W1vhbqJyT1K2KXaWAjp5MJmE=; b=eGD4qv/LeEwxiW
+	S+sh7FlliZeAX52VD7xufJmFdfs+whq0V8GywvR5hrag7+tL1lckAmBDawQBANK0hApKg0LK6F+s2
+	uPhJH29hZU+ylCHBGJ+oMo291lpRlGTDrOOAHBV+Ye30lsBmBMCWod0PfIagVSBP9tSMM+4IjvUV6
+	Ctwhu1JUUrnNvVdDtvCU4PLSVBSmKXrSFX9ibbqLSmTBXDQHdYX1WaYfLr46LOCib8MIIF+Hv8WkL
+	yCWSdYQWO7PXVUYTuJIodz0MTdaq5gz69J4hOFh7Z+juOjocMW+V4bNS/rRnScZtaOJ9LlrnAjPq4
+	igvd/OEUyKOwS1QSFd/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is5zP-0006cv-2d; Thu, 16 Jan 2020 14:19:15 +0000
-Received: from magratgarlick.emantor.de ([78.46.208.201])
+	id 1is5zu-0006tG-HW; Thu, 16 Jan 2020 14:19:46 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is5zD-0006bl-SS
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 14:19:08 +0000
-Received: by magratgarlick.emantor.de (Postfix, from userid 114)
- id 7FC9AE7123; Thu, 16 Jan 2020 15:19:00 +0100 (CET)
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on
- magratgarlick.emantor.de
+ id 1is5zh-0006rw-T7
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 14:19:38 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1579184373; h=Content-Transfer-Encoding: MIME-Version:
+ Message-Id: Date: Subject: Cc: To: From: Sender;
+ bh=F/smCYCNf+T2ixQGU3VAUh8QI4L0ikLpSfao8JkC1WE=;
+ b=XnuNuet477cSyDCMvYn8OKYOI9ltDh1v5W53iPm+eLmWKTRc4QUNTTILxPKLZgqClP8XUsfd
+ TOsB8hCizOcJlK/oXJ97erHmtrlTIXrZKZ+XRUmV11iIp4UsrkvOv3iHeY1Ep7a4yu0TIWgO
+ QMC0rJPgxNTw0QWTKvskTDlQM+g=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e2070f1.7f6f47b6ff10-smtp-out-n02;
+ Thu, 16 Jan 2020 14:19:29 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 9BF1EC447A1; Thu, 16 Jan 2020 14:19:29 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.2
-Received: from localhost (unknown [IPv6:2a01:598:a087:a19a:907e:a13:431:7da5])
- by magratgarlick.emantor.de (Postfix) with ESMTPSA id 441B6E7121;
- Thu, 16 Jan 2020 15:18:59 +0100 (CET)
-From: Rouven Czerwinski <r.czerwinski@pengutronix.de>
-To: s.hauer@pengutronix.de,
-	shawnguo@kernel.org
-Subject: [PATCH] ARM: imx: build v7_cpu_resume() unconditionally
-Date: Thu, 16 Jan 2020 15:18:49 +0100
-Message-Id: <20200116141849.73955-1-r.czerwinski@pengutronix.de>
-X-Mailer: git-send-email 2.25.0
+X-Spam-Status: No, score=-0.2 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ UPPERCASE_50_75 autolearn=no autolearn_force=no version=3.4.0
+Received: from blr-ubuntu-253.qualcomm.com
+ (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 0B27DC433CB;
+ Thu, 16 Jan 2020 14:19:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0B27DC433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] arm64: Add KRYO{3,4}XX CPU cores to spectre-v2 safe list
+Date: Thu, 16 Jan 2020 19:49:12 +0530
+Message-Id: <20200116141912.15465-1-saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_061904_221488_EB7ED214 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200116_061934_290056_C70462A8 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,137 +92,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ahmad Fatoum <a.fatoum@pengutronix.de>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Rouven Czerwinski <r.czerwinski@pengutronix.de>, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Douglas Anderson <dianders@chromium.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>, James Morse <james.morse@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ahmad Fatoum <a.fatoum@pengutronix.de>
+KRYO3XX silver CPU cores and KRYO4XX silver, gold CPU cores
+are not affected by Spectre variant 2. Add them to spectre_v2
+safe list to correct ARM_SMCCC_ARCH_WORKAROUND_1 warning and
+vulnerability sysfs value.
 
-This function is not only needed by the platform suspend code, but is also
-reused as the CPU resume function when the ARM cores can be powered down
-completely in deep idle, which is the case on i.MX6SX and i.MX6UL(L).
-
-Providing the static inline stub whenever CONFIG_SUSPEND is disabled means
-that those platforms will hang on resume from cpuidle if suspend is disabled.
-
-So there are two problems:
-
-  - The static inline stub masks the linker error
-  - The function is not available where needed
-
-Fix both by just building the function unconditionally, when
-CONFIG_SOC_IMX6 is enabled. The actual code is three instructions long,
-so it's arguably ok to just leave it in for all i.MX6 kernel configurations.
-
-Fixes: 05136f0897b5 ("ARM: imx: support arm power off in cpuidle for i.mx6sx")
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Signed-off-by: Rouven Czerwinski <r.czerwinski@pengutronix.de>
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 ---
- arch/arm/mach-imx/Makefile       |  2 ++
- arch/arm/mach-imx/common.h       |  4 ++--
- arch/arm/mach-imx/resume-imx6.S  | 24 ++++++++++++++++++++++++
- arch/arm/mach-imx/suspend-imx6.S | 14 --------------
- 4 files changed, 28 insertions(+), 16 deletions(-)
- create mode 100644 arch/arm/mach-imx/resume-imx6.S
+ arch/arm64/include/asm/cputype.h | 6 ++++++
+ arch/arm64/kernel/cpu_errata.c   | 3 +++
+ 2 files changed, 9 insertions(+)
 
-diff --git a/arch/arm/mach-imx/Makefile b/arch/arm/mach-imx/Makefile
-index 35ff620537e6..03506ce46149 100644
---- a/arch/arm/mach-imx/Makefile
-+++ b/arch/arm/mach-imx/Makefile
-@@ -91,6 +91,8 @@ AFLAGS_suspend-imx6.o :=-Wa,-march=armv7-a
- obj-$(CONFIG_SOC_IMX6) += suspend-imx6.o
- obj-$(CONFIG_SOC_IMX53) += suspend-imx53.o
- endif
-+AFLAGS_resume-imx6.o :=-Wa,-march=armv7-a
-+obj-$(CONFIG_SOC_IMX6) += resume-imx6.o
- obj-$(CONFIG_SOC_IMX6) += pm-imx6.o
+diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
+index aca07c2f6e6e..7219cddeba66 100644
+--- a/arch/arm64/include/asm/cputype.h
++++ b/arch/arm64/include/asm/cputype.h
+@@ -85,6 +85,9 @@
+ #define QCOM_CPU_PART_FALKOR_V1		0x800
+ #define QCOM_CPU_PART_FALKOR		0xC00
+ #define QCOM_CPU_PART_KRYO		0x200
++#define QCOM_CPU_PART_KRYO_3XX_SILVER	0x803
++#define QCOM_CPU_PART_KRYO_4XX_GOLD	0x804
++#define QCOM_CPU_PART_KRYO_4XX_SILVER	0x805
  
- obj-$(CONFIG_SOC_IMX1) += mach-imx1.o
-diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
-index 912aeceb4ff8..5aa5796cff0e 100644
---- a/arch/arm/mach-imx/common.h
-+++ b/arch/arm/mach-imx/common.h
-@@ -109,17 +109,17 @@ void imx_cpu_die(unsigned int cpu);
- int imx_cpu_kill(unsigned int cpu);
+ #define NVIDIA_CPU_PART_DENVER		0x003
+ #define NVIDIA_CPU_PART_CARMEL		0x004
+@@ -111,6 +114,9 @@
+ #define MIDR_QCOM_FALKOR_V1 MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR_V1)
+ #define MIDR_QCOM_FALKOR MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR)
+ #define MIDR_QCOM_KRYO MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO)
++#define MIDR_QCOM_KRYO_3XX_SILVER MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_3XX_SILVER)
++#define MIDR_QCOM_KRYO_4XX_GOLD MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_4XX_GOLD)
++#define MIDR_QCOM_KRYO_4XX_SILVER MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_4XX_SILVER)
+ #define MIDR_NVIDIA_DENVER MIDR_CPU_MODEL(ARM_CPU_IMP_NVIDIA, NVIDIA_CPU_PART_DENVER)
+ #define MIDR_NVIDIA_CARMEL MIDR_CPU_MODEL(ARM_CPU_IMP_NVIDIA, NVIDIA_CPU_PART_CARMEL)
+ #define MIDR_FUJITSU_A64FX MIDR_CPU_MODEL(ARM_CPU_IMP_FUJITSU, FUJITSU_CPU_PART_A64FX)
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 85f4bec22f6d..58ba2d1c66a3 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -548,6 +548,9 @@ static const struct midr_range spectre_v2_safe_list[] = {
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
+ 	MIDR_ALL_VERSIONS(MIDR_BRAHMA_B53),
+ 	MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
++	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_3XX_SILVER),
++	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_4XX_GOLD),
++	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_4XX_SILVER),
+ 	{ /* sentinel */ }
+ };
  
- #ifdef CONFIG_SUSPEND
--void v7_cpu_resume(void);
- void imx53_suspend(void __iomem *ocram_vbase);
- extern const u32 imx53_suspend_sz;
- void imx6_suspend(void __iomem *ocram_vbase);
- #else
--static inline void v7_cpu_resume(void) {}
- static inline void imx53_suspend(void __iomem *ocram_vbase) {}
- static const u32 imx53_suspend_sz;
- static inline void imx6_suspend(void __iomem *ocram_vbase) {}
- #endif
- 
-+void v7_cpu_resume(void);
-+
- void imx6_pm_ccm_init(const char *ccm_compat);
- void imx6q_pm_init(void);
- void imx6dl_pm_init(void);
-diff --git a/arch/arm/mach-imx/resume-imx6.S b/arch/arm/mach-imx/resume-imx6.S
-new file mode 100644
-index 000000000000..5bd1ba7ef15b
---- /dev/null
-+++ b/arch/arm/mach-imx/resume-imx6.S
-@@ -0,0 +1,24 @@
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
-+/*
-+ * Copyright 2014 Freescale Semiconductor, Inc.
-+ */
-+
-+#include <linux/linkage.h>
-+#include <asm/assembler.h>
-+#include <asm/asm-offsets.h>
-+#include <asm/hardware/cache-l2x0.h>
-+#include "hardware.h"
-+
-+/*
-+ * The following code must assume it is running from physical address
-+ * where absolute virtual addresses to the data section have to be
-+ * turned into relative ones.
-+ */
-+
-+ENTRY(v7_cpu_resume)
-+	bl	v7_invalidate_l1
-+#ifdef CONFIG_CACHE_L2X0
-+	bl	l2c310_early_resume
-+#endif
-+	b	cpu_resume
-+ENDPROC(v7_cpu_resume)
-diff --git a/arch/arm/mach-imx/suspend-imx6.S b/arch/arm/mach-imx/suspend-imx6.S
-index 062391ff13da..1eabf2d2834b 100644
---- a/arch/arm/mach-imx/suspend-imx6.S
-+++ b/arch/arm/mach-imx/suspend-imx6.S
-@@ -327,17 +327,3 @@ resume:
- 
- 	ret	lr
- ENDPROC(imx6_suspend)
--
--/*
-- * The following code must assume it is running from physical address
-- * where absolute virtual addresses to the data section have to be
-- * turned into relative ones.
-- */
--
--ENTRY(v7_cpu_resume)
--	bl	v7_invalidate_l1
--#ifdef CONFIG_CACHE_L2X0
--	bl	l2c310_early_resume
--#endif
--	b	cpu_resume
--ENDPROC(v7_cpu_resume)
 -- 
-2.25.0
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
