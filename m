@@ -2,63 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D65113DE8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:23:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6677013DE90
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:23:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8PCvz14t4kK5Ujq2YGckq235mxINi+t/PRQoOcKPn8=; b=JSb+374Y81pjwf
-	fPPM/TJmgKNE/rm32NsxHcPQXT4zxlSZkK+psevoiDJiAyyHAkwReQsUtk6GMsg0Xq2cmiTpp/UrS
-	noVImUjiN6lVLnj60EmMgXfI9o3GFeQpO1p02JpcuAWWBTfyLEmqVXrQNAuARk2oOAAed7L+IGepK
-	o+wWr44Q2tNK7u3AWmdDXMWGCLh4BTqYtMv37WH+yfb/l2Lf0uX2JSGXr3bQWc8wt2ZtPqeypMT/c
-	pMcc8Rw5xBRQxqjp0e9/4zjU9K2eke+AcLOq3H7PASvfZI+3GSIhr+ALdOJdw3xHGb8xTnBG0PtJV
-	FUzSwHlL37aNfQTN2Ndw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Fi7TRzQp8ELWi+kPLVko4MomjT36cnsElHJplhDREHM=; b=E9I
+	hrNjujQXHB5SlFxHoh7THJQwgz8XYO8BeFaono8+4m2Z1+rujdb0RZxu1MEaDTLFdq52y0ppQn0UW
+	ZYtgEg0C6PdpGWnKhJ47CBjMXP3uoixfCsJIuOXeeUOMHEuPz8cUSPwIMEpIwOcqZma6yyN05CwPB
+	JMrUQFqzLEWAxpSLdzMlNtdtbSl3rHp/gCeugWBuwCJXcyqrUQ5wzsfNHNKaZOqWbeqehUNFGlNop
+	iLofN/2QY8QxxqEJPMlHKdD2aA2oThNwgLLD6HCEd+RaPvvGs4dOokPVwKOAzCeSGTNKy4OC1XVa7
+	JkOguETKpzg4KjuQeQVARQ3fZEuZ0kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is6zM-0001s1-K8; Thu, 16 Jan 2020 15:23:16 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1is6zd-00026V-DR; Thu, 16 Jan 2020 15:23:33 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is6yJ-00018z-9t
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:22:17 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 16 Jan 2020 07:22:08 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,326,1574150400"; d="scan'208";a="305882826"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga001.jf.intel.com with ESMTP; 16 Jan 2020 07:22:06 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1is6yD-000364-O7; Thu, 16 Jan 2020 23:22:05 +0800
-Date: Thu, 16 Jan 2020 23:21:35 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH V2] firmware: arm_scmi: Make scmi core independent of
- transport type
-Message-ID: <202001162201.1Pv3qXxS%lkp@intel.com>
-References: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3f5567ec928e20963d729350e6d674c4acb0c7a0.1578648530.git.viresh.kumar@linaro.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1is6ym-0001Wx-IX; Thu, 16 Jan 2020 15:22:49 +0000
+Received: by mail-wm1-x342.google.com with SMTP id q9so4156541wmj.5;
+ Thu, 16 Jan 2020 07:22:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=BnEd8pZLOsNzEcf/hD74xIUCJX1M88ctHi8XzXwQaAI=;
+ b=aikWIarVLloed14F5OIMFvEyJVmKN6OF1qfz0Qdylcj3kpHqFaMomNVQyGJTGKJw8b
+ rflDWTjMRDAz6x1Ja3GzO7csaMbGtmVhLyMVWbFALyH49k/1chwMaUXnrVDYPyYvakLk
+ OeOK2qXVAcRwAiU7yevlLgGmCOZIQ4e1MXBEcpc5+pYNDh46w1kPWAvdpRATCihVHIG5
+ SkFYJ6EZe9UUkiJoJlFMQ8YoWmnE1AvtqTzWXXyDnzgReqxiEYghwiC1a4kymdCIyL5H
+ 3X5bnueyXv+uLt1rn//tyFkGzV6sv28YXuAt2TVRbMfyJkJbFdmKz3o2BegU1fLP2wUu
+ UvYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=BnEd8pZLOsNzEcf/hD74xIUCJX1M88ctHi8XzXwQaAI=;
+ b=Stw77P9sAjZLGwuCVXSLKx0ZPopWBI2HlAaU0G5fdXHhhpIfGR5ynqoWIPUiCwBg3k
+ ftCEFE2A4IKGjWYWdDIOdUHf+X6RgZ393PniwrbApdNivXmUSBEtjcF+9XWEn8nZajBs
+ ywM3rio1/0giv/XY9sXu0j1GcwNUBYbMXaJgniP6+oPpTaPVlzhqfzPx12xk6c94BUrf
+ oYv3fJynpIAK+HeSbXWRHkGdgH73b/3LMgRpnIzev515VFQ0LGikydtEaoo7ZLTTAPL7
+ dyQX5m1zS0MeyIFs7aVDQHkhyIOH49svi06DUR+v9jagZmOF4ErSTACfIRAcw7g073ku
+ QK6w==
+X-Gm-Message-State: APjAAAVWaivFLdlUENwBw72njYBh56/lp+dKZ0g1aK8a4Huw2J3VYMhB
+ NsyoF2b0J13PZShxsGnax9c=
+X-Google-Smtp-Source: APXvYqwKobefMQP0qBZ94XDP5YJxuDbHjTaFBdcz60Ibwj5bHmz5eOc1T0WR2+KHKPSNpU0Vnpel1w==
+X-Received: by 2002:a7b:c949:: with SMTP id i9mr6665432wml.131.1579188158655; 
+ Thu, 16 Jan 2020 07:22:38 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id w8sm18193wmd.2.2020.01.16.07.22.37
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 Jan 2020 07:22:37 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: ulf.hansson@linaro.org
+Subject: [PATCH v2 1/3] dt-bindings: mmc: convert synopsys dw-mshc bindings to
+ yaml
+Date: Thu, 16 Jan 2020 16:22:28 +0100
+Message-Id: <20200116152230.29831-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_072211_908211_97F5F413 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200116_072240_675626_1F963244 
+X-CRM114-Status: GOOD (  24.61  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,183 +94,334 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, kbuild-all@lists.01.org, arnd@arndb.de,
- Viresh Kumar <viresh.kumar@linaro.org>, jassisinghbrar@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>, cristian.marussi@arm.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh,
+Current dts files with 'dwmmc' nodes are manually verified.
+In order to automate this process synopsys-dw-mshc.txt
+has to be converted to yaml. In the new setup
+synopsys-dw-mshc.yaml will inherit properties from
+mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
+'dwmmc' will no longer be a valid name for a node and
+should be changed to 'mmc'.
 
-I love your patch! Perhaps something to improve:
-
-[auto build test WARNING on linux/master]
-[also build test WARNING on linus/master v5.5-rc6]
-[cannot apply to arm-soc/for-next next-20200115]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Viresh-Kumar/firmware-arm_scmi-Make-scmi-core-independent-of-transport-type/20200111-034851
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 1522d9da40bdfe502c91163e6d769332897201fa
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-130-g1a803e7a-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
->> drivers/firmware/arm_scmi/driver.c:166:37: sparse: sparse: incorrect type in argument 1 (different address spaces)
->> drivers/firmware/arm_scmi/driver.c:166:37: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:166:37: sparse:    got unsigned char *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:168:24: sparse:    expected void [noderef] <asn:2> *
->> drivers/firmware/arm_scmi/driver.c:168:24: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:171:54: sparse: sparse: incorrect type in argument 2 (different address spaces)
->> drivers/firmware/arm_scmi/driver.c:171:54: sparse:    expected void const volatile [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:171:54: sparse:    got unsigned char *
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:220:9: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:223:25: sparse: sparse: incorrect type in argument 2 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:223:25: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:223:25: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:225:20: sparse: sparse: incorrect type in argument 2 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:225:20: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:225:20: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:226:57: sparse: sparse: incorrect type in argument 2 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:226:57: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:226:57: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:227:47: sparse: sparse: incorrect type in argument 2 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:227:47: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:227:47: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:229:29: sparse: sparse: incorrect type in argument 1 (different address spaces)
->> drivers/firmware/arm_scmi/driver.c:229:29: sparse:    expected void volatile [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:229:29: sparse:    got unsigned char *
-   drivers/firmware/arm_scmi/driver.c:321:29: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:321:29: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:321:29: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:363:23: sparse:    got restricted __le32 *
-   drivers/firmware/arm_scmi/driver.c:368:26: sparse: sparse: incorrect type in argument 1 (different address spaces)
-   drivers/firmware/arm_scmi/driver.c:368:26: sparse:    expected void [noderef] <asn:2> *
-   drivers/firmware/arm_scmi/driver.c:368:26: sparse:    got restricted __le32 *
->> drivers/firmware/arm_scmi/driver.c:707:24: sparse: sparse: incorrect type in assignment (different address spaces)
->> drivers/firmware/arm_scmi/driver.c:707:24: sparse:    expected void *payload
->> drivers/firmware/arm_scmi/driver.c:707:24: sparse:    got void [noderef] <asn:2> *
-
-vim +166 drivers/firmware/arm_scmi/driver.c
-
-aa4f886f3893f8 Sudeep Holla 2017-03-28  162  
-aa4f886f3893f8 Sudeep Holla 2017-03-28  163  static void scmi_fetch_response(struct scmi_xfer *xfer,
-800abc7f2fa85c Viresh Kumar 2020-01-10  164  				struct scmi_shared_mem *mem)
-aa4f886f3893f8 Sudeep Holla 2017-03-28  165  {
-aa4f886f3893f8 Sudeep Holla 2017-03-28 @166  	xfer->hdr.status = ioread32(mem->msg_payload);
-c29a628976b39e Sudeep Holla 2019-07-08  167  	/* Skip the length of header and status in payload area i.e 8 bytes */
-aa4f886f3893f8 Sudeep Holla 2017-03-28 @168  	xfer->rx.len = min_t(size_t, xfer->rx.len, ioread32(&mem->length) - 8);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  169  
-aa4f886f3893f8 Sudeep Holla 2017-03-28  170  	/* Take a copy to the rx buffer.. */
-aa4f886f3893f8 Sudeep Holla 2017-03-28 @171  	memcpy_fromio(xfer->rx.buf, mem->msg_payload + 4, xfer->rx.len);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  172  }
-aa4f886f3893f8 Sudeep Holla 2017-03-28  173  
-aa4f886f3893f8 Sudeep Holla 2017-03-28  174  /**
-aa4f886f3893f8 Sudeep Holla 2017-03-28  175   * pack_scmi_header() - packs and returns 32-bit header
-aa4f886f3893f8 Sudeep Holla 2017-03-28  176   *
-aa4f886f3893f8 Sudeep Holla 2017-03-28  177   * @hdr: pointer to header containing all the information on message id,
-aa4f886f3893f8 Sudeep Holla 2017-03-28  178   *	protocol id and sequence id.
-1baf47c2e5c946 Sudeep Holla 2018-05-09  179   *
-5b65af8f60f580 Sudeep Holla 2019-07-08  180   * Return: 32-bit packed message header to be sent to the platform.
-aa4f886f3893f8 Sudeep Holla 2017-03-28  181   */
-aa4f886f3893f8 Sudeep Holla 2017-03-28  182  static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
-aa4f886f3893f8 Sudeep Holla 2017-03-28  183  {
-354b2e36d7dea9 Sudeep Holla 2018-05-09  184  	return FIELD_PREP(MSG_ID_MASK, hdr->id) |
-354b2e36d7dea9 Sudeep Holla 2018-05-09  185  		FIELD_PREP(MSG_TOKEN_ID_MASK, hdr->seq) |
-354b2e36d7dea9 Sudeep Holla 2018-05-09  186  		FIELD_PREP(MSG_PROTOCOL_ID_MASK, hdr->protocol_id);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  187  }
-aa4f886f3893f8 Sudeep Holla 2017-03-28  188  
-22d1f76109f74b Sudeep Holla 2019-07-08  189  /**
-22d1f76109f74b Sudeep Holla 2019-07-08  190   * unpack_scmi_header() - unpacks and records message and protocol id
-22d1f76109f74b Sudeep Holla 2019-07-08  191   *
-22d1f76109f74b Sudeep Holla 2019-07-08  192   * @msg_hdr: 32-bit packed message header sent from the platform
-22d1f76109f74b Sudeep Holla 2019-07-08  193   * @hdr: pointer to header to fetch message and protocol id.
-22d1f76109f74b Sudeep Holla 2019-07-08  194   */
-22d1f76109f74b Sudeep Holla 2019-07-08  195  static inline void unpack_scmi_header(u32 msg_hdr, struct scmi_msg_hdr *hdr)
-22d1f76109f74b Sudeep Holla 2019-07-08  196  {
-22d1f76109f74b Sudeep Holla 2019-07-08  197  	hdr->id = MSG_XTRACT_ID(msg_hdr);
-22d1f76109f74b Sudeep Holla 2019-07-08  198  	hdr->protocol_id = MSG_XTRACT_PROT_ID(msg_hdr);
-22d1f76109f74b Sudeep Holla 2019-07-08  199  }
-22d1f76109f74b Sudeep Holla 2019-07-08  200  
-aa4f886f3893f8 Sudeep Holla 2017-03-28  201  /**
-800abc7f2fa85c Viresh Kumar 2020-01-10  202   * scmi_tx_prepare() - callback to prepare for the transfer
-aa4f886f3893f8 Sudeep Holla 2017-03-28  203   *
-800abc7f2fa85c Viresh Kumar 2020-01-10  204   * @cinfo: SCMI channel info
-800abc7f2fa85c Viresh Kumar 2020-01-10  205   * @t: transfer message
-aa4f886f3893f8 Sudeep Holla 2017-03-28  206   *
-aa4f886f3893f8 Sudeep Holla 2017-03-28  207   * This function prepares the shared memory which contains the header and the
-aa4f886f3893f8 Sudeep Holla 2017-03-28  208   * payload.
-aa4f886f3893f8 Sudeep Holla 2017-03-28  209   */
-800abc7f2fa85c Viresh Kumar 2020-01-10  210  void scmi_tx_prepare(struct scmi_chan_info *cinfo, struct scmi_xfer *t)
-aa4f886f3893f8 Sudeep Holla 2017-03-28  211  {
-800abc7f2fa85c Viresh Kumar 2020-01-10  212  	struct scmi_shared_mem *mem = cinfo->payload;
-aa4f886f3893f8 Sudeep Holla 2017-03-28  213  
-9dc34d635c67e5 Sudeep Holla 2019-07-08  214  	/*
-9dc34d635c67e5 Sudeep Holla 2019-07-08  215  	 * Ideally channel must be free by now unless OS timeout last
-9dc34d635c67e5 Sudeep Holla 2019-07-08  216  	 * request and platform continued to process the same, wait
-9dc34d635c67e5 Sudeep Holla 2019-07-08  217  	 * until it releases the shared memory, otherwise we may endup
-9dc34d635c67e5 Sudeep Holla 2019-07-08  218  	 * overwriting its response with new message payload or vice-versa
-9dc34d635c67e5 Sudeep Holla 2019-07-08  219  	 */
-9dc34d635c67e5 Sudeep Holla 2019-07-08  220  	spin_until_cond(ioread32(&mem->channel_status) &
-9dc34d635c67e5 Sudeep Holla 2019-07-08  221  			SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  222  	/* Mark channel busy + clear error */
-aa4f886f3893f8 Sudeep Holla 2017-03-28  223  	iowrite32(0x0, &mem->channel_status);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  224  	iowrite32(t->hdr.poll_completion ? 0 : SCMI_SHMEM_FLAG_INTR_ENABLED,
-aa4f886f3893f8 Sudeep Holla 2017-03-28  225  		  &mem->flags);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  226  	iowrite32(sizeof(mem->msg_header) + t->tx.len, &mem->length);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  227  	iowrite32(pack_scmi_header(&t->hdr), &mem->msg_header);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  228  	if (t->tx.buf)
-aa4f886f3893f8 Sudeep Holla 2017-03-28 @229  		memcpy_toio(mem->msg_payload, t->tx.buf, t->tx.len);
-aa4f886f3893f8 Sudeep Holla 2017-03-28  230  }
-aa4f886f3893f8 Sudeep Holla 2017-03-28  231  
-
-:::::: The code at line 166 was first introduced by commit
-:::::: aa4f886f3893f88146e8e02fd1e9c5c9e43cbcc1 firmware: arm_scmi: add basic driver infrastructure for SCMI
-
-:::::: TO: Sudeep Holla <sudeep.holla@arm.com>
-:::::: CC: Sudeep Holla <sudeep.holla@arm.com>
-
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
-0-DAY kernel test infrastructure                 Open Source Technology Center
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+ .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  68 ++++++++++
+ .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
+ .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  70 ++++++++++
+ 3 files changed, 138 insertions(+), 141 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+ delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+ create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+
+diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+new file mode 100644
+index 000000000..890d47a87
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+@@ -0,0 +1,68 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc-common.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Synopsys Designware Mobile Storage Host Controller Common Properties
++
++allOf:
++  - $ref: "mmc-controller.yaml#"
++
++maintainers:
++  - Ulf Hansson <ulf.hansson@linaro.org>
++
++# Everything else is described in the common file
++properties:
++  resets:
++    maxItems: 1
++
++  reset-names:
++    const: reset
++
++  clock-frequency:
++    description:
++      Should be the frequency (in Hz) of the ciu clock.  If this
++      is specified and the ciu clock is specified then we'll try to set the ciu
++      clock to this at probe time.
++
++  fifo-depth:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      The maximum size of the tx/rx fifo's. If this property is not
++      specified, the default value of the fifo size is determined from the
++      controller registers.
++
++  card-detect-delay:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - default: 0
++    description:
++      Delay in milli-seconds before detecting card after card
++      insert event. The default value is 0.
++
++  data-addr:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Override fifo address with value provided by DT. The default FIFO reg
++      offset is assumed as 0x100 (version < 0x240A) and 0x200(version >= 0x240A)
++      by driver. If the controller does not follow this rule, please use
++      this property to set fifo address in device tree.
++
++  fifo-watermark-aligned:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Data done irq is expected if data length is less than
++      watermark in PIO mode. But fifo watermark is requested to be aligned
++      with data length in some SoC so that TX/RX irq can be generated with
++      data done irq. Add this watermark quirk to mark this requirement and
++      force fifo watermark setting accordingly.
++
++  dmas:
++    maxItems: 1
++
++  dma-names:
++    const: rx-tx
+diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+deleted file mode 100644
+index 7e5e427a2..000000000
+--- a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
++++ /dev/null
+@@ -1,141 +0,0 @@
+-* Synopsys Designware Mobile Storage Host Controller
+-
+-The Synopsys designware mobile storage host controller is used to interface
+-a SoC with storage medium such as eMMC or SD/MMC cards. This file documents
+-differences between the core mmc properties described by mmc.txt and the
+-properties used by the Synopsys Designware Mobile Storage Host Controller.
+-
+-Required Properties:
+-
+-* compatible: should be
+-	- snps,dw-mshc: for controllers compliant with synopsys dw-mshc.
+-* #address-cells: should be 1.
+-* #size-cells: should be 0.
+-
+-# Slots (DEPRECATED): The slot specific information are contained within
+-  child-nodes with each child-node representing a supported slot. There should
+-  be atleast one child node representing a card slot. The name of the child node
+-  representing the slot is recommended to be slot@n where n is the unique number
+-  of the slot connected to the controller. The following are optional properties
+-  which can be included in the slot child node.
+-
+-	* reg: specifies the physical slot number. The valid values of this
+-	  property is 0 to (num-slots -1), where num-slots is the value
+-	  specified by the num-slots property.
+-
+-	* bus-width: as documented in mmc core bindings.
+-
+-	* wp-gpios: specifies the write protect gpio line. The format of the
+-	  gpio specifier depends on the gpio controller. If a GPIO is not used
+-	  for write-protect, this property is optional.
+-
+-	* disable-wp: If the wp-gpios property isn't present then (by default)
+-	  we'd assume that the write protect is hooked up directly to the
+-	  controller's special purpose write protect line (accessible via
+-	  the WRTPRT register).  However, it's possible that we simply don't
+-	  want write protect.  In that case specify 'disable-wp'.
+-	  NOTE: This property is not required for slots known to always
+-	  connect to eMMC or SDIO cards.
+-
+-Optional properties:
+-
+-* resets: phandle + reset specifier pair, intended to represent hardware
+-  reset signal present internally in some host controller IC designs.
+-  See Documentation/devicetree/bindings/reset/reset.txt for details.
+-
+-* reset-names: request name for using "resets" property. Must be "reset".
+-	(It will be used together with "resets" property.)
+-
+-* clocks: from common clock binding: handle to biu and ciu clocks for the
+-  bus interface unit clock and the card interface unit clock.
+-
+-* clock-names: from common clock binding: Shall be "biu" and "ciu".
+-  If the biu clock is missing we'll simply skip enabling it.  If the
+-  ciu clock is missing we'll just assume that the clock is running at
+-  clock-frequency.  It is an error to omit both the ciu clock and the
+-  clock-frequency.
+-
+-* clock-frequency: should be the frequency (in Hz) of the ciu clock.  If this
+-  is specified and the ciu clock is specified then we'll try to set the ciu
+-  clock to this at probe time.
+-
+-* fifo-depth: The maximum size of the tx/rx fifo's. If this property is not
+-  specified, the default value of the fifo size is determined from the
+-  controller registers.
+-
+-* card-detect-delay: Delay in milli-seconds before detecting card after card
+-  insert event. The default value is 0.
+-
+-* data-addr: Override fifo address with value provided by DT. The default FIFO reg
+-  offset is assumed as 0x100 (version < 0x240A) and 0x200(version >= 0x240A) by
+-  driver. If the controller does not follow this rule, please use this property
+-  to set fifo address in device tree.
+-
+-* fifo-watermark-aligned: Data done irq is expected if data length is less than
+-  watermark in PIO mode. But fifo watermark is requested to be aligned with data
+-  length in some SoC so that TX/RX irq can be generated with data done irq. Add this
+-  watermark quirk to mark this requirement and force fifo watermark setting
+-  accordingly.
+-
+-* vmmc-supply: The phandle to the regulator to use for vmmc.  If this is
+-  specified we'll defer probe until we can find this regulator.
+-
+-* dmas: List of DMA specifiers with the controller specific format as described
+-  in the generic DMA client binding. Refer to dma.txt for details.
+-
+-* dma-names: request names for generic DMA client binding. Must be "rx-tx".
+-  Refer to dma.txt for details.
+-
+-Aliases:
+-
+-- All the MSHC controller nodes should be represented in the aliases node using
+-  the following format 'mshc{n}' where n is a unique number for the alias.
+-
+-Example:
+-
+-The MSHC controller node can be split into two portions, SoC specific and
+-board specific portions as listed below.
+-
+-	dwmmc0@12200000 {
+-		compatible = "snps,dw-mshc";
+-		clocks = <&clock 351>, <&clock 132>;
+-		clock-names = "biu", "ciu";
+-		reg = <0x12200000 0x1000>;
+-		interrupts = <0 75 0>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		data-addr = <0x200>;
+-		fifo-watermark-aligned;
+-		resets = <&rst 20>;
+-		reset-names = "reset";
+-	};
+-
+-[board specific internal DMA resources]
+-
+-	dwmmc0@12200000 {
+-		clock-frequency = <400000000>;
+-		clock-freq-min-max = <400000 200000000>;
+-		broken-cd;
+-		fifo-depth = <0x80>;
+-		card-detect-delay = <200>;
+-		vmmc-supply = <&buck8>;
+-		bus-width = <8>;
+-		cap-mmc-highspeed;
+-		cap-sd-highspeed;
+-	};
+-
+-[board specific generic DMA request binding]
+-
+-	dwmmc0@12200000 {
+-		clock-frequency = <400000000>;
+-		clock-freq-min-max = <400000 200000000>;
+-		broken-cd;
+-		fifo-depth = <0x80>;
+-		card-detect-delay = <200>;
+-		vmmc-supply = <&buck8>;
+-		bus-width = <8>;
+-		cap-mmc-highspeed;
+-		cap-sd-highspeed;
+-		dmas = <&pdma 12>;
+-		dma-names = "rx-tx";
+-	};
+diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+new file mode 100644
+index 000000000..05f9f36dc
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+@@ -0,0 +1,70 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Synopsys Designware Mobile Storage Host Controller Binding
++
++allOf:
++  - $ref: "synopsys-dw-mshc-common.yaml#"
++
++maintainers:
++  - Ulf Hansson <ulf.hansson@linaro.org>
++
++# Everything else is described in the common file
++properties:
++  compatible:
++    const: snps,dw-mshc
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    minItems: 2
++    maxItems: 2
++    description:
++      Handle to "biu" and "ciu" clocks for the
++      bus interface unit clock and the card interface unit clock.
++
++  clock-names:
++    items:
++      - const: biu
++      - const: ciu
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++examples:
++  - |
++    mmc@12200000 {
++      compatible = "snps,dw-mshc";
++      reg = <0x12200000 0x1000>;
++      interrupts = <0 75 0>;
++      clocks = <&clock 351>, <&clock 132>;
++      clock-names = "biu", "ciu";
++      dmas = <&pdma 12>;
++      dma-names = "rx-tx";
++      resets = <&rst 20>;
++      reset-names = "reset";
++      vmmc-supply = <&buck8>;
++      #address-cells = <1>;
++      #size-cells = <0>;
++      broken-cd;
++      bus-width = <8>;
++      cap-mmc-highspeed;
++      cap-sd-highspeed;
++      card-detect-delay = <200>;
++      clock-freq-min-max = <400000 200000000>;
++      clock-frequency = <400000000>;
++      data-addr = <0x200>;
++      fifo-depth = <0x80>;
++      fifo-watermark-aligned;
++    };
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
