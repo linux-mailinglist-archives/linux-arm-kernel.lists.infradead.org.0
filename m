@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE6ED13F009
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:19:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7769A13F00A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:20:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JsMGwPq/rIINUXN1kbbKqVemHkTC+8Mc+6hHWfbNK1c=; b=OPsQPPTAbPgFK0
-	aE1Wd8tLuUE8kg4BPQ0Vx5/8h0RIpZgiSw25XUFmShzqzYsBpmLbVBR5iybDxPimAeTfiM+beSDlN
-	V+WTmfk7hHfPhiwo13+D6ru30GwNeAjJP2v8tqSqV6YbG/686vLbmHZzApJ6Lh1/FPDL2AEMjfzIj
-	he9AsbQ9DfExhOdNziTZGnqjAiyXSTRD1Vvw2iMSJ7rtYiM/0aBwpBfbYSPvbT1zLBsGe7GKIU8nF
-	t8qgVsYa/7HyUkVyzz4xhT5bIEIg6EeIlYOBP3blmmOB6148FYfRshChvv7yowaYAqJDXUnDCw5dq
-	0O0MhBk078QH25ke9vRg==;
+	List-Owner; bh=SgY6d3UqR7LGomWnA7dHaFFiyrl2g1dUv8GMMGrsbVQ=; b=a8cNdcuHklzFSl
+	ZfYGf6n0Hli5oJZR7UlzSK011Mwl+VgH9KsVAlmgkjnW129P6GAAQ2DuP2q8SF1m1okHUtSoHeCve
+	crmulo18xpWKl/W+kEtMKkGTbaOz+LdDV3KwjGmSPABNaNw97ukWh4XndNZzWODJ3NDf9rCOm9ast
+	jILp8+RxpsAH5CQYP3nOpB6Fg25Y2lgDMgwKaEV3M0Fuzt0sxh2Z/cjANA4ZDYngq+kWbQULXcL2K
+	kixd8cf3EWETReiSyjSqUFEC/e30xEI8WCtds5RmpW2NuSemck350oMe8rDA+rfPsQGyUAjMeQvI2
+	pkNG+tmyjvA37/JCLmSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9k6-0003Dy-0Q; Thu, 16 Jan 2020 18:19:42 +0000
+	id 1is9kc-0003Xv-J0; Thu, 16 Jan 2020 18:20:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is95T-0006zw-MM
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:38:02 +0000
+ id 1is95W-00071C-Bk
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:38:10 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 116A2246D8;
- Thu, 16 Jan 2020 17:37:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B605E246CD;
+ Thu, 16 Jan 2020 17:37:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196262;
- bh=TG5zhRS08XgjaFvPCbqcWFFnRDBrZMFyoPlDmRPuNak=;
+ s=default; t=1579196265;
+ bh=7Ib8Ng+ghXxuvkABsdz66tKXJ5t4d1VzFvS70GhBrfI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jyHndrtOaGmWF4XI5RFtsLNV73Svb81iC57k6AZiKYRMO9Ab0qHjXnR8T0fW1oft+
- kqxYyWDKhIkhGa3MZlIvvfWNn/gdvie4S+fefzzeeQdTbH4o68JV7HS9IlV3Xgd6Xj
- d7byMNn61jZgjflj5W7xDA5xZ/zkS+WH0uE+S0jg=
+ b=G3wfLsuvuYRbGtAGYQOKQWeLo3rB9/HdBrUJRIm7XyTZC/1XPv7vDK8CQVfJ3oSrg
+ uR11SRWWgAeYd15fbAKqDaBv35fO9YmP4QXQgPHpG1XL1z1FVOecWh17tZIHQmIxOh
+ BgrflICL0Epabr4I3ezr65wqdy6psoLg7PxUKrus=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 087/251] mmc: sdhci-brcmstb: handle mmc_of_parse()
- errors during probe
-Date: Thu, 16 Jan 2020 12:33:56 -0500
-Message-Id: <20200116173641.22137-47-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 088/251] ARM: 8847/1: pm: fix HYP/SVC mode
+ mismatch when MCPM is used
+Date: Thu, 16 Jan 2020 12:33:57 -0500
+Message-Id: <20200116173641.22137-48-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093744_591221_3D571E1C 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20200116_093746_889913_AAA5847A 
+X-CRM114-Status: GOOD (  13.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +80,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>, Sasha Levin <sashal@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Nicolas Pitre <nico@linaro.org>,
+ linux-pm@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Wahren <stefan.wahren@i2se.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit 1e20186e706da8446f9435f2924cd65ab1397e73 ]
+[ Upstream commit ca70ea43f80c98582f5ffbbd1e6f4da2742da0c4 ]
 
-We need to handle mmc_of_parse() errors during probe otherwise the
-MMC driver could start without proper initialization (e.g. power sequence).
+MCPM does a soft reset of the CPUs and uses common cpu_resume() routine to
+perform low-level platform initialization. This results in a try to install
+HYP stubs for the second time for each CPU and results in false HYP/SVC
+mode mismatch detection. The HYP stubs are already installed at the
+beginning of the kernel initialization on the boot CPU (head.S) or in the
+secondary_startup() for other CPUs. To fix this issue MCPM code should use
+a cpu_resume() routine without HYP stubs installation.
 
-Fixes: 476bf3d62d5c ("mmc: sdhci-brcmstb: Add driver for Broadcom BRCMSTB SoCs")
-Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+This change fixes HYP/SVC mode mismatch on Samsung Exynos5422-based Odroid
+XU3/XU4/HC1 boards.
+
+Fixes: 3721924c8154 ("ARM: 8081/1: MCPM: provide infrastructure to allow for MCPM loopback")
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Acked-by: Nicolas Pitre <nico@linaro.org>
+Tested-by: Anand Moon <linux.amoon@gmail.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mmc/host/sdhci-brcmstb.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm/common/mcpm_entry.c   |  2 +-
+ arch/arm/include/asm/suspend.h |  1 +
+ arch/arm/kernel/sleep.S        | 12 ++++++++++++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mmc/host/sdhci-brcmstb.c b/drivers/mmc/host/sdhci-brcmstb.c
-index 159f6f64c68e..ed6473731b45 100644
---- a/drivers/mmc/host/sdhci-brcmstb.c
-+++ b/drivers/mmc/host/sdhci-brcmstb.c
-@@ -90,7 +90,9 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
- 	host->mmc->caps2 |= MMC_CAP2_HC_ERASE_SZ;
+diff --git a/arch/arm/common/mcpm_entry.c b/arch/arm/common/mcpm_entry.c
+index a923524d1040..8617323eb273 100644
+--- a/arch/arm/common/mcpm_entry.c
++++ b/arch/arm/common/mcpm_entry.c
+@@ -379,7 +379,7 @@ static int __init nocache_trampoline(unsigned long _arg)
+ 	unsigned int cluster = MPIDR_AFFINITY_LEVEL(mpidr, 1);
+ 	phys_reset_t phys_reset;
  
- 	sdhci_get_of_property(pdev);
--	mmc_of_parse(host->mmc);
-+	res = mmc_of_parse(host->mmc);
-+	if (res)
-+		goto err;
+-	mcpm_set_entry_vector(cpu, cluster, cpu_resume);
++	mcpm_set_entry_vector(cpu, cluster, cpu_resume_no_hyp);
+ 	setup_mm_for_reboot();
  
- 	/*
- 	 * Supply the existing CAPS, but clear the UHS modes. This
+ 	__mcpm_cpu_going_down(cpu, cluster);
+diff --git a/arch/arm/include/asm/suspend.h b/arch/arm/include/asm/suspend.h
+index 6c7182f32cef..e6c2f426f8c8 100644
+--- a/arch/arm/include/asm/suspend.h
++++ b/arch/arm/include/asm/suspend.h
+@@ -7,6 +7,7 @@ struct sleep_save_sp {
+ };
+ 
+ extern void cpu_resume(void);
++extern void cpu_resume_no_hyp(void);
+ extern void cpu_resume_arm(void);
+ extern int cpu_suspend(unsigned long, int (*)(unsigned long));
+ 
+diff --git a/arch/arm/kernel/sleep.S b/arch/arm/kernel/sleep.S
+index 0f6c1000582c..c8569390e7e7 100644
+--- a/arch/arm/kernel/sleep.S
++++ b/arch/arm/kernel/sleep.S
+@@ -119,6 +119,14 @@ ENDPROC(cpu_resume_after_mmu)
+ 	.text
+ 	.align
+ 
++#ifdef CONFIG_MCPM
++	.arm
++THUMB(	.thumb			)
++ENTRY(cpu_resume_no_hyp)
++ARM_BE8(setend be)			@ ensure we are in BE mode
++	b	no_hyp
++#endif
++
+ #ifdef CONFIG_MMU
+ 	.arm
+ ENTRY(cpu_resume_arm)
+@@ -134,6 +142,7 @@ ARM_BE8(setend be)			@ ensure we are in BE mode
+ 	bl	__hyp_stub_install_secondary
+ #endif
+ 	safe_svcmode_maskall r1
++no_hyp:
+ 	mov	r1, #0
+ 	ALT_SMP(mrc p15, 0, r0, c0, c0, 5)
+ 	ALT_UP_B(1f)
+@@ -162,6 +171,9 @@ ENDPROC(cpu_resume)
+ 
+ #ifdef CONFIG_MMU
+ ENDPROC(cpu_resume_arm)
++#endif
++#ifdef CONFIG_MCPM
++ENDPROC(cpu_resume_no_hyp)
+ #endif
+ 
+ 	.align 2
 -- 
 2.20.1
 
