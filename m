@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB01913E2B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:57:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A4AB13E2BB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:58:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AznGJiBrjcnklNC3/U/nILRxNKDOmLOOwwbAytzzDxw=; b=iaX9+88LB17ZCY
-	QHaz0PkKJJKqiYgOIH5GvUpNzBLhpD+OxcB5MaP6aYk2zpHl7OMduOYA0BOo6IHv/TUTQj1cFEOPb
-	CYEfgiDWgFrLClXA8gVrI3S91k5ATcPbGJNwuSlgOxKg3duZDe3uJRWNFyqDdtIbqARrJTIJBkI+c
-	1gyTWcNPEwC2Fxd2jtEaUEV7cStoKVaLcRD2+7omyDcsNEnydAy29+avxJ+fQ9SzMZ1GaWYfaRZhL
-	OQ0o3O4Bo5tJmmym8lFByA2DMYgfuowOqJJgsZv3OZf5I1zO3/72CVAoIFOEKQMSUNSVSTDTV3k1N
-	FczleEt0cN04cW3rL9cQ==;
+	List-Owner; bh=abQi8d8e3Y5cngImLc3lIcijZSeSBnIMwLTI2M4IjOU=; b=SmDHORmDZyosGp
+	v+T5b6lNa03+/Yj0+xOUzPDohX6YV7QImV3pfw7wQtx650EsykRwucIy5d3z16vQybXx2fKLtq5/j
+	y4pj1zpENbbxj4g2yLbeFv+jPamBYUUtx1UX6+kiqgatb3tISs4n0xteqceqrKFekCLkv5fX6CFTZ
+	vHCxQc5GK2fxgbB1HER3CJLrppRnhB8BDlCKYahyJPeywGZBxcbE+0In7bMVutZNxSlmt3bRR6GZ2
+	xlAVpgAb9w/EQMLeB6Fvm8l1CN1zMXMa00jAr8H5mZfmJV+m9ENIDPOeQZOaCOoAwGVETHX5baVbr
+	9MHzTyX0xFdi/07w9gOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Se-00056S-8t; Thu, 16 Jan 2020 16:57:36 +0000
+	id 1is8Sw-0005QH-70; Thu, 16 Jan 2020 16:57:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8P6-0000W6-6v
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:54:01 +0000
+ id 1is8PD-0000dv-Ke
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:54:07 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 72DA220730;
- Thu, 16 Jan 2020 16:53:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 617302176D;
+ Thu, 16 Jan 2020 16:54:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193635;
- bh=KgWLpGmJabYFlPdaEcw9F4Ql3GDN+A68D5/eBZPRZNk=;
+ s=default; t=1579193643;
+ bh=IsIQlCAKLjxmjSdijTYiULQA7efHkUvHXQUo4paPNIs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qndo76CEdaPTH6I9zBd2303VpKl6/ryXHtzKkdmJuH0HRt//TVSW1jV30q7aRPl70
- PgM0g2vN/inAbFUTLrjfAliPe1ByoLjSH3Opl6/i4ghIxp2ZY1VoxP/XLtHO26T/DG
- EmVn11W/Dd2clUhKzSBLULCt77lCbWvfqfh/hbbM=
+ b=k4rVYZsjwRcUVsCzlVBmg2/DDC53Mp8ey7KAPmjzsMk8GIGyQt9+K6zc034q2pFDv
+ HHPTRefI/GFHs/7171zT2x74tL2iAzWUsAKSe1RxEDHuuVZk4nXY2nk8SsMun9FuDw
+ YrL6ev8PBTkKtXCt4C4Yagk00t7+vfUh9fWDPQy8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 168/205] crypto: sun4i-ss - fix big endian issues
-Date: Thu, 16 Jan 2020 11:42:23 -0500
-Message-Id: <20200116164300.6705-168-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 174/205] arm64: dts: juno: Fix UART frequency
+Date: Thu, 16 Jan 2020 11:42:29 -0500
+Message-Id: <20200116164300.6705-174-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085356_328551_C9EAE7F5 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20200116_085403_719383_8AB3FD78 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,98 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Andre Przywara <andre.przywara@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
+From: Andre Przywara <andre.przywara@arm.com>
 
-[ Upstream commit d1d787bcebfe122a5bd443ae565696661e2e9656 ]
+[ Upstream commit 39a1a8941b27c37f79508426e27a2ec29829d66c ]
 
-When testing BigEndian kernel, the sun4i-ss was failling all crypto
-tests.
-This patch fix endian issues with it.
+Older versions of the Juno *SoC* TRM [1] recommended that the UART clock
+source should be 7.2738 MHz, whereas the *system* TRM [2] stated a more
+correct value of 7.3728 MHz. Somehow the wrong value managed to end up in
+our DT.
 
-Fixes: 6298e948215f ("crypto: sunxi-ss - Add Allwinner Security System crypto accelerator")
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Doing a prime factorisation, a modulo divide by 115200 and trying
+to buy a 7.2738 MHz crystal at your favourite electronics dealer suggest
+that the old value was actually a typo. The actual UART clock is driven
+by a PLL, configured via a parameter in some board.txt file in the
+firmware, which reads 7.37 MHz (sic!).
+
+Fix this to correct the baud rate divisor calculation on the Juno board.
+
+[1] http://infocenter.arm.com/help/topic/com.arm.doc.ddi0515b.b/DDI0515B_b_juno_arm_development_platform_soc_trm.pdf
+[2] http://infocenter.arm.com/help/topic/com.arm.doc.100113_0000_07_en/arm_versatile_express_juno_development_platform_(v2m_juno)_technical_reference_manual_100113_0000_07_en.pdf
+
+Fixes: 71f867ec130e ("arm64: Add Juno board device tree.")
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Acked-by: Liviu Dudau <liviu.dudau@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/crypto/sunxi-ss/sun4i-ss-hash.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ arch/arm64/boot/dts/arm/juno-clocks.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-index 1369c5fa3087..07df012893bb 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-@@ -175,7 +175,7 @@ static int sun4i_hash(struct ahash_request *areq)
- 	 */
- 	unsigned int i = 0, end, fill, min_fill, nwait, nbw = 0, j = 0, todo;
- 	unsigned int in_i = 0;
--	u32 spaces, rx_cnt = SS_RX_DEFAULT, bf[32] = {0}, wb = 0, v, ivmode = 0;
-+	u32 spaces, rx_cnt = SS_RX_DEFAULT, bf[32] = {0}, v, ivmode = 0;
- 	struct sun4i_req_ctx *op = ahash_request_ctx(areq);
- 	struct crypto_ahash *tfm = crypto_ahash_reqtfm(areq);
- 	struct sun4i_tfm_ctx *tfmctx = crypto_ahash_ctx(tfm);
-@@ -184,6 +184,7 @@ static int sun4i_hash(struct ahash_request *areq)
- 	struct sg_mapping_iter mi;
- 	int in_r, err = 0;
- 	size_t copied = 0;
-+	__le32 wb = 0;
+diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+index e5e265dfa902..2870b5eeb198 100644
+--- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+@@ -8,10 +8,10 @@
+  */
+ / {
+ 	/* SoC fixed clocks */
+-	soc_uartclk: refclk7273800hz {
++	soc_uartclk: refclk7372800hz {
+ 		compatible = "fixed-clock";
+ 		#clock-cells = <0>;
+-		clock-frequency = <7273800>;
++		clock-frequency = <7372800>;
+ 		clock-output-names = "juno:uartclk";
+ 	};
  
- 	dev_dbg(ss->dev, "%s %s bc=%llu len=%u mode=%x wl=%u h0=%0x",
- 		__func__, crypto_tfm_alg_name(areq->base.tfm),
-@@ -395,7 +396,7 @@ static int sun4i_hash(struct ahash_request *areq)
- 
- 		nbw = op->len - 4 * nwait;
- 		if (nbw) {
--			wb = *(u32 *)(op->buf + nwait * 4);
-+			wb = cpu_to_le32(*(u32 *)(op->buf + nwait * 4));
- 			wb &= GENMASK((nbw * 8) - 1, 0);
- 
- 			op->byte_count += nbw;
-@@ -404,7 +405,7 @@ static int sun4i_hash(struct ahash_request *areq)
- 
- 	/* write the remaining bytes of the nbw buffer */
- 	wb |= ((1 << 7) << (nbw * 8));
--	bf[j++] = wb;
-+	bf[j++] = le32_to_cpu(wb);
- 
- 	/*
- 	 * number of space to pad to obtain 64o minus 8(size) minus 4 (final 1)
-@@ -423,13 +424,13 @@ static int sun4i_hash(struct ahash_request *areq)
- 
- 	/* write the length of data */
- 	if (op->mode == SS_OP_SHA1) {
--		__be64 bits = cpu_to_be64(op->byte_count << 3);
--		bf[j++] = lower_32_bits(bits);
--		bf[j++] = upper_32_bits(bits);
-+		__be64 *bits = (__be64 *)&bf[j];
-+		*bits = cpu_to_be64(op->byte_count << 3);
-+		j += 2;
- 	} else {
--		__le64 bits = op->byte_count << 3;
--		bf[j++] = lower_32_bits(bits);
--		bf[j++] = upper_32_bits(bits);
-+		__le64 *bits = (__le64 *)&bf[j];
-+		*bits = cpu_to_le64(op->byte_count << 3);
-+		j += 2;
- 	}
- 	writesl(ss->base + SS_RXFIFO, bf, j);
- 
-@@ -471,7 +472,7 @@ static int sun4i_hash(struct ahash_request *areq)
- 		}
- 	} else {
- 		for (i = 0; i < 4; i++) {
--			v = readl(ss->base + SS_MD0 + i * 4);
-+			v = cpu_to_le32(readl(ss->base + SS_MD0 + i * 4));
- 			memcpy(areq->result + i * 4, &v, 4);
- 		}
- 	}
 -- 
 2.20.1
 
