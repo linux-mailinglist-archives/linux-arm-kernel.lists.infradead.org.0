@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EC3613EE18
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:07:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C891C13EE29
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:07:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iJWJARNoYBHj2NNBOLClr3OGrmCYG/IxpB2pcPYHFYA=; b=BoKLjb1zxpIz6u
-	hbno9Cqck7kOv2UPtqynNsgGO56ZhgjAF9tAgKB1k6upg/imcbdfkGgp6wNpgBeSBhEp2NAB3WL9Y
-	tH4AwEkToD2xiq/k0YdPajOzIsj25DPuJvb+L5kAt/LThmPZN0YaLyZ7r0mpFqLSG6XLHNAF70xTZ
-	rXTUZFWI1bhXJLFhDYZH8oqOD2NgRuA9aVFEPOIzwJTOG1o7shdPhiA8q9iHYjId8OC2RBV/F410Y
-	rCq2jeQShjnwOFEhtUqWtQiKQrPDrQzreSzTo3FVPSNw/5xRwyY3i8k4LsYaVZsENU1Bc2Hs4DQT8
-	P2QAwTXJ8u8CUluJCKCQ==;
+	List-Owner; bh=hYu8FE+1Dme2EOFMCXwp+rOdJWp8i6o0xBdScMQy+9U=; b=L3hsUeug8wl1sy
+	rRDtPn2t4QIVTiigoI9o1nks03bGF681dJeAze3EZ/wkr4fknL5yi1J95JmwFCyaDGpsu7tlI6Z/F
+	z4sSQlGB8NZHLYZT2al0c/RSFWZDI3TdSdZFao8RTAiklgthD/ynEUzdzFulISna73XnIW838EZZP
+	g/NgUvU522K8GQo4GEuXyErBcWbQqkHzOUdjEKvxpYEjPF1kJ6cBGmubahpo4r2UFLOkSdkpM3SEr
+	at6D8qytUjBaHlDzV51TyG0V3AJTIwGqBKBCtMW53Kwn83F0/g3yg9l2OTTMVRgvLI2EGACeMkDN1
+	fbqf7Ef4iCcENWRarXXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Xv-0004ub-Hk; Thu, 16 Jan 2020 18:07:07 +0000
+	id 1is9YG-0005Kw-Se; Thu, 16 Jan 2020 18:07:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8x4-0006KJ-Mf; Thu, 16 Jan 2020 17:29:05 +0000
+ id 1is8xY-0006m9-Ph
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:29:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 39659246FC;
- Thu, 16 Jan 2020 17:29:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BF8382471D;
+ Thu, 16 Jan 2020 17:29:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195742;
- bh=7VfQO9ZHJ8yQoCe1ayEZQ4PCtEclkhVMbtwss1+KNpg=;
+ s=default; t=1579195772;
+ bh=SvZ5OrhhiPtFOlvOroJEoAgQuDteiJvyZKM3FiexRWs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=unL8YjmuExZMASV3330PgDjwSSRjUpYojhHvxSFiZaT/UMq5Y/5D1umLByPSvEJ41
- GIlqhA806ODCjI+KNZIIUwkKO4hxWwZEjQMtreTOpZ+Mio7GHa2zLgjJMXSv1ktUI1
- Q374bYQptw5AlcmsgMdyY6OleHyFZ7WYYzmOWD+w=
+ b=kWPHzEW8lARk7BoFcZKRZxBD9C3gvm5//yGWiu3yhX+apdRtw6D6oU6nUdMkO4VAX
+ ndSWLEccZ25+OXC+b1kfN8xi2UcEhSrS5FncGyKhdRkFPLb8HNkJs21PWXrNhq0tB0
+ xyrp+9Fx30JQuL1KG7z24pDW1ul0VbXb7GXB/tnM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 277/371] iommu/mediatek: Fix iova_to_phys PA
- start for 4GB mode
-Date: Thu, 16 Jan 2020 12:22:29 -0500
-Message-Id: <20200116172403.18149-220-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 298/371] pinctrl: iproc-gpio: Fix incorrect
+ pinconf configurations
+Date: Thu, 16 Jan 2020 12:22:50 -0500
+Message-Id: <20200116172403.18149-241-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092902_809284_C8BE0765 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200116_092932_888353_98AC6164 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,102 +80,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Joerg Roedel <jroedel@suse.de>,
- iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Li Jin <li.jin@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yong Wu <yong.wu@mediatek.com>
+From: Li Jin <li.jin@broadcom.com>
 
-[ Upstream commit 76ce65464fcd2c21db84391572b7938b716aceb0 ]
+[ Upstream commit 398a1f50e3c731586182fd52b834103b0aa2f826 ]
 
-In M4U 4GB mode, the physical address is remapped as below:
+Fix drive strength for AON/CRMU controller; fix pull-up/down setting
+for CCM/CDRU controller.
 
-CPU Physical address:
-
-====================
-
-0      1G       2G     3G       4G     5G
-|---A---|---B---|---C---|---D---|---E---|
-+--I/O--+------------Memory-------------+
-
-IOMMU output physical address:
- =============================
-
-                                4G      5G     6G      7G      8G
-                                |---E---|---B---|---C---|---D---|
-                                +------------Memory-------------+
-
-The Region 'A'(I/O) can not be mapped by M4U; For Region 'B'/'C'/'D', the
-bit32 of the CPU physical address always is needed to set, and for Region
-'E', the CPU physical address keep as is. something looks like this:
-CPU PA         ->    M4U OUTPUT PA
-0x4000_0000          0x1_4000_0000 (Add bit32)
-0x8000_0000          0x1_8000_0000 ...
-0xc000_0000          0x1_c000_0000 ...
-0x1_0000_0000        0x1_0000_0000 (No change)
-
-Additionally, the iommu consumers always use the CPU phyiscal address.
-
-The PA in the iova_to_phys that is got from v7s always is u32, But
-from the CPU point of view, PA only need add BIT(32) when PA < 0x4000_0000.
-
-Fixes: 30e2fccf9512 ("iommu/mediatek: Enlarge the validate PA range
-for 4GB mode")
-Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-Signed-off-by: Joerg Roedel <jroedel@suse.de>
+Fixes: 616043d58a89 ("pinctrl: Rename gpio driver from cygnus to iproc")
+Signed-off-by: Li Jin <li.jin@broadcom.com>
+Link: https://lore.kernel.org/r/1567054348-19685-2-git-send-email-srinath.mannam@broadcom.com
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/iommu/mtk_iommu.c | 26 +++++++++++++++++++++++++-
- 1 file changed, 25 insertions(+), 1 deletion(-)
+ drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 96 +++++++++++++++++++-----
+ 1 file changed, 77 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index c30f62700431..0f99e95a1a73 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -115,6 +115,30 @@ struct mtk_iommu_domain {
+diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+index 85a8c97d9dfe..5fe419e468ec 100644
+--- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
++++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+@@ -54,8 +54,12 @@
+ /* drive strength control for ASIU GPIO */
+ #define IPROC_GPIO_ASIU_DRV0_CTRL_OFFSET 0x58
  
- static struct iommu_ops mtk_iommu_ops;
- 
-+/*
-+ * In M4U 4GB mode, the physical address is remapped as below:
-+ *
-+ * CPU Physical address:
-+ * ====================
-+ *
-+ * 0      1G       2G     3G       4G     5G
-+ * |---A---|---B---|---C---|---D---|---E---|
-+ * +--I/O--+------------Memory-------------+
-+ *
-+ * IOMMU output physical address:
-+ *  =============================
-+ *
-+ *                                 4G      5G     6G      7G      8G
-+ *                                 |---E---|---B---|---C---|---D---|
-+ *                                 +------------Memory-------------+
-+ *
-+ * The Region 'A'(I/O) can NOT be mapped by M4U; For Region 'B'/'C'/'D', the
-+ * bit32 of the CPU physical address always is needed to set, and for Region
-+ * 'E', the CPU physical address keep as is.
-+ * Additionally, The iommu consumers always use the CPU phyiscal address.
-+ */
-+#define MTK_IOMMU_4GB_MODE_REMAP_BASE	 0x40000000
+-/* drive strength control for CCM/CRMU (AON) GPIO */
+-#define IPROC_GPIO_DRV0_CTRL_OFFSET  0x00
++/* pinconf for CCM GPIO */
++#define IPROC_GPIO_PULL_DN_OFFSET   0x10
++#define IPROC_GPIO_PULL_UP_OFFSET   0x14
 +
- static LIST_HEAD(m4ulist);	/* List all the M4U HWs */
++/* pinconf for CRMU(aon) GPIO and CCM GPIO*/
++#define IPROC_GPIO_DRV_CTRL_OFFSET  0x00
  
- #define for_each_m4u(data)	list_for_each_entry(data, &m4ulist, list)
-@@ -404,7 +428,7 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
- 	pa = dom->iop->iova_to_phys(dom->iop, iova);
- 	spin_unlock_irqrestore(&dom->pgtlock, flags);
+ #define GPIO_BANK_SIZE 0x200
+ #define NGPIOS_PER_BANK 32
+@@ -76,6 +80,12 @@ enum iproc_pinconf_param {
+ 	IPROC_PINCON_MAX,
+ };
  
--	if (data->enable_4GB)
-+	if (data->enable_4GB && pa < MTK_IOMMU_4GB_MODE_REMAP_BASE)
- 		pa |= BIT_ULL(32);
++enum iproc_pinconf_ctrl_type {
++	IOCTRL_TYPE_AON = 1,
++	IOCTRL_TYPE_CDRU,
++	IOCTRL_TYPE_INVALID,
++};
++
+ /*
+  * Iproc GPIO core
+  *
+@@ -100,6 +110,7 @@ struct iproc_gpio {
  
- 	return pa;
+ 	void __iomem *base;
+ 	void __iomem *io_ctrl;
++	enum iproc_pinconf_ctrl_type io_ctrl_type;
+ 
+ 	raw_spinlock_t lock;
+ 
+@@ -461,20 +472,44 @@ static const struct pinctrl_ops iproc_pctrl_ops = {
+ static int iproc_gpio_set_pull(struct iproc_gpio *chip, unsigned gpio,
+ 				bool disable, bool pull_up)
+ {
++	void __iomem *base;
+ 	unsigned long flags;
++	unsigned int shift;
++	u32 val_1, val_2;
+ 
+ 	raw_spin_lock_irqsave(&chip->lock, flags);
+-
+-	if (disable) {
+-		iproc_set_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio, false);
++	if (chip->io_ctrl_type == IOCTRL_TYPE_CDRU) {
++		base = chip->io_ctrl;
++		shift = IPROC_GPIO_SHIFT(gpio);
++
++		val_1 = readl(base + IPROC_GPIO_PULL_UP_OFFSET);
++		val_2 = readl(base + IPROC_GPIO_PULL_DN_OFFSET);
++		if (disable) {
++			/* no pull-up or pull-down */
++			val_1 &= ~BIT(shift);
++			val_2 &= ~BIT(shift);
++		} else if (pull_up) {
++			val_1 |= BIT(shift);
++			val_2 &= ~BIT(shift);
++		} else {
++			val_1 &= ~BIT(shift);
++			val_2 |= BIT(shift);
++		}
++		writel(val_1, base + IPROC_GPIO_PULL_UP_OFFSET);
++		writel(val_2, base + IPROC_GPIO_PULL_DN_OFFSET);
+ 	} else {
+-		iproc_set_bit(chip, IPROC_GPIO_PAD_RES_OFFSET, gpio,
+-			       pull_up);
+-		iproc_set_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio, true);
++		if (disable) {
++			iproc_set_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio,
++				      false);
++		} else {
++			iproc_set_bit(chip, IPROC_GPIO_PAD_RES_OFFSET, gpio,
++				      pull_up);
++			iproc_set_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio,
++				      true);
++		}
+ 	}
+ 
+ 	raw_spin_unlock_irqrestore(&chip->lock, flags);
+-
+ 	dev_dbg(chip->dev, "gpio:%u set pullup:%d\n", gpio, pull_up);
+ 
+ 	return 0;
+@@ -483,14 +518,35 @@ static int iproc_gpio_set_pull(struct iproc_gpio *chip, unsigned gpio,
+ static void iproc_gpio_get_pull(struct iproc_gpio *chip, unsigned gpio,
+ 				 bool *disable, bool *pull_up)
+ {
++	void __iomem *base;
+ 	unsigned long flags;
++	unsigned int shift;
++	u32 val_1, val_2;
+ 
+ 	raw_spin_lock_irqsave(&chip->lock, flags);
+-	*disable = !iproc_get_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio);
+-	*pull_up = iproc_get_bit(chip, IPROC_GPIO_PAD_RES_OFFSET, gpio);
++	if (chip->io_ctrl_type == IOCTRL_TYPE_CDRU) {
++		base = chip->io_ctrl;
++		shift = IPROC_GPIO_SHIFT(gpio);
++
++		val_1 = readl(base + IPROC_GPIO_PULL_UP_OFFSET) & BIT(shift);
++		val_2 = readl(base + IPROC_GPIO_PULL_DN_OFFSET) & BIT(shift);
++
++		*pull_up = val_1 ? true : false;
++		*disable = (val_1 | val_2) ? false : true;
++
++	} else {
++		*disable = !iproc_get_bit(chip, IPROC_GPIO_RES_EN_OFFSET, gpio);
++		*pull_up = iproc_get_bit(chip, IPROC_GPIO_PAD_RES_OFFSET, gpio);
++	}
+ 	raw_spin_unlock_irqrestore(&chip->lock, flags);
+ }
+ 
++#define DRV_STRENGTH_OFFSET(gpio, bit, type)  ((type) == IOCTRL_TYPE_AON ? \
++	((2 - (bit)) * 4 + IPROC_GPIO_DRV_CTRL_OFFSET) : \
++	((type) == IOCTRL_TYPE_CDRU) ? \
++	((bit) * 4 + IPROC_GPIO_DRV_CTRL_OFFSET) : \
++	((bit) * 4 + IPROC_GPIO_REG(gpio, IPROC_GPIO_ASIU_DRV0_CTRL_OFFSET)))
++
+ static int iproc_gpio_set_strength(struct iproc_gpio *chip, unsigned gpio,
+ 				    unsigned strength)
+ {
+@@ -505,11 +561,8 @@ static int iproc_gpio_set_strength(struct iproc_gpio *chip, unsigned gpio,
+ 
+ 	if (chip->io_ctrl) {
+ 		base = chip->io_ctrl;
+-		offset = IPROC_GPIO_DRV0_CTRL_OFFSET;
+ 	} else {
+ 		base = chip->base;
+-		offset = IPROC_GPIO_REG(gpio,
+-					 IPROC_GPIO_ASIU_DRV0_CTRL_OFFSET);
+ 	}
+ 
+ 	shift = IPROC_GPIO_SHIFT(gpio);
+@@ -520,11 +573,11 @@ static int iproc_gpio_set_strength(struct iproc_gpio *chip, unsigned gpio,
+ 	raw_spin_lock_irqsave(&chip->lock, flags);
+ 	strength = (strength / 2) - 1;
+ 	for (i = 0; i < GPIO_DRV_STRENGTH_BITS; i++) {
++		offset = DRV_STRENGTH_OFFSET(gpio, i, chip->io_ctrl_type);
+ 		val = readl(base + offset);
+ 		val &= ~BIT(shift);
+ 		val |= ((strength >> i) & 0x1) << shift;
+ 		writel(val, base + offset);
+-		offset += 4;
+ 	}
+ 	raw_spin_unlock_irqrestore(&chip->lock, flags);
+ 
+@@ -541,11 +594,8 @@ static int iproc_gpio_get_strength(struct iproc_gpio *chip, unsigned gpio,
+ 
+ 	if (chip->io_ctrl) {
+ 		base = chip->io_ctrl;
+-		offset = IPROC_GPIO_DRV0_CTRL_OFFSET;
+ 	} else {
+ 		base = chip->base;
+-		offset = IPROC_GPIO_REG(gpio,
+-					 IPROC_GPIO_ASIU_DRV0_CTRL_OFFSET);
+ 	}
+ 
+ 	shift = IPROC_GPIO_SHIFT(gpio);
+@@ -553,10 +603,10 @@ static int iproc_gpio_get_strength(struct iproc_gpio *chip, unsigned gpio,
+ 	raw_spin_lock_irqsave(&chip->lock, flags);
+ 	*strength = 0;
+ 	for (i = 0; i < GPIO_DRV_STRENGTH_BITS; i++) {
++		offset = DRV_STRENGTH_OFFSET(gpio, i, chip->io_ctrl_type);
+ 		val = readl(base + offset) & BIT(shift);
+ 		val >>= shift;
+ 		*strength += (val << i);
+-		offset += 4;
+ 	}
+ 
+ 	/* convert to mA */
+@@ -734,6 +784,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
+ 	u32 ngpios, pinconf_disable_mask = 0;
+ 	int irq, ret;
+ 	bool no_pinconf = false;
++	enum iproc_pinconf_ctrl_type io_ctrl_type = IOCTRL_TYPE_INVALID;
+ 
+ 	/* NSP does not support drive strength config */
+ 	if (of_device_is_compatible(dev->of_node, "brcm,iproc-nsp-gpio"))
+@@ -764,8 +815,15 @@ static int iproc_gpio_probe(struct platform_device *pdev)
+ 			dev_err(dev, "unable to map I/O memory\n");
+ 			return PTR_ERR(chip->io_ctrl);
+ 		}
++		if (of_device_is_compatible(dev->of_node,
++					    "brcm,cygnus-ccm-gpio"))
++			io_ctrl_type = IOCTRL_TYPE_CDRU;
++		else
++			io_ctrl_type = IOCTRL_TYPE_AON;
+ 	}
+ 
++	chip->io_ctrl_type = io_ctrl_type;
++
+ 	if (of_property_read_u32(dev->of_node, "ngpios", &ngpios)) {
+ 		dev_err(&pdev->dev, "missing ngpios DT property\n");
+ 		return -ENODEV;
 -- 
 2.20.1
 
