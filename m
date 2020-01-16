@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3CCD13E2D9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:58:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC17213E2C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 17:58:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NQYkfWvn1dQNdpQl+mad3iFl38fnf4j+dzds8dSg634=; b=rQQnd1orWs8IIi
-	BOS9cIZAMbmVSu32E4IB3RYb1lBaoDlKS5NfRBwONm+2eYCgLwNy61ym/sbq+wqrFUF+vSdqegDUC
-	f/taweKBfRUI07+ZQygYTh8+0U+jR44W+mutAn4b4mEnEcwz9r97NFr+WceltSJ+vHeQHmr4OChfY
-	MiFhdMaqDfD6ceFecYvtBy80q6/3rBt7Xu3SxRoCtFLwPH8sfv5A6wUWH/5G8fSJcnfQHamcfVqs5
-	OdwpoCVqLsw+sUHjxiuB6LjqE5smQep2NgVgeeoWBBQF07FXBwoOR6ROaYtWlrOmoTFtnfkz4e1oU
-	GjrjIQCn0E/BjyjPbn5A==;
+	List-Owner; bh=GsIWGPgwrvyRy3MrD3fa6hhUy+zoJVswqHeieNvHDfo=; b=uaOhEJW5OAaObV
+	sPmYcHuqIU6rnN1tueFAr0iwU2wwlxwWO9yCmj5QGcQc3iYVSbF75pzjGYscgyfGlz1KrVrORg23d
+	kF3W0Z/fJ+2f/72APgNqmdB2HZPFz08elya23/ELK0d1G7TCxomFfsHNO+j5dq5DriiZvMSvNdPX9
+	zu4dAVAqqd6smPJo1x8Qi4jhkNNIPTyMYclYR+UddXorAwRcQGRsuDb7AOEhjCFyOPkvXzRQF7Yga
+	fZ1i0Tkf2rRBHtgSj956YeW7nP62RHSTNHGihfhhomku8MBC/MGRkxTjHK9E6+PRa3EL2+qD51S31
+	XPCdQtM936kZwRBozVcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8TX-0005tq-Od; Thu, 16 Jan 2020 16:58:31 +0000
+	id 1is8T8-0005eK-Pi; Thu, 16 Jan 2020 16:58:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8PM-0000pY-7j
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:54:16 +0000
+ id 1is8PO-0000rG-G6
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:54:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E86812176D;
- Thu, 16 Jan 2020 16:54:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2F4672464B;
+ Thu, 16 Jan 2020 16:54:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193651;
- bh=OzFODw4fgcmPhpz8E8cgdKYNHhUMu9ketHJs8OPWZQA=;
+ s=default; t=1579193653;
+ bh=xvHqfVT/E2GqwmWVQb2umdeJqV6UyBgQpfwGOvbEd3w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=b7ifsK/NcQq8eYKGbGo/0xDU7rp/wLTiVeRLW/B0Ofg6KoujqKPNzFGY/3z9vSM3R
- eR6gxRXOEin3hNHlb95Ykf3xySSkexWancXvfpJQ3j8nF4W4YDYCUKbmAOKskOrlR7
- 5CoKFzUR1aQn+Sq8EMvlY+Zik2MpPySEY1txYZso=
+ b=n0UbG5JE/BWHBPhtR5H3+H7bvvmReUWx8HE1n7Jfo7BXUD5SakYdZGkNVtlQ2R99S
+ JIZkxS2MtKCtHm2JByIBBouiqHhDsdQZkjbffslkHOcHNgM8N84HR0MMLYMqj49pHw
+ UWzBVw3kL+by12NegW9Ulc/JFuAwQfEIA22EzxY8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 181/205] ath9k: use iowrite32 over __raw_writel
-Date: Thu, 16 Jan 2020 11:42:36 -0500
-Message-Id: <20200116164300.6705-181-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 182/205] Revert "arm64: dts: juno: add dma-ranges
+ property"
+Date: Thu, 16 Jan 2020 11:42:37 -0500
+Message-Id: <20200116164300.6705-182-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
 References: <20200116164300.6705-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085412_397058_80DAFABA 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20200116_085414_973208_A1549D16 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,46 +80,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Christian Lamparter <chunkeey@gmail.com>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- Kalle Valo <kvalo@codeaurora.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christian Lamparter <chunkeey@gmail.com>
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-[ Upstream commit 22d0d5ae7a089967e9295a06694aa3e8a812b15e ]
+[ Upstream commit 54fb3fe0f211d4729a2551cf9497bd612189af9d ]
 
-This patch changes the ath9k_pci_owl_loader to use the
-same iowrite32 memory accessor that ath9k_pci is using
-to communicate with the PCI(e) chip.
+This reverts commit 193d00a2b35ee3353813b4006a18131122087205.
 
-This will fix endian issues that came up during testing
-with loaned AVM Fritz!Box 7360 (Lantiq MIPS SoCs + AR9287).
+Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
+reworked the logic such that of_dma_get_range() works correctly
+starting from a bus node containing "dma-ranges".
 
-Fixes: 5a4f2040fd07 ("ath9k: add loader for AR92XX (and older) pci(e)")
-Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
-Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+Since on Juno we don't have a SoC level bus node and "dma-ranges" is
+present only in the root node, we get the following error:
+
+OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
+OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
+...
+OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+
+So let's fix it by dropping the "dma-ranges" property for now. This
+should be fine since it doesn't represent any kind of device-visible
+restriction; it was only there for completeness, and we've since given
+in to the assumption that missing "dma-ranges" implies a 1:1 mapping
+anyway.
+
+We can add it later with a proper SoC bus node and moving all the
+devices that belong there along with the "dma-ranges" if required.
+
+Fixes: 193d00a2b35e ("arm64: dts: juno: add dma-ranges property")
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Liviu Dudau <liviu.dudau@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/arm/juno-base.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-index 159490f5a111..60731e07f681 100644
---- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-+++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-@@ -84,7 +84,7 @@ static int ath9k_pci_fixup(struct pci_dev *pdev, const u16 *cal_data,
- 			val = swahb32(val);
- 		}
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index 26a039a028b8..8c11660bbe40 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -6,7 +6,6 @@
+ 	/*
+ 	 *  Devices shared by all Juno boards
+ 	 */
+-	dma-ranges = <0 0 0 0 0x100 0>;
  
--		__raw_writel(val, mem + reg);
-+		iowrite32(val, mem + reg);
- 		usleep_range(100, 120);
- 	}
- 
+ 	memtimer: timer@2a810000 {
+ 		compatible = "arm,armv7-timer-mem";
 -- 
 2.20.1
 
