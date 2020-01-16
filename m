@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B20B213E5CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:17:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C670613E3B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:03:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zoUOpNOwbWHU+SrtSqxNvGxJ99g/P03s/NHp6fAty24=; b=dwsBsdgPQXA4UK
-	Bm8nTq2cvg4OU1KfTA/1d/VCxlORZ4hMQnWY16ImVrrjFPc5Bmm//ARJ7pJzmdxpW6WE/WZhJ6yjA
-	eF8y+Pp+D89w3WTpZ+zcuQQ7f/KnSF8lsaxiOI/+iaxxBHiBNTogn866REXi8LKQOV4v/I37Ln1+F
-	cieoI+Psee+gO6kpWYQqM4YZMONec/v7GlTvXJhnpYFtYAhcxciF8IGRAzYI2p86LwQn8M4Cjg67V
-	6P2mYo5ib2tDHmTuR9fpmHmIAW87KimqpL31+d8jyNUKJT796sqRWD0Hawx5xcivKPUHcpMwGvA9i
-	VQ9KKu5C/BDDindwG3oQ==;
+	List-Owner; bh=0Gj6HrKk6jHdiWYKUCY6Lkb5Hzv+BiAQHkPOJws86bU=; b=rYKMFZI4V7AszZ
+	1u2UX/Lp82KXgwIehXBwJrMxGOYqsiUBD5QtDWnqnfYT0ayfdKcfW+DqbdH/EexGn2126zMQG8lmp
+	YHbTSoiFCjYgNWUrPxGc/+tfnjTK/JrTzCvb0Xj0+/DhvobHufxc/MSvdNSaqJi/JASkaO11eAV1p
+	EFSz0KZrs63A9ML0VQRrL3U7RCEUBn9IjEFspAGOtFPf5g2kM5paVq8o7H/lUX+axMoZs+pMD61gA
+	6hTS0oy4gYBb+nReAxsAQhK/Eog/Tdh1W6tE0ASAlQ5NZNpehYjWr4XLDgJgOzxIgTnDoVPDzN4eY
+	OTKtN6E4l3t636GnfIaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8ly-0002cr-Dy; Thu, 16 Jan 2020 17:17:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1is8Yb-0003EN-Vg; Thu, 16 Jan 2020 17:03:46 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Y2-0002vl-Bi
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:03:14 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4B26D24685;
- Thu, 16 Jan 2020 17:03:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194189;
- bh=q1gIVPVMHO9I/akf7uP5X2iGRY12EkSsbiYExikhfrM=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bw+0VcF+WE8y3A279qZXG6gaOB/E4ov69Fyz68jcMaF5Tlf3cukfeK+drFmQTkgUE
- VFDAw+xqjh94uWkSMEAssV0qjZHHy6/Zbxvl8tB9bPrSROIyhH4cmwTTzyUnvwVGZO
- Nkxaq00pWPkYhHFW/vODnGiqhuNY/rLfZ8sPs7NU=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 261/671] ARM: OMAP2+: Fix potentially
- uninitialized return value for _setup_reset()
-Date: Thu, 16 Jan 2020 11:52:50 -0500
-Message-Id: <20200116165940.10720-144-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116165940.10720-1-sashal@kernel.org>
-References: <20200116165940.10720-1-sashal@kernel.org>
+ id 1is8RS-000473-J6
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:56:27 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1is8RL-0003ja-2D; Thu, 16 Jan 2020 17:56:15 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1is8RK-0003vs-9c; Thu, 16 Jan 2020 17:56:14 +0100
+Date: Thu, 16 Jan 2020 17:56:14 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sasha Levin <sashal@kernel.org>
+Subject: Re: [PATCH AUTOSEL 5.4 053/205] pwm: sun4i: Fix incorrect
+ calculation of duty_cycle/period
+Message-ID: <20200116165614.a3u5x7g4qxxrm6s4@pengutronix.de>
+References: <20200116164300.6705-1-sashal@kernel.org>
+ <20200116164300.6705-53-sashal@kernel.org>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20200116164300.6705-53-sashal@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090310_469829_F386B542 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200116_085622_706362_884FE938 
+X-CRM114-Status: GOOD (  10.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,52 +69,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ondrej Jirman <megous@megous.com>, linux-pwm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tony Lindgren <tony@atomide.com>
+On Thu, Jan 16, 2020 at 11:40:28AM -0500, Sasha Levin wrote:
+> From: Ondrej Jirman <megous@megous.com>
+> =
 
-[ Upstream commit 7f0d078667a494466991aa7133f49594f32ff6a2 ]
+> [ Upstream commit 50cc7e3e4f26e3bf5ed74a8d061195c4d2161b8b ]
+> =
 
-Commit 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior") made
-the call to _enable() conditional based on no oh->rst_lines_cnt. This
-caused the return value to be potentially uninitialized. Curiously we see
-no compiler warnings for this, probably as this gets inlined.
+> Since 5.4-rc1, pwm_apply_state calls ->get_state after ->apply
+> if available, and this revealed an issue with integer precision
+> when calculating duty_cycle and period for the currently set
+> state in ->get_state callback.
+> =
 
-We call _setup_reset() from _setup() and only _setup_postsetup() if the
-return value is zero. Currently the return value can be uninitialized for
-cases where oh->rst_lines_cnt is set and HWMOD_INIT_NO_RESET is not set.
+> This issue manifested in broken backlight on several Allwinner
+> based devices.
+> =
 
-Fixes: 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior")
-Cc: Paul Walmsley <paul@pwsan.com>
-Cc: Tero Kristo <t-kristo@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/mach-omap2/omap_hwmod.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Previously this worked, because ->apply updated the passed state
+> directly.
+> =
 
-diff --git a/arch/arm/mach-omap2/omap_hwmod.c b/arch/arm/mach-omap2/omap_hwmod.c
-index ec3789ba17b8..a8269f0a87ce 100644
---- a/arch/arm/mach-omap2/omap_hwmod.c
-+++ b/arch/arm/mach-omap2/omap_hwmod.c
-@@ -2430,7 +2430,7 @@ static void _setup_iclk_autoidle(struct omap_hwmod *oh)
-  */
- static int _setup_reset(struct omap_hwmod *oh)
- {
--	int r;
-+	int r = 0;
- 
- 	if (oh->_state != _HWMOD_STATE_INITIALIZED)
- 		return -EINVAL;
--- 
-2.20.1
+> Fixes: deb9c462f4e53 ("pwm: sun4i: Don't update the state for the caller =
+of pwm_apply_state")
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+> Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
+> Signed-off-by: Sasha Levin <sashal@kernel.org>
 
+Note that while the patch is still correct, the problem isn't that bad
+any more since commit 01ccf903edd65f6421612321648fa5a7f4b7cb10 was
+reverted.
+
+So .get_state is only called once during boot where the breakage doesn't
+hurt that much.
+
+I let you decide if you still want to apply this patch.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
