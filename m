@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F8A213E6F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:23:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF0A413E707
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:23:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L2A8qUXnhBvl4S2vbWQr8l3wFyycUECmTYaMPyJbzQc=; b=CR3VQ0Rk5pnECg
-	GSFSD9/xACsarUKDTAsMPkKV1mCYTEDZ8oo2j+KltKN1zka/wYB2zU9KjEhCvscacIFesqV8XTnf6
-	TB/Cs6S3+a/itYUHGkwN1un2OgDf1mafU6BZLgHjuMn0N0HolrXgkfVxA19KLmOjiXngyKxJcA3XC
-	GhpUUt5AXe5ojuky+hHMIwbR1CEmIjtq2v67m25PaVe3fxv5HjfrQNASvbiigRCe9ZO9MFwvY0/Nc
-	UmVyLTXHhg/X/b8yV4RT87+XClBMi+9lIhztQca/sSymnSMKxMkVrercbRVKKPFyHFsCgayGLfXKj
-	7gWeoWuNZ0JJ3K9KZ3Rw==;
+	List-Owner; bh=FmiCYFdk+3p93+gjZaDNQiLkL4glxYbK1tZ9wmLij40=; b=P7cYPxQd1pvo7M
+	33Tpv2i4EcYlBdYxfzgUBbPdChfIg0ud7tHJJ7Ev8kBcu/ci9oVNXDLb57WQjYwlZrGwHpygEXFfj
+	RYjScCrG574qDm57wfDVsTvIcXqm7ZVoiEUDySBMT930iy9x94EQRo2kWp4Vf1QPL9AICEwHegSbA
+	ymRZ9eLwWP/BZ3kjMFTW683Fat00YyCUU/Zvgpi2PQzL4C21r6hr8ABl/22qmHWq44N3J0abKTWz7
+	soKgaG+9x38wc6jFkK388rCEIJnrn4s9TBh1063sdS7y/k3X5oRrRBMeY3mQXLZWWGHpXxyFn4/mH
+	BZyygQO72nqtIDvpqcew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8r5-00008Z-AA; Thu, 16 Jan 2020 17:22:51 +0000
+	id 1is8rf-0000eO-7c; Thu, 16 Jan 2020 17:23:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cJ-0000dn-Jw
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:41 +0000
+ id 1is8cN-0000gl-7D; Thu, 16 Jan 2020 17:07:42 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9FF27217F4;
- Thu, 16 Jan 2020 17:07:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C6D42205F4;
+ Thu, 16 Jan 2020 17:07:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194454;
- bh=37O7uWLDFvAE5++PkVmEHgXh1ac3gvvlzmtoew19/60=;
+ s=default; t=1579194455;
+ bh=qvLxjJ+7RTcPVWEj5B8DKfhGrxf4MZTY7DMCPPaYJJE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CS5oH4vWe4+2eAOlkS8wVdKig6N0ZLSFHUo2MO6HpU1ZnL1zbssORWkcN/BBGfgRT
- 93I5LvfFHmVFywHKbyUhG5vCRp/4UygPn8Q3w0U1j4nbKv6LoViH9izuiCLRk7op1A
- NoJm8yVWVAjidPE+fcn2GdTV2Yc0ueJniJ2fXlkI=
+ b=dHs/GFf0B7v90zh6Q1KzycrdrvIkQaAPnMWRa44V49qKRp6QHahPXsUdU8iTXZrEQ
+ GHkWS8rUk9NqLTR3EhT4J+wG7sFMd/bQL5XFIsOPX2tNJM6Y/TIN1z6DfUX0dqDVoK
+ l+qrQl3mSXpr6laMgkw5TXOqBhyS+VBXOrten8vE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 364/671] ARM: dts: sun8i-h3: Fix wifi in Beelink
- X2 DT
-Date: Thu, 16 Jan 2020 12:00:02 -0500
-Message-Id: <20200116170509.12787-101-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 365/671] clk: meson: gxbb: no spread spectrum on
+ mpll0
+Date: Thu, 16 Jan 2020 12:00:03 -0500
+Message-Id: <20200116170509.12787-102-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090735_746539_E525AB20 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20200116_090739_521486_7929B78D 
+X-CRM114-Status: UNSURE (   8.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,56 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sasha Levin <sashal@kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jernej Skrabec <jernej.skrabec@siol.net>
+From: Jerome Brunet <jbrunet@baylibre.com>
 
-[ Upstream commit ca0961011db57e39880df0b5708df8aa3339dc6f ]
+[ Upstream commit 8925dbd03bb29b1b0de30ac4e02c18faf8ddc9db ]
 
-mmc1 node where wifi module is connected doesn't have properly defined
-power supplies so wifi module is never powered up. Fix that by
-specifying additional power supplies.
+The documentation says there is an SSEN bit on mpll0 but, after testing
+it, no spread spectrum function appears to be enabled by this bit on any
+of the MPLLs.
 
-Additionally, this STB may have either Realtek or Broadcom based wifi
-module. One based on Broadcom module also needs external clock to work
-properly. Fix that by adding clock property to wifi_pwrseq node.
+Let's remove it until we know more
 
-Fixes: e582b47a9252 ("ARM: dts: sun8i-h3: Add dts for the Beelink X2 STB")
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Fixes: 1f737ffa13ef ("clk: meson: mpll: fix mpll0 fractional part ignored")
+Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/sun8i-h3-beelink-x2.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/clk/meson/gxbb.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-index 25540b7694d5..6523d81dd9c4 100644
---- a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-+++ b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-@@ -90,6 +90,8 @@
- 	wifi_pwrseq: wifi_pwrseq {
- 		compatible = "mmc-pwrseq-simple";
- 		reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
-+		clocks = <&rtc 1>;
-+		clock-names = "ext_clock";
- 	};
- 
- 	sound_spdif {
-@@ -155,6 +157,8 @@
- 
- &mmc1 {
- 	vmmc-supply = <&reg_vcc3v3>;
-+	vqmmc-supply = <&reg_vcc3v3>;
-+	mmc-pwrseq = <&wifi_pwrseq>;
- 	bus-width = <4>;
- 	non-removable;
- 	status = "okay";
+diff --git a/drivers/clk/meson/gxbb.c b/drivers/clk/meson/gxbb.c
+index b039909e03cf..38ffa51a5bad 100644
+--- a/drivers/clk/meson/gxbb.c
++++ b/drivers/clk/meson/gxbb.c
+@@ -650,11 +650,6 @@ static struct clk_regmap gxbb_mpll0_div = {
+ 			.shift   = 16,
+ 			.width   = 9,
+ 		},
+-		.ssen = {
+-			.reg_off = HHI_MPLL_CNTL,
+-			.shift   = 25,
+-			.width	 = 1,
+-		},
+ 		.lock = &meson_clk_lock,
+ 	},
+ 	.hw.init = &(struct clk_init_data){
 -- 
 2.20.1
 
