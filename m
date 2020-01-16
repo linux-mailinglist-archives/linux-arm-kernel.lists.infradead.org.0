@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA6C313EE44
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:08:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A204313EE39
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:08:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PG4lJKY9FaqPp87m8SV7gpKB9EUQSaT41AbO76klzS4=; b=BqP1WS58ewebv9
-	ir+hOIE7t14gMqgNGpNIW8wWfWlW/Li6NfCYFGxwxYxOjLK0ibRid0LqZePeWB0NF8JVmfNsmxzEk
-	V+BGxlznsn7pXb+9AEj8q1GiSy79ZTZ56KkBAa6xJ8o2Ta8ycfYvUgHy+Ox963m1DO2kdqdhYIGE5
-	a2KsDzuLMc5SVlL3CSbPXKHCa2JlZvJ0Cvk3EMfVvfhszezV8tL0OIbwauAFXwHbD/RJitHR0qOHq
-	VlMEHfrVsRoNsPYEyY8zSXensXTz8c0/HeEHXIKKbzj2fBCDfgiTX8M7XBPxdm73UJWFPSBNWPhyZ
-	yXkVDl/hAsKEdX13wB0A==;
+	List-Owner; bh=H+d/LdusD2Ikm8yk3btnKHMyPfvdVKXxg8rIfCrZ5vQ=; b=RbHwWGv+kZOXqO
+	bvj7jcNz3qJx8c1LCwpObkws1yEPh0JmknwhmefZZAD01FlRwuOsa8qDC3k5Cb98sNV1M6cv7jhou
+	04dZkmOLzbJ7JK+dMoAJt3SlBIJhw4lM8M9UR2DxbLTK4LhPveGliHQuWcuOGeJsCMr7HXn9iUgIC
+	hO6cxagdarDxLLOIRVmFwNbGdVVuY0s4zPaSY+LcwdSFPPVRE7niAdX5xZzJLc/TUrBoRHxCSeoOR
+	DXe3su/5iraRWFd9HSgp3i71+83mTgICZ3c4c1sLjdtMETydbLTqc56HwpQS4dkfWnruNgwvWNuOm
+	W8JvP5wt6pVj8QjvcxAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Yv-00067r-96; Thu, 16 Jan 2020 18:08:09 +0000
+	id 1is9Yf-0005t2-T3; Thu, 16 Jan 2020 18:07:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8xj-0006wJ-M8; Thu, 16 Jan 2020 17:29:48 +0000
+ id 1is8xk-0006xh-NZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:29:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A76A246FB;
- Thu, 16 Jan 2020 17:29:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 595C02470B;
+ Thu, 16 Jan 2020 17:29:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195782;
- bh=GUiVFRULi9/DHKirBIopVTqMsuqLnxRqBwtYhWEoNZg=;
+ s=default; t=1579195784;
+ bh=+iS+pPVwdRsJ+oZFaJTkLZMfES8a7NkF1r+T7aRDmN0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AnR6DHLTYHE4TTuNl0zIO9qrCRbzxOrpuOrAf/Y6T4+CmMXZHURXWGIEnRcYh1JFp
- 6UzQWPXzvGZeqMvv6p7cNewdDjudZ14qt1+Q/8rFv8uLLUsT/4arxsnXhhzx5rRWJ7
- GKl29EHEyI1sWuYhoA45ePz1vdeIaguUI/yOvvfw=
+ b=OnS4wl2vLce+8bIOtKU58Bb7cknLq8vyjirXfbzFHUdJSYSD9ZYUCbClBmftTo3dm
+ xLcA7TnYfWSkLQgcGFDVnItCLGnhImKSmyvgAHUz7/nmDnk1bWiXT0RHcumncm7wFW
+ yYpEwlLlBAB8kHLdoxBR9WsFc9X1PeQ7nPdo6aVM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 306/371] net: stmmac: dwmac-meson8b: Fix
- signedness bug in probe
-Date: Thu, 16 Jan 2020 12:22:58 -0500
-Message-Id: <20200116172403.18149-249-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 307/371] net: axienet: fix a signedness bug in
+ probe
+Date: Thu, 16 Jan 2020 12:22:59 -0500
+Message-Id: <20200116172403.18149-250-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092943_791721_53F6E032 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20200116_092944_878729_8A5EADB9 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,11 +80,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org, "David S . Miller" <davem@davemloft.net>,
  Dan Carpenter <dan.carpenter@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,33 +91,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dan Carpenter <dan.carpenter@oracle.com>
 
-[ Upstream commit f10210517a2f37feea2edf85eb34c98977265c16 ]
+[ Upstream commit 73e211e11be86715d66bd3c9d38b3c34b05fca9a ]
 
-The "dwmac->phy_mode" is an enum and in this context GCC treats it as
-an unsigned int so the error handling is never triggered.
+The "lp->phy_mode" is an enum but in this context GCC treats it as an
+unsigned int so the error handling is never triggered.
 
-Fixes: 566e82516253 ("net: stmmac: add a glue driver for the Amlogic Meson 8b / GXBB DWMAC")
+Fixes: ee06b1728b95 ("net: axienet: add support for standard phy-mode binding")
 Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c | 2 +-
+ drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-index 8be4b32544ef..d71d3c1c85ee 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-@@ -285,7 +285,7 @@ static int meson8b_dwmac_probe(struct platform_device *pdev)
- 
- 	dwmac->pdev = pdev;
- 	dwmac->phy_mode = of_get_phy_mode(pdev->dev.of_node);
--	if (dwmac->phy_mode < 0) {
-+	if ((int)dwmac->phy_mode < 0) {
- 		dev_err(&pdev->dev, "missing phy-mode property\n");
- 		ret = -EINVAL;
- 		goto err_remove_config_dt;
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+index 9ccd08a051f6..1152d74433f6 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+@@ -1574,7 +1574,7 @@ static int axienet_probe(struct platform_device *pdev)
+ 		}
+ 	} else {
+ 		lp->phy_mode = of_get_phy_mode(pdev->dev.of_node);
+-		if (lp->phy_mode < 0) {
++		if ((int)lp->phy_mode < 0) {
+ 			ret = -EINVAL;
+ 			goto free_netdev;
+ 		}
 -- 
 2.20.1
 
