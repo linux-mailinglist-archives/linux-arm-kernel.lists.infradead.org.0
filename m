@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19BA013E417
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:06:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADA4413E408
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:05:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v5WfoS9RhPEOHwmWJIaYnB+VOU+vWubVtTv1FZGnZw8=; b=NqfuDZc2YXPI00
-	HkioQad033PnJtykygK8ARn6dTsLm8SW7cRkmFvmStPb11P8i1vIMpSOGYgY93sQXqxc3zhmmHF6I
-	H8aAP0zQK9yAvbOHPTIelMEiYD1sRpdj9/0nYypM8hTjLlvuO/eBzmNpa1xQtzSW4M7Xg7UWbLWIq
-	m/S9rBXYZAtuvI+hq61bfUyiPAkS8zt7XXsL/xeZN9Y+t0UmlspR18eq4izpIc6uY9tvpyVri1p3g
-	gRPsCnjVC7RSlpjlrH3PQ8PXox8Sf598geSUB7Va7W9sAF4mOS8YcLDsG+NVdz9l8xnDyzsP/Hwo7
-	73fA5S33Y7BesLeFCs2g==;
+	List-Owner; bh=VmoEX2wEKfrymiCDV9MlFMO4RS5rAKvFUTOjl1Ty2Jo=; b=CuumYgantApfhh
+	LRjyiRCwZ0PbH+vCIMJq4qL2Rx7zo6RnPQLSRo6nA64iGhmiOjJJhBnKYW3eflLe5ZnA5xYnZByNC
+	FTz9WeTlBhkTt6L0NXjObBmdaew6oQh6t3/dafT1QNF57wZ4ocvCJNIKhTOArZ7o1vRnxBgCCdqQL
+	CiOz0Q6aJFsTphzUPoZPf4/72HSE+UhYqdbjrs/7jaZ/LjdCXZSII9QgHadOYkwLIF9lLlvfqpGJm
+	9kvhRb0iKFX6Cm0dqh8ampY6aUPpEyipxsexzvyPbkIYif11OruVzNg7S9LrL4EyRU0U3shJfRymI
+	b2pBUZ7OfzdOrEWoilaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8ag-0007JY-Lc; Thu, 16 Jan 2020 17:05:54 +0000
+	id 1is8aI-00073h-1o; Thu, 16 Jan 2020 17:05:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8SI-00055u-EF
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:57:20 +0000
+ id 1is8SK-00057q-BH
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 16:57:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5273424656;
- Thu, 16 Jan 2020 16:57:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D62392467E;
+ Thu, 16 Jan 2020 16:57:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193834;
- bh=oJ/J1nwHNaBUQwjmCIAEOfnpZdET2hlGzDmtrS2NE9s=;
+ s=default; t=1579193835;
+ bh=tI28Hzf5zYprls2QJ9JCO2LTS0EKJ1WUECK8F/0QlKE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=y5xMA6VbtMnACaOgUklK6VUDphvLYhYeqb2hOY88VNN3uETfnIUKF9bhryg4pBHz3
- +bwLoqCBB8vjwIFrkkQXwyShiQZ1LDTwxLgQ8znxiJc+cAXXyYPfw96Cb8Mx37sH22
- VGySBNlamwC7nNlqvYD5FdPveOo1nn5eopAp0KJg=
+ b=ObVfXGfYGAJsRqLjo36UIum8zfZsvA9aTJg2gRhc3ditUK6tosDre1Kxugpae3Rdc
+ s+ttctWL4nXUeggvly7THM9lx4zld+V1RmHRyBY8xCdmtgIlbY0bmqMKkiYjYn45OZ
+ /6fx67/YQ2hO2Fn1KgLvDE6s3Vp7tHW3x3ruul/k=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 090/671] clk: imx6sx: fix refcount leak in
- imx6sx_clocks_init()
-Date: Thu, 16 Jan 2020 11:45:21 -0500
-Message-Id: <20200116165502.8838-90-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 091/671] clk: imx7d: fix refcount leak in
+ imx7d_clocks_init()
+Date: Thu, 16 Jan 2020 11:45:22 -0500
+Message-Id: <20200116165502.8838-91-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165502.8838-1-sashal@kernel.org>
 References: <20200116165502.8838-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085714_514548_ABE658A7 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20200116_085716_425876_593612A1 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,32 +91,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yangtao Li <tiny.windzz@gmail.com>
 
-[ Upstream commit 1731e14fb30212dd8c1e9f8fc1af061e56498c55 ]
+[ Upstream commit 5f8c183a996b76bb09748073c856e4246fd4ce95 ]
 
 The of_find_compatible_node() returns a node pointer with refcount
 incremented, but there is the lack of use of the of_node_put() when
 done. Add the missing of_node_put() to release the refcount.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-Fixes: d55135689019 ("ARM: imx: add clock driver for imx6sx")
+Fixes: 8f6d8094b215 ("ARM: imx: add imx7d clk tree support")
 Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/imx/clk-imx6sx.c | 1 +
+ drivers/clk/imx/clk-imx7d.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/imx/clk-imx6sx.c b/drivers/clk/imx/clk-imx6sx.c
-index d9f2890ffe62..57ab96a47775 100644
---- a/drivers/clk/imx/clk-imx6sx.c
-+++ b/drivers/clk/imx/clk-imx6sx.c
-@@ -151,6 +151,7 @@ static void __init imx6sx_clocks_init(struct device_node *ccm_node)
- 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6sx-anatop");
+diff --git a/drivers/clk/imx/clk-imx7d.c b/drivers/clk/imx/clk-imx7d.c
+index 881b772c4ac9..83412bc36ebf 100644
+--- a/drivers/clk/imx/clk-imx7d.c
++++ b/drivers/clk/imx/clk-imx7d.c
+@@ -413,6 +413,7 @@ static void __init imx7d_clocks_init(struct device_node *ccm_node)
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx7d-anatop");
  	base = of_iomap(np, 0);
  	WARN_ON(!base);
 +	of_node_put(np);
  
- 	clks[IMX6SX_PLL1_BYPASS_SRC] = imx_clk_mux("pll1_bypass_src", base + 0x00, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
- 	clks[IMX6SX_PLL2_BYPASS_SRC] = imx_clk_mux("pll2_bypass_src", base + 0x30, 14, 1, pll_bypass_src_sels, ARRAY_SIZE(pll_bypass_src_sels));
+ 	clks[IMX7D_PLL_ARM_MAIN_SRC]  = imx_clk_mux("pll_arm_main_src", base + 0x60, 14, 2, pll_bypass_src_sel, ARRAY_SIZE(pll_bypass_src_sel));
+ 	clks[IMX7D_PLL_DRAM_MAIN_SRC] = imx_clk_mux("pll_dram_main_src", base + 0x70, 14, 2, pll_bypass_src_sel, ARRAY_SIZE(pll_bypass_src_sel));
 -- 
 2.20.1
 
