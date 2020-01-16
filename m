@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 354E013D333
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 05:36:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F12313D335
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 05:36:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/CoFn/Bl0MSBCdkru2kKZwjOHSSCZO1O/j3V7elQ04Y=; b=Zr9qelfrBVNkRo
-	10hkenTjgP83Odng90JR24jBL65y0tf7sx8LZC9adQtM4HEBQne5NrK8izvX7i9JZZXOxuJ4QGItz
-	3s80hNcKJwAYXfi6B6l1cPbdsuvmmGugbKcuQmWAFp37YYzrfg46iP0631HM+V2XB3owZuvjc5Qi2
-	hmSGLUyjCKtetBIlAwq0SqNZhzaiSq1zrGJSbQ/jK77A8XHep/wah1R15ewe9AI9KygZDXDixZk6s
-	kpcX+t7fZNKzZAaEycP9d5IZYyDLwyg38ja9F7mgxJm3xo5sx+nwJQPCX2lfMf6eINLw52YvNcie8
-	mMX4kQVpOaivdQYpmHGw==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ji2IivpNs4RCE3n9272PO71CPaIWhATHIsRlG1art0w=; b=I4gKNCayiKnUmC
+	vkQrsE3t/LubjgNMfBONEzWgODX6D7RcpdCvDvuo/cLGkXqcSznGMvj3aXxwzsXBQepdpFdgryZun
+	ITygzfNHYhcaIP0jehLfDxlZLUHN0Gj+yac4saqq5uPhst3KwRpqR1DraVPm97ZN5ZC/zS6EF4veT
+	yipNXDqua03KGypLLGBu4+ymD2U3PXj/jn7kH6klkQ9WE5AoujBWkLv3d826rlgw29n6RKKsEWIKt
+	1hLehsi+vWxGJRfORoSMQpK7KnoD6EI4QxZ8rB04D2WiuC+HfA2yH6d9XelOJox0gy2v6GbYQYMIY
+	YCcHEpJJ9u3pOpJ8TvCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irwtS-0000I7-MY; Thu, 16 Jan 2020 04:36:30 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1irwtm-0000V7-EK; Thu, 16 Jan 2020 04:36:50 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irwtG-0000G9-Hu
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 04:36:20 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id g16so8103098plo.14
+ id 1irwtI-0000Gf-Sr
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 04:36:22 +0000
+Received: by mail-pf1-x449.google.com with SMTP id h16so12298881pfn.23
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Jan 2020 20:36:16 -0800 (PST)
+ Wed, 15 Jan 2020 20:36:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=iNg4g6cNRZYUNuBsTO74IwcH6tuAcaZ/nzmuUCgI7YQ=;
- b=fN56Jr4nvW06HTQ13RJneqj6X8lflgmq6jlCoKsIPmknMl26RPKWCz8YEw1tHa1jYz
- 2FHoKNebeuIlL6IVX9VRKW/oUm9eaZqm+8btqLQ+Nlcd1VZiHbmg/BoKSpmF3FoJIoqo
- 6288KMRzjyYttljMBr1z60uAlr8s/UoWzpL6nPgZWUat7AqhnKexYi5cfsk+npyXYqtZ
- 3A+h/dAOOUB0LJrFQh2qEQP/OiXhnOm9Q9/zvYNeu8l66371mJxlH2QimcYGjNM3gCyf
- QWaNg/ehOECHaLWi6uhhJ/vhW8Z0wBC8Td+0KrpsYSt+KrXhE1CCQbHvIvlrocKve+JL
- vPIA==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=lOS4ewWznrG+/0jceSUIoLxZFs2qMA4l+9gH32rT8ZU=;
+ b=WStbr0MJSOPJGqzN2iGhIkdauZViO9hiPHW8Uj0CQFi0U3cTaC+CtBLstGwqiu/okm
+ HwJonDO4S20K4z1FseDh/ERI2uZPRo9aoKkZjNyJR4eLMsIuCWvGzCPrdTwlUbyFeq18
+ 4aadRAQl8JLnnKuLbKXV8Kf5PuQGXgWmjRQGIXV6jLyRE55XPV46346RsbUI5pwP646F
+ W7Zi4/hotQx4xNZHbfw2SyYexpMQ3MwhPt1at98Ah5V6RNdVvM3CwauYeM00GAr+WM2Y
+ A8r1y2CyypILKIp6eJzku7HKEflikMjfc9K1prTtvGNz2mox+pXGPh+YGIgEKaDqqfYW
+ KcnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=iNg4g6cNRZYUNuBsTO74IwcH6tuAcaZ/nzmuUCgI7YQ=;
- b=fPzURsugnhI67vEYXnPnJckAWvOgdY+BNhrqNOK/I5stOZ5iBggMYBfam45Eibirl7
- Q2TqpMdYMA3TXgLclOAYCzEA/UPl00T/99GlyT2Ic/GeiwZZVrDCGzgLkVnFOmoM4pjP
- s+t6P92TZXr6u0BSzAu4nAMjdP2jOpLe2X7bYFZC8jcYVS3RZa00x+ttz4VJegcNhQ3y
- fW7pSW1jJB1X0OyIlzoCN2rRlwTQ3+Wz+1InDRf+8Z9WJ4vhGwW0OHvc8Cnu26IOiyNC
- xWUPRuN9JxSTYYnydpbVYv8a1JnQ4WUmHZaUMn25k4aGQx5YNfq9fHmyP6ZzYhIqM8em
- T+jQ==
-X-Gm-Message-State: APjAAAU+i3g60th87sDRNttn4LRw6SLhacc6c/7Ko5lUnGvouHtVz/ke
- gnPMBb/LOFRh7uEHypHvifUraJXfkAs=
-X-Google-Smtp-Source: APXvYqzkI7+HJc2DBEcUiBL1OG8evclCeD08SK626xi0qNNGMKZfjols95ySgh76BxNKtrvJ3r6rUEDzoXM=
-X-Received: by 2002:a63:f202:: with SMTP id v2mr36549471pgh.420.1579149376256; 
- Wed, 15 Jan 2020 20:36:16 -0800 (PST)
-Date: Wed, 15 Jan 2020 20:36:11 -0800
-Message-Id: <20200116043612.52782-1-surenb@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=lOS4ewWznrG+/0jceSUIoLxZFs2qMA4l+9gH32rT8ZU=;
+ b=o1ruA6uhXenfNm3Z4WBMca+ZoulhX/FfRaJ5eTxfqVFdiSFYqVxP736r4OC/dMcDEa
+ B1+XS0PCJA5/DJr5dDkgxGxMJexwdkrF463hx00te8HsaaVh/ZL45ua4KGLU9uAe71Ys
+ oRAl6j4zMyg827b1ntMUoIdTBOqGeXb0bARHAjdEtoHunhR8WI9bvmdM8gMNpRc5Y1Ox
+ cUteZvbIVRMRh9jYKBCFB/5zPv7qNUJa0a2PoUM8x+qW8HLUdh/WFrh0EUq4EGHGOcrG
+ 97n+f+fsd48OI7rq0uHBN/88JWKtVXSnSFvFYGFlQ7aH1EUvsqheK80Vz5oDWwNk+oVt
+ 8sTg==
+X-Gm-Message-State: APjAAAUVx4/gb3D5FJrtzXVjNmn0miKQjCNEbLmqtAe5Ql7ny54+aZkn
+ pf9qN5sFchYsEemUjNQKPk9wleDMXXU=
+X-Google-Smtp-Source: APXvYqzbKGjnpLecCWg4B+/ttVo20VzbmxlVS+5fmmSGkVQcYwu4EGAJJ4ZismsmxqM/zsKwRtOeqsmsDUk=
+X-Received: by 2002:a63:1f21:: with SMTP id f33mr37413032pgf.91.1579149378890; 
+ Wed, 15 Jan 2020 20:36:18 -0800 (PST)
+Date: Wed, 15 Jan 2020 20:36:12 -0800
+In-Reply-To: <20200116043612.52782-1-surenb@google.com>
+Message-Id: <20200116043612.52782-2-surenb@google.com>
 Mime-Version: 1.0
+References: <20200116043612.52782-1-surenb@google.com>
 X-Mailer: git-send-email 2.25.0.rc1.283.g88dfdc4193-goog
-Subject: [PATCH 1/2] cgroup: allow deletion of cgroups containing only dying
- processes
+Subject: [PATCH 2/2] kselftest/cgroup: add cgroup destruction test
 From: Suren Baghdasaryan <surenb@google.com>
 To: surenb@google.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_203618_589988_5E6F8D92 
-X-CRM114-Status: GOOD (  18.21  )
+X-CRM114-CacheID: sfid-20200115_203620_950386_43EE8803 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -103,158 +105,155 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A cgroup containing only dying tasks will be seen as empty when a userspace
-process reads its cgroup.procs or cgroup.tasks files. It should be safe to
-delete such a cgroup as it is considered empty. However if one of the dying
-tasks did not reach cgroup_exit then an attempt to delete the cgroup will
-fail with EBUSY because cgroup_is_populated() will not consider it empty
-until all tasks reach cgroup_exit. Such a condition can be triggered when
-a task consumes large amounts of memory and spends enough time in exit_mm
-to create delay between the moment it is flagged as PF_EXITING and the
-moment it reaches cgroup_exit.
-Fix this by detecting cgroups containing only dying tasks during cgroup
-destruction and proceeding with it while postponing the final step of
-releasing the last reference until the last task reaches cgroup_exit.
+Add new test to verify that a cgroup with dead processes can be destroyed.
+The test spawns a child process which allocates and touches 100MB of RAM
+to ensure prolonged exit. Subsequently it kills the child, waits until
+the cgroup containing the child is empty and destroys the cgroup.
 
 Signed-off-by: Suren Baghdasaryan <surenb@google.com>
-Reported-by: JeiFeng Lee <linger.lee@mediatek.com>
-Fixes: c03cd7738a83 ("cgroup: Include dying leaders with live threads in PROCS iterations")
 ---
- include/linux/cgroup-defs.h |  3 ++
- kernel/cgroup/cgroup.c      | 65 +++++++++++++++++++++++++++++++++----
- 2 files changed, 61 insertions(+), 7 deletions(-)
+ tools/testing/selftests/cgroup/test_core.c | 113 +++++++++++++++++++++
+ 1 file changed, 113 insertions(+)
 
-diff --git a/include/linux/cgroup-defs.h b/include/linux/cgroup-defs.h
-index 63097cb243cb..f9bcccbac8dd 100644
---- a/include/linux/cgroup-defs.h
-+++ b/include/linux/cgroup-defs.h
-@@ -71,6 +71,9 @@ enum {
+diff --git a/tools/testing/selftests/cgroup/test_core.c b/tools/testing/selftests/cgroup/test_core.c
+index c5ca669feb2b..2a5242ec1a49 100644
+--- a/tools/testing/selftests/cgroup/test_core.c
++++ b/tools/testing/selftests/cgroup/test_core.c
+@@ -2,7 +2,10 @@
  
- 	/* Cgroup is frozen. */
- 	CGRP_FROZEN,
-+
-+	/* Cgroup is dead. */
-+	CGRP_DEAD,
- };
+ #include <linux/limits.h>
+ #include <sys/types.h>
++#include <sys/mman.h>
++#include <sys/wait.h>
+ #include <unistd.h>
++#include <fcntl.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <signal.h>
+@@ -12,6 +15,115 @@
+ #include "../kselftest.h"
+ #include "cgroup_util.h"
  
- /* cgroup_root->flags */
-diff --git a/kernel/cgroup/cgroup.c b/kernel/cgroup/cgroup.c
-index 735af8f15f95..a99ebddd37d9 100644
---- a/kernel/cgroup/cgroup.c
-+++ b/kernel/cgroup/cgroup.c
-@@ -795,10 +795,11 @@ static bool css_set_populated(struct css_set *cset)
-  * that the content of the interface file has changed.  This can be used to
-  * detect when @cgrp and its descendants become populated or empty.
-  */
--static void cgroup_update_populated(struct cgroup *cgrp, bool populated)
-+static bool cgroup_update_populated(struct cgroup *cgrp, bool populated)
- {
- 	struct cgroup *child = NULL;
- 	int adj = populated ? 1 : -1;
-+	bool state_change = false;
- 
- 	lockdep_assert_held(&css_set_lock);
- 
-@@ -817,6 +818,7 @@ static void cgroup_update_populated(struct cgroup *cgrp, bool populated)
- 		if (was_populated == cgroup_is_populated(cgrp))
- 			break;
- 
-+		state_change = true;
- 		cgroup1_check_for_release(cgrp);
- 		TRACE_CGROUP_PATH(notify_populated, cgrp,
- 				  cgroup_is_populated(cgrp));
-@@ -825,6 +827,21 @@ static void cgroup_update_populated(struct cgroup *cgrp, bool populated)
- 		child = cgrp;
- 		cgrp = cgroup_parent(cgrp);
- 	} while (cgrp);
-+
-+	return state_change;
-+}
-+
-+static void cgroup_prune_dead(struct cgroup *cgrp)
++static int touch_anon(char *buf, size_t size)
 +{
-+	lockdep_assert_held(&css_set_lock);
++	int fd;
++	char *pos = buf;
 +
-+	do {
-+		/* put the base reference if cgroup was already destroyed */
-+		if (!cgroup_is_populated(cgrp) &&
-+		    test_bit(CGRP_DEAD, &cgrp->flags))
-+			percpu_ref_kill(&cgrp->self.refcnt);
-+		cgrp = cgroup_parent(cgrp);
-+	} while (cgrp);
- }
- 
- /**
-@@ -838,11 +855,15 @@ static void cgroup_update_populated(struct cgroup *cgrp, bool populated)
- static void css_set_update_populated(struct css_set *cset, bool populated)
- {
- 	struct cgrp_cset_link *link;
-+	bool state_change;
- 
- 	lockdep_assert_held(&css_set_lock);
- 
--	list_for_each_entry(link, &cset->cgrp_links, cgrp_link)
--		cgroup_update_populated(link->cgrp, populated);
-+	list_for_each_entry(link, &cset->cgrp_links, cgrp_link) {
-+		state_change = cgroup_update_populated(link->cgrp, populated);
-+		if (state_change && !populated)
-+			cgroup_prune_dead(link->cgrp);
-+	}
- }
- 
- /*
-@@ -5458,8 +5479,26 @@ static int cgroup_destroy_locked(struct cgroup *cgrp)
- 	 * Only migration can raise populated from zero and we're already
- 	 * holding cgroup_mutex.
- 	 */
--	if (cgroup_is_populated(cgrp))
--		return -EBUSY;
-+	if (cgroup_is_populated(cgrp)) {
-+		struct css_task_iter it;
-+		struct task_struct *task;
++	fd = open("/dev/urandom", O_RDONLY);
++	if (fd < 0)
++		return -1;
 +
-+		/*
-+		 * cgroup_is_populated does not account for exiting tasks
-+		 * that did not reach cgroup_exit yet. Check if all the tasks
-+		 * in this cgroup are exiting.
-+		 */
-+		css_task_iter_start(&cgrp->self, 0, &it);
-+		do {
-+			task = css_task_iter_next(&it);
-+		} while (task && (task->flags & PF_EXITING));
-+		css_task_iter_end(&it);
++	while (size > 0) {
++		ssize_t ret = read(fd, pos, size);
 +
-+		if (task) {
-+			/* cgroup is indeed populated */
-+			return -EBUSY;
++		if (ret < 0) {
++			if (errno != EINTR) {
++				close(fd);
++				return -1;
++			}
++		} else {
++			pos += ret;
++			size -= ret;
 +		}
 +	}
- 
- 	/*
- 	 * Make sure there's no live children.  We can't test emptiness of
-@@ -5510,8 +5549,20 @@ static int cgroup_destroy_locked(struct cgroup *cgrp)
- 
- 	cgroup_bpf_offline(cgrp);
- 
--	/* put the base reference */
--	percpu_ref_kill(&cgrp->self.refcnt);
-+	/*
-+	 * Take css_set_lock because of the possible race with
-+	 * cgroup_update_populated.
-+	 */
-+	spin_lock_irq(&css_set_lock);
-+	/* The last task might have died since we last checked */
-+	if (cgroup_is_populated(cgrp)) {
-+		/* mark cgroup for future destruction */
-+		set_bit(CGRP_DEAD, &cgrp->flags);
-+	} else {
-+		/* put the base reference */
-+		percpu_ref_kill(&cgrp->self.refcnt);
++	close(fd);
++
++	return 0;
++}
++
++static int alloc_and_touch_anon_noexit(const char *cgroup, void *arg)
++{
++	int ppid = getppid();
++	size_t size = (size_t)arg;
++	void *buf;
++
++	buf = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON,
++		   0, 0);
++	if (buf == MAP_FAILED)
++		return -1;
++
++	if (touch_anon((char *)buf, size)) {
++		munmap(buf, size);
++		return -1;
 +	}
-+	spin_unlock_irq(&css_set_lock);
- 
- 	return 0;
++
++	while (getppid() == ppid)
++		sleep(1);
++
++	munmap(buf, size);
++	return 0;
++}
++
++/*
++ * Create a child process that allocates and touches 100MB, then waits to be
++ * killed. Wait until the child is attached to the cgroup, kill all processes
++ * in that cgroup and wait until "cgroup.events" is empty. At this point try to
++ * destroy the empty cgroup. The test helps detect race conditions between
++ * dying processes leaving the cgroup and cgroup destruction path.
++ */
++static int test_cgcore_destroy(const char *root)
++{
++	int ret = KSFT_FAIL;
++	char *cg_test = NULL;
++	int child_pid;
++	char buf[PAGE_SIZE];
++
++	cg_test = cg_name(root, "cg_test");
++
++	if (!cg_test)
++		goto cleanup;
++
++	for (int i = 0; i < 10; i++) {
++		if (cg_create(cg_test))
++			goto cleanup;
++
++		child_pid = cg_run_nowait(cg_test, alloc_and_touch_anon_noexit,
++					  (void *) MB(100));
++
++		if (child_pid < 0)
++			goto cleanup;
++
++		/* wait for the child to enter cgroup */
++		if (cg_wait_for_proc_count(cg_test, 1))
++			goto cleanup;
++
++		if (cg_killall(cg_test))
++			goto cleanup;
++
++		/* wait for cgroup to be empty */
++		while (1) {
++			if (cg_read(cg_test, "cgroup.procs", buf, sizeof(buf)))
++				goto cleanup;
++			if (buf[0] == '\0')
++				break;
++			usleep(1000);
++		}
++
++		if (rmdir(cg_test))
++			goto cleanup;
++
++		if (waitpid(child_pid, NULL, 0) < 0)
++			goto cleanup;
++	}
++	ret = KSFT_PASS;
++cleanup:
++	if (cg_test)
++		cg_destroy(cg_test);
++	free(cg_test);
++	return ret;
++}
++
+ /*
+  * A(0) - B(0) - C(1)
+  *        \ D(0)
+@@ -512,6 +624,7 @@ struct corecg_test {
+ 	T(test_cgcore_populated),
+ 	T(test_cgcore_proc_migration),
+ 	T(test_cgcore_thread_migration),
++	T(test_cgcore_destroy),
  };
+ #undef T
+ 
 -- 
 2.25.0.rc1.283.g88dfdc4193-goog
 
