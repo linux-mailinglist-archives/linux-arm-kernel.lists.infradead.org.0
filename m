@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 080E613D90E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:33:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B502313D90F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:34:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=fuCcrOcJDSUe+7PD1Wn9WF12+cm18TvTZ9+atxT8FkQ=; b=TpP2sVJfZV4q/R
-	RiDW+MQSs5sLkP0ancQSgMBkkwIiFlOJYCJSUtVJLbl8LMJroaq+rBOYiFaUaQBBUf329NPWNIL2h
-	nFAMou/jkv+KRjQkDqjgX3gW2Bwzxt/gfFaFq14OBMm+YYmvE/1T/xZMC9FAlsE3gHL9XX07o+RWN
-	hqDxaFofMus0LHBBWngLf7Tu7CCAbdIZ0i0Cmu+1HuckXqSmKHe2USyjsa1zgINIy0ra24ARtiAmc
-	JlRo5X1dk31uChdFa5W3UaImo5dWmZQTh1JEHplaryQUp9wr6iGdvWRtZdPMMbsvaicNXS+JVINj1
-	V/tZ+xyg3Hw/4QpV6hvQ==;
+	List-Owner; bh=oulihDJC3/9RakgT58q9XRG2Vpl0x8xfbcHiUYQzzQs=; b=QNM+YW6FPTg0RJ
+	R5JV2PPxO7q6Kn1BG8q58qwgzG+1qX+eEHG4SFak7gaX8bV+ctm83D+eLTizMwUG8tOw0gFCH2KAR
+	1msLRKqrgnTrifpd0pz8MCY2gUDlQxiigOC4YgwTzG8DYuFdtjsNnH+4ZxyjeF3ipyLOn8P6rSp1j
+	j3IBC+exC1azxvY2ZsoxhEugZoUavCf3DuIyjBODPLeyChDhJUcP1MGF+sLqLpqa5NzQV/wD514pz
+	PaSneUOZu3Yo2IRvso8/BFPTgD3Um7SIRMHy/WGc2t/TSEACPydMIlL4xp8jIJ+W53BpjFXKrrAB5
+	ER6abBxpO7+C0/EQeEMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3PI-0007JT-Ac; Thu, 16 Jan 2020 11:33:48 +0000
-Received: from mail-eopbgr40077.outbound.protection.outlook.com ([40.107.4.77]
+	id 1is3Pv-0007cW-1u; Thu, 16 Jan 2020 11:34:28 +0000
+Received: from mail-eopbgr40079.outbound.protection.outlook.com ([40.107.4.79]
  helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3Oz-000789-VC
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:33:34 +0000
+ id 1is3Pg-0007bi-Nl
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:34:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Edu6f/hMSugDEcp4T+Z+5CMddYosmPjiCB7/KsPcwBEcbept+rv0WwgWieUcpwt3Bu13dH7l/syNzw5ZnhseUrTv7XH84x6tcbWr6CSydM7uV1gDBXRks030aiAMx3rtjgPPCHkGDK0Wk4rkBF0fSzetyiqTkotrN+VhoYQ4bEzWxx4LeCzKMHdp+SK8LoaKe+/Kp/en1UBYBb1BeUoeqKi5jlCa1qdJbqWeUfm7SUJLT2AHOKmJnW6CNPVZBIX8df8zjleEiYH+5xw0aYeVntPaRHIdJKAN+L/eQxYc6nfNg6NPgLGyZ6wbTOF2ip5/B0BXl0GhIadZpRJ6949Gvw==
+ b=QlWOAa3vpx6i2cUxKuaDf7IY9qsqLiFQJC5Urz3o9yHg40NYt10LbThCpVVhBPfzyjVXKebzPZZkcp8gTGAUkgR/DP54rsCa83hPiq+wubpSGciEZLWSLAau5pp9mw3tDvAGVt64zuc4nUK+5AFkYq8fk/UaHOEHgG5GbTEL/4q/yJHj3SUNFLwR57NK+uMCljlG986vtqLMiqjwiBN8+DYy7O/yATWLFXC+0GZDYm3RFpU0mjWSW/r/e9FUVnbpvPZgRzYlRSL6om2SvZ4SkqmDxVCUr82EeIj3fKl+3vWlKANhYgIOTHgJNFyr7bYcdWmsVO2QBS97ZR3gj0wwDg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rLK4dptaKQ7CadUFhnoUfi5mD3Sn2STd3SBpHB3BJxg=;
- b=egbtlWqPRIfil3uL0B+QgbcDjbfovAi5+ETWoZ1DqmzKOULSRX4R92jEd4vJsnoWCwpaYI0dpe3ZTGYrwUwTVqMrfHlPEKG/6Jx34gRyZxLMIFyGuppKyhkjB2Uq6ndGcdN8+PBqo2WbXA3j3KcsHacf5V5caVjaEdJIn+6Ypmi4FM/1GoigceqzvaKhEltBHgamW0MJ+lTcoMKBUhoM0+RBFyf4RNmReW2hrXZ4fmp1n3YWHaq5M3cVfyw2hNSw9jbnlbpJKhencf2c2sjH7gn55K7pB5AuDyN/4nbRrOw0roO9Ef5aPV3QdHhG4SzpaLAFhssN7/48nFBKDbWUiA==
+ bh=1q1/JPqHG2FO/D0IgadxobMkmPtShYsAvrYP2T6FMW4=;
+ b=FmqBbogklhPKkxT2bROK/MhJI62mSSzgdrIcCK/LaU+uEfMXhfw0ujgB9EE3Nz/a4zItLzXq1iOKrJ1/KB5xunzQpxRzSQrS+bJwFDbDNFRSrhYDNw3j/4iQJ9b8m6Q6KzdLPTfywATljEHxphoMW4EM9YOgSRgN4KbdOr/dyQsbNXt3RgN3S9OZ3u9iijZBJUL2LTMRuWJcU+tTFBvCKhdGHyKwOtD59+lJPZd4Z99lUuQO6rpUv8Wb5PbBnyuAmbMRSEELzPpes+RuooYcOrSswLzhReSSq+Yu3kmqnBNJ4kgTG5ZY6lZr+DVNNnXGZzQLXsTfpmj5ZNpwcAzssQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rLK4dptaKQ7CadUFhnoUfi5mD3Sn2STd3SBpHB3BJxg=;
- b=fXmXB8iLXO/qXlqJyD8qOK/2i/SAGhu1lXb8hFbXRnpsddwt7UXmupzfEvKd9E8/K7pi1IA5Jt1kDlv3AdhpEOuljRRkiolMx+6mZb6Tl8LMOljXAgIr5x6F/xTEXVfMnXriL8Ntlspz1EW7RjysPWcmXgHg5HYB2yf+qsbSe8I=
+ bh=1q1/JPqHG2FO/D0IgadxobMkmPtShYsAvrYP2T6FMW4=;
+ b=rzN5ARw7nQgWPKlvVjWDJBucT4fMxhAi5Fk9IzA1uFan7TJeqVEjYl/JP+RbzAM25AtLbrcrCscvawTbiKNpS3MvlWzc+/x6sS0rhFg1MZ+a+UCFbKXZIsBea9rE+9qPD7g7F7hSQdzSFPvzdOD6FNla7jziaZGOrlYLOHCYM38=
 Received: from VI1PR04MB4445.eurprd04.prod.outlook.com (20.177.55.161) by
  VI1PR04MB7184.eurprd04.prod.outlook.com (10.186.157.15) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.20; Thu, 16 Jan 2020 11:33:24 +0000
+ 15.20.2644.20; Thu, 16 Jan 2020 11:34:10 +0000
 Received: from VI1PR04MB4445.eurprd04.prod.outlook.com
  ([fe80::304d:b7d8:1233:2ae0]) by VI1PR04MB4445.eurprd04.prod.outlook.com
  ([fe80::304d:b7d8:1233:2ae0%6]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
- 11:33:24 +0000
+ 11:34:10 +0000
 From: Iuliana Prodan <iuliana.prodan@nxp.com>
 To: Corentin Labbe <clabbe.montjoie@gmail.com>, "alexandre.torgue@st.com"
  <alexandre.torgue@st.com>, "davem@davemloft.net" <davem@davemloft.net>,
@@ -53,12 +53,13 @@ To: Corentin Labbe <clabbe.montjoie@gmail.com>, "alexandre.torgue@st.com"
  "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, "mripard@kernel.org"
  <mripard@kernel.org>, "wens@csie.org" <wens@csie.org>, Horia Geanta
  <horia.geanta@nxp.com>, Aymen Sghaier <aymen.sghaier@nxp.com>
-Subject: Re: [PATCH RFC 00/10] crypto: engine: permit to batch requests
-Thread-Topic: [PATCH RFC 00/10] crypto: engine: permit to batch requests
-Thread-Index: AQHVyuLk2wbnW44m8UepRKaJfTtAiA==
-Date: Thu, 16 Jan 2020 11:33:24 +0000
-Message-ID: <VI1PR04MB444530675D82743E8AFFD8FE8C360@VI1PR04MB4445.eurprd04.prod.outlook.com>
+Subject: Re: [PATCH RFC 05/10] crypto: engine: transform cur_req in an array
+Thread-Topic: [PATCH RFC 05/10] crypto: engine: transform cur_req in an array
+Thread-Index: AQHVyuLoLn4V3kbUsEW/6unpDUGQYQ==
+Date: Thu, 16 Jan 2020 11:34:09 +0000
+Message-ID: <VI1PR04MB444537D76D295AF3A337039D8C360@VI1PR04MB4445.eurprd04.prod.outlook.com>
 References: <20200114135936.32422-1-clabbe.montjoie@gmail.com>
+ <20200114135936.32422-6-clabbe.montjoie@gmail.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -68,11 +69,11 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [212.146.100.6]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1d5a9d90-b3fe-4d22-6ab7-08d79a77e609
+x-ms-office365-filtering-correlation-id: 03975f72-c4e3-49d8-e225-08d79a780105
 x-ms-traffictypediagnostic: VI1PR04MB7184:|VI1PR04MB7184:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB718402F930445D0337809C4C8C360@VI1PR04MB7184.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <VI1PR04MB7184B025F84A4A03986102EF8C360@VI1PR04MB7184.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 02843AA9E0
 x-forefront-antispam-report: SFV:NSPM;
  SFS:(10009020)(4636009)(366004)(396003)(376002)(346002)(136003)(39860400002)(189003)(199004)(9686003)(44832011)(8936002)(6636002)(5660300002)(81156014)(81166006)(8676002)(71200400001)(7696005)(4326008)(2906002)(6506007)(316002)(66446008)(66556008)(66476007)(66946007)(64756008)(54906003)(55016002)(110136005)(86362001)(76116006)(478600001)(186003)(53546011)(33656002)(52536014)(26005)(7416002)(91956017);
@@ -83,26 +84,26 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: gWHsKfSsL91e+6s8YVjctFX847/SPxehsFV0sVqBu+sroqr3IPlcKWfU8YigJd2WZjAP3EFPfFZwNDDnFIuM7MOvEC+6O0swmOz435nb57ekb+xC2cQlYz/0vaTdBZPbGiocRGSPKzAckY/7A+mzPxEDwj3Dzru0n2o1vptGdVHX5yyblqYh4/y+QRLtZPr0xAWeu5IC3ogDqIWHcyM+TYne+OtzUqnB4Yx0H35gh++tMr3CCsthzsdQDpOazyaZeZW9RmawtZbZyykWduts7rckRtO+3MkMIKET3Tx/wnVsC3oPQyc3Af5+ry3DhLzR3TEZmD8xgg9gpjhoCP0msm2JUtNrZ4JHTFWhTaZAJpJo8C7r9llv+TV6wVbAsfiha8PuV9OFjudlVT2VN/6PNGdiUPwA5MbnqbSp8TxsCaT3n74OhCPA6dUyKsDz/nTx
+x-microsoft-antispam-message-info: hrBsgrYduZTlWIChCUXQkrx9vs0LT5UeaO21RvKYd/azLeLmiiHaMr2j9oiXfbhE4tDjRa5UlxDhg7DIoB6Am6QLhSJUq4LyM0YPvM22oSZqSRN/n+DK8Ij17xTl9ps/mFqSpeZCvnvqZaDHHJUzsAiLbFrUb7He9BpA4HNES4KgcEUGm2aemzqgQVB95p8tH3L8jhSLiA/TQiDJ3lDJtsB1bQGGVSEET3nZ9U8vR8j7GN6QOklztRHN9F8jdMtWfk9K193s1X8GOr5mZzNQAsOenS2Iba/cCOtP2U9VCYSLgW7kPHN1Nloav+qPCkA0pnWD18/fcTx+X/V+49LdVH4GJZ8FHUcw0gXYjzrnxGDHNas7mvZMkLel7cVgAqLSLTU3rXJ/5+efW/855hC80Sq6GCqLepr8hlidh0NovhEsFsn7vZOe30cWq+p2WfQT
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1d5a9d90-b3fe-4d22-6ab7-08d79a77e609
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 11:33:24.6777 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 03975f72-c4e3-49d8-e225-08d79a780105
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 11:34:09.9130 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 7RXfYQx2sYUXWh5YqK/16WWcX0Z7zMVcVhyGWBQkiM20TZ3jaYm3l7YuTWZbZvt4VeXoSO6OuFxiQ441c4v1jg==
+X-MS-Exchange-CrossTenant-userprincipalname: y1C+gGUxK5gPeiss0FxOexpPN9tFL4C2x6P/JIw333VVeD7lG736LpKGR+LH6mcd35FzJihwaCRizUL5db9Qcg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7184
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_033330_239418_53903C8C 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20200116_033412_778891_A38B55AE 
+X-CRM114-Status: GOOD (  19.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.77 listed in list.dnswl.org]
+ no trust [40.107.4.79 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -135,74 +136,179 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 1/14/2020 3:59 PM, Corentin Labbe wrote:
-> Hello
+> For having the ability of doing a batch of request in one do_one_request(), we
+> should be able to store them in an array. (for unpreparing them later).
+> This patch converts cur_req in an array of request, but for the moment
+> hardcode the maximum to 1.
 > 
-> The sun8i-ce hardware can work on multiple requests in one batch.
-> For this it use a task descriptor, and chain them.
-> For the moment, the driver does not use this mechanism and do requests
-> one at a time and issue an irq for each.
+> Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> ---
+>   crypto/crypto_engine.c  | 32 ++++++++++++++++++--------------
+>   include/crypto/engine.h | 19 +++++++++++++++----
+>   2 files changed, 33 insertions(+), 18 deletions(-)
 > 
-> Using the chaning will permit to issue less interrupts, and increase
-> thoughput.
-> 
-> But the crypto/engine can enqueue lots of requests but can ran them only
-> one by one.
-> 
-> This serie introduce a way to batch requests in crypto/engine by
-> - setting a batch limit (1 by default)
-> - refactor the prepare/unprepare code to permit to have x requests
->    prepared/unprepared at the same time.
-> 
-> For testing the serie, the selftest are not enough, since it issue
-> request one at a time.
-> I have used LUKS for testing it.
-> 
-> Please give me what you think about this serie, specially maintainers
-> which have hardware with the same kind of capability.
-> 
-Hi,
+> diff --git a/crypto/crypto_engine.c b/crypto/crypto_engine.c
+> index eb029ff1e05a..b72873550587 100644
+> --- a/crypto/crypto_engine.c
+> +++ b/crypto/crypto_engine.c
+> @@ -30,26 +30,27 @@ static void crypto_finalize_request(struct crypto_engine *engine,
+>   	struct crypto_engine_ctx *enginectx;
+>   
+>   	spin_lock_irqsave(&engine->queue_lock, flags);
+> -	if (engine->cur_req == req)
+> +	if (engine->cur_reqs[0].req == req)
+>   		finalize_cur_req = true;
+>   	spin_unlock_irqrestore(&engine->queue_lock, flags);
+>   
+>   	if (finalize_cur_req) {
+> -		enginectx = crypto_tfm_ctx(req->tfm);
+> -		if (engine->cur_req_prepared &&
+> +		enginectx = crypto_tfm_ctx(engine->cur_reqs[0].req->tfm);
+> +		if (engine->cur_reqs[0].prepared &&
+>   		    enginectx->op.unprepare_request) {
+> -			ret = enginectx->op.unprepare_request(engine, req);
+> +			ret = enginectx->op.unprepare_request(engine, engine->cur_reqs[0].req);
+>   			if (ret)
+>   				dev_err(engine->dev, "failed to unprepare request\n");
+>   		}
+> +		engine->cur_reqs[0].req->complete(engine->cur_reqs[0].req, err);
+>   		spin_lock_irqsave(&engine->queue_lock, flags);
+> -		engine->cur_req = NULL;
+> -		engine->cur_req_prepared = false;
+> +		engine->cur_reqs[0].prepared = false;
+> +		engine->cur_reqs[0].req = NULL;
+>   		spin_unlock_irqrestore(&engine->queue_lock, flags);
+> +	} else {
+> +		req->complete(req, err);
+>   	}
+>   
+> -	req->complete(req, err);
+> -
+>   	kthread_queue_work(engine->kworker, &engine->pump_requests);
+>   }
+>   
+> @@ -74,7 +75,7 @@ static void crypto_pump_requests(struct crypto_engine *engine,
+>   	spin_lock_irqsave(&engine->queue_lock, flags);
+>   
+>   	/* Make sure we are not already running a request */
+> -	if (engine->cur_req)
+> +	if (engine->cur_reqs[0].req)
+>   		goto out;
+>   
+>   	/* If another context is idling then defer */
+> @@ -114,7 +115,7 @@ static void crypto_pump_requests(struct crypto_engine *engine,
+>   	if (!async_req)
+>   		goto out;
+>   
+> -	engine->cur_req = async_req;
+> +	engine->cur_reqs[0].req = async_req;
+>   	if (backlog)
+>   		backlog->complete(backlog, -EINPROGRESS);
+>   
+> @@ -143,14 +144,14 @@ static void crypto_pump_requests(struct crypto_engine *engine,
+>   				ret);
+>   			goto req_err;
+>   		}
+> -		engine->cur_req_prepared = true;
+> +		engine->cur_reqs[0].prepared = true;
+>   	}
+>   	if (!enginectx->op.do_one_request) {
+>   		dev_err(engine->dev, "failed to do request\n");
+>   		ret = -EINVAL;
+>   		goto req_err;
+>   	}
+> -	ret = enginectx->op.do_one_request(engine, async_req);
+> +	ret = enginectx->op.do_one_request(engine, engine->cur_reqs[0].req);
+>   	if (ret) {
+>   		dev_err(engine->dev, "Failed to do one request from queue: %d\n", ret);
+>   		goto req_err;
+> @@ -158,7 +159,7 @@ static void crypto_pump_requests(struct crypto_engine *engine,
+>   	return;
+>   
+>   req_err:
+> -	crypto_finalize_request(engine, async_req, ret);
+> +	crypto_finalize_request(engine, engine->cur_reqs[0].req, ret);
+>   	return;
+>   
+>   out:
+> @@ -411,10 +412,13 @@ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
+>   	engine->running = false;
+>   	engine->busy = false;
+>   	engine->idling = false;
+> -	engine->cur_req_prepared = false;
+>   	engine->priv_data = dev;
+>   	snprintf(engine->name, sizeof(engine->name),
+>   		 "%s-engine", dev_name(dev));
+> +	engine->rmax = 1;
+> +	engine->cur_reqs = devm_kzalloc(dev, sizeof(struct cur_req) * engine->rmax, GFP_KERNEL);
+> +	if (!engine->cur_reqs)
+> +		return NULL;
+>   
+>   	crypto_init_queue(&engine->queue, CRYPTO_ENGINE_MAX_QLEN);
+>   	spin_lock_init(&engine->queue_lock);
+> diff --git a/include/crypto/engine.h b/include/crypto/engine.h
+> index e29cd67f93c7..362134e226f4 100644
+> --- a/include/crypto/engine.h
+> +++ b/include/crypto/engine.h
+> @@ -18,13 +18,23 @@
+>   #include <crypto/skcipher.h>
+>   
+>   #define ENGINE_NAME_LEN	30
+> +
+> +/*
+> + * struct cur_req - Represent a request to be processed
+> + * @prepared:	Does the request was prepared
+> + * @req:	The request to be processed
+> + */
+> +struct cur_req {
+> +	bool				prepared;
+> +	struct crypto_async_request	*req;
+> +};
+> +
+>   /*
+>    * struct crypto_engine - crypto hardware engine
+>    * @name: the engine name
+>    * @idling: the engine is entering idle state
+>    * @busy: request pump is busy
+>    * @running: the engine is on working
+> - * @cur_req_prepared: current request is prepared
+>    * @list: link with the global crypto engine list
+>    * @queue_lock: spinlock to syncronise access to request queue
+>    * @queue: the crypto queue of the engine
+> @@ -38,14 +48,14 @@
+>    * @kworker: kthread worker struct for request pump
+>    * @pump_requests: work struct for scheduling work to the request pump
+>    * @priv_data: the engine private data
+> - * @cur_req: the current request which is on processing
+> + * @rmax:	The number of request which can be processed in one batch
+> + * @cur_reqs: 	A list for requests to be processed
+>    */
+>   struct crypto_engine {
+>   	char			name[ENGINE_NAME_LEN];
+>   	bool			idling;
+>   	bool			busy;
+>   	bool			running;
+> -	bool			cur_req_prepared;
+>   
+>   	struct list_head	list;
+>   	spinlock_t		queue_lock;
+> @@ -61,7 +71,8 @@ struct crypto_engine {
+>   	struct kthread_work             pump_requests;
+>   
+>   	void				*priv_data;
+> -	struct crypto_async_request	*cur_req;
+> +	int 				rmax;
+> +	struct cur_req 			*cur_reqs;
+>   };
 
-I'm working on CAAM, on adding support for crypto-engine.
-These modifications are not working on CAAM.
-They seem to be specific to requests that are linked. CAAM can work on 
-multiple request, at the same time, but they are processed independently.
-So, I believe the parallelization is a good idea, but the requests still 
-need to be independent.
-I'll follow up with comments on each patch.
+To keep requests independent IMO it would be best to have a list of 
+requests like: struct requests run_queue, where
 
-Also, IMO you should send the patches for crypto-engine improvements in 
-a separate series from the one for allwinner driver.
-
-Thanks,
-Iulia
-
-> Regards
-> 
-> Corentin Labbe (10):
->    crypto: sun8i-ce: move iv data to request context
->    crypto: sun8i-ce: increase task list size
->    crypto: sun8i-ce: split into prepare/run/unprepare
->    crypto: sun8i-ce: introduce the slot number
->    crypto: engine: transform cur_req in an array
->    crypto: engine: introduce ct
->    crypto: sun8i-ce: handle slot > 0
->    crypto: engine: add slot parameter
->    crypto: engine: permit to batch requests
->    crypto: sun8i-ce: use the new batch mechanism
-> 
->   crypto/crypto_engine.c                        |  76 +++++++----
->   .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 121 +++++++++++++-----
->   .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |  17 ++-
->   drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  |  17 ++-
->   drivers/crypto/omap-aes-gcm.c                 |   2 +-
->   drivers/crypto/omap-aes.c                     |   4 +-
->   drivers/crypto/omap-des.c                     |   4 +-
->   drivers/crypto/stm32/stm32-cryp.c             |   8 +-
->   drivers/crypto/stm32/stm32-hash.c             |   4 +-
->   include/crypto/engine.h                       |  27 +++-
->   10 files changed, 201 insertions(+), 79 deletions(-)
-> 
-
+struct requests {
+	unsigned int max_no_reqs;
+	unsigned int current_no_reqs;
+	struct cur_req *cur_reqs; //list of the requests
+} run_queue;
 
 _______________________________________________
 linux-arm-kernel mailing list
