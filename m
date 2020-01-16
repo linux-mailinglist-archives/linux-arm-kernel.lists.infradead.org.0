@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0029B13E4B5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:10:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A7913E4C8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:10:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m1fzPCkzi6djjog6teRPIrAJjZ8xnpWneIMz+tg33Q4=; b=hCxDEqEl7wBrvp
-	uayFzS1xvNPHc30VcZz8FJ7Jnt4dV7vaIZMLbO1QWPKZE+zJFIqRi2MulK6wdqAmMnIsJgQOG+oys
-	hIo2byQp7RUbExE13v58WXx/xmALfJKQzND2xvLAUIMnvwMs1nzjRDrmh55OYx5ancQQ1jbDtUDcG
-	c4aR4cuQqCT8dVK0kHJqhc2gIQ14PyQBcdw6BdPOt/p7VarYfssoyaLQ9wt794hVlSvpXU1wNRRDC
-	OVSBn4v+N2N67Fw+R6chW6XkSkw68XlAOu69XCNj1EQWtgJ9lIk8CpCOqGlROcw1cbywQhAErXL/Z
-	jnRUr7JZjN3FvhLe+ahg==;
+	List-Owner; bh=CJdIlLL+Wu2LoI34rEZGaoZ/IHlYD4RtLjSAQFAibRk=; b=Nbhc+06NFtD4gP
+	3u6oetxy3eZ3HlcwO3J0SonE9NheEdrC2FQtih+LH7R7Q9DeqBhdTrtbDEPxh6Nyfj2bYou6GI721
+	PWVDQ1onwuBIxG5Iq6wg4Hr5fAxhHTGZI8ozHRuGGgUBXA9EBBhmmoIYfeZg4if4XGl5cWeqC/hFg
+	g51XIqeoRV2/g3/ckzqu9URzkM5+6TLMkeWTTbizDzkWp/yCFFqmizLESLcCNNWzd9aK9v2MHvq9y
+	+3zpCg0im3E+3wCNOx4XoR3e7EkuPNSmDb4sKxXL+ahhcAt4iWhQCVCGAuUbFjLw0aFcYjgsGLKP+
+	Wh9NryWMGfPAFQCrGpAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8f4-0002po-5h; Thu, 16 Jan 2020 17:10:26 +0000
+	id 1is8fL-0003uY-OO; Thu, 16 Jan 2020 17:10:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8VR-0000jv-Cf
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:00:33 +0000
+ id 1is8VS-0000lF-9R
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:00:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B992620728;
- Thu, 16 Jan 2020 17:00:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 268842467C;
+ Thu, 16 Jan 2020 17:00:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194028;
- bh=hk8o/o0ui0DzOrPfJB1gueCoIZSQPLdBBKU4xXydY30=;
+ s=default; t=1579194029;
+ bh=3eSdQKBCKCZUZxrA8ohD1vqLNUjmacg3tdsdP3Ld41c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JRlJmRMdNioYLTy4t+nvPWnItAAsOZ7h61N4YmBEu50ZWZbFpP8SjhzMUD13fFQYA
- xGd4cgJADAy073HRVrvDay064rL8eYlOR7oCY/vq+xnWqEQ64TjQ20tVHp5OoZFhlu
- y6zY0q8apakiwB16dit83nA7zQkkx9bhRy03fgAI=
+ b=XjuTvFYeuxqI2R2WefEkXbdUzsg/JyYnCPp5ZXMgRh/xdfWFCA47U6cqE6T68Lhi+
+ WSkiqVTQLrUgWnuhn5oo6Fl1IvjEklhrVHqTW9mBKeXpQzLlfJWG+BCLZOwmeRu7CP
+ Z9Y7IR0Kv9hOfUdHdUPQ4JIVLPHo+T+HmcKDgKBA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 148/671] ARM: dts: lpc32xx: reparent keypad
- controller to SIC1
-Date: Thu, 16 Jan 2020 11:50:57 -0500
-Message-Id: <20200116165940.10720-31-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 149/671] ARM: dts: lpc32xx: fix ARM PrimeCell LCD
+ controller variant
+Date: Thu, 16 Jan 2020 11:50:58 -0500
+Message-Id: <20200116165940.10720-32-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116165940.10720-1-sashal@kernel.org>
 References: <20200116165940.10720-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090029_477292_162F931F 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20200116_090030_431985_4FDCDB49 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,39 +89,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Vladimir Zapolskiy <vz@mleia.com>
 
-[ Upstream commit 489261c45f0ebbc1c2813f337bbdf858267f5033 ]
+[ Upstream commit 7a0790a4121cbcd111cc537cdc801c46ccb789ee ]
 
-After switching to a new interrupt controller scheme by separating SIC1
-and SIC2 from MIC interrupt controller just one SoC keypad controller
-was not taken into account, fix it now:
+ARM PrimeCell PL111 LCD controller is found on On NXP LPC3230
+and LPC3250 SoCs variants, the original reference in compatible
+property to an older one ARM PrimeCell PL110 is invalid.
 
-  WARNING: CPU: 0 PID: 1 at kernel/irq/irqdomain.c:524 irq_domain_associate+0x50/0x1b0
-  error: hwirq 0x36 is too large for interrupt-controller@40008000
-  ...
-  lpc32xx_keys 40050000.key: failed to get platform irq
-  lpc32xx_keys: probe of 40050000.key failed with error -22
-
-Fixes: 9b8ad3fb81ae ("ARM: dts: lpc32xx: reparent SIC1 and SIC2 interrupts from MIC")
+Fixes: e04920d9efcb3 ("ARM: LPC32xx: DTS files for device tree conversion")
 Signed-off-by: Vladimir Zapolskiy <vz@mleia.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/lpc32xx.dtsi | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/lpc32xx.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/lpc32xx.dtsi b/arch/arm/boot/dts/lpc32xx.dtsi
-index d4368eeff1b9..4f8f671c3343 100644
+index 4f8f671c3343..cfd422e7f774 100644
 --- a/arch/arm/boot/dts/lpc32xx.dtsi
 +++ b/arch/arm/boot/dts/lpc32xx.dtsi
-@@ -463,7 +463,8 @@
- 				compatible = "nxp,lpc3220-key";
- 				reg = <0x40050000 0x1000>;
- 				clocks = <&clk LPC32XX_CLK_KEY>;
--				interrupts = <54 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-parent = <&sic1>;
-+				interrupts = <22 IRQ_TYPE_LEVEL_HIGH>;
- 				status = "disabled";
- 			};
+@@ -139,7 +139,7 @@
+ 		};
  
+ 		clcd: clcd@31040000 {
+-			compatible = "arm,pl110", "arm,primecell";
++			compatible = "arm,pl111", "arm,primecell";
+ 			reg = <0x31040000 0x1000>;
+ 			interrupts = <14 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&clk LPC32XX_CLK_LCD>;
 -- 
 2.20.1
 
