@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B125113F358
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:43:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1469D13F35B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:43:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xLa13DO9lKIttdZUKnRrVybpOvkZticR2OOr2hLyzyM=; b=Jx/NNpdWUaBTEC
-	AwX0QRF4eAFvO6F9rjMvcLyz+n3iZUD5ZHsNPwP22yiTSGJglKaa/QCZE/Z0uPOdGJTRtkgqbtNYe
-	GYzBJIL6xeNqre5d6IJ8eV4sXBUCrZH/ZG6OKUNoiH62o6A5la+VGtw+zKYLjgMTunvE5CTcRlRii
-	y8Gr+CF3r9qFhliwpd94Nb91kctZDZp6M9sI21fM0BO1aMJAc7TK7jGzcldaHco2Ux7OowUMtZJYH
-	AG986lOH/TvA7ac6kFVOwiccd/2z8OVMV12ylUNRqpoqLZ2XEG159A1727ts7iXHgncinQ9Btw6lW
-	zLdFkvFt9d+tAvWvuXrA==;
+	List-Owner; bh=0j0bHilsVqHjaJOapaYjeQYnN0I1a/9HzDcnQouXUbw=; b=GgNmXxRQckHRl8
+	Rt06jSc/i3caVLF0mOOYJ6FFoJR5AQ+C22TyU2BT31ARE3P/4tBPGJFLwP49ouQo5bmgURtvsAlb7
+	1vbVUdKTWjr2w1zAk4ncXlNwqwtxh5AxSIudekQ+aoElXtEJEiTTK4Zl8obHbZNO1v5DIe2OeUCRD
+	F86EQhKz+BUjBmVvDbM5dxc2b3nQGAUJFmEhb96RBH/9ttiF+eZTWxpkKjp2Usjw8lcR3uq7pDlKu
+	+CA00Teaun7sL7nDWbJGGPGqmyfCU9otmFjZUDL2eMZstEMd1hKv6v9FdVOcJ6Xf78lHXAQDpSUil
+	RtPYAxa++LgSpLMeLdmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isA6W-0005U8-Q1; Thu, 16 Jan 2020 18:42:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9UU-0000Wh-Ne
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:03:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF3BD31B;
- Thu, 16 Jan 2020 10:03:33 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE2C73F534;
- Thu, 16 Jan 2020 10:03:32 -0800 (PST)
-Date: Thu, 16 Jan 2020 18:03:26 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Radhey Shyam Pandey <radheys@xilinx.com>
-Subject: Re: [PATCH 03/14] net: axienet: Fix DMA descriptor cleanup path
-Message-ID: <20200116180326.47c93ce2@donnerap.cambridge.arm.com>
-In-Reply-To: <CH2PR02MB70008D24DA7D1426E8A71013C7380@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-4-andre.przywara@arm.com>
- <CH2PR02MB7000F64AB27D352E00DC77A7C7380@CH2PR02MB7000.namprd02.prod.outlook.com>
- <20200110154328.6676215f@donnerap.cambridge.arm.com>
- <CH2PR02MB70008D24DA7D1426E8A71013C7380@CH2PR02MB7000.namprd02.prod.outlook.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1isA6w-0005wg-Fo; Thu, 16 Jan 2020 18:43:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is9Zn-0007Lg-Er; Thu, 16 Jan 2020 18:09:05 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1D525214AF;
+ Thu, 16 Jan 2020 18:09:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579198142;
+ bh=G12bYRjcFudffpQ1Inc1ks16rEJngpLF0eu9Bib/8YI=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=y1Wk+36g6x6dqMQXtUbMYxKQj6vISCydPq/80JUNhvRBRQlZvOMlp8qwo9f/1hK/9
+ 6ViaY6kF/wqqJdCtP2KA73CyC4RcI1702MEccjKN559ZrT75cKQmGVxCoLrhF37W4D
+ ydKODBdVJNUDGpAtZxoVBfhyqK/3Lni8IIbkruIU=
+Date: Thu, 16 Jan 2020 18:08:58 +0000
+From: Will Deacon <will@kernel.org>
+To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ Pavel Tatashin <pasha.tatashin@soleen.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, robh+dt@kernel.org,
+ frowand.list@gmail.com, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
+Message-ID: <20200116180857.GA22420@willie-the-truck>
+References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
+ <20191216021247.24950-3-takahiro.akashi@linaro.org>
+ <20200108174839.GB21242@willie-the-truck>
+ <20200109004654.GA28530@linaro.org>
+ <20200109083254.GA7280@willie-the-truck>
+ <20200110160549.GA25437@willie-the-truck>
+ <CA+CK2bAy-vfoz3kgUjZB74Hrobgu-a8H4pv6RbA_tbq++NWz5g@mail.gmail.com>
+ <20200113112105.GB2337@willie-the-truck>
+ <20200114053825.GC28530@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200114053825.GC28530@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_100334_891529_5C985828 
-X-CRM114-Status: GOOD (  30.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_100903_566152_295EF132 
+X-CRM114-Status: GOOD (  27.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,166 +90,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Robert Hancock <hancock@sedsystems.ca>, Michal Simek <michals@xilinx.com>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 17:05:45 +0000
-Radhey Shyam Pandey <radheys@xilinx.com> wrote:
-
-Hi,
-
-> > -----Original Message-----
-> > From: Andre Przywara <andre.przywara@arm.com>
-> > Sent: Friday, January 10, 2020 9:13 PM
-> > To: Radhey Shyam Pandey <radheys@xilinx.com>
-> > Cc: David S . Miller <davem@davemloft.net>; Michal Simek
-> > <michals@xilinx.com>; Robert Hancock <hancock@sedsystems.ca>;
-> > netdev@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> > kernel@vger.kernel.org
-> > Subject: Re: [PATCH 03/14] net: axienet: Fix DMA descriptor cleanup path
+On Tue, Jan 14, 2020 at 02:38:26PM +0900, AKASHI Takahiro wrote:
+> On Mon, Jan 13, 2020 at 11:21:06AM +0000, Will Deacon wrote:
+> > On Fri, Jan 10, 2020 at 11:19:16AM -0500, Pavel Tatashin wrote:
+> > > On Fri, Jan 10, 2020 at 11:05 AM Will Deacon <will@kernel.org> wrote:
+> > > > On Thu, Jan 09, 2020 at 08:32:54AM +0000, Will Deacon wrote:
+> > > > > On Thu, Jan 09, 2020 at 09:46:55AM +0900, AKASHI Takahiro wrote:
+> > > > > > On Wed, Jan 08, 2020 at 05:48:39PM +0000, Will Deacon wrote:
+> > > > > > > On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
+> > > > > > > > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
+> > > > > > > > index 12a561a54128..d24b527e8c00 100644
+> > > > > > > > --- a/arch/arm64/include/asm/kexec.h
+> > > > > > > > +++ b/arch/arm64/include/asm/kexec.h
+> > > > > > > > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
+> > > > > > > >  struct kimage_arch {
+> > > > > > > >         void *dtb;
+> > > > > > > >         unsigned long dtb_mem;
+> > > > > > > > +       /* Core ELF header buffer */
+> > > > > > > > +       void *elf_headers;
+> > > > > > > > +       unsigned long elf_headers_mem;
+> > > > > > > > +       unsigned long elf_headers_sz;
+> > > > > > > >  };
+> > > > > > >
+> > > > > > > This conflicts with the cleanup work from Pavel. Please can you check my
+> > > > > > > resolution? [1]
+> > > > > >
+> > > > > > I don't know why we need to change a type of dtb_mem,
+> > > > > > otherwise it looks good.
+> > > > > >
+> > > > > > (I also assume that you notice that kimage_arch is of no use for kexec.)
+> > > > >
+> > > > > Yes, that's why I'd like the resolution checked. If you reckon it's cleaner
+> > > > > to drop Pavel's patch altogether in light of your changes, we can do that
+> > > > > instead.
+> > > > >
+> > > > > Thoughts?
+> > > >
+> > > > Well, I've reverted the cleanup patch so please shout if you'd prefer
+> > > > something else.
+> > > 
+> > > As I understand, the only concern was the type change for dtb_mem.
+> > > This was one of the review comments for my patch
+> > > https://lore.kernel.org/lkml/20191204155938.2279686-21-pasha.tatashin@soleen.com/
+> > > 
+> > > (I believe it was from Marc Zyngier), I add a number of new fields,
+> > > and they all should be phys_addr_t, this is why I change dtb_mem to
+> > > phys_addr_t to be consistent.
 > > 
-> > On Fri, 10 Jan 2020 15:14:46 +0000
-> > Radhey Shyam Pandey <radheys@xilinx.com> wrote:
-> > 
-> > Hi Radhey,
-> > 
-> > thanks for having a look!
-> >   
-> > > > -----Original Message-----
-> > > > From: Andre Przywara <andre.przywara@arm.com>
-> > > > Sent: Friday, January 10, 2020 5:24 PM
-> > > > To: David S . Miller <davem@davemloft.net>; Radhey Shyam Pandey
-> > > > <radheys@xilinx.com>
-> > > > Cc: Michal Simek <michals@xilinx.com>; Robert Hancock
-> > > > <hancock@sedsystems.ca>; netdev@vger.kernel.org; linux-arm-
-> > > > kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> > > > Subject: [PATCH 03/14] net: axienet: Fix DMA descriptor cleanup path
-> > > >
-> > > > When axienet_dma_bd_init() bails out during the initialisation process,
-> > > > it might do so with parts of the structure already allocated and
-> > > > initialised, while other parts have not been touched yet. Before
-> > > > returning in this case, we call axienet_dma_bd_release(), which does not
-> > > > take care of this corner case.
-> > > > This is most obvious by the first loop happily dereferencing
-> > > > lp->rx_bd_v, which we actually check to be non NULL *afterwards*.
-> > > >
-> > > > Make sure we only unmap or free already allocated structures, by:
-> > > > - directly returning with -ENOMEM if nothing has been allocated at all
-> > > > - checking for lp->rx_bd_v to be non-NULL *before* using it
-> > > > - only unmapping allocated DMA RX regions
-> > > >
-> > > > This avoids NULL pointer dereferences when initialisation fails.
-> > > >
-> > > > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> > > > ---
-> > > >  .../net/ethernet/xilinx/xilinx_axienet_main.c | 43 ++++++++++++-------
-> > > >  1 file changed, 28 insertions(+), 15 deletions(-)
-> > > >
-> > > > diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> > > > b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> > > > index 97482cf093ce..7e90044cf2d9 100644
-> > > > --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> > > > +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> > > > @@ -160,24 +160,37 @@ static void axienet_dma_bd_release(struct
-> > > > net_device *ndev)
-> > > >  	int i;
-> > > >  	struct axienet_local *lp = netdev_priv(ndev);
-> > > >
-> > > > +	/* If we end up here, tx_bd_v must have been DMA allocated. */
-> > > > +	dma_free_coherent(ndev->dev.parent,
-> > > > +			  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
-> > > > +			  lp->tx_bd_v,
-> > > > +			  lp->tx_bd_p);
-> > > > +
-> > > > +	if (!lp->rx_bd_v)
-> > > > +		return;
-> > > > +
-> > > >  	for (i = 0; i < lp->rx_bd_num; i++) {
-> > > > -		dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
-> > > > -				 lp->max_frm_size, DMA_FROM_DEVICE);
-> > > > +		/* A NULL skb means this descriptor has not been initialised
-> > > > +		 * at all.
-> > > > +		 */
-> > > > +		if (!lp->rx_bd_v[i].skb)
-> > > > +			break;
-> > > > +
-> > > >  		dev_kfree_skb(lp->rx_bd_v[i].skb);
-> > > > -	}
-> > > >
-> > > > -	if (lp->rx_bd_v) {
-> > > > -		dma_free_coherent(ndev->dev.parent,
-> > > > -				  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
-> > > > -				  lp->rx_bd_v,
-> > > > -				  lp->rx_bd_p);
-> > > > -	}
-> > > > -	if (lp->tx_bd_v) {
-> > > > -		dma_free_coherent(ndev->dev.parent,
-> > > > -				  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
-> > > > -				  lp->tx_bd_v,
-> > > > -				  lp->tx_bd_p);
-> > > > +		/* For each descriptor, we programmed cntrl with the (non-
-> > > > zero)
-> > > > +		 * descriptor size, after it had been successfully allocated.
-> > > > +		 * So a non-zero value in there means we need to unmap it.
-> > > > +		 */  
-> > >  
-> > > > +		if (lp->rx_bd_v[i].cntrl)  
-> > >
-> > > I think it should ok to unmap w/o any check?  
-> > 
-> > Do you mean because .phys would be 0 if not initialised? AFAIK 0 can be a
-> > valid DMA address, so there is no special check for that, and unmapping
-> > DMA address 0 will probably go wrong at some point. So it's unlike
-> > kfree(NULL).  
+> > Sure, but I've only queued the first part of your series and that cleanup
+> > patch doesn't make a lot of sense when applied against Akashi's work. I'm
+> > happy to take stuff on top if you both agree to it, but having half of the
+> > struct use unsigned long and the other half use phys_addr_t is messy.
 > 
-> I mean if skb allocation is successful in _dma_bd_init then in release path
-> we can assume .phys is always a valid address and skip rx_bd_v[i].cntrl
-> check.
+> Logically, whether dtb_mem is a "unsigned long" or phys_addr_t doesn't
+> matter unless the kernel is compiled under LLP64.
+> As far as the existing kexec code, either generic or arm64-specific,
+> is concerned, however, "unsigned long is widely used as a physical address
+> (For example, see kexec_buf definition) over the code.
+> 
+> (Oops, reboot_code_buffer_phys is a phys_addr_t :)
+> 
+> So as long as my kexec_file (and associated kdump) patch comes first
+> before Pavel's, I'd like to keep using "unsigned long".
+> Then, you can change "unsigned long" to phys_addr_t in your patch
+> for whatever reason it is.
+> 
+> Please note that, if you want to do that, it would be better to modify
+> not only kimage_arch but also all the occurrences of "unsigned long"
+> to phys_addr_t for maintaining the integrity.
+> 
+> In addition, in my kexec_file kdump code, I still believe that
+> "#ifdef CONFIG_KEXEC_FILE" should stay before the definition of
+> kimage_arch as kimage_arch is of no use for normal kexec code.
+> 
+> Again,
+> "#ifdef" statement may be moved forward once additional fields be
+> added later by Pavel's patch, say, "[PATCH v8 15/25] arm64: kexec:
+> move relocation function setup" for any reason.
+> 
+> I believe that this way gives us a logical and consistent view of
+> history of changes.
+> Make sense?
 
-I don't think we can assume this. If the skb allocation succeeded, but then the dma_map_single failed (which we check with dma_mapping_error()), we would end up with a valid skb, but an uninitialised phys DMA address in the registers. That's why I set .cntrl only after having checked the dma_map_single() result.
-
-Or am I missing something?
+This is a bit much to stick in a merge commit, so I'll stick with the revert
+for now and you can send patches on top if you want it changed.
 
 Cheers,
-Andre
- 
-> > > > +			dma_unmap_single(ndev->dev.parent, lp-  
-> > > > >rx_bd_v[i].phys,  
-> > > > +					 lp->max_frm_size,
-> > > > DMA_FROM_DEVICE);
-> > > >  	}
-> > > > +
-> > > > +	dma_free_coherent(ndev->dev.parent,
-> > > > +			  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
-> > > > +			  lp->rx_bd_v,
-> > > > +			  lp->rx_bd_p);
-> > > >  }
-> > > >
-> > > >  /**
-> > > > @@ -207,7 +220,7 @@ static int axienet_dma_bd_init(struct net_device
-> > > > *ndev)
-> > > >  					 sizeof(*lp->tx_bd_v) * lp-  
-> > > > >tx_bd_num,  
-> > > >  					 &lp->tx_bd_p, GFP_KERNEL);
-> > > >  	if (!lp->tx_bd_v)
-> > > > -		goto out;
-> > > > +		return -ENOMEM;
-> > > >
-> > > >  	lp->rx_bd_v = dma_alloc_coherent(ndev->dev.parent,
-> > > >  					 sizeof(*lp->rx_bd_v) * lp-  
-> > > > >rx_bd_num,  
-> > > > --
-> > > > 2.17.1  
-> > >  
-> 
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
