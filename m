@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C82313EE73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:09:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEB8013EE78
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:10:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zbEYSub4ChtAAaDlgeDu7PH8AZwMc77fGM4wJwGYVdE=; b=fRdC01wWwFywk+
-	te4OmhpVJellIpNU68+QWBloSzOg571RhC18F4fdRnw6pzxiZeJIsWg6GiuQq87vuDbbTk2aQ2gx2
-	3TYok9sVPa9k43nLAPAzupPSPe6STQlZxPG0fkX4ZC35Gcwo7lxSDqUSKhppR+AvKcTe5rNoDaHIT
-	ezeuJrip8haxrAmwn1hBpJqZ8ZOoyyBju7ZcK7N8tRcL/3TvwGwks7ZEIU2oLReFdSaXLaKKNyOSC
-	Flo1aLe7dy/zkFgSVK0DJ26ao76ZKrsJg/gtaR6QH/hZBZ2PhdyG5TcEc8kLsp09UIfCsIvzaSxkT
-	Xv2svg63KYFPpzp7VxRQ==;
+	List-Owner; bh=x5Y5Z74/r87TOtT2BP4rVfdMtx7doL5OSzFyNyuyaFQ=; b=URGj/tQ+tI7zFJ
+	j5uq1Ib2Oy+upPLALY4Oinphj2tpRMMG/xuuOLgEARHYsi7lEAX9g6JH74F7PZmLipfZYccLv+v4S
+	5nOwtiWB4NU0NhcfGsbJe6zvHcoQmoHg5G20Mpinapcf28fHtRLZUKBkK9QN3TzDRT7PiNJOTjQEq
+	ac7nqAzsrQ8nzhQdN/s6IN4X4jy2mccFhFarJJx+r9/IR7bpls8yGwCOaAolrZtGBPUmOcuuBKXFv
+	xPWlxNuDm7ZpPysqQyC3D8b1D6ZnR2wz9Lp55A3TJ6nJqWYrURKouiqv6TJAEfDdDz9pahuWOW4sq
+	/4zEUgzRXRIGaR1AD7PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9aR-0007ft-8G; Thu, 16 Jan 2020 18:09:43 +0000
+	id 1is9bA-0001Cw-UA; Thu, 16 Jan 2020 18:10:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8yL-0000CT-6N; Thu, 16 Jan 2020 17:30:25 +0000
+ id 1is8yS-0000JK-Qd; Thu, 16 Jan 2020 17:30:35 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 832BB24726;
- Thu, 16 Jan 2020 17:30:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 410E124731;
+ Thu, 16 Jan 2020 17:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195820;
- bh=uCIp6mD10XteebAJ2I2AXoP9KgVklKyDJoPbZYmlV6I=;
+ s=default; t=1579195828;
+ bh=8Flq+0IPg2YLkKNvbKUs/GHrA0VMXFzGii5N095zoIc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EKnE3BbCCwbKiYb1Cb6ItrgLsxO4MxGjZXquMNbt/wJeOvnYMgqXmRdXjMJKGnMTk
- qklFBb1+SP8mPlkuXZFpP/9ejnsRBb4FrduJPGnaZo1EZ9kbHwvThJgM+3fvD9yejE
- YalXxsqT797J1m/1sgGDjTmxOPylswYRVCI81yd0=
+ b=fu9MXidAD7N6NUyaU/AFMByMzDvJebnid4Lw3Jspjhs0VjrKl/7VFEZnU3iHFVJ4B
+ B8vGnjNmu2PivP5CYQRUgXptuVIFD3el5ZEhQEoQ0CatsDMN3BluhczqEZPJxyT/hu
+ zM4e0CNLrY/JKI3Osafb4lBUwyhsCaz2ra+vp1NE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 329/371] mt7601u: fix bbp version check in
- mt7601u_wait_bbp_ready
-Date: Thu, 16 Jan 2020 12:23:21 -0500
-Message-Id: <20200116172403.18149-272-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 335/371] arm64: dts: meson-gxl-s905x-khadas-vim:
+ fix gpio-keys-polled node
+Date: Thu, 16 Jan 2020 12:23:27 -0500
+Message-Id: <20200116172403.18149-278-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093021_292897_26A7FE0A 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20200116_093028_904446_B4A73E1B 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,49 +80,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jakub Kicinski <kubakici@wp.pl>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Lorenzo Bianconi <lorenzo@kernel.org>, Kalle Valo <kvalo@codeaurora.org>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Christian Hewitt <christianshewitt@gmail.com>
 
-[ Upstream commit 15e14f76f85f4f0eab3b8146e1cd3c58ce272823 ]
+[ Upstream commit d5f6fa904ecbadbb8e9fa6302b0fc165bec0559a ]
 
-Fix bbp ready check in mt7601u_wait_bbp_ready. The issue is reported by
-coverity with the following error:
+Fix DTC warnings:
 
-Logical vs. bitwise operator
-The expression's value does not depend on the operands; inadvertent use
-of the wrong operator is a likely logic error.
+arch/arm/dts/meson-gxl-s905x-khadas-vim.dtb: Warning (avoid_unnecessary_addr_size):
+   /gpio-keys-polled: unnecessary #address-cells/#size-cells
+      without "ranges" or child "reg" property
 
-Addresses-Coverity-ID: 1309441 ("Logical vs. bitwise operator")
-Fixes: c869f77d6abb ("add mt7601u driver")
-Acked-by: Jakub Kicinski <kubakici@wp.pl>
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+Fixes: e15d2774b8c0 ("ARM64: dts: meson-gxl: add support for the Khadas VIM board")
+Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt7601u/phy.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wireless/mediatek/mt7601u/phy.c
-index ca09a5d4305e..71a47459bf8a 100644
---- a/drivers/net/wireless/mediatek/mt7601u/phy.c
-+++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
-@@ -221,7 +221,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+index fb5db5f33e8c..ce4a116382bf 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+@@ -33,11 +33,9 @@
  
- 	do {
- 		val = mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
--		if (val && ~val)
-+		if (val && val != 0xff)
- 			break;
- 	} while (--i);
+ 	gpio-keys-polled {
+ 		compatible = "gpio-keys-polled";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+ 		poll-interval = <100>;
  
+-		button@0 {
++		power-button {
+ 			label = "power";
+ 			linux,code = <KEY_POWER>;
+ 			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_LOW>;
 -- 
 2.20.1
 
