@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62F9613E85E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:32:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BB8013E870
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:32:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1VryL7zkqTUjM31zhfQiWWb+2/0jayBA99Is9g8/hEk=; b=HnW9b5KEAPSGvZ
-	Ga7pMLq1jzNSHc6bWidJNlNkl0jOn8AYPYvVdxG06jP1eU6Aoc8ou7ZTh206OYIN4n75jruCjXaEl
-	GnlSedtfKF+ys8PHNbtHNiV4oWDtNlf3VLE7/YtmFg5laaETYNzyON3xEtb6ZrH29FiaQYH7LB/IL
-	MbZNbUjaNMDYghBaasZ7BgyzMbNu5Q/Q3FA72DDLbObftGxB45hlByNYIG8GD0bDBKCP0n5h5pYOI
-	EHl3hJktkn7IgAZOZUePXO1V3nI0ptOM3kmKIJrTukSX5eo8PNf3/VybafTxRiNUANBMP7zRzCKeH
-	1Xx7BgsWGxkPMxEA0gJA==;
+	List-Owner; bh=ucTNmtjIKht0U+XdE/B7VXTtQ4kq6/SZWB8h/DtT78w=; b=CEgZveBIiqkG0C
+	BStj3eDghgc/T+oDSVRjA2DPukW448AqKnTIC59gpz23qPfacbyHMhLDB6Vs4G5FeE5LjIPcHZLgk
+	JRrZslMMQFiDSsSZRIVwH46QgqAYEvHJo/BVMx9Ph4oL8EAPZ8diGUbBmN/yKi/04uMVqsa8hsd1L
+	HHvy4bBCS/TTIqstEI8ECVxpYMczs7qSnE81m0TQp4vzS28RQm7VMgXA2IPfPlyNV6yoIxRlzpYtr
+	BMHGUrGbTKl6wv8mXRFQHF+9MWhdLfJfTZAxRisc8TZ/oTxvDD6LPUYlXw0okXy+mtR8c++xA0/Cy
+	66AWSnEBoEKT15ECj95w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is901-0001M3-41; Thu, 16 Jan 2020 17:32:05 +0000
+	id 1is90M-0001dx-Na; Thu, 16 Jan 2020 17:32:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8du-0001tk-13
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:09:22 +0000
+ id 1is8dv-0001uW-6x
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:09:28 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 33A1D2467A;
- Thu, 16 Jan 2020 17:09:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7217021D56;
+ Thu, 16 Jan 2020 17:09:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194553;
- bh=Ohe283Voqpzg5Cv1z/zQlCanRENtJcAkqcgCz5p5Q0A=;
+ s=default; t=1579194554;
+ bh=Kqk6fl6f5LB8HMHeUsBnSkg3ZQMA6NTi9LKibYodp1M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LHM6rAyorKpVzQQxjrurv4Ks0hO9IEBx6/0meZgyUgf0vfzvTuo0ZpHKsSJm4X541
- ZGNlySHb4+4SOmTxgDPhubTH34dKGys8uzly/4JgVtifERLjD5ViPmlNATBcAp404w
- 37/6HgXMUG3StWKBKtsQvdmPpX560RYKKs8K2mYo=
+ b=aAbdnb4yE2Pz6f4szPh27+ZCQM3txynKywa5dHxd4APcz1TkUBqdNhSkB5jVRe4Xj
+ 8N1w6Y1OjTlcePvhA6SrNNvVampeozlxJvWZvCcKkr/X3o06kOdJS9kCBp7zeeYWTz
+ C6mQanpOAnMcFsrUCISIAO866Ab3mVCQ7U0Y9lFo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 435/671] nvmem: imx-ocotp: Ensure WAIT bits are
- preserved when setting timing
-Date: Thu, 16 Jan 2020 12:01:13 -0500
-Message-Id: <20200116170509.12787-172-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 436/671] nvmem: imx-ocotp: Change TIMING
+ calculation to u-boot algorithm
+Date: Thu, 16 Jan 2020 12:01:14 -0500
+Message-Id: <20200116170509.12787-173-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090914_206404_B284AC47 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20200116_090915_747002_D8226299 
+X-CRM114-Status: GOOD (  14.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,43 +93,95 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bryan O'Donoghue <pure.logic@nexus-software.ie>
 
-[ Upstream commit 0493c4792b4eb260441e57f52cc11a9ded48b5a7 ]
+[ Upstream commit 159dbaf57b2f4f67ecb59b2c87d071e45ed41d7e ]
 
-The i.MX6 and i.MX8 both have a bit-field spanning bits 27:22 called the
-WAIT field.
+The RELAX field of the OCOTP block is turning out as a zero on i.MX8MM.
+This messes up the subsequent re-load of the fuse shadow registers.
 
-The WAIT field according to the documentation for both parts "specifies
-time interval between auto read and write access in one time program. It is
-given in number of ipg_clk periods."
+After some discussion with people @ NXP its clear we have missed a trick
+here in Linux.
 
-This patch ensures that the relevant field is read and written back to the
-timing register.
+The OCOTP fuse programming time has a physical minimum 'burn time' that is
+not related to the ipg_clk.
+
+We need to define the RELAX, STROBE_READ and STROBE_PROG fields in terms of
+desired timings to allow for the burn-in to safely complete. Right now only
+the RELAX field is calculated in terms of an absolute time and we are
+ending up with a value of zero.
+
+This patch inherits the u-boot timings for the OCOTP_TIMING calculation on
+the i.MX6 and i.MX8. Those timings are known to work and critically specify
+values such as STROBE_PROG as a minimum timing.
 
 Fixes: 0642bac7da42 ("nvmem: imx-ocotp: add write support")
 
 Signed-off-by: Bryan O'Donoghue <pure.logic@nexus-software.ie>
+Suggested-by: Leonard Crestez <leonard.crestez@nxp.com>
 Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 Signed-off-by: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/nvmem/imx-ocotp.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/nvmem/imx-ocotp.c | 36 ++++++++++++++++++++++++++++++++----
+ 1 file changed, 32 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
-index 926d9cc080cf..04421a73f74a 100644
+index 04421a73f74a..09281aca86c2 100644
 --- a/drivers/nvmem/imx-ocotp.c
 +++ b/drivers/nvmem/imx-ocotp.c
-@@ -189,7 +189,8 @@ static void imx_ocotp_set_imx6_timing(struct ocotp_priv *priv)
- 	strobe_prog = clk_rate / (1000000000 / 10000) + 2 * (DEF_RELAX + 1) - 1;
- 	strobe_read = clk_rate / (1000000000 / 40) + 2 * (DEF_RELAX + 1) - 1;
+@@ -50,7 +50,9 @@
+ #define IMX_OCOTP_BM_CTRL_ERROR		0x00000200
+ #define IMX_OCOTP_BM_CTRL_REL_SHADOWS	0x00000400
  
--	timing = strobe_prog & 0x00000FFF;
-+	timing = readl(priv->base + IMX_OCOTP_ADDR_TIMING) & 0x0FC00000;
-+	timing |= strobe_prog & 0x00000FFF;
- 	timing |= (relax       << 12) & 0x0000F000;
- 	timing |= (strobe_read << 16) & 0x003F0000;
+-#define DEF_RELAX			20	/* > 16.5ns */
++#define TIMING_STROBE_PROG_US		10	/* Min time to blow a fuse */
++#define TIMING_STROBE_READ_NS		37	/* Min time before read */
++#define TIMING_RELAX_NS			17
+ #define DEF_FSOURCE			1001	/* > 1000 ns */
+ #define DEF_STROBE_PROG			10000	/* IPG clocks */
+ #define IMX_OCOTP_WR_UNLOCK		0x3E770000
+@@ -182,12 +184,38 @@ static void imx_ocotp_set_imx6_timing(struct ocotp_priv *priv)
+ 	 * fields with timing values to match the current frequency of the
+ 	 * ipg_clk. OTP writes will work at maximum bus frequencies as long
+ 	 * as the HW_OCOTP_TIMING parameters are set correctly.
++	 *
++	 * Note: there are minimum timings required to ensure an OTP fuse burns
++	 * correctly that are independent of the ipg_clk. Those values are not
++	 * formally documented anywhere however, working from the minimum
++	 * timings given in u-boot we can say:
++	 *
++	 * - Minimum STROBE_PROG time is 10 microseconds. Intuitively 10
++	 *   microseconds feels about right as representative of a minimum time
++	 *   to physically burn out a fuse.
++	 *
++	 * - Minimum STROBE_READ i.e. the time to wait post OTP fuse burn before
++	 *   performing another read is 37 nanoseconds
++	 *
++	 * - Minimum RELAX timing is 17 nanoseconds. This final RELAX minimum
++	 *   timing is not entirely clear the documentation says "This
++	 *   count value specifies the time to add to all default timing
++	 *   parameters other than the Tpgm and Trd. It is given in number
++	 *   of ipg_clk periods." where Tpgm and Trd refer to STROBE_PROG
++	 *   and STROBE_READ respectively. What the other timing parameters
++	 *   are though, is not specified. Experience shows a zero RELAX
++	 *   value will mess up a re-load of the shadow registers post OTP
++	 *   burn.
+ 	 */
+ 	clk_rate = clk_get_rate(priv->clk);
  
+-	relax = clk_rate / (1000000000 / DEF_RELAX) - 1;
+-	strobe_prog = clk_rate / (1000000000 / 10000) + 2 * (DEF_RELAX + 1) - 1;
+-	strobe_read = clk_rate / (1000000000 / 40) + 2 * (DEF_RELAX + 1) - 1;
++	relax = DIV_ROUND_UP(clk_rate * TIMING_RELAX_NS, 1000000000) - 1;
++	strobe_read = DIV_ROUND_UP(clk_rate * TIMING_STROBE_READ_NS,
++				   1000000000);
++	strobe_read += 2 * (relax + 1) - 1;
++	strobe_prog = DIV_ROUND_CLOSEST(clk_rate * TIMING_STROBE_PROG_US,
++					1000000);
++	strobe_prog += 2 * (relax + 1) - 1;
+ 
+ 	timing = readl(priv->base + IMX_OCOTP_ADDR_TIMING) & 0x0FC00000;
+ 	timing |= strobe_prog & 0x00000FFF;
 -- 
 2.20.1
 
