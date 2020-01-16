@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33B4913F497
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:51:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E26113F49A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:52:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZkscfcxSsRO/QGFE956TdWv9oT0VlpWv0rwMF4G3vPY=; b=mmOfd0uR6liDZpgomT/GOV2CFK
-	Fx5KD4Z8yDPCcJVbeEi5kBIft3UT1lkyRHfStjmPq/eczZ/Y+WoyKTY0sTUlUCnyelKZQHhuWB671
-	C7RY9AYaS6Cybq5lKc9tn4xeilstFy9peWb9ohLSrbBeS9lUR+CWEF+jpzOuv9q43+FIIw+EHNhUS
-	McLFW+4RVHJ2IBJ29LLcJHD7r9QrJigt1/U/lAt32vr73fQZ4KTsWcOTtYIzVW4NEpPwzPSrXxY6O
-	71GjZv2e3txhjkZWsvCobo3yyQRiZei5eKy8J1tvMfoQc5/NQGZDMCZYBG7/u3ygIOtl/wb+jRUin
-	BpF9cq3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pgQgqpwe2oJSiAxNMQQ8rwBlVYhlVrszZc6aqwzRQFc=; b=j/I/OPae1DVmDE
+	5XwdVHDr9FVG4SsDb422S+DedlDr+98UV8pWRFe3GQUMTcQwHA3U1zzTw05NoZCBpi5SHYf54TXHI
+	DMaT8u9+HhzDc89Awcel+2uMbv7d9KqY6zl8KFF0d87lThStEMK/pTc+e68dKyuR2hmGjIHTX4WeV
+	t788dIWjN8v90cLANleox1hw6DDaT5aYxAQ5LdJIl4uTnk2FwvvGU0eVDiB/Oh19fqqJdqe/SEXLf
+	7Igb88lMh3Cq1huwxbwJgKhc8L5YidXFdED+Qoag93vWFHXv20M+WoIoLdxONdD1nDMfWQnskZMAt
+	3pxFhtijNOI3ZFkNiJZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isAEz-00085m-DG; Thu, 16 Jan 2020 18:51:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9zv-0005wU-N1
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:36:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 508FB143B;
- Thu, 16 Jan 2020 10:36:01 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6BE823F534;
- Thu, 16 Jan 2020 10:36:00 -0800 (PST)
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org, will@kernel.org,
- catalin.marinas@arm.com
-Subject: [PATCH 5/5] arm64: entry: cleanup sp_el0 manipulation
-Date: Thu, 16 Jan 2020 18:35:48 +0000
-Message-Id: <20200116183548.39411-6-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200116183548.39411-1-mark.rutland@arm.com>
-References: <20200116183548.39411-1-mark.rutland@arm.com>
+	id 1isAFZ-0000N4-CZ; Thu, 16 Jan 2020 18:52:13 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isA3V-0000p8-6C
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 18:39:50 +0000
+Received: by mail-lj1-x241.google.com with SMTP id q8so23500ljj.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 10:39:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=1NkxS1dJ4///PjDnpw3zqOnAHEcQBbdtsaoyImvFWzw=;
+ b=r+BCuOqk6DerwPHy3jM1T4vB+EtBpq4eqDuj5WdCTLhucLb9mR75gLvie4tcMoZ+2D
+ i+3VQyNa2eU4BZsH/70szQZkzCdCrYxrqyjlgBEOgH7uAus+pGgjIXiN7vvVCHrfO9Q5
+ 9qhy//XHIa+yYjpT2/nnrYrzxPrBC+lxIH5VeNgkFUR6SH9DHxGO+v4EeQfEGKt+bNs7
+ ay//+Rz0Z6TZIaVm7dxqzkdC/5oA21DwhzKNoxFngX+gJbhZDOEiqcpmED0KG4wLVb0W
+ UNn7KBzcZvoPOdyxxMEFwQC1cFYQIZlRlxVgqquhyiMFYNoVvBNO6Wt7syx0eTMJZA9I
+ JVAg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1NkxS1dJ4///PjDnpw3zqOnAHEcQBbdtsaoyImvFWzw=;
+ b=K3fpR6OCROWiEfhL/TJt/0EqNC/XExUVkld8rDJqId2lLZNKgbt/kWhGsVkinLSwSq
+ 2fzcgSSV5VYTzg1hhpx3XO1XY1d7WRTBAk4bz31zpBksPZVSCAUGHhstKRazVNMY8EH4
+ NZSNQ2vP3t2yXcrv/dNUvtO3vf9fY++eIBo9NAhnx5HYLeOxlzPSopyPvK9d9YXNKyLQ
+ jiRZTIfTYkWTvFWPI4OoLQcV8m4glLKThsJ5Fa9yxV4Ponh2o91Bn/hutM9iHQ3oqium
+ tqiUbY9wwGGVwlW7LKF3Rr76ojYXRowL1VO3HCToGdeIz4D07BM2Mj+xSIuXyPVCRlnK
+ dciw==
+X-Gm-Message-State: APjAAAVexz8xhb5k9qsjGxrqvRtA81GOJk4mDQFjtQVwgQh/qtFcFHdz
+ EPd+YnvnQkRgrjiOBn6l3Hm5KVcTaHc+tw==
+X-Google-Smtp-Source: APXvYqy1r4axnNLypvtxCDCBusTSJPvQ5bBth2V80eQ2aWR3SDteItjF5tjp00AcOpEuhWvIgDGEAg==
+X-Received: by 2002:a2e:93c5:: with SMTP id p5mr3077169ljh.192.1579199982123; 
+ Thu, 16 Jan 2020 10:39:42 -0800 (PST)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id h10sm11007576ljc.39.2020.01.16.10.39.40
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 Jan 2020 10:39:40 -0800 (PST)
+Date: Thu, 16 Jan 2020 10:39:32 -0800
+From: Olof Johansson <olof@lixom.net>
+To: Li Yang <leoyang.li@nxp.com>
+Subject: Re: [GIT PULL] soc/fsl drivers changes for next(v5.6)
+Message-ID: <20200116183932.qltqdtreeg4d2zq7@localhost>
+References: <1578608351-23289-1-git-send-email-leoyang.li@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1578608351-23289-1-git-send-email-leoyang.li@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_103603_891338_AD5536F7 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200116_103945_264939_7E2455DE 
+X-CRM114-Status: GOOD (  15.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,74 +94,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, james.morse@arm.com, anshuman.khandual@arm.com
-MIME-Version: 1.0
+Cc: soc@kernel.org, arm@kernel.org, shawnguo@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The kernel stashes the current task struct in sp_el0 so that this can be
-acquired consistently/cheaply when required. When we take an exception
-from EL0 we have to:
+Hi,
 
-1) stash the original sp_el0 value
-2) find the current task
-3) update sp_el0 with the current task pointer
+On Thu, Jan 09, 2020 at 04:19:11PM -0600, Li Yang wrote:
+> Hi soc maintainers,
+> 
+> Please merge the following new changes for soc/fsl drivers.
+> 
+> Regards,
+> Leo
+> 
+> 
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+> 
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/leo/linux.git tags/soc-fsl-next-v5.6
+> 
+> for you to fetch changes up to 6e62bd36e9ad85a22d92b1adce6a0336ea549733:
+> 
+>   soc: fsl: qe: remove set but not used variable 'mm_gc' (2020-01-08 16:02:48 -0600)
+> 
+> ----------------------------------------------------------------
+> NXP/FSL SoC driver updates for v5.6
+> 
+> QUICC Engine drivers
+> - Improve the QE drivers to be compatible with ARM/ARM64/PPC64
+> architectures
+> - Various cleanups to the QE drivers
 
-Currently steps #1 and #2 occur in one place, and step #3 a while later.
-As the value of sp_el0 is immaterial between these points, let's move
-them together to make the code clearer and minimize ifdeffery. This
-necessitates moving the comment for MDSCR_EL1.SS.
+This branch contains a cross-section of drivers, including those who are
+normally sent to other maintainers/subsystems. I don't see dependencies that
+make them a requirement/easier to merge through the SoC tree at this time --
+for example the ucc_uart driver updates are mostly independent cleanups.
 
-There should be no functional change as a result of this patch.
+Am I missing some aspect here, or should those just be merged through
+drivers/tty as other driver changes there? At the very least, we expect drivers
+that aren't merged through the normal path to have acks from those maintainers.
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm64/kernel/entry.S | 17 +++++++----------
- 1 file changed, 7 insertions(+), 10 deletions(-)
+Mind following up on that? Thanks!
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 7c6a0a41676f..3d7a9c0ab844 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -167,9 +167,13 @@ alternative_cb_end
- 	.if	\el == 0
- 	clear_gp_regs
- 	mrs	x21, sp_el0
--	ldr_this_cpu	tsk, __entry_task, x20	// Ensure MDSCR_EL1.SS is clear,
--	ldr	x19, [tsk, #TSK_TI_FLAGS]	// since we can unmask debug
--	disable_step_tsk x19, x20		// exceptions when scheduling.
-+	ldr_this_cpu	tsk, __entry_task, x20
-+	msr	sp_el0, tsk
-+
-+	// Ensure MDSCR_EL1.SS is clear, since we can unmask debug exceptions
-+	// when scheduling.
-+	ldr	x19, [tsk, #TSK_TI_FLAGS]
-+	disable_step_tsk x19, x20
- 
- 	apply_ssbd 1, x22, x23
- 
-@@ -232,13 +236,6 @@ alternative_else_nop_endif
- 	str	w21, [sp, #S_SYSCALLNO]
- 	.endif
- 
--	/*
--	 * Set sp_el0 to current thread_info.
--	 */
--	.if	\el == 0
--	msr	sp_el0, tsk
--	.endif
--
- 	/* Save pmr */
- alternative_if ARM64_HAS_IRQ_PRIO_MASKING
- 	mrs_s	x20, SYS_ICC_PMR_EL1
--- 
-2.11.0
 
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
