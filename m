@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4D2C13DE77
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:20:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C8513DE80
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 16:20:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1X+iMqz5pQ1gtcPH0kDbAHYY6GFp0UBehYgiLggSC4M=; b=ujtVPsO0290toW
-	cl17QIo/yg+UtEBYzvJlPssy7naBT7iDG6UzQQxcPVIchw7N9Ujb/+ujxH6WshNQVUaxbPlFesFN0
-	sxmfo20ew33Vgwe6uPPmHUZsZDVame0CbVAoSwltkgK3S16xxuZGIFVI2bhQ3ax4FuihCnrZw9Ia2
-	i5+ntNv3jMT3DlSlfU+Ug+8Vl/Gw1vwg5ooyM95h586W21908SfOuN6ouVfZhfYBAXsVFjngWJ2BB
-	3N7Lr1vB1WwdNab2vGys/v9JUkEYQ46JmrvF4GsGiUHeBu/YGrO/1fqVlDZYPq1o576rUNGWl/9Ae
-	WFhOgLKCF5VPOriyK6zQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tRosAc1nqOWvqlJ+QPALP6XYpyZfzDz/pNHDIFqfX3o=; b=A0YDwvhfgV/kCV
+	rKCYbYE/7yNcyqmDv9eQxZASd69BaF0Vg0s0/IEkfhHeH0fjAaOFonPEWkJwTiVOns7fIglotU+tt
+	efIpA5mfcRQflFNYuEtcYsVlnuqUTFiTvSJiPiaH880oR1t+1taIgNphbG03inZw56nbFP28PhY00
+	bPfEQVsQdz25oN1xL/gmwFs7Hx011GIvv71HonU8c7nKrV0YpImpp7ZHnjfTqB6apRD3dlWlJZVsY
+	rZ2hLbwcbfiMnUfJaZIYMHGIO+l/U3/3bDSjTicANHQ1xbTYyF8iHTGoQxqQcTQ2y+JV5R5OyEE0z
+	Gm4frif0RhrdQXA4G6cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is6wY-0007Qb-1k; Thu, 16 Jan 2020 15:20:22 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1is6wq-0008NC-Tz; Thu, 16 Jan 2020 15:20:40 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is6vw-0006gw-A5
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:19:49 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1is6vx-0006gx-8U
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 15:19:53 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00GFJ5oQ006188; Thu, 16 Jan 2020 16:19:23 +0100
+ 00GFHVJs003155; Thu, 16 Jan 2020 16:19:22 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=tHouhTmPa+WOuN6Hi/JxajRoEjWvreOxg6hBYR89Brk=;
- b=Q/Ed+H+cnO7O0HtEkqe+gD4gWQnTcr5YsdNozgrPJpWPUx8O7hYrGtvHlefp1EXhh5AZ
- KA3FV+dpDQe3Pt8bfikDXmHDQNSmTRqjkWkxHL9b08p7cZh8+A5frqAbNeKElloZbKYV
- +vDwXKMj0x0NUFyuT3McWhyh6U+ekZZFpH2HsYu8trI+rnbScpPpyKOtSKLFPZKF80Ad
- hV5bYwikXTXB3exnLuvxbGy++U7jm56vUBDIRxSbtSki/aQmMy/bsmSTFiKMJqDdCOYt
- Gpx3D1xYv9KsIQekhwF1MOc+RPj2sBCYEcN+d6Qi7h/gexv/VXq2bHTSDo34UwSH71CB lQ== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=C+b4GqJxMy8KX4XkFdZFKvRKGdv1UhxpiPcv4vNpcww=;
+ b=ghYmlgyKI6/OLX1Ml6QIqVdAXqrTA7cFlSuUO8cJbxI941U98/AJrJu1rrmRXcVTju8w
+ 4RbUOE9d2mTwX5bcWNtbuxn6oJvVtgaoHPx9jX2ue2jwL6RISxuN3Aof6E3CHfIOY2oa
+ KlzdyFEingtnjnJV2tgVhjZ4D0FfNUns3UGBMPuplG/WDScWmfTwJKfLd34aCrc3nJym
+ bdyJ6c9MaELpknjBPRCHIB2zuOriT0CrFuxG66eKzVs19Iv6shx7Rlr6GXu+z6193Mbb
+ Bzpf/ZFu7MC6iRoR7dThq7mVtOLlGu2SpWo5KOHe7VIYtu6BCMH61pVumVa3doXJklfj mQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xf7jpsy4n-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xf7fp1tyq-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 16 Jan 2020 16:19:23 +0100
+ Thu, 16 Jan 2020 16:19:22 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BDAD8100034;
- Thu, 16 Jan 2020 16:19:20 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 59D5910002A;
+ Thu, 16 Jan 2020 16:19:21 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A1F8E21BD3F;
- Thu, 16 Jan 2020 16:19:20 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4BC1021ECF3;
+ Thu, 16 Jan 2020 16:19:21 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 16 Jan 2020 16:19:20
  +0100
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
@@ -54,27 +54,30 @@ To: <daniel.lezcano@linaro.org>, <tglx@linutronix.de>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <linux@armlinux.org.uk>, <p.paillet@st.com>,
  <linus.walleij@linaro.org>
-Subject: [PATCH v2 0/2] clockevent: add low power STM32 timer
-Date: Thu, 16 Jan 2020 16:19:16 +0100
-Message-ID: <20200116151918.20987-1-benjamin.gaignard@st.com>
+Subject: [PATCH v2 1/2] dt-bindings: mfd: Document STM32 low power clkevent
+ bindings
+Date: Thu, 16 Jan 2020 16:19:17 +0100
+Message-ID: <20200116151918.20987-2-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20200116151918.20987-1-benjamin.gaignard@st.com>
+References: <20200116151918.20987-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-16_04:2020-01-16,
- 2020-01-16 signatures=0
+ 2020-01-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_071944_676075_A57E1A58 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20200116_071945_596753_AA1FE5BB 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,28 +106,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series add low power timer as boadcast clockevent device.
-Low power timer could runs even when CPUs are in idle mode and 
-could wakeup them.
+Add a subnode to STM low power timer bindings to support clkevent driver
 
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
 version 2:
-- stm32 clkevent driver is now a child of the stm32 lp timer node
-- add a probe function and adpat the driver to use regmap provide
-  by it parent
-- stop using timer_of helpers
 - document the bindings inside stm32 lptimer yaml
 
-Benjamin Gaignard (2):
-  dt-bindings: mfd: Document STM32 low power clkevent bindings
-  clocksource: Add Low Power STM32 timers driver
+ .../devicetree/bindings/mfd/st,stm32-lptimer.yaml          | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
- .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  |  14 ++
- drivers/clocksource/Kconfig                        |   4 +
- drivers/clocksource/Makefile                       |   1 +
- drivers/clocksource/timer-stm32-lp.c               | 251 +++++++++++++++++++++
- 4 files changed, 270 insertions(+)
- create mode 100644 drivers/clocksource/timer-stm32-lp.c
-
+diff --git a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
+index 1a4cc5f3fb33..535e0b40cdf9 100644
+--- a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
++++ b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
+@@ -81,6 +81,16 @@ patternProperties:
+     required:
+       - compatible
+ 
++  clkevent:
++    type: object
++
++    properties:
++      compatible:
++        const: st,stm32-clkevent-lp
++
++    required:
++      - compatible
++
+ required:
+   - "#address-cells"
+   - "#size-cells"
+@@ -115,6 +125,10 @@ examples:
+       counter {
+         compatible = "st,stm32-lptimer-counter";
+       };
++
++      clkevent {
++        compatible = "st,stm32-clkevent-lp";
++      };
+     };
+ 
+ ...
 -- 
 2.15.0
 
