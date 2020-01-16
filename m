@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDF2213E754
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:25:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEF9B13E76A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 18:25:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+zqiPvWyfq78M2m2Jm78vvgR0nAb7BMzY3fUSxaeRM=; b=vB203mrivgS/9n
-	8Yo+kKLCI0ZwCqdSi5nyxWkG+aG0TY2tiEtmy3pGoje1zRTa3APNBIXssNDyGTodX3iuviWm4MH9b
-	cNe53C577EQxnuF+A/9/6z/EDbU7LFJS1ThJ/s4nnRquy4wImH181xDxwz8dCkWFmqWU2iQ+2Pmpu
-	qkgdFgLDDY468XQO93IyQFQSxkQd6HCbMpMrVQAyjygsDofqa78US4akUcnNkBApGkkSh9ILA4QGW
-	3BiiEa5xdgOYfw8LVI836JfjD0Rltj3fW7qR4BM5CuXRy2FYB67Uh411740w9TBi/+6x6y5cApyw1
-	Affx5DI65+jDUKn4sD0g==;
+	List-Owner; bh=xUDeUOqrNrHYxA4xXdiBYQ2zGbTcMPdlrzm5Eq8ChWg=; b=PmsGP8d5FcypGP
+	+DitEOpRBnfm0Lfy76/KGV91fsKAXFWzSGoYdRx7Vht9DvxEoEy1EYdhju4LxKKqh3d63UDKYHK0Z
+	xQj4zlT1LCuCAlFxU4oCX6W7M6ro9TMSE3QT8WrmlsHQAR+uWm/WKrAPYo69L08dJE5wUkzV9rA65
+	6QoIigI34Mi8ypubXBjh8AETOh3r1yC2G25Lh43GwbQGx7QKMz1q+Wsv0OOoV9IfAIfdy7wImQuJ9
+	mXSy/qzZbvog8/nmEE8b6dWqcMSZjKLZlwEairSZkmlZ/3xzqWCzDnc05nhIePLtPuO/zcotXNSf2
+	ZYOyl63YDi9LqUqEfNpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8tB-0001aH-Jm; Thu, 16 Jan 2020 17:25:01 +0000
+	id 1is8ti-0001xx-Gb; Thu, 16 Jan 2020 17:25:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cW-0000nd-3E
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:52 +0000
+ id 1is8cX-0000os-M8
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:07:53 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D849205F4;
- Thu, 16 Jan 2020 17:07:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 073B420730;
+ Thu, 16 Jan 2020 17:07:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194467;
- bh=6xiaWiqLBwxpR1apSPx73HdLXm/uolr0vKCvNKnnGE4=;
+ s=default; t=1579194468;
+ bh=m4za9vjnszElHLsfi90RmpxpiIHmYybodeIq8CTBs4Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=h0HmP5WYDbsHDmavUfPhMDti8HPpQmMhWPyzJWxvYQHzMVx/teQgbWN+E6GrkIhxE
- nQPAXZ/vdPIwZG5RVOvrM6NHxnmFjT1IlPDcVcBsyzd2ZQYuvCWZYUsb3GZ/P+c+tA
- uPiAacRmR1EOBSONCi+MY8tMpD4Nby7gDhBho/Ek=
+ b=oHe79SI1v1qyVdVMMSEpzHtivgfq1W/uOmbxwk+9wnr0lPFdgEzLbHsDrH0Vug/iz
+ 4S1Ayg4BdzVWnw6d3ZyWlbyM3CoCoWMh76q6d2HZ8v+iLawpgxO26awMu/CmxmAGJX
+ 2vmtGB/jXHgKwuj7tGyeKIihyjdE6OJatH+phAJQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 373/671] serial: stm32: fix word length
- configuration
-Date: Thu, 16 Jan 2020 12:00:11 -0500
-Message-Id: <20200116170509.12787-110-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 374/671] serial: stm32: fix rx error handling
+Date: Thu, 16 Jan 2020 12:00:12 -0500
+Message-Id: <20200116170509.12787-111-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090748_235605_B9DA802E 
-X-CRM114-Status: GOOD (  15.50  )
+X-CRM114-CacheID: sfid-20200116_090749_802929_3937C906 
+X-CRM114-Status: GOOD (  17.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,131 +90,160 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Erwan Le Ray <erwan.leray@st.com>
 
-[ Upstream commit c8a9d043947b4acb19a65f7fac2bd0893e581cd5 ]
+[ Upstream commit 4f01d833fdcdd6f9b85d9e5d5d7568eb683626a7 ]
 
-STM32 supports either:
-- 8 and 9 bits word length (including parity bit) for stm32f4 compatible
-  devices
-- 7, 8 and 9 bits word length (including parity bit) for stm32f7 and
-  stm32h7 compatible devices.
+- Fixes parity and framing error bit by clearing parity and framing error
+  flag. The current implementation doesn't clear the error bits when an
+  error is detected.
+- Fixes the incorrect name of framing error clearing flag in header file.
+- Fixes misalignement between data frame and errors status. The status
+  read for "n" frame was the status of "n+1" frame".
+- Fixes break detection was not triggered by the expected register.
 
-As a consequence STM32 supports the following termios configurations:
-- CS7 with parity bit, and CS8 (with or without parity bit) for stm32f4
-  compatible devices.
-- CS6 with parity bit, CS7 and CS8 (with or without parity bit) for
-  stm32f7 and stm32h7 compatible devices.
-
-This patch is fixing word length by configuring correctly the SoC with
-supported configurations.
-
-Fixes: ada8618ff3bf ("serial: stm32: adding support for stm32f7")
+Fixes: 48a6092fb41f ("serial: stm32-usart: Add STM32 USART Driver")
 Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/stm32-usart.c | 56 ++++++++++++++++++++++++++++----
- drivers/tty/serial/stm32-usart.h |  3 +-
- 2 files changed, 50 insertions(+), 9 deletions(-)
+ drivers/tty/serial/stm32-usart.c | 54 +++++++++++++++++++++-----------
+ drivers/tty/serial/stm32-usart.h | 10 ++----
+ 2 files changed, 37 insertions(+), 27 deletions(-)
 
 diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index e8d7a7bb4339..e8321850938a 100644
+index e8321850938a..f6b739351dde 100644
 --- a/drivers/tty/serial/stm32-usart.c
 +++ b/drivers/tty/serial/stm32-usart.c
-@@ -599,6 +599,36 @@ static void stm32_shutdown(struct uart_port *port)
- 	free_irq(port->irq, port);
- }
+@@ -225,35 +225,51 @@ static void stm32_receive_chars(struct uart_port *port, bool threaded)
  
-+unsigned int stm32_get_databits(struct ktermios *termios)
-+{
-+	unsigned int bits;
-+
-+	tcflag_t cflag = termios->c_cflag;
-+
-+	switch (cflag & CSIZE) {
-+	/*
-+	 * CSIZE settings are not necessarily supported in hardware.
-+	 * CSIZE unsupported configurations are handled here to set word length
-+	 * to 8 bits word as default configuration and to print debug message.
-+	 */
-+	case CS5:
-+		bits = 5;
-+		break;
-+	case CS6:
-+		bits = 6;
-+		break;
-+	case CS7:
-+		bits = 7;
-+		break;
-+	/* default including CS8 */
-+	default:
-+		bits = 8;
-+		break;
-+	}
-+
-+	return bits;
-+}
-+
- static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
- 			    struct ktermios *old)
- {
-@@ -606,7 +636,7 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
- 	struct stm32_usart_offsets *ofs = &stm32_port->info->ofs;
- 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
- 	struct serial_rs485 *rs485conf = &port->rs485;
--	unsigned int baud;
-+	unsigned int baud, bits;
- 	u32 usartdiv, mantissa, fraction, oversampling;
- 	tcflag_t cflag = termios->c_cflag;
- 	u32 cr1, cr2, cr3;
-@@ -632,16 +662,28 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
- 	if (cflag & CSTOPB)
- 		cr2 |= USART_CR2_STOP_2B;
+ 	while (stm32_pending_rx(port, &sr, &stm32_port->last_res, threaded)) {
+ 		sr |= USART_SR_DUMMY_RX;
+-		c = stm32_get_char(port, &sr, &stm32_port->last_res);
+ 		flag = TTY_NORMAL;
+-		port->icount.rx++;
  
-+	bits = stm32_get_databits(termios);
++		/*
++		 * Status bits has to be cleared before reading the RDR:
++		 * In FIFO mode, reading the RDR will pop the next data
++		 * (if any) along with its status bits into the SR.
++		 * Not doing so leads to misalignement between RDR and SR,
++		 * and clear status bits of the next rx data.
++		 *
++		 * Clear errors flags for stm32f7 and stm32h7 compatible
++		 * devices. On stm32f4 compatible devices, the error bit is
++		 * cleared by the sequence [read SR - read DR].
++		 */
++		if ((sr & USART_SR_ERR_MASK) && ofs->icr != UNDEF_REG)
++			stm32_clr_bits(port, ofs->icr, USART_ICR_ORECF |
++				       USART_ICR_PECF | USART_ICR_FECF);
 +
- 	if (cflag & PARENB) {
-+		bits++;
- 		cr1 |= USART_CR1_PCE;
--		if ((cflag & CSIZE) == CS8) {
--			if (cfg->has_7bits_data)
--				cr1 |= USART_CR1_M0;
--			else
--				cr1 |= USART_CR1_M;
--		}
- 	}
++		c = stm32_get_char(port, &sr, &stm32_port->last_res);
++		port->icount.rx++;
+ 		if (sr & USART_SR_ERR_MASK) {
+-			if (sr & USART_SR_LBD) {
+-				port->icount.brk++;
+-				if (uart_handle_break(port))
+-					continue;
+-			} else if (sr & USART_SR_ORE) {
+-				if (ofs->icr != UNDEF_REG)
+-					writel_relaxed(USART_ICR_ORECF,
+-						       port->membase +
+-						       ofs->icr);
++			if (sr & USART_SR_ORE) {
+ 				port->icount.overrun++;
+ 			} else if (sr & USART_SR_PE) {
+ 				port->icount.parity++;
+ 			} else if (sr & USART_SR_FE) {
+-				port->icount.frame++;
++				/* Break detection if character is null */
++				if (!c) {
++					port->icount.brk++;
++					if (uart_handle_break(port))
++						continue;
++				} else {
++					port->icount.frame++;
++				}
+ 			}
  
-+	/*
-+	 * Word length configuration:
-+	 * CS8 + parity, 9 bits word aka [M1:M0] = 0b01
-+	 * CS7 or (CS6 + parity), 7 bits word aka [M1:M0] = 0b10
-+	 * CS8 or (CS7 + parity), 8 bits word aka [M1:M0] = 0b00
-+	 * M0 and M1 already cleared by cr1 initialization.
-+	 */
-+	if (bits == 9)
-+		cr1 |= USART_CR1_M0;
-+	else if ((bits == 7) && cfg->has_7bits_data)
-+		cr1 |= USART_CR1_M1;
-+	else if (bits != 8)
-+		dev_dbg(port->dev, "Unsupported data bits config: %u bits\n"
-+			, bits);
-+
- 	if (cflag & PARODD)
- 		cr1 |= USART_CR1_PS;
+ 			sr &= port->read_status_mask;
  
+-			if (sr & USART_SR_LBD)
+-				flag = TTY_BREAK;
+-			else if (sr & USART_SR_PE)
++			if (sr & USART_SR_PE) {
+ 				flag = TTY_PARITY;
+-			else if (sr & USART_SR_FE)
+-				flag = TTY_FRAME;
++			} else if (sr & USART_SR_FE) {
++				if (!c)
++					flag = TTY_BREAK;
++				else
++					flag = TTY_FRAME;
++			}
+ 		}
+ 
+ 		if (uart_handle_sysrq_char(port, c))
+@@ -721,14 +737,14 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
+ 	if (termios->c_iflag & INPCK)
+ 		port->read_status_mask |= USART_SR_PE | USART_SR_FE;
+ 	if (termios->c_iflag & (IGNBRK | BRKINT | PARMRK))
+-		port->read_status_mask |= USART_SR_LBD;
++		port->read_status_mask |= USART_SR_FE;
+ 
+ 	/* Characters to ignore */
+ 	port->ignore_status_mask = 0;
+ 	if (termios->c_iflag & IGNPAR)
+ 		port->ignore_status_mask = USART_SR_PE | USART_SR_FE;
+ 	if (termios->c_iflag & IGNBRK) {
+-		port->ignore_status_mask |= USART_SR_LBD;
++		port->ignore_status_mask |= USART_SR_FE;
+ 		/*
+ 		 * If we're ignoring parity and break indicators,
+ 		 * ignore overruns too (for real raw support).
 diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
-index 6f294e280ea3..a70aa5006ab9 100644
+index a70aa5006ab9..8d34802e572e 100644
 --- a/drivers/tty/serial/stm32-usart.h
 +++ b/drivers/tty/serial/stm32-usart.h
-@@ -151,8 +151,7 @@ struct stm32_usart_info stm32h7_info = {
- #define USART_CR1_PS		BIT(9)
- #define USART_CR1_PCE		BIT(10)
- #define USART_CR1_WAKE		BIT(11)
--#define USART_CR1_M		BIT(12)
--#define USART_CR1_M0		BIT(12)		/* F7 */
-+#define USART_CR1_M0		BIT(12)		/* F7 (CR1_M for F4) */
- #define USART_CR1_MME		BIT(13)		/* F7 */
- #define USART_CR1_CMIE		BIT(14)		/* F7 */
- #define USART_CR1_OVER8		BIT(15)
+@@ -108,7 +108,6 @@ struct stm32_usart_info stm32h7_info = {
+ #define USART_SR_RXNE		BIT(5)
+ #define USART_SR_TC		BIT(6)
+ #define USART_SR_TXE		BIT(7)
+-#define USART_SR_LBD		BIT(8)
+ #define USART_SR_CTSIF		BIT(9)
+ #define USART_SR_CTS		BIT(10)		/* F7 */
+ #define USART_SR_RTOF		BIT(11)		/* F7 */
+@@ -120,8 +119,7 @@ struct stm32_usart_info stm32h7_info = {
+ #define USART_SR_SBKF		BIT(18)		/* F7 */
+ #define USART_SR_WUF		BIT(20)		/* H7 */
+ #define USART_SR_TEACK		BIT(21)		/* F7 */
+-#define USART_SR_ERR_MASK	(USART_SR_LBD | USART_SR_ORE | \
+-				 USART_SR_FE | USART_SR_PE)
++#define USART_SR_ERR_MASK	(USART_SR_ORE | USART_SR_FE | USART_SR_PE)
+ /* Dummy bits */
+ #define USART_SR_DUMMY_RX	BIT(16)
+ 
+@@ -168,8 +166,6 @@ struct stm32_usart_info stm32h7_info = {
+ /* USART_CR2 */
+ #define USART_CR2_ADD_MASK	GENMASK(3, 0)	/* F4 */
+ #define USART_CR2_ADDM7		BIT(4)		/* F7 */
+-#define USART_CR2_LBDL		BIT(5)
+-#define USART_CR2_LBDIE		BIT(6)
+ #define USART_CR2_LBCL		BIT(8)
+ #define USART_CR2_CPHA		BIT(9)
+ #define USART_CR2_CPOL		BIT(10)
+@@ -226,12 +222,10 @@ struct stm32_usart_info stm32h7_info = {
+ 
+ /* USART_ICR */
+ #define USART_ICR_PECF		BIT(0)		/* F7 */
+-#define USART_ICR_FFECF		BIT(1)		/* F7 */
+-#define USART_ICR_NCF		BIT(2)		/* F7 */
++#define USART_ICR_FECF		BIT(1)		/* F7 */
+ #define USART_ICR_ORECF		BIT(3)		/* F7 */
+ #define USART_ICR_IDLECF	BIT(4)		/* F7 */
+ #define USART_ICR_TCCF		BIT(6)		/* F7 */
+-#define USART_ICR_LBDCF		BIT(8)		/* F7 */
+ #define USART_ICR_CTSCF		BIT(9)		/* F7 */
+ #define USART_ICR_RTOCF		BIT(11)		/* F7 */
+ #define USART_ICR_EOBCF		BIT(12)		/* F7 */
 -- 
 2.20.1
 
