@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A804013F126
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:27:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B385713F140
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QVC3stmierZKVItj/3EleLED2j6ChJKGGl8g1D6I2g4=; b=BzteWbAWCT7we2
-	bhJucISZo8v0RkRe0sakLqGZURnugHTK0axkMhizmYWe2A1R69GjYPku6IIY/hEYa7lZKQBK6HBE4
-	b+U732UXMLNKsTXlv8SEGfT/7cCEAekDF+Khf+EvNLq6XnKuuaFHR2QoAQbaBbAP1D0jwtSIoaPs1
-	+QMdJrmLLGSDSVRkJgAimPA5VME0IxcKupyPa7zXa4M5STVt1zqZQTHMbbxz4PBqwCsHA09FMf9wv
-	t94sgjevYCnij3kj7QkbZE6KsvZGx55Di36y1ALCBLmRe4OX5/c+Btuo+/JPw6uX7GuczsxSlJ6em
-	O4L8psDwNYHh3clYKj9A==;
+	List-Owner; bh=O3Uun3r0F4ZJk3acCITGk0dmCN2oxLCJzGBvx+34mAw=; b=cFpxAxspQMys4P
+	xlXwmUrWLyOQYEd2mianb2/2z0dbpGTaHfEFnAnX+62MAl7OZDz25iUt5e7F4aTlGsSP1X56jDzLX
+	iIOLJFpemBW+SPRCpwqpt52Zhpv3Rz6hIww4h5k3oZm/fYx6ZepsA6xYdHl1rxUKNB931znVH05Vr
+	RgQXAjE4yk9m/NXouTTlGxb+cWN7iH4l2w8eBPSlbJF/6ubKc1M72z2m1Qvh6knuv3DkWtEi2rl4y
+	gUizvuUIIeOGuHgi0p+BbyoGWYpIKm8foCQfaRrRq29sRIKyo5+DUFGwfOMXEjDT9WcznQUn5LuPe
+	k9s0NYhg/8SE6rUVXGsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9rT-0004N7-HY; Thu, 16 Jan 2020 18:27:19 +0000
+	id 1is9rk-0004aN-CU; Thu, 16 Jan 2020 18:27:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is991-0001ws-RT
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:41:40 +0000
+ id 1is995-0001zD-LN
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:41:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A85AA246A1;
- Thu, 16 Jan 2020 17:41:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C18BB246EF;
+ Thu, 16 Jan 2020 17:41:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196482;
- bh=fPlNpHQvfkloCcuCGF/dUff98NWTDSU1o9YkuNNxshY=;
+ s=default; t=1579196487;
+ bh=YZ2eOXNd1MQ+7yOmzjKQ5GQzCB/Y6PKyK96hicTHRTs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Qi52rk/1xV1cgwWrIPskE/FYQjKpEtFwUmC55y438bRaKM7QdaAjUqf9m8qmJ96+h
- R+H5iaKYI1cErJyASqmTmK+oQFqh2Nvf9l93jgmwcyTxU08N6Zplz7fcYqJEZnvw2/
- j8DJsW2rHtmBREopBtEzxCMqFDy2yxyHanOnz+sU=
+ b=tHgeNC6ZatSXn2vm4EjG3CiCTr3B3Q1Ac9rkb8pYznl/C1rUH7a+6x5/uvJVutwZY
+ xXN1eg+V3aEnzXFoLk4icYdoqqTUeC97Vm7iwp5GxZGyPzFkEYVnZgHk3ysl50QixU
+ /rFn9TMhEd0wEl6pfeV+JPYOqNWxNGuGzUh95G0s=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 229/251] spi: atmel: fix handling of cs_change set
- on non-last xfer
-Date: Thu, 16 Jan 2020 12:36:18 -0500
-Message-Id: <20200116173641.22137-189-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 232/251] clk: samsung: exynos5420: Preserve CPU
+ clocks configuration during suspend/resume
+Date: Thu, 16 Jan 2020 12:36:21 -0500
+Message-Id: <20200116173641.22137-192-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094124_025999_02B36A11 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20200116_094127_824862_D94813B5 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,74 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mans Rullgard <mans@mansr.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Nicolas Ferre <nicolas.ferre@atmel.com>, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Marian Mihailescu <mihailescu2m@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mans Rullgard <mans@mansr.com>
+From: Marian Mihailescu <mihailescu2m@gmail.com>
 
-[ Upstream commit fed8d8c7a6dc2a76d7764842853d81c770b0788e ]
+[ Upstream commit e21be0d1d7bd7f78a77613f6bcb6965e72b22fc1 ]
 
-The driver does the wrong thing when cs_change is set on a non-last
-xfer in a message.  When cs_change is set, the driver deactivates the
-CS and leaves it off until a later xfer again has cs_change set whereas
-it should be briefly toggling CS off and on again.
+Save and restore top PLL related configuration registers for big (APLL)
+and LITTLE (KPLL) cores during suspend/resume cycle. So far, CPU clocks
+were reset to default values after suspend/resume cycle and performance
+after system resume was affected when performance governor has been selected.
 
-This patch brings the behaviour of the driver back in line with the
-documentation and common sense.  The delay of 10 us is the same as is
-used by the default spi_transfer_one_message() function in spi.c.
-[gregory: rebased on for-5.5 from spi tree]
-Fixes: 8090d6d1a415 ("spi: atmel: Refactor spi-atmel to use SPI framework queue")
-Signed-off-by: Mans Rullgard <mans@mansr.com>
-Acked-by: Nicolas Ferre <nicolas.ferre@atmel.com>
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-Link: https://lore.kernel.org/r/20191018153504.4249-1-gregory.clement@bootlin.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Fixes: 773424326b51 ("clk: samsung: exynos5420: add more registers to restore list")
+Signed-off-by: Marian Mihailescu <mihailescu2m@gmail.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-atmel.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/clk/samsung/clk-exynos5420.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
-index 691c04b3e5b6..938840af9c50 100644
---- a/drivers/spi/spi-atmel.c
-+++ b/drivers/spi/spi-atmel.c
-@@ -315,7 +315,6 @@ struct atmel_spi {
- 	struct atmel_spi_dma	dma;
- 
- 	bool			keep_cs;
--	bool			cs_active;
- 
- 	u32			fifo_size;
- };
-@@ -1404,11 +1403,9 @@ static int atmel_spi_one_transfer(struct spi_master *master,
- 				 &msg->transfers)) {
- 			as->keep_cs = true;
- 		} else {
--			as->cs_active = !as->cs_active;
--			if (as->cs_active)
--				cs_activate(as, msg->spi);
--			else
--				cs_deactivate(as, msg->spi);
-+			cs_deactivate(as, msg->spi);
-+			udelay(10);
-+			cs_activate(as, msg->spi);
- 		}
- 	}
- 
-@@ -1431,7 +1428,6 @@ static int atmel_spi_transfer_one_message(struct spi_master *master,
- 	atmel_spi_lock(as);
- 	cs_activate(as, spi);
- 
--	as->cs_active = true;
- 	as->keep_cs = false;
- 
- 	msg->status = 0;
+diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+index 2bb88d125113..7f8c7cf3c2ab 100644
+--- a/drivers/clk/samsung/clk-exynos5420.c
++++ b/drivers/clk/samsung/clk-exynos5420.c
+@@ -170,6 +170,8 @@ static const unsigned long exynos5x_clk_regs[] __initconst = {
+ 	GATE_BUS_CPU,
+ 	GATE_SCLK_CPU,
+ 	CLKOUT_CMU_CPU,
++	APLL_CON0,
++	KPLL_CON0,
+ 	CPLL_CON0,
+ 	DPLL_CON0,
+ 	EPLL_CON0,
 -- 
 2.20.1
 
