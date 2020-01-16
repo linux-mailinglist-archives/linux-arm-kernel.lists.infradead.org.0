@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2204713EDB6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:04:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60A2813EDC9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:05:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pcygU7yBD4s8pAC+BDHGNC5xloI6RQ0a6nT2rI52bpg=; b=J4WNb4cCNvlKzf
-	kwfoxZbKrR5ZSscGJt9FrQZ0UZqgROm1vrUtPr8+tMLye6Q06pOu4PwcEUN+mpk3ZLFUk3K8J6yzl
-	II4iP6UEHI0HKCrarJ1PkmFIfWjOT7IthbDBuQehJgvZ+uj6nTmvJm8kU6zr/MvpSda/PicBmT/fm
-	Lo/YcTeVtTffEYfjgcVJ55HkhOpG67VPBax+vJpvCqRZhHPKdKAE6qpo63vpn99WnQUEj3jlddpZd
-	GK+62zG5NfsOjVuc7f30sX2SPA1krzg203cyrN6X6MtofCYhUUpeXZhrfEryqw/t1K6iDNMm5VCxw
-	FHEF6E8/vcmLABJmEOKQ==;
+	List-Owner; bh=rCApv4kEoehT+VhAgHC/5q/GnSH3hq7JUgu97bB1ea0=; b=dSnoVGKj8GX/33
+	1LLmK6OIeVdk4jtQkHho21kQTjzdVN5TurmQylYfi5T052kxPGyl7E+oxYg0H5Ksd/7a83gHxGOhw
+	0RC2BbujwJIIC2lftFXkhWCoiEDvAMjpY4gjDx7VvHLWk9LywPn1XI4/SLUFm07DW0kSv3+jsYqtQ
+	ld+fXvuEFQSCGqj9O9iKKl5Zg5/PKYNd8m4XhVOBxuDfbhJRyk4UJ+gUHFSe2AIRhVT1KEArLMyZB
+	OgqwerXU4WA3vLMg6+rpCYVtVMCF04PSoWE+vNGPCqKcS6FYgKsxEvhpcbPhS1Qs2tmcd43oEaB1G
+	tYABJUOj0kUHI4Ef0u9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Va-0001RK-U7; Thu, 16 Jan 2020 18:04:42 +0000
+	id 1is9W6-0001lt-PE; Thu, 16 Jan 2020 18:05:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8ve-0005C1-Jp
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:27:39 +0000
+ id 1is8vo-0005HW-Dl
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:27:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E98D246D0;
- Thu, 16 Jan 2020 17:27:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9EA04246E0;
+ Thu, 16 Jan 2020 17:27:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195653;
- bh=L10BAFWsaqKz+H9Qust6p8J+BeZOj6OyfJvIyPxt81Q=;
+ s=default; t=1579195663;
+ bh=nTPmWZG5QsXK9I/nWtJnDvDqWkReAjvAHtCTuXPCuMA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pvjN5x3q+KhcCAsIT2b/VsfWlVvzsicV0dQttEphdg9xgE9+MXD5mH7IsRiiYYkKe
- 086oiiqo0YI/FOQwQV6B2V40WaGEuRMvir0jNJXuAG1QYh+6hMFgSMFBN87DFb6BIC
- 178YQ1vmrXtizmg3ZDKoCGy5P4B6zXIgMYzNJZ80=
+ b=HPUQRFVrsX17NYzy/tUdfv6YOlZj3LZulqG+ef682TStwu73Gd+DWX+1ZX1ea5Z1y
+ xcdc8i8A33o5Wasq4hX77UKKbepAOeqdROBtG3/K5IbkoIAPfmVx9NRr651q1WbpzM
+ /tQSH6NAUypjMG0VLDHHqkrKqlOuhGkzgtMHuDzQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 215/371] serial: stm32: fix wakeup source
- initialization
-Date: Thu, 16 Jan 2020 12:21:27 -0500
-Message-Id: <20200116172403.18149-158-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 222/371] cpufreq: brcmstb-avs-cpufreq: Fix
+ initial command check
+Date: Thu, 16 Jan 2020 12:21:34 -0500
+Message-Id: <20200116172403.18149-165-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092734_749452_7DB3DB9B 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20200116_092744_634826_72178C1C 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,109 +80,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Erwan Le Ray <erwan.leray@st.com>, linux-serial@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ Markus Mayer <mmayer@broadcom.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Erwan Le Ray <erwan.leray@st.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
 
-[ Upstream commit 5297f274e8b61ceb9676cba6649d3de9d03387ad ]
+[ Upstream commit 22a26cc6a51ef73dcfeb64c50513903f6b2d53d8 ]
 
-Fixes dedicated_irq_wakeup issue and deactivated uart as wakeup source by
-default.
+There is a logical error in brcm_avs_is_firmware_loaded() whereby if the
+firmware returns -EINVAL, we will be reporting this as an error. The
+comment is correct, the code was not.
 
-Fixes: 270e5a74fe4c ("serial: stm32: add wakeup mechanism")
-Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Fixes: de322e085995 ("cpufreq: brcmstb-avs-cpufreq: AVS CPUfreq driver for Broadcom STB SoCs")
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Acked-by: Markus Mayer <mmayer@broadcom.com>
+Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/tty/serial/stm32-usart.c | 28 +++++++++++++++-------------
- 1 file changed, 15 insertions(+), 13 deletions(-)
+ drivers/cpufreq/brcmstb-avs-cpufreq.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 2384f786b76d..f8f3f8fafd9f 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -447,7 +447,6 @@ static int stm32_startup(struct uart_port *port)
- {
- 	struct stm32_port *stm32_port = to_stm32_port(port);
- 	struct stm32_usart_offsets *ofs = &stm32_port->info->ofs;
--	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
- 	const char *name = to_platform_device(port->dev)->name;
- 	u32 val;
- 	int ret;
-@@ -458,15 +457,6 @@ static int stm32_startup(struct uart_port *port)
- 	if (ret)
- 		return ret;
+diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+index 7281a2c19c36..bae319037658 100644
+--- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
++++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+@@ -762,8 +762,8 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
+ 	rc = brcm_avs_get_pmap(priv, NULL);
+ 	magic = readl(priv->base + AVS_MBOX_MAGIC);
  
--	if (cfg->has_wakeup && stm32_port->wakeirq >= 0) {
--		ret = dev_pm_set_dedicated_wake_irq(port->dev,
--						    stm32_port->wakeirq);
--		if (ret) {
--			free_irq(port->irq, port);
--			return ret;
--		}
--	}
--
- 	val = USART_CR1_RXNEIE | USART_CR1_TE | USART_CR1_RE;
- 	if (stm32_port->fifoen)
- 		val |= USART_CR1_FIFOEN;
-@@ -497,7 +487,6 @@ static void stm32_shutdown(struct uart_port *port)
- 
- 	stm32_clr_bits(port, ofs->cr1, val);
- 
--	dev_pm_clear_wake_irq(port->dev);
- 	free_irq(port->irq, port);
+-	return (magic == AVS_FIRMWARE_MAGIC) && (rc != -ENOTSUPP) &&
+-		(rc != -EINVAL);
++	return (magic == AVS_FIRMWARE_MAGIC) && ((rc != -ENOTSUPP) ||
++		(rc != -EINVAL));
  }
  
-@@ -904,11 +893,18 @@ static int stm32_serial_probe(struct platform_device *pdev)
- 		ret = device_init_wakeup(&pdev->dev, true);
- 		if (ret)
- 			goto err_uninit;
-+
-+		ret = dev_pm_set_dedicated_wake_irq(&pdev->dev,
-+						    stm32port->wakeirq);
-+		if (ret)
-+			goto err_nowup;
-+
-+		device_set_wakeup_enable(&pdev->dev, false);
- 	}
- 
- 	ret = uart_add_one_port(&stm32_usart_driver, &stm32port->port);
- 	if (ret)
--		goto err_nowup;
-+		goto err_wirq;
- 
- 	ret = stm32_of_dma_rx_probe(stm32port, pdev);
- 	if (ret)
-@@ -922,6 +918,10 @@ static int stm32_serial_probe(struct platform_device *pdev)
- 
- 	return 0;
- 
-+err_wirq:
-+	if (stm32port->info->cfg.has_wakeup && stm32port->wakeirq >= 0)
-+		dev_pm_clear_wake_irq(&pdev->dev);
-+
- err_nowup:
- 	if (stm32port->info->cfg.has_wakeup && stm32port->wakeirq >= 0)
- 		device_init_wakeup(&pdev->dev, false);
-@@ -959,8 +959,10 @@ static int stm32_serial_remove(struct platform_device *pdev)
- 				  TX_BUF_L, stm32_port->tx_buf,
- 				  stm32_port->tx_dma_buf);
- 
--	if (cfg->has_wakeup && stm32_port->wakeirq >= 0)
-+	if (cfg->has_wakeup && stm32_port->wakeirq >= 0) {
-+		dev_pm_clear_wake_irq(&pdev->dev);
- 		device_init_wakeup(&pdev->dev, false);
-+	}
- 
- 	clk_disable_unprepare(stm32_port->clk);
- 
+ static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
 -- 
 2.20.1
 
