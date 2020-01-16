@@ -2,116 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B88713D217
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 03:17:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1452713D267
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 04:01:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zTDYtmpiEDNKKido3lSn3DNzdx8Zr/MyXfJIfwjHbqU=; b=Q4V53OB/335eQZ
-	2fAmhwDoWF0BprNj1NLSU6IN1yfRQdoS5HzWJAKwsurmPV7G7K0LwoDfwEX+SfYx7fZhAi1lWiEbI
-	BB/qidspX8QtEAXLw/GgUyK8FjBYAKfUNv/7F80w/Sz1yecYrMqpg0ZiI2/WoPhljLYa5hsAzHr6z
-	t8RzCwCU+qLAkuaYujHAljoQiocVDT+W+YtRfXfDGrLNCsWFyXtI5aIOTkq5S1rV2Yo7obAPn3rf0
-	CT/HcN/iGg1BHcpg/nnaHxBo0WTUfMFApBbeXWQaceCRAK6eAnYxTQx1Sqb+qMUg8UYwNoyXkiSrv
-	ymX7hx2wY/Nqb0Km4Wzw==;
+	List-Owner; bh=hP7HsJiQyk4/wF1XxRd1Xep0ETeBH/huQs49LL0EJOw=; b=OXL8sdpRqJS8kX
+	4gmIVvjlQl9kmTScXy/8NtiaBnNmJM75JoAW0UizfK3J//PYFW2D+TzOscudgV2Ei5VGy/TtmnYYN
+	TZ5f84hxf4rqngydz3k2wm156Eof7HvaN+Hk9viLWFMxedHUY0GW93e1iH3ZvaCgq8vOiX9I4r7/H
+	2XTO32KLPpc4Hgnmy7l7cQ5gE+2enG3MeND7ncHZqYEHIp1NzrACWgHlUGNBmvg8iHuX7CGroJ/c6
+	VMgiuzE2mLVpji7uCxGvJK8Q5DuMl+iy39IA0HgD2U51Fm/uvcmn5N/OF31g76g1vHXFsoqCU3Cb8
+	6wz540lXYKwlLi9xpQhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iruih-0006bi-UB; Thu, 16 Jan 2020 02:17:15 +0000
-Received: from mail-eopbgr60080.outbound.protection.outlook.com ([40.107.6.80]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1irvPA-0003k1-Fl; Thu, 16 Jan 2020 03:01:08 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iruha-0005cq-8c
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 02:16:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=H/azFUfv9NF3uRLqpzWNYUtFRA8GPEqVNBihW0KM3OsBC3VL9++Q2uuWeIli08JclpqSsNG1tFfNEvHCiO5lEdN/Vo2VCWVhPSvOouJSp2CjzGQPTc263/+hYGqce7wQDEAn4CSJX/iugikhFJ4/oh5kJLS5VMG0zWxhFSwkqYeQ72oz9IBcFOHM49J4ySKKygq+ICD3trA5+E0FvMc3lEmhsIqglEzDNZFCadi+JxNg1sYSS0aiO+ROTrcsp8HvXrgHw0YVgK+buLkuqtXe1jaAbFME81eSYbL9GgYxJRc2EHeFJKgrf0K2oBsxw31agCg5e+fxHacskS1zxrSDqA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V9hHpYc1QTxFufeaor7kzXYM5HTjA4lTlgvKy/9O2tQ=;
- b=Q8xXgfxGDZA9aWXbKgC1y30Lh4jA+qvjYyD22KykKIWaF6KiEOWrznM8UegHagzrFthHGnGHfAD+2kxkqqrbpfOi/XDGNI8fupEQm9u3SeuIrbeUdIpp1HpvWNTndYzsAmsFdksmZ0brAVgYPNvjhOwU2tL7ojv3RJGedzU/9UKqvD/cS3O7BLL7NQlBB+0j1vy9cxXqnNMuJrj9eQMAPSLamgRlVc6uW9xlvxbcNJCKMdQr4/zkr5eD/s4hQPe56WKxasolffEwkS642lqojHyFU035k+kL6BUWyK2t81JpyhunmH60tHux8c0SgX5E/Fjz1tYN7oSYRCKibc28sQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V9hHpYc1QTxFufeaor7kzXYM5HTjA4lTlgvKy/9O2tQ=;
- b=DZkM1P92ep4ChLBVv95udBvtplGSfoMcs+3sazXrtqWuWJJ8hTRQ8NTcPMCyvYYdmBfw7+LCxnE9xOjP4xA6EW5EwMiVMX2cfasaRLQtr1yvFFzRfBrhmL+Dnm4UaejamyrQyx5mUkhU7VQX0g9bMrklqvDbEf6qca/myUESTec=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6289.eurprd04.prod.outlook.com (20.179.35.151) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.20; Thu, 16 Jan 2020 02:16:05 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
- 02:16:05 +0000
-Received: from localhost.localdomain (119.31.174.66) by
- HK2PR0302CA0012.apcprd03.prod.outlook.com (2603:1096:202::22) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2644.6 via Frontend Transport; Thu, 16 Jan 2020 02:16:00 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>
-Subject: [PATCH V3 4/4] clk: imx: imx8mn: use imx8m_clk_hw_composite_core
-Thread-Topic: [PATCH V3 4/4] clk: imx: imx8mn: use imx8m_clk_hw_composite_core
-Thread-Index: AQHVzBLnUi048CdOXUiCDlIwVfTEcg==
-Date: Thu, 16 Jan 2020 02:16:05 +0000
-Message-ID: <1579140562-8060-5-git-send-email-peng.fan@nxp.com>
-References: <1579140562-8060-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1579140562-8060-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR0302CA0012.apcprd03.prod.outlook.com
- (2603:1096:202::22) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: fc14da0a-fb52-492f-2731-08d79a2a0a56
-x-ms-traffictypediagnostic: AM0PR04MB6289:|AM0PR04MB6289:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB62898B4299EE0C583E95C58E88360@AM0PR04MB6289.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:361;
-x-forefront-prvs: 02843AA9E0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(39860400002)(396003)(136003)(366004)(189003)(199004)(478600001)(4326008)(5660300002)(316002)(54906003)(110136005)(8936002)(81166006)(81156014)(8676002)(36756003)(6512007)(71200400001)(69590400006)(16526019)(6636002)(26005)(6506007)(186003)(86362001)(52116002)(64756008)(956004)(66946007)(66476007)(6486002)(66556008)(44832011)(66446008)(2616005)(2906002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6289;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: G/15dWIM+PLYiB3jl6lbWH9SK1fu2lMHYChn3Ca4w6P2tHGg3dC1+UuU4QekqzPviW5BFb8uCVIFs2DOMfrNiVhq9DjcAAWL/iuv6vpFpw66mnUXTJoRCb8+paERLzrXSW2SGlNUw/iHW6InG0Fcq1YAFKL9CxZ/6jA1+MmxlHG/f+qFDVlPp6eO+fxJ8WfORJ99n3PsZNNF9wQTnCQPpt00c//eDGqDIJ17QHuqk9+vioYzdV+hoWVyGyKB35bNBxSMFozMLKHfV4rFGszSUBkqU1cJtqM6uvhkCA0bwjSf9s7MHS7vehvxihHvmDwnTu0PHYBskf0C3sHSGxE0szJOcu++ZYYyoUrhWV00AZW1/86/caxuj2jgnATrlVjOdqxFb9IzONz4iMW9E4bzQAGsbQUmk3s10RVEEtCEwU9vVNDJPIWUjg6MkPR6ieAnT+yH9gNQ9zAAN2o00mQz8CMqFrXiu0iiiEuitm/sIAJAjrr7ZSlTLXtoCxpfrKljcnWlaTXWQ7jSNBFly9a3OQ==
+ id 1irvOq-0003is-Un; Thu, 16 Jan 2020 03:00:53 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00G2s9po082540;
+ Thu, 16 Jan 2020 03:00:30 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2019-08-05;
+ bh=pYqAmex2w8tiqRFaW1jCj7M1ge+Xb9hYqrytKH/JEAk=;
+ b=XeFvjIGUPyf29kMh8ImLl2O8tLws5Dpngfve2rdjFNyrahC6qPrSwT8uP8DTIDrzVt9E
+ TdfEszW+xlQMWpnA4ymFOwYi/XayCp6Hat9P6r23Kho90QjA7bDi/1mSgAHA1fhdCkaC
+ Rf1Tyb0++XNvC7lNs4dG23GsJxSdm02oCP97k6gkturjqDOx8fBg/7r1rJb6btxniAOv
+ zCrYvaR2Uon48gIymJ+oVr7HKhB0HjibEIOTdy1VlbLkr6sskl3VMoIKmmVm9fis0k3x
+ Ylag6tlfcc/IdygHQrjwvL6sVhdNfLLL09vSeUrEZyRJ0QWm+QWptGdEYNTuXB3lE/wy fw== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 2xf73yqvvt-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Jan 2020 03:00:30 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00G2sbY5151689;
+ Thu, 16 Jan 2020 03:00:29 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3020.oracle.com with ESMTP id 2xj1asnarp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Jan 2020 03:00:29 +0000
+Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 00G30QFJ026830;
+ Thu, 16 Jan 2020 03:00:27 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 15 Jan 2020 19:00:26 -0800
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 0/3] scsi: ufs: fix error history and complete device
+ reset history
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
+Date: Wed, 15 Jan 2020 22:00:22 -0500
+In-Reply-To: <1578147968-30938-1-git-send-email-stanley.chu@mediatek.com>
+ (Stanley Chu's message of "Sat, 4 Jan 2020 22:26:05 +0800")
+Message-ID: <yq1ftggp0l5.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fc14da0a-fb52-492f-2731-08d79a2a0a56
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 02:16:05.0975 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: xAGg5xxK2KHEbdN5A8BHGkKFODLlQRuYCqJntCZxnGtSxeQeJu4V2bgqt8SvtFMDyFxzedciGEr6qPDSnqfQQw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6289
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001160023
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9501
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001160023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_181606_311692_33D2AB05 
-X-CRM114-Status: GOOD (  10.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_190049_079670_3E3F70EF 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.80 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -120,6 +98,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,55 +112,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ cang@codeaurora.org, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
+ asutoshd@codeaurora.org, bvanassche@acm.org,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
 
-Use imx8m_clk_hw_composite_core to simplify code.
+Stanley,
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/clk/imx/clk-imx8mn.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+> This series targets on UFS error history fixes and feature add-on,
+>
+> 1. Fix empty check logic while outputing error history.
+> 2. Add device reset history events for vendor's implementations.
+> 3. Remove dummy word in output format.
 
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index c5e7316b4c66..ce2ba3dce483 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -413,15 +413,11 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
- 
- 	/* CORE */
- 	hws[IMX8MN_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", base + 0x8000, 24, 3, imx8mn_a53_sels, ARRAY_SIZE(imx8mn_a53_sels));
--	hws[IMX8MN_CLK_GPU_CORE_SRC] = imx_clk_hw_mux2("gpu_core_src", base + 0x8180, 24, 3,  imx8mn_gpu_core_sels, ARRAY_SIZE(imx8mn_gpu_core_sels));
--	hws[IMX8MN_CLK_GPU_SHADER_SRC] = imx_clk_hw_mux2("gpu_shader_src", base + 0x8200, 24, 3, imx8mn_gpu_shader_sels,  ARRAY_SIZE(imx8mn_gpu_shader_sels));
- 	hws[IMX8MN_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg", "arm_a53_src", base + 0x8000, 28);
--	hws[IMX8MN_CLK_GPU_CORE_CG] = imx_clk_hw_gate3("gpu_core_cg", "gpu_core_src", base + 0x8180, 28);
--	hws[IMX8MN_CLK_GPU_SHADER_CG] = imx_clk_hw_gate3("gpu_shader_cg", "gpu_shader_src", base + 0x8200, 28);
--
- 	hws[IMX8MN_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div", "arm_a53_cg", base + 0x8000, 0, 3);
--	hws[IMX8MN_CLK_GPU_CORE_DIV] = imx_clk_hw_divider2("gpu_core_div", "gpu_core_cg", base + 0x8180, 0, 3);
--	hws[IMX8MN_CLK_GPU_SHADER_DIV] = imx_clk_hw_divider2("gpu_shader_div", "gpu_shader_cg", base + 0x8200, 0, 3);
-+
-+	hws[IMX8MN_CLK_GPU_CORE_DIV] = imx8m_clk_hw_composite_core("gpu_core_div", imx8mn_gpu_core_sels, base + 0x8180);
-+	hws[IMX8MN_CLK_GPU_SHADER_DIV] = imx8m_clk_hw_composite_core("gpu_shader_div", imx8mn_gpu_shader_sels, base + 0x8200);
- 
- 	/* BUS */
- 	hws[IMX8MN_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi", imx8mn_main_axi_sels, base + 0x8800);
+Applied to 5.6/scsi-queue, thanks!
+
 -- 
-2.16.4
-
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
