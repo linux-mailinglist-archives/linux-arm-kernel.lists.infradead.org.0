@@ -2,39 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27B0513D943
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:44:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A08213D946
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 12:45:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Ep7usmiA+p3L3zh8SK6wvzliKwtyS3NmQ6DSzDb5YRg=; b=dX1
-	tW5I4ucRX6DCIuLAfDzs3lh5fnp0IIXQV706r72XNLQwQgO5r8fO8Wq420wqTHK6aI8iyQn4uMRoG
-	takP3ri1OTgl/MQ7ukYs1ZbA1q1BUZOb1+1UBVz8vm8Y7TGDw7c2caPFsPEJO1xebkrKe8QvON3wO
-	wvo7oS+sCwzLDXQHIXmJpnkmGNKCz+X26JGcx2n5dw5KnOzz9Itb6TboODbAPbL+f6WbFaTS5Rp0P
-	pCau/h0gytQWepwRfqrgz1cPTFICxQ9OrX0H1dQLyQ/7Yr5lHsDUIhvgjfPOgDhk+k+jTnqhGJElm
-	NDi/mw3qyFwWAHm2A9SmiDoPQDD7LtA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=iJw7UvZDRoVVO4ehUoTaCk5m3IfIN1fHkzlIR9kwjuk=; b=q4dzZO6PC33EIaH4J9mtaPJ3jW
+	ffvfICdTsXYsBY/iUfDtjRlzMdFOyAmQVVlKkRRzwD1PUIajlc4XBwHKuuHqNkoavZ+/9yX4r+jaP
+	Kk1sj2Ggy9L6vEHUSI7g8Cb3MqkMJVq8a3G/uYf5jGaVYIx+5g1Asl6Qquyu2H/95ORdkkFrPdw2V
+	XIgULkxlE8s4MHOwgWHwjkhv/IDE6hB5VFm8eMReMFhkupFELVLd4vQioOZIu+ZY1bQbmjmvj1B2P
+	cL9NVKQnWTCpTGjQJ1o/jfRk1HiAjudMhqoU+lijfx6unpro0A8NboDUQaXuvJuOVlnW/ZqVOWOO0
+	Kpzs/KhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3Zm-0004J0-FN; Thu, 16 Jan 2020 11:44:38 +0000
+	id 1is3a1-0004RZ-Ut; Thu, 16 Jan 2020 11:44:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3ZV-0004HQ-LV
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:44:27 +0000
+ id 1is3ZY-0004Hh-44
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 11:44:28 +0000
 Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1E9E320730;
- Thu, 16 Jan 2020 11:44:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A9B8D207E0;
+ Thu, 16 Jan 2020 11:44:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579175061;
- bh=QJ/QIbQ3IuwPCQJtCT7AzPXw20qA5hQNFNTuF0hdQ0I=;
- h=From:To:Cc:Subject:Date:From;
- b=XlYAY2QFoYif6kz680HtMEL+DHR+OTCwEJJA6RKmvHmGrbnygJQbw00/zivXpatZ6
- Oqd/7Ua34yHkfpfBNg1C2SBvAFEeb3RhDtoZor+3ltViueXHP+yjaY61QzH6/gOVAc
- E+/G8b0P29+5rpfYfXJTKJBzpk130SygeMQgivBE=
+ s=default; t=1579175063;
+ bh=33EBja95wRnaNleuYy5XxD+LZM5YdUGD5P0ToeNX6gQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=pXUPk2wBwNnoNQQ3GzQoZbPwEN8jZRUYYisL5GC74/OverB94Q+4zrzbrdfMcYvMe
+ 1VXNTotPuLj1/R+gX5W1eT6QpYUvrGQvDKs7ulbVvOg7iCT+Lmos/+vUBTbY8+fven
+ EesDo2HbE5YXmPBJM0kdlntHnZX3CTgpM/Jdc1Ho=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Marek Szyprowski <m.szyprowski@samsung.com>,
@@ -43,13 +44,15 @@ To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Geert Uytterhoeven <geert+renesas@glider.be>,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: exynos_defconfig: Enable NFS v4.1 and v4.2
-Date: Thu, 16 Jan 2020 12:44:06 +0100
-Message-Id: <1579175047-11351-1-git-send-email-krzk@kernel.org>
+Subject: [PATCH 2/2] ARM: multi_v7_defconfig: Enable NFS v4.1 and v4.2
+Date: Thu, 16 Jan 2020 12:44:07 +0100
+Message-Id: <1579175047-11351-2-git-send-email-krzk@kernel.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1579175047-11351-1-git-send-email-krzk@kernel.org>
+References: <1579175047-11351-1-git-send-email-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_034421_721757_EF903876 
-X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-CacheID: sfid-20200116_034424_179634_E5E505F5 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -103,22 +106,22 @@ commit 6d972518b821 ("NFS: Add fs_context support."):
   [ 24.986201] NFS: Value for 'minorversion' out of range
   mount.nfs4: Numerical result out of range
 ---
- arch/arm/configs/exynos_defconfig | 2 ++
+ arch/arm/configs/multi_v7_defconfig | 2 ++
  1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
-index ead8348ec999..756bbb6a641f 100644
---- a/arch/arm/configs/exynos_defconfig
-+++ b/arch/arm/configs/exynos_defconfig
-@@ -322,6 +322,8 @@ CONFIG_CRAMFS=y
- CONFIG_ROMFS_FS=y
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 80373fe0280d..493ba3d3cf1e 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -1094,6 +1094,8 @@ CONFIG_PSTORE_RAM=y
  CONFIG_NFS_FS=y
+ CONFIG_NFS_V3_ACL=y
  CONFIG_NFS_V4=y
 +CONFIG_NFS_V4_1=y
 +CONFIG_NFS_V4_2=y
  CONFIG_ROOT_NFS=y
  CONFIG_NLS_CODEPAGE_437=y
- CONFIG_NLS_ASCII=y
+ CONFIG_NLS_ISO8859_1=y
 -- 
 2.7.4
 
