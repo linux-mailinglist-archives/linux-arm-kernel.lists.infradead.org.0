@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7BC913DD48
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3898913DD51
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 15:23:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MeEg4r0afCv+d1W4kk2W1vhbqJyT1K2KXaWAjp5MJmE=; b=eGD4qv/LeEwxiW
-	S+sh7FlliZeAX52VD7xufJmFdfs+whq0V8GywvR5hrag7+tL1lckAmBDawQBANK0hApKg0LK6F+s2
-	uPhJH29hZU+ylCHBGJ+oMo291lpRlGTDrOOAHBV+Ye30lsBmBMCWod0PfIagVSBP9tSMM+4IjvUV6
-	Ctwhu1JUUrnNvVdDtvCU4PLSVBSmKXrSFX9ibbqLSmTBXDQHdYX1WaYfLr46LOCib8MIIF+Hv8WkL
-	yCWSdYQWO7PXVUYTuJIodz0MTdaq5gz69J4hOFh7Z+juOjocMW+V4bNS/rRnScZtaOJ9LlrnAjPq4
-	igvd/OEUyKOwS1QSFd/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Zs9W7cU4MKQ9EYZhZuTIv5QXij78sG8wcgcBXrHYfHs=; b=UVum3JAbbKXjH7bawem8KU9T9
+	fEMWoaznwtmO+WA7vm55F4dR6YZhrFlcHSPVBpFSBFL6gZhPHVIAr5DcsxQZ1zxh1eIoAfFd7ZWDo
+	c/NlCMKKh6pyCXSBnmcOOZe8RuENpvmXJwZYO7KG9NtR8MHPAnOaPYyrmZjWqj/xQSolyEcWIZhO7
+	8/NdXYzvy/62DS5pWjiPaI7JaMSTaEioOgcp8UnmurTd8NeliicmtcMxU3ZJ01AlW1PipeUvpFCz7
+	AfXYFJabaaNSJnbU4W6V3kSSsDMyqgZA6S7N4sOFUxowly9LQwzRNsBSqUxQqtj72QM/dITwT0TP0
+	kYTNnpVnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is5zu-0006tG-HW; Thu, 16 Jan 2020 14:19:46 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1is63H-0000L8-P4; Thu, 16 Jan 2020 14:23:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is5zh-0006rw-T7
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 14:19:38 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1579184373; h=Content-Transfer-Encoding: MIME-Version:
- Message-Id: Date: Subject: Cc: To: From: Sender;
- bh=F/smCYCNf+T2ixQGU3VAUh8QI4L0ikLpSfao8JkC1WE=;
- b=XnuNuet477cSyDCMvYn8OKYOI9ltDh1v5W53iPm+eLmWKTRc4QUNTTILxPKLZgqClP8XUsfd
- TOsB8hCizOcJlK/oXJ97erHmtrlTIXrZKZ+XRUmV11iIp4UsrkvOv3iHeY1Ep7a4yu0TIWgO
- QMC0rJPgxNTw0QWTKvskTDlQM+g=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e2070f1.7f6f47b6ff10-smtp-out-n02;
- Thu, 16 Jan 2020 14:19:29 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 9BF1EC447A1; Thu, 16 Jan 2020 14:19:29 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- UPPERCASE_50_75 autolearn=no autolearn_force=no version=3.4.0
-Received: from blr-ubuntu-253.qualcomm.com
- (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ id 1is636-0000KV-KS
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 14:23:09 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 0B27DC433CB;
- Thu, 16 Jan 2020 14:19:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0B27DC433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Marc Zyngier <maz@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] arm64: Add KRYO{3,4}XX CPU cores to spectre-v2 safe list
-Date: Thu, 16 Jan 2020 19:49:12 +0530
-Message-Id: <20200116141912.15465-1-saiprakash.ranjan@codeaurora.org>
-X-Mailer: git-send-email 2.24.0
+ by mail.kernel.org (Postfix) with ESMTPSA id B5F3A20748;
+ Thu, 16 Jan 2020 14:23:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579184584;
+ bh=cKTUtAai+F3kwsCgiV5+gcSXb75k6M9kqJPe1f1yhys=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KNcjSTjqpkciihCkSGiSg3Qpg2MI1znaP2oRwTnHBuLDK0/y9OQDLcx1r3TIAFIpC
+ kDnaweSlGbk4XiR9KHFbpNmCvx4DeLbO/NoKlNzkeejECdZTYwpHNejyP4T6D14gdz
+ xEfoN6XswDHd8P7ChKjjKol0OT/RLp3ML4+/4JP0=
+Date: Thu, 16 Jan 2020 15:23:01 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v2 3/3] dt-bindings: spi: sunxi: Document new compatible
+ strings
+Message-ID: <20200116142301.w2t4o6pg3dapp3g6@gilmour.lan>
+References: <20200116005654.27672-1-andre.przywara@arm.com>
+ <20200116005654.27672-4-andre.przywara@arm.com>
 MIME-Version: 1.0
+In-Reply-To: <20200116005654.27672-4-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_061934_290056_C70462A8 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200116_062304_690054_AE1B29FD 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,71 +77,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Douglas Anderson <dianders@chromium.org>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>, James Morse <james.morse@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ linux-spi@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Icenowy Zheng <icenowy@aosc.xyz>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1760588333577091372=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KRYO3XX silver CPU cores and KRYO4XX silver, gold CPU cores
-are not affected by Spectre variant 2. Add them to spectre_v2
-safe list to correct ARM_SMCCC_ARCH_WORKAROUND_1 warning and
-vulnerability sysfs value.
 
-Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
----
- arch/arm64/include/asm/cputype.h | 6 ++++++
- arch/arm64/kernel/cpu_errata.c   | 3 +++
- 2 files changed, 9 insertions(+)
+--===============1760588333577091372==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="dtp4obhou6ga2i2o"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
-index aca07c2f6e6e..7219cddeba66 100644
---- a/arch/arm64/include/asm/cputype.h
-+++ b/arch/arm64/include/asm/cputype.h
-@@ -85,6 +85,9 @@
- #define QCOM_CPU_PART_FALKOR_V1		0x800
- #define QCOM_CPU_PART_FALKOR		0xC00
- #define QCOM_CPU_PART_KRYO		0x200
-+#define QCOM_CPU_PART_KRYO_3XX_SILVER	0x803
-+#define QCOM_CPU_PART_KRYO_4XX_GOLD	0x804
-+#define QCOM_CPU_PART_KRYO_4XX_SILVER	0x805
- 
- #define NVIDIA_CPU_PART_DENVER		0x003
- #define NVIDIA_CPU_PART_CARMEL		0x004
-@@ -111,6 +114,9 @@
- #define MIDR_QCOM_FALKOR_V1 MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR_V1)
- #define MIDR_QCOM_FALKOR MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR)
- #define MIDR_QCOM_KRYO MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO)
-+#define MIDR_QCOM_KRYO_3XX_SILVER MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_3XX_SILVER)
-+#define MIDR_QCOM_KRYO_4XX_GOLD MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_4XX_GOLD)
-+#define MIDR_QCOM_KRYO_4XX_SILVER MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO_4XX_SILVER)
- #define MIDR_NVIDIA_DENVER MIDR_CPU_MODEL(ARM_CPU_IMP_NVIDIA, NVIDIA_CPU_PART_DENVER)
- #define MIDR_NVIDIA_CARMEL MIDR_CPU_MODEL(ARM_CPU_IMP_NVIDIA, NVIDIA_CPU_PART_CARMEL)
- #define MIDR_FUJITSU_A64FX MIDR_CPU_MODEL(ARM_CPU_IMP_FUJITSU, FUJITSU_CPU_PART_A64FX)
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index 85f4bec22f6d..58ba2d1c66a3 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -548,6 +548,9 @@ static const struct midr_range spectre_v2_safe_list[] = {
- 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
- 	MIDR_ALL_VERSIONS(MIDR_BRAHMA_B53),
- 	MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
-+	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_3XX_SILVER),
-+	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_4XX_GOLD),
-+	MIDR_ALL_VERSIONS(MIDR_QCOM_KRYO_4XX_SILVER),
- 	{ /* sentinel */ }
- };
- 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+
+--dtp4obhou6ga2i2o
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Thu, Jan 16, 2020 at 12:56:54AM +0000, Andre Przywara wrote:
+> The Allwinner H6 SPI controller has advanced features over the H3
+> version, but remains compatible with it.
+> Document the usual "specific", "fallback" compatible string pair.
+> Also add the R40 version while at it.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  .../devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml     | 12 +++++++++---
+>  1 file changed, 9 insertions(+), 3 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml b/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+> index f36c46d236d7..c19dfbe42d90 100644
+> --- a/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+> +++ b/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+> @@ -18,9 +18,15 @@ properties:
+>    "#size-cells": true
+>
+>    compatible:
+> -    enum:
+> -      - allwinner,sun6i-a31-spi
+> -      - allwinner,sun8i-h3-spi
+> +    oneOf:
+> +      - const: allwinner,sun6i-a31-spi
+> +      - const: allwinner,sun8i-h3-spi
+> +      - items:
+> +          - const: allwinner,sun8i-r40-spi
+> +          - const: allwinner,sun8i-h3-spi
+> +      - items:
+> +          - const: allwinner,sun50i-h6-spi
+> +          - const: allwinner,sun8i-h3-spi
+
+Having
+
+oneOf:
+  - const: allwinner,sun6i-a31-spi
+  - const: allwinner,sun8i-h3-spi
+  - items:
+    - enum:
+      - allwinner,sun8i-r40-spi
+      - allwinner,sun50i-h6-spi
+    - const: allwinner,sun8i-h3-spi
+
+Will be easier to maintain in the long run
+
+Maxime
+
+--dtp4obhou6ga2i2o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiBxxQAKCRDj7w1vZxhR
+xRUZAQDisZVXdmeqha8atHLsAl78/m8TbSfhS0431utHf0z35AEArNAvTTDGJZT3
+fIwJSFWfYpI4H2JuT4OzXW9UJtlNUQ0=
+=tA6x
+-----END PGP SIGNATURE-----
+
+--dtp4obhou6ga2i2o--
+
+
+--===============1760588333577091372==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1760588333577091372==--
+
