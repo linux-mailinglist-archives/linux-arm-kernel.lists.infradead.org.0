@@ -2,81 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7FBF13FB5E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 22:23:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB55E13FB62
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 22:25:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KWkiGJET4fYY2LsLr6nQoxX6w9a5l2GbnwMoK2g12os=; b=V8rEw4JfIua/gw
-	C1g4oql6CIQ4ZgchvCz0xS8QNsTT5YQgQKHWZ7FyH3QLbB4a/A44ZUG98JIw7c40761i7/uZDF/cw
-	aA8t10Flz0QQjtJUcJfwV/eSIfU3C3TbO78SJTzFDkShV8FosLkYzFKTn19kpqxdMIv7WkFcWZnsm
-	ZM/vq58a38UmzQCATyptsJXGtXWgmR8Yh87VLXW1LmIQ5Yvd4N/yUft7h4/iqo6Ger4TaURw3QIOU
-	MHUQheCkX1kEqGaAZ+XeD/jajt5eynYxF1x4QKTJrI/4Tgp0G445EoVrnG825z8CQuWmJJuuiHDeG
-	pwrQ5GpMfmbEQRzokPtA==;
+	List-Owner; bh=p88emb0KzRGJpw35jLAl5so+OESkEMYCi+g+8T0RT+E=; b=og3qHnFVELFIxH
+	RZ+YNOii8JQT+awiem2Z9r38Tn4+WcG/urZyNobFJO0JQZxWytCyjmA5K3zuNpyykEMX+tt072GIL
+	IAxFFtHdoh/wG45CKHdWobRnuFK6bu7WqCoC9GjzE0EnPPuQ6W3RZO9TPzEEu3hy2kccwqqDSITIQ
+	mMQqzgO/lt65PWPhKgS5g14tZy+E6lYeAAK/wkODohFvJvkkc53uUDyrmrrXQWVMdEDRA4Y4oZN+5
+	Vv2/uBHGukYe3kz8afKoQKUS+kgH+GyZszK5+0WwLnKG13ccrT3TbfMCtSgJMNMmbWZpaVVCl0EAO
+	8IbIkR2M9Giad4s7gkzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isCc9-0004NE-LV; Thu, 16 Jan 2020 21:23:41 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1isCdu-0006IT-Ne; Thu, 16 Jan 2020 21:25:30 +0000
+Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isCc0-0004M3-M5
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 21:23:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579209809;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=KO9+uw/hq0OkXeKJuZfGCr+At+A43QGZAYlRPTwNi6Y=;
- b=TtqKuT0ciN077gVnHzW/DsbfuHq2w4/ni83ZdTlh44tkJQNLH3Qw1Z4uB2x8RO1CWuEOZA
- arShEITcEeqApHQy8fQGPgdS5XSdgey66DtJORkXCKmEGzKIGNEES37Gu6F4A6jekv04/O
- oHklZsCZs1QySZf+kois9Fygfsx9g9A=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-402-U-uhHCL1M0-Z0rRLKVDtnQ-1; Thu, 16 Jan 2020 16:23:23 -0500
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1DBC210054E3;
- Thu, 16 Jan 2020 21:23:22 +0000 (UTC)
-Received: from [10.36.117.108] (ovpn-117-108.ams2.redhat.com [10.36.117.108])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3BC1988867;
- Thu, 16 Jan 2020 21:23:20 +0000 (UTC)
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation support
-To: Rob Herring <robh@kernel.org>
-References: <20200113143924.11576-1-robh@kernel.org>
- <2ee87a12-1a0e-bd48-0209-b5e205342d44@redhat.com>
- <CAL_JsqKrh0nLuoRgi1-bKyEErwCFpWPRPNVDuoeJrbFMCz60KQ@mail.gmail.com>
- <bc72f4c5-de47-8684-c7d5-0e60a4a78ee2@redhat.com>
- <CAL_Jsq+fwdLfxgW=aoMNySrKunSgtC+i5ttsn1vCdR2p4BMPfA@mail.gmail.com>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <4e56aa27-37f0-d8d9-46fd-871055abcb49@redhat.com>
-Date: Thu, 16 Jan 2020 22:23:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1isCdn-0006Hb-Bl
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 21:25:24 +0000
+Received: by mail-pg1-x52c.google.com with SMTP id l24so10548577pgk.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 13:25:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=b1Kvm0rDOE0wfEwlHmIlNMpEDQOEYfl85/0XGqmp4Bs=;
+ b=qYkMe7mYT2URNKM8SMnqoQYlO1MoVAV1u4QyJGfa6lmJEhcqvQeT1dklOYzmwvPrKX
+ C6G3uwT7UYOvgmGWU4vU0Q/uqSwxFpzRJNi/H1VShlQyKBnQqVbGgImSIE+q982eY7Rm
+ vp/PHAA0fCo9SqwzF4yklkAHYBzguPr21vZyn127qoqdA05gJ1XqGMwPYlgD6jcJ2TuL
+ icHuBoh/17lzPgwK1Y552lZgUHKJmFRqdzmX2r2xhNGxoskl04iEGROFZdK1efB4leUZ
+ i5xwgWrtHiEPNpwRC6ISV9qYKva+P4X/vlW251z3T0lUuAq/OELMnAfofFXzgXVYlSjx
+ L3Vw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=b1Kvm0rDOE0wfEwlHmIlNMpEDQOEYfl85/0XGqmp4Bs=;
+ b=t0ZBocphFZuq5KbYosZycDWNolOtjqnTt6/NsQZfrrHsCW/cDu4QKF7uxZnTgLnOa/
+ jNChVlOOgKctqPEJ8HAug8YGLLI0O22y/lFBirvel4+9mzJhjg58Qgx5ATN2R42AHwpV
+ 4cRHJ3h7YPoTHXmQ3+4Me3k4ETkE/pFUgRVaMmRyBm391NgzEkr3o0HN5n/3AuOF2iJV
+ Cg/83il5I9BOUqD8TtBEPHoFVzFHx7zTt9N3onLxb+7iX6BVOQYAerqp1J++xNR7vvmz
+ hyJxsuDFy08LxnQHN0enVY5HXGffauZOdDYmqWN2TtLqmrzfRofKS/Na/tZ8xXiMjWXr
+ 9jhw==
+X-Gm-Message-State: APjAAAUWj92k/nyemrTz2plgVGfpMWOhSsftBeLauNfG/Idv18scGw5+
+ mqfdip9uDU3xEyq98UrmT4o=
+X-Google-Smtp-Source: APXvYqznUgnrRbLLUl6/bl3mogR4igso5Ajk5U3rf/d0nKABO/nRvfE+QCyFmf+YOKCGo+GwYJGXUA==
+X-Received: by 2002:aa7:9290:: with SMTP id j16mr39690467pfa.30.1579209922342; 
+ Thu, 16 Jan 2020 13:25:22 -0800 (PST)
+Received: from [10.67.50.41] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id s22sm1254045pji.30.2020.01.16.13.25.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 16 Jan 2020 13:25:21 -0800 (PST)
+Subject: Re: [GIT PULL 1/3 part 2] Broadcom defconfig-arm64 changes for 5.6
+To: Florian Fainelli <f.fainelli@gmail.com>, soc@kernel.org, arnd@arndb.de,
+ olof@lixom.net, khilman@kernel.org
+References: <20200116173440.10886-1-f.fainelli@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <2f232113-a88e-9cf2-3b2c-287edda07678@gmail.com>
+Date: Thu, 16 Jan 2020 13:25:20 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+fwdLfxgW=aoMNySrKunSgtC+i5ttsn1vCdR2p4BMPfA@mail.gmail.com>
+In-Reply-To: <20200116173440.10886-1-f.fainelli@gmail.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-MC-Unique: U-uhHCL1M0-Z0rRLKVDtnQ-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_132332_792715_8E9AA26E 
-X-CRM114-Status: GOOD (  23.42  )
+X-CRM114-CacheID: sfid-20200116_132523_428231_EC56DCD1 
+X-CRM114-Status: GOOD (  17.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:52c listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,7 +145,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,111 +156,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-On 1/16/20 5:57 PM, Rob Herring wrote:
-> On Wed, Jan 15, 2020 at 10:33 AM Auger Eric <eric.auger@redhat.com> wrote:
->>
->> Hi Rob,
->>
->> On 1/15/20 3:02 PM, Rob Herring wrote:
->>> On Wed, Jan 15, 2020 at 3:21 AM Auger Eric <eric.auger@redhat.com> wrote:
->>>>
->>>> Hi Rob,
->>>>
->>>> On 1/13/20 3:39 PM, Rob Herring wrote:
->>>>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
->>>>> Support for range invalidate is determined by the RIL bit in the IDR3
->>>>> register.
->>>>>
->>>>> The range invalidate is in units of the leaf page size and operates on
->>>>> 1-32 chunks of a power of 2 multiple pages. First we determine from the
->>>>> size what power of 2 multiple we can use and then adjust the granule to
->>>>> 32x that size.
+On 1/16/20 9:34 AM, Florian Fainelli wrote:
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 > 
->>>>> @@ -2022,12 +2043,39 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
->>>>>               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
->>>>>       }
->>>>>
->>>>> +     if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
->>>>> +             unsigned long tg, scale;
->>>>> +
->>>>> +             /* Get the leaf page size */
->>>>> +             tg = __ffs(smmu_domain->domain.pgsize_bitmap);
->>>> it is unclear to me why you can't set tg with the granule parameter.
->>>
->>> granule could be 2MB sections if THP is enabled, right?
->>
->> Ah OK I thought it was a page size and not a block size.
->>
->> I requested this feature a long time ago for virtual SMMUv3. With
->> DPDK/VFIO the guest was sending page TLB invalidation for each page
->> (granule=4K or 64K) part of the hugepage buffer and those were trapped
->> by the VMM. This stalled qemu.
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 > 
-> I did some more testing to make sure THP is enabled, but haven't been
-> able to get granule to be anything but 4K. I only have the Fast Model
-> with AHCI on PCI to test this with. Maybe I'm hitting some place where
-> THPs aren't supported yet.
+> are available in the Git repository at:
 > 
->>>>> +             /* Determine the power of 2 multiple number of pages */
->>>>> +             scale = __ffs(size / (1UL << tg));
->>>>> +             cmd.tlbi.scale = scale;
->>>>> +
->>>>> +             cmd.tlbi.num = CMDQ_TLBI_RANGE_NUM_MAX - 1;
->>>> Also could you explain why you use CMDQ_TLBI_RANGE_NUM_MAX.
->>>
->>> How's this:
->>> /* The invalidation loop defaults to the maximum range */
->> I would have expected num=0 directly. Don't we invalidate the &size in
->> one shot as 2^scale * pages of granularity @tg? I fail to understand
->> when NUM > 0.
+>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.6/defconfig-arm64
 > 
-> NUM is > 0 anytime size is not a power of 2. For example, if size is
-> 33 pages, then it takes 2 loops doing 32 pages and then 1 page. If
-> size is 34 pages, then NUM is (17-1) and SCALE is 1.
-OK I get it now. I misread the scale computation as log2() :-(.
-
-I still have a doubt about the scale choice. What if you invalidate a
-large number of pages such as 1025 pages. scale is 0 and you end up with
-32 * 32 * 2^0 + 1 * 2 * 2^0  invalidations (33). Whereas you could
-invalidate the whole range with 2 invalidation commands: 1 x 2^10 +
-1*1^1 (packing the invalidations by largest scale). Am I correct or do I
-still miss something?
-
-Besides in the patch I think in the while loop the iova should be
-incremented with the actual number of invalidated bytes and not the max
-sized granule variable.
-
-Thanks
-
-Eric
-
-
-
-
-
-
-
+> for you to fetch changes up to 03077ad5c0252fb81008fc6ecd233db6fb6571a3:
 > 
-> Rob
+>   arm64: defconfig: Enable Broadcom's STB PCIe controller (2020-01-16 09:18:29 -0800)
 > 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> ----------------------------------------------------------------
+> This pull request contains Broadcom ARM64-based SoCs defconfig changes
+> for 5.6, please pull the following:
+> 
+> - Nicolas enables the Broadcom STB PCIe Root Complex driver as a module
+>   for the ARM64 defconfig. The driver will go through the PCIe maintainers
+>   pull request for 5.6.
+> 
+> ----------------------------------------------------------------
+
+Nicolas reminded me that there is an additional changes of his that is
+missing, I will be resubmitting shortly all 3 pull request and correct
+the incorrect subject in pull request #2 in the process. Thanks
+
+> Nicolas Saenz Julienne (1):
+>       arm64: defconfig: Enable Broadcom's STB PCIe controller
+> 
+>  arch/arm64/configs/defconfig | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
+
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
