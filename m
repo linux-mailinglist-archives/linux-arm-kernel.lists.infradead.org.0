@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A24513F17C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:29:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46C513F186
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:30:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X78hU4RnN+dA+SiCCBQBWh5hYN5iTAu4DsXN0JxNu40=; b=Rb4BkGeH34Ky0z
-	KPH7VleJhKWm0QyyZEYpmI0t1+LIQoi+UyUaS+ipOv/DOZBLFI13ztk4KhoCsfWRzqDGW1dv2jqpO
-	gsRMou3DOeJQvpIlmDDZ4fY8aFfsE1KZmBTBMf/SKpK+mJBn3XFF7bVvt6Zp6ab8ImvgEO0BZ9tdN
-	9znaHwTy2vwkTzaKSonigt/b5+vT96IGQxEDPXkGkP3fcoBgDr9qd1e6kmZenHOypMpQbbK1WLuWi
-	orprZtQPZZV/CYP+opCZdIX2GwrdOXdimKHGp8SLD136/q4G12n7jXzrXkrzEwhTokFSrWSyIOqxt
-	fqrNjtYFyx6QHp+dem3w==;
+	List-Owner; bh=r3g+svGpSHyxTE/OHBx8SiczXEIS1QlVun7/IJWkmiQ=; b=c1B8DmwFBOp79+
+	PErBDmSgXa/fZ3XsvjWHcvwA1+GZkKkHtHWukzr2PmUODb4FLSuesNADC6FNnQ8qBmuQ5rM12okyn
+	j8QJ3d6W9ZWXxccZh27T5Tj/Xq4Lbi1WPBcNQuOhCxd8rxyKm3LFo6WsK/imKY7jZ1ks3B2RDTbMl
+	zsHJwjXb79WUdr9hXbTQmVDb04ww1ukVITWZrfbx/y2gRXdaDY87Tl57bU2DxewSTgWAsuK1IzE8k
+	tWWFGKVn7FHaKcmpj0+kQ/rVF66p4D+i/7FZq8I3eURdh7/zOOXrHt3HwtkvpDAxpSqkmWigWOWgc
+	wQRGQ6cK0cD0Pl97SSzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9sx-0005g0-44; Thu, 16 Jan 2020 18:28:51 +0000
+	id 1is9uQ-0006eo-Sv; Thu, 16 Jan 2020 18:30:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is9A8-0002wj-8M
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:42:36 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBF40246A4;
- Thu, 16 Jan 2020 17:42:28 +0000 (UTC)
+ id 1is9Ay-0003dI-Ql
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:43:31 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF1192473E;
+ Thu, 16 Jan 2020 17:43:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196551;
- bh=mgprMcwg5geRqmgaKiU1wuHYHMykWSduBoXMRAfD5oU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Mgw6egZbi23SsHpczLIWPA2oAwGPyk1eHd0VM6m9t7cbSHqf6wpmF1ExXLBq+pIoS
- ao91bTU+o5nHjuJ5t+13jNG0TuB8o3S23+d9VEpLJq1SU98zND0ETuVrwom6LsbauM
- AfXlJFTytG/yjer33m8X2wJA8Wvp2M4SU906Ij2A=
-Date: Thu, 16 Jan 2020 17:42:25 +0000
-From: Will Deacon <will@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v6 10/15] arm64: preserve x18 when CPU is suspended
-Message-ID: <20200116174225.GC21396@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191206221351.38241-1-samitolvanen@google.com>
- <20191206221351.38241-11-samitolvanen@google.com>
+ s=default; t=1579196604;
+ bh=TccJOtcUyFcvwHWtKtKxjGMXYMYQYLbUUr4ZH9hOnyQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=tKk/7aKGh1Hx9+Zv6hBynixbm83v/K/qdF7y8axvXM3Y6avhj/OhuXstXnkJeznRg
+ EM5Prr4lMPDVtLEpjtO27OaOndHgL4nuETBfIX8aBVSF0a2vzbxLsGrsjZJa0fmSWs
+ TM74L/oFZHaHK/gCo8J0/fRfL6PDVOMSGIl/gtgs=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.4 025/174] clk: imx7d: fix refcount leak in
+ imx7d_clocks_init()
+Date: Thu, 16 Jan 2020 12:40:22 -0500
+Message-Id: <20200116174251.24326-25-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
+References: <20200116174251.24326-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191206221351.38241-11-samitolvanen@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_094232_343933_13087654 
-X-CRM114-Status: GOOD (  17.09  )
+X-CRM114-CacheID: sfid-20200116_094324_896687_6870CD0A 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,92 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 02:13:46PM -0800, Sami Tolvanen wrote:
-> Don't lose the current task's shadow stack when the CPU is suspended.
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> ---
->  arch/arm64/include/asm/suspend.h |  2 +-
->  arch/arm64/mm/proc.S             | 14 ++++++++++++++
->  2 files changed, 15 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
-> index 8939c87c4dce..0cde2f473971 100644
-> --- a/arch/arm64/include/asm/suspend.h
-> +++ b/arch/arm64/include/asm/suspend.h
-> @@ -2,7 +2,7 @@
->  #ifndef __ASM_SUSPEND_H
->  #define __ASM_SUSPEND_H
->  
-> -#define NR_CTX_REGS 12
-> +#define NR_CTX_REGS 13
->  #define NR_CALLEE_SAVED_REGS 12
->  
->  /*
-> diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-> index fdabf40a83c8..5c8219c55948 100644
-> --- a/arch/arm64/mm/proc.S
-> +++ b/arch/arm64/mm/proc.S
-> @@ -49,6 +49,8 @@
->   * cpu_do_suspend - save CPU registers context
->   *
->   * x0: virtual address of context pointer
-> + *
-> + * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
->   */
->  ENTRY(cpu_do_suspend)
->  	mrs	x2, tpidr_el0
-> @@ -73,6 +75,11 @@ alternative_endif
->  	stp	x8, x9, [x0, #48]
->  	stp	x10, x11, [x0, #64]
->  	stp	x12, x13, [x0, #80]
-> +	/*
-> +	 * Save x18 as it may be used as a platform register, e.g. by shadow
-> +	 * call stack.
-> +	 */
-> +	str	x18, [x0, #96]
->  	ret
->  ENDPROC(cpu_do_suspend)
->  
-> @@ -89,6 +96,13 @@ ENTRY(cpu_do_resume)
->  	ldp	x9, x10, [x0, #48]
->  	ldp	x11, x12, [x0, #64]
->  	ldp	x13, x14, [x0, #80]
-> +	/*
-> +	 * Restore x18, as it may be used as a platform register, and clear
-> +	 * the buffer to minimize the risk of exposure when used for shadow
-> +	 * call stack.
-> +	 */
-> +	ldr	x18, [x0, #96]
-> +	str	xzr, [x0, #96]
+From: Yangtao Li <tiny.windzz@gmail.com>
 
-Mumble, mumble, spectre-v4.
+[ Upstream commit 5f8c183a996b76bb09748073c856e4246fd4ce95 ]
 
-But I think it's fairly hopeless trying to fix that everywhere it crops up,
-so:
+The of_find_compatible_node() returns a node pointer with refcount
+incremented, but there is the lack of use of the of_node_put() when
+done. Add the missing of_node_put() to release the refcount.
 
-Acked-by: Will Deacon <will@kernel.org>
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+Fixes: 8f6d8094b215 ("ARM: imx: add imx7d clk tree support")
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clk/imx/clk-imx7d.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Will
+diff --git a/drivers/clk/imx/clk-imx7d.c b/drivers/clk/imx/clk-imx7d.c
+index 448ef321948b..863163b239a3 100644
+--- a/drivers/clk/imx/clk-imx7d.c
++++ b/drivers/clk/imx/clk-imx7d.c
+@@ -386,6 +386,7 @@ static void __init imx7d_clocks_init(struct device_node *ccm_node)
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx7d-anatop");
+ 	base = of_iomap(np, 0);
+ 	WARN_ON(!base);
++	of_node_put(np);
+ 
+ 	clks[IMX7D_PLL_ARM_MAIN_SRC]  = imx_clk_mux("pll_arm_main_src", base + 0x60, 14, 2, pll_bypass_src_sel, ARRAY_SIZE(pll_bypass_src_sel));
+ 	clks[IMX7D_PLL_DRAM_MAIN_SRC] = imx_clk_mux("pll_dram_main_src", base + 0x70, 14, 2, pll_bypass_src_sel, ARRAY_SIZE(pll_bypass_src_sel));
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
