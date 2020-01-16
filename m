@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFAF113F00C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:20:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A61713F03B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 19:21:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YV8jQvCu/Z97ooGDhCbzsEWRYU1TeH+pmI4ZJKZ/40k=; b=ruT0xuPSTRU4r0
-	iHYC2n8BVI7GZqgCF/mT9IGSWAmvY0twWLBdjk1dv0tqftB25adU0kCAnEYQH7sOcGhPMwny/56rc
-	8gFKoQPDAnLC43ePhLQwtHwcS+RsEc+ZYvEs4GVAIEgA6YcKNm339t4QZeBiCSghsGesOqAWg3GGG
-	f4kPRDT6Yz0Q4/Xda2WWfMZYHBJ8mBKPwGxlFXVHNFGeu7Tf4SxlxPc/94cHTzR7K+JzBxOZjREoP
-	6SSe3JYr5uKuC1O/r1l+ti5IaFXeju+4qbZ/R8dJdq6bQ39ij/V+MAAuzIdynMRHgHid3cZjrxGpc
-	HZiSKsuVZQd3sax1PcnQ==;
+	List-Owner; bh=+q4CXsnzcF2AMI3F5YGqFijXoC4Qa7R0mZfPrON/lBk=; b=dz/mrowU9oS3kp
+	zPMyCmcX31k3ATY+qlbcO6ZdDMwNOS7xgV6yJADFhZDB10y55G6UDSeCwYyInSt6V/iVCQOuuIO5m
+	cEPaaZHu/+Ca6RmLvwrmOc9Zlu1Fns7oDlzmkFR7PwKH8KEnB9oxVZ8QfskvDaGwTIiNI1W7hFrx1
+	rgGfKNeTsrJDUhfpijYHhmWivf/s4xzDISKC5Jav0HnHcKuRIZmfESgi+WUncTijrbCBwqxSm2TyR
+	U6R0Xznf/XRBIz4ayqIDTnB4Z3JOqfFwrdsBP82yFCdu+waU/PLs03JZ1QlcaZDF6YpSI8XPImpyg
+	+YoLitzWr3hMsysFQS/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9kw-0005AJ-N2; Thu, 16 Jan 2020 18:20:34 +0000
+	id 1is9lW-0005k7-GY; Thu, 16 Jan 2020 18:21:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is95Y-00071b-4b
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:38:17 +0000
+ id 1is95t-0007DL-LZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 17:38:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7859A246DB;
- Thu, 16 Jan 2020 17:37:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3BE63246C0;
+ Thu, 16 Jan 2020 17:38:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196266;
- bh=FeTWHdpvBDTIIq6Cc4JwoyeiwKCZmDFPfiY6d1lavtg=;
+ s=default; t=1579196289;
+ bh=OC0v1Ey/y2swb0pz3B0+DItv1oq/ZPq+bHZoidnUPFQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XHxl9FtcgP9218af1ZFmAFN90WICjE5OvCdmfe79RlQd9fhtn/BBucYRg75EMi+00
- YbmB11Epz89MsWNtnis5NPD3KxL52lRKagVzRidpFAsgj9z7/v2D6sl1Ln4kOCHawz
- tCfi/f5gl8Ic6KzN/8Oc9Baj+CMwFMGnTxIKx+jw=
+ b=QmXTBJfUnYvw5VPfl3MfmxcvItQIZ0YxF1PXhxvpkMDKMv6EBfdILDYYvWzaQoCJO
+ ZspmcgSUKbqAdHc15lbBIz2Qk5+F0/oQgsjvPGF64RNGwPwqZ7fKteL9V3RwVPngKf
+ W8gZ66yWx/CBor2gtqkXQYex7L2Isi/gsq8BTb9E=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 089/251] ARM: 8848/1: virt: Align GIC version
- check with arm64 counterpart
-Date: Thu, 16 Jan 2020 12:33:58 -0500
-Message-Id: <20200116173641.22137-49-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 104/251] ARM: OMAP2+: Fix potentially
+ uninitialized return value for _setup_reset()
+Date: Thu, 16 Jan 2020 12:34:13 -0500
+Message-Id: <20200116173641.22137-64-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
 References: <20200116173641.22137-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_093748_460206_ECBF2B3C 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_093809_966036_2E30BB43 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,47 +80,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>, Sasha Levin <sashal@kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Vladimir Murzin <vladimir.murzin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vladimir Murzin <vladimir.murzin@arm.com>
+From: Tony Lindgren <tony@atomide.com>
 
-[ Upstream commit 9db043d36bd379f4cc99054c079de0dabfc38d03 ]
+[ Upstream commit 7f0d078667a494466991aa7133f49594f32ff6a2 ]
 
-arm64 has got relaxation on GIC version check at early boot stage due
-to update of the GIC architecture let's align ARM with that.
+Commit 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior") made
+the call to _enable() conditional based on no oh->rst_lines_cnt. This
+caused the return value to be potentially uninitialized. Curiously we see
+no compiler warnings for this, probably as this gets inlined.
 
-To help backports (even though the code was correct at the time of writing)
-Fixes: e59941b9b381 ("ARM: 8527/1: virt: enable GICv3 system registers")
-Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
-Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+We call _setup_reset() from _setup() and only _setup_postsetup() if the
+return value is zero. Currently the return value can be uninitialized for
+cases where oh->rst_lines_cnt is set and HWMOD_INIT_NO_RESET is not set.
+
+Fixes: 747834ab8347 ("ARM: OMAP2+: hwmod: revise hardreset behavior")
+Cc: Paul Walmsley <paul@pwsan.com>
+Cc: Tero Kristo <t-kristo@ti.com>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/kernel/hyp-stub.S | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/mach-omap2/omap_hwmod.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/kernel/hyp-stub.S b/arch/arm/kernel/hyp-stub.S
-index 15d073ae5da2..f5e5e3e19659 100644
---- a/arch/arm/kernel/hyp-stub.S
-+++ b/arch/arm/kernel/hyp-stub.S
-@@ -179,8 +179,8 @@ ARM_BE8(orr	r7, r7, #(1 << 25))     @ HSCTLR.EE
- 	@ Check whether GICv3 system registers are available
- 	mrc	p15, 0, r7, c0, c1, 1	@ ID_PFR1
- 	ubfx	r7, r7, #28, #4
--	cmp	r7, #1
--	bne	2f
-+	teq	r7, #0
-+	beq	2f
+diff --git a/arch/arm/mach-omap2/omap_hwmod.c b/arch/arm/mach-omap2/omap_hwmod.c
+index bfc74954540c..9421b78f869d 100644
+--- a/arch/arm/mach-omap2/omap_hwmod.c
++++ b/arch/arm/mach-omap2/omap_hwmod.c
+@@ -2588,7 +2588,7 @@ static void _setup_iclk_autoidle(struct omap_hwmod *oh)
+  */
+ static int _setup_reset(struct omap_hwmod *oh)
+ {
+-	int r;
++	int r = 0;
  
- 	@ Enable system register accesses
- 	mrc	p15, 4, r7, c12, c9, 5	@ ICC_HSRE
+ 	if (oh->_state != _HWMOD_STATE_INITIALIZED)
+ 		return -EINVAL;
 -- 
 2.20.1
 
