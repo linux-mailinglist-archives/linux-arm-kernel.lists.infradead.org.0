@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AC7113D9E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:27:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CB0313D9FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Jan 2020 13:30:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R4ZhxC7lh4pa09u9fGjLmnIQ+lfKrZQcEd7/pVkGuv4=; b=k7b150usa4o+BGB58Ip4/FY5E
-	spJE/PuyIuxXfQ9Si4zug+S91y+/7GERJsCIWBkkp96L0ofC80w2b3DL5+wH80TNxi6YYP99gFJa/
-	D3ZcOHk7zerDReGJRobaC7T5DkNrrUMJq1/aHT6qKDRcpdGUZrUngAyqKrzEXuix0oVK0t6LTmCrk
-	FCw7TQuixRYGQpoz46RIYrf/SGwDwyGa9S25LupxyGwGfXBs+6/IrGm5pAxZiVBAl1RTX4bpdLt/u
-	U5StsloyiboPaUNZH4IOHVjxacqBGIil+VHSeRVPRAXJaV1nXejkOq2piukpGlYUdUUfv4gmlL3je
-	Xmd9tJj7A==;
+	 bh=Oirqb3JEg0d5V1SGQS6Yhmj8bqnUK0Q3xrqKGHkp6A8=; b=M8a7w0fh/1rdSzxXDega/fLAD
+	zO06O7lg6YsyePAo/RH1ozcX8VFWVePmh+akRWaYuNJbU9b16nvug9gkZ/F6wLqEUyZW0L0lQ/iAR
+	Evk10y3YK2lLy1QTRp1gUgZo4/EsTnbvY3oKAE5X6cRH8moeGkteuILDOuBWnGvwtD+oEuIPkTeT6
+	ixQCYzpmru0bCNipFOTwx720MP42A/SJQNYkR8DuShVLVsywYzcyHz0igh5QgLzr16SVqBxpS2z9M
+	eSmHU0jD6DrDnIWlIciLOq7TNU+IQnipMopKxpZegQzFLQRn2ZWiId0QoILJviShCnbFyLJ+2n1ab
+	DKFA43cGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is4F0-0005vh-6j; Thu, 16 Jan 2020 12:27:14 +0000
+	id 1is4Hg-0006Kc-JI; Thu, 16 Jan 2020 12:30:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is4Eq-0005ui-4F
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:27:08 +0000
+ id 1is4HS-0006Jm-Jo
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Jan 2020 12:29:51 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D7E2920748;
- Thu, 16 Jan 2020 12:27:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D28C920748;
+ Thu, 16 Jan 2020 12:29:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579177623;
- bh=hRJQLOPnPVf/2ivPsnIuDnw9i76csHuBPFFx5CnsSco=;
+ s=default; t=1579177786;
+ bh=OQ4DvKQn6DjynjxFZnipVci0kmylwgCgywja2qyJZxw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aWZE+aaXhLkjD86rfTa/9opKEj0Uc9cyLFhmZff/7iMWkDj9IsHhOeXXjfbg6dg88
- 1DVaZHulML9LjANNOADwJkRbPuAEeAFznfmQp1RBQEUGlvHWiW+54HkLfIeMoMQLeu
- RzoOWaKr0DWfDCJinWfilv7BYFQO+QGmsWWCYW5Y=
-Date: Thu, 16 Jan 2020 13:27:00 +0100
+ b=ntTCbNMnfeBHi5RrLmh3GPZkvANG1wbsNq75B4fnIRDNgkfMySdY39omZChm7UVe0
+ i6i5P58QzLTITyoQ5x9gkWNb6cSeyFp4PV8SOsE96Joou2XwMInUXCCOF1reMe4KnG
+ UR1WqhPpp1J8bfFV7eWFUl4yAXHRQiozBinvApj0=
+Date: Thu, 16 Jan 2020 13:29:44 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/3] arm64: dts: allwinner: h6: tanix-tx6: enable emmc
-Message-ID: <20200116122700.2wy2wrgvmyvudj2t@gilmour.lan>
-References: <20200115193441.172902-1-jernej.skrabec@siol.net>
+To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
+Subject: Re: [PATCH 1/2] dt-bindings: arm: sunxi: add OrangePi 3 with eMMC
+Message-ID: <20200116122944.sgl2fgxf5mrg6i52@gilmour.lan>
+References: <20200115194216.173117-1-jernej.skrabec@siol.net>
+ <20200115194216.173117-2-jernej.skrabec@siol.net>
+ <CAL_JsqK-KBd9PF7nKK976vVYjRwfm-ZxJSnEbhiWC=X3AnvpeA@mail.gmail.com>
+ <4200557.LvFx2qVVIh@jernej-laptop>
 MIME-Version: 1.0
-In-Reply-To: <20200115193441.172902-1-jernej.skrabec@siol.net>
+In-Reply-To: <4200557.LvFx2qVVIh@jernej-laptop>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_042704_183459_1FBC7016 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20200116_042946_678395_A9BC1868 
+X-CRM114-Status: GOOD (  16.34  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,50 +78,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9006211427875513690=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7760447349125285675=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============9006211427875513690==
+--===============7760447349125285675==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="cgkvlw4sxymxgfmc"
+	protocol="application/pgp-signature"; boundary="z3e6p5ezhmthrhbl"
 Content-Disposition: inline
 
 
---cgkvlw4sxymxgfmc
-Content-Type: text/plain; charset=us-ascii
+--z3e6p5ezhmthrhbl
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Hi Jernej,
-
-On Wed, Jan 15, 2020 at 08:34:41PM +0100, Jernej Skrabec wrote:
-> Tanix TX6 has 32 GiB eMMC. Add a node for it.
+On Thu, Jan 16, 2020 at 12:10:58AM +0100, Jernej =C5=A0krabec wrote:
+> Hi!
 >
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Dne sreda, 15. januar 2020 ob 22:57:31 CET je Rob Herring napisal(a):
+> > On Wed, Jan 15, 2020 at 1:42 PM Jernej Skrabec <jernej.skrabec@siol.net>
+> wrote:
+> > > OrangePi 3 can optionally have eMMC. Add a compatible for it.
+> >
+> > Is this just a population option or a different board layout? If the
+> > former, I don't think you need a new compatible, just add/enable a
+> > node for the eMMC.
+>
+> I have only board with eMMC but I imagine it's the former. Even so, curre=
+nt
+> approach with Allwinner boards is to have two different board DT files, o=
+ne for
+> each variant. This can be seen from Documentation/devicetree/bindings/arm/
+> sunxi.yaml which has a lot of compatibles ending with "-emmc". I guess re=
+ason
+> for that is to avoid having MMC controller being powered on for no reason.
 
-Did you forget to send the other two patches?
+The main reason for that is that those populating options can be
+conflicting. For example, last week we discussed an issue about the
+eMMC being on the same pin set than an SPI flash, both options being
+available.
+
+The solution Andre suggested then was to let the eMMC be disabled, and
+have the bootloader probe the emmc, and if found, enable
+it. Otherwise, it means that you have a SPI flash (and enable it).
+
+I guess a similar solution would apply here.
 
 Maxime
 
---cgkvlw4sxymxgfmc
+--z3e6p5ezhmthrhbl
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiBWlAAKCRDj7w1vZxhR
-xVlGAQD3brgXo3D11jUsw56mmFTRmlfMXqWKJQmp0FrlJWAUHgEAm9wCD/aZFlvh
-k3tke8kPmz0qp0TKQzSu2UBWG7KgZwI=
-=zeNt
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiBXNwAKCRDj7w1vZxhR
+xSiCAQC3vqoZktCtBHtvXsgBmpAOofLKQpEHTDgn3BB1dlUTvQD/SVxXyY+qZTZi
+JO/lb9XHuZfUdVTYe5uE19i8KbsfrQM=
+=/A2H
 -----END PGP SIGNATURE-----
 
---cgkvlw4sxymxgfmc--
+--z3e6p5ezhmthrhbl--
 
 
---===============9006211427875513690==
+--===============7760447349125285675==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -129,5 +158,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============9006211427875513690==--
+--===============7760447349125285675==--
 
