@@ -2,70 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5166F140392
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:29:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD05D1403A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:44:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M48V8QRJeaKu9nvyyoFV1YsonV5zCTHkUJHv240Z4QA=; b=V7xkQhz8Ze5Bc/
-	+XCOj/DbbRUXcRiLhFWWHZ+nsik7qYS1JKVf6tKzXEUimzIxLb7FI8WDCzF/QiQG9OvYl9mVKqAnD
-	bCPsd4EuSvuiKtsXSEsZUOh2X1BZoUnBjHPdcl8FvHbfQOOq7FO44imRV0x+0f1Xcw/hp2Qyj/gt2
-	YgsOQV0L8SXyaEexWo9LjZJJJ5Gve/0yKWkOXj4zPneDDEv1289yGAq47Dcpaey/HxRoEMWUh+Hc+
-	mGhBu/K7O7RIhFheotf1rVgtyzwCs1C2c5JIu51h48i4Jv8pQVoLRIqtKqrtxQDsTTZHt1sJp0Z6j
-	g5JMXAsAL1gb5sgqr/PA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NnK88GYSaNc99Hjn20tyt+DkBQlQzYGEBdjGvgvcZeM=; b=nQmFqVO04YuDyT
+	fqlalzC0EXbMT5bayoAjwkrGwE4/thX7BUcctpiMgbOmOUMKjyUOORYbmT4z9jvjpHXyjyocb8eJ9
+	Izb6v5dUslyniumvJqlaJDxbD5gn6I8TcEgQAMWFkeRcVQnmpXoYwBP9F4nCeyVWl+A4Vm1kqj0VO
+	EFjTEzpTg5OJhfXYUV5uzNNACRQjCi38p333OUCmsm6cUk9pCXvkz/IFUm5x+wD8S+PoimTdgWQ3D
+	DTxRCX0kqq6PNtp98t3iRI8lvV3gA21Ij0trskQgtP+YEfhwTSNfc5DJRkKF+opJLquZBOak1A0VE
+	XruFUqzfieuSC5mbzmXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isKCE-0003BG-2g; Fri, 17 Jan 2020 05:29:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1isKQC-0000kM-Vl; Fri, 17 Jan 2020 05:43:53 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isKC3-0003Aw-Ng
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:29:17 +0000
-Received: from localhost (unknown [122.182.218.15])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F37342072E;
- Fri, 17 Jan 2020 05:29:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579238953;
- bh=/clOrGLn8OAp1OI6m5X00wsw+u3Jo3xhtsfAEOlmqMY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nldw1FKn8NYMiMI0PeNeTNHGuNAZjOY3u9nlRhXuBzjE3j69A/60TQD3j1xoq6P23
- 7Wlj6W/WTPPJoDR4gIKC/1lVunYwMx10NrxFqlT3iSRm7h11X9JptdMf14LSusRiub
- etVheOkx6KhLwn0tT0jbzMvuHDxdr6eX6QZdPwok=
-Date: Fri, 17 Jan 2020 10:59:07 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: santosh.shilimkar@oracle.com, Olof Johansson <olof@lixom.net>
-Subject: Re: [GIT_PULL] SOC: TI Keystone Ring Accelerator driver for v5.6
-Message-ID: <20200117052907.GT2818@vkoul-mobl>
-References: <1579205259-4845-1-git-send-email-santosh.shilimkar@oracle.com>
- <20200117000358.fe7ew4vvnz4yxbzj@localhost>
- <148b6ec3-6a8e-ced8-41b3-3dffd5528ed6@oracle.com>
+ id 1isKPV-0000KW-L5
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:43:11 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 16 Jan 2020 21:43:07 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,328,1574150400"; d="scan'208";a="424330504"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga005.fm.intel.com with ESMTP; 16 Jan 2020 21:43:06 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1isKPR-0002EB-NY; Fri, 17 Jan 2020 13:43:05 +0800
+Date: Fri, 17 Jan 2020 13:42:49 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/defconfig] BUILD SUCCESS
+ 59abae1ad93c925d11fa72fe2ae707cfd2969ae5
+Message-ID: <5e214959.XOeg9MA9U4q7Iv+r%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <148b6ec3-6a8e-ced8-41b3-3dffd5528ed6@oracle.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_212915_793397_874D485D 
-X-CRM114-Status: GOOD (  20.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200116_214309_759448_C472BF51 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -4.0 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-4.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [192.55.52.115 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,71 +68,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, khilman@kernel.org, linux-kernel@vger.kernel.org,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, soc@kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/defconfig
+branch HEAD: 59abae1ad93c925d11fa72fe2ae707cfd2969ae5  Merge tag 'imx-defconfig-5.6' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/defconfig
 
-Add Peter
+elapsed time: 473m
 
-On 16-01-20, 21:05, santosh.shilimkar@oracle.com wrote:
-> On 1/16/20 4:03 PM, Olof Johansson wrote:
-> > Hi,
-> > 
-> > On Thu, Jan 16, 2020 at 12:07:39PM -0800, Santosh Shilimkar wrote:
-> > > Its bit late for pull request, but if possible, please pull it to
-> > > soc drivers tree.
-> > > 
-> > > The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
-> > > 
-> > >    Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
-> > > 
-> > > are available in the git repository at:
-> > > 
-> > >    git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.6
-> > > 
-> > > for you to fetch changes up to 3277e8aa2504d97e022ecb9777d784ac1a439d36:
-> > > 
-> > >    soc: ti: k3: add navss ringacc driver (2020-01-15 10:07:27 -0800)
-> > > 
-> > > ----------------------------------------------------------------
-> > > SOC: TI Keystone Ring Accelerator driver
-> > > 
-> > > The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
-> > > enable straightforward passing of work between a producer and a consumer.
-> > > There is one RINGACC module per NAVSS on TI AM65x SoCs.
-> > 
-> > This driver doesn't seem to have exported symbols, and no in-kernel
-> > users. So how will it be used?
-> > 
-> > Usually we ask to hold off until the consuming side/drivers are also ready.
-> > 
-> The other patches getting merged via Vinod's tree. The combined series
-> is split into couple of series. Vinod is going to pull this branch
-> and apply rest of the patchset. And then couple of additional consumer
-> drivers will get posted.
+configs tested: 142
+configs skipped: 119
 
-Yeah the TI driver series has been reviewed and was 'waiting' for
-dependency to be resolved before I could apply them
-FWIW here is the series under consideration: https://lore.kernel.org/dmaengine/20191223110458.30766-1-peter.ujfalusi@ti.com/
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-> > Also, is there a reason this is under drivers/soc/ instead of somewhere more
-> > suitable in the drivers subsystem? It's not "soc glue code" in the same way as
-> > drivers/soc was intended originally.
-> > 
-> These kind of SOC IP drivers, we put into drivers/soc/ because of lack
-> of specific subsystem where they fit in. Navigator was also similar example.
-> 
-> Regards,
-> Santosh
+alpha                randconfig-a001-20200117
+m68k                 randconfig-a001-20200117
+mips                 randconfig-a001-20200117
+nds32                randconfig-a001-20200117
+parisc               randconfig-a001-20200117
+riscv                randconfig-a001-20200117
+c6x                  randconfig-a001-20200117
+h8300                randconfig-a001-20200117
+microblaze           randconfig-a001-20200117
+nios2                randconfig-a001-20200117
+sparc64              randconfig-a001-20200117
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+parisc                            allnoconfig
+parisc                            allyesonfig
+parisc                         b180_defconfig
+parisc                        c3000_defconfig
+parisc                              defconfig
+ia64                                defconfig
+powerpc                             defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                               rhel-7.6
+um                                  defconfig
+um                             i386_defconfig
+um                           x86_64_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+sparc                            allyesconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+x86_64               randconfig-b001-20200117
+x86_64               randconfig-b002-20200117
+x86_64               randconfig-b003-20200117
+i386                 randconfig-b001-20200117
+i386                 randconfig-b002-20200117
+i386                 randconfig-b003-20200117
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+x86_64               randconfig-c001-20200117
+x86_64               randconfig-c002-20200117
+x86_64               randconfig-c003-20200117
+i386                 randconfig-c001-20200117
+i386                 randconfig-c002-20200117
+i386                 randconfig-c003-20200117
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+csky                 randconfig-a001-20200117
+openrisc             randconfig-a001-20200117
+s390                 randconfig-a001-20200117
+sh                   randconfig-a001-20200117
+xtensa               randconfig-a001-20200117
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+x86_64               randconfig-g001-20200117
+x86_64               randconfig-g002-20200117
+x86_64               randconfig-g003-20200117
+i386                 randconfig-g001-20200117
+i386                 randconfig-g002-20200117
+i386                 randconfig-g003-20200117
+x86_64               randconfig-d001-20200117
+x86_64               randconfig-d002-20200117
+x86_64               randconfig-d003-20200117
+i386                 randconfig-d001-20200117
+i386                 randconfig-d002-20200117
+i386                 randconfig-d003-20200117
+arc                  randconfig-a001-20200117
+arm                  randconfig-a001-20200117
+arm64                randconfig-a001-20200117
+ia64                 randconfig-a001-20200117
+powerpc              randconfig-a001-20200117
+sparc                randconfig-a001-20200117
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+x86_64               randconfig-h001-20200117
+x86_64               randconfig-h002-20200117
+x86_64               randconfig-h003-20200117
+i386                 randconfig-h001-20200117
+i386                 randconfig-h002-20200117
+i386                 randconfig-h003-20200117
 
--- 
-~Vinod
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
