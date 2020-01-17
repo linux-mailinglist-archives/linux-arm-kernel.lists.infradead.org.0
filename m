@@ -2,73 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E70571408B8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 12:14:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AFBB1408C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 12:16:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+w8PW4Mp2ViaMmdQ+lcoO6JaPAwhyM4p0d3Rc9SWls=; b=tTs+VPpYP1oYI7
-	yEguZQcpPipczdHKq2yqaxvWAr5SSTniLjEwW3+ATcIu0vjwFotpEkNOg+8OmmGJpe9wNeOLvRvmv
-	RIB2mnKwT5mp23MbmUP3rfiXmItkxuvQYr9RHpvDyWaZ55mN8kyEiHAy99qNNNbntBwON3pHAuGw/
-	OJ3hDt6ssKKnlceCKDe4sgSZptbEpDXXjFMEvzXevVoDxA/ErR8Pj9o6lttEF+b3wjwf5UhKWixtX
-	ti0cZY8i9rK6QsAb1QM4C/DlLvi85qiaHBxvag4ADe25uyiRYkpXLQ2Rr+zDEfqyGE+yeaKSuNTVY
-	D7VnfGKa81NJLWyeQzzA==;
+	List-Owner; bh=WvbLX+po1YFIeH6xhiq/v+pZTXxZJ1oz0hnyKX5klyE=; b=pTtk6K9xiRuk2S
+	J2OstlwGBMlBuN6yQf+pfEowv7eym58TeitB4SrIzbkxDXY2DdIUS09rjTT/hRtyeVCnAtjn8L+bf
+	BczQZP6k1Wu0IJfMgxW485rlQ3vZLFx5dkY/NHpuAjamlJN71Wvm3kVfgu3N9DVWpaEAlMDeZZIYP
+	VO7rIBf/7vc/J+Zgwa7xfPBSza5QV65IlvfzamGsinWDzlFK54shVP1PUcGZUVrSznknKpXUrCcH5
+	MewwgQjCHHT/WYPoLJVqNCIB36GYCVCy1dz8WPjQsVTEEYQve7bthlgdCIH3bkmvz8To2m3hY9A+e
+	fTizWz3hfIGub3XZipOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isPZm-0001CA-0S; Fri, 17 Jan 2020 11:14:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isPZY-0001B0-K6
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 11:13:58 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CE1D32082F;
- Fri, 17 Jan 2020 11:13:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579259629;
- bh=AhEzUdOBd1Cfe4VMqkzCjjTDzwt2IOEYHttmn6mMCm8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jTjFs3jlFGMHtxg/isiALAJ+BnLDoVvsvBLpP+fEuguVtXjoZ+LGjgcQNONH0fVBv
- g6M6B0F1u8nBcgbdQEtNayFVGeK3AeZgZSzIcHo0coP+JYqDwbNh8KvofBQA39po9u
- pGkDwzrcxW0U/pwqK2bbv8BZNPzZ0LYqfUchwmtI=
-Date: Fri, 17 Jan 2020 11:13:44 +0000
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: =?utf-8?B?4p2MIEZBSUw=?= =?utf-8?Q?=3A?= Test report for kernel
- 5.5.0-rc6-b260f5e.cki?(arm-next)
-Message-ID: <20200117111344.GC6144@willie-the-truck>
-References: <cki.9F6EEFCFB1.I2MBV5DGSX@redhat.com>
- <1087562953.2535418.1579256657647.JavaMail.zimbra@redhat.com>
- <20200117103413.GA6144@willie-the-truck>
- <584b0c2e-bdc8-791f-cbc1-c27f3d6ed53d@arm.com>
+	id 1isPc8-0002ih-Vt; Fri, 17 Jan 2020 11:16:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isPbv-0002i8-9U
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 11:16:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4915F11D4;
+ Fri, 17 Jan 2020 03:16:18 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7FCCA3F68E; Fri, 17 Jan 2020 03:16:16 -0800 (PST)
+Date: Fri, 17 Jan 2020 11:16:14 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v3 13/16] arm64: kprobe: disable probe of ptrauth
+ instruction
+Message-ID: <20200117111614.GE26090@arrakis.emea.arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-14-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <584b0c2e-bdc8-791f-cbc1-c27f3d6ed53d@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1576486038-9899-14-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_031352_703741_CBCF5EC8 
-X-CRM114-Status: GOOD (  18.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200117_031619_375159_D6065482 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,62 +64,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jianwen Ji <jiji@redhat.com>, Veronika Kabatova <vkabatov@redhat.com>,
- Hangbin Liu <haliu@redhat.com>, catalin marinas <catalin.marinas@arm.com>,
- Yi Chen <yiche@redhat.com>, CKI Project <cki-project@redhat.com>,
- Xiumei Mu <xmu@redhat.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKYW4gMTcsIDIwMjAgYXQgMTA6NTc6NDlBTSArMDAwMCwgUm9iaW4gTXVycGh5IHdy
-b3RlOgo+IE9uIDIwMjAtMDEtMTcgMTA6MzQgYW0sIFdpbGwgRGVhY29uIHdyb3RlOgo+ID4gT24g
-RnJpLCBKYW4gMTcsIDIwMjAgYXQgMDU6MjQ6MTdBTSAtMDUwMCwgVmVyb25pa2EgS2FiYXRvdmEg
-d3JvdGU6Cj4gPiA+IC0tLS0tIE9yaWdpbmFsIE1lc3NhZ2UgLS0tLS0KPiA+ID4gPiBGcm9tOiAi
-Q0tJIFByb2plY3QiIDxja2ktcHJvamVjdEByZWRoYXQuY29tPgo+ID4gPiA+IFRvOiB3aWxsQGtl
-cm5lbC5vcmcsICJjYXRhbGluIG1hcmluYXMiIDxjYXRhbGluLm1hcmluYXNAYXJtLmNvbT4sIGxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+ID4gPiA+IENjOiAiWWkgQ2hlbiIg
-PHlpY2hlQHJlZGhhdC5jb20+LCAiSmlhbndlbiBKaSIgPGppamlAcmVkaGF0LmNvbT4sICJIYW5n
-YmluIExpdSIgPGhhbGl1QHJlZGhhdC5jb20+LCAiWGl1bWVpIE11Igo+ID4gPiA+IDx4bXVAcmVk
-aGF0LmNvbT4KPiA+ID4gPiBTZW50OiBGcmlkYXksIEphbnVhcnkgMTcsIDIwMjAgNDozNToyNyBB
-TQo+ID4gPiA+IFN1YmplY3Q6IOKdjCBGQUlMOiBUZXN0IHJlcG9ydCBmb3Iga2VybmVsIDUuNS4w
-LXJjNi1iMjYwZjVlLmNraQkoYXJtLW5leHQpCj4gPiA+ID4gCj4gPiA+ID4gV2UgcmFuIGF1dG9t
-YXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0aGlzIGtlcm5lbCB0cmVlOgo+ID4g
-PiA+IAo+ID4gPiA+ICAgICAgICAgS2VybmVsIHJlcG86Cj4gPiA+ID4gICAgICAgICBnaXQ6Ly9n
-aXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJtNjQvbGludXguZ2l0Cj4g
-PiA+ID4gICAgICAgICAgICAgIENvbW1pdDogYjI2MGY1ZWI0ZTU3IC0gTWVyZ2UgYnJhbmNoICdm
-b3ItbmV4dC9jb3JlJyBpbnRvCj4gPiA+ID4gICAgICAgICAgICAgIGZvci1rZXJuZWxjaQo+ID4g
-PiA+IAo+ID4gPiA+IFRoZSByZXN1bHRzIG9mIHRoZXNlIGF1dG9tYXRlZCB0ZXN0cyBhcmUgcHJv
-dmlkZWQgYmVsb3cuCj4gPiA+ID4gCj4gPiA+ID4gICAgICBPdmVyYWxsIHJlc3VsdDogRkFJTEVE
-IChzZWUgZGV0YWlscyBiZWxvdykKPiA+ID4gPiAgICAgICAgICAgICAgIE1lcmdlOiBPSwo+ID4g
-PiA+ICAgICAgICAgICAgIENvbXBpbGU6IE9LCj4gPiA+ID4gICAgICAgICAgICAgICBUZXN0czog
-RkFJTEVECj4gPiA+ID4gCj4gPiA+ID4gQWxsIGtlcm5lbCBiaW5hcmllcywgY29uZmlnIGZpbGVz
-LCBhbmQgbG9ncyBhcmUgYXZhaWxhYmxlIGZvciBkb3dubG9hZCBoZXJlOgo+ID4gPiA+IAo+ID4g
-PiA+ICAgIGh0dHBzOi8vYXJ0aWZhY3RzLmNraS1wcm9qZWN0Lm9yZy9waXBlbGluZXMvMzg3MjE5
-Cj4gPiA+ID4gCj4gPiA+ID4gT25lIG9yIG1vcmUga2VybmVsIHRlc3RzIGZhaWxlZDoKPiA+ID4g
-PiAKPiA+ID4gPiAgICAgIGFhcmNoNjQ6Cj4gPiA+ID4gICAgICAg4p2MIE5ldHdvcmtpbmcgVURQ
-OiBzb2NrZXQKPiA+ID4gPiAgICAgICDinYwgTmV0d29ya2luZyBpcHNlYzogYmFzaWMgbmV0bnMg
-dHVubmVsCj4gPiA+ID4gCj4gPiA+IAo+ID4gPiBhZnRlciB5ZXN0ZXJkYXkncyBkaXNjdXNzaW9u
-cyBJIHRob3VnaHQgSSdkIHBvaW50IGl0IG91dCBzcGVjaWZpY2FsbHkuCj4gPiA+IFRoZXNlIHRl
-c3RzIGRpZCByZWFsbHkgcmVwb3J0IGEgZmFpbHVyZSBhbmQgdGhlIHJlc3VsdHMgYXJlIG5vdCBj
-YXVzZWQKPiA+ID4gYnkgdGhlIGluZnJhIGlzc3VlIHdlIHdlcmUgdGFsa2luZyBhYm91dC4gSSdt
-IHN1cmUgdGhlIHRlc3QgbWFpbnRhaW5lcnMKPiA+ID4gY2FuIGhlbHAgd2l0aCBmaWd1cmluZyBv
-dXQgaWYgdGhpcyBpcyBzb21ldGhpbmcgdG8gYmUgY29uY2VybmVkIHdpdGguCj4gPiAKPiA+IFRo
-YW5rcywgVmVyb25pa2EgLS0gSSB3YXMgYWJvdXQgdG8gbWFpbCB5b3UgdG8gYXNrISBXZSBxdWV1
-ZWQgc29tZSBJUAo+ID4gY2hlY2tzdW0gY2hhbmdlcyB5ZXN0ZXJkYXksIHNvIEkgYmV0IHRoZXkn
-cmUgdGhlIGN1bHByaXQsIHNpbmNlIHRoaXMgbG9va3MKPiA+IHRvIGJlIHJlbGF0ZWQgdG8gVURQ
-IGNoZWNrc3VtbWluZy4KPiAKPiBVcmdoLi4uIGxldCBtZSBzZWUgaWYgSSBjYW4gcmVwcm9kdWNl
-IHNvbWV0aGluZyBsb2NhbGx5IC0gSSBoYWQgaXBlcmYzCj4gcnVubmluZyBmaW5lIGluIGJvdGgg
-ZGlyZWN0aW9ucyB3aXRoIHR4L3J4IG9mZmxvYWQgZGlzYWJsZWQsIGFuZCBteQo+IHVzZXJzcGFj
-ZSB0ZXN0cyB3ZXJlIHNob3dpbmcgdGhlIG5ldyByb3V0aW5lIHByb2R1Y2UgdGhlIHNhbWUgc3Vt
-IGFzIHRoZQo+IGdlbmVyaWMgdmVyc2lvbiBmb3IgdGhlIHNhbWUgYnVmZmVyLCBzbyBJIHdvdWxk
-bid0IGhhdmUgZXhwZWN0ZWQgVURQIHRvCj4gYmVoYXZlIGFueSBkaWZmZXJlbnRseSwgYnV0IEkn
-bGwgZGlnIGluIGFuZCBkb3VibGUtY2hlY2sgZXZlcnl0aGluZy4uLgoKSXQgY291bGQgZWFzaWx5
-IGJlIG9uZSBvZiB0aGUgb3RoZXIgdGhpbmdzIEkgcXVldWVkIHllc3RlcmRheSwgYnV0IEkndmUK
-cHVzaGVkIG91dCBhbiB1cGRhdGVkIGZvci1rZXJuZWxjaSBicmFuY2ggd2l0aCB5b3VyIHBhdGNo
-IHJldmVydGVkIHNvIGtlZXAKeW91ciBVVEYtOCBleWVzIHBlZWxlZCB0byBzZWUgaWYgd2UgZ2V0
-IGEgYmlnIGdyZWVuIHRpY2sgYmFjayBvciBub3QuCgpXaWxsCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Dec 16, 2019 at 02:17:15PM +0530, Amit Daniel Kachhap wrote:
+> This patch disables the probing of authenticate ptrauth
+> instruction which falls under the hint instructions region.
+> This is done to disallow probe of instruction which may lead
+> to ptrauth faults.
+> 
+> The corresponding append pac ptrauth instruction is not
+> disabled as they are typically the first instruction in the
+> function so disabling them will be disabling the function
+> probe itself. Also, appending pac do not cause any exception
+> in itself.
+
+Neither does AUTIASP in v8.3, only the subsequent dereferencing, so why
+can kprobes cope with PACIASP but not AUTIASP?
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
