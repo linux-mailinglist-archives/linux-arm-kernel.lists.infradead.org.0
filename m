@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 183B1140CC3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:40:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F4AB140CCE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:41:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x9aFEouZZtaNmI/Gc11eJ7mJySUAF9NrLe02SrpqClY=; b=UH5Qnd+CVc2Oce+9hbreDMO+VB
-	2OQwKNXwztbb79T52ylJB1sjpTPr+PJzbxadlmbleDrSYu9ijtqr10LDtbwNSrGyH/5tcaUCNxFmL
-	zalR45dm7JTIiYIMecp/Bprp+IaC6YB1bzkkfsXhfHFC9RfU9wE3uQrKI347bDYrnAzmOxXT5ScHG
-	vcgLOwJjgs/W85DUfZg7WV2zaMVS2NP68nF63RxF8qWiR5txzz5UXG3doi9f+UrpFia22ZduHCG7j
-	FBYNCGx6J04fjAD95xcj+GbrGtmm4jy4jkaLvOtFADm9fF1l/XZYRmiU+iH/gvPSLZLyF/SfnHAJV
-	YFdKMURQ==;
+	bh=NewPZipbTrS7qZW72xeTvmaX2urd/IlNnG52PK2px6c=; b=cruoiv/sS/1nkO00cP9lE4nQQ8
+	8fP5c4o0+NstYkKmQjc/zbF1N5oqERK7G5qTWjj6vlHqqSRxoIJwXzUjHovUu4QJFujGJMmQLGS6/
+	WhK2wIj4XHjZQqVUPVEunDOjZRWvKBn9QVbNpyl4UwSNBntBDHjDAYQoReLZQUhTG+W2YRVFR3Gom
+	a+GnTQALWpPXRQSu+QeXEtnk9R3C3Hs/BovWRdzdTRJHeDCNjSzJHFdSeqyilsEEhL4IRsrF7c++Y
+	N5hnhuDz/RKiLrMTmgBCHJ2FRjsZexzyZO+Q8INXh/ZxeYF5NW2AqaGSj7kHRzG+pEC5f3935NP3X
+	MVEWNPuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isSnK-0007KY-4O; Fri, 17 Jan 2020 14:40:18 +0000
+	id 1isSnn-0000aX-TB; Fri, 17 Jan 2020 14:40:47 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isSm8-0006jd-Ci
+ id 1isSm7-0006jf-Kp
  for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:39:06 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C6624AC4A;
- Fri, 17 Jan 2020 14:39:01 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 69388AC8B;
+ Fri, 17 Jan 2020 14:39:02 +0000 (UTC)
 From: Mian Yousaf Kaukab <ykaukab@suse.de>
 To: linux-arm-kernel@lists.infradead.org,
 	mathieu.poirier@linaro.org
-Subject: [PATCH RFC 03/15] coresight: remove multiple init calls from
- replicator driver
-Date: Fri, 17 Jan 2020 15:39:58 +0100
-Message-Id: <20200117144010.11149-4-ykaukab@suse.de>
+Subject: [PATCH RFC 04/15] coresight: make API private
+Date: Fri, 17 Jan 2020 15:39:59 +0100
+Message-Id: <20200117144010.11149-5-ykaukab@suse.de>
 X-Mailer: git-send-email 2.16.4
 In-Reply-To: <20200117144010.11149-1-ykaukab@suse.de>
 References: <20200117144010.11149-1-ykaukab@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_063904_573467_861CF126 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20200117_063903_993936_2D0D7409 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,64 +72,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dynamic-replicator uses module_amba_driver to register. Whereas
-static-replicator uses builtin_platform_driver. Combine these init
-calls into a single module_init/exit pair in preparation to make the
-driver modular.
+There are no external users of coresight API. Move the function
+prototypes to coresight-priv.h.
+
+Not removing the whole file as there are following two users of it:
+arch/arm/kernel/hw_breakpoint.c
+drivers/misc/habanalabs/goya/goya_coresight.c
+
+Lets clean this in a future patch.
 
 Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
 ---
- drivers/hwtracing/coresight/coresight-replicator.c | 30 ++++++++++++++++++++--
- 1 file changed, 28 insertions(+), 2 deletions(-)
+ drivers/hwtracing/coresight/coresight-priv.h | 22 ++++++++++++
+ include/linux/coresight.h                    | 50 ----------------------------
+ 2 files changed, 22 insertions(+), 50 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index cc14c3696be0..137328a7f27e 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -340,7 +340,6 @@ static struct platform_driver static_replicator_driver = {
- 		.suppress_bind_attrs = true,
- 	},
- };
--builtin_platform_driver(static_replicator_driver);
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index 82e563cdc879..e6eec9f46e13 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -202,4 +202,26 @@ static inline void *coresight_get_uci_data(const struct amba_id *id)
  
- static int dynamic_replicator_probe(struct amba_device *adev,
- 				    const struct amba_id *id)
-@@ -370,7 +369,34 @@ static struct amba_driver dynamic_replicator_driver = {
- 	.probe		= dynamic_replicator_probe,
- 	.id_table	= dynamic_replicator_ids,
- };
--module_amba_driver(dynamic_replicator_driver);
-+
-+static int __init replicator_init(void)
-+{
-+	int ret;
-+
-+	ret = platform_driver_register(&static_replicator_driver);
-+	if (ret) {
-+		pr_info("Error registering platform driver\n");
-+		return ret;
-+	}
-+
-+	ret = amba_driver_register(&dynamic_replicator_driver);
-+	if (ret) {
-+		pr_info("Error registering amba driver\n");
-+		platform_driver_unregister(&static_replicator_driver);
-+	}
-+
-+	return ret;
-+}
-+
-+static void __exit replicator_exit(void)
-+{
-+	platform_driver_unregister(&static_replicator_driver);
-+	amba_driver_unregister(&dynamic_replicator_driver);
-+}
-+
-+module_init(replicator_init);
-+module_exit(replicator_exit);
+ void coresight_release_platform_data(struct coresight_platform_data *pdata);
  
- MODULE_LICENSE("GPL v2");
- MODULE_DESCRIPTION("CoreSight Replicator driver");
++extern struct coresight_device *
++coresight_register(struct coresight_desc *desc);
++extern void coresight_unregister(struct coresight_device *csdev);
++extern int coresight_enable(struct coresight_device *csdev);
++extern void coresight_disable(struct coresight_device *csdev);
++extern int coresight_timeout(void __iomem *addr, u32 offset,
++			     int position, int value);
++
++extern int coresight_claim_device(void __iomem *base);
++extern int coresight_claim_device_unlocked(void __iomem *base);
++
++extern void coresight_disclaim_device(void __iomem *base);
++extern void coresight_disclaim_device_unlocked(void __iomem *base);
++extern char *coresight_alloc_device_name(struct coresight_dev_list *devs,
++					 struct device *dev);
++
++extern bool coresight_loses_context_with_cpu(struct device *dev);
++
++extern int coresight_get_cpu(struct device *dev);
++
++struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
++
+ #endif
+diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+index 44e552de419c..8b39a83732b8 100644
+--- a/include/linux/coresight.h
++++ b/include/linux/coresight.h
+@@ -269,54 +269,4 @@ struct coresight_ops {
+ 	const struct coresight_ops_helper *helper_ops;
+ };
+ 
+-#ifdef CONFIG_CORESIGHT
+-extern struct coresight_device *
+-coresight_register(struct coresight_desc *desc);
+-extern void coresight_unregister(struct coresight_device *csdev);
+-extern int coresight_enable(struct coresight_device *csdev);
+-extern void coresight_disable(struct coresight_device *csdev);
+-extern int coresight_timeout(void __iomem *addr, u32 offset,
+-			     int position, int value);
+-
+-extern int coresight_claim_device(void __iomem *base);
+-extern int coresight_claim_device_unlocked(void __iomem *base);
+-
+-extern void coresight_disclaim_device(void __iomem *base);
+-extern void coresight_disclaim_device_unlocked(void __iomem *base);
+-extern char *coresight_alloc_device_name(struct coresight_dev_list *devs,
+-					 struct device *dev);
+-
+-extern bool coresight_loses_context_with_cpu(struct device *dev);
+-#else
+-static inline struct coresight_device *
+-coresight_register(struct coresight_desc *desc) { return NULL; }
+-static inline void coresight_unregister(struct coresight_device *csdev) {}
+-static inline int
+-coresight_enable(struct coresight_device *csdev) { return -ENOSYS; }
+-static inline void coresight_disable(struct coresight_device *csdev) {}
+-static inline int coresight_timeout(void __iomem *addr, u32 offset,
+-				     int position, int value) { return 1; }
+-static inline int coresight_claim_device_unlocked(void __iomem *base)
+-{
+-	return -EINVAL;
+-}
+-
+-static inline int coresight_claim_device(void __iomem *base)
+-{
+-	return -EINVAL;
+-}
+-
+-static inline void coresight_disclaim_device(void __iomem *base) {}
+-static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
+-
+-static inline bool coresight_loses_context_with_cpu(struct device *dev)
+-{
+-	return false;
+-}
+-#endif
+-
+-extern int coresight_get_cpu(struct device *dev);
+-
+-struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
+-
+ #endif
 -- 
 2.16.4
 
