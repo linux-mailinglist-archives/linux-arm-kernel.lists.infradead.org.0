@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCE52140A4D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 13:58:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 014C6140A67
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 14:06:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rtgjl7SxHlLPuuPnvjV8Su0UQE69KdYCIUTv7o+jyLQ=; b=W75aYsZWTKVF8w9HaVbWLsSrH
-	iKGkPead/pupoRLa0zc++LSnZ9vIPvhyzLvHdgEf1eBuIFXiOZVI6N9poEFfiwgrX3G5uIsRL5tac
-	sfUnb5w72svjV46bfq+bmx+bwEShjqpIgHTWnfo7bb4UWY6C0fEEjLHMUOUsKiRFwtQCkjBZJd9k+
-	gn+71jahPp2ZvisP9CIBULT72x0rB63utbntwyC8cFrhWkO5fs5qyAsiksWx78Jx7nOLm/wre02BJ
-	M6iwU7y3Sl8yM9OzYyrA3sLNNBVU62IGGMjUG6rtHggRzFJLUIdSls1uThwUk5Yn6z38YJD0/oJTu
-	E9O7VdBng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2JZFwYUdwQVZOlGspjlHVWSuldNGxW7S1CRu74NRpl8=; b=QOJbo4tYp+kyyF
+	L2nOO1xzhkRu58PaUaOB6ITXdE/1o0if6Jty6PjMHII967hNFeObxq6P16hhUx44oT+Q6W3YAfOut
+	AS5TWsqQczYrNX3FSMCYemCLx9Ge5Wr3Yx91jxHv7c1vlIUGC34pHlpDiejNqhwlolaqkGdklljab
+	JOwqe6QlV7NfU/XjasFIlpjDO0QUcDvBR3w4KW7gWtKh9B62iagx9iQfyelHqyc8OVwQETGy8e44Z
+	vVaX6qhvTaBoVlrte4r0FH3+Xn0GPJVLAF6NH8Ay0fqgwHLpH5tk7vjUHKTiStNbE/wJDtyZhVG54
+	jV/2DxSm7cPPBtAN3G5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isRCv-0006uQ-Fw; Fri, 17 Jan 2020 12:58:37 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1isRK7-0001WY-Mm; Fri, 17 Jan 2020 13:06:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isRCj-0006tu-UP
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 12:58:30 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00HCwNE1128076;
- Fri, 17 Jan 2020 06:58:23 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579265903;
- bh=E1dOnxVQIjpeR6bOLipZZbcFgOSQLVZ7wpbIxUxOI0E=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=JGztN/0gAyyp+QPZtCFIfV6L73s556m11QLrYi8t3D07CZG02r1z2qh0w4V3S8n0U
- mc9E78qTvrT2P4ab4RxAro4Cxu/YQWGn1A3Uoaz1L1WQYt3U3C2k93P62RXoGPuwEB
- xUPOvm80Pz+pj/XPtOAnsPxgdid1wj7WltNKvscI=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00HCwNdM094446
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 17 Jan 2020 06:58:23 -0600
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 17
- Jan 2020 06:58:23 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 17 Jan 2020 06:58:23 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00HCwLe6046135;
- Fri, 17 Jan 2020 06:58:21 -0600
-Subject: Re: [PATCH] arm64: dts: ti: k3-j721e-main: Add missing power-domains
- for smmu
-To: Lokesh Vutla <lokeshvutla@ti.com>, Nishanth Menon <nm@ti.com>
-References: <20191122100356.20622-1-lokeshvutla@ti.com>
- <14a3898b-f91b-861e-0091-7e445c087ec0@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <a2c6841a-4e30-bcb2-1bfa-6a603af44d4e@ti.com>
-Date: Fri, 17 Jan 2020 14:58:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1isRJu-0001Vl-2H
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 13:05:55 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7DFA72073A;
+ Fri, 17 Jan 2020 13:05:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579266349;
+ bh=L1zoGMWMD7GFL0CwGUKmunxxgOSlfjBcbC1FTwML6Yw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Z8Yyn90x9eGvWw0lUERypmXK5evaHbD7KpAaI9pHhcBAhgD9sUh6IK8wfIBFm8JsH
+ Q454WacBPD5YNVCg7VVFgHMR42UuWtS8WLNz267HRTKSyfXQlUoaFp0XsBQ4roXYSE
+ 0CdXOfUvCzMqHJ7hSNtyNvXqZ1LSWRcDB7Qi4nkc=
+Date: Fri, 17 Jan 2020 13:05:44 +0000
+From: Will Deacon <will@kernel.org>
+To: James Clark <james.clark@arm.com>
+Subject: Re: [PATCH 1/1] Return EINVAL when precise_ip perf events are
+ requested on Arm
+Message-ID: <20200117130543.GA9093@willie-the-truck>
+References: <20200115105855.13395-1-james.clark@arm.com>
+ <20200115105855.13395-2-james.clark@arm.com>
+ <20200117123920.GB8199@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <14a3898b-f91b-861e-0091-7e445c087ec0@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200117123920.GB8199@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_045826_061022_690F8FE9 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200117_050550_126974_75CAC6F0 
+X-CRM114-Status: GOOD (  11.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,60 +79,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suman Anna <s-anna@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Tan Xiaojun <tanxiaojun@huawei.com>,
+ Namhyung Kim <namhyung@kernel.org>, nd@arm.com, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/01/2020 06:00, Lokesh Vutla wrote:
-> H Tero,
-> 
-> On 22/11/19 3:33 PM, Lokesh Vutla wrote:
->> Add power-domains entry for smmu, so that the it is accessible as long
->> as the driver is active. Without this device shutdown is throwing the
->> below warning:
->> "[   44.736348] arm-smmu-v3 36600000.smmu: failed to clear cr0"
->>
->> Reported-by: Suman Anna <s-anna@ti.com>
->> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
-> 
-> Any comments on this patch? If there are no objections, can this be picked?
+> On Wed, Jan 15, 2020 at 10:58:55AM +0000, James Clark wrote:
+> > diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+> > index df352b334ea7..4ddbdb93b3b6 100644
+> > --- a/drivers/perf/arm_pmu.c
+> > +++ b/drivers/perf/arm_pmu.c
+> > @@ -102,6 +102,9 @@ armpmu_map_event(struct perf_event *event,
+> >  	u64 config = event->attr.config;
+> >  	int type = event->attr.type;
+> >  
+> > +	if (event->attr.precise)
+> > +		return -EINVAL;
 
-Sorry for delay, I've been engulfed with various other pieces of work 
-and handling upstream has been quite slow.
+Also, does this field even exist? Guessing you mean 'precise_ip', but
+then that means this hasn't even seen a compiler :(
 
-Anyways, for this patch, queued up for 5.6, thanks!
-
--Tero
-
-> 
-> Thanks and regards,
-> Lokesh
-> 
->> ---
->>   arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 1 +
->>   1 file changed, 1 insertion(+)
->>
->> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->> index 698ef9a1d5b7..96445111e398 100644
->> --- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->> +++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->> @@ -43,6 +43,7 @@
->>   	smmu0: smmu@36600000 {
->>   		compatible = "arm,smmu-v3";
->>   		reg = <0x0 0x36600000 0x0 0x100000>;
->> +		power-domains = <&k3_pds 229 TI_SCI_PD_EXCLUSIVE>;
->>   		interrupt-parent = <&gic500>;
->>   		interrupts = <GIC_SPI 772 IRQ_TYPE_EDGE_RISING>,
->>   			     <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>;
->>
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
