@@ -2,96 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D606140F7E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 17:59:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36B9E140F85
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 18:00:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ITR/yNf56qlyZzHrDLE47UOHoFGnbWIWK/Zt0iNBFvI=; b=jCs8aeUMH2W59r
-	qIo2Txm+mL4rJW0iFsk9xnNGV5975UPw7atg1i/QoszLLaLR0tgV3Micvfv2SvMRk3c7fNwXnH1Ty
-	mW/6hKRFIqJ6p8f0NWCX+mbokEpNO86QGn1AExIJ0h2ZuTSNSeHsStueXIvkwzsTiznx2dPtawsM6
-	2Cxx+w7udf7uV7gmuqALBEOeI6fOocJevwclmAXHJmpew+0xIfcWO755BOxWfucHg8q0OdaqEu0RL
-	sImhB66jU+RqXh4GXqJX9V5RK/pAurCLEb9r+FFNpaADoVkew6ol0CtgNANvMsnL/VDza57z8gySz
-	Nn9GiLfDnGorBoY4if4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JQh5F8SZwSez/ftc360Un3RRNn0mF0HZdjUZg7zll/Q=; b=qrrB+9DZLkcQjpaN+3h3t+9wf
+	yQdj7Fszpbi4wzgB6qWzIZbFqW/68heE5/hZBv8uKWzBVL1PgaO7OeMUyj9zRxZx2jJQU77FhmL0s
+	/0uLrPjOQxDS4ehGKqWfhdfOaDZSpJto2YzfRzSFbDwVyYgVvnRDYzZct0lIn94GGh8/vHXVdf9yK
+	TwguRbeWZCJjuGIfh6WnkZKrudsc6YNkRPDJdvTBVd+Nh2C2sOAlL1tzhy8PadC62XG/mnNAz2pTa
+	Tc0TKPFxdh8gkPaZZmNd+9Rg6lOSFf3CYazPR/aUCQPJxwZ12JlWO3sbyOYXhJS4dUJYyd8kUo4e1
+	6Ja3KEVZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isUy7-0004Et-5y; Fri, 17 Jan 2020 16:59:35 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1isUyk-0004Wb-5X; Fri, 17 Jan 2020 17:00:14 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isUxu-0004Dt-HV; Fri, 17 Jan 2020 16:59:27 +0000
-Received: by mail-qk1-x741.google.com with SMTP id c17so23307409qkg.7;
- Fri, 17 Jan 2020 08:59:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=zUnqRXYQtoyEF5UfPwWmYzCrDBoI5jZ6BUT1W4OJSHA=;
- b=dNwidGHTaO65iLrmuRFYsedrAORZcj1dlBJc6RMBU146ZCPVPbdo76G9xqEUHi/4Pt
- EOjOovq0mE5jq+flTugwLRNLMe/HfRwsgkV8518vOU7/DmxMI7XRE8vFRc/XRTgb/ICe
- rDke18QDeVAgygvYrcv/rpZui2Gx8OXVHY42jmMcwi2MkfLMXzY2zcHKratTxPYePE5C
- 6/+6UJTgCLdF/6Q0CmUKGsNVRYhdpnM89yIl1USuXStY8jSq35oPPXc0UDZcFon7c8E7
- I38FBOrLF5KnNZx0uQLQ11UdW+T1YiVS3L6zDZSMoGQuQQo1a/NONcwN9ay/gtbQB1Jz
- 70Xw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=zUnqRXYQtoyEF5UfPwWmYzCrDBoI5jZ6BUT1W4OJSHA=;
- b=tB3dE02vEeRZ9f34WzlV3v5qEPs5S0POTHHTxGbXb+P9EyNSt+izx/zdG5pjJSxsjj
- +uslg8S44HlhUMwMw3UtQXpJ9Dmy513LumVirvB0mrYOWBcGTPr0ReFubmosfKOrEF6V
- Zr1ywEz8zMlj/ps+liUQ4G4oxtzvX3DlY0yt7G55IYT9zIq04FA8PoX8pivlnn7SGNzI
- PiqWHk1aBWZ2LWPwIrs084EBrzsaRTIB1BelBU/hh8pq61J6aO9Nk40fWatuadqCwX5W
- K3FkIlo8vUigbgJo4rznRweSMrii3+CZrXLADGZiBQXcYDye8zNMYP6Gw3iAcRJ9CFjX
- lllw==
-X-Gm-Message-State: APjAAAUODukK3vJfhELqBDnvT/XaEwpkNB88Ayb+boKjEqkubAw93occ
- ixIHHp8RcNgcXY26FYCI3YQ=
-X-Google-Smtp-Source: APXvYqxftns8R04Lq7DlRW0QHAR4L0VpzrsayZtZp6bJXTKdCVV6PA2/eZmoZzleZqMOolzPC/QbPA==
-X-Received: by 2002:a37:7005:: with SMTP id l5mr37840890qkc.334.1579280361177; 
- Fri, 17 Jan 2020 08:59:21 -0800 (PST)
-Received: from localhost ([2620:10d:c091:500::1:7d10])
- by smtp.gmail.com with ESMTPSA id g18sm12021690qki.13.2020.01.17.08.59.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 17 Jan 2020 08:59:20 -0800 (PST)
-Date: Fri, 17 Jan 2020 08:59:18 -0800
-From: Tejun Heo <tj@kernel.org>
-To: Michal =?iso-8859-1?Q?Koutn=FD?= <mkoutny@suse.com>
-Subject: Re: [PATCH 1/3] cgroup: Unify css_set task lists
-Message-ID: <20200117165918.GJ2677547@devbig004.ftw2.facebook.com>
-References: <20200116043612.52782-1-surenb@google.com>
- <20200117151533.12381-1-mkoutny@suse.com>
- <20200117151533.12381-2-mkoutny@suse.com>
+ id 1isUyK-0004UN-NR
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 16:59:53 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00HGx69g006850; Fri, 17 Jan 2020 17:59:45 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=0cs5EBI+B7VMqeNxss3ihARGjvxrGtqQE0GQfTimhDs=;
+ b=ApqtfgETVdlth0/eN3VNEJcdHAKO5jMO+PcHOWtAFdo3cwcY+F8f9J3U2quP0fsBTulK
+ GN8d+Hd9L/UEzjGbo3CyPPqEzfi0hr/y1GaARn3Y0jfEaVrHFe36k+qyekXm6wLLuno8
+ 5ORRFTVn6Ga3F/X9x5/UZr6t79wqNkxcsy9YA34EiEoE7UKfLLazmbvGVlSyhA2qw0xj
+ Z2vwj1zTU6LIb3Fd1EEBC1DZaZFR7i1E61O6fPNVyXdNCL/SM8gO5gR1KHVrrXrbpW72
+ 8recZ8NRcoqyi5qwRaCkkjyfdslo+1/7HSzSj1nrfL8YpRqI3juq7+BEDGt5EP7bvCbN kg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xk0qy4ju5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 17 Jan 2020 17:59:45 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BE04C10002A;
+ Fri, 17 Jan 2020 17:59:40 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B21212B1878;
+ Fri, 17 Jan 2020 17:59:40 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 17 Jan
+ 2020 17:59:40 +0100
+Subject: Re: [PATCH] ARM: dts: stm32: Add missing ETHCK clock to ethernet node
+To: Marek Vasut <marex@denx.de>, Patrick DELAUNAY <patrick.delaunay@st.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "mcoquelin.stm32@gmail.com"
+ <mcoquelin.stm32@gmail.com>
+References: <20200115094608.154386-1-marex@denx.de>
+ <521254538ec74534a533b8ca4448855e@SFHDAG6NODE3.st.com>
+ <cef4c2db-9ce9-760b-e392-74a52c7d1e38@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <2d53accb-9ea2-6c54-1963-3f5b389a2b2b@st.com>
+Date: Fri, 17 Jan 2020 17:59:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200117151533.12381-2-mkoutny@suse.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <cef4c2db-9ce9-760b-e392-74a52c7d1e38@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-17_04:2020-01-16,
+ 2020-01-17 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_085922_584685_DB4996E4 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200117_085949_091237_7E7AC4E3 
+X-CRM114-Status: GOOD (  17.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (htejun[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,44 +102,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linger.lee@mediatek.com, tomcherry@google.com, shuah@kernel.org,
- linux-kernel@vger.kernel.org, Li Zefan <lizefan@huawei.com>,
- linux-mediatek@lists.infradead.org, linux-kselftest@vger.kernel.org,
- Johannes Weiner <hannes@cmpxchg.org>, matthias.bgg@gmail.com,
- cgroups@vger.kernel.org, alex.shi@linux.alibaba.com, kernel-team@android.com,
- guro@fb.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Christophe ROULLIER <christophe.roullier@st.com>,
+ Patrice CHOTARD <patrice.chotard@st.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 04:15:31PM +0100, Michal Koutn=FD wrote:
-> We track tasks of css_set in three different lists. The iterators
-> unnecessarily process each list specially.
-> Use an array of lists and simplify the iterator code. This is
-> refactoring with no intended functional change.
-> =
+Hi Marek
 
-> Signed-off-by: Michal Koutn=FD <mkoutny@suse.com>
-> ---
->  include/linux/cgroup-defs.h | 15 ++++---
->  include/linux/cgroup.h      |  4 +-
->  kernel/cgroup/cgroup.c      | 81 +++++++++++++++++++------------------
->  kernel/cgroup/debug.c       | 16 ++++----
->  4 files changed, 60 insertions(+), 56 deletions(-)
+On 1/17/20 1:50 PM, Marek Vasut wrote:
+> On 1/15/20 5:45 PM, Patrick DELAUNAY wrote:
+>> Hi Marek;
+> 
+> Hi,
+> 
+>> Add the Linux Maintainers for STM32M linux patch:
+> 
+> Added, if there is a need for V2.
+> [...]
+>>
+>> Hi Alexandre,
+>>
+>> Can you review this patch.
+>>
+>> Regards
+>>
+>> Patrick
+>>
+>>> From: Marek Vasut <marex@denx.de>
+>>> Sent: mercredi 15 janvier 2020 10:46
+>>>
+>>> Add missing 'eth-ck' clock to the ethernet node. These clock are used to generate
+>>> external clock signal for the PHY in case 'st,eth_ref_clk_sel'
+>>> is specified.
+>>>
 
-So, I get the urge to move the lists into an array and thought about
-doing that while adding the third list for sure.  However, it does
-make code paths which don't walk all lists wordier and the code path
-is already tricky like hell.  Given that there aren't that many places
-which loop over the lists, if you really wanna clean it up, maybe add
-an interator over the lists so that both parts of code can look lean?
+Just indicate in commit title that this commit is done for stm32mp15 
+family. Otherwise it looks good.
 
-Thanks.
+Thanks
+Alex
 
--- =
-
-tejun
+>>> Signed-off-by: Marek Vasut <marex@denx.de>
+>>> Cc: Christophe ROULLIER <christophe.roullier@st.com>
+>>> Cc: Patrice Chotard <patrice.chotard@st.com>
+>>> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+>>> ---
+>>>   arch/arm/boot/dts/stm32mp151.dtsi | 2 ++
+>>>   1 file changed, 2 insertions(+)
+>>>
+>>> diff --git a/arch/arm/boot/dts/stm32mp151.dtsi
+>>> b/arch/arm/boot/dts/stm32mp151.dtsi
+>>> index fb41d0778b00..e0ecc5ee7d83 100644
+>>> --- a/arch/arm/boot/dts/stm32mp151.dtsi
+>>> +++ b/arch/arm/boot/dts/stm32mp151.dtsi
+>>> @@ -1369,10 +1369,12 @@ ethernet0: ethernet@5800a000 {
+>>>   			clock-names = "stmmaceth",
+>>>   				      "mac-clk-tx",
+>>>   				      "mac-clk-rx",
+>>> +				      "eth-ck",
+>>>   				      "ethstp";
+>>>   			clocks = <&rcc ETHMAC>,
+>>>   				 <&rcc ETHTX>,
+>>>   				 <&rcc ETHRX>,
+>>> +				 <&rcc ETHCK_K>,
+>>>   				 <&rcc ETHSTP>;
+>>>   			st,syscon = <&syscfg 0x4>;
+>>>   			snps,mixed-burst;
+>>> --
+>>> 2.24.1
+>>
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
