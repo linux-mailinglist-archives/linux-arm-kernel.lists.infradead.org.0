@@ -2,58 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1617F1409CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 13:33:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FDFD1409E0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 13:39:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULbxgkMtjBwzPZdYb/Yl9mIs2a2FW/6eQMILA+Fw7ng=; b=LLc3kN3qufrhj3
-	ines2KLFUqf9DUrggbxztKDPFrgK6Zwx0uEznsBIdYxhiXXOWrJcknE8CN37LeCOQ0C81cJ8xQ4ST
-	Ww5MDa2vJI/Kp5osT2w6XAyQ0yRlY0EF0QyIHmRBmIE+DjYSU9HiUWhcYv1W1eISNEtMJpXe0zr+N
-	VTmPz2fbFf0uTRq62953d+E0ezmhr1OlGMsKb2t58G5wJpUwUP5NVExvYMge9BMtBFXmYeXianao5
-	Ueazp9BlipbJvDVQwcVAcFeFu5xSq36Thd+M8O9b7QNVDEutyKSTuwKrD3ve52wBjbj/8hGzSAYe4
-	IwisL0rqQH3bxf3bKn8A==;
+	List-Owner; bh=VdmD1eaj80Du2Xq14yt58ya+0d11TANNtTB74Ak4yP8=; b=PYZLwzCRyQ4kbc
+	FXDW1Q5p5xCcuNVgkS6NoBlWhSBwt311Qi0gGxZbbxR59x4ILdbcj8KusVaql4CzERGZHKZp73r3z
+	IHSXkwEZkOaNfxdB9Ava2XTm2qzfWzK6PS+rmpX7s8x5pOcAl6shvJunlAKi5yOvj8bQplsOLh/bx
+	hEe4ae2pl7T6yS1SkzvY0XXrtmiATOhZfSGpAiO+lqSZrcp4twnHhy8/qk9Ieh/GzPR+dXsImCxUg
+	Xq2EuZYkkuhJRi83fUfxXfW0lPtzrgrCMQgrQixTMuH1tdv3DZtU0z9bKv/7qgNSMQXS7INPi0upg
+	73Mbe4vYiZRhXWjH0XzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isQnw-0002Hv-4o; Fri, 17 Jan 2020 12:32:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isQnj-0002Gy-KX
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 12:32:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F2F1411D4;
- Fri, 17 Jan 2020 04:32:32 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1E1BB3F6C4;
- Fri, 17 Jan 2020 04:32:31 -0800 (PST)
-Date: Fri, 17 Jan 2020 12:32:26 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2] ACPI/IORT: Fix 'Number of IDs' handling in
- iort_id_map()
-Message-ID: <20200117123226.GA9918@e121166-lin.cambridge.arm.com>
-References: <1579004051-48797-1-git-send-email-guohanjun@huawei.com>
- <20200117121448.GA8199@willie-the-truck>
+	id 1isQuV-0005Q0-2u; Fri, 17 Jan 2020 12:39:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isQuM-0005PO-VL
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 12:39:28 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6932920730;
+ Fri, 17 Jan 2020 12:39:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579264766;
+ bh=V9JQ89MenhRIDahBTT5r+ufS8fzK17VCIuTKQTYaIfQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jaJPazZu/SigkBzXTBjsv060d3X9J2JT0m8OVULDMyaPBfiBIOKi1XEvA3mjCawnp
+ kmXkK440fgfk1n4ynXs95xCkp3GjF7w5n1MPXW9jXp4xp2xObqbRd2WKLd/IpPvjjs
+ 12oeBCyURh2btIIidIosTVYk3wETSsoQIJ966RKA=
+Date: Fri, 17 Jan 2020 12:39:21 +0000
+From: Will Deacon <will@kernel.org>
+To: James Clark <james.clark@arm.com>
+Subject: Re: [PATCH 1/1] Return EINVAL when precise_ip perf events are
+ requested on Arm
+Message-ID: <20200117123920.GB8199@willie-the-truck>
+References: <20200115105855.13395-1-james.clark@arm.com>
+ <20200115105855.13395-2-james.clark@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200117121448.GA8199@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200115105855.13395-2-james.clark@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_043235_762049_E22C7208 
-X-CRM114-Status: GOOD (  21.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200117_043927_027532_0DCD852D 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,108 +78,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: John Garry <john.garry@huawei.com>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- linuxarm@huawei.com,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-acpi@vger.kernel.org,
- Tyler Baicar <baicar@os.amperecomputing.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Tan Xiaojun <tanxiaojun@huawei.com>,
+ Namhyung Kim <namhyung@kernel.org>, nd@arm.com, Jiri Olsa <jolsa@redhat.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 12:14:49PM +0000, Will Deacon wrote:
-> On Tue, Jan 14, 2020 at 08:14:11PM +0800, Hanjun Guo wrote:
-> > The IORT specification [0] (Section 3, table 4, page 9) defines the
-> > 'Number of IDs' as 'The number of IDs in the range minus one'.
-> > 
-> > However, the IORT ID mapping function iort_id_map() treats the 'Number
-> > of IDs' field as if it were the full IDs mapping count, with the
-> > following check in place to detect out of boundary input IDs:
-> > 
-> > InputID >= Input base + Number of IDs
-> > 
-> > This check is flawed in that it considers the 'Number of IDs' field as
-> > the full number of IDs mapping and disregards the 'minus one' from
-> > the IDs count.
-> > 
-> > The correct check in iort_id_map() should be implemented as:
-> > 
-> > InputID > Input base + Number of IDs
-> > 
-> > this implements the specification correctly but unfortunately it breaks
-> > existing firmwares that erroneously set the 'Number of IDs' as the full
-> > IDs mapping count rather than IDs mapping count minus one.
-> > 
-> > e.g.
-> > 
-> > PCI hostbridge mapping entry 1:
-> > Input base:  0x1000
-> > ID Count:    0x100
-> > Output base: 0x1000
-> > Output reference: 0xC4  //ITS reference
-> > 
-> > PCI hostbridge mapping entry 2:
-> > Input base:  0x1100
-> > ID Count:    0x100
-> > Output base: 0x2000
-> > Output reference: 0xD4  //ITS reference
-> > 
-> > Two mapping entries which the second entry's Input base = the first
-> > entry's Input base + ID count, so for InputID 0x1100 and with the
-> > correct InputID check in place in iort_id_map() the kernel would map
-> > the InputID to ITS 0xC4 not 0xD4 as it would be expected.
-> > 
-> > Therefore, to keep supporting existing flawed firmwares, introduce a
-> > workaround that instructs the kernel to use the old InputID range check
-> > logic in iort_id_map(), so that we can support both firmwares written
-> > with the flawed 'Number of IDs' logic and the correct one as defined in
-> > the specifications.
-> > 
-> > [0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
-> > 
-> > Reported-by: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > Link: https://lore.kernel.org/linux-acpi/20191215203303.29811-1-pankaj.bansal@nxp.com/
-> > Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
-> > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Sudeep Holla <sudeep.holla@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > ---
+Hi James,
+
+On Wed, Jan 15, 2020 at 10:58:55AM +0000, James Clark wrote:
+> ARM PMU events can be delivered with arbitrary skid, and there's
+> nothing the kernel can do to prevent this. Given that, the PMU
+> cannot support precise_ip != 0.
 > 
-> I'm a bit confused about the SoB chain here and which tree this is
-> targetting.
+> Also update comment to state that attr.config field is used to
+> set the event type rather than event_id which doesn't exist.
+
+"Also..." is usually a good sign that you should split up the patch. In
+this case, you're touching a UAPI header with a questionable clarification,
+so I'd definitely rather see that handled separately.
+
+> Signed-off-by: James Clark <james.clark@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Tan Xiaojun <tanxiaojun@huawei.com>
+> Cc: Al Grant <al.grant@arm.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  drivers/perf/arm_pmu.c          | 3 +++
+>  include/uapi/linux/perf_event.h | 4 ++--
+>  2 files changed, 5 insertions(+), 2 deletions(-)
 > 
-> Lorenzo?
+> diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+> index df352b334ea7..4ddbdb93b3b6 100644
+> --- a/drivers/perf/arm_pmu.c
+> +++ b/drivers/perf/arm_pmu.c
+> @@ -102,6 +102,9 @@ armpmu_map_event(struct perf_event *event,
+>  	u64 config = event->attr.config;
+>  	int type = event->attr.type;
+>  
+> +	if (event->attr.precise)
+> +		return -EINVAL;
 
-Hi Will,
+You're right that this is a user-visible change, and I'm pretty nervous
+about it to be honest with you.
 
-sorry about that. It targets arm64 - previously wasn't addressed
-to you and Catalin:
+Perhaps a better way would be to expose something under sysfs, a bit like
+the caps directory for the SPE PMU, which identifies the fields of the attr
+structure that the driver does not ignore. I think doing this as an Arm-PMU
+specific thing initially would be fine, but it would be even better to have
+something where a driver can tell perf core about the parts it responds to
+and have this stuff populated automatically. The current design makes it
+inevitable that PMU drivers will have issues like the one you point out in
+the cover letter.
 
-https://lore.kernel.org/linux-arm-kernel/1577708824-4873-1-git-send-email-guohanjun@huawei.com/
+Thoughts?
 
-I rewrote the commit log and asked Hanjun to repost it to target an arm64
-merge.
-
-Having said that, this patch makes me nervous, it can break on platforms
-that have non-compliant firmware, I wonder whether it is best to leave
-it in -next for a whole cycle (I can send it to -next) to catch any
-fall-out rather than targeting v5.6 given that technically is _not_ a
-fix (we may even have to revert it - it requires coverage on all ARM64
-ACPI systems).
-
-What do you think ?
-
-Lorenzo
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
