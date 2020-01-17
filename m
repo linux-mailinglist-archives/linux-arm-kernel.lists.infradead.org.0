@@ -2,84 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 693FA140AD2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 14:34:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 778C7140AD5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 14:36:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=E3i04mfSJas9yclBpMDBBotzKxn57YIiSZnFHODaxnY=; b=Cli
-	5IIxNh26Rsl/aF69xbbPeP7EJIhCeZo4RUpM6ufRMl8sMx3bB3KNejvTIhB7fYjlJZvVmOcbhmnRb
-	FFQQSpT2g+TyWt8Unbt+z6Sv7fKRTpULaT79JQJQobioAR9gTbXQeDUu7J8EJLtuVAoZZM0uG7XPp
-	JcBXxACNmBn+8qL+/ScDMzGW6oqwGt6rcyEKinPEVUDpLfTuReg+JzuLTw/oN+TPszJBONU+QBHl1
-	IioetsEXDygAKqH9vOJPy/2JlHpiHAI9n321VyhSSkMVa3i6HxObAoQ5tt0lcti2VlDCxCl5MYDcc
-	sVhi9Ezu4V7P783PejUl0fvs9q+EN8Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tLDH7LpJLACYWpbpkYOJchAjENJHP2mPglp87h4hWpM=; b=Uy+KXU3Xt9A81o
+	HYPc0kdVJzk0EmeAcy2VKBl/hCx6eRDDx24hGIEfwAZHS+NB6GBDDhzKhr9v5/BR3/Ry6bwoqjSqz
+	iXrC1vzaGCbbw4IFsdpsr1OL6JYrfmONhwQIfhSVl/8HmFpJ1Rxlyj0CpboXFI8moRNNhj3l/GJrD
+	DqJ7agDfLny1LMirBsjWdtlJtT32ogIrXNdqHNPOsZMZ5OqQ2k5GxQsv1zGKFavBHm8NgEYQWfMda
+	eBhAGft54lS/boZ83JKnbj/4vKLCcFRE+ZGO5g2mbOn1vDkcQWdc9GZGfPG47dPV8TEOJzoByxm77
+	gqpi9KQyU0iyqIDqtuoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isRln-0003c8-Jx; Fri, 17 Jan 2020 13:34:39 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isRlb-0003Z7-Aj
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 13:34:32 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so22712729wro.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Jan 2020 05:34:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=vjAqTiagiAJuIt+I855EK59Bh9rAY4+VmlbULB7XjBU=;
- b=nhcwFQHxSnz+dV9GprwXcD4oiIVNjDaE6b4Z1gVtwnuMdXgy9wBTv4mdfd5R+4O5C5
- TAo7O/1EJo74ic9WeT/gzYaFf82RYCFD+QK5oLiM0pNOQ1pIT2V+QduYScl63zLxQ76z
- SaNfuojAetepaWOS6Dsv/Pq0DGjxLzwnzJejxEN1mX/+kqoqPopYtjvGmXSew3k+ZovI
- I2RfdMwx/ybbZDKeMJyZ+BTFcNlBzqdO3/bllaE0SsOp154uL+uFClwqUtx2vIXQOpEN
- AWmk422EV226QO5mnUPx/bOGO3VBNW6O4os+r1vNboWXx6moiX80S2+YHNxweFTEFdkd
- 5axw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=vjAqTiagiAJuIt+I855EK59Bh9rAY4+VmlbULB7XjBU=;
- b=KlB+SlYxHMgB/FmyDc5ml9T5kopXaT7v0T3Gm1Pvgo7UqCcDnHoF3nay7udeum4hlf
- IkcgJWVGQ76pElTzKFikfMiQg72n8SJqW9lFVM+N6O8etbV4eJfMEeT+OPy5v7g8/3iH
- wQK8PNbPz6QifMXsKHaKn03Q7kgpOUhB99ZikYN0dT1L98TdDoo16acm06ikvJx2z+j1
- qEl+iLdmB04zN+DqmHdCxUBlTt+llv7E2UH2x52oSBQCic9SJv4bEmZlqKqD2qea2ZLQ
- Lv9EpJEzYjq1t6WwA7w2dy3+9qRJXF6dLwJNh+lC6/I72L3P/77X20yHGM5v0Y7gih8g
- WxzQ==
-X-Gm-Message-State: APjAAAV7HiH70+tgptR54D9A5QZthjHKAKjBVBc+cwFLOgaYtpELHo7g
- py2HO+WjxzOhD29P5lR3PzHf+A==
-X-Google-Smtp-Source: APXvYqxOLm+eEqyeR6CqcWIOgeXx2VIKnDcC4O+hh0rHWaq9NA0R4QfRWROMPXD9EnXM5xbkRw2jog==
-X-Received: by 2002:adf:f411:: with SMTP id g17mr2965001wro.89.1579268065504; 
- Fri, 17 Jan 2020 05:34:25 -0800 (PST)
-Received: from glaroque-ThinkPad-T480.baylibre.local
- (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o1sm33875961wrn.84.2020.01.17.05.34.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Jan 2020 05:34:24 -0800 (PST)
-From: Guillaume La Roque <glaroque@baylibre.com>
-To: khilman@baylibre.com,
-	devicetree@vger.kernel.org
-Subject: [PATCH] arm64: dts: meson-sm1-sei610: add missing interrupt-names
-Date: Fri, 17 Jan 2020 14:34:23 +0100
-Message-Id: <20200117133423.22602-1-glaroque@baylibre.com>
-X-Mailer: git-send-email 2.17.1
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_053427_498478_104F8679 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	id 1isRnJ-0005Ci-Ol; Fri, 17 Jan 2020 13:36:13 +0000
+Received: from [179.97.37.151] (helo=sandy.ghostprotocols.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isRnD-0005CW-7R; Fri, 17 Jan 2020 13:36:07 +0000
+Received: by sandy.ghostprotocols.net (Postfix, from userid 1000)
+ id 644B711E4; Fri, 17 Jan 2020 10:36:04 -0300 (BRT)
+Date: Fri, 17 Jan 2020 10:36:04 -0300
+From: Arnaldo Carvalho de Melo <acme@redhat.com>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v6 1/2] perf parse: Refactor struct perf_evsel_config_term
+Message-ID: <20200117133604.GC3323@redhat.com>
+References: <20200117055251.24058-1-leo.yan@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200117055251.24058-1-leo.yan@linaro.org>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.5.20 (2009-12-10)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,38 +46,231 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Ian Rogers <irogers@google.com>,
+ Andi Kleen <ak@linux.intel.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, Adrian Hunter <adrian.hunter@intel.com>,
+ linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add missing "host-wakeup interrupt names
+Em Fri, Jan 17, 2020 at 01:52:50PM +0800, Leo Yan escreveu:
+> The struct perf_evsel_config_term::val is a union which contains
+> fields 'callgraph', 'drv_cfg' and 'branch' as string pointers.  This
+> leads to the complex code logic for handling every type's string
+> separately, and it's hard to release string as a general way.
+> 
+> This patch refactors the structure to add a common field 'str' in the
+> 'val' union as string pointer and remove the other three fields
+> 'callgraph', 'drv_cfg' and 'branch'.  Without passing field name, the
+> patch simplifies the string handling with macro ADD_CONFIG_TERM_STR()
+> for string pointer assignment.
+> 
+> This patch fixes multiple warnings of line over 80 characters detected
+> by checkpatch tool.
 
-Fixes: 30388cc07572 ("arm64: dts: meson-sm1-sei610: add gpio bluetooth interrupt")
-
-Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
----
- arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-index a8bb3fa9fec9..cb1b48f5b8b1 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-@@ -593,6 +593,7 @@
- 		compatible = "brcm,bcm43438-bt";
- 		interrupt-parent = <&gpio_intc>;
- 		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "host-wakeup";
- 		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
- 		max-speed = <2000000>;
- 		clocks = <&wifi32k>;
--- 
-2.17.1
-
+Thanks, applied both.
+ 
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> Reviewed-by: Andi Kleen <ak@linux.intel.com>
+> Acked-by: Jiri Olsa <jolsa@kernel.org>
+> ---
+>  tools/perf/arch/arm/util/cs-etm.c |  2 +-
+>  tools/perf/util/evsel.c           |  6 +--
+>  tools/perf/util/evsel_config.h    |  4 +-
+>  tools/perf/util/parse-events.c    | 62 ++++++++++++++++++++-----------
+>  4 files changed, 45 insertions(+), 29 deletions(-)
+> 
+> diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+> index ede040cf82ad..2898cfdf8fe1 100644
+> --- a/tools/perf/arch/arm/util/cs-etm.c
+> +++ b/tools/perf/arch/arm/util/cs-etm.c
+> @@ -226,7 +226,7 @@ static int cs_etm_set_sink_attr(struct perf_pmu *pmu,
+>  		if (term->type != PERF_EVSEL__CONFIG_TERM_DRV_CFG)
+>  			continue;
+>  
+> -		sink = term->val.drv_cfg;
+> +		sink = term->val.str;
+>  		snprintf(path, PATH_MAX, "sinks/%s", sink);
+>  
+>  		ret = perf_pmu__scan_file(pmu, path, "%x", &hash);
+> diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
+> index a69e64236120..549abd43816f 100644
+> --- a/tools/perf/util/evsel.c
+> +++ b/tools/perf/util/evsel.c
+> @@ -808,12 +808,12 @@ static void apply_config_terms(struct evsel *evsel,
+>  				perf_evsel__reset_sample_bit(evsel, TIME);
+>  			break;
+>  		case PERF_EVSEL__CONFIG_TERM_CALLGRAPH:
+> -			callgraph_buf = term->val.callgraph;
+> +			callgraph_buf = term->val.str;
+>  			break;
+>  		case PERF_EVSEL__CONFIG_TERM_BRANCH:
+> -			if (term->val.branch && strcmp(term->val.branch, "no")) {
+> +			if (term->val.str && strcmp(term->val.str, "no")) {
+>  				perf_evsel__set_sample_bit(evsel, BRANCH_STACK);
+> -				parse_branch_str(term->val.branch,
+> +				parse_branch_str(term->val.str,
+>  						 &attr->branch_sample_type);
+>  			} else
+>  				perf_evsel__reset_sample_bit(evsel, BRANCH_STACK);
+> diff --git a/tools/perf/util/evsel_config.h b/tools/perf/util/evsel_config.h
+> index 1f8d2fe0b66e..b4a65201e4f7 100644
+> --- a/tools/perf/util/evsel_config.h
+> +++ b/tools/perf/util/evsel_config.h
+> @@ -36,18 +36,16 @@ struct perf_evsel_config_term {
+>  		u64	      period;
+>  		u64	      freq;
+>  		bool	      time;
+> -		char	      *callgraph;
+> -		char	      *drv_cfg;
+>  		u64	      stack_user;
+>  		int	      max_stack;
+>  		bool	      inherit;
+>  		bool	      overwrite;
+> -		char	      *branch;
+>  		unsigned long max_events;
+>  		bool	      percore;
+>  		bool	      aux_output;
+>  		u32	      aux_sample_size;
+>  		u64	      cfg_chg;
+> +		char	      *str;
+>  	} val;
+>  	bool weak;
+>  };
+> diff --git a/tools/perf/util/parse-events.c b/tools/perf/util/parse-events.c
+> index ed7c008b9c8b..f59f3c8da473 100644
+> --- a/tools/perf/util/parse-events.c
+> +++ b/tools/perf/util/parse-events.c
+> @@ -1219,8 +1219,7 @@ static int config_attr(struct perf_event_attr *attr,
+>  static int get_config_terms(struct list_head *head_config,
+>  			    struct list_head *head_terms __maybe_unused)
+>  {
+> -#define ADD_CONFIG_TERM(__type, __name, __val)			\
+> -do {								\
+> +#define ADD_CONFIG_TERM(__type)					\
+>  	struct perf_evsel_config_term *__t;			\
+>  								\
+>  	__t = zalloc(sizeof(*__t));				\
+> @@ -1229,9 +1228,19 @@ do {								\
+>  								\
+>  	INIT_LIST_HEAD(&__t->list);				\
+>  	__t->type       = PERF_EVSEL__CONFIG_TERM_ ## __type;	\
+> -	__t->val.__name = __val;				\
+>  	__t->weak	= term->weak;				\
+> -	list_add_tail(&__t->list, head_terms);			\
+> +	list_add_tail(&__t->list, head_terms)
+> +
+> +#define ADD_CONFIG_TERM_VAL(__type, __name, __val)		\
+> +do {								\
+> +	ADD_CONFIG_TERM(__type);				\
+> +	__t->val.__name = __val;				\
+> +} while (0)
+> +
+> +#define ADD_CONFIG_TERM_STR(__type, __val)			\
+> +do {								\
+> +	ADD_CONFIG_TERM(__type);				\
+> +	__t->val.str = __val;					\
+>  } while (0)
+>  
+>  	struct parse_events_term *term;
+> @@ -1239,53 +1248,62 @@ do {								\
+>  	list_for_each_entry(term, head_config, list) {
+>  		switch (term->type_term) {
+>  		case PARSE_EVENTS__TERM_TYPE_SAMPLE_PERIOD:
+> -			ADD_CONFIG_TERM(PERIOD, period, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(PERIOD, period, term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_SAMPLE_FREQ:
+> -			ADD_CONFIG_TERM(FREQ, freq, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(FREQ, freq, term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_TIME:
+> -			ADD_CONFIG_TERM(TIME, time, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(TIME, time, term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_CALLGRAPH:
+> -			ADD_CONFIG_TERM(CALLGRAPH, callgraph, term->val.str);
+> +			ADD_CONFIG_TERM_STR(CALLGRAPH, term->val.str);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_BRANCH_SAMPLE_TYPE:
+> -			ADD_CONFIG_TERM(BRANCH, branch, term->val.str);
+> +			ADD_CONFIG_TERM_STR(BRANCH, term->val.str);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_STACKSIZE:
+> -			ADD_CONFIG_TERM(STACK_USER, stack_user, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(STACK_USER, stack_user,
+> +					    term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_INHERIT:
+> -			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 1 : 0);
+> +			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
+> +					    term->val.num ? 1 : 0);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_NOINHERIT:
+> -			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 0 : 1);
+> +			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
+> +					    term->val.num ? 0 : 1);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_MAX_STACK:
+> -			ADD_CONFIG_TERM(MAX_STACK, max_stack, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(MAX_STACK, max_stack,
+> +					    term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_MAX_EVENTS:
+> -			ADD_CONFIG_TERM(MAX_EVENTS, max_events, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(MAX_EVENTS, max_events,
+> +					    term->val.num);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_OVERWRITE:
+> -			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 1 : 0);
+> +			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
+> +					    term->val.num ? 1 : 0);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_NOOVERWRITE:
+> -			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 0 : 1);
+> +			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
+> +					    term->val.num ? 0 : 1);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_DRV_CFG:
+> -			ADD_CONFIG_TERM(DRV_CFG, drv_cfg, term->val.str);
+> +			ADD_CONFIG_TERM_STR(DRV_CFG, term->val.str);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_PERCORE:
+> -			ADD_CONFIG_TERM(PERCORE, percore,
+> -					term->val.num ? true : false);
+> +			ADD_CONFIG_TERM_VAL(PERCORE, percore,
+> +					    term->val.num ? true : false);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_AUX_OUTPUT:
+> -			ADD_CONFIG_TERM(AUX_OUTPUT, aux_output, term->val.num ? 1 : 0);
+> +			ADD_CONFIG_TERM_VAL(AUX_OUTPUT, aux_output,
+> +					    term->val.num ? 1 : 0);
+>  			break;
+>  		case PARSE_EVENTS__TERM_TYPE_AUX_SAMPLE_SIZE:
+> -			ADD_CONFIG_TERM(AUX_SAMPLE_SIZE, aux_sample_size, term->val.num);
+> +			ADD_CONFIG_TERM_VAL(AUX_SAMPLE_SIZE, aux_sample_size,
+> +					    term->val.num);
+>  			break;
+>  		default:
+>  			break;
+> @@ -1322,7 +1340,7 @@ static int get_config_chgs(struct perf_pmu *pmu, struct list_head *head_config,
+>  	}
+>  
+>  	if (bits)
+> -		ADD_CONFIG_TERM(CFG_CHG, cfg_chg, bits);
+> +		ADD_CONFIG_TERM_VAL(CFG_CHG, cfg_chg, bits);
+>  
+>  #undef ADD_CONFIG_TERM
+>  	return 0;
+> -- 
+> 2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
