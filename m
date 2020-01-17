@@ -2,109 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF7C71403AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:46:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0DEE1403B9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:55:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqHaPaPV848ugKG+9aqmPjkHApoQ2D9z4j6FteoHpHA=; b=eJmdj3JHI10mvl
-	96PqBdhU8M0iGzgHciBNUt4CJ0oQN/glgtUKLEc6gLIfbuqrcqA4VqjfkPycsc3UTxRbKPtbobkax
-	huwuVtkzdRlwnJan+YYRIn5U4YeTfLvg4UUXB082S2sWuudUm2rAs06xQhZaJcf+SXj+pkKVvY2w+
-	L6bWPTBekEQ9MTEAxoUnBuF02biZYMwvCr5z35ZYyafxKMO4ZiT5hkBZrtXJM158M8zo8QQuUcMSn
-	teW/tS8VUhpGhGOLc424nCzWEUxiQemdzmswXHlSTDj6oORgtxVOA4IIPh7JvSXH5d6FFmkrx+0EV
-	kqNKKLWoZ4/efCoXt92w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hE0e8wCa/k586UBZAOAiejmkAnpQvUicTEwFbKEPfMw=; b=j16
+	oofgAsOz/2N85sU2cf0FM5ZFPOU4FV+LDNFhbPePQdN35H9eShnWA2UlajGLU4/IKsJk7ZURI7L6b
+	z/OF/wnINigz2atW8zegzPhL5+LxMd2BiRCNHRLQDW3MXA8Zm8jZsuFx8ybEfQGeHmvpTQrN7StMF
+	H5KfxfEYrLU+B6oQ02jvFSRhIpzu54gS1qpV+2TosPZrRjWi3wH8ISJCGeSywv8r1E+TVxByWaGDe
+	oW/x7Y0zzcQLspNLZyZ7C+VR10NPawyXquu70QzNwPsDHyLqLAvCib99v/m+JGW6QGiqDUCjEB3OQ
+	T6KAh/1411FeXiiUAGwb4df2BPwvwDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isKSC-0002rN-5S; Fri, 17 Jan 2020 05:45:56 +0000
-Received: from mail-eopbgr60086.outbound.protection.outlook.com ([40.107.6.86]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1isKbO-0007d4-KM; Fri, 17 Jan 2020 05:55:26 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isKRv-0002qG-77
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:45:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MT5zGZbuLPhJHIPKZrB4lk5/dOIBXlhj0J0pdO+guwKvKPbighZq5gVdfeYhtOZtbRgc2l7HBFQSHQb/p2c+jSuDIWDwPsp58ZaWFahc5GtzfnmRd502dUL99z0AJqXGIQ3z/YT5NQIiTgJoDf/KITKIorrW0KyJyqT6xXLc/7S1QlPc0tpwHxLLOX20+4VH/xq0AK68xsJeUdI++e/FfYQf86L06pANRxhN+3pyLUea5ro+1HgOjxXjI9JqM0vNuK89Bh9w0vpH/zM2QC3C1+0q9L/yv/f5op3KGsViE8ehjDorssX+xPELoCPQTbO3H66yQ38X6Bp8t8rlYqZyzA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PYYrVZB2owAhkvx/mOJd55oxR8Oirq2c7ZhRm5ycDRU=;
- b=mLgUFKYC9/FNypl1qzOLJDIMi7keXl6VDRnMHfqPB/hk1xEqcCGzJJFoinrmbxOeluFgLOtu80qWTJq1jj7lu4iRyPGKPENzG8gCvaDTyHeGOC++9AYo4Gf1jOdacPvY8Pc+NVd+gPvomMKwgtgQwbCdIhV8eDJehKs/6eCWf6Rrc1LydOvPBU6l2Vk9VzHvgCsddAfIum47+ExAVcm3Yub4XUEBPFyS2sn6uQWJ+53DtAqY3RrH3+bOY2I0oHT1m4x2XxyvgKoc80VzXSNJox5od5MerODC/X5UD+YpEzpun2x4cvVzVoNof+En9GrCE0IQvcGYVAb8aG4KETjM7Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PYYrVZB2owAhkvx/mOJd55oxR8Oirq2c7ZhRm5ycDRU=;
- b=g1tKwRlvsUDx1JupGOs5GA3PY3O8EmmdMDO5qBC/gsED80ErxTfExYsGYSh7+zqt+0b8KkN/buPu7luXx8l4QBGuxNuRBLwS4zLJ5B+ev11OO7QjwxnBEUdPyA7bZLGJmKgJp1yM4aXxjVVpjVZvhsD6+GJCG4JJpBrvLAGE++4=
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
- DB7PR04MB5977.eurprd04.prod.outlook.com (20.178.104.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.23; Fri, 17 Jan 2020 05:45:34 +0000
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2644.023; Fri, 17 Jan 2020
- 05:45:34 +0000
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [PATCH V5 1/2] dt-bindings/irq: add binding for NXP INTMUX
- interrupt multiplexer
-Thread-Topic: [PATCH V5 1/2] dt-bindings/irq: add binding for NXP INTMUX
- interrupt multiplexer
-Thread-Index: AQHVy2HlCqpoVSNPM0u45sIas5IfRaftr8UAgACn8XA=
-Date: Fri, 17 Jan 2020 05:45:34 +0000
-Message-ID: <DB7PR04MB461896F81D346CC88505F2C1E6310@DB7PR04MB4618.eurprd04.prod.outlook.com>
-References: <1579064664-16452-1-git-send-email-qiangqing.zhang@nxp.com>
- <1579064664-16452-2-git-send-email-qiangqing.zhang@nxp.com>
- <20200116192928.GA1014@bogus>
-In-Reply-To: <20200116192928.GA1014@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=qiangqing.zhang@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 977a6aff-8f08-4067-ad20-08d79b1078f2
-x-ms-traffictypediagnostic: DB7PR04MB5977:|DB7PR04MB5977:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB597773FF6250900BAF968C96E6310@DB7PR04MB5977.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:826;
-x-forefront-prvs: 0285201563
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10001)(10009020)(4636009)(376002)(136003)(366004)(396003)(346002)(39860400002)(199004)(189003)(2906002)(6506007)(7696005)(53546011)(8676002)(7416002)(478600001)(4326008)(45080400002)(33656002)(66476007)(9686003)(66556008)(66946007)(55016002)(66446008)(64756008)(76116006)(5660300002)(52536014)(316002)(71200400001)(966005)(86362001)(186003)(6916009)(8936002)(26005)(81156014)(81166006)(54906003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5977;
- H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: FwwuNqtz10LabuwFjopuQ0idSmlcqseK2jlavUDGB2dLeEfw39z39qS1bKzFDdhut7jaA1+ac1qyBTvc6MUFCv3vxaplLsP3gjjDzCa25bGhLwkvJEmHpUhxlGFnw6M77jVpJqoNpHOPFJN/dYOanx8sJXUdfPG3iwXjk/DCrtzdQ3fcpwivf07EvE6Qh807xXVRBfi5S41ODKiYhuBTte6LITHM3g8U1Qr8GAJWpYq4sgQSHPSCDXkhv2He/IXlXHu41V/fwoHKmlA9542QVNm8Bg6y7omZljQt1tb+FiCs0lBk0I8JVrDZZ+uVkB1a9ojgZFJyKGfoYfYrMt7gTJTZtB+DZL0ZDu7P1kP2Uzzi0SKKFDua9bwdQNTi/KhNRpYCk3Mg2Q/Yc6QVJJDwqJB95XVS6IkFMHfP5uZDRVaLMcaQYU030Qn8FCzkg5oczq2KRuo9JN50BvGrmScZ7ldmnCydiPa6BXjpUek31Fj2HHR9+CVkztcOQOjer6o/MmdWX2o/acRExZe5G6EH4gSGA1f5WEfXaGYI4iVb2cFBFvdn2UHKU1xUQrZeRIcj9JFqh4SF///coJb3JoecDQ==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 977a6aff-8f08-4067-ad20-08d79b1078f2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jan 2020 05:45:34.6227 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: AcjBoS/cbfvV4ItbqNjYejQcvhoMTYUPPRbmPdSt91mEWd8MBKVAiEg6ZclOdc1QC7m2TDSl+9b+vAhzzG8uSQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5977
+ id 1isKaz-0006GY-BD
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:55:03 +0000
+Received: by mail-pg1-x541.google.com with SMTP id r11so11129208pgf.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Jan 2020 21:54:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=Q/D16bhvqH5hHjvjoTQudmXRrgAaci7GkcRJ3VoqrV8=;
+ b=zuueGqO2dcA9HFnhiUjIbLGDrymwtN+zw1K94WvZZ4HP2rrdQSN9Hc1m5jKl7hBTAj
+ SV7D+Ok0j2p+KRemGfGfDb8ricYaz2H0Rop8z8tHnpJR7HZmtspzyYdxZUPfYag+LeUK
+ 62oHTgkBr1PANjxOHD29yDsnsHBvbofvvbUYy6w9IHv0/gBP4xJk1Eumkq8zUtcdtF8c
+ 9s8fP5Nrngv+L/qFntBvw6Pq4ebGGx45yOWUiVxGanstEtlNnx0cT9JdbOP1NpYDtLyP
+ 89/I9JIhdSdRKH3MJ4AAelZasASmFnsnVhvhg+uyDj4jqIF8IZEF0K9AcKJU+LRQqLeR
+ hwGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Q/D16bhvqH5hHjvjoTQudmXRrgAaci7GkcRJ3VoqrV8=;
+ b=YYyH3yBkHZnvmQLhMllrTu5viY5Orr7T0t5CZUxbOIlSF7cQvBFOYCr2blVIXGyNit
+ 5h9HXkaeQitaJnIDKQYKn/N/sjgWffFr7EpG4Q8MYQdyfDhLfHpKDiD9BlavQQhzb8oV
+ vXaRtSX3eCeetj2ODkKzV/0cOHU6eNVbkAADJ6OxTlW/ENAiuyrWwezyH/mFSsBru7Ii
+ VcQo5dc4vtWjgDQCw8Vufbnxy+jvr/GZUxdieWHtHCwkkYDQmAKaT9YxYTUzpf2oGMU2
+ PVG6+hYrvtQQg8L0tB9lwbRWePRbSa+oVotSho1mU5mS0ot93l2amY+eOsEZnlc1U9FS
+ hjgw==
+X-Gm-Message-State: APjAAAUKkVmgizwB02KvJoIHFCgKxVu5gIVlsJCrvobPFh/2IlG84o1d
+ 1e+uozOF6ymzTh1zk4+4uvIdfw==
+X-Google-Smtp-Source: APXvYqxM1YA3i7iz9IwAajQM2rCTJd7NLP2qLbZ2dw0oR2ndq4mfCfOvlwz6pUQRyaB56dTOmOyNUw==
+X-Received: by 2002:a62:e512:: with SMTP id n18mr1362167pff.50.1579240495154; 
+ Thu, 16 Jan 2020 21:54:55 -0800 (PST)
+Received: from localhost.localdomain (li96-55.members.linode.com.
+ [74.207.254.55])
+ by smtp.gmail.com with ESMTPSA id u7sm27578364pfh.128.2020.01.16.21.54.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Jan 2020 21:54:54 -0800 (PST)
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@kernel.org>, Namhyung Kim <namhyung@kernel.org>,
+ Ian Rogers <irogers@google.com>, Andi Kleen <ak@linux.intel.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Mike Leach <mike.leach@linaro.org>
+Subject: [PATCH v6 1/2] perf parse: Refactor struct perf_evsel_config_term
+Date: Fri, 17 Jan 2020 13:52:50 +0800
+Message-Id: <20200117055251.24058-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_214539_449752_B36502D0 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20200116_215501_395507_C05606B8 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -123,74 +102,224 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>, Andy Duan <fugang.duan@nxp.com>,
- "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "maz@kernel.org" <maz@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: Leo Yan <leo.yan@linaro.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IFJvYiBIZXJyaW5nIDxyb2Jo
-QGtlcm5lbC5vcmc+DQo+IFNlbnQ6IDIwMjDE6jHUwjE3yNUgMzoyOQ0KPiBUbzogSm9ha2ltIFpo
-YW5nIDxxaWFuZ3FpbmcuemhhbmdAbnhwLmNvbT4NCj4gQ2M6IG1hekBrZXJuZWwub3JnOyBqYXNv
-bkBsYWtlZGFlbW9uLm5ldDsgdGdseEBsaW51dHJvbml4LmRlOw0KPiByb2JoK2R0QGtlcm5lbC5v
-cmc7IG1hcmsucnV0bGFuZEBhcm0uY29tOyBzaGF3bmd1b0BrZXJuZWwub3JnOw0KPiBzLmhhdWVy
-QHBlbmd1dHJvbml4LmRlOyBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IGZlc3RldmFtQGdtYWlsLmNv
-bTsNCj4gbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsgZGV2aWNldHJlZUB2Z2VyLmtlcm5l
-bC5vcmc7DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgZGwtbGludXgt
-aW14IDxsaW51eC1pbXhAbnhwLmNvbT47IEFuZHkNCj4gRHVhbiA8ZnVnYW5nLmR1YW5AbnhwLmNv
-bT47IEpvYWtpbSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+DQo+IFN1YmplY3Q6IFJl
-OiBbUEFUQ0ggVjUgMS8yXSBkdC1iaW5kaW5ncy9pcnE6IGFkZCBiaW5kaW5nIGZvciBOWFAgSU5U
-TVVYDQo+IGludGVycnVwdCBtdWx0aXBsZXhlcg0KPiANCj4gT24gV2VkLCAxNSBKYW4gMjAyMCAx
-MzowNDoyMyArMDgwMCwgSm9ha2ltIFpoYW5nIHdyb3RlOg0KPiA+IFRoaXMgcGF0Y2ggYWRkcyB0
-aGUgRFQgYmluZGluZ3MgZm9yIHRoZSBOWFAgSU5UTVVYIGludGVycnVwdA0KPiA+IG11bHRpcGxl
-eGVyIGZvciBpLk1YOCBmYW1pbHkgU29Dcy4NCj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IEpvYWtp
-bSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+DQo+ID4gLS0tDQo+ID4gIC4uLi9pbnRl
-cnJ1cHQtY29udHJvbGxlci9mc2wsaW50bXV4LnlhbWwgICAgICB8IDY3ICsrKysrKysrKysrKysr
-KysrKysNCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDY3IGluc2VydGlvbnMoKykNCj4gPiAgY3JlYXRl
-IG1vZGUgMTAwNjQ0DQo+ID4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ludGVy
-cnVwdC1jb250cm9sbGVyL2ZzbCxpbnRtdXgueWFtbA0KPiA+DQo+IA0KPiBNeSBib3QgZm91bmQg
-ZXJyb3JzIHJ1bm5pbmcgJ21ha2UgZHRfYmluZGluZ19jaGVjaycgb24geW91ciBwYXRjaDoNCj4g
-DQo+IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3NpbXBsZS1mcmFt
-ZWJ1ZmZlci5leGFtcGxlLmR0czoyDQo+IDEuMTYtMzcuMTE6IFdhcm5pbmcgKGNob3Nlbl9ub2Rl
-X2lzX3Jvb3QpOiAvZXhhbXBsZS0wL2Nob3NlbjogY2hvc2VuIG5vZGUNCj4gbXVzdCBiZSBhdCBy
-b290IG5vZGUNCj4gRXJyb3I6DQo+IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9p
-bnRlcnJ1cHQtY29udHJvbGxlci9mc2wsaW50bXV4LmV4YW1wbGUuZHQNCj4gczoyMC4yNy0yOCBz
-eW50YXggZXJyb3IgRkFUQUwgRVJST1I6IFVuYWJsZSB0byBwYXJzZSBpbnB1dCB0cmVlDQo+IHNj
-cmlwdHMvTWFrZWZpbGUubGliOjMwMDogcmVjaXBlIGZvciB0YXJnZXQNCj4gJ0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9mc2wsaW50bXV4LmV4
-YW1wbGUuZA0KPiB0LnlhbWwnIGZhaWxlZA0KPiBtYWtlWzFdOiAqKioNCj4gW0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9mc2wsaW50bXV4LmV4
-YW1wbGUuZA0KPiB0LnlhbWxdIEVycm9yIDENCj4gTWFrZWZpbGU6MTI2MzogcmVjaXBlIGZvciB0
-YXJnZXQgJ2R0X2JpbmRpbmdfY2hlY2snIGZhaWxlZA0KPiBtYWtlOiAqKiogW2R0X2JpbmRpbmdf
-Y2hlY2tdIEVycm9yIDINCj4gDQo+IFNlZQ0KPiBodHRwczovL2V1cjAxLnNhZmVsaW5rcy5wcm90
-ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cHMlM0ElMkYlMkZwYXRjaHcNCj4gb3JrLm96bGFi
-cy5vcmclMkZwYXRjaCUyRjEyMjMxNzImYW1wO2RhdGE9MDIlN0MwMSU3Q3FpYW5ncWluZy56aGFu
-DQo+IGclNDBueHAuY29tJTdDYWFkZTQyZTI1NmYyNDhkYzJlZjcwOGQ3OWFiYTY5NDElN0M2ODZl
-YTFkM2JjMmI0YzYNCj4gZmE5MmNkOTljNWMzMDE2MzUlN0MwJTdDMCU3QzYzNzE0Nzk5NzcyNjg4
-ODI2NSZhbXA7c2RhdGE9N29wc1pPDQo+IFYlMkZLeklKQmw0TW9FRVNDWVphJTJCamx6S0tvZkc2
-bTg0U3NmQUhnJTNEJmFtcDtyZXNlcnZlZD0wDQo+IFBsZWFzZSBjaGVjayBhbmQgcmUtc3VibWl0
-Lg0KSGkgUm9iLA0KDQptYWtlIGR0X2JpbmRpbmdfY2hlY2sgRFRfU0NIRU1BX0ZJTEVTPURvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9mc2wsaW50
-bXV4LnlhbWwNCiAgQ0hLRFQgICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvaW50
-ZXJydXB0LWNvbnRyb2xsZXIvZnNsLGludG11eC55YW1sDQogIFNDSEVNQSAgRG9jdW1lbnRhdGlv
-bi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Byb2Nlc3NlZC1zY2hlbWEueWFtbA0KICBEVEMgICAgIERv
-Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9mc2ws
-aW50bXV4LmV4YW1wbGUuZHQueWFtbA0KICBDSEVDSyAgIERvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9mc2wsaW50bXV4LmV4YW1wbGUuZHQueWFt
-bA0KDQpJIGRvbid0IGtub3cgRFRDIGFsc28gbmVlZCBwYXNzIHRoZSBjaGVjaywgc29ycnkgZm9y
-IHRoYXQuIEkgd2lsbCByZS1zZW5kIHRoZSBwYXRjaCBzZXQuDQoNCkJlc3QgUmVnYXJkcywNCkpv
-YWtpbSBaaGFuZw0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+The struct perf_evsel_config_term::val is a union which contains
+fields 'callgraph', 'drv_cfg' and 'branch' as string pointers.  This
+leads to the complex code logic for handling every type's string
+separately, and it's hard to release string as a general way.
+
+This patch refactors the structure to add a common field 'str' in the
+'val' union as string pointer and remove the other three fields
+'callgraph', 'drv_cfg' and 'branch'.  Without passing field name, the
+patch simplifies the string handling with macro ADD_CONFIG_TERM_STR()
+for string pointer assignment.
+
+This patch fixes multiple warnings of line over 80 characters detected
+by checkpatch tool.
+
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Andi Kleen <ak@linux.intel.com>
+Acked-by: Jiri Olsa <jolsa@kernel.org>
+---
+ tools/perf/arch/arm/util/cs-etm.c |  2 +-
+ tools/perf/util/evsel.c           |  6 +--
+ tools/perf/util/evsel_config.h    |  4 +-
+ tools/perf/util/parse-events.c    | 62 ++++++++++++++++++++-----------
+ 4 files changed, 45 insertions(+), 29 deletions(-)
+
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index ede040cf82ad..2898cfdf8fe1 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -226,7 +226,7 @@ static int cs_etm_set_sink_attr(struct perf_pmu *pmu,
+ 		if (term->type != PERF_EVSEL__CONFIG_TERM_DRV_CFG)
+ 			continue;
+ 
+-		sink = term->val.drv_cfg;
++		sink = term->val.str;
+ 		snprintf(path, PATH_MAX, "sinks/%s", sink);
+ 
+ 		ret = perf_pmu__scan_file(pmu, path, "%x", &hash);
+diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
+index a69e64236120..549abd43816f 100644
+--- a/tools/perf/util/evsel.c
++++ b/tools/perf/util/evsel.c
+@@ -808,12 +808,12 @@ static void apply_config_terms(struct evsel *evsel,
+ 				perf_evsel__reset_sample_bit(evsel, TIME);
+ 			break;
+ 		case PERF_EVSEL__CONFIG_TERM_CALLGRAPH:
+-			callgraph_buf = term->val.callgraph;
++			callgraph_buf = term->val.str;
+ 			break;
+ 		case PERF_EVSEL__CONFIG_TERM_BRANCH:
+-			if (term->val.branch && strcmp(term->val.branch, "no")) {
++			if (term->val.str && strcmp(term->val.str, "no")) {
+ 				perf_evsel__set_sample_bit(evsel, BRANCH_STACK);
+-				parse_branch_str(term->val.branch,
++				parse_branch_str(term->val.str,
+ 						 &attr->branch_sample_type);
+ 			} else
+ 				perf_evsel__reset_sample_bit(evsel, BRANCH_STACK);
+diff --git a/tools/perf/util/evsel_config.h b/tools/perf/util/evsel_config.h
+index 1f8d2fe0b66e..b4a65201e4f7 100644
+--- a/tools/perf/util/evsel_config.h
++++ b/tools/perf/util/evsel_config.h
+@@ -36,18 +36,16 @@ struct perf_evsel_config_term {
+ 		u64	      period;
+ 		u64	      freq;
+ 		bool	      time;
+-		char	      *callgraph;
+-		char	      *drv_cfg;
+ 		u64	      stack_user;
+ 		int	      max_stack;
+ 		bool	      inherit;
+ 		bool	      overwrite;
+-		char	      *branch;
+ 		unsigned long max_events;
+ 		bool	      percore;
+ 		bool	      aux_output;
+ 		u32	      aux_sample_size;
+ 		u64	      cfg_chg;
++		char	      *str;
+ 	} val;
+ 	bool weak;
+ };
+diff --git a/tools/perf/util/parse-events.c b/tools/perf/util/parse-events.c
+index ed7c008b9c8b..f59f3c8da473 100644
+--- a/tools/perf/util/parse-events.c
++++ b/tools/perf/util/parse-events.c
+@@ -1219,8 +1219,7 @@ static int config_attr(struct perf_event_attr *attr,
+ static int get_config_terms(struct list_head *head_config,
+ 			    struct list_head *head_terms __maybe_unused)
+ {
+-#define ADD_CONFIG_TERM(__type, __name, __val)			\
+-do {								\
++#define ADD_CONFIG_TERM(__type)					\
+ 	struct perf_evsel_config_term *__t;			\
+ 								\
+ 	__t = zalloc(sizeof(*__t));				\
+@@ -1229,9 +1228,19 @@ do {								\
+ 								\
+ 	INIT_LIST_HEAD(&__t->list);				\
+ 	__t->type       = PERF_EVSEL__CONFIG_TERM_ ## __type;	\
+-	__t->val.__name = __val;				\
+ 	__t->weak	= term->weak;				\
+-	list_add_tail(&__t->list, head_terms);			\
++	list_add_tail(&__t->list, head_terms)
++
++#define ADD_CONFIG_TERM_VAL(__type, __name, __val)		\
++do {								\
++	ADD_CONFIG_TERM(__type);				\
++	__t->val.__name = __val;				\
++} while (0)
++
++#define ADD_CONFIG_TERM_STR(__type, __val)			\
++do {								\
++	ADD_CONFIG_TERM(__type);				\
++	__t->val.str = __val;					\
+ } while (0)
+ 
+ 	struct parse_events_term *term;
+@@ -1239,53 +1248,62 @@ do {								\
+ 	list_for_each_entry(term, head_config, list) {
+ 		switch (term->type_term) {
+ 		case PARSE_EVENTS__TERM_TYPE_SAMPLE_PERIOD:
+-			ADD_CONFIG_TERM(PERIOD, period, term->val.num);
++			ADD_CONFIG_TERM_VAL(PERIOD, period, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_SAMPLE_FREQ:
+-			ADD_CONFIG_TERM(FREQ, freq, term->val.num);
++			ADD_CONFIG_TERM_VAL(FREQ, freq, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_TIME:
+-			ADD_CONFIG_TERM(TIME, time, term->val.num);
++			ADD_CONFIG_TERM_VAL(TIME, time, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_CALLGRAPH:
+-			ADD_CONFIG_TERM(CALLGRAPH, callgraph, term->val.str);
++			ADD_CONFIG_TERM_STR(CALLGRAPH, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_BRANCH_SAMPLE_TYPE:
+-			ADD_CONFIG_TERM(BRANCH, branch, term->val.str);
++			ADD_CONFIG_TERM_STR(BRANCH, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_STACKSIZE:
+-			ADD_CONFIG_TERM(STACK_USER, stack_user, term->val.num);
++			ADD_CONFIG_TERM_VAL(STACK_USER, stack_user,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_INHERIT:
+-			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_NOINHERIT:
+-			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 0 : 1);
++			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
++					    term->val.num ? 0 : 1);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_MAX_STACK:
+-			ADD_CONFIG_TERM(MAX_STACK, max_stack, term->val.num);
++			ADD_CONFIG_TERM_VAL(MAX_STACK, max_stack,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_MAX_EVENTS:
+-			ADD_CONFIG_TERM(MAX_EVENTS, max_events, term->val.num);
++			ADD_CONFIG_TERM_VAL(MAX_EVENTS, max_events,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_OVERWRITE:
+-			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_NOOVERWRITE:
+-			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 0 : 1);
++			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
++					    term->val.num ? 0 : 1);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_DRV_CFG:
+-			ADD_CONFIG_TERM(DRV_CFG, drv_cfg, term->val.str);
++			ADD_CONFIG_TERM_STR(DRV_CFG, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_PERCORE:
+-			ADD_CONFIG_TERM(PERCORE, percore,
+-					term->val.num ? true : false);
++			ADD_CONFIG_TERM_VAL(PERCORE, percore,
++					    term->val.num ? true : false);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_AUX_OUTPUT:
+-			ADD_CONFIG_TERM(AUX_OUTPUT, aux_output, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(AUX_OUTPUT, aux_output,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_AUX_SAMPLE_SIZE:
+-			ADD_CONFIG_TERM(AUX_SAMPLE_SIZE, aux_sample_size, term->val.num);
++			ADD_CONFIG_TERM_VAL(AUX_SAMPLE_SIZE, aux_sample_size,
++					    term->val.num);
+ 			break;
+ 		default:
+ 			break;
+@@ -1322,7 +1340,7 @@ static int get_config_chgs(struct perf_pmu *pmu, struct list_head *head_config,
+ 	}
+ 
+ 	if (bits)
+-		ADD_CONFIG_TERM(CFG_CHG, cfg_chg, bits);
++		ADD_CONFIG_TERM_VAL(CFG_CHG, cfg_chg, bits);
+ 
+ #undef ADD_CONFIG_TERM
+ 	return 0;
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
