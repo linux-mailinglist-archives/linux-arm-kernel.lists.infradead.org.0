@@ -2,80 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE1131412B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 22:17:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC9DF1412BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 22:20:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UXIpHrWDtByuNO4hRzn6KVR3YGgmBehUfH9cf5DXJoM=; b=FecK7jdWk+6AAX
-	d1ppHh0AmLwhpbK7i5TCKY0z3TBquJlTAniHR8OcX8fUnN6xb6rDf840n7QYW6nVpU6ZOQ7Jun/L3
-	+pePjZpoXlgS4SZuRa0EvlYcGlYtxlyOAmOx4sU0Qne7dYOz56uNpGzmoQ2f3uMvaz7kpI7r3xuEZ
-	8aoqE95YRLxR0s964gdgi+9VJph8GIKkpkh32ecHdrH2nVxxWtzf1qRReRW6BjDiyYam3cWIpys8q
-	+AiQv+RFgrzuldvOD18l1eUvZroJoPbdXn4yHqFbSi+IdJu70Hd0UAFpCs+/ERwgPHZh4Bp+V3+50
-	uh2bSbNWa524eQETCBHg==;
+	List-Owner; bh=zC2sRUHLAsbRyywL3l1iJXYZ93x9dS4+PHwjfCp/Ijs=; b=SUVOjPxrMR1Sse
+	DWAhOzFdI4BES/fBHthafBKDtwcC6r43O1h8gCxMgild+0MI3iQFGDUpm6AVH/lHTJTmdq4X/jQRE
+	1RuCQtjsBXkkOePo3FpE+pvBqvVsL6+WqMXXhDE5EhPQ75JZp11EKyOQEE3yXLwzlEoGe/VpkxP+I
+	IV+SjH3lYFGq8ePIHgJWpuKchipV+V8JU6eq0kOdx1XgU7GvAD8rkJUCJCPrHhHH+9zqQaCtOGZg0
+	qJp1rHzVKaXf4JSYJVwaWMsM020qhloYLcGaheDFaEGlttl7IXFmpEYD61B52bYtOWeHTcLSIs0CR
+	u3CPGFWcipjYTvH+0nFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isYz1-0005Go-2t; Fri, 17 Jan 2020 21:16:47 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1isZ2h-0006u1-U9; Fri, 17 Jan 2020 21:20:35 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isYyp-0005Fm-AS
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 21:16:38 +0000
-Received: by mail-oi1-f194.google.com with SMTP id c16so23473838oic.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Jan 2020 13:16:31 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Tb+Ls2cqj87y+nWH3s10NH3pHi0E9uc7+PCEniFRuAI=;
- b=Yf9i72TBM0wtbAZ2M3xvypNUg5gYg45LHKdvaFDEEQ65BH4fZk9/2/HQuO2NQ5Zcjg
- d3R8nGOrIfnHhfHEbj3VmNSHiJ2uuWNjT0Dy2DoAqaHDYng7yWePFhOFmKZwRo3iWF3h
- T4QyUtDLslsHjaW0DTxY71neD3qL5EnO3tkTvGw6LmRmzlDTy3wSVgo42czLvkDrOY/i
- 9saSAfZjmLFC1vifxndoKDeU6u+f/v6BfCBqeDZBwa/GUV60P3/zpktiSjc7V6Lr6std
- WijP/jLGY1ioGf2Q52Ig523GEpxHPhxenotboudXznv7zzfpAG4gNWun+QvbMQyeUy7m
- dsfA==
-X-Gm-Message-State: APjAAAXbQbTOpfeG1q0IglQxwNx28i/oHA9HeyxBp8W4Ypu3i+FRxeB8
- F6rVj9NN8UrnEMKqcu57sg==
-X-Google-Smtp-Source: APXvYqwF25mTR3buvDsX53QQ4KB2QbYu9nBFkcNrSy0S7l9aiCyN1PGnncO9f4Jd8UVJ5WctnCKmpw==
-X-Received: by 2002:aca:815:: with SMTP id 21mr5003069oii.52.1579295790324;
- Fri, 17 Jan 2020 13:16:30 -0800 (PST)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id m3sm9255508otf.13.2020.01.17.13.16.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Jan 2020 13:16:29 -0800 (PST)
-From: Rob Herring <robh@kernel.org>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation support
-Date: Fri, 17 Jan 2020 15:16:28 -0600
-Message-Id: <20200117211628.27888-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1isZ2Z-0006tE-Kj
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 21:20:29 +0000
+X-Originating-IP: 90.65.92.102
+Received: from localhost (lfbn-lyo-1-1913-102.w90-65.abo.wanadoo.fr
+ [90.65.92.102]) (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id A4B4760002;
+ Fri, 17 Jan 2020 21:20:19 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] clk: at91: add at91sam9n12 pmc driver
+Date: Fri, 17 Jan 2020 22:20:17 +0100
+Message-Id: <20200117212017.20278-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_131635_361307_9C1C9D48 
-X-CRM114-Status: GOOD (  17.44  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200117_132027_952620_46FF238B 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,182 +61,287 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Eric Auger <eric.auger@redhat.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Arm SMMUv3.2 adds support for TLB range invalidate operations.
-Support for range invalidate is determined by the RIL bit in the IDR3
-register.
+Add a driver for the PMC clocks of the at91sam9n12 family.
 
-The range invalidate is in units of the leaf page size and operates on
-1-32 chunks of a power of 2 multiple pages. First, we determine from the
-size what power of 2 multiple we can use. Then we calculate how many
-chunks (1-31) of the power of 2 size for the range on the iteration. On
-each iteration, we move up in size by at least 5 bits.
-
-Cc: Eric Auger <eric.auger@redhat.com>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Cc: Will Deacon <will@kernel.org>
-Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: Joerg Roedel <joro@8bytes.org>
-Signed-off-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/iommu/arm-smmu-v3.c | 66 ++++++++++++++++++++++++++++++++++++-
- 1 file changed, 65 insertions(+), 1 deletion(-)
+Changes in v2:
+ - use nck for the number of peripheral clocks
+ - correct alignment
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index e91b4a098215..0ee561db7149 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -70,6 +70,9 @@
- #define IDR1_SSIDSIZE			GENMASK(10, 6)
- #define IDR1_SIDSIZE			GENMASK(5, 0)
- 
-+#define ARM_SMMU_IDR3			0xc
-+#define IDR3_RIL			(1 << 10)
+ drivers/clk/at91/Makefile      |   3 +-
+ drivers/clk/at91/at91sam9n12.c | 239 +++++++++++++++++++++++++++++++++
+ 2 files changed, 241 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/clk/at91/at91sam9n12.c
+
+diff --git a/drivers/clk/at91/Makefile b/drivers/clk/at91/Makefile
+index 3732241352ce..d467c6f8650a 100644
+--- a/drivers/clk/at91/Makefile
++++ b/drivers/clk/at91/Makefile
+@@ -15,7 +15,8 @@ obj-$(CONFIG_HAVE_AT91_H32MX)		+= clk-h32mx.o
+ obj-$(CONFIG_HAVE_AT91_GENERATED_CLK)	+= clk-generated.o
+ obj-$(CONFIG_HAVE_AT91_I2S_MUX_CLK)	+= clk-i2s-mux.o
+ obj-$(CONFIG_HAVE_AT91_SAM9X60_PLL)	+= clk-sam9x60-pll.o
+-obj-$(CONFIG_SOC_AT91SAM9) += at91sam9260.o at91sam9rl.o at91sam9x5.o
++obj-$(CONFIG_SOC_AT91SAM9) += at91sam9260.o at91sam9rl.o
++obj-$(CONFIG_SOC_AT91SAM9) += at91sam9n12.o at91sam9x5.o
+ obj-$(CONFIG_SOC_SAM9X60) += sam9x60.o
+ obj-$(CONFIG_SOC_SAMA5D4) += sama5d4.o
+ obj-$(CONFIG_SOC_SAMA5D2) += sama5d2.o
+diff --git a/drivers/clk/at91/at91sam9n12.c b/drivers/clk/at91/at91sam9n12.c
+new file mode 100644
+index 000000000000..844b2125d7cb
+--- /dev/null
++++ b/drivers/clk/at91/at91sam9n12.c
+@@ -0,0 +1,239 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <linux/clk-provider.h>
++#include <linux/mfd/syscon.h>
++#include <linux/slab.h>
 +
- #define ARM_SMMU_IDR5			0x14
- #define IDR5_STALL_MAX			GENMASK(31, 16)
- #define IDR5_GRAN64K			(1 << 6)
-@@ -327,9 +330,14 @@
- #define CMDQ_CFGI_1_LEAF		(1UL << 0)
- #define CMDQ_CFGI_1_RANGE		GENMASK_ULL(4, 0)
- 
-+#define CMDQ_TLBI_0_NUM			GENMASK_ULL(16, 12)
-+#define CMDQ_TLBI_RANGE_NUM_MAX		31
-+#define CMDQ_TLBI_0_SCALE		GENMASK_ULL(24, 20)
- #define CMDQ_TLBI_0_VMID		GENMASK_ULL(47, 32)
- #define CMDQ_TLBI_0_ASID		GENMASK_ULL(63, 48)
- #define CMDQ_TLBI_1_LEAF		(1UL << 0)
-+#define CMDQ_TLBI_1_TTL			GENMASK_ULL(9, 8)
-+#define CMDQ_TLBI_1_TG			GENMASK_ULL(11, 10)
- #define CMDQ_TLBI_1_VA_MASK		GENMASK_ULL(63, 12)
- #define CMDQ_TLBI_1_IPA_MASK		GENMASK_ULL(51, 12)
- 
-@@ -455,9 +463,13 @@ struct arm_smmu_cmdq_ent {
- 		#define CMDQ_OP_TLBI_S2_IPA	0x2a
- 		#define CMDQ_OP_TLBI_NSNH_ALL	0x30
- 		struct {
-+			u8			num;
-+			u8			scale;
- 			u16			asid;
- 			u16			vmid;
- 			bool			leaf;
-+			u8			ttl;
-+			u8			tg;
- 			u64			addr;
- 		} tlbi;
- 
-@@ -595,6 +607,7 @@ struct arm_smmu_device {
- #define ARM_SMMU_FEAT_HYP		(1 << 12)
- #define ARM_SMMU_FEAT_STALL_FORCE	(1 << 13)
- #define ARM_SMMU_FEAT_VAX		(1 << 14)
-+#define ARM_SMMU_FEAT_RANGE_INV		(1 << 15)
- 	u32				features;
- 
- #define ARM_SMMU_OPT_SKIP_PREFETCH	(1 << 0)
-@@ -856,13 +869,21 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
- 		cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
- 		break;
- 	case CMDQ_OP_TLBI_NH_VA:
-+		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_NUM, ent->tlbi.num);
-+		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_SCALE, ent->tlbi.scale);
- 		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
- 		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
-+		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TTL, ent->tlbi.ttl);
-+		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TG, ent->tlbi.tg);
- 		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
- 		break;
- 	case CMDQ_OP_TLBI_S2_IPA:
-+		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_NUM, ent->tlbi.num);
-+		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_SCALE, ent->tlbi.scale);
- 		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
- 		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
-+		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TTL, ent->tlbi.ttl);
-+		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_TG, ent->tlbi.tg);
- 		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_IPA_MASK;
- 		break;
- 	case CMDQ_OP_TLBI_NH_ASID:
-@@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
- {
- 	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
- 	struct arm_smmu_device *smmu = smmu_domain->smmu;
--	unsigned long start = iova, end = iova + size;
-+	unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
- 	int i = 0;
- 	struct arm_smmu_cmdq_ent cmd = {
- 		.tlbi = {
-@@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
- 		cmd.tlbi.vmid	= smmu_domain->s2_cfg.vmid;
- 	}
- 
-+	if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-+		/* Get the leaf page size */
-+		tg = __ffs(smmu_domain->domain.pgsize_bitmap);
++#include <dt-bindings/clock/at91.h>
 +
-+		/* Convert page size of 12,14,16 (log2) to 1,2,3 */
-+		cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
++#include "pmc.h"
 +
-+		/* Determine what level the granule is at */
-+		cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
++static const struct clk_master_characteristics mck_characteristics = {
++	.output = { .min = 0, .max = 133333333 },
++	.divisors = { 1, 2, 4, 3 },
++	.have_div3_pres = 1,
++};
 +
-+		num_pages = size / (1UL << tg);
++static u8 plla_out[] = { 0, 1, 2, 3, 0, 1, 2, 3 };
++
++static u16 plla_icpll[] = { 0, 0, 0, 0, 1, 1, 1, 1 };
++
++static const struct clk_range plla_outputs[] = {
++	{ .min = 745000000, .max = 800000000 },
++	{ .min = 695000000, .max = 750000000 },
++	{ .min = 645000000, .max = 700000000 },
++	{ .min = 595000000, .max = 650000000 },
++	{ .min = 545000000, .max = 600000000 },
++	{ .min = 495000000, .max = 555000000 },
++	{ .min = 445000000, .max = 500000000 },
++	{ .min = 400000000, .max = 450000000 },
++};
++
++static const struct clk_pll_characteristics plla_characteristics = {
++	.input = { .min = 2000000, .max = 32000000 },
++	.num_output = ARRAY_SIZE(plla_outputs),
++	.output = plla_outputs,
++	.icpll = plla_icpll,
++	.out = plla_out,
++};
++
++static u8 pllb_out[] = { 0 };
++
++static const struct clk_range pllb_outputs[] = {
++	{ .min = 30000000, .max = 100000000 },
++};
++
++static const struct clk_pll_characteristics pllb_characteristics = {
++	.input = { .min = 2000000, .max = 32000000 },
++	.num_output = ARRAY_SIZE(pllb_outputs),
++	.output = pllb_outputs,
++	.out = pllb_out,
++};
++
++static const struct {
++	char *n;
++	char *p;
++	u8 id;
++} at91sam9n12_systemck[] = {
++	{ .n = "ddrck", .p = "masterck", .id = 2 },
++	{ .n = "lcdck", .p = "masterck", .id = 3 },
++	{ .n = "uhpck", .p = "usbck",    .id = 6 },
++	{ .n = "udpck", .p = "usbck",    .id = 7 },
++	{ .n = "pck0",  .p = "prog0",    .id = 8 },
++	{ .n = "pck1",  .p = "prog1",    .id = 9 },
++};
++
++static const struct clk_pcr_layout at91sam9n12_pcr_layout = {
++	.offset = 0x10c,
++	.cmd = BIT(12),
++	.pid_mask = GENMASK(5, 0),
++	.div_mask = GENMASK(17, 16),
++};
++
++struct pck {
++	char *n;
++	u8 id;
++};
++
++static const struct pck at91sam9n12_periphck[] = {
++	{ .n = "pioAB_clk",  .id = 2, },
++	{ .n = "pioCD_clk",  .id = 3, },
++	{ .n = "fuse_clk",   .id = 4, },
++	{ .n = "usart0_clk", .id = 5, },
++	{ .n = "usart1_clk", .id = 6, },
++	{ .n = "usart2_clk", .id = 7, },
++	{ .n = "usart3_clk", .id = 8, },
++	{ .n = "twi0_clk",   .id = 9, },
++	{ .n = "twi1_clk",   .id = 10, },
++	{ .n = "mci0_clk",   .id = 12, },
++	{ .n = "spi0_clk",   .id = 13, },
++	{ .n = "spi1_clk",   .id = 14, },
++	{ .n = "uart0_clk",  .id = 15, },
++	{ .n = "uart1_clk",  .id = 16, },
++	{ .n = "tcb_clk",    .id = 17, },
++	{ .n = "pwm_clk",    .id = 18, },
++	{ .n = "adc_clk",    .id = 19, },
++	{ .n = "dma0_clk",   .id = 20, },
++	{ .n = "uhphs_clk",  .id = 22, },
++	{ .n = "udphs_clk",  .id = 23, },
++	{ .n = "lcdc_clk",   .id = 25, },
++	{ .n = "sha_clk",    .id = 27, },
++	{ .n = "ssc0_clk",   .id = 28, },
++	{ .n = "aes_clk",    .id = 29, },
++	{ .n = "trng_clk",   .id = 30, },
++};
++
++static void __init at91sam9n12_pmc_setup(struct device_node *np)
++{
++	struct clk_range range = CLK_RANGE(0, 0);
++	const char *slck_name, *mainxtal_name;
++	struct pmc_data *at91sam9n12_pmc;
++	const char *parent_names[6];
++	struct regmap *regmap;
++	struct clk_hw *hw;
++	int i;
++	bool bypass;
++
++	i = of_property_match_string(np, "clock-names", "slow_clk");
++	if (i < 0)
++		return;
++
++	slck_name = of_clk_get_parent_name(np, i);
++
++	i = of_property_match_string(np, "clock-names", "main_xtal");
++	if (i < 0)
++		return;
++	mainxtal_name = of_clk_get_parent_name(np, i);
++
++	regmap = syscon_node_to_regmap(np);
++	if (IS_ERR(regmap))
++		return;
++
++	at91sam9n12_pmc = pmc_data_allocate(PMC_MAIN + 1,
++					    nck(at91sam9n12_systemck),
++					    nck(at91sam9n12_periphck), 0);
++	if (!at91sam9n12_pmc)
++		return;
++
++	hw = at91_clk_register_main_rc_osc(regmap, "main_rc_osc", 12000000,
++					   50000000);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	bypass = of_property_read_bool(np, "atmel,osc-bypass");
++
++	hw = at91_clk_register_main_osc(regmap, "main_osc", mainxtal_name,
++					bypass);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = "main_rc_osc";
++	parent_names[1] = "main_osc";
++	hw = at91_clk_register_sam9x5_main(regmap, "mainck", parent_names, 2);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	at91sam9n12_pmc->chws[PMC_MAIN] = hw;
++
++	hw = at91_clk_register_pll(regmap, "pllack", "mainck", 0,
++				   &at91rm9200_pll_layout, &plla_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	hw = at91_clk_register_plldiv(regmap, "plladivck", "pllack");
++	if (IS_ERR(hw))
++		goto err_free;
++
++	hw = at91_clk_register_pll(regmap, "pllbck", "mainck", 1,
++				   &at91rm9200_pll_layout, &pllb_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = slck_name;
++	parent_names[1] = "mainck";
++	parent_names[2] = "plladivck";
++	parent_names[3] = "pllbck";
++	hw = at91_clk_register_master(regmap, "masterck", 4, parent_names,
++				      &at91sam9x5_master_layout,
++				      &mck_characteristics);
++	if (IS_ERR(hw))
++		goto err_free;
++
++	at91sam9n12_pmc->chws[PMC_MCK] = hw;
++
++	hw = at91sam9n12_clk_register_usb(regmap, "usbck", "pllbck");
++	if (IS_ERR(hw))
++		goto err_free;
++
++	parent_names[0] = slck_name;
++	parent_names[1] = "mainck";
++	parent_names[2] = "plladivck";
++	parent_names[3] = "pllbck";
++	parent_names[4] = "masterck";
++	for (i = 0; i < 2; i++) {
++		char name[6];
++
++		snprintf(name, sizeof(name), "prog%d", i);
++
++		hw = at91_clk_register_programmable(regmap, name,
++						    parent_names, 5, i,
++						    &at91sam9x5_programmable_layout);
++		if (IS_ERR(hw))
++			goto err_free;
 +	}
 +
- 	while (iova < end) {
- 		if (i == CMDQ_BATCH_ENTRIES) {
- 			arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
- 			i = 0;
- 		}
- 
-+		if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-+			/*
-+			 * On each iteration of the loop, the range is 5 bits
-+			 * worth of the aligned size remaining.
-+			 * The range in pages is:
-+			 *
-+			 * range = (num_pages & (0x1f << __ffs(num_pages)))
-+			 */
-+			unsigned long scale, num;
++	for (i = 0; i < ARRAY_SIZE(at91sam9n12_systemck); i++) {
++		hw = at91_clk_register_system(regmap, at91sam9n12_systemck[i].n,
++					      at91sam9n12_systemck[i].p,
++					      at91sam9n12_systemck[i].id);
++		if (IS_ERR(hw))
++			goto err_free;
 +
-+			/* Determine the power of 2 multiple number of pages */
-+			scale = __ffs(num_pages);
-+			cmd.tlbi.scale = scale;
++		at91sam9n12_pmc->shws[at91sam9n12_systemck[i].id] = hw;
++	}
 +
-+			/* Determine how many chunks of 2^scale size we have */
-+			num = (num_pages >> scale) & CMDQ_TLBI_RANGE_NUM_MAX;
-+			cmd.tlbi.num = num - 1;
++	for (i = 0; i < ARRAY_SIZE(at91sam9n12_periphck); i++) {
++		hw = at91_clk_register_sam9x5_peripheral(regmap, &pmc_pcr_lock,
++							 &at91sam9n12_pcr_layout,
++							 at91sam9n12_periphck[i].n,
++							 "masterck",
++							 at91sam9n12_periphck[i].id,
++							 &range);
++		if (IS_ERR(hw))
++			goto err_free;
 +
-+			/* range is num * 2^scale * pgsize */
-+			granule = num << (scale + tg);
++		at91sam9n12_pmc->phws[at91sam9n12_periphck[i].id] = hw;
++	}
 +
-+			/* Clear out the lower order bits for the next iteration */
-+			num_pages -= num << scale;
-+		}
++	of_clk_add_hw_provider(np, of_clk_hw_pmc_get, at91sam9n12_pmc);
 +
- 		cmd.tlbi.addr = iova;
- 		arm_smmu_cmdq_build_cmd(&cmds[i * CMDQ_ENT_DWORDS], &cmd);
- 		iova += granule;
-@@ -3449,6 +3508,11 @@ static int arm_smmu_device_hw_probe(struct arm_smmu_device *smmu)
- 	if (smmu->sid_bits <= STRTAB_SPLIT)
- 		smmu->features &= ~ARM_SMMU_FEAT_2_LVL_STRTAB;
- 
-+	/* IDR3 */
-+	reg = readl_relaxed(smmu->base + ARM_SMMU_IDR3);
-+	if (FIELD_GET(IDR3_RIL, reg))
-+		smmu->features |= ARM_SMMU_FEAT_RANGE_INV;
++	return;
 +
- 	/* IDR5 */
- 	reg = readl_relaxed(smmu->base + ARM_SMMU_IDR5);
- 
++err_free:
++	pmc_data_free(at91sam9n12_pmc);
++}
++/*
++ * The TCB is used as the clocksource so its clock is needed early. This means
++ * this can't be a platform driver.
++ */
++CLK_OF_DECLARE_DRIVER(at91sam9n12_pmc, "atmel,at91sam9n12-pmc",
++		      at91sam9n12_pmc_setup);
 -- 
-2.20.1
+2.24.1
 
 
 _______________________________________________
