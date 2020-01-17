@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27772140CCF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:41:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECE29140CD0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:41:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UkmdvZHSwRurNU6JywZX5lzFc9uuXYN3OFQUb3AGaDw=; b=J+07oow9SVZyWEZC4FoePDlZ0b
-	Oe8896v9gLh+4EocgxNnXhauM/NN/KYtmfirnjZYZRC6PTHU2AllBq1cC4s3yDXbqd+46lpb2yH4k
-	GppTBOeIhuWQY4S5Ky6CYGoe2Y81IxJUUR2bdBWlArrGYxl/XelU8t2o8nbuJdQ4X5cqTzjgRIJyg
-	NulAF/JEV90m+YUVj8J1XA1DBAN27O8/8NEfz/Zu+BdU4XiHdS3NKj8XTtN0yiM1PpatWmlzI4xQJ
-	LxYYhX0/H9o9jPrzjA8NcvgPM+IapQzMpOkAZ0CJ03eWBroBt9XEjYW9raI9PTtQUsfgtA3AgdwQM
-	5ZuGeWtg==;
+	bh=WQdOh8wcX8Ds8mcyX6d5Ge91iwWg0vB4vOnwWL20+S0=; b=hjYuoF8+p5yMDvU0qJK5N7nksc
+	/95eQwXE+PPnwQyl/xxMpEqhyGYS5KIyVkfVJnzXFrlHdgknRpr3nDeHx2kJJSP6+dUqIBA2pwekF
+	7ezZvC4Uj0IqAmtylL8g6KxJks+IO4wMk6MZznSsy27NEsuduryr53u6Lb64DWjJtnq1qhuYjYUdp
+	d5xbTTy/Cv7S0W8hb2z+vSht2iZUB0XbQ3xehFi8gU8py/S3KB4gL7QmLudSQTsK+zdt617AwOAND
+	pqdKQwpLcGcFemM8Se51wgL7ZbnJzra8rWoFGjKvfHquoGdTEmPO8tyADYQ20T2EkQmtBt5isYPGR
+	VuwwgdeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isSo4-0000r5-W0; Fri, 17 Jan 2020 14:41:04 +0000
+	id 1isSoJ-000160-60; Fri, 17 Jan 2020 14:41:19 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isSmA-0006lJ-6p
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:39:08 +0000
+ id 1isSmA-0006lV-RV
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:39:09 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id B7C65AC7D;
- Fri, 17 Jan 2020 14:39:03 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 5C30FACD6;
+ Fri, 17 Jan 2020 14:39:04 +0000 (UTC)
 From: Mian Yousaf Kaukab <ykaukab@suse.de>
 To: linux-arm-kernel@lists.infradead.org,
 	mathieu.poirier@linaro.org
-Subject: [PATCH RFC 06/15] coresight: combine bus and PMU init calls
-Date: Fri, 17 Jan 2020 15:40:01 +0100
-Message-Id: <20200117144010.11149-7-ykaukab@suse.de>
+Subject: [PATCH RFC 07/15] coresight: Makefile: regroup object files
+Date: Fri, 17 Jan 2020 15:40:02 +0100
+Message-Id: <20200117144010.11149-8-ykaukab@suse.de>
 X-Mailer: git-send-email 2.16.4
 In-Reply-To: <20200117144010.11149-1-ykaukab@suse.de>
 References: <20200117144010.11149-1-ykaukab@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_063906_392680_C271A8FF 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20200117_063907_082742_57514CAD 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,103 +73,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to initialize coresight bus at postcore level since
-coresight API is private now. Moreover, call etm_perf_init() from
-coresight_init() to combine bus and PMU into a single module. There
-are circular dependencies between them.
+Group object files based on the intended module structure.
 
 Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
 ---
- drivers/hwtracing/coresight/coresight-bus.c      | 41 ++++++++++++++++++------
- drivers/hwtracing/coresight/coresight-etm-perf.c |  3 +-
- drivers/hwtracing/coresight/coresight-etm-perf.h |  2 ++
- 3 files changed, 34 insertions(+), 12 deletions(-)
+ drivers/hwtracing/coresight/Makefile | 23 +++++++++++++++--------
+ 1 file changed, 15 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-bus.c b/drivers/hwtracing/coresight/coresight-bus.c
-index ef20f74c85fa..c2eaeeea98cd 100644
---- a/drivers/hwtracing/coresight/coresight-bus.c
-+++ b/drivers/hwtracing/coresight/coresight-bus.c
-@@ -1142,16 +1142,6 @@ int coresight_timeout(void __iomem *addr, u32 offset, int position, int value)
- 	return -EAGAIN;
- }
- 
--struct bus_type coresight_bustype = {
--	.name	= "coresight",
--};
--
--static int __init coresight_init(void)
--{
--	return bus_register(&coresight_bustype);
--}
--postcore_initcall(coresight_init);
--
- /*
-  * coresight_release_platform_data: Release references to the devices connected
-  * to the output port of this device.
-@@ -1336,3 +1326,34 @@ char *coresight_alloc_device_name(struct coresight_dev_list *dict,
- 	return name;
- }
- EXPORT_SYMBOL_GPL(coresight_alloc_device_name);
+diff --git a/drivers/hwtracing/coresight/Makefile b/drivers/hwtracing/coresight/Makefile
+index c7e8a183af14..c1e978397967 100644
+--- a/drivers/hwtracing/coresight/Makefile
++++ b/drivers/hwtracing/coresight/Makefile
+@@ -2,18 +2,25 @@
+ #
+ # Makefile for CoreSight drivers.
+ #
+-obj-$(CONFIG_CORESIGHT) += coresight-bus.o coresight-etm-perf.o coresight-platform.o
+-obj-$(CONFIG_CORESIGHT_LINK_AND_SINK_TMC) += coresight-tmc.o \
+-					     coresight-tmc-etf.o \
+-					     coresight-tmc-etr.o
 +
-+struct bus_type coresight_bustype = {
-+	.name	= "coresight",
-+};
++obj-$(CONFIG_CORESIGHT) += coresight.o
++coresight-y := coresight-bus.o coresight-etm-perf.o coresight-platform.o
 +
-+static int __init coresight_init(void)
-+{
-+	int ret;
++obj-$(CONFIG_CORESIGHT_LINK_AND_SINK_TMC) += coresight-tmc-etx.o
++coresight-tmc-etx-y := coresight-tmc.o coresight-tmc-etf.o coresight-tmc-etr.o
 +
-+	ret = bus_register(&coresight_bustype);
-+	if (ret)
-+		return ret;
+ obj-$(CONFIG_CORESIGHT_SINK_TPIU) += coresight-tpiu.o
+ obj-$(CONFIG_CORESIGHT_SINK_ETBV10) += coresight-etb10.o
+ obj-$(CONFIG_CORESIGHT_LINKS_AND_SINKS) += coresight-funnel.o \
+ 					   coresight-replicator.o
+-obj-$(CONFIG_CORESIGHT_SOURCE_ETM3X) += coresight-etm3x.o coresight-etm-cp14.o \
+-					coresight-etm3x-sysfs.o
+-obj-$(CONFIG_CORESIGHT_SOURCE_ETM4X) += coresight-etm4x.o \
+-					coresight-etm4x-sysfs.o
 +
-+	ret = etm_perf_init();
-+	if (ret)
-+		bus_unregister(&coresight_bustype);
++obj-$(CONFIG_CORESIGHT_SOURCE_ETM3X) += coresight-etm3.o
++coresight-etm3-y := coresight-etm3x.o coresight-etm-cp14.o \
++				coresight-etm3x-sysfs.o
 +
-+	return ret;
-+}
++obj-$(CONFIG_CORESIGHT_SOURCE_ETM4X) += coresight-etm4.o
++coresight-etm4-y := coresight-etm4x.o coresight-etm4x-sysfs.o
 +
-+static void __exit coresight_exit(void)
-+{
-+	/* TODO: perf_pmu_unregister() */
-+	bus_unregister(&coresight_bustype);
-+}
-+
-+module_init(coresight_init);
-+module_exit(coresight_exit);
-+
-+MODULE_DESCRIPTION("Coresight bus and pmu driver");
-+MODULE_LICENSE("GPL v2");
-diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.c b/drivers/hwtracing/coresight/coresight-etm-perf.c
-index 84f1dcb69827..1bd71c2f6802 100644
---- a/drivers/hwtracing/coresight/coresight-etm-perf.c
-+++ b/drivers/hwtracing/coresight/coresight-etm-perf.c
-@@ -579,7 +579,7 @@ void etm_perf_del_symlink_sink(struct coresight_device *csdev)
- 	csdev->ea = NULL;
- }
- 
--static int __init etm_perf_init(void)
-+int __init etm_perf_init(void)
- {
- 	int ret;
- 
-@@ -606,4 +606,3 @@ static int __init etm_perf_init(void)
- 
- 	return ret;
- }
--device_initcall(etm_perf_init);
-diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.h b/drivers/hwtracing/coresight/coresight-etm-perf.h
-index 015213abe00a..4b1c1f55fb46 100644
---- a/drivers/hwtracing/coresight/coresight-etm-perf.h
-+++ b/drivers/hwtracing/coresight/coresight-etm-perf.h
-@@ -82,4 +82,6 @@ static inline void *etm_perf_sink_config(struct perf_output_handle *handle)
- 
- #endif /* CONFIG_CORESIGHT */
- 
-+int __init etm_perf_init(void);
-+
- #endif
+ obj-$(CONFIG_CORESIGHT_STM) += coresight-stm.o
+ obj-$(CONFIG_CORESIGHT_CPU_DEBUG) += coresight-cpu-debug.o
+ obj-$(CONFIG_CORESIGHT_CATU) += coresight-catu.o
 -- 
 2.16.4
 
