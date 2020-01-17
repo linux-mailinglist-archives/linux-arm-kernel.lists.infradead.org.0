@@ -2,40 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC290140ACB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 14:34:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 693FA140AD2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 14:34:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ePlDWC4gbxCY6UIMfAEL7aovXGAgdfVKb0Z9f4c3TC0=; b=MMBN8XwtfgTrL6
-	cK+We4wXYOC1V09vfYJYuNyxAY4r1poy/ah0NprzV7W2S9Q5LCYY34odo5q8DRkwXI/St3KO4WZL1
-	9oDbRNr4B8JuwD4wsZbBpA+AIezKUXdqLXafPYbQbldYaan36YUK561tsDudqhXbavYkzU5BtCYKG
-	Ve95AWdJDH9oW6GAo1TjkKqJCdm0KrOQfBWBMuj/8NcH0Po4EqAWISSqVs7BsiebVXLLeJyrRDtRl
-	tXdCwRwMFXyKwZrSBMnVEqd8OSfgEfzet2ssE0fZj3zabaKOpfcBMyNyf4SgdTKmmk82IFKa6DriE
-	QvlPdqsuFap9g7lEKm9w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=E3i04mfSJas9yclBpMDBBotzKxn57YIiSZnFHODaxnY=; b=Cli
+	5IIxNh26Rsl/aF69xbbPeP7EJIhCeZo4RUpM6ufRMl8sMx3bB3KNejvTIhB7fYjlJZvVmOcbhmnRb
+	FFQQSpT2g+TyWt8Unbt+z6Sv7fKRTpULaT79JQJQobioAR9gTbXQeDUu7J8EJLtuVAoZZM0uG7XPp
+	JcBXxACNmBn+8qL+/ScDMzGW6oqwGt6rcyEKinPEVUDpLfTuReg+JzuLTw/oN+TPszJBONU+QBHl1
+	IioetsEXDygAKqH9vOJPy/2JlHpiHAI9n321VyhSSkMVa3i6HxObAoQ5tt0lcti2VlDCxCl5MYDcc
+	sVhi9Ezu4V7P783PejUl0fvs9q+EN8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isRlT-0003NC-Uv; Fri, 17 Jan 2020 13:34:19 +0000
-Received: from [179.97.37.151] (helo=sandy.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isRlN-0003Mu-JD; Fri, 17 Jan 2020 13:34:14 +0000
-Received: by sandy.ghostprotocols.net (Postfix, from userid 1000)
- id 3ABB611E4; Fri, 17 Jan 2020 10:34:09 -0300 (BRT)
-Date: Fri, 17 Jan 2020 10:34:09 -0300
-From: Arnaldo Carvalho de Melo <acme@redhat.com>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v6 2/2] perf parse: Copy string to perf_evsel_config_term
-Message-ID: <20200117133409.GB3323@redhat.com>
-References: <20200117055251.24058-1-leo.yan@linaro.org>
- <20200117055251.24058-2-leo.yan@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200117055251.24058-2-leo.yan@linaro.org>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.5.20 (2009-12-10)
+	id 1isRln-0003c8-Jx; Fri, 17 Jan 2020 13:34:39 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isRlb-0003Z7-Aj
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 13:34:32 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g17so22712729wro.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Jan 2020 05:34:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=vjAqTiagiAJuIt+I855EK59Bh9rAY4+VmlbULB7XjBU=;
+ b=nhcwFQHxSnz+dV9GprwXcD4oiIVNjDaE6b4Z1gVtwnuMdXgy9wBTv4mdfd5R+4O5C5
+ TAo7O/1EJo74ic9WeT/gzYaFf82RYCFD+QK5oLiM0pNOQ1pIT2V+QduYScl63zLxQ76z
+ SaNfuojAetepaWOS6Dsv/Pq0DGjxLzwnzJejxEN1mX/+kqoqPopYtjvGmXSew3k+ZovI
+ I2RfdMwx/ybbZDKeMJyZ+BTFcNlBzqdO3/bllaE0SsOp154uL+uFClwqUtx2vIXQOpEN
+ AWmk422EV226QO5mnUPx/bOGO3VBNW6O4os+r1vNboWXx6moiX80S2+YHNxweFTEFdkd
+ 5axw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=vjAqTiagiAJuIt+I855EK59Bh9rAY4+VmlbULB7XjBU=;
+ b=KlB+SlYxHMgB/FmyDc5ml9T5kopXaT7v0T3Gm1Pvgo7UqCcDnHoF3nay7udeum4hlf
+ IkcgJWVGQ76pElTzKFikfMiQg72n8SJqW9lFVM+N6O8etbV4eJfMEeT+OPy5v7g8/3iH
+ wQK8PNbPz6QifMXsKHaKn03Q7kgpOUhB99ZikYN0dT1L98TdDoo16acm06ikvJx2z+j1
+ qEl+iLdmB04zN+DqmHdCxUBlTt+llv7E2UH2x52oSBQCic9SJv4bEmZlqKqD2qea2ZLQ
+ Lv9EpJEzYjq1t6WwA7w2dy3+9qRJXF6dLwJNh+lC6/I72L3P/77X20yHGM5v0Y7gih8g
+ WxzQ==
+X-Gm-Message-State: APjAAAV7HiH70+tgptR54D9A5QZthjHKAKjBVBc+cwFLOgaYtpELHo7g
+ py2HO+WjxzOhD29P5lR3PzHf+A==
+X-Google-Smtp-Source: APXvYqxOLm+eEqyeR6CqcWIOgeXx2VIKnDcC4O+hh0rHWaq9NA0R4QfRWROMPXD9EnXM5xbkRw2jog==
+X-Received: by 2002:adf:f411:: with SMTP id g17mr2965001wro.89.1579268065504; 
+ Fri, 17 Jan 2020 05:34:25 -0800 (PST)
+Received: from glaroque-ThinkPad-T480.baylibre.local
+ (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id o1sm33875961wrn.84.2020.01.17.05.34.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 17 Jan 2020 05:34:24 -0800 (PST)
+From: Guillaume La Roque <glaroque@baylibre.com>
+To: khilman@baylibre.com,
+	devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: meson-sm1-sei610: add missing interrupt-names
+Date: Fri, 17 Jan 2020 14:34:23 +0100
+Message-Id: <20200117133423.22602-1-glaroque@baylibre.com>
+X-Mailer: git-send-email 2.17.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200117_053427_498478_104F8679 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,118 +91,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ian Rogers <irogers@google.com>,
- Andi Kleen <ak@linux.intel.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Adrian Hunter <adrian.hunter@intel.com>,
- linux-kernel@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
- Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, Jan 17, 2020 at 01:52:51PM +0800, Leo Yan escreveu:
-> perf with CoreSight fails to record trace data with command:
-> 
->   perf record -e cs_etm/@tmc_etr0/u --per-thread ls
->   failed to set sink "" on event cs_etm/@tmc_etr0/u with 21 (Is a
->   directory)/perf/
-> 
-> This failure is root caused with the commit 1dc925568f01 ("perf
-> parse: Add a deep delete for parse event terms").
-> 
-> The log shows, cs_etm fails to parse the sink attribution; cs_etm event
-> relies on the event configuration to pass sink name, but the event
-> specific configuration data cannot be passed properly with flow:
-> 
->   get_config_terms()
->     ADD_CONFIG_TERM(DRV_CFG, term->val.str);
->       __t->val.str = term->val.str;
->         `> __t->val.str is assigned to term->val.str;
-> 
->   parse_events_terms__purge()
->     parse_events_term__delete()
->       zfree(&term->val.str);
->         `> term->val.str is freed and assigned to NULL pointer;
-> 
->   cs_etm_set_sink_attr()
->     sink = __t->val.str;
->       `> sink string has been freed.
-> 
-> To fix this issue, in the function get_config_terms(), this patch
-> changes to use strdup() for allocation a new duplicate string rather
-> than directly assignment string pointer.
-> 
-> This patch addes a new field 'free_str' in the data structure
-> perf_evsel_config_term; 'free_str' is set to true when the union is used
-> as a string pointer; thus it can tell perf_evsel__free_config_terms() to
-> free the string.
-> 
-> Fixes: 1dc925568f01 ("perf parse: Add a deep delete for parse event terms")
-> Suggested-by: Jiri Olsa <jolsa@kernel.org>
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> Acked-by: Jiri Olsa <jolsa@kernel.org>
-> ---
->  tools/perf/util/evsel.c        | 2 ++
->  tools/perf/util/evsel_config.h | 1 +
->  tools/perf/util/parse-events.c | 7 ++++++-
->  3 files changed, 9 insertions(+), 1 deletion(-)
-> 
-> diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
-> index 549abd43816f..6fe9e28180e5 100644
-> --- a/tools/perf/util/evsel.c
-> +++ b/tools/perf/util/evsel.c
-> @@ -1265,6 +1265,8 @@ static void perf_evsel__free_config_terms(struct evsel *evsel)
->  
->  	list_for_each_entry_safe(term, h, &evsel->config_terms, list) {
->  		list_del_init(&term->list);
-> +		if (term->free_str)
-> +			free(term->val.str);
+add missing "host-wakeup interrupt names
 
-I'm replacing this with zfree, so that we can catch possible bugs where
-term gets used after freed, just like you do below, in ADD_CONFIG_TERM_STR()
+Fixes: 30388cc07572 ("arm64: dts: meson-sm1-sei610: add gpio bluetooth interrupt")
 
-Thanks,
+Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
->  		free(term);
->  	}
->  }
-> diff --git a/tools/perf/util/evsel_config.h b/tools/perf/util/evsel_config.h
-> index b4a65201e4f7..e026ab67b008 100644
-> --- a/tools/perf/util/evsel_config.h
-> +++ b/tools/perf/util/evsel_config.h
-> @@ -32,6 +32,7 @@ enum evsel_term_type {
->  struct perf_evsel_config_term {
->  	struct list_head      list;
->  	enum evsel_term_type  type;
-> +	bool		      free_str;
->  	union {
->  		u64	      period;
->  		u64	      freq;
-> diff --git a/tools/perf/util/parse-events.c b/tools/perf/util/parse-events.c
-> index f59f3c8da473..c01ba6f8fdad 100644
-> --- a/tools/perf/util/parse-events.c
-> +++ b/tools/perf/util/parse-events.c
-> @@ -1240,7 +1240,12 @@ do {								\
->  #define ADD_CONFIG_TERM_STR(__type, __val)			\
->  do {								\
->  	ADD_CONFIG_TERM(__type);				\
-> -	__t->val.str = __val;					\
-> +	__t->val.str = strdup(__val);				\
-> +	if (!__t->val.str) {					\
-> +		zfree(&__t);					\
-> +		return -ENOMEM;					\
-> +	}							\
-> +	__t->free_str = true;					\
->  } while (0)
->  
->  	struct parse_events_term *term;
-> -- 
-> 2.17.1
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+index a8bb3fa9fec9..cb1b48f5b8b1 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+@@ -593,6 +593,7 @@
+ 		compatible = "brcm,bcm43438-bt";
+ 		interrupt-parent = <&gpio_intc>;
+ 		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "host-wakeup";
+ 		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
+ 		max-speed = <2000000>;
+ 		clocks = <&wifi32k>;
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
