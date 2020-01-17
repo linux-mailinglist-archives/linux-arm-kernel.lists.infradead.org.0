@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00CEE140CAA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:37:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30BC5140CAC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:37:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0IeC/qdlOWm9k0UmEnTo+uTO/vUwrhezE8FfMLqmZjU=; b=CEFvBHjfCk2rLE
-	LBmDCWlqHLwEgV9Sl+GjX5WMImU5khjMJOBK1WECKzGrAj8UMy0LIL2RolxEz37LH4vC+WDG8rXFo
-	IwLgmuNBIk04IeNPK3fs+qzSVJSD7r52foeglIqkNw5iMfSsQq9vyPQYsdq0uEwcWhUdb/jM6ChGh
-	mTrlIuwNlrKJQQbgeUOMfGJhxeyQ8DnceQrJyUypfbFCel2UILkkyKUOAe2evh51DfGUJ9w/34pI1
-	eo5FGvTVpFoVgJ50tUHAhbqcTFX593fxYfj4ZUyYDjYQ6hEgbNHDNuwHQEOddmfghJA8sBhWKsnAC
-	R1xf1JICJm9WO+6AShdg==;
+	List-Owner; bh=V2n0dew+Ytx94zgmS5SkGfqn9IG7Fh312wq6YeNhLqo=; b=pXwpyZ3CBT8rq5
+	VvioLYtzWw727otrl7a2lezM/sejhIQxhkyxP+B5Fm17+/UKUk/rLW52tK+UgtRa2Lu71vrDsfmlu
+	4ZCAu5CsepSsa66lYV7eO6ydUzz+2lEl021we8psCv4rrxBslf6ymUWRkekXLM3TfYt+cce39I16Q
+	Mr1WoGPPbOpej/lji+CbheoxbzyXLF08JRJWzxa6h6rTpdF/ibe7ugI3jNF0LHYInZbhiqSHtkC3O
+	zrsJlI0kNxGrZwawuD0haeReRiblT9YCzq4puK3SvN32CZ2tEb/ZU+tsB3jXi5O6ABJ3PtULwNVu9
+	323T+tcDwOtdYn4wIH0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isSkR-00054d-MZ; Fri, 17 Jan 2020 14:37:19 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1isSkk-0005Ai-Ij; Fri, 17 Jan 2020 14:37:38 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isSkJ-0004zy-5q
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:37:12 +0000
+ id 1isSkG-0004zv-6N
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:37:13 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Jan 2020 06:37:06 -0800
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 17 Jan 2020 06:37:04 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,330,1574150400"; d="scan'208";a="220741690"
+X-IronPort-AV: E=Sophos;i="5.70,330,1574150400"; d="scan'208";a="373665561"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 17 Jan 2020 06:37:05 -0800
+ by orsmga004.jf.intel.com with ESMTP; 17 Jan 2020 06:37:03 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1isSkC-000D6W-Rr; Fri, 17 Jan 2020 22:37:04 +0800
-Date: Fri, 17 Jan 2020 22:36:36 +0800
+ id 1isSkB-000Cvj-3i; Fri, 17 Jan 2020 22:37:03 +0800
+Date: Fri, 17 Jan 2020 22:36:42 +0800
 From: kbuild test robot <lkp@intel.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: [arm-soc:qcom/dt] BUILD SUCCESS
- f489b13dae02a0217b9702913074526d3669bdc8
-Message-ID: <5e21c674.+IiZs2gSuuZY2tEZ%lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/fixes] BUILD SUCCESS
+ 70db729fe1b30af89e798d16c1045846753e5448
+Message-ID: <5e21c67a.ZxFg10QgjS1rmGu2%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_063711_233587_7C51E254 
-X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-CacheID: sfid-20200117_063708_286841_F3AD4DE3 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.0 (----)
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
@@ -74,19 +74,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  qcom/dt
-branch HEAD: f489b13dae02a0217b9702913074526d3669bdc8  arm64: dts: qcom: sdm845: move gpu zap nodes to per-device dts
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/fixes
+branch HEAD: 70db729fe1b30af89e798d16c1045846753e5448  MAINTAINERS: Add myself as the co-maintainer for Actions Semi platforms
 
-elapsed time: 625m
+elapsed time: 626m
 
 configs tested: 164
-configs skipped: 13
+configs skipped: 0
 
 The following configs have been built successfully.
 More configs may be tested in the coming days.
 
-ia64                                defconfig
-powerpc                             defconfig
 parisc                            allnoconfig
 parisc                            allyesonfig
 parisc                         b180_defconfig
@@ -133,6 +131,10 @@ x86_64               randconfig-e003-20200117
 i386                 randconfig-e001-20200117
 i386                 randconfig-e002-20200117
 i386                 randconfig-e003-20200117
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
 c6x                              allyesconfig
 c6x                        evmc6678_defconfig
 nios2                         10m50_defconfig
@@ -141,10 +143,6 @@ openrisc                    or1ksim_defconfig
 openrisc                 simple_smp_defconfig
 xtensa                       common_defconfig
 xtensa                          iss_defconfig
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-nds32                               defconfig
 x86_64                              fedora-25
 x86_64                                  kexec
 x86_64                                    lkp
@@ -161,6 +159,7 @@ arc                                 defconfig
 microblaze                      mmu_defconfig
 microblaze                    nommu_defconfig
 powerpc                           allnoconfig
+powerpc                             defconfig
 powerpc                       ppc64_defconfig
 powerpc                          rhel-kconfig
 x86_64               randconfig-f001-20200117
@@ -231,6 +230,7 @@ ia64                             alldefconfig
 ia64                             allmodconfig
 ia64                              allnoconfig
 ia64                             allyesconfig
+ia64                                defconfig
 x86_64               randconfig-b001-20200117
 x86_64               randconfig-b002-20200117
 x86_64               randconfig-b003-20200117
