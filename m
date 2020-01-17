@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F64A141332
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 22:34:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E8B9141331
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 22:34:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tL1EMHZ2amzl6rO7YmUgvty50kW7mJreeWbEg1EeV0M=; b=T+Ku2OmU0lauzv
-	KP0rSm9RCSW1GlmxoKZYnIc9GXfFvg4loUlPpzUytQmF6VR+wq5Vtg2PzXhT37kAlDN4bXJCmS1Yx
-	+HzE5CW/fSR+qJr/UPjq0DC+RDwGznkVLAnxi2ppHdYetuMWSjGdoYxiSA+jexaYl6kAXeAx6Ut9i
-	89lrOD1/rzeqLS6G9s/Qh8iayk8Lafd3MMSy69MgyvyQkTGvmDb8BedkhNHfGD0SANVTGLfnckX6L
-	TlxdZTBpD5oikwa2aoe+PlceXuUhTzY5Rnt8ZBu1ggujcqX/vk+sNxGSieNt80f/u3UgE6qIscYsL
-	ui75JxeDM5/WiRXkwvnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P2gdSPOTeZ285wwkl18Im6o0LkxLFEsVvAgLn5RinxA=; b=tWX6VdDPbjZucW
+	hLrCbqoTPqawuepZCWeg0aFTzpo8CLPI9RSPWKXDG1Sh2QVC82BCClZjh8PpdkrcZegsFK2O9tDMy
+	WS0FCRTxdcS4W1i7zp/JUGzp61wlqZVHsm4J2zAVGzQCuUA0xVRuFKCtSv2+QGq4VderM73vimPU+
+	jjbsLjuzUU9kLR041ow6VcWCrZ2Wr/3Hsw4IPe4XzG8uIhyoDKdZoUD+IDDZwtpCjDF+tsWGNmR82
+	2wphMpmD8qznWeX0X3DbgPeVWlpHZZ7IZouktcWB7GM7oCzKT09jqTxv66UhbDAzEHcWCoCXkRlbT
+	VGIkegt23tdu9L3cpGhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isZG2-0004Rz-2C; Fri, 17 Jan 2020 21:34:22 +0000
+	id 1isZFo-0004JO-4C; Fri, 17 Jan 2020 21:34:08 +0000
 Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isZFf-0004GJ-8x
+ id 1isZFf-0004GK-8X
  for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 21:34:01 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.west.internal (Postfix) with ESMTP id 769D25FF;
+ by mailout.west.internal (Postfix) with ESMTP id 777C8600;
  Fri, 17 Jan 2020 16:33:42 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
  by compute5.internal (MEProxy); Fri, 17 Jan 2020 16:33:43 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=SdKZFOHmIi4bNTeW6qOOV5SAlt
- jiwbYypCEPg9/G1Ok=; b=kni8y1/KswKEsd50YOqBrchNHB/lFc7Mf72oMhCplM
- 9FBU6DSdmpAOAVYrS+CBf6AH+ZFw6/9qTGmco9Zz1ygbD0jLVq7hH0hJ/0hymCwq
- t4MWw8Rtgdf3p6htEvca0w05UBvtZyXEjW71y53zlM8GBEqrUPX0W8Teudqz/dNU
- HKH/eEpia78OxBs13ZQuznoM8iJqo33i8/MbsuHOz+Q4D+vNa1Zhk7FMsETfWGJv
- vUtf9NqZkrW/7ucVep1/v2kEllu0f4wHQFyjf6Y3QR7ehqv+UHIYRO6Y7tg9Iqn2
- 6l1HUO82Dbq8/La+Dgu3Qq3GDRjxIQsXo3QSrGrHHoTA==
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=W569kOUG9Jg4u
+ fvUVlvaDUcPU/rpbROxxV7I6tE2DMU=; b=JvIdapIhf1PQ0pRxH7UCvK7t44Lbf
+ LABB5VlyC1GktUBq5umdIIizzmBTkHHfPhfDHBISW4PAh2iJUJ+7zO98NnXJsU00
+ Ey83KG/Q5zSzXlA5PK0TaF3wrTdjDS81YsQkzO+59pKGtmJVcyyGSo06xSoevIzS
+ h1JnjKgbMv0vuLhVqEKyB0XNMYlNBc68iUcsImoU6GIyoitc60zpOaavBgdcti/9
+ 7NKFZklCnzhlUzRq0737f8d1u9hn0glwmq5BqUUt83NVqCR6uizIrPAi4GwTar4E
+ CPwSZzPGjQSUnERY7zNMF7A/DXCTPw5rLcIaIBCtObwsWCcQb+ESbEECw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=SdKZFOHmIi4bNTeW6
- qOOV5SAltjiwbYypCEPg9/G1Ok=; b=uP5IsFwcxSDoIIrk7Ps3dTCImUsP3l/xx
- GqMnEBbOMsw20QWASJqp425AStjNtZnqH0lDs49eNyn1K92+8YPm/H5sLy9Wn7n9
- lRSRh0Xu9Pn8ukfmj/Kd8Aa4kg52mN2ik9zvsNvJ4Iv8EEJ6jUaq61zI8CjKj/oK
- mzn3+aN4+wAEwKDcedgI3sXll6LTDw5x7ngNF4AtW48CpeyPzRDLPu1grVHNP8Mr
- yVC5ZWmi1xQYmqjTCmrUloWZVryjXT8oujKL26h8Xi/FKp6br5LucZ+n/NtqQvD1
- AStBwudtZMnQSBpxZnwmlhQRxXfN9qJiOEMQHDky7mi9cosJUAzfA==
-X-ME-Sender: <xms:NSgiXv2nzkYfp6TI2mq6-4IMy2JeuJt7tlV5800rV8f6GVyIiLHGxw>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm1; bh=W569kOUG9Jg4ufvUVlvaDUcPU/rpbROxxV7I6tE2DMU=; b=jYXvSdN6
+ WrGmVN4Fdy1s0cGSqWusNtkGsjmcV8ZR286tt/NGrKG7YqiE1LEUrh+QgiwQ5CNE
+ Ogb97ruw/5rlRTFumaz73Fa+Zw6jp0haAKsx0TfvMF44aMV9f1JlT26udrvH7YXi
+ t7idtc2mnhkKuJHZbRcNB9QFBBNkimSHCXzf7QVXf+wJAA74PHljzkQKu7aQ1MdD
+ r6lhj/O2QHMrleUGe6qLPIlxrHT6gEkpuan2N4m1nH3sxyGBlgTqlCJmnqB27i6N
+ H9dTE47lkJUEUwqLQ2Lfajki9rfUbliKmQsmQPilvOa3SMB9eLmRAJrcfuO/x4CV
+ l6fc5X2MR6QonA==
+X-ME-Sender: <xms:NSgiXpfkIybxSwl0zX0HkxfywgfJ375v4nRWUJZ1Ssu8tPSQG6XO4Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrtdekgdehiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghlucfj
- ohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppeejtd
- drudefhedrudegkedrudehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghl
- sehshhholhhlrghnugdrohhrghenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:NSgiXr4AxUIzI8Gs_eOGX9qMswveztffU1Gl_acOG49z60IlolFGVw>
- <xmx:NSgiXiODqgYlZwo06AooX5np6DrWytsem5jw2fZxWvI9SG59yM7nsw>
- <xmx:NSgiXoBnYt59qBynLG87jpaiv_u7Lp61Lu5NKv_40r3ma7fimviXUw>
- <xmx:NigiXv9sX4AC5qVwLFRgbA86OL4fYwLlrKMmeNE0E-dKOqfYRRBvjA>
+ fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghl
+ ucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppe
+ ejtddrudefhedrudegkedrudehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhu
+ vghlsehshhholhhlrghnugdrohhrghenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:NSgiXlhAyq22NPKdoZ7Pjm4roHvCkcfrKmHg2KUq6oRsTRhJxgzg6w>
+ <xmx:NSgiXjJur8gvwdlC-9x0Dt1nUqRI47gZ5eQmW8il6aruv7aXEwtq2w>
+ <xmx:NSgiXi5f2UJUbn4ONVNqF0DBaLwvGaOoOJN8RmlXsPbDwm_v1M1P6w>
+ <xmx:NigiXomkNZ81FQQGPIhMxR7kgWs2iRrlv4F5ADujXVlZQ0xdbxrt1Q>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id EE9E48005C;
- Fri, 17 Jan 2020 16:33:40 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6376980059;
+ Fri, 17 Jan 2020 16:33:41 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 1/2] pinctrl: sunxi: Forward calls to irq_set_irq_wake
-Date: Fri, 17 Jan 2020 15:33:39 -0600
-Message-Id: <20200117213340.47714-1-samuel@sholland.org>
+Subject: [PATCH 2/2] pinctrl: sunxi: Mask non-wakeup IRQs on suspend
+Date: Fri, 17 Jan 2020 15:33:40 -0600
+Message-Id: <20200117213340.47714-2-samuel@sholland.org>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200117213340.47714-1-samuel@sholland.org>
+References: <20200117213340.47714-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_133359_359122_ADBBA602 
-X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-CacheID: sfid-20200117_133359_348714_030EB2BA 
+X-CRM114-Status: UNSURE (   8.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -110,61 +113,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pinctrl irqchip may be connected to an irqchip that implements the
-.irq_set_wake callback, such as the R_INTC on A31 and newer sunxi SoCs.
-In order for GPIOs to be able to trigger wakeup, the IRQ from the
-pinctrl to the upper irqchip must also be enabled for wakeup. Since the
-kernel's IRQ core already manages the "wake_depth" of each IRQ, no
-additional accounting is needed in the pinctrl driver.
+The pin controller hardware does not distinguish IRQs intended for
+wakeup from other IRQs, so we must mask non-wakeup IRQs in software to
+prevent inadvertent wakeups. This is accomplished at the irqchip level
+via the IRQCHIP_MASK_ON_SUSPEND flag.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- drivers/pinctrl/sunxi/pinctrl-sunxi.c | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
+ drivers/pinctrl/sunxi/pinctrl-sunxi.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/pinctrl/sunxi/pinctrl-sunxi.c b/drivers/pinctrl/sunxi/pinctrl-sunxi.c
-index 0cbca30b75dc..df79da76321e 100644
+index df79da76321e..24ff591efded 100644
 --- a/drivers/pinctrl/sunxi/pinctrl-sunxi.c
 +++ b/drivers/pinctrl/sunxi/pinctrl-sunxi.c
-@@ -13,6 +13,7 @@
- #include <linux/io.h>
- #include <linux/clk.h>
- #include <linux/gpio/driver.h>
-+#include <linux/interrupt.h>
- #include <linux/irqdomain.h>
- #include <linux/irqchip/chained_irq.h>
- #include <linux/export.h>
-@@ -1058,6 +1059,14 @@ static void sunxi_pinctrl_irq_ack_unmask(struct irq_data *d)
- 	sunxi_pinctrl_irq_unmask(d);
- }
- 
-+static int sunxi_pinctrl_irq_set_wake(struct irq_data *d, unsigned int on)
-+{
-+	struct sunxi_pinctrl *pctl = irq_data_get_irq_chip_data(d);
-+	u8 bank = d->hwirq / IRQ_PER_BANK;
-+
-+	return irq_set_irq_wake(pctl->irq[bank], on);
-+}
-+
- static struct irq_chip sunxi_pinctrl_edge_irq_chip = {
- 	.name		= "sunxi_pio_edge",
- 	.irq_ack	= sunxi_pinctrl_irq_ack,
-@@ -1066,7 +1075,7 @@ static struct irq_chip sunxi_pinctrl_edge_irq_chip = {
- 	.irq_request_resources = sunxi_pinctrl_irq_request_resources,
+@@ -1076,6 +1076,7 @@ static struct irq_chip sunxi_pinctrl_edge_irq_chip = {
  	.irq_release_resources = sunxi_pinctrl_irq_release_resources,
  	.irq_set_type	= sunxi_pinctrl_irq_set_type,
--	.flags		= IRQCHIP_SKIP_SET_WAKE,
-+	.irq_set_wake	= sunxi_pinctrl_irq_set_wake,
+ 	.irq_set_wake	= sunxi_pinctrl_irq_set_wake,
++	.flags		= IRQCHIP_MASK_ON_SUSPEND,
  };
  
  static struct irq_chip sunxi_pinctrl_level_irq_chip = {
-@@ -1081,7 +1090,8 @@ static struct irq_chip sunxi_pinctrl_level_irq_chip = {
- 	.irq_request_resources = sunxi_pinctrl_irq_request_resources,
- 	.irq_release_resources = sunxi_pinctrl_irq_release_resources,
+@@ -1092,6 +1093,7 @@ static struct irq_chip sunxi_pinctrl_level_irq_chip = {
  	.irq_set_type	= sunxi_pinctrl_irq_set_type,
--	.flags		= IRQCHIP_SKIP_SET_WAKE | IRQCHIP_EOI_THREADED |
-+	.irq_set_wake	= sunxi_pinctrl_irq_set_wake,
-+	.flags		= IRQCHIP_EOI_THREADED |
+ 	.irq_set_wake	= sunxi_pinctrl_irq_set_wake,
+ 	.flags		= IRQCHIP_EOI_THREADED |
++			  IRQCHIP_MASK_ON_SUSPEND |
  			  IRQCHIP_EOI_IF_HANDLED,
  };
  
