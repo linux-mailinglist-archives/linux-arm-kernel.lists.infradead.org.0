@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04F5A14115A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:59:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 416BB141196
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 20:23:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JFD7TbZUgCzy4DU7n6BD2EbSO3j1E4fMwY+vXbfLY3U=; b=L2Ogw6/2xj75h3
-	aTg+K+qA4MV2hd7cX16Iyp9tiWF//nVIxlfYuk6DHzreI09k8ZVI/O3P7/cXG7w104ti7zb2ypF9H
-	Ekd3Tom4cPb0pvZZRzvnRYVDQAEn3K44Uw+ghY4xHsjztFIvxVkOvb/UIRajc4ypILcuBJDAK27LK
-	BxhiY/FY56qZ2h3WsaXN9yoSadElu5AKDC8ztpohMQMgGhZ9zKbtGQFNmTmYm4o9udKyjNX0gc7Bu
-	hjn0O2+3S1Obv2f7K64awJaRptVu/M2dVf/IhClVmn56WDUKPZ+x2bkTUksqyHOcHkmAGJSXYlXAw
-	8WLaAXKtmYny1dwn/9dA==;
+	List-Owner; bh=x7jlM/gt0gzuAjg9wnKBhLNduYVD4a5TnSY/0kj85aA=; b=Lignt23RjeuBdO
+	ZjSX4uKq8zcrDPl+EntnQj9R2ETQcDO+Bzs/GTF2cw9GUD/oAhfOpd+9gvsPl8NZGPHvV51/LHk75
+	AxNopZMsWPgy6y3cvvB1EhtPAPn37WIw/uP5H4xbbLw1UK8K7uiqilw7XGg9fCVVBLd0HH50pN+9T
+	lRujWeWSXNEMegPNRAdtknz9khKlkFcB5DT+Yuw+Z7MlPVXixmircMTHDtRxHWWrxioHqjrUmOKaB
+	edG5cei6M0O8061+ZmoD18ubluIWav7gHyYqw/Hoe9mj+DY1ejvXmtku+Z1ivuzxMnFgit1/HITmF
+	HpS2KTvbCY4C5vcIjy9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isWq1-0007k0-Iy; Fri, 17 Jan 2020 18:59:21 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1isXD4-0001bT-9m; Fri, 17 Jan 2020 19:23:10 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isWpn-0007fc-84
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:59:09 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 34B2420026;
- Fri, 17 Jan 2020 19:59:05 +0100 (CET)
-Date: Fri, 17 Jan 2020 19:59:03 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Subject: Re: [PATCH 2/2] video: fbdev: wm8505fb: add COMPILE_TEST support
-Message-ID: <20200117185903.GB24722@ravnborg.org>
-References: <CGME20200116145810eucas1p11937b8ef56638752cb2fe501833c63fa@eucas1p1.samsung.com>
- <900c16b3-9306-7d17-f467-0f98bc95416a@samsung.com>
+ id 1isXCw-0001aq-TK
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 19:23:04 +0000
+Received: by mail-io1-xd41.google.com with SMTP id i11so27164258ioi.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Jan 2020 11:23:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=e2vu/lUJwux/k4RdZ1tPxjjQtt4V6F/TAup6l5gSJnc=;
+ b=vh2gbirwvq1DiMOuPyijgWfoO8nnHX6vBOHLiN4q0Ia2w8SCNnynpI7hTEqA3ytp/k
+ Ba7eAsmYyijOBlgUtqrxDH9zl7pl61QpbAXj7KKwjEDTFSpVk5BzqYGJMnEZDUSA5j9O
+ Eb9W78pEi6Gr+VpoRKjAqtWz3Sr5dYTX8ZoVaPLTgScnaZ2bB0xT4kN1g8LUzx0o3cA/
+ 8nJ8AJHHYJpMYo3YjwcuE/GOhDFMHPy68yA4t0HAzDe+eSa/bLi7u67jcsV8xWyTmjxo
+ 1UUtycvO1RVlMCewnV7qxEe1USyt/7iAAaPACa5JdOjrqxyQ8ohcOzyJhQDQW4tE/Oi0
+ rJCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=e2vu/lUJwux/k4RdZ1tPxjjQtt4V6F/TAup6l5gSJnc=;
+ b=gsnk6YRMaqfnVX5rAK6Fygu4Df2pa271LlcWrjaRxYWQuk/RDAZhU+RDMyiFzAQuED
+ 2plLRbfwUKokDzpmpEY29py9eeK92BlwfNyO/0tKjtDzfJwRphqmL5/7Hg/TRAflvoBi
+ EnSEL05/KqSEF4m6ydk3mFxPW1z1FLfLjuXO0oKL6midFSVQ5QQmfnov9gZvf60EVMZn
+ bIbGtvPGYs9TB12EKTPkZp+Stq5Mky+ioGd7gMA9xe5250F0wtPDj+0AGHUJdIzvb5de
+ fNC0Z/pEJQq104ZvmL/KCS1zk9sIwW7I4rV1QwxSVFDBfse52BLetKMD8w6Iq9MgFvl1
+ +zoQ==
+X-Gm-Message-State: APjAAAVDpFZ0gFx6d5mVOg02kdkeiKag5m0Ott28dTMltr8N3DV8BJdO
+ CtV/NsfFiiebpxwd142RvtjNuTsGZru0LEr7ZfayEg==
+X-Google-Smtp-Source: APXvYqzzh3ttpG23e1so0Co6lB12ueWkyIT4XvJkmwX9WC01HJ8uAzVg4UxNuFWBOM6ZAbUOR0kb3PC5Ljt4y1Ll5Ig=
+X-Received: by 2002:a05:6602:21c2:: with SMTP id
+ c2mr30095251ioc.278.1579288981727; 
+ Fri, 17 Jan 2020 11:23:01 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <900c16b3-9306-7d17-f467-0f98bc95416a@samsung.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=hD80L64hAAAA:8
- a=7gkXJVJtAAAA:8 a=e5mUnYsNAAAA:8 a=CiNoIfpPnEEG5fnF954A:9
- a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=Vxmtnl_E_bksehYqCbjh:22
+References: <9b365e76-e346-f813-d750-d7cfd0d16e4e@gmail.com>
+In-Reply-To: <9b365e76-e346-f813-d750-d7cfd0d16e4e@gmail.com>
+From: Olof Johansson <olof@lixom.net>
+Date: Fri, 17 Jan 2020 11:22:50 -0800
+Message-ID: <CAOesGMgFXQzHRQVQNwZU7-jO=eqWT5Dv82RRicMP-dKXwbTfvA@mail.gmail.com>
+Subject: Re: [GIT PULL] soc: mediatek: updates for v5.6
+To: Matthias Brugger <matthias.bgg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_105907_476215_A8BE34DD 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20200117_112303_010868_CA5F16DC 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,41 +88,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Tony Prisk <linux@prisktech.co.nz>,
- linux-fbdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org
+Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Mars Cheng <mars.cheng@mediatek.com>, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 03:58:08PM +0100, Bartlomiej Zolnierkiewicz wrote:
-> Add COMPILE_TEST support to wm8505fb driver for better compile
-> testing coverage.
-> 
-> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
-> ---
->  drivers/video/fbdev/Kconfig |    2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> Index: b/drivers/video/fbdev/Kconfig
-> ===================================================================
-> --- a/drivers/video/fbdev/Kconfig
-> +++ b/drivers/video/fbdev/Kconfig
-> @@ -1639,7 +1639,7 @@ config FB_VT8500
->  
->  config FB_WM8505
->  	bool "Wondermedia WM8xxx-series frame buffer support"
-> -	depends on (FB = y) && ARM && ARCH_VT8500
-> +	depends on (FB = y) && HAS_IOMEM && (ARCH_VT8500 || COMPILE_TEST)
->  	select FB_SYS_FILLRECT if (!FB_WMT_GE_ROPS)
->  	select FB_SYS_COPYAREA if (!FB_WMT_GE_ROPS)
->  	select FB_SYS_IMAGEBLIT
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+Hi,
+
+On Mon, Jan 13, 2020 at 2:18 AM Matthias Brugger <matthias.bgg@gmail.com> wrote:
+>
+> Hi Olof,
+> Hi ARnds,
+>
+> Please have a look on the following patches for mediatek soc drivers for v5.6
+>
+> I includes the stable branch v5.5-next/cmdq-stable which should also be merged
+> in the DRM tree. I'm not very familiar with providing a stable tree, although I
+> double-checked that in the pull request to the DRM tree the commit IDs are the
+> same, I thought it is worth noting.
+
+I'm a little confused as to how the dependencies are expected to line up here.
+
+Does your non-DRM contents rely on the DRM pieces? If so, you need
+them to be based on top of that branch to make sure they are
+bisectable, not merge the DRM branch in on top (since a bisect might
+land on a commit before the merge).
+
+But... I also don't see how there's any actual dependency here? There
+are a few cleanups, the DRM branch builds without them, and the branch
+when checked out right before the DRM merge in your pull request, also
+builds.
+
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
