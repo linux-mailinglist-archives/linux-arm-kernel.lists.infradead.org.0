@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 410C11407B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 11:15:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 797311407DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 11:23:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+T8/nfg/4HLu3++3Xvv2w25dX18bEDyqD9CEaIi059I=; b=uBA+wqikk6I8r5
-	VJoXQjAPt/L3t9nu2vIEWAGIAXCQ6HciSGxJoxJoZyzmV7D/HvslYcuY1M/NnIuchvni5kwzWmgG6
-	8CNUR0Wevr5P0JGxK1rz0jJqJEcjlVSZkEakO9zxyydenHIUsxiaiF93zy3IeZdxvMHFa+pT4kJgE
-	bgM0Ze5L+YcruNSUmElKbMV1yT/ZaLqB2yxK4ShYBkqXsafivfacb1vMsG1CNKIzEZXtftKlL20l5
-	VNjo6JfHCzaUGufCwHGNF7jsnTX/TC44H07IavZp6Iy0Su1dNbc0B6qbW9p2e5RTplnzEiNC37hMA
-	K0h9s1gWDnXqvPSY43xw==;
+	List-Owner; bh=qEUrC9NEG/1549/XoWGJLjVeiJGNxi4xlnPE95DfIx8=; b=M2E+rFa/AdqgKB
+	9SKknDq1tw9p7bpts+/vbVhV5tV2LcTDXujmwzCpBCLZICPPnDIsMJPrUkQZ8i0SGfRtQIebSYcgG
+	AOGPGY5Xg/jgI9sQ4FrZDET/fOGvM1k2cEQT3FLoGwLs/XEpKyMhZtW7syAn1TA3wMc+tggNLlXbw
+	IKP8ruViHph9Yf24h/YcyUfzhTJTYw8RGMTV304rLXiyEUcg/Q1of3D3IdUJDtONmWVXZcBXJk5Yz
+	hAR4++YBhwVnnoFHOvtI28n0qEetalH80TSl1zN5G8ACPkpvnkyQ0viZz70K7tjZDyieGihaD2EbH
+	fUfAfWYE6JwEhlO8qsvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isOes-0000OH-4p; Fri, 17 Jan 2020 10:15:18 +0000
+	id 1isOmh-0004ri-0R; Fri, 17 Jan 2020 10:23:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isOeE-0000Fb-Hb
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 10:14:47 +0000
+ id 1isOmG-0004nh-EE
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 10:23:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFA8E11D4;
- Fri, 17 Jan 2020 02:14:35 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BA9711D4;
+ Fri, 17 Jan 2020 02:22:55 -0800 (PST)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 14F113F68E; Fri, 17 Jan 2020 02:14:33 -0800 (PST)
-Date: Fri, 17 Jan 2020 10:14:32 +0000
+ C668F3F68E; Fri, 17 Jan 2020 02:22:53 -0800 (PST)
+Date: Fri, 17 Jan 2020 10:22:51 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v3 09/16] arm64: mask PAC bits of __builtin_return_address
-Message-ID: <20200117101432.GA26090@arrakis.emea.arm.com>
+Subject: Re: [PATCH v3 10/16] arm64: unwind: strip PAC from kernel addresses
+Message-ID: <20200117102251.GB26090@arrakis.emea.arm.com>
 References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
- <1576486038-9899-10-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-11-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1576486038-9899-10-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <1576486038-9899-11-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_021438_623156_3FDFC948 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20200117_022257_052055_F55EA320 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,43 +78,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 02:17:11PM +0530, Amit Daniel Kachhap wrote:
-> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-> new file mode 100644
-> index 0000000..3cb06f9
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/compiler.h
-> @@ -0,0 +1,20 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __ASM_COMPILER_H
-> +#define __ASM_COMPILER_H
-> +
-> +#if defined(CONFIG_ARM64_PTR_AUTH)
-> +
-> +/*
-> + * The EL0/EL1 pointer bits used by a pointer authentication code.
-> + * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
-> + */
-> +#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
+On Mon, Dec 16, 2019 at 02:17:12PM +0530, Amit Daniel Kachhap wrote:
+> From: Mark Rutland <mark.rutland@arm.com>
+> 
+> When we enable pointer authentication in the kernel, LR values saved to
+> the stack will have a PAC which we must strip in order to retrieve the
+> real return address.
+> 
+> Strip PACs when unwinding the stack in order to account for this.
+> 
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+> [Amit: Re-position ptrauth_strip_insn_pac, comment]
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 
-That's the current behaviour but I guess we could extend the mask to 63
-here without breaking anything since we don't expect instruction
-addresses to be tagged. I also think we should turn TCR_EL1.TBID0 on
-when we have PAC present (in a separate patch for both the mask change
-and the TCR_EL1 bit as this may be slightly more controversial, a
-theoretical ABI change).
-
-> +#define ptrauth_kernel_pac_mask()	(GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS))
-
-I think the kernel mask should be GENMASK_ULL(63, vabits_actual), no
-need to skip bit 55 since it's 1 already.
-
-With regards to VA_BITS (a constant), I'm not sure that's correct.
-ARMv8.2-LVA (52-bit VA) is an optional feature and I don't think PAC in
-8.3 mandates it.
-
--- 
-Catalin
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
