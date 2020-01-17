@@ -2,84 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E75241409EB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 13:46:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E7F81409EF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 13:48:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7/8ZVgyDR5+ePvbx5ZY2HQuzE6iThgnugxKxZksS1u8=; b=qUILFNrO5UwV4F
-	Wcd0jagFUXd/acWo8L9Gz/t5pt+DMq45MidZJoksNWiNHKjCi+FtutLQVG3S/1SyA+W4dxaVtTK5I
-	XN1a9p664uk3Qep3xgv4IKAZ5/WW9dQE/vc0jxnTMKnw9VCIfjP1HQzFcGwdSQUFNZyULpwElrgrO
-	AWP4IFZXnO9h9qSbm/z0r5s1NcCBnN12MJURY/zmAuX6cU6L3sNZOMovN/qEQaKZ/ZkpNfS0IFCKC
-	pokN1vkZIBQfWNM97OJm0PI+VKRrDq5Kau4E8Z+aknolKaChQoihcDWiJCmhkOJX0Tja0bLqBqbXJ
-	zTOgZlWnJJxBBS1oBj8w==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZOHOTG2IQd//cP0MMxHoTOLSq2zlZpEash3kmnRMx+8=; b=BR6gbkYxVRPxz3
+	775peBMXd4nKFp8HIlCH32P2gtLytLwCvZ+wDh+WqsQCpeGKmlzzB75OxAGcZcpUd1O1X7D17qnDe
+	/sg9OqVEZM07VaLr4i5LVn8aEd3ada7GKFOjl5DvKw7s0rRR4btNuLqFjVY6lzm4he/vd7GdrwpQr
+	CnyZm/D3GGJ3ccoQCANHDFjftXxHHMVe1pxvKMbAIPN1aJeLvFa5xFxtrYhmZmDk9ZfLDFnwdfWIt
+	7gTukKAav5Ny/O648z0tuMcCDlmz6f7C/4gW1m8Qy+kdeUPG7lyXisTQZZZQweF6V0uhTHbrIZXdP
+	cxdVfS0U8mFAj90UvFuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isR0d-0000Ov-6q; Fri, 17 Jan 2020 12:45:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1isR2j-0000nt-9X; Fri, 17 Jan 2020 12:48:05 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isR0J-0000NC-LM; Fri, 17 Jan 2020 12:45:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7BB2620730;
- Fri, 17 Jan 2020 12:45:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579265135;
- bh=52weG7mBhiLrAZ4hQCT4ua9dMLjf94HUuSpVb7mHV88=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=kzusg6VG5yderSNBUkZ/BHF1JljB4S4kBxcgq0DEjVZmhYx+eN43nAsl4J0jWqSoW
- fDuxyLxFC++iv8beFTJZTWvEEPE1i6e2c+RIrdyLr1nyPly3D01T+QhiczsWgDKsfj
- lNq95wnJg3KeYiJKK4TL7GZh/RaItUa8HwkA+VAA=
-Date: Fri, 17 Jan 2020 12:45:30 +0000
-From: Will Deacon <will@kernel.org>
-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Pavel Tatashin <pasha.tatashin@soleen.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, robh+dt@kernel.org,
- frowand.list@gmail.com, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
-Message-ID: <20200117124529.GD8199@willie-the-truck>
-References: <20191216021247.24950-3-takahiro.akashi@linaro.org>
- <20200108174839.GB21242@willie-the-truck>
- <20200109004654.GA28530@linaro.org>
- <20200109083254.GA7280@willie-the-truck>
- <20200110160549.GA25437@willie-the-truck>
- <CA+CK2bAy-vfoz3kgUjZB74Hrobgu-a8H4pv6RbA_tbq++NWz5g@mail.gmail.com>
- <20200113112105.GB2337@willie-the-truck>
- <20200114053825.GC28530@linaro.org>
- <20200116180857.GA22420@willie-the-truck>
- <20200117063832.GQ28530@linaro.org>
+ id 1isR2X-0000ma-75
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 12:47:57 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id d139so9436368wmd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Jan 2020 04:47:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=4AIztcY3HO804o+uGWV416JrJ3IWd8Gg68j+f/T3wAA=;
+ b=heLr+oEj0lBezFvfKejLFblvWBVaBftlmeAx/+IOs3N/ZdOERVRj4zueqdUk5bFtzT
+ GezbsW6p7aHVWBcf1EFU544zt/pLw1GTgYTVtyba/tDuMefmsQJKaeo98OmuO2EMtCDg
+ X8aJ14OOy3MXxR8BsOkgkq4qMhED7lphmwaOtZ1TVPCNceTZdbHl6BuFsPBEbOYgk90J
+ p2sevs2da9vOa4QspjCT+erxzcbt7kgvsAHtNyGBCqIXlSZe+bgzbz0e4y/v+gS0KJFh
+ 5HyWG+sSr+/AMczpesZRPrY5GGdFnd7jCLzGIhxzKODtvAC2JVt0+QhWJDU6LjeuaP/1
+ OILw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=4AIztcY3HO804o+uGWV416JrJ3IWd8Gg68j+f/T3wAA=;
+ b=uOjs0d8Cn7cY1e4t0oWdcOio3Kl5WfWConhsEkGU5Un/WS9enernvnti2Ex0X6EczQ
+ QR652P/5AFpO+mLZ0dnPacJWoUkXIGBvfRnjMRD30h5fjFHxK+wLBB8NJ0g+wDpJoHE+
+ ogbgfTXmuH1aa3wYf4caAiWgfhn5V1UArt2N8cEnNGkS58Idz9nEaZBcui1g3cyzcoPk
+ AQO+sOFbQ5KhQ6CkNXRRR7CzLdP+VerFLNoepjsC+b4ARTiQjuNWP42EINf9SjQEa4qw
+ Cw1AyhcMefra9VErp3d3r0Cb146yE94boa4hAtOnHnrV4NjULurpmwriRXsdfBMVOj6Z
+ e83w==
+X-Gm-Message-State: APjAAAVTtkeK+WvkKILs4DquKZlGsGwoIO8sYmhoAd6cdLY9UaBWVFSd
+ 2cQkSG2TkWD/fZKSGGr2FWkiqw==
+X-Google-Smtp-Source: APXvYqybqUAQP3C05bpGtcvSCfxv+HnCGnsO6Nh9o9/H0bjbUlJKjivvm/EdRZ/LsF65Fx8g6mJnAA==
+X-Received: by 2002:a7b:c3d2:: with SMTP id t18mr4578429wmj.90.1579265271409; 
+ Fri, 17 Jan 2020 04:47:51 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id z3sm33787275wrs.94.2020.01.17.04.47.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 17 Jan 2020 04:47:50 -0800 (PST)
+Message-ID: <5e21acf6.1c69fb81.3c552.affa@mx.google.com>
+Date: Fri, 17 Jan 2020 04:47:50 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200117063832.GQ28530@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Report-Type: build
+X-Kernelci-Kernel: v5.5-rc6-61-g2556a8d3927a
+Subject: arm64/for-kernelci build: 3 builds: 0 failed,
+ 3 passed (v5.5-rc6-61-g2556a8d3927a)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_044535_745534_D0971E35 
-X-CRM114-Status: GOOD (  29.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200117_044753_399685_CB935759 
+X-CRM114-Status: UNSURE (   3.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32b listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,111 +96,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 03:38:33PM +0900, AKASHI Takahiro wrote:
-> On Thu, Jan 16, 2020 at 06:08:58PM +0000, Will Deacon wrote:
-> > On Tue, Jan 14, 2020 at 02:38:26PM +0900, AKASHI Takahiro wrote:
-> > > On Mon, Jan 13, 2020 at 11:21:06AM +0000, Will Deacon wrote:
-> > > > On Fri, Jan 10, 2020 at 11:19:16AM -0500, Pavel Tatashin wrote:
-> > > > > On Fri, Jan 10, 2020 at 11:05 AM Will Deacon <will@kernel.org> wrote:
-> > > > > > On Thu, Jan 09, 2020 at 08:32:54AM +0000, Will Deacon wrote:
-> > > > > > > On Thu, Jan 09, 2020 at 09:46:55AM +0900, AKASHI Takahiro wrote:
-> > > > > > > > On Wed, Jan 08, 2020 at 05:48:39PM +0000, Will Deacon wrote:
-> > > > > > > > > On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
-> > > > > > > > > > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > index 12a561a54128..d24b527e8c00 100644
-> > > > > > > > > > --- a/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > +++ b/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
-> > > > > > > > > >  struct kimage_arch {
-> > > > > > > > > >         void *dtb;
-> > > > > > > > > >         unsigned long dtb_mem;
-> > > > > > > > > > +       /* Core ELF header buffer */
-> > > > > > > > > > +       void *elf_headers;
-> > > > > > > > > > +       unsigned long elf_headers_mem;
-> > > > > > > > > > +       unsigned long elf_headers_sz;
-> > > > > > > > > >  };
-> > > > > > > > >
-> > > > > > > > > This conflicts with the cleanup work from Pavel. Please can you check my
-> > > > > > > > > resolution? [1]
-> > > > > > > >
-> > > > > > > > I don't know why we need to change a type of dtb_mem,
-> > > > > > > > otherwise it looks good.
-> > > > > > > >
-> > > > > > > > (I also assume that you notice that kimage_arch is of no use for kexec.)
-> > > > > > >
-> > > > > > > Yes, that's why I'd like the resolution checked. If you reckon it's cleaner
-> > > > > > > to drop Pavel's patch altogether in light of your changes, we can do that
-> > > > > > > instead.
-> > > > > > >
-> > > > > > > Thoughts?
-> > > > > >
-> > > > > > Well, I've reverted the cleanup patch so please shout if you'd prefer
-> > > > > > something else.
-> > > > > 
-> > > > > As I understand, the only concern was the type change for dtb_mem.
-> > > > > This was one of the review comments for my patch
-> > > > > https://lore.kernel.org/lkml/20191204155938.2279686-21-pasha.tatashin@soleen.com/
-> > > > > 
-> > > > > (I believe it was from Marc Zyngier), I add a number of new fields,
-> > > > > and they all should be phys_addr_t, this is why I change dtb_mem to
-> > > > > phys_addr_t to be consistent.
-> > > > 
-> > > > Sure, but I've only queued the first part of your series and that cleanup
-> > > > patch doesn't make a lot of sense when applied against Akashi's work. I'm
-> > > > happy to take stuff on top if you both agree to it, but having half of the
-> > > > struct use unsigned long and the other half use phys_addr_t is messy.
-> > > 
-> > > Logically, whether dtb_mem is a "unsigned long" or phys_addr_t doesn't
-> > > matter unless the kernel is compiled under LLP64.
-> > > As far as the existing kexec code, either generic or arm64-specific,
-> > > is concerned, however, "unsigned long is widely used as a physical address
-> > > (For example, see kexec_buf definition) over the code.
-> > > 
-> > > (Oops, reboot_code_buffer_phys is a phys_addr_t :)
-> > > 
-> > > So as long as my kexec_file (and associated kdump) patch comes first
-> > > before Pavel's, I'd like to keep using "unsigned long".
-> > > Then, you can change "unsigned long" to phys_addr_t in your patch
-> > > for whatever reason it is.
-> > > 
-> > > Please note that, if you want to do that, it would be better to modify
-> > > not only kimage_arch but also all the occurrences of "unsigned long"
-> > > to phys_addr_t for maintaining the integrity.
-> > > 
-> > > In addition, in my kexec_file kdump code, I still believe that
-> > > "#ifdef CONFIG_KEXEC_FILE" should stay before the definition of
-> > > kimage_arch as kimage_arch is of no use for normal kexec code.
-> > > 
-> > > Again,
-> > > "#ifdef" statement may be moved forward once additional fields be
-> > > added later by Pavel's patch, say, "[PATCH v8 15/25] arm64: kexec:
-> > > move relocation function setup" for any reason.
-> > > 
-> > > I believe that this way gives us a logical and consistent view of
-> > > history of changes.
-> > > Make sense?
-> > 
-> > This is a bit much to stick in a merge commit, so I'll stick with the revert
-> > for now and you can send patches on top if you want it changed.
-> 
-> Are you asking me or Pavel? And on top of which branch?
-
-I'm not asking anything ;p
-
-But by "you" I mean both of you (the joys of ambiguous English). In other
-words, I've reverted the patch [1], but I'm happy to take other patches on
-top providing that you both agree with each other on what you want to do.
-
-Will
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/kexec/cleanup&id=1595fe299eb5a664c754eaf48bc178c0d664e1cf
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
+NS41LXJjNi02MS1nMjU1NmE4ZDM5MjdhKQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
+cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS41LXJj
+Ni02MS1nMjU1NmE4ZDM5MjdhLwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
+IERlc2NyaWJlOiB2NS41LXJjNi02MS1nMjU1NmE4ZDM5MjdhCkdpdCBDb21taXQ6IDI1NTZhOGQz
+OTI3YWQxNGJhNTJlNmJkNzIwM2NiODBjYWNhNDg5NWMKR2l0IFVSTDogZ2l0Oi8vZ2l0Lmtlcm5l
+bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4LmdpdApCdWlsdDogMSB1
+bmlxdWUgYXJjaGl0ZWN0dXJlCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKRGV0YWlsZWQgcGVy
+LWRlZmNvbmZpZyBidWlsZCByZXBvcnRzOgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbW9k
+Y29uZmlnIChhcm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBz
+ZWN0aW9uIG1pc21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmFsbG5vY29uZmlnIChh
+cm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1p
+c21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmRlZmNvbmZpZyAoYXJtNjQsIGdjYy04
+KSDigJQgUEFTUywgMCBlcnJvcnMsIDAgd2FybmluZ3MsIDAgc2VjdGlvbiBtaXNtYXRjaGVzCgot
+LS0KRm9yIG1vcmUgaW5mbyB3cml0ZSB0byA8aW5mb0BrZXJuZWxjaS5vcmc+CgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
