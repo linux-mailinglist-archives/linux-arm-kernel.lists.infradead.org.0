@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF65B140F38
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 17:44:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81C8E140F34
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 17:43:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/JCl4FtG9oBRpqGON6yPBhSRN4iOtsUNmHf9tjRE2sE=; b=mCzq/ZJ2PQNA0a
-	PFb0xFh3lJaHo+AqQP4m+DIBo+cBix0uc94+z5TTg6XFnLOgkFIoo7m4GFrVaHoPa348HavHIwdhD
-	s70KGmhte7uG2argB6UgVr618hs05KM0jerQ9Q8h1uQF9Rk9/89LZJ2yj+0QuI7YZ6yNGd/bClW5Y
-	07E09+IZJqdmOdrSG0cYYop7IlVB7l0RTw/10EcUdwe+nmZ63/b8MhMCuKcn+XuJWl1PwA7G1mLmy
-	RAFF7dkCHm+YRlW3xRggLSGlDaY3CHYMbl03n338QHcstIRixgsBoDzlez9ph9d/Y1No4ZUsOsfBb
-	+LTj5pzImhdz1RuRKr9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R+Mw3DXoE08VtjLakcUUNB3LxhGg4LZDQRYBC+6D7SQ=; b=Ef55LCNmDgkZ9/
+	LakTAvLfAbfuit6RIpYoQKNI6/NSgVI9K0m4bnJ4ZDCm75fS/wvrzbsfk2kTl7f+MThyT9cVAYt3f
+	CznFtigmKHfBAKzshq3RnCuUVgqKGattgjBQKs3oXg5hXU2uzmaP2ZWVY3Qcp3yeGdFn328YxhEBV
+	Rk70DuJHH7sqMxVvY3iS5y5chCEy/DSw0XSUxfODvFAlunhI1g+uIAozsE7YjsDe5PPVVWhKoserW
+	mUbi2sTpI0ILm3nC4r3Z6Dj5mmmnxGRI+6GQ+oVY+y5SyvGoZmqqWn6uzQpUlXLtJTzv8CT2uSwHv
+	Ml4zBYUZ/9/SZPieD1/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isUj8-0005js-78; Fri, 17 Jan 2020 16:44:06 +0000
+	id 1isUiq-0005Xw-Hi; Fri, 17 Jan 2020 16:43:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isUio-0005cS-4t
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 16:43:49 +0000
-Received: from dogfood.home (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr
- [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 26FED21582;
- Fri, 17 Jan 2020 16:43:43 +0000 (UTC)
+ id 1isUid-0005XT-SM
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 16:43:40 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4ED4821582;
+ Fri, 17 Jan 2020 16:43:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579279425;
- bh=IiJ6N7t5g/544HW//RaB69eXe3oLB3o2rtxnrI3LbX8=;
- h=From:To:Cc:Subject:Date:From;
- b=kQLkx+xR3VKJV19EKDldbqG5eaEFTIQbRO87amwtfHaVNEbuKpYRWSNgSRL6teTqf
- x87tfnyDN04/6yrf9SfrjRcDCJ2q3jtgotiV0AU71bzZXJLDff3cFM6vG1/J4ruMnX
- zVCtiHUIO7PWWOX6ReQ8AozC7ihtXtwVX+AdU7QI=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] crypto: arm/chacha - fix build failured when kernel mode NEON
- is disabled
-Date: Fri, 17 Jan 2020 17:43:18 +0100
-Message-Id: <20200117164318.21941-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ s=default; t=1579279415;
+ bh=G1GMCKz+KYWoTv7xwhaxZ9FOj/U6GgKahzcRoCDL7nc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qrzNAhIW/nxx4gbOV3nGdJTt3VzyzuBYtXqYF2dqxqNP0PcaBP63x1VuKAbyS8Mvm
+ tIaacv1AQpij7q9M39byXWsZVPJi0S5hKUDd31qlhWA8HZZHe0CeF5Q+wGglFl5q2e
+ kZQlBDYvMIPX9roIb4s/VYLqUmFePq6a4p0pOjRU=
+Date: Fri, 17 Jan 2020 16:43:31 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v11 0/2] ARMv8.5-RNG support
+Message-ID: <20200117164330.GB12507@willie-the-truck>
+References: <20200117152642.4905-1-broonie@kernel.org>
+ <20200117161744.GA12507@willie-the-truck>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200117161744.GA12507@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_084346_241978_CEB8BE42 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20200117_084335_997737_026E2B32 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,69 +77,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ardb@kernel.org>, Russell King <linux@armlinux.org.uk>,
- linux-crypto@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- herbert@gondor.apana.org.au
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the ARM accelerated ChaCha driver is built as part of a configuration
-that has kernel mode NEON disabled, we expect the compiler to propagate
-the build time constant expression IS_ENABLED(CONFIG_KERNEL_MODE_NEON) in
-a way that eliminates all the cross-object references to the actual NEON
-routines, which allows the chacha-neon-core.o object to be omitted from
-the build entirely.
-
-Unfortunately, this fails to work as expected in some cases, and we may
-end up with a build error such as
-
-  chacha-glue.c:(.text+0xc0): undefined reference to `chacha_4block_xor_neon'
-
-caused by the fact that chacha_doneon() has not been eliminated from the
-object code, even though it will never be called in practice.
-
-Let's fix this by adding some IS_ENABLED(CONFIG_KERNEL_MODE_NEON) tests
-that are not strictly needed from a logical point of view, but should
-help the compiler infer that the NEON code paths are unreachable in
-those cases.
-
-Fixes: b36d8c09e710c71f ("crypto: arm/chacha - remove dependency on generic ...")
-Reported-by: Russell King <linux@armlinux.org.uk>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm/crypto/chacha-glue.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/crypto/chacha-glue.c b/arch/arm/crypto/chacha-glue.c
-index 6ebbb2b241d2..6fdb0ac62b3d 100644
---- a/arch/arm/crypto/chacha-glue.c
-+++ b/arch/arm/crypto/chacha-glue.c
-@@ -115,7 +115,7 @@ static int chacha_stream_xor(struct skcipher_request *req,
- 		if (nbytes < walk.total)
- 			nbytes = round_down(nbytes, walk.stride);
- 
--		if (!neon) {
-+		if (!IS_ENABLED(CONFIG_KERNEL_MODE_NEON) || !neon) {
- 			chacha_doarm(walk.dst.virt.addr, walk.src.virt.addr,
- 				     nbytes, state, ctx->nrounds);
- 			state[12] += DIV_ROUND_UP(nbytes, CHACHA_BLOCK_SIZE);
-@@ -159,7 +159,7 @@ static int do_xchacha(struct skcipher_request *req, bool neon)
- 
- 	chacha_init_generic(state, ctx->key, req->iv);
- 
--	if (!neon) {
-+	if (!IS_ENABLED(CONFIG_KERNEL_MODE_NEON) || !neon) {
- 		hchacha_block_arm(state, subctx.key, ctx->nrounds);
- 	} else {
- 		kernel_neon_begin();
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBKYW4gMTcsIDIwMjAgYXQgMDQ6MTc6NDRQTSArMDAwMCwgV2lsbCBEZWFjb24gd3Jv
+dGU6Cj4gT24gRnJpLCBKYW4gMTcsIDIwMjAgYXQgMDM6MjY6NDBQTSArMDAwMCwgTWFyayBCcm93
+biB3cm90ZToKPiA+IFRoaXMgc2VyaWVzIGlzIGJhc2VkIG9uIFJpY2hhcmQgSGVuZGVyc29uJ3Mg
+cHJldmlvdXMgdjcsIGl0IGFkZHJlc3Nlcwo+ID4gcmV2aWV3IGNvbW1lbnRzIGZyb20gdGhhdCB2
+ZXJzaW9uIGJ5IGRyb3BwaW5nIHRoZSBib290IHRpbWUgUk5HCj4gPiBzdXBwb3J0IGFuZCBhZGRz
+IGEgbmV3IGNoYW5nZSB0aGF0IHVzZXMgdGhlIHY4LjUtUk5HIGV4dGVuc2lvbiB0bwo+ID4gc2Vl
+ZCBLQVNMUiB3aGVuIEFSQ0hfUkFORE9NIGlzIGVuYWJsZWQuICBUaGUgYm9vdCB0aW1lIHN1cHBv
+cnQKPiA+IHdpbGwgYmUgcmUtYWRkZWQgbGF0ZXIsIHRoZXJlIGFyZSBhd2t3YXJkIHBvdGVudGlh
+bCBpbnRlcmFjdG9ucwo+ID4gd2l0aCBDUFUgZmVhdHVyZSBlbnVtZXJhdGlvbiB3aGljaCBuZWVk
+IGEgYml0IG1vcmUgdGhvdWdodC4KPiAKPiBUaGFua3MsIGJ1dCB0aGlzIGZhaWxzIGFuIGFsbG1v
+ZGNvbmZpZyBidWlsZCBmb3IgbWU6Cj4gCj4gCj4gYXJjaC9hcm02NC9rZXJuZWwva2FzbHIuYzog
+SW4gZnVuY3Rpb24g4oCYa2FzbHJfZWFybHlfaW5pdOKAmToKPiBhcmNoL2FybTY0L2tlcm5lbC9r
+YXNsci5jOjEyNzo2OiBlcnJvcjogaW1wbGljaXQgZGVjbGFyYXRpb24gb2YgZnVuY3Rpb24g4oCY
+X19lYXJseV9jcHVfaGFzX3JuZHLigJk7IGRpZCB5b3UgbWVhbiDigJhfX2Vhcmx5X3Bmbl90b19u
+aWTigJk/IFstV2Vycm9yPWltcGxpY2l0LWZ1bmN0aW9uLWRlY2xhcmF0aW9uXQo+ICAgaWYgKF9f
+ZWFybHlfY3B1X2hhc19ybmRyKCkpIHsKPiAgICAgICBefn5+fn5+fn5+fn5+fn5+fn5+fgo+ICAg
+ICAgIF9fZWFybHlfcGZuX3RvX25pZAo+IGNjMTogc29tZSB3YXJuaW5ncyBiZWluZyB0cmVhdGVk
+IGFzIGVycm9ycwo+IAo+IAo+IChubyBnY2MsIHdlIGRpZG4ndCBtZWFuIHRoYXQhKQoKQWxzbyBm
+YWlscyBvbiBkZWZjb25maWcsIHNvIHNob3VsZCBzYXZlIHlvdSBhIGJpdCBvZiB0aW1lLgoKV2ls
+bAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
