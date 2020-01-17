@@ -2,89 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38E1C140921
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 12:38:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00490140941
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 12:50:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TtntVE4q3hGmaJUIWUEF69doF1kHtaFj42siYqzWZME=; b=j+56WrVcoRL+1q
-	w0+xJ7aZ26u38Ah24eZHXXJXeUV9zZNn1mtMpUQPqXuoygbtgHheoTWfvLUneW/e1B64d6pTbkE0U
-	yjhsYWYWUthUGD60E37VfubXMQneedeohPyaq0/BbnzYkqdnxEGosDWpzznDmsBAt3MzFKmtj/YV0
-	D1JCRgT9+nlugig7JnhgIlRDZqNp2vtcUyoMZNOiEWJO2L1Nz0ujMvTUt9Cdcoc/mmZ4EN4XzuGXP
-	zXla8LfG4Q882qZHfbYshIQm1LIKW9MI+J38cViZBdDsCJEtEC+Iwq2tXoanpSHP1STkZ61d+ssKl
-	6bsHNybadkQZ2P2/k58g==;
+	List-Owner; bh=QL9c9ARNOWOgmqWIEy9brJ/b9S1ss4JEUeQ0nfH+Igw=; b=BWGLjaYa9DdUmN
+	VrwoJJyIj8O4SI3qPTO/16MBKLm8cW+3rj9KVoSyB11db9xOwT+aJy0aIGb+BYAroczYelwLIdvTB
+	rs+744OHMOI4j7/k3zb2Z3wjRbQ1IjcbqI/YuRJLau9JQ35WjjL9eVMdw7dP7gDFrHwGkt2le8FGC
+	Rr4s6E4VSkPMKeXXuebw1e3dxPQn//PLziE1l0/xeemjGfd2LIO71WsFmHsz4K9rUmNNidt3hBxUO
+	Keovt4ns+6ofv9pc7l9gRY1qyeSQHMgDWaRf+DIa8rjLCav1RkOGwwEztFDoJ7gyhDHxINrMiNXTv
+	uXZMhIsGlpnh5XDfAfJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isPxO-0003ok-Tj; Fri, 17 Jan 2020 11:38:30 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isPwQ-00035F-44
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 11:37:33 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Ar/Uh1AKX+S7I+8FoBT0VDPfF3fi+zLtVHMeX4UWJyHGp9Gqu9ifdw7aXJWr+EWP+Y3Tu6QaZb
- JAN7qbaiHkfhWX6/dhgLywpSPKt0tLElvuJ2q9hU99sUyrL8SBS4qnCcEIkoj6LaH833tfr3yF
- GgvZ1UmNV/8m9WYhBgF5ngkpVzlcydfVb6RWNGK+ZQNEByvYrBPyKy1GTUvbz8kJX8EKkOid+W
- FEEWSwi+8IB5nN0gb1w+5NnzV/f6qJH2tYbuFkY+OL5tNS5UIIG/Ax3QwI+i/cd9kxZY9nHeUh
- GaY=
-X-IronPort-AV: E=Sophos;i="5.70,330,1574146800"; d="scan'208";a="63631936"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 17 Jan 2020 04:37:15 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 17 Jan 2020 04:37:14 -0700
-Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 17 Jan 2020 04:37:11 -0700
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-To: <mturquette@baylibre.com>, <sboyd@kernel.org>,
- <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
- <ludovic.desroches@microchip.com>
-Subject: [PATCH 4/4] clk: at91: usb: introduce num_parents in driver's
- structure
-Date: Fri, 17 Jan 2020 13:36:49 +0200
-Message-ID: <1579261009-4573-5-git-send-email-claudiu.beznea@microchip.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1579261009-4573-1-git-send-email-claudiu.beznea@microchip.com>
-References: <1579261009-4573-1-git-send-email-claudiu.beznea@microchip.com>
+	id 1isQ8j-0008D0-WD; Fri, 17 Jan 2020 11:50:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1isQ8M-0008CQ-7Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 11:49:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7480C11D4;
+ Fri, 17 Jan 2020 03:49:46 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ AFE053F6C4; Fri, 17 Jan 2020 03:49:44 -0800 (PST)
+Date: Fri, 17 Jan 2020 11:49:42 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v3 15/16] arm64: compile the kernel with ptrauth return
+ address signing
+Message-ID: <20200117114942.GG26090@arrakis.emea.arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-16-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1576486038-9899-16-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_033730_238930_62D803D8 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200117_034950_359213_2AB5F20A 
+X-CRM114-Status: GOOD (  23.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,53 +63,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Claudiu Beznea <claudiu.beznea@microchip.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SAM9X60 USB clock may have up to 3 parents. Save the number of parents in
-driver's data structure and validate against it when setting parent.
+On Mon, Dec 16, 2019 at 02:17:17PM +0530, Amit Daniel Kachhap wrote:
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 06b5025..f0798b7 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1466,6 +1466,7 @@ config ARM64_PTR_AUTH
+>  	bool "Enable support for pointer authentication"
+>  	default y
+>  	depends on !KVM || ARM64_VHE
+> +	depends on GCC_VERSION >= 70000 || CLANG_VERSION >= 80000
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
----
- drivers/clk/at91/clk-usb.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Please don't add checks on compiler versions. Use cc-option when you
+need a certain option rather than guessing which compiler version
+supports it. People may do backports of different features, so the
+version is not relevant.
 
-diff --git a/drivers/clk/at91/clk-usb.c b/drivers/clk/at91/clk-usb.c
-index c0895c993cce..31d5c45e30d7 100644
---- a/drivers/clk/at91/clk-usb.c
-+++ b/drivers/clk/at91/clk-usb.c
-@@ -25,6 +25,7 @@ struct at91sam9x5_clk_usb {
- 	struct clk_hw hw;
- 	struct regmap *regmap;
- 	u32 usbs_mask;
-+	u8 num_parents;
- };
- 
- #define to_at91sam9x5_clk_usb(hw) \
-@@ -110,7 +111,7 @@ static int at91sam9x5_clk_usb_set_parent(struct clk_hw *hw, u8 index)
- {
- 	struct at91sam9x5_clk_usb *usb = to_at91sam9x5_clk_usb(hw);
- 
--	if (index > 1)
-+	if (index >= usb->num_parents)
- 		return -EINVAL;
- 
- 	regmap_update_bits(usb->regmap, AT91_PMC_USB, usb->usbs_mask, index);
-@@ -215,6 +216,7 @@ _at91sam9x5_clk_register_usb(struct regmap *regmap, const char *name,
- 	usb->hw.init = &init;
- 	usb->regmap = regmap;
- 	usb->usbs_mask = usbs_mask;
-+	usb->num_parents = num_parents;
- 
- 	hw = &usb->hw;
- 	ret = clk_hw_register(NULL, &usb->hw);
+>  	help
+>  	  Pointer authentication (part of the ARMv8.3 Extensions) provides
+>  	  instructions for signing and authenticating pointers against secret
+> @@ -1473,11 +1474,17 @@ config ARM64_PTR_AUTH
+>  	  and other attacks.
+>  
+>  	  This option enables these instructions at EL0 (i.e. for userspace).
+> -
+>  	  Choosing this option will cause the kernel to initialise secret keys
+>  	  for each process at exec() time, with these keys being
+>  	  context-switched along with the process.
+>  
+> +	  If the compiler supports the -mbranch-protection or
+> +	  -msign-return-address flag (e.g. GCC 7 or later), then this option
+> +	  will also cause the kernel itself to be compiled with return address
+> +	  protection. In this case, and if the target hardware is known to
+> +	  support pointer authentication, then CONFIG_STACKPROTECTOR can be
+> +	  disabled with minimal loss of protection.
+> +
+>  	  The feature is detected at runtime. If the feature is not present in
+>  	  hardware it will not be advertised to userspace/KVM guest nor will it
+>  	  be enabled. However, KVM guest also require VHE mode and hence
+> @@ -1488,6 +1495,18 @@ config ARM64_PTR_AUTH
+>  	  have address auth and the late CPU has then system panic will occur.
+>  	  On such a system, this option should not be selected.
+>  
+> +config CC_HAS_BRANCH_PROT_PAC_RET
+> +	# GCC 9 or later, clang 8 or later
+> +	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
+> +
+> +config CC_HAS_SIGN_RETURN_ADDRESS
+> +	# GCC 7, 8
+> +	def_bool $(cc-option,-msign-return-address=all)
+> +
+> +config AS_HAS_PAC
+> +	def_bool $(as-option,-Wa,-march=armv8.3-a)
+> +	depends on CC_IS_CLANG
+
+First, as I commented on the previous patch, clang seems to ignore -Wa,
+so you can write whatever you want after it and it seems to be always
+true.
+
+Second, if you need the assembler to support certain features, it needs
+to be checked irrespective of whether the compiler is gcc or clang.
+Binutils is a separate package.
+
+> +
+>  endmenu
+>  
+>  config ARM64_SVE
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index 1fbe24d..6a1da59 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -72,6 +72,17 @@ stack_protector_prepare: prepare0
+>  					include/generated/asm-offsets.h))
+>  endif
+>  
+> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
+> +# to generate them and consequently to break the single image contract we pass it
+> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
+> +# this option is not used.
+> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+> +KBUILD_CFLAGS += $(branch-prot-flags-y)
+> +endif
+
+So, does this actually work with clang?
+
+Please check the clang issue in case I'm mistaken. Otherwise, you could
+use as-instr as in this patch:
+
+https://lore.kernel.org/linux-arm-kernel/20200115113008.3334-3-catalin.marinas@arm.com/
+
+Also Will had a preference for warning during build if the user
+requested a feature in .config (i.e. PAC) but the compiler/assembler
+does not support it (that was for the LSE patch above). You could
+attempt something similar with this patch.
+
 -- 
-2.7.4
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
