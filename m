@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DF7414147B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 23:53:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A57C14147C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 23:53:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=i4JvMXqxnRSHGzjEYUkInGQjSuKuCGlHtPpm/jy9nyU=; b=oSiwhUyEQRfywuX9YsfdI6fpAp
-	uBk5NKVPf+HWc1zubLDv7pDP541BT7XG3D5mxn6wR5xlw5jKSAGPZPnX/jXpK+kfmzEKg9GTKB+J3
-	HehdPmhtLJZHd7xrearlQ9Joo3OSwbOomPjblWYO1Wb96KABht0rVSHkm3FdK9CS+J/uYfHzndeMR
-	jx7Md/a6tnBilOgu62K5tsYzXyExlf3Wip9sS2MHVr6ztlsntEwjH8gvVwzj9mJnUFbop/8yMFjaJ
-	w0zRGZdenAbPWodwbMzBz1Rfe6AdCy4ug3JvtHXxx5CWW1MqqKBOnkgUzYBT/kVcXHQ27q0Kf7qBg
-	v8FdfZ0g==;
+	bh=bxTc0bqsjShGJG+LCxU5vymaSTLfOuUwr16sC850+9M=; b=ED88ybf2JQmWdcL+jTUCJ942TQ
+	lkcZ3jUKPYWgARjxn9HQGpAUBwfxcWkg82Ui4mrDzDn49RkRkSQAX0fa+l/mDxzs1L0HTO58QH4vs
+	dIFJYq2iHUfMUM1asJWq5J2AbsJKyf3OcEJOLeJsyU0mvsTl3M+9bN4qp2FmioE2m1sPzNg3vzePj
+	SHz2ZEnRf8X/Zi45mGobMzyo1vaOoaQzDRuUc+rZawq8guyvCtb9mt2HQx/OMKe83ZEYJzapCAZdR
+	HOnZuJS2LJ8oEh4CM/bzlSGB8vYr4FFsbsKCvXK7v8yVoaHhQsH3mBf0grMFhg6zp0W2bDHAPOgyN
+	CpiW6NKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isaTo-0008W2-Gw; Fri, 17 Jan 2020 22:52:40 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1isaU8-0000Js-6c; Fri, 17 Jan 2020 22:53:00 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isaT5-000853-6T
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 22:51:57 +0000
-Received: by mail-wm1-x343.google.com with SMTP id w5so10424224wmi.1
+ id 1isaTC-0008B3-9K
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 22:52:04 +0000
+Received: by mail-wr1-x444.google.com with SMTP id q6so24107616wro.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Jan 2020 14:51:54 -0800 (PST)
+ Fri, 17 Jan 2020 14:52:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=x0se5PsWKgfvt31l3mqEKGiEnfoaKNuR8Ii/GhrHCb0=;
- b=Cb3k7qTYEq+BzZTIpESkbV8UQhEjMMfgrXK6+q6jIZ6lZ/FD83b4m2Cc5+d/3Kz8rf
- +1rME0s2s4mRDHl5Uc8e2VeTze6nQn0QFxIbmZdcWA7iZeZG8G5LrqxWEV2k1STiX1g1
- PtWIQZLLsDv7v9GWMOb7Em58EV6VT2dDc9li0FMu6XCHD92GmePrLFVWHxJFPE+MumYq
- anfCtfMUSn+KPsXejDa9tlRLNVnpXkeON3+wCV+fWxzMCS0CV0kDKFGS66l3+upa36eb
- kSdzl0ESEz5aaA8Ly+POGIU8sD3ladsqW/gF5s4VGDxAWoULseYtm3PZxlXzARJDDSeQ
- oSPA==
+ bh=5VgjBgp4uS/kw7oEAWwjC3t7HIV9i9IPmgfuwHpjxc4=;
+ b=Jl2CZQOTsy1WA5dvB2Z5w/T5SA575p61a3mXQjt3TzDagTGhbFfiAjo7h1Qs88Lo+u
+ ghoYD3FVe1wTM6Fv46LwO4H9aGB8OjbTEbNF6wkBD56/kqWER4yNykq0H0iDhcVh9o2a
+ 1CbsAB+6gze1gd0U91qIV78c4YpnJXsKCBPjYrrB1yu7jQtK9o7RALGPMtzos4dd7Q/b
+ U2kGXgkqLh/x0WF9mnEpjsfO+DWnevaK+3q6AtwgnQjv2GtTx/lCMaroYVrxnliMsSGD
+ /jdV0QxuMH7ha21/sDI+tbFmEq/xOlO7lMRmScM96MgxX7Aja0R+olff0IaSSEABED56
+ L6fg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=x0se5PsWKgfvt31l3mqEKGiEnfoaKNuR8Ii/GhrHCb0=;
- b=NFoIwcByBwTlyGZL0bs/0cxrlXX+pRjTvPTXtCx9aKIH1ij00f09D4PDBeyArrMVfx
- 6RRPKLRpgpZKsIHaetvhgFq5yXvhXw6YyGrO0GF9purbgaqw5bRts1cF2Z/pKkvtohJP
- uugRS11mZs3Rnje1E1LelaMqwEowmuBFETMYJkEDYiNb2sO9vfJcZAJyDA6ptECpduaq
- s7c0r/fYhUrBBLjwCjn0qY+kJfRgGLF0kkZ051bWMGPn+V/295YY1gxcBVqV6rJli2mA
- 6CsxRUHCBGWRDP57RL+wVumblQhF0/VwWIx8GFkB9cKKta1zxrQfrJcMXevE0xvGJ+pc
- v+Wg==
-X-Gm-Message-State: APjAAAUWX3rgsNE7KQQKxBPDU5LAbW/07xJCaPaZn2Xpa6LexU57hiTB
- VPcEmT222zyT+eCAOFO603O4eCce
-X-Google-Smtp-Source: APXvYqyfbPI9bgHRb8Atz6VGPe0wOtNnReQyHgWRrgoN+moHJ+YqxTkMDq9s4T0wfpoo6b9j5ETtyA==
-X-Received: by 2002:a7b:c5d8:: with SMTP id n24mr6796728wmk.124.1579301513296; 
- Fri, 17 Jan 2020 14:51:53 -0800 (PST)
+ bh=5VgjBgp4uS/kw7oEAWwjC3t7HIV9i9IPmgfuwHpjxc4=;
+ b=OV3XSE5MWjeBmZ3vjw4vgIUzIvE7gkIe33lr/mDz9xH5YF4+qQozxp8jMnCb0ZbVsE
+ cuViKpygYJmXKloczLNeKfySH9TU+ztdtd1hZjDYrCC6TeYiMmWvJFM5jq1hCdiMOJBC
+ aEBRBwUDP9e0LP4vw9r44n2owtA/FW3NbkLdIX3TvZNrir12DpI4JE05H1maRw123RTH
+ sRJdhEBVydr/F4kARo2ixDCa5fAV8v49Z9WT0dp0J3u+kaFyQmh7Yzkt5a+A/PDD6PTp
+ hPSuzlBqD+FC+T+GsQy0Co55a7mXsINigNyt+8CHPZx6N9xr5IEIczFVP+yYh8J/N7WH
+ pP1w==
+X-Gm-Message-State: APjAAAUNIUBvEhzxmB5SF83rjn4tjdVHOTAWzf2AUygt8cerrWOkiszN
+ 2+umyufSu/psvKuAR5ZkFgJL0eKH
+X-Google-Smtp-Source: APXvYqzFdXEsHXE1c1DdIJiUjl1z/Vz3DEwId9bBGatCzUjgY6zdsVIvetve6fuRFZrKk7LN4Dpqdw==
+X-Received: by 2002:adf:f605:: with SMTP id t5mr5239723wrp.282.1579301520539; 
+ Fri, 17 Jan 2020 14:52:00 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id l3sm32829387wrt.29.2020.01.17.14.51.46
+ by smtp.gmail.com with ESMTPSA id l3sm32829387wrt.29.2020.01.17.14.51.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Jan 2020 14:51:52 -0800 (PST)
+ Fri, 17 Jan 2020 14:51:59 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v7 3/7] ARM: Disable instrumentation for some code
-Date: Fri, 17 Jan 2020 14:48:35 -0800
-Message-Id: <20200117224839.23531-4-f.fainelli@gmail.com>
+Subject: [PATCH v7 4/7] ARM: Replace memory function for kasan
+Date: Fri, 17 Jan 2020 14:48:36 -0800
+Message-Id: <20200117224839.23531-5-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200117224839.23531-1-f.fainelli@gmail.com>
 References: <20200117224839.23531-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_145155_270787_B432EB75 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20200117_145202_356790_A12E3980 
+X-CRM114-Status: GOOD (  14.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -121,87 +121,161 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrey Ryabinin <aryabinin@virtuozzo.com>
 
-Disable instrumentation for arch/arm/boot/compressed/* and
-arch/arm/vdso/* because that code would not linkd with kernel image.
+Functions like memset/memmove/memcpy do a lot of memory accesses.  If a
+bad pointer pis assed to one of these function it is important to catch
+this. Compiler instrumentation cannot do this since these functions are
+written in assembly.
 
-Disable instrumentation for arch/arm/kvm/hyp/*. See commit a6cdf1c08cbf
-("kvm: arm64: Disable compiler instrumentation for hypervisor code") for
-more details.
+KASan replaces memory functions with manually instrumented variants.
+Original functions declared as weak symbols so strong definitions
+in mm/kasan/kasan.c could replace them. Original functions have aliases
+with '__' prefix in name, so we could call non-instrumented variant
+if needed.
 
-Disable instrumentation for arch/arm/mm/physaddr.c. See commit
-ec6d06efb0ba ("arm64: Add support for CONFIG_DEBUG_VIRTUAL") for more
-details.
+We must use __memcpy/__memset to replace memcpy/memset when we copy
+.data to RAM and when we clear .bss, because kasan_early_init cannot be
+called before the initialization of .data and .bss.
 
-Disable kasan check in the function unwind_pop_register because it does
-not matter that kasan checks failed when unwind_pop_register read stack
-memory of task.
-
-Reported-by: Florian Fainelli <f.fainelli@gmail.com>
-Reported-by: Marc Zyngier <marc.zyngier@arm.com>
+Reported-by: Russell King - ARM Linux <linux@armlinux.org.uk>
 Tested-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- arch/arm/boot/compressed/Makefile | 1 +
- arch/arm/kernel/unwind.c          | 6 +++++-
- arch/arm/mm/Makefile              | 1 +
- arch/arm/vdso/Makefile            | 2 ++
- 4 files changed, 9 insertions(+), 1 deletion(-)
+ arch/arm/include/asm/string.h | 17 +++++++++++++++++
+ arch/arm/kernel/head-common.S |  4 ++--
+ arch/arm/lib/memcpy.S         |  3 +++
+ arch/arm/lib/memmove.S        |  5 ++++-
+ arch/arm/lib/memset.S         |  3 +++
+ 5 files changed, 29 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-index a1e883c5e5c4..83991a0447fa 100644
---- a/arch/arm/boot/compressed/Makefile
-+++ b/arch/arm/boot/compressed/Makefile
-@@ -24,6 +24,7 @@ OBJS		+= hyp-stub.o
- endif
+diff --git a/arch/arm/include/asm/string.h b/arch/arm/include/asm/string.h
+index 111a1d8a41dd..1f9016bbf153 100644
+--- a/arch/arm/include/asm/string.h
++++ b/arch/arm/include/asm/string.h
+@@ -15,15 +15,18 @@ extern char * strchr(const char * s, int c);
  
- GCOV_PROFILE		:= n
-+KASAN_SANITIZE		:= n
+ #define __HAVE_ARCH_MEMCPY
+ extern void * memcpy(void *, const void *, __kernel_size_t);
++extern void *__memcpy(void *dest, const void *src, __kernel_size_t n);
  
- # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
- KCOV_INSTRUMENT		:= n
-diff --git a/arch/arm/kernel/unwind.c b/arch/arm/kernel/unwind.c
-index 4574e6aea0a5..f73601416f90 100644
---- a/arch/arm/kernel/unwind.c
-+++ b/arch/arm/kernel/unwind.c
-@@ -236,7 +236,11 @@ static int unwind_pop_register(struct unwind_ctrl_block *ctrl,
- 		if (*vsp >= (unsigned long *)ctrl->sp_high)
- 			return -URC_FAILURE;
+ #define __HAVE_ARCH_MEMMOVE
+ extern void * memmove(void *, const void *, __kernel_size_t);
++extern void *__memmove(void *dest, const void *src, __kernel_size_t n);
  
--	ctrl->vrs[reg] = *(*vsp)++;
-+	/* Use READ_ONCE_NOCHECK here to avoid this memory access
-+	 * from being tracked by KASAN.
-+	 */
-+	ctrl->vrs[reg] = READ_ONCE_NOCHECK(*(*vsp));
-+	(*vsp)++;
- 	return URC_OK;
+ #define __HAVE_ARCH_MEMCHR
+ extern void * memchr(const void *, int, __kernel_size_t);
+ 
+ #define __HAVE_ARCH_MEMSET
+ extern void * memset(void *, int, __kernel_size_t);
++extern void *__memset(void *s, int c, __kernel_size_t n);
+ 
+ #define __HAVE_ARCH_MEMSET32
+ extern void *__memset32(uint32_t *, uint32_t v, __kernel_size_t);
+@@ -39,4 +42,18 @@ static inline void *memset64(uint64_t *p, uint64_t v, __kernel_size_t n)
+ 	return __memset64(p, v, n * 8, v >> 32);
  }
  
-diff --git a/arch/arm/mm/Makefile b/arch/arm/mm/Makefile
-index 7cb1699fbfc4..432302911d6e 100644
---- a/arch/arm/mm/Makefile
-+++ b/arch/arm/mm/Makefile
-@@ -16,6 +16,7 @@ endif
- obj-$(CONFIG_ARM_PTDUMP_CORE)	+= dump.o
- obj-$(CONFIG_ARM_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
- obj-$(CONFIG_MODULES)		+= proc-syms.o
-+KASAN_SANITIZE_physaddr.o	:= n
- obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
- 
- obj-$(CONFIG_ALIGNMENT_TRAP)	+= alignment.o
-diff --git a/arch/arm/vdso/Makefile b/arch/arm/vdso/Makefile
-index 0fda344beb0b..1f76a5ff6e49 100644
---- a/arch/arm/vdso/Makefile
-+++ b/arch/arm/vdso/Makefile
-@@ -42,6 +42,8 @@ GCOV_PROFILE := n
- # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
- KCOV_INSTRUMENT := n
- 
-+KASAN_SANITIZE := n
 +
- # Force dependency
- $(obj)/vdso.o : $(obj)/vdso.so
++
++#if defined(CONFIG_KASAN) && !defined(__SANITIZE_ADDRESS__)
++
++/*
++ * For files that not instrumented (e.g. mm/slub.c) we
++ * should use not instrumented version of mem* functions.
++ */
++
++#define memcpy(dst, src, len) __memcpy(dst, src, len)
++#define memmove(dst, src, len) __memmove(dst, src, len)
++#define memset(s, c, n) __memset(s, c, n)
++#endif
++
+ #endif
+diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
+index 4a3982812a40..6840c7c60a85 100644
+--- a/arch/arm/kernel/head-common.S
++++ b/arch/arm/kernel/head-common.S
+@@ -95,7 +95,7 @@ __mmap_switched:
+  THUMB(	ldmia	r4!, {r0, r1, r2, r3} )
+  THUMB(	mov	sp, r3 )
+ 	sub	r2, r2, r1
+-	bl	memcpy				@ copy .data to RAM
++	bl	__memcpy			@ copy .data to RAM
+ #endif
  
+    ARM(	ldmia	r4!, {r0, r1, sp} )
+@@ -103,7 +103,7 @@ __mmap_switched:
+  THUMB(	mov	sp, r3 )
+ 	sub	r2, r1, r0
+ 	mov	r1, #0
+-	bl	memset				@ clear .bss
++	bl	__memset			@ clear .bss
+ 
+ 	ldmia	r4, {r0, r1, r2, r3}
+ 	str	r9, [r0]			@ Save processor ID
+diff --git a/arch/arm/lib/memcpy.S b/arch/arm/lib/memcpy.S
+index 09a333153dc6..ad4625d16e11 100644
+--- a/arch/arm/lib/memcpy.S
++++ b/arch/arm/lib/memcpy.S
+@@ -58,6 +58,8 @@
+ 
+ /* Prototype: void *memcpy(void *dest, const void *src, size_t n); */
+ 
++.weak memcpy
++ENTRY(__memcpy)
+ ENTRY(mmiocpy)
+ ENTRY(memcpy)
+ 
+@@ -65,3 +67,4 @@ ENTRY(memcpy)
+ 
+ ENDPROC(memcpy)
+ ENDPROC(mmiocpy)
++ENDPROC(__memcpy)
+diff --git a/arch/arm/lib/memmove.S b/arch/arm/lib/memmove.S
+index b50e5770fb44..fd123ea5a5a4 100644
+--- a/arch/arm/lib/memmove.S
++++ b/arch/arm/lib/memmove.S
+@@ -24,12 +24,14 @@
+  * occurring in the opposite direction.
+  */
+ 
++.weak memmove
++ENTRY(__memmove)
+ ENTRY(memmove)
+ 	UNWIND(	.fnstart			)
+ 
+ 		subs	ip, r0, r1
+ 		cmphi	r2, ip
+-		bls	memcpy
++		bls	__memcpy
+ 
+ 		stmfd	sp!, {r0, r4, lr}
+ 	UNWIND(	.fnend				)
+@@ -222,3 +224,4 @@ ENTRY(memmove)
+ 18:		backward_copy_shift	push=24	pull=8
+ 
+ ENDPROC(memmove)
++ENDPROC(__memmove)
+diff --git a/arch/arm/lib/memset.S b/arch/arm/lib/memset.S
+index 6ca4535c47fb..0e7ff0423f50 100644
+--- a/arch/arm/lib/memset.S
++++ b/arch/arm/lib/memset.S
+@@ -13,6 +13,8 @@
+ 	.text
+ 	.align	5
+ 
++.weak memset
++ENTRY(__memset)
+ ENTRY(mmioset)
+ ENTRY(memset)
+ UNWIND( .fnstart         )
+@@ -132,6 +134,7 @@ UNWIND( .fnstart            )
+ UNWIND( .fnend   )
+ ENDPROC(memset)
+ ENDPROC(mmioset)
++ENDPROC(__memset)
+ 
+ ENTRY(__memset32)
+ UNWIND( .fnstart         )
 -- 
 2.17.1
 
