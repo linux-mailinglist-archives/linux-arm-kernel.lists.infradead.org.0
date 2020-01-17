@@ -2,63 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F3511410A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:19:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A33401410AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:21:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8YYj38tTA3bldsgPDYbkBMaRLjmG3xI6ZEh47MWRpSg=; b=h0BcQcKf6WfGqo
-	e4sZVyQ8pSZxauMmK8OAS2g+I9wkbSEff2Z7CQ6CqskthYafUOWw67ujlFg5aByR7ma7jlfXokkL+
-	KFhe97CZbZq76jlrz9eMQtQDO0KNtkFBvLdhI3l6N3V0puhn6/PGPVEbAdj3LiS7bfYuxaDOErhH8
-	h/o1HLiFlmwzcbnhYX3o43y8L2ia/kEe/Raxy/WXE5KSdJVZwx9o3Kns7VNfRu+gi38uciuY+SO/w
-	KchIAgFSpGnUTwboNWz3fbs3vPx5/AYWQV1djDf0DNzFsEpx0YGn2MyKSOi/mDz/VGYYKBAgkaj12
-	K6SVjxGDtFaF/5jGwmEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KgDipdzr4VtOFdyPQcwK+yQi9ktTso9DPBoAxxZiBJM=; b=ejlZCXrWrkmC2xRYq5z17Df9P
+	edCUOXWzzPu8Ap7V0oU5TMZedzclb6q1t+yA3qOtWwAJ5Gyd6sKpOTIlktg11feupVUswt0EuvdMs
+	+mt2fv6nldcLWqXMDjP8B6I8jPJ4xOCel1MoyB9Hd7y1WMcVS2AIYyN16cceS2OGQAOghk04nBOYz
+	y8QRBuE7nAfz8CnofFZ2FNYoBsqOTdJNPran2PxHZHcyY7PXBrFCOOgTBehLhM/i8DnyPx+4b9Tet
+	0I36BRrRkkKzHYTipGXppcJBiOteqr2xpl/UnG6OZLwJYoWbFaG+5EwPV6JpJy1Nci0xz/ocI7fOM
+	tF05FA5sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isWDE-0004kn-EJ; Fri, 17 Jan 2020 18:19:16 +0000
-Received: from mailoutvs53.siol.net ([185.57.226.244] helo=mail.siol.net)
+	id 1isWEy-0006Pl-88; Fri, 17 Jan 2020 18:21:04 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isWD5-0004jZ-Pi
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:19:09 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 3B8B7523E9F;
- Fri, 17 Jan 2020 19:19:00 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id KYaxS-gW__TX; Fri, 17 Jan 2020 19:18:59 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id DB642523E5B;
- Fri, 17 Jan 2020 19:18:59 +0100 (CET)
-Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
- [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id F2837523EA2;
- Fri, 17 Jan 2020 19:18:58 +0100 (CET)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH 1/3] arm64: dts: allwinner: h6: tanix-tx6: enable emmc
-Date: Fri, 17 Jan 2020 19:18:58 +0100
-Message-ID: <3332569.R56niFO833@jernej-laptop>
-In-Reply-To: <20200117181427.hy7qsyxwomsl3v2q@gilmour.lan>
-References: <20200115193441.172902-1-jernej.skrabec@siol.net>
- <20200117181427.hy7qsyxwomsl3v2q@gilmour.lan>
+ id 1isWEh-0006Oo-Ix
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:20:52 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIDGkp186421;
+ Fri, 17 Jan 2020 18:20:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=oAP13y93/jPKuyY/7iTSKn/384M1UDuNaMgAyH6pLbA=;
+ b=rLXtoT1ZHwYlD9TL0kOAXqKUC2yJA+IvPup0iu8qun8aclerOwnDi04i/QoCfqzbAxS2
+ ebMGJeBzb5cglNtqbJqWuyvDH5y/yOE9Jz5JxvXKXfhbSttE1fdMKAnyVaFfDTKSef44
+ xOAK4vByTXvlgMByAUo2NAU89SbxEuZBhX5WdiwJaqv2Kz+IkhY99KcSWOHnj+HHbqZy
+ vdFzW4NgylcsgipB566LD6OLJJtncaNJYP5MuUVwUcyi/qkpH0aLoyK47QdlZ1gjlik4
+ xZ3/rROpb9Q9IZTu2fjyVWyeE6tyhsmNed2Ls+WA9kCvZhmodXJe9Zv40uvL1LaZl+ga MQ== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 2xf74st8wd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 17 Jan 2020 18:20:40 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIAn4F044940;
+ Fri, 17 Jan 2020 18:20:40 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3030.oracle.com with ESMTP id 2xjxm9c8je-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 17 Jan 2020 18:20:39 +0000
+Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00HIKa1L004175;
+ Fri, 17 Jan 2020 18:20:36 GMT
+Received: from [10.209.227.41] (/10.209.227.41)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 17 Jan 2020 10:20:36 -0800
+Subject: Re: [GIT_PULL] SOC: TI Keystone Ring Accelerator driver for v5.6
+To: Olof Johansson <olof@lixom.net>
+References: <1579205259-4845-1-git-send-email-santosh.shilimkar@oracle.com>
+ <20200117000358.fe7ew4vvnz4yxbzj@localhost>
+ <148b6ec3-6a8e-ced8-41b3-3dffd5528ed6@oracle.com>
+ <CAOesGMiWL93ypL_4xqfqgwfVSOKtu8UqerzxV=Zr-aUkLp+rBw@mail.gmail.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <c938a1ec-4b82-ae88-8a98-27c4f6080db9@oracle.com>
+Date: Fri, 17 Jan 2020 10:20:35 -0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <CAOesGMiWL93ypL_4xqfqgwfVSOKtu8UqerzxV=Zr-aUkLp+rBw@mail.gmail.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9503
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001170142
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9503
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001170142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_101907_992478_3585C326 
-X-CRM114-Status: GOOD (  14.22  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200117_102047_760234_0183C4F5 
+X-CRM114-Status: GOOD (  24.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.244 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,94 +114,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Vinod Koul <vkoul@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Kevin Hilman <khilman@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, ARM-SoC Maintainers <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne petek, 17. januar 2020 ob 19:14:27 CET je Maxime Ripard napisal(a):
-> On Wed, Jan 15, 2020 at 08:34:41PM +0100, Jernej Skrabec wrote:
-> > Tanix TX6 has 32 GiB eMMC. Add a node for it.
-> > 
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > ---
-> > 
-> >  .../dts/allwinner/sun50i-h6-tanix-tx6.dts     | 20 +++++++++++++++++++
-> >  1 file changed, 20 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-> > b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts index
-> > 83e6cb0e59ce..8cbf4e4a761e 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-> > @@ -31,6 +31,13 @@ hdmi_con_in: endpoint {
-> > 
-> >  		};
-> >  	
-> >  	};
-> > 
-> > +	reg_vcc1v8: vcc1v8 {
-> > +		compatible = "regulator-fixed";
-> > +		regulator-name = "vcc1v8";
-> > +		regulator-min-microvolt = <1800000>;
-> > +		regulator-max-microvolt = <1800000>;
-> > +	};
-> > +
-> > 
-> >  	reg_vcc3v3: vcc3v3 {
-> >  	
-> >  		compatible = "regulator-fixed";
-> >  		regulator-name = "vcc3v3";
-> > 
-> > @@ -78,6 +85,15 @@ &mmc0 {
-> > 
-> >  	status = "okay";
-> >  
-> >  };
-> > 
-> > +&mmc2 {
-> > +	vmmc-supply = <&reg_vcc3v3>;
-> > +	vqmmc-supply = <&reg_vcc1v8>;
-> > +	non-removable;
-> > +	cap-mmc-hw-reset;
-> > +	bus-width = <8>;
-> > +	status = "okay";
-> > +};
-> > +
-> > 
-> >  &ohci0 {
-> >  
-> >  	status = "okay";
-> >  
-> >  };
-> > 
-> > @@ -86,6 +102,10 @@ &ohci3 {
-> > 
-> >  	status = "okay";
-> >  
-> >  };
-> > 
-> > +&pio {
-> > +	vcc-pc-supply = <&reg_vcc1v8>;
-> > +};
-> > +
+On 1/17/20 10:11 AM, Olof Johansson wrote:
+> On Thu, Jan 16, 2020 at 9:05 PM <santosh.shilimkar@oracle.com> wrote:
+>>
+>> On 1/16/20 4:03 PM, Olof Johansson wrote:
+>>> Hi,
+>>>
+>>> On Thu, Jan 16, 2020 at 12:07:39PM -0800, Santosh Shilimkar wrote:
+>>>> Its bit late for pull request, but if possible, please pull it to
+>>>> soc drivers tree.
+>>>>
+>>>> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+>>>>
+>>>>     Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+>>>>
+>>>> are available in the git repository at:
+>>>>
+>>>>     git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.6
+>>>>
+>>>> for you to fetch changes up to 3277e8aa2504d97e022ecb9777d784ac1a439d36:
+>>>>
+>>>>     soc: ti: k3: add navss ringacc driver (2020-01-15 10:07:27 -0800)
+>>>>
+>>>> ----------------------------------------------------------------
+>>>> SOC: TI Keystone Ring Accelerator driver
+>>>>
+>>>> The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
+>>>> enable straightforward passing of work between a producer and a consumer.
+>>>> There is one RINGACC module per NAVSS on TI AM65x SoCs.
+>>>
+>>> This driver doesn't seem to have exported symbols, and no in-kernel
+>>> users. So how will it be used?
+>>>
+>>> Usually we ask to hold off until the consuming side/drivers are also ready.
+>>>
+>> The other patches getting merged via Vinod's tree. The combined series
+>> is split into couple of series. Vinod is going to pull this branch
+>> and apply rest of the patchset. And then couple of additional consumer
+>> drivers will get posted.
 > 
-> Can you list all of the regulators for the H6 while you're at it (in a
-> preliminary patch, ideally)?
+> Ok -- might have been useful to get that in the tag description for
+> context. Something to consider next time.
+> 
+Sure. Will keep that in mind.
 
-Not sure what you mean. This box has only fixed regulators. I deducted above 
-from the fact that port C is mostly dedicated to eMMC, so it has to use same 
-regulator as vqmmc. Other than that, I don't know.
-
-Best regards,
-Jernej
-
-
-
-
+>>> Also, is there a reason this is under drivers/soc/ instead of somewhere more
+>>> suitable in the drivers subsystem? It's not "soc glue code" in the same way as
+>>> drivers/soc was intended originally.
+>>>
+>> These kind of SOC IP drivers, we put into drivers/soc/ because of lack
+>> of specific subsystem where they fit in. Navigator was also similar example.
+> 
+> Hmm. At some point we'll have to push the brakes on this, since
+> drivers/soc can't become a catch-all for random stuff like the old
+> mach directories were. But it's tricky to tell just when -- sometimes
+> you have to let the mess show up too.
+> 
+> I'll merge this when I do the next pass (today, likely).
+> 
+Thanks Olof !!
 
 _______________________________________________
 linux-arm-kernel mailing list
