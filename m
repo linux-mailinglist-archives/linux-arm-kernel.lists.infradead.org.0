@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77EAB1403A9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:44:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0143C1403A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 06:43:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NNY+1vweVCRlLq/kvsbxQY8uYCAbvjboXknmT2HBPV4=; b=H8aJktuwZj31Xi
-	2xcAQlj292Dyk5Hkki1DPFxwfKPNRS3EA0dbgoYFiyWqY1Do3f/ZzDk4C5Zj40NaY6G3fgVbFOuvx
-	nTm1WB2OUBbZPmclCRZzW+896f5dmTqdLB8eT1FwsY0BmbgfGdoKbKke++ui+7scYVsmyeJK01+zw
-	yRYpSnu9TbGJR4Jyu/C1TAKtC8Ksxs28pfKSeKx/XpjxuKQcIPgWjmK8rQduCva4T753iVewfkvZ/
-	lgePdckvF2tGjaLofpswhSUiLHZPm7GCRUiGr3c8QIdHdXG2O71Y2DCj1/SIE3mrZWTs+xGeSOHXT
-	VvK6UYMYhq1n69lzjPkQ==;
+	List-Owner; bh=EhkJ+9IbDm9G8MnKzReQCC+timP5thVN6jWguB5ENsE=; b=lWqYlI/v0FxDq/
+	uEuRyyvK9Vq3Jtv7UFy0Rib8lcg7nSmxxQ7RKWph6GhoIaxMtY2N8T2KUI+aOYeQiuPjPwWqAHuYM
+	LKRnj8gpgb7wrVYAJ55g4Tgq9jvfSKCV+BJl4Vm/U4iNoAETE8td45rHlnTYtpWUWI0N3EPoAj0Ze
+	LnBnLQp4PNFdTvJM1u63cF5V2gPyqSU8AgINcoy8S+K0lSaHoZ6cYaab0h0auq04KjqFS81aL2qTh
+	Z/bj4SYilJC8LhGITXXZW35Tg7XSSKCZxwnjnf+0wdOHOvM5cTMPlqjyotdg7/9pGs7SJf7rKcV3G
+	ctTCgnpGrQ9rMK+o9WGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isKQe-0001Au-T8; Fri, 17 Jan 2020 05:44:20 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1isKPw-0000XE-JK; Fri, 17 Jan 2020 05:43:36 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isKPV-0000Kb-V6
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:43:14 +0000
+ id 1isKPV-0000Ka-Nl
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 05:43:11 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  16 Jan 2020 21:43:07 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,328,1574150400"; d="scan'208";a="257676309"
+X-IronPort-AV: E=Sophos;i="5.70,328,1574150400"; d="scan'208";a="219935692"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga002.fm.intel.com with ESMTP; 16 Jan 2020 21:43:06 -0800
+ by fmsmga007.fm.intel.com with ESMTP; 16 Jan 2020 21:43:06 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1isKPS-0002GR-7F; Fri, 17 Jan 2020 13:43:06 +0800
-Date: Fri, 17 Jan 2020 13:42:49 +0800
+ id 1isKPR-0002FD-Ud; Fri, 17 Jan 2020 13:43:05 +0800
+Date: Fri, 17 Jan 2020 13:42:51 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Olof Johansson <olof@lixom.net>
-Subject: [arm-soc:arm/soc] BUILD SUCCESS
- 123718659721733a232ae37c97cf3ae08e6c3651
-Message-ID: <5e214959.5PxWEE4alLvMrGOI%lkp@intel.com>
+Subject: [arm-soc:arm/dt] BUILD SUCCESS
+ 87f846c773ea43d23be7d478201cc83a3d70fb5f
+Message-ID: <5e21495b.OYd4lGDp872UG8FJ%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_214310_079081_6757DEF1 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20200116_214309_804604_258399F5 
+X-CRM114-Status: UNSURE (   8.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,9 +53,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -74,17 +74,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/soc
-branch HEAD: 123718659721733a232ae37c97cf3ae08e6c3651  Merge tag 'imx-soc-5.6' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/soc
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/dt
+branch HEAD: 87f846c773ea43d23be7d478201cc83a3d70fb5f  Merge tag 'imx-dt64-5.6' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
 
 elapsed time: 473m
 
-configs tested: 142
-configs skipped: 119
+configs tested: 152
+configs skipped: 0
 
 The following configs have been built successfully.
 More configs may be tested in the coming days.
 
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
 alpha                randconfig-a001-20200117
 m68k                 randconfig-a001-20200117
 mips                 randconfig-a001-20200117
@@ -96,14 +104,6 @@ h8300                randconfig-a001-20200117
 microblaze           randconfig-a001-20200117
 nios2                randconfig-a001-20200117
 sparc64              randconfig-a001-20200117
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
 alpha                               defconfig
 csky                                defconfig
 nds32                             allnoconfig
@@ -115,11 +115,21 @@ parisc                        c3000_defconfig
 parisc                              defconfig
 ia64                                defconfig
 powerpc                             defconfig
+i386                             alldefconfig
+i386                              allnoconfig
+i386                             allyesconfig
+i386                                defconfig
 x86_64                              fedora-25
 x86_64                                  kexec
 x86_64                                    lkp
 x86_64                                   rhel
 x86_64                               rhel-7.6
+x86_64               randconfig-e001-20200117
+x86_64               randconfig-e002-20200117
+x86_64               randconfig-e003-20200117
+i386                 randconfig-e001-20200117
+i386                 randconfig-e002-20200117
+i386                 randconfig-e003-20200117
 um                                  defconfig
 um                             i386_defconfig
 um                           x86_64_defconfig
@@ -197,18 +207,18 @@ mips                              allnoconfig
 mips                             allyesconfig
 mips                      fuloong2e_defconfig
 mips                      malta_kvm_defconfig
-x86_64               randconfig-g001-20200117
-x86_64               randconfig-g002-20200117
-x86_64               randconfig-g003-20200117
-i386                 randconfig-g001-20200117
-i386                 randconfig-g002-20200117
-i386                 randconfig-g003-20200117
 x86_64               randconfig-d001-20200117
 x86_64               randconfig-d002-20200117
 x86_64               randconfig-d003-20200117
 i386                 randconfig-d001-20200117
 i386                 randconfig-d002-20200117
 i386                 randconfig-d003-20200117
+x86_64               randconfig-g001-20200117
+x86_64               randconfig-g002-20200117
+x86_64               randconfig-g003-20200117
+i386                 randconfig-g001-20200117
+i386                 randconfig-g002-20200117
+i386                 randconfig-g003-20200117
 arc                  randconfig-a001-20200117
 arm                  randconfig-a001-20200117
 arm64                randconfig-a001-20200117
