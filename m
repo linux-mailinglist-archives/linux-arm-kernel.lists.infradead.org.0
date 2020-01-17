@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7D5C140CD7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:42:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17ACF140CD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 15:42:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dBNnMMxkVVj4JJU81+lvv7didLgy9WDLR4qv/J9QZ+M=; b=GcziCSITZ7etjAMrxGvpbTOugT
-	J+N5lWLanu5b8CCKsJZ6rMOnUBY5qsMrfqYpCfuDWSQKq9nUsBhdIiAvmD/Digi0U4MwjtsEPPSIr
-	fPD6FxQuvGaXDFc0D3kOQn9P0LKvwSTEF/LYnvjDnTqFZAnJ4BxVq1FPh5oN201vFn75TwYNDsT3B
-	SWJHcLe2fJk6s59+eKyCTTw7ON2m7NRl1W1xO9K/gTNonS/zOHBI6h1YgfwEnCuc49oOroRFBg8bg
-	UDdinqE02qSwu8bTLMajWkFyIM5KdSysidL7PZeq8ii6Xx24jKHdHEU5oesCAzgWiGrh7HyDRThRJ
-	nByQg86A==;
+	bh=K0lRi+dLdJStfXIduWWfiaPbJGHmLGZxkMflGHm+qXo=; b=bfXHGdwnbCpJvUnkNFTwBZ8xva
+	trDYbab6I/l+9Ka8zfARg/Rn5hvwOhgrR9HDm3vn+JVVaR98qSlolQBAOiExB6Sh8jpxxFtramXv8
+	iWRNAk2CSAVo21fFuerzp8FK6Luqd/v0AgcjT3K/8M/yGuHLtzmNf/ITSXQVy6g/J9kXmgKIWyedt
+	mZA+a3CDp2djzeoZR/zaXim960ziCzsdvL02/tXtmwEw3S50iS7jK9/X6Mvtbn68bN8biLK2vM/su
+	jWXIP3aDiXL/9ZO1NFvWVKZuOyuYRm2J74d0Svd8aOa1xFM2dBpDQAxvntRItGZgxvYAwfNJf4wP3
+	vky/59Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isSp0-0001k8-AP; Fri, 17 Jan 2020 14:42:02 +0000
+	id 1isSpD-000216-4f; Fri, 17 Jan 2020 14:42:15 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isSmC-0006mm-5x
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:39:11 +0000
+ id 1isSmD-0006nf-5P
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 14:39:12 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D97EBABE9;
- Fri, 17 Jan 2020 14:39:06 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id C868EAC4A;
+ Fri, 17 Jan 2020 14:39:07 +0000 (UTC)
 From: Mian Yousaf Kaukab <ykaukab@suse.de>
 To: linux-arm-kernel@lists.infradead.org,
 	mathieu.poirier@linaro.org
-Subject: [PATCH RFC 11/15] coresight: add coresight prefix to barrier_pkt
-Date: Fri, 17 Jan 2020 15:40:06 +0100
-Message-Id: <20200117144010.11149-12-ykaukab@suse.de>
+Subject: [PATCH RFC 12/15] coresight: use IS_ENABLED macro for configuration
+ symbols
+Date: Fri, 17 Jan 2020 15:40:07 +0100
+Message-Id: <20200117144010.11149-13-ykaukab@suse.de>
 X-Mailer: git-send-email 2.16.4
 In-Reply-To: <20200117144010.11149-1-ykaukab@suse.de>
 References: <20200117144010.11149-1-ykaukab@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_063908_548304_3084BAEE 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20200117_063909_370782_1DC652B6 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,87 +73,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-barrier_pkt is an exported symbol. Add coresight prefix to
-make it specific.
+Prepare to change configuration symbols type from bool to
+tristate in Kconfig.
 
 Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
 ---
- drivers/hwtracing/coresight/coresight-bus.c     | 5 +++--
- drivers/hwtracing/coresight/coresight-etb10.c   | 2 +-
- drivers/hwtracing/coresight/coresight-priv.h    | 8 ++++----
- drivers/hwtracing/coresight/coresight-tmc-etf.c | 2 +-
- 4 files changed, 9 insertions(+), 8 deletions(-)
+ drivers/hwtracing/coresight/coresight-priv.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-bus.c b/drivers/hwtracing/coresight/coresight-bus.c
-index aef99c3f7362..7bbe824436ce 100644
---- a/drivers/hwtracing/coresight/coresight-bus.c
-+++ b/drivers/hwtracing/coresight/coresight-bus.c
-@@ -53,8 +53,9 @@ static struct list_head *stm_path;
-  * beginning of the data collected in a buffer.  That way the decoder knows that
-  * it needs to look for another sync sequence.
-  */
--const u32 barrier_pkt[4] = {0x7fffffff, 0x7fffffff, 0x7fffffff, 0x7fffffff};
--EXPORT_SYMBOL_GPL(barrier_pkt);
-+const u32 coresight_barrier_pkt[4] = {
-+		0x7fffffff, 0x7fffffff, 0x7fffffff, 0x7fffffff};
-+EXPORT_SYMBOL_GPL(coresight_barrier_pkt);
- 
- static int coresight_id_match(struct device *dev, void *data)
- {
-diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-index 2d5a542e5464..fdd6ce865dc8 100644
---- a/drivers/hwtracing/coresight/coresight-etb10.c
-+++ b/drivers/hwtracing/coresight/coresight-etb10.c
-@@ -526,7 +526,7 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
- 
- 	cur = buf->cur;
- 	offset = buf->offset;
--	barrier = barrier_pkt;
-+	barrier = coresight_barrier_pkt;
- 
- 	for (i = 0; i < to_read; i += 4) {
- 		buf_ptr = buf->data_pages[cur] + offset;
 diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
-index e6eec9f46e13..9212bc8a20c8 100644
+index 9212bc8a20c8..714bee6590ff 100644
 --- a/drivers/hwtracing/coresight/coresight-priv.h
 +++ b/drivers/hwtracing/coresight/coresight-priv.h
-@@ -65,8 +65,8 @@ static DEVICE_ATTR_RO(name)
- #define coresight_simple_reg64(type, name, lo_off, hi_off)		\
- 	__coresight_simple_func(type, NULL, name, lo_off, hi_off)
+@@ -153,7 +153,7 @@ struct list_head *coresight_build_path(struct coresight_device *csdev,
+ 				       struct coresight_device *sink);
+ void coresight_release_path(struct list_head *path);
  
--extern const u32 barrier_pkt[4];
--#define CORESIGHT_BARRIER_PKT_SIZE (sizeof(barrier_pkt))
-+extern const u32 coresight_barrier_pkt[4];
-+#define CORESIGHT_BARRIER_PKT_SIZE (sizeof(coresight_barrier_pkt))
- 
- enum etm_addr_type {
- 	ETM_ADDR_TYPE_NONE,
-@@ -103,10 +103,10 @@ struct cs_buffers {
- static inline void coresight_insert_barrier_packet(void *buf)
- {
- 	if (buf)
--		memcpy(buf, barrier_pkt, CORESIGHT_BARRIER_PKT_SIZE);
-+		memcpy(buf, coresight_barrier_pkt,
-+				CORESIGHT_BARRIER_PKT_SIZE);
- }
- 
--
- static inline void CS_LOCK(void __iomem *addr)
- {
- 	do {
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-index d0cc3985b72a..52b287481b8b 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-@@ -519,7 +519,7 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
- 
- 	cur = buf->cur;
- 	offset = buf->offset;
--	barrier = barrier_pkt;
-+	barrier = coresight_barrier_pkt;
- 
- 	/* for every byte to read */
- 	for (i = 0; i < to_read; i += 4) {
+-#ifdef CONFIG_CORESIGHT_SOURCE_ETM3X
++#if IS_ENABLED(CONFIG_CORESIGHT_SOURCE_ETM3X)
+ extern int etm_readl_cp14(u32 off, unsigned int *val);
+ extern int etm_writel_cp14(u32 off, u32 val);
+ #else
 -- 
 2.16.4
 
