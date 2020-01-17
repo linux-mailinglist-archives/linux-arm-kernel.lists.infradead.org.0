@@ -2,53 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 809E31400EA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 01:24:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D8A61400FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 01:32:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tElb+f9GPq0AA1fiiMYgh9Xkl9JYfLFxaHJuyWbQ0GA=; b=Z2pkiE1Gl3cSgJ
-	PN5QyigSm9a4dWUx/i1QuATTg7dxIKKN6iUUxWRSCquy6YeNoxyEKk5IhxPe+JxbbH/kaLYiCdJ5n
-	Bles2QeuakI4tg7DZUEkrY5HEpgfAdxWCxGDGmPIqowkZQPpq6HsNZ5OW0iHpsrT8gD/jr5AXLS95
-	+OZ1/O6jI+n+vfAfo+keP7VBtnAe/5RQuxU9HS0n/EfoyW6SUDAnauZtmx6JuzaaSVQmRCEUJvAP1
-	eI5eiQ5pxtwXFQ2jvlt1W0lnwuJ8Be89PH/ydJHL54JJs1zXHndoJ8ltYSIZ603lcQ2aRHCzWyZh3
-	Z5MTS4JYdGaUY7u0RcGw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o0dX59/CKLRzKS2jo6E+v3cWOfg8hpMKrVKqt9U7ajw=; b=ItB7w3pbx07plA
+	35l8Legu0ZpkVonQ+vyV6djiPclApppVf6Z6aVcQ4ZNnIIUGWlvFWIevVBFGPQlVfiHdXHgQgwk8w
+	jMLUbYPfq9Q3v5WQSzfHWr2AhpD3nOhr+wu9DzbyzCEThIx6MxD4erq6gBsIqce8HfMqtG7WDlJPo
+	mGRkGJUexuAlcf/UOi0b9dw97/VWvFD/3kawD2FDfuTk91ABfPckY2U0gJMVU9c+lyBPF6FuN81oR
+	vU6QXg8wG+JRH5SEcpV1oJGC1AgbMJCrfPLIUF7MsEQ6k3TWp0GrcwDTQPhVEWqOpfmlS+EkKleV2
+	dhSdZEucDlREJvxz/5qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isFQx-0003Wo-JC; Fri, 17 Jan 2020 00:24:19 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1isFYq-0008IY-Hi; Fri, 17 Jan 2020 00:32:28 +0000
+Received: from mail.prewas.sk ([212.5.209.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isFPB-0001kN-Ih; Fri, 17 Jan 2020 00:22:31 +0000
-Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 17 Jan 2020
- 08:22:33 +0800
-From: Hanjie Lin <hanjie.lin@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH v6 6/6] arm64: dts: meson: a1: Enable DWC3 controller
-Date: Fri, 17 Jan 2020 08:21:44 +0800
-Message-ID: <1579220504-110067-7-git-send-email-hanjie.lin@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1579220504-110067-1-git-send-email-hanjie.lin@amlogic.com>
-References: <1579220504-110067-1-git-send-email-hanjie.lin@amlogic.com>
+ id 1isFYj-0008Hg-3k; Fri, 17 Jan 2020 00:32:22 +0000
+dkim-signature: v=1; a=rsa-sha256; d=3ksolutions.sk; s=mail.prewas.sk;
+ c=relaxed/relaxed; q=dns/txt;
+ h=From:Subject:Date:Message-ID:To:CC:MIME-Version:Content-Type:Content-Transfer-Encoding:In-Reply-To:References;
+ bh=/ufg4YOpQeSX7cHfO6yjVhqqe1zoV2RAyfuHFpGADIk=;
+ b=TkBU61dQOLsmC1C6opABH7EfcFHApUscqlJRZ39KvqiJMLdBy9gZAcE1Jim9nPqJMBop8CDciT17nbvKUTjAaPGQVBkeOAcNkSm2lF5k7G9hD+S96I29nZtl+3XbufAcC2vuyJQAxQvUkqZOYv4ApGF9pySPSF6LJ94NhTgQs3uGkjAjuQ5qt9+dyyWBGsO8ehklAECOExbDLkIy7E3NuzSGzh93eZT8oP7mkDGdy/JuhapHCOVtnG6+N1
+ /rt7Q4IOKZLWWek0HAN6zJdQPny+zwD9TRd4pedc4+q++gVvCOqeoZWij0TIOsocFbnihgdfGmaXp3YF/kfLKe6Ghb2w==
+Received: from [10.0.1.61] (pcfilo.vital.sk [10.0.1.61])
+ by mail.prewas.sk with ESMTPSA
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128)
+ ; Fri, 17 Jan 2020 01:31:48 +0100
+Subject: Re: [PATCH] tty: serial: amba-pl011: added RS485 support
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <20200106235203.27256-1-sistik@3ksolutions.sk>
+ <20200107072748.GA1014453@kroah.com>
+From: "Ivan Sistik - 3K Solutions, s. r. o." <sistik@3ksolutions.sk>
+Message-ID: <f6deeb06-39b7-f140-c6bd-c977c5ad2b5a@3ksolutions.sk>
+Date: Fri, 17 Jan 2020 01:31:48 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-Originating-IP: [10.18.11.213]
+In-Reply-To: <20200107072748.GA1014453@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_162229_650382_16A64CDC 
-X-CRM114-Status: UNSURE (   7.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_163221_496029_1EAAD661 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.5.209.170 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,79 +74,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-usb@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable DWC3 controller for Meson A1 SoC.
+On 7. 1. 2020 at 8:27 Greg Kroah-Hartman wrote:
 
-Signed-off-by: Yue Wang <yue.wang@amlogic.com>
-Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+>> +config SERIAL_AMBA_PL011_SOFT_RS485
+>> +	bool "RS485 software direction switching for ARM AMBA PL011 serial"
+>> +	depends on SERIAL_AMBA_PL011=y
+> 
+> Why "=y" here?  Shouldn't this just read:
+> 	depends on SERIAL_AMBA_PL011?
+> 
+>> +	select SERIAL_CORE
+> 
+> Is this needed?  SERIAL_AMBA_PL011 already selects this.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index fb0ba85..9077ffa 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -7,6 +7,8 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/power/meson-a1-power.h>
- #include <dt-bindings/reset/amlogic,meson-a1-reset.h>
-+#include <dt-bindings/clock/a1-pll-clkc.h>
-+#include <dt-bindings/clock/a1-clkc.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -127,6 +129,35 @@
- 			#interrupt-cells = <3>;
- 			#address-cells = <0>;
- 		};
-+
-+		usb: usb@ffe09000 {
-+			status = "okay";
-+			compatible = "amlogic,meson-a1-usb-ctrl";
-+			reg = <0x0 0xffe09000 0x0 0xa0>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
-+			clocks = <&clkc_periphs CLKID_USB_CTRL>,
-+				 <&clkc_periphs CLKID_USB_BUS>,
-+				 <&clkc_periphs CLKID_XTAL_USB_CTRL>;
-+			clock-names = "usb_ctrl", "usb_bus", "xtal_usb_ctrl";
-+			resets = <&reset RESET_USBCTRL>;
-+
-+			dr_mode = "host";
-+
-+			phys = <&usb2_phy1>;
-+			phy-names = "usb2-phy1";
-+
-+			dwc3: usb@ff400000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0xff400000 0x0 0x100000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				dr_mode = "host";
-+				snps,dis_u2_susphy_quirk;
-+				snps,quirk-frame-length-adjustment = <0x20>;
-+			};
-+		};
- 	};
- 
- 	timer {
--- 
-2.7.4
+I am not sure. I found this few lines above:
+
+> config SERIAL_AMBA_PL010_CONSOLE
+> 	bool "Support for console on AMBA serial port"
+> 	depends on SERIAL_AMBA_PL010=y
+> 	select SERIAL_CORE_CONSOLE
+
+and modified it for my purpose.
+
+
+Thanks,
+
+Ivan
 
 
 _______________________________________________
