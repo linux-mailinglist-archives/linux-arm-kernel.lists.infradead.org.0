@@ -2,90 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2446A140241
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 04:20:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F979140249
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 04:28:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KE69Q1cARbPnOPNeivIueKq8wCPjiW8RycKvT3Q2tGM=; b=oHf919XuZiN7R7
-	wGiFRCsMTzhwbBZd8GOFnCCOC7MqL+V0MymuYY5ihhiquaXsnllpDXgPXHbFeLw01iPdn24M1Zxt8
-	YC0njNk1KpcurwyCNWzD/GWMRzzgaKGMbewLDIGrOsf6uasTbjq+I36jnxmYdSd+Ol8tIFWTNEwQJ
-	7TDwMyTZ046EX/JBoXYkhG36OCXepyEo+r3BZTjt04/XIapnRaV8cCfccRSK8ppLQFDvKT7SOKSqR
-	7z+RRAXDBsRN1BR5KhAvHdKZJ5ooCM9sUFOHYeGZESgoGooyMcibHjxsgk65mXWdtn1G5Jde6ZoYD
-	qkB2Tno7B6uMMf0s5PSg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fgWBqGR4Qx1HZj1CnnrGMrK7KNjzsaAtjrfCtd2s4wU=; b=Bx7ipyXP/xINpa
+	5gmVObPat7MqDOdjv/pMoaNjXrDtsWg4WjyestXY4cgz1UsT7Xqr/hZWnM9lGKJDnyAINRqHRvGvR
+	GJBKxdXHXnUNUZQLEIbLxmxazD7hYX7D5r+n+L/793XIfbAOy7CYIT93HcAblSTV0N4NP+crhjw8X
+	45bqO8TxouB/cBi8yeli57EeqyitMX9yevf10mV8DcBBZzhq+xS/sbCRiGDR/11lsh4k8QrcJumyO
+	HaM5W3jQyuQYedh1qpmNdfhRWh6lHN+IjRPuP0h8eeURCAVuYBxBSKuoI6JVYO2nAvU2e5xbySHvI
+	ZZsClh7M75sjtY1KQpTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isIBg-0003EL-0D; Fri, 17 Jan 2020 03:20:44 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1isIJW-0006mS-CV; Fri, 17 Jan 2020 03:28:50 +0000
+Received: from mail-eopbgr40072.outbound.protection.outlook.com ([40.107.4.72]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isIBX-0003DO-DX
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 03:20:38 +0000
-Received: by mail-ed1-f66.google.com with SMTP id l8so20938300edw.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 19:20:33 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DuXdQ+iDwsOn6z/f7z3i1gI0wBVfOZJt0yf4ZaQCnGI=;
- b=Fv2jomrj8jJJWgkBQEiblRTXf0dQ5abeZllZ8CFAbdytwJ3uwrLDRILMUojrdnxHea
- s8HozNFkN8AgU5VGDEFOyGN+T8rA0Wk23/ySP8hTyk76R/8DrCOPs/2iWuTLLAVA95Is
- BU9ZkaZH2puGxcK4D+HvNMhPj4N6GQ7OA0dbPEKFWRu9aW6KHe0+0wqIFNs0h1ROR8Eo
- kD8XqGdzYHnBMJ/Ue4UFy9HzcRApXKHMXqbgILmCKgmIJstq8uZpuqwZZvfGSAxFiAv2
- UGCJGLjTf+BNoVDygNMMXGx1iiaGuHId/7AmqvN9huHuanB6KNsJPNzwMyhxZWqhonhd
- ppLQ==
-X-Gm-Message-State: APjAAAW2S5pHAIpHZ8VgZQb831liyu6s/mPg73FrFrNkLWH8SUkAj5ZI
- 5q17gbly+NRyQfs91A5ocLAjYrrSkRQ=
-X-Google-Smtp-Source: APXvYqwhBK/GXwrg/TPdGVf+17sUXvVyOE+fd7PBY5N9PuYrUZH4j534hn0XZToVCi2w+e3XZcNkcg==
-X-Received: by 2002:a17:906:d935:: with SMTP id
- rn21mr5970579ejb.147.1579231231695; 
- Thu, 16 Jan 2020 19:20:31 -0800 (PST)
-Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com.
- [209.85.221.54])
- by smtp.gmail.com with ESMTPSA id o7sm918987edv.71.2020.01.16.19.20.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Jan 2020 19:20:31 -0800 (PST)
-Received: by mail-wr1-f54.google.com with SMTP id c14so21252213wrn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Jan 2020 19:20:31 -0800 (PST)
-X-Received: by 2002:a5d:44cd:: with SMTP id z13mr661642wrr.104.1579231230948; 
- Thu, 16 Jan 2020 19:20:30 -0800 (PST)
+ id 1isIJJ-0006lW-GR
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 03:28:39 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lfbwxUh7hOHO8O2aejxQz5Cfb0fSyOmABbXu9WKwWO+7cg1q9L/eRIqxkLP+SdDNZW9N2cO2ao0ABiWQjeFKNhiT5AkMgsodJSmbYE1WbtltPGFxFnKhbVgBSmzL90WXkfNyD1HE/I/DLIs0Y5q2iriHLEdyXKkrj4Wu708IRbENMWthIZNHeSo6Y5nSlPND0tbHxAvQS2BT9QdVn3yAQlUlwsYthOHgW1LWAv4+52NIHsxGvUyO9seRxP8KL+POfSnmoYrW+nohPGYJD+ymZGNSLXUouNfPaXtkWxdx1xPZ2t1L+u/4BNUndSsjZQz8W3S0d97QuH+jvqTy6GdWRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=//8jhs7rs+O9Gw3wNQH5NyAluIcKlNz04jBJ9uUMdes=;
+ b=F50NOCr9MeWwew+IGtsxG57aJktrJFGvhQvoGMm3yw166ZK9JmlTDiFy6+pH4+JFu3unzlU3pUlqXrL4ozjuRRakMXDBRZ1ztjtkC3/HP6+YuqJEHqJB+ya7wMX2tL+OwNNFSzCVqiCMvjulVNeshZCEWSyg9zNMcsNM3Gh4PP6vFm0GWrmckHSuTOOkp0fTeUQJPi39Wrhe7L2J0MRgEmMtNhCejjmuZln7A+X3Mz7Q/m3WG4Q/PKXPF1httlr+n/CiWX30p/uZiN4yb0bRtaOTIfk8z0Tdt6UjD3f76qSrjfsdJXAuxaErro2Hmp8ekiqSsgoyUQ8qzMA2i+X9ug==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=//8jhs7rs+O9Gw3wNQH5NyAluIcKlNz04jBJ9uUMdes=;
+ b=YkAbiYxFyto8tIXot3nqGdQ+iR7XpLXZRrhFG6KhaLbH8HYyvDe3VQLp42HVDZ5BrYELmgGim4mUCGzlHfLWJ3mONvGbAULVAPN+t1zdlN5To16N+IuW/F9ABKGeac3DWXOQX1fcCBRCAof6+ITe1/zItR2RgoQZ3/1GqqoLaes=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5987.eurprd04.prod.outlook.com (20.178.114.14) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2623.8; Fri, 17 Jan 2020 03:28:33 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2623.018; Fri, 17 Jan 2020
+ 03:28:33 +0000
+Received: from localhost.localdomain (119.31.174.66) by
+ HK2PR06CA0005.apcprd06.prod.outlook.com (2603:1096:202:2e::17) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2644.18 via Frontend Transport; Fri, 17 Jan 2020 03:28:30 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "srinivas.kandagatla@linaro.org"
+ <srinivas.kandagatla@linaro.org>
+Subject: [PATCH] nvmem: imx: ocotp: add i.MX8MP support
+Thread-Topic: [PATCH] nvmem: imx: ocotp: add i.MX8MP support
+Thread-Index: AQHVzOYys8WB3+BLO0KUDipX7ftHWA==
+Date: Fri, 17 Jan 2020 03:28:33 +0000
+Message-ID: <1579231433-14201-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR06CA0005.apcprd06.prod.outlook.com
+ (2603:1096:202:2e::17) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 78393aa3-4716-4117-9bc3-08d79afd5481
+x-ms-traffictypediagnostic: AM0PR04MB5987:|AM0PR04MB5987:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5987DAEDB2237407A6B0423188310@AM0PR04MB5987.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2733;
+x-forefront-prvs: 0285201563
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(376002)(396003)(136003)(366004)(199004)(189003)(44832011)(81166006)(8936002)(71200400001)(86362001)(316002)(69590400006)(110136005)(956004)(6506007)(6512007)(8676002)(52116002)(81156014)(16526019)(4326008)(5660300002)(6486002)(26005)(54906003)(2616005)(64756008)(66946007)(186003)(66476007)(36756003)(478600001)(66556008)(2906002)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5987;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: NZgnkBHC2U40WrIkCms9WvdnySYh8zhQI8nux+9YE2mcIglc9tgXDCapinFrQkNeiP+BOgnpO5Qf8NfW1djF+XgecCAjwcFiICvguYhUr/gnUA6JqiruNSk/41r7DVotQZGYwMHhu6quNTmRFck8JYrXEMkG8MGaDOLkUg5ov9ybbGROXnbaABey/UJgC+lEnsdJe7GbYfFeS16zfDXk2VYSpBwpT6yEJoXq4sKjTU0fLKO/y5jZAeXc9puhdXkLoOrCwoCPQGhxjP8jqoD0xmSpx8KBImDLgq6fwTI/xwAYozs9VB6+M64SBc2JT1nDfvD5iwDEn0yvDS4lDVAvbFsEnNwCoezAWUJtWvSjw7WxIyrzXSlA0eMBXRLkUDuQh9PRXG1D3XkhwjnxyuObvPsUAWluO+D7OahbmQxy/+XsBw736BJHLvSKKFFs6Jp0JuI8GvIpHDOUlWZ/iURUY6qgS6fO5vqz7cweS+TAbJ+zE+PIxntbqhhyqEGfENcZ
 MIME-Version: 1.0
-References: <20200116194658.78893-1-manu@freebsd.org>
-In-Reply-To: <20200116194658.78893-1-manu@freebsd.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Fri, 17 Jan 2020 11:20:21 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67U6qjNf0PPMOm191UZDQvJTGZNNREc22ZsDW61KqaUEA@mail.gmail.com>
-Message-ID: <CAGb2v67U6qjNf0PPMOm191UZDQvJTGZNNREc22ZsDW61KqaUEA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Add gpio bank supply for
- A64-Olinuxino
-To: Emmanuel Vadot <manu@freebsd.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 78393aa3-4716-4117-9bc3-08d79afd5481
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jan 2020 03:28:33.3027 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: M0fYWZ2QxsrgkjrGEaRernDON8Bg0+U9GL0htN+EXPUonHLjkcDcIl7idwoosEkiuxOm7nqrisQV0MYtFmYp5g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5987
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_192035_457352_132D7029 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200116_192837_647348_74C9159B 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
+ no trust [40.107.4.72 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,77 +128,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 3:47 AM Emmanuel Vadot <manu@freebsd.org> wrote:
->
-> Add the regulators for each bank on this boards.
->
-> Signed-off-by: Emmanuel Vadot <manu@freebsd.org>
-> ---
->  .../boot/dts/allwinner/sun50i-a64-olinuxino.dts   | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-> index 01a9a52edae4..1a25abf6065c 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-> @@ -163,6 +163,17 @@ &ohci1 {
->         status = "okay";
->  };
->
-> +&pio {
-> +       vcc-pa-supply = <&reg_dcdc1>;
-> +       vcc-pb-supply = <&reg_dcdc1>;
-> +       vcc-pc-supply = <&reg_dcdc1>;
-> +       vcc-pd-supply = <&reg_dcdc1>;
-> +       vcc-pe-supply = <&reg_aldo1>;
-> +       vcc-pf-supply = <&reg_dcdc1>;
-> +       vcc-pg-supply = <&reg_dldo4>;
-> +       vcc-ph-supply = <&reg_dcdc1>;
-> +};
-> +
->  &r_rsb {
->         status = "okay";
->
-> @@ -175,6 +186,10 @@ axp803: pmic@3a3 {
->         };
->  };
->
-> +&r_pio {
-> +       vcc-pl-supply = <&reg_aldo2>;
+From: Peng Fan <peng.fan@nxp.com>
 
-This is likely going to cause a circular dependency, because the RSB
-interface that is used to talk to the PMIC is also on the PL pins.
+i.MX8MP has 96 banks with each bank 4 words. And it has different
+ctrl register layout, so add new macros for that.
 
-(How does FreeBSD deal with this?)
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
 
-Instead, just add a comment describing what is really used, and set
-the regulator to always-on, which should already be the case.
+dt-bindings doc has been posted by Anson Huang
 
-ChenYu
+ drivers/nvmem/imx-ocotp.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-> +};
-> +
->  #include "axp803.dtsi"
->
->  &ac_power_supply {
-> --
-> 2.24.1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
+index 4ba9cc8f76df..794858093086 100644
+--- a/drivers/nvmem/imx-ocotp.c
++++ b/drivers/nvmem/imx-ocotp.c
+@@ -44,6 +44,11 @@
+ #define IMX_OCOTP_BM_CTRL_ERROR		0x00000200
+ #define IMX_OCOTP_BM_CTRL_REL_SHADOWS	0x00000400
+ 
++#define IMX_OCOTP_BM_CTRL_ADDR_8MP		0x000001FF
++#define IMX_OCOTP_BM_CTRL_BUSY_8MP		0x00000200
++#define IMX_OCOTP_BM_CTRL_ERROR_8MP		0x00000400
++#define IMX_OCOTP_BM_CTRL_REL_SHADOWS_8MP	0x00000800
++
+ #define IMX_OCOTP_BM_CTRL_DEFAULT				\
+ 	{							\
+ 		.bm_addr = IMX_OCOTP_BM_CTRL_ADDR,		\
+@@ -52,6 +57,14 @@
+ 		.bm_rel_shadows = IMX_OCOTP_BM_CTRL_REL_SHADOWS,\
+ 	}
+ 
++#define IMX_OCOTP_BM_CTRL_8MP					\
++	{							\
++		.bm_addr = IMX_OCOTP_BM_CTRL_ADDR_8MP,		\
++		.bm_busy = IMX_OCOTP_BM_CTRL_BUSY_8MP,		\
++		.bm_error = IMX_OCOTP_BM_CTRL_ERROR_8MP,	\
++		.bm_rel_shadows = IMX_OCOTP_BM_CTRL_REL_SHADOWS_8MP,\
++	}
++
+ #define TIMING_STROBE_PROG_US		10	/* Min time to blow a fuse */
+ #define TIMING_STROBE_READ_NS		37	/* Min time before read */
+ #define TIMING_RELAX_NS			17
+@@ -520,6 +533,13 @@ static const struct ocotp_params imx8mn_params = {
+ 	.ctrl = IMX_OCOTP_BM_CTRL_DEFAULT,
+ };
+ 
++static const struct ocotp_params imx8mp_params = {
++	.nregs = 384,
++	.bank_address_words = 0,
++	.set_timing = imx_ocotp_set_imx6_timing,
++	.ctrl = IMX_OCOTP_BM_CTRL_8MP,
++};
++
+ static const struct of_device_id imx_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx6q-ocotp",  .data = &imx6q_params },
+ 	{ .compatible = "fsl,imx6sl-ocotp", .data = &imx6sl_params },
+@@ -532,6 +552,7 @@ static const struct of_device_id imx_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx8mq-ocotp", .data = &imx8mq_params },
+ 	{ .compatible = "fsl,imx8mm-ocotp", .data = &imx8mm_params },
+ 	{ .compatible = "fsl,imx8mn-ocotp", .data = &imx8mn_params },
++	{ .compatible = "fsl,imx8mp-ocotp", .data = &imx8mp_params },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, imx_ocotp_dt_ids);
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
