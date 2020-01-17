@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49AD914107F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:12:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59CFA141093
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:14:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ikj7rIFGbqQ5N71v1p2dDqAd/Na+u7dnffOan3LkCbw=; b=bE6I4axHBM9BBc8VGzJQWBmZr
-	CEWcqIdtheU3ccZ5FZVPTtGNmndZ5/1x6ljc3TInaiNNmfZLJK3Eql6EtPfRX6WsOkjno9yz8HpbW
-	NypeT85UxK7sCDuEkfFpx912zsrHa9H3aickMz2Z6OMC8gSHk8gFs5AvrRNllwaEvSN/PNYId7PTp
-	TcqAaHei7D52nJmo/lpgwJGOY+7r/+YZR1FRt42siurxZy6rEbwRuR6yfwHb4AUF4VY2+TW5VKGKi
-	pmmdMQWBD0sdX2e4PmicWrFKAAlI8dOLqQ+x12LWRKZEZ4/HEASdwn312KDz0+dmU21NQQguLJdl+
-	ac4DF9H4g==;
+	 bh=5EG320G43Ttk84ciR0BO+l2bwmAi8TacSJ68U5kuBXk=; b=rxLY/B6Q4idhx9pnId2hXfhnI
+	eERQL4o/M8Z+n/5bcRgxg9KVGXXcmgw46Zkmm/yxHijE+I6HP0ux7H+OnTNDZFeabeC7zhDvrd2e+
+	WNEEg97Pcf19g4yifBZyP4zlJx/28ZXNQ9Y0uxd8m6tZhURykJAEVo6hId5dpYiDPAzHYZ2BJQ1yl
+	e8ymBXLrLNWmPE22qOPGjy98o913oCHCEQ15wPsAgqxyXzaeVWaFlZACzgeS9cHg0QKM98ZmJZsA5
+	u+2CHfLUibditTE7VsoZXCWXdgR877Y6AqPI+eynbGN1XlwsheI6oAJ0jxkXf35ibnK0WkWrOeSuR
+	9EqcD0Ctg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isW6l-0002Xb-19; Fri, 17 Jan 2020 18:12:35 +0000
+	id 1isW8t-0002wq-2V; Fri, 17 Jan 2020 18:14:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isW6Z-0002Ww-UH
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:12:25 +0000
+ id 1isW8c-0002vu-73
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:14:34 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CE02220748;
- Fri, 17 Jan 2020 18:12:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2981620748;
+ Fri, 17 Jan 2020 18:14:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579284743;
- bh=IdyrMy2nrlmfkVGDIpnIS4HjWOBUiobj0MXhdDTQd80=;
+ s=default; t=1579284869;
+ bh=1r92zzD8XWpIGYHwCR61Uj+YCjejOaMCX1TbdsNW94c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qn8SJYF+AS+5NobYCLPOms9TMfbOAaRLKRT/vF9O3TGrTA/TSz2xio4FkapxEPz75
- ddlusE4o2/5Y5ESlOgi6OjeXsjycbBuHKF0v1wIePlD9F9K4cLQ30MncZqSa7pMBI2
- naGnJwDelSv6i33seCm+qy64/LRjP4yCKeXIGxo0=
-Date: Fri, 17 Jan 2020 19:12:20 +0100
+ b=o90IHGwWDzmgjs2UOwYCFlu/eT5jmUkchRD2VpUdmHw05PF5YZZXaUIrkVSDm6ZIL
+ jgO15hnCyLC3L1DKQZAXSgt2Hsve/p3+/Oms6nRlG/5fFXq/sBTQ3uXOuL81hBTWVV
+ +MtoTJVakZT8hdU7GLMvaaD9Rwxx8So843ysjPow=
+Date: Fri, 17 Jan 2020 19:14:27 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH] ARM: dts: sun8i: a83t: Fix incorrect clk and reset
- macros for EMAC device
-Message-ID: <20200117181220.biryjou5zvqfxdnt@gilmour.lan>
-References: <20200114094252.8908-1-wens@kernel.org>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH 1/3] arm64: dts: allwinner: h6: tanix-tx6: enable emmc
+Message-ID: <20200117181427.hy7qsyxwomsl3v2q@gilmour.lan>
+References: <20200115193441.172902-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
-In-Reply-To: <20200114094252.8908-1-wens@kernel.org>
+In-Reply-To: <20200115193441.172902-1-jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_101223_993271_93BA83FE 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20200117_101430_278627_055AC93C 
+X-CRM114-Status: GOOD (  16.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,56 +75,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2866255388723521663=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7885495947968428936=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2866255388723521663==
+--===============7885495947968428936==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="bzobas6k7fsnitoh"
+	protocol="application/pgp-signature"; boundary="f3cltcqsa3lajhg5"
 Content-Disposition: inline
 
 
---bzobas6k7fsnitoh
+--f3cltcqsa3lajhg5
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Jan 14, 2020 at 05:42:52PM +0800, Chen-Yu Tsai wrote:
-> From: Chen-Yu Tsai <wens@csie.org>
+On Wed, Jan 15, 2020 at 08:34:41PM +0100, Jernej Skrabec wrote:
+> Tanix TX6 has 32 GiB eMMC. Add a node for it.
 >
-> When the raw numbers used for clk and reset indices in the EMAC device
-> node were converted to the new macros, the order of the clk and reset
-> properties was overlooked, and thus the incorrect macros were used.
-> This results in the EMAC being non-responsive, as well as an oops due
-> to incorrect usage of the reset control.
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  .../dts/allwinner/sun50i-h6-tanix-tx6.dts     | 20 +++++++++++++++++++
+>  1 file changed, 20 insertions(+)
 >
-> Correct the macro types, and also reorder the clk and reset properties
-> to match all the other device nodes.
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> index 83e6cb0e59ce..8cbf4e4a761e 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> @@ -31,6 +31,13 @@ hdmi_con_in: endpoint {
+>  		};
+>  	};
 >
-> Fixes: 765866edb16a ("ARM: dts: sunxi: Use macros for references to CCU clocks")
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> +	reg_vcc1v8: vcc1v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc1v8";
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +	};
+> +
+>  	reg_vcc3v3: vcc3v3 {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "vcc3v3";
+> @@ -78,6 +85,15 @@ &mmc0 {
+>  	status = "okay";
+>  };
+>
+> +&mmc2 {
+> +	vmmc-supply = <&reg_vcc3v3>;
+> +	vqmmc-supply = <&reg_vcc1v8>;
+> +	non-removable;
+> +	cap-mmc-hw-reset;
+> +	bus-width = <8>;
+> +	status = "okay";
+> +};
+> +
+>  &ohci0 {
+>  	status = "okay";
+>  };
+> @@ -86,6 +102,10 @@ &ohci3 {
+>  	status = "okay";
+>  };
+>
+> +&pio {
+> +	vcc-pc-supply = <&reg_vcc1v8>;
+> +};
+> +
 
-Queued as a fix for 5.6, thanks!
+Can you list all of the regulators for the H6 while you're at it (in a
+preliminary patch, ideally)?
+
+Thanks!
 Maxime
 
---bzobas6k7fsnitoh
+--f3cltcqsa3lajhg5
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiH5BAAKCRDj7w1vZxhR
-xaaXAQDsG2aEO1qdNIVRhFZfwLaBsqA68VlRWQyNaM9q4IclmgEApgHG16xb1DWI
-RSmavsHC0ZQmsOTVpBI4SiaME4t3qw0=
-=cMS9
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXiH5gwAKCRDj7w1vZxhR
+xSStAP9vFRUXKGi1EuMs8pb4/YHRNScqQrchGDt874B7pjrD1AD+PUlqtp134Y+C
+7bsxe4hKGX8rhUf/fZ/H9oGhJ6/YJQM=
+=gOtr
 -----END PGP SIGNATURE-----
 
---bzobas6k7fsnitoh--
+--f3cltcqsa3lajhg5--
 
 
---===============2866255388723521663==
+--===============7885495947968428936==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -136,5 +175,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2866255388723521663==--
+--===============7885495947968428936==--
 
