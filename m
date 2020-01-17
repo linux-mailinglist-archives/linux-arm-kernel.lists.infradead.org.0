@@ -2,90 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A33401410AF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:21:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 024C11410BE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 19:24:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KgDipdzr4VtOFdyPQcwK+yQi9ktTso9DPBoAxxZiBJM=; b=ejlZCXrWrkmC2xRYq5z17Df9P
-	edCUOXWzzPu8Ap7V0oU5TMZedzclb6q1t+yA3qOtWwAJ5Gyd6sKpOTIlktg11feupVUswt0EuvdMs
-	+mt2fv6nldcLWqXMDjP8B6I8jPJ4xOCel1MoyB9Hd7y1WMcVS2AIYyN16cceS2OGQAOghk04nBOYz
-	y8QRBuE7nAfz8CnofFZ2FNYoBsqOTdJNPran2PxHZHcyY7PXBrFCOOgTBehLhM/i8DnyPx+4b9Tet
-	0I36BRrRkkKzHYTipGXppcJBiOteqr2xpl/UnG6OZLwJYoWbFaG+5EwPV6JpJy1Nci0xz/ocI7fOM
-	tF05FA5sA==;
+	 bh=PlAPAWwGoZsVRlr/8PpVPgeXGedY7479Gp+xRTCWXQc=; b=YY41g3N1/MfcE1BfMnBVt2Jlp
+	K6GN7iINGrCizLbzs0yYYGdawMih76bmneHGC8xOZTaxrpWMFxOBbeR5c7OhHY5yu+Da3Qi4enxAS
+	tI5NeL0r0BfiM/BIBKjO3sWjnhWKby57cqGJk/VLxbcCGECe7YoHMrRbbg9K3QeF8VboaLGjLnZ1h
+	C/noaA/noia8dl+3pOj2lUQynFEt4w2bnWp3x3tv9LlUd0VNxKhu0iy2FkVLKaB1OtdrmpWFOl7dj
+	fhU9Qf6wSCmpXzKj31HrE80jprpldBmH3TMcWTRI+cyuy5A/Y2pM6Okjk56f3KpvQY4cqpJITg0ia
+	chWb6aQcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isWEy-0006Pl-88; Fri, 17 Jan 2020 18:21:04 +0000
+	id 1isWIE-0006q9-Ex; Fri, 17 Jan 2020 18:24:26 +0000
 Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isWEh-0006Oo-Ix
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:20:52 +0000
+ id 1isWI0-0006pD-4e
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 18:24:16 +0000
 Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIDGkp186421;
- Fri, 17 Jan 2020 18:20:40 GMT
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIDFPF186359;
+ Fri, 17 Jan 2020 18:24:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=subject : to : cc :
  references : from : message-id : date : mime-version : in-reply-to :
  content-type : content-transfer-encoding; s=corp-2019-08-05;
- bh=oAP13y93/jPKuyY/7iTSKn/384M1UDuNaMgAyH6pLbA=;
- b=rLXtoT1ZHwYlD9TL0kOAXqKUC2yJA+IvPup0iu8qun8aclerOwnDi04i/QoCfqzbAxS2
- ebMGJeBzb5cglNtqbJqWuyvDH5y/yOE9Jz5JxvXKXfhbSttE1fdMKAnyVaFfDTKSef44
- xOAK4vByTXvlgMByAUo2NAU89SbxEuZBhX5WdiwJaqv2Kz+IkhY99KcSWOHnj+HHbqZy
- vdFzW4NgylcsgipB566LD6OLJJtncaNJYP5MuUVwUcyi/qkpH0aLoyK47QdlZ1gjlik4
- xZ3/rROpb9Q9IZTu2fjyVWyeE6tyhsmNed2Ls+WA9kCvZhmodXJe9Zv40uvL1LaZl+ga MQ== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2130.oracle.com with ESMTP id 2xf74st8wd-1
+ bh=V6jdRO8DhqcENdZcDjhcv4ayNKUxDX1LtbH6Da7E+34=;
+ b=b4Mr7Ihr0XV9WdlwaWg34Hl0DTRKBlJWqerwaqJco3cCtBY7/FeDhy6hUVpcVsto44uK
+ 6yX0cRD7SwWdMna9wbQ5LCIEnTwRD6/QKS77/hPrJxhmebfvn+9HJq1yWHKqOTHAKC7l
+ nC3zc6dRW+WJbKy7zpM2na1+VI0W39bNZ+L6OKzs/x05DecBuD9+unYJX2FK22B3wEpK
+ ZEMWL2dfG1bxlwt0ynLP1mLqpziNw6UJose15+KzmDa80uS0XexrsIFD0dRfTESCaWHG
+ 4CXVQP+bunQ/dSk35jRca/uY6pQ+CsImV4gsmNOzyPeuyx9CIo6WyJfMxkC4jw/pgovm iA== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 2xf74st9er-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 17 Jan 2020 18:20:40 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIAn4F044940;
- Fri, 17 Jan 2020 18:20:40 GMT
+ Fri, 17 Jan 2020 18:24:08 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00HIAmtU141255;
+ Fri, 17 Jan 2020 18:24:07 GMT
 Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3030.oracle.com with ESMTP id 2xjxm9c8je-1
+ by aserp3030.oracle.com with ESMTP id 2xk24ff8bm-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 17 Jan 2020 18:20:39 +0000
-Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00HIKa1L004175;
- Fri, 17 Jan 2020 18:20:36 GMT
+ Fri, 17 Jan 2020 18:24:07 +0000
+Received: from abhmp0008.oracle.com (abhmp0008.oracle.com [141.146.116.14])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00HIO6VS005836;
+ Fri, 17 Jan 2020 18:24:06 GMT
 Received: from [10.209.227.41] (/10.209.227.41)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 17 Jan 2020 10:20:36 -0800
-Subject: Re: [GIT_PULL] SOC: TI Keystone Ring Accelerator driver for v5.6
-To: Olof Johansson <olof@lixom.net>
-References: <1579205259-4845-1-git-send-email-santosh.shilimkar@oracle.com>
- <20200117000358.fe7ew4vvnz4yxbzj@localhost>
- <148b6ec3-6a8e-ced8-41b3-3dffd5528ed6@oracle.com>
- <CAOesGMiWL93ypL_4xqfqgwfVSOKtu8UqerzxV=Zr-aUkLp+rBw@mail.gmail.com>
+ with ESMTP ; Fri, 17 Jan 2020 10:24:05 -0800
+Subject: Re: [PATCH v2] drivers: soc: ti: knav_qmss_queue: Pass lockdep
+ expression to RCU lists
+To: Amol Grover <frextrite@gmail.com>, arm-soc <arm@kernel.org>
+References: <20200117133048.31708-1-frextrite@gmail.com>
 From: santosh.shilimkar@oracle.com
 Organization: Oracle Corporation
-Message-ID: <c938a1ec-4b82-ae88-8a98-27c4f6080db9@oracle.com>
-Date: Fri, 17 Jan 2020 10:20:35 -0800
+Message-ID: <5d77df7f-8693-0232-dbfe-0acfc37e040f@oracle.com>
+Date: Fri, 17 Jan 2020 10:24:04 -0800
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
  Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CAOesGMiWL93ypL_4xqfqgwfVSOKtu8UqerzxV=Zr-aUkLp+rBw@mail.gmail.com>
+In-Reply-To: <20200117133048.31708-1-frextrite@gmail.com>
 Content-Language: en-US
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9503
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=945
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.0.1-1911140001 definitions=main-2001170142
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9503
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
  lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
  definitions=main-2001170142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_102047_760234_0183C4F5 
-X-CRM114-Status: GOOD (  24.12  )
+X-CRM114-CacheID: sfid-20200117_102412_266922_DD14235D 
+X-CRM114-Status: GOOD (  16.98  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -114,75 +112,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vinod Koul <vkoul@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Kevin Hilman <khilman@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- SoC Team <soc@kernel.org>, ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: "Paul E . McKenney" <paulmck@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Santosh Shilimkar <ssantosh@kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ linux-kernel-mentees@lists.linuxfoundation.org,
+ Madhuparna Bhowmik <madhuparnabhowmik04@gmail.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/17/20 10:11 AM, Olof Johansson wrote:
-> On Thu, Jan 16, 2020 at 9:05 PM <santosh.shilimkar@oracle.com> wrote:
->>
->> On 1/16/20 4:03 PM, Olof Johansson wrote:
->>> Hi,
->>>
->>> On Thu, Jan 16, 2020 at 12:07:39PM -0800, Santosh Shilimkar wrote:
->>>> Its bit late for pull request, but if possible, please pull it to
->>>> soc drivers tree.
->>>>
->>>> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
->>>>
->>>>     Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
->>>>
->>>> are available in the git repository at:
->>>>
->>>>     git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.6
->>>>
->>>> for you to fetch changes up to 3277e8aa2504d97e022ecb9777d784ac1a439d36:
->>>>
->>>>     soc: ti: k3: add navss ringacc driver (2020-01-15 10:07:27 -0800)
->>>>
->>>> ----------------------------------------------------------------
->>>> SOC: TI Keystone Ring Accelerator driver
->>>>
->>>> The Ring Accelerator (RINGACC or RA) provides hardware acceleration to
->>>> enable straightforward passing of work between a producer and a consumer.
->>>> There is one RINGACC module per NAVSS on TI AM65x SoCs.
->>>
->>> This driver doesn't seem to have exported symbols, and no in-kernel
->>> users. So how will it be used?
->>>
->>> Usually we ask to hold off until the consuming side/drivers are also ready.
->>>
->> The other patches getting merged via Vinod's tree. The combined series
->> is split into couple of series. Vinod is going to pull this branch
->> and apply rest of the patchset. And then couple of additional consumer
->> drivers will get posted.
+On 1/17/20 5:30 AM, Amol Grover wrote:
+> inst->handles is traversed using list_for_each_entry_rcu
+> outside an RCU read-side critical section but under the protection
+> of knav_dev_lock.
 > 
-> Ok -- might have been useful to get that in the tag description for
-> context. Something to consider next time.
+> Hence, add corresponding lockdep expression to silence false-positive
+> lockdep warnings, and harden RCU lists.
 > 
-Sure. Will keep that in mind.
+> Add macro for the corresponding lockdep expression.
+> 
+> Signed-off-by: Amol Grover <frextrite@gmail.com>
+> ---
+> v2:
+> - Remove rcu_read_lock_held() from lockdep expression since it is
+>    implicitly checked for.
+> 
+Looks fine to me.
 
->>> Also, is there a reason this is under drivers/soc/ instead of somewhere more
->>> suitable in the drivers subsystem? It's not "soc glue code" in the same way as
->>> drivers/soc was intended originally.
->>>
->> These kind of SOC IP drivers, we put into drivers/soc/ because of lack
->> of specific subsystem where they fit in. Navigator was also similar example.
-> 
-> Hmm. At some point we'll have to push the brakes on this, since
-> drivers/soc can't become a catch-all for random stuff like the old
-> mach directories were. But it's tricky to tell just when -- sometimes
-> you have to let the mess show up too.
-> 
-> I'll merge this when I do the next pass (today, likely).
-> 
-Thanks Olof !!
+Hi Olof, Arnd,
+Can you please pick this one and apply to your driver-soc branch ?
+I already sent out pull request and hence the request.
+
+regards,
+Santosh
 
 _______________________________________________
 linux-arm-kernel mailing list
