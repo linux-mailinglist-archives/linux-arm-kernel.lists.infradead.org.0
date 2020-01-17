@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E84F1404E1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 09:09:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B6214050B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Jan 2020 09:14:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GLAvqrpRD4ZOhdpCif/4Sm2vLBLy3GynPiDKwg0Hfws=; b=bj6TVdTrCM4uDk9xSfOLClG8Y
-	koxEDUPAueChdL9GAdcycviwjmeKTb9m9l98HOsI9gcNwF+YS8Vz9Uo/kjKBwNjvz+kRycpXd13mu
-	obBzoZUgdOuMncd11iWNO6dWQopwpUvzpXz/rEVP2JHHpHat4oh6PZfyLRGwUBlBcAg4FVjKC5/Hm
-	gJAoX1VT5Ev9cG4IKw9usKjroP9hmSZDZqYr/BC9gRysU1eVJcNOF0NhKnU+4MQ/hGBGpoL6eyhZP
-	tYSVCP5ueCWT5piO/XxmgNCkH0lU2h8V+9PiRTNgBZffdK/1bzWVRXWHYxpilXoeXARx0S+UkDdV3
-	5gHh9wlKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TLwe8WHAa9UDS7MK9FNul5SQK7FOF9n7rwY5Yum9QrY=; b=AmPitJo5DcLHB0
+	YSbEa35rGfeHBBnBCnAOEtDNGzK41aZXms/sgG43Gci34PErgo08rQq6AI+Ag6UVo/zZIhdqnX1tu
+	fX60OpG8wVK77RgZJtst8x9WdEwjeWSyXrAdkDNAcA/+wx70xxE3xnLGHp5i7esrqu3XSp73E2Hb2
+	GW52YLuCG2AZogYH6mgrdS36FeiWCfkfqpO1fgmmLouur6tT1PWLovxh886Q7OobVASJkaALpUgii
+	owtaM31KYOMLKeBZn5ABMJ7JSzqFbAGjSoe0xJYuYYz1d9hKmdrBiKvkg4Oznd6FiB6iXxA7UleVQ
+	e0Dg3KLORze6CA1Fit1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isMgV-0002Fu-JF; Fri, 17 Jan 2020 08:08:51 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1isMlL-00054j-Ii; Fri, 17 Jan 2020 08:13:51 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isMgF-0002ER-46
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 08:08:39 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00H88Tu3019621;
- Fri, 17 Jan 2020 02:08:29 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579248509;
- bh=h04PjAMDL1FtVudgz/Df4dwDowqI3YAr79xF/WspK4g=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=ZBBjk6Rve2UPz25W/dSwPh/q1PllomFVILWHvh1uHVpp7IpeW8yRUKO7YjGO2vEFF
- zVhwxLq5CHrvun2rUcSiFPg/MUcvUuFOLse+Njw/H+ewHZ21TM4SrX/VzJ8O8AiUXc
- EK+TEqgPwSsaQv/4dl3NipafMwGZ2CVF4XoDv3S8=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00H88Tt6052815
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 17 Jan 2020 02:08:29 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 17
- Jan 2020 02:08:29 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 17 Jan 2020 02:08:29 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00H88QTL071044;
- Fri, 17 Jan 2020 02:08:27 -0600
-Subject: Re: [PATCH] arm: dts: ti: k3-am654-main: Update otap-del-sel values
-To: Faiz Abbas <faiz_abbas@ti.com>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-References: <20200109085152.10573-1-faiz_abbas@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <5dc0bca0-502d-01b8-554b-4c4bc06688a8@ti.com>
-Date: Fri, 17 Jan 2020 10:08:26 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1isMkq-0004qb-0u
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Jan 2020 08:13:24 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1isMkd-0001Cc-OT; Fri, 17 Jan 2020 09:13:07 +0100
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1isMkc-0004pJ-7a; Fri, 17 Jan 2020 09:13:06 +0100
+Date: Fri, 17 Jan 2020 09:13:06 +0100
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Han Xu <xhnjupt@gmail.com>
+Subject: Re: [PATCH 3/6] dmaengine: mxs: add the power management functions
+Message-ID: <20200117081306.eeuf3fvph5rb7tjf@pengutronix.de>
+References: <1579038243-28550-1-git-send-email-han.xu@nxp.com>
+ <1579038243-28550-4-git-send-email-han.xu@nxp.com>
+ <20200115080257.dtd4vss4uhopbvn2@pengutronix.de>
+ <CA+EcR23TCUU83Y7BYX5LCvGAj20+s67n+rWaGR5R9BSMHUH82A@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200109085152.10573-1-faiz_abbas@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <CA+EcR23TCUU83Y7BYX5LCvGAj20+s67n+rWaGR5R9BSMHUH82A@mail.gmail.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:08:04 up 193 days, 14:18, 87 users,  load average: 0.09, 0.28,
+ 0.30
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_000835_267131_573ECA3B 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200117_001320_060960_B966409B 
+X-CRM114-Status: GOOD (  23.63  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,61 +77,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, robh+dt@kernel.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>, Richard Weinberger <richard@nod.at>,
+ Esben Haabendal <esben@geanix.com>, linux-kernel@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, vkoul@kernel.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ linux-mtd <linux-mtd@lists.infradead.org>, linux-imx@nxp.com,
+ Miquel Raynal <miquel.raynal@bootlin.com>, dmaengine@vger.kernel.org,
+ Han Xu <han.xu@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/01/2020 10:51, Faiz Abbas wrote:
-> According to the latest AM65x Data Manual[1], a different output tap
-> delay value is optimum for a given speed mode. Update these values.
+On Thu, Jan 16, 2020 at 10:36:33AM -0600, Han Xu wrote:
+> On Wed, Jan 15, 2020 at 2:03 AM Sascha Hauer <s.hauer@pengutronix.de> wrote:
+> >
+> > On Wed, Jan 15, 2020 at 05:44:00AM +0800, Han Xu wrote:
+> > > add the power management functions and leverage the runtime pm for
+> > > system suspend/resume
+> > >
+> > > Signed-off-by: Han Xu <han.xu@nxp.com>
+> > > ---
+> > >  drivers/dma/mxs-dma.c | 97 +++++++++++++++++++++++++++++++++++++++----
+> > >  1 file changed, 90 insertions(+), 7 deletions(-)
+> > >
+> > > diff --git a/drivers/dma/mxs-dma.c b/drivers/dma/mxs-dma.c
+> > > index b458f06f9067..251492c5ea58 100644
+> > > --- a/drivers/dma/mxs-dma.c
+> > > +++ b/drivers/dma/mxs-dma.c
+> > > @@ -25,6 +25,7 @@
+> > >  #include <linux/of_dma.h>
+> > >  #include <linux/list.h>
+> > >  #include <linux/dma/mxs-dma.h>
+> > > +#include <linux/pm_runtime.h>
+> > >
+> > >  #include <asm/irq.h>
+> > >
+> > > @@ -39,6 +40,8 @@
+> > >  #define dma_is_apbh(mxs_dma) ((mxs_dma)->type == MXS_DMA_APBH)
+> > >  #define apbh_is_old(mxs_dma) ((mxs_dma)->dev_id == IMX23_DMA)
+> > >
+> > > +#define MXS_DMA_RPM_TIMEOUT 50 /* ms */
+> > > +
+> > >  #define HW_APBHX_CTRL0                               0x000
+> > >  #define BM_APBH_CTRL0_APB_BURST8_EN          (1 << 29)
+> > >  #define BM_APBH_CTRL0_APB_BURST_EN           (1 << 28)
+> > > @@ -416,6 +419,7 @@ static int mxs_dma_alloc_chan_resources(struct dma_chan *chan)
+> > >  {
+> > >       struct mxs_dma_chan *mxs_chan = to_mxs_dma_chan(chan);
+> > >       struct mxs_dma_engine *mxs_dma = mxs_chan->mxs_dma;
+> > > +     struct device *dev = &mxs_dma->pdev->dev;
+> > >       int ret;
+> > >
+> > >       mxs_chan->ccw = dma_alloc_coherent(mxs_dma->dma_device.dev,
+> > > @@ -431,9 +435,11 @@ static int mxs_dma_alloc_chan_resources(struct dma_chan *chan)
+> > >       if (ret)
+> > >               goto err_irq;
+> > >
+> > > -     ret = clk_prepare_enable(mxs_dma->clk);
+> > > -     if (ret)
+> > > +     ret = pm_runtime_get_sync(dev);
+> > > +     if (ret < 0) {
+> > > +             dev_err(dev, "Failed to enable clock\n");
+> > >               goto err_clk;
+> >
+> > From looking at other DMA drivers I know we are in good company here,
+> > but I think this is wrong. Doing pm_runtime_get_sync() in
+> > alloc_chan_resources() and going to autosuspend in free_chan_resources()
+> > effectively disables runtime_pm as clients normally acquire their
+> > channels during driver probe and release them only in driver remove.
 > 
-> [1] http://www.ti.com/lit/gpn/am6526
-> 
-> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+> Thanks for the comments.
+> That's why I moved acquire_dma_resource from the probe to
+> runtime_resume in the gpmi driver, this change won't disable the
+> runtime_pm function and the incremental counter always balanced.
 
-I believe this patch is going to be updated, as the dt binding has 
-received comments. As such, going to ignore this for now.
+Yes, that's what I've written a few lines further down:
 
--Tero
+> 
+> >
+> > In the next patch you release the DMA channels in the GPMI nand drivers
+> > runtime_suspend hook just to somehow trigger the runtime_suspend of the
+> > DMA driver.
 
-> ---
-> 
-> This patch depends on my two kernel series posted here:
-> https://patchwork.kernel.org/project/linux-mmc/list/?series=225425
-> https://patchwork.kernel.org/project/linux-mmc/list/?series=225459
-> 
->   arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 12 +++++++++++-
->   1 file changed, 11 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-> index efb24579922c..c8d812fdfa0a 100644
-> --- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-> +++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-> @@ -253,7 +253,17 @@
->   		interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
->   		mmc-ddr-1_8v;
->   		mmc-hs200-1_8v;
-> -		ti,otap-del-sel = <0x2>;
-> +		ti,otap-del-sel-legacy = <0x0>;
-> +		ti,otap-del-sel-mmc-hs = <0x0>;
-> +		ti,otap-del-sel-sd-hs = <0x0>;
-> +		ti,otap-del-sel-sdr12 = <0x0>;
-> +		ti,otap-del-sel-sdr25 = <0x0>;
-> +		ti,otap-del-sel-sdr50 = <0x8>;
-> +		ti,otap-del-sel-sdr104 = <0x5>;
-> +		ti,otap-del-sel-ddr50 = <0x5>;
-> +		ti,otap-del-sel-ddr52 = <0x5>;
-> +		ti,otap-del-sel-hs200 = <0x5>;
-> +		ti,otap-del-sel-hs400 = <0x0>;
->   		ti,trm-icp = <0x8>;
->   		dma-coherent;
->   	};
-> 
+And I consider doing this a crude hack. Here is what I suggested doing
+instead:
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> >
+> > What you should do instead is to make sure the hook runtime_pm to the
+> > DMA drivers activity phases, like for example the pl330 driver does.
+> > Then you wouldn't have to care about manually putting the DMA driver into
+> > suspend from the GPMI NAND driver.
+
+Sascha
+
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
