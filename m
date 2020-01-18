@@ -2,69 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CC1B14180D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 15:33:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B23D0141840
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 16:15:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UIjDNI8QjO8XDit1XZOFeYKG9KtvkHhhPDP3Dbog5gU=; b=ZIf3XdG0GvPE51
-	M1h3+jQteirDknJTn2UVhTgLndkjEgLU+MFf1QEBGNEvzosSONiQgLagNWA6eDClpTznY7XUFa9vW
-	efXyvCEZv9yNwZTw4j1+GV/C0xWhDF73jXM24e0/MLOfm5VnwSR4bU92rGoLtATDT1hEz8bTLPzWb
-	FkKHCj2CuNgd3jRvNUX/XmPrRU/S+bWpuTIV5EJy6l1aEtXy50+Yk71giKAQ7F/X1/Z8wYwru7zmd
-	8NcM7h3bPBxCPUMc31GxlfvdwSzqDCB37o4YIWHAde9YVXHf3LBXqXsO1jJy4rKPJIHh08wZ7Mffk
-	k9yMf+R1aKics43PSmGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YWowejNAXGVHj5p67A5norZF2/EzJZ9H5yoWmhGZv+c=; b=LMIkWCkHuBV8Oy
+	f7GEZjYC6c8YHFZUeeyGllNxwyShbqJdQ+AqFEcY7NvPXw0XJWZrt8MaSxe8X3jKtQ0HR/RbRIzOa
+	LIOxXQXqMoxG2HsS+80jNXvmh/Q8chohKC1TMXlmSLgdZwXdpfxsZFIGr4N/iN6wppRfV0ikFtpMm
+	BFtu+6rUj8p0m3A/gY/Pssq6mg4gSCEJWZ6sqAEVtUE3Sbl7y+YHLawB7t3mZfi0k5T0u/Tl4+1Sq
+	p9XhBzr6GPDIhUBbwB3UCJJs3MpaCEwnwmJiL98Vl7s5BnoQ3BFZ2ivMGj9ufkVQWltUC1fYPev9T
+	X8ADm6wFZtbIY6D7o+/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isp9c-0007Gn-N9; Sat, 18 Jan 2020 14:32:48 +0000
+	id 1ispnY-0006j7-61; Sat, 18 Jan 2020 15:14:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isp9V-0007Fu-Mq
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Jan 2020 14:32:42 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
+ id 1ispnQ-0006hy-RW
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Jan 2020 15:13:58 +0000
+Received: from localhost (170.143.71.37.rev.sfr.net [37.71.143.170])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 046A72469A;
- Sat, 18 Jan 2020 14:32:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5373E246A0;
+ Sat, 18 Jan 2020 15:13:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579357961;
- bh=2gpBuuvhYqy8RvrcBZ6bAFOgb2g6EP4XMMQ95aGZvKA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=0GL8Sn03Xa52kpQ5+KYaDSu2O5damtoCfh914pmIzR1RJ0uoqJTGmjBL+smWd3DhC
- eofUbsfz99ZMPKpe1VakxqNVaBnlJwftR+9Mi5ZBF17402M3timem9g35dIx+p+klp
- tIEQP2CwbuYIrNghF2HSrfDv+U2VJ72qZUaMGB2U=
-Date: Sat, 18 Jan 2020 14:32:35 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH 2/2] iio: dac: stm32-dac: better handle reset controller
- failures
-Message-ID: <20200118143235.71a67b76@archlinux>
-In-Reply-To: <1578921266-6025-3-git-send-email-fabrice.gasnier@st.com>
-References: <1578921266-6025-1-git-send-email-fabrice.gasnier@st.com>
- <1578921266-6025-3-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1579360435;
+ bh=JizgUxPOV8ApLOBjUUOna0yNd3afjjdsV7Xgq5JnIyw=;
+ h=Subject:To:Cc:From:Date:From;
+ b=CIBCKL2EeCy1EA2PWoqXeEYgoTZyo0Y1m3L0H+TR15AVErNQBZujDdPs5JHChcg8/
+ 2Za168yuH27W6aZLrxkXCXuSIsyAeHSfwjf6jpCH9fMkrzWTR/+YG4Hj5QYe/UEYKi
+ TmKY4B9C2mCNPX1EGjw4bxtDhhgDgtvpTdMJDKYc=
+Subject: Patch "ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO regulator
+ connection" has been added to the 4.19-stable tree
+To: festevam@gmail.com, gregkh@linuxfoundation.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ lzenz@dh-electronics.com, marex@denx.de, shawnguo@kernel.org
+From: <gregkh@linuxfoundation.org>
+Date: Sat, 18 Jan 2020 16:13:36 +0100
+Message-ID: <157936041657235@kroah.com>
 MIME-Version: 1.0
+X-stable: commit
+X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_063241_769856_4FDD7DAB 
-X-CRM114-Status: GOOD (  15.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200118_071356_909154_AE78E3D2 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,64 +74,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: etienne.carriere@st.com, lars@metafoo.de, olivier.moysan@st.com,
- alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com, knaack.h@gmx.de,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: stable-commits@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 13 Jan 2020 14:14:26 +0100
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-> From: Etienne Carriere <etienne.carriere@st.com>
-> 
-> Use devm_reset_control_get_optional_exclusive() instead of
-> devm_reset_control_get_exclusive() as reset controller is optional.
-> 
-> Nevertheless if reset controller is expected but reports an
-> error, propagate the error code to the caller. In such case
-> a nice error trace is emitted unless we're deferring the probe
-> operation.
-> 
-> Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-Applied to the togreg branch of iio.git and pushed out as testing.
+This is a note to let you know that I've just added the patch titled
 
-Thanks,
+    ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO regulator connection
 
-Jonathan
+to the 4.19-stable tree which can be found at:
+    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
-> ---
->  drivers/iio/dac/stm32-dac-core.c | 12 ++++++++++--
->  1 file changed, 10 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/iio/dac/stm32-dac-core.c b/drivers/iio/dac/stm32-dac-core.c
-> index 4d93446..7e5809b 100644
-> --- a/drivers/iio/dac/stm32-dac-core.c
-> +++ b/drivers/iio/dac/stm32-dac-core.c
-> @@ -147,8 +147,16 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  	priv->common.vref_mv = ret / 1000;
->  	dev_dbg(dev, "vref+=%dmV\n", priv->common.vref_mv);
->  
-> -	rst = devm_reset_control_get_exclusive(dev, NULL);
-> -	if (!IS_ERR(rst)) {
-> +	rst = devm_reset_control_get_optional_exclusive(dev, NULL);
-> +	if (rst) {
-> +		if (IS_ERR(rst)) {
-> +			ret = PTR_ERR(rst);
-> +			if (ret != -EPROBE_DEFER)
-> +				dev_err(dev, "reset get failed, %d\n", ret);
-> +
-> +			goto err_hw_stop;
-> +		}
-> +
->  		reset_control_assert(rst);
->  		udelay(2);
->  		reset_control_deassert(rst);
+The filename of the patch is:
+     arm-dts-imx6q-dhcom-fix-sgtl5000-vddio-regulator-connection.patch
+and it can be found in the queue-4.19 subdirectory.
 
+If you, or anyone else, feels it should not be added to the stable tree,
+please let <stable@vger.kernel.org> know about it.
+
+
+From fe6a6689d1815b63528796886853890d8ee7f021 Mon Sep 17 00:00:00 2001
+From: Marek Vasut <marex@denx.de>
+Date: Fri, 20 Dec 2019 10:11:24 +0100
+Subject: ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO regulator connection
+
+From: Marek Vasut <marex@denx.de>
+
+commit fe6a6689d1815b63528796886853890d8ee7f021 upstream.
+
+The SGTL5000 VDDIO is connected to the PMIC SW2 output, not to
+a fixed 3V3 rail. Describe this correctly in the DT.
+
+Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
+Signed-off-by: Marek Vasut <marex@denx.de>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: Ludwig Zenz <lzenz@dh-electronics.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+To: linux-arm-kernel@lists.infradead.org
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+---
+ arch/arm/boot/dts/imx6q-dhcom-pdk2.dts |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
++++ b/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
+@@ -55,7 +55,7 @@
+ 		#sound-dai-cells = <0>;
+ 		clocks = <&clk_ext_audio_codec>;
+ 		VDDA-supply = <&reg_3p3v>;
+-		VDDIO-supply = <&reg_3p3v>;
++		VDDIO-supply = <&sw2_reg>;
+ 	};
+ };
+ 
+
+
+Patches currently in stable-queue which might be from marex@denx.de are
+
+queue-4.19/arm-dts-imx6q-dhcom-fix-sgtl5000-vddio-regulator-connection.patch
 
 _______________________________________________
 linux-arm-kernel mailing list
