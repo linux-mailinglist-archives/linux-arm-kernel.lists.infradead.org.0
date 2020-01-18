@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 824C91416D8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 10:40:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E3E81416DB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 10:41:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oV4KOeGoCZH7xHmz/sgltLYLVIiGN4GCftOEYqUGEGM=; b=tQQ37/QE3fkghX
-	G3Wg56Z5dCljTla9qVJLQ/rUY0xTk7PAT/k5y1vsaI5yoouyQfffvTJQ0o9toc8TPZ9WTn0/zs5rp
-	6kExEihC4OsSD9LQuFciRfJ15aVIDOj5luH10zny/6srQtJXaDv9ZO/pJZpuiVU8PTJ84+I7OVYaU
-	VHvbgTDl3UXoTQEVrxVAnol00Y1uG/kNO6///97heFW8z08Yr7qq+Jo2g23mAa76TssUWJ8N9rYfk
-	lBx74jLetr9ZZirCrHtI3/w910JU/QDVU4L39iNj65v0sdviilmG7UkGBQeViyR73Q/Pu+TKeO8Bz
-	6jCpbEShTLh5Bxzb6xKQ==;
+	List-Owner; bh=r82wwYk88tJRoBrZMWvA5vuCg8DvPk1NRO+0U0gm+JM=; b=d++nk7k7uWOK++
+	ut8HK7X5u8Yk9YzOX43p5aVLiLZanvJ3x8oUd3XT97drdY/oWJ2noGVxm+jLecBhTi7YDrwu2L59v
+	0Khd75fWLEjSdGwnmm6d4BqmI1xvu1s/Bj2O4h+x3uTJ5nuNBB7JpqKtqDBR4MOmO/m5krPxjUIJq
+	/Al7rmIFHK4RpQPYeeoxc0XQIX6QDJTC2M/w2OpyK8Yx2yS+A2tXGC+2ImEn+07qI/AFr6so06F/t
+	q8n8etLrP+ubRDXH0C8upMs3x3Jl1+g5UQZGbXQA3DU695lVNE0DwuyFbnHi/H6CQDRtJvWRMNBde
+	LNWnn39igGpFvNwOnelw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iskZo-0006Ol-Be; Sat, 18 Jan 2020 09:39:32 +0000
+	id 1iskZi-0006JI-OS; Sat, 18 Jan 2020 09:39:26 +0000
 Received: from [167.172.186.51] (helo=shell.v3.sk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iskZa-0006Hi-Bc
+ id 1iskZa-0006Hl-9c
  for linux-arm-kernel@lists.infradead.org; Sat, 18 Jan 2020 09:39:20 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 98184DFE50;
- Sat, 18 Jan 2020 09:39:11 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id 8C2B8DFE68;
+ Sat, 18 Jan 2020 09:39:12 +0000 (UTC)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id kxu7qTFbk0fu; Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
+ with ESMTP id Ad-3PFtHFBS6; Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 61058DFE68;
+ by zimbra.v3.sk (Postfix) with ESMTP id AD7DDDFDB5;
  Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 6CHdSDrZ5C6U; Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
+ with ESMTP id D5FO8EMxwEGj; Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
 Received: from furthur.lan (unknown [109.183.109.54])
- by zimbra.v3.sk (Postfix) with ESMTPSA id F1D9CDFDB5;
- Sat, 18 Jan 2020 09:39:09 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 3A395DFD99;
+ Sat, 18 Jan 2020 09:39:10 +0000 (UTC)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 1/2] ARM: dts: mmp3: Fix the TWSI ranges
-Date: Sat, 18 Jan 2020 10:38:57 +0100
-Message-Id: <20200118093858.326659-2-lkundrak@v3.sk>
+Subject: [PATCH 2/2] ARM: dts: mmp3-dell-ariel: Fix the SPI devices
+Date: Sat, 18 Jan 2020 10:38:58 +0100
+Message-Id: <20200118093858.326659-3-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200118093858.326659-1-lkundrak@v3.sk>
 References: <20200118093858.326659-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_013918_547452_DC4F5EAB 
-X-CRM114-Status: UNSURE (   6.30  )
+X-CRM114-CacheID: sfid-20200118_013918_483829_E8BF6D68 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,75 +78,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The register blocks don't occupy 4K. In fact, some blocks are packed
-close to others and assuming they're 4K causes overlaps:
+I've managed to get about everything wrong while digging these out of
+OEM's board file.
 
-  pxa2xx-i2c d4033800.i2c: can't request region for resource
-    [mem 0xd4033800-0xd40347ff]
+Correct the bus numbers, the exact model of the NOR flash, polarity of
+the chip selects and align the SPI frequency with the data sheet.
+
+Tested that it works now, with a slight fix to the PXA SSP driver.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/boot/dts/mmp3.dtsi | 12 ++++++------
+ arch/arm/boot/dts/mmp3-dell-ariel.dts | 12 ++++++------
  1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm/boot/dts/mmp3.dtsi b/arch/arm/boot/dts/mmp3.dtsi
-index 1eba7fb6629b5..59a108e49b41e 100644
---- a/arch/arm/boot/dts/mmp3.dtsi
-+++ b/arch/arm/boot/dts/mmp3.dtsi
-@@ -400,7 +400,7 @@ gcb5: gpio@d4019108 {
+diff --git a/arch/arm/boot/dts/mmp3-dell-ariel.dts b/arch/arm/boot/dts/mmp3-dell-ariel.dts
+index 15449c72c042b..b0ec14c421641 100644
+--- a/arch/arm/boot/dts/mmp3-dell-ariel.dts
++++ b/arch/arm/boot/dts/mmp3-dell-ariel.dts
+@@ -98,19 +98,19 @@ &twsi4 {
+ 	status = "okay";
+ };
  
- 			twsi1: i2c@d4011000 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4011000 0x1000>;
-+				reg = <0xd4011000 0x70>;
- 				interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI0>;
- 				resets = <&soc_clocks MMP2_CLK_TWSI0>;
-@@ -412,7 +412,7 @@ twsi1: i2c@d4011000 {
+-&ssp3 {
++&ssp1 {
+ 	status = "okay";
+-	cs-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
++	cs-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
  
- 			twsi2: i2c@d4031000 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4031000 0x1000>;
-+				reg = <0xd4031000 0x70>;
- 				interrupt-parent = <&twsi_mux>;
- 				interrupts = <0>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI1>;
-@@ -424,7 +424,7 @@ twsi2: i2c@d4031000 {
+ 	firmware-flash@0 {
+-		compatible = "st,m25p80", "jedec,spi-nor";
++		compatible = "winbond,w25q32", "jedec,spi-nor";
+ 		reg = <0>;
+-		spi-max-frequency = <40000000>;
++		spi-max-frequency = <104000000>;
+ 		m25p,fast-read;
+ 	};
+ };
  
- 			twsi3: i2c@d4032000 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4032000 0x1000>;
-+				reg = <0xd4032000 0x70>;
- 				interrupt-parent = <&twsi_mux>;
- 				interrupts = <1>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI2>;
-@@ -436,7 +436,7 @@ twsi3: i2c@d4032000 {
- 
- 			twsi4: i2c@d4033000 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4033000 0x1000>;
-+				reg = <0xd4033000 0x70>;
- 				interrupt-parent = <&twsi_mux>;
- 				interrupts = <2>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI3>;
-@@ -449,7 +449,7 @@ twsi4: i2c@d4033000 {
- 
- 			twsi5: i2c@d4033800 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4033800 0x1000>;
-+				reg = <0xd4033800 0x70>;
- 				interrupt-parent = <&twsi_mux>;
- 				interrupts = <3>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI4>;
-@@ -461,7 +461,7 @@ twsi5: i2c@d4033800 {
- 
- 			twsi6: i2c@d4034000 {
- 				compatible = "mrvl,mmp-twsi";
--				reg = <0xd4034000 0x1000>;
-+				reg = <0xd4034000 0x70>;
- 				interrupt-parent = <&twsi_mux>;
- 				interrupts = <4>;
- 				clocks = <&soc_clocks MMP2_CLK_TWSI5>;
+-&ssp4 {
+-	cs-gpios = <&gpio 56 GPIO_ACTIVE_HIGH>;
++&ssp2 {
++	cs-gpios = <&gpio 56 GPIO_ACTIVE_LOW>;
+ 	status = "okay";
+ };
 -- 
 2.24.1
 
