@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B23D0141840
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 16:15:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A8DD141843
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Jan 2020 16:16:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YWowejNAXGVHj5p67A5norZF2/EzJZ9H5yoWmhGZv+c=; b=LMIkWCkHuBV8Oy
-	f7GEZjYC6c8YHFZUeeyGllNxwyShbqJdQ+AqFEcY7NvPXw0XJWZrt8MaSxe8X3jKtQ0HR/RbRIzOa
-	LIOxXQXqMoxG2HsS+80jNXvmh/Q8chohKC1TMXlmSLgdZwXdpfxsZFIGr4N/iN6wppRfV0ikFtpMm
-	BFtu+6rUj8p0m3A/gY/Pssq6mg4gSCEJWZ6sqAEVtUE3Sbl7y+YHLawB7t3mZfi0k5T0u/Tl4+1Sq
-	p9XhBzr6GPDIhUBbwB3UCJJs3MpaCEwnwmJiL98Vl7s5BnoQ3BFZ2ivMGj9ufkVQWltUC1fYPev9T
-	X8ADm6wFZtbIY6D7o+/A==;
+	List-Owner; bh=PqFUHcczOYpdideEorHFFZcvF5S5hMCpvkqp5fret1E=; b=ZVQsrK6+oDJXXe
+	F9Q4wXcvjxWF/Qy/hPgjiD78mY2vap/0K/9yf0DXH89FgfZj2zwf82HDUIwgUabu7inSUEbTNm/3t
+	DTW0U3gDuvJ87ICWFL2OFofLdY2oEbV7fFL+NV/xRALHEP3py7RtlG7/fMa9sTzf6ack1uyggDZrB
+	jxXONcvDKVvbJbPR32q5mj0GP5HfrXLxXkIjWNAODFlgAsz86ecKmaVdRkLcFKumo9pMZKcKUoFUI
+	2g14oNywNintZzxE+X2B23L4WBqa2w6bMB0MfulKGIc4pX7Vhe3nqueQ1ZluaVCl3AvhFVx3OYxCh
+	eDZlJA2dMd+AEZ+3wZuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ispnY-0006j7-61; Sat, 18 Jan 2020 15:14:04 +0000
+	id 1ispoH-0006x1-LV; Sat, 18 Jan 2020 15:14:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ispnQ-0006hy-RW
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Jan 2020 15:13:58 +0000
+ id 1ispo8-0006wX-8F
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Jan 2020 15:14:41 +0000
 Received: from localhost (170.143.71.37.rev.sfr.net [37.71.143.170])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5373E246A0;
- Sat, 18 Jan 2020 15:13:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A2A62469E;
+ Sat, 18 Jan 2020 15:14:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579360435;
- bh=JizgUxPOV8ApLOBjUUOna0yNd3afjjdsV7Xgq5JnIyw=;
+ s=default; t=1579360479;
+ bh=JENEMKBkHcTrduY5r6xZX+ZJlcxROQ02VvoTtC1YsN0=;
  h=Subject:To:Cc:From:Date:From;
- b=CIBCKL2EeCy1EA2PWoqXeEYgoTZyo0Y1m3L0H+TR15AVErNQBZujDdPs5JHChcg8/
- 2Za168yuH27W6aZLrxkXCXuSIsyAeHSfwjf6jpCH9fMkrzWTR/+YG4Hj5QYe/UEYKi
- TmKY4B9C2mCNPX1EGjw4bxtDhhgDgtvpTdMJDKYc=
+ b=1OCgXm9yJJmylB+I/BYdLx0o771h6El+KTxcuATDpgzQloNw6VAfvy9UemJRekBQA
+ zY3Ztpb8Ac4G5INcjQ8GMV5AL37H8Qke34fhVSsTp97PmSwImSz0iS0fDsbCR8Pln+
+ x8+6vfldppv/cR1qb1EcJXDZjgPCLFy6XndcnZcs=
 Subject: Patch "ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO regulator
- connection" has been added to the 4.19-stable tree
+ connection" has been added to the 5.4-stable tree
 To: festevam@gmail.com, gregkh@linuxfoundation.org,
  linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
  lzenz@dh-electronics.com, marex@denx.de, shawnguo@kernel.org
 From: <gregkh@linuxfoundation.org>
-Date: Sat, 18 Jan 2020 16:13:36 +0100
-Message-ID: <157936041657235@kroah.com>
+Date: Sat, 18 Jan 2020 16:13:59 +0100
+Message-ID: <157936043919381@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_071356_909154_AE78E3D2 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20200118_071440_310799_B349ED69 
+X-CRM114-Status: GOOD (  12.30  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -85,12 +85,12 @@ This is a note to let you know that I've just added the patch titled
 
     ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO regulator connection
 
-to the 4.19-stable tree which can be found at:
+to the 5.4-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      arm-dts-imx6q-dhcom-fix-sgtl5000-vddio-regulator-connection.patch
-and it can be found in the queue-4.19 subdirectory.
+and it can be found in the queue-5.4 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -136,7 +136,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from marex@denx.de are
 
-queue-4.19/arm-dts-imx6q-dhcom-fix-sgtl5000-vddio-regulator-connection.patch
+queue-5.4/arm-dts-imx6q-dhcom-fix-sgtl5000-vddio-regulator-connection.patch
 
 _______________________________________________
 linux-arm-kernel mailing list
