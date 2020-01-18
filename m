@@ -2,78 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6636141B9D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 04:23:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 920D5141BEE
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 05:13:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u8FAKoFadHWE8a7gIbKQBYBMX/nVEFRvNDQpOaeyREY=; b=qdqyYi3PMSLrII
-	VMlkusJZBbE2adWiA054zDWlpyurgAYHLYOHqXEoQ5OE5m9kRehUO5F/Pfhy8xvr+jH4i1pCRf3zk
-	n81jwUe6pR07wxAq7GsxOyPWVU6Qk2Pgq1XDj4/9XI+B9Mive+OZk0CtCZV9w+GwtbtACDRh3AVXy
-	apie+ju07X2kxwJxDOU8nlK2wz7nQ/zXoTkwCbimn6+8rQbvZwMvx0/45nQr/48M1BhaNiPlPHAzu
-	L2xOGrVWdWDvwzYITXqp7gIAfAhSxm2+mGCGAz+8nQzmwn2RogglcFeeHzD2rpsI3IvlRClKbonXf
-	LeumM0MfrP4tJAsidUzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oi0Qgo++IcA0jKe+BDuvwDaCA/u4sKNO0HuXPwxHjSQ=; b=Pfp803OzVu8brz
+	IHSEjb2fb4co1ErYGDXfYugon1ZMG3j0IykRPR55NKKDdLVTtBjXhjBIDVOehHX6HTRaIuKi4DbLy
+	D36kyjvIe+z8kUw2HLLCBbnRGkYeWHbS1dXRWug92vQu4Iy457brVq1+ntEyqn3zrnFfOYHb7PbbK
+	hWKtlKRwLWDE9TpA2Lf5AaYUXrcEOnIbbd/gP1nIIHU9KA/npgqGgT4MRybvReSweESEjaS0fEbwQ
+	fj7nwprbkCdLpfvC0aqofjHgCsyCeLFvufrQxg6wIoJ/GiQLiZxhFVaL2tGMRPeB/g2pfVM0B71wu
+	8Yg9eVEaoOup3s66eAfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1it1B1-0004gv-7C; Sun, 19 Jan 2020 03:23:03 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1it1xf-0006wm-UV; Sun, 19 Jan 2020 04:13:19 +0000
+Received: from mx2.freebsd.org ([2610:1c1:1:606c::19:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1it1Aq-0004g4-JZ; Sun, 19 Jan 2020 03:22:54 +0000
-X-UUID: bf63addfa73c4055a8e4b1a8c7842851-20200118
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=hm6lnO5QlH7ot9sHtfmnJSN7OgWXnD6EkGNxaWdllRs=; 
- b=FkHOHZ/EcjJX2+j4NzjxK2Lt9lkpdVjYoA2xmw3wdB2Uy54cRQgc/bL0BVOLaejNmhPccquQVxnvplIUbRqo0KAdowGUnuBwYfw/YBLlbARvdlGapiJ2rjNUAX+fpHS/aJFeKYHmQBGwrgsQF6xbpWd3tkCHfBq80LU83QavIyQ=;
-X-UUID: bf63addfa73c4055a8e4b1a8c7842851-20200118
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yong.liang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 380654927; Sat, 18 Jan 2020 19:22:48 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 18 Jan 2020 19:23:46 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sun, 19 Jan 2020 11:21:28 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 19 Jan 2020 11:22:51 +0800
-Message-ID: <1579404156.27500.1.camel@mhfsdcap03>
-Subject: Re: [PATCH v12 3/4] watchdog: mtk_wdt: mt8183: Add reset controller
-From: Yong Liang <yong.liang@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Sun, 19 Jan 2020 11:22:36 +0800
-In-Reply-To: <372a4c8e-2ff1-3424-069c-7d359e1f16f1@gmail.com>
-References: <20200115085828.27791-1-yong.liang@mediatek.com>
- <20200115085828.27791-4-yong.liang@mediatek.com>
- <372a4c8e-2ff1-3424-069c-7d359e1f16f1@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1it1xT-0006rO-9q
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 04:13:09 +0000
+Received: from mx1.freebsd.org (mx1.freebsd.org [96.47.72.80])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (Client CN "mx1.freebsd.org",
+ Issuer "Let's Encrypt Authority X3" (verified OK))
+ by mx2.freebsd.org (Postfix) with ESMTPS id 11D6974046;
+ Sat, 18 Jan 2020 14:34:25 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+Received: from smtp.freebsd.org (smtp.freebsd.org
+ [IPv6:2610:1c1:1:606c::24b:4])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "smtp.freebsd.org",
+ Issuer "Let's Encrypt Authority X3" (verified OK))
+ by mx1.freebsd.org (Postfix) with ESMTPS id 480L6S5f0Rz42MZ;
+ Sat, 18 Jan 2020 14:34:24 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+Received: from localhost.localdomain
+ (lfbn-idf2-1-1164-130.w90-92.abo.wanadoo.fr [90.92.223.130])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (Client did not present a certificate) (Authenticated sender: manu)
+ by smtp.freebsd.org (Postfix) with ESMTPSA id BD8D1179A1;
+ Sat, 18 Jan 2020 14:34:23 +0000 (UTC)
+ (envelope-from manu@freebsd.org)
+From: Emmanuel Vadot <manu@freebsd.org>
+To: mripard@kernel.org, wens@csie.org, robh+dt@kernel.org, mark.rutland@arm.com
+Subject: [PATCH v2] arm64: dts: allwinner: a64: Add gpio bank supply for
+ A64-Olinuxino
+Date: Sat, 18 Jan 2020 15:34:08 +0100
+Message-Id: <20200118143408.15574-1-manu@freebsd.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 9A9910F4F12A5AE0331104063D22AC4683A93A64C642237FABC1506255239E8F2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_192252_645012_75929B45 
-X-CRM114-Status: GOOD (  17.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200118_201307_409263_BBC6357D 
+X-CRM114-Status: GOOD (  11.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2610:1c1:1:606c:0:0:19:2 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,208 +78,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Freddy Hsin =?UTF-8?Q?=28=E8=BE=9B=E6=81=92=E8=B1=90=29?=
- <Freddy.Hsin@mediatek.com>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
- <Jiaxin.Yu@mediatek.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
- <Yingjoe.Chen@mediatek.com>,
- Chang-An Chen =?UTF-8?Q?=28=E9=99=B3=E6=98=B6=E5=AE=89=29?=
- <Chang-An.Chen@mediatek.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Emmanuel Vadot <manu@freebsd.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-01-16 at 00:18 +0800, Matthias Brugger wrote:
-> 
-> On 15/01/2020 09:58, Yong Liang wrote:
-> > From: "yong.liang" <yong.liang@mediatek.com>
-> > 
-> > Add reset controller API in watchdog driver.
-> > Besides watchdog, MTK toprgu module alsa provide sub-system (eg, audio,
-> > camera, codec and connectivity) software reset functionality.
-> > 
-> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> > Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
-> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-> > Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
-> 
-> Acked-by: Matthias Brugger <matthias.bgg@gmail.com>
+Add the regulators for each bank on this boards.
+For VCC-PL only add a comment on what regulator is used. We cannot add
+the property without causing a circular dependency as the PL pins are
+used to talk to the PMIC.
 
-  May I need send a new patch whith this tag?
-> 
-> > ---
-> >  drivers/watchdog/mtk_wdt.c | 99 +++++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 98 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
-> > index 9c3d0033260d..e88aacb0404d 100644
-> > --- a/drivers/watchdog/mtk_wdt.c
-> > +++ b/drivers/watchdog/mtk_wdt.c
-> > @@ -9,6 +9,8 @@
-> >   * Based on sunxi_wdt.c
-> >   */
-> >  
-> > +#include <dt-bindings/reset-controller/mt8183-resets.h>
-> > +#include <linux/delay.h>
-> >  #include <linux/err.h>
-> >  #include <linux/init.h>
-> >  #include <linux/io.h>
-> > @@ -16,10 +18,11 @@
-> >  #include <linux/module.h>
-> >  #include <linux/moduleparam.h>
-> >  #include <linux/of.h>
-> > +#include <linux/of_device.h>
-> >  #include <linux/platform_device.h>
-> > +#include <linux/reset-controller.h>
-> >  #include <linux/types.h>
-> >  #include <linux/watchdog.h>
-> > -#include <linux/delay.h>
-> >  
-> >  #define WDT_MAX_TIMEOUT		31
-> >  #define WDT_MIN_TIMEOUT		1
-> > @@ -44,6 +47,9 @@
-> >  #define WDT_SWRST		0x14
-> >  #define WDT_SWRST_KEY		0x1209
-> >  
-> > +#define WDT_SWSYSRST		0x18U
-> > +#define WDT_SWSYS_RST_KEY	0x88000000
-> > +
-> >  #define DRV_NAME		"mtk-wdt"
-> >  #define DRV_VERSION		"1.0"
-> >  
-> > @@ -53,8 +59,90 @@ static unsigned int timeout;
-> >  struct mtk_wdt_dev {
-> >  	struct watchdog_device wdt_dev;
-> >  	void __iomem *wdt_base;
-> > +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
-> > +	struct reset_controller_dev rcdev;
-> > +};
-> > +
-> > +struct mtk_wdt_data {
-> > +	int toprgu_sw_rst_num;
-> >  };
-> >  
-> > +static const struct mtk_wdt_data mt8183_data = {
-> > +	.toprgu_sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
-> > +};
-> > +
-> > +static int toprgu_reset_update(struct reset_controller_dev *rcdev,
-> > +			       unsigned long id, bool assert)
-> > +{
-> > +	unsigned int tmp;
-> > +	unsigned long flags;
-> > +	struct mtk_wdt_dev *data =
-> > +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
-> > +
-> > +	spin_lock_irqsave(&data->lock, flags);
-> > +
-> > +	tmp = readl(data->wdt_base + WDT_SWSYSRST);
-> > +	if (assert)
-> > +		tmp |= BIT(id);
-> > +	else
-> > +		tmp &= ~BIT(id);
-> > +	tmp |= WDT_SWSYS_RST_KEY;
-> > +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
-> > +
-> > +	spin_unlock_irqrestore(&data->lock, flags);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int toprgu_reset_assert(struct reset_controller_dev *rcdev,
-> > +			       unsigned long id)
-> > +{
-> > +	return toprgu_reset_update(rcdev, id, true);
-> > +}
-> > +
-> > +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
-> > +				 unsigned long id)
-> > +{
-> > +	return toprgu_reset_update(rcdev, id, false);
-> > +}
-> > +
-> > +static int toprgu_reset(struct reset_controller_dev *rcdev,
-> > +			unsigned long id)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = toprgu_reset_assert(rcdev, id);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	return toprgu_reset_deassert(rcdev, id);
-> > +}
-> > +
-> > +static const struct reset_control_ops toprgu_reset_ops = {
-> > +	.assert = toprgu_reset_assert,
-> > +	.deassert = toprgu_reset_deassert,
-> > +	.reset = toprgu_reset,
-> > +};
-> > +
-> > +static int toprgu_register_reset_controller(struct platform_device *pdev,
-> > +					    int rst_num)
-> > +{
-> > +	int ret;
-> > +	struct mtk_wdt_dev *mtk_wdt = platform_get_drvdata(pdev);
-> > +
-> > +	spin_lock_init(&mtk_wdt->lock);
-> > +
-> > +	mtk_wdt->rcdev.owner = THIS_MODULE;
-> > +	mtk_wdt->rcdev.nr_resets = rst_num;
-> > +	mtk_wdt->rcdev.ops = &toprgu_reset_ops;
-> > +	mtk_wdt->rcdev.of_node = pdev->dev.of_node;
-> > +	ret = devm_reset_controller_register(&pdev->dev, &mtk_wdt->rcdev);
-> > +	if (ret != 0)
-> > +		dev_err(&pdev->dev,
-> > +			"couldn't register wdt reset controller: %d\n", ret);
-> > +	return ret;
-> > +}
-> > +
-> >  static int mtk_wdt_restart(struct watchdog_device *wdt_dev,
-> >  			   unsigned long action, void *data)
-> >  {
-> > @@ -155,6 +243,7 @@ static int mtk_wdt_probe(struct platform_device *pdev)
-> >  {
-> >  	struct device *dev = &pdev->dev;
-> >  	struct mtk_wdt_dev *mtk_wdt;
-> > +	const struct mtk_wdt_data *wdt_data;
-> >  	int err;
-> >  
-> >  	mtk_wdt = devm_kzalloc(dev, sizeof(*mtk_wdt), GFP_KERNEL);
-> > @@ -190,6 +279,13 @@ static int mtk_wdt_probe(struct platform_device *pdev)
-> >  	dev_info(dev, "Watchdog enabled (timeout=%d sec, nowayout=%d)\n",
-> >  		 mtk_wdt->wdt_dev.timeout, nowayout);
-> >  
-> > +	wdt_data = of_device_get_match_data(dev);
-> > +	if (wdt_data) {
-> > +		err = toprgu_register_reset_controller(pdev,
-> > +						       wdt_data->toprgu_sw_rst_num);
-> > +		if (err)
-> > +			return err;
-> > +	}
-> >  	return 0;
-> >  }
-> >  
-> > @@ -219,6 +315,7 @@ static int mtk_wdt_resume(struct device *dev)
-> >  
-> >  static const struct of_device_id mtk_wdt_dt_ids[] = {
-> >  	{ .compatible = "mediatek,mt6589-wdt" },
-> > +	{ .compatible = "mediatek,mt8183-wdt", .data = &mt8183_data },
-> >  	{ /* sentinel */ }
-> >  };
-> >  MODULE_DEVICE_TABLE(of, mtk_wdt_dt_ids);
-> > 
+Signed-off-by: Emmanuel Vadot <manu@freebsd.org>
+---
+v2:
+ - Remove vcc-pl-supply in r_pio as it cause a circular dependency.
+
+ .../boot/dts/allwinner/sun50i-a64-olinuxino.dts | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
+index 01a9a52edae4..7e71b5b12f98 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
+@@ -163,6 +163,17 @@ &ohci1 {
+ 	status = "okay";
+ };
+ 
++&pio {
++	vcc-pa-supply = <&reg_dcdc1>;
++	vcc-pb-supply = <&reg_dcdc1>;
++	vcc-pc-supply = <&reg_dcdc1>;
++	vcc-pd-supply = <&reg_dcdc1>;
++	vcc-pe-supply = <&reg_aldo1>;
++	vcc-pf-supply = <&reg_dcdc1>;
++	vcc-pg-supply = <&reg_dldo4>;
++	vcc-ph-supply = <&reg_dcdc1>;
++};
++
+ &r_rsb {
+ 	status = "okay";
+ 
+@@ -175,6 +186,12 @@ axp803: pmic@3a3 {
+ 	};
+ };
+ 
++/* VCC-PL is powered by aldo2 but we cannot add it as the RSB */
++/* interface used to talk to the PMIC in on the PL pins */
++/* &r_pio { */
++/*	vcc-pl-supply = <&reg_aldo2>; */
++/* }; */
++
+ #include "axp803.dtsi"
+ 
+ &ac_power_supply {
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
