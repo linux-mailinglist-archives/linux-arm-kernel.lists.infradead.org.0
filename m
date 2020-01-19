@@ -2,72 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4306F141BED
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 05:13:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AACD7141BF6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 05:22:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DiHdSGz62ZdTR/ND+6cBQtYokgSd1cdcaQ9ZKnV2YUU=; b=UMMwxf5aNZhMlm
-	ydFA18F0HZ3KyBADiOPajycr4FXOE/kFpLH1lXR0uPAeaDFpNsiexByOEMYET7+zejoebllqbmO76
-	IYODf88pnkIfrqfIGfVUzAAoXBBQTnGdw9Aw+VqiFTzg1+zQePyVcDlSUxlUmXqlPB6gLMXRAWSmT
-	bDxw19Zy/4rmkDRa9uxCAjRE/GsKFV2s94BUip97gO2n8daURahbw9wwGw59qASHoh3cuZR7G9BpA
-	0b1EO54lywWCLEQ6WkfeYrjEV843O/S9w8xYpUHcYbszhAVeEUPMXBb8sj8IBu1hk6QGJeyExruND
-	Tkph5YffQ0g4f34gAagQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8zQyDqS7mLECdGk8CcnX+sQR15UQu/aR1taI3XRJKu4=; b=g17ieA2O1n/nLq
+	kvy1cyQUJsizF5SlF1KyjF/TQdMKXXN+pI0p7OJZOyMwOP8pbnx8TLfx4aaS9DV57ebFgtnnWBd5f
+	Qa9KYYBuGYpAg3sWZ11I233IqkGQ/OTTRqbNEGHPonHEENxRLGnL5mWWS4kD3umSnDe7s8uKXSAvp
+	zrAsxwbw8ngESLoyiFp3CdpTLPKnJFX42E+pPCamYhftnVfSfHp3p1RLHnNl96vsXlmntpULvgCZn
+	uCEoOULcEMEY0aV8PExe6SBa38uAA4kN2Lpr2QIxsQU6iaYwIZd7GGvDWAwCCZ+wHAKgSaQZlOBVr
+	Il6jaeIoHYxOFZro0u/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1it1xK-0006ih-70; Sun, 19 Jan 2020 04:12:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1it25z-0001d9-Hx; Sun, 19 Jan 2020 04:21:55 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1it1xB-0006iI-40
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 04:12:50 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y8so11626533pll.13
+ id 1it25q-0001cn-AP
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 04:21:47 +0000
+Received: by mail-pl1-x643.google.com with SMTP id p9so11645423plk.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 18 Jan 2020 20:12:45 -0800 (PST)
+ Sat, 18 Jan 2020 20:21:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=1UGFOGT1eEmR//uqOTuGOpTXVyCpwEvAHHcIsI9cANI=;
- b=TyVM9g0g5LuPkrUC9l3Gwg8pDagu9q8dLAUIvRgFWoBi2XDqzjU+qWuItE8XZgbjAN
- DQgjCEuB29Sq8V60NjR5BCOr3yIt4jmnz7vm0axGchql/zQsbBInV2UT6WThEm+4NLPy
- LCdhpZkPCaNtybpek6J+9dHbFkrs2ayMPN6ZwHpiN4J6YG+BnOFsIYLojWoAOcbjwWEL
- tpDqbEPEkZ5vQBEdCB1mcGgMavTZ8NVTL7nBeiC1XDNF14VZUEcFAirmK8Ctm66x1eAN
- wCWfOe3PlJVgBtzIFlnrADdJlcpT6kA9gjib0WF2iFj2XSBKgBeBpSnWzyJlizoJ6PG/
- fACA==
+ h=to:from:subject:autocrypt:message-id:date:user-agent:mime-version
+ :content-language:content-transfer-encoding;
+ bh=szD+KEp5JMedpU/ESl+XBAVyw+4cZyi4d3383NhKcEk=;
+ b=tn6v5ucgfbp4MHdl7WHTRyMQmuFcENyb+iPbHtmVGDvDFGkkQfye1MHrLV41KbtaG5
+ UDLd7upvW/wDGFkcQCWOubQKZcImzuUGu4H+zbRyw+AMnSkADGjZX1Z6wZnmqzzbl+K1
+ hq0o0iKV3Wr6Y9y4UUVeSKA8yrFb7Uzm3r1ZZUw454P0ChZ/4uf5piSVpBVlimT2Axza
+ VkO/zCzvFzUzLuEUF2tUqT3U5naKGKl1nsdozMsdCjNFevop3UIEn+UJSR0PhwiyWdgH
+ pIQgRHXUeHifyK4Bl/CVxlCn9bLgRZSw8vDsnaVmDpB3/VRc4QI2Rpas5Qu0Cqegifoz
+ 4dwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=1UGFOGT1eEmR//uqOTuGOpTXVyCpwEvAHHcIsI9cANI=;
- b=lHI08meNbwjBepWw5Dv2OevWkWjPVtWiXg/7z7r7g7Z9cK8AgvgFrUGYfkazED+FrD
- 5X6JEaOss8rWq6fSNNPwGAO/mgXkk/1oNrmhHQ1xkN4eWOiVTfky5JHPRrsL3qReT4GT
- OQVEI+KZsgcZv6AZp1hKGyRGQv1o6Kn1/KtlwiGnqg4tos3A6ww+juJ/jlpRmqGPut7x
- LdEP20T70y/LMaHSfbQdN5e2jnWrgk41xFU4QB6jTyPMc6j+ff/t8QP1THvH92tUduGH
- U3Osiltdfi+2X9nfWTGP1EIWgADHB/c3TRXMdvXOspiNJ19fyhcgnJgLpjRvYBU6Munw
- fysA==
-X-Gm-Message-State: APjAAAU1DMYUhNJBKZNHXG8mEbtc9X5U94KV/SuOKPy7Wpm5MQNctuJt
- SxaRYfHY68+fQcd96C8ATszSm2lX
-X-Google-Smtp-Source: APXvYqzzoIPvlODuBh4zkGhRNZzl6z96s/19B3GAaGQb9dSlTT15iql0hqZg2OoysSIUiTPEnLfivw==
-X-Received: by 2002:a17:90a:8545:: with SMTP id
- a5mr15387166pjw.3.1579407165168; 
- Sat, 18 Jan 2020 20:12:45 -0800 (PST)
+ h=x-gm-message-state:to:from:subject:autocrypt:message-id:date
+ :user-agent:mime-version:content-language:content-transfer-encoding;
+ bh=szD+KEp5JMedpU/ESl+XBAVyw+4cZyi4d3383NhKcEk=;
+ b=lu6LKoDe/qAz95OiCohgdc20eu2wtfeEUuk7tjg+Gsz2xBzUwNK+xcI77C2Gp5Na1g
+ ibPdWHKizyGbk391Uv9QRoIxpJzLXHnwfg3C94Tud997Tw6alWa/MDlcDwDYTOqcLu54
+ hdf2nqTKs/D6PI9Lnf5UeoVrflCl3rH/6s3BsVpYx5Xhlg3+TKNdiaClZEmwO8DfWDgZ
+ W01H8H2ivG0XdkScXHntCN9OkxeARDlDMq2Q7ihaqoM7MY0g7a2WWQxTVuj1QN5nDWie
+ dHuPOPnhb1a2NB2egBWAGFKiMq/J4/+GqWcsD6mBLw4lJrm+alMSgfy1Fib/ApMTDGHX
+ nJdg==
+X-Gm-Message-State: APjAAAViwYvKsrDHoA47hv0iYo32iUMI0wzoZZVTfgtgrzjWtDz2Xk0W
+ /v+Ra/e7p+Qmer9neN6u3AwZybJn
+X-Google-Smtp-Source: APXvYqxCf1YLgNXGcV/+cDdab1Lj7iswVdpX/5C8MLJCDCrx6CiejLpybBQJz/R16U9jciGIV/giMQ==
+X-Received: by 2002:a17:90a:ead3:: with SMTP id
+ ev19mr15877949pjb.80.1579407705103; 
+ Sat, 18 Jan 2020 20:21:45 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- y20sm34330795pfe.107.2020.01.18.20.12.43
+ b42sm5443106pjc.27.2020.01.18.20.21.44
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 18 Jan 2020 20:12:44 -0800 (PST)
-Subject: Re: [PATCH v2] cpufreq: brcmstb-avs-cpufreq: avoid potential stuck
- and UAF risk
-To: chenqiwu <qiwuchen55@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>
-References: <1578228650-17157-1-git-send-email-qiwuchen55@gmail.com>
- <20200106055637.zq4icl5klg4wpvkx@vireshk-i7>
- <20200106070910.GA17897@cqw-OptiPlex-7050>
- <20200106073109.ndm7enzyznquqps5@vireshk-i7>
- <20200119022513.GA21407@cqw-OptiPlex-7050>
+ Sat, 18 Jan 2020 20:21:44 -0800 (PST)
+To: Gregory Clement <gregory.clement@bootlin.com>, mripard@kernel.org,
+ Chen-Yu Tsai <wens@csie.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 From: Florian Fainelli <f.fainelli@gmail.com>
+Subject: No master_xfer_atomic for i2c-mv64xxx.c
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
  xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
@@ -122,21 +119,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <fff918f6-a2e2-3789-2fed-8962dc441e4c@gmail.com>
-Date: Sat, 18 Jan 2020 20:12:43 -0800
+Message-ID: <da0061d1-917f-d807-a7ac-05d302d88565@gmail.com>
+Date: Sat, 18 Jan 2020 20:21:43 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200119022513.GA21407@cqw-OptiPlex-7050>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_201249_188118_25700B1B 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20200118_202146_388489_929B0911 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -148,9 +147,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -162,33 +158,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rjw@rjwysocki.net, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, mmayer@broadcom.com,
- linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Gregory, Maxime, Chen-Yu,
 
+Happy new year to all of you! On a lamobo R1 (A20) the trace below can
+be seen by typing "halt" which makes us try to perform an i2c
+transaction in atomic context by the X-powers AXP20x driver while the
+i2c-mv64xxx.c driver does not support it.
 
-On 1/18/2020 6:25 PM, chenqiwu wrote:
-> On Mon, Jan 06, 2020 at 01:01:09PM +0530, Viresh Kumar wrote:
->> On 06-01-20, 15:09, chenqiwu wrote:
->>> There could be a case as the description of this patch besides
->>> brcm_avs_driver unloads. Since cpufreq_policy_free() will free
->>> the mm of cpufreq_policy at the last moment.
->>
->> Ahh, right. Please fix the other "policy" thing I reported and resend
->> the patch then.
->>
->> -- 
->> viresh
-> Hi,
-> Any progress about this patch?
+I am not familiar enough with this i2c controller to suggest a way to
+refactor it such that it would easily gain master_xfer_atomic support.
+Is this something you could look at?
 
-Viresh gave you some feedback to address, so my understanding is that we
-should see a v3.
+Thanks!
+
+[ 1617.999014] reboot: Power down
+[ 1618.002111] ------------[ cut here ]------------
+[ 1618.006752] WARNING: CPU: 0 PID: 2427 at drivers/i2c/i2c-core.h:41
+i2c_transfer+0x108/0x144
+[ 1618.015092] No atomic I2C transfer handler for 'i2c-0'
+[ 1618.020222] Modules linked in: pppoe ppp_async pppox ppp_generic slhc
+crc_ccitt cmac
+[ 1618.027987] CPU: 0 PID: 2427 Comm: procd Not tainted 5.5.0-rc5+ #0
+[ 1618.034158] Hardware name: Allwinner sun7i (A20) Family
+[ 1618.039376] Backtrace:
+[ 1618.041837] [<c0238488>] (dump_backtrace) from [<c0238710>]
+(show_stack+0x20/0x24)
+[ 1618.049400]  r7:00000029 r6:60000093 r5:00000000 r4:c10a197c
+[ 1618.055061] [<c02386f0>] (show_stack) from [<c096ae4c>]
+(dump_stack+0x9c/0xb0)
+[ 1618.062282] [<c096adb0>] (dump_stack) from [<c0252548>]
+(__warn+0xe0/0x108)
+[ 1618.069237]  r7:00000029 r6:00000009 r5:c075d948 r4:c0aefafc
+[ 1618.074895] [<c0252468>] (__warn) from [<c0252944>]
+(warn_slowpath_fmt+0x94/0x9c)
+[ 1618.082369]  r7:c075d948 r6:00000029 r5:c0aefafc r4:c0aefbc0
+[ 1618.088026] [<c02528b4>] (warn_slowpath_fmt) from [<c075d948>]
+(i2c_transfer+0x108/0x144)
+[ 1618.096195]  r8:00000032 r7:c10a93e4 r6:00000001 r5:ea32fd3c r4:ea945ca8
+[ 1618.102892] [<c075d840>] (i2c_transfer) from [<c075d9d0>]
+(i2c_transfer_buffer_flags+0x4c/0x5c)
+[ 1618.111579]  r6:eb3c6501 r5:00000001 r4:00000002
+[ 1618.116199] [<c075d984>] (i2c_transfer_buffer_flags) from
+[<c0675658>] (regmap_i2c_write+0x24/0x40)
+[ 1618.125229]  r4:00000002
+[ 1618.127768] [<c0675634>] (regmap_i2c_write) from [<c06703d8>]
+(_regmap_raw_write_impl+0x72c/0x908)
+[ 1618.136713]  r5:00000001 r4:ea8d9c00
+[ 1618.140291] [<c066fcac>] (_regmap_raw_write_impl) from [<c0670630>]
+(_regmap_bus_raw_write+0x7c/0xa0)
+[ 1618.149501]  r10:00000058 r9:ea32e000 r8:fee1dead r7:00000080
+r6:00000032 r5:c066be98
+[ 1618.157319]  r4:ea8d9c00
+[ 1618.159857] [<c06705b4>] (_regmap_bus_raw_write) from [<c066fa08>]
+(_regmap_write+0x7c/0x164)
+[ 1618.168371]  r7:ea8d9c00 r6:00000080 r5:00000032 r4:ea8d9c00
+[ 1618.174029] [<c066f98c>] (_regmap_write) from [<c0671294>]
+(regmap_write+0x4c/0x6c)
+[ 1618.181679]  r9:ea32e000 r8:fee1dead r7:0002e574 r6:00000080
+r5:00000032 r4:ea8d9c00
+[ 1618.189420] [<c0671248>] (regmap_write) from [<c067d0ac>]
+(axp20x_power_off+0x3c/0x48)
+[ 1618.197328]  r7:0002e574 r6:28121969 r5:c1004e90 r4:4321fedc
+[ 1618.202985] [<c067d070>] (axp20x_power_off) from [<c023605c>]
+(machine_power_off+0x34/0x38)
+[ 1618.211332] [<c0236028>] (machine_power_off) from [<c027850c>]
+(kernel_power_off+0x7c/0x80)
+[ 1618.219676] [<c0278490>] (kernel_power_off) from [<c02786a0>]
+(__do_sys_reboot+0x190/0x1f4)
+[ 1618.228019] [<c0278510>] (__do_sys_reboot) from [<c0278774>]
+(sys_reboot+0x18/0x1c)
+[ 1618.235669]  r8:c0201324 r7:00000058 r6:b6f69010 r5:becbbe2c r4:00000000
+[ 1618.242366] [<c027875c>] (sys_reboot) from [<c0201120>]
+(ret_fast_syscall+0x0/0x4c)
+[ 1618.250013] Exception stack(0xea32ffa8 to 0xea32fff0)
+[ 1618.255062] ffa0:                   00000000 becbbe2c fee1dead
+28121969 4321fedc 0002e574
+[ 1618.263231] ffc0: 00000000 becbbe2c b6f69010 00000058 ffffffff
+00000000 0000201d 00000001
+[ 1618.271398] ffe0: 0002de54 becbbd5c 0001ac8c b6f8e408
+[ 1618.276443] ---[ end trace 526da779414c6638 ]---
 -- 
 Florian
 
