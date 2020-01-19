@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E930141CB2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 08:09:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3401141D16
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 10:07:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5u2ZYbxi0GcO+Ya02r7v1XqW2yuydzfswCbKY6SbDk4=; b=jTN
-	a5LPk5npMgCK+thm44q5IiGi9UBdcYetTKShgsUNTdiWWpWaxPZybpAPZyHK3g50RTUw+bgxWg82/
-	a4taktA1x3t8RjJuOBHSgOiqVyRV9RfGJBnIriHEYvQ85nVxviak5PyJS+719ExjaOhRgGCL2YlHt
-	2WfJGYYr5DkQ3LjO0HSyXqQlOEMJTF9E9hMf034kwXlXhJj/MOySz8UOO85BIeAQis/drnHqaHUqk
-	JMpaLakbeLsJURXaRm/0a9geA1OYl0uKcM74/fB65C4cpGYit8ZPIh+lLOtlSj+onzHl1d9WCrfsp
-	GHvCLSQRasOclTfrlT+NYd5AlYzA0fg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=P/HHB+rKIo6Bi0jAHMBhrkEojlhc6DIkl6b/V6kyiDY=; b=TuEZQcdlZDjCCq
+	P8bQApoPqygPxVK/VGtK72dEW9IvE2EDOKILgkA/P7EfaoWlCsKSLmk89QMTt794nLhUu/0SQrPC3
+	DoFVglO46jNK8FTRm0qvzwcEpiNi6ggH2yex/GMexl4HOR7yhKIr4gwHtR9hHWTw18NHshVizexBD
+	t1xEtB2qAkFFfYo5hGB1EKkW/mNy82QKo7QEwA/PcS6DTA+8PXqZ1wrF9eTKt5YWJ0fSTZooB8xYi
+	JSteGdFSbsfJRnF7hX/0juMDDc6pzYGUOucF7VIQ75Co4NFYnS8fr2xfNlkZCE4lOowRrbsEvoOZI
+	T/PaeN14hyhqVhxewwSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1it4i6-0005AG-3P; Sun, 19 Jan 2020 07:09:26 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1it6YE-0001mT-BD; Sun, 19 Jan 2020 09:07:22 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1it4hx-00058v-9q
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 07:09:18 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id n59so5495473pjb.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 18 Jan 2020 23:09:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=sbvECZSSaHMAVDSY442RQUtEQVv5nwhO7gX5LMPOXE8=;
- b=qPhDIkwPUi53pqaoMKRqIfieeqj1ieqrpyJEMQPUUMScs48YcTxa7ImvmRv3k7/AMi
- doIoxyETRKZEkj6NCki5WqfOCBvcRRzaBP3ysRi29m8PlKmdNY5hfO/afpv/uQKyYaWu
- QW8Mm8XJjO8WYObFpBZwFUpXm+8Pnf2Jp1kdRZCdFWch7kFbe2hZDa0yfZIgcvYZelWW
- LRj7jwDUQi4ryg/+zDUrpKhX2dGGMkejfsU4SqMGMxiLrBBJppdmanqIHHC2Bgbp/J/+
- 52MDikL4ufrTNtXDq3iZY2MsHGBDwKnbRAxoFRY6gf2uMW8OSev4BW00KWiPDsQ+NZqm
- Vbtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=sbvECZSSaHMAVDSY442RQUtEQVv5nwhO7gX5LMPOXE8=;
- b=FjaGBr5EFLPkEU7rDPNtKBiqSGt2LtOebvTrYFjPEKa5C8egLODZR638eymgf3F5qC
- /3jroXnVgGUKY2ai+X6ao0ZZCAPyh+Mr4ftM+67sxpQYxZe+EkEtleFOvuFTqyNQKI/j
- Ak6fRoNoJgQgIswUfxDeraCiOWnAjFkXG4yY4jbaOfY35iB+ZDcJ9lVRD/E1XO9SXSjI
- XxzzbB6pxwU4onU1iBqAi/miX8Ny7mb5WPh3iK0e/vO6qPzjwS2bJJL9L/AvRTTD0oLr
- ithJ56ecE9sAZet/eVs55PouCNWFhnpQaEYQlOvdQfqcNVa7dLvLPslladslI0U2BDaX
- gpGw==
-X-Gm-Message-State: APjAAAV65qyg0KGSixqckTa3nbja6ARegr9iFquKyHuhgfWMGhSFhhLC
- sn3cFzfvlVDW4ZUgbs7oUxDyT4PFwOE=
-X-Google-Smtp-Source: APXvYqylvUE9U5kKGJKKCtFF5R4wOSj4PgYC36wH2joJSvO8f1bw+0REf9K1UBn1pMFr84tkV4BQrA==
-X-Received: by 2002:a17:902:6805:: with SMTP id
- h5mr8058684plk.275.1579417755652; 
- Sat, 18 Jan 2020 23:09:15 -0800 (PST)
-Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id c184sm34015130pfa.39.2020.01.18.23.09.14
- (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Sat, 18 Jan 2020 23:09:15 -0800 (PST)
-From: qiwuchen55@gmail.com
-To: mmayer@broadcom.com, rjw@rjwysocki.net, viresh.kumar@linaro.org,
- f.fainelli@gmail.com
-Subject: [PATCH v3] cpufreq: brcmstb-avs: fix imbalance of cpufreq policy
- refcount
-Date: Sun, 19 Jan 2020 15:09:10 +0800
-Message-Id: <1579417750-21984-1-git-send-email-qiwuchen55@gmail.com>
-X-Mailer: git-send-email 1.9.1
+ id 1it6Y3-0001lL-6t
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 09:07:14 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 0ECFB4E55211167F5BDE;
+ Sun, 19 Jan 2020 17:06:55 +0800 (CST)
+Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
+ DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
+ 14.3.439.0; Sun, 19 Jan 2020 17:06:45 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+To: <maz@kernel.org>
+Subject: [PATCH] KVM: arm/arm64: vgic: Drop the kvm_vgic_register_mmio_region()
+Date: Sun, 19 Jan 2020 17:06:04 +0800
+Message-ID: <20200119090604.398-1-yuzenghui@huawei.com>
+X-Mailer: git-send-email 2.23.0.windows.1
+MIME-Version: 1.0
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_230917_367622_9117B0AC 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+X-CRM114-CacheID: sfid-20200119_010711_815180_0B9D9B0F 
+X-CRM114-Status: UNSURE (   6.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (qiwuchen55[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (qiwuchen55[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,59 +62,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chenqiwu <chenqiwu@xiaomi.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: Zenghui Yu <yuzenghui@huawei.com>, Haibin
+ Wang <wanghaibin.wang@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: chenqiwu <chenqiwu@xiaomi.com>
+kvm_vgic_register_mmio_region() was introduced in commit 4493b1c4866a
+("KVM: arm/arm64: vgic-new: Add MMIO handling framework") but never
+used, and even never implemented. Remove it to avoid confusing readers.
 
-brcm_avs_cpufreq_get() calls cpufreq_cpu_get() to get the cpufreq policy,
-meanwhile, it also increments the kobject reference count to mark it busy.
-However, a corresponding call of cpufreq_cpu_put() is ignored to decrement
-the kobject reference count back, which may lead to a potential stuck risk
-that the cpuhp thread deadly waits for dropping of kobject refcount when
-cpufreq policy free.
-
-For fixing this bug, cpufreq_get_policy() is referenced to do a proper
-cpufreq_cpu_get()/cpufreq_cpu_put() and fill a policy copy for the user.
-If the policy return NULL, we just return 0 to hit the code path of
-cpufreq_driver->get.
-
-Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
+Reported-by: Haibin Wang <wanghaibin.wang@huawei.com>
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- drivers/cpufreq/brcmstb-avs-cpufreq.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ virt/kvm/arm/vgic/vgic-mmio.h | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-index 77b0e5d..ee0d404 100644
---- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
-+++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-@@ -452,8 +452,16 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
+diff --git a/virt/kvm/arm/vgic/vgic-mmio.h b/virt/kvm/arm/vgic/vgic-mmio.h
+index 836f418f1ee8..5af2aefad435 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio.h
++++ b/virt/kvm/arm/vgic/vgic-mmio.h
+@@ -98,11 +98,6 @@ extern struct kvm_io_device_ops kvm_io_gic_ops;
+ 		.uaccess_write = uwr,					\
+ 	}
  
- static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
- {
--	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
--	struct private_data *priv = policy->driver_data;
-+	struct cpufreq_policy policy;
-+	struct private_data *priv;
-+
-+	/*
-+	 * In case cpufreq policy has been released, just return 0.
-+	 */
-+	if (cpufreq_get_policy(&policy, cpu))
-+		return 0;
-+
-+	priv = policy.driver_data;
+-int kvm_vgic_register_mmio_region(struct kvm *kvm, struct kvm_vcpu *vcpu,
+-				  struct vgic_register_region *reg_desc,
+-				  struct vgic_io_device *region,
+-				  int nr_irqs, bool offset_private);
+-
+ unsigned long vgic_data_mmio_bus_to_host(const void *val, unsigned int len);
  
- 	return brcm_avs_get_frequency(priv->base);
- }
+ void vgic_data_host_to_mmio_bus(void *buf, unsigned int len,
 -- 
-1.9.1
+2.19.1
+
 
 
 _______________________________________________
