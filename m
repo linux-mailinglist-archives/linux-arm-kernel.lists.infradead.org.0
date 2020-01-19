@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4551A141E70
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 15:13:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B77C141E8B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 15:28:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qwy5Wkjvp29XWxaJI1aKo1i897swPbv9+K79w84B3tk=; b=YgRB5hv1eRER7q
-	csjZpk1srfaKvgPUTMGiSQdgKBaP+o8/mN4iaMrv9UmmYBS/HPq+repHDWabcpQNDJS/GllUlH/Qj
-	amNjVNRuLIkuSgAJYCzexdWMMW1GtGJWG8AuPUh620tpoFoDcG5HIvXJJ6WD/iKvh5nyVLRaFWT66
-	oI5s/mKXgwFcsrycJDFW6pVw36+/YmXNsBl5tnWSfH/wBY9Ci0VIEFJ+gO8sWRqhJD5iwUPuBtki6
-	zUyR8TZV+Yvc1WqagZsZga+07qc8+lBaZ7ItdrqgIFVFHipJekXELV3VeNmn0zSeT2/hbCP3dPMAg
-	aQ3boohDxIY/4J8bWMdw==;
+	List-Owner; bh=/uQs4cpYNpC1rju8kQEM1+NgiYt7jzSYvqVze/xe0IQ=; b=cJ01mbIDyq3E8P
+	Kbv3PajjMunzKHY//0MR5yMPt2pwjiLFSGNZZcofqE6DVrbWvEqgOjqNW6ZgMqVxOmX8iRVNaoAat
+	P8N+zh85/g74ptgN+riNi7ZAzafkfsVRFn0deenS4wBew9KWbPVND+WuijfFLN+1tWLVgGI3eurSD
+	OVxDvMVhA7Wp2kMH6uGK/Lm2+iNJC2vT5O4LGzvmD67Qc6bQ+02FmZux14yoZE875Gh94aGm+dT1J
+	xGDvT2qbqEWB+OOAiOOho2TccRRQmfAe16lpcxfev/8oiMj0ba1IJtg5pXfRFdKcbUtWR+d+GWWyu
+	B2ydppTW+4/dpysSSZTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itBKc-0003yP-9f; Sun, 19 Jan 2020 14:13:38 +0000
+	id 1itBZ5-0000TL-RE; Sun, 19 Jan 2020 14:28:35 +0000
 Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itBKS-0003xN-8m; Sun, 19 Jan 2020 14:13:29 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id x123so17521973vsc.2;
- Sun, 19 Jan 2020 06:13:27 -0800 (PST)
+ id 1itBYu-0000S5-Ch; Sun, 19 Jan 2020 14:28:25 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id g15so17529378vsf.1;
+ Sun, 19 Jan 2020 06:28:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WS4hpiPJ4ZsLS0bhjTBuxcDiBx1tLS6ob2vAGCFesxE=;
- b=QOuc3nSYWc5b82Vq+EXtiBO+wIuxcXrcnVdRw/OwDX2vo59211p80vm6G1wVNEp1FM
- M1hPMqTOcarVwUNrjg0dqeaFu8FrMx59Dq3k2BSCiVoScLFrbKnUz3Lskx8u/csP/K2M
- n3hJXUaO58pnk9dWkgzWpLCq7BbR5svTUBAoLU1f3Gd05sNJQGmX2fGVE0MEKIbc5FFd
- E3prO93PSEy3ktg88DgQuxu7NSiW+hufzXPrXUjeJwpW3pegx9B9nCoevU333c5xsZv0
- XLa0eXZQUyIC0ansVKKx0WYWEEdb+ZWaapL8tieFU1MjzPyZv77eb/HbXLh4f82hziGm
- iTTQ==
+ :cc; bh=hXWYeX6AjtCDD1kv6pJLbNztbwW499IxeNUMgb5p23o=;
+ b=rYQjOwK7eKiea9ZzsLJpVr/fXJw6Odp4y9oVfXjpZ5Ypqm1TDdcsTmyDgkF57qzaM3
+ 53Fh+Opzf06Zj7t1IOM3DK3rTYv90QhGYbmx6pPAwUP040ziVECm/V3YfHOFFy4DOd/4
+ qE7Tbmq1b17DI1RiJ4bHccmrRBUIeGj9SxyczYA2s7+lAGcKi+CoS0iqHiwBbr6otv/w
+ YAm7LuJDbwNjDxqdx/zCp3cfc4QdE1vwREHwUhvdoS+56RYx07QOtlwEKrdKRYdQvgSi
+ 8p1OGceTrELl9lJSaLNZzzPImLJu6d9xW2BoEAjSyh6yU1TivUsROh9Lz/Ck48TAEOox
+ CNEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=WS4hpiPJ4ZsLS0bhjTBuxcDiBx1tLS6ob2vAGCFesxE=;
- b=F3ssQnE7nMKnJywCSmbRpAncdm/Ek1vahn0QHPDxp8Axxk0Twrq8re0b2ySoO5fU57
- O5XqQlqe0uEZd6ekyGCefUE2pxCQPLgJ5k2NcDuwkBK3noaQLs5m4/RpDwQRCdtwzdm1
- dzcxpJcU6G6LcHW8Ni3aya/ChbBlPwLAARKlomvFjbC2Zj2uG5dbXQKa7TQe6DCO0DL6
- R4Fk9uMr/j/xskexh4hit9QmupyUjhMKXRVXhu6LgeT7mzACcwEfq2obMR9/786OLrcX
- 7HLY+qrfAPTb4Vd4tuU2XphSJQ+V+DZfYXagQtGGsLMpdUTLXXm2ZZTt03a+9QmdyMtS
- XIiA==
-X-Gm-Message-State: APjAAAX6E9BPZT1zudMAvR28JCALSXRMFbcBU99xO5j5k88KBU7akift
- dJD2jtaG3YSIUGMh4TepIsb9UKdtRj7aF5Mx2cU=
-X-Google-Smtp-Source: APXvYqzJeseQkiqZA+gTc1YOvzk4DZiccEVSWTY2QS9PIluU6q/4bOX3Rmonl/yu7V0uTSOkcMg7w5SonnYmnn5BK1o=
-X-Received: by 2002:a67:1447:: with SMTP id 68mr9872067vsu.76.1579443206847;
- Sun, 19 Jan 2020 06:13:26 -0800 (PST)
+ bh=hXWYeX6AjtCDD1kv6pJLbNztbwW499IxeNUMgb5p23o=;
+ b=bqY24cSzSZnm1nujdnoFP9VXyXOSMvRsUrCX8E9I7CTro9JAa8x+T5pWu+UENFNYeq
+ 7XhaDfLXV1uQjLOSTMXVyzWOxAtU3slmJ/6DERyasmUEhbP1wuCxEozRtwprqUZAMhSl
+ D6QnQtvek/comhsprQO9i+HYnhrbeYRfhCWYHH+OWvqO995cNfgwRIIGPLqp8MTpiVIQ
+ +Vs6xbrVqZhy8gAHVFUYJ7B2SHj8J2Ee2YphIOR4jJcJPLCS3qk6jI+K5xLSNJ8CPm01
+ NSUa9PmLHSVZoVMDzrDDE0pkvivV7saqEF/g+2mIOU05Nt98r0FMQI+CJsPgKkSJ4b2e
+ xaZg==
+X-Gm-Message-State: APjAAAUIATLlmYULu8eFf8dKMj4mrOPLAD3xYnTUFFoZ/X6QCUS72pI/
+ u3y9YTnURRQlX1NJNbeV5z+b1OqPvhA4mWsn16M=
+X-Google-Smtp-Source: APXvYqzDPJ2ye9YaeF3DaCU8q4S+yDkAYV36sI64ueyCEDAUkMAT1qlcYKkyjVH8mMpwuJiwXy9m1uyuXVfhdKfKCds=
+X-Received: by 2002:a05:6102:3102:: with SMTP id
+ e2mr10235569vsh.179.1579444103046; 
+ Sun, 19 Jan 2020 06:28:23 -0800 (PST)
 MIME-Version: 1.0
 References: <20200117035108.19699-1-stanley.chu@mediatek.com>
- <20200117035108.19699-3-stanley.chu@mediatek.com>
-In-Reply-To: <20200117035108.19699-3-stanley.chu@mediatek.com>
+ <20200117035108.19699-4-stanley.chu@mediatek.com>
+In-Reply-To: <20200117035108.19699-4-stanley.chu@mediatek.com>
 From: Alim Akhtar <alim.akhtar@gmail.com>
-Date: Sun, 19 Jan 2020 19:42:50 +0530
-Message-ID: <CAGOxZ51K1EWY56Kw1aBJJ-8DubXjmY+ew6XUYKSCPXzPZvcs2w@mail.gmail.com>
-Subject: Re: [PATCH v1 2/3] scsi: ufs: export some functions for vendor usage
+Date: Sun, 19 Jan 2020 19:57:47 +0530
+Message-ID: <CAGOxZ51V6XmAuu4ki_X7kEkCoUHZguM1=peEHSktsuu1obyDFw@mail.gmail.com>
+Subject: Re: [PATCH v1 3/3] scsi: ufs-mediatek: enable low-power mode for
+ hibern8 state
 To: Stanley Chu <stanley.chu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_061328_335466_02E6461A 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20200119_062824_456358_026A69FF 
+X-CRM114-Status: GOOD (  14.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,102 +108,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 9:45 AM Stanley Chu <stanley.chu@mediatek.com> wrote:
+On Fri, Jan 17, 2020 at 9:44 AM Stanley Chu <stanley.chu@mediatek.com> wrote:
 >
-> Export below functions for vendor usage,
->
-> int ufshcd_hba_enable(struct ufs_hba *hba);
-> int ufshcd_make_hba_operational(struct ufs_hba *hba);
-> int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
+> In MediaTek Chipsets, UniPro link and ufshci can enter proprietary
+> low-power mode while link is in hibern8 state.
 >
 > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 > ---
 Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 
->  drivers/scsi/ufs/ufshcd.c | 11 +++++++----
->  drivers/scsi/ufs/ufshcd.h |  3 +++
->  2 files changed, 10 insertions(+), 4 deletions(-)
+>  drivers/scsi/ufs/ufs-mediatek.c | 53 +++++++++++++++++++++++++++++++++
+>  1 file changed, 53 insertions(+)
 >
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index bea036ab189a..1168baf358ea 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -250,7 +250,6 @@ static int ufshcd_probe_hba(struct ufs_hba *hba);
->  static int __ufshcd_setup_clocks(struct ufs_hba *hba, bool on,
->                                  bool skip_ref_clk);
->  static int ufshcd_setup_clocks(struct ufs_hba *hba, bool on);
-> -static int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
->  static int ufshcd_uic_hibern8_enter(struct ufs_hba *hba);
->  static inline void ufshcd_add_delay_before_dme_cmd(struct ufs_hba *hba);
->  static int ufshcd_host_reset_and_restore(struct ufs_hba *hba);
-> @@ -3865,7 +3864,7 @@ static int ufshcd_uic_hibern8_enter(struct ufs_hba *hba)
->         return ret;
+> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+> index d5194d0c4ef5..f32f3f34f6d0 100644
+> --- a/drivers/scsi/ufs/ufs-mediatek.c
+> +++ b/drivers/scsi/ufs/ufs-mediatek.c
+> @@ -382,11 +382,60 @@ static void ufs_mtk_device_reset(struct ufs_hba *hba)
+>         dev_info(hba->dev, "device reset done\n");
 >  }
 >
-> -static int ufshcd_uic_hibern8_exit(struct ufs_hba *hba)
-> +int ufshcd_uic_hibern8_exit(struct ufs_hba *hba)
->  {
->         struct uic_command uic_cmd = {0};
->         int ret;
-> @@ -3891,6 +3890,7 @@ static int ufshcd_uic_hibern8_exit(struct ufs_hba *hba)
->
->         return ret;
->  }
-> +EXPORT_SYMBOL_GPL(ufshcd_uic_hibern8_exit);
->
->  void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit)
->  {
-> @@ -4162,7 +4162,7 @@ static int ufshcd_complete_dev_init(struct ufs_hba *hba)
->   *
->   * Returns 0 on success, non-zero value on failure
->   */
-> -static int ufshcd_make_hba_operational(struct ufs_hba *hba)
-> +int ufshcd_make_hba_operational(struct ufs_hba *hba)
->  {
->         int err = 0;
->         u32 reg;
-> @@ -4208,6 +4208,7 @@ static int ufshcd_make_hba_operational(struct ufs_hba *hba)
->  out:
->         return err;
->  }
-> +EXPORT_SYMBOL_GPL(ufshcd_make_hba_operational);
->
->  /**
->   * ufshcd_hba_stop - Send controller to reset state
-> @@ -4285,7 +4286,7 @@ static int ufshcd_hba_execute_hce(struct ufs_hba *hba)
->         return 0;
->  }
->
-> -static int ufshcd_hba_enable(struct ufs_hba *hba)
-> +int ufshcd_hba_enable(struct ufs_hba *hba)
->  {
->         int ret;
->
-> @@ -4310,6 +4311,8 @@ static int ufshcd_hba_enable(struct ufs_hba *hba)
->
->         return ret;
->  }
-> +EXPORT_SYMBOL_GPL(ufshcd_hba_enable);
+> +static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
+> +{
+> +       int err;
 > +
->  static int ufshcd_disable_tx_lcc(struct ufs_hba *hba, bool peer)
+> +       err = ufshcd_hba_enable(hba);
+> +       if (err)
+> +               return err;
+> +
+> +       err = ufshcd_dme_set(hba,
+> +                            UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
+> +                            0);
+> +       if (err)
+> +               return err;
+> +
+> +       err = ufshcd_uic_hibern8_exit(hba);
+> +       if (!err)
+> +               ufshcd_set_link_active(hba);
+> +       else
+> +               return err;
+> +
+> +       err = ufshcd_make_hba_operational(hba);
+> +       if (err)
+> +               return err;
+> +
+> +       return 0;
+> +}
+> +
+> +static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
+> +{
+> +       int err;
+> +
+> +       err = ufshcd_dme_set(hba,
+> +                            UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
+> +                            1);
+> +       if (err) {
+> +               /* Resume UniPro state for following error recovery */
+> +               ufshcd_dme_set(hba,
+> +                              UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
+> +                              0);
+> +               return err;
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+>  static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
 >  {
->         int tx_lanes, i, err = 0;
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index b1a1c65be8b1..fca372d98495 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -799,8 +799,11 @@ static inline void ufshcd_rmwl(struct ufs_hba *hba, u32 mask, u32 val, u32 reg)
+> +       int err;
+>         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
 >
->  int ufshcd_alloc_host(struct device *, struct ufs_hba **);
->  void ufshcd_dealloc_host(struct ufs_hba *);
-> +int ufshcd_hba_enable(struct ufs_hba *hba);
->  int ufshcd_init(struct ufs_hba * , void __iomem * , unsigned int);
-> +int ufshcd_make_hba_operational(struct ufs_hba *hba);
->  void ufshcd_remove(struct ufs_hba *);
-> +int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
->  int ufshcd_wait_for_register(struct ufs_hba *hba, u32 reg, u32 mask,
->                                 u32 val, unsigned long interval_us,
->                                 unsigned long timeout_ms, bool can_sleep);
+>         if (ufshcd_is_link_hibern8(hba)) {
+> +               err = ufs_mtk_link_set_lpm(hba);
+> +               if (err)
+> +                       return -EAGAIN;
+>                 phy_power_off(host->mphy);
+>                 ufs_mtk_setup_ref_clk(hba, false);
+>         }
+> @@ -397,10 +446,14 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>  static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>  {
+>         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+> +       int err;
+>
+>         if (ufshcd_is_link_hibern8(hba)) {
+>                 ufs_mtk_setup_ref_clk(hba, true);
+>                 phy_power_on(host->mphy);
+> +               err = ufs_mtk_link_set_hpm(hba);
+> +               if (err)
+> +                       return err;
+>         }
+>
+>         return 0;
 > --
 > 2.18.0
 
