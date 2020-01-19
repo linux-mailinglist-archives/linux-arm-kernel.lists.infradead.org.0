@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C83A8141F12
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 17:32:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7953141F0E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 17:31:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NP02iFNkr1t7eAtTCAGE8i/zJ8MFn2RcHP60wYNZqC4=; b=ZNcXu+RIrYlDar
-	HNaMhEug/kHHCykZfgLDwfDbmMIOYtluhxDnyV6mtbklq4lYAMwoWNL43OaIGW2KFLllbEjil5ivq
-	fYa+hAOLmV+2ll0NfOfzvfLmn0w8s3WLEPdTiinLc73R5HI/Vh0x6oZfbHNKZJh2K4+nBR9MnkPdo
-	GtveSO5MOUzoaxdrto687UJwjHeybOuY1gDrgUcm75ELuW1I0/ezoKoq6igGrFRD/8VxL0IM+LNhs
-	/WrBrgKr0OzbC5MXDzsKun+grRZyvioAIVX9i5y+tnYHrUvERPDRtuFHPVy+6sRLmDcp2xiZCFk7u
-	RRggrbgXCDlKlDfABrKA==;
+	List-Owner; bh=a3k+g+M5YkIEmdgSAHevbvAhTbOuXnqxH6tgEX0Uu+A=; b=jAnnZZ0/mwnygs
+	hk25G/JuyI4CzHpcvpszcJT95lpbF3wWiJR7QVu6jdXgD3RzL02h9DKFUhr7clZFS1cfk7QHBmUU3
+	shed6ItXY3Az8nwQolbyWKQpDb5oa7TS/hIShWcCpI8HNZen/ddtvfmHX9XnTp3eGOmVKELRJnFrN
+	fsJrh14/2Dkngs3ErjhXdSQrYiqwIyLm85wih20Dj9CZmhxJJvpdQl6RLgIrk/3O9mDZAeXQ5p8U6
+	nxVmUcaPRZOIKgHfegWB29msJMkXMmx0jXcrhPZ0ZKlbdotBV96BBciApNm++L8SYQMlY31gCVfdC
+	iqCI3WkhsKcO66HPxIvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itDVB-000644-NT; Sun, 19 Jan 2020 16:32:41 +0000
+	id 1itDU0-000586-02; Sun, 19 Jan 2020 16:31:28 +0000
 Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itDTl-000551-Qj
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 16:31:18 +0000
+ id 1itDTl-000552-Qk
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 16:31:17 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.nyi.internal (Postfix) with ESMTP id 43B2521A7B;
+ by mailout.nyi.internal (Postfix) with ESMTP id AAD3D21B6A;
  Sun, 19 Jan 2020 11:31:06 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
  by compute5.internal (MEProxy); Sun, 19 Jan 2020 11:31:06 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=XU3BXx7kzPpiK
- PBvVKiBW6xDC3euYJdkTNurYmc69dU=; b=JMO0rMkTHJ9fBe2zm0/aQ2Y3tzda6
- 9/IX67VI1CEN7/TsSgONTdcqgXjO9EXUKYB8ZAsRopACt6JJ0TOZKmEIag2vBJ9Z
- JP85meOTc4J4/bLEREIzoWNF3e2xgiriT9jv4IRcEqq8wQGWKbDFUlnZt5cIUPno
- P6fFBN+H5XVtmHnhlfakWquMruDsZkHbO1i75cD4DSSDKPcvz+QtKXw/DyuE8RWU
- FWGKjFMapd4hGhBA+sikTESJWumsya9TyY0w8Wl1sClH+jyu6c7FLbOLPY8hTtTu
- pcTcC5NwaHFeUZH9e2kLkG+HcG2rvFmV0wd8LcUCDlLpdtS3a+o3RvqhQ==
+ :mime-version:content-transfer-encoding; s=fm1; bh=GZvRpwCtvmTOQ
+ s2hXP6ts5mlEVgyPC4n0SpzvQR202w=; b=ESMVRuxN0vXPPtuiT2zQr0EW65308
+ EiIB3RT6slESVpejv8CzRCdvMtkb4vmK8O87E/lMv7kt6KN+awxXkMhtzqtU+XUC
+ JHvfTvKv/8m/mMHeNEk1zBtwgyB4N+uRnaIGF0c9MGokwgovvpw53ZRIgkwEQ0Wo
+ UdEsv1M7ZtDmTA11+XzuvIxm3dZyib30vbsm6n5wK8dl+69AtUGvqEyF04yVRD9d
+ ri4BScGHOU+R5MzRtG5J4uNmzfaUJhIefqQ631Aer120KwFV9pb/7ETrg39V6LZ/
+ DtjhpG8rLsCGt0Dno2OkWW9jQHmOEeqnpfpSDegveBwhyDlUz6XJOWYCQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=XU3BXx7kzPpiKPBvVKiBW6xDC3euYJdkTNurYmc69dU=; b=cZl1js/U
- oNghvC5cxFsm0vs48w2A2+O3u9E+wr+spCZv9DS3Fi29mrRfYChz8nVJGKIeTtdL
- tPjB/C0pP9UOC5d5X93Jt+sH18g0mUUv9785F0DB+gMvlxXoPLG+2HOzE5cAj3Jo
- WPjVwxAZRcP7Ltxev8qjzTCIuSif7nPatLoqXcGKAfS56dJJBI2b9KsEBR+OalKv
- HUojyB6h6f5oloPWRP+HDfjDhAqYHX7Wi4uLwXZAQmddkPdJvoRCltbus7pWtQG2
- FRoN+b6MfPV8Jk3odp1LPdoOQg1H6cnJgMRBJJ/+QZypfeJPhFnJC5Ie9wBf4Qfj
- HtBrRywAmuK3jQ==
-X-ME-Sender: <xms:SoQkXqDAF8l2mYGXFHy3Ni98nmBVCxbRkj0GEHT0U04CfUBAfJ8opg>
+ fm1; bh=GZvRpwCtvmTOQs2hXP6ts5mlEVgyPC4n0SpzvQR202w=; b=etS9mNPU
+ 4wBC5IyNV/ChxhJopF7CIFEqH2u+a6PzedxFyK5F5hSWekittrRaPhUJmLash2QJ
+ EP1EWvhxXGNFa+sIWqFCiAaQsFcR8DwNCBFfw7upfVCOXIewrJoP8NgZvghCVZYP
+ GgQ1BuHxCbzXSuD6xURNTUTNLtKzSAZxAhoKKjxG4tWsTvvGLwind0sz498f75vm
+ UzXVsUHJ1c7EKM3XXmcRNjH0ejgEgYY+z2JiHLeU88L9g0qdnpV7V9mIv302FGb7
+ CgWyepxQfNhgi/RDmXpTbSdG7z83her0Jy+1Zh/98CwhIskwMcPdvnuBQ6lirhni
+ wBKpsJEXoiD4OA==
+X-ME-Sender: <xms:SoQkXpwepIZ0A2VKsjizHeWjRlqMilLJQ4ZvvXmL6_MBfgCsbx8y3A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudefgdekkecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -56,28 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudefgdekkecutefuodetggdote
  ucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppe
  ejtddrudefhedrudegkedrudehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhu
  vghlsehshhholhhlrghnugdrohhrghenucevlhhushhtvghrufhiiigvpedu
-X-ME-Proxy: <xmx:SoQkXiUhGU7ufDb9EErmLWJRM_gD306q7YX_rcJSPFRB74OdnnY0hg>
- <xmx:SoQkXufZeJnYyzUjmzU5xbVW34HHtRZ8ZTSzqBXulSM-PVIkRgWt0w>
- <xmx:SoQkXjtYBna0KySNl9UF_zg3Nv3Qp3y9JJxwrzMlyRNkvjgIzfwR-A>
- <xmx:SoQkXqRfj68MVCc1H1gPDWzjVBdWWWxxeIS6NC0jlNWNcLKlfbnzEw>
+X-ME-Proxy: <xmx:SoQkXtYD9daVwESsliif9LOLmAk0OvhP_uB4RzschFRjLIYJr9G-NA>
+ <xmx:SoQkXu6lPQiVNdSYomxRveG-A3rLSCscsewozz8YflpEtIFgnSB-Og>
+ <xmx:SoQkXtz9wcLw6PSZkQ_oo0kIrqV3nv0Opk_JFxef_P2kSQBypHTdqQ>
+ <xmx:SoQkXj08oRFYLnhrLiRvCrbgtFfCNrc6wqwckdJuNMd8NVULEKRAqA>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id A7B1480060;
- Sun, 19 Jan 2020 11:31:05 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1C9A48005A;
+ Sun, 19 Jan 2020 11:31:06 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <mripard@kernel.org>,
 	Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 3/9] arm64: dts: allwinner: pinebook: Remove unused AXP803
- regulators
-Date: Sun, 19 Jan 2020 10:30:58 -0600
-Message-Id: <20200119163104.13274-3-samuel@sholland.org>
+Subject: [PATCH 4/9] arm64: dts: allwinner: pinebook: Sort device tree nodes
+Date: Sun, 19 Jan 2020 10:30:59 -0600
+Message-Id: <20200119163104.13274-4-samuel@sholland.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20200119163104.13274-1-samuel@sholland.org>
 References: <20200119163104.13274-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_083114_175129_2A98AD3A 
-X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-CacheID: sfid-20200119_083114_170090_F312C384 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -114,60 +113,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Pinebook does not use the CSI bus on the A64. In fact it does not
-use GPIO port E for anything at all. Thus the following regulators are
-not used and do not need voltages set:
-
- - ALDO1: Connected to VCC-PE only
- - DLDO3: Not connected
- - ELDO3: Not connected
+The r_i2c node should come before r_rsb, and in any case should not
+separate the axp803 node from its subnodes.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- .../boot/dts/allwinner/sun50i-a64-pinebook.dts   | 16 +---------------
- 1 file changed, 1 insertion(+), 15 deletions(-)
+ .../boot/dts/allwinner/sun50i-a64-pinebook.dts   | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-index ff32ca1a495e..8e7ce6ad28dd 100644
+index 8e7ce6ad28dd..97e412fc4e4b 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-@@ -202,9 +202,7 @@
+@@ -172,6 +172,14 @@
+ 	status = "okay";
  };
  
- &reg_aldo1 {
--	regulator-min-microvolt = <2800000>;
--	regulator-max-microvolt = <2800000>;
--	regulator-name = "vcc-csi";
-+	regulator-name = "vcc-pe";
++/* The ANX6345 eDP-bridge is on r_i2c */
++&r_i2c {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&r_i2c_pl89_pins>;
++	status = "okay";
++};
++
+ &r_rsb {
+ 	status = "okay";
+ 
+@@ -183,14 +191,6 @@
+ 	};
  };
  
- &reg_aldo2 {
-@@ -267,12 +265,6 @@
- 	regulator-name = "vcc-edp";
- };
- 
--&reg_dldo3 {
--	regulator-min-microvolt = <3300000>;
--	regulator-max-microvolt = <3300000>;
--	regulator-name = "avdd-csi";
+-/* The ANX6345 eDP-bridge is on r_i2c */
+-&r_i2c {
+-	clock-frequency = <100000>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&r_i2c_pl89_pins>;
+-	status = "okay";
 -};
 -
- &reg_dldo4 {
- 	regulator-min-microvolt = <3300000>;
- 	regulator-max-microvolt = <3300000>;
-@@ -286,12 +278,6 @@
- 	regulator-name = "cpvdd";
- };
+ #include "axp803.dtsi"
  
--&reg_eldo3 {
--	regulator-min-microvolt = <1800000>;
--	regulator-max-microvolt = <1800000>;
--	regulator-name = "vdd-1v8-csi";
--};
--
- &reg_fldo1 {
- 	regulator-min-microvolt = <1200000>;
- 	regulator-max-microvolt = <1200000>;
+ &ac_power_supply {
 -- 
 2.23.0
 
