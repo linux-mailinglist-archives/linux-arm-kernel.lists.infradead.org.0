@@ -2,71 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 833BD141BF1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 05:15:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4306F141BED
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 05:13:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TzuISfiA86JE6keoPbzl4Y+UtiH5xli6YY6hRGWgAVM=; b=Dg4TOb2H+KLuNb
-	8QAoiOZ66iY/Xwtud8oOT4pqshu7FlxKgZ9gq0MaiB8TYYpiDVxKp9rSBwEK2mVAp0/EwketoPHQh
-	6sZN0UIidMhIf5TgjAabTSbkGQgebaHeoDZH2fl6ArBnRFgohzle3nzFKThI5gsydzT7THMBQIvtE
-	+Nb8z6tn51pDFIBQiWLjSkhjS6XD5oN7RYftXAY6frc2dAlg9D10jk/OGbBH6/NFXKZFuJiI1Jb8w
-	YBUN/pezbu3jWRQnnFOHMT3CvTSqgjGjBeB0iLq6fimD0pnWVyz9vbgooGEx7qJaMoB2eHyGQ2pAg
-	5knhIJhQFyueAfeI1jww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DiHdSGz62ZdTR/ND+6cBQtYokgSd1cdcaQ9ZKnV2YUU=; b=UMMwxf5aNZhMlm
+	ydFA18F0HZ3KyBADiOPajycr4FXOE/kFpLH1lXR0uPAeaDFpNsiexByOEMYET7+zejoebllqbmO76
+	IYODf88pnkIfrqfIGfVUzAAoXBBQTnGdw9Aw+VqiFTzg1+zQePyVcDlSUxlUmXqlPB6gLMXRAWSmT
+	bDxw19Zy/4rmkDRa9uxCAjRE/GsKFV2s94BUip97gO2n8daURahbw9wwGw59qASHoh3cuZR7G9BpA
+	0b1EO54lywWCLEQ6WkfeYrjEV843O/S9w8xYpUHcYbszhAVeEUPMXBb8sj8IBu1hk6QGJeyExruND
+	Tkph5YffQ0g4f34gAagQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1it1zJ-0007DA-2q; Sun, 19 Jan 2020 04:15:01 +0000
-Received: from mx2.freebsd.org ([96.47.72.81])
+	id 1it1xK-0006ih-70; Sun, 19 Jan 2020 04:12:58 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1it1z9-0007Cr-ID
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 04:14:52 +0000
-Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2610:1c1:1:606c::19:1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (Client CN "mx1.freebsd.org",
- Issuer "Let's Encrypt Authority X3" (verified OK))
- by mx2.freebsd.org (Postfix) with ESMTPS id 9773B7B638;
- Sat, 18 Jan 2020 15:25:08 +0000 (UTC)
- (envelope-from manu@FreeBSD.Org)
-Received: from smtp.freebsd.org (smtp.freebsd.org
- [IPv6:2610:1c1:1:606c::24b:4])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- server-signature RSA-PSS (4096 bits)
- client-signature RSA-PSS (4096 bits) client-digest SHA256)
- (Client CN "smtp.freebsd.org",
- Issuer "Let's Encrypt Authority X3" (verified OK))
- by mx1.freebsd.org (Postfix) with ESMTPS id 480MF01jhmz44FZ;
- Sat, 18 Jan 2020 15:25:08 +0000 (UTC)
- (envelope-from manu@FreeBSD.Org)
-Received: from localhost.localdomain
- (lfbn-idf2-1-1164-130.w90-92.abo.wanadoo.fr [90.92.223.130])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (Client did not present a certificate) (Authenticated sender: manu)
- by smtp.freebsd.org (Postfix) with ESMTPSA id 3942E17F81;
- Sat, 18 Jan 2020 15:25:07 +0000 (UTC)
- (envelope-from manu@FreeBSD.Org)
-From: Emmanuel Vadot <manu@FreeBSD.Org>
-To: mripard@kernel.org, wens@csie.org, robh+dt@kernel.org, mark.rutland@arm.com
-Subject: [PATCH v2] arm64: dts: allwinner: a64: Add gpio bank supply for
- A64-Olinuxino
-Date: Sat, 18 Jan 2020 16:24:59 +0100
-Message-Id: <20200118152459.17199-1-manu@FreeBSD.Org>
-X-Mailer: git-send-email 2.25.0
+ id 1it1xB-0006iI-40
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 04:12:50 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y8so11626533pll.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 18 Jan 2020 20:12:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=1UGFOGT1eEmR//uqOTuGOpTXVyCpwEvAHHcIsI9cANI=;
+ b=TyVM9g0g5LuPkrUC9l3Gwg8pDagu9q8dLAUIvRgFWoBi2XDqzjU+qWuItE8XZgbjAN
+ DQgjCEuB29Sq8V60NjR5BCOr3yIt4jmnz7vm0axGchql/zQsbBInV2UT6WThEm+4NLPy
+ LCdhpZkPCaNtybpek6J+9dHbFkrs2ayMPN6ZwHpiN4J6YG+BnOFsIYLojWoAOcbjwWEL
+ tpDqbEPEkZ5vQBEdCB1mcGgMavTZ8NVTL7nBeiC1XDNF14VZUEcFAirmK8Ctm66x1eAN
+ wCWfOe3PlJVgBtzIFlnrADdJlcpT6kA9gjib0WF2iFj2XSBKgBeBpSnWzyJlizoJ6PG/
+ fACA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=1UGFOGT1eEmR//uqOTuGOpTXVyCpwEvAHHcIsI9cANI=;
+ b=lHI08meNbwjBepWw5Dv2OevWkWjPVtWiXg/7z7r7g7Z9cK8AgvgFrUGYfkazED+FrD
+ 5X6JEaOss8rWq6fSNNPwGAO/mgXkk/1oNrmhHQ1xkN4eWOiVTfky5JHPRrsL3qReT4GT
+ OQVEI+KZsgcZv6AZp1hKGyRGQv1o6Kn1/KtlwiGnqg4tos3A6ww+juJ/jlpRmqGPut7x
+ LdEP20T70y/LMaHSfbQdN5e2jnWrgk41xFU4QB6jTyPMc6j+ff/t8QP1THvH92tUduGH
+ U3Osiltdfi+2X9nfWTGP1EIWgADHB/c3TRXMdvXOspiNJ19fyhcgnJgLpjRvYBU6Munw
+ fysA==
+X-Gm-Message-State: APjAAAU1DMYUhNJBKZNHXG8mEbtc9X5U94KV/SuOKPy7Wpm5MQNctuJt
+ SxaRYfHY68+fQcd96C8ATszSm2lX
+X-Google-Smtp-Source: APXvYqzzoIPvlODuBh4zkGhRNZzl6z96s/19B3GAaGQb9dSlTT15iql0hqZg2OoysSIUiTPEnLfivw==
+X-Received: by 2002:a17:90a:8545:: with SMTP id
+ a5mr15387166pjw.3.1579407165168; 
+ Sat, 18 Jan 2020 20:12:45 -0800 (PST)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ y20sm34330795pfe.107.2020.01.18.20.12.43
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 18 Jan 2020 20:12:44 -0800 (PST)
+Subject: Re: [PATCH v2] cpufreq: brcmstb-avs-cpufreq: avoid potential stuck
+ and UAF risk
+To: chenqiwu <qiwuchen55@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>
+References: <1578228650-17157-1-git-send-email-qiwuchen55@gmail.com>
+ <20200106055637.zq4icl5klg4wpvkx@vireshk-i7>
+ <20200106070910.GA17897@cqw-OptiPlex-7050>
+ <20200106073109.ndm7enzyznquqps5@vireshk-i7>
+ <20200119022513.GA21407@cqw-OptiPlex-7050>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <fff918f6-a2e2-3789-2fed-8962dc441e4c@gmail.com>
+Date: Sat, 18 Jan 2020 20:12:43 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200119022513.GA21407@cqw-OptiPlex-7050>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_201451_673234_4F755BF9 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200118_201249_188118_25700B1B 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [96.47.72.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,66 +162,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Emmanuel Vadot <manu@freebsd.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: rjw@rjwysocki.net, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, mmayer@broadcom.com,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Emmanuel Vadot <manu@freebsd.org>
 
-Add the regulators for each bank on this boards.
-For VCC-PL only add a comment on what regulator is used. We cannot add
-the property without causing a circular dependency as the PL pins are
-used to talk to the PMIC.
 
-Signed-off-by: Emmanuel Vadot <manu@freebsd.org>
----
-v2:
- - Remove vcc-pl-supply in r_pio as it cause a circular dependency.
+On 1/18/2020 6:25 PM, chenqiwu wrote:
+> On Mon, Jan 06, 2020 at 01:01:09PM +0530, Viresh Kumar wrote:
+>> On 06-01-20, 15:09, chenqiwu wrote:
+>>> There could be a case as the description of this patch besides
+>>> brcm_avs_driver unloads. Since cpufreq_policy_free() will free
+>>> the mm of cpufreq_policy at the last moment.
+>>
+>> Ahh, right. Please fix the other "policy" thing I reported and resend
+>> the patch then.
+>>
+>> -- 
+>> viresh
+> Hi,
+> Any progress about this patch?
 
- .../boot/dts/allwinner/sun50i-a64-olinuxino.dts | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-index 01a9a52edae4..7e71b5b12f98 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-@@ -163,6 +163,17 @@ &ohci1 {
- 	status = "okay";
- };
- 
-+&pio {
-+	vcc-pa-supply = <&reg_dcdc1>;
-+	vcc-pb-supply = <&reg_dcdc1>;
-+	vcc-pc-supply = <&reg_dcdc1>;
-+	vcc-pd-supply = <&reg_dcdc1>;
-+	vcc-pe-supply = <&reg_aldo1>;
-+	vcc-pf-supply = <&reg_dcdc1>;
-+	vcc-pg-supply = <&reg_dldo4>;
-+	vcc-ph-supply = <&reg_dcdc1>;
-+};
-+
- &r_rsb {
- 	status = "okay";
- 
-@@ -175,6 +186,12 @@ axp803: pmic@3a3 {
- 	};
- };
- 
-+/* VCC-PL is powered by aldo2 but we cannot add it as the RSB */
-+/* interface used to talk to the PMIC in on the PL pins */
-+/* &r_pio { */
-+/*	vcc-pl-supply = <&reg_aldo2>; */
-+/* }; */
-+
- #include "axp803.dtsi"
- 
- &ac_power_supply {
+Viresh gave you some feedback to address, so my understanding is that we
+should see a v3.
 -- 
-2.24.1
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
