@@ -2,75 +2,144 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AFED141F39
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 18:43:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72178141F40
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 18:50:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jtPYemx6Awqy9i6c9n4mkIeFSK1yqTw9Dnqxd/S62dY=; b=iNzbACXXspmXQ7
-	tJ+WtQoPOG24VMSLraNKVDRos0a5h86zgnMIFvUaZBUZL5OliOU4AJPEiqgN7BY7nbdaynb4vRFmx
-	aaYHpLpDQ1NQsJob2Gu6uyie1QPx79KIUPpX0BH8WXiOlmZov5aOQla00vtv5P9mE6WeEyrng3nyz
-	YuXEryB+Fz4rq7CmzRDWqjmCAZHxMJ0m5FvzPO3vZFE2v0gwNowsnp+f7Vn0Voed9bPbPVkDiQxb1
-	IxiD/ISKcnB5pvhjo9qJ3QXP+pinDz+TdAL6ZrtMFrFE/GdRb2uhSWyBC480PL3EXPgOQXFJTSMWK
-	Md3ZLFZ/ipRonJDLQvgA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7YI4y4DzjrZoVBzEH0ZcVIo81a0hllI7u+PFsZmgMeM=; b=BKHnfo8/QJJS4v
+	A8laWgu/uetyTs/3Zz8N/hT59ck+Ad/KP5EnlaH7Y654ZorAjh0a1q5uHoE4bqy2cJe4PkGG2EWa6
+	GpSgmsRTGNH0tBCg8I7iTUAc4pNd24Io8RSFiTwihdIogDOuUMgQtPRfgMRQ1FKSvtiLgddBROGTt
+	RKRoKIO5VNysX8rxME8sQizcsaMA5ba+2wJZm6WOHei35alggX3YW/cfxPdsOV4N9o/7Gr/DIyaqz
+	JgrzwwvqYf+f5u6MS3fAdOluQqgn7xYgLlzIzWT8qag5x3gcVqvDlsNeb7br8J1LLNLYM+vHhpWvG
+	9NxO/Fzrf6eNTgWTfq9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itEbs-0003KY-8V; Sun, 19 Jan 2020 17:43:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1itEiR-0006hb-OB; Sun, 19 Jan 2020 17:50:27 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itEbk-0003K6-A4
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 17:43:34 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 01D4320674;
- Sun, 19 Jan 2020 17:43:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579455811;
- bh=R0N0qdRvwA0CSQsT/alDM97aT/J/0dgnyJzGEbfyDhM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=RmLd1ry7lvMf/1dyH4I/wdco57Za4aj+As791DgPUn2DNnmdDV+6tnrt+HS+AWocT
- uTjnpfDYIuUpZ8yHToVG8n4Aa32cyZe/DIZAYjNfuJKmSQ91ADCQBXVcWJ04j5UBQd
- wDW5WgEHkPIau9KIyF3uJY1j3D3QKFsI4h0oKyeo=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1itEbg-0004D7-P4; Sun, 19 Jan 2020 17:43:28 +0000
-Date: Sun, 19 Jan 2020 17:43:27 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: Re: [PATCH v2] arm64: kvm: fix IDMAP overlap with HYP VA
-Message-ID: <20200119174327.4b2c514e@why>
-In-Reply-To: <E1ilAiY-0000MA-RG@rmk-PC.armlinux.org.uk>
-References: <E1ilAiY-0000MA-RG@rmk-PC.armlinux.org.uk>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1itEiI-0006gm-FM
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 17:50:19 +0000
+Received: by mail-wr1-x434.google.com with SMTP id g17so27208217wro.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 19 Jan 2020 09:50:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=a41hcajmYWXIVcPCMefnAwnsccU/DIluyU5xhVFOZpc=;
+ b=acgGKpZPep6mOi5janKBgr16T8HvZWguQ5pIcEw8Veb888BpMwu5j0+sw2JsvXbB5u
+ VxVySGOPYAL2xD94n85K+CSkNgCxi239cxfxIEQzM/GFc0jeqUr/ue7q/O+iQ1J1Lgbq
+ rQzDku8cd5RnE0tPY2zWuNahaYYv+iQvdhfittrIZNe7p0xznjB45ZNFTfzu6YL7V3hd
+ R70yHdwzqliolnanamna//HtTwkAbRBvMAeYvNUhASerw+F4Yn9LDRJ71ucbsUrFrU+k
+ DdsLEt9c9mzQZPbi/iO69C5FF3nFHmD9UT9S4ljgVJMR3nDe8WKMu0QoA5JwkMcMkg1A
+ Ok+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=a41hcajmYWXIVcPCMefnAwnsccU/DIluyU5xhVFOZpc=;
+ b=bf5cGOc155wEUd1gvjSqhqJoRPAUAVsXWH39ZYCGolz/xxcWMSgaA/cT3mudozjAsN
+ htrRa59EibDtrXx0kzZbtBFolZswg3cDJ+FoOY298xxvJamTRilXEvXcY1lfwym3OmMy
+ 6OltKzA3FxO1lcf9OnOWK9QXaTXr9BcbOKvwpqmj53kAxfT/9wln03ha9tRxzPBIUSPk
+ vFbj+rlWLt6n+JU9wseGcyBcpwjQ9lWvPxhS7TQicT9vFPYGKrpaBONXLVoJNnudoo0Q
+ g46xLyxUdwjbYGA+HXH2vN8DErxPZFJaq1Q0YUTgflqYbjSvjpRM/5GODn4vTjipJBIq
+ 4gMg==
+X-Gm-Message-State: APjAAAW05bZ7zCjFYq/d/VXRyhd2di4gt9vzQ17TXkDDmhMdRHJqOMms
+ 883+lsB2yroRb6Hj9KlfUCs=
+X-Google-Smtp-Source: APXvYqxyZ9ra0c+swTiNqPdEhSNejqZGRhtSXkII9xFW8lgXjRng0Kf//75wcpLcxpKI9P927nCQNg==
+X-Received: by 2002:a5d:6390:: with SMTP id p16mr14742177wru.170.1579456214076; 
+ Sun, 19 Jan 2020 09:50:14 -0800 (PST)
+Received: from [10.230.28.123] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id l17sm42291528wro.77.2020.01.19.09.50.11
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 19 Jan 2020 09:50:13 -0800 (PST)
+Subject: Re: [PATCH -next] PCI: brcmstb: Fix missing mutex_init()
+To: Wei Yongjun <weiyongjun1@huawei.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Jim Quinlan <james.quinlan@broadcom.com>
+References: <20200119023003.100987-1-weiyongjun1@huawei.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <f49226ca-6256-3709-3f7a-8996f5e68d76@gmail.com>
+Date: Sun, 19 Jan 2020 09:50:09 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: rmk+kernel@armlinux.org.uk, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200119023003.100987-1-weiyongjun1@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_094332_369959_FC27ADA9 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200119_095018_515373_1333FC96 
+X-CRM114-Status: GOOD (  10.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:434 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,7 +147,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,70 +158,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-pci@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 28 Dec 2019 11:57:14 +0000
-Russell King <rmk+kernel@armlinux.org.uk> wrote:
 
-> Booting 5.4 on LX2160A reveals that KVM is non-functional:
-> 
-> kvm: Limiting the IPA size due to kernel Virtual Address limit
-> kvm [1]: IPA Size Limit: 43bits
-> kvm [1]: IDMAP intersecting with HYP VA, unable to continue
-> kvm [1]: error initializing Hyp mode: -22
-> 
-> Debugging shows:
-> 
-> kvm [1]: IDMAP page: 81a26000
-> kvm [1]: HYP VA range: 0:22ffffffff
-> 
-> as RAM is located at:
-> 
-> 80000000-fbdfffff : System RAM
-> 2080000000-237fffffff : System RAM
-> 
-> Comparing this with the same kernel on Armada 8040 shows:
-> 
-> kvm: Limiting the IPA size due to kernel Virtual Address limit
-> kvm [1]: IPA Size Limit: 43bits
-> kvm [1]: IDMAP page: 2a26000
-> kvm [1]: HYP VA range: 4800000000:493fffffff
-> ...
-> kvm [1]: Hyp mode initialized successfully
-> 
-> which indicates that hyp_va_msb is set, and is always set to the
-> opposite value of the idmap page to avoid the overlap. This does not
-> happen with the LX2160A.
-> 
-> Further debugging shows vabits_actual = 39, kva_msb = 38 on LX2160A and
-> kva_msb = 33 on Armada 8040. Looking at the bit layout of the HYP VA,
-> there is still one bit available for hyp_va_msb. Set this bit
-> appropriately. This allows kvm to be functional on the LX2160A, but
-> without any HYP VA randomisation:
-> 
-> kvm: Limiting the IPA size due to kernel Virtual Address limit
-> kvm [1]: IPA Size Limit: 43bits
-> kvm [1]: IDMAP page: 81a24000
-> kvm [1]: HYP VA range: 4000000000:62ffffffff
-> ...
-> kvm [1]: Hyp mode initialized successfully
-> 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-I've applied this to kvmarm-next with a couple of cleanups, and
-preserving the fallback when the tag is zero (only the mask gets
-applied, without any ROR or ADD).
+On 1/18/2020 6:30 PM, Wei Yongjun wrote:
+> The driver allocates the mutex but not initialize it.
+> Use mutex_init() on it to initialize it correctly.
+> 
+> This is detected by Coccinelle semantic patch.
+> 
+> Fixes: 72af6f6f0d13 ("PCI: brcmstb: Add MSI support")
+> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
 
-	M.
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
-Jazz is not dead. It just smells funny...
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
