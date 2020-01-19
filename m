@@ -2,143 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72178141F40
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 18:50:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D54C8141F4C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 19:11:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7YI4y4DzjrZoVBzEH0ZcVIo81a0hllI7u+PFsZmgMeM=; b=BKHnfo8/QJJS4v
-	A8laWgu/uetyTs/3Zz8N/hT59ck+Ad/KP5EnlaH7Y654ZorAjh0a1q5uHoE4bqy2cJe4PkGG2EWa6
-	GpSgmsRTGNH0tBCg8I7iTUAc4pNd24Io8RSFiTwihdIogDOuUMgQtPRfgMRQ1FKSvtiLgddBROGTt
-	RKRoKIO5VNysX8rxME8sQizcsaMA5ba+2wJZm6WOHei35alggX3YW/cfxPdsOV4N9o/7Gr/DIyaqz
-	JgrzwwvqYf+f5u6MS3fAdOluQqgn7xYgLlzIzWT8qag5x3gcVqvDlsNeb7br8J1LLNLYM+vHhpWvG
-	9NxO/Fzrf6eNTgWTfq9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=j7ahE0OIQOU3U1LiZNg78oU/3MQRGfBN18HO6LFvhxM=; b=l1qn1WltYYIFMM
+	Ep6BqnOAo/enCKpXzZFhjF+rG8GDiPZTJVO/Ml7OA7UFzSc+dPJbD+kxhQSFJM+k03GW52GieivEs
+	l6X1pBXQ83/7iEwjHZWA1CBZni9aJU3i0iu/Ct6YTEfG33jV6UjMUICG3IRTE+LeqozYcEjBK/vGX
+	aVl8z7WfpkeKzbVr6/0V5aM/ULKSWzAGDXAHFvhQfmY0cXPBVM9jxDQ8bymW4j8fO331ru5yj/WR7
+	DyeEtRaX30fg2TjbHG/okf+3qq53q9/dmTu0A9oVGEa1dmyU6pHp3RTeDAOmvA2eI0JpP4Ixchh0q
+	Pjd2O+9TDePaxrkaIt0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itEiR-0006hb-OB; Sun, 19 Jan 2020 17:50:27 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1itF2v-0005ED-M6; Sun, 19 Jan 2020 18:11:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itEiI-0006gm-FM
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 17:50:19 +0000
-Received: by mail-wr1-x434.google.com with SMTP id g17so27208217wro.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Jan 2020 09:50:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=a41hcajmYWXIVcPCMefnAwnsccU/DIluyU5xhVFOZpc=;
- b=acgGKpZPep6mOi5janKBgr16T8HvZWguQ5pIcEw8Veb888BpMwu5j0+sw2JsvXbB5u
- VxVySGOPYAL2xD94n85K+CSkNgCxi239cxfxIEQzM/GFc0jeqUr/ue7q/O+iQ1J1Lgbq
- rQzDku8cd5RnE0tPY2zWuNahaYYv+iQvdhfittrIZNe7p0xznjB45ZNFTfzu6YL7V3hd
- R70yHdwzqliolnanamna//HtTwkAbRBvMAeYvNUhASerw+F4Yn9LDRJ71ucbsUrFrU+k
- DdsLEt9c9mzQZPbi/iO69C5FF3nFHmD9UT9S4ljgVJMR3nDe8WKMu0QoA5JwkMcMkg1A
- Ok+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=a41hcajmYWXIVcPCMefnAwnsccU/DIluyU5xhVFOZpc=;
- b=bf5cGOc155wEUd1gvjSqhqJoRPAUAVsXWH39ZYCGolz/xxcWMSgaA/cT3mudozjAsN
- htrRa59EibDtrXx0kzZbtBFolZswg3cDJ+FoOY298xxvJamTRilXEvXcY1lfwym3OmMy
- 6OltKzA3FxO1lcf9OnOWK9QXaTXr9BcbOKvwpqmj53kAxfT/9wln03ha9tRxzPBIUSPk
- vFbj+rlWLt6n+JU9wseGcyBcpwjQ9lWvPxhS7TQicT9vFPYGKrpaBONXLVoJNnudoo0Q
- g46xLyxUdwjbYGA+HXH2vN8DErxPZFJaq1Q0YUTgflqYbjSvjpRM/5GODn4vTjipJBIq
- 4gMg==
-X-Gm-Message-State: APjAAAW05bZ7zCjFYq/d/VXRyhd2di4gt9vzQ17TXkDDmhMdRHJqOMms
- 883+lsB2yroRb6Hj9KlfUCs=
-X-Google-Smtp-Source: APXvYqxyZ9ra0c+swTiNqPdEhSNejqZGRhtSXkII9xFW8lgXjRng0Kf//75wcpLcxpKI9P927nCQNg==
-X-Received: by 2002:a5d:6390:: with SMTP id p16mr14742177wru.170.1579456214076; 
- Sun, 19 Jan 2020 09:50:14 -0800 (PST)
-Received: from [10.230.28.123] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id l17sm42291528wro.77.2020.01.19.09.50.11
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 19 Jan 2020 09:50:13 -0800 (PST)
-Subject: Re: [PATCH -next] PCI: brcmstb: Fix missing mutex_init()
-To: Wei Yongjun <weiyongjun1@huawei.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Jim Quinlan <james.quinlan@broadcom.com>
-References: <20200119023003.100987-1-weiyongjun1@huawei.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <f49226ca-6256-3709-3f7a-8996f5e68d76@gmail.com>
-Date: Sun, 19 Jan 2020 09:50:09 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1itF2n-0005Dn-4U
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 18:11:30 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8578920679;
+ Sun, 19 Jan 2020 18:11:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579457488;
+ bh=YPUa4t1yHP+68PMUXQz60+tcZLNJOSQXuWd7TftDZdQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=2sxAUSdLdA7kZbuj+BmeD+72LFe1YbOBVMCoYfHHShizYSXpi3S0709VOSRlaENf5
+ jyT3D4IwGiLG7wxWUHOUhEbWoHdhSfASVYBPj1MT79JqXrgAjJVEodQb7Gi+7RgoFc
+ jG82ZgIxBW76n4ykUoHEspo4pi4pOR2FJlJcFAaw=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1itF2k-0004L8-O5; Sun, 19 Jan 2020 18:11:26 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linux-arm-kernel@lists.infradead.org,
+	kvmarm@lists.cs.columbia.edu
+Subject: [PATCH] KVM: arm/arm64: Cleanup MMIO handling
+Date: Sun, 19 Jan 2020 18:11:16 +0000
+Message-Id: <20200119181116.374-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200119023003.100987-1-weiyongjun1@huawei.com>
-Content-Language: en-US
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, Christoffer.Dall@arm.com, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_095018_515373_1333FC96 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200119_101129_221305_0D3D5EEB 
+X-CRM114-Status: GOOD (  22.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:434 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -147,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -158,27 +87,358 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, kernel-janitors@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: James Morse <james.morse@arm.com>,
+ Christoffer Dall <Christoffer.Dall@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Our MMIO handling is a bit odd, in the sense that it uses an
+intermediate per-vcpu structure to store the various decoded
+information that describe the access.
 
+But the same information is readily available in the HSR/ESR_EL2
+field, and we actually use this field to populate the structure.
 
-On 1/18/2020 6:30 PM, Wei Yongjun wrote:
-> The driver allocates the mutex but not initialize it.
-> Use mutex_init() on it to initialize it correctly.
-> 
-> This is detected by Coccinelle semantic patch.
-> 
-> Fixes: 72af6f6f0d13 ("PCI: brcmstb: Add MSI support")
-> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Let's simplify the whole thing by getting rid of the superfluous
+structure and save a (tiny) bit of space in the vcpu structure.
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ arch/arm/include/asm/kvm_emulate.h   |  5 +-
+ arch/arm/include/asm/kvm_host.h      |  9 +++-
+ arch/arm/include/asm/kvm_mmio.h      | 28 -----------
+ arch/arm64/include/asm/kvm_emulate.h |  3 +-
+ arch/arm64/include/asm/kvm_host.h    | 12 +++--
+ arch/arm64/include/asm/kvm_mmio.h    | 27 -----------
+ virt/kvm/arm/mmio.c                  | 70 +++++++++-------------------
+ virt/kvm/arm/mmu.c                   |  1 -
+ 8 files changed, 41 insertions(+), 114 deletions(-)
+ delete mode 100644 arch/arm/include/asm/kvm_mmio.h
+ delete mode 100644 arch/arm64/include/asm/kvm_mmio.h
+
+diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
+index 08d9805f613b..3944305e81df 100644
+--- a/arch/arm/include/asm/kvm_emulate.h
++++ b/arch/arm/include/asm/kvm_emulate.h
+@@ -9,7 +9,6 @@
+ 
+ #include <linux/kvm_host.h>
+ #include <asm/kvm_asm.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/kvm_arm.h>
+ #include <asm/cputype.h>
+ 
+@@ -220,7 +219,7 @@ static inline bool kvm_vcpu_dabt_is_cm(struct kvm_vcpu *vcpu)
+ }
+ 
+ /* Get Access Size from a data abort */
+-static inline int kvm_vcpu_dabt_get_as(struct kvm_vcpu *vcpu)
++static inline unsigned int kvm_vcpu_dabt_get_as(struct kvm_vcpu *vcpu)
+ {
+ 	switch ((kvm_vcpu_get_hsr(vcpu) >> 22) & 0x3) {
+ 	case 0:
+@@ -231,7 +230,7 @@ static inline int kvm_vcpu_dabt_get_as(struct kvm_vcpu *vcpu)
+ 		return 4;
+ 	default:
+ 		kvm_err("Hardware is weird: SAS 0b11 is reserved\n");
+-		return -EFAULT;
++		return 4;
+ 	}
+ }
+ 
+diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+index 556cd818eccf..acf4c87e8321 100644
+--- a/arch/arm/include/asm/kvm_host.h
++++ b/arch/arm/include/asm/kvm_host.h
+@@ -14,7 +14,6 @@
+ #include <asm/cputype.h>
+ #include <asm/kvm.h>
+ #include <asm/kvm_asm.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/fpstate.h>
+ #include <kvm/arm_arch_timer.h>
+ 
+@@ -300,6 +299,14 @@ int handle_exit(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ static inline void handle_exit_early(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ 				     int exception_index) {}
+ 
++/* MMIO helpers */
++void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
++unsigned long kvm_mmio_read_buf(const void *buf, unsigned int len);
++
++int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run);
++int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
++		 phys_addr_t fault_ipa);
++
+ static inline void __cpu_init_hyp_mode(phys_addr_t pgd_ptr,
+ 				       unsigned long hyp_stack_ptr,
+ 				       unsigned long vector_ptr)
+diff --git a/arch/arm/include/asm/kvm_mmio.h b/arch/arm/include/asm/kvm_mmio.h
+deleted file mode 100644
+index 32fbf82e3ebc..000000000000
+--- a/arch/arm/include/asm/kvm_mmio.h
++++ /dev/null
+@@ -1,28 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * Copyright (C) 2012 - Virtual Open Systems and Columbia University
+- * Author: Christoffer Dall <c.dall@virtualopensystems.com>
+- */
+-
+-#ifndef __ARM_KVM_MMIO_H__
+-#define __ARM_KVM_MMIO_H__
+-
+-#include <linux/kvm_host.h>
+-#include <asm/kvm_asm.h>
+-#include <asm/kvm_arm.h>
+-
+-struct kvm_decode {
+-	unsigned long rt;
+-	bool sign_extend;
+-	/* Not used on 32-bit arm */
+-	bool sixty_four;
+-};
+-
+-void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
+-unsigned long kvm_mmio_read_buf(const void *buf, unsigned int len);
+-
+-int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run);
+-int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+-		 phys_addr_t fault_ipa);
+-
+-#endif	/* __ARM_KVM_MMIO_H__ */
+diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+index 53ea7637b7b2..688c63412cc2 100644
+--- a/arch/arm64/include/asm/kvm_emulate.h
++++ b/arch/arm64/include/asm/kvm_emulate.h
+@@ -17,7 +17,6 @@
+ #include <asm/esr.h>
+ #include <asm/kvm_arm.h>
+ #include <asm/kvm_hyp.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/ptrace.h>
+ #include <asm/cputype.h>
+ #include <asm/virt.h>
+@@ -341,7 +340,7 @@ static inline bool kvm_vcpu_dabt_is_cm(const struct kvm_vcpu *vcpu)
+ 	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_CM);
+ }
+ 
+-static inline int kvm_vcpu_dabt_get_as(const struct kvm_vcpu *vcpu)
++static inline unsigned int kvm_vcpu_dabt_get_as(const struct kvm_vcpu *vcpu)
+ {
+ 	return 1 << ((kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SAS) >> ESR_ELx_SAS_SHIFT);
+ }
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index c61260cf63c5..f6a77ddab956 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -24,7 +24,6 @@
+ #include <asm/fpsimd.h>
+ #include <asm/kvm.h>
+ #include <asm/kvm_asm.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/thread_info.h>
+ 
+ #define __KVM_HAVE_ARCH_INTC_INITIALIZED
+@@ -325,9 +324,6 @@ struct kvm_vcpu_arch {
+ 	/* Don't run the guest (internal implementation need) */
+ 	bool pause;
+ 
+-	/* IO related fields */
+-	struct kvm_decode mmio_decode;
+-
+ 	/* Cache some mmu pages needed inside spinlock regions */
+ 	struct kvm_mmu_memory_cache mmu_page_cache;
+ 
+@@ -491,6 +487,14 @@ int handle_exit(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ void handle_exit_early(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ 		       int exception_index);
+ 
++/* MMIO helpers */
++void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
++unsigned long kvm_mmio_read_buf(const void *buf, unsigned int len);
++
++int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run);
++int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
++		 phys_addr_t fault_ipa);
++
+ int kvm_perf_init(void);
+ int kvm_perf_teardown(void);
+ 
+diff --git a/arch/arm64/include/asm/kvm_mmio.h b/arch/arm64/include/asm/kvm_mmio.h
+deleted file mode 100644
+index b204501a0c39..000000000000
+--- a/arch/arm64/include/asm/kvm_mmio.h
++++ /dev/null
+@@ -1,27 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * Copyright (C) 2012 - Virtual Open Systems and Columbia University
+- * Author: Christoffer Dall <c.dall@virtualopensystems.com>
+- */
+-
+-#ifndef __ARM64_KVM_MMIO_H__
+-#define __ARM64_KVM_MMIO_H__
+-
+-#include <linux/kvm_host.h>
+-#include <asm/kvm_arm.h>
+-
+-struct kvm_decode {
+-	unsigned long rt;
+-	bool sign_extend;
+-	/* Witdth of the register accessed by the faulting instruction is 64-bits */
+-	bool sixty_four;
+-};
+-
+-void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
+-unsigned long kvm_mmio_read_buf(const void *buf, unsigned int len);
+-
+-int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run);
+-int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+-		 phys_addr_t fault_ipa);
+-
+-#endif	/* __ARM64_KVM_MMIO_H__ */
+diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
+index 1bb71acd53f2..aedfcff99ac5 100644
+--- a/virt/kvm/arm/mmio.c
++++ b/virt/kvm/arm/mmio.c
+@@ -5,7 +5,6 @@
+  */
+ 
+ #include <linux/kvm_host.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/kvm_emulate.h>
+ #include <trace/events/kvm.h>
+ 
+@@ -92,26 +91,23 @@ int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 
+ 	vcpu->mmio_needed = 0;
+ 
+-	if (!run->mmio.is_write) {
+-		len = run->mmio.len;
+-		if (len > sizeof(unsigned long))
+-			return -EINVAL;
+-
++	if (!kvm_vcpu_dabt_iswrite(vcpu)) {
++		len = kvm_vcpu_dabt_get_as(vcpu);
+ 		data = kvm_mmio_read_buf(run->mmio.data, len);
+ 
+-		if (vcpu->arch.mmio_decode.sign_extend &&
++		if (kvm_vcpu_dabt_issext(vcpu) &&
+ 		    len < sizeof(unsigned long)) {
+ 			mask = 1U << ((len * 8) - 1);
+ 			data = (data ^ mask) - mask;
+ 		}
+ 
+-		if (!vcpu->arch.mmio_decode.sixty_four)
++		if (!kvm_vcpu_dabt_issf(vcpu))
+ 			data = data & 0xffffffff;
+ 
+ 		trace_kvm_mmio(KVM_TRACE_MMIO_READ, len, run->mmio.phys_addr,
+ 			       &data);
+ 		data = vcpu_data_host_to_guest(vcpu, data, len);
+-		vcpu_set_reg(vcpu, vcpu->arch.mmio_decode.rt, data);
++		vcpu_set_reg(vcpu, kvm_vcpu_dabt_get_rd(vcpu), data);
+ 	}
+ 
+ 	/*
+@@ -123,36 +119,6 @@ int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	return 0;
+ }
+ 
+-static int decode_hsr(struct kvm_vcpu *vcpu, bool *is_write, int *len)
+-{
+-	unsigned long rt;
+-	int access_size;
+-	bool sign_extend;
+-	bool sixty_four;
+-
+-	if (kvm_vcpu_dabt_iss1tw(vcpu)) {
+-		/* page table accesses IO mem: tell guest to fix its TTBR */
+-		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+-		return 1;
+-	}
+-
+-	access_size = kvm_vcpu_dabt_get_as(vcpu);
+-	if (unlikely(access_size < 0))
+-		return access_size;
+-
+-	*is_write = kvm_vcpu_dabt_iswrite(vcpu);
+-	sign_extend = kvm_vcpu_dabt_issext(vcpu);
+-	sixty_four = kvm_vcpu_dabt_issf(vcpu);
+-	rt = kvm_vcpu_dabt_get_rd(vcpu);
+-
+-	*len = access_size;
+-	vcpu->arch.mmio_decode.sign_extend = sign_extend;
+-	vcpu->arch.mmio_decode.rt = rt;
+-	vcpu->arch.mmio_decode.sixty_four = sixty_four;
+-
+-	return 0;
+-}
+-
+ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ 		 phys_addr_t fault_ipa)
+ {
+@@ -164,15 +130,10 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ 	u8 data_buf[8];
+ 
+ 	/*
+-	 * Prepare MMIO operation. First decode the syndrome data we get
+-	 * from the CPU. Then try if some in-kernel emulation feels
+-	 * responsible, otherwise let user space do its magic.
++	 * No valid syndrome? Ask userspace for help if it has
++	 * voluntered to do so, and bail out otherwise.
+ 	 */
+-	if (kvm_vcpu_dabt_isvalid(vcpu)) {
+-		ret = decode_hsr(vcpu, &is_write, &len);
+-		if (ret)
+-			return ret;
+-	} else {
++	if (!kvm_vcpu_dabt_isvalid(vcpu)) {
+ 		if (vcpu->kvm->arch.return_nisv_io_abort_to_user) {
+ 			run->exit_reason = KVM_EXIT_ARM_NISV;
+ 			run->arm_nisv.esr_iss = kvm_vcpu_dabt_iss_nisv_sanitized(vcpu);
+@@ -184,7 +145,20 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+ 		return -ENOSYS;
+ 	}
+ 
+-	rt = vcpu->arch.mmio_decode.rt;
++	/* Page table accesses IO mem: tell guest to fix its TTBR */
++	if (kvm_vcpu_dabt_iss1tw(vcpu)) {
++		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
++		return 1;
++	}
++
++	/*
++	 * Prepare MMIO operation. First decode the syndrome data we get
++	 * from the CPU. Then try if some in-kernel emulation feels
++	 * responsible, otherwise let user space do its magic.
++	 */
++	is_write = kvm_vcpu_dabt_iswrite(vcpu);
++	len = kvm_vcpu_dabt_get_as(vcpu);
++	rt = kvm_vcpu_dabt_get_rd(vcpu);
+ 
+ 	if (is_write) {
+ 		data = vcpu_data_guest_to_host(vcpu, vcpu_get_reg(vcpu, rt),
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index e3ad95013192..a4fa81d75e84 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -14,7 +14,6 @@
+ #include <asm/cacheflush.h>
+ #include <asm/kvm_arm.h>
+ #include <asm/kvm_mmu.h>
+-#include <asm/kvm_mmio.h>
+ #include <asm/kvm_ras.h>
+ #include <asm/kvm_asm.h>
+ #include <asm/kvm_emulate.h>
 -- 
-Florian
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
