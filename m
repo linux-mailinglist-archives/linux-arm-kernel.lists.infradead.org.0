@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B77C141E8B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 15:28:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D47F141F0F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 17:32:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/uQs4cpYNpC1rju8kQEM1+NgiYt7jzSYvqVze/xe0IQ=; b=cJ01mbIDyq3E8P
-	Kbv3PajjMunzKHY//0MR5yMPt2pwjiLFSGNZZcofqE6DVrbWvEqgOjqNW6ZgMqVxOmX8iRVNaoAat
-	P8N+zh85/g74ptgN+riNi7ZAzafkfsVRFn0deenS4wBew9KWbPVND+WuijfFLN+1tWLVgGI3eurSD
-	OVxDvMVhA7Wp2kMH6uGK/Lm2+iNJC2vT5O4LGzvmD67Qc6bQ+02FmZux14yoZE875Gh94aGm+dT1J
-	xGDvT2qbqEWB+OOAiOOho2TccRRQmfAe16lpcxfev/8oiMj0ba1IJtg5pXfRFdKcbUtWR+d+GWWyu
-	B2ydppTW+4/dpysSSZTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rHw7GhBJ6FX+dCcvTXmBVxpB0kCE3nTuiJTjFo3ZYrU=; b=q6ltPulzMapGXH
+	IIJ/YKkQZeIV0hgFpF/LZW6LK9cTgDNjmjKcxdq7qI7RkDCxKBhUHkbS7GG/Dp/bhvjPKKQNHS/wL
+	w4l0vnaR54onw2Hc6zZ8wnCioQuc5jP+SIDSbrkpBpcRul0if0jn9i7m548TcBAvzPmqM2EbO4hqW
+	BI+9nBuPHKus3CVZPVNLV71FmhWKmrxQMrDZhzGofG0sCtu2ckO97VQDNrEI73pE3SROQQ/EzysHS
+	9KKH1a09Ou6x4lfmfSuxVeynNGyERWlyrBauT7wAD2XEbuBCxj895r5GFRoAWNb+S6yjjJbwbFfR1
+	v+c18okvj5Qs6LurX23w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itBZ5-0000TL-RE; Sun, 19 Jan 2020 14:28:35 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1itDUN-0005Gk-PK; Sun, 19 Jan 2020 16:31:51 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itBYu-0000S5-Ch; Sun, 19 Jan 2020 14:28:25 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id g15so17529378vsf.1;
- Sun, 19 Jan 2020 06:28:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hXWYeX6AjtCDD1kv6pJLbNztbwW499IxeNUMgb5p23o=;
- b=rYQjOwK7eKiea9ZzsLJpVr/fXJw6Odp4y9oVfXjpZ5Ypqm1TDdcsTmyDgkF57qzaM3
- 53Fh+Opzf06Zj7t1IOM3DK3rTYv90QhGYbmx6pPAwUP040ziVECm/V3YfHOFFy4DOd/4
- qE7Tbmq1b17DI1RiJ4bHccmrRBUIeGj9SxyczYA2s7+lAGcKi+CoS0iqHiwBbr6otv/w
- YAm7LuJDbwNjDxqdx/zCp3cfc4QdE1vwREHwUhvdoS+56RYx07QOtlwEKrdKRYdQvgSi
- 8p1OGceTrELl9lJSaLNZzzPImLJu6d9xW2BoEAjSyh6yU1TivUsROh9Lz/Ck48TAEOox
- CNEw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hXWYeX6AjtCDD1kv6pJLbNztbwW499IxeNUMgb5p23o=;
- b=bqY24cSzSZnm1nujdnoFP9VXyXOSMvRsUrCX8E9I7CTro9JAa8x+T5pWu+UENFNYeq
- 7XhaDfLXV1uQjLOSTMXVyzWOxAtU3slmJ/6DERyasmUEhbP1wuCxEozRtwprqUZAMhSl
- D6QnQtvek/comhsprQO9i+HYnhrbeYRfhCWYHH+OWvqO995cNfgwRIIGPLqp8MTpiVIQ
- +Vs6xbrVqZhy8gAHVFUYJ7B2SHj8J2Ee2YphIOR4jJcJPLCS3qk6jI+K5xLSNJ8CPm01
- NSUa9PmLHSVZoVMDzrDDE0pkvivV7saqEF/g+2mIOU05Nt98r0FMQI+CJsPgKkSJ4b2e
- xaZg==
-X-Gm-Message-State: APjAAAUIATLlmYULu8eFf8dKMj4mrOPLAD3xYnTUFFoZ/X6QCUS72pI/
- u3y9YTnURRQlX1NJNbeV5z+b1OqPvhA4mWsn16M=
-X-Google-Smtp-Source: APXvYqzDPJ2ye9YaeF3DaCU8q4S+yDkAYV36sI64ueyCEDAUkMAT1qlcYKkyjVH8mMpwuJiwXy9m1uyuXVfhdKfKCds=
-X-Received: by 2002:a05:6102:3102:: with SMTP id
- e2mr10235569vsh.179.1579444103046; 
- Sun, 19 Jan 2020 06:28:23 -0800 (PST)
+ id 1itDTl-000550-Qy
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 16:31:17 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailout.nyi.internal (Postfix) with ESMTP id D1FA621B01;
+ Sun, 19 Jan 2020 11:31:05 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute5.internal (MEProxy); Sun, 19 Jan 2020 11:31:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=jRXBQP1pUsdOzqmTPi7i0GNzpz
+ hk8MjLKuWSz3BrgbE=; b=Ss9nHyKUmmUdUVZnkh9KSqKaovOToU/w0XpUd3ioEI
+ lSQSVTwho0JumsjMAJBNXXu6z2exAg6iqFi/LbaKQQScXHgpQD0TP1266j1tGj1l
+ 9beo5IzZzWJ+QifEb0mq6Fsr0VMPKip65U+AnZXxlFOUKnah2JipW8+2X90bKKAE
+ xDGWdbrIhupvwwvKFaE4KN09daKEZbXrZh61oYUkTekgNX1FAlKHHGCOXlt58gD4
+ VMtmAFsqMwl3nOcAqngxcD41kPDaU3etB4WbbSK7xFxWhI5Q7xr+fkyHDAHUwWQW
+ U28yAArEV0yiJCbjWHDfqJFrSAGulNrDpVzCLN7MF2cA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=jRXBQP1pUsdOzqmTP
+ i7i0GNzpzhk8MjLKuWSz3BrgbE=; b=XP5LRL0rkqT5A7Jca0CA9sb6eLXmxpHj6
+ kFWKD75gDttAJg78qybWCkM+kN0LJEubLLBkSaCdxrH2kNoEk+FWzNYpiwkXONxm
+ CcVj3fc2IHLkjLbRb+BZQgJbJprza9t9R3QdwIKyC7QrLapqQVmOyLnoem2/iXNr
+ 6H/3BriaOxsiseJaM/Ik/MCF7AhyB4aEd7IosUGFA2LpLNAHsTSEczhwJ9Ct1pu4
+ k05Y7pXTKJWbl+TqmFJ2Mfxr+xAO9GNGiECtS+bKD8eueX0UfukSzipzN8diR2KY
+ LR2DakDDvZadiBmVAkYHqFGozvSx7cMTeNC0QNqJy+m7gFFcSzBdw==
+X-ME-Sender: <xms:SYQkXu2t0pTzPsonGpgvAuYrrkNDmvx5NylXBsTbWHumwxL_3AKuqg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudefgdekkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghlucfj
+ ohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppeejtd
+ drudefhedrudegkedrudehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghl
+ sehshhholhhlrghnugdrohhrghenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:SYQkXgYqnKPPGE0gWQUtLWPv_j9pZCpeu0xDSYzFRpoXHJs5j9OfXg>
+ <xmx:SYQkXt0CEB2peFOny9G6B6r-BuTha3uMTywm0_kdeRM5UE3mOWDwBw>
+ <xmx:SYQkXrKLxCt89pyW-bO6WtV27OUzeVTkaEFrnIjrAnGjTlNlR8c6_Q>
+ <xmx:SYQkXusNyWmbW4FH4AHsaEbbbAUtuY1I8swgnQB50VHJHhZxZ4JdUg>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id CE0978005B;
+ Sun, 19 Jan 2020 11:31:04 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH 1/9] arm64: dts: allwinner: Enable button wakeup on Orange Pi
+ PC2
+Date: Sun, 19 Jan 2020 10:30:56 -0600
+Message-Id: <20200119163104.13274-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20200117035108.19699-1-stanley.chu@mediatek.com>
- <20200117035108.19699-4-stanley.chu@mediatek.com>
-In-Reply-To: <20200117035108.19699-4-stanley.chu@mediatek.com>
-From: Alim Akhtar <alim.akhtar@gmail.com>
-Date: Sun, 19 Jan 2020 19:57:47 +0530
-Message-ID: <CAGOxZ51V6XmAuu4ki_X7kEkCoUHZguM1=peEHSktsuu1obyDFw@mail.gmail.com>
-Subject: Re: [PATCH v1 3/3] scsi: ufs-mediatek: enable low-power mode for
- hibern8 state
-To: Stanley Chu <stanley.chu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_062824_456358_026A69FF 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200119_083114_169664_6E19C70D 
+X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alim.akhtar[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,121 +103,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org,
- "Martin K. Petersen" <martin.petersen@oracle.com>, andy.teng@mediatek.com,
- "James E.J. Bottomley" <jejb@linux.ibm.com>, chun-hung.wu@mediatek.com,
- Kuohong Wang <kuohong.wang@mediatek.com>,
- open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
- Can Guo <cang@codeaurora.org>, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, Alim Akhtar <alim.akhtar@samsung.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, asutoshd@codeaurora.org,
- Bart Van Assche <bvanassche@acm.org>, linux-arm-kernel@lists.infradead.org,
- "Bean Huo \(beanhuo\)" <beanhuo@micron.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Samuel Holland <samuel@sholland.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 9:44 AM Stanley Chu <stanley.chu@mediatek.com> wrote:
->
-> In MediaTek Chipsets, UniPro link and ufshci can enter proprietary
-> low-power mode while link is in hibern8 state.
->
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+The Orange Pi PC2 features a GPIO button. As the button is connected to
+Port L (pin PL3), it can be used as a wakeup source. Enable this.
 
->  drivers/scsi/ufs/ufs-mediatek.c | 53 +++++++++++++++++++++++++++++++++
->  1 file changed, 53 insertions(+)
->
-> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-> index d5194d0c4ef5..f32f3f34f6d0 100644
-> --- a/drivers/scsi/ufs/ufs-mediatek.c
-> +++ b/drivers/scsi/ufs/ufs-mediatek.c
-> @@ -382,11 +382,60 @@ static void ufs_mtk_device_reset(struct ufs_hba *hba)
->         dev_info(hba->dev, "device reset done\n");
->  }
->
-> +static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
-> +{
-> +       int err;
-> +
-> +       err = ufshcd_hba_enable(hba);
-> +       if (err)
-> +               return err;
-> +
-> +       err = ufshcd_dme_set(hba,
-> +                            UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +                            0);
-> +       if (err)
-> +               return err;
-> +
-> +       err = ufshcd_uic_hibern8_exit(hba);
-> +       if (!err)
-> +               ufshcd_set_link_active(hba);
-> +       else
-> +               return err;
-> +
-> +       err = ufshcd_make_hba_operational(hba);
-> +       if (err)
-> +               return err;
-> +
-> +       return 0;
-> +}
-> +
-> +static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
-> +{
-> +       int err;
-> +
-> +       err = ufshcd_dme_set(hba,
-> +                            UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +                            1);
-> +       if (err) {
-> +               /* Resume UniPro state for following error recovery */
-> +               ufshcd_dme_set(hba,
-> +                              UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +                              0);
-> +               return err;
-> +       }
-> +
-> +       return 0;
-> +}
-> +
->  static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->  {
-> +       int err;
->         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
->
->         if (ufshcd_is_link_hibern8(hba)) {
-> +               err = ufs_mtk_link_set_lpm(hba);
-> +               if (err)
-> +                       return -EAGAIN;
->                 phy_power_off(host->mphy);
->                 ufs_mtk_setup_ref_clk(hba, false);
->         }
-> @@ -397,10 +446,14 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->  static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->  {
->         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-> +       int err;
->
->         if (ufshcd_is_link_hibern8(hba)) {
->                 ufs_mtk_setup_ref_clk(hba, true);
->                 phy_power_on(host->mphy);
-> +               err = ufs_mtk_link_set_hpm(hba);
-> +               if (err)
-> +                       return err;
->         }
->
->         return 0;
-> --
-> 2.18.0
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-
-
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+index 70b5f0998421..c4f89c312f42 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+@@ -61,6 +61,7 @@
+ 			label = "sw4";
+ 			linux,code = <BTN_0>;
+ 			gpios = <&r_pio 0 3 GPIO_ACTIVE_LOW>;
++			wakeup-source;
+ 		};
+ 	};
+ 
 -- 
-Regards,
-Alim
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
