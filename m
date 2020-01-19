@@ -2,66 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB709141FBB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 20:13:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 383DD141FD6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Jan 2020 20:44:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h/eWqEO2WZR80Y+7VH4F2Bc/wqQaIEpqzO7dzS6/Qt0=; b=qeLeGjTtOSWzsM
-	yOcOtLJfljhK/H6SsIHWUB4T1kxpsQKndHnptQsg0d8qcKvyLVgZr5n4sT1RuLIOJTPi7MQ52utzk
-	j/sRSpT8tzwT0nEWHkkYFyddZC4OaH8JOjl3zdqsauw/hvX1TOt3VTvbHAHOHpOTa4+j6mSXDqlC+
-	dtxrv64vkCvhBRWCxFwnY36+gISxOICP0oK6DD7XZEMqh1B6Edsp/tiuSR1XfeO0hat6OSAv/p74x
-	C6niXE0p+OUnIAloxvEzX4PrF7eZmLOyUBrsdLgJM6ZQV/gY7AeTfSSQJVYCbieTLDvw73S4Jdn+i
-	BUxqV1UJ4JqS0vP8q8OQ==;
+	List-Owner; bh=C1WnvCGqFeC0g9W+f4aVAHo2OsKbG4aDcguVKxJft20=; b=oU69yXvn1Kfd1x
+	rs8Pq2K/8/WppCtGi9J2NEQbMs718BLFkeDVgOwYqbsHw48eVGy95NuOKfLRX4J5zb0CXVJWf/vUZ
+	gIRW52HgJlAITotdQdPrE7AjmY45vob69meia2rV8qcfhs9cqj3WvkrAIhszW1nCyuvsBHcoinOYh
+	n0FIgrPURpf75EyqmHACV4WqFaNliP3HscjMhnM2k8XoUFatFQT8HLXeYq3Infb4JpCm2A1L6ZoRl
+	a/A433OYUlfZYqMpkR2XPlXK6t1TQtjGTZcB7FvnNZVdnTDasfrZ05qS4UlJKxk/vTKzZEPTN/HrR
+	JgGs4ZyeILWJRgu7BEpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itG0j-00060H-51; Sun, 19 Jan 2020 19:13:25 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1itGUW-0007oT-LL; Sun, 19 Jan 2020 19:44:12 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itFzX-0004xK-FG
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 19:12:14 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 4814DN4r58z1rh1B;
- Sun, 19 Jan 2020 20:12:04 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 4814DN4ZCwz1qwyZ;
- Sun, 19 Jan 2020 20:12:04 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id knQQ2VeUAtnf; Sun, 19 Jan 2020 20:12:02 +0100 (CET)
-X-Auth-Info: 3m+hAYKZqNRrYJeyfxMhXaCQgJTzfhEKFtwTM8qTIww=
-Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sun, 19 Jan 2020 20:12:02 +0100 (CET)
-From: Marek Vasut <marex@denx.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 6/6] ARM: dts: stm32: Add DH Electronics DHCOM STM32MP1 SoM
- and PDK2 board
-Date: Sun, 19 Jan 2020 20:11:43 +0100
-Message-Id: <20200119191143.50033-6-marex@denx.de>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200119191143.50033-1-marex@denx.de>
-References: <20200119191143.50033-1-marex@denx.de>
+ id 1itGUO-0007nu-1Z
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Jan 2020 19:44:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=3z7zbcC6+n0ijVHwdWGh6TJYkP0ZMZNW/76LdpCfz2M=; b=lnGZsRNopbJxj2FTf8JDa48y7
+ B1t1nQaMIi9rDCTtt3Hsz8CzHM+mudBxXR5dgMaU7tFbqU3BkIORoSTa1gR+xjukxXR6ijxKCxwEL
+ L2pjo0pMQsVD5JGYaJRCvZhSALLq9Xhj2YBQjpFVPHR8sIP1ExLNwyvd0Kze4FRz9WD+4xUyRM0Bb
+ soGTxz1ERuZtAmDWnHTVLls9gT+lwIVNVohPYBZBn8S6nh6gNI+f5/2ItaYrdX7Pxs/6MIIXWuFnJ
+ lGWb2kVMVYSzD+rj0MovK/ZBYuzr6PIMMZljI73ZUvIgzPYN6PLJ8/JcDfsE1EiRvzOOW16QFRd/V
+ pL9hFXS1g==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:40530)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1itGU4-0001ez-Cy; Sun, 19 Jan 2020 19:43:44 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1itGU0-00025u-NL; Sun, 19 Jan 2020 19:43:40 +0000
+Date: Sun, 19 Jan 2020 19:43:40 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2] arm64: kvm: fix IDMAP overlap with HYP VA
+Message-ID: <20200119194340.GW25745@shell.armlinux.org.uk>
+References: <E1ilAiY-0000MA-RG@rmk-PC.armlinux.org.uk>
+ <20200119174327.4b2c514e@why>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200119174327.4b2c514e@why>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_111211_825431_9202E9BD 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200119_114404_248661_B796776C 
+X-CRM114-Status: GOOD (  20.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,699 +87,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
- Patrice Chotard <patrice.chotard@st.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for DH Electronics DHCOM SoM and PDK2 rev. 400 carrier
-board. This is an SoM with STM32MP157C and an evaluation kit. The
-baseboard provides Ethernet, UART, USB, CAN and optional display.
+On Sun, Jan 19, 2020 at 05:43:27PM +0000, Marc Zyngier wrote:
+> On Sat, 28 Dec 2019 11:57:14 +0000
+> Russell King <rmk+kernel@armlinux.org.uk> wrote:
+> 
+> > Booting 5.4 on LX2160A reveals that KVM is non-functional:
+> > 
+> > kvm: Limiting the IPA size due to kernel Virtual Address limit
+> > kvm [1]: IPA Size Limit: 43bits
+> > kvm [1]: IDMAP intersecting with HYP VA, unable to continue
+> > kvm [1]: error initializing Hyp mode: -22
+> > 
+> > Debugging shows:
+> > 
+> > kvm [1]: IDMAP page: 81a26000
+> > kvm [1]: HYP VA range: 0:22ffffffff
+> > 
+> > as RAM is located at:
+> > 
+> > 80000000-fbdfffff : System RAM
+> > 2080000000-237fffffff : System RAM
+> > 
+> > Comparing this with the same kernel on Armada 8040 shows:
+> > 
+> > kvm: Limiting the IPA size due to kernel Virtual Address limit
+> > kvm [1]: IPA Size Limit: 43bits
+> > kvm [1]: IDMAP page: 2a26000
+> > kvm [1]: HYP VA range: 4800000000:493fffffff
+> > ...
+> > kvm [1]: Hyp mode initialized successfully
+> > 
+> > which indicates that hyp_va_msb is set, and is always set to the
+> > opposite value of the idmap page to avoid the overlap. This does not
+> > happen with the LX2160A.
+> > 
+> > Further debugging shows vabits_actual = 39, kva_msb = 38 on LX2160A and
+> > kva_msb = 33 on Armada 8040. Looking at the bit layout of the HYP VA,
+> > there is still one bit available for hyp_va_msb. Set this bit
+> > appropriately. This allows kvm to be functional on the LX2160A, but
+> > without any HYP VA randomisation:
+> > 
+> > kvm: Limiting the IPA size due to kernel Virtual Address limit
+> > kvm [1]: IPA Size Limit: 43bits
+> > kvm [1]: IDMAP page: 81a24000
+> > kvm [1]: HYP VA range: 4000000000:62ffffffff
+> > ...
+> > kvm [1]: Hyp mode initialized successfully
+> > 
+> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> 
+> I've applied this to kvmarm-next with a couple of cleanups, and
+> preserving the fallback when the tag is zero (only the mask gets
+> applied, without any ROR or ADD).
 
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Patrice Chotard <patrice.chotard@st.com>
-Cc: Patrick Delaunay <patrick.delaunay@st.com>
-Cc: linux-stm32@st-md-mailman.stormreply.com
-To: linux-arm-kernel@lists.infradead.org
----
-V2: - Add stm32mp1 into the subject and commit message
-    - Sort DT alphanumerically
-    - Move all pincontrol entries into stm32mp15-pinctrl.dtsi
----
- arch/arm/boot/dts/Makefile                   |   1 +
- arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts | 265 +++++++++++++
- arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi | 368 +++++++++++++++++++
- 3 files changed, 634 insertions(+)
- create mode 100644 arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
- create mode 100644 arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
+If only the mask is applied, then it will overlap with the IDMAP
+region, and KVM will fail - so I think it would be a good idea in
+that case to print something a little more useful, rather than
+attributing the KVM failure to an overlap of IDMAP and the KVM
+range.
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index e006fef77499..c8a9f0c44f34 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1019,6 +1019,7 @@ dtb-$(CONFIG_ARCH_STM32) += \
- 	stm32h743i-disco.dtb \
- 	stm32mp157a-avenger96.dtb \
- 	stm32mp157a-dk1.dtb \
-+	stm32mp157c-dhcom-pdk2.dtb \
- 	stm32mp157c-dk2.dtb \
- 	stm32mp157c-ed1.dtb \
- 	stm32mp157c-ev1.dtb
-diff --git a/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts b/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
-new file mode 100644
-index 000000000000..af99e132e1b1
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
-@@ -0,0 +1,265 @@
-+// SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
-+/*
-+ * Copyright (C) 2019 Marek Vasut <marex@denx.de>
-+ */
-+
-+#include "stm32mp157c-dhcom-som.dtsi"
-+#include <dt-bindings/pwm/pwm.h>
-+
-+/ {
-+	model = "STMicroelectronics STM32MP157C DHCOM Premium Developer Kit (2)";
-+	compatible = "dh,stm32mp157c-dhcom-pdk2", "st,stm32mp157";
-+
-+	aliases {
-+		serial0 = &uart4;
-+		serial1 = &usart3;
-+		serial2 = &uart8;
-+		ethernet0 = &ethernet0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	clk_ext_audio_codec: clock-codec {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+	};
-+
-+	display_bl: display-bl {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm2 0 500000 PWM_POLARITY_INVERTED>;
-+		brightness-levels = <0 16 22 30 40 55 75 102 138 188 255>;
-+		default-brightness-level = <8>;
-+		enable-gpios = <&gpioi 0 GPIO_ACTIVE_HIGH>;
-+		status = "okay";
-+	};
-+
-+	ethernet_vio: vioregulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vio";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		gpio = <&gpiog 3 GPIO_ACTIVE_LOW>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	panel {
-+		compatible = "edt,etm0700g0edh6";
-+		backlight = <&display_bl>;
-+
-+		port {
-+			lcd_panel_in: endpoint {
-+				remote-endpoint = <&lcd_display_out>;
-+			};
-+		};
-+	};
-+
-+	sound {
-+		compatible = "audio-graph-card";
-+		routing =
-+			"MIC_IN", "Capture",
-+			"Capture", "Mic Bias",
-+			"Playback", "HP_OUT";
-+		dais = <&sai2a_port &sai2b_port>;
-+		status = "okay";
-+	};
-+};
-+
-+&cec {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&cec_pins_a>;
-+	status = "okay";
-+};
-+
-+&ethernet0 {
-+	status = "okay";
-+	pinctrl-0 = <&ethernet0_rmii_pins_a>;
-+	pinctrl-1 = <&ethernet0_rmii_pins_sleep_a>;
-+	pinctrl-names = "default", "sleep";
-+	phy-mode = "rmii";
-+	max-speed = <100>;
-+	phy-handle = <&phy0>;
-+	st,eth-ref-clk-sel;
-+	phy-reset-gpios = <&gpioh 15 GPIO_ACTIVE_LOW>;
-+
-+	mdio0 {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		compatible = "snps,dwmac-mdio";
-+
-+		phy0: ethernet-phy@1 {
-+			reg = <1>;
-+		};
-+	};
-+};
-+
-+&i2c5 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c5_pins_a>;
-+	i2c-scl-rising-time-ns = <185>;
-+	i2c-scl-falling-time-ns = <20>;
-+	status = "okay";
-+	/* spare dmas for other usage */
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+
-+	sgtl5000: codec@a {
-+		compatible = "fsl,sgtl5000";
-+		reg = <0x0a>;
-+		#sound-dai-cells = <0>;
-+		clocks = <&clk_ext_audio_codec>;
-+		VDDA-supply = <&v3v3>;
-+		VDDIO-supply = <&vdd>;
-+
-+		sgtl5000_port: port {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			sgtl5000_tx_endpoint: endpoint@0 {
-+				reg = <0>;
-+				remote-endpoint = <&sai2a_endpoint>;
-+				frame-master;
-+				bitclock-master;
-+			};
-+
-+			sgtl5000_rx_endpoint: endpoint@1 {
-+				reg = <1>;
-+				remote-endpoint = <&sai2b_endpoint>;
-+				frame-master;
-+				bitclock-master;
-+			};
-+		};
-+
-+	};
-+
-+	polytouch@38 {
-+		compatible = "edt,edt-ft5x06";
-+		reg = <0x38>;
-+		interrupt-parent = <&gpiog>;
-+		interrupts = <2 IRQ_TYPE_EDGE_FALLING>; /* GPIO E */
-+		linux,wakeup;
-+	};
-+};
-+
-+&ltdc {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&ltdc_pins_b>;
-+	pinctrl-1 = <&ltdc_pins_sleep_b>;
-+	status = "okay";
-+
-+	port {
-+		lcd_display_out: endpoint {
-+			remote-endpoint = <&lcd_panel_in>;
-+		};
-+	};
-+};
-+
-+&m_can1 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&m_can1_pins_a>;
-+	pinctrl-1 = <&m_can1_sleep_pins_a>;
-+	status = "okay";
-+};
-+
-+&sai2 {
-+	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
-+	clock-names = "pclk", "x8k", "x11k";
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&sai2a_pins_b &sai2b_pins_b>;
-+	pinctrl-1 = <&sai2a_sleep_pins_b &sai2b_sleep_pins_b>;
-+	status = "okay";
-+
-+	sai2a: audio-controller@4400b004 {
-+		#clock-cells = <0>;
-+		dma-names = "tx";
-+		clocks = <&rcc SAI2_K>;
-+		clock-names = "sai_ck";
-+		status = "okay";
-+
-+		sai2a_port: port {
-+			sai2a_endpoint: endpoint {
-+				remote-endpoint = <&sgtl5000_tx_endpoint>;
-+				format = "i2s";
-+				mclk-fs = <512>;
-+				dai-tdm-slot-num = <2>;
-+				dai-tdm-slot-width = <16>;
-+			};
-+		};
-+	};
-+
-+	sai2b: audio-controller@4400b024 {
-+		dma-names = "rx";
-+		st,sync = <&sai2a 2>;
-+		clocks = <&rcc SAI2_K>, <&sai2a>;
-+		clock-names = "sai_ck", "MCLK";
-+		status = "okay";
-+
-+		sai2b_port: port {
-+			sai2b_endpoint: endpoint {
-+				remote-endpoint = <&sgtl5000_rx_endpoint>;
-+				format = "i2s";
-+				mclk-fs = <512>;
-+				dai-tdm-slot-num = <2>;
-+				dai-tdm-slot-width = <16>;
-+			};
-+		};
-+	};
-+};
-+
-+&timers2 {
-+	/* spare dmas for other usage (un-delete to enable pwm capture) */
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "okay";
-+	pwm2: pwm {
-+		pinctrl-0 = <&pwm2_pins_a>;
-+		pinctrl-names = "default";
-+		status = "okay";
-+	};
-+	timer@1 {
-+		status = "okay";
-+	};
-+};
-+
-+&usart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usart3_pins_a>;
-+	status = "okay";
-+};
-+
-+&uart8 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart8_pins_a>;
-+	status = "okay";
-+};
-+
-+&usbh_ehci {
-+	phys = <&usbphyc_port0>;
-+	status = "okay";
-+};
-+
-+&usbotg_hs {
-+	dr_mode = "peripheral";
-+	phys = <&usbphyc_port1 0>;
-+	phy-names = "usb2-phy";
-+	status = "okay";
-+};
-+
-+&usbphyc {
-+	status = "okay";
-+};
-+
-+&usbphyc_port0 {
-+	phy-supply = <&vdd_usb>;
-+	vdda1v1-supply = <&reg11>;
-+	vdda1v8-supply = <&reg18>;
-+};
-+
-+&usbphyc_port1 {
-+	phy-supply = <&vdd_usb>;
-+	vdda1v1-supply = <&reg11>;
-+	vdda1v8-supply = <&reg18>;
-+};
-diff --git a/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
-new file mode 100644
-index 000000000000..f81dc3134135
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
-@@ -0,0 +1,368 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright (C) 2019 Marek Vasut <marex@denx.de>
-+ */
-+/dts-v1/;
-+
-+#include "stm32mp157.dtsi"
-+#include "stm32mp15xc.dtsi"
-+#include "stm32mp15-pinctrl.dtsi"
-+#include "stm32mp15xxaa-pinctrl.dtsi"
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/mfd/st,stpmic1.h>
-+
-+/ {
-+	memory@c0000000 {
-+		device_type = "memory";
-+		reg = <0xC0000000 0x40000000>;
-+	};
-+
-+	reserved-memory {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges;
-+
-+		mcuram2: mcuram2@10000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10000000 0x40000>;
-+			no-map;
-+		};
-+
-+		vdev0vring0: vdev0vring0@10040000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10040000 0x1000>;
-+			no-map;
-+		};
-+
-+		vdev0vring1: vdev0vring1@10041000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10041000 0x1000>;
-+			no-map;
-+		};
-+
-+		vdev0buffer: vdev0buffer@10042000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10042000 0x4000>;
-+			no-map;
-+		};
-+
-+		mcuram: mcuram@30000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x30000000 0x40000>;
-+			no-map;
-+		};
-+
-+		retram: retram@38000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x38000000 0x10000>;
-+			no-map;
-+		};
-+	};
-+};
-+
-+&adc {
-+	vdd-supply = <&vdd>;
-+	vdda-supply = <&vdda>;
-+	vref-supply = <&vdda>;
-+	status = "okay";
-+
-+	adc1: adc@0 {
-+		st,min-sample-time-nsecs = <5000>;
-+		st,adc-channels = <0>;
-+		status = "okay";
-+	};
-+
-+	adc2: adc@100 {
-+		st,adc-channels = <1>;
-+		st,min-sample-time-nsecs = <5000>;
-+		status = "okay";
-+	};
-+};
-+
-+&dac {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&dac_ch1_pins_a &dac_ch2_pins_a>;
-+	vref-supply = <&vdda>;
-+	status = "okay";
-+
-+	dac1: dac@1 {
-+		status = "okay";
-+	};
-+	dac2: dac@2 {
-+		status = "okay";
-+	};
-+};
-+
-+&dts {
-+	status = "okay";
-+};
-+
-+&gpu {
-+	status = "okay";
-+};
-+
-+&i2c4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c4_pins_a>;
-+	i2c-scl-rising-time-ns = <185>;
-+	i2c-scl-falling-time-ns = <20>;
-+	status = "okay";
-+	/* spare dmas for other usage */
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+
-+	rtc@32 {
-+		compatible = "microcrystal,rv8803";
-+		reg = <0x32>;
-+	};
-+
-+	pmic: stpmic@33 {
-+		compatible = "st,stpmic1";
-+		reg = <0x33>;
-+		interrupts-extended = <&gpioa 0 IRQ_TYPE_EDGE_FALLING>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		status = "okay";
-+
-+		regulators {
-+			compatible = "st,stpmic1-regulators";
-+			ldo1-supply = <&v3v3>;
-+			ldo2-supply = <&v3v3>;
-+			ldo3-supply = <&vdd_ddr>;
-+			ldo5-supply = <&v3v3>;
-+			ldo6-supply = <&v3v3>;
-+			pwr_sw1-supply = <&bst_out>;
-+			pwr_sw2-supply = <&bst_out>;
-+
-+			vddcore: buck1 {
-+				regulator-name = "vddcore";
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-always-on;
-+				regulator-initial-mode = <0>;
-+				regulator-over-current-protection;
-+			};
-+
-+			vdd_ddr: buck2 {
-+				regulator-name = "vdd_ddr";
-+				regulator-min-microvolt = <1350000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-always-on;
-+				regulator-initial-mode = <0>;
-+				regulator-over-current-protection;
-+			};
-+
-+			vdd: buck3 {
-+				regulator-name = "vdd";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+				st,mask-reset;
-+				regulator-initial-mode = <0>;
-+				regulator-over-current-protection;
-+			};
-+
-+			v3v3: buck4 {
-+				regulator-name = "v3v3";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+				regulator-over-current-protection;
-+				regulator-initial-mode = <0>;
-+			};
-+
-+			vdda: ldo1 {
-+				regulator-name = "vdda";
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <2900000>;
-+				interrupts = <IT_CURLIM_LDO1 0>;
-+			};
-+
-+			v2v8: ldo2 {
-+				regulator-name = "v2v8";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				interrupts = <IT_CURLIM_LDO2 0>;
-+			};
-+
-+			vtt_ddr: ldo3 {
-+				regulator-name = "vtt_ddr";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <750000>;
-+				regulator-always-on;
-+				regulator-over-current-protection;
-+			};
-+
-+			vdd_usb: ldo4 {
-+				regulator-name = "vdd_usb";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				interrupts = <IT_CURLIM_LDO4 0>;
-+			};
-+
-+			vdd_sd: ldo5 {
-+				regulator-name = "vdd_sd";
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <2900000>;
-+				interrupts = <IT_CURLIM_LDO5 0>;
-+				regulator-boot-on;
-+			};
-+
-+			v1v8: ldo6 {
-+				regulator-name = "v1v8";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				interrupts = <IT_CURLIM_LDO6 0>;
-+			};
-+
-+			vref_ddr: vref_ddr {
-+				regulator-name = "vref_ddr";
-+				regulator-always-on;
-+				regulator-over-current-protection;
-+			};
-+
-+			bst_out: boost {
-+				regulator-name = "bst_out";
-+				interrupts = <IT_OCP_BOOST 0>;
-+			};
-+
-+			vbus_otg: pwr_sw1 {
-+				regulator-name = "vbus_otg";
-+				interrupts = <IT_OCP_OTG 0>;
-+			};
-+
-+			vbus_sw: pwr_sw2 {
-+				regulator-name = "vbus_sw";
-+				interrupts = <IT_OCP_SWOUT 0>;
-+				regulator-active-discharge;
-+			};
-+		};
-+
-+		onkey {
-+			compatible = "st,stpmic1-onkey";
-+			interrupts = <IT_PONKEY_F 0>, <IT_PONKEY_R 0>;
-+			interrupt-names = "onkey-falling", "onkey-rising";
-+			power-off-time-sec = <10>;
-+			status = "okay";
-+		};
-+
-+		watchdog {
-+			compatible = "st,stpmic1-wdt";
-+			status = "disabled";
-+		};
-+	};
-+
-+	touchscreen@49 {
-+		compatible = "ti,tsc2004";
-+		reg = <0x49>;
-+		vio-supply = <&v3v3>;
-+		interrupts-extended = <&gpioh 3 IRQ_TYPE_EDGE_FALLING>;
-+	};
-+
-+	eeprom@50 {
-+		compatible = "atmel,24c02";
-+		reg = <0x50>;
-+		pagesize = <16>;
-+	};
-+};
-+
-+&ipcc {
-+	status = "okay";
-+};
-+
-+&iwdg2 {
-+	timeout-sec = <32>;
-+	status = "okay";
-+};
-+
-+&m4_rproc {
-+	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
-+			<&vdev0vring1>, <&vdev0buffer>;
-+	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
-+	mbox-names = "vq0", "vq1", "shutdown";
-+	interrupt-parent = <&exti>;
-+	interrupts = <68 1>;
-+	status = "okay";
-+};
-+
-+&pwr_regulators {
-+	vdd-supply = <&vdd>;
-+	vdd_3v3_usbfs-supply = <&vdd_usb>;
-+};
-+
-+&qspi {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a &qspi_bk2_pins_a>;
-+	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a &qspi_bk2_sleep_pins_a>;
-+	reg = <0x58003000 0x1000>, <0x70000000 0x4000000>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	flash0: mx66l51235l@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-rx-bus-width = <4>;
-+		spi-max-frequency = <108000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+	};
-+};
-+
-+&rng1 {
-+	status = "okay";
-+};
-+
-+&rtc {
-+	status = "okay";
-+};
-+
-+&sdmmc1 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
-+	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_a>;
-+	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_a>;
-+	broken-cd;
-+	st,sig-dir;
-+	st,neg-edge;
-+	st,use-ckin;
-+	bus-width = <4>;
-+	vmmc-supply = <&vdd_sd>;
-+	status = "okay";
-+};
-+
-+&sdmmc2 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_a>;
-+	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_a>;
-+	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_a>;
-+	non-removable;
-+	no-sd;
-+	no-sdio;
-+	st,neg-edge;
-+	bus-width = <8>;
-+	vmmc-supply = <&v3v3>;
-+	vqmmc-supply = <&v3v3>;
-+	mmc-ddr-3_3v;
-+	status = "okay";
-+};
-+
-+&sdmmc3 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc3_b4_pins_a>;
-+	pinctrl-1 = <&sdmmc3_b4_od_pins_a>;
-+	pinctrl-2 = <&sdmmc3_b4_sleep_pins_a>;
-+	broken-cd;
-+	st,neg-edge;
-+	bus-width = <4>;
-+	vmmc-supply = <&v3v3>;
-+	vqmmc-supply = <&v3v3>;
-+	mmc-ddr-3_3v;
-+	status = "okay";
-+};
-+
-+&uart4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart4_pins_a>;
-+	status = "okay";
-+};
+The real problem is there aren't enough VA bits to allow the KVM
+range to be adequately placed, rather than the overlap itself.
+
 -- 
-2.24.1
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
