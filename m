@@ -2,60 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6101D142772
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 10:37:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C799C14277D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 10:42:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4tsm4zgZz1dYoPCfZgad6hWdYeCOgSME0XHk87SjUvI=; b=uzCkiTovElL4nF
-	ceEGzqeRkPTZip6ZnF9Q6XYYRwwGis/sWrOGcJzMggUWcxNa8i9md2jqh0yPSTrXUZm0zwN2V53L9
-	ZsLj5ROBSqPH5PEisv34qbI+Z3DEkLRFBsKytSM5gLa+oJwO5RcLjf4nvmlMTR6G171zyk5+p4yeN
-	f2xxxL7gLluLRmB6qu0ShbpxGf1C2tGOytLyrw1hM2J+jL6iyY2jKh3tU41oJfVGTNNMmjE3+Lk+k
-	gzw0YBAPcKLxakkpmdf437jCpzQWPtQ8QG66ws6FHyE+ursYGHK7zWAwjCLwBl5YCg0jK435+P2/b
-	j63NUuHaVJlIyDf2pL+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CmXbE6wvD93jaFxyhwNH6RbWttGuAeVHw78nmfg1pmM=; b=lWrZhFnSxXrBDHGsGmWpPf4j2
+	v/ZBBHeDUlEd513DD9g8M6s6ZyCwRD+Ng+BWpx5zefd9kjra9rsD/XEqj7clcrAvJ/6mXR6p5v84T
+	i/YTU4J6SY2ze+bonil0owDtK/STD4LAFbnHpeKNNHgDo67ZCT/PIIkJ/m8ufi/KPTVXyxeCK/FUE
+	/LKmgfKMntFzipAFzRDxWOCsmgjcovtBRF3OGmmGfbSHrbLM7j2raZWuyQuJ9PpW57UKpIsGC+sBj
+	R9SxLCH3uQ87ggrbEdUzCJh36OQew2spLxhhnokP8IU/sbkCsD1MoRJ45XFojDBiZtBmo79nlvuxr
+	5xelUIzDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itTV7-0004Zc-Iw; Mon, 20 Jan 2020 09:37:41 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1itTZX-0006Ol-Nb; Mon, 20 Jan 2020 09:42:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itTUu-0004Yb-H4
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 09:37:34 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.lab.pengutronix.de)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1itTUk-0008OP-6M; Mon, 20 Jan 2020 10:37:18 +0100
-Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1itTUh-0003gP-4i; Mon, 20 Jan 2020 10:37:15 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: linux@rempel-privat.de, kernel@pengutronix.de, shawnguo@kernel.org,
- s.hauer@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- stefan@agner.ch
-Subject: [PATCH] i2c: imx: implement master_xfer_atomic callback
-Date: Mon, 20 Jan 2020 10:36:50 +0100
-Message-Id: <20200120093650.12911-1-m.felsch@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
+ id 1itTZK-0006OK-TP
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 09:42:06 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1CA8F207E0;
+ Mon, 20 Jan 2020 09:42:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579513321;
+ bh=NL+jWrz2kmdaOfiDcTAo2c2l6MRY04yThDjnVS/6tSI=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=zrwVMlIQSMOiJ+5pq3cBQpJwEKc6MfoE49dC0kiB+fsjDwwMlf0jzXBc9LK7wc8y/
+ rp4qID1pHewANcrIwBtaGJRNnQ2ODBpdkaUy6vhm4B4DVuZVOdWARepUOJqvIMHWBJ
+ kK1F7L0IvJLxRAPwZvQ056N0Q7YEz5R83z92LoA4=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1itTZH-000EA4-Ew; Mon, 20 Jan 2020 09:41:59 +0000
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+Date: Mon, 20 Jan 2020 10:41:59 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Miao <Steven.Miao@arm.com>, Tao Zeng <prime.zeng@hisilicon.com>
+Subject: Re: Questions about /proc/cpuinfo for arch-ARM  - CAS-149046-Y1H3T8
+In-Reply-To: <VE1PR08MB4749DEED78C7EABF519650B7F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
+References: <FFCDED37A161475FA3F5B19E21DECA0D1D5CF72567E6@SUPPORT-SOFTWARE.ARM.COM>
+ <VE1PR08MB47490C13405F61B3599D1314F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
+ <VE1PR08MB4749DEED78C7EABF519650B7F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
+Message-ID: <22d48abd5ab2813b18e952b5d911152c@misterjones.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: Steven.Miao@arm.com, prime.zeng@hisilicon.com,
+ support-software@arm.com, Mark.Rutland@arm.com, Robin.Murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_013728_882426_B32B82FA 
-X-CRM114-Status: GOOD (  21.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200120_014202_991264_C9C98527 
+X-CRM114-Status: GOOD (  15.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,396 +91,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Lengfeld <contact@stefanchrist.eu>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Oleksij Rempel <o.rempel@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Robin Murphy <Robin.Murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Support-Software <support-software@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Lengfeld <contact@stefanchrist.eu>
+Hi Steven,
 
-Rework the read and write code paths in the driver to support operation
-in atomic contexts. To achieve this, the driver must not rely on IRQs
-and not call schedule(), e.g. via a sleep routine, in these cases.
+On 2020-01-20 10:24, Steven Miao wrote:
+> CC arm mailing list. Someone know the whole history may have a better 
+> answer.
+> 
+> Thanks,
+> Steven
+> 
+> From: Support-Software <mailto:support-software@arm.com>
+> Sent: Monday, January 20, 2020 5:17 PM
+> To: Tao Zeng <mailto:prime.zeng@hisilicon.com>
+> Cc: Mark Rutland <mailto:Mark.Rutland@arm.com>
+> Subject: Re: Questions about /proc/cpuinfo for arch-ARM - 
+> CAS-149046-Y1H3T8
+> 
+> From Steven Miao - Arm Partner Enablement Group
+> Please quote case reference number
+> https://support.developer.arm.com/case-details/?id=f9beb263-333b-ea11-a813-000d3ab4f2f3
+> in any further emails to us on this subject.
+> 
+> Hi Tao,
+>> 1. Since /proc/cpuinfo is treated as ABI, so where can I find the 
+>> specification? Or is there any docs
+>> to describe the details? Or it is just some applications who have 
+>> already token it?
+>  I think it is just de-facto ABI legacy application are relying on,
+> there's no such specification.
+>> You know that, in x86, /proc/cpuinfo provide really good user 
+>> experience,
+>> what we want to do is providing the same or even better user 
+>> experience.
 
-With this patch the driver supports normal operation, DMA transfers and
-now the polling mode or also called sleep-free or IRQ-less operation. It
-makes the code not simpler or easier to read, but atomic I2C transfers
-are needed on some hardware configurations, e.g. to trigger reboots on
-an external PMIC chip.
+Tao: And by "better user experience", you mean breaking existing 
+software?
+I'm sure users will enjoy the "improvement".
 
-Signed-off-by: Stefan Lengfeld <contact@stefanchrist.eu>
-[m.felsch@pengutronix.de: integrate https://patchwork.ozlabs.org/patch/1085943/ review feedback]
-[m.felsch@pengutronix.de: adapt commit message]
-Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-Acked-by: Oleksij Rempel <o.rempel@pengutronix.de>
----
-Hi,
+> We should add new stuff to /sys/, don't add new things to /proc. On
+> x86 these strings are acquired from the CPU itself, via CPUID
+> instructions, which means that it works for future CPUs. For ARM
+> systems, we have no consistent way of acquiring a model name from a
+> CPU itself. If users who want to decode MIDRs are going to have to use
+> userspace tools.
+> Changing current cpuinfo:
+> - it breaks existing applications
+> - it is unmaintainable in the long run
+> - we can already get cpu information by dmidecode, lscpu, lshw...
 
-I picked Stefan Lengfeld RFC patch [1] and added Stefan Agner's review
-feedback [1]. Checkpatch complains about a few 80 char violations. I
-kept those to gain readability.
+Exactly. The subject has been rehashed to death, and is not up for
+discussion anymore. /proc/cpuinfo is ABI, which means its format is
+forever immutable. Userspace has all the required tools at its disposal.
 
-Regards,
-  Marco
-
-[1] https://patchwork.ozlabs.org/patch/1085943/
-
-Changes:
-- general: adapt commit message
-- general: fix some 80char line issues
-- general: s/if(!atomic)/if(atomic)/
-- i2c_imx_trx_complete: use readb_poll_timeout_atomic()
-- i2c_imx_trx_complete: adapt poll_timeout and add poll_timeout calc comment
-- i2c_imx_start: simplify irq disable
-- i2c_imx_xfer_common: don't allow bus recovery within atomic context
-- i2c_imx_probe: drop pm_runtime_irq_safe usage and instead:
-  * i2c_imx_xfer_common: move rpm calls into i2c_imx_xfer
-  * i2c_imx_xfer_common: add clk_enable/disable for i2c_imx_xfer_atomic
----
- drivers/i2c/busses/i2c-imx.c | 146 +++++++++++++++++++++++++----------
- 1 file changed, 105 insertions(+), 41 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-index a3b61336fe55..79d5b37fd8a1 100644
---- a/drivers/i2c/busses/i2c-imx.c
-+++ b/drivers/i2c/busses/i2c-imx.c
-@@ -34,6 +34,7 @@
- #include <linux/init.h>
- #include <linux/interrupt.h>
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/of.h>
-@@ -414,7 +415,7 @@ static void i2c_imx_dma_free(struct imx_i2c_struct *i2c_imx)
- 	dma->chan_using = NULL;
- }
- 
--static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy)
-+static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy, bool atomic)
- {
- 	unsigned long orig_jiffies = jiffies;
- 	unsigned int temp;
-@@ -444,15 +445,37 @@ static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy)
- 				"<%s> I2C bus is busy\n", __func__);
- 			return -ETIMEDOUT;
- 		}
--		schedule();
-+		if (atomic)
-+			udelay(100);
-+		else
-+			schedule();
- 	}
- 
- 	return 0;
- }
- 
--static int i2c_imx_trx_complete(struct imx_i2c_struct *i2c_imx)
-+static int i2c_imx_trx_complete(struct imx_i2c_struct *i2c_imx, bool atomic)
- {
--	wait_event_timeout(i2c_imx->queue, i2c_imx->i2csr & I2SR_IIF, HZ / 10);
-+	if (atomic) {
-+		void __iomem *addr = i2c_imx->base + (IMX_I2C_I2SR << i2c_imx->hwdata->regshift);
-+		unsigned int regval;
-+
-+		/*
-+		 * The formula for the poll timeout is documented in the RM
-+		 * Rev.5 on page 1878:
-+		 *     T_min = 10/F_scl
-+		 * Set the value hard as it is done for the non-atomic use-case.
-+		 * Use 10 kHz for the calculation since this is the minimum
-+		 * allowed SMBus frequency. Also add an offset of 100us since it
-+		 * turned out that the I2SR_IIF bit isn't set correctly within
-+		 * the minimum timeout in polling mode.
-+		 */
-+		readb_poll_timeout_atomic(addr, regval, regval & I2SR_IIF, 5, 1000 + 100);
-+		i2c_imx->i2csr = regval;
-+		imx_i2c_write_reg(0, i2c_imx, IMX_I2C_I2SR);
-+	} else {
-+		wait_event_timeout(i2c_imx->queue, i2c_imx->i2csr & I2SR_IIF, HZ / 10);
-+	}
- 
- 	if (unlikely(!(i2c_imx->i2csr & I2SR_IIF))) {
- 		dev_dbg(&i2c_imx->adapter.dev, "<%s> Timeout\n", __func__);
-@@ -530,7 +553,7 @@ static int i2c_imx_clk_notifier_call(struct notifier_block *nb,
- 	return NOTIFY_OK;
- }
- 
--static int i2c_imx_start(struct imx_i2c_struct *i2c_imx)
-+static int i2c_imx_start(struct imx_i2c_struct *i2c_imx, bool atomic)
- {
- 	unsigned int temp = 0;
- 	int result;
-@@ -543,23 +566,29 @@ static int i2c_imx_start(struct imx_i2c_struct *i2c_imx)
- 	imx_i2c_write_reg(i2c_imx->hwdata->i2cr_ien_opcode, i2c_imx, IMX_I2C_I2CR);
- 
- 	/* Wait controller to be stable */
--	usleep_range(50, 150);
-+	if (atomic)
-+		udelay(50);
-+	else
-+		usleep_range(50, 150);
- 
- 	/* Start I2C transaction */
- 	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
- 	temp |= I2CR_MSTA;
- 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
--	result = i2c_imx_bus_busy(i2c_imx, 1);
-+	result = i2c_imx_bus_busy(i2c_imx, 1, atomic);
- 	if (result)
- 		return result;
- 
- 	temp |= I2CR_IIEN | I2CR_MTX | I2CR_TXAK;
-+	if (atomic)
-+		temp &= ~I2CR_IIEN; /* Disable interrupt */
-+
- 	temp &= ~I2CR_DMAEN;
- 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
- 	return result;
- }
- 
--static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
-+static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx, bool atomic)
- {
- 	unsigned int temp = 0;
- 
-@@ -581,7 +610,7 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
- 	}
- 
- 	if (!i2c_imx->stopped)
--		i2c_imx_bus_busy(i2c_imx, 0);
-+		i2c_imx_bus_busy(i2c_imx, 0, atomic);
- 
- 	/* Disable I2C controller */
- 	temp = i2c_imx->hwdata->i2cr_ien_opcode ^ I2CR_IEN,
-@@ -662,7 +691,7 @@ static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
- 	/* The last data byte must be transferred by the CPU. */
- 	imx_i2c_write_reg(msgs->buf[msgs->len-1],
- 				i2c_imx, IMX_I2C_I2DR);
--	result = i2c_imx_trx_complete(i2c_imx);
-+	result = i2c_imx_trx_complete(i2c_imx, false);
- 	if (result)
- 		return result;
- 
-@@ -721,7 +750,7 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
- 
- 	msgs->buf[msgs->len-2] = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
- 	/* read n byte data */
--	result = i2c_imx_trx_complete(i2c_imx);
-+	result = i2c_imx_trx_complete(i2c_imx, false);
- 	if (result)
- 		return result;
- 
-@@ -734,7 +763,7 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
- 		temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
- 		temp &= ~(I2CR_MSTA | I2CR_MTX);
- 		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
--		i2c_imx_bus_busy(i2c_imx, 0);
-+		i2c_imx_bus_busy(i2c_imx, 0, false);
- 	} else {
- 		/*
- 		 * For i2c master receiver repeat restart operation like:
-@@ -752,7 +781,8 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
- 	return 0;
- }
- 
--static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
-+static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs,
-+			 bool atomic)
- {
- 	int i, result;
- 
-@@ -761,7 +791,7 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
- 
- 	/* write slave address */
- 	imx_i2c_write_reg(i2c_8bit_addr_from_msg(msgs), i2c_imx, IMX_I2C_I2DR);
--	result = i2c_imx_trx_complete(i2c_imx);
-+	result = i2c_imx_trx_complete(i2c_imx, atomic);
- 	if (result)
- 		return result;
- 	result = i2c_imx_acked(i2c_imx);
-@@ -775,7 +805,7 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
- 			"<%s> write byte: B%d=0x%X\n",
- 			__func__, i, msgs->buf[i]);
- 		imx_i2c_write_reg(msgs->buf[i], i2c_imx, IMX_I2C_I2DR);
--		result = i2c_imx_trx_complete(i2c_imx);
-+		result = i2c_imx_trx_complete(i2c_imx, atomic);
- 		if (result)
- 			return result;
- 		result = i2c_imx_acked(i2c_imx);
-@@ -785,7 +815,8 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
- 	return 0;
- }
- 
--static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bool is_lastmsg)
-+static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs,
-+			bool is_lastmsg, bool atomic)
- {
- 	int i, result;
- 	unsigned int temp;
-@@ -798,7 +829,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
- 
- 	/* write slave address */
- 	imx_i2c_write_reg(i2c_8bit_addr_from_msg(msgs), i2c_imx, IMX_I2C_I2DR);
--	result = i2c_imx_trx_complete(i2c_imx);
-+	result = i2c_imx_trx_complete(i2c_imx, atomic);
- 	if (result)
- 		return result;
- 	result = i2c_imx_acked(i2c_imx);
-@@ -831,7 +862,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
- 	for (i = 0; i < msgs->len; i++) {
- 		u8 len = 0;
- 
--		result = i2c_imx_trx_complete(i2c_imx);
-+		result = i2c_imx_trx_complete(i2c_imx, atomic);
- 		if (result)
- 			return result;
- 		/*
-@@ -859,7 +890,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
- 				temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
- 				temp &= ~(I2CR_MSTA | I2CR_MTX);
- 				imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
--				i2c_imx_bus_busy(i2c_imx, 0);
-+				i2c_imx_bus_busy(i2c_imx, 0, atomic);
- 			} else {
- 				/*
- 				 * For i2c master receiver repeat restart operation like:
-@@ -890,8 +921,8 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
- 	return 0;
- }
- 
--static int i2c_imx_xfer(struct i2c_adapter *adapter,
--						struct i2c_msg *msgs, int num)
-+static int i2c_imx_xfer_common(struct i2c_adapter *adapter,
-+			       struct i2c_msg *msgs, int num, bool atomic)
- {
- 	unsigned int i, temp;
- 	int result;
-@@ -900,16 +931,16 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
- 
- 	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
- 
--	result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
--	if (result < 0)
--		goto out;
--
- 	/* Start I2C transfer */
--	result = i2c_imx_start(i2c_imx);
-+	result = i2c_imx_start(i2c_imx, atomic);
- 	if (result) {
--		if (i2c_imx->adapter.bus_recovery_info) {
-+		/*
-+		 * Bus recovery uses gpiod_get_value_cansleep() which is not
-+		 * allowed within atomic context.
-+		 */
-+		if (!atomic && i2c_imx->adapter.bus_recovery_info) {
- 			i2c_recover_bus(&i2c_imx->adapter);
--			result = i2c_imx_start(i2c_imx);
-+			result = i2c_imx_start(i2c_imx, atomic);
- 		}
- 	}
- 
-@@ -927,7 +958,7 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
- 			temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
- 			temp |= I2CR_RSTA;
- 			imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
--			result = i2c_imx_bus_busy(i2c_imx, 1);
-+			result = i2c_imx_bus_busy(i2c_imx, 1, atomic);
- 			if (result)
- 				goto fail0;
- 		}
-@@ -951,13 +982,14 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
- 			(temp & I2SR_SRW ? 1 : 0), (temp & I2SR_IIF ? 1 : 0),
- 			(temp & I2SR_RXAK ? 1 : 0));
- #endif
--		if (msgs[i].flags & I2C_M_RD)
--			result = i2c_imx_read(i2c_imx, &msgs[i], is_lastmsg);
--		else {
--			if (i2c_imx->dma && msgs[i].len >= DMA_THRESHOLD)
-+		if (msgs[i].flags & I2C_M_RD) {
-+			result = i2c_imx_read(i2c_imx, &msgs[i], is_lastmsg, atomic);
-+		} else {
-+			if (!atomic &&
-+			    i2c_imx->dma && msgs[i].len >= DMA_THRESHOLD)
- 				result = i2c_imx_dma_write(i2c_imx, &msgs[i]);
- 			else
--				result = i2c_imx_write(i2c_imx, &msgs[i]);
-+				result = i2c_imx_write(i2c_imx, &msgs[i], atomic);
- 		}
- 		if (result)
- 			goto fail0;
-@@ -965,18 +997,49 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
- 
- fail0:
- 	/* Stop I2C transfer */
--	i2c_imx_stop(i2c_imx);
--
--	pm_runtime_mark_last_busy(i2c_imx->adapter.dev.parent);
--	pm_runtime_put_autosuspend(i2c_imx->adapter.dev.parent);
-+	i2c_imx_stop(i2c_imx, atomic);
- 
--out:
- 	dev_dbg(&i2c_imx->adapter.dev, "<%s> exit with: %s: %d\n", __func__,
- 		(result < 0) ? "error" : "success msg",
- 			(result < 0) ? result : num);
- 	return (result < 0) ? result : num;
- }
- 
-+static int i2c_imx_xfer(struct i2c_adapter *adapter,
-+			struct i2c_msg *msgs, int num)
-+{
-+	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(adapter);
-+	int result;
-+
-+	result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
-+	if (result < 0)
-+		return result;
-+
-+	result = i2c_imx_xfer_common(adapter, msgs, num, false);
-+
-+	pm_runtime_mark_last_busy(i2c_imx->adapter.dev.parent);
-+	pm_runtime_put_autosuspend(i2c_imx->adapter.dev.parent);
-+
-+	return result;
-+}
-+
-+static int i2c_imx_xfer_atomic(struct i2c_adapter *adapter,
-+			       struct i2c_msg *msgs, int num)
-+{
-+	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(adapter);
-+	int result;
-+
-+	result = clk_enable(i2c_imx->clk);
-+	if (result)
-+		return result;
-+
-+	result = i2c_imx_xfer_common(adapter, msgs, num, true);
-+
-+	clk_disable(i2c_imx->clk);
-+
-+	return result;
-+}
-+
- static void i2c_imx_prepare_recovery(struct i2c_adapter *adap)
- {
- 	struct imx_i2c_struct *i2c_imx;
-@@ -1049,8 +1112,9 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
- }
- 
- static const struct i2c_algorithm i2c_imx_algo = {
--	.master_xfer	= i2c_imx_xfer,
--	.functionality	= i2c_imx_func,
-+	.master_xfer = i2c_imx_xfer,
-+	.master_xfer_atomic = i2c_imx_xfer_atomic,
-+	.functionality = i2c_imx_func,
- };
- 
- static int i2c_imx_probe(struct platform_device *pdev)
+         M.
 -- 
-2.20.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
