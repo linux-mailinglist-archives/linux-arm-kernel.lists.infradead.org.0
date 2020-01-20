@@ -2,62 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 853CC142249
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 05:04:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE16F142255
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 05:18:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+fHZ5qIddbLQ/uSlSoFZsKnfVFU0f+QG90F2Jxf5qp0=; b=VAtww59NQkznIN
-	EvjUZmCHKClIsMMF0bp4w2t3mvIWSzA/5Z2IxC9Glr3rpV9+rV1qufb33IrTTVpGfPAfGfsiriMQR
-	iP8KTHdIrzxnzb3PIjfryQidmkuTj/G/QNrI8v+g2IvnOGqlTYS2CGOyrWqsElJbqVhh4ObMcuklU
-	MAxYbLRR5EETnPArGl9UnQq01L9xuxTAQ3Wi5SlOhXnV1JZkH1bSpb/2NsczMrbhKfeRnRaZusi40
-	WPnk0KQdds5cSnkn7ZwoIRvwMFc9kp7btWh6FshsDqtdemjyCWeZGbHK8vFPqhMYC0Gu4Y7k/LtDx
-	xTuNqLpsNLmq4pjpxuGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Message-ID:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=B0XjZyH3k/txFudcf0QcB+MHLRIbOvf67aWOGbS+8t4=; b=MCNVSChYoYfPCo
+	EwJUUEIWGAymLuEVIUCzODqIoCwlo76z/OraWUGwONmhbvT0yqoeyiqMPBR+3yrSeUshbLG7gQQnf
+	L2sJMDymRUSfA6BI/hApo+/MwWBP9307AF8GauEsmeB2fE+H9lcdO8j1b7ifZFgEFW/aIEq6oOr1g
+	GURiIFd03DAOC8yFrgLnNtUld2Mgo3X0eXFqJ1gfRKh2kJXUxWYEN6KGsEs0vyqcHqD0McW891ucb
+	+1E6zqwYjVIWmcgP6btKsv7GDrdW88bjB+0ZuPbAVczX60aGXJK74vdktH0v6Uen3+w4z6+GcCKE3
+	O5sM4rGi4SlnQf5LJcdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itOIe-0003VZ-DH; Mon, 20 Jan 2020 04:04:28 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1itOWM-0008Ng-I7; Mon, 20 Jan 2020 04:18:38 +0000
+Received: from sender4-of-o51.zoho.com ([136.143.188.51])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itOIV-0003Uv-5H
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 04:04:20 +0000
-Received: by ozlabs.org (Postfix, from userid 1003)
- id 481J2T5VvKz9sRQ; Mon, 20 Jan 2020 15:04:17 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ozlabs.org; s=201707;
- t=1579493057; bh=GlIncoWYmOYv5Dni23RSwo6uZojZl918YWnmGeGzyJI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=V/Pa+sHEae+jG71OR9r2A404DaS5UBDnEl6W5GR08hXip3iEYMnPJKOgSS38mznMS
- QFzFYRElYmpf39vGFlmcBXqAVGdMsLFjm/U25lpx6q0fNhotMfBPwIAqSNRKv/jocP
- A5kGrOXz8juIsyZkgL8m65HZO5Fh3mx4+Y9Ux1ecPuIMT+sYjoMy+YSKDxMsJPTVPp
- HQfIaljJGxLrxk3xUQeJAE38M8fGC3e1O4wLIfYvDRR2aZSLUNac6unBI8qCtwWfOb
- HgwP/Q9WG5+8ApO9XCFy1bxiLQ13UNNmnGOK8PeEgB/i16xsXwKAaVRbebZ2djABCZ
- zP8/aQGwqo1nw==
-Date: Mon, 20 Jan 2020 15:04:12 +1100
-From: Paul Mackerras <paulus@ozlabs.org>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v2 12/45] KVM: PPC: Allocate vcpu struct in common PPC code
-Message-ID: <20200120040412.GF14307@blackberry>
-References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
- <20191218215530.2280-13-sean.j.christopherson@intel.com>
+ id 1itOWC-0008Mk-Py; Mon, 20 Jan 2020 04:18:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1579493901; 
+ s=selector01; d=brennan.io; i=stephen@brennan.io;
+ h=From:To:Cc:Message-ID:Subject:Date:MIME-Version:Content-Transfer-Encoding:Content-Type;
+ bh=stViw/vZBTTKFHulxgqF7UGf9elupV/iKpDOvA31W08=;
+ b=ABZX5WmdD1rtnsD7ma5/aoYcPqlJTkoaH6ppekhzsVYQNDnr9Opn+O+SL61R1iRr
+ eZh/7q+1MNG9vDcIIPycmU+XcPTY5DsoN0CIEb4uoctxYw3FyM5z2YzBF1sW3NHQ+c7
+ iv0LOkzXPNRYqx5Yx1pr2xTY8KdEpy1JyxkR7zN0=
+Received: from localhost (195.173.24.136.in-addr.arpa [136.24.173.195]) by
+ mx.zohomail.com with SMTPS id 1579493895817813.4788828872422;
+ Sun, 19 Jan 2020 20:18:15 -0800 (PST)
+From: Stephen Brennan <stephen@brennan.io>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Message-ID: <20200120041740.193485-1-stephen@brennan.io>
+Subject: [PATCH] ARM: dts: bcm2711: Use bcm2711 compatible for sdhci
+Date: Sun, 19 Jan 2020 20:17:40 -0800
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191218215530.2280-13-sean.j.christopherson@intel.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_200419_362504_C87BDD11 
-X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-CacheID: sfid-20200119_201828_962279_E5D85551 
+X-CRM114-Status: UNSURE (   7.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,47 +69,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cornelia Huck <cohuck@redhat.com>, Wanpeng Li <wanpengli@tencent.com>,
- Janosch Frank <frankja@linux.ibm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, David Hildenbrand <david@redhat.com>,
- linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- Greg Kurz <groug@kaod.org>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, James Hogan <jhogan@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, Stephen Brennan <stephen@brennan.io>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBEZWMgMTgsIDIwMTkgYXQgMDE6NTQ6NTdQTSAtMDgwMCwgU2VhbiBDaHJpc3RvcGhl
-cnNvbiB3cm90ZToKPiBNb3ZlIGFsbG9jYXRpb24gb2YgYWxsIGZsYXZvcnMgb2YgUFBDIHZDUFVz
-IHRvIGNvbW1vbiBQUEMgY29kZS4gIEFsbAo+IHZhcmlhbnRzIGVpdGhlciBhbGxvY2F0ZSAnc3Ry
-dWN0IGt2bV92Y3B1JyBkaXJlY3RseSwgb3IgcmVxdWlyZSB0aGF0Cj4gdGhlIGVtYmVkZGVkICdz
-dHJ1Y3Qga3ZtX3ZjcHUnIG1lbWJlciBiZSBsb2NhdGVkIGF0IG9mZnNldCAwLCBpLmUuCj4gZ3Vh
-cmFudGVlIHRoYXQgdGhlIGFsbG9jYXRpb24gY2FuIGJlIGRpcmVjdGx5IGludGVycHJldGVkIGFz
-IGEgJ3N0cnVjdAo+IGt2bV92Y3B1JyBvYmplY3QuCj4gCj4gUmVtb3ZlIHRoZSBtZXNzYWdlIGZy
-b20gdGhlIGJ1aWxkLXRpbWUgYXNzZXJ0aW9uIHJlZ2FyZGluZyBwbGFjZW1lbnQgb2YKPiB0aGUg
-c3RydWN0LCBhcyBjb21wYXRpYmlsaXR5IHdpdGggdGhlIGFyY2ggdXNlcmNvcHkgcmVnaW9uIGlz
-IG5vIGxvbmdlcgo+IHRoZSBzb2xlIGRlcGVuZGVudCBvbiAnc3RydWN0IGt2bV92Y3B1JyBiZWlu
-ZyBhdCBvZmZzZXQgemVyby4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBTZWFuIENocmlzdG9waGVyc29u
-IDxzZWFuLmouY2hyaXN0b3BoZXJzb25AaW50ZWwuY29tPgoKVGhpcyBmYWlscyB0byBjb21waWxl
-IGZvciBCb29rIEUgY29uZmlnczoKCiAgQ0MgICAgICBhcmNoL3Bvd2VycGMva3ZtL2U1MDAubwov
-aG9tZS9wYXVsdXMva2VybmVsL2t2bS9hcmNoL3Bvd2VycGMva3ZtL2U1MDAuYzogSW4gZnVuY3Rp
-b24g4oCYa3ZtcHBjX2NvcmVfdmNwdV9jcmVhdGVfZTUwMOKAmToKL2hvbWUvcGF1bHVzL2tlcm5l
-bC9rdm0vYXJjaC9wb3dlcnBjL2t2bS9lNTAwLmM6NDY0Ojk6IGVycm9yOiByZXR1cm4gbWFrZXMg
-aW50ZWdlciBmcm9tIHBvaW50ZXIgd2l0aG91dCBhIGNhc3QgWy1XZXJyb3I9aW50LWNvbnZlcnNp
-b25dCiAgcmV0dXJuIHZjcHU7CiAgICAgICAgIF4KY2MxOiBhbGwgd2FybmluZ3MgYmVpbmcgdHJl
-YXRlZCBhcyBlcnJvcnMKbWFrZVszXTogKioqIFsvaG9tZS9wYXVsdXMva2VybmVsL2t2bS9zY3Jp
-cHRzL01ha2VmaWxlLmJ1aWxkOjI2NjogYXJjaC9wb3dlcnBjL2t2bS9lNTAwLm9dIEVycm9yIDEK
-ClRoZXJlIGlzIGEgInJldHVybiB2Y3B1IiBzdGF0ZW1lbnQgaW4ga3ZtcHBjX2NvcmVfdmNwdV9j
-cmVhdGVfZTUwMCgpLAphbmQgYW5vdGhlciBpbiBrdm1wcGNfY29yZV92Y3B1X2NyZWF0ZV9lNTAw
-bWMoKSwgd2hpY2ggYm90aCBuZWVkIHRvIGJlCmNoYW5nZWQgdG8gInJldHVybiAwIi4KCihCeSB0
-aGUgd2F5LCBJIGRvIGFwcHJlY2lhdGUgeW91IGZpeGluZyB0aGUgUFBDIGNvZGUsIGV2ZW4gaWYg
-dGhlcmUKYXJlIHNvbWUgZXJyb3JzLikKClBhdWwuCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+When booting Raspberry Pi 4B using a micro SDHC UHS class 1 card, the SD
+card partitions never appear in /dev.  According to the device tree
+bindings for Broadcom IPROC SDHCI controller, we should use
+"brcm,bcm2711-emmc2" compatible string on BCM2711. Set this compatible
+string, which allows these cards to be mounted.
+
+Signed-off-by: Stephen Brennan <stephen@brennan.io>
+---
+ arch/arm/boot/dts/bcm2711.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+index b64865ad5a41..48e3b0162bda 100644
+--- a/arch/arm/boot/dts/bcm2711.dtsi
++++ b/arch/arm/boot/dts/bcm2711.dtsi
+@@ -853,6 +853,7 @@ &mailbox {
+ };
+ 
+ &sdhci {
++	compatible = "brcm,bcm2711-emmc2";
+ 	interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>;
+ };
+ 
+-- 
+2.24.0
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
