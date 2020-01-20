@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A337D142ECF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 16:34:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26452142ED9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 16:37:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dg7B3C8aY2lw724qWycie4+kEjTYtxvOFqbMS6tmKMs=; b=gh3ZeEeqiOs8fQ
-	mtMNcVQ1sgwz8bTRF4s9dvRnPbeD4/LrYS6L4/ZzFWmuR/fp1awN+FBoGtxN/ThoW6YnX8kvW2HK5
-	jZK/THB/vUfEBdd52VkpQcVlImd2kKSHQbcHV2zhnGOVlwDLYZuSMmOCfZAujRoQ+9jzUDLgtjOXd
-	ZemLMz/l2E49YwPLKBoj4fGaIBZwB64m4abbigiBuay+YZfIyClM7YViCz5TqyGEM2AtiEFUWo/hh
-	OGLf83t19TKjcy+/kEST0Y6Um8NS32G9MyDxRM41yMkeEv4idEjgynISUN+0arUWINuUMN9U0iYq3
-	y8h6g3TPyZ+klzwqCdYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aZS/fij5YlCv0ZcTz+kqVruYh09D1qL8O7AYyiGTpOs=; b=odYoQ6aZnep+Jwc/5SscHdmjg
+	hyVt8ONSWwHe4uTDKig6ilWCVPepSaGnGYVLEiR2R9L3lSBrlRhhpsRA7y/WemqvnQisyguRTiFxH
+	RVuQF9zleBZxAR/TVesgqf4Gig5HzFSqrs6Pwg2fyC0XsIAHG+dxAlIq8lFq9/hCyjR2/BMk5fbDS
+	iL5rZL/PegxjYgSuJowL2VHfU8gxkQ/WSaiI0tAbUfFN4H8huY3pogU5107iohbsfphkxl7ec+w7r
+	xYw4hNFUjbYfolsHm2q/Rb9Q+MrzRpEWfKpRmt79wqUGwLOsNTm4uVGQB8xcdD4Oc09F8G8EB3jcF
+	liaY0G4lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itZ4D-00070Z-11; Mon, 20 Jan 2020 15:34:17 +0000
+	id 1itZ79-0000WV-FN; Mon, 20 Jan 2020 15:37:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itZ3y-0006z5-CQ
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 15:34:08 +0000
+ id 1itZ6p-0000UR-DU; Mon, 20 Jan 2020 15:37:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D06630E;
- Mon, 20 Jan 2020 07:34:00 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DBB83F52E;
- Mon, 20 Jan 2020 07:33:58 -0800 (PST)
-Date: Mon, 20 Jan 2020 15:33:56 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 1/1] Return EINVAL when precise_ip perf events are
- requested on Arm
-Message-ID: <20200120153355.GC43842@lakrids.cambridge.arm.com>
-References: <20200115105855.13395-1-james.clark@arm.com>
- <20200115105855.13395-2-james.clark@arm.com>
- <20200117123920.GB8199@willie-the-truck>
- <20200117140143.GD14879@hirez.programming.kicks-ass.net>
- <1231fd60-79cd-fcdf-8b99-a3be746bf2d1@arm.com>
- <20200117151658.GH14879@hirez.programming.kicks-ass.net>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BBC2830E;
+ Mon, 20 Jan 2020 07:36:58 -0800 (PST)
+Received: from [10.37.12.169] (unknown [10.37.12.169])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 024BF3F52E;
+ Mon, 20 Jan 2020 07:36:48 -0800 (PST)
+Subject: Re: [PATCH 1/4] PM / EM: and devices to Energy Model
+To: Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
+References: <20200116152032.11301-1-lukasz.luba@arm.com>
+ <20200116152032.11301-2-lukasz.luba@arm.com>
+ <17b77e0c-9455-0479-d37b-c57717c784c7@arm.com>
+ <d0b90b97-3604-d4f4-b873-3879a9221532@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <38307e88-f7ff-bc2a-bbce-5e508e275526@arm.com>
+Date: Mon, 20 Jan 2020 15:36:46 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200117151658.GH14879@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <d0b90b97-3604-d4f4-b873-3879a9221532@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_073402_469211_131BDF16 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20200120_073659_500469_657148B1 
+X-CRM114-Status: GOOD (  12.46  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -69,67 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Tan Xiaojun <tanxiaojun@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- James Clark <James.Clark@arm.com>, Namhyung Kim <namhyung@kernel.org>,
- nd <nd@arm.com>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, bjorn.andersson@linaro.org, bsegall@google.com,
+ festevam@gmail.com, Morten.Rasmussen@arm.com, robh@kernel.org,
+ amit.kucheria@verdurent.com, khilman@kernel.org, daniel.lezcano@linaro.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de,
+ rui.zhang@intel.com, alyssa.rosenzweig@collabora.com, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
+ matthias.bgg@gmail.com, Chris.Redpath@arm.com, airlied@linux.ie,
+ javi.merino@arm.com, tomeu.vizoso@collabora.com, qperret@google.com,
+ sboyd@kernel.org, shawnguo@kernel.org, rjw@rjwysocki.net, agross@kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ ionela.voinescu@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 04:16:58PM +0100, Peter Zijlstra wrote:
-> On Fri, Jan 17, 2020 at 03:00:37PM +0000, James Clark wrote:
-> > Hi Peter,
-> > 
-> > Do you mean something like this?
+
+
+On 1/20/20 3:11 PM, Dietmar Eggemann wrote:
+> On 20/01/2020 15:53, Dietmar Eggemann wrote:
+>> On 16/01/2020 16:20, lukasz.luba@arm.com wrote:
+>>> From: Lukasz Luba <lukasz.luba@arm.com>
 > 
-> Yes.
+> [...]
 > 
-> > diff --git a/kernel/events/core.c b/kernel/events/core.c
-> > index 43d1d4945433..f74acd085bea 100644
-> > --- a/kernel/events/core.c
-> > +++ b/kernel/events/core.c
-> > @@ -10812,6 +10812,12 @@ perf_event_alloc(struct perf_event_attr *attr, int cpu,
-> >                 goto err_pmu;
-> >         }
-> >  
-> > +       if (event->attr.precise_ip &&
-> > +               !(pmu->capabilities & PERF_PMU_CAP_PRECISE_IP)) {
-> > +               err = -EOPNOTSUPP;
-> > +               goto err_pmu;
-> > +       }
-> > +
-> >         err = exclusive_event_init(event);
-> >         if (err)
-> >                 goto err_pmu;
-> > 
-> > 
-> > Or should it only be done via sysfs to not break userspace?
+>>> +enum em_type {
+>>> +	EM_SIMPLE,
+>>> +	EM_CPU,
+>>> +};
+>>
+>> s/EM_SIMPLE/EM_DEV ?
+>>
+>> Right now I only see energy models and _one_ specific type (the CPU EM).
+>> So a tag 'is a CPU EM' would suffice. No need for EM_SIMPE ...
 > 
-> So we've added checks like this in the past and gotten away with it. Do
-> you already know of some userspace that will break due to it?
+> Wait, you even have
 > 
-> An alternative approach is adding a sysctl like kernel.perf_nostrict
-> which would disable this or something, that way 'old' userspace has a
-> chicken bit.
+> struct em_device {
+>          struct em_perf_domain *em_pd;
+>          struct device *dev;
+>          ...
+> }
+> 
+> static bool _is_cpu_device(struct device *dev)
+> 
+> Shouldn't this be enough to distinguish between EM and special CPU EM
+> under the API? Even when required to use container_of() to get from
+> em_perf_domain to device.
+> 
 
-Could we allocate a "strict" bit from perf_event_attr::__reserved_1, and
-update drivers to expose a whitelist of fields they support?
+Agree, I will remove this em_type related code.
 
-Then the core could do something like:
-
-	if (attr->strict && !pmu_check_whitelist(pmu, attr))
-		return -EOPNOTSUPP;
-
-... and we could also expose the whitelist somewhere in sysfs.
-
-Thanks,
-Mark,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
