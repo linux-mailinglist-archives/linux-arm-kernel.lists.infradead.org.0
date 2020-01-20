@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB70D142ABF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:27:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE6C2142AF1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:34:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JRbgUD5cEZmy3PSrIMcasGnwgFs3XeIGjSxL6HqLUa8=; b=DvDKo+hrDvDgotM6hcge1OmSnc
-	oIHRgjVWkoMhSuGH0oOJWuGT4q7I+obNgE2oTyMth66Ex2qHiSObLGyGQUzNgphTpm2spT14rmxy5
-	702QSjnwVE0vO+ia8LCZK2AxG4pjzMbo9sIvq3F84UgJ4Y2tbG7jsl4+jdYZGGq2WIHCdP+vTUjat
-	T+DmhdqpmqqAhgaG7o7vSLKLkuCZJHRBDfTL2+NPdBkKGQmTUaiKZ9sP9PK+KdbQwPx8unJQDZpsS
-	DSj+zucaSryZEttTgZudT6nI10BRnDTnG3IcIPDDEC4nV8uqBdXvNxxJ8q6fe/kh6cVUCv8DRqKWn
-	GG8XHYQA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hDfpU+i7nNKygkGHHi8HH9bchT8RVzEOnXv6jFSF8YU=; b=MQ3
+	gwtbk3lna16VZkgpZ/62DDd2ysJMsfeb/Ru8gGC5nVnisSrPllW4mchOBaIpTSnCx7IFyI5NKLdDg
+	KcI5PXBRdqTF30soTDvZ3WN/IlGhFykTg2G8q34Vo5LWYMsY5Qkp19DGhl7dK9MxDLo6nQowMYyDM
+	VboGFpfJAtINj877Mvpujs1bt0J0pfLWWjH52r4wAk2ZvIZa5J+kY6RcdtLWnXK8VLPv9bB/qWOlQ
+	s/z1fi5M7oTH+ajFte11JLoS+ql0ijYA1wBWF7j/RUR8ePzshpBj35HsWLeCtr2Kpi04UBDs3HqvD
+	eif1o98t6bQSvOC2DhREoOkJfcxuloA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itW9H-0005Ip-Ie; Mon, 20 Jan 2020 12:27:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itW6f-0001W5-IU
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 12:24:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2B581424;
- Mon, 20 Jan 2020 04:24:36 -0800 (PST)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE55E3F68E;
- Mon, 20 Jan 2020 04:24:35 -0800 (PST)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH 11/11] firmware: arm_scmi: Add Base notifications support
-Date: Mon, 20 Jan 2020 12:23:33 +0000
-Message-Id: <20200120122333.46217-12-cristian.marussi@arm.com>
+	id 1itWG7-0008VB-Mk; Mon, 20 Jan 2020 12:34:23 +0000
+Received: from olimex.com ([2001:470:0:1f2::b869:4820])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itWFb-0008CJ-F8
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 12:33:57 +0000
+Received: from localhost.localdomain ([94.155.250.134])
+ by olimex.com with ESMTPSA
+ (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
+ (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 20 Jan 2020 04:33:32 -0800
+From: Stefan Mavrodiev <stefan@olimex.com>
+To: Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-kernel@vger.kernel.org (open list),
+ dmaengine@vger.kernel.org (open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM),
+ linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC
+ support), 
+ dri-devel@lists.freedesktop.org (open list:DRM DRIVERS FOR ALLWINNER A10)
+Subject: [PATCH v2 0/2] Add support for sun4i HDMI audio
+Date: Mon, 20 Jan 2020 14:33:24 +0200
+Message-Id: <20200120123326.30743-1-stefan@olimex.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200120122333.46217-1-cristian.marussi@arm.com>
-References: <20200120122333.46217-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_042437_705176_BCCA4B06 
-X-CRM114-Status: GOOD (  13.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200120_043351_503048_D75F6B36 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,208 +62,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cristian.marussi@arm.com, james.quinlan@broadcom.com, lukasz.luba@arm.com,
- sudeep.holla@arm.com
+Cc: linux-sunxi@googlegroups.com, Stefan Mavrodiev <stefan@olimex.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make SCMI Base protocol register with the notification core.
+This patch series add support for HDMI audio for sun4i HDMI encored.
+The code uses some parts from the Allwinners's BSP kernel.
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
- drivers/firmware/arm_scmi/base.c | 125 +++++++++++++++++++++++++++++++
- include/linux/scmi_protocol.h    |  13 ++++
- 2 files changed, 138 insertions(+)
+Currently cyclic DMA transfers are disabled. The first patch permits them
+as they are required for the audio.
 
-diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-index ce7d9203e41b..ea28b05d5af6 100644
---- a/drivers/firmware/arm_scmi/base.c
-+++ b/drivers/firmware/arm_scmi/base.c
-@@ -6,6 +6,7 @@
-  */
- 
- #include "common.h"
-+#include "notify.h"
- 
- enum scmi_base_protocol_cmd {
- 	BASE_DISCOVER_VENDOR = 0x3,
-@@ -29,6 +30,21 @@ struct scmi_msg_resp_base_attributes {
- 	__le16 reserved;
- };
- 
-+struct scmi_msg_base_error_notify {
-+	__le32 event_control;
-+#define BASE_TP_NOTIFY_ALL	BIT(0)
-+};
-+
-+struct scmi_base_error_notify_payld {
-+	__le32 agent_id;
-+	__le32 error_status;
-+#define IS_FATAL_ERROR(x)	((x) & BIT(31))
-+#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
-+	__le64 msg_reports[8192];
-+};
-+
-+static const struct scmi_handle *protocol_handle;
-+
- /**
-  * scmi_base_attributes_get() - gets the implementation details
-  *	that are associated with the base protocol.
-@@ -222,6 +238,96 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
- 	return ret;
- }
- 
-+static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
-+{
-+	int ret;
-+	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
-+	struct scmi_xfer *t;
-+	struct scmi_msg_base_error_notify *cfg;
-+
-+	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
-+				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
-+	if (ret)
-+		return ret;
-+
-+	cfg = t->tx.buf;
-+	cfg->event_control = cpu_to_le32(evt_cntl);
-+
-+	ret = scmi_do_xfer(handle, t);
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
-+}
-+
-+static bool scmi_base_set_notify_enabled(u8 evt_id, const u32 *src_id,
-+					 bool enable)
-+{
-+	int ret;
-+
-+	if (!protocol_handle)
-+		return false;
-+
-+	ret = scmi_base_error_notify(protocol_handle, enable);
-+	if (ret)
-+		pr_warn("Failed enabling SCMI Notifications - Base - evt[%X] ret:%d\n",
-+			evt_id, ret);
-+
-+	return !ret ? true : false;
-+}
-+
-+static void *scmi_base_fill_custom_report(u8 evt_id, u64 timestamp,
-+					  const void *payld, size_t payld_sz,
-+					  void *report, u32 *src_id)
-+{
-+	void *rep = NULL;
-+
-+	switch (evt_id) {
-+	case BASE_ERROR_EVENT:
-+	{
-+		int i;
-+		const struct scmi_base_error_notify_payld *p = payld;
-+		struct scmi_base_error_report *r = report;
-+
-+		/*
-+		 * BaseError notification payload is variable in size but
-+		 * up to a maximum length determined by the struct ponted by p.
-+		 * Instead payld_sz is the effective length of this notification
-+		 * payload so cannot be greater of the maximum allowed size as
-+		 * pointed by p.
-+		 */
-+		if (sizeof(*p) < payld_sz)
-+			break;
-+
-+		r->timestamp = timestamp;
-+		r->agent_id = le32_to_cpu(p->agent_id);
-+		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
-+		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
-+		for (i = 0; i < r->cmd_count; i++)
-+			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
-+		*src_id = SCMI_ALL_SRC_IDS;
-+		rep = r;
-+		break;
-+	}
-+	default:
-+		break;
-+	}
-+
-+	return rep;
-+}
-+
-+static const struct scmi_event base_events[] = {
-+	{
-+		.evt_id = BASE_ERROR_EVENT,
-+		.max_payld_sz = 8192,
-+		.max_report_sz = sizeof(struct scmi_base_error_report),
-+	},
-+};
-+
-+static const struct scmi_protocol_event_ops base_event_ops = {
-+	.set_notify_enabled = scmi_base_set_notify_enabled,
-+	.fill_custom_report = scmi_base_fill_custom_report,
-+};
-+
- int scmi_base_protocol_init(struct scmi_handle *h)
- {
- 	int id, ret;
-@@ -256,10 +362,29 @@ int scmi_base_protocol_init(struct scmi_handle *h)
- 	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
- 		rev->num_agents);
- 
-+	scmi_register_protocol_events(SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
-+				      &base_event_ops, base_events,
-+				      ARRAY_SIZE(base_events));
-+
- 	for (id = 0; id < rev->num_agents; id++) {
- 		scmi_base_discover_agent_get(handle, id, name);
- 		dev_dbg(dev, "Agent %d: %s\n", id, name);
- 	}
-+	protocol_handle = handle;
- 
- 	return 0;
- }
-+
-+int scmi_register_base_event_notifier(u8 evt_id, u32 *src_id,
-+				      struct notifier_block *nb)
-+{
-+	return scmi_register_event_notifier(SCMI_PROTOCOL_BASE, evt_id,
-+					    src_id, nb);
-+}
-+
-+int scmi_unregister_base_event_notifier(u8 evt_id, u32 *src_id,
-+					struct notifier_block *nb)
-+{
-+	return scmi_unregister_event_notifier(SCMI_PROTOCOL_BASE, evt_id,
-+					      src_id, nb);
-+}
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 4af258f07c1e..24a64e9ba616 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -387,4 +387,17 @@ int scmi_register_reset_event_notifier(u8 evt_id, u32 *dom_id,
- int scmi_unregister_reset_event_notifier(u8 evt_id, u32 *dom_id,
- 					 struct notifier_block *nb);
- 
-+struct scmi_base_error_report {
-+	ktime_t	timestamp;
-+	u32	agent_id;
-+	bool	fatal;
-+	u16	cmd_count;
-+	u64	reports[8192];
-+};
-+
-+int scmi_register_base_event_notifier(u8 evt_id, u32 *src_id,
-+				      struct notifier_block *nb);
-+int scmi_unregister_base_event_notifier(u8 evt_id, u32 *src_id,
-+					struct notifier_block *nb);
-+
- #endif /* _LINUX_SCMI_PROTOCOL_H */
+The patch is tested on A20 chip. For the other chips, only the addresses
+of the registers are checked.
+
+Changes for v2:
+ - Create a new platform driver instead of using the HDMI encoder
+ - Expose a new kcontrol to the userspace holding the ELD data
+ - Wrap all macro arguments in parentheses
+
+Stefan Mavrodiev (2):
+  dmaengine: sun4i: Add support for cyclic requests with dedicated DMA
+  drm: sun4i: hdmi: Add support for sun4i HDMI encoder audio
+
+ drivers/dma/sun4i-dma.c                  |  45 +--
+ drivers/gpu/drm/sun4i/Kconfig            |   1 +
+ drivers/gpu/drm/sun4i/Makefile           |   1 +
+ drivers/gpu/drm/sun4i/sun4i_hdmi.h       |  28 ++
+ drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c | 452 +++++++++++++++++++++++
+ drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c   |  20 +
+ 6 files changed, 526 insertions(+), 21 deletions(-)
+ create mode 100644 drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c
+
 -- 
 2.17.1
-
 
 _______________________________________________
 linux-arm-kernel mailing list
