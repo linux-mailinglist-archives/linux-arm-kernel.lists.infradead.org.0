@@ -2,60 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DE4C142BFF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 14:22:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E861142C3C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 14:38:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgWI2EMXyymllWIMe+a1dFZyo8Zs7Sy5kG2ESoKJrqs=; b=mOm9kk9RNCVA6N
-	90UGOsQH4UoH4M0WBGr3y9DwZFuQ0V7wcRZS7dzHMn40Sm/soM/GBx2TbipIHpe7lU2N/njnMNmUJ
-	mqOP4aI0u7GxRcewi0reyHYrOA62kbZztWtLOubOFzvWPXlmeY7KZofd0WJfV9/51tL490zZAdFol
-	XwUnh2tbPGcr1IOntQbq9JQQtjohnwS/JDj+nU14DVGMdoPxfqaMtwxyfzMxL4npnz5GLceaOwko6
-	h9igUFDwInOWzd11OCIINeMBZlJT8nxgYjykXy6k9ocHt8gxB88mBm1Vvjq+qd+1oF6TqN1erf8ra
-	o6WTpYwL3Ps8VSByJdDQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Yxq5mSUyN5tOi1jzr1pDxNlEaG6xZhUc9W5ceENN9m4=; b=EbN
+	l2i3fVt/Fz6S8sdLRhAV43BlcmNwyoYpv0GVdKmg9PnFmy8LTbG8MFXvNMoOVdp1eL0vpnMMKDUvX
+	m9DWVpbMRcJVvjS91H4rDST+1SlebW327VxEoZzJ3Lemr0bqbUJdWEvDgYVRj/L80/gRe3kns3WWi
+	3kc2Vrp1rOQIXpyTRAdJBBx6gekg4rAGlC3lE8jQku0Bc/vgiZ55rU6huTthCYUi18Uw3hlDhrh4s
+	rAjaigANYNqoMWpCt3LbIVlpqjJRHZKGdOrAg5PD1ZG8MQRkoy5i6vqlN9CfMzgt85lNjTf3+9L6p
+	bgFD1YsxvJdA7YXFNLzlpPG5YJce1dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itX0h-0006NG-Q5; Mon, 20 Jan 2020 13:22:31 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itX0M-0006L4-Nd
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 13:22:17 +0000
-Received: from [154.119.55.242] (helo=wittgenstein)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <christian.brauner@ubuntu.com>)
- id 1itWy2-0005zt-Dn; Mon, 20 Jan 2020 13:19:46 +0000
-Date: Mon, 20 Jan 2020 14:19:31 +0100
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: syzbot <syzbot+6491ea8f6dddbf04930e@syzkaller.appspotmail.com>
-Subject: Re: KASAN: slab-out-of-bounds Read in bitmap_ip_ext_cleanup
-Message-ID: <20200120131930.pbhbsrm4bk4lq3d7@wittgenstein>
-References: <000000000000bdb5b2059c865f5c@google.com>
- <000000000000c795fa059c884c21@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <000000000000c795fa059c884c21@google.com>
-User-Agent: NeoMutt/20180716
+	id 1itXGQ-0003wu-KF; Mon, 20 Jan 2020 13:38:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itXGD-0003wQ-26
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 13:38:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AADBF30E;
+ Mon, 20 Jan 2020 05:38:31 -0800 (PST)
+Received: from login2.euhpc.arm.com. (login2.euhpc.arm.com [10.6.27.34])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2174D3F52E;
+ Mon, 20 Jan 2020 05:38:31 -0800 (PST)
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] ARM: virt: Relax arch timer version check during early boot
+Date: Mon, 20 Jan 2020 13:38:18 +0000
+Message-Id: <1579527498-31081-1-git-send-email-vladimir.murzin@arm.com>
+X-Mailer: git-send-email 2.0.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_052210_908213_CED4B58A 
-X-CRM114-Status: UNSURE (   6.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200120_053833_144546_591139E4 
+X-CRM114-Status: GOOD (  10.42  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,52 +58,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mareklindner@neomailbox.ch, peterz@infradead.org, catalin.marinas@arm.com,
- a@unstable.cc, jcmvbkbc@gmail.com, hpa@zytor.com, will@kernel.org,
- elena.reshetova@intel.com, hare@suse.com, johannes.berg@intel.com,
- florent.fourcot@wifirst.fr, x86@kernel.org, linux@armlinux.org.uk,
- kadlec@netfilter.org, coreteam@netfilter.org, geert@linux-m68k.org,
- allison@lohutok.net, pablo@netfilter.org, linux-arm-kernel@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, arnd@arndb.de, heiko.carstens@de.ibm.com,
- syzkaller-bugs@googlegroups.com, bp@alien8.de, viro@zeniv.linux.org.uk,
- tglx@linutronix.de, mingo@redhat.com, christian@brauner.io, axboe@kernel.dk,
- chris@zankel.net, jeremy@azazel.net, sw@simonwunderlich.de,
- linux-api@vger.kernel.org, b.a.t.m.a.n@lists.open-mesh.org, fw@strlen.de,
- linux-kernel@vger.kernel.org, netfilter-devel@vger.kernel.org,
- netdev@vger.kernel.org, akpm@linux-foundation.org, info@metux.net,
- davem@davemloft.net
+Cc: maz@kernel.org, kvmarm@lists.cs.columbia.edu
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jan 19, 2020 at 05:35:01PM -0800, syzbot wrote:
-> syzbot has bisected this bug to:
-> 
-> commit d68dbb0c9ac8b1ff52eb09aa58ce6358400fa939
-> Author: Christian Brauner <christian@brauner.io>
-> Date:   Thu Jun 20 23:26:35 2019 +0000
-> 
->     arch: handle arches who do not yet define clone3
-> 
-> bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=1456fed1e00000
-> start commit:   09d4f10a net: sched: act_ctinfo: fix memory leak
-> git tree:       net
-> final crash:    https://syzkaller.appspot.com/x/report.txt?x=1656fed1e00000
-> console output: https://syzkaller.appspot.com/x/log.txt?x=1256fed1e00000
-> kernel config:  https://syzkaller.appspot.com/x/.config?x=7e89bd00623fe71e
-> dashboard link: https://syzkaller.appspot.com/bug?extid=6491ea8f6dddbf04930e
-> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=141af959e00000
-> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1067fa85e00000
-> 
-> Reported-by: syzbot+6491ea8f6dddbf04930e@syzkaller.appspotmail.com
-> Fixes: d68dbb0c9ac8 ("arch: handle arches who do not yet define clone3")
-> 
-> For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+Updates to the Generic Timer architecture allow ID_PFR1.GenTimer to
+have values other than 0 or 1 while still preserving backward
+compatibility. At the moment, Linux is quite strict in the way it
+handles this field at early boot and will not configure arch timer if
+it doesn't find the value 1.
 
-This bisect seems bogus.
+Since here use ubfx for arch timer version extraction (hyb-stub build
+with -march=armv7-a, so it is safe)
 
-Christian
+To help backports (even though the code was correct at the time of writing)
+Fixes: 8ec58be9f3ff ("ARM: virt: arch_timers: enable access to physical timers")
+Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
+---
+
+Changelog:
+
+    v1 -> v2
+       - Clarify that backward compatibility is preserved (per Marc)
+
+ arch/arm/kernel/hyp-stub.S | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm/kernel/hyp-stub.S b/arch/arm/kernel/hyp-stub.S
+index ae50203..6607fa8 100644
+--- a/arch/arm/kernel/hyp-stub.S
++++ b/arch/arm/kernel/hyp-stub.S
+@@ -146,10 +146,9 @@ ARM_BE8(orr	r7, r7, #(1 << 25))     @ HSCTLR.EE
+ #if !defined(ZIMAGE) && defined(CONFIG_ARM_ARCH_TIMER)
+ 	@ make CNTP_* and CNTPCT accessible from PL1
+ 	mrc	p15, 0, r7, c0, c1, 1	@ ID_PFR1
+-	lsr	r7, #16
+-	and	r7, #0xf
+-	cmp	r7, #1
+-	bne	1f
++	ubfx	r7, r7, #16, #4
++	teq	r7, #0
++	beq	1f
+ 	mrc	p15, 4, r7, c14, c1, 0	@ CNTHCTL
+ 	orr	r7, r7, #3		@ PL1PCEN | PL1PCTEN
+ 	mcr	p15, 4, r7, c14, c1, 0	@ CNTHCTL
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
