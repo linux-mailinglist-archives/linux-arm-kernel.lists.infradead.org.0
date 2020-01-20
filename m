@@ -2,88 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D85B4142FA8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 17:29:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6C614302F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 17:46:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fC9LTiSQLKCUmZRoIUoPMhJQehXHEaLyNSsjy6COpGs=; b=p7K9TcHkddYRt7
-	TS1CZxZZXzySW4QlFJE/kIiVFi6Kv8xqakdHVWGvL0HLWDSVrabfIEnb/J5EvqSpoXVlMc7O5yduT
-	jinUCnFSBoSjGCK2IrvBQQ1+J1xl7/UF0Zo6lpWnPCjUQzIbEZbcCeAFtHPPQja8nGk7ad2IsjYSn
-	/EkqCmZ8OmrmOb/sTGgpEc4l8WftXQHHmjixuVbEZQbWv5rL2YXqWiGa/zAh3gHG+Mr8FPwWYkIU0
-	Wyqtdo/bkvNNWfUAqbP9ypdFTaLuINR24pAey+fRWFXcP6gLJuvLMNBjq0lipHTSsrB+rB/Jj/2K+
-	545uMA9uUqDdovCUL98w==;
+	List-Owner; bh=WiihLaIn6YTmSyLoSf6XXa24c6ugyta4Zf275h0QETg=; b=Om1aJ8Cmomiu2z
+	yk7vYcyYh8+nMGH1uc53pKeoHE8dxJwD7HJADrTQzB5jY6Pj+gprtq1TXoo6s1KZdmw5GHZa/f89/
+	danHP8rHNC94tdoRDUm904kaJiKnysXaRJ/1Es09lb9Cz3Gqkzgmydkifz2n1ni/ZhP0Se7fDCcFG
+	PGPutQM5L1/Lue0Xzk3Hq9pmepDAoiPAxg6tDkgkSfxCvbLMyFd0dNwlIyb2scaLqtfHubcq7yz2f
+	0yzYeQia0ZbX8wk8oJ+LphdEQ8aVoHt0qVbi6/hR77+PnzVxmAkTR5MGxg5azL4rucDfuNecrRsHY
+	FTFHyDw02Vm6064LXj5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itZvL-0002Ic-GY; Mon, 20 Jan 2020 16:29:11 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1itaBN-0000J7-8n; Mon, 20 Jan 2020 16:45:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itZuz-0002HP-Sh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 16:28:51 +0000
-Received: by mail-pg1-x542.google.com with SMTP id l24so15786419pgk.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Jan 2020 08:28:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=GR1APR+Wyd2YLYbRnsV0u2x1C6uwTZZ2OEWNdjnqjo4=;
- b=S6+Ui0Ryg93xsfEPW/3lRMkkxdRzUj5Lj4DWAsydzFghegwFbHnFn4k4+y4g+3n72x
- aLHNWwUI48bhXguZbAg7T8bRrfqn+CD+jmkVdCFXplLf/ZegqNFp+Ew4+PciPqsf8fXO
- 2BPK9SKgxQpIhyNCP5UxRci1fAXsIj7TQHQ5KiBuZidvYnf8hRi/jZcgxyg+W8ckdvO+
- yDKLUjJN5owNIXL43AP60swXX9MhAGAB8/9rcgWpoOfctWcx1kBj+csXRrMnOgfoFyqu
- AEhRqyShDMoqtf8kGVGOvM20fPC/reJw4pAWJJZB2jh+qVq2w9eb1He8yJ32mbzTIzKi
- WwEQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GR1APR+Wyd2YLYbRnsV0u2x1C6uwTZZ2OEWNdjnqjo4=;
- b=XCkme3rTNOgv+x2BDy/yyuN8JIddgD3VRqpqM1A0v+i9WiYXEGQhy6jIYHscIUVLv0
- /gU40/OhywUUpFqpdSNo128HtiMSlv+a86eT49ILceUZ4mjOuAvragGF+/XAz2syGnk4
- Gyv4DRATvR/gSyW+vkXWQXVgy0JA5NWU4PNpz0qd1HQRJROdmOvAQQVOrBIrizzMYY6y
- Pvgjsz8587PydwvfGdn8nsOaUZDHNsYmd7chHONfu43cRVv4zth4WFmtVAs1vg33X86d
- PC/TCbYOeb+lJrUB2FLBSeYBJ2FlcEQlQQOknrarhTYEkedQAvrRR+7FkTFXKymPsp4I
- Owbg==
-X-Gm-Message-State: APjAAAX3BglBqhKUHzUwT1chk0V6P8mQUl4ZH6PA67xP55qVeLsCccgS
- 5d4QmbagXHymFOwYyyAbgog=
-X-Google-Smtp-Source: APXvYqwsolQ7KdarCdpFxI9kDgOcqi9S5elKUvLwcvNAHuPL+EqeFJc3kZAVTtrTKnyWkVXKShj07w==
-X-Received: by 2002:a63:3dc6:: with SMTP id k189mr453630pga.396.1579537728723; 
- Mon, 20 Jan 2020 08:28:48 -0800 (PST)
-Received: from localhost (64.64.229.47.16clouds.com. [64.64.229.47])
- by smtp.gmail.com with ESMTPSA id w11sm38347342pfn.4.2020.01.20.08.28.47
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 Jan 2020 08:28:48 -0800 (PST)
-Date: Tue, 21 Jan 2020 00:28:45 +0800
-From: Dejin Zheng <zhengdejin5@gmail.com>
-To: kbuild test robot <lkp@intel.com>
-Subject: Re: [PATCH v2 2/2] net: stmmac: remove the useless member phy_mask
-Message-ID: <20200120162845.GA11480@nuc8i5>
-References: <20200108072550.28613-3-zhengdejin5@gmail.com>
- <202001181542.rImVkJEi%lkp@intel.com>
+ id 1itaB7-0000IH-O2
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 16:45:35 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E4F8821D7E;
+ Mon, 20 Jan 2020 16:45:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579538728;
+ bh=NvO0siSwwxO0od6b+c4oOE3lVbGyQHmKZgzCGz8o/HI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UaNhz2ukIxmhYGHZQedsg0b1m/41I3MG7kVbFreWrziYIwKovCdVODZy9+MDsCQDs
+ Pn5CzpyghtiCRiu7LBDE6Y3dfnaetU+BE4XDYJ/Lbur25TuN8KL/Jgt8e3N7NIN0ST
+ OFn9M9k0fEjJD3H8US5oMZtsS6MiW0RFmunqtBwE=
+Date: Mon, 20 Jan 2020 16:45:23 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>, maz@kernel.org
+Subject: Re: [PATCH] arm64: kvm: Annotate guest entry/exit as a single function
+Message-ID: <20200120164522.GA20435@willie-the-truck>
+References: <20200120124706.8681-1-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202001181542.rImVkJEi%lkp@intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200120124706.8681-1-broonie@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_082849_935548_DF7FCDC3 
-X-CRM114-Status: GOOD (  20.62  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200120_084529_803114_987FE8AF 
+X-CRM114-Status: GOOD (  17.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhengdejin5[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhengdejin5[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,80 +76,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, kbuild-all@lists.01.org, alexandre.torgue@st.com,
- weifeng.voon@intel.com, martin.blumenstingl@googlemail.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, tglx@linutronix.de,
- treding@nvidia.com, davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jan 18, 2020 at 03:51:11PM +0800, kbuild test robot wrote:
-> Hi Dejin,
-> 
-> Thank you for the patch! Yet something to improve:
->
+[+Marc Z]
 
-Thanks for reminding, This patch has been dropped, the patch V3 that replaced
-it no longer contains this content, Please refer to
-https://patchwork.ozlabs.org/patch/1219694/ for details. It should be fine after
-giving up this commit.
-
-Finally, Thanks a lot for Jose's help (Jose.Abreu@synopsys.com), he told me 
-that the phy_mask is useful and should be kept when I submit this commit.
-
-BR,
-Dejin
-
-> [auto build test ERROR on net-next/master]
-> [also build test ERROR on net/master linus/master v5.5-rc6]
-> [cannot apply to sparc-next/master next-20200117]
-> [if your patch is applied to the wrong git tree, please drop us a note to help
-> improve the system. BTW, we also suggest to use '--base' option to specify the
-> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+On Mon, Jan 20, 2020 at 12:47:06PM +0000, Mark Brown wrote:
+> In an effort to clarify and simplify the annotations of assembly
+> functions in the kernel new macros have been introduced replacing ENTRY
+> and ENDPROC. There are separate annotations SYM_FUNC_ for normal C
+> functions and SYM_CODE_ for other code. Currently __guest_enter and
+> __guest_exit are annotated as standard functions but this is not
+> entirely correct as the former doesn't do a normal return and the latter
+> is not entered in a normal fashion. From the point of view of the
+> hypervisor the guest entry/exit may be viewed as a single
+> function which happens to have an eret in the middle of it so let's
+> annotate it as such.
 > 
-> url:    https://github.com/0day-ci/linux/commits/Dejin-Zheng/net-stmmac-remove-useless-code-of-phy_mask/20200110-011131
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git daea5b4dc16c3edc90392a512492dae504f1a37a
-> config: mips-randconfig-a001-20200118 (attached as .config)
-> compiler: mipsel-linux-gcc (GCC) 5.5.0
-> reproduce:
->         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         # save the attached .config to linux build tree
->         GCC_VERSION=5.5.0 make.cross ARCH=mips 
-> 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
-> 
-> All errors (new ones prefixed by >>):
-> 
-> >> arch/mips//loongson32/common/platform.c:82:2: error: unknown field 'phy_mask' specified in initializer
->      .phy_mask = 0,
->      ^
-> 
-> vim +/phy_mask +82 arch/mips//loongson32/common/platform.c
-> 
-> f29ad10de6c345 arch/mips/loongson1/common/platform.c Kelvin Cheung 2014-10-10  79  
-> ca585cf9fb818b arch/mips/loongson1/common/platform.c Kelvin Cheung 2012-07-25  80  /* Synopsys Ethernet GMAC */
-> f29ad10de6c345 arch/mips/loongson1/common/platform.c Kelvin Cheung 2014-10-10  81  static struct stmmac_mdio_bus_data ls1x_mdio_bus_data = {
-> f29ad10de6c345 arch/mips/loongson1/common/platform.c Kelvin Cheung 2014-10-10 @82  	.phy_mask	= 0,
-> f29ad10de6c345 arch/mips/loongson1/common/platform.c Kelvin Cheung 2014-10-10  83  };
-> f29ad10de6c345 arch/mips/loongson1/common/platform.c Kelvin Cheung 2014-10-10  84  
-> 
-> :::::: The code at line 82 was first introduced by commit
-> :::::: f29ad10de6c345c8ae4cb33a99ba8ff29bdcd751 MIPS: Loongson1B: Some fixes/updates for LS1B
-> 
-> :::::: TO: Kelvin Cheung <keguang.zhang@gmail.com>
-> :::::: CC: Ralf Baechle <ralf@linux-mips.org>
-> 
+> Suggested-by: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 > ---
-> 0-DAY kernel test infrastructure                 Open Source Technology Center
-> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+>  arch/arm64/kvm/hyp/entry.S | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+> index e5cc8d66bf53..5b76a89939b1 100644
+> --- a/arch/arm64/kvm/hyp/entry.S
+> +++ b/arch/arm64/kvm/hyp/entry.S
+> @@ -44,7 +44,7 @@
+>   * u64 __guest_enter(struct kvm_vcpu *vcpu,
+>   *		     struct kvm_cpu_context *host_ctxt);
+>   */
+> -ENTRY(__guest_enter)
+> +SYM_FUNC_START(__guest_enter)
+>  	// x0: vcpu
+>  	// x1: host context
+>  	// x2-x17: clobbered by macros
+> @@ -96,9 +96,8 @@ alternative_else_nop_endif
+>  	// Do not touch any register after this!
+>  	eret
+>  	sb
+> -ENDPROC(__guest_enter)
+>  
+> -ENTRY(__guest_exit)
+> +SYM_INNER_LABEL(__guest_exit, SYM_L_GLOBAL)
+>  	// x0: return code
+>  	// x1: vcpu
+>  	// x2-x29,lr: vcpu regs
+> @@ -192,4 +191,4 @@ abort_guest_exit_end:
+>  	msr	spsr_el2, x4
+>  	orr	x0, x0, x5
+>  1:	ret
+> -ENDPROC(__guest_exit)
+> +SYM_FUNC_END(__guest_enter)
 
+I wondered what the INNER_LABEL thing was for! Looks good:
 
+Acked-by: Will Deacon <will@kernel.org>
+
+Assuming this is going via the kvm tree.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
