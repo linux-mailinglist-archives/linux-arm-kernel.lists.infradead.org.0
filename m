@@ -2,63 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13901143134
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 18:59:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C931C14313B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 19:02:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lcqsLy7N6WK6JF8R3UzQ+CFPabKBUAFrrf0oD+mO0Ec=; b=jfPsETrMLmJPrC
-	9QsnkhqmQ85iHK7qjnJ1QF28DQ58BfxQQ2/ZbpUNmFn57hLNiwuYFhM5TOG1S6hfjYT47le5cfDoo
-	8OOh6pgmNnqKNvFcKZwMdbZCObHgupfOSoCJMtGnI/JfpuX9B229Ntv1O96z47Ost/eh+2hXZ4mq7
-	5UDIpXMFIpVpTDTyZUkOI9Uu7tYpbdA39lsYf3Y1iGqJkzEORjIcUqUSp7usQzfcHOploC1JsqJsn
-	hSq+ON5S9XyK6rXy5jtzul07kmT8LLA2RwsuCEXLTZiXLENF2X9ALcFnsayPEaayI97P60ohyOSIU
-	r9uBuELm2toCMmiWjgsQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ou1mDgsIjBvl+MC0CjL+QkzWfwqvfxItamJlrVUGz1U=; b=X+i
+	8Qmd9s+M4JbF+uuEX1MPUSmXVXmfchd0jtMImZGL6wYP0FlP2JeuotlAw8b6nIrRZ0Sa7KT58Y1rP
+	FDSzWDsEv6IXjujHdViBfeykBBiH9crbrmFRKDZaumPGeqRzFv2RwYbc3dObkbPne5xI6BjKKqDsJ
+	yBzMH6ow6WQSGD/axO0VtdvVLm48mg53wob900vjf4wOOKasm0QK2/U1bbQnQ03IDJxycmyhZP6F+
+	JZtKIdhbrxiJ50InK1aTF2GiZwZMg2s7oqbF2VPS8jZGztQ7M8EQbAAKU3z/sEbvHf6r2kx7Rz8yR
+	SNV+gSDiS8d0x1m3KqDJ+8V3l/N/+uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itbKf-0003GN-G8; Mon, 20 Jan 2020 17:59:25 +0000
-Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
+	id 1itbNy-0004mq-9n; Mon, 20 Jan 2020 18:02:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itbKV-0003Fs-7a
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 17:59:18 +0000
-Received: from zn.tnic (p200300EC2F03FF0075FD4DB0C8DF3C59.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f03:ff00:75fd:4db0:c8df:3c59])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1itbNi-0004m2-UW
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 18:02:40 +0000
+Received: from localhost.localdomain (unknown [194.230.155.229])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 2D4FA1EC08E5;
- Mon, 20 Jan 2020 18:59:07 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1579543147;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=E8yvJahz8u60P3zYVn0P6etm4lyGGmfJf6bH0Xyy7nU=;
- b=XMd8vjuGkhMwuiJurJoolyqiOtsuPzlfQU9iSQRoOmrWlSkUGJb7hosQbL9t8FQ7PxTbpQ
- nn4Vc78yUd31Ad58e/FLUN/VcuvyrOQ2n3W2x0sz9j4qUl0ivg4dxbMn/3PvPE2AyqacLa
- OudmraXK5SPyti2iMRgwYV4piS2dsb8=
-Date: Mon, 20 Jan 2020 18:59:01 +0100
-From: Borislav Petkov <bp@alien8.de>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 00/10] Impveovements for random.h/archrandom.h
-Message-ID: <20200120175901.GB576@zn.tnic>
-References: <20200110145422.49141-1-broonie@kernel.org>
- <20200110155153.GG19453@zn.tnic> <20200110170559.GA304349@mit.edu>
- <20200120172627.GH6852@sirena.org.uk>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200120172627.GH6852@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2DFE522314;
+ Mon, 20 Jan 2020 18:02:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579543354;
+ bh=5g+nhNLBu3QaKcp7T3GYytUhOVrS04sl1IWrP+4wSqk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=r2hEtFLB/hocwTKWiMWXITcsdVBrZg7eEOoxP3U3OvU4tVMZVxa/qtumf7KuOsFAh
+ JB70raMw7aosIAQP3fV7enDBefarYoslwimkcYRBEPAUBbZU2qLHbOnCFWJT+sJzpQ
+ LuAD+Xk5GJeM2eWK5I5ZnnWx2Ld91bsUBbeHaNa4=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] ARM: defconfig: Samsung defconfig for v5.6
+Date: Mon, 20 Jan 2020 19:02:27 +0100
+Message-Id: <20200120180227.9061-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_095915_431594_6E3E4A63 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200120_100235_003207_9DBB82C1 
+X-CRM114-Status: GOOD (  11.64  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -68,6 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,33 +73,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- "Theodore Y. Ts'o" <tytso@mit.edu>, herbert@gondor.apana.org.au,
- x86@kernel.org, Richard Henderson <richard.henderson@linaro.org>,
- linux-crypto@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 20, 2020 at 05:26:27PM +0000, Mark Brown wrote:
-> I think the important thing here is that *someone* takes the patches.
-> We've now got Ted and Borislav both saying they're OK applying the
-> patches, an additional proposal that Andrew takes the patches, nobody
-> saying anything negative about applying the patches and yet the patches
-> are not applied.  The random tree sounds like a sensible enough tree to
-> take this so if Ted picks them up perhaps that's most sensible?
+Hi,
 
-Yes, Ted, pls pick them up so that we're done with this.
+I hope it is not too late for these defconfig changes.
 
-Thx.
 
--- 
-Regards/Gruss,
-    Boris.
+Best regards,
+Krzysztof
 
-https://people.kernel.org/tglx/notes-about-netiquette
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-defconfig-5.6
+
+for you to fetch changes up to cdfc88f1cdbf12b666dcf2da3f1de38fb1512262:
+
+  ARM: multi_v7_defconfig: Enable devfreq thermal integration (2020-01-17 20:28:54 +0100)
+
+----------------------------------------------------------------
+Samsung defconfig changes for v5.6
+
+1. Bring back explicitly wanted options which were removed through
+   `make savedefconfig`.  savedefconfig removes options selected by
+   other symbol, however developers of this other symbol can remove
+   anytime 'select' statement.
+2. Enable NFS v4.1 and v4.2, useful in testing/CI systems.
+3. Enable thermal throttling through devfreq framework.
+
+----------------------------------------------------------------
+Krzysztof Kozlowski (3):
+      ARM: exynos_defconfig: Bring back explicitly wanted options
+      ARM: exynos_defconfig: Enable NFS v4.1 and v4.2
+      ARM: multi_v7_defconfig: Enable NFS v4.1 and v4.2
+
+Marek Szyprowski (2):
+      ARM: exynos_defconfig: Enable devfreq thermal integration
+      ARM: multi_v7_defconfig: Enable devfreq thermal integration
+
+ arch/arm/configs/exynos_defconfig   | 9 +++++++++
+ arch/arm/configs/multi_v7_defconfig | 3 +++
+ 2 files changed, 12 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
