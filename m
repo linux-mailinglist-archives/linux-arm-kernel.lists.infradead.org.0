@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 547DB142A31
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:10:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F81142A38
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:11:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GP4y0puQ4btiQ4hh1pzgqFKmGA03wJpqtPWdSSLIlrU=; b=QaxenSPeTXwNqi
-	hiAFeb7TwhNDCvXiMZUObc+ekphIw07EYdFAR/4lj4e3wGWfnNfY7eNe518TLHGOGuagqDbpM1H8j
-	0win9Y/YMxVNUjldajyAGzi8R1+KBk8oLyevDvAV+trFqgmGXnQbAlHFA7sp+eKedBsw8RNV1+wtn
-	dn6vJrj1Sex0XU6Dr+iWT9O1qEvsZySvkyvyCC0n+M8zMqgfG10s1mJF7WSd567Pe8IIi/LaQLnpm
-	KQMz6ezMKlDAHM1c7AsmnWNaXSn3lxZRQwKJtqbXjOuSBG/t4yRK5XjbtgsM01sYJrq0p6ZmOHJ/I
-	HAgy6Z9w2DQLVyUqE7vA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NAHgKPuLPZzuckm3SGv3SvKF0DQdQs4YrHY1tWyu9ME=; b=LKb9r8tcg1RYmz
+	UttS6QdM9MacJKhwTAhsPGzxj+b7T5FAi7vxj0aKAig3enP76l2MJFkfLewIQiccyab+XFfBx9yO9
+	PVdRXAV9kjgNX8D6Ema1myCUYAU72hG8MO2WntS/t1g/Z1RNn78YO2UCPVaS2U+kxOXl84slg1CrF
+	KJScnFlXMT02uJCSPK+EHM1kMHSN2tWMQIhBIqTG1i3Ggr1U65hHWxPUZz7a0YXBuHjtOhBr3Qptg
+	wruf7t74mHo9QIsM0bwfCttl/Aojg2z/+oGp59QM3B3/BeKLxDkJ7sbjPnWe86e4g2gp9tYqUXhnI
+	hur/3Tvbb1dtwfxEc4ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itVt9-0004Di-6U; Mon, 20 Jan 2020 12:10:39 +0000
+	id 1itVtP-0004QG-BE; Mon, 20 Jan 2020 12:10:55 +0000
 Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itVsn-0004BO-67
+ id 1itVsn-0004BR-Fa
  for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 12:10:24 +0000
 Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
@@ -45,36 +45,37 @@ Authentication-Results: esa3.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: XEy717sxOr71dn09PLikfej5708fGKlOQUL4mTn2B5K88s3962nMAUIWEZSTEpshtT/PAp/Fdj
- pziXUOmrO/lKSGbPkGv9lTAP+rJtmx2z57XH+1aLpgxloj4d4r/gZ7k5Z9P89/aIBhxEeEw/3j
- NiQvTci7gCsm4tfhhWzEx5onLERQFlv8P+ak5Fvpk3iU0nwQ6A4/E/vuTztuWxVTBT0oHooamO
- 3AFG+OX2X4UQ88HLrAAEkC6quoyC11TivTefNwgmnCG9vQOVieGqOvFA+dWanrjXja2ebJMgSZ
- tN0=
-X-IronPort-AV: E=Sophos;i="5.70,341,1574146800"; d="scan'208";a="63869209"
+IronPort-SDR: s60d5Kps1H4InEvh8F/H03ak+NmVqUPeIvTe9jBCmXijXR/zzuhnYwSnMVSq0vFceb0LEoP6sq
+ MYks1/lWuJ8yeBcw0e5dF5RNh2NgTXxWsMSEF3CoiVXGUYQUXp78DLMVtlqrQgRWlwc6Tiiajr
+ WuU0biLYDTr9alV2hqbxMRG8K+MhYxqMCZRYwhAsR0jxWf4C0s2HfC9kBzLoMDJKt0YwpeUxm9
+ Qa3zd6wz35wOb7ZiBo4/mrc9XLPKEwNL5puxHOXwGqEI9wupZkwXUgpIJ/oimjm/pEhVC6vJG/
+ 0/Y=
+X-IronPort-AV: E=Sophos;i="5.70,341,1574146800"; d="scan'208";a="63869225"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 20 Jan 2020 05:10:13 -0700
+ 20 Jan 2020 05:10:16 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 20 Jan 2020 05:10:12 -0700
+ 15.1.1713.5; Mon, 20 Jan 2020 05:10:15 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Mon, 20 Jan 2020 05:10:10 -0700
+ 15.1.1713.5 via Frontend Transport; Mon, 20 Jan 2020 05:10:14 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <ludovic.desroches@microchip.com>, <linux@armlinux.org.uk>,
  <mturquette@baylibre.com>, <sboyd@kernel.org>
-Subject: [PATCH 0/8] PM fixes and improvements for SAM9X60
-Date: Mon, 20 Jan 2020 14:10:00 +0200
-Message-ID: <1579522208-19523-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 1/8] ARM: at91: pm: use proper master clock register offset
+Date: Mon, 20 Jan 2020 14:10:01 +0200
+Message-ID: <1579522208-19523-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1579522208-19523-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1579522208-19523-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_041018_554558_904900F8 
-X-CRM114-Status: UNSURE (   6.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200120_041018_554297_5248533D 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -102,35 +103,216 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+SAM9X60's PMC has different master clock register offset than the other
+SoCs' PMC. Due to this, specify master clock register offset based
+on PMC compatible and pass it to pm_suspend.S since it is also needed
+in there. When PM part for SAM9X60 was published the SAM9X60's PMC
+(commit f6deae46039c ("clk: at91: add sam9x60 pmc driver")) wasn't
+integrated.
 
-This series adds fixes and improvements for SAM9X60 as follows:
-- fix master clock register offset in pm_suspend.S
-- add support for disable/enable PLL for SAM9X60
-- minor fix in pm_suspend.S: s/sfr/sfrbu
-- move SAM9X60's macros for PLL in include/linux/clk/at91_pmc.h
+Fixes: fd2280a1829b ("ARM: at91: pm: initial PM support for SAM9X60")
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ arch/arm/mach-at91/pm.c              | 28 +++++++++++++++++++++++-----
+ arch/arm/mach-at91/pm.h              |  1 +
+ arch/arm/mach-at91/pm_data-offsets.c |  2 ++
+ arch/arm/mach-at91/pm_suspend.S      | 32 ++++++++++++++++++++------------
+ 4 files changed, 46 insertions(+), 17 deletions(-)
 
-Thank you,
-Claudiu Beznea
-
-Claudiu Beznea (8):
-  ARM: at91: pm: use proper master clock register offset
-  Revert "ARM: at91: pm: do not disable/enable PLLA for ULP modes"
-  ARM: at91: pm: add macros for plla disable/enable
-  ARM: at91: pm: add pmc_version member to at91_pm_data
-  ARM: at91: pm: s/sfr/sfrbu in pm_suspend.S
-  clk: at91: move sam9x60's PLL register offsets to PMC header
-  ARM: at91: pm: add plla disable/enable support for sam9x60
-  ARM: at91: pm: add quirk for sam9x60's ulp1
-
- arch/arm/mach-at91/pm.c              |  35 ++++++-
- arch/arm/mach-at91/pm.h              |   2 +
- arch/arm/mach-at91/pm_data-offsets.c |   4 +
- arch/arm/mach-at91/pm_suspend.S      | 189 ++++++++++++++++++++++++++++++++---
- drivers/clk/at91/clk-sam9x60-pll.c   |  91 +++++++----------
- include/linux/clk/at91_pmc.h         |  23 +++++
- 6 files changed, 270 insertions(+), 74 deletions(-)
-
+diff --git a/arch/arm/mach-at91/pm.c b/arch/arm/mach-at91/pm.c
+index 374b9d155558..ae7b148febd9 100644
+--- a/arch/arm/mach-at91/pm.c
++++ b/arch/arm/mach-at91/pm.c
+@@ -736,13 +736,30 @@ static void __init at91_pm_modes_init(void)
+ 
+ struct pmc_info {
+ 	unsigned long uhp_udp_mask;
++	unsigned long mckr;
+ };
+ 
+ static const struct pmc_info pmc_infos[] __initconst = {
+-	{ .uhp_udp_mask = AT91RM9200_PMC_UHP | AT91RM9200_PMC_UDP },
+-	{ .uhp_udp_mask = AT91SAM926x_PMC_UHP | AT91SAM926x_PMC_UDP },
+-	{ .uhp_udp_mask = AT91SAM926x_PMC_UHP },
+-	{ .uhp_udp_mask = 0 },
++	{
++		.uhp_udp_mask = AT91RM9200_PMC_UHP | AT91RM9200_PMC_UDP,
++		.mckr = 0x30,
++	},
++
++	{
++		.uhp_udp_mask = AT91SAM926x_PMC_UHP | AT91SAM926x_PMC_UDP,
++		.mckr = 0x30,
++	},
++	{
++		.uhp_udp_mask = AT91SAM926x_PMC_UHP,
++		.mckr = 0x30,
++	},
++	{	.uhp_udp_mask = 0,
++		.mckr = 0x30,
++	},
++	{
++		.uhp_udp_mask = AT91SAM926x_PMC_UHP | AT91SAM926x_PMC_UDP,
++		.mckr = 0x28,
++	},
+ };
+ 
+ static const struct of_device_id atmel_pmc_ids[] __initconst = {
+@@ -757,7 +774,7 @@ static const struct of_device_id atmel_pmc_ids[] __initconst = {
+ 	{ .compatible = "atmel,sama5d3-pmc", .data = &pmc_infos[1] },
+ 	{ .compatible = "atmel,sama5d4-pmc", .data = &pmc_infos[1] },
+ 	{ .compatible = "atmel,sama5d2-pmc", .data = &pmc_infos[1] },
+-	{ .compatible = "microchip,sam9x60-pmc", .data = &pmc_infos[1] },
++	{ .compatible = "microchip,sam9x60-pmc", .data = &pmc_infos[4] },
+ 	{ /* sentinel */ },
+ };
+ 
+@@ -779,6 +796,7 @@ static void __init at91_pm_init(void (*pm_idle)(void))
+ 
+ 	pmc = of_id->data;
+ 	soc_pm.data.uhp_udp_mask = pmc->uhp_udp_mask;
++	soc_pm.data.pmc_mckr_offset = pmc->mckr;
+ 
+ 	if (pm_idle)
+ 		arm_pm_idle = pm_idle;
+diff --git a/arch/arm/mach-at91/pm.h b/arch/arm/mach-at91/pm.h
+index 9fa4f483f2b5..6f7f4236865a 100644
+--- a/arch/arm/mach-at91/pm.h
++++ b/arch/arm/mach-at91/pm.h
+@@ -33,6 +33,7 @@ struct at91_pm_data {
+ 	void __iomem *sfrbu;
+ 	unsigned int standby_mode;
+ 	unsigned int suspend_mode;
++	unsigned int pmc_mckr_offset;
+ };
+ #endif
+ 
+diff --git a/arch/arm/mach-at91/pm_data-offsets.c b/arch/arm/mach-at91/pm_data-offsets.c
+index f2d893c03cd9..dfcbe626865c 100644
+--- a/arch/arm/mach-at91/pm_data-offsets.c
++++ b/arch/arm/mach-at91/pm_data-offsets.c
+@@ -12,6 +12,8 @@ int main(void)
+ 	DEFINE(PM_DATA_MODE,		offsetof(struct at91_pm_data, mode));
+ 	DEFINE(PM_DATA_SHDWC,		offsetof(struct at91_pm_data, shdwc));
+ 	DEFINE(PM_DATA_SFRBU,		offsetof(struct at91_pm_data, sfrbu));
++	DEFINE(PM_DATA_PMC_MCKR_OFFSET,	offsetof(struct at91_pm_data,
++						 pmc_mckr_offset));
+ 
+ 	return 0;
+ }
+diff --git a/arch/arm/mach-at91/pm_suspend.S b/arch/arm/mach-at91/pm_suspend.S
+index ed57c879d4e1..52b262d56cfd 100644
+--- a/arch/arm/mach-at91/pm_suspend.S
++++ b/arch/arm/mach-at91/pm_suspend.S
+@@ -93,6 +93,8 @@ ENTRY(at91_pm_suspend_in_sram)
+ 	str	tmp1, .memtype
+ 	ldr	tmp1, [r0, #PM_DATA_MODE]
+ 	str	tmp1, .pm_mode
++	ldr	tmp1, [r0, #PM_DATA_PMC_MCKR_OFFSET]
++	str	tmp1, .mckr_offset
+ 	/* Both ldrne below are here to preload their address in the TLB */
+ 	ldr	tmp1, [r0, #PM_DATA_SHDWC]
+ 	str	tmp1, .shdwc
+@@ -138,9 +140,10 @@ ENDPROC(at91_pm_suspend_in_sram)
+ ENTRY(at91_backup_mode)
+ 	/* Switch the master clock source to slow clock. */
+ 	ldr	pmc, .pmc_base
+-	ldr	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp2, .mckr_offset
++	ldr	tmp1, [pmc, tmp2]
+ 	bic	tmp1, tmp1, #AT91_PMC_CSS
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	str	tmp1, [pmc, tmp2]
+ 
+ 	wait_mckrdy
+ 
+@@ -218,6 +221,7 @@ ENDPROC(at91_backup_mode)
+  */
+ .macro at91_pm_ulp1_mode
+ 	ldr	pmc, .pmc_base
++	ldr	tmp2, .mckr_offset
+ 
+ 	/* Save RC oscillator state and check if it is enabled. */
+ 	ldr	tmp1, [pmc, #AT91_PMC_SR]
+@@ -254,10 +258,10 @@ ENDPROC(at91_backup_mode)
+ 	str	tmp1, [pmc, #AT91_CKGR_MOR]
+ 
+ 	/* Switch the master clock source to main clock */
+-	ldr	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp1, [pmc, tmp2]
+ 	bic	tmp1, tmp1, #AT91_PMC_CSS
+ 	orr	tmp1, tmp1, #AT91_PMC_CSS_MAIN
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	str	tmp1, [pmc, tmp2]
+ 
+ 	wait_mckrdy
+ 
+@@ -280,9 +284,9 @@ ENDPROC(at91_backup_mode)
+ 	wait_moscrdy
+ 
+ 	/* Switch the master clock source to slow clock */
+-	ldr	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp1, [pmc, tmp2]
+ 	bic	tmp1, tmp1, #AT91_PMC_CSS
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	str	tmp1, [pmc, tmp2]
+ 
+ 	wait_mckrdy
+ 
+@@ -296,10 +300,10 @@ ENDPROC(at91_backup_mode)
+ 	wait_moscsels
+ 
+ 	/* Switch the master clock source to main clock */
+-	ldr	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp1, [pmc, tmp2]
+ 	bic	tmp1, tmp1, #AT91_PMC_CSS
+ 	orr	tmp1, tmp1, #AT91_PMC_CSS_MAIN
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	str	tmp1, [pmc, tmp2]
+ 
+ 	wait_mckrdy
+ 
+@@ -325,16 +329,17 @@ ENDPROC(at91_backup_mode)
+ 
+ ENTRY(at91_ulp_mode)
+ 	ldr	pmc, .pmc_base
++	ldr	tmp2, .mckr_offset
+ 
+ 	/* Save Master clock setting */
+-	ldr	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp1, [pmc, tmp2]
+ 	str	tmp1, .saved_mckr
+ 
+ 	/*
+ 	 * Set the Master clock source to slow clock
+ 	 */
+ 	bic	tmp1, tmp1, #AT91_PMC_CSS
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	str	tmp1, [pmc, tmp2]
+ 
+ 	wait_mckrdy
+ 
+@@ -355,8 +360,9 @@ ulp_exit:
+ 	/*
+ 	 * Restore master clock setting
+ 	 */
+-	ldr	tmp1, .saved_mckr
+-	str	tmp1, [pmc, #AT91_PMC_MCKR]
++	ldr	tmp1, .mckr_offset
++	ldr	tmp2, .saved_mckr
++	str	tmp2, [pmc, tmp1]
+ 
+ 	wait_mckrdy
+ 
+@@ -502,6 +508,8 @@ ENDPROC(at91_sramc_self_refresh)
+ 	.word 0
+ .pm_mode:
+ 	.word 0
++.mckr_offset:
++	.word 0
+ .saved_mckr:
+ 	.word 0
+ .saved_sam9_lpr:
 -- 
 2.7.4
 
