@@ -2,44 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6009142A97
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:25:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED73A142AA7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 13:25:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nCi5nQL13Hk1t1/65kVADnwPWAXY5B0rBMfoKBfkayQ=; b=ZXz
-	TcCij+Z+PzNyDeGaufPboG9WiA6hAxZZUS/lDlV3nO4FpRb2F/zC0HOyi4iZE1W/z4Y8X9/KikUxK
-	9mJNXKliEPd7jFa88AxgkPV8tOEA3+TF/DQ8rofkhPmvZUv+d/Vp3Z6nhMaUzcz/4mSoOH2AvNrCp
-	qgd3EYuwM65/S5AgQjhyhkllM7r85X1fsRhy6vGvlVbR8mgqtwE20TB3bvLsKHXH7WLkyxjl2oC4U
-	6tQTPpAPmze2tGH4+K/FgRTxpCWkGMQAN0+oSOtAcfBgs6aFbWOSwVbEskvVCGrDMGFlmzAXuFJyR
-	7q5JsuSD3xc2sgKG1wYXoy50TdJR8GQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xOVI/dIe+7VeSb7EdNPKg5Pc42aTXkro+LZAhdCPLp0=; b=kZejK2d8T5usJku5zgzx2qMXHd
+	JSylDYOoC8v8VRGYt8uJTv0YEk/JAYTPTAvRFR8gS0kH3E9/0+ZEmIbm3Nud5Hbl+LQs58fxiDnLj
+	PRloLefpZxqmq+x1tqbxnPL2EK/a3CctuC/XBz4uFFjdoVHQDUqWJWlPM/t39YbCLazFMhPtZc+is
+	qTX7hATnCZG7evy5SzMg0zMr84n5gmqlLSR/zB6NoN4gGijBWv61nef15A3S7Yfdz4F7e9wenFSxc
+	AILAi++flvRQ6S/gMQwh6q+iKfrcqCLxExjfllBGmdkoyZDP4XYBqF8yhzlRFZXYbQSm5L2THTzsf
+	2M4lqSsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itW6o-0001WP-Rt; Mon, 20 Jan 2020 12:24:46 +0000
+	id 1itW7G-0001ix-Vw; Mon, 20 Jan 2020 12:25:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itW6U-0001Tg-NP
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 12:24:32 +0000
+ id 1itW6V-0001Ti-Ol
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 12:24:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64E6530E;
- Mon, 20 Jan 2020 04:24:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CFF1FEC;
+ Mon, 20 Jan 2020 04:24:25 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F2E43F68E;
- Mon, 20 Jan 2020 04:24:23 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 974623F68E;
+ Mon, 20 Jan 2020 04:24:24 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH 00/11] SCMI Notifications Support
-Date: Mon, 20 Jan 2020 12:23:22 +0000
-Message-Id: <20200120122333.46217-1-cristian.marussi@arm.com>
+Subject: [RFC PATCH 01/11] firmware: arm_scmi: Add receive buffer support for
+ notifications
+Date: Mon, 20 Jan 2020 12:23:23 +0000
+Message-Id: <20200120122333.46217-2-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200120122333.46217-1-cristian.marussi@arm.com>
+References: <20200120122333.46217-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_042426_851570_12815B33 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20200120_042427_890396_BC246A42 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,133 +72,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-this series wants to introduce SCMI Notification Support, built on top of
-the standard Kernel notification chain subsystem.
+With all the plumbing in place, let's just add the separate dedicated
+receive buffers to handle notifications that can arrive asynchronously
+from the platform firmware to OS.
 
-At initialization time each SCMI Protocol takes care to register with the
-new SCMI notification core the set of its own events which it intends to
-support.
+Also add check to see if the platform supports any receive channels
+before allocating the receive buffers.
 
-Using a possibly proposed API in scmi_protocol.h (not finalized though,
-NO EXPORTs_) a Kernel user can register its own notifier_t callback
-(so via a notifier_block as usual) against any registered event as
-identified by the tuple:
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ drivers/firmware/arm_scmi/driver.c | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
 
-		(proto_id, event_id, src_id)
-
-where src_id represents a generic source identifier which is protocol
-dependent like domain_id, performance_id, sensor_id and so forth.
-(users can anyway do NOT provide any src_id, and subscribe instead to ALL
- the existing (if any) src_id sources for that proto_id/evt_id combination)
-
-Each of the above tuple-specified event will be served on its own dedicated
-blocking notification chain; given the great number of possible events, and
-the extensibility of the SCMI Protocol itself, all the underlying machinery
-of notifications chains it is dynamically created and destroyed at run-time
-on-demand, depending on the number of effective registered users: no users
-no allocations at all.
-
-Upon a notification delivery all the users' registered notifier_t callbacks
-will be in turn invoked and fed with the event_id as @action param and a
-generated custom per-event report struct as @data param.
-Each event report carries also a timestamp, gathered when the notification
-message had first entered the richOS world in the SCMI rx ISR.
-
-The final step of notification delivery via users' callback invocation is
-instead delegated to a pool of deferred workers (Kernel cmwq): each
-SCMI protocol has its own dedicated worker and queue to push events from
-the rx ISR to the worker.
-
-Additionally, since the original Kernel notification chain mechanism does
-not stop users' registered callbacks from interacting with the notification
-delivery itself (like cutting the chain with a NOTIFY_STOP or mangling the
-*data report struct along the way), it was thought that such behaviour was
-generally undesirable for a notification delivery service, and a possible
-'anti-tampering' solution is proposed in patch [02/11]
-
-("firmware: arm_scmi: Add notifications anti-tampering")
-
-but maybe this attempt is not worth the cost of the additional complication
-or simply deemed not needed (being anyway in Kernel land), in such a case
-the above anti-tampering commit can simply be dropped from the series.
-
-The series is marked as RFC mainly because:
-
-- the API as said is tentative and not EXPORTed; currently consisting of a
-  per-protocol interface like:
- 	 scmi_register_<proto>_event_notifier(evt_id, *src_id, *nb)
-
-  but it could be simplified to one single simpler generic one like:
-
- 	 scmi_register_event_notifier(proto_id, evt_id, *src_id, *nb)
-
-  It's open for discussion.
-
-- no Event priorization has been considered: each protocol has its own
-  queue and deferred worker instance, so as to avoid that one protocol
-  flooding can overrun a single queue and influence other protocols'
-  notifications' delivery.
-  But that's it, all the workers are unbound, low_pri cmwq workers.
-
-  Should we enforce some sort of built-in prio amongst the events ?
-  Should this priority instead be compile time configurable ?
-
-  Again, open for discussion.
-
-- no configuration is possible: it can be imagined that on a real platform
-  events' priority (if any) and events queues' depth could be something
-  somehow compile-time configurable, but this is not addressed by this
-  series at all.
-
-Based on scmi-next [1], on top of:
-
-commit 257d0e20ec4f ("include: trace: Add SCMI header with trace events")
-
-This series has been tested on JUNO with an experimental firmware only
-supporting Perf Notifications.
-
-Any thoughts ?
-
-Thanks
-
-Cristian
-----
-
-[1] git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git
-
-Cristian Marussi (8):
-  firmware: arm_scmi: Add core notifications support
-  firmware: arm_scmi: Add notifications anti-tampering
-  firmware: arm_scmi: Enable core notifications
-  firmware: arm_scmi: Add Power notifications support
-  firmware: arm_scmi: Add Perf notifications support
-  firmware: arm_scmi: Add Sensor notifications support
-  firmware: arm_scmi: Add Reset notifications support
-  firmware: arm_scmi: Add Base notifications support
-
-Sudeep Holla (3):
-  firmware: arm_scmi: Add receive buffer support for notifications
-  firmware: arm_scmi: Update protocol commands and notification list
-  firmware: arm_scmi: Add support for notifications message processing
-
- drivers/firmware/arm_scmi/Makefile  |    2 +-
- drivers/firmware/arm_scmi/base.c    |  132 ++++
- drivers/firmware/arm_scmi/bus.c     |    3 +
- drivers/firmware/arm_scmi/common.h  |    4 +
- drivers/firmware/arm_scmi/driver.c  |  121 +++-
- drivers/firmware/arm_scmi/notify.c  | 1047 +++++++++++++++++++++++++++
- drivers/firmware/arm_scmi/notify.h  |   79 ++
- drivers/firmware/arm_scmi/perf.c    |  167 ++++-
- drivers/firmware/arm_scmi/power.c   |  161 +++-
- drivers/firmware/arm_scmi/reset.c   |  126 +++-
- drivers/firmware/arm_scmi/sensors.c |  105 ++-
- include/linux/scmi_protocol.h       |   82 +++
- 12 files changed, 1991 insertions(+), 38 deletions(-)
- create mode 100644 drivers/firmware/arm_scmi/notify.c
- create mode 100644 drivers/firmware/arm_scmi/notify.h
-
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index 2c96f6b5a7d8..9611e8037d77 100644
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -123,6 +123,7 @@ struct scmi_chan_info {
+  * @version: SCMI revision information containing protocol version,
+  *	implementation version and (sub-)vendor identification.
+  * @tx_minfo: Universal Transmit Message management info
++ * @rx_minfo: Universal Receive Message management info
+  * @tx_idr: IDR object to map protocol id to Tx channel info pointer
+  * @rx_idr: IDR object to map protocol id to Rx channel info pointer
+  * @protocols_imp: List of protocols implemented, currently maximum of
+@@ -136,6 +137,7 @@ struct scmi_info {
+ 	struct scmi_revision_info version;
+ 	struct scmi_handle handle;
+ 	struct scmi_xfers_info tx_minfo;
++	struct scmi_xfers_info rx_minfo;
+ 	struct idr tx_idr;
+ 	struct idr rx_idr;
+ 	u8 *protocols_imp;
+@@ -690,13 +692,13 @@ int scmi_handle_put(const struct scmi_handle *handle)
+ 	return 0;
+ }
+ 
+-static int scmi_xfer_info_init(struct scmi_info *sinfo)
++static int __scmi_xfer_info_init(struct scmi_info *sinfo, bool tx)
+ {
+ 	int i;
+ 	struct scmi_xfer *xfer;
+ 	struct device *dev = sinfo->dev;
+ 	const struct scmi_desc *desc = sinfo->desc;
+-	struct scmi_xfers_info *info = &sinfo->tx_minfo;
++	struct scmi_xfers_info *info = tx ? &sinfo->tx_minfo : &sinfo->rx_minfo;
+ 
+ 	/* Pre-allocated messages, no more than what hdr.seq can support */
+ 	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
+@@ -731,6 +733,16 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+ 	return 0;
+ }
+ 
++static int scmi_xfer_info_init(struct scmi_info *sinfo)
++{
++	int ret = __scmi_xfer_info_init(sinfo, true);
++
++	if (!ret && idr_find(&sinfo->rx_idr, SCMI_PROTOCOL_BASE))
++		ret = __scmi_xfer_info_init(sinfo, false);
++
++	return ret;
++}
++
+ static int scmi_mailbox_check(struct device_node *np, int idx)
+ {
+ 	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells",
+@@ -908,10 +920,6 @@ static int scmi_probe(struct platform_device *pdev)
+ 	info->desc = desc;
+ 	INIT_LIST_HEAD(&info->node);
+ 
+-	ret = scmi_xfer_info_init(info);
+-	if (ret)
+-		return ret;
+-
+ 	platform_set_drvdata(pdev, info);
+ 	idr_init(&info->tx_idr);
+ 	idr_init(&info->rx_idr);
+@@ -924,6 +932,10 @@ static int scmi_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = scmi_xfer_info_init(info);
++	if (ret)
++		return ret;
++
+ 	ret = scmi_base_protocol_init(handle);
+ 	if (ret) {
+ 		dev_err(dev, "unable to communicate with SCMI(%d)\n", ret);
 -- 
 2.17.1
 
