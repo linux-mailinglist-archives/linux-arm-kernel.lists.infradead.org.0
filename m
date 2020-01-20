@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBCBB14307C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 18:07:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0677414307F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 18:08:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zlqmmoiYGatMnad2t5paHlhkYak7BCMa91WFyVw5Cw0=; b=DI7vqWWVfnHFKw
-	xqHeOvDz7RXHXzIIsthEPZBoMn5om/bLj7QlU5DdKXOGQbhbw+yZ/1wMtCHwolQY5tVBlm9uuiXZF
-	rxsPmx66jWRmTrCkTkAU6LeymxPn9nehrp/rsc4ZnCJGQO7lwebFyBzD/PpAB+E5NbqKQX+T3qMrC
-	B10JbsrA2YMA6vdrrxv6Pr72yMRngnkHUarO8lCoklFsXxumz16rtx6mE2JKT3gjDyMJR7sA3imP9
-	Yxkrt2GSF173jeKbAezaF/Gbo2OCusrhDETIeE1HH1Ek78/dpk2ejTGnzIqhxSEROTtVJuGDWlZnf
-	UK7lYlvIYH+rI4+4DXQg==;
+	List-Owner; bh=lN39oL/IfjoPlyRl+3hXmQpUw6IBVniEwc8rRIdiIrM=; b=Hur/S+AHcQvox/
+	TUn8tafb0kz1yo+tOZ3ycbXRqfihMaN6eiuNFUfcHaQQDhcm8bTKa/jMWhP+0DdUTIDoMYiEmMb95
+	dejofvlig+olK7+8ukA5/f4I6lu94wXEDSgoGuMvUr5saZ1acrc/Az+8nBSw4cxvAPCW+KnA2ro6O
+	8UxUzAQSzRNXsN3KMjsv0yHwfjoRp8yecZ59MD/IrzpYl6l1Z0QUlOsChI3p214GTk6nq+bgHAYzx
+	UpxIMlR0d5LWsmM0dRDiMeemnVf+pp+UiVYl5KdPQxG9ceubhaJ2mBspjOcv+GOa859A3x+IODijC
+	s72SlhsiOX/uASorju2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itaWM-0007tv-U5; Mon, 20 Jan 2020 17:07:26 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1itaWl-0008Is-EN; Mon, 20 Jan 2020 17:07:51 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itaVO-0007Bo-86; Mon, 20 Jan 2020 17:06:29 +0000
+ id 1itaVS-0007Gh-0s; Mon, 20 Jan 2020 17:06:36 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id DDCE929132E
+ (Authenticated sender: ezequiel) with ESMTPSA id 9D5992912F0
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "Rafael J . Wysocki" <rafael@kernel.org>, Sandy Huang <hjc@rock-chips.com>,
  =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH 3/5] drm/rockchip: vop: Fix CRTC unbind
-Date: Mon, 20 Jan 2020 14:06:00 -0300
-Message-Id: <20200120170602.3832-4-ezequiel@collabora.com>
+Subject: [PATCH 4/5] drm/rockchip: lvds: Fix component unbind
+Date: Mon, 20 Jan 2020 14:06:01 -0300
+Message-Id: <20200120170602.3832-5-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200120170602.3832-1-ezequiel@collabora.com>
 References: <20200120170602.3832-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_090626_584918_B99A9EF9 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20200120_090630_221821_0C7C2C56 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -67,129 +69,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to fix device unbinding, the CRTC release path needs to
-be fixed. Get rid of the use-after-free issue that arise
-for calling drm_crtc_cleanup() prematurely, by moving
-all the CRTC resource release to the crtc.destroy() hook.
+Remove the explicit encoder disable: it's
+already part of the CRTC shutdown, in both
+atomic and legacy API cases.
 
-The vop_unbind() function is only responsible for the release
-of driver-specific (i.e. vop-specific) resources.
+Also, encoder and connector cleanup is performed
+by the DRM .destroy hooks, for encoder and connector
+respectively. It can be removed as well.
+
+Finally, move the panel detach call to the connector
+.destroy hook, where it belongs.
 
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 56 ++++++++-------------
- 1 file changed, 20 insertions(+), 36 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_lvds.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index d04b3492bdac..87c43097da7e 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -1387,6 +1387,11 @@ static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
- 
- static void vop_crtc_destroy(struct drm_crtc *crtc)
- {
-+	struct vop *vop = to_vop(crtc);
-+
-+	drm_flip_work_cleanup(&vop->fb_unref_work);
-+	drm_self_refresh_helper_cleanup(crtc);
-+	of_node_put(crtc->port);
- 	drm_crtc_cleanup(crtc);
+diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.c b/drivers/gpu/drm/rockchip/rockchip_lvds.c
+index f25a36743cbd..154f14a317d7 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_lvds.c
++++ b/drivers/gpu/drm/rockchip/rockchip_lvds.c
+@@ -100,9 +100,18 @@ static inline int rockchip_lvds_name_to_output(const char *s)
+ 	return -EINVAL;
  }
  
-@@ -1606,12 +1611,22 @@ static void vop_plane_add_properties(struct drm_plane *plane,
- 						   DRM_MODE_ROTATE_0 | flags);
- }
- 
-+static void vop_plane_cleanup(struct vop *vop)
++static void
++rockchip_lvds_connector_destroy(struct drm_connector *connector)
 +{
-+	struct drm_device *drm_dev = vop->drm_dev;
-+	struct drm_plane *plane, *tmp;
++	struct rockchip_lvds *lvds = connector_to_lvds(connector);
 +
-+	list_for_each_entry_safe(plane, tmp, &drm_dev->mode_config.plane_list,
-+				 head)
-+		drm_plane_cleanup(plane);
++	drm_panel_detach(lvds->panel);
++	drm_connector_cleanup(connector);
 +}
 +
- static int vop_create_crtc(struct vop *vop)
+ static const struct drm_connector_funcs rockchip_lvds_connector_funcs = {
+ 	.fill_modes = drm_helper_probe_single_connector_modes,
+-	.destroy = drm_connector_cleanup,
++	.destroy = rockchip_lvds_connector_destroy,
+ 	.reset = drm_atomic_helper_connector_reset,
+ 	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
+ 	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
+@@ -675,16 +684,7 @@ static int rockchip_lvds_bind(struct device *dev, struct device *master,
+ static void rockchip_lvds_unbind(struct device *dev, struct device *master,
+ 				void *data)
  {
- 	const struct vop_data *vop_data = vop->data;
- 	struct device *dev = vop->dev;
- 	struct drm_device *drm_dev = vop->drm_dev;
--	struct drm_plane *primary = NULL, *cursor = NULL, *plane, *tmp;
-+	struct drm_plane *primary = NULL, *cursor = NULL;
- 	struct drm_crtc *crtc = &vop->crtc;
- 	struct device_node *port;
- 	int ret;
-@@ -1625,6 +1640,7 @@ static int vop_create_crtc(struct vop *vop)
- 	for (i = 0; i < vop_data->win_size; i++) {
- 		struct vop_win *vop_win = &vop->win[i];
- 		const struct vop_win_data *win_data = vop_win->data;
-+		struct drm_plane *plane;
- 
- 		if (win_data->type != DRM_PLANE_TYPE_PRIMARY &&
- 		    win_data->type != DRM_PLANE_TYPE_CURSOR)
-@@ -1714,42 +1730,10 @@ static int vop_create_crtc(struct vop *vop)
- err_cleanup_crtc:
- 	drm_crtc_cleanup(crtc);
- err_cleanup_planes:
--	list_for_each_entry_safe(plane, tmp, &drm_dev->mode_config.plane_list,
--				 head)
--		drm_plane_cleanup(plane);
-+	vop_plane_cleanup(vop);
- 	return ret;
- }
- 
--static void vop_destroy_crtc(struct vop *vop)
--{
--	struct drm_crtc *crtc = &vop->crtc;
--	struct drm_device *drm_dev = vop->drm_dev;
--	struct drm_plane *plane, *tmp;
+-	struct rockchip_lvds *lvds = dev_get_drvdata(dev);
+-	const struct drm_encoder_helper_funcs *encoder_funcs;
 -
--	drm_self_refresh_helper_cleanup(crtc);
--
--	of_node_put(crtc->port);
--
--	/*
--	 * We need to cleanup the planes now.  Why?
--	 *
--	 * The planes are "&vop->win[i].base".  That means the memory is
--	 * all part of the big "struct vop" chunk of memory.  That memory
--	 * was devm allocated and associated with this component.  We need to
--	 * free it ourselves before vop_unbind() finishes.
--	 */
--	list_for_each_entry_safe(plane, tmp, &drm_dev->mode_config.plane_list,
--				 head)
--		vop_plane_destroy(plane);
--
--	/*
--	 * Destroy CRTC after vop_plane_destroy() since vop_disable_plane()
--	 * references the CRTC.
--	 */
--	drm_crtc_cleanup(crtc);
--	drm_flip_work_cleanup(&vop->fb_unref_work);
--}
--
- static int vop_initial(struct vop *vop)
- {
- 	struct reset_control *ahb_rst;
-@@ -2020,7 +2004,8 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
- 
- err_disable_pm_runtime:
- 	pm_runtime_disable(&pdev->dev);
--	vop_destroy_crtc(vop);
-+	vop_plane_cleanup(vop);
-+	vop_crtc_destroy(&vop->crtc);
- 	return ret;
- }
- 
-@@ -2032,7 +2017,6 @@ static void vop_unbind(struct device *dev, struct device *master, void *data)
- 		rockchip_rgb_fini(vop->rgb);
- 
+-	encoder_funcs = lvds->soc_data->helper_funcs;
+-	encoder_funcs->disable(&lvds->encoder);
+-	if (lvds->panel)
+-		drm_panel_detach(lvds->panel);
  	pm_runtime_disable(dev);
--	vop_destroy_crtc(vop);
+-	drm_connector_cleanup(&lvds->connector);
+-	drm_encoder_cleanup(&lvds->encoder);
+ }
  
- 	clk_unprepare(vop->aclk);
- 	clk_unprepare(vop->hclk);
+ static const struct component_ops rockchip_lvds_component_ops = {
 -- 
 2.25.0
 
