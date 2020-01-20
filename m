@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ADD3142CED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 15:09:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F2F5142D24
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 15:20:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YS36Qc6xUk18uVHt34COfZWFimfqYEm5FGModtSbdKc=; b=HTiNM5c+9QJ2Ss
-	pE3ZSbOt8QviNKnK+1uNLtZtEH5YeOym3A5Af8m6gf67el3p6Wxdh6dEjeZHsK277vg0EJUyRUwyg
-	uynK6Wgq9GPA6rL+joyumSSvmkZ0yOlkGt53NWgMccmmbMs9b5BaALdBOgZ8/UC6e90gwXW7XEdko
-	RY/hU1UC5pINLBnBXmtxkypSGnJP995ULWpVeHO1RiHFMSqXO7cZVpl9n/SQRDrLmBs89JUqi3LVq
-	zaVdMQ6rfMwnd/Y9l0XqiEQ+m9h4BjcsV8kz4190oXP37gL4TsxYk+S03x93O4u2g3wX/P/maKWlm
-	iwklK05IyTWdnG1r5vfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AHExfEIdeVOtkyIMhnI1WOmTzRI90PITAmNokdT1p2A=; b=Qyc6grhFdMx9FFkqPeijJoWSU
+	YwNWbu9fw8v8VTLVXe/5LD4QRXU1NXqL8Rp3cPOTDDWGxJOu3/gRBFony8KbzjH4q/h4sa+8IU8ew
+	uU3JOaTlVkINaA2B9nlGCtHmf2TxhZ99we0HuAk+jT/dsVD9mYNv3rDi2i/trR/3cAOn7PVOHt02A
+	Xqq+V8R86U+55FLigp5bdXyTdLIfLkzn32xTWR2CmrWArPdRvoKWEra2arIKwsxIqmFfKgNd8AmiD
+	Zul5t+4gKdObcWG8LcVL5OiOKUUHXuIFPB3b4YXxFqpk2UT5Wj1mcNbabUBFzDOjLZ5/M/5Wt3oqu
+	F4ok7vAIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itXk8-0006Iu-9v; Mon, 20 Jan 2020 14:09:28 +0000
+	id 1itXut-0002EL-ME; Mon, 20 Jan 2020 14:20:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itXjt-0006Hy-SK
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 14:09:20 +0000
+ id 1itXuf-0002D4-Lv
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 14:20:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C87BC30E;
- Mon, 20 Jan 2020 06:09:11 -0800 (PST)
-Received: from [10.2.69.39] (unknown [10.2.69.39])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 47B963F52E;
- Mon, 20 Jan 2020 06:09:11 -0800 (PST)
-Subject: Re: [PATCH v2] ARM: virt: Relax arch timer version check during early
- boot
-To: Marc Zyngier <maz@kernel.org>
-References: <1579527498-31081-1-git-send-email-vladimir.murzin@arm.com>
- <c573c3f5b86ece28a10c2466e985b256@kernel.org>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <dbe70c99-812c-f10c-524a-1ff6c84c7574@arm.com>
-Date: Mon, 20 Jan 2020 14:09:10 +0000
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B49E730E;
+ Mon, 20 Jan 2020 06:20:20 -0800 (PST)
+Received: from [10.1.37.58] (a075563-lin.cambridge.arm.com [10.1.37.58])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A36593F52E;
+ Mon, 20 Jan 2020 06:20:18 -0800 (PST)
+Subject: Re: [PATCH v3 09/16] arm64: mask PAC bits of __builtin_return_address
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-10-git-send-email-amit.kachhap@arm.com>
+ <20200117101432.GA26090@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <1735949f-a8c2-4cb5-d7e7-63efcfd4e96c@arm.com>
+Date: Mon, 20 Jan 2020 14:20:17 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <c573c3f5b86ece28a10c2466e985b256@kernel.org>
+In-Reply-To: <20200117101432.GA26090@arrakis.emea.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_060913_958993_807E3DC5 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20200120_062021_760427_FDCF0183 
+X-CRM114-Status: GOOD (  18.43  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -65,29 +65,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMS8yMC8yMCAyOjAxIFBNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4gT24gMjAyMC0wMS0yMCAx
-MzozOCwgVmxhZGltaXIgTXVyemluIHdyb3RlOgo+PiBVcGRhdGVzIHRvIHRoZSBHZW5lcmljIFRp
-bWVyIGFyY2hpdGVjdHVyZSBhbGxvdyBJRF9QRlIxLkdlblRpbWVyIHRvCj4+IGhhdmUgdmFsdWVz
-IG90aGVyIHRoYW4gMCBvciAxIHdoaWxlIHN0aWxsIHByZXNlcnZpbmcgYmFja3dhcmQKPj4gY29t
-cGF0aWJpbGl0eS4gQXQgdGhlIG1vbWVudCwgTGludXggaXMgcXVpdGUgc3RyaWN0IGluIHRoZSB3
-YXkgaXQKPj4gaGFuZGxlcyB0aGlzIGZpZWxkIGF0IGVhcmx5IGJvb3QgYW5kIHdpbGwgbm90IGNv
-bmZpZ3VyZSBhcmNoIHRpbWVyIGlmCj4+IGl0IGRvZXNuJ3QgZmluZCB0aGUgdmFsdWUgMS4KPj4K
-Pj4gU2luY2UgaGVyZSB1c2UgdWJmeCBmb3IgYXJjaCB0aW1lciB2ZXJzaW9uIGV4dHJhY3Rpb24g
-KGh5Yi1zdHViIGJ1aWxkCj4+IHdpdGggLW1hcmNoPWFybXY3LWEsIHNvIGl0IGlzIHNhZmUpCj4+
-Cj4+IFRvIGhlbHAgYmFja3BvcnRzIChldmVuIHRob3VnaCB0aGUgY29kZSB3YXMgY29ycmVjdCBh
-dCB0aGUgdGltZSBvZiB3cml0aW5nKQo+PiBGaXhlczogOGVjNThiZTlmM2ZmICgiQVJNOiB2aXJ0
-OiBhcmNoX3RpbWVyczogZW5hYmxlIGFjY2VzcyB0byBwaHlzaWNhbCB0aW1lcnMiKQo+PiBTaWdu
-ZWQtb2ZmLWJ5OiBWbGFkaW1pciBNdXJ6aW4gPHZsYWRpbWlyLm11cnppbkBhcm0uY29tPgo+IAo+
-IEFja2VkLWJ5OiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwub3JnPgo+IAo+IEZlZWwgZnJlZSB0
-byBwdXQgaXQgaW50byBSdXNzZWxsJ3MgcGF0Y2ggc3lzdGVtLgoKUGF0Y2ggaGFzIGJlZW4gYWNj
-ZXB0ZWQgYXMgcGF0Y2ggODk1NS8xCgpUaGFua3MhCgpWbGFkaW1pcgoKPiAKPiBUaGFua3MsCj4g
-Cj4gwqDCoMKgwqDCoMKgwqAgTS4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+
+On 1/17/20 10:14 AM, Catalin Marinas wrote:
+> On Mon, Dec 16, 2019 at 02:17:11PM +0530, Amit Daniel Kachhap wrote:
+>> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+>> new file mode 100644
+>> index 0000000..3cb06f9
+>> --- /dev/null
+>> +++ b/arch/arm64/include/asm/compiler.h
+>> @@ -0,0 +1,20 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +#ifndef __ASM_COMPILER_H
+>> +#define __ASM_COMPILER_H
+>> +
+>> +#if defined(CONFIG_ARM64_PTR_AUTH)
+>> +
+>> +/*
+>> + * The EL0/EL1 pointer bits used by a pointer authentication code.
+>> + * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
+>> + */
+>> +#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
+> 
+> That's the current behaviour but I guess we could extend the mask to 63
+> here without breaking anything since we don't expect instruction
+> addresses to be tagged. I also think we should turn TCR_EL1.TBID0 on
+> when we have PAC present (in a separate patch for both the mask change
+> and the TCR_EL1 bit as this may be slightly more controversial, a
+> theoretical ABI change).
+
+ok. For this there has to be 2 mask then as ptrace passes both the masks 
+to user.
+
+#define ptrauth_user_ins_pac_mask()	GENMASK_ULL(63, vabits_actual)
+
+#define ptrauth_user_data_pac_mask()	GENMASK_ULL(54, vabits_actual)
+
+
+> 
+>> +#define ptrauth_kernel_pac_mask()	(GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS))
+> 
+> I think the kernel mask should be GENMASK_ULL(63, vabits_actual), no
+> need to skip bit 55 since it's 1 already.
+> 
+> With regards to VA_BITS (a constant), I'm not sure that's correct.
+> ARMv8.2-LVA (52-bit VA) is an optional feature and I don't think PAC in
+> 8.3 mandates it.
+
+yes. Thanks for the correction.
+
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
