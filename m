@@ -2,169 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EB84142730
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 10:24:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6101D142772
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 10:37:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kp/6OM3D6o/ZRQJLnnnU2qJQiTWtvfdmFvM6HOPCQgc=; b=BHCwx4sSn+W1Q3
-	nc16gswTK1rgArVLyECSaEaflUP3sz9/HOsVe0vKjQp4driC559eHPq4DKlUbrNajy70z6uaLcMuD
-	zjkEoC4UDLHl/Q3nfM7szjzeJxUa/wUlmSJYnjtwDAdVwqUPnc4bN/nZMSjuZREnqil9Yx7vA4smj
-	kykbiRKu6SynSzicNPdGbGt6UBhqIU20y+WOTnA7ZH2YRyG9Cw0OTermJ0rLx+USDcKqBC8vyR/bp
-	RSaazipp4x2+3x+6nDD6d3HEIAid7nB0CsW8OVpWlGd2BRruod4D2Nk0KfBkJM2fJ2c/RZ9qkycGl
-	pbmuBghdvXMHjMaq/U0Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4tsm4zgZz1dYoPCfZgad6hWdYeCOgSME0XHk87SjUvI=; b=uzCkiTovElL4nF
+	ceEGzqeRkPTZip6ZnF9Q6XYYRwwGis/sWrOGcJzMggUWcxNa8i9md2jqh0yPSTrXUZm0zwN2V53L9
+	ZsLj5ROBSqPH5PEisv34qbI+Z3DEkLRFBsKytSM5gLa+oJwO5RcLjf4nvmlMTR6G171zyk5+p4yeN
+	f2xxxL7gLluLRmB6qu0ShbpxGf1C2tGOytLyrw1hM2J+jL6iyY2jKh3tU41oJfVGTNNMmjE3+Lk+k
+	gzw0YBAPcKLxakkpmdf437jCpzQWPtQ8QG66ws6FHyE+ursYGHK7zWAwjCLwBl5YCg0jK435+P2/b
+	j63NUuHaVJlIyDf2pL+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itTIH-0007sd-Ux; Mon, 20 Jan 2020 09:24:25 +0000
-Received: from mail-eopbgr40068.outbound.protection.outlook.com ([40.107.4.68]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1itTV7-0004Zc-Iw; Mon, 20 Jan 2020 09:37:41 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itTI6-0007rq-Eb
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 09:24:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0C9Tr+VmDaAnCWoBTsjUnaDRMYlg37Uyp42M4a+qvgY=;
- b=QQiBqAcViTU4RrNj9GP/GbNiHGH14Sbxyh7eE1sJ2oekzgSyKVaqwNPc9f+zt4uWzvfv49GqpSluGzNMjT7BQmlA9UFO3Iu+FArmYm1dvMZUnSWvOuFUbGWdtMgii28wzgyJ8/eQlS6qKdoP/Xvo+sGxcExHbFbfiDL5X2p69YE=
-Received: from AM6PR08CA0012.eurprd08.prod.outlook.com (2603:10a6:20b:b2::24)
- by AM0PR08MB3697.eurprd08.prod.outlook.com (2603:10a6:208:103::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2644.20; Mon, 20 Jan
- 2020 09:24:11 +0000
-Received: from DB5EUR03FT064.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e0a::202) by AM6PR08CA0012.outlook.office365.com
- (2603:10a6:20b:b2::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2644.19 via Frontend
- Transport; Mon, 20 Jan 2020 09:24:11 +0000
-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- DB5EUR03FT064.mail.protection.outlook.com (10.152.21.199) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.23 via Frontend Transport; Mon, 20 Jan 2020 09:24:10 +0000
-Received: ("Tessian outbound ca1df68f3668:v40");
- Mon, 20 Jan 2020 09:24:10 +0000
-X-CR-MTA-TID: 64aa7808
-Received: from 5aa5e84a034d.3
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 93C60254-5A93-493C-8609-9B1233AF2E5F.1; 
- Mon, 20 Jan 2020 09:24:02 +0000
-Received: from EUR05-AM6-obe.outbound.protection.outlook.com
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 5aa5e84a034d.3
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Mon, 20 Jan 2020 09:24:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iImLOxPToXUREWc28FomELN2kwiAKtrrgLxxzuX0X7hmBmzJP4Q04tMTv4SXhcgxl2bFChRujEpWIKpdgCKbuMVOY8ZBjpx6XEWUfNGomX4eWV2CHdv0Hixs0SELlbreVcCbxcEofpstHdOGiCK7j4vb0MAWbVYKjDoea10Rr2kLzOGB9FU4fSwCMyfmpFmJCpnYXrouDQ4aCfynZZr/hRY9ARAbzn+p7CP2tD0zD/c8Ns8kKm4+NGK5piiOdfkRkxFhIt0C8J2hQT1+oiA0jRqMkZhul90Tx2amEHJbIqS5zugUn2EAcWfLBTAivWKrGzSW0J/QmBttJgM2/TALxg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bm3K4BQWQToR4ylWjhFxoGciAyj7ub4X3dSfePLZEws=;
- b=PD/Vr0/2t48UmC3k3ygYPRMbaG+EVkn+RWgnZ1Pn6vQLTEv3wFNzghIc29QRsVzb+/iWUwewYJPy71Lq0NcIUlYvC7ilDUMOto8CrUG31cgvJ8sWLvg+ISPr0W1QJ2sEC7F6jAcSIRZts1gc3n3+ebxZCQfcMLWpgtGt87ujcpXof4jcFg4vJH91T7ACOZu9dXjsKPO/VY4dV1VRvYNRGLwkaWn2tBc297+sZKhD6DneSerEzbPkukNmV84bO1u0fDhEXzqp9w5ugA+5WE6UgZhEqkwgRslXTJXj4pt+IgRY81UUpDVh4mA3IsQlW7OSMWVRTQHk0lbTYGoXuA/szQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bm3K4BQWQToR4ylWjhFxoGciAyj7ub4X3dSfePLZEws=;
- b=GpJHzBSEXrfVCemM/cbsKyUSY8sSKJFXdg0UppHUjeykkKDRtk+QK6s70a+Gv5XODYHTuvx1sj69JmRTFiifdCyfTCj9xNS2HLKsNGklKtQaUkwUpFT4nfUWksb4GT6p7lZdUbTt1vOnY+t2RRdJUn1zA+fIS6vg+2jzFwQCvLQ=
-Received: from VE1PR08MB4749.eurprd08.prod.outlook.com (10.255.27.21) by
- VE1PR08MB5023.eurprd08.prod.outlook.com (20.179.30.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.24; Mon, 20 Jan 2020 09:24:00 +0000
-Received: from VE1PR08MB4749.eurprd08.prod.outlook.com
- ([fe80::3c6d:13d1:34b0:65ce]) by VE1PR08MB4749.eurprd08.prod.outlook.com
- ([fe80::3c6d:13d1:34b0:65ce%7]) with mapi id 15.20.2644.024; Mon, 20 Jan 2020
- 09:24:00 +0000
-From: Steven Miao <Steven.Miao@arm.com>
-To: Support-Software <support-software@arm.com>, Tao Zeng
- <prime.zeng@hisilicon.com>
-Subject: RE: Questions about /proc/cpuinfo for arch-ARM  - CAS-149046-Y1H3T8
-Thread-Topic: Questions about /proc/cpuinfo for arch-ARM  - CAS-149046-Y1H3T8
-Thread-Index: AXh/4mQl+0BVuzW5bg/qDoXVz3JWfrqfIBaAgAABnDA=
-Date: Mon, 20 Jan 2020 09:24:00 +0000
-Message-ID: <VE1PR08MB4749DEED78C7EABF519650B7F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
-References: <FFCDED37A161475FA3F5B19E21DECA0D1D5CF72567E6@SUPPORT-SOFTWARE.ARM.COM>
- <VE1PR08MB47490C13405F61B3599D1314F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
-In-Reply-To: <VE1PR08MB47490C13405F61B3599D1314F0320@VE1PR08MB4749.eurprd08.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ts-tracking-id: dfbe8b0a-04bb-4f4d-89ff-dbc10d35f76f.0
-x-checkrecipientchecked: true
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Steven.Miao@arm.com; 
-x-originating-ip: [113.29.88.7]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 14e549a1-68c6-4e85-9a4b-08d79d8a8214
-X-MS-TrafficTypeDiagnostic: VE1PR08MB5023:|VE1PR08MB5023:|AM0PR08MB3697:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR08MB369724BB171130F97EE09BFAF0320@AM0PR08MB3697.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:7691;OLM:9508;
-x-forefront-prvs: 0288CD37D9
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(346002)(376002)(366004)(396003)(189003)(199004)(52536014)(2906002)(81156014)(81166006)(966005)(8936002)(71200400001)(186003)(8676002)(9686003)(26005)(86362001)(2940100002)(55236004)(55016002)(54906003)(33656002)(4326008)(110136005)(53546011)(66556008)(66446008)(7696005)(66946007)(5660300002)(316002)(64756008)(66476007)(76116006)(6506007)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB5023;
- H:VE1PR08MB4749.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: BtnAZD4Wb7l0KcihUmf67S0utelTCKJ8AXikV+A92bqWDM+V8NIAQBw72dm02lyhZZuWQlLbE7xNGWsRQQe+gVW4voS2rvwMrVEJJIdCjMEgPFz6HBEW2vL11EVGfnH2hADpeD9CC68PcBZ4bTW54900ITZanuR+vBTZ/BV0BrBloeE8Iabmr0M8gox2E6+STjwS55u40OJPu3vY1mO50KnnTyzjqHSe6p6t6uKqiztE1Wrw51FMyrHmO6eUsUn9NaW47LfNKRcwz/A+33b1EUBxCKQXcIzwJRUJtUX9Yn7g6KaFWV1uTfKQM9LpojU+gFkpXKipcXBDp9NaLv8eNnqKNzUVZ0MVIhQ/FJ0zzwjciLc5YRBNtRFZyeHCdF88xdJUtLahIonITzhuL6dxTreHPhBug/X1MvH4ug0IH/6MwLTXAA+Hb1G3Mmzo1fOWXu3arLVAlgG2vIqyD+3ZQPv0EiFBm6k3iDOQXWOhGSPnW0sPxBOqhQId9Yxe9xFd3TTuRdok5gGSGCl84vJhhg==
+ id 1itTUu-0004Yb-H4
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 09:37:34 +0000
+Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
+ helo=dude02.lab.pengutronix.de)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1itTUk-0008OP-6M; Mon, 20 Jan 2020 10:37:18 +0100
+Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1itTUh-0003gP-4i; Mon, 20 Jan 2020 10:37:15 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: linux@rempel-privat.de, kernel@pengutronix.de, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
+ stefan@agner.ch
+Subject: [PATCH] i2c: imx: implement master_xfer_atomic callback
+Date: Mon, 20 Jan 2020 10:36:50 +0100
+Message-Id: <20200120093650.12911-1-m.felsch@pengutronix.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB5023
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Steven.Miao@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB5EUR03FT064.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(376002)(396003)(136003)(189003)(199004)(8676002)(5660300002)(186003)(52536014)(110136005)(26005)(966005)(8936002)(81156014)(316002)(81166006)(2940100002)(54906003)(6506007)(4326008)(33656002)(356004)(70586007)(26826003)(70206006)(2906002)(55016002)(478600001)(9686003)(336012)(7696005)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR08MB3697;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:Pass; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 44c1ea70-db90-4cfa-c723-08d79d8a7c20
-X-Forefront-PRVS: 0288CD37D9
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: yWOtreI3JzuPMovP8O/cO1o8kEAv6wgEcUSZS+9sIhQiqyFNoQC7EBQpMYQhv33ThAQ0UJexuhmTtRKVUkBvyEQGc2nNTf7Sf9T8231YMFnoQBW7k7d+SE28ajGV+AOkfmJHXPoTtGJuiofwN2ucCX+kSiQck79HZmlxn17BmNqyi2npJhF5rAGOzu6YlLolAPObemtkkPuR6u/xC5CUTu0w9TJTe6S8oBF8kl4dKIOz+7CKJ7jQt33+JApXU4sZOI03F3uAIujdjZRnSwl+pl2Fbex0fAw7aTkYaUirLZQj1tW2WvhHy/dZIEDUdgSDW3B/yfJaRK9qytvC8mNmkljI2tmeMHR3K3K4yMC944lA4NB/ZoHMWpDfMVK9aqbHi7nemVEjwq94tedMcHL2AwQWvJhdddUG8E0YQhglfhsPn/wyMqaN3eyWPtbrSbhu0BD//bJybQaiuXkz5VRrs9C/K3cobcbdj4CJkBot7NkX43hkPA0NYlFx8dQPpTk3/XOOPtk7+wHkJfGugAKvng==
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jan 2020 09:24:10.8999 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 14e549a1-68c6-4e85-9a4b-08d79d8a8214
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR08MB3697
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_012414_494280_97D1D03B 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200120_013728_882426_B32B82FA 
+X-CRM114-Status: GOOD (  21.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -176,85 +67,396 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Robin Murphy <Robin.Murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Stefan Lengfeld <contact@stefanchrist.eu>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Oleksij Rempel <o.rempel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CC arm mailing list. Someone know the whole history may have a better answer.
+From: Stefan Lengfeld <contact@stefanchrist.eu>
 
-Thanks,
-Steven
+Rework the read and write code paths in the driver to support operation
+in atomic contexts. To achieve this, the driver must not rely on IRQs
+and not call schedule(), e.g. via a sleep routine, in these cases.
 
-From: Support-Software <mailto:support-software@arm.com>
-Sent: Monday, January 20, 2020 5:17 PM
-To: Tao Zeng <mailto:prime.zeng@hisilicon.com>
-Cc: Mark Rutland <mailto:Mark.Rutland@arm.com>
-Subject: Re: Questions about /proc/cpuinfo for arch-ARM - CAS-149046-Y1H3T8
+With this patch the driver supports normal operation, DMA transfers and
+now the polling mode or also called sleep-free or IRQ-less operation. It
+makes the code not simpler or easier to read, but atomic I2C transfers
+are needed on some hardware configurations, e.g. to trigger reboots on
+an external PMIC chip.
 
-From Steven Miao - Arm Partner Enablement Group
-Please quote case reference number https://support.developer.arm.com/case-details/?id=f9beb263-333b-ea11-a813-000d3ab4f2f3 in any further emails to us on this subject.
+Signed-off-by: Stefan Lengfeld <contact@stefanchrist.eu>
+[m.felsch@pengutronix.de: integrate https://patchwork.ozlabs.org/patch/1085943/ review feedback]
+[m.felsch@pengutronix.de: adapt commit message]
+Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+Acked-by: Oleksij Rempel <o.rempel@pengutronix.de>
+---
+Hi,
 
-Hi Tao,
->1. Since /proc/cpuinfo is treated as ABI, so where can I find the specification? Or is there any docs
->to describe the details? Or it is just some applications who have already token it?
- I think it is just de-facto ABI legacy application are relying on, there's no such specification.
->You know that, in x86, /proc/cpuinfo provide really good user experience, what we want to do is >providing the same or even better user experience.
-We should add new stuff to /sys/, don't add new things to /proc. On x86 these strings are acquired from the CPU itself, via CPUID instructions, which means that it works for future CPUs. For ARM systems, we have no consistent way of acquiring a model name from a CPU itself. If users who want to decode MIDRs are going to have to use userspace tools.
-Changing current cpuinfo:
-- it breaks existing applications
-- it is unmaintainable in the long run
-- we can already get cpu information by dmidecode, lscpu, lshw...
+I picked Stefan Lengfeld RFC patch [1] and added Stefan Agner's review
+feedback [1]. Checkpatch complains about a few 80 char violations. I
+kept those to gain readability.
 
-Some discussion about this topic in mailing list:
-https://patchwork.kernel.org/patch/10524949/
-https://lkml.org/lkml/2019/12/6/485
-http://lists.infradead.org/pipermail/linux-arm-kernel/2014-July/273022.html
+Regards,
+  Marco
 
-Kind regards
-Steven Miao
-Arm Partner Enablement Group
+[1] https://patchwork.ozlabs.org/patch/1085943/
 
-For more support information, documentation, downloads and other useful resources see: https://developer.arm.com/support/
+Changes:
+- general: adapt commit message
+- general: fix some 80char line issues
+- general: s/if(!atomic)/if(atomic)/
+- i2c_imx_trx_complete: use readb_poll_timeout_atomic()
+- i2c_imx_trx_complete: adapt poll_timeout and add poll_timeout calc comment
+- i2c_imx_start: simplify irq disable
+- i2c_imx_xfer_common: don't allow bus recovery within atomic context
+- i2c_imx_probe: drop pm_runtime_irq_safe usage and instead:
+  * i2c_imx_xfer_common: move rpm calls into i2c_imx_xfer
+  * i2c_imx_xfer_common: add clk_enable/disable for i2c_imx_xfer_atomic
+---
+ drivers/i2c/busses/i2c-imx.c | 146 +++++++++++++++++++++++++----------
+ 1 file changed, 105 insertions(+), 41 deletions(-)
 
------Original Message-----
+diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+index a3b61336fe55..79d5b37fd8a1 100644
+--- a/drivers/i2c/busses/i2c-imx.c
++++ b/drivers/i2c/busses/i2c-imx.c
+@@ -34,6 +34,7 @@
+ #include <linux/init.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+@@ -414,7 +415,7 @@ static void i2c_imx_dma_free(struct imx_i2c_struct *i2c_imx)
+ 	dma->chan_using = NULL;
+ }
+ 
+-static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy)
++static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy, bool atomic)
+ {
+ 	unsigned long orig_jiffies = jiffies;
+ 	unsigned int temp;
+@@ -444,15 +445,37 @@ static int i2c_imx_bus_busy(struct imx_i2c_struct *i2c_imx, int for_busy)
+ 				"<%s> I2C bus is busy\n", __func__);
+ 			return -ETIMEDOUT;
+ 		}
+-		schedule();
++		if (atomic)
++			udelay(100);
++		else
++			schedule();
+ 	}
+ 
+ 	return 0;
+ }
+ 
+-static int i2c_imx_trx_complete(struct imx_i2c_struct *i2c_imx)
++static int i2c_imx_trx_complete(struct imx_i2c_struct *i2c_imx, bool atomic)
+ {
+-	wait_event_timeout(i2c_imx->queue, i2c_imx->i2csr & I2SR_IIF, HZ / 10);
++	if (atomic) {
++		void __iomem *addr = i2c_imx->base + (IMX_I2C_I2SR << i2c_imx->hwdata->regshift);
++		unsigned int regval;
++
++		/*
++		 * The formula for the poll timeout is documented in the RM
++		 * Rev.5 on page 1878:
++		 *     T_min = 10/F_scl
++		 * Set the value hard as it is done for the non-atomic use-case.
++		 * Use 10 kHz for the calculation since this is the minimum
++		 * allowed SMBus frequency. Also add an offset of 100us since it
++		 * turned out that the I2SR_IIF bit isn't set correctly within
++		 * the minimum timeout in polling mode.
++		 */
++		readb_poll_timeout_atomic(addr, regval, regval & I2SR_IIF, 5, 1000 + 100);
++		i2c_imx->i2csr = regval;
++		imx_i2c_write_reg(0, i2c_imx, IMX_I2C_I2SR);
++	} else {
++		wait_event_timeout(i2c_imx->queue, i2c_imx->i2csr & I2SR_IIF, HZ / 10);
++	}
+ 
+ 	if (unlikely(!(i2c_imx->i2csr & I2SR_IIF))) {
+ 		dev_dbg(&i2c_imx->adapter.dev, "<%s> Timeout\n", __func__);
+@@ -530,7 +553,7 @@ static int i2c_imx_clk_notifier_call(struct notifier_block *nb,
+ 	return NOTIFY_OK;
+ }
+ 
+-static int i2c_imx_start(struct imx_i2c_struct *i2c_imx)
++static int i2c_imx_start(struct imx_i2c_struct *i2c_imx, bool atomic)
+ {
+ 	unsigned int temp = 0;
+ 	int result;
+@@ -543,23 +566,29 @@ static int i2c_imx_start(struct imx_i2c_struct *i2c_imx)
+ 	imx_i2c_write_reg(i2c_imx->hwdata->i2cr_ien_opcode, i2c_imx, IMX_I2C_I2CR);
+ 
+ 	/* Wait controller to be stable */
+-	usleep_range(50, 150);
++	if (atomic)
++		udelay(50);
++	else
++		usleep_range(50, 150);
+ 
+ 	/* Start I2C transaction */
+ 	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
+ 	temp |= I2CR_MSTA;
+ 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+-	result = i2c_imx_bus_busy(i2c_imx, 1);
++	result = i2c_imx_bus_busy(i2c_imx, 1, atomic);
+ 	if (result)
+ 		return result;
+ 
+ 	temp |= I2CR_IIEN | I2CR_MTX | I2CR_TXAK;
++	if (atomic)
++		temp &= ~I2CR_IIEN; /* Disable interrupt */
++
+ 	temp &= ~I2CR_DMAEN;
+ 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+ 	return result;
+ }
+ 
+-static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
++static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx, bool atomic)
+ {
+ 	unsigned int temp = 0;
+ 
+@@ -581,7 +610,7 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
+ 	}
+ 
+ 	if (!i2c_imx->stopped)
+-		i2c_imx_bus_busy(i2c_imx, 0);
++		i2c_imx_bus_busy(i2c_imx, 0, atomic);
+ 
+ 	/* Disable I2C controller */
+ 	temp = i2c_imx->hwdata->i2cr_ien_opcode ^ I2CR_IEN,
+@@ -662,7 +691,7 @@ static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
+ 	/* The last data byte must be transferred by the CPU. */
+ 	imx_i2c_write_reg(msgs->buf[msgs->len-1],
+ 				i2c_imx, IMX_I2C_I2DR);
+-	result = i2c_imx_trx_complete(i2c_imx);
++	result = i2c_imx_trx_complete(i2c_imx, false);
+ 	if (result)
+ 		return result;
+ 
+@@ -721,7 +750,7 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
+ 
+ 	msgs->buf[msgs->len-2] = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
+ 	/* read n byte data */
+-	result = i2c_imx_trx_complete(i2c_imx);
++	result = i2c_imx_trx_complete(i2c_imx, false);
+ 	if (result)
+ 		return result;
+ 
+@@ -734,7 +763,7 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
+ 		temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
+ 		temp &= ~(I2CR_MSTA | I2CR_MTX);
+ 		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+-		i2c_imx_bus_busy(i2c_imx, 0);
++		i2c_imx_bus_busy(i2c_imx, 0, false);
+ 	} else {
+ 		/*
+ 		 * For i2c master receiver repeat restart operation like:
+@@ -752,7 +781,8 @@ static int i2c_imx_dma_read(struct imx_i2c_struct *i2c_imx,
+ 	return 0;
+ }
+ 
+-static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
++static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs,
++			 bool atomic)
+ {
+ 	int i, result;
+ 
+@@ -761,7 +791,7 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
+ 
+ 	/* write slave address */
+ 	imx_i2c_write_reg(i2c_8bit_addr_from_msg(msgs), i2c_imx, IMX_I2C_I2DR);
+-	result = i2c_imx_trx_complete(i2c_imx);
++	result = i2c_imx_trx_complete(i2c_imx, atomic);
+ 	if (result)
+ 		return result;
+ 	result = i2c_imx_acked(i2c_imx);
+@@ -775,7 +805,7 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
+ 			"<%s> write byte: B%d=0x%X\n",
+ 			__func__, i, msgs->buf[i]);
+ 		imx_i2c_write_reg(msgs->buf[i], i2c_imx, IMX_I2C_I2DR);
+-		result = i2c_imx_trx_complete(i2c_imx);
++		result = i2c_imx_trx_complete(i2c_imx, atomic);
+ 		if (result)
+ 			return result;
+ 		result = i2c_imx_acked(i2c_imx);
+@@ -785,7 +815,8 @@ static int i2c_imx_write(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs)
+ 	return 0;
+ }
+ 
+-static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bool is_lastmsg)
++static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs,
++			bool is_lastmsg, bool atomic)
+ {
+ 	int i, result;
+ 	unsigned int temp;
+@@ -798,7 +829,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
+ 
+ 	/* write slave address */
+ 	imx_i2c_write_reg(i2c_8bit_addr_from_msg(msgs), i2c_imx, IMX_I2C_I2DR);
+-	result = i2c_imx_trx_complete(i2c_imx);
++	result = i2c_imx_trx_complete(i2c_imx, atomic);
+ 	if (result)
+ 		return result;
+ 	result = i2c_imx_acked(i2c_imx);
+@@ -831,7 +862,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
+ 	for (i = 0; i < msgs->len; i++) {
+ 		u8 len = 0;
+ 
+-		result = i2c_imx_trx_complete(i2c_imx);
++		result = i2c_imx_trx_complete(i2c_imx, atomic);
+ 		if (result)
+ 			return result;
+ 		/*
+@@ -859,7 +890,7 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
+ 				temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
+ 				temp &= ~(I2CR_MSTA | I2CR_MTX);
+ 				imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+-				i2c_imx_bus_busy(i2c_imx, 0);
++				i2c_imx_bus_busy(i2c_imx, 0, atomic);
+ 			} else {
+ 				/*
+ 				 * For i2c master receiver repeat restart operation like:
+@@ -890,8 +921,8 @@ static int i2c_imx_read(struct imx_i2c_struct *i2c_imx, struct i2c_msg *msgs, bo
+ 	return 0;
+ }
+ 
+-static int i2c_imx_xfer(struct i2c_adapter *adapter,
+-						struct i2c_msg *msgs, int num)
++static int i2c_imx_xfer_common(struct i2c_adapter *adapter,
++			       struct i2c_msg *msgs, int num, bool atomic)
+ {
+ 	unsigned int i, temp;
+ 	int result;
+@@ -900,16 +931,16 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
+ 
+ 	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
+ 
+-	result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
+-	if (result < 0)
+-		goto out;
+-
+ 	/* Start I2C transfer */
+-	result = i2c_imx_start(i2c_imx);
++	result = i2c_imx_start(i2c_imx, atomic);
+ 	if (result) {
+-		if (i2c_imx->adapter.bus_recovery_info) {
++		/*
++		 * Bus recovery uses gpiod_get_value_cansleep() which is not
++		 * allowed within atomic context.
++		 */
++		if (!atomic && i2c_imx->adapter.bus_recovery_info) {
+ 			i2c_recover_bus(&i2c_imx->adapter);
+-			result = i2c_imx_start(i2c_imx);
++			result = i2c_imx_start(i2c_imx, atomic);
+ 		}
+ 	}
+ 
+@@ -927,7 +958,7 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
+ 			temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
+ 			temp |= I2CR_RSTA;
+ 			imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+-			result = i2c_imx_bus_busy(i2c_imx, 1);
++			result = i2c_imx_bus_busy(i2c_imx, 1, atomic);
+ 			if (result)
+ 				goto fail0;
+ 		}
+@@ -951,13 +982,14 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
+ 			(temp & I2SR_SRW ? 1 : 0), (temp & I2SR_IIF ? 1 : 0),
+ 			(temp & I2SR_RXAK ? 1 : 0));
+ #endif
+-		if (msgs[i].flags & I2C_M_RD)
+-			result = i2c_imx_read(i2c_imx, &msgs[i], is_lastmsg);
+-		else {
+-			if (i2c_imx->dma && msgs[i].len >= DMA_THRESHOLD)
++		if (msgs[i].flags & I2C_M_RD) {
++			result = i2c_imx_read(i2c_imx, &msgs[i], is_lastmsg, atomic);
++		} else {
++			if (!atomic &&
++			    i2c_imx->dma && msgs[i].len >= DMA_THRESHOLD)
+ 				result = i2c_imx_dma_write(i2c_imx, &msgs[i]);
+ 			else
+-				result = i2c_imx_write(i2c_imx, &msgs[i]);
++				result = i2c_imx_write(i2c_imx, &msgs[i], atomic);
+ 		}
+ 		if (result)
+ 			goto fail0;
+@@ -965,18 +997,49 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
+ 
+ fail0:
+ 	/* Stop I2C transfer */
+-	i2c_imx_stop(i2c_imx);
+-
+-	pm_runtime_mark_last_busy(i2c_imx->adapter.dev.parent);
+-	pm_runtime_put_autosuspend(i2c_imx->adapter.dev.parent);
++	i2c_imx_stop(i2c_imx, atomic);
+ 
+-out:
+ 	dev_dbg(&i2c_imx->adapter.dev, "<%s> exit with: %s: %d\n", __func__,
+ 		(result < 0) ? "error" : "success msg",
+ 			(result < 0) ? result : num);
+ 	return (result < 0) ? result : num;
+ }
+ 
++static int i2c_imx_xfer(struct i2c_adapter *adapter,
++			struct i2c_msg *msgs, int num)
++{
++	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(adapter);
++	int result;
++
++	result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
++	if (result < 0)
++		return result;
++
++	result = i2c_imx_xfer_common(adapter, msgs, num, false);
++
++	pm_runtime_mark_last_busy(i2c_imx->adapter.dev.parent);
++	pm_runtime_put_autosuspend(i2c_imx->adapter.dev.parent);
++
++	return result;
++}
++
++static int i2c_imx_xfer_atomic(struct i2c_adapter *adapter,
++			       struct i2c_msg *msgs, int num)
++{
++	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(adapter);
++	int result;
++
++	result = clk_enable(i2c_imx->clk);
++	if (result)
++		return result;
++
++	result = i2c_imx_xfer_common(adapter, msgs, num, true);
++
++	clk_disable(i2c_imx->clk);
++
++	return result;
++}
++
+ static void i2c_imx_prepare_recovery(struct i2c_adapter *adap)
+ {
+ 	struct imx_i2c_struct *i2c_imx;
+@@ -1049,8 +1112,9 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
+ }
+ 
+ static const struct i2c_algorithm i2c_imx_algo = {
+-	.master_xfer	= i2c_imx_xfer,
+-	.functionality	= i2c_imx_func,
++	.master_xfer = i2c_imx_xfer,
++	.master_xfer_atomic = i2c_imx_xfer_atomic,
++	.functionality = i2c_imx_func,
+ };
+ 
+ static int i2c_imx_probe(struct platform_device *pdev)
+-- 
+2.20.1
 
-
-
-From: Tao Zeng
-Received: 20 Jan 2020 03:17 AM
-Hi:
-
-As discussed in the following mailing thread:
-https://lore.kernel.org/patchwork/cover/834876/
-I think the most important conclusion here is :
-"The /proc/cpuinfo is already widely used and it's an in fact arch-specific ABI."
-
-And I also agree mark's idea, but I still have got my questions here:
-1. Since /proc/cpuinfo is treated as ABI, so where can I find the specification? Or is there any docs
-to describe the details? Or it is just some applications who have already token it?
-
-2. My idea here:
-(1) If this is really an ABI, maybe we need to standardizing it in some way, and let more and more
-people know about it other than asking "why not like X86?" again and again.
-(2) If this is just used by some apps because of the historical reason, maybe we can help to improve
-the apps?
-(Some ideas like providing two kinds of /proc/cpuinfo, One is for server and the other is to keep the
- current /proc/cpuinfo, and controlled by kernel configs?)
-
-You know that, in x86, /proc/cpuinfo provide really good user experience, what we want to do is providing
-the same or even better user experience.
-And I am not arguing what's more reasonable here, I just want to discuss for better solution.
-
-Thanks.
-
-Regards
-Zengtao
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
