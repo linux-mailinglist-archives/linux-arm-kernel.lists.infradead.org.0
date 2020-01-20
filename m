@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 952A3142926
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 12:23:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D4F142936
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 12:25:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hVkLwt0A0FTdFLkeUGTk1Nfzh75pbPGQw3Os9cEJI7c=; b=hqUJghMPKrkg5B
-	S0JvlGjysPeINw/zgxX02+C1uwR6MeUSLxJkktRA8hbn4CnwP7QtiKcEVQVw51SPMcYZg38OuWSUY
-	WmMFLcpQEzfsh+K8O4mizFAzm3NHWP4l8/5iR0yfu8gxyN2q0OMAEAvTbmdQtEX2KrIzpd7Bnc3an
-	mUVAMnHKeGhMWaWWwf+L8uPY5FuYftmuLOEzyWFaLh4TrBc7feNJ0w2dqWe1tUU4ZKwAl24R8JY3u
-	YrhkgQx26aKMsknbbNusYkkMTFzvk9kWZDgcAYo7XLupAU8jiq3Wy3Xhcp9NHe7wyOlrwFa72inJ0
-	/6a+H3vZqKWE0NnNEuAQ==;
+	List-Owner; bh=xdeAbE/YycSYNiSoYAKZsMDpHyXzCgHkFi0iU5ocfhg=; b=Qv8bfJYahFUuoD
+	yifSOEq6lPEL6YUjXeYbGG0ngdDan88kveYzfHxKM5PyF8PqJTiADe0aXyktEzn9F+hC4XbcJCym7
+	+FS7yYnyVwXyhfdjYnh3Y9PBwtmemeQz//cRXylWIqiFLAfyzSJqUqKiHpJSJm8Z9w4CucbpE61cn
+	AKJBXUfUjaXZLEwM4aaZD9/gx7M5EiPvVSbCXp52wIdBUBWTUwcN5Z6g7FU32+C2jCGYe81S89u73
+	Pz42D8O5ChettOjpSiMujQZD34+wRS51DRnfShX7TT9f/ydBBMWqzsPUttpaK6x5pLYbHMFA0f9vE
+	Fv67a0p5iIE3LmlS33mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itV9U-0001AL-0p; Mon, 20 Jan 2020 11:23:28 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1itVBO-000303-Ap; Mon, 20 Jan 2020 11:25:26 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itV9F-00019F-TV
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 11:23:18 +0000
+ id 1itVAn-0001Z1-Rp
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 11:24:54 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 20 Jan 2020 03:23:11 -0800
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 Jan 2020 03:24:48 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,341,1574150400"; d="scan'208";a="244380297"
+X-IronPort-AV: E=Sophos;i="5.70,341,1574150400"; d="scan'208";a="228356605"
 Received: from linux.intel.com ([10.54.29.200])
- by orsmga002.jf.intel.com with ESMTP; 20 Jan 2020 03:23:10 -0800
+ by orsmga006.jf.intel.com with ESMTP; 20 Jan 2020 03:24:48 -0800
 Received: from [10.125.252.193] (abudanko-mobl.ccr.corp.intel.com
  [10.125.252.193])
- by linux.intel.com (Postfix) with ESMTP id 386365802C1;
- Mon, 20 Jan 2020 03:23:01 -0800 (PST)
-Subject: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel and
- user space
+ by linux.intel.com (Postfix) with ESMTP id D0AB55803C5;
+ Mon, 20 Jan 2020 03:24:40 -0800 (PST)
+Subject: [PATCH v5 02/10] perf/core: open access to the core for CAP_PERFMON
+ privileged process
 From: Alexey Budankov <alexey.budankov@linux.intel.com>
 To: Peter Zijlstra <peterz@infradead.org>,
  Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
@@ -53,23 +53,23 @@ To: Peter Zijlstra <peterz@infradead.org>,
  Alexei Starovoitov <ast@kernel.org>
 References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
 Organization: Intel Corp.
-Message-ID: <9b77124b-675d-5ac7-3741-edec575bd425@linux.intel.com>
-Date: Mon, 20 Jan 2020 14:23:00 +0300
+Message-ID: <11240db3-a8a0-f925-e905-bfc9dc544646@linux.intel.com>
+Date: Mon, 20 Jan 2020 14:24:39 +0300
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
 In-Reply-To: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_032313_963005_5B3F6E52 
-X-CRM114-Status: GOOD (  16.48  )
+X-CRM114-CacheID: sfid-20200120_032449_942051_B7A5C5BF 
+X-CRM114-Status: GOOD (  15.24  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,105 +104,67 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-Introduce CAP_PERFMON capability designed to secure system performance
-monitoring and observability operations so that CAP_PERFMON would assist
-CAP_SYS_ADMIN capability in its governing role for perf_events, i915_perf
-and other performance monitoring and observability subsystems.
-
-CAP_PERFMON intends to harden system security and integrity during system
-performance monitoring and observability operations by decreasing attack
-surface that is available to a CAP_SYS_ADMIN privileged process [1].
-Providing access to system performance monitoring and observability
-operations under CAP_PERFMON capability singly, without the rest of
-CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials and
-makes operation more secure.
-
-CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to
-system performance monitoring and observability operations and balance
-amount of CAP_SYS_ADMIN credentials following the recommendations in the
-capabilities man page [1] for CAP_SYS_ADMIN: "Note: this capability is
-overloaded; see Notes to kernel developers, below."
-
-Although the software running under CAP_PERFMON can not ensure avoidance
-of related hardware issues, the software can still mitigate these issues
-following the official embargoed hardware issues mitigation procedure [2].
-The bugs in the software itself could be fixed following the standard
-kernel development process [3] to maintain and harden security of system
-performance monitoring and observability operations.
-
-[1] http://man7.org/linux/man-pages/man7/capabilities.7.html
-[2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
-[3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
+Open access to monitoring of kernel code, system, tracepoints and namespaces
+data for a CAP_PERFMON privileged process. For backward compatibility
+reasons access to perf_events subsystem remains open for CAP_SYS_ADMIN
+privileged processes but CAP_SYS_ADMIN usage for secure perf_events
+monitoring is discouraged with respect to CAP_PERFMON capability.
+Providing the access under CAP_PERFMON capability singly, without the rest
+of CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials
+and makes operation more secure.
 
 Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 ---
- include/linux/capability.h          | 12 ++++++++++++
- include/uapi/linux/capability.h     |  8 +++++++-
- security/selinux/include/classmap.h |  4 ++--
- 3 files changed, 21 insertions(+), 3 deletions(-)
+ include/linux/perf_event.h | 6 +++---
+ kernel/events/core.c       | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/include/linux/capability.h b/include/linux/capability.h
-index ecce0f43c73a..8784969d91e1 100644
---- a/include/linux/capability.h
-+++ b/include/linux/capability.h
-@@ -251,6 +251,18 @@ extern bool privileged_wrt_inode_uidgid(struct user_namespace *ns, const struct
- extern bool capable_wrt_inode_uidgid(const struct inode *inode, int cap);
- extern bool file_ns_capable(const struct file *file, struct user_namespace *ns, int cap);
- extern bool ptracer_capable(struct task_struct *tsk, struct user_namespace *ns);
-+static inline bool perfmon_capable(void)
-+{
-+	struct user_namespace *ns = &init_user_ns;
-+
-+	if (ns_capable_noaudit(ns, CAP_PERFMON))
-+		return ns_capable(ns, CAP_PERFMON);
-+
-+	if (ns_capable_noaudit(ns, CAP_SYS_ADMIN))
-+		return ns_capable(ns, CAP_SYS_ADMIN);
-+
-+	return false;
-+}
+diff --git a/include/linux/perf_event.h b/include/linux/perf_event.h
+index 6d4c22aee384..730469babcc2 100644
+--- a/include/linux/perf_event.h
++++ b/include/linux/perf_event.h
+@@ -1285,7 +1285,7 @@ static inline int perf_is_paranoid(void)
  
- /* audit system wants to get cap info from files as well */
- extern int get_vfs_caps_from_disk(const struct dentry *dentry, struct cpu_vfs_cap_data *cpu_caps);
-diff --git a/include/uapi/linux/capability.h b/include/uapi/linux/capability.h
-index 240fdb9a60f6..8b416e5f3afa 100644
---- a/include/uapi/linux/capability.h
-+++ b/include/uapi/linux/capability.h
-@@ -366,8 +366,14 @@ struct vfs_ns_cap_data {
+ static inline int perf_allow_kernel(struct perf_event_attr *attr)
+ {
+-	if (sysctl_perf_event_paranoid > 1 && !capable(CAP_SYS_ADMIN))
++	if (sysctl_perf_event_paranoid > 1 && !perfmon_capable())
+ 		return -EACCES;
  
- #define CAP_AUDIT_READ		37
+ 	return security_perf_event_open(attr, PERF_SECURITY_KERNEL);
+@@ -1293,7 +1293,7 @@ static inline int perf_allow_kernel(struct perf_event_attr *attr)
  
-+/*
-+ * Allow system performance and observability privileged operations
-+ * using perf_events, i915_perf and other kernel subsystems
-+ */
-+
-+#define CAP_PERFMON		38
+ static inline int perf_allow_cpu(struct perf_event_attr *attr)
+ {
+-	if (sysctl_perf_event_paranoid > 0 && !capable(CAP_SYS_ADMIN))
++	if (sysctl_perf_event_paranoid > 0 && !perfmon_capable())
+ 		return -EACCES;
  
--#define CAP_LAST_CAP         CAP_AUDIT_READ
-+#define CAP_LAST_CAP         CAP_PERFMON
+ 	return security_perf_event_open(attr, PERF_SECURITY_CPU);
+@@ -1301,7 +1301,7 @@ static inline int perf_allow_cpu(struct perf_event_attr *attr)
  
- #define cap_valid(x) ((x) >= 0 && (x) <= CAP_LAST_CAP)
+ static inline int perf_allow_tracepoint(struct perf_event_attr *attr)
+ {
+-	if (sysctl_perf_event_paranoid > -1 && !capable(CAP_SYS_ADMIN))
++	if (sysctl_perf_event_paranoid > -1 && !perfmon_capable())
+ 		return -EPERM;
  
-diff --git a/security/selinux/include/classmap.h b/security/selinux/include/classmap.h
-index 7db24855e12d..c599b0c2b0e7 100644
---- a/security/selinux/include/classmap.h
-+++ b/security/selinux/include/classmap.h
-@@ -27,9 +27,9 @@
- 	    "audit_control", "setfcap"
+ 	return security_perf_event_open(attr, PERF_SECURITY_TRACEPOINT);
+diff --git a/kernel/events/core.c b/kernel/events/core.c
+index a1f8bde19b56..b1fcbbe24849 100644
+--- a/kernel/events/core.c
++++ b/kernel/events/core.c
+@@ -11186,7 +11186,7 @@ SYSCALL_DEFINE5(perf_event_open,
+ 	}
  
- #define COMMON_CAP2_PERMS  "mac_override", "mac_admin", "syslog", \
--		"wake_alarm", "block_suspend", "audit_read"
-+		"wake_alarm", "block_suspend", "audit_read", "perfmon"
- 
--#if CAP_LAST_CAP > CAP_AUDIT_READ
-+#if CAP_LAST_CAP > CAP_PERFMON
- #error New capability defined, please update COMMON_CAP2_PERMS.
- #endif
+ 	if (attr.namespaces) {
+-		if (!capable(CAP_SYS_ADMIN))
++		if (!perfmon_capable())
+ 			return -EACCES;
+ 	}
  
 -- 
 2.20.1
-
 
 
 _______________________________________________
