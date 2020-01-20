@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69D201431F4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 20:04:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FE8F1431F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 20:10:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2Va7YpJ9s0yEki1/vwcwH2Ul33pvwcwrku2gmheZlsI=; b=ADGw2yU0oojY89oJg8RjdyU0u
-	ZCpY2cUtoAcc8lw+Lx38kA1C2WZ74JAOCX1CQN9asgnj6jALhD7cMhIZArxpak+qDunlp2nxQcZFM
-	QNjfYlxCdwIh3/LyiJCl0t5evOq/W6rwlc4Q7HXoYoZ0UVNthRTr8pD9WKSv/ZDFnijwQX9IrjJzU
-	OqgMKBOmlP16eK2la4e8BhlDExs5Yt9ZtarjpIAM3lUOQrIFXOFS0truR+yg9VeeCiYEFlmzkpvG/
-	BgRyEe1G3czwJyc7RYKGxBA+nE15DwhQ8K2msmNfn7c/LFcjUAfE7ZqY2OvuPKL9xWyCgFfOhK5qb
-	ykEzcd3Mw==;
+	 bh=nDJUHDFBr9zNpjD+o1r+fbO2/QJ94CWxJMlxjfr5ENo=; b=nRbs46BHha4mEZ+LbEJ6xCaEB
+	PMvaqK4HPvYow4Ig25EZV9zRKjq64IQscHlvjz4d4bMSKTqJoJ2OeuwHu0ZTLGDiK4AbGzwBBzu8T
+	l5k6TwKyJFo9JvwE7nVsNC+KxOJDdAV1v+b/1xschUyW7RHqvHDHvVi2DbflQc73GXCA93a8EjFKw
+	Oo81Pzk+MaD1RNt+bBxSdHVdS28jZf2q8qu5wzoMpOu+XGNvcg1Qvsqe/7zIJE7etOz8yE3MWeOnL
+	oNy65s11RqzTRd0KuQFcawrurQvBl0XQKdoUyq0jJslXw7hPtMMDG99/JoCEGO8gOueZ6XcYo6juU
+	GaX4SLfFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itcLt-0001AB-6R; Mon, 20 Jan 2020 19:04:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itcLe-00015X-FG; Mon, 20 Jan 2020 19:04:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A43931B;
- Mon, 20 Jan 2020 11:04:29 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 08FCE3F68E;
- Mon, 20 Jan 2020 11:04:28 -0800 (PST)
-Date: Mon, 20 Jan 2020 19:04:27 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Wen Su <Wen.Su@mediatek.com>
-Subject: Re: [RESEND 3/4] regulator: mt6359: Add support for MT6359 regulator
-Message-ID: <20200120190427.GO6852@sirena.org.uk>
-References: <1579506450-21830-1-git-send-email-Wen.Su@mediatek.com>
- <1579506450-21830-4-git-send-email-Wen.Su@mediatek.com>
+	id 1itcQq-0002wA-Bh; Mon, 20 Jan 2020 19:09:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itcQc-0002va-8s
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 19:09:42 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 566A322525;
+ Mon, 20 Jan 2020 19:09:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579547377;
+ bh=h5Q0lFPTlNEditb7Qh3N2CSA19MSJDmcR10BpaLKWT8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=zt6xoAWxuSXzJyVYB8rZgZWObtuTQNBQJuN/H8rXLjKA4CpM8tTTtLllbSqEssypE
+ 6aGUuN1xoPHJ6lDT0yK2FZvYVJRVZnFzitUq67xKunNfNrfkb3sA0KkpXj/V7Uw33r
+ nWlb84HHOuoQ0ISL/fCfpPiJFtgaCY9YTKwT3MKI=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1itcQZ-000Lm2-Kh; Mon, 20 Jan 2020 19:09:35 +0000
 MIME-Version: 1.0
-In-Reply-To: <1579506450-21830-4-git-send-email-Wen.Su@mediatek.com>
-X-Cookie: I invented skydiving in 1989!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Mon, 20 Jan 2020 19:09:35 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: kbuild test robot <lkp@intel.com>, Yash Shah <yash.shah@sifive.com>
+Subject: Re: [arm-platforms:irq/irqchip-next 5/28]
+ drivers/gpio/gpio-sifive.c:83:2: error: implicit declaration of function
+ 'irq_chip_enable_parent'; did you mean 'gpiochip_enable_irq'?
+In-Reply-To: <202001210210.Abjd7Hni%lkp@intel.com>
+References: <202001210210.Abjd7Hni%lkp@intel.com>
+Message-ID: <5332083498380e8cc461e618f024782b@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: lkp@intel.com, yash.shah@sifive.com, kbuild-all@lists.01.org,
+ linux-arm-kernel@lists.infradead.org, wesley@sifive.com, atish.patra@wdc.com,
+ bgolaszewski@baylibre.com, linus.walleij@linaro.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_110430_562385_024A6D67 
-X-CRM114-Status: GOOD (  13.26  )
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200120_110938_359826_EA455991 
+X-CRM114-Status: GOOD (  13.03  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,109 +91,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7566680816109150262=="
+Cc: kbuild-all@lists.01.org, Atish Patra <atish.patra@wdc.com>, "Wesley
+ W. Terpstra" <wesley@sifive.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Yash,
 
---===============7566680816109150262==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Qa0ccP92Gc0Ko3P8"
-Content-Disposition: inline
+On 2020-01-20 18:59, kbuild test robot wrote:
+> tree:
+> https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git
+> irq/irqchip-next
+> head:   c7f5b05c27a8501dc5a88bab49b6010e375e91f8
+> commit: cd2abc8e87fef699d0da106103b65f6ca8dcbfe7 [5/28] gpio/sifive:
+> Add GPIO driver for SiFive SoCs
+> config: c6x-randconfig-a001-20200121 (attached as .config)
+> compiler: c6x-elf-gcc (GCC) 7.5.0
+> reproduce:
+>         wget
+> https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross
+> -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         git checkout cd2abc8e87fef699d0da106103b65f6ca8dcbfe7
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.5.0 make.cross ARCH=c6x
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All errors (new ones prefixed by >>):
+> 
+>    drivers/gpio/gpio-sifive.c: In function 'sifive_gpio_irq_enable':
+>>> drivers/gpio/gpio-sifive.c:83:2: error: implicit declaration of 
+>>> function 'irq_chip_enable_parent'; did you mean 
+>>> 'gpiochip_enable_irq'? [-Werror=implicit-function-declaration]
+>      irq_chip_enable_parent(d);
 
+[...]
 
---Qa0ccP92Gc0Ko3P8
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+This is how I'm planning to fix this (at least for the time
+being, as I don't want to break -next at this stage).
 
-On Mon, Jan 20, 2020 at 03:47:29PM +0800, Wen Su wrote:
+Let me know if you want to address it otherwise.
 
-This seems pretty good, a few comments below but they're fairly small
-and should be easy to address:
+Thanks,
 
-> +static int mt6359_set_voltage_sel(struct regulator_dev *rdev,
-> +				  unsigned int selector)
-> +{
-> +	int idx, ret;
-> +	const u32 *pvol;
-> +	struct mt6359_regulator_info *info = rdev_get_drvdata(rdev);
-> +
-> +	pvol = info->index_table;
-> +
-> +	idx = pvol[selector];
-> +	ret = regmap_update_bits(rdev->regmap, info->desc.vsel_reg,
-> +				 info->desc.vsel_mask,
-> +				 idx << info->vsel_shift);
-> +
-> +	return ret;
-> +}
+         M.
 
-This looks like you should be using regulator_list_voltage_table() and
-associated functions, probably map_voltage_ascend() or _iterate() and
-just a simple set_voltage_sel_regmap().
+diff --git a/drivers/gpio/Kconfig b/drivers/gpio/Kconfig
+index 6c63b79069f2..809dd54a2e82 100644
+--- a/drivers/gpio/Kconfig
++++ b/drivers/gpio/Kconfig
+@@ -481,7 +481,7 @@ config GPIO_SAMA5D2_PIOBU
 
-> +static int mt6359_get_status(struct regulator_dev *rdev)
-> +{
-> +	int ret;
-> +	u32 regval;
-> +	struct mt6359_regulator_info *info = rdev_get_drvdata(rdev);
-> +
-> +	ret = regmap_read(rdev->regmap, info->status_reg, &regval);
-> +	if (ret != 0) {
-> +		dev_err(&rdev->dev, "Failed to get enable reg: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	return (regval & info->qi) ? REGULATOR_STATUS_ON : REGULATOR_STATUS_OFF;
-
-Please write normal conditionl statements rather than using the ternery
-operator to improve legibility.
-
-> +	switch (mode) {
-> +	case REGULATOR_MODE_FAST:
-> +		if (curr_mode == REGULATOR_MODE_IDLE) {
-> +			WARN_ON(1);
-> +			dev_notice(&rdev->dev,
-> +				   "BUCK %s is LP mode, can't FPWM\n",
-> +				   rdev->desc->name);
-> +			return -EIO;
-
-I'd expect the device to go out of low power mode then into force PWM
-mode if it has to do that rather than reject the operation.
-
---Qa0ccP92Gc0Ko3P8
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4l+boACgkQJNaLcl1U
-h9CShAf/WdS4iLv8FmqgPQ6jxUZsWIHU4beM7oDoeI16KydYH71AEzVsF5AmZ/Fi
-q6qUuiabJm+9IVCwXc55mWA5IlFDMSoYM5VCt+QwxsUxaO2QoCjs/FgdkZcvNPyu
-KJfmVJdGPE3ZzA6UjDC7tVOR1CYCC8ey8U6Y45rhPU6ln4RDxTnVAFFtKlUM5UM7
-/Mw/NwmnR3AtdQvHw20WbLhTqWiNR8m5XAryzMRd+H35WuF/3xRlPSRvrGYjxkAL
-7R3Wbs2KsQ7J+bPCPbLf0N9WSvZurn/hMT++bQJKqeAei0V+bo2Phk66Iq7rQkgJ
-TGSDUr+2JcIj+zZtLcbRkcrnQUCt1w==
-=Vsrk
------END PGP SIGNATURE-----
-
---Qa0ccP92Gc0Ko3P8--
+  config GPIO_SIFIVE
+         bool "SiFive GPIO support"
+-       depends on OF_GPIO
++       depends on OF_GPIO && IRQ_DOMAIN_HIERARCHY
+         select GPIO_GENERIC
+         select GPIOLIB_IRQCHIP
+         select REGMAP_MMIO
 
 
---===============7566680816109150262==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7566680816109150262==--
-
