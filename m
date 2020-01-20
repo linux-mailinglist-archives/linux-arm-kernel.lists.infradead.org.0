@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E563B14330F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 21:52:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44216143319
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 21:55:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NG1mV4VCXi3stz7XSJ/4IyyJRbwUkLmWi7OdhmEzM3E=; b=UGYPYA1AA62qE+fTSD2AfSU9Y
-	Ep6iWamC2ERElBHFpo5rNFMI9rGdPBRAE0iMGEaSn4j17XO2O+PClNsP2mUXBOcdJQMde6/Hd1Wri
-	M5Ch8WXq6DVffnuklW4cuyxZrBkFfob2YQSCkiBONHml0GHj+JVUBnuII+fV312v4wrjQQPnY2iRi
-	a25FhBG1U+USE4CS75mG69a5A5uvNiV02nf5gXUT1KAmz44vcWqjYb/IfD3ycLUV9JOBLoaFvs3G1
-	n7tLExJLK+N/b02qyt9mNavhCGAA+G5iou5YaCk6TJazTvyG64tb9VnSWtp8y9oxEEUD4FqjyG76Y
-	+EVWK7kUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OjP6iySWcU514ovu6Guh88CGeTay4b+4Nau1EXZs6Ls=; b=ccclnY7t7q2P9E
+	5A1ChuGCLYn9MyPc8QHPIvODqpYB+SdYvdbSXlnzS2url2o02c2b1z2uZWnUUCK251Jb/Xzf/anb+
+	r43ndDaw/i7rcLiIQlid2VdzV1O5dXBjTPj2gY8Y6LcUwXve7Zq0Jnsf/YtBGBIozYybVtttgihgG
+	9zh12KXX3omwSZ5yIBQn8kjQkUrQMhkVGfn/8XFUclz2hJ6z1zsSLJLtWT+Z+P6G8zVn66F5+Gb4d
+	BPzu8LF+KhS6hWnfwdOKXejHqT7Xs2D8U4woeSqNJwNITv4kNmEZFCSs/VBkyuh/vaurzeKU5sn9v
+	QvIxPo7ZIusTvD4YtbSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ite2A-0000zI-Ri; Mon, 20 Jan 2020 20:52:30 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1ite4m-0001Yk-FA; Mon, 20 Jan 2020 20:55:12 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ite21-0000yy-Gb
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 20:52:22 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1579553541; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=/F/P/PamSf53/0NktI+vEIZjO2L7dILbSNYBUNX/1aI=;
- b=fiZ4qUcnqFJpZIJHGFkIRER3zEIvPc25VusmgB9x9+Kh0mntsBTq2Yvj1fn5zNbUa830f4rY
- S44ZbbFC8NqkbkQPeioz0IWfQ881aHLd55wi044hP1mZBV1O0a5OS/8p7FjcmmuZmNzl3htq
- PNfPoMc/9mBXX12ot78GiHsODyM=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e261304.7fe176a441f0-smtp-out-n03;
- Mon, 20 Jan 2020 20:52:20 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 8E223C4479F; Mon, 20 Jan 2020 20:52:19 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.46.161.159] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E6EB9C433CB;
- Mon, 20 Jan 2020 20:52:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E6EB9C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v1 3/3] scsi: ufs-mediatek: enable low-power mode for
- hibern8 state
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- jejb@linux.ibm.com
-References: <20200117035108.19699-1-stanley.chu@mediatek.com>
- <20200117035108.19699-4-stanley.chu@mediatek.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <38b2614d-1fdd-8bad-63a1-e9bc5698cc66@codeaurora.org>
-Date: Mon, 20 Jan 2020 12:52:17 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1ite4U-0001Px-PT
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 20:54:56 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id d16so901763wre.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Jan 2020 12:54:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=8lRXXIUyqwXrmsBEZ3rjQQlxicv1Nv/m0tfwidDkhj8=;
+ b=rhdoQPLQ07urVcj2wMzE43Og3Gct2l8w1sO4UCbqvAzbGnu9jNTv94d5NS1XMJBdlH
+ G9R5Ms4izHWbNAuI5Pmk4fl4uyDh51BuJ+eBYqtlfDspWjn4tToxQsr6XhTM5siS+7Cl
+ BRsgoi6poITatcFWE81ii8bOWoXePJ13pOtxxb1Nl8waqf0IRziDe5OPw07DmziWyKRO
+ NoeiDEWbSUXZD6Hl+SX0kNWEtagVyvDFWWI0MyuGcVxLP6d6RYASyhZAH/ke4j6Hb803
+ t1Qs0WG74pYTQ12KbAEjhQuoO6Mkv4UmBHZEPMO8up7rGRnrmJVlhLp3gNmSqRr6TPnw
+ uxMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=8lRXXIUyqwXrmsBEZ3rjQQlxicv1Nv/m0tfwidDkhj8=;
+ b=U5y4UVas7ij/dOeJ3DR0TcE0xUgpzYHJNQKdtyNaUfltB2G3kFc6sVmjtQ4l9Bywlg
+ HfitUID6wDnZ++BfCEO9/T53w9Du/WVG5eOGXHKgep084Rh6qqwIy8e0aUKb5+5mrvTm
+ 5LHu0PySYYjpYAnlRkMkkfXM5tBMV6s2EpmVw9Jj4NPhaH0oIBFyLln6TPFnNlMx7oCI
+ 2akMIDrWV5PCSCfMCJC6lYaTwuIz+d2s2jotS2NpW6va0FY9kvMZJpkxYtPdNtQhY90a
+ cnVqFRcFbe5hkjEZbrDvibmWQ7Z/vPwTt1DFsFqzZTez2zROvwMfMR0M/AAHm3ICcUhZ
+ xJQA==
+X-Gm-Message-State: APjAAAWdnxzi+uQkkV5z1qYqpP+BXnnJ6IYSitske3WWKedcogzHvg8U
+ Ek5wCmyAHf7SLXCfO/GKkjCZdA==
+X-Google-Smtp-Source: APXvYqw3/qMS6Y+xEoaKQDefsTLKHgn8Y0loRzc82kDexLp3kKeNIAGphvVzk6fzUZJpvikn8AdjZA==
+X-Received: by 2002:adf:90ee:: with SMTP id i101mr1258448wri.417.1579553692772; 
+ Mon, 20 Jan 2020 12:54:52 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id e16sm49323228wrs.73.2020.01.20.12.54.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Jan 2020 12:54:52 -0800 (PST)
+Message-ID: <5e26139c.1c69fb81.81dd3.66f5@mx.google.com>
+Date: Mon, 20 Jan 2020 12:54:52 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200117035108.19699-4-stanley.chu@mediatek.com>
-Content-Language: en-US
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Report-Type: build
+X-Kernelci-Kernel: v5.5-rc7-70-g46158a360c3a
+Subject: arm64/for-kernelci build: 3 builds: 0 failed,
+ 3 passed (v5.5-rc7-70-g46158a360c3a)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_125221_613306_050F0868 
-X-CRM114-Status: GOOD (  20.36  )
+X-CRM114-CacheID: sfid-20200120_125454_973569_A4C30F53 
+X-CRM114-Status: UNSURE (   3.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:42e listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,116 +96,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/16/2020 7:51 PM, Stanley Chu wrote:
-> In MediaTek Chipsets, UniPro link and ufshci can enter proprietary
-> low-power mode while link is in hibern8 state.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
-
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-
->   drivers/scsi/ufs/ufs-mediatek.c | 53 +++++++++++++++++++++++++++++++++
->   1 file changed, 53 insertions(+)
-> 
-> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-> index d5194d0c4ef5..f32f3f34f6d0 100644
-> --- a/drivers/scsi/ufs/ufs-mediatek.c
-> +++ b/drivers/scsi/ufs/ufs-mediatek.c
-> @@ -382,11 +382,60 @@ static void ufs_mtk_device_reset(struct ufs_hba *hba)
->   	dev_info(hba->dev, "device reset done\n");
->   }
->   
-> +static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
-> +{
-> +	int err;
-> +
-> +	err = ufshcd_hba_enable(hba);
-> +	if (err)
-> +		return err;
-> +
-> +	err = ufshcd_dme_set(hba,
-> +			     UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +			     0);
-> +	if (err)
-> +		return err;
-> +
-> +	err = ufshcd_uic_hibern8_exit(hba);
-> +	if (!err)
-> +		ufshcd_set_link_active(hba);
-> +	else
-> +		return err;
-> +
-> +	err = ufshcd_make_hba_operational(hba);
-> +	if (err)
-> +		return err;
-> +
-> +	return 0;
-> +}
-> +
-> +static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
-> +{
-> +	int err;
-> +
-> +	err = ufshcd_dme_set(hba,
-> +			     UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +			     1);
-> +	if (err) {
-> +		/* Resume UniPro state for following error recovery */
-> +		ufshcd_dme_set(hba,
-> +			       UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
-> +			       0);
-> +		return err;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->   static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->   {
-> +	int err;
->   	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
->   
->   	if (ufshcd_is_link_hibern8(hba)) {
-> +		err = ufs_mtk_link_set_lpm(hba);
-> +		if (err)
-> +			return -EAGAIN;
->   		phy_power_off(host->mphy);
->   		ufs_mtk_setup_ref_clk(hba, false);
->   	}
-> @@ -397,10 +446,14 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->   static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->   {
->   	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-> +	int err;
->   
->   	if (ufshcd_is_link_hibern8(hba)) {
->   		ufs_mtk_setup_ref_clk(hba, true);
->   		phy_power_on(host->mphy);
-> +		err = ufs_mtk_link_set_hpm(hba);
-> +		if (err)
-> +			return err;
->   	}
->   
->   	return 0;
-> 
-
-
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
+NS41LXJjNy03MC1nNDYxNThhMzYwYzNhKQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
+cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS41LXJj
+Ny03MC1nNDYxNThhMzYwYzNhLwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
+IERlc2NyaWJlOiB2NS41LXJjNy03MC1nNDYxNThhMzYwYzNhCkdpdCBDb21taXQ6IDQ2MTU4YTM2
+MGMzYTM1NDU3M2Q5OWIxNWMwNTIxMTZhYjVmMWY5ZWIKR2l0IFVSTDogZ2l0Oi8vZ2l0Lmtlcm5l
+bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4LmdpdApCdWlsdDogMSB1
+bmlxdWUgYXJjaGl0ZWN0dXJlCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKRGV0YWlsZWQgcGVy
+LWRlZmNvbmZpZyBidWlsZCByZXBvcnRzOgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbW9k
+Y29uZmlnIChhcm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBz
+ZWN0aW9uIG1pc21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmFsbG5vY29uZmlnIChh
+cm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1p
+c21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmRlZmNvbmZpZyAoYXJtNjQsIGdjYy04
+KSDigJQgUEFTUywgMCBlcnJvcnMsIDAgd2FybmluZ3MsIDAgc2VjdGlvbiBtaXNtYXRjaGVzCgot
+LS0KRm9yIG1vcmUgaW5mbyB3cml0ZSB0byA8aW5mb0BrZXJuZWxjaS5vcmc+CgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
