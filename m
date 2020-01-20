@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE6814329B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 20:46:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9025B14329D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 20:46:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EBFO6TDEa3Dec5ulwoZFkdHy3UYIc53Xvr+cOvqvCfE=; b=cOx8YyxfEY2GmPuWKkQKwaLS7b
-	/+Fyc+JQsF9NeXIu5nul2U4AP0b2t9YLBqaCGdr+4+pKQwacJ9fa52wt+Xn7p8gHAmiKxa0sA4r7i
-	3Cekxp56wRLkZRmqb+0o51zW6+54/dg/WD8/YwT1Jiqt9fbg1GxBL9Elbmpwh1DbzwM6uiaXvT9HW
-	+xV/yn8SMFxoMmHnRUJ4MZShxePn19Cv1ruTz04M3HPfbHDKo2Oo2bnO8iGcW6g7c5JwT9QOuLANa
-	rZC0ibqQrWuXUKUAx2Zpa4ry8afaZ0ZpKM1ocV1xS7dkFl1OSgBBWKgdWPkExDQnD3MnwvCgmhrHQ
-	B81p0MLg==;
+	bh=Dv1Ekb4KOADfazO1i3flKgvEV4t/ed9mSI7q/5qoVUA=; b=j8X+RDKJcNS62mTTVoiyzGYK9h
+	ExWhGKzgdvjkruGyE9bAuBoKpOqtM/IQo4o9cLTbiSiTp1s49/H6ZuVmMzh+64VFr5b7bNtyvblEo
+	27B3Uc22sJENe3kTn5JmLuuvROQYMpxY4JFyUqANE7qCzq7yVc8HADXbEDjnD8wrOS1sjYiTJ4YsP
+	RzTU0cBTzVJ22mW5TylKK7GQt+SiZprKmOi9nGsHx3WmKGqrX4O8ZU/yBJDC8hYjdWIfFgGdC+w8H
+	0XYsZ/MU9mez+UOmAWmsKfRWvC/QpgwdLPjHyCb/LDAIV9ASaE+evmNpV/ZWOeqJIAU4HMyrEA/+H
+	OP0JFyPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itd0H-0000qT-Rn; Mon, 20 Jan 2020 19:46:29 +0000
-Received: from outgoing18.flk.host-h.net ([197.242.87.52])
+	id 1itd0S-00011z-UJ; Mon, 20 Jan 2020 19:46:40 +0000
+Received: from outgoing11.flk.host-h.net ([188.40.208.241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itczO-0000A4-Di; Mon, 20 Jan 2020 19:45:44 +0000
+ id 1itczP-0000AJ-Nl; Mon, 20 Jan 2020 19:45:45 +0000
 Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam5-flk1.host-h.net with esmtpsa
+ by antispam3-flk1.host-h.net with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
  (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itczE-000467-8G; Mon, 20 Jan 2020 21:45:25 +0200
+ id 1itczG-0000cv-RT; Mon, 20 Jan 2020 21:45:27 +0200
 Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
  by www31.flk1.host-h.net with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
  (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itczC-0004Hk-3p; Mon, 20 Jan 2020 21:45:22 +0200
+ id 1itczD-0004Hk-Es; Mon, 20 Jan 2020 21:45:23 +0200
 From: Justin Swartz <justin.swartz@risingedge.co.za>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 3/4] ARM: dts: rockchip: add rga node for rk322x
-Date: Mon, 20 Jan 2020 19:41:56 +0000
-Message-Id: <20200120194158.25357-3-justin.swartz@risingedge.co.za>
+Subject: [PATCH 4/4] ARM: dts: rockchip: add rga to rk3229-xms6
+Date: Mon, 20 Jan 2020 19:41:57 +0000
+Message-Id: <20200120194158.25357-4-justin.swartz@risingedge.co.za>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
 References: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
@@ -52,35 +52,36 @@ Authentication-Results: host-h.net;
 X-SpamExperts-Outgoing-Class: ham
 X-SpamExperts-Outgoing-Evidence: Combined (0.03)
 X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0Xm17NJf4el5vffImWwWrhCpSDasLI4SayDByyq9LIhV1DC+T4iekLkk
- i4Yxkf6yMETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fKZ8wcD78QFAaYhvfMzLIKpSDasLI4SayDByyq9LIhVeWb5TMLTma+i
+ 4jOGzZGfZETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
  mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
  f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
  qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18actDDDgABV3k+TCb1ym68eMAVXirbLu
+ E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18afb/FOITJmxBc0QX+fY5eUpAVXirbLu
  Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
+ ttWGem52QLIiDo2hv5/Q58JTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
  6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
  CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
  RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
  gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMWQbSR6Wmuan/Ls9Qsz9RDB7QexKJ4YAOEaPoA/bFrwb38NrFoXSENXH6UXfnav35JPA4YfM
+ TwbwMaed1BaNkB2/QnXFItfl/CWjT+yf5NxUSmxyzYlBxqy338NrFoXSENXH6UXfnav35JPA4YfM
  6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- fozl3YQYVDLOw3T54l/NyVO8Dt0WhqJP7mY8k292SrPw+mbjO41FyBEqIaDudcVplPE6wCr6GXU1
+ fozs0E8f2AsASs7mWOF+2zisWBpVRcW84PzgOLDW9zuKlWbjO41FyBEqIaDudcVplPE6wCr6GXU1
  lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
  3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
  7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
 X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_114534_457143_62512A7B 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20200120_114535_769493_1B6F0A43 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.52 listed in list.dnswl.org]
+ low trust [188.40.208.241 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,36 +104,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a node to define the presence of RGA, a 2D raster graphic
-acceleration unit.
+Enable RGA for Mecer Xtreme Mini S6.
 
 Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
 ---
- arch/arm/boot/dts/rk322x.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm/boot/dts/rk3229-xms6.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 340ed6ccb..486ad591f 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -566,6 +566,17 @@
- 		status = "disabled";
- 	};
+diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
+index 679fc2b00..894f64a4a 100644
+--- a/arch/arm/boot/dts/rk3229-xms6.dts
++++ b/arch/arm/boot/dts/rk3229-xms6.dts
+@@ -202,6 +202,10 @@
+ 	status = "okay";
+ };
  
-+	rga: rga@20060000 {
-+		compatible = "rockchip,rk3228-rga";
-+		reg = <0x20060000 0x1000>;
-+		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA>;
-+		clock-names = "aclk", "hclk", "sclk";
-+		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-+		reset-names = "core", "axi", "ahb";
-+		status = "disabled";
-+	};
++&rga {
++	status = "okay";
++};
 +
- 	vpu_mmu: iommu@20020800 {
- 		compatible = "rockchip,iommu";
- 		reg = <0x20020800 0x100>;
+ &sdmmc {
+ 	cap-mmc-highspeed;
+ 	disable-wp;
 -- 
 2.11.0
 
