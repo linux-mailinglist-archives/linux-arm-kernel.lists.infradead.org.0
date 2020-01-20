@@ -2,75 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07D1E14299B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 12:34:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27A5414299E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 12:35:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/c+rftFm2+dC3yF69MUKcUozofoJBadvj4FX5Pe11C0=; b=KouBpFbI6FHS/z
-	8FSdCf6JG5vaQPdNXhyMkRTcvp41r+fWWkxtAZfb/vGFdmTR8XJPGPYgKAouSQVggzI2y9yndjfyn
-	dICWxJSKs1mXEFrSCm3xMUhQKFtHWFWSFy5DqXjZVfTO+M5mg5gOPvW5zdnZajL2zIhKspGxnqIQA
-	6aN5x8vVdr1nenjNdMvz0xJ6+VDvoJuFxJ1w6wHyWph/qg4VzG2qKMAWRIl6am/QDcVY+5apgVJOD
-	d7kqmqPY1IC0eaTgtXdFNIGwTNKqU2BGCfopiGbx7vm6s5f9IoK/FAQh738J+dJ9MS1trMrEYWXIE
-	78njJnCo2+f4LLiSeI0Q==;
+	List-Owner; bh=vCGqkif1WnWE4LZoH+zBjjXKS9I/c4fSQZtBXZHMuKc=; b=VlmHa8qfNt6q8+
+	17LUDXJuxNmbAsIXvlhMI+Pgad7o/avaDYtRQH4ZRHq0WjVqWk1hI2cMbZL8wKMi4oiQ8VjO0CVhp
+	YmjxoPP8h2QVCfwecFWPtG47exRGBV1zXDEXIJXvQ6yYin/KHIsyv97GdgMLVA00FmHsRVi8BcMix
+	pWleR9gBbLGXk23cYi2k9tosBy6XRr8QSzJXQ8ZQZ+IUZWdqgFh0u26B03qKBMlbzhNEDDNg1w5qW
+	6TxLVXgXRWep7K9iEae8sucp26tddItZuMQqBz7WTRBCeiX5E4HzpLvZsvGdRhgEmYTbWVK56SWtO
+	Tx3vgNnH26ZOZ0GKV8Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itVJi-0007Rb-Kg; Mon, 20 Jan 2020 11:34:02 +0000
-Received: from mga04.intel.com ([192.55.52.120])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itVJZ-0007RG-6S
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 11:33:54 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 20 Jan 2020 03:33:52 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,341,1574150400"; d="scan'208";a="374296392"
-Received: from linux.intel.com ([10.54.29.200])
- by orsmga004.jf.intel.com with ESMTP; 20 Jan 2020 03:33:52 -0800
-Received: from [10.125.252.193] (abudanko-mobl.ccr.corp.intel.com
- [10.125.252.193])
- by linux.intel.com (Postfix) with ESMTP id E511D5803C5;
- Mon, 20 Jan 2020 03:33:43 -0800 (PST)
-Subject: [PATCH v5 10/10] drivers/oprofile: open access for CAP_PERFMON
- privileged process
-From: Alexey Budankov <alexey.budankov@linux.intel.com>
-To: Peter Zijlstra <peterz@infradead.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Serge Hallyn <serge@hallyn.com>,
- James Morris <jmorris@namei.org>, Will Deacon <will.deacon@arm.com>,
- Mark Rutland <mark.rutland@arm.com>, Robert Richter <rric@kernel.org>,
- Alexei Starovoitov <ast@kernel.org>
-References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
-Organization: Intel Corp.
-Message-ID: <196ea578-5079-a27f-07ca-23df0e38485c@linux.intel.com>
-Date: Mon, 20 Jan 2020 14:33:42 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1itVKg-0007hR-2x; Mon, 20 Jan 2020 11:35:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itVKT-0007h4-AT
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 11:34:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 30C4F30E;
+ Mon, 20 Jan 2020 03:34:47 -0800 (PST)
+Received: from [10.2.69.39] (unknown [10.2.69.39])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B137B3F68E;
+ Mon, 20 Jan 2020 03:34:46 -0800 (PST)
+Subject: Re: [PATCH] ARM: virt: Relax arch timer version check during early
+ boot
+To: Marc Zyngier <maz@kernel.org>
+References: <1579097798-106243-1-git-send-email-vladimir.murzin@arm.com>
+ <eb889279-87f2-d674-9299-169794c285eb@arm.com>
+ <d4b8bb91f95385682f20c9dc5c6f5e50@kernel.org>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <38a43fed-1c7a-69ea-3662-e17f13ca74d6@arm.com>
+Date: Mon, 20 Jan 2020 11:34:45 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
+In-Reply-To: <d4b8bb91f95385682f20c9dc5c6f5e50@kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_033353_245253_378DF7CF 
-X-CRM114-Status: GOOD (  14.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200120_033449_401424_2216F66D 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -83,57 +66,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Andi Kleen <ak@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Igor Lubashev <ilubashe@akamai.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, oprofile-list@lists.sf.net,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-Open access to monitoring for CAP_PERFMON privileged processes.
-For backward compatibility reasons access to the monitoring remains
-open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage
-for secure monitoring is discouraged with respect to CAP_PERFMON
-capability. Providing the access under CAP_PERFMON capability singly,
-without the rest of CAP_SYS_ADMIN credentials, excludes chances to
-misuse the credentials and makes the operations more secure.
-
-Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
----
- drivers/oprofile/event_buffer.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/oprofile/event_buffer.c b/drivers/oprofile/event_buffer.c
-index 12ea4a4ad607..6c9edc8bbc95 100644
---- a/drivers/oprofile/event_buffer.c
-+++ b/drivers/oprofile/event_buffer.c
-@@ -113,7 +113,7 @@ static int event_buffer_open(struct inode *inode, struct file *file)
- {
- 	int err = -EPERM;
- 
--	if (!capable(CAP_SYS_ADMIN))
-+	if (!perfmon_capable())
- 		return -EPERM;
- 
- 	if (test_and_set_bit_lock(0, &buffer_opened))
--- 
-2.20.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyYywKCk9uIDEvMjAvMjAgMTE6MTQgQU0sIE1hcmMgWnluZ2llciB3cm90ZToKPiBIaSBW
+bGFkaW1pciwKPiAKPiBPbiAyMDIwLTAxLTIwIDExOjQ2LCBWbGFkaW1pciBNdXJ6aW4gd3JvdGU6
+Cj4+ICsgTWFyYwo+PiArIGt2bWFybUBsaXN0cy5jcy5jb2x1bWJpYS5lZHUKPj4KPj4gT24gMS8x
+NS8yMCAyOjE2IFBNLCBWbGFkaW1pciBNdXJ6aW4gd3JvdGU6Cj4+PiBVcGRhdGVzIHRvIHRoZSBH
+ZW5lcmljIFRpbWVyIGFyY2hpdGVjdHVyZSBhbGxvdyBJRF9QRlIxLkdlblRpbWVyIHRvCj4+PiBo
+YXZlIHZhbHVlcyBvdGhlciB0aGFuIDAgb3IgMS4gQXQgdGhlIG1vbWVudCwgTGludXggaXMgcXVp
+dGUgc3RyaWN0IGluCj4+PiB0aGUgd2F5IGl0IGhhbmRsZXMgdGhpcyBmaWVsZCBhdCBlYXJseSBi
+b290IGFuZCB3aWxsIG5vdCBjb25maWd1cmUKPj4+IGFyY2ggdGltZXIgaWYgaXQgZG9lc24ndCBm
+aW5kIHRoZSB2YWx1ZSAxLgo+Pj4KPj4+IFNpbmNlIGhlcmUgdXNlIHViZnggZm9yIGFyY2ggdGlt
+ZXIgdmVyc2lvbiBleHRyYWN0aW9uIChoeWItc3R1YiBidWlsZAo+Pj4gd2l0aCAtbWFyY2g9YXJt
+djctYSwgc28gaXQgaXMgc2FmZSkKPj4+Cj4+PiBUbyBoZWxwIGJhY2twb3J0cyAoZXZlbiB0aG91
+Z2ggdGhlIGNvZGUgd2FzIGNvcnJlY3QgYXQgdGhlIHRpbWUgb2Ygd3JpdGluZykKPj4+IEZpeGVz
+OiA4ZWM1OGJlOWYzZmYgKCJBUk06IHZpcnQ6IGFyY2hfdGltZXJzOiBlbmFibGUgYWNjZXNzIHRv
+IHBoeXNpY2FsIHRpbWVycyIpCj4+PiBTaWduZWQtb2ZmLWJ5OiBWbGFkaW1pciBNdXJ6aW4gPHZs
+YWRpbWlyLm11cnppbkBhcm0uY29tPgo+IAo+IEknbSBub3Qgb3Bwb3NlZCB0byBzdWNoIGEgY2hh
+bmdlLCBidXQgaXQnZCBiZSBnb29kIHRvIGRvY3VtZW50IHdoYXQgb3RoZXIgdmFsdWVzCj4gYXJl
+IGV4cGVjdGVkIGhlcmUsIGFzIHRoZSBjdXJyZW50IChSZXYgRV9hKSBBUk0gQVJNIG9ubHkgbWVu
+dGlvbnMgdmFsdWVzIDAgYW5kIDEuCgpUaGF0IHRydWUsIEFSTSBBUk0gZG9lc24ndCBtZW50aW9u
+IGl0IHlldC4gT1RPSCwgc2hvdWxkIHdlIHJlYWxseSBjYXJlIGFib3V0IGV4YWN0CnZhbHVlcyBh
+cyBzb29uIGl0IHN0YXlzIGNvbXBhdGlibGU/CgpDaGVlcnMKVmxhZGltaXIKCj4gCj4gVGhhbmtz
+LAo+IAo+IMKgwqDCoMKgwqDCoMKgIE0uCj4gCj4+PiAtLS0KPj4+IMKgYXJjaC9hcm0va2VybmVs
+L2h5cC1zdHViLlMgfCA3ICsrKy0tLS0KPj4+IMKgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9u
+cygrKSwgNCBkZWxldGlvbnMoLSkKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0va2VybmVs
+L2h5cC1zdHViLlMgYi9hcmNoL2FybS9rZXJuZWwvaHlwLXN0dWIuUwo+Pj4gaW5kZXggYWU1MDIw
+My4uNjYwN2ZhOCAxMDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJtL2tlcm5lbC9oeXAtc3R1Yi5TCj4+
+PiArKysgYi9hcmNoL2FybS9rZXJuZWwvaHlwLXN0dWIuUwo+Pj4gQEAgLTE0NiwxMCArMTQ2LDkg
+QEAgQVJNX0JFOChvcnLCoMKgwqAgcjcsIHI3LCAjKDEgPDwgMjUpKcKgwqDCoMKgIEAgSFNDVExS
+LkVFCj4+PiDCoCNpZiAhZGVmaW5lZChaSU1BR0UpICYmIGRlZmluZWQoQ09ORklHX0FSTV9BUkNI
+X1RJTUVSKQo+Pj4gwqDCoMKgwqAgQCBtYWtlIENOVFBfKiBhbmQgQ05UUENUIGFjY2Vzc2libGUg
+ZnJvbSBQTDEKPj4+IMKgwqDCoMKgIG1yY8KgwqDCoCBwMTUsIDAsIHI3LCBjMCwgYzEsIDHCoMKg
+wqAgQCBJRF9QRlIxCj4+PiAtwqDCoMKgIGxzcsKgwqDCoCByNywgIzE2Cj4+PiAtwqDCoMKgIGFu
+ZMKgwqDCoCByNywgIzB4Zgo+Pj4gLcKgwqDCoCBjbXDCoMKgwqAgcjcsICMxCj4+PiAtwqDCoMKg
+IGJuZcKgwqDCoCAxZgo+Pj4gK8KgwqDCoCB1YmZ4wqDCoMKgIHI3LCByNywgIzE2LCAjNAo+Pj4g
+K8KgwqDCoCB0ZXHCoMKgwqAgcjcsICMwCj4+PiArwqDCoMKgIGJlccKgwqDCoCAxZgo+Pj4gwqDC
+oMKgwqAgbXJjwqDCoMKgIHAxNSwgNCwgcjcsIGMxNCwgYzEsIDDCoMKgwqAgQCBDTlRIQ1RMCj4+
+PiDCoMKgwqDCoCBvcnLCoMKgwqAgcjcsIHI3LCAjM8KgwqDCoMKgwqDCoMKgIEAgUEwxUENFTiB8
+IFBMMVBDVEVOCj4+PiDCoMKgwqDCoCBtY3LCoMKgwqAgcDE1LCA0LCByNywgYzE0LCBjMSwgMMKg
+wqDCoCBAIENOVEhDVEwKPj4+Cj4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
