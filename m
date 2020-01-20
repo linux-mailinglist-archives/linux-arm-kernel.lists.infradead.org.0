@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0D1A142F7B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 17:21:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21BB5142F8C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 17:26:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tTQjJ0TOsOZU195vHLcTmmhFC2RdADI9/hxehIoNCHw=; b=YjNHHRFpQKPCggKRkCT8Qa6zw
-	4IycVb+8aaJ0L3s26vm+pZiFcmxp+bH4FrW3VXwFIVEpsN//etPDge7C3V2W9nMSnz77Ez1siVx5C
-	Pl/6LFthvlpbursD60XN3A81HI12vrF2Na7dhESel+N+THMx9FTPCQgqKpRLt48QB1NttMAFxTw3Z
-	3ECWs7o9/roHht3dqGIDingDI7WVlWuukbQHQjN7fbgJ5sxRBPW186pu9y+p07tqoBnVr9sxknrNM
-	+tKUU107TPOAFXrPWfWxjl3x5c3XThidcH0qGKVRgeQC1jdYuS4MNWNawftWeOGwI9A+BQ2H6nfKc
-	6hDbAXVGg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8L16Bopoa3MQyvf2mby0i+wDNRLDKOfld4ovAFQ0wqk=; b=KTH2rjWRbls8gY
+	oT+j89tS0EcgwrEBmZVEIYjBCsyXeGM084qDG6xv2dAe0v4pIJvM5qHIKW1w8a/Fcq0JTW/PcrWmE
+	SWXNO1rtzFsrJ9z1wOqXV9WFBVW84qkf/5X9bZ6Y7uyGgyX+Rbz9ukxFC11MjskwN2F4+b0igwCG9
+	Ue9kDxvWrUh4cgCJVp6Th5JSID+5b6FGpSFxmBxKZQE8VcAgxxyJM6W0WYbo25TyzSTDhcgAt51IV
+	oCmSmbzao46Aq7pB/qP5c9DSWLBP/lenCqBKNxm2Mn8Gxi/NHOsMBsO+xBPTHGlU5M7DrftxJYEQ+
+	Z9GTH1sPa4pHz912+SDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itZni-0008Nn-4e; Mon, 20 Jan 2020 16:21:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itZnR-0008M2-S0; Mon, 20 Jan 2020 16:21:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4EDB731B;
- Mon, 20 Jan 2020 08:21:01 -0800 (PST)
-Received: from [10.37.12.169] (unknown [10.37.12.169])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C2703F6C4;
- Mon, 20 Jan 2020 08:20:51 -0800 (PST)
-Subject: Re: [PATCH 1/4] PM / EM: and devices to Energy Model
-To: Quentin Perret <qperret@google.com>,
- Dietmar Eggemann <dietmar.eggemann@arm.com>
-References: <20200116152032.11301-1-lukasz.luba@arm.com>
- <20200116152032.11301-2-lukasz.luba@arm.com>
- <17b77e0c-9455-0479-d37b-c57717c784c7@arm.com>
- <20200120152804.GB164543@google.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <453034e5-f7b9-20f7-4e26-5d0d7164edd1@arm.com>
-Date: Mon, 20 Jan 2020 16:20:49 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1itZsT-0001nw-TH; Mon, 20 Jan 2020 16:26:13 +0000
+Received: from mga04.intel.com ([192.55.52.120])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itZsH-0001n2-Be
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 16:26:06 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 Jan 2020 08:25:59 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,342,1574150400"; d="scan'208";a="227094457"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga003.jf.intel.com with ESMTP; 20 Jan 2020 08:25:58 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1itZsD-000Eex-QX; Tue, 21 Jan 2020 00:25:57 +0800
+Date: Tue, 21 Jan 2020 00:24:57 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/defconfig] BUILD SUCCESS
+ 5ad443607d240d0a17bf72dd391137ef851de982
+Message-ID: <5e25d459.9xPeooSfbAjFl4jG%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-In-Reply-To: <20200120152804.GB164543@google.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_082101_946080_7440FE31 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200120_082601_409659_2D7D1AA6 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,79 +68,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, khilman@kernel.org,
- agross@kernel.org, daniel.lezcano@linaro.org, steven.price@arm.com,
- cw00.choi@samsung.com, mingo@redhat.com, linux-imx@nxp.com,
- rui.zhang@intel.com, mgorman@suse.de, daniel@ffwll.ch,
- linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- Chris.Redpath@arm.com, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
- tomeu.vizoso@collabora.com, sboyd@kernel.org, shawnguo@kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- ionela.voinescu@arm.com
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/defconfig
+branch HEAD: 5ad443607d240d0a17bf72dd391137ef851de982  Merge tag 'at91-5.6-defconfig-2' of git://git.kernel.org/pub/scm/linux/kernel/git/at91/linux into arm/defconfig
 
+elapsed time: 226m
 
-On 1/20/20 3:28 PM, Quentin Perret wrote:
-> On Monday 20 Jan 2020 at 15:53:35 (+0100), Dietmar Eggemann wrote:
->> Would be really nice if this wouldn't be required. We should really aim
->> for 1 framework == 1 set of interfaces.
->>
->> What happens if someone calls em_get_pd() on a CPU EM?
->>
->> E.g:
->>
->>   static struct perf_domain *pd_init(int cpu)
->>   {
->> -       struct em_perf_domain *obj = em_cpu_get(cpu);
->> +       struct device *dev = get_cpu_device(cpu);
->> +       struct em_perf_domain *obj = em_pd_get(dev);
->>          struct perf_domain *pd;
->>
->> Two versions of one functionality will confuse API user from the
->> beginning ...
-> 
-> Agreed, this looks a bit confusing. It should be trivial to make
-> em_dev_get() (or whatever we end up calling it) work for CPUs too,
-> though. And we could always have a em_cpu_get(int cpu) API that is a
-> basically a wrapper around em_dev_get() for convenience.
+configs tested: 71
+configs skipped: 108
 
-The problem not only here is that we have a CPU index 'int cpu'
-and if we ask for device like:
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-struct device *dev = get_cpu_device(cpu);
+parisc                            allnoconfig
+parisc                            allyesonfig
+parisc                         b180_defconfig
+parisc                        c3000_defconfig
+parisc                              defconfig
+csky                 randconfig-a001-20200120
+openrisc             randconfig-a001-20200120
+s390                 randconfig-a001-20200120
+sh                   randconfig-a001-20200120
+xtensa               randconfig-a001-20200120
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+ia64                                defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                               rhel-7.6
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+um                                  defconfig
+um                             i386_defconfig
+um                           x86_64_defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+x86_64               randconfig-d001-20200120
+x86_64               randconfig-d002-20200120
+x86_64               randconfig-d003-20200120
+i386                 randconfig-d001-20200120
+i386                 randconfig-d002-20200120
+i386                 randconfig-d003-20200120
 
-It might be not the same device that was used during the
-registration, when we had i.e. 4 CPUs for the same policy:
-
-int cpu_id = cpumask_first(policy->cpus);
-struct device *cpu_dev = get_cpu_device(cpu_id);
-em_register_perf_domain(cpu_dev, nr_opp, &em_cb);
-
-That's why the em_cpu_get() is different than em_get_pd(), mainly by:
-if (cpumask_test_cpu(cpu, em_span_cpus(em_pd)))
-
-It won't be simple wrapper, let me think how it could be handled
-differently than it is now.
-
-Regards,
-Lukasz
-
-> 
-> Thanks,
-> Quentin
-> 
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
