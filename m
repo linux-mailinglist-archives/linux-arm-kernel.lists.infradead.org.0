@@ -2,63 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2A8D1421B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 03:58:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB06D1421A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 03:47:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vRuuI6Z8QekhuM7w5uU9jbXLk4JejzGgK2uyEo3OiiA=; b=jEJTMGLDy4RQYa
-	VmvCQeQCF2MTlwpuo+zrLydOogmG9rvu86/tuKkGShd1GEPonWiYlCAzicHxhmYKy+ZWQiUEoQ4oB
-	bhmIBNQEDITYHMgH+yuqzyDQTN+c/oEEpWpPjnZCkMZ3YhGOFeUq4Ml0Cgh82Bsvj72Pw+4R+nTF4
-	3HuRdAOk7Dl2x7ZYr80nbfJDfKkAaTxbzL0lQhAdVIJyEjgN0LAJbMsLBn9oE6kC94z+5e+AlWpII
-	Pk2hrBDvcrtt3R8vGaQuP2QbgVT/45+6cevE9Qr+tKyyTs/x329QWrvs9HrteVBQrS7ycdWQ3T0CY
-	c0nwdKzxgUMY6NTKnJDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=J7oRe7QWeox5rqJdUYtMSWvcccxa2TJFW6kPU64QHqE=; b=StVM1Cvb8L8UbaYx8lqMBk6mD
+	UgLAHT5X66DIvB5Tvftp881FaiVKip9XLseqUooHjWjpUVjcdlJCamPzhDn9cnUhsE0a4mNkwmt/4
+	HlDLzXj3GaUePQezLOjRImMZGmYubTlpwI18lAtZhTAt3gq0PBOoupK9wd9/cMgH/icpHGiSNUYK4
+	0jJ962we3GJXGyInXiWMqCo8z87xbtT6K618f452y/PzMLENkgCvBhVghCLcnl/vkx/x+0J1iOY+S
+	1+lCWd69nUU2XSAJOw69xVIEZwday/q5jctNh57Ls0lgoLMk7yyGXGL1c/y2+cvg/Kd/pCyBMcGs4
+	5pVFzIsmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itNGE-0004R0-R6; Mon, 20 Jan 2020 02:57:54 +0000
-Received: from 60-251-196-230.hinet-ip.hinet.net ([60.251.196.230]
- helo=ironport.ite.com.tw)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itNG5-0004Q4-1N; Mon, 20 Jan 2020 02:57:47 +0000
-Received: from unknown (HELO mse.ite.com.tw) ([192.168.35.30])
- by ironport.ite.com.tw with ESMTP; 20 Jan 2020 10:57:27 +0800
-Received: from csbcas.ite.com.tw (csbmail1.internal.ite.com.tw [192.168.65.58])
- by mse.ite.com.tw with ESMTP id 00K2vOdJ078193;
- Mon, 20 Jan 2020 10:57:24 +0800 (GMT-8)
- (envelope-from allen.chen@ite.com.tw)
-Received: from allen-VirtualBox.internal.ite.com.tw (192.168.70.14) by
- CSBMAIL1.internal.ite.com.tw (192.168.65.58) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.1713.5; Mon, 20 Jan 2020 10:57:24 +0800
-From: allen <allen.chen@ite.com.tw>
-To: 
-Subject: [PATCH v6 0/4] IT6505 cover letter
-Date: Mon, 20 Jan 2020 10:44:30 +0800
-Message-ID: <1579488364-13182-1-git-send-email-allen.chen@ite.com.tw>
-X-Mailer: git-send-email 1.9.1
+	id 1itN6C-0000zk-0A; Mon, 20 Jan 2020 02:47:32 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itN65-0000zF-3L
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 02:47:26 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1579488444; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=VMIU6qr3Wgt3xkflneQ7e/aD1ybOQyncDm4GEzhwaY8=;
+ b=c2P7nNmUVb18ocIFU7G/zhmKwKhvbr98DoTkjsoXyPOea4fSY4j50ewmDIYs7YMEfjk6juYY
+ 8nNkInEKbhXGbx9g2Z7tUiFNnHQQiwUwP+k2JcuVj/1/5b/0NNlK1R1On3mbCOdR0rX9/Nd+
+ 7jnYiGj5DNbMk6XlJyEIPDLMJRo=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e2514b8.7ff5c365a928-smtp-out-n01;
+ Mon, 20 Jan 2020 02:47:20 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 9EAFAC433CB; Mon, 20 Jan 2020 02:47:19 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 9620CC43383;
+ Mon, 20 Jan 2020 02:47:17 +0000 (UTC)
 MIME-Version: 1.0
-X-Originating-IP: [192.168.70.14]
-X-ClientProxiedBy: CSBMAIL1.internal.ite.com.tw (192.168.65.58) To
- CSBMAIL1.internal.ite.com.tw (192.168.65.58)
-X-TM-SNTS-SMTP: 132E324B2C190125BF4CD17AA657309DCDA49816AC5BF96A26208749A5FB6E1A2000:8
-X-MAIL: mse.ite.com.tw 00K2vOdJ078193
+Date: Mon, 20 Jan 2020 08:17:17 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
+ catalin.marinas@arm.com
+Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
+In-Reply-To: <20191011135431.GB33537@lakrids.cambridge.arm.com>
+References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
+ <20191011105010.GA29364@lakrids.cambridge.arm.com>
+ <20191011143343.541da66c@why>
+ <20191011135431.GB33537@lakrids.cambridge.arm.com>
+Message-ID: <a6987e0c5a1c986a962fec282dac690d@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_185746_188983_5D248B26 
-X-CRM114-Status: UNSURE (   7.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200119_184725_205592_8460A0A9 
+X-CRM114-Status: GOOD (  18.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 TVD_RCVD_IP            Message was received from an IP address
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,64 +90,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <mripard@kernel.org>, "open list:OPEN FIRMWARE AND
- FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Jau-Chih Tseng <Jau-Chih.Tseng@ite.com.tw>, Allen Chen <allen.chen@ite.com.tw>,
- Jonas Karlman <jonas@kwiboo.se>, open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS" <dri-devel@lists.freedesktop.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Pi-Hsun Shih <pihsun@chromium.org>, "open list:DRM DRIVERS FOR NVIDIA
- TEGRA" <linux-tegra@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh@kernel.org>,
- "moderated list:ARM/Mediatek SoC
- support" <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Douglas Anderson <dianders@chromium.org>, suzuki.poulose@arm.com,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ jeremy.linton@arm.com, bjorn.andersson@linaro.org, andrew.murray@arm.com,
+ Stephen Boyd <swboyd@chromium.org>, will@kernel.org, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The IT6505 is a high-performance DisplayPort 1.1a transmitter, fully compliant
-with DisplayPort 1.1a, HDCP 1.3 specifications. The IT6505 supports color depth
-of up to 36 bits (12 bits/color) and ensures robust transmission of high-quality
-uncompressed video content, along with uncompressed and compressed digital audio
-content.
+Hi Mark,
 
-This series contains document bindings, revert commit, add vendor prefix,
-Kconfig to control the function enable or not.
+On 2019-10-11 19:24, Mark Rutland wrote:
+> On Fri, Oct 11, 2019 at 02:33:43PM +0100, Marc Zyngier wrote:
+>> On Fri, 11 Oct 2019 11:50:11 +0100
+>> Mark Rutland <mark.rutland@arm.com> wrote:
+>> 
+>> > Hi,
+>> >
+>> > On Fri, Oct 11, 2019 at 11:19:00AM +0530, Sai Prakash Ranjan wrote:
+>> > > On latest QCOM SoCs like SM8150 and SC7180 with big.LITTLE arch, below
+>> > > warnings are observed during bootup of big cpu cores.
+>> >
+>> > For reference, which CPUs are in those SoCs?
+>> >
+>> > > SM8150:
+>> > >
+>> > > [    0.271177] CPU features: SANITY CHECK: Unexpected variation in
+>> > > SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU4: 0x00000011111112
+>> >
+>> > The differing fields are EL3, EL2, and EL1: the boot CPU supports
+>> > AArch64 and AArch32 at those exception levels, while the secondary only
+>> > supports AArch64.
+>> >
+>> > Do we handle this variation in KVM?
+>> 
+>> We do, at least at vcpu creation time (see kvm_reset_vcpu). But if one
+>> of the !AArch32 CPU comes in late in the game (after we've started a
+>> guest), all bets are off (we'll schedule the 32bit guest on that CPU,
+>> enter the guest, immediately take an Illegal Exception Return, and
+>> return to userspace with KVM_EXIT_FAIL_ENTRY).
+> 
+> Ouch. We certainly can't remove the warning untill we deal with that
+> somehow, then.
+> 
+>> Not sure we could do better, given the HW. My preference would be to
+>> fail these CPUs if they aren't present at boot time.
+> 
+> I agree; I think we need logic to check the ID register fields against
+> their EXACT, {LOWER,HIGHER}_SAFE, etc rules regardless of whether we
+> have an associated cap. That can then abort a late onlining of a CPU
+> which violates those rules w.r.t. the finalised system value.
+> 
+> I suspect that we may want to split the notion of
+> safe-for-{user,kernel-guest} in the feature tables, as if nothing else
+> it will force us to consider those cases separately when adding new
+> stuff.
+> 
 
-Allen Chen (1):
-  WIP: drm/bridge: add it6505 driver
+I can help with testing these if you have any sample patches.
 
-allen (3):
-  dt-bindings: Add vendor prefix for ITE Tech. Inc.
-  Revert "drm/tegra: Move drm_dp_link helpers to Tegra DRM"
-  WIP: dt-bindings: Add binding for IT6505.
-
- .../bindings/display/bridge/ite,it6505.yaml        |   89 +
- .../devicetree/bindings/vendor-prefixes.yaml       |    2 +
- drivers/gpu/drm/bridge/Kconfig                     |    7 +
- drivers/gpu/drm/bridge/Makefile                    |    1 +
- drivers/gpu/drm/bridge/ite-it6505.c                | 2698 ++++++++++++++++++++
- drivers/gpu/drm/drm_dp_helper.c                    |  128 +
- drivers/gpu/drm/tegra/Makefile                     |    1 -
- drivers/gpu/drm/tegra/dp.c                         |  876 -------
- drivers/gpu/drm/tegra/dp.h                         |  177 --
- drivers/gpu/drm/tegra/dpaux.c                      |    1 -
- drivers/gpu/drm/tegra/sor.c                        |    1 -
- include/drm/drm_dp_helper.h                        |   16 +
- 12 files changed, 2941 insertions(+), 1056 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/display/bridge/ite,it6505.yaml
- create mode 100644 drivers/gpu/drm/bridge/ite-it6505.c
- delete mode 100644 drivers/gpu/drm/tegra/dp.c
- delete mode 100644 drivers/gpu/drm/tegra/dp.h
+Thanks,
+Sai
 
 -- 
-1.9.1
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
