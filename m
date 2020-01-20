@@ -2,86 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C51D14217D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 02:35:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2A8D1421B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 03:58:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-ID:In-Reply-To:
-	Date:MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=zmJNwjWI9NXrPhB/03nG1NxCWKBWWCBhyr/g50pd2/k=; b=VjmtpppVGFHcmd
-	ChRCR2COzsEjargRWN0yqJe2HlGy3ILKa5lTPW7t9OkfQndSPKM4PAWztfUysiDelLSCsIYxvqbYi
-	jsz4Ir1oKHzx/IcKQLt50ELKYgpft7bXZITuBBhQHUH92OLMXfFLXIRFCO/4J671jsOSlemASQEQm
-	Mb4hB7DxRxMJlAAqwESEIRhik1mT4W9kiaX/VTq2uztD7NIpRi+46Cz0u0ObL3vkfl2y8iau2dZMx
-	UMdUy4KxC78YCAdbNmjkmwXd9KamqDv0j30hdVMrB8eUAoAPlelaDSSHwTpmWIl5e3i1kXal3cqJ+
-	CqSl0mNjxm/Kxp9DpnGg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vRuuI6Z8QekhuM7w5uU9jbXLk4JejzGgK2uyEo3OiiA=; b=jEJTMGLDy4RQYa
+	VmvCQeQCF2MTlwpuo+zrLydOogmG9rvu86/tuKkGShd1GEPonWiYlCAzicHxhmYKy+ZWQiUEoQ4oB
+	bhmIBNQEDITYHMgH+yuqzyDQTN+c/oEEpWpPjnZCkMZ3YhGOFeUq4Ml0Cgh82Bsvj72Pw+4R+nTF4
+	3HuRdAOk7Dl2x7ZYr80nbfJDfKkAaTxbzL0lQhAdVIJyEjgN0LAJbMsLBn9oE6kC94z+5e+AlWpII
+	Pk2hrBDvcrtt3R8vGaQuP2QbgVT/45+6cevE9Qr+tKyyTs/x329QWrvs9HrteVBQrS7ycdWQ3T0CY
+	c0nwdKzxgUMY6NTKnJDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itLyF-0005rd-Gm; Mon, 20 Jan 2020 01:35:15 +0000
-Received: from mail-io1-f72.google.com ([209.85.166.72])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itLy6-0004gT-5f
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 01:35:07 +0000
-Received: by mail-io1-f72.google.com with SMTP id w22so14160225ior.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Jan 2020 17:35:01 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:in-reply-to:message-id:subject
- :from:to;
- bh=SIy1Y3nZuLhuVMewjZxysiWahWNFeojJqO9vrYtj798=;
- b=h9Bw9P89C0bnPig52pinYrcoA+RKlT61oSwUjbUk4g+/SZ1JZKXK/0u+hGuPNu9iPi
- 8knluFAF2BLxcpd1kKhx2szO4FcJFxpTidn751MqNV7aFMuG+FBtXlhilztBbRdeAZO3
- HY+oEQDE6wAO/vKNI5OKAYYW7SBLAwYMY0eyHbrOp7afPgV0Ol5PVIx8Pw7EUGxY6vdZ
- 89DM5rf/XIWrCqO4SYEQ260vl4c9gGxXxCFNOOzBUtySGyFJYLqh/P5q/m10lwAEQlXw
- TlolkGMzl3jruv+UCqnfLAYL5+smLl0Qr40y7OGiJOTK+xjE5LEFZgJJu2XqTNzkHWJa
- mruw==
-X-Gm-Message-State: APjAAAVlZEmSQxVBZC50icbdVZ1uVqF7CWtm/QN+uVk0bgsygtdpcBij
- ej7ky5y628ovbV/qobzJulG/JOZnS7aFQ1Bnb2dU2KGJahBx
-X-Google-Smtp-Source: APXvYqwxdtT4a7BzshbFsXu5QysWavFxC8kpPU9PQQ8ENYkxIBwMzu1UUle0sf0x3jxjUjZL+Uhywd3DMA1wzvJ6JCkPaqCidVsU
+	id 1itNGE-0004R0-R6; Mon, 20 Jan 2020 02:57:54 +0000
+Received: from 60-251-196-230.hinet-ip.hinet.net ([60.251.196.230]
+ helo=ironport.ite.com.tw)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itNG5-0004Q4-1N; Mon, 20 Jan 2020 02:57:47 +0000
+Received: from unknown (HELO mse.ite.com.tw) ([192.168.35.30])
+ by ironport.ite.com.tw with ESMTP; 20 Jan 2020 10:57:27 +0800
+Received: from csbcas.ite.com.tw (csbmail1.internal.ite.com.tw [192.168.65.58])
+ by mse.ite.com.tw with ESMTP id 00K2vOdJ078193;
+ Mon, 20 Jan 2020 10:57:24 +0800 (GMT-8)
+ (envelope-from allen.chen@ite.com.tw)
+Received: from allen-VirtualBox.internal.ite.com.tw (192.168.70.14) by
+ CSBMAIL1.internal.ite.com.tw (192.168.65.58) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1713.5; Mon, 20 Jan 2020 10:57:24 +0800
+From: allen <allen.chen@ite.com.tw>
+To: 
+Subject: [PATCH v6 0/4] IT6505 cover letter
+Date: Mon, 20 Jan 2020 10:44:30 +0800
+Message-ID: <1579488364-13182-1-git-send-email-allen.chen@ite.com.tw>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-X-Received: by 2002:a92:8307:: with SMTP id f7mr8911636ild.73.1579484101183;
- Sun, 19 Jan 2020 17:35:01 -0800 (PST)
-Date: Sun, 19 Jan 2020 17:35:01 -0800
-In-Reply-To: <000000000000bdb5b2059c865f5c@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000c795fa059c884c21@google.com>
-Subject: Re: KASAN: slab-out-of-bounds Read in bitmap_ip_ext_cleanup
-From: syzbot <syzbot+6491ea8f6dddbf04930e@syzkaller.appspotmail.com>
-To: a@unstable.cc, akpm@linux-foundation.org, allison@lohutok.net, 
- arnd@arndb.de, axboe@kernel.dk, b.a.t.m.a.n@lists.open-mesh.org, bp@alien8.de, 
- catalin.marinas@arm.com, chris@zankel.net, christian@brauner.io, 
- coreteam@netfilter.org, davem@davemloft.net, elena.reshetova@intel.com, 
- florent.fourcot@wifirst.fr, fw@strlen.de, geert@linux-m68k.org, hare@suse.com, 
- heiko.carstens@de.ibm.com, hpa@zytor.com, info@metux.net, jcmvbkbc@gmail.com, 
- jeremy@azazel.net, johannes.berg@intel.com, kadlec@netfilter.org, 
- linux-api@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-xtensa@linux-xtensa.org, 
- linux@armlinux.org.uk, mareklindner@neomailbox.ch, mingo@redhat.com, 
- netdev@vger.kernel.org, netfilter-devel@vger.kernel.org, pablo@netfilter.org, 
- peterz@infradead.org, sw@simonwunderlich.de, syzkaller-bugs@googlegroups.com, 
- tglx@linutronix.de, viro@zeniv.linux.org.uk, will@kernel.org, x86@kernel.org
+X-Originating-IP: [192.168.70.14]
+X-ClientProxiedBy: CSBMAIL1.internal.ite.com.tw (192.168.65.58) To
+ CSBMAIL1.internal.ite.com.tw (192.168.65.58)
+X-TM-SNTS-SMTP: 132E324B2C190125BF4CD17AA657309DCDA49816AC5BF96A26208749A5FB6E1A2000:8
+X-MAIL: mse.ite.com.tw 00K2vOdJ078193
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_173506_224598_7A1D8BB5 
-X-CRM114-Status: UNSURE (   3.70  )
+X-CRM114-CacheID: sfid-20200119_185746_188983_5D248B26 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.72 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.72 listed in wl.mailspike.net]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,33 +70,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Maxime Ripard <mripard@kernel.org>, "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jau-Chih Tseng <Jau-Chih.Tseng@ite.com.tw>, Allen Chen <allen.chen@ite.com.tw>,
+ Jonas Karlman <jonas@kwiboo.se>, open list <linux-kernel@vger.kernel.org>,
+ "open list:DRM DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Pi-Hsun Shih <pihsun@chromium.org>, "open list:DRM DRIVERS FOR NVIDIA
+ TEGRA" <linux-tegra@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh@kernel.org>,
+ "moderated list:ARM/Mediatek SoC
+ support" <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-syzbot has bisected this bug to:
+The IT6505 is a high-performance DisplayPort 1.1a transmitter, fully compliant
+with DisplayPort 1.1a, HDCP 1.3 specifications. The IT6505 supports color depth
+of up to 36 bits (12 bits/color) and ensures robust transmission of high-quality
+uncompressed video content, along with uncompressed and compressed digital audio
+content.
 
-commit d68dbb0c9ac8b1ff52eb09aa58ce6358400fa939
-Author: Christian Brauner <christian@brauner.io>
-Date:   Thu Jun 20 23:26:35 2019 +0000
+This series contains document bindings, revert commit, add vendor prefix,
+Kconfig to control the function enable or not.
 
-    arch: handle arches who do not yet define clone3
+Allen Chen (1):
+  WIP: drm/bridge: add it6505 driver
 
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=1456fed1e00000
-start commit:   09d4f10a net: sched: act_ctinfo: fix memory leak
-git tree:       net
-final crash:    https://syzkaller.appspot.com/x/report.txt?x=1656fed1e00000
-console output: https://syzkaller.appspot.com/x/log.txt?x=1256fed1e00000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=7e89bd00623fe71e
-dashboard link: https://syzkaller.appspot.com/bug?extid=6491ea8f6dddbf04930e
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=141af959e00000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1067fa85e00000
+allen (3):
+  dt-bindings: Add vendor prefix for ITE Tech. Inc.
+  Revert "drm/tegra: Move drm_dp_link helpers to Tegra DRM"
+  WIP: dt-bindings: Add binding for IT6505.
 
-Reported-by: syzbot+6491ea8f6dddbf04930e@syzkaller.appspotmail.com
-Fixes: d68dbb0c9ac8 ("arch: handle arches who do not yet define clone3")
+ .../bindings/display/bridge/ite,it6505.yaml        |   89 +
+ .../devicetree/bindings/vendor-prefixes.yaml       |    2 +
+ drivers/gpu/drm/bridge/Kconfig                     |    7 +
+ drivers/gpu/drm/bridge/Makefile                    |    1 +
+ drivers/gpu/drm/bridge/ite-it6505.c                | 2698 ++++++++++++++++++++
+ drivers/gpu/drm/drm_dp_helper.c                    |  128 +
+ drivers/gpu/drm/tegra/Makefile                     |    1 -
+ drivers/gpu/drm/tegra/dp.c                         |  876 -------
+ drivers/gpu/drm/tegra/dp.h                         |  177 --
+ drivers/gpu/drm/tegra/dpaux.c                      |    1 -
+ drivers/gpu/drm/tegra/sor.c                        |    1 -
+ include/drm/drm_dp_helper.h                        |   16 +
+ 12 files changed, 2941 insertions(+), 1056 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/ite,it6505.yaml
+ create mode 100644 drivers/gpu/drm/bridge/ite-it6505.c
+ delete mode 100644 drivers/gpu/drm/tegra/dp.c
+ delete mode 100644 drivers/gpu/drm/tegra/dp.h
 
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
