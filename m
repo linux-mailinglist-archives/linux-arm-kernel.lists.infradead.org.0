@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE3FB142863
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 11:46:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74BDC14287C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Jan 2020 11:51:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NrITKnZPJcyJ+445wsDqI7orUE5dfvnGeopDsleAOSY=; b=RV8vbENb+t8e9H
-	auxFAiDH/ictEwKmuFr+QF6RwrsmOUu4dpFjoymW+oMm3BQw4EdN3LgX5StJSFEkxqwq57E3m1n77
-	3VQ40EC0k7GAtAMTqas0brMxBk7Iy9Gxdvox/lW1xrtv8q+tOELmysM3QtEhH2jg4Jb68wcGuWQmS
-	CHZbjaXlfr/WuEGDY+pePDu48JUAMqqjcBiB9AwyQubTbN3JSnUBsWJT791Q1mgJK/OPfzzfJVFfU
-	6ynbUY13jyrWkkJrfr77cnBXvOjB4YOxpUlpTCXpeJ/Q+/EmxE3S13dshdcRRfsq5Kd0Pz4U09cI5
-	pUQk5hli25zkEl/VYfUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+mO3iHlM2EONbXiJYx6Wjns5twZFW+PA6Jw4ARseaEY=; b=uZD+jQh0Ij11PwM/i9Q++oCZ0
+	urU3sA4RhRmvRTlYJo7BltE92Me+JTXxkZOw09ahddsMYogeNPW/OLHpV2F3HTjKqXAv1/KJchrEI
+	QKnt3hsHLV/0BzelyGiLABGyo0rvMnzy8S23s/rr5H+ZxE8fSOx+SdwZQLtjXMKcDQmYIH++MvNKB
+	9qRXU3QxGStkGCWxeOepZWcLcmrkR0WZBzHh9GCMZJRu7D4WFMqHRJfk0bnXMGy2vnqa8FgIpCQRD
+	QtcnKv4qSHLxEJIUXl+PrClsyFzOR017yfJ+9CHPww3LurZJ9yuVhVwBqjvlSU3ojdcTzYame9NIn
+	CT3T/R6DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itUZa-0003rI-TT; Mon, 20 Jan 2020 10:46:22 +0000
+	id 1itUeM-00062w-G3; Mon, 20 Jan 2020 10:51:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itUZL-0003ql-VP
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 10:46:14 +0000
+ id 1itUe7-00062Q-0x
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Jan 2020 10:51:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0685330E;
- Mon, 20 Jan 2020 02:46:07 -0800 (PST)
-Received: from [10.2.69.39] (unknown [10.2.69.39])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 81BAA3F68E;
- Mon, 20 Jan 2020 02:46:06 -0800 (PST)
-Subject: Re: [PATCH] ARM: virt: Relax arch timer version check during early
- boot
-To: linux-arm-kernel@lists.infradead.org
-References: <1579097798-106243-1-git-send-email-vladimir.murzin@arm.com>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <eb889279-87f2-d674-9299-169794c285eb@arm.com>
-Date: Mon, 20 Jan 2020 10:46:05 +0000
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 77CEC30E;
+ Mon, 20 Jan 2020 02:50:59 -0800 (PST)
+Received: from [10.1.196.51] (a075563-lin.cambridge.arm.com [10.1.196.51])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C16CC3F68E;
+ Mon, 20 Jan 2020 02:50:57 -0800 (PST)
+Subject: Re: [PATCH v3 08/16] arm64: initialize ptrauth keys for kernel
+ booting task
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-9-git-send-email-amit.kachhap@arm.com>
+ <20200116175920.GH10277@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <3085de97-39b4-dd58-b319-c1d1b771864f@arm.com>
+Date: Mon, 20 Jan 2020 10:50:56 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1579097798-106243-1-git-send-email-vladimir.murzin@arm.com>
+In-Reply-To: <20200116175920.GH10277@arrakis.emea.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_024608_054446_6D0C24B9 
-X-CRM114-Status: GOOD (  17.86  )
+X-CRM114-CacheID: sfid-20200120_025103_110858_C33443F6 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,51 +66,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, kvmarm@lists.cs.columbia.edu
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ Marc
-+ kvmarm@lists.cs.columbia.edu
 
-On 1/15/20 2:16 PM, Vladimir Murzin wrote:
-> Updates to the Generic Timer architecture allow ID_PFR1.GenTimer to
-> have values other than 0 or 1. At the moment, Linux is quite strict in
-> the way it handles this field at early boot and will not configure
-> arch timer if it doesn't find the value 1.
-> 
-> Since here use ubfx for arch timer version extraction (hyb-stub build
-> with -march=armv7-a, so it is safe)
-> 
-> To help backports (even though the code was correct at the time of writing)
-> Fixes: 8ec58be9f3ff ("ARM: virt: arch_timers: enable access to physical timers")
-> Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
-> ---
->  arch/arm/kernel/hyp-stub.S | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm/kernel/hyp-stub.S b/arch/arm/kernel/hyp-stub.S
-> index ae50203..6607fa8 100644
-> --- a/arch/arm/kernel/hyp-stub.S
-> +++ b/arch/arm/kernel/hyp-stub.S
-> @@ -146,10 +146,9 @@ ARM_BE8(orr	r7, r7, #(1 << 25))     @ HSCTLR.EE
->  #if !defined(ZIMAGE) && defined(CONFIG_ARM_ARCH_TIMER)
->  	@ make CNTP_* and CNTPCT accessible from PL1
->  	mrc	p15, 0, r7, c0, c1, 1	@ ID_PFR1
-> -	lsr	r7, #16
-> -	and	r7, #0xf
-> -	cmp	r7, #1
-> -	bne	1f
-> +	ubfx	r7, r7, #16, #4
-> +	teq	r7, #0
-> +	beq	1f
->  	mrc	p15, 4, r7, c14, c1, 0	@ CNTHCTL
->  	orr	r7, r7, #3		@ PL1PCEN | PL1PCTEN
->  	mcr	p15, 4, r7, c14, c1, 0	@ CNTHCTL
-> 
 
+On 1/16/20 11:29 PM, Catalin Marinas wrote:
+> On Mon, Dec 16, 2019 at 02:17:10PM +0530, Amit Daniel Kachhap wrote:
+>> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+>> index aa956ca..0f89f59 100644
+>> --- a/arch/arm64/include/asm/pointer_auth.h
+>> +++ b/arch/arm64/include/asm/pointer_auth.h
+>> @@ -60,6 +60,12 @@ static inline void ptrauth_keys_init_kernel(struct ptrauth_keys_kernel *keys)
+>>   		get_random_bytes(&keys->apia, sizeof(keys->apia));
+>>   }
+>>   
+>> +static inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kernel *keys)
+> 
+> I think we should use __always_inline here, just in case the compiler
+> ignores the hint.
+
+yes agreed. Even the other function ptrauth_keys_init_kernel.
+
+> 
+> Otherwise:
+> 
+> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+
+Thanks.
+
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
