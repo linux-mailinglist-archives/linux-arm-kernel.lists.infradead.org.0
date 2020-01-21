@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5B6D143A65
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:05:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 452C3143A73
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:07:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AGxZZLT7/1Ts/A/oRYl/2He8AxQ17ePJhqqjKcZs8kM=; b=Vn4j0at1Udoiqz
-	aQGkld5ROY3hV8Pzl/9NvvsjWEgJccK3p4xGqqHPRNKgDUrxZyVMTxjHvVhfUO7iI9rcRyRAMPeiW
-	EhLyzxLHyLN+cbU2gq7jQv6wXgOrETC3wuLZGs0suM4Hwsm1MfZpE0DH2O5ZdmkKznWwRLl0M4scB
-	7H9lm6jfmfm/lSBaQZjClOav6zBwMJgX9P4wGEbG7isty4vm4zcEcHlpGMWEYwKjHD747FwbxoZMl
-	xhl2o871pRqvrnrV5a7awqBt5lr0iayrJGd+LQPb7jklYCnCNQssMLudbPCBGftXhd2AlYkLlPWDi
-	0khv+atJnrq/dfzXfz7Q==;
+	List-Owner; bh=n65ztCNrIRXf4S7a3AU9txBKACegCXL6UqOiMqGaXQE=; b=S6mhCNiwGDR8bN
+	07lrTLKUN4i5Q95VlkGqs7K/zVPf6P9ILquysf8PceW1ZK1dk9xmzp7I7bGvxx2vGTZR8Xng3y3hn
+	wJm3Qp19OmtFFkQjTX8L8aK/WNMcUZbVmk2jCT3cU7u/IwuBY7jbbZoUMKylQ7MTX8LTswLlE435C
+	zAqAi42Lq/ursKBNJaRHzSex26ERu4dK7rlFguwhWeVSTyCs7um0hvP41RHQ58/3RKvCcjceWp8/Z
+	JwoijDCQSPqWiDJr5GZzJI+febKCTV1Z72W2u8zDuGJcLYMMxWnuwfM8Sp/zmtlub1lfAuRs/kvhz
+	alH74Fj8ByKe2j6zjuZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqP5-0006Ee-3s; Tue, 21 Jan 2020 10:04:59 +0000
+	id 1itqQy-0000FY-DO; Tue, 21 Jan 2020 10:06:56 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqNk-0005dn-DO
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:03:45 +0000
+ id 1itqNt-0005ec-Os
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:03:48 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,32 +45,32 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: /orkjCmffiyF2BaulGpbdtFKRbUa7qslI47o7LUXMZk+d0M6LyLsMragi27y9Ncn3ZJZX7HQHi
- rC/PogzoeOGWNY+yybuOcByPl1dAWro9cA6zski2R/84c27RGEqULVNubftfmhChjSOcCc72nL
- swGKFojqRVH7fqKYIRZJAozxw0yc6yUMdc+3tTXmZXMwBQ/F05+kPYkIYdqzcb2u7J0/5ijH2v
- CRfU3l2qmSLuLJs8CSkt2QafiTi8fmyHV0kThpUEHgR1oCyibhhbay+CEk9hVoE3x24pBsyv11
- A+Y=
-X-IronPort-AV: E=Sophos;i="5.70,345,1574146800"; d="scan'208";a="61481928"
+IronPort-SDR: ChmRYHNZ1a8HB/vquRZsN5NbRmpUkCTXaxReL6z8ozkHOEe8Nt78Vzv4OwC1FuzOIdFMDyco+2
+ nkyjolzYf5ccvJAKdyHvWgmqXn1dBAQ+GBB8Grnodw4jcZtVLp6PtrHZe+oB0SyZXVSzJySTAq
+ qSLx/BM/PBR+fXELuLnjQusw0Qw8tcbUdXpuAvs8N3p9SWVoiHQADN40c4N0aS5gYn+fQZf6GU
+ fh1JoTdlq4G4StPy+yKTZH3X7yJUX/PUn5WBbJZIS2GCt1j6l2hx94/3BKNGiaDoNoqt/gAp7a
+ vZk=
+X-IronPort-AV: E=Sophos;i="5.70,345,1574146800"; d="scan'208";a="61481962"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 21 Jan 2020 03:03:31 -0700
+ 21 Jan 2020 03:03:42 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 21 Jan 2020 03:03:31 -0700
+ 15.1.1713.5; Tue, 21 Jan 2020 03:03:32 -0700
 Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
  email.microchip.com (10.10.87.71) with Microsoft SMTP Server
  (version=TLS1_2, 
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Tue, 21 Jan 2020 03:03:31 -0700
+ Transport; Tue, 21 Jan 2020 03:03:32 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NopsgyLdjAR+kICy3BVscE0GBn02otM6byGD0bB0ZBxNRxMQM8tlWY3M5eP/DHUJz2Wsc04jUAe1bl6T1PPqlEvXrPraO5fv5Q6b43LZ6O9v6uLA6XpdxP3Sr+IQdm4yZtT5j47WOsUky28LTsx1bhzZ9u5H/QJmtHgvYBVrdZLRJ2F165zZMNlL8xcvjYxny+shs/g74EnhXd21nnSf0UMTfFtdIaA6NJvt7uL8G2gcd9P/w5CdUuNVeqmHYcUyp72TLTuxbJP6y+IBgjsQhg9hU4UnbOqyV1OIU7+hmJbOyoITrhrKzKxvKEmQBX5QYTpncN4F5XFaFxvkMLNh2w==
+ b=n4l6sAMi+zgUt36UNEgi11N2NfyHmr/bxqktPFHK963bvLAfdxr022cD1vpcMqVHRMd24B5F0iTYQGUKWIP7RwBm+1P0hBImYRyACGbzuym+oLBQc4HDROQWmJEAjR40PgQB0DABxWxpc7PTrDWedPYW7YsYL+CDs7UCplhue8Kfr/QEHpYvrXlz+iaSAfsVqXHRooSN6VEkOEMhnavfuEyKPqbv+8Hqi7rS0eLY03yhYIQfYy6kFTD1r5H7trkCqTyUPJ/9YNge4h7MN1lXIvcCDC/dACr2RZKrxc/NAYWAyePQphnkfgyljSm4KgpZ1zRZsVSt4++GevGrXIsLkQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sbLIJkPacqDzJVzTYUV+YvCo+E3r3beOus/TbYJHsMI=;
- b=jb/TpNkY2JIteQK6cxMtLtvj4/hdcJF22TrCFnQsPgXZH1HHEsr9NsrSd9notCsCJpmBhvQ9vKcrNmzp+wa8239zTD+mXwRfkRZrFnZvpeFBc4kqAnfe9AKgY8sIeOuB5DVE7jcnvpGnkNsc45/KVacaKngeMddcPUzwVT8TpPvJDyM+VFzXCvQOy0WqkYQ6x4qLuI5JCf+H+cnfFDgkW2qraPv4bU2I8VrMD26HkR2bDLYvXlJ9KXYp5/7YeWv7osSsPZ6hbpkWiwInfG+xoTngdg18l60SI+9PDZdfR3OE7TZYWbIZvf2NzJvVxv5DnH908kao9M2pTK7fDgROuA==
+ bh=1X50fqRC8vzRm0UoalcRLP7y4LxFJa34i+FZXVLmURY=;
+ b=aHebUNJ85H41/XoSxuoLwy2uH9lCupVP56PSjVeFI1wtxR5x0Eb9BvJl9o8wn9G8hG5BrZd2cjBp6eRgz1C1iKwIOg5E0t+pZcTj4XJ5kzmf5ikM7+cf2AgxYohfZCF2Lk16flHSnOxe0K1Ik6RBN2MsHEsZBnbvB80FH2hu8UrH3fb9HpMi6AqpBlDs8lRpHM6UTVZr7eGf4+zSntXK5MuKmYN0cd9S5Y9n2WLqICCrMPdKWr7aRGGKLbMoiPTUX2/O+45ZnmY/NGXDjMnSubzQvCuLH2gWh7XsE5jfbQcEK/v1yFapKkVfaaduI/VkW5tBJUa3J8kF0HLEhSmmDQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -78,25 +78,25 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sbLIJkPacqDzJVzTYUV+YvCo+E3r3beOus/TbYJHsMI=;
- b=RPdrtCFlbW1WKsGPKtr0DJjBxQmNJ2OiKGpW8PB9CWgb4yULAvbSPqK6IdOzlFFSu/+x3oumHz0YXjn0H3X7CgZs8De3jcMyPu8lILbBF2P6eBtyKTkJoVh+ntihOphT7HY+d/GgES7c2FyRTNwstWePrS/raw4glRufXSgNH8o=
+ bh=1X50fqRC8vzRm0UoalcRLP7y4LxFJa34i+FZXVLmURY=;
+ b=n26XtQ28hEOMOFNuvNeAn8gWoA946qncYcyGTjwnAZzjzJhJ+YsBoAlVTGMsbbxHw5EROiNvJN/NT34McJqoPvXFFTzdduCFZqYDqEYOXqCzSD/y0wUxK1rOc0yN/hkHFleydJ8lYTlpasDlxcLcP56XnuCXGEdfZ+9tnPJ2+xI=
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
  DM6PR11MB3195.namprd11.prod.outlook.com (20.176.121.81) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.23; Tue, 21 Jan 2020 10:03:29 +0000
+ 15.20.2644.23; Tue, 21 Jan 2020 10:03:30 +0000
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com
  ([fe80::dc6b:1191:3a76:8b6a]) by DM6PR11MB3225.namprd11.prod.outlook.com
  ([fe80::dc6b:1191:3a76:8b6a%7]) with mapi id 15.20.2644.024; Tue, 21 Jan 2020
- 10:03:29 +0000
+ 10:03:30 +0000
 From: <Claudiu.Beznea@microchip.com>
 To: <sre@kernel.org>, <Nicolas.Ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>
-Subject: [PATCH 01/15] power: reset: at91-reset: introduce struct at91_reset
-Thread-Topic: [PATCH 01/15] power: reset: at91-reset: introduce struct
+Subject: [PATCH 03/15] power: reset: at91-reset: add sclk to struct at91_reset
+Thread-Topic: [PATCH 03/15] power: reset: at91-reset: add sclk to struct
  at91_reset
-Thread-Index: AQHV0EIHIa10Wtf9lkq33X+2rWQtjA==
-Date: Tue, 21 Jan 2020 10:03:29 +0000
-Message-ID: <1579601001-5711-2-git-send-email-claudiu.beznea@microchip.com>
+Thread-Index: AQHV0EIIYocZzik2O02q6OLYBPiBsQ==
+Date: Tue, 21 Jan 2020 10:03:30 +0000
+Message-ID: <1579601001-5711-4-git-send-email-claudiu.beznea@microchip.com>
 References: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
 In-Reply-To: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
 Accept-Language: en-US
@@ -105,11 +105,11 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5a673460-22cb-4d6b-c236-08d79e592a7d
+x-ms-office365-filtering-correlation-id: 86485129-78fa-4ddc-99c1-08d79e592b09
 x-ms-traffictypediagnostic: DM6PR11MB3195:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB319541DAFDBCAB97FEB4F6BA870D0@DM6PR11MB3195.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:820;
+x-microsoft-antispam-prvs: <DM6PR11MB319525AC4A099CD20D58E48C870D0@DM6PR11MB3195.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1122;
 x-forefront-prvs: 0289B6431E
 x-forefront-antispam-report: SFV:NSPM;
  SFS:(10009020)(376002)(366004)(396003)(136003)(346002)(39860400002)(199004)(189003)(107886003)(26005)(186003)(36756003)(5660300002)(110136005)(54906003)(4326008)(66556008)(66476007)(6506007)(2906002)(76116006)(91956017)(6486002)(86362001)(64756008)(6512007)(66946007)(66446008)(8676002)(81156014)(2616005)(81166006)(8936002)(6636002)(71200400001)(316002)(478600001);
@@ -120,18 +120,18 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fVTJAC6E3S/lXgbt5ZGvoKlMZq2cVTbliXKohUiEX7OdYjT974va/W/s/Vh7C0nbuQ/Q4zIu+Tr5eYXku1pJMUuesDjcU6OnbIOWvJq+C/ATBpH8BZUs5M/xwWNzH72oedibGuGOw0TLcxjP9gHnlaeozc0G782VTjS+8ZsQJm+ZHKuPUO06sM+OH0a7bjPw9NL0+u5jxnE0XQrjW7Tn7yUvwd2kAUI3IMSN4kjt+LTKnrJNEsHQ9uMnzLA9LDFyRF2XUlOF8Z8cgvLCJjTyYuENE7wfbGlHUyvMKDHJaRL+uXO9S2SdVfINehvGA7glQIgJeethKukbzrBHd4d1nJhs2xWKo93LCge+YK/Z/7XII8kAu6N/K18X+N4Zx/w9kvsKDZcVpjoKKrWUtGlsf/Cm3m6e5psJvXdNWUlGEPoi1YLvuK0Dmh3zQTY3VCyo
+x-microsoft-antispam-message-info: MIhDO18h+VS4ejEBDbzZnG7jJD+vLA0ueXtZjAZRujJwVq6Dk+KqC8ixpr+MCWOZTfeqAeuyX6XDrVdI6V+viaFOJDhyQeVyeS66hS//HPvAA0L/4rzvHCQUDW/bBfeFHk+lmWs6pbqUWbR2FpjwBCPYWVTYPqh7GBZV2FxoW2AgsJosT4/MPhquoxs7pS9s1GehImfC5EZJmKgkgwPcDKQl/rQxUJ9AsWm0nhbxH1Pc956h7yW3dAtE49OTW66uwbxRmBA3hTOTkpC7tynYJzUdI0CP8P7mEWlqbUtcdpaT0c+ubM2JAPGNMbjOQQPAMR02Eg8q+5pvpMs5C/mogorNPnvcJaBZMDf0AzAJw9qx5kgvriRuskbv9MjS4hc93rtFwkNXL0+c3ITQZ8HxRdCtfbtpxtnmZ/cxfHHQZbDNO0ns0tLBIdnD1LMviPPM
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5a673460-22cb-4d6b-c236-08d79e592a7d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jan 2020 10:03:29.8027 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 86485129-78fa-4ddc-99c1-08d79e592b09
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jan 2020 10:03:30.7202 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: y0QIrBbADO5ckb+Iqo7o+KD/Vz30rTWE90zGhd3eNkCZjn+a6WKL+QiyCLrZyMEPoXmd/Q2feJiKDrbt/FZ1o30R4iU3Uid+ABfP3FP3GvE=
+X-MS-Exchange-CrossTenant-userprincipalname: t0rqAsV8B4Knsb4lQawZOvHO33FfwSoR0m9qkIo1Qw7rcMBat/P0euNDjl5nqNp2bNXjUSmUSPgstOwh1nMpLAd57GomPo4X7zZWamilkTE=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_020336_484372_1AE830E6 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200121_020346_042393_E273AC58 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -162,92 +162,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce struct at91_reset intended to keep all the at91 reset controller
-data.
+Add sclk to struct at91_reset.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/power/reset/at91-reset.c | 26 +++++++++++++++++---------
- 1 file changed, 17 insertions(+), 9 deletions(-)
+ drivers/power/reset/at91-reset.c | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/at91-reset.c
-index d94e3267c3b6..2df0610e5527 100644
+index 999d3a1653d2..1bc39bfda0aa 100644
 --- a/drivers/power/reset/at91-reset.c
 +++ b/drivers/power/reset/at91-reset.c
-@@ -49,7 +49,13 @@ enum reset_type {
- 	RESET_TYPE_ULP2		= 8,
+@@ -52,12 +52,11 @@ enum reset_type {
+ struct at91_reset {
+ 	void __iomem *rstc_base;
+ 	void __iomem *ramc_base[2];
++	struct clk *sclk;
  };
  
--static void __iomem *at91_ramc_base[2], *at91_rstc_base;
-+struct at91_reset {
-+	void __iomem *rstc_base;
-+};
-+
-+static struct at91_reset reset;
-+
-+static void __iomem *at91_ramc_base[2];
- static struct clk *sclk;
+ static struct at91_reset reset;
  
+-static struct clk *sclk;
+-
  /*
-@@ -76,7 +82,7 @@ static int at91sam9260_restart(struct notifier_block *this, unsigned long mode,
- 		"b	.\n\t"
- 		:
- 		: "r" (at91_ramc_base[0]),
--		  "r" (at91_rstc_base),
-+		  "r" (reset.rstc_base),
- 		  "r" (1),
- 		  "r" cpu_to_le32(AT91_SDRAMC_LPCB_POWER_DOWN),
- 		  "r" cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST));
-@@ -119,7 +125,7 @@ static int at91sam9g45_restart(struct notifier_block *this, unsigned long mode,
- 		:
- 		: "r" (at91_ramc_base[0]),
- 		  "r" (at91_ramc_base[1]),
--		  "r" (at91_rstc_base),
-+		  "r" (reset.rstc_base),
- 		  "r" (1),
- 		  "r" cpu_to_le32(AT91_DDRSDRC_LPCB_POWER_DOWN),
- 		  "r" cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST)
-@@ -131,8 +137,8 @@ static int at91sam9g45_restart(struct notifier_block *this, unsigned long mode,
- static int sama5d3_restart(struct notifier_block *this, unsigned long mode,
- 			   void *cmd)
- {
--	writel(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
--	       at91_rstc_base);
-+	writel(cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST),
-+	       reset.rstc_base);
+ * unless the SDRAM is cleanly shutdown before we hit the
+ * reset register it can be left driving the data bus and
+@@ -238,11 +237,11 @@ static int __init at91_reset_probe(struct platform_device *pdev)
+ 	match = of_match_node(at91_reset_of_match, pdev->dev.of_node);
+ 	at91_restart_nb.notifier_call = match->data;
  
- 	return NOTIFY_DONE;
- }
-@@ -140,14 +146,16 @@ static int sama5d3_restart(struct notifier_block *this, unsigned long mode,
- static int samx7_restart(struct notifier_block *this, unsigned long mode,
- 			 void *cmd)
- {
--	writel(AT91_RSTC_KEY | AT91_RSTC_PROCRST, at91_rstc_base);
-+	writel(cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PROCRST),
-+	       reset.rstc_base);
-+
- 	return NOTIFY_DONE;
- }
+-	sclk = devm_clk_get(&pdev->dev, NULL);
+-	if (IS_ERR(sclk))
+-		return PTR_ERR(sclk);
++	reset.sclk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(reset.sclk))
++		return PTR_ERR(reset.sclk);
  
- static void __init at91_reset_status(struct platform_device *pdev)
- {
- 	const char *reason;
--	u32 reg = readl(at91_rstc_base + AT91_RSTC_SR);
-+	u32 reg = readl(reset.rstc_base + AT91_RSTC_SR);
+-	ret = clk_prepare_enable(sclk);
++	ret = clk_prepare_enable(reset.sclk);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Could not enable slow clock\n");
+ 		return ret;
+@@ -250,7 +249,7 @@ static int __init at91_reset_probe(struct platform_device *pdev)
  
- 	switch ((reg & AT91_RSTC_RSTTYP) >> 8) {
- 	case RESET_TYPE_GENERAL:
-@@ -208,8 +216,8 @@ static int __init at91_reset_probe(struct platform_device *pdev)
- 	struct device_node *np;
- 	int ret, idx = 0;
- 
--	at91_rstc_base = of_iomap(pdev->dev.of_node, 0);
--	if (!at91_rstc_base) {
-+	reset.rstc_base = of_iomap(pdev->dev.of_node, 0);
-+	if (!reset.rstc_base) {
- 		dev_err(&pdev->dev, "Could not map reset controller address\n");
- 		return -ENODEV;
+ 	ret = register_restart_handler(&at91_restart_nb);
+ 	if (ret) {
+-		clk_disable_unprepare(sclk);
++		clk_disable_unprepare(reset.sclk);
+ 		return ret;
  	}
+ 
+@@ -262,7 +261,7 @@ static int __init at91_reset_probe(struct platform_device *pdev)
+ static int __exit at91_reset_remove(struct platform_device *pdev)
+ {
+ 	unregister_restart_handler(&at91_restart_nb);
+-	clk_disable_unprepare(sclk);
++	clk_disable_unprepare(reset.sclk);
+ 
+ 	return 0;
+ }
 -- 
 2.7.4
 
