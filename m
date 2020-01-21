@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27C51143A78
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:07:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44002143A88
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:09:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAoH96O+NXSgZZFLkARxY8aQ+kp1cJlc1cfWf+oct50=; b=WjtjnsANvCGTWP
-	vmQ5aq1YtyDDFkEYs5tE33VxhX8fFaQhHrFahOLYQlTNT010WDO9E197fMZS/DwjSQTkjBNiqJHxS
-	I/t9erfkw4H0Jycx2xjuJyKbKJtPyr1RD5TkVpMGnskZii8pu9NItoQYdRAWWeqr9cU1lRMxeX5fv
-	KAGq7jL77EWNInJJwFjx7BkF2H4sp1y7uiy19se4yh98uSSWwEF3NfFeDYVDTC7ga0gJI6VWsZAhc
-	Z133J7OMap5qp1jodvH7BStBBkRF4BicJJboOOUilAYMARD+Hfx4Exm1T5Pc8MrT4x2fRdWa17vgw
-	ZWPtf4T7MrP6KVrjuEaA==;
+	List-Owner; bh=ZM13wOOSQgYwNqcjXfmzEAInZHMecrgLiGRJ7tVf8cA=; b=KjzFUig+HY+lr2
+	6PmUUHbwLTULDpLTfyzSBT16fgWDe5vDKMhERgdpQynrrkCVUfUsjPs5HQgLjUn2R12p+Ehj44OUQ
+	6BYBIv23c9PzUBVCWocTnI6IhKptTJxm9376tSTSj9d8MpGfANiqeQDNCIsJsUHMyFOFOd2G0/mYd
+	iiPfySNcycjMH8+3j6ThNd6IKdkXOhRJqeDhy6cvT4oglfGj5m0ShP5Un3VUSYtCEMFAZtD1D0KRo
+	72S870j2t4vKfjT6FN+uFvgAcKIOUQNneAa0AmX2pDuYyZcilQQN1or9tHvXaxCAuwPGUUzRLc7dF
+	rAGw2GkMBBwwbVO1JsCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqRb-0000h1-BS; Tue, 21 Jan 2020 10:07:35 +0000
+	id 1itqTb-0002PV-7M; Tue, 21 Jan 2020 10:09:39 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqNt-0005dn-Ko
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:03:48 +0000
+ id 1itqO2-0005fs-NL
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:04:05 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,32 +45,32 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: YaZ25HCHd9MDL4nrCKqEckPMp9U8nDYrmNcGMIMqjw6ZxtfmXVSoaW9PN4hQHKNTLVlbbHiJwd
- 9g180v09PukYAgP7skJdo8LkhHo9cbhYZoQHkdKD1Wy+nUU5k7KcMQ1QESsI3sRYWhIf64cIGT
- 8vJPBzptTKKjTsaSf/Q3Er+UcmKxkBzY1bhWML2uB8kmW+86YkDmSrR/cxxx7LewJZQzmALx2s
- U8LoUDafuq3+j1m9uW5QeLgeKMVO/ByVpJaqtQrtqDa9ePzpY3QlWOOc8dj9qA5ApD8FTW9F+3
- wa8=
-X-IronPort-AV: E=Sophos;i="5.70,345,1574146800"; d="scan'208";a="61481956"
+IronPort-SDR: Nt9o4RTF/6Kz909nL6JxvzZG3+GtFb5GmgME64bOVqLvQ0uxESpZvH0iawSjLjEIgBlBEm8Whs
+ RjE9hlmDr7AWOBE/KVidRpqJ/tvmZ5blU22Y9S0NLbix0vDJ+ncfJkQECqSJiMZyEii5BSZy7m
+ LFOYQrJ5EFKOaqOJTIml/XtupNaGhxP7Y8nvG/DTY6hKuxCN7UNho4Ea+ebA9/CIlfiarQd+Qd
+ /nH7nmTdLT06JAThciDWI+S6L/7Fn1pAO24uE/xuNi/0vjk2ge+Fzs4K5e4b+nJt9KZMM9O+l+
+ XIg=
+X-IronPort-AV: E=Sophos;i="5.70,345,1574146800"; d="scan'208";a="61482009"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 21 Jan 2020 03:03:40 -0700
+ 21 Jan 2020 03:03:49 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 21 Jan 2020 03:03:39 -0700
+ 15.1.1713.5; Tue, 21 Jan 2020 03:03:40 -0700
 Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
  email.microchip.com (10.10.87.72) with Microsoft SMTP Server
  (version=TLS1_2, 
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
  Transport; Tue, 21 Jan 2020 03:03:39 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Gslh72yMcaJW/kv5f9s2vh89Vk3GHV4SPukRyWuggiitfkA0DsHHkkBdoYaZFBFVqPP/bdUKLQIi7K/kmiId6iY9Nozqw+wOweYKSZqvmOkS76+EjgMvhQuKDrBMBijT67uN2DUD94KcUTHTAWrSRZD5dWwCPOJ8L1dr2OwdfDdweAxZMn+Wxdgza19P1s1ltvXvfHy0Zi3pbuxaBdRLAkIZsWTPWJLTA4S57yyGnLuQnggK2MQjZ01I+4/9y8FAJxffwfkpAvSifXJSONNBvVAOyfb2JH3EX+rX/Tw6vHCqcMy2wpz+xKPfDcBHwnfa516XI0TQhjv8eiTrikBVbg==
+ b=n2fS4C7XGqQb9rqYbyDT5g4/q9X1q8sddgWFR7qzUAjW8auURlX47wP0QB8p+mXcbru0wxp/QD4iJ44szj/EFDrHx9uOBL7e1WgyhkkfXtlpUj7TLIsyXJsolcalVOnMQRnVe86vI3g4VuHzJbZQiuTbylvjqC06xfLqeX93L1DI8XurN9ROO86Q2qiZYaihwElvM9rQ1lsoeJKo4YCRhQRh7ujSCPMmVeo4vWgprREFWcumxoIf5aHG+c6xkTQuYJXeKsL7HngplRTXICxnldqnEpzRxldqE+7iDq8+ueRqLrIT5wkJUNugLNvJjLn6asO8LAX0W2qFnYZ2F+xnHg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CSgkQ+QVhd8fNuskSB4YcrNio8Fdt2ZF1VWo+k1UP70=;
- b=ZczlPGrrIBq0lrk38HrajB4fnncilKPcK+W4gq1aqLipmrowG/lhre93mkdmp4JFoSQMTJKGUJyP6m+oXVnxe8SGhYDtyFwy98vV7a1BMIR3C6OI6uMK4q/FFdKmWXtDSyvlGpcMghb4xzDGAIj1hUy92DT88KNqVAT47IbhhRw6s0/IsS7mGfYysOzZ87uV8RiUH8FQSeT0Gfwwa7v/MH45Xqh/Q55jeyBy+7wDBLbN9NCSCeYq9RgZxonjsfdLkH6WOa7h+5P5X0zrS//GzATJrP32SA5RI5C6hJDdRO2e5vAdHkS8qnp1bp2LPpjnGocQYtk7rpBY++bGCUq1xw==
+ bh=R2vpdduo2XNpb06Z4rYtE/JZqZJ/hudWwYY+A9yxMQo=;
+ b=GN2QoE1lVz5cqVOQbLZSgMqEwDQHbT9BD/w/TCPfLc5ztP6gmdVppjOLyKmwE3lwOtjtZdHefcomM1/DEiQMDOeATIS9homwjk5uZYcAC6OVFqAUMXMFJjZNiGbCAza3EeZPDZWk72s9/KxKTRrIVPMM/NjcHeFYY8D6ktlpo72F32N49R6MCYIB94y/ujAF2BZEsu31g8NQtZo6Ymh69hlEfSfzlVQKCC4hjCWDOZYJCZwYgaTJriJYI3A/QVA6DAC0y7Tb7Qk9rbWbey6XVtttTAoz8uHW9AJVyTNXFo1P6nkCFLJeLLSXJRKTwMUdUjYq8dn3HjT/BlaGFaAbhg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -78,25 +78,25 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CSgkQ+QVhd8fNuskSB4YcrNio8Fdt2ZF1VWo+k1UP70=;
- b=hfn6Bef9o/lZNPNGVC0QXsHvSCFATcZZEkXf4A7O6dEfo0KEomI6BDoezKKYd22LKQj95P9WB17L63sH46CmDapybWA3xXpXG6Js9yDBUTadjko++dV7md0OzWRfJ8qifSzlKSKfL0BRib3Kp7LgiySrTxscu7JpzIL8GZZYRoU=
+ bh=R2vpdduo2XNpb06Z4rYtE/JZqZJ/hudWwYY+A9yxMQo=;
+ b=YOwmVkvKhA2UCLqZ9eIL1MaycLuI4EtazoX8jrLjtS+0Ry0RvAaZzHIr7zZJdOMv/vDdCWNQfqJohx2dq03s5d3LFZLpbUQtueOEJzyJMA/hH4k0eCdNyJEJqV/cgTpAbdJSSAWfE0jauqtzyjJ53tR3QcDN8vqY7QIwvVfQOxk=
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
  DM6PR11MB3195.namprd11.prod.outlook.com (20.176.121.81) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.23; Tue, 21 Jan 2020 10:03:38 +0000
+ 15.20.2644.23; Tue, 21 Jan 2020 10:03:39 +0000
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com
  ([fe80::dc6b:1191:3a76:8b6a]) by DM6PR11MB3225.namprd11.prod.outlook.com
  ([fe80::dc6b:1191:3a76:8b6a%7]) with mapi id 15.20.2644.024; Tue, 21 Jan 2020
- 10:03:38 +0000
+ 10:03:39 +0000
 From: <Claudiu.Beznea@microchip.com>
 To: <sre@kernel.org>, <Nicolas.Ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>
-Subject: [PATCH 13/15] power: reset: at91-reset: keep only one reset function
-Thread-Topic: [PATCH 13/15] power: reset: at91-reset: keep only one reset
- function
-Thread-Index: AQHV0EIN4pR9JeMnZ0SqGReN+xq8tA==
-Date: Tue, 21 Jan 2020 10:03:38 +0000
-Message-ID: <1579601001-5711-14-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 14/15] power: reset: at91-reset: get rid of at91_reset_data
+Thread-Topic: [PATCH 14/15] power: reset: at91-reset: get rid of
+ at91_reset_data
+Thread-Index: AQHV0EINUSutYpQLDkidNc7mZapi4g==
+Date: Tue, 21 Jan 2020 10:03:39 +0000
+Message-ID: <1579601001-5711-15-git-send-email-claudiu.beznea@microchip.com>
 References: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
 In-Reply-To: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
 Accept-Language: en-US
@@ -105,14 +105,14 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 410ba330-7a36-4660-97e6-08d79e592fd6
+x-ms-office365-filtering-correlation-id: 1bbe64d4-1c8d-436b-fe33-08d79e59302b
 x-ms-traffictypediagnostic: DM6PR11MB3195:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB319588F877D9C361FFDCD4F4870D0@DM6PR11MB3195.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:651;
+x-microsoft-antispam-prvs: <DM6PR11MB31957417C64CA0280DC48D98870D0@DM6PR11MB3195.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:120;
 x-forefront-prvs: 0289B6431E
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(366004)(396003)(136003)(346002)(39860400002)(199004)(189003)(107886003)(26005)(186003)(36756003)(5660300002)(110136005)(54906003)(4326008)(66556008)(66476007)(6506007)(2906002)(76116006)(91956017)(6486002)(86362001)(64756008)(6512007)(66946007)(66446008)(8676002)(81156014)(2616005)(81166006)(8936002)(6636002)(71200400001)(316002)(478600001);
+ SFS:(10009020)(376002)(366004)(396003)(136003)(346002)(39860400002)(199004)(189003)(107886003)(26005)(186003)(36756003)(5660300002)(110136005)(54906003)(4326008)(66556008)(66476007)(6506007)(2906002)(76116006)(91956017)(6486002)(86362001)(64756008)(6512007)(66946007)(66446008)(8676002)(81156014)(2616005)(81166006)(8936002)(6636002)(71200400001)(316002)(478600001)(26583001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3195;
  H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
@@ -120,18 +120,19 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: CNDJtTCStd+S0w2ha4ceIfKYX0tjsy/WEWbdYVABmAXPZQRB56u60n0HTUeTdD90XWpfMPZnD6c+B6oW/AWShHIQyyS1JeAS1sNm6/2QtC4F0SmskigcE7z9OA6/cu2k1HEMiDpshlR8DnY6/DAzf1pGSAN8YlFpkpKq/gBw5XDQusrCMuv0CaAV39mjEQLMcBIhx7RRAT8BV73RRAPdYjo7U2T6XWlBK+Znib4BFG9I24NwAcDuXU+8AeTC61Q1tkIhCAjmGzN5F8lOj1tXMSXiojDvmGfLWg6ACJ6BrlS/LEQj0vGf/qoxuC8n3Wl+Hp1J++GnG4D7QXpTGCHfWQXmNaxf0n+3dLHIb8jo68n15J8JVZCov40GFflzCOKnnONepDiGz+NTLP0OhrKJSU+2vvgyv+m3j5w1Vldhyt8XRIiY92Tgz0ZB4BwYue6v
+x-microsoft-antispam-message-info: XTagG1G7wxtXMVUccmBFui9wySdWRkmB+h6iehYcTDzRvASN9JI/dmzabMCYvpiNieARHdmetCmE6gaPr9JoWrXmqtZkErVUUoomg75dVHoNvfahJRZyj8IfEX737UNJp4o5LmfiAmXDLjS71fp/76XoFI0bK/GD0aDkl74ILMtr8F7RBDcEy0kDGl/3VrD9aFRUr/DDJYLFvn77dv62/L/JanmxNxwOmH9C3/7+gAX+uCBGTOcLnjXtn2+eMuqi7R9TSe6nTST+1s8K+f98o/a317DtP47wx647PIh7wSwuBOjEZ7r+ikDjHwp5EOksT20491Dol9iv+Cw7+1ajZLnDO6goDkLkcURmPhtxGHctCHsNVka0QsImcKVCher6fH8/E4Cbf61ahZsw0VOSSHPtbMahd2kmbO9ivgbT0e2Ws9djoXJoJj0SHyTn9bNohhj1qsumPNbPHLn55w1oHORC1WK6K1gvtTPrNm8eSdtTrxwHXX2ny12kvNYrRhgn
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 410ba330-7a36-4660-97e6-08d79e592fd6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jan 2020 10:03:38.3327 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1bbe64d4-1c8d-436b-fe33-08d79e59302b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jan 2020 10:03:39.0174 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: n1a4RQn737anXI1+YlaxSprpJCVE/xu+hOxBhLelakFqk+CbxUX8cc5aSlnD7crskUqGUlCfm3cULhhfHvngUnKw3rJYT8VAm5pp1JWOLic=
+X-MS-Exchange-CrossTenant-userprincipalname: bjRxwkVi/GjgFfLUgsygcRzCLh+B0k2vodkSX5ZtzHHSnOVdZK7v5yG/V4LZOPkA68NZ/FKtX0u30LHgGQWXizuRHw4vqvbY5PH+Nqez0oE=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_020345_902724_002358B1 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200121_020354_902324_0504B5B6 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -162,117 +163,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Keep only one reset function. With this, notifier_call member of
-struct at91_reset_data could be removed.
+After refactoring struct at91_reset_data and
+struct at91_reset_data at91sam9260_reset_data are not needed anymore.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/power/reset/at91-reset.c | 52 +++-------------------------------------
- 1 file changed, 3 insertions(+), 49 deletions(-)
+ drivers/power/reset/at91-reset.c | 37 +++++++++----------------------------
+ 1 file changed, 9 insertions(+), 28 deletions(-)
 
 diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/at91-reset.c
-index 61433060d784..9c1b69f76a01 100644
+index 9c1b69f76a01..537ccb180568 100644
 --- a/drivers/power/reset/at91-reset.c
 +++ b/drivers/power/reset/at91-reset.c
-@@ -50,8 +50,6 @@ enum reset_type {
+@@ -49,10 +49,6 @@ enum reset_type {
+ 	RESET_TYPE_ULP2		= 8,
  };
  
- struct at91_reset_data {
--	int (*notifier_call)(struct notifier_block *this, unsigned long mode,
--			     void *cmd);
- 	u32 args;
+-struct at91_reset_data {
+-	u32 args;
+-};
+-
+ struct at91_reset {
+ 	void __iomem *rstc_base;
+ 	void __iomem *ramc_base[2];
+@@ -156,42 +152,29 @@ static const struct of_device_id at91_ramc_of_match[] = {
+ 	{ /* sentinel */ }
  };
  
-@@ -69,38 +67,8 @@ struct at91_reset {
- * reset register it can be left driving the data bus and
- * killing the chance of a subsequent boot from NAND
- */
--static int at91sam9260_restart(struct notifier_block *this, unsigned long mode,
--			       void *cmd)
--{
--	struct at91_reset *reset = container_of(this, struct at91_reset, nb);
+-static const struct at91_reset_data at91sam9260_reset_data = {
+-	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
+-};
 -
--	asm volatile(
--		/* Align to cache lines */
--		".balign 32\n\t"
+-static const struct at91_reset_data at91sam9g45_reset_data = {
+-	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
+-};
 -
--		/* Disable SDRAM accesses */
--		"str	%2, [%0, #" __stringify(AT91_SDRAMC_TR) "]\n\t"
+-static const struct at91_reset_data sama5d3_reset_data = {
+-	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
+-};
 -
--		/* Power down SDRAM */
--		"str	%3, [%0, %5]\n\t"
+-static const struct at91_reset_data samx7_reset_data = {
+-	.args = AT91_RSTC_KEY | AT91_RSTC_PROCRST,
+-};
 -
--		/* Reset CPU */
--		"str	%4, [%1, #" __stringify(AT91_RSTC_CR) "]\n\t"
--
--		"b	.\n\t"
--		:
--		: "r" (reset->ramc_base[0]),
--		  "r" (reset->rstc_base),
--		  "r" (1),
--		  "r" cpu_to_le32(AT91_SDRAMC_LPCB_POWER_DOWN),
--		  "r" (reset->args),
--		  "r" (reset->ramc_lpr));
--
--	return NOTIFY_DONE;
--}
--
--static int at91sam9g45_restart(struct notifier_block *this, unsigned long mode,
--			       void *cmd)
-+static int at91_reset(struct notifier_block *this, unsigned long mode,
-+		      void *cmd)
+ static const struct of_device_id at91_reset_of_match[] = {
+ 	{
+ 		.compatible = "atmel,at91sam9260-rstc",
+-		.data = &at91sam9260_reset_data
++		.data = (void *)(AT91_RSTC_KEY | AT91_RSTC_PERRST |
++				 AT91_RSTC_PROCRST),
+ 	},
+ 	{
+ 		.compatible = "atmel,at91sam9g45-rstc",
+-		.data = &at91sam9g45_reset_data
++		.data = (void *)(AT91_RSTC_KEY | AT91_RSTC_PERRST |
++				 AT91_RSTC_PROCRST)
+ 	},
+ 	{
+ 		.compatible = "atmel,sama5d3-rstc",
+-		.data = &sama5d3_reset_data
++		.data = (void *)(AT91_RSTC_KEY | AT91_RSTC_PERRST |
++				 AT91_RSTC_PROCRST)
+ 	},
+ 	{
+ 		.compatible = "atmel,samx7-rstc",
+-		.data = &samx7_reset_data
++		.data = (void *)(AT91_RSTC_KEY | AT91_RSTC_PROCRST)
+ 	},
+ 	{
+ 		.compatible = "microchip,sam9x60-rstc",
+-		.data = &samx7_reset_data
++		.data = (void *)(AT91_RSTC_KEY | AT91_RSTC_PROCRST)
+ 	},
+ 	{ /* sentinel */ }
+ };
+@@ -199,7 +182,6 @@ MODULE_DEVICE_TABLE(of, at91_reset_of_match);
+ 
+ static int __init at91_reset_probe(struct platform_device *pdev)
  {
- 	struct at91_reset *reset = container_of(this, struct at91_reset, nb);
- 
-@@ -137,16 +105,6 @@ static int at91sam9g45_restart(struct notifier_block *this, unsigned long mode,
- 	return NOTIFY_DONE;
- }
- 
--static int sama5d3_restart(struct notifier_block *this, unsigned long mode,
--			   void *cmd)
--{
--	struct at91_reset *reset = container_of(this, struct at91_reset, nb);
--
--	writel(reset->args, reset->rstc_base);
--
--	return NOTIFY_DONE;
--}
--
- static void __init at91_reset_status(struct platform_device *pdev,
- 				     void __iomem *base)
- {
-@@ -199,22 +157,18 @@ static const struct of_device_id at91_ramc_of_match[] = {
- };
- 
- static const struct at91_reset_data at91sam9260_reset_data = {
--	.notifier_call = at91sam9260_restart,
- 	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
- };
- 
- static const struct at91_reset_data at91sam9g45_reset_data = {
--	.notifier_call = at91sam9g45_restart,
- 	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
- };
- 
- static const struct at91_reset_data sama5d3_reset_data = {
--	.notifier_call = sama5d3_restart,
- 	.args = AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
- };
- 
- static const struct at91_reset_data samx7_reset_data = {
--	.notifier_call = sama5d3_restart,
- 	.args = AT91_RSTC_KEY | AT91_RSTC_PROCRST,
- };
- 
-@@ -277,7 +231,7 @@ static int __init at91_reset_probe(struct platform_device *pdev)
+-	const struct at91_reset_data *reset_data;
+ 	const struct of_device_id *match;
+ 	struct at91_reset *reset;
+ 	struct device_node *np;
+@@ -230,10 +212,9 @@ static int __init at91_reset_probe(struct platform_device *pdev)
+ 	}
  
  	match = of_match_node(at91_reset_of_match, pdev->dev.of_node);
- 	reset_data = match->data;
--	reset->nb.notifier_call = reset_data->notifier_call;
-+	reset->nb.notifier_call = at91_reset;
+-	reset_data = match->data;
+ 	reset->nb.notifier_call = at91_reset;
  	reset->nb.priority = 192;
- 	reset->args = reset_data->args;
+-	reset->args = reset_data->args;
++	reset->args = (u32)match->data;
  
+ 	reset->sclk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(reset->sclk))
 -- 
 2.7.4
 
