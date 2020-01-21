@@ -2,60 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA202143B66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:49:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C37F1143B91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 12:03:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KbT2AQDn+jZt7lr7pcWg80n5JKdoEVJDWXlrJ+eEeyM=; b=Q4qa0JZOhsiM2PLUPUkmg2xae
-	QccChyrYAEBTOpIuW9Bz2CaIBZeu1al52rL7Q4lVoBBvGGnhWC/tPxKXx3x3wW00PBJqS6dFEVONJ
-	2eiWMNSIVjRrR51DZkk+HgqzuceZMBkNgWM4fMhBD6HYgYebpLMkvdASjO4XpD0lYWVVPGNftwE7n
-	LguS1OXnlUL7UJpUc9TF1NAqC6us7SFGcZJ4HBACNm7yAPpRg5HDAFKyS86/2m7aiQsXJO7lTWIRD
-	2PXOu3P1rwUnHHYKIISHz868apeO+zaAhVAUfE2x9B93+5aRObyfiR9Y/T8kS2bOkACUWThtpk9nK
-	0WV4vGqWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KYD9L9PwnLAECS/albc6Wh5+aW/snSs/7T6yb4bvsHQ=; b=VbTHEvj/kVa6bG
+	yH6rf63p4nlwH6NO0x3oGPHG5n1DSci108mMKqqqpV5Hb18tphxXOrkv4oaIsrR15SQYbbuz8jOiQ
+	qhoq6kAzKFFTQqxPgbn4ZoT//07v3wc3Ur36D/aeYXK1wpfVDVhvsSkhv3SrpHp/jETf8kuqg26nC
+	xD/yl2D+eXWn0epcovhfmh6hP7TKKE9VceQbEeAPWoOUqf/Dvxy0cX9NlA80V8ROdGcdVscPNh2aq
+	27K4UlLJDGv3I+A4oeI7lTanYzluyBbUSPVQmQ80L7d7APJyxy0tCtGV/0JIObF9ludNaOb1HpFTd
+	B5yUQL572NMfRywyT8JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itr6O-0006oX-OU; Tue, 21 Jan 2020 10:49:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itr6C-0006o9-Ln; Tue, 21 Jan 2020 10:49:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 553431FB;
- Tue, 21 Jan 2020 02:49:31 -0800 (PST)
-Received: from [10.37.12.169] (unknown [10.37.12.169])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 61FC23F6C4;
- Tue, 21 Jan 2020 02:49:21 -0800 (PST)
-Subject: Re: [PATCH 1/4] PM / EM: and devices to Energy Model
-To: Quentin Perret <qperret@google.com>
-References: <20200116152032.11301-1-lukasz.luba@arm.com>
- <20200116152032.11301-2-lukasz.luba@arm.com>
- <17b77e0c-9455-0479-d37b-c57717c784c7@arm.com>
- <20200120152804.GB164543@google.com>
- <453034e5-f7b9-20f7-4e26-5d0d7164edd1@arm.com>
- <20200121100854.GB157387@google.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <5621c137-7057-1d5c-646a-95707105df25@arm.com>
-Date: Tue, 21 Jan 2020 10:49:19 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1itrJk-0004VA-NI; Tue, 21 Jan 2020 11:03:32 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itrJW-0004Ua-7H
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 11:03:23 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00LAvnn7016644; Tue, 21 Jan 2020 12:03:09 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=acTKJs8fYmE1ommQlydH1CvCtyw2ASLm8YNtpOoq6fs=;
+ b=0eeMhSuWDFasHv0P3bDmczLdHT6I9guO5H4awHuYKUpaV2o9aH6erH3HWUooyGap1nXp
+ g15i7vaPIfb5VsTONUGM8WqVQElt9/cJrZ8NsPBiKjss57BB8mBENDZagDPWYa3x9YhD
+ 0uKblhTbwXKj1XX8c3/vd9HTtlT9ZVhbh79vSsNDVst0HSYd6qU/QReVY0+ZYeWXa1N+
+ 9iSJL8qc1jXEgTdJ/qfXEDgCAttK3GQKmZz5qpF5tkTS8XjCnmyuRHakdi14XV4cPQpw
+ 8mNblruN0sj6poqhP4gp4EZR75vE6go/kLBw8UQpXkmJ5MaW3jmGVJqU69HMApE6p6EI gw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xkrc4xb9b-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 21 Jan 2020 12:03:09 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 79028100038;
+ Tue, 21 Jan 2020 12:03:04 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 67CBB2BD3EE;
+ Tue, 21 Jan 2020 12:03:04 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2;
+ Tue, 21 Jan 2020 12:03:03 +0100
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <jic23@kernel.org>, <knaack.h@gmx.de>, <lars@metafoo.de>,
+ <pmeerw@pmeerw.net>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <fabrice.gasnier@st.com>,
+ <linux-iio@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <olivier.moysan@st.com>
+Subject: [PATCH] iio: adc: stm32-dfsdm: fix sleep in atomic context
+Date: Tue, 21 Jan 2020 12:02:56 +0100
+Message-ID: <20200121110256.12415-1-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20200121100854.GB157387@google.com>
-Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG6NODE2.st.com
+ (10.75.127.17)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-21_03:2020-01-21,
+ 2020-01-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_024932_798008_9BEB2FF4 
-X-CRM114-Status: GOOD (  17.14  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_030318_632402_DF4BBF77 
+X-CRM114-Status: GOOD (  16.02  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,93 +96,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, daniel.lezcano@linaro.org,
- peterz@infradead.org, viresh.kumar@linaro.org, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, khilman@kernel.org,
- agross@kernel.org, b.zolnierkie@samsung.com, steven.price@arm.com,
- cw00.choi@samsung.com, mingo@redhat.com, linux-imx@nxp.com,
- rui.zhang@intel.com, mgorman@suse.de, daniel@ffwll.ch,
- linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- Chris.Redpath@arm.com, linux-omap@vger.kernel.org,
- Dietmar Eggemann <dietmar.eggemann@arm.com>,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
- tomeu.vizoso@collabora.com, sboyd@kernel.org, shawnguo@kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, kernel@pengutronix.de,
- sudeep.holla@arm.com, patrick.bellasi@matbug.net, ionela.voinescu@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This commit fixes the error message:
+"BUG: sleeping function called from invalid context at kernel/irq/chip.c"
+Suppress the trigger irq handler. Make the buffer transfers directly
+in DMA callback, instead.
+Push buffers without timestamps, as timestamps are not supported
+in DFSDM driver.
 
+Fixes: 11646e81d775 ("iio: adc: stm32-dfsdm: add support for buffer modes")
 
-On 1/21/20 10:08 AM, Quentin Perret wrote:
-> On Monday 20 Jan 2020 at 16:20:49 (+0000), Lukasz Luba wrote:
->> On 1/20/20 3:28 PM, Quentin Perret wrote:
->>> Agreed, this looks a bit confusing. It should be trivial to make
->>> em_dev_get() (or whatever we end up calling it) work for CPUs too,
->>> though. And we could always have a em_cpu_get(int cpu) API that is a
->>> basically a wrapper around em_dev_get() for convenience.
->>
->> The problem not only here is that we have a CPU index 'int cpu'
->> and if we ask for device like:
->>
->> struct device *dev = get_cpu_device(cpu);
->>
->> It might be not the same device that was used during the
->> registration, when we had i.e. 4 CPUs for the same policy:
->>
->> int cpu_id = cpumask_first(policy->cpus);
->> struct device *cpu_dev = get_cpu_device(cpu_id);
->> em_register_perf_domain(cpu_dev, nr_opp, &em_cb);
->>
->> That's why the em_cpu_get() is different than em_get_pd(), mainly by:
->> if (cpumask_test_cpu(cpu, em_span_cpus(em_pd)))
->>
->> It won't be simple wrapper, let me think how it could be handled
->> differently than it is now.
-> 
-> Right so I suppose the easiest solution would be to do the opposite of
-> my first suggestion. That is, make em_get_pd() call em_cpu_get() if the
-> device is a CPU device, or proceed to the PD list iteration for other
-> devices. And em_cpu_get() can remain as you originally suggested (that
-> is, iterate over the PDs and test the mask).
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+---
+There is the same issue on STM32 ADC driver.
+The solution for ADC driver has been already discussed in the thread
+https://lkml.org/lkml/2019/3/30/171
+The current patch for STM32 DFSDM driver, bypasses the IIO IRQ trigger
+handler, as proposed in this thread.
+---
+ drivers/iio/adc/stm32-dfsdm-adc.c | 43 +++++++------------------------
+ 1 file changed, 10 insertions(+), 33 deletions(-)
 
-Exactly, something like:
----------------------------->8-------------------------
-288 struct em_perf_domain *em_get_pd(struct device *dev)
-289 {
-290         struct em_device *em_dev;
-291
-292         if (IS_ERR_OR_NULL(dev))
-293                 return NULL;
-294
-295         if (_is_cpu_device(dev))
-296                 return em_cpu_get(dev->id);
-....
-------------------------8<-----------------------------
+diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
+index 2aad2cda6943..76a60d93fe23 100644
+--- a/drivers/iio/adc/stm32-dfsdm-adc.c
++++ b/drivers/iio/adc/stm32-dfsdm-adc.c
+@@ -842,31 +842,6 @@ static inline void stm32_dfsdm_process_data(struct stm32_dfsdm_adc *adc,
+ 	}
+ }
+ 
+-static irqreturn_t stm32_dfsdm_adc_trigger_handler(int irq, void *p)
+-{
+-	struct iio_poll_func *pf = p;
+-	struct iio_dev *indio_dev = pf->indio_dev;
+-	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+-	int available = stm32_dfsdm_adc_dma_residue(adc);
+-
+-	while (available >= indio_dev->scan_bytes) {
+-		s32 *buffer = (s32 *)&adc->rx_buf[adc->bufi];
+-
+-		stm32_dfsdm_process_data(adc, buffer);
+-
+-		iio_push_to_buffers_with_timestamp(indio_dev, buffer,
+-						   pf->timestamp);
+-		available -= indio_dev->scan_bytes;
+-		adc->bufi += indio_dev->scan_bytes;
+-		if (adc->bufi >= adc->buf_sz)
+-			adc->bufi = 0;
+-	}
+-
+-	iio_trigger_notify_done(indio_dev->trig);
+-
+-	return IRQ_HANDLED;
+-}
+-
+ static void stm32_dfsdm_dma_buffer_done(void *data)
+ {
+ 	struct iio_dev *indio_dev = data;
+@@ -874,11 +849,6 @@ static void stm32_dfsdm_dma_buffer_done(void *data)
+ 	int available = stm32_dfsdm_adc_dma_residue(adc);
+ 	size_t old_pos;
+ 
+-	if (indio_dev->currentmode & INDIO_BUFFER_TRIGGERED) {
+-		iio_trigger_poll_chained(indio_dev->trig);
+-		return;
+-	}
+-
+ 	/*
+ 	 * FIXME: In Kernel interface does not support cyclic DMA buffer,and
+ 	 * offers only an interface to push data samples per samples.
+@@ -906,7 +876,15 @@ static void stm32_dfsdm_dma_buffer_done(void *data)
+ 			adc->bufi = 0;
+ 			old_pos = 0;
+ 		}
+-		/* regular iio buffer without trigger */
++		/*
++		 * In DMA mode the trigger services of IIO are not used
++		 * (e.g. no call to iio_trigger_poll).
++		 * Calling irq handler associated to the hardware trigger is not
++		 * relevant as the conversions have already been done. Data
++		 * transfers are performed directly in DMA callback instead.
++		 * This implementation avoids to call trigger irq handler that
++		 * may sleep, in an atomic context (DMA irq handler context).
++		 */
+ 		if (adc->dev_data->type == DFSDM_IIO)
+ 			iio_push_to_buffers(indio_dev, buffer);
+ 	}
+@@ -1536,8 +1514,7 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
+ 	}
+ 
+ 	ret = iio_triggered_buffer_setup(indio_dev,
+-					 &iio_pollfunc_store_time,
+-					 &stm32_dfsdm_adc_trigger_handler,
++					 &iio_pollfunc_store_time, NULL,
+ 					 &stm32_dfsdm_buffer_setup_ops);
+ 	if (ret) {
+ 		stm32_dfsdm_dma_release(indio_dev);
+-- 
+2.17.1
 
-> 
-> That should ensure em_get_pd() always works, em_cpu_get() is still there
-> handy for the scheduler and such, and the two EM lookup functions (for
-> CPUs or for devices) are kept cleanly separated.
-> 
-> Thoughts ?
-
-Agree. Then we can have these two functions and em_get_pd() will also
-work fine.
-
-> 
-> Thanks,
-> Quentin
-> 
-
-Regards,
-Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
