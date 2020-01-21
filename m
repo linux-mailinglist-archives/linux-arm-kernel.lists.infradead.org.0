@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 163401443BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 18:56:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069D31443CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 18:58:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jcNwj0KX9FalKPs2wwpq6KQkamxroak82BB8Y9MO+u0=; b=nTchgWPTLctPmi
-	e+ZcuMB+M8eAUtPbMSLKI7oLERBJOC57lNVEHxMgUE9XTvyZ9dIuxgRBNhQn5m0p6RIyj4baDS650
-	0e2rsgcNieEvOC+FbTFzPnlBzLAhQEoirvO2AQhZ1Qr5pZClO7iInxqIlWnHnBWUJcOKes/bXtgee
-	DQ926s2mOJgjN5olYZMlNnFwiMB1iBMScveKQp99IhNrDvcycyVZZrZCxjtd5xliSm5paYRJ42Jdy
-	AH91JCbubd74wI3JShAKeXbKd5LSecTB5IkE3zVQKP5IXsCKuQ9A9cOvfwubqMdlDAzn/Il5WCn+/
-	KTLgTxR9NzbWC2XFTldA==;
+	List-Owner; bh=iqbQiZuvh0Y/14z4WEGQuX+JtJ3TALREm6s2jKA+X6M=; b=mIuuMa4iV8wlTy
+	0kVk1+UI0teuaddAWvi4uJWqMAS/X7A0V7fOGuXQoXNYzG1Cd1ORM9DJ/nmqgY4M+eFC7FlsrmGQP
+	Ie7Q5SfDuA9QFIJGH/fdjORCWTkoJPJg1GJZ2uvvc8/Wun70ucv0MJXIon9Pzs5pQhI8JNxdNQCUw
+	kye6RYyI7Utf/yAJp6+Au5ShcMMVqI5uKqdkacHLDeBG0i/Nii0D9yk7c3egnLwPwBeGl/sYVE2zE
+	3+ABW3OhR8SWpbnzHGeRGb+bpSDJQaUbza7Npv46aOMlL57As8whnoCfR3DGq7KNUlrcziLTRDV/9
+	fq3Wly/ts4dXPrwhWl1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itxlE-00017k-45; Tue, 21 Jan 2020 17:56:20 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1itxmx-0001yV-WD; Tue, 21 Jan 2020 17:58:08 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itxl1-000171-Tr
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 17:56:12 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q8so3725590ljj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 09:56:07 -0800 (PST)
+ id 1itxma-0001qv-Bg; Tue, 21 Jan 2020 17:57:48 +0000
+Received: by mail-oi1-x244.google.com with SMTP id 18so3396474oin.9;
+ Tue, 21 Jan 2020 09:57:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=98bZxOBbCQ3VnMNuVxei8T8EkXL1AFFFNz8Ptr5Fwf4=;
- b=f0UMJKfmKZdH5ae7CC35Bo8JfJuzIWwRMR2d3DvgxxocOt4ZxltoLSDNLwnzFZ8sCh
- mHQ747HPLwIz8jiYkjw/ZBy7Z+2kGJIfn0vBm2e30i+bbMJpifVwiABEulHvlUjKF3e+
- zmkyIyJf834Xz+CPHcMmtF5hwd//KEWq0xygi0vqFBd3IcGN7Ao8G+F+LXLzP7r3FTHU
- oWLSaaKu9S1cZeQ2mmM7DUSMHSd9Ajyf0ADQRJWavAuhTtXQndb3srd5FE+ES5vHQ81S
- 2hSAKezaBjD/oILoUk/qKVeqjfM7viogSA5lWNPJ1ygAzh6EIYbDvnDKr6JiQhFI5jr2
- EyIQ==
+ :cc; bh=Mp6DdFVSXVePI6iSGCnPMxvllFc7taA3faXPCTrJyOk=;
+ b=fvs0k64WTpLPoEYSU10yB4vhu1oKNCS3z851fAJBpMS31H71pFpdt95LE6mt0lodMh
+ Jdqv99H4gGi4rcE1ufxinz/IjL1qBRzTshBYn4yImdugBHqsI/JvBDKbrLNnszNs8xDQ
+ 7CACHghR7TC+u1H1Yz57CoWfMmQiueT0PCEvJJHkVw72rFCT5yBklHSpu+SqGcn8vxNN
+ 8/lDvlGdM44tQFfDAWN260vjs6rXfoO5JpDNlqIuhvQJWCGbaCFHPIxVhRtMpVzJM3ye
+ NPI62fQL1BoPCFs8rgxB6F9lcQFjMQlGgM4h7Y0zL2uDpQAFC7BdMYhoTEx8/xAwnt7p
+ C3Pw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=98bZxOBbCQ3VnMNuVxei8T8EkXL1AFFFNz8Ptr5Fwf4=;
- b=WvT55H2d9MOUv9wPKzVt1LRMb3AOF8YMKzlpwp3+hzuGZyUYehecozRbVG6sNqfZON
- MxGTt2iaeFCdnnJh8IbOihq+5pZjja7DuFlhxbLC7spCrjBJGSkSab8ySlsCa8mjUq2S
- rVuNvrx/Ew5sTcCgEH52MCubivhu5qmePC4w5V6o1/4Gk8MMZP/XEFAraEd+Q8nRGnV9
- 9Vxy8HInnES9b5dA86ibnGDLQYH5KrQLcfuq6KWWQiqoR7tHIrtdup4QALv+sY94Cmk4
- IYhlUrgEDdjTIWq21SJzzqiTeDo1IPVqNlCfdiKGH9kTK1P/6dlXIIz9btPi4yvViUx5
- 4gqQ==
-X-Gm-Message-State: APjAAAXYoskykpd6SomPjqbeeH1euq6ugBLvXcTK9shn3IaBbeZ45IzW
- G9hV+egLYFqt7yHSsKsJXzxabJZRpIKS+IsS1gM=
-X-Google-Smtp-Source: APXvYqzSduuvbYALVkj//Xrt9JfaU9cf6Qr6bCvfXcM6mqwY1KvupDpCfJTjcSWmOKPsyFlFi8k1zTlkXGNFH8MYpJ4=
-X-Received: by 2002:a05:651c:8f:: with SMTP id
- 15mr17366951ljq.109.1579629365512; 
- Tue, 21 Jan 2020 09:56:05 -0800 (PST)
+ bh=Mp6DdFVSXVePI6iSGCnPMxvllFc7taA3faXPCTrJyOk=;
+ b=oeGH25hl0120KrOWJpWqTKVgMdtI7O3D+I3qMviu0QKkoCBBLyxq54tgqUp4xpSWHW
+ a9WT5MkDOXkv7ad6bIeqqzu0fjgAbUMAkkctanlV9uAAx66CijtNY+a8gGK/85m+sNcP
+ dN6SmJw5UCnk6Zr0hM69Jflbf7nGtDbIHSLLIKj3qDCr5/0afLUGKGF4HOWQIAAPT7ZM
+ 3vdu6A7dXWXhcsMafDhGfmc5qSXAnDnZMf1dKwIR9o//u+Zi/yKrv+DsUF7r1AQbB9TF
+ J00HHcsST5VPm++Zpdyke8POFORACOHVtJi+oEB/2w0sy5ZRyEbHpWd0UVMJlPukDm/6
+ r9hA==
+X-Gm-Message-State: APjAAAUkFWUqRZJVgzIbNDagB3tzHAzRbIa6klmHwhuEHyuAqu0l06xZ
+ ckZ+YAWCQjMcxsgnblQWbBI9V7aMqP1cTPGF6Ok=
+X-Google-Smtp-Source: APXvYqz8UqpqSR+lXSTxQDudfV5ATY6jfXYA7jHRsg0MIEWnG2M2frTp3v08cP9d/Qo4VBKw58GIa5lu+/MAx1m8ARs=
+X-Received: by 2002:aca:4ad5:: with SMTP id x204mr3773363oia.162.1579629462726; 
+ Tue, 21 Jan 2020 09:57:42 -0800 (PST)
 MIME-Version: 1.0
-References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
- <9b77124b-675d-5ac7-3741-edec575bd425@linux.intel.com>
- <64cab472-806e-38c4-fb26-0ffbee485367@tycho.nsa.gov>
- <05297eff-8e14-ccdf-55a4-870c64516de8@linux.intel.com>
-In-Reply-To: <05297eff-8e14-ccdf-55a4-870c64516de8@linux.intel.com>
-From: Alexei Starovoitov <alexei.starovoitov@gmail.com>
-Date: Tue, 21 Jan 2020 09:55:53 -0800
-Message-ID: <CAADnVQK-JzK-GUk4KOozn4c1xr=7TiCpB9Fi0QDC9nE6iVn8iQ@mail.gmail.com>
-Subject: Re: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel
- and user space
-To: Alexey Budankov <alexey.budankov@linux.intel.com>
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Tue, 21 Jan 2020 17:57:18 +0000
+Message-ID: <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
+Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
+ endpoint controller
+To: Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, 
+ Marek Vasut <marek.vasut+renesas@gmail.com>, 
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci <linux-pci@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_095607_989156_F9F7B6D6 
-X-CRM114-Status: GOOD (  19.43  )
+X-CRM114-CacheID: sfid-20200121_095744_424532_54B678AA 
+X-CRM114-Status: GOOD (  18.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alexei.starovoitov[at]gmail.com]
+ provider [prabhakar.csengg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,117 +98,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Peter Zijlstra <peterz@infradead.org>,
- "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
- Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
- Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
- James Morris <jmorris@namei.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
- Stephen Smalley <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
- Robert Richter <rric@kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Andy Lutomirski <luto@amacapital.net>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 9:31 AM Alexey Budankov
-<alexey.budankov@linux.intel.com> wrote:
->
->
-> On 21.01.2020 17:43, Stephen Smalley wrote:
-> > On 1/20/20 6:23 AM, Alexey Budankov wrote:
-> >>
-> >> Introduce CAP_PERFMON capability designed to secure system performance
-> >> monitoring and observability operations so that CAP_PERFMON would assist
-> >> CAP_SYS_ADMIN capability in its governing role for perf_events, i915_perf
-> >> and other performance monitoring and observability subsystems.
-> >>
-> >> CAP_PERFMON intends to harden system security and integrity during system
-> >> performance monitoring and observability operations by decreasing attack
-> >> surface that is available to a CAP_SYS_ADMIN privileged process [1].
-> >> Providing access to system performance monitoring and observability
-> >> operations under CAP_PERFMON capability singly, without the rest of
-> >> CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials and
-> >> makes operation more secure.
-> >>
-> >> CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to
-> >> system performance monitoring and observability operations and balance
-> >> amount of CAP_SYS_ADMIN credentials following the recommendations in the
-> >> capabilities man page [1] for CAP_SYS_ADMIN: "Note: this capability is
-> >> overloaded; see Notes to kernel developers, below."
-> >>
-> >> Although the software running under CAP_PERFMON can not ensure avoidance
-> >> of related hardware issues, the software can still mitigate these issues
-> >> following the official embargoed hardware issues mitigation procedure [2].
-> >> The bugs in the software itself could be fixed following the standard
-> >> kernel development process [3] to maintain and harden security of system
-> >> performance monitoring and observability operations.
-> >>
-> >> [1] http://man7.org/linux/man-pages/man7/capabilities.7.html
-> >> [2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
-> >> [3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
-> >>
-> >> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
-> >> ---
-> >>   include/linux/capability.h          | 12 ++++++++++++
-> >>   include/uapi/linux/capability.h     |  8 +++++++-
-> >>   security/selinux/include/classmap.h |  4 ++--
-> >>   3 files changed, 21 insertions(+), 3 deletions(-)
-> >>
-> >> diff --git a/include/linux/capability.h b/include/linux/capability.h
-> >> index ecce0f43c73a..8784969d91e1 100644
-> >> --- a/include/linux/capability.h
-> >> +++ b/include/linux/capability.h
-> >> @@ -251,6 +251,18 @@ extern bool privileged_wrt_inode_uidgid(struct user_namespace *ns, const struct
-> >>   extern bool capable_wrt_inode_uidgid(const struct inode *inode, int cap);
-> >>   extern bool file_ns_capable(const struct file *file, struct user_namespace *ns, int cap);
-> >>   extern bool ptracer_capable(struct task_struct *tsk, struct user_namespace *ns);
-> >> +static inline bool perfmon_capable(void)
-> >> +{
-> >> +    struct user_namespace *ns = &init_user_ns;
-> >> +
-> >> +    if (ns_capable_noaudit(ns, CAP_PERFMON))
-> >> +        return ns_capable(ns, CAP_PERFMON);
-> >> +
-> >> +    if (ns_capable_noaudit(ns, CAP_SYS_ADMIN))
-> >> +        return ns_capable(ns, CAP_SYS_ADMIN);
-> >> +
-> >> +    return false;
-> >> +}
-> >
-> > Why _noaudit()?  Normally only used when a permission failure is non-fatal to the operation.  Otherwise, we want the audit message.
->
-> Some of ideas from v4 review.
+Hi Rob/Kishon,
 
-well, in the requested changes form v4 I wrote:
-return capable(CAP_PERFMON);
-instead of
-return false;
+On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
+>
+> This patch adds the bindings for the R-Car PCIe endpoint driver.
+>
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
+>  1 file changed, 76 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> new file mode 100644
+> index 000000000000..99c2a1174463
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> @@ -0,0 +1,76 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Renesas R-Car PCIe Endpoint
+> +
+> +maintainers:
+> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: renesas,r8a774c0-pcie-ep
+> +      - const: renesas,rcar-gen3-pcie-ep
+> +
+> +  reg:
+> +    maxItems: 5
+> +
+> +  reg-names:
+> +    items:
+> +      - const: apb-base
+> +      - const: memory0
+> +      - const: memory1
+> +      - const: memory2
+> +      - const: memory3
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pcie
+> +
+> +  max-functions:
+> +    minimum: 1
+> +    maximum: 6
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - resets
+> +  - power-domains
+> +  - clocks
+> +  - clock-names
+> +  - max-functions
+> +
+apart from dt_binding_check error are we OK with dt bindings ?
 
-That's what Andy suggested earlier for CAP_BPF.
-I think that should resolve Stephen's concern.
+Cheers,
+--Prabhakar
+
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
+> +    #include <dt-bindings/power/r8a774c0-sysc.h>
+> +
+> +     pcie0_ep: pcie-ep@fe000000 {
+> +            compatible = "renesas,r8a774c0-pcie-ep",
+> +                         "renesas,rcar-gen3-pcie-ep";
+> +            reg = <0 0xfe000000 0 0x80000>,
+> +                  <0x0 0xfe100000 0 0x100000>,
+> +                  <0x0 0xfe200000 0 0x200000>,
+> +                  <0x0 0x30000000 0 0x8000000>,
+> +                  <0x0 0x38000000 0 0x8000000>;
+> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
+> +            resets = <&cpg 319>;
+> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+> +            clocks = <&cpg CPG_MOD 319>;
+> +            clock-names = "pcie";
+> +            max-functions = /bits/ 8 <1>;
+> +    };
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
