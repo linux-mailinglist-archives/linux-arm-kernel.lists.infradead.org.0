@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 697A31436E0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 06:57:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E430914377C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 08:17:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i4iiE9GERDfWIwdZaHE5zZKWHQq46bD0gC2nq7l76Ow=; b=SxaweKjQ9jP79S
-	gwXZafFfG0K7RgmL0GTFM8jg32jqur1e8P4OvpuFmsLvE7NjDeN5oxrxWPUk/qJNbnzZBzT7xvVlb
-	xgEGUerZF2d7yudob2zL2Xk0obhXvfc+97bZe1iGBlQIqNemCZeSMuYiJFX5jusCXp44e+2KztUuB
-	PVwtunkvW2xr8KlloQHzdpPWy0FizYDtvjFI6oDaYcEFpX8IhfMzzlRHBSzOIC5WWW45kaTXS4eNU
-	oGmD638+AbPi9+UnUrFjF9MwsNTb1f39f4fLCpIlK7+dlutJAxTQkaZ/gGMfMBI17pTg/Gupc93Ao
-	eXeiHE+0P7NtBLQiawaA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q30IVEac1CtWcFTW/K9pmakJSJ4x8ac50bC/9DouLNk=; b=AGPxFrl0B+VEWl
+	nywKrrqeXzGG3OzKUf5q/FSjcKImuBM5cp0INpKdRHWAUb4LhSA8sh/ynStC4dC6moPKOhrgLjl6s
+	lbHgoNIWd9oPDNSdM7qNkS+wN2JkAI2C0YUTGXurXpS8Oyd7vyCNVlkzr08OOyS9b6NHOh6FdGyXf
+	vWK50E4t0LN7ZZRFXzlY5ReA+PIH2PbcxeBIe3lNguGwY//d5Flk/F3A2ZvR1NUDTaN80mjfHqPcm
+	0VNh3Zx/daOurtiMHS+Z31mWOvwGSO+s1yBUZkNp7MIIMUwbAUHkPJglkERIHZ0RP+CygNyIoAYF5
+	+BYcgSDm6KYGVl3zXZdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itmXT-0004IZ-FD; Tue, 21 Jan 2020 05:57:23 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1itnn4-0003yV-Gu; Tue, 21 Jan 2020 07:17:34 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itmXL-0004I7-0A
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 05:57:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579586232;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=BGAXAa5VaHXPgggqPLCwDaDm1UbfpZCWsj65um9+hNM=;
- b=ONTYoNZHXhTwRbBZxvdpC4Ajg6vktsSkdfsaF5z5N3/7wsCaYGm0k3gPOLtF51faaf9ueL
- YZnvIeqbZXNkofASVj71zsIr0KbUn0RzR/fix6itRiJltb36KtA/xMYkVW8JcAMmTM+sX6
- 2E+rP8OzRkG9kWWAD5X2Awp8urjKXI0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-141-7Nc9kkgQPi2wF6YHEaFu0w-1; Tue, 21 Jan 2020 00:57:11 -0500
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CDFA5800D41;
- Tue, 21 Jan 2020 05:57:09 +0000 (UTC)
-Received: from localhost.localdomain.com (vpn2-54-75.bne.redhat.com
- [10.64.54.75])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8453389E9D;
- Tue, 21 Jan 2020 05:57:05 +0000 (UTC)
-From: Gavin Shan <gshan@redhat.com>
-To: kvmarm@lists.cs.columbia.edu,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] KVM: arm/arm64: Fix young bit from mmu notifier
-Date: Tue, 21 Jan 2020 16:56:59 +1100
-Message-Id: <20200121055659.19560-1-gshan@redhat.com>
+ id 1itnms-0003xw-1r
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 07:17:27 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1itnmm-0000az-78; Tue, 21 Jan 2020 08:17:16 +0100
+Received: from ukl by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1itnmk-0005Fy-Au; Tue, 21 Jan 2020 08:17:14 +0100
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andre Renaud <arenaud@designa-electronics.com>,
+ Fabio Estevam <festevam@gmail.com>, Andy Duan <fugang.duan@nxp.com>
+Subject: [PATCH v2] serial: imx: fix a race condition in receive path
+Date: Tue, 21 Jan 2020 08:17:02 +0100
+Message-Id: <20200121071702.20150-1-u.kleine-koenig@pengutronix.de>
+X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200120211232.21329-1-u.kleine-koenig@pengutronix.de>
+References: <20200120211232.21329-1-u.kleine-koenig@pengutronix.de>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-MC-Unique: 7Nc9kkgQPi2wF6YHEaFu0w-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_215715_120290_43C62093 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200120_231722_095776_7B495C3D 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,47 +68,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, drjones@redhat.com, eric.auger@redhat.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, linux-serial@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-kvm_test_age_hva() is called upon mmu_notifier_test_young(), but wrong
-address range has been passed to handle_hva_to_gpa(). With the wrong
-address range, no young bits will be checked in handle_hva_to_gpa().
-It means zero is always returned from mmu_notifier_test_young().
-
-This fixes the issue by passing correct address range to the underly
-function handle_hva_to_gpa(), so that the hardware young (access) bit
-will be visited.
-
-Cc: stable@vger.kernel.org # v4.1+
-Fixes: 35307b9a5f7e ("arm/arm64: KVM: Implement Stage-2 page aging")
-Signed-off-by: Gavin Shan <gshan@redhat.com>
----
- virt/kvm/arm/mmu.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index 0b32a904a1bb..a2777efb558e 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -2147,7 +2147,8 @@ int kvm_test_age_hva(struct kvm *kvm, unsigned long hva)
- 	if (!kvm->arch.pgd)
- 		return 0;
- 	trace_kvm_test_age_hva(hva);
--	return handle_hva_to_gpa(kvm, hva, hva, kvm_test_age_hva_handler, NULL);
-+	return handle_hva_to_gpa(kvm, hva, hva + PAGE_SIZE,
-+				 kvm_test_age_hva_handler, NULL);
- }
- 
- void kvm_mmu_free_memory_caches(struct kvm_vcpu *vcpu)
--- 
-2.23.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIG1haW4gaXJxIGhhbmRsZXIgZnVuY3Rpb24gc3RhcnRzIGJ5IGZpcnN0IG1hc2tpbmcgZGlz
+YWJsZWQKaW50ZXJydXB0cyBpbiB0aGUgc3RhdHVzIHJlZ2lzdGVyIHZhbHVlcyB0byBlbnN1cmUg
+dG8gb25seSBoYW5kbGUKZW5hYmxlZCBpbnRlcnJ1cHRzLiBUaGlzIGlzIGltcG9ydGFudCBhcyB3
+aGVuIHRoZSBSWCBwYXRoIGluIHRoZQpoYXJkd2FyZSBpcyBkaXNhYmxlZCByZWFkaW5nIHRoZSBS
+WCBmaWZvIHJlc3VsdHMgaW4gYW4gZXh0ZXJuYWwgYWJvcnQuCgpUaGlzIGNoZWNraW5nIG11c3Qg
+YmUgZG9uZSB1bmRlciB0aGUgcG9ydCBsb2NrLCBvdGhlcndpc2UgdGhlIGZvbGxvd2luZwpjYW4g
+aGFwcGVuOgoKICAgICBDUFUxICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgQ1BVMgogICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAogICAgIGlycSB0cmlnZ2VycyBhcyB0
+aGVyZSBhcmUgY2hhcnMgfAogICAgIGluIHRoZSBSWCBmaWZvICAgICAgICAgICAgICAgICAgfAoJ
+CQkJICAgICB8IGdyYWIgcG9ydCBsb2NrCiAgICAgaW14X3VhcnRfaW50IGZpbmRzIFJSRFkgZW5h
+YmxlZCB8CiAgICAgYW5kIGNhbGxzIGlteF91YXJ0X3J4aW50IHdoaWNoICB8CiAgICAgaGFzIHRv
+IHdhaXQgZm9yIHBvcnQgbG9jayAgICAgICB8CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICB8IGRpc2FibGUgUlggKGUuZy4gYmVjYXVzZSB3ZSdyZQogICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgfCB1c2luZyBSUzQ4NSB3aXRoICFSWF9EVVJJTkdfVFgpCiAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICB8IHJlbGVhc2UgcG9ydCBsb2NrCiAgICAgcmVhZCBmcm9tIFJYIGZp
+Zm8gd2l0aCBSWCAgICAgICB8CiAgICAgZGlzYWJsZWQgPT4gZXhjZXB0aW9uICAgICAgICAgICB8
+CgpTbyB0YWtlIHRoZSBwb3J0IGxvY2sgb25seSBvbmNlIGluIGlteF91YXJ0X2ludCgpIGluc3Rl
+YWQgb2YgaW4gdGhlCmZ1bmN0aW9ucyBjYWxsZWQgZnJvbSB0aGVyZS4KClJlcG9ydGVkLWJ5OiBB
+bmRyZSBSZW5hdWQgPGFyZW5hdWRAZGVzaWduYS1lbGVjdHJvbmljcy5jb20+CkNjOiBzdGFibGVA
+dmdlci5rZXJuZWwub3JnClNpZ25lZC1vZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1LmtsZWlu
+ZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+Ci0tLQpDaGFuZ2VzIHNpbmNlIHYxLCBzZW50IHdpdGgK
+TWVzc2FnZS1JZDogPDIwMjAwMTIwMjExMjMyLjIxMzI5LTEtdS5rbGVpbmUta29lbmlnQHBlbmd1
+dHJvbml4LmRlPjoKCiAtIEZpeAoJZHJpdmVycy90dHkvc2VyaWFsL2lteC5jOjgxMjoxOTogd2Fy
+bmluZzogdW51c2VkIHZhcmlhYmxlICdwb3J0JyBbLVd1bnVzZWQtdmFyaWFibGVdCgogZHJpdmVy
+cy90dHkvc2VyaWFsL2lteC5jIHwgNTEgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrLS0t
+LS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDM4IGluc2VydGlvbnMoKyksIDEzIGRlbGV0aW9ucygt
+KQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvdHR5L3NlcmlhbC9pbXguYyBiL2RyaXZlcnMvdHR5L3Nl
+cmlhbC9pbXguYwppbmRleCBhOWUyMGU2YzYzYWQuLmRkMzEyMGM1ZGIyYiAxMDA2NDQKLS0tIGEv
+ZHJpdmVycy90dHkvc2VyaWFsL2lteC5jCisrKyBiL2RyaXZlcnMvdHR5L3NlcmlhbC9pbXguYwpA
+QCAtNzAwLDIyICs3MDAsMzMgQEAgc3RhdGljIHZvaWQgaW14X3VhcnRfc3RhcnRfdHgoc3RydWN0
+IHVhcnRfcG9ydCAqcG9ydCkKIAl9CiB9CiAKLXN0YXRpYyBpcnFyZXR1cm5fdCBpbXhfdWFydF9y
+dHNpbnQoaW50IGlycSwgdm9pZCAqZGV2X2lkKQorc3RhdGljIGlycXJldHVybl90IF9faW14X3Vh
+cnRfcnRzaW50KGludCBpcnEsIHZvaWQgKmRldl9pZCkKIHsKIAlzdHJ1Y3QgaW14X3BvcnQgKnNw
+b3J0ID0gZGV2X2lkOwogCXUzMiB1c3IxOwogCi0Jc3Bpbl9sb2NrKCZzcG9ydC0+cG9ydC5sb2Nr
+KTsKLQogCWlteF91YXJ0X3dyaXRlbChzcG9ydCwgVVNSMV9SVFNELCBVU1IxKTsKIAl1c3IxID0g
+aW14X3VhcnRfcmVhZGwoc3BvcnQsIFVTUjEpICYgVVNSMV9SVFNTOwogCXVhcnRfaGFuZGxlX2N0
+c19jaGFuZ2UoJnNwb3J0LT5wb3J0LCAhIXVzcjEpOwogCXdha2VfdXBfaW50ZXJydXB0aWJsZSgm
+c3BvcnQtPnBvcnQuc3RhdGUtPnBvcnQuZGVsdGFfbXNyX3dhaXQpOwogCi0Jc3Bpbl91bmxvY2so
+JnNwb3J0LT5wb3J0LmxvY2spOwogCXJldHVybiBJUlFfSEFORExFRDsKIH0KIAorc3RhdGljIGly
+cXJldHVybl90IGlteF91YXJ0X3J0c2ludChpbnQgaXJxLCB2b2lkICpkZXZfaWQpCit7CisJc3Ry
+dWN0IGlteF9wb3J0ICpzcG9ydCA9IGRldl9pZDsKKwlpcnFyZXR1cm5fdCByZXQ7CisKKwlzcGlu
+X2xvY2soJnNwb3J0LT5wb3J0LmxvY2spOworCisJcmV0ID0gX19pbXhfdWFydF9ydHNpbnQoaXJx
+LCBkZXZfaWQpOworCisJc3Bpbl91bmxvY2soJnNwb3J0LT5wb3J0LmxvY2spOworCisJcmV0dXJu
+IHJldDsKK30KKwogc3RhdGljIGlycXJldHVybl90IGlteF91YXJ0X3R4aW50KGludCBpcnEsIHZv
+aWQgKmRldl9pZCkKIHsKIAlzdHJ1Y3QgaW14X3BvcnQgKnNwb3J0ID0gZGV2X2lkOwpAQCAtNzI2
+LDE0ICs3MzcsMTIgQEAgc3RhdGljIGlycXJldHVybl90IGlteF91YXJ0X3R4aW50KGludCBpcnEs
+IHZvaWQgKmRldl9pZCkKIAlyZXR1cm4gSVJRX0hBTkRMRUQ7CiB9CiAKLXN0YXRpYyBpcnFyZXR1
+cm5fdCBpbXhfdWFydF9yeGludChpbnQgaXJxLCB2b2lkICpkZXZfaWQpCitzdGF0aWMgaXJxcmV0
+dXJuX3QgX19pbXhfdWFydF9yeGludChpbnQgaXJxLCB2b2lkICpkZXZfaWQpCiB7CiAJc3RydWN0
+IGlteF9wb3J0ICpzcG9ydCA9IGRldl9pZDsKIAl1bnNpZ25lZCBpbnQgcngsIGZsZywgaWdub3Jl
+ZCA9IDA7CiAJc3RydWN0IHR0eV9wb3J0ICpwb3J0ID0gJnNwb3J0LT5wb3J0LnN0YXRlLT5wb3J0
+OwogCi0Jc3Bpbl9sb2NrKCZzcG9ydC0+cG9ydC5sb2NrKTsKLQogCXdoaWxlIChpbXhfdWFydF9y
+ZWFkbChzcG9ydCwgVVNSMikgJiBVU1IyX1JEUikgewogCQl1MzIgdXNyMjsKIApAQCAtNzkyLDEx
+ICs4MDEsMjUgQEAgc3RhdGljIGlycXJldHVybl90IGlteF91YXJ0X3J4aW50KGludCBpcnEsIHZv
+aWQgKmRldl9pZCkKIAl9CiAKIG91dDoKLQlzcGluX3VubG9jaygmc3BvcnQtPnBvcnQubG9jayk7
+CiAJdHR5X2ZsaXBfYnVmZmVyX3B1c2gocG9ydCk7CisKIAlyZXR1cm4gSVJRX0hBTkRMRUQ7CiB9
+CiAKK3N0YXRpYyBpcnFyZXR1cm5fdCBpbXhfdWFydF9yeGludChpbnQgaXJxLCB2b2lkICpkZXZf
+aWQpCit7CisJc3RydWN0IGlteF9wb3J0ICpzcG9ydCA9IGRldl9pZDsKKwlpcnFyZXR1cm5fdCBy
+ZXQ7CisKKwlzcGluX2xvY2soJnNwb3J0LT5wb3J0LmxvY2spOworCisJcmV0ID0gX19pbXhfdWFy
+dF9yeGludChpcnEsIGRldl9pZCk7CisKKwlzcGluX3VubG9jaygmc3BvcnQtPnBvcnQubG9jayk7
+CisKKwlyZXR1cm4gcmV0OworfQorCiBzdGF0aWMgdm9pZCBpbXhfdWFydF9jbGVhcl9yeF9lcnJv
+cnMoc3RydWN0IGlteF9wb3J0ICpzcG9ydCk7CiAKIC8qCkBAIC04NTUsNiArODc4LDggQEAgc3Rh
+dGljIGlycXJldHVybl90IGlteF91YXJ0X2ludChpbnQgaXJxLCB2b2lkICpkZXZfaWQpCiAJdW5z
+aWduZWQgaW50IHVzcjEsIHVzcjIsIHVjcjEsIHVjcjIsIHVjcjMsIHVjcjQ7CiAJaXJxcmV0dXJu
+X3QgcmV0ID0gSVJRX05PTkU7CiAKKwlzcGluX2xvY2soJnNwb3J0LT5wb3J0LmxvY2spOworCiAJ
+dXNyMSA9IGlteF91YXJ0X3JlYWRsKHNwb3J0LCBVU1IxKTsKIAl1c3IyID0gaW14X3VhcnRfcmVh
+ZGwoc3BvcnQsIFVTUjIpOwogCXVjcjEgPSBpbXhfdWFydF9yZWFkbChzcG9ydCwgVUNSMSk7CkBA
+IC04ODgsMjcgKzkxMywyNSBAQCBzdGF0aWMgaXJxcmV0dXJuX3QgaW14X3VhcnRfaW50KGludCBp
+cnEsIHZvaWQgKmRldl9pZCkKIAkJdXNyMiAmPSB+VVNSMl9PUkU7CiAKIAlpZiAodXNyMSAmIChV
+U1IxX1JSRFkgfCBVU1IxX0FHVElNKSkgewotCQlpbXhfdWFydF9yeGludChpcnEsIGRldl9pZCk7
+CisJCV9faW14X3VhcnRfcnhpbnQoaXJxLCBkZXZfaWQpOwogCQlyZXQgPSBJUlFfSEFORExFRDsK
+IAl9CiAKIAlpZiAoKHVzcjEgJiBVU1IxX1RSRFkpIHx8ICh1c3IyICYgVVNSMl9UWERDKSkgewot
+CQlpbXhfdWFydF90eGludChpcnEsIGRldl9pZCk7CisJCWlteF91YXJ0X3RyYW5zbWl0X2J1ZmZl
+cihzcG9ydCk7CiAJCXJldCA9IElSUV9IQU5ETEVEOwogCX0KIAogCWlmICh1c3IxICYgVVNSMV9E
+VFJEKSB7CiAJCWlteF91YXJ0X3dyaXRlbChzcG9ydCwgVVNSMV9EVFJELCBVU1IxKTsKIAotCQlz
+cGluX2xvY2soJnNwb3J0LT5wb3J0LmxvY2spOwogCQlpbXhfdWFydF9tY3RybF9jaGVjayhzcG9y
+dCk7Ci0JCXNwaW5fdW5sb2NrKCZzcG9ydC0+cG9ydC5sb2NrKTsKIAogCQlyZXQgPSBJUlFfSEFO
+RExFRDsKIAl9CiAKIAlpZiAodXNyMSAmIFVTUjFfUlRTRCkgewotCQlpbXhfdWFydF9ydHNpbnQo
+aXJxLCBkZXZfaWQpOworCQlfX2lteF91YXJ0X3J0c2ludChpcnEsIGRldl9pZCk7CiAJCXJldCA9
+IElSUV9IQU5ETEVEOwogCX0KIApAQCAtOTIzLDYgKzk0Niw4IEBAIHN0YXRpYyBpcnFyZXR1cm5f
+dCBpbXhfdWFydF9pbnQoaW50IGlycSwgdm9pZCAqZGV2X2lkKQogCQlyZXQgPSBJUlFfSEFORExF
+RDsKIAl9CiAKKwlzcGluX3VubG9jaygmc3BvcnQtPnBvcnQubG9jayk7CisKIAlyZXR1cm4gcmV0
+OwogfQogCi0tIAoyLjI1LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
