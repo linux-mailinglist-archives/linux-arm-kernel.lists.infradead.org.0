@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58123143FAF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 15:36:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F157F143FB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 15:38:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rtuHpkdqEPQ1JixaCxxaCcvYp5fvkB2UeqDgJZozqCE=; b=V5nWqDSpy6mppXabGtSTovfnv
-	uygYaUiPOG40F3vRe6UbaYgS7Nce/pTQouNj6H7dp2ckOVJaUT/+JmF0Yrf0rqUtbJVLFJsSNsNHj
-	mgMcaBDr52XsdKtoScWunH05dG9Qr56gLbtovvIZ75oJq3cnixu9AqJ/WXhi/6sQ8ZTAIwwsILeRL
-	U/3gBKq/vq5cayRvaCgNzxUqhvT849AGJiHVDrvWbU7MP0FYmt7RyMZfFcHm5idU8uesZdYx+KEoj
-	IbJRu8YDt2v2PpqlgpLg6XaxEB9zF73UbBZq5GYunWnQ4RdXg/3zq4uescIvgQ1/SZPfVrSbAEaOW
-	mj9jqcHoA==;
+	 bh=xhdvdIt4d2B0pDkrowHbJcnSfDQJ6LjT+CaVJeEy1so=; b=ZA1o5nVQF7c1rWNlddImtPrU3
+	jKE/54Csa740pzjJDKr5bueXW4Tt8khOHQZZCLLcThLDWnA5XAfGC9JYXtjRuuYWOY2rWri5DqGUD
+	HtkPBVqC1R+zfBWj/irN2548G5LkZvkU4DjhBMQfPA5744crOgH7Qca2hJZ6XUAcGan15MYIpCU59
+	K9Cy/7SK/FA0q+9lQxINSuKxexaNy2Ce+v5b3u/eLGalDLQfB4h4DIytI2CgOWzsjMov0Zzpqinfl
+	WTYxrk4/5oKKaz+EJ8PcwJPj7DSBkQRfhdUkbRz0dob8Tpfa4Q6MjBKSjIFayPl10K/sUqqs42ubt
+	5sfBPOzWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itudz-0000hK-D8; Tue, 21 Jan 2020 14:36:39 +0000
+	id 1itufK-00010U-Vw; Tue, 21 Jan 2020 14:38:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itudl-0000gW-QW
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 14:36:31 +0000
+ id 1ituf8-0000zd-5q
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 14:37:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 817BA30E;
- Tue, 21 Jan 2020 06:36:23 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DBD9E3F52E;
- Tue, 21 Jan 2020 06:36:20 -0800 (PST)
-Subject: Re: [PATCH v3 2/5] iommu/arm-smmu: Add support for split pagetables
-To: Jordan Crouse <jcrouse@codeaurora.org>, iommu@lists.linux-foundation.org
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
- <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <a38fe02a-4f84-f032-8c9d-4ecf72a87a55@arm.com>
-Date: Tue, 21 Jan 2020 14:36:19 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B7D4630E;
+ Tue, 21 Jan 2020 06:37:47 -0800 (PST)
+Received: from [10.1.196.51] (a075563-lin.cambridge.arm.com [10.1.196.51])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD2613F52E;
+ Tue, 21 Jan 2020 06:37:45 -0800 (PST)
+Subject: Re: [PATCH v3 15/16] arm64: compile the kernel with ptrauth return
+ address signing
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-16-git-send-email-amit.kachhap@arm.com>
+ <20200117114942.GG26090@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <7e1826b5-bf1b-b3c1-c5ab-47ab464baa8c@arm.com>
+Date: Tue, 21 Jan 2020 14:37:44 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
-Content-Language: en-GB
+In-Reply-To: <20200117114942.GG26090@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_063625_949567_F2B5FEF9 
-X-CRM114-Status: GOOD (  33.17  )
+X-CRM114-CacheID: sfid-20200121_063750_316637_EE7C2303 
+X-CRM114-Status: GOOD (  27.27  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -64,233 +66,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- will@kernel.org, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/12/2019 4:37 pm, Jordan Crouse wrote:
-> Add support to enable split pagetables (TTBR1) if the supporting driver
-> requests it via the DOMAIN_ATTR_SPLIT_TABLES flag. When enabled, the driver
-> will set up the TTBR0 and TTBR1 regions and program the default domain
-> pagetable on TTBR1.
+
+
+On 1/17/20 11:49 AM, Catalin Marinas wrote:
+> On Mon, Dec 16, 2019 at 02:17:17PM +0530, Amit Daniel Kachhap wrote:
+>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>> index 06b5025..f0798b7 100644
+>> --- a/arch/arm64/Kconfig
+>> +++ b/arch/arm64/Kconfig
+>> @@ -1466,6 +1466,7 @@ config ARM64_PTR_AUTH
+>>   	bool "Enable support for pointer authentication"
+>>   	default y
+>>   	depends on !KVM || ARM64_VHE
+>> +	depends on GCC_VERSION >= 70000 || CLANG_VERSION >= 80000
 > 
-> After attaching the device, the value of he domain attribute can
-> be queried to see if the split pagetables were successfully programmed.
-> Furthermore the domain geometry will be updated so that the caller can
-> determine the active region for the pagetable that was programmed.
+> Please don't add checks on compiler versions. Use cc-option when you
+> need a certain option rather than guessing which compiler version
+> supports it. People may do backports of different features, so the
+> version is not relevant.
+ok this is fixed locally.
 > 
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> ---
+>>   	help
+>>   	  Pointer authentication (part of the ARMv8.3 Extensions) provides
+>>   	  instructions for signing and authenticating pointers against secret
+>> @@ -1473,11 +1474,17 @@ config ARM64_PTR_AUTH
+>>   	  and other attacks.
+>>   
+>>   	  This option enables these instructions at EL0 (i.e. for userspace).
+>> -
+>>   	  Choosing this option will cause the kernel to initialise secret keys
+>>   	  for each process at exec() time, with these keys being
+>>   	  context-switched along with the process.
+>>   
+>> +	  If the compiler supports the -mbranch-protection or
+>> +	  -msign-return-address flag (e.g. GCC 7 or later), then this option
+>> +	  will also cause the kernel itself to be compiled with return address
+>> +	  protection. In this case, and if the target hardware is known to
+>> +	  support pointer authentication, then CONFIG_STACKPROTECTOR can be
+>> +	  disabled with minimal loss of protection.
+>> +
+>>   	  The feature is detected at runtime. If the feature is not present in
+>>   	  hardware it will not be advertised to userspace/KVM guest nor will it
+>>   	  be enabled. However, KVM guest also require VHE mode and hence
+>> @@ -1488,6 +1495,18 @@ config ARM64_PTR_AUTH
+>>   	  have address auth and the late CPU has then system panic will occur.
+>>   	  On such a system, this option should not be selected.
+>>   
+>> +config CC_HAS_BRANCH_PROT_PAC_RET
+>> +	# GCC 9 or later, clang 8 or later
+>> +	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
+>> +
+>> +config CC_HAS_SIGN_RETURN_ADDRESS
+>> +	# GCC 7, 8
+>> +	def_bool $(cc-option,-msign-return-address=all)
+>> +
+>> +config AS_HAS_PAC
+>> +	def_bool $(as-option,-Wa,-march=armv8.3-a)
+>> +	depends on CC_IS_CLANG
 > 
->   drivers/iommu/arm-smmu.c | 40 +++++++++++++++++++++++++++++++++++-----
->   drivers/iommu/arm-smmu.h | 45 +++++++++++++++++++++++++++++++++++++++------
->   2 files changed, 74 insertions(+), 11 deletions(-)
+> First, as I commented on the previous patch, clang seems to ignore -Wa,
+> so you can write whatever you want after it and it seems to be always
+> true.
 > 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index c106406..7b59116 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -538,9 +538,17 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
->   			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
->   			cb->ttbr[1] = 0;
->   		} else {
-> -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> -			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> -			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +			if (pgtbl_cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> +				cb->ttbr[0] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +				cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> +				cb->ttbr[1] |=
-> +					FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +			} else {
-> +				cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> +				cb->ttbr[0] |=
-> +					FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +				cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +			}
->   		}
->   	} else {
->   		cb->ttbr[0] = pgtbl_cfg->arm_lpae_s2_cfg.vttbr;
-> @@ -651,6 +659,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   	enum io_pgtable_fmt fmt;
->   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
->   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	u32 quirks = 0;
->   
->   	mutex_lock(&smmu_domain->init_mutex);
->   	if (smmu_domain->smmu)
-> @@ -719,6 +728,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		oas = smmu->ipa_size;
->   		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
->   			fmt = ARM_64_LPAE_S1;
-> +			if (smmu_domain->split_pagetables)
-> +				quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
->   		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
->   			fmt = ARM_32_LPAE_S1;
->   			ias = min(ias, 32UL);
-> @@ -788,6 +799,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		.coherent_walk	= smmu->features & ARM_SMMU_FEAT_COHERENT_WALK,
->   		.tlb		= smmu_domain->flush_ops,
->   		.iommu_dev	= smmu->dev,
-> +		.quirks		= quirks,
->   	};
->   
->   	if (smmu_domain->non_strict)
-> @@ -801,8 +813,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   
->   	/* Update the domain's page sizes to reflect the page table format */
->   	domain->pgsize_bitmap = pgtbl_cfg.pgsize_bitmap;
-> -	domain->geometry.aperture_end = (1UL << ias) - 1;
-> -	domain->geometry.force_aperture = true;
-> +
-> +	if (pgtbl_cfg.quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> +		domain->geometry.aperture_start = ~((1ULL << ias) - 1);
+> Second, if you need the assembler to support certain features, it needs
+> to be checked irrespective of whether the compiler is gcc or clang.
+> Binutils is a separate package.
 
-AKA "~0UL << ias", if I'm not mistaken ;)
+ok agreed and done locally.
 
-> +		domain->geometry.aperture_end = ~0UL;
-> +	} else {
-> +		domain->geometry.aperture_end = (1UL << ias) - 1;
-> +		domain->geometry.force_aperture = true;
-> +		smmu_domain->split_pagetables = false;
-> +	}
->   
->   	/* Initialise the context bank with our page table cfg */
->   	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
-> @@ -1484,6 +1503,9 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
->   		case DOMAIN_ATTR_NESTING:
->   			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
->   			return 0;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			*(int *)data = smmu_domain->split_pagetables;
-> +			return 0;
->   		default:
->   			return -ENODEV;
->   		}
-> @@ -1524,6 +1546,14 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
->   			else
->   				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
->   			break;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			if (smmu_domain->smmu) {
-> +				ret = -EPERM;
-> +				goto out_unlock;
-> +			}
-> +			if (*(int *)data)
-> +				smmu_domain->split_pagetables = true;
+> 
+>> +
+>>   endmenu
+>>   
+>>   config ARM64_SVE
+>> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+>> index 1fbe24d..6a1da59 100644
+>> --- a/arch/arm64/Makefile
+>> +++ b/arch/arm64/Makefile
+>> @@ -72,6 +72,17 @@ stack_protector_prepare: prepare0
+>>   					include/generated/asm-offsets.h))
+>>   endif
+>>   
+>> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
+>> +# to generate them and consequently to break the single image contract we pass it
+>> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
+>> +# this option is not used.
+>> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+>> +KBUILD_CFLAGS += $(branch-prot-flags-y)
+>> +endif
+> 
+> So, does this actually work with clang?
 
-I still like the idea of passing the actual split point here, but as it 
-is I think this sets the scene perfectly for coming back and doing that 
-later.
+Yes this works with clang. If I add -v to the  KBUILD_CFLAGS then it 
+splits the output and shows that the Wa arguments are given to the gcc 
+assembler and clang compiler does not use it.
 
-> +			break;
->   		default:
->   			ret = -ENODEV;
->   		}
-> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> index afab9de..68526cc 100644
-> --- a/drivers/iommu/arm-smmu.h
-> +++ b/drivers/iommu/arm-smmu.h
-> @@ -177,6 +177,16 @@ enum arm_smmu_cbar_type {
->   #define TCR_IRGN0			GENMASK(9, 8)
->   #define TCR_T0SZ			GENMASK(5, 0)
->   
-> +#define TCR_TG1				GENMASK(31, 30)
-> +
-> +#define TG0_4K				0
-> +#define TG0_64K				1
-> +#define TG0_16K				2
-> +
-> +#define TG1_16K				1
-> +#define TG1_4K				2
-> +#define TG1_64K				3
-> +
->   #define ARM_SMMU_CB_CONTEXTIDR		0x34
->   #define ARM_SMMU_CB_S1_MAIR0		0x38
->   #define ARM_SMMU_CB_S1_MAIR1		0x3c
-> @@ -329,16 +339,39 @@ struct arm_smmu_domain {
->   	struct mutex			init_mutex; /* Protects smmu pointer */
->   	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
->   	struct iommu_domain		domain;
-> +	bool				split_pagetables;
->   };
->   
-> +static inline u32 arm_smmu_lpae_tcr_tg(struct io_pgtable_cfg *cfg)
-> +{
-> +	u32 val;
-> +
-> +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
-> +		return FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg);
-> +
-> +	val = FIELD_PREP(TCR_TG1, cfg->arm_lpae_s1_cfg.tcr.tg);
-> +
-> +	if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_4K)
-> +		val |= FIELD_PREP(TCR_TG0, TG0_4K);
-> +	else if (cfg->arm_lpae_s1_cfg.tcr.tg == TG1_16K)
-> +		val |= FIELD_PREP(TCR_TG0, TG0_16K);
-> +	else
-> +		val |= FIELD_PREP(TCR_TG0, TG0_64K);
-> +
-> +	return val;
-> +}
+> 
+> Please check the clang issue in case I'm mistaken. Otherwise, you could
+> use as-instr as in this patch:
+> 
+> https://lore.kernel.org/linux-arm-kernel/20200115113008.3334-3-catalin.marinas@arm.com/
+> 
+> Also Will had a preference for warning during build if the user
+> requested a feature in .config (i.e. PAC) but the compiler/assembler
+> does not support it (that was for the LSE patch above). You could
+> attempt something similar with this patch.
 
-This is all a bit ugly - I'd really like to rely on the real values from 
-both io_pgtable instances if at all possible...
+I tried to add warnings like below which are in similar line to the 
+above link,
 
-> +
->   static inline u32 arm_smmu_lpae_tcr(struct io_pgtable_cfg *cfg)
->   {
-> -	return TCR_EPD1 |
-> -	       FIELD_PREP(TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg) |
-> -	       FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> -	       FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> -	       FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> -	       FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> +	u32 tcr = FIELD_PREP(TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> +		FIELD_PREP(TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> +		FIELD_PREP(TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> +		FIELD_PREP(TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> +
-> +	if (!(cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
-> +		return tcr | TCR_EPD1 | arm_smmu_lpae_tcr_tg(cfg);
-> +
-> +	return tcr | (tcr << 16) | arm_smmu_lpae_tcr_tg(cfg);
+ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
++  ifneq ($(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS),y)
++    ifneq ($(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET),y)
++$(warning Pointer authentication not supported by compiler)
++    endif
++  endif
++  ifneq ($(CONFIG_AS_HAS_PAC),y)
++$(warning Pointer authentication not supported by assembler)
++  endif
+endif
 
-...especially here - leaving TTBR0 enabled but pointing to 
-who-knows-what until someone fills it in at some arbitrary point in the 
-future seems rather scary.
+But the issue is that warnings are printed twice and becomes confusing. 
+First warning computed with the incorrect Kconfig flags and later with 
+the correct computed Kconfig flags. This may be due to 
+arch/arm64/Kconfig sourced twice.
 
-I'm looking at iommu_aux_attach_device() and friends, and it appears 
-pretty achievable to hook that up in a workable manner, even if it's 
-just routed straight through to the impl to only work within 
-qcom-specific parameters to begin with. I figure the first 
-aux_attach_dev sanity-checks that the main domain is using TTBR1 with a 
-compatible split, sets TTBR0 and updates the merged TCR value at that 
-point. For subsequent calls it shouldn't need to do much more than 
-sanity-check that a new aux domain has the same parameters as the 
-existing one(s) (and again, such checks could potentially even start out 
-as just "this is OK by construction" comments). I guess we'd probably 
-want a count of the number of 'live' aux domains so we can simply 
-disable TTBR0 on the final aux_detach_dev without having to keep 
-detailed track of whatever the GPU has actually context switched in the 
-hardware. Can you see any holes in that idea?
 
-I haven't thought it through in detail, but it also feels like between 
-aux_attach_dev and/or the TTBR1 quirk in attach_dev there ought to be 
-enough information to influence the context bank allocation or shuffle 
-any existing domains such that you can ensure that the right thing ends 
-up in magic context 0 when it needs to be. That could be a pretty neat 
-and robust way to finally put that to bed.
-
-Robin.
-
->   }
->   
->   static inline u32 arm_smmu_lpae_tcr2(struct io_pgtable_cfg *cfg)
 > 
 
 _______________________________________________
