@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71DBD143FEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 15:48:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4355144007
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 15:56:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XOx7Uzi4IcnZELpleUiBtQJo38J64dPRIwafyh2vF1U=; b=GvQ1GCHM4jfXBfd/CZPbYZjEy
-	ajKXseOllkmDCJ/lPJshLNffpJaGWiHEIU61VQ+RUKZ70rWjkzKZu2coPTwZ+wu5j522abSSLomWZ
-	PJ7Ez7AhC/zYJj8BHjUhaEaAQkbFoNU/KyM70jFQ60hNE/rqo9uht7I+qXyojYj29S+8jIRomBnbO
-	0Gn1FDoAY6OB172r3h5to4OpLNfFV9KgU7y4XoYEzO7NZmcOQAUP/A1N57ehRRiKjNkaC7m0MXZzg
-	eu6ZvMyh9lCubEKk88ONFX7FCpb6rs5nazJQ3ndn6Pa/t/w8c4f8S5h+4UQS8XRpoNdK/Z9xsK0AU
-	1mC1IIkJw==;
+	 bh=1m58SOTAmQ9fmFRXMUEsMwkztaLiEOBJ32ofNEd4blQ=; b=t/ixWQpBaF/2Wbv7tR4fq/ccg
+	JOySwGDNNJnpHHQPfHtlW6/xsnbGI2vrxUJUME2Sf7BOEbMpZrelI8Q/6RXkRymn9ZnfNlncOA6fs
+	2raCmz29TV6ig9tVQ4sW6Q6vnlg6kA74qZLF5jbCpKdekX1jvPWeH4UCStqWTSHXy4VptCcCuzQiS
+	FeitwVIMblQPEyeAy/CV0qmPmdx4gZ3cx8e+yGv2SHzKENxdLwDoImhttm4xXROAEiueNGSu0D6qp
+	iFal4whrsgIRU58NTheaROoHyopRENyFYlWop9YLHoEU0YS3MkD0ADlmiJ9UmLpIByLdTtd5lVMQy
+	og6OZZuYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itup3-0005z8-Ho; Tue, 21 Jan 2020 14:48:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ituon-0005xQ-6h
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 14:47:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4EECE30E;
- Tue, 21 Jan 2020 06:47:47 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EBF93F52E;
- Tue, 21 Jan 2020 06:47:46 -0800 (PST)
-Subject: Re: [PATCH v3 2/5] iommu/arm-smmu: Add support for split pagetables
-To: Jordan Crouse <jcrouse@codeaurora.org>, iommu@lists.linux-foundation.org
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
- <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <03d68ca6-254d-227f-e428-b85f6f4d7981@arm.com>
-Date: Tue, 21 Jan 2020 14:47:44 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ituwj-0000tm-9x; Tue, 21 Jan 2020 14:56:01 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ituwT-0000ss-Rl; Tue, 21 Jan 2020 14:55:51 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id 534C1283D45
+Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+To: Rob Herring <robh+dt@kernel.org>
+References: <20200121123445.29774-1-dafna.hirschfeld@collabora.com>
+ <CAL_JsqJv-gXOK=80nqnO0TB1P-+1+E_vDaN3XSymKQfSLVTBsQ@mail.gmail.com>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+Date: Tue, 21 Jan 2020 15:55:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
-Content-Language: en-GB
+In-Reply-To: <CAL_JsqJv-gXOK=80nqnO0TB1P-+1+E_vDaN3XSymKQfSLVTBsQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_064749_284406_B3A783AC 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_065546_173157_93EB84F5 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,42 +62,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "heiko@sntech.de" <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ dafna3@gmail.com, =?UTF-8?B?6buE5a626ZKX?= <hjc@rock-chips.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Oh, one more thing...
 
-On 16/12/2019 4:37 pm, Jordan Crouse wrote:
-[...]
-> @@ -651,6 +659,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   	enum io_pgtable_fmt fmt;
->   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
->   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	u32 quirks = 0;
->   
->   	mutex_lock(&smmu_domain->init_mutex);
->   	if (smmu_domain->smmu)
-> @@ -719,6 +728,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		oas = smmu->ipa_size;
->   		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
->   			fmt = ARM_64_LPAE_S1;
-> +			if (smmu_domain->split_pagetables)
-> +				quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
 
-To avoid me forgetting and questioning it again in future, I'd recommend 
-sticking a comment somewhere near here that we don't reduce cfg->ias in 
-this case because we're currently assuming SEP_UPSTREAM.
+On 21.01.20 15:03, Rob Herring wrote:
+> On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
+> <dafna.hirschfeld@collabora.com> wrote:
+>>
+>> convert the binding file rockchip-drm.txt to yaml format.
+>> This was tested and verified with:
+>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> 
+> Also, make sure just 'make dt_binding_check' passes as that checks the
+> example against all schemas.
 
-Robin.
+But this also checks the other schemas in general, and when running it, 
+it fails because of bugs in other schemas.
+For example with arm=ARM I get:
 
->   		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
->   			fmt = ARM_32_LPAE_S1;
->   			ias = min(ias, 32UL);
+   DTC     Documentation/devicetree/bindings/clock/qcom,gcc.example.dt.yaml
+Error: 
+Documentation/devicetree/bindings/clock/qcom,gcc.example.dts:111.28-29 
+syntax error
+FATAL ERROR: Unable to parse input tree
+
+Dafna
+
+> 
+>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>
+>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>> ---
+>> Changes since v1:
+>> - fixed worng sign-off
+>> - fixed the path of the $id property to be the path of the yaml file
+>>
+>>   .../display/rockchip/rockchip-drm.txt         | 19 ----------
+>>   .../display/rockchip/rockchip-drm.yaml        | 38 +++++++++++++++++++
+>>   2 files changed, 38 insertions(+), 19 deletions(-)
+>>   delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>>   create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>> deleted file mode 100644
+>> index 5707af89319d..000000000000
+>> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>> +++ /dev/null
+>> @@ -1,19 +0,0 @@
+>> -Rockchip DRM master device
+>> -================================
+>> -
+>> -The Rockchip DRM master device is a virtual device needed to list all
+>> -vop devices or other display interface nodes that comprise the
+>> -graphics subsystem.
+>> -
+>> -Required properties:
+>> -- compatible: Should be "rockchip,display-subsystem"
+>> -- ports: Should contain a list of phandles pointing to display interface port
+>> -  of vop devices. vop definitions as defined in
+>> -  Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+>> -
+>> -example:
+>> -
+>> -display-subsystem {
+>> -       compatible = "rockchip,display-subsystem";
+>> -       ports = <&vopl_out>, <&vopb_out>;
+>> -};
+>> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>> new file mode 100644
+>> index 000000000000..538898ada9d1
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>> @@ -0,0 +1,38 @@
+>> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> 
+> Do you have rights to change the license? The default is GPL-2.0-only.
+> Looks like Rockchip owns the copyright.
+> 
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/display/rockchip/rockchip-drm.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Rockchip DRM master device
+>> +
+>> +maintainers:
+>> +  - Sandy Huang <hjc@rock-chips.com
+>> +  - Heiko Stuebner <heiko@sntech.de>
+>> +
+>> +description: |
+>> +  The Rockchip DRM master device is a virtual device needed to list all
+>> +  vop devices or other display interface nodes that comprise the
+>> +  graphics subsystem.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: rockchip,display-subsystem
+>> +
+>> +  ports:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description: |
+>> +      Should contain a list of phandles pointing to display interface port
+>> +      of vop devices. vop definitions as defined in
+>> +      Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+>> +
+>> +required:
+>> +  - compatible
+>> +  - ports
+> 
+> Add:
+> 
+> additionalProperties: false
+> 
+>> +
+>> +examples:
+>> +  - |
+>> +    display-subsystem {
+>> +        compatible = "rockchip,display-subsystem";
+>> +        ports = <&vopl_out>, <&vopb_out>;
+>> +    };
+>> --
+>> 2.17.1
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
