@@ -2,83 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E84E144043
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 16:12:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7CF9144042
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 16:11:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ILglC0qknJXg65TEdm1i9KOnsz/mM3wvjtC8jYNcc+0=; b=dt3aWw16zolxIS
-	zX86KneMQmvAuTZu1vqBnsq1kBxrE9BYB6SZbnQ2FM7VFDwacDj+QCRvlEgvbPQ57HZicnUzPGpgK
-	tyRePHrLaMFKIXI6eaeS/wnWwNz9iz1vky64pJnLsWZv/wtKhAFcwe5ok8lm+1JqEl8SIz3NqDtTT
-	arLa+iGY2/7TkdzGxqOhnNAHaBrhO5FMKjCnciV1aLU3gSppNX4YijUPIxRCVX29TEQOkWqIeW5oj
-	o+XmOr1CLmhtIaSC8HnzmlnUppfUM+N4KoU4JFLNU6G/mLlPPxXRzjxe/XBhgRdYm2dGy0wIxmf9u
-	OHo1iHvbMO8NHBKczIkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AnCyqBvMePVisarEJtKp1pPEZuVtcgyK07OHCcPaTb4=; b=KggAr6OvRzPiYp
+	Z/enbNznrWxWfDkMo9UxSfo/Goeqv8c7tWHDUEzL2vorj5V5Elpy97KD5Cr/L3ToQ2hEsCYQF7X8Z
+	xjfmfElaCiJqYF0hXdL6vTF3j5yVh+ncff4wq7ZaS1IUAT5R3Z3WNL1QWdBkrMcw2QVzway/jXc0r
+	/uQbnuM037cQogeFyABPTXCZI4z4vZ9wUyJl7IBbehFTuVLd2KwhPv6t5U6iV6nUmfxjVdGtkFjEg
+	qsqDVXoh9sUDhvqTvmLZIz51KgIK3C/zasCOWIySIUnxQ14yWndrW+2XP6EFguw57ZZy8dYzO8ZD/
+	/na20iP+ME7LlHFHBC2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itvCF-0007KC-RT; Tue, 21 Jan 2020 15:12:03 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1itvBr-00071v-NH; Tue, 21 Jan 2020 15:11:39 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itvBi-00071y-SJ
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 15:11:36 +0000
-Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1McpS0-1jShyU1ruc-00ZyDS for <linux-arm-kernel@lists.infradead.org>; Tue,
- 21 Jan 2020 16:11:28 +0100
-Received: by mail-qk1-f174.google.com with SMTP id d10so2593215qke.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 07:11:28 -0800 (PST)
-X-Gm-Message-State: APjAAAXg1zHiyPt2omSbynWmrcNdltG9vA69tz/H0fkTKa1ip2oJIAdT
- 0/MVUZyO6EoyCg43o/v9vGpnEXcAVJeCnOAQCjY=
-X-Google-Smtp-Source: APXvYqzi6p95hHekGtgpHUuq99FRYZcaopKwXcC72TbiR1kO/b+K0GTaMvWpR985L8t471EI9eZkxsPcBlxx6hhL0gE=
-X-Received: by 2002:a05:620a:cef:: with SMTP id
- c15mr5026356qkj.352.1579619487171; 
- Tue, 21 Jan 2020 07:11:27 -0800 (PST)
+ id 1itvBZ-0006yy-Mh; Tue, 21 Jan 2020 15:11:27 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w5so2313358wmi.1;
+ Tue, 21 Jan 2020 07:11:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
+ b=RUX/r9XczXOUQ8uWuvKZBE0mKNBA3OSB7liIzJ9cde+h/JBPVxnlsyHI+9HaqUxGzn
+ 6yeNjvGkLD2sZLLRct9PvTBZTkHCpMeBPq0ABBHZK5jmDShaa8+7PMnME8xcH9Je/OnY
+ GW4kOJYOuoGiYn3jMem/accrJTGgFIKAe4P2m8Je5AjyPOl+gsHDC5IjObvHxbx4Ao4e
+ 3K5b1jgZHS1jqW2kYjOd56PFBDBdarIM8I/VjrX1FpoLplXu4bIuFbnPaCt+rBmlVm/T
+ EwB3t9OyeVSsyosVjzVZ8vCcl8UDJiALvyHjNfh0kzvPEm0l/T0oMwqys25Z9x7uxcBa
+ mKxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
+ b=cUKY7MQYszehfHS5GKWgU6f2YKvOZ/G0QQXK05a6MWZ5xQh6L21g3BQbA5qWf2mGpl
+ RqBV0qbJwAIvEcNYFbqe+Qe8zzgxZI5ILCKtyatLi6YmKrnK/wtu8VLD1cFo4jlPsHNX
+ F46em0oG7I3uBCmu9o4M/cIqEy6FQu4sGqnZUl9a06sxw8pB42JBJt6E73hvpPpywEeC
+ WsdYfyMqxACbfD8ifidJimESKXgBnzFNO2n58tQw1vkq1tVZ7QzMSgxZHpwGa2AtWIw7
+ AS0f4DzsBB1rkqMxCHv+GUJCReiF4SiU0Qy+bEBFdJjL7gSD4vopXG6xr/xFvTp61983
+ OUcQ==
+X-Gm-Message-State: APjAAAXTRiB2vOhoEqpg+ckgZNduwquNg+9ysOiQlc5+i7ruBNux27ps
+ x7AAi9Htk4/ys/DiTRj7z9nUO3lO
+X-Google-Smtp-Source: APXvYqzVxW20eNVZ9aiYI5P39LBGVZIhsGs+GUktDebjr7JOrRBt1iJHlF1C395ejIGm9PyahohwIg==
+X-Received: by 2002:a1c:5f06:: with SMTP id t6mr4912501wmb.32.1579619480435;
+ Tue, 21 Jan 2020 07:11:20 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id v83sm4639782wmg.16.2020.01.21.07.11.18
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 07:11:19 -0800 (PST)
+To: dafna.hirschfeld@collabora.com
+References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
+Date: Tue, 21 Jan 2020 16:11:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-References: <4b74f1b6c1f9653241a1b5754525e230b3d76a3f.1579595093.git.viresh.kumar@linaro.org>
-In-Reply-To: <4b74f1b6c1f9653241a1b5754525e230b3d76a3f.1579595093.git.viresh.kumar@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 21 Jan 2020 16:11:11 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0fWf-wd8exJa+_UL9n0bQ26W6wd0iQH32osM1Q+cLu_w@mail.gmail.com>
-Message-ID: <CAK8P3a0fWf-wd8exJa+_UL9n0bQ26W6wd0iQH32osM1Q+cLu_w@mail.gmail.com>
-Subject: Re: [PATCH V3] firmware: arm_scmi: Make scmi core independent of the
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>
-X-Provags-ID: V03:K1:GwI2XLnDtyNTC0TfCDYMohvtVqVzLpl7LYuq68C0VbF5P/s4nEA
- bVXVqAL6JY5emU9kkmae6w9jv+HX6/9P1jK2dUCqkhJlErj77RaECtf7IZqHCX4y3JvVQQH
- FgS1dkbeGN7ftaM97odfbUuMbSOFIId0HDl6GLFhtPIpPhqNNQvt8duhnC7IhrvqnDtklH3
- laKKAy5aa/3JyrKn3NhWw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Bz95n24iAqU=:zAJX1LhhtBEmC8vb/s9cro
- 0WHzZDCWgT2Jg94SZcKCDobsVURh6q5zU8YQ1WadvQqZheWU/i6nx6PsE55BV7Jkh7vfXQg1m
- 1tOL6n/BWekZ2VPIip3lARmuGSYYPlUYz+fl8us1/W+4Thmsa4tSU83HqDJHOE5c6CSWCshzS
- nbjpeGZAVHHi5q2VBd4w3l5OJriZre6JXqq5X6PgxuRJ3XQ/sPAElPnc9B49quhCJoJN58QGK
- Ck6AM1o/n7Dt2YMULSMBoXq6rMIreTkPaciY1oWcAbIxv1sxUe2BMhZ/OpVcE725o52nmYnd5
- WxCuLIAr63p1lN3Fcv/utButEfyK7LIajY3vGZZd9TLcxCutEABG0VVPtH9X+fNz8ZbPxzx9q
- LuaQn8JiNm0fH1n3kPyIa5lZq9RmHyA5GPv+pTlBgQGZbsksb6MW1Xy9ZbHxL/MpwFplWQZfz
- XK2DdUuWLHvB9FrvUlMXhmFQk370KbX83N8XHCMMtIYOFn1//5tCT3ZHep6do3JB2PZssnzmS
- o+FPMmM4nfG7qhWQyJrdPX4kmeiDrgf02BmznSTaL2KIbE0ASOd540uR+9UeQe9HmY3/5STrH
- lvEsNRsy4k0VD95eN2KjSl/ebfX9EDDkEJrjJYsstSfs+cTV3dfpFiQMvtXkbpFtAPvDHRWJX
- nAe9ebPKrWPxo4zfHFTXJUIoTSRFRKlJT6Y4ktiib5WqENFZcmdET7Qqi9QuZKSZDH1Vv8yjJ
- gMerr4bWRwvcIS6siw9KAC99kxhUijNmD69S1pEwIulZf6wyxImdHyTS9U5OsNv8xdjZRMWZN
- 0z2w6/6xuuVupxrqbSLonPqAZTLOrdNxYDpr1iI86usc7zJsMQccYTP+4sA7syBfdLRRNUt9r
- zzoMeWnXuVT4wLn3dNKQ==
+In-Reply-To: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_071131_253940_F7FB1094 
-X-CRM114-Status: GOOD (  16.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200121_071121_762515_EA5D1B19 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.75 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,48 +102,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- peter.hilber@opensynergy.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>, cristian.marussi@arm.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ airlied@linux.ie, dafna3@gmail.com, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, robh+dt@kernel.org, daniel@ffwll.ch,
+ kernel@collabora.com, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 9:27 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
->
-> The SCMI specification is fairly independent of the transport protocol,
-> which can be a simple mailbox (already implemented) or anything else.
-> The current Linux implementation however is very much dependent on the
-> mailbox transport layer.
->
-> This patch makes the SCMI core code (driver.c) independent of the
-> mailbox transport layer and moves all mailbox related code to a new
-> file: mailbox.c.
->
-> We can now implement more transport protocols to transport SCMI
-> messages.
->
-> The transport protocols just need to provide struct scmi_transport_ops,
-> with its version of the callbacks to enable exchange of SCMI messages.
->
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> ---
-> @Sudeep: Can you please help me getting this tested?
->
-> V2->V3:
-> - Added more ops to the structure to read/write/memcpy data
-> - Payload is moved to mailbox.c and is handled in transport specific way
->   now. This resulted in lots of changes.
+Hi Dafna,
 
-This addresses the comments I had about the implementation.
 
-It's still hard for me to judge whether this is a good abstraction as
-long as there is only one backend in the framework, but I see nothing
-immediately wrong with it either.
+> 
+> 
+> On 21.01.20 15:03, Rob Herring wrote:
+>> On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
+>> <dafna.hirschfeld@collabora.com> wrote:
+>>>
+>>> convert the binding file rockchip-drm.txt to yaml format.
+>>> This was tested and verified with:
+>>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>> 
+>> Also, make sure just 'make dt_binding_check' passes as that checks the
+>> example against all schemas.
+> 
+> But this also checks the other schemas in general, and when running it, 
+> it fails because of bugs in other schemas.
 
-       Arnd
+
+> For example with arm=ARM I get:
+
+Use:
+
+# enable Rockchip arm in menuconfig
+make ARCH=arm menuconfig
+
+make ARCH=arm dt_binding_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+
+and not:
+arm=ARM
+
+
+> 
+>    DTC     Documentation/devicetree/bindings/clock/qcom,gcc.example.dt.yaml
+> Error: 
+> Documentation/devicetree/bindings/clock/qcom,gcc.example.dts:111.28-29 
+> syntax error
+> FATAL ERROR: Unable to parse input tree
+> 
+> Dafna
+> 
+>> 
+>>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
