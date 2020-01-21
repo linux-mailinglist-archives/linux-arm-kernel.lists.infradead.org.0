@@ -2,61 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B308E1444A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 19:55:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6313214451C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 20:28:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ktDL5kqkBGoVa05ibXXi4X5J0svOc/QPMmS9DJtg/r4=; b=utQC/qNlhg4kDUjfJ85Bb5jM6
-	79ZIJRbjq2NVJpkFIBUXGyN7LAH1ZTYNiUSVJJ0QCchweqdlpOjp8f29SP8vRApwAj/dWri9nv0xM
-	hdvwab65+ywxLnKPD/iI2UfAZWY7cLlkDYr4BsdIiG2eS44ZdG3+ad/2hBXpxYJuYEVFU0DNpi9SK
-	x47f+roLOcAkI5uK89tr121haZ9GUQuxUUVC3KU4fZWWJd3MUPYtxoJAFcHII2ij3yGKhSP1BY9aE
-	9UmT853cprt26urdLjpiwIJtYaf3Cmfoh/6kV1Wvj+PCiXyL2cIFQbwQwXrDM6YH6dbdYbUYLLRXc
-	sLXh92QMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OcQYLmJdKmrTETe2avdhSFvQ+sY4o8Dn0eomKWF0fBA=; b=tXX
+	iJBGJfMASLBt9wgSFXlBVKwv4GP5c2WAYaFW5lGFyC99JwiCFRJKEoJg/ZtDqoJqACwigo7w6U7qe
+	HMofyF/4sS+KlQQxAVmQ37FqY0rn2FqsXmAfaFRFAxBoYCbDoKEyM8BmqUoh5bpIefPtDrq8yqXR9
+	gU/Y1nE6YmUiDE8zj4NUMlqTGiqVssECDNDx0gObZZgBktfd7waH0LPOaN0kt04DbWEjPS0YIB2Ii
+	21rxngSSmPBUayq84D2ZbVlsh9c3ay5CJgtTQ/cwtDjhVHKs2NourU6WzH73VMORnjV+hRbnmVlL0
+	rr820ciGhvlXOgTsW8RrLYEnSfdrkCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itygQ-0001SI-U7; Tue, 21 Jan 2020 18:55:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ityg5-0000Xw-Ay
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 18:55:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5481D1FB;
- Tue, 21 Jan 2020 10:55:03 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A2343F6C4;
- Tue, 21 Jan 2020 10:55:02 -0800 (PST)
-Subject: Re: [PATCH v3 2/5] iommu/arm-smmu: Add support for split pagetables
-To: iommu@lists.linux-foundation.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joerg Roedel <joro@8bytes.org>
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
- <1576514271-15687-3-git-send-email-jcrouse@codeaurora.org>
- <a38fe02a-4f84-f032-8c9d-4ecf72a87a55@arm.com>
- <20200121171127.GA5025@jcrouse1-lnx.qualcomm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <0bd9df86-887b-ce94-432e-0cc7fb7cc897@arm.com>
-Date: Tue, 21 Jan 2020 18:54:59 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20200121171127.GA5025@jcrouse1-lnx.qualcomm.com>
-Content-Language: en-GB
+	id 1itzC9-0006fb-SK; Tue, 21 Jan 2020 19:28:13 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itzBx-0006UV-7X
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 19:28:05 +0000
+Received: from ramsan ([84.195.182.253]) by laurent.telenet-ops.be with bizsmtp
+ id t7Tt210045USYZQ017TtSP; Tue, 21 Jan 2020 20:27:54 +0100
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1itzBp-00037m-6H; Tue, 21 Jan 2020 20:27:53 +0100
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1itzBp-0005NH-3x; Tue, 21 Jan 2020 20:27:53 +0100
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Russell King <linux@armlinux.org.uk>, Nicolas Pitre <nico@fluxnic.net>,
+ Arnd Bergmann <arnd@arndb.de>, Eric Miao <eric.miao@nvidia.com>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: [PATCH] ARM: boot: Obtain start of physical memory from DTB
+Date: Tue, 21 Jan 2020 20:27:41 +0100
+Message-Id: <20200121192741.20597-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_105505_486689_649933A7 
-X-CRM114-Status: GOOD (  26.70  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_112801_423553_3A50EF17 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a02:1800:110:4:0:0:f00:19 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,86 +64,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-renesas-soc@vger.kernel.org, Chris Brandt <chris.brandt@renesas.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/01/2020 5:11 pm, Jordan Crouse wrote:
-[...]
->> I'm looking at iommu_aux_attach_device() and friends, and it appears pretty
->> achievable to hook that up in a workable manner, even if it's just routed
->> straight through to the impl to only work within qcom-specific parameters to
->> begin with. I figure the first aux_attach_dev sanity-checks that the main
->> domain is using TTBR1 with a compatible split, sets TTBR0 and updates the
->> merged TCR value at that point. For subsequent calls it shouldn't need to do
->> much more than sanity-check that a new aux domain has the same parameters as
->> the existing one(s) (and again, such checks could potentially even start out
->> as just "this is OK by construction" comments). I guess we'd probably want a
->> count of the number of 'live' aux domains so we can simply disable TTBR0 on
->> the final aux_detach_dev without having to keep detailed track of whatever
->> the GPU has actually context switched in the hardware. Can you see any holes
->> in that idea?
-> 
-> Let me repeat this back just to be sure we're on the same page. When the quirk
-> is enabled on the primary domain, we'll set up TTBR1 and leave TTBR0 disabled.
-> Then, when the first aux domain is attached we will set up that io_ptgable
-> to enable TTBR0 and then let the GPU do what the GPU does until the last aux is
-> detached and we can switch off TTBR0 again.
-> 
-> I like this. I'll have to do a bit more exploration because the original aux
-> design assumed that we didn't need to touch the hardware and I'm not sure if
-> there are any resource contention issues between the primary domain and the aux
-> domain. Luckily, these should be solvable if they exist (and the original design
-> didn't take into account the TLB flush problem so this was likely something we
-> had to do anyway).
+Currently, the start address of physical memory is obtained by masking
+the program counter with a fixed mask of 0xf8000000.  This mask value
+was chosen as a balance between the requirements of different platforms.
+However, this does require that the start address of physical memory is
+a multiple of 128 MiB, precluding booting Linux on platforms where this
+requirement is not fulfilled.
 
-Yeah, sounds like you've got it (somehow I'd completely forgotten that 
-you'd already prototyped the aux domain part, and I only re-read the 
-cover letter after sending that review...). TBH it's not massively 
-different, just being a bit more honest about the intermediate hardware 
-state. As long as we can rely on all aux domains being equivalent and 
-the GPU never writing nonsense to TTBR0, then all arm-smmu really wants 
-to care about is whether there's *something* live or not at any given 
-time, so attach (with quirk) does:
+Fix this limitation by obtaining the start address from the passed DTB
+instead, if available.  Note that for now this is limited to DTBs passed
+explicitly by the boot loader.  DTBs appended to a zImage or uImage are
+not inspected.  Fall back to the traditional method when needed.
 
-	TTBR1 = primary_domain->ttbr
-	TCR = primary_domain->tcr | EPD0
+This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
+on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
+i.e. not at a multiple of 128 MiB.
 
-then attach_aux comes along and adds:
+Suggested-by: Nicolas Pitre <nico@fluxnic.net>
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+Against arm/for-next.
 
-	TTBR0 = aux_domain->ttbr
-	TCR = primary_doman->tcr | aux_domain->tcr
+Tested with the following configurations:
+  - zImage + DTB (r8a7791/koelsch): physical memory start address
+    obtained from DT,
+  - uImage + DTB (r8a73a4/ape6evm, r7s72100/rskrza1, r7s9210/rza2mevb):
+    physical memory start address obtained from DT,
+  - zImage with appended DTB (r8a7740/armadillo, sh73a0/kzm9g): physical
+    memory start address obtained by masking, as before.
 
-such that arm-smmu can be happy that TTBR0 is always pointing at *some* 
-valid pagetable from that point on regardless of what subsequently 
-happens underneath, and nobody need touch TCR until the party's 
-completely over.
+An appended DTB is currently processed after the start of physical
+memory is obtained.  Hence obtaining that address from an appended DTB
+requires moving/copying that copy.  Given the complexity w.r.t. the
+"restart" label, and the lack of a need for me to support this, I didn't
+implement that part.
+---
+ arch/arm/boot/compressed/Makefile            |  6 ++-
+ arch/arm/boot/compressed/fdt_get_mem_start.c | 52 ++++++++++++++++++++
+ arch/arm/boot/compressed/head.S              | 16 +++++-
+ 3 files changed, 72 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm/boot/compressed/fdt_get_mem_start.c
 
->> I haven't thought it through in detail, but it also feels like between
->> aux_attach_dev and/or the TTBR1 quirk in attach_dev there ought to be enough
->> information to influence the context bank allocation or shuffle any existing
->> domains such that you can ensure that the right thing ends up in magic
->> context 0 when it needs to be. That could be a pretty neat and robust way to
->> finally put that to bed.
-> 
-> I'll try to wrap my brain around this as well. Seems like we could do a magic
-> swizzle of the SID mappings but I'm not sure how we could safely pull that off
-> on an existing domain. Maybe I'm overthinking it.
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index da599c3a11934332..bbfecd648a1a3b57 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -86,12 +86,15 @@ libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
+ $(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
+ 	$(call cmd,shipped)
+ 
+-$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
++$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o fdt_get_mem_start.o): \
+ 	$(addprefix $(obj)/,$(libfdt_hdrs))
+ 
+ ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
+ OBJS	+= $(libfdt_objs) atags_to_fdt.o
+ endif
++ifeq ($(CONFIG_USE_OF),y)
++OBJS	+= $(libfdt_objs) fdt_get_mem_start.o
++endif
+ 
+ targets       := vmlinux vmlinux.lds piggy_data piggy.o \
+ 		 lib1funcs.o ashldi3.o bswapsdi2.o \
+@@ -116,6 +119,7 @@ CFLAGS_fdt.o := $(nossp-flags-y)
+ CFLAGS_fdt_ro.o := $(nossp-flags-y)
+ CFLAGS_fdt_rw.o := $(nossp-flags-y)
+ CFLAGS_fdt_wip.o := $(nossp-flags-y)
++CFLAGS_fdt_get_mem_start.o := $(nossp-flags-y)
+ 
+ ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
+ asflags-y := -DZIMAGE
+diff --git a/arch/arm/boot/compressed/fdt_get_mem_start.c b/arch/arm/boot/compressed/fdt_get_mem_start.c
+new file mode 100644
+index 0000000000000000..2c5ac47f656317ee
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_get_mem_start.c
+@@ -0,0 +1,52 @@
++// SPDX-License-Identifier: GPL-2.0-only
++
++#include <libfdt.h>
++
++static const void *getprop(const void *fdt, const char *node_path,
++			   const char *property)
++{
++	int offset = fdt_path_offset(fdt, node_path);
++
++	if (offset == -FDT_ERR_NOTFOUND)
++		return NULL;
++
++	return fdt_getprop(fdt, offset, property, NULL);
++}
++
++static uint32_t get_addr_size(const void *fdt)
++{
++	const __be32 *addr_len = getprop(fdt, "/", "#address-cells");
++
++	if (!addr_len) {
++		/* default */
++		return 1;
++	}
++
++	return fdt32_to_cpu(*addr_len);
++}
++
++/*
++ * Get the start of physical memory
++ */
++
++unsigned long fdt_get_mem_start(const void *fdt)
++{
++	const __be32 *memory;
++	uint32_t addr_size;
++
++	if (!fdt)
++		return -1;
++
++	if (*(__be32 *)fdt != cpu_to_fdt32(FDT_MAGIC))
++		return -1;
++
++	/* Find the first memory node */
++	memory = getprop(fdt, "/memory", "reg");
++	if (!memory)
++		return -1;
++
++	/* There may be multiple cells on LPAE platforms */
++	addr_size = get_addr_size(fdt);
++
++	return fdt32_to_cpu(memory[addr_size - 1]);
++}
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index 927f5dc413d7dff2..cb4e6a84b156c204 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -235,8 +235,20 @@ not_angel:
+ 		.text
+ 
+ #ifdef CONFIG_AUTO_ZRELADDR
++#ifdef CONFIG_USE_OF
+ 		/*
+-		 * Find the start of physical memory.  As we are executing
++		 * Find the start of physical memory.
++		 * Try the passed DTB first, if available.
++		 */
++		mov	r0, r8
++		bl	fdt_get_mem_start
++		mov	r4, r0
++		cmn	r0, #1
++		bne	1f
++#endif
++
++		/*
++		 * Fall back to the traditional method.  As we are executing
+ 		 * without the MMU on, we are in the physical address space.
+ 		 * We just need to get rid of any offset by aligning the
+ 		 * address.
+@@ -254,6 +266,8 @@ not_angel:
+ 		 */
+ 		mov	r4, pc
+ 		and	r4, r4, #0xf8000000
++
++1:
+ 		/* Determine final kernel image address. */
+ 		add	r4, r4, #TEXT_OFFSET
+ #else
+-- 
+2.17.1
 
-What I'm imagining isn't all that far from how we do normal domain 
-attach, except instead of setting up the newly-allocated context for a 
-new domain you simply clone the existing context into it, and instead of 
-having a given device's set of Stream IDs to retarget you'd just scan 
-though the S2CRs checking cbndx and rewriting as appropriate. Then 
-finally rewrite domain->cfg.cbndx and the old context is all yours.
-
-> I'll spin up a new copy of the TTBR1 quirk patch and revive the aux domain stuff
-> and then we can go from there.
-
-Sounds good, thanks!
-
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
