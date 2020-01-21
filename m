@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9A42143A9C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:14:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81C17143A9F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:14:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tbG6w6cWx+p88Wgy57Ev3SYynRxPMTEJcps47HqzaOM=; b=G/552nnQehGRlG
-	i3i4s3Rze7VQJmA1pNRQGmK1cmHk78wd0Y1Jyv2ea6TOhE6Ye+E4gDpELRRDvUGyji3uBWYYZq4dC
-	t4P8w/Yxo5p47CXFBLC6Vo5ik5p/UOSDV6QVQ8UFLixJL+6SYBb20eNmeJunf7NloTvgMBgjHRo6c
-	zQR/3l5+NN3xWWbRoAD+vBMqae4RiT7GRmN/OXzhmQnFvQEf3DNsuYgmWUkYv8adeZpO+hw6utnz/
-	CU3HRwI+hKCb4hWgDkDHPM7SCCtQ4canKum+qKPRVKD5sIgI9x5HGzplY5Q0OwWf0k4pVg2Q+hvVS
-	RP8NywOHYT/2InWK8R4g==;
+	List-Owner; bh=IhQm9lh3Hukoz938sqamcgKNskBWzRbjmz/jRBUhzFM=; b=cH5TLH8Fx/jjQ7
+	8oEOmzNcYt1QOJNR2KbVkDUdT54Mhe2N2gbGAM7jJbD7dBc2s1l3Ay/HA6ElEG8KAupixk2uZ0lXF
+	uNuiIYmBvodbRtcOxAB6zCQ+NY8BozXtHyLBYhEbMTL2RqqRNpvq3NXptwiAwDqiRyoQmWm4A5W/9
+	FElZulX2NSDmYYmc+UO2yyFKiaVpGcO4cPs8zMjJXJyNq4u1iMZhfEM1Cw2vK/I3CYWuZlQNnOnGR
+	aCLRgDfG9BvrP/NcLTDNeeiE9SeA9RGak4CR32ASOR7BtRLTqOCXWpdA1/y2Y35OAOTpvNY3l8OxX
+	v6q3ZHWsLWzqxuOxlf8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqYB-0005D4-IG; Tue, 21 Jan 2020 10:14:23 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1itqYV-0005T3-7e; Tue, 21 Jan 2020 10:14:43 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqXt-0005CP-Cz
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:14:09 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 Jan 2020 02:14:04 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,345,1574150400"; d="scan'208";a="427006159"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga006.fm.intel.com with ESMTP; 21 Jan 2020 02:14:02 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1itqXq-0009m4-8R; Tue, 21 Jan 2020 18:14:02 +0800
-Date: Tue, 21 Jan 2020 18:13:14 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Olof Johansson <olof@lixom.net>
-Subject: [arm-soc:arm/drivers] BUILD SUCCESS
- 684415d0de3009cdc78dc0e8ab1b2bdcd919d834
-Message-ID: <5e26ceba.c/1pC5Af3RvsAVnn%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1itqXw-0005CY-GV
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:14:12 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00LA7m7m015244; Tue, 21 Jan 2020 11:14:01 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=aeYoT+FbX2uK00Gipe/mKHNPFAN0KIzPJU70uie272A=;
+ b=ChmW7+hAhBko1pQ9BTS2bhY1LjykTUkISaGS7PWDj5KLriquSRvz+s+M9dw1XZP/Uuzb
+ W7CtFP0PqYWrVGROSZpfw5W/vGGSpE/dQdPeVNzsgTWB5Fwq82pP6YkToiY7+0yQH4PI
+ B0yBhCj64+gE4+LFQPIQX+mQ0us1e3rwNJkuGAnvvKsDx4nvR409uthMq1eRux7dud4a
+ wMUwrdG+97ASDBha3lKKmSghRi0T7JC64Ro0XNi8PC2ct0z621WBZR5G0fntCYFy9ERj
+ 7Kwn9vBT0F+k1fc/Vjiq5qZ9Q6WhtMQXMsKgjZJY92tt9suJwiV/cgPM7l0LEhZ3ak22 pw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xkr1dx2p6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 21 Jan 2020 11:14:01 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D20EC100038;
+ Tue, 21 Jan 2020 11:13:55 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7F0332B1872;
+ Tue, 21 Jan 2020 11:13:55 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Tue, 21 Jan 2020 11:13:54 +0100
+From: Yannick Fertre <yannick.fertre@st.com>
+To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
+ <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ <dri-devel@lists.freedesktop.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] drm/stm: ltdc: add number of interrupts
+Date: Tue, 21 Jan 2020 11:13:52 +0100
+Message-ID: <1579601632-7001-1-git-send-email-yannick.fertre@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-21_02:2020-01-21,
+ 2020-01-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_021405_494585_4B393315 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20200121_021409_015118_057E859D 
+X-CRM114-Status: GOOD (  17.21  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,185 +99,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/drivers
-branch HEAD: 684415d0de3009cdc78dc0e8ab1b2bdcd919d834  Merge tag 'v5.5-next-soc' of https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux into arm/drivers
+The number of interrupts depends on the ltdc version.
+Don't try to get interrupt which not exist, avoiding
+kernel warning messages.
 
-elapsed time: 529m
-
-configs tested: 158
-configs skipped: 0
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-alpha                randconfig-a001-20200121
-m68k                 randconfig-a001-20200121
-mips                 randconfig-a001-20200121
-nds32                randconfig-a001-20200121
-parisc               randconfig-a001-20200121
-riscv                randconfig-a001-20200121
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-nds32                               defconfig
-sh                               allmodconfig
-sh                                allnoconfig
-sh                          rsk7269_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                            titan_defconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-arc                  randconfig-a001-20200121
-arm                  randconfig-a001-20200121
-arm64                randconfig-a001-20200121
-ia64                 randconfig-a001-20200121
-powerpc              randconfig-a001-20200121
-sparc                randconfig-a001-20200121
-c6x                  randconfig-a001-20200121
-h8300                randconfig-a001-20200121
-microblaze           randconfig-a001-20200121
-nios2                randconfig-a001-20200121
-sparc64              randconfig-a001-20200121
-ia64                                defconfig
-powerpc                             defconfig
-x86_64               randconfig-c001-20200121
-x86_64               randconfig-c002-20200121
-x86_64               randconfig-c003-20200121
-i386                 randconfig-c001-20200121
-i386                 randconfig-c002-20200121
-i386                 randconfig-c003-20200121
-x86_64               randconfig-d001-20200121
-x86_64               randconfig-d002-20200121
-x86_64               randconfig-d003-20200121
-i386                 randconfig-d001-20200121
-i386                 randconfig-d002-20200121
-i386                 randconfig-d003-20200121
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-powerpc                           allnoconfig
-powerpc                       ppc64_defconfig
-powerpc                          rhel-kconfig
-openrisc             randconfig-a001-20200121
-csky                 randconfig-a001-20200121
-xtensa               randconfig-a001-20200121
-sh                   randconfig-a001-20200121
-s390                 randconfig-a001-20200121
-ia64                             alldefconfig
-ia64                             allmodconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-um                                  defconfig
-um                             i386_defconfig
-um                           x86_64_defconfig
-parisc                            allnoconfig
-parisc                            allyesonfig
-parisc                         b180_defconfig
-parisc                        c3000_defconfig
-parisc                              defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                               rhel-7.6
-h8300                     edosk2674_defconfig
-h8300                    h8300h-sim_defconfig
-h8300                       h8s-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-arm64                            allmodconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-x86_64               randconfig-e001-20200121
-x86_64               randconfig-e002-20200121
-x86_64               randconfig-e003-20200121
-i386                 randconfig-e001-20200121
-i386                 randconfig-e002-20200121
-i386                 randconfig-e003-20200121
-arm                              allmodconfig
-arm                         at91_dt_defconfig
-sparc                            allyesconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-x86_64               randconfig-h001-20200121
-x86_64               randconfig-h002-20200121
-x86_64               randconfig-h003-20200121
-i386                 randconfig-h001-20200121
-i386                 randconfig-h002-20200121
-i386                 randconfig-h003-20200121
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-x86_64               randconfig-f001-20200121
-x86_64               randconfig-f002-20200121
-x86_64               randconfig-f003-20200121
-i386                 randconfig-f001-20200121
-i386                 randconfig-f002-20200121
-i386                 randconfig-f003-20200121
-x86_64               randconfig-a001-20200121
-x86_64               randconfig-a002-20200121
-x86_64               randconfig-a003-20200121
-i386                 randconfig-a001-20200121
-i386                 randconfig-a002-20200121
-i386                 randconfig-a003-20200121
-arm                               allnoconfig
-arm                              allyesconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm64                               defconfig
-i386                             alldefconfig
-i386                              allnoconfig
-i386                             allyesconfig
-i386                                defconfig
-riscv                            allmodconfig
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-x86_64               randconfig-g001-20200121
-x86_64               randconfig-g002-20200121
-x86_64               randconfig-g003-20200121
-i386                 randconfig-g001-20200121
-i386                 randconfig-g002-20200121
-i386                 randconfig-g003-20200121
-
+Signed-off-by: Yannick Fertre <yannick.fertre@st.com>
 ---
-0-DAY kernel test infrastructure                 Open Source Technology Center
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+ drivers/gpu/drm/stm/ltdc.c | 30 +++++++++++++++---------------
+ drivers/gpu/drm/stm/ltdc.h |  1 +
+ 2 files changed, 16 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/gpu/drm/stm/ltdc.c b/drivers/gpu/drm/stm/ltdc.c
+index c2815e8..58092b0 100644
+--- a/drivers/gpu/drm/stm/ltdc.c
++++ b/drivers/gpu/drm/stm/ltdc.c
+@@ -1146,12 +1146,14 @@ static int ltdc_get_caps(struct drm_device *ddev)
+ 		ldev->caps.pad_max_freq_hz = 90000000;
+ 		if (ldev->caps.hw_version == HWVER_10200)
+ 			ldev->caps.pad_max_freq_hz = 65000000;
++		ldev->caps.nb_irq = 2;
+ 		break;
+ 	case HWVER_20101:
+ 		ldev->caps.reg_ofs = REG_OFS_4;
+ 		ldev->caps.pix_fmt_hw = ltdc_pix_fmt_a1;
+ 		ldev->caps.non_alpha_only_l1 = false;
+ 		ldev->caps.pad_max_freq_hz = 150000000;
++		ldev->caps.nb_irq = 4;
+ 		break;
+ 	default:
+ 		return -ENODEV;
+@@ -1251,13 +1253,21 @@ int ltdc_load(struct drm_device *ddev)
+ 	reg_clear(ldev->regs, LTDC_IER,
+ 		  IER_LIE | IER_RRIE | IER_FUIE | IER_TERRIE);
+ 
+-	for (i = 0; i < MAX_IRQ; i++) {
++	ret = ltdc_get_caps(ddev);
++	if (ret) {
++		DRM_ERROR("hardware identifier (0x%08x) not supported!\n",
++			  ldev->caps.hw_version);
++		goto err;
++	}
++
++	DRM_DEBUG_DRIVER("ltdc hw version 0x%08x\n", ldev->caps.hw_version);
++
++	for (i = 0; i < ldev->caps.nb_irq; i++) {
+ 		irq = platform_get_irq(pdev, i);
+-		if (irq == -EPROBE_DEFER)
++		if (irq < 0) {
++			ret = irq;
+ 			goto err;
+-
+-		if (irq < 0)
+-			continue;
++		}
+ 
+ 		ret = devm_request_threaded_irq(dev, irq, ltdc_irq,
+ 						ltdc_irq_thread, IRQF_ONESHOT,
+@@ -1268,16 +1278,6 @@ int ltdc_load(struct drm_device *ddev)
+ 		}
+ 	}
+ 
+-
+-	ret = ltdc_get_caps(ddev);
+-	if (ret) {
+-		DRM_ERROR("hardware identifier (0x%08x) not supported!\n",
+-			  ldev->caps.hw_version);
+-		goto err;
+-	}
+-
+-	DRM_DEBUG_DRIVER("ltdc hw version 0x%08x\n", ldev->caps.hw_version);
+-
+ 	/* Add endpoints panels or bridges if any */
+ 	for (i = 0; i < MAX_ENDPOINTS; i++) {
+ 		if (panel[i]) {
+diff --git a/drivers/gpu/drm/stm/ltdc.h b/drivers/gpu/drm/stm/ltdc.h
+index a1ad0ae..310e87f 100644
+--- a/drivers/gpu/drm/stm/ltdc.h
++++ b/drivers/gpu/drm/stm/ltdc.h
+@@ -19,6 +19,7 @@ struct ltdc_caps {
+ 	const u32 *pix_fmt_hw;	/* supported pixel formats */
+ 	bool non_alpha_only_l1; /* non-native no-alpha formats on layer 1 */
+ 	int pad_max_freq_hz;	/* max frequency supported by pad */
++	int nb_irq;		/* number of hardware interrupts */
+ };
+ 
+ #define LTDC_MAX_LAYER	4
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
