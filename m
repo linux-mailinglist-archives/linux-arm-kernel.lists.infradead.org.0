@@ -2,108 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2737144658
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 22:21:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1F5714465C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 22:22:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2KRy3AomrvpsHBpZw/EBZq5hSqsji/ty9od0gXh6MBU=; b=AEnKGZ+uD6/XEu
-	pjTRc/TYGaBvPnr0OIPh+kXqZ0DvxHMizxHB81QdRPC8+Ckt29XcJHaTvzhO/ReA0Rsu8/5M2o8Yi
-	dVpowqAnH8dRPfLyeEKvDIV6Iwwu3l9pnIDw5MlTSH2VX7J2lpj1KcU9Vaf+LNFFLWgysfVTyzRu6
-	X6C2RrLMcaF92n9fMqiTOT0bFglqHHootrTrtSnm9QargfMLz7rjjr3HA5HT8f7s0rR6m2azeWs1E
-	Diui27/fKc5DFFIuoU49RHpNyXqDnjs0W0+xtzwonYOXbdc/02R4rH1dLy3g/Q0uWB0CvWv+BYweZ
-	Cz/mWxl3o3Azd93yND1w==;
+	List-Owner; bh=2awRZvFPxzuSMRSZZFAqlQw213gs3Us1RAg9cHBAdcM=; b=kHxsfxAZnMExxn
+	QJtZ6okMYjT1P8LhJDZ5IqOaAJ7IcHo/eQ/NFTBjiurAer8g/3WfASbO8XeQFz6VrGL7uTWHEfQV5
+	C29cMpDir81cxa6VOO36msbl2QPRA7nKlZ0d50aDTdQjr1rFyg5vDDRgGWyG8dXZO7zg4T9nlraLy
+	Qhf21euW8lx7ojhecW32N2w9fEu3NIuSSigvsXlVRmx1XkMNDqsU8yeZ3QO4O9Nd9kpAj6Tgg1byl
+	sUGlwXqZpv1Cg5FovRYIjNpcg5y+bBr8xUNEn7xMWQ0qRzfoIGbhE6GE8vdcejVvVmyxHdjM5JxHG
+	h4iqi+QvBBtEPuWzJeLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu0y2-0008En-Nq; Tue, 21 Jan 2020 21:21:46 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iu0yu-0000BE-Hm; Tue, 21 Jan 2020 21:22:40 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu0xs-0008EO-DF
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 21:21:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579641691;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=hUDc746gEw7bmqdrDee21GPcvrO5Acs+G0v791qb43c=;
- b=LCFblu8jxwa+SjR9sDpIjVLoadROAbtP8I41qViEFUFpMSjrAxgzPaD/pSSyUdCnyKWrgb
- AmueiRydKZZcCpd3XYdICKMxAhQznDFY8qFRot5G4o84vQmg2a94LWDH1DMA42lF439oVw
- BRdFmYMtpeOTVjYOaporxkLFk4PHCR8=
-Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
- [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-382-pYP9aLwFMPaf7UKeemBSpw-1; Tue, 21 Jan 2020 16:19:36 -0500
-Received: by mail-wr1-f69.google.com with SMTP id u12so2002745wrt.15
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 13:19:35 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=hUDc746gEw7bmqdrDee21GPcvrO5Acs+G0v791qb43c=;
- b=HCJJs57y//YT6L43X1sly8dXmBUBq68QGSFvWixjZEi40nFUL+mxGXYcmYmUkMh0J3
- Z2XMwglERyJqLiAJXS0ysFuDfv57ZwbNlbVQobaWY4NHr33/fWP9QPeKILlpW5VrhgRC
- w1iB7xE/Cy2JMb83HU33A9Zv4MwdkNtP9khDDnzvv/Qn2XspyqcZy9tgrfUo3vGPN458
- 70UtHKP8daxiGtUhdw6+k0p9LYm0vbhVR4fHuGU3Zkphf8/sa5TENAyiLmR3/eJU/XGy
- YQsX1XbXEbhuHHYk0We9PLv6GTCwnHR5h6ltIbkDgKitzjJzQl+rBxIYN/1OxFTkwwdq
- a9/w==
-X-Gm-Message-State: APjAAAVJmc3+UC2/otPQ0ChlSy8cS1cLNetNDpz0j7++F9tCz3E/ikeX
- dS8SWHaPvD58nKZBr840W0trCTxZAVeDq9yRpd54bKOENcaMR2lRBe0HHK8V5RyuLDlR8mIY2UL
- 2QlyLO8297NABrAhK+wCVlMVprcHdG4cZbzw=
-X-Received: by 2002:a5d:6a02:: with SMTP id m2mr7108165wru.52.1579641574577;
- Tue, 21 Jan 2020 13:19:34 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxoPnkxLxUGe7WRD6VylEoIv+x6W5+cow3h5Z9Uz8mj37YpcfxZ7pVN18YIIyxft0zVUg14Tg==
-X-Received: by 2002:a5d:6a02:: with SMTP id m2mr7108137wru.52.1579641574308;
- Tue, 21 Jan 2020 13:19:34 -0800 (PST)
-Received: from x1.bristot.me ([83.136.205.253])
- by smtp.gmail.com with ESMTPSA id v22sm872400wml.11.2020.01.21.13.19.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 13:19:33 -0800 (PST)
-Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
- into CNA
-To: Peter Zijlstra <peterz@infradead.org>, Alex Kogan <alex.kogan@oracle.com>
-References: <20191230194042.67789-1-alex.kogan@oracle.com>
- <20191230194042.67789-5-alex.kogan@oracle.com>
- <20200121132949.GL14914@hirez.programming.kicks-ass.net>
- <20200121135034.GA14946@hirez.programming.kicks-ass.net>
-From: Daniel Bristot de Oliveira <bristot@redhat.com>
-Message-ID: <e10414a6-dbfc-a666-18b8-a0499c93a203@redhat.com>
-Date: Tue, 21 Jan 2020 22:19:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iu0ye-0000AO-3q
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 21:22:27 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 482M1n32PCz1qqkg;
+ Tue, 21 Jan 2020 22:22:21 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 482M1n0XB8z1qwXd;
+ Tue, 21 Jan 2020 22:22:21 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id v1ehCpYUl4BC; Tue, 21 Jan 2020 22:22:19 +0100 (CET)
+X-Auth-Info: JdDdtOo0Op1/Vvk/mJowZKUgz0y2r9iKg7GMIc8hnEc=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Tue, 21 Jan 2020 22:22:19 +0100 (CET)
+Subject: Re: [PATCH] drm/imx: parallel-display: Adjust bus_flags and
+ bus_format handling
+To: Stefan Agner <stefan@agner.ch>
+References: <20191114131751.26746-1-marex@denx.de>
+ <6a2e711d186e216f34c6cbd5b66f2a19@agner.ch>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <d52d2145-d260-eaf1-de3b-a140198dc0cc@denx.de>
+Date: Tue, 21 Jan 2020 22:22:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200121135034.GA14946@hirez.programming.kicks-ass.net>
+In-Reply-To: <6a2e711d186e216f34c6cbd5b66f2a19@agner.ch>
 Content-Language: en-US
-X-MC-Unique: pYP9aLwFMPaf7UKeemBSpw-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_132136_528185_7191DB99 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_132225_850948_5EC045E3 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,47 +79,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- longman@redhat.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Shawn Guo <shawnguo@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/21/20 2:50 PM, Peter Zijlstra wrote:
-> On Tue, Jan 21, 2020 at 02:29:49PM +0100, Peter Zijlstra wrote:
->> On Mon, Dec 30, 2019 at 02:40:41PM -0500, Alex Kogan wrote:
+On 11/14/19 2:50 PM, Stefan Agner wrote:
+> On 2019-11-14 14:17, Marek Vasut wrote:
+>> The bus_flags and bus_format handling logic does not seem to cover
+>> all potential usecases. Specifically, this seems to fail with an
+>> "edt,etm0700g0edh6" display attached to an 24bit display interface,
+>> with interface-pix-fmt = "rgb24" set in DT.
 >>
->>> +/*
->>> + * Controls the threshold for the number of intra-node lock hand-offs before
->>> + * the NUMA-aware variant of spinlock is forced to be passed to a thread on
->>> + * another NUMA node. By default, the chosen value provides reasonable
->>> + * long-term fairness without sacrificing performance compared to a lock
->>> + * that does not have any fairness guarantees. The default setting can
->>> + * be changed with the "numa_spinlock_threshold" boot option.
->>> + */
->>> +int intra_node_handoff_threshold __ro_after_init = 1 << 16;
->> There is a distinct lack of quantitative data to back up that
->> 'reasonable' claim there.
+>> In this specific setup, the panel-simple.c driver entry for the display
+>> sets .bus_flags to non-zero value. However, as imxpd->bus_format is set
+>> from the DT property "interface-pix-fmt", imx_pd_encoder_atomic_check()
+>> will set imx_crtc_state->bus_flags = imxpd->bus_flags even though the
+>> imxpd->bus_flags is zero, while the di->bus_flags is correctly set by
+>> the panel-simple.c and non-zero. The result is incorrect flags being
+>> used for the display configuration and thus an image corruption.
+>> (Specifically, DRM_BUS_FLAG_PIXDATA_POSEDGE is not propagated and thus
+>> the ipuv3 clocks pixels on the wrong edge).
 >>
->> Where is the table of inter-node latencies observed for the various
->> values tested, and on what criteria is this number deemed reasonable?
->>
->> To me, 64k lock hold times seems like a giant number, entirely outside
->> of reasonable.
-> Daniel, IIRC you just did a paper on constructing worst case latencies
-> from measuring pieces. Do you have data on average lock hold times?
+>> This patch fixes the problem by overriding the imx_crtc_state->bus_format
+>> from the imxpd->bus_format only if the DT property "interface-pix-fmt" is
+>> present or if the DI provides no formats. Similarly for bus_flags, which
+>> are set from imxpd->bus_flags only if the DI provides no formats.
 > 
+> So this basically prioritizes imxpd->bus_format over what the display
+> provides? Is this correct in all situations?
+> 
+> I was thinking that interface-pix-fmt is the legacy way to define the
+> bus format and it should be provided by the display nowadays.
+> 
+> However, I guess there is the case where you connect a 18-bit display to
+> a 24-bit bus (leaving some bits unconnected). Depending on how the
+> colors/bits are distributed one cannot use 18-bit mode on SoC side but
+> has to use 24-bit. So the bus format becomes a connection specific
+> property... I guess the interface-pix-fmt can serve that role. 
 
-I am still writing the paper, but I do not have the (avg) lock times. It is it
-is in the TODO list, though!
-
--- Daniel
-
+So, can this patch go in ? It's fixing an actual issue for me -- very
+much what Stefan described above.
 
 _______________________________________________
 linux-arm-kernel mailing list
