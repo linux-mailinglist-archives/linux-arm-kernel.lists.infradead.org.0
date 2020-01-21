@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDFEA14463B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 22:06:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9A84144642
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 22:10:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pweIQqXAEWVFZO2UeqVCB10JvCskr9uZIP2CUEQdpes=; b=dSYjZa/OWcIunE
-	H4Yxp6mbnJM9RsPtBCsHLMaxvzcXWd0hDE6/2zcqVvf0joOKngwq0LbrfA24SXoPNY2uiflrajATv
-	O5QnlAo6mW+jOVRPhKADpxOVu/dcElgzDcu2HJY/iEtI0ZCK5LV9krXfQAkZCWIX9JI9jYZ/QUEEN
-	ayZP729dPn9VYfznvxxe+5NilyD63h39nvhgyApDQQz3uRLsaTHptaTf1DIO69uTq0+N29aN2YCqh
-	KO2jjadU1RIL6dufoF0cKztAc1N9gGqKaS4cDO9kGp1F7wQEgSJGnEb+9EjVEtKGvT0lV+w90umIM
-	SSxx5IXqL71t1o9A/0wA==;
+	List-Owner; bh=sUF82dgP3s18pdoe40BJTwCyGcel3z/q4JaaXcDAD7U=; b=uTanuHf1CgiY83
+	KbBVGYL36YWeWZU5zqlleA6prtt8oqaAJExXkFAGaYZRIZSaeLCShYG/1rlNOylI1Ly859Ll0o63T
+	u7cPrK2Kop4e8UPqVLJ1m/tZmKOzp3XeK4Fn3vXU96oKDhVBbnCArpAEOxrdzy5qmCwZV2JTYDaCv
+	ayqtfXNC+djhOL4SDwUMX+O0OVIf8kcdnHQ9YleBnPN3pC/CMxWQJdtyadiLL1EZ/BQWYBGYpqRX7
+	s+x3giO0pdv56nC3oErb3hokep3yYv9hCmjRalTFOZllR2JhLJVc24b5r77RXkvt6Bbb6BlsE69of
+	a2PlQDIeD7JJeEATNxWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu0ij-0002xA-Gi; Tue, 21 Jan 2020 21:05:57 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iu0mh-0003Re-HQ; Tue, 21 Jan 2020 21:10:03 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu0iU-0002w3-7R
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 21:05:47 +0000
-Received: by mail-wr1-x443.google.com with SMTP id y17so4938567wrh.5
+ id 1iu0mR-0003RD-RU
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 21:09:50 +0000
+Received: by mail-wr1-x441.google.com with SMTP id c9so4942215wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 13:05:38 -0800 (PST)
+ Tue, 21 Jan 2020 13:09:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:subject:to:cc:message-id:date:user-agent:mime-version
  :content-language:content-transfer-encoding;
- bh=fLJ5ZQgTlsKG5vGdwN0EigFoKbOob/9gwm906d2IrXc=;
- b=sOgWoNfNBON8FuaB7b1Oo9EYw+zNkpDWG2zMm4JFuwjeNOTFw+5sss3XanXNhfoMd+
- IHCDd+iuUvLSAO+ws9CC/OnJeZQ/p2wpSpRCVydgFWMup/W9aaSSu7vyquCgqcn5Wgh7
- Kn4G65VS7CKweXqGXuLi/9AhwUTydtooahMP+l7H0ervJ5Ub8FetLSzOdJuthXdy2KSX
- I5W8UnFpUGaZQ+8wsKb4OMQKZJZvVJRIelTa9XTa8HXROa/ZSLRAP+u8QzFTWsFSVOyR
- 37b82N8d+gB+UvaZgc99hvL+szDMHr7lOPRTa/MS+BLrAXGwL+qjclUJ0dCRr/unYGQ+
- T56w==
+ bh=USC5WNDE/HAboW02J0L9+U4XCEXb7DagbFu0m+UZCqY=;
+ b=qIWjEZ/PY0mWS/WID2OXjq6XaThaCmq3qD8xY04LzWj0/+2wgnzLHyg5PRTEswz3jo
+ filg8S5mLxmFio4nznI765fVDS1dGbu2tcCyhOvy69WaW0KeCxqCn+82dFprCqJGaxQl
+ cpoiVK2MNgTGlzEHI/rRwtO0/qrXXjnifyqGQhfe6UmHXFncLEIWeQ7lWRDyXowEl0Pp
+ 2t82vnjDxuaY23p1iP+O10FvIQjj4qtHrz7wlnBExpcug5egvLHxhgnIzxXBL3Vtx+dc
+ 4XtKvkcXyppPm1a/WL0WS814w6nJOSazZ8ruXVdwe/B/+IKPUl/lGWdGZ2qd9IcR3hec
+ Xtww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:subject:to:cc:message-id:date:user-agent
  :mime-version:content-language:content-transfer-encoding;
- bh=fLJ5ZQgTlsKG5vGdwN0EigFoKbOob/9gwm906d2IrXc=;
- b=bhIgaJRI9R/fHyISPrfFRJbQP1OL8NnoE0dZnW0jUyXVQDc+RqZLWEYcR/tQyt829o
- LQ2Gg2n6S8whpsj3W1RHumlssKHDRluYwIKXz/eSE0uEhSzMNyM+6U3QVE8sTVs14phl
- so5UuDLGRnT1nKXAzx4v+b6qAl6oexl4DppNY2O2KW/KzLyDBFM0tRq7ppcO26mZ3Hal
- 4Pd42bldP2FBzosC/Q4j+hvpjSI9uQCLF1FrTJZF8rVIubBoW5u6KOXpqfNOqRncxk1m
- fRqna0vtX9jnQpyg5zTQaPWWWi/NyeX1jNUXJzlKdmswEBxK6aCG4X68q8/3aF+vY5tz
- JIxg==
-X-Gm-Message-State: APjAAAWp+AB5JpiQZH8UYu2SffJ0rl6cPDJT1XOLnY/1G7wujBSlBmfR
- P51CfRAaVIm7lRrm4MhEYm8=
-X-Google-Smtp-Source: APXvYqwb/r1qB/GY/FnfuBqYtz/j0N0cBu0b4yYDFkLnQvrAat8Y+56bge4YpW//FjOqjNhbdMuuWg==
-X-Received: by 2002:a5d:5273:: with SMTP id l19mr7435844wrc.175.1579640737379; 
- Tue, 21 Jan 2020 13:05:37 -0800 (PST)
+ bh=USC5WNDE/HAboW02J0L9+U4XCEXb7DagbFu0m+UZCqY=;
+ b=Axhdw86Ac8WwCvdMAGUlKtztGssByJZe3+zpA6MhnwtfANY+aXqDHqrOj7TGIeQWEd
+ aeI4H/C7yNXTNo93hcXYCtNkp+b9VQd78FnkocMqYBq4nGsRVhoOBRv4c63H/XoxN+xd
+ ORFiIwoz65CoqtbrhXKDlrWVaXt2vRWunKahXnLqTp183BDSTshhGMBBgfL2wF3y5CgS
+ ZoZ6J3SPs1dTNAyPIvewvZv51WgzpkMBnOKka3Tu6czYH+qdfqF5v+qHFgdDgsiDjw5G
+ DelBQMAqj3BR9xnB58rk+NOWoEWwGH0apAazwBGqTPn+AuGnB+6hHtM/vOjhXT0/GrJr
+ VncA==
+X-Gm-Message-State: APjAAAVhozkuoZQuX5FCVGBZT0hmgLbWlE2MnZ7BO4caGJu8t3Bpnc2s
+ +f09TZjvez2ZJQmVz0GSSWMpNEAn
+X-Google-Smtp-Source: APXvYqzy1aNdd6Z6+LVkRLndzQGjv5U2HpRGo1umY/F/247Z4YunAPOd3XmtUP/HILVHd1edjG724A==
+X-Received: by 2002:a05:6000:1187:: with SMTP id
+ g7mr7109966wrx.109.1579640983148; 
+ Tue, 21 Jan 2020 13:09:43 -0800 (PST)
 Received: from [192.168.178.85] (pD9F901D9.dip0.t-ipconnect.de.
  [217.249.1.217])
- by smtp.googlemail.com with ESMTPSA id r5sm53177292wrt.43.2020.01.21.13.05.36
+ by smtp.googlemail.com with ESMTPSA id c9sm19876wme.41.2020.01.21.13.09.42
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 13:05:36 -0800 (PST)
+ Tue, 21 Jan 2020 13:09:42 -0800 (PST)
 From: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH net-next] net: convert suitable drivers to use
+Subject: [PATCH v2 net-next] net: convert suitable drivers to use
  phy_do_ioctl_running
 To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
  David Miller <davem@davemloft.net>, Maxime Ripard <mripard@kernel.org>,
@@ -72,22 +73,22 @@ To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
  Michal Simek <michal.simek@xilinx.com>,
  Woojung Huh <woojung.huh@microchip.com>,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>
-Message-ID: <771a3ebc-0656-b91c-4973-b0f03e4945f7@gmail.com>
-Date: Tue, 21 Jan 2020 22:01:27 +0100
+Message-ID: <2db5d899-a550-456d-a725-f7cf009f53a3@gmail.com>
+Date: Tue, 21 Jan 2020 22:09:33 +0100
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_130542_305980_EFBACE18 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20200121_130947_900313_EE2E7993 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [hkallweit1[at]gmail.com]
@@ -113,10 +114,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
  Linux USB Mailing List <linux-usb@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
+ linux-renesas-soc@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -126,6 +127,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Convert suitable drivers to use new helper phy_do_ioctl_running.
 
 Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+---
+v2: I forgot the netdev mailing list
 ---
  drivers/net/ethernet/allwinner/sun4i-emac.c    | 15 +--------------
  drivers/net/ethernet/amd/au1000_eth.c          | 13 +------------
