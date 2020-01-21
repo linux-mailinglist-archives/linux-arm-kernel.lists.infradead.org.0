@@ -2,40 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE0EE1445EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 21:30:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDFEA14463B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 22:06:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tnz/3g+KAuqkOWamSs0DFOgtpBgsyFaVmbYCdoPQmwc=; b=V5VZcub53AfhBV
-	RIvv/jmYphlVvYTyKPCVbgmY/GbfZLMjIkxRgY3iv0n41Oyb1w2ZEfJ0clH3ja92guaZvepVd7QBn
-	3Ztw+9Y9vTmWMIpNkA95X8ajeiCF/pNPGkAQeYh5ljLbL/5am0B9zfNVee6Di8zpsqMsrCCEmMZhQ
-	0/deqBTg0kmodmD6gODPat7wFDP+KJV759zb77lp8/v58FLgz4M5gyH4Z7s8vbKK8kf+cQBEioXzW
-	sw86e6XPJAWm9XJF6ypmQ+zh4kkSaljdbyH5J6mlSiwrmboUR9k3cDo4wyAI3wpxeSLoJw9/A0Zyi
-	ic136C+/SiwdIuhZW8pw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pweIQqXAEWVFZO2UeqVCB10JvCskr9uZIP2CUEQdpes=; b=dSYjZa/OWcIunE
+	H4Yxp6mbnJM9RsPtBCsHLMaxvzcXWd0hDE6/2zcqVvf0joOKngwq0LbrfA24SXoPNY2uiflrajATv
+	O5QnlAo6mW+jOVRPhKADpxOVu/dcElgzDcu2HJY/iEtI0ZCK5LV9krXfQAkZCWIX9JI9jYZ/QUEEN
+	ayZP729dPn9VYfznvxxe+5NilyD63h39nvhgyApDQQz3uRLsaTHptaTf1DIO69uTq0+N29aN2YCqh
+	KO2jjadU1RIL6dufoF0cKztAc1N9gGqKaS4cDO9kGp1F7wQEgSJGnEb+9EjVEtKGvT0lV+w90umIM
+	SSxx5IXqL71t1o9A/0wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu09h-0006qh-Ux; Tue, 21 Jan 2020 20:29:45 +0000
-Received: from [31.161.184.35] (helo=worktop.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu09W-0006q1-59; Tue, 21 Jan 2020 20:29:34 +0000
-Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
- id 25FB9980E43; Tue, 21 Jan 2020 21:29:19 +0100 (CET)
-Date: Tue, 21 Jan 2020 21:29:19 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-Message-ID: <20200121202919.GM11457@worktop.programming.kicks-ass.net>
-References: <20191125210709.10293-1-alex.kogan@oracle.com>
- <20191125210709.10293-4-alex.kogan@oracle.com>
+	id 1iu0ij-0002xA-Gi; Tue, 21 Jan 2020 21:05:57 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iu0iU-0002w3-7R
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 21:05:47 +0000
+Received: by mail-wr1-x443.google.com with SMTP id y17so4938567wrh.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Jan 2020 13:05:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:message-id:date:user-agent:mime-version
+ :content-language:content-transfer-encoding;
+ bh=fLJ5ZQgTlsKG5vGdwN0EigFoKbOob/9gwm906d2IrXc=;
+ b=sOgWoNfNBON8FuaB7b1Oo9EYw+zNkpDWG2zMm4JFuwjeNOTFw+5sss3XanXNhfoMd+
+ IHCDd+iuUvLSAO+ws9CC/OnJeZQ/p2wpSpRCVydgFWMup/W9aaSSu7vyquCgqcn5Wgh7
+ Kn4G65VS7CKweXqGXuLi/9AhwUTydtooahMP+l7H0ervJ5Ub8FetLSzOdJuthXdy2KSX
+ I5W8UnFpUGaZQ+8wsKb4OMQKZJZvVJRIelTa9XTa8HXROa/ZSLRAP+u8QzFTWsFSVOyR
+ 37b82N8d+gB+UvaZgc99hvL+szDMHr7lOPRTa/MS+BLrAXGwL+qjclUJ0dCRr/unYGQ+
+ T56w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=fLJ5ZQgTlsKG5vGdwN0EigFoKbOob/9gwm906d2IrXc=;
+ b=bhIgaJRI9R/fHyISPrfFRJbQP1OL8NnoE0dZnW0jUyXVQDc+RqZLWEYcR/tQyt829o
+ LQ2Gg2n6S8whpsj3W1RHumlssKHDRluYwIKXz/eSE0uEhSzMNyM+6U3QVE8sTVs14phl
+ so5UuDLGRnT1nKXAzx4v+b6qAl6oexl4DppNY2O2KW/KzLyDBFM0tRq7ppcO26mZ3Hal
+ 4Pd42bldP2FBzosC/Q4j+hvpjSI9uQCLF1FrTJZF8rVIubBoW5u6KOXpqfNOqRncxk1m
+ fRqna0vtX9jnQpyg5zTQaPWWWi/NyeX1jNUXJzlKdmswEBxK6aCG4X68q8/3aF+vY5tz
+ JIxg==
+X-Gm-Message-State: APjAAAWp+AB5JpiQZH8UYu2SffJ0rl6cPDJT1XOLnY/1G7wujBSlBmfR
+ P51CfRAaVIm7lRrm4MhEYm8=
+X-Google-Smtp-Source: APXvYqwb/r1qB/GY/FnfuBqYtz/j0N0cBu0b4yYDFkLnQvrAat8Y+56bge4YpW//FjOqjNhbdMuuWg==
+X-Received: by 2002:a5d:5273:: with SMTP id l19mr7435844wrc.175.1579640737379; 
+ Tue, 21 Jan 2020 13:05:37 -0800 (PST)
+Received: from [192.168.178.85] (pD9F901D9.dip0.t-ipconnect.de.
+ [217.249.1.217])
+ by smtp.googlemail.com with ESMTPSA id r5sm53177292wrt.43.2020.01.21.13.05.36
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 13:05:36 -0800 (PST)
+From: Heiner Kallweit <hkallweit1@gmail.com>
+Subject: [PATCH net-next] net: convert suitable drivers to use
+ phy_do_ioctl_running
+To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ David Miller <davem@davemloft.net>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Doug Berger <opendmb@gmail.com>,
+ Pantelis Antoniou <pantelis.antoniou@gmail.com>,
+ Yisen Zhuang <yisen.zhuang@huawei.com>, Salil Mehta
+ <salil.mehta@huawei.com>, Vladimir Zapolskiy <vz@mleia.com>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>, Timur Tabi <timur@kernel.org>,
+ Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
+ Steve Glendinning <steve.glendinning@shawell.net>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Woojung Huh <woojung.huh@microchip.com>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>
+Message-ID: <771a3ebc-0656-b91c-4973-b0f03e4945f7@gmail.com>
+Date: Tue, 21 Jan 2020 22:01:27 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191125210709.10293-4-alex.kogan@oracle.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200121_130542_305980_EFBACE18 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.1 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [hkallweit1[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [hkallweit1[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,310 +113,647 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-renesas-soc@vger.kernel.org,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Convert suitable drivers to use new helper phy_do_ioctl_running.
 
-various notes and changes in the below.
-
+Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
 ---
+ drivers/net/ethernet/allwinner/sun4i-emac.c    | 15 +--------------
+ drivers/net/ethernet/amd/au1000_eth.c          | 13 +------------
+ drivers/net/ethernet/arc/emac_main.c           | 14 +-------------
+ drivers/net/ethernet/broadcom/bgmac.c          | 10 +---------
+ drivers/net/ethernet/broadcom/genet/bcmgenet.c | 14 +-------------
+ drivers/net/ethernet/dnet.c                    | 15 +--------------
+ .../ethernet/freescale/fs_enet/fs_enet-main.c  | 10 +---------
+ drivers/net/ethernet/hisilicon/hisi_femac.c    | 14 +-------------
+ drivers/net/ethernet/hisilicon/hns/hns_enet.c  | 16 +---------------
+ drivers/net/ethernet/nxp/lpc_eth.c             | 15 +--------------
+ drivers/net/ethernet/qualcomm/emac/emac.c      | 14 +-------------
+ drivers/net/ethernet/renesas/sh_eth.c          | 18 ++----------------
+ drivers/net/ethernet/smsc/smsc911x.c           | 11 +----------
+ drivers/net/ethernet/smsc/smsc9420.c           | 11 +----------
+ drivers/net/ethernet/ti/cpmac.c                | 12 +-----------
+ drivers/net/ethernet/toshiba/tc35815.c         | 12 +-----------
+ drivers/net/ethernet/xilinx/ll_temac_main.c    | 13 +------------
+ drivers/net/usb/ax88172a.c                     | 13 +------------
+ drivers/net/usb/lan78xx.c                      | 10 +---------
+ 19 files changed, 20 insertions(+), 230 deletions(-)
 
-Index: linux-2.6/kernel/locking/qspinlock.c
-===================================================================
---- linux-2.6.orig/kernel/locking/qspinlock.c
-+++ linux-2.6/kernel/locking/qspinlock.c
-@@ -598,10 +598,10 @@ EXPORT_SYMBOL(queued_spin_lock_slowpath)
- #define _GEN_CNA_LOCK_SLOWPATH
+diff --git a/drivers/net/ethernet/allwinner/sun4i-emac.c b/drivers/net/ethernet/allwinner/sun4i-emac.c
+index 5ea806423..22cadfbee 100644
+--- a/drivers/net/ethernet/allwinner/sun4i-emac.c
++++ b/drivers/net/ethernet/allwinner/sun4i-emac.c
+@@ -207,19 +207,6 @@ static void emac_inblk_32bit(void __iomem *reg, void *data, int count)
+ 	readsl(reg, data, round_up(count, 4) / 4);
+ }
  
- #undef pv_wait_head_or_lock
--#define pv_wait_head_or_lock		cna_pre_scan
-+#define pv_wait_head_or_lock		cna_wait_head_or_lock
+-static int emac_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	struct phy_device *phydev = dev->phydev;
+-
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(phydev, rq, cmd);
+-}
+-
+ /* ethtool ops */
+ static void emac_get_drvinfo(struct net_device *dev,
+ 			      struct ethtool_drvinfo *info)
+@@ -791,7 +778,7 @@ static const struct net_device_ops emac_netdev_ops = {
+ 	.ndo_start_xmit		= emac_start_xmit,
+ 	.ndo_tx_timeout		= emac_timeout,
+ 	.ndo_set_rx_mode	= emac_set_rx_mode,
+-	.ndo_do_ioctl		= emac_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= emac_set_mac_address,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+diff --git a/drivers/net/ethernet/amd/au1000_eth.c b/drivers/net/ethernet/amd/au1000_eth.c
+index 6acf5aa99..089a4fbc6 100644
+--- a/drivers/net/ethernet/amd/au1000_eth.c
++++ b/drivers/net/ethernet/amd/au1000_eth.c
+@@ -1053,23 +1053,12 @@ static void au1000_multicast_list(struct net_device *dev)
+ 	writel(reg, &aup->mac->control);
+ }
  
- #undef try_clear_tail
--#define try_clear_tail			cna_try_change_tail
-+#define try_clear_tail			cna_try_clear_tail
+-static int au1000_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!dev->phydev)
+-		return -EINVAL; /* PHY not controllable */
+-
+-	return phy_mii_ioctl(dev->phydev, rq, cmd);
+-}
+-
+ static const struct net_device_ops au1000_netdev_ops = {
+ 	.ndo_open		= au1000_open,
+ 	.ndo_stop		= au1000_close,
+ 	.ndo_start_xmit		= au1000_tx,
+ 	.ndo_set_rx_mode	= au1000_multicast_list,
+-	.ndo_do_ioctl		= au1000_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_tx_timeout		= au1000_tx_timeout,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ 	.ndo_validate_addr	= eth_validate_addr,
+diff --git a/drivers/net/ethernet/arc/emac_main.c b/drivers/net/ethernet/arc/emac_main.c
+index 6f2c86778..17bda4e8c 100644
+--- a/drivers/net/ethernet/arc/emac_main.c
++++ b/drivers/net/ethernet/arc/emac_main.c
+@@ -781,18 +781,6 @@ static int arc_emac_set_address(struct net_device *ndev, void *p)
+ 	return 0;
+ }
  
- #undef mcs_pass_lock
- #define mcs_pass_lock			cna_pass_lock
-Index: linux-2.6/kernel/locking/qspinlock_cna.h
-===================================================================
---- linux-2.6.orig/kernel/locking/qspinlock_cna.h
-+++ linux-2.6/kernel/locking/qspinlock_cna.h
-@@ -8,37 +8,37 @@
- /*
-  * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
-  *
-- * In CNA, spinning threads are organized in two queues, a main queue for
-+ * In CNA, spinning threads are organized in two queues, a primary queue for
-  * threads running on the same NUMA node as the current lock holder, and a
-- * secondary queue for threads running on other nodes. Schematically, it
-- * looks like this:
-+ * secondary queue for threads running on other nodes. Schematically, it looks
-+ * like this:
-  *
-  *    cna_node
-- *   +----------+    +--------+        +--------+
-- *   |mcs:next  | -> |mcs:next| -> ... |mcs:next| -> NULL      [Main queue]
-- *   |mcs:locked| -+ +--------+        +--------+
-+ *   +----------+     +--------+         +--------+
-+ *   |mcs:next  | --> |mcs:next| --> ... |mcs:next| --> NULL  [Primary queue]
-+ *   |mcs:locked| -.  +--------+         +--------+
-  *   +----------+  |
-- *                 +----------------------+
-- *                                        \/
-+ *                 `----------------------.
-+ *                                        v
-  *                 +--------+         +--------+
-- *                 |mcs:next| -> ...  |mcs:next|          [Secondary queue]
-+ *                 |mcs:next| --> ... |mcs:next|            [Secondary queue]
-  *                 +--------+         +--------+
-  *                     ^                    |
-- *                     +--------------------+
-+ *                     `--------------------'
-  *
-- * N.B. locked = 1 if secondary queue is absent. Othewrise, it contains the
-+ * N.B. locked := 1 if secondary queue is absent. Othewrise, it contains the
-  * encoded pointer to the tail of the secondary queue, which is organized as a
-  * circular list.
-  *
-  * After acquiring the MCS lock and before acquiring the spinlock, the lock
-- * holder scans the main queue looking for a thread running on the same node
-- * (pre-scan). If found (call it thread T), all threads in the main queue
-+ * holder scans the primary queue looking for a thread running on the same node
-+ * (pre-scan). If found (call it thread T), all threads in the primary queue
-  * between the current lock holder and T are moved to the end of the secondary
-- * queue.  If such T is not found, we make another scan of the main queue when
-- * unlocking the MCS lock (post-scan), starting at the node where pre-scan
-+ * queue.  If such T is not found, we make another scan of the primary queue
-+ * when unlocking the MCS lock (post-scan), starting at the node where pre-scan
-  * stopped. If both scans fail to find such T, the MCS lock is passed to the
-  * first thread in the secondary queue. If the secondary queue is empty, the
-- * lock is passed to the next thread in the main queue.
-+ * lock is passed to the next thread in the primary queue.
-  *
-  * For more details, see https://arxiv.org/abs/1810.05600.
-  *
-@@ -49,8 +49,8 @@
- struct cna_node {
- 	struct mcs_spinlock	mcs;
- 	int			numa_node;
--	u32			encoded_tail;
--	u32			pre_scan_result; /* 0 or encoded tail */
-+	u32			encoded_tail;    /* self */
-+	u32			partial_order;
+-static int arc_emac_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!dev->phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(dev->phydev, rq, cmd);
+-}
+-
+-
+ /**
+  * arc_emac_restart - Restart EMAC
+  * @ndev:	Pointer to net_device structure.
+@@ -857,7 +845,7 @@ static const struct net_device_ops arc_emac_netdev_ops = {
+ 	.ndo_set_mac_address	= arc_emac_set_address,
+ 	.ndo_get_stats		= arc_emac_stats,
+ 	.ndo_set_rx_mode	= arc_emac_set_rx_mode,
+-	.ndo_do_ioctl		= arc_emac_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+ 	.ndo_poll_controller	= arc_emac_poll_controller,
+ #endif
+diff --git a/drivers/net/ethernet/broadcom/bgmac.c b/drivers/net/ethernet/broadcom/bgmac.c
+index 148734b16..1bb07a5d8 100644
+--- a/drivers/net/ethernet/broadcom/bgmac.c
++++ b/drivers/net/ethernet/broadcom/bgmac.c
+@@ -1248,14 +1248,6 @@ static int bgmac_set_mac_address(struct net_device *net_dev, void *addr)
+ 	return 0;
+ }
+ 
+-static int bgmac_ioctl(struct net_device *net_dev, struct ifreq *ifr, int cmd)
+-{
+-	if (!netif_running(net_dev))
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(net_dev->phydev, ifr, cmd);
+-}
+-
+ static const struct net_device_ops bgmac_netdev_ops = {
+ 	.ndo_open		= bgmac_open,
+ 	.ndo_stop		= bgmac_stop,
+@@ -1263,7 +1255,7 @@ static const struct net_device_ops bgmac_netdev_ops = {
+ 	.ndo_set_rx_mode	= bgmac_set_rx_mode,
+ 	.ndo_set_mac_address	= bgmac_set_mac_address,
+ 	.ndo_validate_addr	= eth_validate_addr,
+-	.ndo_do_ioctl           = bgmac_ioctl,
++	.ndo_do_ioctl           = phy_do_ioctl_running,
  };
  
- static void __init cna_init_nodes_per_cpu(unsigned int cpu)
-@@ -66,7 +66,7 @@ static void __init cna_init_nodes_per_cp
- 		cn->encoded_tail = encode_tail(cpu, i);
- 		/*
- 		 * @encoded_tail has to be larger than 1, so we do not confuse
--		 * it with other valid values for @locked or @pre_scan_result
-+		 * it with other valid values for @locked or @partial_order
- 		 * (0 or 1)
- 		 */
- 		WARN_ON(cn->encoded_tail <= 1);
-@@ -92,8 +92,8 @@ static int __init cna_init_nodes(void)
- }
- early_initcall(cna_init_nodes);
- 
--static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
--				       struct mcs_spinlock *node)
-+static inline bool cna_try_clear_tail(struct qspinlock *lock, u32 val,
-+				      struct mcs_spinlock *node)
- {
- 	struct mcs_spinlock *head_2nd, *tail_2nd;
- 	u32 new;
-@@ -106,7 +106,9 @@ static inline bool cna_try_change_tail(s
- 	 * Try to update the tail value to the last node in the secondary queue.
- 	 * If successful, pass the lock to the first thread in the secondary
- 	 * queue. Doing those two actions effectively moves all nodes from the
--	 * secondary queue into the main one.
-+	 * secondary queue into the primary one.
-+	 *
-+	 * XXX: reformulate, that's just confusing.
- 	 */
- 	tail_2nd = decode_tail(node->locked);
- 	head_2nd = tail_2nd->next;
-@@ -116,6 +118,9 @@ static inline bool cna_try_change_tail(s
- 		/*
- 		 * Try to reset @next in tail_2nd to NULL, but no need to check
- 		 * the result - if failed, a new successor has updated it.
-+		 *
-+		 * XXX: figure out what how where..
-+		 * XXX: cns_pass_lock() does something relared
- 		 */
- 		cmpxchg_relaxed(&tail_2nd->next, head_2nd, NULL);
- 		arch_mcs_pass_lock(&head_2nd->locked, 1);
-@@ -126,7 +131,7 @@ static inline bool cna_try_change_tail(s
- }
- 
- /*
-- * cna_splice_tail -- splice nodes in the main queue between [first, last]
-+ * cna_splice_tail -- splice nodes in the primary queue between [first, last]
-  * onto the secondary queue.
-  */
- static void cna_splice_tail(struct mcs_spinlock *node,
-@@ -153,77 +158,56 @@ static void cna_splice_tail(struct mcs_s
- }
- 
- /*
-- * cna_scan_main_queue - scan the main waiting queue looking for the first
-- * thread running on the same NUMA node as the lock holder. If found (call it
-- * thread T), move all threads in the main queue between the lock holder and
-- * T to the end of the secondary queue and return 0; otherwise, return the
-- * encoded pointer of the last scanned node in the primary queue (so a
-- * subsequent scan can be resumed from that node)
-+ * cna_order_queue - scan the primary queue looking for the first lock node on
-+ * the same NUMA node as the lock holder and move any skipped nodes onto the
-+ * secondary queue.
-  *
-- * Schematically, this may look like the following (nn stands for numa_node and
-- * et stands for encoded_tail).
-- *
-- *   when cna_scan_main_queue() is called (the secondary queue is empty):
-- *
-- *  A+------------+   B+--------+   C+--------+   T+--------+
-- *   |mcs:next    | -> |mcs:next| -> |mcs:next| -> |mcs:next| -> NULL
-- *   |mcs:locked=1|    |cna:nn=0|    |cna:nn=2|    |cna:nn=1|
-- *   |cna:nn=1    |    +--------+    +--------+    +--------+
-- *   +----------- +
-- *
-- *   when cna_scan_main_queue() returns (the secondary queue contains B and C):
-- *
-- *  A+----------------+    T+--------+
-- *   |mcs:next        | ->  |mcs:next| -> NULL
-- *   |mcs:locked=C.et | -+  |cna:nn=1|
-- *   |cna:nn=1        |  |  +--------+
-- *   +--------------- +  +-----+
-- *                             \/
-- *          B+--------+   C+--------+
-- *           |mcs:next| -> |mcs:next| -+
-- *           |cna:nn=0|    |cna:nn=2|  |
-- *           +--------+    +--------+  |
-- *               ^                     |
-- *               +---------------------+
-+ * Returns 0 if a matching node is found; otherwise return the encoded pointer
-+ * to the last element inspected (such that a subsequent scan can continue there).
-  *
-  * The worst case complexity of the scan is O(n), where n is the number
-  * of current waiters. However, the amortized complexity is close to O(1),
-  * as the immediate successor is likely to be running on the same node once
-  * threads from other nodes are moved to the secondary queue.
-+ *
-+ * XXX does not compute; given equal contention it should average to O(nr_nodes).
-  */
--static u32 cna_scan_main_queue(struct mcs_spinlock *node,
--			       struct mcs_spinlock *pred_start)
-+static u32 cna_order_queue(struct mcs_spinlock *node,
-+			   struct mcs_spinlock *iter)
- {
-+	struct cna_node *cni = (struct cna_node *)READ_ONCE(iter->next);
- 	struct cna_node *cn = (struct cna_node *)node;
--	struct cna_node *cni = (struct cna_node *)READ_ONCE(pred_start->next);
-+	int nid = cn->numa_node;
- 	struct cna_node *last;
--	int my_numa_node = cn->numa_node;
- 
- 	/* find any next waiter on 'our' NUMA node */
- 	for (last = cn;
--	     cni && cni->numa_node != my_numa_node;
-+	     cni && cni->numa_node != nid;
- 	     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
- 		;
- 
--	/* if found, splice any skipped waiters onto the secondary queue */
--	if (cni) {
--		if (last != cn)	/* did we skip any waiters? */
--			cna_splice_tail(node, node->next,
--					(struct mcs_spinlock *)last);
--		return 0;
--	}
-+	if (!cna)
-+		return last->encoded_tail; /* continue from here */
-+
-+	if (last != cn)	/* did we skip any waiters? */
-+		cna_splice_tail(node, node->next, (struct mcs_spinlock *)last);
- 
--	return last->encoded_tail;
-+	return 0;
- }
- 
--__always_inline u32 cna_pre_scan(struct qspinlock *lock,
--				  struct mcs_spinlock *node)
-+/* abuse the pv_wait_head_or_lock() hook to get some work done */
-+static __always_inline u32 cna_wait_head_or_lock(struct qspinlock *lock,
-+						 struct mcs_spinlock *node)
- {
- 	struct cna_node *cn = (struct cna_node *)node;
- 
--	cn->pre_scan_result = cna_scan_main_queue(node, node);
-+	/*
-+	 * Try and put the time otherwise spend spin waiting on
-+	 * _Q_LOCKED_PENDING_MASK to use by sorting our lists.
-+	 */
-+	cn->partial_order = cna_order_queue(node, node);
- 
--	return 0;
-+	return 0; /* we lied; we didn't wait, go do so now */
- }
- 
- static inline void cna_pass_lock(struct mcs_spinlock *node,
-@@ -231,33 +215,27 @@ static inline void cna_pass_lock(struct
- {
- 	struct cna_node *cn = (struct cna_node *)node;
- 	struct mcs_spinlock *next_holder = next, *tail_2nd;
--	u32 val = 1;
-+	u32 partial_order = cn->partial_order;
-+	u32 val = _Q_LOCKED_VAL;
- 
--	u32 scan = cn->pre_scan_result;
-+	/* cna_wait_head_or_lock() left work for us. */
-+	if (partial_order) {
-+		partial_order = cna_order_queue(node, decode_tail(partial_order));
- 
--	/*
--	 * check if a successor from the same numa node has not been found in
--	 * pre-scan, and if so, try to find it in post-scan starting from the
--	 * node where pre-scan stopped (stored in @pre_scan_result)
--	 */
--	if (scan > 0)
--		scan = cna_scan_main_queue(node, decode_tail(scan));
--
--	if (!scan) { /* if found a successor from the same numa node */
-+	if (!partial_order) {		/* ordered; use primary queue */
- 		next_holder = node->next;
--		/*
--		 * we unlock successor by passing a non-zero value,
--		 * so set @val to 1 iff @locked is 0, which will happen
--		 * if we acquired the MCS lock when its queue was empty
--		 */
--		val = node->locked ? node->locked : 1;
--	} else if (node->locked > 1) {	  /* if secondary queue is not empty */
-+		val |= node->locked;	/* preseve secondary queue */
-+
-+	} else if (node->locked > 1) {	/* try secondary queue */
-+
- 		/* next holder will be the first node in the secondary queue */
- 		tail_2nd = decode_tail(node->locked);
- 		/* @tail_2nd->next points to the head of the secondary queue */
- 		next_holder = tail_2nd->next;
--		/* splice the secondary queue onto the head of the main queue */
-+		/* splice the secondary queue onto the head of the primary queue */
- 		tail_2nd->next = next;
-+
-+		// XXX cna_try_clear_tail also does something like this
+ /**************************************************
+diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.c b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
+index 3ee7917e3..013959285 100644
+--- a/drivers/net/ethernet/broadcom/genet/bcmgenet.c
++++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
+@@ -1225,18 +1225,6 @@ static void bcmgenet_power_up(struct bcmgenet_priv *priv,
  	}
+ }
  
- 	arch_mcs_pass_lock(&next_holder->locked, val);
+-/* ioctl handle special commands that are not present in ethtool. */
+-static int bcmgenet_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!dev->phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(dev->phydev, rq, cmd);
+-}
+-
+ static struct enet_cb *bcmgenet_get_txcb(struct bcmgenet_priv *priv,
+ 					 struct bcmgenet_tx_ring *ring)
+ {
+@@ -3222,7 +3210,7 @@ static const struct net_device_ops bcmgenet_netdev_ops = {
+ 	.ndo_tx_timeout		= bcmgenet_timeout,
+ 	.ndo_set_rx_mode	= bcmgenet_set_rx_mode,
+ 	.ndo_set_mac_address	= bcmgenet_set_mac_addr,
+-	.ndo_do_ioctl		= bcmgenet_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_features	= bcmgenet_set_features,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+ 	.ndo_poll_controller	= bcmgenet_poll_controller,
+diff --git a/drivers/net/ethernet/dnet.c b/drivers/net/ethernet/dnet.c
+index e24979010..5f8fa1145 100644
+--- a/drivers/net/ethernet/dnet.c
++++ b/drivers/net/ethernet/dnet.c
+@@ -725,19 +725,6 @@ static struct net_device_stats *dnet_get_stats(struct net_device *dev)
+ 	return nstat;
+ }
+ 
+-static int dnet_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	struct phy_device *phydev = dev->phydev;
+-
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(phydev, rq, cmd);
+-}
+-
+ static void dnet_get_drvinfo(struct net_device *dev,
+ 			     struct ethtool_drvinfo *info)
+ {
+@@ -759,7 +746,7 @@ static const struct net_device_ops dnet_netdev_ops = {
+ 	.ndo_stop		= dnet_close,
+ 	.ndo_get_stats		= dnet_get_stats,
+ 	.ndo_start_xmit		= dnet_start_xmit,
+-	.ndo_do_ioctl		= dnet_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ };
+diff --git a/drivers/net/ethernet/freescale/fs_enet/fs_enet-main.c b/drivers/net/ethernet/freescale/fs_enet/fs_enet-main.c
+index 80903cd58..add61fed3 100644
+--- a/drivers/net/ethernet/freescale/fs_enet/fs_enet-main.c
++++ b/drivers/net/ethernet/freescale/fs_enet/fs_enet-main.c
+@@ -882,14 +882,6 @@ static const struct ethtool_ops fs_ethtool_ops = {
+ 	.set_tunable = fs_set_tunable,
+ };
+ 
+-static int fs_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(dev->phydev, rq, cmd);
+-}
+-
+ extern int fs_mii_connect(struct net_device *dev);
+ extern void fs_mii_disconnect(struct net_device *dev);
+ 
+@@ -907,7 +899,7 @@ static const struct net_device_ops fs_enet_netdev_ops = {
+ 	.ndo_start_xmit		= fs_enet_start_xmit,
+ 	.ndo_tx_timeout		= fs_timeout,
+ 	.ndo_set_rx_mode	= fs_set_multicast_list,
+-	.ndo_do_ioctl		= fs_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+diff --git a/drivers/net/ethernet/hisilicon/hisi_femac.c b/drivers/net/ethernet/hisilicon/hisi_femac.c
+index 90ab7ade4..57c3bc4f7 100644
+--- a/drivers/net/ethernet/hisilicon/hisi_femac.c
++++ b/drivers/net/ethernet/hisilicon/hisi_femac.c
+@@ -675,18 +675,6 @@ static void hisi_femac_net_set_rx_mode(struct net_device *dev)
+ 	}
+ }
+ 
+-static int hisi_femac_net_ioctl(struct net_device *dev,
+-				struct ifreq *ifreq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-
+-	if (!dev->phydev)
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(dev->phydev, ifreq, cmd);
+-}
+-
+ static const struct ethtool_ops hisi_femac_ethtools_ops = {
+ 	.get_link		= ethtool_op_get_link,
+ 	.get_link_ksettings	= phy_ethtool_get_link_ksettings,
+@@ -697,7 +685,7 @@ static const struct net_device_ops hisi_femac_netdev_ops = {
+ 	.ndo_open		= hisi_femac_net_open,
+ 	.ndo_stop		= hisi_femac_net_close,
+ 	.ndo_start_xmit		= hisi_femac_net_xmit,
+-	.ndo_do_ioctl		= hisi_femac_net_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_mac_address	= hisi_femac_set_mac_address,
+ 	.ndo_set_rx_mode	= hisi_femac_net_set_rx_mode,
+ };
+diff --git a/drivers/net/ethernet/hisilicon/hns/hns_enet.c b/drivers/net/ethernet/hisilicon/hns/hns_enet.c
+index e45553ec1..0c3b9b274 100644
+--- a/drivers/net/ethernet/hisilicon/hns/hns_enet.c
++++ b/drivers/net/ethernet/hisilicon/hns/hns_enet.c
+@@ -1499,20 +1499,6 @@ static void hns_nic_net_timeout(struct net_device *ndev, unsigned int txqueue)
+ 	}
+ }
+ 
+-static int hns_nic_do_ioctl(struct net_device *netdev, struct ifreq *ifr,
+-			    int cmd)
+-{
+-	struct phy_device *phy_dev = netdev->phydev;
+-
+-	if (!netif_running(netdev))
+-		return -EINVAL;
+-
+-	if (!phy_dev)
+-		return -ENOTSUPP;
+-
+-	return phy_mii_ioctl(phy_dev, ifr, cmd);
+-}
+-
+ static netdev_tx_t hns_nic_net_xmit(struct sk_buff *skb,
+ 				    struct net_device *ndev)
+ {
+@@ -1960,7 +1946,7 @@ static const struct net_device_ops hns_nic_netdev_ops = {
+ 	.ndo_tx_timeout = hns_nic_net_timeout,
+ 	.ndo_set_mac_address = hns_nic_net_set_mac_address,
+ 	.ndo_change_mtu = hns_nic_change_mtu,
+-	.ndo_do_ioctl = hns_nic_do_ioctl,
++	.ndo_do_ioctl = phy_do_ioctl_running,
+ 	.ndo_set_features = hns_nic_set_features,
+ 	.ndo_fix_features = hns_nic_fix_features,
+ 	.ndo_get_stats64 = hns_nic_get_stats64,
+diff --git a/drivers/net/ethernet/nxp/lpc_eth.c b/drivers/net/ethernet/nxp/lpc_eth.c
+index 656169214..d20cf03a3 100644
+--- a/drivers/net/ethernet/nxp/lpc_eth.c
++++ b/drivers/net/ethernet/nxp/lpc_eth.c
+@@ -1149,19 +1149,6 @@ static void lpc_eth_set_multicast_list(struct net_device *ndev)
+ 	spin_unlock_irqrestore(&pldat->lock, flags);
+ }
+ 
+-static int lpc_eth_ioctl(struct net_device *ndev, struct ifreq *req, int cmd)
+-{
+-	struct phy_device *phydev = ndev->phydev;
+-
+-	if (!netif_running(ndev))
+-		return -EINVAL;
+-
+-	if (!phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(phydev, req, cmd);
+-}
+-
+ static int lpc_eth_open(struct net_device *ndev)
+ {
+ 	struct netdata_local *pldat = netdev_priv(ndev);
+@@ -1229,7 +1216,7 @@ static const struct net_device_ops lpc_netdev_ops = {
+ 	.ndo_stop		= lpc_eth_close,
+ 	.ndo_start_xmit		= lpc_eth_hard_start_xmit,
+ 	.ndo_set_rx_mode	= lpc_eth_set_multicast_list,
+-	.ndo_do_ioctl		= lpc_eth_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_mac_address	= lpc_set_mac_address,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ };
+diff --git a/drivers/net/ethernet/qualcomm/emac/emac.c b/drivers/net/ethernet/qualcomm/emac/emac.c
+index 522fad4cb..18b0c7a2d 100644
+--- a/drivers/net/ethernet/qualcomm/emac/emac.c
++++ b/drivers/net/ethernet/qualcomm/emac/emac.c
+@@ -289,18 +289,6 @@ static void emac_tx_timeout(struct net_device *netdev, unsigned int txqueue)
+ 	schedule_work(&adpt->work_thread);
+ }
+ 
+-/* IOCTL support for the interface */
+-static int emac_ioctl(struct net_device *netdev, struct ifreq *ifr, int cmd)
+-{
+-	if (!netif_running(netdev))
+-		return -EINVAL;
+-
+-	if (!netdev->phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(netdev->phydev, ifr, cmd);
+-}
+-
+ /**
+  * emac_update_hw_stats - read the EMAC stat registers
+  *
+@@ -387,7 +375,7 @@ static const struct net_device_ops emac_netdev_ops = {
+ 	.ndo_start_xmit		= emac_start_xmit,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ 	.ndo_change_mtu		= emac_change_mtu,
+-	.ndo_do_ioctl		= emac_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_tx_timeout		= emac_tx_timeout,
+ 	.ndo_get_stats64	= emac_get_stats64,
+ 	.ndo_set_features       = emac_set_features,
+diff --git a/drivers/net/ethernet/renesas/sh_eth.c b/drivers/net/ethernet/renesas/sh_eth.c
+index c922d7a55..58ca12651 100644
+--- a/drivers/net/ethernet/renesas/sh_eth.c
++++ b/drivers/net/ethernet/renesas/sh_eth.c
+@@ -2647,20 +2647,6 @@ static int sh_eth_close(struct net_device *ndev)
+ 	return 0;
+ }
+ 
+-/* ioctl to device function */
+-static int sh_eth_do_ioctl(struct net_device *ndev, struct ifreq *rq, int cmd)
+-{
+-	struct phy_device *phydev = ndev->phydev;
+-
+-	if (!netif_running(ndev))
+-		return -EINVAL;
+-
+-	if (!phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(phydev, rq, cmd);
+-}
+-
+ static int sh_eth_change_mtu(struct net_device *ndev, int new_mtu)
+ {
+ 	if (netif_running(ndev))
+@@ -3159,7 +3145,7 @@ static const struct net_device_ops sh_eth_netdev_ops = {
+ 	.ndo_get_stats		= sh_eth_get_stats,
+ 	.ndo_set_rx_mode	= sh_eth_set_rx_mode,
+ 	.ndo_tx_timeout		= sh_eth_tx_timeout,
+-	.ndo_do_ioctl		= sh_eth_do_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_change_mtu		= sh_eth_change_mtu,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+@@ -3175,7 +3161,7 @@ static const struct net_device_ops sh_eth_netdev_ops_tsu = {
+ 	.ndo_vlan_rx_add_vid	= sh_eth_vlan_rx_add_vid,
+ 	.ndo_vlan_rx_kill_vid	= sh_eth_vlan_rx_kill_vid,
+ 	.ndo_tx_timeout		= sh_eth_tx_timeout,
+-	.ndo_do_ioctl		= sh_eth_do_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_change_mtu		= sh_eth_change_mtu,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+diff --git a/drivers/net/ethernet/smsc/smsc911x.c b/drivers/net/ethernet/smsc/smsc911x.c
+index 6d90a097c..49a6a9167 100644
+--- a/drivers/net/ethernet/smsc/smsc911x.c
++++ b/drivers/net/ethernet/smsc/smsc911x.c
+@@ -1943,15 +1943,6 @@ static int smsc911x_set_mac_address(struct net_device *dev, void *p)
+ 	return 0;
+ }
+ 
+-/* Standard ioctls for mii-tool */
+-static int smsc911x_do_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
+-{
+-	if (!netif_running(dev) || !dev->phydev)
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(dev->phydev, ifr, cmd);
+-}
+-
+ static void smsc911x_ethtool_getdrvinfo(struct net_device *dev,
+ 					struct ethtool_drvinfo *info)
+ {
+@@ -2151,7 +2142,7 @@ static const struct net_device_ops smsc911x_netdev_ops = {
+ 	.ndo_start_xmit		= smsc911x_hard_start_xmit,
+ 	.ndo_get_stats		= smsc911x_get_stats,
+ 	.ndo_set_rx_mode	= smsc911x_set_multicast_list,
+-	.ndo_do_ioctl		= smsc911x_do_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address 	= smsc911x_set_mac_address,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+diff --git a/drivers/net/ethernet/smsc/smsc9420.c b/drivers/net/ethernet/smsc/smsc9420.c
+index a6962a41c..7312e522c 100644
+--- a/drivers/net/ethernet/smsc/smsc9420.c
++++ b/drivers/net/ethernet/smsc/smsc9420.c
+@@ -210,15 +210,6 @@ static int smsc9420_eeprom_reload(struct smsc9420_pdata *pd)
+ 	return -EIO;
+ }
+ 
+-/* Standard ioctls for mii-tool */
+-static int smsc9420_do_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
+-{
+-	if (!netif_running(dev) || !dev->phydev)
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(dev->phydev, ifr, cmd);
+-}
+-
+ static void smsc9420_ethtool_get_drvinfo(struct net_device *netdev,
+ 					 struct ethtool_drvinfo *drvinfo)
+ {
+@@ -1504,7 +1495,7 @@ static const struct net_device_ops smsc9420_netdev_ops = {
+ 	.ndo_start_xmit		= smsc9420_hard_start_xmit,
+ 	.ndo_get_stats		= smsc9420_get_stats,
+ 	.ndo_set_rx_mode	= smsc9420_set_multicast_list,
+-	.ndo_do_ioctl		= smsc9420_do_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address 	= eth_mac_addr,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+diff --git a/drivers/net/ethernet/ti/cpmac.c b/drivers/net/ethernet/ti/cpmac.c
+index 5e1b8292c..a530afe3c 100644
+--- a/drivers/net/ethernet/ti/cpmac.c
++++ b/drivers/net/ethernet/ti/cpmac.c
+@@ -816,16 +816,6 @@ static void cpmac_tx_timeout(struct net_device *dev, unsigned int txqueue)
+ 	netif_tx_wake_all_queues(priv->dev);
+ }
+ 
+-static int cpmac_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
+-{
+-	if (!(netif_running(dev)))
+-		return -EINVAL;
+-	if (!dev->phydev)
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(dev->phydev, ifr, cmd);
+-}
+-
+ static void cpmac_get_ringparam(struct net_device *dev,
+ 						struct ethtool_ringparam *ring)
+ {
+@@ -1054,7 +1044,7 @@ static const struct net_device_ops cpmac_netdev_ops = {
+ 	.ndo_start_xmit		= cpmac_start_xmit,
+ 	.ndo_tx_timeout		= cpmac_tx_timeout,
+ 	.ndo_set_rx_mode	= cpmac_set_multicast_list,
+-	.ndo_do_ioctl		= cpmac_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ };
+diff --git a/drivers/net/ethernet/toshiba/tc35815.c b/drivers/net/ethernet/toshiba/tc35815.c
+index 708de8262..3fd43d30b 100644
+--- a/drivers/net/ethernet/toshiba/tc35815.c
++++ b/drivers/net/ethernet/toshiba/tc35815.c
+@@ -484,7 +484,6 @@ static int	tc35815_close(struct net_device *dev);
+ static struct	net_device_stats *tc35815_get_stats(struct net_device *dev);
+ static void	tc35815_set_multicast_list(struct net_device *dev);
+ static void	tc35815_tx_timeout(struct net_device *dev, unsigned int txqueue);
+-static int	tc35815_ioctl(struct net_device *dev, struct ifreq *rq, int cmd);
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+ static void	tc35815_poll_controller(struct net_device *dev);
+ #endif
+@@ -751,7 +750,7 @@ static const struct net_device_ops tc35815_netdev_ops = {
+ 	.ndo_get_stats		= tc35815_get_stats,
+ 	.ndo_set_rx_mode	= tc35815_set_multicast_list,
+ 	.ndo_tx_timeout		= tc35815_tx_timeout,
+-	.ndo_do_ioctl		= tc35815_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_validate_addr	= eth_validate_addr,
+ 	.ndo_set_mac_address	= eth_mac_addr,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+@@ -2009,15 +2008,6 @@ static const struct ethtool_ops tc35815_ethtool_ops = {
+ 	.set_link_ksettings = phy_ethtool_set_link_ksettings,
+ };
+ 
+-static int tc35815_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(dev))
+-		return -EINVAL;
+-	if (!dev->phydev)
+-		return -ENODEV;
+-	return phy_mii_ioctl(dev->phydev, rq, cmd);
+-}
+-
+ static void tc35815_chip_reset(struct net_device *dev)
+ {
+ 	struct tc35815_regs __iomem *tr =
+diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
+index c66aab78d..6f11f52c9 100644
+--- a/drivers/net/ethernet/xilinx/ll_temac_main.c
++++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
+@@ -1080,17 +1080,6 @@ temac_poll_controller(struct net_device *ndev)
+ }
+ #endif
+ 
+-static int temac_ioctl(struct net_device *ndev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(ndev))
+-		return -EINVAL;
+-
+-	if (!ndev->phydev)
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(ndev->phydev, rq, cmd);
+-}
+-
+ static const struct net_device_ops temac_netdev_ops = {
+ 	.ndo_open = temac_open,
+ 	.ndo_stop = temac_stop,
+@@ -1098,7 +1087,7 @@ static const struct net_device_ops temac_netdev_ops = {
+ 	.ndo_set_rx_mode = temac_set_multicast_list,
+ 	.ndo_set_mac_address = temac_set_mac_address,
+ 	.ndo_validate_addr = eth_validate_addr,
+-	.ndo_do_ioctl = temac_ioctl,
++	.ndo_do_ioctl = phy_do_ioctl_running,
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+ 	.ndo_poll_controller = temac_poll_controller,
+ #endif
+diff --git a/drivers/net/usb/ax88172a.c b/drivers/net/usb/ax88172a.c
+index af3994e08..4e514f5d7 100644
+--- a/drivers/net/usb/ax88172a.c
++++ b/drivers/net/usb/ax88172a.c
+@@ -39,17 +39,6 @@ static int asix_mdio_bus_write(struct mii_bus *bus, int phy_id, int regnum,
+ 	return 0;
+ }
+ 
+-static int ax88172a_ioctl(struct net_device *net, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(net))
+-		return -EINVAL;
+-
+-	if (!net->phydev)
+-		return -ENODEV;
+-
+-	return phy_mii_ioctl(net->phydev, rq, cmd);
+-}
+-
+ /* set MAC link settings according to information from phylib */
+ static void ax88172a_adjust_link(struct net_device *netdev)
+ {
+@@ -134,7 +123,7 @@ static const struct net_device_ops ax88172a_netdev_ops = {
+ 	.ndo_get_stats64	= usbnet_get_stats64,
+ 	.ndo_set_mac_address	= asix_set_mac_address,
+ 	.ndo_validate_addr	= eth_validate_addr,
+-	.ndo_do_ioctl		= ax88172a_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_rx_mode        = asix_set_multicast,
+ };
+ 
+diff --git a/drivers/net/usb/lan78xx.c b/drivers/net/usb/lan78xx.c
+index c391f2521..d2d61f082 100644
+--- a/drivers/net/usb/lan78xx.c
++++ b/drivers/net/usb/lan78xx.c
+@@ -1663,14 +1663,6 @@ static const struct ethtool_ops lan78xx_ethtool_ops = {
+ 	.get_regs	= lan78xx_get_regs,
+ };
+ 
+-static int lan78xx_ioctl(struct net_device *netdev, struct ifreq *rq, int cmd)
+-{
+-	if (!netif_running(netdev))
+-		return -EINVAL;
+-
+-	return phy_mii_ioctl(netdev->phydev, rq, cmd);
+-}
+-
+ static void lan78xx_init_mac_address(struct lan78xx_net *dev)
+ {
+ 	u32 addr_lo, addr_hi;
+@@ -3676,7 +3668,7 @@ static const struct net_device_ops lan78xx_netdev_ops = {
+ 	.ndo_change_mtu		= lan78xx_change_mtu,
+ 	.ndo_set_mac_address	= lan78xx_set_mac_addr,
+ 	.ndo_validate_addr	= eth_validate_addr,
+-	.ndo_do_ioctl		= lan78xx_ioctl,
++	.ndo_do_ioctl		= phy_do_ioctl_running,
+ 	.ndo_set_rx_mode	= lan78xx_set_multicast,
+ 	.ndo_set_features	= lan78xx_set_features,
+ 	.ndo_vlan_rx_add_vid	= lan78xx_vlan_rx_add_vid,
+-- 
+2.25.0
 
 
 _______________________________________________
