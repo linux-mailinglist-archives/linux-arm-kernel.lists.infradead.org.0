@@ -2,105 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 732231442DD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 18:11:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4F391442E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 18:11:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AON6fJd39Sk+MLvdqIaosPjD70Dnehl8TyGh6BRIQjw=; b=XFJARDfMxt1HPO
-	x5QxeFZoiHWDin0+zWOQO8Snd7hk/aBhPTQltL/NNNwKis2nH7RV7ryLL5W0Sh1967bn5g+FSzpto
-	mzovFV1pbvAxmZgOU9Guwbb/JIcSdHNQnhw6axCC+r11A+qtGxkPmexpEbuAk5IcM7HgM3CK/kHrK
-	l9IYT4z6Jq7wA0JNuIdKstyUTICxK8HI7EBYg8Q6c4ROcOYnKbinZjc03m6G8IhyB2jE70NOvrtoy
-	tvM9yynuAAiOE2ENBQPy+Oxm8NDIi/aR1qb49hFivLTjS6Qw8f8kgVR0BTmQsFQPkChfoGkKUG1JT
-	AGJs7bSTQ2iT4ZuPheKw==;
+	List-Owner; bh=gK0DN4v/LDAk9qGgAZuHaXDDxO29SXaM7vkhuGQT5o8=; b=dKhygD+io+tiXA
+	CQ/1JoUb7x+zpUrzm/6T2WhITCL6uyb8WCjHXnzoLYZUoIWQ0gc0CH4bwuC5BpBZa3bDoOVJ9qwSM
+	OggOgfuPq44oQlvWYBGnQPOdfUygbLl5fQir8o43uAyuqIFYBFKAl4d/L79xm81iAEZTnfnz8r8Om
+	ld6tlVMH65eNdizQGDfisqfJUmkcGzNafVd67rmaqYUSnN0jZf4RNMmYtf9VopNZR6MG1SuSVk92H
+	uinlrCK3z8FMIH0pPpRSmL3LPjBBnD8z6C8DMSFpp+Hq0MlC3P5sZ8MuLR/eQ1KkAWgP8dPDD1xyc
+	ERBEQOcrz+tuZTW2WogA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itx3l-0006ZQ-S1; Tue, 21 Jan 2020 17:11:25 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1itx48-0006pT-Bv; Tue, 21 Jan 2020 17:11:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itx3Z-0006Vf-Ms
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 17:11:18 +0000
-Received: by mail-wr1-x444.google.com with SMTP id z3so4150482wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 09:11:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZGs+4DUJDSvBqJ//fVqMbttGqRoxAKV0f+ErvAbm5L8=;
- b=EBsH58uX53UDW9/nRW8udKKKe06jKEr+n8gx6G9QSL2/NkKdjeoB1bVKUP6O/x3ouq
- cTuUJxlAHY5gB1+bQaH0jRnZtsfVFtunbtbfIspa/qvNnhkdCnLlq/zmIMUQN05k1DDG
- q+2M++veTbrYCoMSPp8GUjGatjIR2yq4peoPTH1U3X1y5nbegNcANqKY37WwRQM90+6M
- xu2TVvJo6hrsAneOloOPEw01LAQk3lB+2RXhKTeZmVGrV5j7dNi+GjcilaACOkvK+ac9
- SheTyjSLBZEoulkJdX9aGjip+T9fcLoaOtpf1XiEsfb9T0+56H8sqtuUxEdhNfUO8TmB
- kACQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZGs+4DUJDSvBqJ//fVqMbttGqRoxAKV0f+ErvAbm5L8=;
- b=WzS7cT3qHnfreVM65/2clfJY+lguKeasiCwGi0h9/XH1ek3bSpgBxufcvlj0M25RNJ
- /itz7Y1PaFj1poLurqzgBNFNPBp0XdxSA4Ssuyg6EasmGV1oCUKnysY+saEEIUgWFR35
- tiE0ApxYgDeOiE1rlHykLvcDlfBLvmzm2ijus10bx4o2qvLs8Mcy1dHga/khkmFJYX/V
- h9rDvFYbxzRqMK2s8jnmXhdD6vVUiSxbP11MRW7qBg1dEghdQErd1xVbT196eofV/rGQ
- vTBrSZHUrjPAp26YQ2TUn5KDOVABaLj1Af0a0BzTQe9s06zDfmXZgeX1+QKaV0X7kaZr
- sj3Q==
-X-Gm-Message-State: APjAAAU+F8OhPLvTD0oEem21Ni+Qtp2mL+imAPVfR5yiPL1W4OugZHLz
- rcy2xFR6vjicMuUtr1Iiu2Nq4UnmpZ1UnjoQ
-X-Google-Smtp-Source: APXvYqxOw+/RCexAIK0/PEftnp59kp31SffdYzOIBv9fhO0Pd8QkKlcd4t1De7O+sOSBJ2kmnvIsaQ==
-X-Received: by 2002:a5d:5491:: with SMTP id h17mr6324330wrv.374.1579626671678; 
- Tue, 21 Jan 2020 09:11:11 -0800 (PST)
-Received: from cheddar.halon.org.uk (cheddar.halon.org.uk. [93.93.131.118])
- by smtp.gmail.com with ESMTPSA id z83sm33634wmg.2.2020.01.21.09.11.11
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 Jan 2020 09:11:11 -0800 (PST)
-Received: from bsmtp by cheddar.halon.org.uk with local-bsmtp (Exim 4.89)
- (envelope-from <steve.mcintyre@linaro.org>)
- id 1itx3W-000263-Qo; Tue, 21 Jan 2020 17:11:10 +0000
-Received: from steve by tack.einval.org with local (Exim 4.92)
- (envelope-from <steve.mcintyre@linaro.org>)
- id 1itx3I-0001fB-Ld; Tue, 21 Jan 2020 17:10:56 +0000
-Date: Tue, 21 Jan 2020 17:10:56 +0000
-From: Steve McIntyre <steve.mcintyre@linaro.org>
-To: Frank Rowand <frowand.list@gmail.com>
-Subject: Re: [RFC PATCH 0/3] Add device tree build information
-Message-ID: <20200121171048.GF6796@tack.einval.com>
-References: <20200113181625.3130-1-alexandre.torgue@st.com>
- <f21ad44d-f119-2035-b4ee-16b3619879af@gmail.com>
- <233e0a5f-d38f-908c-5ca7-66ee87d0fcae@st.com>
- <7cfd0bc0-13fd-98ea-9bfd-6cfbbfd77b6d@gmail.com>
- <220e3aea-b273-417a-69c9-059236c888af@st.com>
- <a1233cd8-e73a-82d7-74bf-69109d1a0a07@gmail.com>
- <20200120182837.GO3697@linaro.org>
- <f09ce50c-6721-c9d3-4f27-3f98a2d0b183@gmail.com>
+ id 1itx3r-0006ko-2k; Tue, 21 Jan 2020 17:11:38 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 457E2206A2;
+ Tue, 21 Jan 2020 17:11:26 +0000 (UTC)
+Date: Tue, 21 Jan 2020 12:11:24 -0500
+From: Steven Rostedt <rostedt@goodmis.org>
+To: lukasz.luba@arm.com
+Subject: Re: [PATCH 3/4] thermal: devfreq_cooling: Refactor code and switch
+ to use Energy Model
+Message-ID: <20200121121124.1a1f3175@gandalf.local.home>
+In-Reply-To: <20200116152032.11301-4-lukasz.luba@arm.com>
+References: <20200116152032.11301-1-lukasz.luba@arm.com>
+ <20200116152032.11301-4-lukasz.luba@arm.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f09ce50c-6721-c9d3-4f27-3f98a2d0b183@gmail.com>
-X-attached: none
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-wibble: sender_address steve.mcintyre@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_091113_779754_20B40CC1 
-X-CRM114-Status: GOOD (  14.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_091131_142483_585E10D4 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,64 +65,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Michal Marek <michal.lkml@markovi.net>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kbuild@vger.kernel.org,
- Masahiro Yamada <masahiroy@kernel.org>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org, sjg@chromium.org,
- devicetree-compiler@vger.kernel.org, david@gibson.dropbear.id.au
+Cc: nm@ti.com, juri.lelli@redhat.com, daniel.lezcano@linaro.org,
+ peterz@infradead.org, viresh.kumar@linaro.org, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, khilman@kernel.org,
+ agross@kernel.org, b.zolnierkie@samsung.com, steven.price@arm.com,
+ cw00.choi@samsung.com, mingo@redhat.com, linux-imx@nxp.com,
+ rui.zhang@intel.com, mgorman@suse.de, daniel@ffwll.ch,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, Chris.Redpath@arm.com, linux-omap@vger.kernel.org,
+ Dietmar.Eggemann@arm.com, linux-arm-kernel@lists.infradead.org,
+ airlied@linux.ie, javi.merino@arm.com, tomeu.vizoso@collabora.com,
+ qperret@google.com, sboyd@kernel.org, shawnguo@kernel.org, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, sudeep.holla@arm.com,
+ patrick.bellasi@matbug.net, ionela.voinescu@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Adding lakml to the CC list ]
+On Thu, 16 Jan 2020 15:20:31 +0000
+lukasz.luba@arm.com wrote:
 
-On Mon, Jan 20, 2020 at 09:20:55PM -0600, Frank Rowand wrote:
->On 1/20/20 12:28 PM, Steve McIntyre wrote:
->> On Mon, Jan 20, 2020 at 10:14:22AM -0600, Frank Rowand wrote:
->>> On 1/20/20 4:56 AM, Alexandre Torgue wrote:
->>>
->>> Here is an example of the info from one of my builds:
->>>
->>>   From Linux 5.5.0-rc2-dirty by frowand the Mon Jan 20 09:50:58 CST 2020.
->>>
->>> The information 'Linux 5.5.0-rc2-dirty' is precisely what was most objected
->>> to in my proposal.
->> 
->> ACK. :-( I'm surprised to see so much push-back on what looks like a
->> simple piece of information here.
->
->Me too.
+> diff --git a/include/trace/events/thermal.h b/include/trace/events/thermal.h
+> index 135e5421f003..8a5f04888abd 100644
+> --- a/include/trace/events/thermal.h
+> +++ b/include/trace/events/thermal.h
+> @@ -153,31 +153,30 @@ TRACE_EVENT(thermal_power_cpu_limit,
+>  TRACE_EVENT(thermal_power_devfreq_get_power,
+>  	TP_PROTO(struct thermal_cooling_device *cdev,
+>  		 struct devfreq_dev_status *status, unsigned long freq,
+> -		u32 dynamic_power, u32 static_power, u32 power),
+> +		u32 power),
+>  
+> -	TP_ARGS(cdev, status,  freq, dynamic_power, static_power, power),
+> +	TP_ARGS(cdev, status,  freq, power),
+>  
+>  	TP_STRUCT__entry(
+>  		__string(type,         cdev->type    )
+>  		__field(unsigned long, freq          )
+> -		__field(u32,           load          )
+> -		__field(u32,           dynamic_power )
+> -		__field(u32,           static_power  )
+> +		__field(u32,           busy_time)
+> +		__field(u32,           total_time)
+>  		__field(u32,           power)
+>  	),
+>  
+>  	TP_fast_assign(
+>  		__assign_str(type, cdev->type);
+>  		__entry->freq = freq;
+> -		__entry->load = (100 * status->busy_time) / status->total_time;
+> -		__entry->dynamic_power = dynamic_power;
+> -		__entry->static_power = static_power;
+> +		__entry->busy_time = status->busy_time;
+> +		__entry->total_time = status->total_time;
+>  		__entry->power = power;
+>  	),
+>  
+> -	TP_printk("type=%s freq=%lu load=%u dynamic_power=%u static_power=%u power=%u",
+> +	TP_printk("type=%s freq=%lu load=%u power=%u",
+>  		__get_str(type), __entry->freq,
+> -		__entry->load, __entry->dynamic_power, __entry->static_power,
+> +		__entry->total_time == 0 ? 0 :
+> +			(100 * __entry->busy_time) / __entry->total_time,
+>  		__entry->power)
+>  );
+>  
 
-So, looking at the comments back on the old thread...
+Tracing updates look fine to me. Having the division on the output
+makes more sense.
 
-Alexandre is proposing somthing slightly different here: a patch to
-add a simple string to allow for a description of where the DTB came
-from. The particular example he uses here fills in build details from
-the Linux repo, but it could just as easily be filled in as part of a
-U-Boot build, or the build of a DTB included with EDK2, or whatever
-other firmware might include it. It might be useful to also add
-similar debug output into U-Boot, or for that matter any other
-DT-using project.
+Reviewed-by: Steven Rostedt (VMware) <rostedt@goodmis.org> # for tracing code
 
-As Rob says later, it's simply information for humans to help identify
-where a DTB came from. Nothing more.
-
->> I've had users *specifically* asking for this kind of identification
->> so that they can verify the version of the DTB they're using at
->> runtime. Right now it can be a guessing game, which does not help
->> people trying to debug problems.
->
->If the information was reported as debug information via pr_debug(),
->would that work for your use case?  Or would the users' kernels
->not have debug enabled in the configuration?
-
-Quite possibly not - I'm not 100% sure to be honest. :-/
-
--- 
-Steve McIntyre                                steve.mcintyre@linaro.org
-<http://www.linaro.org/> Linaro.org | Open source software for ARM SoCs
-
+-- Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
