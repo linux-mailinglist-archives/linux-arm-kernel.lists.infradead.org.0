@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C39C01446CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:01:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD3361446CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:02:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jAT5lUCwVBjvVvfLlW9/O4IZhhunwaDBeHehXFhD/nM=; b=EZE6l7WGdOZIkM
-	AkjAq5XVRm+MKlA/9OxdRIOZbkGfk/nWkJzmMJ332jSfPXD723abtkZ3DVGfZfxtzT521gJ2seaEm
-	R4VZlPqeUGmKXMOHRPbKTrWvOvqQyuJIckg1qzdnbKr72KdKynVQAGy9bZYdE7a9r9nx9BJT90UCi
-	vdw7CR8JNvO/kdIBhHXaxaDZsHRLKCkKKNJIKDYIQM5yp2vnq6QDFQtoUpptjR32Zj433ubKHhAS3
-	INUQj2XAkkmGBD+qJCPJKmQCTrUxL0rNnzi57Pnup0SKAGzvha9MHmsjeTo9bNqk4zgPRpGAtXZdV
-	pYe/Yk7cVIyBdZFLiOvg==;
+	List-Owner; bh=7jG8Egck0E32qX/LbGenh+g5yuNRXEq6XzhOF/lXJbQ=; b=iMkH1g0eGbaJFZ
+	NEZqta/KQ1iwHBe3l0Z2lhLi+c3o4i8UEqUk0pG+KTb/0x43nKRRabHNOy8PZvNU7ytzqW20jRdzL
+	S12r4YTeuAsolHf+GCSW+h2/GGEf6vUef5Olcap+eegghzKuH5fM1qjhFyoQsLM00bXh/DpNvYuid
+	m/qm2gbls0+Gy/xpz6OAdE9DDhm0qgthsJC1VJPhGLm6aRILFwBJUoYqq/uiXWH4AGBdbFToKqn/d
+	T+a6QqYTnQ1EL6o9e+hbGybd+Kx7wJrDtwr/OmVELSFUJgR8Tzcxchpc7W/dVCir1YbiC0kcyXQOa
+	asskOsyqV6XrMILrXC9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu1aa-0005v6-31; Tue, 21 Jan 2020 22:01:36 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iu1ax-0006B1-Q8; Tue, 21 Jan 2020 22:01:59 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu1a8-0005cx-7E
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 22:01:14 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k4so4178744oik.2
+ id 1iu1ab-00064g-NP
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 22:01:39 +0000
+Received: by mail-ot1-f65.google.com with SMTP id i15so4461234oto.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 14:01:08 -0800 (PST)
+ Tue, 21 Jan 2020 14:01:36 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0Ir79vLg3FoHaHwlmcCw656rkZCmfJ7cHN0A8fbeWIs=;
- b=taUyiY5BncBIeA6yVwjkKN3XZkDjTkb4ekC48BN6u81X2AFknTuGQU4/z88360nY9I
- 5TZB+jECm3RftPPO7eNHbjYg3FBSGVozqymYJHCsT0qBT4lFtvTJF71eBJOco7qMm0LM
- MXrG1Y9TtC5nqQkiZ19uoeO2owonsgZHbwXWC/jsi60YBeNGuYexIdqvEVT8M9a4xJ5/
- ClctyhJWOFoNLg/9g8nqAQbo8oq+w+gIA3PeNGXpRAgS2UJlz5nCbz+NFEUk06yGB0Oh
- oYi2aAgo65LtGwCLaf8O/PEFNaZanQ9RRT8dKJ3X4fmcFAee9aFbKP8LXh0ZhairK8Z1
- 2s/g==
-X-Gm-Message-State: APjAAAW9GCq6xeIaOBiXEn+mp2VbAscoEu1sZyNj1MvaVpbVHqXUcSof
- bVb5IH1Zq/Gz8mvnd40jJw==
-X-Google-Smtp-Source: APXvYqw+acre/6tfGHQEKYTUqEH5WDUyB6vxhmpXiYsDnWp+R0PRuG7hQ7iZAnQdG7hRP9jTrhc9WQ==
-X-Received: by 2002:aca:4fc2:: with SMTP id d185mr4696608oib.33.1579644067350; 
- Tue, 21 Jan 2020 14:01:07 -0800 (PST)
+ bh=WLamrH1KcwfwPOF7XObLexp7z6M67I0bzxIY4IB2VTI=;
+ b=MbpEbRidhiTGRchgj0a4i+Et4h0N+TcIydRcOCCb7vC6Gq8BPVWnsABiBHXOx7y2Yc
+ 5MvGzf4tINwgnOLwvBfwZe2kyGXPR/XO+v8RjJre9wHwGmYx35oQw7REi/HS1gey9B6q
+ VhMWPBT+DoLkxtccan6jfPjmbBvrrh7Tb+yKpveJhj+zzRNyBO0MZH5BmFRpRXZEteZo
+ dUEv1SQNLFmWtRET09j+7UZdXUvWNdLJwtDMZXDE5+2l3b/PFBn49lGkxPIzjcX72FgJ
+ oV5RCRqKUGPuf4bkJkdMSqsPuxrvCb/nnXENbAYIvsiGNCDc/1PVCqGASSBszGdwzKgs
+ 5WlA==
+X-Gm-Message-State: APjAAAUVgyEnXCoHhznVdzj+ZViE1Fdq9BiTLz38OURLafveVZhmv78f
+ WQC8n2hKwYjYjQLEUmUOEg==
+X-Google-Smtp-Source: APXvYqwYUtpnZeBhFJqfIbqggpjOxvmlOgiW69hH8RKvbBjceT9T20olL0zhaSZwIuY0rUy9QYz9lw==
+X-Received: by 2002:a05:6830:4b9:: with SMTP id
+ l25mr5244408otd.266.1579644095826; 
+ Tue, 21 Jan 2020 14:01:35 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n17sm13942596otq.46.2020.01.21.14.01.06
+ by smtp.gmail.com with ESMTPSA id g19sm13994048otj.1.2020.01.21.14.01.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 21 Jan 2020 14:01:06 -0800 (PST)
-Received: (nullmailer pid 14562 invoked by uid 1000);
- Tue, 21 Jan 2020 22:01:05 -0000
-Date: Tue, 21 Jan 2020 16:01:05 -0600
+ Tue, 21 Jan 2020 14:01:35 -0800 (PST)
+Received: (nullmailer pid 15322 invoked by uid 1000);
+ Tue, 21 Jan 2020 22:01:34 -0000
+Date: Tue, 21 Jan 2020 16:01:34 -0600
 From: Rob Herring <robh@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2 2/3] dt-bindings: clock: Convert i.MX8MM to json-schema
-Message-ID: <20200121220105.GA14466@bogus>
+Subject: Re: [PATCH V2 3/3] dt-bindings: clock: Refine i.MX8MN clock binding
+Message-ID: <20200121220134.GA15267@bogus>
 References: <1578965167-31588-1-git-send-email-Anson.Huang@nxp.com>
- <1578965167-31588-2-git-send-email-Anson.Huang@nxp.com>
+ <1578965167-31588-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1578965167-31588-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1578965167-31588-3-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_140108_287274_87B3E50F 
-X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-CacheID: sfid-20200121_140137_844010_AE306DBD 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,18 +106,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 14 Jan 2020 09:26:06 +0800, Anson Huang wrote:
-> Convert the i.MX8MM clock binding to DT schema format using json-schema
+On Tue, 14 Jan 2020 09:26:07 +0800, Anson Huang wrote:
+> Refine i.MX8MN clock binding by removing useless content and
+> updating the example, it makes all i.MX8M SoCs' clock binding
+> aligned.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
 > No change.
 > ---
->  .../devicetree/bindings/clock/imx8mm-clock.txt     | 29 ---------
->  .../devicetree/bindings/clock/imx8mm-clock.yaml    | 68 ++++++++++++++++++++++
->  2 files changed, 68 insertions(+), 29 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/clock/imx8mm-clock.txt
->  create mode 100644 Documentation/devicetree/bindings/clock/imx8mm-clock.yaml
+>  .../devicetree/bindings/clock/imx8mn-clock.yaml    | 48 +---------------------
+>  1 file changed, 2 insertions(+), 46 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
