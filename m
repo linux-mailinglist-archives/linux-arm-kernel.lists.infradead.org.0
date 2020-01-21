@@ -2,89 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 829F11445BA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 21:16:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE0EE1445EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 21:30:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Dv1Ekb4KOADfazO1i3flKgvEV4t/ed9mSI7q/5qoVUA=; b=lqXBR2OLihR1C/gQE5Yz2GPgeQ
-	YSUXt4Jym9vGvWsvdHDOz9YLhrV3PlOFRurb/1R/+XVm3LYNUy/63MucwuPJcKSqVJYxU4WPDkIHd
-	x4FNRQMRBi9DGMZimM2ZN87jHe/72Vo00lm26txwkffIXGj2FT4pcochNJO3KltpAksIcCnbp/IXd
-	36b2mCqITes23TOe/SeWZ6GeXCiCo8NP5e6egmhXGP8G09Emq0N5OE+dePI9RIr/K6NLpSxJInhmC
-	EKXnFBOvEu+jEM48HncCST6UUN4sUrMH+bpczs5980AJawz5LYbu2/T6Kup69DuyavVEr5A4mB2JA
-	mOIrt9sw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tnz/3g+KAuqkOWamSs0DFOgtpBgsyFaVmbYCdoPQmwc=; b=V5VZcub53AfhBV
+	RIvv/jmYphlVvYTyKPCVbgmY/GbfZLMjIkxRgY3iv0n41Oyb1w2ZEfJ0clH3ja92guaZvepVd7QBn
+	3Ztw+9Y9vTmWMIpNkA95X8ajeiCF/pNPGkAQeYh5ljLbL/5am0B9zfNVee6Di8zpsqMsrCCEmMZhQ
+	0/deqBTg0kmodmD6gODPat7wFDP+KJV759zb77lp8/v58FLgz4M5gyH4Z7s8vbKK8kf+cQBEioXzW
+	sw86e6XPJAWm9XJF6ypmQ+zh4kkSaljdbyH5J6mlSiwrmboUR9k3cDo4wyAI3wpxeSLoJw9/A0Zyi
+	ic136C+/SiwdIuhZW8pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itzwl-0001nL-JY; Tue, 21 Jan 2020 20:16:23 +0000
-Received: from outgoing2.flk.host-h.net ([188.40.0.84])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itzw8-0001Pz-Iz; Tue, 21 Jan 2020 20:15:51 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam3-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itzvt-0003Gw-7S; Tue, 21 Jan 2020 22:15:29 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itzvs-0005QX-St; Tue, 21 Jan 2020 22:15:28 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] ARM: dts: rockchip: enable rga for rk3229-xms6
-Date: Tue, 21 Jan 2020 20:11:46 +0000
-Message-Id: <20200121201146.18038-3-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200121201146.18038-1-justin.swartz@risingedge.co.za>
-References: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
- <20200121201146.18038-1-justin.swartz@risingedge.co.za>
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.02)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fKZ8wcD78QFAaYhvfMzLIKpSDasLI4SayDByyq9LIhVfuKK9Uo1uWoA
- /NXuXmiXP0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
- f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
- qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18acHt4EDyAWDRJ7+/jIjTbbaAVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- ttWGem52QLIiDo2hv5/Q58JTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMaed1BaNkB2/QnXFItfl/CVLQy1gvJYzH+CgV/G6e/ic38NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- fozMcmxsshwvmyhbp6p25CNmKIxse/51so+LHYWZWygiXmbjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_121544_628365_789C44A7 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [188.40.0.84 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+	id 1iu09h-0006qh-Ux; Tue, 21 Jan 2020 20:29:45 +0000
+Received: from [31.161.184.35] (helo=worktop.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iu09W-0006q1-59; Tue, 21 Jan 2020 20:29:34 +0000
+Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 25FB9980E43; Tue, 21 Jan 2020 21:29:19 +0100 (CET)
+Date: Tue, 21 Jan 2020 21:29:19 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+Message-ID: <20200121202919.GM11457@worktop.programming.kicks-ass.net>
+References: <20191125210709.10293-1-alex.kogan@oracle.com>
+ <20191125210709.10293-4-alex.kogan@oracle.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191125210709.10293-4-alex.kogan@oracle.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,39 +47,310 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
+ linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
+ bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
+ daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable RGA for Mecer Xtreme Mini S6.
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+various notes and changes in the below.
+
 ---
- arch/arm/boot/dts/rk3229-xms6.dts | 4 ++++
- 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
-index 679fc2b00..894f64a4a 100644
---- a/arch/arm/boot/dts/rk3229-xms6.dts
-+++ b/arch/arm/boot/dts/rk3229-xms6.dts
-@@ -202,6 +202,10 @@
- 	status = "okay";
+Index: linux-2.6/kernel/locking/qspinlock.c
+===================================================================
+--- linux-2.6.orig/kernel/locking/qspinlock.c
++++ linux-2.6/kernel/locking/qspinlock.c
+@@ -598,10 +598,10 @@ EXPORT_SYMBOL(queued_spin_lock_slowpath)
+ #define _GEN_CNA_LOCK_SLOWPATH
+ 
+ #undef pv_wait_head_or_lock
+-#define pv_wait_head_or_lock		cna_pre_scan
++#define pv_wait_head_or_lock		cna_wait_head_or_lock
+ 
+ #undef try_clear_tail
+-#define try_clear_tail			cna_try_change_tail
++#define try_clear_tail			cna_try_clear_tail
+ 
+ #undef mcs_pass_lock
+ #define mcs_pass_lock			cna_pass_lock
+Index: linux-2.6/kernel/locking/qspinlock_cna.h
+===================================================================
+--- linux-2.6.orig/kernel/locking/qspinlock_cna.h
++++ linux-2.6/kernel/locking/qspinlock_cna.h
+@@ -8,37 +8,37 @@
+ /*
+  * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
+  *
+- * In CNA, spinning threads are organized in two queues, a main queue for
++ * In CNA, spinning threads are organized in two queues, a primary queue for
+  * threads running on the same NUMA node as the current lock holder, and a
+- * secondary queue for threads running on other nodes. Schematically, it
+- * looks like this:
++ * secondary queue for threads running on other nodes. Schematically, it looks
++ * like this:
+  *
+  *    cna_node
+- *   +----------+    +--------+        +--------+
+- *   |mcs:next  | -> |mcs:next| -> ... |mcs:next| -> NULL      [Main queue]
+- *   |mcs:locked| -+ +--------+        +--------+
++ *   +----------+     +--------+         +--------+
++ *   |mcs:next  | --> |mcs:next| --> ... |mcs:next| --> NULL  [Primary queue]
++ *   |mcs:locked| -.  +--------+         +--------+
+  *   +----------+  |
+- *                 +----------------------+
+- *                                        \/
++ *                 `----------------------.
++ *                                        v
+  *                 +--------+         +--------+
+- *                 |mcs:next| -> ...  |mcs:next|          [Secondary queue]
++ *                 |mcs:next| --> ... |mcs:next|            [Secondary queue]
+  *                 +--------+         +--------+
+  *                     ^                    |
+- *                     +--------------------+
++ *                     `--------------------'
+  *
+- * N.B. locked = 1 if secondary queue is absent. Othewrise, it contains the
++ * N.B. locked := 1 if secondary queue is absent. Othewrise, it contains the
+  * encoded pointer to the tail of the secondary queue, which is organized as a
+  * circular list.
+  *
+  * After acquiring the MCS lock and before acquiring the spinlock, the lock
+- * holder scans the main queue looking for a thread running on the same node
+- * (pre-scan). If found (call it thread T), all threads in the main queue
++ * holder scans the primary queue looking for a thread running on the same node
++ * (pre-scan). If found (call it thread T), all threads in the primary queue
+  * between the current lock holder and T are moved to the end of the secondary
+- * queue.  If such T is not found, we make another scan of the main queue when
+- * unlocking the MCS lock (post-scan), starting at the node where pre-scan
++ * queue.  If such T is not found, we make another scan of the primary queue
++ * when unlocking the MCS lock (post-scan), starting at the node where pre-scan
+  * stopped. If both scans fail to find such T, the MCS lock is passed to the
+  * first thread in the secondary queue. If the secondary queue is empty, the
+- * lock is passed to the next thread in the main queue.
++ * lock is passed to the next thread in the primary queue.
+  *
+  * For more details, see https://arxiv.org/abs/1810.05600.
+  *
+@@ -49,8 +49,8 @@
+ struct cna_node {
+ 	struct mcs_spinlock	mcs;
+ 	int			numa_node;
+-	u32			encoded_tail;
+-	u32			pre_scan_result; /* 0 or encoded tail */
++	u32			encoded_tail;    /* self */
++	u32			partial_order;
  };
  
-+&rga {
-+	status = "okay";
-+};
+ static void __init cna_init_nodes_per_cpu(unsigned int cpu)
+@@ -66,7 +66,7 @@ static void __init cna_init_nodes_per_cp
+ 		cn->encoded_tail = encode_tail(cpu, i);
+ 		/*
+ 		 * @encoded_tail has to be larger than 1, so we do not confuse
+-		 * it with other valid values for @locked or @pre_scan_result
++		 * it with other valid values for @locked or @partial_order
+ 		 * (0 or 1)
+ 		 */
+ 		WARN_ON(cn->encoded_tail <= 1);
+@@ -92,8 +92,8 @@ static int __init cna_init_nodes(void)
+ }
+ early_initcall(cna_init_nodes);
+ 
+-static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
+-				       struct mcs_spinlock *node)
++static inline bool cna_try_clear_tail(struct qspinlock *lock, u32 val,
++				      struct mcs_spinlock *node)
+ {
+ 	struct mcs_spinlock *head_2nd, *tail_2nd;
+ 	u32 new;
+@@ -106,7 +106,9 @@ static inline bool cna_try_change_tail(s
+ 	 * Try to update the tail value to the last node in the secondary queue.
+ 	 * If successful, pass the lock to the first thread in the secondary
+ 	 * queue. Doing those two actions effectively moves all nodes from the
+-	 * secondary queue into the main one.
++	 * secondary queue into the primary one.
++	 *
++	 * XXX: reformulate, that's just confusing.
+ 	 */
+ 	tail_2nd = decode_tail(node->locked);
+ 	head_2nd = tail_2nd->next;
+@@ -116,6 +118,9 @@ static inline bool cna_try_change_tail(s
+ 		/*
+ 		 * Try to reset @next in tail_2nd to NULL, but no need to check
+ 		 * the result - if failed, a new successor has updated it.
++		 *
++		 * XXX: figure out what how where..
++		 * XXX: cns_pass_lock() does something relared
+ 		 */
+ 		cmpxchg_relaxed(&tail_2nd->next, head_2nd, NULL);
+ 		arch_mcs_pass_lock(&head_2nd->locked, 1);
+@@ -126,7 +131,7 @@ static inline bool cna_try_change_tail(s
+ }
+ 
+ /*
+- * cna_splice_tail -- splice nodes in the main queue between [first, last]
++ * cna_splice_tail -- splice nodes in the primary queue between [first, last]
+  * onto the secondary queue.
+  */
+ static void cna_splice_tail(struct mcs_spinlock *node,
+@@ -153,77 +158,56 @@ static void cna_splice_tail(struct mcs_s
+ }
+ 
+ /*
+- * cna_scan_main_queue - scan the main waiting queue looking for the first
+- * thread running on the same NUMA node as the lock holder. If found (call it
+- * thread T), move all threads in the main queue between the lock holder and
+- * T to the end of the secondary queue and return 0; otherwise, return the
+- * encoded pointer of the last scanned node in the primary queue (so a
+- * subsequent scan can be resumed from that node)
++ * cna_order_queue - scan the primary queue looking for the first lock node on
++ * the same NUMA node as the lock holder and move any skipped nodes onto the
++ * secondary queue.
+  *
+- * Schematically, this may look like the following (nn stands for numa_node and
+- * et stands for encoded_tail).
+- *
+- *   when cna_scan_main_queue() is called (the secondary queue is empty):
+- *
+- *  A+------------+   B+--------+   C+--------+   T+--------+
+- *   |mcs:next    | -> |mcs:next| -> |mcs:next| -> |mcs:next| -> NULL
+- *   |mcs:locked=1|    |cna:nn=0|    |cna:nn=2|    |cna:nn=1|
+- *   |cna:nn=1    |    +--------+    +--------+    +--------+
+- *   +----------- +
+- *
+- *   when cna_scan_main_queue() returns (the secondary queue contains B and C):
+- *
+- *  A+----------------+    T+--------+
+- *   |mcs:next        | ->  |mcs:next| -> NULL
+- *   |mcs:locked=C.et | -+  |cna:nn=1|
+- *   |cna:nn=1        |  |  +--------+
+- *   +--------------- +  +-----+
+- *                             \/
+- *          B+--------+   C+--------+
+- *           |mcs:next| -> |mcs:next| -+
+- *           |cna:nn=0|    |cna:nn=2|  |
+- *           +--------+    +--------+  |
+- *               ^                     |
+- *               +---------------------+
++ * Returns 0 if a matching node is found; otherwise return the encoded pointer
++ * to the last element inspected (such that a subsequent scan can continue there).
+  *
+  * The worst case complexity of the scan is O(n), where n is the number
+  * of current waiters. However, the amortized complexity is close to O(1),
+  * as the immediate successor is likely to be running on the same node once
+  * threads from other nodes are moved to the secondary queue.
++ *
++ * XXX does not compute; given equal contention it should average to O(nr_nodes).
+  */
+-static u32 cna_scan_main_queue(struct mcs_spinlock *node,
+-			       struct mcs_spinlock *pred_start)
++static u32 cna_order_queue(struct mcs_spinlock *node,
++			   struct mcs_spinlock *iter)
+ {
++	struct cna_node *cni = (struct cna_node *)READ_ONCE(iter->next);
+ 	struct cna_node *cn = (struct cna_node *)node;
+-	struct cna_node *cni = (struct cna_node *)READ_ONCE(pred_start->next);
++	int nid = cn->numa_node;
+ 	struct cna_node *last;
+-	int my_numa_node = cn->numa_node;
+ 
+ 	/* find any next waiter on 'our' NUMA node */
+ 	for (last = cn;
+-	     cni && cni->numa_node != my_numa_node;
++	     cni && cni->numa_node != nid;
+ 	     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
+ 		;
+ 
+-	/* if found, splice any skipped waiters onto the secondary queue */
+-	if (cni) {
+-		if (last != cn)	/* did we skip any waiters? */
+-			cna_splice_tail(node, node->next,
+-					(struct mcs_spinlock *)last);
+-		return 0;
+-	}
++	if (!cna)
++		return last->encoded_tail; /* continue from here */
 +
- &sdmmc {
- 	cap-mmc-highspeed;
- 	disable-wp;
--- 
-2.11.0
++	if (last != cn)	/* did we skip any waiters? */
++		cna_splice_tail(node, node->next, (struct mcs_spinlock *)last);
+ 
+-	return last->encoded_tail;
++	return 0;
+ }
+ 
+-__always_inline u32 cna_pre_scan(struct qspinlock *lock,
+-				  struct mcs_spinlock *node)
++/* abuse the pv_wait_head_or_lock() hook to get some work done */
++static __always_inline u32 cna_wait_head_or_lock(struct qspinlock *lock,
++						 struct mcs_spinlock *node)
+ {
+ 	struct cna_node *cn = (struct cna_node *)node;
+ 
+-	cn->pre_scan_result = cna_scan_main_queue(node, node);
++	/*
++	 * Try and put the time otherwise spend spin waiting on
++	 * _Q_LOCKED_PENDING_MASK to use by sorting our lists.
++	 */
++	cn->partial_order = cna_order_queue(node, node);
+ 
+-	return 0;
++	return 0; /* we lied; we didn't wait, go do so now */
+ }
+ 
+ static inline void cna_pass_lock(struct mcs_spinlock *node,
+@@ -231,33 +215,27 @@ static inline void cna_pass_lock(struct
+ {
+ 	struct cna_node *cn = (struct cna_node *)node;
+ 	struct mcs_spinlock *next_holder = next, *tail_2nd;
+-	u32 val = 1;
++	u32 partial_order = cn->partial_order;
++	u32 val = _Q_LOCKED_VAL;
+ 
+-	u32 scan = cn->pre_scan_result;
++	/* cna_wait_head_or_lock() left work for us. */
++	if (partial_order) {
++		partial_order = cna_order_queue(node, decode_tail(partial_order));
+ 
+-	/*
+-	 * check if a successor from the same numa node has not been found in
+-	 * pre-scan, and if so, try to find it in post-scan starting from the
+-	 * node where pre-scan stopped (stored in @pre_scan_result)
+-	 */
+-	if (scan > 0)
+-		scan = cna_scan_main_queue(node, decode_tail(scan));
+-
+-	if (!scan) { /* if found a successor from the same numa node */
++	if (!partial_order) {		/* ordered; use primary queue */
+ 		next_holder = node->next;
+-		/*
+-		 * we unlock successor by passing a non-zero value,
+-		 * so set @val to 1 iff @locked is 0, which will happen
+-		 * if we acquired the MCS lock when its queue was empty
+-		 */
+-		val = node->locked ? node->locked : 1;
+-	} else if (node->locked > 1) {	  /* if secondary queue is not empty */
++		val |= node->locked;	/* preseve secondary queue */
++
++	} else if (node->locked > 1) {	/* try secondary queue */
++
+ 		/* next holder will be the first node in the secondary queue */
+ 		tail_2nd = decode_tail(node->locked);
+ 		/* @tail_2nd->next points to the head of the secondary queue */
+ 		next_holder = tail_2nd->next;
+-		/* splice the secondary queue onto the head of the main queue */
++		/* splice the secondary queue onto the head of the primary queue */
+ 		tail_2nd->next = next;
++
++		// XXX cna_try_clear_tail also does something like this
+ 	}
+ 
+ 	arch_mcs_pass_lock(&next_holder->locked, val);
 
 
 _______________________________________________
