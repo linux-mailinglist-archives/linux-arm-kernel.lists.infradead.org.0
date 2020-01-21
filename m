@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06CE143B0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:31:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81415143B0C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:31:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RCVc7wyJVYCgAjOuL9FRbNoHEkuV1+3cceigI5TRd7g=; b=Y2+pYlZJBIdHT9
-	Yi5LXPYomRGP8xMSY1qSpIuKZ0nU95GdR9Hfeixw/KIaOvM9fyVw9WYR+h4ib10rK6IViFkqYrllZ
-	+DGwsLTMHSQxMfpNDHY/Nisd8tOLa8UFfdT/KKdKnGq/q/iCgxITTH62TYiusRVH5ER6ZDNXShOAl
-	sfi5wkBgcW4eO+6xPYBhjUL7xJRwzmJ4ztleDbsrJ8yx136VXPpmQ/sSdFK49gHG0dZDYyfkAtjOf
-	43zt3OCltZBF1fX5TKbQxkdhaNrAccJyy26T8c3ta0fOztjqwjU1Lu9AXSF4JA+v7i0cNl4u9PpHM
-	T/+EjvziqfUOn3r3y74g==;
+	List-Owner; bh=cYfPkFOwdvMKO/U2JRMS+9hlnCqtipRT/Xr6HCIc864=; b=pTBLjK6ny2fW2v
+	Grw47o+Zm0bhwjetMqeWWkn9EvuUJxSJ4DSnFIBzgvPUFKyNnOfbBJVBh8u65TulqbTGHKHlRxD14
+	YeoCSTYBWVodSTUk75k+7ugvr1odtzio4YEkPbQq4PE1LAWpruLQSP1CC3+W1+a9NM7pIAWChHVeG
+	k8MWxtXWybwPJsCEDqDxJdYJqMrtcmlAGB/n7t7N9mknM12Ha+J/tfvqGgCZVy6CtIVIUsd7RXHa5
+	gUYspp/ThZGP6ETZGFOG/DLEFzWHTFX/cDglKpV1Xbp1zwFsDwSDG7onaKZANvDj+BD2ziSrqx1Kw
+	NagQETpC9LZXTiipBHmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqoo-0007v2-2t; Tue, 21 Jan 2020 10:31:34 +0000
+	id 1itqp1-00088f-Pc; Tue, 21 Jan 2020 10:31:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqoC-0007eU-7N
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:31:04 +0000
+ id 1itqoM-0007me-Sw
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:31:11 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE2B620700;
- Tue, 21 Jan 2020 10:30:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF3F820700;
+ Tue, 21 Jan 2020 10:31:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579602655;
- bh=m2TZeehd4HPkhbBqRD/zh5m873xVDQ+5aGttOrBjQ0w=;
+ s=default; t=1579602666;
+ bh=N1HxnG/W4GZnfj2DenmFwgX2DtvNPyZxVMKAKfJlmz8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2mzmvBEeEvcT2iFNTRAAwzrpYy2fdyk5chBvqELCWZS8je3dYlGeSAZ/OfSPK73AK
- vDq+zdLQnvz/YX2YLCc86dj69AtrApmhJ9U4O2DGmISlqGdQ1JnqXtNx3VP3Rg+Sq1
- igQoiuY9sF8TuGun7lIb5bLRlBpyuT5Ib6ux3YiQ=
-Date: Tue, 21 Jan 2020 10:30:50 +0000
+ b=IDgmkdso1XFVu4goBxxQPBXW2ZDKmgJeRPD37rrmhkiuwL+jP5taHeOygiaL5RagY
+ u4gX0dwoARX09mIC0pXLD+lUkvD8jOqx30nZiAj/lUYcTasJce7cNOaxq6nlnYkiNT
+ UPFELFZzjmZGQoiBurD+VQdYfyhqaXO4M7NEhLpU=
+Date: Tue, 21 Jan 2020 10:31:01 +0000
 From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [RFC v5 56/57] arm64: entry: Avoid empty alternatives entries
-Message-ID: <20200121103050.GD11154@willie-the-truck>
+To: Julien Thierry <jthierry@redhat.com>
+Subject: Re: [RFC v5 00/57] objtool: Add support for arm64
+Message-ID: <20200121103101.GE11154@willie-the-truck>
 References: <20200109160300.26150-1-jthierry@redhat.com>
- <20200109160300.26150-57-jthierry@redhat.com>
- <20200109165145.GI3112@lakrids.cambridge.arm.com>
+ <20200112084258.GA44004@ubuntu-x2-xlarge-x86>
+ <d5bf34f0-22cc-ba46-41b4-96a52d7acfa4@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200109165145.GI3112@lakrids.cambridge.arm.com>
+In-Reply-To: <d5bf34f0-22cc-ba46-41b4-96a52d7acfa4@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_023056_395046_238B9A13 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20200121_023106_966327_78AAC7C0 
+X-CRM114-Status: GOOD (  18.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,30 +78,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <jthierry@redhat.com>, peterz@infradead.org,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org, raphael.gault@arm.com,
- jpoimboe@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: peterz@infradead.org, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, raphael.gault@arm.com, jpoimboe@redhat.com,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 09, 2020 at 04:51:46PM +0000, Mark Rutland wrote:
-> On Thu, Jan 09, 2020 at 04:02:59PM +0000, Julien Thierry wrote:
-> > kernel_ventry will create alternative entries to potentially replace
-> > 0 instructions with 0 instructions for EL1 vectors. While this does not
-> > cause an issue, it pointlessly takes up some bytes in the alternatives
-> > section.
+On Mon, Jan 13, 2020 at 07:57:48AM +0000, Julien Thierry wrote:
+> On 1/12/20 8:42 AM, Nathan Chancellor wrote:
+> > The 0day bot reported a couple of issues with clang with this series;
+> > the full report is available here (clang reports are only sent to our
+> > mailing lists for manual triage for the time being):
 > > 
-> > Do not generate such entries.
+> > https://groups.google.com/d/msg/clang-built-linux/MJbl_xPxawg/mWjgDgZgBwAJ
 > > 
-> > Signed-off-by: Julien Thierry <jthierry@redhat.com>
 > 
-> This looks like a sensible cleanup on its own. FWIW:
+> Thanks, I'll have a look at those.
 > 
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
+> > The first obvious issue is that this series appears to depend on a GCC
+> > plugin? I'll be quite honest, objtool and everything it does is rather
+> > over my head but I see this warning during configuration (allyesconfig):
+> > 
+> > WARNING: unmet direct dependencies detected for GCC_PLUGIN_SWITCH_TABLES
+> >    Depends on [n]: GCC_PLUGINS [=n] && ARM64 [=y]
+> >      Selected by [y]:
+> >        - ARM64 [=y] && STACK_VALIDATION [=y]
+> > 
+> > Followed by the actual error:
+> > 
+> > error: unable to load plugin
+> > './scripts/gcc-plugins/arm64_switch_table_detection_plugin.so':
+> > './scripts/gcc-plugins/arm64_switch_table_detection_plugin.so: cannot
+> > open shared object file: No such file or directory'
+> > 
+> > If this plugin is absolutely necessary and can't be implemented in
+> > another way so that clang can be used, seems like STACK_VALIDATION
+> > should only be selected on ARM64 when CONFIG_CC_IS_GCC is not zero.
+> > 
+> 
+> So currently the plugin is necessary for proper validation. One option can
+> be to just let objtool output false positives on files containing jump
+> tables when the plugin cannot be used. But overall I guess it makes more
+> sense to disable stack validation for non-gcc builds, for now.
 
-I'll pick this one up, thanks.
+Alternatively, could we add '-fno-jump-tables' to the KBUILD_CFLAGS if
+STACK_VALIDATION is selected but we're not using GCC? Is that sufficient
+to prevent generation of these things?
 
 Will
 
