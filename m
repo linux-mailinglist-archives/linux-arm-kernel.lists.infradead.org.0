@@ -2,84 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C33314356C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 02:53:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F8CE143585
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 03:00:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RNU0GcEObGnYkNjrd+Eo0kO0pbplEggFGvq0t15RnG0=; b=nMHSFs+mMWf7sU
-	5zCVCiEet/EX/Hx6T6tnOIfLkbvcgEbheMAk1cQSkO5ee7YZiLnDHMy3foFlQYEp+B0ZHPk/abTdF
-	FEKqZ2HAZlHI6MNIMtqTUibFbs+mYiCymzon76fRqGWdjxRskRdvjj6tfQNLn4ztTDpQV1G5PpNJQ
-	JiKt3qTs137g64j2VVFcos5GTTrWZx0jX1r23yRPvkD712mg4jVFFKVXRvCpCyZiOw2JCXakwJNYl
-	kcNr5RuMPdmIooNBfdRttgC9nmv1Ws6QK+dnJqJbu51KrLq1N2cmrZAMQ2FdMat6gmBGGXJUzLWq1
-	6mQDb/moqBa9euPpSDcg==;
+	List-Owner; bh=eYIuRILko9VtrZJcPpI9WqQDsjMe4mHmOTHa0QvPDA0=; b=RyiCUdDbO84Hoj
+	APRM2CDPigHdxZ9acOlFHn+3XOTgKAbJwawlayL7sqP5Q8mdjW4AN0/jkuhmFSekNK1/GIFqbYnbB
+	Q+jsic28PTTJelvjmA58/oeCJj05ig12/pkRq3o8oUfkqo/dFd5OJphn5aPyeaikGtKJMeTBjgwbp
+	rfuxxLtepCLwyW6tSstyac7+wt+LpPeSbF66Mae0Ex8QXeNEj2m1HUBe0BbgYqkIZ1CEIrccUU3yz
+	3kzkOn/zSKYd5kva2ZnceN2H78ZL8jBa0D0iy9qcr7aKxn5Dkwt+vGmUQNxGW5CUbQAgExDiVIygK
+	uoEZ61hLdXAb44x8rzdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itijf-0003YH-7h; Tue, 21 Jan 2020 01:53:43 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1itiqE-00072q-Go; Tue, 21 Jan 2020 02:00:30 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itijT-0003Xd-SU
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 01:53:33 +0000
-Received: by mail-qk1-x743.google.com with SMTP id x1so1165499qkl.12
+ id 1itiq3-00072A-7c
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 02:00:23 +0000
+Received: by mail-qk1-x742.google.com with SMTP id v195so1063872qkb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Jan 2020 17:53:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ Mon, 20 Jan 2020 18:00:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DLwWB53t6sz09f9B1uK0zwEN9SxdL7h+I/vAqzXh1rs=;
- b=IUMcFpRQ8vz/Oz098DsJ/MlfrAlkASfp0SYSePY2V0VNezU4rSDADZWDuogLY83ITE
- 6qOiftcsBHTGequV+QapUdKtSjbKt+Lu/mUFk4ZyU+XNjiuz67a5JUmyh7cgP3cDXB4u
- h3CtmwJqCqQUK9zrwgIefdFvbNJZ8pnnLyo0s=
+ :cc:content-transfer-encoding;
+ bh=upNueX43qx8SNiTkkymLpWe1nZzcm1rfEbeUh4i39po=;
+ b=IFupxmd60gC+cjVHiSKGpYfpmgQ/wjjHeohRWFcSHq/k2/sV+q9HSle4UMjyAIsz5X
+ DAZAEHs+ZHF57rw9lqwOk7NW6PPmI3eneDGvx+Ac/GusWGZkrc05xuGy8xHtuAQxV3e3
+ Geu6jk+DTGgjZLM059mWRXqskObBKD6R1MAp3SBV1r0sSIgNUqfZ1/7jlLlAb9HMqMGS
+ qjOT3GdpnWI9nD9S1ysiGOOngvVD5s0bsIAwM/NgNbrLRstU+nxKryGa2smYcPpCf6xS
+ wbCWKPjzf1eFq3GXBOl1P7eBrGk64eYgqUvtjJud8K9SaxPvM77BceJzrxrHYlQED2gL
+ mR9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DLwWB53t6sz09f9B1uK0zwEN9SxdL7h+I/vAqzXh1rs=;
- b=ZRTFh+45sNZ4nn3pPcA3iTwevxahYUnUHBAuc7CJwoJqiDsw2cZFk41ccLD+P3qm85
- s/IJY8xarwH/s/1AWnyeMsDxQOyT3+dOLJC15gV998ejTJOP40/xcIAMkWSVkCZFde8R
- Ty8Pmq2B3IV3Q6I12/te16PbRCMU5IEdNnm+03FCQgG2ZCA4OAqMQ8acvM9GwXwM8+E0
- Hzhq0K+Q48y+HNDU4e7xMJJQ4dJgIkeNtn78fII/rqCpZrxitbmlqPiQ0lsrFkpXvg/C
- OXkyzcYmHtB2IRZstRodKIRJGaEI1regpVUWEWlx+Z/FwIn62Z6D34ntsjPn+ua7Mhw2
- 356w==
-X-Gm-Message-State: APjAAAWj5eZe5KSvBTSowLWBkg3lJZurkvYaI9ZeO0AYjCgdaTh46z8z
- xDHPCntEDQMziWblqYzLRrbcjpi6GQPodMJVluw=
-X-Google-Smtp-Source: APXvYqwu+C+7GEOmDwQMJ1OCXr0L1MJ1vO3XA/YvvHsO/1Pr4qqlLpiL2FeuSh8Rtqj95aStJGWL/5FEIAlw9Nv83x8=
-X-Received: by 2002:a37:a43:: with SMTP id 64mr36517qkk.292.1579571606933;
- Mon, 20 Jan 2020 17:53:26 -0800 (PST)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=upNueX43qx8SNiTkkymLpWe1nZzcm1rfEbeUh4i39po=;
+ b=BDGKJzas8iwB0KOiegETvIR4QMsqRTYaMOVgkawjGIn7zgyyiasz8tFaVELpDArN/j
+ s88tf+zHI1XSmqAsA/TK+mOs5sCv3AXQ08DFfANgDnJ/fdd4HtOuf95UZ7R3gos/Aml4
+ cd6xU6VnEfKulQETP+yaVwMtuHW0tHD+zBWQJTag3wn3srfEE4xFqrr69fdNFAI5d0Lf
+ sFvYOwybHBRHS7+9uSI4jqIrdGiybVdDcew4NgNELBp2qI6J0hLxWK0ROvEVcXEy1wQ0
+ XrPMJda536vuEInGCFizvWSN3XJL6QXF0li0T+grplM+bB0tu0GDaq+K4XaIfcyErGYd
+ Ct6g==
+X-Gm-Message-State: APjAAAWwn7KskhqnB4Io83SpKREd7bZfE5wDZ8lRjM6vKV8pilT0/zRF
+ Nnc8czBl15Ps4MvTZCElm+s9x0rP3g+VpKDMm3U=
+X-Google-Smtp-Source: APXvYqy/kX8nvfjkwgUvD3CgwDoEmqiPhRp2Xir/IzRoqOTnx5cVtKlMi3AzJkpSEHZqIIXm0tVxDgbFh6vxtqzz3Zg=
+X-Received: by 2002:a37:5d0:: with SMTP id 199mr2327381qkf.131.1579572016362; 
+ Mon, 20 Jan 2020 18:00:16 -0800 (PST)
 MIME-Version: 1.0
-References: <20200120150113.2565-1-linux@neuralgames.com>
-In-Reply-To: <20200120150113.2565-1-linux@neuralgames.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Tue, 21 Jan 2020 01:53:15 +0000
-Message-ID: <CACPK8XfuVN3Q=npEoOP-amQS0-wemxcx6LKaHHZEsBAHzq1wzA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] hwrng: Add support for ASPEED RNG
-To: Oscar A Perez <linux@neuralgames.com>
+References: <20200120193328.17007-1-uwe@kleine-koenig.org>
+In-Reply-To: <20200120193328.17007-1-uwe@kleine-koenig.org>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Mon, 20 Jan 2020 18:01:04 -0800
+Message-ID: <CA+E=qVeEscYryOjD4FB+EH=JqFg6bVA3PHbx7sWrR7=9Zn003g@mail.gmail.com>
+Subject: Re: [PATCH] ARM: s3c24xx/rx1950: switch to atomic pwm API
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <uwe@kleine-koenig.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_175332_124178_F8CA17BB 
-X-CRM114-Status: GOOD (  22.98  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200120_180019_274851_8244A9E8 
+X-CRM114-Status: GOOD (  20.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [joel.stan[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [anarsoul[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,153 +93,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Matt Mackall <mpm@selenic.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Mon, 20 Jan 2020 at 15:12, Oscar A Perez <linux@neuralgames.com> wrote:
->
-> This minimal driver adds support for the Hardware Random Number Generator
-> that comes with the AST2400/AST2500/AST2600 SOCs from AspeedTech.
->
-> The HRNG on these SOCs uses Ring Oscillators working together to generate
-> a stream of random bits that can be read by the platform via a 32bit data
-> register.
-
-Thanks for the patch.
-
-We've been using the timeriomem-rng driver for the past few years on
-aspeed hardware. You can see how that's set up by looking at
-arch/arm/boot/dts/aspeed-g{4,5,6}.dtsi
-
-I suggest we continue to use the generic driver.
-
-Cheers,
-
-Joel
-
-
-
->
-> Signed-off-by: Oscar A Perez <linux@neuralgames.com>
-> ---
->  .../devicetree/bindings/rng/aspeed-rng.yaml   | 90 +++++++++++++++++++
->  1 file changed, 90 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/rng/aspeed-rng.yaml
->
-> diff --git a/Documentation/devicetree/bindings/rng/aspeed-rng.yaml b/Documentation/devicetree/bindings/rng/aspeed-rng.yaml
-> new file mode 100644
-> index 000000000000..06070ebe1c33
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/rng/aspeed-rng.yaml
-> @@ -0,0 +1,90 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/rng/aspeed-rng.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +
-> +title: Bindings for Aspeed Hardware Random Number Generator
-> +
-> +
-> +maintainers:
-> +  - Oscar A Perez <linux@neuralgames.com>
-> +
-> +
-> +description: |
-> +  The HRNG on the AST2400/AST2500/AST2600 SOCs from AspeedTech  uses four Ring
-> +  Oscillators working together to generate a stream of random bits that can be
-> +  read by the platform via a 32bit data register every one microsecond.
-> +  All the platform has to do is to provide to the driver the 'quality' entropy
-> +  value, the  'mode' in which the combining  ROs will generate the  stream  of
-> +  random bits and, the 'period' value that is used as a wait-time between reads
-> +  from the 32bit data register.
-> +
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +              - aspeed,ast2400-rng
-> +              - aspeed,ast2500-rng
-> +              - aspeed,ast2600-rng
-> +
-> +
-> +  reg:
-> +    description:
-> +      Base address and length of the register set of this block.
-> +      Currently 'reg' must be eight bytes wide and 32-bit aligned.
-> +
-> +    maxItems: 1
-> +
-> +
-> +  period:
-> +    description:
-> +      Wait time in microseconds to be used between reads.
-> +      The RNG on these Aspeed SOCs generates 32bit of random data
-> +      every one microsecond. Choose between 1 and n microseconds.
-> +
-> +    maxItems: 1
-> +
-> +
-> +  mode:
-> +    description:
-> +      One of the eight modes in which the four internal ROs (Ring
-> +      Oscillators)  are combined to generate a stream  of random
-> +      bits. The default mode is seven which is the default method
-> +      of combining RO random bits on these Aspeed SOCs.
-> +
-> +    maxItems: 1
-> +
-> +
-> +  quality:
-> +    description:
-> +      Estimated number of bits of entropy per 1024 bits read from
-> +      the RNG.  Note that the default quality is zero which stops
-> +      this HRNG from automatically filling the kernel's entropy
-> +      pool with data.
-> +
-> +    maxItems: 1
-> +
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - period
-> +  - quality
-> +
-> +
-> +examples:
-> +  - |
-> +    rng: hwrng@1e6e2074 {
-> +         compatible = "aspeed,ast2500-rng";
-> +         reg = <0x1e6e2074 0x8>;
-> +         period = <4>;
-> +         quality = <128>;
-> +         mode = <0x7>;
-> +    };
-> +
-> +
-> +...
-> --
-> 2.17.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBKYW4gMjAsIDIwMjAgYXQgMTE6MzMgQU0gVXdlIEtsZWluZS1Lw7ZuaWcgPHV3ZUBr
+bGVpbmUta29lbmlnLm9yZz4gd3JvdGU6Cj4KPiBTdG9wIHVzaW5nIHRoZSBsZWdhY3kgUFdNIEFQ
+SSB3aGljaCBvbmx5IHN0aWxsIGV4aXN0cyBiZWNhdXNlIHRoZXJlIGFyZQo+IHNvbWUgdXNlcnMg
+bGVmdC4KPgo+IE5vdGUgdGhpcyBjaGFuZ2UgbWFrZSB1c2Ugb2YgdGhlIGZhY3QgdGhhdCB0aGUg
+dmFsdWUgb2Ygc3RydWN0Cj4gcHdtX3N0YXRlOjpkdXR5X2N5Y2xlIGRvZXNuJ3QgbWF0dGVyIGZv
+ciBhIGRpc2FibGVkIFBXTSBhbmQgc28gaXRzIHZhbHVlCj4gY2FuIHN0YXkgY29uc3RhbnQgc2lt
+cGxpZnlpbmcgdGhlIGNvZGUgYSBiaXQuCj4KPiBBIHNpZGUgZWZmZWN0IG9mIHRoZSBjb252ZXJz
+aW9uIGlzIHRoYXQgdGhlIHB3bSBpc24ndCBzdG9wcGVkIGluCj4gcngxOTUwX2JhY2tsaWdodF9p
+bml0KCkgYnkgdGhlIGNhbGwgdG8gcHdtX2FwcGx5X2FyZ3MoKSBqdXN0IGJlZm9yZQo+IHJlZW5h
+YmxpbmcgaXQgd2hlbiByeDE5NTBfbGNkX3Bvd2VyKDEpIGlzIGNhbGxlZC4KPgo+IFNpZ25lZC1v
+ZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1d2VAa2xlaW5lLWtvZW5pZy5vcmc+CgpSZXZpZXdl
+ZC1ieTogVmFzaWx5IEtob3J1emhpY2sgPGFuYXJzb3VsQGdtYWlsLmNvbT4KCj4gLS0tCj4gIGFy
+Y2gvYXJtL21hY2gtczNjMjR4eC9tYWNoLXJ4MTk1MC5jIHwgMTkgKysrKysrKysrKysrLS0tLS0t
+LQo+ICAxIGZpbGUgY2hhbmdlZCwgMTIgaW5zZXJ0aW9ucygrKSwgNyBkZWxldGlvbnMoLSkKPgo+
+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9tYWNoLXMzYzI0eHgvbWFjaC1yeDE5NTAuYyBiL2FyY2gv
+YXJtL21hY2gtczNjMjR4eC9tYWNoLXJ4MTk1MC5jCj4gaW5kZXggMjlmOWIzNDVhNTMxLi4wM2Q4
+ZjI3Y2RjMzIgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vbWFjaC1zM2MyNHh4L21hY2gtcngxOTUw
+LmMKPiArKysgYi9hcmNoL2FybS9tYWNoLXMzYzI0eHgvbWFjaC1yeDE5NTAuYwo+IEBAIC0zNzcs
+NiArMzc3LDcgQEAgc3RhdGljIHN0cnVjdCBwd21fbG9va3VwIHJ4MTk1MF9wd21fbG9va3VwW10g
+PSB7Cj4gIH07Cj4KPiAgc3RhdGljIHN0cnVjdCBwd21fZGV2aWNlICpsY2RfcHdtOwo+ICtzdGF0
+aWMgc3RydWN0IHB3bV9zdGF0ZSBsY2RfcHdtX3N0YXRlOwo+Cj4gIHN0YXRpYyB2b2lkIHJ4MTk1
+MF9sY2RfcG93ZXIoaW50IGVuYWJsZSkKPiAgewo+IEBAIC00MjksMTUgKzQzMCwxNiBAQCBzdGF0
+aWMgdm9pZCByeDE5NTBfbGNkX3Bvd2VyKGludCBlbmFibGUpCj4KPiAgICAgICAgICAgICAgICAg
+LyogR1BCMS0+T1VUUFVULCBHUEIxLT4wICovCj4gICAgICAgICAgICAgICAgIGdwaW9fZGlyZWN0
+aW9uX291dHB1dChTM0MyNDEwX0dQQigxKSwgMCk7Cj4gLSAgICAgICAgICAgICAgIHB3bV9jb25m
+aWcobGNkX3B3bSwgMCwgTENEX1BXTV9QRVJJT0QpOwo+IC0gICAgICAgICAgICAgICBwd21fZGlz
+YWJsZShsY2RfcHdtKTsKPiArCj4gKyAgICAgICAgICAgICAgIGxjZF9wd21fc3RhdGUuZW5hYmxl
+ZCA9IGZhbHNlOwo+ICsgICAgICAgICAgICAgICBwd21fYXBwbHlfc3RhdGUobGNkX3B3bSwgJmxj
+ZF9wd21fc3RhdGUpOwo+Cj4gICAgICAgICAgICAgICAgIC8qIEdQQzAtPjAsIEdQQzEwLT4wICov
+Cj4gICAgICAgICAgICAgICAgIGdwaW9fZGlyZWN0aW9uX291dHB1dChTM0MyNDEwX0dQQygwKSwg
+MCk7Cj4gICAgICAgICAgICAgICAgIGdwaW9fZGlyZWN0aW9uX291dHB1dChTM0MyNDEwX0dQQygx
+MCksIDApOwo+ICAgICAgICAgfSBlbHNlIHsKPiAtICAgICAgICAgICAgICAgcHdtX2NvbmZpZyhs
+Y2RfcHdtLCBMQ0RfUFdNX0RVVFksIExDRF9QV01fUEVSSU9EKTsKPiAtICAgICAgICAgICAgICAg
+cHdtX2VuYWJsZShsY2RfcHdtKTsKPiArICAgICAgICAgICAgICAgbGNkX3B3bV9zdGF0ZS5lbmFi
+bGVkID0gdHJ1ZTsKPiArICAgICAgICAgICAgICAgcHdtX2FwcGx5X3N0YXRlKGxjZF9wd20sICZs
+Y2RfcHdtX3N0YXRlKTsKPgo+ICAgICAgICAgICAgICAgICBncGlvX2RpcmVjdGlvbl9vdXRwdXQo
+UzNDMjQxMF9HUEMoMCksIDEpOwo+ICAgICAgICAgICAgICAgICBncGlvX2RpcmVjdGlvbl9vdXRw
+dXQoUzNDMjQxMF9HUEMoNSksIDEpOwo+IEBAIC00OTMsMTAgKzQ5NSwxMyBAQCBzdGF0aWMgaW50
+IHJ4MTk1MF9iYWNrbGlnaHRfaW5pdChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gICAgICAgICB9Cj4K
+PiAgICAgICAgIC8qCj4gLSAgICAgICAgKiBGSVhNRTogcHdtX2FwcGx5X2FyZ3MoKSBzaG91bGQg
+YmUgcmVtb3ZlZCB3aGVuIHN3aXRjaGluZyB0bwo+IC0gICAgICAgICogdGhlIGF0b21pYyBQV00g
+QVBJLgo+ICsgICAgICAgICogVGhpcyBpcyBvbmx5IHJlcXVpcmVkIHRvIGluaXRpYWxpemUgLnBv
+bGFyaXR5OyBhbGwgb3RoZXIgdmFsdWVzIGFyZQo+ICsgICAgICAgICogZml4ZWQgaW4gdGhpcyBk
+cml2ZXIuCj4gICAgICAgICAgKi8KPiAtICAgICAgIHB3bV9hcHBseV9hcmdzKGxjZF9wd20pOwo+
+ICsgICAgICAgcHdtX2luaXRfc3RhdGUobGNkX3B3bSwgJmxjZF9wd21fc3RhdGUpOwo+ICsKPiAr
+ICAgICAgIGxjZF9wd21fc3RhdGUucGVyaW9kID0gTENEX1BXTV9QRVJJT0Q7Cj4gKyAgICAgICBs
+Y2RfcHdtX3N0YXRlLmR1dHlfY3ljbGUgPSBMQ0RfUFdNX0RVVFk7Cj4KPiAgICAgICAgIHJ4MTk1
+MF9sY2RfcG93ZXIoMSk7Cj4gICAgICAgICByeDE5NTBfYmxfcG93ZXIoMSk7Cj4gLS0KPiAyLjI0
+LjAKPgo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+PiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
