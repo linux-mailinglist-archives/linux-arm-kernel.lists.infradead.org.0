@@ -2,87 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CC3E14471F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:20:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95783144725
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:21:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RUixdyOJTQlYyvhCqnAT3lKGgumYs9m2Nku5Z6LW4AE=; b=qffPlr5a4JvMPy
-	9X4oonwhhEkZ8PS1/T89XI4d7IYVRFxdsPsQgxW35w47bpIHSSacICHXN+oiL93+lS4J5LtYycj82
-	4HGiuSMRaWlXwMpoWh88BfUz24XR90wir7ea9z2G4yI5tQz0o+kAs578tBO7BftdSNTkWtLBcZffg
-	VTxeqQ2kA2eiUga56SUDvDI7V70LlDVEyyNtpFqQ/WXhkpj/TwQNDKIV4ftO14U3Ms6Ig9GTiUi+1
-	x9Wr/2DKOoSrHAC0RXbQkI98BAS7cbIx7YK83/q96Txksm/YVjf+T76sgmNlR9LpDaVvcCp104z6L
-	ZHYKR6w7IQqoqhqB8WnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/PcCUtaEgpnYQH9hpCDmvOFTYHIgP26hXO3+Zt9hG1E=; b=BanDym0dsRYEbS
+	Oo+H/XbwBkQu1gArxzGgm3OB9VVCiMccpHypAHjoThB+YUfMFhHuENjPbfvugTLSo3LG8gbbOWkUG
+	5Mf/8qLGQ1ypknEjiSEKcmmaCgcawZT8R9WecGFxaVbupwAi8jK2/9rJFhEOV93+2EmdnvX6GGIbF
+	vW0j+VYLo5Q35RkhL2I4w9NRf5Z8uN6K1cdTTU0SfNQ6VoIDABb82CR2sIkbWDRXkfBHHRLQDSS/G
+	J4ZiH9Yp/XDfWsW3ykuvYTiCd40wB2ZU3JKZUKB2mUjIO9n5v3zbCbUYdM3IZCmx+mRRsmWA/GwLI
+	yB/VdoD9wvojoJZDCUQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu1sm-0005dS-J4; Tue, 21 Jan 2020 22:20:24 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iu1tq-0005x1-Pv; Tue, 21 Jan 2020 22:21:30 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu1sX-0005cO-UU
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 22:20:14 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k4so4229601oik.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 14:20:09 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=JYjL5Dj4sHium7MXkG5wUfXThgHrFk9aKNPtUfH5UZc=;
- b=OlSyp5aHKlhno3MkOR3BcClmoCztsZYQ+COhI39JLflTNb9pBMVhnFOW1EnYDGHOol
- lasThYmoWaOxuuL1E/gMelJNe7nw5vfnIRzUCB4yFVfAJVy5GsgkHbLGk1CSzf+MYEdx
- Af2wM0BFMVx2PBZTUpOJwoqL1RCBn8kiPF0AtItWuvV3qBjvK32INhmQwL9D7YfKKOBg
- dgzhDV9iCL5PYaczoQInKjD3SRt8HgTtHJU3iIdPp6UP9ukXPni6WqjSdON++rh/vbRs
- Ci6fw39e/uuS06OlggNP+X150IXw7w67Iy3mVLRg4I0Z/b1YJZU4Xd6EDobph+JZFwsh
- yCbQ==
-X-Gm-Message-State: APjAAAWc/NilSVxjmBHOlpUJHK0dlOKi6VUXqpgtgm4VeVbk19Mi1wrK
- diBcqSqUCbWEYU1T88DOdw==
-X-Google-Smtp-Source: APXvYqyA0cFBVl5WxqRWUAajmwQG24um1yPraaZ5cnlqeSKW61xBpYW8L1xuloSvzFgFL8RaFKDW6w==
-X-Received: by 2002:aca:5588:: with SMTP id j130mr4595173oib.122.1579645208961; 
- Tue, 21 Jan 2020 14:20:08 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id d7sm12406255oic.46.2020.01.21.14.20.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 21 Jan 2020 14:20:08 -0800 (PST)
-Received: (nullmailer pid 8896 invoked by uid 1000);
- Tue, 21 Jan 2020 22:20:07 -0000
-Date: Tue, 21 Jan 2020 16:20:07 -0600
-From: Rob Herring <robh@kernel.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH 1/2] dt-bindings: serial: Convert rs485 bindings to
- json-schema
-Message-ID: <20200121222007.GA1686@bogus>
-References: <20200114123329.3792-1-benjamin.gaignard@st.com>
- <20200114123329.3792-2-benjamin.gaignard@st.com>
+ id 1iu1tW-0005sv-RO; Tue, 21 Jan 2020 22:21:16 +0000
+Received: from mail.linser.at ([80.109.168.170] helo=phil.Hitronhub.home)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iu1tS-0005o8-S1; Tue, 21 Jan 2020 23:21:06 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org
+Subject: [PATCH v2] arm64: dts: rockchip: fix px30 lvds ports
+Date: Tue, 21 Jan 2020 23:20:54 +0100
+Message-Id: <20200121222055.4068166-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200114123329.3792-2-benjamin.gaignard@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_142009_987770_68B4FF23 
-X-CRM114-Status: GOOD (  20.66  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200121_142111_033005_6C333D05 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,123 +54,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, erwan.leray@st.com,
- mcoquelin.stm32@gmail.com, linux-serial@vger.kernel.org,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: heiko@sntech.de, Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ linux-kernel@vger.kernel.org, miquel.raynal@bootlin.com,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 14, 2020 at 01:33:28PM +0100, Benjamin Gaignard wrote:
-> Convert rs485 binding to yaml style file.
-> 
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->  Documentation/devicetree/bindings/serial/rs485.txt | 32 +--------------
->  .../devicetree/bindings/serial/rs485.yaml          | 45 ++++++++++++++++++++++
->  2 files changed, 46 insertions(+), 31 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/serial/rs485.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/serial/rs485.txt b/Documentation/devicetree/bindings/serial/rs485.txt
-> index b92592dff6dd..a7fe93efc4a5 100644
-> --- a/Documentation/devicetree/bindings/serial/rs485.txt
-> +++ b/Documentation/devicetree/bindings/serial/rs485.txt
-> @@ -1,31 +1 @@
-> -* RS485 serial communications
-> -
-> -The RTS signal is capable of automatically controlling line direction for
-> -the built-in half-duplex mode.
-> -The properties described hereafter shall be given to a half-duplex capable
-> -UART node.
-> -
-> -Optional properties:
-> -- rs485-rts-delay: prop-encoded-array <a b> where:
-> -  * a is the delay between rts signal and beginning of data sent in milliseconds.
-> -      it corresponds to the delay before sending data.
-> -  * b is the delay between end of data sent and rts signal in milliseconds
-> -      it corresponds to the delay after sending data and actual release of the line.
-> -  If this property is not specified, <0 0> is assumed.
-> -- rs485-rts-active-low: drive RTS low when sending (default is high).
-> -- linux,rs485-enabled-at-boot-time: empty property telling to enable the rs485
-> -  feature at boot time. It can be disabled later with proper ioctl.
-> -- rs485-rx-during-tx: empty property that enables the receiving of data even
-> -  while sending data.
-> -
-> -RS485 example for Atmel USART:
-> -	usart0: serial@fff8c000 {
-> -		compatible = "atmel,at91sam9260-usart";
-> -		reg = <0xfff8c000 0x4000>;
-> -		interrupts = <7>;
-> -		atmel,use-dma-rx;
-> -		atmel,use-dma-tx;
-> -		linux,rs485-enabled-at-boot-time;
-> -		rs485-rts-delay = <0 200>;		// in milliseconds
-> -	};
-> -
-> +See rs485.yaml
-> diff --git a/Documentation/devicetree/bindings/serial/rs485.yaml b/Documentation/devicetree/bindings/serial/rs485.yaml
-> new file mode 100644
-> index 000000000000..65c6a98969a8
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/serial/rs485.yaml
-> @@ -0,0 +1,45 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/serial/rs485.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: RS485 serial communications Bindings
-> +
-> +description: The RTS signal is capable of automatically controlling
-> +             line direction for the built-in half-duplex mode.
-> +             The properties described hereafter shall be given to a
-> +             half-duplex capable UART node.
-> +
-> +maintainers:
-> +  -  Rob Herring <robh@kernel.org>
-> +
-> +properties:
-> +  rs485-rts-delay:
-> +    description: prop-encoded-array <a b>
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32-matrix
-> +      - items:
-> +          items:
-> +            - description:
-> +                Delay between rts signal and beginning of data sent in milliseconds.
-> +                It corresponds to the delay before sending data.
-> +              $ref: "/schemas/types.yaml#/definitions/uint32"
+From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-This is not correct. The types only apply to whole properties.
+The lvds controller has two ports. port@0 for the connection
+to the display controller(s) and port@1 for the connection to
+the panel, so should have a ports node covering the port@x nodes.
 
-Is there a maximum? Seems like 1 sec would be more than anyone would 
-ever want?
+Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+---
+changes in v2:
+- added review from Miquel
+- removed global #address+size-cells from lvds as suggested by Robin Murphy
 
-> +              default: 0
-> +            - description:
-> +                Delay between end of data sent and rts signal in milliseconds.
-> +                It corresponds to the delay after sending data and actual release of the line.
-> +              $ref: "/schemas/types.yaml#/definitions/uint32"
-> +              default: 0
-> +
-> +  rs485-rts-active-low:
-> +    description: drive RTS low when sending (default is high).
-> +    $ref: /schemas/types.yaml#/definitions/flag
-> +
-> +  linux,rs485-enabled-at-boot-time:
-> +    description: enables the rs485 feature at boot time. It can be disabled later with proper ioctl.
-> +    $ref: /schemas/types.yaml#/definitions/flag
-> +
-> +  rs485-rx-during-tx:
-> +   description: enables the receiving of data even while sending data.
-> +   $ref: /schemas/types.yaml#/definitions/flag
-> -- 
-> 2.15.0
-> 
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 25 ++++++++++++++-----------
+ 1 file changed, 14 insertions(+), 11 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index 9b1c92132007..82bf39a8dbcc 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -413,27 +413,30 @@ io_domains: io-domains {
+ 
+ 		lvds: lvds {
+ 			compatible = "rockchip,px30-lvds";
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+ 			phys = <&dsi_dphy>;
+ 			phy-names = "dphy";
+ 			rockchip,grf = <&grf>;
+ 			rockchip,output = "lvds";
+ 			status = "disabled";
+ 
+-			port@0 {
+-				reg = <0>;
++			ports {
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 
+-				lvds_vopb_in: endpoint@0 {
++				port@0 {
+ 					reg = <0>;
+-					remote-endpoint = <&vopb_out_lvds>;
+-				};
+-
+-				lvds_vopl_in: endpoint@1 {
+-					reg = <1>;
+-					remote-endpoint = <&vopl_out_lvds>;
++					#address-cells = <1>;
++					#size-cells = <0>;
++
++					lvds_vopb_in: endpoint@0 {
++						reg = <0>;
++						remote-endpoint = <&vopb_out_lvds>;
++					};
++
++					lvds_vopl_in: endpoint@1 {
++						reg = <1>;
++						remote-endpoint = <&vopl_out_lvds>;
++					};
+ 				};
+ 			};
+ 		};
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
