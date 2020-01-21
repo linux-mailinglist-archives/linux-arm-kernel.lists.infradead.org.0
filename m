@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47DB114390C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:06:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D01CF14390E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:07:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w6m1T4koAVXl8dE/W+u8K7eoZYX5QhmL6vaDBRUl1tk=; b=dUUAL08xTmr7p/OUw528fqAI3
-	DNbJLNBzivNCSWyWrtj5tWlJowdACz86vIId1bEAOB5JCmCfyjjEhurdClfA+DlB0G9INzcxiQB0W
-	9hQXc9ej28hIGJrDTuqkixp3uzrjHcEaxq7tosYf7pYmckGhXqFsvqYLcN/8Ief10vurg5s0s+kmH
-	+EH4zgXHZS4fN61c5TNFCcLmqJVkJtTgOb/fZOMfASZY6NCT+7Vs7+mclslioTq0jIDZKUnrJ21Uj
-	19kTicPot2KUXUY6X76Syf5bSI+trPMGRCGdghoQ/lUjqDF7eVdB6jRV2nr9+e9XLsI1NdGGNZflg
-	8wt0qpRgA==;
+	 bh=mFaoZhAv79nkGJnND7JUZK0o+hbUYgawBHEBIEOn558=; b=pMd/k64bhfr8ljh+l+YxNIlJ8
+	Ahg2QPdU0iVcOp28vHJ0R+0yVG8mC6F6vTb5Y8xZkZ777IV4HsEzm/9AFkUQ3rR59Ag+TTht0OkmA
+	IWrqgPgSXLzJSGR5WGs5nxhWfKRK3o1cgoZ8TvO2l9A0Jm1aUu2aZuKAg34CCORXmh3DdgrsLSjIn
+	UVQwjXj4DvU/ZjjW91UWRx381e6u44UsNOlC0e5kaUCTHuPHNvt9V28b9R0VjOGOu8sFW3pTNzVjq
+	DEuV64cfbdIx5BCefPxWqu25/H4Vk4n1dyg6IL17+rYFhW/Zi/0d7iSkssA8M3jHX/BMKneu27dFK
+	4exQiCebQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itpUU-0004GF-Os; Tue, 21 Jan 2020 09:06:30 +0000
+	id 1itpUw-0004VU-EV; Tue, 21 Jan 2020 09:06:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itpUE-0004F1-7R
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:06:19 +0000
+ id 1itpUc-0004TU-1w
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:06:43 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78A8A217F4;
- Tue, 21 Jan 2020 09:06:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4BE9920882;
+ Tue, 21 Jan 2020 09:06:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579597573;
- bh=IP8TTw8eR6SNbEms/U3ClJl6G3JlSnBntMjeiJR+aLw=;
+ s=default; t=1579597597;
+ bh=SMoJPN5+FqZ0+fUWKubh3YgmqpeACLh4FHRRGsFD+gY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ulkwydaYKwH9sf+SVZaVUZfxrIobH2lusklXVx+kmgK+Kzk5JDwSZMEaSUrba1W69
- 63heEO5/XmOh2pRT6cDt7Mm/Io6roY0YChYpLaWIhPlgbRMXjNjyvIN1OC1MBYb8su
- IXsv/WISN1AU7847ysZLyc/zGZD20HXf0JuMnuXo=
-Date: Tue, 21 Jan 2020 10:06:11 +0100
+ b=oQFjR9hA3rph4sQuXuYQtJJFNRCsB3psfENTzdtbWz6uhCtZtdY3ZROoI1IaKN8t9
+ GlpOekS2uB6xZb921y6plLdlFF+L1olXSTJ5RIJanaNacPRvEax4r9OyKVWjbRZLW4
+ WyxaIGvotM8at2dcW/660tihti61GX/ogOij8AT8=
+Date: Tue, 21 Jan 2020 10:06:35 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH 4/9] arm64: dts: allwinner: pinebook: Sort device tree
- nodes
-Message-ID: <20200121090611.nnhfpudc2qlws6mi@gilmour.lan>
+Subject: Re: [PATCH 5/9] arm64: dts: allwinner: pinebook: Make simplefb more
+ consistent
+Message-ID: <20200121090635.ebr54xw7gecvvpce@gilmour.lan>
 References: <20200119163104.13274-1-samuel@sholland.org>
- <20200119163104.13274-4-samuel@sholland.org>
+ <20200119163104.13274-5-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20200119163104.13274-4-samuel@sholland.org>
+In-Reply-To: <20200119163104.13274-5-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_010614_284315_C1C1440F 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200121_010638_118387_A812E967 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,45 +80,46 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>,
  linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
  Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1251529835809143671=="
+Content-Type: multipart/mixed; boundary="===============7414031094560116807=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1251529835809143671==
+--===============7414031094560116807==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="kyhjvp2xlumhq76a"
+	protocol="application/pgp-signature"; boundary="wldyhqwusn2zbrwl"
 Content-Disposition: inline
 
 
---kyhjvp2xlumhq76a
+--wldyhqwusn2zbrwl
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sun, Jan 19, 2020 at 10:30:59AM -0600, Samuel Holland wrote:
-> The r_i2c node should come before r_rsb, and in any case should not
-> separate the axp803 node from its subnodes.
+On Sun, Jan 19, 2020 at 10:31:00AM -0600, Samuel Holland wrote:
+> Boards generally reference the simplefb nodes from the SoC dtsi by
+> label, not by full path. simplefb_hdmi is already like this in the
+> Pinebook DTS. Update simplefb_lcd to match.
 >
 > Signed-off-by: Samuel Holland <samuel@sholland.org>
 
 Applied, thanks!
 Maxime
 
---kyhjvp2xlumhq76a
+--wldyhqwusn2zbrwl
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXia/AwAKCRDj7w1vZxhR
-xeUkAPsHyBiBu4ddK9CKV4lDlwvilSLPKPU3fxtE40NQ0dpbtQEAj3n7bHXSXtlf
-0dJ+UHMRUsdK2cvMIHQjLcGzUq0ZogM=
-=9Udq
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXia/GwAKCRDj7w1vZxhR
+xeC9AP96PAb0ObZ8Xdyoot2Jwfnbz6i+1pLLT4ac2qO1rqLerwD9GYw/ILdszhgA
+4TJXvHZ8JCiIzN6Cy/cFctpM09+ofAY=
+=448p
 -----END PGP SIGNATURE-----
 
---kyhjvp2xlumhq76a--
+--wldyhqwusn2zbrwl--
 
 
---===============1251529835809143671==
+--===============7414031094560116807==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -130,5 +130,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1251529835809143671==--
+--===============7414031094560116807==--
 
