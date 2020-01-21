@@ -2,81 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56AE6143B5E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:48:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA202143B66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:49:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+6Der2uvqmTxrNAK2p9lfeLYDqXsMw5281CKbHBcrMM=; b=NLAmlD2U7H8r5e
-	quBvIqcA4jPgM8ov6BM0qyPSe3/K7boceSt5XNL4hsjkZ+GXwZ6543pBJkSMsyV9t7xuPfVUwB691
-	/iU49R4FvuddMtBfTA4pWk+potu15XmMzcoxFRzR0spTCzZFcItGLT1Q05Pguu4KpCurY4k5MYpM5
-	RR2eiC91CUYSlklV/YjG6axZWxEzpmJYV5rAReOcv8wNW1nd88AyHaU4LMUrwh8hs9z9PTBGZUrmH
-	Nen2kZ1uv78inpatwzuCQSDQmqAO/l4eKxpYSYJGz5Pwb4UdfbH33PM6B2wvMBxYqLtVvaSEKp4nA
-	964Ou6m9ym7iYYF0Jamg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KbT2AQDn+jZt7lr7pcWg80n5JKdoEVJDWXlrJ+eEeyM=; b=Q4qa0JZOhsiM2PLUPUkmg2xae
+	QccChyrYAEBTOpIuW9Bz2CaIBZeu1al52rL7Q4lVoBBvGGnhWC/tPxKXx3x3wW00PBJqS6dFEVONJ
+	2eiWMNSIVjRrR51DZkk+HgqzuceZMBkNgWM4fMhBD6HYgYebpLMkvdASjO4XpD0lYWVVPGNftwE7n
+	LguS1OXnlUL7UJpUc9TF1NAqC6us7SFGcZJ4HBACNm7yAPpRg5HDAFKyS86/2m7aiQsXJO7lTWIRD
+	2PXOu3P1rwUnHHYKIISHz868apeO+zaAhVAUfE2x9B93+5aRObyfiR9Y/T8kS2bOkACUWThtpk9nK
+	0WV4vGqWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itr5E-0006K2-Ps; Tue, 21 Jan 2020 10:48:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itr52-0006JQ-Vz; Tue, 21 Jan 2020 10:48:22 +0000
-X-UUID: 9576e7342f854e55aa45ea100020b9be-20200121
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=nrD/+39k4zqN28HCQYUHnInVNtyVGduO5k2QMQrSOxw=; 
- b=NKSCsxDy5MGyyxduMGB+olbe8/Rdjgb14wWL1dVqazsDql7+x5fRZih0udfkd/mlB3JDPqhSvBm2s8onF40uWloI9AgtFu8dXhFJcKdDCT53hymlA0Ge0CzO+J3sUdJqnso8LvAfMydueyXCStdV7bD1KYJ8kTVCBzvpTrnkGtQ=;
-X-UUID: 9576e7342f854e55aa45ea100020b9be-20200121
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 311389966; Tue, 21 Jan 2020 02:48:14 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 Jan 2020 02:48:13 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 Jan 2020 18:48:50 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 21 Jan 2020 18:46:44 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Bin Liu <b-liu@ti.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <Min.Guo@mediatek.com>, <Chunfeng.Yun@mediatek.com>
-Subject: [PATCH] usb: musb: tusb6010: fix a possible missing data type
- replacement
-Date: Tue, 21 Jan 2020 18:47:50 +0800
-Message-ID: <1579603670-10970-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+	id 1itr6O-0006oX-OU; Tue, 21 Jan 2020 10:49:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itr6C-0006o9-Ln; Tue, 21 Jan 2020 10:49:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 553431FB;
+ Tue, 21 Jan 2020 02:49:31 -0800 (PST)
+Received: from [10.37.12.169] (unknown [10.37.12.169])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 61FC23F6C4;
+ Tue, 21 Jan 2020 02:49:21 -0800 (PST)
+Subject: Re: [PATCH 1/4] PM / EM: and devices to Energy Model
+To: Quentin Perret <qperret@google.com>
+References: <20200116152032.11301-1-lukasz.luba@arm.com>
+ <20200116152032.11301-2-lukasz.luba@arm.com>
+ <17b77e0c-9455-0479-d37b-c57717c784c7@arm.com>
+ <20200120152804.GB164543@google.com>
+ <453034e5-f7b9-20f7-4e26-5d0d7164edd1@arm.com>
+ <20200121100854.GB157387@google.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <5621c137-7057-1d5c-646a-95707105df25@arm.com>
+Date: Tue, 21 Jan 2020 10:49:19 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200121100854.GB157387@google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_024821_036446_68302106 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_024932_798008_9BEB2FF4 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,36 +67,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- Macpaul Lin <macpaul.lin@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, daniel.lezcano@linaro.org,
+ peterz@infradead.org, viresh.kumar@linaro.org, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, khilman@kernel.org,
+ agross@kernel.org, b.zolnierkie@samsung.com, steven.price@arm.com,
+ cw00.choi@samsung.com, mingo@redhat.com, linux-imx@nxp.com,
+ rui.zhang@intel.com, mgorman@suse.de, daniel@ffwll.ch,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ Chris.Redpath@arm.com, linux-omap@vger.kernel.org,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
+ tomeu.vizoso@collabora.com, sboyd@kernel.org, shawnguo@kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+ sudeep.holla@arm.com, patrick.bellasi@matbug.net, ionela.voinescu@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace "unsigned" to "u32" for checkpatch fix to tusb_writeb().
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
----
- drivers/usb/musb/tusb6010.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/musb/tusb6010.c b/drivers/usb/musb/tusb6010.c
-index 5d449089e3ad..99890d1bbfcb 100644
---- a/drivers/usb/musb/tusb6010.c
-+++ b/drivers/usb/musb/tusb6010.c
-@@ -156,7 +156,7 @@ static u8 tusb_readb(void __iomem *addr, u32 offset)
- 	return val;
- }
- 
--static void tusb_writeb(void __iomem *addr, unsigned offset, u8 data)
-+static void tusb_writeb(void __iomem *addr, u32 offset, u8 data)
- {
- 	u16 tmp;
- 
--- 
-2.18.0
+On 1/21/20 10:08 AM, Quentin Perret wrote:
+> On Monday 20 Jan 2020 at 16:20:49 (+0000), Lukasz Luba wrote:
+>> On 1/20/20 3:28 PM, Quentin Perret wrote:
+>>> Agreed, this looks a bit confusing. It should be trivial to make
+>>> em_dev_get() (or whatever we end up calling it) work for CPUs too,
+>>> though. And we could always have a em_cpu_get(int cpu) API that is a
+>>> basically a wrapper around em_dev_get() for convenience.
+>>
+>> The problem not only here is that we have a CPU index 'int cpu'
+>> and if we ask for device like:
+>>
+>> struct device *dev = get_cpu_device(cpu);
+>>
+>> It might be not the same device that was used during the
+>> registration, when we had i.e. 4 CPUs for the same policy:
+>>
+>> int cpu_id = cpumask_first(policy->cpus);
+>> struct device *cpu_dev = get_cpu_device(cpu_id);
+>> em_register_perf_domain(cpu_dev, nr_opp, &em_cb);
+>>
+>> That's why the em_cpu_get() is different than em_get_pd(), mainly by:
+>> if (cpumask_test_cpu(cpu, em_span_cpus(em_pd)))
+>>
+>> It won't be simple wrapper, let me think how it could be handled
+>> differently than it is now.
+> 
+> Right so I suppose the easiest solution would be to do the opposite of
+> my first suggestion. That is, make em_get_pd() call em_cpu_get() if the
+> device is a CPU device, or proceed to the PD list iteration for other
+> devices. And em_cpu_get() can remain as you originally suggested (that
+> is, iterate over the PDs and test the mask).
+
+Exactly, something like:
+---------------------------->8-------------------------
+288 struct em_perf_domain *em_get_pd(struct device *dev)
+289 {
+290         struct em_device *em_dev;
+291
+292         if (IS_ERR_OR_NULL(dev))
+293                 return NULL;
+294
+295         if (_is_cpu_device(dev))
+296                 return em_cpu_get(dev->id);
+....
+------------------------8<-----------------------------
+
+> 
+> That should ensure em_get_pd() always works, em_cpu_get() is still there
+> handy for the scheduler and such, and the two EM lookup functions (for
+> CPUs or for devices) are kept cleanly separated.
+> 
+> Thoughts ?
+
+Agree. Then we can have these two functions and em_get_pd() will also
+work fine.
+
+> 
+> Thanks,
+> Quentin
+> 
+
+Regards,
+Lukasz
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
