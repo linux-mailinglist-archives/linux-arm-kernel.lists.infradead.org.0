@@ -2,89 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 661681439C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:48:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E36CD1439CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:50:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6bW+eXquVfbWi86D+9rwBgKZVA3uZbsmMPL/A5xtRlY=; b=i5+/BDm0rQZ7Up
-	u3pgP3+RXCbXaUpmOAzDkgAJMXY8+H1pS2/FZlqAdwcRQ2cFHR9eg+bN8pnlvCNntS0ESJDLflbE/
-	2bn3BnNbnv5jfDjklXOP03KzCxs68a8IzfWylAStAs98Knr/1TRLCHJgRYHw41pjb0G88ETlscqLB
-	HhcfbyzZnaSHe7KSXQB13sDVD/L10bP4XBw8vBXtz2nWiJ/MOp/2ey+Rm11wyZMiDyQgyCXQ7Ys2W
-	PwnNj0vnxDXgYFkhn1620iahfhICI4mYHralYzQM93G8G54SMxsdlQZPfbrQ8yLBNMoJuVNxK8BZ+
-	Y3Czlo9dyk1IzuqaDsgg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Date:Message-ID:Subject:From:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xbGLI3vf6+3p3FbzlLNiuq3tvkAHK7ya3v8Sv1SLcyg=; b=JUs
+	HyekPb8UBRfuL4VoEevFFFd8jiqUJFF3STVNbwl+/383soXFR2yBwo8Xe1IqezBXP0K3jfxFzhjmq
+	YCe4iiatC7qo4QaW+xOptEzbYmCiX8WdE3WTfEVB88j6ctFRGf7NbYs13dPm5BLsNTXbuPdRcQcs5
+	+aKlXi39i1bPYtimhNU3Oo9kSmdaGDBzZcscKZ70X0K0m2/D8Gbc8tAj31F7wTV+gzUIXjRV1wsIV
+	yKQbKKg/iJDiDfYw+GQI90Bs7KscNNMI5WpUR9eR59jG4iDfc41tmY/sg4Iq/HM43pZeHAf4SAc7W
+	2ams3sxungU4rKJ4l4j2JDGn8dip1pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itq8d-0005FC-An; Tue, 21 Jan 2020 09:47:59 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1itqBF-0006kw-60; Tue, 21 Jan 2020 09:50:41 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itq8N-0005E9-NF
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:47:49 +0000
-Received: by mail-ed1-f66.google.com with SMTP id l8so2373293edw.1
+ id 1itqB2-0006kF-GQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:50:34 +0000
+Received: by mail-wr1-x435.google.com with SMTP id z7so2333635wrl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 01:47:41 -0800 (PST)
+ Tue, 21 Jan 2020 01:50:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=to:cc:from:subject:autocrypt:message-id:date:user-agent
+ :mime-version; bh=q/STnKjTiQ941yaSOXLV2WPI80SGqWWrc0UoQSfv3UM=;
+ b=H3vv7oWMrgr5eBUG8LJkrXGjEHKnPjU/ubqbPWS20XhIaVg8BhU0ty9oE+iUb73unX
+ Bft/4DebuG6DPo00w+O/1GXymrxYHNMpYaYpCL5mzoBjot+De8VN15OJngR3GaePTfeo
+ RQnNwDKDfO6XScXiKmNL5BqsR8TTlCGayWLdqlnlyVpzClfdSAHUUZ2qu/vUAWv39ZLq
+ iRbw9QzOlF+c0qi07QCsy8//gy7ZF9qbUG145SOlBY/MP1GT/1Gafe4YZtwUhF/2YLMA
+ jH/gLhGO5D/cDS8Px3Lgz8agu7/ctSF6G0u+zz4S2ERzrMLSK1Y+r3Ok+0XNDZpuqcKv
+ yfhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Q8FvXmsmOg94/fTfx/mlCy1Rq0VSSnZKP/nSIul5ikI=;
- b=r9utABSlR9raKhQJptBTtf6kKTylpVjDKBNaf6gvEAQhFhd8q8Y0xj+5XbZtRzXDTJ
- iimwAx4i3/MFxIJIsuI2b8v+LJ70r6pWEt7iT+m8IlL5ZBtshNmXe0udvZ75DYzTucG0
- iOl+DoIyCxVpWeEL3nbMTPg0TZ0e6qWM2iwUNCeUVp5kP731A/21nzs1ho/1h8GX297a
- PB8HNIFtesV6BtAsp9+w/AixlZfluLT+xhq4L70nnk5ZxNx1wmxo1pcSqgRNGKY1F7Ur
- skIts5v0+Fs1iWb9SpsYp76Il/RQuJzPjpn+6IhDTv0AUHVEZaSdQc06GPHXfamYsjsk
- vHmA==
-X-Gm-Message-State: APjAAAU52nEam87PvYA2XWLAcdhQdaK6X6/grNXjxmCcz1sA6H8xoFKL
- 8uXRbnXkgLyJH0zpMD9XyJHpDlwDF/o=
-X-Google-Smtp-Source: APXvYqzlpzrSeKmsSohxnOjThRK/jyUyHA0+DITvJNEbPScKgVxoOqYxLXz4UdvsIaGr2BRgNKoqdQ==
-X-Received: by 2002:a50:93a2:: with SMTP id o31mr3139382eda.160.1579600059418; 
- Tue, 21 Jan 2020 01:47:39 -0800 (PST)
-Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com.
- [209.85.221.49])
- by smtp.gmail.com with ESMTPSA id x10sm1208967ejf.77.2020.01.21.01.47.38
- for <linux-arm-kernel@lists.infradead.org>
+ h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
+ :user-agent:mime-version;
+ bh=q/STnKjTiQ941yaSOXLV2WPI80SGqWWrc0UoQSfv3UM=;
+ b=AizqaYuoMRcnGe5bYkfv9Oo5WhDa8GqoSFW5rWjtFusjXIBsvkud505IGTzP3EGHcS
+ p9MZYJoAsKy2BfIbic5o8lW/vSSk+82wVwvAUeqYi2qz1QHGV6T/GhMYt6VPUT7Ya+pS
+ tA+lZXl1lWmYzf/dfsWgrI7o+56Gw0azNxDLYqZxnkvPJ04CHpFZcWbgm3IUc5U1RnPG
+ 9zqqI2UKCsAC6+pOiIReX5Vh6PXZmfqY+U239F5F6THSb8xQ8asf0cTx5aG25nqRdSnA
+ HzEf7EDXoUQoWlo6SAv1UkefV5qhgMMjz+tyxeVvBmA8qwBWM0Wgmvr4rlxWsvnDU5dG
+ FqzQ==
+X-Gm-Message-State: APjAAAV98BGXnSkGrGN2+qAhGXkedsGAqO8g4ePS/Oik1E3UKkuKM4nU
+ B0C8QEO7UnPCTiBA4fG0CplYHTGfTqPvXw==
+X-Google-Smtp-Source: APXvYqz7dFvu378JYpEsyk+7x72SXh7ahwWe4Ahy3o5/V0YG6dgxSVGRUov6eDMGFO7B01D95G9knw==
+X-Received: by 2002:adf:f802:: with SMTP id s2mr4438334wrp.201.1579600226096; 
+ Tue, 21 Jan 2020 01:50:26 -0800 (PST)
+Received: from [74.125.140.109] ([149.199.62.130])
+ by smtp.gmail.com with ESMTPSA id g7sm51279226wrq.21.2020.01.21.01.50.23
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 01:47:39 -0800 (PST)
-Received: by mail-wr1-f49.google.com with SMTP id g17so2413023wro.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 01:47:38 -0800 (PST)
-X-Received: by 2002:a5d:484f:: with SMTP id n15mr4146412wrs.365.1579600058155; 
- Tue, 21 Jan 2020 01:47:38 -0800 (PST)
+ Tue, 21 Jan 2020 01:50:25 -0800 (PST)
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+From: Michal Simek <monstr@monstr.eu>
+Subject: [GIT PULL] arm64: soc: ZynqMP SoC changes for v5.6
+Autocrypt: addr=monstr@monstr.eu; keydata=
+ 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
+ 0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
+Message-ID: <f6fb26f8-b00d-a3e8-bf7d-c7ff2a8483b1@monstr.eu>
+Date: Tue, 21 Jan 2020 10:50:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <da0061d1-917f-d807-a7ac-05d302d88565@gmail.com>
- <20200121094023.jywheey6sjsgrr44@gilmour.lan>
-In-Reply-To: <20200121094023.jywheey6sjsgrr44@gilmour.lan>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 21 Jan 2020 17:47:25 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65Kz0ymDapbyJ_WTebEGOs5=wkqMXUZV-mQJhdKr8ZGhA@mail.gmail.com>
-Message-ID: <CAGb2v65Kz0ymDapbyJ_WTebEGOs5=wkqMXUZV-mQJhdKr8ZGhA@mail.gmail.com>
-Subject: Re: No master_xfer_atomic for i2c-mv64xxx.c
-To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_014743_761255_05FB58C5 
-X-CRM114-Status: GOOD (  22.76  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200121_015028_693269_CB889884 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:435 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,121 +153,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory Clement <gregory.clement@bootlin.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============0685269276529178213=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 5:40 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> Hi Florian,
->
-> On Sat, Jan 18, 2020 at 08:21:43PM -0800, Florian Fainelli wrote:
-> > Happy new year to all of you!
->
-> Happy new year to you too ;)
->
-> > On a lamobo R1 (A20) the trace below can be seen by typing "halt"
-> > which makes us try to perform an i2c transaction in atomic context
-> > by the X-powers AXP20x driver while the i2c-mv64xxx.c driver does
-> > not support it.
-> >
-> > I am not familiar enough with this i2c controller to suggest a way to
-> > refactor it such that it would easily gain master_xfer_atomic support.
-> > Is this something you could look at?
-> >
-> > Thanks!
-> >
-> > [ 1617.999014] reboot: Power down
-> > [ 1618.002111] ------------[ cut here ]------------
-> > [ 1618.006752] WARNING: CPU: 0 PID: 2427 at drivers/i2c/i2c-core.h:41
-> > i2c_transfer+0x108/0x144
-> > [ 1618.015092] No atomic I2C transfer handler for 'i2c-0'
-> > [ 1618.020222] Modules linked in: pppoe ppp_async pppox ppp_generic slhc
-> > crc_ccitt cmac
-> > [ 1618.027987] CPU: 0 PID: 2427 Comm: procd Not tainted 5.5.0-rc5+ #0
-> > [ 1618.034158] Hardware name: Allwinner sun7i (A20) Family
-> > [ 1618.039376] Backtrace:
-> > [ 1618.041837] [<c0238488>] (dump_backtrace) from [<c0238710>]
-> > (show_stack+0x20/0x24)
-> > [ 1618.049400]  r7:00000029 r6:60000093 r5:00000000 r4:c10a197c
-> > [ 1618.055061] [<c02386f0>] (show_stack) from [<c096ae4c>]
-> > (dump_stack+0x9c/0xb0)
-> > [ 1618.062282] [<c096adb0>] (dump_stack) from [<c0252548>]
-> > (__warn+0xe0/0x108)
-> > [ 1618.069237]  r7:00000029 r6:00000009 r5:c075d948 r4:c0aefafc
-> > [ 1618.074895] [<c0252468>] (__warn) from [<c0252944>]
-> > (warn_slowpath_fmt+0x94/0x9c)
-> > [ 1618.082369]  r7:c075d948 r6:00000029 r5:c0aefafc r4:c0aefbc0
-> > [ 1618.088026] [<c02528b4>] (warn_slowpath_fmt) from [<c075d948>]
-> > (i2c_transfer+0x108/0x144)
-> > [ 1618.096195]  r8:00000032 r7:c10a93e4 r6:00000001 r5:ea32fd3c r4:ea945ca8
-> > [ 1618.102892] [<c075d840>] (i2c_transfer) from [<c075d9d0>]
-> > (i2c_transfer_buffer_flags+0x4c/0x5c)
-> > [ 1618.111579]  r6:eb3c6501 r5:00000001 r4:00000002
-> > [ 1618.116199] [<c075d984>] (i2c_transfer_buffer_flags) from
-> > [<c0675658>] (regmap_i2c_write+0x24/0x40)
-> > [ 1618.125229]  r4:00000002
-> > [ 1618.127768] [<c0675634>] (regmap_i2c_write) from [<c06703d8>]
-> > (_regmap_raw_write_impl+0x72c/0x908)
-> > [ 1618.136713]  r5:00000001 r4:ea8d9c00
-> > [ 1618.140291] [<c066fcac>] (_regmap_raw_write_impl) from [<c0670630>]
-> > (_regmap_bus_raw_write+0x7c/0xa0)
-> > [ 1618.149501]  r10:00000058 r9:ea32e000 r8:fee1dead r7:00000080
-> > r6:00000032 r5:c066be98
-> > [ 1618.157319]  r4:ea8d9c00
-> > [ 1618.159857] [<c06705b4>] (_regmap_bus_raw_write) from [<c066fa08>]
-> > (_regmap_write+0x7c/0x164)
-> > [ 1618.168371]  r7:ea8d9c00 r6:00000080 r5:00000032 r4:ea8d9c00
-> > [ 1618.174029] [<c066f98c>] (_regmap_write) from [<c0671294>]
-> > (regmap_write+0x4c/0x6c)
-> > [ 1618.181679]  r9:ea32e000 r8:fee1dead r7:0002e574 r6:00000080
-> > r5:00000032 r4:ea8d9c00
-> > [ 1618.189420] [<c0671248>] (regmap_write) from [<c067d0ac>]
-> > (axp20x_power_off+0x3c/0x48)
-> > [ 1618.197328]  r7:0002e574 r6:28121969 r5:c1004e90 r4:4321fedc
-> > [ 1618.202985] [<c067d070>] (axp20x_power_off) from [<c023605c>]
-> > (machine_power_off+0x34/0x38)
-> > [ 1618.211332] [<c0236028>] (machine_power_off) from [<c027850c>]
-> > (kernel_power_off+0x7c/0x80)
-> > [ 1618.219676] [<c0278490>] (kernel_power_off) from [<c02786a0>]
-> > (__do_sys_reboot+0x190/0x1f4)
-> > [ 1618.228019] [<c0278510>] (__do_sys_reboot) from [<c0278774>]
-> > (sys_reboot+0x18/0x1c)
-> > [ 1618.235669]  r8:c0201324 r7:00000058 r6:b6f69010 r5:becbbe2c r4:00000000
-> > [ 1618.242366] [<c027875c>] (sys_reboot) from [<c0201120>]
-> > (ret_fast_syscall+0x0/0x4c)
-> > [ 1618.250013] Exception stack(0xea32ffa8 to 0xea32fff0)
-> > [ 1618.255062] ffa0:                   00000000 becbbe2c fee1dead
-> > 28121969 4321fedc 0002e574
-> > [ 1618.263231] ffc0: 00000000 becbbe2c b6f69010 00000058 ffffffff
-> > 00000000 0000201d 00000001
-> > [ 1618.271398] ffe0: 0002de54 becbbd5c 0001ac8c b6f8e408
-> > [ 1618.276443] ---[ end trace 526da779414c6638 ]---
->
-> Is that on every reboot?
->
-> However, I'm not entirely sure how we could implement it without
-> sleeping. The controller is basically a state machine that triggers an
-> interrupt on each state change, so you first set the address, get an
-> interrupt, then set the direction, then you get an interrupt, etc.
->
-> I guess we could implement it using polling, but I'm not sure if
-> that's wise in an interrupt context either.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============0685269276529178213==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+ protocol="application/pgp-signature";
+ boundary="SHPY7nQos1McqnBhfy8q4Deb7BfSyNW7M"
 
-I believe that is actually how some of the other drivers handle it,
-using polling. You can mask or disable the interrupts while in the
-xfer_atomic callback, and the i2c core won't schedule two transfers
-at the same time anyway.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--SHPY7nQos1McqnBhfy8q4Deb7BfSyNW7M
+Content-Type: multipart/mixed; boundary="Z70LQ4gA3ft29t0adWoBg24sEbEZYTguV";
+ protected-headers="v1"
+From: Michal Simek <monstr@monstr.eu>
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+Cc: linux-arm <linux-arm-kernel@lists.infradead.org>
+Message-ID: <f6fb26f8-b00d-a3e8-bf7d-c7ff2a8483b1@monstr.eu>
+Subject: [GIT PULL] arm64: soc: ZynqMP SoC changes for v5.6
 
-ChenYu
+--Z70LQ4gA3ft29t0adWoBg24sEbEZYTguV
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+please pull the following patches to your tree. Description is below.
+
+Thanks,
+Michal
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c3=
+5a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://github.com/Xilinx/linux-xlnx.git tags/zynqmp-soc-for-v5.6
+
+for you to fetch changes up to ffdbae28d9d1af70b7d63ffd7827e9795cd8d0df:
+
+  drivers: soc: xilinx: Use mailbox IPI callback (2020-01-21 10:43:27 +01=
+00)
+
+----------------------------------------------------------------
+arm64: soc: ZynqMP SoC changes for v5.6
+
+- Extend firmware interface for feature checking
+- Use mailbox for communication with firmware for power management
+
+----------------------------------------------------------------
+Rajan Vaja (1):
+      dt-bindings: power: reset: xilinx: Add bindings for ipi mailbox
+
+Ravi Patel (1):
+      drivers: firmware: xilinx: Add support for feature check
+
+Tejas Patel (1):
+      drivers: soc: xilinx: Use mailbox IPI callback
+
+ Documentation/devicetree/bindings/power/reset/xlnx,zynqmp-power.txt |
+42 +++++++++++++++++++++++++++++++++++++++---
+ drivers/firmware/xilinx/zynqmp.c                                    |
+43 +++++++++++++++++++++++++++++++++++++++++++
+ drivers/soc/xilinx/Kconfig                                          |
+6 +++++-
+ drivers/soc/xilinx/zynqmp_power.c                                   |
+120
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++-------------
+ include/linux/firmware/xlnx-zynqmp.h                                |
+7 +++++++
+ 5 files changed, 201 insertions(+), 17 deletions(-)
+
+--=20
+Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
+w: www.monstr.eu p: +42-0-721842854
+Maintainer of Linux kernel - Xilinx Microblaze
+Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
+U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
+
+
+
+--Z70LQ4gA3ft29t0adWoBg24sEbEZYTguV--
+
+--SHPY7nQos1McqnBhfy8q4Deb7BfSyNW7M
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXibJWAAKCRDKSWXLKUoM
+IeVkAJ9ZLozdHxvlhUlrdcjFyAdo+M0s2wCdHjm2fbh30FsbxpFyihapix88RRQ=
+=5YX5
+-----END PGP SIGNATURE-----
+
+--SHPY7nQos1McqnBhfy8q4Deb7BfSyNW7M--
+
+
+--===============0685269276529178213==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0685269276529178213==--
+
