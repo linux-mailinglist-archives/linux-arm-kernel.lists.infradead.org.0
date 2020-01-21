@@ -2,76 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D9D5144075
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 16:25:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3716014406B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 16:24:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPV8pjr1vQHgZLs613BBkOGgI+EDJWUdmsLQRYQAKEQ=; b=RGptrlXv/0ppZH
-	21W288zAdn4qYLTSJ+z0dxo0JDA6qhBM0dlKS2XjqDfJOzLWW9Q8s9RUGJ/xKfIIyN7VXB5chyFjI
-	y7Z4JUAgsqDNhK+LNPdE6fu0LKruLp7xJ4nrc0dZNdyfmU/sJhsujS8MU3v1s7ejUSSWeLjrCYnw0
-	T7faVGB7V7A2kqDqnU4A/Vae6As0cKHxH6HYeq4MJFhG6zbZhTbt8KJNva9acm0tcMbNteSLQN7CX
-	iKoijiWz0/FSGej05RryUT+rGL47cxz1A/BHaqeemOOD4hHz6rmD2eldkBQwMVeHQTyPyNVe4juY0
-	8fegI4v6gIGrdfeeHsUQ==;
+	List-Owner; bh=EG+F6gVwRl2uJNEsAJYUb1by0InPaYeJstKs9d144QA=; b=RfGw8TAj6QPpBO
+	tqCIbxbKkh+egp32+5DpHSSesfH8LeyXiT+M3zMjKuf/lZGZthu3t9rBB/U/8/y05MHoI93wou6Bj
+	r6phEglte3Ykgf9ihdZUSgB9L5KGq2NyQYRtjLmyiQwZiGbV/F/66rW7XskCVwXXPY+9zhMWiwpeo
+	7olUMw/HuST1SFe9TvMrfFw5HAXMTJeyjp/odgqdfsYaOdaJhugRlU/Xn3aufsLGT3zqBlsSkX3cc
+	e9A4Lqkicfbuecm7Ww6X9N1MOprHhyxL3Pe61bYVUTUJW1XfcxKKn1YHFJVUNH0SyKv27gxjI6L2z
+	93xEWFu1dlHuJyG+AYbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itvP0-0002xp-Js; Tue, 21 Jan 2020 15:25:14 +0000
-Received: from conssluserg-06.nifty.com ([210.131.2.91])
+	id 1itvNy-0002el-G3; Tue, 21 Jan 2020 15:24:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itvOd-0002x3-3W
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 15:24:56 +0000
-Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com
- [209.85.222.41]) (authenticated)
- by conssluserg-06.nifty.com with ESMTP id 00LFOMQl029873
- for <linux-arm-kernel@lists.infradead.org>; Wed, 22 Jan 2020 00:24:22 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com 00LFOMQl029873
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579620263;
- bh=hT4cfrVYUNJPdXLZYNW8nx8XfS2S9IHAEXWJB9a5qQs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=M4yK3QiNsYp2WtgSLE2CSMBYuT65r8bdKaGgNUoH9A3GwxOCqXfrqgvCedtc4cHuW
- U2Ndj5mItH2ouvZh3Xy293mYrqIy+5dlbn4FlmQE6litXXljm91rDXlm6OVnjpVktA
- eXCNb9WLqUxMT2bcO+8z3KlaAjqovFNQGltKW7Mb//jkBNypFcevW2TVu782EaHopk
- 0B37JO6L7ImHPZMyFaVpSs47VyQSS3AMrGiIS2A5PQIpaZkSnV9N6ZN/LzHAbs4GJl
- ClV5OZ5HXoI41Jh9jodXw5+eJPU6lHmg6UPJghFgMpSg+TfLTzfV4sooSp4X+/oS6T
- wT5btMazsdpxQ==
-X-Nifty-SrcIP: [209.85.222.41]
-Received: by mail-ua1-f41.google.com with SMTP id 59so1113634uap.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 07:24:22 -0800 (PST)
-X-Gm-Message-State: APjAAAXgpOCxPM0cSaVzP1OWPEmEVoLRbvsUEnqC7xFqjFyJOb50Dp+G
- v6ulcI864a7CDPhWPuiUIU8utV7mACDVmeRjmxg=
-X-Google-Smtp-Source: APXvYqyVG2I15i8f1wNhUebZbsH9RXVtwMlz5AWZnFTIjvszireuTZHsziwZJOZYG1kUq0zCfifxuyjcHdP3rerRO7Q=
-X-Received: by 2002:ab0:6509:: with SMTP id w9mr3190475uam.121.1579620261607; 
- Tue, 21 Jan 2020 07:24:21 -0800 (PST)
+ id 1itvNm-0002do-Ej; Tue, 21 Jan 2020 15:24:02 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2516217F4;
+ Tue, 21 Jan 2020 15:23:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579620237;
+ bh=SPh9mzwvhAdkUs6vC0kUWXdfIIlM4+eJLXXJUm9Egv0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eAEI4U3SGvRtfioj899ov7S10ysziOtVUxEcw3jlCpLyG7LVWy/xExHC9Vxlin9s2
+ vbejJPuMBoxi2D/6GTwXEOhNsd8EiQ8q/RRAX920lIjv1B4PDWrrvOUzl5US6VABXk
+ bRXoGZUYWbrMIJw5+PlHp+kLqXerqaP4sNJudB8w=
+Date: Tue, 21 Jan 2020 16:23:55 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
+Subject: Re: [PATCH] staging: mt7621-pinctrl: Align to fix warnings of line
+ over 80 characters
+Message-ID: <20200121152355.GB572414@kroah.com>
+References: <20200121134705.GA28240@SandeshPC>
 MIME-Version: 1.0
-References: <20200121134739.22879-1-erosca@de.adit-jv.com>
-In-Reply-To: <20200121134739.22879-1-erosca@de.adit-jv.com>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Wed, 22 Jan 2020 00:23:45 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASm=7P3cJ=SB3hmPjqWTii1Lv2pf3p0xc-hx0XNTdaJHw@mail.gmail.com>
-Message-ID: <CAK7LNASm=7P3cJ=SB3hmPjqWTii1Lv2pf3p0xc-hx0XNTdaJHw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: kbuild: remove compressed images on 'make
- ARCH=arm64 (dist)clean'
-To: Eugeniu Rosca <erosca@de.adit-jv.com>
+Content-Disposition: inline
+In-Reply-To: <20200121134705.GA28240@SandeshPC>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_072451_378882_E60F3CAD 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200121_072358_513842_4D18F505 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.91 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,68 +72,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dirk Behme <dirk.behme@de.bosch.com>,
- Eugeniu Rosca <roscaeugeniu@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>, devel@driverdev.osuosl.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi.
-
-On Tue, Jan 21, 2020 at 10:48 PM Eugeniu Rosca <erosca@de.adit-jv.com> wrote:
->
-> From: Dirk Behme <dirk.behme@de.bosch.com>
->
-> Since v4.3-rc1 commit 0723c05fb75e44 ("arm64: enable more compressed
-> Image formats"), it is possible to build Image.{bz2,lz4,lzma,lzo}
-> AArch64 images. However, the commit missed adding support for removing
-> those images on 'make ARCH=arm64 (dist)clean'.
->
-> Fix this by adding them to the target list.
-> Make sure to match the order of the recipes in the makefile.
->
-> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-
-Please change Cc with my
-
-Reviewed-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-
-
-Thanks.
-
-
-> Signed-off-by: Dirk Behme <dirk.behme@de.bosch.com>
-> Signed-off-by: Eugeniu Rosca <erosca@de.adit-jv.com>
+On Tue, Jan 21, 2020 at 02:47:05PM +0100, Sandesh Kenjana Ashok wrote:
+> Issue found by checkpatch.
+> 
+> Signed-off-by: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
 > ---
->  arch/arm64/boot/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/boot/Makefile b/arch/arm64/boot/Makefile
-> index 1f012c506434..cd3414898d10 100644
-> --- a/arch/arm64/boot/Makefile
-> +++ b/arch/arm64/boot/Makefile
-> @@ -16,7 +16,7 @@
->
->  OBJCOPYFLAGS_Image :=-O binary -R .note -R .note.gnu.build-id -R .comment -S
->
-> -targets := Image Image.gz
-> +targets := Image Image.bz2 Image.gz Image.lz4 Image.lzma Image.lzo
->
->  $(obj)/Image: vmlinux FORCE
->         $(call if_changed,objcopy)
-> --
-> 2.25.0
->
+>  drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c | 11 ++++++-----
+>  1 file changed, 6 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> index d0f06790d38f..df5da5fce630 100644
+> --- a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> +++ b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> @@ -159,7 +159,8 @@ static int rt2880_pmx_group_enable(struct pinctrl_dev *pctrldev,
+>  }
+>  
+>  static int rt2880_pmx_group_gpio_request_enable(struct pinctrl_dev *pctrldev,
+> -						struct pinctrl_gpio_range *range,
+> +						struct pinctrl_gpio_range
+> +						*range,
 
+Ick, that looks worse now, right?  checkpatch is a guideline, not a
+hard-and-fast rule here.
 
--- 
-Best Regards
-Masahiro Yamada
+>  						unsigned int pin)
+>  {
+>  	struct rt2880_priv *p = pinctrl_dev_get_drvdata(pctrldev);
+> @@ -218,10 +219,10 @@ static int rt2880_pinmux_index(struct rt2880_priv *p)
+>  	p->func_count++;
+>  
+>  	/* allocate our function and group mapping index buffers */
+> -	f = p->func = devm_kcalloc(p->dev,
+> -				   p->func_count,
+> -				   sizeof(struct rt2880_pmx_func),
+> -				   GFP_KERNEL);
+> +	f = p->func;
+> +	p->func =  devm_kcalloc(p->dev, p->func_count,
+> +				sizeof(struct rt2880_pmx_func), GFP_KERNEL);
+> +
+
+You broke the code here :(
+
+Please learn a bit more about how C works before attempting to work on
+kernel code.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
