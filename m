@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2C501438F8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:05:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82A4C1438FE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 10:06:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hqihasbOyL/jH3wrv8gCYuW2s/ctyoQ6+Ch7+8a06nY=; b=E0Q1K2EoDDJ98Q
-	USefGi7x06kq8hGFC8u07R/nNHxfYLtUMrq4HH4oF/1z9V64ZX04cRZuwRM/YMcW1tCsP4i1lzx3L
-	cD8yjx4xb+jGXwzR32pGTkGB7lqvHIUmlfz8ZfPXwFICEJNG4uQaqeHg9ClTaE/Qbgr1gdVsipVlL
-	9JbsNADcifH3zeTZ5BbzH4bd0YGrgpCgxCs/pljGBwYRgyK+Wu9ACjwYyNKiBNmvNTxziJGUPPtkQ
-	xShS0iD7hsT/7SoRBhU/Z9NW7/p7G3+wj9+sc/poy2zWv5s1mcAgEnJ/Hk3i+Ju5kfs1V1QPJrpKQ
-	t6SBXDzQokH/t08eNJpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aJRJ9UxbIXV+YcB2wic8OzC3nL1vdNG9lLGaPddvE4o=; b=l8ADxKaRzqopS5hdC1bZmUxA2
+	sVYlKoU1KgIaKS3eHRRXF/y/64/qWV8LjowftP08agIQMadjwS1WEu6geg3UK1iKh5iFMnwMUZSHs
+	qsg5nnAJWEbRgH5LVGOJuA1fc1q/yDYh4Jxaim4DuWq+LfI0Y1uCC8pVHucusZ0mL1Jg2dZk0Tg8w
+	DgCyMGBMeHJjCMJLZW1q4xlHZCfb1+QaGVTvhlQRD07yQe/kgG2Zz5JuLds/IcWjAD6j3X7vfuPDG
+	3TQV1PLnmzGvyy09eQS8d7hzmgz/CN8Zzx7lw3HGNH7pT6k9w4TrAVvydBoUoMRI4R3ZNCl+L+T45
+	N+FTc+i/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itpT5-00027E-9d; Tue, 21 Jan 2020 09:05:03 +0000
+	id 1itpTv-0003zO-7a; Tue, 21 Jan 2020 09:05:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itpSU-0001sy-PW
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:04:31 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8BCB24125;
- Tue, 21 Jan 2020 09:04:24 +0000 (UTC)
+ id 1itpTi-0003yP-Eq
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 09:05:48 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F54F217F4;
+ Tue, 21 Jan 2020 09:05:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579597466;
- bh=0/vSnKkkercvxEdQWKR2hLON8AJtjT2I4490/GyPLJs=;
+ s=default; t=1579597542;
+ bh=ufmPxr7m2ZOAh3XqdfXTa6EO7d2PMRSM/BuzEtFjTC4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=A0c+ow1H1hlJAxBTCst+Smkxrf4RVkQWSG6IHDMRiuVNKnyoyHK+C0v1+dblp8Qs8
- Myj59KfEUx5bDTXQ+qa+sAJADRBh4oOF2XHGwZH5ljRRrUKSk6wtnvbtVx9tvaxBYl
- lRtyFAf9sg4ouf6R8yUvCZ7GqnknsjBD/SB67U98=
-Date: Tue, 21 Jan 2020 09:04:21 +0000
-From: Will Deacon <will@kernel.org>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v3 2/3] KVM: arm64: limit PMU version to ARMv8.4
-Message-ID: <20200121090420.GA9722@willie-the-truck>
-References: <20200102123905.29360-1-andrew.murray@arm.com>
- <20200102123905.29360-3-andrew.murray@arm.com>
- <336acb6b88c2df5e6114e6f8811687e4@kernel.org>
+ b=FHCpKBpw2Yn+olu7wRFA8zUcrS5UN1jLjBGL/V4TfJ8LrvSOCnWGfnvjLo2Aioe4R
+ yWXUDFbXIctRfT4qRw0zyiVWn+OOJHssChKbnMpBFK1QHTf4kpTcEXSi7c57s5YQOJ
+ uZ/ROTre4IGgtmrLI9WV0fAUDkVGYAqBgi/gWudg=
+Date: Tue, 21 Jan 2020 10:05:39 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [PATCH 3/9] arm64: dts: allwinner: pinebook: Remove unused
+ AXP803 regulators
+Message-ID: <20200121090539.mgswdzfharrfy5ad@gilmour.lan>
+References: <20200119163104.13274-1-samuel@sholland.org>
+ <20200119163104.13274-3-samuel@sholland.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <336acb6b88c2df5e6114e6f8811687e4@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200119163104.13274-3-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_010426_917325_42D6BBA4 
-X-CRM114-Status: GOOD (  18.12  )
+X-CRM114-CacheID: sfid-20200121_010542_516107_A08B8E60 
+X-CRM114-Status: GOOD (  17.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,80 +77,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2137574081493189861=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 20, 2020 at 05:55:17PM +0000, Marc Zyngier wrote:
-> On 2020-01-02 12:39, Andrew Murray wrote:
-> > ARMv8.5-PMU introduces 64-bit event counters, however KVM doesn't yet
-> > support this. Let's trap the Debug Feature Registers in order to limit
-> > PMUVer/PerfMon in the Debug Feature Registers to PMUv3 for ARMv8.4.
-> > 
-> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > ---
-> >  arch/arm64/include/asm/sysreg.h |  4 ++++
-> >  arch/arm64/kvm/sys_regs.c       | 36 +++++++++++++++++++++++++++++++--
-> >  2 files changed, 38 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm64/include/asm/sysreg.h
-> > b/arch/arm64/include/asm/sysreg.h
-> > index 6e919fafb43d..1b74f275a115 100644
-> > --- a/arch/arm64/include/asm/sysreg.h
-> > +++ b/arch/arm64/include/asm/sysreg.h
-> > @@ -672,6 +672,10 @@
-> >  #define ID_AA64DFR0_TRACEVER_SHIFT	4
-> >  #define ID_AA64DFR0_DEBUGVER_SHIFT	0
-> > 
-> > +#define ID_DFR0_PERFMON_SHIFT		24
-> > +
-> > +#define ID_DFR0_EL1_PMUVER_8_4		5
-> > +
-> >  #define ID_ISAR5_RDM_SHIFT		24
-> >  #define ID_ISAR5_CRC32_SHIFT		16
-> >  #define ID_ISAR5_SHA2_SHIFT		12
-> > diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> > index 9f2165937f7d..61b984d934d1 100644
-> > --- a/arch/arm64/kvm/sys_regs.c
-> > +++ b/arch/arm64/kvm/sys_regs.c
-> > @@ -668,6 +668,37 @@ static bool
-> > pmu_access_event_counter_el0_disabled(struct kvm_vcpu *vcpu)
-> >  	return check_pmu_access_disabled(vcpu, ARMV8_PMU_USERENR_ER |
-> > ARMV8_PMU_USERENR_EN);
-> >  }
-> > 
-> > +static bool access_id_aa64dfr0_el1(struct kvm_vcpu *vcpu,
-> > +				   struct sys_reg_params *p,
-> > +				   const struct sys_reg_desc *rd)
-> > +{
-> > +	if (p->is_write)
-> > +		return write_to_read_only(vcpu, p, rd);
-> > +
-> > +	/* Limit guests to PMUv3 for ARMv8.4 */
-> > +	p->regval = read_sanitised_ftr_reg(SYS_ID_AA64DFR0_EL1);
-> > +	p->regval = cpuid_feature_cap_signed_field_width(p->regval,
-> > +						ID_AA64DFR0_PMUVER_SHIFT,
-> > +						4, ID_DFR0_EL1_PMUVER_8_4);
-> > +
-> > +	return p->regval;
-> 
-> If feels very odd to return the register value in place of a something
-> that actually indicates whether we should update the PC or not. I have
-> no idea what is happening here in this case.
 
-Crikey, yes, I missed that and it probably explains why the code looks so
-odd. Andrew -- is there a missing hunk or something here?
+--===============2137574081493189861==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="hqrw2yi3mykdac3n"
+Content-Disposition: inline
 
-Will
+
+--hqrw2yi3mykdac3n
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sun, Jan 19, 2020 at 10:30:58AM -0600, Samuel Holland wrote:
+> The Pinebook does not use the CSI bus on the A64. In fact it does not
+> use GPIO port E for anything at all. Thus the following regulators are
+> not used and do not need voltages set:
+>
+>  - ALDO1: Connected to VCC-PE only
+>  - DLDO3: Not connected
+>  - ELDO3: Not connected
+>
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+>  .../boot/dts/allwinner/sun50i-a64-pinebook.dts   | 16 +---------------
+>  1 file changed, 1 insertion(+), 15 deletions(-)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> index ff32ca1a495e..8e7ce6ad28dd 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> @@ -202,9 +202,7 @@
+>  };
+>
+>  &reg_aldo1 {
+> -	regulator-min-microvolt = <2800000>;
+> -	regulator-max-microvolt = <2800000>;
+> -	regulator-name = "vcc-csi";
+> +	regulator-name = "vcc-pe";
+>  };
+
+If it's connected to PE, I'd expect the voltage to be at 3.3v?
+
+Maxime
+
+--hqrw2yi3mykdac3n
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXia+4wAKCRDj7w1vZxhR
+xdmqAQDHlf0hiHmdah98FWedObMJK0sLLs07gbOULXST732ubwEAiMm3wesL11VQ
+sadVtj5qmCxatUr+NdthMMN8FOVk6Ac=
+=uRwg
+-----END PGP SIGNATURE-----
+
+--hqrw2yi3mykdac3n--
+
+
+--===============2137574081493189861==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2137574081493189861==--
+
