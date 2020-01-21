@@ -2,57 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6313214451C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 20:28:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D94F3144567
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 20:52:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=OcQYLmJdKmrTETe2avdhSFvQ+sY4o8Dn0eomKWF0fBA=; b=tXX
-	iJBGJfMASLBt9wgSFXlBVKwv4GP5c2WAYaFW5lGFyC99JwiCFRJKEoJg/ZtDqoJqACwigo7w6U7qe
-	HMofyF/4sS+KlQQxAVmQ37FqY0rn2FqsXmAfaFRFAxBoYCbDoKEyM8BmqUoh5bpIefPtDrq8yqXR9
-	gU/Y1nE6YmUiDE8zj4NUMlqTGiqVssECDNDx0gObZZgBktfd7waH0LPOaN0kt04DbWEjPS0YIB2Ii
-	21rxngSSmPBUayq84D2ZbVlsh9c3ay5CJgtTQ/cwtDjhVHKs2NourU6WzH73VMORnjV+hRbnmVlL0
-	rr820ciGhvlXOgTsW8RrLYEnSfdrkCQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/jr5lXqMduF0NGXygj7kbp9wBwNxwGdj2kheAUGc9DE=; b=qE4v2zqTxwMpSB
+	1MWLYXfZWpHoEYTJA/RV/JAp/xLH0exnuG45JkCmj7NGHvIy+MPwj4bLot7I/lNaZbj/8CceLFAna
+	2f0tHlrY+wDJ/gvSanyFrw39z5DTR3s4yWm/mKTc1YfNg9rIGwerawvBELcCtERgFOs/U0rlx2Pty
+	D377tDRvg6Q+F4MlPKIRwDB1hyXnUx+yFoBqtLuRLOalJ8K3Y44fPilokqWJIQa3c0xQ0x5SGhobn
+	8Y7Ne2+FBIDaZ+6CRGC5HbIC6ciuzFoEtCpzBKR29PWmnw1AU55N4HseC6ElbuNFQgm3+MpC2SZuo
+	esqao6CSm0ZN7+nMdG8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itzC9-0006fb-SK; Tue, 21 Jan 2020 19:28:13 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1itzZj-0006mS-Nh; Tue, 21 Jan 2020 19:52:35 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itzBx-0006UV-7X
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 19:28:05 +0000
-Received: from ramsan ([84.195.182.253]) by laurent.telenet-ops.be with bizsmtp
- id t7Tt210045USYZQ017TtSP; Tue, 21 Jan 2020 20:27:54 +0100
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1itzBp-00037m-6H; Tue, 21 Jan 2020 20:27:53 +0100
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1itzBp-0005NH-3x; Tue, 21 Jan 2020 20:27:53 +0100
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Russell King <linux@armlinux.org.uk>, Nicolas Pitre <nico@fluxnic.net>,
- Arnd Bergmann <arnd@arndb.de>, Eric Miao <eric.miao@nvidia.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH] ARM: boot: Obtain start of physical memory from DTB
-Date: Tue, 21 Jan 2020 20:27:41 +0100
-Message-Id: <20200121192741.20597-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+ id 1itzZV-0006kn-20; Tue, 21 Jan 2020 19:52:22 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f129so4546138wmf.2;
+ Tue, 21 Jan 2020 11:52:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=zxuX1UtB2iSvDZIxFVQFKZTyCjRelb+xJCXnYV6RwPY=;
+ b=pyD7oMxb+h4jKCDHx8Zxqa3r8SpQmJ2Xi0xv8kpJVM4SCmmSXBcI+Z6rw5qTjx4OMx
+ z/xAs+8vfuVthEGaOJ8rIWttOdK4Uz21k39epbl9VGqHZAEd8djy5bShH3OIl9Pyv3o8
+ hT7lYK6/ARsKY+p3BiDduq4Nr2qio+HG+8JbHXOtaWhkyvT2tJmARM/6TJloPkJxjfEt
+ vNInaIUlgP5GwGog2HwymKIsXXlAIvVUvL+OW2DCZYxDfWr4c/oj8uO4PY9Rkx3ac3za
+ Px8ubbN0YxfyEEaiN3/DnmxizpwTA6dCqLh+7rSLrP8Gg9CcyoLrY0k2avYiuUaW1Go6
+ yLdQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=zxuX1UtB2iSvDZIxFVQFKZTyCjRelb+xJCXnYV6RwPY=;
+ b=V//vTTnI9CWAKCoGdAQPgK1PB3j3ZwaJxUHBHyLdyHcMPe1JVT962Lam3Wcs5GO3pb
+ fp9GZeRsUimk638FRemENtWBtmBMiWIhNwJQ3GYYa94Lt10IBmK4TrCStRqJlJ3WKXL7
+ MfqMe9BIc+/503iS/37qlL6fcPGmYkVGGb31nho92eEVgDjLWfEYnopeKAeKsJ0jB2j8
+ 9ZWNCFXEXLkBmiwfHQAw8ET50tBMPY6IXkatTZdNctUVv3Qt2JinXllJJ/vGMxk4iuZI
+ VPkV/NqAlyHrGL3HRarOTCR+XPaklsEKY5FnhlUCEA4gwEmon61D8Ce5BV9YHVdbQ9ko
+ TM9A==
+X-Gm-Message-State: APjAAAXr5vM9vke/tddqRPFOuYN92qRDLJMIhDin1DRMemGER11RsUoj
+ ZSOBjMMDQU+54oiQ/+Zz5PE8sVjn
+X-Google-Smtp-Source: APXvYqx5Yx5lfcaSIVQJgA5csyaAkbauM0CYPILqYoYnpAt60f+UEz9SBSMVAtMbVmDNrGfVDa98NQ==
+X-Received: by 2002:a05:600c:20f:: with SMTP id 15mr61254wmi.128.1579636339537; 
+ Tue, 21 Jan 2020 11:52:19 -0800 (PST)
+Received: from linux ([2001:7c7:212a:d400:8c86:9345:7668:6b83])
+ by smtp.gmail.com with ESMTPSA id s15sm50254070wrp.4.2020.01.21.11.52.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Jan 2020 11:52:19 -0800 (PST)
+Date: Tue, 21 Jan 2020 20:52:18 +0100
+From: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH] staging: mt7621-pinctrl: Align code by cleanup long lines
+Message-ID: <20200121195218.GA10666@SandeshPC>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_112801_423553_3A50EF17 
-X-CRM114-Status: GOOD (  15.52  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200121_115221_101846_0CBD51E7 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a02:1800:110:4:0:0:f00:19 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sandeshkenjanaashok[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,178 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, Chris Brandt <chris.brandt@renesas.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devel@driverdev.osuosl.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, the start address of physical memory is obtained by masking
-the program counter with a fixed mask of 0xf8000000.  This mask value
-was chosen as a balance between the requirements of different platforms.
-However, this does require that the start address of physical memory is
-a multiple of 128 MiB, precluding booting Linux on platforms where this
-requirement is not fulfilled.
+Cleanup lines over 80 characters in pinctrl-rt2880.c.
+Issue found by checkpatch.pl
 
-Fix this limitation by obtaining the start address from the passed DTB
-instead, if available.  Note that for now this is limited to DTBs passed
-explicitly by the boot loader.  DTBs appended to a zImage or uImage are
-not inspected.  Fall back to the traditional method when needed.
-
-This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-i.e. not at a multiple of 128 MiB.
-
-Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Signed-off-by: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
 ---
-Against arm/for-next.
+ drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Tested with the following configurations:
-  - zImage + DTB (r8a7791/koelsch): physical memory start address
-    obtained from DT,
-  - uImage + DTB (r8a73a4/ape6evm, r7s72100/rskrza1, r7s9210/rza2mevb):
-    physical memory start address obtained from DT,
-  - zImage with appended DTB (r8a7740/armadillo, sh73a0/kzm9g): physical
-    memory start address obtained by masking, as before.
-
-An appended DTB is currently processed after the start of physical
-memory is obtained.  Hence obtaining that address from an appended DTB
-requires moving/copying that copy.  Given the complexity w.r.t. the
-"restart" label, and the lack of a need for me to support this, I didn't
-implement that part.
----
- arch/arm/boot/compressed/Makefile            |  6 ++-
- arch/arm/boot/compressed/fdt_get_mem_start.c | 52 ++++++++++++++++++++
- arch/arm/boot/compressed/head.S              | 16 +++++-
- 3 files changed, 72 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm/boot/compressed/fdt_get_mem_start.c
-
-diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-index da599c3a11934332..bbfecd648a1a3b57 100644
---- a/arch/arm/boot/compressed/Makefile
-+++ b/arch/arm/boot/compressed/Makefile
-@@ -86,12 +86,15 @@ libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
- $(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
- 	$(call cmd,shipped)
+diff --git a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+index d0f06790d38f..254d4eb88f5f 100644
+--- a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
++++ b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+@@ -159,8 +159,8 @@ static int rt2880_pmx_group_enable(struct pinctrl_dev *pctrldev,
+ }
  
--$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
-+$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o fdt_get_mem_start.o): \
- 	$(addprefix $(obj)/,$(libfdt_hdrs))
+ static int rt2880_pmx_group_gpio_request_enable(struct pinctrl_dev *pctrldev,
+-						struct pinctrl_gpio_range *range,
+-						unsigned int pin)
++					struct pinctrl_gpio_range *range,
++					unsigned int pin)
+ {
+ 	struct rt2880_priv *p = pinctrl_dev_get_drvdata(pctrldev);
  
- ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
- OBJS	+= $(libfdt_objs) atags_to_fdt.o
- endif
-+ifeq ($(CONFIG_USE_OF),y)
-+OBJS	+= $(libfdt_objs) fdt_get_mem_start.o
-+endif
- 
- targets       := vmlinux vmlinux.lds piggy_data piggy.o \
- 		 lib1funcs.o ashldi3.o bswapsdi2.o \
-@@ -116,6 +119,7 @@ CFLAGS_fdt.o := $(nossp-flags-y)
- CFLAGS_fdt_ro.o := $(nossp-flags-y)
- CFLAGS_fdt_rw.o := $(nossp-flags-y)
- CFLAGS_fdt_wip.o := $(nossp-flags-y)
-+CFLAGS_fdt_get_mem_start.o := $(nossp-flags-y)
- 
- ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
- asflags-y := -DZIMAGE
-diff --git a/arch/arm/boot/compressed/fdt_get_mem_start.c b/arch/arm/boot/compressed/fdt_get_mem_start.c
-new file mode 100644
-index 0000000000000000..2c5ac47f656317ee
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_get_mem_start.c
-@@ -0,0 +1,52 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+
-+#include <libfdt.h>
-+
-+static const void *getprop(const void *fdt, const char *node_path,
-+			   const char *property)
-+{
-+	int offset = fdt_path_offset(fdt, node_path);
-+
-+	if (offset == -FDT_ERR_NOTFOUND)
-+		return NULL;
-+
-+	return fdt_getprop(fdt, offset, property, NULL);
-+}
-+
-+static uint32_t get_addr_size(const void *fdt)
-+{
-+	const __be32 *addr_len = getprop(fdt, "/", "#address-cells");
-+
-+	if (!addr_len) {
-+		/* default */
-+		return 1;
-+	}
-+
-+	return fdt32_to_cpu(*addr_len);
-+}
-+
-+/*
-+ * Get the start of physical memory
-+ */
-+
-+unsigned long fdt_get_mem_start(const void *fdt)
-+{
-+	const __be32 *memory;
-+	uint32_t addr_size;
-+
-+	if (!fdt)
-+		return -1;
-+
-+	if (*(__be32 *)fdt != cpu_to_fdt32(FDT_MAGIC))
-+		return -1;
-+
-+	/* Find the first memory node */
-+	memory = getprop(fdt, "/memory", "reg");
-+	if (!memory)
-+		return -1;
-+
-+	/* There may be multiple cells on LPAE platforms */
-+	addr_size = get_addr_size(fdt);
-+
-+	return fdt32_to_cpu(memory[addr_size - 1]);
-+}
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 927f5dc413d7dff2..cb4e6a84b156c204 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -235,8 +235,20 @@ not_angel:
- 		.text
- 
- #ifdef CONFIG_AUTO_ZRELADDR
-+#ifdef CONFIG_USE_OF
- 		/*
--		 * Find the start of physical memory.  As we are executing
-+		 * Find the start of physical memory.
-+		 * Try the passed DTB first, if available.
-+		 */
-+		mov	r0, r8
-+		bl	fdt_get_mem_start
-+		mov	r4, r0
-+		cmn	r0, #1
-+		bne	1f
-+#endif
-+
-+		/*
-+		 * Fall back to the traditional method.  As we are executing
- 		 * without the MMU on, we are in the physical address space.
- 		 * We just need to get rid of any offset by aligning the
- 		 * address.
-@@ -254,6 +266,8 @@ not_angel:
- 		 */
- 		mov	r4, pc
- 		and	r4, r4, #0xf8000000
-+
-+1:
- 		/* Determine final kernel image address. */
- 		add	r4, r4, #TEXT_OFFSET
- #else
 -- 
 2.17.1
 
