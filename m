@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 862F71446C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:01:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41FA11446CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 23:01:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dmtw6mVXUUFi5UcWIjINcSMxCGpFtXVvi+XhJf56i0A=; b=N5L9tjQKGujWWy
-	QBRLNnm1/ZK4wEJHGJJxED/gZLTxno9Ozr4As8lwq4XVDTdEhQmLYJqp7eXhp74ncOqMGT/Rj4hqW
-	HQUIFqkTVpHz2qrtSQoiaV9n2R6ECogmphUXB+a3IlfTv7pXr10jNDgDXsnCsqpx14aI2ZN10uyhQ
-	Xe3p1xqigOvoKruWLVRGMc+otjHmkf95epf7oOcjXXYAcUmCtD1P9BWnJ1vbUz12iasfbJO4S25ss
-	OY0WxA7wMSmTYmN8faepJbSHMzw2a/Fab5GyvNE8eZT0HfDmMqVzmFK0K7ZGI86w+blxWoKMjN8+Q
-	b0HlsrUEfMskb+DZ+urg==;
+	List-Owner; bh=S+IuSos0bibzsAwnduGjpj8rbyzP2nn6aiMKcf36aD8=; b=J4BqN4zT7i7C4A
+	IEIM2SpcZgewFpfznKKQ91jjn4ZhRaq38vXGJva8PNWVIoRDRGFfY8zlkOPyA41bz5mlSrWjb535n
+	BrBU0uoON6QsSncGBv/tMaBIuYQvkbOMUVwZMYIKsslBf/Rh86nrmNArFd/G/lFyAi5rwA64EibHC
+	owXpfd4wFP7Y39MaOYTybh9+23AzgKr65yI8wk+VVqvoUGODAWjtuaCJxRORG64Y+Ik33LHvbsW8b
+	aannhagj2kz807uSjOJ44LPn3dTTANDdWF8RTLyBVmyTyAKPpXCSTqnHwzCAnTDG45C6mygnnQeLR
+	h42i4GFvl9lpbTKC+bnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu1a8-0005QV-GA; Tue, 21 Jan 2020 22:01:08 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iu1aR-0005eH-3i; Tue, 21 Jan 2020 22:01:27 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu1Zi-0005Fl-AL; Tue, 21 Jan 2020 22:00:48 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 77so4425665oty.6;
- Tue, 21 Jan 2020 14:00:41 -0800 (PST)
+ id 1iu1Zn-0005ME-HM
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 22:00:53 +0000
+Received: by mail-oi1-f195.google.com with SMTP id i1so4139834oie.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Jan 2020 14:00:47 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YR+Zx3t0R9EtJawzXHJuAJ023/cuhAooUF5TnzNGC0s=;
- b=Pv5b42Wimm3Ng8iVwXGZJXw+LIF9XdW3AbDUmFJ/UTjY058UbP6ubviUvdGv1MeiDX
- KhSoUVkI8Wl9wsUSipLCjb8RRzmXVd+mbQm5mpclybN1cv2hxGryKDEetVuTMbOANF9C
- qqN08OU9noc9YSD6wtGOa9TUmFmpLm0DfJDYtfx4LIyBX1yO7jDSAAzCIquQrak0w0fD
- XtehxIpaFgXLU81aBPoLnDqR4LNSFerEPKXkL2af1rFDrvFc8jkqhY70fSdHUlSJUxpO
- jHp9sDfXfJbxsoPQjlxMSYXWP9+K1lzeqn2NU5RL342ELDvpTefVpLCBLHgKs/yNpfnJ
- iybA==
-X-Gm-Message-State: APjAAAX3QvQg3b8jy7zvvjf2Vv5CcFeE2rroRIm3fae97OIDoNJskOsU
- t5CNGBL9UU7guI2veQuYPg==
-X-Google-Smtp-Source: APXvYqxcLtKqgiW0rjqOQtnpGB4zMIDBsBFxY3KVfQ8Uv1rKit0T2fEj2ciq1t+IrUPzAInLx3dGkw==
-X-Received: by 2002:a9d:588d:: with SMTP id x13mr5021535otg.6.1579644040203;
- Tue, 21 Jan 2020 14:00:40 -0800 (PST)
+ bh=p2Aap5NFUqMa77n/+b3hDbspOjP5JJgkLK77uRQX50E=;
+ b=iS7gPWlFJ4Vp2dYoNIaSa195Rj8sZbmQqEPXPuP91YFRLekrzZeAZU2FGvv/ec7adF
+ dPazlxgfS176x0MW8BwOllhgQ3oCjExTlEMf/S/5I16rct+lAoK4SeZ0LHdAb/aF0vSJ
+ 0m1G4hARUIifSFZSgk/ZL8YdEttiNIFXWzExIRb/ne2OlRSP1Rmjo8Md4M+kDiq+2DeY
+ v5QZSNdMhtc13WeA3nLHQRa05HOOugrpOSeI9/Jx3OJnFDV2nWq8eAD7Uyto5chg6i6B
+ EN8iMUlqSFRgnYl2HWHbL6G+Bx6dd2ijM3Ilei9nCPxOWjkFjxk/nH20DTbRb/bxXXjP
+ 7dtg==
+X-Gm-Message-State: APjAAAW32t4NxMZjIb8gVY+9rn/87Tupr7VAb6r0GPJJojzYvJAFzZ77
+ shrHSAQXQN8ZWHE6Tvy6+w==
+X-Google-Smtp-Source: APXvYqxKBYMeO352fDo1BAP8tkycFEuGstxKeRhGS0pwBdWJpiC1n2wUfiMqntTT/6xQkubrVGgV4w==
+X-Received: by 2002:aca:3241:: with SMTP id y62mr4611216oiy.31.1579644046532; 
+ Tue, 21 Jan 2020 14:00:46 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 15sm9071739otv.20.2020.01.21.14.00.38
+ by smtp.gmail.com with ESMTPSA id n2sm12341870oia.58.2020.01.21.14.00.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 21 Jan 2020 14:00:39 -0800 (PST)
-Received: (nullmailer pid 13825 invoked by uid 1000);
- Tue, 21 Jan 2020 22:00:38 -0000
-Date: Tue, 21 Jan 2020 16:00:38 -0600
+ Tue, 21 Jan 2020 14:00:46 -0800 (PST)
+Received: (nullmailer pid 13995 invoked by uid 1000);
+ Tue, 21 Jan 2020 22:00:45 -0000
+Date: Tue, 21 Jan 2020 16:00:45 -0600
 From: Rob Herring <robh@kernel.org>
-To: Jian Hu <jian.hu@amlogic.com>
-Subject: Re: [PATCH v7 1/5] dt-bindings: clock: meson: add A1 PLL clock
- controller bindings
-Message-ID: <20200121220038.GA13566@bogus>
-References: <20200120034937.128600-1-jian.hu@amlogic.com>
- <20200120034937.128600-2-jian.hu@amlogic.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2 1/3] dt-bindings: clock: Convert i.MX8MQ to json-schema
+Message-ID: <20200121220045.GB13566@bogus>
+References: <1578965167-31588-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200120034937.128600-2-jian.hu@amlogic.com>
+In-Reply-To: <1578965167-31588-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_140042_396520_F9579B0A 
-X-CRM114-Status: GOOD (  10.29  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200121_140047_591018_62EA5072 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -79,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,40 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, devicetree@vger.kernel.org,
- Jian Hu <jian.hu@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- Qiufang Dai <qiufang.dai@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, Chandle Zou <chandle.zou@amlogic.com>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sboyd@kernel.org,
+ festevam@gmail.com, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 20 Jan 2020 11:49:33 +0800, Jian Hu wrote:
-> Add the documentation to support Amlogic A1 PLL clock driver,
-> and add A1 PLL clock controller bindings.
+On Tue, 14 Jan 2020 09:26:05 +0800, Anson Huang wrote:
+> Convert the i.MX8MQ clock binding to DT schema format using json-schema
 > 
-> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->  .../bindings/clock/amlogic,a1-pll-clkc.yaml   | 52 +++++++++++++++++++
->  include/dt-bindings/clock/a1-pll-clkc.h       | 16 ++++++
->  2 files changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
->  create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
+> Changes since V1:
+> 	- Correct the compatible string, should be "fsl,imx8mq-ccm";
+> ---
+>  .../devicetree/bindings/clock/imx8mq-clock.txt     | 20 ------
+>  .../devicetree/bindings/clock/imx8mq-clock.yaml    | 72 ++++++++++++++++++++++
+>  2 files changed, 72 insertions(+), 20 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/clock/imx8mq-clock.txt
+>  create mode 100644 Documentation/devicetree/bindings/clock/imx8mq-clock.yaml
 > 
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
-
-If a tag was not added on purpose, please state why and what changed.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
