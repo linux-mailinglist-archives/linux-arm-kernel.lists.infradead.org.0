@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6314D14429F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 17:58:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B086C1442AD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 18:00:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uPAyNBYaRiOotk5VU3mZHFkQ6qAxERsYvwClXGmVCXw=; b=QiQKUhI2/PTwtU
-	JLiibt2/MnZ+JqTX8MRzChWJrc+ncRpuPH62Ji/glLkd/4HTWpD8sLxYIaD/4EnEdT2GQn38wydR3
-	RDSx4YekgoXT3hnFbklwwYjRHeNSff7XukyOOlHH/vhCc9szu/EX9Y6yGOd90iYfzz+Ex+le18EXG
-	bJsUgx387ZlOfXov+1KeUebuEUeudKUw0xaCzRehM0/MuZ6MbbCRnh28ZK+ZuFv5BjeWN0Lx7SX41
-	pWiMxwtLiKTAVYY7YcM58W9YXeJUTUKjlDoIfwBTPWnVOc9S/LtjXy1Aa0fdXFyc/4B+HaZzzCU+k
-	ne0EWUqr+M4H4G7XIY3g==;
+	List-Owner; bh=5V2h/dKMEXTI8+PKQ696qXni7ewY0rdvmo6tYtGFbJ0=; b=QqjmZWPJGjbCe1
+	bYXLoAxIf9AUfHR1fqb7Ybhg+TVjTrAahpvZKLaGVbX1SdF+n994FGG63VaMRzpoxMr898XU460Bw
+	TsfKtphrcvALE/RkwzeVHX/wdA11XoyRM0QkfjssHc94FxezbGz4sbaBRc1AzyXh8hXfiB8npb88P
+	+7lkNHwJPevoD1d7npyuJh2RFhWZwW5qgM/AGPIO8TaSdFrHp9i8i3sWP+wXbpR/oDWJk1JpJIFsI
+	KC8BVHesHjcRIRQKr/rFhXpCJ2Sb9herA1KOTkUZ3UsawMTI0cQilzw/9yjpDbKCQCU0D9FpFyYlG
+	B1cXoPg8hGB4YPGQWUDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itwrF-0008WH-LH; Tue, 21 Jan 2020 16:58:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itwqz-0008RQ-RR
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 16:58:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1CF8230E;
- Tue, 21 Jan 2020 08:58:13 -0800 (PST)
-Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
- [10.1.195.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1CD3A3F6C4;
- Tue, 21 Jan 2020 08:58:12 -0800 (PST)
-Date: Tue, 21 Jan 2020 16:58:09 +0000
-From: Qais Yousef <qais.yousef@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 03/14] arm: arm64: Don't use disable_nonboot_cpus()
-Message-ID: <20200121165809.3kk3xauky4vjp5ni@e107158-lin.cambridge.arm.com>
-References: <20191125112754.25223-1-qais.yousef@arm.com>
- <20191125112754.25223-4-qais.yousef@arm.com>
- <20200121165030.xksivf6mrhsaynq2@e107158-lin.cambridge.arm.com>
- <20200121165321.GH25745@shell.armlinux.org.uk>
+	id 1itwsa-0000No-Mj; Tue, 21 Jan 2020 16:59:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itwsK-0000NI-BC
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 16:59:40 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD85824653
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Jan 2020 16:59:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579625976;
+ bh=67UyT/RfITgx2sgkiC71V9JCXQnjN5rBQ196XoeoRAY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=y6Xi5G+8HPS5hlzT24Jqcq7+r/uJrHGQM26egRRrBb6lW7oeKCC/LP2OicWrvg3Mx
+ NhjWFj1qGPDdnAxRqghmsxZYgwx4QrUCHsIr1nQw2bq/CAfIct9jGZKVNIzDsLa8cs
+ Tmr4HtbvwogbjKfq4mQbh8B+G8CSmTTAH7zOyPLA=
+Received: by mail-qt1-f179.google.com with SMTP id d5so3206887qto.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Jan 2020 08:59:35 -0800 (PST)
+X-Gm-Message-State: APjAAAUQ8Xv09gB1wtSl/8rke7WGr5HEnbfPoAl8fNNh7cv/UZjdsdER
+ uq5smeiVSvCdM2hSx0Ov/Dkt7fClbFuUAb+Yow==
+X-Google-Smtp-Source: APXvYqyW0YKFev+TMsZ33M+FWGQyCwiFJ0w1wL09bJVU2UdMXP/uG27HOHbLg/q2BOXvm1zhOFTaRXJb1v6WC/i1VNA=
+X-Received: by 2002:ac8:6747:: with SMTP id n7mr5404312qtp.224.1579625974843; 
+ Tue, 21 Jan 2020 08:59:34 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200121165321.GH25745@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20171215
+References: <20191230144402.30195-1-ulf.hansson@linaro.org>
+ <20191230144402.30195-3-ulf.hansson@linaro.org>
+ <CAL_Jsq+cAKEGOMnBwwvLt03zx8Gcxh4ijziaBnnY5TPEG0Mekg@mail.gmail.com>
+ <CAPDyKFr_7qmKjpWcFegVBsfKBJePtukuriwW-8KX6c2a24ojEA@mail.gmail.com>
+ <CAL_JsqJN3UtM9T2D71j+2CORxWjL3s7cjkFX579p85WQuKgPNA@mail.gmail.com>
+ <CAPDyKFq=0Y=79pFzxmnqA=oFbOVVJ9T2UthOie8ok5JTp7ucRw@mail.gmail.com>
+ <CAL_Jsq+NvVC0Jjb_g0SDACG0Q-wTR+w-VHEq+wzsMLyXhcjX8g@mail.gmail.com>
+ <CAPDyKFp_rMvo==2NqV6L9V_Q0Dc8Qafc=1FNb=gGxsexM8MXwA@mail.gmail.com>
+In-Reply-To: <CAPDyKFp_rMvo==2NqV6L9V_Q0Dc8Qafc=1FNb=gGxsexM8MXwA@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 21 Jan 2020 10:59:23 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+e3Az6LV9Bc=idJ-uj6EOzrZ008NRX_ddVb=NuP0jbmA@mail.gmail.com>
+Message-ID: <CAL_Jsq+e3Az6LV9Bc=idJ-uj6EOzrZ008NRX_ddVb=NuP0jbmA@mail.gmail.com>
+Subject: Re: [PATCH v5 02/15] dt: psci: Update DT bindings to support
+ hierarchical PSCI states
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_085813_977174_730DDCCA 
-X-CRM114-Status: GOOD (  26.30  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_085936_424046_359B2749 
+X-CRM114-Status: GOOD (  49.97  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,113 +93,292 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01/21/20 16:53, Russell King - ARM Linux admin wrote:
-> On Tue, Jan 21, 2020 at 04:50:31PM +0000, Qais Yousef wrote:
-> > On 11/25/19 11:27, Qais Yousef wrote:
-> > > disable_nonboot_cpus() is not safe to use when doing machine_down(),
-> > > because it relies on freeze_secondary_cpus() which in return is
-> > > a suspend/resume related freeze and could abort if the logic detects any
-> > > pending activities that can prevent finishing the offlining process.
-> > > 
-> > > Beside disable_nonboot_cpus() is dependent on CONFIG_PM_SLEEP_SMP which
-> > > is an othogonal config to rely on to ensure this function works
-> > > correctly.
-> > > 
-> > > Signed-off-by: Qais Yousef <qais.yousef@arm.com>
-> > > CC: Russell King <linux@armlinux.org.uk>
-> > > CC: Catalin Marinas <catalin.marinas@arm.com>
-> > > CC: Will Deacon <will@kernel.org>
-> > > CC: linux-arm-kernel@lists.infradead.org
-> > > CC: linux-kernel@vger.kernel.org
-> > > ---
-> > 
-> > Ping :)
-> > 
-> > I'm missing ACKs on this patch and patch 4 for arm64. Hopefully none should be
-> > controversial.
-> 
-> ARM and ARM64 are maintained separately, so you can't submit a single
-> patch covering both.  Sorry.
+On Mon, Jan 20, 2020 at 6:57 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Fri, 17 Jan 2020 at 18:36, Rob Herring <robh+dt@kernel.org> wrote:
+> >
+> > On Fri, Jan 17, 2020 at 10:42 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > >
+> > > On Thu, 16 Jan 2020 at 19:19, Rob Herring <robh+dt@kernel.org> wrote:
+> > > >
+> > > > On Tue, Jan 14, 2020 at 11:55 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > > > >
+> > > > > On Mon, 13 Jan 2020 at 20:53, Rob Herring <robh+dt@kernel.org> wrote:
+> > > > > >
+> > > > > > On Mon, Dec 30, 2019 at 8:44 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > > > > > >
+> > > > > > > Update PSCI DT bindings to allow to represent idle states for CPUs and the
+> > > > > > > CPU topology, by using a hierarchical layout. Primarily this is done by
+> > > > > > > re-using the existing DT bindings for PM domains [1] and for PM domain idle
+> > > > > > > states [2].
+> > > > > > >
+> > > > > > > Let's also add an example into the document for the PSCI DT bindings, to
+> > > > > > > clearly show the new hierarchical based layout. The currently supported
+> > > > > > > flattened layout, is already described in the ARM idle states bindings [3],
+> > > > > > > so let's leave that as is.
+> > > > > > >
+> > > > > > > [1] Documentation/devicetree/bindings/power/power_domain.txt
+> > > > > > > [2] Documentation/devicetree/bindings/power/domain-idle-state.txt
+> > > > > > > [3] Documentation/devicetree/bindings/arm/idle-states.txt
+> > > > > > >
+> > > > > > > Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+> > > > > > > Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
+> > > > > > > Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> > > > > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> > > > > > > ---
+> > > > > > >
+> > > > > > > Changes in v5:
+> > > > > > >         - None.
+> > > > > >
+> > > > > > First I'm seeing this as the DT list was not copied. The example has
+> > > > > > problems when running 'make dt_binding_check':
+> > > > > >
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
+> > > > > > compatible: Additional items are not allowed ('arm,armv8' was
+> > > > > > unexpected)
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
+> > > > > > compatible: ['arm,cortex-a53', 'arm,armv8'] is too long
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
+> > > > > > compatible: Additional items are not allowed ('arm,armv8' was
+> > > > > > unexpected)
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
+> > > > > > compatible: ['arm,cortex-a57', 'arm,armv8'] is too long
+> > > > > >
+> > > > > > 'arm,armv8' is only valid for s/w models.
+> > > > >
+> > > > > Perhaps you have a different version of the tools than I have (I have
+> > > > > tried both on v.5.5-rc5 and todays linux-next), because I can't
+> > > > > reproduce these errors at my side when running "make
+> > > > > dt_binding_check".
+> > > > >
+> > > > > Can you please check again?
+> > > >
+> > > > Are you setting DT_SCHEMA_FILES? If so, then arm/cpus.yaml (or any
+> > > > other schema) isn't loaded and used for validation. That schema is the
+> > > > source of this error.
+> > >
+> > > Yes. Aha, that's why then. Perhaps that needs to be clarified
+> > > somewhere in the documentation of tool.
+> >
+> > Patches welcome. :) I'm kind of tired of writing documentation that no
+> > one comments on and and seemingly only sometimes read. </rant> :(
+>
+> I understand your concerns. A patch is on it's way.
+>
+> >
+> > > Anyway, I used because it was kind of hard to process all the error
+> > > output one gets when building all yaml files at once.
+> >
+> > dtbs_check has a lot which is where setting DT_SCHEMA_FILES is
+> > primarily useful. dt_binding_check should be error/warning free, but
+> > yes linux-next and rc1/2 are frequently broken.
+> >
+> > > > It is failing in my CI job:
+> > > > https://gitlab.com/robherring/linux-dt-bindings/-/jobs/405298185
+> > > >
+> > > > Is dt-schema up to date? Though I can't think of any recent changes
+> > > > that would impact this. This check has been there a while and I fixed
+> > > > all the dts files.
+> > > >
+> > > > Do you see psci.example.dt.yaml getting built?
+> > >
+> > > Yes, but with using DT_SCHEMA_FILES.
+> > >
+> > > Anyway, now I can re-produced the errors, so then I should be able to
+> > > fix them. :-)
+> > >
+> > > >
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
+> > > > > > idle-states: cluster-retention:compatible:0: 'arm,idle-state' was
+> > > > > > expected
+> > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
+> > > > > > idle-states: cluster-power-down:compatible:0: 'arm,idle-state' was
+> > > > > > expected
+> > > > > >
+> > > > > > The last 2 are due to my conversion of the idle-states binding which
+> > > > > > is in my tree now. Probably need to add 'domain-idle-state' as a
+> > > > > > compatible at a minimum. It looks like domain-idle-state.txt is pretty
+> > > > > > much the same as arm/idle-state.txt, so we should perhaps merge them.
+> > > > >
+> > > > > Ahh, so maybe *all* of the above problems are caused by conflicts in
+> > > > > the arm-soc tree with changes from your tree!?
+> > > >
+> > > > Shouldn't be. arm/cpus.yaml has been in place for a few cycles now.
+> > > >
+> > > > >
+> > > > > In regards to merging files, I am fine by that if that helps.
+> > > > >
+> > > > > >
+> > > > > > There's some bigger issues though.
+> > > > > >
+> > > > > > > ---
+> > > > > > >  .../devicetree/bindings/arm/cpus.yaml         |  15 +++
+> > > > > > >  .../devicetree/bindings/arm/psci.yaml         | 104 ++++++++++++++++++
+> > > > > > >  2 files changed, 119 insertions(+)
+> > > > > > >
+> > > > > > > diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
+> > > > > > > index c23c24ff7575..7a9c3ce2dbef 100644
+> > > > > > > --- a/Documentation/devicetree/bindings/arm/cpus.yaml
+> > > > > > > +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
+> > > > > > > @@ -242,6 +242,21 @@ properties:
+> > > > > > >
+> > > > > > >        where voltage is in V, frequency is in MHz.
+> > > > > > >
+> > > > > > > +  power-domains:
+> > > > > > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+> > > > > > > +    description:
+> > > > > > > +      List of phandles and PM domain specifiers, as defined by bindings of the
+> > > > > > > +      PM domain provider (see also ../power_domain.txt).
+> > > > > > > +
+> > > > > > > +  power-domain-names:
+> > > > > > > +    $ref: '/schemas/types.yaml#/definitions/string-array'
+> > > > > > > +    description:
+> > > > > > > +      A list of power domain name strings sorted in the same order as the
+> > > > > > > +      power-domains property.
+> > > > > > > +
+> > > > > > > +      For PSCI based platforms, the name corresponding to the index of the PSCI
+> > > > > > > +      PM domain provider, must be "psci".
+> > > > > > > +
+> > > > > > >    qcom,saw:
+> > > > > > >      $ref: '/schemas/types.yaml#/definitions/phandle'
+> > > > > > >      description: |
+> > > > > > > diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+> > > > > > > index 7abdf58b335e..8ef85420b2ab 100644
+> > > > > > > --- a/Documentation/devicetree/bindings/arm/psci.yaml
+> > > > > > > +++ b/Documentation/devicetree/bindings/arm/psci.yaml
+> > > > > > > @@ -102,6 +102,34 @@ properties:
+> > > > > > >        [1] Kernel documentation - ARM idle states bindings
+> > > > > > >          Documentation/devicetree/bindings/arm/idle-states.txt
+> > > > > > >
+> > > > > > > +  "#power-domain-cells":
+> > > > > >
+> > > > > > This is wrong because you are saying the /psci node should have these
+> > > > > > properties. You need to define the child nodes (at least a pattern you
+> > > > > > can match on) and put these properties there.
+> > > > >
+> > > > > Right, good point.
+> > > > >
+> > > > > I searched for some similar examples for how to encode this, but
+> > > > > couldn't really find something useful.
+> > > >
+> > > > You need something like:
+> > > >
+> > > > patternProperties:
+> > > >   '^(cluster|cpu)-pd[0-9a-f]+$':
+> > > >     type: object
+> > > >     properties:
+> > > >       ... and then the properties in the child nodes
+> > > >
+> > > > Note that its going to look weird for the 10th PD with 'cpu-pda'. So
+> > > > maybe add a '-'.
+> > > >
+> > >
+> > > Great, I try this! Thanks.
+> > >
+> > > > > One more thing, it seems like
+> > > > > this change is also needed for the common power-domain bindings, as
+> > > > > that also specifies parent/childs domains.
+> > > >
+> > > > Normally, we'd have a $ref to power-domain.yaml, but for that to work
+> > > > here, you'll have to expand the node names ($nodename).
+> > >
+> > > Not sure I get that, but interpret this as it's not a good idea to use
+> > > a $ref to power-domain.yaml. Right?
+> >
+> > It means either this binding is odd or power-domain.yaml needs some
+> > more work or both. Ideally, we only have 1 type definition of any
+> > property name.
+> >
+> > Probably the easiest thing to do is extend the node name pattern to
+> > something like this:
+> >
+> > pattern: "^(power-controller|power-domain)([@\-].*)?$"
+> >
+> > And then name your nodes like this:
+> >
+> > power-domain-cpu-0
+> > power-domain-cluster
+> >
+> > That's more consistent anyways.
+>
+> Looks like a good idea! I try that.
+>
+> >
+> > > > > Anyway, I would really appreciate if you can suggest something more
+> > > > > detailed for you think this should be done!?
+> > > > >
+> > > > > >
+> > > > > > > +    description:
+> > > > > > > +      The number of cells in a PM domain specifier as per binding in [3].
+> > > > > > > +      Must be 0 as to represent a single PM domain.
+> > > > > > > +
+> > > > > > > +      ARM systems can have multiple cores, sometimes in an hierarchical
+> > > > > > > +      arrangement. This often, but not always, maps directly to the processor
+> > > > > > > +      power topology of the system. Individual nodes in a topology have their
+> > > > > > > +      own specific power states and can be better represented hierarchically.
+> > > > > > > +
+> > > > > > > +      For these cases, the definitions of the idle states for the CPUs and the
+> > > > > > > +      CPU topology, must conform to the binding in [3]. The idle states
+> > > > > > > +      themselves must conform to the binding in [4] and must specify the
+> > > > > > > +      arm,psci-suspend-param property.
+> > > > > > > +
+> > > > > > > +      It should also be noted that, in PSCI firmware v1.0 the OS-Initiated
+> > > > > > > +      (OSI) CPU suspend mode is introduced. Using a hierarchical representation
+> > > > > > > +      helps to implement support for OSI mode and OS implementations may choose
+> > > > > > > +      to mandate it.
+> > > > > > > +
+> > > > > > > +      [3] Documentation/devicetree/bindings/power/power_domain.txt
+> > > > > > > +      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
+> > > > > > > +
+> > > > > > > +  power-domains:
+> > > > > > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+> > > > > > > +    description:
+> > > > > > > +      List of phandles and PM domain specifiers, as defined by bindings of the
+> > > > > > > +      PM domain provider.
+> > > > > >
+> > > > > > A schema for 'domain-idle-states' property is missing.
+> > > > >
+> > > > > Right, let's figure out the best way for how to add that.
+> > > >
+> > > > If power-domain.yaml is referenced, then don't need anything else
+> > > > unless you can define the number of phandles (looks like you can't?).
+> > >
+> > > The number phandles should be one. At least, I think we can start with
+> > > that and extend the binding if needed.
+> >
+> > But there's 2 for the cluster in the example.
+>
+> What example do you refer to?
+>
+> For each power controller node for psci, only one phandle needs to be
+> specified in "power-domains", as that should be sufficient to describe
+> the topology.
 
-Sure I'd be happy to split.
+I was referring to 'domain-idle-states' in this patch:
 
-It was just a single line change and I expected Thomas to pick the whole series
-up, so I didn't think there'd be an issue in combining them up since they're
-identical.
++      CLUSTER_PD: cluster-pd {
++        #power-domain-cells = <0>;
++        domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
++      };
 
-Do I take it you have no objection to the code change itself and just would
-like to see this split up?
 
-Thanks
-
---
-Qais Yousef
-
-> 
-> > 
-> > Thanks!
-> > 
-> > --
-> > Qais Yousef
-> > 
-> > >  arch/arm/kernel/reboot.c    | 4 ++--
-> > >  arch/arm64/kernel/process.c | 4 ++--
-> > >  2 files changed, 4 insertions(+), 4 deletions(-)
-> > > 
-> > > diff --git a/arch/arm/kernel/reboot.c b/arch/arm/kernel/reboot.c
-> > > index bb18ed0539f4..58ad1a70f770 100644
-> > > --- a/arch/arm/kernel/reboot.c
-> > > +++ b/arch/arm/kernel/reboot.c
-> > > @@ -88,11 +88,11 @@ void soft_restart(unsigned long addr)
-> > >   * to execute e.g. a RAM-based pin loop is not sufficient. This allows the
-> > >   * kexec'd kernel to use any and all RAM as it sees fit, without having to
-> > >   * avoid any code or data used by any SW CPU pin loop. The CPU hotplug
-> > > - * functionality embodied in disable_nonboot_cpus() to achieve this.
-> > > + * functionality embodied in smp_shutdown_nonboot_cpus() to achieve this.
-> > >   */
-> > >  void machine_shutdown(void)
-> > >  {
-> > > -	disable_nonboot_cpus();
-> > > +	smp_shutdown_nonboot_cpus(0);
-> > >  }
-> > >  
-> > >  /*
-> > > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> > > index 71f788cd2b18..3bcc9bfc581e 100644
-> > > --- a/arch/arm64/kernel/process.c
-> > > +++ b/arch/arm64/kernel/process.c
-> > > @@ -141,11 +141,11 @@ void arch_cpu_idle_dead(void)
-> > >   * to execute e.g. a RAM-based pin loop is not sufficient. This allows the
-> > >   * kexec'd kernel to use any and all RAM as it sees fit, without having to
-> > >   * avoid any code or data used by any SW CPU pin loop. The CPU hotplug
-> > > - * functionality embodied in disable_nonboot_cpus() to achieve this.
-> > > + * functionality embodied in smpt_shutdown_nonboot_cpus() to achieve this.
-> > >   */
-> > >  void machine_shutdown(void)
-> > >  {
-> > > -	disable_nonboot_cpus();
-> > > +	smp_shutdown_nonboot_cpus(0);
-> > >  }
-> > >  
-> > >  /*
-> > > -- 
-> > > 2.17.1
-> > > 
-> > 
-> 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
