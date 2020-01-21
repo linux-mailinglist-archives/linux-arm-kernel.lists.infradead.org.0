@@ -2,92 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7872A143AA3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:15:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D606A143AA7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:17:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aSG8A3XC7k0pImFj510UOGZCKpYIMNB4KTdd3PoS95o=; b=jeMuTaf2oX9oIO
-	c+UX5hKfGTX0sXVJ2snrSh0Rh/nTvO/TARDe+stOU27ccGDKHVGECC913tkDRrAwFmgb8yRENqYCe
-	pxu8QHb3k69MyqdLw5XRbgnSAyLC+2yLd4p+tI1ESBHLiSnIeVSpcm/PFtuN2Pn2qblKIjWI8i3kb
-	ywwlykYWk2fWYWwkVeRiHuDL/Dm75dKBBjR/+rkvS41sKxt3zGWDXO4sSI1GmZfmdzY2Xy/ONkbIv
-	MWFNqf+/7KGs0ukxx+4DXyUo6ONm8jtlnC1kdrCfe7MZA+Ju1MNnO2ZMclQF9P0mGTH2Ovil6cSZk
-	/Znh8jyy9k8lgvUb0CkA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Date:Message-ID:Subject:From:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=A/3qKLD6CWxS5wULC1BUN9BLVVBw4qMOGQrbTvgdQfo=; b=SVX
+	kvwOOBd6yYjjh8qBQZ/ucizwANG56JsKpblSPvup1RWcgm0LJ8O63vHeLyI6SdqEnGukMaKf2DFcK
+	lzEgOVj0SNQ0RA3PtGruN89BRpK+DHTdECw/VXEXn4PrThARW/Wdsix4RHFxGncvbEcAiOq6HYYo7
+	kgpIxKh4delUD1g/vTgfdlvugEWxBUENXjtiZVoDRZnzU4pr9j/DkgbOH5cpIUc+AfoNSpbVO4/bV
+	tb5zG57nyS0iJH5/30HeWbhJmcni5eUAtJcSCY+zsL30J0+uVyrBrIf/GZFU/y31aO52UOXwJUCuA
+	CluE8vjZmtvUjhZuTH42zCn9THOIOXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqZL-0007Jj-PN; Tue, 21 Jan 2020 10:15:35 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1itqaY-0007gI-QK; Tue, 21 Jan 2020 10:16:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqYT-0005bK-Nl
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:14:46 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00LA7oZc022161; Tue, 21 Jan 2020 11:14:36 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=k5qJRWoSgLmpSjylS2Utl+lUx5HEle5o+YTZ31pLcBY=;
- b=wduEk0LvIblC2IcFcHYwE7nIdG53pbfzZg6CUixJoMHvLCga8LLYZHhVlTBWnnQnTYri
- KzCSJ4cKGDzV5Y+4Dvw4LniveJQjHSWRtvMyfdLC0JoXYi5nAkE3sdMaRlKF3dmc34Rd
- EVjTFgmnhvIw1pcfNmh1cIW0OQf/ApBZTe61MP6rKG7R1TUzMXo+SnxvHwcJ0r5DR2Tk
- 1UZJo8+zw8HQNlAenjGRnyb+EnHKQdePG0DEXNUSTzIEFtZsW4OYOdLtKcUrZ+Z00RRR
- pxqwNi11kGkQEgNca1CGmj6BXh0+AB5lRCRGr3MfC6k75GAyXTcuJqGwKyAvZmaqcfCh wQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xkrc4x3h0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 21 Jan 2020 11:14:36 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1431510002A;
- Tue, 21 Jan 2020 11:14:36 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 04B062B1874;
- Tue, 21 Jan 2020 11:14:36 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 21 Jan 2020 11:14:35 +0100
-From: Yannick Fertre <yannick.fertre@st.com>
-To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- <dri-devel@lists.freedesktop.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] drm/stm: ltdc: check number of endpoints
-Date: Tue, 21 Jan 2020 11:14:33 +0100
-Message-ID: <1579601673-7111-1-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1itqaH-0007fk-Jn
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:16:38 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q10so2449578wrm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Jan 2020 02:16:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=to:cc:from:subject:autocrypt:message-id:date:user-agent
+ :mime-version; bh=Z5JiWw4KV+rDptufmNLh6MSuw1p406As5Cixncmja/Y=;
+ b=Sqx+KBblMYZeOWovPwtKVvui2QWqD1Vfi+DUl01UwbrD5UESdwOifyenVE4NtyTu3i
+ 4AuxLo2G/VUpdcxLivPRfRTEk6L2gcgedyjPxHkrSgTAGibYlIxo3v8aO/7EN7WvZ8FH
+ WM0KU9fzFH/WAg3H3UbhYnk6/SaO03F+frO+5z5gmUMOThMaa/GDj32f7VtNyCyeeadF
+ 4Y3uW7vaRWR+xBcHajNTNDKwwnbVY6z++IIDnb8QZi7vDzM/Xn/+FEY9Ig1AjYVubVUL
+ 0rbLW3hGLcRkb/ubtha9hNJgNmXZjuuD//XFNjTqqOp40o+bwsrb959KeqTx3arJTQFn
+ j4Hg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
+ :user-agent:mime-version;
+ bh=Z5JiWw4KV+rDptufmNLh6MSuw1p406As5Cixncmja/Y=;
+ b=Gd0sRHxAQEZkQXciI3fTawBVuSvHrc2g6mTvEcPHeBO39lkHdYxxXFMemGqgwECCLE
+ H+ouPVPoyhJWsGVYje03vMpRfNRSaql7XmAKJvlJlKUcnFuLTYE0TATRP3A0Df84fS1H
+ tL7facEwQyYkwGrqNz5PFLVJX8E0HOjZWnL5jZsB0GrBgaZ7dUdqn6S3UpmnGA6QSXpq
+ 7Ms+UEr4iAovx+A59qDbe8G6U1bfPNNsdpWnFSiDHh/bDtKAF+JlvJRky1vtIrhYyULz
+ bNxBWOiEqQST6BwQPDTco55yzx2s/lF4QYB+oMQ6LFNVyodbDyVEn/qXZWzf/IMvhCTX
+ AtWg==
+X-Gm-Message-State: APjAAAUmjkCSdrIAYv7lxwHFWYJiKGRCAJSDIdiMxr7kjuONMVmA8eXw
+ JQASk/XHUUCGWMcnyuz4IMn92Q==
+X-Google-Smtp-Source: APXvYqwJ6y9hIOT875y7+RER9DVsOrD6CZRyX0sLwlfq/XNBtJ8/QtgQx+KFXoxLJRNQWDMXpayTWA==
+X-Received: by 2002:a5d:534d:: with SMTP id t13mr4548197wrv.77.1579601792274; 
+ Tue, 21 Jan 2020 02:16:32 -0800 (PST)
+Received: from [74.125.140.109] ([149.199.62.130])
+ by smtp.gmail.com with ESMTPSA id v8sm49643163wrw.2.2020.01.21.02.16.29
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 02:16:31 -0800 (PST)
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+From: Michal Simek <monstr@monstr.eu>
+Subject: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
+Autocrypt: addr=monstr@monstr.eu; keydata=
+ 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
+ 0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
+Message-ID: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
+Date: Tue, 21 Jan 2020 11:16:24 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-21_02:2020-01-21,
- 2020-01-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_021442_118744_11C97CE5 
-X-CRM114-Status: GOOD (  16.96  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200121_021633_655823_CD94B33F 
+X-CRM114-Status: GOOD (  12.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,96 +153,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: git <git@xilinx.com>, linux-arm <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2085706787306466802=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TnVtYmVyIG9mIGVuZHBvaW50cyBjb3VsZCBleGNlZWQgdGhlIGZpeCB2YWx1ZSBNQVhfRU5EUE9J
-TlRTKDIpLgpJbnN0ZWFkIG9mIGluY3JlYXNlIHNpbXBseSB0aGlzIHZhbHVlLCB0aGUgbnVtYmVy
-IG9mIGVuZHBvaW50CmNvdWxkIGJlIHJlYWQgZnJvbSBkZXZpY2UgdHJlZS4gTG9hZCBzZXF1ZW5j
-ZSBoYXMgYmVlbiBhIGxpdHRsZQpyZXdvcmsgdG8gdGFrZSBjYXJlIG9mIHNldmVyYWwgcGFuZWwg
-b3IgYnJpZGdlIHdoaWNoIGNhbiBiZQpjb25uZWN0ZWQvZGlzY29ubmVjdGVkIG9yIGVuYWJsZS9k
-aXNhYmxlLgoKU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBz
-dC5jb20+Ci0tLQogZHJpdmVycy9ncHUvZHJtL3N0bS9sdGRjLmMgfCAxMDQgKysrKysrKysrKysr
-KysrKysrKysrKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgNTIgaW5z
-ZXJ0aW9ucygrKSwgNTIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJt
-L3N0bS9sdGRjLmMgYi9kcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYwppbmRleCBjMjgxNWU4Li5k
-YmE4ZTdmIDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYworKysgYi9kcml2
-ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYwpAQCAtNDIsOCArNDIsNiBAQAogCiAjZGVmaW5lIE1BWF9J
-UlEgNAogCi0jZGVmaW5lIE1BWF9FTkRQT0lOVFMgMgotCiAjZGVmaW5lIEhXVkVSXzEwMjAwIDB4
-MDEwMjAwCiAjZGVmaW5lIEhXVkVSXzEwMzAwIDB4MDEwMzAwCiAjZGVmaW5lIEhXVkVSXzIwMTAx
-IDB4MDIwMTAxCkBAIC0xMTkwLDM2ICsxMTg4LDIwIEBAIGludCBsdGRjX2xvYWQoc3RydWN0IGRy
-bV9kZXZpY2UgKmRkZXYpCiAJc3RydWN0IGx0ZGNfZGV2aWNlICpsZGV2ID0gZGRldi0+ZGV2X3By
-aXZhdGU7CiAJc3RydWN0IGRldmljZSAqZGV2ID0gZGRldi0+ZGV2OwogCXN0cnVjdCBkZXZpY2Vf
-bm9kZSAqbnAgPSBkZXYtPm9mX25vZGU7Ci0Jc3RydWN0IGRybV9icmlkZ2UgKmJyaWRnZVtNQVhf
-RU5EUE9JTlRTXSA9IHtOVUxMfTsKLQlzdHJ1Y3QgZHJtX3BhbmVsICpwYW5lbFtNQVhfRU5EUE9J
-TlRTXSA9IHtOVUxMfTsKKwlzdHJ1Y3QgZHJtX2JyaWRnZSAqYnJpZGdlOworCXN0cnVjdCBkcm1f
-cGFuZWwgKnBhbmVsOwogCXN0cnVjdCBkcm1fY3J0YyAqY3J0YzsKIAlzdHJ1Y3QgcmVzZXRfY29u
-dHJvbCAqcnN0YzsKIAlzdHJ1Y3QgcmVzb3VyY2UgKnJlczsKLQlpbnQgaXJxLCByZXQsIGksIGVu
-ZHBvaW50X25vdF9yZWFkeSA9IC1FTk9ERVY7CisJaW50IGlycSwgaSwgbmJfZW5kcG9pbnRzOwor
-CWludCByZXQgPSAtRU5PREVWOwogCiAJRFJNX0RFQlVHX0RSSVZFUigiXG4iKTsKIAotCS8qIEdl
-dCBlbmRwb2ludHMgaWYgYW55ICovCi0JZm9yIChpID0gMDsgaSA8IE1BWF9FTkRQT0lOVFM7IGkr
-KykgewotCQlyZXQgPSBkcm1fb2ZfZmluZF9wYW5lbF9vcl9icmlkZ2UobnAsIDAsIGksICZwYW5l
-bFtpXSwKLQkJCQkJCSAgJmJyaWRnZVtpXSk7Ci0KLQkJLyoKLQkJICogSWYgYXQgbGVhc3Qgb25l
-IGVuZHBvaW50IGlzIC1FUFJPQkVfREVGRVIsIGRlZmVyIHByb2JpbmcsCi0JCSAqIGVsc2UgaWYg
-YXQgbGVhc3Qgb25lIGVuZHBvaW50IGlzIHJlYWR5LCBjb250aW51ZSBwcm9iaW5nLgotCQkgKi8K
-LQkJaWYgKHJldCA9PSAtRVBST0JFX0RFRkVSKQotCQkJcmV0dXJuIHJldDsKLQkJZWxzZSBpZiAo
-IXJldCkKLQkJCWVuZHBvaW50X25vdF9yZWFkeSA9IDA7Ci0JfQotCi0JaWYgKGVuZHBvaW50X25v
-dF9yZWFkeSkKLQkJcmV0dXJuIGVuZHBvaW50X25vdF9yZWFkeTsKLQotCXJzdGMgPSBkZXZtX3Jl
-c2V0X2NvbnRyb2xfZ2V0X2V4Y2x1c2l2ZShkZXYsIE5VTEwpOwotCi0JbXV0ZXhfaW5pdCgmbGRl
-di0+ZXJyX2xvY2spOworCS8qIEdldCBudW1iZXIgb2YgZW5kcG9pbnRzICovCisJbmJfZW5kcG9p
-bnRzID0gb2ZfZ3JhcGhfZ2V0X2VuZHBvaW50X2NvdW50KG5wKTsKKwlpZiAoIW5iX2VuZHBvaW50
-cykKKwkJcmV0dXJuIC1FTk9ERVY7CiAKIAlsZGV2LT5waXhlbF9jbGsgPSBkZXZtX2Nsa19nZXQo
-ZGV2LCAibGNkIik7CiAJaWYgKElTX0VSUihsZGV2LT5waXhlbF9jbGspKSB7CkBAIC0xMjMzLDYg
-KzEyMTUsNDMgQEAgaW50IGx0ZGNfbG9hZChzdHJ1Y3QgZHJtX2RldmljZSAqZGRldikKIAkJcmV0
-dXJuIC1FTk9ERVY7CiAJfQogCisJLyogR2V0IGVuZHBvaW50cyBpZiBhbnkgKi8KKwlmb3IgKGkg
-PSAwOyBpIDwgbmJfZW5kcG9pbnRzOyBpKyspIHsKKwkJcmV0ID0gZHJtX29mX2ZpbmRfcGFuZWxf
-b3JfYnJpZGdlKG5wLCAwLCBpLCAmcGFuZWwsICZicmlkZ2UpOworCisJCS8qCisJCSAqIElmIGF0
-IGxlYXN0IG9uZSBlbmRwb2ludCBpcyAtRU5PREVWLCBjb250aW51ZSBwcm9iaW5nLAorCQkgKiBl
-bHNlIGlmIGF0IGxlYXN0IG9uZSBlbmRwb2ludCByZXR1cm5lZCBhbiBlcnJvcgorCQkgKiAoaWUg
-LUVQUk9CRV9ERUZFUikgdGhlbiBzdG9wIHByb2JpbmcuCisJCSAqLworCQlpZiAocmV0ID09IC1F
-Tk9ERVYpCisJCQljb250aW51ZTsKKwkJZWxzZSBpZiAocmV0KQorCQkJZ290byBlcnI7CisKKwkJ
-aWYgKHBhbmVsKSB7CisJCQlicmlkZ2UgPSBkcm1fcGFuZWxfYnJpZGdlX2FkZF90eXBlZChwYW5l
-bCwKKwkJCQkJCQkgICAgRFJNX01PREVfQ09OTkVDVE9SX0RQSSk7CisJCQlpZiAoSVNfRVJSKGJy
-aWRnZSkpIHsKKwkJCQlEUk1fRVJST1IoInBhbmVsLWJyaWRnZSBlbmRwb2ludCAlZFxuIiwgaSk7
-CisJCQkJcmV0ID0gUFRSX0VSUihicmlkZ2UpOworCQkJCWdvdG8gZXJyOworCQkJfQorCQl9CisK
-KwkJaWYgKGJyaWRnZSkgeworCQkJcmV0ID0gbHRkY19lbmNvZGVyX2luaXQoZGRldiwgYnJpZGdl
-KTsKKwkJCWlmIChyZXQpIHsKKwkJCQlEUk1fRVJST1IoImluaXQgZW5jb2RlciBlbmRwb2ludCAl
-ZFxuIiwgaSk7CisJCQkJZ290byBlcnI7CisJCQl9CisJCX0KKwl9CisKKwlyc3RjID0gZGV2bV9y
-ZXNldF9jb250cm9sX2dldF9leGNsdXNpdmUoZGV2LCBOVUxMKTsKKworCW11dGV4X2luaXQoJmxk
-ZXYtPmVycl9sb2NrKTsKKwogCWlmICghSVNfRVJSKHJzdGMpKSB7CiAJCXJlc2V0X2NvbnRyb2xf
-YXNzZXJ0KHJzdGMpOwogCQl1c2xlZXBfcmFuZ2UoMTAsIDIwKTsKQEAgLTEyNjgsNyArMTI4Nyw2
-IEBAIGludCBsdGRjX2xvYWQoc3RydWN0IGRybV9kZXZpY2UgKmRkZXYpCiAJCX0KIAl9CiAKLQog
-CXJldCA9IGx0ZGNfZ2V0X2NhcHMoZGRldik7CiAJaWYgKHJldCkgewogCQlEUk1fRVJST1IoImhh
-cmR3YXJlIGlkZW50aWZpZXIgKDB4JTA4eCkgbm90IHN1cHBvcnRlZCFcbiIsCkBAIC0xMjc4LDI3
-ICsxMjk2LDYgQEAgaW50IGx0ZGNfbG9hZChzdHJ1Y3QgZHJtX2RldmljZSAqZGRldikKIAogCURS
-TV9ERUJVR19EUklWRVIoImx0ZGMgaHcgdmVyc2lvbiAweCUwOHhcbiIsIGxkZXYtPmNhcHMuaHdf
-dmVyc2lvbik7CiAKLQkvKiBBZGQgZW5kcG9pbnRzIHBhbmVscyBvciBicmlkZ2VzIGlmIGFueSAq
-LwotCWZvciAoaSA9IDA7IGkgPCBNQVhfRU5EUE9JTlRTOyBpKyspIHsKLQkJaWYgKHBhbmVsW2ld
-KSB7Ci0JCQlicmlkZ2VbaV0gPSBkcm1fcGFuZWxfYnJpZGdlX2FkZF90eXBlZChwYW5lbFtpXSwK
-LQkJCQkJCQkgICAgICAgRFJNX01PREVfQ09OTkVDVE9SX0RQSSk7Ci0JCQlpZiAoSVNfRVJSKGJy
-aWRnZVtpXSkpIHsKLQkJCQlEUk1fRVJST1IoInBhbmVsLWJyaWRnZSBlbmRwb2ludCAlZFxuIiwg
-aSk7Ci0JCQkJcmV0ID0gUFRSX0VSUihicmlkZ2VbaV0pOwotCQkJCWdvdG8gZXJyOwotCQkJfQot
-CQl9Ci0KLQkJaWYgKGJyaWRnZVtpXSkgewotCQkJcmV0ID0gbHRkY19lbmNvZGVyX2luaXQoZGRl
-diwgYnJpZGdlW2ldKTsKLQkJCWlmIChyZXQpIHsKLQkJCQlEUk1fRVJST1IoImluaXQgZW5jb2Rl
-ciBlbmRwb2ludCAlZFxuIiwgaSk7Ci0JCQkJZ290byBlcnI7Ci0JCQl9Ci0JCX0KLQl9Ci0KIAlj
-cnRjID0gZGV2bV9remFsbG9jKGRldiwgc2l6ZW9mKCpjcnRjKSwgR0ZQX0tFUk5FTCk7CiAJaWYg
-KCFjcnRjKSB7CiAJCURSTV9FUlJPUigiRmFpbGVkIHRvIGFsbG9jYXRlIGNydGNcbiIpOwpAQCAt
-MTMzMSw4ICsxMzI4LDggQEAgaW50IGx0ZGNfbG9hZChzdHJ1Y3QgZHJtX2RldmljZSAqZGRldikK
-IAogCXJldHVybiAwOwogZXJyOgotCWZvciAoaSA9IDA7IGkgPCBNQVhfRU5EUE9JTlRTOyBpKysp
-Ci0JCWRybV9wYW5lbF9icmlkZ2VfcmVtb3ZlKGJyaWRnZVtpXSk7CisJZm9yIChpID0gMDsgaSA8
-IG5iX2VuZHBvaW50czsgaSsrKQorCQlkcm1fb2ZfcGFuZWxfYnJpZGdlX3JlbW92ZShkZGV2LT5k
-ZXYtPm9mX25vZGUsIDAsIGkpOwogCiAJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGxkZXYtPnBpeGVs
-X2Nsayk7CiAKQEAgLTEzNDEsMTEgKzEzMzgsMTQgQEAgaW50IGx0ZGNfbG9hZChzdHJ1Y3QgZHJt
-X2RldmljZSAqZGRldikKIAogdm9pZCBsdGRjX3VubG9hZChzdHJ1Y3QgZHJtX2RldmljZSAqZGRl
-dikKIHsKLQlpbnQgaTsKKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBkZGV2LT5kZXY7CisJaW50IG5i
-X2VuZHBvaW50cywgaTsKIAogCURSTV9ERUJVR19EUklWRVIoIlxuIik7CiAKLQlmb3IgKGkgPSAw
-OyBpIDwgTUFYX0VORFBPSU5UUzsgaSsrKQorCW5iX2VuZHBvaW50cyA9IG9mX2dyYXBoX2dldF9l
-bmRwb2ludF9jb3VudChkZXYtPm9mX25vZGUpOworCisJZm9yIChpID0gMDsgaSA8IG5iX2VuZHBv
-aW50czsgaSsrKQogCQlkcm1fb2ZfcGFuZWxfYnJpZGdlX3JlbW92ZShkZGV2LT5kZXYtPm9mX25v
-ZGUsIDAsIGkpOwogCiAJcG1fcnVudGltZV9kaXNhYmxlKGRkZXYtPmRldik7Ci0tIAoyLjcuNAoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============2085706787306466802==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+ protocol="application/pgp-signature";
+ boundary="Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS
+Content-Type: multipart/mixed; boundary="iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt";
+ protected-headers="v1"
+From: Michal Simek <monstr@monstr.eu>
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+Cc: linux-arm <linux-arm-kernel@lists.infradead.org>, git <git@xilinx.com>
+Message-ID: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
+Subject: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
+
+--iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+please pull this coresight enabling patch to your tree.
+
+Thanks,
+Michal
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c3=
+5a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://github.com/Xilinx/linux-xlnx.git tags/zynq-dt-for-v5.6
+
+for you to fetch changes up to 02a93929e3e45686c0b547389c50a4dfa903daf5:
+
+  ARM: dts: zynq: enablement of coresight topology (2019-12-18 15:31:21
++0100)
+
+----------------------------------------------------------------
+ARM: dts: zynq: DT changes for v5.6
+
+- Enable coresight topology for Zynq
+
+----------------------------------------------------------------
+Zumeng Chen (1):
+      ARM: dts: zynq: enablement of coresight topology
+
+ arch/arm/boot/dts/zynq-7000.dtsi | 135
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 135 insertions(+)
+
+--=20
+Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
+w: www.monstr.eu p: +42-0-721842854
+Maintainer of Linux kernel - Xilinx Microblaze
+Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
+U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
+
+
+
+--iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt--
+
+--Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXibPeAAKCRDKSWXLKUoM
+IUl1AJ9xbwcgG+0uZg6dfhdDIGj/mlFa1gCdGSXvXbVFShOXYVado9l8ZWSqOnI=
+=qdPL
+-----END PGP SIGNATURE-----
+
+--Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS--
+
+
+--===============2085706787306466802==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2085706787306466802==--
+
