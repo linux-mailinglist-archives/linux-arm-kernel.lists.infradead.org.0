@@ -2,58 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD40A143C93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 13:10:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 131E7143C98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 13:14:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8JlQ4Vce0R5dJbcJYa1xKUyoc/f5bmQUBoF7n9nT/Mg=; b=tF6ceYGgLJJZcCk6VM3DG7hpR
-	VLEjU1CwdofLvbizowy37Y1+CayxtIyOrNTVvmsiOHEgZHUdfZKmhvXhWA7otllQteKmBDff81ONR
-	LvnNG1/qvZB2H/S6kYvYwwiFtzxJ1isv55WjZnlwgXqhPq+1G2+N8uw6cgpVW70+RjJJZrlK3kt5e
-	6MjvArqvjUXXhz2jGLtFr9G18NxH/0HRWKGgSJXQ8guYuBaOgru32qP0Sn36vyQcReNuDLEUj3Jt7
-	ZMZBVR7ewnfaFwM/EjXExzIWoDfq4vaoAPeVFKUQVowZKL1izIAKVxpD1Fu37M9eVbBt88WVjPvrl
-	8wZI2k3xQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=31vQNuvxIMMK3BxzN9ds6CELJBmmmnR8OOAkTBlNyaI=; b=N/Ge75iWFoyRIc
+	rGLVRREOJ4vvNoblHq9Ob5xi42yg0dVGVpaqUSNBsO1K09p7MezaqhgkVupMvtKU+LfHTKDuvZex7
+	j/h0b6urJYb9cavC0mfW17KsfLTL3u0n1Ccy1DObIfRkOn5CkYkiDDC2HMmSKzFhk3Eml4+rWW7de
+	0TJPx6z2vidryoWEoAzGRDR8rO/BFh7Vmys4QIOmWY7v3m4mShXf30a6XAnrKOyEmi9N1tLO9U3/K
+	FNf0xmZ6Us8bfOZaAgqr89efqAek+jMnW2g207jKoaBHl/CbSNCQjSrzZNZis1xDnEMyz0VIN2x9d
+	ysJEjsi0FPJwQxN4R/Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itsMc-0001Rj-BT; Tue, 21 Jan 2020 12:10:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itsMP-0001P4-4N
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 12:10:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D3D130E;
- Tue, 21 Jan 2020 04:10:18 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A80B3F6C4;
- Tue, 21 Jan 2020 04:10:17 -0800 (PST)
-Date: Tue, 21 Jan 2020 12:10:16 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v12 0/2] ARMv8.5-RNG support
-Message-ID: <20200121121016.GA4656@sirena.org.uk>
-References: <20200120134621.43531-1-broonie@kernel.org>
- <20200121115713.GA12014@willie-the-truck>
+	id 1itsQE-0001os-OK; Tue, 21 Jan 2020 12:14:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itsQ3-0001o0-Tz
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 12:14:13 +0000
+Received: from localhost (unknown [171.76.119.14])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B222A2073A;
+ Tue, 21 Jan 2020 12:14:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579608847;
+ bh=Qq3v/FQs81Z4u3h/BT7zP7lIhmAukfuHUqvLomvAe2g=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=M3SfLdxAoH9lXTgviaGdxEEl8nstuFNd2zRY3BHNhdqp7YUCg7QXEXKixsKmRxHX3
+ 9F0Fa3pogu6a6IKs20YUE+vsokLsny+vHu5lpHCodkcVtQ6ZtO+ZwVolZpTq89HxKb
+ C+IU7xZmZtRhEW3HAO68Aly8DcgIt2c0aG6kJffQ=
+Date: Tue, 21 Jan 2020 17:44:02 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Stefan Mavrodiev <stefan@olimex.com>
+Subject: Re: [PATCH 1/2] dmaengine: sun4i: Add support for cyclic requests
+ with dedicated DMA
+Message-ID: <20200121121402.GP2841@vkoul-mobl>
+References: <20200110141140.28527-1-stefan@olimex.com>
+ <20200110141140.28527-2-stefan@olimex.com>
+ <20200115123137.GJ2818@vkoul-mobl>
+ <20200115170731.vt6twfhvuwjrbbup@gilmour.lan>
+ <20200121083514.GE2841@vkoul-mobl>
+ <54b1a38f-3903-49b7-d20b-f97824a528ba@olimex.com>
 MIME-Version: 1.0
-In-Reply-To: <20200121115713.GA12014@willie-the-truck>
-X-Cookie: You too can wear a nose mitten.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <54b1a38f-3903-49b7-d20b-f97824a528ba@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_041021_217750_FA91EDD3 
-X-CRM114-Status: GOOD (  10.62  )
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200121_041407_990235_1EB55E2B 
+X-CRM114-Status: GOOD (  17.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,66 +81,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Content-Type: multipart/mixed; boundary="===============8552988051238169869=="
+Cc: David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 21-01-20, 13:37, Stefan Mavrodiev wrote:
+> 
+> On 1/21/20 10:35 AM, Vinod Koul wrote:
+> > On 15-01-20, 18:07, Maxime Ripard wrote:
+> > > On Wed, Jan 15, 2020 at 06:01:37PM +0530, Vinod Koul wrote:
+> > > > On 10-01-20, 16:11, Stefan Mavrodiev wrote:
+> > > > > Currently the cyclic transfers can be used only with normal DMAs. They
+> > > > > can be used by pcm_dmaengine module, which is required for implementing
+> > > > > sound with sun4i-hdmi encoder. This is so because the controller can
+> > > > > accept audio only from a dedicated DMA.
+> > > > > 
+> > > > > This patch enables them, following the existing style for the
+> > > > > scatter/gather type transfers.
+> > > > I presume you want this to go with drm tree (if not let me know) so:
+> > > > 
+> > > > Acked-by: Vinod Koul <vkoul@kernel.org>
+> > > There's no need for it to go through DRM, it can go through your tree :)
+> > okay in that case I have applied now :), thanks
+> > 
+> Hi,
+> 
+> Should I keep this patch in the future series or drop it?
 
---===============8552988051238169869==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="d6Gm4EdcadzBjdND"
-Content-Disposition: inline
+Drop it :) It would be in linux-next tomorrow!
 
-
---d6Gm4EdcadzBjdND
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Jan 21, 2020 at 11:57:13AM +0000, Will Deacon wrote:
-> On Mon, Jan 20, 2020 at 01:46:19PM +0000, Mark Brown wrote:
-
-> > This series is based on Richard Henderson's previous v7, it addresses
-> > review comments from that version by dropping the boot time RNG
-
-> Hmm, the HWCAP also seems to have disappeared in this version :/
-
-Oh, sorry :(  I was travelling last week and apparently messed up moving
-this from my laptop back to my desktop before sending this out.  Let's
-try again...
-
---d6Gm4EdcadzBjdND
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4m6icACgkQJNaLcl1U
-h9CjMwf/e9c6zbeXWj0MFx5/ow0v6F8woy+VEd7jgwkIZDB1Bf5taerqIejji1tb
-YXPukOqRdmnxGJSLSJcUX76L4bSyJDzFIJnRAhiAtolt07gvoos3VTA6FMo6eIZi
-PdU1t7HQgOAYv6dTh4dz8iIiTaktvdLBVtHRAff28nx8Dv7mGQbiqwBN9tA1WmhQ
-Ei30Mds7fG9NsVcI5VoOuL7YSiO3ObbDwMI94Y2vLM1cxZRm7E5gy96wflRQ1FY9
-BSyYBbgAiY6kLoPX+tqeGJf7KAKcWupjXvtW2is6ZLutr8/zMB/l6fc7FFoHDRLK
-i09myM7TUMIpK5rGeZ5KneZukyF+eQ==
-=uGnf
------END PGP SIGNATURE-----
-
---d6Gm4EdcadzBjdND--
-
-
---===============8552988051238169869==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8552988051238169869==--
-
