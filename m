@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D606A143AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:17:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0695E143AAB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:18:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Date:Message-ID:Subject:From:To:Reply-To:
+	In-Reply-To:MIME-Version:Date:Message-ID:References:To:From:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=A/3qKLD6CWxS5wULC1BUN9BLVVBw4qMOGQrbTvgdQfo=; b=SVX
-	kvwOOBd6yYjjh8qBQZ/ucizwANG56JsKpblSPvup1RWcgm0LJ8O63vHeLyI6SdqEnGukMaKf2DFcK
-	lzEgOVj0SNQ0RA3PtGruN89BRpK+DHTdECw/VXEXn4PrThARW/Wdsix4RHFxGncvbEcAiOq6HYYo7
-	kgpIxKh4delUD1g/vTgfdlvugEWxBUENXjtiZVoDRZnzU4pr9j/DkgbOH5cpIUc+AfoNSpbVO4/bV
-	tb5zG57nyS0iJH5/30HeWbhJmcni5eUAtJcSCY+zsL30J0+uVyrBrIf/GZFU/y31aO52UOXwJUCuA
-	CluE8vjZmtvUjhZuTH42zCn9THOIOXg==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gPXLDlq/jEk/DcxOAI+nA2zat+dHiADEFC2yhqeED5w=; b=WumtWHxPqGxuNjOaD0xFUxoZT
+	RnMXWgGDrx7gbeXaqYGC9ospQwVwk3vkW09CweW4bHndmIfmOKnxNvSk3AIxT1MJWGGMUeEXwoR89
+	BhkQ7qxXDRSvGsYqXSeARC7jVSobAAZIykgBM99y5GqxA5k5koziJ6vaISjEe5KhsUSO/RnoDU3Yn
+	UoH/ox3zdjHA1l2AhfH0AXqe/nq0L7M54lo4UY8TaW4pV3eIndX/speCblhua2VCh1DEK0YV3/r2Z
+	cauEbJRFZFGf6Q+/LfMscKSdEnLX8FMQlTcKqmp8oPf05mDLSbTZsTK+0BJXfWPr5nveQjDEwvXjo
+	BMSA/PnQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqaY-0007gI-QK; Tue, 21 Jan 2020 10:16:51 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1itqbh-00080i-Tz; Tue, 21 Jan 2020 10:18:01 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqaH-0007fk-Jn
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:16:38 +0000
-Received: by mail-wr1-x442.google.com with SMTP id q10so2449578wrm.11
+ id 1itqbN-00080I-DI
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:17:44 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c14so2477019wrn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 02:16:33 -0800 (PST)
+ Tue, 21 Jan 2020 02:17:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=to:cc:from:subject:autocrypt:message-id:date:user-agent
- :mime-version; bh=Z5JiWw4KV+rDptufmNLh6MSuw1p406As5Cixncmja/Y=;
- b=Sqx+KBblMYZeOWovPwtKVvui2QWqD1Vfi+DUl01UwbrD5UESdwOifyenVE4NtyTu3i
- 4AuxLo2G/VUpdcxLivPRfRTEk6L2gcgedyjPxHkrSgTAGibYlIxo3v8aO/7EN7WvZ8FH
- WM0KU9fzFH/WAg3H3UbhYnk6/SaO03F+frO+5z5gmUMOThMaa/GDj32f7VtNyCyeeadF
- 4Y3uW7vaRWR+xBcHajNTNDKwwnbVY6z++IIDnb8QZi7vDzM/Xn/+FEY9Ig1AjYVubVUL
- 0rbLW3hGLcRkb/ubtha9hNJgNmXZjuuD//XFNjTqqOp40o+bwsrb959KeqTx3arJTQFn
- j4Hg==
+ h=subject:from:to:cc:references:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to;
+ bh=8pRKFPawYH5ty+I4DWZ8iaiZJY3HzH1swkVJtfRbm1A=;
+ b=ZsxrJWMewl0bmOVMhiFcKyHsX9y0SdyMJsiE+YcCq/OlKUcS3TetoWHRhilcMpJqAI
+ lV1bQf8kpEug5N2zc37U0Q4fU8cekWuw0z0T2jezj6suk1przVTYFDInNKPJ8SmSDApD
+ L2dp0fr4Q32if77fvegPdJJGIRMjp1AKyus/xVc/LGIMxWGW66QUk6sJs1u1PweJQazs
+ yh8A+6QOvsbv6Jz3jb5J5p2qfzK7YZgvbQ36OfLUTkGgjMLi5JgSwQWdAhJWQ4vJd5qb
+ I3hgdYlMk3kwd/zMazRGpwJ6YN9TJOFsNOf6yX9zzY6Y7TFd0gqvVbeQmYwyBE1tMoaC
+ 7Qrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
- :user-agent:mime-version;
- bh=Z5JiWw4KV+rDptufmNLh6MSuw1p406As5Cixncmja/Y=;
- b=Gd0sRHxAQEZkQXciI3fTawBVuSvHrc2g6mTvEcPHeBO39lkHdYxxXFMemGqgwECCLE
- H+ouPVPoyhJWsGVYje03vMpRfNRSaql7XmAKJvlJlKUcnFuLTYE0TATRP3A0Df84fS1H
- tL7facEwQyYkwGrqNz5PFLVJX8E0HOjZWnL5jZsB0GrBgaZ7dUdqn6S3UpmnGA6QSXpq
- 7Ms+UEr4iAovx+A59qDbe8G6U1bfPNNsdpWnFSiDHh/bDtKAF+JlvJRky1vtIrhYyULz
- bNxBWOiEqQST6BwQPDTco55yzx2s/lF4QYB+oMQ6LFNVyodbDyVEn/qXZWzf/IMvhCTX
- AtWg==
-X-Gm-Message-State: APjAAAUmjkCSdrIAYv7lxwHFWYJiKGRCAJSDIdiMxr7kjuONMVmA8eXw
- JQASk/XHUUCGWMcnyuz4IMn92Q==
-X-Google-Smtp-Source: APXvYqwJ6y9hIOT875y7+RER9DVsOrD6CZRyX0sLwlfq/XNBtJ8/QtgQx+KFXoxLJRNQWDMXpayTWA==
-X-Received: by 2002:a5d:534d:: with SMTP id t13mr4548197wrv.77.1579601792274; 
- Tue, 21 Jan 2020 02:16:32 -0800 (PST)
+ h=x-gm-message-state:subject:from:to:cc:references:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to;
+ bh=8pRKFPawYH5ty+I4DWZ8iaiZJY3HzH1swkVJtfRbm1A=;
+ b=rrE3flZpau+Te6olr6+CM8IhyIOnBQ1ePUarbig+OXO9KWJChmV7WnqD7csBrt7KYN
+ XTus2sCZbaR6qqK8h+IOGOT74uKLehaDsevoezFJ9GoaUt9/RE8szwRORrSvfTxShNqG
+ heCguM0aUoCFU/nr6RbuaOcgByOSnODLwH3K0KBnpFMp5G5SxqJexD650l190DeD6wVs
+ sLKv+0z+PSGZGvhJjypmWwxpvVPwEJN37R3LHQVfatuqMo4tZNHBA9h/7up7QdtbYym4
+ 3f6FUAYim31Cu7GIrSpo/kAeGwKXOcvbfV81ruYvvejmnmzGeLZx/Yj8w5WjbcvZvzdh
+ /O1g==
+X-Gm-Message-State: APjAAAVHsLB9fPi6v9C/P5ET905dR+qLrrVT/7Jr3SgnI1jVKJi2/mAF
+ DGpj7Ni1G4E9aSnp15Zk56HrZfLAPfMH/g==
+X-Google-Smtp-Source: APXvYqx1OBjuRXCfsHpl8WD+P0GIzmJ4Yf9O+Uwsoue16p3hvGUH41Mi/xSU/GuNe533lvOWN+GQDw==
+X-Received: by 2002:adf:f80c:: with SMTP id s12mr4396055wrp.1.1579601860043;
+ Tue, 21 Jan 2020 02:17:40 -0800 (PST)
 Received: from [74.125.140.109] ([149.199.62.130])
- by smtp.gmail.com with ESMTPSA id v8sm49643163wrw.2.2020.01.21.02.16.29
+ by smtp.gmail.com with ESMTPSA id u22sm54397013wru.30.2020.01.21.02.17.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 02:16:31 -0800 (PST)
-To: arm-soc <arm@kernel.org>, soc@kernel.org
+ Tue, 21 Jan 2020 02:17:39 -0800 (PST)
+Subject: Re: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
 From: Michal Simek <monstr@monstr.eu>
-Subject: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+References: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
 Autocrypt: addr=monstr@monstr.eu; keydata=
  xsFNBFFuvDEBEAC9Amu3nk79+J+4xBOuM5XmDmljuukOc6mKB5bBYOa4SrWJZTjeGRf52VMc
  howHe8Y9nSbG92obZMqsdt+d/hmRu3fgwRYiiU97YJjUkCN5paHXyBb+3IdrLNGt8I7C9RMy
@@ -121,21 +123,22 @@ Autocrypt: addr=monstr@monstr.eu; keydata=
  oa0OZXydlVP7wrnJdi3m8DnljxyInPxbxdKGN5XnMq/r9Y70uRVyeqwp97sKLXd9GsxuaSg7
  QJKUaltvN/i7ng1UOT/xsKeVdfXuqDIIElZ+dyEVTweDM011Zv0NN3OWFz6oD+GzyBetuBwD
  0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
-Message-ID: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
-Date: Tue, 21 Jan 2020 11:16:24 +0100
+Message-ID: <026fc331-4f17-23a4-89ee-5f7a41357948@monstr.eu>
+Date: Tue, 21 Jan 2020 11:17:34 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_021633_655823_CD94B33F 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200121_021741_457132_B56909D1 
+X-CRM114-Status: GOOD (  15.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -154,65 +157,76 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: git <git@xilinx.com>, linux-arm <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============2085706787306466802=="
+Content-Type: multipart/mixed; boundary="===============2928327878003693342=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2085706787306466802==
+--===============2928327878003693342==
 Content-Type: multipart/signed; micalg=pgp-sha1;
  protocol="application/pgp-signature";
- boundary="Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS"
+ boundary="6iwzGeoljBDiDOHTdvqe2hFnvFdG6k5Sr"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS
-Content-Type: multipart/mixed; boundary="iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt";
+--6iwzGeoljBDiDOHTdvqe2hFnvFdG6k5Sr
+Content-Type: multipart/mixed; boundary="TeH9tx0uVWqctTBoSqzq0Y62wbe8qYfSd";
  protected-headers="v1"
 From: Michal Simek <monstr@monstr.eu>
 To: arm-soc <arm@kernel.org>, soc@kernel.org
 Cc: linux-arm <linux-arm-kernel@lists.infradead.org>, git <git@xilinx.com>
-Message-ID: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
-Subject: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
+Message-ID: <026fc331-4f17-23a4-89ee-5f7a41357948@monstr.eu>
+Subject: Re: [GIT PULL] ARM: dts: Xilinx DT changes for v5.6
+References: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
+In-Reply-To: <245bca0b-78ee-2665-16d6-2a7f8395cda0@monstr.eu>
 
---iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt
+--TeH9tx0uVWqctTBoSqzq0Y62wbe8qYfSd
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
+On 21. 01. 20 11:16, Michal Simek wrote:
+> Hi,
+>=20
+> please pull this coresight enabling patch to your tree.
+>=20
+> Thanks,
+> Michal
+>=20
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1=
+c35a:
+>=20
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+>=20
+> are available in the Git repository at:
+>=20
+>   https://github.com/Xilinx/linux-xlnx.git tags/zynq-dt-for-v5.6
+>=20
+> for you to fetch changes up to 02a93929e3e45686c0b547389c50a4dfa903daf5=
+:
+>=20
+>   ARM: dts: zynq: enablement of coresight topology (2019-12-18 15:31:21=
 
-please pull this coresight enabling patch to your tree.
+> +0100)
+>=20
+> ----------------------------------------------------------------
+> ARM: dts: zynq: DT changes for v5.6
+>=20
+> - Enable coresight topology for Zynq
+>=20
+> ----------------------------------------------------------------
+> Zumeng Chen (1):
+>       ARM: dts: zynq: enablement of coresight topology
+>=20
+>  arch/arm/boot/dts/zynq-7000.dtsi | 135
+> +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 135 insertions(+)
+>=20
 
-Thanks,
-Michal
+oops. This is wrong one - please ignore. I will send v2.
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c3=
-5a:
+M
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
-
-are available in the Git repository at:
-
-  https://github.com/Xilinx/linux-xlnx.git tags/zynq-dt-for-v5.6
-
-for you to fetch changes up to 02a93929e3e45686c0b547389c50a4dfa903daf5:
-
-  ARM: dts: zynq: enablement of coresight topology (2019-12-18 15:31:21
-+0100)
-
-----------------------------------------------------------------
-ARM: dts: zynq: DT changes for v5.6
-
-- Enable coresight topology for Zynq
-
-----------------------------------------------------------------
-Zumeng Chen (1):
-      ARM: dts: zynq: enablement of coresight topology
-
- arch/arm/boot/dts/zynq-7000.dtsi | 135
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 135 insertions(+)
 
 --=20
 Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
@@ -223,24 +237,24 @@ U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
 
 
 
---iHa4RdjhC3pw4EN9d4gsAdC2P0uNob5Xt--
+--TeH9tx0uVWqctTBoSqzq0Y62wbe8qYfSd--
 
---Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS
+--6iwzGeoljBDiDOHTdvqe2hFnvFdG6k5Sr
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXibPeAAKCRDKSWXLKUoM
-IUl1AJ9xbwcgG+0uZg6dfhdDIGj/mlFa1gCdGSXvXbVFShOXYVado9l8ZWSqOnI=
-=qdPL
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXibPvgAKCRDKSWXLKUoM
+IbJMAJwO0BOn8zyO2uhD6c1OwD/AOQLFEgCfWt5RKwQpw9CzcTkccVPXbcV4obY=
+=nZys
 -----END PGP SIGNATURE-----
 
---Spw4eB2EZFkXko2P2QrijJqJFw1C0QXjS--
+--6iwzGeoljBDiDOHTdvqe2hFnvFdG6k5Sr--
 
 
---===============2085706787306466802==
+--===============2928327878003693342==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -251,5 +265,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2085706787306466802==--
+--===============2928327878003693342==--
 
