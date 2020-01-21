@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70B6C143AD8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:23:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02362143ADB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 11:24:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fYXA49SFXUZhX422VSYtSSAXMtcIN8F9kUftKOx4lJg=; b=lGzQJ19VoY2dOk
-	jckkMEhGvELdU8alLCLSsrOCK7jlt5IADiKKujCzKPeJ6EO+QDw1oKNxdFFEvNox1hOcgAxSOyuMm
-	zDFxMKmubaTVMlgKoj3BNEX42J8EufSyrwlvMIPhlMMk+LZ2Spali+0q5Qfxauxo/AEaJQeZ6BMC+
-	9xPm5W1nAdwR05I+VHoxuM0lMHfZ7XOK353g2WaB3eAUqg7RzbCrzCXUoDHrIX6kpq/QR3WqcbtF0
-	Kjb5Gz4N8lQNvn7EIKi/EDxtQ29E/kP9Yw2B59kh410srwNTDCRHJ9fmP5T0QoUu3NzlYGz3IszmB
-	vVQX8HtAlVXjjAYb0M2A==;
+	List-Owner; bh=21wsunuHgE5mkw+Y4iRs+DEuLujTNghe+zPEbXxQAXg=; b=IeaLdhXX6pF1e1
+	SzJ7rjS5bjHQLj5jzmqStG1zvMg0E4ObvmQeJyGET1admK5BZ+gZlbtTNOggaCptG3OOOBdizDFl8
+	wYuaC/SFhqQmyixE9jaMqkcOhwGepOi3uuGz2JmasrhMNT4V3K8MmdfC+uMJYjKWd0jjQXbwoWDms
+	furYsOdzU1TB87wiEMdj3EEhKNLjbu04EqEQrU6oA5QcpTU0RzchimhjDV25OQ+QO1iH99FtvhAbH
+	YwDBfFauYLdXfNDiYf+WzG7RNgpGjqSOYgXF+2Sijw1uwFbVAgKCPOeghYUm0Z2wOR8MDsZwdByW1
+	eXNo7wiWP7x4NtU6vdEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itqh7-0002g1-B1; Tue, 21 Jan 2020 10:23:37 +0000
+	id 1itqhS-0002zX-Jc; Tue, 21 Jan 2020 10:23:58 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itqgD-0001x6-KV
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:22:43 +0000
+ id 1itqgZ-0002GI-DV
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 10:23:05 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00LAI5KJ023923; Tue, 21 Jan 2020 11:22:37 +0100
+ 00LAI5KS023923; Tue, 21 Jan 2020 11:22:59 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : subject :
  date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=B3TTFS6TV+4qGCCLZoDEuyQWL8QSogcND8mYP28OXXo=;
- b=iz8vTKO+yoxfwOZAs+1AMYyzsilnTsGUYNvdN2QWDxGqyG1ept7I8vIbbRFZ8D7hm6jh
- 8YNirqrauCV5gR5JF+iTPIYpKeSCCjbe5Q7Ujl5PAlLop7CFm7z8zuiEXmCAXVFQNl/v
- Qd2gbJSgDLNcG6t48c/dmQukDDSSZygZn5RwEYl9xW813lyHc52TB0WXi2AoH0KOfYux
- ZxuffcTYVIRLWEqGvPa1cacCBJl0yHRD7zF58mvqZ+GyhS6JTdDv8JDCsifb+sSnb7aJ
- SdrHXG4tcll79g6wtuHuMbU2EeVDFJOd2sFTraofZL+ChO2hpxG2ca7+okhHGqv12+Bc 4w== 
+ bh=uU66AWwrrnwTiw+9Nz6p8yTErkFbXxjMVakld76eCaU=;
+ b=ifdQ74tWi+8zC2yp06a1zXl/PCGyzzeGxVAE8Nq7gnKObCqk7fc1T2/V1fo0iMYG486/
+ tk9AwuGdAEa4r1KEB0ImcoELiPPrDTPPJp5vr8MpvIEwwDF//cyBFlPrFiPYwkziz9vd
+ UF54khdkZ+NkfI+7jsfFK4iHieyyoaaB7ad/iWlQuI7aeIzdTRzmGHomDhYVMd+DNDWT
+ s6mjLfqhIsdGLqoSGu1CTz9VXqCyCCYQTk7sKk7Qe4OQjMfLHtPnyAEQvotCcgaR4xq2
+ ndlafA57DNH1YYpZGRuGf0VgdQ8GfQ/rwhaBBhS6CYYrh8mF2xbioFJeFHLSzyu7pqtr ow== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xkrp26338-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xkrp2634v-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 21 Jan 2020 11:22:37 +0100
+ Tue, 21 Jan 2020 11:22:59 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3BC6D10002A;
- Tue, 21 Jan 2020 11:22:36 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E33D910002A;
+ Tue, 21 Jan 2020 11:22:51 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2B6102B187E;
- Tue, 21 Jan 2020 11:22:36 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG6NODE1.st.com (10.75.127.16)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D7D222B187E;
+ Tue, 21 Jan 2020 11:22:51 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG6NODE1.st.com (10.75.127.16)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 21 Jan 2020 11:22:35 +0100
+ Tue, 21 Jan 2020 11:22:51 +0100
 From: Yannick Fertre <yannick.fertre@st.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Maxime Coquelin
  <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>,
@@ -57,20 +57,20 @@ To: Mauro Carvalho Chehab <mchehab@kernel.org>, Maxime Coquelin
  <linux-media@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  Philippe Cornu <philippe.cornu@st.com>
-Subject: [PATCH] media: platform: stm32: defer probe for auxiliary clock
-Date: Tue, 21 Jan 2020 11:22:32 +0100
-Message-ID: <1579602152-7432-1-git-send-email-yannick.fertre@st.com>
+Subject: [PATCH] media: platform: stm32: don't print an error on probe deferral
+Date: Tue, 21 Jan 2020 11:22:49 +0100
+Message-ID: <1579602169-7484-1-git-send-email-yannick.fertre@st.com>
 X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG6NODE1.st.com
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG6NODE1.st.com
  (10.75.127.16)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-21_02:2020-01-21,
  2020-01-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_022242_089294_3651D337 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20200121_022303_800180_476AE944 
+X-CRM114-Status: GOOD (  14.74  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,34 +105,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Etienne Carriere <etienne.carriere@st.com>
 
-Change stm32-cec driver to defer probe when auxiliary clock
-"hdmi-cec" is registered in the system not has not been probed yet.
+Change stm32-cec driver to not print an error message when the
+device probe operation is deferred.
 
 Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
 ---
- drivers/media/platform/stm32/stm32-cec.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/media/platform/stm32/stm32-cec.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/media/platform/stm32/stm32-cec.c b/drivers/media/platform/stm32/stm32-cec.c
-index 8a86b2c..543c9ec 100644
+index 8a86b2c..9c137f1 100644
 --- a/drivers/media/platform/stm32/stm32-cec.c
 +++ b/drivers/media/platform/stm32/stm32-cec.c
-@@ -302,10 +302,14 @@ static int stm32_cec_probe(struct platform_device *pdev)
+@@ -291,7 +291,9 @@ static int stm32_cec_probe(struct platform_device *pdev)
+ 
+ 	cec->clk_cec = devm_clk_get(&pdev->dev, "cec");
+ 	if (IS_ERR(cec->clk_cec)) {
+-		dev_err(&pdev->dev, "Cannot get cec clock\n");
++		if (PTR_ERR(cec->clk_cec) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Cannot get cec clock\n");
++
+ 		return PTR_ERR(cec->clk_cec);
  	}
  
- 	cec->clk_hdmi_cec = devm_clk_get(&pdev->dev, "hdmi-cec");
-+	if (IS_ERR(cec->clk_hdmi_cec) &&
-+	    PTR_ERR(cec->clk_hdmi_cec) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
-+
- 	if (!IS_ERR(cec->clk_hdmi_cec)) {
- 		ret = clk_prepare(cec->clk_hdmi_cec);
- 		if (ret) {
--			dev_err(&pdev->dev, "Unable to prepare hdmi-cec clock\n");
-+			dev_err(&pdev->dev, "Can't prepare hdmi-cec clock\n");
- 			return ret;
- 		}
- 	}
 -- 
 2.7.4
 
