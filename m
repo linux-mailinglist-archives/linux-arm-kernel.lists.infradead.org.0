@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9C9A144281
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 17:52:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77AE1144286
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 17:53:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=faGWzBRthrzYsenzQMtuDCZIh+bkX530D2p8A0Oq9Yw=; b=gf7E0id9TUwmoG
-	IKYbgH/lEBfohznM/1spylV5xDuKn3mo0Ftm3C2Y6+TVZV2aroqQl91awqElAZ2lWI1Zg0MqOZzF4
-	pnEIrZZ1u0tBNoUt66yYq9lLMt3HtzlMOjLZizFQRT5lBJ3oO8mEhw+yVcY7CVfZ3JKOgEHAGPY/k
-	UET9v3u3R13zUw+E3M5mSAN+WRWhxZMXLnsFhjWqFwcYs5YGtuyDYxXeLj3JtI8UpcdZmgComFmKT
-	36F0GzoULoCvAbPwpyb1ICbgh79+kUmvW5vUwX8Dl560FSwdGKGl37lFQ5hq5z8si7HIN6Blrp/+l
-	KdtpRkTBVEY1ubKGQV5Q==;
+	List-Owner; bh=YulqNjBGQ8rQt0vNXcGi9hUYeOb+DZRfL8GoBvsJdBQ=; b=Pg70wtQWIVDeY6
+	sEQmcqbYhIZ5uBqoCOsGP162jug2hWzbOMshv2qLbLlcTWmE/6mRP6nx+2YNSEx0BQga/u92IdUev
+	Q5CWOUcy5L9Q1D2rpOTp4y0GWRVInHnt/l8VifTYRhKuTE4/qGYE3QtitdaUJ2K0IK/zV4PKqjVaL
+	sYSjevI5EfavNybbtrDGNRCZ4im41sa6+DUSj7u99ySULBb1J7Sbxtr4HV7NVZVXuNuMlO5SwEGb1
+	gOA0cV3fEfrwrkydu3NMJtg2pCZ93xakPNoe5uA1Q/sOiOswmd0RmsYI/3J6OReYRDXo9EYSB6OIY
+	zHgWQCkdpqv91HsCKaBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itwlS-000627-9c; Tue, 21 Jan 2020 16:52:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itwlF-00060h-Br
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 16:52:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E985328;
- Tue, 21 Jan 2020 08:52:15 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F2653F6C4;
- Tue, 21 Jan 2020 08:52:13 -0800 (PST)
-Date: Tue, 21 Jan 2020 16:52:08 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH] PCI: keystone: Fix error handling when "num-viewport" DT
- property is not populated
-Message-ID: <20200121165208.GA21742@e121166-lin.cambridge.arm.com>
-References: <20200121115734.7047-1-kishon@ti.com>
+	id 1itwm0-0006Mh-2B; Tue, 21 Jan 2020 16:53:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itwlu-0006MI-4y
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 16:52:59 +0000
+Received: from arrakis.emea.arm.com (fw-tnat-cam2.arm.com [217.140.106.50])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B73CB21569;
+ Tue, 21 Jan 2020 16:52:55 +0000 (UTC)
+Date: Tue, 21 Jan 2020 16:52:53 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Amit Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v3 09/16] arm64: mask PAC bits of __builtin_return_address
+Message-ID: <20200121165253.GD3117281@arrakis.emea.arm.com>
+References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+ <1576486038-9899-10-git-send-email-amit.kachhap@arm.com>
+ <20200117101432.GA26090@arrakis.emea.arm.com>
+ <1735949f-a8c2-4cb5-d7e7-63efcfd4e96c@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200121115734.7047-1-kishon@ti.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1735949f-a8c2-4cb5-d7e7-63efcfd4e96c@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_085217_446752_B5136F15 
-X-CRM114-Status: GOOD (  17.21  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_085258_205237_C9186B44 
+X-CRM114-Status: GOOD (  18.02  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,44 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Murali Karicheri <m-karicheri2@ti.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Mark Brown <Mark.Brown@arm.com>, Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 05:27:34PM +0530, Kishon Vijay Abraham I wrote:
-> Fix error handling when "num-viewport" DT property is not populated.
+On Mon, Jan 20, 2020 at 02:20:17PM +0000, Amit Kachhap wrote:
+> On 1/17/20 10:14 AM, Catalin Marinas wrote:
+> > On Mon, Dec 16, 2019 at 02:17:11PM +0530, Amit Daniel Kachhap wrote:
+> > > diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+> > > new file mode 100644
+> > > index 0000000..3cb06f9
+> > > --- /dev/null
+> > > +++ b/arch/arm64/include/asm/compiler.h
+> > > @@ -0,0 +1,20 @@
+> > > +/* SPDX-License-Identifier: GPL-2.0 */
+> > > +#ifndef __ASM_COMPILER_H
+> > > +#define __ASM_COMPILER_H
+> > > +
+> > > +#if defined(CONFIG_ARM64_PTR_AUTH)
+> > > +
+> > > +/*
+> > > + * The EL0/EL1 pointer bits used by a pointer authentication code.
+> > > + * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
+> > > + */
+> > > +#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
+> > 
+> > That's the current behaviour but I guess we could extend the mask to 63
+> > here without breaking anything since we don't expect instruction
+> > addresses to be tagged. I also think we should turn TCR_EL1.TBID0 on
+> > when we have PAC present (in a separate patch for both the mask change
+> > and the TCR_EL1 bit as this may be slightly more controversial, a
+> > theoretical ABI change).
 > 
-> Fixes: 23284ad677a94 ("PCI: keystone: Add support for PCIe EP in AM654x Platforms")
-> Cc: stable@vger.kernel.org # v5.2+
-> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-> ---
->  drivers/pci/controller/dwc/pci-keystone.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-
-Applied to pci/keystone, thanks.
-
-Lorenzo
-
-> diff --git a/drivers/pci/controller/dwc/pci-keystone.c b/drivers/pci/controller/dwc/pci-keystone.c
-> index dbe31589eb61..2c127c321080 100644
-> --- a/drivers/pci/controller/dwc/pci-keystone.c
-> +++ b/drivers/pci/controller/dwc/pci-keystone.c
-> @@ -1357,7 +1357,7 @@ static int __init ks_pcie_probe(struct platform_device *pdev)
->  		ret = of_property_read_u32(np, "num-viewport", &num_viewport);
->  		if (ret < 0) {
->  			dev_err(dev, "unable to read *num-viewport* property\n");
-> -			return ret;
-> +			goto err_get_sync;
->  		}
->  
->  		/*
-> -- 
-> 2.17.1
+> ok. For this there has to be 2 mask then as ptrace passes both the masks to
+> user.
 > 
+> #define ptrauth_user_ins_pac_mask()	GENMASK_ULL(63, vabits_actual)
+> 
+> #define ptrauth_user_data_pac_mask()	GENMASK_ULL(54, vabits_actual)
+
+Yes. But as I said, keep this patch as is and change the above in a
+separate patch, possibly even a separate series.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
