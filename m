@@ -2,57 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05A4C143BF4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 12:25:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E475C143C04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 12:28:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x+3+q15j7NbYy9J5ctJNNvRei4FgYcPZyfsbh7dubUI=; b=AijDKFsYxGdRKJ
-	C+/91vW5wckhuTy1cz1wQjUIBdjI33KeBo97MQxpHVZ+3Woo2FMe0My0vLZO1g23AbmO+6e4cTP9U
-	ov9H2PLj/VNNcn5bkyu1Zi3fFm+vsSxtQ2cMF1RgsBHB27q2Yfs9MDIIi8NcYXT4HUvQu4AYUP88k
-	k/+OCSKZ7R3a4ULxkGfvNPUwyXIkP4RIiNUFxJyURbHZZ1phoR1AvpZ2PQvQiV35RFN8B8TqR2CSp
-	uHSlF0uzfsF0BqJWb2DxsNLUa16vuaIBhchAtTSE0Oo4iiq9jXf9Uj4IuJN0Oz4PXAu+I7rqvbyIl
-	VIERbu8E4WbXK92H6iGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QmJ89Vdl/r/5DaKnOLSX5jJ0GZvkpnlNEnnLy7c+fOw=; b=anN
+	JPB8nBkJmIJmRpIf6JmH9MWYsGfEzBQR7pR8Wagaqw4roQQFNrgcQs88xbt3zps7+FyA+BwkNCF5b
+	JoTwv3FfSFyZOGwflLWUAlW5VuIdMnfZ4/gVLmBuBdT5it1bT4Z6NdVMaq3eumdB04Dr3XIQDvhF4
+	Zq4TO0gWqO5aJCwoa6VNwT+/Sjdi37+Vnqh3gBACq/u8xciyMBUInmfp71kBl2VSkpDEIGmHlnTHY
+	dao4czN/MzVX3asdbtengFhfwn1rVfBb4K8Ch5qKIyUpLxk/JwB5N6RN0839t6JyfJcb2jJT/Njid
+	ac9tnHdu6SENykZ5KkFvIQftcctmCnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itrem-0004F1-FP; Tue, 21 Jan 2020 11:25:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itreR-000484-G1
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 11:25:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9EB61FB;
- Tue, 21 Jan 2020 03:24:54 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E0E13F6C4;
- Tue, 21 Jan 2020 03:24:54 -0800 (PST)
-Date: Tue, 21 Jan 2020 11:24:52 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v3 2/3] KVM: arm64: limit PMU version to ARMv8.4
-Message-ID: <20200121112452.GB5109@e119886-lin.cambridge.arm.com>
-References: <20200102123905.29360-1-andrew.murray@arm.com>
- <20200102123905.29360-3-andrew.murray@arm.com>
- <336acb6b88c2df5e6114e6f8811687e4@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <336acb6b88c2df5e6114e6f8811687e4@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1itrhG-0005hl-Ax; Tue, 21 Jan 2020 11:27:50 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itrh2-0005h5-SP; Tue, 21 Jan 2020 11:27:40 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id CBB7F29255D
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] dt-bindings: convert rockchip-drm.txt to rockchip-drm.yaml
+Date: Tue, 21 Jan 2020 12:27:18 +0100
+Message-Id: <20200121112718.18466-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_032455_623611_E8EE9F67 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_032737_050807_816D9BF1 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,146 +55,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, airlied@linux.ie,
+ dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
+ ezequiel@collabora.com, Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 20, 2020 at 05:55:17PM +0000, Marc Zyngier wrote:
-> On 2020-01-02 12:39, Andrew Murray wrote:
-> > ARMv8.5-PMU introduces 64-bit event counters, however KVM doesn't yet
-> > support this. Let's trap the Debug Feature Registers in order to limit
-> > PMUVer/PerfMon in the Debug Feature Registers to PMUv3 for ARMv8.4.
-> > 
-> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > ---
-> >  arch/arm64/include/asm/sysreg.h |  4 ++++
-> >  arch/arm64/kvm/sys_regs.c       | 36 +++++++++++++++++++++++++++++++--
-> >  2 files changed, 38 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm64/include/asm/sysreg.h
-> > b/arch/arm64/include/asm/sysreg.h
-> > index 6e919fafb43d..1b74f275a115 100644
-> > --- a/arch/arm64/include/asm/sysreg.h
-> > +++ b/arch/arm64/include/asm/sysreg.h
-> > @@ -672,6 +672,10 @@
-> >  #define ID_AA64DFR0_TRACEVER_SHIFT	4
-> >  #define ID_AA64DFR0_DEBUGVER_SHIFT	0
-> > 
-> > +#define ID_DFR0_PERFMON_SHIFT		24
-> > +
-> > +#define ID_DFR0_EL1_PMUVER_8_4		5
-> > +
-> >  #define ID_ISAR5_RDM_SHIFT		24
-> >  #define ID_ISAR5_CRC32_SHIFT		16
-> >  #define ID_ISAR5_SHA2_SHIFT		12
-> > diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> > index 9f2165937f7d..61b984d934d1 100644
-> > --- a/arch/arm64/kvm/sys_regs.c
-> > +++ b/arch/arm64/kvm/sys_regs.c
-> > @@ -668,6 +668,37 @@ static bool
-> > pmu_access_event_counter_el0_disabled(struct kvm_vcpu *vcpu)
-> >  	return check_pmu_access_disabled(vcpu, ARMV8_PMU_USERENR_ER |
-> > ARMV8_PMU_USERENR_EN);
-> >  }
-> > 
-> > +static bool access_id_aa64dfr0_el1(struct kvm_vcpu *vcpu,
-> > +				   struct sys_reg_params *p,
-> > +				   const struct sys_reg_desc *rd)
-> > +{
-> > +	if (p->is_write)
-> > +		return write_to_read_only(vcpu, p, rd);
-> > +
-> > +	/* Limit guests to PMUv3 for ARMv8.4 */
-> > +	p->regval = read_sanitised_ftr_reg(SYS_ID_AA64DFR0_EL1);
-> > +	p->regval = cpuid_feature_cap_signed_field_width(p->regval,
-> > +						ID_AA64DFR0_PMUVER_SHIFT,
-> > +						4, ID_DFR0_EL1_PMUVER_8_4);
-> > +
-> > +	return p->regval;
-> 
-> If feels very odd to return the register value in place of a something
-> that actually indicates whether we should update the PC or not. I have
-> no idea what is happening here in this case.
+From: Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
 
-This should have returned true. I have no idea why I did this.
+convert the binding file rockchip-drm.txt to yaml format.
+This was tested and verified with:
+make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
+---
+ .../display/rockchip/rockchip-drm.txt         | 19 ----------
+ .../display/rockchip/rockchip-drm.yaml        | 38 +++++++++++++++++++
+ 2 files changed, 38 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 
-> 
-> > +}
-> > +
-> > +static bool access_id_dfr0_el1(struct kvm_vcpu *vcpu, struct
-> > sys_reg_params *p,
-> > +			       const struct sys_reg_desc *rd)
-> > +{
-> > +	if (p->is_write)
-> > +		return write_to_read_only(vcpu, p, rd);
-> > +
-> > +	/* Limit guests to PMUv3 for ARMv8.4 */
-> > +	p->regval = read_sanitised_ftr_reg(SYS_ID_DFR0_EL1);
-> > +	p->regval = cpuid_feature_cap_signed_field_width(p->regval,
-> > +						ID_DFR0_PERFMON_SHIFT,
-> > +						4, ID_DFR0_EL1_PMUVER_8_4);
-> > +
-> > +	return p->regval;
-> 
-> Same here.
-> 
-> > +}
-> > +
-> >  static bool access_pmcr(struct kvm_vcpu *vcpu, struct sys_reg_params
-> > *p,
-> >  			const struct sys_reg_desc *r)
-> >  {
-> > @@ -1409,7 +1440,8 @@ static const struct sys_reg_desc sys_reg_descs[] =
-> > {
-> >  	/* CRm=1 */
-> >  	ID_SANITISED(ID_PFR0_EL1),
-> >  	ID_SANITISED(ID_PFR1_EL1),
-> > -	ID_SANITISED(ID_DFR0_EL1),
-> > +	{ SYS_DESC(SYS_ID_DFR0_EL1), access_id_dfr0_el1 },
-> 
-> How about the .get_user and .set_user accessors that were provided by
-> ID_SANITISED and that are now dropped? You should probably define a
-> new wrapper that allows you to override the .access method.
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+deleted file mode 100644
+index 5707af89319d..000000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
++++ /dev/null
+@@ -1,19 +0,0 @@
+-Rockchip DRM master device
+-================================
+-
+-The Rockchip DRM master device is a virtual device needed to list all
+-vop devices or other display interface nodes that comprise the
+-graphics subsystem.
+-
+-Required properties:
+-- compatible: Should be "rockchip,display-subsystem"
+-- ports: Should contain a list of phandles pointing to display interface port
+-  of vop devices. vop definitions as defined in
+-  Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+-
+-example:
+-
+-display-subsystem {
+-	compatible = "rockchip,display-subsystem";
+-	ports = <&vopl_out>, <&vopb_out>;
+-};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+new file mode 100644
+index 000000000000..e4ef1a02196d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+@@ -0,0 +1,38 @@
++# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/rockchip-drm.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip DRM master device
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com
++  - Heiko Stuebner <heiko@sntech.de>
++
++description: |
++  The Rockchip DRM master device is a virtual device needed to list all
++  vop devices or other display interface nodes that comprise the
++  graphics subsystem.
++
++properties:
++  compatible:
++    const: rockchip,display-subsystem
++
++  ports:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description: |
++      Should contain a list of phandles pointing to display interface port
++      of vop devices. vop definitions as defined in
++      Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++
++required:
++  - compatible
++  - ports
++
++examples:
++  - |
++    display-subsystem {
++        compatible = "rockchip,display-subsystem";
++        ports = <&vopl_out>, <&vopb_out>;
++    };
+-- 
+2.17.1
 
-Yes I can do that, thus ensuring we continue to return sanitised values
-rather than the current vcpu value.
-
-However should I also update read_id_reg - thus ensuring the host sees
-the same value that the guest sees? (I see this already does something
-similar with AA64PFR0 and AA64ISAR1).
-
-Thanks,
-
-Andrew Murray
-
-> 
-> > +
-> >  	ID_HIDDEN(ID_AFR0_EL1),
-> >  	ID_SANITISED(ID_MMFR0_EL1),
-> >  	ID_SANITISED(ID_MMFR1_EL1),
-> > @@ -1448,7 +1480,7 @@ static const struct sys_reg_desc sys_reg_descs[] =
-> > {
-> >  	ID_UNALLOCATED(4,7),
-> > 
-> >  	/* CRm=5 */
-> > -	ID_SANITISED(ID_AA64DFR0_EL1),
-> > +	{ SYS_DESC(SYS_ID_AA64DFR0_EL1), access_id_aa64dfr0_el1 },
-> >  	ID_SANITISED(ID_AA64DFR1_EL1),
-> >  	ID_UNALLOCATED(5,2),
-> >  	ID_UNALLOCATED(5,3),
-> 
-> Thanks,
-> 
->         M.
-> -- 
-> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
