@@ -2,65 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62E20144405
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 19:07:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBFA614440D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Jan 2020 19:10:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=55C1Jl6zhR9EZC85yJoBfooEZmofRKoxPqGj0TVY+3M=; b=V7eqQQtXYCC5qg
-	AfgoWhcHlg9q9E40PuOjj0gu9+pfslhjyuMlfD+PipJc6Z1KwqGBDNUcKoKB0urWBZ5cQZZZOb+6+
-	UTc1RLWE06Qbb7lZAceIchBcxISpj6AwkVEjH0CDNAc6W57vwv7gjlJm6Oz7eMrRPcGTwWlfKg8xm
-	/URfAeMLsm4YFfX2I9A4rZlWULPAfCgRDDpVQsgwnTWTKaicV0hbswgOflR/5/mEblWJCpAXcRb9u
-	yPqLf1OS9ndSTRGbW0D48ruH7RH7giWxKC/BrhF6u2hmRDGQKHFD4mOoUz308g2+3VoScihB+mpcZ
-	crRuZIZJR2878PvpmDog==;
+	List-Owner; bh=Co2S6VRTmQwVkPCl+k4c5s1P2YHrptEVcTLKHBN+WQU=; b=EKOn5+5wS9UcYu
+	QlO+XS+/ZQMZyIR9nzmZEQbEiCUw5g/Av6PkSpfFxH37HJN1bR08VVzuYef6700b4zOlAwIqYbhDv
+	9W6hmEPw2JGDMUPbrxghJ031cbidQv0Fkl6lQ2HOY3hEVJcaPamb0WodZJWgV/vZywumw2x4oBz6P
+	V8K2QeOZXNao9sq3hopXRA0abliZIaFmpye3YLPly+Yu1GIs8vwnskNQmP+AEZ/r5xZUayl5TFIPt
+	GCJcZvzTG8tHdyPMSR4q6wwLLAJo0mD6yblPmVobeaxV4VQE4Bl5b0CzZR1HwW0/xOQK2yvZZf0T/
+	+iDv/3K/7DqVbnhJITkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itxvT-0005iZ-D0; Tue, 21 Jan 2020 18:06:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1itxym-0007WD-CM; Tue, 21 Jan 2020 18:10:20 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itxvD-0005fo-Ua
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 18:06:45 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8E08622522;
- Tue, 21 Jan 2020 18:06:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579629999;
- bh=h8gel9+ZWFI2KSlFXQlpEwZFOgZtFp2KVYnNAC0U2o8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PM5WHoDBv54h3MGiQW20dJ1ybQfHW8zwo+pvOYn/uL+C4NA9y4LrlTFIJ4MK6v4Q1
- 0yhc4cUeQXFU6N7qgJWi6TR1LZCsbZwJ0LExBXT/bzFaceBw9ZVoIJy0MSj9ADP4Iu
- HWnCah0wdkJ0WMr9Ri5owCsQjGH9/VqIBIdgyETc=
-Date: Tue, 21 Jan 2020 18:06:34 +0000
-From: Will Deacon <will@kernel.org>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [RFC v5 00/57] objtool: Add support for arm64
-Message-ID: <20200121180632.GA13592@willie-the-truck>
-References: <20200109160300.26150-1-jthierry@redhat.com>
- <20200112084258.GA44004@ubuntu-x2-xlarge-x86>
- <d5bf34f0-22cc-ba46-41b4-96a52d7acfa4@redhat.com>
- <20200121103101.GE11154@willie-the-truck>
- <CAKwvOd=_PqQWUvd_WZRpEr+T==3w6LpsHKBz3E9ybaQ0javVkw@mail.gmail.com>
+ id 1itxyZ-0006ZW-5M
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Jan 2020 18:10:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=FTbjmTPewhmuZeI4RXiIzCWj8QRQqw5GhRQOtHVv+dc=; b=CHjGe4+nP671nkSnHLv1XH8kc
+ t//WmmqJb7tD1MqKGKVq0gRrITiatPK5VqYD8ukB2rLZGmP2qmwe4HhQidekE2c5Mv2JJAbhIdBfv
+ 5jV3xc8yRSsgiqmjGzMdjT7eykoxcGa2cSLhavfrMvYwzgN5iKiij1oWThcs7AEB4Z1wpc6X5Z5jw
+ iU3sN/wYSVgi3wsYuTlD92rt2mYk802LhCk2kGEGHNQnEppUqYwrnRx5B1uiSaZLRcQPunKaVUgVj
+ KoSFCXL78XQtQP8iqImB7pY1QCSpuruZLF/zhvke/hwYuwWwp77kb5G/lf4knIITcx2ijShNz2pdR
+ ULStvBuCg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:37284)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1itxy3-0006Q1-1Q; Tue, 21 Jan 2020 18:09:35 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1itxxy-00042T-5z; Tue, 21 Jan 2020 18:09:30 +0000
+Date: Tue, 21 Jan 2020 18:09:30 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Qais Yousef <qais.yousef@arm.com>
+Subject: Re: [PATCH v2 01/14] smp: Create a new function to shutdown nonboot
+ cpus
+Message-ID: <20200121180930.GJ25745@shell.armlinux.org.uk>
+References: <20191125112754.25223-1-qais.yousef@arm.com>
+ <20191125112754.25223-2-qais.yousef@arm.com>
+ <20200121170350.GC18808@shell.armlinux.org.uk>
+ <20200121174751.5opyyjwxfnwdgcev@e107158-lin.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKwvOd=_PqQWUvd_WZRpEr+T==3w6LpsHKBz3E9ybaQ0javVkw@mail.gmail.com>
+In-Reply-To: <20200121174751.5opyyjwxfnwdgcev@e107158-lin.cambridge.arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_100640_030183_3CC694AC 
-X-CRM114-Status: GOOD (  24.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200121_101007_217078_C4BB3887 
+X-CRM114-Status: GOOD (  24.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -68,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,72 +90,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <jthierry@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>, raphael.gault@arm.com,
+Cc: Fenghua Yu <fenghua.yu@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Tony Luck <tony.luck@intel.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Josh Poimboeuf <jpoimboe@redhat.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Zhenzhong Duan <zhenzhong.duan@oracle.com>,
+ Nicholas Piggin <npiggin@gmail.com>, linux-kernel@vger.kernel.org,
+ Eiichi Tsukata <devel@etsukata.com>, Nadav Amit <namit@vmware.com>,
+ Jiri Kosina <jkosina@suse.cz>, linux-ia64@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 09:08:29AM -0800, Nick Desaulniers wrote:
-> On Tue, Jan 21, 2020 at 2:31 AM Will Deacon <will@kernel.org> wrote:
-> >
-> > On Mon, Jan 13, 2020 at 07:57:48AM +0000, Julien Thierry wrote:
-> > > On 1/12/20 8:42 AM, Nathan Chancellor wrote:
-> > > > The 0day bot reported a couple of issues with clang with this series;
-> > > > the full report is available here (clang reports are only sent to our
-> > > > mailing lists for manual triage for the time being):
-> > > >
-> > > > https://groups.google.com/d/msg/clang-built-linux/MJbl_xPxawg/mWjgDgZgBwAJ
-> > > >
-> > >
-> > > Thanks, I'll have a look at those.
-> > >
-> > > > The first obvious issue is that this series appears to depend on a GCC
-> > > > plugin? I'll be quite honest, objtool and everything it does is rather
-> > > > over my head but I see this warning during configuration (allyesconfig):
-> > > >
-> > > > WARNING: unmet direct dependencies detected for GCC_PLUGIN_SWITCH_TABLES
-> > > >    Depends on [n]: GCC_PLUGINS [=n] && ARM64 [=y]
-> > > >      Selected by [y]:
-> > > >        - ARM64 [=y] && STACK_VALIDATION [=y]
-> > > >
-> > > > Followed by the actual error:
-> > > >
-> > > > error: unable to load plugin
-> > > > './scripts/gcc-plugins/arm64_switch_table_detection_plugin.so':
-> > > > './scripts/gcc-plugins/arm64_switch_table_detection_plugin.so: cannot
-> > > > open shared object file: No such file or directory'
-> > > >
-> > > > If this plugin is absolutely necessary and can't be implemented in
-> > > > another way so that clang can be used, seems like STACK_VALIDATION
-> > > > should only be selected on ARM64 when CONFIG_CC_IS_GCC is not zero.
-> > > >
-> > >
-> > > So currently the plugin is necessary for proper validation. One option can
-> > > be to just let objtool output false positives on files containing jump
-> > > tables when the plugin cannot be used. But overall I guess it makes more
-> > > sense to disable stack validation for non-gcc builds, for now.
-> >
-> > Alternatively, could we add '-fno-jump-tables' to the KBUILD_CFLAGS if
-> > STACK_VALIDATION is selected but we're not using GCC? Is that sufficient
-> > to prevent generation of these things?
+On Tue, Jan 21, 2020 at 05:47:52PM +0000, Qais Yousef wrote:
+> On 01/21/20 17:03, Russell King - ARM Linux admin wrote:
+> > On Mon, Nov 25, 2019 at 11:27:41AM +0000, Qais Yousef wrote:
+> > > +void smp_shutdown_nonboot_cpus(unsigned int primary_cpu)
+> > > +{
+> > > +	unsigned int cpu;
+> > > +
+> > > +	if (!cpu_online(primary_cpu)) {
+> > > +		pr_info("Attempting to shutdodwn nonboot cpus while boot cpu is offline!\n");
+> > > +		cpu_online(primary_cpu);
 > 
-> Surely we wouldn't want to replace jump tables with long chains of
-> comparisons just because objtool couldn't validate jump tables without
-> a GCC plugin for aarch64 for some reason, right?  objtool validation
-> is valuable, but tying runtime performance to a GCC plugin used for
-> validation seems bad.
+> Eh, that should be cpu_up(primary_cpu)!
+> 
+> Which I have to say I'm not if is the right thing to do.
+> migrate_to_reboot_cpu() picks the first online cpu if reboot_cpu (assumed 0) is
+> offline
+> 
+> migrate_to_reboot_cpu():
+>  225         /* Make certain the cpu I'm about to reboot on is online */
+>  226         if (!cpu_online(cpu))
+>  227                 cpu = cpumask_first(cpu_online_mask);
+> 
+> > > +	}
+> > > +
+> > > +	for_each_present_cpu(cpu) {
+> > > +		if (cpu == primary_cpu)
+> > > +			continue;
+> > > +		if (cpu_online(cpu))
+> > > +			cpu_down(cpu);
+> > > +	}
+> > 
+> > How does this avoid racing with userspace attempting to restart CPUs
+> > that have already been taken down by this function?
+> 
+> This is meant to be called from machine_shutdown() only.
+> 
+> But you've got a point.
+> 
+> The previous logic that used disable_nonboot_cpus(), which in turn called
+> freeze_secondary_cpus() didn't hold hotplug lock. So I assumed the higher level
+> logic of machine_shutdown() ensures that hotplug lock is held to synchronize
+> with potential other hotplug operations.
 
-I'm only suggesting it if STACK_VALIDATION is selected. It's off by default,
-and lives in Kconfig.debug. I'd prefer that to "cross your fingers are do
-nothing differently", which is what the other option seems to be.
+freeze_secondary_cpus() takes the CPU maps lock while it takes CPUs
+down, and then disables cpu hotplug by incrementing
+cpu_hotplug_disabled.  Incrementing that prevents cpu_up() and
+cpu_down() being used, thereby preventing userspace from changing the
+online state of any CPU in the system.
 
-Will
+> But I can see now that it doesn't.
+> 
+> With this series that migrates users to use device_{online,offline}, holding
+> the lock_device_hotplug() should protect against such races.
+> 
+> Worth noting that this an existing problem in the code and not something
+> I introduced, of course it makes sense to fix it properly as part of this
+> series.
+> 
+> I'm not sure how the other archs deal with this TBH.
+> 
+> Thanks for having a look!
+> 
+> Cheers
+> 
+> --
+> Qais Yousef
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
