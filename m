@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B260E14523F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:14:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5182414525A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:16:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oetPdAwLco0rhMis9ZIP8D3zkyivzFD5B3c+AIz6cBY=; b=KnPbp/abscuV0A
-	dzaWg3FWY81EuMn/9pAHwSjF5SIq8sGYeKmO42GR706mTrJbhqCnhl1Z8bMVfRLKO+znwL6zGF1lZ
-	DyLfFr3QQg8DweeAnPndpSrfAQ/zeAnLkzvTo83MoXl8OUcZkH4Xzn+7dJ2859Xbe3P7qWeRS/IC8
-	1UzPAhOTX6vNja/tHu5KqRz9gWD/jNkn4niuLa4xUiUcM8PXQsCz5yPdJRvnAg5r6iAjzqBpsSDug
-	qkJct6A+weYMX4cHr0f7g1RiYPRpJ/8ScZ70+rWqBbGMfKQNApEmeQiaYPxXMIVA3rjJnjUc16EnP
-	JRr3wDDAbpRB0xhYn10g==;
+	List-Owner; bh=PTUpFQvCedgMQAXNKbjO66hcPjp3Bcot+LHboYfoe7s=; b=kthPVeugLPpyY8
+	CKPbFRit45X7fANzUcmmqec1+1q8b8Rf9DtXA5XK0qWcDeF0nh/uk70c1wVVUaCL/ZDMCGraokl8m
+	HZfsRsfmcivxxLI839oQxqCDLwCFdqr8+uXntyyJomu3ULGSVZkl73bMVJJLzN50gosXAW4/3Bph+
+	dg4U2w2flrqRCsNG6ulMlTk0+lWEdXTjYXY0SuyHdMWFg4u3AsXN76WRc0/p9EjnLYJ3iEIY6Cl5q
+	clvmurhn5pDwtCMvn1Vi1FtjWioXYlBoNvhzbeX4uEd+ELREH0iNL28RyhKiGFiioGjNAC2YPXuEr
+	Gy11iVv8j1xggd8DdZRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuD1R-0008PX-NP; Wed, 22 Jan 2020 10:14:05 +0000
+	id 1iuD3d-0001ah-PV; Wed, 22 Jan 2020 10:16:21 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuD1G-0008Ou-DU
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:13:56 +0000
+ id 1iuD3U-0001aD-88
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:16:13 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iuD15-0000VG-IR; Wed, 22 Jan 2020 18:13:43 +0800
+ id 1iuD3S-0000eQ-UF; Wed, 22 Jan 2020 18:16:11 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1iuD12-00041s-0C; Wed, 22 Jan 2020 18:13:40 +0800
-Date: Wed, 22 Jan 2020 18:13:39 +0800
+ id 1iuD3Q-00045N-Ct; Wed, 22 Jan 2020 18:16:08 +0800
+Date: Wed, 22 Jan 2020 18:16:08 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Tudor.Ambarus@microchip.com
-Subject: Re: [PATCH] crypto: atmel-{aes,sha,tdes} - Retire crypto_platform_data
-Message-ID: <20200122101339.3myva6w3l5zhqzwt@gondor.apana.org.au>
-References: <20200115125347.269203-1-tudor.ambarus@microchip.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] crypto: arm/chacha - fix build failured when kernel mode
+ NEON is disabled
+Message-ID: <20200122101608.v7phje7p52rxjorw@gondor.apana.org.au>
+References: <20200117164318.21941-1-ardb@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200115125347.269203-1-tudor.ambarus@microchip.com>
+In-Reply-To: <20200117164318.21941-1-ardb@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_021354_597561_2D80B8BB 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200122_021612_457701_3C57A38F 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,32 +61,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, peter.ujfalusi@ti.com,
- Ludovic.Desroches@microchip.com, linux-crypto@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Russell King <linux@armlinux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 12:53:53PM +0000, Tudor.Ambarus@microchip.com wrote:
-> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+On Fri, Jan 17, 2020 at 05:43:18PM +0100, Ard Biesheuvel wrote:
+> When the ARM accelerated ChaCha driver is built as part of a configuration
+> that has kernel mode NEON disabled, we expect the compiler to propagate
+> the build time constant expression IS_ENABLED(CONFIG_KERNEL_MODE_NEON) in
+> a way that eliminates all the cross-object references to the actual NEON
+> routines, which allows the chacha-neon-core.o object to be omitted from
+> the build entirely.
 > 
-> These drivers no longer need it as they are only probed via DT.
-> crypto_platform_data was allocated but unused, so remove it.
-> This is a follow up for:
-> commit 45a536e3a7e0 ("crypto: atmel-tdes - Retire dma_request_slave_channel_compat()")
-> commit db28512f48e2 ("crypto: atmel-sha - Retire dma_request_slave_channel_compat()")
-> commit 62f72cbdcf02 ("crypto: atmel-aes - Retire dma_request_slave_channel_compat()")
+> Unfortunately, this fails to work as expected in some cases, and we may
+> end up with a build error such as
 > 
-> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+>   chacha-glue.c:(.text+0xc0): undefined reference to `chacha_4block_xor_neon'
+> 
+> caused by the fact that chacha_doneon() has not been eliminated from the
+> object code, even though it will never be called in practice.
+> 
+> Let's fix this by adding some IS_ENABLED(CONFIG_KERNEL_MODE_NEON) tests
+> that are not strictly needed from a logical point of view, but should
+> help the compiler infer that the NEON code paths are unreachable in
+> those cases.
+> 
+> Fixes: b36d8c09e710c71f ("crypto: arm/chacha - remove dependency on generic ...")
+> Reported-by: Russell King <linux@armlinux.org.uk>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 > ---
->  drivers/crypto/atmel-aes.c                 | 32 +-------------------
->  drivers/crypto/atmel-sha.c                 | 35 +---------------------
->  drivers/crypto/atmel-tdes.c                | 35 +---------------------
->  include/linux/platform_data/crypto-atmel.h | 23 --------------
->  4 files changed, 3 insertions(+), 122 deletions(-)
->  delete mode 100644 include/linux/platform_data/crypto-atmel.h
+>  arch/arm/crypto/chacha-glue.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 
 Patch applied.  Thanks.
 -- 
