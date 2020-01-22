@@ -2,140 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A9AF145A7D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:02:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DE15145A90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:05:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zw5JOlk8apc2N7ki/crUKpRzxUOYM2YgPUXd0mz5CLI=; b=d2KcK5whiGUnmO
-	ZmjGpBDZ8ODrhIzwEDXU8xwNRiJfIAnOSWDv9T0Y14nD4eKVlBl9P206mV2k1c4Zt52Vo+y5U/yPN
-	HId2kM2aUQbtXMLI8Wqc3KeJTj1Mgo6Tb2XEsDYskpBp+lOJEZKpX9t+1vwhC1kkmFG+mz8dNiMZs
-	NIHT9qxk3UJZJMvPgxvDjKL4XitKmCM23/pX5JBsHTtixEM47ZgsX9hvqePfP+JrakHaUxx3+Rwpw
-	eTVJAujUKMqBGADi78hXyxFQQqqOk3bzMTXOdQkY0mP300wdDDArBBPKnGPIWyjrwlTAsZ1oaVE5E
-	X+UJjCH9R3z4RRKZJkLQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Jf3i5YrqX7v9HmAkDs0Ws1+2JoaCQvFiW2Zk8l/m3Lc=; b=u0gAxy0tZsNHvJ
+	AN9xIhjxHpMGNCUTyNNFr8a86PGGvEPmpTjPFlff9jntP1nvFvNSRoVv5zZWabj3+VeYbPmkxif4a
+	bynCn3il9OVMnEUfv6YVr3UOv4ed5d2z2pU5rAtFcN0ULARaAWGjv0HReDQDF53gZi2PQrm/7PQjF
+	5zWJmzcx61064WY3Kn7f6oh1rayw8QB2oZMI//Q78GylVak7AP/JB8hQaltJicp60PkIxaVne0YWC
+	pvskSaYUdynkuuIDHJ2xdOJp1D9ddfY8lToiPGuu6UQwwL4kfC8v59uKupDnfcISrl64P8aEeNbVa
+	zpRXzr6D5QvGHR0QHBvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuJOQ-0003Oh-OW; Wed, 22 Jan 2020 17:02:14 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iuJRi-0003sE-BA; Wed, 22 Jan 2020 17:05:38 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuJOG-0003O5-QM
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 17:02:06 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so8138273wro.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 09:02:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6yEZAxxxHYV12v4fDlL+top5CchSxDt3hhEnOERCk/E=;
- b=K4mkXA6RgYkzeT0Rv8x5ic+MSLWPsJ7lETAUabyHh3rHjaPGJELBZ9PX1MqEIOcRl2
- xgoijdQBfTc2c/mQ02IdBAlbPWmbhx7SFUUATxOrjR31DCwkFfOf7e73siKqTDQTh91L
- kGXLqXpw9FMfSYgL2xVxXezDir3rCVARbBKhrnz8cJxZozn60+TEBAu5QqIQpZ2PIZVx
- J0+yi66sRk8Xxe9yLIkTyVJoRY9X3KT+HolvND3rY6E+4+KVnVSON/TsKBQ+HjznXAO8
- 0epTiXE7u4IGJJmOKQ8J+9gRPCVyCP3BMNd9ZJGwaEuPL4BwqaCDitW/k7xsc0d4+txN
- hCKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=6yEZAxxxHYV12v4fDlL+top5CchSxDt3hhEnOERCk/E=;
- b=Zih3NpmXHZrxA/VWF7C0cG/sH3mweVR0u2WAzG7OYzcJ8Hfch7HSdarlN5B4CUrZXN
- Q7I7910y+EuxWc0BXRHRGGTG1G0d+9ZN/kEgdoSgk1BEFhHRZcJE8ttyTboER2yhPXmh
- Fm2dbGM6J4Mw2AX5ote27vqtDNvr2reRLigZktmWFQwoKL8atmRW+pj8fPvOAXyYCD0i
- 0qqHwPm35W9QMQC+OByyNHrzevNL8/LAJHP0duOnW+fGpcs2vGfXwRhYWCQ9O2l4MpDM
- +88RAPomaL7P6PRZpmRy2Gjr3S/rqTLSseDzKkA2yf4gT1SX58kZQj5OjOhV0cV3JmNn
- Tvew==
-X-Gm-Message-State: APjAAAU8WYe4RWsu/Jf/oIn4hJaRj3f+ZRBKfzmwmd8djIe0dwQumke5
- 6XdxFxsKWJvLkDgbpzMpRY2PCQ==
-X-Google-Smtp-Source: APXvYqxxw4sc6b+/uxE67ifj04r32qOp0umTqsdEYgouYvEcOhvyB7Xp1KIQ1mI8TAaAZ/SmGSMRFw==
-X-Received: by 2002:a5d:4602:: with SMTP id t2mr11748574wrq.37.1579712522950; 
- Wed, 22 Jan 2020 09:02:02 -0800 (PST)
-Received: from [10.44.66.8] ([212.45.67.2])
- by smtp.googlemail.com with ESMTPSA id x16sm4775064wmk.35.2020.01.22.09.02.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 Jan 2020 09:02:02 -0800 (PST)
-Subject: Re: [RFC PATCH v3 5/7] devfreq: exynos-bus: Add interconnect
- functionality to exynos-bus
-To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, dri-devel@lists.freedesktop.org
-References: <20191220115653.6487-1-a.swigon@samsung.com>
- <CGME20191220120145eucas1p295af63eed7b23982d8c49fcf875cec8c@eucas1p2.samsung.com>
- <20191220115653.6487-6-a.swigon@samsung.com>
-From: Georgi Djakov <georgi.djakov@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=georgi.djakov@linaro.org; prefer-encrypt=mutual; keydata=
- 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
- KEmKjLDvB0pePJkdTw==
-Message-ID: <15795421-db12-8466-bb7e-688e6625cf4a@linaro.org>
-Date: Wed, 22 Jan 2020 19:02:00 +0200
+ id 1iuJRH-0003rs-Am
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 22 Jan 2020 17:05:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=J42OoTtifdDN3LunEbWluQEhFHDFChSHhb/WUPgfuFk=; b=quPVgMD05WJDnI+3YTuuVz0gD
+ KOzL84mUhUQy3t/LlZ65VgJmnJ6SBQU7sOiYr5ed3KcV222CedU174mXPKUYsm9imq9Pc28DL73It
+ tim5beEZ6bAqLgwxZnAYheff01oKeFixcXjZG3p5/B4IRRWlyIJV22sJm+h7IKucpJVjL1w32HQaH
+ n3tDx7fvsdsjiI36j05ageUbuKr9uQKermVKw2PxcaCCwc7hGDe6niLH8b04RumTaKgGybKCYyxb2
+ g+BYIrcusn0vXJ461XwlgsiBv5NsqaEGIEB790Jx4PKjja9PTwkBrmmmuN+Bg0pb5vCXRBrA6LVZZ
+ R0QR/dAKw==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuJR4-0008LB-UM; Wed, 22 Jan 2020 17:04:59 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id C758A305FEA;
+ Wed, 22 Jan 2020 18:03:16 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 7E69E2B6F5E7C; Wed, 22 Jan 2020 18:04:56 +0100 (CET)
+Date: Wed, 22 Jan 2020 18:04:56 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+Message-ID: <20200122170456.GY14879@hirez.programming.kicks-ass.net>
+References: <20191125210709.10293-1-alex.kogan@oracle.com>
+ <20191125210709.10293-4-alex.kogan@oracle.com>
+ <20200121202919.GM11457@worktop.programming.kicks-ass.net>
+ <20200122095127.GC14946@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-In-Reply-To: <20191220115653.6487-6-a.swigon@samsung.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_090204_924539_7ACDDC4C 
-X-CRM114-Status: GOOD (  25.53  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+Content-Disposition: inline
+In-Reply-To: <20200122095127.GC14946@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,138 +72,301 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: b.zolnierkie@samsung.com, sw0312.kim@samsung.com, krzk@kernel.org,
- inki.dae@samsung.com, cw00.choi@samsung.com, myungjoo.ham@samsung.com,
- leonard.crestez@nxp.com, m.szyprowski@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
+ linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
+ bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
+ daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQXJ0dXIsCgpPbiAxMi8yMC8xOSAxMzo1NiwgQXJ0dXIgxZp3aWdvxYQgd3JvdGU6Cj4gVGhp
-cyBwYXRjaCBhZGRzIGludGVyY29ubmVjdCBmdW5jdGlvbmFsaXR5IHRvIHRoZSBleHlub3MtYnVz
-IGRldmZyZXEKPiBkcml2ZXIuCj4gCj4gVGhlIFNvQyB0b3BvbG9neSBpcyBhIGdyYXBoIChvciwg
-bW9yZSBzcGVjaWZpY2FsbHksIGEgdHJlZSkgYW5kIGl0cwo+IGVkZ2VzIGFyZSBzcGVjaWZpZWQg
-dXNpbmcgdGhlICdleHlub3MsaW50ZXJjb25uZWN0LXBhcmVudC1ub2RlJyBpbiB0aGUKPiBEVC4g
-RHVlIHRvIHVuc3BlY2lmaWVkIHJlbGF0aXZlIHByb2Jpbmcgb3JkZXIsIC1FUFJPQkVfREVGRVIg
-bWF5IGJlCj4gcHJvcGFnYXRlZCB0byBlbnN1cmUgdGhhdCB0aGUgcGFyZW50IGlzIHByb2JlZCBi
-ZWZvcmUgaXRzIGNoaWxkcmVuLgo+IAo+IEVhY2ggYnVzIGlzIG5vdyBhbiBpbnRlcmNvbm5lY3Qg
-cHJvdmlkZXIgYW5kIGFuIGludGVyY29ubmVjdCBub2RlIGFzIHdlbGwKPiAoY2YuIERvY3VtZW50
-YXRpb24vaW50ZXJjb25uZWN0L2ludGVyY29ubmVjdC5yc3QpLCBpLmUuIGV2ZXJ5IGJ1cyByZWdp
-c3RlcnMKPiBpdHNlbGYgYXMgYSBub2RlLiBOb2RlIElEcyBhcmUgbm90IGhhcmRjb2RlZCBidXQg
-cmF0aGVyIGFzc2lnbmVkIGF0CgpKdXN0IHRvIG5vdGUgdGhhdCB1c3VhbGx5IHRoZSBwcm92aWRl
-ciBjb25zaXN0cyBvZiBtdWx0aXBsZSBub2RlcyBhbmQgZWFjaCBub2RlCnJlcHJlc2VudHMgYSBz
-aW5nbGUgbWFzdGVyIG9yIHNsYXZlIHBvcnQgb24gdGhlIEFYSSBidXMgZm9yIGV4YW1wbGUuIEkg
-YW0gbm90CnN1cmUgd2hldGhlciB0aGlzIHJlcHJlc2VudHMgY29ycmVjdGx5IHRoZSBFeHlub3Mg
-aGFyZHdhcmUsIHNvIGl0J3MgdXAgdG8KeW91LgoKPiBydW50aW1lLCBpbiBwcm9iaW5nIG9yZGVy
-IChzdWJqZWN0IHRvIHRoZSBhYm92ZS1tZW50aW9uZWQgZXhjZXB0aW9uCj4gcmVnYXJkaW5nIHJl
-bGF0aXZlIG9yZGVyKS4gVGhpcyBhcHByb2FjaCBhbGxvd3MgZm9yIHVzaW5nIHRoaXMgZHJpdmVy
-IHdpdGgKPiB2YXJpb3VzIEV4eW5vcyBTb0NzLgoKVGhpcyBzb3VuZHMgZ29vZC4gSSBhbSB3b25k
-ZXJpbmcgd2hldGhlciBzdWNoIGR5bmFtaWMgcHJvYmluZyB3b3VsZCBiZSB1c2VmdWwKZm9yIG90
-aGVyIHBsYXRmb3JtcyB0b28uIFRoZW4gbWF5YmUgaXQgd291bGQgbWFrZSBzZW5zZSB0byBldmVu
-IGhhdmUgYSBjb21tb24gRFQKcHJvcGVydHksIGJ1dCB3ZSB3aWxsIHNlZS4KCklzIHRoaXMgZ29p
-bmcgdG8gYmUgdXNlZCBvbmx5IHRvZ2V0aGVyIHdpdGggZGV2ZnJlcT8KCj4gRnJlcXVlbmNpZXMg
-cmVxdWVzdGVkIHZpYSB0aGUgaW50ZXJjb25uZWN0IEFQSSBmb3IgYSBnaXZlbiBub2RlIGFyZQo+
-IHByb3BhZ2F0ZWQgdG8gZGV2ZnJlcSB1c2luZyBkZXZfcG1fcW9zX3VwZGF0ZV9yZXF1ZXN0KCku
-IFBsZWFzZSBub3RlIHRoYXQKPiBpdCBpcyBub3QgYW4gZXJyb3Igd2hlbiBDT05GSUdfSU5URVJD
-T05ORUNUIGlzICduJywgaW4gd2hpY2ggY2FzZSBhbGwKPiBpbnRlcmNvbm5lY3QgQVBJIGZ1bmN0
-aW9ucyBhcmUgbm8tb3AuCgpIb3cgYWJvdXQgdGhlIGNhc2Ugd2hlcmUgQ09ORklHX0lOVEVSQ09O
-TkVDVD1tLiBMb29rcyBsaWtlIHRoZSBidWlsZCB3aWxsIGZhaWwKaWYgQ09ORklHX0FSTV9FWFlO
-T1NfQlVTX0RFVkZSRVE9eSwgc28gdGhpcyBkZXBlbmRlbmN5IHNob3VsZCBiZSBleHByZXNzZWQg
-aW4KS2NvbmZpZy4KClRoYW5rcywKR2VvcmdpCgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFydHVyIMWa
-d2lnb8WEIDxhLnN3aWdvbkBzYW1zdW5nLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9kZXZmcmVxL2V4
-eW5vcy1idXMuYyB8IDE0NCArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwo+ICAx
-IGZpbGUgY2hhbmdlZCwgMTQ0IGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9kZXZmcmVxL2V4eW5vcy1idXMuYyBiL2RyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMKPiBp
-bmRleCA5ZmRiMTg4OTE1ZTguLjY5NGE5NTgxZGNkYiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2Rl
-dmZyZXEvZXh5bm9zLWJ1cy5jCj4gKysrIGIvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+
-IEBAIC0xNCwxNCArMTQsMTkgQEAKPiAgI2luY2x1ZGUgPGxpbnV4L2RldmZyZXEtZXZlbnQuaD4K
-PiAgI2luY2x1ZGUgPGxpbnV4L2RldmljZS5oPgo+ICAjaW5jbHVkZSA8bGludXgvZXhwb3J0Lmg+
-Cj4gKyNpbmNsdWRlIDxsaW51eC9pZHIuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2ludGVyY29ubmVj
-dC1wcm92aWRlci5oPgo+ICAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gICNpbmNsdWRlIDxs
-aW51eC9vZi5oPgo+ICAjaW5jbHVkZSA8bGludXgvcG1fb3BwLmg+Cj4gKyNpbmNsdWRlIDxsaW51
-eC9wbV9xb3MuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ICAjaW5j
-bHVkZSA8bGludXgvcmVndWxhdG9yL2NvbnN1bWVyLmg+Cj4gIAo+ICAjZGVmaW5lIERFRkFVTFRf
-U0FUVVJBVElPTl9SQVRJTwk0MAo+ICAKPiArI2RlZmluZSBrYnBzX3RvX2toeih4KSAoKHgpIC8g
-OCkKPiArCj4gIHN0cnVjdCBleHlub3NfYnVzIHsKPiAgCXN0cnVjdCBkZXZpY2UgKmRldjsKPiAg
-Cj4gQEAgLTM1LDYgKzQwLDEyIEBAIHN0cnVjdCBleHlub3NfYnVzIHsKPiAgCXN0cnVjdCBvcHBf
-dGFibGUgKm9wcF90YWJsZTsKPiAgCXN0cnVjdCBjbGsgKmNsazsKPiAgCXVuc2lnbmVkIGludCBy
-YXRpbzsKPiArCj4gKwkvKiBPbmUgcHJvdmlkZXIgcGVyIGJ1cywgb25lIG5vZGUgcGVyIHByb3Zp
-ZGVyICovCj4gKwlzdHJ1Y3QgaWNjX3Byb3ZpZGVyIHByb3ZpZGVyOwo+ICsJc3RydWN0IGljY19u
-b2RlICpub2RlOwo+ICsKPiArCXN0cnVjdCBkZXZfcG1fcW9zX3JlcXVlc3QgcW9zX3JlcTsKPiAg
-fTsKPiAgCj4gIC8qCj4gQEAgLTIwNSw2ICsyMTYsMzkgQEAgc3RhdGljIHZvaWQgZXh5bm9zX2J1
-c19wYXNzaXZlX2V4aXQoc3RydWN0IGRldmljZSAqZGV2KQo+ICAJY2xrX2Rpc2FibGVfdW5wcmVw
-YXJlKGJ1cy0+Y2xrKTsKPiAgfQo+ICAKPiArc3RhdGljIGludCBleHlub3NfYnVzX2ljY19zZXQo
-c3RydWN0IGljY19ub2RlICpzcmMsIHN0cnVjdCBpY2Nfbm9kZSAqZHN0KQo+ICt7Cj4gKwlzdHJ1
-Y3QgZXh5bm9zX2J1cyAqc3JjX2J1cyA9IHNyYy0+ZGF0YSwgKmRzdF9idXMgPSBkc3QtPmRhdGE7
-Cj4gKwlzMzIgc3JjX2ZyZXEgPSBrYnBzX3RvX2toeihzcmMtPmF2Z19idyk7Cj4gKwlzMzIgZHN0
-X2ZyZXEgPSBrYnBzX3RvX2toeihkc3QtPmF2Z19idyk7Cj4gKwlpbnQgcmV0Owo+ICsKPiArCXJl
-dCA9IGRldl9wbV9xb3NfdXBkYXRlX3JlcXVlc3QoJnNyY19idXMtPnFvc19yZXEsIHNyY19mcmVx
-KTsKPiArCWlmIChyZXQgPCAwKSB7Cj4gKwkJZGV2X2VycihzcmNfYnVzLT5kZXYsICJmYWlsZWQg
-dG8gdXBkYXRlIFBNIFFvUyByZXF1ZXN0Iik7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4g
-KwlyZXQgPSBkZXZfcG1fcW9zX3VwZGF0ZV9yZXF1ZXN0KCZkc3RfYnVzLT5xb3NfcmVxLCBkc3Rf
-ZnJlcSk7Cj4gKwlpZiAocmV0IDwgMCkgewo+ICsJCWRldl9lcnIoZHN0X2J1cy0+ZGV2LCAiZmFp
-bGVkIHRvIHVwZGF0ZSBQTSBRb1MgcmVxdWVzdCIpOwo+ICsJCXJldHVybiByZXQ7Cj4gKwl9Cj4g
-Kwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBzdHJ1Y3QgaWNjX25vZGUgKmV4eW5v
-c19idXNfaWNjX3hsYXRlKHN0cnVjdCBvZl9waGFuZGxlX2FyZ3MgKnNwZWMsCj4gKwkJCQkJICAg
-ICB2b2lkICpkYXRhKQo+ICt7Cj4gKwlzdHJ1Y3QgZXh5bm9zX2J1cyAqYnVzID0gZGF0YTsKPiAr
-Cj4gKwlpZiAoc3BlYy0+bnAgIT0gYnVzLT5kZXYtPm9mX25vZGUpCj4gKwkJcmV0dXJuIEVSUl9Q
-VFIoLUVJTlZBTCk7Cj4gKwo+ICsJcmV0dXJuIGJ1cy0+bm9kZTsKPiArfQo+ICsKPiAgc3RhdGlj
-IGludCBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZihzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLAo+
-ICAJCQkJCXN0cnVjdCBleHlub3NfYnVzICpidXMpCj4gIHsKPiBAQCAtNDE5LDYgKzQ2Myw5NiBA
-QCBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJvZmlsZV9pbml0X3Bhc3NpdmUoc3RydWN0IGV4eW5v
-c19idXMgKmJ1cywKPiAgCXJldHVybiAwOwo+ICB9Cj4gIAo+ICtzdGF0aWMgc3RydWN0IGljY19u
-b2RlICpleHlub3NfYnVzX2ljY19nZXRfcGFyZW50KHN0cnVjdCBleHlub3NfYnVzICpidXMpCj4g
-K3sKPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAgPSBidXMtPmRldi0+b2Zfbm9kZTsKPiArCXN0
-cnVjdCBvZl9waGFuZGxlX2FyZ3MgYXJnczsKPiArCWludCBudW0sIHJldDsKPiArCj4gKwludW0g
-PSBvZl9jb3VudF9waGFuZGxlX3dpdGhfYXJncyhucCwgImV4eW5vcyxpbnRlcmNvbm5lY3QtcGFy
-ZW50LW5vZGUiLAo+ICsJCQkJCSIjaW50ZXJjb25uZWN0LWNlbGxzIik7Cj4gKwlpZiAobnVtICE9
-IDEpCj4gKwkJcmV0dXJuIE5VTEw7IC8qIHBhcmVudCBub2RlcyBhcmUgb3B0aW9uYWwgKi8KPiAr
-Cj4gKwlyZXQgPSBvZl9wYXJzZV9waGFuZGxlX3dpdGhfYXJncyhucCwgImV4eW5vcyxpbnRlcmNv
-bm5lY3QtcGFyZW50LW5vZGUiLAo+ICsJCQkJCSIjaW50ZXJjb25uZWN0LWNlbGxzIiwgMCwgJmFy
-Z3MpOwo+ICsJaWYgKHJldCA8IDApCj4gKwkJcmV0dXJuIEVSUl9QVFIocmV0KTsKPiArCj4gKwlv
-Zl9ub2RlX3B1dChhcmdzLm5wKTsKPiArCj4gKwlyZXR1cm4gb2ZfaWNjX2dldF9mcm9tX3Byb3Zp
-ZGVyKCZhcmdzKTsKPiArfQo+ICsKPiArc3RhdGljIGludCBleHlub3NfYnVzX2ljY19pbml0KHN0
-cnVjdCBleHlub3NfYnVzICpidXMpCj4gK3sKPiArCXN0YXRpYyBERUZJTkVfSURBKGlkYSk7Cj4g
-Kwo+ICsJc3RydWN0IGRldmljZSAqZGV2ID0gYnVzLT5kZXY7Cj4gKwlzdHJ1Y3QgaWNjX3Byb3Zp
-ZGVyICpwcm92aWRlciA9ICZidXMtPnByb3ZpZGVyOwo+ICsJc3RydWN0IGljY19ub2RlICpub2Rl
-LCAqcGFyZW50X25vZGU7Cj4gKwlpbnQgaWQsIHJldDsKPiArCj4gKwkvKiBJbml0aWFsaXplIHRo
-ZSBpbnRlcmNvbm5lY3QgcHJvdmlkZXIgKi8KPiArCXByb3ZpZGVyLT5zZXQgPSBleHlub3NfYnVz
-X2ljY19zZXQ7Cj4gKwlwcm92aWRlci0+YWdncmVnYXRlID0gaWNjX3N0ZF9hZ2dyZWdhdGU7Cj4g
-Kwlwcm92aWRlci0+eGxhdGUgPSBleHlub3NfYnVzX2ljY194bGF0ZTsKPiArCXByb3ZpZGVyLT5k
-ZXYgPSBkZXY7Cj4gKwlwcm92aWRlci0+aW50ZXJfc2V0ID0gdHJ1ZTsKPiArCXByb3ZpZGVyLT5k
-YXRhID0gYnVzOwo+ICsKPiArCXJldCA9IGljY19wcm92aWRlcl9hZGQocHJvdmlkZXIpOwo+ICsJ
-aWYgKHJldCA8IDApCj4gKwkJcmV0dXJuIHJldDsKPiArCj4gKwlyZXQgPSBpZCA9IGlkYV9hbGxv
-YygmaWRhLCBHRlBfS0VSTkVMKTsKPiArCWlmIChyZXQgPCAwKQo+ICsJCWdvdG8gZXJyX2lkOwo+
-ICsKPiArCW5vZGUgPSBpY2Nfbm9kZV9jcmVhdGUoaWQpOwo+ICsJaWYgKElTX0VSUihub2RlKSkg
-ewo+ICsJCXJldCA9IFBUUl9FUlIobm9kZSk7Cj4gKwkJZ290byBlcnJfbm9kZTsKPiArCX0KPiAr
-Cj4gKwlidXMtPm5vZGUgPSBub2RlOwo+ICsJbm9kZS0+bmFtZSA9IGRldi0+b2Zfbm9kZS0+bmFt
-ZTsKPiArCW5vZGUtPmRhdGEgPSBidXM7Cj4gKwlpY2Nfbm9kZV9hZGQobm9kZSwgcHJvdmlkZXIp
-Owo+ICsKPiArCXBhcmVudF9ub2RlID0gZXh5bm9zX2J1c19pY2NfZ2V0X3BhcmVudChidXMpOwo+
-ICsJaWYgKElTX0VSUihwYXJlbnRfbm9kZSkpIHsKPiArCQlyZXQgPSBQVFJfRVJSKHBhcmVudF9u
-b2RlKTsKPiArCQlnb3RvIGVycl9wYXJlbnQ7Cj4gKwl9Cj4gKwo+ICsJaWYgKHBhcmVudF9ub2Rl
-KSB7Cj4gKwkJcmV0ID0gaWNjX2xpbmtfY3JlYXRlKG5vZGUsIHBhcmVudF9ub2RlLT5pZCk7Cj4g
-KwkJaWYgKHJldCA8IDApCj4gKwkJCWdvdG8gZXJyX3BhcmVudDsKPiArCX0KPiArCj4gKwlyZXQg
-PSBkZXZfcG1fcW9zX2FkZF9yZXF1ZXN0KGJ1cy0+ZGV2ZnJlcS0+ZGV2LnBhcmVudCwgJmJ1cy0+
-cW9zX3JlcSwKPiArCQkJCQlERVZfUE1fUU9TX01JTl9GUkVRVUVOQ1ksIDApOwo+ICsJaWYgKHJl
-dCA8IDApCj4gKwkJZ290byBlcnJfcmVxdWVzdDsKPiArCj4gKwlyZXR1cm4gMDsKPiArCj4gK2Vy
-cl9yZXF1ZXN0Ogo+ICsJaWYgKHBhcmVudF9ub2RlKQo+ICsJCWljY19saW5rX2Rlc3Ryb3kobm9k
-ZSwgcGFyZW50X25vZGUpOwo+ICtlcnJfcGFyZW50Ogo+ICsJaWNjX25vZGVfZGVsKG5vZGUpOwo+
-ICsJaWNjX25vZGVfZGVzdHJveShpZCk7Cj4gK2Vycl9ub2RlOgo+ICsJaWRhX2ZyZWUoJmlkYSwg
-aWQpOwo+ICtlcnJfaWQ6Cj4gKwlpY2NfcHJvdmlkZXJfZGVsKHByb3ZpZGVyKTsKPiArCj4gKwly
-ZXR1cm4gcmV0Owo+ICt9Cj4gKwo+ICBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJvYmUoc3RydWN0
-IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgewo+ICAJc3RydWN0IGRldmljZSAqZGV2ID0gJnBk
-ZXYtPmRldjsKPiBAQCAtNDY4LDYgKzYwMiwxNiBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJv
-YmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCWlmIChyZXQgPCAwKQo+ICAJCWdv
-dG8gZXJyOwo+ICAKPiArCS8qCj4gKwkgKiBJbml0aWFsaXplIGludGVyY29ubmVjdCBwcm92aWRl
-ci4gQSByZXR1cm4gdmFsdWUgb2YgLUVOT1RTVVBQIG1lYW5zCj4gKwkgKiB0aGF0IENPTkZJR19J
-TlRFUkNPTk5FQ1QgaXMgZGlzYWJsZWQuCj4gKwkgKi8KPiArCXJldCA9IGV4eW5vc19idXNfaWNj
-X2luaXQoYnVzKTsKPiArCWlmIChyZXQgPCAwICYmIHJldCAhPSAtRU5PVFNVUFApIHsKPiArCQlk
-ZXZfZXJyKGRldiwgImZhaWxlZCB0byBpbml0aWFsaXplIHRoZSBpbnRlcmNvbm5lY3QgcHJvdmlk
-ZXIiKTsKPiArCQlnb3RvIGVycjsKPiArCX0KPiArCj4gIAltYXhfc3RhdGUgPSBidXMtPmRldmZy
-ZXEtPnByb2ZpbGUtPm1heF9zdGF0ZTsKPiAgCW1pbl9mcmVxID0gKGJ1cy0+ZGV2ZnJlcS0+cHJv
-ZmlsZS0+ZnJlcV90YWJsZVswXSAvIDEwMDApOwo+ICAJbWF4X2ZyZXEgPSAoYnVzLT5kZXZmcmVx
-LT5wcm9maWxlLT5mcmVxX3RhYmxlW21heF9zdGF0ZSAtIDFdIC8gMTAwMCk7Cj4gCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Jan 22, 2020 at 10:51:27AM +0100, Peter Zijlstra wrote:
+> On Tue, Jan 21, 2020 at 09:29:19PM +0100, Peter Zijlstra wrote:
+> > 
+> > various notes and changes in the below.
+> 
+> Also, sorry for replying to v7 and v8, I forgot to refresh email on the
+> laptop and had spotty cell service last night and only found v7 in that
+> mailbox.
+> 
+> Afaict none of the things I commented on were fundamentally changed
+> though.
+
+But since I was editing, here is the latest version..
+
+---
+
+Index: linux-2.6/kernel/locking/qspinlock_cna.h
+===================================================================
+--- /dev/null
++++ linux-2.6/kernel/locking/qspinlock_cna.h
+@@ -0,0 +1,261 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef _GEN_CNA_LOCK_SLOWPATH
++#error "do not include this file"
++#endif
++
++#include <linux/topology.h>
++
++/*
++ * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
++ *
++ * In CNA, spinning threads are organized in two queues, a primary queue for
++ * threads running on the same NUMA node as the current lock holder, and a
++ * secondary queue for threads running on other nodes. Schematically, it looks
++ * like this:
++ *
++ *    cna_node
++ *   +----------+     +--------+         +--------+
++ *   |mcs:next  | --> |mcs:next| --> ... |mcs:next| --> NULL  [Primary queue]
++ *   |mcs:locked| -.  +--------+         +--------+
++ *   +----------+  |
++ *                 `----------------------.
++ *                                        v
++ *                 +--------+         +--------+
++ *                 |mcs:next| --> ... |mcs:next|            [Secondary queue]
++ *                 +--------+         +--------+
++ *                     ^                    |
++ *                     `--------------------'
++ *
++ * N.B. locked := 1 if secondary queue is absent. Otherwise, it contains the
++ * encoded pointer to the tail of the secondary queue, which is organized as a
++ * circular list.
++ *
++ * After acquiring the MCS lock and before acquiring the spinlock, the lock
++ * holder scans the primary queue looking for a thread running on the same node
++ * (pre-scan). If found (call it thread T), all threads in the primary queue
++ * between the current lock holder and T are moved to the end of the secondary
++ * queue.  If such T is not found, we make another scan of the primary queue
++ * when unlocking the MCS lock (post-scan), starting at the node where pre-scan
++ * stopped. If both scans fail to find such T, the MCS lock is passed to the
++ * first thread in the secondary queue. If the secondary queue is empty, the
++ * lock is passed to the next thread in the primary queue.
++ *
++ * For more details, see https://arxiv.org/abs/1810.05600.
++ *
++ * Authors: Alex Kogan <alex.kogan@oracle.com>
++ *          Dave Dice <dave.dice@oracle.com>
++ */
++
++struct cna_node {
++	struct mcs_spinlock	mcs;
++	int			numa_node;
++	u32			encoded_tail;    /* self */
++	u32			partial_order;
++};
++
++static void __init cna_init_nodes_per_cpu(unsigned int cpu)
++{
++	struct mcs_spinlock *base = per_cpu_ptr(&qnodes[0].mcs, cpu);
++	int numa_node = cpu_to_node(cpu);
++	int i;
++
++	for (i = 0; i < MAX_NODES; i++) {
++		struct cna_node *cn = (struct cna_node *)grab_mcs_node(base, i);
++
++		cn->numa_node = numa_node;
++		cn->encoded_tail = encode_tail(cpu, i);
++		/*
++		 * @encoded_tail has to be larger than 1, so we do not confuse
++		 * it with other valid values for @locked or @partial_order
++		 * (0 or 1)
++		 */
++		WARN_ON(cn->encoded_tail <= 1);
++	}
++}
++
++static int __init cna_init_nodes(void)
++{
++	unsigned int cpu;
++
++	/*
++	 * this will break on 32bit architectures, so we restrict
++	 * the use of CNA to 64bit only (see arch/x86/Kconfig)
++	 */
++	BUILD_BUG_ON(sizeof(struct cna_node) > sizeof(struct qnode));
++	/* we store an ecoded tail word in the node's @locked field */
++	BUILD_BUG_ON(sizeof(u32) > sizeof(unsigned int));
++
++	for_each_possible_cpu(cpu)
++		cna_init_nodes_per_cpu(cpu);
++
++	return 0;
++}
++early_initcall(cna_init_nodes);
++
++/*
++ * cna_splice_tail -- splice nodes in the primary queue between [first, last]
++ * onto the secondary queue.
++ */
++static void cna_splice_tail(struct mcs_spinlock *node,
++			    struct mcs_spinlock *first,
++			    struct mcs_spinlock *last)
++{
++	/* remove [first,last] */
++	node->next = last->next;
++
++	/* stick [first,last] on the secondary queue tail */
++	if (node->locked <= 1) { /* if secondary queue is empty */
++		/* create secondary queue */
++		last->next = first;
++	} else {
++		/* add to the tail of the secondary queue */
++		struct mcs_spinlock *tail_2nd = decode_tail(node->locked);
++		struct mcs_spinlock *head_2nd = tail_2nd->next;
++
++		tail_2nd->next = first;
++		last->next = head_2nd;
++	}
++
++	node->locked = ((struct cna_node *)last)->encoded_tail;
++}
++
++/*
++ * cna_order_queue - scan the primary queue looking for the first lock node on
++ * the same NUMA node as the lock holder and move any skipped nodes onto the
++ * secondary queue.
++ *
++ * Returns 0 if a matching node is found; otherwise return the encoded pointer
++ * to the last element inspected (such that a subsequent scan can continue there).
++ *
++ * The worst case complexity of the scan is O(n), where n is the number
++ * of current waiters. However, the amortized complexity is close to O(1),
++ * as the immediate successor is likely to be running on the same node once
++ * threads from other nodes are moved to the secondary queue.
++ *
++ * XXX does not compute; given equal contention it should average to O(nr_nodes).
++ */
++static u32 cna_order_queue(struct mcs_spinlock *node,
++			   struct mcs_spinlock *iter)
++{
++	struct cna_node *cni = (struct cna_node *)READ_ONCE(iter->next);
++	struct cna_node *cn = (struct cna_node *)node;
++	int nid = cn->numa_node;
++	struct cna_node *last;
++
++	/* find any next waiter on 'our' NUMA node */
++	for (last = cn;
++	     cni && cni->numa_node != nid;
++	     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
++		;
++
++	if (!cna)
++		return last->encoded_tail; /* continue from here */
++
++	if (last != cn)	/* did we skip any waiters? */
++		cna_splice_tail(node, node->next, (struct mcs_spinlock *)last);
++
++	return 0;
++}
++
++/*
++ * cna_splice_head -- splice the entire secondary queue onto the head of the
++ * primary queue.
++ */
++static cna_splice_head(struct qspinlock *lock, u32 val,
++		       struct mcs_spinlock *node, struct mcs_spinlock *next)
++{
++	struct mcs_spinlock *head_2nd, *tail_2nd;
++
++	tail_2nd = decode_tail(node->locked);
++	head_2nd = tail_2nd->next;
++
++	if (lock) {
++		u32 new = ((struct cna_node *)tail_2nd)->encoded_tail | _Q_LOCKED_VAL;
++		if (!atomic_try_cmpxchg_relaxed(&lock->val, &val, new))
++			return NULL;
++
++		/*
++		 * The moment we've linked the primary tail we can race with
++		 * the WRITE_ONCE(prev->next, node) store from new waiters.
++		 * That store must win.
++		 */
++		cmpxchg_relaxed(&tail_2nd->next, head_2nd, next);
++	} else {
++		tail_2nd->next = next;
++	}
++
++	return head_2nd;
++}
++
++/* Abuse the pv_wait_head_or_lock() hook to get some work done */
++static __always_inline u32 cna_wait_head_or_lock(struct qspinlock *lock,
++						 struct mcs_spinlock *node)
++{
++	struct cna_node *cn = (struct cna_node *)node;
++
++	/*
++	 * Try and put the time otherwise spend spin waiting on
++	 * _Q_LOCKED_PENDING_MASK to use by sorting our lists.
++	 */
++	cn->partial_order = cna_order_queue(node, node);
++
++	return 0; /* we lied; we didn't wait, go do so now */
++}
++
++static inline bool cna_try_clear_tail(struct qspinlock *lock, u32 val,
++				      struct mcs_spinlock *node)
++{
++	struct mcs_spinlock *next;
++
++	/*
++	 * We're here because the primary queue is empty; check the secondary
++	 * queue for remote waiters.
++	 */
++	if (node->locked > 1) {
++		/*
++		 * When there are waiters on the secondary queue move them back
++		 * onto the primary queue and let them rip.
++		 */
++		next = cna_splice_head(lock, val, node, NULL);
++		if (next) {
++			arch_mcs_pass_lock(&head_2nd->locked, 1);
++			return true;
++		}
++
++		return false;
++	}
++
++	/* Both queues empty. */
++	return __try_clear_tail(lock, val, node);
++}
++
++static inline void cna_pass_lock(struct mcs_spinlock *node,
++				 struct mcs_spinlock *next)
++{
++	struct cna_node *cn = (struct cna_node *)node;
++	u32 partial_order = cn->partial_order;
++	u32 val = _Q_LOCKED_VAL;
++
++	/* cna_wait_head_or_lock() left work for us. */
++	if (partial_order) {
++		partial_order = cna_order_queue(node, decode_tail(partial_order));
++
++	if (!partial_order) {
++		/*
++		 * We found a local waiter; reload @next in case we called
++		 * cna_order_queue() above.
++		 */
++		next = node->next;
++		val |= node->locked;	/* preseve secondary queue */
++
++	} else if (node->locked > 1) {
++		/*
++		 * When there are no local waiters on the primary queue, splice
++		 * the secondary queue onto the primary queue and pass the lock
++		 * to the longest waiting remote waiter.
++		 */
++		next = cna_splice_head(NULL, 0, node, next);
++	}
++
++	arch_mcs_pass_lock(&next->locked, val);
++}
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
