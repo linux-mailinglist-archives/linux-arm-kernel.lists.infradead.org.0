@@ -2,68 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 765E81449C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 03:26:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 233F41449C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 03:26:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sqfhJhHKpL8jiad3WNkDPhIEOWBRgyb0zLC/hrwMepo=; b=q82C82WleuNmQf
-	lH2UmUNsEb/yTyapaiMLId9TNsaztEM7zyoFGmJOVesZ72lVlNNDprpHEuDWzlj0f1S6BEOzb4nrD
-	XEleCE0aHwI8Zr7wnIEBJwL3G8JJtQRrlA5/YuX18MpoUvunwowE7jezjasmpM1gxqjQ9Ad5TP9MQ
-	mK6eC0NqyvEvjNU1SAzjlQOmCZTLYLeTFrQBOXPIRbvMAmZ0SxaEMwEwjXrvJwMB0XPX1Zh/b5vHE
-	eyjLd/4gaBa8sXdBso9R2OURC5BcD7whODB3tVWFqpyf3mHaiFTN7cBBqe6k+ZkkVJ5QjcrO1hZho
-	5bLebPT1bQNYw26wGZYA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DV6pzkt8eFKz6vd5DytZXGJAz+X6syujMHCAWcmwfe0=; b=N00DdNmcOz1+J8gDkgdFSc4vAu
+	5EkssUqaR1qJIgajPgFcZBcwAcG298Jvkmmnn3d1ZfJM1wwyjGGD43xnCJ/gmRhbXop8JuosYajnd
+	JBUrQrT/58wFDq1oocHAQSrfYf4hOQyGZl6uEL8I6nHUFEKGgDY9mx9s0zNSX2N9sevQwJq/8CkUy
+	B3hPDe70yg7PzwtWijeuY4L2UmqDx7ePeGBlCB5gqGJC0EFds4v01HAR+g9Ve57Kl2Qg59PREAlY9
+	6yP2aAUq34luD9ZCMz7Il69ggZENGEMPGv/1IaRheCz5Ob3hUHV7b3UlrK3/OXttkP2meNQatzGv2
+	k2snqD1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu5jF-0001On-J1; Wed, 22 Jan 2020 02:26:49 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iu5iz-0001Gf-BH; Wed, 22 Jan 2020 02:26:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu5iv-0001Gq-T1; Wed, 22 Jan 2020 02:26:31 +0000
-X-UUID: f25dfe8354034e38a5355a622da7b9c5-20200121
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=lN1pViJIxLnb7UBsGaWmhhbnVEIdvsVPgiy5VY3Xy3Y=; 
- b=LtKA1lMx97XZv7UIK/nq3aXN6POHNFlSHf3A7TTdcuW53AvGsKjbFpJEoPrSNgOuqo7CkhKXhjyuQwFwPIM8LR6YdNs7wUiiKeV6mbdOKLiJA+v6jZKNeNe5809//Ml3vVA3iiTKVmagLo7lY35gzm11O1erNmOkMo1IRD9v+VM=;
-X-UUID: f25dfe8354034e38a5355a622da7b9c5-20200121
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <wen.su@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1292939656; Tue, 21 Jan 2020 18:26:27 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 Jan 2020 18:24:34 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 22 Jan 2020 10:22:53 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 22 Jan 2020 10:22:09 +0800
-Message-ID: <1579659806.6612.12.camel@mtkswgap22>
-Subject: Re: [RESEND 3/4] regulator: mt6359: Add support for MT6359 regulator
-From: Wen Su <Wen.Su@mediatek.com>
-To: Mark Brown <broonie@kernel.org>
-Date: Wed, 22 Jan 2020 10:23:26 +0800
-In-Reply-To: <20200120190427.GO6852@sirena.org.uk>
-References: <1579506450-21830-1-git-send-email-Wen.Su@mediatek.com>
- <1579506450-21830-4-git-send-email-Wen.Su@mediatek.com>
- <20200120190427.GO6852@sirena.org.uk>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-MTK: N
+ id 1iu5it-0001GG-Ax
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 02:26:28 +0000
+Received: from localhost (unknown [40.117.208.15])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 797B324677;
+ Wed, 22 Jan 2020 02:26:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579659986;
+ bh=ciSJSZjCtbETVqjOyxhkHUGBsRhMqiUA146sqtqgQ90=;
+ h=Date:From:To:To:To:To:CC:Cc:Subject:In-Reply-To:References:From;
+ b=R7G3ga7tJA7rKafn7fs4ImCGOwcGaR5VQQOM64eJDVjQD5kRei/MlvPl/w5HuCjA1
+ kjbtcgGlzaaytbKiU3gPAtk9Xc9ez0SFk5nni/Ku5ykLcmio8tRDW/yb1IUN9wmOPr
+ 2su20Nz1Ydr0Lb1iiPt/SM5fTH5BLmPHXGW0QJK0=
+Date: Wed, 22 Jan 2020 02:26:25 +0000
+From: Sasha Levin <sashal@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+To: Eugeniu Rosca <erosca@de.adit-jv.com>
+To: Dirk Behme <dirk.behme@de.bosch.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>,
+Subject: Re: [PATCH v2] arm64: kbuild: remove compressed images on 'make
+ ARCH=arm64 (dist)clean'
+In-Reply-To: <20200121155439.1061-1-erosca@de.adit-jv.com>
+References: <20200121155439.1061-1-erosca@de.adit-jv.com>
+Message-Id: <20200122022626.797B324677@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_182629_966425_2EC6BC14 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_182627_400277_40393ECF 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,8 +65,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,106 +79,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org, Liam
- Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: , linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+Hi,
 
-On Mon, 2020-01-20 at 19:04 +0000, Mark Brown wrote:
-> On Mon, Jan 20, 2020 at 03:47:29PM +0800, Wen Su wrote:
-> 
-> This seems pretty good, a few comments below but they're fairly small
-> and should be easy to address:
-> 
-> > +static int mt6359_set_voltage_sel(struct regulator_dev *rdev,
-> > +				  unsigned int selector)
-> > +{
-> > +	int idx, ret;
-> > +	const u32 *pvol;
-> > +	struct mt6359_regulator_info *info = rdev_get_drvdata(rdev);
-> > +
-> > +	pvol = info->index_table;
-> > +
-> > +	idx = pvol[selector];
-> > +	ret = regmap_update_bits(rdev->regmap, info->desc.vsel_reg,
-> > +				 info->desc.vsel_mask,
-> > +				 idx << info->vsel_shift);
-> > +
-> > +	return ret;
-> > +}
-> 
-> This looks like you should be using regulator_list_voltage_table() and
-> associated functions, probably map_voltage_ascend() or _iterate() and
-> just a simple set_voltage_sel_regmap().
-Thanks for your suggestion.
-Currently it's using regulator_list_voltage_table() and
-regulator_map_voltage_iterate() as below:
+[This is an automated email]
 
-static const struct regulator_ops mt6359_volt_table_ops = {
-	.list_voltage = regulator_list_voltage_table,
-	.map_voltage = regulator_map_voltage_iterate,
-	...
-The reason to use mt6359_set_voltage_sel() is to convert selector value
-to hardware register index value:
-	idx = pvol[selector];
+This commit has been processed because it contains a "Fixes:" tag,
+fixing commit: 0723c05fb75e ("arm64: enable more compressed Image formats").
 
-To avoid using mt6359_set_voltage_sel(), the *_voltages array need to be
-filled with zeros as below: 
-Current:
-static const u32 vemc_voltages[] = {
-	2900000, 3000000, 3300000,
-};
-static const u32 vemc_idx[] = {
-	10, 11, 13,
-};
+The bot has tested the following trees: v5.4.13, v4.19.97, v4.14.166, v4.9.210, v4.4.210.
 
-change to:
-static const u32 vxo22_voltages[] = {
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2900000, 3000000, 0, 3300000,
-};
-> 
-> > +static int mt6359_get_status(struct regulator_dev *rdev)
-> > +{
-> > +	int ret;
-> > +	u32 regval;
-> > +	struct mt6359_regulator_info *info = rdev_get_drvdata(rdev);
-> > +
-> > +	ret = regmap_read(rdev->regmap, info->status_reg, &regval);
-> > +	if (ret != 0) {
-> > +		dev_err(&rdev->dev, "Failed to get enable reg: %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	return (regval & info->qi) ? REGULATOR_STATUS_ON : REGULATOR_STATUS_OFF;
-Thanks for your suggestion.
-I will update it in the next patch.
-> 
-> Please write normal conditionl statements rather than using the ternery
-> operator to improve legibility.
-> 
-> > +	switch (mode) {
-> > +	case REGULATOR_MODE_FAST:
-> > +		if (curr_mode == REGULATOR_MODE_IDLE) {
-> > +			WARN_ON(1);
-> > +			dev_notice(&rdev->dev,
-> > +				   "BUCK %s is LP mode, can't FPWM\n",
-> > +				   rdev->desc->name);
-> > +			return -EIO;
-> 
-> I'd expect the device to go out of low power mode then into force PWM
-> mode if it has to do that rather than reject the operation.
-The device low power mode may control by hardware pad, so that the
-reason to reject the operation is the device low power mode can not go
-out by software.
-Another scenario is one user set the device to low power mode, we think
-it's not suitable to change device mode to _FAST mode by another user.
+v5.4.13: Build OK!
+v4.19.97: Build OK!
+v4.14.166: Build OK!
+v4.9.210: Build OK!
+v4.4.210: Failed to apply! Possible dependencies:
+    f8fa70f392fa ("arm64: localise Image objcopy flags")
+
+
+NOTE: The patch will not be queued to stable trees until it is upstream.
+
+How should we proceed with this patch?
+
+-- 
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
