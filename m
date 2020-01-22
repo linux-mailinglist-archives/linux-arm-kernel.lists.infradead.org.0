@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C976E1452AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:33:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA2A11452BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:39:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3EMagKun7YSrSNP9NGad4jae5prdwN+ZhOCNgjgaao4=; b=cU+/2iUHrkY6Ne
-	UzxmF+oESo9mFZd1lEvH7OaxdztBzc2EH0+xkf4aJNYtBePyqqjXF5+zFgFWWIogToZVuy4N+XHpO
-	LRxVFZLTOfLkemPsnVRSh5AoThIeN25+45T3glRxwps/POfXEdJBIunbpATcWeizIUpDguCcS1cR2
-	NKyA1LGzPqr+6WkWGVAJvkWrDJAoWtlLrNS/SYKCQJqHJPYkgXuf87yp7BPXLgS2L2vP1JQvSoJnB
-	6r3zrX58TR0eZy2eUucBKgWN98c4b8/FfOAfbbeIWiMfXUQaeeUj16QHdNn2Mxwo0gWtLjsol0kl9
-	zbfDGWt+R7ReKMflMHCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=im/KiNcGERxPXrWbLcNns83E5FhiB5lVQAnebcx3mJU=; b=EU1yE/VGUfwzKw
+	PfXQEzTkhZWWwW9eLV3p7oTQ26dTgjawvuR59K5xRpSINGM64IuUgTlTJDQhIhNwF4hH06+ucljcI
+	caxSXQaVaD6QZbpx2Ocsb/SYOyxPdYz6q3YYsHUYW32e4AJAz6wSJ2mgng4gLF7SFJ3NnjV4gLTCl
+	2pSxnzpe/bLK98dFWRiWFzBnsGYMKyV202UIxEegI+g7U34+4c+KmcPJx4/CnuvWfdu/754Kt7/SC
+	96fWI+CaKrhq2R2+6SNPrjydgC6BH6h+levPS55+wdTeA0z31Ehbwcwo6KmU2jRFjmXSGqGkmjJc+
+	t3jwiz6QLSmnrUaxELmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuDJq-0007P5-Hu; Wed, 22 Jan 2020 10:33:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuDJh-0007OK-Lc
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:32:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3942A1FB;
- Wed, 22 Jan 2020 02:32:56 -0800 (PST)
-Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
- [10.1.195.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C72CD3F68E;
- Wed, 22 Jan 2020 02:32:53 -0800 (PST)
-Date: Wed, 22 Jan 2020 10:32:51 +0000
-From: Qais Yousef <qais.yousef@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 01/14] smp: Create a new function to shutdown nonboot
- cpus
-Message-ID: <20200122103250.jdssttb7veevfttz@e107158-lin.cambridge.arm.com>
-References: <20191125112754.25223-1-qais.yousef@arm.com>
- <20191125112754.25223-2-qais.yousef@arm.com>
- <20200121170350.GC18808@shell.armlinux.org.uk>
- <20200121174751.5opyyjwxfnwdgcev@e107158-lin.cambridge.arm.com>
- <20200121180930.GJ25745@shell.armlinux.org.uk>
+	id 1iuDQG-00013P-VZ; Wed, 22 Jan 2020 10:39:44 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuDQ5-00012W-Cz
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:39:34 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00MAdUjD015451;
+ Wed, 22 Jan 2020 04:39:30 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579689570;
+ bh=zMgKQLWklnMeTQAjYR29raAK3/N3BPKnxpk5NVbloUo=;
+ h=From:To:CC:Subject:Date;
+ b=Kgs1DWwJhRFyDX4i9ewVuBpm1XdH29slO5TRiGFB56J3np7MmQg5u3pUdFisu/k6G
+ +Q3VWfnEuNu8ftunZk8oxZCyalgyz2mPBbZWQ2G+saYrjDkdFaOc2NpFbesd2pzTUu
+ tADmhbG29YgGwC1AwaT4UFIhnMQdjf8fV3+wFCYo=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00MAdUsY061566
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 22 Jan 2020 04:39:30 -0600
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
+ Jan 2020 04:39:29 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 22 Jan 2020 04:39:29 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00MAdRwJ118863;
+ Wed, 22 Jan 2020 04:39:28 -0600
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <nm@ti.com>, <t-kristo@ti.com>, <ssantosh@kernel.org>,
+ <santosh.shilimkar@oracle.com>
+Subject: [PATCH] firmware: ti_sci: Correct the timeout type in ti_sci_do_xfer()
+Date: Wed, 22 Jan 2020 12:40:09 +0200
+Message-ID: <20200122104009.15622-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200121180930.GJ25745@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_023257_793390_C3EF2197 
-X-CRM114-Status: GOOD (  20.69  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200122_023933_526084_A90F9096 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,88 +88,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fenghua Yu <fenghua.yu@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Tony Luck <tony.luck@intel.com>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Josh Poimboeuf <jpoimboe@redhat.com>,
- Zhenzhong Duan <zhenzhong.duan@oracle.com>,
- Nicholas Piggin <npiggin@gmail.com>, linux-kernel@vger.kernel.org,
- Eiichi Tsukata <devel@etsukata.com>, Nadav Amit <namit@vmware.com>,
- Jiri Kosina <jkosina@suse.cz>, linux-ia64@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: lokeshvutla@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01/21/20 18:09, Russell King - ARM Linux admin wrote:
-> On Tue, Jan 21, 2020 at 05:47:52PM +0000, Qais Yousef wrote:
-> > On 01/21/20 17:03, Russell King - ARM Linux admin wrote:
-> > > On Mon, Nov 25, 2019 at 11:27:41AM +0000, Qais Yousef wrote:
-> > > > +void smp_shutdown_nonboot_cpus(unsigned int primary_cpu)
-> > > > +{
-> > > > +	unsigned int cpu;
-> > > > +
-> > > > +	if (!cpu_online(primary_cpu)) {
-> > > > +		pr_info("Attempting to shutdodwn nonboot cpus while boot cpu is offline!\n");
-> > > > +		cpu_online(primary_cpu);
-> > 
-> > Eh, that should be cpu_up(primary_cpu)!
-> > 
-> > Which I have to say I'm not if is the right thing to do.
-> > migrate_to_reboot_cpu() picks the first online cpu if reboot_cpu (assumed 0) is
-> > offline
-> > 
-> > migrate_to_reboot_cpu():
-> >  225         /* Make certain the cpu I'm about to reboot on is online */
-> >  226         if (!cpu_online(cpu))
-> >  227                 cpu = cpumask_first(cpu_online_mask);
-> > 
-> > > > +	}
-> > > > +
-> > > > +	for_each_present_cpu(cpu) {
-> > > > +		if (cpu == primary_cpu)
-> > > > +			continue;
-> > > > +		if (cpu_online(cpu))
-> > > > +			cpu_down(cpu);
-> > > > +	}
-> > > 
-> > > How does this avoid racing with userspace attempting to restart CPUs
-> > > that have already been taken down by this function?
-> > 
-> > This is meant to be called from machine_shutdown() only.
-> > 
-> > But you've got a point.
-> > 
-> > The previous logic that used disable_nonboot_cpus(), which in turn called
-> > freeze_secondary_cpus() didn't hold hotplug lock. So I assumed the higher level
-> > logic of machine_shutdown() ensures that hotplug lock is held to synchronize
-> > with potential other hotplug operations.
-> 
-> freeze_secondary_cpus() takes the CPU maps lock while it takes CPUs
-> down, and then disables cpu hotplug by incrementing
-> cpu_hotplug_disabled.  Incrementing that prevents cpu_up() and
-> cpu_down() being used, thereby preventing userspace from changing the
-> online state of any CPU in the system.
+msecs_to_jiffies() returns 'unsigned long' and the timeout parameter for
+wait_for_completion_timeout() is also 'unsigned long'
 
-I see. Sorry I missed the CPU maps lock.
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+---
+ drivers/firmware/ti_sci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Yes this makes sense and should work here too.
+diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+index 3d8241cb6921..361a82817c1f 100644
+--- a/drivers/firmware/ti_sci.c
++++ b/drivers/firmware/ti_sci.c
+@@ -422,7 +422,7 @@ static inline int ti_sci_do_xfer(struct ti_sci_info *info,
+ 				 struct ti_sci_xfer *xfer)
+ {
+ 	int ret;
+-	int timeout;
++	unsigned long timeout;
+ 	struct device *dev = info->dev;
+ 
+ 	ret = mbox_send_message(info->chan_tx, &xfer->tx_message);
+-- 
+Peter
 
-Thanks for the help.
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
-Thomas, I'll wait for your comment on this and potentially other patches before
-sending v3.
-
-Thanks
-
---
-Qais Yousef
 
 _______________________________________________
 linux-arm-kernel mailing list
