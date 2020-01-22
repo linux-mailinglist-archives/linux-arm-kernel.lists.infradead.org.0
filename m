@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 988241451CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 10:56:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8E271451DD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 10:57:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jvdCmDj3ZPPvrt/ITkGYjk9KOmHwO2hnrT4qkM5u/Mg=; b=Mh/sVUheg4/0Yv
-	5Xu5gFqQ+eTgqFZOmtkZVLvi07eSQaZnYlEUWGEPxeCehRGDZ0bcEDLUReny1AZ6pfSp7Xs9N4VNQ
-	OwzIsdx1neTkvI7jSWWesjXmikFCJi93Jg6kDtOmUrIKIJevNn3y5YC47miQo0l0UPkbFPC7QykEN
-	pDn5speaRq7u+DHHA2eBPYv45WYc0a2lhQgs6n2Z9Vkop0UYADtdgX1Jh1S16qxPvbHPxqT+oyXhR
-	S8+ANS0h2WKKTD6KugsqjyqL/75jO1wfvBt2xrAhp475aN44AM/d4/vdy+WOETSKs+8974fWSoWPI
-	afcWJowhcQDcIZi0IFow==;
+	List-Owner; bh=IJ2nQ9F94qEiEc+n7Z3kQuw2k/2VrUvmDykK3eWIlb0=; b=Zy1Of4UN4cBNx9
+	Lv4S9qAgiROuJs4SwadLs4zmm86vlVm3bcxu3wrbTFoofcdQI2gVTbMEyl91SUJ4ZKebz9bvb1cVl
+	+nkSaYpJP1oXS8olCL91c/ARimRC4uMnYGyfA5HbZPFnATzpn13m13JxAtTIrPhYxq/5KPCzTTOt/
+	wfKgL5p+tH8reFwFerDTSDoHsh0ZHIcFPkDt4MAY1TgLqH4X2H2/JcwpYENbfQ006qRj0XAY4TBtR
+	SYCryH/3QyO1DKrEW/PpONZGol+DokOe75Hct612zqkEdBY8x9XWWwfOu39Sj9GIDhltyS3W02+vL
+	RukEiB2PfT7UMSdnXWXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuCkk-0002KH-20; Wed, 22 Jan 2020 09:56:50 +0000
+	id 1iuCky-0002WD-7x; Wed, 22 Jan 2020 09:57:04 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuCk5-0001op-8j
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 09:56:11 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1iuCk7-0001qi-9W
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 09:56:13 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00M9rrMZ005275; Wed, 22 Jan 2020 10:56:01 +0100
+ 00M9sCjs016045; Wed, 22 Jan 2020 10:56:02 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=s07sRjVZ0SVXOOYoRmcEc515pUwV9NcjWvaQS3FOy84=;
- b=sfHOOtVmej9FNBH0/4QDl+9r+JJjgdbv0ooNUsKuMJOwawF4z2WQqLUoeZgRisIbVuV4
- W9cBblYni1ydi4KncnV/uwJDJOz60gRT2V6Jueule0/M9YnATlsSnL7VAUuoSj3BUxTN
- 3+DsOW+tPqjKJcytQYo+SZsi8be77tCsm8CZI233OsSQUPun5SM5M0EynZ9wIVBrPGox
- 5vr4z5aA659FQ5oRTQYKQLC7GkSEJiX+200cPDgDGlwQVbcc7JxPzm/SfwkMmOU/XQzn
- 34WGrHgTT6PT7t0miDHVrwbBfXgW29Rx5e4z/qPWLPGXvZqw5vq0fGMTSc0Ni21dfDKN 6w== 
+ bh=4Zw+r/mcuIQdGav3Gfbbdj8AtLqPaIWXCkURYNpxfY4=;
+ b=jovkYIDF5w42n6yi9h5hqtYgncgDMBFtXMDqDAKoZWG5gk/amI0xeFx7zKKaAPavLGPY
+ gMivTPoH9IuaAbh3JiNmEZqJssrE7n5YFraGuy0ba9BerZGNMtHUZUAm+9MBUQG6rUrc
+ CDo+9y6I4cdzx6ANYGq17BBoPsDIokpN261FYFrEa9XEJE3aBM39ULnvYZP6fMdaUH6U
+ U7d0zD8bFb//IRQ4P8aeIR9F7uw+IfrQeTCqdJbDDWibfoBld5i6OWBtR7PK8FMZM49j
+ MMg4y/F6i5SJGsyowSHfr9vVd968H25TOrPPQtYTbPPPcBanpAnFpKc2lpfGCZyw3u2t Nw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xkssp3dmf-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xkr1e3rmt-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 22 Jan 2020 10:56:01 +0100
+ Wed, 22 Jan 2020 10:56:02 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 337A310002A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D2B6A100034;
  Wed, 22 Jan 2020 10:56:01 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1EC392AD14D;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C61982AD14D;
  Wed, 22 Jan 2020 10:56:01 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 22 Jan 2020 10:56:00
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 22 Jan 2020 10:56:01
  +0100
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH v2 1/2] dt-bindings: serial: Convert rs485 bindings to
- json-schema
-Date: Wed, 22 Jan 2020 10:55:57 +0100
-Message-ID: <20200122095558.22553-2-benjamin.gaignard@st.com>
+Subject: [PATCH v2 2/2] dt-bindings: serial: Convert STM32 UART to json-schema
+Date: Wed, 22 Jan 2020 10:55:58 +0100
+Message-ID: <20200122095558.22553-3-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200122095558.22553-1-benjamin.gaignard@st.com>
 References: <20200122095558.22553-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-17_05:2020-01-16,
  2020-01-17 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_015609_632822_BF3BA04E 
-X-CRM114-Status: GOOD (  16.97  )
+X-CRM114-CacheID: sfid-20200122_015611_630844_3A641314 
+X-CRM114-Status: GOOD (  17.24  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,107 +105,165 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert rs485 binding to yaml style file.
+Convert STM32 UART bindings to json-schema.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
-version 2:
-- remove types inside rs485-rts-delay property and add a maximum for delay
-  values
+ .../devicetree/bindings/serial/st,stm32-uart.yaml  | 80 ++++++++++++++++++++++
+ .../devicetree/bindings/serial/st,stm32-usart.txt  | 57 ---------------
+ 2 files changed, 80 insertions(+), 57 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
+ delete mode 100644 Documentation/devicetree/bindings/serial/st,stm32-usart.txt
 
- Documentation/devicetree/bindings/serial/rs485.txt | 32 +--------------
- .../devicetree/bindings/serial/rs485.yaml          | 45 ++++++++++++++++++++++
- 2 files changed, 46 insertions(+), 31 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/serial/rs485.yaml
-
-diff --git a/Documentation/devicetree/bindings/serial/rs485.txt b/Documentation/devicetree/bindings/serial/rs485.txt
-index b92592dff6dd..a7fe93efc4a5 100644
---- a/Documentation/devicetree/bindings/serial/rs485.txt
-+++ b/Documentation/devicetree/bindings/serial/rs485.txt
-@@ -1,31 +1 @@
--* RS485 serial communications
--
--The RTS signal is capable of automatically controlling line direction for
--the built-in half-duplex mode.
--The properties described hereafter shall be given to a half-duplex capable
--UART node.
--
--Optional properties:
--- rs485-rts-delay: prop-encoded-array <a b> where:
--  * a is the delay between rts signal and beginning of data sent in milliseconds.
--      it corresponds to the delay before sending data.
--  * b is the delay between end of data sent and rts signal in milliseconds
--      it corresponds to the delay after sending data and actual release of the line.
--  If this property is not specified, <0 0> is assumed.
--- rs485-rts-active-low: drive RTS low when sending (default is high).
--- linux,rs485-enabled-at-boot-time: empty property telling to enable the rs485
--  feature at boot time. It can be disabled later with proper ioctl.
--- rs485-rx-during-tx: empty property that enables the receiving of data even
--  while sending data.
--
--RS485 example for Atmel USART:
--	usart0: serial@fff8c000 {
--		compatible = "atmel,at91sam9260-usart";
--		reg = <0xfff8c000 0x4000>;
--		interrupts = <7>;
--		atmel,use-dma-rx;
--		atmel,use-dma-tx;
--		linux,rs485-enabled-at-boot-time;
--		rs485-rts-delay = <0 200>;		// in milliseconds
--	};
--
-+See rs485.yaml
-diff --git a/Documentation/devicetree/bindings/serial/rs485.yaml b/Documentation/devicetree/bindings/serial/rs485.yaml
+diff --git a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
 new file mode 100644
-index 000000000000..d4beaf11222d
+index 000000000000..238c44192d31
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/serial/rs485.yaml
-@@ -0,0 +1,45 @@
-+# SPDX-License-Identifier: GPL-2.0
++++ b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/serial/rs485.yaml#
++$id: http://devicetree.org/schemas/serial/st,stm32-uart.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: RS485 serial communications Bindings
-+
-+description: The RTS signal is capable of automatically controlling
-+             line direction for the built-in half-duplex mode.
-+             The properties described hereafter shall be given to a
-+             half-duplex capable UART node.
-+
 +maintainers:
-+  -  Rob Herring <robh@kernel.org>
++  - Erwan Le Ray <erwan.leray@st.com>
++
++title: STMicroelectronics STM32 USART bindings
++
++allOf:
++  - $ref: rs485.yaml
 +
 +properties:
-+  rs485-rts-delay:
-+    description: prop-encoded-array <a b>
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32-array
-+      - items:
-+          items:
-+            - description:
-+                Delay between rts signal and beginning of data sent in milliseconds.
-+                It corresponds to the delay before sending data.
-+              default: 0
-+              maximum: 1000
-+            - description:
-+                Delay between end of data sent and rts signal in milliseconds.
-+                It corresponds to the delay after sending data and actual release of the line.
-+              default: 0
-+              maximum: 1000
++  compatible:
++    enum:
++      - st,stm32-uart
++      - st,stm32f7-uart
++      - st,stm32h7-uart
 +
-+  rs485-rts-active-low:
-+    description: drive RTS low when sending (default is high).
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  label:
++    description: label associated with this uart
++
++  st,hw-flow-ctrl:
++    description: enable hardware flow control
 +    $ref: /schemas/types.yaml#/definitions/flag
 +
-+  linux,rs485-enabled-at-boot-time:
-+    description: enables the rs485 feature at boot time. It can be disabled later with proper ioctl.
-+    $ref: /schemas/types.yaml#/definitions/flag
++  dmas:
++    minItems: 1
++    maxItems: 2
 +
-+  rs485-rx-during-tx:
-+   description: enables the receiving of data even while sending data.
-+   $ref: /schemas/types.yaml#/definitions/flag
++  dma-names:
++    items:
++      enum: [ rx, tx ]
++    minItems: 1
++    maxItems: 2
++
++  wakeup-source: true
++
++  rs485-rts-delay: true
++  rs485-rts-active-low: true
++  linux,rs485-enabled-at-boot-time: true
++  rs485-rx-during-tx: true
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    usart1: serial@40011000 {
++      compatible = "st,stm32-uart";
++      reg = <0x40011000 0x400>;
++      interrupts = <37>;
++      clocks = <&rcc 0 164>;
++      dmas = <&dma2 2 4 0x414 0x0>,
++             <&dma2 7 4 0x414 0x0>;
++      dma-names = "rx", "tx";
++      rs485-rts-active-low;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
+deleted file mode 100644
+index 8620f7fcbd50..000000000000
+--- a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
++++ /dev/null
+@@ -1,57 +0,0 @@
+-* STMicroelectronics STM32 USART
+-
+-Required properties:
+-- compatible: can be either:
+-  - "st,stm32-uart",
+-  - "st,stm32f7-uart",
+-  - "st,stm32h7-uart".
+-  depending is compatible with stm32(f4), stm32f7 or stm32h7.
+-- reg: The address and length of the peripheral registers space
+-- interrupts:
+-  - The interrupt line for the USART instance,
+-  - An optional wake-up interrupt.
+-- clocks: The input clock of the USART instance
+-
+-Optional properties:
+-- resets: Must contain the phandle to the reset controller.
+-- pinctrl: The reference on the pins configuration
+-- st,hw-flow-ctrl: bool flag to enable hardware flow control.
+-- rs485-rts-delay, rs485-rx-during-tx, rs485-rts-active-low,
+-  linux,rs485-enabled-at-boot-time: see rs485.txt.
+-- dmas: phandle(s) to DMA controller node(s). Refer to stm32-dma.txt
+-- dma-names: "rx" and/or "tx"
+-- wakeup-source: bool flag to indicate this device has wakeup capabilities
+-- interrupt-names, if optional wake-up interrupt is used, should be:
+-  - "event": the name for the interrupt line of the USART instance
+-  - "wakeup" the name for the optional wake-up interrupt
+-
+-
+-Examples:
+-usart4: serial@40004c00 {
+-	compatible = "st,stm32-uart";
+-	reg = <0x40004c00 0x400>;
+-	interrupts = <52>;
+-	clocks = <&clk_pclk1>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_usart4>;
+-};
+-
+-usart2: serial@40004400 {
+-	compatible = "st,stm32-uart";
+-	reg = <0x40004400 0x400>;
+-	interrupts = <38>;
+-	clocks = <&clk_pclk1>;
+-	st,hw-flow-ctrl;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_usart2 &pinctrl_usart2_rtscts>;
+-};
+-
+-usart1: serial@40011000 {
+-	compatible = "st,stm32-uart";
+-	reg = <0x40011000 0x400>;
+-	interrupts = <37>;
+-	clocks = <&rcc 0 164>;
+-	dmas = <&dma2 2 4 0x414 0x0>,
+-	       <&dma2 7 4 0x414 0x0>;
+-	dma-names = "rx", "tx";
+-};
 -- 
 2.15.0
 
