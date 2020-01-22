@@ -2,99 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F88614535E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 12:02:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B621145367
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 12:04:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:Date:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sS5NeckyHk2VSMIaca2vc4ZGF/iyWFnDhQEjNbVRjUg=; b=kMe+mR04wSJZQC/ICSqOzA6Cc
-	vpk7B4RlPAmZBzGegVA9USsWXCN+Aazaqw4zv+nTtYv1l7aPrH6iEMPkRfOOO7JHArUgAWaI+wkxH
-	CBWTJqjJmH6PT2gmQXDZq+VAY4HhT3oeYD2BlEzgaY4C2c1Q+5+upRSeQU27uUK+x2NitmQ0384X/
-	yPbqBr9iDUidaYnwYM+/bOO863ilydSZkXN0fR0zCdToyEdEo7kyamkEGRfmp4amVxVWlE27eRQaK
-	I1YVoOqIykyFEElmkKpfNFrIE4iG2970TjDcCzXDmu9Gl8MCLPupVIo46KOv/fAakbftawLK7SMEe
-	02w8YjeFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G8MqSmIpMhJDkUi6jeoVzU7xRAdF13s98xz9WawxsNI=; b=qezRD1qP+J6ZEf
+	r+rjUOU8eCK2brfMZUKV7zQ7hxy+kyj7477mLd3hcdHSpO2xfgbs+TMf51urmyByUFA7s83tpy7aU
+	ed9uv+aLMZfzDBOsNYexwXhGs+Q+blNqxDmvzNGrMCavJXVWIC/12rvV6CgFLwi0bUHYU9arRqmuz
+	mXZwrqvS3W4wVZAvEtoUcwL9UX4PHSS9DB4KcZplsU6vRLJw/6TAIsBHcm3e5sTUPIwRKn9XreZGV
+	ZPBgq7bIUKMSJNczPwWz2g8Gr22UXtU8v9cJa5VHbPW98Pj0EpeOtS9ss/iuCWoJy8CuYC/WjLpCa
+	by3ssBmPiqMsbbJ8U9RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuDmT-0004FX-QX; Wed, 22 Jan 2020 11:02:41 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1iuDoR-0004Z6-UL; Wed, 22 Jan 2020 11:04:43 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuDmK-0004Ek-IF
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 11:02:33 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00MB255D144282
- for <linux-arm-kernel@lists.infradead.org>; Wed, 22 Jan 2020 06:02:20 -0500
-Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2xp2jfkb1t-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 22 Jan 2020 06:02:20 -0500
-Received: from localhost
- by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <anju@linux.vnet.ibm.com>;
- Wed, 22 Jan 2020 11:02:16 -0000
-Received: from b06avi18878370.portsmouth.uk.ibm.com (9.149.26.194)
- by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 22 Jan 2020 11:02:07 -0000
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06avi18878370.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 00MB26Fi44433748
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 22 Jan 2020 11:02:06 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 9A2A74C05A;
- Wed, 22 Jan 2020 11:02:06 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 849814C044;
- Wed, 22 Jan 2020 11:02:01 +0000 (GMT)
-Received: from localhost.localdomain (unknown [9.124.35.72])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed, 22 Jan 2020 11:02:01 +0000 (GMT)
-From: Anju T Sudhakar <anju@linux.vnet.ibm.com>
-Subject: Re: [PATCH v5 07/10] powerpc/perf: open access for CAP_PERFMON
- privileged process
-To: Alexey Budankov <alexey.budankov@linux.intel.com>
-References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
- <b74a3983-8e41-aba7-c18d-b16eff6fd5e5@linux.intel.com>
-Date: Wed, 22 Jan 2020 16:32:00 +0530
+ id 1iuDoI-0004YT-Sq
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 11:04:36 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00MB4OX0001728;
+ Wed, 22 Jan 2020 05:04:24 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579691064;
+ bh=H0tZlxfnrWFRp0J+H9eAMOrfUBLlN+Vz4L+HPhGeAFY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=twmymRWjInelvHECgTHY4Y4QIS90WCj6sbj6yBbj9FdtncvGGRMVGaX1/Gars4aht
+ uheH7NHNsnu5gjOgu9K1sJr1q38th+pgEipZARq8loUw4qgmNnR2lTnqnMgFrH/QKC
+ KoRAY8WTMEzWONHlAgfDiiZIPxKbcsmUh1xK5gMA=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00MB4Oec043482
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 22 Jan 2020 05:04:24 -0600
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
+ Jan 2020 05:04:23 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 22 Jan 2020 05:04:23 -0600
+Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00MB4KPt028067;
+ Wed, 22 Jan 2020 05:04:21 -0600
+Subject: Re: [PATCH v2 1/9] arm64: dts: ti: k3-am65-main: Correct main NAVSS
+ representation
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <t-kristo@ti.com>, <nm@ti.com>
+References: <20200122082621.4974-1-peter.ujfalusi@ti.com>
+ <20200122082621.4974-2-peter.ujfalusi@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <600df214-620b-fa41-82ef-01132d9bdfae@ti.com>
+Date: Wed, 22 Jan 2020 16:33:30 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <b74a3983-8e41-aba7-c18d-b16eff6fd5e5@linux.intel.com>
+In-Reply-To: <20200122082621.4974-2-peter.ujfalusi@ti.com>
 Content-Language: en-US
-X-TM-AS-GCONF: 00
-x-cbid: 20012211-0016-0000-0000-000002DFA81F
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20012211-0017-0000-0000-000033425322
-Message-Id: <fc4c8680-2a0c-ff0a-fd60-3ff68370d1cc@linux.vnet.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-17_05:2020-01-16,
- 2020-01-17 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 spamscore=0
- clxscore=1011 mlxlogscore=999 mlxscore=0 impostorscore=0 malwarescore=0
- lowpriorityscore=0 phishscore=0 adultscore=0 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1910280000 definitions=main-2001220101
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_030232_722400_AE99ABE5 
-X-CRM114-Status: GOOD (  21.91  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200122_030435_010841_412C7C9A 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,54 +93,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Peter Zijlstra <peterz@infradead.org>,
- "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
- Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
- Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
- James Morris <jmorris@namei.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
- Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 1/20/20 5:00 PM, Alexey Budankov wrote:
-> Open access to monitoring for CAP_PERFMON privileged processes.
-> For backward compatibility reasons access to the monitoring remains
-> open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage
-> for secure monitoring is discouraged with respect to CAP_PERFMON
-> capability. Providing the access under CAP_PERFMON capability singly,
-> without the rest of CAP_SYS_ADMIN credentials, excludes chances to
-> misuse the credentials and makes the operations more secure.
->
-> Signed-off-by: Alexey Budankov<alexey.budankov@linux.intel.com>
+
+On 22/01/20 1:56 PM, Peter Ujfalusi wrote:
+> NAVSS is a subsystem containing different IPs, it is not really a bus.
+> Change the compatible from "simple-bus" to "simple-mfd" to reflect that.
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 > ---
+>  arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> index efb24579922c..e40f7acbec42 100644
+> --- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> +++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> @@ -385,8 +385,8 @@ intr_main_gpio: interrupt-controller0 {
+>  		ti,sci-rm-range-girq = <0x1>;
+>  	};
+>  
+> -	cbass_main_navss: interconnect0 {
+> -		compatible = "simple-bus";
+> +	cbass_main_navss: navss@30800000 {
 
-Acked-by: Anju T Sudhakar<anju@linux.vnet.ibm.com>
+This introduces below dtc warning when built with W=1
 
+arch/arm64/boot/dts/ti/k3-am65-main.dtsi:388.35-530.4: Warning
+(unit_address_vs_reg): /interconnect@100000/navss@30800000: node has a unit
+name, but no reg property
+
+this is representing cbass inside main_navss, just like cbass_main. You can drop
+this patch and the similar mcu version.
+
+Thanks and regards,
+Lokesh
+
+> +		compatible = "simple-mfd";
+>  		#address-cells = <2>;
+>  		#size-cells = <2>;
+>  		ranges;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
