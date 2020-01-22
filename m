@@ -2,68 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42D01144FDD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 10:42:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABEA6144F26
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 10:36:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gxq1ieL4TIXv04TBIUMn5GZwYuilbH3T2lSvlnkOWEE=; b=SmkHqL7MDIDxOj
-	f9J3wFDT5NVXL+5q9BZvnj8YJ0DnFa4pKXm3KKbj91GhQjw0B4uNsA4rtrZNNBUsBJthVZ8Fz6W6Y
-	t+u9ZQR/bby8DMUQggz6wtcQ09NemskeEsgcFwvGageLMphF15O5zUiYsTUptdB98tODIjpDW9Nkn
-	/b0GkuMd3jI39rWNnsajKYkiGMH9vOqHddOWhRU2l0wXX7ZTOiA0LHJCGEitbnbSmALIkMTAEO8L3
-	g23oC7RTbqhdyttCxHaZXI7ikL0MzWn7r2GLeuqmll73nEpux0bG18Rdd8mm9JH7jDC4rhonXSI+H
-	JDjzqmwI2oKShdudL9Fg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0WrRvGFV8yVNFSMJe7C+eJBcBqdLG4DnWNsej0S/+fM=; b=tBGEJtg1W65cg2IvPkdDNLEcR
+	lUlC0lIdeVW7VQ3xRwS7J8qPRziEuejRsNnESAEZ2YpKrMkm1nUrmOEH17cvPdlRvclHHECN8Zp82
+	coV2AEFMiGYv+cuSg6RBMfTGoB5Eu1C2ZXIdZU2vNlJgnzHBgkDvToP8zJCScvZiWEKeBS/D8M8CX
+	iNw27qhqj24Rly4ncoBS6ci46CzC9rrJGST7vfRBsxgNk+2OT+r8VhZNTwd4qCZ5rzOUj/3DJRc1A
+	OtkYoHMbuiwLznlYy9THHLcBEzJV1XUqndE0SWy3ssUXx1njf7xwMup8FxnsczumPEAWPZzHQTYoD
+	OQWpMRZSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuCWR-0004F8-Nd; Wed, 22 Jan 2020 09:42:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuCWI-0004En-OC
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 09:41:55 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DB2362467B;
- Wed, 22 Jan 2020 09:41:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579686114;
- bh=Dbo3v6EsEkfvHSpCRZHRDxdBfN5Pfp/DqXmhD8DDa1g=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CZNjcDQc5CJMKJFfindnnkg+vYkyZDoiAt2vzcVHLhMM2RLufLUZITBoxtsdsfNfL
- GG9Ts0fJgTxSnWbxA4ZwjTLHrb13U9sD0VsCBoFrLSrArDkkuws8/IREksy+oaISg+
- 6wyiSJYPQWogoRbGEQuvRE3ZV5/LvnMMLp4Fp2eI=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4.19 022/103] ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO
- regulator connection
-Date: Wed, 22 Jan 2020 10:28:38 +0100
-Message-Id: <20200122092807.087052160@linuxfoundation.org>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200122092803.587683021@linuxfoundation.org>
-References: <20200122092803.587683021@linuxfoundation.org>
-User-Agent: quilt/0.66
+	id 1iuCQd-0001b8-Jv; Wed, 22 Jan 2020 09:36:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuCQT-0001aB-Op; Wed, 22 Jan 2020 09:35:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1ADEE1FB;
+ Wed, 22 Jan 2020 01:35:51 -0800 (PST)
+Received: from [10.37.12.190] (unknown [10.37.12.190])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 19A903F68E;
+ Wed, 22 Jan 2020 01:35:38 -0800 (PST)
+Subject: Re: [PATCH 3/4] thermal: devfreq_cooling: Refactor code and switch to
+ use Energy Model
+To: Steven Rostedt <rostedt@goodmis.org>
+References: <20200116152032.11301-1-lukasz.luba@arm.com>
+ <20200116152032.11301-4-lukasz.luba@arm.com>
+ <20200121121124.1a1f3175@gandalf.local.home>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <6c4c5ac6-2d80-694e-866b-21fe5ef1853f@arm.com>
+Date: Wed, 22 Jan 2020 09:35:36 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20200121121124.1a1f3175@gandalf.local.home>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_014154_812083_C284005B 
-X-CRM114-Status: GOOD (  11.80  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200122_013553_895701_847874EA 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,49 +65,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ludwig Zenz <lzenz@dh-electronics.com>, stable@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, daniel.lezcano@linaro.org,
+ peterz@infradead.org, viresh.kumar@linaro.org, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, khilman@kernel.org,
+ agross@kernel.org, b.zolnierkie@samsung.com, steven.price@arm.com,
+ cw00.choi@samsung.com, mingo@redhat.com, linux-imx@nxp.com,
+ rui.zhang@intel.com, mgorman@suse.de, daniel@ffwll.ch,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, Chris.Redpath@arm.com, linux-omap@vger.kernel.org,
+ Dietmar.Eggemann@arm.com, linux-arm-kernel@lists.infradead.org,
+ airlied@linux.ie, javi.merino@arm.com, tomeu.vizoso@collabora.com,
+ qperret@google.com, sboyd@kernel.org, shawnguo@kernel.org, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, sudeep.holla@arm.com,
+ patrick.bellasi@matbug.net, ionela.voinescu@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Vasut <marex@denx.de>
-
-commit fe6a6689d1815b63528796886853890d8ee7f021 upstream.
-
-The SGTL5000 VDDIO is connected to the PMIC SW2 output, not to
-a fixed 3V3 rail. Describe this correctly in the DT.
-
-Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: Ludwig Zenz <lzenz@dh-electronics.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-To: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
----
- arch/arm/boot/dts/imx6q-dhcom-pdk2.dts |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
---- a/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
-+++ b/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
-@@ -55,7 +55,7 @@
- 		#sound-dai-cells = <0>;
- 		clocks = <&clk_ext_audio_codec>;
- 		VDDA-supply = <&reg_3p3v>;
--		VDDIO-supply = <&reg_3p3v>;
-+		VDDIO-supply = <&sw2_reg>;
- 	};
- };
- 
 
 
+On 1/21/20 5:11 PM, Steven Rostedt wrote:
+> On Thu, 16 Jan 2020 15:20:31 +0000
+> lukasz.luba@arm.com wrote:
+> 
+>> diff --git a/include/trace/events/thermal.h b/include/trace/events/thermal.h
+>> index 135e5421f003..8a5f04888abd 100644
+>> --- a/include/trace/events/thermal.h
+>> +++ b/include/trace/events/thermal.h
+>> @@ -153,31 +153,30 @@ TRACE_EVENT(thermal_power_cpu_limit,
+>>   TRACE_EVENT(thermal_power_devfreq_get_power,
+>>   	TP_PROTO(struct thermal_cooling_device *cdev,
+>>   		 struct devfreq_dev_status *status, unsigned long freq,
+>> -		u32 dynamic_power, u32 static_power, u32 power),
+>> +		u32 power),
+>>   
+>> -	TP_ARGS(cdev, status,  freq, dynamic_power, static_power, power),
+>> +	TP_ARGS(cdev, status,  freq, power),
+>>   
+>>   	TP_STRUCT__entry(
+>>   		__string(type,         cdev->type    )
+>>   		__field(unsigned long, freq          )
+>> -		__field(u32,           load          )
+>> -		__field(u32,           dynamic_power )
+>> -		__field(u32,           static_power  )
+>> +		__field(u32,           busy_time)
+>> +		__field(u32,           total_time)
+>>   		__field(u32,           power)
+>>   	),
+>>   
+>>   	TP_fast_assign(
+>>   		__assign_str(type, cdev->type);
+>>   		__entry->freq = freq;
+>> -		__entry->load = (100 * status->busy_time) / status->total_time;
+>> -		__entry->dynamic_power = dynamic_power;
+>> -		__entry->static_power = static_power;
+>> +		__entry->busy_time = status->busy_time;
+>> +		__entry->total_time = status->total_time;
+>>   		__entry->power = power;
+>>   	),
+>>   
+>> -	TP_printk("type=%s freq=%lu load=%u dynamic_power=%u static_power=%u power=%u",
+>> +	TP_printk("type=%s freq=%lu load=%u power=%u",
+>>   		__get_str(type), __entry->freq,
+>> -		__entry->load, __entry->dynamic_power, __entry->static_power,
+>> +		__entry->total_time == 0 ? 0 :
+>> +			(100 * __entry->busy_time) / __entry->total_time,
+>>   		__entry->power)
+>>   );
+>>   
+> 
+> Tracing updates look fine to me. Having the division on the output
+> makes more sense.
+> 
+> Reviewed-by: Steven Rostedt (VMware) <rostedt@goodmis.org> # for tracing code
+> 
+> -- Steve
+> 
+
+Thank you Steven, I will include it in the next version with a proper
+label.
+
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
