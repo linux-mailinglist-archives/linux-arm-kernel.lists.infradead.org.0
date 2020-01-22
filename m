@@ -2,135 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 346D214583B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 15:54:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA8EC14594C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 17:05:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eFzK90DcR7HzHCjK/RMrAcpwI3tcp8F+grRHkIUOEec=; b=TBDhThHukaCbPC
-	/wUXGOTnOhgp4kF5uF7vdi2tXii4IN7RnAMlgb36ITdulVqz4BBISdDULTxRAJzdQnLgaa6txxgaI
-	ZLvI2wErQRmjqnlYQWM5iqm7mvl1PFy0Db+Ica+2NlNe9dqTKWlW2AfGdKKYn7fjt+XEchywwp4uQ
-	DxQtp9x53B5pQk+8xrUiv6zrz9U9tkk/DeVrf6kxQZNAGB+zUooiuwmvLCez7KHr0Qq5/kffm4FKJ
-	6mI786KICV7WCnAdB80lZGDWmJYCwofo+c4jGn8T7n/yxe9qdiO8QtzvLsGAUZksGnpL0jMi1fj3C
-	zdVC1L/utz3NTyHYQSmw==;
+	List-Owner; bh=BDGih4GsoyQH51LRjSbHXtfkDgT+bp5Hixauvsx5ENU=; b=qS5xZOh3yzn0tz
+	wriJOb2XwZ9Pl/ikfqOaaIV2jB/zvrrDsRDWcW2nlokoXeGYtL8/+9ZMU7dPYjZJrpAooLKqm+x3/
+	rdec3nOEIj+ageJIzulY4MhnvDX9vtWC6d/Mly2lbK4TtznJxzrPlS6iHxAMnMEy9R34vfsDo5ir5
+	C9iNFFxjRCwNQOEhU1oyUCZu91eyXNb8E2wFy23tvszeQ8KILAnX+t3ouxN0gyP59qy2cLi14J5EK
+	BS+s1GU6B+TbC+PxxE5yT6ipuxA3cVAlGxsc3YP19N1D4y4LMe8OkQGMLpKMJ1nEt9wNRfR1bSgKE
+	2uUsKTrHa4hGJfBMQA5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuHOb-000795-Co; Wed, 22 Jan 2020 14:54:17 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1iuIVO-00064W-1S; Wed, 22 Jan 2020 16:05:22 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuHOQ-00077n-MO
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 14:54:08 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20200122145402epoutp0198869e609aca218918624717d4003a85~sPS9PdSt_2485424854epoutp01G
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 14:54:02 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20200122145402epoutp0198869e609aca218918624717d4003a85~sPS9PdSt_2485424854epoutp01G
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1579704842;
- bh=4itLcJd9TovgkIJA4En20KBiCbGG4bMhv7WMq/yt9qs=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=U4RQaPc5GK99iRyuoOoQ86PvMPg6xZONm++S2v9H3QDPcr2RXbd/Q62zgzehQXVKv
- 75c40NYvV743+KMyPhHjyUb/GMCMl/g/FmWUcfUsAjC2No9A2q3tCSL2XGxCwFtfe0
- FpVa3SyEHQr2Gw1x4KtsmxiCFRzokrFopo9RJN54=
-Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTP id
- 20200122145402epcas5p4502ef8824947d257531b08ebb14484e1~sPS8506Za1067910679epcas5p4v;
- Wed, 22 Jan 2020 14:54:02 +0000 (GMT)
-Received: from epcas5p1.samsung.com ( [182.195.41.39]) by
- epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 05.FC.19629.A02682E5; Wed, 22 Jan 2020 23:54:02 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200122145401epcas5p28907c5b3800ca5410955a856bcd82c8e~sPS72sQu91038710387epcas5p2m;
- Wed, 22 Jan 2020 14:54:01 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200122145401epsmtrp22cfbc217f006f370bdfa6a2d304687c8~sPS710jVu1347513475epsmtrp2V;
- Wed, 22 Jan 2020 14:54:01 +0000 (GMT)
-X-AuditID: b6c32a4b-345ff70000014cad-2f-5e28620acae9
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 60.A8.10238.902682E5; Wed, 22 Jan 2020 23:54:01 +0900 (KST)
-Received: from sriramdash03 (unknown [107.111.85.29]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200122145358epsmtip174221b741edcd5e2af6c3e4345ad2752~sPS5vIs6s2722127221epsmtip1L;
- Wed, 22 Jan 2020 14:53:58 +0000 (GMT)
-From: "Sriram Dash" <sriram.dash@samsung.com>
-To: "'Faiz Abbas'" <faiz_abbas@ti.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <netdev@vger.kernel.org>,
- <linux-can@vger.kernel.org>
-In-Reply-To: <20200122080310.24653-3-faiz_abbas@ti.com>
-Subject: RE: [PATCH 2/3] can: m_can: m_can_platform: Add support for
- enabling transceiver through the STB line
-Date: Wed, 22 Jan 2020 20:23:57 +0530
-Message-ID: <002101d5d133$c8352100$589f6300$@samsung.com>
+ id 1iuIVD-00063q-Cc; Wed, 22 Jan 2020 16:05:12 +0000
+Received: by mail-ot1-f67.google.com with SMTP id h9so6672844otj.11;
+ Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=P2nj0uogA4rRFo/vGoXxjKcugggOl6yz11QVdYb92dk=;
+ b=Fsxb481fgTfcUugKzVJOIXR0lnBjOPnfEQM4egakFYZ9lYn06dzUx0Tv4FZp1os5QN
+ 9H604PzjeffGwuHT+5hnbsQjOIthZ386wgfTvACNMRaI2vBZUCwnvj8DlZO5UEc4EINk
+ iZtxBZ2mzaYWdJ+4AWHZooRMuo4srZmy0xB31a9Dqnp3TakQAnnPSQ7jBIw7C6XyhK7I
+ xO+f6vcapOUF8bY2KxLDO5YyQ4ExU3dcc4/Zt031D4oU7okg/UFjEr8xDBbrv0nK8UjZ
+ 5wO4pgdM0vrkbqN05aeZLMXis3J4XdlgTkwXEaPgorvToddodoj1AzDal+pSKZuq8U8U
+ nuyQ==
+X-Gm-Message-State: APjAAAU+wFB1gtHezBBYEjJWZeuFvTOVqIJAZQTh5C/rYb/JaQMKIjDo
+ SAgbvZ2ElpyjP4J77f0OOw==
+X-Google-Smtp-Source: APXvYqyrhkKZuH0Rsv16TrhCL+xfS8KG9mD/Inml67F3FVNPVpf7HCEz4as/foIuTdlUwhiChYJj8g==
+X-Received: by 2002:a9d:60c4:: with SMTP id b4mr8167324otk.166.1579709110222; 
+ Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id a19sm14764576oto.60.2020.01.22.08.05.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 22 Jan 2020 08:05:09 -0800 (PST)
+Received: (nullmailer pid 9378 invoked by uid 1000);
+ Wed, 22 Jan 2020 16:05:08 -0000
+Date: Wed, 22 Jan 2020 10:05:08 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: mmc: convert synopsys dw-mshc
+ bindings to yaml
+Message-ID: <20200122160508.GA9316@bogus>
+References: <20200116152230.29831-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQL34jRp8ckpa4Ru5doAY/bQkCNITwHmOWfLAkdTAPClkTT7kA==
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrIKsWRmVeSWpSXmKPExsWy7bCmui5Xkkacwet3/Bbvl/UwWsw538Ji
- Mf/IOVaL7tNbWC2+LG1mttj0+BqrxarvU5ktLu+aw2ax9PpFJov1i6awWBxbIGbx5sdZJovW
- vUfYLZY87QBK3tvJ6sDvsWbeGkaPLStvMnl8vHSb0WPTqk42j81L6j36/xp4HL+xncnj8ya5
- AI4oLpuU1JzMstQifbsErozmi43sBe/5Kt7vOc/cwNjF08XIySEhYCLxpvMYK4gtJLCbUaLv
- uEYXIxeQ/YlR4v7EKewQzjdGiQ97ZzLCdCxY+p0FIrGXUaJpzX0o5xWjxMMTd8BmsQnoSpy9
- 0cQGkhAROMko8ejaSVYQh1ngMNCSjuVgVZwC5hJHf59kArGFBQok3n25wg5iswioSpz79Bxo
- HwcHr4ClxKIuGZAwr4CgxMmZT1hAbGYBeYntb+cwQ5ykIPHz6TKwkSICThL9p3ewQdSISxz9
- 2cMMsldC4Bi7xMfnn9ggGlwkenshLpUQEJZ4dXwLO4QtJfH53V6ommyJy33PoRaUSMx4tZAF
- wraXOHBlDgvIbcwCmhLrd+lD7OKT6P39hAkkLCHAK9HRJgRRrSrx6vZmqOnSEgfWnmaCsD0k
- XvxawDyBUXEWks9mIflsFpIPZiEsW8DIsopRMrWgODc9tdi0wDgvtVyvODG3uDQvXS85P3cT
- IzjhaXnvYNx0zucQowAHoxIPr4OlRpwQa2JZcWXuIUYJDmYlEd4FTapxQrwpiZVVqUX58UWl
- OanFhxilOViUxHknsV6NERJITyxJzU5NLUgtgskycXBKNTC6Lf9kvLTv9UYliV8O3j3SNxr1
- eop/CHy8bP3o0IPI37/Cghk+bNFLCH732cK6KurW38Rtpntabyy++71GsVRIs/Cv0vIz6of5
- Jmocz/0xcVvphj0TrvIVqoYphcx3mdu0V0iSp8oz8O+PvS/d75+Zdk306woNjosTnv1VXDj5
- 27EER81iDbn3SizFGYmGWsxFxYkAnY/IZXQDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrEIsWRmVeSWpSXmKPExsWy7bCSnC5nkkacQccVVov3y3oYLeacb2Gx
- mH/kHKtF9+ktrBZfljYzW2x6fI3VYtX3qcwWl3fNYbNYev0ik8X6RVNYLI4tELN48+Msk0Xr
- 3iPsFkuedgAl7+1kdeD3WDNvDaPHlpU3mTw+XrrN6LFpVSebx+Yl9R79fw08jt/YzuTxeZNc
- AEcUl01Kak5mWWqRvl0CV0bzxUb2gvd8Fe/3nGduYOzi6WLk5JAQMJFYsPQ7SxcjF4eQwG5G
- iQ9v17F3MXIAJaQlft7VhagRllj57zk7iC0k8IJR4s5SVRCbTUBX4uyNJjaQXhGBs4wSG24s
- YgdxmAXOM0pMm/qLEWLqZkaJ3V9XMYG0cAqYSxz9fRLMFhbIk9i+qocVxGYRUJU49+k5I8hm
- XgFLiUVdMiBhXgFBiZMzn7CAhJkF9CTaNjKChJkF5CW2v53DDHGcgsTPp8vApogIOEn0n97B
- BlEjLnH0Zw/zBEbhWUgmzUKYNAvJpFlIOhYwsqxilEwtKM5Nzy02LDDMSy3XK07MLS7NS9dL
- zs/dxAiOWS3NHYyXl8QfYhTgYFTi4XWw1IgTYk0sK67MPcQowcGsJMK7oEk1Tog3JbGyKrUo
- P76oNCe1+BCjNAeLkjjv07xjkUIC6YklqdmpqQWpRTBZJg5OqQbGSfO0Px0N+dYZ4L7+2OSb
- S56JTxDd9fk2j/kihvlGPkJHj7ruD0/YuFxg3cb62dbz1BY+Vb9vbP+y7Uj8jMq0Lx2vlEqN
- zKs+GGx0vMT669AeGV2pU5mx7i+1d2gXC824kbHiKUfNo+DiW5zOsw9MFF3h84Hp7IRll2ZL
- VT7eGP5nV7ldxpKcHUosxRmJhlrMRcWJAMWcZMnVAgAA
-X-CMS-MailID: 20200122145401epcas5p28907c5b3800ca5410955a856bcd82c8e
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200122080213epcas5p46e361ac6fa299521c1bab3ab20862b46
-References: <20200122080310.24653-1-faiz_abbas@ti.com>
- <CGME20200122080213epcas5p46e361ac6fa299521c1bab3ab20862b46@epcas5p4.samsung.com>
- <20200122080310.24653-3-faiz_abbas@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20200116152230.29831-1-jbx6244@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_065407_154108_0EBDB917 
-X-CRM114-Status: GOOD (  19.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200122_080511_431409_75E5DA0F 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.24 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,78 +92,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, catalin.marinas@arm.com, t-kristo@ti.com,
- robh+dt@kernel.org, mkl@pengutronix.de, dmurphy@ti.com, davem@davemloft.net,
- wg@grandegger.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ heiko@sntech.de, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: linux-can-owner@vger.kernel.org <linux-can-owner@vger.kernel.org> On
-> Behalf Of Faiz Abbas
-> Subject: [PATCH 2/3] can: m_can: m_can_platform: Add support for enabling
-> transceiver through the STB line
+On Thu, 16 Jan 2020 16:22:28 +0100, Johan Jonker wrote:
+> Current dts files with 'dwmmc' nodes are manually verified.
+> In order to automate this process synopsys-dw-mshc.txt
+> has to be converted to yaml. In the new setup
+> synopsys-dw-mshc.yaml will inherit properties from
+> mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
+> 'dwmmc' will no longer be a valid name for a node and
+> should be changed to 'mmc'.
 > 
-> CAN transceivers on some boards have an STB (standby) line which can be
-> toggled to enable/disable the transceiver. Add support for enabling the
-> transceiver using a GPIO connected to the STB line.
-> 
-
-Looks good to me. 
-Other than Dan's concern on stb  as standby,
-Acked-by: Sriram Dash <sriram.dash@samsung.com>
-
-> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  drivers/net/can/m_can/m_can_platform.c | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+>  .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  68 ++++++++++
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  70 ++++++++++
+>  3 files changed, 138 insertions(+), 141 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
 > 
-> diff --git a/drivers/net/can/m_can/m_can_platform.c
-> b/drivers/net/can/m_can/m_can_platform.c
-> index 38ea5e600fb8..b4e1423bd5d8 100644
-> --- a/drivers/net/can/m_can/m_can_platform.c
-> +++ b/drivers/net/can/m_can/m_can_platform.c
-> @@ -6,6 +6,7 @@
->  // Copyright (C) 2018-19 Texas Instruments Incorporated -
-http://www.ti.com/
-> 
->  #include <linux/platform_device.h>
-> +#include <linux/gpio/consumer.h>
-> 
->  #include "m_can.h"
-> 
-> @@ -57,6 +58,7 @@ static int m_can_plat_probe(struct platform_device
-*pdev)
-> {
->  	struct m_can_classdev *mcan_class;
->  	struct m_can_plat_priv *priv;
-> +	struct gpio_desc *stb;
->  	struct resource *res;
->  	void __iomem *addr;
->  	void __iomem *mram_addr;
-> @@ -111,6 +113,16 @@ static int m_can_plat_probe(struct platform_device
-> *pdev)
-> 
->  	m_can_init_ram(mcan_class);
-> 
-> +	stb = devm_gpiod_get_optional(&pdev->dev, "stb", GPIOD_OUT_HIGH);
-> +	if (IS_ERR(stb)) {
-> +		ret = PTR_ERR(stb);
-> +		if (ret != -EPROBE_DEFER)
-> +			dev_err(&pdev->dev,
-> +				"gpio request failed, ret %d\n", ret);
-> +
-> +		goto failed_ret;
-> +	}
-> +
->  	ret = m_can_class_register(mcan_class);
-> 
->  failed_ret:
-> --
-> 2.19.2
 
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
