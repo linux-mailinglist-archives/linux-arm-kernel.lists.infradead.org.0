@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4393B145DC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 22:24:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6A31145DC6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 22:24:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sed6LKkyK8xGJUl20KRg4zKykO51uRX5yP/bL6f9siM=; b=jDqK42UQm9K6TQ
-	rEgMU/heWZlGccUlcuItKQokXnILLcCfD+GkD34U7dX+ZeyWxgWoYO5HSHTSx7vnm93iMlyBBmGar
-	tYeXgokPV/3lcg8zm5HTRmhpm6vr7thAuCVxvtsgWK7/EgMBp1YaHEM4DTG5+CAhx6prGuuU9cNDF
-	YVavCEE8CwOFGN/DvAkvwTeFxPvTTbGqy4Os1N9M5TrRURYnj0fTrgrqNL8ezXg37imKnf9DwWifk
-	fN+51ubdZAKiODOGT73MB3gzJo1F2TkxLYJMCZduC+NWaHUj0Tj4EthcVQodpv06yeD76cMgn3t+m
-	gxNbh+6SJfyttgk0AEzw==;
+	List-Owner; bh=KQq2T4qpL8nIE8KznTF4gRU/TdKXaXmiO6dTqzeC8XU=; b=WNwJhse9PIqLbp
+	eLbj4yA2TPmKJtFOxVV2S1TsnwwfZtFeZEsknVSTohvh2uN1i3JV4YF7o8d3IJv4ZkWcxRdaVfuvD
+	6CR2nJZSZbMDDch3IvMofgyIoftecQKcLL1lz8YsTD/bEthNun/+q0IWW7FRBX5qecSelaY4eqmUQ
+	N9VIjqMH9UFRJTZJeunxAzoCI7GsEpqU6yLxyTNtntpVdSaLQXKgWPHvoS1roBRUCe9FhhW1HCpwr
+	2h7o+D8vnsM//jBdZb29OUC7DVZZBg6AClxp4Q3pOgq7+0jiaCJgC6NZjXEmfKquijSMCsKlzvWnR
+	FGLDOFE+49jMKQWRP3/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuNUJ-0000QN-P0; Wed, 22 Jan 2020 21:24:35 +0000
+	id 1iuNUV-0000gA-Ix; Wed, 22 Jan 2020 21:24:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuNS3-0006yt-QS
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 21:22:17 +0000
+ id 1iuNS6-00071I-Bb
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 21:22:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38BE213A1;
- Wed, 22 Jan 2020 13:22:15 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3B7513D5;
+ Wed, 22 Jan 2020 13:22:17 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A2D63F52E;
- Wed, 22 Jan 2020 13:22:12 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D3EDF3F52E;
+ Wed, 22 Jan 2020 13:22:16 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v5 08/12] arm64: unify native/compat instruction skipping
-Date: Wed, 22 Jan 2020 21:21:40 +0000
-Message-Id: <20200122212144.6409-9-broonie@kernel.org>
+Subject: [PATCH v5 09/12] arm64: traps: Shuffle code to eliminate forward
+ declarations
+Date: Wed, 22 Jan 2020 21:21:41 +0000
+Message-Id: <20200122212144.6409-10-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200122212144.6409-1-broonie@kernel.org>
 References: <20200122212144.6409-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_132215_989142_72A06D39 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20200122_132218_537161_8D8268A0 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.5 points)
@@ -64,9 +65,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Paul Elliott <paul.elliott@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Andrew Jones <drjones@redhat.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
  Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
  Szabolcs Nagy <szabolcs.nagy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
@@ -85,89 +85,144 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-Skipping of an instruction on AArch32 works a bit differently from
-AArch64, mainly due to the different CPSR/PSTATE semantics.
+Hoist the IT state handling code earlier in traps.c, to avoid
+accumulating forward declarations.
 
-Currently arm64_skip_faulting_instruction() is only suitable for
-AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
-state machine but is local to traps.c.
-
-Since manual instruction skipping implies a trap, it's a relatively
-slow path.
-
-So, make arm64_skip_faulting_instruction() handle both compat and
-native, and get rid of the arm64_compat_skip_faulting_instruction()
-special case.
+No functional change.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/traps.c | 18 ++++++++----------
- 1 file changed, 8 insertions(+), 10 deletions(-)
+ arch/arm64/kernel/traps.c | 101 ++++++++++++++++++--------------------
+ 1 file changed, 49 insertions(+), 52 deletions(-)
 
 diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 84c7a88dd617..d42f0693623a 100644
+index d42f0693623a..4fa8b92b8624 100644
 --- a/arch/arm64/kernel/traps.c
 +++ b/arch/arm64/kernel/traps.c
-@@ -269,6 +269,8 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
+@@ -269,7 +269,55 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
  	}
  }
  
-+static void advance_itstate(struct pt_regs *regs);
+-static void advance_itstate(struct pt_regs *regs);
++#ifdef CONFIG_COMPAT
++#define PSTATE_IT_1_0_SHIFT	25
++#define PSTATE_IT_1_0_MASK	(0x3 << PSTATE_IT_1_0_SHIFT)
++#define PSTATE_IT_7_2_SHIFT	10
++#define PSTATE_IT_7_2_MASK	(0x3f << PSTATE_IT_7_2_SHIFT)
 +
++static u32 compat_get_it_state(struct pt_regs *regs)
++{
++	u32 it, pstate = regs->pstate;
++
++	it  = (pstate & PSTATE_IT_1_0_MASK) >> PSTATE_IT_1_0_SHIFT;
++	it |= ((pstate & PSTATE_IT_7_2_MASK) >> PSTATE_IT_7_2_SHIFT) << 2;
++
++	return it;
++}
++
++static void compat_set_it_state(struct pt_regs *regs, u32 it)
++{
++	u32 pstate_it;
++
++	pstate_it  = (it << PSTATE_IT_1_0_SHIFT) & PSTATE_IT_1_0_MASK;
++	pstate_it |= ((it >> 2) << PSTATE_IT_7_2_SHIFT) & PSTATE_IT_7_2_MASK;
++
++	regs->pstate &= ~PSR_AA32_IT_MASK;
++	regs->pstate |= pstate_it;
++}
++
++static void advance_itstate(struct pt_regs *regs)
++{
++	u32 it;
++
++	/* ARM mode */
++	if (!(regs->pstate & PSR_AA32_T_BIT) ||
++	    !(regs->pstate & PSR_AA32_IT_MASK))
++		return;
++
++	it  = compat_get_it_state(regs);
++
++	/*
++	 * If this is the last instruction of the block, wipe the IT
++	 * state. Otherwise advance it.
++	 */
++	if (!(it & 7))
++		it = 0;
++	else
++		it = (it & 0xe0) | ((it << 1) & 0x1f);
++
++	compat_set_it_state(regs, it);
++}
+ 
  void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
  {
- 	regs->pc += size;
-@@ -279,6 +281,9 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
- 	 */
- 	if (user_mode(regs))
- 		user_fastforward_single_step(current);
-+
-+	if (compat_user_mode(regs))
-+		advance_itstate(regs);
- }
+@@ -575,34 +623,6 @@ static const struct sys64_hook sys64_hooks[] = {
+ 	{},
+ };
  
- static LIST_HEAD(undef_hook);
-@@ -641,19 +646,12 @@ static void advance_itstate(struct pt_regs *regs)
- 	compat_set_it_state(regs, it);
- }
- 
--static void arm64_compat_skip_faulting_instruction(struct pt_regs *regs,
--						   unsigned int sz)
+-
+-#ifdef CONFIG_COMPAT
+-#define PSTATE_IT_1_0_SHIFT	25
+-#define PSTATE_IT_1_0_MASK	(0x3 << PSTATE_IT_1_0_SHIFT)
+-#define PSTATE_IT_7_2_SHIFT	10
+-#define PSTATE_IT_7_2_MASK	(0x3f << PSTATE_IT_7_2_SHIFT)
+-
+-static u32 compat_get_it_state(struct pt_regs *regs)
 -{
--	advance_itstate(regs);
--	arm64_skip_faulting_instruction(regs, sz);
+-	u32 it, pstate = regs->pstate;
+-
+-	it  = (pstate & PSTATE_IT_1_0_MASK) >> PSTATE_IT_1_0_SHIFT;
+-	it |= ((pstate & PSTATE_IT_7_2_MASK) >> PSTATE_IT_7_2_SHIFT) << 2;
+-
+-	return it;
+-}
+-
+-static void compat_set_it_state(struct pt_regs *regs, u32 it)
+-{
+-	u32 pstate_it;
+-
+-	pstate_it  = (it << PSTATE_IT_1_0_SHIFT) & PSTATE_IT_1_0_MASK;
+-	pstate_it |= ((it >> 2) << PSTATE_IT_7_2_SHIFT) & PSTATE_IT_7_2_MASK;
+-
+-	regs->pstate &= ~PSR_AA32_IT_MASK;
+-	regs->pstate |= pstate_it;
+-}
+-
+ static bool cp15_cond_valid(unsigned int esr, struct pt_regs *regs)
+ {
+ 	int cond;
+@@ -623,29 +643,6 @@ static bool cp15_cond_valid(unsigned int esr, struct pt_regs *regs)
+ 	return aarch32_opcode_cond_checks[cond](regs->pstate);
+ }
+ 
+-static void advance_itstate(struct pt_regs *regs)
+-{
+-	u32 it;
+-
+-	/* ARM mode */
+-	if (!(regs->pstate & PSR_AA32_T_BIT) ||
+-	    !(regs->pstate & PSR_AA32_IT_MASK))
+-		return;
+-
+-	it  = compat_get_it_state(regs);
+-
+-	/*
+-	 * If this is the last instruction of the block, wipe the IT
+-	 * state. Otherwise advance it.
+-	 */
+-	if (!(it & 7))
+-		it = 0;
+-	else
+-		it = (it & 0xe0) | ((it << 1) & 0x1f);
+-
+-	compat_set_it_state(regs, it);
 -}
 -
  static void compat_cntfrq_read_handler(unsigned int esr, struct pt_regs *regs)
  {
  	int reg = (esr & ESR_ELx_CP15_32_ISS_RT_MASK) >> ESR_ELx_CP15_32_ISS_RT_SHIFT;
- 
- 	pt_regs_write_reg(regs, reg, arch_timer_get_rate());
--	arm64_compat_skip_faulting_instruction(regs, 4);
-+	arm64_skip_faulting_instruction(regs, 4);
- }
- 
- static const struct sys64_hook cp15_32_hooks[] = {
-@@ -673,7 +671,7 @@ static void compat_cntvct_read_handler(unsigned int esr, struct pt_regs *regs)
- 
- 	pt_regs_write_reg(regs, rt, lower_32_bits(val));
- 	pt_regs_write_reg(regs, rt2, upper_32_bits(val));
--	arm64_compat_skip_faulting_instruction(regs, 4);
-+	arm64_skip_faulting_instruction(regs, 4);
- }
- 
- static const struct sys64_hook cp15_64_hooks[] = {
-@@ -694,7 +692,7 @@ void do_cp15instr(unsigned int esr, struct pt_regs *regs)
- 		 * There is no T16 variant of a CP access, so we
- 		 * always advance PC by 4 bytes.
- 		 */
--		arm64_compat_skip_faulting_instruction(regs, 4);
-+		arm64_skip_faulting_instruction(regs, 4);
- 		return;
- 	}
- 
 -- 
 2.20.1
 
