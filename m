@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 511C7145EA9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 23:34:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51081145EA8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 23:34:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EgJZjLdGvBYpiwpSqwUaRbJSIB/DPdrn0qCCxyrHQi4=; b=LQF8q0HpJxmysh
-	PzL4YowzKfYZdBaS2/pm9j/dBWivnWW8VCvsZKRwkb7sYoqoJVlldDbLbWtlTuVjjmtiAqpkVZr0O
-	N5r7OZT2yAYCe3r5QEIAWQEynRUXQN+Q/dFFkR26/OAlYU+56XiK4PZbxDjb1PngcilbqTxlRLggB
-	fKcbkLCtvBrHtNUuRUdZTj5OB9IADXsHHLUczxK2oW2J1KrLGuPocGNObMk1xiOq5NymHbZ2F7B/M
-	DCo7losJjCFece3swaxM78XGPvbi/DSVTlGXdquIkwW/upbjdQ7IfdYEDnrUr7ByDNbWjOB2+Pz59
-	XxzkYm3UZtjXO8G14mVQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FB1nW9AGoTEm1tZj+vCt6H5Jx4JZpInXFkan36ViAyA=; b=PKD8nDiHY6pBph
+	9puNDgyeeDqxv0HQMlpR1OE7ksgSrg4D5PaZ2F8zQPotJUGa6YWDSm6PPcx7rkwuvOqiK0BVc0xUK
+	+IeHTEUAe4nbYJRx7IMJ7DyeZDG53hpQmkcZ2Yy2WoArN5pQaSOWN4EYc+6W9WvqPH0+zB0NLa2G7
+	Kz3dpyARMIrDBuCGjmqIrlmDHKItWWCdtMOXRh95oqwHpWWcerfI6azQ7Up8VTSeIBr92y+mbkZyQ
+	hm4tG0CjafBNXn9ZdxZeCR3sKSi2z4gSnClwLW5iDfNI5Lj6C54uxBwMYSz+9t+e1LjnMXjqTteJ0
+	96BiZ+HfFcj8eYO+OEiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuOa3-0007cw-Mp; Wed, 22 Jan 2020 22:34:35 +0000
+	id 1iuOZn-0007We-5o; Wed, 22 Jan 2020 22:34:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuOZe-0007Vx-Tt
+ id 1iuOZe-0007Vy-Tu
  for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 22:34:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9267631B;
- Wed, 22 Jan 2020 14:34:05 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 231BDFEC;
+ Wed, 22 Jan 2020 14:34:08 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B59443F6C4;
- Wed, 22 Jan 2020 14:34:04 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 95D373F6C4;
+ Wed, 22 Jan 2020 14:34:07 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH 1/2] arm64: ftrace: Correct annotation of ftrace_caller
- assembly
-Date: Wed, 22 Jan 2020 22:33:56 +0000
-Message-Id: <20200122223357.25593-1-broonie@kernel.org>
+Subject: [PATCH 2/2] arm64: ftrace: Modernise annotation of return_to_handler
+Date: Wed, 22 Jan 2020 22:33:57 +0000
+Message-Id: <20200122223357.25593-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200122223357.25593-1-broonie@kernel.org>
+References: <20200122223357.25593-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_143411_007595_AF6DE2BD 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200122_143411_007585_7DC74491 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.5 points)
@@ -75,63 +75,35 @@ functions new macros have been introduced. These replace ENTRY and
 ENDPROC with two different annotations for normal functions and those
 with unusual calling conventions.
 
-The patchable function entry versions of ftrace_*_caller don't follow the
-usual AAPCS rules, pushing things onto the stack which they don't clean up,
-and therefore should be annotated as code rather than functions.
+return_to_handler does entertaining things with LR so doesn't follow the
+usual C conventions and should therefore be annotated as code rather than
+a function.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/entry-ftrace.S | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ arch/arm64/kernel/entry-ftrace.S | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/entry-ftrace.S
-index 7d02f9966d34..0cbc44d480fe 100644
+index 0cbc44d480fe..e0bf94d22b25 100644
 --- a/arch/arm64/kernel/entry-ftrace.S
 +++ b/arch/arm64/kernel/entry-ftrace.S
-@@ -75,17 +75,17 @@
- 	add	x29, sp, #S_STACKFRAME
- 	.endm
+@@ -320,7 +320,7 @@ ENDPROC(ftrace_stub)
+  * Run ftrace_return_to_handler() before going back to parent.
+  * @fp is checked against the value passed by ftrace_graph_caller().
+  */
+-ENTRY(return_to_handler)
++SYM_CODE_START(return_to_handler)
+ 	/* save return value regs */
+ 	sub sp, sp, #64
+ 	stp x0, x1, [sp]
+@@ -340,5 +340,5 @@ ENTRY(return_to_handler)
+ 	add sp, sp, #64
  
--ENTRY(ftrace_regs_caller)
-+SYM_CODE_START(ftrace_regs_caller)
- 	ftrace_regs_entry	1
- 	b	ftrace_common
--ENDPROC(ftrace_regs_caller)
-+SYM_CODE_END(ftrace_regs_caller)
- 
--ENTRY(ftrace_caller)
-+SYM_CODE_START(ftrace_caller)
- 	ftrace_regs_entry	0
- 	b	ftrace_common
--ENDPROC(ftrace_caller)
-+SYM_CODE_END(ftrace_caller)
- 
--ENTRY(ftrace_common)
-+SYM_CODE_START(ftrace_common)
- 	sub	x0, x30, #AARCH64_INSN_SIZE	// ip (callsite's BL insn)
- 	mov	x1, x9				// parent_ip (callsite's LR)
- 	ldr_l	x2, function_trace_op		// op
-@@ -122,17 +122,17 @@ ftrace_common_return:
- 	add	sp, sp, #S_FRAME_SIZE + 16
- 
- 	ret	x9
--ENDPROC(ftrace_common)
-+SYM_CODE_END(ftrace_common)
- 
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
--ENTRY(ftrace_graph_caller)
-+SYM_CODE_START(ftrace_graph_caller)
- 	ldr	x0, [sp, #S_PC]
- 	sub	x0, x0, #AARCH64_INSN_SIZE	// ip (callsite's BL insn)
- 	add	x1, sp, #S_LR			// parent_ip (callsite's LR)
- 	ldr	x2, [sp, #S_FRAME_SIZE]	   	// parent fp (callsite's FP)
- 	bl	prepare_ftrace_return
- 	b	ftrace_common_return
--ENDPROC(ftrace_graph_caller)
-+SYM_CODE_END(ftrace_graph_caller)
- #endif
- 
- #else /* CONFIG_DYNAMIC_FTRACE_WITH_REGS */
+ 	ret
+-END(return_to_handler)
++SYM_CODE_END(return_to_handler)
+ #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
 -- 
 2.20.1
 
