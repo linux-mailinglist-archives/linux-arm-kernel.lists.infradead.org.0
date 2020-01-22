@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48BDB144DD0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:39:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0274B144DD8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:45:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/dyMKDOXiczDLuOEY7oHNt8l7/WdJ1+aBKiDjU1gRys=; b=kuJanco+m9GWrwBqZ+WWPEfnq
-	a2r3ka2xphx89ewBBA7kXI7MCbR23phk+XO22pln7Dp0JfVQRxn6f6pQ0qkNfvr1b1s6EY1CkXM/v
-	ALoLljKIPE+jKOdshvf7t+6iR0VlgPKd5wbngLdB76DOJ6BSNOnOe8prRQxgyW2E6+VKr9iTWfxVP
-	vobv4b7CHb4oGfVMMSJSPqPHUzepT8pfrGVTsEb/HFY3R6f14B6fEPAdTbphwKvbF6OOCgzgkQo2O
-	sgqEtlt3wZXWBpy0pLdSMNkI+zvh96zaGOzkQRk3xqL751m9Y7mNv3bTx1SNK+U3Ev/criEd7ZGye
-	x5hnE7bXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/RP/F6owcChQM8/g89OIsjpLdZv7gMd+4e2HgyDkbxs=; b=q/y0A/EQS7RgGl
+	zkRYVo8pB4dLe5xeCks2noDmsZ576/gPXHblidf++ZtSs2vGn4csqq/cuMgSw5XL3lEfx2rENA3Jc
+	oYbtjTBlTX0MKDAlptAs7F0rPxgL9rhf4wwaCIXZ8r/t+H7nDMYX0uQB4Lw+igfFcy5GI2vCs/sQ/
+	y9GMaYasZoYN980MxJneIx3IoiQAu8HKjP9nOVFQGKdUe4+l/VgT1+qDd8iN1tg4gVRp7GvVQk3sP
+	a3rB8QHwAHfWALEZWVvonCLD/Zn2A5Vw1X7OBvryhkCuL3GR//DVe2XtxAOTHZtovwW2cDZ/hfX4j
+	K335UsVMNXIzTgY45j5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuBYB-0004pa-9O; Wed, 22 Jan 2020 08:39:47 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2])
+	id 1iuBdE-0006cr-Hj; Wed, 22 Jan 2020 08:45:00 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuBY0-0004ot-M0
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 08:39:38 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 1C7F2A414E;
- Wed, 22 Jan 2020 09:39:29 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
- [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id OTOX_JrSnXZq; Wed, 22 Jan 2020 09:39:26 +0100 (CET)
-Subject: Re: [PATCH V3 0/3] Add i.MX6ULZ SoC support
-To: Shawn Guo <shawnguo@kernel.org>, Anson Huang <Anson.Huang@nxp.com>
-References: <1538278348-7716-1-git-send-email-Anson.Huang@nxp.com>
- <20180930073332.GO26692@dragon>
-From: Stefan Roese <sr@denx.de>
-Message-ID: <0581e252-2ebc-c813-9c93-a8d542a9a7f6@denx.de>
-Date: Wed, 22 Jan 2020 09:39:24 +0100
+ id 1iuBd3-0006c5-Ky
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 08:44:51 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q10so6270702wrm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 Jan 2020 00:44:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hu6i7+OF9mR8F3w5C3TJgAWmFNe6HaLCn5UdN9iPgOA=;
+ b=nQp9FLyeLgb/fXEvPeK11RHCWEMW2rE23mzdtNEua4LC3cIohmdNMQVXa2CDFFbMIt
+ ObM6j6bi7LwsRd1rd33z4gM8xoKEuX4zcdqZlyLnf7MvWPKVcWfFVD+L7z1lVYGBNjIN
+ HzwnQbvZl9+j9+1ZkwSDQs1Pq7e3hmMcxfAakv38ufKcsWuZrERDcQ88UHKmjD+BeU6S
+ qenZdyJ680sHaQm3oEy+pIk1dNHwY+lBVYonqxlrKBJaxEtB5LqAh0J9yZpcHu6i6s8W
+ w+r+tWkgogrBHapipWy4pE0IbtF2reJ2vdzK49U+Wcp5Ht45DVzyhDL6f0xrCOoGMLHI
+ 6DSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hu6i7+OF9mR8F3w5C3TJgAWmFNe6HaLCn5UdN9iPgOA=;
+ b=oihsgzRu7sFJaA+ol6AANcPDIv5KAx4Ncr0BbvrTcmL+HUDHcOatr1HGBEKICbhUaA
+ RhpS3bBpvtERiILErZWGKEt13zHkLoclZQFL6Hp1jQmPrJg2tPJg6VU17NxvMsYPhRLQ
+ 0m7OeXxr6sg4zAvL0c7IiIK4S0JPpK0D5PCObCkR+hhOzCFjknqZcuts770JpC2cRe52
+ syxCTljp0k4985sY2FwY+TkI/cVXEdOXbw9awmlnB0jV+5gOBoPn9sNxcayo7dA3F0o/
+ TyRYF6aoyCC6TLzYEiYWmR5HxWmcfTeKvC78dYHYgIudh+5sxj7djxHS2omDvzr6QjOQ
+ jN2A==
+X-Gm-Message-State: APjAAAWkbqv5W2q1agUBAR739vkpVa8aPBtk4tSMnymngAmUYLv4I7aI
+ 1AUnr4YLPP6U4e3KP9zQSy6aaIqEvtm+R1GJ+bRUHesdmHY=
+X-Google-Smtp-Source: APXvYqz74zeJdWMwNNIbooWfqzFvYJT2HMq9I7Rh96xPUg3E7W2cQyPPCkBIid/NcwfmK5tQklzVxMKMROUCLjW0YZU=
+X-Received: by 2002:adf:fe86:: with SMTP id l6mr10142511wrr.252.1579682684686; 
+ Wed, 22 Jan 2020 00:44:44 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20180930073332.GO26692@dragon>
-Content-Language: en-US
+References: <20200121125853.28825-1-broonie@kernel.org>
+In-Reply-To: <20200121125853.28825-1-broonie@kernel.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 22 Jan 2020 09:44:34 +0100
+Message-ID: <CAKv+Gu9_5EPbvBtsj2ys8HQrFdW0mzfAkG+5XXPzTuGH=ZkdTg@mail.gmail.com>
+Subject: Re: [PATCH v13 0/2] ARMv8.5-RNG support
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_003936_868836_E5CCC947 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200122_004449_720946_EA14001C 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:67c:2050:104:0:2:25:2 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,57 +90,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng.dong@nxp.com, fabio.estevam@nxp.com, ping.bai@nxp.com,
- linux-arm-kernel@lists.infradead.org, Linux-imx@nxp.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30.09.18 09:33, Shawn Guo wrote:
-> On Sun, Sep 30, 2018 at 11:32:25AM +0800, Anson Huang wrote:
->> This patch set adds i.MX6ULZ SoC support, i.MX6ULZ is a new SoC of
->> i.MX6 family, compared to i.MX6ULL, it removes below modules:
->>
->>      - UART5/UART6/UART7/UART8;
->>      - PWM5/PWM6/PWM7/PWM8;
->>      - eCSPI3/eCSPI4;
->>      - CAN1/CAN2;
->>      - FEC1/FEC2;
->>      - I2C3/I2C4;
->>      - EPIT2;
->>      - LCDIF;
->>      - GPT2;
->>      - TSC;
->>
->> And i.MX6ULZ has same soc_id as i.MX6ULL, but SRC_SBMR2 bit[6] is
->> to differentiate i.MX6ULZ from i.MX6ULL, 1'b1 means i.MX6ULZ and
->> 1'b0 means i.MX6ULL. i.MX6ULZ reuse most of i.MX6UL/i.MX6ULL code,
->> just add the new CPU type and remove those non-exist modules from dtb.
->>
->> Anson Huang (3):
->>    ARM: imx: add i.mx6ulz msl support
->>    dt-bindings: arm: add compatible for i.MX6ULZ 14x14 EVK board
->>    ARM: dts: imx: add i.mx6ulz and i.mx6ulz 14x14 evk support
-> 
-> Applied all, thanks.
+On Tue, 21 Jan 2020 at 13:59, Mark Brown <broonie@kernel.org> wrote:
+>
+> This series is based on Richard Henderson's previous v7, it addresses
+> review comments from that version by dropping the boot time RNG
+> support and adds a new change that uses the v8.5-RNG extension to
+> seed KASLR when ARCH_RANDOM is enabled.  The boot time support
+> will be re-added later, there are awkward potential interactons
+> with CPU feature enumeration which need a bit more thought.
+>
+> v13:
+>  - Re-add the hwcap code which was accidentally dropped from v12.
 
-I'm currently starting work on an i.MX6ULZ custom port, which will use
-the EIM interface. While starting the pin-mux configuration for this
-board, I noticed that the pinfunc defines available for MX6UL
-(imx6ul-pinfunc.h which is used for i.MX6ULL/ULZ as well AFAICT) does
-not match the reference manual descriptions for the EIM pin muxing.
-One example:
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
 
-i.MX6UL:  EIM_DATA00 is available on pad LCD_DATA08
-i.MX6ULZ: EIM_DATA00 is available on pad GPIO3_IO13
-...
-
-My question now: Is a i.MX6ULL/ULZ specific pinfunc.h header available
-in any (NXP?) downstream Linux repository?
-
-Thanks,
-Stefan
+> v12:
+>  - Move definition of __early_cpu_has_rndr() into KASLR patch.
+> v11:
+>  - Add a hwcap for v8.5-RNG.
+>  - Drop the addition of data to the pool, it's of questionable
+>    value and we need to go back and get the addition of actual
+>    entropy working anyway.
+> v10:
+>  - Spell out that we're adding data not entropy from setup_arch() in
+>    the commit message for patch 2.
+> v9:
+>  - Make another static inline helper for early feature checks.
+>  - Add init annotations.
+>  - Use xor to add RNDR output to seed for KASLR.
+>
+> Mark Brown (1):
+>   arm64: Use v8.5-RNG entropy for KASLR seed
+>
+> Richard Henderson (1):
+>   arm64: Implement archrandom.h for ARMv8.5-RNG
+>
+>  Documentation/arm64/cpu-feature-registers.rst |  2 +
+>  Documentation/arm64/elf_hwcaps.rst            |  4 +
+>  arch/arm64/Kconfig                            | 12 +++
+>  arch/arm64/include/asm/archrandom.h           | 75 +++++++++++++++++++
+>  arch/arm64/include/asm/cpucaps.h              |  3 +-
+>  arch/arm64/include/asm/hwcap.h                |  1 +
+>  arch/arm64/include/asm/sysreg.h               |  4 +
+>  arch/arm64/include/uapi/asm/hwcap.h           |  1 +
+>  arch/arm64/kernel/cpufeature.c                | 14 ++++
+>  arch/arm64/kernel/kaslr.c                     | 11 +++
+>  10 files changed, 126 insertions(+), 1 deletion(-)
+>  create mode 100644 arch/arm64/include/asm/archrandom.h
+>
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
