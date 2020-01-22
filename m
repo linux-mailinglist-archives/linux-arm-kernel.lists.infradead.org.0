@@ -2,107 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F062144AAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 05:05:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BBB6144ADD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 05:39:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZoENGPxBSgzStxFBRFlfUZsDgLNH7FKU2uXgpBnG5BY=; b=MIQ0wMudnrLihj
-	WVZv/k9cooRpwRfI9IMQAYQdFvkwoJDecrYR+byXfyYue5FxRN9YaGE6i5frSTkyEzFEbfKvERM0R
-	xEfYaHlGVdIaQzBLngOnbc1n7zWbpfmg3kXcdTDxNhsP5YQqskyN7VQF3C282jrZ+AnWCnYMV+6kW
-	RyrCanhVLl6JYq3GZbkxT64o0JsOcR1duxTyPTW2hVDFSef1VoSo6Xm8VwLbwoJIB+5x0A4E2myIP
-	9WIeD1CNwSlfNT8VINXdOIoUQSXrrl4gTK4ghSAyQHSsraG7Y+xUl1513Fnu27xgaXrpRWVlK9Tw0
-	+k6hctIbYV2q02bmysBg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LWF9z/FCzZwBVhuTlnuX0Gk33hcmEaY3vXsw9EqOLJ0=; b=BCTTH7Jxda3gpR
+	kXWhBC8Ag4mzGu08pe53EQ2Qy/2CWwtUqFC/8RVDczR8eyIcMKLympS9TzCmR05p7bJ+dCShaPVDm
+	k0Rkzsk9tZpge+YafzSMOijCbr6C5Z+EPL8uK0RwJMp4E9aMb24ATyMNXDfKuYp2xYwkgefmjKK5G
+	RJ6yccU69vPWFwkiXsKezWYJP1nTm/jwb4IXrWLJj/9XqEhAjF5XnXJSQ/Ni6JtowiMgM5Gs2qhU1
+	X62+TvIV13KOqNPIkPufht/a5zi3Sc9kLff2RvUws0kCmmblSGxx5EKXslExh9fpjKtIZIXbMvYOD
+	xzCEBAX7N7gnoc81wc+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu7GX-00054m-II; Wed, 22 Jan 2020 04:05:17 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iu7nq-0007ID-4Y; Wed, 22 Jan 2020 04:39:42 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu7GE-00054K-Q1
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 04:05:00 +0000
-Received: by mail-wm1-x341.google.com with SMTP id d139so3460124wmd.0
+ id 1iu7nf-0007HW-N9
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 04:39:33 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id p9so5394629wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Jan 2020 20:04:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=QnP3I9MQH2rjvN4odqaiJfYKIdwE2UEnGytQrH/isCo=;
- b=uhsGKyNygZhXrZu7vjW5rzhzl2zOR80ETGG0fo6Wx++dxDeZPl5EoBK2tzjxMJjxOd
- LeCOLr3vGDWeAVm06DUuLADW5K7S2/+mHDDLpGgRO0THcQL9JHtv7u3BvEBlJr0jP7Ak
- BE0RqXczHjodZn+Vo8L+XL/tls839WQqTk5qM/cWm6LihNu2HGaeeTmQ7BPScl7wWilc
- BaHpHzEbnqUYBFufqdTq8c+gHF7PTC94LXv6YhCXMiIXkJPB8Cb5UrHI5ADMRLjA42zo
- nLMeVAii95vUSkdWBg5b7poNaR1WUrM6yM2b2w7gN2l1Z0s8bZCpIZe+3tTbA8O4xFEI
- DIxQ==
+ Tue, 21 Jan 2020 20:39:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=+m6cadQl6pV2Wv78zkM4etc1x/ZjZAZbfQAg+8s6O5Q=;
+ b=aMilkVSEnOZtzlEy1UKGMIQYCdnUVu++Ag3SW2eOvf2DiqtTT1PH9xizKFdA1kx94J
+ LdrN4zOy4l8cqkKVoMTt8Ld3MiKHaNhsB3nU6dWqk/4bxxk9eYBQ/kSl/5YGAAyU3OZi
+ C493QtTEUt/SjLtkUDvLDrhpMWe0MQWjCxX96nBwnpqz//o9HQIchZpzseYiGExGI2Ed
+ ApePCwkJ5xCsqX3tjBAx6Qlio11i8oPdp6l9btFWrdFKDT+lnwR2Lps8q95TMnajkfTj
+ +8B7V+8wrOPvDppb528I3LoUMaUyZDKR0HKPla0jiaTRwrcst9duOSXYAPcjrya1mRBF
+ IENA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QnP3I9MQH2rjvN4odqaiJfYKIdwE2UEnGytQrH/isCo=;
- b=NNW0i1DldDAaOmoYz5JHGepq7lb7RdIaQgMuuyQvxab6e6VI3PgyB9gTDRPhOQqq4X
- zzCRufkBieyijEEjJilyMgnfW7qM8C4CS8AsgBsfItwBUgnajeBwyHoEsw6GI0k3vYgp
- b0BrdFs4azHWsw0DFwL9joqzLDfv2OS6yAeawaU3vcTxj+ajZp/g/2rTBD/cHEEHqI8h
- AMYFmte6qRaPFMZ6Xt1RJsLE763kBOThweD8eJDjAKcThjU/Vw122DkkSUrZeAeaeXHV
- jT1FElXQENuktPNjfzv503U+eK2Na2wxa281pgR1KkiVUnz71rsfBs47sOAKdhhAjM8u
- mH7g==
-X-Gm-Message-State: APjAAAWrhKah5hoiD8SYJMUN8ilPmjrYfGAD4t2SpdlanBmSiMRzgZlQ
- r/RIH6tLtYkG0lyMoUMxAy4=
-X-Google-Smtp-Source: APXvYqy5KkRy1uXxqtjC4MyYoj8JskrPlSRfUong+9Z73j995d4xccxTBqgnHi3V+SoQVsINzFgxaw==
-X-Received: by 2002:a05:600c:2959:: with SMTP id
- n25mr481678wmd.185.1579665897027; 
- Tue, 21 Jan 2020 20:04:57 -0800 (PST)
-Received: from [10.230.28.123] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id m3sm53812768wrs.53.2020.01.21.20.04.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 20:04:55 -0800 (PST)
-Subject: Re: [PATCH v2 net-next] net: convert suitable drivers to use
- phy_do_ioctl_running
-To: Heiner Kallweit <hkallweit1@gmail.com>, Andrew Lunn <andrew@lunn.ch>,
- David Miller <davem@davemloft.net>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Doug Berger <opendmb@gmail.com>,
- Pantelis Antoniou <pantelis.antoniou@gmail.com>,
- Yisen Zhuang <yisen.zhuang@huawei.com>, Salil Mehta
- <salil.mehta@huawei.com>, Vladimir Zapolskiy <vz@mleia.com>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>, Timur Tabi <timur@kernel.org>,
- Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
- Steve Glendinning <steve.glendinning@shawell.net>,
- Michal Simek <michal.simek@xilinx.com>,
- Woojung Huh <woojung.huh@microchip.com>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>
-References: <2db5d899-a550-456d-a725-f7cf009f53a3@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <9d2dbcc0-7e22-601a-35f6-135f2a9e6f99@gmail.com>
-Date: Tue, 21 Jan 2020 20:04:50 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=+m6cadQl6pV2Wv78zkM4etc1x/ZjZAZbfQAg+8s6O5Q=;
+ b=RCv90tFvvh7j6dnSqWM9QFgBEl6WTKIE9GI82Roypz3Zs1vOUVYxRZsbQLCuorkWrJ
+ uUw5atlGrvbVIM92hd25bJAqoVDmIJCA1O7EhjT/gJggVizdBFM6kN8rJobZxTLFsAIs
+ OYTvtgHgOwSm2OqWJE2ARI39VB8l3W2sKiIKUxg4l7srizxcrWbySWriuAyvcsd3cyjW
+ MuzxWmptJwAQM5/sMaIAhtuW2Dr6CRUYuKObzFzCLFgvczfm9MH5C5/5QCt4k1U3U5h7
+ 4w8vJM+gwWl4GSvcM7hX3HyvlWvEx2W/qyCyYho4WawI8X+bx8vKw0ZjCxP1f9/lFlcx
+ tedQ==
+X-Gm-Message-State: APjAAAVcAVOUP6PcOVzm2K9E52CYCYhUwWOZUXlGH8slIwnlZWEXI52V
+ BTi5gbdH6TsL1e+Sv0MS3u3Rng==
+X-Google-Smtp-Source: APXvYqwakuqDg2xhL8wUrGjifhDdGKgiSckE3EE4aX7T9ne5JFQ9A8uD8SBsL9+mDJz0d0AdjBWkyQ==
+X-Received: by 2002:a1c:6588:: with SMTP id z130mr669359wmb.0.1579667968311;
+ Tue, 21 Jan 2020 20:39:28 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id o1sm55120123wrn.84.2020.01.21.20.39.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Jan 2020 20:39:27 -0800 (PST)
+Message-ID: <5e27d1ff.1c69fb81.f31c4.bd62@mx.google.com>
+Date: Tue, 21 Jan 2020 20:39:27 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <2db5d899-a550-456d-a725-f7cf009f53a3@gmail.com>
-Content-Language: en-US
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Report-Type: boot
+X-Kernelci-Kernel: v5.5-rc7-76-g1fcfe766a119
+Subject: arm64/for-kernelci boot: 24 boots: 2 failed,
+ 22 passed (v5.5-rc7-76-g1fcfe766a119)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_200458_873459_5DAB7C81 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_203931_755988_889799A5 
+X-CRM114-Status: UNSURE (   3.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32e listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,40 +96,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Linux USB Mailing List <linux-usb@vger.kernel.org>,
- linux-renesas-soc@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+arm64/for-kernelci boot: 24 boots: 2 failed, 22 passed (v5.5-rc7-76-g1fcfe766a119)
 
+Full Boot Summary: https://kernelci.org/boot/all/job/arm64/branch/for-kernelci/kernel/v5.5-rc7-76-g1fcfe766a119/
+Full Build Summary: https://kernelci.org/build/arm64/branch/for-kernelci/kernel/v5.5-rc7-76-g1fcfe766a119/
 
-On 1/21/2020 1:09 PM, Heiner Kallweit wrote:
-> Convert suitable drivers to use new helper phy_do_ioctl_running.
-> 
-> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
-The vast majority of drivers that you are converting use the following
-convention:
+Tree: arm64
+Branch: for-kernelci
+Git Describe: v5.5-rc7-76-g1fcfe766a119
+Git Commit: 1fcfe766a1195bfb7d3b248defba8c9787d0d41a
+Git URL: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+Tested: 22 unique boards, 8 SoC families, 1 build out of 2
 
-- !netif_running -> return -EINVAL
-- !dev->phydev -> return -ENODEV
+Boot Regressions Detected:
 
-so it may make sense to change the helper to accommodate the majority
-here, not that I believe this is going to make much practical
-difference, but if there were test cases that were specifically looking
-for such an error code, they could be failing after this changeset.
+arm64:
 
-For bgmac.c, bcmgenet.c and cpmac.c:
+    defconfig:
+        gcc-8:
+          meson-g12a-u200:
+              lab-baylibre: new failure (last pass: v5.5-rc6-61-g2556a8d3927a)
+          meson-gxl-s805x-p241:
+              lab-baylibre: new failure (last pass: v5.5-rc7-70-g46158a360c3a)
 
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Boot Failures Detected:
 
-Whether you decide to spin another version or not.
--- 
-Florian
+arm64:
+    defconfig:
+        gcc-8:
+            meson-g12a-u200: 1 failed lab
+            meson-gxl-s805x-p241: 1 failed lab
+
+---
+For more info write to <info@kernelci.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
