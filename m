@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58F42145AB0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:20:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0794145AAD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:18:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5dZr0VNiOf3VOARl0GeZ1/KslCEI2IurLjV13ryhM00=; b=BFG+g1GCVyNDBZ
-	WUSUHxsIQF9qpNyXkTEyxv6VKmQ/ej56ORZrSBkPJOXjDMablx/Q0eaqnQqMK6DINgPP5iIxpA12V
-	btiYQAKxbgUgDlp16qLS6IKpRrEHOHtvficcvvqbrMjcHNeuvPuRiic6h20863zYJLeUnP/aJRaD0
-	5Q+Agej8bQ7RqQS7RoN4dcOquc8zml4uVxsFIMsma2qv6PF2ZVhAxatDx4ZvexR3F4sHQua/c5eea
-	xUkTc0HurvPzjrQHgEizwwaao1g8hmS9Qoc+F47nl5784vUaCfrodIpXuGYniEYLSM9yGnpxJft8C
-	HaVVK1dB0RJtCpvWAH4A==;
+	List-Owner; bh=v13y2ra8c6i+8hEuNnlwGlKBD+MgXjQeylTvLVgrIU4=; b=CA4NWYBo8lueHJ
+	qd5a2tO2ka7Nv9MrDvIXhDFt0YXQrXYxQtW3VRT7aI/V5EBGAnSQLHiJptuWNN4vBkv4iqm7SGJgm
+	6imHxj0kWyW8vzu5OyXdlJPtJmz+hfmjzAGkyyBxg8sEM9et9kudCvPrNHp4mhxiMPWJ+/yeCPGDk
+	2XpTX1Y5n274/Xnz7N2/HIIL+Nw0jv/W4ZpWfQMIzRoRBX+WVJxIvAIMrsdA7eCBd0unEXz3XHq4n
+	x/3vtzDNLjegfDsnkzaBS9Wxc+K9+sl16EQ74Ty+w/ipDQyx/sHIzvcr46wCXVcOIeBwMRtI28nVk
+	98tQQa8Zk6dv6n7O0chA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuJfr-00014D-RA; Wed, 22 Jan 2020 17:20:15 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1iuJeM-0000Yw-JD; Wed, 22 Jan 2020 17:18:42 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuJfT-00013o-IA
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 17:19:53 +0000
+ id 1iuJeB-0000Xm-KV
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 17:18:33 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 22 Jan 2020 09:18:21 -0800
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 22 Jan 2020 09:18:24 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,350,1574150400"; d="scan'208";a="427474969"
+X-IronPort-AV: E=Sophos;i="5.70,350,1574150400"; d="scan'208";a="245116074"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga006.fm.intel.com with ESMTP; 22 Jan 2020 09:18:20 -0800
+ by orsmga002.jf.intel.com with ESMTP; 22 Jan 2020 09:18:22 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1iuJe0-000CqP-1U; Thu, 23 Jan 2020 01:18:20 +0800
-Date: Thu, 23 Jan 2020 01:17:28 +0800
+ id 1iuJe2-000D89-FF; Thu, 23 Jan 2020 01:18:22 +0800
+Date: Thu, 23 Jan 2020 01:17:29 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Olof Johansson <olof@lixom.net>
-Subject: [arm-soc:arm/soc] BUILD SUCCESS
- 31a7d26fbc51a39292bf9911f9e9efdf6d8e22b2
-Message-ID: <5e2883a8.5hlscd0yWvZnP7cW%lkp@intel.com>
+Subject: [arm-soc:arm/dt] BUILD SUCCESS
+ 9b0b308a1586f620a49c50605ae8abf509190661
+Message-ID: <5e2883a9.QZXsVfc5doXXjq6w%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_091951_650287_FCB29AC0 
-X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-CacheID: sfid-20200122_091831_726094_277518BD 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -53,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
@@ -74,8 +74,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/soc
-branch HEAD: 31a7d26fbc51a39292bf9911f9e9efdf6d8e22b2  Merge tag 'zynq-soc-for-v5.6' of https://github.com/Xilinx/linux-xlnx into arm/soc
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/dt
+branch HEAD: 9b0b308a1586f620a49c50605ae8abf509190661  Merge tag 'zynq-dt-for-v5.6-v2' of https://github.com/Xilinx/linux-xlnx into arm/dt
 
 elapsed time: 529m
 
