@@ -2,92 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8046514531E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:48:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD41E14531A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:48:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U/neGuVC8onkRJNFvlQ+XMroKueCVmXavpa15R3uzx0=; b=AqElzX9yBePEdW
-	WmmMCgdgZW9QDCranSKwiz0Lr5Z7uVWCGC0e/bRWi8z51NI99U7qsWj13zhbAGE/mTBQrCQQs4fkr
-	Tk/JlvDbIBPLmhtGYxZ32cYfWJT1Yb72gE1+qU+knMessSf/yw6P5foQDGo9teMEpqxAJg+XqiVQN
-	4pXJZY/f58gOcOj9COwcPROWkyexDfnTWPFqOZB6E5h0XEsUgxVZr3A3+diLuDQDMWgJtBK9y5q7g
-	gWnDwEZNPMfgh0YDG0nMxbAECNBnEjkF3SmeQ7j//I72T4QlkQPsh30lcrY8DTuYuhNrxNw8tatQP
-	lW676Ue/xpG59KM0VjcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vawNVMV+K4sFotd36hfigGvux5kiya9+hiciXzA8ETU=; b=MJV1Y97FBiFlyV
+	5EjNLOmDTNO5lhwivkX6FOioZ+ys4hny5kltv0rZZf+sFNj0fAnEihh09Mliee0XlALjL3x/kF+tm
+	xxc88IftppOJddUWcvIAtBlR1vkvhWotsfGzx+leMSAvqQd3AbrtLDwPC+1085/Mua6ZBzDuejLge
+	rmS95OyJuxIPYoWKCAT7gYUxSdscs1dzz4b0PSYtlHVyBDTpqL7K0wz7tJe+Dl/02VyjPFwRZ2FbJ
+	iooHJf+a+4c3sS8nc0583NlWNMubS2DXp+NIBpKnLiO86qWVMeWlS2RU8HlMyllGYUhR+M416pCbC
+	j6LlTHFEBufYUHLI5zfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuDYr-0007bC-2Q; Wed, 22 Jan 2020 10:48:37 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iuDYL-00074o-Bn; Wed, 22 Jan 2020 10:48:05 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuDWi-0005bB-2J
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:46:28 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so6713652wrh.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 02:46:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=HlVN3+Fqo4CnAsTqD0OmkrdM8WtTRqDQDULyBnPtHug=;
- b=pHjQAKV6qoTnYiEUG8pxraj4nOM5bni+aQ67wNb2KUb2//W/kbVd+97/KkvsiDvFhU
- KXfqLc/ykSk0I6tQToqBW5aydEU2S7a5z/ZaqJl4Roqxe9AiFIkwvl5713T/SMxDCs89
- zHicB6uVbaRr0/qRVxYiZ4eAl2VabxBEfnuFZow7BlAD5/g8MbRObrb0MYdOm6903zc+
- kwYTXGhCbJy/61a+nCJUYJtjXvJFwSNmXt/FpRo7Lb4t7ZpidDNG17axWiCba3nFw3md
- /P/HBlOYKl5oYmNfqf3u019vsC7R9mbUrN3uRG0Upg7XDFPuVAFOPizJTj5ljKukwAFP
- 6xkg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=HlVN3+Fqo4CnAsTqD0OmkrdM8WtTRqDQDULyBnPtHug=;
- b=h4d4gboByNce8jxbzRBBLBGcdWa6rvKanqQ8xF2yIuqOLhnMqStjQSZUVQLUFPUCUw
- VAqe1KhhXXETSIMUQWnUF+9BpeSBsUOxyCR0gDfDsHUAtLTnh5G+FsNTOo2L7HMjtPdR
- qTV+mGTBN/o3SJZaFJAu7zbImvlFG5MXoOc2gFCiqStw3gST2M3vVxtmooim6Zbelrwt
- wZoHndsjilmOIdOqqJkmDozfB3NBRI8d9LIqOeRo0XnbhsqfptvTfcvRPsspJ3YggekM
- 4PlzSkpFhFG5jP8zUvXTKZHaiZ0PTCm+zyTxvjW7wPqUJPuHK2E4yZ36/jZ9eclCRBiV
- APkA==
-X-Gm-Message-State: APjAAAUGTMl5vIJHiTVKdMLs8wrvfw3TNM1FAJo2vyMlindtoIGZITmV
- qd4jPp9zYJbTVMLOKC4HcE4=
-X-Google-Smtp-Source: APXvYqxtNeNC1yK6GUuYbu+60bk+pxY4Zl+3F/5+yXvy3VXeniYyMGDE6MOXVSGfQdIi4qEjFVGD7w==
-X-Received: by 2002:a5d:534d:: with SMTP id t13mr10929059wrv.77.1579689981975; 
- Wed, 22 Jan 2020 02:46:21 -0800 (PST)
-Received: from Red.localdomain ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id n3sm3443953wmc.27.2020.01.22.02.46.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Jan 2020 02:46:21 -0800 (PST)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
- wens@csie.org, iuliana.prodan@nxp.com
-Subject: [PATCH 9/9] crypto: sun8i-ce: permit to batch requests
-Date: Wed, 22 Jan 2020 11:45:28 +0100
-Message-Id: <20200122104528.30084-10-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
-References: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
+ id 1iuDWI-000576-0Q
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:46:00 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 22 Jan 2020 02:45:56 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,349,1574150400"; d="scan'208";a="275571986"
+Received: from linux.intel.com ([10.54.29.200])
+ by FMSMGA003.fm.intel.com with ESMTP; 22 Jan 2020 02:45:53 -0800
+Received: from [10.125.253.5] (abudanko-mobl.ccr.corp.intel.com [10.125.253.5])
+ by linux.intel.com (Postfix) with ESMTP id E79D15803C5;
+ Wed, 22 Jan 2020 02:45:46 -0800 (PST)
+Subject: Re: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel
+ and user space
+From: Alexey Budankov <alexey.budankov@linux.intel.com>
+To: Alexei Starovoitov <alexei.starovoitov@gmail.com>,
+ Stephen Smalley <sds@tycho.nsa.gov>
+References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
+ <9b77124b-675d-5ac7-3741-edec575bd425@linux.intel.com>
+ <64cab472-806e-38c4-fb26-0ffbee485367@tycho.nsa.gov>
+ <05297eff-8e14-ccdf-55a4-870c64516de8@linux.intel.com>
+ <CAADnVQK-JzK-GUk4KOozn4c1xr=7TiCpB9Fi0QDC9nE6iVn8iQ@mail.gmail.com>
+ <537bdb28-c9e4-f44f-d665-25250065a6bb@linux.intel.com>
+Organization: Intel Corp.
+Message-ID: <63d9700f-231d-7973-5307-3e56a48c54cb@linux.intel.com>
+Date: Wed, 22 Jan 2020 13:45:45 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <537bdb28-c9e4-f44f-d665-25250065a6bb@linux.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_024624_243726_313C1396 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200122_024558_081362_A8AC004B 
+X-CRM114-Status: GOOD (  20.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,252 +77,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Stephane Eranian <eranian@google.com>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
+ Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
+ James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
+ Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Andy Lutomirski <luto@amacapital.net>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch permit to batch request.
-This imply:
-- linking two task via next
-- set interrupt flag just before running the batch in the last task.
-- storing all requests for finalizing them later
 
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 60 +++++++++++++++----
- .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c | 15 +++--
- drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  |  6 ++
- 3 files changed, 66 insertions(+), 15 deletions(-)
+On 21.01.2020 21:27, Alexey Budankov wrote:
+> 
+> On 21.01.2020 20:55, Alexei Starovoitov wrote:
+>> On Tue, Jan 21, 2020 at 9:31 AM Alexey Budankov
+>> <alexey.budankov@linux.intel.com> wrote:
+>>>
+>>>
+>>> On 21.01.2020 17:43, Stephen Smalley wrote:
+>>>> On 1/20/20 6:23 AM, Alexey Budankov wrote:
+>>>>>
+>>>>> Introduce CAP_PERFMON capability designed to secure system performance
+>>>>> monitoring and observability operations so that CAP_PERFMON would assist
+>>>>> CAP_SYS_ADMIN capability in its governing role for perf_events, i915_perf
+>>>>> and other performance monitoring and observability subsystems.
+>>>>>
+>>>>> CAP_PERFMON intends to harden system security and integrity during system
+>>>>> performance monitoring and observability operations by decreasing attack
+>>>>> surface that is available to a CAP_SYS_ADMIN privileged process [1].
+>>>>> Providing access to system performance monitoring and observability
+>>>>> operations under CAP_PERFMON capability singly, without the rest of
+>>>>> CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials and
+>>>>> makes operation more secure.
+>>>>>
+>>>>> CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to
+>>>>> system performance monitoring and observability operations and balance
+>>>>> amount of CAP_SYS_ADMIN credentials following the recommendations in the
+>>>>> capabilities man page [1] for CAP_SYS_ADMIN: "Note: this capability is
+>>>>> overloaded; see Notes to kernel developers, below."
+>>>>>
+>>>>> Although the software running under CAP_PERFMON can not ensure avoidance
+>>>>> of related hardware issues, the software can still mitigate these issues
+>>>>> following the official embargoed hardware issues mitigation procedure [2].
+>>>>> The bugs in the software itself could be fixed following the standard
+>>>>> kernel development process [3] to maintain and harden security of system
+>>>>> performance monitoring and observability operations.
+>>>>>
+>>>>> [1] http://man7.org/linux/man-pages/man7/capabilities.7.html
+>>>>> [2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
+>>>>> [3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
+>>>>>
+>>>>> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
+>>>>> ---
+>>>>>   include/linux/capability.h          | 12 ++++++++++++
+>>>>>   include/uapi/linux/capability.h     |  8 +++++++-
+>>>>>   security/selinux/include/classmap.h |  4 ++--
+>>>>>   3 files changed, 21 insertions(+), 3 deletions(-)
+>>>>>
+>>>>> diff --git a/include/linux/capability.h b/include/linux/capability.h
+>>>>> index ecce0f43c73a..8784969d91e1 100644
+>>>>> --- a/include/linux/capability.h
+>>>>> +++ b/include/linux/capability.h
+>>>>> @@ -251,6 +251,18 @@ extern bool privileged_wrt_inode_uidgid(struct user_namespace *ns, const struct
+>>>>>   extern bool capable_wrt_inode_uidgid(const struct inode *inode, int cap);
+>>>>>   extern bool file_ns_capable(const struct file *file, struct user_namespace *ns, int cap);
+>>>>>   extern bool ptracer_capable(struct task_struct *tsk, struct user_namespace *ns);
+>>>>> +static inline bool perfmon_capable(void)
+>>>>> +{
+>>>>> +    struct user_namespace *ns = &init_user_ns;
+>>>>> +
+>>>>> +    if (ns_capable_noaudit(ns, CAP_PERFMON))
+>>>>> +        return ns_capable(ns, CAP_PERFMON);
+>>>>> +
+>>>>> +    if (ns_capable_noaudit(ns, CAP_SYS_ADMIN))
+>>>>> +        return ns_capable(ns, CAP_SYS_ADMIN);
+>>>>> +
+>>>>> +    return false;
+>>>>> +}
+>>>>
+>>>> Why _noaudit()?  Normally only used when a permission failure is non-fatal to the operation.  Otherwise, we want the audit message.
 
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-index fc0a2299c701..832fb4a51da9 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-@@ -96,31 +96,38 @@ static int sun8i_ce_cipher_prepare(struct crypto_engine *engine, void *async_req
- 	int flow, i;
- 	int nr_sgs = 0;
- 	int nr_sgd = 0;
-+	int slot = 0;
- 	int err = 0;
- 
- 	algt = container_of(alg, struct sun8i_ce_alg_template, alg.skcipher);
- 
--	dev_dbg(ce->dev, "%s %s %u %x IV(%p %u) key=%u\n", __func__,
-+	dev_dbg(ce->dev, "%s %s %u %x IV(%p %u) key=%u slot=%d\n", __func__,
- 		crypto_tfm_alg_name(areq->base.tfm),
- 		areq->cryptlen,
- 		rctx->op_dir, areq->iv, crypto_skcipher_ivsize(tfm),
--		op->keylen);
--
--#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
--	algt->stat_req++;
--#endif
-+		op->keylen, slot);
- 
- 	flow = rctx->flow;
- 
- 	chan = &ce->chanlist[flow];
-+	slot = chan->ct;
-+
-+#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
-+	algt->stat_req++;
-+	if (chan->ct + 1 > chan->tmax)
-+		chan->tmax = chan->ct + 1;
-+#endif
- 
--	cet = chan->tl;
-+	cet = &chan->tl[slot];
- 	memset(cet, 0, sizeof(struct ce_task));
- 
- 	cet->t_id = cpu_to_le32(flow);
- 	common = ce->variant->alg_cipher[algt->ce_algo_id];
--	common |= rctx->op_dir | CE_COMM_INT;
-+	common |= rctx->op_dir;
- 	cet->t_common_ctl = cpu_to_le32(common);
-+	if (slot > 0)
-+		chan->tl[slot - 1].next = cpu_to_le32(chan->t_phy + 176 * slot);
-+
- 	/* CTS and recent CE (H6) need length in bytes, in word otherwise */
- 	if (ce->variant->has_t_dlen_in_bytes)
- 		cet->t_dlen = cpu_to_le32(areq->cryptlen);
-@@ -240,6 +247,9 @@ static int sun8i_ce_cipher_prepare(struct crypto_engine *engine, void *async_req
- 	chan->timeout = areq->cryptlen;
- 	rctx->nr_sgs = nr_sgs;
- 	rctx->nr_sgd = nr_sgd;
-+	rctx->slot = slot;
-+	chan->lreq[chan->ct] = &areq->base;
-+	chan->ct++;
- 	return 0;
- 
- theend_sgs:
-@@ -281,14 +291,41 @@ int sun8i_ce_cipher_run(struct crypto_engine *engine, void *areq)
- 	struct sun8i_cipher_tfm_ctx *op = crypto_skcipher_ctx(tfm);
- 	struct sun8i_ce_dev *ce = op->ce;
- 	struct sun8i_cipher_req_ctx *rctx = skcipher_request_ctx(breq);
-+	struct sun8i_ce_flow *chan;
- 	int flow, err;
-+	int i;
- 
- 	flow = rctx->flow;
-+	chan = &ce->chanlist[flow];
- 	err = sun8i_ce_run_task(ce, flow, crypto_tfm_alg_name(breq->base.tfm));
--	crypto_finalize_skcipher_request(engine, breq, err);
-+	for (i = 0; i < chan->ct; i++) {
-+		if (!chan->lreq[i]) {
-+			dev_err(ce->dev, "Missing request at slot %d\n", i);
-+			continue;
-+		}
-+		breq = container_of(chan->lreq[i], struct skcipher_request, base);
-+		crypto_finalize_skcipher_request(engine, breq, err);
-+		chan->lreq[i] = NULL;
-+	}
-+	chan->ct = 0;
- 	return 0;
- }
- 
-+static int sun8i_ce_qmore(struct crypto_engine *engine, void *async_req)
-+{
-+	struct skcipher_request *areq = container_of(async_req, struct skcipher_request, base);
-+	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(areq);
-+	struct sun8i_cipher_tfm_ctx *op = crypto_skcipher_ctx(tfm);
-+	struct sun8i_ce_dev *ce = op->ce;
-+	struct sun8i_cipher_req_ctx *rctx = skcipher_request_ctx(areq);
-+	struct sun8i_ce_flow *chan;
-+	int flow;
-+
-+	flow = rctx->flow;
-+	chan = &ce->chanlist[flow];
-+	return MAXTASK - chan->ct;
-+}
-+
- static int sun8i_ce_cipher_unprepare(struct crypto_engine *engine, void *async_req)
- {
- 	struct skcipher_request *areq = container_of(async_req, struct skcipher_request, base);
-@@ -301,11 +338,13 @@ static int sun8i_ce_cipher_unprepare(struct crypto_engine *engine, void *async_r
- 	unsigned int ivsize, offset;
- 	int nr_sgs = rctx->nr_sgs;
- 	int nr_sgd = rctx->nr_sgd;
-+	int slot = rctx->slot;
- 	int flow;
- 
- 	flow = rctx->flow;
- 	chan = &ce->chanlist[flow];
--	cet = chan->tl;
-+
-+	cet = &chan->tl[slot];
- 	ivsize = crypto_skcipher_ivsize(tfm);
- 
- 	if (areq->src == areq->dst) {
-@@ -404,6 +443,7 @@ int sun8i_ce_cipher_init(struct crypto_tfm *tfm)
- 	op->enginectx.op.do_one_request = sun8i_ce_cipher_run;
- 	op->enginectx.op.prepare_request = sun8i_ce_cipher_prepare;
- 	op->enginectx.op.unprepare_request = sun8i_ce_cipher_unprepare;
-+	op->enginectx.op.can_queue_more = sun8i_ce_qmore;
- 
- 	err = pm_runtime_get_sync(op->ce->dev);
- 	if (err < 0)
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-index e8bf7bf31061..348d3927344b 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-@@ -104,8 +104,10 @@ int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow, const char *name)
- 	int err = 0;
- 
- #ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
--	ce->chanlist[flow].stat_req++;
-+	ce->chanlist[flow].stat_req += ce->chanlist[flow].ct;
- #endif
-+	/* mark last one */
-+	ce->chanlist[flow].tl[ce->chanlist[flow].ct - 1].t_common_ctl |= cpu_to_le32(CE_COMM_INT);
- 
- 	mutex_lock(&ce->mlock);
- 
-@@ -120,7 +122,7 @@ int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow, const char *name)
- 	/* Be sure all data is written before enabling the task */
- 	wmb();
- 
--	v = 1 | (ce->chanlist[flow].tl->t_common_ctl & 0x7F) << 8;
-+	v = 1 | (ce->chanlist[flow].tl[0].t_common_ctl & 0x7F) << 8;
- 	writel(v, ce->base + CE_TLR);
- 	mutex_unlock(&ce->mlock);
- 
-@@ -128,7 +130,7 @@ int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow, const char *name)
- 			msecs_to_jiffies(ce->chanlist[flow].timeout));
- 
- 	if (ce->chanlist[flow].status == 0) {
--		dev_err(ce->dev, "DMA timeout for %s\n", name);
-+		dev_err(ce->dev, "DMA timeout for %s on flow %d (batch=%d)\n", name, flow, ce->chanlist[flow].ct);
- 		err = -EFAULT;
- 	}
- 	/* No need to lock for this read, the channel is locked so
-@@ -285,7 +287,10 @@ static int sun8i_ce_dbgfs_read(struct seq_file *seq, void *v)
- 	int i;
- 
- 	for (i = 0; i < MAXFLOW; i++)
--		seq_printf(seq, "Channel %d: nreq %lu\n", i, ce->chanlist[i].stat_req);
-+		seq_printf(seq, "Channel %d: nreq %lu tmax %d eqlen=%d/%d\n", i,
-+			   ce->chanlist[i].stat_req, ce->chanlist[i].tmax,
-+			   ce->chanlist[i].engine->queue.qlen,
-+			   ce->chanlist[i].engine->queue.max_qlen);
- 
- 	for (i = 0; i < ARRAY_SIZE(ce_algs); i++) {
- 		if (!ce_algs[i].ce)
-@@ -343,7 +348,7 @@ static int sun8i_ce_allocate_chanlist(struct sun8i_ce_dev *ce)
- 	for (i = 0; i < MAXFLOW; i++) {
- 		init_completion(&ce->chanlist[i].complete);
- 
--		ce->chanlist[i].engine = crypto_engine_alloc_init(ce->dev, true);
-+		ce->chanlist[i].engine = crypto_engine_alloc_init2(ce->dev, true, MAXTASK * 2);
- 		if (!ce->chanlist[i].engine) {
- 			dev_err(ce->dev, "Cannot allocate engine\n");
- 			i--;
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-index 2d3325a13bf1..59e9985fc6c8 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-@@ -135,6 +135,7 @@ struct ce_task {
-  * @t_phy:	Physical address of task
-  * @tl:		pointer to the current ce_task for this flow
-  * @stat_req:	number of request done by this flow
-+ * @tmax:	The maximum number of tasks done in one batch
-  */
- struct sun8i_ce_flow {
- 	struct crypto_engine *engine;
-@@ -143,8 +144,11 @@ struct sun8i_ce_flow {
- 	dma_addr_t t_phy;
- 	int timeout;
- 	struct ce_task *tl;
-+	struct crypto_async_request     *lreq[MAXTASK];
-+	int ct;
- #ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
- 	unsigned long stat_req;
-+	int tmax;
- #endif
- };
- 
-@@ -185,6 +189,7 @@ struct sun8i_ce_dev {
-  * @ivlen:	size of bounce_iv
-  * @nr_sgs:	The number of source SG (as given by dma_map_sg())
-  * @nr_sgd:	The number of destination SG (as given by dma_map_sg())
-+ * @slot:	The slot in the tasklist used for this requests
-  */
- struct sun8i_cipher_req_ctx {
- 	u32 op_dir;
-@@ -194,6 +199,7 @@ struct sun8i_cipher_req_ctx {
- 	unsigned int ivlen;
- 	int nr_sgs;
- 	int nr_sgd;
-+	int slot;
- };
- 
- /*
--- 
-2.24.1
+So far so good, I suggest using the simplest version for v6:
 
+static inline bool perfmon_capable(void)
+{
+	return capable(CAP_PERFMON) || capable(CAP_SYS_ADMIN);
+}
+
+It keeps the implementation simple and readable. The implementation is more
+performant in the sense of calling the API - one capable() call for CAP_PERFMON
+privileged process.
+
+Yes, it bloats audit log for CAP_SYS_ADMIN privileged and unprivileged processes,
+but this bloating also advertises and leverages using more secure CAP_PERFMON
+based approach to use perf_event_open system call.
+
+~Alexey
+
+>>>
+>>> Some of ideas from v4 review.
+>>
+>> well, in the requested changes form v4 I wrote:
+>> return capable(CAP_PERFMON);
+>> instead of
+>> return false;
+> 
+> Aww, indeed. I was concerning exactly about it when updating the patch
+> and simply put false, missing the fact that capable() also logs.
+> 
+> I suppose the idea is originally from here [1].
+> BTW, Has it already seen any _more optimal_ implementation?
+> Anyway, original or optimized version could be reused for CAP_PERFMON.
+> 
+> ~Alexey
+> 
+> [1] https://patchwork.ozlabs.org/patch/1159243/
+> 
+>>
+>> That's what Andy suggested earlier for CAP_BPF.
+>> I think that should resolve Stephen's concern.
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
