@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F05DF1452C0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:40:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5C831452C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:40:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EjxR/zgcZNYNxyQHWQmbdbXl0tGK1jcC0bKvITozlwg=; b=f5NkBZZTYB7oYz
-	A5wbC34ggXR/r4/7dMCvgDwAnjWP7JKHmGFM/eqgelCHo6zZKk11MIRLHdUe2sPaUgKIOX89c78SV
-	AtDYZKaao2136CotXDZCQ6MQeqj1I2UluGJF3Bvs+8dfewn6eGy+NMReJ1OFfsfvFUP3JLh6aIzz2
-	pbiA2W+oI65G2u34dOWHNURo6VX2P3k/N9B984PvmDX8COwcx9z3f895N4Iqvg04BLIYFO8q3Bdul
-	0NYGn4wa8bIsGv+4jIdLjmbTWSdHrGRQRn+gsZuKSiz59ZURU3J6YhDY6dWZomeTylexegD6ZDMmD
-	qu3dhornbTi+RNbQfrKg==;
+	List-Owner; bh=pkuMr4Qc+tDMjvm9OKgYsnUfCYkIVQpfGiKXIR5a6ks=; b=K4c1/IR1p3BaWG
+	XQY05JGIHspCagLzk7g1qJYIUmy3pQiLn2icRDZY//SgsDI2X7lr2pSX+x2KRIwduf+wuyGOrOhZc
+	FAa4otnQXC1kkc0WwYfr7Y1Zu6mb/lZwIAbdwsxEjI3YsXXvv6SudEauQxUeMXTc7CeYrbpSrqcFV
+	5CjGIOAJVMQW39Rvlz1Fh05lupefEFGq6HL6JWfjTIrnoq5oVK0PC6U8jTbCsWa7zK06KNhUOaOyI
+	q3W9HwhdBdfHHbH7kLNK8XDcnKo9vH8kyebzUK74THk5qvRlOgLUMpBKHgEJ1h1uQORTBc7lAr9Me
+	e1VfAAMNTl3nqxdhNJkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuDQk-0001IC-TK; Wed, 22 Jan 2020 10:40:14 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iuDQx-0002fk-21; Wed, 22 Jan 2020 10:40:27 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuDQS-0001Ho-Ec
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:39:57 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00MAdsjt010736;
- Wed, 22 Jan 2020 04:39:54 -0600
+ id 1iuDQe-0001zf-4y
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:40:09 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00MAe6Rf126369;
+ Wed, 22 Jan 2020 04:40:06 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579689594;
- bh=zhvQmTLM+XZ4UpY0FgtkZPM6ZBm+GuHxJy3X/1/zk2E=;
+ s=ti-com-17Q1; t=1579689606;
+ bh=DXhPXQ57bTixpANNa4EeL9ylMJkN8luzm7W8jy4bdI8=;
  h=From:To:CC:Subject:Date;
- b=MBQbkljYeawVNBnesUVMvmnMYSmRra3TjteVseueK5GwLoW0qG4H6ASsQbfVaETw5
- YKZLuxYvnaplA14vap33hYhoYg5CFT3r+VqSx+UgyrZy+K4m6OUMwBpzN6HB+oXvdb
- 4iCxUbv4RfEqQ/EHvRq0RnKwPKLzQU/e3yQZc3vA=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00MAdsTi025735;
- Wed, 22 Jan 2020 04:39:54 -0600
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
- Jan 2020 04:39:52 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
+ b=e4B8F3GJad58lpUI3OE2P1+eSCnVfYrCjbHZ2299QDu7Klm+mIgu4iJovl3WsL7+d
+ 0haxxiFxv4AyQAIevye0bs5x1rw4ek2whYfeNKG8XS4xji1RQzetXPLI+ogbyZJoP6
+ ZqPCJpqvcSKO09890E40ozVYr3xNfl2IlVN/pl18=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00MAe61L007666
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 22 Jan 2020 04:40:06 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE103.ent.ti.com
  (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
+ Jan 2020 04:40:05 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 22 Jan 2020 04:39:52 -0600
+ Frontend Transport; Wed, 22 Jan 2020 04:40:05 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00MAdnoq115141;
- Wed, 22 Jan 2020 04:39:50 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00MAe3tw119809;
+ Wed, 22 Jan 2020 04:40:03 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <nm@ti.com>, <t-kristo@ti.com>, <ssantosh@kernel.org>,
  <santosh.shilimkar@oracle.com>
-Subject: [PATCH] firmware: ti_sci: Export devm_ti_sci_get_of_resource for
- modules
-Date: Wed, 22 Jan 2020 12:40:31 +0200
-Message-ID: <20200122104031.15733-1-peter.ujfalusi@ti.com>
+Subject: [PATCH] firmware: ti_sci: rm: Add support for tx_tdtype parameter for
+ tx channel
+Date: Wed, 22 Jan 2020 12:40:44 +0200
+Message-ID: <20200122104044.15837-1-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_023956_565618_E361B6F5 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200122_024008_326737_C9A7B4E4 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,25 +96,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow devm_ti_sci_get_of_resource() to be usable from modules.
+The system controller's resource manager have support for configuring the
+TDTYPE of TCHAN_CFG register on j721e.
+With this parameter the teardown completion can be controlled:
+TDTYPE == 0: Return without waiting for peer to complete the teardown
+TDTYPE == 1: Wait for peer to complete the teardown
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Reviewed-by: Tero Kristo <t-kristo@ti.com>
+Tested-by: Keerthy <j-keerthy@ti.com>
+Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- drivers/firmware/ti_sci.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/firmware/ti_sci.c              | 1 +
+ drivers/firmware/ti_sci.h              | 7 +++++++
+ include/linux/soc/ti/ti_sci_protocol.h | 2 ++
+ 3 files changed, 10 insertions(+)
 
 diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-index f13e4a96f3b7..3d8241cb6921 100644
+index 4126be9e3216..f13e4a96f3b7 100644
 --- a/drivers/firmware/ti_sci.c
 +++ b/drivers/firmware/ti_sci.c
-@@ -3332,6 +3332,7 @@ devm_ti_sci_get_of_resource(const struct ti_sci_handle *handle,
+@@ -2412,6 +2412,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+ 	req->fdepth = params->fdepth;
+ 	req->tx_sched_priority = params->tx_sched_priority;
+ 	req->tx_burst_size = params->tx_burst_size;
++	req->tx_tdtype = params->tx_tdtype;
  
- 	return ERR_PTR(-EINVAL);
- }
-+EXPORT_SYMBOL_GPL(devm_ti_sci_get_of_resource);
+ 	ret = ti_sci_do_xfer(info, xfer);
+ 	if (ret) {
+diff --git a/drivers/firmware/ti_sci.h b/drivers/firmware/ti_sci.h
+index f0d068c03944..255327171dae 100644
+--- a/drivers/firmware/ti_sci.h
++++ b/drivers/firmware/ti_sci.h
+@@ -910,6 +910,7 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+  *   12 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_credit_count
+  *   13 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::fdepth
+  *   14 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_burst_size
++ *   15 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_tdtype
+  *
+  * @nav_id: SoC device ID of Navigator Subsystem where tx channel is located
+  *
+@@ -973,6 +974,11 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+  *
+  * @tx_burst_size: UDMAP transmit channel burst size configuration to be
+  * programmed into the tx_burst_size field of the TCHAN_TCFG register.
++ *
++ * @tx_tdtype: UDMAP transmit channel teardown type configuration to be
++ * programmed into the tdtype field of the TCHAN_TCFG register:
++ * 0 - Return immediately
++ * 1 - Wait for completion message from remote peer
+  */
+ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+ 	struct ti_sci_msg_hdr hdr;
+@@ -994,6 +1000,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+ 	u16 fdepth;
+ 	u8 tx_sched_priority;
+ 	u8 tx_burst_size;
++	u8 tx_tdtype;
+ } __packed;
  
- static int tisci_reboot_handler(struct notifier_block *nb, unsigned long mode,
- 				void *cmd)
+ /**
+diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
+index 9531ec823298..f3aed0b91564 100644
+--- a/include/linux/soc/ti/ti_sci_protocol.h
++++ b/include/linux/soc/ti/ti_sci_protocol.h
+@@ -342,6 +342,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_SUPR_TDPKT_VALID        BIT(11)
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_CREDIT_COUNT_VALID      BIT(12)
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_FDEPTH_VALID            BIT(13)
++#define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID            BIT(15)
+ 	u16 nav_id;
+ 	u16 index;
+ 	u8 tx_pause_on_err;
+@@ -359,6 +360,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+ 	u16 fdepth;
+ 	u8 tx_sched_priority;
+ 	u8 tx_burst_size;
++	u8 tx_tdtype;
+ };
+ 
+ /**
 -- 
 Peter
 
