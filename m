@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A64C8145305
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:46:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 932DE145306
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 11:47:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XcrS5PX9DzDUXiv4tt1XWOmU409Iwzt2zzq0cvMEzlE=; b=byUAUyZlLvq5L0
-	p5WWvZjOtpnsIBD+Mgc/+dNPJYmHmKvjv7heKj16iwDABuljMfbPOpvlT43H7t9ljpIxAeCx14xXE
-	K5foaNj8c2P4o544T2sNuLE3cnAZTxi1l4TB83cMQaZ5cvPcHXXfY6QSPRgC8CtGE3J1cz9USGJcL
-	58woCuxjOisAa+CZni9ePRu54rKUgBGqFN7S53wJ+jpgTyf6ArroPKYOoa4XkYsEqorICTfQKkNie
-	oR/E4Y4z/QbPEyIU9b4ZHwduAMgunrDl7MaYFjissGQfd5rrRDuiObFNqnv+pl90fhluFpiSdEd7M
-	aAD53P5wDV8nlDdfnhtg==;
+	List-Owner; bh=6Ztf0JGp+Blf0carwZeAOtA326MOHWQnXoUy+NJJuUA=; b=Ck7az1B2XYvkN/
+	bcTp2hICP4zvrcJVDFiyScyQcqd9pQiF+wB56zdTb+iP+z4oYef6CWM0aCcF5iM1QPWtNNkH3fiWx
+	spy5Qsgq8ZZFj5T180juG6yS8gi01dTatoy0R55NnA9mWZ4mLT3H8g0pcqfzyl732/TEZ+EXm+IId
+	dYKuzqgblqU4VOtiZQmknGnJn9GADQjD4kE69Q+OJmxZy9N2SxT4tOgw6J0yW7wy2zzL4TZDx/b1N
+	VsecxJ5Q0SGJ0xvNn2YueRhTKi+vrbJ7XVIPYhzy2dFLLHVYVBqjz1a5sSrN4/ENvQTpdbE1pTfRJ
+	5TW/gdhZ0OA9RTf+LeCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuDX9-0005o7-Ta; Wed, 22 Jan 2020 10:46:51 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iuDXM-00062H-BQ; Wed, 22 Jan 2020 10:47:04 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuDW4-0004t4-Nl
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:45:46 +0000
-Received: by mail-wm1-x343.google.com with SMTP id d139so4110632wmd.0
+ id 1iuDW6-0004ua-99
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 10:45:47 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g17so6740988wro.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 02:45:44 -0800 (PST)
+ Wed, 22 Jan 2020 02:45:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=XyFi4QUbF6No7tCrbJhCVZ5TjcE02iPJvNCt7IcZqnw=;
- b=atOCu/d8xHcTs6Q9DCR4yOoCncsmGvFRwn3VBq48XEuBvYixBWtSdK1x3JaE3OU9OC
- ODxVylq8Tytjegvo1QsONKr8O8Ky3aMD+tJg0xp4PCXlYb+KbzMgFeN6dhsHfp1BGMI/
- 4KEEm8ebnJg+6uaVjvk0lQLz3vgTZOc456xdXU8EFacdblCYBkAQVFPUgp24ytbh5qoC
- vGvFem36xG4b5EgtG3QDmFGRl527x+c3sU0mbL5FukG1lZ4tFDZrvzvsPCaqj14Z+fUe
- Xgz9D6mrp1jW5sywBLwKC5lO+RWFgtOKK2j2T3VaF4fadactNW6r2jTZT6qd15pEjdmL
- vMQQ==
+ bh=q1c4fMXgRAivI+KIqtp9qKOWY67co/0FrPc2eCYg+90=;
+ b=nr8u3nfYAjPtAAqgYOSmcY7z3j0CmJEacsKmUlaLEU/61bZC071n/wBvVRSqFb857K
+ OgGXGQwDY7DHJImYHGuunm8MMkY7V12amlQB+UxyqzJhkdHTPRioVLHlsU+ufOp0FgRq
+ X6IqpXOf8Fh99IyQsb9U4VwE9TvnHR8txVF9H1KysmQDUCbRxxS1qo/cilQX0gbQw8Vi
+ uBHg1Mk0DGjNKVbVf2FoRcViiKw8KJwChypgsHGnSyvoXbVP8lr7vb+1PVmmsuQLEK4O
+ nJmsWCWeclCL4W2BcmjD2ZhOFAC08n82NXIJYrmNfXoeHq63zbubJ4r7p4AWnk3WyuJI
+ Kt5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XyFi4QUbF6No7tCrbJhCVZ5TjcE02iPJvNCt7IcZqnw=;
- b=DTjH0bNik2MNuSI6eCLOXhtpuxqwgOJYaPZ0Trqijkiv7M7ayAx+xpV2waRDT+3Kz5
- QuxykyMPlv3mBvWwZiRDPU6Sq+BJvL8Pyo+YvI/AkPhjF/zIzpir2LjBKFdvtaleQJAd
- 4uYHMisuXpn68W6yScLuZK2BKXZVgD8p8JHaXNn2nV+Gpxpeg3huchYr+BrcdL/KtLj9
- FTd9n77tvB8V1/HYrJidkNbJRE6zFnV8+BmIQgzWf8Gw4BNjgmydLBSyyiaWBHdF87f0
- sjsNuLqKjbcpAvKvXzuRPLcqP+IF8IH1yBzPZVfJcbMpz7BIjt6vC6a4SOvSpRqRvTWp
- a/qA==
-X-Gm-Message-State: APjAAAVfi7q99wyM2AhXqW7qCayCRK7KURV3lYfPswYM81TBNl9vzhWd
- NOkYWDUkF15eehovxnPwUzY=
-X-Google-Smtp-Source: APXvYqx85aFHoyjVcQwtyMo+TulGXbL1bKMZfZZMz5sFYzpX97V4AsH6AcMjPZhniYZfPSeIRLYP6Q==
-X-Received: by 2002:a7b:ce8b:: with SMTP id q11mr2385910wmj.100.1579689943589; 
- Wed, 22 Jan 2020 02:45:43 -0800 (PST)
+ bh=q1c4fMXgRAivI+KIqtp9qKOWY67co/0FrPc2eCYg+90=;
+ b=MMGnA/wVw4pXTGxC3yKAttU4FG1Yp2cHrUaCtDunrQS1JZpx9gsWfKQ1s01E6N0JOF
+ gHsb+ROekXupwvVczVtGH+UJAd25v0fL1NkLtTKB2rezNluv/mxSeGgvQB8XRgolBb1l
+ kpy1hDyux9fodUaxn2InTQR9rMmQWdboY1R1HbS75MQihMFN70MMcLMvUQryaq2QXwN+
+ cgY98hkC64S9PXQyq5lNBTICb8QjcOPfySdULPdjMsgt/EtwMtuunKu0i6h28DfU+ZpB
+ uryobj+0NuZJXUuqDHgIFDsrcPpGrKWfQ4Emv2a39ExR4hxeHoMhtrm7cYmIRr1Pek3s
+ 5Cow==
+X-Gm-Message-State: APjAAAUw1ts+S7WeZ5LxHvkRv/RDypreP3QJqNonxlgyXVW8URLKLCzh
+ rrONX1eaWA59tUyA2kPn3Dc=
+X-Google-Smtp-Source: APXvYqwoJEy1uZGesFKgykNXIpCxdh5m24bdAOqtD59KSsP02/GuJsRs39ZlhORaR+RW4F2HEHRhzA==
+X-Received: by 2002:a5d:4a8c:: with SMTP id o12mr10108920wrq.43.1579689944967; 
+ Wed, 22 Jan 2020 02:45:44 -0800 (PST)
 Received: from Red.localdomain ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id n3sm3443953wmc.27.2020.01.22.02.45.42
+ by smtp.googlemail.com with ESMTPSA id n3sm3443953wmc.27.2020.01.22.02.45.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Jan 2020 02:45:42 -0800 (PST)
+ Wed, 22 Jan 2020 02:45:44 -0800 (PST)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
  wens@csie.org, iuliana.prodan@nxp.com
-Subject: [PATCH 3/9] crypto: engine: get rid of cur_req
-Date: Wed, 22 Jan 2020 11:45:22 +0100
-Message-Id: <20200122104528.30084-4-clabbe.montjoie@gmail.com>
+Subject: [PATCH 4/9] crypto: engine: permit to choose queue length
+Date: Wed, 22 Jan 2020 11:45:23 +0100
+Message-Id: <20200122104528.30084-5-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
 References: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_024544_791955_8AF332CB 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20200122_024546_336141_1A274F0C 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,87 +107,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-cur_req was used as a sign of usage of the crypto_engine, now this
-behaviour has gone, its usage remains for detecting if we finalize the
-cur_req.
-But testing if we finalize the cur_req prevent to do more request at a
-time and is unnecessary.
-It is unnecessary since crypto_finalize_request() is only used for
-cryptoengine and so the request finalized will be always the current
-request.
+This patch adds a new function which permit to choose the crypto engine
+queue length.
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- crypto/crypto_engine.c  | 25 ++++++-------------------
- include/crypto/engine.h |  2 --
- 2 files changed, 6 insertions(+), 21 deletions(-)
+ crypto/crypto_engine.c  | 23 ++++++++++++++++++++---
+ include/crypto/engine.h |  2 ++
+ 2 files changed, 22 insertions(+), 3 deletions(-)
 
 diff --git a/crypto/crypto_engine.c b/crypto/crypto_engine.c
-index dfcb00e92e09..c21867106aa4 100644
+index c21867106aa4..5bcb1e740fd9 100644
 --- a/crypto/crypto_engine.c
 +++ b/crypto/crypto_engine.c
-@@ -24,27 +24,15 @@
- static void crypto_finalize_request(struct crypto_engine *engine,
- 			     struct crypto_async_request *req, int err)
+@@ -365,15 +365,17 @@ int crypto_engine_stop(struct crypto_engine *engine)
+ EXPORT_SYMBOL_GPL(crypto_engine_stop);
+ 
+ /**
+- * crypto_engine_alloc_init - allocate crypto hardware engine structure and
++ * crypto_engine_alloc_init2 - allocate crypto hardware engine structure and
+  * initialize it.
+  * @dev: the device attached with one hardware engine
+  * @rt: whether this queue is set to run as a realtime task
++ * @qlen: The size of the crypto queue
+  *
+  * This must be called from context that can sleep.
+  * Return: the crypto engine structure on success, else NULL.
+  */
+-struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
++struct crypto_engine *crypto_engine_alloc_init2(struct device *dev, bool rt,
++						int qlen)
  {
--	unsigned long flags;
--	bool finalize_cur_req = false;
- 	int ret;
- 	struct crypto_engine_ctx *enginectx;
+ 	struct sched_param param = { .sched_priority = MAX_RT_PRIO / 2 };
+ 	struct crypto_engine *engine;
+@@ -393,7 +395,7 @@ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
+ 	snprintf(engine->name, sizeof(engine->name),
+ 		 "%s-engine", dev_name(dev));
  
--	spin_lock_irqsave(&engine->queue_lock, flags);
--	if (engine->cur_req == req)
--		finalize_cur_req = true;
--	spin_unlock_irqrestore(&engine->queue_lock, flags);
--
--	if (finalize_cur_req) {
--		enginectx = crypto_tfm_ctx(req->tfm);
--		if (enginectx->op.prepare_request &&
--		    enginectx->op.unprepare_request) {
--			ret = enginectx->op.unprepare_request(engine, req);
--			if (ret)
--				dev_err(engine->dev, "failed to unprepare request\n");
--		}
--		spin_lock_irqsave(&engine->queue_lock, flags);
--		engine->cur_req = NULL;
--		spin_unlock_irqrestore(&engine->queue_lock, flags);
-+	enginectx = crypto_tfm_ctx(req->tfm);
-+	if (enginectx->op.prepare_request &&
-+			enginectx->op.unprepare_request) {
-+		ret = enginectx->op.unprepare_request(engine, req);
-+		if (ret)
-+			dev_err(engine->dev, "failed to unprepare request\n");
- 	}
+-	crypto_init_queue(&engine->queue, CRYPTO_ENGINE_MAX_QLEN);
++	crypto_init_queue(&engine->queue, qlen);
+ 	spin_lock_init(&engine->queue_lock);
  
- 	req->complete(req, err);
-@@ -101,7 +89,6 @@ static void crypto_pump_requests(struct crypto_engine *engine,
- 	if (!async_req)
- 		goto out;
+ 	engine->kworker = kthread_create_worker(0, "%s", engine->name);
+@@ -410,6 +412,21 @@ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
  
--	engine->cur_req = async_req;
- 	if (backlog)
- 		backlog->complete(backlog, -EINPROGRESS);
+ 	return engine;
+ }
++EXPORT_SYMBOL_GPL(crypto_engine_alloc_init2);
++
++/**
++ * crypto_engine_alloc_init - allocate crypto hardware engine structure and
++ * initialize it.
++ * @dev: the device attached with one hardware engine
++ * @rt: whether this queue is set to run as a realtime task
++ *
++ * This must be called from context that can sleep.
++ * Return: the crypto engine structure on success, else NULL.
++ */
++struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt)
++{
++	return crypto_engine_alloc_init2(dev, rt, CRYPTO_ENGINE_MAX_QLEN);
++}
+ EXPORT_SYMBOL_GPL(crypto_engine_alloc_init);
  
+ /**
 diff --git a/include/crypto/engine.h b/include/crypto/engine.h
-index 4d8a2602c9ed..d77080227beb 100644
+index d77080227beb..03d9f9ec1cea 100644
 --- a/include/crypto/engine.h
 +++ b/include/crypto/engine.h
-@@ -36,7 +36,6 @@
-  * @kworker: kthread worker struct for request pump
-  * @pump_requests: work struct for scheduling work to the request pump
-  * @priv_data: the engine private data
-- * @cur_req: the current request which is on processing
-  */
- struct crypto_engine {
- 	char			name[ENGINE_NAME_LEN];
-@@ -57,7 +56,6 @@ struct crypto_engine {
- 	struct kthread_work             pump_requests;
+@@ -96,6 +96,8 @@ void crypto_finalize_skcipher_request(struct crypto_engine *engine,
+ int crypto_engine_start(struct crypto_engine *engine);
+ int crypto_engine_stop(struct crypto_engine *engine);
+ struct crypto_engine *crypto_engine_alloc_init(struct device *dev, bool rt);
++struct crypto_engine *crypto_engine_alloc_init2(struct device *dev, bool rt,
++						int qlen);
+ int crypto_engine_exit(struct crypto_engine *engine);
  
- 	void				*priv_data;
--	struct crypto_async_request	*cur_req;
- };
- 
- /*
+ #endif /* _CRYPTO_ENGINE_H */
 -- 
 2.24.1
 
