@@ -2,74 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0274B144DD8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:45:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7B99144DE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:46:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/RP/F6owcChQM8/g89OIsjpLdZv7gMd+4e2HgyDkbxs=; b=q/y0A/EQS7RgGl
-	zkRYVo8pB4dLe5xeCks2noDmsZ576/gPXHblidf++ZtSs2vGn4csqq/cuMgSw5XL3lEfx2rENA3Jc
-	oYbtjTBlTX0MKDAlptAs7F0rPxgL9rhf4wwaCIXZ8r/t+H7nDMYX0uQB4Lw+igfFcy5GI2vCs/sQ/
-	y9GMaYasZoYN980MxJneIx3IoiQAu8HKjP9nOVFQGKdUe4+l/VgT1+qDd8iN1tg4gVRp7GvVQk3sP
-	a3rB8QHwAHfWALEZWVvonCLD/Zn2A5Vw1X7OBvryhkCuL3GR//DVe2XtxAOTHZtovwW2cDZ/hfX4j
-	K335UsVMNXIzTgY45j5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RR5uMoodUNznq/dV9OcHynJabMzhqxeseH9c4tOVJdM=; b=WdaZ6HqgWX8sDFevcMJTByIZ3
+	2MiLOZ3lHgUpd2wHKffrv4eohxKQfQxKxcmW+1sUfxP5p8ca3DOU+ahWjtKjuU07tPZvhPrbryQOe
+	UJVo4BBLo1fMN5gOIuLNyf04cF0Y1I0fVyaJTD1phk7zD7C9d27tXGlZmlSMSJivxoP9hAmX/O9BD
+	mLnY4a1sAaFRl/K9wDbu6cCZjed1/rse1aPrQpXx3iRyo2+mcnVLeV7sAoSqeYTPHPgukOGc3Y1Is
+	o6ftUdhb994Wlpgg3P7J/I1A/dz1WYE+Zhv20qiwnvM9LV1M43lEd8I5olFkFWEpd7a37c79rCl8C
+	S1pkItCDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuBdE-0006cr-Hj; Wed, 22 Jan 2020 08:45:00 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iuBeh-00086B-Bi; Wed, 22 Jan 2020 08:46:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuBd3-0006c5-Ky
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 08:44:51 +0000
-Received: by mail-wr1-x442.google.com with SMTP id q10so6270702wrm.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 00:44:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hu6i7+OF9mR8F3w5C3TJgAWmFNe6HaLCn5UdN9iPgOA=;
- b=nQp9FLyeLgb/fXEvPeK11RHCWEMW2rE23mzdtNEua4LC3cIohmdNMQVXa2CDFFbMIt
- ObM6j6bi7LwsRd1rd33z4gM8xoKEuX4zcdqZlyLnf7MvWPKVcWfFVD+L7z1lVYGBNjIN
- HzwnQbvZl9+j9+1ZkwSDQs1Pq7e3hmMcxfAakv38ufKcsWuZrERDcQ88UHKmjD+BeU6S
- qenZdyJ680sHaQm3oEy+pIk1dNHwY+lBVYonqxlrKBJaxEtB5LqAh0J9yZpcHu6i6s8W
- w+r+tWkgogrBHapipWy4pE0IbtF2reJ2vdzK49U+Wcp5Ht45DVzyhDL6f0xrCOoGMLHI
- 6DSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hu6i7+OF9mR8F3w5C3TJgAWmFNe6HaLCn5UdN9iPgOA=;
- b=oihsgzRu7sFJaA+ol6AANcPDIv5KAx4Ncr0BbvrTcmL+HUDHcOatr1HGBEKICbhUaA
- RhpS3bBpvtERiILErZWGKEt13zHkLoclZQFL6Hp1jQmPrJg2tPJg6VU17NxvMsYPhRLQ
- 0m7OeXxr6sg4zAvL0c7IiIK4S0JPpK0D5PCObCkR+hhOzCFjknqZcuts770JpC2cRe52
- syxCTljp0k4985sY2FwY+TkI/cVXEdOXbw9awmlnB0jV+5gOBoPn9sNxcayo7dA3F0o/
- TyRYF6aoyCC6TLzYEiYWmR5HxWmcfTeKvC78dYHYgIudh+5sxj7djxHS2omDvzr6QjOQ
- jN2A==
-X-Gm-Message-State: APjAAAWkbqv5W2q1agUBAR739vkpVa8aPBtk4tSMnymngAmUYLv4I7aI
- 1AUnr4YLPP6U4e3KP9zQSy6aaIqEvtm+R1GJ+bRUHesdmHY=
-X-Google-Smtp-Source: APXvYqz74zeJdWMwNNIbooWfqzFvYJT2HMq9I7Rh96xPUg3E7W2cQyPPCkBIid/NcwfmK5tQklzVxMKMROUCLjW0YZU=
-X-Received: by 2002:adf:fe86:: with SMTP id l6mr10142511wrr.252.1579682684686; 
- Wed, 22 Jan 2020 00:44:44 -0800 (PST)
-MIME-Version: 1.0
-References: <20200121125853.28825-1-broonie@kernel.org>
-In-Reply-To: <20200121125853.28825-1-broonie@kernel.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 22 Jan 2020 09:44:34 +0100
-Message-ID: <CAKv+Gu9_5EPbvBtsj2ys8HQrFdW0mzfAkG+5XXPzTuGH=ZkdTg@mail.gmail.com>
-Subject: Re: [PATCH v13 0/2] ARMv8.5-RNG support
+ id 1iuBeX-00085P-Js
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 08:46:22 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 412962465A;
+ Wed, 22 Jan 2020 08:46:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579682780;
+ bh=AepTZQnS41aFGnPgtfnFssNsH20gZiJLcFaGD27PRV0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lKE/jqr5coHc/wWfyg1XVzfBMwoTN0AhXWs9DT60kBanKLjyBiFKr2fllB1806A74
+ +Rr8FQ5616OSPdnCwWeNrWpuI1lXV/wnZDKg0ZJtiGrakIj12v0wYeNSe7WEiV7AHQ
+ 6vIdT8z4Tfao3vHQoSBrDVNtmR0OUVIwCurppQHU=
+Date: Wed, 22 Jan 2020 09:46:17 +0100
+From: Maxime Ripard <mripard@kernel.org>
 To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v2 2/2] drm: sun4i: hdmi: Add support for sun4i HDMI
+ encoder audio
+Message-ID: <20200122084617.s2n4dqhwanmaxuch@gilmour.lan>
+References: <20200120123326.30743-1-stefan@olimex.com>
+ <20200120123326.30743-3-stefan@olimex.com>
+ <20200121182905.pxs72ojqx5fz2gi3@gilmour.lan>
+ <20200121182937.2ak72e4eklk4za2u@gilmour.lan>
+ <20200121183247.GL4656@sirena.org.uk>
+MIME-Version: 1.0
+In-Reply-To: <20200121183247.GL4656@sirena.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_004449_720946_EA14001C 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200122_004621_672117_3BC8CD07 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,69 +80,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Mavrodiev <stefan@olimex.com>, David Airlie <airlied@linux.ie>,
+ linux-sunxi@googlegroups.com, Vinod Koul <vkoul@kernel.org>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
+ open list <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2339158191208919368=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 Jan 2020 at 13:59, Mark Brown <broonie@kernel.org> wrote:
->
-> This series is based on Richard Henderson's previous v7, it addresses
-> review comments from that version by dropping the boot time RNG
-> support and adds a new change that uses the v8.5-RNG extension to
-> seed KASLR when ARCH_RANDOM is enabled.  The boot time support
-> will be re-added later, there are awkward potential interactons
-> with CPU feature enumeration which need a bit more thought.
->
-> v13:
->  - Re-add the hwcap code which was accidentally dropped from v12.
 
-Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+--===============2339158191208919368==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="eo44jwmgblwjtd3w"
+Content-Disposition: inline
 
-> v12:
->  - Move definition of __early_cpu_has_rndr() into KASLR patch.
-> v11:
->  - Add a hwcap for v8.5-RNG.
->  - Drop the addition of data to the pool, it's of questionable
->    value and we need to go back and get the addition of actual
->    entropy working anyway.
-> v10:
->  - Spell out that we're adding data not entropy from setup_arch() in
->    the commit message for patch 2.
-> v9:
->  - Make another static inline helper for early feature checks.
->  - Add init annotations.
->  - Use xor to add RNDR output to seed for KASLR.
+
+--eo44jwmgblwjtd3w
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Jan 21, 2020 at 06:32:47PM +0000, Mark Brown wrote:
+> On Tue, Jan 21, 2020 at 07:29:37PM +0100, Maxime Ripard wrote:
 >
-> Mark Brown (1):
->   arm64: Use v8.5-RNG entropy for KASLR seed
+> > > Mark, our issue here is that we have a driver tied to a device that is
+> > > an HDMI encoder. Obviously, we'll want to register into DRM, which is
+> > > what we were doing so far, with the usual case where at remove /
+> > > unbind time, in order to free the resources, we just retrieve our
+> > > pointer to our private structure using the device's drvdata.
 >
-> Richard Henderson (1):
->   arm64: Implement archrandom.h for ARMv8.5-RNG
+> > > Now, snd_soc_register_card also sets that pointer to the card we try
+> > > to register, which is problematic. It seems that it's used to handle
+> > > suspend / resume automatically, which in this case would be also not
+> > > really fit for us (or rather, we would need to do more that just
+> > > suspend the audio part).
 >
->  Documentation/arm64/cpu-feature-registers.rst |  2 +
->  Documentation/arm64/elf_hwcaps.rst            |  4 +
->  arch/arm64/Kconfig                            | 12 +++
->  arch/arm64/include/asm/archrandom.h           | 75 +++++++++++++++++++
->  arch/arm64/include/asm/cpucaps.h              |  3 +-
->  arch/arm64/include/asm/hwcap.h                |  1 +
->  arch/arm64/include/asm/sysreg.h               |  4 +
->  arch/arm64/include/uapi/asm/hwcap.h           |  1 +
->  arch/arm64/kernel/cpufeature.c                | 14 ++++
->  arch/arm64/kernel/kaslr.c                     | 11 +++
->  10 files changed, 126 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm64/include/asm/archrandom.h
->
-> --
-> 2.20.1
->
+> There's a drvdata field in the snd_soc_card for cases like this - would
+> that work for you?
+
+Ah, right, we could just retrieve the snd_soc_card in the unbind, and
+the retrieve our structure that way. That's pretty simple :)
+
+Stefan, I guess this is the easiest solution, we should just make sure
+that there's a comment to explain why we retrieve snd_soc_card in the
+unbind, since it's somewhat unusual.
+
+Thanks!
+Maxime
+
+--eo44jwmgblwjtd3w
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXigL2QAKCRDj7w1vZxhR
+xWq1AP43hh7O1drKmKw4LWDcFL1e3jFnbiNLxBGwUtUAsT8hwwEA505uGh0lTCPZ
+1dpI8BQYcJ5Zzjp9JGkU9Pm1KCyZMQA=
+=vZhm
+-----END PGP SIGNATURE-----
+
+--eo44jwmgblwjtd3w--
+
+
+--===============2339158191208919368==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2339158191208919368==--
+
