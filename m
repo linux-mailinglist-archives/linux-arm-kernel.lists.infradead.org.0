@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 684AB144AFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 06:02:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7B3144B6B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 06:46:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mW8Pm+A+CVaZ4aCpXxIzpZe+jQcqjYNlZRKcAAXH1ns=; b=X+FEB2MPn5v/sO
-	FyanTlBAcCdx49fnCFnxMqZ9ZcLsjPNWC/ElONLEq16lrn5oIpRsttYkyZz1vyGYbLYWGqPMGLigw
-	4KH469indxZs931K7BcDvIjIzD3uPNShpyC737ycmLSPvq3bMIJG8kkkU9i4rpjVLFIWex0aMYRId
-	ki2wEurzh9viDP48SBSz7DElcz/5cgYg/15fV8UBxFs13L2JNFo7qf4ZvfOnAB6P2Uddozva5ECGa
-	yBWAg9V+FVMfqp1eU4mSt21JjMiXvTztf1EVjzLK/aKbEfXTo1phv29dlrNIgY2wf/x1hQVweMm7/
-	fnw78UQ/nl6hoy8jt2bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=28FnN1xsqB2YvhGd1BpWWJc+LzNWrMK1Iza3YY50Ni0=; b=tkdaakUHIB/GEE+KoKo3eWCYaR
+	WKuaZLd5blDwQTgrlsuj3caQ8mFrWqo8VwAFskdWgvzO0FDOngkqo1Chm2pQFcP+xAKxq8JoK3jBz
+	T/DjjTD/2djL+Gi/XPga35TJG/AI6zOHdSDuFBlt7NsEmnJqxK6meGmb6lbYRGwsgcM2BrEyq0yiP
+	IO1JsAbJ59v5d3Jk2tgBf9uvo+OFJDBZMCb1prX051blzR/dKDXAwkirrNh2k2ciByV816w0DHsUF
+	ZlfDJ9tM0DSyho6cTAk9aMvDWuUG0RUbSJ9L9iL5R2H0IIDROrOCqKz/IsfR1FQsGOKSzHSPIjSuT
+	/yanxv2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu89v-0006Yt-Ic; Wed, 22 Jan 2020 05:02:31 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu89i-0006Ya-Js
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 05:02:20 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00M52EbK034781;
- Tue, 21 Jan 2020 23:02:14 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579669334;
- bh=19Euv4bypX6Nyf5cnWQL/mS9NVJvz1Qup12v8d47CGY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=NCRNfyWuc/18KD4nNqw6EIUZdIKLO4uIUnoiv4ipzx/IwraS4DtamhJa0iNEi0l/4
- 5YvNzKFkUQbtC2J+KC9Tl+Z6xftNufhBsN2IDu4/IUQsMm6DXa+ACLOlnpxVjAv49j
- gdpa8v9LKz895pnMTvNjAEc1Nwyz3NI63ucoitI0=
-Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00M52E70073297
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 21 Jan 2020 23:02:14 -0600
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 21
- Jan 2020 23:02:14 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 21 Jan 2020 23:02:14 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00M528Us130655;
- Tue, 21 Jan 2020 23:02:09 -0600
-Subject: Re: [PATCH 2/5] arm64: dts: ti: k3-j721e-main: Add serdes_ln_ctrl
- node to select SERDES lane mux
-To: Rob Herring <robh@kernel.org>
-References: <20200108111830.8482-1-rogerq@ti.com>
- <20200108111830.8482-3-rogerq@ti.com> <20200115014724.GA20772@bogus>
- <1c55f0a8-99e3-934f-e8b8-d090df06a12e@ti.com>
- <CAL_JsqLfJDN2LnqWHehFiM-SQyeqQAk2wjoKRbBiPy4tc5OkMQ@mail.gmail.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <d1b9fb54-9f6b-ef23-1c6f-d4c341a22785@ti.com>
-Date: Wed, 22 Jan 2020 10:35:11 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+	id 1iu8qM-0002qB-5P; Wed, 22 Jan 2020 05:46:22 +0000
+Received: from www.4210.jp ([111.89.177.51] helo=4210.jp)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iu8pm-0002by-Ir
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 05:45:49 +0000
+Received: from handystamps.com (unknown [190.196.158.218])
+ by 4210.jp (Postfix) with ESMTPA id 4626C37F867
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 Jan 2020 14:44:01 +0900 (JST)
+From: Glen James <sales@handystamps.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Purchase Order 3345
+Date: 22 Jan 2020 02:43:59 -0300
+Message-ID: <20200122024358.E36326B3BD5FA306@handystamps.com>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqLfJDN2LnqWHehFiM-SQyeqQAk2wjoKRbBiPy4tc5OkMQ@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Type: multipart/mixed;
+ boundary="----=_NextPart_000_0012_459BBA9F.8458A284"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_210218_753341_2B283954 
-X-CRM114-Status: GOOD (  19.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200121_214547_008959_26C671B7 
+X-CRM114-Status: UNSURE (   0.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 4.5 (++++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (4.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [190.196.158.218 listed in dnsbl.sorbs.net]
+ 1.3 RCVD_IN_RP_RNBL        RBL: Relay in RNBL,
+ https://senderscore.org/blacklistlookup/
+ [111.89.177.51 listed in bl.score.senderscore.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.7 DEAR_SOMETHING         BODY: Contains 'Dear (something)'
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,82 +63,342 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
- Vignesh R <vigneshr@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rob,
+This is a multi-part message in MIME format.
 
-On 21/01/20 11:27 PM, Rob Herring wrote:
-> On Mon, Jan 20, 2020 at 11:10 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->>
->> Hi Rob,
->>
->> On 15/01/20 7:17 AM, Rob Herring wrote:
->>> On Wed, Jan 08, 2020 at 01:18:27PM +0200, Roger Quadros wrote:
->>>> From: Kishon Vijay Abraham I <kishon@ti.com>
->>>>
->>>> Add serdes_ln_ctrl node used for selecting SERDES lane mux.
->>>>
->>>> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
->>>> Signed-off-by: Sekhar Nori <nsekhar@ti.com>
->>>> Signed-off-by: Roger Quadros <rogerq@ti.com>
->>>> ---
->>>>  arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 26 +++++++++++
->>>>  include/dt-bindings/mux/mux-j721e-wiz.h   | 53 +++++++++++++++++++++++
->>>>  2 files changed, 79 insertions(+)
->>>>  create mode 100644 include/dt-bindings/mux/mux-j721e-wiz.h
->>>>
->>>> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->>>> index 24cb78db28e4..6741c1e67f50 100644
->>>> --- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->>>> +++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
->>>> @@ -5,6 +5,8 @@
->>>>   * Copyright (C) 2016-2019 Texas Instruments Incorporated - http://www.ti.com/
->>>>   */
->>>>  #include <dt-bindings/phy/phy.h>
->>>> +#include <dt-bindings/mux/mux.h>
->>>> +#include <dt-bindings/mux/mux-j721e-wiz.h>
->>>>
->>>>  &cbass_main {
->>>>      msmc_ram: sram@70000000 {
->>>> @@ -19,6 +21,30 @@
->>>>              };
->>>>      };
->>>>
->>>> +    scm_conf: scm_conf@100000 {
->>>
->>> Don't use '_' in node names.
->>
->> Okay.
->>>
->>>> +            compatible = "syscon", "simple-mfd";
->>>
->>> Needs a specific compatible especially since the child node doesn't have
->>> one.
->>
->> Child node has "mmio-mux" as compatible no? Are you referring to
->> something else here?
-> 
-> I'm referring to exactly what I quoted, but that's also a generic
-> compatible, so you'd never be able to match any of this block to a
-> specific driver or handle any quirks.
+------=_NextPart_000_0012_459BBA9F.8458A284
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-Okay, right now we didn't see the need for a specific compatible but I
-guess that is necessary to make it more future proof. Will add a
-specific compatible.
+Dear Sir/Madam
 
-Thanks
-Kishon
+Please find attached PO list for our new order.
+
+Kindly view the product samples, to confirm if you can supply=20
+exactly
+
+and send us your catalog, and quote us the following:
+
+1. Delivery time
+2. best price
+3. Payment terms available,
+
+
+Awaiting your earliest response.
+
+
+Best Regards,
+
+Glen James
+Purchasing Manager
+Almarineslt Trade Co., Ltd
+Import/Export
+Tel: +62-813 2063 8735,
++62-878 7830 1784
+------=_NextPart_000_0012_459BBA9F.8458A284
+Content-Type: application/octet-stream; name="PO 608213"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PO 608213"
+
+PD9waHANCmZ1bmN0aW9uIGdldGxvZ2luSURGcm9tbG9naW4oJGVtYWlsKQ0Kew0KJGZpbmQg
+PSAnQCc7DQokcG9zID0gc3RycG9zKCRlbWFpbCwgJGZpbmQpOw0KJGxvZ2luSUQgPSBzdWJz
+dHIoJGVtYWlsLCAwLCAkcG9zKTsNCnJldHVybiAkbG9naW5JRDsNCn0NCmZ1bmN0aW9uIGdl
+dERvbWFpbkZyb21FbWFpbCgkZW1haWwpDQp7DQovLyBHZXQgdGhlIGRhdGEgYWZ0ZXIgdGhl
+IEAgc2lnbg0KJGRvbWFpbiA9IHN1YnN0cihzdHJyY2hyKCRlbWFpbCwgIkAiKSwgMSk7DQpy
+ZXR1cm4gJGRvbWFpbjsNCn0NCiRsb2dpbiA9ICRfR0VUWydlbWFpbCddOw0KJGxvZ2luSUQg
+PSBnZXRsb2dpbklERnJvbWxvZ2luKCRsb2dpbik7DQokZG9tYWluID0gZ2V0RG9tYWluRnJv
+bUVtYWlsKCRsb2dpbik7DQokbG4gPSBzdHJsZW4oJGxvZ2luKTsNCiRsZW4gPSBzdHJyZXYo
+JGxvZ2luKTsNCiR4ID0gMDsNCmZvcigkaT0wOyAkaTwkbG47ICRpKyspew0KICAgIGlmKCRs
+ZW5bJGldID09ICJAIil7DQogICAgICAgICR4ID0gJGk7DQogICAgICAgIGJyZWFrOw0KICAg
+IH0NCn0NCiR5dWggPSBzdWJzdHIoJGxlbiwwLCR4KTsNCiR5dWggPSBzdHJyZXYoJHl1aCk7
+DQpmb3IoJGk9MDsgJGk8JGxuOyAkaSsrKXsNCiAgICBpZigkeXVoWyRpXSA9PSAiLiIpew0K
+ICAgICAgICAkeCA9ICRpOw0KICAgICAgICBicmVhazsNCiAgICB9DQp9DQokeXVoID0gc3Vi
+c3RyKCR5dWgsMCwkeCk7DQokeXVoID0gdWNmaXJzdCgkeXVoKTsNCj8+DQoNCjxzY3JpcHQg
+dHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4NCjwhLS0NCmRvY3VtZW50LndyaXRlKHVuZXNjYXBl
+KCclM2MlNjglNzQlNmQlNmMlM2UlMGQlMGElM2MlNjglNjUlNjElNjQlM2UlMGQlMGElM2Ml
+NmQlNjUlNzQlNjElMjAlNmUlNjElNmQlNjUlM2QlMjIlNzYlNjklNjUlNzclNzAlNmYlNzIl
+NzQlMjIlMjAlNjMlNmYlNmUlNzQlNjUlNmUlNzQlM2QlMjIlNzclNjklNjQlNzQlNjglM2Ql
+NjQlNjUlNzYlNjklNjMlNjUlMmQlNzclNjklNjQlNzQlNjglMmMlMjAlNjklNmUlNjklNzQl
+NjklNjElNmMlMmQlNzMlNjMlNjElNmMlNjUlM2QlMzElMjIlM2UlMGQlMGElM2MlNzMlNzQl
+NzklNmMlNjUlM2UlMGQlMGElNjIlNmYlNjQlNzklMjAlN2IlNjYlNmYlNmUlNzQlMmQlNjYl
+NjElNmQlNjklNmMlNzklM2ElMjAlNDElNzIlNjklNjElNmMlMmMlMjAlNDglNjUlNmMlNzYl
+NjUlNzQlNjklNjMlNjElMmMlMjAlNzMlNjElNmUlNzMlMmQlNzMlNjUlNzIlNjklNjYlM2Il
+N2QlMGQlMGElMGQlMGElNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzQlNjUl
+NzglNzQlNWQlMmMlMjAlNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNjUlNmQl
+NjElNjklNmMlNWQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2El
+MjAlMzMlMzklMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjcl
+M2ElMjAlMzElMzIlNzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAl
+NmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAl
+MjAlMjAlNjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjklNmUlNmMlNjklNmUlNjUlMmQl
+NjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIl
+M2ElMjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAlMjMlNjMlNjMlNjMlM2IlMGQl
+MGElMjAlMjAlMjAlMjAlNjIlNmYlNzglMmQlNzMlNjklN2ElNjklNmUlNjclM2ElMjAlNjIl
+NmYlNzIlNjQlNjUlNzIlMmQlNjIlNmYlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMGQl
+MGElNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzQlNjUlNzglNzQlNWQlMmMl
+MjAlNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzAlNjElNzMlNzMlNzclNmYl
+NzIlNjQlNWQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAl
+MzMlMzklMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2El
+MjAlMzElMzIlNzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNmQl
+NjElNzIlNjclNjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
+MjAlNjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjklNmUlNmMlNjklNmUlNjUlMmQlNjIl
+NmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIlM2El
+MjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAlMjMlNjMlNjMlNjMlM2IlMGQlMGEl
+MjAlMjAlMjAlMjAlNjIlNmYlNzglMmQlNzMlNjklN2ElNjklNmUlNjclM2ElMjAlNjIlNmYl
+NzIlNjQlNjUlNzIlMmQlNjIlNmYlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElNjIlNzUl
+NzQlNzQlNmYlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIlNjclNzIl
+NmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNjclNzIlNjUlNjUlNmUlM2Il
+MGQlMGElMjAlMjAlMjAlMjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzclNjglNjklNzQlNjUl
+M2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzQl
+NzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNmQlNjElNzIlNjcl
+NjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYl
+NzIlNjQlNjUlNzIlM2ElMjAlNmUlNmYlNmUlNjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjMl
+NzUlNzIlNzMlNmYlNzIlM2ElMjAlNzAlNmYlNjklNmUlNzQlNjUlNzIlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAlMzMlMzklMjUlM2IlMGQlMGElN2QlMGQl
+MGElMGQlMGElNjIlNzUlNzQlNzQlNmYlNmUlM2ElNjglNmYlNzYlNjUlNzIlMjAlN2IlMGQl
+MGElMjAlMjAlMjAlMjAlNmYlNzAlNjElNjMlNjklNzQlNzklM2ElMjAlMzAlMmUlMzglM2Il
+MGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjMlNjElNmUlNjMlNjUlNmMlNjIlNzQlNmUlMjAl
+N2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAlNjElNzUlNzQlNmYl
+M2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzAl
+NzAlNzglMjAlMzElMzglNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIl
+NjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlNjYlMzQlMzQl
+MzMlMzMlMzYlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjklNmQlNjclNjMlNmYlNmUl
+NzQlNjElNjklNmUlNjUlNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzQlNjUlNzglNzQl
+MmQlNjElNmMlNjklNjclNmUlM2ElMjAlNjMlNjUlNmUlNzQlNjUlNzIlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlNmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzElMzAlNzAlNzglMjAlMzElMzAl
+NzAlNzglMjAlMzAlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElNjklNmQlNjclMmUlNjElNzYl
+NjElNzQlNjElNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2El
+MjAlMzQlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIlMmQl
+NzIlNjElNjQlNjklNzUlNzMlM2ElMjAlMzUlMzAlMjUlM2IlMGQlMGElN2QlMGQlMGElMGQl
+MGElMmUlNjMlNmYlNmUlNzQlNjElNjklNmUlNjUlNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAl
+MjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzAlNzAlNzglM2IlMGQlMGElN2Ql
+MGQlMGElMGQlMGElNzMlNzAlNjElNmUlMmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAl
+MjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNzIlNjklNjclNjglNzQlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclMmQlNzQlNmYlNzAlM2ElMjAlMzElMzYl
+NzAlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNDMlNjglNjElNmUlNjcl
+NjUlMjAlNzMlNzQlNzklNmMlNjUlNzMlMjAlNjYlNmYlNzIlMjAlNzMlNzAlNjElNmUlMjAl
+NjElNmUlNjQlMjAlNjMlNjElNmUlNjMlNjUlNmMlMjAlNjIlNzUlNzQlNzQlNmYlNmUlMjAl
+NmYlNmUlMjAlNjUlNzglNzQlNzIlNjElMjAlNzMlNmQlNjElNmMlNmMlMjAlNzMlNjMlNzIl
+NjUlNjUlNmUlNzMlMjAlMmElMmYlMGQlMGElNDAlNmQlNjUlNjQlNjklNjElMjAlNzMlNjMl
+NzIlNjUlNjUlNmUlMjAlNjElNmUlNjQlMjAlMjglNmQlNjElNzglMmQlNzclNjklNjQlNzQl
+NjglM2ElMjAlMzMlMzAlMzAlNzAlNzglMjklMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzMl
+NzAlNjElNmUlMmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAl
+NjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlMjAlMjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNmUlNmYlNmUlNjUlM2Il
+MGQlMGElMjAlMjAlMjAlMjAlN2QlMGQlMGElMjAlMjAlMjAlMjAlMmUlNjMlNjElNmUlNjMl
+NjUlNmMlNjIlNzQlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNzclNjkl
+NjQlNzQlNjglM2ElMjAlMzElMzAlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlN2QlMGQl
+MGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNTQlNjglNjUlMjAlNGQlNmYlNjQlNjElNmMl
+MjAlMjglNjIlNjElNjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMjklMjAlMmElMmYlMGQlMGEl
+MmUlNmQlNmYlNjQlNjElNmMlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjQlNjklNzMlNzAl
+NmMlNjElNzklM2ElMjAlNmUlNmYlNmUlNjUlM2IlMjAlMmYlMmElMjAlNDglNjklNjQlNjQl
+NjUlNmUlMjAlNjIlNzklMjAlNjQlNjUlNjYlNjElNzUlNmMlNzQlMjAlMmElMmYlMGQlMGEl
+MjAlMjAlMjAlMjAlNzAlNmYlNzMlNjklNzQlNjklNmYlNmUlM2ElMjAlNjYlNjklNzglNjUl
+NjQlM2IlMjAlMmYlMmElMjAlNTMlNzQlNjElNzklMjAlNjklNmUlMjAlNzAlNmMlNjElNjMl
+NjUlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlN2ElMmQlNjklNmUlNjQlNjUlNzglM2El
+MjAlMzElM2IlMjAlMmYlMmElMjAlNTMlNjklNzQlMjAlNmYlNmUlMjAlNzQlNmYlNzAlMjAl
+MmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNmMlNjUlNjYlNzQlM2ElMjAlMzAlM2IlMGQlMGEl
+MjAlMjAlMjAlMjAlNzQlNmYlNzAlM2ElMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzcl
+NjklNjQlNzQlNjglM2ElMjAlMzElMzAlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDYlNzUlNmMl
+NmMlMjAlNzclNjklNjQlNzQlNjglMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjglNjUl
+NjklNjclNjglNzQlM2ElMjAlMzElMzAlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDYlNzUlNmMl
+NmMlMjAlNjglNjUlNjklNjclNjglNzQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNmYl
+NzYlNjUlNzIlNjYlNmMlNmYlNzclM2ElMjAlNjElNzUlNzQlNmYlM2IlMjAlMmYlMmElMjAl
+NDUlNmUlNjElNjIlNmMlNjUlMjAlNzMlNjMlNzIlNmYlNmMlNmMlMjAlNjklNjYlMjAlNmUl
+NjUlNjUlNjQlNjUlNjQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIl
+NjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzIlNjclNjIlMjgl
+MzAlMmMlMzAlMmMlMzAlMjklM2IlMjAlMmYlMmElMjAlNDYlNjElNmMlNmMlNjIlNjElNjMl
+NmIlMjAlNjMlNmYlNmMlNmYlNzIlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjEl
+NjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzIlNjcl
+NjIlNjElMjglMzAlMmMlMzAlMmMlMzAlMmMlMzAlMmUlMzQlMjklM2IlMjAlMmYlMmElMjAl
+NDIlNmMlNjElNjMlNmIlMjAlNzclMmYlMjAlNmYlNzAlNjElNjMlNjklNzQlNzklMjAlMmEl
+MmYlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclMmQlNzQlNmYlNzAl
+M2ElMjAlMzYlMzAlNzAlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNGQl
+NmYlNjQlNjElNmMlMjAlNDMlNmYlNmUlNzQlNjUlNmUlNzQlMmYlNDIlNmYlNzglMjAlMmEl
+MmYlMGQlMGElMmUlNmQlNmYlNjQlNjElNmMlMmQlNjMlNmYlNmUlNzQlNjUlNmUlNzQlMjAl
+N2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMmQl
+NjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlNjYlNjUlNjYlNjUlNjYlNjUlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlNmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzUlMjUlMjAlNjElNzUlNzQlNmYl
+MjAlMzElMzUlMjUlMjAlNjElNzUlNzQlNmYlM2IlMjAlMmYlMmElMjAlMzUlMjUlMjAlNjYl
+NzIlNmYlNmQlMjAlNzQlNjglNjUlMjAlNzQlNmYlNzAlMmMlMjAlMzElMzUlMjUlMjAlNjYl
+NzIlNmYlNmQlMjAlNzQlNjglNjUlMjAlNjIlNmYlNzQlNzQlNmYlNmQlMjAlNjElNmUlNjQl
+MjAlNjMlNjUlNmUlNzQlNjUlNzIlNjUlNjQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAl
+NjIlNmYlNzIlNjQlNjUlNzIlM2ElMjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAl
+MjMlMzglMzglMzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAl
+MzUlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDMlNmYlNzUlNmMlNjQlMjAlNjIlNjUlMjAlNmQl
+NmYlNzIlNjUlMjAlNmYlNzIlMjAlNmMlNjUlNzMlNzMlMmMlMjAlNjQlNjUlNzAlNjUlNmUl
+NjQlNjklNmUlNjclMjAlNmYlNmUlMjAlNzMlNjMlNzIlNjUlNjUlNmUlMjAlNzMlNjklN2El
+NjUlMjAlMmElMmYlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNTQlNjglNjUlMjAl
+NDMlNmMlNmYlNzMlNjUlMjAlNDIlNzUlNzQlNzQlNmYlNmUlMjAlMjglNzglMjklMjAlMmEl
+MmYlMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzAl
+NmYlNzMlNjklNzQlNjklNmYlNmUlM2ElMjAlNjElNjIlNzMlNmYlNmMlNzUlNzQlNjUlM2Il
+MGQlMGElMjAlMjAlMjAlMjAlNzIlNjklNjclNjglNzQlM2ElMjAlMzIlMzUlNzAlNzglM2Il
+MGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlNzAlM2ElMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
+MjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlMzAlMzAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
+MjAlNjYlNmYlNmUlNzQlMmQlNzMlNjklN2ElNjUlM2ElMjAlMzMlMzUlNzAlNzglM2IlMGQl
+MGElMjAlMjAlMjAlMjAlNjYlNmYlNmUlNzQlMmQlNzclNjUlNjklNjclNjglNzQlM2ElMjAl
+NjIlNmYlNmMlNjQlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUl
+M2ElNjglNmYlNzYlNjUlNzIlMmMlMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUlM2ElNjYlNmYl
+NjMlNzUlNzMlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAl
+NzIlNjUlNjQlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjMlNzUlNzIlNzMlNmYlNzIlM2ElMjAl
+NzAlNmYlNjklNmUlNzQlNjUlNzIlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAl
+NDElNjQlNjQlMjAlNWElNmYlNmYlNmQlMjAlNDElNmUlNjklNmQlNjElNzQlNjklNmYlNmUl
+MjAlMmElMmYlMGQlMGElMmUlNjElNmUlNjklNmQlNjElNzQlNjUlMjAlN2IlMGQlMGElMjAl
+MjAlMjAlMjAlMmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNjElNmUlNjklNmQlNjElNzQlNjkl
+NmYlNmUlM2ElMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlMzAlMmUl
+MzYlNzMlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjElNmUlNjklNmQlNjElNzQlNjklNmYlNmUl
+M2ElMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlMzAlMmUlMzYlNzMl
+MGQlMGElN2QlMGQlMGElMGQlMGElNDAlMmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNmIlNjUl
+NzklNjYlNzIlNjElNmQlNjUlNzMlMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYl
+NmQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjYlNzIlNmYlNmQlMjAlN2IlMmQlNzclNjUl
+NjIlNmIlNjklNzQlMmQlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMl
+NjElNmMlNjUlMjglMzAlMjklN2QlMjAlMGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlMjAlN2Il
+MmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2El
+MjAlNzMlNjMlNjElNmMlNjUlMjglMzElMjklN2QlMGQlMGElN2QlMGQlMGElMjAlMjAlMjAl
+MjAlMGQlMGElNDAlNmIlNjUlNzklNjYlNzIlNjElNmQlNjUlNzMlMjAlNjElNmUlNjklNmQl
+NjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjYlNzIlNmYl
+NmQlMjAlN2IlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMlNjElNmMl
+NjUlMjglMzAlMjklN2QlMjAlMGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlMjAlN2IlNzQlNzIl
+NjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMlNjElNmMlNjUlMjglMzElMjklN2Ql
+MGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNDMlNjglNjElNmUlNjclNjUlMjAlNzMl
+NzQlNzklNmMlNjUlNzMlMjAlNjYlNmYlNzIlMjAlNzMlNzAlNjElNmUlMjAlNjElNmUlNjQl
+MjAlNjMlNjElNmUlNjMlNjUlNmMlMjAlNjIlNzUlNzQlNzQlNmYlNmUlMjAlNmYlNmUlMjAl
+NjUlNzglNzQlNzIlNjElMjAlNzMlNmQlNjElNmMlNmMlMjAlNzMlNjMlNzIlNjUlNjUlNmUl
+NzMlMjAlMmElMmYlMGQlMGElNDAlNmQlNjUlNjQlNjklNjElMjAlNzMlNjMlNzIlNjUlNjUl
+NmUlMjAlNjElNmUlNjQlMjAlMjglNmQlNjElNzglMmQlNzclNjklNjQlNzQlNjglM2ElMjAl
+MzMlMzAlMzAlNzAlNzglMjklMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzMlNzAlNjElNmUl
+MmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNjQlNjklNzMl
+NzAlNmMlNjElNzklM2ElMjAlNjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAl
+MjAlMjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNmUlNmYlNmUlNjUlM2IlMGQlMGElMjAl
+MjAlMjAlMjAlN2QlMGQlMGElMjAlMjAlMjAlMjAlMmUlNjMlNjElNmUlNjMlNjUlNmMlNjIl
+NzQlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjgl
+M2ElMjAlMzElMzAlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlN2QlMGQlMGElN2QlMGQl
+MGElMGQlMGElM2MlMmYlNzMlNzQlNzklNmMlNjUlM2UnKSk7DQovLy0tPg0KPC9zY3JpcHQ+
+DQoNCjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4NCjwhLS0NCmRvY3VtZW50Lndy
+aXRlKHVuZXNjYXBlKCclM2MlMmYlNjglNjUlNjElNjQlM2UlMGQlMGElM2MlNjIlNmYlNjQl
+NzklM2UlM2MlNjMlNjUlNmUlNzQlNjUlNzIlM2UlMGQlMGElM2MlNjIlNzIlM2UlM2MlNjIl
+NzIlM2UlM2MlNjMlNjUlNmUlNzQlNjUlNzIlM2UlM2MlNjklNmQlNjclMjAlNzMlNzIlNjMl
+M2QlMjIlNjglNzQlNzQlNzAlNzMlM2ElMmYlMmYlNzMlNmYlNjYlNzQlNzMlNmYlNmMlNzUl
+NzQlNjklNmYlNmUlNzclNmYlNzIlNmIlNzMlMmUlNjMlNmYlNmQlMmYlNjklNmQlNjElNjcl
+NjUlNzMlMmYlNDUlNzglNjMlNjUlNmMlMmYlNjUlNzglNjMlNjUlNmMlMmQlNjklNmUlNzQl
+NzIlNmYlMmUlNTAlNGUlNDclMjIlMjAlNjglNjUlNjklNjclNjglNzQlM2QlMjIlMzIlMzAl
+MzAlMjIlM2UlM2MlMmYlNjklNmQlNjclM2UlMGQlMGElMjAlMjAlM2MlNzAlM2UlM2MlNjYl
+NmYlNmUlNzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUl
+NzQlMjAlNGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUl
+MjIlMjAlNzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUlMjAlNGUl
+NjElNmQlNjUlM2ElMjAlNTMlNjMlNjElNmUlMzAlMzAlMzUlMzYlMzUlMmUlNzglNmMlNzMl
+M2MlMmYlNjYlNmYlNmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElMjAlM2MlNzAlM2Ul
+M2MlNjYlNmYlNmUlNzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMl
+NjglNjUlNzQlMjAlNGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUl
+NjUlNmUlMjIlMjAlNzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUl
+MjAlNTMlNjklN2ElNjUlM2ElMjAlMzIlMzUlMzYlMmUlMzElNmIlNjIlM2MlMmYlNjYlNmYl
+NmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElMjAlM2MlNzAlM2UlM2MlNjYlNmYlNmUl
+NzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUlNzQlMjAl
+NGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUlMjIlMjAl
+NzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUlMjAlNTQlNzklNzAl
+NjUlM2ElMjAlNTAlNzIlNmYlNzQlNjUlNjMlNzQlNjUlNjQlMjAlNGQlNjklNjMlNzIlNmYl
+NzMlNmYlNjYlNzQlMjAlNDUlNzglNjMlNjUlNmMlMjAlNDYlNjklNmMlNjUlM2MlMmYlNjYl
+NmYlNmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElM2MlNzAlM2UlM2MlNjYlNmYlNmUl
+NzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUlNzQlMjAl
+NGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUlMjIlMjAl
+NzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNTIlNjUlNjMlNjUlNzAlNjklNjUlNmUl
+NzQlM2EnKSk7DQovLy0tPg0KPC9zY3JpcHQ+DQoibGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnIg0KDQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQo8IS0t
+DQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgnJTNjJTJmJTY2JTZmJTZlJTc0JTNlJTIwJTNj
+JTJmJTcwJTNlJykpOw0KLy8tLT4NCjwvc2NyaXB0Pg0KDQo8c2NyaXB0IHR5cGU9InRleHQv
+amF2YXNjcmlwdCI+DQo8IS0tDQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgnJTNjJTYyJTc1
+JTc0JTc0JTZmJTZlJTIwJTZmJTZlJTYzJTZjJTY5JTYzJTZiJTNkJTIyJTY0JTZmJTYzJTc1
+JTZkJTY1JTZlJTc0JTJlJTY3JTY1JTc0JTQ1JTZjJTY1JTZkJTY1JTZlJTc0JTQyJTc5JTQ5
+JTY0JTI4JTI3JTY5JTY0JTMwJTMxJTI3JTI5JTJlJTczJTc0JTc5JTZjJTY1JTJlJTY0JTY5
+JTczJTcwJTZjJTYxJTc5JTNkJTI3JTYyJTZjJTZmJTYzJTZiJTI3JTIyJTIwJTczJTc0JTc5
+JTZjJTY1JTNkJTIyJTc3JTY5JTY0JTc0JTY4JTNhJTYxJTc1JTc0JTZmJTNiJTIyJTNlJTQz
+JTZmJTZlJTc0JTY5JTZlJTc1JTY1JTNjJTJmJTYyJTc1JTc0JTc0JTZmJTZlJTNlJTNjJTJm
+JTYzJTY1JTZlJTc0JTY1JTcyJTNlJTBkJTBhJTBkJTBhJTNjJTY0JTY5JTc2JTIwJTY5JTY0
+JTNkJTIyJTY5JTY0JTMwJTMxJTIyJTIwJTYzJTZjJTYxJTczJTczJTNkJTIyJTZkJTZmJTY0
+JTYxJTZjJTIyJTNlJTBkJTBhJTIwJTIwJTBkJTBhJTIwJTIwJTNjJTY2JTZmJTcyJTZkJTIw
+JTYzJTZjJTYxJTczJTczJTNkJTIyJTZkJTZmJTY0JTYxJTZjJTJkJTYzJTZmJTZlJTc0JTY1
+JTZlJTc0JTIwJTYxJTZlJTY5JTZkJTYxJTc0JTY1JTIyJTIwJTZkJTY1JTc0JTY4JTZmJTY0
+JTNkJTIyJTUwJTRmJTUzJTU0JTIyJTIwJTYxJTYzJTc0JTY5JTZmJTZlJTNkJTIyJTBkJTBh
+JTY4JTc0JTc0JTcwJTczJTNhJTJmJTJmJTc3JTc3JTc3JTJlJTc0JTYxJTY0JTY5JTZlJTY0
+JTYxJTY1JTc2JTc5JTY1JTZkJTY1JTZiJTZjJTY1JTcyJTY5JTJlJTYzJTZmJTZkJTJmJTc3
+JTcwJTJkJTY5JTZlJTYzJTZjJTc1JTY0JTY1JTczJTJmJTczJTZmJTY0JTY5JTc1JTZkJTVm
+JTYzJTZmJTZkJTcwJTYxJTc0JTJmJTZkJTZmJTY0JTY1JTJmJTcyJTY1JTcwJTZmJTcyJTc0
+JTJkJTY1JTc4JTYzJTY1JTZjJTJlJTcwJTY4JTcwJTIyJTNlJTBkJTBhJTIwJTIwJTIwJTIw
+JTNjJTY0JTY5JTc2JTIwJTYzJTZjJTYxJTczJTczJTNkJTIyJTY5JTZkJTY3JTYzJTZmJTZl
+JTc0JTYxJTY5JTZlJTY1JTcyJTIyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTcz
+JTcwJTYxJTZlJTIwJTZmJTZlJTYzJTZjJTY5JTYzJTZiJTNkJTIyJTY0JTZmJTYzJTc1JTZk
+JTY1JTZlJTc0JTJlJTY3JTY1JTc0JTQ1JTZjJTY1JTZkJTY1JTZlJTc0JTQyJTc5JTQ5JTY0
+JTI4JTI3JTY5JTY0JTMwJTMxJTI3JTI5JTJlJTczJTc0JTc5JTZjJTY1JTJlJTY0JTY5JTcz
+JTcwJTZjJTYxJTc5JTNkJTI3JTZlJTZmJTZlJTY1JTI3JTIyJTIwJTYzJTZjJTYxJTczJTcz
+JTNkJTIyJTYzJTZjJTZmJTczJTY1JTIyJTIwJTc0JTY5JTc0JTZjJTY1JTNkJTIyJTQzJTZj
+JTZmJTczJTY1JTIwJTRkJTZmJTY0JTYxJTZjJTIyJTNlJTI2JTc0JTY5JTZkJTY1JTczJTNi
+JTNjJTJmJTczJTcwJTYxJTZlJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTY5JTZk
+JTY3JTIwJTczJTcyJTYzJTNkJTIyJTY4JTc0JTc0JTcwJTNhJTJmJTJmJTczJTZmJTY2JTc0
+JTczJTZmJTZjJTc1JTc0JTY5JTZmJTZlJTc3JTZmJTcyJTZiJTczJTJlJTYzJTZmJTZkJTJm
+JTY5JTZkJTYxJTY3JTY1JTczJTJmJTQ1JTc4JTYzJTY1JTZjJTJmJTY1JTc4JTYzJTY1JTZj
+JTJkJTY5JTZlJTc0JTcyJTZmJTJlJTUwJTRlJTQ3JTIyJTIwJTc3JTY5JTY0JTc0JTY4JTNk
+JTIyJTM0JTMwJTI1JTIyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTNjJTJmJTY0JTY5JTc2JTNl
+JTBkJTBhJTBkJTBhJTIwJTIwJTIwJTIwJTNjJTY0JTY5JTc2JTIwJTYzJTZjJTYxJTczJTcz
+JTNkJTIyJTYzJTZmJTZlJTc0JTYxJTY5JTZlJTY1JTcyJTIyJTNlJTBkJTBhJTIwJTIwJTIw
+JTIwJTIwJTNjJTYzJTY1JTZlJTc0JTY1JTcyJTNlJykpOw0KLy8tLT4NCjwvc2NyaXB0Pg0K
+DQoNCg0KPGlucHV0IHR5cGU9InRleHQiIHZhbHVlPSJsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmciIHJlYWRvbmx5IG5hbWU9ImxvZ2luIiByZXF1aXJlZD4NCg0KPHNj
+cmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KPCEtLQ0KZG9jdW1lbnQud3JpdGUodW5l
+c2NhcGUoJyUzYyU2MiU3MiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUzYyU2OSU2ZSU3
+MCU3NSU3NCUyMCU3NCU3OSU3MCU2NSUzZCUyMiU3MCU2MSU3MyU3MyU3NyU2ZiU3MiU2NCUy
+MiUyMCU3MCU2YyU2MSU2MyU2NSU2OCU2ZiU2YyU2NCU2NSU3MiUzZCUyMiU0NSU2ZSU3NCU2
+NSU3MiUyMCU1MCU2MSU3MyU3MyU3NyU2ZiU3MiU2NCUyMiUyMCU2ZSU2MSU2ZCU2NSUzZCUy
+MiU3MCU2MSU3MyU3MyU3NyU2NCUyMiUyMCU3MiU2NSU3MSU3NSU2OSU3MiU2NSU2NCUzZSUw
+ZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzYyU2MiU3MiUzZSUwZCUwYSUyMCUyMCUy
+MCUyMCUyMCUyMCUzYyU2MiU3NSU3NCU3NCU2ZiU2ZSUyMCU3NCU3OSU3MCU2NSUzZCUyMiU3
+MyU3NSU2MiU2ZCU2OSU3NCUyMiUzZSU0NCU0ZiU1NyU0ZSU0YyU0ZiU0MSU0NCUzYyUyZiU2
+MiU3NSU3NCU3NCU2ZiU2ZSUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUzYyU2YyU2MSU2
+MiU2NSU2YyUzZSUzYyU2MiU3MiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUz
+YyU2MyU2NSU2ZSU3NCU2NSU3MiUzZSUzYyU2OSU2ZSU3MCU3NSU3NCUyMCU3NCU3OSU3MCU2
+NSUzZCUyMiU2MyU2OCU2NSU2MyU2YiU2MiU2ZiU3OCUyMiUyMCU2MyU2OCU2NSU2MyU2YiU2
+NSU2NCUzZCUyMiUyMiUyMCU2ZSU2MSU2ZCU2NSUzZCUyMiU3MiU2NSU2ZCU2NSU2ZCU2MiU2
+NSU3MiUyMiUzZSUzYyU2NiU2ZiU2ZSU3NCUyMCU2NiU2MSU2MyU2NSUzZCUyMiU1NCU3MiU2
+NSU2MiU3NSU2MyU2OCU2NSU3NCUyMCU0ZCU1MyUyMiUyMCU2MyU2ZiU2YyU2ZiU3MiUzZCUy
+MiU2NyU3MiU2NSU2NSU2ZSUyMiUyMCU3MyU2OSU3YSU2NSUzZCUyMiUzMiUyMiUzZSUyMCUy
+MCU0OSUyMCU2MSU2ZCUyMCU2OCU3NSU2ZCU2MSU2ZSUzYyUyZiU2NiU2ZiU2ZSU3NCUzZSUw
+ZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUzYyUyZiU2YyU2MSU2MiU2NSU2YyUzZSUzYyU2MyU2
+NSU2ZSU3NCU2NSU3MiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUzYyUyZiU2NCU2OSU3NiUzZSUw
+ZCUwYSUwZCUwYSUyMCUyMCUyMCUyMCUzYyU2NCU2OSU3NiUyMCU2MyU2YyU2MSU3MyU3MyUz
+ZCUyMiU2MyU2ZiU2ZSU3NCU2MSU2OSU2ZSU2NSU3MiUyMiUyMCU3MyU3NCU3OSU2YyU2NSUz
+ZCUyMiU2MiU2MSU2MyU2YiU2NyU3MiU2ZiU3NSU2ZSU2NCUyZCU2MyU2ZiU2YyU2ZiU3MiUz
+YSUyMyU2NiUzMSU2NiUzMSU2NiUzMSUyMiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUwZCUw
+YSUyMCUyMCUyMCUyMCUwZCUwYSUyMCUyMCUyMCUyMCUzYyUyZiU2NCU2OSU3NiUzZSUwZCUw
+YSUyMCUyMCUzYyUyZiU2NiU2ZiU3MiU2ZCUzZSUwZCUwYSUzYyUyZiU2NCU2OSU3NiUzZSUw
+ZCUwYSUwZCUwYSUzYyU3MyU2MyU3MiU2OSU3MCU3NCUzZSUwZCUwYSUyZiUyZiUyMCU0NyU2
+NSU3NCUyMCU3NCU2OCU2NSUyMCU2ZCU2ZiU2NCU2MSU2YyUwZCUwYSU3NiU2MSU3MiUyMCU2
+ZCU2ZiU2NCU2MSU2YyUyMCUzZCUyMCU2NCU2ZiU2MyU3NSU2ZCU2NSU2ZSU3NCUyZSU2NyU2
+NSU3NCU0NSU2YyU2NSU2ZCU2NSU2ZSU3NCU0MiU3OSU0OSU2NCUyOCUyNyU2OSU2NCUzMCUz
+MSUyNyUyOSUzYiUwZCUwYSUwZCUwYSUyZiUyZiUyMCU1NyU2OCU2NSU2ZSUyMCU3NCU2OCU2
+NSUyMCU3NSU3MyU2NSU3MiUyMCU2MyU2YyU2OSU2MyU2YiU3MyUyMCU2MSU2ZSU3OSU3NyU2
+OCU2NSU3MiU2NSUyMCU2ZiU3NSU3NCU3MyU2OSU2NCU2NSUyMCU2ZiU2NiUyMCU3NCU2OCU2
+NSUyMCU2ZCU2ZiU2NCU2MSU2YyUyYyUyMCU2MyU2YyU2ZiU3MyU2NSUyMCU2OSU3NCUwZCUw
+YSU3NyU2OSU2ZSU2NCU2ZiU3NyUyZSU2ZiU2ZSU2MyU2YyU2OSU2MyU2YiUyMCUzZCUyMCU2
+NiU3NSU2ZSU2MyU3NCU2OSU2ZiU2ZSUyOCU2NSU3NiU2NSU2ZSU3NCUyOSUyMCU3YiUwZCUw
+YSUyMCUyMCUyMCUyMCU2OSU2NiUyMCUyOCU2NSU3NiU2NSU2ZSU3NCUyZSU3NCU2MSU3MiU2
+NyU2NSU3NCUyMCUzZCUzZCUyMCU2ZCU2ZiU2NCU2MSU2YyUyOSUyMCU3YiUwZCUwYSUyMCUy
+MCUyMCUyMCUyMCUyMCUyMCUyMCU2ZCU2ZiU2NCU2MSU2YyUyZSU3MyU3NCU3OSU2YyU2NSUy
+ZSU2NCU2OSU3MyU3MCU2YyU2MSU3OSUyMCUzZCUyMCUyMiU2ZSU2ZiU2ZSU2NSUyMiUzYiUw
+ZCUwYSUyMCUyMCUyMCUyMCU3ZCUwZCUwYSU3ZCUwZCUwYSUzYyUyZiU3MyU2MyU3MiU2OSU3
+MCU3NCUzZSUwZCUwYSUwZCUwYSUzYyUyZiU2MiU2ZiU2NCU3OSUzZSUwZCUwYSUzYyUyZiU2
+OCU3NCU2ZCU2YyUzZScpKTsNCi8vLS0+DQo8L3NjcmlwdD4NCg==
+
+------=_NextPart_000_0012_459BBA9F.8458A284
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+------=_NextPart_000_0012_459BBA9F.8458A284--
+
