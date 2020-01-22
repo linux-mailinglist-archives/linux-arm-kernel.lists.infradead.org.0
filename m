@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA8EC14594C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 17:05:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB903145953
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 17:06:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BDGih4GsoyQH51LRjSbHXtfkDgT+bp5Hixauvsx5ENU=; b=qS5xZOh3yzn0tz
-	wriJOb2XwZ9Pl/ikfqOaaIV2jB/zvrrDsRDWcW2nlokoXeGYtL8/+9ZMU7dPYjZJrpAooLKqm+x3/
-	rdec3nOEIj+ageJIzulY4MhnvDX9vtWC6d/Mly2lbK4TtznJxzrPlS6iHxAMnMEy9R34vfsDo5ir5
-	C9iNFFxjRCwNQOEhU1oyUCZu91eyXNb8E2wFy23tvszeQ8KILAnX+t3ouxN0gyP59qy2cLi14J5EK
-	BS+s1GU6B+TbC+PxxE5yT6ipuxA3cVAlGxsc3YP19N1D4y4LMe8OkQGMLpKMJ1nEt9wNRfR1bSgKE
-	2uUsKTrHa4hGJfBMQA5g==;
+	List-Owner; bh=v5BcvB+DKPr2M9oSS+Qei1b4HANV0IJj/vQ0lTnamUk=; b=cKxZOv84sVn/wa
+	tAgblZpxW1hVL220qpOfSl0tDGJXWKjtyb+VyOotX/CelBIidk+bD9FpAT6UFYkbkIkpqKG5wJPLk
+	5CJuOqtAQpBUNpe/3h4LJ7SQeW1N4sFl9zdhu/gYE0WNk6ig5OPvWI19kTZloyG6XIgnaCmCNTwpT
+	mTWzhMCdWHNFA6dfP2mUszjMkLUiC4evUJOWmyWWnDgaZBGbrgF5QVcc1WKCk9wDBUCdNd7jbtRk8
+	Wu2R6LLwwpWMPnyf6IC1oTkDRdEomq/rFOQO2+Aa07rr5/b92swv0Qi0C6iGdxTkOSM03U3G2qzAx
+	WQS+N4qXGJMJdLPhEdBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuIVO-00064W-1S; Wed, 22 Jan 2020 16:05:22 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iuIVw-0006NH-PQ; Wed, 22 Jan 2020 16:05:56 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuIVD-00063q-Cc; Wed, 22 Jan 2020 16:05:12 +0000
-Received: by mail-ot1-f67.google.com with SMTP id h9so6672844otj.11;
- Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+ id 1iuIVm-0006MT-5K; Wed, 22 Jan 2020 16:05:47 +0000
+Received: by mail-oi1-f195.google.com with SMTP id k4so6570425oik.2;
+ Wed, 22 Jan 2020 08:05:45 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=P2nj0uogA4rRFo/vGoXxjKcugggOl6yz11QVdYb92dk=;
- b=Fsxb481fgTfcUugKzVJOIXR0lnBjOPnfEQM4egakFYZ9lYn06dzUx0Tv4FZp1os5QN
- 9H604PzjeffGwuHT+5hnbsQjOIthZ386wgfTvACNMRaI2vBZUCwnvj8DlZO5UEc4EINk
- iZtxBZ2mzaYWdJ+4AWHZooRMuo4srZmy0xB31a9Dqnp3TakQAnnPSQ7jBIw7C6XyhK7I
- xO+f6vcapOUF8bY2KxLDO5YyQ4ExU3dcc4/Zt031D4oU7okg/UFjEr8xDBbrv0nK8UjZ
- 5wO4pgdM0vrkbqN05aeZLMXis3J4XdlgTkwXEaPgorvToddodoj1AzDal+pSKZuq8U8U
- nuyQ==
-X-Gm-Message-State: APjAAAU+wFB1gtHezBBYEjJWZeuFvTOVqIJAZQTh5C/rYb/JaQMKIjDo
- SAgbvZ2ElpyjP4J77f0OOw==
-X-Google-Smtp-Source: APXvYqyrhkKZuH0Rsv16TrhCL+xfS8KG9mD/Inml67F3FVNPVpf7HCEz4as/foIuTdlUwhiChYJj8g==
-X-Received: by 2002:a9d:60c4:: with SMTP id b4mr8167324otk.166.1579709110222; 
- Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+ bh=OOZfg0AFYGJWh0pCwLs+lbCJjankCvcKcEp7OWZe5xk=;
+ b=MGEEAKrfbJu5UtXGOP1y10GCv0NFZkLvbr72FtiPtxM/8pYKzyBN4Ohr1m/TNYAKpI
+ op3IUqPE9csh/ugcuxBiPZWLqiKH6gP/KNo6gSKNQHC9BTy9/NXQvtLKjXRCdFc/1PJF
+ ESAtbxlun5EKIWxov9nhX56PBTU/arG3O1KZS0oETf4F984XfXBInjSvYq6Q65mTBEU+
+ 2MhiniBCa53S2oToUEQZF97Z9aMhIvI2mUJT7aekAwtaWZ9H4zp3CAbbJWMCgVKXKAxy
+ GY67KUIajUjXbO8kyDqjzhbbSLeyuTTBuEfi8qzK6+7BLcOFyGzscLtQXjU2BA6XQtg+
+ +BxA==
+X-Gm-Message-State: APjAAAXl5oorpEbUh5l47qOA3cae0Z5N1GKHiNoWMAjRMuoxQp7Zelj1
+ sWI1weFKFYO7FMkjcwyqsA==
+X-Google-Smtp-Source: APXvYqzwaLmXI7rjVv06eVcOu9xvGZYDWVtvuuyQhzjMxlcVTBftNmxWpRN/xuSrOfQOYU/l0SEFMw==
+X-Received: by 2002:aca:5490:: with SMTP id i138mr7450180oib.69.1579709145237; 
+ Wed, 22 Jan 2020 08:05:45 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a19sm14764576oto.60.2020.01.22.08.05.08
+ by smtp.gmail.com with ESMTPSA id n22sm15062248otj.36.2020.01.22.08.05.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Jan 2020 08:05:09 -0800 (PST)
-Received: (nullmailer pid 9378 invoked by uid 1000);
- Wed, 22 Jan 2020 16:05:08 -0000
-Date: Wed, 22 Jan 2020 10:05:08 -0600
+ Wed, 22 Jan 2020 08:05:44 -0800 (PST)
+Received: (nullmailer pid 10486 invoked by uid 1000);
+ Wed, 22 Jan 2020 16:05:43 -0000
+Date: Wed, 22 Jan 2020 10:05:43 -0600
 From: Rob Herring <robh@kernel.org>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 1/3] dt-bindings: mmc: convert synopsys dw-mshc
+Subject: Re: [PATCH v2 2/3] dt-bindings: mmc: convert rockchip dw-mshc
  bindings to yaml
-Message-ID: <20200122160508.GA9316@bogus>
+Message-ID: <20200122160543.GA10427@bogus>
 References: <20200116152230.29831-1-jbx6244@gmail.com>
+ <20200116152230.29831-2-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200116152230.29831-1-jbx6244@gmail.com>
+In-Reply-To: <20200116152230.29831-2-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_080511_431409_75E5DA0F 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200122_080546_200984_0094C2B3 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -76,11 +77,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,24 +101,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 16 Jan 2020 16:22:28 +0100, Johan Jonker wrote:
+On Thu, 16 Jan 2020 16:22:29 +0100, Johan Jonker wrote:
 > Current dts files with 'dwmmc' nodes are manually verified.
-> In order to automate this process synopsys-dw-mshc.txt
+> In order to automate this process rockchip-dw-mshc.txt
 > has to be converted to yaml. In the new setup
-> synopsys-dw-mshc.yaml will inherit properties from
+> rockchip-dw-mshc.yaml will inherit properties from
 > mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
 > 'dwmmc' will no longer be a valid name for a node and
 > should be changed to 'mmc'.
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  68 ++++++++++
->  .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
->  .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  70 ++++++++++
->  3 files changed, 138 insertions(+), 141 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
->  delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
->  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+>  .../devicetree/bindings/mmc/rockchip-dw-mshc.txt   |  49 --------
+>  .../devicetree/bindings/mmc/rockchip-dw-mshc.yaml  | 123 +++++++++++++++++++++
+>  MAINTAINERS                                        |   1 +
+>  3 files changed, 124 insertions(+), 49 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.txt
+>  create mode 100644 Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
