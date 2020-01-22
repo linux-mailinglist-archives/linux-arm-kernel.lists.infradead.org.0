@@ -2,59 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32939145469
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 13:34:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F842145482
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 13:44:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FbC91owk/fvFQi2spOHM9jfY9qJACvWorBcVtysIXO8=; b=YL855iq/wZcoqa7oXr7SUOE7C
-	7qgYTAzG8WWyRJr1Sqndt4AEyWo8hUXuIIjbgHUO2EgBU7kDF/yyjz6oPJ23iB4kApI4EuiowedYx
-	f8BpHulFPkEBIx5MUL3NDzViLofiv2S9p9n3LZHT6nCutc/J5ouE6t+W7UHK3bVLx4Veqi0JwoCOD
-	OZB+8Y581F62gmnWp0VGf9ic7Fmqa8wkkTNjiGTbd9wo/PHSjF1hQWg4jGhus95X9ICa+icaT0V7n
-	jO5YYPkUQbg2BUrpNWf/JuGKwtrA3MgAdSCeZlGfAxaT5m1sZOhnvXGJHsq9OQ9R3QH6FOsPsWj4a
-	2+ERfRnhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xn1iWsHU+oSBoW1kt2tmvwnUeLuPBJ8XoFtlJgn9A/Q=; b=Iv3z+U68Cap0Mm
+	l0SisUOkDFKOwgrY1qkuHDST457Ez3Rx6F4Knu51kNqKmufzrfR5zhqda06DTXmv3py0r6uq/WCi/
+	6nW8DT7lM73x1lLv91wsLvIGkZGufrJW5s/LHk0tA/QpYxnaBLuh5PRQeTd4k1JRccxrgXAChD7yz
+	q5uYgObdUju0W/AcYN8qHHtBpWxPY+nnJlwee315NZf5I0ktSh4sCH7Uzib3Av8pMfWRs1Lr9NL70
+	jEXffl0+NrmdcM1+w+CDu6m2YQFfPHAmzOp0wFtPKIMSukZf5oMjD7DeYTT4jYffopWcMPk+QyMxN
+	EMzNyfaLSWCKsYA6C5cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuFD4-0004Sc-8W; Wed, 22 Jan 2020 12:34:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuFCu-0004Rr-Ai; Wed, 22 Jan 2020 12:34:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4ECCE328;
- Wed, 22 Jan 2020 04:34:03 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C34943F52E;
- Wed, 22 Jan 2020 04:34:02 -0800 (PST)
-Date: Wed, 22 Jan 2020 12:34:01 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Wen Su <Wen.Su@mediatek.com>
-Subject: Re: [RESEND 3/4] regulator: mt6359: Add support for MT6359 regulator
-Message-ID: <20200122123401.GD3833@sirena.org.uk>
-References: <1579506450-21830-1-git-send-email-Wen.Su@mediatek.com>
- <1579506450-21830-4-git-send-email-Wen.Su@mediatek.com>
- <20200120190427.GO6852@sirena.org.uk>
- <1579659806.6612.12.camel@mtkswgap22>
+	id 1iuFN4-0007r0-Rw; Wed, 22 Jan 2020 12:44:34 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuFMv-0007ow-MY
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 12:44:27 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id EAE79220A7;
+ Wed, 22 Jan 2020 07:44:18 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Wed, 22 Jan 2020 07:44:18 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=fmwpTx6jswx4kvnYxowEmIfQd9
+ MqmpuQXCivarwrIOU=; b=TK7Swu1g57HGuOJ3XeY2yFLXpgnYBZSP8L53rhcVrg
+ v/Ui/A1cFNzNxnH+I3MF9KUzhHsbZc64n8xpEtcSatOOG1NK5S4SHs+5yVHiHTOa
+ F4SKyIcnYvauhdljL+4zTV4T3LiEH1seGKgfuHVYOys/kxNBkNepWV0KsXiMwn7G
+ ZX4w9+fm9A61wtz1sIkRXrqEpFwhQKj9Q/99Z+/49Ym2FOEGao03yqYtEUPfY4ZF
+ Wx9YBF+cY7d+iKWHwuQDXh4YhbH9HghS1tQbLq7D4fi6u8XRFJpCV7ye3qMW/7vw
+ 74BHLtBLNleYLbZPq6UC2+7e4exbXbEohCN6UabQeV2w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=fmwpTx6jswx4kvnYx
+ owEmIfQd9MqmpuQXCivarwrIOU=; b=hyJOoqRPpLaP2EQw/Wa6oCBAgXsBy6wNW
+ AfTGz+/LRs1wMaIaSJh9HdV8ELAomAvC9UNBAcbmOPLlNL3NFNNx8TVniwG8kuRs
+ zXmu+GUX0Y9p4xHty4l10Y0aJVeJXDvO+hW+aK52GMMMIm+h/l99O7VLk10ju3WY
+ 2DsuMpLG66BNW4dW7pyPS+X1UjfL3hE2t4yi/iPJTuuDzyVAtz5NTVgm7eXj3+JJ
+ MI6X1+ilDPSPaebNvE0wYd5hHq+uUnSYXr0CvhKQjLla8YWKEy/KnqOYMUY16n6C
+ 44OZVBKcH/He80XTbnIdnR139RfsJ340TLYKQ1e433QVbuNOcCZjg==
+X-ME-Sender: <xms:oUMoXnk0YthgklaU7_OPAPfenBFx7NYnr_Gn09AUViprpBD422JEPQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrvddtgdegtdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucft
+ ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrdekle
+ drieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhr
+ ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:oUMoXuqM0jifKtzLNqzFtQCXn3h-iOJJUk4cvaerv1d-AkTac0vDDQ>
+ <xmx:oUMoXr2LFRwO54xoDD0Hn3_kPK_kqGGWXhyLEzO0BVNzsr38Z7mLjQ>
+ <xmx:oUMoXpaqZonSrySMbDJCYc7duUBG_ypqIHu8ww_WE7W4Tx5PxEm7Mw>
+ <xmx:okMoXuN6-QcMNjtAVak5BFSV0pOCphbcsEtl2UDMmic5ClCXkx8Brg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 54C0D3280062;
+ Wed, 22 Jan 2020 07:44:17 -0500 (EST)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH 0/3] iommu: Add Allwinner H6 IOMMU driver
+Date: Wed, 22 Jan 2020 13:44:06 +0100
+Message-Id: <cover.b2a9e1507135d81e726fcbb65137665a7f0ab74f.1579696927.git-series.maxime@cerno.tech>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <1579659806.6612.12.camel@mtkswgap22>
-X-Cookie: Sorry.  Nice try.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_043404_457931_9A625FD5 
-X-CRM114-Status: GOOD (  18.87  )
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200122_044425_940028_7AB7157F 
+X-CRM114-Status: GOOD (  10.05  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ low trust [66.111.4.28 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.28 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,122 +104,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0101392824149724177=="
+Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============0101392824149724177==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="rqzD5py0kzyFAOWN"
-Content-Disposition: inline
+Here's a series adding support for the IOMMU introduced in the Allwinner
+H6. The driver from Allwinner hints at more SoCs using it in the future
+(with more masters), so we can bet on that IOMMU becoming pretty much
+standard in new SoCs from Allwinner.
 
+One thing I wasn't really sure about was how to expose the statistics
+reported by the IOMMU PMU (TLB hit rates, latencies, and so on). The
+Allwinner driver exposes them through custom sysfs files, while they would
+be best represented through perf I guess? Anyway, I'm planning to support
+them later on.
 
---rqzD5py0kzyFAOWN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Let me know what you think,
+Maxime
 
-On Wed, Jan 22, 2020 at 10:23:26AM +0800, Wen Su wrote:
-> On Mon, 2020-01-20 at 19:04 +0000, Mark Brown wrote:
+Maxime Ripard (3):
+  dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
+  iommu: Add Allwinner H6 IOMMU driver
+  arm64: dts: allwinner: h6: Add IOMMU
 
-> > This looks like you should be using regulator_list_voltage_table() and
-> > associated functions, probably map_voltage_ascend() or _iterate() and
-> > just a simple set_voltage_sel_regmap().
+ Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml |   61 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi                           |   11 +-
+ drivers/iommu/Kconfig                                                  |   10 +-
+ drivers/iommu/Makefile                                                 |    1 +-
+ drivers/iommu/sun50i-iommu.c                                           | 1126 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 5 files changed, 1209 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
+ create mode 100644 drivers/iommu/sun50i-iommu.c
 
-> Thanks for your suggestion.
-> Currently it's using regulator_list_voltage_table() and
-> regulator_map_voltage_iterate() as below:
-
-> The reason to use mt6359_set_voltage_sel() is to convert selector value
-> to hardware register index value:
-> 	idx =3D pvol[selector];
-
-The whole idea behind regulator_list_voltage_table() is that it does the
-selector to voltage conversion for you, you shouldn't need to do any
-additional mapping.
-
-> To avoid using mt6359_set_voltage_sel(), the *_voltages array need to be
-> filled with zeros as below:=20
-> Current:
-> static const u32 vemc_voltages[] =3D {
-> 	2900000, 3000000, 3300000,
-> };
-> static const u32 vemc_idx[] =3D {
-> 	10, 11, 13,
-> };
-
-> change to:
-> static const u32 vxo22_voltages[] =3D {
-> 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2900000, 3000000, 0, 3300000,
-> };
-
-That's fine, the table is small and it only needs to be iterated in
-contexts where we're doing I2C I/O.  If it's really a problem introduce
-generic helpers for this rather than open coding.
-
-> > > +	switch (mode) {
-> > > +	case REGULATOR_MODE_FAST:
-> > > +		if (curr_mode =3D=3D REGULATOR_MODE_IDLE) {
-> > > +			WARN_ON(1);
-> > > +			dev_notice(&rdev->dev,
-> > > +				   "BUCK %s is LP mode, can't FPWM\n",
-> > > +				   rdev->desc->name);
-> > > +			return -EIO;
-
-> > I'd expect the device to go out of low power mode then into force PWM
-> > mode if it has to do that rather than reject the operation.
-
-> The device low power mode may control by hardware pad, so that the
-> reason to reject the operation is the device low power mode can not go
-> out by software.
-
-If this is being forced by hardware you need to check for that directly
-rather than just rejecting it without even trying (but hopefully the
-user set their constraints such that this doesn't happen).
-
-> Another scenario is one user set the device to low power mode, we think
-> it's not suitable to change device mode to _FAST mode by another user.
-
-It's not your driver's problem to worry about arbitrating between higher
-level users, let the framework deal with that (and notice that we have
-no code in kernel that actually sets the mode directly at runtime).
-That way we will have consistent behaviour between devices rather than
-devices trying to enforce their own policies.
-
---rqzD5py0kzyFAOWN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4oQTgACgkQJNaLcl1U
-h9D4Ygf+Nziq8bZrmbOIKqexjp2v9TvNwy09gwUlAJs9KJ9MjXFHTprK96JdeRLn
-qfl46x/Qb1TgrDRaFus46RApEELBHLOJ8MjMIz0MSlaVeJqyHwn46vTild91pSl3
-6vHfkJKRFHx3Ix2wudcdRcvpGn/HHGCydNn8+mLDOR9GDaZCOn2aOq2LVTU01izu
-7ulyEaYk3jIE86BfISfoXXGZ8eyHYaSynQia91odZsZD4J6W9IaGXFms9MORVIbm
-Ii3wwPwOufroxvff+6HOucaYbNN6UpVbKsvxJ4f0S9U5+T77RgDDdv6Jp6jv/Kjx
-jzkOyueUpjLzFBvhEKl52FhmXf74Vg==
-=ZzAE
------END PGP SIGNATURE-----
-
---rqzD5py0kzyFAOWN--
-
-
---===============0101392824149724177==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: e42617b825f8073569da76dc4510bfa019b1c35a
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0101392824149724177==--
-
