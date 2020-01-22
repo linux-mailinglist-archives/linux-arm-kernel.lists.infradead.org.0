@@ -2,83 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B77EC144D07
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:13:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03ECD144D23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 09:20:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qETbyUzgvQWEpkH4/qM+PFnf/ithWI2onC2dyVvYXZ4=; b=OCGU653yHNQ6Dx
-	N8YXRbTfATNPdGYYLP55E99IySKBPb/lpQAbg7h7vOjodVvmUpwCxTBnbwfqCa2gA/rHwhbIgSvEh
-	11k5pjHkbyf8BT8OEVBatrN4Qu4lUQ1P3nr7CsfpYkk+dGfYu9InMpER2S3QLhWI7QlhOs7LwvkB+
-	cer8rROyfhw692xdeIn8Hb3aKfYHrU4lxP0Jn+U2dUYGqK4+lDun9WiVlk5lbPo8sE2RBqks57FdE
-	2acXjSLqZG0LmTTxcT2WXRZ7u9PCgEpkVnLpw9Gp54OsOMV8X+vScOByHs2c8CKrORhhcWKurb6Qi
-	1RuDzeXXcuXbSx8ZcLhw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dNfV//P36w5oX/spvgXUnYD9m8xR25zDPU0gJtpBz54=; b=N0ewwrrC75bBW9
+	3ZQL2t29Ot9bbVWPiax4zbdvdqp7JEm755pZho+58f+SNsppKHyniQOqUanC3DrIkriPJ1255Ot34
+	SWu/LcP05BZMQHg0t/Cx2qMBUiYLqdTcB48WGoB4tPx6XPJoBALWnM3lST9D3khZlnT4LvW89Ie2U
+	QhqCCYNnzUglt98cHFEdpCcIafvdbTX8N+hIJpVRmFdOQVF1/NLbcegxaZjGk4OFUGa9Hua2MnIPH
+	hywx5K3YeNx7qAb5vlFysVpsT/UVBiZJZUhwoaAwWn8MZgKsqzPM4NSXx858wuSvYA915zxd5yDwV
+	6yPd2cTSqDlv2aRRLcHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuB8g-0002Ec-DB; Wed, 22 Jan 2020 08:13:26 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iuBEz-0004Pt-Hh; Wed, 22 Jan 2020 08:19:57 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuB8W-0002E0-RF; Wed, 22 Jan 2020 08:13:18 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Cxqb099296;
- Wed, 22 Jan 2020 02:12:59 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579680779;
- bh=DhZNPVYtbrpKrZkAkg13qDd9TroZfhPQ/2aqImA4XLQ=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=YyTGJm0CliogdcFd9gnifEAk8QmkOT+QCVGoH27ocDzrZPB7avzwnza5mzPX+UheB
- WfIed/40LSUiLyMMRn74ExRwIwhhSSv1UJr7souRbL0Yr2UkTH1rE9itP9it9eg9Og
- aM+RXxLq2QWw9UixnNzaKOvthN/78MMYypz3cRkI=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00M8CwGh095984
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 22 Jan 2020 02:12:58 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
- Jan 2020 02:12:58 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 22 Jan 2020 02:12:58 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Co0Y069651;
- Wed, 22 Jan 2020 02:12:51 -0600
-Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Mark Rutland
- <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, linux-pci
- <linux-pci@vger.kernel.org>
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
-Date: Wed, 22 Jan 2020 13:45:53 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1iuBEj-0004P4-JQ; Wed, 22 Jan 2020 08:19:42 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00M8IhCN041195;
+ Wed, 22 Jan 2020 08:19:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2019-08-05;
+ bh=uWz8eBHkgeZjITXN+B+A8IBMNj27yjCWOIaSt0VAyxA=;
+ b=m5SR2jNBsD7bKa33po2xbgW/FAuQ9XGEBLxEAzCnzmTY0DMFtab76AjgBAH6mkz2FGLq
+ 2ePvW3XnakSiOxVVsVqJ6wgQYjrjDIU5wMXORM8I5hGT6Ise3MjSwNiQpT2kvhWfGKg1
+ Oeud6+cku57pkGh5VJu9tidaUApLO7FlxFPm9Srz2WuyguCsfEIvCl9wdEjDS5La2h6B
+ vONIWK+F54NhbRm2/spqIu+WW6tqGFOhUz0KJ+Di2Gg8DyOajTD8vxaLHWz4Zcxd+0e2
+ MOn5JAEF+aUb6jFmnpeQpISvcAFHev6DfflEcOn35tPmNodhlt0/hRgbV0n6ZDihf3bV pg== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 2xkseuj7wk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 22 Jan 2020 08:19:34 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00M8J7pF188324;
+ Wed, 22 Jan 2020 08:19:33 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3030.oracle.com with ESMTP id 2xnpfqqvr0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 22 Jan 2020 08:19:33 +0000
+Received: from abhmp0020.oracle.com (abhmp0020.oracle.com [141.146.116.26])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00M8I16Q024075;
+ Wed, 22 Jan 2020 08:18:01 GMT
+Received: from kadam (/129.205.23.165) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 22 Jan 2020 00:18:00 -0800
+Date: Wed, 22 Jan 2020 11:17:53 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
+Subject: Re: [PATCH] staging: mt7621-pinctrl: Align code by cleanup long lines
+Message-ID: <20200122081753.GE1847@kadam>
+References: <20200121195218.GA10666@SandeshPC>
 MIME-Version: 1.0
-In-Reply-To: <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200121195218.GA10666@SandeshPC>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9507
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001220075
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9507
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001220075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_001316_964165_A0F402A3 
-X-CRM114-Status: GOOD (  26.87  )
+X-CRM114-CacheID: sfid-20200122_001941_725714_74486DB4 
+X-CRM114-Status: GOOD (  16.89  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +95,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -99,150 +109,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
- BINDINGS" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, "open
- list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
-
-On 21/01/20 11:27 PM, Lad, Prabhakar wrote:
-> Hi Rob/Kishon,
+On Tue, Jan 21, 2020 at 08:52:18PM +0100, Sandesh Kenjana Ashok wrote:
+> Cleanup lines over 80 characters in pinctrl-rt2880.c.
+> Issue found by checkpatch.pl
 > 
-> On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
->>
->> This patch adds the bindings for the R-Car PCIe endpoint driver.
->>
->> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->> ---
->>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
->>  1 file changed, 76 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->> new file mode 100644
->> index 000000000000..99c2a1174463
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->> @@ -0,0 +1,76 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Renesas R-Car PCIe Endpoint
->> +
->> +maintainers:
->> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->> +
->> +properties:
->> +  compatible:
->> +    items:
->> +      - const: renesas,r8a774c0-pcie-ep
->> +      - const: renesas,rcar-gen3-pcie-ep
->> +
->> +  reg:
->> +    maxItems: 5
->> +
->> +  reg-names:
->> +    items:
->> +      - const: apb-base
->> +      - const: memory0
->> +      - const: memory1
->> +      - const: memory2
->> +      - const: memory3
-
-As I had mentioned in the other patch, I'd prefer if we can create
-standard binding for representing the memory regions. IMHO we should
-create subnode for memory regions Each sub-node itself may or may not
-have more than one memory region.
-
-In your platform, since there can be only one allocation in a memory
-region, there should be 4 sub-nodes for each of the memory region and
-each node should have page_size (or some equivalent property) property
-to indicate page_size (= region_size).
-
-For a platform that doesn't have the restriction, there can be a single
-sub-node containing all the memory region.
-
-Let's wait for Rob's comment though.
-
-Thanks
-Kishon
->> +
->> +  power-domains:
->> +    maxItems: 1
->> +
->> +  resets:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    maxItems: 1
->> +
->> +  clock-names:
->> +    items:
->> +      - const: pcie
->> +
->> +  max-functions:
->> +    minimum: 1
->> +    maximum: 6
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - reg-names
->> +  - resets
->> +  - power-domains
->> +  - clocks
->> +  - clock-names
->> +  - max-functions
->> +
-> apart from dt_binding_check error are we OK with dt bindings ?
+> Signed-off-by: Sandesh Kenjana Ashok <sandeshkenjanaashok@gmail.com>
+> ---
+>  drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> Cheers,
-> --Prabhakar
-> 
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
->> +    #include <dt-bindings/power/r8a774c0-sysc.h>
->> +
->> +     pcie0_ep: pcie-ep@fe000000 {
->> +            compatible = "renesas,r8a774c0-pcie-ep",
->> +                         "renesas,rcar-gen3-pcie-ep";
->> +            reg = <0 0xfe000000 0 0x80000>,
->> +                  <0x0 0xfe100000 0 0x100000>,
->> +                  <0x0 0xfe200000 0 0x200000>,
->> +                  <0x0 0x30000000 0 0x8000000>,
->> +                  <0x0 0x38000000 0 0x8000000>;
->> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
->> +            resets = <&cpg 319>;
->> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
->> +            clocks = <&cpg CPG_MOD 319>;
->> +            clock-names = "pcie";
->> +            max-functions = /bits/ 8 <1>;
->> +    };
->> --
->> 2.20.1
->>
+> diff --git a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> index d0f06790d38f..254d4eb88f5f 100644
+> --- a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> +++ b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+> @@ -159,8 +159,8 @@ static int rt2880_pmx_group_enable(struct pinctrl_dev *pctrldev,
+>  }
+>  
+>  static int rt2880_pmx_group_gpio_request_enable(struct pinctrl_dev *pctrldev,
+> -						struct pinctrl_gpio_range *range,
+> -						unsigned int pin)
+> +					struct pinctrl_gpio_range *range,
+> +					unsigned int pin)
+>  {
+>  	struct rt2880_priv *p = pinctrl_dev_get_drvdata(pctrldev);
+
+Now it has a new warning.
+
+CHECK: Alignment should match open parenthesis
+#162: FILE: drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c:162:
++static int rt2880_pmx_group_gpio_request_enable(struct pinctrl_dev *pctrldev,
++                                       struct pinctrl_gpio_range *range,
+
+Just leave it.  The original is fine.
+
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
