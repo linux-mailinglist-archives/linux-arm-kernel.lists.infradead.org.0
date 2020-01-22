@@ -2,168 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07DCC145774
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 15:07:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3709814579B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 15:18:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EIX/ipRjRfoMfaQmns2/j4gMI/+X3+ev54knLhMBRmQ=; b=tJSgKAZ2h45PF8ReaQYcakndT
-	/DXQclFLL5ccNn90pUQFnLC52rsGARB7WQE4Cb8aYFy9zV7C18FcLTf1ujqWsFPJjrcIEVtB2XGRO
-	JtbQAGemrY/MRMf/3T+27V+n0JhXCnyXVmwDUIR3kYkM3PfANXZ68PzVTo4kUhWLW85D6Qwt1VqN0
-	NGU7KZiR9LQopiFGYgTsbWSGh77PoYtmiDw/VLpu1MSyBj+G2w7c+TjceTiDl1DoOTUBMe5Z7y3m5
-	BsS8L/5w3nhvoNNhfFC/2Lwc0OsfCVRv6DyTRSGJ51/MhRJBqA4/DzbP9VPAnzIf2/7IBdXkMzjhj
-	lo2g28nfg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uTVc6qP4Fw2P0/5g3Sj2L2c8HMmOYECrpopdMvLA6LQ=; b=hzK9na1F9wgofk
+	BePurWC5ac8qHJy/oDqI68mmYUf6morE0qq1HXW4Dth5ly4ajfKZ9La0KBYeQkXWaHhqR2aX7Dvgv
+	KULrHRKL7FGB3nSKb1/ZhFGG5zq3ZbIhjqo9JWzBs2Bh/xW5UY8B5n5PA7QTm6LEySU70hn3dbVW0
+	ORiNyvKM4vak5IhzNIR00Cnlun7lbMxHieuR0EJ7sjDKFwgvdBEKpndQDxyhz9oxWX67TtPGjnU10
+	7hdxpFdryPho/fxejcGjM5diDHFsssBn7SFXQfO7kPPBt/KBw/kvDATcy5sH3dSmNCA+Sbn/R4XQ1
+	U2KnsjDv3dew9gKzqrJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuGfg-0005xW-OX; Wed, 22 Jan 2020 14:07:52 +0000
-Received: from usat19pa21.eemsg.mail.mil ([214.24.22.195])
+	id 1iuGq9-0001Ez-6M; Wed, 22 Jan 2020 14:18:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuGfW-0005wg-Eb
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 14:07:44 +0000
-X-EEMSG-check-017: 72026985|USAT19PA21_ESA_OUT02.csd.disa.mil
-X-IronPort-AV: E=Sophos;i="5.70,350,1574121600"; d="scan'208";a="72026985"
-Received: from emsm-gh1-uea10.ncsc.mil ([214.29.60.2])
- by USAT19PA21.eemsg.mail.mil with ESMTP/TLS/DHE-RSA-AES256-SHA256;
- 22 Jan 2020 14:07:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=tycho.nsa.gov; i=@tycho.nsa.gov; q=dns/txt;
- s=tycho.nsa.gov; t=1579702030; x=1611238030;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=9SnZtO6/lKqH0FpjcRIuWCGZ4QNr4LfdCXgcu1r+3ok=;
- b=Fg/yKrwXsiZKZI8dxHEvD9Xhi5WExNrZwGDJUXwLaTZdDdORS9uaSKqD
- nNvDc62e75Kzr+LOUo+JuxiulWF5uyMNgcdFGS2J1CYHTYqH0FVIZDzyS
- vd5P6v/5Dr/rc+gi0nDa+VOcUlB4zuqE1/SPDRpYbghsf+C8q+vNm41TL
- v1Q56EZRC+N4KONb8y0+d+prX4Xn7fdL84UHqQBh+v0njWJWdKlcYFdf3
- YdC8sQljunw0yx106pjGf74bNPZgxfejXZdalbKLsre4K9yPAUVIlMOMt
- D1pjTAHkYD2/GqNRpvhCGj55RtSzqALffo9/+AudrBlBMNB8hX3Zlagd4 g==;
-X-IronPort-AV: E=Sophos;i="5.70,350,1574121600"; d="scan'208";a="32196114"
-IronPort-PHdr: =?us-ascii?q?9a23=3AI0sK/RA1s5Hs/EZmIkqKUyQJP3N1i/DPJgcQr6?=
- =?us-ascii?q?AfoPdwSP/5o86wAkXT6L1XgUPTWs2DsrQY0raQ6firBDFIoc7Y9ixbK9oUD1?=
- =?us-ascii?q?5NoP5VtjRoONSCB0z/IayiRA0BN+MGamVY+WqmO1NeAsf0ag6aiHSz6TkPBk?=
- =?us-ascii?q?e3blItdaz6FYHIksu4yf259YHNbAVUnjq9Zq55IAmroQnLucQanIRvJrwvxh?=
- =?us-ascii?q?fVrXdFe+Rbzn5sKV6Pghrw/Mi98INt/ihKp/4t68tMWrjmcqolSrBVEC4oOH?=
- =?us-ascii?q?0v6s3xshnDQwqP5n8CXWgTjxFFHQvL4gzkU5noqif1ufZz1yecPc3tULA7Qi?=
- =?us-ascii?q?+i4LtxSB/pkygIKTg0+3zKh8NqjaJbpBWhpwFjw4PRfYqYOuZycr/bcNgHXm?=
- =?us-ascii?q?dKQNpfWDJdDYO9d4sPDvQOPeBEr4nmulACqQKyCRSwCO/zzzNFgHH53bc+0+?=
- =?us-ascii?q?88Dw/I2gIuFM8KvHjNstn4MKIeXOaox6fK0DrDdetb1yrj5ojGch4vov+CUr?=
- =?us-ascii?q?x/fsXT1UYhGBjIjkmSpIH/Iz+ZyuoAvmqd4uF9VeyvkWknqwRprzay2scjlJ?=
- =?us-ascii?q?HJhoILxVDC6C533YM1Kse8SE5/f9GlEIZbuiaBN4RrWcMvWH1ouSYmxb0Gvp?=
- =?us-ascii?q?63Zi4KyI89yBLFZPyHdJaI7wvlWe2MLzl4g3dld6i+hxa06UWgyfPzVtOy0F?=
- =?us-ascii?q?lUqipJiN7MtmoC1xDL78iIUP1980W71TaIzQDT5edJKl03m6rDM5Mt37E9m5?=
- =?us-ascii?q?UJvUnDAyP6glv6gaCIekk+5+Sl7fnsbK/8qZ+GLYB0jxnzMqEpmsOiH+s1Kh?=
- =?us-ascii?q?MOX22H+eSk073j4FH5TK1KjvIolqnZt4jXJdgBqa6jAg9Vz50j5wy+Dzeg3t?=
- =?us-ascii?q?QYmmIHI0xZdx6dk4joO03BIPD/DfulhVSjjCxryOzcMr3kA5XNKmDPkLbnfb?=
- =?us-ascii?q?lj905R0Bc/wN9Q6p5OCrwNPej/VlH+udDGFBM1LhS4w+P9B9V80oMeV3iPAq?=
- =?us-ascii?q?icMK7Kql+H+/kvLvKQZI4VpDn9K/8l6+TojX8ig1ARZ6ap3ZwJaHygBPRpP1?=
- =?us-ascii?q?2ZYWbwgtcGCWoFpA4+Q/LliVKcUT9ffW29X78h6T4hDoKmDoDDRp62jbyF3S?=
- =?us-ascii?q?e7GIBWZ29cBlCNF3foa5uLW/MWZC2OJc9hlyQOVaK9RI85yRGuqAj6xqJ9Ie?=
- =?us-ascii?q?rQ5CIZuozs1Nlv6+3IiRE97yZ0D8OD02GKTmF0gmQIRyEt0aBwpExy0FaD0a?=
- =?us-ascii?q?xij/NEEtxT4utDUh0mOp7E0+x6F9fyVxrZftiXVFapXM+mADAqQ9Iwxd8ObV?=
- =?us-ascii?q?x9FM+/gR/dxSWlHqUZl7uRBJw76qjcxWT+J95hy3ba06ksl0MpTddKNWK4na?=
- =?us-ascii?q?N/9BbcB5TPk0qHk6amb6Mc3DTC9G2b12qBoFlYUBJsUaXCRX0fY0rWrdL25k?=
- =?us-ascii?q?PFVLKuE6ooPRZBycGYNqtGcMHmjVJDRP37ItTRf3qxm3usBRaP3r6MbpDle2?=
- =?us-ascii?q?Mc3CnHDkgEkgMT/WuCNQckHSqhp2PeDDpzFVPgeU/s8O9+qG+lQU8w1Q2Fc0?=
- =?us-ascii?q?ph17+t8B4PmfOcU+8T3q4DuCo5qTV0G1G939TMBNqbvQZheL9TYdMh4FdG02?=
- =?us-ascii?q?LWqQp9M4ekL6BjgF4ebgt2s1nv1xVxFoVPj8wqoGk2wwp1LKKSyElBeC+A3Z?=
- =?us-ascii?q?DsJr3XLXH//Aqoa6HLwFHe0dmW+qAV5PQmqlXjogCpG1Ej83Vhz9lazX+c6o?=
- =?us-ascii?q?/WAwoVVJL7Slw3+ARip7HGfik94JvZ2mZyPqmysj/PwNEpC/U/yhamYdhfNL?=
- =?us-ascii?q?mIGxPoE8IAHMiuKO0qm16mbh4eO+BS7qE0Ndu8d/SawK6rIPpgnDW+gGRf+o?=
- =?us-ascii?q?99z0aM9zdnSuPTxJYK2fSY0RCdWDvmi1ehqM/3k5heZT4OBmq/1TTkBIlJa6?=
- =?us-ascii?q?13ZYYEF3yjLNOzxtV6mZHtQXtY+0SlB18c2c+mZACeYEbg3QdIz0QYvWSnmT?=
- =?us-ascii?q?ekzzxzizwprLCQ3CnQzOT5bhYIIWlLRHV+jVfrJIi0i84VXUizYggpjhSl41?=
- =?us-ascii?q?36yLZdpKRnNWbTW1tIfy7oIGF4SauwtruCY9ZV5Jw0tiVXVfy2YUqGRb7lvx?=
- =?us-ascii?q?sazyTjEnNFxD8lbTGqtYv2kgd6iG2HKHZzqHrYecdqyRjD49zcQOZb3iAaSy?=
- =?us-ascii?q?lglTnXGl+8MsGr/dWRkJfDqPq+V2O6VpBIdynk14aAuzW65WFwBh2/hf+zkM?=
- =?us-ascii?q?X9EQcmyS/7y8VqVSLQoRfyY4nr06C6Pfh6cUZ2HlDz9816Godln4QqnpEQ3G?=
- =?us-ascii?q?IWiYmS/XoCiW3zK8lU2bribHoRQj4G29vV7xL/2E1gNH6J3Z/5VmmZwsR7Yd?=
- =?us-ascii?q?m1f3gb1Tgn78BPEqub8LtEnS5tqFqisQ3ReeR9nisayfY28n4ameAJtxY2wy?=
- =?us-ascii?q?WeHL8SB09YMjLolxiS6NC+tqpXbn61cbeszEp+gcyhDLaarw5GQ3b5ZowvHS?=
- =?us-ascii?q?xu4cVlNlLDznnz5pvjeNnKYtIZrgeUnAvYj+hJNJIxkeIHhShgOWL5pn0q0f?=
- =?us-ascii?q?U2jQZw0p6nvIiIMXlt8LilDR5fMz3/f9kT9S31jaZCgsaW2JiiEY9iGjgQWJ?=
- =?us-ascii?q?voTPSoEC8dtPj9NgaOFiE8pWmfGbbFAQCf70JmpWrVE5+3L3GXOGUZzdJ6SR?=
- =?us-ascii?q?aDPkxQmgYUXDQgkZ4/DQ2qy8vhcEB25jAV+FH0sAdDyuVtNxPnSGfQuB+oai?=
- =?us-ascii?q?soSJiYNBdW7wVC51rOPsOE9eJzHz9X84a7owyOMGObYh5HDWATVkOYAFDjO6?=
- =?us-ascii?q?Gk5cPc/OiAGuq+M/zObK2UpuxaSfiJyoig0o178DmSLMWDJGJiD/062kpYXX?=
- =?us-ascii?q?B5GMXZmzMURiwTliLNadObpRim9i12qMC/7OrkWAb16YSTDLtSNM1l+wqqjq?=
- =?us-ascii?q?ebK+6QmCF5JC5e1pwWwH/IyLge3EMUiyFhbDStEqoPtTTLTK3Onq9bFRkbaz?=
- =?us-ascii?q?l8NMFQ9aIzwhFNOdLHitPyzrN4lfk1C1FKVVzlm8GpeNcFI3unO1PZBUaLMr?=
- =?us-ascii?q?uGKCbFw87se6+zVbpQjOBMvR2qpTmbC1PjPiiElzTxUxCvMOZMjCeFMxxaoo?=
- =?us-ascii?q?29fQxhCWz5Q9LgdxK6PsF4jScywb01gHPHLm8cMT5gc0xTqr2c9z9XgvJ6G2?=
- =?us-ascii?q?ZZ9HpqMfGEmzqF7+nfMpsWrfRrAiB7lu9B5HQ6yr1V7DxYRPxvnyvSqN9uol?=
- =?us-ascii?q?68nuaS1DVtSABOpSpThIKXoUViPr3U9p1BWXbC4RIM4nycCxcUqNt/DN3gpa?=
- =?us-ascii?q?RQx8PRlKL8NjhC6cjY/cgCCMjOLsKILn4hPQDuGD7OAwsPVSSrOn3Hh0xBjP?=
- =?us-ascii?q?GS8WWYrpw7qpjqhZoPRaZXVEcrGfwGF0RlBt0CIIt3Xz89lL6bi9MH5We6rB?=
- =?us-ascii?q?bPX8haoJ/HWeyIAfn1KzaWk6NEZx0WzrP8N4gTMZf720N6YFlggIvKA1bQXc?=
- =?us-ascii?q?xKoiB5dQ87vkFN8Hl4Tm0u1EPocR2t4HANGv6uhBI2iRVxYf4r9Djy51c7PF?=
- =?us-ascii?q?3KpDE/kEMpg9XqnSiRcCLtLKe3RYxWCiz0t1QvPZP/Wgp1YgOynEN/OTfARr?=
- =?us-ascii?q?JRlKdgdXtxhA/So5tAB+BTQrBabx8LxvGXe/Io0UxGpiWg309H6vPPCYF+mw?=
- =?us-ascii?q?sybZ6ss3VA1hpnbN40I6zQOaVIwkFIhq2UpC+o1/sxzxMFKkYT/2OdZjQItF?=
- =?us-ascii?q?YLNrY4PSqo+PJj6QiYlztEYmgMWOIgouh2+UMlJ+SA0yXg3qZHKkCwMeyfMq?=
- =?us-ascii?q?yYu3DYlcGUW18/y10Hl1de8Lhy0McjaFaUV1s1wLuWFhUJMdDNJhpOb8ZI83?=
- =?us-ascii?q?jTZymOu/3XwZ1pJ4W9CvzoTeiWuaYQg0KkGhspHosV4ssbBJms1VjULcT5I7?=
- =?us-ascii?q?4fzxUi+gDrKU6BDPRIYxKLjCwHr9u+zJ9x04ldPCsSDnhjPiqt+7nbvAgqgO?=
- =?us-ascii?q?CMXN0ueHcVQpMENm4qWM29gyNZu3VADD+q0uMW0QSC9yHzpj7eDDXlctpjf+?=
- =?us-ascii?q?mbZQl3CNyt5zU//La5iUTN/pXdOW76L9JitcHL6e8AoJaHEfxUR6Fns0jAg4?=
- =?us-ascii?q?lYW2CqU2nXHN6yP5jwcY4sbdL1Cna+TFOzkjY1T8bqPNaxNaWIhQDoRZ1IsI?=
- =?us-ascii?q?mAxjwjLsG9GisYGxhuu+EJ/Lh8ahEbY5onfR7osBwzN6iiIAeE1dWjWHyiKT?=
- =?us-ascii?q?5MQPZD1+q6f71XzzY2Ye++0ncgSI81z/XkuXIKEbgOgwHT1L6JeoVXVyv0BD?=
- =?us-ascii?q?QJcgHCtSco0WJ8Ou80weAh6BfJt0QMdTGNaOFtLmdDuod4TXqWLGV7CyIDW1?=
- =?us-ascii?q?aGipTE4xKrwfhG9i9Qj9tVl/ZZuWL5oJjefDWycKOuoJTR9SEnaI51jbd2NN?=
- =?us-ascii?q?nYPsaetJ7Y1gfaRZ3UvxzNBDW2DNJGi9NQJ2ReW/AOlmY7b59V8bFd4FY8A5?=
- =?us-ascii?q?9tb4dED7Mh8/XzM2tp?=
-X-IPAS-Result: =?us-ascii?q?A2AFAQAzVihe/wHyM5BlHQEBAQkBEQUFAYFqBQELAYF8g?=
- =?us-ascii?q?RhVIBIqhBKJA4ZvBoE3iW6RSQkBAQEBAQEBAQEtCgEBgUyCL0UCgj43Bg4CE?=
- =?us-ascii?q?AEBAQQBAQEBAQUDAQFshTcMgjspAYJ6AQUODwYVLRQQCxgCAiYCAlcGAQwGA?=
- =?us-ascii?q?gEBgmM/AYJWJQ+uWIEyhElBQIMwgT6BDioBiUyCY3mBB4E4D4JdPoJkAQIBA?=
- =?us-ascii?q?oRvgl4EkBaHHEaXWoJDgkuEdI5uBhuDP5c4LY4xiGKUNiOBWCsIAhgIIQ+DJ?=
- =?us-ascii?q?wkWMRgNiA0XFYhPhV0jAzACBQaNZAEB?=
-Received: from tarius.tycho.ncsc.mil (HELO tarius.infosec.tycho.ncsc.mil)
- ([144.51.242.1])
- by EMSM-GH1-UEA10.NCSC.MIL with ESMTP; 22 Jan 2020 14:07:08 +0000
-Received: from moss-pluto.infosec.tycho.ncsc.mil (moss-pluto [192.168.25.131])
- by tarius.infosec.tycho.ncsc.mil (8.14.7/8.14.4) with ESMTP id
- 00ME64kn169097; Wed, 22 Jan 2020 09:06:05 -0500
-Subject: Re: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel
- and user space
-To: Alexey Budankov <alexey.budankov@linux.intel.com>,
- Alexei Starovoitov <alexei.starovoitov@gmail.com>
-References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
- <9b77124b-675d-5ac7-3741-edec575bd425@linux.intel.com>
- <64cab472-806e-38c4-fb26-0ffbee485367@tycho.nsa.gov>
- <05297eff-8e14-ccdf-55a4-870c64516de8@linux.intel.com>
- <CAADnVQK-JzK-GUk4KOozn4c1xr=7TiCpB9Fi0QDC9nE6iVn8iQ@mail.gmail.com>
- <537bdb28-c9e4-f44f-d665-25250065a6bb@linux.intel.com>
- <63d9700f-231d-7973-5307-3e56a48c54cb@linux.intel.com>
-From: Stephen Smalley <sds@tycho.nsa.gov>
-Message-ID: <d7213569-9578-7201-6106-f5ebc95bd6be@tycho.nsa.gov>
-Date: Wed, 22 Jan 2020 09:07:32 -0500
+ id 1iuGpz-0001Du-Qm
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 14:18:34 +0000
+Received: from [192.168.1.27] (cpe-70-114-128-244.austin.res.rr.com
+ [70.114.128.244])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 382D424655;
+ Wed, 22 Jan 2020 14:18:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579702709;
+ bh=7RPWjjpLMuDQnZc6m09G3Z3kb8lSoeXdIHNjukWLn+4=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=tVFrdiXV2buwI8Op1vkmlgjDjJag3gBDuawtqBt0NCE2Dq5kn9o9rU07WD4Ika+3+
+ R75X4vjwE+OJix+eLoeI+1QVRiIhu3/tIDIlr0y/l6xwR4uww9iJd055G7YaXfeCeP
+ URoJQoc9p/zDrbMkx43ErmrElpt0GHu9Zzbq/2r8=
+Subject: Re: [PATCH 20/20] ARM: socfpga: Drop unneeded select of
+ PCI_DOMAINS_GENERIC
+To: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ Olof Johansson <olof@lixom.net>
+References: <20200121103413.1337-1-geert+renesas@glider.be>
+ <20200121103722.1781-1-geert+renesas@glider.be>
+ <20200121103722.1781-20-geert+renesas@glider.be>
+From: Dinh Nguyen <dinguyen@kernel.org>
+Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <2d98e02d-ab27-b079-7dca-677fcfe623be@kernel.org>
+Date: Wed, 22 Jan 2020 08:18:27 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <63d9700f-231d-7973-5307-3e56a48c54cb@linux.intel.com>
+In-Reply-To: <20200121103722.1781-20-geert+renesas@glider.be>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_060742_980815_E7FCC868 
-X-CRM114-Status: GOOD (  18.56  )
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20200122_061832_778508_84E79473 
+X-CRM114-Status: GOOD (  16.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [214.24.22.195 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 FROM_GOV_DKIM_AU       From Government address and DKIM signed
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -176,131 +125,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Peter Zijlstra <peterz@infradead.org>,
- "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
- Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
- Michael Ellerman <mpe@ellerman.id.au>, Igor Lubashev <ilubashe@akamai.com>,
- James Morris <jmorris@namei.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
- Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Andy Lutomirski <luto@amacapital.net>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/22/20 5:45 AM, Alexey Budankov wrote:
-> 
-> On 21.01.2020 21:27, Alexey Budankov wrote:
->>
->> On 21.01.2020 20:55, Alexei Starovoitov wrote:
->>> On Tue, Jan 21, 2020 at 9:31 AM Alexey Budankov
->>> <alexey.budankov@linux.intel.com> wrote:
->>>>
->>>>
->>>> On 21.01.2020 17:43, Stephen Smalley wrote:
->>>>> On 1/20/20 6:23 AM, Alexey Budankov wrote:
->>>>>>
->>>>>> Introduce CAP_PERFMON capability designed to secure system performance
->>>>>> monitoring and observability operations so that CAP_PERFMON would assist
->>>>>> CAP_SYS_ADMIN capability in its governing role for perf_events, i915_perf
->>>>>> and other performance monitoring and observability subsystems.
->>>>>>
->>>>>> CAP_PERFMON intends to harden system security and integrity during system
->>>>>> performance monitoring and observability operations by decreasing attack
->>>>>> surface that is available to a CAP_SYS_ADMIN privileged process [1].
->>>>>> Providing access to system performance monitoring and observability
->>>>>> operations under CAP_PERFMON capability singly, without the rest of
->>>>>> CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials and
->>>>>> makes operation more secure.
->>>>>>
->>>>>> CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to
->>>>>> system performance monitoring and observability operations and balance
->>>>>> amount of CAP_SYS_ADMIN credentials following the recommendations in the
->>>>>> capabilities man page [1] for CAP_SYS_ADMIN: "Note: this capability is
->>>>>> overloaded; see Notes to kernel developers, below."
->>>>>>
->>>>>> Although the software running under CAP_PERFMON can not ensure avoidance
->>>>>> of related hardware issues, the software can still mitigate these issues
->>>>>> following the official embargoed hardware issues mitigation procedure [2].
->>>>>> The bugs in the software itself could be fixed following the standard
->>>>>> kernel development process [3] to maintain and harden security of system
->>>>>> performance monitoring and observability operations.
->>>>>>
->>>>>> [1] http://man7.org/linux/man-pages/man7/capabilities.7.html
->>>>>> [2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
->>>>>> [3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
->>>>>>
->>>>>> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
->>>>>> ---
->>>>>>    include/linux/capability.h          | 12 ++++++++++++
->>>>>>    include/uapi/linux/capability.h     |  8 +++++++-
->>>>>>    security/selinux/include/classmap.h |  4 ++--
->>>>>>    3 files changed, 21 insertions(+), 3 deletions(-)
->>>>>>
->>>>>> diff --git a/include/linux/capability.h b/include/linux/capability.h
->>>>>> index ecce0f43c73a..8784969d91e1 100644
->>>>>> --- a/include/linux/capability.h
->>>>>> +++ b/include/linux/capability.h
->>>>>> @@ -251,6 +251,18 @@ extern bool privileged_wrt_inode_uidgid(struct user_namespace *ns, const struct
->>>>>>    extern bool capable_wrt_inode_uidgid(const struct inode *inode, int cap);
->>>>>>    extern bool file_ns_capable(const struct file *file, struct user_namespace *ns, int cap);
->>>>>>    extern bool ptracer_capable(struct task_struct *tsk, struct user_namespace *ns);
->>>>>> +static inline bool perfmon_capable(void)
->>>>>> +{
->>>>>> +    struct user_namespace *ns = &init_user_ns;
->>>>>> +
->>>>>> +    if (ns_capable_noaudit(ns, CAP_PERFMON))
->>>>>> +        return ns_capable(ns, CAP_PERFMON);
->>>>>> +
->>>>>> +    if (ns_capable_noaudit(ns, CAP_SYS_ADMIN))
->>>>>> +        return ns_capable(ns, CAP_SYS_ADMIN);
->>>>>> +
->>>>>> +    return false;
->>>>>> +}
->>>>>
->>>>> Why _noaudit()?  Normally only used when a permission failure is non-fatal to the operation.  Otherwise, we want the audit message.
-> 
-> So far so good, I suggest using the simplest version for v6:
-> 
-> static inline bool perfmon_capable(void)
-> {
-> 	return capable(CAP_PERFMON) || capable(CAP_SYS_ADMIN);
-> }
-> 
-> It keeps the implementation simple and readable. The implementation is more
-> performant in the sense of calling the API - one capable() call for CAP_PERFMON
-> privileged process.
-> 
-> Yes, it bloats audit log for CAP_SYS_ADMIN privileged and unprivileged processes,
-> but this bloating also advertises and leverages using more secure CAP_PERFMON
-> based approach to use perf_event_open system call.
 
-I can live with that.  We just need to document that when you see both a 
-CAP_PERFMON and a CAP_SYS_ADMIN audit message for a process, try only 
-allowing CAP_PERFMON first and see if that resolves the issue.  We have 
-a similar issue with CAP_DAC_READ_SEARCH versus CAP_DAC_OVERRIDE.
+
+On 1/21/20 4:37 AM, Geert Uytterhoeven wrote:
+> Support for Altera SOCFPGA systems depends on ARCH_MULTI_V7, and thus on
+> ARCH_MULTIPLATFORM.
+> As the latter selects PCI_DOMAINS_GENERIC, there is no need for
+> ARCH_SOCFPGA to select PCI_DOMAINS_GENERIC.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Cc: Dinh Nguyen <dinguyen@kernel.org>
+> ---
+> All patches in this series are independent of each other.
+> Cover letter at https://lore.kernel.org/r/20200121103413.1337-1-geert+renesas@glider.be
+> 
+>  arch/arm/mach-socfpga/Kconfig | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-socfpga/Kconfig b/arch/arm/mach-socfpga/Kconfig
+> index 22af5e308db6cc81..c3bb68d57cea2e51 100644
+> --- a/arch/arm/mach-socfpga/Kconfig
+> +++ b/arch/arm/mach-socfpga/Kconfig
+> @@ -11,7 +11,6 @@ menuconfig ARCH_SOCFPGA
+>  	select HAVE_ARM_SCU
+>  	select HAVE_ARM_TWD if SMP
+>  	select MFD_SYSCON
+> -	select PCI_DOMAINS_GENERIC if PCI
+>  	select ARM_ERRATA_754322
+>  	select ARM_ERRATA_764369 if SMP
+>  	select ARM_ERRATA_775420
+> 
+
+Acked-by: Dinh Nguyen <dinguyen@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
