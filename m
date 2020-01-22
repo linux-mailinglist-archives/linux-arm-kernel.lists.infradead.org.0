@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DE15145A90
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:05:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58F42145AB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 18:20:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jf3i5YrqX7v9HmAkDs0Ws1+2JoaCQvFiW2Zk8l/m3Lc=; b=u0gAxy0tZsNHvJ
-	AN9xIhjxHpMGNCUTyNNFr8a86PGGvEPmpTjPFlff9jntP1nvFvNSRoVv5zZWabj3+VeYbPmkxif4a
-	bynCn3il9OVMnEUfv6YVr3UOv4ed5d2z2pU5rAtFcN0ULARaAWGjv0HReDQDF53gZi2PQrm/7PQjF
-	5zWJmzcx61064WY3Kn7f6oh1rayw8QB2oZMI//Q78GylVak7AP/JB8hQaltJicp60PkIxaVne0YWC
-	pvskSaYUdynkuuIDHJ2xdOJp1D9ddfY8lToiPGuu6UQwwL4kfC8v59uKupDnfcISrl64P8aEeNbVa
-	zpRXzr6D5QvGHR0QHBvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5dZr0VNiOf3VOARl0GeZ1/KslCEI2IurLjV13ryhM00=; b=BFG+g1GCVyNDBZ
+	WUSUHxsIQF9qpNyXkTEyxv6VKmQ/ej56ORZrSBkPJOXjDMablx/Q0eaqnQqMK6DINgPP5iIxpA12V
+	btiYQAKxbgUgDlp16qLS6IKpRrEHOHtvficcvvqbrMjcHNeuvPuRiic6h20863zYJLeUnP/aJRaD0
+	5Q+Agej8bQ7RqQS7RoN4dcOquc8zml4uVxsFIMsma2qv6PF2ZVhAxatDx4ZvexR3F4sHQua/c5eea
+	xUkTc0HurvPzjrQHgEizwwaao1g8hmS9Qoc+F47nl5784vUaCfrodIpXuGYniEYLSM9yGnpxJft8C
+	HaVVK1dB0RJtCpvWAH4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuJRi-0003sE-BA; Wed, 22 Jan 2020 17:05:38 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iuJfr-00014D-RA; Wed, 22 Jan 2020 17:20:15 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuJRH-0003rs-Am
- for linux-arm-kernel@bombadil.infradead.org; Wed, 22 Jan 2020 17:05:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=J42OoTtifdDN3LunEbWluQEhFHDFChSHhb/WUPgfuFk=; b=quPVgMD05WJDnI+3YTuuVz0gD
- KOzL84mUhUQy3t/LlZ65VgJmnJ6SBQU7sOiYr5ed3KcV222CedU174mXPKUYsm9imq9Pc28DL73It
- tim5beEZ6bAqLgwxZnAYheff01oKeFixcXjZG3p5/B4IRRWlyIJV22sJm+h7IKucpJVjL1w32HQaH
- n3tDx7fvsdsjiI36j05ageUbuKr9uQKermVKw2PxcaCCwc7hGDe6niLH8b04RumTaKgGybKCYyxb2
- g+BYIrcusn0vXJ461XwlgsiBv5NsqaEGIEB790Jx4PKjja9PTwkBrmmmuN+Bg0pb5vCXRBrA6LVZZ
- R0QR/dAKw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuJR4-0008LB-UM; Wed, 22 Jan 2020 17:04:59 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id C758A305FEA;
- Wed, 22 Jan 2020 18:03:16 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 7E69E2B6F5E7C; Wed, 22 Jan 2020 18:04:56 +0100 (CET)
-Date: Wed, 22 Jan 2020 18:04:56 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-Message-ID: <20200122170456.GY14879@hirez.programming.kicks-ass.net>
-References: <20191125210709.10293-1-alex.kogan@oracle.com>
- <20191125210709.10293-4-alex.kogan@oracle.com>
- <20200121202919.GM11457@worktop.programming.kicks-ass.net>
- <20200122095127.GC14946@hirez.programming.kicks-ass.net>
+ id 1iuJfT-00013o-IA
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 17:19:53 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 22 Jan 2020 09:18:21 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,350,1574150400"; d="scan'208";a="427474969"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga006.fm.intel.com with ESMTP; 22 Jan 2020 09:18:20 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1iuJe0-000CqP-1U; Thu, 23 Jan 2020 01:18:20 +0800
+Date: Thu, 23 Jan 2020 01:17:28 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/soc] BUILD SUCCESS
+ 31a7d26fbc51a39292bf9911f9e9efdf6d8e22b2
+Message-ID: <5e2883a8.5hlscd0yWvZnP7cW%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200122095127.GC14946@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200122_091951_650287_FCB29AC0 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-1.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,299 +68,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 22, 2020 at 10:51:27AM +0100, Peter Zijlstra wrote:
-> On Tue, Jan 21, 2020 at 09:29:19PM +0100, Peter Zijlstra wrote:
-> > 
-> > various notes and changes in the below.
-> 
-> Also, sorry for replying to v7 and v8, I forgot to refresh email on the
-> laptop and had spotty cell service last night and only found v7 in that
-> mailbox.
-> 
-> Afaict none of the things I commented on were fundamentally changed
-> though.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/soc
+branch HEAD: 31a7d26fbc51a39292bf9911f9e9efdf6d8e22b2  Merge tag 'zynq-soc-for-v5.6' of https://github.com/Xilinx/linux-xlnx into arm/soc
 
-But since I was editing, here is the latest version..
+elapsed time: 529m
+
+configs tested: 158
+configs skipped: 0
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+um                                  defconfig
+um                             i386_defconfig
+um                           x86_64_defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                               rhel-7.6
+h8300                    h8300h-sim_defconfig
+alpha                randconfig-a001-20200122
+m68k                 randconfig-a001-20200122
+mips                 randconfig-a001-20200122
+nds32                randconfig-a001-20200122
+parisc               randconfig-a001-20200122
+riscv                randconfig-a001-20200122
+x86_64               randconfig-a001-20200122
+x86_64               randconfig-a002-20200122
+x86_64               randconfig-a003-20200122
+i386                 randconfig-a001-20200122
+i386                 randconfig-a002-20200122
+i386                 randconfig-a003-20200122
+h8300                     edosk2674_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+csky                 randconfig-a001-20200122
+openrisc             randconfig-a001-20200122
+s390                 randconfig-a001-20200122
+sh                   randconfig-a001-20200122
+xtensa               randconfig-a001-20200122
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+sparc                            allyesconfig
+x86_64               randconfig-g001-20200122
+x86_64               randconfig-g002-20200122
+x86_64               randconfig-g003-20200122
+i386                 randconfig-g001-20200122
+i386                 randconfig-g002-20200122
+i386                 randconfig-g003-20200122
+i386                                defconfig
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+x86_64               randconfig-c001-20200122
+x86_64               randconfig-c002-20200122
+x86_64               randconfig-c003-20200122
+i386                 randconfig-c001-20200122
+i386                 randconfig-c002-20200122
+i386                 randconfig-c003-20200122
+c6x                  randconfig-a001-20200122
+h8300                randconfig-a001-20200122
+microblaze           randconfig-a001-20200122
+nios2                randconfig-a001-20200122
+sparc64              randconfig-a001-20200122
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+x86_64               randconfig-d001-20200122
+x86_64               randconfig-d002-20200122
+x86_64               randconfig-d003-20200122
+i386                 randconfig-d001-20200122
+i386                 randconfig-d002-20200122
+i386                 randconfig-d003-20200122
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+x86_64               randconfig-b001-20200122
+x86_64               randconfig-b002-20200122
+x86_64               randconfig-b003-20200122
+i386                 randconfig-b001-20200122
+i386                 randconfig-b002-20200122
+i386                 randconfig-b003-20200122
+i386                             alldefconfig
+i386                              allnoconfig
+i386                             allyesconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+arc                  randconfig-a001-20200122
+arm                  randconfig-a001-20200122
+arm64                randconfig-a001-20200122
+ia64                 randconfig-a001-20200122
+powerpc              randconfig-a001-20200122
+sparc                randconfig-a001-20200122
+parisc                            allnoconfig
+parisc                            allyesonfig
+parisc                         b180_defconfig
+parisc                        c3000_defconfig
+parisc                              defconfig
+x86_64               randconfig-h001-20200122
+x86_64               randconfig-h002-20200122
+x86_64               randconfig-h003-20200122
+i386                 randconfig-h001-20200122
+i386                 randconfig-h002-20200122
+i386                 randconfig-h003-20200122
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+ia64                                defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+x86_64               randconfig-e001-20200122
+x86_64               randconfig-e002-20200122
+x86_64               randconfig-e003-20200122
+i386                 randconfig-e001-20200122
+i386                 randconfig-e002-20200122
+i386                 randconfig-e003-20200122
 
 ---
-
-Index: linux-2.6/kernel/locking/qspinlock_cna.h
-===================================================================
---- /dev/null
-+++ linux-2.6/kernel/locking/qspinlock_cna.h
-@@ -0,0 +1,261 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _GEN_CNA_LOCK_SLOWPATH
-+#error "do not include this file"
-+#endif
-+
-+#include <linux/topology.h>
-+
-+/*
-+ * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
-+ *
-+ * In CNA, spinning threads are organized in two queues, a primary queue for
-+ * threads running on the same NUMA node as the current lock holder, and a
-+ * secondary queue for threads running on other nodes. Schematically, it looks
-+ * like this:
-+ *
-+ *    cna_node
-+ *   +----------+     +--------+         +--------+
-+ *   |mcs:next  | --> |mcs:next| --> ... |mcs:next| --> NULL  [Primary queue]
-+ *   |mcs:locked| -.  +--------+         +--------+
-+ *   +----------+  |
-+ *                 `----------------------.
-+ *                                        v
-+ *                 +--------+         +--------+
-+ *                 |mcs:next| --> ... |mcs:next|            [Secondary queue]
-+ *                 +--------+         +--------+
-+ *                     ^                    |
-+ *                     `--------------------'
-+ *
-+ * N.B. locked := 1 if secondary queue is absent. Otherwise, it contains the
-+ * encoded pointer to the tail of the secondary queue, which is organized as a
-+ * circular list.
-+ *
-+ * After acquiring the MCS lock and before acquiring the spinlock, the lock
-+ * holder scans the primary queue looking for a thread running on the same node
-+ * (pre-scan). If found (call it thread T), all threads in the primary queue
-+ * between the current lock holder and T are moved to the end of the secondary
-+ * queue.  If such T is not found, we make another scan of the primary queue
-+ * when unlocking the MCS lock (post-scan), starting at the node where pre-scan
-+ * stopped. If both scans fail to find such T, the MCS lock is passed to the
-+ * first thread in the secondary queue. If the secondary queue is empty, the
-+ * lock is passed to the next thread in the primary queue.
-+ *
-+ * For more details, see https://arxiv.org/abs/1810.05600.
-+ *
-+ * Authors: Alex Kogan <alex.kogan@oracle.com>
-+ *          Dave Dice <dave.dice@oracle.com>
-+ */
-+
-+struct cna_node {
-+	struct mcs_spinlock	mcs;
-+	int			numa_node;
-+	u32			encoded_tail;    /* self */
-+	u32			partial_order;
-+};
-+
-+static void __init cna_init_nodes_per_cpu(unsigned int cpu)
-+{
-+	struct mcs_spinlock *base = per_cpu_ptr(&qnodes[0].mcs, cpu);
-+	int numa_node = cpu_to_node(cpu);
-+	int i;
-+
-+	for (i = 0; i < MAX_NODES; i++) {
-+		struct cna_node *cn = (struct cna_node *)grab_mcs_node(base, i);
-+
-+		cn->numa_node = numa_node;
-+		cn->encoded_tail = encode_tail(cpu, i);
-+		/*
-+		 * @encoded_tail has to be larger than 1, so we do not confuse
-+		 * it with other valid values for @locked or @partial_order
-+		 * (0 or 1)
-+		 */
-+		WARN_ON(cn->encoded_tail <= 1);
-+	}
-+}
-+
-+static int __init cna_init_nodes(void)
-+{
-+	unsigned int cpu;
-+
-+	/*
-+	 * this will break on 32bit architectures, so we restrict
-+	 * the use of CNA to 64bit only (see arch/x86/Kconfig)
-+	 */
-+	BUILD_BUG_ON(sizeof(struct cna_node) > sizeof(struct qnode));
-+	/* we store an ecoded tail word in the node's @locked field */
-+	BUILD_BUG_ON(sizeof(u32) > sizeof(unsigned int));
-+
-+	for_each_possible_cpu(cpu)
-+		cna_init_nodes_per_cpu(cpu);
-+
-+	return 0;
-+}
-+early_initcall(cna_init_nodes);
-+
-+/*
-+ * cna_splice_tail -- splice nodes in the primary queue between [first, last]
-+ * onto the secondary queue.
-+ */
-+static void cna_splice_tail(struct mcs_spinlock *node,
-+			    struct mcs_spinlock *first,
-+			    struct mcs_spinlock *last)
-+{
-+	/* remove [first,last] */
-+	node->next = last->next;
-+
-+	/* stick [first,last] on the secondary queue tail */
-+	if (node->locked <= 1) { /* if secondary queue is empty */
-+		/* create secondary queue */
-+		last->next = first;
-+	} else {
-+		/* add to the tail of the secondary queue */
-+		struct mcs_spinlock *tail_2nd = decode_tail(node->locked);
-+		struct mcs_spinlock *head_2nd = tail_2nd->next;
-+
-+		tail_2nd->next = first;
-+		last->next = head_2nd;
-+	}
-+
-+	node->locked = ((struct cna_node *)last)->encoded_tail;
-+}
-+
-+/*
-+ * cna_order_queue - scan the primary queue looking for the first lock node on
-+ * the same NUMA node as the lock holder and move any skipped nodes onto the
-+ * secondary queue.
-+ *
-+ * Returns 0 if a matching node is found; otherwise return the encoded pointer
-+ * to the last element inspected (such that a subsequent scan can continue there).
-+ *
-+ * The worst case complexity of the scan is O(n), where n is the number
-+ * of current waiters. However, the amortized complexity is close to O(1),
-+ * as the immediate successor is likely to be running on the same node once
-+ * threads from other nodes are moved to the secondary queue.
-+ *
-+ * XXX does not compute; given equal contention it should average to O(nr_nodes).
-+ */
-+static u32 cna_order_queue(struct mcs_spinlock *node,
-+			   struct mcs_spinlock *iter)
-+{
-+	struct cna_node *cni = (struct cna_node *)READ_ONCE(iter->next);
-+	struct cna_node *cn = (struct cna_node *)node;
-+	int nid = cn->numa_node;
-+	struct cna_node *last;
-+
-+	/* find any next waiter on 'our' NUMA node */
-+	for (last = cn;
-+	     cni && cni->numa_node != nid;
-+	     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
-+		;
-+
-+	if (!cna)
-+		return last->encoded_tail; /* continue from here */
-+
-+	if (last != cn)	/* did we skip any waiters? */
-+		cna_splice_tail(node, node->next, (struct mcs_spinlock *)last);
-+
-+	return 0;
-+}
-+
-+/*
-+ * cna_splice_head -- splice the entire secondary queue onto the head of the
-+ * primary queue.
-+ */
-+static cna_splice_head(struct qspinlock *lock, u32 val,
-+		       struct mcs_spinlock *node, struct mcs_spinlock *next)
-+{
-+	struct mcs_spinlock *head_2nd, *tail_2nd;
-+
-+	tail_2nd = decode_tail(node->locked);
-+	head_2nd = tail_2nd->next;
-+
-+	if (lock) {
-+		u32 new = ((struct cna_node *)tail_2nd)->encoded_tail | _Q_LOCKED_VAL;
-+		if (!atomic_try_cmpxchg_relaxed(&lock->val, &val, new))
-+			return NULL;
-+
-+		/*
-+		 * The moment we've linked the primary tail we can race with
-+		 * the WRITE_ONCE(prev->next, node) store from new waiters.
-+		 * That store must win.
-+		 */
-+		cmpxchg_relaxed(&tail_2nd->next, head_2nd, next);
-+	} else {
-+		tail_2nd->next = next;
-+	}
-+
-+	return head_2nd;
-+}
-+
-+/* Abuse the pv_wait_head_or_lock() hook to get some work done */
-+static __always_inline u32 cna_wait_head_or_lock(struct qspinlock *lock,
-+						 struct mcs_spinlock *node)
-+{
-+	struct cna_node *cn = (struct cna_node *)node;
-+
-+	/*
-+	 * Try and put the time otherwise spend spin waiting on
-+	 * _Q_LOCKED_PENDING_MASK to use by sorting our lists.
-+	 */
-+	cn->partial_order = cna_order_queue(node, node);
-+
-+	return 0; /* we lied; we didn't wait, go do so now */
-+}
-+
-+static inline bool cna_try_clear_tail(struct qspinlock *lock, u32 val,
-+				      struct mcs_spinlock *node)
-+{
-+	struct mcs_spinlock *next;
-+
-+	/*
-+	 * We're here because the primary queue is empty; check the secondary
-+	 * queue for remote waiters.
-+	 */
-+	if (node->locked > 1) {
-+		/*
-+		 * When there are waiters on the secondary queue move them back
-+		 * onto the primary queue and let them rip.
-+		 */
-+		next = cna_splice_head(lock, val, node, NULL);
-+		if (next) {
-+			arch_mcs_pass_lock(&head_2nd->locked, 1);
-+			return true;
-+		}
-+
-+		return false;
-+	}
-+
-+	/* Both queues empty. */
-+	return __try_clear_tail(lock, val, node);
-+}
-+
-+static inline void cna_pass_lock(struct mcs_spinlock *node,
-+				 struct mcs_spinlock *next)
-+{
-+	struct cna_node *cn = (struct cna_node *)node;
-+	u32 partial_order = cn->partial_order;
-+	u32 val = _Q_LOCKED_VAL;
-+
-+	/* cna_wait_head_or_lock() left work for us. */
-+	if (partial_order) {
-+		partial_order = cna_order_queue(node, decode_tail(partial_order));
-+
-+	if (!partial_order) {
-+		/*
-+		 * We found a local waiter; reload @next in case we called
-+		 * cna_order_queue() above.
-+		 */
-+		next = node->next;
-+		val |= node->locked;	/* preseve secondary queue */
-+
-+	} else if (node->locked > 1) {
-+		/*
-+		 * When there are no local waiters on the primary queue, splice
-+		 * the secondary queue onto the primary queue and pass the lock
-+		 * to the longest waiting remote waiter.
-+		 */
-+		next = cna_splice_head(NULL, 0, node, next);
-+	}
-+
-+	arch_mcs_pass_lock(&next->locked, val);
-+}
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
