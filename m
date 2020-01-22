@@ -2,89 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7E71145C64
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 20:26:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E16B7145C6B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Jan 2020 20:29:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A7gOf2voqrxCCJP4LJVAkjrm7A7JcKBqAeXRKXIdeeY=; b=appUzWlC05xZBY
-	fQ4MIoFpt5qnrHnaLEgXjcKRjYn0HRONARfd6zbwhx96ef4wwrOFUXpbS0sR27ZB7fNjIwfklYjon
-	a8KXbY88gj2VMKSQDzpesBi1k7V5XrgfnFcCECfn8qr5r06beCXVXLCB5XdXteGFaNTZLi9SsIC8d
-	ii9vSiLWX8W7CNImYZ+tyOpTYg5G+tuTICXmGmz+jVayR55ZYsXpmBoUBm5JmXBLhM7FnJZytXWhH
-	ftIVSt0gDHa7+kU5PQSq3laRb5tZRWxJ7fjOmevyZ2WC9ein4OHcgVoCmRXgJGoa2lCiMCgAWVz8A
-	ojuVdOLgl+IydM3OyGAw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IuUheZkgYsZ8kKJCU7XZChf4PIS2wxtKh97Au3U+3xc=; b=Pd7s6bSrW1WWJR
+	ZQPEUW3tgDo8btmprosLW0j7doNWXbHfsmfkMWykB/E4DelFXhLlJsn5kp84sph9OpsiYfcdoSwaJ
+	QHV9KAbP70hwlRVldNXrYQq1yYg5/h//UkRnS78DPP7ntOUnNa1hR+jhlJHYpnZPbkL/i4uF232h9
+	I61mZe30wbG1TU2fuRF+zmZjvS1EOOdsXMWmGFMJOwkcAeA5It4HgcdHgR9w2Op58Ugm+LjvMFsd/
+	WL0Xj9fdaf3/XI009MZjPawmBNHMdNBqBy3qpJg2maig0LLpq0bZNOaMfwtUxRuJaLbqh65hZi7R1
+	CI55GM1zwr5mMHuDBTew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuLdp-00013B-EN; Wed, 22 Jan 2020 19:26:17 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1iuLgw-0001dL-Ax; Wed, 22 Jan 2020 19:29:30 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuLde-00012C-Mz
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 19:26:08 +0000
-Received: by mail-wr1-x434.google.com with SMTP id t2so363048wrr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Jan 2020 11:26:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=lenanzhAd5ZmJ8ZelJXp+OnhSKZtXCOjL7aSTd19JMM=;
- b=AmWTV64rARiYokUIsTZCE6XYmN6FscsMa7ycxoxDYCLpMr2sDbyc4DtB/bMcP3beVO
- c/ownfzw2xKwktV0NtzzZdCttwI35llhXZ6S2jaCTzmrvBy7ufANOTrIv9gmpt+HhHbs
- yjHDokOiY2ib5xo2bJCv0C5Zhb0QH2LtVYaMU7J9eWh9gMmlWuXCtAc1ijShk6c9vdLr
- L/7BCDsCXzBDefDqLpwA8rzqoOqw6qvtsfljlqOfNo0gTgErvf7hwHFU0LjqBxDB5bSd
- 7EfChP7JaPgnJLIVU5nWYEDut3puqwfdRUit9uGa/Trdn5ZmMXUtNN9TkuLQh63oSdur
- jJnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=lenanzhAd5ZmJ8ZelJXp+OnhSKZtXCOjL7aSTd19JMM=;
- b=g/xEOGur9Gq21eNzmNFaa2qvL6qOe0cZMwNA6Lt5Y4wgyliMj23LdHZlTiBLhpTkbg
- 0MZfTFXkpmaIXJG1XOdWGqnYQctzhpsKf4OiZ2PQ0WWYeEzuFKKWGd/6rP///7vypLan
- SE/xj9UCd3JNeXSVofcAU7MLPA8WlPH00yBMsKS9W3foE/gw+9+Ql1VkiZinhPO/pxMD
- quS4CFsfOy9qR5Sl0zlp9wJGIrbkG+mD66obHD48fgSgTaTnytUaqOvdMTpWNl3QnAFv
- cbMSB6KC7tvxNS6HRWOO+zmAKq15RDhACwUB9neRiYQ5GrAVRM/ZPeymBfq0m6dyVwTs
- wWag==
-X-Gm-Message-State: APjAAAUReFa9xCTqQASxtpGSGuTlnsu/uLS1rP+vnAl16EdRsqhvZx/D
- J5kRHJ4jEUT756s4pYHcJm17UicTcWrAIg==
-X-Google-Smtp-Source: APXvYqxPim9z2Sj9OjL8AqnRKdGAJR7kLVCCB2tXUZMqrn0M+DZ0etI46zsM8E7Zp95F+s4AagQleg==
-X-Received: by 2002:adf:fa87:: with SMTP id h7mr13515107wrr.172.1579721163151; 
- Wed, 22 Jan 2020 11:26:03 -0800 (PST)
-Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id m7sm58599030wrr.40.2020.01.22.11.26.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Jan 2020 11:26:02 -0800 (PST)
-Message-ID: <5e28a1ca.1c69fb81.ceb6a.b83c@mx.google.com>
-Date: Wed, 22 Jan 2020 11:26:02 -0800 (PST)
+ id 1iuLgm-0001c1-Or
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 19:29:22 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 482wSr1hQCz1rh7v;
+ Wed, 22 Jan 2020 20:29:16 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 482wSr13VJz1qrnG;
+ Wed, 22 Jan 2020 20:29:16 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id sn4K-R6IxAgY; Wed, 22 Jan 2020 20:29:14 +0100 (CET)
+X-Auth-Info: nnhbN4JxEyR9kaafm0F2Jd/LipmWamMPaqS5s2fEZz8=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed, 22 Jan 2020 20:29:14 +0100 (CET)
+Subject: Re: STM32MP1 level triggered interrupts
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
+ <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
+ <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
+ <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
+Date: Wed, 22 Jan 2020 20:29:13 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Report-Type: build
-X-Kernelci-Kernel: v5.5-rc7-78-g7bf8ec415871
-Subject: arm64/for-kernelci build: 3 builds: 0 failed,
- 3 passed (v5.5-rc7-78-g7bf8ec415871)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+In-Reply-To: <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_112606_801343_12B37608 
-X-CRM114-Status: UNSURE (   3.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200122_112920_958070_20B95848 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.10 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.10 listed in wl.mailspike.net]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:434 listed in]
- [list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,30 +83,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
-NS41LXJjNy03OC1nN2JmOGVjNDE1ODcxKQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
-cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS41LXJj
-Ny03OC1nN2JmOGVjNDE1ODcxLwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
-IERlc2NyaWJlOiB2NS41LXJjNy03OC1nN2JmOGVjNDE1ODcxCkdpdCBDb21taXQ6IDdiZjhlYzQx
-NTg3MWVlYjkwMTA4ZDMzZjMxMjkzZjI5MTdjOGUwMjIKR2l0IFVSTDogZ2l0Oi8vZ2l0Lmtlcm5l
-bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4LmdpdApCdWlsdDogMSB1
-bmlxdWUgYXJjaGl0ZWN0dXJlCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKRGV0YWlsZWQgcGVy
-LWRlZmNvbmZpZyBidWlsZCByZXBvcnRzOgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbW9k
-Y29uZmlnIChhcm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBz
-ZWN0aW9uIG1pc21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmFsbG5vY29uZmlnIChh
-cm02NCwgZ2NjLTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1p
-c21hdGNoZXMKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmRlZmNvbmZpZyAoYXJtNjQsIGdjYy04
-KSDigJQgUEFTUywgMCBlcnJvcnMsIDAgd2FybmluZ3MsIDAgc2VjdGlvbiBtaXNtYXRjaGVzCgot
-LS0KRm9yIG1vcmUgaW5mbyB3cml0ZSB0byA8aW5mb0BrZXJuZWxjaS5vcmc+CgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 1/22/20 6:19 PM, Alexandre Torgue wrote:
+
+Hi,
+
+[...]
+
+>>> Concerning, your question:
+>>>
+>>> Setting your gpioC interruption as "falling edge" should be enough. On
+>>> gpioCx falling edge, a high-level signal is generated by exti and sent
+>>> to GIC (which triggers GIC interrupt). This signal remains high until
+>>> stm32_irq_ack is called.
+>>>
+>>> So you only need: (ex for gpioc 1).
+>>>
+>>> interrupt-parent = <&gpioc>;
+>>> interrupts = <1 IRQ_TYPE_EDGE_FALLING>;
+>>
+>> How does this deal with the case where the device holds the interrupt
+>> line low (since it's level-sensitive, active low) after the driver
+>> interrupt handler finishes ? Does such condition generate another
+>> interrupt and call the driver interrupt handler again ? I would expect
+>> the answer is no, because the interrupt is edge-triggered and there is
+>> no edge.
+> 
+> Your assumption is good. If your device continue to hold the line to low
+> at the end of your interrupt handler, no more interrupt will be generated.
+
+But does that basically mean that such a device cannot be used with
+STM32MP1 or am I fundamentally mistaken and don't understand how a
+level-triggered interrupt works ? :)
+
+-- 
+Best regards,
+Marek Vasut
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
