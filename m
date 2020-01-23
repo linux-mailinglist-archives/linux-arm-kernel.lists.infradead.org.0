@@ -2,59 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 635FA146FCF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 18:35:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80043146FD8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 18:37:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bLrcnr1IqKLKiqrseZWM+JO04gKRGF8WlPXYWn31Zv8=; b=TkGDpD19bYsBOQ
-	683VIbwK/Rl0kdHZ92CVKKnPA/Re7ra5KCCaawlFkLhn5oGeEX8xu278EAMRHbbMXt+YRdUBCHLan
-	hJ+Jx24VMM1EbT6jGmPdTdMVjtT6KVJ7lbt17FMrzz3g5mm8cFa8Hp13uryag0SHdVxlg9TgsWCo4
-	6F6iflXYjvgCZ83V2LVUdl6aq10ut43ShPguQuxLgXWd61zzlz//SwjX0OYOkP+3upIy16HDCEAaC
-	rU8q8gKzx9HZMtxjH2dlRv2Ew0Zzr+dmRet1/CEBcUamGcU9Xiipq2Uk8gWDyEJcSQdbhhuME+Kln
-	F1l33LYyJlYkz/8JpNNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=evqh/tokJbpcO8E6jU+Z6ev+vGJirvM+pXl0nLM2gK8=; b=MDyz+ej2ggnXjX
+	FylH+6FhIluIYiwOOnKWUA0YjPb0EOQoYPP8Jx5MmULxKWEtU+W/yRfHVLdX8u/cd2wivlNDTXUNP
+	MuPpMmt62jXJ5pV0SZYeqXq6YG1oTYsyvK4UCSonvkDb+s2opyPM+tGL+aqv1PyxbC3pYW9uib3SK
+	ry17E1beYswrxDAouwGwjcCS7MnLFrcuqDhVS8lTcOAmy4O+xgwrL+SIPW+a2DmB5HS9jzANpcVzS
+	5eKF+sdVbA1RX5uz/TVKsyali6W+oJFxRgpXCt3OZkp+AtSfAytrnLAOmgSxQme6A5eSg3rBAJPZq
+	Pr7tJqJeraJ/QhH7BePg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iugNv-0007O8-WC; Thu, 23 Jan 2020 17:35:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iugNg-00074a-T5
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 17:35:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B97A51FB;
- Thu, 23 Jan 2020 09:34:58 -0800 (PST)
-Received: from localhost (e108754-lin.cambridge.arm.com [10.1.199.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A0653F52E;
- Thu, 23 Jan 2020 09:34:58 -0800 (PST)
-Date: Thu, 23 Jan 2020 17:34:56 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v2 2/6] arm64: trap to EL1 accesses to AMU counters from
- EL0
-Message-ID: <20200123173456.GA20475@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-3-ionela.voinescu@arm.com>
- <dcecb179-02f1-0608-6a84-5b2dd0bbcdb3@arm.com>
+	id 1iugPc-0000F6-EP; Thu, 23 Jan 2020 17:37:00 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iugPS-0000ED-0W
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 17:36:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1579801006;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=D54wJCq+dcoWe+lOlchk/VMBTGpgOIcpCavPiOTlG1Y=;
+ b=gnrFCkM0ISO8DmSWmwUpnYxPERc2I4THwxqZxbmifoyV/56vz8kP7FEl0k1d66QCFx/MKS
+ Qo7Rzd65QOGQ19onYE6hqY946+P0HmCIhKbQ8v9zVGPNLlEVBQ0JKPW5l5d6kIQ018vyWa
+ tj/YjET8iMF7qg/Vr1Nkrj4AfSDY1AE=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-360-d4aV-R_nMuWLziZ8mN2NoA-1; Thu, 23 Jan 2020 12:36:41 -0500
+X-MC-Unique: d4aV-R_nMuWLziZ8mN2NoA-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id BF6A31005514;
+ Thu, 23 Jan 2020 17:36:39 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 7762F8644F;
+ Thu, 23 Jan 2020 17:36:37 +0000 (UTC)
+Subject: Re: [PATCH -next] arm64/spinlock: fix a -Wunused-function warning
+To: Qian Cai <cai@lca.pw>, Will Deacon <will@kernel.org>
+References: <20200123165614.GA20126@willie-the-truck>
+ <48DF011A-3074-422C-BFBA-1A9F2EF4A7BA@lca.pw>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <f95c27b1-a8ca-bac8-e6bb-07ca9e87bcd9@redhat.com>
+Date: Thu, 23 Jan 2020 12:36:37 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dcecb179-02f1-0608-6a84-5b2dd0bbcdb3@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <48DF011A-3074-422C-BFBA-1A9F2EF4A7BA@lca.pw>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_093500_983228_4846CEB4 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_093650_128973_CBFBA9DC 
+X-CRM114-Status: GOOD (  11.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,46 +92,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
+Cc: peterz@infradead.org, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, mingo@redhat.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday 23 Jan 2020 at 17:04:32 (+0000), Valentin Schneider wrote:
-> On 18/12/2019 18:26, Ionela Voinescu wrote:
-> > +/*
-> > + * reset_amuserenr_el0 - reset AMUSERENR_EL0 if AMUv1 present
-> > + */
-> > +	.macro	reset_amuserenr_el0, tmpreg
-> > +	mrs	\tmpreg, id_aa64pfr0_el1	// Check ID_AA64PFR0_EL1
-> > +	ubfx	\tmpreg, \tmpreg, #ID_AA64PFR0_AMU_SHIFT, #4
-> > +	cbz	\tmpreg, 9000f			// Skip if no AMU present
-> > +	msr_s	SYS_AMUSERENR_EL0, xzr		// Disable AMU access from EL0
-> > +9000:
-> 
-> AIUI you can steer away from the obscure numbering scheme and define the
-> label using the macro counter:
-> 
-> 	cbz \tmpreg, .Lskip_\@
-> 	[...]
-> .Lskip_\@:
-> 	.endm
-> 
+On 1/23/20 12:31 PM, Qian Cai wrote:
+>
+>> On Jan 23, 2020, at 11:56 AM, Will Deacon <will@kernel.org> wrote:
+>>
+>> Damn, the whole point of this was to warn in the case that
+>> vcpu_is_preempted() does get defined for arm64. Can we force it to evaluate
+>> the macro argument instead (e.g. ({ (cpu), false; }) or something)?
+> Actually, static inline should be better.
+>
+> #define vcpu_is_preempted vcpu_is_preempted
+> static inline bool vcpu_is_preempted(int cpu)
+> {
+> 	return false;
+> }
+>
+Yes, that may work.
 
-Cool, good to know! Although calling it "obscure numbering scheme" does
-make it more appealing to use.
+Cheers,
+Longman
 
-Thanks, I'll change it in the next version :).
-
-Ionela.
-
-> 
-> > +	.endm
 
 _______________________________________________
 linux-arm-kernel mailing list
