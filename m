@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65EED147438
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFCFF147439
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AtXCvUgNfv1OIir1mX1oOzibtMynMoNqbZUjtWwInOE=; b=shSMb5iaENOBDe
-	AqqQUBCVX/rsqQB8upanTfs4sPdU5lQAnzjxqyXOlKJCJeX/daB1MfO3G5NS5WvF1kaXWRd9AxST4
-	AmYvR88DvctNi/iVo/94ZH/QMJ7K+N/OTtXsWG+okATaWNZyTxLkfD1bCyEz3tGZSFjPBbqeBJSsl
-	tfZlGgHDEfk/lvhK511UqitH0dpALNrxVV37k0tWQP6bCPiPu80M+IUIG2gNVsKinoWy+TmM5a3Gc
-	TyNZ+j6fEcwuGfCKgueY0L8RO8HGwL0BpTK8Pe9ZhxDKpY67xDK1RaMw1Tiuo4/MMg49hTfExrRjX
-	TvGxAfwdEqGeGHEvffPg==;
+	List-Owner; bh=gJg1rdr8/xKan6y7KzXzA9NncUALHhaKQ2icDxPNswQ=; b=kO66i6Ezbvymzq
+	5JUokK0TCWo+0vK0tTmgxSE87DqQ5mmBY3WAbQ8D8x6BCm5Z+8deSomx1nhpJ+Z9cLsTzuVylBoh+
+	0637a8uaD2HdPrW0Gb+sEIx7OOG/iI0qy/0u3uch+1viCYvFAA0htJbWT6YDOsCOByfpEWCGVixWq
+	vzDqiuv9gOJIjtLj3SHBbYlPhmC77Iki1QP6UwOUMarJHW4uZPN3i/a3dZid+8dGJEMM7NUPdxB8c
+	hKxAO25YvssZleg1hz90s0HpVraqB/oLzAVrtl5ZDicbMvM/42eEFasaHQNRlUJ/xnLruwbZAApHf
+	8eXcfEKY6BFEG5GqOfQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulRq-0001fr-1g; Thu, 23 Jan 2020 22:59:38 +0000
+	id 1iulS0-0001x3-Cr; Thu, 23 Jan 2020 22:59:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulR9-0001FE-Me
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:58:59 +0000
+ id 1iulRE-0001J0-Ai
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:59:01 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D91902253D;
- Thu, 23 Jan 2020 22:58:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B264120718;
+ Thu, 23 Jan 2020 22:58:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579820335;
- bh=iaSKJUdnVS5DO31uxhva3S6lRFXmYS2CVq5c3333vxA=;
+ s=default; t=1579820339;
+ bh=zEuOC3td88tpHLgeBxK5wnCGR91LNEGrEovg5lXPIWk=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=i0KgZcpzE8WlpqzGjZ1nKrq7dQNxAxuwF3XEEAH68aY0TmBu2CFX/jjEVHNIGmgUy
- z0nZnqt8MVhfZxaQRwbGuZ+gNMH7/+9KswJs4yqpg3jCEMwm8NRb0KC7JsdnR5eqi2
- L4MHNkoeKOhoba6snvhUMXA33FnOd6ws2sTK5bnY=
+ b=Dluiq1xHhJ2Gs+g+ZFcZgKpL8P/eAedGwAdaXjAzu2QplsivR52091g9VkeMirFEP
+ jebgeC+xNRqUWjKg8MGbvB0rCiLhlOn1Wj6kB1bwN08czoJej8O27m818gZ31q1arc
+ TlWQuxLXCTj34+k7QbYjzyIG3eUIS1CZMkAYsiRA=
 MIME-Version: 1.0
-In-Reply-To: <1575527759-26452-5-git-send-email-rajan.vaja@xilinx.com>
+In-Reply-To: <1575527759-26452-6-git-send-email-rajan.vaja@xilinx.com>
 References: <1574415814-19797-1-git-send-email-rajan.vaja@xilinx.com>
  <1575527759-26452-1-git-send-email-rajan.vaja@xilinx.com>
- <1575527759-26452-5-git-send-email-rajan.vaja@xilinx.com>
-Subject: Re: [PATCH v3 4/6] clk: zynqmp: Add support for get max divider
+ <1575527759-26452-6-git-send-email-rajan.vaja@xilinx.com>
+Subject: Re: [PATCH v3 5/6] clk: zynqmp: Fix divider calculation
 From: Stephen Boyd <sboyd@kernel.org>
 To: Rajan Vaja <rajan.vaja@xilinx.com>, gustavo@embeddedor.com,
  jolly.shah@xilinx.com, m.tretter@pengutronix.de, mark.rutland@arm.com,
  mdf@kernel.org, michal.simek@xilinx.com, mturquette@baylibre.com,
  nava.manne@xilinx.com, robh+dt@kernel.org, tejas.patel@xilinx.com
 User-Agent: alot/0.8.1
-Date: Thu, 23 Jan 2020 14:58:54 -0800
-Message-Id: <20200123225854.D91902253D@mail.kernel.org>
+Date: Thu, 23 Jan 2020 14:58:59 -0800
+Message-Id: <20200123225859.B264120718@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_145855_901244_7AC912C1 
-X-CRM114-Status: UNSURE (   5.84  )
+X-CRM114-CacheID: sfid-20200123_145900_417768_6A0DD732 
+X-CRM114-Status: UNSURE (   6.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -89,12 +89,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Rajan Vaja (2019-12-04 22:35:57)
-> To achieve best possible rate, maximum limit of divider is required
-> while computation. Get maximum supported divisor from firmware. To
-> maintain backward compatibility assign maximum possible value(0xFFFF)
-> if query for max divisor is not successful.
+Quoting Rajan Vaja (2019-12-04 22:35:58)
+> zynqmp_clk_divider_round_rate() returns actual divider value
+> after calculating from parent rate and desired rate, even though
+> that rate is not supported by single divider of hardware. It is
+> also possible that such divisor value can be achieved through 2
+> different dividers. As, Linux tries to set such divisor value(out
+> of range) in single divider set divider is getting failed.
 > 
+> Fix the same by computing best possible combination of two
+> divisors which provides more accurate clock rate.
+> 
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
 > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 > ---
 
