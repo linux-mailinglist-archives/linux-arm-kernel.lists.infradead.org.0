@@ -2,45 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DDDA145F62
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 00:53:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB717146016
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 01:48:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Py94Uhoj1iFPMV/b0vECM3w+3cbnEOe9OKMbuhmqqCM=; b=c9mhIGIlnxf1b9
-	aVTAtiJGF9EpsuXdWceh/IWZYJAOjhJdKJ+CX6fWr7YjkN13hSHq+HGJ/8HO5xaLXi07XXoYyTKLr
-	BcZiMl0PSJHjH210NbuzlKh+n6xUzsU58CKL+q0B67Nabz8x2FB1f2ubQIfWvcYOest74QELZiy5O
-	jWvFqRTmY85Gl9cNKARE7vgcjh3BoZInCy+BLftNyl3LZ2OnIpG0OKexICtRyXzccZVV59c1XHYQ/
-	q5XsI5IcOhdeVmQa6gCDqb/FaRY+eIim2pqA9riQtL55oRfe+zDgM7Y8j3VChr8WEf7BDYllsUQDt
-	075TrOqj6Pld5m4G6WnA==;
+	List-Owner; bh=UW+FqRh0OHjqjE+Joq+WBHa3H19j12jFsLheaTQkG38=; b=MOw6/jDVAbH2Qw
+	yTLubO+m/peOuV0Eevn/uNIo2d3k0rvMEkQZH2o2uTwW8JbzRtLENIpk9rvRusGlUUwlaOzo2bAs5
+	IiKeb5HH97B2qwBhlu5rZHJfzvFFFfNdV6VHmqHAjMfyQQh8c9uUPS5MVqtM+DlgQbOSRiQilqLpd
+	KlGEMrc9R3V54VcTi4pZjmXr3m+vSc94Phpe7Dszzbnbm0uw7BG0eyyGA0wx7nVgE4XXFpz7DkpqC
+	teDZASzq2UsvIgnf6fgY92AVKcweAg+5TL//FpXycbbhQ6PGYRQbVeVRfOZH/iCr4ULMc2P4WinDd
+	AFghAbsewaBXszVzYpKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuPns-0008FQ-Bb; Wed, 22 Jan 2020 23:52:56 +0000
+	id 1iuQfW-00076b-JG; Thu, 23 Jan 2020 00:48:22 +0000
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuPnk-0008Du-BF
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Jan 2020 23:52:49 +0000
+ id 1iuQfP-00076F-EJ; Thu, 23 Jan 2020 00:48:16 +0000
 Received: from [82.43.126.140] (helo=localhost)
  by youngberry.canonical.com with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
  (envelope-from <colin.king@canonical.com>)
- id 1iuPna-0000S8-Aw; Wed, 22 Jan 2020 23:52:38 +0000
+ id 1iuQfN-0006ib-2P; Thu, 23 Jan 2020 00:48:13 +0000
 From: Colin King <colin.king@canonical.com>
-To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- dmaengine@vger.kernel.org
-Subject: [PATCH] dmaengine: s3c24xx-dma: fix spelling mistake "to" -> "too"
-Date: Wed, 22 Jan 2020 23:52:37 +0000
-Message-Id: <20200122235237.2830344-1-colin.king@canonical.com>
+To: Russell King <linux@armlinux.org.uk>, Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Subject: [PATCH] ARM: rockchip: fix spelling mistake "to" -> "too"
+Date: Thu, 23 Jan 2020 00:48:07 +0000
+Message-Id: <20200123004807.2833556-1-colin.king@canonical.com>
 X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_155248_521025_5095B6A5 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20200122_164815_618244_29420C9A 
+X-CRM114-Status: GOOD (  11.05  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,24 +69,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Colin Ian King <colin.king@canonical.com>
 
-There is a spelling mistake in a dev_err message. Fix it.
+There is a spelling mistake in a pr_err message. Fix it.
 
 Signed-off-by: Colin Ian King <colin.king@canonical.com>
 ---
- drivers/dma/s3c24xx-dma.c | 2 +-
+ arch/arm/mach-rockchip/platsmp.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/dma/s3c24xx-dma.c b/drivers/dma/s3c24xx-dma.c
-index 1ed5dc1f597c..8e14c72d03f0 100644
---- a/drivers/dma/s3c24xx-dma.c
-+++ b/drivers/dma/s3c24xx-dma.c
-@@ -1198,7 +1198,7 @@ static int s3c24xx_dma_probe(struct platform_device *pdev)
+diff --git a/arch/arm/mach-rockchip/platsmp.c b/arch/arm/mach-rockchip/platsmp.c
+index 649e0a54784c..d60856898d97 100644
+--- a/arch/arm/mach-rockchip/platsmp.c
++++ b/arch/arm/mach-rockchip/platsmp.c
+@@ -180,7 +180,7 @@ static int __init rockchip_smp_prepare_sram(struct device_node *node)
  
- 	/* Basic sanity check */
- 	if (pdata->num_phy_channels > MAX_DMA_CHANNELS) {
--		dev_err(&pdev->dev, "to many dma channels %d, max %d\n",
-+		dev_err(&pdev->dev, "too many dma channels %d, max %d\n",
- 			pdata->num_phy_channels, MAX_DMA_CHANNELS);
+ 	rsize = resource_size(&res);
+ 	if (rsize < trampoline_sz) {
+-		pr_err("%s: reserved block with size 0x%x is to small for trampoline size 0x%x\n",
++		pr_err("%s: reserved block with size 0x%x is too small for trampoline size 0x%x\n",
+ 		       __func__, rsize, trampoline_sz);
  		return -EINVAL;
  	}
 -- 
