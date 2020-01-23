@@ -2,58 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C9A3146367
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 09:23:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08B6A146378
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 09:27:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8kmpLRbXmvA87YFG/QqeTU3bFX6z7pi2FUz9j0XDnyQ=; b=r3JwzJdOu2qxUZ
-	K8zXxFgaiiw2MXitZyANSC+Cg5vLk4j603yrxRrlYAZnOjcj6UrdIL+spiUdNt8rlldwUVols6/Zm
-	ImugPc+M3O0WLm8iZf0kQ8LIg4q/RRo/d6R2UCfrX/rl3QKt5TViejgFCYBZL5Nc2MxqilzVsTPdj
-	Ll6fqWN9OmXjpGs1FMnU96QKAf76NvKNvCqIlRlxbLSriYQTGqEmCR/K1Fum6s6QGT7wgcba3y1Sg
-	4BAv/GBMEbnSzwZm00M6/bxLx3IOz4F1tR23g4esAJpRitD8UnFwbg4zHraqMesXsWeRBTBMnxuf1
-	EydbOldIuBHSAwWg00QA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aZL0Y0luDs5UwX2RLYkKbkH3Jgn4iz0Q+9L2KZCNf4E=; b=fNlHb8QtJA6CkRRavLBJK+PqN
+	LAe2ZhrQErEVUs91iqp7EzmtOn5WzAVNNCjpUVtjECbsK76yRJQF1rL6aYB8+vlwA6VnWGsfxb+Ha
+	CrgCrGwIQ0OBIefR41YHBoF9/HQ4/bOMmKtgpVf83cHsCZXHVRpmpxZqHm3w4cXwo8DvrId6SeDCk
+	pQOxcsi7wKCbYZx5ChL7BB/z3C1a9u804yJlB7pnjNwggtaGsF527pPLPKfZhiEjrrEd7/9ugupbt
+	FXH2qCV6Wo8G33pxBI7QI7SCACWxeI0Ph7blUCSBKxi4fZ3pBF+0QxfhwpKKKXGh7YunMNMkHjWdu
+	BEtYPVGIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuXlr-00013v-HP; Thu, 23 Jan 2020 08:23:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuXlj-00013C-NT
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 08:23:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AADB1FB;
- Thu, 23 Jan 2020 00:23:12 -0800 (PST)
-Received: from [10.162.16.32] (p8cg001049571a15.blr.arm.com [10.162.16.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA1773F6C4;
- Thu, 23 Jan 2020 00:26:43 -0800 (PST)
-Subject: Re: [PATCH 0/2] mm/thp: rework the pmd protect changing flow
-To: Xuefeng Wang <wxf.wang@hisilicon.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, arnd@arndb.de,
- akpm@linux-foundation.org
-References: <20200123075514.15142-1-wxf.wang@hisilicon.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <50493410-c44c-7ef0-81f9-d4ce9a525c1f@arm.com>
-Date: Thu, 23 Jan 2020 13:54:32 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iuXpv-0003DW-Kq; Thu, 23 Jan 2020 08:27:35 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuXpk-0003DA-LM
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 08:27:26 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00N8OObr021705; Thu, 23 Jan 2020 09:27:21 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=Nr01ha+lcsDvMjgCfxNkcvdtf4fDpeD72xbYwInGTxI=;
+ b=BUo5zPLdKIz+FTx6AT/dLAi+Z9vaY+TEhYWP02yxAFDbPT9hEidn2wKZT/scugq7cldL
+ c0T8Tw9vA6bll/N7rKnlRFtA9Cpxiy+BrA2B5REoTJMyBTPy1QWitVX+cUBl8VrlIilO
+ G+mAMIfcWtsQgggSW2pqWJxPksBrMVAwLLzDsfxkQjqxJ707KuzUdg1wQtNffpuPZf4x
+ cj4bi0Sl3Ru8TrijIXkeQold7C2OPtYKCTuhxF2xt0NZB1FTmoMXBMFtarIQxgp4Orel
+ QujKca34KFxosFHfwWLgUT0X2nIel/XLr3zW87fpv0ktlvkv1/4icV45A5VysuHLrYSt fQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xkrc592vd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 23 Jan 2020 09:27:21 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CD25E100034;
+ Thu, 23 Jan 2020 09:27:16 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B69FE20EDED;
+ Thu, 23 Jan 2020 09:27:16 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 23 Jan
+ 2020 09:27:16 +0100
+Subject: Re: STM32MP1 level triggered interrupts
+To: Marek Vasut <marex@denx.de>, Linux ARM
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
+ <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
+ <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
+ <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+ <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
+Date: Thu, 23 Jan 2020 09:27:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200123075514.15142-1-wxf.wang@hisilicon.com>
+In-Reply-To: <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
 Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-22_08:2020-01-22,
+ 2020-01-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_002315_807954_106E7A91 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_002725_000116_67C95734 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,60 +103,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-mm@kvack.org, chenzhou10@huawei.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
 
-On 01/23/2020 01:25 PM, Xuefeng Wang wrote:
-> On KunPeng920 board. When changing permission of a large range region,
-> pmdp_invalidate() takes about 65% in profile (with hugepages) in JIT tool.
-> Kernel will flush tlb twice: first flush happens in pmdp_invalidate, second
-> flush happens at the end of change_protect_range(). The first pmdp_invalidate
-> is not necessary if the hardware support atomic pmdp changing. The atomic
-> changing pimd to zero can prevent the hardware from update asynchronous.
-> So reconstruct it and remove the first pmdp_invalidate. And the second tlb
-> flush can make sure the new tlb entry valid.
+On 1/22/20 8:29 PM, Marek Vasut wrote:
+> On 1/22/20 6:19 PM, Alexandre Torgue wrote:
 > 
-> This patch series add a pmdp_modify_prot transaction abstraction firstly.
-> Then add pmdp_modify_prot_start() in arm64, which uses pmdp_huge_get_and_clear()
-> to atomically fetch the pmd and zero the entry.
+> Hi,
+> 
+> [...]
+> 
+>>>> Concerning, your question:
+>>>>
+>>>> Setting your gpioC interruption as "falling edge" should be enough. On
+>>>> gpioCx falling edge, a high-level signal is generated by exti and sent
+>>>> to GIC (which triggers GIC interrupt). This signal remains high until
+>>>> stm32_irq_ack is called.
+>>>>
+>>>> So you only need: (ex for gpioc 1).
+>>>>
+>>>> interrupt-parent = <&gpioc>;
+>>>> interrupts = <1 IRQ_TYPE_EDGE_FALLING>;
+>>>
+>>> How does this deal with the case where the device holds the interrupt
+>>> line low (since it's level-sensitive, active low) after the driver
+>>> interrupt handler finishes ? Does such condition generate another
+>>> interrupt and call the driver interrupt handler again ? I would expect
+>>> the answer is no, because the interrupt is edge-triggered and there is
+>>> no edge.
+>>
+>> Your assumption is good. If your device continue to hold the line to low
+>> at the end of your interrupt handler, no more interrupt will be generated.
+> 
+> But does that basically mean that such a device cannot be used with
+> STM32MP1 or am I fundamentally mistaken and don't understand how a
+> level-triggered interrupt works ? :)
 
-There is a comment section in change_huge_pmd() which details how clearing
-the PMD entry there (in prot_numa case) can potentially race with another
-concurrent madvise(MADV_DONTNEED, ..) call. Here is the comment block for
-reference.
+You need to release the line in your device interrupt handler. If not, 
+yes, you will miss interrupts :$
 
-        /*
-         * In case prot_numa, we are under down_read(mmap_sem). It's critical
-         * to not clear pmd intermittently to avoid race with MADV_DONTNEED
-         * which is also under down_read(mmap_sem):
-         *
-         *      CPU0:                           CPU1:
-         *                              change_huge_pmd(prot_numa=1)
-         *                               pmdp_huge_get_and_clear_notify()
-         * madvise_dontneed()
-         *  zap_pmd_range()
-         *   pmd_trans_huge(*pmd) == 0 (without ptl)
-         *   // skip the pmd
-         *                               set_pmd_at();
-         *                               // pmd is re-established
-         *
-         * The race makes MADV_DONTNEED miss the huge pmd and don't clear it
-         * which may break userspace.
-         *
-         * pmdp_invalidate() is required to make sure we don't miss
-         * dirty/young flags set by hardware.
-         */
-
-By defining the new override with pmdp_huge_get_and_clear(), are not we
-now exposed to above race condition ?
-
-- Anshuman
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
