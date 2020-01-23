@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E70651466E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:38:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D120914671D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:45:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=St1ejChpFu3tmU3l0qt/mjQ0bS2SKgrg9DZ9g65gFC4=; b=Hs138foaUI5gfW
-	1e3UfEVY0urxzz8HVi+HVFrNgtfzEVNblqtR/JeBXSPaVMrxWMxm+ei7cwalE67MjxYXtzQ6lB9/3
-	r5ypx91Aw4ObM67TfERJjGoQn9UukbqcYJ2oxzs+z1WynHCJ10hSgHuedtjEAcqcwdO+JlYvqEWUQ
-	7A+D2NLTqXlh4XQzs2tLk6C69896Ez0GLJ6qKUzrQGpUmbJElGt3qukNsEfQeWK46SSpdy5X/d/74
-	EAk6UoidJq0EkCp+Es3HJpWIYuNaprU79eEwiXf0oSDVUVebq2oYB31XTSyi9d2MAdUkQ25WMbkN3
-	0vxw1XBjVr1Uw46Pq8cA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4iQvf7J8sRwhHznML2ha3SuwW4mAfsMywR81SeD6ql4=; b=hNf6P9qYphqAHt
+	EWbqokJrpgsbR0xHB1gA9sLP2AzH6rPZ6ZAAomcQ0SIM+wyAs9kotrTzBJhXgRY4hFPLBBUMRYXT+
+	GCK0mK/wCGXnztMnh4ZaaSyca/J78/Fvnoc0yVASiE8fFiE0KcICX5tZc+Z7VZjbTb+5zJrmLbyzU
+	2yGGDtG+tQbHCf1V3wrRmD/5sfqfN4H/HI2bHYX7/6zcMyVhQovw/LlRjTRlLQSp2lun2/f5x0lRn
+	b1RwSprt3YAr97WdPkpp5ltFWeD+WYX5kE6AFC+hra3EJXIjwQFlrvp7ODrVHEwT2THfc5D56TLrc
+	j4+LbpZV3XOOEejzRW6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuaoJ-0006RX-N4; Thu, 23 Jan 2020 11:38:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuaoA-0006RC-RP
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:38:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E13B1328;
- Thu, 23 Jan 2020 03:37:57 -0800 (PST)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA3513F6C4;
- Thu, 23 Jan 2020 03:37:56 -0800 (PST)
-Subject: Re: [PATCH V4] firmware: arm_scmi: Make scmi core independent of the
- transport type
-To: Viresh Kumar <viresh.kumar@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>
-References: <20200121183818.GA11522@bogus>
- <a9ec58818b5e0c982810e74efe3f5f22b930ae40.1579660436.git.viresh.kumar@linaro.org>
- <20200122121538.GA31240@bogus> <20200123103033.GA7511@bogus>
- <20200123112711.mggm7ayxcqnr54yf@vireshk-i7>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <6b614d90-6326-db81-12dc-a0b4a467400f@arm.com>
-Date: Thu, 23 Jan 2020 11:37:55 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1iuavZ-0001kN-Hc; Thu, 23 Jan 2020 11:45:37 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuaut-0000GZ-I4
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:44:57 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBinIw023470;
+ Thu, 23 Jan 2020 05:44:49 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579779889;
+ bh=056yP0wQc7y1OMqVn54WtC4Yn6DYkshBLN9I0yRi7e8=;
+ h=From:To:CC:Subject:Date;
+ b=cUIkrbLol1zXrJYj+GSwPOJQauBCLtHn6ZqwzVlf4XZMxM9vcmV9zXYdeFC8Yz4yS
+ edVrO//9G754yHYpOj6iw4XbW9nzbpUzBgW907Qk7JqWmMGZfBDBO5A7I3g8JfwQY8
+ L9TKwkR43NYxF+PugcyaiePOoFHoo9J/2MhG2YRU=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00NBimiW016993
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 23 Jan 2020 05:44:49 -0600
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
+ Jan 2020 05:44:47 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 23 Jan 2020 05:44:47 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBD114078;
+ Thu, 23 Jan 2020 05:44:45 -0600
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <t-kristo@ti.com>, <nm@ti.com>, <lokeshvutla@ti.com>
+Subject: [PATCH v3 0/9] arm64: dts: ti: UDMAP and McASP support
+Date: Thu, 23 Jan 2020 13:45:19 +0200
+Message-ID: <20200123114528.26552-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <20200123112711.mggm7ayxcqnr54yf@vireshk-i7>
-Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_033758_926703_8C344261 
-X-CRM114-Status: GOOD (  14.40  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_034455_673342_D9138B9C 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,76 +87,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, arnd@arndb.de, jassisinghbrar@gmail.com,
- linux-kernel@vger.kernel.org, peter.hilber@opensynergy.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/01/2020 11:27, Viresh Kumar wrote:
-> On 23-01-20, 10:30, Sudeep Holla wrote:
->> On Wed, Jan 22, 2020 at 12:15:38PM +0000, Sudeep Holla wrote:
->>> On Wed, Jan 22, 2020 at 08:06:23AM +0530, Viresh Kumar wrote:
->>>
->>
->> [...]
->>
->>>> Can you please help me getting this tested, now that I have rebased it
->>>> as well :) ?
->>>>
->>>
->>> Sure, I will give it a go on my Juno. Thanks for the rebase, makes it
->>> simpler.
->>>
->>
->> Sorry for the delay. I gave this a spin on my Juno. I am seeing below
->> warning once on boot but it continues and everything seem to work fine.
->> Also the warning is not related to this change I believe and this patch
->> is just helping to hit some corner case with deferred probe and devres.
->> I need to spend some time to debug it.
->>
->> Regards,
->> Sudeep
->>
->> --->8
->>
->> WARNING: CPU: 1 PID: 187 at drivers/base/dd.c:519 really_probe+0x11c/0x418
->> Modules linked in:
->> CPU: 1 PID: 187 Comm: kworker/1:2 Not tainted 5.5.0-rc7-00026-gf7231cd3108d-dirty #20
->> Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Jan 16 2020
->> Workqueue: events deferred_probe_work_func
->> pstate: 80000005 (Nzcv daif -PAN -UAO)
->> pc : really_probe+0x11c/0x418
->> lr : really_probe+0x10c/0x418
->> Call trace:
->>  really_probe+0x11c/0x418
->>  driver_probe_device+0xe4/0x138
->>  __device_attach_driver+0x90/0x110
->>  bus_for_each_drv+0x80/0xd0
->>  __device_attach+0xdc/0x160
->>  device_initial_probe+0x18/0x20
->>  bus_probe_device+0x98/0xa0
->>  deferred_probe_work_func+0x90/0xe0
->>  process_one_work+0x1ec/0x4a8
->>  worker_thread+0x210/0x490
->>  kthread+0x110/0x118
->>  ret_from_fork+0x10/0x18
->> ---[ end trace 06f96d55ce6093a8 ]---
-> 
-> Still it looks strange that the warning comes only after my patch :)
+Hi,
 
-In fact, got the same warning while testing your patch on JUNO at top of SCMI for-next.
-But then everything worked fine as Sudeep said.
+Changes since v2:
+- Correct unit addresses for the McASP nodes
+- Remove unit address and label for MAIN and MCU NAVSS
 
-Thanks
+Changes since v1:
+- rebased on ti-k3-next
+- Corrected j721e mcu_udma node: s/udmap/dma-controller
+- Moved the two McASP node patch at the end of the series
 
-Cristian
+The ringacc and UDMA documentation and drivers are in next-20200122.
 
-> 
-> Should I send V5 (fixed few comments after reviews) now ?
-> 
+While adding the DMA support I have noticed few issues which is also fixed by
+this series.
+
+Tero: I have included the McASP nodes as well to have examples for other
+peripherals on how he binding should be used.
+The patches for the McASP driver is not in next, but they are only internal
+driver changes (and Kconfig), not adding new DT dependencies.
+Since the McASP is disabled in SoC dtsi due to board level configuration needs
+it is not going to erroneously probe drivers.
+
+It is up to you if you pick them or not, but I believe they serve a safe and
+nice example how the dma binding should be used for UDMA.
+
+Regards,
+Peter
+---
+Peter Ujfalusi (9):
+  arm64: dts: ti: k3-am65-main: Correct main NAVSS representation
+  arm64: dts: ti: k3-am65-main: Move secure proxy under cbass_main_navss
+  arm64: dts: ti: k3-am65: DMA support
+  arm64: dts: ti: k3-j721e: Correct the address for MAIN NAVSS
+  arm64: dts: ti: k3-j721e-main: Correct main NAVSS representation
+  arm64: dts: ti: k3-j721e-main: Move secure proxy and smmu under
+    main_navss
+  arm64: dts: ti: k3-j721e: DMA support
+  arm64: dts: ti: k3-am654-main: Add McASP nodes
+  arm64: dts: ti: k3-j721e-main: Add McASP nodes
+
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 122 ++++++-
+ arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       |  46 +++
+ arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 313 ++++++++++++++++--
+ .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |  45 +++
+ arch/arm64/boot/dts/ti/k3-j721e.dtsi          |   2 +-
+ 5 files changed, 491 insertions(+), 37 deletions(-)
+
+-- 
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 
 _______________________________________________
