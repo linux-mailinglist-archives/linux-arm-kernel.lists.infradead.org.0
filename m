@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF420146B70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:35:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DE4F146B7E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:41:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=inwV5rGAphuOS5P48i0r1D75h8iEOq5aME7hKuvVBI8=; b=JYW1zj2mhgK3Ti
-	ZX/FkzzWIasuC91j3X98Vi4cAJ/CuTi8DuIBGfx+Zj5OXX45YCyTcf8iYbpOZ63RkFaliTg+x/P3Y
-	caosnNar+drt4HTgjxuFBRnefA0jWiGhUU3BEI/UzyfOdFdFvu+z7edHtm7DfqYOJK4xOgVraKkRS
-	xtNPLuo/f+2rqfvumr7xZmKP8erqXe8ur1zsQmKiGqRA4ax6/xk1p3PpK3L6jddU/P0zI6ZB1S7VO
-	zFWpJqSnkatcjYTOy5BZ/nAPxbXCZ0dGQNuKEVps2JaJbqac/0NEgiSlcnasGXuzUVWCMyKUUnVTj
-	0q/aoeiuXclDBp0lOoGw==;
+	List-Owner; bh=UR3W/3fY0pqlk8BbEU82Jtz/9f2fVLjrlmP1pMAiBBM=; b=dm5byw96DbSflM
+	Csx9flv70bvrpSiXrUIzMwoC4BekNILCIFhVqzzbC0NO0tjZXWYhdT5QrwCsDyc3dkLBxzqASJf2C
+	mAdi0ePU3bJvyV+PxNtGLjKHVLALkcAS2HNamvUSrdLQrESpiD5nuZ1qVC1bzCaEXy87YfQTjgJwA
+	b0wL3Fge4AQc2m9jdWOy9SCjQWZDIQXy74phcuTMIMjXb5vlUTbxsx1bZEqPjLmRqvBlMtKoEGY6u
+	IMMrN+9Ts7HYS+BVUcZXKO6N8E8dnPKYz+MQsHtDlopbrIMhGjdri2nZeCJ734JZkW8tUTJpHP6aH
+	KzSB/k31BnNKsWrrjdOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iudZp-0003UN-GX; Thu, 23 Jan 2020 14:35:21 +0000
+	id 1iudfG-0005I0-Vk; Thu, 23 Jan 2020 14:40:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iudZc-0003OS-Vh
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:35:10 +0000
+ id 1iudf7-0005HV-AK
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:40:50 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 43BAF2087E;
- Thu, 23 Jan 2020 14:35:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE0D120704;
+ Thu, 23 Jan 2020 14:40:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579790108;
- bh=JNtixxJ/yw1iFwwAJ9ohnh46vXkDLO9OMR488psZi7Y=;
+ s=default; t=1579790449;
+ bh=P2ot6B9HVK+z/Tf3oXlZLi5L7qNWLA/fO+9rq7CKF70=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0BsJ627kvWrt2CDSqPfrDlznsX+RCpuOBXBDDOxDvG++isOd/KeDDX6iSaEZtPmvG
- YRkdpadtdV/Obl9NJ3Dmn9Kd7PaJJW3s+dOrbPn8k/X/sGC1vy8sHxnObLD/1LjGMX
- WF8lClEQHLsDqE2aLHc1FlTqaHupTpHJm+0o42Y4=
-Date: Thu, 23 Jan 2020 14:35:03 +0000
+ b=19unuZ9oUyArs3WUF1iRYaGScpUNfuGPkJsTwuZ/iiZ52x2hJnMmQKEiycvUYdqiF
+ mleGx+yEuN1ie/cuq+e+PosUzXCLwJuWF7xX4bWUfsrUGQleBBLCIK9ZVCAf4L09JZ
+ evUwYFk79inu6737+5jx4RCmLP6tbonhigFiEaJQ=
+Date: Thu, 23 Jan 2020 14:40:44 +0000
 From: Will Deacon <will@kernel.org>
 To: Julien Thierry <jthierry@redhat.com>
-Subject: Re: [RFC v5 00/57] objtool: Add support for arm64
-Message-ID: <20200123143503.GA19649@willie-the-truck>
+Subject: Re: [RFC v5 47/57] arm64: assembler: Add macro to annotate asm
+ function having non standard stack-frame.
+Message-ID: <20200123144044.GB19649@willie-the-truck>
 References: <20200109160300.26150-1-jthierry@redhat.com>
- <20200121103025.GC11154@willie-the-truck>
- <400d402d-c964-6f0c-2954-6f6afcb94635@redhat.com>
+ <20200109160300.26150-48-jthierry@redhat.com>
+ <20200121103005.GA11154@willie-the-truck>
+ <66b1746b-c77b-a4d3-846b-cecdc5a15357@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <400d402d-c964-6f0c-2954-6f6afcb94635@redhat.com>
+In-Reply-To: <66b1746b-c77b-a4d3-846b-cecdc5a15357@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_063509_071993_73B6B544 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20200123_064049_378341_F10AAE56 
+X-CRM114-Status: GOOD (  16.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,58 +88,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 23, 2020 at 01:52:17PM +0000, Julien Thierry wrote:
-> 
-> 
+On Thu, Jan 23, 2020 at 01:45:58PM +0000, Julien Thierry wrote:
 > On 1/21/20 10:30 AM, Will Deacon wrote:
-> > On Thu, Jan 09, 2020 at 04:02:03PM +0000, Julien Thierry wrote:
-> > > This patch series is the continuation of Raphael's work [1]. All the
-> > > patches can be retrieved from:
-> > > git clone -b arm64-objtool-v5 https://github.com/julien-thierry/linux.git
+> > On Thu, Jan 09, 2020 at 04:02:50PM +0000, Julien Thierry wrote:
+> > > From: Raphael Gault <raphael.gault@arm.com>
+> > > diff --git a/include/linux/frame.h b/include/linux/frame.h
+> > > index 02d3ca2d9598..1e35e58ab259 100644
+> > > --- a/include/linux/frame.h
+> > > +++ b/include/linux/frame.h
+> > > @@ -11,14 +11,31 @@
+> > >    *
+> > >    * For more information, see tools/objtool/Documentation/stack-validation.txt.
+> > >    */
+> > > +#ifndef __ASSEMBLY__
+> > >   #define STACK_FRAME_NON_STANDARD(func) \
+> > >   	static void __used __section(.discard.func_stack_frame_non_standard) \
+> > >   		*__func_stack_frame_non_standard_##func = func
+> > > +#else
+> > > +	/*
+> > > +	 * This macro is the arm64 assembler equivalent of the
+> > > +	 * macro STACK_FRAME_NON_STANDARD define at
+> > > +	 * ~/include/linux/frame.h
+> > > +	 */
+> > > +	.macro	asm_stack_frame_non_standard	func
+> > > +	.pushsection ".discard.func_stack_frame_non_standard"
+> > > +	.quad	\func
+> > > +	.popsection
+> > > +	.endm
+> > > 
+> > > +#endif /* __ASSEMBLY__ */
+> > >   #else /* !CONFIG_STACK_VALIDATION */
+> > > 
+> > > +#ifndef __ASSEMBLY__
+> > >   #define STACK_FRAME_NON_STANDARD(func)
+> > > -
+> > > +#else
+> > > +	.macro	asm_stack_frame_non_standard	func
+> > > +	.endm
+> > > +#endif /* __ASSEMBLY__ */
 > > 
-> > [...]
+> > Hmm. Given that we're currently going through the exercise of converting
+> > a bunch of ENTRY/ENDPROC macros to use the new SYM_{CODE,FUNC}_{START,END}
+> > macros, I would much prefer for this to be a new flavour of those.
 > > 
-> > >    objtool: arm64: Decode unknown instructions
-> > >    objtool: arm64: Decode simple data processing instructions
-> > >    objtool: arm64: Decode add/sub immediate instructions
-> > >    objtool: arm64: Decode logical data processing instructions
-> > >    objtool: arm64: Decode system instructions not affecting the flow
-> > >    objtool: arm64: Decode calls to higher EL
-> > >    objtool: arm64: Decode brk instruction
-> > >    objtool: arm64: Decode instruction triggering context switch
-> > >    objtool: arm64: Decode branch instructions with PC relative immediates
-> > >    objtool: arm64: Decode branch to register instruction
-> > >    objtool: arm64: Decode basic load/stores
-> > >    objtool: arm64: Decode load/store with register offset
-> > >    objtool: arm64: Decode load/store register pair instructions
-> > >    objtool: arm64: Decode FP/SIMD load/store instructions
-> > >    objtool: arm64: Decode load/store exclusive
-> > >    objtool: arm64: Decode atomic load/store
-> > >    objtool: arm64: Decode pointer auth load instructions
-> > >    objtool: arm64: Decode load acquire/store release
-> > >    objtool: arm64: Decode load/store with memory tag
-> > >    objtool: arm64: Decode load literal
-> > >    objtool: arm64: Decode register data processing instructions
-> > >    objtool: arm64: Decode FP/SIMD data processing instructions
-> > >    objtool: arm64: Decode SVE instructions
-> > 
-> > That's a lot of decoding logic which we already have in
-> > arch/arm64/{kernel/insn.c,include/asm/insn.h}. I'd prefer to see this stuff
-> > reused or generated from a single source, since it's really easy to get it
-> > wrong, has a tendency to bitrot and is nasty to debug.
+> > In fact, can you just use SYM_CODE_* for this?
 > > 
 > 
-> The thing is that the code in those files is mostly encoding logic
-> (motivated by BPF) rather than decoding (except for the instruction that
-> might be trapped, but these rarely overlap with instructions that objtools
-> cares about). I agree that ideally the decoding/encoding should be under
-> arch/arm64/lib, I was just a bit weary introducing a lot of decoding code
-> under arch/arm64 that wouldn't even be used in kernel code.
+> You mean to not introduce the STACK_FRAME_NON_STANDARD() macro and just mark
+> the asm callable symbols that don't set up a stackframe as SYM_CODE_* ?
 
-Hmm, but kprobes decodes instructions somehow :p
-
-Not saying you have to refactor everything, but I'd hope you could reuse
-some of the aarch64_insn_is* and aarch64_insn_extract* functions at least.
+Yes, unless I'm mistaken, SYM_CODE_* is intended for that sort of thing
+anyway.
 
 Will
 
