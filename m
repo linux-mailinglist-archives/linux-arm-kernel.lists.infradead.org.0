@@ -2,73 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84A0A146728
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:46:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0DC714672B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:46:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AYfopCwcI7MOmVIYn5c9isYKgnQR1c5TvYhprw5gGm8=; b=NQr+olOoTZYumB
-	xrV1ulHyfAw6uStozmZU9RhRzj0H7wy3P/zav/5Tg1iNvqT4VaHF11NpsLw0Pe5WutUTGfpWSUFGd
-	XBfG38gh7xMZxvV97WbDKfD95XkgjiobvtY90EZPZJ3rdYDNoYym8yUZnGl8L4HQcQFuvLxdBOYDW
-	obyOG3E+Xz7pMeyOi5EKfnl0BaWJAZ1UlDIdbqnvKMbmkoLPZx1ds8ojtEs5z7sJLXxwGVoXccFPr
-	/eQGS99Z0aJAsKUGtPZxAk8Z8KT8d2+6ikeuJGW7R4wPQW3SuBM06LroWU9ayb55RNTZ4mKgrD+B8
-	HfHXv8KlA1wssSIkM7pw==;
+	List-Owner; bh=DBQKGsQ6FlapdkuwO8Wo5kDjLOH6Qplt64gJvS4mRnE=; b=GGip9STR89IDP0
+	49fgRoimC7KxxqzmikeRbCACIEX4FJNjp4KCP2V9Gs96iXexmdJBlmwsZ2t+0Prjpwm/5cj+G8O2e
+	np9zPAp6MdOPQoQ136c2jeZxWRT4tlcLKy0MkpHMjBpy7kOKYovwJ/03Wbtw9D9mMv1bOye9LVag2
+	o6Jn+PCEmQtyCBWsg1I+Gg7DuUjYvJFmVC9RxkVGdemd7Wu/ZaeDO0KnNASzYfFTHSEqntaNgRrfi
+	pX9rDQU0EdNxO1nvA4+qZDmwbNa9hilXjeY8ZD3TH8qsM7LirvFdxPiCl2cnY9orG3r9+QXsNeDy/
+	07rfYSwrSvfewJvYKtwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuawF-0002G5-RB; Thu, 23 Jan 2020 11:46:19 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iuawa-0002Uy-CG; Thu, 23 Jan 2020 11:46:40 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuauw-0000Hn-RB
+ id 1iuauw-0000IB-Pt
  for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:45:00 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBisCA098625;
- Thu, 23 Jan 2020 05:44:54 -0600
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBit4B023591;
+ Thu, 23 Jan 2020 05:44:55 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579779894;
- bh=FNcobQYsMgJmD3mcDnCu1EKfN5SCQ6gDGMEphE7602o=;
+ s=ti-com-17Q1; t=1579779895;
+ bh=nTfS2DbemGgn283yCl1Z05g9XUWRyrgK3hXnBn7+i4c=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=cpDYBLG0v0HqonYNQtzhzn3lPuD4p35J33tyeUiql8CDO4g9locwUAT3Z7+saQN3u
- avqEKYj7kCCTo2U3y3JdFENYUZNPbP+yk3Pu62QK6Tr1d1XeR0T0tac1tJX6jfrEs1
- c9+2Sv0LtHdTGk1fS4ZgLLN2n4/PxMtfwfMGWut8=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00NBis91051377
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 23 Jan 2020 05:44:54 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ b=s7DKi4ugkQHjef84i+NaE/c1axPL7/3TVr6jTl9BB2Rd/iYF1kL3l0AcGBRas1gr/
+ ejoI8Kreb0WlIx2SoV4cRGsfjTrgS+er1yMpv1PoInqzCJAUp3nrbE4yngIiREJJAI
+ /4JeKw866F9oDI4yXSpCBXthHGgGTTmC3n7K4RJw=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBit7k060557;
+ Thu, 23 Jan 2020 05:44:55 -0600
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
- Jan 2020 05:44:52 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Jan 2020 05:44:54 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 23 Jan 2020 05:44:52 -0600
+ Frontend Transport; Thu, 23 Jan 2020 05:44:54 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBF114078;
- Thu, 23 Jan 2020 05:44:50 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBG114078;
+ Thu, 23 Jan 2020 05:44:52 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>, <lokeshvutla@ti.com>
-Subject: [PATCH v3 2/9] arm64: dts: ti: k3-am65-main: Move secure proxy under
- cbass_main_navss
-Date: Thu, 23 Jan 2020 13:45:21 +0200
-Message-ID: <20200123114528.26552-3-peter.ujfalusi@ti.com>
+Subject: [PATCH v3 3/9] arm64: dts: ti: k3-am65: DMA support
+Date: Thu, 23 Jan 2020 13:45:22 +0200
+Message-ID: <20200123114528.26552-4-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200123114528.26552-1-peter.ujfalusi@ti.com>
 References: <20200123114528.26552-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034458_967131_AD5D65D9 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200123_034458_928671_1AF6C541 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,53 +95,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Secure proxy (NAVSS0_SEC_PROXY0) is part of the Navigator Subsystem.
+Add the ringacc and udmap nodes for main and mcu NAVSS.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 39 ++++++++++++++++++++
+ arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi  | 46 ++++++++++++++++++++++++
+ 2 files changed, 85 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-index 972e14bf9478..c21315c43c55 100644
+index c21315c43c55..7c4853a8a02c 100644
 --- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
 +++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-@@ -51,17 +51,6 @@ gic_its: gic-its@1820000 {
+@@ -379,6 +379,10 @@ main_navss {
+ 		#address-cells = <2>;
+ 		#size-cells = <2>;
+ 		ranges;
++		dma-coherent;
++		dma-ranges;
++
++		ti,sci-dev-id = <118>;
+ 
+ 		intr_main_navss: interrupt-controller1 {
+ 			compatible = "ti,sci-intr";
+@@ -527,6 +531,41 @@ mailbox0_cluster11: mailbox@31f8b000 {
+ 			ti,mbox-num-fifos = <16>;
+ 			interrupt-parent = <&intr_main_navss>;
+ 		};
++
++		ringacc: ringacc@3c000000 {
++			compatible = "ti,am654-navss-ringacc";
++			reg =	<0x0 0x3c000000 0x0 0x400000>,
++				<0x0 0x38000000 0x0 0x400000>,
++				<0x0 0x31120000 0x0 0x100>,
++				<0x0 0x33000000 0x0 0x40000>;
++			reg-names = "rt", "fifos", "proxy_gcfg", "proxy_target";
++			ti,num-rings = <818>;
++			ti,sci-rm-range-gp-rings = <0x2>; /* GP ring range */
++			ti,dma-ring-reset-quirk;
++			ti,sci = <&dmsc>;
++			ti,sci-dev-id = <187>;
++			msi-parent = <&inta_main_udmass>;
++		};
++
++		main_udmap: dma-controller@31150000 {
++			compatible = "ti,am654-navss-main-udmap";
++			reg =	<0x0 0x31150000 0x0 0x100>,
++				<0x0 0x34000000 0x0 0x100000>,
++				<0x0 0x35000000 0x0 0x100000>;
++			reg-names = "gcfg", "rchanrt", "tchanrt";
++			msi-parent = <&inta_main_udmass>;
++			#dma-cells = <1>;
++
++			ti,sci = <&dmsc>;
++			ti,sci-dev-id = <188>;
++			ti,ringacc = <&ringacc>;
++
++			ti,sci-rm-range-tchan = <0x1>, /* TX_HCHAN */
++						<0x2>; /* TX_CHAN */
++			ti,sci-rm-range-rchan = <0x4>, /* RX_HCHAN */
++						<0x5>; /* RX_CHAN */
++			ti,sci-rm-range-rflow = <0x6>; /* GP RFLOW */
++		};
+ 	};
+ 
+ 	main_gpio0:  main_gpio0@600000 {
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
+index 319e821b3c27..92629cbdc184 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
+@@ -104,6 +104,52 @@ adc {
  		};
  	};
  
--	secure_proxy_main: mailbox@32c00000 {
--		compatible = "ti,am654-secure-proxy";
--		#mbox-cells = <1>;
--		reg-names = "target_data", "rt", "scfg";
--		reg = <0x00 0x32c00000 0x00 0x100000>,
--		      <0x00 0x32400000 0x00 0x100000>,
--		      <0x00 0x32800000 0x00 0x100000>;
--		interrupt-names = "rx_011";
--		interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
--	};
--
- 	serdes0: serdes@900000 {
- 		compatible = "ti,phy-am654-serdes";
- 		reg = <0x0 0x900000 0x0 0x2000>;
-@@ -414,6 +403,17 @@ inta_main_udmass: interrupt-controller@33d00000 {
- 			ti,sci-rm-range-global-event = <0x1>;
- 		};
- 
-+		secure_proxy_main: mailbox@32c00000 {
-+			compatible = "ti,am654-secure-proxy";
-+			#mbox-cells = <1>;
-+			reg-names = "target_data", "rt", "scfg";
-+			reg = <0x00 0x32c00000 0x00 0x100000>,
-+			      <0x00 0x32400000 0x00 0x100000>,
-+			      <0x00 0x32800000 0x00 0x100000>;
-+			interrupt-names = "rx_011";
-+			interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
++	mcu_navss {
++		compatible = "simple-mfd";
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++		dma-coherent;
++		dma-ranges;
++
++		ti,sci-dev-id = <119>;
++
++		mcu_ringacc: ringacc@2b800000 {
++			compatible = "ti,am654-navss-ringacc";
++			reg =	<0x0 0x2b800000 0x0 0x400000>,
++				<0x0 0x2b000000 0x0 0x400000>,
++				<0x0 0x28590000 0x0 0x100>,
++				<0x0 0x2a500000 0x0 0x40000>;
++			reg-names = "rt", "fifos", "proxy_gcfg", "proxy_target";
++			ti,num-rings = <286>;
++			ti,sci-rm-range-gp-rings = <0x2>; /* GP ring range */
++			ti,dma-ring-reset-quirk;
++			ti,sci = <&dmsc>;
++			ti,sci-dev-id = <195>;
++			msi-parent = <&inta_main_udmass>;
 +		};
 +
- 		hwspinlock: spinlock@30e00000 {
- 			compatible = "ti,am654-hwspinlock";
- 			reg = <0x00 0x30e00000 0x00 0x1000>;
++		mcu_udmap: dma-controller@285c0000 {
++			compatible = "ti,am654-navss-mcu-udmap";
++			reg =	<0x0 0x285c0000 0x0 0x100>,
++				<0x0 0x2a800000 0x0 0x40000>,
++				<0x0 0x2aa00000 0x0 0x40000>;
++			reg-names = "gcfg", "rchanrt", "tchanrt";
++			msi-parent = <&inta_main_udmass>;
++			#dma-cells = <1>;
++
++			ti,sci = <&dmsc>;
++			ti,sci-dev-id = <194>;
++			ti,ringacc = <&mcu_ringacc>;
++
++			ti,sci-rm-range-tchan = <0x1>, /* TX_HCHAN */
++						<0x2>; /* TX_CHAN */
++			ti,sci-rm-range-rchan = <0x3>, /* RX_HCHAN */
++						<0x4>; /* RX_CHAN */
++			ti,sci-rm-range-rflow = <0x5>; /* GP RFLOW */
++		};
++	};
++
+ 	fss: fss@47000000 {
+ 		compatible = "simple-bus";
+ 		#address-cells = <2>;
 -- 
 Peter
 
