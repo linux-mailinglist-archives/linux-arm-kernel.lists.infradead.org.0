@@ -2,95 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBEB8146736
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:49:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDC8F146727
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:46:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=INiA0Kz0I36M8MI+XvQB9ZJHNbtpn4C2tligSmXIc38=; b=NzvTdGygigC4R3sK7z5NhtXuM
-	vsirSYHEeQ8TaXTur+2gxpwbzPtaKY6sY+d2oFx81b9uAaRgvB6TyRs+OT5mKkVjoUBakJ7o2A1CY
-	UQRu5jY3ETxUmvB9p1Dd/Vz+N2W1P0QpUMs6coj8FUdp1YY9jmm3UKhGrbLFQ1fU3V1unaOi0ICAp
-	KrQTBmeOYOrHKZANUVltolYqnVrxOQMD0iWy5dJ/uu0XY06+3wKzB6244IBqWGB4d7OgHawDCKJXF
-	bmuLpHm2sJKGstGBUhEnLbUnVCbTYFf3uCFHj9/DYVdqYuPgv6Hcv2RV/1qwgMMORgVMBXK4HRWYq
-	qG/wvVmAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QwXe/qJ38S1hjyT39Whpok7T4ZYblhrRPxn31mGNsZo=; b=k6Kb+UKmoFwdvA
+	wKBITn7JQhVLyjYDbnTVFFoRES+s5inZEB3BWI5acb3dU/HLGS1XAJIuvF1MCZzD2fbkBG5eEUDqI
+	QGHl2Rtsot1t7tssuRnAo1e5fw9Pv7w8qGXC7l4B1VuF5oQYNBmIt6Bk/vOcrR6lgkwY+MdYS9+J2
+	M7ZcFdmeoR33i1ai+dBh1cJHsVX7UmssM0ytffTpz54E5g/LwHyw8BBtzxvUbxUrE0e8uSPZzh6bJ
+	91NJL/TnApw9mgf1MRbWD7yKbu4CkUIAaBjQI7egBrWEA+l8SSxaay0c8bCZgffRB+FtR5hzMqEsp
+	hpXhCUvwe4Lml0Mbyh9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuayv-0004hJ-TQ; Thu, 23 Jan 2020 11:49:05 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iuavx-0001zY-2k; Thu, 23 Jan 2020 11:46:01 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuaw1-0002Gu-82
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:46:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579779963;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=TINMfTTXVCZiZEAT1DE8Sul0vKADWHazf6vsI5AdTmI=;
- b=CTQB2nh9Hac6trZpUpaX8oLTVQVGuCGKtEwYStyQH56z2FB3RpKNrt3U7WZwYD8PiwVdNo
- yiDraA2wDoaFKkq47MrHdx4WM1pODHsGlflKIL+727fvML6zaoiI3Y0rZyZyC8UDcy6XuS
- LB30GMo8a6M1Z4AGx5yrSl1cDAn9vDE=
-Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
- [209.85.128.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-153-URMFD_qwNMyCsQLwsRnZmQ-1; Thu, 23 Jan 2020 06:46:02 -0500
-Received: by mail-wm1-f70.google.com with SMTP id q206so872286wme.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 03:46:01 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=TINMfTTXVCZiZEAT1DE8Sul0vKADWHazf6vsI5AdTmI=;
- b=J9nztvykb2CiktgUqMSfYPfxCd7/IqGILROiU9QnhgK+4SH/WCDVxmvY0IqLlMHm0y
- scGqWunuBdW1zHdOGYLduQjJziLu/WTpDzVVBE/IV5Lp0Cy2pp0fYouHi4rxB9vUPXfe
- LTJW4ucaNG+Jmm48gouUzuNR1gd7/IhDd2W//PMb+if8fb/C2TIZHtLuB3DU62HpIIa0
- DUtlmJHo4L5MwC+mxJ2FTnrtbB5qEb4a2Uyrb5oh+M86FENb/A8PK3H76/gECgIiF0Q4
- EfUP3pbDuqM0UGYMjE5pDccSm89s8zFSxuErYcFc3vNV5Sctdx9RNjlo9Irzke6OjPs1
- l7RQ==
-X-Gm-Message-State: APjAAAWw9GmuTcf6kyXKemIWhnlAJWa+LHzvFn8yNkqGmujdl6TPoZ7P
- qhf4fZZTF6siGGInZc8tWiFJqTMhRJHC8OsOxj4OVh42MIeSXmipGC+bV3NTSLXNCqsQQSzWg/+
- GTlFfBZc7QVhUsGIP77e19g0jhqZqCMCUG9k=
-X-Received: by 2002:a1c:f218:: with SMTP id s24mr3979408wmc.128.1579779960869; 
- Thu, 23 Jan 2020 03:46:00 -0800 (PST)
-X-Google-Smtp-Source: APXvYqwVnwCiCN3NOxdGWRBJAtDImJ6Nrbwlr+9vtghF6EhH/gepoqxynALefGm704TwHdxrrc4Fsg==
-X-Received: by 2002:a1c:f218:: with SMTP id s24mr3979384wmc.128.1579779960668; 
- Thu, 23 Jan 2020 03:46:00 -0800 (PST)
-Received: from [192.168.1.81]
- (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
- by smtp.gmail.com with ESMTPSA id z3sm2609010wrs.94.2020.01.23.03.45.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 23 Jan 2020 03:46:00 -0800 (PST)
-Subject: Re: [RFC v5 11/57] objtool: Abstract alternative special case handling
-To: Peter Zijlstra <peterz@infradead.org>
-References: <20200109160300.26150-1-jthierry@redhat.com>
- <20200109160300.26150-12-jthierry@redhat.com>
- <20200120145401.GB14897@hirez.programming.kicks-ass.net>
-From: Julien Thierry <jthierry@redhat.com>
-Message-ID: <b5066ff8-9bfc-635f-a4fd-2ed3e20271b6@redhat.com>
-Date: Thu, 23 Jan 2020 11:45:58 +0000
+ id 1iuauu-0000GY-Rq
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:44:58 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijAB129984;
+ Thu, 23 Jan 2020 05:44:45 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579779885;
+ bh=QnJ9VUHPpMMd8YUAGeL/71FiTwnavEbizZbc/dCqjBQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=xA6ob+SJdg7zfXn7hlg2ASxYri8hGEOhWPfgeB83gcf3pZOhdMBigo2kRnsAhiTIn
+ VfSfH3quOr7/RiJPl70v28p2MY0hvYXEfwVQLJ79oo54UxHGb6Andxc3oUcdUX67V5
+ SGrYv56ow2oBNw/v7YNv+bv/yF6EDuQExoEVS+xs=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBiiMB060474;
+ Thu, 23 Jan 2020 05:44:44 -0600
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
+ Jan 2020 05:44:44 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 23 Jan 2020 05:44:44 -0600
+Received: from [172.24.190.4] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBienv047691;
+ Thu, 23 Jan 2020 05:44:40 -0600
+Subject: Re: [PATCH 0/3] Add Support for MCAN in AM654x-idk
+To: Marc Kleine-Budde <mkl@pengutronix.de>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <netdev@vger.kernel.org>,
+ <linux-can@vger.kernel.org>
+References: <20200122080310.24653-1-faiz_abbas@ti.com>
+ <e3025ab6-04b5-3eba-5e0d-70caabee26fb@pengutronix.de>
+From: Faiz Abbas <faiz_abbas@ti.com>
+Message-ID: <f6bf75f0-68ea-0b61-ed43-9ad894016cfd@ti.com>
+Date: Thu, 23 Jan 2020 17:16:10 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200120145401.GB14897@hirez.programming.kicks-ass.net>
+In-Reply-To: <e3025ab6-04b5-3eba-5e0d-70caabee26fb@pengutronix.de>
 Content-Language: en-US
-X-MC-Unique: URMFD_qwNMyCsQLwsRnZmQ-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034605_397076_E81DB345 
-X-CRM114-Status: GOOD (  15.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200123_034456_982303_1FEC987A 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -112,75 +94,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- raphael.gault@arm.com, jpoimboe@redhat.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, nm@ti.com, catalin.marinas@arm.com,
+ sriram.dash@samsung.com, t-kristo@ti.com, robh+dt@kernel.org, dmurphy@ti.com,
+ davem@davemloft.net, wg@grandegger.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Marc,
 
+On 23/01/20 4:47 pm, Marc Kleine-Budde wrote:
+> On 1/22/20 9:03 AM, Faiz Abbas wrote:
+>> This series adds driver patches to support MCAN in TI's AM654x-idk.
+>>
+>> Faiz Abbas (3):
+>>   dt-bindings: net: can: m_can: Add Documentation for stb-gpios
+>>   can: m_can: m_can_platform: Add support for enabling transceiver
+>>     through the STB line
+>>   arm64: defconfig: Add Support for Bosch M_CAN controllers
+>>
+>>  Documentation/devicetree/bindings/net/can/m_can.txt |  2 ++
+>>  arch/arm64/configs/defconfig                        |  3 +++
+>>  drivers/net/can/m_can/m_can_platform.c              | 12 ++++++++++++
+>>  3 files changed, 17 insertions(+)
+> 
+> What about adding support for xceiver-supply as done in several other
+> drivers (ti_hecc.c, flexcan.c, mcp251x.c)? And using this for the stb line?
 
-On 1/20/20 2:54 PM, Peter Zijlstra wrote:
-> On Thu, Jan 09, 2020 at 04:02:14PM +0000, Julien Thierry wrote:
->> diff --git a/tools/objtool/arch/x86/arch_special.c b/tools/objtool/arch/x86/arch_special.c
->> new file mode 100644
->> index 000000000000..6dba31f419d0
->> --- /dev/null
->> +++ b/tools/objtool/arch/x86/arch_special.c
->> @@ -0,0 +1,34 @@
->> +// SPDX-License-Identifier: GPL-2.0-or-later
->> +#include "../../special.h"
->> +#include "../../builtin.h"
->> +
->> +void arch_handle_alternative(unsigned short feature, struct special_alt *alt)
->> +{
->> +	/*
->> +	 * If UACCESS validation is enabled; force that alternative;
->> +	 * otherwise force it the other way.
->> +	 *
->> +	 * What we want to avoid is having both the original and the
->> +	 * alternative code flow at the same time, in that case we can
->> +	 * find paths that see the STAC but take the NOP instead of
->> +	 * CLAC and the other way around.
->> +	 */
-> 
-> That comment ^,
-> 
->> +	switch (feature) {
->> +	case X86_FEATURE_SMAP:
-> 
-> goes here >
-> 
+Looks like you had given this feedback a long time ago and I forgot
+about it. Sorry about that :-)
 
-Good catch, I'll fix that.
+https://lore.kernel.org/patchwork/patch/1006238/
 
->> +		if (uaccess)
->> +			alt->skip_orig = true;
->> +		else
->> +			alt->skip_alt = true;
->> +		break;
-> 
->> +	case X86_FEATURE_POPCNT:
->> +		/*
->> +		 * It has been requested that we don't validate the !POPCNT
->> +		 * feature path which is a "very very small percentage of
->> +		 * machines".
->> +		 */
->> +		alt->skip_orig = true;
->> +		break;
->> +	default:
->> +		break;
->> +	}
->> +}
-> 
+But now that I think about it, its kinda weird that we are modelling
+part of the transceiver as a separate child node
+(Documentation/devicetree/bindings/net/can/can-transceiver.txt) and the
+other parts as a regulator.
+
+Anyone looking at the transceiver node would figure thats where the
+enable gpio/regulator node needs to go instead of the parent node.
+Shouldn't we have all transceiver properties under the same node?
 
 Thanks,
-
--- 
-Julien Thierry
-
+Faiz
 
 _______________________________________________
 linux-arm-kernel mailing list
