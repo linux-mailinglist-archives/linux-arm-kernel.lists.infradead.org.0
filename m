@@ -2,42 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB717146016
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 01:48:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAFB214602D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 02:01:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UW+FqRh0OHjqjE+Joq+WBHa3H19j12jFsLheaTQkG38=; b=MOw6/jDVAbH2Qw
-	yTLubO+m/peOuV0Eevn/uNIo2d3k0rvMEkQZH2o2uTwW8JbzRtLENIpk9rvRusGlUUwlaOzo2bAs5
-	IiKeb5HH97B2qwBhlu5rZHJfzvFFFfNdV6VHmqHAjMfyQQh8c9uUPS5MVqtM+DlgQbOSRiQilqLpd
-	KlGEMrc9R3V54VcTi4pZjmXr3m+vSc94Phpe7Dszzbnbm0uw7BG0eyyGA0wx7nVgE4XXFpz7DkpqC
-	teDZASzq2UsvIgnf6fgY92AVKcweAg+5TL//FpXycbbhQ6PGYRQbVeVRfOZH/iCr4ULMc2P4WinDd
-	AFghAbsewaBXszVzYpKw==;
+	List-Owner; bh=jGq27iupMAxg54b0h4tJo1h/pmzD28akn4dATDfsmrA=; b=p7gc8KZI5VH7l8
+	VZcjqF1uekFhY/725WcZMYufw6zGFLP0CPtJUgAcpX8W98x0R7yVkf2Fcqz6s3mCDz1iOXV6LuDlX
+	BYh6SfKQWUWQIyIhS33Btk2QwJ9ZpQ0vS8Qk1eKz0+0uNdw4ispc95QFrYJX+qmJ0IADcRWYRZois
+	vOTEcvXrtzUkgTCJWxfKGJykeaq/bTmKeunLCoXdc3CdtohckjLQUXvj6dTPsFgYa37XVsZapYQki
+	nQZUHftLK4nscsedyLi9XG44Ztd1iMRqOe2CyY5KPZVfnAZrPaqKCqwd4JIS81Sora2A3Ujl5sGgu
+	s1eHv1g8zPJL6sRsKp1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuQfW-00076b-JG; Thu, 23 Jan 2020 00:48:22 +0000
+	id 1iuQsZ-0003Q2-DK; Thu, 23 Jan 2020 01:01:51 +0000
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuQfP-00076F-EJ; Thu, 23 Jan 2020 00:48:16 +0000
+ id 1iuQsQ-0003PU-7g
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 01:01:44 +0000
 Received: from [82.43.126.140] (helo=localhost)
  by youngberry.canonical.com with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
  (envelope-from <colin.king@canonical.com>)
- id 1iuQfN-0006ib-2P; Thu, 23 Jan 2020 00:48:13 +0000
+ id 1iuQsI-00089p-FT; Thu, 23 Jan 2020 01:01:34 +0000
 From: Colin King <colin.king@canonical.com>
-To: Russell King <linux@armlinux.org.uk>, Heiko Stuebner <heiko@sntech.de>,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-Subject: [PATCH] ARM: rockchip: fix spelling mistake "to" -> "too"
-Date: Thu, 23 Jan 2020 00:48:07 +0000
-Message-Id: <20200123004807.2833556-1-colin.king@canonical.com>
+To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ dmaengine@vger.kernel.org, linux-hams@vger.kernel.org,
+ netdev@vger.kernel.org
+Subject: [PATCH] net/rose: fix spelling mistake "to" -> "too"
+Date: Thu, 23 Jan 2020 01:01:33 +0000
+Message-Id: <20200123010133.2834467-1-colin.king@canonical.com>
 X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_164815_618244_29420C9A 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20200122_170142_414013_6CBB393D 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -45,10 +50,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [91.189.89.112 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,25 +74,39 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Colin Ian King <colin.king@canonical.com>
 
-There is a spelling mistake in a pr_err message. Fix it.
+There is a spelling mistake in a printk message. Fix it.
 
 Signed-off-by: Colin Ian King <colin.king@canonical.com>
 ---
- arch/arm/mach-rockchip/platsmp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/dma/s3c24xx-dma.c | 2 +-
+ net/rose/af_rose.c        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mach-rockchip/platsmp.c b/arch/arm/mach-rockchip/platsmp.c
-index 649e0a54784c..d60856898d97 100644
---- a/arch/arm/mach-rockchip/platsmp.c
-+++ b/arch/arm/mach-rockchip/platsmp.c
-@@ -180,7 +180,7 @@ static int __init rockchip_smp_prepare_sram(struct device_node *node)
+diff --git a/drivers/dma/s3c24xx-dma.c b/drivers/dma/s3c24xx-dma.c
+index 8e14c72d03f0..63f1453ca250 100644
+--- a/drivers/dma/s3c24xx-dma.c
++++ b/drivers/dma/s3c24xx-dma.c
+@@ -826,7 +826,7 @@ static struct dma_async_tx_descriptor *s3c24xx_dma_prep_memcpy(
+ 			len, s3cchan->name);
  
- 	rsize = resource_size(&res);
- 	if (rsize < trampoline_sz) {
--		pr_err("%s: reserved block with size 0x%x is to small for trampoline size 0x%x\n",
-+		pr_err("%s: reserved block with size 0x%x is too small for trampoline size 0x%x\n",
- 		       __func__, rsize, trampoline_sz);
- 		return -EINVAL;
+ 	if ((len & S3C24XX_DCON_TC_MASK) != len) {
+-		dev_err(&s3cdma->pdev->dev, "memcpy size %zu to large\n", len);
++		dev_err(&s3cdma->pdev->dev, "memcpy size %zu too large\n", len);
+ 		return NULL;
+ 	}
+ 
+diff --git a/net/rose/af_rose.c b/net/rose/af_rose.c
+index 46b8ff24020d..1e8eeb044b07 100644
+--- a/net/rose/af_rose.c
++++ b/net/rose/af_rose.c
+@@ -1475,7 +1475,7 @@ static int __init rose_proto_init(void)
+ 	int rc;
+ 
+ 	if (rose_ndevs > 0x7FFFFFFF/sizeof(struct net_device *)) {
+-		printk(KERN_ERR "ROSE: rose_proto_init - rose_ndevs parameter to large\n");
++		printk(KERN_ERR "ROSE: rose_proto_init - rose_ndevs parameter too large\n");
+ 		rc = -EINVAL;
+ 		goto out;
  	}
 -- 
 2.24.0
